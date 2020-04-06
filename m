@@ -2,75 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4552619EF79
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 05:12:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3216F19EFE2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 06:28:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4h7f8sNuzZx9aQDnSG4qbGwYca2DQhWsudndJkzw06s=; b=AyqPPHZEsJue3Y+vCNc5BNStc
-	GDmOPb0Le3NC4/ylC1JOpF85dzwXWng6Pkk0rtO1x3h2OHUlbk1LSStVlvsHLfCUUkTlvGKbPyxaf
-	RpXXeTPb/d9MqN6jrjcU68dCMYmnF6sBiNCbHFvozYpuAuhn3vCOySk5QeewvmD1Dd1oZ7Aai23Sq
-	x5bP7ZHRhExR0jufr3d+NwZufJytD4BTEMKZsf9iurgaHN4BFnS+MEMufsMqqWYUpK2/FJjwR/vod
-	hXg0LjS4n8aQFvKUVVNauENDLQxppuqYQ6RWhIZTz82qcZ2GLnsXgxfDnGMEcxWxyz58MHbDwEDZ9
-	xT8xgOmqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qpdG5nwoUDLToQ8fYtdGhamd72cHB7baGkadLWbXBMk=; b=TdHpMcUKV5+90r
+	NIZcIH3M3SXleDx/pom+TLi+KWPL+AJakh1IMlNmFgmUscbSpUDLnZnfdBZO9KUp13QuAxF5OxyG8
+	RcbZmFcSN9vQngQkjEE4o0sC0hoTdxiJlObmRZOIDqwFeM0dci98vq8kFRWNPVs7J7DkjUNydAIGw
+	846mVxy8iE55PnHYAj7+W6XQLfS+FkG9bspWGo1id6My7VTTODTvkU8IgnL3hPKRZyRx2LO5S4pWt
+	vz8fAL+Dp9gVP0oOlc53s2Xr0QDFHyVQtgeTki6+03gWntfWyG6UDjSUjIAbQJ8c0ZwSF4WgNikMV
+	YaNPPK1p0N2ipms90Png==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLIBQ-0002kA-HY; Mon, 06 Apr 2020 03:12:20 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jLJMV-0001qY-OZ; Mon, 06 Apr 2020 04:27:51 +0000
+Received: from mout02.posteo.de ([185.67.36.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLIBK-0002jL-BA
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 03:12:16 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0363C1hx039475;
- Sun, 5 Apr 2020 22:12:01 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1586142721;
- bh=5+uIOWq+uFl9X9POMGiqgAuePuquyXGQ334ci5pc7HA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=WK7xXiqWD3SAggRcCmfwGLXqJrc1MimMcJ2xf7fj4gIhtqRLYtlY3dkZLc7rPYkYS
- noosQBt9jXgS03dI7TZa1xHaBt/HtQxXZidtC8zLvTHpZ8p5ebDlnmZ8h/pa9rHwnm
- /Krcagpzpi1qAvwT7FfjIas5niPtEz7Mq+VIsDNY=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0363C1mI016283
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sun, 5 Apr 2020 22:12:01 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Sun, 5 Apr
- 2020 22:12:01 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Sun, 5 Apr 2020 22:12:01 -0500
-Received: from [10.250.133.125] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0363Bv5M040701;
- Sun, 5 Apr 2020 22:11:58 -0500
-Subject: Re: [PATCH v5 2/4] thermal: k3: Add support for bandgap sensors
-To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
-References: <20200331075356.19171-1-j-keerthy@ti.com>
- <20200331075356.19171-3-j-keerthy@ti.com>
-From: "J, KEERTHY" <j-keerthy@ti.com>
-Message-ID: <72c40d7b-32b9-ba5b-a56c-a30733f6c03b@ti.com>
-Date: Mon, 6 Apr 2020 08:41:56 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jLJMN-0001pJ-PJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 04:27:45 +0000
+Received: from submission (posteo.de [89.146.220.130]) 
+ by mout02.posteo.de (Postfix) with ESMTPS id D90272400E6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon,  6 Apr 2020 06:27:22 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.net; s=2017;
+ t=1586147248; bh=70a++uSvv2qdkM5jAGcOFLiP/g5Cl2dfP85Qllm6F34=;
+ h=Date:From:To:Cc:Subject:From;
+ b=LbLvNjhi3xa1Lq6FHwGuFlF+LtRjLpz8qvazm9egz43PlEOPZm8zBTJwEC0KkzUIj
+ 4VA1tUV8+tQyF8vy4FQhHM4zJ0iBTjtZw+RP9n0QIQlSvffSAdfPRA8O2Y9MLwTKg/
+ +e/gnwNCTMV31AhblSAH2Q+HP8nj8M9l4zxEn5nAUz5aRe3F9Fo9X607HxyKloWtyK
+ oU2zWEx92rZBQcRrY3Jzu2lYzJCBOQyTx+O48uzLyLSuMzWu0/kMqiSsZdEYZyAcn4
+ dVWtaOo5CpVEkZTgs2HiKs4Q2g/uiTOBkrf2KN0VjJwGenKKJScEHn3pSAM4OTCX3n
+ tc4j0n6Lhkhlg==
+Received: from customer (localhost [127.0.0.1])
+ by submission (posteo.de) with ESMTPSA id 48wcvN4HXhz9rxN;
+ Mon,  6 Apr 2020 06:27:12 +0200 (CEST)
+Date: Mon, 6 Apr 2020 00:27:09 -0400
+From: Kevyn-Alexandre =?utf-8?B?UGFyw6k=?= <kapare@posteo.net>
+To: Alex Belits <abelits@marvell.com>
+Subject: Re: [PATCH v2 10/12] task_isolation: ringbuffer: don't interrupt
+ CPUs running isolated tasks on buffer resize
+Message-ID: <20200406042709.e4isjrvrrwsusjc4@x1>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+ <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
+ <5add46d3bfbdac3fb42dcef6b6e4ea0e39abe11f.camel@marvell.com>
 MIME-Version: 1.0
-In-Reply-To: <20200331075356.19171-3-j-keerthy@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <5add46d3bfbdac3fb42dcef6b6e4ea0e39abe11f.camel@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_201214_513094_AA70AB23 
-X-CRM114-Status: GOOD (  29.86  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200405_212744_110753_5A3B3948 
+X-CRM114-Status: GOOD (  23.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [185.67.36.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +70,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,357 +81,206 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Prasun Kapoor <pkapoor@marvell.com>,
+ "frederic@kernel.org" <frederic@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "will@kernel.org" <will@kernel.org>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sun, Mar 08, 2020 at 03:55:24AM +0000, Alex Belits wrote:
+> From: Yuri Norov <ynorov@marvell.com>
+> =
 
+> CPUs running isolated tasks are in userspace, so they don't have to
+> perform ring buffer updates immediately. If ring_buffer_resize()
+> schedules the update on those CPUs, isolation is broken. To prevent
+> that, updates for CPUs running isolated tasks are performed locally,
+> like for offline CPUs.
+> =
 
-On 3/31/2020 1:23 PM, Keerthy wrote:
-> The bandgap provides current and voltage reference for its internal
-> circuits and other analog IP blocks. The analog-to-digital
-> converter (ADC) produces an output value that is proportional
-> to the silicon temperature.
-> 
-> Currently reading temperatures only is supported.
-> There are no active/passive cooling agent supported.
+> A race condition between this update and isolation breaking is avoided
+> at the cost of disabling per_cpu buffer writing for the time of update
+> when it coincides with isolation breaking.
+> =
 
-Daniel,
-
-Let me kow if there are further comments to be addressed.
-
-Regards,
-Keerthy
-
-> 
-> Signed-off-by: Keerthy <j-keerthy@ti.com>
+> Signed-off-by: Yuri Norov <ynorov@marvell.com>
+> [abelits@marvell.com: updated to prevent race with isolation breaking]
+> Signed-off-by: Alex Belits <abelits@marvell.com>
 > ---
-> 
-> Changes in v5:
-> 
->    * Removed thermal work function which was unused.
->    * Removed unused preve_tenmp and a couple more struct variables.
->    * Removed couple of redundant header function include.
-> 
->   drivers/thermal/Kconfig      |  10 ++
->   drivers/thermal/Makefile     |   1 +
->   drivers/thermal/k3_bandgap.c | 268 +++++++++++++++++++++++++++++++++++
->   3 files changed, 279 insertions(+)
->   create mode 100644 drivers/thermal/k3_bandgap.c
-> 
-> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> index 5a05db5438d6..1df434527f8d 100644
-> --- a/drivers/thermal/Kconfig
-> +++ b/drivers/thermal/Kconfig
-> @@ -251,6 +251,16 @@ config IMX_THERMAL
->   	  cpufreq is used as the cooling device to throttle CPUs when the
->   	  passive trip is crossed.
->   
-> +config K3_THERMAL
-> +	tristate "Texas Instruments K3 thermal support"
-> +	depends on ARCH_K3 || COMPILE_TEST
-> +	help
-> +	  If you say yes here you get thermal support for the Texas Instruments
-> +	  K3 SoC family. The current chip supported is:
-> +	   - AM654
-> +
-> +	  This includes temperature reading functionality.
-> +
->   config MAX77620_THERMAL
->   	tristate "Temperature sensor driver for Maxim MAX77620 PMIC"
->   	depends on MFD_MAX77620
-> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> index 9fb88e26fb10..5ad6535139ae 100644
-> --- a/drivers/thermal/Makefile
-> +++ b/drivers/thermal/Makefile
-> @@ -28,6 +28,7 @@ thermal_sys-$(CONFIG_CLOCK_THERMAL)	+= clock_cooling.o
->   # devfreq cooling
->   thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
->   
-> +obj-$(CONFIG_K3_THERMAL)	+= k3_bandgap.o
->   # platform thermal drivers
->   obj-y				+= broadcom/
->   obj-$(CONFIG_THERMAL_MMIO)		+= thermal_mmio.o
-> diff --git a/drivers/thermal/k3_bandgap.c b/drivers/thermal/k3_bandgap.c
-> new file mode 100644
-> index 000000000000..1d976af4461a
-> --- /dev/null
-> +++ b/drivers/thermal/k3_bandgap.c
-> @@ -0,0 +1,268 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * TI Bandgap temperature sensor driver for K3 SoC Family
-> + *
-> + * Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
-> + */
-> +
-> +#include <linux/module.h>
-> +#include <linux/init.h>
-> +#include <linux/kernel.h>
-> +#include <linux/pm_runtime.h>
-> +#include <linux/err.h>
-> +#include <linux/types.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/io.h>
-> +#include <linux/thermal.h>
-> +#include <linux/of.h>
-> +
-> +#define K3_VTM_DEVINFO_PWR0_OFFSET		0x4
-> +#define K3_VTM_DEVINFO_PWR0_CVD_CT_MASK	0xf
-> +#define K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK	0xf0
-> +#define K3_VTM_TMPSENS0_CTRL_OFFSET	0x80
-> +#define K3_VTM_REGS_PER_TS			0x10
-> +#define K3_VTM_TS_STAT_DTEMP_MASK	0x3ff
-> +#define K3_VTM_MAX_NUM_TS		8
-> +#define K3_VTM_TMPSENS_CTRL_CBIASSEL	BIT(0)
-> +#define K3_VTM_TMPSENS_CTRL_SOC		BIT(5)
-> +#define K3_VTM_TMPSENS_CTRL_CLRZ		BIT(6)
-> +#define K3_VTM_TMPSENS_CTRL_CLKON_REQ	BIT(7)
-> +
-> +#define K3_VTM_ADC_BEGIN_VAL		540
-> +#define K3_VTM_ADC_END_VAL		944
-> +
-> +static const int k3_adc_to_temp[] = {
-> +	-40000, -40000, -40000, -40000, -39800, -39400, -39000, -38600, -38200,
-> +	-37800, -37400, -37000, -36600, -36200, -35800, -35300, -34700, -34200,
-> +	-33800, -33400, -33000, -32600, -32200, -31800, -31400, -31000, -30600,
-> +	-30200, -29800, -29400, -29000, -28600, -28200, -27700, -27100, -26600,
-> +	-26200, -25800, -25400, -25000, -24600, -24200, -23800, -23400, -23000,
-> +	-22600, -22200, -21800, -21400, -21000, -20500, -19900, -19400, -19000,
-> +	-18600, -18200, -17800, -17400, -17000, -16600, -16200, -15800, -15400,
-> +	-15000, -14600, -14200, -13800, -13400, -13000, -12500, -11900, -11400,
-> +	-11000, -10600, -10200, -9800, -9400, -9000, -8600, -8200, -7800, -7400,
-> +	-7000, -6600, -6200, -5800, -5400, -5000, -4500, -3900, -3400, -3000,
-> +	-2600, -2200, -1800, -1400, -1000, -600, -200, 200, 600, 1000, 1400,
-> +	1800, 2200, 2600, 3000, 3400, 3900, 4500, 5000, 5400, 5800, 6200, 6600,
-> +	7000, 7400, 7800, 8200, 8600, 9000, 9400, 9800, 10200, 10600, 11000,
-> +	11400, 11800, 12200, 12700, 13300, 13800, 14200, 14600, 15000, 15400,
-> +	15800, 16200, 16600, 17000, 17400, 17800, 18200, 18600, 19000, 19400,
-> +	19800, 20200, 20600, 21000, 21400, 21900, 22500, 23000, 23400, 23800,
-> +	24200, 24600, 25000, 25400, 25800, 26200, 26600, 27000, 27400, 27800,
-> +	28200, 28600, 29000, 29400, 29800, 30200, 30600, 31000, 31400, 31900,
-> +	32500, 33000, 33400, 33800, 34200, 34600, 35000, 35400, 35800, 36200,
-> +	36600, 37000, 37400, 37800, 38200, 38600, 39000, 39400, 39800, 40200,
-> +	40600, 41000, 41400, 41800, 42200, 42600, 43100, 43700, 44200, 44600,
-> +	45000, 45400, 45800, 46200, 46600, 47000, 47400, 47800, 48200, 48600,
-> +	49000, 49400, 49800, 50200, 50600, 51000, 51400, 51800, 52200, 52600,
-> +	53000, 53400, 53800, 54200, 54600, 55000, 55400, 55900, 56500, 57000,
-> +	57400, 57800, 58200, 58600, 59000, 59400, 59800, 60200, 60600, 61000,
-> +	61400, 61800, 62200, 62600, 63000, 63400, 63800, 64200, 64600, 65000,
-> +	65400, 65800, 66200, 66600, 67000, 67400, 67800, 68200, 68600, 69000,
-> +	69400, 69800, 70200, 70600, 71000, 71500, 72100, 72600, 73000, 73400,
-> +	73800, 74200, 74600, 75000, 75400, 75800, 76200, 76600, 77000, 77400,
-> +	77800, 78200, 78600, 79000, 79400, 79800, 80200, 80600, 81000, 81400,
-> +	81800, 82200, 82600, 83000, 83400, 83800, 84200, 84600, 85000, 85400,
-> +	85800, 86200, 86600, 87000, 87400, 87800, 88200, 88600, 89000, 89400,
-> +	89800, 90200, 90600, 91000, 91400, 91800, 92200, 92600, 93000, 93400,
-> +	93800, 94200, 94600, 95000, 95400, 95800, 96200, 96600, 97000, 97500,
-> +	98100, 98600, 99000, 99400, 99800, 100200, 100600, 101000, 101400,
-> +	101800, 102200, 102600, 103000, 103400, 103800, 104200, 104600, 105000,
-> +	105400, 105800, 106200, 106600, 107000, 107400, 107800, 108200, 108600,
-> +	109000, 109400, 109800, 110200, 110600, 111000, 111400, 111800, 112200,
-> +	112600, 113000, 113400, 113800, 114200, 114600, 115000, 115400, 115800,
-> +	116200, 116600, 117000, 117400, 117800, 118200, 118600, 119000, 119400,
-> +	119800, 120200, 120600, 121000, 121400, 121800, 122200, 122600, 123000,
-> +	123400, 123800, 124200, 124600, 124900, 125000,
-> +};
-> +
-> +struct k3_bandgap {
-> +	void __iomem *base;
-> +	const struct k3_bandgap_data *conf;
-> +};
-> +
-> +/* common data structures */
-> +struct k3_thermal_data {
-> +	struct thermal_zone_device *ti_thermal;
-> +	struct k3_bandgap *bgp;
-> +	int sensor_id;
-> +	u32 ctrl_offset;
-> +	u32 stat_offset;
-> +};
-> +
-> +static unsigned int vtm_get_best_value(unsigned int s0, unsigned int s1,
-> +				       unsigned int s2)
+>  kernel/trace/ring_buffer.c | 62 ++++++++++++++++++++++++++++++++++----
+>  1 file changed, 56 insertions(+), 6 deletions(-)
+> =
+
+> diff --git a/kernel/trace/ring_buffer.c b/kernel/trace/ring_buffer.c
+> index 61f0e92ace99..593effe40183 100644
+> --- a/kernel/trace/ring_buffer.c
+> +++ b/kernel/trace/ring_buffer.c
+> @@ -21,6 +21,7 @@
+>  #include <linux/delay.h>
+>  #include <linux/slab.h>
+>  #include <linux/init.h>
+> +#include <linux/isolation.h>
+>  #include <linux/hash.h>
+>  #include <linux/list.h>
+>  #include <linux/cpu.h>
+> @@ -1701,6 +1702,37 @@ static void update_pages_handler(struct work_struc=
+t *work)
+>  	complete(&cpu_buffer->update_done);
+>  }
+>  =
+
+> +static bool update_if_isolated(struct ring_buffer_per_cpu *cpu_buffer,
+> +			       int cpu)
 > +{
-> +	int d01 = abs(s0 - s1);
-> +	int d02 = abs(s0 - s2);
-> +	int d12 = abs(s1 - s2);
+> +	bool rv =3D false;
 > +
-> +	if (d01 <= d02 && d01 <= d12)
-> +		return (s0 + s1) / 2;
-> +
-> +	if (d02 <= d01 && d02 <= d12)
-> +		return (s0 + s2) / 2;
-> +
-> +	return (s1 + s2) / 2;
-> +}
-> +
-> +static int k3_bgp_read_temp(struct k3_thermal_data *devdata,
-> +			    int *temp)
-> +{
-> +	struct k3_bandgap *bgp;
-> +	unsigned int dtemp, s0, s1, s2;
-> +
-> +	bgp = devdata->bgp;
-> +
-> +	/*
-> +	 * Errata is applicable for am654 pg 1.0 silicon. There
-> +	 * is a variation of the order for 8-10 degree centigrade.
-> +	 * Work around that by getting the average of two closest
-> +	 * readings out of three readings everytime we want to
-> +	 * report temperatures.
-> +	 *
-> +	 * Errata workaround.
-> +	 */
-> +	s0 = readl(bgp->base + devdata->stat_offset) &
-> +		K3_VTM_TS_STAT_DTEMP_MASK;
-> +	s1 = readl(bgp->base + devdata->stat_offset) &
-> +		K3_VTM_TS_STAT_DTEMP_MASK;
-> +	s2 = readl(bgp->base + devdata->stat_offset) &
-> +		K3_VTM_TS_STAT_DTEMP_MASK;
-> +	dtemp = vtm_get_best_value(s0, s1, s2);
-> +
-> +	if (dtemp < K3_VTM_ADC_BEGIN_VAL || dtemp > K3_VTM_ADC_END_VAL)
-> +		return -EINVAL;
-> +
-> +	*temp = k3_adc_to_temp[dtemp - K3_VTM_ADC_BEGIN_VAL];
-> +
-> +	return 0;
-> +}
-> +
-> +static int k3_thermal_get_temp(void *devdata, int *temp)
-> +{
-> +	struct k3_thermal_data *data = devdata;
-> +	int ret = 0;
-> +
-> +	ret = k3_bgp_read_temp(data, temp);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return ret;
-> +}
-> +
-> +static const struct thermal_zone_of_device_ops k3_of_thermal_ops = {
-> +	.get_temp = k3_thermal_get_temp,
-> +};
-> +
-> +static const struct of_device_id of_k3_bandgap_match[];
-> +
-> +static int k3_bandgap_probe(struct platform_device *pdev)
-> +{
-> +	int ret = 0, cnt, val, id, reg_cnt = 0;
-> +	struct resource *res;
-> +	struct device *dev = &pdev->dev;
-> +	struct k3_bandgap *bgp;
-> +	struct k3_thermal_data *data;
-> +
-> +	if (ARRAY_SIZE(k3_adc_to_temp) != (K3_VTM_ADC_END_VAL + 1 -
-> +						K3_VTM_ADC_BEGIN_VAL))
-> +		return -EINVAL;
-> +
-> +	bgp = devm_kzalloc(&pdev->dev, sizeof(*bgp), GFP_KERNEL);
-> +	if (!bgp)
-> +		return -ENOMEM;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	bgp->base = devm_ioremap_resource(dev, res);
-> +	if (IS_ERR(bgp->base))
-> +		return PTR_ERR(bgp->base);
-> +
-> +	pm_runtime_enable(dev);
-> +	ret = pm_runtime_get_sync(dev);
-> +	if (ret < 0) {
-> +		pm_runtime_put_noidle(dev);
-> +		pm_runtime_disable(dev);
-> +		return ret;
-> +	}
-> +
-> +	/* Get the sensor count in the VTM */
-> +	val = readl(bgp->base + K3_VTM_DEVINFO_PWR0_OFFSET);
-> +	cnt = val & K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK;
-> +	cnt >>= __ffs(K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK);
-> +
-> +	data = devm_kcalloc(dev, cnt, sizeof(*data), GFP_KERNEL);
-> +	if (!data) {
-> +		ret = -ENOMEM;
-> +		goto err_alloc;
-> +	}
-> +
-> +	/* Register the thermal sensors */
-> +	for (id = 0; id < cnt; id++) {
-> +		data[id].sensor_id = id;
-> +		data[id].bgp = bgp;
-> +		data[id].ctrl_offset = K3_VTM_TMPSENS0_CTRL_OFFSET +
-> +					id * K3_VTM_REGS_PER_TS;
-> +		data[id].stat_offset = data[id].ctrl_offset + 0x8;
-> +
-> +		val = readl(data[id].bgp->base + data[id].ctrl_offset);
-> +		val |= (K3_VTM_TMPSENS_CTRL_SOC |
-> +			K3_VTM_TMPSENS_CTRL_CLRZ |
-> +			K3_VTM_TMPSENS_CTRL_CLKON_REQ);
-> +		val &= ~K3_VTM_TMPSENS_CTRL_CBIASSEL;
-> +		writel(val, data[id].bgp->base + data[id].ctrl_offset);
-> +
-> +		data[id].ti_thermal =
-> +		devm_thermal_zone_of_sensor_register(dev, id,
-> +						     &data[id],
-> +						     &k3_of_thermal_ops);
-> +		if (IS_ERR(data[id].ti_thermal)) {
-> +			dev_err(dev, "thermal zone device is NULL\n");
-> +			ret = PTR_ERR(data[id].ti_thermal);
-> +			goto err_alloc;
+> +	if (task_isolation_on_cpu(cpu)) {
+> +		/*
+> +		 * CPU is running isolated task. Since it may lose
+> +		 * isolation and re-enter kernel simultaneously with
+> +		 * this update, disable recording until it's done.
+> +		 */
+> +		atomic_inc(&cpu_buffer->record_disabled);
+> +		/* Make sure, update is done, and isolation state is current */
+> +		smp_mb();
+> +		if (task_isolation_on_cpu(cpu)) {
+> +			/*
+> +			 * If CPU is still running isolated task, we
+> +			 * can be sure that breaking isolation will
+> +			 * happen while recording is disabled, and CPU
+> +			 * will not touch this buffer until the update
+> +			 * is done.
+> +			 */
+> +			rb_update_pages(cpu_buffer);
+> +			cpu_buffer->nr_pages_to_update =3D 0;
+> +			rv =3D true;
 > +		}
-> +
-> +		reg_cnt++;
+> +		atomic_dec(&cpu_buffer->record_disabled);
 > +	}
-> +
-> +	platform_set_drvdata(pdev, bgp);
-> +
-> +	return 0;
-> +
-> +err_alloc:
-> +	pm_runtime_put_sync(&pdev->dev);
-> +	pm_runtime_disable(&pdev->dev);
-> +
-> +	return ret;
+> +	return rv;
 > +}
 > +
-> +static int k3_bandgap_remove(struct platform_device *pdev)
-> +{
-> +	pm_runtime_put_sync(&pdev->dev);
-> +	pm_runtime_disable(&pdev->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id of_k3_bandgap_match[] = {
-> +	{
-> +		.compatible = "ti,am654-vtm",
-> +	},
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, of_k3_bandgap_match);
-> +
-> +static struct platform_driver k3_bandgap_sensor_driver = {
-> +	.probe = k3_bandgap_probe,
-> +	.remove = k3_bandgap_remove,
-> +	.driver = {
-> +		.name = "k3-soc-thermal",
-> +		.of_match_table	= of_k3_bandgap_match,
-> +	},
-> +};
-> +
-> +module_platform_driver(k3_bandgap_sensor_driver);
-> +
-> +MODULE_DESCRIPTION("K3 bandgap temperature sensor driver");
-> +MODULE_LICENSE("GPL v2");
-> +MODULE_AUTHOR("J Keerthy <j-keerthy@ti.com>");
-> 
+>  /**
+>   * ring_buffer_resize - resize the ring buffer
+>   * @buffer: the buffer to resize.
+> @@ -1784,13 +1816,22 @@ int ring_buffer_resize(struct trace_buffer *buffe=
+r, unsigned long size,
+>  			if (!cpu_buffer->nr_pages_to_update)
+>  				continue;
+>  =
+
+> -			/* Can't run something on an offline CPU. */
+> +			/*
+> +			 * Can't run something on an offline CPU.
+> +			 *
+> +			 * CPUs running isolated tasks don't have to
+> +			 * update ring buffers until they exit
+> +			 * isolation because they are in
+> +			 * userspace. Use the procedure that prevents
+> +			 * race condition with isolation breaking.
+> +			 */
+>  			if (!cpu_online(cpu)) {
+>  				rb_update_pages(cpu_buffer);
+>  				cpu_buffer->nr_pages_to_update =3D 0;
+>  			} else {
+> -				schedule_work_on(cpu,
+> -						&cpu_buffer->update_pages_work);
+> +				if (!update_if_isolated(cpu_buffer, cpu))
+> +					schedule_work_on(cpu,
+> +					&cpu_buffer->update_pages_work);
+>  			}
+>  		}
+>  =
+
+> @@ -1829,13 +1870,22 @@ int ring_buffer_resize(struct trace_buffer *buffe=
+r, unsigned long size,
+>  =
+
+>  		get_online_cpus();
+>  =
+
+> -		/* Can't run something on an offline CPU. */
+> +		/*
+> +		 * Can't run something on an offline CPU.
+> +		 *
+> +		 * CPUs running isolated tasks don't have to update
+> +		 * ring buffers until they exit isolation because they
+> +		 * are in userspace. Use the procedure that prevents
+> +		 * race condition with isolation breaking.
+> +		 */
+>  		if (!cpu_online(cpu_id))
+>  			rb_update_pages(cpu_buffer);
+>  		else {
+> -			schedule_work_on(cpu_id,
+> +			if (!update_if_isolated(cpu_buffer, cpu_id))
+> +				schedule_work_on(cpu_id,
+>  					 &cpu_buffer->update_pages_work);
+> -			wait_for_completion(&cpu_buffer->update_done);
+> +				wait_for_completion(&cpu_buffer->update_done);
+> +			}
+>  		}
+>  =
+
+>  		cpu_buffer->nr_pages_to_update =3D 0;
+
+gcc output:
+
+kernel/trace/ring_buffer.c: In function 'ring_buffer_resize':
+kernel/trace/ring_buffer.c:1884:4: warning: this 'if' clause does not guard=
+... [-Wmisleading-indentation]
+    if (!update_if_isolated(cpu_buffer, cpu_id))
+    ^~
+kernel/trace/ring_buffer.c:1887:5: note: ...this statement, but the latter =
+is misleadingly indented as if it were guarded by the 'if'
+     wait_for_completion(&cpu_buffer->update_done);
+     ^~~~~~~~~~~~~~~~~~~
+kernel/trace/ring_buffer.c:1858:4: error: label 'out' used but not defined
+    goto out;
+    ^~~~
+kernel/trace/ring_buffer.c:1868:4: error: label 'out_err' used but not defi=
+ned
+    goto out_err;
+    ^~~~
+
+My fix:
+
+diff --git a/kernel/trace/ring_buffer.c b/kernel/trace/ring_buffer.c
+index 593effe40183..8b458400ac31 100644
+--- a/kernel/trace/ring_buffer.c
++++ b/kernel/trace/ring_buffer.c
+@@ -1881,9 +1881,8 @@ int ring_buffer_resize(struct trace_buffer *buffer, u=
+nsigned long size,
+                if (!cpu_online(cpu_id))
+                        rb_update_pages(cpu_buffer);
+                else {
+-                       if (!update_if_isolated(cpu_buffer, cpu_id))
+-                               schedule_work_on(cpu_id,
+-                                        &cpu_buffer->update_pages_work);
++                       if (!update_if_isolated(cpu_buffer, cpu_id)) {
++                               schedule_work_on(cpu_id, &cpu_buffer->updat=
+e_pages_work);
+                                wait_for_completion(&cpu_buffer->update_don=
+e);
+                        }
+                }
+
+
+thx,
+
+-- Kevyn-Alexandre Par=E9 =
+
 
 _______________________________________________
 linux-arm-kernel mailing list
