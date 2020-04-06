@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18FCA19F21B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6AF919F22E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:12:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/474rI+3+5OtLsURRjd+vXKyd6ieYYbg1YQPJkoSNVs=; b=Ird37yWz4zgUnT
-	D5qMC5L9Baeqw/14ox4whwTjqanwyXGlq7t/LFeub6ZLsVt2uLiJlolAbhsO0vYdLO5FTxOsIlU3p
-	1GUc+T8bJmrSCGGDpZrcxSElQK6IlUxPr44vQkKXIDXtPuiraWV8B6XAipiOVw63s49LMC/bSgeOk
-	gOg+ThiKibUzELnmJuAJYu0lETMcbfkcCwseWkH/03QcvKfHy2RyG3Lu6CZgmo9ADcVP6tSL6l6Fp
-	fHZwcjQ6C32xz7q64bFMs5h8TxVjQb7tnGsWd8jVBLIp9+cAY/Wtmu4IsXcyF7vMYMKIOpIhf1vri
-	izIxZVqvubbjLAj5qDWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ROFL5KEYEFWTLChO3c/1+SyAc1Am2iPfSOAqC9AtNyY=; b=Qwg5R5JsGI/7fZLkJ9HeMQdwi
+	vy7T+KaB6Av9T2fJGKCH74roA6wwEeCVC4frCpmPYQd5Pmlf6pR/wRHMzdU/0WT3+Cg8NbvzGUm5r
+	R2o0bwNmtu+JyL9ByBuGBUH+p6vOd9gZXI79AeWQAlZ+Sx4QefKL5CHUpQ3yqJUlf/NspFVuLXHvi
+	Wl9OOc8pO3x4UmydEHQc6rGXrPjPbdNJ638jqnzYHVkTQqxgO75eD035YObfvNCDr4OiIkouc9+nx
+	Z6R86T73SrvvFTwdlvAFBklptmehZmnirotBx7M75vQPDIaGUdLtMIHkm7b1h8fzdfi0LVxzxTCng
+	HUrU8VGhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLNlw-0006NZ-Tz; Mon, 06 Apr 2020 09:10:24 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1jLNo1-0006nC-6r; Mon, 06 Apr 2020 09:12:33 +0000
+Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLNlq-0006ND-Ez
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 09:10:19 +0000
-Received: by mail-io1-xd41.google.com with SMTP id y14so14918179iol.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 02:10:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=GIpFRdiLsH923QmyN8wQqcWX+/WhMLr84OozpPJEaUE=;
- b=FkmsW/xQ+XFNOVH8bsSpa35ZszZVS4BIi3STwW48yC47+Y3mnceTZow58CS0jgRcbl
- 1Yl3ImvbL1dBSGuQnfOTjy4hZ5i0/X8IRbo7tmWrHRUej0WUf/9bV0TGvlCtCJviiNz2
- Tp9zlpsXdLGHS0NLGsEn/6CU8myL/yHrgsDI/LOstqo/QvF6FKY00rn2OHCS2lzynTCw
- Ad5mlBPrcV/XsuBuMcMyh/VKBAufytMxCy6N8ik7+IPdg2o/akQiCRiOqSxPKi+ryenS
- iNOOIQ8+/0EDZjf0ai2HVaCO2MA+ICpx165GDvumkYzfd1zl1ie+ZgT6naAcLpR7lXwA
- dsHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=GIpFRdiLsH923QmyN8wQqcWX+/WhMLr84OozpPJEaUE=;
- b=L4NXhE/tZqGiXoUH2js2KSPoXyyUjsyPnTcQFoERl4UQewdTsY8gnHvWcn0/uU+6PM
- P8mTKfg+bT8zcI5nEDZDxGY0RbFzcCAgAv937dMn7C7UyFhfBqY45GEi9G8nVNHirpkc
- yZJ+WCzV2KTEoKfWPllJqFUw1w2ID2Fipxyjt+K4apOXscHQOERRlbO4yqbYocm6DrY9
- zltdP4c8hNSdeIT5tiO6DgTSgttglknXcFExj9HZhl3S+6hNpQkjPzJ771mIV9lGZTbg
- V8QFpvJWss6c+1uWbb5khwU7yCDxUkK5vd4SvndgRE8YsEnKJq15dkJU8GYuwDpvzbaE
- cRjg==
-X-Gm-Message-State: AGi0PuZ6QQgDmyg5gFvydTBuyPDqjNMZKXrsjB+7JJqyRT8wZnJqgxHb
- JVlJYAlCLWC34wbOyBZDff8tsTB3+dgfHOAisM8=
-X-Google-Smtp-Source: APiQypI6WUS4w/Pl7H3i+0Z29uGLfg0BUZ7h87bcQVPI4mu2n4FcYAiepk1wwwunIQdOU5ejrdzdmERAO+JXLVFNamk=
-X-Received: by 2002:a6b:14d4:: with SMTP id 203mr3907248iou.123.1586164217295; 
- Mon, 06 Apr 2020 02:10:17 -0700 (PDT)
+ id 1jLNnu-0006ml-Jy
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 09:12:27 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e8af2140000>; Mon, 06 Apr 2020 02:10:44 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Mon, 06 Apr 2020 02:12:25 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Mon, 06 Apr 2020 02:12:25 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 6 Apr
+ 2020 09:12:25 +0000
+Received: from localhost (10.124.1.5) by DRHQMAIL107.nvidia.com (10.27.9.16)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 6 Apr 2020 09:12:24
+ +0000
+Date: Mon, 6 Apr 2020 11:12:22 +0200
+From: Thierry Reding <treding@nvidia.com>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 3/9] arm64: tegra: Remove redundant CLKDEV_LOOKUP selects
+Message-ID: <20200406091222.GA475156@ulmo>
+References: <20200405025123.154688-1-sboyd@kernel.org>
+ <20200405025123.154688-4-sboyd@kernel.org>
 MIME-Version: 1.0
-References: <20200405173601.24331-1-peron.clem@gmail.com>
- <20200405173601.24331-8-peron.clem@gmail.com>
-In-Reply-To: <20200405173601.24331-8-peron.clem@gmail.com>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Mon, 6 Apr 2020 11:10:06 +0200
-Message-ID: <CAJiuCcdhnCLOfe1t7oFWp8KR+_4gZ-eqpZd7zX1O3OO=5ZMB0w@mail.gmail.com>
-Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: h6: Enable CPU and GPU opp
- tables for Orange Pi boards
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>
+In-Reply-To: <20200405025123.154688-4-sboyd@kernel.org>
+X-NVConfidentiality: public
+User-Agent: Mutt/1.13.1 (2019-12-14)
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1586164244; bh=9kmRTXF8Etb9YX4oOcNjQcdL+srESuC5aHGqMIaGSiA=;
+ h=X-PGP-Universal:Date:From:To:CC:Subject:Message-ID:References:
+ MIME-Version:In-Reply-To:X-NVConfidentiality:User-Agent:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:
+ Content-Disposition;
+ b=RSirfZOQYdXD3Ox0BliIItemQ8d/Bs/Qcj6c5eKsQ0snKTh+/f1HotOfmbQ2aM3IZ
+ mrGAb9Z7Y0qX/nLscwBRp/cavq14ZCHvCicFVGMzuw1YflXdDXZKXHjKAHcQ0Hp7kY
+ k1t8+8YkXqZRT8Zd5Ik0qf12UuLipIUiNbmQoQFBpRLeZ3Aq6DAWgoTDmcbEI+EW1l
+ F6sjSc+xU5uNYzKF6hOiwzUVsXIWSTX/8atYdil/PfdAerWZg6YKqA+Hj3bNlf7sXk
+ Jjce3njkD3Pas7l5ePr6PDRpT62sBA6JgV3L38tL+xUFOwWmW0QEFup+TGwwZmMLYN
+ aW1kAXEjN9iXg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_021018_507105_42EDDE66 
-X-CRM114-Status: GOOD (  18.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_021226_663289_865AABAD 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [peron.clem[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,58 +94,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Walmsley <paul@pwsan.com>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5270494568005182159=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiBTdW4sIDUgQXByIDIwMjAgYXQgMTk6MzYsIENsw6ltZW50IFDDqXJvbiA8cGVyb24u
-Y2xlbUBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gRW5hYmxlIENQVSBhbmQgR1BVIG9wcCB0YWJsZXMg
-Zm9yIE9yYW5nZSBQaSBib2FyZHMuCj4KPiBUaGlzIG5lZWRzIHRvIGNoYW5nZSB0aGUgQ1BVIHJl
-Z3VsYXRvciBtYXggdm9sdGFnZSB0byBmaXQKPiB0aGUgT1BQIHRhYmxlLgo+Cj4gQWxzbyBhZGQg
-dGhlIHJhbXAtZGVsYXkgaW5mb3JtYXRpb24gdG8gYXZvaWQgYW55IG91dCBvZiBzcGVjCj4gcnVu
-bmluZyBhcyB0aGUgcmVndWxhdG9yIGlzIHNsb3dlciBhdCByZWFjaGluZyB0aGUgdm9sdGFnZQo+
-IHJlcXVlc3RlZCBjb21wYXJlIHRvIHRoZSBQTEwgcmVhY2hpbmcgdGhlIGZyZXF1ZW5jeS4KPgo+
-IFRoZXJlIGlzIG5vIHN1Y2ggaW5mb3JtYXRpb24gZm9yIEFYUDgwNSBidXQgc2ltaWxhciBQTUlD
-IChBWFA4MTMpCj4gaGFzIGEgRFZNIChEeW5hbWljIFZvbHRhZ2Ugc2NhbGluZyBNYW5hZ2VtZW50
-KSByYW1wIHJhdGUgZXF1YWwKPiB0byAyNTAwdVYvdXMuCj4KPiBTaWduZWQtb2ZmLWJ5OiBDbMOp
-bWVudCBQw6lyb24gPHBlcm9uLmNsZW1AZ21haWwuY29tPgo+IC0tLQo+ICBhcmNoL2FybTY0L2Jv
-b3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYtb3JhbmdlcGkuZHRzaSB8IDEwICsrKysrKysrKy0K
-PiAgMSBmaWxlIGNoYW5nZWQsIDkgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Cj4gZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1vcmFuZ2Vw
-aS5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LW9yYW5nZXBp
-LmR0c2kKPiBpbmRleCAzN2Y0YzU3NTk3ZDQuLmYzYmE1MDBjZTRjNiAxMDA2NDQKPiAtLS0gYS9h
-cmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYtb3JhbmdlcGkuZHRzaQo+ICsr
-KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1vcmFuZ2VwaS5kdHNp
-CgpNYWRlIGEgbWlzdGFrZSBoZXJlLgpPbmRyZWogSmlybWFuIHRlc3QgRFZGUyBvbiBPcmFuZ2Ug
-UGkgMyBib2FyZCB3aGljaCBpcyBub3QgdGhpcyBkZXZpY2UtdHJlZSBmaWxlLgoKV2lsbCBmaXgg
-aW4gVjMuCgpSZWdhcmRzLApDbMOpbWVudAoKPiBAQCAtNSw2ICs1LDggQEAKPiAgL2R0cy12MS87
-Cj4KPiAgI2luY2x1ZGUgInN1bjUwaS1oNi5kdHNpIgo+ICsjaW5jbHVkZSAic3VuNTBpLWg2LWNw
-dS1vcHAuZHRzaSIKPiArI2luY2x1ZGUgInN1bjUwaS1oNi1ncHUtb3BwLmR0c2kiCj4KPiAgI2lu
-Y2x1ZGUgPGR0LWJpbmRpbmdzL2dwaW8vZ3Bpby5oPgo+Cj4gQEAgLTQ1LDYgKzQ3LDEwIEBACj4g
-ICAgICAgICB9Owo+ICB9Owo+Cj4gKyZjcHUwIHsKPiArICAgICAgIGNwdS1zdXBwbHkgPSA8JnJl
-Z19kY2RjYT47Cj4gK307Cj4gKwo+ICAmZWhjaTAgewo+ICAgICAgICAgc3RhdHVzID0gIm9rYXki
-Owo+ICB9Owo+IEBAIC0xNjEsNyArMTY3LDggQEAKPiAgICAgICAgICAgICAgICAgICAgICAgICBy
-ZWdfZGNkY2E6IGRjZGNhIHsKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZ3Vs
-YXRvci1hbHdheXMtb247Cj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZWd1bGF0
-b3ItbWluLW1pY3Jvdm9sdCA9IDw4MTAwMDA+Owo+IC0gICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MTA4MDAwMD47Cj4gKyAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICByZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxMTYwMDAwPjsK
-PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZ3VsYXRvci1yYW1wLWRlbGF5ID0g
-PDI1MDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmVndWxhdG9yLW5hbWUg
-PSAidmRkLWNwdSI7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgfTsKPgo+IEBAIC0xNjksNiAr
-MTc2LDcgQEAKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZ3VsYXRvci1lbmFi
-bGUtcmFtcC1kZWxheSA9IDwzMjAwMD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICByZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDw4MTAwMDA+Owo+ICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MTA4MDAwMD47Cj4gKyAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZWd1bGF0b3ItcmFtcC1kZWxheSA9IDwyNTAw
-PjsKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZ3VsYXRvci1uYW1lID0gInZk
-ZC1ncHUiOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIH07Cj4KPiAtLQo+IDIuMjAuMQo+Cgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+--===============5270494568005182159==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="IS0zKkzwUGydFO0o"
+Content-Disposition: inline
+
+--IS0zKkzwUGydFO0o
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, Apr 04, 2020 at 07:51:17PM -0700, Stephen Boyd wrote:
+> The arm64 architecture selects COMMON_CLK at the toplevel ARM64 config.
+> The COMMON_CLK config option already selects CLKDEV_LOOKUP so it's
+> redundant to have this selected again for the Tegra specific config.
+>=20
+> Cc: Paul Walmsley <paul@pwsan.com>
+> Cc: Thierry Reding <treding@nvidia.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: <linux-arm-kernel@lists.infradead.org>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+> ---
+>  arch/arm64/Kconfig.platforms | 1 -
+>  1 file changed, 1 deletion(-)
+
+We rarely touch this, so I think it's fine for this to go through the
+clock tree. I'll make a mental note just in case there's going to be
+something touching this area in the next release, but I'm sure it'll be
+all minor so we could easily work that out:
+
+Acked-by: Thierry Reding <treding@nvidia.com>
+
+--IS0zKkzwUGydFO0o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6K8nMACgkQ3SOs138+
+s6GYOxAAl16bdJdFCTM/is7vcybWugFQqwYZ6YQqMs8mYm7vVkbuX24Mw4Imq8Dh
+kCzqbiCOnF0Bzotqm2ZQH2DwFHuevqCcIVvFM3dFapq5vE+T/42fernYfv2Jcdt+
+D5+aKv994tvCXMPKPq6oJyJGR3Frf2BcIjxThfduw+B68ILLaImTwoW5p6fWyrUL
+jR9F3hCCASjWQS+fCNuEcNRlsEBmWw1u/c4iqjfU7JMHXpPE/DZuYeS2daLoQmEl
+5li51m8hyES7/R9/tVaJlZIfOM3t9O4V58aZDnP/ieJ4nzFGLUWg3eveOm0b88ex
+2jaQhn5zNUliym+sSa4/vZKXPkzUTW4zMtiNR2B/QZyEZdD7veQmlVVPWauSsH4S
+1NCqegINAAaBAFZnS3Xz+iJsEqnK+iHiR6sZzckpChCN8znGgpK/sqGvY3gUj9bt
+R7wI7snHv59hJSbU2NBZKl95G5JH22GlU/RT3exDgQd2LHyi9WcPbvg6lqYbydM4
+FC/YOBQjSIBr1oC1ECh9XtGiGN614I3JextBY+NIFMONb/UN2b6K842uKhETt2U7
+gCjXTkdSIGwf5m3QSSxUjPYUnMycFQ0XXhKjyNed0V7daaxrfS5LbgN2sVA/WC6G
+cvGn2OsSZnLdE0dAY9hpANrWX2RFIhIqINKHTQqc+pqGieWXvJE=
+=rq9p
+-----END PGP SIGNATURE-----
+
+--IS0zKkzwUGydFO0o--
+
+
+--===============5270494568005182159==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5270494568005182159==--
+
