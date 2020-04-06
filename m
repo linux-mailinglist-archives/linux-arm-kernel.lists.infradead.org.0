@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8151019F5CA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 14:29:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32DAF19F605
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 14:45:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FF3CpUedjsV4LuGEOwt76cqcbA2U68KHspIJFQRbAxg=; b=lQN7mZKoq+R2Rf
-	n31A9f7nYphVW031P/uMKpDo8koOMk4HfRb1LQLBs1zjKSY4Vqczb8umol9F3BwxYD++wKxS0PDWi
-	njOZXOV7dmve82xVGuaD4wJFZCYk9T6JO0eQA9Qht6tde6dj9GimDikm77pYHIJBSPWT5vdR8EUix
-	FjXTp6tTlAoFYHiC7Kjc0Y2zDX5bcXuABfHletBJHwFJ62OG9+pet1jqaeTvKgPeJwAa7ez1nDlyL
-	zi1djrgWwYGXSiNby67BEftnfQ6K9q7dmanpQyBSQN2T2vZqVOz81fklP+DLzYT3LmKzAOHieH8xL
-	5rOjWQuSrtsMUaFduZVQ==;
+	List-Owner; bh=nGSnRiAg5HWAq6vuZQWurRmt1uJCYhcF6tJvdFMJu8Q=; b=uzX44e2hMp6AUu
+	qcbXm3OCFNbhV4TlPgDZ2Dm7SlmQLhgsomZg0ZpDC8Mr+U/vSkK5+OFPJfMk3dbKiYIvmGzSbwaZs
+	p3nY9D0bjUwT49MlMwiVDFdyan29kMgag3FdMCO9khoJPSrC6y9ixR98IUwHuZBA5Xd+5YYrrQ361
+	FwHmct5s4mLlyoIn9yeJEEOC73PRWWInhE43D+cZ4yTKfImFqWg4t2kZvy9Mgfws046AV9aCkcYRF
+	GdbCNvHYaZZo/rDBg9gB5eOk2Fj28JOQsnMg0gU/FkwBy3m7A8UZ8Yf4ckcDtw7q63xe2i803S8tZ
+	8M62vP9w71SrheHSsGMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLQsA-0006Ag-Fq; Mon, 06 Apr 2020 12:29:02 +0000
+	id 1jLR8C-0001eg-UK; Mon, 06 Apr 2020 12:45:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLQs1-0005z3-1r
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 12:28:56 +0000
-Received: from mail-io1-f43.google.com (mail-io1-f43.google.com
- [209.85.166.43])
+ id 1jLR81-0001dg-PD
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 12:45:31 +0000
+Received: from mail-io1-f42.google.com (mail-io1-f42.google.com
+ [209.85.166.42])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1A43621974
+ by mail.kernel.org (Postfix) with ESMTPSA id 57B7D221E8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  6 Apr 2020 12:28:52 +0000 (UTC)
+ Mon,  6 Apr 2020 12:45:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586176132;
- bh=qdQc4jm6vlFbaonGSwzWhehix7nt8PkXCpQdHV57GG0=;
+ s=default; t=1586177125;
+ bh=tiN2oTj1i0XyvRhRfdLBlfrbeamD1vChWpja08uq09w=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=IDcKiuNR8fZUCVROYqjQUH95XxmMFoQ5MVvamfPNxuE6R6rtEqs1Y8EVsE/u6PLA0
- /CYH5/wIkuvJwvRffLxwB9fadS2peEC8x+Cbt+VcQb8DW3mp44XuxY7nwdC76hrLjR
- zZNIGWTGVJ7PKdDm1SElM/YbZttJ/sGPVdVcsn+0=
-Received: by mail-io1-f43.google.com with SMTP id y14so15488668iol.12
+ b=Q7O72xtV3LBHX177tBgE4k8duWbcQLkAnOvu2i0oWsmlEVrgMpKM3Q1K8phxJkiLN
+ C1GBx8jR/l4WGDlFSPD7ZybDU8FJfT2WzYUMEWgVcI4vd98Lj7j6VgsSlrnwVtFd0A
+ xlZFWEjxBmW5054XDH0fJTY5IycORF0oShPo291Y=
+Received: by mail-io1-f42.google.com with SMTP id y14so15540446iol.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 05:28:52 -0700 (PDT)
-X-Gm-Message-State: AGi0PubNFKKnnkYca3jVzK+jJ0tESqoMbATV/ikFf1gZ8sCv92ektMXa
- 69RJOvcXVuzJ5HbqfaebGsvxjV+e2YMd0poCPeY=
-X-Google-Smtp-Source: APiQypJjnZcvIJ/YDc44KzQ6/22rvd26OY3TBhy3ykjb+yQYtt42A/wZZFdcjpihPuepidSC82tUy1pckL533Sf2NQ0=
-X-Received: by 2002:a02:7785:: with SMTP id g127mr3372412jac.134.1586176131459; 
- Mon, 06 Apr 2020 05:28:51 -0700 (PDT)
+ Mon, 06 Apr 2020 05:45:25 -0700 (PDT)
+X-Gm-Message-State: AGi0Pub1nJrBS+VNCgDE4SqBR8aHL28sqYj458YGrzBuhNaS4mISxh3E
+ DaroEbcJT2P5mtdO0re+nLcBtZTsK2d5BEqx7zg=
+X-Google-Smtp-Source: APiQypJR/I5FJdjjJ5dWxK8nEozXVMsHluDJKpsrloyjYgJrmslBzZKSVlpcnCxFRDiK8soBbZ4QBOO/IENvSOEHHp4=
+X-Received: by 2002:a6b:f413:: with SMTP id i19mr19532257iog.203.1586177124713; 
+ Mon, 06 Apr 2020 05:45:24 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200402153845.30985-1-kursad.oney@broadcom.com>
-In-Reply-To: <20200402153845.30985-1-kursad.oney@broadcom.com>
+References: <20200406121233.109889-1-mst@redhat.com>
+ <20200406121233.109889-3-mst@redhat.com>
+In-Reply-To: <20200406121233.109889-3-mst@redhat.com>
 From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 6 Apr 2020 14:28:40 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXF9Oa6xsG6HsZG=buB8x5=wxSBR_qxhOd__hkn1pBj6jg@mail.gmail.com>
-Message-ID: <CAMj1kXF9Oa6xsG6HsZG=buB8x5=wxSBR_qxhOd__hkn1pBj6jg@mail.gmail.com>
-Subject: Re: 32-bit arm unwind info for PLTs
-To: Kursad Oney <kursad.oney@broadcom.com>
+Date: Mon, 6 Apr 2020 14:45:13 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFNeuZU66swwf_Cx7PrQJV34C0VJ7Rte5aga2Jx4S-yHw@mail.gmail.com>
+Message-ID: <CAMj1kXFNeuZU66swwf_Cx7PrQJV34C0VJ7Rte5aga2Jx4S-yHw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] vhost: disable for OABI
+To: "Michael S. Tsirkin" <mst@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_052854_869798_2AC0456E 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200406_054529_239093_C2D13A5D 
+X-CRM114-Status: GOOD (  26.00  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -85,65 +86,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: florian.fainelli@broadcom.com,
+Cc: "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jason Wang <jasowang@redhat.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Sudeep Dutt <sudeep.dutt@intel.com>, Ashutosh Dixit <ashutosh.dixit@intel.com>,
+ "daniel.santos@pobox.com" <daniel.santos@pobox.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, kvm@vger.kernel.org,
+ netdev@vger.kernel.org, virtualization@lists.linux-foundation.org,
+ "David S. Miller" <davem@davemloft.net>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2 Apr 2020 at 17:45, Kursad Oney <kursad.oney@broadcom.com> wrote:
+On Mon, 6 Apr 2020 at 14:12, Michael S. Tsirkin <mst@redhat.com> wrote:
 >
-> Hi,
->
-> I have a large kernel module that gets loaded to vmalloc via
-> ARM_MODULE_PLTS. When I either use perf, or enable (yet unmerged)
-> KASAN-arm changes, I see occasional warnings like this:
->
-> unwind: Index not found pc:f3aa8d6c
->
-> The address f3aa8d6c is in the .plt section. I printed the backtrace
-> in unwind_frame where the warning is printed, and the backtrace looks
-> like this:
->
-> NMI backtrace for cpu 0
-> CPU: 0 PID: 7193 Comm: hostapd Tainted: P                  4.19.100 #7
-> Hardware name: Generic DT based system
-> [<c02144b8>] (unwind_backtrace) from [<c020dac8>] (show_stack+0x10/0x14)
-> [<c020dac8>] (show_stack) from [<c083b238>] (dump_stack+0x9c/0xb0)
-> [<c083b238>] (dump_stack) from [<c0842dfc>] (nmi_cpu_backtrace+0xb4/0xe8)
-> [<c0842dfc>] (nmi_cpu_backtrace) from [<c0842fb0>] (nmi_trigger_cpumask_backtrace+0x180/0x1d4)
-> [<c0842fb0>] (nmi_trigger_cpumask_backtrace) from [<c0214428>] (unwind_frame+0x650/0x6e0)
-> [<c0214428>] (unwind_frame) from [<c020d53c>] (walk_stackframe+0x30/0x3c)
-> [<c020d53c>] (walk_stackframe) from [<c020d778>] (__save_stack_trace+0x100/0x108)
-> [<c020d778>] (__save_stack_trace) from [<c03369ec>] (__kasan_slab_free+0x124/0x1f8)
-> [<c03369ec>] (__kasan_slab_free) from [<c033396c>] (kmem_cache_free+0x5c/0x19c)
-> [<c033396c>] (kmem_cache_free) from [<c029138c>] (rcu_process_callbacks+0x360/0x604)
-> [<c029138c>] (rcu_process_callbacks) from [<c020295c>] (__do_softirq+0x174/0x374)
-> [<c020295c>] (__do_softirq) from [<c022b07c>] (irq_exit+0xd0/0xf8)
-> [<c022b07c>] (irq_exit) from [<c027ce3c>] (__handle_domain_irq+0x7c/0xd4)
-> [<c027ce3c>] (__handle_domain_irq) from [<c04dfc00>] (gic_handle_irq+0x4c/0x90)
-> [<c04dfc00>] (gic_handle_irq) from [<c02020cc>] (__irq_svc+0x6c/0xac)
-> Exception stack(0xe4c3b400 to 0xe4c3b448)
-> b400: dca01404 f3d63a80 bd7ac750 00000000 f3d63a84 f0b6c164 f3bb6434 dca0126c
-> b420: f3d665d0 dca01408 dca01404 0c002c24 00000000 e4c3b450 f37ed5a4 f3aa8d6c
-> b440: 600b0013 ffffffff
-> [<c02020cc>] (__irq_svc) from [<f3aa8d6c>] (wl_module_exit+0xf64/0x21f8 [wl])
->
-> To me it looks like while the CPU is executing an instruction in the
-> PLT, it gets an interrupt. If we call save_stack_trace() or any
-> function that eventually gets to unwind_frame() from that context,
-> then the unwinder doesn't know how to unwind the PLT. Does this sound
-> right? Any idea how the unwinder code should deal with this situation?
+> vhost is currently broken on the default ARM config.
 >
 
-It is going to be infeasible to emit CFI directives on the fly, and
-expose them via a separate .eh_frame section in the module. So what we
-should probably be doing is teaching the unwinder about these entries,
-and simply ignore them, which is reasonable, given that they only set
-PC using a PC+immediate LDR, and so they don't affect the state of the
-stack or the register file. That means we'll need to use the value of
-LR to locate the next stack frame.
+Where did you get this idea? The report from the robot was using a
+randconfig build, and in general, AEABI is required to run anything on
+any modern ARM system .
+
+
+> The reason is that that uses apcs-gnu which is the ancient OABI that is been
+> deprecated for a long time.
+>
+> Given that virtio support on such ancient systems is not needed in the
+> first place, let's just add something along the lines of
+>
+>         depends on !ARM || AEABI
+>
+> to the virtio Kconfig declaration, and add a comment that it has to do
+> with struct member alignment.
+>
+> Note: we can't make VHOST and VHOST_RING themselves have
+> a dependency since these are selected. Add a new symbol for that.
+>
+> Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+> Siggested-by: Richard Earnshaw <Richard.Earnshaw@arm.com>
+
+typo ^^^
+
+
+> Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+> ---
+>  drivers/misc/mic/Kconfig |  2 +-
+>  drivers/net/caif/Kconfig |  2 +-
+>  drivers/vdpa/Kconfig     |  2 +-
+>  drivers/vhost/Kconfig    | 17 +++++++++++++----
+>  4 files changed, 16 insertions(+), 7 deletions(-)
+>
+> diff --git a/drivers/misc/mic/Kconfig b/drivers/misc/mic/Kconfig
+> index 8f201d019f5a..3bfe72c59864 100644
+> --- a/drivers/misc/mic/Kconfig
+> +++ b/drivers/misc/mic/Kconfig
+> @@ -116,7 +116,7 @@ config MIC_COSM
+>
+>  config VOP
+>         tristate "VOP Driver"
+> -       depends on VOP_BUS
+> +       depends on VOP_BUS && VHOST_DPN
+>         select VHOST_RING
+>         select VIRTIO
+>         help
+> diff --git a/drivers/net/caif/Kconfig b/drivers/net/caif/Kconfig
+> index 9db0570c5beb..661c25eb1c46 100644
+> --- a/drivers/net/caif/Kconfig
+> +++ b/drivers/net/caif/Kconfig
+> @@ -50,7 +50,7 @@ config CAIF_HSI
+>
+>  config CAIF_VIRTIO
+>         tristate "CAIF virtio transport driver"
+> -       depends on CAIF && HAS_DMA
+> +       depends on CAIF && HAS_DMA && VHOST_DPN
+>         select VHOST_RING
+>         select VIRTIO
+>         select GENERIC_ALLOCATOR
+> diff --git a/drivers/vdpa/Kconfig b/drivers/vdpa/Kconfig
+> index d0cb0e583a5d..aee28def466b 100644
+> --- a/drivers/vdpa/Kconfig
+> +++ b/drivers/vdpa/Kconfig
+> @@ -14,7 +14,7 @@ if VDPA_MENU
+>
+>  config VDPA_SIM
+>         tristate "vDPA device simulator"
+> -       depends on RUNTIME_TESTING_MENU && HAS_DMA
+> +       depends on RUNTIME_TESTING_MENU && HAS_DMA && VHOST_DPN
+>         select VDPA
+>         select VHOST_RING
+>         select VHOST_IOTLB
+> diff --git a/drivers/vhost/Kconfig b/drivers/vhost/Kconfig
+> index cb6b17323eb2..b3486e218f62 100644
+> --- a/drivers/vhost/Kconfig
+> +++ b/drivers/vhost/Kconfig
+> @@ -12,6 +12,15 @@ config VHOST_RING
+>           This option is selected by any driver which needs to access
+>           the host side of a virtio ring.
+>
+> +config VHOST_DPN
+> +       bool "VHOST dependencies"
+> +       depends on !ARM || AEABI
+> +       default y
+> +       help
+> +         Anything selecting VHOST or VHOST_RING must depend on VHOST_DPN.
+> +         This excludes the deprecated ARM ABI since that forces a 4 byte
+> +         alignment on all structs - incompatible with virtio spec requirements.
+> +
+>  config VHOST
+>         tristate
+>         select VHOST_IOTLB
+> @@ -27,7 +36,7 @@ if VHOST_MENU
+>
+>  config VHOST_NET
+>         tristate "Host kernel accelerator for virtio net"
+> -       depends on NET && EVENTFD && (TUN || !TUN) && (TAP || !TAP)
+> +       depends on NET && EVENTFD && (TUN || !TUN) && (TAP || !TAP) && VHOST_DPN
+>         select VHOST
+>         ---help---
+>           This kernel module can be loaded in host kernel to accelerate
+> @@ -39,7 +48,7 @@ config VHOST_NET
+>
+>  config VHOST_SCSI
+>         tristate "VHOST_SCSI TCM fabric driver"
+> -       depends on TARGET_CORE && EVENTFD
+> +       depends on TARGET_CORE && EVENTFD && VHOST_DPN
+>         select VHOST
+>         default n
+>         ---help---
+> @@ -48,7 +57,7 @@ config VHOST_SCSI
+>
+>  config VHOST_VSOCK
+>         tristate "vhost virtio-vsock driver"
+> -       depends on VSOCKETS && EVENTFD
+> +       depends on VSOCKETS && EVENTFD && VHOST_DPN
+>         select VHOST
+>         select VIRTIO_VSOCKETS_COMMON
+>         default n
+> @@ -62,7 +71,7 @@ config VHOST_VSOCK
+>
+>  config VHOST_VDPA
+>         tristate "Vhost driver for vDPA-based backend"
+> -       depends on EVENTFD
+> +       depends on EVENTFD && VHOST_DPN
+>         select VHOST
+>         select VDPA
+>         help
+> --
+> MST
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
