@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6117619F275
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:27:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C49819F27A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:27:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8olIjikH6qmMgmgJUmmOsQy30uPhgonLG/1r9RgRbPU=; b=VRb0tiEXiFcSIo
-	vR9p9HBN3HUOL9Zryo6CTd9upwsX/GxrHFGa8WXJTYpda+R4ufMAeSP1CkjmzNgr6x9EyFex43tEL
-	5WTf/9Q6d+RrRb5oq3eRKWIWLLLPRV4WRoLzyauymIVL2EMN9hqBNBYVR9jYs4XyHdiDeeaAsPym3
-	qOu/XAo+inV4Rbi2EDx2lPsKz838BDOF8o6tToEWV2SrpUivjrUbd/qUjepf0Z7qMvetCU6scJlOn
-	kPQcvkVPSGqf+xlzyoa5L/u4m+Ij1XTvXVegkn3TkRBUbsEXd4Y4uY6XOryd7pzyDnUUHG2VrlAJy
-	6UDVlRI53DchTtCl8eeA==;
+	List-Owner; bh=zhJmcxBY+UZRlSfLQ5GLRVYZzYBZ1bZDC7PufqpVNiA=; b=YrDSjcg4ZIJWlj
+	R9xZ3jXfjGvIPNVfLHlMwTjLcLC/v+BslgsLjUPkhY5648VymnVa7fEiO3vzUnHF4te4+2+0OCtKC
+	lsa5CvVycGifHJcj3W4mODfltfqSx5AoGubRF8bcbTqZS7kTtyp77km640UzL/Al9ye0VZgemfB0B
+	zTGGGNQTmn23aLbaqtXBYJJ+XWaWw8C20O/kCW4o7T8QZxb7403Fyfnbr+oVK2JB6oD9TPnbPITGB
+	aw5q0mEoBle0OXqpZIythm3cnhmQmyBc5DBPoNz58/2Vgyp/Zn38osw7+43dR3lh0tajG7DFATc1l
+	7Gc6198IS3caiOHIqgMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLO1z-0000Pi-Cn; Mon, 06 Apr 2020 09:26:59 +0000
+	id 1jLO2N-0000nj-Tj; Mon, 06 Apr 2020 09:27:23 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLO1r-0000Os-8T; Mon, 06 Apr 2020 09:26:52 +0000
+ id 1jLO2B-0000km-D5; Mon, 06 Apr 2020 09:27:14 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 49363AE1C;
- Mon,  6 Apr 2020 09:26:45 +0000 (UTC)
-Subject: Re: [PATCH v2 2/4] clk / soc: mediatek: Bind clock and gpu driver for
- mt2712
+ by mx2.suse.de (Postfix) with ESMTP id 8C1E8AE1C;
+ Mon,  6 Apr 2020 09:27:09 +0000 (UTC)
+Subject: Re: [PATCH v2 3/4] clk / soc: mediatek: Bind clock and gpu driver for
+ mt2701
 To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
  mark.rutland@arm.com, ck.hu@mediatek.com, sboyd@kernel.org,
  ulrich.hecht+renesas@gmail.com
 References: <20200401201736.2980433-1-enric.balletbo@collabora.com>
- <20200401201736.2980433-2-enric.balletbo@collabora.com>
+ <20200401201736.2980433-3-enric.balletbo@collabora.com>
 From: Matthias Brugger <mbrugger@suse.com>
 Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -108,16 +108,16 @@ Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  UHUEIsTwPWs2Q87k7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprt
  JG8GNNzMOD4cQ82Ta7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SP
  HxUCQ9Y1Y/Ct
-Message-ID: <b2b3168f-8b73-28da-94e4-38a6f7998bac@suse.com>
-Date: Mon, 6 Apr 2020 11:26:43 +0200
+Message-ID: <718ec9a7-1a3c-4233-cdd1-b243874b37d5@suse.com>
+Date: Mon, 6 Apr 2020 11:27:08 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200401201736.2980433-2-enric.balletbo@collabora.com>
+In-Reply-To: <20200401201736.2980433-3-enric.balletbo@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_022651_590906_104637B4 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20200406_022711_738257_8E729CB8 
+X-CRM114-Status: GOOD (  21.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -125,10 +125,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -141,8 +141,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, drinkcat@chromium.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, drinkcat@chromium.org,
  Michael Turquette <mturquette@baylibre.com>, matthias.bgg@kernel.org,
  linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
  linux-mediatek@lists.infradead.org, Allison Randal <allison@lohutok.net>,
@@ -161,8 +161,7 @@ On 01/04/2020 22:17, Enric Balletbo i Serra wrote:
 > Now that the mmsys driver is the top-level entry point for the
 > multimedia subsystem, we could bind the clock and the gpu driver on
 > those devices that is expected to work, so the drm driver is
-> intantiated by the mmsys driver and display, hopefully, working again on
-> those devices.
+> intantiated by the mmsys driver and display, hopefully, working again.
 > 
 > Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 > Reviewed-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
@@ -181,17 +180,24 @@ Matthias
 > Changes in v2:
 > - Remove of_match_table
 > 
->  drivers/clk/mediatek/clk-mt2712-mm.c | 9 ++-------
+>  drivers/clk/mediatek/clk-mt2701-mm.c | 9 ++-------
 >  drivers/soc/mediatek/mtk-mmsys.c     | 8 ++++++++
 >  2 files changed, 10 insertions(+), 7 deletions(-)
 > 
-> diff --git a/drivers/clk/mediatek/clk-mt2712-mm.c b/drivers/clk/mediatek/clk-mt2712-mm.c
-> index 1c5948be35f3..5519c3d68c1f 100644
-> --- a/drivers/clk/mediatek/clk-mt2712-mm.c
-> +++ b/drivers/clk/mediatek/clk-mt2712-mm.c
-> @@ -128,9 +128,10 @@ static const struct mtk_gate mm_clks[] = {
+> diff --git a/drivers/clk/mediatek/clk-mt2701-mm.c b/drivers/clk/mediatek/clk-mt2701-mm.c
+> index 054b597d4a73..cb18e1849492 100644
+> --- a/drivers/clk/mediatek/clk-mt2701-mm.c
+> +++ b/drivers/clk/mediatek/clk-mt2701-mm.c
+> @@ -79,16 +79,12 @@ static const struct mtk_gate mm_clks[] = {
+>  	GATE_DISP1(CLK_MM_TVE_FMM, "mm_tve_fmm", "mm_sel", 14),
+>  };
 >  
->  static int clk_mt2712_mm_probe(struct platform_device *pdev)
+> -static const struct of_device_id of_match_clk_mt2701_mm[] = {
+> -	{ .compatible = "mediatek,mt2701-mmsys", },
+> -	{}
+> -};
+> -
+>  static int clk_mt2701_mm_probe(struct platform_device *pdev)
 >  {
 > +	struct device *dev = &pdev->dev;
 > +	struct device_node *node = dev->parent->of_node;
@@ -199,51 +205,42 @@ Matthias
 >  	int r;
 > -	struct device_node *node = pdev->dev.of_node;
 >  
->  	clk_data = mtk_alloc_clk_data(CLK_MM_NR_CLK);
+>  	clk_data = mtk_alloc_clk_data(CLK_MM_NR);
 >  
-> @@ -146,16 +147,10 @@ static int clk_mt2712_mm_probe(struct platform_device *pdev)
->  	return r;
->  }
->  
-> -static const struct of_device_id of_match_clk_mt2712_mm[] = {
-> -	{ .compatible = "mediatek,mt2712-mmsys", },
-> -	{}
-> -};
-> -
->  static struct platform_driver clk_mt2712_mm_drv = {
->  	.probe = clk_mt2712_mm_probe,
+> @@ -108,7 +104,6 @@ static struct platform_driver clk_mt2701_mm_drv = {
+>  	.probe = clk_mt2701_mm_probe,
 >  	.driver = {
->  		.name = "clk-mt2712-mm",
-> -		.of_match_table = of_match_clk_mt2712_mm,
+>  		.name = "clk-mt2701-mm",
+> -		.of_match_table = of_match_clk_mt2701_mm,
 >  	},
 >  };
 >  
 > diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
-> index 05e322c9c301..c7d3b7bcfa32 100644
+> index c7d3b7bcfa32..cacafe23c823 100644
 > --- a/drivers/soc/mediatek/mtk-mmsys.c
 > +++ b/drivers/soc/mediatek/mtk-mmsys.c
 > @@ -80,6 +80,10 @@ struct mtk_mmsys_driver_data {
 >  	const char *clk_driver;
 >  };
 >  
-> +static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
-> +	.clk_driver = "clk-mt2712-mm",
+> +static const struct mtk_mmsys_driver_data mt2701_mmsys_driver_data = {
+> +	.clk_driver = "clk-mt2701-mm",
 > +};
 > +
->  static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
->  	.clk_driver = "clk-mt8173-mm",
+>  static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
+>  	.clk_driver = "clk-mt2712-mm",
 >  };
-> @@ -319,6 +323,10 @@ static int mtk_mmsys_probe(struct platform_device *pdev)
+> @@ -323,6 +327,10 @@ static int mtk_mmsys_probe(struct platform_device *pdev)
 >  }
 >  
 >  static const struct of_device_id of_match_mtk_mmsys[] = {
 > +	{
-> +		.compatible = "mediatek,mt2712-mmsys",
-> +		.data = &mt2712_mmsys_driver_data,
+> +		.compatible = "mediatek,mt2701-mmsys",
+> +		.data = &mt2701_mmsys_driver_data,
 > +	},
 >  	{
->  		.compatible = "mediatek,mt8173-mmsys",
->  		.data = &mt8173_mmsys_driver_data,
+>  		.compatible = "mediatek,mt2712-mmsys",
+>  		.data = &mt2712_mmsys_driver_data,
 > 
 
 _______________________________________________
