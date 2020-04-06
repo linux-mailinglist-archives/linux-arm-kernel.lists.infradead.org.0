@@ -2,97 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91E8119F242
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:15:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1FD219F244
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8LpAzk+GNJjoTylcH9+TDC0JkEW7PHCmLPcRk1HVzPY=; b=IqFjrJqV699xwQxmUj42bqJy0
-	jEc7RavvfNoPx5h3wprc+DcoGZWxHKJ5Ku56fr1wIkrhIdf5K23hj5YAZ7RB9Z3HKYN/7sY3mubtk
-	oos+YpezvuBoWSR6P/XXBNFZ/EL6TjCTcGdDG3YyqyLsk71zWfBlr94k+mK1Dsiqk/yYY3VMFFJOh
-	r13ZK3cLli81fG+WWCEKA5sGirKGxDqJRFRqPGuRXbhwTeDFlEbWfSxulzfek2KauDyH9UUxI4+33
-	4BxunB7ElG4AS3RHxNVcjXI1nYGkuC+jQu0J2QKeFzTMTTm4XeMSziUMDQ/03eTdVCK/5shDL/6WX
-	xm59M+9IA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E5DVPN4KMzvQ6VvJEsS2ZNvrWFBNYRgou4+/5HMPLxA=; b=cbqfHLutmDuTCb
+	XPDsOG8VLLf3PMv2AU+2xUb4RXWkkjEUvYuCj+ynSJ+A0AvTy5RMbczfwxFcEKu6YblpY1B845n70
+	P4drdRmMGrKyisFG4F2lObytAEOH4BQoWWd2mjbnmG9iwZ2a3iG32+l9zKrZLGL+D7WBJ2kdf1lsI
+	QWSeBZlTBiWlzJXtctEMx6/ppzkkQijbeIgZ6RvM++eQvNx0S5/3wV3Tx67Ht0tuHZKJEyDxloDKs
+	YoCD1FuM9gqUVZ+E/O9pLISmcc9VS5qx7gIhvJZqq4R970IqoRV9oDU3HSnIbzh0UmVjV/4Jz3dHk
+	uBawu9DvP5/iAHmIv98g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLNqn-0001hA-Bg; Mon, 06 Apr 2020 09:15:25 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1jLNrS-00023a-Aa; Mon, 06 Apr 2020 09:16:06 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLNqe-0001Ms-KV
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 09:15:19 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id DB10B58014F;
- Mon,  6 Apr 2020 05:15:10 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 06 Apr 2020 05:15:10 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=Yo+kk4ssQ5zTwLnaP0Ele1F1y+q
- 26rLa/dshj8KwXRs=; b=Ro214fb4noi/VPI5Awh/ibsEBUH7Z0GDSeRdL6qHYNE
- WSGTgsQP5+6VhuWw9Ijk1lgaOPmNONRf3EXjX8sa2BbJjqInAyBuf7Uv+Iy9M5+L
- usgr7yewwEJCyjQBbXkhtq1iAOxPOgrQKjQn97RIGsIpyIvAbly7HOg72t48Anxc
- 8DH12mBcovs+0oMyKWConql2bipT4Xc3eACcVNNoXxKaaaWJfQMbqRSSel++g22P
- 88fpGjS/9ACxPKF+9zWSFkDNDfukHxY7Wq/CvlnVHC40a2M4Am/eO/w6YbA0mu2x
- vcyPGvsuxx1bp4fA/89o74GRTRPjrTba2A8I+WhmUTQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Yo+kk4
- ssQ5zTwLnaP0Ele1F1y+q26rLa/dshj8KwXRs=; b=FR5Grp1IpF2SHehuXf4r3T
- jtjEpQUxE/4oUH49uBfa3ICmSkitQx0xtqkdtzt9M/hCnqxkETqV7RBMO/0CkIu9
- xeBKOs9HQS2snUBhB3iidR9TZaoU3kG4SaTcsr8RKXhgLrHih+Muo4tTin/yFwEP
- O6tLMUSLGUkCCNCRi0u9oLIkmmJoAUkyU/5TlYtTZsTBZmKxrVW74qoGeI5nnS+5
- 5VObxN3qoh1brt1cxFT5fdkNMERQrJ5AcqzOzqLGEtHAgV7TZaz7z+Si/AY3TobL
- vZ4vzoDsgtCsa17DkciA/hIEqII76xDso8J5lB5yuSC5gLhGxnwXssch2lh5Jm2g
- ==
-X-ME-Sender: <xms:HfOKXr5Nyxk6k1GVM9huhudZON1Hd0xo4IV5rT93EZvHaC1VzD3jTw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudefgdduhecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
- rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
- hordhtvggthh
-X-ME-Proxy: <xmx:HfOKXn0d3TaUbMsAZPubP-kvk10FGNh38AW9nbJRP30Fl6YIAcNAAg>
- <xmx:HfOKXnn4plu2WCUixfRxj3e5hNUQWt_Gk-ZHD2dx30OJhCPOGFUKQw>
- <xmx:HfOKXggQ-btirr7O0G8WO0ikBaRltjPaSejWBznZ5pkiSr3u8c_CCg>
- <xmx:HvOKXmsisu5MBDr0BCoB62pLG6EMM8T4AHp8Oc61JSeoAWyA-6YXhw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7C6C9328005D;
- Mon,  6 Apr 2020 05:15:09 -0400 (EDT)
-Date: Mon, 6 Apr 2020 11:15:07 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH v7 0/6] Allwinner sun6i message box support
-Message-ID: <20200406091507.jojdzjidru64sjhm@gilmour.lan>
-References: <20200223040853.2658-1-samuel@sholland.org>
- <59dc1ee9-a369-7cf9-df6a-4b5b99e24324@sholland.org>
+ id 1jLNrM-00023M-Hj
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 06 Apr 2020 09:16:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description;
+ bh=pozUv80YoSRHHvx9sVkpMZ7CBAgwyFGYde+t9E6Fl08=; b=a3AzdDdzO/gg8dpEwGMPQCN9wH
+ Ud3ROlUqDiusUwrXUeDg9X7pdmbTCnVf60Dl5wrm5WfGx49mekafeM2aT33NabLWpZisI6LbXWPrv
+ Vq+9tSpLzJPEE3xetdYp08N9BU0iJ0NJR8nU4Z+jDrV1tazi1RSLKTF0RogSgxD3Dbqd+hdPQ34+g
+ u54c/1tSUYMg8e31V0VXkviN6ZnDJQDVLw5YzdWBOK6wbcsGyNyDGTuC1wT4A0OrX52/KG3/ZTUOr
+ 8pTAMkjI4hMakJ+niz+ekYs0hoSgjCa15wq13xCI/Ufbv9u/xbiMWT5GbsCsiJis9gwUF+7rFIu5W
+ 89t15qxw==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLNrG-00085S-6Z; Mon, 06 Apr 2020 09:15:54 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 6F5D23011DD;
+ Mon,  6 Apr 2020 11:15:51 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 3E3382BAC6A65; Mon,  6 Apr 2020 11:15:51 +0200 (CEST)
+Date: Mon, 6 Apr 2020 11:15:51 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: "chengjian (D)" <cj.chengjian@huawei.com>
+Subject: Re: Why is text_mutex used in jump_label_transform for x86_64
+Message-ID: <20200406091551.GG20730@hirez.programming.kicks-ass.net>
+References: <f7f686f2-4f28-1763-dd19-43eff6a5a8f2@huawei.com>
+ <20200320102709.GC20696@hirez.programming.kicks-ass.net>
+ <28edc3d5-83a3-43cb-3e64-7d0525d430f3@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <59dc1ee9-a369-7cf9-df6a-4b5b99e24324@sholland.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_021517_054586_DB4347B7 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+Content-Disposition: inline
+In-Reply-To: <28edc3d5-83a3-43cb-3e64-7d0525d430f3@huawei.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,68 +67,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
- devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3893452004733694367=="
+Cc: jakub.kicinski@netronome.com, Kees Cook <keescook@chromium.org>,
+ "Xiexiuqi \(Xie XiuQi\)" <xiexiuqi@huawei.com>, Will Deacon <will@kernel.org>,
+ "x86@kernel.org" <x86@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ bobo.shaobowang@huawei.com, Li Bin <huawei.libin@huawei.com>,
+ andrew.murray@arm.com, bristot@redhat.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============3893452004733694367==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="xdzfhjy327jx4nkm"
-Content-Disposition: inline
-
-
---xdzfhjy327jx4nkm
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Apr 01, 2020 at 11:55:34AM -0500, Samuel Holland wrote:
-> On 2/22/20 10:08 PM, Samuel Holland wrote:
-> > Samuel Holland (6):
-> >   dt-bindings: mailbox: Add a binding for the sun6i msgbox
-> >   mailbox: sun6i-msgbox: Add a new mailbox driver
->
-> These two patches have been applied for 5.7[1], so the DTS changes should be
-> ready to apply as well.
->
-> [1]:
-> https://lore.kernel.org/lkml/CABb+yY0-q+5+pqP-rBHCYpw-LmT+h80+OU26XL34fTrXhO+T3Q@mail.gmail.com/
-
-Sorry, I missed that it was merged and sent for a PR.
-
-I've queued the DT changes for 5.8
-
-Maxime
-
---xdzfhjy327jx4nkm
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXorzGwAKCRDj7w1vZxhR
-xfkjAQDQamF1U+7L7tVY2lQH6acuSJ6qmfCYNC0tJ9ZUu1NNmQD9H2qUHh5Aqh+d
-wYXK+j0yeHQAgMu9TwBZ32Dg/eeKRwU=
-=ay2J
------END PGP SIGNATURE-----
-
---xdzfhjy327jx4nkm--
-
-
---===============3893452004733694367==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3893452004733694367==--
-
+T24gTW9uLCBBcHIgMDYsIDIwMjAgYXQgMDQ6Mzk6MTFQTSArMDgwMCwgY2hlbmdqaWFuIChEKSB3
+cm90ZToKPiAKPiBPbiAyMDIwLzMvMjAgMTg6MjcsIFBldGVyIFppamxzdHJhIHdyb3RlOgo+ID4g
+SXQgZGVwZW5kcyBvbiB0aGUgYXJjaGl0ZWN0dXJlIGRldGFpbHMgb2YgaG93IHNlbGYtbW9kaWZ5
+aW5nIGNvZGUgd29ya3MuCj4gPiBJbiBwYXJ0aWN1bGFyLCB4ODYgaXMgYSB2YXJpYWJsZSBpbnN0
+cnVjdGlvbiBsZW5ndGggYXJjaGl0ZWN0dXJlIGFuZAo+ID4gbmVlZHMgZXh0cmVtZSBjYXJlIC0t
+IGl0J3MgaW1wbGVtZW50YXRpb24gcmVxdWlyZXMgdGhlcmUgb25seSBiZSBhCj4gPiBzaW5nbGUg
+dGV4dCBtb2RpZmllciBhdCBhbnkgb25lIHRpbWUsIGhlbmNlIHRoZSB1c2Ugb2YgdGV4dF9tdXRl
+eC4KPiA+IAo+ID4gQVJNNjQgT1RPSCBpcywgbGlrZSBtb3N0IFJJU0MgYmFzZWQgYXJjaGl0ZWN0
+dXJlcywgYSBmaXhlZCB3aWR0aAo+ID4gaW5zdHJ1Y3Rpb24gYXJjaGl0ZWN0dXJlLiBBbmQgaW4g
+cGFydGljdWxhciBpdCBjYW4gcmUtd3JpdGUgY2VydGFpbgo+ID4gKGJyYW5jaCkgaW5zdHJ1Y3Rp
+b25zIHdpdGggaW1wdW5pdHkgKHNlZSB0aGVpcgo+ID4gYWFyY2g2NF9pbnNuX3BhdGNoX3RleHRf
+bm9zeW5jKCkpLiBXaGljaCBpcyB3aHkgdGhleSBkb24ndCBuZWVkCj4gPiBhZGRpdGlvbmFsIHNl
+cmlhbGl6YXRpb24uCj4gCj4gSGksIFBldGVyCj4gCj4gVGhhbmsgeW91IHZlcnkgbXVjaCBmb3Ig
+eW91ciByZXBseS4KPiAKPiBYODYgaXMgYSB2YXJpYWJsZS1sZW5ndGggaW5zdHJ1Y3Rpb24sIG9u
+bHkgb25lIGJ5dGUgbW9kaWZpY2F0aW9uIG9mIHRoZQo+IGluc3RydWN0aW9uCj4gY2FuIGJlIHJl
+Z2FyZGVkIGFzIGF0b21pYy4gc28gd2UgbXVzdCBiZSB2ZXJ5IGNhcmVmdWwgd2hlbiBtb2RpZnlp
+bmcKPiBpbnN0cnVjdGlvbnMKPiBjb25jdXJyZW50bHkuCgpDbG9zZSBlbm91Z2guCgo+IEZvciBv
+dGhlciBhcmNoaXRlY3R1cmVzIHN1Y2ggYXMgQVJNNjQsIHRoZSBtb2RpZmljYXRpb24gb2Ygc29t
+ZSBpbnN0cnVjdGlvbnMKPiBjYW4gYmUKPiBjb25zaWRlcmVkIGF0b21pYywgKEVnLiBub3AgLT4g
+am1wL2IpLiBUaGUgc2V0IG9mIGluc3RydWN0aW9ucyB0aGF0IGNhbiBiZQo+IGV4ZWN1dGVkCj4g
+Ynkgb25lIHRocmVhZCBvZiBleGVjdXRpb24gYXMgdGhleSBhcmUgYmVpbmcgbW9kaWZpZWQgYnkg
+YW5vdGhlciB0aHJlYWQgb2YKPiBleGVjdXRpb24KPiB3aXRob3V0IHJlcXVpcmluZyBleHBsaWNp
+dCBzeW5jaHJvbml6YXRpb24uCj4gCj4gSW4gQVJNNjQgQXJjaGl0ZWN0dXJlIFJlZmVyZW5jZSBN
+YW51YWwsIEkgZmluZCB0aGF0Ogo+IMKgwqDCoCBDb25jdXJyZW50IG1vZGlmaWNhdGlvbiBhbmQg
+ZXhlY3V0aW9uIG9mIGluc3RydWN0aW9ucyBjYW4gbGVhZCB0byB0aGUKPiByZXN1bHRpbmcgaW5z
+dHJ1Y3Rpb24gcGVyZm9ybWluZyBhbnkgYmVoYXZpb3IKPiDCoMKgwqAgdGhhdCBjYW4gYmUgYWNo
+aWV2ZWQgYnkgZXhlY3V0aW5nIGFueSBzZXF1ZW5jZSBvZiBpbnN0cnVjdGlvbnMgdGhhdCBjYW4K
+PiBiZSBleGVjdXRlZCBmcm9tIHRoZSBzYW1lIEV4Y2VwdGlvbiBsZXZlbCwKPiDCoMKgwqAgZXhj
+ZXB0IHdoZXJlIGVhY2ggb2YgdGhlIGluc3RydWN0aW9uIGJlZm9yZSBtb2RpZmljYXRpb24gYW5k
+IHRoZQo+IGluc3RydWN0aW9uIGFmdGVyIG1vZGlmaWNhdGlvbiBpcyBvbmUgb2YgYSBCLCBCTCwg
+QlJLLAo+IMKgwqDCoCBIVkMsIElTQiwgTk9QLCBTTUMsIG9yIFNWQyBpbnN0cnVjdGlvbi4KPiDC
+oMKgwqAgRm9yIHRoZSBCLCBCTCwgQlJLLCBIVkMsIElTQiwgTk9QLCBTTUMsIGFuZCBTVkMgaW5z
+dHJ1Y3Rpb25zIHRoZQo+IGFyY2hpdGVjdHVyZSBndWFyYW50ZWVzIHRoYXQsIGFmdGVyIG1vZGlm
+aWNhdGlvbiBvZiB0aGUKPiDCoMKgwqAgaW5zdHJ1Y3Rpb24sIGJlaGF2aW9yIGlzIGNvbnNpc3Rl
+bnQgd2l0aCBleGVjdXRpb24gb2YgZWl0aGVyOgo+IMKgwqDCoCDigKIgVGhlIGluc3RydWN0aW9u
+IG9yaWdpbmFsbHkgZmV0Y2hlZC4KPiDCoMKgwqAg4oCiIEEgZmV0Y2ggb2YgdGhlIG1vZGlmaWVk
+IGluc3RydWN0aW9uCj4gCj4gU28gd2UgY2FuIHNhZmVseSBtb2RpZnkganVtcF9sYWJlbCBmb3Ig
+QVJNNjQoZnJvbSBOT1AgdG8gYiBvciBmb3JtIGIgdG8KPiBOT1ApLgo+IAo+IElzIG15IHVuZGVy
+c3RhbmRpbmcgY29ycmVjdD8KCkkgdGhpbmsgc287IGJ1dCBJJ20gcmVhbGx5IG5vdCBtdWNoIG9m
+IGFuIEFSTTY0IHBlcnNvbi4gRldJVyBJIHRoaW5rIEkKcmVtZW1iZXIgV2lsbCBzYXlpbmcgdGhl
+IHNhbWUgaXMgdHJ1ZSBvZiBBUk0gKDMyYml0KSBhbmQgdGhleSBjb3VsZAppbXBsZW1lbnQgdGhl
+IHNhbWUgb3B0aW1pemF0aW9uLCBidXQgc28gZmFyIG5vYm9keSBoYXMgYm90aGVyZWQgZG9pbmcK
+c28uIEJ1dCBwbGVhc2UsIGFzayBhbiBBUk02NCBtYWludGFpbmVyIGFuZCBkb24ndCB0YWtlIG15
+IHdvcmQgZm9yIHRoaXMuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
