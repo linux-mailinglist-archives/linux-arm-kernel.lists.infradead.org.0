@@ -2,83 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC77C19F54D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:59:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA06019F577
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 14:03:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c2wQXZXcTA2DE/kwngRwEgrVFb+z+wFYC2QyReLV7AI=; b=N22a2c3mfsYS+i
-	WvqGCu9MzdZ+weQZD27MNRnXFIJHNnoVjOyNccFg0aGcv45piwEYZwellz7M5+LWEAXAQds2jO01/
-	bY0lMIxy4ddx47Z6gS2RYgRSotVSho3g7HqJgqj8j7BrkKB0q67Gvbr4mtM/GejkT51MgSGqQbctD
-	d1SvvnEXupOTnkU71lt2bFDE8257oW4NAUGqbqTosTXteP3njkXzEiLkCCvbraQFJLEEGlAuxh3Op
-	mDAKYh5QPqRsFEBTDrLbVGe7+VIAUojy/tXNPr9ea1smDTBNWARoN12F+R+exZ+dqf6ncq9wgTSSF
-	yUdVmQTdyYTl13aKO3xQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=caZlzazEHR0hTp58z9xbtjppcsQ7k2XFVvsATdP1rKM=; b=p+m
+	MkQpBEoAN86chUH3l9zcgyZ+hF/mT2FIGlQq1+7rVHDSnYEFPhgxtkF2zIA/o+i6tkdOW38rzQQNj
+	NN19jU+YUvz9ynMmv6EwB5F9lG73cRIyQfbYWXTzNC5XP5XY9PksPZ7CouwEcys6Lf1ucf3UP5C4v
+	tVXtKDf196aw0s8ZXeaKVRqyzDedmielr7juy4GcvNxDWWXuoeUMWGC2iVsELzzwVJbktOCyygogN
+	dSbWk/5yr/LGGsm2RLU0acxGK/lWMf0S65KgToAlWzqvUygcvHm92r2HLvdsHJYa+60ni6GvlUu5C
+	Jhfnq3JRFUZaTvCiMGC4SrKmBIN79EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLQPV-0000BQ-Ap; Mon, 06 Apr 2020 11:59:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jLQTZ-0003L4-8B; Mon, 06 Apr 2020 12:03:37 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLQPO-0000At-VV
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 11:59:20 +0000
-Received: from mail-io1-f54.google.com (mail-io1-f54.google.com
- [209.85.166.54])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 982492078A
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  6 Apr 2020 11:59:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586174358;
- bh=INBmFqMnPnYwBnmq9fE0qBoQUuyMDJmBTkGmVLR6PgI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=zphtZeZCIVA8+2pfA6cNbxbhgknCgegsb7SA93Mol6axXNNmazarRb7LaVTpZpDya
- sZvynyJMriBIXFWEVUl3O0PZDoAbpurCT5jvdkGnDnV+e1KD0+75yF9nF1EU3uBu9Y
- dQrsMV/2wgAm+M+E4B9NIHFruVHYIHY4SEXblF1o=
-Received: by mail-io1-f54.google.com with SMTP id n20so1592601ioa.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 04:59:18 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZ4/vkj/vsXu0eVlrN5FrKfl2LF84F5QDpuyzeHp2vyswSQsK3A
- jxs+UVIm7yl7m8bmaPKwSYenkIrDKnTMKXPkk9o=
-X-Google-Smtp-Source: APiQypJz0OEtYujbR7iine9xuBKkfeyqVPQ+jUYZluuEMFR3kYewPuo9cQnrkW3MDy1Ob3mb/SNfyjoQ8u1U3xEBTgs=
-X-Received: by 2002:a05:6602:1550:: with SMTP id
- h16mr18761797iow.171.1586174358002; 
- Mon, 06 Apr 2020 04:59:18 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200404073047.17898-1-ardb@kernel.org>
- <20200406110401.GA4650@red-moon.cambridge.arm.com>
- <CAMj1kXEsROAg5T_qhk4DY7B0y3nXLFzyoT08SSztGWOa+e2kmQ@mail.gmail.com>
- <20200406113235.GB4650@red-moon.cambridge.arm.com>
-In-Reply-To: <20200406113235.GB4650@red-moon.cambridge.arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 6 Apr 2020 13:59:07 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXHt0yhnFE=fVZm0p3iyC20s=j=8Z4Gzcmp_cqx3P3N5Dw@mail.gmail.com>
-Message-ID: <CAMj1kXHt0yhnFE=fVZm0p3iyC20s=j=8Z4Gzcmp_cqx3P3N5Dw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: iort: take _DMA methods into account for named
- components
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+ id 1jLQTI-0003Ja-Fw
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 12:03:22 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A02FB1A0DCF;
+ Mon,  6 Apr 2020 14:03:16 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 85B791A0DC9;
+ Mon,  6 Apr 2020 14:03:16 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id CAD88204E6;
+ Mon,  6 Apr 2020 14:03:14 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>
+Subject: [PATCH v3 0/8] interconnect: Add imx support via devfreq
+Date: Mon,  6 Apr 2020 15:03:05 +0300
+Message-Id: <cover.1586174566.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_045919_055276_97D41788 
-X-CRM114-Status: GOOD (  21.34  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200406_050320_809694_280FEE34 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,69 +65,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- robin.murphy@arm.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Martin Kepplinger <martink@posteo.de>,
+ Silvano di Ninno <silvano.dininno@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
+ Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 6 Apr 2020 at 13:32, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Mon, Apr 06, 2020 at 01:16:15PM +0200, Ard Biesheuvel wrote:
-> > On Mon, 6 Apr 2020 at 13:04, Lorenzo Pieralisi
-> > <lorenzo.pieralisi@arm.com> wrote:
-> > >
-> > > On Sat, Apr 04, 2020 at 09:30:47AM +0200, Ard Biesheuvel wrote:
-> > > > Where IORT nodes for named components can describe simple DMA limits
-> > > > expressed as the number of address bits a device can driver, _DMA methods
-> > > > in AML can express more complex topologies, involving DMA translation in
-> > > > particular.
-> > > >
-> > > > Currently, we only take this _DMA method into account if it appears on a
-> > > > ACPI device node describing a PCIe root complex, but it is perfectly
-> > > > acceptable to attach them to named components as well, so let's ensure
-> > > > we take them into account in those cases too.
-> > >
-> > > ACPI spec v6.3, 6.2.4 _DMA:
-> > >
-> > > "_DMA is only defined under devices that represent buses"
-> > >
-> >
-> > Sure. But ACPI0004 module devices are also bus nodes, so that
-> > statement does not exclude named components that are defined under
-> > such a module device.
->
-> Yes. _DMA is valid only if a _CRS is present, ACPI0004 does not seem
-> to _require_ a _CRS to be considered valid.
->
+This series adds interconnect scaling support for imx8m series chips. It uses a
+per-SOC interconnect provider layered on top of multiple instances of devfreq
+for scalable nodes along the interconnect.
 
-How is that relevant? Any node that has a _DMA must have a _CRS as
-well. Some nodes that don't have a _DMA may not have a _CRS either.
-But that does not disqualify a ACPI0004 that *does* have both from
-being considered a bus node, no? Or is that not what you are saying?
-
-> It is an example. Better to make the _DMA definition more robust
-> and linked to ACPI0004, for instance.
->
-
-If there is wording in the spec that says that only APCI0004 or
-PNP0A03/PNP0A08 should be considered to be bus nodes, then we should
-probably do that. But I wonder if that is really the intent, and
-whether vendors could denote bus nodes using their own HID namespace
+Existing qcom interconnect providers mostly translate bandwidth requests into
+firmware calls but equivalent firmware on imx8m is much thinner. Scaling
+support for individual nodes is implemented as distinct devfreq drivers
 instead.
 
-> > > This should probably be updated and _DMA usage clarified - we can't
-> > > leave it open to interpretation.
-> > >
-> >
-> > Clarification is always better.
->
-> Yes, we should be able to get this in as an Errata, better to be clear
-> given that it is something that will be used extensively across
-> platforms.
->
+The imx interconnect provider doesn't communicate with devfreq directly
+but rather computes "minimum frequencies" for nodes along the path and
+creates dev_pm_qos requests.
+
+Since there is no single devicetree node that can represent the
+"interconnect" the main NOC is picked as the "interconnect provider" and
+will probe the interconnect platform device if #interconnect-cells is
+present. This avoids introducing "virtual" devices but it means that DT
+bindings of main NOC includes properties for both devfreq and
+interconnect.
+
+Only the ddrc and main noc are scalable right now but more can be added.
+
+Also available on a github branch (with various unrelated changes):
+	https://github.com/cdleonard/linux/tree/next_leonard
+
+Changes since v2:
+* Fix unused variable in imx_bus_target
+* Sort imx before qcom in interconnect makefile/kconfig
+* Use icc_std_aggregate
+* Adjust prints in imx interconnect core.
+* Adjust included guarts for dt bindings
+* Remove imx_icc_unregister warning when there are active users, should
+be handled inside core instead.
+Link: https://patchwork.kernel.org/cover/11469157/
+
+Changes since v1:
+* Fix dt_bindings_check for yaml and reduce example to fit current
+features
+* Fix comment spelling in imx-bus
+* Drop mentions of passive governor from imx-bus (will repost later)
+* Improve error message in imx_bus_init_icc
+* Use dev_pm_opp_set_rate
+Link: https://patchwork.kernel.org/cover/11458971/
+
+Changes since RFCv6:
+* Allow building interconnect drivers as modules
+* Handle icc_provider_del errors in imx_icc_unregister (like EBUSY).
+* Rename imx-devfreq to imx-bus, similar to exynos-bus
+* Explain why imx bus clock enabling is not required
+Link: https://patchwork.kernel.org/cover/11244421/
+
+Changes since RFCv5:
+* Replace scanning for interconnect-node-id with explicit
+scalable-nodes/scalable-node-ids property on NoC.
+* Now passes make `dtbs_check`
+* Remove struct imx_icc_provider
+* Switch to of_icc_xlate_onecell
+* Use of_find_device_by_node to fetch QoS target, this causes fewer probe
+deferrals, removes dependency on devfreq API and even allows reloading ddrc
+module at runtime
+* Add imx_icc_node_destroy helper
+* Remove 0/1 on DEFINE_BUS_SLAVE/MASTER which created spurious links
+Link: https://patchwork.kernel.org/cover/11222015/
+
+Changes since RFCv4:
+* Drop icc proxy nonsense
+* Make devfreq driver for NOC probe the ICC driver if
+#interconnect-cells is present
+* Move NOC support to interconnect series and rename the node in DT
+* Add support for all chips at once, differences are not intereseting
+and there is more community interest for 8mq than 8mm.
+Link: https://patchwork.kernel.org/cover/11111865/
+
+Changes since RFCv3:
+* Remove the virtual "icc" node and add devfreq nodes as proxy providers
+* Fix build on 32-bit arm (reported by kbuilt test robot)
+* Remove ARCH_MXC_ARM64 (never existed in upstream)
+* Remove _numlinks, calculate instead
+* Replace __BUSFREQ_H header guard
+* Improve commit message and comment spelling
+* Fix checkpatch issues
+Link to RFCv3: https://patchwork.kernel.org/cover/11078671/
+
+Changes since RFCv2 and initial work by Alexandre Bailon:
+* Relying on devfreq and dev_pm_qos instead of CLK
+* No more "platform opp" stuff
+* No more special suspend handling: use suspend-opp on devfreq instead
+* Replace all mentions of "busfreq" with "interconnect"
+Link to v2: https://patchwork.kernel.org/cover/11021563/
+
+Leonard Crestez (8):
+  dt-bindings: interconnect: Add bindings for imx8m noc
+  PM / devfreq: Add generic imx bus scaling driver
+  PM / devfreq: imx: Register interconnect device
+  interconnect: Add imx core driver
+  interconnect: imx: Add platform driver for imx8mm
+  interconnect: imx: Add platform driver for imx8mq
+  interconnect: imx: Add platform driver for imx8mn
+  arm64: dts: imx8m: Add NOC nodes
+
+ .../bindings/interconnect/fsl,imx8m-noc.yaml  | 101 +++++++
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  24 ++
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi     |  24 ++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi     |  24 ++
+ drivers/devfreq/Kconfig                       |   8 +
+ drivers/devfreq/Makefile                      |   1 +
+ drivers/devfreq/imx-bus.c                     | 179 +++++++++++
+ drivers/interconnect/Kconfig                  |   1 +
+ drivers/interconnect/Makefile                 |   1 +
+ drivers/interconnect/imx/Kconfig              |  17 ++
+ drivers/interconnect/imx/Makefile             |   9 +
+ drivers/interconnect/imx/imx.c                | 284 ++++++++++++++++++
+ drivers/interconnect/imx/imx.h                |  61 ++++
+ drivers/interconnect/imx/imx8mm.c             | 105 +++++++
+ drivers/interconnect/imx/imx8mn.c             |  94 ++++++
+ drivers/interconnect/imx/imx8mq.c             | 103 +++++++
+ include/dt-bindings/interconnect/imx8mm.h     |  50 +++
+ include/dt-bindings/interconnect/imx8mn.h     |  41 +++
+ include/dt-bindings/interconnect/imx8mq.h     |  48 +++
+ 19 files changed, 1175 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/interconnect/fsl,imx8m-noc.yaml
+ create mode 100644 drivers/devfreq/imx-bus.c
+ create mode 100644 drivers/interconnect/imx/Kconfig
+ create mode 100644 drivers/interconnect/imx/Makefile
+ create mode 100644 drivers/interconnect/imx/imx.c
+ create mode 100644 drivers/interconnect/imx/imx.h
+ create mode 100644 drivers/interconnect/imx/imx8mm.c
+ create mode 100644 drivers/interconnect/imx/imx8mn.c
+ create mode 100644 drivers/interconnect/imx/imx8mq.c
+ create mode 100644 include/dt-bindings/interconnect/imx8mm.h
+ create mode 100644 include/dt-bindings/interconnect/imx8mn.h
+ create mode 100644 include/dt-bindings/interconnect/imx8mq.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
