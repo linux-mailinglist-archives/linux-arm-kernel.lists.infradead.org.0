@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEBA219FB45
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:20:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D599619FBC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:38:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v64sgTmE99NZAwdhawpELFRaYa9DguFQSCtmyYxpebA=; b=tCcrUzm0jOM/Os
-	mrhnXxsNfrjURsovfQPosg1wrs1f9SF7m6EjKo0dIUyp6B+ugGwiXZp92vBJBjwtFi0kqCzOCP1FO
-	ON+PtswATSeB6kUR40nLaXkYzlD/WaBA+qb3gBX6UVIbpzwZEj9SheTiVTb+Ff73DJs4xwOr3zm9B
-	gUKMPIFHJLbuWa+aI2sggXLXseAYOIRk10G8WDW7sanY/gsYLJsdzTJg2pqI6wPkaKKQh79MJ8Mfv
-	+2HicmUehE9Zcb5NIjOV+K4OvFmxTvzR7r/DSA0xcZJvUtIVJ8A5hViLWX43nLxKG+J5tHbPpGdjX
-	fd6/hnBlAKyFw5YpbCEw==;
+	List-Owner; bh=HwS1HhNEQGwSB/0oRh08gE6xa+9BITB3h3LxR3cq6cM=; b=kfMQTzOq65X+RH
+	TZbDdKgbHtxbpKt7wul/2jFz4EUN5NLjIIjcRAlbXZXFvM+U0HAccspkRmDGp0fm11U57Db9kd09P
+	LyD2EM+tLsXvxTzEU1xw9H41JU8RsmNg80RSVGWipoNFDCCrW25dADP4qrYOH/YrUFFVW2D2BWEJm
+	GeIZ8uxmAkn8HBoH1JKZCLyL4ZUGR9hF/d/eNibrA11a5LrHBCrabcXwADYM0FD2qEoljIOv9x8Fy
+	VnHMqKJAZxfpPLWpSszXGLQB10IeQmodfoua9KFiitUmGeaf34yjY/5n3a9sHhapv5e9N11oBlsEM
+	HlI9dTXM9E8YfO7j50dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLVQE-0002f2-43; Mon, 06 Apr 2020 17:20:30 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jLVhT-0005sk-Bn; Mon, 06 Apr 2020 17:38:19 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLVQ6-0002eH-Dp
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:20:24 +0000
-Received: by mail-pf1-x441.google.com with SMTP id u65so7877499pfb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 10:20:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9ufQQaWgpQ1ovP51hpWZYakegE3ep+d8csbsVkQT9hw=;
- b=Et3RwsnxoUZxcWoJKthjdlVbl8BWY6TSt1ZTTvJhDPEOAlyjOUKBjPC2+paORR2YZl
- X+pSasZgIQ2s9oegTIX+8ZSJ8QGetfnMJfw+Vz0HI51C/bPHRzI+OdKukXOOMMkqJk2u
- GOZKEiIIaQjY/AxAUBmbf06xYizlv8wkWZwHd9w9sKqIubPJs/XFQqIkDKg6ljIdCiWe
- Ye3zOHnqH77YRPMJrIGGrzvBcbBB837ESdTdAF/VCrZqITdLan1s0Oe1rH6DQsY/+xv2
- k9YMRYaC0z00/I1sUFGIZCF1IW4u0pzBwdTvaRLBvJLinrn+Eg3aAN67aTKoonLrMwtG
- Yk1g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9ufQQaWgpQ1ovP51hpWZYakegE3ep+d8csbsVkQT9hw=;
- b=UShBhtqRX3pfJln5lIdzUf4+x/AQmg7KV2zhru/TRZqpA3AHzDzmu08H0oj5kbh/To
- D3K102MMPL1hUF3Em7Bc9jw6zJnbhZlVfqkqlIeCgr9ICB1nS9NqHBvVFN+msZVbboBa
- 868RyBrTghf0VAr6OkZ8him5b7L1OxRfLYw4Rfx/8Stk/CjQApy1ivV5pu9zPdJC9GaL
- eaUAqtERTFJcVE+VLKXy18ZeD78EpNyCczEmSfTQMD7c6RLTv5mT+X8BI8sHRltW+fp4
- VPVfhiZuDA6wxRFrQZW1ovb67b8sNn/v4nRVmw2Qo2/KIwQUJRwqF72dFUgQNHuw90cp
- TLhA==
-X-Gm-Message-State: AGi0PuYCK2GCUKaPFmj7NVo/64eZnccqToQKAV7RlHW15Kla10ZvlPoK
- fnMqsQgaQH6cg9UH8oC+jzXcmQ==
-X-Google-Smtp-Source: APiQypKD14oDwdXQWKCZ1Qi/4No9nWpitsw/lHB15XdP4NiRpWom5ngC86uzh7fy2A17q3MwbegH+A==
-X-Received: by 2002:aa7:8f29:: with SMTP id y9mr515086pfr.19.1586193620938;
- Mon, 06 Apr 2020 10:20:20 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id r189sm11456723pgr.31.2020.04.06.10.20.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Apr 2020 10:20:20 -0700 (PDT)
-Date: Mon, 6 Apr 2020 11:20:18 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/7] remoteproc: add prepare and unprepare ops
-Message-ID: <20200406172018.GA11572@xps15>
-References: <20200324201819.23095-1-s-anna@ti.com>
- <20200324201819.23095-2-s-anna@ti.com>
+ id 1jLVhJ-0005sA-HZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:38:10 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 66AE5F8D;
+ Mon,  6 Apr 2020 19:30:11 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1586194211;
+ bh=swkdVcdC2H1+7+6XfdlSPcf9t/No80pcQTnku5aQfJ4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ckj6jk129jCHFALj+3tmXctBu5SN4Fh7d8H4kR+tW9Fgwp2TwdNJds+nOif2fa/id
+ 8TUP5EaZl4s3sxpNa88rr7p6Tn6wygC92QlrjXqxaWHJDd6dV9hhP4jhLllagayKd+
+ eccAUhkdwlDgkwnwhbsEN9sfie3z98DEmTSVWRdU=
+Date: Mon, 6 Apr 2020 20:30:02 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v5 1/5] media: dt-bindings: media: i2c: Deprecate usage
+ of the clock-frequency property
+Message-ID: <20200406173002.GC16885@pendragon.ideasonboard.com>
+References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200324201819.23095-2-s-anna@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_102022_634141_EE306CC7 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20200406_103809_724875_C95F617C 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,127 +73,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Loic Pallardy <loic.pallardy@st.com>,
- Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Good morning Suman,
+Hi Prabhakar,
 
-I have started to work on this set - comments will come in over the next few
-days...
+Thank you for the patch.
 
-On Tue, Mar 24, 2020 at 03:18:13PM -0500, Suman Anna wrote:
-> From: Loic Pallardy <loic.pallardy@st.com>
+On Mon, Apr 06, 2020 at 05:42:37PM +0100, Lad Prabhakar wrote:
+> OV5645 sensor supports input clock frequency ranging from 6MHz to 27MHz
+> but the driver strictly expects this to be 24MHz (with tolerance of 1%)
+> with this restrictions let the driver enforce the clock frequency
+
+Maybe s/with/With/ ?
+
+> internally to 24MHz rather then being passed as dt-property.
 > 
-> On some SoC architecture, it is needed to enable HW like
-> clock, bus, regulator, memory region... before loading
-> co-processor firmware.
-> 
-> This patch introduces prepare and unprepare ops to execute
-> platform specific function before firmware loading and after
-> stop execution.
-> 
-> Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
-> Signed-off-by: Suman Anna <s-anna@ti.com>
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
 > ---
->  drivers/remoteproc/remoteproc_core.c | 20 +++++++++++++++++++-
->  include/linux/remoteproc.h           |  4 ++++
->  2 files changed, 23 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/media/i2c/ov5645.txt | 2 --
+>  1 file changed, 2 deletions(-)
 > 
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 26f6947267d2..aca6d022901a 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -1394,12 +1394,22 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->  		return ret;
->  	}
+> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> index 72ad992f77be..a55bb728ea48 100644
+> --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> @@ -8,7 +8,6 @@ Required Properties:
+>  - compatible: Value should be "ovti,ov5645".
+>  - clocks: Reference to the xclk clock.
+>  - clock-names: Should be "xclk".
+> -- clock-frequency: Frequency of the xclk clock.
+>  - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
+>    to the hardware pin PWDNB which is physically active low.
+>  - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
+> @@ -37,7 +36,6 @@ Example:
 >  
-> +	/* Prepare rproc for firmware loading if needed */
-> +	if (rproc->ops->prepare) {
-> +		ret = rproc->ops->prepare(rproc);
+>  			clocks = <&clks 200>;
+>  			clock-names = "xclk";
+> -			clock-frequency = <24000000>;
+>  
+>  			vdddo-supply = <&camera_dovdd_1v8>;
+>  			vdda-supply = <&camera_avdd_2v8>;
 
-In my patchset on MCU synchronisation I have moved ops->{start/stop} to
-remoteproc_internal.h and called them rproc_start/stop_device() (after Loic's
-suggestion).  In order to be consistent and remove boiler plate code in the core
-we could do the same, i.e have rproc_prepare/unprepare_device() in
-remoteproc_internal.h .
+-- 
+Regards,
 
-With the above:
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-
-Thanks,
-Mathieu
-
-> +		if (ret) {
-> +			dev_err(dev, "can't prepare rproc %s: %d\n",
-> +				rproc->name, ret);
-> +			goto disable_iommu;
-> +		}
-> +	}
-> +
->  	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
->  
->  	/* Load resource table, core dump segment list etc from the firmware */
->  	ret = rproc_parse_fw(rproc, fw);
->  	if (ret)
-> -		goto disable_iommu;
-> +		goto unprepare_rproc;
->  
->  	/* reset max_notifyid */
->  	rproc->max_notifyid = -1;
-> @@ -1433,6 +1443,10 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->  	kfree(rproc->cached_table);
->  	rproc->cached_table = NULL;
->  	rproc->table_ptr = NULL;
-> +unprepare_rproc:
-> +	/* release HW resources if needed */
-> +	if (rproc->ops->unprepare)
-> +		rproc->ops->unprepare(rproc);
->  disable_iommu:
->  	rproc_disable_iommu(rproc);
->  	return ret;
-> @@ -1838,6 +1852,10 @@ void rproc_shutdown(struct rproc *rproc)
->  	/* clean up all acquired resources */
->  	rproc_resource_cleanup(rproc);
->  
-> +	/* release HW resources if needed */
-> +	if (rproc->ops->unprepare)
-> +		rproc->ops->unprepare(rproc);
-> +
->  	rproc_disable_iommu(rproc);
->  
->  	/* Free the copy of the resource table */
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 07bd73a6d72a..ddce7a7775d1 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -355,6 +355,8 @@ enum rsc_handling_status {
->  
->  /**
->   * struct rproc_ops - platform-specific device handlers
-> + * @prepare:	prepare device for code loading
-> + * @unprepare:	unprepare device after stop
->   * @start:	power on the device and boot it
->   * @stop:	power off the device
->   * @kick:	kick a virtqueue (virtqueue id given as a parameter)
-> @@ -371,6 +373,8 @@ enum rsc_handling_status {
->   * @get_boot_addr:	get boot address to entry point specified in firmware
->   */
->  struct rproc_ops {
-> +	int (*prepare)(struct rproc *rproc);
-> +	int (*unprepare)(struct rproc *rproc);
->  	int (*start)(struct rproc *rproc);
->  	int (*stop)(struct rproc *rproc);
->  	void (*kick)(struct rproc *rproc, int vqid);
-> -- 
-> 2.23.0
-> 
-
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
