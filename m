@@ -2,97 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB7B21A0DB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:32:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 357701A0E1E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 15:06:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XfZUz9nh1itYX7gma4/JuU1gQNKd1swbYMI/qGsyyvU=; b=L6z4j7gcoNFCJgEILpPSMwU1/
-	d1UAfXhzzAcYp9I/iojz1EYKK3/2dCJ/m+Iu9L4zjITO1yLDBMMCHCfNPqXcdShykpdalEo9/+UJ7
-	VZSe6rOmGBuvdHhuCVmVz2TYr5+yxPcs59UShyYvDk3wavLf+o7/LHnb6Vvyt5ml9KPpV9/IbkcL1
-	cgb810WbbHtYRfHELALwh1SlT2kTTko6ujcyrVV3ELRA62tAOqPCv5VKTYcTZmWpCmZ0dogJFEdoN
-	aEHUo+80gY+j2/zvgQmGyqjaFc3zRHqmAxYk19Odoj86qmehvQKPZDOyg331qLGi98HwdRxsPScWn
-	X2BZww29g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=twOjCDANWssfz0z6nmTSNPQDWSumhDrjXh/ps4zkvF0=; b=SqppU05SgYBVhF
+	/o+7+8kqXrtT+q+YRdk56vPENr6HQ9h8/+kq3AZRpnOJ74/nV0UuZzjEkp7EIJt5Ntd9peqHWk6T3
+	zVhRIZ7MRvhE359yauTYNFnkrdWH83N8xhd/0AKFsA5SG948GPNerVGIJIYtHiXQeSZPK1zLwnYW4
+	SHj6xKUglq1flVEDwPWr9F5YnROGNHVUbGGTnfP+wbnRM/qWIxqHI2Vdgkn5WaRWveyUgYmm2rJpi
+	RbIZJE64jPxjKEx2MhCPZSQ0wvo/vKw60mvxVGa5vyHARwgrVeTNSV4+k3iKcyIA3KXSxJDu1rMSH
+	eAEjeYPYHg7uKHt8H2Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLnPO-00040P-Cu; Tue, 07 Apr 2020 12:32:50 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1jLnvh-0007x6-LD; Tue, 07 Apr 2020 13:06:13 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLnPE-0003zG-46
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:32:43 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 21EA15C01CC;
- Tue,  7 Apr 2020 08:32:37 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 07 Apr 2020 08:32:37 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=AJJDe/ySRz3tiDgYe4Ah8eWUjMw
- PlBWYVnjlrFiwgpU=; b=CCPrM+UmHvchU6T42mFGaM+xWH2yZfApfdGSBDlSWgo
- Xh0OdoLnFs1sa+9urnGFkIrs92XYTBbvgLkAfCVLf/SlQ2Ofghm4AdZjNqtXQiXa
- qIEhanCDEdrxsfpWLM7yVbQGadXlRW+bPu0Ep0gcqfn8pG4//FtyKQK5xl6weXtX
- wcTHaHaZhDdoEbTJCvwVC07o9NwVbEBGhCVSINs9sXwjnU1+jSo62wRbShe8KLDd
- r4EQoxgv7KimD0NnfKN0IoUwSAJhT3Dz0g8QkLai4azf5+3zS+Wly+staUfJnR3v
- akLSQ9NEaTOFnE7B6+E1FojbdGQI5g2JBkQSvyF2xEQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=AJJDe/
- ySRz3tiDgYe4Ah8eWUjMwPlBWYVnjlrFiwgpU=; b=t4RqkwNMROgv8J04ULLbet
- vNfJFqLnjMojnj+Psea7DWXuOh/qi9j0f4iqKSVPucAeaeOl9kZO/LXN0dCIlU+7
- LXC3dT0yeGEVqRglpbS/n1NLioGN1BZ1A5m3gecAfIwtHsDgFMDk+PXhf/GIx2gv
- ZJP3yM2GEzEyqmG2Ty1tfya4a6EzFZ9CTL4vfwZeZQrpkycghppMBk/2V+5ysSDj
- m0D8zoRXlNJ0Vq3WfczsexvqVfeOWrAHElIXsWIXpWmSAe/1fcnL6+6OV6aGJ4TS
- /ITx6gNMVYtlXXnYqzt2Y+KLuj6qxbJ4ZcKJEBmzlriPHJK9/6istrrP1vJkXakw
- ==
-X-ME-Sender: <xms:4nKMXhxx3OJoYu1Ih5_UrKqWFi8ciC_sOMQacN_tG3ySHv8nyBfG5Q>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehgdehvdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
- rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
- hordhtvggthh
-X-ME-Proxy: <xmx:4nKMXuejvC_z9AjzWbD98-bH3EL_wkH29hXxmJoTIFqH24JDdymWHA>
- <xmx:4nKMXjXiFNgG_f_d-m57ibzOGjIuern_3XWhdOFyfXhyx7MCUIL_Yg>
- <xmx:4nKMXkMVbbbdHht8-D-F5Xy6xouh6UYJmHL_yohmUauBaFNe6-cwoA>
- <xmx:5XKMXrqDifzzqHNJWRY_TK0e2EdA0gCx0lQX52w0uDmaoK7YUzidxA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1E3CC328005E;
- Tue,  7 Apr 2020 08:32:34 -0400 (EDT)
-Date: Tue, 7 Apr 2020 14:32:32 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200407123232.ktvaifhqntgzvkap@gilmour.lan>
-References: <20200331133346.372517-1-robert.foss@linaro.org>
- <20200331133346.372517-2-robert.foss@linaro.org>
- <20200401080705.j4goeqcqhoswhx4u@gilmour.lan>
- <CAG3jFyvUd08U9yNVPUD9Y=nd5Xpcx34GcHJRhtvAAycoq3qimg@mail.gmail.com>
- <20200403232736.GA6127@valkosipuli.retiisi.org.uk>
- <20200404093446.vuvwrhn5436h4d3s@gilmour.lan>
- <20200406083506.GE6127@valkosipuli.retiisi.org.uk>
- <20200407083647.4mocdl7aqa3x737q@gilmour.lan>
- <CAG3jFyvd32pWppubMoOoyH9eO2XLjwUXMC7p4xtv8m+JkPv6vw@mail.gmail.com>
+ id 1jLnvX-0007vV-Rc; Tue, 07 Apr 2020 13:06:06 +0000
+Received: by mail-wr1-x443.google.com with SMTP id s8so3795929wrt.7;
+ Tue, 07 Apr 2020 06:06:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=eJpgjZGO2SDH3m/Qm4ML/lfT6VrW02E/4eP3OcqBUvM=;
+ b=sYepMvUCJCrNYtPD5KLEffA65PleHZLt9xSz/BhFfTJVEwk96jEtBJisS1KX/DrFKD
+ CI1I/yL0etrrVhQG88AXtTmXYvnyFuJBLdFsfNV4ng0fiTsb9umm4QlytQdLGzg4PLTz
+ lLVa1yg+bARlGLi53Y875eAs8oq/L3Pl9odTP2lOkEJUHtJNRCLMz421x4eiffgIeh5O
+ MwEYDDXjH4DsA5xrjdpIC8V4wTuTnunx6srGInKHIWYDK80EzcTV7VxR/FFtI2Wm7i5f
+ v3zbLz4ZF6jE9Ko59IMNQNG+Ih9poXFzAhPjcesYwAQvTWIPJWS3U4uQ5ilUvhsLpi98
+ mlxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=eJpgjZGO2SDH3m/Qm4ML/lfT6VrW02E/4eP3OcqBUvM=;
+ b=kbepsYbZyLZo6YiXrXDIrxZMDLsIaDrgU1bhMCetItGlskcQ1YsaH1qQ9+OwTEimxa
+ 9CWyT+bxkP87WhnykgWg8R2ds8lu10nju6liCByRUhqlQe+ucpONfWwQuU4lu6tEwbdN
+ rfbmJCjU4rxU15+JG3FzpFJnsqJ+yUiwpRGfZzf+kKTKYHzw1T3tKZZ28Cs/bkMvjATg
+ /AgBw1uuRbsHwVPIIXNxcvHF6dGSplWGHtqoWMGMrBCm0Sfwf+CXNTDY1mcXdzeQjbgf
+ PzN9OQpE7fsc6/BJzhAfv7QKE9Y0kC56ifKwAlJZHGcKzxXL/xMvpWfsTeidVczv2tn+
+ le6g==
+X-Gm-Message-State: AGi0Pua+QS6+RWm8xFZx0XJ0EOyxiCb4obApX7cm4nhp1Ki2zjHHBPaU
+ d8CS783xEH2uMQf4lNJ+WuQ=
+X-Google-Smtp-Source: APiQypJHORREYkeKAdgx5p0vHSapMRCeAasDNckG0l2Aq6Qbkk2MgtRpSwxRn+Q1cq45M6qHmTaiwQ==
+X-Received: by 2002:adf:d851:: with SMTP id k17mr2931380wrl.157.1586264762153; 
+ Tue, 07 Apr 2020 06:06:02 -0700 (PDT)
+Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id x5sm2219471wmk.29.2020.04.07.06.06.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Apr 2020 06:06:01 -0700 (PDT)
+Date: Tue, 7 Apr 2020 15:05:59 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200407130559.GB457@Red>
+References: <20200406082720.GA31279@Red>
+ <20200407100203.GK25745@shell.armlinux.org.uk>
+ <20200407101912.GL25745@shell.armlinux.org.uk>
+ <20200407113454.GA457@Red>
+ <20200407122243.GN25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <CAG3jFyvd32pWppubMoOoyH9eO2XLjwUXMC7p4xtv8m+JkPv6vw@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200407122243.GN25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_053242_252679_07F545AA 
-X-CRM114-Status: GOOD (  20.57  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200407_060603_922243_E707CD23 
+X-CRM114-Status: GOOD (  42.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [clabbe.montjoie[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -111,111 +100,388 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============4084859179256923164=="
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Apr 07, 2020 at 01:22:43PM +0100, Russell King - ARM Linux admin wrote:
+> On Tue, Apr 07, 2020 at 01:34:54PM +0200, Corentin Labbe wrote:
+> > On Tue, Apr 07, 2020 at 11:19:12AM +0100, Russell King - ARM Linux admin wrote:
+> > > On Tue, Apr 07, 2020 at 11:02:03AM +0100, Russell King - ARM Linux admin wrote:
+> > > > On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> > > > > Hello
+> > > > > 
+> > > > > I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> > > > > But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> > > > > So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> > > > > 
+> > > > > But kexec 2.0.18 fail to work:
+> > > > > kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+> > > > 
+> > > > As I mentioned in my other reply, this apparent "kexec" command line
+> > > > does not seem to reflect the arguments you actually used to invoke
+> > > > the kexec output below.
+> > > > 
+> > > > > syscall kexec_file_load not available.
+> > > > 
+> > > > This message is produced by do_kexec_file_load().  This function is only
+> > > > invoked if the do_kexec_file_syscall flag in main() is set.  This flag
+> > > > is only set if one of:
+> > > > 
+> > > > 	--kexec-file-syscall
+> > > > 	--kexec-syscall
+> > > > 	--kexec-syscall-auto
+> > > > 	-s
+> > > > 	-c
+> > > > 	-a
+> > > > 
+> > > > are provided on the kexec command line.  Your command line above does
+> > > > not contain any of those arguments, so either the command line is not
+> > > > what you used, or you are using a patched kexec, or your compiler is
+> > > > grossly miscompiling kexec.
+> > > > 
+> > > > > Try gzip decompression.
+> > > > > kernel: 0xb6535008 kernel_size: 0x853200
+> > > > > MEMORY RANGES
+> > > > > 0000000020000000-000000009fffffff (0)
+> > > > 
+> > > > Then there's the debug output, which is only produced if the
+> > > > kexec_debug global is set, which in turn is only set if --debug or -d
+> > > > is supplied on the kexec command line - which again, your kexec
+> > > > command line does not contain this.
+> > > > 
+> > > > > zImage header: 0x016f2818 0x00000000 0x00853200
+> > > > > zImage size 0x853200, file size 0x853200
+> > > > > zImage requires 0x00864200 bytes
+> > > > >   offset 0x0000bae4 tag 0x5a534c4b size 8
+> > > > > Decompressed kernel sizes:
+> > > > >  text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
+> > > > > Resulting kernel space: 0x01def5a0
+> > > > > Kernel: address=0x20008000 size=0x01def5a0
+> > > > > Initrd: address=0x21df8000 size=0x0090b6fa
+> > > > > DT    : address=0x22704000 size=0x00005c09
+> > > > > kexec_load: entry = 0x20008000 flags = 0x280000
+> > > > > nr_segments = 3
+> > > > > segment[0].buf   = 0xb6535008
+> > > > > segment[0].bufsz = 0x853204
+> > > > > segment[0].mem   = 0x20008000
+> > > > > segment[0].memsz = 0x854000
+> > > > > segment[1].buf   = 0xb5c29008
+> > > > > segment[1].bufsz = 0x90b6fa
+> > > > > segment[1].mem   = 0x21df8000
+> > > > > segment[1].memsz = 0x90c000
+> > > > > segment[2].buf   = 0x4db50
+> > > > > segment[2].bufsz = 0x5c09
+> > > > > segm[   71.039126] kexec_core: Starting new kernel
+> > > > > ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
+> > > > > x22704000
+> > > > > segment[2].memsz = 0x6000
+> > > > > [   71.489070] Bye!
+> > > > > 
+> > > > > 
+> > > > > I have tried also kexec-2.0.20
+> > > > > Try gzip decompression.
+> > > > > zImage header: 0x00000000 0x000019b4 0x00001000
+> > > > > zImage requires 0x008641c0 bytes
+> > > > > Could not find a free area of memory of 0x86c1c0 bytes...
+> > > > > Cannot load /tmp/kernel
+> > > > 
+> > > > kexec 2.0.20 doesn't appear to have changed anything to do with how
+> > > > allocations are done.  The above output looks even more strange and
+> > > > confusing.  "zImage header" is produced by debugging prints, which
+> > > > imply that kexec_debug was set.
+> > > > 
+> > > > However, the "MEMORY RANGES" output is missing - this has not gone
+> > > > away with kexec 2.0.20, it's still there, and works for me (I've
+> > > > just built and tested kexec 2.0.20).
+> > > > 
+> > > > Also, the values on the "zImage header" line are completely messed
+> > > > up; the first should be the zImage magic value and it is not - that
+> > > > suggests that the file being loaded is not a zImage file, or is
+> > > > corrupted.
+> > > 
+> > > Under a VM (the kernel doesn't have kexec support - but that's not a
+> > > problem, because the initial loading stages are the relevant parts
+> > > which all happen in userspace):
+> > > 
+> > > # build/sbin/kexec --version
+> > > kexec-tools 2.0.20
+> > > # build/sbin/kexec --debug --load virt-vmlinuz-5.4.0+
+> > > Try gzip decompression.
+> > > kernel: 0xb6a6c008 kernel_size: 0x407358
+> > > MEMORY RANGES
+> > > 0000000040000000-000000007fffffff (0)
+> > > zImage header: 0x016f2818 0x00000000 0x00407358
+> > > zImage size 0x407358, file size 0x407358
+> > > zImage requires 0x00418358 bytes
+> > >   offset 0x00007178 tag 0x5a534c4b size 12
+> > > Decompressed kernel sizes:
+> > >  text+data 0x00c2ed24 bss 0x000319ec total 0x00c60710
+> > > Resulting kernel space: 0x0104707c
+> > > Kernel: address=0x40008000 size=0x0104707c
+> > > DT    : address=0x41051000 size=0x00100000
+> > > kexec_load: entry = 0x40008000 flags = 0x280000
+> > > nr_segments = 2
+> > > segment[0].buf   = 0xb6a6c008
+> > > segment[0].bufsz = 0x40735c
+> > > segment[0].mem   = 0x40008000
+> > > segment[0].memsz = 0x408000
+> > > segment[1].buf   = 0xb696b008
+> > > segment[1].bufsz = 0x100000
+> > > segment[1].mem   = 0x41051000
+> > > segment[1].memsz = 0x100000
+> > > kexec_load failed: Function not implemented
+> > > entry       = 0x40008000 flags = 0x280000
+> > > nr_segments = 2
+> > > segment[0].buf   = 0xb6aa0008
+> > > segment[0].bufsz = 0x40735c
+> > > segment[0].mem   = 0x40008000
+> > > segment[0].memsz = 0x408000
+> > > segment[1].buf   = 0xb699f008
+> > > segment[1].bufsz = 0x100000
+> > > segment[1].mem   = 0x41051000
+> > > segment[1].memsz = 0x100000
+> > > #
+> > > 
+> > > On a SolidRun Hummingboard2 (iMX6 based, which has kexec support, same
+> > > kexec binary, first without an initrd, and then with):
+> > > 
+> > > # build/sbin/kexec --version
+> > > kexec-tools 2.0.20
+> > > # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
+> > > Try gzip decompression.
+> > > kernel: 0xb6763008 kernel_size: 0x7273a8
+> > > MEMORY RANGES
+> > > 0000000010000000-000000004fffffff (0)
+> > > zImage header: 0x016f2818 0x00000000 0x007273a8
+> > > zImage size 0x7273a8, file size 0x7273a8
+> > > zImage requires 0x007383a8 bytes
+> > >   offset 0x00004da8 tag 0x5a534c4b size 12
+> > > Decompressed kernel sizes:
+> > >  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> > > Resulting kernel space: 0x015077b0
+> > > Kernel: address=0x10008000 size=0x015077b0
+> > > DT    : address=0x11511000 size=0x0000b000
+> > > kexec_load: entry = 0x10008000 flags = 0x280000
+> > > nr_segments = 2
+> > > segment[0].buf   = 0xb6763008
+> > > segment[0].bufsz = 0x7273ac
+> > > segment[0].mem   = 0x10008000
+> > > segment[0].memsz = 0x728000
+> > > segment[1].buf   = 0x1207cb0
+> > > segment[1].bufsz = 0xb000
+> > > segment[1].mem   = 0x11511000
+> > > segment[1].memsz = 0xb000
+> > > # build/sbin/kexec --unload
+> > > # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+ --initrd /boot/initrd.img-5.4.0+
+> > > Try gzip decompression.
+> > > kernel: 0xb65d8008 kernel_size: 0x7273a8
+> > > MEMORY RANGES
+> > > 0000000010000000-000000004fffffff (0)
+> > > zImage header: 0x016f2818 0x00000000 0x007273a8
+> > > zImage size 0x7273a8, file size 0x7273a8
+> > > zImage requires 0x007383a8 bytes
+> > >   offset 0x00004da8 tag 0x5a534c4b size 12
+> > > Decompressed kernel sizes:
+> > >  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> > > Resulting kernel space: 0x015077b0
+> > > Kernel: address=0x10008000 size=0x015077b0
+> > > Initrd: address=0x11510000 size=0x0053f46a
+> > > DT    : address=0x11a50000 size=0x0000b044
+> > > kexec_load: entry = 0x10008000 flags = 0x280000
+> > > nr_segments = 3
+> > > segment[0].buf   = 0xb65d8008
+> > > segment[0].bufsz = 0x7273ac
+> > > segment[0].mem   = 0x10008000
+> > > segment[0].memsz = 0x728000
+> > > segment[1].buf   = 0xb6098008
+> > > segment[1].bufsz = 0x53f46a
+> > > segment[1].mem   = 0x11510000
+> > > segment[1].memsz = 0x540000
+> > > segment[2].buf   = 0x993cf0
+> > > segment[2].bufsz = 0xb044
+> > > segment[2].mem   = 0x11a50000
+> > > segment[2].memsz = 0xc000
+> > > 
+> > > On clearfog (Armada 388):
+> > > 
+> > > # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
+> > > Try gzip decompression.
+> > > kernel: 0xb6745008 kernel_size: 0x7273a8
+> > > MEMORY RANGES
+> > > 0000000000000000-000000003fffffff (0)
+> > > zImage header: 0x016f2818 0x00000000 0x007273a8
+> > > zImage size 0x7273a8, file size 0x7273a8
+> > > zImage requires 0x007383a8 bytes
+> > >   offset 0x00004da8 tag 0x5a534c4b size 12
+> > > Decompressed kernel sizes:
+> > >  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> > > Resulting kernel space: 0x015077b0
+> > > Kernel: address=0x00008000 size=0x015077b0
+> > > DT    : address=0x01511000 size=0x00007be3
+> > > kexec_load: entry = 0x8000 flags = 0x280000
+> > > nr_segments = 2
+> > > segment[0].buf   = 0xb6745008
+> > > segment[0].bufsz = 0x7273ac
+> > > segment[0].mem   = 0x8000
+> > > segment[0].memsz = 0x728000
+> > > segment[1].buf   = 0x1be7f68
+> > > segment[1].bufsz = 0x7be3
+> > > segment[1].mem   = 0x1511000
+> > > segment[1].memsz = 0x8000
+> > > 
+> > > All appears to work fine.
+> > > 
+> > 
+> > I have found a part of my problem, kexec-tool seems to always use the OPT_KEXEC_FILE_SYSCALL.
+> > Even if I set --kexec-syscall.
+> 
+> You mention below that you're using buildroot.  Does buildroot have
+> patches on top of the reference kexec-tools codebase as found at
+> git://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git ?
+> 
+> Looking at the 2.0.20 code, there's no way for that to be happening;
+> the only way that _could_ happen is if getopt_long() always returns
+> 's' when we get to the last argument, which is highly unlikely.
+> 
+> > On my early tries I got "syscall kexec_file_load not available."
+> > When I did a full rebuild of my buildroot to go back to kexec-tool 2.0.18, this syscall become availlable.
+> 
+> 32-bit kernels have no support for kexec_file_load(), although the
+> syscall is reserved.
+> 
+> Irrespective of that, presence of the syscall number allocation is
+> not sufficient to tell whether the syscall is implemented by the
+> kernel; that is controlled by the kernel's CONFIG_KEXEC_FILE symbol.
+> This symbol is never offered for 32-bit ARM kernels.
+> 
+> > The get_memory_ranges seems to be called only from my_load() which is executed when !do_kexec_file_syscall.
+> > 
+> > Since kexec-tool always set do_kexec_file_syscall, it is never called.
+> > I have added a print for each syscal option, and it seems that OPT_KEXEC_SYSCALL_AUTO is called after the handling of OPT_KEXEC_SYSCALL.
+> > 
+> > So I have hack to always set do_kexec_file_syscall=0
+> 
+> It sounds like buildroot is patching kexec-tools in ways that break
+> 32-bit ARM, and it sounds like this needs to be reported as a bug to
+> buildroot.
+> 
+> That said, I think there's a weakness in the ARM support in
+> kexec-tools, which this patch should address for 2.0.20.  Things have
+> changed in the merged patches since 2.0.20, so the return needs to be
+> EFALLBACK not ENOSYS, so please pay attention to exactly which version
+> of kexec-tools you have (whether it's the 2.0.20 tagged version or has
+> further patches from kexec-tools on top.)
+> 
+> diff --git a/kexec/arch/arm/kexec-zImage-arm.c b/kexec/arch/arm/kexec-zImage-arm.c
+> index 9a67b8a4db98..ca4e35382ea1 100644
+> --- a/kexec/arch/arm/kexec-zImage-arm.c
+> +++ b/kexec/arch/arm/kexec-zImage-arm.c
+> @@ -421,6 +421,12 @@ int zImage_arm_load(int argc, char **argv, const char *buf, off_t len,
+>  	};
+>  	static const char short_options[] = KEXEC_ARCH_OPT_STR "a:r:";
+>  
+> +	/* We do not support file mode */
+> +	if (info->file_mode) {
+> +		fprintf(stderr, "syscall kexec_file_load not implemented.\n");
+> +		return -ENOSYS;
+> +	}
+> +
+>  	/*
+>  	 * Parse the command line arguments
+>  	 */
+> 
+> > So now my test go further, but the final kernel crash.
+> > DEBUG: bootz: run kexec with /tmp/kernel --debug --kexec-syscall --force --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+> > Set DEBUG!
+> > main:1417 OPT_KEXEC_SYSCALL
+> > main:1422 OPT_KEXEC_SYSCALL_AUTO
+> > arch_process_options:119
+> > main:1500
+> > main:1517 res=0 do_load=1
+> > main:1519 res=0 do_kexec_file_syscall=0
+> > my_load:713
+> > Try gzip decompression.
+> > kernel: 0xb693b008 kernel_size: 0x443ac0
+> > get_memory_ranges:36
+> > MEMORY RANGES
+> > 0000000020000000-000000009fffffff (0)
+> > DEBUG: my_load:737 memory_ranges=1
+> > zImage_arm_load:423
+> > zImage header: 0x016f2818 0x00000000 0x00443ac0
+> > zImage size 0x443ac0, file size 0x443ac0
+> > zImage requires 0x00454ac0 bytes
+> >   offset 0x00006678 tag 0x5a534c4b size 8
+> > Decompressed kernel sizes:
+> >  text+data 0x00b78080 bss 0x0003d3c0 total 0x00bb5440
+> > Resulting kernel space: 0x00fccb40
+> > DEBUG: locate_hole:237 memory_ranges=1
+> > Check 0/1 536870912 0 type=-1610612737
+> > Check 0/1 536870912 0
+> > Kernel: address=0x20008000 size=0x00fccb40
+> > DEBUG: locate_hole:237 memory_ranges=1
+> > Check 0/1 536870912 0 type=-1610612737
+> > Check 0/1 536870912 0
+> > Initrd: address=0x20fd5000 size=0x0167213d
+> > DEBUG: locate_hole:237 memory_ranges=1
+> > Check 0/1 536870912 0 type=-1610612737
+> > Check 0/2 536870912 0
+> > Check 1/2 577011712 0
+> > DT    : address=0x22648000 size=0x00006043
+> > kexec_load: entry = 0x20008000 flags = 0x280000
+> > nr_segments = 3
+> > segment[0].buf   = 0xb693b008
+> > segment[0].bufsz = 0x443ac4
+> > segment[0].mem   = 0x20008000
+> > segment[0].memsz = 0x444000
+> > segment[1].buf   = 0xb52c8008
+> > segment[1].bufsz = 0x167213d
+> > segment[1].mem   = 0x20fd5000
+> > segment[1].memsz = 0x1673000
+> > segment[2].buf   = 0x4ef88
+> > segment[2].bufsz = 0x6043
+> > segment[2].mem   = 0x2[   31.265096] sun7i-dwmac 830000.ethernet eth0: Link is Down
+> > 2648000
+> > segment[2].memsz = 0x7000
+> > main:1568 res=0
+> > main:1582 res=0 do_exec=1
+> > [   31.277297] kexec_core: Starting new kernel
+> > [   31.282700] Disabling non-boot CPUs ...
+> > [   31.692085] Bye!
+> > C:0x200080C0-0x2044BAC0->0x20B80B00-0x20FC4500
+> 
+> This line shows that we entered the new kernel, which was located
+> (correctly) at 0x200080C0-0x2044BAC0, and it has decided to relocate
+> itself to 0x20B80B00-0x20FC4500.
+> 
+> The lack of further output suggests that the decompressor itself
+> wasn't able to run after being relocated higher in memory.
+> 
+> It may be worth booting the same kernel image and see what the C:
+> line comes out as there.
+> 
 
---===============4084859179256923164==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="l6xvrv4jf2wbahni"
-Content-Disposition: inline
+I have checked and some CONFIG was missing, now I get one line further:
+[   32.903765] kexec_core: Starting new kernel
+[   32.907958] Disabling non-boot CPUs ...
+[   33.392056] Bye!
+C:0x200080C0-0x2044AE80->0x20B80300-0x20FC30C0
+Uncompressing Linux... done, booting the kernel.
 
+So the uncompressor seems ok.
 
---l6xvrv4jf2wbahni
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi Robert,
-
-On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Foss wrote:
-> On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxime@cerno.tech> wrote:
-> > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakari Ailus wrote:
-> > > > But that 19.2MHz is not a limitation of the device itself, it's a
-> > > > limitation of our implementation, so we can instead implement
-> > > > something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
-> > > > sure that our parent clock is configured at the right rate) and the
-> > > > clk_get_rate and compare that to 19.2MHz (to make sure that it's not
-> > > > been rounded too far apart from the frequency we expect).
-> > > >
-> > > > This is doing exactly the same thing, except that we don't encode our
-> > > > implementation limitations in the DT, but in the driver instead.
-> > >
-> > > What I really wanted to say that a driver that doesn't get the clock
-> > > frequency from DT but still sets that frequency is broken.
-> > >
-> > > This frequency is highly system specific, and in many cases only a certain
-> > > frequency is usable, for a few reasons: On many SoCs, not all common
-> > > frequencies can be used (e.g. 9,6 MHz, 19,2 MHz and 24 MHz; while others
-> > > are being used as well), and then that frequency affects the usable CSI-2
-> > > bus frequencies directly --- and of those, only safe, known-good ones
-> > > should be used. IOW, getting the external clock frequency wrong typically
-> > > has an effect that that none of the known-good CSI-2 bus clock frequencies
-> > > are available.
-> >
-> > So clock-frequency is not about the "Frequency of the xvclk clock in
-> > Hertz", but the frequency at which that clock must run on this
-> > particular SoC / board to be functional?
-> >
-> > If so, then yeah, we should definitely keep it, but the documentation
-> > of the binding should be made clearer as well.
->
-> Alright so, let me summarise the desired approach then.
-
-There's a separate discussion on the same topic here:
-https://lore.kernel.org/linux-media/20200407122106.GD4751@pendragon.ideasonboard.com/
-
-> ACPI:
->   - Fetch the "clock-frequency" property
->   - Verify it to be 19.2Mhz
->
-> DT:
->   - Fetch the "clock-frequency" property
->   - Verify it to be 19.2Mhz
->   - Get xvclk clock
->   - Get xvclk clock rate
->   - Verify xvclk clock rate to be 19.2Mhz
-
-The current status is that you should
-'s/clock-frequency/link-frequencies/', and in order to replace
-assigned-clock-rates, you'll want to have a clk_set_rate to 19.2MHz
-between steps 3 and 4
-
-Maxime
-
---l6xvrv4jf2wbahni
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXoxy4AAKCRDj7w1vZxhR
-xVapAQCajMfkGy5KObQodKq6TMZ/f6RLIlLUEGI+a//+esc7rQEA2Ln60lZuEk5u
-dZFJEBn6+y8Nrkp5GApl67Yq210tSQ4=
-=eEag
------END PGP SIGNATURE-----
-
---l6xvrv4jf2wbahni--
-
-
---===============4084859179256923164==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+As you said, I have started the same kernel, but I dont see any C:
+Starting kernel ...
+Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.6.0-10890-gc27180b13770-dirty (compile@Red) (gcc version 8.3.0 (Gentoo 8.3.0-r1 p1.1)) #78 SMP Tue Apr 7 14:55:53 CEST 2020
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4084859179256923164==--
-
