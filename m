@@ -2,134 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72DB91A02BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:07:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 393A71A03CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:28:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I7cv7Caq3UgQj2Y/QvVXg9qcycMreTeFN75SgSlYdaY=; b=fWElvtbIkEyDgr
-	AjjAr72uRKIOgqAhZki8b47zp07iKQX/alB8kI6ZKXXh+wDjaTiTgUE1jMPk6lSNKTMKyTZIhCxMz
-	7d89tCh3jsDBC9GuxOhHzyNzPi91H29QnQZsKHp0z0JxsZeeFSDbAgZ/yMIXm0sxrN0CXXHf5tm0O
-	tYtfAv56jNsJtRu94jcFoC5JhccAnzUdq7VhvcLuR2W2w+qMrY88pvTkDXMy9IrsfGQbfA7Metj0s
-	VcwpR2xBN9o+JONPL6Rq9P93DntgSrOHqQzCMGy0I8rDhcQNVo9lGjFH7QJJnZUz5RXnHhT3PC3Yd
-	JBLQ2i7fbr+UrTc/T0pg==;
+	List-Owner; bh=Vxsjmwe1AnTT8MEV9ZW6uJpjnuXoEims0YdaPJkn+7w=; b=KA6q2PykqLe1I/
+	aL+3fGsYpfL7xHT0iokGhG4XpOg+/DklFXqkK4urvFxp+8TJmFwOhmVJo810A/0x2rVKIg9pOjqmZ
+	0sVU36jMXpiWmUw739U0sPSstPx8PWtg+ZgoZhScigoAaosJybuxKemi8pluSFCbSFXaPPbScDzyt
+	PyeEyG2KdPFtTICQ4yNQkSniZiES9FaBWB7+q2fzR19JTulZQn6IqJmJPmy7W/kbNP6XowDoxA4pi
+	vmLN/52U9xhKdGiSnnq08Ae5iJ1TiqP8npE3KBciUk9igsnzQI/OkC6VRf+JpzIOnPq0jEwj49VHf
+	COnc1rly7xiiWAYQpM1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLblQ-0004A1-Qn; Tue, 07 Apr 2020 00:06:48 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1jLc6b-0007aq-Nc; Tue, 07 Apr 2020 00:28:41 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLbk0-0002gS-69
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:05:22 +0000
-Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20200407000517epoutp03a537749b529b6adc83bbb7115fb82e22~DYMqhWw2m1739317393epoutp03q
+ id 1jLc6S-0007Yr-Qh
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:28:37 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20200407002829epoutp0229e4e972483efaaf93d6b8b80e564461~DYg7ajAw-2335223352epoutp027
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 Apr 2020 00:05:17 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20200407000517epoutp03a537749b529b6adc83bbb7115fb82e22~DYMqhWw2m1739317393epoutp03q
+ Tue,  7 Apr 2020 00:28:29 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20200407002829epoutp0229e4e972483efaaf93d6b8b80e564461~DYg7ajAw-2335223352epoutp027
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1586217917;
- bh=tzpVAjvJlF8U3nA9D3i9y31F8b3lBonoiViArwP4bx4=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=px8ei+FoCPnU65Ti1oxup/jdjpes6gtaNBmgoKqMeE6EDKKJZqopQCZLQ74yAiQzb
- Qw01Qi3QCcMWz6hATMCpoEQJmj/f9J4Wr8274vWQtizMEka3JJshSGSSe4XV4Afji2
- kXAoA0aTE880LIvVqb5twdRnGwPGO9mBEJInHMME=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200407000516epcas1p13492e8bfe704a21592fce4ec848aa09f~DYMpcECR11546015460epcas1p1M;
- Tue,  7 Apr 2020 00:05:16 +0000 (GMT)
-Received: from epsmges1p1.samsung.com (unknown [182.195.40.152]) by
- epsnrtp1.localdomain (Postfix) with ESMTP id 48x72b3fy1zMqYlr; Tue,  7 Apr
- 2020 00:05:11 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 78.0E.04402.7B3CB8E5; Tue,  7 Apr 2020 09:05:11 +0900 (KST)
+ s=mail20170921; t=1586219309;
+ bh=kYk8Hja5i9axWYkSYRQNU8uWD4EAZdAI2RMgv2nSU+I=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=ZdaPh6nxjKQ4tbeI2RddahsdKtWisZw9Z5zwmAuz6igAPL/JPdZBRT3JO/Y2v+lDN
+ kURHZIx/nMqA/pyMfPYkEGLL5er1I10NULXV+PsWzgd846W5DWvSNt7wxoR1ReNahk
+ d3rNhtkV0G9oSKrzyAHVWKHyzRwHK08rjt3iVB9A=
+Received: from epsmges5p1new.samsung.com (unknown [182.195.42.73]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200407002829epcas5p1eeda5f53dde4d0759e2c87506cb60524~DYg7JAQJD2710727107epcas5p1v;
+ Tue,  7 Apr 2020 00:28:29 +0000 (GMT)
+Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
+ epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 82.3F.04782.D29CB8E5; Tue,  7 Apr 2020 09:28:29 +0900 (KST)
 Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200407000511epcas1p361a8982b0da2bc80b1b6e8cf9870093c~DYMkxoNIT1542515425epcas1p3e;
- Tue,  7 Apr 2020 00:05:11 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20200407002827epcas5p32458e0a4063aa41afb9ef95030724c53~DYg5caoo51090110901epcas5p3j;
+ Tue,  7 Apr 2020 00:28:27 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
  epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200407000510epsmtrp2862d3043e81792698814e1636a048611~DYMkwdmjI0035300353epsmtrp2H;
- Tue,  7 Apr 2020 00:05:10 +0000 (GMT)
-X-AuditID: b6c32a35-753ff70000001132-8f-5e8bc3b7ce85
+ 20200407002827epsmtrp254a304db95ebcc55170af7ba6c73c89f~DYg5asa_51303013030epsmtrp2m;
+ Tue,  7 Apr 2020 00:28:27 +0000 (GMT)
+X-AuditID: b6c32a49-89bff700000012ae-0a-5e8bc92db9f4
 Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- F4.11.04024.6B3CB8E5; Tue,  7 Apr 2020 09:05:10 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 2C.A2.04158.B29CB8E5; Tue,  7 Apr 2020 09:28:27 +0900 (KST)
+Received: from alimakhtar02 (unknown [107.108.234.165]) by
  epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200407000510epsmtip1001cc24d264d29a611749eef3a386d57~DYMkLEa1f0424704247epsmtip1c;
- Tue,  7 Apr 2020 00:05:10 +0000 (GMT)
-Subject: Re: [PATCH v3 2/8] PM / devfreq: Add generic imx bus scaling driver
-To: Leonard Crestez <leonard.crestez@nxp.com>, Georgi Djakov
- <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <f091bc7a-c59b-ae05-2be8-2f654e03b61a@samsung.com>
-Date: Tue, 7 Apr 2020 09:14:27 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ 20200407002824epsmtip1ede61960b9b3fd8c9cb1e5b97448dc25~DYg2ZBaig2114921149epsmtip1D;
+ Tue,  7 Apr 2020 00:28:24 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Rob Herring'" <robh@kernel.org>
+In-Reply-To: <20200405015416.GA16616@bogus>
+Subject: RE: [PATCH v4 1/5] dt-bindings: phy: Document Samsung UFS PHY bindings
+Date: Tue, 7 Apr 2020 05:58:21 +0530
+Message-ID: <006401d60c73$7486ec20$5d94c460$@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <af1fd3a339a37123ee36179efcb90600c1e0f746.1586174566.git.leonard.crestez@nxp.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0wbZRj2612vV7LqWUA+mw3ZzX9gsrUrnR8G0ERmLg5jAwkhGouX9gIN
- /ZVeuzgXA25DoYiubM1CdUBkbAWJ0lKg4BhZ6VRYYKKzI8JkERIXIiXYgQbF2HKo/Pe8z/s8
- ed/n/fKRmNwvUZBGi4OzW1gTTaTgg+PZytyh8SadsvnOXrTQVg/Q+q1JgK58dxOgh54RDC0u
- zAE01KpH7ZFpMfL3z+Ho4miAQD2eYRzdvt0nQVOnf5Ug3701MQosRsXItdmNoXhzBKCuuzMi
- FPW5xSjetwjQzOQxNPeuj0CfTd8g0KWHHgzVj0YkyBXeItDfUT+OHgQzUFdnFEP+deaFfYzH
- 5QNMb1svYFZn6yXMx3UzONMRcDKBnkaCmY9eI5j+y7WMPxYSMR9tKZnN8XTmw2APYOKBTK3s
- tZqCao41cPYszqK3GoyWqkL6eFnli5Wao0pVriofPUtnWVgzV0gXl2hzXzKaEkehs06wJmeC
- 0rI8Tx8uKrBbnQ4uq9rKOwppzmYw2fJth3jWzDstVYf0VvNzKqXyiCYhfLOmum2z3LYkfivY
- HifqQBR3ASkJqTzYsf65yAVSSDkVAnD1wtpO8RuAN1eu40KxAeCZ8Px/ltBPGzuqUQAHB74B
- QrEKYOjOX1hSlUqVwJXQZZDEadQpeG7q9LYDo2YkcME9K0o2CCoHjj2YJZL4MWo//OGPxW2D
- jCqCQ+7kViSJU0/DQMveJJ1OlcOJwbM7ksfhROsSnpRIKR2c/LQ0SWNUBvxxqV0k4Kfg0Mon
- WHIspEIk9G/0E0k9pIrhypflQphUuPx1UCJgBYzHRgkBn4LdExFC8DYAGBz7Viw01HCs6/z2
- ahiVDb8YOSzQ++Hwn5eAMPdRGFv/QCyMksGG9+SC5AD8/v49kYCfhJ3vNxLnAO3dFca7K4F3
- VwLv/8M6AN4DnuBsvLmK41U21e63DoDt75KjCYEL0yVhQJGA3iOrkDbp5GL2BH/SHAaQxOg0
- maK5USeXGdiTb3N2a6XdaeL4MNAkTu3GFOl6a+LzWRyVKs0RtVqN8lRHNSoVnSHz3DXp5FQV
- 6+BqOM7G2f/1iUipog5oL5ZFX860th7LCU3nl57J3Lz6sx/vHjBUpBXdP/jLV8ZHzL/XLr9e
- 3ITKtPGBhsLUWHfKM7eupl3zRzL84tTOiha1Xo6kpXtibG6fEXOev7HWO5vpXm5RvHNWrrBZ
- jyte1QVtr3ALzxfsk+V5wfAI6atdZefHr2e/McUfbN6icb6aVeVgdp79B1Zt3xFEBAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SbUhTURiAO7t3d1dzeZ2aR0vLJUVS6qLgQCVFGJcKsgLREHXMm1pujl0/
- sn40q6VOrQw0/Ghqqcwl4ab4kYnk/EBlyhSnZKk5M384I9QMUaupgf8e3vd5zvnzkpiglOtF
- JsiSGYVMnCgkHPFGo9DneKMxJyqoOvMUmtSoAFru7wOoeqgLoKWC9xiyTo4D1FQkQWWdA1yk
- rx/H0cs2A4F0BS04Ghys4yHTw3ke0n75yUUGq4WL1Ks1GFrM6wSoatTMQRZtPhct1lkBMveF
- oPEMLYHeDnwk0KulAgyp2jp5SN2xTqANix5Hcw0eqOqNBUP6ZfqcN12g1gK6VlML6B9jKh5d
- ojTjdLkhhTbosgn6s+UDQddXPqD1C80c+tl6EL1qdKefNugAvWjwCeXfdDwTyyQmpDKKwOAY
- x3jNaph8hnu3oWyRUAILrgYOJKROwuaJXxw1cCQFVCuA5szW7YUnLDR3YWpA/mNXaDSyW44N
- wLwnw4TdcaWuQFtzJbCzG3Ufrs32YHYJo0Z4cP57+far0wBWzCo3C4Lyh+1zY5vsTPnCkd/W
- zZpPBcOm/Hcc+2845QcNL/bbx+5UGGyptHK2FBfYWzSD2xUHKgr2vb5uH2PUEbimGcK22AN+
- minjbPEB2GQrxZ4D1+IddfGOpHhHUrwjKQe4DngyclYaJ2VFcpGMSQtgxVI2RRYXIEmSGsDm
- zfgfbQbDldEdgCKB0Im/i5cTJeCKU9l0aQeAJCZ043vlZUcJ+LHi9HuMIilakZLIsB1gH4kL
- PfjfZN0RAipOnMzcYRg5o/i/5ZAOXkpwOcAbL03Ll0dMFxKHz1abZo2HHt8oGwjPClsiHjWJ
- YpRZEZE1fqFFB3NNU199e6/Z0p30lzIsFEflF5K0cmwqm7cn1yaJXIt3PtFjWrg6cZvbvvIn
- kBgNk6zWSFwCllW7M/tLQrUmYDo/H45fqOiO1oSu7L11WuCxwFx03hgT4my8WOSPKVjxX5Cv
- xMEvAwAA
-X-CMS-MailID: 20200407000511epcas1p361a8982b0da2bc80b1b6e8cf9870093c
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQKI+vJzlUBp7WIi19k8pRZBKIHK2gGQnU/1Ag9B/DgCQMO8c6bX6iwg
+Content-Language: en-in
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SaUhUYRTlm7f4NCeeT8HrCFZTRipqVtKLNPsR8iILi4Io0YZ8qLg2z9GU
+ IqvB1HHEhCwnUaPUMnMZNZdyYcplwpTUMVyKTIco0kghN9rGN5H/zv3OOd+5By6FMUOEjIpJ
+ SOaVCYo4OWmHP33h4entbdSE73w0xLCfl00kO19bQbClLwcIdnCwzoYda+zGWf30KMEOtxWT
+ 7J3BDgmredtCspW9vyTs7+ctNmx50xg6aM8N52klnL4qm+QaHlzh1MZOnPtuHse5vMYqxC3o
+ 3bgbXRpJKHXGLiCSj4tJ4ZW+B87ZRde/1pBJDfKLtwYKiAzUJ8tBthTQe6DuvYnMQXYUQz9D
+ MDOxZB3mESy1vrEOPxA0P6zE/1k0tfesRDuCvvmrhDh8RdCxsrKmImlvaLmfSVqwE+0O13Qf
+ cIsIo3slMJ01LrEQtrQXGPU/MQt2pI/DYuHCXwNF4fQ2GPuYbIFSeh/os3ZZFFLaAYxFM2vf
+ Y/QmaJ4txsSFNsOyuYIQo4Kh01xv1ThD93IuZokFusYGSu9mINFwCKrLRq1mR/jS22gjYhks
+ zLWvrQB0LOS27RafL0F5SY+1fBB0jRTjFglGe0Btm68YtRG0qzMS0SmFrExGVLvD9TmT1ekK
+ NzUaQsQctGv7sHy0RbeumG5dMd26Arr/YWUIr0IufJIQH8UL/kl+CXyqj6CIF1QJUT7nE+P1
+ aO3SPA+3IN1AiAHRFJLbS0/basIZQpEipMUbEFCY3Ekq02aHM9JIRVo6r0yMUKrieMGAXClc
+ 7iwtIExhDB2lSOZjeT6JV/5jJZStLAOlnbx8KrjNrH2HJmPUGzLcBoy9txdHvXakKx8/MeRP
+ 7E0cOevwbapkvja9zP9Tmqu6KGyVSO83aAOQ6kiXS35stz3aGqhfYl+tMCamuDHk6KpjaoMZ
+ 6bUdROt2xRQTXHjMPrCeU9Ush9b3qIXZ/gvZs02T6rwTQREpePXgfjkuRCv8PDGloPgDpvJd
+ 9mUDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrCIsWRmVeSWpSXmKPExsWy7bCSnK72ye44g6ZuWYuXP6+yWXxav4zV
+ Yv6Rc6wW589vYLe4ueUoi8Wmx9dYLS7vmsNmMeP8PiaL7us72CyWH//HZPF/zw52i6VbbzI6
+ 8Hhc7utl8ti0qpPNY/OSeo+Wk/tZPD4+vcXi0bdlFaPH501yHu0HupkCOKK4bFJSczLLUov0
+ 7RK4Mjae7WYr2KxUMfXcJNYGxhNSXYycHBICJhLd6xeygdhCArsZJd4uVIeIS0tc3ziBHcIW
+ llj57zmQzQVU84pRYuXyaSwgCTYBXYkdi9vAmkUEVCWaZj1gASliFrjMJHHkzQs2iI57jBK3
+ 755iBaniFNCWOLnpLzOILSzgL9Hz8RljFyMHB4uAisTNRyUgJq+ApcSmDiOQCl4BQYmTM5+w
+ gISZBfQk2jYygoSZBeQltr+dwwxxm4LEz6fLWCFOcJPY/3QjC0SNuMTRnz3MExiFZyGZNAth
+ 0iwkk2Yh6VjAyLKKUTK1oDg3PbfYsMAoL7Vcrzgxt7g0L10vOT93EyM4LrW0djCeOBF/iFGA
+ g1GJh5eBvTtOiDWxrLgy9xCjBAezkgivVG9nnBBvSmJlVWpRfnxRaU5q8SFGaQ4WJXFe+fxj
+ kUIC6YklqdmpqQWpRTBZJg5OqQbGZrPzdQ+luA8G/jlsrvKQoYJD8NHOQwmKL6wLK5Pizy7u
+ Mjv4gv9wxZylNa32d78x3td/eGz7d4acoFU3otm7D4S28PMmNIYayxmybrVgdMxi+6/m5vDb
+ NV+yvaMiT2ZJwNf4VYnuXqctYsyv/DTzOsCWxxto8mb7mtieVf3LtKOszjTPT1RiKc5INNRi
+ LipOBACcpHwYxwIAAA==
+X-CMS-MailID: 20200407002827epcas5p32458e0a4063aa41afb9ef95030724c53
 X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20200406120515epcas1p2331d9e8917c308ad7e2d005df4dd7420
-References: <cover.1586174566.git.leonard.crestez@nxp.com>
- <CGME20200406120515epcas1p2331d9e8917c308ad7e2d005df4dd7420@epcas1p2.samsung.com>
- <af1fd3a339a37123ee36179efcb90600c1e0f746.1586174566.git.leonard.crestez@nxp.com>
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20200327171414epcas5p1460e932c0bc98f31ebdd115218b4fd49
+References: <20200327170638.17670-1-alim.akhtar@samsung.com>
+ <CGME20200327171414epcas5p1460e932c0bc98f31ebdd115218b4fd49@epcas5p1.samsung.com>
+ <20200327170638.17670-2-alim.akhtar@samsung.com>
+ <20200405015416.GA16616@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_170520_845038_CA257759 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20200406_172833_281138_42A094DA 
+X-CRM114-Status: GOOD (  20.22  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.33 listed in wl.mailspike.net]
+ high trust [203.254.224.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -139,7 +125,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -152,51 +137,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
+ avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/6/20 9:03 PM, Leonard Crestez wrote:
-> Add initial support for dynamic frequency switching on pieces of the imx
-> interconnect fabric.
-> 
-> All this driver does is set a clk rate based on an opp table, it does
-> not map register areas.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Tested-by: Martin Kepplinger <martin.kepplinger@puri.sm>
-> ---
->  drivers/devfreq/Kconfig   |   8 +++
->  drivers/devfreq/Makefile  |   1 +
->  drivers/devfreq/imx-bus.c | 138 ++++++++++++++++++++++++++++++++++++++
->  3 files changed, 147 insertions(+)
->  create mode 100644 drivers/devfreq/imx-bus.c
-> 
+Hi Rob,
 
-(snip)
+> -----Original Message-----
+> From: Rob Herring <robh@kernel.org>
+> Sent: 05 April 2020 07:24
+> To: Alim Akhtar <alim.akhtar@samsung.com>
+> Cc: devicetree@vger.kernel.org; linux-scsi@vger.kernel.org;
+krzk@kernel.org;
+> avri.altman@wdc.com; martin.petersen@oracle.com;
+> kwmad.kim@samsung.com; stanley.chu@mediatek.com;
+> cang@codeaurora.org; linux-samsung-soc@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
+> Subject: Re: [PATCH v4 1/5] dt-bindings: phy: Document Samsung UFS PHY
+> bindings
+> 
+> On Fri, Mar 27, 2020 at 10:36:34PM +0530, Alim Akhtar wrote:
+> > This patch documents Samsung UFS PHY device tree bindings
+> >
+> > Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+> > ---
+> >  .../bindings/phy/samsung,ufs-phy.yaml         | 67 +++++++++++++++++++
+> >  1 file changed, 67 insertions(+)
+> >  create mode 100644
+> > Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> >
+> > diff --git
+> > a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> > b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> > new file mode 100644
+> > index 000000000000..41ba481ecc76
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> > @@ -0,0 +1,67 @@
+> > +# SPDX-License-Identifier: (GPL-2.0)
+> 
+> Dual license new bindings:
+> 
+> (GPL-2.0-only OR BSD-2-Clause)
+> 
+Sure will update.
 
-Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
+> > +%YAML 1.2
+> > +---
+> > +$id:
+> > +https://protect2.fireeye.com/url?k=91cb53a2-cc1b5b6e-91cad8ed-000babf
+> > +f3793-
+> 448c7d85bdf69f5a&q=1&u=http%3A%2F%2Fdevicetree.org%2Fschemas%2F
+> > +phy%2Fsamsung%2Cufs-phy.yaml%23
+> > +$schema:
+> > +https://protect2.fireeye.com/url?k=a8ce57c7-f51e5f0b-a8cfdc88-000babf
+> > +f3793-fbe649ab0853d701&q=1&u=http%3A%2F%2Fdevicetree.org%2Fmeta-
+> schem
+> > +as%2Fcore.yaml%23
+> > +
+> > +title: Samsung SoC series UFS PHY Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Alim Akhtar <alim.akhtar@samsung.com>
+> > +
+> > +properties:
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +  compatible:
+> > +    enum:
+> > +      - samsung,exynos7-ufs-phy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +    description: PHY base register address
+> > +
+> > +  reg-names:
+> > +    items:
+> > +      - const: phy-pma
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: PLL reference clock
+> > +      - description: Referencec clock parrent
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: ref_clk_parent
+> > +      - const: ref_clk
+> 
+> Doesn't match what 'clocks' says.
+> 
+Will correct.
 
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+> Also, why do you need the parent in DT? Just use clk_get_parent(). DT
+should
+> reflect actual h/w clock connections (not what the driver happens to
+need).
+> Also, there's the assigned-clocks binding.
+> 
+Some of the platform deviates from the normal clock trees and need to force
+a different parent. To get such parent added this.
+I will explore a bit more on this, and check about assigned-clocks binding.
+This is also an optional clock, so will change accordingly
+
+> > +
+> > +  samsung,pmu-syscon:
+> > +    $ref: '/schemas/types.yaml#/definitions/phandle'
+> > +    description: phandle for PMU system controller interface, used to
+> > +                 control pmu registers for power isolation
+> 
+> We have a binding for power domains. Use that for power isolation.
+> 
+Let me have a look on that, if power domains bindings can be use here, this
+is same way other Exynos binding is defined w.r.t. pmu-syscon.
+
+> > +
+> > +required:
+> > +  - "#phy-cells"
+> > +  - compatible
+> > +  - reg
+> > +  - reg-names
+> > +  - clocks
+> > +  - clock-names
+> > +  - samsung,pmu-syscon
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/exynos7-clk.h>
+> > +
+> > +    ufs_phy: ufs-phy@15571800 {
+> > +        compatible = "samsung,exynos7-ufs-phy";
+> > +        reg = <0x15571800 0x240>;
+> > +        reg-names = "phy-pma";
+> > +        samsung,pmu-syscon = <&pmu_system_controller>;
+> > +        #phy-cells = <0>;
+> > +        clocks = <&clock_fsys1 MOUT_FSYS1_PHYCLK_SEL1>,
+> > +                 <&clock_top1 CLK_SCLK_PHY_FSYS1_26M>;
+> > +        clock-names = "ref_clk_parent",
+> > +                      "ref_clk";
+> > +    };
+> > +...
+> >
+> > base-commit: fb33c6510d5595144d585aa194d377cf74d31911
+> > --
+> > 2.17.1
+> >
+
 
 _______________________________________________
 linux-arm-kernel mailing list
