@@ -2,73 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5BD61A0D2D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:00:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571D51A0D70
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rB82YPym6tISvTVf072mO1wdrQpfmPB9YdERcHBzSwY=; b=UCXRLRjl5BMUuZ
-	fvYLDt608WkH6NYPASUVPLHfQJJziAY5pq44zeYpn92H6TPJueMjADKQIgWXkEtocwScBgoX/uJYH
-	X8BqCMoyESW8934+AwbTF6kPJoL9FOnhRQcjD9NCa9oWqHvISmLtzZNW5mkNGEL7xbAQ5Bx6nldpg
-	hxrocSYfF3h9HOsrhSWoHz7YZTyvqX+hFYGmSwc53rWXdZj9v8X7WAM7R7/13O+hHbC9jZ1q+ENo/
-	rCMaYH5FJ8x2p8ezgfJMdyIKc46AnAqtyxUhcRJSZM0WvowWH4yZFFY2nA2bK/0wXG6K5Eeq26w20
-	8ZkyihL3okCV34a4AIfQ==;
+	List-Owner; bh=K+29cbZOkbWTvhQNCNZF1csegP02fSHddiDDwABkAfw=; b=IOLmdapCyglYEg
+	f/BAE7PJRZXc5JzqdrpZkuVl4dnA14OTuLHDV0Up3Y2POg9Zidd1B7gvE4suJPxpSm1dK/Inae1he
+	H7WjESL9l/b4yHLNiqubOz4wM891aI2fncXiMJXj64XY7vmortCO47v+/xCRBUxU4NKDpYWT9fchD
+	is38fs5/NbyxgCYNRiMn1HBvW81Jndgw2iY5jeqcNd2yFi/I4lNgV573oysgw1f+xnUXIkdc+7rIf
+	Beh8hVjDsxNRRrXWOA6IT/6THFwwXNmcowYXCaFQ2/22lZ019Az57ZHmUaASYkTdBt5nfKnBq4WNu
+	uqrJ43Yu/pN0gPisEdsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLmuC-0008Pu-4D; Tue, 07 Apr 2020 12:00:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jLnBe-0000wU-5y; Tue, 07 Apr 2020 12:18:38 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLmu3-0008Ms-3j
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:00:28 +0000
-Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com
- [209.85.221.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A24832074B
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 Apr 2020 12:00:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586260824;
- bh=Uqf4rhYga9NNaBB0Dvwp58Stj1GsGS4Ihxkd+ju3McQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=UynEai+Iomxc2OG8KYjK/KRD7a/dOOxnhwEmNPEDHEIlfRtBYPIwNjDmN6OEA/9ly
- cUMpN3ZxirencrZA4IoHgDxg+rqzfXd19T3f45flU3iNT4E+LyD1J4mbP/FVTbsn8V
- MdVqtkiIove/82erkXHXimJH8ISVg2vzZYIJmCS0=
-Received: by mail-wr1-f50.google.com with SMTP id k1so3591252wrm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Apr 2020 05:00:24 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYo4BxeCzGzgD5SrOvyer+M6hnSMS2km5TXHEOzjQH0c1xGVQsR
- J/1YA5qmXUNW9dGsQ2Go5TdPugiF898t7rcknEZjvw==
-X-Google-Smtp-Source: APiQypJI+zUUJefqkI1wPoN1P7O6CrZHHpERpheNKfgg8qCaXTmeul5CgCiQbYpjls0Awj/83RzxNXZ+ny+VOSB9RbA=
-X-Received: by 2002:a05:6000:1002:: with SMTP id
- a2mr2399545wrx.151.1586260823114; 
- Tue, 07 Apr 2020 05:00:23 -0700 (PDT)
+ id 1jLnBX-0000vi-MO
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:18:33 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id ACABD59E;
+ Tue,  7 Apr 2020 14:18:28 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1586261909;
+ bh=fPdYE8A3jszFhj8Ia41Q61eXHMMvA97zhV0Z1oSNhpo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ki3AHBrZ4A1pHq9QyVUJmBRoyYy6r5XgnCvPLxfUMdFWAd+t6vap0lPuXVl4Exjrn
+ QGGFNT4zOWrpzji+6HaLIZro4VSBmpIW0R27U01g31cKRxQ33UG9t2g5bFRqwJzII4
+ BTM6sXy8JiOEaVdicsbrqxvEd0mfTiJATCkYEotA=
+Date: Tue, 7 Apr 2020 15:18:18 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Subject: Re: [PATCH v5 2/5] media: i2c: ov5645: Drop reading clock-frequency
+ dt-property
+Message-ID: <20200407121818.GC4751@pendragon.ideasonboard.com>
+References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1586191361-16598-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdWiVLt23a0JBDX6ZiKDiru9-ecgt3XF4Y5qzVOWXhLcCw@mail.gmail.com>
+ <CA+V-a8tHb1OomhfdsWV5duyuypTKC_EWT4o=mMjWVsxu+aOnBQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200406164121.154322-1-samitolvanen@google.com>
- <20200406164121.154322-13-samitolvanen@google.com>
-In-Reply-To: <20200406164121.154322-13-samitolvanen@google.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 7 Apr 2020 14:00:12 +0200
-X-Gmail-Original-Message-ID: <CAKv+Gu9psVBSdUvcRWNrEvjK4ckyA-vGKmZ33O2NUm-Pt4eJig@mail.gmail.com>
-Message-ID: <CAKv+Gu9psVBSdUvcRWNrEvjK4ckyA-vGKmZ33O2NUm-Pt4eJig@mail.gmail.com>
-Subject: Re: [PATCH v10 12/12] efi/libstub: disable SCS
-To: Sami Tolvanen <samitolvanen@google.com>
+Content-Disposition: inline
+In-Reply-To: <CA+V-a8tHb1OomhfdsWV5duyuypTKC_EWT4o=mMjWVsxu+aOnBQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_050027_172516_4B02D5CD 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200407_051831_876302_C8D4CDA3 
+X-CRM114-Status: GOOD (  15.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -76,7 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,54 +75,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 6 Apr 2020 at 18:42, Sami Tolvanen <samitolvanen@google.com> wrote:
->
-> Shadow stacks are not available in the EFI stub, filter out SCS flags.
->
-> Suggested-by: James Morse <james.morse@arm.com>
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Hi Prabhakar,
 
-Acked-by: Ard Biesheuvel <ardb@kernel.org>
+On Tue, Apr 07, 2020 at 08:40:06AM +0100, Lad, Prabhakar wrote:
+> On Tue, Apr 7, 2020 at 8:17 AM Geert Uytterhoeven wrote:
+> > On Mon, Apr 6, 2020 at 6:43 PM Lad Prabhakar wrote:
+> > > Modes in the driver are based on xvclk frequency fixed to 24MHz, but where
+> > > as the OV5645 sensor can support the xvclk frequency ranging from 6MHz to
+> > > 24MHz. So instead making clock-frequency as dt-property just let the
+> > > driver enforce the required clock frequency.
+> > >
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >
+> > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> >
+> > However, still wondering about the "xvclk" name above and in the definition
+> > below.  Is this the naming from the datasheet?
+> > The DT bindings nor the driver use the "xvclk" naming.
+> >
+> xvclk naming is from the datasheet, although the 0v5645 datasheet on
+> publicly available I have referred [1]/[2].
+> If I am not wrong all the ov sensors have the same naming convention as xvclk.
+> 
+> [1] https://cdn.sparkfun.com/datasheets/Sensors/LightImaging/OV5640_datasheet.pdf
+> [2] https://www.ovt.com/download/sensorpdf/126/OmniVision_OV5645.pdf
 
-> ---
->  drivers/firmware/efi/libstub/Makefile | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-> index 094eabdecfe6..fa0bb64f93d6 100644
-> --- a/drivers/firmware/efi/libstub/Makefile
-> +++ b/drivers/firmware/efi/libstub/Makefile
-> @@ -32,6 +32,9 @@ KBUILD_CFLAGS                 := $(cflags-y) -DDISABLE_BRANCH_PROFILING \
->                                    $(call cc-option,-fno-stack-protector) \
->                                    -D__DISABLE_EXPORTS
->
-> +#  remove SCS flags from all objects in this directory
-> +KBUILD_CFLAGS := $(filter-out $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
-> +
->  GCOV_PROFILE                   := n
->  KASAN_SANITIZE                 := n
->  UBSAN_SANITIZE                 := n
-> --
-> 2.26.0.292.g33ef6b2f38-goog
->
+The clock in DT should really have been named xvclk, but it's too late
+to change that. We can follow one of two approaches, either naming
+everything xclk, and naming everything but the DT property xvclk. Both
+have pros and cons, feel free to pick your preferred option, but in any
+case a comment to explain the issue would be useful.
+
+> > > --- a/drivers/media/i2c/ov5645.c
+> > > +++ b/drivers/media/i2c/ov5645.c
+> > > @@ -61,6 +61,8 @@
+> > >  #define OV5645_SDE_SAT_U               0x5583
+> > >  #define OV5645_SDE_SAT_V               0x5584
+> > >
+> > > +#define OV5645_XVCLK_FREQ              24000000
+> > > +
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
