@@ -2,80 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B5811A07B9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:53:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62C5C1A07C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:54:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ifr1pahw8ZX0aXAwPFBzDrom1YbYBsPa/fVUIJfZNSs=; b=ElYcgwbiiaQosu
-	hrMTfYBjms+k5PR/wkGJwnTAZWqTVOImri9pZRjo3mbJemtHNnnXHZKuoK3MjeozL4vTy2MPPh6ka
-	umdZMFXMEpK5bn/RRobZPxSJdvCMnxjhqjqYvtr3u7uGYlHQlNDfUCFLjP2eKMoMDorXQVgeToqt9
-	xqWpyU8mnVJ98hubH3it1QsgUZ2WegvlKNVCY9JinDX9kKJxO+e9p4q/UpI8Xl9DNF1INwjcI8V77
-	LW4LW4YCjx9VVioAWk8KtdwDq224pu8bQxgQmJF/u32ndE5aTT19kULkHCsM/jYQN9pNKGGu/T/HO
-	BoQQlMYikYoaXeZ/Zbww==;
+	List-Owner; bh=hJZvwE51Gdalle5ecHkINogvzidg+tjYru3kICcPl3c=; b=N0liTAXFfjBPmW
+	IavvcefAggF31A0pcgwoY0NGJBbV04LwcaNemN70M5FZwLcTqOEYmHIVDRNuOukA430EShtT13Jso
+	rRPRiFf5FzI/8co+rTc8z7bNcjAo+lwupoRQ+37U4Rx0dMQlbNx3Wn4sTfYvGrNmaUwbNtS5CRk/l
+	OR5VqiutRqBijFBo0cPWcC/AnJ+SxPW8VF8JRrV9I/i4Jka1PxzgOazup9lOLN+za6c4sbFdAVsU8
+	4wW/p3Q2urREqm8rJyURIA2yD70WlRMMI8okxnP+Ydf2Q+iXNxO73saQ3g9aaXTrbp7tYMLoNLjgS
+	YCRWkw/cl5soTTq3mkjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLi6g-0005V5-07; Tue, 07 Apr 2020 06:53:10 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1jLi7n-0005nV-6i; Tue, 07 Apr 2020 06:54:19 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLi6a-0005Ue-0R
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:53:05 +0000
-Received: by mail-qt1-x843.google.com with SMTP id x2so559855qtr.0
+ id 1jLi7e-0005n0-TI
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:54:12 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20200407065407epoutp0281f4dfc4f6b480c60b62535e52c9440e~DdxoShanN0970609706epoutp02U
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 23:53:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vWzddfgz7uTE/9V/V86TERRrsNQQISOhESAwCEUneBo=;
- b=q1SWZgGwg4IOTQBPhG40WaUEPyUsX+FyFrDs5950iqCm/t8Heu0eZHAFpGoUmZq6Bd
- Xt9rXDCXr5n9qN08BMqz7yICGB2sH0AhkAXJlTs1J7X89vRCHIuaPvju9lH5s+f6PC/L
- 9VOu1HA363LRV4cm1ZSVTe3/KXdojZNaS3z/JhiAGsbhSzHB0xJtMXNE1tArKqjoQ9dX
- J93dSXODgr6msokMUAPf5TyjdVehaJmZr57P2BIpLtHSJMbkqa12pUGAK1RsrhZOcA+S
- +GwPXJJGGlLkoUpRmAlQvM5i20ex3c1CjK0uQUPaCH7Msb6KUnoHHaI7KERkD6T+TxkD
- 1zGQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vWzddfgz7uTE/9V/V86TERRrsNQQISOhESAwCEUneBo=;
- b=aUrHZ4077IXPLcUKxPpLy2pOsldmXXIfrh5z24dHrLTuB1hZ1PnipESPkPCPIrxBao
- eP5gSPu7ar4DfqUJ8pXXSmCBZXfJ+4m/sArOwZb7fji+qAs7WRihSWMUNco756DYE/J6
- 4ukO2oOJ31yVuqa3bTyRhTegUvDIDwHE5j9Szfg3c5rPaj/Z0qrljlLkg2xbTzLWJTtO
- 3RUJg+lg16Txmge6Av4+SG33jXY6xFUVy4xs1DFNrqolHEOj0k2ZuBalDSpcMC/3K4br
- auhSZiBO84Upf6VDVEnU3WUDWl9gBl4kIOsU4l3LPmIEMWI+zEmD4kc9Kj/sL1F+5d5z
- vKMw==
-X-Gm-Message-State: AGi0PuaVmbcae3dbW3xWn6FCGZLjCfU5eOiOIZveZqkKf4syvPQbPhiM
- oProxMTP/BGWsPwt9dhHBp0vb59WxQvOyidYRrg=
-X-Google-Smtp-Source: APiQypI66gw7vMWPdfIdgXDBcmt9McXyUBt2rwqcPJXsAdNoo5YK7kjPqDasabdi/daxyv9FQqWl3aCPN2y58P0heE8=
-X-Received: by 2002:aed:21c5:: with SMTP id m5mr897676qtc.42.1586242382828;
- Mon, 06 Apr 2020 23:53:02 -0700 (PDT)
+ Tue,  7 Apr 2020 06:54:07 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20200407065407epoutp0281f4dfc4f6b480c60b62535e52c9440e~DdxoShanN0970609706epoutp02U
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586242447;
+ bh=FD6u6gfSfkVoafsxdQNzxjDTpNg+DSItmEjTgsOLtxk=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=Fr9aFOcBoX+ijwXyThPrEYedZA1LFeIUQs3ZbJiiAttqRG3amcBE2ZenidORB6kjb
+ Kn0bR0uR8T5bz0kOXu+D1Ai5HcTLYyVKblFzqYQb88Ks5gIKh4IRwk8cC9oVScF87J
+ 4o4cI9yZPE4/MSvVdpN6P89i1CuWkLJOP2Tvx2rg=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas2p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200407065407epcas2p1c6e02e1a1e1cb8d5a91877e733e5f94d~Ddxn9mXvO1808218082epcas2p1x;
+ Tue,  7 Apr 2020 06:54:07 +0000 (GMT)
+Received: from epsmges2p4.samsung.com (unknown [182.195.40.181]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 48xJ6P4nNWzMqYkk; Tue,  7 Apr
+ 2020 06:54:05 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+ epsmges2p4.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 3B.1D.04647.B832C8E5; Tue,  7 Apr 2020 15:54:03 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20200407065403epcas2p37d0990979790e3e14a25149830f5c913~DdxkNzj_k2389123891epcas2p3-;
+ Tue,  7 Apr 2020 06:54:03 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200407065403epsmtrp27601e96f08f9701f497a9742ed6ce228~DdxkK9nvC3043630436epsmtrp2c;
+ Tue,  7 Apr 2020 06:54:03 +0000 (GMT)
+X-AuditID: b6c32a48-8a5ff70000001227-59-5e8c238bbe98
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 1A.42.04024.B832C8E5; Tue,  7 Apr 2020 15:54:03 +0900 (KST)
+Received: from KORCO004660 (unknown [12.36.165.196]) by epsmtip2.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20200407065402epsmtip21f3515027a661b7686ec8d83ad8aae00~Ddxj6Sdlv2245622456epsmtip2X;
+ Tue,  7 Apr 2020 06:54:02 +0000 (GMT)
+From: "Hyunki Koo" <hyunki00.koo@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
+In-Reply-To: <20200407062655.GC21995@kozik-lap>
+Subject: RE: [PATCH v6 2/2] tty: samsung_tty: 32-bit access for TX/RX hold
+ registers
+Date: Tue, 7 Apr 2020 15:54:02 +0900
+Message-ID: <000501d60ca9$529b3cc0$f7d1b640$@samsung.com>
 MIME-Version: 1.0
-References: <20200407055837.3508017-1-alistair@alistair23.me>
- <20200407055837.3508017-3-alistair@alistair23.me>
-In-Reply-To: <20200407055837.3508017-3-alistair@alistair23.me>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Mon, 6 Apr 2020 23:52:36 -0700
-Message-ID: <CA+E=qVf_Zr6JXQVxRuUdTWL7oxq5dRp+jeHF8PWDSozyFZMaCw@mail.gmail.com>
-Subject: Re: [PATCH v2 3/3] arm64: allwinner: Enable Bluetooth and WiFi on
- sopine baseboard
-To: Alistair Francis <alistair@alistair23.me>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQKEs4Y1dkf1SYeuuA/6Ie9wROds5QJr8Gf+Ae0ziqcAfW/RYKbpNljg
+Content-Language: ko
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRjm29k5Z1qL07J6GVHjdCENdZttHSujSGVgkGRlWGgHd/LSbu1s
+ doMyTPOSZShdppFlpVhMmaU2cTOzQgoVrOhGRWqUUVmC3ZDa8Rj573m/73m+93ne75VhCg+h
+ lGVZHJzdwppoIljafCdUF16y8Hiq+rtPy1zo6sGZvJoGgqloHJEwJwc+YkxvbyPJeAae4Ey/
+ t4pgzvb6JMzDmlKSyW/vItcGGzz1RYTBf/46aWi6fNjQcOOx1DDqmZ+Ip5hWZ3KskbOrOEu6
+ 1ZhlyYihE5LS1qfp9GpNuCaaWUGrLKyZi6FjNySGx2eZAqZoVQ5rcgaOElmepyPXrLZbnQ5O
+ lWnlHTE0ZzOabBqNLYJnzbzTkhGRbjWv1KjVWl2AudOUeeRlB2nzS/edaCwjctE9rBgFyYBa
+ Dn+8r/BiFCxTUK0I+i8VSsXiGwJ37phUYCmoMQTdT/hiJJtQjNZyIqcdQcnRXkIsPiDwuR+R
+ goCgwqG/ZlAi4JAAbnpaSwokjPJJoPNsPi68FERFwthggsCZRW2Fm81tE3wptQg++e/jApZT
+ 0dDXVIKJeCZ0nxucMIRRC6DlU9VkBBX8HLqKi73iobJuHImcEKgsKsCEvkDlkdBV7ZWIglho
+ OX+bFPEsGL5/YxIrYfRzOyHiw+ArOEWK4uMIfo4M4eJFFLjeHUNCAIwKhQZvpDiVhdD1fNLb
+ DCi8M06Kx3IoLFCIwiXgHns/6WAeXB/ykmWIdk1J5pqSzDUlget/r2okrUdzOBtvzuB4rW35
+ 1L/2oIl9DTO0oo6eDZ2IkiF6unxbUEmqAmdz+P3mTgQyjA6RK0uLUhVyI7v/AGe3ptmdJo7v
+ RLrA4E9hytnp1sD2WxxpGp1Wr1dH6xidXsvQc+Weac92KKgM1sHt5jgbZ/+nk8iClLloY3ze
+ 657fy65cS/ma3fYcUb+iF+trL5cbIk+7V+mT7751upvWpvQd/FExMn/mSv+Xir4O3P0nzmvd
+ 8iNJq8tXJj/QNvjiirTMvtTEHev21B2afSam1f9m+OJm1falB1vmvtu0t/sYGs52GNvULyru
+ 5ZeHbT7UrzEvvXV1+645UQPXRmkpn8lqwjA7z/4FM7y3qcUDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprHIsWRmVeSWpSXmKPExsWy7bCSvG63ck+cwZq/zBbzj5xjtWhevJ7N
+ YsqGD0wW/Y9fM1ucP7+B3WLT42usFpd3zWGzmHF+H5PFmcW97Bate4+wO3B5bFrVyeaxf+4a
+ do/NS+o91m+5yuLxeZNcAGsUl01Kak5mWWqRvl0CV0bjnQPsBftZKvo2TGBrYDzG3MXIwSEh
+ YCLxeXlqFyMXh5DAbkaJx5962bsYOYHiMhITXixhhrCFJe63HGGFKHrOKLHt6wuwBJuArsTl
+ xU+YQGwRIHvzjeXsIEXMAseYJG4+/8kC0fGEUeJs10I2kHWcAvoS3554gzQIC4RIrGv+wApi
+ swioSLzdfxzM5hWwlLiwuZsZwhaUODnzCQuIzSygLdH7sJURwpaX2P52DtR1ChI/ny5jhTjC
+ TWL2ir9QNSISszvbmCcwCs9CMmoWklGzkIyahaRlASPLKkbJ1ILi3PTcYsMCw7zUcr3ixNzi
+ 0rx0veT83E2M4FjT0tzBeHlJ/CFGAQ5GJR5eBvbuOCHWxLLiytxDjBIczEoivFK9nXFCvCmJ
+ lVWpRfnxRaU5qcWHGKU5WJTEeZ/mHYsUEkhPLEnNTk0tSC2CyTJxcEo1MHLvL7U5v0L8rsQ7
+ U570MwsnrtB5+ptXMttyd9/Vo1y/srufxvezsRdyKWzV+3G4+WBZ6qSEzE256cbzp2/fL1yy
+ 63g958dXsuwHNj1e3Bmu3ffn3IaMj4XvgifHr9py9rddI1OItdykJ0eLFSYc8b37/uVX5v4E
+ /qZrc+dWf/fK0lVLeFNnfV+JpTgj0VCLuag4EQDbGOyGsQIAAA==
+X-CMS-MailID: 20200407065403epcas2p37d0990979790e3e14a25149830f5c913
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20200406230902epcas2p19a8df6805dac59968d664efb9bc9419b
+References: <20200401082721.19431-1-hyunki00.koo@samsung.com>
+ <CGME20200406230902epcas2p19a8df6805dac59968d664efb9bc9419b@epcas2p1.samsung.com>
+ <20200406230855.13772-1-hyunki00.koo@samsung.com>
+ <20200407062655.GC21995@kozik-lap>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_235304_053455_4AACB2D2 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_235411_122447_A3DE7165 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [anarsoul[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,6 +132,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,77 +144,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Johan Hedberg <johan.hedberg@gmail.com>, netdev <netdev@vger.kernel.org>,
- Marcel Holtmann <marcel@holtmann.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, alistair23@gmail.com,
- arm-linux <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ 'Rob Herring' <robh+dt@kernel.org>, 'Kukjin Kim' <kgene@kernel.org>,
+ linux-serial@vger.kernel.org, 'Jiri Slaby' <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 6, 2020 at 10:58 PM Alistair Francis <alistair@alistair23.me> wrote:
->
-> The sopine board has an optional RTL8723BS WiFi + BT module that can be
-> connected to UART1. Add this to the device tree so that it will work
-> for users if connected.
+On Tue, Apr 07, 2020 at 3:27 :00PM +0900, Krzysztof Kozlowski wrote:
+> On Tue, Apr 07, 2020 at 08:08:49AM +0900, Hyunki Koo wrote:
+> > Support 32-bit access for the TX/RX hold registers UTXH and URXH.
+> >
+> > This is required for some newer SoCs.
+> >
+> > Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
+> > ---
+> 
+> Why I am adding these for the third time?
+Sorry, I didn't knew that,
+I will keep this next time
+> 
+> Tested-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> Best regards,
+> Krzysztof
 
-It's optional, so patch should have 'DO-NOT-MERGE' tag and appropriate
-change should go into dt overlay.
-
-> Signed-off-by: Alistair Francis <alistair@alistair23.me>
-> ---
->  .../allwinner/sun50i-a64-sopine-baseboard.dts | 23 +++++++++++++++++++
->  1 file changed, 23 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> index 2f6ea9f3f6a2..f4be1bc56b07 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> @@ -103,6 +103,16 @@ ext_rgmii_phy: ethernet-phy@1 {
->         };
->  };
->
-> +&mmc1 {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&mmc1_pins>;
-> +       vmmc-supply = <&reg_dldo4>;
-> +       vqmmc-supply = <&reg_eldo1>;
-> +       non-removable;
-> +       bus-width = <4>;
-> +       status = "okay";
-> +};
-> +
->  &mmc2 {
->         pinctrl-names = "default";
->         pinctrl-0 = <&mmc2_pins>;
-> @@ -174,6 +184,19 @@ &uart0 {
->         status = "okay";
->  };
->
-> +&uart1 {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
-> +       uart-has-rtscts = <1>;
-> +       status = "okay";
-> +
-> +       bluetooth {
-> +               compatible = "realtek,rtl8723bs-bt";
-> +               device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
-> +               host-wake-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
-> +       };
-> +};
-> +
->  /* On Pi-2 connector */
->  &uart2 {
->         pinctrl-names = "default";
-> --
-> 2.25.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
