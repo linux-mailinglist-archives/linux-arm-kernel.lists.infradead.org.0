@@ -2,79 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E0A1A0AEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 12:19:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 869F01A0AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 12:20:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=41ZPLzczHx3PQq4bCrVSNYv7nW+8R5WJOm43lA5mfjo=; b=oqG1j76csapu/E
-	yetI88cAymdHfclFalb53vvVb4fQzkOKSTEeSlPZ5vU5yzT8VrZtxg1VJboJjz1VcRiW0r/O7r042
-	0jRbfySAaRus0XZ8B4ykuwowXbC+dGJ7KMeLxUHSm9aBOoFREIkc5+MiTb35oEmn7/klhdmlWVg1I
-	G3V+ugjfQDbOQfnqxvFZksGae3nBbRC3tR5rjYahPmaZqaXGdpWs4UWfkKTb8niYcLrWEHXXNdPAr
-	fFKNuPZ69FRCzFMxZ+x6zyvmBn/D3f+lS9x6Ummi8uepxzJTHsCkFQlIcf8KBOrEulpO4cOryT8Ck
-	JJwcLoionTR8JHtzTwng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EbPb9cLZYVnsO3YAkoCLbXkBVeDXSddfCngKsCpabKI=; b=LBr4bGMSexcjWhhRl6rdhEjLm
+	RnYosctUA8qbDSU8aC0IvckK0Tu/0FeeGSwVIxzFNe1ln8YDfjeBw8m3XWzvANsn7dxT3QAFbv5z7
+	dL62dfYpda4wO9ZWbyZFv+gLrxjyyhs017sKvJmDdopHKzaUaiLVTSA86AAmN7+nAhhekeZK0a2pc
+	xJogZviRG+ztkrX0SY2MJpSQlzVU+sUeJgeUgvg17XsnjGlV0YKUkPO4LQyik+iV4QRKvhdf41UHJ
+	HevZdNGZyaJDBkxxczg3k/OJU2E0jUPCZ2hglqL4spJUEKnIsAEUKiI+CaORHHdFdIy9+z7Bspztq
+	eXu0P4y6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLlKL-0001YB-4u; Tue, 07 Apr 2020 10:19:29 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLlKC-0001WS-0D; Tue, 07 Apr 2020 10:19:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/SHKDXHzcHKe3xB0z6PA2YRoYV7/g4rTA1T7um9SQwk=; b=AuqK+uoiLfm9tn/EIdv5RAYWD
- aOO47m4FkgWC2BQOILrusCQ73YKVNmv8dw0c6mtIRzexUFievzPinPCo7yeQJ9YriAg7hA1aYDa4w
- QQS30yRToAQk9BCfLmi2fkYcxveNsNpa1lpeOuAHnTb1p+QcE/sXr/0nc1W0Hh1vWNw9C8PKd4ht1
- 7/PHJiS0f37nxJvqIYnAdyTYDoalfC5huw40nfXKmjWUdNU7RDgZeMM8/BJaF4mR0Dtx2S7MGeIV3
- 3XD9wp71Oz6BCFdY77WvyhyJGmCxYgRWZZbA571eRgiVZxa7r0s9gpBwwVYPrVQJvTKlG6Njaw9su
- X1S074zMg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:35162)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jLlK5-0007IJ-RE; Tue, 07 Apr 2020 11:19:14 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jLlK4-0007Z8-FZ; Tue, 07 Apr 2020 11:19:12 +0100
-Date: Tue, 7 Apr 2020 11:19:12 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: Trying to kexec on Allwinner A80
-Message-ID: <20200407101912.GL25745@shell.armlinux.org.uk>
-References: <20200406082720.GA31279@Red>
- <20200407100203.GK25745@shell.armlinux.org.uk>
+	id 1jLlL8-00024k-4i; Tue, 07 Apr 2020 10:20:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLlKq-0001wu-1A
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 10:20:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC2CC1FB;
+ Tue,  7 Apr 2020 03:19:56 -0700 (PDT)
+Received: from [10.37.12.154] (unknown [10.37.12.154])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10FA63F73D;
+ Tue,  7 Apr 2020 03:19:54 -0700 (PDT)
+Subject: Re: [RFC PATCH] coresight: dynamic-replicator: Fix handling of
+ multiple connections
+To: saiprakash.ranjan@codeaurora.org, mike.leach@linaro.org
+References: <20200405102819.28460-1-saiprakash.ranjan@codeaurora.org>
+ <CAJ9a7VgQzK1XSCvLwuqODwkWfvo=6Wwps7Db+pL5xYDeCuktrg@mail.gmail.com>
+ <6c0f45488f8a44bf860759e00fcabd09@codeaurora.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <906d374d-a4d6-f2f2-6845-88b97a5ff7d9@arm.com>
+Date: Tue, 7 Apr 2020 11:24:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200407100203.GK25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <6c0f45488f8a44bf860759e00fcabd09@codeaurora.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_031920_351931_D6790AA9 
-X-CRM114-Status: GOOD (  24.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_032000_117045_AEFCB5F2 
+X-CRM114-Status: GOOD (  22.65  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,243 +66,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mathieu.poirier@linaro.org, alexander.shishkin@linux.intel.com,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ swboyd@chromium.org, leo.yan@linaro.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 07, 2020 at 11:02:03AM +0100, Russell King - ARM Linux admin wrote:
-> On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
-> > Hello
-> > 
-> > I am trying to add the last missing Allwinner Soc in kernelci: the A80.
-> > But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
-> > So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
-> > 
-> > But kexec 2.0.18 fail to work:
-> > kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
-> 
-> As I mentioned in my other reply, this apparent "kexec" command line
-> does not seem to reflect the arguments you actually used to invoke
-> the kexec output below.
-> 
-> > syscall kexec_file_load not available.
-> 
-> This message is produced by do_kexec_file_load().  This function is only
-> invoked if the do_kexec_file_syscall flag in main() is set.  This flag
-> is only set if one of:
-> 
-> 	--kexec-file-syscall
-> 	--kexec-syscall
-> 	--kexec-syscall-auto
-> 	-s
-> 	-c
-> 	-a
-> 
-> are provided on the kexec command line.  Your command line above does
-> not contain any of those arguments, so either the command line is not
-> what you used, or you are using a patched kexec, or your compiler is
-> grossly miscompiling kexec.
-> 
-> > Try gzip decompression.
-> > kernel: 0xb6535008 kernel_size: 0x853200
-> > MEMORY RANGES
-> > 0000000020000000-000000009fffffff (0)
-> 
-> Then there's the debug output, which is only produced if the
-> kexec_debug global is set, which in turn is only set if --debug or -d
-> is supplied on the kexec command line - which again, your kexec
-> command line does not contain this.
-> 
-> > zImage header: 0x016f2818 0x00000000 0x00853200
-> > zImage size 0x853200, file size 0x853200
-> > zImage requires 0x00864200 bytes
-> >   offset 0x0000bae4 tag 0x5a534c4b size 8
-> > Decompressed kernel sizes:
-> >  text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
-> > Resulting kernel space: 0x01def5a0
-> > Kernel: address=0x20008000 size=0x01def5a0
-> > Initrd: address=0x21df8000 size=0x0090b6fa
-> > DT    : address=0x22704000 size=0x00005c09
-> > kexec_load: entry = 0x20008000 flags = 0x280000
-> > nr_segments = 3
-> > segment[0].buf   = 0xb6535008
-> > segment[0].bufsz = 0x853204
-> > segment[0].mem   = 0x20008000
-> > segment[0].memsz = 0x854000
-> > segment[1].buf   = 0xb5c29008
-> > segment[1].bufsz = 0x90b6fa
-> > segment[1].mem   = 0x21df8000
-> > segment[1].memsz = 0x90c000
-> > segment[2].buf   = 0x4db50
-> > segment[2].bufsz = 0x5c09
-> > segm[   71.039126] kexec_core: Starting new kernel
-> > ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
-> > x22704000
-> > segment[2].memsz = 0x6000
-> > [   71.489070] Bye!
-> > 
-> > 
-> > I have tried also kexec-2.0.20
-> > Try gzip decompression.
-> > zImage header: 0x00000000 0x000019b4 0x00001000
-> > zImage requires 0x008641c0 bytes
-> > Could not find a free area of memory of 0x86c1c0 bytes...
-> > Cannot load /tmp/kernel
-> 
-> kexec 2.0.20 doesn't appear to have changed anything to do with how
-> allocations are done.  The above output looks even more strange and
-> confusing.  "zImage header" is produced by debugging prints, which
-> imply that kexec_debug was set.
-> 
-> However, the "MEMORY RANGES" output is missing - this has not gone
-> away with kexec 2.0.20, it's still there, and works for me (I've
-> just built and tested kexec 2.0.20).
-> 
-> Also, the values on the "zImage header" line are completely messed
-> up; the first should be the zImage magic value and it is not - that
-> suggests that the file being loaded is not a zImage file, or is
-> corrupted.
-
-Under a VM (the kernel doesn't have kexec support - but that's not a
-problem, because the initial loading stages are the relevant parts
-which all happen in userspace):
-
-# build/sbin/kexec --version
-kexec-tools 2.0.20
-# build/sbin/kexec --debug --load virt-vmlinuz-5.4.0+
-Try gzip decompression.
-kernel: 0xb6a6c008 kernel_size: 0x407358
-MEMORY RANGES
-0000000040000000-000000007fffffff (0)
-zImage header: 0x016f2818 0x00000000 0x00407358
-zImage size 0x407358, file size 0x407358
-zImage requires 0x00418358 bytes
-  offset 0x00007178 tag 0x5a534c4b size 12
-Decompressed kernel sizes:
- text+data 0x00c2ed24 bss 0x000319ec total 0x00c60710
-Resulting kernel space: 0x0104707c
-Kernel: address=0x40008000 size=0x0104707c
-DT    : address=0x41051000 size=0x00100000
-kexec_load: entry = 0x40008000 flags = 0x280000
-nr_segments = 2
-segment[0].buf   = 0xb6a6c008
-segment[0].bufsz = 0x40735c
-segment[0].mem   = 0x40008000
-segment[0].memsz = 0x408000
-segment[1].buf   = 0xb696b008
-segment[1].bufsz = 0x100000
-segment[1].mem   = 0x41051000
-segment[1].memsz = 0x100000
-kexec_load failed: Function not implemented
-entry       = 0x40008000 flags = 0x280000
-nr_segments = 2
-segment[0].buf   = 0xb6aa0008
-segment[0].bufsz = 0x40735c
-segment[0].mem   = 0x40008000
-segment[0].memsz = 0x408000
-segment[1].buf   = 0xb699f008
-segment[1].bufsz = 0x100000
-segment[1].mem   = 0x41051000
-segment[1].memsz = 0x100000
-#
-
-On a SolidRun Hummingboard2 (iMX6 based, which has kexec support, same
-kexec binary, first without an initrd, and then with):
-
-# build/sbin/kexec --version
-kexec-tools 2.0.20
-# build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
-Try gzip decompression.
-kernel: 0xb6763008 kernel_size: 0x7273a8
-MEMORY RANGES
-0000000010000000-000000004fffffff (0)
-zImage header: 0x016f2818 0x00000000 0x007273a8
-zImage size 0x7273a8, file size 0x7273a8
-zImage requires 0x007383a8 bytes
-  offset 0x00004da8 tag 0x5a534c4b size 12
-Decompressed kernel sizes:
- text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
-Resulting kernel space: 0x015077b0
-Kernel: address=0x10008000 size=0x015077b0
-DT    : address=0x11511000 size=0x0000b000
-kexec_load: entry = 0x10008000 flags = 0x280000
-nr_segments = 2
-segment[0].buf   = 0xb6763008
-segment[0].bufsz = 0x7273ac
-segment[0].mem   = 0x10008000
-segment[0].memsz = 0x728000
-segment[1].buf   = 0x1207cb0
-segment[1].bufsz = 0xb000
-segment[1].mem   = 0x11511000
-segment[1].memsz = 0xb000
-# build/sbin/kexec --unload
-# build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+ --initrd /boot/initrd.img-5.4.0+
-Try gzip decompression.
-kernel: 0xb65d8008 kernel_size: 0x7273a8
-MEMORY RANGES
-0000000010000000-000000004fffffff (0)
-zImage header: 0x016f2818 0x00000000 0x007273a8
-zImage size 0x7273a8, file size 0x7273a8
-zImage requires 0x007383a8 bytes
-  offset 0x00004da8 tag 0x5a534c4b size 12
-Decompressed kernel sizes:
- text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
-Resulting kernel space: 0x015077b0
-Kernel: address=0x10008000 size=0x015077b0
-Initrd: address=0x11510000 size=0x0053f46a
-DT    : address=0x11a50000 size=0x0000b044
-kexec_load: entry = 0x10008000 flags = 0x280000
-nr_segments = 3
-segment[0].buf   = 0xb65d8008
-segment[0].bufsz = 0x7273ac
-segment[0].mem   = 0x10008000
-segment[0].memsz = 0x728000
-segment[1].buf   = 0xb6098008
-segment[1].bufsz = 0x53f46a
-segment[1].mem   = 0x11510000
-segment[1].memsz = 0x540000
-segment[2].buf   = 0x993cf0
-segment[2].bufsz = 0xb044
-segment[2].mem   = 0x11a50000
-segment[2].memsz = 0xc000
-
-On clearfog (Armada 388):
-
-# build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
-Try gzip decompression.
-kernel: 0xb6745008 kernel_size: 0x7273a8
-MEMORY RANGES
-0000000000000000-000000003fffffff (0)
-zImage header: 0x016f2818 0x00000000 0x007273a8
-zImage size 0x7273a8, file size 0x7273a8
-zImage requires 0x007383a8 bytes
-  offset 0x00004da8 tag 0x5a534c4b size 12
-Decompressed kernel sizes:
- text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
-Resulting kernel space: 0x015077b0
-Kernel: address=0x00008000 size=0x015077b0
-DT    : address=0x01511000 size=0x00007be3
-kexec_load: entry = 0x8000 flags = 0x280000
-nr_segments = 2
-segment[0].buf   = 0xb6745008
-segment[0].bufsz = 0x7273ac
-segment[0].mem   = 0x8000
-segment[0].memsz = 0x728000
-segment[1].buf   = 0x1be7f68
-segment[1].bufsz = 0x7be3
-segment[1].mem   = 0x1511000
-segment[1].memsz = 0x8000
-
-All appears to work fine.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDQvMDcvMjAyMCAxMDo0NiBBTSwgU2FpIFByYWthc2ggUmFuamFuIHdyb3RlOgo+IEhpIE1p
+a2UsCj4gCj4gVGhhbmtzIGZvciB0YWtpbmcgYSBsb29rLgo+IAo+IE9uIDIwMjAtMDQtMDYgMTY6
+MjUsIE1pa2UgTGVhY2ggd3JvdGU6Cj4+IEhpLAo+Pgo+PiBUaGUgcHJvZ3JhbW1hYmxlIHJlcGxp
+Y2F0b3IgaGFyZHdhcmUgYnkgZGVzaWduIGVuYWJsZXMgdHJhY2UgdGhyb3VnaAo+PiBib3RoIHBv
+cnRzIG9uIHJlc2V0LiAoc2VlIDEsIHNlY3Rpb24gNC40LCA5LjExKcKgIFRoZSByZXBsaWNhdG9y
+IGRyaXZlcgo+PiBvdmVycmlkZXMgdGhpcyBmdW5jdGlvbmFsaXR5IHRvIGRpc2FibGUgb3V0cHV0
+LCB1bnRpbCB0aGUgQ29yZXNpZ2h0Cj4+IGluZnJhc3RydWN0dXJlIGNob29zZXMgYSBwYXRoIGZy
+b20gc291cmNlIHRvIHNpbmsuCj4+IE5vdyBnaXZlbiB0aGF0IHRoZSBoYXJkd2FyZSBkZXNpZ24g
+aXMgc3VjaCB0aGF0IHdlIG11c3QgYmUgYWJsZSB0bwo+PiBhbGxvdyB0cmFjZSB0byBiZSBzZW50
+IHRvIGJvdGggcG9ydHMsIGEgZ2VuZXJpYyBwYXRjaCB0byBwcmV2ZW50IHRoaXMKPj4gZG9lcyBu
+b3Qgc2VlbSBhcHByb3ByaWF0ZSBoZXJlLgo+Pgo+PiBJIHRoaW5rIHRoaXMgbmVlZHMgZnVydGhl
+ciBpbnZlc3RpZ2F0aW9uIC0gdG8gZGV0ZXJtaW5lIHdoeSB0aGlzCj4+IGFwcGVhcnMgdG8gYmUg
+ZmFpbGluZyBpbiB0aGlzIHBhcnRpY3VsYXIgaW5zdGFuY2UuCj4+Cj4gCj4gWWVzLCB0aGlzIHBy
+b2JhYmx5IG5lZWRzIGZ1cnRoZXIgaW52ZXN0aWdhdGlvbiwgYnV0IENQVSBoYXJkbG9jayBzdGFj
+awo+IHRyYWNlIGRvZXNudCBoZWxwIG11Y2guIEkgY291bGQgYWx3YXlzIHRyaWdnZXIgdGhpcyBo
+YXJkIGxvY2t1cCB3aXRob3V0Cj4gdGhpcyBwYXRjaCBvbiBTQzcxODAgU29DIGFuZCB0aGlzIGlz
+IG9ubHkgc2VlbiB3aGVuIEVUUiBpcyB1c2VkIGFzIHRoZSAKPiBzaW5rLgo+IAo+IFRoZSBvbmx5
+IGRpZmZlcmVuY2UgSSBjb3VsZCBzZWUgYmV0d2VlbiBub24gd29ya2luZyBjYXNlIChvbiBTQzcx
+ODAgWzFdKSAKPiBhbmQKPiB0aGUgd29ya2luZyBjYXNlIChvbiBTRE04NDUgWzJdKSBpcyB0aGUg
+cGF0aCBmcm9tIHNvdXJjZSB0byBzaW5rLgoKCj4gCj4gU0M3MTgwIHNvdXJjZSB0byBzaW5rIHBh
+dGgoTm90IHdvcmtpbmcpOgo+IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0KPiAKPiAgwqDCoMKgwqDCoCBldG0wX291dAo+ICDCoMKgwqDCoCB8Cj4gIMKgIGFwc3NfZnVu
+bmVsX2luMAo+ICDCoMKgwqDCoMKgwqDCoMKgIHwKPiAgwqBhcHNzX21lcmdlX2Z1bm5lbF9pbgo+
+ICDCoMKgwqDCoMKgwqDCoMKgIHwKPiAgwqDCoMKgwqAgZnVubmVsMV9pbjQKPiAgwqDCoMKgwqAg
+fAo+ICDCoCBtZXJnZV9mdW5uZWxfaW4xCj4gIMKgwqDCoMKgIHwKPiAgwqDCoCBzd2FvX2Z1bm5l
+bF9pbgo+ICDCoMKgwqDCoMKgwqDCoMKgIHwKPiAgwqDCoMKgwqDCoMKgIGV0Zl9pbgo+ICDCoMKg
+wqDCoCB8Cj4gIMKgc3dhb19yZXBsaWNhdG9yX2luCj4gIMKgwqDCoMKgwqDCoMKgwqAgfAo+ICDC
+oCByZXBsaWNhdG9yX2luCj4gIMKgwqDCoMKgIHwKPiAgwqDCoMKgwqDCoMKgIGV0cl9pbgoKClRo
+ZXJlIHNlZW1zIHRvIGJlIHR3byByZXBsaWNhdG9ycyBiYWNrIHRvIGJhY2sgaGVyZS4gV2hhdCBp
+cyBjb25uZWN0ZWQKdG8gdGhlIG90aGVyIG91dHB1dCBvZiBib3RoIG9mIHRoZW0gPyBBcmUgdGhl
+cmUgYW55IFRQSVVzID8gV2hhdCBoYXBwZW5zCmlmIHlvdSBjaG9vc2UgYSBzaW5rIG9uIHRoZSBv
+dGhlciBlbmQgb2YgInN3YW9fcmVwbGljYXRvciIgKEVUQiA/KQoKQWZ0ZXIgYm9vdCwgd2hhdCBk
+byB0aGUgaWRmaWx0ZXIgcmVnaXN0ZXJzIHJlYWQgZm9yIGJvdGggdGhlIHJlcGxpY2F0b3JzID8K
+CgpJIGJlbGlldmUgd2UgbmVlZCB0byBwcm9wZXJseSBhc3NpZ24gdGhlIFRSQUNFX0lEcyBmb3Ig
+dHJhY2luZyBzZXNzaW9ucywKKHJhdGhlciB0aGFuIHN0YXRpYyBpZHMpIGluIGEgd2F5IHN1Y2gg
+dGhhdCB3ZSBjb3VsZCBmaWx0ZXIgdGhlbSBhbmQgdXNlCnRoZSBtdWx0aXBsZSBzaW5rcyBpbiBw
+YXJhbGxlbCBmb3Igc2VwYXJhdGUgdHJhY2Ugc2Vzc2lvbnMgYW5kIHRoaXMgaXMKbm90IHNpbXBs
+ZSAoaW52b2x2ZXMga2VybmVsIGRyaXZlciBjaGFuZ2VzIGFuZCB0aGUgcGVyZiB0b29sIHRvIGJl
+IGFibGUKdG8gZGVjb2RlIHRoZSB0cmFjZSBpZCBjaGFuZ2VzIHRvbykuCgoKU28gZm9yIHRoZSBt
+b21lbnQsIHdlIG5lZWQgdG8gOgoKMSkgRGlzYWxsb3cgdHVybmluZyB0aGUgcmVwbGljYXRvciBP
+Tiwgd2hlbiBpdCBpcyBhbHJlYWR5IHR1cm5lZCBPTgoyKSBEbyB3aGF0IHlvdXIgcGF0Y2ggZG9l
+cy4gaS5lLCBkaXNhYmxlIHRoZSBvdGhlciBlbmQgd2hpbGUgb25lIGVuZAogICAgaXMgdHVybmVk
+IG9uLgoKVGhvdWdodHMgPwoKS2luZCByZWdhcmRzClN1enVraQoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
