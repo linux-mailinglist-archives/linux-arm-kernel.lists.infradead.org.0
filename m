@@ -2,71 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 730001A0ABD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 12:04:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B2231A0AC6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 12:05:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GLsYpwCiMXM5TQIWoEuzJx+k8BljP148wQTvEebX+CY=; b=eduzQYTENzUJG/
-	fzXnW8z0m3te6OIdTO2DeKnHzMhHxT8EvO0C3P5/ubEGcYWuB7BHffk/yj82ZR/Au0q1n/8KTh1UH
-	xC3pt4Jh0mgX/sBewkl3kIgidNb4MG8sG8zplZhhYEW2tyYo9/OHhWKY/jMaMV942OEmAZ3iK+Yic
-	yH3WDxSj4rG1C+3VoDUCoUqjpXJ50hS4GzIrv2hP5hrgrRDye1hJINtJbyvNXwQ7Zjg18j5Dx5tn7
-	WgqWsCeWqWUeMaKSN0zsgMZ4ztR7PtHGcsc+1EpaleJLTaXMRTGTLrlbuwGfL7GqZs+WeDwireaDa
-	DzbfIGl5KpNnw1rgKDcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pvn9hx7dXEaIxil9/+Pquss1LPAC5PwFLe7+RNjg7Yo=; b=IttLxnP4C31LYwffBsxGvfYTZ
+	+UKhBhaarBcxMdxqmioc78bwh4UEKlliqIx8NridPwlaW2nQktddcuZIOuHK9FXF6+qD5sPK+U6eo
+	17Fcde0gDy7N/n2MMFDxbZwbsEUV9QU5gHHNiJHWYK55bi8ufINWqJX7vbo0HtWf6xpRmGaLIXni5
+	LelELHnmB08JiZmditx1noAG05NpSfO3PbGN+ivqFCkdIJ0t771DzzuEy63DuxLQRnoYtZ9kSk00J
+	lte6XZ5bcmHlnBONfNl1YwIUv19uTUdzYArFj8LmSrtYFoneNYv0s1T+3FvAyA92nk7/10ESsu8M3
+	J1XHs/g5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLl5h-0000DV-7K; Tue, 07 Apr 2020 10:04:21 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jLl6p-000352-Iw; Tue, 07 Apr 2020 10:05:31 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLl5Y-0007rq-5L; Tue, 07 Apr 2020 10:04:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2wR2xqOs8l+OydThwaZ/J8QQDNxkPOYEU/7GzqzAa3M=; b=m5BFSB4gVHf+ffBnIzdw2gzUY
- wYLYy5Y0VK2BwlAyzTKiAhBnFbd4tft0EP3wZxXv1Vn+oKtv6/Q9jbMnoqA64m5cNzOeU9H6FkysY
- /BApbRWhjPi3yuFLOZpGvw+24y0Y7sz50JPO3tw+6r+GHd9VPv0T4Yh4nfRnFtJVPjkcPs2sPUctL
- HktSJN0U63pN2g7MioenRIARxbvLaCNvEJInUlMTLmLWjDaB/AMU8rbmCg/VZJB+FEDVMzQcTB8YI
- 30jZXG3OvCyhOrHD8nZ2rxDyl+oS4PtHG5NB8e5uFJILtGl5xdF6Dx89XcFBFmY17Hh1ZmQnDvQbK
- SmW2L+DCQ==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:35146)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jLl3U-0007DE-Og; Tue, 07 Apr 2020 11:02:05 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jLl3T-0007DO-VB; Tue, 07 Apr 2020 11:02:03 +0100
-Date: Tue, 7 Apr 2020 11:02:03 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: Trying to kexec on Allwinner A80
-Message-ID: <20200407100203.GK25745@shell.armlinux.org.uk>
-References: <20200406082720.GA31279@Red>
+ id 1jLl6i-00034E-Tb
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 10:05:26 +0000
+Received: by mail-wr1-x443.google.com with SMTP id h9so3156307wrc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Apr 2020 03:05:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=WWziHtBi4oc9djsFaUX7XQ3VCEDyA2EhaftZG+vRTmU=;
+ b=DDJtqM0ZmFRZgkoIfjqJdHl3jmIlVS6XZRWpAl1W640TYYwj0oq1aQCqr6ap3+oXJP
+ Kc+CTP22W4kFz075wcNPlgXk3WIA2OC06cMHalq/pNM3NkOSxpXQJHnnIN1T0e/TcL8b
+ 4Da9rKgxsLO+gXm78IdgUnGJbWWBCXW9qxF84EhqNYsncCFZnPXPDHTspg8A/EW5UqEd
+ Usyjjklwodn/qRuRfGIsTsG2HS6JuC786EggwG53ZL5smZDXB+SnAHV4dGmsSadipRwI
+ 8BFWuNpzpawO5DCsGVwbrD+y2DF49Q0yGejQjO7XaC3xrXCP6EZ9DmrUO2haJJUgmaHo
+ 7RcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=WWziHtBi4oc9djsFaUX7XQ3VCEDyA2EhaftZG+vRTmU=;
+ b=jjjzBaHhdgDc9ZRQorzmjcWk2vuuF+xeZX6XuK2YPRXB27taz4uv1MbtaI+vAf+yfC
+ bN4lAsB/k2DJOc7I6xdjQCK/5NCPinvu+FPOUcIocCoSW3D1Vpz1kaPfIRX3aZXPhSfL
+ GU2Icx8Dcsv/h6gyJTvpBLvQocXhgEskhXgSMeN+tIpC1OqQlJ6TaV7LQERzF8HeV0T4
+ CG1ZQJDifaRh6LpnQ5aMZ00GTOVAaH0wtM8iZV09dwJejDjc3dWUrz7zy/bN1SH5+03H
+ s7dgXVG11ZmegmQnXYUpnvkti+vEgqPcop4HMJDNnfe+KNNFVlqbGXzVkDGDBJmtPmUk
+ o2Mw==
+X-Gm-Message-State: AGi0PuZxUawryALpg75Y18RJ/QzBY8HDbXDMd0D/wKhT/dz32m1IATFP
+ SBd7aESWig+Xhqz2wrG55QE=
+X-Google-Smtp-Source: APiQypKNqMTxJb7gtU/ZDGcNRW5WADi+fcwveFkxNyy/3NH2A8xr0eNmIy5j6DbGgVgXH5x924qrTQ==
+X-Received: by 2002:adf:fe87:: with SMTP id l7mr1823086wrr.377.1586253922777; 
+ Tue, 07 Apr 2020 03:05:22 -0700 (PDT)
+Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
+ by smtp.gmail.com with ESMTPSA id i2sm30490830wrx.22.2020.04.07.03.05.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Apr 2020 03:05:21 -0700 (PDT)
+Date: Tue, 7 Apr 2020 12:05:20 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Subject: Re: [TEGRA194_CPUFREQ Patch 1/3] firmware: tegra: adding function to
+ get BPMP data
+Message-ID: <20200407100520.GA1720957@ulmo>
+References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
+ <20191203174229.GA1721849@ulmo>
+ <9404232d-84ce-a117-89dd-f2d8de80993e@kapsi.fi>
+ <20191204091703.d32to5omdm3eynon@vireshk-i7>
+ <20191204093339.GA2784830@ulmo>
+ <20191204095138.rrul5vxnkprfwmku@vireshk-i7>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200406082720.GA31279@Red>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191204095138.rrul5vxnkprfwmku@vireshk-i7>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_030412_205926_EBADCBA8 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20200407_030524_955238_D9D300CB 
+X-CRM114-Status: GOOD (  27.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,110 +105,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Mikko Perttunen <cyndis@kapsi.fi>,
+ linux-pm@vger.kernel.org, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
+ bbasu@nvidia.com, linux-tegra@vger.kernel.org, Sumit Gupta <sumitg@nvidia.com>,
+ mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3367050883192153800=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
-> Hello
-> 
-> I am trying to add the last missing Allwinner Soc in kernelci: the A80.
-> But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
-> So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
-> 
-> But kexec 2.0.18 fail to work:
-> kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
 
-As I mentioned in my other reply, this apparent "kexec" command line
-does not seem to reflect the arguments you actually used to invoke
-the kexec output below.
+--===============3367050883192153800==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="C7zPtVaVf+AK4Oqc"
+Content-Disposition: inline
 
-> syscall kexec_file_load not available.
 
-This message is produced by do_kexec_file_load().  This function is only
-invoked if the do_kexec_file_syscall flag in main() is set.  This flag
-is only set if one of:
+--C7zPtVaVf+AK4Oqc
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-	--kexec-file-syscall
-	--kexec-syscall
-	--kexec-syscall-auto
-	-s
-	-c
-	-a
+On Wed, Dec 04, 2019 at 03:21:38PM +0530, Viresh Kumar wrote:
+> On 04-12-19, 10:33, Thierry Reding wrote:
+> > Yeah, the code that registers this device is in drivers/base/cpu.c in
+> > register_cpu(). It even retrieves the device tree node for the CPU from
+> > device tree and stores it in cpu->dev.of_node, so we should be able to
+> > just pass &cpu->dev to tegra_bpmp_get() in order to retrieve a reference
+> > to the BPMP.
+> >=20
+> > That said, I'm wondering if perhaps we could just add a compatible
+> > string to the /cpus node for cases like this where we don't have an
+> > actual device representing the CPU complex. There are a number of CPU
+> > frequency drivers that register dummy devices just so that they have
+> > something to bind a driver to.
+> >=20
+> > If we allow the /cpus node to represent the CPU complex (if no other
+> > "device" does that yet), we can add a compatible string and have the
+> > cpufreq driver match on that.
+> >=20
+> > Of course this would be slightly difficult to retrofit into existing
+> > drivers because they'd need to remain backwards compatible with existing
+> > device trees. But it would allow future drivers to do this a little more
+> > elegantly. For some SoCs this may not matter, but especially once you
+> > start depending on additional resources this would come in handy.
+> >=20
+> > Adding Rob and the device tree mailing list for feedback on this idea.
+>=20
+> Took some time to find this thread, but something around this was
+> suggested by Rafael earlier.
+>=20
+> https://lore.kernel.org/lkml/8139001.Q4eV8YG1Il@vostro.rjw.lan/
 
-are provided on the kexec command line.  Your command line above does
-not contain any of those arguments, so either the command line is not
-what you used, or you are using a patched kexec, or your compiler is
-grossly miscompiling kexec.
+I gave this a try and came up with the following:
 
-> Try gzip decompression.
-> kernel: 0xb6535008 kernel_size: 0x853200
-> MEMORY RANGES
-> 0000000020000000-000000009fffffff (0)
+--- >8 ---
+diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts=
+/nvidia/tegra194.dtsi
+index f4ede86e32b4..e4462f95f0b3 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+@@ -1764,6 +1764,9 @@ bpmp_thermal: thermal {
+ 	};
+=20
+ 	cpus {
++		compatible =3D "nvidia,tegra194-ccplex";
++		nvidia,bpmp =3D <&bpmp>;
++
+ 		#address-cells =3D <1>;
+ 		#size-cells =3D <0>;
+=20
+--- >8 ---
 
-Then there's the debug output, which is only produced if the
-kexec_debug global is set, which in turn is only set if --debug or -d
-is supplied on the kexec command line - which again, your kexec
-command line does not contain this.
+Now I can do something rougly like this, although I have a more complete
+patch locally that also gets rid of all the global variables because we
+now actually have a struct platform_device that we can anchor everything
+at:
 
-> zImage header: 0x016f2818 0x00000000 0x00853200
-> zImage size 0x853200, file size 0x853200
-> zImage requires 0x00864200 bytes
->   offset 0x0000bae4 tag 0x5a534c4b size 8
-> Decompressed kernel sizes:
->  text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
-> Resulting kernel space: 0x01def5a0
-> Kernel: address=0x20008000 size=0x01def5a0
-> Initrd: address=0x21df8000 size=0x0090b6fa
-> DT    : address=0x22704000 size=0x00005c09
-> kexec_load: entry = 0x20008000 flags = 0x280000
-> nr_segments = 3
-> segment[0].buf   = 0xb6535008
-> segment[0].bufsz = 0x853204
-> segment[0].mem   = 0x20008000
-> segment[0].memsz = 0x854000
-> segment[1].buf   = 0xb5c29008
-> segment[1].bufsz = 0x90b6fa
-> segment[1].mem   = 0x21df8000
-> segment[1].memsz = 0x90c000
-> segment[2].buf   = 0x4db50
-> segment[2].bufsz = 0x5c09
-> segm[   71.039126] kexec_core: Starting new kernel
-> ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
-> x22704000
-> segment[2].memsz = 0x6000
-> [   71.489070] Bye!
-> 
-> 
-> I have tried also kexec-2.0.20
-> Try gzip decompression.
-> zImage header: 0x00000000 0x000019b4 0x00001000
-> zImage requires 0x008641c0 bytes
-> Could not find a free area of memory of 0x86c1c0 bytes...
-> Cannot load /tmp/kernel
+--- >8 ---
+static const struct of_device_id tegra194_cpufreq_of_match[] =3D {
+	{ .compatible =3D "nvidia,tegra194-ccplex", },
+	{ /* sentinel */ }
+};
+MODULE_DEVICE_TABLE(of, tegra194_cpufreq_of_match);
 
-kexec 2.0.20 doesn't appear to have changed anything to do with how
-allocations are done.  The above output looks even more strange and
-confusing.  "zImage header" is produced by debugging prints, which
-imply that kexec_debug was set.
+static struct platform_driver tegra194_ccplex_driver =3D {
+	.driver =3D {
+		.name =3D "tegra194-cpufreq",
+		.of_match_table =3D tegra194_cpufreq_of_match,
+	},
+	.probe =3D tegra194_cpufreq_probe,
+	.remove =3D tegra194_cpufreq_remove,
+};
+module_platform_driver(tegra194_ccplex_driver);
+--- >8 ---
 
-However, the "MEMORY RANGES" output is missing - this has not gone
-away with kexec 2.0.20, it's still there, and works for me (I've
-just built and tested kexec 2.0.20).
+I don't think that's exactly what Rafael (Cc'ed) had in mind, since the
+above thread seems to have mostly talked about binding a driver to each
+individual CPU.
 
-Also, the values on the "zImage header" line are completely messed
-up; the first should be the zImage magic value and it is not - that
-suggests that the file being loaded is not a zImage file, or is
-corrupted.
+But this seems a lot better than having to instantiate a device from
+scratch just so that a driver can bind to it and it allows additional
+properties to be associated with the CCPLEX device.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Rob, any thoughts on this from a device tree point of view? The /cpus
+bindings don't mention the compatible property, but there doesn't seem
+to be anything in the bindings that would prohibit its use.
+
+If we can agree on that, I can forward my local changes to Sumit for
+inclusion or reference.
+
+Thierry
+
+--C7zPtVaVf+AK4Oqc
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6MUF0ACgkQ3SOs138+
+s6HaEQ/+PrLLpiP0PyCKw9EYMDnFCSTvnHIrXNeyiycSw3o6+KzTFZ/0H1gWoQQz
+A9fdmSWvIO98e2aSMU6KwV+JN/AiOgYA9/oJG1hwKw6/M6z7hMrPeMntFgssE1EP
+sGXeYATmFMuCWVqJ8j3+85eKeIAuwauCuf2JXEXBPYCIl/YWNbepLuhAXreDXfqk
+rLtIJqDa5G4oCLshLkb1SR211kQM9uDX16EVLL1gc/gd7psSYqUMOxiVEGwMnL5t
+h5y+JsMwp4M8CPM4Faq7dEbwKfXOhDJp+aZmMFcm5OEbwSZ7wSUdG3TgoYyEAqhs
+O6PDf9IAR323R2Iz38VuwDIcus8arw4mRI7C6k1c+5Bz+mg9nTcbr2MkiDOvEsn7
+PkII3xkaTsspdVCtFCIlyROHwVKtdjzyOcXS7t57cXyjrLatTtjCGw20889CzSjd
+nTfT5MHCbeex/djcUYRi5Ewe0sT4KSGyud4DgMP9L+Tk87jRGhOUloW3g3DnNQg6
+ucn72xKUFnVnlPFnkwXJucHnUdNSxC+FeTWk97Y96QpsdO47tNBNGMlejajIKWhO
+p91cb7sD+IvYmCAK/UKtmC6n2rD50IphWxm4zJ2QIkyqsa5H3x2vFAI2CqGsefIa
+JhsqKT+LsegNriVWHIFEZzBGj7WDOdvnD/tx12NLFcgyuGFlik8=
+=emOZ
+-----END PGP SIGNATURE-----
+
+--C7zPtVaVf+AK4Oqc--
+
+
+--===============3367050883192153800==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3367050883192153800==--
+
