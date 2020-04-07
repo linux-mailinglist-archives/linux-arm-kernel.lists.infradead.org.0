@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C7EE1A0DAA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:32:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 778961A0DAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:32:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GCZG0Hnvoj85xRtCHswn2P8SuJ51Ox2b5n/w7YSZLug=; b=BBNVf+jxdB2O7e
-	7MaU/Z44hPJBMMSYfQOVwfWSOFYSUBFQcQ4qIfGw5Pd+Io9EmI5KjbK7DwIYB79Zbqa3G9MzFmFFS
-	aAnBxgp5JpCc2QmvF0JsihNp5jGh8fbLmuWXIggxCqQCIDn7qp9fOYfQGM/pwAP6yRw4wKNwzcccY
-	ODGb0buBk4U5ei24wp2jl+rNIHzpHzkUOkHGfK/2MRrSvy/HE39QZ6ZVzLy5qf26BWI/TxDG0XLWl
-	6HXlaXTJGHqzgUjzAiWg6gD3emhGQBO/r7XX7tzDnZr5lzBJGXl7TjJzKAWO1OF7/0+H3wycWm4GQ
-	+rBky081TEDOdgXeWKEQ==;
+	List-Owner; bh=h9Sk99OX13FM81cLD5ChTPuHWrQd6pRHuEg3d4PbQ5k=; b=jN7vwaDDEe+WJR
+	vnjVouD1++iDJSEW0gj+wyyzzLAa6jeCXsZNVwnsb6CkBLphaD24dpMsj4GfCmvCYe2oZ1BWbdiM8
+	IHKaCbV9V1Ja9knc1TYMiI9jn3OYE8QVrhkXA5+6agwIRfV5IjTKt7+Qs4Uiw9Dd3y9Jy3kTfIs3/
+	fdnrRq0Q70IMSf0OssHsWEM2pS/UXkslUiOdj4GJYHiMHic4opqPuQrVTWFOSFDGUVyJm7jXbjP4s
+	ewJILt78Sj+D3CV86+kTZPu6xkN5BNGe5CxSHFk25rvs56zINZVVnUlBzpK5eSqQb+op2ui7dM16F
+	WCjTxBub4vMqsWFImqRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLnOT-0003KA-AX; Tue, 07 Apr 2020 12:31:53 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1jLnOi-0003Yc-Uw; Tue, 07 Apr 2020 12:32:09 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLnMS-0007s7-NG
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:29:51 +0000
+ id 1jLnMU-0007uk-6g
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:29:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1586262588; x=1617798588;
+ t=1586262591; x=1617798591;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=EFXIwExObMHjh1goNYVJztAIzdQCu9r/PBJ7CO6BaHE=;
- b=Kv9dNwzgjWWN0qY8XmvGkTMxhwqJI7R13/Br3NyhaPSecjWEHFTgAJuc
- /Mi3a5yGgopGmtomWo7X60j+jo70629GRGo25xFzMfgfXMqz/pDwXRys8
- xxZGGR+Mk1ddHLs9Yp1cHV46JalII+F5p/kfQ+fyC/WMFjZsZTzz93hJc
- pUCG78ZTPIWpAL/O7hsRzMePm5SMqDZJPsOvDjECzS1JOYkOmR7mq0qdh
- s2nnYcNVelUag7WEMu6RLoEaRl0IcSjE8ISk/tib1P9naevPBzq//hwd4
- QnDQYO0pZhoI3h2dxkrkna3N2ktTGwtIVgEdeNMv6LnS9CHJlEvNK8Zv5 A==;
-IronPort-SDR: Spjj5RbgFc3kEczZLkPqDcNWpJRu6HNsZOf6PzTOlB/qz6FI8ALxNbzNo+4gjKS6nB9xV8Mff7
- 5QGWgjn6MoviJcWAkxTh58YcyMibB2m2dBYsNARPpI10XrgbTpcLN+/V2hEtuDvyqw1xv8jZCN
- +lc2qHEGkN/bMGEJMZhok1EPQvpXGiQf4/WSOh2inrrR+jdLa+4g1iiPIYFjsDPlCZ54arag9G
- 4+gg0WZGOSIRfmVzhz2h0JydeCmpkev045bDlfxF043APpLkrdPujpgoxa+psTj0nzo8pQq2XN
- xwk=
-X-IronPort-AV: E=Sophos;i="5.72,354,1580799600"; d="scan'208";a="72565062"
+ bh=V1XGm8+lrs3ttcPc2wge9SGUo/478sGSJ11eiBPE2ok=;
+ b=LK30PICyp+bgymBN0GWSd/r6pQt1TIdJSPYpdp3nTIxkt+SqzuJQjMpw
+ Qvyfj/qtQMS0Fu61NLe5sRWz6v1aTdhC3rVQReBUXPbpk058HFBgGE9xW
+ LYXhjk9CW9w3Tz0wITov0g+Cm5maIrSSr/ZDfUQf/OwOBEPhfyl1qFNTP
+ zg1O6hWF4HQV0HArTBeRT7ZRZkMgAxYV17rMyJkBzVZb/cubsYsyfi1O3
+ /5JbKKJkyYsl3Cm1OSFNmsjs78OnDUBL1yJm0vOpDe84KqlVmzlbQkJZ7
+ 1Or2ipB/hiwUJ2gNhD2THOHXSsbfUHOqOaShltjYpqHE6JyUC4Hp+PqZ/ w==;
+IronPort-SDR: ny0bsXupWmmLJSObKBLCIa7mRcQpCK/WsszZcDt9MkE1Ft+xygV0uI8zVBuae/W0ncSOuHVhuh
+ brhDl7LVWjr7rWLr06nzZraSirFUjAD+9ln7AeDG1HuNI6nJmrIwb2WLlSNRzLUvVNIeNekc4+
+ cFIYTsKrW4b4Z61q7ecXIg96pDSVoWEzEhu0ctrj0DkLYbAeoQti/i3OV9FflSbWKxfsunKpIH
+ 2gkQ7MpeePZITu8tZDbtF9d5yFQ8dCkR0CjwGKOX56nZDC8eUS6UnGsZ0B78+Vrf5eEjw4KkPS
+ eAA=
+X-IronPort-AV: E=Sophos;i="5.72,354,1580799600"; d="scan'208";a="71684398"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 07 Apr 2020 05:29:47 -0700
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 07 Apr 2020 05:29:50 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 7 Apr 2020 05:29:46 -0700
+ 15.1.1713.5; Tue, 7 Apr 2020 05:29:49 -0700
 Received: from cristi-P53.amer.actel.com (10.10.115.15) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 7 Apr 2020 05:29:44 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 7 Apr 2020 05:29:47 -0700
 From: <cristian.birsan@microchip.com>
 To: <balbi@kernel.org>, <gregkh@linuxfoundation.org>,
  <nicolas.ferre@microchip.com>, <linux-arm-kernel@lists.infradead.org>,
  <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 6/7] usb: gadget: udc: atmel: rename errata into caps
-Date: Tue, 7 Apr 2020 15:28:51 +0300
-Message-ID: <20200407122852.19422-7-cristian.birsan@microchip.com>
+Subject: [PATCH 7/7] usb: gadget: udc: atmel: update endpoint allocation for
+ sam9x60
+Date: Tue, 7 Apr 2020 15:28:52 +0300
+Message-ID: <20200407122852.19422-8-cristian.birsan@microchip.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407122852.19422-1-cristian.birsan@microchip.com>
 References: <20200407122852.19422-1-cristian.birsan@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_052948_948131_7FD434C6 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200407_052951_915391_141DD082 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [68.232.153.233 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,105 +103,91 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Cristian Birsan <cristian.birsan@microchip.com>
 
-Rename errata structure into capabilities (caps). It will be used to add
-capabilities for new SoCs. Get the pointer to PMC only for the SoCs that
-need it to perform toggle_bias or pulse_bias.
+The DPRAM memory from the USB High Speed Device Port (UDPHS) hardware
+block was increased. This patch updates the endpoint allocation for sam9x60
+to take advantage of this larger memory. At the same time the
+constraint to allocate the endpoints in order was lifted. To handle old
+and new hardware in the same driver the capabilities (caps) structure
+was extended.
 
 Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
 ---
- drivers/usb/gadget/udc/atmel_usba_udc.c | 21 ++++++++++-----------
- drivers/usb/gadget/udc/atmel_usba_udc.h |  4 ++--
- 2 files changed, 12 insertions(+), 13 deletions(-)
+ drivers/usb/gadget/udc/atmel_usba_udc.c | 22 ++++++++++++++++++----
+ drivers/usb/gadget/udc/atmel_usba_udc.h |  1 +
+ 2 files changed, 19 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
-index 1e2194fe06cb..dfe30913c76b 100644
+index dfe30913c76b..3eb715d4d786 100644
 --- a/drivers/usb/gadget/udc/atmel_usba_udc.c
 +++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
-@@ -389,8 +389,8 @@ static int vbus_is_present(struct usba_udc *udc)
+@@ -1066,12 +1066,14 @@ static struct usb_ep *atmel_usba_match_ep(struct usb_gadget *gadget,
  
- static void toggle_bias(struct usba_udc *udc, int is_on)
- {
--	if (udc->errata && udc->errata->toggle_bias)
--		udc->errata->toggle_bias(udc, is_on);
-+	if (udc->caps && udc->caps->toggle_bias)
-+		udc->caps->toggle_bias(udc, is_on);
- }
+ 		case USB_ENDPOINT_XFER_ISOC:
+ 			ep->fifo_size = 1024;
+-			ep->nr_banks = 2;
++			if (ep->udc->caps->ep_prealloc)
++				ep->nr_banks = 2;
+ 			break;
  
- static void generate_bias_pulse(struct usba_udc *udc)
-@@ -398,8 +398,8 @@ static void generate_bias_pulse(struct usba_udc *udc)
- 	if (!udc->bias_pulse_needed)
- 		return;
+ 		case USB_ENDPOINT_XFER_BULK:
+ 			ep->fifo_size = 512;
+-			ep->nr_banks = 1;
++			if (ep->udc->caps->ep_prealloc)
++				ep->nr_banks = 1;
+ 			break;
  
--	if (udc->errata && udc->errata->pulse_bias)
--		udc->errata->pulse_bias(udc);
-+	if (udc->caps && udc->caps->pulse_bias)
-+		udc->caps->pulse_bias(udc);
+ 		case USB_ENDPOINT_XFER_INT:
+@@ -1081,7 +1083,8 @@ static struct usb_ep *atmel_usba_match_ep(struct usb_gadget *gadget,
+ 			else
+ 				ep->fifo_size =
+ 				    roundup_pow_of_two(le16_to_cpu(desc->wMaxPacketSize));
+-			ep->nr_banks = 1;
++			if (ep->udc->caps->ep_prealloc)
++				ep->nr_banks = 1;
+ 			break;
+ 		}
  
- 	udc->bias_pulse_needed = false;
- }
-@@ -2032,17 +2032,17 @@ static void at91sam9g45_pulse_bias(struct usba_udc *udc)
- 			   AT91_PMC_BIASEN);
- }
+@@ -2034,16 +2037,27 @@ static void at91sam9g45_pulse_bias(struct usba_udc *udc)
  
--static const struct usba_udc_errata at91sam9rl_errata = {
-+static const struct usba_udc_caps at91sam9rl_caps = {
+ static const struct usba_udc_caps at91sam9rl_caps = {
  	.toggle_bias = at91sam9rl_toggle_bias,
++	.ep_prealloc = true,
  };
  
--static const struct usba_udc_errata at91sam9g45_errata = {
-+static const struct usba_udc_caps at91sam9g45_caps = {
+ static const struct usba_udc_caps at91sam9g45_caps = {
  	.pulse_bias = at91sam9g45_pulse_bias,
++	.ep_prealloc = true,
++};
++
++static const struct usba_udc_caps sama5d3_caps = {
++	.ep_prealloc = true,
++};
++
++static const struct usba_udc_caps at91sam9x60_caps = {
++	.ep_prealloc = false,
  };
  
  static const struct of_device_id atmel_udc_dt_ids[] = {
--	{ .compatible = "atmel,at91sam9rl-udc", .data = &at91sam9rl_errata },
--	{ .compatible = "atmel,at91sam9g45-udc", .data = &at91sam9g45_errata },
-+	{ .compatible = "atmel,at91sam9rl-udc", .data = &at91sam9rl_caps },
-+	{ .compatible = "atmel,at91sam9g45-udc", .data = &at91sam9g45_caps },
- 	{ .compatible = "atmel,sama5d3-udc" },
- 	{ /* sentinel */ }
- };
-@@ -2053,7 +2053,6 @@ static const struct of_device_id atmel_pmc_dt_ids[] = {
- 	{ .compatible = "atmel,at91sam9g45-pmc" },
- 	{ .compatible = "atmel,at91sam9rl-pmc" },
- 	{ .compatible = "atmel,at91sam9x5-pmc" },
--	{ .compatible = "microchip,sam9x60-pmc" },
+ 	{ .compatible = "atmel,at91sam9rl-udc", .data = &at91sam9rl_caps },
+ 	{ .compatible = "atmel,at91sam9g45-udc", .data = &at91sam9g45_caps },
+-	{ .compatible = "atmel,sama5d3-udc" },
++	{ .compatible = "atmel,sama5d3-udc", .data = &sama5d3_caps },
++	{ .compatible = "microchip,sam9x60-udc", .data = &at91sam9x60_caps },
  	{ /* sentinel */ }
  };
  
-@@ -2071,8 +2070,8 @@ static struct usba_ep * atmel_udc_of_init(struct platform_device *pdev,
- 	if (!match)
- 		return ERR_PTR(-EINVAL);
- 
--	udc->errata = match->data;
--	if (udc->errata) {
-+	udc->caps = match->data;
-+	if (udc->caps && (udc->caps->pulse_bias || udc->caps->toggle_bias)) {
- 		pp = of_find_matching_node_and_match(NULL, atmel_pmc_dt_ids,
- 						     NULL);
- 		if (!pp)
 diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.h b/drivers/usb/gadget/udc/atmel_usba_udc.h
-index 8de79356d31d..1a0f77bf8d4f 100644
+index 1a0f77bf8d4f..f9239e200e7a 100644
 --- a/drivers/usb/gadget/udc/atmel_usba_udc.h
 +++ b/drivers/usb/gadget/udc/atmel_usba_udc.h
-@@ -302,7 +302,7 @@ struct usba_request {
- 	unsigned int				mapped:1;
- };
- 
--struct usba_udc_errata {
-+struct usba_udc_caps {
+@@ -305,6 +305,7 @@ struct usba_request {
+ struct usba_udc_caps {
  	void (*toggle_bias)(struct usba_udc *udc, int is_on);
  	void (*pulse_bias)(struct usba_udc *udc);
++	bool ep_prealloc;
  };
-@@ -320,7 +320,7 @@ struct usba_udc {
- 	struct usb_gadget gadget;
- 	struct usb_gadget_driver *driver;
- 	struct platform_device *pdev;
--	const struct usba_udc_errata *errata;
-+	const struct usba_udc_caps *caps;
- 	int irq;
- 	struct gpio_desc *vbus_pin;
- 	int num_ep;
+ 
+ struct usba_udc {
 -- 
 2.17.1
 
