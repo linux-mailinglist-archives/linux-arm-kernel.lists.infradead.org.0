@@ -2,105 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDF101A0767
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46F0C1A07A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:49:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dKVhopI+ZJKewuxn6okq8KLyP4SFB6rW5CTrkjjzW8c=; b=lZAdcu+XtRirsX
-	rq+Dborb1O3ySMhVu0wnMl/TcRwE8GWW4to3YlvtOqqVNCNArErCO8OcDR/yn3+hJmPrvB5AiUn4x
-	4ALrWqD3EQPqVNkM8NZ8Ah5Tui2UU5R5fMvgUVQs3lkQTHQcivUgfFfcjsEgEoAo3nW0S2J2kPHmI
-	CtUknp3Ub4uT98+QBxKxz07WU3k0XNW1RgRluFOwGGHgEE4xCMInpBb8p3P7Sn8ZIH6nx+azL0gjG
-	rWTOA9hZWLhGngDwT9r3qbqp8A7dUsxB7HlihXLj/+e8zl3bu+BON6aoz8H31QvOFkJfikHyZXLia
-	NPl0RnXTcgZeKPXLc+hw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kc5DWUPDNS4xh2K1wwuNGJ8emnWMcOJ2NSz9weT1aa0=; b=iHx
+	oKrj9QZl2Uxq6MlmW4qT8SgGvW7ZlAJ46GABb/Be62KtHBGXrMioJgBBbmi16XZR7t/86Mjy4lpu7
+	8z6eW0u2kQVMX+KgwRKpjPKxDPBJepjPVXFQIkc4lJ+r46hoc1loDDnMNImPPlvOJgD8rin+VOVjR
+	1kInqzSRyuIoEJ0dd6HlJsA2ZUYvUMZRt4FuWELCtdsR+EcJPHC5obo3LIHbgHy9EPwzjhEvAgDpq
+	U1FKb3dv+KyBg0RccM6gef8WdHqgmpxSl/zT2mQE1HCtIpPCBkVtMfij5Q9WnnbhyM/wed8lvW3cn
+	dPcXQIxZffab2Ob8bJ+x9poLxO546uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLhs0-0004uV-8q; Tue, 07 Apr 2020 06:38:00 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jLi2u-0002TE-L0; Tue, 07 Apr 2020 06:49:16 +0000
+Received: from smtpbguseast3.qq.com ([54.243.244.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLhrs-0004tx-P9
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:37:54 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C7192AB8F;
- Tue,  7 Apr 2020 06:37:49 +0000 (UTC)
-Subject: Re: [PATCH v6 2/2] tty: samsung_tty: 32-bit access for TX/RX hold
- registers
-From: Jiri Slaby <jslaby@suse.cz>
-To: Krzysztof Kozlowski <krzk@kernel.org>,
- Hyunki Koo <hyunki00.koo@samsung.com>
-References: <20200401082721.19431-1-hyunki00.koo@samsung.com>
- <CGME20200406230902epcas2p19a8df6805dac59968d664efb9bc9419b@epcas2p1.samsung.com>
- <20200406230855.13772-1-hyunki00.koo@samsung.com>
- <20200407062655.GC21995@kozik-lap>
- <6479146a-2249-633d-b0a8-7d1d1e44fd99@suse.cz>
-Autocrypt: addr=jslaby@suse.cz; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <dfbb5351-ea8a-c958-f840-7c8a1d2dcc7a@suse.cz>
-Date: Tue, 7 Apr 2020 08:37:49 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <6479146a-2249-633d-b0a8-7d1d1e44fd99@suse.cz>
-Content-Language: en-US
+ id 1jLi2n-0002RC-0a
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:49:12 +0000
+X-QQ-mid: bizesmtp18t1586242114t31i3imq
+Received: from localhost.localdomain (unknown [111.28.140.218])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Tue, 07 Apr 2020 14:48:32 +0800 (CST)
+X-QQ-SSF: 01400000002000N0LK40B00A0000000
+X-QQ-FEAT: M1J1ppP5VJu/IKvoalnukNKS6K1bq6+1e/GWW1pEr7NE+Hkf8UHRLSy7olpnN
+ AqQ+pjrfSRc0Pk31q0iTRIF3syz2hrevJJtowOeSFyLWY4/sC7sv5FV5dBtUmnNc0Uf9+5b
+ d4+LgGBsNR5FPXOP8ip1BS8Qzh079HnWuGn5Fg91Ezocnnrgp9zHLYT12NlZVJPAbAiL8tX
+ gOUd8SaCAO1iq2U9iuBbw4Td+HOcj/3ajxSh8nYsa/BdFDmDrF8IP3vnObJcBKsUAqSp9zU
+ HjDMcvraLlkODkN13LhOESe+9Guq6WFDU5/pjIbKUZjpYCI/ShytWuIommnGcYIBKtXw==
+X-QQ-GoodBg: 2
+From: xiaolinkui <xiaolinkui@tj.kylinos.cn>
+To: mcoquelin.stm32@gmail.com,
+	alexandre.torgue@st.com
+Subject: [PATCH] net: stmmac: fix the wrong comment
+Date: Tue,  7 Apr 2020 14:48:19 +0800
+Message-Id: <20200407064819.16945-1-xiaolinkui@tj.kylinos.cn>
+X-Mailer: git-send-email 2.17.1
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:tj.kylinos.cn:qybgforeign:qybgforeign5
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_233753_105721_7BE6D7D9 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200406_234909_180080_ECA6C8B4 
+X-CRM114-Status: UNSURE (   6.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [54.243.244.52 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.243.244.52 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,36 +70,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Jose.Abreu@synopsys.com, netdev@vger.kernel.org, linux@armlinux.org.uk,
+ davem@davemloft.net, p.zabel@pengutronix.de,
+ xiaolinkui <xiaolinkui@tj.kylinos.cn>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07. 04. 20, 8:28, Jiri Slaby wrote:
-> On 07. 04. 20, 8:26, Krzysztof Kozlowski wrote:
->> On Tue, Apr 07, 2020 at 08:08:49AM +0900, Hyunki Koo wrote:
->>> Support 32-bit access for the TX/RX hold registers UTXH and URXH.
->>>
->>> This is required for some newer SoCs.
->>>
->>> Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
->>> ---
->>
->> Why I am adding these for the third time?
-> 
-> I don't know as I don't care about your tags anyway.
+Corrected the incorrect comment "clk_scr_i" to "clk_csr_i".
 
-Sorry, my bad, I was somehow mislead by thunderbird, thinking I am
-replying to a different thread.
+Signed-off-by: xiaolinkui <xiaolinkui@tj.kylinos.cn>
+---
+ include/linux/stmmac.h | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-sorry,
+diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
+index fbafb353e9be..234641b34fd4 100644
+--- a/include/linux/stmmac.h
++++ b/include/linux/stmmac.h
+@@ -28,12 +28,12 @@
+  * This could also be configured at run time using CPU freq framework. */
+ 
+ /* MDC Clock Selection define*/
+-#define	STMMAC_CSR_60_100M	0x0	/* MDC = clk_scr_i/42 */
+-#define	STMMAC_CSR_100_150M	0x1	/* MDC = clk_scr_i/62 */
+-#define	STMMAC_CSR_20_35M	0x2	/* MDC = clk_scr_i/16 */
+-#define	STMMAC_CSR_35_60M	0x3	/* MDC = clk_scr_i/26 */
+-#define	STMMAC_CSR_150_250M	0x4	/* MDC = clk_scr_i/102 */
+-#define	STMMAC_CSR_250_300M	0x5	/* MDC = clk_scr_i/122 */
++#define	STMMAC_CSR_60_100M	0x0	/* MDC = clk_csr_i/42 */
++#define	STMMAC_CSR_100_150M	0x1	/* MDC = clk_csr_i/62 */
++#define	STMMAC_CSR_20_35M	0x2	/* MDC = clk_csr_i/16 */
++#define	STMMAC_CSR_35_60M	0x3	/* MDC = clk_csr_i/26 */
++#define	STMMAC_CSR_150_250M	0x4	/* MDC = clk_csr_i/102 */
++#define	STMMAC_CSR_250_300M	0x5	/* MDC = clk_csr_i/122 */
+ 
+ /* MTL algorithms identifiers */
+ #define MTL_TX_ALGORITHM_WRR	0x0
 -- 
-js
-suse labs
+2.17.1
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
