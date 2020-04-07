@@ -2,92 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8E781A0F13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:23:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59FC71A0F19
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:27:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7gdnWgld4WGKmgNzEbibO/TGsUutf3lpX2DOAyZ3SRY=; b=qvLqPTGJY/AAQyqsv3KQPcQuu
-	y9g7lqFY+ksXcBQLsXEwDpQkvTIOHZLtylpwBzhXLBTcX8hau2JHLIg+D2joVjQyGYbfmu/Y9DJqv
-	GZuZqiX9XRthfp3JKFCmyM8tir8gptKIuRmMr1sP6BqxfjdtBiPpiUeNu49tmJgWM02KFCySmwdNl
-	brIfXdMtTja6zgbpx3xMy8+b+jEtJ4PNlFwAa5MJJqraFTVzkDPO0C9qpZVX/Y7IpEXtvyO29ZapF
-	Ng5lYlTRoHmwDB8IsrRpAwKLHojgDylFkuFaV1MiPDrSQyd19azplIr9iN5qotHXMI7C0z6HeFjtX
-	GpHnu9gkw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=htV+2owqiN6h3VY6lwRdXVAHbUfIHFhXqWdp2Y4NCto=; b=V2aaY4R9Xcr091
+	39RiK2noMFEPjBm0uS051hKk0Xfjmju7yUVs7ScN9rjwTLC7ACAOj9R0W/yFgi0Pbyihz+cFgnLWV
+	ApMtgaTYvYToBuM9hNLOPekeO+Gkv4ghr3VGwIyF0pSnp06mcaK/TW5k+d+9PbvPqWAUpt/Q8tX5i
+	LzPGLXX55z/Iw9DXYBjyojtMNq0r2vNDoiV3vT56BQOoy+y3XTeSUtIgIPClbykb3K0TZISwQtCq4
+	vUNQAUjoOSn1nPoKfT5XcF85oCQHFK6kdef4UjCTZNFtLPPFDFOnXvGNEq1kwKRxzJerqIZbH6P7O
+	tVue3iPxJ7vkmrzgiDlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLp7x-0005at-4t; Tue, 07 Apr 2020 14:22:57 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1jLpBq-00014j-9X; Tue, 07 Apr 2020 14:26:58 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLp7q-0005ZZ-0n
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:22:51 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id E14165800FB;
- Tue,  7 Apr 2020 10:22:44 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 07 Apr 2020 10:22:44 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=WZZOGhHApCSV1L4UtRpjl8cMVms
- LTISqTdlhGk83/tE=; b=wdop+RypTY1L95rFhllqkRhtWYgEAFYClfhAPgL7V8o
- qMlLR5SE6GWLIa1ZSoQ79+Z0W44kt9OiHmZ3CvUvzPb9jnW8UTnki0vTUO07qO/M
- IH6Du1/ArFs7vqpgdxcGBcasaf/y7tUY/Qy7R0LaqaiV+vdq3gWWG69cu1/Db2d2
- tSYjGHL62GfQ854q3eGFOokJ2aVePEbHQyaKzerNy29ZfdIMewn63SjOEecLL7SC
- keWTudwlRGyEJlyAtfcF1aiupSS+Bt6ZxO/lAXvD3cJrOSGcwc7fHwYCw97oo/XP
- B09l3Pen7zFk/wx6bMLUR9LR0LM1186/fRdBfVdHAjg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=WZZOGh
- HApCSV1L4UtRpjl8cMVmsLTISqTdlhGk83/tE=; b=u7Ar+N/LF2C6DeXvp3SLmb
- v1Aty03403E8GzS/l7ZKt6hE1iFd1OjUSMadk8vZhO0FHQa5CTGzPnz2qMBxScGh
- VM3E1KLQdyBaBxleBRWqGLabrDiHLEfgPjVNddjZEVwztIaWE4P5pY5cKXNJff1G
- m4v7B7IbDgM7MLt99bro9rRdWjB2MqQrm0rgPulYrJ6qwW00bE6wZ8PNYhUPXcpA
- NpZlR0RsXbdqFhNsP68Mf/Bl8eF9YLBED3W7NW8d0Dgna7s6UMubPnxtj7zz17PK
- db20zhWWFiQbOMl2mISNojJH+Obdtsrx2/DuH48sMTHeAJRm9Yrwpn1QMT9SoKvA
- ==
-X-ME-Sender: <xms:sIyMXlTiXSiRI3WvCdI1mm-Jzir6hQXM5vePtj5cXsapk4tU1rNmag>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehgdejgecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epuggvvhhitggvthhrvggvrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehl
- uhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvse
- gtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:sIyMXgXSx8_2lL0owyyT9Y357BIRf8xmDBvgz7I_14l90OfeLLKC5w>
- <xmx:sIyMXhLRLGm4H2wIpXCkhFto8ChkzLs0j1QJICpClPHUiGd0LFxaYA>
- <xmx:sIyMXo1pKdgnUJ6tomalMQBcN1-ucn-9h8KxFx-8TrBFAflFemlHRg>
- <xmx:tIyMXlK4-tLy7Ok2qgPryQ3kFTA8t51d5wIiKn3KRdcyZJ25Z25gwQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0064F3280066;
- Tue,  7 Apr 2020 10:22:39 -0400 (EDT)
-Date: Tue, 7 Apr 2020 16:22:38 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
-Message-ID: <20200407142238.ik67isetbggn2rh3@gilmour.lan>
-References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
- <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
- <20200407094159.xtbhtsxorvs2g22c@gilmour.lan>
- <20200407110339.GA1489441@kb-xps>
-MIME-Version: 1.0
-In-Reply-To: <20200407110339.GA1489441@kb-xps>
+ id 1jLpBk-00014D-7E
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:26:53 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c15so4089126wro.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 Apr 2020 07:26:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=1IYm3UJMYvZGcA5HDx6pN/EcT0r+laztRqnVn0lIv8o=;
+ b=odzYHM4PQyxjrTdP94HEuH+cVYijwmO4USncHr3KBM+149SLADXX0l5w+eH1QjXMDq
+ 2usIGRMpJkO4vtnJ4/xbDW7w9VGBfZSXHIMf+m9RIhJd8Eug4LLMT91gtx+pR3VpkVaY
+ FCnmm67cuXEQi7XFfyZk/0CAUZcxbYOjKvDEAn5S3NZh7+tkn0nMwHL7FUDRyHDS8Mnl
+ wDrCoVW4ZFFVT3Wv3qCwDj3uKoioUOKK8Jlc0eipMjyND96mVue0x/Xp4atmpNrGbS0i
+ YHnr0sYMJiqWInH+XZkl7sIovRIss8th70kqT/l6N5rJIzsGPX9yny/xqHWwTzGe2fW6
+ sbhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=1IYm3UJMYvZGcA5HDx6pN/EcT0r+laztRqnVn0lIv8o=;
+ b=mEI8Ywj7EG8JQwXTjwhVocJfclH9vv443kNMGDeVAnD555lzwryNufUcYKXRTZmWPt
+ GrzkZiu4dV/fgI8aDgLgky9PzXVhfzqve3+oJBQI3Urrw5J/HasnVLcztIv9QNxdl0g7
+ SM3jq4sQfEyV37qv9LjWey7mKz/JfB0ib//LoPtXbOS4APgvsHuwQ0RbF95tA7lS/R2T
+ SPHawGdLGWfZ77DfTZ7P08ihgWGU+ZTvErehygUtbqy6jHJS4RhOyyu5c8Y/oLLiFEak
+ OPmcXx01hsU3s5lA3olPdnEu/c92mT4SICr+6Y6E/S2OpAesA5SfTEi+3ivpLXHI15OX
+ RS2w==
+X-Gm-Message-State: AGi0PubqugZ0xMamstWF0zGdAW2DKn2uH2MbMct2kAc+EmHENDC/+wev
+ 7YqbLSRBYYyWfAOWoyRZKV4=
+X-Google-Smtp-Source: APiQypIajbhXDWtqrq1B2DdOwT8dbEEV5/v0+zYrndyRedN8LxgiIIX/wjQGUqh2yW1LFwrGLMRFNQ==
+X-Received: by 2002:a5d:5686:: with SMTP id f6mr3019640wrv.91.1586269610755;
+ Tue, 07 Apr 2020 07:26:50 -0700 (PDT)
+Received: from Saturn.fritz.box ([81.221.228.86])
+ by smtp.gmail.com with ESMTPSA id f20sm2544119wmc.35.2020.04.07.07.26.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Apr 2020 07:26:49 -0700 (PDT)
+Message-ID: <1586269609.25385.3.camel@gmail.com>
+Subject: Re: [PATCH 0/4] defconfig: fix changed configs and refresh
+From: Max Krummenacher <max.oss.09@gmail.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Geert Uytterhoeven
+ <geert@linux-m68k.org>
+Date: Tue, 07 Apr 2020 16:26:49 +0200
+In-Reply-To: <20200407141624.GG4751@pendragon.ideasonboard.com>
+References: <20200407103537.4138-1-max.krummenacher@toradex.com>
+ <CAMuHMdWrekHiADkMmgO5nDxFNYjLud7FD=7ArMZNQire_+7TQg@mail.gmail.com>
+ <20200407141624.GG4751@pendragon.ideasonboard.com>
+X-Mailer: Evolution 3.26.6 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_072250_195579_6AC82AFD 
-X-CRM114-Status: GOOD (  22.26  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200407_072652_303091_194ED7F1 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [max.oss.09[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [max.oss.09[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,111 +103,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2842247657365593231=="
+Cc: Anson Huang <Anson.Huang@nxp.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Li Yang <leoyang.li@nxp.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Vidya Sagar <vidyas@nvidia.com>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Will Deacon <will@kernel.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Laurent, Geert,
 
---===============2842247657365593231==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="cmea35pc2hxci5l3"
-Content-Disposition: inline
+Am Dienstag, den 07.04.2020, 17:16 +0300 schrieb Laurent Pinchart:
+> Hi Geert,
+> 
+> On Tue, Apr 07, 2020 at 03:16:14PM +0200, Geert Uytterhoeven wrote:
+> > On Tue, Apr 7, 2020 at 12:36 PM Max Krummenacher <max.oss.09@gmail.com> wrote:
+> > > Three configs have been renamed and/or changed behaviour.
+> > > Clean that by using the new config name.
+> > > Then refresh the defconfig with make defconfig savedefconfig.
+> > > 
+> > > The refreshed defconfig does result in a not changed .config.
+> > > 
+> > > Applies on linux-next/master tag: next-20200407
+> > > 
+> > > Max Krummenacher (4):
+> > >   arm64: defconfig: DRM_DUMB_VGA_DAC: follow changed config symbol name
+> > >   arm64: defconfig: PCIE_TEGRA194: follow changed config symbol name
+> > >   arm64: defconfig: ARCH_R8A7795: follow changed config symbol name
+> > >   arm64: defconfig: refresh
+> > 
+> > Probably CONFIG_DRM_DISPLAY_CONNECTOR should also be enabled for HDMI,
+> > VGA, and composite display connectors on various boards since commit
+> > 0c275c30176b2e78 ("drm/bridge: Add bridge driver for display
+> > connectors"), but it's not clear to me when exactly this became a
+> > requirement, as before there was no code that looked for e.g.
+> > vga-connector.
+> > Laurent?
+> 
+> It's not required yet for R-Car DU, but I'm working on changing that :-)
+> If we can enable CONFIG_DRM_DISPLAY_CONNECTOR in defconfig as part of
+> this series, it would be useful for me.
+> 
+I will add CONFIG_DRM_DISPLAY_CONNECTOR in a V2 to  "arm64: defconfig: DRM_DUMB_VGA_DAC:
+follow changed config symbol name" with a comment in the commit comment that this is
+recommended to go  with the DRM_DUMB_VGA_DAC.
 
-
---cmea35pc2hxci5l3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Apr 07, 2020 at 01:03:39PM +0200, Kamel Bouhara wrote:
-> > On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
-> > > Add dt binding for the counter variant of the rotary encoder driver.
-> > >
-> > > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > > ---
-> > >  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
-> > >  1 file changed, 67 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > > new file mode 100644
-> > > index 000000000000..a59f7c1faf0c
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > > @@ -0,0 +1,67 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> >
-> > Bindings are usually used by other OS's, so you should consider
-> > putting it under a more permissive license, usually that would be GPL2
-> > and the BSD-2-Clause
->
-> Well to be honest I just looked into an existing binding and I guess
-> the wrong one :).
-
-Not the wrong ones, but the old ones :)
-
-It's painful to change a license on existing files, whereas it's
-pretty easy to mention it during review.
-
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Rotary Encoder Counter
-> > > +
-> > > +maintainers:
-> > > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > > +
-> > > +description:
-> > > +  Registers a Rotary encoder connected through a counter device.
-> >
-> > You shouldn't really describe the action here, but more what the
-> > binding is about. The registration will not depend on the presence of
-> > the node following that binding, but rather on whether or not the OS
-> > that uses it has support for it.
-> >
->
-> Then shall it be better with just :
-> "A rotary encoder device using a generic counter interface." ?
-
-The generic counter interface is a Linux-only stuff though, some other
-OS might want to implement something else. Something like "based on a
-counter"?
-
-Maxime
-
---cmea35pc2hxci5l3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXoyMrgAKCRDj7w1vZxhR
-xaGoAP0Rk4zze3+M3tv+xBVv0PmMPLNoqDCmIQF259PcWDF2FQEAovMUQKsz/fRB
-40V3ClfoNka1Z3kbhlkiwiHDy75R/Q0=
-=HdTF
------END PGP SIGNATURE-----
-
---cmea35pc2hxci5l3--
-
-
---===============2842247657365593231==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards
+Max
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2842247657365593231==--
-
