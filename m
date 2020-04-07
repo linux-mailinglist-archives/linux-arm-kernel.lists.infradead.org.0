@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 253691A0FCA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 17:00:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1DBA1A0FF6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 17:14:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lEXvMZyHTCdpfW6AXo24If1xr+/iPDkk2DjyAntdSZ4=; b=QXWHZAOkCPPgS0OfY8Oq+oxob
-	PrF+mAIhPoav72J+fsdXTjHeLR9JPrUdRlelLs68r33WTwU4KPtV5K4GhrGoTLtRZbIW+3IW+p6q2
-	y3YHr1945kde9RSx6sk2eZnpeafCYIl+N6gbHWBHtmgOWkc6oKyTxWFIgMnNBS2uq3ZD3h8a1GTxA
-	msBTHxeHg8Mhh25FU5pfVKfDUw1yILDOKwu+OMgXSnbUeC3LmcqbMFUlQZk17rBsUwqKhc/ASqFo9
-	wVP70kyHODJkrredGb29LzSMUDRwkovhdlLz6W63UJyfbiF+Sav4OJ2HTh4+dP2SCsXhGAAWt594s
-	5alcQ9Ezg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XGwmvqnFnx3RPNMw4ijlKWstl75UsI2ga0Kur44so1k=; b=FM996LbExzbEBQ
+	7w7E0USFcAzyVCxkZi4ReK0odRt69/wP773aFgq1krCXP1byGstRxnFst0+qQSYTTZepuW+azgpxr
+	GWe8kMD8qXnQdn1hPXgpx6qQKiPqzvL3y+b9sDYUsLIZ08urIVfLlT6RZYD3InFwr8YlYAz3gq+mZ
+	nvKhO9BBMAr6LTug6en2X+w1z5SIgi9nHaskOcQ1sXilsUqU0x7sXONNdxBrmdcIU/RTuGoHtZ5Ff
+	cbe4wmw7+kJh5EyUVIEiuLx7dza25aQliyizvaqIdTaN2IEEp8dlz6Xco1KdzYSVG8p45jOYkI65G
+	99GNkVEgAG2AhAPHfn8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLpiC-0000DY-S1; Tue, 07 Apr 2020 15:00:24 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jLpvc-0006rp-OM; Tue, 07 Apr 2020 15:14:16 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLphv-00067r-G9
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 15:00:09 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 6A8204EF480C674BA4D4;
- Tue,  7 Apr 2020 15:59:56 +0100 (IST)
-Received: from [127.0.0.1] (10.210.168.238) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Tue, 7 Apr 2020
- 15:59:55 +0100
-Subject: Re: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
-To: Joakim Zhang <qiangqing.zhang@nxp.com>
-References: <20200222104621.2258-1-qiangqing.zhang@nxp.com>
- <6dbeabcf-c15a-0bbd-cef4-b25d0133854f@huawei.com>
- <DB7PR04MB4618D2E1892120EB659B8695E6EC0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <2f81eb7a-a6e4-1cc6-cd0a-ca3d749bd552@huawei.com>
- <DB7PR04MB4618C0A8DD9BAB2A529CDCECE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <a2cc0772-4f5d-aba3-1f5c-7d4eef7a3f72@huawei.com>
- <DB7PR04MB461803AD15E47AA880F0915DE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <55836919-41b5-0834-f7a7-1a2a34535677@huawei.com>
- <bd67910e-1522-39cd-5527-b9b18f3da96d@huawei.com>
- <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <ccab39b0-c84f-e529-4067-07466b5433a1@huawei.com>
-Date: Tue, 7 Apr 2020 15:59:33 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jLpvW-0006qz-8r
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 15:14:11 +0000
+IronPort-SDR: +grV0Yi2MYf9b51PxmIlWZO6ICTMsw0bafE0pBETNFYE5sIuVBk8FZ1ih493LSUaxpC77m5dWu
+ 4CElS2ED99dg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 Apr 2020 08:14:08 -0700
+IronPort-SDR: 8ckQHmyoRKj0DtORzCgo/m3++m+vmgjbBLXTRWkuf7wtA3ynA8bzDDWhMm9y+5VxyZAfQLA732
+ 8roctUPLzFZw==
+X-IronPort-AV: E=Sophos;i="5.72,355,1580803200"; d="scan'208";a="243790804"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 Apr 2020 08:14:03 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 4C0FF205C7; Tue,  7 Apr 2020 18:14:01 +0300 (EEST)
+Date: Tue, 7 Apr 2020 18:14:01 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v5 2/5] media: i2c: ov5645: Drop reading clock-frequency
+ dt-property
+Message-ID: <20200407151401.GA5206@paasikivi.fi.intel.com>
+References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1586191361-16598-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200406165108.GA7646@kekkonen.localdomain>
+ <20200406173234.GD16885@pendragon.ideasonboard.com>
+ <20200407062241.GA8883@kekkonen.localdomain>
+ <20200407122106.GD4751@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.168.238]
-X-ClientProxiedBy: lhreml738-chm.china.huawei.com (10.201.108.188) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200407122106.GD4751@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_080007_792426_B8230D6E 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20200407_081410_420400_CD2D0F4D 
+X-CRM114-Status: GOOD (  30.46  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [134.134.136.20 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,162 +80,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>, Jiri Olsa <jolsa@redhat.com>,
- Frank Li <frank.li@nxp.com>, Linuxarm <linuxarm@huawei.com>,
- "acme@kernel.org" <acme@kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Maxime Ripard <maxime@cerno.tech>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Joakim,
+Hi Laurent,
+
+On Tue, Apr 07, 2020 at 03:21:06PM +0300, Laurent Pinchart wrote:
+> Hi Sakari,
+> 
+> On Tue, Apr 07, 2020 at 09:22:41AM +0300, Sakari Ailus wrote:
+> > On Mon, Apr 06, 2020 at 08:32:34PM +0300, Laurent Pinchart wrote:
+> > > On Mon, Apr 06, 2020 at 07:51:08PM +0300, Sakari Ailus wrote:
+> > > > On Mon, Apr 06, 2020 at 05:42:38PM +0100, Lad Prabhakar wrote:
+> > > > > Modes in the driver are based on xvclk frequency fixed to 24MHz, but where
+> > > > > as the OV5645 sensor can support the xvclk frequency ranging from 6MHz to
+> > > > > 24MHz. So instead making clock-frequency as dt-property just let the
+> > > > > driver enforce the required clock frequency.
+> > > > 
+> > > > Even if some current systems where the driver is used are using 24 MHz
+> > > > clock, that doesn't mean there wouldn't be systems using another frequency
+> > > > that the driver does not support right now.
+> > > > 
+> > > > The driver really should not set the frequency unless it gets it from DT,
+> > > > but I think the preferred means is to use assigned-clock-rates instead, and
+> > > > not to involve the driver with setting the frequency.
+> > > > 
+> > > > Otherwise we'll make it impossible to support other frequencies, at least
+> > > > without more or less random defaults.
+> > > 
+> > > We're running in circles here.
+> > > 
+> > > As the driver only supports 24MHz at the moment, the frequency should be
+> > > set by the driver, as it's a driver limitation. We can then work on
+> > > supporting additional frequencies, which will require DT to provide a
+> > > list of supported frequencies for the system, but that can be done on
+> > > top.
+> > 
+> > I guess it would be possible to use different external clock frequencies on
+> > a sensor in a given system but that seems to be a bit far fetched, to the
+> > extent I've never seen anyone doing that in practice.
+> > 
+> > Originally, the driver set the frequency based on the clock-frequency
+> > property. If we're removing that but use a fixed frequency instead, then
+> > how is that going to work going forward when someone adds support for other
+> > frequencies in the driver and has a system requiring that, while there are
+> > some other platforms relying on the driver setting a particular frequency?
+> 
+> The standard property for this is link-frequencies, not clock-frequency.
+> Deprecating clock-frequency now paves the way to use the standard
+> property later when/if someone implements support for additional
+> frequencies.
+
+The external clock frequency and link frequency are different indeed, but
+they are related. The link frequency has been selected in a way that it is
+possible to generate that exact frequency using the chosen external clock
+frequency. If you change the external clock frequency, chances are good
+there is no PLL configuration to generate that link frequency.
 
 > 
-> It can't work on my platform:
+> > Although, if you're saying that this driver only needs to work with DT that
+> > comes with the kernel and you don't care about DT binary compatibility,
+> > this would be fine.
 > 
-> root@imx8mmevk:~# cat /sys/bus/event_source/devices/imx8_ddr0/identifier
-> i.mx8mm
-> 
-> 
-> root@imx8mmevk:~# ./perf list metric
-> List of pre-defined events (to be used in -e):
-> 
-> Metrics:
-> 
->    imx8mm_ddr0_read.all
->         [Bytes of all masters read from ddr0. Unit: uncore_i.mx8,ddrc ]
+> I believe this series to not break backward compatibility, as the driver
+> only works with a 24MHz clock, so I expect all DTs to specify that.
 
-I think I simply missed something in jevents.c . Can you add this, 
-regenerate, and retry:
+What you're still doing here is defining the DT bindings based on the
+current driver implementation, not the device properties.
 
-diff --git a/tools/perf/pmu-events/jevents.c 
-b/tools/perf/pmu-events/jevents.c
-index 675aec9881ce..16dcf00c792a 100644
---- a/tools/perf/pmu-events/jevents.c
-+++ b/tools/perf/pmu-events/jevents.c
-@@ -258,6 +258,7 @@ static struct map {
-        { "hisi_sccl,l3c", "hisi_sccl,l3c" },
-        /* it's not realistic to keep adding these, we need something 
-more scalable ... */
-        { "smmuv3_pmcg", "smmuv3_pmcg" },
-+       { "imx8_ddr", "imx8_ddr" },
-        { "L3PMC", "amd_l3" },
-        {}
+-- 
+Regards,
 
-
-> 
-> 
-> root@imx8mmevk:~# ./perf stat -a -I 1000 -M imx8mm_ddr0_read.all
-> event syntax error: ''
->                        \___ parser error
-> 
->   Usage: perf stat [<options>] [<command>]
-> 
->      -M, --metrics <metric/metric group list>
->                            monitor specified metrics or metric groups (separated by ,)
-> 
-> However, it can work on branch: private-topic-perf-5.6-pmu-events-upstream-v2. What changes have you made compared to last?
-> 
-> Could you help do below change? Since some Socs may have two ddr controller(ddr0/ddr1) with the same event code.
-
-The perf tool can handle that. So just run perf with -v option, and it 
-will show event count breakdown per PMU, like this:
-
-root@ubuntu:/# ./perf stat -v -e smmuv3_pmcg.l1_tlb sleep 1
-Using CPUID 0x00000000480fd010
-Using SYSID HIP08
--> smmuv3_pmcg_200100020/event=0x8a/
--> smmuv3_pmcg_200140020/event=0x8a/
--> smmuv3_pmcg_100020/event=0x8a/
--> smmuv3_pmcg_140020/event=0x8a/
--> smmuv3_pmcg_200148020/event=0x8a/
--> smmuv3_pmcg_148020/event=0x8a/
-smmuv3_pmcg.l1_tlb: 0 1001221690 1001221690
-smmuv3_pmcg.l1_tlb: 0 1001220090 1001220090
-smmuv3_pmcg.l1_tlb: 101 1001219660 1001219660
-smmuv3_pmcg.l1_tlb: 0 1001219010 1001219010
-smmuv3_pmcg.l1_tlb: 0 1001218360 1001218360
-smmuv3_pmcg.l1_tlb: 134 1001217850 1001217850
-
-
-Here smmuv3_pmcg_200100020, smmuv3_pmcg_200140020, etc are all instances 
-of the same PMU, like your DDRC.
-
-And if you want to run just for a single PMU, try like:
-
-./perf stat -e smmuv3_pmcg_200148020/smmuv3_pmcg.l1_tlb/
-
-[thanks for jirka for that hint :) ]
-
-Thanks,
-John
-
-> Delete file: tools/perf/pmu-events/arch/arm64/freescale/imx8mm/sys/ddrc.json
-> Replace file: tools/perf/pmu-events/arch/arm64/freescale/imx8mm/sys/metrics.json, put all events into metric.
-> [
->     {
-> 	"PublicDescription": "ddr0 cycles event",
-> 	"MetricName": "imx8mm_ddr0.cycles",
-> 	"MetricExpr": "imx8_ddr0\\/cycles\\/",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->     },
->     {
-> 	"PublicDescription": "ddr0 read-cycles event",
-> 	"MetricName": "imx8mm_ddr0.read_cycles",
-> 	"MetricExpr": "imx8_ddr0\\/read\\-cycles\\/",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->     },
->     {
-> 	"PublicDescription": "ddr0 write-cycles event",
-> 	"MetricName": "imx8mm_ddr0.write_cycles",
-> 	"MetricExpr": "imx8_ddr0\\/write\\-cycles\\/",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->     },
->     {
-> 	"PublicDescription": "ddr0 read event",
-> 	"MetricName": "imx8mm_ddr0.read",
-> 	"MetricExpr": "imx8_ddr0\\/read\\/",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->     },
->     {
-> 	"PublicDescription": "ddr0 write event",
-> 	"MetricName": "imx8mm_ddr0.write",
-> 	"MetricExpr": "imx8_ddr0\\/write\\/",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->     },
->     {
-> 	"PublicDescription": "bytes all masters read from ddr0 based on read-cycles event.",
-> 	"MetricName": "imx8mm_ddr0_read.all",
-> 	"MetricExpr": "( imx8_ddr0\\/read\\-cycles\\/ ) * 4 * 4",
-> 	"ScaleUnit": "9.765625e-4MB",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->      },
->     {
-> 	"PublicDescription": "bytes all masters write to ddr0 based on read-cycles event.",
-> 	"MetricName": "imx8mm_ddr0_write.all",
-> 	"MetricExpr": "( imx8_ddr0\\/write\\-cycles\\/ ) * 4 * 4",
-> 	"ScaleUnit": "9.765625e-4MB",
-> 	"Unit": "imx8_ddr",
-> 	"Compat": "i.mx8mm"
->      }
-> ]
-> 
-> Thanks.
-> 
-> Best Regards,
-> Joakim Zhang
-> 
-
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
