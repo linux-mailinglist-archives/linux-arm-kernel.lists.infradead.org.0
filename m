@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D18AF1A02B7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:06:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 880D21A02B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:06:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z/g+dXo6nDYvjvNoYexZ/8GHgJsWx57L6kmOarxPRsU=; b=d4pCtbCp7+kQur
-	W6wfivb6ys8ygrcJxuiw0yzPVaMv5gwppD8R2XDHIaK5d2fHA/gaUcwRXTY3pGusyEFVWrhMer6zM
-	Jnc1vDQdA7MAagqSGjYHnh+c+CKy2Rrk7+XbLEt+IWythpMkIG7OUgRpBIPWVq5w1nx9v0YCu6qFo
-	uq7pu/oHJyA8rtdQkvukqFI3S7aIYkVlNjKE1S5USvmScA/JmI7ARlcIIQ9ZEjvZg38Yugmqmtblt
-	KS4+ZDgynutw0R4qK3KkibSiAdyHkK3aeqD8T+Cc3tUpRRk2rNiBeyZ/oNNg0R4N2H+EBCU/JT9gt
-	45pbWxVipS+sRVtW6LdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r7iWG/Dba2DHs4DnWXwEhTv4k19MGJpMkKQW9c5dutg=; b=P9wgRCcYjeNmyp
+	i+it5FDFfFPJPOZMaNBnjv78r6ET3oJdTGt5IDCxtIN5pPqMLGoKFet/fBKrhWcPdNaepj6hIRiT8
+	1gWwjd57bBSp516Aaufy5/hCOcmhoXeYVuWToRaLfHffFMlb/WB1oa4O/F5AkzKtMhL4591GSlDWw
+	tQP17kvv3eamLPhLOjIxTBpcMoHtYggz4HcTW1OAHUajWVMBjIUtzXsZlJ1Yw18DYCylEv2C27MVh
+	TgBhglFKcF/b080Janrd/uXWwm+ZLr33UT5f7wVTwQCv9XH6Gfoyebc7oqjpcc+nxBxsWY65GzUr6
+	cDPljwX1xHlQ++nXoNaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLbkt-0003fQ-AT; Tue, 07 Apr 2020 00:06:15 +0000
+	id 1jLbl9-0003uP-Gf; Tue, 07 Apr 2020 00:06:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLbhz-0006xu-W9
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:03:18 +0000
+ id 1jLbi3-000714-LB
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:03:21 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0CD9420768;
- Tue,  7 Apr 2020 00:03:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84C0B2080C;
+ Tue,  7 Apr 2020 00:03:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586217794;
- bh=eSKBnDUxZ9V7jiJVKTGVAU7pRMub9uPonVW5GejxE2g=;
- h=From:To:Cc:Subject:Date:From;
- b=b0oQd1+oDnOO3Kuq5g1mdZGh90HBY2le+UdEECuLux8t8Ni0Zm61cVodNt2Qy3U8B
- sxYdvTcZnI/+2bT4xOtelIiUguKdCUoN6xQUbCNb5E7YuIl/XTiP0/wbUQDzi0QlcS
- pt5Aq6Jup9hsWLrUz2Ec71hVmHpPYd6usl4ZOfPE=
+ s=default; t=1586217798;
+ bh=1Lqk+doDrlT/SrI8d8AftpDemtX1pC+rrvgWeYNetTI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=j9f/Zkbr7Kgu6gnRTNs3OKHc39jlGjWPUTV1TJ24Eww3EHmN1mvOUKPjCIzEEKuUw
+ mQv4z10/9RYFEfyMDmCB9au5Y+KHBsiwwSv/D35qnKwZQ0H9a4yrZgtMUFPyA4lctI
+ /dE2JZHZ6rT8gbAAwJFX1bcW3WNdMoJKQ0wTGWOk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 1/4] bus: sunxi-rsb: Return correct data when
- mixing 16-bit and 8-bit reads
-Date: Mon,  6 Apr 2020 20:03:09 -0400
-Message-Id: <20200407000312.17447-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 4/4] i2c: st: fix missing struct parameter
+ description
+Date: Mon,  6 Apr 2020 20:03:12 -0400
+Message-Id: <20200407000312.17447-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200407000312.17447-1-sashal@kernel.org>
+References: <20200407000312.17447-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_170316_281647_58675983 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20200406_170319_858576_4EF1CA3D 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -78,70 +81,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, Sasha Levin <sashal@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Patrice Chotard <patrice.chotard@st.com>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Alain Volmat <avolmat@me.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ondrej Jirman <megous@megous.com>
+From: Alain Volmat <avolmat@me.com>
 
-[ Upstream commit a43ab30dcd4a1abcdd0d2461bf1cf7c0817f6cd3 ]
+[ Upstream commit f491c6687332920e296d0209e366fe2ca7eab1c6 ]
 
-When doing a 16-bit read that returns data in the MSB byte, the
-RSB_DATA register will keep the MSB byte unchanged when doing
-the following 8-bit read. sunxi_rsb_read() will then return
-a result that contains high byte from 16-bit read mixed with
-the 8-bit result.
+Fix a missing struct parameter description to allow
+warning free W=1 compilation.
 
-The consequence is that after this happens the PMIC's regmap will
-look like this: (0x33 is the high byte from the 16-bit read)
-
-% cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-00: 33
-01: 33
-02: 33
-03: 33
-04: 33
-05: 33
-06: 33
-07: 33
-08: 33
-09: 33
-0a: 33
-0b: 33
-0c: 33
-0d: 33
-0e: 33
-[snip]
-
-Fix this by masking the result of the read with the correct mask
-based on the size of the read. There are no 16-bit users in the
-mainline kernel, so this doesn't need to get into the stable tree.
-
-Signed-off-by: Ondrej Jirman <megous@megous.com>
-Acked-by: Chen-Yu Tsai <wens@csie.org>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Signed-off-by: Alain Volmat <avolmat@me.com>
+Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/bus/sunxi-rsb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/i2c/busses/i2c-st.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index 0ffb247b42d65..d45f48de42a0c 100644
---- a/drivers/bus/sunxi-rsb.c
-+++ b/drivers/bus/sunxi-rsb.c
-@@ -345,7 +345,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
- 	if (ret)
- 		goto unlock;
- 
--	*buf = readl(rsb->regs + RSB_DATA);
-+	*buf = readl(rsb->regs + RSB_DATA) & GENMASK(len * 8 - 1, 0);
- 
- unlock:
- 	mutex_unlock(&rsb->lock);
+diff --git a/drivers/i2c/busses/i2c-st.c b/drivers/i2c/busses/i2c-st.c
+index 25020ec777c97..ee0a7d3dd0c65 100644
+--- a/drivers/i2c/busses/i2c-st.c
++++ b/drivers/i2c/busses/i2c-st.c
+@@ -399,6 +399,7 @@ static void st_i2c_wr_fill_tx_fifo(struct st_i2c_dev *i2c_dev)
+ /**
+  * st_i2c_rd_fill_tx_fifo() - Fill the Tx FIFO in read mode
+  * @i2c_dev: Controller's private data
++ * @max: Maximum amount of data to fill into the Tx FIFO
+  *
+  * This functions fills the Tx FIFO with fixed pattern when
+  * in read mode to trigger clock.
 -- 
 2.20.1
 
