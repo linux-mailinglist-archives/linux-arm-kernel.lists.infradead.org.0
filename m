@@ -2,40 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 095061A0755
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:33:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDF101A0767
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 08:38:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SOBlG8LnnjKog0nAV0tYxNxA2+uemGhWn/RB+7DT+us=; b=quimIVF00p4NOJ
-	ht2HGQFjr1FdkkTjNm5FkrG6b7Cuz24I5haLBAJae89/IqB3Wq53TgjKoyb5fsufIa8rll1feDcqz
-	5VHvvjTgIHdtCKT5bmS616U4n6iwJUq5/a8Vn1uapEKdXxrF7tyo7hoXsZuKieHiOWpZDTzyYrsLt
-	QPbaH/1sYa9qRvpO9lyMMLRiOwC4pFsBl3wtGtsXO/bSEu0RXqJd1Wi4MGLiIm/paTQleBeE6faKT
-	Us8JTh3GgEzuxAqN6teU6K8v4Dnjp351pb59iAlVaYUJfEpwktEfo7NrqjDBEk6/vC6ZsenX1fMis
-	dmqE6K27uA/+ZQqFKXgg==;
+	List-Owner; bh=dKVhopI+ZJKewuxn6okq8KLyP4SFB6rW5CTrkjjzW8c=; b=lZAdcu+XtRirsX
+	rq+Dborb1O3ySMhVu0wnMl/TcRwE8GWW4to3YlvtOqqVNCNArErCO8OcDR/yn3+hJmPrvB5AiUn4x
+	4ALrWqD3EQPqVNkM8NZ8Ah5Tui2UU5R5fMvgUVQs3lkQTHQcivUgfFfcjsEgEoAo3nW0S2J2kPHmI
+	CtUknp3Ub4uT98+QBxKxz07WU3k0XNW1RgRluFOwGGHgEE4xCMInpBb8p3P7Sn8ZIH6nx+azL0gjG
+	rWTOA9hZWLhGngDwT9r3qbqp8A7dUsxB7HlihXLj/+e8zl3bu+BON6aoz8H31QvOFkJfikHyZXLia
+	NPl0RnXTcgZeKPXLc+hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLhnH-0001iT-Qh; Tue, 07 Apr 2020 06:33:07 +0000
+	id 1jLhs0-0004uV-8q; Tue, 07 Apr 2020 06:38:00 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLhnA-0001hw-AH
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:33:01 +0000
+ id 1jLhrs-0004tx-P9
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 06:37:54 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 25EE7AD2C;
- Tue,  7 Apr 2020 06:32:58 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id C7192AB8F;
+ Tue,  7 Apr 2020 06:37:49 +0000 (UTC)
 Subject: Re: [PATCH v6 2/2] tty: samsung_tty: 32-bit access for TX/RX hold
  registers
-To: Krzysztof Kozlowski <krzk@kernel.org>
+From: Jiri Slaby <jslaby@suse.cz>
+To: Krzysztof Kozlowski <krzk@kernel.org>,
+ Hyunki Koo <hyunki00.koo@samsung.com>
 References: <20200401082721.19431-1-hyunki00.koo@samsung.com>
  <CGME20200406230902epcas2p19a8df6805dac59968d664efb9bc9419b@epcas2p1.samsung.com>
  <20200406230855.13772-1-hyunki00.koo@samsung.com>
- <62a918df-b3ba-21f4-b3ad-9f638ad104ad@suse.com>
- <20200407062439.GA21995@kozik-lap>
-From: Jiri Slaby <jslaby@suse.cz>
+ <20200407062655.GC21995@kozik-lap>
+ <6479146a-2249-633d-b0a8-7d1d1e44fd99@suse.cz>
 Autocrypt: addr=jslaby@suse.cz; prefer-encrypt=mutual; keydata=
  mQINBE6S54YBEACzzjLwDUbU5elY4GTg/NdotjA0jyyJtYI86wdKraekbNE0bC4zV+ryvH4j
  rrcDwGs6tFVrAHvdHeIdI07s1iIx5R/ndcHwt4fvI8CL5PzPmn5J+h0WERR5rFprRh6axhOk
@@ -78,16 +79,16 @@ Autocrypt: addr=jslaby@suse.cz; prefer-encrypt=mutual; keydata=
  9HKkJqkN9xYEYaxtfl5pelF8idoxMZpTvCZY7jhnl2IemZCBMs6s338wS12Qro5WEAxV6cjD
  VSdmcD5l9plhKGLmgVNCTe8DPv81oDn9s0cIRLg9wNnDtj8aIiH8lBHwfUkpn32iv0uMV6Ae
  sLxhDWfOR4N+wu1gzXWgLel4drkCJcuYK5IL1qaZDcuGR8RPo3jbFO7Y
-Message-ID: <257f278b-ce96-4cfb-85ff-53e123a076f5@suse.cz>
-Date: Tue, 7 Apr 2020 08:32:56 +0200
+Message-ID: <dfbb5351-ea8a-c958-f840-7c8a1d2dcc7a@suse.cz>
+Date: Tue, 7 Apr 2020 08:37:49 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200407062439.GA21995@kozik-lap>
+In-Reply-To: <6479146a-2249-633d-b0a8-7d1d1e44fd99@suse.cz>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_233300_645548_932F03A2 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20200406_233753_105721_7BE6D7D9 
+X-CRM114-Status: GOOD (  12.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -111,62 +112,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-serial@vger.kernel.org,
- Hyunki Koo <hyunki00.koo@samsung.com>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07. 04. 20, 8:24, Krzysztof Kozlowski wrote:
-> On Tue, Apr 07, 2020 at 06:49:29AM +0200, Jiri Slaby wrote:
->> On 07. 04. 20, 1:08, Hyunki Koo wrote:
+On 07. 04. 20, 8:28, Jiri Slaby wrote:
+> On 07. 04. 20, 8:26, Krzysztof Kozlowski wrote:
+>> On Tue, Apr 07, 2020 at 08:08:49AM +0900, Hyunki Koo wrote:
 >>> Support 32-bit access for the TX/RX hold registers UTXH and URXH.
 >>>
 >>> This is required for some newer SoCs.
 >>>
 >>> Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
->> ...
 >>> ---
->>>  drivers/tty/serial/samsung_tty.c | 76 +++++++++++++++++++++++++++++++++-------
->>>  1 file changed, 64 insertions(+), 12 deletions(-)
->>>
->>> diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
->>> index 73f951d65b93..bdf1d4d12cb1 100644
->>> --- a/drivers/tty/serial/samsung_tty.c
->>> +++ b/drivers/tty/serial/samsung_tty.c
->>> @@ -154,12 +154,47 @@ struct s3c24xx_uart_port {
->> ...
->>> -#define wr_regb(port, reg, val) writeb_relaxed(val, portaddr(port, reg))
->>> +static void wr_reg(struct uart_port *port, u32 reg, u32 val)
->>> +{
->>> +	switch (port->iotype) {
->>> +	case UPIO_MEM:
->>> +		writeb_relaxed(val, portaddr(port, reg));
->>> +		break;
->>> +	case UPIO_MEM32:
->>> +		writel_relaxed(val, portaddr(port, reg));
->>> +		break;
->>> +	}
->>> +}
->>> +
->>>  #define wr_regl(port, reg, val) writel_relaxed(val, portaddr(port, reg))
->>>  
->>> +static void wr_reg_barrier(struct uart_port *port, u32 reg, u32 val)
 >>
->> You need to explain, why you need this _barrier variant now. This change
->> should be done in a separate patch too.
+>> Why I am adding these for the third time?
 > 
-> There is no functional change in regard of barrier.  The ordered IO was
-> used there before.
+> I don't know as I don't care about your tags anyway.
 
-The patch changes one wr_reg to wr_reg_barrier without any explanation.
-This will hardly be accepted.
+Sorry, my bad, I was somehow mislead by thunderbird, thinking I am
+replying to a different thread.
 
-thanks,
+sorry,
 -- 
 js
 suse labs
