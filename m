@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5DC21A18A7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 01:37:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE8B51A18B9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 01:38:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eBXhCszOguZ8Nw1upMzMx3DwRaIoVXX5zNFzZ1nFuiQ=; b=FIr0i/3MaumKP/
-	/IZ4Khtkv+2zNk4yTZwP2T5uHpvPUdsBlNjRXZ+5GrQbJH8HMGB9/5WZgKi9M66CHnH2oM40T2cOT
-	aM5rbSKvUCOf/8D6KQQMQ3s6QPil0YNTEuXlhIpQuj87uQg4RbSk30znZSSit4avD9hSRl36/ssZH
-	fa+/k0FHDevTG9UvsOO6qcKcdtAK+yRriGCzcXHMElA0P7DRj+l0yuZLapiwFMbb/vma21Y97TZX9
-	XRkayhfRkv5mY0Ptx0FOvKBwgOQN8tJz5iDZyrJR/vp1Yjq4oiSt6STZ6/zdTc5LwFQJln2zOLO4U
-	q2BxxcEEDQ5bTM126VBQ==;
+	List-Owner; bh=nftamFf6I5YBjPa3IJebpueX+UFwPeyh7kY/xmuIADo=; b=Mkfi+erFOr58LN
+	E0h1CpsfWW3sXvRLKV+kWvyVdHGyFNEx8+Xe+bmwuJ0/VppojR7Q8yevSyBGJcHoJZsfb+jgPGRE/
+	IOsdOgPm8Ca2kwz0KDAY890W1gaO9qoN9iOxj7GGIM2FfEg0JqtanKjOt2aPYN9VhJfQII5Mw6QZU
+	tpDV9iQkWL2JzgtP0YTuqLFc2tajZ7Ys7BriQkksXspxG5exmKIYqSV5bHnwgbpgoE5jys0fdzy4h
+	pQTP9p46mg/Ty5Y9ymabfiNagEvPRy98HfckzOLTkDKW7/5VKU8JE4CHE+bHfj+OuVS+4SbqN/dQg
+	e8Xg73KLbBGC3XTNZvyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLxm5-0003Pc-7h; Tue, 07 Apr 2020 23:36:57 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
+	id 1jLxnl-0003wD-9T; Tue, 07 Apr 2020 23:38:41 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLxly-0003P7-CO
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 23:36:51 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 037NaIP6017886
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Tue, 7 Apr 2020 18:36:22 -0500
-Message-ID: <93ae433317a82de86ff5e9c8485563b78656b615.camel@kernel.crashing.org>
-Subject: Re: [PATCH v3] usb: gadget: aspeed: improve vhub port irq handling
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Tao Ren <rentao.bupt@gmail.com>
-Date: Wed, 08 Apr 2020 09:36:16 +1000
-In-Reply-To: <20200407060242.GA15050@taoren-ubuntu-R90MNF91>
-References: <20200315191430.12379-1-rentao.bupt@gmail.com>
- <20200401215826.GA8248@taoren-ubuntu-R90MNF91>
- <512d625e45ea953d722bb7ea73c3619730312284.camel@kernel.crashing.org>
- <20200403064826.GA10866@taoren-ubuntu-R90MNF91>
- <20200407060242.GA15050@taoren-ubuntu-R90MNF91>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1jLxnb-0003vI-4V
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 23:38:32 +0000
+X-Originating-IP: 72.234.141.215
+Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
+ (Authenticated sender: mail@aparcar.org)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id E8F3020004;
+ Tue,  7 Apr 2020 23:38:21 +0000 (UTC)
+Message-ID: <004a2ef9c1e04f9ffbb9c3cc9907ca656a406713.camel@aparcar.org>
+Subject: Re: [PATCH 0/5] arm: dts: linksys: rename codename to model
+From: Paul Spooren <mail@aparcar.org>
+To: Andrew Lunn <andrew@lunn.ch>
+Date: Tue, 07 Apr 2020 13:38:17 -1000
+In-Reply-To: <20200407224615.GA359603@lunn.ch>
+References: <20200407210816.866084-1-mail@aparcar.org>
+ <20200407224615.GA359603@lunn.ch>
+User-Agent: Evolution 3.36.1-1 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_163650_518057_924610DC 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200407_163831_449312_075A802C 
+X-CRM114-Status: GOOD (  24.65  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,52 +61,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Joel Stanley <joel@jms.id.au>,
- taoren@fb.com, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, jason@lakedaemon.net,
+ gregory.clement@bootlin.com, linux-kernel@vger.kernel.org,
+ daniel@makrotopia.org, freifunk@adrianschmutzler.de, robh+dt@kernel.org,
+ kaloz@openwrt.org, linux-arm-kernel@lists.infradead.org,
+ sebastian.hesselbarth@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-04-06 at 23:02 -0700, Tao Ren wrote:
-> I ran some testing on my ast2400 and ast2500 BMC and looks like the
-> for() loop runs faster than for_each_set_bit_from() loop in my
-> environment. I'm not sure if something needs to be revised in my test
-> code, but please kindly share your suggestions:
-> 
-> I use get_cycles() to calculate execution time of 2 different loops, and
-> ast_vhub_dev_irq() is replaced with barrier() to avoid "noise"; below
-> are the results:
-> 
->   - when downstream port number is 5 and only 1 irq bit is set, it takes
->     ~30 cycles to finish for_each_set_bit() loop, and 20-25 cycles to
->     finish the for() loop.
-> 
->   - if downstream port number is 5 and all 5 bits are set, then
->     for_each_set_bit() loop takes ~50 cycles and for() loop takes ~25
->     cycles.
-> 
->   - when I increase downsteam port number to 16 and set 1 irq bit, the
->     for_each_set_bit() loop takes ~30 cycles and for() loop takes 25
->     cycles. It's a little surprise to me because I thought for() loop
->     would cost 60+ cycles (3 times of the value when port number is 5).
-> 
->   - if downstream port number is 16 and all irq status bits are set,
->     then for_each_set_bit() loop takes 60-70 cycles and for() loop takes
->     30+ cycles.
+Hi Andrew,
 
-I suspect the CPU doesn't have an efficient find-zero-bit primitive,
-check the generated asm. In that case I would go back to the simple for
-loop.
+thank you very much for the quick response!
 
-Cheers,
-Ben.
+On Wed, 2020-04-08 at 00:46 +0200, Andrew Lunn wrote:
+> On Tue, Apr 07, 2020 at 11:08:10AM -1000, Paul Spooren wrote:
+> > Linksys chose to use codenames for a few of their devices and sell
+> > their
+> > them under an entirely different name.
+> > 
+> > codename  model name
+> > rango  -> wrt3200acm
+> > mamba  -> wrt1900ac
+> > cobra  -> wrt1900ac-v2
+> > caiman -> wrt1200ac
+> > shelby -> wrt1900acs
+> 
+> Hi Paul
+> 
+> There was quite a bit of discussion about this when the first board
+> was added. If i remember correctly, it was Mamba.
+> 
+> Imre Kaloz, <kaloz@openwrt.org> was the one arguing for
+> the name armada-xp-linksys-mamba.dts.
+> 
+> So it seems that openwrt.org has now come full circle?
 
+I talked with three currently active OpenWrt core developers and all
+were in favor of a unification. I wasn't aware of any previous
+discussions nor any pro arguments to keep code names.
+
+I've added Imre via CC so maybe he can share his opinion, too.
+> 
+> > This introduces some extra loops in OpenWrt, a distribution
+> > specialized
+> > on embedded Internet facing devices, as both codename and model
+> > name are
+> > used within the build system. The double naming requires developers
+> > to
+> > keep track of that mapping and introduces inconsistencies:
+> > 
+> > To build a specific device in OpenWrt profiles are used, named
+> > after the
+> > the compatible string for targets using device tree (similar to how
+> > .dts
+> > files are named in the linux source tree). However, the first item
+> > of
+> > the DT `compatible` list in this case is `linksys,rango`, which is
+> > inconsistent with the model name and not what common users would
+> > expect.
+> > 
+> > Such double naming complicates currently the automatic search for
+> > firmware upgrade as the build system does not support such mapping.
+> > Ideally the first item of the DT `compatible` list would contain a
+> > string suitable to be used as a filename recognizable by normal
+> > users to
+> > belong to that device.
+> > With this patch set the Linksys device tree files are moved from
+> > containing the codename to contain a sanitized model name and also
+> > use
+> > it as first entry of the DT `compatible` list.
+> 
+> I've no problems adding another compatible to the list. But i don't
+> like the idea of renaming the files. The file names could be
+> considered ABI! What installers/bootloaders are you going to break by
+> renaming them?
+
+Are you okay with adding the new compatible string as first element of
+the list? This would already simplify the OpenWrt build system.
+
+What about the changed labels? Are they considered ABI too?
+
+Regarding file names, I'm new to ABI policies. Within OpenWrt this is
+all done via a single line patch, I'm not familiar with any other
+installers/bootloaders. 
+
+If renaming is a reason not to merge this I'd send a v2 containing only
+the the added compatible list and updated labels.
+
+Best,
+Paul
 
 
 _______________________________________________
