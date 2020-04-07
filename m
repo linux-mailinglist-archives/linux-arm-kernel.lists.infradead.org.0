@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6C7A1A0217
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:03:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B21431A0218
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:03:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TOS3AIkx4dXmUmvgLEsxvVRY183sKSKKSZ5zcULjntc=; b=ezzN4AKOTTT+NL
-	R6J6lftvXJOJrsLNmtZYAQF3tbJP09hRAMK7XlX51O6UNnEnU/yzlOXYW8yjSO9S56p/wghOZvb1A
-	k2TIioBiDlPjN+j9QYWVdFaZ/Si7YzCbnnGFNkjlsqhcqiPfy8jy/p73sFUJQF3s4HDNJflbMtd6s
-	tSnQEhWjDW24+1kNLN/bp8V33mqDo9MzPa0FrS5lztMgrgroSnS9iOH4pBSqVf+zmIigyNFo825S6
-	iD5eOZI7UrjtDteO1gCDre17dH7hmqJzi/4FysJrqw50wUwDJZGYE59mf+1d1J+02Kr7w7OCtnMA4
-	hVYgX9ba/u230ZRhdr5A==;
+	List-Owner; bh=BrhrDhpOVzSo55MYfy3a27VBkOFkmGPl/Le9chWczZA=; b=BXsDz56IKxHm4h
+	N1AHx1M0b29hYazToB7IevsOIuWd3CUdod6fQMn2OFHyzZN4qoOOOuUojB1p2N5HDUgj8C/DuESNW
+	1L8LMDqKmT4KDH4K1fW5eNXDXE5NiExmDRP2Lf84p0oFnKS01AxgM4Fzz5E+xnR/2hsNHEYu9iRT+
+	gkgD6FVMdiuSRDSqTJBSoRZQIU8X6VB7clrKfj+HjYwngAiZhi9A0ANBNxzHFaeTQKiTFr3L3SLeA
+	puRjh+ThyuEpASk3mG6Fb4QG2bQRrwTsiLk19X0CnnMs/gV1hgbp8Tf1P+5hEMWorkGrhkQRDhwY8
+	f3/rOSM1EZsEq5XSHf5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLbi4-0006lY-C2; Tue, 07 Apr 2020 00:03:20 +0000
+	id 1jLbiU-0007AB-3Y; Tue, 07 Apr 2020 00:03:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLbgs-0005sD-Ea
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:02:11 +0000
+ id 1jLbgx-0005xZ-Nf
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:02:13 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 46F1620857;
- Tue,  7 Apr 2020 00:02:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 658E0208FE;
+ Tue,  7 Apr 2020 00:02:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586217726;
- bh=XQEArXGItVvaQZkfpdMmLcNNI8l93bdzj2TABmVv/Ek=;
+ s=default; t=1586217731;
+ bh=7W8SpPIOywJNExWL8DrXnjX+O9i7Fc36hKuhRdZJWF0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=z8sFap4/lh1WkI/Es3d7UcZwc4KOfNBSaHBUJJ7m3MZUFQ30KhQA7I6JtBH/rwy9x
- cnpZAe+qKcOFi0uHPq0/QZip5obMf7C6aLg99aiY2ULLxcfYqh7lwoGU5ViI3dPc9F
- fBEHYkYwdfzWZZ80zw8QC2A3M2iqXNlmY0JFHnEw=
+ b=UmNT20xlxRoKUyH73h/MBPycBGy9QVc4Jw5mP53EBc5BrZPFSivXt6g9uPQMAcJ80
+ Oi0oe5HSFjfxf92rUDLMbNWQGnbHBWmnJXk108ftbg+pClPHg0H92ww4HWhraaPR3c
+ H6QdkZnjddMzx5AZQHlSEJxplYeUg13/AG9y4nrE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 11/32] soc: fsl: dpio: register dpio irq handlers
- after dpio create
-Date: Mon,  6 Apr 2020 20:01:29 -0400
-Message-Id: <20200407000151.16768-11-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 15/32] net: stmmac: platform: Fix misleading
+ interrupt error msg
+Date: Mon,  6 Apr 2020 20:01:33 -0400
+Message-Id: <20200407000151.16768-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200407000151.16768-1-sashal@kernel.org>
 References: <20200407000151.16768-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_170207_752252_6F5C5BA3 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20200406_170211_867453_2E678B78 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -80,159 +80,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Grigore Popescu <grigore.popescu@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: Sasha Levin <sashal@kernel.org>, Markus Fuchs <mklntf@gmail.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Grigore Popescu <grigore.popescu@nxp.com>
+From: Markus Fuchs <mklntf@gmail.com>
 
-[ Upstream commit fe8fe7723a3a824790bda681b40efd767e2251a7 ]
+[ Upstream commit fc191af1bb0d069dc7e981076e8b80af21f1e61d ]
 
-The dpio irqs must be registered when you can actually
-receive interrupts, ie when the dpios are created.
-Kernel goes through NULL pointer dereference errors
-followed by kernel panic [1] because the dpio irqs are
-enabled before the dpio is created.
+Not every stmmac based platform makes use of the eth_wake_irq or eth_lpi
+interrupts. Use the platform_get_irq_byname_optional variant for these
+interrupts, so no error message is displayed, if they can't be found.
+Rather print an information to hint something might be wrong to assist
+debugging on platforms which use these interrupts.
 
-[1]
-Unable to handle kernel NULL pointer dereference at virtual address 0040
-fsl_mc_dpio dpio.14: probed
-fsl_mc_dpio dpio.13: Adding to iommu group 11
-  ISV = 0, ISS = 0x00000004
-Unable to handle kernel NULL pointer dereference at virtual address 0040
-Mem abort info:
-  ESR = 0x96000004
-  EC = 0x25: DABT (current EL), IL = 32 bits
-  SET = 0, FnV = 0
-  EA = 0, S1PTW = 0
-Data abort info:
-  ISV = 0, ISS = 0x00000004
-  CM = 0, WnR = 0
-[0000000000000040] user address but active_mm is swapper
-Internal error: Oops: 96000004 [#1] PREEMPT SMP
-Modules linked in:
-CPU: 2 PID: 151 Comm: kworker/2:1 Not tainted 5.6.0-rc4-next-20200304 #1
-Hardware name: NXP Layerscape LX2160ARDB (DT)
-Workqueue: events deferred_probe_work_func
-pstate: 00000085 (nzcv daIf -PAN -UAO)
-pc : dpaa2_io_irq+0x18/0xe0
-lr : dpio_irq_handler+0x1c/0x28
-sp : ffff800010013e20
-x29: ffff800010013e20 x28: ffff0026d9b4c140
-x27: ffffa1d38a142018 x26: ffff0026d2953400
-x25: ffffa1d38a142018 x24: ffffa1d38a7ba1d8
-x23: ffff800010013f24 x22: 0000000000000000
-x21: 0000000000000072 x20: ffff0026d2953400
-x19: ffff0026d2a68b80 x18: 0000000000000001
-x17: 000000002fb37f3d x16: 0000000035eafadd
-x15: ffff0026d9b4c5b8 x14: ffffffffffffffff
-x13: ff00000000000000 x12: 0000000000000038
-x11: 0101010101010101 x10: 0000000000000040
-x9 : ffffa1d388db11e4 x8 : ffffa1d38a7e40f0
-x7 : ffff0026da414f38 x6 : 0000000000000000
-x5 : ffff0026da414d80 x4 : ffff5e5353d0c000
-x3 : ffff800010013f60 x2 : ffffa1d388db11c8
-x1 : ffff0026d2a67c00 x0 : 0000000000000000
-Call trace:
- dpaa2_io_irq+0x18/0xe0
- dpio_irq_handler+0x1c/0x28
- __handle_irq_event_percpu+0x78/0x2c0
- handle_irq_event_percpu+0x38/0x90
- handle_irq_event+0x4c/0xd0
- handle_fasteoi_irq+0xbc/0x168
- generic_handle_irq+0x2c/0x40
- __handle_domain_irq+0x68/0xc0
- gic_handle_irq+0x64/0x150
- el1_irq+0xb8/0x180
- _raw_spin_unlock_irqrestore+0x14/0x48
- irq_set_affinity_hint+0x6c/0xa0
- dpaa2_dpio_probe+0x2a4/0x518
- fsl_mc_driver_probe+0x28/0x70
- really_probe+0xdc/0x320
- driver_probe_device+0x5c/0xf0
- __device_attach_driver+0x88/0xc0
- bus_for_each_drv+0x7c/0xc8
- __device_attach+0xe4/0x140
- device_initial_probe+0x18/0x20
- bus_probe_device+0x98/0xa0
- device_add+0x41c/0x758
- fsl_mc_device_add+0x184/0x530
- dprc_scan_objects+0x280/0x370
- dprc_probe+0x124/0x3b0
- fsl_mc_driver_probe+0x28/0x70
- really_probe+0xdc/0x320
- driver_probe_device+0x5c/0xf0
- __device_attach_driver+0x88/0xc0
- bus_for_each_drv+0x7c/0xc8
- __device_attach+0xe4/0x140
- device_initial_probe+0x18/0x20
- bus_probe_device+0x98/0xa0
- deferred_probe_work_func+0x74/0xa8
- process_one_work+0x1c8/0x470
- worker_thread+0x1f8/0x428
- kthread+0x124/0x128
- ret_from_fork+0x10/0x18
-Code: a9bc7bfd 910003fd a9025bf5 a90363f7 (f9402015)
----[ end trace 38298e1a29e7a570 ]---
-Kernel panic - not syncing: Fatal exception in interrupt
-SMP: stopping secondary CPUs
-Mem abort info:
-  ESR = 0x96000004
-  CM = 0, WnR = 0
-  EC = 0x25: DABT (current EL), IL = 32 bits
-[0000000000000040] user address but active_mm is swapper
-  SET = 0, FnV = 0
-  EA = 0, S1PTW = 0
-Data abort info:
-  ISV = 0, ISS = 0x00000004
-  CM = 0, WnR = 0
-[0000000000000040] user address but active_mm is swapper
-SMP: failed to stop secondary CPUs 0-2
-Kernel Offset: 0x21d378600000 from 0xffff800010000000
-PHYS_OFFSET: 0xffffe92180000000
-CPU features: 0x10002,21806008
-Memory Limit: none
----[ end Kernel panic - not syncing: Fatal exception in interrupt ]---
-
-Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Signed-off-by: Grigore Popescu <grigore.popescu@nxp.com>
-Signed-off-by: Li Yang <leoyang.li@nxp.com>
+Signed-off-by: Markus Fuchs <mklntf@gmail.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/fsl/dpio/dpio-driver.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../net/ethernet/stmicro/stmmac/stmmac_platform.c  | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/soc/fsl/dpio/dpio-driver.c b/drivers/soc/fsl/dpio/dpio-driver.c
-index 70014ecce2a7e..7b642c330977f 100644
---- a/drivers/soc/fsl/dpio/dpio-driver.c
-+++ b/drivers/soc/fsl/dpio/dpio-driver.c
-@@ -233,10 +233,6 @@ static int dpaa2_dpio_probe(struct fsl_mc_device *dpio_dev)
- 		goto err_allocate_irqs;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+index 5150551c28be3..508325cc105d5 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+@@ -663,16 +663,22 @@ int stmmac_get_platform_resources(struct platform_device *pdev,
+ 	 * In case the wake up interrupt is not passed from the platform
+ 	 * so the driver will continue to use the mac irq (ndev->irq)
+ 	 */
+-	stmmac_res->wol_irq = platform_get_irq_byname(pdev, "eth_wake_irq");
++	stmmac_res->wol_irq =
++		platform_get_irq_byname_optional(pdev, "eth_wake_irq");
+ 	if (stmmac_res->wol_irq < 0) {
+ 		if (stmmac_res->wol_irq == -EPROBE_DEFER)
+ 			return -EPROBE_DEFER;
++		dev_info(&pdev->dev, "IRQ eth_wake_irq not found\n");
+ 		stmmac_res->wol_irq = stmmac_res->irq;
  	}
  
--	err = register_dpio_irq_handlers(dpio_dev, desc.cpu);
--	if (err)
--		goto err_register_dpio_irq;
--
- 	priv->io = dpaa2_io_create(&desc, dev);
- 	if (!priv->io) {
- 		dev_err(dev, "dpaa2_io_create failed\n");
-@@ -244,6 +240,10 @@ static int dpaa2_dpio_probe(struct fsl_mc_device *dpio_dev)
- 		goto err_dpaa2_io_create;
- 	}
+-	stmmac_res->lpi_irq = platform_get_irq_byname(pdev, "eth_lpi");
+-	if (stmmac_res->lpi_irq == -EPROBE_DEFER)
+-		return -EPROBE_DEFER;
++	stmmac_res->lpi_irq =
++		platform_get_irq_byname_optional(pdev, "eth_lpi");
++	if (stmmac_res->lpi_irq < 0) {
++		if (stmmac_res->lpi_irq == -EPROBE_DEFER)
++			return -EPROBE_DEFER;
++		dev_info(&pdev->dev, "IRQ eth_lpi not found\n");
++	}
  
-+	err = register_dpio_irq_handlers(dpio_dev, desc.cpu);
-+	if (err)
-+		goto err_register_dpio_irq;
-+
- 	dev_info(dev, "probed\n");
- 	dev_dbg(dev, "   receives_notifications = %d\n",
- 		desc.receives_notifications);
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	stmmac_res->addr = devm_ioremap_resource(&pdev->dev, res);
 -- 
 2.20.1
 
