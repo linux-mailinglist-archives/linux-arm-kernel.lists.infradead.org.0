@@ -2,81 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 770BA1A0F93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:47:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED601A0F9D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:48:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vf3E0iHDPmQgpxUWyWT2wo3GOCZ/lXtQRiDGzam8d4M=; b=N69T38/uVMLkQI
-	aYH2TBjSHxouIRmuH/C1C6kXTT2phDwB6NGaQ9Ljt921r0HFk+BAyXByFx2/OYtXxahRD30q/chI3
-	FtKDeALUaBUSI3yYuHds31msAKhWrMdEgY6xE/jXcJGx8nOlzVYrsmk/01OoAGLLmN8tFcCNOKkcU
-	w1uNQKAI1aaT8Q3LGuYpWvIBZMEPULyT5rQT0i+TiS9ZIDuS9xCsaHhshxTw278SYGMGXzDV1ky7n
-	r2OGQ0du9n8lV6hHHZ8FLsStUIVV5opReHlqSkd/dOFVvPyp/94npJjtUttttXA7frvnMaAtdUZc5
-	VFgo8G0xrwPFl8zFk7EQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vGGhYqNiqiQccXnT2yFXw4QorOOa7DrPR2I0JKR1Qlc=; b=RIsbJ4sVbN5Bf5mBJnUbZpKVH
+	navoI29wk8VYDwrOQIT06QobLQzAwb4ibRoqZq5XKfJX6yDRhOHkKKEW0pYE09cFtHDQ4K4NY6wCU
+	X675ltGwJl5QniQMmb0iY3NWu9qhnWy0Qafgvyy531piZFkokyOF8o+elAsrtAZThkQPDmI6LGGQp
+	YvMDMvACsAV8xSiewZjO+Y4INpE1KJcVMK/5e2kF/pfbEYNJMfI6oHtOUMqT5C+sps8DjPh4urnGL
+	6V0xn7PjUjubJcMVzNVkUKXeqarxJbP5o3Dqn3kt5uZkDKhRRxTXHaPo5hLhUZBcCKYw1lwD6T1ox
+	RuRyzQj2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLpVg-0006aG-F7; Tue, 07 Apr 2020 14:47:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLpVP-0006Kk-RG
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:47:13 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0BCAF2072A;
- Tue,  7 Apr 2020 14:47:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586270831;
- bh=ADImPYYslzIoXNmP8AI1ecz09vgodHpmNO3wEZmJtvc=;
- h=From:To:Cc:Subject:Date:From;
- b=rETwQztwoXiCjveL0KyN64a4HutFPxC97X5mX8UqoRHzKghd6dmJhZrzobSAfLRyp
- ZEp6cQN9IBggBZk1OhOXGknhucldzBRS+AELkqXNS2B0Co+2PF4VOiT+N1NovJzIpw
- 8gSgxOfRZjFscXfOIoC2pNwJhI6mt/D/ZLwc4fSs=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jLpVN-001QIA-8h; Tue, 07 Apr 2020 15:47:09 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] irqchip/meson-gpio: Fix HARDIRQ-safe -> HARDIRQ-unsafe lock
- order
-Date: Tue,  7 Apr 2020 15:46:58 +0100
-Message-Id: <20200407144658.829246-1-maz@kernel.org>
-X-Mailer: git-send-email 2.25.1
+	id 1jLpWp-0007Eh-Mr; Tue, 07 Apr 2020 14:48:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLpWh-0007Dh-LY
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:48:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A813331B;
+ Tue,  7 Apr 2020 07:48:30 -0700 (PDT)
+Received: from [10.37.12.154] (unknown [10.37.12.154])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CBD703F68F;
+ Tue,  7 Apr 2020 07:48:28 -0700 (PDT)
+Subject: Re: [RFC PATCH] coresight: dynamic-replicator: Fix handling of
+ multiple connections
+To: saiprakash.ranjan@codeaurora.org
+References: <20200405102819.28460-1-saiprakash.ranjan@codeaurora.org>
+ <CAJ9a7VgQzK1XSCvLwuqODwkWfvo=6Wwps7Db+pL5xYDeCuktrg@mail.gmail.com>
+ <6c0f45488f8a44bf860759e00fcabd09@codeaurora.org>
+ <906d374d-a4d6-f2f2-6845-88b97a5ff7d9@arm.com>
+ <39a2b3fff165a108fa59d72b630b5f14@codeaurora.org>
+ <bb209f80-ac02-6321-dac4-ebf9ee6fa9a0@arm.com>
+ <bd05b31c2391edfff5044f22f2f83edf@codeaurora.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <e9c299c4-caeb-9eb8-f019-b311bfce756a@arm.com>
+Date: Tue, 7 Apr 2020 15:53:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, tglx@linutronix.de, jason@lakedaemon.net,
- khilman@baylibre.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <bd05b31c2391edfff5044f22f2f83edf@codeaurora.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_074711_977510_B95AC3B5 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200407_074831_794657_24F409CF 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,185 +70,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kevin Hilman <khilman@baylibre.com>, Thomas Gleixner <tglx@linutronix.de>,
- Jason Cooper <jason@lakedaemon.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mathieu.poirier@linaro.org, alexander.shishkin@linux.intel.com,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ swboyd@chromium.org, leo.yan@linaro.org, linux-arm-kernel@lists.infradead.org,
+ mike.leach@linaro.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Running a lockedp-enabled kernel on a vim3l board (Amlogic SM1)
-leads to the following splat:
-
-[   13.557138] WARNING: HARDIRQ-safe -> HARDIRQ-unsafe lock order detected
-[   13.587485] ip/456 [HC0[0]:SC0[0]:HE0:SE1] is trying to acquire:
-[   13.625922] ffff000059908cf0 (&irq_desc_lock_class){-.-.}-{2:2}, at: __setup_irq+0xf8/0x8d8
-[   13.632273] which would create a new lock dependency:
-[   13.637272]  (&irq_desc_lock_class){-.-.}-{2:2} -> (&ctl->lock){+.+.}-{2:2}
-[   13.644209]
-[   13.644209] but this new dependency connects a HARDIRQ-irq-safe lock:
-[   13.654122]  (&irq_desc_lock_class){-.-.}-{2:2}
-[   13.654125]
-[   13.654125] ... which became HARDIRQ-irq-safe at:
-[   13.664759]   lock_acquire+0xec/0x368
-[   13.666926]   _raw_spin_lock+0x60/0x88
-[   13.669979]   handle_fasteoi_irq+0x30/0x178
-[   13.674082]   generic_handle_irq+0x38/0x50
-[   13.678098]   __handle_domain_irq+0x6c/0xc8
-[   13.682209]   gic_handle_irq+0x5c/0xb0
-[   13.685872]   el1_irq+0xd0/0x180
-[   13.689010]   arch_cpu_idle+0x40/0x220
-[   13.692732]   default_idle_call+0x54/0x60
-[   13.696677]   do_idle+0x23c/0x2e8
-[   13.699903]   cpu_startup_entry+0x30/0x50
-[   13.703852]   rest_init+0x1e0/0x2b4
-[   13.707301]   arch_call_rest_init+0x18/0x24
-[   13.711449]   start_kernel+0x4ec/0x51c
-[   13.715167]
-[   13.715167] to a HARDIRQ-irq-unsafe lock:
-[   13.722426]  (&ctl->lock){+.+.}-{2:2}
-[   13.722430]
-[   13.722430] ... which became HARDIRQ-irq-unsafe at:
-[   13.732319] ...
-[   13.732324]   lock_acquire+0xec/0x368
-[   13.735985]   _raw_spin_lock+0x60/0x88
-[   13.739452]   meson_gpio_irq_domain_alloc+0xcc/0x290
-[   13.744392]   irq_domain_alloc_irqs_hierarchy+0x24/0x60
-[   13.749586]   __irq_domain_alloc_irqs+0x160/0x2f0
-[   13.754254]   irq_create_fwspec_mapping+0x118/0x320
-[   13.759073]   irq_create_of_mapping+0x78/0xa0
-[   13.763360]   of_irq_get+0x6c/0x80
-[   13.766701]   of_mdiobus_register_phy+0x10c/0x238 [of_mdio]
-[   13.772227]   of_mdiobus_register+0x158/0x380 [of_mdio]
-[   13.777388]   mdio_mux_init+0x180/0x2e8 [mdio_mux]
-[   13.782128]   g12a_mdio_mux_probe+0x290/0x398 [mdio_mux_meson_g12a]
-[   13.788349]   platform_drv_probe+0x5c/0xb0
-[   13.792379]   really_probe+0xe4/0x448
-[   13.795979]   driver_probe_device+0xe8/0x140
-[   13.800189]   __device_attach_driver+0x94/0x120
-[   13.804639]   bus_for_each_drv+0x84/0xd8
-[   13.808474]   __device_attach+0xe4/0x168
-[   13.812361]   device_initial_probe+0x1c/0x28
-[   13.816592]   bus_probe_device+0xa4/0xb0
-[   13.820430]   deferred_probe_work_func+0xa8/0x100
-[   13.825064]   process_one_work+0x264/0x688
-[   13.829088]   worker_thread+0x4c/0x458
-[   13.832768]   kthread+0x154/0x158
-[   13.836018]   ret_from_fork+0x10/0x18
-[   13.839612]
-[   13.839612] other info that might help us debug this:
-[   13.839612]
-[   13.850354]  Possible interrupt unsafe locking scenario:
-[   13.850354]
-[   13.855720]        CPU0                    CPU1
-[   13.858774]        ----                    ----
-[   13.863242]   lock(&ctl->lock);
-[   13.866330]                                local_irq_disable();
-[   13.872233]                                lock(&irq_desc_lock_class);
-[   13.878705]                                lock(&ctl->lock);
-[   13.884297]   <Interrupt>
-[   13.886857]     lock(&irq_desc_lock_class);
-[   13.891014]
-[   13.891014]  *** DEADLOCK ***
-
-The issue can occur when CPU1 is doing something like irq_set_type()
-and CPU0 performing an interrupt allocation, for example. Taking
-an interrupt (like the one being reconfigured) would lead to a deadlock.
-
-A solution to this is:
-
-- Reorder the locking so that meson_gpio_irq_update_bits takes the lock
-  itself at all times, instead of relying on the caller to lock or not,
-  hence making the RMW sequence atomic,
-
-- Rework the critical section in meson_gpio_irq_request_channel to only
-  cover the allocation itself, and let the gpio_irq_sel_pin callback
-  deal with its own locking if required,
-
-- Take the private spin-lock with interrupts disabled at all times
-
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- drivers/irqchip/irq-meson-gpio.c | 18 ++++++++++--------
- 1 file changed, 10 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/irqchip/irq-meson-gpio.c b/drivers/irqchip/irq-meson-gpio.c
-index ccc7f823911b..bc7aebcc96e9 100644
---- a/drivers/irqchip/irq-meson-gpio.c
-+++ b/drivers/irqchip/irq-meson-gpio.c
-@@ -144,12 +144,17 @@ struct meson_gpio_irq_controller {
- static void meson_gpio_irq_update_bits(struct meson_gpio_irq_controller *ctl,
- 				       unsigned int reg, u32 mask, u32 val)
- {
-+	unsigned long flags;
- 	u32 tmp;
- 
-+	spin_lock_irqsave(&ctl->lock, flags);
-+
- 	tmp = readl_relaxed(ctl->base + reg);
- 	tmp &= ~mask;
- 	tmp |= val;
- 	writel_relaxed(tmp, ctl->base + reg);
-+
-+	spin_unlock_irqrestore(&ctl->lock, flags);
- }
- 
- static void meson_gpio_irq_init_dummy(struct meson_gpio_irq_controller *ctl)
-@@ -196,14 +201,15 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
- 			       unsigned long  hwirq,
- 			       u32 **channel_hwirq)
- {
-+	unsigned long flags;
- 	unsigned int idx;
- 
--	spin_lock(&ctl->lock);
-+	spin_lock_irqsave(&ctl->lock, flags);
- 
- 	/* Find a free channel */
- 	idx = find_first_zero_bit(ctl->channel_map, NUM_CHANNEL);
- 	if (idx >= NUM_CHANNEL) {
--		spin_unlock(&ctl->lock);
-+		spin_unlock_irqrestore(&ctl->lock, flags);
- 		pr_err("No channel available\n");
- 		return -ENOSPC;
- 	}
-@@ -211,6 +217,8 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
- 	/* Mark the channel as used */
- 	set_bit(idx, ctl->channel_map);
- 
-+	spin_unlock_irqrestore(&ctl->lock, flags);
-+
- 	/*
- 	 * Setup the mux of the channel to route the signal of the pad
- 	 * to the appropriate input of the GIC
-@@ -225,8 +233,6 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
- 	 */
- 	*channel_hwirq = &(ctl->channel_irqs[idx]);
- 
--	spin_unlock(&ctl->lock);
--
- 	pr_debug("hwirq %lu assigned to channel %d - irq %u\n",
- 		 hwirq, idx, **channel_hwirq);
- 
-@@ -287,13 +293,9 @@ static int meson_gpio_irq_type_setup(struct meson_gpio_irq_controller *ctl,
- 			val |= REG_EDGE_POL_LOW(params, idx);
- 	}
- 
--	spin_lock(&ctl->lock);
--
- 	meson_gpio_irq_update_bits(ctl, REG_EDGE_POL,
- 				   REG_EDGE_POL_MASK(params, idx), val);
- 
--	spin_unlock(&ctl->lock);
--
- 	return 0;
- }
- 
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDQvMDcvMjAyMCAwMjo1NiBQTSwgU2FpIFByYWthc2ggUmFuamFuIHdyb3RlOgo+IEhpIFN1
+enVraSwKPiAKPiBPbiAyMDIwLTA0LTA3IDE4OjM4LCBTdXp1a2kgSyBQb3Vsb3NlIHdyb3RlOgo+
+PiBPbiAwNC8wNy8yMDIwIDEyOjI5IFBNLCBTYWkgUHJha2FzaCBSYW5qYW4gd3JvdGU6Cj4+PiBI
+aSBTdXp1a2ksCj4+Pgo+Pj4gVGhhbmtzIGZvciBsb29raW5nIGludG8gdGhpcyBpc3N1ZS4KPj4+
+Cj4+PiBPbiAyMDIwLTA0LTA3IDE1OjU0LCBTdXp1a2kgSyBQb3Vsb3NlIHdyb3RlOgo+Pj4+IE9u
+IDA0LzA3LzIwMjAgMTA6NDYgQU0sIFNhaSBQcmFrYXNoIFJhbmphbiB3cm90ZToKPj4+Pgo+Pj4+
+IFRoZXJlIHNlZW1zIHRvIGJlIHR3byByZXBsaWNhdG9ycyBiYWNrIHRvIGJhY2sgaGVyZS4gV2hh
+dCBpcyBjb25uZWN0ZWQKPj4+PiB0byB0aGUgb3RoZXIgb3V0cHV0IG9mIGJvdGggb2YgdGhlbSA/
+IEFyZSB0aGVyZSBhbnkgVFBJVXMgPyBXaGF0IAo+Pj4+IGhhcHBlbnMKPj4+PiBpZiB5b3UgY2hv
+b3NlIGEgc2luayBvbiB0aGUgb3RoZXIgZW5kIG9mICJzd2FvX3JlcGxpY2F0b3IiIChFVEIgPykK
+Pj4+Pgo+Pj4KPj4+IFRoZSBvdGhlciBvdXRwb3J0IG9mIHN3YW8gcmVwbGljYXRvciBpcyBjb25u
+ZWN0ZWQgdG8gRVVEIHdoaWNoIGlzIGEKPj4+IFFDT00gc3BlY2lmaWMgSFcgd2hpY2ggY2FuIGJl
+IHVzZWQgYXMgYSBzaW5rIGxpa2UgVVNCLgo+Pj4gQW5kIHRoZSBvdGhlciBvdXRwb3J0IG9mIG90
+aGVyIHJlcGxpY2F0b3IocmVwbGljYXRvcl9vdXQpIGlzIAo+Pj4gY29ubmVjdGVkIHRvCj4+PiBU
+UElVLgo+Pj4KPj4+PiBBZnRlciBib290LCB3aGF0IGRvIHRoZSBpZGZpbHRlciByZWdpc3RlcnMg
+cmVhZCBmb3IgYm90aCB0aGUgCj4+Pj4gcmVwbGljYXRvcnMgPwo+Pj4+Cj4+Pgo+Pj4gQWRkZWQg
+c29tZSBwcmludHMgaW4gcmVwbGljYXRvcl9wcm9iZS4KPj4+Cj4+PiDCoMKgcmVwbGljYXRvciBw
+cm9iZSByZXQ9LTUxNyBkZXZuYW1lPTYwNDYwMDAucmVwbGljYXRvciBpZGZpbHRlcjA9MHgwIAo+
+Pj4gaWRmaWx0ZXIxPTB4MAo+Pj4gwqDCoHJlcGxpY2F0b3IgcHJvYmUgcmV0PTAgZGV2bmFtZT02
+YjA2MDAwLnJlcGxpY2F0b3IgaWRmaWx0ZXIwPTB4ZmYgCj4+PiBpZGZpbHRlcjE9MHhmZgo+Pj4g
+wqDCoHJlcGxpY2F0b3IgcHJvYmUgcmV0PTAgZGV2bmFtZT02MDQ2MDAwLnJlcGxpY2F0b3IgaWRm
+aWx0ZXIwPTB4ZmYgCj4+PiBpZGZpbHRlcjE9MHhmZgo+Pgo+PiBDdXJpb3VzIHRvIHNlZSBob3cg
+dGhlIGlkZmlsdGVyWCBpcyBzZXQgdG8gMDoKPj4gwqDCoMKgwqAgaWYgdGhhdCBpcyBuZXZlciB1
+c2VkLgo+PiDCoMKgwqDCoMKgwqDCoCBPcgo+PiDCoMKgwqDCoCBpZiB0aGUgdXNlciBkb2Vzbid0
+IHJlc2V0IGl0IGJhY2sgdG8gMHhmZi4KPj4KPiAKPiBGb3IgYm90aCByZXBsaWNhdG9ycywgdGhl
+IGRlZmF1bHQgdmFsdWUgc2VlbXMgdG8gYmUgMHgwLgo+IAo+ICDCoHJlcGxpY2F0b3IgcHJvYmUg
+aW4gcmVzIHJldD0wIGRldm5hbWU9NjA0NjAwMC5yZXBsaWNhdG9yIGlkZmlsdGVyMD0weDAgCj4g
+aWRmaWx0ZXIxPTB4MAo+ICDCoHJlcGxpY2F0b3IgcHJvYmUgcmV0PS01MTcgZGV2bmFtZT02MDQ2
+MDAwLnJlcGxpY2F0b3IgaWRmaWx0ZXIwPTB4MCAKPiBpZGZpbHRlcjE9MHgwCj4gIMKgcmVwbGlj
+YXRvciBwcm9iZSBpbiByZXMgcmV0PTAgZGV2bmFtZT02YjA2MDAwLnJlcGxpY2F0b3IgaWRmaWx0
+ZXIwPTB4MCAKPiBpZGZpbHRlcjE9MHgwCj4gIMKgcmVwbGljYXRvciBwcm9iZSByZXQ9MCBkZXZu
+YW1lPTZiMDYwMDAucmVwbGljYXRvciBpZGZpbHRlcjA9MHhmZiAKPiBpZGZpbHRlcjE9MHhmZgo+
+ICDCoHJlcGxpY2F0b3IgcHJvYmUgaW4gcmVzIHJldD0wIGRldm5hbWU9NjA0NjAwMC5yZXBsaWNh
+dG9yIGlkZmlsdGVyMD0weDAgCj4gaWRmaWx0ZXIxPTB4MAo+ICDCoHJlcGxpY2F0b3IgcHJvYmUg
+cmV0PTAgZGV2bmFtZT02MDQ2MDAwLnJlcGxpY2F0b3IgaWRmaWx0ZXIwPTB4ZmYgCj4gaWRmaWx0
+ZXIxPTB4ZmYKCkkgYW0gbm90IHN1cmUgaG93IHlvdSBoYXZlIGFkZGVkIHRoZSBkZWJ1Z3MsIGJ1
+dCBpdCBsb29rcyBsaWtlIHRoZQpkcml2ZXJzIHNldCAweGZmIGZvciBib3RoIHRoZSBwb3J0IGZp
+bHRlcnMgb24gYSBzdWNjZXNzZnVsIHByb2JlLgoKPiAKPj4gRG9lcyB5b3VyIHRlc3QgZXZlciB0
+b3VjaCBFVUQgKGVuYWJsZSB0aGUgcG9ydCBmb3IgRVVEIGF0Cj4+IHN3YW8tcmVwbGljYXRvcikg
+PyBXaGF0IGFyZSB0aGUgdmFsdWVzIGJlZm9yZSB5b3UgcnVuIHlvdXIgdGVzdCA/Cj4+Cj4+Cj4g
+Cj4gTm8sIHdlIGRvIG5vdCB1c2UgRVVELCBkb3duc3RyZWFtIGl0IGlzIHVzZWQgYXMgZHVtbXkg
+c2luay4KPiBBbmQgSSBqdXN0IHRyeSB0byBzZWxlY3QgdGhlIEVUUiBhcyB0aGUgc2luayBhbmQg
+ZW5hYmxlIEVUTTAgYXMgdGhlIAo+IHRyYWNlIHNvdXJjZS4KPiAKPiBlY2hvIDEgPiAvc3lzL2J1
+cy9jb3Jlc2lnaHQvZGV2aWNlcy90bWNfZXRyMC9lbmFibGVfc2luawo+IGVjaG8gMSA+IC9zeXMv
+YnVzL2NvcmVzaWdodC9kZXZpY2VzL2V0bTAvZW5hYmxlX3NvdXJjZQo+IAo+IEFsc28gSSBzZWUg
+dGhlIEtBU0FOIHdhcm5pbmcgYnV0IHRoYXQgc2VlbXMgbGlrZSBzb21lIG90aGVyIGlzc3VlLgo+
+IAoKRG9lcyB5b3VyIGZ1bm5lbCBoYXZlIHNwYXJzZSBpbnB1dCBkZXNjcmliZWQgPyBJIHRoaW5r
+IHdlIGhhdmUgYW4KaXNzdWUgd2l0aCB0aGUgInJlZmNudCIgdHJhY2tpbmcgZm9yIGZ1bm5lbHMg
+KGVzcGVjaWFsbHkpLiBXaGVuIHdlCmhhdmUgYSBzcGFyc2UgaW5wdXQgcG9ydHMgZGVzY3JpYmVk
+IChpZS4gaWYgb25seSBpbnB1dCBwb3J0cyAwLCAzLAo1IGFyZSBkZXNjcmliZWQgdG8gcHJvdGVj
+dCB0aGUgc2VjdXJlIHNpZGUgY29ubmVjdGlvbnMpLCB3ZSBjb3VsZAplbmQgdXAgYWNjZXNzaW5n
+IGJleW9uZCB0aGUgbWVtb3J5IGFsbG9jYXRlZCBmb3IgY3NkZXYtPnJlZmNudHMuCmkuZSwgY3Nk
+ZXYtPnBkYXRhLT5ucl9pbnBvcnQgPSAzLCBhbmQgd2UgY291bGQgYWNjZXNzIGNzZGV2LT5yZWZj
+bnRzWzVdLAp3aGlsZSBzaXplb2YoY3NkZXYtPnJlZmNudHMpID0gc2l6ZW9mKGF0b21pY190KSAq
+IDMuCgpJIHdpbGwgc2VuZCBhIHBhdGNoLgoKCj4gW8KgIDUyNi4xMTA0MDFdIAo+ID09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PQo+IFvCoCA1MjYuMTE3OTg4XSBCVUc6IEtBU0FOOiBzbGFiLW91dC1vZi1ib3VuZHMgaW4gZnVu
+bmVsX2VuYWJsZSsweDU0LzB4MWIwCj4gW8KgIDUyNi4xMjQ3MDZdIFJlYWQgb2Ygc2l6ZSA0IGF0
+IGFkZHIgZmZmZmZmODEzNWY5NTQ5YyBieSB0YXNrIGJhc2gvMTExNAo+IFvCoCA1MjYuMTMxMzI0
+XQo+IFvCoCA1MjYuMTMyODg2XSBDUFU6IDMgUElEOiAxMTE0IENvbW06IGJhc2ggVGFpbnRlZDog
+RyBTIDUuNC4yNSAjMjMyCj4gW8KgIDUyNi4xNDAzOTddIEhhcmR3YXJlIG5hbWU6IFF1YWxjb21t
+IFRlY2hub2xvZ2llcywgSW5jLiBTQzcxODAgSURQIChEVCkKPiBbwqAgNTI2LjE0NzExM10gQ2Fs
+bCB0cmFjZToKPiBbwqAgNTI2LjE0OTY1M13CoCBkdW1wX2JhY2t0cmFjZSsweDAvMHgxODgKPiBb
+wqAgNTI2LjE1MzQzMV3CoCBzaG93X3N0YWNrKzB4MjAvMHgyYwo+IFvCoCA1MjYuMTU2ODUyXcKg
+IGR1bXBfc3RhY2srMHhkYy8weDE0NAo+IFvCoCA1MjYuMTYwMzcwXcKgIHByaW50X2FkZHJlc3Nf
+ZGVzY3JpcHRpb24rMHgzYy8weDQ5NAo+IFvCoCA1MjYuMTY1MjExXcKgIF9fa2FzYW5fcmVwb3J0
+KzB4MTQ0LzB4MTY4Cj4gW8KgIDUyNi4xNjkxNzBdwqAga2FzYW5fcmVwb3J0KzB4MTAvMHgxOAo+
+IFvCoCA1MjYuMTcyNzY5XcKgIGNoZWNrX21lbW9yeV9yZWdpb24rMHgxYTQvMHgxYjQKPiBbwqAg
+NTI2LjE3NzE2NF3CoCBfX2thc2FuX2NoZWNrX3JlYWQrMHgxOC8weDI0Cj4gW8KgIDUyNi4xODEy
+OTJdwqAgZnVubmVsX2VuYWJsZSsweDU0LzB4MWIwCj4gW8KgIDUyNi4xODUwNzJdwqAgY29yZXNp
+Z2h0X2VuYWJsZV9wYXRoKzB4MTA0LzB4MTk4Cj4gW8KgIDUyNi4xODk2NDldwqAgY29yZXNpZ2h0
+X2VuYWJsZSsweDExOC8weDI2Ywo+IFvCoCA1MjYuMTkzNzc4XcKgIGVuYWJsZV9zb3VyY2Vfc3Rv
+cmUrMHg2NC8weGE4Cj4gW8KgIDUyNi4xOTgwMDddwqAgZGV2X2F0dHJfc3RvcmUrMHg0MC8weDU4
+Cj4gW8KgIDUyNi4yMDE3ODhdwqAgc3lzZnNfa2Zfd3JpdGUrMHg0Yy8weDY0Cj4gW8KgIDUyNi4y
+MDU1NjddwqAga2VybmZzX2ZvcF93cml0ZSsweDE2Yy8weDIxMAo+IFvCoCA1MjYuMjA5NzAwXcKg
+IF9fdmZzX3dyaXRlKzB4NTQvMHgxYTgKPiBbwqAgNTI2LjIxMzI5N13CoCB2ZnNfd3JpdGUrMHhl
+NC8weDFhNAo+IFvCoCA1MjYuMjE2NzE0XcKgIGtzeXNfd3JpdGUrMHg4NC8weGVjCj4gW8KgIDUy
+Ni4yMjAxMzFdwqAgX19hcm02NF9zeXNfd3JpdGUrMHgyMC8weDJjCj4gW8KgIDUyNi4yMjQxNzld
+wqAgZWwwX3N2Y19jb21tb24rMHhhOC8weDE2MAo+IFvCoCA1MjYuMjI4MDQwXcKgIGVsMF9zdmNf
+Y29tcGF0X2hhbmRsZXIrMHgyYy8weDM4Cj4gW8KgIDUyNi4yMzI1MzNdwqAgZWwwX3N2Y19jb21w
+YXQrMHg4LzB4MTAKPiBbwqAgNTI2LjIzNjIyNV0KPiBbwqAgNTI2LjIzNzc4Ml0gQWxsb2NhdGVk
+IGJ5IHRhc2sgMjgwOgo+IFvCoCA1MjYuMjQxMjk4XcKgIF9fa2FzYW5fa21hbGxvYysweGYwLzB4
+MWFjCj4gW8KgIDUyNi4yNDUyNDldwqAga2FzYW5fa21hbGxvYysweGMvMHgxNAo+IFvCoCA1MjYu
+MjQ4ODQ5XcKgIF9fa21hbGxvYysweDI4Yy8weDNiNAo+IFvCoCA1MjYuMjUyMzYxXcKgIGNvcmVz
+aWdodF9yZWdpc3RlcisweDg4LzB4MjUwCj4gW8KgIDUyNi4yNTY1ODddwqAgZnVubmVsX3Byb2Jl
+KzB4MTVjLzB4MjI4Cj4gW8KgIDUyNi4yNjAzNjVdwqAgZHluYW1pY19mdW5uZWxfcHJvYmUrMHgy
+MC8weDJjCj4gW8KgIDUyNi4yNjQ2NzldwqAgYW1iYV9wcm9iZSsweGJjLzB4MTU4Cj4gW8KgIDUy
+Ni4yNjgxOTNdwqAgcmVhbGx5X3Byb2JlKzB4MTQ0LzB4NDA4Cj4gW8KgIDUyNi4yNzE5NzBdwqAg
+ZHJpdmVyX3Byb2JlX2RldmljZSsweDcwLzB4MTQwCj4gW8KgIDUyNi4yNzYyODJdwqAgX19kZXZp
+Y2VfYXR0YWNoX2RyaXZlcisweDljLzB4MTEwCj4gW8KgIDUyNi4yODA4NjFdwqAgYnVzX2Zvcl9l
+YWNoX2RydisweDkwLzB4ZDgKPiBbwqAgNTI2LjI4NDgyMl3CoCBfX2RldmljZV9hdHRhY2grMHhi
+NC8weDE2NAo+IFvCoCA1MjYuMjg4NzcyXcKgIGRldmljZV9pbml0aWFsX3Byb2JlKzB4MjAvMHgy
+Ywo+IFvCoCA1MjYuMjkzMDgxXcKgIGJ1c19wcm9iZV9kZXZpY2UrMHgzNC8weDk0Cj4gW8KgIDUy
+Ni4yOTcwMzBdwqAgZGVmZXJyZWRfcHJvYmVfd29ya19mdW5jKzB4YTQvMHgxMDAKPiBbwqAgNTI2
+LjMwMTc5NF3CoCBwcm9jZXNzX29uZV93b3JrKzB4MzNjLzB4NjQwCj4gW8KgIDUyNi4zMDU5MjJd
+wqAgd29ya2VyX3RocmVhZCsweDJhMC8weDQ3MAo+IFvCoCA1MjYuMzA5Nzg2XcKgIGt0aHJlYWQr
+MHgxMjgvMHgxMzgKPiBbwqAgNTI2LjMxMzExOV3CoCByZXRfZnJvbV9mb3JrKzB4MTAvMHgxOAo+
+IFvCoCA1MjYuMzE2ODEwXQo+IFvCoCA1MjYuMzE4MzY0XSBGcmVlZCBieSB0YXNrIDA6Cj4gW8Kg
+IDUyNi4zMjEzNDRdIChzdGFjayBpcyBub3QgYXZhaWxhYmxlKQo+IFvCoCA1MjYuMzI1MDI0XQo+
+IFvCoCA1MjYuMzI2NTgwXSBUaGUgYnVnZ3kgYWRkcmVzcyBiZWxvbmdzIHRvIHRoZSBvYmplY3Qg
+YXQgZmZmZmZmODEzNWY5NTQ4MAo+IFvCoCA1MjYuMzI2NTgwXcKgIHdoaWNoIGJlbG9uZ3MgdG8g
+dGhlIGNhY2hlIGttYWxsb2MtMTI4IG9mIHNpemUgMTI4Cj4gW8KgIDUyNi4zMzk0MzldIFRoZSBi
+dWdneSBhZGRyZXNzIGlzIGxvY2F0ZWQgMjggYnl0ZXMgaW5zaWRlIG9mCj4gW8KgIDUyNi4zMzk0
+MzldwqAgMTI4LWJ5dGUgcmVnaW9uIFtmZmZmZmY4MTM1Zjk1NDgwLCBmZmZmZmY4MTM1Zjk1NTAw
+KQo+IFvCoCA1MjYuMzUxMzk5XSBUaGUgYnVnZ3kgYWRkcmVzcyBiZWxvbmdzIHRvIHRoZSBwYWdl
+Ogo+IFvCoCA1MjYuMzU2MzQyXSBwYWdlOmZmZmZmZmZmMDRiN2U1MDAgcmVmY291bnQ6MSBtYXBj
+b3VudDowIAo+IG1hcHBpbmc6ZmZmZmZmODE0YjAwYzM4MCBpbmRleDoweDAgY29tcG91bmRfbWFw
+Y291bnQ6IDAKPiBbwqAgNTI2LjM2NjcxMV0gZmxhZ3M6IDB4NDAwMDAwMDAwMDAxMDIwMChzbGFi
+fGhlYWQpCj4gW8KgIDUyNi4zNzE0NzVdIHJhdzogNDAwMDAwMDAwMDAxMDIwMCBmZmZmZmZmZjA1
+MDM0MDA4IGZmZmZmZmZmMDUwMWViMDggCj4gZmZmZmZmODE0YjAwYzM4MAo+IFvCoCA1MjYuMzc5
+NDM1XSByYXc6IDAwMDAwMDAwMDAwMDAwMDAgMDAwMDAwMDAwMDE5MDAxOSAwMDAwMDAwMWZmZmZm
+ZmZmIAo+IDAwMDAwMDAwMDAwMDAwMDAKPiBbwqAgNTI2LjM4NzM5M10gcGFnZSBkdW1wZWQgYmVj
+YXVzZToga2FzYW46IGJhZCBhY2Nlc3MgZGV0ZWN0ZWQKPiBbwqAgNTI2LjM5MzEyOF0KPiBbwqAg
+NTI2LjM5NDY4MV0gTWVtb3J5IHN0YXRlIGFyb3VuZCB0aGUgYnVnZ3kgYWRkcmVzczoKPiBbwqAg
+NTI2LjM5OTYxOV3CoCBmZmZmZmY4MTM1Zjk1MzgwOiBmYyBmYyBmYyBmYyBmYyBmYyBmYyBmYyBm
+YyBmYyBmYyBmYyBmYyAKPiBmYyBmYyBmYwo+IFvCoCA1MjYuNDA3MDQ2XcKgIGZmZmZmZjgxMzVm
+OTU0MDA6IGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIAo+IGZjIGZjIGZj
+Cj4gW8KgIDUyNi40MTQ0NzNdID5mZmZmZmY4MTM1Zjk1NDgwOiAwNCBmYyBmYyBmYyBmYyBmYyBm
+YyBmYyBmYyBmYyBmYyBmYyBmYyAKPiBmYyBmYyBmYwo+IFvCoCA1MjYuNDIxOTAwXcKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIF4KPiBbwqAg
+NTI2LjQyNjAyOV3CoCBmZmZmZmY4MTM1Zjk1NTAwOiBmYyBmYyBmYyBmYyBmYyBmYyBmYyBmYyBm
+YyBmYyBmYyBmYyBmYyAKPiBmYyBmYyBmYwo+IFvCoCA1MjYuNDMzNDU2XcKgIGZmZmZmZjgxMzVm
+OTU1ODA6IGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIGZjIAo+IGZjIGZjIGZj
+Cj4gW8KgIDUyNi40NDA4ODNdIAo+ID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQo+IAo+IFRoYW5rcywKPiBTYWkKPiAKClN1
+enVraQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
