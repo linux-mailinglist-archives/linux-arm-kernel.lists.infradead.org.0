@@ -2,75 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD88D1A06CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 07:53:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E40891A06E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 07:59:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z2Bs44NXL+mOdXuaSEJlDp9ZRN/u+WYu51TZIISzBnI=; b=gyVkYTDXQTG/Yd
-	kNr/jSF/Ad6cn6nFfty2k0zeHM/KMkbvzpyliGtT/yGZEqgFdSLOdzRGIqU+0QZ6EoCxugtLfu5nv
-	hmZjinmpTY8wMQjIOJycvFrrWLsWm2Mgn8ShvkvbTEcUTnqpaaRQQ4i09uEP2pkAk0czZEnESc0dh
-	CDEP8l8ThaXSgKXTo9ON4X4etYhUsHGC2XZV0SFFpwZbkqLaGRr0U74qh/gpNlTsQeF8THrr3Ku9N
-	KsGOabnHXPUKI0bHHdhCpMorv+0iVoNRnWEPsrfAPQi28jihjGajuzHU8hhXoPEU7Xa/RpmvXGNV8
-	MIEXTnj5536TTgQN9vMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hE+wQQesrIo0qVhx9OZAxzpQtqHEF8oF8Vd2c5+dpg0=; b=ixFh3fks/blfkf
+	u5dqAwJ12rabCPFJ2D0O/pMTERnlvKf/ol8scBu4avsooE6uiIcA4y4um7W3XNFZ95vXC1+ZBXPBS
+	5xDpKnzPW6G1X+aivZuJTawTcp6SzA9nIZIj+YUOado5+2Hvjhick1rL5JgE5/NN5ftW8DK8YOW9Z
+	lHmXCMjb57UfbjjpgrZuNkeUQ5diuacL2zq5PkVI/ch7T7QmcX4Xl23U28PpHi7ttbceDkls0giYP
+	8H7a9Pg9yirULZjQQdCC4++bwAcs6chxHxPIrxGRUtvGtXv4lJitRTODEEaSdYSW9OKNCMwVKazE0
+	ULpO0oD8CIZ+7fvV8aUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLhAM-0000pW-6k; Tue, 07 Apr 2020 05:52:54 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jLhGZ-0004DJ-0C; Tue, 07 Apr 2020 05:59:19 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLh9G-0008OB-15
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 05:51:47 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0375petX091483;
- Tue, 7 Apr 2020 00:51:40 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1586238700;
- bh=M2+4k8wmfwupbhN9ssnIg+wY4Ic8DPY+NyV+bVJoVFM=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=qeHuIkvm+kkMO+JvB9bifK5IEEAMDaXyhxc9ROGFV6HVmQ57OL3pcVnD0Vwkq5OQ9
- g+R7S1GWNQRxjoww32erv6GjM6O4Jic083gaXAJ48U90h1iu6tzsRmKT/vGqBgCna3
- 2sGTTpqFAqTNg3iZcd6c1yUYt0qxZxFkkYniH8YA=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0375pdYL041571
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 7 Apr 2020 00:51:40 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 7 Apr
- 2020 00:51:39 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 7 Apr 2020 00:51:40 -0500
-Received: from a0393675ula.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0375pLdP017972;
- Tue, 7 Apr 2020 00:51:36 -0500
-From: Keerthy <j-keerthy@ti.com>
-To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
-Subject: [PATCH v6 4/4] arm64: dts: ti: am654: Add thermal zones
-Date: Tue, 7 Apr 2020 11:21:16 +0530
-Message-ID: <20200407055116.16082-5-j-keerthy@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200407055116.16082-1-j-keerthy@ti.com>
-References: <20200407055116.16082-1-j-keerthy@ti.com>
+ id 1jLhGA-00044q-DB
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 05:58:56 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 678CC580307;
+ Tue,  7 Apr 2020 01:58:48 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 07 Apr 2020 01:58:48 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm3; bh=luaDFvJ4QP7HzTgY7DFCyyfDI0
+ BXcg59edPeu9moQnE=; b=iWAedFWIY7AyUqXyEMCmfDoc8Nak2DLftjwUhJLLQk
+ KNRmOJFxDfJQelE4tQso8nqPqTCL31xTtxABsBPSsUcMfpIKe1bykpddaAqUbthw
+ /vl/Z9Jq9bNHA24yGTdB69hoCYVyLgtsVsk7fePlLWGZWDXCGTMZdXa8TOgiK85V
+ pd9dsCtIU1YBudJZhbVYYjac0Y5fLIArn6ezaAN9xQZ8SgqJ9uqFjcLMOMc8sYIz
+ pRYAU02EllzACZNByxAtfsQAs/LYL+tVt3ON7SLv7vLHKb1/P6OhdK+5WTx2v1+/
+ ZC3VWm3Fjv58Przl49QI2qupSTk3MVYS9A+WJ432J4eA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=luaDFvJ4QP7HzTgY7
+ DFCyyfDI0BXcg59edPeu9moQnE=; b=HU2zYuIb3dTywfn6VPUoR6iQ4DvjVfA6a
+ HM+TF/HO7pF27scVLRt1zH0A/0lI70UatZoD3GNQUy243gLrac3W2iCay50Ov+YT
+ K27RqrE9PzGeydBTzz+TX34aCWjfjGqUSjOQiuF3Yrf8V7jEkGczMYXQUOxhp6dF
+ /iBC2Hhu8aP65ZgX5Ldf7ZPKt3kIkaApsciNqonHlE920OwyE2Qfa78gcday7Qwp
+ YgfzosNZnOFO2keUO9YaeEk0bycSC7uosnwKgi/xES5kl3cwi1NmXCK05r9Zp5xc
+ 7DftnpnfR8u1zPQkjZwM8FokfE80X/uvWlbHtWuIxC34zO2n7eDSQ==
+X-ME-Sender: <xms:lBaMXql_AK8NiqoqaaeLDZYYzQWffz2wIKyiEM7Yw5BBFWfrk_F9yA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudeggdellecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
+ dtnecuhfhrohhmpeetlhhishhtrghirhcuhfhrrghntghishcuoegrlhhishhtrghirhes
+ rghlihhsthgrihhrvdefrdhmvgeqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdroh
+ hrghenucfkphepjeefrdelfedrkeegrddvtdeknecuvehluhhsthgvrhfuihiivgeptden
+ ucfrrghrrghmpehmrghilhhfrhhomheprghlihhsthgrihhrsegrlhhishhtrghirhdvfe
+ drmhgv
+X-ME-Proxy: <xmx:lBaMXqBF7Q_unFFUXTNyMVF3JuktDwLWCQ_9obH00fUJqGWQx1og_w>
+ <xmx:lBaMXgsRucZ3VE9D9WFeHAiyxWkz-QH1boPQTPKGfsc80MYKdVyEsQ>
+ <xmx:lBaMXkuKECeRlmoFykZo8892QfqB5oSg-NiZ2_-VMXo7cF22NI8HZw>
+ <xmx:mBaMXnCjFgTFBSbWfIFyKYlmRZ3ZfVedIjjlZJfkBnVEJqixEVUmBA>
+Received: from alistair-xps-14z.alistair23.me
+ (c-73-93-84-208.hsd1.ca.comcast.net [73.93.84.208])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 869D6328005A;
+ Tue,  7 Apr 2020 01:58:43 -0400 (EDT)
+From: Alistair Francis <alistair@alistair23.me>
+To: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, marcel@holtmann.org,
+ johan.hedberg@gmail.com, linux-bluetooth@vger.kernel.org,
+ mripard@kernel.org, wens@csie.org
+Subject: [PATCH v2 1/3] dt-bindings: net: bluetooth: Add rtl8723bs-bluetooth
+Date: Mon,  6 Apr 2020 22:58:35 -0700
+Message-Id: <20200407055837.3508017-1-alistair@alistair23.me>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_225146_166883_3CDE8BD7 
-X-CRM114-Status: GOOD (  13.06  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200406_225854_582022_EFE48A22 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,91 +104,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, j-keerthy@ti.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Alistair Francis <alistair@alistair23.me>,
+ linux-arm-kernel@lists.infradead.org, alistair23@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The am654 SoC has three thermal zones namely MPU0, MPU1 and MCU
-zones.
+From: Vasily Khoruzhick <anarsoul@gmail.com>
 
-Signed-off-by: Keerthy <j-keerthy@ti.com>
+Add binding document for bluetooth part of RTL8723BS/RTL8723CS
+
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Signed-off-by: Alistair Francis <alistair@alistair23.me>
 ---
- arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |  4 ++
- .../dts/ti/k3-am654-industrial-thermal.dtsi   | 45 +++++++++++++++++++
- 2 files changed, 49 insertions(+)
- create mode 100644 arch/arm64/boot/dts/ti/k3-am654-industrial-thermal.dtsi
+v2:
+ - Update bindings based on upstream feedback
+ - Add RTL8822CS
+ - Remove unused/unsupported fields
+ - Remove firmware-postfix field
+ - Small formatting changes
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
-index 98b89cf0ccdf..54a133fa1bf2 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
-@@ -96,4 +96,8 @@
- 		power-domains = <&k3_pds 80 TI_SCI_PD_EXCLUSIVE>;
- 		#thermal-sensor-cells = <1>;
- 	};
-+
-+	thermal_zones: thermal-zones {
-+		#include "k3-am654-industrial-thermal.dtsi"
-+	};
- };
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-industrial-thermal.dtsi b/arch/arm64/boot/dts/ti/k3-am654-industrial-thermal.dtsi
+ .../bindings/net/realtek,rtl8723bs-bt.yaml    | 55 +++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.yaml
+
+diff --git a/Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.yaml b/Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.yaml
 new file mode 100644
-index 000000000000..cdc3d40c3f60
+index 000000000000..a03ce1bbc56f
 --- /dev/null
-+++ b/arch/arm64/boot/dts/ti/k3-am654-industrial-thermal.dtsi
-@@ -0,0 +1,45 @@
-+// SPDX-License-Identifier: GPL-2.0
++++ b/Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.yaml
+@@ -0,0 +1,55 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/realtek,rtl8723bs-bt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#include <dt-bindings/thermal/thermal.h>
++title: RTL8723BS/RTL8723CS/RTL8822CS Bluetooth Device Tree Bindings
 +
-+mpu0_thermal: mpu0_thermal {
-+	polling-delay-passive = <250>; /* milliseconds */
-+	polling-delay = <500>; /* milliseconds */
-+	thermal-sensors = <&wkup_vtm0 0>;
++maintainers:
++  - Vasily Khoruzhick <anarsoul@gmail.com>
++  - Alistair Francis <alistair@alistair23.me>
 +
-+	trips {
-+		mpu0_crit: mpu0_crit {
-+			temperature = <125000>; /* milliCelsius */
-+			hysteresis = <2000>; /* milliCelsius */
-+			type = "critical";
-+		};
-+	};
-+};
++description:
++  RTL8723CS/RTL8723CS/RTL8822CS is WiFi + BT chip. WiFi part is connected over
++  SDIO, while BT is connected over serial. It speaks H5 protocol with few
++  extra commands to upload firmware and change module speed.
 +
-+mpu1_thermal: mpu1_thermal {
-+	polling-delay-passive = <250>; /* milliseconds */
-+	polling-delay = <500>; /* milliseconds */
-+	thermal-sensors = <&wkup_vtm0 1>;
++properties:
++  compatible:
++    oneOf:
++      - "realtek,rtl8723bs-bt"
++      - "realtek,rtl8723cs-bt"
++      - "realtek,rtl8822cs-bt"
 +
-+	trips {
-+		mpu1_crit: mpu1_crit {
-+			temperature = <125000>; /* milliCelsius */
-+			hysteresis = <2000>; /* milliCelsius */
-+			type = "critical";
-+		};
-+	};
-+};
++  device-wake-gpios:
++    maxItems: 1
++    description:
++      GPIO specifier, used to wakeup the BT module
 +
-+mcu_thermal: mcu_thermal {
-+	polling-delay-passive = <250>; /* milliseconds */
-+	polling-delay = <500>; /* milliseconds */
-+	thermal-sensors = <&wkup_vtm0 2>;
++  enable-gpios:
++    maxItems: 1
++    description:
++      GPIO specifier, used to enable the BT module
 +
-+	trips {
-+		mcu_crit: mcu_crit {
-+			temperature = <125000>; /* milliCelsius */
-+			hysteresis = <2000>; /* milliCelsius */
-+			type = "critical";
-+		};
-+	};
-+};
++  host-wake-gpios:
++    maxItems: 1
++    desciption:
++      GPIO specifier, used to wakeup the host processor
++
++required:
++  - compatible
++
++examples:
++  - |
++    &uart1 {
++        pinctrl-names = "default";
++        pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
++        uart-has-rtscts = <1>;
++
++        bluetooth {
++            compatible = "realtek,rtl8723bs-bt";
++            device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
++            host-wakeup-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++        };
++    };
 -- 
-2.17.1
+2.25.1
 
 
 _______________________________________________
