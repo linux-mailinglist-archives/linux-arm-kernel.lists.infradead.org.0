@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06AE21A0D9C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:29:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CD8F1A0DA2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 14:30:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bp7HlBqaypLayDRZTYDXThbc0J+SRRYuoAmXyDQPssk=; b=kE8PuEx9eMlc3f
-	l3BSFJM2bxKOoQQcldALRt4ERnOJO4AETv4gdGWff1NQJJh5GqH33Zys95VQTJTJAEK/ndetPMQbM
-	tgBxYlEdHY8RerEvJL7mIqFDIPy3mNsHc/OwmeEf5G8LqOmt795029yv3g4gHl4L1ISa9tMN1Wz04
-	NOC1l7jQQ4vl/rGsZmVzHlNFstfmQMrghaFjfdHVJGvg+n6z8TEAlxwPSB6FJgfKsmRZo5PClH5l+
-	h9HoSxelvP2GXaz0Rb2FlnX21bSqVgLxp4pprJ5FwmrNu4bXp2O8xHwRuorNbxLTNkexa6MPyzDdb
-	/LIGI7u8JfuSlpyYQOqQ==;
+	List-Owner; bh=FJ7/87fXsGl2aZDMu41to6qNPW0tCqyFII1GmxOcxuI=; b=Xm0so+EavzEJ+p
+	L7B69Pnys5NrQKcKaqAYCRvMBpM6VVJC9XJPtgg/vWccMBRUHdYq1L3wZ0lHJWEez1o3fmCLCgURa
+	7dtPOsHNj/7TTSWNl6/yN+JI/QpFeOb2WoHpFLwfQSgV2Oh0EpIGOsLTgKDT2tfaWGOtSdfDvKf6K
+	QubJiOxol7Q1BPfZMpJKM0XK9DVgiFGztsSEImOnSjCyLdKJKtPBeOtRZZTUa++OePp1oyOQF6kFO
+	DtrN0enyQUFuYHMbAFLM6lr6TC1kv0tCV3gIq+132ROVf1bpX+KtxsId9ZPdgXAfddy4Uj6kBvqyT
+	RHhTr80QmrHo4BFqSnsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLnMR-0007i1-7t; Tue, 07 Apr 2020 12:29:47 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1jLnN5-0007t9-Kg; Tue, 07 Apr 2020 12:30:27 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLnMH-0007fp-N0
+ id 1jLnMI-0007gN-0h
  for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 12:29:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
  t=1586262577; x=1617798577;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=8OHvKFojSgEFCTGWAhdU7SNu+dqnlwN7/WnZMvI74jc=;
- b=dflRijXXTrTy25rUdc442+q6z5UPRHp7wyP2fKktBNMQ2tb+3cuzmGEA
- WKHu3VayWzJ5MXLF9QJQW6RvV9pSrpBP22Wy0KHCISi1ZsE2Ulk4YsDq7
- 1Ys7NH+JbYNdeNel/fKgtvc7q6gEUE6zg3QTP1GAjsz3didUFYByT6P7E
- Xz0B9Hl7faiqevAsFNiStYXf5xwQo2WXErnbti6yy3DMyRgpsDmWZZTbJ
- zVrdvn32tPmjHwk4JjP3M+LP2/O1V+rVWmzOshZVm+EAE4dAM5nY4vtuc
- ks9RQjGZxfdoXvbSqJheVWMBv2AqZ32WBKmUlq1Q+JspUADStWsjncmb+ A==;
-IronPort-SDR: GwZBSIHIFfiCoXZbUHyuHr/b8kzx/lzfndBhSKU1syyWMLvo6vX3GISvsznv6MwZjk1VLm+mNQ
- yFxcC6hloe3Nsblo9YDBjsBjoSZkdGBS1k5KrqST8SVPWWlLMkQtEkw6TTukKxuELsleKWWpcX
- BeYrbgpYB2sfI4I+531nHXtfGa7A35/RH6K/goAWan4SEHG3o0X1bcENSHYHa7DhCmzBPX5k26
- Z937XmSZ5GIfHdEDrhjVm6apI/QkNKuY9idjQS3GmeS+A273NIgIhR+dny8b5D18e3aTQZEODY
- eKg=
-X-IronPort-AV: E=Sophos;i="5.72,354,1580799600"; d="scan'208";a="69643576"
+ bh=RRSV6rYP6IiNnoNhQap/FmU0DmkdgZjsIA231yL8M+Y=;
+ b=vJPB6SKlTYrdvXd73CaZOt1ID1UVFxU5tIOGo3MzBBosiYuIwBk8oMSq
+ YIQShkx/Nfnk+HXq+hPbv+Qe6R8I9UyriE75W+cv35Q4f3Z3jOOGXTJna
+ Qcu31/R/dXa1TZ31lS+iyutTRiJwDSeXCh8OR1e0oLi5msMzmoL/7mTJN
+ 8CU4WAR45KCg97YOK74FNQcohGX0yOJL0FuVMLFPpB8AuqXSsdjKz5j8S
+ Il7mfwpwB0/ABSjObZCafq6sQadcfTeCCKJgm8cefY6n5ahifhc6NTtqI
+ Ufz8qvy1+NlfYeOgU/5HJpeunhUPiOBI17+WsPhGFhZCqiGots+V4whfm A==;
+IronPort-SDR: mUWa5jbx10NY5DqQQ9TYyHOl/G1UJsCCuhwjyfqQ82Q7NIxvXssrUX/12MpNsAZ6JzMd9qZ8WG
+ G0D6MP2oywTTgTT0GKE39ec18Qm4q45GSWCbLwf2eFMSkOJqpmQ4mn5stUZgtQIiwJyDmJ6g58
+ YysAtzTFnuPNYfuU/U/JRVAuaMHHDdkzM0M3tYzy4QdshqPJhGl/INpBtiMcnTlQr+K8KHb6Qi
+ 2lxa9l8JJCK911Dk6RKOV2oAQdXzXxSC7DEV0jaR/RWw+6TcNsr8SNfyM5EvR9icSjmdQ1MkT0
+ ne0=
+X-IronPort-AV: E=Sophos;i="5.72,354,1580799600"; d="scan'208";a="75013414"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 07 Apr 2020 05:29:34 -0700
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 07 Apr 2020 05:29:37 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 7 Apr 2020 05:29:46 -0700
+ 15.1.1713.5; Tue, 7 Apr 2020 05:29:48 -0700
 Received: from cristi-P53.amer.actel.com (10.10.115.15) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 7 Apr 2020 05:29:32 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 7 Apr 2020 05:29:34 -0700
 From: <cristian.birsan@microchip.com>
 To: <balbi@kernel.org>, <gregkh@linuxfoundation.org>,
  <nicolas.ferre@microchip.com>, <linux-arm-kernel@lists.infradead.org>,
  <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/7] usb: gadget: udc: atmel: use
- of_find_matching_node_and_match
-Date: Tue, 7 Apr 2020 15:28:46 +0300
-Message-ID: <20200407122852.19422-2-cristian.birsan@microchip.com>
+Subject: [PATCH 2/7] usb: gadget: udc: atmel: add compatible for SAM9X60's PMC
+Date: Tue, 7 Apr 2020 15:28:47 +0300
+Message-ID: <20200407122852.19422-3-cristian.birsan@microchip.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407122852.19422-1-cristian.birsan@microchip.com>
 References: <20200407122852.19422-1-cristian.birsan@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_052937_837895_FBEEDC76 
-X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-CacheID: sfid-20200407_052938_066207_A7AAC353 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,56 +103,28 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Instead of trying to match every possible compatible use
-of_find_matching_node_and_match() and pass the compatible array.
+Add compatible for SAM9X60's PMC.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+[cristian.birsan@microchip.com Add sentinel at the end of the array]
+Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
 ---
- drivers/usb/gadget/udc/atmel_usba_udc.c | 24 +++++++++++++++++-------
- 1 file changed, 17 insertions(+), 7 deletions(-)
+ drivers/usb/gadget/udc/atmel_usba_udc.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
-index 6e0432141c40..32e5b44d9fbd 100644
+index 32e5b44d9fbd..c50902b91a96 100644
 --- a/drivers/usb/gadget/udc/atmel_usba_udc.c
 +++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
-@@ -2052,6 +2052,12 @@ static const struct of_device_id atmel_udc_dt_ids[] = {
+@@ -2056,6 +2056,8 @@ static const struct of_device_id atmel_pmc_dt_ids[] = {
+ 	{ .compatible = "atmel,at91sam9g45-pmc" },
+ 	{ .compatible = "atmel,at91sam9rl-pmc" },
+ 	{ .compatible = "atmel,at91sam9x5-pmc" },
++	{ .compatible = "microchip,sam9x60-pmc" },
++	{ /* sentinel */ }
+ };
  
- MODULE_DEVICE_TABLE(of, atmel_udc_dt_ids);
- 
-+static const struct of_device_id atmel_pmc_dt_ids[] = {
-+	{ .compatible = "atmel,at91sam9g45-pmc" },
-+	{ .compatible = "atmel,at91sam9rl-pmc" },
-+	{ .compatible = "atmel,at91sam9x5-pmc" },
-+};
-+
  static struct usba_ep * atmel_udc_of_init(struct platform_device *pdev,
- 						    struct usba_udc *udc)
- {
-@@ -2067,13 +2073,17 @@ static struct usba_ep * atmel_udc_of_init(struct platform_device *pdev,
- 		return ERR_PTR(-EINVAL);
- 
- 	udc->errata = match->data;
--	udc->pmc = syscon_regmap_lookup_by_compatible("atmel,at91sam9g45-pmc");
--	if (IS_ERR(udc->pmc))
--		udc->pmc = syscon_regmap_lookup_by_compatible("atmel,at91sam9rl-pmc");
--	if (IS_ERR(udc->pmc))
--		udc->pmc = syscon_regmap_lookup_by_compatible("atmel,at91sam9x5-pmc");
--	if (udc->errata && IS_ERR(udc->pmc))
--		return ERR_CAST(udc->pmc);
-+	if (udc->errata) {
-+		pp = of_find_matching_node_and_match(NULL, atmel_pmc_dt_ids,
-+						     NULL);
-+		if (!pp)
-+			return ERR_PTR(-ENODEV);
-+
-+		udc->pmc = syscon_node_to_regmap(pp);
-+		of_node_put(pp);
-+		if (IS_ERR(udc->pmc))
-+			return ERR_CAST(udc->pmc);
-+	}
- 
- 	udc->num_ep = 0;
- 
 -- 
 2.17.1
 
