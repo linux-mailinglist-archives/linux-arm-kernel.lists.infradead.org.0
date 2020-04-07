@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B7D21A131F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C515F1A1323
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:52:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=/2n5EXp8vp07byZoLQV/f83l4XAycsVlZNaRt6MOI/Q=; b=jmoNhLvoL4awKHk4mxpPYxBgcY
-	VGsSroSSO4d03OLOLWb5+FgBPxn8Fj6wflokjpGckarGf9CTnv8zjB+aLf31vPA+Ok79JGuWfj/kh
-	oyHn3RGinaX/ioyKi16gyPbQXd0OQN+yFH4wKefoe7phiw/tebR956p4iHyymGmVqOx/t+B3Mxjts
-	vxOcrv8iHorbVCaM9AejHzMBNOqY3FTujHxRCgaf2zrYEKMG1ZiG550Au2pzxS5zIiXHPhdPJd2Pn
-	WDghZfu9rtry6gEHAWCSGA+syS9Uijjd5O2xSszixD+uq6KXpVPI5DKMTC+wOegdLRZFjFwPiJZvD
-	dI0kNP+A==;
+	bh=PL3U/fq5K4V4JTe6DoH0SnqQoVoOIG/xwLFhdYrT2co=; b=h+C6o0rYP+dlT2W8MVc/HoS8aX
+	nkuEDSXIEIxgoyU5SwRAsaujrAzCw0SG7ZgvwXmK48j3rPeCSksr029IzBI/kOiSskF36bBKg9YhF
+	DSPVK0Zd8HmcDGTgb3mt5ev2MQPB4WiauLWD99IF2+symKylOlaXfCiDtVhSl5Sp+7JilWfClwzMb
+	o1RqdJ7//yEXDJ0BAHC+5vaO32pF+BWNRlAFGPUd18h21IfsSWjyCHsG6XxXi6bwFMcD859/9IqJD
+	sFuD/cZJ72gkT/BRabYc8gunAKY5KgeIN9ZxRTQV+mnXZDT1RuadmK+ik86OhGqRCGlrEsn9rkYmH
+	wSgDzvQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLsNm-00032d-TT; Tue, 07 Apr 2020 17:51:30 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jLsOE-0003Ut-45; Tue, 07 Apr 2020 17:51:58 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLsMD-0007jL-ID
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:54 +0000
+ id 1jLsMG-0007mu-4Z
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:57 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id E5F502972B0
+ (Authenticated sender: andrzej.p) with ESMTPSA id 326AA2972B4
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org
-Subject: [RFC 7/8] thermal: of: Monitor thermal zone after enabling it
-Date: Tue,  7 Apr 2020 19:49:25 +0200
-Message-Id: <20200407174926.23971-8-andrzej.p@collabora.com>
+Subject: [RFC 8/8] thermal: Stop polling DISABLED thermal devices
+Date: Tue,  7 Apr 2020 19:49:26 +0200
+Message-Id: <20200407174926.23971-9-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407174926.23971-1-andrzej.p@collabora.com>
 References: <20200407174926.23971-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_104953_742666_7874C53A 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200407_104956_327193_5D85C789 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -81,31 +82,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-thermal/of calls its own ->set_mode() method, so monitor thermal zone
-afterwards. This is needed for the DISABLED->ENABLED transition.
+Polling DISABLED devices is not desired, as all such "disabled" devices
+are meant to be handled by userspace.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/thermal/of-thermal.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/thermal/thermal_core.c | 26 ++++++++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
-index b7621dfab17c..cf2c43ebcb78 100644
---- a/drivers/thermal/of-thermal.c
-+++ b/drivers/thermal/of-thermal.c
-@@ -523,8 +523,11 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
- 		if (sensor_specs.np == sensor_np && id == sensor_id) {
- 			tzd = thermal_zone_of_add_sensor(child, sensor_np,
- 							 data, ops);
--			if (!IS_ERR(tzd))
-+			if (!IS_ERR(tzd)) {
- 				tzd->ops->set_mode(tzd, THERMAL_DEVICE_ENABLED);
-+				thermal_zone_device_update(tzd,
-+						THERMAL_EVENT_UNSPECIFIED);
-+			}
+diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
+index aae2b049d45c..f74b7a792be7 100644
+--- a/drivers/thermal/thermal_core.c
++++ b/drivers/thermal/thermal_core.c
+@@ -305,13 +305,32 @@ static void thermal_zone_device_set_polling(struct thermal_zone_device *tz,
+ 		cancel_delayed_work(&tz->poll_queue);
+ }
  
- 			of_node_put(sensor_specs.np);
- 			of_node_put(child);
++static bool should_stop_polling(struct thermal_zone_device *tz)
++{
++	enum thermal_device_mode mode;
++	int result;
++
++	if (!tz->ops->get_mode)
++		return false;
++
++	result = tz->ops->get_mode(tz, &mode);
++	if (result)
++		return false;
++
++	return mode == THERMAL_DEVICE_DISABLED;
++}
++
+ static void monitor_thermal_zone(struct thermal_zone_device *tz)
+ {
++	bool stop;
++
++	stop = should_stop_polling(tz);
++
+ 	mutex_lock(&tz->lock);
+ 
+-	if (tz->passive)
++	if (!stop && tz->passive)
+ 		thermal_zone_device_set_polling(tz, tz->passive_delay);
+-	else if (tz->polling_delay)
++	else if (!stop && tz->polling_delay)
+ 		thermal_zone_device_set_polling(tz, tz->polling_delay);
+ 	else
+ 		thermal_zone_device_set_polling(tz, 0);
+@@ -500,6 +519,9 @@ void thermal_zone_device_update(struct thermal_zone_device *tz,
+ {
+ 	int count;
+ 
++	if (should_stop_polling(tz))
++		return;
++
+ 	if (atomic_read(&in_suspend))
+ 		return;
+ 
 -- 
 2.17.1
 
