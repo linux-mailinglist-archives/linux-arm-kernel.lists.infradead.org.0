@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97DEC1A174D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 23:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D3D31A174E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 23:14:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y/s2Lx9r/cm2ozfgCeq/5cQtRBjRQhRhBo2v0Ziuu3E=; b=RVhS6VWKLHGMn2
-	gqIK30vPIPpTTgg99ThcaX9+/XFJ0qfXn84Amuvnds43x3d04fUJE9v8SR6o/OzsmAUbK0bkaq3yx
-	CAAP4gbuROsKVE0CjxUL3xWfnxkCbJcrxbZaGInowZGlCuZ3fchDGqwNSNWPHvwfKrsRbtaeO33jl
-	yahgp7UZ59I3U8ODN2WganzvJYpC/bVC853/8juOYAbNDnrnDKOmjAEQfT1DJQ/q1jpUVdpdE8hhS
-	L1bZ2GYrpQmXbY0XZQDJu9zPyk6QLQxniSHEyF6kpXPAA639KJCGhdxkCp/L9YFeCbf7U91YvErJN
-	saqkHGUaUsmEwMZZygqQ==;
+	List-Owner; bh=ZlB2nyQUD3Qp5NUN1n+SD4QVfHygKoyYqy8UDnWvS0I=; b=qCT4ruddReJvui
+	cmUFYd5J8KOEn2s/MUAlsB6KHN8KRsYQF/oDoV6x3oAL7Fdzb2KEVABbBe9xLgcKFWYLGiXgkf35A
+	l4ys+LFRRrsbt+1zPjrht6rgm/EqlGilI6oIjnA2klS46SEEDHpv9ZqzAaEJY66BvjyxSLYLj4qSR
+	BegLswEz4XwoQgrVRC4/u9TrciCWyeSLgVl67QjOKIvHFyjD1reszVZSOQy+D2G48WecJAfIm6rxX
+	lj2+mmRMfxseW5Gs5UBoeAaUI9SK62LLtpv6yTTYUNUC2unAS6G6EcAAXxtFJPC3L2L7e4WF1bnhP
+	4oBle+BCVv9002O8uM6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLvXg-0001z1-VM; Tue, 07 Apr 2020 21:13:57 +0000
+	id 1jLvXv-0002FQ-Fw; Tue, 07 Apr 2020 21:14:11 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLvWv-0001L1-Jk
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 21:13:11 +0000
+ id 1jLvX2-0001Sq-Tk
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 21:13:20 +0000
 X-Originating-IP: 72.234.141.215
 Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
  (Authenticated sender: mail@aparcar.org)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 35BF5FF808;
- Tue,  7 Apr 2020 21:13:01 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id B9121FF802;
+ Tue,  7 Apr 2020 21:13:08 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
 To: devicetree@vger.kernel.org
-Subject: [PATCH 3/5] arm: dts: linksys: rename cobra to wrt1900ac-v2
-Date: Tue,  7 Apr 2020 11:08:13 -1000
-Message-Id: <20200407210816.866084-4-mail@aparcar.org>
+Subject: [PATCH 4/5] arm: dts: linksys: rename caiman to wrt1200ac
+Date: Tue,  7 Apr 2020 11:08:14 -1000
+Message-Id: <20200407210816.866084-5-mail@aparcar.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200407210816.866084-1-mail@aparcar.org>
 References: <20200407210816.866084-1-mail@aparcar.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_141309_954864_435C726D 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20200407_141317_231684_A8CCE06C 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -69,18 +69,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Linksys uses internally the codename "cobra" for a device sold under the
-name of "Linksys WRT1900ACv2", which is already reflected in the device
-tree `model`. However the `compatible` list only contains the codename
-`linksys,cobra` which does not relate to the common name.
+Linksys uses internally the codename "caiman" for a device sold under
+the name of "Linksys WRT1200AC", which is already reflected in the
+device tree `model`. However the `compatible` list only contains the
+codename `linksys,caiman` which does not relate to the common name.
 
 This patch renames the `dts` file to the sanitized model name and
-prepends `linksys,wrt1900ac-v2` to the `compatible` list to simplify the
+prepends `linksys,wrt1200ac` to the `compatible` list to simplify the
 device relation.
-
-For consistency with other models containing a version number a space
-was added in the DT `model` to sepparate the *v2* and also reflected in
-the `dts` filename containing `-v2`.
 
 Signed-off-by: Paul Spooren <mail@aparcar.org>
 CC: Rob Herring <robh+dt@kernel.org>
@@ -92,108 +88,106 @@ CC: Daniel Golle <daniel@makrotopia.org>
 CC: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
  arch/arm/boot/dts/Makefile                    |  2 +-
- ...ts => armada-385-linksys-wrt1900ac-v2.dts} | 27 ++++++++++---------
- 2 files changed, 15 insertions(+), 14 deletions(-)
- rename arch/arm/boot/dts/{armada-385-linksys-cobra.dts => armada-385-linksys-wrt1900ac-v2.dts} (78%)
+ ...n.dts => armada-385-linksys-wrt1200ac.dts} | 26 +++++++++----------
+ 2 files changed, 14 insertions(+), 14 deletions(-)
+ rename arch/arm/boot/dts/{armada-385-linksys-caiman.dts => armada-385-linksys-wrt1200ac.dts} (80%)
 
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index cf288adb8fe0..be45b5fb4f95 100644
+index be45b5fb4f95..8482bec35af4 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -1281,8 +1281,8 @@ dtb-$(CONFIG_MACH_ARMADA_38X) += \
+@@ -1280,8 +1280,8 @@ dtb-$(CONFIG_MACH_ARMADA_38X) += \
+ 	armada-385-clearfog-gtr-l8.dtb \
  	armada-385-db-88f6820-amc.dtb \
  	armada-385-db-ap.dtb \
- 	armada-385-linksys-caiman.dtb \
--	armada-385-linksys-cobra.dtb \
+-	armada-385-linksys-caiman.dtb \
  	armada-385-linksys-shelby.dtb \
-+	armada-385-linksys-wrt1900ac-v2.dtb \
++	armada-385-linksys-wrt1200ac.dtb \
+ 	armada-385-linksys-wrt1900ac-v2.dtb \
  	armada-385-linksys-wrt3200acm.dtb \
  	armada-385-synology-ds116.dtb \
- 	armada-385-turris-omnia.dtb \
-diff --git a/arch/arm/boot/dts/armada-385-linksys-cobra.dts b/arch/arm/boot/dts/armada-385-linksys-wrt1900ac-v2.dts
-similarity index 78%
-rename from arch/arm/boot/dts/armada-385-linksys-cobra.dts
-rename to arch/arm/boot/dts/armada-385-linksys-wrt1900ac-v2.dts
-index e3e4877a6f49..8f78350fa988 100644
---- a/arch/arm/boot/dts/armada-385-linksys-cobra.dts
-+++ b/arch/arm/boot/dts/armada-385-linksys-wrt1900ac-v2.dts
-@@ -9,65 +9,66 @@
- #include "armada-385-linksys.dtsi"
+diff --git a/arch/arm/boot/dts/armada-385-linksys-caiman.dts b/arch/arm/boot/dts/armada-385-linksys-wrt1200ac.dts
+similarity index 80%
+rename from arch/arm/boot/dts/armada-385-linksys-caiman.dts
+rename to arch/arm/boot/dts/armada-385-linksys-wrt1200ac.dts
+index a03050c97084..acc8338987f5 100644
+--- a/arch/arm/boot/dts/armada-385-linksys-caiman.dts
++++ b/arch/arm/boot/dts/armada-385-linksys-wrt1200ac.dts
+@@ -10,64 +10,64 @@
  
  / {
--	model = "Linksys WRT1900ACv2";
--	compatible = "linksys,cobra", "linksys,armada385", "marvell,armada385",
-+	model = "Linksys WRT1900AC v2";
-+	compatible = "linksys,wrt1900ac-v2", "linksys,cobra",
-+		     "linksys,armada385", "marvell,armada385",
- 		     "marvell,armada380";
+ 	model = "Linksys WRT1200AC";
+-	compatible = "linksys,caiman", "linksys,armada385", "marvell,armada385",
+-		     "marvell,armada380";
++	compatible = "linksys,wrt1200ac", "linksys,caiman", "linksys,armada385",
++		     "marvell,armada385", "marvell,armada380";
  };
  
  &expander0 {
  	wan_amber@0 {
--		label = "cobra:amber:wan";
-+		label = "wrt1900ac-v2:amber:wan";
+-		label = "caiman:amber:wan";
++		label = "wrt1200ac:amber:wan";
  		reg = <0x0>;
  	};
  
  	wan_white@1 {
--		label = "cobra:white:wan";
-+		label = "wrt1900ac-v2:white:wan";
+-		label = "caiman:white:wan";
++		label = "wrt1200ac:white:wan";
  		reg = <0x1>;
  	};
  
  	wlan_2g@2 {
--		label = "cobra:white:wlan_2g";
-+		label = "wrt1900ac-v2:white:wlan_2g";
+-		label = "caiman:white:wlan_2g";
++		label = "wrt1200ac:white:wlan_2g";
  		reg = <0x2>;
  	};
  
  	wlan_5g@3 {
--		label = "cobra:white:wlan_5g";
-+		label = "wrt1900ac-v2:white:wlan_5g";
+-		label = "caiman:white:wlan_5g";
++		label = "wrt1200ac:white:wlan_5g";
  		reg = <0x3>;
  	};
  
  	usb2@5 {
--		label = "cobra:white:usb2";
-+		label = "wrt1900ac-v2:white:usb2";
+-		label = "caiman:white:usb2";
++		label = "wrt1200ac:white:usb2";
  		reg = <0x5>;
  	};
  
  	usb3_1@6 {
--		label = "cobra:white:usb3_1";
-+		label = "wrt1900ac-v2:white:usb3_1";
+-		label = "caiman:white:usb3_1";
++		label = "wrt1200ac:white:usb3_1";
  		reg = <0x6>;
  	};
  
  	usb3_2@7 {
--		label = "cobra:white:usb3_2";
-+		label = "wrt1900ac-v2:white:usb3_2";
+-		label = "caiman:white:usb3_2";
++		label = "wrt1200ac:white:usb3_2";
  		reg = <0x7>;
  	};
  
  	wps_white@8 {
--		label = "cobra:white:wps";
-+		label = "wrt1900ac-v2:white:wps";
+-		label = "caiman:white:wps";
++		label = "wrt1200ac:white:wps";
  		reg = <0x8>;
  	};
  
  	wps_amber@9 {
--		label = "cobra:amber:wps";
-+		label = "wrt1900ac-v2:amber:wps";
+-		label = "caiman:amber:wps";
++		label = "wrt1200ac:amber:wps";
  		reg = <0x9>;
  	};
  };
  
  &gpio_leds {
  	power {
--		label = "cobra:white:power";
-+		label = "wrt1900ac-v2:white:power";
+-		label = "caiman:white:power";
++		label = "wrt1200ac:white:power";
  	};
  
  	sata {
--		label = "cobra:white:sata";
-+		label = "wrt1900ac-v2:white:sata";
+-		label = "caiman:white:sata";
++		label = "wrt1200ac:white:sata";
  	};
  };
  
