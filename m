@@ -2,94 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 770801A0A55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 11:42:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4FBB1A0A64
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 11:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+BApj177wTNJIUkf2Yx4iwY/eW0ZqxiIN4uqEtlcZF4=; b=JIwD9Orwgq36+42Ydz2WgHhzo
-	vi5fmyMFC0N94/TOLjq5DdPlGP3GXDTNuK2n8Ao0RxjKAikj6oCA51fxbb0wta3UeawG0t/teVUm8
-	xG0lF7RJqgvehSAKZDYMBiV/nafFGKSZmOZehKaxEOZFXM6Rx/zuWIMqpgxbyCxzs54USrQorf+kG
-	1E3nuNzGni1IxMpx4k/zhVmm0P9ELFIaszYrpuutcuF1Znzq1ci6x1r0MSNOs7NWsaEX4KmYNRWTX
-	YuFi6u89VI1V5tuv2pXElJwk3eUEG416kHKEsNdU+V0KWi7kSKsns4oE/NJgKIckqwrRCrG/ca0ZA
-	O3RX/RM7Q==;
+	 bh=LvDyq39WBdWDwP6gZeKmu4kjrPAJmIc0UgmByEzjLqE=; b=ktXElhm/k1X1VimOr+ER9Kmb3
+	xRdPWkaIRe4YRMF2NtvtqeqdATrr0qjjMEFckvzQ1s+zFyUEeSONLASVOmr3VhXuowHdC2Ib3VTQr
+	w/BFrVxa4fWkslEJd2k2I2AtyuDaekb0dj3RBTc6Vo6F30oS4m6G5lRlaNAyKaKnrQqcAJ/4pKwKQ
+	+Y8s1Xe1AX4vl1OiZBAB5vEo5Nf+3/Lf/YbwL27lhCv2BIFmJoi1jnga60ZYlGRdh+nzP0/ApFx5r
+	8INhhlYm89Ba7/qeKBwCF8PylH4kYhMtHuXtlHjNAbwiReww3lYqJ1BGWb5GWKmPXP2B2mwcmqCtx
+	jvsNoPvew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLkkI-0004JN-Ls; Tue, 07 Apr 2020 09:42:14 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1jLkoj-0007I5-CD; Tue, 07 Apr 2020 09:46:49 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLkkA-0004IT-NX
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 09:42:08 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 8F18B580432;
- Tue,  7 Apr 2020 05:42:02 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 07 Apr 2020 05:42:02 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=CCbcFFDvgPRSxCF+8kZaaLO/1MA
- 76diBRU97kO0B2Q8=; b=T5/TfczrwzeOgw6HFlUxIdyoSA/V0HhD7PYXgy/9TQ4
- ikbfway1Ve6eAIDB1YpuKG8qj8p0bt3ImtiS5pVw3wXumJRHeiWAuFM+0UCB+KNf
- jNkB4xLghBQLbrYfXDxqscKi7+Zd5C0e8otfoRQsR9J83FuaTZ51porehp1vuEIx
- 27FTOX4iAFXHwRRQKZFXxlJhg/FVD0RcXh9vmzfub5Yc/D2TLRdWM92xAgXJWFre
- g5AooSA85ZbUkd3R0yR/wB16lhCJCscJRIUxoos4gqOUk7PFRjpf7A0VAr3/6Jij
- Vo/9sYx3ICBSkKgA4qG+jSXhS/rz7mt4yoyei538yIg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=CCbcFF
- DvgPRSxCF+8kZaaLO/1MA76diBRU97kO0B2Q8=; b=D8wY+GD4/i+PHJodUNJO57
- 8imtIXeZcubk9ZyX7MWTkFSIlwKtdy9pezqcnMwb9f+Q/UWIgV8aqvjJ+kkzEv7V
- /dvqFuDOa3o5Gd1IoLrBvFUBc87+XSIyZAvpthaTuigqpH/wjPLycMqzY1/PmmPZ
- mnFMDp4yUSc8Ork+6KdpZr8Cj0kOc+b61fFDKWEbAjltSwPU9J4kder4tAu5bO7Q
- kuIXCEu23UEVOftL2fYnnHEvuPwT2z33SUQuJEjfJ3oZrfGQ6zJpnjUAwNJXDp4o
- AjKMMZjRqmnZ9oskDmQlGTyg5fRmjTa9AIqswuJJ4rQ6pPofwl+X4EQqzAeeZOoQ
- ==
-X-ME-Sender: <xms:6UqMXrEESRaMA6LPL3tIrAKxumyafD9oInxTfyn0UYeMhbuq_F3qpg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehgddulecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epuggvvhhitggvthhrvggvrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehl
- uhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvse
- gtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:6UqMXjxTEDcTx1vL3tqsGbobBFxRNsbgWN30Nr0OrYnkWl2y1Vrdww>
- <xmx:6UqMXgps9meExFNY9FK8qVIHjUIRuKsKRFhApBpQRbNRfR8LRDGObA>
- <xmx:6UqMXtjiYQnYDtdnDJwlxdZOiIOoWsN6Bt76h6ENnjnYbJhLZR--ug>
- <xmx:6kqMXmjh6iiSCY83qIMll5ueTt-0nO1qmd6Z7Q-wNzHVP6hBGf0vIg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 19790328005A;
- Tue,  7 Apr 2020 05:42:01 -0400 (EDT)
-Date: Tue, 7 Apr 2020 11:41:59 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
-Message-ID: <20200407094159.xtbhtsxorvs2g22c@gilmour.lan>
-References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
- <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
+ id 1jLkoY-0007FU-HY
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 09:46:40 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1586252796; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=Ul3YhDd1rPscgFpO4CCJ18JVqPLmuQ5bBOiQ1R8owsk=;
+ b=V9j7NvrkmWPKQd6ECIQqP6Xxc/2RryYtFG1ePOcuHNZLYkwuTRldCtKTQ3Xl9YXSUCiD4S4I
+ G2/Bng8yf9b6aIPm78wqmYi/pdRSdsxBK5TFZKn2mokBSh5ZkEGgUVHy9DihsKow+nH6w6Z0
+ KIyvCj0lMHpcFY5hng3BMj0UaPc=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e8c4bfb.7fab43027ca8-smtp-out-n01;
+ Tue, 07 Apr 2020 09:46:35 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id B7050C43637; Tue,  7 Apr 2020 09:46:35 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 38318C433F2;
+ Tue,  7 Apr 2020 09:46:35 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
+Date: Tue, 07 Apr 2020 15:16:35 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [RFC PATCH] coresight: dynamic-replicator: Fix handling of
+ multiple connections
+In-Reply-To: <CAJ9a7VgQzK1XSCvLwuqODwkWfvo=6Wwps7Db+pL5xYDeCuktrg@mail.gmail.com>
+References: <20200405102819.28460-1-saiprakash.ranjan@codeaurora.org>
+ <CAJ9a7VgQzK1XSCvLwuqODwkWfvo=6Wwps7Db+pL5xYDeCuktrg@mail.gmail.com>
+Message-ID: <6c0f45488f8a44bf860759e00fcabd09@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_024207_178990_4C4BDF06 
-X-CRM114-Status: GOOD (  23.35  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200407_024638_648741_DDD399CC 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -104,179 +88,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5029705540868326942=="
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Leo Yan <leo.yan@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Mike,
 
---===============5029705540868326942==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="japkdjzpcbcq3brx"
-Content-Disposition: inline
+Thanks for taking a look.
 
+On 2020-04-06 16:25, Mike Leach wrote:
+> Hi,
+> 
+> The programmable replicator hardware by design enables trace through
+> both ports on reset. (see 1, section 4.4, 9.11)  The replicator driver
+> overrides this functionality to disable output, until the Coresight
+> infrastructure chooses a path from source to sink.
+> Now given that the hardware design is such that we must be able to
+> allow trace to be sent to both ports, a generic patch to prevent this
+> does not seem appropriate here.
+> 
+> I think this needs further investigation - to determine why this
+> appears to be failing in this particular instance.
+> 
 
---japkdjzpcbcq3brx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Yes, this probably needs further investigation, but CPU hardlock stack
+trace doesnt help much. I could always trigger this hard lockup without
+this patch on SC7180 SoC and this is only seen when ETR is used as the 
+sink.
 
-Hi Kamel,
+The only difference I could see between non working case (on SC7180 [1]) 
+and
+the working case (on SDM845 [2]) is the path from source to sink.
 
-The prefix for device tree bindings is usually dt-bindings:
-$framework: $title
+SC7180 source to sink path(Not working):
+----------------------------------------
 
-So a title like "dt-bindings: input: Add a counter-based rotary
-encoder binding" would be better.
-
-On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
-> Add dt binding for the counter variant of the rotary encoder driver.
->
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> ---
->  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
->  1 file changed, 67 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
->
-> diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> new file mode 100644
-> index 000000000000..a59f7c1faf0c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> @@ -0,0 +1,67 @@
-> +# SPDX-License-Identifier: GPL-2.0
-
-Bindings are usually used by other OS's, so you should consider
-putting it under a more permissive license, usually that would be GPL2
-and the BSD-2-Clause
-
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rotary Encoder Counter
-> +
-> +maintainers:
-> +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
-> +
-> +description:
-> +  Registers a Rotary encoder connected through a counter device.
-
-You shouldn't really describe the action here, but more what the
-binding is about. The registration will not depend on the presence of
-the node following that binding, but rather on whether or not the OS
-that uses it has support for it.
-
-> +properties:
-> +  compatible:
-> +    const: rotary-encoder-counter
-> +
-> +  counter:
-> +    description: Phandle for the counter device providing rotary position.
-
-This should have a type
-
-> +  linux-axis:
-> +    description: The input subsystem axis to map to this rotary encoder.
-> +    type: boolean
-> +
-> +  qdec-mode:
-> +    description: |
-> +      Quadrature decoder function to set in the counter device.
-> +      3: x1-PHA
-> +      4: x1-PHB
-> +      5: x2-PHA
-> +      6: x2-PHB
-> +      7: x4-PHA and PHB
-
-That range (even though it's a bit odd) should be expressed through an
-enum so that you can check that the values are actually within that
-range.
-
-> +  steps:
-> +    description: Number of steps in a full turnaround of the encoder.
-
-Muli-line strings should have either quotes around them, or a | or >
-like you did for the description. | will keep the \n, > will make that
-a single string.
-
-This should also have a type
-
-> +      Only relevant for absolute axis.
-
-This should be expressed through a if / then clause, or a dependencies one
-
->                                         Defaults to 24 which is a typical
-> +      value for such devices.
-
-This should be expressed through a default property.
-
-> +  relative-axis:
-> +    description: Register a relative axis rather than an absolute one.
-> +    type: boolean
-> +
-> +  rollover:
-> +    description: Automatic rollover when the rotary value becomes greater
-> +      than the specified steps or smaller than 0. For absolute axis only.
-> +    type: boolean
-
-Same story than steps for the dependency. Also, what is is the
-behaviour when this property isn't set?
-
-> +  poll-interval:
-> +    description: Poll interval at which the position is read from the counter
-> +      device (default 500ms).
-
-It should have a type too, and a default property
-
-> +
-> +required:
-> +  - compatible
-> +  - counter
-> +  - qdec-mode
-> +
-> +examples:
-> +  - |
-> +    rotary@0 {
-> +        compatible = "rotary-encoder-counter";
-
-A unit-address (the part after @) only makes sense for a node if
-there's a matching reg property in the node. This will trigger a DTC
-warning, so you should remove the @0
-
-Maxime
-
---japkdjzpcbcq3brx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXoxK5wAKCRDj7w1vZxhR
-xV5PAP9oleLNJ1AEhCCnvJCT4zm5frzWFncYL0ZW4bzrBCNAgQD/VfmXTyrdhPL8
-UoL54zIDj9ggENLCwxMqk6jdw/++/wM=
-=QF+N
------END PGP SIGNATURE-----
-
---japkdjzpcbcq3brx--
+       etm0_out
+	 |
+   apss_funnel_in0
+          |
+  apss_merge_funnel_in
+          |
+      funnel1_in4
+	 |
+   merge_funnel_in1
+	 |
+    swao_funnel_in
+          |
+        etf_in
+	 |
+  swao_replicator_in
+          |
+   replicator_in
+	 |
+        etr_in
 
 
---===============5029705540868326942==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+SDM845 source to sink path(Working):
+------------------------------------
+
+       etm0_out
+          |
+    apss_funnel_in0
+          |
+  apss_merge_funnel_in
+          |
+     funnel2_in5
+	 |
+   merge_funnel_in2
+          |
+       etf_in
+	 |
+   replicator_in
+	 |
+        etr_in
+
+
+[1] - https://lore.kernel.org/patchwork/patch/1212946/
+[2] - 
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/boot/dts/qcom/sdm845.dtsi?h=v5.6#n1910
+
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5029705540868326942==--
-
