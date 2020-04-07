@@ -2,57 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B27D71A0EFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:16:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8E781A0F13
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 16:23:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJbgeC7gsYIB8PVQ9gXUMi0VYO3o6E1Bcs8M9qujtak=; b=GZVyNO6yJcnnsn
-	fAdnV2OvRPTYvdJAnj3qid7hZCWkMuIdfWpUFFUSZH5w+AD4TqflYqlzURAjITH+ZiFKwDOo8QILw
-	BWJ3784DD6HIZeuK56UMtb0F3ChJpfa6bFJAftEKfg+7qnrXJkBx86eWE0Rtjimb0JhERBBCjhhKS
-	YS3cpg66sZgv3B1D5RlX2WfI+JZIjG8bpzFcSfsBHqnbAvgE5UlucSDgtqaep+VVzbBkVFi1vauU0
-	HOMiKmi6afxMQBf8Fs5z6G6R3FDLTfNb6HF1yT2KGfFNekwSs2IaWY5OgZ1fFTZ2bTcy7bQLEAfAj
-	04dCKzHfhGO62elUzyhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7gdnWgld4WGKmgNzEbibO/TGsUutf3lpX2DOAyZ3SRY=; b=qvLqPTGJY/AAQyqsv3KQPcQuu
+	y9g7lqFY+ksXcBQLsXEwDpQkvTIOHZLtylpwBzhXLBTcX8hau2JHLIg+D2joVjQyGYbfmu/Y9DJqv
+	GZuZqiX9XRthfp3JKFCmyM8tir8gptKIuRmMr1sP6BqxfjdtBiPpiUeNu49tmJgWM02KFCySmwdNl
+	brIfXdMtTja6zgbpx3xMy8+b+jEtJ4PNlFwAa5MJJqraFTVzkDPO0C9qpZVX/Y7IpEXtvyO29ZapF
+	Ng5lYlTRoHmwDB8IsrRpAwKLHojgDylFkuFaV1MiPDrSQyd19azplIr9iN5qotHXMI7C0z6HeFjtX
+	GpHnu9gkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLp1y-0002ch-1g; Tue, 07 Apr 2020 14:16:46 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jLp7x-0005at-4t; Tue, 07 Apr 2020 14:22:57 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLp1r-0002aH-Jx
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:16:40 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id B59B859E;
- Tue,  7 Apr 2020 16:16:33 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586268993;
- bh=CcU2iAia1wY4OY0Wlixli88UQl/oDVQJd3BN2oHVZs4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Hyx/r2qvOlhW/upsn1igaKv3oxlLGcSnhX+2DoQ0FH+lQrwx8zYoWNsqDWEBT4CKj
- oPNY9yZdASHuEJaHeFRyZAnMLIC3Fo9mHavnwXkFOAwGBriB9/5rKXn/AP7AqGoVFv
- r5MsZwh13hLhgZBGK7HbMd3B5QlAYYCZcPkHptlA=
-Date: Tue, 7 Apr 2020 17:16:24 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 0/4] defconfig: fix changed configs and refresh
-Message-ID: <20200407141624.GG4751@pendragon.ideasonboard.com>
-References: <20200407103537.4138-1-max.krummenacher@toradex.com>
- <CAMuHMdWrekHiADkMmgO5nDxFNYjLud7FD=7ArMZNQire_+7TQg@mail.gmail.com>
+ id 1jLp7q-0005ZZ-0n
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 14:22:51 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id E14165800FB;
+ Tue,  7 Apr 2020 10:22:44 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 07 Apr 2020 10:22:44 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=WZZOGhHApCSV1L4UtRpjl8cMVms
+ LTISqTdlhGk83/tE=; b=wdop+RypTY1L95rFhllqkRhtWYgEAFYClfhAPgL7V8o
+ qMlLR5SE6GWLIa1ZSoQ79+Z0W44kt9OiHmZ3CvUvzPb9jnW8UTnki0vTUO07qO/M
+ IH6Du1/ArFs7vqpgdxcGBcasaf/y7tUY/Qy7R0LaqaiV+vdq3gWWG69cu1/Db2d2
+ tSYjGHL62GfQ854q3eGFOokJ2aVePEbHQyaKzerNy29ZfdIMewn63SjOEecLL7SC
+ keWTudwlRGyEJlyAtfcF1aiupSS+Bt6ZxO/lAXvD3cJrOSGcwc7fHwYCw97oo/XP
+ B09l3Pen7zFk/wx6bMLUR9LR0LM1186/fRdBfVdHAjg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=WZZOGh
+ HApCSV1L4UtRpjl8cMVmsLTISqTdlhGk83/tE=; b=u7Ar+N/LF2C6DeXvp3SLmb
+ v1Aty03403E8GzS/l7ZKt6hE1iFd1OjUSMadk8vZhO0FHQa5CTGzPnz2qMBxScGh
+ VM3E1KLQdyBaBxleBRWqGLabrDiHLEfgPjVNddjZEVwztIaWE4P5pY5cKXNJff1G
+ m4v7B7IbDgM7MLt99bro9rRdWjB2MqQrm0rgPulYrJ6qwW00bE6wZ8PNYhUPXcpA
+ NpZlR0RsXbdqFhNsP68Mf/Bl8eF9YLBED3W7NW8d0Dgna7s6UMubPnxtj7zz17PK
+ db20zhWWFiQbOMl2mISNojJH+Obdtsrx2/DuH48sMTHeAJRm9Yrwpn1QMT9SoKvA
+ ==
+X-ME-Sender: <xms:sIyMXlTiXSiRI3WvCdI1mm-Jzir6hQXM5vePtj5cXsapk4tU1rNmag>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudehgdejgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
+ epuggvvhhitggvthhrvggvrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehl
+ uhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvse
+ gtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:sIyMXgXSx8_2lL0owyyT9Y357BIRf8xmDBvgz7I_14l90OfeLLKC5w>
+ <xmx:sIyMXhLRLGm4H2wIpXCkhFto8ChkzLs0j1QJICpClPHUiGd0LFxaYA>
+ <xmx:sIyMXo1pKdgnUJ6tomalMQBcN1-ucn-9h8KxFx-8TrBFAflFemlHRg>
+ <xmx:tIyMXlK4-tLy7Ok2qgPryQ3kFTA8t51d5wIiKn3KRdcyZJ25Z25gwQ>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 0064F3280066;
+ Tue,  7 Apr 2020 10:22:39 -0400 (EDT)
+Date: Tue, 7 Apr 2020 16:22:38 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Kamel Bouhara <kamel.bouhara@bootlin.com>
+Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
+Message-ID: <20200407142238.ik67isetbggn2rh3@gilmour.lan>
+References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
+ <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
+ <20200407094159.xtbhtsxorvs2g22c@gilmour.lan>
+ <20200407110339.GA1489441@kb-xps>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdWrekHiADkMmgO5nDxFNYjLud7FD=7ArMZNQire_+7TQg@mail.gmail.com>
+In-Reply-To: <20200407110339.GA1489441@kb-xps>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_071639_804830_27DB73B0 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_072250_195579_6AC82AFD 
+X-CRM114-Status: GOOD (  22.26  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -73,59 +106,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Max Krummenacher <max.oss.09@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Li Yang <leoyang.li@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vidya Sagar <vidyas@nvidia.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Will Deacon <will@kernel.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2842247657365593231=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
 
-On Tue, Apr 07, 2020 at 03:16:14PM +0200, Geert Uytterhoeven wrote:
-> On Tue, Apr 7, 2020 at 12:36 PM Max Krummenacher <max.oss.09@gmail.com> wrote:
-> > Three configs have been renamed and/or changed behaviour.
-> > Clean that by using the new config name.
-> > Then refresh the defconfig with make defconfig savedefconfig.
+--===============2842247657365593231==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="cmea35pc2hxci5l3"
+Content-Disposition: inline
+
+
+--cmea35pc2hxci5l3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Apr 07, 2020 at 01:03:39PM +0200, Kamel Bouhara wrote:
+> > On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
+> > > Add dt binding for the counter variant of the rotary encoder driver.
+> > >
+> > > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > > ---
+> > >  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
+> > >  1 file changed, 67 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > > new file mode 100644
+> > > index 000000000000..a59f7c1faf0c
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > > @@ -0,0 +1,67 @@
+> > > +# SPDX-License-Identifier: GPL-2.0
 > >
-> > The refreshed defconfig does result in a not changed .config.
+> > Bindings are usually used by other OS's, so you should consider
+> > putting it under a more permissive license, usually that would be GPL2
+> > and the BSD-2-Clause
+>
+> Well to be honest I just looked into an existing binding and I guess
+> the wrong one :).
+
+Not the wrong ones, but the old ones :)
+
+It's painful to change a license on existing files, whereas it's
+pretty easy to mention it during review.
+
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Rotary Encoder Counter
+> > > +
+> > > +maintainers:
+> > > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > > +
+> > > +description:
+> > > +  Registers a Rotary encoder connected through a counter device.
 > >
-> > Applies on linux-next/master tag: next-20200407
+> > You shouldn't really describe the action here, but more what the
+> > binding is about. The registration will not depend on the presence of
+> > the node following that binding, but rather on whether or not the OS
+> > that uses it has support for it.
 > >
-> > Max Krummenacher (4):
-> >   arm64: defconfig: DRM_DUMB_VGA_DAC: follow changed config symbol name
-> >   arm64: defconfig: PCIE_TEGRA194: follow changed config symbol name
-> >   arm64: defconfig: ARCH_R8A7795: follow changed config symbol name
-> >   arm64: defconfig: refresh
-> 
-> Probably CONFIG_DRM_DISPLAY_CONNECTOR should also be enabled for HDMI,
-> VGA, and composite display connectors on various boards since commit
-> 0c275c30176b2e78 ("drm/bridge: Add bridge driver for display
-> connectors"), but it's not clear to me when exactly this became a
-> requirement, as before there was no code that looked for e.g.
-> vga-connector.
-> Laurent?
+>
+> Then shall it be better with just :
+> "A rotary encoder device using a generic counter interface." ?
 
-It's not required yet for R-Car DU, but I'm working on changing that :-)
-If we can enable CONFIG_DRM_DISPLAY_CONNECTOR in defconfig as part of
-this series, it would be useful for me.
+The generic counter interface is a Linux-only stuff though, some other
+OS might want to implement something else. Something like "based on a
+counter"?
 
--- 
-Regards,
+Maxime
 
-Laurent Pinchart
+--cmea35pc2hxci5l3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXoyMrgAKCRDj7w1vZxhR
+xaGoAP0Rk4zze3+M3tv+xBVv0PmMPLNoqDCmIQF259PcWDF2FQEAovMUQKsz/fRB
+40V3ClfoNka1Z3kbhlkiwiHDy75R/Q0=
+=HdTF
+-----END PGP SIGNATURE-----
+
+--cmea35pc2hxci5l3--
+
+
+--===============2842247657365593231==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2842247657365593231==--
+
