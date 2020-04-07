@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 133AB1A01EC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65AAB1A0206
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 02:01:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kTIxiWXlwWcSyyuB3KKkKO8x+xsVINC6RbdN1/U6PlQ=; b=QX1VdDTOmpLx1e
-	NNXmvP63eHkTOcbKOrorppWIYJQMa+C5rI0zRO8N7/9spuNWiegCm2fzFu8difyVzH61FTsBOevii
-	MLccRFYP8RAxVnAq+aWsF+k3GOKhhUnJYTgv9USMnaiL1mOV38xxLPJO4esKNIc4pAdZSp7T16GQJ
-	IXnmFGKEYPNBq8VPZ7VgPgaOoPgOB/VAwfMf2DzfghZX7UI/joRMYNAI5yBZWCQGR+IKo6VAM0Wlw
-	Fi8P7OaXdE+yXR8Vg+thJXr98/jn62ON0Gso6R5XD8ChCGhZqpRNzEpa0MQ4YCxTjCuqOLzuvLpfv
-	Vv25YW2eHOcIoz6tYX1g==;
+	List-Owner; bh=TOS3AIkx4dXmUmvgLEsxvVRY183sKSKKSZ5zcULjntc=; b=BttOhdK4SlGLBF
+	dkgZ2mSmZuwBc9Kktfb+xQ0X6c5Ykb328zofhWitYk8fj9kP6mHwV/5m4hTgJJyOgWxzDTm3Q38mI
+	l5rIQORy4qA8VbgTRsDxuAOsAeZFdNRLLwjcR34EslT4us2hj1EVpJiPEMp5ycOJ2BJWDPBcZRR+/
+	XeKwbdnkMrHKTn6bi8z8U0/VCY2nT6xqSP7y9SwNSPajtHxn1G6kMH+n+KeAZ9QzzoF736pjCdh8o
+	pQe76Dwz+shKF7jZGuGllkW+Wl3+2IqMmQQeVNE948K8YZ5MGUwB7A7/bpHBJ2UuFouk1gDeXts9s
+	9JCGEbFWh0DMMNi0MPhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLbgD-0004pF-7v; Tue, 07 Apr 2020 00:01:25 +0000
+	id 1jLbgS-0005Fv-IU; Tue, 07 Apr 2020 00:01:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLbfp-0004jD-QY
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:01:03 +0000
+ id 1jLbg2-0004yl-Re
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 00:01:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BAE352078A;
- Tue,  7 Apr 2020 00:01:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 893142078A;
+ Tue,  7 Apr 2020 00:01:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586217661;
- bh=hFO4jLIKH+x5/7ssSNwRO2Wq0ZVgFPUvQpXBS26CSuE=;
+ s=default; t=1586217674;
+ bh=XQEArXGItVvaQZkfpdMmLcNNI8l93bdzj2TABmVv/Ek=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jtUpYaF2QgX4lzseS+tVO6yBotFBdNhOx05YhaExi1sNw2qmSULCE3vOPSHfuA5gP
- p1Uu75P4/Qd5mt0pi7XnGAXd1SYATMiwfsyKsj32ale3LwkFL6hekKcQ4FG3LWC3P8
- rclduIbjvRlqy+vFwi/Te7j+Lf0PePIBRxo1fvW0=
+ b=gIePAPxBhKjRRdsQRIVnFz9V5U3xQGgfyksyRnpsyionFE5OBw70KaN2KPhQ5O0Mv
+ E680YeSxaWoVrbIkgq3BTar2ALN1luCLpqaJMGFExolgY2zSGRN6Eo29wi/tIwkP/c
+ 7vOFumbgvjVMmF1STBZo6iEQdkpF00sC4uy76Qd8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 02/35] bus: sunxi-rsb: Return correct data when
- mixing 16-bit and 8-bit reads
-Date: Mon,  6 Apr 2020 20:00:24 -0400
-Message-Id: <20200407000058.16423-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 12/35] soc: fsl: dpio: register dpio irq handlers
+ after dpio create
+Date: Mon,  6 Apr 2020 20:00:34 -0400
+Message-Id: <20200407000058.16423-12-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200407000058.16423-1-sashal@kernel.org>
 References: <20200407000058.16423-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_170101_876978_5DD06CCF 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20200406_170114_970130_F49BA855 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -80,70 +80,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, Sasha Levin <sashal@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Grigore Popescu <grigore.popescu@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ondrej Jirman <megous@megous.com>
+From: Grigore Popescu <grigore.popescu@nxp.com>
 
-[ Upstream commit a43ab30dcd4a1abcdd0d2461bf1cf7c0817f6cd3 ]
+[ Upstream commit fe8fe7723a3a824790bda681b40efd767e2251a7 ]
 
-When doing a 16-bit read that returns data in the MSB byte, the
-RSB_DATA register will keep the MSB byte unchanged when doing
-the following 8-bit read. sunxi_rsb_read() will then return
-a result that contains high byte from 16-bit read mixed with
-the 8-bit result.
+The dpio irqs must be registered when you can actually
+receive interrupts, ie when the dpios are created.
+Kernel goes through NULL pointer dereference errors
+followed by kernel panic [1] because the dpio irqs are
+enabled before the dpio is created.
 
-The consequence is that after this happens the PMIC's regmap will
-look like this: (0x33 is the high byte from the 16-bit read)
+[1]
+Unable to handle kernel NULL pointer dereference at virtual address 0040
+fsl_mc_dpio dpio.14: probed
+fsl_mc_dpio dpio.13: Adding to iommu group 11
+  ISV = 0, ISS = 0x00000004
+Unable to handle kernel NULL pointer dereference at virtual address 0040
+Mem abort info:
+  ESR = 0x96000004
+  EC = 0x25: DABT (current EL), IL = 32 bits
+  SET = 0, FnV = 0
+  EA = 0, S1PTW = 0
+Data abort info:
+  ISV = 0, ISS = 0x00000004
+  CM = 0, WnR = 0
+[0000000000000040] user address but active_mm is swapper
+Internal error: Oops: 96000004 [#1] PREEMPT SMP
+Modules linked in:
+CPU: 2 PID: 151 Comm: kworker/2:1 Not tainted 5.6.0-rc4-next-20200304 #1
+Hardware name: NXP Layerscape LX2160ARDB (DT)
+Workqueue: events deferred_probe_work_func
+pstate: 00000085 (nzcv daIf -PAN -UAO)
+pc : dpaa2_io_irq+0x18/0xe0
+lr : dpio_irq_handler+0x1c/0x28
+sp : ffff800010013e20
+x29: ffff800010013e20 x28: ffff0026d9b4c140
+x27: ffffa1d38a142018 x26: ffff0026d2953400
+x25: ffffa1d38a142018 x24: ffffa1d38a7ba1d8
+x23: ffff800010013f24 x22: 0000000000000000
+x21: 0000000000000072 x20: ffff0026d2953400
+x19: ffff0026d2a68b80 x18: 0000000000000001
+x17: 000000002fb37f3d x16: 0000000035eafadd
+x15: ffff0026d9b4c5b8 x14: ffffffffffffffff
+x13: ff00000000000000 x12: 0000000000000038
+x11: 0101010101010101 x10: 0000000000000040
+x9 : ffffa1d388db11e4 x8 : ffffa1d38a7e40f0
+x7 : ffff0026da414f38 x6 : 0000000000000000
+x5 : ffff0026da414d80 x4 : ffff5e5353d0c000
+x3 : ffff800010013f60 x2 : ffffa1d388db11c8
+x1 : ffff0026d2a67c00 x0 : 0000000000000000
+Call trace:
+ dpaa2_io_irq+0x18/0xe0
+ dpio_irq_handler+0x1c/0x28
+ __handle_irq_event_percpu+0x78/0x2c0
+ handle_irq_event_percpu+0x38/0x90
+ handle_irq_event+0x4c/0xd0
+ handle_fasteoi_irq+0xbc/0x168
+ generic_handle_irq+0x2c/0x40
+ __handle_domain_irq+0x68/0xc0
+ gic_handle_irq+0x64/0x150
+ el1_irq+0xb8/0x180
+ _raw_spin_unlock_irqrestore+0x14/0x48
+ irq_set_affinity_hint+0x6c/0xa0
+ dpaa2_dpio_probe+0x2a4/0x518
+ fsl_mc_driver_probe+0x28/0x70
+ really_probe+0xdc/0x320
+ driver_probe_device+0x5c/0xf0
+ __device_attach_driver+0x88/0xc0
+ bus_for_each_drv+0x7c/0xc8
+ __device_attach+0xe4/0x140
+ device_initial_probe+0x18/0x20
+ bus_probe_device+0x98/0xa0
+ device_add+0x41c/0x758
+ fsl_mc_device_add+0x184/0x530
+ dprc_scan_objects+0x280/0x370
+ dprc_probe+0x124/0x3b0
+ fsl_mc_driver_probe+0x28/0x70
+ really_probe+0xdc/0x320
+ driver_probe_device+0x5c/0xf0
+ __device_attach_driver+0x88/0xc0
+ bus_for_each_drv+0x7c/0xc8
+ __device_attach+0xe4/0x140
+ device_initial_probe+0x18/0x20
+ bus_probe_device+0x98/0xa0
+ deferred_probe_work_func+0x74/0xa8
+ process_one_work+0x1c8/0x470
+ worker_thread+0x1f8/0x428
+ kthread+0x124/0x128
+ ret_from_fork+0x10/0x18
+Code: a9bc7bfd 910003fd a9025bf5 a90363f7 (f9402015)
+---[ end trace 38298e1a29e7a570 ]---
+Kernel panic - not syncing: Fatal exception in interrupt
+SMP: stopping secondary CPUs
+Mem abort info:
+  ESR = 0x96000004
+  CM = 0, WnR = 0
+  EC = 0x25: DABT (current EL), IL = 32 bits
+[0000000000000040] user address but active_mm is swapper
+  SET = 0, FnV = 0
+  EA = 0, S1PTW = 0
+Data abort info:
+  ISV = 0, ISS = 0x00000004
+  CM = 0, WnR = 0
+[0000000000000040] user address but active_mm is swapper
+SMP: failed to stop secondary CPUs 0-2
+Kernel Offset: 0x21d378600000 from 0xffff800010000000
+PHYS_OFFSET: 0xffffe92180000000
+CPU features: 0x10002,21806008
+Memory Limit: none
+---[ end Kernel panic - not syncing: Fatal exception in interrupt ]---
 
-% cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-00: 33
-01: 33
-02: 33
-03: 33
-04: 33
-05: 33
-06: 33
-07: 33
-08: 33
-09: 33
-0a: 33
-0b: 33
-0c: 33
-0d: 33
-0e: 33
-[snip]
-
-Fix this by masking the result of the read with the correct mask
-based on the size of the read. There are no 16-bit users in the
-mainline kernel, so this doesn't need to get into the stable tree.
-
-Signed-off-by: Ondrej Jirman <megous@megous.com>
-Acked-by: Chen-Yu Tsai <wens@csie.org>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Signed-off-by: Grigore Popescu <grigore.popescu@nxp.com>
+Signed-off-by: Li Yang <leoyang.li@nxp.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/bus/sunxi-rsb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/soc/fsl/dpio/dpio-driver.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index be79d6c6a4e45..1bb00a959c67f 100644
---- a/drivers/bus/sunxi-rsb.c
-+++ b/drivers/bus/sunxi-rsb.c
-@@ -345,7 +345,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
- 	if (ret)
- 		goto unlock;
+diff --git a/drivers/soc/fsl/dpio/dpio-driver.c b/drivers/soc/fsl/dpio/dpio-driver.c
+index 70014ecce2a7e..7b642c330977f 100644
+--- a/drivers/soc/fsl/dpio/dpio-driver.c
++++ b/drivers/soc/fsl/dpio/dpio-driver.c
+@@ -233,10 +233,6 @@ static int dpaa2_dpio_probe(struct fsl_mc_device *dpio_dev)
+ 		goto err_allocate_irqs;
+ 	}
  
--	*buf = readl(rsb->regs + RSB_DATA);
-+	*buf = readl(rsb->regs + RSB_DATA) & GENMASK(len * 8 - 1, 0);
+-	err = register_dpio_irq_handlers(dpio_dev, desc.cpu);
+-	if (err)
+-		goto err_register_dpio_irq;
+-
+ 	priv->io = dpaa2_io_create(&desc, dev);
+ 	if (!priv->io) {
+ 		dev_err(dev, "dpaa2_io_create failed\n");
+@@ -244,6 +240,10 @@ static int dpaa2_dpio_probe(struct fsl_mc_device *dpio_dev)
+ 		goto err_dpaa2_io_create;
+ 	}
  
- unlock:
- 	mutex_unlock(&rsb->lock);
++	err = register_dpio_irq_handlers(dpio_dev, desc.cpu);
++	if (err)
++		goto err_register_dpio_irq;
++
+ 	dev_info(dev, "probed\n");
+ 	dev_dbg(dev, "   receives_notifications = %d\n",
+ 		desc.receives_notifications);
 -- 
 2.20.1
 
