@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 346391A08E9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 10:08:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 549AD1A0916
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 10:13:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WFqi6OjdIy7hdE0GnHoqwMCT7eli17txxDewNMUlkaQ=; b=Q3vFrX6MscllHy
-	BYzOcxcSbqu16ZGgPGpWusK8EYptksVtvsjd23IL67wHGH1/fsYL8eP9nE9Invdq4txTsOH8cr+TC
-	HLwPQbJHAD4Upzt7AleiaDa+vbdfVXI5Zc8GWzrJgyv7laaeSbP6Xxb+KVXEM5TfHBFD3DZTuzGRT
-	Pc3RD/9QVjZhY3vKbsVwTqOtvcDYfxk3vKESFPW8CpffxkkMovARUfYzcMtQ3mPaC12uBxTZCU6yM
-	jhOCZsZTqUKloaDs7G+f17zNxDu3tTut8C4aee2dx/0dJND35hbcw/AqpkE/qkZ+EhJOdTArqNyuo
-	w9UT5mGtqmFeUSnaKc5w==;
+	List-Owner; bh=d3GaLlI1FIGg7/42aZhs7OAI97uuhbPmWzMC4RwRzrI=; b=ETurzTGLKLye/v
+	47QQbbm5AM8/9AeiCEVh9p3NpqY4f4ncaE5CuQ5TTfeiHdzWCTDXnMi2MlzRxw0S/a2KEEfef7uSu
+	ITy/bZIeh9Wkf2q4TzXyDGrG13Q2qhn6k8Phm1iLRNvcbSrh2X+E5w+1IsJZR4UagP+NbRSmfhBNv
+	J1GO6fFL0xamQvVR9xtNYD7JrNW60cIwX/alRNjFo/3qanr1TdtYdqoMIatrbLdydc7rUwm2LJyfs
+	Oc8Gad5orfbFPL4fqJK8G4hDVtIcJftPHddojlCTEUJyMsHRwiGHHa55/dvcEhyosrXkIwmhc+5Ei
+	edVjlNClSPBYp7xtLEfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLjHJ-0004iL-CE; Tue, 07 Apr 2020 08:08:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jLjMA-0007xX-8l; Tue, 07 Apr 2020 08:13:14 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLjHB-0004hh-NN
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 08:08:07 +0000
-Received: from mail-io1-f42.google.com (mail-io1-f42.google.com
- [209.85.166.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5532220730
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 Apr 2020 08:08:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586246885;
- bh=xkADbzVLtud6m/+4evkDQMCfw2n794Vkxp3wdzhIe5c=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=eBXPcdOH3SLwhrCsbStr6LlvZvcgM4nk3FbBm0inY5FHPjPjzRLLa8Wp5zcZiwS3a
- 916urRF3rf+Y4lQij6x0SiwhH+3iQ/+9XW8/VvMEwcaYQtvZAtFNKOK+Rn/q9+r3Wf
- g728ef8nCtg0rDLmLx+DJqteieWPHUf6G+w4073E=
-Received: by mail-io1-f42.google.com with SMTP id i19so437614ioh.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Apr 2020 01:08:05 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZWiCZxQUJyAkPokaNL5q3+MwaYNybsN42ba+jcxhQEhrxbwjS7
- aNLF5dMOwx7yPgp0eode7xCNCm8+n4eemDCbkRE=
-X-Google-Smtp-Source: APiQypJH7m+mkBesv8DTbNoK1L38bWn1GoKo/KLCYlQNQZSTA5+FBHoI7xTP5yWLtq1MzgM2z2vhGPjcwVpvtm4yXQk=
-X-Received: by 2002:a05:6602:2439:: with SMTP id
- g25mr1020219iob.142.1586246884776; 
- Tue, 07 Apr 2020 01:08:04 -0700 (PDT)
+ id 1jLjM2-0007wJ-8A; Tue, 07 Apr 2020 08:13:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=OgiDrl/y3vH6wAvfRgLIRdC9VWqb30+aJ0O6R1lUpLk=; b=GLQHbhagSsecX46c9NF2cLExd
+ dW+puIz5U9+QhN6qsxGY2LUYZoJ/g5/re5qCnGvvTwKRMQkpMDRZ/j2kWul9Trj/qm6XZbCfHR+r8
+ oGSpi5jMmpG3pzv+0SproXqgSwzp51YQbooXpA8Kf94KCdLMN42DuB7ZAAUSWyBbkbGELcJedou6W
+ ow0tlXAti0+Z5f+LgX32CgFkGdryQDMiOef79anps2tBNsH5Jlrecxd22ynaEkuI5+aDgl0YFpDjb
+ xB4QeHGwWU7HZvpaoI88CPysVyzc+k9uQ27MCi2rGamjoQZvjm0EfnWlWpSHM58uBjRKa9XMYXvBv
+ 2dY7lgGXQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:42622)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jLjLu-0006lM-S1; Tue, 07 Apr 2020 09:12:59 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jLjLt-00072P-G3; Tue, 07 Apr 2020 09:12:57 +0100
+Date: Tue, 7 Apr 2020 09:12:57 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200407081257.GI25745@shell.armlinux.org.uk>
+References: <20200406082720.GA31279@Red>
+ <20200406091600.GF25745@shell.armlinux.org.uk>
+ <20200406092540.GB31279@Red>
+ <20200406093729.GG25745@shell.armlinux.org.uk>
+ <20200406201053.GA10931@Red>
+ <20200407073117.GH25745@shell.armlinux.org.uk>
+ <20200407080144.GA20773@Red>
 MIME-Version: 1.0
-References: <20200328205809.23825-1-ardb@kernel.org>
- <20200330074721.GV22097@bivouac.eciton.net>
- <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
- <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
- <DM5PR2101MB104760D03E632DD4DBE99AE1D7CB0@DM5PR2101MB1047.namprd21.prod.outlook.com>
- <CAMj1kXF+2O5cDC9zuNp9Lx9Oe6WyxRghPqSi63CnF+KCcGUZyw@mail.gmail.com>
- <CAMj1kXFJB9ciJ41V2tpQNX_mN7S8BweV9_ME3sDxKjwnR2Jwbg@mail.gmail.com>
- <MW2PR2101MB10525381BAB07997EA5F6B7CD7C80@MW2PR2101MB1052.namprd21.prod.outlook.com>
- <MW2PR2101MB1052F06F444705247419B2B3D7C20@MW2PR2101MB1052.namprd21.prod.outlook.com>
-In-Reply-To: <MW2PR2101MB1052F06F444705247419B2B3D7C20@MW2PR2101MB1052.namprd21.prod.outlook.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 7 Apr 2020 10:07:53 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEZgeNUVVZHiF+vS5_ekCSaiJgP5WBG0WoBkfRnWPhzzw@mail.gmail.com>
-Message-ID: <CAMj1kXEZgeNUVVZHiF+vS5_ekCSaiJgP5WBG0WoBkfRnWPhzzw@mail.gmail.com>
-Subject: Re: [PATCH] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-To: Michael Kelley <mikelley@microsoft.com>
+Content-Disposition: inline
+In-Reply-To: <20200407080144.GA20773@Red>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_010805_804651_B901C234 
-X-CRM114-Status: GOOD (  32.84  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200407_011306_291044_7EEFBDC7 
+X-CRM114-Status: GOOD (  21.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,104 +91,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>,
- Boqun Feng <Boqun.Feng@microsoft.com>, Leif Lindholm <leif@nuviainc.com>,
- "lersek@redhat.com" <lersek@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 6 Apr 2020 at 19:13, Michael Kelley <mikelley@microsoft.com> wrote:
->
-> From: Michael Kelley  Sent: Tuesday, March 31, 2020 6:38 AM
-> >
-> > From: Ard Biesheuvel <ardb@kernel.org>  Sent: Tuesday, March 31, 2020 12:56 AM
-> > >
-> > > On Mon, 30 Mar 2020 at 20:24, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > >
-> > > > On Mon, 30 Mar 2020 at 20:12, Michael Kelley <mikelley@microsoft.com> wrote:
-> > > > >
-> > > > > From: Ard Biesheuvel <ardb@kernel.org>  Sent: Monday, March 30, 2020 12:51 AM
-> > > > > >
-> > > > > > On Mon, 30 Mar 2020 at 09:50, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > > > > >
-> > > > > > > On Mon, 30 Mar 2020 at 09:47, Leif Lindholm <leif@nuviainc.com> wrote:
-> > > > > > > >
-> > > > > > > > On Sat, Mar 28, 2020 at 21:58:09 +0100, Ard Biesheuvel wrote:
-> > > > > > > > > Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
-> > > > > > > > > PE/COFF entrypoint") did some code refactoring to get rid of the
-> > > > > > > > > EFI entry point assembler code, and in the process, it got rid of the
-> > > > > > > > > assignment of image_addr to the value of _text. Instead, it switched
-> > > > > > > > > to using the image_base field of the efi_loaded_image struct provided
-> > > > > > > > > by UEFI, which should contain the same value.
-> > > > > > > > >
-> > > > > > > > > However, Michael reports that this is not the case: older GRUB builds
-> > > > > > > > > corrupt this value in some way, and since we can easily switch back to
-> > > > > > > > > referring to _text to discover this value, let's simply do that.
-> > > > > > > >
-> > > > > > > > It is not clear to me how "older GRUB builds" would differ here.
-> > > > > > > > I think more investigation is needed before making that claim.
-> > > > > > > > My suspicion is that some (old) version of non-upstream, shim-enabled
-> > > > > > > > distro-specific build is playing a part.
-> > > > > > > >
-> > > > > > > > So, do we have the option for more detailed investigations, or can we
-> > > > > > > > vague the claim up to say "some GRUB builds seen in the wild, based
-> > > > > > > > on an upstream 2.02" or suchlike?
-> > > > > > > >
-> > > > > > >
-> > > > > > > I've queued a fix that prints a nastygram if the value deviates from
-> > > > > > > the expected one. Let's see if this triggers any reports.
-> > > > > >
-> > > > > > (/me looks at context)
-> > > > > >
-> > > > > > *This* is the fix that prints a nastygram.
-> > > > >
-> > > > > FWIW, I pulled the BOOTAA64.EFI and grubaa64.efi files from CentOS 7.6
-> > > > > and CentOS 8.0 binary packages and tested both in my Hyper-V VM.
-> > > > > Using strings | grep '2\.' to get version info, the CentOS 7.6 grubaa64.efi
-> > > > > shows:
-> > > > >
-> > > > >         User-Agent: GRUB 2.02~beta2
-> > > > >
-> > > > > The CentOS 8.0 grubaa64.efi shows:
-> > > > >
-> > > > >         User-Agent: GRUB 2.03
-> > > > >
-> > > > > Both versions produce the FIRMWARE BUG warning when using Ard's
-> > > > > latest patch.  I'll assume the equivalent RHEL versions are the same.
-> > > > > So we've got official distro releases that show the problem.
-> > > > >
-> > > > > As reported earlier, the BOOTAA64.EFI and grubaa64.efi from a
-> > > > > Debian release (not exactly sure which one) do not produce the
-> > > > > FIRMWARE BUG warning.  The grubaa64.efi reports as 2.04-4.
-> > > > >
-> > > >
-> > > > Thanks a lot Michael, that is really helpful.
-> > >
-> > > I could not reproduce the issue with Debian Stretch's
-> > > 2.02~beta3-5+deb9u2, so it does appear to be RedHat's value add that
-> > > is to blame here.
-> > >
-> > > @Laszlo: TL;DR RedHat's GRUB for arm64 appears to clobber the
-> > > image_base field of the efi_loaded_image struct passed to the kernel.
-> > > Could you please recommend a way to report this?
-> >
-> > Or there could be something weird about my Hyper-V VM.  I have a
-> > couple of ARM64 bare metal machines, but they are in the office
-> > with no remote access, and we're on the work-from-home plan for
-> > now.  But I may be able to get into the office later this week and
-> > try it.  I'd like to rule out anything related to Hyper-V, and will
-> > update this thread if I can.
-> >
->
-> I have tried this scenario on bare metal running RHEL 7.4, and the
-> problem reproduces as described above.  So this is *not* related to
-> running in a Hyper-V VM, which is what I wanted to make sure of.
->
+On Tue, Apr 07, 2020 at 10:01:44AM +0200, Corentin Labbe wrote:
+> On Tue, Apr 07, 2020 at 08:31:17AM +0100, Russell King - ARM Linux admin wrote:
+> > On Mon, Apr 06, 2020 at 10:10:53PM +0200, Corentin Labbe wrote:
+> > > On Mon, Apr 06, 2020 at 10:37:29AM +0100, Russell King - ARM Linux admin wrote:
+> > > > On Mon, Apr 06, 2020 at 11:25:40AM +0200, Corentin Labbe wrote:
+> > > > > On Mon, Apr 06, 2020 at 10:16:00AM +0100, Russell King - ARM Linux admin wrote:
+> > > > > > On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> > > > > > > Hello
+> > > > > > > 
+> > > > > > > I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> > > > > > > But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> > > > > > > So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> > > > > > > 
+> > > > > > > But kexec 2.0.18 fail to work:
+> > > > > > > kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+> > > > > > 
+> > > > > > What happens if you omit the dtb argument?
+> > > > > > 
+> > > > > 
+> > > > > No change without dtb
+> > > > > 
+> > > > > I have also tried to add --mem-mim and --mem-max without any change.
+> > > > > I given mem according to what I saw in /proc/iomem
+> > > > > 20000000-9fffffff : System RAM
+> > > > >   20008000-207fffff : Kernel code
+> > > > >   20900000-209a0c87 : Kernel data
+> > > > > So I gave --mem-min 0x30000000 --mem-max 0x9fffffff
+> > > > > Anyway, the result is always the same.
+> > > > 
+> > > > The next step is to enable the early debugging - first in the
+> > > > decompressor - add #define DEBUG to the top of
+> > > > arch/arm/boot/compressed/head.S
+> > > > 
+> > > > Also enable DEBUG_LL in the kernel and use earlyprintk to see if you can
+> > > > get anything from the new kernel.
+> > > > 
+> > > 
+> > > I dont know what happened, but now I always get "Could not find a free area of memory of 0x86c1c0 bytes..." (even with kexec 2.0.18)
+> > > Furthermore, I have added crashkernel=128M to the cmdlist
+> > > I have verified that the reservation is working:
+> > > 20000000-9fffffff : System RAM
+> > >   20008000-207fffff : Kernel code
+> > >   20900000-209a0c87 : Kernel data
+> > >   40000000-47ffffff : Crash kernel
+> > > But even with this reservation, no change.
+> > 
+> > crashkernel is only necessary if you're loading a kenrel image to be
+> > booted when the existing one has crashed. For the problem you're
+> > seeing, it's an unnecessary additional change; please drop that.
+> > 
+> > You could try running kexec with debug enabled to see more information.
+> > 
+> 
+> I am already running with --debug
 
-Thanks Michael. I'll mention this in the bugzilla entry.
+That was not reflected in the command lines given to kexec that you
+quoted previously, so I'm now wondering if you're giving me the full
+information.
+
+In any case, based on the information you've supplied thus far, I have
+no further suggetsions to make.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
