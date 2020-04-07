@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD0301A0472
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 03:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 229071A047B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 03:24:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dvzf0+ISECIThfSq4gwgbhboye/l4vIgc3QfL5IA51o=; b=ehYL2conTbCQ/9n6U1thc6NBS
-	PdfFzJ6Ukni7OWKJUj8qnyK7cPQBqnuRSPWnwlvrxr9Yt0zl1HLRfRjRG84fuyQt6w8jwgdOlj23d
-	bizOcKp5P2zDzxjOP6LKS4OfnJZ2mo8Ym5Vmiu3FeenYlBvTouiFvj94QwovbWaMcAlrp6dt6zz5E
-	VoC2gQ+NrY4Gp+jr0c9HZnfW1eHyB5x7LRVr+wOqSY04yodQzMyCwBIDFV3z/77Lp3b/TkIVq3V3Z
-	WoS3SDAeH4+QNvprZ7ljbIIpFDb1DXssUUFxTpaJgLGD4723c49IICTrP3g0XGpCmSpz8AQXTujWk
-	liqdGRKxA==;
+	 bh=8suuUsqpus+Gz1BGGfbq3yLWay6sm5v8wwPfm9SS5Tk=; b=cnor8fCD7IcDvz3WzkrQOChOu
+	0jWXXCfmlY0b884kdpGbpsIXXPZpH3i5APvm4RblAMGK7248RNV9n7vxDgjTogaDw5zyj8XHOJCPq
+	z7fFJ4q2CRhwCrj80hrRZKutdPAC98fak10VhzOpyJwEY8qkYvyC5O6yTSCY04F5ZAWHS/CG6ANhb
+	aZEUMrAMX3MdgpQr9Bmw0fysFI8v6CG6wGkAvmIKgLgIyq1gw+igSUzAnBfCiTWw4amvji8QqeJgq
+	RqZFnWB7BTRkyuHkt09v2AG0onQgsIW+VDeDYllXnvsiyWTdaYVoK4Bijei0mo+RJS9aFU00YCn3C
+	MS5bMVLiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLcwr-0005rS-TL; Tue, 07 Apr 2020 01:22:41 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jLcyg-0006PH-LC; Tue, 07 Apr 2020 01:24:34 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLcwk-0005r0-38
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 01:22:36 +0000
+ id 1jLcyY-0006Ok-DX
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 01:24:28 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0371MOMu107972;
- Mon, 6 Apr 2020 20:22:24 -0500
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0371OFRH022023;
+ Mon, 6 Apr 2020 20:24:15 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1586222544;
- bh=IIR/MemvOdDFRs4NMRHgcfjst7+1+yxKbOUtl1n4i7k=;
+ s=ti-com-17Q1; t=1586222655;
+ bh=Gikhdmpm+5SSnoIVRJOAaXbS6m35YInTMKqiLsbdC9I=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Gsw3MAJ0+aTQACK2/TLMxL1tJidw7cDoN7v5k0YQYUA14UCklIn2v8AVH74W5VPIo
- wn+KA6pQAM1OJhxVetreU95xsPEx2nG2YzAX1+ZXkBmd9PWDKTgMoCzaTCEzwBkVVL
- 5hxzwGcue08qY0WJJkQQbRB9Xottm2HDPJ+UM9Zo=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0371MOAb087413
+ b=JynU3rFg7HSasE9ufgmVmNqqj0DdgzrdHXIG0GxcXytiiVVJy6H5zOA7m5zQmkZII
+ sAniYmsjw4Iy1fEXv0tzKX/rUaio7ljncCawd4rVQ4FWkf38zF1+b2mg+wCF96CEwm
+ PniZPYw65oStwNk7UDYUbw8qoXqZG89JSkK4OO/U=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0371OFRX089887
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 6 Apr 2020 20:22:24 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 6 Apr 2020 20:24:15 -0500
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 6 Apr
- 2020 20:22:24 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ 2020 20:24:14 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 6 Apr 2020 20:22:24 -0500
+ Frontend Transport; Mon, 6 Apr 2020 20:24:14 -0500
 Received: from [10.250.133.125] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0371MJ5r058371;
- Mon, 6 Apr 2020 20:22:20 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0371OA1K094479;
+ Mon, 6 Apr 2020 20:24:11 -0500
 Subject: Re: [PATCH v5 2/4] thermal: k3: Add support for bandgap sensors
 To: Amit Kucheria <amit.kucheria@verdurent.com>
 References: <20200331075356.19171-1-j-keerthy@ti.com>
  <20200331075356.19171-3-j-keerthy@ti.com>
- <CAHLCerNvRvp7QAeODb34EV89a0g77ZDLuDioBct7kuBjPgrjwQ@mail.gmail.com>
+ <CAHLCerN83E_JyMiU9xDajQqgjdGTxK3yXz3-Z-5i-jvrb1jAhA@mail.gmail.com>
 From: "J, KEERTHY" <j-keerthy@ti.com>
-Message-ID: <55b6dc5b-9c3c-792b-4785-42c9279b2127@ti.com>
-Date: Tue, 7 Apr 2020 06:52:19 +0530
+Message-ID: <5ebffa10-7cea-cd68-910b-4181824ffbcd@ti.com>
+Date: Tue, 7 Apr 2020 06:54:10 +0530
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <CAHLCerNvRvp7QAeODb34EV89a0g77ZDLuDioBct7kuBjPgrjwQ@mail.gmail.com>
+In-Reply-To: <CAHLCerN83E_JyMiU9xDajQqgjdGTxK3yXz3-Z-5i-jvrb1jAhA@mail.gmail.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_182234_240529_CAC859DB 
-X-CRM114-Status: GOOD (  24.89  )
+X-CRM114-CacheID: sfid-20200406_182426_539935_1B8894D7 
+X-CRM114-Status: GOOD (  24.26  )
 X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,13 +107,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 4/7/2020 12:25 AM, Amit Kucheria wrote:
+On 4/7/2020 12:29 AM, Amit Kucheria wrote:
 > On Tue, Mar 31, 2020 at 1:24 PM Keerthy <j-keerthy@ti.com> wrote:
 >>
 >> The bandgap provides current and voltage reference for its internal
 >> circuits and other analog IP blocks. The analog-to-digital
 >> converter (ADC) produces an output value that is proportional
 >> to the silicon temperature.
+> 
+> Your cover letter seems to have useful information that belongs in
+> this commit message IMO.
+
+Okay. I will add that information here as well.
+
+- Keerthy
+> 
 >>
 >> Currently reading temperatures only is supported.
 >> There are no active/passive cooling agent supported.
@@ -190,32 +198,13 @@ On 4/7/2020 12:25 AM, Amit Kucheria wrote:
 >> +#include <linux/thermal.h>
 >> +#include <linux/of.h>
 >> +
-> 
-> Sort these includes alphabetically
-
-Okay
-
-> 
-> 
 >> +#define K3_VTM_DEVINFO_PWR0_OFFSET             0x4
 >> +#define K3_VTM_DEVINFO_PWR0_CVD_CT_MASK        0xf
-> 
-> Not used, remove.
-
-Okay
-
-> 
 >> +#define K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK   0xf0
 >> +#define K3_VTM_TMPSENS0_CTRL_OFFSET    0x80
 >> +#define K3_VTM_REGS_PER_TS                     0x10
 >> +#define K3_VTM_TS_STAT_DTEMP_MASK      0x3ff
 >> +#define K3_VTM_MAX_NUM_TS              8
-> 
-> Not used, remove
-
-okay
-
-> 
 >> +#define K3_VTM_TMPSENS_CTRL_CBIASSEL   BIT(0)
 >> +#define K3_VTM_TMPSENS_CTRL_SOC                BIT(5)
 >> +#define K3_VTM_TMPSENS_CTRL_CLRZ               BIT(6)
@@ -277,12 +266,6 @@ okay
 >> +/* common data structures */
 >> +struct k3_thermal_data {
 >> +       struct thermal_zone_device *ti_thermal;
-> 
-> Nit: perhap use tzd/tzdev instead of ti_thermal which doesn't really say much?
-
-okay
-
-> 
 >> +       struct k3_bandgap *bgp;
 >> +       int sensor_id;
 >> +       u32 ctrl_offset;
@@ -321,17 +304,6 @@ okay
 >> +        * report temperatures.
 >> +        *
 >> +        * Errata workaround.
-> 
-> So there is no fix in later versions of silicon? If so, shouldn't this
-> errata only apply to a subset of chips after checking some IP version?
-
-The previous version of the driver had a check. Since no version of the 
-silcion with that errata fixed it out i was adviced to on keeping this 
-default.
-Once that is supported will bring in the check.
-
-> 
-> 
 >> +        */
 >> +       s0 = readl(bgp->base + devdata->stat_offset) &
 >> +               K3_VTM_TS_STAT_DTEMP_MASK;
@@ -442,17 +414,6 @@ Once that is supported will bring in the check.
 >> +err_alloc:
 >> +       pm_runtime_put_sync(&pdev->dev);
 >> +       pm_runtime_disable(&pdev->dev);
-> 
-> Just use dev?
-
-Okay
-
-Thanks for the review.
-
-Regards,
-Keerthy
-> 
-> 
 >> +
 >> +       return ret;
 >> +}
