@@ -2,46 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EF451A0C77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 13:04:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AEBE1A0C9B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 13:12:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7WE/Qbf1YC6ew7sRx94qTmy6HuaWjljfaYcBeft6NJo=; b=FQXcDc3Xr9ZHL+
-	TSl1/Ks2w1d3lgxwss3l+qNKAaqY6X0VReO8kzdileU95lOowaK+httdTaiEaswLl1s6noIkLY3oo
-	4UfWNcvj+7pl87a4hxoMshGTzq/man2rigDzJ/cFdF4zSAHkwA+EU3hiD1AqZX6RgPDquQ0u3LDbs
-	CxgA/e07U1mQHw5RTWf1MFvKS++q7DbjOob1YeFRKd/mjDsEb3C+0P9TlFVzYqQ/g9ljgie7dC86U
-	jG9RCT8NOwrFuPX14qTNR6w1d0xOXZCVNLDy4h8RJ2eGmpqMAxODukO8SKIQyhntAhy5flZHqkJ73
-	kzWJx4iT1lbj/hIfME7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=t/x7cnXI49z7BHWBU2VuHzgU89FkePspnI3xVi/KPvw=; b=NcjCxhQW+3Zd4DyHAkTpi6jkS
+	MsiBcuEGo9Sm3aNOQBHeX5rrckd9aU82yisYXSrR4bxKwXJrAkeYHNTW4HiOBCCiXI+z8deof9Ru4
+	pATkgh+eoYsVceF3M8D51YesUwo4/dqOpAVXgh5jDZeUMIramywytmbTcwaFCZtaPLttAW5DO3Z3p
+	Twpk4NASRVHzkrHagOhrufxQxF7mSJx6zQG6NqpSy9ezK7sMj0qj+xpjokn2BSaeV4dXEi7C8rzio
+	/WGJSA4utTUqz6L++5WeW3WXy745do7nl9bWRr2+TSJvnaBChWdNRl63LEsar+GgsIY4zauWcHsGs
+	p/9tRCQFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLm1N-00056U-0M; Tue, 07 Apr 2020 11:03:57 +0000
+	id 1jLm9P-0002dv-BX; Tue, 07 Apr 2020 11:12:15 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLm1F-00055Y-FJ
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 11:03:51 +0000
-X-Originating-IP: 78.193.40.249
-Received: from kb-xps (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id D5839FF819;
- Tue,  7 Apr 2020 11:03:40 +0000 (UTC)
-Date: Tue, 7 Apr 2020 13:03:39 +0200
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
-Message-ID: <20200407110339.GA1489441@kb-xps>
-References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
- <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
- <20200407094159.xtbhtsxorvs2g22c@gilmour.lan>
+ id 1jLm9H-0002cx-Hh
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 11:12:09 +0000
+X-Originating-IP: 84.210.220.251
+Received: from [192.168.1.123] (cm-84.210.220.251.getinternet.no
+ [84.210.220.251]) (Authenticated sender: fredrik@strupe.net)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id F082FFF80D;
+ Tue,  7 Apr 2020 11:12:04 +0000 (UTC)
+Subject: Re: [PATCH] arm64: armv8_deprecated: Fix undef_hook mask for thumb
+ setend
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, catalin.marinas@arm.com
+References: <911db2f1-e078-a460-32ee-154a0b4de5d4@strupe.net>
+ <20200407092744.GA2665@gaia> <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
+From: Fredrik Strupe <fredrik@strupe.net>
+Message-ID: <7e0a3318-5b0e-3718-ced6-ae1fc7f5fece@strupe.net>
+Date: Tue, 7 Apr 2020 13:12:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200407094159.xtbhtsxorvs2g22c@gilmour.lan>
+In-Reply-To: <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_040349_784325_A82FA73E 
-X-CRM114-Status: GOOD (  33.65  )
+X-CRM114-CacheID: sfid-20200407_041207_856880_E6C795CF 
+X-CRM114-Status: GOOD (  26.66  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -62,187 +64,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
+Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 07, 2020 at 11:41:59AM +0200, Maxime Ripard wrote:
-> Hi Kamel,
->
-
-Hi Maxime,
-
-> The prefix for device tree bindings is usually dt-bindings:
-> $framework: $title
->
-> So a title like "dt-bindings: input: Add a counter-based rotary
-> encoder binding" would be better.
->
-
-OK, to be fixed then.
-
-> On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
-> > Add dt binding for the counter variant of the rotary encoder driver.
-> >
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > ---
-> >  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
-> >  1 file changed, 67 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > new file mode 100644
-> > index 000000000000..a59f7c1faf0c
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > @@ -0,0 +1,67 @@
-> > +# SPDX-License-Identifier: GPL-2.0
->
-> Bindings are usually used by other OS's, so you should consider
-> putting it under a more permissive license, usually that would be GPL2
-> and the BSD-2-Clause
->
-
-Well to be honest I just looked into an existing binding and I guess
-the wrong one :).
-
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Rotary Encoder Counter
-> > +
-> > +maintainers:
-> > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > +
-> > +description:
-> > +  Registers a Rotary encoder connected through a counter device.
->
-> You shouldn't really describe the action here, but more what the
-> binding is about. The registration will not depend on the presence of
-> the node following that binding, but rather on whether or not the OS
-> that uses it has support for it.
->
-
-Then shall it be better with just :
-"A rotary encoder device using a generic counter interface." ?
-
-> > +properties:
-> > +  compatible:
-> > +    const: rotary-encoder-counter
-> > +
-> > +  counter:
-> > +    description: Phandle for the counter device providing rotary position.
->
-> This should have a type
->
-> > +  linux-axis:
-> > +    description: The input subsystem axis to map to this rotary encoder.
-> > +    type: boolean
-> > +
-> > +  qdec-mode:
-> > +    description: |
-> > +      Quadrature decoder function to set in the counter device.
-> > +      3: x1-PHA
-> > +      4: x1-PHB
-> > +      5: x2-PHA
-> > +      6: x2-PHB
-> > +      7: x4-PHA and PHB
->
-> That range (even though it's a bit odd) should be expressed through an
-> enum so that you can check that the values are actually within that
-> range.
->
-
-Indeed, that make sens to check it from the binding.
-
-Will fix it in v2.
-
-> > +  steps:
-> > +    description: Number of steps in a full turnaround of the encoder.
->
-> Muli-line strings should have either quotes around them, or a | or >
-> like you did for the description. | will keep the \n, > will make that
-> a single string.
->
-> This should also have a type
->
-> > +      Only relevant for absolute axis.
->
-> This should be expressed through a if / then clause, or a dependencies one
->
-> >                                         Defaults to 24 which is a typical
-> > +      value for such devices.
->
-> This should be expressed through a default property.
->
-
-The devil is in the details and yet quite lot of them to fix.
-
-Thanks.
-
-> > +  relative-axis:
-> > +    description: Register a relative axis rather than an absolute one.
-> > +    type: boolean
-> > +
-> > +  rollover:
-> > +    description: Automatic rollover when the rotary value becomes greater
-> > +      than the specified steps or smaller than 0. For absolute axis only.
-> > +    type: boolean
->
-> Same story than steps for the dependency. Also, what is is the
-> behaviour when this property isn't set?
->
-
-OK, if rollover isn't set then the count is unbounded, of course this
-shall be described here.
-
-> > +  poll-interval:
-> > +    description: Poll interval at which the position is read from the counter
-> > +      device (default 500ms).
->
-> It should have a type too, and a default property
->
-> > +
-> > +required:
-> > +  - compatible
-> > +  - counter
-> > +  - qdec-mode
-> > +
-> > +examples:
-> > +  - |
-> > +    rotary@0 {
-> > +        compatible = "rotary-encoder-counter";
->
-> A unit-address (the part after @) only makes sense for a node if
-> there's a matching reg property in the node. This will trigger a DTC
-> warning, so you should remove the @0
->
-
-Ok I'll fix it then.
-
-Thanks again.
-
-> Maxime
-
-
-
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDcuMDQuMjAyMCAxMjo0NywgU3V6dWtpIEsgUG91bG9zZSB3cm90ZToKCj4gT24gMDQvMDcv
+MjAyMCAxMDoyNyBBTSwgQ2F0YWxpbiBNYXJpbmFzIHdyb3RlOgo+PiBPbiBNb24sIEFwciAwNiwg
+MjAyMCBhdCAwNDoxNjowNVBNICswMjAwLCBGcmVkcmlrIFN0cnVwZSB3cm90ZToKPj4+IFVzZSBh
+IGZ1bGwgMzItYml0IG1hc2sgdG8gcHJldmVudCBhY2NpZGVudGFsIG1hdGNoaW5ncyBvZiB0aHVt
+YjMyCj4+PiBpbnN0cnVjdGlvbnMgd2hlcmUgdGhlIHNlY29uZCBoYWxmLXdvcmQgaXMgZXF1YWwg
+dG8gdGhlIHRodW1iMTYgc2V0ZW5kCj4+PiBlbmNvZGluZy4KPj4+Cj4+PiBUaGlzIGZpeGVzIHRo
+ZSBzYW1lIHByb2JsZW0gYXMgdGhlIGZvbGxvd2luZyBwYXRjaDoKPj4+Cj4+PiDCoMKgwqDCoCBo
+dHRwczovL2xrbWwub3JnL2xrbWwvMjAyMC8zLzE2LzM0MQo+Pgo+PiBUaGlzIGxpbmsgaXMgbm90
+IGd1YXJhbnRlZWQgdG8gYmUgc3RhYmxlIGFuZCB0aGUgY29tbWl0IHNob3VsZCBoYXZlIHRoZQo+
+PiBmdWxsIGRlc2NyaXB0aW9uIHJhdGhlciB0aGFuIHJlZmVycmluZyB0byBhbm90aGVyIGVtYWls
+Lgo+Pgo+Pj4gYnV0IGZvciBzZXRlbmQgZW11bGF0aW9uIGluc3RlYWQuCj4+Pgo+Pj4gU2lnbmVk
+LW9mZi1ieTogRnJlZHJpayBTdHJ1cGUgPGZyZWRyaWtAc3RydXBlLm5ldD4KPj4KPj4gSXQgYWxz
+byBuZWVkcyBGaXhlczogYW5kIENjOiBzdGFibGUgdGFncy4KPj4KPj4+IC0tLQo+Pj4gwqAgYXJj
+aC9hcm02NC9rZXJuZWwvYXJtdjhfZGVwcmVjYXRlZC5jIHwgMiArLQo+Pj4gwqAgMSBmaWxlIGNo
+YW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBh
+L2FyY2gvYXJtNjQva2VybmVsL2FybXY4X2RlcHJlY2F0ZWQuYyAKPj4+IGIvYXJjaC9hcm02NC9r
+ZXJuZWwvYXJtdjhfZGVwcmVjYXRlZC5jCj4+PiBpbmRleCA5ZDM0NDJkNjIuLjhjMDZkZmVlMCAx
+MDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJtNjQva2VybmVsL2FybXY4X2RlcHJlY2F0ZWQuYwo+Pj4g
+KysrIGIvYXJjaC9hcm02NC9rZXJuZWwvYXJtdjhfZGVwcmVjYXRlZC5jCj4+PiBAQCAtNjA5LDcg
+KzYwOSw3IEBAIHN0YXRpYyBzdHJ1Y3QgdW5kZWZfaG9vayBzZXRlbmRfaG9va3NbXSA9IHsKPj4+
+IMKgwqDCoMKgwqAgfSwKPj4+IMKgwqDCoMKgwqAgewo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIC8q
+IFRodW1iIG1vZGUgKi8KPj4+IC3CoMKgwqDCoMKgwqDCoCAuaW5zdHJfbWFza8KgwqDCoCA9IDB4
+MDAwMGZmZjcsCj4+PiArwqDCoMKgwqDCoMKgwqAgLmluc3RyX21hc2vCoMKgwqAgPSAweGZmZmZm
+ZmY3LAo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIC5pbnN0cl92YWzCoMKgwqAgPSAweDAwMDBiNjUw
+LAo+Pgo+PiBJIGNhbiBzZWUgaG93IHRoaXMgY291bGQgaGFwcGVuIGJ1dCBpdCB3b3VsZCBiZSB1
+c2VmdWwgdG8gcHJvdmlkZSBhCj4+IGNvbmNyZXRlIGV4YW1wbGUgaW4gdGhlIGNvbW1pdCBsb2cu
+Cj4+Cj4+IFRoZSBpbnN0cnVjdGlvbiBvcGNvZGUgYnVpbHQgYnkgY2FsbF91bmRlZl9ob29rKCkg
+Zmlyc3QgcmVhZHMgYSB1MTYgYXMgYQo+PiBUMTYgaW5zdHJ1Y3Rpb24gYW5kIHRoZSBhYm92ZSBz
+aG91bGQgYmUgZmluZS4gSG93ZXZlciwgaWYgdGhpcyBsb29rcwo+PiBsaWtlIGEgVDMyIG9wY29k
+ZSwgaXQgcmVhZHMgYSBzdWJzZXF1ZW50IHUxNiB3aGljaCBiZWNvbWVzIHRoZSBsb3dlc3QKPj4g
+aGFsZi13b3JkIGFuZCB0aGUgYWJvdmUgbWFzay92YWwgbWF5IGluYWR2ZXJ0ZW50bHkgbWF0Y2gg
+aXQuCj4+ClRoYW5rcyBmb3IgdGhlIGZlZWRiYWNrLiBJIGhhdmUgdXBkYXRlZCB0aGUgcGF0Y2gg
+d2l0aCB0aGUgcmVxdWVzdGVkIApjaGFuZ2VzLgoKPgo+IFdlIGFsc28gZG8gYSBjaGVjayBvbiB0
+aGUgcHN0YXRlX3ZhbCwgYWxvbmcgd2l0aCB0aGUgaW5zdHJfdmFsIHRvCj4gY29uZmlybSB0aGUg
+bW9kZS4gU28gdGhpcyBzaG91bGQgYmUgZmluZSBhcyBpdCBpcyA/Cj4KPiBTdXp1a2kKCnBzdGF0
+ZV92YWwgb25seSBpbmRpY2F0ZXMgdGh1bWIgZXhlY3V0aW9uLCBub3Qgd2hldGhlciB0aGUgY3Vy
+cmVudCAKaW5zdHJ1Y3Rpb24KaXMgYSBUMTYgb3IgVDMyIGluc3RydWN0aW9uLgoKRnJlZHJpawoK
+LS0tIEZvciB0aHVtYiBpbnN0cnVjdGlvbnMsIGNhbGxfdW5kZWZfaG9vaygpIGluIHRyYXBzLmMg
+Zmlyc3QgcmVhZHMgYSAKdTE2LCBhbmQgaWYgdGhlIHUxNiBpbmRpY2F0ZXMgYSBUMzIgaW5zdHJ1
+Y3Rpb24gKHUxNiA+PSAweGU4MDApLCBhIApzZWNvbmQgdTE2IGlzIHJlYWQsIHdoaWNoIHRoZW4g
+bWFrZXMgdXAgdGhlIHRoZSBsb3dlciBoYWxmLXdvcmQgb2YgYSBUMzIgCmluc3RydWN0aW9uLiBG
+b3IgVDE2IGluc3RydWN0aW9ucywgdGhlIHNlY29uZCB1MTYgaXMgbm90IHJlYWQsIHdoaWNoIApt
+YWtlcyB0aGUgcmVzdWx0aW5nIHUzMiBvcGNvZGUgYWx3YXlzIGhhdmUgdGhlIHVwcGVyIGhhbGYg
+c2V0IHRvIDAuIApIb3dldmVyLCBoYXZpbmcgdGhlIHVwcGVyIGhhbGYgb2YgaW5zdHJfbWFzayBp
+biB0aGUgdW5kZWZfaG9vayBzZXQgdG8gMCAKbWFza3Mgb3V0IHRoZSB1cHBlciBoYWxmIG9mIGFs
+bCB0aHVtYiBpbnN0cnVjdGlvbnMgLSBib3RoIFQxNiBhbmQgVDMyLiAKVGhpcyByZXN1bHRzIGlu
+IHRyYXBwZWQgVDMyIGluc3RydWN0aW9ucyB3aXRoIHRoZSBsb3dlciBoYWxmLXdvcmQgZXF1YWwg
+CnRvIHRoZSBUMTYgZW5jb2Rpbmcgb2Ygc2V0ZW5kIChiNjUwKSBiZWluZyBtYXRjaGVkLCBldmVu
+IHRob3VnaCB0aGUgCnVwcGVyIGhhbGYtd29yZCBpcyBub3QgMDAwMCBhbmQgdGh1cyBpbmRpY2F0
+ZXMgYSBUMzIgb3Bjb2RlLiBBbiBleGFtcGxlIApvZiBzdWNoIGEgVDMyIGluc3RydWN0aW9uIGlz
+IGVhYTBiNjUwLCB3aGljaCBzaG91bGQgcmFpc2UgYSBTSUdJTEwgc2luY2UgClQzMiBpbnN0cnVj
+dGlvbnMgd2l0aCBhbiBlYWEgcHJlZml4IGFyZSB1bmFsbG9jYXRlZCBhcyBwZXIgQXJtIEFSTSwg
+YnV0IAppbnN0ZWFkIHdvcmtzIGFzIGEgU0VURU5EIGJlY2F1c2UgdGhlIHNlY29uZCBoYWxmLXdv
+cmQgaXMgc2V0IHRvIGI2NTAuIApUaGlzIHBhdGNoIGZpeGVzIHRoZSBpc3N1ZSBieSBleHRlbmRp
+bmcgaW5zdHJfbWFzayB0byBpbmNsdWRlIHRoZSB1cHBlciAKdTMyIGhhbGYsIHdoaWNoIHdpbGwg
+c3RpbGwgbWF0Y2ggVDE2IGluc3RydWN0aW9ucyB3aGVyZSB0aGUgdXBwZXIgaGFsZiAKaXMgMCwg
+YnV0IG5vdCBUMzIgaW5zdHJ1Y3Rpb25zLiBTaWduZWQtb2ZmLWJ5OiBGcmVkcmlrIFN0cnVwZSAK
+PGZyZWRyaWtAc3RydXBlLm5ldD4gQ2M6IENhdGFsaW4gTWFyaW5hcyA8Y2F0YWxpbi5tYXJpbmFz
+QGFybS5jb20+IENjOiAKV2lsbCBEZWFjb24gPHdpbGwuZGVhY29uQGFybS5jb20+IEZpeGVzOiAy
+ZDg4OGY0OGUwNTYgKCJhcm02NDogRW11bGF0ZSAKU0VURU5EIGZvciBBQXJjaDMyIHRhc2tzIikg
+LS0tIGFyY2gvYXJtNjQva2VybmVsL2FybXY4X2RlcHJlY2F0ZWQuYyB8IDIgCistIDEgZmlsZSBj
+aGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKSBkaWZmIC0tZ2l0IAphL2FyY2gv
+YXJtNjQva2VybmVsL2FybXY4X2RlcHJlY2F0ZWQuYyAKYi9hcmNoL2FybTY0L2tlcm5lbC9hcm12
+OF9kZXByZWNhdGVkLmMgaW5kZXggOWQzNDQyZDYyLi44YzA2ZGZlZTAgMTAwNjQ0IAotLS0gYS9h
+cmNoL2FybTY0L2tlcm5lbC9hcm12OF9kZXByZWNhdGVkLmMgKysrIApiL2FyY2gvYXJtNjQva2Vy
+bmVsL2FybXY4X2RlcHJlY2F0ZWQuYyBAQCAtNjA5LDcgKzYwOSw3IEBAIHN0YXRpYyBzdHJ1Y3Qg
+CnVuZGVmX2hvb2sgc2V0ZW5kX2hvb2tzW10gPSB7IH0sIHsgLyogVGh1bWIgbW9kZSAqLyAtIC5p
+bnN0cl9tYXNrID0gCjB4MDAwMGZmZjcsICsgLmluc3RyX21hc2sgPSAweGZmZmZmZmY3LCAuaW5z
+dHJfdmFsID0gMHgwMDAwYjY1MCwgCi5wc3RhdGVfbWFzayA9IChQU1JfQUEzMl9UX0JJVCB8IFBT
+Ul9BQTMyX01PREVfTUFTSyksIC5wc3RhdGVfdmFsID0gCihQU1JfQUEzMl9UX0JJVCB8IFBTUl9B
+QTMyX01PREVfVVNSKSwgLS0gMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
