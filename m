@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E05781A131A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38C421A131B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:50:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r3X9s9jZp3eaxTSinOeSFJhy9+xUbpa9Rd0xX6MGg90=; b=PWw6FoipMUQqZXwOGBmWWSzCdB
-	p4eglKK9QXg0rw4bso3QB1Uew8FAJzEHBZiXVpM2yGR5qKULTUV2VkhPqSVFLF/Ypu11GWy4QM3RV
-	ZCqizEPG9Xvqct9W+r2Dpl6HX9U9r2TR3Zs1B1Akh4hwjUNOxHFoyB7d7QRPYpxniTggXEFQmZak1
-	xocRKbe4+J3/8ynh6J5+lqpMhGOu3OqCZcd5JtI9XD0cBZjqFWU2QCeY6TA4SXqE4r1Py4fz0nin2
-	wyqp9ewbkVzNRbVH0l4JCuIvJrBxX9eUypeu0jmVKSIDX92Cfj1XbzEcrMpxdEznzCuwNWiB4nR3w
-	Px6o61YA==;
+	bh=H05K95XFs8BRjczSG9fLzoAPSCuT7ktfQQmWfu2sqxM=; b=YUkKL1MkZIOpRedrFvLHQYB+f1
+	XQjfjpLo5CoEQmUszQ4rDW3SYLnt+iHszp3dfQEWvsiNZIb5GV5TlE3rVQ3pgz8xWcQM/nh9+EvXL
+	Lz+gtvSJePktiGT04YCYgIJQFp40GdugAFiv0hdg9JaTNNTb85WUh90J0/ot8F99cqmR/YmuQsE3n
+	vclRC3maIXG4hfzcH9P1b3g8j378NaEMWEPautQvWbUxfm0tdNIrUWlrlmXb08G+/+hpzi2WLUc1K
+	Kf5PN151mc1CudBvMdDz/N3XhuH0C8qDaQplEFQ9W4BnBtLnUrMU62dpjzKBiTiRpoB0bH9nNbWQr
+	2jA4RgLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLsMZ-0007b9-HQ; Tue, 07 Apr 2020 17:50:15 +0000
+	id 1jLsMl-0001aH-1q; Tue, 07 Apr 2020 17:50:27 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLsLz-0007T4-BP
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:40 +0000
+ id 1jLsM2-0007U2-D2
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:44 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 6EFCE2972A9
+ (Authenticated sender: andrzej.p) with ESMTPSA id 202672972AA
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org
-Subject: [RFC 1/8] thermal: int3400_thermal: Statically initialize
- .get_mode()/.set_mode() ops
-Date: Tue,  7 Apr 2020 19:49:19 +0200
-Message-Id: <20200407174926.23971-2-andrzej.p@collabora.com>
+Subject: [RFC 2/8] thermal: Properly handle mode values in .set_mode()
+Date: Tue,  7 Apr 2020 19:49:20 +0200
+Message-Id: <20200407174926.23971-3-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407174926.23971-1-andrzej.p@collabora.com>
 References: <20200407174926.23971-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_104939_513641_A235AA1F 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200407_104942_612154_B830038A 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -82,38 +80,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-int3400_thermal_ops is used inside int3400_thermal_probe() only after
-the assignments, which can just as well be made statically at struct's
-initizer.
+Allow only THERMAL_DEVICE_ENABLED and THERMAL_DEVICE_DISABLED as valid
+states to transition to.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/thermal/intel/int340x_thermal/int3400_thermal.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/mellanox/mlxsw/core_thermal.c | 8 ++++++--
+ drivers/platform/x86/acerhdf.c                     | 4 ++++
+ drivers/thermal/imx_thermal.c                      | 4 +++-
+ drivers/thermal/intel/intel_quark_dts_thermal.c    | 5 ++++-
+ drivers/thermal/of-thermal.c                       | 4 +++-
+ 5 files changed, 20 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-index efae0c02d898..634b943e9e3d 100644
---- a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-+++ b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-@@ -271,6 +271,8 @@ static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
+diff --git a/drivers/net/ethernet/mellanox/mlxsw/core_thermal.c b/drivers/net/ethernet/mellanox/mlxsw/core_thermal.c
+index ce0a6837daa3..cd435ca7adbe 100644
+--- a/drivers/net/ethernet/mellanox/mlxsw/core_thermal.c
++++ b/drivers/net/ethernet/mellanox/mlxsw/core_thermal.c
+@@ -296,8 +296,10 @@ static int mlxsw_thermal_set_mode(struct thermal_zone_device *tzdev,
  
- static struct thermal_zone_device_ops int3400_thermal_ops = {
- 	.get_temp = int3400_thermal_get_temp,
-+	.get_mode = int3400_thermal_get_mode,
-+	.set_mode = int3400_thermal_set_mode,
- };
+ 	if (mode == THERMAL_DEVICE_ENABLED)
+ 		tzdev->polling_delay = thermal->polling_delay;
+-	else
++	else if (mode == THERMAL_DEVICE_DISABLED)
+ 		tzdev->polling_delay = 0;
++	else
++		return -EINVAL;
  
- static struct thermal_zone_params int3400_thermal_params = {
-@@ -309,9 +311,6 @@ static int int3400_thermal_probe(struct platform_device *pdev)
+ 	mutex_unlock(&tzdev->lock);
  
- 	platform_set_drvdata(pdev, priv);
+@@ -486,8 +488,10 @@ static int mlxsw_thermal_module_mode_set(struct thermal_zone_device *tzdev,
  
--	int3400_thermal_ops.get_mode = int3400_thermal_get_mode;
--	int3400_thermal_ops.set_mode = int3400_thermal_set_mode;
--
- 	priv->thermal = thermal_zone_device_register("INT3400 Thermal", 0, 0,
- 						priv, &int3400_thermal_ops,
- 						&int3400_thermal_params, 0, 0);
+ 	if (mode == THERMAL_DEVICE_ENABLED)
+ 		tzdev->polling_delay = thermal->polling_delay;
+-	else
++	else if (mode == THERMAL_DEVICE_DISABLED)
+ 		tzdev->polling_delay = 0;
++	else
++		return -EINVAL;
+ 
+ 	mutex_unlock(&tzdev->lock);
+ 
+diff --git a/drivers/platform/x86/acerhdf.c b/drivers/platform/x86/acerhdf.c
+index 8cc86f4e3ac1..d5188c1d688b 100644
+--- a/drivers/platform/x86/acerhdf.c
++++ b/drivers/platform/x86/acerhdf.c
+@@ -431,6 +431,10 @@ static int acerhdf_get_mode(struct thermal_zone_device *thermal,
+ static int acerhdf_set_mode(struct thermal_zone_device *thermal,
+ 			    enum thermal_device_mode mode)
+ {
++	if (mode != THERMAL_DEVICE_DISABLED &&
++	    mode != THERMAL_DEVICE_ENABLED)
++		return -EINVAL;
++
+ 	if (mode == THERMAL_DEVICE_DISABLED && kernelmode)
+ 		acerhdf_revert_to_bios_mode();
+ 	else if (mode == THERMAL_DEVICE_ENABLED && !kernelmode)
+diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
+index bb6754a5342c..014512581918 100644
+--- a/drivers/thermal/imx_thermal.c
++++ b/drivers/thermal/imx_thermal.c
+@@ -368,7 +368,7 @@ static int imx_set_mode(struct thermal_zone_device *tz,
+ 			data->irq_enabled = true;
+ 			enable_irq(data->irq);
+ 		}
+-	} else {
++	} else if (mode == THERMAL_DEVICE_DISABLED) {
+ 		regmap_write(map, soc_data->sensor_ctrl + REG_CLR,
+ 			     soc_data->measure_temp_mask);
+ 		regmap_write(map, soc_data->sensor_ctrl + REG_SET,
+@@ -381,6 +381,8 @@ static int imx_set_mode(struct thermal_zone_device *tz,
+ 			disable_irq(data->irq);
+ 			data->irq_enabled = false;
+ 		}
++	} else {
++		return -EINVAL;
+ 	}
+ 
+ 	data->mode = mode;
+diff --git a/drivers/thermal/intel/intel_quark_dts_thermal.c b/drivers/thermal/intel/intel_quark_dts_thermal.c
+index 5d33b350da1c..5f4bcc0e4fd3 100644
+--- a/drivers/thermal/intel/intel_quark_dts_thermal.c
++++ b/drivers/thermal/intel/intel_quark_dts_thermal.c
+@@ -328,8 +328,11 @@ static int sys_set_mode(struct thermal_zone_device *tzd,
+ 	mutex_lock(&dts_update_mutex);
+ 	if (mode == THERMAL_DEVICE_ENABLED)
+ 		ret = soc_dts_enable(tzd);
+-	else
++	else if (mode == THERMAL_DEVICE_DISABLED)
+ 		ret = soc_dts_disable(tzd);
++	else
++		return -EINVAL;
++
+ 	mutex_unlock(&dts_update_mutex);
+ 
+ 	return ret;
+diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
+index ef0baa954ff0..b7621dfab17c 100644
+--- a/drivers/thermal/of-thermal.c
++++ b/drivers/thermal/of-thermal.c
+@@ -289,9 +289,11 @@ static int of_thermal_set_mode(struct thermal_zone_device *tz,
+ 	if (mode == THERMAL_DEVICE_ENABLED) {
+ 		tz->polling_delay = data->polling_delay;
+ 		tz->passive_delay = data->passive_delay;
+-	} else {
++	} else if (mode == THERMAL_DEVICE_DISABLED) {
+ 		tz->polling_delay = 0;
+ 		tz->passive_delay = 0;
++	} else {
++		return -EINVAL;
+ 	}
+ 
+ 	mutex_unlock(&tz->lock);
 -- 
 2.17.1
 
