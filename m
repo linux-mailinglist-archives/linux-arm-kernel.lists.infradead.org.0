@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E4CD1A086A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 09:35:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9AD11A086E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 09:37:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZhDSu6wSUmu0sm54gsPaE9padHGNYXdvjOhkEtE1vXc=; b=ZfuG/sCls80915
-	+MBCuN77ovA7hNTmMPNtViE+ok/j5rzZbhhTomwWUJGSBn3Zzcrvixce9beIIT+RZZFjm4cZZ1Jef
-	42GYVOP09F4yH+KWVnJDhWP4f/71h8h/QpaVkiYhHkduXHYdJfNzJ/CAgdo46/a06diLfmyQXnnXG
-	WS3EZ1eRwMVdvS5RfQU1F3IHO/JeSk2NMVqXgKRFu/NPNheWmj3MkpPXpblAZIMwUTxiHoeP76aD1
-	bCy6Nn0EqD+gNIIwVdAxQL6YZaTxNCxmSiJEfaFozUNRcG8GqQ+njiaLXrquB/AmAUKB21PYL8uXd
-	oqxdpADWY92gNrhp/2LA==;
+	List-Owner; bh=WD488zTOt9JO1zUe+OXMvt9Q2p8LLENuZyWNw24Wc6U=; b=VAjk5y7XoJyall
+	/LdTpjxcUezKOrxlAY77TrO72X8w24v8vBSxLm4oo7w7Lrw91th1PseMGPVwzTmaOZIrpGcgQrmhz
+	qIomWSis3bUI2rVFUdUbkeZCmxfr3IvwYZMV3L98krfJxuf0Hk2uqKNXKY1muXX9Rhlm5jj8xmAJF
+	/ELf6OcGSdx/xOrU7F1+NO7FmnWbqzczfEtvcEtiSWYkHxCX40bD1RovmOCVfpn2+4+eAqSqqXubv
+	NxYgoBcV7YdaEr3fm/TAvIfWVaPjd7apDxD8QInqveypdV/3vv9eaajElSEniqoybtDZe0hAF53Mi
+	jbt/MI4Y7dlo27Lf3uOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLill-0000w1-IZ; Tue, 07 Apr 2020 07:35:37 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jLin0-0001Df-6N; Tue, 07 Apr 2020 07:36:54 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLile-0000vD-Ra
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 07:35:32 +0000
-Received: by mail-ot1-x341.google.com with SMTP id a49so2079647otc.11
+ id 1jLimt-0001Cv-93
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 07:36:48 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r19so2105172otn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Apr 2020 00:35:29 -0700 (PDT)
+ Tue, 07 Apr 2020 00:36:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Fid1QYCY0NO/I6cTp/weYurLiEg0cFhCN05hyqNgj/o=;
- b=XJrU1YiGYXObCCyXMEpQZnKbbwe1ZMgGBITvdVL8yqcS5c4ABjNgv1qZ5t/y9cw1F8
- MsAAVIWLcQQ8q6DRSVEp6ovppqqwycPJ9VisN7GDYbtZfqjNpNOWgfnac39+vNq+GqHr
- DULGIjG0ANLz3tIsKU4xd3dR0PrSm/4vbFXWQN6POY1r40YiFRZSprxg0UweJmKdQaps
- TS21+MlgxJ9bz9czec7CBhYaH+YRzenE/DJ+JRbXLYVnFS9LPdxhQAtfN+nDIGbZ9+no
- dva2d+fT/l2uXBMFoA2YBFZoc3FnekN5iwPVOMlUVjsZlYPTg+9bGkMGhSeGq6HTV/yL
- eAGw==
+ :cc; bh=MXkFKK0nBYOjUan987EYuLjdzpEpfg2o9ahd6UADeAM=;
+ b=qVlGe6IVUK5d+MeTkjvvVNqA01YUQYDIfau+P2843flDckaJGhAAGphCCUVY48NpV1
+ zOBmqIUAIIOh1d+nEi4tgqLbws2/5KtESiEZoyq03SKkA/DyCt0i+BGcmCAj848JscnE
+ IsUEEsvrh7efftHE4LzY3tfEq89fvTbdu00JKh/FlKrVp4Av6SVY6qsm1BKpDLxyrPk4
+ JVRDIkYBdLRotogkW57VWTW0/zeg065JlstGIq8fSNInXip5woEf6Uuwt5I9hpzptriS
+ xeOkHj8gFW3cJd1rpX9OoK/SV8+IwtQYM/TPoVvbd1QX/dzABm9kyRe8OrKU2s/XyrY6
+ VAEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Fid1QYCY0NO/I6cTp/weYurLiEg0cFhCN05hyqNgj/o=;
- b=BaCr1fu2yOgIui94lfpL516ulmHt6lVs0QJu2X/PJFZg5czZLroqipbPUreSTjeVoO
- Fuvik1MIWfxgO+dsXFfvTXshsTdA13XwXs4Pm5eF2Ch6g8BISFuFZ8/k9znV7HSuB4DV
- GxznKghKj++p+/NaCZQG6YY+Sq/L9FWELMQzhbIlDXjSC/cB2FvzHZhIj+3TydSSTInW
- ciCFrDVcC/gkZA6I4PzJ4il1PDeL6wU0kT2JosLx8ZwPM8Q/onGe/kQit/0uM/9rWE0j
- W2Vw/uee/noWnMf8N5Ro5voHDZnZN+FjpmdIXnbn8dZ9rWGiPU/iUetQQA5E83qB/LgP
- G9TQ==
-X-Gm-Message-State: AGi0PuY5AEKmQ4l/dLpLNnQEXsYamklACQVA5ADB9o08TbeHnrxbzpMv
- LqX7YQRlPvOcqT85ZjatmYQPblObvNrWwgv5dsk=
-X-Google-Smtp-Source: APiQypLI0T3PwqTnxtxkqJnxwE8QGxknf0jO+EhxS8l79ny0FYLhK6MNtO3r7HSPV1qbh6C45cOjMeY+tdBR+PB/R0k=
-X-Received: by 2002:a9d:ef6:: with SMTP id 109mr474840otj.43.1586244928446;
- Tue, 07 Apr 2020 00:35:28 -0700 (PDT)
+ bh=MXkFKK0nBYOjUan987EYuLjdzpEpfg2o9ahd6UADeAM=;
+ b=EOMqSEXT4PJ5kg3tbVpdLakbVjK51ScnHyW8KAAqNp0trQ1JkiF8i7OfVKAHo5gV3p
+ cmhbLQgc1fdqwPYCSBo4WE9RMgUq/fIWqicC6GeGIU0Q9i0eUoD8xBLM7Co5tMqvwVHa
+ 5esoY7FCE4e0WI0SUdJ4pDaKahHwnDnQjsWoaPoHi9Bco66bwpXO12o1sZ+TOgMKvPJP
+ Pn8TpZ7Iz/DSIr+5FefVRdECD7567e8pCOOZnhOOckrNs8zyhP3wNYpqy451MQHK+3B4
+ SytY9hTq0zRM29PJh+YNa2LNSA4lTo0Dv9K+ExNJyUKlHwFqiKUI+NKebD+pKcdTr+zZ
+ b0FA==
+X-Gm-Message-State: AGi0Pua1/SzJTD+dMgOthLuzrT68Km53bFKexYw9U4/7J3hSXMr64UbW
+ NCIoTigcEtJE1S2Xjbwgq2SACy354N5UDl0j7mU=
+X-Google-Smtp-Source: APiQypJqyGDzl5VXE9Pp5Imd+j7wp2mMXSOcontkXnZYyqlWKTlr+lV+SmLAlDscNrlVYewbyYf/dBRu+iPg9yHiALI=
+X-Received: by 2002:a4a:7555:: with SMTP id g21mr840337oof.46.1586245005099;
+ Tue, 07 Apr 2020 00:36:45 -0700 (PDT)
 MIME-Version: 1.0
 References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200406173002.GC16885@pendragon.ideasonboard.com>
-In-Reply-To: <20200406173002.GC16885@pendragon.ideasonboard.com>
+ <1586191361-16598-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200406173425.GE16885@pendragon.ideasonboard.com>
+In-Reply-To: <20200406173425.GE16885@pendragon.ideasonboard.com>
 From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Tue, 7 Apr 2020 08:35:02 +0100
-Message-ID: <CA+V-a8sROBQpYvaP8TJ9fGYqOXT+uFsKhjnVBh0hZ2qS7yLQiQ@mail.gmail.com>
-Subject: Re: [PATCH v5 1/5] media: dt-bindings: media: i2c: Deprecate usage of
- the clock-frequency property
+Date: Tue, 7 Apr 2020 08:36:19 +0100
+Message-ID: <CA+V-a8tmj0SDpJWPL1B3GQ6FA=fLN-4-oCj5p4L0vAZSBg29vw@mail.gmail.com>
+Subject: Re: [PATCH v5 2/5] media: i2c: ov5645: Drop reading clock-frequency
+ dt-property
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_003530_921968_D3217DB2 
-X-CRM114-Status: GOOD (  19.87  )
+X-CRM114-CacheID: sfid-20200407_003647_318000_2956AC3B 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [prabhakar.csengg[at]gmail.com]
@@ -117,55 +117,76 @@ Hi Laurent,
 
 Thank you for the review.
 
-On Mon, Apr 6, 2020 at 6:30 PM Laurent Pinchart
+On Mon, Apr 6, 2020 at 6:34 PM Laurent Pinchart
 <laurent.pinchart@ideasonboard.com> wrote:
 >
 > Hi Prabhakar,
 >
 > Thank you for the patch.
 >
-> On Mon, Apr 06, 2020 at 05:42:37PM +0100, Lad Prabhakar wrote:
-> > OV5645 sensor supports input clock frequency ranging from 6MHz to 27MHz
-> > but the driver strictly expects this to be 24MHz (with tolerance of 1%)
-> > with this restrictions let the driver enforce the clock frequency
+> On Mon, Apr 06, 2020 at 05:42:38PM +0100, Lad Prabhakar wrote:
+> > Modes in the driver are based on xvclk frequency fixed to 24MHz, but where
+> > as the OV5645 sensor can support the xvclk frequency ranging from 6MHz to
+> > 24MHz. So instead making clock-frequency as dt-property just let the
+> > driver enforce the required clock frequency.
+> >
+> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > ---
+> >  drivers/media/i2c/ov5645.c | 14 +++++---------
+> >  1 file changed, 5 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
+> > index a6c17d15d754..52848fff8a08 100644
+> > --- a/drivers/media/i2c/ov5645.c
+> > +++ b/drivers/media/i2c/ov5645.c
+> > @@ -61,6 +61,8 @@
+> >  #define OV5645_SDE_SAT_U             0x5583
+> >  #define OV5645_SDE_SAT_V             0x5584
+> >
+> > +#define OV5645_XVCLK_FREQ            24000000
+> > +
+> >  /* regulator supplies */
+> >  static const char * const ov5645_supply_name[] = {
+> >       "vdddo", /* Digital I/O (1.8V) supply */
+> > @@ -1094,25 +1096,19 @@ static int ov5645_probe(struct i2c_client *client)
+> >               return PTR_ERR(ov5645->xclk);
+> >       }
+> >
+> > -     ret = of_property_read_u32(dev->of_node, "clock-frequency", &xclk_freq);
+> > +     ret = clk_set_rate(ov5645->xclk, OV5645_XVCLK_FREQ);
+> >       if (ret) {
+> > -             dev_err(dev, "could not get xclk frequency\n");
+> > +             dev_err(dev, "could not set xclk frequency\n");
+> >               return ret;
+> >       }
+> > -
 >
-> Maybe s/with/With/ ?
+> I think you can keep the blank line here.
 >
-OK will fix it next version.
+Oops my bad will drop that in next version.
 
 Cheers,
 --Prabhakar
 
-> > internally to 24MHz rather then being passed as dt-property.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
 > Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 >
-> > ---
-> >  Documentation/devicetree/bindings/media/i2c/ov5645.txt | 2 --
-> >  1 file changed, 2 deletions(-)
+> >       /* external clock must be 24MHz, allow 1% tolerance */
+> > +     xclk_freq = clk_get_rate(ov5645->xclk);
+> >       if (xclk_freq < 23760000 || xclk_freq > 24240000) {
+> >               dev_err(dev, "external clock frequency %u is not supported\n",
+> >                       xclk_freq);
+> >               return -EINVAL;
+> >       }
 > >
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > index 72ad992f77be..a55bb728ea48 100644
-> > --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > @@ -8,7 +8,6 @@ Required Properties:
-> >  - compatible: Value should be "ovti,ov5645".
-> >  - clocks: Reference to the xclk clock.
-> >  - clock-names: Should be "xclk".
-> > -- clock-frequency: Frequency of the xclk clock.
-> >  - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-> >    to the hardware pin PWDNB which is physically active low.
-> >  - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-> > @@ -37,7 +36,6 @@ Example:
+> > -     ret = clk_set_rate(ov5645->xclk, xclk_freq);
+> > -     if (ret) {
+> > -             dev_err(dev, "could not set xclk frequency\n");
+> > -             return ret;
+> > -     }
+> > -
+> >       for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
+> >               ov5645->supplies[i].supply = ov5645_supply_name[i];
 > >
-> >                       clocks = <&clks 200>;
-> >                       clock-names = "xclk";
-> > -                     clock-frequency = <24000000>;
-> >
-> >                       vdddo-supply = <&camera_dovdd_1v8>;
-> >                       vdda-supply = <&camera_avdd_2v8>;
 >
 > --
 > Regards,
