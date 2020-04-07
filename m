@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 063001A131C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:50:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A0171A131D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 Apr 2020 19:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kyNS1Fmxuf5CpqM05qfjLMhfgNKea9EbX0/8ejxAQUM=; b=nXz2Fi7HuxzmMNYn8rnEfeeONu
-	hwMbMjXXzJ5dChbX1WgVVGJOv0WzIQBbtLP7huLsXwmeWUtXBbc8y+ulf0H1V/oxfbJA+p31gqbid
-	MvmlpSge5/X2xaV71ig85pehsE3YbtOXJqZn8PzR1bh8/QFvzVzwzeY54B3g6CTuxwHIGZjujMog9
-	JSTrhewke6ZOUAvrCSz5ZiqMq3uBL9oajTSoX+1baEwYuJZ20063tvEvng7nXDRYz4XTh0y+ZJN5J
-	0yGuxKDwUGiGhbnoDua3xVx0PphqklPJ8maLDcNxCj2ulnOf2yYtZxcXEJr62TI1ZitCI4cAA2nfg
-	h7SbQt3A==;
+	bh=n8Cd0UbZnClA83Dj2HA2Zd5Qcv0A3rZLMT3mGRIaoJU=; b=noyjiOBHK/lIJBUw+lSvN4HowN
+	wP85sQcUWpmhcaUK/1aXFPWOHaZSJ8CcAYdcIJNCEdoPh8Z9qqJZOYLzfiz5v1ewONPTTe2Zikc6V
+	Klt1sxWVli5PTuC1e0Mzr0OmuJAvLYETjBvlxK4si4y9ZxVtauOlHPEY6w6hmqetuD85r4sg5twua
+	ebtT4H1+73Co/q2i3zl/5FrznBov/wf6dVnQKEi0KDVWqOMcDB2Hff1a8/JG8YTh8iO8AdbKbDosl
+	iKHtq0izOsJH2wYhvMoZIldRcoU4/Mm0wkdLXc9gTLSHmF/9K4yAvVuqr2wnMx8M2c7B64IHvoXjo
+	niKJKSDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLsMx-0002G0-DC; Tue, 07 Apr 2020 17:50:39 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jLsNF-0002XX-E7; Tue, 07 Apr 2020 17:50:57 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLsM4-0007XX-Fq
- for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:46 +0000
+ id 1jLsM6-0007at-Io
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 Apr 2020 17:49:48 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id F094F2972AE
+ (Authenticated sender: andrzej.p) with ESMTPSA id 53C822972A7
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org
-Subject: [RFC 3/8] thermal: Store thermal mode in a dedicated enum
-Date: Tue,  7 Apr 2020 19:49:21 +0200
-Message-Id: <20200407174926.23971-4-andrzej.p@collabora.com>
+Subject: [RFC 4/8] thermal: core: Introduce THERMAL_DEVICE_INITIAL
+Date: Tue,  7 Apr 2020 19:49:22 +0200
+Message-Id: <20200407174926.23971-5-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407174926.23971-1-andrzej.p@collabora.com>
 References: <20200407174926.23971-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_104944_800120_10FCA80C 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20200407_104946_779220_D2D92D72 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -80,177 +83,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Prepare for adding THERMAL_DEVICE_INITIAL mode.
+Add a new mode: THERMAL_DEVICE_INITIAL. It is dedicated to handle devices
+which must be initially DISABLED, but which are polled at startup
+nonetheless. THERMAL_DEVICE_INITIAL shall be reported as "enabled" in
+sysfs to keep the userspace interface intact.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/acpi/thermal.c                        | 27 +++++++++----------
- drivers/platform/x86/acerhdf.c                | 12 ++++++---
- .../intel/int340x_thermal/int3400_thermal.c   | 18 +++++--------
- 3 files changed, 27 insertions(+), 30 deletions(-)
+ drivers/thermal/thermal_sysfs.c | 4 ++--
+ include/linux/thermal.h         | 3 ++-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/acpi/thermal.c b/drivers/acpi/thermal.c
-index 19067a5e5293..a93b0412dd6b 100644
---- a/drivers/acpi/thermal.c
-+++ b/drivers/acpi/thermal.c
-@@ -172,7 +172,7 @@ struct acpi_thermal {
- 	struct acpi_thermal_trips trips;
- 	struct acpi_handle_list devices;
- 	struct thermal_zone_device *thermal_zone;
--	int tz_enabled;
-+	enum thermal_device_mode mode;
- 	int kelvin_offset;	/* in millidegrees */
- 	struct work_struct thermal_check_work;
+diff --git a/drivers/thermal/thermal_sysfs.c b/drivers/thermal/thermal_sysfs.c
+index aa99edb4dff7..6bfef21abce4 100644
+--- a/drivers/thermal/thermal_sysfs.c
++++ b/drivers/thermal/thermal_sysfs.c
+@@ -59,8 +59,8 @@ mode_show(struct device *dev, struct device_attribute *attr, char *buf)
+ 	if (result)
+ 		return result;
+ 
+-	return sprintf(buf, "%s\n", mode == THERMAL_DEVICE_ENABLED ? "enabled"
+-		       : "disabled");
++	return sprintf(buf, "%s\n", mode == THERMAL_DEVICE_DISABLED ? "disabled"
++		       : "enabled");
+ }
+ 
+ static ssize_t
+diff --git a/include/linux/thermal.h b/include/linux/thermal.h
+index 126913c6a53b..1bc6b7998093 100644
+--- a/include/linux/thermal.h
++++ b/include/linux/thermal.h
+@@ -48,8 +48,9 @@ struct thermal_cooling_device;
+ struct thermal_instance;
+ 
+ enum thermal_device_mode {
+-	THERMAL_DEVICE_DISABLED = 0,
++	THERMAL_DEVICE_INITIAL = 0,
+ 	THERMAL_DEVICE_ENABLED,
++	THERMAL_DEVICE_DISABLED,
  };
-@@ -500,7 +500,7 @@ static void acpi_thermal_check(void *data)
- {
- 	struct acpi_thermal *tz = data;
  
--	if (!tz->tz_enabled)
-+	if (tz->mode != THERMAL_DEVICE_ENABLED)
- 		return;
- 
- 	thermal_zone_device_update(tz->thermal_zone,
-@@ -534,8 +534,7 @@ static int thermal_get_mode(struct thermal_zone_device *thermal,
- 	if (!tz)
- 		return -EINVAL;
- 
--	*mode = tz->tz_enabled ? THERMAL_DEVICE_ENABLED :
--		THERMAL_DEVICE_DISABLED;
-+	*mode = tz->mode;
- 
- 	return 0;
- }
-@@ -544,27 +543,25 @@ static int thermal_set_mode(struct thermal_zone_device *thermal,
- 				enum thermal_device_mode mode)
- {
- 	struct acpi_thermal *tz = thermal->devdata;
--	int enable;
- 
- 	if (!tz)
- 		return -EINVAL;
- 
-+	if (mode != THERMAL_DEVICE_DISABLED &&
-+	    mode != THERMAL_DEVICE_ENABLED)
-+		return -EINVAL;
- 	/*
- 	 * enable/disable thermal management from ACPI thermal driver
- 	 */
--	if (mode == THERMAL_DEVICE_ENABLED)
--		enable = 1;
--	else if (mode == THERMAL_DEVICE_DISABLED) {
--		enable = 0;
-+	if (mode == THERMAL_DEVICE_DISABLED)
- 		pr_warn("thermal zone will be disabled\n");
--	} else
--		return -EINVAL;
- 
--	if (enable != tz->tz_enabled) {
--		tz->tz_enabled = enable;
-+	if (mode != tz->mode) {
-+		tz->mode = mode;
- 		ACPI_DEBUG_PRINT((ACPI_DB_INFO,
- 			"%s kernel ACPI thermal control\n",
--			tz->tz_enabled ? "Enable" : "Disable"));
-+			tz->mode == THERMAL_DEVICE_ENABLED ?
-+			"Enable" : "Disable"));
- 		acpi_thermal_check(tz);
- 	}
- 	return 0;
-@@ -913,7 +910,7 @@ static int acpi_thermal_register_thermal_zone(struct acpi_thermal *tz)
- 	if (ACPI_FAILURE(status))
- 		return -ENODEV;
- 
--	tz->tz_enabled = 1;
-+	tz->mode = THERMAL_DEVICE_ENABLED;
- 
- 	dev_info(&tz->device->dev, "registered as thermal_zone%d\n",
- 		 tz->thermal_zone->id);
-diff --git a/drivers/platform/x86/acerhdf.c b/drivers/platform/x86/acerhdf.c
-index d5188c1d688b..87e357017d4a 100644
---- a/drivers/platform/x86/acerhdf.c
-+++ b/drivers/platform/x86/acerhdf.c
-@@ -65,8 +65,10 @@
- 
- #ifdef START_IN_KERNEL_MODE
- static int kernelmode = 1;
-+static enum thermal_device_mode thermal_mode = THERMAL_DEVICE_ENABLED;
- #else
- static int kernelmode;
-+static enum thermal_device_mode thermal_mode = THERMAL_DEVICE_DISABLED;
- #endif
- 
- static unsigned int interval = 10;
-@@ -416,8 +418,7 @@ static int acerhdf_get_mode(struct thermal_zone_device *thermal,
- 	if (verbose)
- 		pr_notice("kernel mode fan control %d\n", kernelmode);
- 
--	*mode = (kernelmode) ? THERMAL_DEVICE_ENABLED
--			     : THERMAL_DEVICE_DISABLED;
-+	*mode = thermal_mode;
- 
- 	return 0;
- }
-@@ -435,10 +436,13 @@ static int acerhdf_set_mode(struct thermal_zone_device *thermal,
- 	    mode != THERMAL_DEVICE_ENABLED)
- 		return -EINVAL;
- 
--	if (mode == THERMAL_DEVICE_DISABLED && kernelmode)
-+	if (mode == THERMAL_DEVICE_DISABLED && kernelmode) {
- 		acerhdf_revert_to_bios_mode();
--	else if (mode == THERMAL_DEVICE_ENABLED && !kernelmode)
-+		thermal_mode = THERMAL_DEVICE_DISABLED;
-+	} else if (mode == THERMAL_DEVICE_ENABLED && !kernelmode) {
- 		acerhdf_enable_kernelmode();
-+		thermal_mode = THERMAL_DEVICE_ENABLED;
-+	}
- 
- 	return 0;
- }
-diff --git a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-index 634b943e9e3d..fcbd1b14fa74 100644
---- a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-+++ b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-@@ -44,7 +44,7 @@ static char *int3400_thermal_uuids[INT3400_THERMAL_MAXIMUM_UUID] = {
- struct int3400_thermal_priv {
- 	struct acpi_device *adev;
- 	struct thermal_zone_device *thermal;
--	int mode;
-+	enum thermal_device_mode mode;
- 	int art_count;
- 	struct art *arts;
- 	int trt_count;
-@@ -247,24 +247,20 @@ static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
- 				enum thermal_device_mode mode)
- {
- 	struct int3400_thermal_priv *priv = thermal->devdata;
--	bool enable;
- 	int result = 0;
- 
- 	if (!priv)
- 		return -EINVAL;
- 
--	if (mode == THERMAL_DEVICE_ENABLED)
--		enable = true;
--	else if (mode == THERMAL_DEVICE_DISABLED)
--		enable = false;
--	else
-+	if (mode != THERMAL_DEVICE_ENABLED &&
-+	    mode != THERMAL_DEVICE_DISABLED)
- 		return -EINVAL;
- 
--	if (enable != priv->mode) {
--		priv->mode = enable;
-+	if (mode != priv->mode) {
-+		priv->mode = mode;
- 		result = int3400_thermal_run_osc(priv->adev->handle,
--						 priv->current_uuid_index,
--						 enable);
-+						priv->current_uuid_index,
-+						mode == THERMAL_DEVICE_ENABLED);
- 	}
- 	return result;
- }
+ enum thermal_trip_type {
 -- 
 2.17.1
 
