@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EEC71A1F41
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 12:56:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5022E1A1F72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 13:08:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UGUm3xI3JMujG9F8ZIjY37PO3w2SbnUxrvO/yHo03bM=; b=kqngx8RUiCnsi7
-	4Ilm3GVUn0Ng7PrXOKqKmjTm5O8GuNYBc1EHarlIFOwBnWGEaTGXsJEmNoUe7QQ7dNoqPz3sLGEex
-	ialFREB+pByJKGOwr12mbnZxnrUMd3GvfVNYpNo6jatoCPJAUntWSKnesNrVKfGUAZ6gKV+A+z1wR
-	N7m+HmG8zWD1jfIUxiOX2eex/c7Y2ydZcvLw1M9YN/EBRlxuxn+PEhPbkzHHvxk1SkMurgULmXh2i
-	Qqcpu+TP+FRW1Qq3Gn7oC6ebSZ8PJnmF8gXhWMs1DxW/eJ+GUZNznIpAY1Mr+49v9yht95cuFH7fZ
-	9AuyJEWi/nIai7H14TZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p94ENiLCSG1UEcuMPVPMLRmP4dqpgVuqjzKz+4f1Ovs=; b=DyeadKqyWDvjwy
+	0bUc3dLh6ia5G/ssAFFL0mob8oVLsMOPeRiZEmw+lS3FQkTEFXQrYC/7ElRgFtFWzQ0tAhhz2/0Ub
+	BOJm3MLtkCn0N25fbi2AjhAmmySBKI4ixtN6tY06WnHJeaOt3AnBBcLQxnHxs0yvxM8rTJocvnMLp
+	d+PMC0jVVD98MGjLG5lmsJNzHCaOR2TNhFYLJKbUxPH2MNeuSCAaFn8ftVdhPQKqvC/LJVJy2Jl43
+	AaU+CLbx26H9rNzcsDhGjmw2KedGz66rSqABB7nbKJPJylNoCU/KbCE+lVrzShwKnZmdmG9Gn1RzM
+	GZM+WnXPr+pTu0sZNmaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM8NI-0004Pj-Su; Wed, 08 Apr 2020 10:56:04 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jM8ZP-0001oA-VI; Wed, 08 Apr 2020 11:08:35 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM8NB-0004O8-NG
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 10:55:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=w6dHPYMv2i9dm01SaFUvBAnpyuM/9O8Vy7ZNYT4fAcY=; b=HpNs0wdn7sIB4LHpoFt4EPV2v
- ugIr1QFTho4/bn6ATMEWn/ThHaK3CzQqQX1yYflUUX7BTC4wiB+EmHxzWF0CJrly9cZK1uLca/RZs
- /SbuAkNVXidImBiJRAWZ40Cf39MVWTyEkXLmYLqCza7ufVHCV3KO+QMqzNe4piJv7pYKWWv3St+BV
- ir7kkXkdJkNpBkP0ycIJ/q+pejyz/D3ndwa02/VkX/z9OwGn5jb5IxUb95LK9+XEQ/5JHOmMZNmS+
- /OizKNwKIM0oBYRYpDTTc0uohJEIOKRoXtBzSdxRCnW/JL30g5ZwWIT3PQv27Pj4tddYvUlHjjEud
- IMX7H5geg==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:43136)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jM8Mn-0005RT-IU; Wed, 08 Apr 2020 11:55:33 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jM8Mk-0001mF-Ry; Wed, 08 Apr 2020 11:55:30 +0100
-Date: Wed, 8 Apr 2020 11:55:30 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Hui Song <hui.song_1@nxp.com>
-Subject: Re: [PATCH v1] gpio: mpc8xxx: Add shutdown function.
-Message-ID: <20200408105530.GR25745@shell.armlinux.org.uk>
-References: <20200408102118.17572-1-hui.song_1@nxp.com>
+ id 1jM8ZE-0001l9-So
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 11:08:26 +0000
+Received: by mail-wr1-x443.google.com with SMTP id h9so7324828wrc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Apr 2020 04:08:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uz8UY4eWPJrlC/KHAdRsMpZsS+aRJqI8gmWI20mDg+s=;
+ b=fj4kbjPmHVx5Aq7luyrz5Ec2HyEpIV74NPD7KGBOSquGJHEe85K+/i+xc6OBHI/72N
+ gZqESCnrYhdXbm5qLhael05Y+uXXjB5ynaZRM7facAZgFZ9hLVZU+8D7pznC0wLnWJ1l
+ wBpFwJGlEbu2sy7ZUX8uF55hvdaPWv7rFCTJrmpLIRAYIRwFwHczLYnE/qXt2zSyHpxM
+ NF/wxFpK58xXcqQOTo83kaRjnOUldA3ba4aJpSzGyXiM5Hjpi3HW3O+cSovFVrZvScIA
+ aKnD0vdu+SPzC+oyAM8xB0P8K6wVr9MP/GezOAUCRVHfB2G/qpe+nhPGhte8Phhc03u5
+ EJww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uz8UY4eWPJrlC/KHAdRsMpZsS+aRJqI8gmWI20mDg+s=;
+ b=UBle+Pl9N1G3azA8gtRwJO5D3iomC9QLBfto9eDJabKeS8P6cYK6vp4XCTzeSfVcK6
+ qNgoA//Gkzw6OvkOfYNUu/N/vZ9PYXsSGP00R+3qT80822/LIkbK9OP264bUwj2XaCwA
+ GlVIyUwyRc+aGRRZPskbwhMvWf3DX2M8RWUEM4n62kKoRJHCrW/MnNoEXhXL9yeICRbe
+ 3XTkAtLGhcLXgoql86vS8nw5fIPeE/IlKy/dazb9ZvF5LwF0vGHtwCpFrKqEaO2ZVjEP
+ KURquJjeJQDcuM9VCCnqgl/bjO9kMVhlD5o4SUX64xxhoJSSOxSR5xlJqcc+vxaliJ+G
+ dFXw==
+X-Gm-Message-State: AGi0PubzteQY56qsPlOhDWPgoIkyXQo3OZ9sghfNvaD62Dchl7NphemM
+ Y4YrUHUZdt2NbjGopcrVSVqF0g==
+X-Google-Smtp-Source: APiQypIHRKuvNtlqBzAppetUZdYeMh5uW9upNPqzx1rWVmyvdyQVhoEmPglxFVAPk23/+WwHIT1oGQ==
+X-Received: by 2002:adf:db0a:: with SMTP id s10mr7916205wri.361.1586344103363; 
+ Wed, 08 Apr 2020 04:08:23 -0700 (PDT)
+Received: from localhost.localdomain ([37.120.50.78])
+ by smtp.gmail.com with ESMTPSA id i8sm37596253wrb.41.2020.04.08.04.08.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Apr 2020 04:08:22 -0700 (PDT)
+From: Robert Foss <robert.foss@linaro.org>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Marco Felsch <m.felsch@pengutronix.de>,
+ Tomasz Figa <tfiga@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v4 0/3] media: ov8856: Add devicetree support
+Date: Wed,  8 Apr 2020 13:08:13 +0200
+Message-Id: <20200408110816.2712841-1-robert.foss@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408102118.17572-1-hui.song_1@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_035557_759848_5E59C2C9 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20200408_040825_450390_ED482C4C 
+X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,76 +101,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Robert Foss <robert.foss@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 06:21:17PM +0800, Hui Song wrote:
-> From: Song Hui <hui.song_1@nxp.com>
-> 
-> The shutdown function needed to make interrupt handler to be NULL
-> when kexec execute.
-> 
-> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+This adds devicetree support to the ov8856 driver.
+In order to to aid debugging and enable future sensor
+modes to be supported, module revision detection is also added.
 
-Please improve the commit message.  You describe what change the patch
-is making (which we can see from reading the patch), but you don't
-explain why it is necessary, or really what problem the patch is
-solving.  I'm not aware of other implementations needing this for
-kexec to work.
 
-Thanks.
+Dongchun Zhu (1):
+  media: dt-bindings: ov8856: Document YAML bindings
 
-> ---
->  drivers/gpio/gpio-mpc8xxx.c | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
-> 
-> diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-> index 604dfec..a24e6c5 100644
-> --- a/drivers/gpio/gpio-mpc8xxx.c
-> +++ b/drivers/gpio/gpio-mpc8xxx.c
-> @@ -446,9 +446,21 @@ static int mpc8xxx_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static int mpc8xxx_shutdown(struct platform_device *pdev)
-> +{
-> +	struct mpc8xxx_gpio_chip *mpc8xxx_gc = platform_get_drvdata(pdev);
-> +
-> +	if (mpc8xxx_gc->irq) {
-> +		irq_set_chained_handler_and_data(mpc8xxx_gc->irqn, NULL, NULL);
-> +		irq_domain_remove(mpc8xxx_gc->irq);
-> +	}
-> +
-> +	return 0;
-> +}
->  static struct platform_driver mpc8xxx_plat_driver = {
->  	.probe		= mpc8xxx_probe,
->  	.remove		= mpc8xxx_remove,
-> +	.shutdown	= mpc8xxx_shutdown,
->  	.driver		= {
->  		.name = "gpio-mpc8xxx",
->  		.of_match_table	= mpc8xxx_gpio_ids,
-> -- 
-> 2.9.5
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Robert Foss (2):
+  media: ov8856: Add devicetree support
+  media: ov8856: Implement sensor module revision identification
+
+ .../devicetree/bindings/media/i2c/ov8856.yaml | 143 +++++++++++++
+ MAINTAINERS                                   |   1 +
+ drivers/media/i2c/ov8856.c                    | 196 ++++++++++++++++--
+ 3 files changed, 325 insertions(+), 15 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
