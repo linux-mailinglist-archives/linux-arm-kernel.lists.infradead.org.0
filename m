@@ -2,102 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 678601A2784
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 18:51:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59E0B1A27CA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 19:13:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zod/Uc50LKmKYVPjF7zY1hYYELNh7OxbNhZ64Sj85ZE=; b=cR3zb3cu90n6Se
-	BYsY0m2RmY+zE/FLUCuekaQ9OP7Kq9pSTm+kxgKpoqpU0y0O8yx7MttnRC6Pt+yWYbpNWrXO/ZtnR
-	yV6hOHIaPUPRPV4Y+kOVbnQznis9xD1rfgN35MQ6yd2KbfeZTGkgl/6PqZNcH8B8xxIqvIwehHdh1
-	QrFhm4ClalYA5JBOAs2+uNTkpvHz56AKnwkTduuEn4es5VXpVq6KmwooiWGJRM/oXUltLEe+dYlvq
-	eOoJz4HJJ2eJyhjx960VgRp9A8EzlhKcZAEjjNGpnkFDHfwtmMRW+mzZ1vdKQVOkBsOJzevmSVk8N
-	5PBF9zSkkpyrMHaFHYWQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P+aBYRTLW54/5WylIZ7KRC5fDHm32cZh6CQsT/SN8Ds=; b=GKsUcdj6h6M+fJ
+	slRJ2HSuVZJjQfj4WS5S/nktiVzc2zOa3bmr0HrjZHq7ozwIL2VD+aNyD+6WR00DGlLAnZh95GFVn
+	SXce22j5s++Rf/imLyjS6XuICtnstMvxyK6I+75D9wNoRR+ciLlpLvrEBLpiqe8OjE1QS2iHI8Hst
+	jbyEh8SwMbu5qxzeMwiINPrOWq7AaQ52agBugp/nG0aZb+dz4/BaUNKSoo9TMZC2GDCnpMabzCtgg
+	vjS9ae5lPEg8W5ZAZG+Yd97C4q7uYIx+bDsVS5iciFXLMqU7uKM3SDjHr5TW/6xsM+lnsYFxMuwQf
+	DSRccnsyqLYjoKgSs5kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMDug-0008R1-Sm; Wed, 08 Apr 2020 16:50:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMDuV-0008QJ-J1
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 16:50:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B25DD30E;
- Wed,  8 Apr 2020 09:50:42 -0700 (PDT)
-Received: from [192.168.3.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C11B63F52E;
- Wed,  8 Apr 2020 09:50:41 -0700 (PDT)
-Subject: Re: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
-To: Marc Zyngier <maz@kernel.org>
-References: <20200406150355.4859-1-james.morse@arm.com>
- <20200408110726.4d81bc3b@why> <281d91cb-6818-4393-55ce-6207c04d744b@arm.com>
- <92de4dc6e0c065eec528bb21c2d870cf@kernel.org>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- xsFNBFNPCKMBEAC+6GVcuP9ri8r+gg2fHZDedOmFRZPtcrMMF2Cx6KrTUT0YEISsqPoJTKld
- tPfEG0KnRL9CWvftyHseWTnU2Gi7hKNwhRkC0oBL5Er2hhNpoi8x4VcsxQ6bHG5/dA7ctvL6
- kYvKAZw4X2Y3GTbAZIOLf+leNPiF9175S8pvqMPi0qu67RWZD5H/uT/TfLpvmmOlRzNiXMBm
- kGvewkBpL3R2clHquv7pB6KLoY3uvjFhZfEedqSqTwBVu/JVZZO7tvYCJPfyY5JG9+BjPmr+
- REe2gS6w/4DJ4D8oMWKoY3r6ZpHx3YS2hWZFUYiCYovPxfj5+bOr78sg3JleEd0OB0yYtzTT
- esiNlQpCo0oOevwHR+jUiaZevM4xCyt23L2G+euzdRsUZcK/M6qYf41Dy6Afqa+PxgMEiDto
- ITEH3Dv+zfzwdeqCuNU0VOGrQZs/vrKOUmU/QDlYL7G8OIg5Ekheq4N+Ay+3EYCROXkstQnf
- YYxRn5F1oeVeqoh1LgGH7YN9H9LeIajwBD8OgiZDVsmb67DdF6EQtklH0ycBcVodG1zTCfqM
- AavYMfhldNMBg4vaLh0cJ/3ZXZNIyDlV372GmxSJJiidxDm7E1PkgdfCnHk+pD8YeITmSNyb
- 7qeU08Hqqh4ui8SSeUp7+yie9zBhJB5vVBJoO5D0MikZAODIDwARAQABzS1BbmRyZSBQcnp5
- d2FyYSAoQVJNKSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT7CwXsEEwECACUCGwMGCwkIBwMC
- BhUIAgkKCwQWAgMBAh4BAheABQJTWSV8AhkBAAoJEAL1yD+ydue63REP/1tPqTo/f6StS00g
- NTUpjgVqxgsPWYWwSLkgkaUZn2z9Edv86BLpqTY8OBQZ19EUwfNehcnvR+Olw+7wxNnatyxo
- D2FG0paTia1SjxaJ8Nx3e85jy6l7N2AQrTCFCtFN9lp8Pc0LVBpSbjmP+Peh5Mi7gtCBNkpz
- KShEaJE25a/+rnIrIXzJHrsbC2GwcssAF3bd03iU41J1gMTalB6HCtQUwgqSsbG8MsR/IwHW
- XruOnVp0GQRJwlw07e9T3PKTLj3LWsAPe0LHm5W1Q+euoCLsZfYwr7phQ19HAxSCu8hzp43u
- zSw0+sEQsO+9wz2nGDgQCGepCcJR1lygVn2zwRTQKbq7Hjs+IWZ0gN2nDajScuR1RsxTE4WR
- lj0+Ne6VrAmPiW6QqRhliDO+e82riI75ywSWrJb9TQw0+UkIQ2DlNr0u0TwCUTcQNN6aKnru
- ouVt3qoRlcD5MuRhLH+ttAcmNITMg7GQ6RQajWrSKuKFrt6iuDbjgO2cnaTrLbNBBKPTG4oF
- D6kX8Zea0KvVBagBsaC1CDTDQQMxYBPDBSlqYCb/b2x7KHTvTAHUBSsBRL6MKz8wwruDodTM
- 4E4ToV9URl4aE/msBZ4GLTtEmUHBh4/AYwk6ACYByYKyx5r3PDG0iHnJ8bV0OeyQ9ujfgBBP
- B2t4oASNnIOeGEEcQ2rjzsFNBFNPCKMBEACm7Xqafb1Dp1nDl06aw/3O9ixWsGMv1Uhfd2B6
- it6wh1HDCn9HpekgouR2HLMvdd3Y//GG89irEasjzENZPsK82PS0bvkxxIHRFm0pikF4ljIb
- 6tca2sxFr/H7CCtWYZjZzPgnOPtnagN0qVVyEM7L5f7KjGb1/o5EDkVR2SVSSjrlmNdTL2Rd
- zaPqrBoxuR/y/n856deWqS1ZssOpqwKhxT1IVlF6S47CjFJ3+fiHNjkljLfxzDyQXwXCNoZn
- BKcW9PvAMf6W1DGASoXtsMg4HHzZ5fW+vnjzvWiC4pXrcP7Ivfxx5pB+nGiOfOY+/VSUlW/9
- GdzPlOIc1bGyKc6tGREH5lErmeoJZ5k7E9cMJx+xzuDItvnZbf6RuH5fg3QsljQy8jLlr4S6
- 8YwxlObySJ5K+suPRzZOG2+kq77RJVqAgZXp3Zdvdaov4a5J3H8pxzjj0yZ2JZlndM4X7Msr
- P5tfxy1WvV4Km6QeFAsjcF5gM+wWl+mf2qrlp3dRwniG1vkLsnQugQ4oNUrx0ahwOSm9p6kM
- CIiTITo+W7O9KEE9XCb4vV0ejmLlgdDV8ASVUekeTJkmRIBnz0fa4pa1vbtZoi6/LlIdAEEt
- PY6p3hgkLLtr2GRodOW/Y3vPRd9+rJHq/tLIfwc58ZhQKmRcgrhtlnuTGTmyUqGSiMNfpwAR
- AQABwsFfBBgBAgAJBQJTTwijAhsMAAoJEAL1yD+ydue64BgP/33QKczgAvSdj9XTC14wZCGE
- U8ygZwkkyNf021iNMj+o0dpLU48PIhHIMTXlM2aiiZlPWgKVlDRjlYuc9EZqGgbOOuR/pNYA
- JX9vaqszyE34JzXBL9DBKUuAui8z8GcxRcz49/xtzzP0kH3OQbBIqZWuMRxKEpRptRT0wzBL
- O31ygf4FRxs68jvPCuZjTGKELIo656/Hmk17cmjoBAJK7JHfqdGkDXk5tneeHCkB411p9WJU
- vMO2EqsHjobjuFm89hI0pSxlUoiTL0Nuk9Edemjw70W4anGNyaQtBq+qu1RdjUPBvoJec7y/
- EXJtoGxq9Y+tmm22xwApSiIOyMwUi9A1iLjQLmngLeUdsHyrEWTbEYHd2sAM2sqKoZRyBDSv
- ejRvZD6zwkY/9nRqXt02H1quVOP42xlkwOQU6gxm93o/bxd7S5tEA359Sli5gZRaucpNQkwd
- KLQdCvFdksD270r4jU/rwR2R/Ubi+txfy0dk2wGBjl1xpSf0Lbl/KMR5TQntELfLR4etizLq
- Xpd2byn96Ivi8C8u9zJruXTueHH8vt7gJ1oax3yKRGU5o2eipCRiKZ0s/T7fvkdq+8beg9ku
- fDO4SAgJMIl6H5awliCY2zQvLHysS/Wb8QuB09hmhLZ4AifdHyF1J5qeePEhgTA+BaUbiUZf
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <d49f5180-aa5a-a04c-836a-0b30336d1d7c@arm.com>
-Date: Wed, 8 Apr 2020 17:50:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jMEG4-00051s-48; Wed, 08 Apr 2020 17:13:00 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMEFw-0004zY-PA
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 17:12:55 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id C2D5DFB03;
+ Wed,  8 Apr 2020 19:12:37 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 0PxCznq62D1s; Wed,  8 Apr 2020 19:12:33 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id D62B4400E8; Wed,  8 Apr 2020 19:12:32 +0200 (CEST)
+Date: Wed, 8 Apr 2020 19:12:32 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Lee Jones <lee.jones@linaro.org>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Robert Chiras <robert.chiras@nxp.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v10 0/2] drm: bridge: Add NWL MIPI DSI host controller
+ support
+Message-ID: <20200408171232.GA4264@bogon.m.sigxcpu.org>
+References: <cover.1584730033.git.agx@sigxcpu.org>
 MIME-Version: 1.0
-In-Reply-To: <92de4dc6e0c065eec528bb21c2d870cf@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <cover.1584730033.git.agx@sigxcpu.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_095043_714259_2896E565 
-X-CRM114-Status: GOOD (  24.73  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200408_101253_135110_FCD2D62E 
+X-CRM114-Status: GOOD (  39.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,109 +78,303 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <julien.thierry.kdev@gmail.com>,
- James Morse <james.morse@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDgvMDQvMjAyMCAxNToxOSwgTWFyYyBaeW5naWVyIHdyb3RlOgoKSGkgTWFyYywKCj4gT24g
-MjAyMC0wNC0wOCAxMzoxMywgQW5kcsOpIFByenl3YXJhIHdyb3RlOgo+PiBPbiAwOC8wNC8yMDIw
-IDExOjA3LCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+Cj4+IEhpIE1hcmMsCj4+Cj4+PiBIaSBKYW1l
-cywKPj4+Cj4+PiBUaGFua3MgZm9yIGxvb2tpbmcgaW50byB0aGlzLgo+Pj4KPj4+IE9uIE1vbizC
-oCA2IEFwciAyMDIwIDE2OjAzOjU1ICswMTAwCj4+PiBKYW1lcyBNb3JzZSA8amFtZXMubW9yc2VA
-YXJtLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4+IGt2bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCgp
-IG5lZWRzIHRvIGdldCB0aGUgYXJjaF90aW1lcl9jb250ZXh0Cj4+Pj4gZm9yCj4+Pj4gYSBwYXJ0
-aWN1bGFyIHZjcHUsIGFuZCB1c2VzIGt2bV9nZXRfcnVubmluZ192Y3B1KCkgdG8gZmluZCBpdC4K
-Pj4+Pgo+Pj4+IGt2bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCgpIG1heSBiZSBjYWxsZWQg
-dG8gaGFuZGxlIGEgdXNlci1zcGFjZQo+Pj4+IHdyaXRlIHRvIHRoZSByZWRpc3RyaWJ1dG9yLCB3
-aGVyZSB0aGUgdmNwdSBpcyBub3QgbG9hZGVkLiBUaGlzIGNhdXNlcwo+Pj4+IGt2bV9nZXRfcnVu
-bmluZ192Y3B1KCkgdG8gcmV0dXJuIE5VTEw6Cj4+Pj4gfCBVbmFibGUgdG8gaGFuZGxlIGtlcm5l
-bCBwYWdpbmcgcmVxdWVzdCBhdCB2aXJ0dWFsIGFkZHJlc3MKPj4+PiAwMDAwMDAwMDAwMDAxZWMw
-Cj4+Pj4gfCBNZW0gYWJvcnQgaW5mbzoKPj4+PiB8wqDCoCBFU1IgPSAweDk2MDAwMDA0Cj4+Pj4g
-fMKgwqAgRUMgPSAweDI1OiBEQUJUIChjdXJyZW50IEVMKSwgSUwgPSAzMiBiaXRzCj4+Pj4gfMKg
-wqAgU0VUID0gMCwgRm5WID0gMAo+Pj4+IHzCoMKgIEVBID0gMCwgUzFQVFcgPSAwCj4+Pj4gfCBE
-YXRhIGFib3J0IGluZm86Cj4+Pj4gfMKgwqAgSVNWID0gMCwgSVNTID0gMHgwMDAwMDAwNAo+Pj4+
-IHzCoMKgIENNID0gMCwgV25SID0gMAo+Pj4+IHwgdXNlciBwZ3RhYmxlOiA0ayBwYWdlcywgNDgt
-Yml0IFZBcywgcGdkcD0wMDAwMDAwMDNjYmY5MDAwCj4+Pj4gfCBbMDAwMDAwMDAwMDAwMWVjMF0g
-cGdkPTAwMDAwMDAwMDAwMDAwMDAKPj4+PiB8IEludGVybmFsIGVycm9yOiBPb3BzOiA5NjAwMDAw
-NCBbIzFdIFBSRUVNUFQgU01QCj4+Pj4gfCBNb2R1bGVzIGxpbmtlZCBpbjogcjgxNjkgcmVhbHRl
-ayBlZml2YXJmcyBpcF90YWJsZXMgeF90YWJsZXMKPj4+PiB8IENQVTogMSBQSUQ6IDI2MTUgQ29t
-bTogcWVtdS1zeXN0ZW0tYWFyIE5vdCB0YWludGVkIDUuNi4wLXJjNyAjMzAKPj4+PiB8IEhhcmR3
-YXJlIG5hbWU6IE1hcnZlbGwgbXZlYnVfYXJtYWRhLTM3eHgvbXZlYnVfYXJtYWRhLTM3eHgsIEJJ
-T1MKPj4+PiAyMDE4LjAzLWRldmVsLTE4LjEyLjMtZ2M5YWE5MmMtYXJtYmlhbiAwMi8yMC8yMDE5
-Cj4+Pj4gfCBwc3RhdGU6IDAwMDAwMDg1IChuemN2IGRhSWYgLVBBTiAtVUFPKQo+Pj4+IHwgcGMg
-OiBrdm1fYXJjaF90aW1lcl9nZXRfaW5wdXRfbGV2ZWwrMHgxYy8weDY4Cj4+Pj4gfCBsciA6IGt2
-bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCsweDFjLzB4NjgKPj4+Pgo+Pj4+IHwgQ2FsbCB0
-cmFjZToKPj4+PiB8wqAga3ZtX2FyY2hfdGltZXJfZ2V0X2lucHV0X2xldmVsKzB4MWMvMHg2OAo+
-Pj4+IHzCoCB2Z2ljX2dldF9waHlzX2xpbmVfbGV2ZWwrMHgzYy8weDkwCj4+Pj4gfMKgIHZnaWNf
-bW1pb193cml0ZV9zZW5hYmxlKzB4ZTQvMHgxMzAKPj4+PiB8wqAgdmdpY191YWNjZXNzKzB4ZTAv
-MHgxMDAKPj4+PiB8wqAgdmdpY192M19yZWRpc3RfdWFjY2VzcysweDVjLzB4ODAKPj4+PiB8wqAg
-dmdpY192M19hdHRyX3JlZ3NfYWNjZXNzKzB4ZjAvMHgyMDAKPj4+PiB8wqAgbnZnaWNfdjNfc2V0
-X2F0dHIrMHgyMzQvMHgyNTAKPj4+PiB8wqAga3ZtX2RldmljZV9pb2N0bF9hdHRyKzB4YTQvMHhm
-OAo+Pj4+IHzCoCBrdm1fZGV2aWNlX2lvY3RsKzB4N2MvMHhjMAo+Pj4+IHzCoCBrc3lzX2lvY3Rs
-KzB4MWZjLzB4YzE4Cj4+Pj4gfMKgIF9fYXJtNjRfc3lzX2lvY3RsKzB4MjQvMHgzMAo+Pj4+IHzC
-oCBkb19lbDBfc3ZjKzB4N2MvMHgxNDgKPj4+PiB8wqAgZWwwX3N5bmNfaGFuZGxlcisweDEzOC8w
-eDI1OAo+Pj4+IHzCoCBlbDBfc3luYysweDE0MC8weDE4MAo+Pj4+IHwgQ29kZTogOTEwMDAzZmQg
-ZjkwMDBiZjMgMmEwMDAzZjMgOTdmZjY1MGMgKGI5NWVjMDAxKQo+Pj4+IHwgLS0tWyBlbmQgdHJh
-Y2UgODEyODc2MTJkOTNmMWU3MCBdLS0tCj4+Pj4gfCBub3RlOiBxZW11LXN5c3RlbS1hYXJbMjYx
-NV0gZXhpdGVkIHdpdGggcHJlZW1wdF9jb3VudCAxCj4+Pj4KPj4+PiBMb2FkaW5nIHRoZSB2Y3B1
-IGRvZXNuJ3QgbWFrZSBhIGxvdCBvZiBzZW5zZSBmb3IgaGFuZGxpbmcgYSBkZXZpY2UKPj4+PiBp
-b2N0bCgpLAo+Pj4+IHNvIGluc3RlYWQgcGFzcyB0aGUgdmNwdSB0aHJvdWdoIHRvCj4+Pj4ga3Zt
-X2FyY2hfdGltZXJfZ2V0X2lucHV0X2xldmVsKCkuIEl0cwo+Pj4+IG5vdCBjbGVhciB0aGF0IGFu
-IGludGlkIG1ha2VzIG11Y2ggc2Vuc2Ugd2l0aG91dCB0aGUgcGFpcmVkIHZjcHUuCj4+Pgo+Pj4g
-SSBkb24ndCBmdWxseSBhZ3JlZSB3aXRoIHRoZSBhbmFseXNpcywgUmVtZW1iZXIgd2UgYXJlIGxv
-b2tpbmcgYXQgdGhlCj4+PiBzdGF0ZSBvZiB0aGUgcGh5c2ljYWwgaW50ZXJydXB0IGFzc29jaWF0
-ZWQgd2l0aCBhIHZpcnR1YWwgaW50ZXJydXB0LCBzbwo+Pj4gdGhlIHZjcHUgZG9lc24ndCBxdWl0
-ZSBtYWtlIHNlbnNlIGhlcmUgaWYgaXQgaXNuJ3QgbG9hZGVkLgo+Pgo+PiBCdXQgd2Fzbid0IGl0
-IHRoYXQgdGhpcyBmdW5jdGlvbiBpcyBtZWFudCB0byBzcGVjaWZpY2FsbHkgZGVhbCB3aXRoIHRo
-aXMKPj4gKndpdGhvdXQqIGdvaW5nIHRvIHRoZSBoYXJkd2FyZSAod2hpY2ggaXMgY29zdGx5LCBo
-ZW5jZSB0aGlzCj4+IG9wdGltaXNhdGlvbik/IEJlY2F1c2UgZm9yIHRoZSB0aW1lciB3ZSAqY2Fu
-KiB3b3JrIG91dCB0aGUgbG9naWNhbCBJUlEKPj4gbGluZSBzdGF0ZSBieSBleGFtaW5pbmcgb3Vy
-IHNhdmVkIHN0YXRlPyBBbmQgdGhpcyBpcyB3aGF0IHdlIGRvIGluCj4+IGt2bV90aW1lcl9zaG91
-bGRfZmlyZSgpLCB3aGVuIHRpbWVyX2N0eC0+bG9hZGVkIGlzIGZhbHNlLgo+IAo+IFllcywgYnV0
-IHRoYXQncyBqdXN0IGEgc3BlY2lhbGl6YXRpb24gb2YgYSBtb3JlIGdlbmVyaWMgaW50ZXJmYWNl
-LCB3aGljaCBpcwo+ICJpbnNwZWN0IHRoZSBzdGF0ZSBvZiB0aGlzICpwaHlzaWNhbCogaW50aWQi
-LiBUaGUgZmFjdCB0aGF0IHdlIGFyZSBhYmxlCj4gdG8gZG8KPiBpdCBpbiBhIHNwZWNpYWwgd2F5
-IGZvciB0aGUgdGltZXIgZG9lc24ndCBjaGFuZ2UgdGhlIG5hdHVyZSBvZiB0aGUKPiBpbnRlcmZh
-Y2UuCgoKPiAKPj4gV2hpY2ggZm9yIG1lIHRoaXMgc291bmRzIGxpa2UgdGhlIHJpZ2h0IHRoaW5n
-IHRvIGRvIGluIHRoaXMgc2l0dWF0aW9uOgo+PiB0aGUgVkNQVSAoYW5kIHRoZSB0aW1lcikgaXMg
-bm90IGxvYWRlZCwgc28gd2UgY2hlY2sgb3VyIHNhdmVkIHN0YXRlIGFuZAo+PiBjb25zdHJ1Y3Qg
-dGhlIGxvZ2ljYWwgbGluZSBsZXZlbC4gV2UganVzdCBuZWVkIGEgdmFsaWQgVkNQVSBzdHJ1Y3Qg
-dG8KPj4gYWNoaWV2ZSB0aGlzLCBhbmQgaG9wZSBmb3IgdGhlIHZpcnR1YWwgdGltZXIgdG8gYmUg
-YWxyZWFkeSBpbml0aWFsaXNlZC4KPj4KPj4gRG8gSSBtaXNzIHNvbWV0aGluZyBoZXJlPwo+IAo+
-IFllcy4gWW91IGFyZSBtaXNzaW5nIHRoYXQgdGhlICppbnRlcmZhY2UqIGlzIGdlbmVyaWMsIGFu
-ZCB5b3UgY2FuIHJlcGxhY2UKPiBpdCB3aXRoIGFueXRoaW5nIHlvdSB3YW50LiBDYXNlIGluIHBv
-aW50LCB3aGF0IHdlIGRvIHdoZW4gZ2V0X2lucHV0X2xldmVsCj4gaXMgTlVMTC4KPiAKPj4gQWxz
-byB0byBtZSBpdCBzb3VuZCBsaWtlIHRoZSBpbnRlcmZhY2UgZm9yIHRoaXMgZnVuY3Rpb24gaXMg
-c2xpZ2h0bHkKPj4gbGFja2luZywgYmVjYXVzZSBqdXN0IGFuIGludGlkIGlzIG5vdCBlbm91Z2gg
-dG8gdW5pcXVlbHkgaWRlbnRpZnkgYW4KPj4gSVJRLiBJdCB3YXMganVzdCBmaW5lIHNvIGZhciBi
-ZWNhdXNlIG9mIHRoaXMgc3BlY2lhbCB1c2UgY2FzZS4KPiAKPiBUaGlzIGlzIGEgKnBoeXNpY2Fs
-KiBpbnRpZC4gCgpXYWl0LCBJIGFtIGNvbmZ1c2VkLCB0aGUgdHlwZSBkZWNsYXJhdGlvbiBpbiBz
-dHJ1Y3QgdmdpY19pcnEgc2F5czoKLi4uCiAgICAgICAgYm9vbCAoKmdldF9pbnB1dF9sZXZlbCko
-aW50IHZpbnRpZCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eCkFsc28g
-aW4gdmdpYy5jOnZnaWNfZ2V0X3BoeXNfbGluZV9sZXZlbCgpIHdlIGNhbGwKaXJxLT5nZXRfaW5w
-dXRfbGV2ZWwoaXJxLT5pbnRpZCksIHdoaWNoIGlzIHRoZSB2aXJ0dWFsIGludGlkLgoKQnV0IEkg
-c2VlIHRoYXQgdGhlIHBoeXNpY2FsIGludGlkIG1ha2VzIG1vcmUgc2Vuc2UgaGVyZSAoaW4gdGhl
-IHNwaXJpdApvZjogcHJvdmlkZSBhIHNob3J0Y3V0IGZvciBwb2tpbmcgdGhlIEdJQyBmb3IgdGhl
-IGFzc29jaWF0ZWQgaHdpcnEpLCBidXQKc2hvdWxkbid0IHdlIHRoZW4gcGFzcyBhdCBsZWFzdCBp
-cnEtPmh3aW50aWQgKHdoaWNoIGp1c3QgaGFwcGVucyB0byBiZQp0aGUgc2FtZSBpbiB0aGUgYXJj
-aCB0aW1lciBjYXNlKT8KCj4gSXQgY2FuIG9ubHkgbWVhbiBvbmUgc2luZ2xlIHRoaW5nLCBhbmQg
-aXQKPiBvbmx5IG1ha2VzIHNlbnNlIGluIHRoZSBjb250ZXh0IG9mIGEgdmNwdSBpZiB0aGUgZGV2
-aWNlIGdldHMKPiBjb250ZXh0LXN3aXRjaGVkLgoKSSBzZWUsIGl0J3MgInRoaXMgUFBJIG9uIHRo
-ZSBjdXJyZW50IENQVSwgb3IgdGhpcyBTUEkvTFBJIGluIHRoZQpzeXN0ZW0iLCBhbmQgdGhpcyBj
-YWxsIGlzIGFsd2F5cyBleHBlY3RlZCB0byBoYXBwZW4gZHVyaW5nIGEgY29udGV4dCBzd2l0Y2gu
-CkFuZCB0aGVuIGluZGVlZCBwYXNzaW5nIGEgVkNQVSBkb2Vzbid0IG1ha2Ugc2Vuc2UuCgpUaGFu
-a3MgZm9yIHRoZSBleHBsYW5hdGlvbiwgSSBndWVzcyB3ZSBzaG91bGQgY2xhcmlmeSB0aGlzIGlu
-IHRoZSBjb2RlCnRoZW4gKGJlY2F1c2UgbXkgc3VnZ2VzdGlvbiB3YXMgYmFzZWQgb24gdGhlIGlk
-ZWEgdGhhdCB0aGlzIGlzIHdhcyBhCnZpcnR1YWwgSVJRKS4KCkNoZWVycywKQW5kcmUKCj4gSSBj
-YW4gcmVtb3ZlIHRoZSBhYm92ZSBmYXN0IHBhdGggZW50aXJlbHksIGFuZCBldmVyeXRoaW5nIHdp
-bGwgc3RpbGwgd29yawo+IHRoZSBzYW1lIHdheSwgd2l0aG91dCBoYXZpbmcgdG8gcGFzcyBhbnkg
-dmNwdSwgYmVjYXVzZSB0aGUgKmNvbnRleHQqIGlzCj4gd2hhdCBtYXR0ZXJzLgo+IAo+IFRoYW5r
-cywKPiAKPiDCoMKgwqDCoMKgwqDCoCBNLgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi,
+On Fri, Mar 20, 2020 at 07:49:08PM +0100, Guido G=FCnther wrote:
+> This adds initial support for the NWL MIPI DSI Host controller found on i=
+.MX8
+> SoCs.
+
+Is there anything in can do to get this into drm-misc?
+Cheers,
+ -- Guido
+
+> =
+
+> It adds support for the i.MX8MQ but the same IP core can also be found on=
+ e.g.
+> i.MX8QXP. I added the necessary hooks to support other imx8 variants but =
+since
+> I only have imx8mq boards to test I omitted the platform data for
+> other SoCs.
+
+
+> =
+
+> The code is based on NXPs BSP so I added Robert Chiras as Co-authored-by.
+> =
+
+> The most notable changes over the BSP driver are
+>  - Calculate HS mode timing from phy_configure_opts_mipi_dphy
+>  - Perform all clock setup via DT
+>  - Merge nwl-imx and nwl drivers
+>  - Add B0 silion revision quirk
+>  - become a bridge driver to hook into mxsfb / dcss
+>    imx-display-subsystem so it makes sense to make it drive a bridge for =
+dsi as
+>    well).
+>  - Use panel_bridge to attach the panel
+>  - Use multiplex framework instead of accessing syscon directly
+> =
+
+> This has been tested on a Librem 5 devkit using mxsfb with Robert's patch=
+es[1]
+> and the mainline rocktech-jh057n00900 DSI panel driver on next-20200317 a=
+nd on
+> the Librem5 with the a Mantix MLAF057WE51-X DSI panel driver (not yet mai=
+nline)
+> The DCSS (submitted for mainline inclusion now too) can also act as input
+> source.
+> =
+
+> Changes from v10:
+> - Per review comments by Sam Ravnborg
+>   https://lore.kernel.org/dri-devel/20200318214639.GA971@ravnborg.org/
+>   - Drop header-test-y since kernel lost support
+>   - Handle drm_bridge_attach's new flags argument
+>   - Add Acked-by: to binding patch, thanks!
+> - Move to next-20200319
+> =
+
+> Changes from v9:
+> - Per review comments by Robert Chiras
+>   https://lore.kernel.org/dri-devel/1575366594.6423.61.camel@nxp.com/
+>   - don't mix DSI host and bridge initialization
+>   - only select output source once
+>   - defer probe when panel is not ready to fix usage as a module
+>   - use correct reset sequence as described by Robert
+>     (and provided by NWL)
+>   - use mode->clock instead of mode->crtc_clock
+> - Add tested by from Martin Kepplinger, thanks!
+> - Drop platform specific data (as suggested previously by Laurent Pinchar=
+t and
+>   Andrzej Hajda) since imx8q* needs another set of abstractions with the =
+new
+>   reset sequence and that's easier to do when adding imx8q* support rathe=
+r then
+>   adding wrong abstraction now.
+> - Update bindings to use proper clock and irq names to make the example m=
+atch
+>   reality more closely.
+> - Use `fallthrough;` instead of /* Fall through */ in switch statements
+> - Move to next-20200226
+> =
+
+> Changes from v8:
+> - Drop reset quirk. It's not needed with mxsfb and sometimes triggers a s=
+hifted display.
+> =
+
+> Changes from v7:
+> - Per review comments by Andrzej Hajda
+>   https://lore.kernel.org/linux-arm-kernel/c86b7ca2-7799-eafd-c380-e4b551=
+520837@samsung.com/
+>   - Drop spare empty line
+>   - handle nwl_dsi_write errors
+>   - better handle read errors
+>   - unwind in case of error in nwl_dsi_enable
+>   - use bridge_to_dsi() instead of accessing driver_private
+>   - don't log on -EPROBEDEFER when fething the reset controller
+>   - use endpoint number to determine input
+> - Spotted by kbuild test robot <lkp@intel.com>
+>   https://lore.kernel.org/linux-arm-kernel/201909230644.qfSKbNf9%25lkp@in=
+tel.com/
+>   Use signed return type for nwl_dsi_get_dpi_pixel_format
+> - Drop connector type from drm_panel_bridge_add
+> - Don't forget to set an error value on dsi reads
+> =
+
+> Changes from v5:
+> - Per review comments by Andrzej Hajda
+>   https://lists.freedesktop.org/archives/dri-devel/2019-September/235281.=
+html
+>   - Fix include file ordering
+>   - Add a comment to nwl_dsi_platform_data that will allow to add support
+>     at least for the i.MX8QM
+>   - Merge driver into a single file plus the register defs in a separate =
+header
+> - Make more functions and structs static
+> =
+
+> Changes from v4:
+> - Collect Reviewed-by: from Rob Herring, thanks!
+>   https://lists.freedesktop.org/archives/dri-devel/2019-September/233979.=
+html
+> - Spotted by kbuild test robot <lkp@intel.com>
+>   https://lists.freedesktop.org/archives/dri-devel/2019-September/233860.=
+html
+>   https://lists.freedesktop.org/archives/dri-devel/2019-September/233863.=
+html
+>   - fix format string for size_t
+>   - Use DIV64_U64_ROUND_UP to fix build on 32 bit architectures
+>     We can't use simple shift sind d and n are similar in size and
+>     we need full precision
+> - Fix debug cfg_t_post debug print out
+> - Avoid PSEC_PER_SEC
+> - Move timeout / overflow handling out of nwl_dsi_finish_transmission,
+>   it would never end up being reported since the call to the function
+>   was guarded by flags.
+> - Drop 'support for' from KConfig title to make it match the other
+>   drivers in that submenu
+> =
+
+> Changes from v3:
+> - Per review comments by Robert Chiras
+>   https://lists.freedesktop.org/archives/dri-devel/2019-August/232580.html
+>   - Add Robert's {Signed-off,Tested}-by:
+>   - Respect number of lanes when calculting bandwidth limits
+>   - Drop duplicate NWL_DSI_ENABLE_MULT_PKTS setup
+> - Per testing by Rober Chiras
+>   https://lists.freedesktop.org/archives/dri-devel/2019-August/233688.html
+>   - Drop duplicate (and too early) drm_bridge_add() in nwl_dsi_probe() th=
+at
+>     made mxsfb fail to connect to the bridge since the panel_bridge was n=
+ot up
+>     yet. drm_bridge_add() happens in nwl_dsi_host_attach() where after the
+>     panel_bridge was set up.
+> - Per review comments by Rob Herring on bindings
+>   https://lists.freedesktop.org/archives/dri-devel/2019-August/233196.html
+>   - drop description from power-domains and resets
+>   - allow BSD 2 clause license as well
+>   - make ports more specific
+>   - add #address-cells, #size-cells as required
+>   - use additionalProperties
+>   - panel is of type object
+> =
+
+> Changes from v2:
+> - Per review comments by Rob Herring
+>   https://lists.freedesktop.org/archives/dri-devel/2019-August/230448.html
+>   - bindings:
+>     - Simplify by restricting to fsl,imx8mq-nwl-dsi
+>     - document reset lines
+>     - add port@{0,1}
+>     - use a real compatible string for the panel
+>     - resets are required
+> - Per review comments by Arnd Bergmann
+>   https://lists.freedesktop.org/archives/dri-devel/2019-August/230868.html
+>   - Don't access iomuxc_gpr regs directly. This allows us to drop the
+>     first patch in the series with the iomuxc_gpr field defines.
+> - Per review comments by Laurent Pinchart
+>   Fix wording in bindings
+> - Add mux-controls to bindings
+> - Don't print error message on dphy probe deferral
+> =
+
+> Changes from v1:
+> - Per review comments by Sam Ravnborg
+>   https://lists.freedesktop.org/archives/dri-devel/2019-July/228130.html
+>   - Change binding docs to YAML
+>   - build: Don't always visit imx-nwl/
+>   - build: Add header-test-y
+>   - Sort headers according to DRM convention
+>   - Use drm_display_mode instead of videmode
+> - Per review comments by Fabio Estevam
+>   https://lists.freedesktop.org/archives/dri-devel/2019-July/228299.html
+>   - Don't restrict build to ARCH_MXC
+>   - Drop unused includes
+>   - Drop unreachable code in imx_nwl_dsi_bridge_mode_fixup()
+>   - Drop remaining calls of dev_err() and use DRM_DEV_ERR()
+>     consistently.
+>   - Use devm_platform_ioremap_resource()
+>   - Drop devm_free_irq() in probe() error path
+>   - Use single line comments where sufficient
+>   - Use <linux/time64.h> instead of defining USEC_PER_SEC
+>   - Make input source select imx8 specific
+>   - Drop <asm/unaligned.h> inclusion (after removal of get_unaligned_le32)
+>   - Drop all EXPORT_SYMBOL_GPL() for functions used in the same module
+>     but different source files.
+>   - Drop nwl_dsi_enable_{rx,tx}_clock() by invoking clk_prepare_enable()
+>     directly
+>   - Remove pointless comment
+> - Laurent Pinchart
+>   https://lists.freedesktop.org/archives/dri-devel/2019-July/228313.html
+>   https://lists.freedesktop.org/archives/dri-devel/2019-July/228308.html
+>   - Drop (on iMX8MQ) unused csr regmap
+>   - Use NWL_MAX_PLATFORM_CLOCKS everywhere
+>   - Drop get_unaligned_le32() usage
+>   - remove duplicate 'for the' in binding docs
+>   - Don't include unused <linux/clk-provider.h>
+>   - Don't include unused <linux/component.h>
+>   - Drop dpms_mode for tracking state, trust the drm layer on that
+>   - Use pm_runtime_put() instead of pm_runtime_put_sync()
+>   - Don't overwrite encoder type
+>   - Make imx_nwl_platform_data const
+>   - Use the reset controller API instead of open coding that platform spe=
+cific
+>     part
+>   - Use <linux/bitfield.h> intead of making up our own defines
+>   - name mipi_dsi_transfer less generic: nwl_dsi_transfer
+>   - ensure clean in .remove by calling mipi_dsi_host_unregister.
+>   - prefix constants by NWL_DSI_
+>   - properly format transfer_direction enum
+>   - simplify platform clock handling
+>   - Don't modify state in mode_fixup() and use mode_set() instead
+>   - Drop bridge detach(), already handle by nwl_dsi_host_detach()
+>   - Drop USE_*_QUIRK() macros
+> - Drop (for now) unused clock defnitions. 'pixel' and 'bypass' clock will=
+ be
+>   used for i.MX8 SoCs but since they're unused atm drop the definitions -=
+ but
+>   keep the logic to enable/disable several clocks in place since we know =
+we'll
+>   need it in the future.
+> =
+
+> Changes from v0:
+> - Add quirk for IMQ8MQ silicon B0 revision to not mess with the
+>   system reset controller on power down since enable() won't work
+>   otherwise.
+> - Drop devm_free_irq() handled by the device driver core
+> - Disable tx esc clock after the phy power down to unbreak
+>   disable/enable (unblank/blank)
+> - Add ports to dt binding docs
+> - Select GENERIC_PHY_MIPI_DPHY instead of GENERIC_PHY for
+>   phy_mipi_dphy_get_default_config
+> - Select DRM_MIPI_DSI
+> - Include drm_print.h to fix build on next-20190408
+> - Drop some debugging messages
+> - Newline terminate all DRM_ printouts
+> - Turn component driver into a drm bridge
+> =
+
+> [0]: https://lists.freedesktop.org/archives/dri-devel/2019-May/219484.html
+> [1]: https://patchwork.freedesktop.org/series/62822/
+> =
+
+> Guido G=FCnther (2):
+>   dt-bindings: display/bridge: Add binding for NWL mipi dsi host
+>     controller
+>   drm/bridge: Add NWL MIPI DSI host controller support
+> =
+
+>  .../bindings/display/bridge/nwl-dsi.yaml      |  216 +++
+>  drivers/gpu/drm/bridge/Kconfig                |   16 +
+>  drivers/gpu/drm/bridge/Makefile               |    1 +
+>  drivers/gpu/drm/bridge/nwl-dsi.c              | 1218 +++++++++++++++++
+>  drivers/gpu/drm/bridge/nwl-dsi.h              |  144 ++
+>  5 files changed, 1595 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/nwl-=
+dsi.yaml
+>  create mode 100644 drivers/gpu/drm/bridge/nwl-dsi.c
+>  create mode 100644 drivers/gpu/drm/bridge/nwl-dsi.h
+> =
+
+> -- =
+
+> 2.23.0
+> =
+
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
