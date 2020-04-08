@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6C1D1A1B9D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 07:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 353B31A1BAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 07:59:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9uE7wxKifdZAiOPaRXJstncF42+yRwI1Xa5/Pf62JXo=; b=scA421QquS+ArZ
-	DRTczGIQkqHW+60JT2HykMcRu4V8lx5nGQ5MwqA3+zsjUIE0W/ssBB7IiT2bwkp4OaIEPkeswFK4A
-	bhW9t/mbQlNXDwSDkLQZGNZ9tvy90bnmNdaDYmfLktyyrnzXJXb2rcK5aYoaH7f0Xe7fdKTBtTy/A
-	SyCinApJ4DHOGXMCORGCKCWCuy/SRwzXqnG6Ofq80YXjJGGunBeRcGgQ6ENk2VLv7E105lOqbVNcH
-	lxXFgE3J6YBfV7WptoBp0FhdDZaWHYBg2fLkupuRKomEU2AeqcDK1DgA90vW3IHiywBR32wFfPd2o
-	mL9WFBD6cPsls9GRxqvQ==;
+	List-Owner; bh=xAEuXD/jVo7LTMj/99w1eDOdMj5RVW/7JzOFwo1lsmI=; b=YUZFGr3/Axj0XX
+	QAHk74JBD7/tKc/ODbUznQXCkEwMk4JoHgjhNTm8MFlJNIJnkLbW+sK6sBmZYf2kkUoRa86csz0Cd
+	DOZ6VQSlfrL7gV+/5PkL0kJ/bgXOebBefFRnBoPPIB6OrM/jB8ogyGS9Z58kELccIx8yAh+/TibUg
+	eYJlVfFav3N8x4TSCkl47aFyHJusWi4a0BhurRJ/rSgB3LU9hPOS5ZAyMhbNNVjG6/LUkmTq0t04c
+	zZKA5W0xl/5bvPxqHLpfzRYi/JzdZsTfTd+r9i5DVhAzZx95fygCtzEZtNNaXwwVxVn6mUfO1bfgc
+	K8NXYItC1unXwz2B744A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM3eC-0005U6-9d; Wed, 08 Apr 2020 05:53:12 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jM3jz-0000NC-82; Wed, 08 Apr 2020 05:59:11 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM3e4-0005Tn-Fo
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 05:53:06 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s4so2833745pgk.10
+ id 1jM3jq-0000LO-1S
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 05:59:04 +0000
+Received: by mail-ua1-x944.google.com with SMTP id d23so2276123uak.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Apr 2020 22:53:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=5e4MJJn8a/rgtRLRcTfQ/Iwfbqly/Z6Qseq2BhNVXhs=;
- b=Buvyp94gdoyw/raDpF1YKbKaOV8H5YUTSwbYKlAKBdifSk24gF0L4UwqZp3RXq99dd
- sRdjTCdrxsdyE1HODCeUTL98tb5zF4E1JAMVkMfFWkyLXApJynqd/dprODX+DZmo7Bzz
- p0CkcsxnkwT6qh4SW5NIr12InVUfZ/K+KS+M80Ijd4O7ClNbKM9cFTk5YSeb+soqgXcE
- 23+iEs5d4gEfdVMvUEIK8KwmBPZafE2iIShuoD2klQovIVxmOXrIJ0ELG5x3w4VwDPPQ
- zrkSFKTBQCGnPoVtv6M0xq2xZbSber/BMiLaZKHxCFVx3Qf/Znsu8QYtK6YOX8m5pdr2
- IZeQ==
+ Tue, 07 Apr 2020 22:59:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JuRf6yJbWtYxlK9MiLbnHNoPgySrKime7soo03XHwg8=;
+ b=hEmTMlb4G0P+2aogFyGWc7pbqPwOB9J/CxeELOvBgHigymKo71VkQZw/1AwPY8mWut
+ hwlP4KtfBta/VQNebJf0HYnPZQVMVG+j5hXWeIOv+KLCeReFxuiDGM5foKGDa6dufKMS
+ yCVPYX7Cm/1qWuKhZsuJ9KARUZM1CExEo8TFU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5e4MJJn8a/rgtRLRcTfQ/Iwfbqly/Z6Qseq2BhNVXhs=;
- b=pMn3qu9JhwIbSICR4yw45J2717/7raKGDzmIIso3T1ZtrtLOIsQvb0+hwfMIeB7Zdt
- QkhwMwno93tiDsRY+pOXtslWg4BM0BDwlslQXuKCsiM9RKiE8cfQQ84URw6f1R7ExUcS
- aBC+qFxQYZXu54YfwLJiOC9eJ4IrnTYQmJQKkWDau7ccbdVx3N3B+k6Z5sKz83G9q4aZ
- qUZ2SxY3wUGbokpXSiTAGso8Y7V0UJ0PLvDbuap2h/8StkyEWEigJx7fvKV9ovCX4w29
- Cbo4aAHXzqMvuyoFPxe2ArIVKHBNTtrGcmcbT1PPLze3joYp5ztpyHQ+W4XBUjtRLLPP
- XzEw==
-X-Gm-Message-State: AGi0PuYjziIDBuwbu3VxA2e/bO4BRdmxMqwG9PWxdtMycqmyZpSaRVIv
- vPwqLoWUOiMoCI4Zhj1X275PIw==
-X-Google-Smtp-Source: APiQypLa1JacUHJ+QeokcMaEZM87v/v2o50a2V2iva/HH9LUehvg+Bz1b7fJMo2ykKancm0Rl5AMAA==
-X-Received: by 2002:a63:2903:: with SMTP id p3mr5153192pgp.87.1586325183838;
- Tue, 07 Apr 2020 22:53:03 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id d26sm15488014pfo.37.2020.04.07.22.53.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 Apr 2020 22:53:03 -0700 (PDT)
-Date: Wed, 8 Apr 2020 11:23:01 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: sumitg <sumitg@nvidia.com>
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-Message-ID: <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
- <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
- <d233b26b-6b50-7d41-9f33-a5dc151e0e7d@nvidia.com>
- <20200406025549.qfwzlk3745y3r274@vireshk-i7>
- <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JuRf6yJbWtYxlK9MiLbnHNoPgySrKime7soo03XHwg8=;
+ b=PV5bzsts+ZJ9cBoGoDqMeybnd9AayUxnDI6Fx2Agz6nZ04VWqszR+/WPwUvXARFbur
+ 2F3CuVh2mL8kFWY6ZbSr/LOEI3vG31M2jtNHwiciwLaQAX2AI8gyb9l6gU+QtMb6O1bA
+ lNcWCQy6LFyJKBP8KNL+Es+qgnwWZn5IyzJ4ldQ3cNsCsFsNWMQfHfm//+o7z1gzUaXw
+ sLEzH9szl/NLhRVLs5vpJ9GGkYx8/e3E1h8geVoD6Qrh22TLQ/RY5dw9uEfKKmLk4hWZ
+ RpJO6sVrYuNicIpGwi6IH2h2RD9okUmFYdEjcU8HtV+83YMRX0R1labQv+mD05v6NOox
+ /IBA==
+X-Gm-Message-State: AGi0Pub8XHkdf05I7LvqbLBT5U1688MQ3uWfaMHYkZamLFXPF1bgdOdu
+ IpwdZwaPLpZxCbAsG2i5+iX1jvNnyfOzDDB/KkidwQ==
+X-Google-Smtp-Source: APiQypKMQ51JKxh8oiu6lK7kqI3wqi5K92W9MpE8rI9SPxjpQoT14gqiJBH6/yay/Jqgt97yU6ykLrh500/nJv1Ksio=
+X-Received: by 2002:a9f:3770:: with SMTP id a45mr4294126uae.117.1586325539503; 
+ Tue, 07 Apr 2020 22:58:59 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20200107070154.1574-1-roger.lu@mediatek.com>
+ <20200107070154.1574-2-roger.lu@mediatek.com>
+ <20200108203829.GA18987@bogus>
+ <CANMq1KBu-gFy701BgFcjEwyhV9GgCCU2mkT9c8LviOJKBF30UA@mail.gmail.com>
+ <CAL_JsqLnVEhvAh_8DfGWRZa+MdPRpXc9sWEQ6-3HQAeUfvkOSg@mail.gmail.com>
+ <1581406566.14120.46.camel@mtksdaap41>
+ <CANMq1KBVs7ZucNu9pTxXGZ0__E6tyxd1+mm2Zui81G=xQNtShA@mail.gmail.com>
+In-Reply-To: <CANMq1KBVs7ZucNu9pTxXGZ0__E6tyxd1+mm2Zui81G=xQNtShA@mail.gmail.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 8 Apr 2020 13:58:48 +0800
+Message-ID: <CANMq1KBcV_7O-_XQxk+6LTWywVoPW1U5BjYRG=-ojih9DOK-Wg@mail.gmail.com>
+Subject: Re: [PATCH v6 1/3] dt-bindings: soc: add mtk svs dt-bindings
+To: Roger Lu <roger.lu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_225305_046212_180B96D7 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_225902_110178_392E6C38 
+X-CRM114-Status: GOOD (  40.62  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,55 +94,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ =?UTF-8?B?QW5ndXMgTGluICjmnpfnkZvosaop?= <Angus.Lin@mediatek.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Nicolas Boichat <drinkcat@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Kevin Hilman <khilman@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
+ =?UTF-8?B?SGVucnlDIENoZW4gKOmZs+W7uuixqik=?= <HenryC.Chen@mediatek.com>,
+ =?UTF-8?B?WVQgTGVlICjmnY7ku7Dlk7Ip?= <yt.lee@mediatek.com>,
+ =?UTF-8?B?RmFuIENoZW4gKOmZs+WHoSk=?= <fan.chen@mediatek.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ =?UTF-8?B?WGlhb3FpbmcgTGl1ICjliJjmmZPluoYp?= <Xiaoqing.Liu@mediatek.com>,
+ =?UTF-8?B?Q2hhcmxlcyBZYW5nICjmpYrkuo7pgLIp?= <Charles.Yang@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
+ James Liao <jamesjj.liao@mediatek.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07-04-20, 23:48, sumitg wrote:
-> On 06/04/20 8:25 AM, Viresh Kumar wrote:
-> > On 05-04-20, 00:08, sumitg wrote:
-> > > On 26/03/20 5:20 PM, Viresh Kumar wrote:
-> > > > On 03-12-19, 23:02, Sumit Gupta wrote:
-> > > > > diff --git a/drivers/cpufreq/tegra194-cpufreq.c b/drivers/cpufreq/tegra194-cpufreq.c
-> > > > > +static unsigned int tegra194_get_speed_common(u32 cpu, u32 delay)
-> > > > > +{
-> > > > > +     struct read_counters_work read_counters_work;
-> > > > > +     struct tegra_cpu_ctr c;
-> > > > > +     u32 delta_refcnt;
-> > > > > +     u32 delta_ccnt;
-> > > > > +     u32 rate_mhz;
-> > > > > +
-> > > > > +     read_counters_work.c.cpu = cpu;
-> > > > > +     read_counters_work.c.delay = delay;
-> > > > > +     INIT_WORK_ONSTACK(&read_counters_work.work, tegra_read_counters);
-> > > > > +     queue_work_on(cpu, read_counters_wq, &read_counters_work.work);
-> > > > > +     flush_work(&read_counters_work.work);
-> > > > 
-> > > > Why can't this be done in current context ?
-> > > > 
-> > > We used work queue instead of smp_call_function_single() to have long delay.
-> > 
-> > Please explain completely, you have raised more questions than you
-> > answered :)
-> > 
-> > Why do you want to have long delays ?
-> > 
-> Long delay value is used to have the observation window long enough for
-> correctly reconstructing the CPU frequency considering noise.
-> In next patch version, changed delay value to 500us which in our tests is
-> considered reliable.
+On Thu, Feb 27, 2020 at 11:55 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+>
+> Hi Rob,
+>
+> On Tue, Feb 11, 2020 at 3:36 PM Roger Lu <roger.lu@mediatek.com> wrote:
+> >
+> > Hi Rob & Nicolas,
+> >
+> > Sorry for the late reply.
+> >
+> > On Mon, 2020-01-13 at 23:50 +0800, Rob Herring wrote:
+> > > On Mon, Jan 13, 2020 at 12:44 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+> > > >
+> > > > On Thu, Jan 9, 2020 at 4:38 AM Rob Herring <robh@kernel.org> wrote:
+> > > > >
+> > > > > On Tue, Jan 07, 2020 at 03:01:52PM +0800, Roger Lu wrote:
+> > > > > > Document the binding for enabling mtk svs on MediaTek SoC.
+> > > > > >
+> > > > > > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> > > > > > ---
+> > > > > >  .../devicetree/bindings/power/mtk-svs.txt     | 76 +++++++++++++++++++
+> > > > > >  1 file changed, 76 insertions(+)
+> > > > > >  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > > >
+> > > > > > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > > > new file mode 100644
+> > > > > > index 000000000000..9a3e81b9e1d2
+> > > > > > --- /dev/null
+> > > > > > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > > > @@ -0,0 +1,76 @@
+> > > > > > +* Mediatek Smart Voltage Scaling (MTK SVS)
+> > > > > > +
+> > > > > > +This describes the device tree binding for the MTK SVS controller (bank)
+> > > > > > +which helps provide the optimized CPU/GPU/CCI voltages. This device also
+> > > > > > +needs thermal data to calculate thermal slope for accurately compensate
+> > > > > > +the voltages when temperature change.
+> > > > > > +
+> > > > > > +Required properties:
+> > > > > > +- compatible:
+> > > > > > +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
+> > > > > > +- reg: Address range of the MTK SVS controller.
+> > > > > > +- interrupts: IRQ for the MTK SVS controller.
+> > > > > > +- clocks, clock-names: Clocks needed for the svs hardware. required
+> > > > > > +                       clocks are:
+> > > > > > +                    "main": Main clock for svs controller to work.
+> > > > > > +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
+> > > > > > +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
+> > > > > > +
+> > > > > > +Subnodes:
+> > > > > > +- svs-cpu-little: SVS bank device node of little CPU
+> > > > > > +  compatible: "mediatek,mt8183-svs-cpu-little"
+> > > > > > +  operating-points-v2: OPP table hooked by SVS little CPU bank.
+> > > > > > +                    SVS will optimze this OPP table voltage part.
+> > > > > > +  vcpu-little-supply: PMIC buck of little CPU
+> > > > > > +- svs-cpu-big: SVS bank device node of big CPU
+> > > > > > +  compatible: "mediatek,mt8183-svs-cpu-big"
+> > > > > > +  operating-points-v2: OPP table hooked by SVS big CPU bank.
+> > > > > > +                    SVS will optimze this OPP table voltage part.
+> > > > > > +  vcpu-big-supply: PMIC buck of big CPU
+> > > > > > +- svs-cci: SVS bank device node of CCI
+> > > > > > +  compatible: "mediatek,mt8183-svs-cci"
+> > > > > > +  operating-points-v2: OPP table hooked by SVS CCI bank.
+> > > > > > +                    SVS will optimze this OPP table voltage part.
+> > > > > > +  vcci-supply: PMIC buck of CCI
+> > > > > > +- svs-gpu: SVS bank device node of GPU
+> > > > > > +  compatible: "mediatek,mt8183-svs-gpu"
+> > > > > > +  operating-points-v2: OPP table hooked by SVS GPU bank.
+> > > > > > +                    SVS will optimze this OPP table voltage part.
+> > > > > > +  vgpu-supply: PMIC buck of GPU
+> > > > > > +
+> > > > > > +Example:
+> > > > > > +
+> > > > > > +     svs: svs@1100b000 {
+> > > > > > +             compatible = "mediatek,mt8183-svs";
+> > > > > > +             reg = <0 0x1100b000 0 0x1000>;
+> > > > > > +             interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
+> > > > > > +             clocks = <&infracfg CLK_INFRA_THERM>;
+> > > > > > +             clock-names = "main_clk";
+> > > > > > +             nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
+> > > > > > +             nvmem-cell-names = "svs-calibration-data", "calibration-data";
+> > > > > > +
+> > > > > > +             svs_cpu_little: svs-cpu-little {
+> > > > > > +                     compatible = "mediatek,mt8183-svs-cpu-little";
+> > > > > > +                     operating-points-v2 = <&cluster0_opp>;
+> > > > > > +                     vcpu-little-supply = <&mt6358_vproc12_reg>;
+> > > > > > +             };
+> > > > >
+> > > > > I don't think this is a good binding. This information already exists
+> > > > > elsewhere in the DT, so your driver should just look in those nodes.
+> > > > > For example the regulator can be in the cpu nodes or the OPP table
+> > > > > itself.
+> > > >
+> > > > Roger, if that helps, without changing any other binding, on 8183,
+> > > > basically you could have:
+> > > >  - svs-cpu-little: Add a handle to &cpu0 and get the regulator/opp
+> > > > table from it.
+> > > >  - svs-cpu-big: Handle to &cpu4
+> > >
+> > > Why do you need those? Use the compatible of the cpus to determine big
+> > > and little cores. Or there's the cpu capacity property that could be
+> > > used instead.
+> > >
+> > > >  - svs-cci: Handle to &cci
+> > >
+> > > Is there more than 1 CCI? Just retrieve the node by the compatible.
+> > > There's no need to have nodes that simply serve as a collection of
+> > > data for some driver.
+> > >
+> > > >  - svs-gpu: Handle to &gpu (BTW, it is expected that SVS would only
+> > > > apply to vgpu/mali regulator, and not vsram regulator?)
+> >
+> > svs-gpu depends on vgpu power on for init (don't care vgpu_sram). After
+> > svs-gpu init is done, it doesn't need vgpu power on anymore. (vgpu can
+> > be turned off)
+> >
+> > Please allows me to introduce more about what svs-gpu device needs.
+> > 1. It needs gpu opp table from "gpu node" and gpu_core2 power-domains
+> > from "gpu_core2 node". When svs-gpu has those resources, it turns on
+> > gpu_core2 power-domain for svs-gpu-hw to have power (for calculating)
+> > and svs-gpu-sw will update gpu opp table voltages' part.
+> > 2. Therefore, if I retrieve gpu-related node from phandle or compatible,
+> > it means svs-gpu device in driver needs to attach two different gpu
+> > nodes for attaining gpu opp table and gpu_core2 power-domains. I think
+> > this architecture of svs-gpu confuses maintainer why it attaches two
+> > different nodes instead of having a device to describe what it needs.
+>
+> > 3. Is it acceptable to have a Linux device attaching two different
+> > nodes? If yes, could you guide us some APIs for one device to attach two
+> > nodes? I don't know how to implement it. Thanks.
+>
+> I'm also trying to understand how that would work. The way the code
+> works now (https://chromium.googlesource.com/chromiumos/third_party/kernel/+/refs/heads/chromeos-4.19/drivers/power/avs/mtk_svs.c#1388):
+>
+> The SVS driver creates a platform device for each sub-node, find the
+> sub-node that matches the compatible (pdev->dev.of_node):
+> for_each_child_of_node(svs->dev->of_node, np) {
+>   if (of_device_is_compatible(np, svsb->of_compatible)) {
+>     pdev->dev.of_node = np;
+>     break;
+>   }
+> }
+>
+> Then, thanks to that, the 2 functions dev_pm_opp_of_add_table and
+> devm_regulator_get_optional "just work", as the get the opp table and
+> regulator from the device tree node.
+>
+> So what you suggest is basically something like this:
+> pdev->dev.of_node = of_find_compatible_node(NULL, NULL, "mediatek,mt8183-cci");
+>
+> I came up with a (very dirty) prototype here:
+> https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2076718
+> ... and it doesn't really work
+> (https://gist.github.com/drinkcat/61e50eedbdc301d418c9cee3ee5b6b06, I
+> think the kernel is probing more than it should, like the DMA mask
+> errors should not happen...)
+>
+> Before I dig further... I have the same concern as Roger, is it ok to
+> have 2 devices bound to the same device tree node/compatible? My
+> understanding was also that it's not.
 
-I understand that you need to put a udelay() while reading the freq from
-hardware, that is fine, but why do you need a workqueue for that? Why can't you
-just read the values directly from the same context ?
+Rob: It seems like this conversation died here. Do you have any
+suggestions for the above?
 
--- 
-viresh
+Thanks,
 
 _______________________________________________
 linux-arm-kernel mailing list
