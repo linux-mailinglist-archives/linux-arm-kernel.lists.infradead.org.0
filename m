@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 353B31A1BAF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 07:59:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 320C41A1C66
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 09:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xAEuXD/jVo7LTMj/99w1eDOdMj5RVW/7JzOFwo1lsmI=; b=YUZFGr3/Axj0XX
-	QAHk74JBD7/tKc/ODbUznQXCkEwMk4JoHgjhNTm8MFlJNIJnkLbW+sK6sBmZYf2kkUoRa86csz0Cd
-	DOZ6VQSlfrL7gV+/5PkL0kJ/bgXOebBefFRnBoPPIB6OrM/jB8ogyGS9Z58kELccIx8yAh+/TibUg
-	eYJlVfFav3N8x4TSCkl47aFyHJusWi4a0BhurRJ/rSgB3LU9hPOS5ZAyMhbNNVjG6/LUkmTq0t04c
-	zZKA5W0xl/5bvPxqHLpfzRYi/JzdZsTfTd+r9i5DVhAzZx95fygCtzEZtNNaXwwVxVn6mUfO1bfgc
-	K8NXYItC1unXwz2B744A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oHV1Tfhci1C/7UZ04MAVm48HUhaJeJBRbCwJ5K48fCo=; b=P3KCEL2HyO3v6j
+	/do3JWaj+tdCOdq58JC4RljQMKdHED3jr8WQnwfYunfkUPCoEcWZ7A8Ps7ENNW6pHuoWVJwSuADx5
+	WES759V17MDBhbz5Upx0hbe4WfHVooqPioU4pZWcQZr0e+8Z03wHuHlPuG0/dUyBnh4QV3OA0p8P2
+	v1R7WdOrQZ8tDHBbZjjDwdAbegBacVdT787T+IlpNl2IkjgSO64NDkqesYFaIYF602htJ7b0/gj+b
+	UjefptPC9ji5/PVGisxCzgKxuhIe2NkhbEmJDH4M8QJ1jDF7J5i0/iG8rP9mBW3yLNf7rcmLDYKCN
+	Wimroqkpe1QiIxhkvsdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM3jz-0000NC-82; Wed, 08 Apr 2020 05:59:11 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM3jq-0000LO-1S
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 05:59:04 +0000
-Received: by mail-ua1-x944.google.com with SMTP id d23so2276123uak.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 Apr 2020 22:59:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JuRf6yJbWtYxlK9MiLbnHNoPgySrKime7soo03XHwg8=;
- b=hEmTMlb4G0P+2aogFyGWc7pbqPwOB9J/CxeELOvBgHigymKo71VkQZw/1AwPY8mWut
- hwlP4KtfBta/VQNebJf0HYnPZQVMVG+j5hXWeIOv+KLCeReFxuiDGM5foKGDa6dufKMS
- yCVPYX7Cm/1qWuKhZsuJ9KARUZM1CExEo8TFU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JuRf6yJbWtYxlK9MiLbnHNoPgySrKime7soo03XHwg8=;
- b=PV5bzsts+ZJ9cBoGoDqMeybnd9AayUxnDI6Fx2Agz6nZ04VWqszR+/WPwUvXARFbur
- 2F3CuVh2mL8kFWY6ZbSr/LOEI3vG31M2jtNHwiciwLaQAX2AI8gyb9l6gU+QtMb6O1bA
- lNcWCQy6LFyJKBP8KNL+Es+qgnwWZn5IyzJ4ldQ3cNsCsFsNWMQfHfm//+o7z1gzUaXw
- sLEzH9szl/NLhRVLs5vpJ9GGkYx8/e3E1h8geVoD6Qrh22TLQ/RY5dw9uEfKKmLk4hWZ
- RpJO6sVrYuNicIpGwi6IH2h2RD9okUmFYdEjcU8HtV+83YMRX0R1labQv+mD05v6NOox
- /IBA==
-X-Gm-Message-State: AGi0Pub8XHkdf05I7LvqbLBT5U1688MQ3uWfaMHYkZamLFXPF1bgdOdu
- IpwdZwaPLpZxCbAsG2i5+iX1jvNnyfOzDDB/KkidwQ==
-X-Google-Smtp-Source: APiQypKMQ51JKxh8oiu6lK7kqI3wqi5K92W9MpE8rI9SPxjpQoT14gqiJBH6/yay/Jqgt97yU6ykLrh500/nJv1Ksio=
-X-Received: by 2002:a9f:3770:: with SMTP id a45mr4294126uae.117.1586325539503; 
- Tue, 07 Apr 2020 22:58:59 -0700 (PDT)
+	id 1jM4sr-0002wN-A5; Wed, 08 Apr 2020 07:12:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jM4sj-0002vK-Lq; Wed, 08 Apr 2020 07:12:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9AED131B;
+ Wed,  8 Apr 2020 00:12:15 -0700 (PDT)
+Received: from [10.163.1.2] (unknown [10.163.1.2])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 246B63F68F;
+ Wed,  8 Apr 2020 00:16:17 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+ <20200331143059.29fca8fa@thinkpad>
+ <e3e35885-6852-16aa-3889-e22750a0cc87@arm.com>
+ <20200407175440.41cc00a5@thinkpad>
+Message-ID: <253cf5c8-e43e-5737-24e8-3eda3b6ba7b3@arm.com>
+Date: Wed, 8 Apr 2020 12:41:51 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20200107070154.1574-1-roger.lu@mediatek.com>
- <20200107070154.1574-2-roger.lu@mediatek.com>
- <20200108203829.GA18987@bogus>
- <CANMq1KBu-gFy701BgFcjEwyhV9GgCCU2mkT9c8LviOJKBF30UA@mail.gmail.com>
- <CAL_JsqLnVEhvAh_8DfGWRZa+MdPRpXc9sWEQ6-3HQAeUfvkOSg@mail.gmail.com>
- <1581406566.14120.46.camel@mtksdaap41>
- <CANMq1KBVs7ZucNu9pTxXGZ0__E6tyxd1+mm2Zui81G=xQNtShA@mail.gmail.com>
-In-Reply-To: <CANMq1KBVs7ZucNu9pTxXGZ0__E6tyxd1+mm2Zui81G=xQNtShA@mail.gmail.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 8 Apr 2020 13:58:48 +0800
-Message-ID: <CANMq1KBcV_7O-_XQxk+6LTWywVoPW1U5BjYRG=-ojih9DOK-Wg@mail.gmail.com>
-Subject: Re: [PATCH v6 1/3] dt-bindings: soc: add mtk svs dt-bindings
-To: Roger Lu <roger.lu@mediatek.com>
+In-Reply-To: <20200407175440.41cc00a5@thinkpad>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_225902_110178_392E6C38 
-X-CRM114-Status: GOOD (  40.62  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200408_001217_800534_94D46558 
+X-CRM114-Status: GOOD (  45.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,191 +65,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- =?UTF-8?B?QW5ndXMgTGluICjmnpfnkZvosaop?= <Angus.Lin@mediatek.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Nicolas Boichat <drinkcat@google.com>, Stephen Boyd <sboyd@kernel.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Kevin Hilman <khilman@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- =?UTF-8?B?SGVucnlDIENoZW4gKOmZs+W7uuixqik=?= <HenryC.Chen@mediatek.com>,
- =?UTF-8?B?WVQgTGVlICjmnY7ku7Dlk7Ip?= <yt.lee@mediatek.com>,
- =?UTF-8?B?RmFuIENoZW4gKOmZs+WHoSk=?= <fan.chen@mediatek.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- =?UTF-8?B?WGlhb3FpbmcgTGl1ICjliJjmmZPluoYp?= <Xiaoqing.Liu@mediatek.com>,
- =?UTF-8?B?Q2hhcmxlcyBZYW5nICjmpYrkuo7pgLIp?= <Charles.Yang@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
- James Liao <jamesjj.liao@mediatek.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 11:55 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> Hi Rob,
->
-> On Tue, Feb 11, 2020 at 3:36 PM Roger Lu <roger.lu@mediatek.com> wrote:
-> >
-> > Hi Rob & Nicolas,
-> >
-> > Sorry for the late reply.
-> >
-> > On Mon, 2020-01-13 at 23:50 +0800, Rob Herring wrote:
-> > > On Mon, Jan 13, 2020 at 12:44 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
-> > > >
-> > > > On Thu, Jan 9, 2020 at 4:38 AM Rob Herring <robh@kernel.org> wrote:
-> > > > >
-> > > > > On Tue, Jan 07, 2020 at 03:01:52PM +0800, Roger Lu wrote:
-> > > > > > Document the binding for enabling mtk svs on MediaTek SoC.
-> > > > > >
-> > > > > > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
-> > > > > > ---
-> > > > > >  .../devicetree/bindings/power/mtk-svs.txt     | 76 +++++++++++++++++++
-> > > > > >  1 file changed, 76 insertions(+)
-> > > > > >  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > > > > > new file mode 100644
-> > > > > > index 000000000000..9a3e81b9e1d2
-> > > > > > --- /dev/null
-> > > > > > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > > > > > @@ -0,0 +1,76 @@
-> > > > > > +* Mediatek Smart Voltage Scaling (MTK SVS)
-> > > > > > +
-> > > > > > +This describes the device tree binding for the MTK SVS controller (bank)
-> > > > > > +which helps provide the optimized CPU/GPU/CCI voltages. This device also
-> > > > > > +needs thermal data to calculate thermal slope for accurately compensate
-> > > > > > +the voltages when temperature change.
-> > > > > > +
-> > > > > > +Required properties:
-> > > > > > +- compatible:
-> > > > > > +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
-> > > > > > +- reg: Address range of the MTK SVS controller.
-> > > > > > +- interrupts: IRQ for the MTK SVS controller.
-> > > > > > +- clocks, clock-names: Clocks needed for the svs hardware. required
-> > > > > > +                       clocks are:
-> > > > > > +                    "main": Main clock for svs controller to work.
-> > > > > > +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
-> > > > > > +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
-> > > > > > +
-> > > > > > +Subnodes:
-> > > > > > +- svs-cpu-little: SVS bank device node of little CPU
-> > > > > > +  compatible: "mediatek,mt8183-svs-cpu-little"
-> > > > > > +  operating-points-v2: OPP table hooked by SVS little CPU bank.
-> > > > > > +                    SVS will optimze this OPP table voltage part.
-> > > > > > +  vcpu-little-supply: PMIC buck of little CPU
-> > > > > > +- svs-cpu-big: SVS bank device node of big CPU
-> > > > > > +  compatible: "mediatek,mt8183-svs-cpu-big"
-> > > > > > +  operating-points-v2: OPP table hooked by SVS big CPU bank.
-> > > > > > +                    SVS will optimze this OPP table voltage part.
-> > > > > > +  vcpu-big-supply: PMIC buck of big CPU
-> > > > > > +- svs-cci: SVS bank device node of CCI
-> > > > > > +  compatible: "mediatek,mt8183-svs-cci"
-> > > > > > +  operating-points-v2: OPP table hooked by SVS CCI bank.
-> > > > > > +                    SVS will optimze this OPP table voltage part.
-> > > > > > +  vcci-supply: PMIC buck of CCI
-> > > > > > +- svs-gpu: SVS bank device node of GPU
-> > > > > > +  compatible: "mediatek,mt8183-svs-gpu"
-> > > > > > +  operating-points-v2: OPP table hooked by SVS GPU bank.
-> > > > > > +                    SVS will optimze this OPP table voltage part.
-> > > > > > +  vgpu-supply: PMIC buck of GPU
-> > > > > > +
-> > > > > > +Example:
-> > > > > > +
-> > > > > > +     svs: svs@1100b000 {
-> > > > > > +             compatible = "mediatek,mt8183-svs";
-> > > > > > +             reg = <0 0x1100b000 0 0x1000>;
-> > > > > > +             interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
-> > > > > > +             clocks = <&infracfg CLK_INFRA_THERM>;
-> > > > > > +             clock-names = "main_clk";
-> > > > > > +             nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
-> > > > > > +             nvmem-cell-names = "svs-calibration-data", "calibration-data";
-> > > > > > +
-> > > > > > +             svs_cpu_little: svs-cpu-little {
-> > > > > > +                     compatible = "mediatek,mt8183-svs-cpu-little";
-> > > > > > +                     operating-points-v2 = <&cluster0_opp>;
-> > > > > > +                     vcpu-little-supply = <&mt6358_vproc12_reg>;
-> > > > > > +             };
-> > > > >
-> > > > > I don't think this is a good binding. This information already exists
-> > > > > elsewhere in the DT, so your driver should just look in those nodes.
-> > > > > For example the regulator can be in the cpu nodes or the OPP table
-> > > > > itself.
-> > > >
-> > > > Roger, if that helps, without changing any other binding, on 8183,
-> > > > basically you could have:
-> > > >  - svs-cpu-little: Add a handle to &cpu0 and get the regulator/opp
-> > > > table from it.
-> > > >  - svs-cpu-big: Handle to &cpu4
-> > >
-> > > Why do you need those? Use the compatible of the cpus to determine big
-> > > and little cores. Or there's the cpu capacity property that could be
-> > > used instead.
-> > >
-> > > >  - svs-cci: Handle to &cci
-> > >
-> > > Is there more than 1 CCI? Just retrieve the node by the compatible.
-> > > There's no need to have nodes that simply serve as a collection of
-> > > data for some driver.
-> > >
-> > > >  - svs-gpu: Handle to &gpu (BTW, it is expected that SVS would only
-> > > > apply to vgpu/mali regulator, and not vsram regulator?)
-> >
-> > svs-gpu depends on vgpu power on for init (don't care vgpu_sram). After
-> > svs-gpu init is done, it doesn't need vgpu power on anymore. (vgpu can
-> > be turned off)
-> >
-> > Please allows me to introduce more about what svs-gpu device needs.
-> > 1. It needs gpu opp table from "gpu node" and gpu_core2 power-domains
-> > from "gpu_core2 node". When svs-gpu has those resources, it turns on
-> > gpu_core2 power-domain for svs-gpu-hw to have power (for calculating)
-> > and svs-gpu-sw will update gpu opp table voltages' part.
-> > 2. Therefore, if I retrieve gpu-related node from phandle or compatible,
-> > it means svs-gpu device in driver needs to attach two different gpu
-> > nodes for attaining gpu opp table and gpu_core2 power-domains. I think
-> > this architecture of svs-gpu confuses maintainer why it attaches two
-> > different nodes instead of having a device to describe what it needs.
->
-> > 3. Is it acceptable to have a Linux device attaching two different
-> > nodes? If yes, could you guide us some APIs for one device to attach two
-> > nodes? I don't know how to implement it. Thanks.
->
-> I'm also trying to understand how that would work. The way the code
-> works now (https://chromium.googlesource.com/chromiumos/third_party/kernel/+/refs/heads/chromeos-4.19/drivers/power/avs/mtk_svs.c#1388):
->
-> The SVS driver creates a platform device for each sub-node, find the
-> sub-node that matches the compatible (pdev->dev.of_node):
-> for_each_child_of_node(svs->dev->of_node, np) {
->   if (of_device_is_compatible(np, svsb->of_compatible)) {
->     pdev->dev.of_node = np;
->     break;
->   }
-> }
->
-> Then, thanks to that, the 2 functions dev_pm_opp_of_add_table and
-> devm_regulator_get_optional "just work", as the get the opp table and
-> regulator from the device tree node.
->
-> So what you suggest is basically something like this:
-> pdev->dev.of_node = of_find_compatible_node(NULL, NULL, "mediatek,mt8183-cci");
->
-> I came up with a (very dirty) prototype here:
-> https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2076718
-> ... and it doesn't really work
-> (https://gist.github.com/drinkcat/61e50eedbdc301d418c9cee3ee5b6b06, I
-> think the kernel is probing more than it should, like the DMA mask
-> errors should not happen...)
->
-> Before I dig further... I have the same concern as Roger, is it ok to
-> have 2 devices bound to the same device tree node/compatible? My
-> understanding was also that it's not.
 
-Rob: It seems like this conversation died here. Do you have any
-suggestions for the above?
+On 04/07/2020 09:24 PM, Gerald Schaefer wrote:
+> On Sun, 5 Apr 2020 17:58:14 +0530
+> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> 
+> [...]
+>>>
+>>> Could be fixed like this (the first de-reference is a bit special,
+>>> because at that point *ptep does not really point to a large (pmd) entry
+>>> yet, it is initially an invalid pte entry, which breaks our huge_ptep_get()  
+>>
+>> There seems to be an inconsistency on s390 platform. Even though it defines
+>> a huge_ptep_get() override, it does not subscribe __HAVE_ARCH_HUGE_PTEP_GET
+>> which should have forced it fallback on generic huge_ptep_get() but it does
+>> not :) Then I realized that __HAVE_ARCH_HUGE_PTEP_GET only makes sense when
+>> an arch uses <asm-generic/hugetlb.h>. s390 does not use that and hence gets
+>> away with it's own huge_ptep_get() without __HAVE_ARCH_HUGE_PTEP_GET. Sounds
+>> confusing ? But I might not have the entire context here.
+> 
+> Yes, that sounds very confusing. Also a bit ironic, since huge_ptep_get()
+> was initially introduced because of s390, and now we don't select
+> __HAVE_ARCH_HUGE_PTEP_GET...
+> 
+> As you realized, I guess this is because we do not use generic hugetlb.h.
+> And when __HAVE_ARCH_HUGE_PTEP_GET was introduced with commit 544db7597ad
+> ("hugetlb: introduce generic version of huge_ptep_get"), that was probably
+> the reason why we did not get our share of __HAVE_ARCH_HUGE_PTEP_GET.
 
-Thanks,
+Understood.
+
+> 
+> Nothing really wrong with that, but yes, very confusing. Maybe we could
+> also select it for s390, even though it wouldn't have any functional
+> impact (so far), just for less confusion. Maybe also thinking about
+> using the generic hugetlb.h, not sure if the original reasons for not
+> doing so would still apply. Now I only need to find the time...
+
+Seems like something worth to explore if we could remove this confusion.
+
+> 
+>>
+>>> conversion logic. I also added PMD_MASK alignment for RANDOM_ORVALUE,
+>>> because we do have some special bits there in our large pmds. It seems
+>>> to also work w/o that alignment, but it feels a bit wrong):  
+>>
+>> Sure, we can accommodate that.
+>>
+>>>
+>>> @@ -731,26 +731,26 @@ static void __init hugetlb_advanced_test
+>>>                                           unsigned long vaddr, pgprot_t prot)
+>>>  {
+>>>         struct page *page = pfn_to_page(pfn);
+>>> -       pte_t pte = READ_ONCE(*ptep);
+>>> +       pte_t pte;
+>>>
+>>> -       pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
+>>> +       pte = pte_mkhuge(mk_pte_phys(RANDOM_ORVALUE & PMD_MASK, prot));  
+>>
+>> So that keeps the existing value in 'ptep' pointer at bay and instead
+>> construct a PTE from scratch. I would rather have READ_ONCE(*ptep) at
+>> least provide the seed that can be ORed with RANDOM_ORVALUE before
+>> being masked with PMD_MASK. Do you see any problem ?
+> 
+> Yes, unfortunately. The problem is that the resulting pte is not marked
+> as present. The conversion pte -> (huge) pmd, which is done in
+> set_huge_pte_at() for s390, will establish an empty pmd for non-present
+> ptes, all the RANDOM_ORVALUE stuff is lost. And a subsequent
+> huge_ptep_get() will not result in the same original pte value. If you
+
+Ohh.
+
+> want to preserve and check the RANDOM_ORVALUE, it has to be a present
+> pte, hence the mk_pte(_phys).
+
+Understood and mk_pte() is also available on all platforms.
+
+> 
+>>
+>> Some thing like this instead.
+>>
+>> pte_t pte = READ_ONCE(*ptep);
+>> pte = pte_mkhuge(__pte((pte_val(pte) | RANDOM_ORVALUE) & PMD_MASK));
+>>
+>> We cannot use mk_pte_phys() as it is defined only on some platforms
+>> without any generic fallback for others.
+> 
+> Oh, didn't know that, sorry. What about using mk_pte() instead, at least
+> it would result in a present pte:
+> 
+> pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));
+
+Lets use mk_pte() here but can we do this instead
+
+paddr = (__pfn_to_phys(pfn) | RANDOM_ORVALUE) & PMD_MASK;
+pte = pte_mkhuge(mk_pte(phys_to_page(paddr), prot));
+
+> 
+> And if you also want to do some with the existing value, which seems
+> to be an empty pte, then maybe just check if writing and reading that
+> value with set_huge_pte_at() / huge_ptep_get() returns the same,
+> i.e. initially w/o RANDOM_ORVALUE.
+> 
+> So, in combination, like this (BTW, why is the barrier() needed, it
+> is not used for the other set_huge_pte_at() calls later?):
+
+Ahh missed, will add them. Earlier we faced problem without it after
+set_pte_at() for a test on powerpc (64) platform. Hence just added it
+here to be extra careful.
+
+> 
+> @@ -733,24 +733,28 @@ static void __init hugetlb_advanced_test
+>         struct page *page = pfn_to_page(pfn);
+>         pte_t pte = READ_ONCE(*ptep);
+>  
+> -       pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
+> +       set_huge_pte_at(mm, vaddr, ptep, pte);
+> +       WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+> +
+> +       pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));
+>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>         barrier();
+>         WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+> 
+> This would actually add a new test "write empty pte with
+> set_huge_pte_at(), then verify with huge_ptep_get()", which happens
+> to trigger a warning on s390 :-)
+
+On arm64 as well which checks for pte_present() in set_huge_pte_at().
+But PTE present check is not really present in each set_huge_pte_at()
+implementation especially without __HAVE_ARCH_HUGE_SET_HUGE_PTE_AT.
+Hence wondering if we should add this new test here which will keep
+giving warnings on s390 and arm64 (at the least).
+
+> 
+> That (new) warning actually points to misbehavior on s390, we do not
+> write a correct empty pmd in this case, but one that is empty and also
+> marked as large. huge_ptep_get() will then not correctly recognize it
+> as empty and do wrong conversion. It is also not consistent with
+> huge_ptep_get_and_clear(), where we write the empty pmd w/o marking
+> as large. Last but not least it would also break our pmd_protnone()
+> logic (see below). Another nice finding on s390 :-)
+
+:) 
+
+> 
+> I don't think this has any effect in practice (yet), but I will post a
+> fix for that, just in case you will add / change this test.
+
+Okay.
+
+> 
+>>
+>>>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>>>         barrier();
+>>>         WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+>>>         huge_pte_clear(mm, vaddr, ptep, PMD_SIZE);
+>>> -       pte = READ_ONCE(*ptep);
+>>> +       pte = huge_ptep_get(ptep);
+>>>         WARN_ON(!huge_pte_none(pte));
+>>>  
+>>>         pte = mk_huge_pte(page, prot);
+>>>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>>>         huge_ptep_set_wrprotect(mm, vaddr, ptep);
+>>> -       pte = READ_ONCE(*ptep);
+>>> +       pte = huge_ptep_get(ptep);
+>>>         WARN_ON(huge_pte_write(pte));
+>>>  
+>>>         pte = mk_huge_pte(page, prot);
+>>>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>>>         huge_ptep_get_and_clear(mm, vaddr, ptep);
+>>> -       pte = READ_ONCE(*ptep);
+>>> +       pte = huge_ptep_get(ptep);
+>>>         WARN_ON(!huge_pte_none(pte));
+>>>  
+>>>         pte = mk_huge_pte(page, prot);
+>>> @@ -759,7 +759,7 @@ static void __init hugetlb_advanced_test
+>>>         pte = huge_pte_mkwrite(pte);
+>>>         pte = huge_pte_mkdirty(pte);
+>>>         huge_ptep_set_access_flags(vma, vaddr, ptep, pte, 1);
+>>> -       pte = READ_ONCE(*ptep);
+>>> +       pte = huge_ptep_get(ptep);
+>>>         WARN_ON(!(huge_pte_write(pte) && huge_pte_dirty(pte)));
+>>>  }
+>>>  #else
+>>>
+>>> 3) The pmd_protnone_tests() has an issue, because it passes a pmd to
+>>> pmd_protnone() which has not been marked as large. We check for large
+>>> pmd in the s390 implementation of pmd_protnone(), and will fail if a
+>>> pmd is not large. We had similar issues before, in other helpers, where
+>>> I changed the logic on s390 to not require the pmd large check, but I'm
+>>> not so sure in this case. Is there a valid use case for doing
+>>> pmd_protnone() on "normal" pmds? Or could this be changed like this:  
+>>
+>> That is a valid question. IIUC, all existing callers for pmd_protnone()
+>> ensure that it is indeed a huge PMD. But even assuming otherwise should
+>> not the huge PMD requirement get checked in the caller itself rather than
+>> in the arch helper which is just supposed to check the existence of the
+>> dedicated PTE bit(s) for this purpose. Purely from a helper perspective
+>> pmd_protnone() should not really care about being large even though it
+>> might never get used without one.
+>>
+>> Also all platforms (except s390) derive the pmd_protnone() from their
+>> respective pte_protnone(). I wonder why should s390 be any different
+>> unless it is absolutely necessary.
+> 
+> This is again because of our different page table entry layouts for
+> pte/pmd and (large) pmd. The bits we check for pmd_protnone() are
+> not valid for normal pmd/pte, and we would return undefined result for
+> normal entries.
+> 
+> Of course, we could rely on nobody calling pmd_protnone() on normal
+> pmds, but in this case we also use pmd_large() check in pmd_protnone()
+> for indication if the pmd is present. W/o that, we would return
+> true for empty pmds, that doesn't sound right. Not sure if we also
+> want to rely on nobody calling pmd_protnone() on empty pmds.
+
+That might be problematic.
+
+> 
+> Anyway, if in practice it is not correct to use pmd_protnone()
+> on normal pmds, then I would suggest that your tests should also
+> not do / test it. And I strongly assume that it is not correct, at
+> least I cannot think of a valid case, and of course s390 would
+> already be broken if there was such a case.
+
+Okay, will use huge PMD here as you had suggested earlier.
+
+> 
+> Regards,
+> Gerald
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
