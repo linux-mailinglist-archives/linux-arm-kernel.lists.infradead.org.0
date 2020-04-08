@@ -2,71 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59E0B1A27CA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 19:13:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F6601A27D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 19:18:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P+aBYRTLW54/5WylIZ7KRC5fDHm32cZh6CQsT/SN8Ds=; b=GKsUcdj6h6M+fJ
-	slRJ2HSuVZJjQfj4WS5S/nktiVzc2zOa3bmr0HrjZHq7ozwIL2VD+aNyD+6WR00DGlLAnZh95GFVn
-	SXce22j5s++Rf/imLyjS6XuICtnstMvxyK6I+75D9wNoRR+ciLlpLvrEBLpiqe8OjE1QS2iHI8Hst
-	jbyEh8SwMbu5qxzeMwiINPrOWq7AaQ52agBugp/nG0aZb+dz4/BaUNKSoo9TMZC2GDCnpMabzCtgg
-	vjS9ae5lPEg8W5ZAZG+Yd97C4q7uYIx+bDsVS5iciFXLMqU7uKM3SDjHr5TW/6xsM+lnsYFxMuwQf
-	DSRccnsyqLYjoKgSs5kg==;
+	List-Owner; bh=1zIHB8QPtOGWhSd254pGK7PD82+cIDvyFP7VyLOGEg4=; b=TTyc/jmgWcL5Yx
+	A1m3Z0kaSJBV6oHy2OhyG20bgsECpbWrhMnIsykTUuEnwhCCALtzzfl1FzPAMQSgQrPV0lg4khf+i
+	xh360gB0vEp5nEHg999C6SkgWGN6Blr/y/n7SG1BkYIlKO3q36TG+ADdRXu1NWFRhz2cTsGoGYz93
+	WzT/2VBz5mwDHqpcAHBhImnt8GOHEXBQlzbQ3MRZ+NTYnBQDTxxeTGRztB2dy1CmRZMkJy9lALGE3
+	Mm35sxBeGzJB1LxgX4Pv/hKpioGaJdtC9DkQsJTujuabeD4O/WFUEZGEqVZl+TGuTC9pu4YU8KJqI
+	kLO1cgL2JoJFKwzO36ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMEG4-00051s-48; Wed, 08 Apr 2020 17:13:00 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMEFw-0004zY-PA
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 17:12:55 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id C2D5DFB03;
- Wed,  8 Apr 2020 19:12:37 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 0PxCznq62D1s; Wed,  8 Apr 2020 19:12:33 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id D62B4400E8; Wed,  8 Apr 2020 19:12:32 +0200 (CEST)
-Date: Wed, 8 Apr 2020 19:12:32 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Lee Jones <lee.jones@linaro.org>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Robert Chiras <robert.chiras@nxp.com>,
- Sam Ravnborg <sam@ravnborg.org>, Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v10 0/2] drm: bridge: Add NWL MIPI DSI host controller
- support
-Message-ID: <20200408171232.GA4264@bogon.m.sigxcpu.org>
-References: <cover.1584730033.git.agx@sigxcpu.org>
+	id 1jMEKo-0000wm-P3; Wed, 08 Apr 2020 17:17:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMEKh-0000va-LV
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 17:17:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20B1031B;
+ Wed,  8 Apr 2020 10:17:45 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4929B3F52E;
+ Wed,  8 Apr 2020 10:17:44 -0700 (PDT)
+Date: Wed, 8 Apr 2020 18:17:41 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Fredrik Strupe <fredrik@strupe.net>
+Subject: Re: [PATCH v2] arm64: armv8_deprecated: Fix undef_hook mask for
+ thumb setend
+Message-ID: <20200408171741.GB2481@gaia>
+References: <911db2f1-e078-a460-32ee-154a0b4de5d4@strupe.net>
+ <20200407092744.GA2665@gaia>
+ <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
+ <0d7b582a-1bd0-9db2-2fdc-04fc887f64c6@strupe.net>
+ <20200408090111.GA27331@gaia>
+ <9979396e-5d01-0cfe-722f-3a4f6e81dc01@strupe.net>
+ <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1584730033.git.agx@sigxcpu.org>
+In-Reply-To: <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_101253_135110_FCD2D62E 
-X-CRM114-Status: GOOD (  39.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200408_101747_747245_13E38F84 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,301 +69,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Fri, Mar 20, 2020 at 07:49:08PM +0100, Guido G=FCnther wrote:
-> This adds initial support for the NWL MIPI DSI Host controller found on i=
-.MX8
-> SoCs.
+On Wed, Apr 08, 2020 at 01:29:41PM +0200, Fredrik Strupe wrote:
+> For thumb instructions, call_undef_hook() in traps.c first reads a u16,
+> and if the u16 indicates a T32 instruction (u16 >= 0xe800), a second
+> u16 is read, which then makes up the the lower half-word of a T32
+> instruction. For T16 instructions, the second u16 is not read,
+> which makes the resulting u32 opcode always have the upper half set to
+> 0.
+> 
+> However, having the upper half of instr_mask in the undef_hook set to 0
+> masks out the upper half of all thumb instructions - both T16 and T32.
+> This results in trapped T32 instructions with the lower half-word equal
+> to the T16 encoding of setend (b650) being matched, even though the upper
+> half-word is not 0000 and thus indicates a T32 opcode.
+> 
+> An example of such a T32 instruction is eaa0b650, which should raise a
+> SIGILL since T32 instructions with an eaa prefix are unallocated as per
+> Arm ARM, but instead works as a SETEND because the second half-word is set
+> to b650.
+> 
+> This patch fixes the issue by extending instr_mask to include the
+> upper u32 half, which will still match T16 instructions where the upper
+> half is 0, but not T32 instructions.
+> 
+> Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Fixes: 2d888f48e056 ("arm64: Emulate SETEND for AArch32 tasks")
 
-Is there anything in can do to get this into drm-misc?
-Cheers,
- -- Guido
+Queued for 5.7. Thanks.
 
-> =
-
-> It adds support for the i.MX8MQ but the same IP core can also be found on=
- e.g.
-> i.MX8QXP. I added the necessary hooks to support other imx8 variants but =
-since
-> I only have imx8mq boards to test I omitted the platform data for
-> other SoCs.
-
-
-> =
-
-> The code is based on NXPs BSP so I added Robert Chiras as Co-authored-by.
-> =
-
-> The most notable changes over the BSP driver are
->  - Calculate HS mode timing from phy_configure_opts_mipi_dphy
->  - Perform all clock setup via DT
->  - Merge nwl-imx and nwl drivers
->  - Add B0 silion revision quirk
->  - become a bridge driver to hook into mxsfb / dcss
->    imx-display-subsystem so it makes sense to make it drive a bridge for =
-dsi as
->    well).
->  - Use panel_bridge to attach the panel
->  - Use multiplex framework instead of accessing syscon directly
-> =
-
-> This has been tested on a Librem 5 devkit using mxsfb with Robert's patch=
-es[1]
-> and the mainline rocktech-jh057n00900 DSI panel driver on next-20200317 a=
-nd on
-> the Librem5 with the a Mantix MLAF057WE51-X DSI panel driver (not yet mai=
-nline)
-> The DCSS (submitted for mainline inclusion now too) can also act as input
-> source.
-> =
-
-> Changes from v10:
-> - Per review comments by Sam Ravnborg
->   https://lore.kernel.org/dri-devel/20200318214639.GA971@ravnborg.org/
->   - Drop header-test-y since kernel lost support
->   - Handle drm_bridge_attach's new flags argument
->   - Add Acked-by: to binding patch, thanks!
-> - Move to next-20200319
-> =
-
-> Changes from v9:
-> - Per review comments by Robert Chiras
->   https://lore.kernel.org/dri-devel/1575366594.6423.61.camel@nxp.com/
->   - don't mix DSI host and bridge initialization
->   - only select output source once
->   - defer probe when panel is not ready to fix usage as a module
->   - use correct reset sequence as described by Robert
->     (and provided by NWL)
->   - use mode->clock instead of mode->crtc_clock
-> - Add tested by from Martin Kepplinger, thanks!
-> - Drop platform specific data (as suggested previously by Laurent Pinchar=
-t and
->   Andrzej Hajda) since imx8q* needs another set of abstractions with the =
-new
->   reset sequence and that's easier to do when adding imx8q* support rathe=
-r then
->   adding wrong abstraction now.
-> - Update bindings to use proper clock and irq names to make the example m=
-atch
->   reality more closely.
-> - Use `fallthrough;` instead of /* Fall through */ in switch statements
-> - Move to next-20200226
-> =
-
-> Changes from v8:
-> - Drop reset quirk. It's not needed with mxsfb and sometimes triggers a s=
-hifted display.
-> =
-
-> Changes from v7:
-> - Per review comments by Andrzej Hajda
->   https://lore.kernel.org/linux-arm-kernel/c86b7ca2-7799-eafd-c380-e4b551=
-520837@samsung.com/
->   - Drop spare empty line
->   - handle nwl_dsi_write errors
->   - better handle read errors
->   - unwind in case of error in nwl_dsi_enable
->   - use bridge_to_dsi() instead of accessing driver_private
->   - don't log on -EPROBEDEFER when fething the reset controller
->   - use endpoint number to determine input
-> - Spotted by kbuild test robot <lkp@intel.com>
->   https://lore.kernel.org/linux-arm-kernel/201909230644.qfSKbNf9%25lkp@in=
-tel.com/
->   Use signed return type for nwl_dsi_get_dpi_pixel_format
-> - Drop connector type from drm_panel_bridge_add
-> - Don't forget to set an error value on dsi reads
-> =
-
-> Changes from v5:
-> - Per review comments by Andrzej Hajda
->   https://lists.freedesktop.org/archives/dri-devel/2019-September/235281.=
-html
->   - Fix include file ordering
->   - Add a comment to nwl_dsi_platform_data that will allow to add support
->     at least for the i.MX8QM
->   - Merge driver into a single file plus the register defs in a separate =
-header
-> - Make more functions and structs static
-> =
-
-> Changes from v4:
-> - Collect Reviewed-by: from Rob Herring, thanks!
->   https://lists.freedesktop.org/archives/dri-devel/2019-September/233979.=
-html
-> - Spotted by kbuild test robot <lkp@intel.com>
->   https://lists.freedesktop.org/archives/dri-devel/2019-September/233860.=
-html
->   https://lists.freedesktop.org/archives/dri-devel/2019-September/233863.=
-html
->   - fix format string for size_t
->   - Use DIV64_U64_ROUND_UP to fix build on 32 bit architectures
->     We can't use simple shift sind d and n are similar in size and
->     we need full precision
-> - Fix debug cfg_t_post debug print out
-> - Avoid PSEC_PER_SEC
-> - Move timeout / overflow handling out of nwl_dsi_finish_transmission,
->   it would never end up being reported since the call to the function
->   was guarded by flags.
-> - Drop 'support for' from KConfig title to make it match the other
->   drivers in that submenu
-> =
-
-> Changes from v3:
-> - Per review comments by Robert Chiras
->   https://lists.freedesktop.org/archives/dri-devel/2019-August/232580.html
->   - Add Robert's {Signed-off,Tested}-by:
->   - Respect number of lanes when calculting bandwidth limits
->   - Drop duplicate NWL_DSI_ENABLE_MULT_PKTS setup
-> - Per testing by Rober Chiras
->   https://lists.freedesktop.org/archives/dri-devel/2019-August/233688.html
->   - Drop duplicate (and too early) drm_bridge_add() in nwl_dsi_probe() th=
-at
->     made mxsfb fail to connect to the bridge since the panel_bridge was n=
-ot up
->     yet. drm_bridge_add() happens in nwl_dsi_host_attach() where after the
->     panel_bridge was set up.
-> - Per review comments by Rob Herring on bindings
->   https://lists.freedesktop.org/archives/dri-devel/2019-August/233196.html
->   - drop description from power-domains and resets
->   - allow BSD 2 clause license as well
->   - make ports more specific
->   - add #address-cells, #size-cells as required
->   - use additionalProperties
->   - panel is of type object
-> =
-
-> Changes from v2:
-> - Per review comments by Rob Herring
->   https://lists.freedesktop.org/archives/dri-devel/2019-August/230448.html
->   - bindings:
->     - Simplify by restricting to fsl,imx8mq-nwl-dsi
->     - document reset lines
->     - add port@{0,1}
->     - use a real compatible string for the panel
->     - resets are required
-> - Per review comments by Arnd Bergmann
->   https://lists.freedesktop.org/archives/dri-devel/2019-August/230868.html
->   - Don't access iomuxc_gpr regs directly. This allows us to drop the
->     first patch in the series with the iomuxc_gpr field defines.
-> - Per review comments by Laurent Pinchart
->   Fix wording in bindings
-> - Add mux-controls to bindings
-> - Don't print error message on dphy probe deferral
-> =
-
-> Changes from v1:
-> - Per review comments by Sam Ravnborg
->   https://lists.freedesktop.org/archives/dri-devel/2019-July/228130.html
->   - Change binding docs to YAML
->   - build: Don't always visit imx-nwl/
->   - build: Add header-test-y
->   - Sort headers according to DRM convention
->   - Use drm_display_mode instead of videmode
-> - Per review comments by Fabio Estevam
->   https://lists.freedesktop.org/archives/dri-devel/2019-July/228299.html
->   - Don't restrict build to ARCH_MXC
->   - Drop unused includes
->   - Drop unreachable code in imx_nwl_dsi_bridge_mode_fixup()
->   - Drop remaining calls of dev_err() and use DRM_DEV_ERR()
->     consistently.
->   - Use devm_platform_ioremap_resource()
->   - Drop devm_free_irq() in probe() error path
->   - Use single line comments where sufficient
->   - Use <linux/time64.h> instead of defining USEC_PER_SEC
->   - Make input source select imx8 specific
->   - Drop <asm/unaligned.h> inclusion (after removal of get_unaligned_le32)
->   - Drop all EXPORT_SYMBOL_GPL() for functions used in the same module
->     but different source files.
->   - Drop nwl_dsi_enable_{rx,tx}_clock() by invoking clk_prepare_enable()
->     directly
->   - Remove pointless comment
-> - Laurent Pinchart
->   https://lists.freedesktop.org/archives/dri-devel/2019-July/228313.html
->   https://lists.freedesktop.org/archives/dri-devel/2019-July/228308.html
->   - Drop (on iMX8MQ) unused csr regmap
->   - Use NWL_MAX_PLATFORM_CLOCKS everywhere
->   - Drop get_unaligned_le32() usage
->   - remove duplicate 'for the' in binding docs
->   - Don't include unused <linux/clk-provider.h>
->   - Don't include unused <linux/component.h>
->   - Drop dpms_mode for tracking state, trust the drm layer on that
->   - Use pm_runtime_put() instead of pm_runtime_put_sync()
->   - Don't overwrite encoder type
->   - Make imx_nwl_platform_data const
->   - Use the reset controller API instead of open coding that platform spe=
-cific
->     part
->   - Use <linux/bitfield.h> intead of making up our own defines
->   - name mipi_dsi_transfer less generic: nwl_dsi_transfer
->   - ensure clean in .remove by calling mipi_dsi_host_unregister.
->   - prefix constants by NWL_DSI_
->   - properly format transfer_direction enum
->   - simplify platform clock handling
->   - Don't modify state in mode_fixup() and use mode_set() instead
->   - Drop bridge detach(), already handle by nwl_dsi_host_detach()
->   - Drop USE_*_QUIRK() macros
-> - Drop (for now) unused clock defnitions. 'pixel' and 'bypass' clock will=
- be
->   used for i.MX8 SoCs but since they're unused atm drop the definitions -=
- but
->   keep the logic to enable/disable several clocks in place since we know =
-we'll
->   need it in the future.
-> =
-
-> Changes from v0:
-> - Add quirk for IMQ8MQ silicon B0 revision to not mess with the
->   system reset controller on power down since enable() won't work
->   otherwise.
-> - Drop devm_free_irq() handled by the device driver core
-> - Disable tx esc clock after the phy power down to unbreak
->   disable/enable (unblank/blank)
-> - Add ports to dt binding docs
-> - Select GENERIC_PHY_MIPI_DPHY instead of GENERIC_PHY for
->   phy_mipi_dphy_get_default_config
-> - Select DRM_MIPI_DSI
-> - Include drm_print.h to fix build on next-20190408
-> - Drop some debugging messages
-> - Newline terminate all DRM_ printouts
-> - Turn component driver into a drm bridge
-> =
-
-> [0]: https://lists.freedesktop.org/archives/dri-devel/2019-May/219484.html
-> [1]: https://patchwork.freedesktop.org/series/62822/
-> =
-
-> Guido G=FCnther (2):
->   dt-bindings: display/bridge: Add binding for NWL mipi dsi host
->     controller
->   drm/bridge: Add NWL MIPI DSI host controller support
-> =
-
->  .../bindings/display/bridge/nwl-dsi.yaml      |  216 +++
->  drivers/gpu/drm/bridge/Kconfig                |   16 +
->  drivers/gpu/drm/bridge/Makefile               |    1 +
->  drivers/gpu/drm/bridge/nwl-dsi.c              | 1218 +++++++++++++++++
->  drivers/gpu/drm/bridge/nwl-dsi.h              |  144 ++
->  5 files changed, 1595 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/nwl-=
-dsi.yaml
->  create mode 100644 drivers/gpu/drm/bridge/nwl-dsi.c
->  create mode 100644 drivers/gpu/drm/bridge/nwl-dsi.h
-> =
-
-> -- =
-
-> 2.23.0
-> =
-
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
