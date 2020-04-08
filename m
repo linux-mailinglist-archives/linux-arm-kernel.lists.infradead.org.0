@@ -2,96 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33FE91A1E26
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 11:41:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EAF71A1E68
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 11:58:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WcHSr0ftlG0SK6aH7fA2Su+V6Gsz9RPuRyX6tbgLvnY=; b=VIQRaOLsj1k2NCoRwkPuQBnT1
-	blLCkd7038gS4q+YbH0twd/TP2RlDqWmONQmyfPoLgN36nXz+SWtBmkiLGjfMo9ccRiY9mLCqWejw
-	OSvA9L/omjzNKYWu1h8U1/xP9sVAVBgJiLvIzX5FEaJPsADxwEgcwMCplD22XWTigCIqGQZyQYRnz
-	qBLiMn3XisQMo3f1lcuCx3p/yYXOn1sMnHoAV50a9CxUP4K4y6NpCsWuLVI4efiuJLYMlnyPp7+Q0
-	0wf9L9LwPrW/J82LIgR8mbTYXynb3VG4M2M2nBH8/bJOscaniQ6xWpAkfxzMqL4aSIn9xpihj2vRM
-	IjzHkcxzw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LrYItCVtMI093CUgmeAlXrR9rO5INBgVL6L9pFyBbTU=; b=VO+4O+C2EC1abx
+	LOVJ2qWS6bW5tN84HyWWKvczp9dHiAnHTH+ji9j/3tL1cPc8p+sXrLvNMSGyD0CEFy4+isSwSh5HK
+	Ek+AE4l39TOM01HfSv0t5x8dPigPIpecN6THOCTCv2B2v8Dm2SeWhXSovjuAVfEsF0xebB7bm5xiK
+	WtwQakywJYzCdssgJ2VeZkcCFPW3TLoAiSzOqGY6dTkx0ty7NN/u9fdF+kr+pecpS0EsBLMx3ljSF
+	Gt9jtSJX2UV8V9FZDh/0HfLSX3Ol9/TwgGEL2MhB3H6ACW1a0ZTpguv8NlKfjEAAzK8IcmbT2Sj86
+	slU9xmM07cp52NebmNhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM7DC-0007zR-GY; Wed, 08 Apr 2020 09:41:34 +0000
-Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
+	id 1jM7Tf-00020L-Cn; Wed, 08 Apr 2020 09:58:35 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM7D5-0007xo-6e
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 09:41:28 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 6488C828;
- Wed,  8 Apr 2020 05:41:19 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 08 Apr 2020 05:41:20 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=N6JZm45kpxMIuSYKJzXOxy5rA2O
- Mlv07ymdp36yM5Es=; b=lecMA//UQ3o36d2jqwptLM9DbXnYiv3+BeefvmnaOj7
- /kY5287cYPdtH030+1jP0pTBVLW4o0oN4aqDlDUvfvV3QlLEJSMCEaTng9HuzRno
- OxgLe69BsgrO6Mg5r2NLfVVC7Vb6PLF261fqIcLtyGRQcuhnz2S3YFNUbLaqXjO0
- ozBWsOZ74vRWzgKmlMmPTE4V4w87MdU83Oe0iSXElsza0XgjG1NObwBuXjjtjKJF
- 67vPLaEPbv9jLM/B2AnAmGPmJo48VK5ArPgg4hAJg2fhiDKQdzYG30pK//Dvkp5u
- Kw/F91KSwRcv27zawq0bawbv3W6PiXaZhgukr+ZbhTA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=N6JZm4
- 5kpxMIuSYKJzXOxy5rA2OMlv07ymdp36yM5Es=; b=KhYZn+cLplG+ZzJO4uM3WG
- NGtUzlqwMVmOGJzdZErbE0fG3fha3cEovw+UkA2yhEcrr+1wvRL7nvw1NZcWWCvG
- jPaqytcZESplqqw3FJ0Z49GhjuAgz9BIcDCL+5LdN9lzcI6wOB79STLEqSV+oRjj
- XXpt3QhOmYXKtJTaBm21PXoQhH0+mMxmfXkvdB6wvzG5Gw1nRGQpLvpiz/6uZAgY
- itnHmG+ZvJt5XvrncYznRzD0W68mkuPKIuiRQqkDEJhX+xuN+P557Dz1w2+wn3rw
- wxbnLlsieiAQf6TXJzN9aIuCchjx5Zy5xstS93cZX1IN/1EHixxwdtPVhNhuafhA
- ==
-X-ME-Sender: <xms:O5yNXj8LnITlyadBgK_0uoQzdAcw0sjXTY-DMTSZJPCkTw1ec4utlA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudejgddulecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:O5yNXiKQKBqeYUMznPmkhqaRF3j-AqVmNp8ygIvioCUkTB6gekWyqQ>
- <xmx:O5yNXuvLUP1OZNkhkW2VU8npKRfG2Xr6F2Gj-Zb3GpL5mgAcv1FwIA>
- <xmx:O5yNXunlJrAqYf1n60qlTu1lKlSCdAIpGW7EsYIGFovjL4f190u8VA>
- <xmx:P5yNXnwoKkq2E3y4bNGIGy49iLmnYpR3CUkrWwfYewePt2i371o9ow>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id CE97F3280065;
- Wed,  8 Apr 2020 05:41:14 -0400 (EDT)
-Date: Wed, 8 Apr 2020 11:41:12 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH] media: cedrus: Implement runtime PM
-Message-ID: <20200408094112.uzbsl4yhtjs5vhou@gilmour.lan>
-References: <20200408010232.48432-1-samuel@sholland.org>
+ id 1jM7TV-0001zQ-OQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 09:58:27 +0000
+X-Originating-IP: 84.210.220.251
+Received: from [192.168.1.123] (cm-84.210.220.251.getinternet.no
+ [84.210.220.251]) (Authenticated sender: fredrik@strupe.net)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id EEA966000F;
+ Wed,  8 Apr 2020 09:58:17 +0000 (UTC)
+Subject: Re: [PATCH] arm64: armv8_deprecated: Fix undef_hook mask for thumb
+ setend
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <911db2f1-e078-a460-32ee-154a0b4de5d4@strupe.net>
+ <20200407092744.GA2665@gaia> <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
+ <0d7b582a-1bd0-9db2-2fdc-04fc887f64c6@strupe.net>
+ <20200408090111.GA27331@gaia>
+From: Fredrik Strupe <fredrik@strupe.net>
+Message-ID: <9979396e-5d01-0cfe-722f-3a4f6e81dc01@strupe.net>
+Date: Wed, 8 Apr 2020 11:58:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200408010232.48432-1-samuel@sholland.org>
+In-Reply-To: <20200408090111.GA27331@gaia>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_024127_522496_C058C8FB 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200408_025825_931263_B82AA6CC 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.195 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,64 +69,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5621466749874334299=="
+Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5621466749874334299==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ms6v2x4wwxcyhvkq"
-Content-Disposition: inline
-
-
---ms6v2x4wwxcyhvkq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Apr 07, 2020 at 08:02:32PM -0500, Samuel Holland wrote:
-> This allows the VE clocks and PLL_VE to be disabled most of the time.
+On 08.04.2020 11:01, Catalin Marinas wrote:
+> On Tue, Apr 07, 2020 at 01:18:21PM +0200, Fredrik Strupe wrote:
+>> (Sorry for duplicate, something went terribly wrong with the formatting of
+>> the previous email.)
 >
-> Since the device is stateless, each frame gets a separate runtime PM
-> reference. Enable autosuspend so the PM callbacks are not run before and
-> after every frame.
+> It's still wrong here with tabs converted to spaces. The patch doesn't
+> apply. Could you please send the patch separately as a v2? It looks fine
+> otherwise.
 >
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> Thanks.
+>
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
+Alright, let's hope third time's the charm.
 
-Thanks!
-Maxime
+Fredrik
 
---ms6v2x4wwxcyhvkq
-Content-Type: application/pgp-signature; name="signature.asc"
+---
+For thumb instructions, call_undef_hook() in traps.c first reads a u16,
+and if the u16 indicates a T32 instruction (u16 >= 0xe800), a second
+u16 is read, which then makes up the the lower half-word of a T32
+instruction. For T16 instructions, the second u16 is not read,
+which makes the resulting u32 opcode always have the upper half set to
+0.
 
------BEGIN PGP SIGNATURE-----
+However, having the upper half of instr_mask in the undef_hook set to 0
+masks out the upper half of all thumb instructions - both T16 and T32.
+This results in trapped T32 instructions with the lower half-word equal
+to the T16 encoding of setend (b650) being matched, even though the upper
+half-word is not 0000 and thus indicates a T32 opcode.
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXo2cOAAKCRDj7w1vZxhR
-xb5vAP4xQRPypcxDFGdSp7ZspsH/B1RLDEoyE7lvECbEQlmvpQD+Ij62STTM7hna
-bWVw1hXRzBto9JUYuynQjMbCNZ9Q8A4=
-=+1/C
------END PGP SIGNATURE-----
+An example of such a T32 instruction is eaa0b650, which should raise a
+SIGILL since T32 instructions with an eaa prefix are unallocated as per
+Arm ARM, but instead works as a SETEND because the second half-word is set
+to b650.
 
---ms6v2x4wwxcyhvkq--
+This patch fixes the issue by extending instr_mask to include the
+upper u32 half, which will still match T16 instructions where the upper
+half is 0, but not T32 instructions.
 
+Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Fixes: 2d888f48e056 ("arm64: Emulate SETEND for AArch32 tasks")
+---
+ arch/arm64/kernel/armv8_deprecated.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
---===============5621466749874334299==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
+index 9d3442d62..8c06dfee0 100644
+--- a/arch/arm64/kernel/armv8_deprecated.c
++++ b/arch/arm64/kernel/armv8_deprecated.c
+@@ -609,7 +609,7 @@ static struct undef_hook setend_hooks[] = {
+ 	},
+ 	{
+ 		/* Thumb mode */
+-		.instr_mask	= 0x0000fff7,
++		.instr_mask	= 0xfffffff7,
+ 		.instr_val	= 0x0000b650,
+ 		.pstate_mask	= (PSR_AA32_T_BIT | PSR_AA32_MODE_MASK),
+ 		.pstate_val	= (PSR_AA32_T_BIT | PSR_AA32_MODE_USR),
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5621466749874334299==--
-
