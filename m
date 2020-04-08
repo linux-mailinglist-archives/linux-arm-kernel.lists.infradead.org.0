@@ -2,120 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 808A61A200A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 13:41:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD0EF1A2157
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:07:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBX8GcnVfbG0RDXo7iqeFtyutoxOIoodu1cEX0s62uI=; b=nSvlapHdh0YIIC
-	DIgjNwGGHBcOI23t1BJ9Qw5ufl4X7t33tyLOufwsWb5PQskV8vHn13tB8G5PdhWg+RHLdTA2iVnfP
-	7cGWAIInNX4ZyM0yqKegox39QSi4GYDVGMZ2XxOMpSztCtFleHtHVIkKFvc1vMA7QsR0DgskYoK9t
-	A0QVCotTjqrcik1dWIRGpLOQQR/lRu0PSju4JRwh+cpkPfRIRTSW2fhhzzrdibszO3u+PtmP/KLIj
-	EMUfoZMOaSkgD44OL2uEyioZCtrwj/oY09J2p/A+fo5uZ+/SboopOI+tmtZ58/iqeQALAphf3CVEc
-	m/AhzBig7mLgHgEZivWA==;
+	List-Owner; bh=uBVaRbglHWAHYCEj0b7ordxyqtKyQy9GlMhhQ82w/6M=; b=IMQpslRxPchTJ3
+	tlMtdiPuDDJzIC/VWifne1zmjiZf+8rZWYhj+BMZD5r/ovxkwtsj3wKYwySxlLcW4Q6nbnTrhtcuA
+	Ed30QUAJbTmDLi+JAKZqrS9wqCySXdZt96fHQIyHFuiyI4pdbCQwnN2Lmq/FRbNAo+xWb4Ljuxgys
+	zBG5U5SUeiRJWyedfkk9hDG6Okvh7/NsLPGb3tW695DM7jWrZtbM8BFmp4+EG2QFMoWgIYjkQSHoW
+	wd4hy/1lbT1eAZmcAjHwvBNiokIYcx59EjqKxU1OuW8cdQ/4mKNcyILWqrBdcVd4ptgMAobT/iE0C
+	AFxv3IVzfjEQjbIOMeSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM95N-0000T1-CY; Wed, 08 Apr 2020 11:41:37 +0000
-Received: from mail-am6eur05on2068.outbound.protection.outlook.com
- ([40.107.22.68] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1jM9UZ-0006NH-8F; Wed, 08 Apr 2020 12:07:39 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM95F-0000SM-Hi
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 11:41:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=k0VrdwGUbCAPaeyw8wU0VWAnwspldVrS5bhI+Fo1KtCB4JaZ/YIgnihAR7LamjVIiiHfV9nJQZ6RoHE8JDz5GfaUCH8SR4hbLwbgIEH9s+GAg2sQBzw6Wl4n73ccBfJAj7dGz/zAPNFsfZx72OMuJv01BozYJzaMTOx+2RLDPPWqUziXMqBxXGkJCTKaibPA94Q3wf3maJx9jHn0T1v5s5b/l3JR66RTsGAEDjJs1b4DAF+T2AcV3CYoPkSId4JJb70S1CDBscEEKCpgEjGEbfvd3b02pajF8H5t/Mrz2GrE61H/bLIR1P3QuZkSrluvqjlFxn/7pKcbFTRpjI9xeA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lU7DPM6q89CCwDevUOhbSyafi5iD1WLSyPzUPhCkrr8=;
- b=MNTXOyG9HzItOD6sJbMpkkkbCHFAj6hs9tx79Gy7VSaiZZMn+7Nbr8wfWY6jeFovxBEi2dOu8NZf3R3rw4e70bGrB6cIOmWxQm99r9SOElHvG0iEmFJP3aXAGono/7VzqnqYCv7oh/b+tNLPnpwxTMvwdaY7POeJT0nqjoCwArzOKlwxJxc25Tli0KZPx9+k1SD7jDBtS0mBSg6RFK1O/wKAzB86S+a91aScG9a0ZlrpXPLOiidybyqq1KSprWbM2lPX/kbOKblu4H+okfmpsy0BP2hLCrQhebaZr5oNeow0REMXYGssgjA0dLsUg4bvPyuvp5Kcs3QcUgEVt8G7yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lU7DPM6q89CCwDevUOhbSyafi5iD1WLSyPzUPhCkrr8=;
- b=GhQyJ85OvetkGKZnmDSBQ2UFuJmTbMHj0Lf33Mky9f/AsCcdgNa/HTfgq3AUl8KN1bgqluRVaPivM7tzMD/f3RC/R+vmApyQsz9hfPfXGiwKHp2lewqBpwXb5Tyi9IiBiepyIrDiFFtNM6mivJN8cVxwTAr82EZveRPiqLE5gtI=
-Received: from VI1PR04MB6800.eurprd04.prod.outlook.com (2603:10a6:803:133::16)
- by VI1PR04MB5533.eurprd04.prod.outlook.com (2603:10a6:803:cf::31)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.16; Wed, 8 Apr
- 2020 11:41:24 +0000
-Received: from VI1PR04MB6800.eurprd04.prod.outlook.com
- ([fe80::b8a4:c96d:7fc1:1309]) by VI1PR04MB6800.eurprd04.prod.outlook.com
- ([fe80::b8a4:c96d:7fc1:1309%3]) with mapi id 15.20.2900.015; Wed, 8 Apr 2020
- 11:41:24 +0000
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: John Garry <john.garry@huawei.com>
-Subject: RE: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
-Thread-Topic: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
-Thread-Index: AQHV6W3A3nevwmck+keoVVW6IJgc3agqKT2AgAAQDjCAAeWxAIAA772QgAAzaoCAAAYD8IAAflQAgDNsawCADJBnsIAARCOAgADH/+CAAH3ngIAAD3Dw
-Date: Wed, 8 Apr 2020 11:41:24 +0000
-Message-ID: <VI1PR04MB6800F2A5949F0AFAF2E82CE0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
-References: <20200222104621.2258-1-qiangqing.zhang@nxp.com>
- <6dbeabcf-c15a-0bbd-cef4-b25d0133854f@huawei.com>
- <DB7PR04MB4618D2E1892120EB659B8695E6EC0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <2f81eb7a-a6e4-1cc6-cd0a-ca3d749bd552@huawei.com>
- <DB7PR04MB4618C0A8DD9BAB2A529CDCECE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <a2cc0772-4f5d-aba3-1f5c-7d4eef7a3f72@huawei.com>
- <DB7PR04MB461803AD15E47AA880F0915DE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <55836919-41b5-0834-f7a7-1a2a34535677@huawei.com>
- <bd67910e-1522-39cd-5527-b9b18f3da96d@huawei.com>
- <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
- <ccab39b0-c84f-e529-4067-07466b5433a1@huawei.com>
- <VI1PR04MB68000808CEE4BC23403C35A0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
- <ca2db002-975a-ffe0-2dfc-c85f4e6205bb@huawei.com>
-In-Reply-To: <ca2db002-975a-ffe0-2dfc-c85f4e6205bb@huawei.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=qiangqing.zhang@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 03aa98c5-e9b0-49e9-3843-08d7dbb1c437
-x-ms-traffictypediagnostic: VI1PR04MB5533:|VI1PR04MB5533:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB55332827A87772F479A7C98DE6C00@VI1PR04MB5533.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0367A50BB1
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR04MB6800.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(366004)(39860400002)(7696005)(64756008)(66556008)(5660300002)(76116006)(66476007)(66446008)(52536014)(81156014)(81166007)(86362001)(8936002)(316002)(54906003)(6506007)(8676002)(186003)(55016002)(33656002)(6916009)(9686003)(2906002)(66946007)(478600001)(26005)(71200400001)(4326008)(53546011);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1/lalx0FcAmJo4Na8mlrw2vtVO6j+mEz/yp/5WejlqN0+e3d6roCHZGUvPsfKZ6OwwTcosVnyJjgC6NtDYfrx5AEb1+RtmsO1+XJ+J+s1cYtzFPiRZe8935D8zgo07Th2AIWhYjjaO0/m9E3Nz367j86I16AJCra97kNXJ1tf6Dr1FeYxUO12e/1PmTMTZzGzBbqGKtedxT5+4hRSEEYFy3OH3gkx/2QzJwno8TR3oKBsfNZJX7HYSDXDkthqXmGzIAt8k4/qTZ+ZSFNgjIzwb3itlQL4pEvok/omeAJKI3g+hRlVnK0mZDLD+G9mfN/vzHAciXHplIP/GSULGLcFoR2GOY4bUSCl00li3GMiMojs7AAv44Is+NGV3t03lI46LFekCP+8VFfmpk84fMFakYBTeYmuo5cnLtpaOkRd8Mkgwc4FD0iDWpdIB8bnyNA
-x-ms-exchange-antispam-messagedata: hHfR/A0vEFWWxQlWPbzi76/XqBE66v7czEJnZvS3sP2OPcx3R+xIGn30qbf9GOlMfG+Bz5AOfrX/W9mLEBqss6wQDYl0/Vph6KU86wNAnu5u+8dr40t1lUOeLLiog1VpOAm8Rxzc61gygVPAATx7dw==
+ id 1jM9R6-0000YQ-D1; Wed, 08 Apr 2020 12:04:06 +0000
+X-UUID: 0010bb0e81f14cb1b7f83c81a08f1d8e-20200408
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=8H+hhyZ1P440Ay/us/xwFYEH2bp7WNz3JoXb3I9h0TA=; 
+ b=RTVhrK4esHy0n1HPNZ2m/7kytI9VtzXxz1dVvzUe2UxvYEhmT11bpW9cgeTAaO0C7pr9rXjVJGgaImePqAqs6VFLxirvDMDjKuZuYnEJeRJVolWBZJMcZOzfmPgvps2wCAwuEK9wjAVDiebEnUPYS0sc491gRxvP38U7x2R1lg8=;
+X-UUID: 0010bb0e81f14cb1b7f83c81a08f1d8e-20200408
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1892152378; Wed, 08 Apr 2020 04:03:26 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 8 Apr 2020 04:53:55 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Wed, 8 Apr 2020 19:53:51 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 8 Apr 2020 19:53:51 +0800
+Message-ID: <1586346824.8804.12.camel@mhfsdcap03>
+Subject: Re: [V6, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: <andriy.shevchenko@linux.intel.com>
+Date: Wed, 8 Apr 2020 19:53:44 +0800
+In-Reply-To: <faf3482d4127464195d04a17cae446b7@mtkmbs05n1.mediatek.inc>
+References: <20191211112849.16705-1-dongchun.zhu@mediatek.com>
+ <20191211112849.16705-3-dongchun.zhu@mediatek.com>
+ <20191211143640.GU32742@smile.fi.intel.com>
+ <faf3482d4127464195d04a17cae446b7@mtkmbs05n1.mediatek.inc>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 03aa98c5-e9b0-49e9-3843-08d7dbb1c437
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Apr 2020 11:41:24.2189 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: WyBO2EzE42QHq1r6MJa6Z8g3i5ExYhL0dveX3uySnnEU6M8NCZwsrMBeTMdLfYaSV9vKbyhwl45cbnhxw24zTw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5533
+X-TM-SNTS-SMTP: 3ED9436ACB4E83CE8ADF739028FE7CD851C9C35EF66199FC17C0DF124C6D651C2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_044129_700460_B4B94A87 
-X-CRM114-Status: GOOD (  24.43  )
+X-CRM114-CacheID: sfid-20200408_050404_462936_A4852D60 
+X-CRM114-Status: GOOD (  16.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.22.68 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -124,6 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,126 +88,268 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>, "will@kernel.org" <will@kernel.org>,
- Linuxarm <linuxarm@huawei.com>, "acme@kernel.org" <acme@kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Jiri Olsa <jolsa@redhat.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, shengnan.wang@mediatek.com,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSm9obiwNCg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBKb2huIEdh
-cnJ5IDxqb2huLmdhcnJ5QGh1YXdlaS5jb20+DQo+IFNlbnQ6IDIwMjDlubQ05pyIOOaXpSAxODoy
-Ng0KPiBUbzogSm9ha2ltIFpoYW5nIDxxaWFuZ3FpbmcuemhhbmdAbnhwLmNvbT4NCj4gQ2M6IHdp
-bGxAa2VybmVsLm9yZzsgbWFyay5ydXRsYW5kQGFybS5jb207IGFjbWVAa2VybmVsLm9yZzsNCj4g
-bGludXgtcGVyZi11c2Vyc0B2Z2VyLmtlcm5lbC5vcmc7IGRsLWxpbnV4LWlteCA8bGludXgtaW14
-QG54cC5jb20+OyBGcmFuayBMaQ0KPiA8ZnJhbmsubGlAbnhwLmNvbT47IEppcmkgT2xzYSA8am9s
-c2FAcmVkaGF0LmNvbT47IFpoYW5nc2hhb2t1bg0KPiA8emhhbmdzaGFva3VuQGhpc2lsaWNvbi5j
-b20+OyBMaW51eGFybSA8bGludXhhcm1AaHVhd2VpLmNvbT47DQo+IGxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZw0KPiBTdWJqZWN0OiBSZTogW1BBVENIIDAvNl0gcGVyZi9pbXhf
-ZGRyOiBBZGQgbmFtZXNwYWNlIGZvciBpLk1YOCBERFIgUGVyZg0KPiANCj4gT24gMDgvMDQvMjAy
-MCAwNjowNCwgSm9ha2ltIFpoYW5nIHdyb3RlOg0KPiA+PiAgIC4gQ2FuIHlvdSBhZGQgdGhpcywg
-cmVnZW5lcmF0ZSwNCj4gPj4gYW5kIHJldHJ5Og0KPiA+Pg0KPiA+PiBkaWZmIC0tZ2l0IGEvdG9v
-bHMvcGVyZi9wbXUtZXZlbnRzL2pldmVudHMuYw0KPiA+PiBiL3Rvb2xzL3BlcmYvcG11LWV2ZW50
-cy9qZXZlbnRzLmMgaW5kZXggNjc1YWVjOTg4MWNlLi4xNmRjZjAwYzc5MmENCj4gPj4gMTAwNjQ0
-DQo+ID4+IC0tLSBhL3Rvb2xzL3BlcmYvcG11LWV2ZW50cy9qZXZlbnRzLmMNCj4gPj4gKysrIGIv
-dG9vbHMvcGVyZi9wbXUtZXZlbnRzL2pldmVudHMuYw0KPiA+PiBAQCAtMjU4LDYgKzI1OCw3IEBA
-IHN0YXRpYyBzdHJ1Y3QgbWFwIHsNCj4gPj4gICAgICAgICAgeyAiaGlzaV9zY2NsLGwzYyIsICJo
-aXNpX3NjY2wsbDNjIiB9LA0KPiA+PiAgICAgICAgICAvKiBpdCdzIG5vdCByZWFsaXN0aWMgdG8g
-a2VlcCBhZGRpbmcgdGhlc2UsIHdlIG5lZWQNCj4gPj4gc29tZXRoaW5nIG1vcmUgc2NhbGFibGUg
-Li4uICovDQo+ID4+ICAgICAgICAgIHsgInNtbXV2M19wbWNnIiwgInNtbXV2M19wbWNnIiB9LA0K
-PiA+PiArICAgICAgIHsgImlteDhfZGRyIiwgImlteDhfZGRyIiB9LA0KPiA+PiAgICAgICAgICB7
-ICJMM1BNQyIsICJhbWRfbDMiIH0sDQo+ID4+ICAgICAgICAgIHt9DQo+ID4gWWVzLCBldmVudHMg
-Y2FuIHdvcmsgYWZ0ZXIgYWRkaW5nIHRoaXMgY29kZSwgaG93ZXZlciwgbWV0cmljcyBzdGlsbCBj
-YW4ndCB3b3JrLA0KPiBpdCBzZWVtcyB0aGF0IG1ldHJpY2dyb3VwIGZhaWxzIHRvIHBhcnNlIHRo
-ZSBtZXRyaWMgZXhwcmVzc2lvbi4gWW91IG1heSBjaGFuZ2UNCj4gc29tZXRoaW5nIGZyb20gbWV0
-cmljZ3JvdXAuYyBjYXVzaW5nIHRoaXMgaXNzdWUuDQo+IA0KPiBUaGF0IGNvZGUgc2hvdWxkIGJl
-IGVmZmVjdGl2ZWx5IHRoZSBzYW1lLg0KPiANCj4gV2hhdCBkb2VzIHBlcmYgbGlzdCBzaG93IGZv
-ciB0aGUgbWV0cmljcyBub3c/DQpyb290QGlteDhtbWV2azp+IyAuL3BlcmYgbGlzdCBkZHJjDQoN
-Ckxpc3Qgb2YgcHJlLWRlZmluZWQgZXZlbnRzICh0byBiZSB1c2VkIGluIC1lKToNCg0KDQpkZHJj
-Og0KICBpbXg4X2Rkci5jeWNsZXMNCiAgICAgICBbZGRyIGN5Y2xlcyBldmVudC4gVW5pdDogaW14
-OF9kZHJdDQogIGlteDhfZGRyLnJlYWQNCiAgICAgICBbZGRyIHJlYWQgZXZlbnQuIFVuaXQ6IGlt
-eDhfZGRyXQ0KICBpbXg4X2Rkci5yZWFkX2N5Y2xlcw0KICAgICAgIFtkZHIgcmVhZC1jeWNsZXMg
-ZXZlbnQuIFVuaXQ6IGlteDhfZGRyXQ0KICBpbXg4X2Rkci53cml0ZQ0KICAgICAgIFtkZHIgd3Jp
-dGUgZXZlbnQuIFVuaXQ6IGlteDhfZGRyXQ0KICBpbXg4X2Rkci53cml0ZV9jeWNsZXMNCiAgICAg
-ICBbZGRyIHdyaXRlLWN5Y2xlcyBldmVudC4gVW5pdDogaW14OF9kZHJdDQoNCnJvb3RAaW14OG1t
-ZXZrOn4jIC4vcGVyZiBsaXN0IG1ldHJpYw0KDQpMaXN0IG9mIHByZS1kZWZpbmVkIGV2ZW50cyAo
-dG8gYmUgdXNlZCBpbiAtZSk6DQoNCg0KTWV0cmljczoNCg0KICBpbXg4bW1fZGRyX3JlYWQuYWxs
-DQogICAgICAgW2J5dGVzIGFsbCBtYXN0ZXJzIHJlYWQgZnJvbSBkZHIgYmFzZWQgb24gcmVhZC1j
-eWNsZXMgZXZlbnQuIFVuaXQ6IGlteDhfZA0KZHIgXQ0KICBpbXg4bW1fZGRyX3dyaXRlLmFsbA0K
-ICAgICAgIFtieXRlcyBhbGwgbWFzdGVycyB3cml0ZSB0byBkZHIgYmFzZWQgb24gcmVhZC1jeWNs
-ZXMgZXZlbnQuIFVuaXQ6IGlteDhfZGQNCnIgXQ0KDQpyb290QGlteDhtbWV2azp+IyAuL3BlcmYg
-c3RhdCAtYSAtSSAxMDAwIC12IC1NIGlteDhtbV9kZHJfcmVhZC5hbGwNClVzaW5nIENQVUlEIDB4
-MDAwMDAwMDA0MTBmZDA0MA0KYWRkaW5nDQpldmVudCBzeW50YXggZXJyb3I6ICcnDQogICAgICAg
-ICAgICAgICAgICAgICAgXF9fXyBwYXJzZXIgZXJyb3INCg0KIFVzYWdlOiBwZXJmIHN0YXQgWzxv
-cHRpb25zPl0gWzxjb21tYW5kPl0NCg0KICAgIC1NLCAtLW1ldHJpY3MgPG1ldHJpYy9tZXRyaWMg
-Z3JvdXAgbGlzdD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgbW9uaXRvciBzcGVjaWZpZWQg
-bWV0cmljcyBvciBtZXRyaWMgZ3JvdXBzIChzZXBhcmF0ZWQgYnkgLCkNCg0KSXQgc2VlbXMgdGhh
-dCBtZXRyaWNncm91cCBmYWlscyB0byBwYXJzZSB0aGUgbWV0cmljIGV4cHJlc3Npb24uIA0KbWV0
-cmljLmpzb246DQpbDQogICB7DQoJICAgICJCcmllZkRlc2NyaXB0aW9uIjogImJ5dGVzIGFsbCBt
-YXN0ZXJzIHJlYWQgZnJvbSBkZHIgYmFzZWQgb24gcmVhZC1jeWNsZXMgZXZlbnQiLA0KCSAgICAi
-TWV0cmljTmFtZSI6ICJpbXg4bW1fZGRyX3JlYWQuYWxsIiwNCgkgICAgIk1ldHJpY0V4cHIiOiAi
-aW14OF9kZHIucmVhZF9jeWNsZXMgKiA0ICogNCIsDQoJICAgICJTY2FsZVVuaXQiOiAiOS43NjU2
-MjVlLTRNQiIsDQoJICAgICJVbml0IjogImlteDhfZGRyIiwNCgkgICAgIkNvbXBhdCI6ICJpLm14
-OG1tIg0KICAgIH0sDQogICB7DQoJICAgICJCcmllZkRlc2NyaXB0aW9uIjogImJ5dGVzIGFsbCBt
-YXN0ZXJzIHdyaXRlIHRvIGRkciBiYXNlZCBvbiB3cml0ZS1jeWNsZXMgZXZlbnQiLA0KCSAgICAi
-TWV0cmljTmFtZSI6ICJpbXg4bW1fZGRyX3dyaXRlLmFsbCIsDQoJICAgICJNZXRyaWNFeHByIjog
-ImlteDhfZGRyLndyaXRlX2N5Y2xlcyAqIDQgKiA0IiwNCgkgICAgIlNjYWxlVW5pdCI6ICI5Ljc2
-NTYyNWUtNE1CIiwNCgkgICAgIlVuaXQiOiAiaW14OF9kZHIiLA0KCSAgICAiQ29tcGF0IjogImku
-bXg4bW0iDQogICAgfQ0KXQ0KDQo+ID4NCj4gPj4+IHJvb3RAaW14OG1tZXZrOn4jIC4vcGVyZiBz
-dGF0IC1hIC1JIDEwMDAgLU0gaW14OG1tX2RkcjBfcmVhZC5hbGwNCj4gPj4+IGV2ZW50DQo+IA0K
-PiBDYW4geW91IHJ1biB3aXRoIC12IG9wdGlvbiBhbmQgc2hhcmUgdGhlIHJlc3VsdD8NCj4gDQo+
-ID4+PiBzeW50YXggZXJyb3I6ICcnDQo+ID4+PiAgICAgICAgICAgICAgICAgICAgICAgICBcX19f
-IHBhcnNlciBlcnJvcg0KPiA+Pj4NCj4gPj4+ICAgIFVzYWdlOiBwZXJmIHN0YXQgWzxvcHRpb25z
-Pl0gWzxjb21tYW5kPl0NCj4gPj4+DQo+ID4+PiAgICAgICAtTSwgLS1tZXRyaWNzIDxtZXRyaWMv
-bWV0cmljIGdyb3VwIGxpc3Q+DQo+ID4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9u
-aXRvciBzcGVjaWZpZWQgbWV0cmljcyBvciBtZXRyaWMNCj4gPj4+IGdyb3VwcyAoc2VwYXJhdGVk
-IGJ5ICwpDQo+ID4+Pg0KPiA+Pj4gSG93ZXZlciwgaXQgY2FuIHdvcmsgb24gYnJhbmNoOg0KPiA+
-PiBwcml2YXRlLXRvcGljLXBlcmYtNS42LXBtdS1ldmVudHMtdXBzdHJlYW0tdjIuIFdoYXQgY2hh
-bmdlcyBoYXZlIHlvdQ0KPiA+PiBtYWRlIGNvbXBhcmVkIHRvIGxhc3Q/DQo+ID4+PiBDb3VsZCB5
-b3UgaGVscCBkbyBiZWxvdyBjaGFuZ2U/IFNpbmNlIHNvbWUgU29jcyBtYXkgaGF2ZSB0d28gZGRy
-DQo+ID4+IGNvbnRyb2xsZXIoZGRyMC9kZHIxKSB3aXRoIHRoZSBzYW1lIGV2ZW50IGNvZGUuDQo+
-ID4+DQo+ID4+IFRoZSBwZXJmIHRvb2wgY2FuIGhhbmRsZSB0aGF0LiBTbyBqdXN0IHJ1biBwZXJm
-IHdpdGggLXYgb3B0aW9uLCBhbmQNCj4gPj4gaXQgd2lsbCBzaG93IGV2ZW50IGNvdW50IGJyZWFr
-ZG93biBwZXIgUE1VLCBsaWtlIHRoaXM6DQo+ID4+DQo+ID4+IHJvb3RAdWJ1bnR1Oi8jIC4vcGVy
-ZiBzdGF0IC12IC1lIHNtbXV2M19wbWNnLmwxX3RsYiBzbGVlcCAxIFVzaW5nDQo+ID4+IENQVUlE
-DQo+ID4+IDB4MDAwMDAwMDA0ODBmZDAxMCBVc2luZyBTWVNJRCBISVAwOA0KPiA+PiAtPiBzbW11
-djNfcG1jZ18yMDAxMDAwMjAvZXZlbnQ9MHg4YS8NCj4gPj4gLT4gc21tdXYzX3BtY2dfMjAwMTQw
-MDIwL2V2ZW50PTB4OGEvDQo+ID4+IC0+IHNtbXV2M19wbWNnXzEwMDAyMC9ldmVudD0weDhhLw0K
-PiA+PiAtPiBzbW11djNfcG1jZ18xNDAwMjAvZXZlbnQ9MHg4YS8NCj4gPj4gLT4gc21tdXYzX3Bt
-Y2dfMjAwMTQ4MDIwL2V2ZW50PTB4OGEvDQo+ID4+IC0+IHNtbXV2M19wbWNnXzE0ODAyMC9ldmVu
-dD0weDhhLw0KPiA+PiBzbW11djNfcG1jZy5sMV90bGI6IDAgMTAwMTIyMTY5MCAxMDAxMjIxNjkw
-DQo+ID4+IHNtbXV2M19wbWNnLmwxX3RsYjogMCAxMDAxMjIwMDkwIDEwMDEyMjAwOTANCj4gPj4g
-c21tdXYzX3BtY2cubDFfdGxiOiAxMDEgMTAwMTIxOTY2MCAxMDAxMjE5NjYwDQo+ID4+IHNtbXV2
-M19wbWNnLmwxX3RsYjogMCAxMDAxMjE5MDEwIDEwMDEyMTkwMTANCj4gPj4gc21tdXYzX3BtY2cu
-bDFfdGxiOiAwIDEwMDEyMTgzNjAgMTAwMTIxODM2MA0KPiA+PiBzbW11djNfcG1jZy5sMV90bGI6
-IDEzNCAxMDAxMjE3ODUwIDEwMDEyMTc4NTANCj4gPj4NCj4gPj4gSGVyZSBzbW11djNfcG1jZ18y
-MDAxMDAwMjAsIHNtbXV2M19wbWNnXzIwMDE0MDAyMCwgZXRjIGFyZSBhbGwNCj4gPj4gaW5zdGFu
-Y2VzIG9mIHRoZSBzYW1lIFBNVSwgbGlrZSB5b3VyIEREUkMuDQo+ID4+DQo+ID4+IEFuZCBpZiB5
-b3Ugd2FudCB0byBydW4ganVzdCBmb3IgYSBzaW5nbGUgUE1VLCB0cnkgbGlrZToNCj4gPj4NCj4g
-Pj4gLi9wZXJmIHN0YXQgLWUgc21tdXYzX3BtY2dfMjAwMTQ4MDIwL3NtbXV2M19wbWNnLmwxX3Rs
-Yi8NCj4gPiBUaGFuayB5b3UgZm9yIHlvdXIgaGludCwgaXQgaXMgcmVhbGx5IHVzZWZ1bC4NCj4g
-Pg0KPiA+IFRoZW4gcGxlYXNlIGhlbHAgdXBkYXRlIHRoZSBkZHJjLmpzb24gYW5kIG1ldHJpYy5q
-c29uOg0KPiANCj4gb2ssIGZpbmUNCj4gDQo+ID4gZGRyYy5qc29uOg0KPiA+IFsNCj4gPiAgICAg
-ew0KPiA+ICAgICAgICAgICAgICJCcmllZkRlc2NyaXB0aW9uIjogImRkciBjeWNsZXMgZXZlbnQi
-LA0KPiA+ICAgICAgICAgICAgICJFdmVudENvZGUiOiAiMHgwMCIsDQo+ID4gICAgICAgICAgICAg
-IkV2ZW50TmFtZSI6ICJpbXg4X2Rkci5jeWNsZXMiLA0KPiANCj4gbm90ZTogaWYgeW91IGhhdmUg
-anVzdCAiY3ljbGVzIiBoZXJlLCBpbnN0ZWFkIG9mICJpbXg4X2Rkci5jeWNsZXMiLCB0aGVuIHRo
-ZSBIVw0KPiBQTVUgZXZlbnQgd2lsbCBub3Qgc2hvdyBpbiBwZXJmIGxpc3QgYW5kIHlvdSBvbmx5
-IGdldCB0aGUgYWxpYXMgdW5kZXIg4oCcaW14OF9kZHLigJ0NCj4gZ3JvdXAuIFRoaXMgY2FuIGJl
-IGdvb2QgaWYgeW91ciBQTVUgaGFzIHNvIG1hbnkgZXZlbnRzIGFuZCB5b3UgZG9uJ3Qgd2FudCB0
-bw0KPiBzaG93IHRoZW0gYWxsLiBGb3IgaGlzaWxpY29uIFBNVSwgd2UgaGF2ZSBvdmVyIDYwMCBI
-VyBQTVUgZXZlbnRzLg0KV2UgY2FuIHBlcmYgbGlzdCBsaWtlOiAuL3BlcmYgbGlzdCBkZHJjLCB0
-byBzaG93IHdoYXQgd2Ugd2FudCB0byBsaXN0Lg0KDQo+IEhvd2V2ZXIsIGFzIEkgc2VlLCBhIGRv
-d25zaWRlIGlzIHRoYXQgbWFueSBQTVVzIGhhdmUgImN5Y2xlcyIgZXZlbnRzLCBhbmQgaWYNCj4g
-eW91IGp1c3QgdXNlICJjeWNsZXMiIGFzIHBlcmYgZXZlbnQsIHRoZW4gaXQgbWF5IGp1c3QgdXNl
-IHRoZSBpbmNvcnJlY3QgUE1VIGJ5DQo+IGFjY2lkZW50LiBJIG5lZWQgdG8gY2hlY2sgdGhpcyBt
-b3JlLg0KTm90IHF1aXRlIHVuZGVyc3RhbmTimLkgQW55IGltcHJvdmVtZW50IHNob3VsZCBJIG1h
-ZGU/DQoNCkJlc3QgUmVnYXJkcywNCkpvYWtpbSBaaGFuZw0KPiB0aGFua3MsDQo+IEpvaG4NCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+Hello Andy,
+
+Thanks for the review. Sorry for the late reply.
+
+On Mon, 2019-12-11 at 16:36 +0200, Andy Shevchenko wrote:
+> On Wed, Dec 11, 2019 at 07:28:49PM +0800, Dongchun Zhu wrote:
+> > Add a V4L2 sub-device driver for OV02A10 image sensor. The OV02A10 is
+> > a 1/5" CMOS sensor from Omnivision, asupporting output format: 10-bit Raw.
+> >
+> > This chip has a single MIPI lane interface and use the I2C bus for
+> > control and the CSI-2 bus for data.
+> 
+> ...
+> 
+> > +#define OV02A10_MASK_8_BITS                            0xff
+> 
+> Besides GENMASK() why do you need a definition here? What's the point?
+> 
+
+Fixed in next release.
+
+> ...
+> 
+> > +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
+> > +   struct v4l2_subdev_pad_config *cfg) {
+> > +struct v4l2_subdev_format fmt = {
+> > +.which = cfg ? V4L2_SUBDEV_FORMAT_TRY
+> > +     : V4L2_SUBDEV_FORMAT_ACTIVE,
+> > +.format = {
+> > +.width = 1600,
+> 
+> > +.height = 1200
+> 
+> Leave comma here.
+> 
+
+Fixed in next release.
+
+> > +}
+> > +};
+> > +
+> > +ov02a10_set_fmt(sd, cfg, &fmt);
+> > +
+> > +return 0;
+> > +}
+> 
+> ...
+> 
+> > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_GAIN,
+> > +(val & OV02A10_MASK_8_BITS));
+> 
+> Too many parentheses.
+> 
+
+Fixed in next release.
+
+> > +if (ret < 0)
+> > +return ret;
+> 
+> ...
+> 
+> > +static int ov02a10_set_vblank(struct ov02a10 *ov02a10, int val) {
+> > +struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+> 
+> if you do
+> 
+> int vts = val + ov02a10->cur_mode->height - OV02A10_BASIC_LINE;
+> 
+> you may increase readability below...
+> 
+
+Thanks for the suggestion.
+It seems better now.
+
+> > +int ret;
+> > +
+> > +ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
+> > +if (ret < 0)
+> > +return ret;
+> > +
+> > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+> > +(((val + ov02a10->cur_mode->height -
+> > +OV02A10_BASIC_LINE) >>
+> > +OV02A10_VTS_SHIFT) &
+> > +OV02A10_MASK_8_BITS));
+> 
+> ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+> (vts >> OV02A10_VTS_SHIFT) &
+> OV02A10_MASK_8_BITS));
+> 
+> And actually why do you need this mask here? Isn't enough to call
+> 
+> ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+> vts >> OV02A10_VTS_SHIFT);
+> 
+> here...
+> 
+> 
+
+Yes. Now we code like this.
+
+> > +if (ret < 0)
+> > +return ret;
+> > +
+> > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L,
+> > +((val + ov02a10->cur_mode->height -
+> > +OV02A10_BASIC_LINE) &
+> > +OV02A10_MASK_8_BITS));
+> 
+> ...and
+> 
+> ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L, vts);
+> 
+> here?
+> 
+
+Yes. Fixed in next release.
+
+> > +if (ret < 0)
+> > +return ret;
+> > +
+> > +return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
+> > + REG_ENABLE);
+> > +}
+> 
+> ...
+> 
+> > +static int ov02a10_check_hwcfg(struct device *dev, struct ov02a10
+> > +*ov02a10) {
+> > +struct fwnode_handle *ep;
+> > +struct fwnode_handle *fwnode = dev_fwnode(dev);
+> > +struct v4l2_fwnode_endpoint bus_cfg = {
+> 
+> > +.bus_type = V4L2_MBUS_CSI2_DPHY
+> 
+> Leave comma here.
+> 
+
+Fixed in next release.
+
+> > +};
+> > +unsigned int i, j;
+> > +int ret;
+> 
+> > +if (!fwnode)
+> > +return -ENXIO;
+> 
+> A bit strange error code here.
+> 
+
+This should be reported as -EINVAL.
+Fixed in next release.
+
+> > +
+> > +ep = fwnode_graph_get_next_endpoint(fwnode, NULL);
+> > +if (!ep)
+> > +return -ENXIO;
+> > +
+> > +ret = v4l2_fwnode_endpoint_alloc_parse(ep, &bus_cfg);
+> > +fwnode_handle_put(ep);
+> > +if (ret)
+> > +return ret;
+> 
+> > +if (!bus_cfg.nr_of_link_frequencies) {
+> > +dev_err(dev, "no link frequencies defined");
+> > +ret = -EINVAL;
+> > +goto check_hwcfg_error;
+> > +}
+> 
+> I still think it's redundant check, though it's up to maintainers.
+> 
+
+We still wanna keep this check.
+Keep same as ov2659 and ov8856.
+
+> > +
+> > +for (i = 0; i < ARRAY_SIZE(link_freq_menu_items); i++) {
+> > +for (j = 0; j < bus_cfg.nr_of_link_frequencies; j++) {
+> > +if (link_freq_menu_items[i] ==
+> > +bus_cfg.link_frequencies[j])
+> > +break;
+> > +}
+> > +
+> > +if (j == bus_cfg.nr_of_link_frequencies) {
+> > +dev_err(dev, "no link frequency %lld supported",
+> > +link_freq_menu_items[i]);
+> > +ret = -EINVAL;
+> > +goto check_hwcfg_error;
+> > +}
+> > +}
+> > +
+> > +check_hwcfg_error:
+> > +v4l2_fwnode_endpoint_free(&bus_cfg);
+> > +
+> > +return ret;
+> > +}
+> 
+> ...
+> 
+> > +static int ov02a10_probe(struct i2c_client *client) {
+> 
+> > +/* Optional indication of physical rotation of sensor */
+> > +ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation",
+> > +&rotation);
+> 
+> > +if (!ret) {
+> 
+> Why not positive conditional?
+> 
+
+Okay. Fixed in next release.
+
+> > +ov02a10->upside_down = rotation == 180;
+> > +if (rotation == 180) {
+> > +ov02a10->upside_down = true;
+> > +ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> > +}
+> > +} else {
+> > +dev_warn(dev, "failed to get rotation\n");
+> > +}
+> > +
+> > +/* Optional indication of mipi TX speed */
+> > +ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
+> > +       &clock_lane_tx_speed);
+> > +
+> 
+> > +if (!ret)
+> 
+> Ditto.
+> 
+
+As Sakari mentioned earlier, the property "ovti,mipi-tx-speed" is
+optional that shouldn't warn it's missing when ret is 0.
+So we would keep the condition like that, just removing else case.
+
+> > +ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
+> > +else
+> > +dev_warn(dev, "failed to get mipi tx speed, using default...\n");
+> > +
+> 
+> > +return ret;
+> > +}
+> 
+> --
+> With Best Regards,
+> Andy Shevchenko
+> 
+> 
+> *********************MEDIATEK Confidential/Internal Use*********************
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
