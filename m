@@ -2,62 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F6601A27D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 19:18:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46AE1A2802
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 19:33:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zIHB8QPtOGWhSd254pGK7PD82+cIDvyFP7VyLOGEg4=; b=TTyc/jmgWcL5Yx
-	A1m3Z0kaSJBV6oHy2OhyG20bgsECpbWrhMnIsykTUuEnwhCCALtzzfl1FzPAMQSgQrPV0lg4khf+i
-	xh360gB0vEp5nEHg999C6SkgWGN6Blr/y/n7SG1BkYIlKO3q36TG+ADdRXu1NWFRhz2cTsGoGYz93
-	WzT/2VBz5mwDHqpcAHBhImnt8GOHEXBQlzbQ3MRZ+NTYnBQDTxxeTGRztB2dy1CmRZMkJy9lALGE3
-	Mm35sxBeGzJB1LxgX4Pv/hKpioGaJdtC9DkQsJTujuabeD4O/WFUEZGEqVZl+TGuTC9pu4YU8KJqI
-	kLO1cgL2JoJFKwzO36ow==;
+	List-Owner; bh=lOn1IylWKFLgtos61B+ku4L/uqQrKM54dPwFD/X5FBA=; b=jZ2bhR6YvKeOTl
+	tD02ZGsk/73kTKfsLmWfO8HAPreLeofVdAQ4PI0FS6TV+4vj82+V/FfUOfznu86nm+i+X9Euddy5b
+	2YAImJuGaYO/akssZR+I9xfKIxnpghWZ901+liZIkvex70oDJMG6rqxUMKBjrZ5bABp5j9lz7aJIW
+	anRPDTEcyJR9sstWz6wbknb49u5+Lzxpg9ijhtxiRw0uI7h0hAPG3SIj6vyqQDv1HYRfOjc22gQe9
+	w1O5xyRM09O2aZwhWDtvRVm/merm/JJv7Rdwqh8zeyhLaN2XjnqjA0HBzkiCT+dG9N7+7mdEILVcH
+	bQEeKc/SyrmQKRLx65Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMEKo-0000wm-P3; Wed, 08 Apr 2020 17:17:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMEKh-0000va-LV
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 17:17:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20B1031B;
- Wed,  8 Apr 2020 10:17:45 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4929B3F52E;
- Wed,  8 Apr 2020 10:17:44 -0700 (PDT)
-Date: Wed, 8 Apr 2020 18:17:41 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Fredrik Strupe <fredrik@strupe.net>
-Subject: Re: [PATCH v2] arm64: armv8_deprecated: Fix undef_hook mask for
- thumb setend
-Message-ID: <20200408171741.GB2481@gaia>
-References: <911db2f1-e078-a460-32ee-154a0b4de5d4@strupe.net>
- <20200407092744.GA2665@gaia>
- <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
- <0d7b582a-1bd0-9db2-2fdc-04fc887f64c6@strupe.net>
- <20200408090111.GA27331@gaia>
- <9979396e-5d01-0cfe-722f-3a4f6e81dc01@strupe.net>
- <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
+	id 1jMEZf-0001Pd-9H; Wed, 08 Apr 2020 17:33:15 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMEZV-0001KZ-Ol
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 17:33:08 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 8171E804E5;
+ Wed,  8 Apr 2020 19:32:59 +0200 (CEST)
+Date: Wed, 8 Apr 2020 19:32:58 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH v10 1/2] dt-bindings: display/bridge: Add binding for NWL
+ mipi dsi host controller
+Message-ID: <20200408173258.GA24828@ravnborg.org>
+References: <cover.1584730033.git.agx@sigxcpu.org>
+ <c7fd138e00608a108dae3651ab10d583a60040fc.1584730033.git.agx@sigxcpu.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
+In-Reply-To: <c7fd138e00608a108dae3651ab10d583a60040fc.1584730033.git.agx@sigxcpu.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=XpTUx2N9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=8nJEP1OIZ-IA:10 a=ze386MxoAAAA:8
+ a=8AirrxEcAAAA:8 a=VwQbUJbxAAAA:8 a=7gkXJVJtAAAA:8 a=gEfo2CItAAAA:8
+ a=Y9UcUKKVKEwMmb4K0lMA:9 a=cci32D0TwK99nO6w:21 a=mc74Iri104anq4aC:21
+ a=wPNLvfGTeEIA:10 a=iBZjaW-pnkserzjvUTHh:22 a=ST-jHhOKWsTCqRlWije3:22
+ a=AjGcO6oz07-iQ99wixmX:22 a=E9Po1WZjFZOl8hwRPBS3:22
+ a=sptkURWiP4Gy88Gu7hUp:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_101747_747245_13E38F84 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200408_103306_197480_B25EE8F1 
+X-CRM114-Status: GOOD (  19.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,46 +72,285 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Arnd Bergmann <arnd@arndb.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Robert Chiras <robert.chiras@nxp.com>,
+ Lee Jones <lee.jones@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
  linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 01:29:41PM +0200, Fredrik Strupe wrote:
-> For thumb instructions, call_undef_hook() in traps.c first reads a u16,
-> and if the u16 indicates a T32 instruction (u16 >= 0xe800), a second
-> u16 is read, which then makes up the the lower half-word of a T32
-> instruction. For T16 instructions, the second u16 is not read,
-> which makes the resulting u32 opcode always have the upper half set to
-> 0.
-> 
-> However, having the upper half of instr_mask in the undef_hook set to 0
-> masks out the upper half of all thumb instructions - both T16 and T32.
-> This results in trapped T32 instructions with the lower half-word equal
-> to the T16 encoding of setend (b650) being matched, even though the upper
-> half-word is not 0000 and thus indicates a T32 opcode.
-> 
-> An example of such a T32 instruction is eaa0b650, which should raise a
-> SIGILL since T32 instructions with an eaa prefix are unallocated as per
-> Arm ARM, but instead works as a SETEND because the second half-word is set
-> to b650.
-> 
-> This patch fixes the issue by extending instr_mask to include the
-> upper u32 half, which will still match T16 instructions where the upper
-> half is 0, but not T32 instructions.
-> 
-> Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Fixes: 2d888f48e056 ("arm64: Emulate SETEND for AArch32 tasks")
+Hi Guido.
 
-Queued for 5.7. Thanks.
+We discussed this binding briefly on IRC:
 
--- 
-Catalin
+19:28 <pinchartl> port 0 is defined as
+19:28 <pinchartl> +          Input port node to receive pixel data from the
+19:28 <pinchartl> +          display controller. Exactly one endpoint must =
+be
+19:28 <pinchartl> +          specified.
+19:28 <pinchartl> then there's two endpoints,
+
+
+On Fri, Mar 20, 2020 at 07:49:09PM +0100, Guido G=FCnther wrote:
+> The Northwest Logic MIPI DSI IP core can be found in NXPs i.MX8 SoCs.
+> =
+
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> Tested-by: Robert Chiras <robert.chiras@nxp.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> ---
+>  .../bindings/display/bridge/nwl-dsi.yaml      | 216 ++++++++++++++++++
+>  1 file changed, 216 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/nwl-=
+dsi.yaml
+> =
+
+> diff --git a/Documentation/devicetree/bindings/display/bridge/nwl-dsi.yam=
+l b/Documentation/devicetree/bindings/display/bridge/nwl-dsi.yaml
+> new file mode 100644
+> index 000000000000..ec1e7e12719d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/nwl-dsi.yaml
+> @@ -0,0 +1,216 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/nwl-dsi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Northwest Logic MIPI-DSI controller on i.MX SoCs
+> +
+> +maintainers:
+> +  - Guido G=FAnther <agx@sigxcpu.org>
+> +  - Robert Chiras <robert.chiras@nxp.com>
+> +
+> +description: |
+> +  NWL MIPI-DSI host controller found on i.MX8 platforms. This is a dsi b=
+ridge for
+> +  the SOCs NWL MIPI-DSI host controller.
+> +
+> +properties:
+> +  compatible:
+> +    const: fsl,imx8mq-nwl-dsi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
+> +
+> +  clocks:
+> +    items:
+> +      - description: DSI core clock
+> +      - description: RX_ESC clock (used in escape mode)
+> +      - description: TX_ESC clock (used in escape mode)
+> +      - description: PHY_REF clock
+> +      - description: LCDIF clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: core
+> +      - const: rx_esc
+> +      - const: tx_esc
+> +      - const: phy_ref
+> +      - const: lcdif
+> +
+> +  mux-controls:
+> +    description:
+> +      mux controller node to use for operating the input mux
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description:
+> +      A phandle to the phy module representing the DPHY
+> +
+> +  phy-names:
+> +    items:
+> +      - const: dphy
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    items:
+> +      - description: dsi byte reset line
+> +      - description: dsi dpi reset line
+> +      - description: dsi esc reset line
+> +      - description: dsi pclk reset line
+> +
+> +  reset-names:
+> +    items:
+> +      - const: byte
+> +      - const: dpi
+> +      - const: esc
+> +      - const: pclk
+> +
+> +  ports:
+> +    type: object
+> +    description:
+> +      A node containing DSI input & output port nodes with endpoint
+> +      definitions as documented in
+> +      Documentation/devicetree/bindings/graph.txt.
+> +    properties:
+> +      port@0:
+> +        type: object
+> +        description:
+> +          Input port node to receive pixel data from the
+> +          display controller. Exactly one endpoint must be
+> +          specified.
+> +        properties:
+> +          '#address-cells':
+> +            const: 1
+> +
+> +          '#size-cells':
+> +            const: 0
+> +
+> +          endpoint@0:
+> +            description: sub-node describing the input from LCDIF
+> +            type: object
+> +
+> +          endpoint@1:
+> +            description: sub-node describing the input from DCSS
+> +            type: object
+> +
+> +          reg:
+> +            const: 0
+> +
+> +        required:
+> +          - '#address-cells'
+> +          - '#size-cells'
+> +          - reg
+> +        additionalProperties: false
+> +
+> +      port@1:
+> +        type: object
+> +        description:
+> +          DSI output port node to the panel or the next bridge
+> +          in the chain
+> +
+> +      '#address-cells':
+> +        const: 1
+> +
+> +      '#size-cells':
+> +        const: 0
+> +
+> +    required:
+> +      - '#address-cells'
+> +      - '#size-cells'
+> +      - port@0
+> +      - port@1
+> +
+> +    additionalProperties: false
+
+For the casual reader the above confuses.
+Assuming the binding is correct, can we have the comment updated.
+
+	Sam
+
+> +
+> +patternProperties:
+> +  "^panel@[0-9]+$":
+> +    type: object
+> +
+> +required:
+> +  - '#address-cells'
+> +  - '#size-cells'
+> +  - clock-names
+> +  - clocks
+> +  - compatible
+> +  - interrupts
+> +  - mux-controls
+> +  - phy-names
+> +  - phys
+> +  - ports
+> +  - reg
+> +  - reset-names
+> +  - resets
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> + - |
+> +
+> +   #include <dt-bindings/clock/imx8mq-clock.h>
+> +   #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +   #include <dt-bindings/reset/imx8mq-reset.h>
+> +
+> +   mipi_dsi: mipi_dsi@30a00000 {
+> +              #address-cells =3D <1>;
+> +              #size-cells =3D <0>;
+> +              compatible =3D "fsl,imx8mq-nwl-dsi";
+> +              reg =3D <0x30A00000 0x300>;
+> +              clocks =3D <&clk IMX8MQ_CLK_DSI_CORE>,
+> +                       <&clk IMX8MQ_CLK_DSI_AHB>,
+> +                       <&clk IMX8MQ_CLK_DSI_IPG_DIV>,
+> +                       <&clk IMX8MQ_CLK_DSI_PHY_REF>,
+> +                       <&clk IMX8MQ_CLK_LCDIF_PIXEL>;
+> +              clock-names =3D "core", "rx_esc", "tx_esc", "phy_ref", "lc=
+dif";
+> +              interrupts =3D <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+> +              mux-controls =3D <&mux 0>;
+> +              power-domains =3D <&pgc_mipi>;
+> +              resets =3D <&src IMX8MQ_RESET_MIPI_DSI_RESET_BYTE_N>,
+> +                       <&src IMX8MQ_RESET_MIPI_DSI_DPI_RESET_N>,
+> +                       <&src IMX8MQ_RESET_MIPI_DSI_ESC_RESET_N>,
+> +                       <&src IMX8MQ_RESET_MIPI_DSI_PCLK_RESET_N>;
+> +              reset-names =3D "byte", "dpi", "esc", "pclk";
+> +              phys =3D <&dphy>;
+> +              phy-names =3D "dphy";
+> +
+> +              panel@0 {
+> +                      compatible =3D "rocktech,jh057n00900";
+> +                      reg =3D <0>;
+> +                      port@0 {
+> +                           panel_in: endpoint {
+> +                                     remote-endpoint =3D <&mipi_dsi_out>;
+> +                           };
+> +                      };
+> +              };
+> +
+> +              ports {
+> +                    #address-cells =3D <1>;
+> +                    #size-cells =3D <0>;
+> +
+> +                    port@0 {
+> +                           #size-cells =3D <0>;
+> +                           #address-cells =3D <1>;
+> +                           reg =3D <0>;
+> +                           mipi_dsi_in: endpoint@0 {
+> +                                        reg =3D <0>;
+> +                                        remote-endpoint =3D <&lcdif_mipi=
+_dsi>;
+> +                           };
+> +                    };
+> +                    port@1 {
+> +                           reg =3D <1>;
+> +                           mipi_dsi_out: endpoint {
+> +                                         remote-endpoint =3D <&panel_in>;
+> +                           };
+> +                    };
+> +              };
+> +      };
+> -- =
+
+> 2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
