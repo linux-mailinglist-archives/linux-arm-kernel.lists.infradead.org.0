@@ -2,45 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 994E41A277E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 18:50:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 678601A2784
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 18:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=16UsBslfX0ic/Nvqp0Nr+QyyLxKqFD8akpyaUYFJLz0=; b=lWeyOJpTvNpuae
-	ZX4EFdxpSOK2YqX4NJ85W86Dc7RzZxxLllKaO/d9u/ab98yuaDO5E7+Gq6NAoJdfekhb04G+x5Il1
-	dyjywkgSr+UhyLD4xOhWToAk8AA9tgiUK1p7xVJRDYVk6pFUwZwzWkBiuuMU2H17NXu1jn/tCFeOH
-	g2cqbgkLML9BXohfPRmWQ8sGQ9NGOhGHr5JyKssNuVspzYifcwbN0IY331kJgUB9qQfDDl/GJqB35
-	q0Ci3pKUzPrmoSKqNhV7Sq66FnX/i1M3dtow3zQhHFjal7LcC06ndtmDivTR8vB4E9t13rlkD5LLm
-	dcSwYJynXNBFgqM7Z6iw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zod/Uc50LKmKYVPjF7zY1hYYELNh7OxbNhZ64Sj85ZE=; b=cR3zb3cu90n6Se
+	BYsY0m2RmY+zE/FLUCuekaQ9OP7Kq9pSTm+kxgKpoqpU0y0O8yx7MttnRC6Pt+yWYbpNWrXO/ZtnR
+	yV6hOHIaPUPRPV4Y+kOVbnQznis9xD1rfgN35MQ6yd2KbfeZTGkgl/6PqZNcH8B8xxIqvIwehHdh1
+	QrFhm4ClalYA5JBOAs2+uNTkpvHz56AKnwkTduuEn4es5VXpVq6KmwooiWGJRM/oXUltLEe+dYlvq
+	eOoJz4HJJ2eJyhjx960VgRp9A8EzlhKcZAEjjNGpnkFDHfwtmMRW+mzZ1vdKQVOkBsOJzevmSVk8N
+	5PBF9zSkkpyrMHaFHYWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMDtp-0005cc-LY; Wed, 08 Apr 2020 16:50:01 +0000
+	id 1jMDug-0008R1-Sm; Wed, 08 Apr 2020 16:50:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMDtg-0005cG-0I
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 16:49:54 +0000
+ id 1jMDuV-0008QJ-J1
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 16:50:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B972B30E;
- Wed,  8 Apr 2020 09:49:50 -0700 (PDT)
-Received: from e121345-lin.cambridge.arm.com (e121345-lin.cambridge.arm.com
- [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9B2903F52E;
- Wed,  8 Apr 2020 09:49:49 -0700 (PDT)
-From: Robin Murphy <robin.murphy@arm.com>
-To: will@kernel.org,
-	mark.rutland@arm.com
-Subject: [RFC PATCH] perf/smmuv3: Fix shared interrupt handling
-Date: Wed,  8 Apr 2020 17:49:40 +0100
-Message-Id: <d73dd8c3579fbf713d6215317404549aede8ad2d.1586363449.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.23.0.dirty
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B25DD30E;
+ Wed,  8 Apr 2020 09:50:42 -0700 (PDT)
+Received: from [192.168.3.22] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C11B63F52E;
+ Wed,  8 Apr 2020 09:50:41 -0700 (PDT)
+Subject: Re: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
+To: Marc Zyngier <maz@kernel.org>
+References: <20200406150355.4859-1-james.morse@arm.com>
+ <20200408110726.4d81bc3b@why> <281d91cb-6818-4393-55ce-6207c04d744b@arm.com>
+ <92de4dc6e0c065eec528bb21c2d870cf@kernel.org>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ i4aIXCH3Wv6K
+Organization: ARM Ltd.
+Message-ID: <d49f5180-aa5a-a04c-836a-0b30336d1d7c@arm.com>
+Date: Wed, 8 Apr 2020 17:50:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
+In-Reply-To: <92de4dc6e0c065eec528bb21c2d870cf@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_094952_135790_7E02CFBD 
-X-CRM114-Status: GOOD (  23.48  )
+X-CRM114-CacheID: sfid-20200408_095043_714259_2896E565 
+X-CRM114-Status: GOOD (  24.73  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -61,404 +109,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tuanphan@os.amperecomputing.com, john.garry@huawei.com,
- linux-kernel@vger.kernel.org, shameerali.kolothum.thodi@huawei.com,
- harb@amperecomputing.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>,
+ James Morse <james.morse@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-IRQF_SHARED is dangerous, since it allows other agents to retarget the
-IRQ's affinity without migrating PMU contexts to match, breaking the way
-in which perf manages mutual exclusion for accessing events. Although
-this means it's not realistically possible to support PMU IRQs being
-shared with other drivers, we *can* handle sharing between multiple PMU
-instances with some explicit affinity bookkeeping and manual interrupt
-multiplexing.
-
-RCU helps us handle interrupts efficiently without having to worry about
-fine-grained locking for relatively-theoretical race conditions with the
-probe/remove/CPU hotplug slow paths. The resulting machinery ends up
-looking largely generic, so it should be feasible to factor out with a
-"system PMU" base class for similar multi-instance drivers.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
-
-RFC because I don't have the means to test it, and if the general
-approach passes muster then I'd want to tackle the aforementioned
-factoring-out before merging anything anyway.
-
-Robin.
-
-
- drivers/perf/arm_smmuv3_pmu.c | 215 ++++++++++++++++++++++++----------
- 1 file changed, 152 insertions(+), 63 deletions(-)
-
-diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-index d704eccc548f..8daa7ac6e801 100644
---- a/drivers/perf/arm_smmuv3_pmu.c
-+++ b/drivers/perf/arm_smmuv3_pmu.c
-@@ -47,8 +47,11 @@
- #include <linux/kernel.h>
- #include <linux/list.h>
- #include <linux/msi.h>
-+#include <linux/mutex.h>
- #include <linux/perf_event.h>
- #include <linux/platform_device.h>
-+#include <linux/rculist.h>
-+#include <linux/refcount.h>
- #include <linux/smp.h>
- #include <linux/sysfs.h>
- #include <linux/types.h>
-@@ -98,13 +101,24 @@
- 
- static int cpuhp_state_num;
- 
--struct smmu_pmu {
-+static LIST_HEAD(smmu_pmu_affinities);
-+static DEFINE_MUTEX(smmu_pmu_affinity_lock);
-+
-+struct smmu_pmu_affinity {
- 	struct hlist_node node;
-+	struct list_head affinity_list;
-+	struct list_head instance_list;
-+	refcount_t refcount;
-+	unsigned int irq;
-+	unsigned int cpu;
-+};
-+
-+struct smmu_pmu {
- 	struct perf_event *events[SMMU_PMCG_MAX_COUNTERS];
- 	DECLARE_BITMAP(used_counters, SMMU_PMCG_MAX_COUNTERS);
- 	DECLARE_BITMAP(supported_events, SMMU_PMCG_ARCH_MAX_EVENTS);
--	unsigned int irq;
--	unsigned int on_cpu;
-+	struct smmu_pmu_affinity *affinity;
-+	struct list_head affinity_list;
- 	struct pmu pmu;
- 	unsigned int num_counters;
- 	struct device *dev;
-@@ -394,7 +408,7 @@ static int smmu_pmu_event_init(struct perf_event *event)
- 	 * Ensure all events are on the same cpu so all events are in the
- 	 * same cpu context, to avoid races on pmu_enable etc.
- 	 */
--	event->cpu = smmu_pmu->on_cpu;
-+	event->cpu = smmu_pmu->affinity->cpu;
- 
- 	return 0;
- }
-@@ -478,9 +492,10 @@ static ssize_t smmu_pmu_cpumask_show(struct device *dev,
- 				     struct device_attribute *attr,
- 				     char *buf)
- {
--	struct smmu_pmu *smmu_pmu = to_smmu_pmu(dev_get_drvdata(dev));
-+	struct pmu *pmu = dev_get_drvdata(dev);
-+	struct smmu_pmu_affinity *aff = to_smmu_pmu(pmu)->affinity;
- 
--	return cpumap_print_to_pagebuf(true, buf, cpumask_of(smmu_pmu->on_cpu));
-+	return cpumap_print_to_pagebuf(true, buf, cpumask_of(aff->cpu));
- }
- 
- static struct device_attribute smmu_pmu_cpumask_attr =
-@@ -584,50 +599,140 @@ static const struct attribute_group *smmu_pmu_attr_grps[] = {
- 
- static int smmu_pmu_offline_cpu(unsigned int cpu, struct hlist_node *node)
- {
--	struct smmu_pmu *smmu_pmu;
-+	struct smmu_pmu_affinity *aff;
-+	struct smmu_pmu *pmu;
- 	unsigned int target;
- 
--	smmu_pmu = hlist_entry_safe(node, struct smmu_pmu, node);
--	if (cpu != smmu_pmu->on_cpu)
-+	aff = hlist_entry_safe(node, struct smmu_pmu_affinity, node);
-+	if (cpu != aff->cpu)
- 		return 0;
- 
- 	target = cpumask_any_but(cpu_online_mask, cpu);
- 	if (target >= nr_cpu_ids)
- 		return 0;
- 
--	perf_pmu_migrate_context(&smmu_pmu->pmu, cpu, target);
--	smmu_pmu->on_cpu = target;
--	WARN_ON(irq_set_affinity_hint(smmu_pmu->irq, cpumask_of(target)));
-+	/* We're only reading, but this isn't the place to be involving RCU */
-+	mutex_lock(&smmu_pmu_affinity_lock);
-+	list_for_each_entry(pmu, &aff->instance_list, affinity_list)
-+		perf_pmu_migrate_context(&pmu->pmu, aff->cpu, target);
-+	mutex_unlock(&smmu_pmu_affinity_lock);
-+
-+	WARN_ON(irq_set_affinity_hint(aff->irq, cpumask_of(target)));
-+	aff->cpu = target;
- 
- 	return 0;
- }
- 
- static irqreturn_t smmu_pmu_handle_irq(int irq_num, void *data)
- {
--	struct smmu_pmu *smmu_pmu = data;
--	u64 ovsr;
--	unsigned int idx;
-+	struct smmu_pmu_affinity *aff = data;
-+	struct smmu_pmu *smmu_pmu;
-+	irqreturn_t ret = IRQ_NONE;
-+
-+	rcu_read_lock();
-+	list_for_each_entry_rcu(smmu_pmu, &aff->instance_list, affinity_list) {
-+		unsigned int idx;
-+		u64 ovsr = readq(smmu_pmu->reloc_base + SMMU_PMCG_OVSSET0);
- 
--	ovsr = readq(smmu_pmu->reloc_base + SMMU_PMCG_OVSSET0);
--	if (!ovsr)
--		return IRQ_NONE;
-+		if (!ovsr)
-+			continue;
- 
--	writeq(ovsr, smmu_pmu->reloc_base + SMMU_PMCG_OVSCLR0);
-+		writeq(ovsr, smmu_pmu->reloc_base + SMMU_PMCG_OVSCLR0);
- 
--	for_each_set_bit(idx, (unsigned long *)&ovsr, smmu_pmu->num_counters) {
--		struct perf_event *event = smmu_pmu->events[idx];
--		struct hw_perf_event *hwc;
-+		for_each_set_bit(idx, (unsigned long *)&ovsr, smmu_pmu->num_counters) {
-+			struct perf_event *event = smmu_pmu->events[idx];
- 
--		if (WARN_ON_ONCE(!event))
--			continue;
-+			if (WARN_ON_ONCE(!event))
-+				continue;
-+
-+			smmu_pmu_event_update(event);
-+			smmu_pmu_set_period(smmu_pmu, &event->hw);
-+		}
-+		ret = IRQ_HANDLED;
-+	}
-+	rcu_read_unlock();
-+
-+	return ret;
-+}
-+
-+static struct smmu_pmu_affinity *__smmu_pmu_get_affinity(int irq)
-+{
-+	struct smmu_pmu_affinity *aff;
-+	int ret;
-+
-+	list_for_each_entry(aff, &smmu_pmu_affinities, affinity_list)
-+		if (aff->irq == irq && refcount_inc_not_zero(&aff->refcount))
-+			return aff;
-+
-+	aff = kzalloc(sizeof(*aff), GFP_KERNEL);
-+	if (!aff)
-+		return ERR_PTR(-ENOMEM);
-+
-+	/* Pick one CPU to be the preferred one to use */
-+	aff->cpu = raw_smp_processor_id();
-+	refcount_set(&aff->refcount, 1);
-+
-+	ret = request_irq(irq, smmu_pmu_handle_irq,
-+			  IRQF_NOBALANCING | IRQF_NO_THREAD,
-+			  "smmuv3-pmu", aff);
-+	if (ret)
-+		goto out_free_aff;
-+
-+	ret = irq_set_affinity_hint(irq, cpumask_of(aff->cpu));
-+	if (ret)
-+		goto out_free_irq;
-+
-+	ret = cpuhp_state_add_instance_nocalls(cpuhp_state_num, &aff->node);
-+	if (ret)
-+		goto out_free_irq;
-+
-+	list_add(&aff->affinity_list, &smmu_pmu_affinities);
-+	return aff;
-+
-+out_free_irq:
-+	free_irq(irq, aff);
-+out_free_aff:
-+	kfree(aff);
-+	return ERR_PTR(ret);
-+}
-+
-+static int smmu_pmu_get_affinity(struct smmu_pmu *pmu, int irq)
-+{
-+	struct smmu_pmu_affinity *aff;
-+
-+	mutex_lock(&smmu_pmu_affinity_lock);
-+	aff = __smmu_pmu_get_affinity(irq);
-+	mutex_unlock(&smmu_pmu_affinity_lock);
-+
-+	if (IS_ERR(aff))
-+		return PTR_ERR(aff);
-+
-+	pmu->affinity = aff;
-+	mutex_lock(&smmu_pmu_affinity_lock);
-+	list_add_rcu(&pmu->affinity_list, &aff->instance_list);
-+	mutex_unlock(&smmu_pmu_affinity_lock);
-+
-+	return 0;
-+}
-+
-+static void smmu_pmu_put_affinity(struct smmu_pmu *pmu)
-+{
-+	struct smmu_pmu_affinity *aff = pmu->affinity;
- 
--		smmu_pmu_event_update(event);
--		hwc = &event->hw;
-+	mutex_lock(&smmu_pmu_affinity_lock);
-+	list_del_rcu(&pmu->affinity_list);
- 
--		smmu_pmu_set_period(smmu_pmu, hwc);
-+	if (!refcount_dec_and_test(&aff->refcount)) {
-+		mutex_unlock(&smmu_pmu_affinity_lock);
-+		return;
- 	}
- 
--	return IRQ_HANDLED;
-+	list_del(&aff->affinity_list);
-+	mutex_unlock(&smmu_pmu_affinity_lock);
-+
-+	free_irq(aff->irq, aff);
-+	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &aff->node);
-+	kfree(aff);
- }
- 
- static void smmu_pmu_free_msis(void *data)
-@@ -652,7 +757,7 @@ static void smmu_pmu_write_msi_msg(struct msi_desc *desc, struct msi_msg *msg)
- 		       pmu->reg_base + SMMU_PMCG_IRQ_CFG2);
- }
- 
--static void smmu_pmu_setup_msi(struct smmu_pmu *pmu)
-+static int smmu_pmu_setup_msi(struct smmu_pmu *pmu)
- {
- 	struct msi_desc *desc;
- 	struct device *dev = pmu->dev;
-@@ -663,34 +768,34 @@ static void smmu_pmu_setup_msi(struct smmu_pmu *pmu)
- 
- 	/* MSI supported or not */
- 	if (!(readl(pmu->reg_base + SMMU_PMCG_CFGR) & SMMU_PMCG_CFGR_MSI))
--		return;
-+		return 0;
- 
- 	ret = platform_msi_domain_alloc_irqs(dev, 1, smmu_pmu_write_msi_msg);
- 	if (ret) {
- 		dev_warn(dev, "failed to allocate MSIs\n");
--		return;
-+		return ret;
- 	}
- 
- 	desc = first_msi_entry(dev);
- 	if (desc)
--		pmu->irq = desc->irq;
-+		ret = desc->irq;
- 
- 	/* Add callback to free MSIs on teardown */
- 	devm_add_action(dev, smmu_pmu_free_msis, dev);
-+	return ret;
- }
- 
- static int smmu_pmu_setup_irq(struct smmu_pmu *pmu)
- {
--	unsigned long flags = IRQF_NOBALANCING | IRQF_SHARED | IRQF_NO_THREAD;
--	int irq, ret = -ENXIO;
-+	int irq;
- 
--	smmu_pmu_setup_msi(pmu);
-+	irq = smmu_pmu_setup_msi(pmu);
-+	if (irq <= 0)
-+		irq = platform_get_irq(to_platform_device(pmu->dev), 0);
-+	if (irq < 0)
-+		return irq;
- 
--	irq = pmu->irq;
--	if (irq)
--		ret = devm_request_irq(pmu->dev, irq, smmu_pmu_handle_irq,
--				       flags, "smmuv3-pmu", pmu);
--	return ret;
-+	return smmu_pmu_get_affinity(pmu, irq);
- }
- 
- static void smmu_pmu_reset(struct smmu_pmu *smmu_pmu)
-@@ -730,7 +835,7 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 	struct resource *res_0;
- 	u32 cfgr, reg_size;
- 	u64 ceid_64[2];
--	int irq, err;
-+	int err;
- 	char *name;
- 	struct device *dev = &pdev->dev;
- 
-@@ -771,10 +876,6 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 		smmu_pmu->reloc_base = smmu_pmu->reg_base;
- 	}
- 
--	irq = platform_get_irq(pdev, 0);
--	if (irq > 0)
--		smmu_pmu->irq = irq;
--
- 	ceid_64[0] = readq_relaxed(smmu_pmu->reg_base + SMMU_PMCG_CEID0);
- 	ceid_64[1] = readq_relaxed(smmu_pmu->reg_base + SMMU_PMCG_CEID1);
- 	bitmap_from_arr32(smmu_pmu->supported_events, (u32 *)ceid_64,
-@@ -789,12 +890,6 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 
- 	smmu_pmu_reset(smmu_pmu);
- 
--	err = smmu_pmu_setup_irq(smmu_pmu);
--	if (err) {
--		dev_err(dev, "Setup irq failed, PMU @%pa\n", &res_0->start);
--		return err;
--	}
--
- 	name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "smmuv3_pmcg_%llx",
- 			      (res_0->start) >> SMMU_PMCG_PA_SHIFT);
- 	if (!name) {
-@@ -804,16 +899,9 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 
- 	smmu_pmu_get_acpi_options(smmu_pmu);
- 
--	/* Pick one CPU to be the preferred one to use */
--	smmu_pmu->on_cpu = raw_smp_processor_id();
--	WARN_ON(irq_set_affinity_hint(smmu_pmu->irq,
--				      cpumask_of(smmu_pmu->on_cpu)));
--
--	err = cpuhp_state_add_instance_nocalls(cpuhp_state_num,
--					       &smmu_pmu->node);
-+	err = smmu_pmu_setup_irq(smmu_pmu);
- 	if (err) {
--		dev_err(dev, "Error %d registering hotplug, PMU @%pa\n",
--			err, &res_0->start);
-+		dev_err(dev, "Setup irq failed, PMU @%pa\n", &res_0->start);
- 		return err;
- 	}
- 
-@@ -832,7 +920,8 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 	return 0;
- 
- out_unregister:
--	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
-+	smmu_pmu_put_affinity(smmu_pmu);
-+	synchronize_rcu();
- 	return err;
- }
- 
-@@ -840,9 +929,9 @@ static int smmu_pmu_remove(struct platform_device *pdev)
- {
- 	struct smmu_pmu *smmu_pmu = platform_get_drvdata(pdev);
- 
-+	smmu_pmu_put_affinity(smmu_pmu);
-+	/* perf will synchronise RCU before devres can free smmu_pmu */
- 	perf_pmu_unregister(&smmu_pmu->pmu);
--	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
--
- 	return 0;
- }
- 
--- 
-2.23.0.dirty
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDgvMDQvMjAyMCAxNToxOSwgTWFyYyBaeW5naWVyIHdyb3RlOgoKSGkgTWFyYywKCj4gT24g
+MjAyMC0wNC0wOCAxMzoxMywgQW5kcsOpIFByenl3YXJhIHdyb3RlOgo+PiBPbiAwOC8wNC8yMDIw
+IDExOjA3LCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+Cj4+IEhpIE1hcmMsCj4+Cj4+PiBIaSBKYW1l
+cywKPj4+Cj4+PiBUaGFua3MgZm9yIGxvb2tpbmcgaW50byB0aGlzLgo+Pj4KPj4+IE9uIE1vbizC
+oCA2IEFwciAyMDIwIDE2OjAzOjU1ICswMTAwCj4+PiBKYW1lcyBNb3JzZSA8amFtZXMubW9yc2VA
+YXJtLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4+IGt2bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCgp
+IG5lZWRzIHRvIGdldCB0aGUgYXJjaF90aW1lcl9jb250ZXh0Cj4+Pj4gZm9yCj4+Pj4gYSBwYXJ0
+aWN1bGFyIHZjcHUsIGFuZCB1c2VzIGt2bV9nZXRfcnVubmluZ192Y3B1KCkgdG8gZmluZCBpdC4K
+Pj4+Pgo+Pj4+IGt2bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCgpIG1heSBiZSBjYWxsZWQg
+dG8gaGFuZGxlIGEgdXNlci1zcGFjZQo+Pj4+IHdyaXRlIHRvIHRoZSByZWRpc3RyaWJ1dG9yLCB3
+aGVyZSB0aGUgdmNwdSBpcyBub3QgbG9hZGVkLiBUaGlzIGNhdXNlcwo+Pj4+IGt2bV9nZXRfcnVu
+bmluZ192Y3B1KCkgdG8gcmV0dXJuIE5VTEw6Cj4+Pj4gfCBVbmFibGUgdG8gaGFuZGxlIGtlcm5l
+bCBwYWdpbmcgcmVxdWVzdCBhdCB2aXJ0dWFsIGFkZHJlc3MKPj4+PiAwMDAwMDAwMDAwMDAxZWMw
+Cj4+Pj4gfCBNZW0gYWJvcnQgaW5mbzoKPj4+PiB8wqDCoCBFU1IgPSAweDk2MDAwMDA0Cj4+Pj4g
+fMKgwqAgRUMgPSAweDI1OiBEQUJUIChjdXJyZW50IEVMKSwgSUwgPSAzMiBiaXRzCj4+Pj4gfMKg
+wqAgU0VUID0gMCwgRm5WID0gMAo+Pj4+IHzCoMKgIEVBID0gMCwgUzFQVFcgPSAwCj4+Pj4gfCBE
+YXRhIGFib3J0IGluZm86Cj4+Pj4gfMKgwqAgSVNWID0gMCwgSVNTID0gMHgwMDAwMDAwNAo+Pj4+
+IHzCoMKgIENNID0gMCwgV25SID0gMAo+Pj4+IHwgdXNlciBwZ3RhYmxlOiA0ayBwYWdlcywgNDgt
+Yml0IFZBcywgcGdkcD0wMDAwMDAwMDNjYmY5MDAwCj4+Pj4gfCBbMDAwMDAwMDAwMDAwMWVjMF0g
+cGdkPTAwMDAwMDAwMDAwMDAwMDAKPj4+PiB8IEludGVybmFsIGVycm9yOiBPb3BzOiA5NjAwMDAw
+NCBbIzFdIFBSRUVNUFQgU01QCj4+Pj4gfCBNb2R1bGVzIGxpbmtlZCBpbjogcjgxNjkgcmVhbHRl
+ayBlZml2YXJmcyBpcF90YWJsZXMgeF90YWJsZXMKPj4+PiB8IENQVTogMSBQSUQ6IDI2MTUgQ29t
+bTogcWVtdS1zeXN0ZW0tYWFyIE5vdCB0YWludGVkIDUuNi4wLXJjNyAjMzAKPj4+PiB8IEhhcmR3
+YXJlIG5hbWU6IE1hcnZlbGwgbXZlYnVfYXJtYWRhLTM3eHgvbXZlYnVfYXJtYWRhLTM3eHgsIEJJ
+T1MKPj4+PiAyMDE4LjAzLWRldmVsLTE4LjEyLjMtZ2M5YWE5MmMtYXJtYmlhbiAwMi8yMC8yMDE5
+Cj4+Pj4gfCBwc3RhdGU6IDAwMDAwMDg1IChuemN2IGRhSWYgLVBBTiAtVUFPKQo+Pj4+IHwgcGMg
+OiBrdm1fYXJjaF90aW1lcl9nZXRfaW5wdXRfbGV2ZWwrMHgxYy8weDY4Cj4+Pj4gfCBsciA6IGt2
+bV9hcmNoX3RpbWVyX2dldF9pbnB1dF9sZXZlbCsweDFjLzB4NjgKPj4+Pgo+Pj4+IHwgQ2FsbCB0
+cmFjZToKPj4+PiB8wqAga3ZtX2FyY2hfdGltZXJfZ2V0X2lucHV0X2xldmVsKzB4MWMvMHg2OAo+
+Pj4+IHzCoCB2Z2ljX2dldF9waHlzX2xpbmVfbGV2ZWwrMHgzYy8weDkwCj4+Pj4gfMKgIHZnaWNf
+bW1pb193cml0ZV9zZW5hYmxlKzB4ZTQvMHgxMzAKPj4+PiB8wqAgdmdpY191YWNjZXNzKzB4ZTAv
+MHgxMDAKPj4+PiB8wqAgdmdpY192M19yZWRpc3RfdWFjY2VzcysweDVjLzB4ODAKPj4+PiB8wqAg
+dmdpY192M19hdHRyX3JlZ3NfYWNjZXNzKzB4ZjAvMHgyMDAKPj4+PiB8wqAgbnZnaWNfdjNfc2V0
+X2F0dHIrMHgyMzQvMHgyNTAKPj4+PiB8wqAga3ZtX2RldmljZV9pb2N0bF9hdHRyKzB4YTQvMHhm
+OAo+Pj4+IHzCoCBrdm1fZGV2aWNlX2lvY3RsKzB4N2MvMHhjMAo+Pj4+IHzCoCBrc3lzX2lvY3Rs
+KzB4MWZjLzB4YzE4Cj4+Pj4gfMKgIF9fYXJtNjRfc3lzX2lvY3RsKzB4MjQvMHgzMAo+Pj4+IHzC
+oCBkb19lbDBfc3ZjKzB4N2MvMHgxNDgKPj4+PiB8wqAgZWwwX3N5bmNfaGFuZGxlcisweDEzOC8w
+eDI1OAo+Pj4+IHzCoCBlbDBfc3luYysweDE0MC8weDE4MAo+Pj4+IHwgQ29kZTogOTEwMDAzZmQg
+ZjkwMDBiZjMgMmEwMDAzZjMgOTdmZjY1MGMgKGI5NWVjMDAxKQo+Pj4+IHwgLS0tWyBlbmQgdHJh
+Y2UgODEyODc2MTJkOTNmMWU3MCBdLS0tCj4+Pj4gfCBub3RlOiBxZW11LXN5c3RlbS1hYXJbMjYx
+NV0gZXhpdGVkIHdpdGggcHJlZW1wdF9jb3VudCAxCj4+Pj4KPj4+PiBMb2FkaW5nIHRoZSB2Y3B1
+IGRvZXNuJ3QgbWFrZSBhIGxvdCBvZiBzZW5zZSBmb3IgaGFuZGxpbmcgYSBkZXZpY2UKPj4+PiBp
+b2N0bCgpLAo+Pj4+IHNvIGluc3RlYWQgcGFzcyB0aGUgdmNwdSB0aHJvdWdoIHRvCj4+Pj4ga3Zt
+X2FyY2hfdGltZXJfZ2V0X2lucHV0X2xldmVsKCkuIEl0cwo+Pj4+IG5vdCBjbGVhciB0aGF0IGFu
+IGludGlkIG1ha2VzIG11Y2ggc2Vuc2Ugd2l0aG91dCB0aGUgcGFpcmVkIHZjcHUuCj4+Pgo+Pj4g
+SSBkb24ndCBmdWxseSBhZ3JlZSB3aXRoIHRoZSBhbmFseXNpcywgUmVtZW1iZXIgd2UgYXJlIGxv
+b2tpbmcgYXQgdGhlCj4+PiBzdGF0ZSBvZiB0aGUgcGh5c2ljYWwgaW50ZXJydXB0IGFzc29jaWF0
+ZWQgd2l0aCBhIHZpcnR1YWwgaW50ZXJydXB0LCBzbwo+Pj4gdGhlIHZjcHUgZG9lc24ndCBxdWl0
+ZSBtYWtlIHNlbnNlIGhlcmUgaWYgaXQgaXNuJ3QgbG9hZGVkLgo+Pgo+PiBCdXQgd2Fzbid0IGl0
+IHRoYXQgdGhpcyBmdW5jdGlvbiBpcyBtZWFudCB0byBzcGVjaWZpY2FsbHkgZGVhbCB3aXRoIHRo
+aXMKPj4gKndpdGhvdXQqIGdvaW5nIHRvIHRoZSBoYXJkd2FyZSAod2hpY2ggaXMgY29zdGx5LCBo
+ZW5jZSB0aGlzCj4+IG9wdGltaXNhdGlvbik/IEJlY2F1c2UgZm9yIHRoZSB0aW1lciB3ZSAqY2Fu
+KiB3b3JrIG91dCB0aGUgbG9naWNhbCBJUlEKPj4gbGluZSBzdGF0ZSBieSBleGFtaW5pbmcgb3Vy
+IHNhdmVkIHN0YXRlPyBBbmQgdGhpcyBpcyB3aGF0IHdlIGRvIGluCj4+IGt2bV90aW1lcl9zaG91
+bGRfZmlyZSgpLCB3aGVuIHRpbWVyX2N0eC0+bG9hZGVkIGlzIGZhbHNlLgo+IAo+IFllcywgYnV0
+IHRoYXQncyBqdXN0IGEgc3BlY2lhbGl6YXRpb24gb2YgYSBtb3JlIGdlbmVyaWMgaW50ZXJmYWNl
+LCB3aGljaCBpcwo+ICJpbnNwZWN0IHRoZSBzdGF0ZSBvZiB0aGlzICpwaHlzaWNhbCogaW50aWQi
+LiBUaGUgZmFjdCB0aGF0IHdlIGFyZSBhYmxlCj4gdG8gZG8KPiBpdCBpbiBhIHNwZWNpYWwgd2F5
+IGZvciB0aGUgdGltZXIgZG9lc24ndCBjaGFuZ2UgdGhlIG5hdHVyZSBvZiB0aGUKPiBpbnRlcmZh
+Y2UuCgoKPiAKPj4gV2hpY2ggZm9yIG1lIHRoaXMgc291bmRzIGxpa2UgdGhlIHJpZ2h0IHRoaW5n
+IHRvIGRvIGluIHRoaXMgc2l0dWF0aW9uOgo+PiB0aGUgVkNQVSAoYW5kIHRoZSB0aW1lcikgaXMg
+bm90IGxvYWRlZCwgc28gd2UgY2hlY2sgb3VyIHNhdmVkIHN0YXRlIGFuZAo+PiBjb25zdHJ1Y3Qg
+dGhlIGxvZ2ljYWwgbGluZSBsZXZlbC4gV2UganVzdCBuZWVkIGEgdmFsaWQgVkNQVSBzdHJ1Y3Qg
+dG8KPj4gYWNoaWV2ZSB0aGlzLCBhbmQgaG9wZSBmb3IgdGhlIHZpcnR1YWwgdGltZXIgdG8gYmUg
+YWxyZWFkeSBpbml0aWFsaXNlZC4KPj4KPj4gRG8gSSBtaXNzIHNvbWV0aGluZyBoZXJlPwo+IAo+
+IFllcy4gWW91IGFyZSBtaXNzaW5nIHRoYXQgdGhlICppbnRlcmZhY2UqIGlzIGdlbmVyaWMsIGFu
+ZCB5b3UgY2FuIHJlcGxhY2UKPiBpdCB3aXRoIGFueXRoaW5nIHlvdSB3YW50LiBDYXNlIGluIHBv
+aW50LCB3aGF0IHdlIGRvIHdoZW4gZ2V0X2lucHV0X2xldmVsCj4gaXMgTlVMTC4KPiAKPj4gQWxz
+byB0byBtZSBpdCBzb3VuZCBsaWtlIHRoZSBpbnRlcmZhY2UgZm9yIHRoaXMgZnVuY3Rpb24gaXMg
+c2xpZ2h0bHkKPj4gbGFja2luZywgYmVjYXVzZSBqdXN0IGFuIGludGlkIGlzIG5vdCBlbm91Z2gg
+dG8gdW5pcXVlbHkgaWRlbnRpZnkgYW4KPj4gSVJRLiBJdCB3YXMganVzdCBmaW5lIHNvIGZhciBi
+ZWNhdXNlIG9mIHRoaXMgc3BlY2lhbCB1c2UgY2FzZS4KPiAKPiBUaGlzIGlzIGEgKnBoeXNpY2Fs
+KiBpbnRpZC4gCgpXYWl0LCBJIGFtIGNvbmZ1c2VkLCB0aGUgdHlwZSBkZWNsYXJhdGlvbiBpbiBz
+dHJ1Y3QgdmdpY19pcnEgc2F5czoKLi4uCiAgICAgICAgYm9vbCAoKmdldF9pbnB1dF9sZXZlbCko
+aW50IHZpbnRpZCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eCkFsc28g
+aW4gdmdpYy5jOnZnaWNfZ2V0X3BoeXNfbGluZV9sZXZlbCgpIHdlIGNhbGwKaXJxLT5nZXRfaW5w
+dXRfbGV2ZWwoaXJxLT5pbnRpZCksIHdoaWNoIGlzIHRoZSB2aXJ0dWFsIGludGlkLgoKQnV0IEkg
+c2VlIHRoYXQgdGhlIHBoeXNpY2FsIGludGlkIG1ha2VzIG1vcmUgc2Vuc2UgaGVyZSAoaW4gdGhl
+IHNwaXJpdApvZjogcHJvdmlkZSBhIHNob3J0Y3V0IGZvciBwb2tpbmcgdGhlIEdJQyBmb3IgdGhl
+IGFzc29jaWF0ZWQgaHdpcnEpLCBidXQKc2hvdWxkbid0IHdlIHRoZW4gcGFzcyBhdCBsZWFzdCBp
+cnEtPmh3aW50aWQgKHdoaWNoIGp1c3QgaGFwcGVucyB0byBiZQp0aGUgc2FtZSBpbiB0aGUgYXJj
+aCB0aW1lciBjYXNlKT8KCj4gSXQgY2FuIG9ubHkgbWVhbiBvbmUgc2luZ2xlIHRoaW5nLCBhbmQg
+aXQKPiBvbmx5IG1ha2VzIHNlbnNlIGluIHRoZSBjb250ZXh0IG9mIGEgdmNwdSBpZiB0aGUgZGV2
+aWNlIGdldHMKPiBjb250ZXh0LXN3aXRjaGVkLgoKSSBzZWUsIGl0J3MgInRoaXMgUFBJIG9uIHRo
+ZSBjdXJyZW50IENQVSwgb3IgdGhpcyBTUEkvTFBJIGluIHRoZQpzeXN0ZW0iLCBhbmQgdGhpcyBj
+YWxsIGlzIGFsd2F5cyBleHBlY3RlZCB0byBoYXBwZW4gZHVyaW5nIGEgY29udGV4dCBzd2l0Y2gu
+CkFuZCB0aGVuIGluZGVlZCBwYXNzaW5nIGEgVkNQVSBkb2Vzbid0IG1ha2Ugc2Vuc2UuCgpUaGFu
+a3MgZm9yIHRoZSBleHBsYW5hdGlvbiwgSSBndWVzcyB3ZSBzaG91bGQgY2xhcmlmeSB0aGlzIGlu
+IHRoZSBjb2RlCnRoZW4gKGJlY2F1c2UgbXkgc3VnZ2VzdGlvbiB3YXMgYmFzZWQgb24gdGhlIGlk
+ZWEgdGhhdCB0aGlzIGlzIHdhcyBhCnZpcnR1YWwgSVJRKS4KCkNoZWVycywKQW5kcmUKCj4gSSBj
+YW4gcmVtb3ZlIHRoZSBhYm92ZSBmYXN0IHBhdGggZW50aXJlbHksIGFuZCBldmVyeXRoaW5nIHdp
+bGwgc3RpbGwgd29yawo+IHRoZSBzYW1lIHdheSwgd2l0aG91dCBoYXZpbmcgdG8gcGFzcyBhbnkg
+dmNwdSwgYmVjYXVzZSB0aGUgKmNvbnRleHQqIGlzCj4gd2hhdCBtYXR0ZXJzLgo+IAo+IFRoYW5r
+cywKPiAKPiDCoMKgwqDCoMKgwqDCoCBNLgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
