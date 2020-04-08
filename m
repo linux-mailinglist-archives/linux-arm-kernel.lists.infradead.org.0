@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 749B81A2419
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 857EA1A241E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+AkijN5pfDxd0WYGpIUsEUs1GnGMdgDs70erWeeCITY=; b=rs/mUV494IU85z
-	c9jrxeh93a+rCzqgOpDB4DI54EOob8Kj7lhfgbLF9bo7vTQBTHWYxJrwQ5gbCm+1Nip3t+TTk+XZw
-	rMRNSTRQijiQ7QFrKEYmEIImaCQLnsP28s/fMilSWokaQQj88H6Nc7E0VU2UttEanob4XIyQFagsh
-	LQR5XUDURIkHX7cGcCWglBAFNXxDAiOkNCruOd+Sa9uZJUGs4Lp/QJ4S7ct/LkmdyzZ0H76JnZWZA
-	bTeKsDwG0kkzvyWsaWYbdPv51GLAzVMaHNrEVRnL9hebya3Vke30TuJ1opr7QvY71cJ4YAooxuxVu
-	oCPbNbhe6nRFbzrzjlkQ==;
+	List-Owner; bh=nLRTsvaWD/Mn3mS874q2UnefBqUhN4M+wjAkF9QE8eI=; b=FbY3b4cnd2ZdMw
+	YrB5B4hLuGwcAhdG1Ul6NEygA+o/tC3JqFfTLAne4TYw4SByKEU54k+u2mQJ34QG62fVFSuyW+8X7
+	D9r4yqib02kbuoSTocLL9LYCZOX0gp8OLJsQQYX00fbidMbQMr0MBIgwWrybhxKORYaS+S9vFx1w0
+	RNnJtumM+CCWiBLMPW1He4aiyafqy0A34wVQGoUmN/oEOlrP6BG9djPgRnJfqsC1JONKvJkUvAUOu
+	pCwDQ3XcK2ooCUc6R6xm8MaL44KUHvEMm7mURMOqA/bhzV3vSVicJ1rartqGxLgtyytP+BxqSmPP6
+	u+GXyVvmwfxZQN5w56cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMBjy-0002QS-4F; Wed, 08 Apr 2020 14:31:42 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jMBkk-0003dk-FM; Wed, 08 Apr 2020 14:32:30 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMBjJ-0001rm-9v
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:31:02 +0000
-Received: by mail-wm1-x341.google.com with SMTP id e26so95478wmk.5
+ id 1jMBjJ-0001s0-E9
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:31:04 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v5so8019923wrp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 07:30:59 -0700 (PDT)
+ Wed, 08 Apr 2020 07:31:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ONmipAabLXhLmacX5u5HjoyUMJN6EG+/oCFGiL0N4tA=;
- b=YOLbRq1uKj6Qvu1dEuKm76Ws3dtcc9fTrkDcyKVKEsXPmzZRcnV9Y9A7jdVdgjyvN+
- t+F8y/p70omJKuFjVooQaYAjpQV70ucxA3AaVTwCNvSx3/0TFNumXAfyf/NSdbuwqb3o
- Dcn9VIjt6ArmzsMIB2lZ9d23T3F1N1r19T8N+W6eqLBuPUWlhHnuyREpWBUzU1rRjyp+
- eQirc435qRyDJjxdgE/9OBphtSqbp98604u7lyz+93sHvIVlC0WLkRVlnmeem5uwSnmq
- dE8mBNPrGOsOkxij8PcAy7hAnuhGOg8UbbUGSwRXqP1be+Z3RrUQ2QC8j0Vzmu8Wo+n3
- hSMg==
+ bh=xX9cl4CH1nYfDC9Fl1wNJAbL90tz1WTwrpphigm4+/8=;
+ b=dokhZuGHn3YLgiexL6ojGAsBDvbpi37YlNqt+fqT9Zr4t+OFx4BO+otEbEobC1U1eg
+ poM7omWb/sG+xbWI+TBJz10buBRVHGn/KPn7vUbmvv4QzDftiwX7Qm2w5kCmWmLeoKHw
+ mqIy3bhvoQxLTKo0FAq+lDRiAjcShG4CFQb7gaAtbvThT8l5vupBNgUilcAvb78SNpCi
+ ZI4jkg3avkm0WhjyKV/QkC2jMSbgcTo5oCh0ZPdIW825XOv7g2jsuksv/uf7I0HrtuCH
+ w9pHuhTEIaXWCIQXSn7aikv4LLimat8TrYCSV2WBB5p2W5zYZfOcFpHIAnuSBvmsw3sE
+ JHYA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ONmipAabLXhLmacX5u5HjoyUMJN6EG+/oCFGiL0N4tA=;
- b=At2IvbLxvxUxtJdp2mQsYEyPkwEBM2hwlVRAnwVVu6+Ny6mK6WsYX9adDP0NQ2PUF6
- VljgMTHki/eu3cV/KnScDs990LFIBL3DupAp3SUUjs5qWvihgYp2FmYpzWy0Q1IJvF1n
- fMlElxkPPMJi5cQFohX8BXWgcg4mLoQVm09a3y/7xSxZe8a/d4hkXi+Ein51rhQ4HJ9w
- Jp1U8RcJO5k9OF7owzjcTVfUpR65MdHl4cDk5qiHoT5jwGedRLwx/stZEIQVSXyKnVWh
- ePAvil5SVpeOt5KUjuo4Hzfe3bkQgy4fr7vAoXydy7cY77G3s1FIniWoLZLCRIT//Fv8
- WM2w==
-X-Gm-Message-State: AGi0PuYabAJvH+fG6ceFpSl25lsUf8vBvXMA52zEFxoV/ndvgQUgXaqT
- GXheGyWuaebFrSFuZwag2rQ=
-X-Google-Smtp-Source: APiQypLQAgnfKPromQs68QdsrIgESVtKzl4IrNXH+4yZyw1pfffbGmT0fK11SeQtWBwotYGy9vDdug==
-X-Received: by 2002:a7b:c2a1:: with SMTP id c1mr4800795wmk.138.1586356258484; 
- Wed, 08 Apr 2020 07:30:58 -0700 (PDT)
+ bh=xX9cl4CH1nYfDC9Fl1wNJAbL90tz1WTwrpphigm4+/8=;
+ b=LpfnFWq6GWcy0bInOywudel+MjIw3VZ0uJ2EoOuDCH95aOMEUWbnkqSBIfG65QuN0p
+ g94gAztnIb55hBqI8lN2rVSi6uwdzl54SFrPdJrQXUj92NznXzR1CQOb/Z9vcb/iiXoh
+ NZBj1zlLP/9EHdOho7q5Zk1cjixPW48zkKTKhBdJpMAnX6P/Xbb/uOHlng5zsKOqnfdw
+ UjJTPeXnFGIPAi9nUEfzUinN0L0qPlXLIAx7Dmo93nZn3YnNnpRlYQvgAbWzmtuB2Z0w
+ irq31rv/TnCAW47JkdJzkprXOforQikxZ9FffnVXHKeljnJjxMakFzvTk3bpBdvhWg+R
+ CVCA==
+X-Gm-Message-State: AGi0PubUjPyZNow2POiervsAk4ZTAOLR1g2ooHsLPjrtVROqcT7+K2uN
+ JdMDeWFtcy1xxzI2VtxnzYM=
+X-Google-Smtp-Source: APiQypJcxfSQPdgfzVfTtaoDkE3q1F0w92nKE2PFtLR0RsytN1eenLMrY+ja3hE88v1MuuHborgwkQ==
+X-Received: by 2002:adf:9022:: with SMTP id h31mr8520524wrh.223.1586356259396; 
+ Wed, 08 Apr 2020 07:30:59 -0700 (PDT)
 Received: from linuxdev2.toradex.int (31-10-206-124.static.upc.ch.
  [31.10.206.124])
- by smtp.gmail.com with ESMTPSA id a10sm36268828wrm.87.2020.04.08.07.30.57
+ by smtp.gmail.com with ESMTPSA id a10sm36268828wrm.87.2020.04.08.07.30.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 07:30:57 -0700 (PDT)
+ Wed, 08 Apr 2020 07:30:58 -0700 (PDT)
 From: Max Krummenacher <max.oss.09@gmail.com>
 X-Google-Original-From: Max Krummenacher <max.krummenacher@toradex.com>
 To: Max Krummenacher <max.krummenacher@toradex.com>
-Subject: [PATCH v2 3/5] arm64: defconfig: PCIE_TEGRA194: follow changed config
+Subject: [PATCH v2 4/5] arm64: defconfig: ARCH_R8A7795: follow changed config
  symbol name
-Date: Wed,  8 Apr 2020 16:30:38 +0200
-Message-Id: <20200408143040.57458-4-max.krummenacher@toradex.com>
+Date: Wed,  8 Apr 2020 16:30:39 +0200
+Message-Id: <20200408143040.57458-5-max.krummenacher@toradex.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200408143040.57458-1-max.krummenacher@toradex.com>
 References: <20200408143040.57458-1-max.krummenacher@toradex.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_073101_342892_81FF03CF 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200408_073101_511167_E020F8F6 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [max.oss.09[at]gmail.com]
@@ -104,46 +104,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Anson Huang <Anson.Huang@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Vidya Sagar <vidyas@nvidia.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
  Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
  Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Will Deacon <will@kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When adding PCIE EP functionality the config symbol name logic for
-PCIE RC was also changed.
+Completes commit b925adfceb52 ("soc: renesas: Add ARCH_R8A7795[01] for
+existing R-Car H3") and commit 361c5dbb446e ("arm64: dts: renesas:
+Remove use of ARCH_R8A7795").
 
-Fixes commit c57247f940e8e ("PCI: tegra: Add support for PCIe endpoint
-mode in Tegra194")
+CONFIG_ARCH_R8A7795 was split in CONFIG_ARCH_R8A77950 and
+CONFIG_ARCH_R8A77951.
 
 Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
 ---
 
 Changes in v2: None
 
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/configs/defconfig | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index d765a920a20b9..ac0dd3dbbbfb6 100644
+index ac0dd3dbbbfb6..4a361734cfc71 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -208,7 +208,7 @@ CONFIG_PCIE_QCOM=y
- CONFIG_PCIE_ARMADA_8K=y
- CONFIG_PCIE_KIRIN=y
- CONFIG_PCIE_HISI_STB=y
--CONFIG_PCIE_TEGRA194=m
-+CONFIG_PCIE_TEGRA194_HOST=m
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
- CONFIG_FW_LOADER_USER_HELPER=y
+@@ -849,7 +849,8 @@ CONFIG_QCOM_APR=m
+ CONFIG_ARCH_R8A774A1=y
+ CONFIG_ARCH_R8A774B1=y
+ CONFIG_ARCH_R8A774C0=y
+-CONFIG_ARCH_R8A7795=y
++CONFIG_ARCH_R8A77950=y
++CONFIG_ARCH_R8A77951=y
+ CONFIG_ARCH_R8A77960=y
+ CONFIG_ARCH_R8A77961=y
+ CONFIG_ARCH_R8A77965=y
 -- 
 2.20.1
 
