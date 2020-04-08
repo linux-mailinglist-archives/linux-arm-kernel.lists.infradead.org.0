@@ -2,99 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9E331A217A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:14:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C4341A2180
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:15:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GeZ/bkHp9Bcr1TworRX7f2EIWAtVAmdHjF00dhNNli4=; b=ejoiQNe6Wsrk7s
-	NSmSghUI73sgrohb19dT55OuQfpFjQzkey2JKXBwbFOf6nDB8bEi8fwXQft42i/KBXLDUqLuuOMji
-	0f/5oGY3csgBSKorFSYeeUkK/N2IK/qt+wWIz5WYJ25o5regbjSm4db7pS8C9riFV/obk0tznYasu
-	2GHTRC0LJkz37DDja1YRPUN6iVkhuzuKGUgpaAp5FT20BiChZMMMG8U4XOZzeAWFrQB0ykDBu9SLV
-	CPu9OaZNMcVPU+yIqgLDqUV+S1h80MtnKsubaFfEXerl7cgl8qoBg/A9Dv5U06jJzmeyoo2fLkNt/
-	Bh8EF8xUq2Ls8W28YowQ==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DemmkWp4gPOmmUnBA6THhi7tSNu8mIwroIpXH0iNAfg=; b=iSp5ushb3XSXYt
+	vS6xFXebQmXp+CDgxgaY8IwyCGSPMeg0B7OW0/M0d4TB0B7da3EJlXrZ6NY0UlvGZXqfnhyWoMdZc
+	1b56cGQjc6r3bPchAE2bG1Oeh1BrpCud9dOfqSuxoe8nFCdXKnTr5SzE+PBFF5O6U797tUSuqyxys
+	zny6Kcjn7LdMVIDIoXUh87n5K3aVpR8um9Ln2y3G0E+J0V7R9j2awwpzFJjBHMC1GaY4Rv1gOJjTM
+	2dOkHhMYud9a1Ql6+xtlLiHme2jcQH9pzSo8CVt7L/P/FiFvwTtfrw376ILg81htNwRFayTTJvQav
+	gfX0CJmhZ5xqjYSy/+NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM9bM-0001TM-2l; Wed, 08 Apr 2020 12:14:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM9bF-0001SY-MM
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 12:14:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81D0B31B;
- Wed,  8 Apr 2020 05:14:27 -0700 (PDT)
-Received: from [192.168.3.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 217EF3F73D;
- Wed,  8 Apr 2020 05:14:25 -0700 (PDT)
-Subject: Re: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
-To: Marc Zyngier <maz@kernel.org>, James Morse <james.morse@arm.com>
-References: <20200406150355.4859-1-james.morse@arm.com>
- <20200408110726.4d81bc3b@why>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <281d91cb-6818-4393-55ce-6207c04d744b@arm.com>
-Date: Wed, 8 Apr 2020 13:13:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jM9c5-0004KC-3p; Wed, 08 Apr 2020 12:15:25 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jM9bw-0004J7-Dp
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 12:15:18 +0000
+Received: from pps.filterd (m0098393.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 038C3Im0121483
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 8 Apr 2020 08:15:15 -0400
+Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 309205ar8t-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 08 Apr 2020 08:15:15 -0400
+Received: from localhost
+ by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
+ Wed, 8 Apr 2020 13:15:00 +0100
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 8 Apr 2020 13:14:51 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (d06av24.portsmouth.uk.ibm.com
+ [9.149.105.60])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 038CF24e50987260
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 8 Apr 2020 12:15:02 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id C021542052;
+ Wed,  8 Apr 2020 12:15:02 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id DB5164203F;
+ Wed,  8 Apr 2020 12:15:01 +0000 (GMT)
+Received: from thinkpad (unknown [9.145.23.121])
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Wed,  8 Apr 2020 12:15:01 +0000 (GMT)
+Date: Wed, 8 Apr 2020 14:15:00 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
+In-Reply-To: <253cf5c8-e43e-5737-24e8-3eda3b6ba7b3@arm.com>
+References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+ <20200331143059.29fca8fa@thinkpad>
+ <e3e35885-6852-16aa-3889-e22750a0cc87@arm.com>
+ <20200407175440.41cc00a5@thinkpad>
+ <253cf5c8-e43e-5737-24e8-3eda3b6ba7b3@arm.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200408110726.4d81bc3b@why>
-Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 20040812-0012-0000-0000-000003A0A8D6
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20040812-0013-0000-0000-000021DDCDD9
+Message-Id: <20200408141500.75b2e1a7@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-07_10:2020-04-07,
+ 2020-04-07 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0
+ priorityscore=1501 phishscore=0 bulkscore=0 clxscore=1015 impostorscore=0
+ malwarescore=0 mlxscore=0 spamscore=0 suspectscore=0 adultscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004080102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_051433_818009_FF931BA1 
-X-CRM114-Status: GOOD (  22.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200408_051516_478369_20252030 
+X-CRM114-Status: GOOD (  35.34  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,113 +105,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <julien.thierry.kdev@gmail.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, "H. Peter
+ Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/04/2020 11:07, Marc Zyngier wrote:
+On Wed, 8 Apr 2020 12:41:51 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-Hi Marc,
+[...]
+> >   
+> >>
+> >> Some thing like this instead.
+> >>
+> >> pte_t pte = READ_ONCE(*ptep);
+> >> pte = pte_mkhuge(__pte((pte_val(pte) | RANDOM_ORVALUE) & PMD_MASK));
+> >>
+> >> We cannot use mk_pte_phys() as it is defined only on some platforms
+> >> without any generic fallback for others.  
+> > 
+> > Oh, didn't know that, sorry. What about using mk_pte() instead, at least
+> > it would result in a present pte:
+> > 
+> > pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));  
+> 
+> Lets use mk_pte() here but can we do this instead
+> 
+> paddr = (__pfn_to_phys(pfn) | RANDOM_ORVALUE) & PMD_MASK;
+> pte = pte_mkhuge(mk_pte(phys_to_page(paddr), prot));
+> 
 
-> Hi James,
-> 
-> Thanks for looking into this.
-> 
-> On Mon,  6 Apr 2020 16:03:55 +0100
-> James Morse <james.morse@arm.com> wrote:
-> 
->> kvm_arch_timer_get_input_level() needs to get the arch_timer_context for
->> a particular vcpu, and uses kvm_get_running_vcpu() to find it.
->>
->> kvm_arch_timer_get_input_level() may be called to handle a user-space
->> write to the redistributor, where the vcpu is not loaded. This causes
->> kvm_get_running_vcpu() to return NULL:
->> | Unable to handle kernel paging request at virtual address 0000000000001ec0
->> | Mem abort info:
->> |   ESR = 0x96000004
->> |   EC = 0x25: DABT (current EL), IL = 32 bits
->> |   SET = 0, FnV = 0
->> |   EA = 0, S1PTW = 0
->> | Data abort info:
->> |   ISV = 0, ISS = 0x00000004
->> |   CM = 0, WnR = 0
->> | user pgtable: 4k pages, 48-bit VAs, pgdp=000000003cbf9000
->> | [0000000000001ec0] pgd=0000000000000000
->> | Internal error: Oops: 96000004 [#1] PREEMPT SMP
->> | Modules linked in: r8169 realtek efivarfs ip_tables x_tables
->> | CPU: 1 PID: 2615 Comm: qemu-system-aar Not tainted 5.6.0-rc7 #30
->> | Hardware name: Marvell mvebu_armada-37xx/mvebu_armada-37xx, BIOS 2018.03-devel-18.12.3-gc9aa92c-armbian 02/20/2019
->> | pstate: 00000085 (nzcv daIf -PAN -UAO)
->> | pc : kvm_arch_timer_get_input_level+0x1c/0x68
->> | lr : kvm_arch_timer_get_input_level+0x1c/0x68
->>
->> | Call trace:
->> |  kvm_arch_timer_get_input_level+0x1c/0x68
->> |  vgic_get_phys_line_level+0x3c/0x90
->> |  vgic_mmio_write_senable+0xe4/0x130
->> |  vgic_uaccess+0xe0/0x100
->> |  vgic_v3_redist_uaccess+0x5c/0x80
->> |  vgic_v3_attr_regs_access+0xf0/0x200
->> |  nvgic_v3_set_attr+0x234/0x250
->> |  kvm_device_ioctl_attr+0xa4/0xf8
->> |  kvm_device_ioctl+0x7c/0xc0
->> |  ksys_ioctl+0x1fc/0xc18
->> |  __arm64_sys_ioctl+0x24/0x30
->> |  do_el0_svc+0x7c/0x148
->> |  el0_sync_handler+0x138/0x258
->> |  el0_sync+0x140/0x180
->> | Code: 910003fd f9000bf3 2a0003f3 97ff650c (b95ec001)
->> | ---[ end trace 81287612d93f1e70 ]---
->> | note: qemu-system-aar[2615] exited with preempt_count 1
->>
->> Loading the vcpu doesn't make a lot of sense for handling a device ioctl(),
->> so instead pass the vcpu through to kvm_arch_timer_get_input_level(). Its
->> not clear that an intid makes much sense without the paired vcpu.
-> 
-> I don't fully agree with the analysis, Remember we are looking at the
-> state of the physical interrupt associated with a virtual interrupt, so
-> the vcpu doesn't quite make sense here if it isn't loaded.
+Sure, that will also work.
 
-But wasn't it that this function is meant to specifically deal with this
-*without* going to the hardware (which is costly, hence this
-optimisation)? Because for the timer we *can* work out the logical IRQ
-line state by examining our saved state? And this is what we do in
-kvm_timer_should_fire(), when timer_ctx->loaded is false.
+BTW, this RANDOM_ORVALUE is not really very random, the way it is
+defined. For s390 we already changed it to mask out some arch bits,
+but I guess there are other archs and bits that would always be
+set with this "not so random" value, and I wonder if/how that would
+affect all the tests using this value, see also below.
 
-Which for me this sounds like the right thing to do in this situation:
-the VCPU (and the timer) is not loaded, so we check our saved state and
-construct the logical line level. We just need a valid VCPU struct to
-achieve this, and hope for the virtual timer to be already initialised.
+> > 
+> > And if you also want to do some with the existing value, which seems
+> > to be an empty pte, then maybe just check if writing and reading that
+> > value with set_huge_pte_at() / huge_ptep_get() returns the same,
+> > i.e. initially w/o RANDOM_ORVALUE.
+> > 
+> > So, in combination, like this (BTW, why is the barrier() needed, it
+> > is not used for the other set_huge_pte_at() calls later?):  
+> 
+> Ahh missed, will add them. Earlier we faced problem without it after
+> set_pte_at() for a test on powerpc (64) platform. Hence just added it
+> here to be extra careful.
+> 
+> > 
+> > @@ -733,24 +733,28 @@ static void __init hugetlb_advanced_test
+> >         struct page *page = pfn_to_page(pfn);
+> >         pte_t pte = READ_ONCE(*ptep);
+> >  
+> > -       pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
+> > +       set_huge_pte_at(mm, vaddr, ptep, pte);
+> > +       WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+> > +
+> > +       pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));
+> >         set_huge_pte_at(mm, vaddr, ptep, pte);
+> >         barrier();
+> >         WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+> > 
+> > This would actually add a new test "write empty pte with
+> > set_huge_pte_at(), then verify with huge_ptep_get()", which happens
+> > to trigger a warning on s390 :-)  
+> 
+> On arm64 as well which checks for pte_present() in set_huge_pte_at().
+> But PTE present check is not really present in each set_huge_pte_at()
+> implementation especially without __HAVE_ARCH_HUGE_SET_HUGE_PTE_AT.
+> Hence wondering if we should add this new test here which will keep
+> giving warnings on s390 and arm64 (at the least).
 
-Do I miss something here?
+Hmm, interesting. I forgot about huge swap / migration, which is not
+(and probably cannot be) supported on s390. The pte_present() check
+on arm64 seems to check for such huge swap / migration entries,
+according to the comment.
 
-Also to me it sound like the interface for this function is slightly
-lacking, because just an intid is not enough to uniquely identify an
-IRQ. It was just fine so far because of this special use case.
+The new test "write empty pte with set_huge_pte_at(), then verify
+with huge_ptep_get()" would then probably trigger the
+WARN_ON(!pte_present(pte)) in arm64 code. So I guess "writing empty
+ptes with set_huge_pte_at()" is not really a valid use case in practice,
+or else you would have seen this warning before. In that case, it
+might not be a good idea to add this test.
 
-Cheers,
-Andre
+I also do wonder now, why the original test with
+"pte = __pte(pte_val(pte) | RANDOM_ORVALUE);"
+did not also trigger that warning on arm64. On s390 this test failed
+exactly because the constructed pte was not present (initially empty,
+or'ing RANDOM_ORVALUE does not make it present for s390). I guess this
+just worked by chance on arm64, because the bits from RANDOM_ORVALUE
+also happened to mark the pte present for arm64.
 
-> 
-> What does it mean to look at the HW timer when we are not in the right
-> context? For all we know, it is completely random (the only guarantee
-> we have is that it is disabled, actually).
-> 
-> My gut feeling is that this is another instance where we should provide
-> specific userspace accessors that would only deal with the virtual
-> state, and leave anything that deals with the physical state of the
-> interrupt to be exercised only by the guest.
-> 
-> Does it make sense?
-> 
-> Thanks,
-> 
-> 	M.
-> 
+This brings us back to the question above, regarding the "randomness"
+of RANDOM_ORVALUE. Not really sure what the intention behind that was,
+but maybe it would make sense to restrict this RANDOM_ORVALUE to
+non-arch-specific bits, i.e. only bits that would be part of the
+address value within a page table entry? Or was it intentionally
+chosen to also mess with other bits?
+
+Regards,
+Gerald
 
 
 _______________________________________________
