@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8559A1A207B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 13:59:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 798421A20B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:00:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nwcd+TQoXig5hCC0h1Jff5Do2+gP7GDqtR/ekgMoQ90=; b=R+W7BoDrv7yIMN
-	vEhY0V3Q6TsuPRpUYCgKHdbOfUEwTVLBTbWwXw5alSPYWC4d4MBsMZn9s/ywMy5sYbeCb4REucBJi
-	cq07Ib3vsMWfCGKPKyvJA6y4boKWLscV0EHHpyVtfdd/KPwYH9pq1f/TMFGL3damSseZBicO1PtLA
-	V5iGpd9VFMDKCGHK5QxPBYOgCYnun7JaR93CZlhOhlCwxFKntYEza23lQtWbvR3XTAPPJ1W3IEgF4
-	8DqMhWTeG1jYn5Ut1V7uKwpVIUsb1TY9XNvbGhcL2uQxgXGbNtQH7zbIEN5KeKud1Jj6KZ/HqqImv
-	2pQ0MW2Aa5iBhXe22Ujw==;
+	List-Owner; bh=V6LZJ0sTerNgDUcly46hOkmfeAqEbR57M3HUXyXJqJI=; b=LrRGrd8DXxsqzP
+	4NJ+fYo9kUDX76ym6K85g6d1kMZNtxTIzuduskIfbtShK1IsXBUMy3jlpe6IRmOrJh8tDMbUTN2LW
+	cz9HSJhnwPVkbX07TR5OGriFlOBuVgFLQ9fLeCNmis+6HzK7ghMsgOMoQUIpfoBnjzX3P9/b5UQWr
+	QN95ELtD9LIheQqLPqH67EFQGNC3H/csGkKYAloIvApxqcEodr3u0CBAVSJmOV+7ZOsHkRfrF8YMv
+	f7b0sBrvqihTle8bmZ72WPZ7fhwVTgto9KL2YkEIYodQsWq+IVkKz7HLqVSzYI5TOTvpfo65a/mA7
+	lggXByzqKPhGOi5gQc1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM9Mq-0001bS-OG; Wed, 08 Apr 2020 11:59:40 +0000
+	id 1jM9Nd-0002AP-RZ; Wed, 08 Apr 2020 12:00:30 +0000
 Received: from [2001:4bb8:180:5765:65b6:f11e:f109:b151] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM9Mi-0001ZS-2Q; Wed, 08 Apr 2020 11:59:32 +0000
+ id 1jM9Ml-0001bC-Nz; Wed, 08 Apr 2020 11:59:36 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>,
  "K. Y. Srinivasan" <kys@microsoft.com>,
@@ -32,9 +32,9 @@ To: Andrew Morton <akpm@linux-foundation.org>,
  Sumit Semwal <sumit.semwal@linaro.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Minchan Kim <minchan@kernel.org>, Nitin Gupta <ngupta@vflare.org>
-Subject: [PATCH 01/28] x86/hyperv: use vmalloc_exec for the hypercall page
-Date: Wed,  8 Apr 2020 13:58:59 +0200
-Message-Id: <20200408115926.1467567-2-hch@lst.de>
+Subject: [PATCH 02/28] staging: android: ion: use vmap instead of vm_map_ram
+Date: Wed,  8 Apr 2020 13:59:00 +0200
+Message-Id: <20200408115926.1467567-3-hch@lst.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200408115926.1467567-1-hch@lst.de>
 References: <20200408115926.1467567-1-hch@lst.de>
@@ -62,48 +62,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the designated helper for allocating executable kernel memory, and
-remove the now unused PAGE_KERNEL_RX define.
+vm_map_ram can keep mappings around after the vm_unmap_ram.  Using that
+with non-PAGE_KERNEL mappings can lead to all kinds of aliasing issues.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/x86/hyperv/hv_init.c            | 2 +-
- arch/x86/include/asm/pgtable_types.h | 2 --
- 2 files changed, 1 insertion(+), 3 deletions(-)
+ drivers/staging/android/ion/ion_heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/x86/hyperv/hv_init.c b/arch/x86/hyperv/hv_init.c
-index b0da5320bcff..5a4b363ba67b 100644
---- a/arch/x86/hyperv/hv_init.c
-+++ b/arch/x86/hyperv/hv_init.c
-@@ -355,7 +355,7 @@ void __init hyperv_init(void)
- 	guest_id = generate_guest_id(0, LINUX_VERSION_CODE, 0);
- 	wrmsrl(HV_X64_MSR_GUEST_OS_ID, guest_id);
+diff --git a/drivers/staging/android/ion/ion_heap.c b/drivers/staging/android/ion/ion_heap.c
+index 473b465724f1..a2d5c6df4b96 100644
+--- a/drivers/staging/android/ion/ion_heap.c
++++ b/drivers/staging/android/ion/ion_heap.c
+@@ -99,12 +99,12 @@ int ion_heap_map_user(struct ion_heap *heap, struct ion_buffer *buffer,
  
--	hv_hypercall_pg  = __vmalloc(PAGE_SIZE, GFP_KERNEL, PAGE_KERNEL_RX);
-+	hv_hypercall_pg = vmalloc_exec(PAGE_SIZE);
- 	if (hv_hypercall_pg == NULL) {
- 		wrmsrl(HV_X64_MSR_GUEST_OS_ID, 0);
- 		goto remove_cpuhp_state;
-diff --git a/arch/x86/include/asm/pgtable_types.h b/arch/x86/include/asm/pgtable_types.h
-index b6606fe6cfdf..947867f112ea 100644
---- a/arch/x86/include/asm/pgtable_types.h
-+++ b/arch/x86/include/asm/pgtable_types.h
-@@ -194,7 +194,6 @@ enum page_cache_mode {
- #define _PAGE_TABLE_NOENC	 (__PP|__RW|_USR|___A|   0|___D|   0|   0)
- #define _PAGE_TABLE		 (__PP|__RW|_USR|___A|   0|___D|   0|   0| _ENC)
- #define __PAGE_KERNEL_RO	 (__PP|   0|   0|___A|__NX|___D|   0|___G)
--#define __PAGE_KERNEL_RX	 (__PP|   0|   0|___A|   0|___D|   0|___G)
- #define __PAGE_KERNEL_NOCACHE	 (__PP|__RW|   0|___A|__NX|___D|   0|___G| __NC)
- #define __PAGE_KERNEL_VVAR	 (__PP|   0|_USR|___A|__NX|___D|   0|___G)
- #define __PAGE_KERNEL_LARGE	 (__PP|__RW|   0|___A|__NX|___D|_PSE|___G)
-@@ -220,7 +219,6 @@ enum page_cache_mode {
- #define PAGE_KERNEL_RO		__pgprot_mask(__PAGE_KERNEL_RO         | _ENC)
- #define PAGE_KERNEL_EXEC	__pgprot_mask(__PAGE_KERNEL_EXEC       | _ENC)
- #define PAGE_KERNEL_EXEC_NOENC	__pgprot_mask(__PAGE_KERNEL_EXEC       |    0)
--#define PAGE_KERNEL_RX		__pgprot_mask(__PAGE_KERNEL_RX         | _ENC)
- #define PAGE_KERNEL_NOCACHE	__pgprot_mask(__PAGE_KERNEL_NOCACHE    | _ENC)
- #define PAGE_KERNEL_LARGE	__pgprot_mask(__PAGE_KERNEL_LARGE      | _ENC)
- #define PAGE_KERNEL_LARGE_EXEC	__pgprot_mask(__PAGE_KERNEL_LARGE_EXEC | _ENC)
+ static int ion_heap_clear_pages(struct page **pages, int num, pgprot_t pgprot)
+ {
+-	void *addr = vm_map_ram(pages, num, -1, pgprot);
++	void *addr = vmap(pages, num, VM_MAP);
+ 
+ 	if (!addr)
+ 		return -ENOMEM;
+ 	memset(addr, 0, PAGE_SIZE * num);
+-	vm_unmap_ram(addr, num);
++	vunmap(addr);
+ 
+ 	return 0;
+ }
 -- 
 2.25.1
 
