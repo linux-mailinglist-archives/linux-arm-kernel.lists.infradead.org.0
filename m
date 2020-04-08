@@ -2,105 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5ED01A21FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:25:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80D301A2220
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 14:36:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZA+T21vaPbvsGR5uQd6l4aHzsrcjzN13taDUJEgzAvk=; b=D9ol741DfIMDuL
-	FrY9oe/r9ADOzGPUzCD+7ouVyQWLy+N0YoqScTzcsRTCUOIZLuCqn/l0HXR/pLdzDb7r+carKeg63
-	tPN+Usfx+MtPn7yz4DoojaVrQxMg+FbICakc+hYpSz2UIw2YhSx2ZyVzfs89bfn5h/XXIf7xNxRju
-	Qjg+Ast+YStNrPvIlS7GeLzD3IKhzf9OOKmmX1tB04NfpZgNQjAi7/iavzNyG46oPIWByAae+7umc
-	zzVvNBqvxIzCId0+KDpAlxPMdQtNhWV4tIWsEs1cR9vLK457NQyXZkff1WBAvm2lh6Xsw5LNmUbbi
-	aawYQMWpvzPWexZAGOfQ==;
+	List-Owner; bh=c/4xGkiUPwhAm0d5NyMQojPP8JuH783N16CUEcaAKXs=; b=IGZdyQ+vuyoSBG
+	1Zw+VzaMTKAsA0xlRmYczbEff1Y3AxYmgWFC+hEIDBN8mImDc+EJSCK2oVu67gmgLZay5Qtl/CV5b
+	t1ljyFeg8278ruyUm52rJa6+8sk7Ov5mOT+uwFFIYe3LlSql9Y0bcP64gyGKN4s1fb5bLtDa7UTyO
+	/q0Ual8tyB+PIAziui5LlEagPcHPTlTQ0pplvAXjncO2OPgfEAEMdGqNLNz/Eq2CXiGHM8P/WzEPZ
+	o0M5iv/YYVXne9fRU5RQ1iNvqraLN4Gs0aO7HOWhNxmfiyv0GLoE/fG+9Yf6ZmmnnOAE5Z+j19aWD
+	qEoXviQC6I5n1mv3ig2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM9m2-0004Fg-RH; Wed, 08 Apr 2020 12:25:42 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jM9vs-0001zq-Ks; Wed, 08 Apr 2020 12:35:52 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM9lW-0002h7-Ed
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 12:25:13 +0000
-Received: by mail-wr1-x444.google.com with SMTP id h15so7577472wrx.9
+ id 1jM9vj-0001zF-Qs
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 12:35:45 +0000
+Received: by mail-ed1-x543.google.com with SMTP id de14so8372214edb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 05:25:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to;
- bh=S+T3eMWPDVVKjkhAMCN4OLY+AXtsqs3KpyYmqj2eyPw=;
- b=iTDVFh9zGz+cA8knHYYQ0Yf9dPIyYyDTxXa4CjSfrmLiD5i70f+PrvxbUf3+NKNs6P
- 0FpMET5mzx+JLVZSzcC1hvsXM+4Tttd8dTrz+Xv2lGQ2cbnW/q88kgg5209meIQ7muh4
- h9U+2WX4Hzg6PB+HIxI6ZXmC8Lzm/Rzktbqts=
+ Wed, 08 Apr 2020 05:35:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xa0jsgSZvhAu9qLIAzgdV/p9IbYtIZxjPtuYfg0RgUo=;
+ b=gRUviviqC24Bj2U3Aq5OtUVPx4mO/jN9xEiRvX1d8xksOHMUV5rC78+7W/a4siaB10
+ 077PCLjkA2BvcXkMnv4yQvhjlOYbiN4mpyA4F1gKZ4B/HwRcWwVNoU7bRMc54IgrN6M7
+ v1vcBIktG7POpd86IWze0cJXJSEABoW2/Ykb4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=S+T3eMWPDVVKjkhAMCN4OLY+AXtsqs3KpyYmqj2eyPw=;
- b=haS84Ebk+HCdTHSFQdxhtSTDjcY1Q2WXIlZT7Haa8mRwQLDiRZHlp/jXusZI4Snp6H
- jt4WmSKw2LMDKFrpVDlRYBGUGHFeh0LCjVmqCp35YRd4/2uhArh12XSXH3toHlAlsni+
- BBdlmnbaXoEl75iJBX8w4krB0vrZFdSkyNyYkYuWKKEpVuhKahA3oy/e0aOTb1YxAB/+
- 6faxEfP1Z5CnfQosMHVVIqS7eXQ95u8wyqhj5SnGerMsTfX3otIbfLCiRlNhW32O97Ll
- WiSKehTsHOPyHxdtgSJUwUZ5IC1/QM8iq1bO54hfdRiWQhNhWf2JbqBqR/YUvUlxL68l
- GFEg==
-X-Gm-Message-State: AGi0PubWDN/P399bI8aasTjpX+lrqyeEHwE2/I61wDvixo81x68QsnqY
- AGd7eIz8fTpIt2MMlfDolgvrTg==
-X-Google-Smtp-Source: APiQypJvxn06n6RmmZE3e7ZfAJg02E1DO8+MxqNnF9onm5w/+2r1QjPARt8wv7KYk/4tgJKIUOQMMQ==
-X-Received: by 2002:a5d:4111:: with SMTP id l17mr8794439wrp.271.1586348708002; 
- Wed, 08 Apr 2020 05:25:08 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id v7sm35651554wrs.96.2020.04.08.05.25.06
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 05:25:07 -0700 (PDT)
-Date: Wed, 8 Apr 2020 14:25:04 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Christoph Hellwig <hch@lst.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [PATCH 19/28] gpu/drm: remove the powerpc hack in
- drm_legacy_sg_alloc
-Message-ID: <20200408122504.GO3456981@phenom.ffwll.local>
-Mail-Followup-To: Christoph Hellwig <hch@lst.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "K. Y. Srinivasan" <kys@microsoft.com>,
- Haiyang Zhang <haiyangz@microsoft.com>,
- Stephen Hemminger <sthemmin@microsoft.com>,
- Wei Liu <wei.liu@kernel.org>, x86@kernel.org,
- David Airlie <airlied@linux.ie>, Laura Abbott <labbott@redhat.com>,
- Sumit Semwal <sumit.semwal@linaro.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Minchan Kim <minchan@kernel.org>, Nitin Gupta <ngupta@vflare.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Peter Zijlstra <peterz@infradead.org>,
- linuxppc-dev@lists.ozlabs.org, linux-hyperv@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
- linux-arch@vger.kernel.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org, linux-s390@vger.kernel.org,
- bpf@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20200408115926.1467567-1-hch@lst.de>
- <20200408115926.1467567-20-hch@lst.de>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xa0jsgSZvhAu9qLIAzgdV/p9IbYtIZxjPtuYfg0RgUo=;
+ b=cYZ62XCUYRzK7CpEeQJbd8CH/fKweWyZHvnqqiDoTScVzuqESYSmMfmGI0rvVhrr7v
+ 3okVD1mymfReGGCre08zJ8PSN79qRa0xu4UtqNY6c7PU/2fTHKVHwQR9d7+8/mATUA45
+ IHK6DNpOQzAmItersFazOE37017w+yOA4csrQsouhkwMt4jq1YhbH8vPzhfpf73BVqUU
+ V7hk4ac7BD+aczrGWlNdv3dFFX8Lp8jMmpzms/H4UL7/StdlpAUggHbH6hsVxCiEti49
+ TGWAoaFvZZQDb8OKIUkFa8cW8uPACZWR9UXjGLkMdpHE36WgF4QiMPo3G6ZScCPdVu4O
+ ORWQ==
+X-Gm-Message-State: AGi0PuY4t+YLv1HjrVw5ruNzTGBuzo50BDuO2dZ/BAnlSO2n+BtuROKT
+ jmxZpWqzieMwtJ+dlNS5RDuoTWUPR9AJdg==
+X-Google-Smtp-Source: APiQypIZsAXrpu7SwYXRlXZ6U3dvMgTMDLd8DxdGFugn7EMBQGJaXUKOXrZ/sm2ZgsYcPY4UcK9EwA==
+X-Received: by 2002:a17:906:82c6:: with SMTP id
+ a6mr6545610ejy.245.1586349341007; 
+ Wed, 08 Apr 2020 05:35:41 -0700 (PDT)
+Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com.
+ [209.85.128.43])
+ by smtp.gmail.com with ESMTPSA id d11sm3455319ejd.2.2020.04.08.05.35.40
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 08 Apr 2020 05:35:40 -0700 (PDT)
+Received: by mail-wm1-f43.google.com with SMTP id r26so5273132wmh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Apr 2020 05:35:40 -0700 (PDT)
+X-Received: by 2002:a1c:9e08:: with SMTP id h8mr4273596wme.183.1586349339478; 
+ Wed, 08 Apr 2020 05:35:39 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408115926.1467567-20-hch@lst.de>
-X-Operating-System: Linux phenom 5.3.0-3-amd64 
+References: <20200403232736.GA6127@valkosipuli.retiisi.org.uk>
+ <20200404093446.vuvwrhn5436h4d3s@gilmour.lan>
+ <20200406083506.GE6127@valkosipuli.retiisi.org.uk>
+ <20200407083647.4mocdl7aqa3x737q@gilmour.lan>
+ <CAG3jFyvd32pWppubMoOoyH9eO2XLjwUXMC7p4xtv8m+JkPv6vw@mail.gmail.com>
+ <20200407123232.ktvaifhqntgzvkap@gilmour.lan>
+ <CAG3jFysSrZJRE2TvL0bWoRFNnscgDGj8yGr-iwWBm4=1wMbJ9A@mail.gmail.com>
+ <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
+ <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
+ <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
+ <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
+In-Reply-To: <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 8 Apr 2020 14:35:28 +0200
+X-Gmail-Original-Message-ID: <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
+Message-ID: <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
+Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_052510_589490_B23C026E 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: 2.1 (++)
+X-CRM114-CacheID: sfid-20200408_053543_895131_1B2C83AD 
+X-CRM114-Status: GOOD (  33.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
- 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,6 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,80 +111,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
- x86@kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
- Daniel Vetter <daniel@ffwll.ch>, Haiyang Zhang <haiyangz@microsoft.com>,
- linaro-mm-sig@lists.linaro.org, bpf@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Robert Foss <robert.foss@linaro.org>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 01:59:17PM +0200, Christoph Hellwig wrote:
-> If this code was broken for non-coherent caches a crude powerpc hack
-> isn't going to help anyone else.  Remove the hack as it is the last
-> user of __vmalloc passing a page protection flag other than PAGE_KERNEL.
+On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
+> > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
+> > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus@iki.fi> wrote:
+> > > >
+> > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss wrote:
+> > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > > >
+> > > > > > Hi Robert,
+> > > > > >
+> > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Foss wrote:
+> > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakari Ailus wrote:
+> > > > > > > > > > But that 19.2MHz is not a limitation of the device itself, it's a
+> > > > > > > > > > limitation of our implementation, so we can instead implement
+> > > > > > > > > > something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
+> > > > > > > > > > sure that our parent clock is configured at the right rate) and the
+> > > > > > > > > > clk_get_rate and compare that to 19.2MHz (to make sure that it's not
+> > > > > > > > > > been rounded too far apart from the frequency we expect).
+> > > > > > > > > >
+> > > > > > > > > > This is doing exactly the same thing, except that we don't encode our
+> > > > > > > > > > implementation limitations in the DT, but in the driver instead.
+> > > > > > > > >
+> > > > > > > > > What I really wanted to say that a driver that doesn't get the clock
+> > > > > > > > > frequency from DT but still sets that frequency is broken.
+> > > > > > > > >
+> > > > > > > > > This frequency is highly system specific, and in many cases only a certain
+> > > > > > > > > frequency is usable, for a few reasons: On many SoCs, not all common
+> > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 MHz and 24 MHz; while others
+> > > > > > > > > are being used as well), and then that frequency affects the usable CSI-2
+> > > > > > > > > bus frequencies directly --- and of those, only safe, known-good ones
+> > > > > > > > > should be used. IOW, getting the external clock frequency wrong typically
+> > > > > > > > > has an effect that that none of the known-good CSI-2 bus clock frequencies
+> > > > > > > > > are available.
+> > > > > > > >
+> > > > > > > > So clock-frequency is not about the "Frequency of the xvclk clock in
+> > > > > > > > Hertz", but the frequency at which that clock must run on this
+> > > > > > > > particular SoC / board to be functional?
+> > > > > > > >
+> > > > > > > > If so, then yeah, we should definitely keep it, but the documentation
+> > > > > > > > of the binding should be made clearer as well.
+> > > > > > >
+> > > > > > > Alright so, let me summarise the desired approach then.
+> > > > > >
+> > > > > > There's a separate discussion on the same topic here:
+> > > > > > https://lore.kernel.org/linux-media/20200407122106.GD4751@pendragon.ideasonboard.com/
+> > > > >
+> > > > > Thanks for the link.
+> > > > >
+> > > > > >
+> > > > > > > ACPI:
+> > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > >
+> > > > > > > DT:
+> > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > >   - Get xvclk clock
+> > > > > > >   - Get xvclk clock rate
+> > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
+> > > > > >
+> > > > > > The current status is that you should
+> > > > > > 's/clock-frequency/link-frequencies/', and in order to replace
+> > > > > > assigned-clock-rates, you'll want to have a clk_set_rate to 19.2MHz
+> > > > > > between steps 3 and 4
+> > > > >
+> > > > > Would we want to 's/clock-frequency/link-frequencies/' for ACPI too?
+> > > > > I imagine that would cause some breakage.
+> > > >
+> > > > It would, yes, and it would be no more correct on DT either.
+> > > >
+> > > > There are basically two possibilities here; either use the clock-frequency
+> > > > property and set the frequency, or rely on assigned-clock-rates, and get
+> > > > the frequency instead.
+> > > >
+> > > > The latter, while I understand it is generally preferred, comes with having
+> > > > to figure out the register list set that closest matches the frequency
+> > > > obtained. The former generally gets around this silently by the clock
+> > > > driver setting the closest frequency it can support.
+> > >
+> > > Wouldn't the former actually cause problems, because the closest
+> > > frequency the clock driver can support could be pretty far from the
+> > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs to check the
+> > > resulting frequency anyway.
+> >
+> > That's possible, yes; in this case there wouldn't be a guarantee the
+> > frequency wouldn't be far off.
+>
+> assigned-clock-rates is really fragile... There's zero guarantee on
+> how far the actual rate is going to be from the asked one, but more
+> importantly you have zero guarantee on the time frame that rate is
+> going to be enforced for.
+>
 
-Well Ben added this to make stuff work on ppc, ofc the home grown dma
-layer in drm from back then isn't going to work in other places. I guess
-should have at least an ack from him, in case anyone still cares about
-this on ppc. Adding Ben to cc.
--Daniel
+Is there such a guarantee if clk_set_rate() is called?
 
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  drivers/gpu/drm/drm_scatter.c | 11 +----------
->  1 file changed, 1 insertion(+), 10 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/drm_scatter.c b/drivers/gpu/drm/drm_scatter.c
-> index ca520028b2cb..f4e6184d1877 100644
-> --- a/drivers/gpu/drm/drm_scatter.c
-> +++ b/drivers/gpu/drm/drm_scatter.c
-> @@ -43,15 +43,6 @@
->  
->  #define DEBUG_SCATTER 0
->  
-> -static inline void *drm_vmalloc_dma(unsigned long size)
-> -{
-> -#if defined(__powerpc__) && defined(CONFIG_NOT_COHERENT_CACHE)
-> -	return __vmalloc(size, GFP_KERNEL, pgprot_noncached_wc(PAGE_KERNEL));
-> -#else
-> -	return vmalloc_32(size);
-> -#endif
-> -}
-> -
->  static void drm_sg_cleanup(struct drm_sg_mem * entry)
->  {
->  	struct page *page;
-> @@ -126,7 +117,7 @@ int drm_legacy_sg_alloc(struct drm_device *dev, void *data,
->  		return -ENOMEM;
->  	}
->  
-> -	entry->virtual = drm_vmalloc_dma(pages << PAGE_SHIFT);
-> +	entry->virtual = vmalloc_32(pages << PAGE_SHIFT);
->  	if (!entry->virtual) {
->  		kfree(entry->busaddr);
->  		kfree(entry->pagelist);
-> -- 
-> 2.25.1
-> 
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+> It's simply going to change the rate as a one-off thing, and if
+> there's the next millisecond someone else is going to change its rate
+> one way or another, it's going to do so and you won't have any
+> notification.
+>
+> And even semantically, they do not share the same meaning at all, so
+> we should really stop using assigned-clock-rates if we can, instead of
+> pushing it.
+>
+> Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
