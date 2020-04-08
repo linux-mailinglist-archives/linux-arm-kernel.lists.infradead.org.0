@@ -2,88 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BB7F1A241B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:32:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C0581A2457
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:50:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sz8+SHuCwBelh0HORyRbTW0BglucofMHSJXZ1wSKJ7U=; b=lWXFqn36YIqkCf
-	u0HtGTNX4gdbBEEY7qm48nDmPo3FK8HfqPOHFXH1kNTMmhp/799YvoWJKtiqG24zUa/5BsQPnWVvJ
-	ij+FueLWc16/VCOwT6BcdxobIJNBOtO4kqFTwVc2TFkw4BXakqO6YmMoi1HEKjR0fhZWbXubNk9T8
-	xyZ/o/ZegF9EJJdhniHKOIZsnRyNhYhX8kNrfDKz725OZ/sxstWOPuqfwQw7Ual3EQZgxUVRlsgbm
-	tW1xBiXQTdJ8uxEZsZy/QMEw/d/1WyklFeLvKtSiG8cd4nKBYdx6s070xyp8FrqEFmVrRzATmvYSs
-	6JiUCV6P5vV4iL4wx+XQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QnC5tEDFoxsh/yFbGt1qOIHWrV0K2Ze4aSlItBHY9QY=; b=OsRc41nI+fMtXC
+	k9tCKIVg2lsl0GRJDDVy3gt7QH/DSg2a6vT1/uRRzaJSBPqihE4hQlCiUEYyTUP+L6EDvSx6trJaY
+	cCyRCpubX0oyOoRmHDLq1vDbPtxkr3NwRnLEkHjXa5Dd8g9XUEDMPbHeEOrMUeb5W226JRyRJfjH0
+	9egkv/+TF62OjU8yFR3pa8HT0Lm850m9sAdz6IjxaxACIfDOaQLB9l8eQABbNfOYEQnZVb9mhY8+4
+	22+2fXP+WB96En0Z0g5Qrwto2iNq7NjPHc2PvYnejOyiB37hBlvB+amrCYQI7zgRwDQN6lnsOMqRn
+	bwV0IuFmvNexeCVU6xYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMBkI-0002co-Pj; Wed, 08 Apr 2020 14:32:02 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jMC1c-0004I8-LI; Wed, 08 Apr 2020 14:49:56 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMBjJ-0001sD-E6
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:31:02 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h15so8049713wrx.9
+ id 1jMC1Q-0004GZ-PQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:49:47 +0000
+Received: by mail-il1-x143.google.com with SMTP id t11so6951300ils.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 07:31:01 -0700 (PDT)
+ Wed, 08 Apr 2020 07:49:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=vyDE/DAow1HKfw9siXqu+BUO4Iv4LhO2/XGLlEGwwpM=;
- b=enzE2lZoy6PK42q1fBJmgw+P8pJ5fQLJlPJ86GI4CsGsBlyLD6VvpsSHVINFHI1pHS
- 6aIeDtCJHV6wGb7MnKhkVpy6oItqyZUBmNz2aEyVFoXRbKAq4zbpaefxR0DwHjjKXalE
- vtt99ey5Do8kGr1BIfz6ao4QaaYrPcH5w83xQOjR9X8VFVX6CXjrG3ndW4UGYLJdd4iW
- MVgl83hovMLiv0SnCuEHRI9GNk7qdd7t6zZLFwOHdm4fWfBn/p0O7iuTGVI62bYSfZBA
- qltMjWIqClDTNa08iPcz6AUao2PWrW68i/Xu4ijxaFCDlVTV4MYmr+hwGSmz0aSvjPeN
- 512g==
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=wR8J2b+VadqJ7co3OXe203kY2wp7FcU9y3rU2x1X2Lc=;
+ b=Q+okMJOrmu46BVJ4W897WB0ETPT3t230J2V2WVuN1/vb7TaiudSsP+hEQ/JozXtrOW
+ R1ztXk5Cw3tZTb3XoHG1FR0jjl8KxjUPbb5BNvT2T7HOJEu9zrwzLv0M0dgTuxuHyqJ0
+ jJEdM3BAsaFEppMhxtx44mFHxADRksXNpTLBbOAyTc15ilmMjkeb5qoKAcN4684MpcQq
+ tKwWbtlxJ9HWA1FEGDmdvTMBIxXl7+z5fu83MOOEqkX/LwR5g480QdV580w9qOu00m2k
+ yVd2bbtESxEQYeD97+4DAOIN5FPh1qqljXORgyvC1CbFN1mJV1LmxR3ZJXTFNKvxuwIs
+ 0L8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=vyDE/DAow1HKfw9siXqu+BUO4Iv4LhO2/XGLlEGwwpM=;
- b=DnxWSflHTc51cT/gU95UpIIEBct40DzDeJGX6WrIt1NDMSkiJCZBWqdyhcykr1MKZZ
- NxYONl1DrQ9ll8661QaTrJ0hJeD3OGqf4j0/peS/+JhEpU4k5Sp2CxEo73c5NYzp/Dl5
- ngfAEtxXnbH/2CwQPXKymv+Iqc5IUDQ1mVT0dcZX6IV5LiBR04VnIKrW6bUsT24tM3fg
- gzOW2I19JVEfV7rtt+nfDbZQfS6FuaL0JqewEYKIMsiMJUI2NvWv7zxO9lT/xlflAj6M
- F6q4IlpZBFyPKbU//w4n8g0dpfoqRxOO9NexKyIS687t7vsk/nojSxT9BqMrE0N3f6CI
- zqng==
-X-Gm-Message-State: AGi0PuatsJyygi4Rsmk7t1m5d/7AVl/IWMyPCWKRmny5+cQ2wMLgs0d8
- ZKV63AvdfzOVRGzTwczfiTU=
-X-Google-Smtp-Source: APiQypKltU+gZXosQgFXeWbDm5Ug2G9QbX9w0EJMILudxJET+MWXZkyb2dGVrPc548WClfwBq64jkA==
-X-Received: by 2002:a5d:6183:: with SMTP id j3mr8798851wru.83.1586356260277;
- Wed, 08 Apr 2020 07:31:00 -0700 (PDT)
-Received: from linuxdev2.toradex.int (31-10-206-124.static.upc.ch.
- [31.10.206.124])
- by smtp.gmail.com with ESMTPSA id a10sm36268828wrm.87.2020.04.08.07.30.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 07:30:59 -0700 (PDT)
-From: Max Krummenacher <max.oss.09@gmail.com>
-X-Google-Original-From: Max Krummenacher <max.krummenacher@toradex.com>
-To: Max Krummenacher <max.krummenacher@toradex.com>
-Subject: [PATCH v2 5/5] arm64: defconfig: refresh
-Date: Wed,  8 Apr 2020 16:30:40 +0200
-Message-Id: <20200408143040.57458-6-max.krummenacher@toradex.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200408143040.57458-1-max.krummenacher@toradex.com>
-References: <20200408143040.57458-1-max.krummenacher@toradex.com>
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=wR8J2b+VadqJ7co3OXe203kY2wp7FcU9y3rU2x1X2Lc=;
+ b=YL/1VGiuBo0akytG3cJYGvLZ8depSGHxfvDNi9N1JLm4XXgpufMH8n8bvSNIwnG0WS
+ mtF540UoIl51hxXK/7y/pUy67c3gOB5UXXfwhiCCTDVf7WFQQeV+uPok/fyO795Z9KUg
+ lEb1kEnAF6suxscD/P9ZA7wVpGh3RjXXuj8MTyshEjUG2lKcHExacM9zq01T5tTNeNDS
+ gOqzJCbXFba5MS34xrxIiWBxFMhFaHlWN147QQ8PFur42YJjAYFF8oeuGqJX40hRGa4/
+ T2ojqtsjBz++SqTnhrOmAt7LmevCtmwZ280JKBitbUdw1Yv5mUXu01A6QN7YMImPsubD
+ tuwQ==
+X-Gm-Message-State: AGi0PuaP28zWhljU7/t+Iuz6Q9GcH65hLw+8e82w/dC9mr2wOLv/zcmH
+ tBt/9HlW5aHr/6G2em3z6y53APsYw/NSU1r5b30uX0X7aig=
+X-Google-Smtp-Source: APiQypJTukjCEgjULDIFs6A7jB6rTECx/YYSMuVLIZxT5C2Nr1PoDVcbeJGiz6RbTEHkbww7NSGEWi6jO1USaLjjOtU=
+X-Received: by 2002:a92:3c56:: with SMTP id j83mr1986756ila.37.1586357382979; 
+ Wed, 08 Apr 2020 07:49:42 -0700 (PDT)
 MIME-Version: 1.0
+From: "Matwey V. Kornilov" <matwey.kornilov@gmail.com>
+Date: Wed, 8 Apr 2020 17:49:31 +0300
+Message-ID: <CAJs94EYHsjEoqydJX6hYFg_Y=T7nVKjpJ5n85mvhazb6xNSg0g@mail.gmail.com>
+Subject: zynq-zturn: macb: Could not attach PHY
+To: linux@armlinux.org.uk, Michal Simek <michal.simek@xilinx.com>, 
+ nicolas.ferre@microchip.com, Anton Gerasimov <tossel@gmail.com>, andrew@lunn.ch,
+ f.fainelli@gmail.com, hkallweit1@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_073101_490693_D2F81829 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200408_074944_847365_ABD1612F 
+X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [max.oss.09[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [max.oss.09[at]gmail.com]
+ provider [matwey.kornilov[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,131 +92,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Anson Huang <Anson.Huang@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: netdev@vger.kernel.org,
+ Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Refresh with make defconfig savedefconfig
+Hello,
 
-Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
+I am running Linux 5.6 on MYIR Z-turn board and see the following issue:
 
----
+[   38.485960] macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118
+at 0xe000b000 irq 28 (a6:78:9c:86:65:d3)
+[   42.990885] macb e000b000.ethernet eth0: Could not attach PHY (-19)
 
-Changes in v2:
-- add reviewed-by tags
+Setting 0x3 for ethernet-phy address in zynq-zturn.dts fixes this issue:
 
- arch/arm64/configs/defconfig | 17 +++++++----------
- 1 file changed, 7 insertions(+), 10 deletions(-)
+[   23.445231] macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118
+at 0xe000b000 irq 28 (5a:77:b7:82:c4:b3)
+[   27.843706] macb e000b000.ethernet eth0: PHY
+[e000b000.ethernet-ffffffff:03] driver [Micrel KSZ9031 Gigabit PHY]
+(irq=POLL)
+[   27.843726] macb e000b000.ethernet eth0: configuring for
+phy/rgmii-id link mod
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 4a361734cfc71..a4baafe01c346 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -165,9 +165,9 @@ CONFIG_QRTR_SMD=m
- CONFIG_QRTR_TUN=m
- CONFIG_BPF_JIT=y
- CONFIG_CAN=m
-+CONFIG_CAN_FLEXCAN=m
- CONFIG_CAN_RCAR=m
- CONFIG_CAN_RCAR_CANFD=m
--CONFIG_CAN_FLEXCAN=m
- CONFIG_BT=m
- CONFIG_BT_HIDP=m
- # CONFIG_BT_HS is not set
-@@ -202,20 +202,19 @@ CONFIG_PCI_HOST_THUNDER_ECAM=y
- CONFIG_PCIE_ROCKCHIP_HOST=m
- CONFIG_PCIE_BRCMSTB=m
- CONFIG_PCI_LAYERSCAPE=y
--CONFIG_PCIE_LAYERSCAPE_GEN4=y
- CONFIG_PCI_HISI=y
- CONFIG_PCIE_QCOM=y
- CONFIG_PCIE_ARMADA_8K=y
- CONFIG_PCIE_KIRIN=y
- CONFIG_PCIE_HISI_STB=y
- CONFIG_PCIE_TEGRA194_HOST=m
-+CONFIG_PCIE_LAYERSCAPE_GEN4=y
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
- CONFIG_FW_LOADER_USER_HELPER=y
- CONFIG_FW_LOADER_USER_HELPER_FALLBACK=y
- CONFIG_HISILICON_LPC=y
- CONFIG_SIMPLE_PM_BUS=y
--CONFIG_FSL_MC_BUS=y
- CONFIG_MTD=y
- CONFIG_MTD_BLOCK=y
- CONFIG_MTD_CFI=y
-@@ -494,10 +493,10 @@ CONFIG_SENSORS_INA3221=m
- CONFIG_THERMAL_GOV_POWER_ALLOCATOR=y
- CONFIG_CPU_THERMAL=y
- CONFIG_THERMAL_EMULATION=y
--CONFIG_QORIQ_THERMAL=m
--CONFIG_SUN8I_THERMAL=y
- CONFIG_IMX_SC_THERMAL=m
- CONFIG_IMX8MM_THERMAL=m
-+CONFIG_QORIQ_THERMAL=m
-+CONFIG_SUN8I_THERMAL=y
- CONFIG_ROCKCHIP_THERMAL=m
- CONFIG_RCAR_THERMAL=y
- CONFIG_RCAR_GEN3_THERMAL=y
-@@ -610,10 +609,10 @@ CONFIG_DRM_MSM=m
- CONFIG_DRM_TEGRA=m
- CONFIG_DRM_PANEL_LVDS=m
- CONFIG_DRM_PANEL_SIMPLE=m
--CONFIG_DRM_SIMPLE_BRIDGE=m
- CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA=m
- CONFIG_DRM_DISPLAY_CONNECTOR=m
- CONFIG_DRM_SII902X=m
-+CONFIG_DRM_SIMPLE_BRIDGE=m
- CONFIG_DRM_THINE_THC63LVD1024=m
- CONFIG_DRM_TI_SN65DSI86=m
- CONFIG_DRM_I2C_ADV7511=m
-@@ -661,7 +660,6 @@ CONFIG_SND_SOC_WSA881X=m
- CONFIG_SND_SIMPLE_CARD=m
- CONFIG_SND_AUDIO_GRAPH_CARD=m
- CONFIG_I2C_HID=m
--CONFIG_USB_CONN_GPIO=m
- CONFIG_USB=y
- CONFIG_USB_OTG=y
- CONFIG_USB_XHCI_HCD=y
-@@ -796,14 +794,13 @@ CONFIG_QCOM_A53PLL=y
- CONFIG_QCOM_CLK_APCS_MSM8916=y
- CONFIG_QCOM_CLK_SMD_RPM=y
- CONFIG_QCOM_CLK_RPMH=y
--CONFIG_IPQ_GCC_8074=y
- CONFIG_IPQ_GCC_6018=y
-+CONFIG_IPQ_GCC_8074=y
- CONFIG_MSM_GCC_8916=y
- CONFIG_MSM_GCC_8994=y
- CONFIG_MSM_MMCC_8996=y
- CONFIG_MSM_GCC_8998=y
- CONFIG_QCS_GCC_404=y
--CONFIG_SDM_GCC_845=y
- CONFIG_SDM_GPUCC_845=y
- CONFIG_SDM_DISPCC_845=y
- CONFIG_SM_GCC_8150=y
-@@ -932,10 +929,10 @@ CONFIG_FPGA_REGION=m
- CONFIG_OF_FPGA_REGION=m
- CONFIG_TEE=y
- CONFIG_OPTEE=y
-+CONFIG_MUX_MMIO=y
- CONFIG_SLIMBUS=m
- CONFIG_SLIM_QCOM_CTRL=m
- CONFIG_SLIM_QCOM_NGD_CTRL=m
--CONFIG_MUX_MMIO=y
- CONFIG_EXT2_FS=y
- CONFIG_EXT3_FS=y
- CONFIG_EXT4_FS_POSIX_ACL=y
+However, I've found that there are at least two Z-turn board
+revisions. The first one has v4 schematics as described in
+http://www.myirtech.com/download/Zynq7000/Z-TURNBOARD_schematic.pdf
+The second one has v5 schematics. I've found v5 schematics PDF file at
+DVD disk supplied with my board. I am not sure whether I am allowed to
+attach it here.
+My board seems to be v5 schematics. The only described difference
+between board revisions is that v4 has Atheros AR8035 PHY at 0b000
+address, and v5 has Micrel KSZ9031 PHY at 0b011 address.
+
+What should be preferred fix for this issue? I have not found a way to
+specify a list of PHY addresses to probe in DTS file.
+u-boot has similar issue with this board [1]. While it can be
+workarounded by PHY auto scan for u-boot, in Linux
+drivers/of/of_mdio.c, I see that auto scan is generally not
+encouraged.
+
+[1] https://lists.denx.de/pipermail/u-boot/2020-April/405605.html
+
 -- 
-2.20.1
-
+With best regards,
+Matwey V. Kornilov
 
 _______________________________________________
 linux-arm-kernel mailing list
