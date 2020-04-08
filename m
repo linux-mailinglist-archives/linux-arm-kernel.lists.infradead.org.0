@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 134171A1FF1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 13:37:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 487241A1FE6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 13:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPIf8SdxyqJRuElr2UHUva4kVkl3jzxaHOTDuyqNLd0=; b=TGKqqfR/QipVY4
-	8MeJjOtYglXop88FLT6hPH0MloI/vtAgWRSj8darqSClrnZ8Tw3vP08luRgGDQrW6U4DRYNP08uiK
-	Vmmk+WmfRcyvfaZCa7s9Tddr0PsPkapPAo7KVGLVFJ4ZxA/T2oIwEdJpLNnFscMaHdMjb8p+hJ2CF
-	4BDqd6fttgI0UeA5e+JhZBXmvx51UvpJPPT2xW5txjYTSmtEbLhG2S46FZRIHdBC475IfSv7bOv/3
-	Tc3hTmDScN6aeGaAlw7oxJZJcB8G6hQLMutmLJaNhi2rcTHyXY3KJvOw+S77Uc66/q2e1ZAk3157x
-	yQL9wJaLznNxvqqPPv9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GxDuuU+DgYvseRfxTwzIquJq/IikNW+rrR8gVb0X6y0=; b=ABV35C9Tg4btxpZtIrDxq3/99
+	EBxwqGAPIzLJOeUpuNBic3UsFI5W3uXqj72N9EpVE46sVBdGImB1g1OPAIqNrhcU5FZd30be8gfwb
+	ZQMN1KR2X1g0JCGIWmP4mDGRNIGLFrLgd2tOe2EKZSXRkpV1ElkFpJUPtRGTaMWRLyplg1DHzZ0QW
+	atZTQtfFMH5MakVSv+XfmPfDkexuzhQa8tmr4GC/7xJTlVml6tciy6UIfetDT6luEUqVVwkxPCD5H
+	jUO/MDahzguLr0h+9pWJrRR+1BpjTAh+QWylTA7QunjQDxE2kSI615gOk2Z3Zn+3Ga0nbB3sU8HPB
+	sYrI9ZeAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM91a-00041a-Mh; Wed, 08 Apr 2020 11:37:42 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM91T-0003zq-LF
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 11:37:37 +0000
-X-Originating-IP: 93.29.109.196
-Received: from collins (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 40B3F40006;
- Wed,  8 Apr 2020 11:37:25 +0000 (UTC)
-Date: Wed, 8 Apr 2020 13:37:25 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH] media: cedrus: Implement runtime PM
-Message-ID: <20200408113725.GA1439687@collins>
-References: <20200408010232.48432-1-samuel@sholland.org>
+	id 1jM8zE-0003c3-RZ; Wed, 08 Apr 2020 11:35:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jM8z8-0002hG-5j
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 11:35:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DE1C31B;
+ Wed,  8 Apr 2020 04:35:07 -0700 (PDT)
+Received: from [10.37.12.149] (unknown [10.37.12.149])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 420603F73D;
+ Wed,  8 Apr 2020 04:35:06 -0700 (PDT)
+Subject: Re: [PATCH v2] arm64: armv8_deprecated: Fix undef_hook mask for thumb
+ setend
+To: fredrik@strupe.net, catalin.marinas@arm.com
+References: <911db2f1-e078-a460-32ee-154a0b4de5d4@strupe.net>
+ <20200407092744.GA2665@gaia> <a2b345a4-30a0-3218-8c8d-e84ec2317dc9@arm.com>
+ <0d7b582a-1bd0-9db2-2fdc-04fc887f64c6@strupe.net>
+ <20200408090111.GA27331@gaia>
+ <9979396e-5d01-0cfe-722f-3a4f6e81dc01@strupe.net>
+ <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <f2c442f8-d2b6-c859-ca1a-2b8a343047e6@arm.com>
+Date: Wed, 8 Apr 2020 12:39:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408010232.48432-1-samuel@sholland.org>
+In-Reply-To: <ab77076b-774d-9158-bc0c-3cfdd36b6e37@strupe.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_043735_966716_A4A96828 
-X-CRM114-Status: GOOD (  20.26  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200408_043510_268977_9CE8A368 
+X-CRM114-Status: GOOD (  23.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.194 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,265 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Tue 07 Apr 20, 20:02, Samuel Holland wrote:
-> This allows the VE clocks and PLL_VE to be disabled most of the time.
+On 04/08/2020 12:29 PM, Fredrik Strupe wrote:
+> For thumb instructions, call_undef_hook() in traps.c first reads a u16,
+> and if the u16 indicates a T32 instruction (u16 >= 0xe800), a second
+> u16 is read, which then makes up the the lower half-word of a T32
+> instruction. For T16 instructions, the second u16 is not read,
+> which makes the resulting u32 opcode always have the upper half set to
+> 0.
 > 
-> Since the device is stateless, each frame gets a separate runtime PM
-> reference. Enable autosuspend so the PM callbacks are not run before and
-> after every frame.
-
-Looks good, thanks for the contribution :)
-
-Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-
-Cheers,
-
-Paul
-
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> However, having the upper half of instr_mask in the undef_hook set to 0
+> masks out the upper half of all thumb instructions - both T16 and T32.
+> This results in trapped T32 instructions with the lower half-word equal
+> to the T16 encoding of setend (b650) being matched, even though the upper
+> half-word is not 0000 and thus indicates a T32 opcode.
+> 
+> An example of such a T32 instruction is eaa0b650, which should raise a
+> SIGILL since T32 instructions with an eaa prefix are unallocated as per
+> Arm ARM, but instead works as a SETEND because the second half-word is set
+> to b650.
+> 
+> This patch fixes the issue by extending instr_mask to include the
+> upper u32 half, which will still match T16 instructions where the upper
+> half is 0, but not T32 instructions.
+> 
+> Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Fixes: 2d888f48e056 ("arm64: Emulate SETEND for AArch32 tasks")
 > ---
+>   arch/arm64/kernel/armv8_deprecated.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> I tested this with v4l2-request-test. I don't have the setup to do
-> anything more complicated at the moment.
+> diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
+> index 9d3442d62..8c06dfee0 100644
+> --- a/arch/arm64/kernel/armv8_deprecated.c
+> +++ b/arch/arm64/kernel/armv8_deprecated.c
+> @@ -609,7 +609,7 @@ static struct undef_hook setend_hooks[] = {
+>   	},
+>   	{
+>   		/* Thumb mode */
+> -		.instr_mask	= 0x0000fff7,
+> +		.instr_mask	= 0xfffffff7,
+>   		.instr_val	= 0x0000b650,
+>   		.pstate_mask	= (PSR_AA32_T_BIT | PSR_AA32_MODE_MASK),
+>   		.pstate_val	= (PSR_AA32_T_BIT | PSR_AA32_MODE_USR),
 > 
-> ---
->  drivers/staging/media/sunxi/cedrus/cedrus.c   |   7 ++
->  .../staging/media/sunxi/cedrus/cedrus_hw.c    | 115 ++++++++++++------
->  .../staging/media/sunxi/cedrus/cedrus_hw.h    |   3 +
->  3 files changed, 88 insertions(+), 37 deletions(-)
-> 
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-> index 3fad5edccd17..9aa1fc8a6c26 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-> @@ -16,6 +16,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
-> +#include <linux/pm.h>
->  
->  #include <media/v4l2-device.h>
->  #include <media/v4l2-ioctl.h>
-> @@ -474,6 +475,11 @@ static int cedrus_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static const struct dev_pm_ops cedrus_dev_pm_ops = {
-> +	SET_RUNTIME_PM_OPS(cedrus_hw_suspend,
-> +			   cedrus_hw_resume, NULL)
-> +};
-> +
->  static const struct cedrus_variant sun4i_a10_cedrus_variant = {
->  	.mod_rate	= 320000000,
->  };
-> @@ -559,6 +565,7 @@ static struct platform_driver cedrus_driver = {
->  	.driver		= {
->  		.name		= CEDRUS_NAME,
->  		.of_match_table	= of_match_ptr(cedrus_dt_match),
-> +		.pm		= &cedrus_dev_pm_ops,
->  	},
->  };
->  module_platform_driver(cedrus_driver);
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> index daf5f244f93b..b84814d5afe4 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> @@ -19,6 +19,7 @@
->  #include <linux/dma-mapping.h>
->  #include <linux/interrupt.h>
->  #include <linux/clk.h>
-> +#include <linux/pm_runtime.h>
->  #include <linux/regmap.h>
->  #include <linux/reset.h>
->  #include <linux/soc/sunxi/sunxi_sram.h>
-> @@ -63,6 +64,8 @@ int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec codec)
->  	if (ctx->src_fmt.width > 2048)
->  		reg |= VE_MODE_PIC_WIDTH_MORE_2048;
->  
-> +	pm_runtime_get_sync(ctx->dev->dev);
-> +
->  	cedrus_write(ctx->dev, VE_MODE, reg);
->  
->  	return 0;
-> @@ -71,6 +74,9 @@ int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec codec)
->  void cedrus_engine_disable(struct cedrus_dev *dev)
->  {
->  	cedrus_write(dev, VE_MODE, VE_MODE_DISABLED);
-> +
-> +	pm_runtime_mark_last_busy(dev->dev);
-> +	pm_runtime_put_autosuspend(dev->dev);
->  }
->  
->  void cedrus_dst_format_set(struct cedrus_dev *dev,
-> @@ -134,12 +140,72 @@ static irqreturn_t cedrus_irq(int irq, void *data)
->  	else
->  		state = VB2_BUF_STATE_DONE;
->  
-> +	cedrus_engine_disable(dev);
-> +
->  	v4l2_m2m_buf_done_and_job_finish(ctx->dev->m2m_dev, ctx->fh.m2m_ctx,
->  					 state);
->  
->  	return IRQ_HANDLED;
->  }
->  
-> +int cedrus_hw_resume(struct device *d)
-> +{
-> +	struct cedrus_dev *dev = dev_get_drvdata(d);
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(dev->ahb_clk);
-> +	if (ret) {
-> +		dev_err(dev->dev, "Failed to enable AHB clock\n");
-> +
-> +		return ret;
-> +	}
-> +
-> +	ret = clk_prepare_enable(dev->mod_clk);
-> +	if (ret) {
-> +		dev_err(dev->dev, "Failed to enable MOD clock\n");
-> +
-> +		goto err_ahb_clk;
-> +	}
-> +
-> +	ret = clk_prepare_enable(dev->ram_clk);
-> +	if (ret) {
-> +		dev_err(dev->dev, "Failed to enable RAM clock\n");
-> +
-> +		goto err_mod_clk;
-> +	}
-> +
-> +	ret = reset_control_reset(dev->rstc);
-> +	if (ret) {
-> +		dev_err(dev->dev, "Failed to apply reset\n");
-> +
-> +		goto err_ram_clk;
-> +	}
-> +
-> +	return 0;
-> +
-> +err_ram_clk:
-> +	clk_disable_unprepare(dev->ram_clk);
-> +err_mod_clk:
-> +	clk_disable_unprepare(dev->mod_clk);
-> +err_ahb_clk:
-> +	clk_disable_unprepare(dev->ahb_clk);
-> +
-> +	return ret;
-> +}
-> +
-> +int cedrus_hw_suspend(struct device *d)
-> +{
-> +	struct cedrus_dev *dev = dev_get_drvdata(d);
-> +
-> +	reset_control_assert(dev->rstc);
-> +
-> +	clk_disable_unprepare(dev->ram_clk);
-> +	clk_disable_unprepare(dev->mod_clk);
-> +	clk_disable_unprepare(dev->ahb_clk);
-> +
-> +	return 0;
-> +}
-> +
->  int cedrus_hw_probe(struct cedrus_dev *dev)
->  {
->  	const struct cedrus_variant *variant;
-> @@ -236,42 +302,19 @@ int cedrus_hw_probe(struct cedrus_dev *dev)
->  		goto err_sram;
->  	}
->  
-> -	ret = clk_prepare_enable(dev->ahb_clk);
-> -	if (ret) {
-> -		dev_err(dev->dev, "Failed to enable AHB clock\n");
-> -
-> -		goto err_sram;
-> -	}
-> -
-> -	ret = clk_prepare_enable(dev->mod_clk);
-> -	if (ret) {
-> -		dev_err(dev->dev, "Failed to enable MOD clock\n");
-> -
-> -		goto err_ahb_clk;
-> -	}
-> -
-> -	ret = clk_prepare_enable(dev->ram_clk);
-> -	if (ret) {
-> -		dev_err(dev->dev, "Failed to enable RAM clock\n");
-> -
-> -		goto err_mod_clk;
-> -	}
-> -
-> -	ret = reset_control_reset(dev->rstc);
-> -	if (ret) {
-> -		dev_err(dev->dev, "Failed to apply reset\n");
-> -
-> -		goto err_ram_clk;
-> +	pm_runtime_set_autosuspend_delay(dev->dev, 1000);
-> +	pm_runtime_use_autosuspend(dev->dev);
-> +	pm_runtime_enable(dev->dev);
-> +	if (!pm_runtime_enabled(dev->dev)) {
-> +		ret = cedrus_hw_resume(dev->dev);
-> +		if (ret)
-> +			goto err_pm;
->  	}
->  
->  	return 0;
->  
-> -err_ram_clk:
-> -	clk_disable_unprepare(dev->ram_clk);
-> -err_mod_clk:
-> -	clk_disable_unprepare(dev->mod_clk);
-> -err_ahb_clk:
-> -	clk_disable_unprepare(dev->ahb_clk);
-> +err_pm:
-> +	pm_runtime_disable(dev->dev);
->  err_sram:
->  	sunxi_sram_release(dev->dev);
->  err_mem:
-> @@ -282,11 +325,9 @@ int cedrus_hw_probe(struct cedrus_dev *dev)
->  
->  void cedrus_hw_remove(struct cedrus_dev *dev)
->  {
-> -	reset_control_assert(dev->rstc);
-> -
-> -	clk_disable_unprepare(dev->ram_clk);
-> -	clk_disable_unprepare(dev->mod_clk);
-> -	clk_disable_unprepare(dev->ahb_clk);
-> +	pm_runtime_disable(dev->dev);
-> +	if (!pm_runtime_status_suspended(dev->dev))
-> +		cedrus_hw_suspend(dev->dev);
->  
->  	sunxi_sram_release(dev->dev);
->  
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> index 604ff932fbf5..17822b470a1e 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> @@ -22,6 +22,9 @@ void cedrus_engine_disable(struct cedrus_dev *dev);
->  void cedrus_dst_format_set(struct cedrus_dev *dev,
->  			   struct v4l2_pix_format *fmt);
->  
-> +int cedrus_hw_resume(struct device *dev);
-> +int cedrus_hw_suspend(struct device *dev);
-> +
->  int cedrus_hw_probe(struct cedrus_dev *dev);
->  void cedrus_hw_remove(struct cedrus_dev *dev);
->  
-> -- 
-> 2.24.1
-> 
+
+Reviewed-by : Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
