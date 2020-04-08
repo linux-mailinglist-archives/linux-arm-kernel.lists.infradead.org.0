@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DB5C1A2661
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 17:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0C721A266E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 17:55:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zHspWS1DeJ2ss/TwsGEYyE7brlRW4kLQQcxTR9gJwpQ=; b=Li1Jk+yJUdEhPC
-	K5LtkqBkiNE/Ra1IRJGK8+pKXRme46534yw7Sye+co8GkIWv+oTexyt577kYEwQcwcqFh81Y25MEZ
-	NF+4cf7mV7MUkXVx/NAfqIwNTE7SLaYDr8v2bg31+9FnUd8NlZ2/ebIJ6nlLVL020AOvLA83puVZK
-	hJ/EFry9EIhsrfRPCIFgEftTp2utfHMijxl0dsfNsvD17x4Q+ZjVYurZEEJC6ypObMYJFU4iRoEMH
-	N5iexNHymbzIZriUZ8OFT8BAT4eVsxkJt7fahVU78/10BTrja+fgtFEGiVw9CrV3Yo4jmpQs+Tin6
-	u3FEmcdCWB99rNjo0sfg==;
+	List-Owner; bh=EZO7moB14qCi7Cf2uPpVs7Bo36Dbw2RgvGLUdo6yO8A=; b=QQ5v7SAfuQy/Fp
+	k3labxXKRkG3XSI8gMfd1PYuELMalq6N8CnYUZ6lzPagwLn++B3achub/d2Rilh08JjJHXTgasLEz
+	ZTjoos9tEoAmjgTOTBXvlUUpKh5Ar/FX8gslPrJogKxcvWmbD9j/NOgbTjTmCP4orWP4/Q08QCJPL
+	p06YyiJd1KjaVqL5QxmL1D0H9Ygs0c0K67cgUeI4LLVNrvlqgRggGk3fcCDh+yIgRk38We/CSB4ou
+	ul2JFUaVhPEDOLRIjHtqqSlfu87oCUyVd8FRLfrzMACvkj2udgpgEkkFIQ+tbSPF6ItWohE+XnC1j
+	mwFo21nxLH9pBLByyRFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMD1c-0003de-Dp; Wed, 08 Apr 2020 15:54:00 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jMD2q-0005Lj-V0; Wed, 08 Apr 2020 15:55:16 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMD1O-0003cL-1R; Wed, 08 Apr 2020 15:53:47 +0000
+ id 1jMD2a-0004GU-QU; Wed, 08 Apr 2020 15:55:04 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue106 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MTAW9-1jjUM20lyh-00UXnC; Wed, 08 Apr 2020 17:53:29 +0200
+ 1MFL8J-1jWtE512Xx-00FjXx; Wed, 08 Apr 2020 17:54:52 +0200
 From: Arnd Bergmann <arnd@arndb.de>
-To: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Helen Koike <helen.koike@collabora.com>
-Subject: [PATCH] media: staging: rkisp1: avoid unused variable warning
-Date: Wed,  8 Apr 2020 17:52:44 +0200
-Message-Id: <20200408155325.2077345-1-arnd@arndb.de>
+To: Ohad Ben-Cohen <ohad@wizery.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: [PATCH] remoteproc: mtk_scp: use dma_addr_t for DMA API
+Date: Wed,  8 Apr 2020 17:54:29 +0200
+Message-Id: <20200408155450.2186471-1-arnd@arndb.de>
 X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:68Z72znrNvEuHIJsN20T/ABmAB4bmydH1GC38M8EeLkViwTTCj5
- pGlc7UTVbkUzb3TX+27y7HvCoxt6g49BGBUEx+iIZG69x2Sw/ZAeDGz4YJQ/1RylPMQQTYI
- zejJf3aUKH6QMhCjW2+TZbGrVbYkE02vPqUUa6B8COUi1NZ10c+LnN9+a5YJYKVdNmBmcX6
- jwT6sd1yAggxfj72OZTEw==
+X-Provags-ID: V03:K1:ZXUS0WnSgpDrLDUPXUv4WC9aMIcDFvE3FAcQZyRtm4Fcfz/PImX
+ YbWkCxd19WeDTGPPYTgd612QtlZrf+VzZzOOCH0pmwqI038hD+0qc+LvVJdMPjMhgM1pVhu
+ go5ASoaJNzp5rdg5N+pmgTNW3g41CDoPdsEkpZtV+L3XewxdrTSjHqU22VZ0PWae5Kwq3Pw
+ h3o9mR8BPo8jgPE5vh0FA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pHcQGDHfPRM=:BGjK9PBI3Cv7HcjiPXdVRV
- veg/Iv3oEeWyZrZuc526rWsTCrXGCmYKF61vLds7WqC0HQXbd1TKawxO2hzYiYKYziH50bYsA
- HWJeIq2XxRQ9awws9JYfGBbXHNnGsQ7KdDWyzhS8A5Mm7uWj6AbkwfYxZL1TOftZoC1poIxUy
- uhZfR0Ak/D/dNWB4KixIl8CEgsNAxK5eJtnh410RtBuz8RTq6FI5/SG/fml7J1Fy7OXnmsym1
- S+7zZYcGmpmfW5v7z9h4Eq8gFSTQNCMXISk/rTGfVJmg/2mavQxyO1SZfkYm6I45IY9qBSTe/
- hr7fg6zoCfYdnChvGHrGT5N91mIa9ZI0OJUKEnenUDA7GuqdcbPnNujJ9KN/s2tlBI4TYCDd4
- Sfqit78M6BuwyoBCPn4WnP6uT6zoAp69vf6WiI7Yl3eD/YBPihOU1vabHxjTBTt7zByNdC1sz
- +ovfdYMrlRcuSz2peoUqGfRWiWrRdVjpIvf/NlXNW1kmYxcUzy3tZYIjgodl3EUd1Wpkkeixc
- YLybc3H8NNrW30aiBxp81ZGHRbSTw1za6rxFwsVPt9FPMtJzhBsnqkAp1Qdzdn1ArIKijZ6YU
- D2+gDDX5iI6bGfT2iGpk3xlNzuOvBicVbCZWP/Ga1mt/Q5BaC9Rvpb85MeUqawXvl/l8lmFKj
- SR1m14dBS2CKphtSbaBWhEnn/LR4AnE237zjX4B+QXVr4R9bYwiR9LI79zyGTCGW6NzSTMIhi
- q5LadUcKDJvXiFsfA79FVSJiRXwvkfRuEgSTU8339oKtVSgdJss1V2c6YWqGXjdXDKLJ/wknV
- XpcE4nsXJ9yRJBZpgY2faYkTbrppcROTcP+ag9ETP8jT0xI2rY=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5giCQrLFcdI=:WP8aJCXVXjHUf1G2MYPuKx
+ yJgLARtxvOSu8qnX/bKwmAycVMI9Ku5uj0yyzrVB9nW58PfVRJs65pUuF0H9Qo2W2ZTAEq49k
+ 3y699LxloIhuwMoS6hVUlgwvGGnSJzmojo9Mf02Mhy3Z+xOEIQguuikvibM7y/s/PCWwZ8spK
+ IPwHZh1MMY9ecU2slK/xFv8VpyAzGsc/1Sjg7JstBxpCj02136j2qruVF12gi7icZ9SGMaCeX
+ 0KX1sJJ3RYI7c2NsBZ3/fuTmMT9temdtJY6QJykBNzjUuelBIzv5uQ57q0kTi5GjZcZ40sos+
+ /Prhow+ydB2cQ6XADUXKMdqf7mdWQKxwV6DJnWXnd4uePBWjc/Z6izEFm/qzemKPwMuuKl7/E
+ kfvGKCgV2uytBJtiywdWD6YckByPYzdVMoB6NM9rhjF4h7gAAxcsTM1off2NJSezjna6g8wBO
+ JFZe//nrHSIdXnsDvQnwAgxoGrg8FsRDQbACxTKdrl2dyUr46J+GjPKfTyshbml4gTpmhFWEj
+ fyooy45R9craWPeDTRYesoJojzRqOXKxUEfeNqG8oslev52UPYKWNfq516U34lK624xThg12j
+ GCXZi9chpCTIKNkY/yTUtqdpwQA4Cqj+T0WtAStWR8d02WOYb7ddNRZSTYzJJUsBMsG4WCexW
+ 7dklVzWRJBNxwLvFhT3WBCHwhRJ7YeXv5YaCatUgzDssoQxxCl4kWjlIsHoWE870RHmlFNRdh
+ qiYH1+2a1wdf9Ig4cFndjwm+df8zZFPPNKnyZYtbGEl3BUrY85gfILecuR9g5HEvkdtYtGz2e
+ 8Mkud02TZqOwHPqE1+pvDbza+thSWuOz71bUxIf99neDgi6ZCY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_085346_375060_99AC2FAD 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20200408_085503_506642_7A670774 
+X-CRM114-Status: GOOD (  13.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ [217.72.192.74 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,83 +76,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Eddie Cai <eddie.cai.linux@gmail.com>,
- Jacob Chen <cc@rock-chips.com>,
- Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- Jeffy Chen <jeffy.chen@rock-chips.com>, Yichong Zhong <zyc@rock-chips.com>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Allon Huang <allon.huang@rock-chips.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-rockchip@lists.infradead.org,
- Shunqian Zheng <zhengsq@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Nicolas Boichat <drinkcat@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Erin Lo <erin.lo@mediatek.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Pi-Hsun Shih <pihsun@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When compile-testing with CONFIG_OF disabled, we get a warning
-about an unused variable, and about inconsistent Kconfig dependencies:
+dma_addr_t and phys_addr_t are distinct types and must not be
+mixed, as both the values and the size of the type may be
+different depending on what the remote device uses.
 
-WARNING: unmet direct dependencies detected for PHY_ROCKCHIP_DPHY_RX0
-  Depends on [n]: STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y]) && OF [=n]
-  Selected by [m]:
-  - VIDEO_ROCKCHIP_ISP1 [=m] && STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && VIDEO_V4L2 [=m] && VIDEO_V4L2_SUBDEV_API [=y] && (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y])
+In this driver the compiler warns when the two types are different:
 
-drivers/staging/media/rkisp1/rkisp1-dev.c: In function 'rkisp1_probe':
-drivers/staging/media/rkisp1/rkisp1-dev.c:457:22: error: unused variable 'node' [-Werror=unused-variable]
-  457 |  struct device_node *node = pdev->dev.of_node;
+drivers/remoteproc/mtk_scp.c: In function 'scp_map_memory_region':
+drivers/remoteproc/mtk_scp.c:454:9: error: passing argument 3 of 'dma_alloc_coherent' from incompatible pointer type [-Werror=incompatible-pointer-types]
+  454 |         &scp->phys_addr, GFP_KERNEL);
+      |         ^~~~~~~~~~~~~~~
+      |         |
+      |         phys_addr_t * {aka unsigned int *}
+In file included from drivers/remoteproc/mtk_scp.c:7:
+include/linux/dma-mapping.h:642:15: note: expected 'dma_addr_t *' {aka 'long long unsigned int *'} but argument is of type 'phys_addr_t *' {aka 'unsigned int *'}
+  642 |   dma_addr_t *dma_handle, gfp_t gfp)
 
-Simply open-coding the pointer dereference in the only place
-the variable is used avoids the warning in all configurations,
-so we can allow compile-testing as well.
+Change the phys_addr member to be typed and named according
+to how it is allocated.
 
-Fixes: d65dd85281fb ("media: staging: rkisp1: add Rockchip ISP1 base driver")
+Fixes: 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183")
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig | 2 +-
- drivers/staging/media/rkisp1/rkisp1-dev.c           | 3 +--
- 2 files changed, 2 insertions(+), 3 deletions(-)
+ drivers/remoteproc/mtk_common.h | 2 +-
+ drivers/remoteproc/mtk_scp.c    | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig b/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-index bd0147624de1..dd5d4d741bdd 100644
---- a/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-+++ b/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-@@ -2,7 +2,7 @@
+diff --git a/drivers/remoteproc/mtk_common.h b/drivers/remoteproc/mtk_common.h
+index deb20096146a..0066c83636d0 100644
+--- a/drivers/remoteproc/mtk_common.h
++++ b/drivers/remoteproc/mtk_common.h
+@@ -68,7 +68,7 @@ struct mtk_scp {
+ 	wait_queue_head_t ack_wq;
  
- config PHY_ROCKCHIP_DPHY_RX0
- 	tristate "Rockchip MIPI Synopsys DPHY RX0 driver"
--	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-+	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
- 	select GENERIC_PHY_MIPI_DPHY
- 	select GENERIC_PHY
- 	help
-diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
-index b1b3c058e957..5e7e797aad71 100644
---- a/drivers/staging/media/rkisp1/rkisp1-dev.c
-+++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
-@@ -454,7 +454,6 @@ static void rkisp1_debug_init(struct rkisp1_device *rkisp1)
+ 	void __iomem *cpu_addr;
+-	phys_addr_t phys_addr;
++	dma_addr_t dma_addr;
+ 	size_t dram_size;
  
- static int rkisp1_probe(struct platform_device *pdev)
- {
--	struct device_node *node = pdev->dev.of_node;
- 	const struct rkisp1_match_data *clk_data;
- 	const struct of_device_id *match;
- 	struct device *dev = &pdev->dev;
-@@ -463,7 +462,7 @@ static int rkisp1_probe(struct platform_device *pdev)
- 	unsigned int i;
- 	int ret, irq;
- 
--	match = of_match_node(rkisp1_of_match, node);
-+	match = of_match_node(rkisp1_of_match, pdev->dev.of_node);
- 	rkisp1 = devm_kzalloc(dev, sizeof(*rkisp1), GFP_KERNEL);
- 	if (!rkisp1)
+ 	struct rproc_subdev *rpmsg_subdev;
+diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
+index ea3743e7e794..2bead57c9cf9 100644
+--- a/drivers/remoteproc/mtk_scp.c
++++ b/drivers/remoteproc/mtk_scp.c
+@@ -330,7 +330,7 @@ static void *scp_da_to_va(struct rproc *rproc, u64 da, size_t len)
+ 		if (offset >= 0 && (offset + len) < scp->sram_size)
+ 			return (void __force *)scp->sram_base + offset;
+ 	} else {
+-		offset = da - scp->phys_addr;
++		offset = da - scp->dma_addr;
+ 		if (offset >= 0 && (offset + len) < scp->dram_size)
+ 			return (void __force *)scp->cpu_addr + offset;
+ 	}
+@@ -451,7 +451,7 @@ static int scp_map_memory_region(struct mtk_scp *scp)
+ 	/* Reserved SCP code size */
+ 	scp->dram_size = MAX_CODE_SIZE;
+ 	scp->cpu_addr = dma_alloc_coherent(scp->dev, scp->dram_size,
+-					   &scp->phys_addr, GFP_KERNEL);
++					   &scp->dma_addr, GFP_KERNEL);
+ 	if (!scp->cpu_addr)
  		return -ENOMEM;
+ 
+@@ -461,7 +461,7 @@ static int scp_map_memory_region(struct mtk_scp *scp)
+ static void scp_unmap_memory_region(struct mtk_scp *scp)
+ {
+ 	dma_free_coherent(scp->dev, scp->dram_size, scp->cpu_addr,
+-			  scp->phys_addr);
++			  scp->dma_addr);
+ 	of_reserved_mem_device_release(scp->dev);
+ }
+ 
 -- 
 2.26.0
 
