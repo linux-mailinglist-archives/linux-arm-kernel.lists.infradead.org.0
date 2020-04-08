@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AAA51A241C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:32:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 735931A2412
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 16:31:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YmBM9T5H7QGuMObDM1VCa4HcM9jwW1z8MweSZfL2MT8=; b=aIUkPZYGlLGA5s
-	xqj1yJ9uFXK2zJ3DukzlfxcfuFk0CbqnHK/ueA87K9j4HoQfP1Hel320qKbQFzHkLuMlwcHnT201v
-	/x05arHop6GbW8ewIy9MoqkiXwIiPnnGTbegMnsyyostlPz932QmK7+hRdsf+/BGWAARHum+SSanZ
-	sdryhl4SSKWRKPT3ZqZwJjHv+UEA8oAEGPCsAVStYFc+v2Uhq9BQCuqptSdKdCi+X4r3XzGCFD8fz
-	1YnZa5sLUg5KiexPkPBR31MDLn0QFzyjdS/iK0gzrykajJ95nMsEixrq3VeU/hUoI1v+21DrI4Hsz
-	dLqg05MoAuhn8QMj/JCg==;
+	List-Owner; bh=+pdjKwNHTN7tk4kNWuNF7L9L7hmQzc2d8SERRLwXgyU=; b=cIqjpb2wvsll7y
+	cw4zgKYsVTJ/b/4XrY43i7O/QSqbSgvja10uUaUED93waMNrJdsEWtKIHBi65PYyzJIA5jzNuOxUT
+	S56exA6X8z4eOF6RGh1bUQXS0Vrc8SMTOAMMw/MqjhDBtAs8tY5p8utb9b23PFKK1UI19UVnkYjrP
+	u7Dm75C20jlBEJ7QeByBmW9W7KPbBfaW6h/giMw3uF8YWpbbgbrU6wOueydw8RXo3jvX4iFX5AR7s
+	jAkrg4Az73Nk52qMj2wcUUeW89lyn/FEce1oDfrxqNcJdFPOPBZXHLaY6kR3QsdtUjAFd2ZzdI3cz
+	JnPkEl8AN/yxiBlWl3VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMBkU-0003Mm-0I; Wed, 08 Apr 2020 14:32:14 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jMBjQ-0001ve-HK; Wed, 08 Apr 2020 14:31:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMBjJ-0001r8-KA
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:31:04 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y24so111744wma.4
+ id 1jMBjG-0001rU-UQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 14:31:00 +0000
+Received: by mail-wm1-x342.google.com with SMTP id z6so127295wml.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 07:30:57 -0700 (PDT)
+ Wed, 08 Apr 2020 07:30:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vNUJmyW/0AurvAI4tkIhYfgnlohv2nTKpbi6mh0xlvI=;
- b=X8xoTfHrd0Sfw1q3Hr8N4cLgFngKYZapoPfYdenjpWtKorpNb5Bstn+5+41Ssfnj0I
- 3sz44ghiVSqWdxNKPvZAVTk6U9Xo/+gVt2xsodyMvSICQt3vhaoT4F29P1GlyMYj18vR
- OQbiuMQO46GdndqXdj1hCRBvKM62fSO3lGqYy1DtgPcVMNlHQ6ZOU7R/LecDdCpPjb9u
- fAsKWiEC/kxAvOCNCnFVSYD6sTRTyRL5r3pZsjjIA7KcZlIVdR3bKpyuqKWQ9kqa0/lG
- /KmhWjNid1ltzY8w/dkmnagUSdqXvvXy5vqAvGKmFWERKgMQlY9z07CIOiZUBMyMiVxJ
- 7k0g==
+ bh=gLLY+/8fyb+tDQXWdYgnIl/tWBr/7d984i2uDCH3Huw=;
+ b=k6kM14Ab5Rm+t+feaQvmbnYXUFlxQOitXL475ByXwqgRGUMkPtGvGLjs9Nv9A0r0f5
+ PArwglkr4ojfMmXBP/rOctRuy4QJHg5as8l/G4xVe9xlcboVVmsBdVor67Zv/cjXAFkQ
+ EbzZm2fQz6FY7i5E+gZatvrOqij9ncMEatRvvS+/uvjTlLNNx24HDVPVriHoYE6Ev/8N
+ Ct8Ao184t54E3vxDrLbRzZFEK/z3piqU06db/kq95ravFFOZ97J8HQF5pLmv7CR/ut85
+ 1lHIYp0JXkg9bq8fD75923g/fJxAqmpWnC5vk7DRMIVGNpPQ8dIKCTX472pqSeoPbF5T
+ Sbeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vNUJmyW/0AurvAI4tkIhYfgnlohv2nTKpbi6mh0xlvI=;
- b=NcFSMAmgRiDiLdu5kgfj+xDRK+GGB4qEftYl0L5S9UnFLWALqujcx/JHtDnY/LW3tM
- r4GB+WviRWT0cVNilZJVY0JsY3TuRBVRIWP7DdlNGuu4yLYZxAxOyn7N8kYCWS3+kHJP
- eU43TSWqW+IS1lVerJrKqS5ANZ1/VK2LATTOmGWjdjXQ+WlVyxj4faX1XUuw8Kw1e0pk
- /eYdzmYIuPcRJeiVu+8mZ0ZAVzFYx5OlQybAPcfy1kjcINWJ+tjQAOvEJAoyXIjZ3oV+
- kBC78oRKpnGB4214b3dlEUqi/qigdoq9H5nlFYPsEvvqoZ/fVMN9JhSZvtG77COe4djD
- t9xw==
-X-Gm-Message-State: AGi0PuaAFyfvvJfN68vOJXcrjgiyp4NMqICdcuYFsUaqD5ESgiNOHhbG
- 5qYcS4627Ybd16oYJmb16fg1OL0voRA=
-X-Google-Smtp-Source: APiQypKfQ60dQO/USHfHn1Zyi5ma7wDcLwDkDFMWIdbvlhovNGEmXJ2l9V9IELW6acmB3eORhypqLA==
-X-Received: by 2002:a1c:750a:: with SMTP id o10mr4876811wmc.124.1586356256589; 
- Wed, 08 Apr 2020 07:30:56 -0700 (PDT)
+ bh=gLLY+/8fyb+tDQXWdYgnIl/tWBr/7d984i2uDCH3Huw=;
+ b=CRSaboHCGptBa6zK2DPFZmTtIw1bxPQz3qPQUiE2AXmzsi1o6dn5hxRYYrjcaQOEFu
+ 2UqEhiV0uy2Nftg1+g4BfyIFl0g4mgk2E0xK9wQNBe5Q/8w6ET2YX+5u1l+KnbEa/O3a
+ SJmEUnoJboY6rScs4bN2Y4bBibvnQPi+L8WW00jv4jDv+ZjWzNV6X4C7MTuCyIxjoDch
+ kL0HfZMfZOL42eHgNnIrsY3eWWunSkaryGpoT9TKM01vrZEgvMT/wV2dcjWiWO7UaqV7
+ dr7nLRTBiDsnNsJodVF9J4EJBO3Y84derCoPZpl9SANIbkhXtps/nAtMyIgV8FKrckuJ
+ 85+Q==
+X-Gm-Message-State: AGi0PuaaQGl5EF6k8ud9Z2NR78fc6/UeTxwyVwIoBvWSK0tkHpu4uccU
+ /LthdpDHO/6eEihAyU4IHkH09I1tOL8=
+X-Google-Smtp-Source: APiQypJh22VLyz5dqbb74SwPacdHhPu3FLYn+W8SmOsQPCZbfBy9giMe9q1XUUf00SUwrWhDS/d9Sw==
+X-Received: by 2002:a1c:7905:: with SMTP id l5mr5235802wme.5.1586356257471;
+ Wed, 08 Apr 2020 07:30:57 -0700 (PDT)
 Received: from linuxdev2.toradex.int (31-10-206-124.static.upc.ch.
  [31.10.206.124])
- by smtp.gmail.com with ESMTPSA id a10sm36268828wrm.87.2020.04.08.07.30.55
+ by smtp.gmail.com with ESMTPSA id a10sm36268828wrm.87.2020.04.08.07.30.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 07:30:56 -0700 (PDT)
+ Wed, 08 Apr 2020 07:30:57 -0700 (PDT)
 From: Max Krummenacher <max.oss.09@gmail.com>
 X-Google-Original-From: Max Krummenacher <max.krummenacher@toradex.com>
 To: Max Krummenacher <max.krummenacher@toradex.com>
-Subject: [PATCH v2 1/5] arm64: defconfig: DRM_DUMB_VGA_DAC: follow changed
- config symbol name
-Date: Wed,  8 Apr 2020 16:30:36 +0200
-Message-Id: <20200408143040.57458-2-max.krummenacher@toradex.com>
+Subject: [PATCH v2 2/5] arm64: defconfig: add DRM_DISPLAY_CONNECTOR
+Date: Wed,  8 Apr 2020 16:30:37 +0200
+Message-Id: <20200408143040.57458-3-max.krummenacher@toradex.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200408143040.57458-1-max.krummenacher@toradex.com>
 References: <20200408143040.57458-1-max.krummenacher@toradex.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_073101_671912_D462E254 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200408_073058_977830_60896F0E 
+X-CRM114-Status: GOOD (  10.41  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [max.oss.09[at]gmail.com]
@@ -103,10 +102,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Anson Huang <Anson.Huang@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
  Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
@@ -117,35 +115,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This occurrence wasn't changed in the original rename commit.
-
-Fixes commit 0411374bdf2b3 ("drm/bridge: dumb-vga-dac: Rename driver to
-simple-bridge").
+Add DRM_DISPLAY_CONNECTOR. This got introduced with the bridge rework
+Which renamed among others DRM_DUMB_VGA_DAC.
 
 Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
 ---
 
-Changes in v2: None
+Changes in v2:
+- additional patch adding DRM_DISPLAY_CONNECTOR as recommended by Geert and Laurent
 
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 24e534d850454..ae908c3f43c76 100644
+index ae908c3f43c76..d765a920a20b9 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -610,7 +610,7 @@ CONFIG_DRM_MSM=m
- CONFIG_DRM_TEGRA=m
- CONFIG_DRM_PANEL_LVDS=m
+@@ -612,6 +612,7 @@ CONFIG_DRM_PANEL_LVDS=m
  CONFIG_DRM_PANEL_SIMPLE=m
--CONFIG_DRM_DUMB_VGA_DAC=m
-+CONFIG_DRM_SIMPLE_BRIDGE=m
+ CONFIG_DRM_SIMPLE_BRIDGE=m
  CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA=m
++CONFIG_DRM_DISPLAY_CONNECTOR=m
  CONFIG_DRM_SII902X=m
  CONFIG_DRM_THINE_THC63LVD1024=m
+ CONFIG_DRM_TI_SN65DSI86=m
 -- 
 2.20.1
 
