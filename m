@@ -2,98 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18F331A2511
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 17:24:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A49F51A2529
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 17:30:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RMiTtGKa7nQCzSB2hkFRfcjz0mImeSSooc2fMHgJMIw=; b=rqPQXBx4WcCz+c
-	5b7XTSNrKWNHPGtgAdlZVsD42/7iJEzyn4+ueqDnqMCe1xIr+xQpGoyfZ5ePMYrtVdiiHuhuqWxo3
-	TD9GZZLb/WbpYgGBAzWttoPodHyY8Y0GGJCbqMqpZ16Buz30eMDWWp74jj9d0otJcebVFJatLJ1+U
-	6TJrYNPK+4EE+rOAsI8EyUZ1o1Hk5jrLmdlQO+11v0fnEtMp4K/D3EFvMIMUq5f3f55T86lafp/3D
-	6WzaXun72S6MSS2pujqOdaetLAp9tp/8c0kSHiLTHZDi36H9R4tuK9uQhJwyGzb7kOzFLWOjRhye3
-	LDMnSLbT1D0aX9O9ICeQ==;
+	List-Owner; bh=IeF7PULypMRG5WeNRTGv4Dj+fkQb738OvxSVUOgRs6A=; b=rfrMUG9kM5fZFS
+	AOjewK4naScAr0jY08bzaeHi5XqWTxNLNNS58AaBCkqJ2ed+mkjilE/973gomD72D4dLVJY0fJwFP
+	h5d7jC/EOQE3BqLQwBLkker6/4hH7pSZgNRO58LFwX5RWaeyVnKUD3zE/Wn145ZLX2yscRpF1N9Y8
+	yWi8jHHZDLxrIaVPz5cRjdwNMrj2HrTFRLylOaqub0x9INU3SBIkuKlusXkKbNbdaFR6ctO7cHUDQ
+	e/yNoEpTql1zhWIGyv0CuH2GSv+cVH8fMnTukpCdN86gaPnIruZpsLpiVQY6n+0DuHfLdgbpXUQx3
+	NL9tHKXrUxCSqr170iGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMCYy-0004Ua-NG; Wed, 08 Apr 2020 15:24:24 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jMCeq-0002Sd-4t; Wed, 08 Apr 2020 15:30:28 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMCYp-0004TC-VJ; Wed, 08 Apr 2020 15:24:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k1so8294773wrm.3;
- Wed, 08 Apr 2020 08:24:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=VS45I5JryTy6gPLmg//8OHhKmPoCHc7JEw279etnSwI=;
- b=UE4+gfLlBPdTZ88IssRzPc8/BBA0W1v6WoxqTugC89pv8n6/oaDEaiUjz+t5zwQnUn
- 1Ag1m4F50OUnw5qrYzDxxhRJK5Mvsm8eV02l/7BhdLZPRzSc6+Y1DGfRQTz4sn6A5YlV
- YbjZy1sN6R7hqYA/O9/kS8wlIlKa3gZYk3whVCExKS8o6myHK2RUY9hseGdKWk+G4msH
- PSZ46/gbjCz6EO/ZNSa2p+4CbmQRS3muvmYhDBXfwaJmejjX0/q+8honiNToFPZkRliA
- vJH1NbvU854AhwsH3ld1nPuGy39ljuCIYXFzF6un7n3fcOmjm47keP60O6Sqq2Ih0UQS
- kGuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=VS45I5JryTy6gPLmg//8OHhKmPoCHc7JEw279etnSwI=;
- b=IMTvI5gG+3Bqf6Wkkic9qpnLOQImoPX5DUDYnuC9QYQ1b7eW+kbN+w2lXvygvl9n71
- BHU9sbc+mDac6Sk0RHx1jLMZhf8BfeCr/Gcu36jf7YVG0mFunjGzrzPhqhRHwmAMbJoQ
- N1pTKT7VAFTz8nn8kTw6ha2gDkAxe08Q/HZlr7/7kPP6tFPyYlPe3dgmcrFK1NF0dcY4
- MFmlFPWE5RvnpzNEPfbAECUcgIkGSjNCUHpskE8JxwmlWeiIvnIEg3IcCLPEzZxxJyVF
- MzMEKbBsoNOtYuCCszXD2tV+0HnTCqNpb/nzkUaMc61hGaaTCSae3cKKgdnEY+zZgdiO
- uTpA==
-X-Gm-Message-State: AGi0PuZVlslbum0sZTomvquM79xJCNAxrkFoLY8VDaubSmj/ZfDP7HMq
- lm7prRFlFU5HOUD2py0bcvQ=
-X-Google-Smtp-Source: APiQypKYtSlEoaruFsAq0fVU+3+ulWKUMGKAHDwwzV7LgGzHarBw/AkttQfcsuTgGPzsZZ852cus+Q==
-X-Received: by 2002:a5d:6310:: with SMTP id i16mr8811623wru.244.1586359454449; 
- Wed, 08 Apr 2020 08:24:14 -0700 (PDT)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id q19sm31925948wra.38.2020.04.08.08.24.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 08:24:13 -0700 (PDT)
-Date: Wed, 8 Apr 2020 17:24:12 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: Trying to kexec on Allwinner A80
-Message-ID: <20200408152412.GA3621@Red>
-References: <20200407100203.GK25745@shell.armlinux.org.uk>
- <20200407101912.GL25745@shell.armlinux.org.uk>
- <20200407113454.GA457@Red>
- <20200407122243.GN25745@shell.armlinux.org.uk>
- <20200407130559.GB457@Red>
- <20200407132602.GO25745@shell.armlinux.org.uk>
- <20200407134849.GC457@Red>
- <20200407181740.GP25745@shell.armlinux.org.uk>
- <20200408084029.GA1859@Red>
- <20200408093320.GQ25745@shell.armlinux.org.uk>
+ id 1jMCeh-0002H2-Uy
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 15:30:22 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 03D71634C8C;
+ Wed,  8 Apr 2020 18:28:59 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1jMCdO-0002T0-3H; Wed, 08 Apr 2020 18:28:58 +0300
+Date: Wed, 8 Apr 2020 18:28:58 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
+Message-ID: <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
+References: <20200407083647.4mocdl7aqa3x737q@gilmour.lan>
+ <CAG3jFyvd32pWppubMoOoyH9eO2XLjwUXMC7p4xtv8m+JkPv6vw@mail.gmail.com>
+ <20200407123232.ktvaifhqntgzvkap@gilmour.lan>
+ <CAG3jFysSrZJRE2TvL0bWoRFNnscgDGj8yGr-iwWBm4=1wMbJ9A@mail.gmail.com>
+ <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
+ <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
+ <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
+ <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
+ <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
+ <20200408134315.a7cemmto6bi26arg@gilmour.lan>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200408093320.GQ25745@shell.armlinux.org.uk>
+In-Reply-To: <20200408134315.a7cemmto6bi26arg@gilmour.lan>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_082416_032751_81AFA4B3 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_083020_360479_F4E0921C 
+X-CRM114-Status: GOOD (  33.02  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,110 +75,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Robert Foss <robert.foss@linaro.org>, Tomasz Figa <tfiga@chromium.org>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 10:33:20AM +0100, Russell King - ARM Linux admin wrote:
-> On Wed, Apr 08, 2020 at 10:40:29AM +0200, Corentin Labbe wrote:
-> > This is the last boot:
-> > ## Loading init Ramdisk from Legacy Image at 2a000000 ...
-> >    Image Name:   
-> >    Image Type:   ARM Linux RAMDisk Image (uncompressed)
-> >    Data Size:    8031928 Bytes = 7.7 MiB
-> >    Load Address: 00000000
-> >    Entry Point:  00000000
-> >    Verifying Checksum ... OK
-> > ## Flattened Device Tree blob at 23000000
-> >    Booting using the fdt blob at 0x23000000
-> >    Loading Ramdisk to 29857000, end 29fffeb8 ... OK
-> >    Loading Device Tree to 2984e000, end 29856fd1 ... OK
-> > Starting kernel ...
-> > ID:0x00000000 DT:0x2984E000
-> > Uncompressing Linux... done, booting the kernel.
-> > [...]
-> > fake uboot stuff
-> > [...]
-> > DEBUG: bootz: run kexec with --debug --kexec-syscall --force --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 earlyprintk ip=dhcp'
-> > Set DEBUG!
-> > main:1417 OPT_KEXEC_SYSCALL
-> > main:1422 OPT_KEXEC_SYSCALL_AUTO
-> > arch_process_options:119
-> > main:1500
-> > main:1517 res=0 do_load=1
-> > main:1519 res=0 do_kexec_file_syscall=0
-> > my_load:713
-> > Try gzip decompression.
-> > kernel: 0xb6931008 kernel_size: 0x444fc8
-> > get_memory_ranges:36
-> > MEMORY RANGES
-> > 0000000020000000-000000009fffffff (0)
-> > zImage_arm_load:423
-> > zImage header: 0x016f2818 0x00000000 0x00444fc8
-> > zImage size 0x444fc8, file size 0x444fc8
-> > zImage requires 0x00455fc8 bytes
-> >   offset 0x00006738 tag 0x5a534c4b size 8
-> > Decompressed kernel sizes:
-> >  text+data 0x00b77958 bss 0x0003d428 total 0x00bb4d80
-> > Resulting kernel space: 0x00fcd920
-> > Kernel: address=0x20008000 size=0x00fcd920
-> > Initrd: address=0x20fd6000 size=0x016a6b97
-> > DT    : address=0x2267d000 size=0x00006043
-> > kexec_load: entry = 0x20008000 flags = 0x280000
-> > nr_segments = 3
-> > segment[0].buf   = 0xb6931008
-> > segment[0].bufsz = 0x444fcc
-> > segment[0].mem   = 0x20008000
-> > segment[0].memsz = 0x445000
-> > segment[1].buf   = 0xb528a008
-> > segment[1].bufsz = 0x16a6b97
-> > segment[1].mem   = 0x20fd6000
-> > segment[1].memsz = 0x16a7000
-> > segment[2].buf   = 0x4ef88
-> > segment[2].bufsz = 0x6043
-> > segment[2].mem   = 0x2267d000
-> > segment[2].memsz = 0x7000
-> > main:1568 res=0[   32.098439] sun7i-dwmac 830000.ethernet eth0: Link is Down
-> > main:1582 res=0 do_exec=1
-> > [   32.113191] kexec_core: Starting new kernel
-> > [   32.460412] Bye!
-> > ID:0xFFFFFFFF DT:0x2267D000
-> > C:0x200080C0-0x2044CFE0->0x20B80500-0x20FC5420
-> > ID:0xFFFFFFFF DT:0x2267D000
-> > Uncompressing Linux... done, booting the kernel.
-> 
-> Okay, that looks fine:
-> - the DT is out of the way, so shouldn't be corrupted by the
->   decompression process.
-> - the decompressor writes the kernel image to 0x20008000 to 0x20b7f958
->   which is clear of the decompressor itself (which relocated itself
->   to 0x20b80500).
-> - the ID doesn't matter for DT booting purposes.
-> 
-> I see you've gone back to using your own dtb rather than one derived
-> from the booting kernel. I strongly recommend against giving your own
-> dtb to kexec as if the boot loader modifies the DTB when calling the
-> first kernel (such as adding memory region information, adding MAC
-> addresses, enabling or disabling various devices) those modifications
-> will be lost if you supply your own DTB to kexec.
-> 
-> Please drop "--dtb /tmp/dtb".
-> 
+Hi Maxime,
 
-Thanks it works now.
+On Wed, Apr 08, 2020 at 03:43:15PM +0200, Maxime Ripard wrote:
+> On Wed, Apr 08, 2020 at 02:35:28PM +0200, Tomasz Figa wrote:
+> > On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech> wrote:
+> > > On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
+> > > > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
+> > > > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus@iki.fi> wrote:
+> > > > > >
+> > > > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss wrote:
+> > > > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > > > > >
+> > > > > > > > Hi Robert,
+> > > > > > > >
+> > > > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Foss wrote:
+> > > > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakari Ailus wrote:
+> > > > > > > > > > > > But that 19.2MHz is not a limitation of the device itself, it's a
+> > > > > > > > > > > > limitation of our implementation, so we can instead implement
+> > > > > > > > > > > > something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
+> > > > > > > > > > > > sure that our parent clock is configured at the right rate) and the
+> > > > > > > > > > > > clk_get_rate and compare that to 19.2MHz (to make sure that it's not
+> > > > > > > > > > > > been rounded too far apart from the frequency we expect).
+> > > > > > > > > > > >
+> > > > > > > > > > > > This is doing exactly the same thing, except that we don't encode our
+> > > > > > > > > > > > implementation limitations in the DT, but in the driver instead.
+> > > > > > > > > > >
+> > > > > > > > > > > What I really wanted to say that a driver that doesn't get the clock
+> > > > > > > > > > > frequency from DT but still sets that frequency is broken.
+> > > > > > > > > > >
+> > > > > > > > > > > This frequency is highly system specific, and in many cases only a certain
+> > > > > > > > > > > frequency is usable, for a few reasons: On many SoCs, not all common
+> > > > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 MHz and 24 MHz; while others
+> > > > > > > > > > > are being used as well), and then that frequency affects the usable CSI-2
+> > > > > > > > > > > bus frequencies directly --- and of those, only safe, known-good ones
+> > > > > > > > > > > should be used. IOW, getting the external clock frequency wrong typically
+> > > > > > > > > > > has an effect that that none of the known-good CSI-2 bus clock frequencies
+> > > > > > > > > > > are available.
+> > > > > > > > > >
+> > > > > > > > > > So clock-frequency is not about the "Frequency of the xvclk clock in
+> > > > > > > > > > Hertz", but the frequency at which that clock must run on this
+> > > > > > > > > > particular SoC / board to be functional?
+> > > > > > > > > >
+> > > > > > > > > > If so, then yeah, we should definitely keep it, but the documentation
+> > > > > > > > > > of the binding should be made clearer as well.
+> > > > > > > > >
+> > > > > > > > > Alright so, let me summarise the desired approach then.
+> > > > > > > >
+> > > > > > > > There's a separate discussion on the same topic here:
+> > > > > > > > https://lore.kernel.org/linux-media/20200407122106.GD4751@pendragon.ideasonboard.com/
+> > > > > > >
+> > > > > > > Thanks for the link.
+> > > > > > >
+> > > > > > > >
+> > > > > > > > > ACPI:
+> > > > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > > > >
+> > > > > > > > > DT:
+> > > > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > > > >   - Get xvclk clock
+> > > > > > > > >   - Get xvclk clock rate
+> > > > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
+> > > > > > > >
+> > > > > > > > The current status is that you should
+> > > > > > > > 's/clock-frequency/link-frequencies/', and in order to replace
+> > > > > > > > assigned-clock-rates, you'll want to have a clk_set_rate to 19.2MHz
+> > > > > > > > between steps 3 and 4
+> > > > > > >
+> > > > > > > Would we want to 's/clock-frequency/link-frequencies/' for ACPI too?
+> > > > > > > I imagine that would cause some breakage.
+> > > > > >
+> > > > > > It would, yes, and it would be no more correct on DT either.
+> > > > > >
+> > > > > > There are basically two possibilities here; either use the clock-frequency
+> > > > > > property and set the frequency, or rely on assigned-clock-rates, and get
+> > > > > > the frequency instead.
+> > > > > >
+> > > > > > The latter, while I understand it is generally preferred, comes with having
+> > > > > > to figure out the register list set that closest matches the frequency
+> > > > > > obtained. The former generally gets around this silently by the clock
+> > > > > > driver setting the closest frequency it can support.
+> > > > >
+> > > > > Wouldn't the former actually cause problems, because the closest
+> > > > > frequency the clock driver can support could be pretty far from the
+> > > > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs to check the
+> > > > > resulting frequency anyway.
+> > > >
+> > > > That's possible, yes; in this case there wouldn't be a guarantee the
+> > > > frequency wouldn't be far off.
+> > >
+> > > assigned-clock-rates is really fragile... There's zero guarantee on
+> > > how far the actual rate is going to be from the asked one, but more
+> > > importantly you have zero guarantee on the time frame that rate is
+> > > going to be enforced for.
+> >
+> > Is there such a guarantee if clk_set_rate() is called?
+> 
+> with clk_set_rate itself, no, but...
+> 
+> > > It's simply going to change the rate as a one-off thing, and if
+> > > there's the next millisecond someone else is going to change its rate
+> > > one way or another, it's going to do so and you won't have any
+> > > notification.
+> 
+> You can get notified, and you can use clk_set_rate_exclusive if you
+> *really* want to enforce it.
 
-With a working setup I diffed dtb and the one given by uboot and it seems the missing node for booting was /memory.
-So now I am able to boot the same kernel as the "fake uboot".
+Is the conclusion then we should go back to relying on the clock-frequency
+property?
 
-For booting a different kernel, I fdtput the dtb (for memory and bootargs), and it works until it try to mount the roofs which it find corrupt.
-Since the rootfs I get by the fakeuboot is a "uboot legacy image" (rootfs.cpio.gz modified by mkimage), I drop the first 64bytes but it seems not sufficiant. (even if file say it is a good rootfs.cpio.gz)
-Or perhaps the kernel get an invalid initrd address.
+This has been discussed multiple times over the years, and I don't really
+disagree with the above. The frequency is typically indeed hand-picked for
+the hardware, and no other frequency should be used in any circumstances.
 
-Anyway the main issue is fixed.
-Thanks for your help
+No sensor driver I've seen has used clk_set_rate_exclusive() but I guess
+they should. The absence of practical problems has been probably because of
+two factors; firstly, these are typically clocks dedicated to the sensors
+and secondly, good luck.
+
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
