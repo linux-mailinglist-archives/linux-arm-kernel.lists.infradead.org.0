@@ -2,79 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F8F31A2A48
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 22:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 944291A2AD1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 23:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0qYjbJ3u+gufPHgzZiCEw9df6WCDMrs1QmYvz1ldbPg=; b=UslUoUPzI8woh8
-	zXr/ZfWLIAoQm9yGuN4fn1DJcQ42xo7wTgPuITmGi9PIVRsoCJHw9oPId8c2IECBtGkp5/VHTMo6r
-	PgL6A4ed3rOmssuqRCHUswwwAfa3bD3c7KMhjGo+rzc2K48VF+XeGanBu8nmRH/StvWqvQ6MBkf0e
-	nNxnDkqcSZSuThF+Dv75fOuJKOlkanB5FDPbSr7cTsFViq9bWF351b4ubwby5wvJ4wuzrUoTqS5Zf
-	+GRc03g548QuyxU6/JaxdajG+BKPderBKetJ3/yItizHo1RHu45J6WMqeOIw8LV5HvsXN+SuxdbDC
-	jZvWtVl31HhluRuMVfvA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ctIJb3gyUqmfyU/oQNkXHtyw0mO2WMlify06abr+R30=; b=eIBU/vc0JwurJ5
+	NfdlqeD5/VLjCgqiNhvjMTXiDuF2iIlRcq4dXIp3lf0dG3E/BXwmEZD/eFtFZwxGVgqr2qEhT0rxY
+	qgqByl0smc9unaPtrPzlpDy/MDkOeN9mk6tDU0JflXKS2pPeLSpJ12Cjg72E7udSbwRSQDuNzVUeq
+	kzYj+SWp9KWjmT51yAXgRbLCQDCtEWVA7aWO+ZV5CG35dJdrDW/RIkcxEY6SWpkknNqeoigxyWULg
+	L7SLUwtGZIDnazG+xPsKkmpBIL6TxDV025p3Akx9ZqtiyCecC6tbOHGVdjaor6zklBkgQ7ZAwABo/
+	9J+1MtVILnCcULOT5jCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMHG1-0003ip-Ad; Wed, 08 Apr 2020 20:25:09 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jMHz4-0007py-Iz; Wed, 08 Apr 2020 21:11:42 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMHFn-0003hf-Am
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 20:24:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FCin5CxUiqOa42dOBAJeAv8hLhn4PzxcsTEw9e4NZJY=; b=XoxkBf1bGxRc+ttmmvia5OvZE
- oitOH2Yx9geESlq3nazl+qwL1Zcf4HXXYRApOnK0i4z8MNlEFJt2LTp+u/ERpFq03tgqzs7llZQap
- cVk83dH1h6HRrumDZSkAtJgvPqQO66fXqOIcB5Q68w3pPPEHI5k5ZEcghDm8DVCHT54DCGxe1o8cq
- jhfarDU/C7T60Vf4T11sKFZNZK7YgjCb1UE/pU1wXm2MVZAQfHzfqTjeRG0bPOtHHOVKntwYNr9Ol
- qAA9d4r8PbrRWrO7nUwQQpmj1vzZlPyOv45WxEnHXV7WODgTgGxs3J/xXOsefCD0EU2J8SlMI7rnw
- DLBHbG05g==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:47442)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jMHFO-0008KP-0G; Wed, 08 Apr 2020 21:24:30 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jMHFF-00027f-Jb; Wed, 08 Apr 2020 21:24:21 +0100
-Date: Wed, 8 Apr 2020 21:24:21 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] soc: fsl: dpio: avoid stack usage warning
-Message-ID: <20200408202421.GU25745@shell.armlinux.org.uk>
-References: <20200408185834.434784-1-arnd@arndb.de>
+ id 1jMHyu-0007pW-9M; Wed, 08 Apr 2020 21:11:34 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 923C229746A
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 0/7] Convert mtk-dsi to drm_bridge API and get EDID for ps8640
+ bridge
+Date: Wed,  8 Apr 2020 23:11:13 +0200
+Message-Id: <20200408211120.1407512-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408185834.434784-1-arnd@arndb.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_132455_372496_2E72729E 
-X-CRM114-Status: GOOD (  19.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_141132_453712_BC541BCA 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,83 +56,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roy Pledge <Roy.Pledge@nxp.com>, linux-kernel@vger.kernel.org,
- Youri Querry <youri.querry_1@nxp.com>, soc@kernel.org,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, drinkcat@chromium.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ David Airlie <airlied@linux.ie>, Thomas Zimmermann <tzimmermann@suse.de>,
+ dri-devel@lists.freedesktop.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-mediatek@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, hsinyi@chromium.org, matthias.bgg@gmail.com,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 08:58:16PM +0200, Arnd Bergmann wrote:
-> A 1024 byte variable on the stack will warn on any 32-bit architecture
-> during compile-testing, and is generally a bad idea anyway:
-> 
-> fsl/dpio/dpio-service.c: In function 'dpaa2_io_service_enqueue_multiple_desc_fq':
-> fsl/dpio/dpio-service.c:495:1: error: the frame size of 1032 bytes is larger than 1024 bytes [-Werror=frame-larger-than=]
-> 
-> There are currently no callers of this function, so I cannot tell whether
-> dynamic memory allocation is allowed once callers are added. Change
-> it to kcalloc for now, if anyone gets a warning about calling this in
-> atomic context after they start using it, they can fix it later.
-> 
-> Fixes: 9d98809711ae ("soc: fsl: dpio: Adding QMAN multiple enqueue interface")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  drivers/soc/fsl/dpio/dpio-service.c | 18 +++++++++++++-----
->  1 file changed, 13 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/soc/fsl/dpio/dpio-service.c b/drivers/soc/fsl/dpio/dpio-service.c
-> index cd4f6410e8c2..ff0ef8cbdbff 100644
-> --- a/drivers/soc/fsl/dpio/dpio-service.c
-> +++ b/drivers/soc/fsl/dpio/dpio-service.c
-> @@ -478,12 +478,17 @@ int dpaa2_io_service_enqueue_multiple_desc_fq(struct dpaa2_io *d,
->  				const struct dpaa2_fd *fd,
->  				int nb)
->  {
-> -	int i;
-> -	struct qbman_eq_desc ed[32];
-> +	struct qbman_eq_desc *ed = kcalloc(sizeof(struct qbman_eq_desc), 32, GFP_KERNEL);
+The PS8640 dsi-to-eDP bridge driver is using the panel bridge API,
+however, not all the components in the chain have been ported to the
+drm_bridge API. Actually, when a panel is attached the default panel's mode
+is used, but in some cases we can't get display up if mode getting from
+eDP control EDID is not chosen.
 
-I think you need to rearrange this to be more compliant with the coding
-style.
+This series address that problem, first implements the .get_edid()
+callback in the PS8640 driver (which is not used until the conversion is
+done) and then, converts the Mediatek DSI driver to use the drm_bridge
+API.
 
-> +	int i, ret;
-> +
-> +	if (!ed)
-> +		return -ENOMEM;
->  
->  	d = service_select(d);
-> -	if (!d)
-> -		return -ENODEV;
-> +	if (!d) {
-> +		ret = -ENODEV;
-> +		goto out;
-> +	}
->  
->  	for (i = 0; i < nb; i++) {
->  		qbman_eq_desc_clear(&ed[i]);
-> @@ -491,7 +496,10 @@ int dpaa2_io_service_enqueue_multiple_desc_fq(struct dpaa2_io *d,
->  		qbman_eq_desc_set_fq(&ed[i], fqid[i]);
->  	}
->  
-> -	return qbman_swp_enqueue_multiple_desc(d->swp, &ed[0], fd, nb);
-> +	ret = qbman_swp_enqueue_multiple_desc(d->swp, &ed[0], fd, nb);
-> +out:
-> +	kfree(ed);
-> +	return ret;
->  }
->  EXPORT_SYMBOL(dpaa2_io_service_enqueue_multiple_desc_fq);
->  
-> -- 
-> 2.26.0
-> 
-> 
+As far as I know, we're the only users of the mediatek dsi driver in
+mainline, so should be safe to switch to the new chain of drm_bridge API
+unconditionally.
+
+The patches has been tested on a Acer Chromebook R13 (Elm) running a
+Chrome OS userspace and checking that the valid EDID mode reported by
+the bridge is selected.
+
+[1] https://lore.kernel.org/lkml/20200210063523.133333-1-hsinyi@chromium.org/
+
+
+Enric Balletbo i Serra (7):
+  drm/bridge: ps8640: Get the EDID from eDP control
+  drm/bridge_connector: Set default status connected for eDP connectors
+  drm/mediatek: mtk_dsi: Rename bridge to next_bridge
+  drm/mediatek: mtk_dsi: Convert to bridge driver
+  drm/mediatek: mtk_dsi: Use simple encoder
+  drm/mediatek: mtk_dsi: Use the drm_panel_bridge API
+  drm/mediatek: mtk_dsi: Create connector for bridges
+
+ drivers/gpu/drm/bridge/parade-ps8640.c |  12 ++
+ drivers/gpu/drm/drm_bridge_connector.c |   1 +
+ drivers/gpu/drm/mediatek/mtk_dsi.c     | 281 ++++++++-----------------
+ 3 files changed, 102 insertions(+), 192 deletions(-)
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
