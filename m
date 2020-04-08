@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B3C21A28FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 20:59:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E767B1A290B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 21:03:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=N0cC+L1rpQ9qCpUuN/xQTv9jUWorm+3j0S3YI9bMt2g=; b=gN6/aokwc42yfG
-	9HWyHF0TaosR2kfQghr+VAjhpuTid2xkiYTdepMVA5MbKWtCLt+24gWD7IMca9TLjAbCoThNmPN1p
-	GxZHlpPw6vFI+wJcGGwSjK0UXKhHj3xV/32E+uOzsaTBC0rJlpMPF1RT9Zi8/W8nquhQ5dCRBjn17
-	9TkxioeLL+ZT/s+Aa4mzZVRvCHAFxSOkhMJvdNXQxoSCbeUrwNx9XVWwJolnAFpmN/uvX6U1S61W0
-	ZnaCr53gWBktZwIVTae6kTPcizwME7aO4MekLaxjQlNOh7wU196y94wAWVDlOF3mwuHzkAnUdBvBz
-	5jLb3XjOKkZGdWGkskXQ==;
+	List-Owner; bh=dNLXADbYx/jr2wtn+0E6cuiCo6JG1n1vN7luz7E6Wec=; b=dmZJ1NWKbJ3exW
+	y3z4MvkfA+h5qF9D7XajnahzoXFxbv68D8GpSo5LhBf/ew42fqbAKKu7MngZBIAIq1FKhkLVhL2mX
+	Tp3bDWDEBc+3iXOOGxVGeqHOVlTJXZs8C27vKJZxV+DGLQR7bzIOCGCMYyzZQFQ47ZDW7Y4GbSQEM
+	I+9AqYqvv5gjGxrM2d6k8xibQna/rbqH5WUq1wE+ca+1IngQ/9KuM55KwWGBxJ1V3ESG8U+GsKfiZ
+	PD5ebpo0Varm11XfuiJtRuZ2prS3GROOUrC+mgA/ZIwoPCbNBXXXkTHI04TVbrA57gZoYbViQUW5l
+	ItrMhz1V7HXc8ofvFyKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMFuw-0000nA-JT; Wed, 08 Apr 2020 18:59:18 +0000
+	id 1jMFyw-0004Vf-VT; Wed, 08 Apr 2020 19:03:26 +0000
 Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMFuo-0000mR-Te
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 18:59:12 +0000
+ id 1jMFyq-0004VB-5E
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 19:03:21 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1N6bwO-1jEDIr0wbW-017z1G; Wed, 08 Apr 2020 20:59:07 +0200
+ (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1Mg6i8-1iniJB1vaA-00haOp; Wed, 08 Apr 2020 21:03:15 +0200
 From: Arnd Bergmann <arnd@arndb.de>
-To: soc@kernel.org, Roy Pledge <Roy.Pledge@nxp.com>,
- Li Yang <leoyang.li@nxp.com>, Youri Querry <youri.querry_1@nxp.com>
-Subject: [PATCH] soc: fsl: dpio: fix incorrect pointer conversions
-Date: Wed,  8 Apr 2020 20:58:58 +0200
-Message-Id: <20200408185904.460563-1-arnd@arndb.de>
+To: soc@kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] firmware: imx: fix compile-testing
+Date: Wed,  8 Apr 2020 21:02:57 +0200
+Message-Id: <20200408190314.695067-1-arnd@arndb.de>
 X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:8xAGrYaZ/ujoUnW7cL3AgjFcL40IGeG2n3NvTC+XDJlofwfuA9K
- oDFxnwY0ZfyisID+BW0V1T8NRMPjmB3xcBsR+gAoLr8CFBfD7f3APxjKC2BV/SNoszVmYKi
- M0vLAM6kpZDaIOc9U6uLbXIFBw4m8GPBgO2DAfYAG2EYz9K1cExMvMJxDJ9+eo/SJEcpqF1
- w11Qw2RA0RNyEzk/w9iqg==
+X-Provags-ID: V03:K1:MHUnGS4mhb9c0Ayqn3vJzYSSZquf3HBpsl6Pj4L+hYt5iYBAWOf
+ NQh3uzTRWIYhEs8jW8faJAnTJk1sI/KDx23ioLQUPjJX2ymq+WT9C90sPnhQEtj/KGaD/AM
+ +WZqaXe0OeUIhN0W4OmyYU+szIvUsR2+EMH3qSgWOJuOmUACA36zNk+drKkP3RoK5/RbYeS
+ goXPkv3p116iHhkEYCCqw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:R+zWTu3qJj8=:PMGN84S59S9E8FL82EdxEJ
- TeslY7JBQpC5GCPlSgAgF3eIo1VO8kNJRe2MVvFc/9hhZWzMy8XCJ/t6q9kbIotaEZwNP5wxv
- XXIP1hlNYDVLdTEnQptpDzyWzLFe5NZQNVi0ZHyXlokmJe8KW2jwAhTM5CJaWLJo/RI2qtirj
- pFw6gVf3ZNjOmyeQQOUc57sTvCIM2x3EKEZM8B2xbaf8oYuQmdXryQpkVMCa5J9oioRs7wZZv
- pSTe1hdBBSx6XeUOIo5UQJlQEeR4WuQ8AKkHy9OGRcWUsCRA5chF+JpUKmne+5SKtdg3FLtVO
- qJdgR4m0M1ljY0FjehKF8CSGE0+m3/9cFzNRYZ+YQuvEAvuTakT5F+jzbXR9hACZyjhzdxO4H
- L6PP2laJwIXphFwUkhbaTteys5sJB4BqVq6c1ms3pKXWA8rRBwX8JzXG4AyF6MHQ692YAjE+E
- fAwGo1+g4HTiS6shj85WDM447Ulks22Wpawgbwz9AepxlouwBS7Le06xw2WOUfXwlwygbezJw
- 5zM1aKcny8zNiQxMmMsXX0ZnuG4w0mFQjX2oTcb+liispyO8EXdeatlV/dMDX2ZoOGI7lCK+A
- KONEcvszOwwAejQqC4XhcPOk5X0gj8O0Z/P4PWTt2n2B+WivcR2xhEA4T36+BkPIaYo4bQuG7
- qgobEcWg1p+oaO/4TOaG3t48QvfZsaID0fdeYdmkWj66QwA5z3/OkK6j+0sJLWz9x+viE3XCU
- xThvkh8aFqpv+AMSwmU9Nf8dZ/fm0wyX0fSXFwdm7GsDL2uz/ud6i5D4j6wvubOJ+0MGlqE00
- HtZKofaIn4bqehBC1pdMSkpxk94rZbbIYRjEe7hcCLXpLnDCcY=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:7T+8WLgcDJs=:xUMyHkZ75drqypZQFuX28i
+ BNKdAuhp5qRrP6PXAgJTf8JefObWnjvuFtnXdT2Y0qcGAOxXbIcgqRP3r4qUj86c1Cfo6Q9kr
+ 0WjSZ72l77/wNd8Ne9gV+YqS00a2Vd4opY4wjgbGG+pqvi5/kHvDXKAwQEqFgTP3gqIITeIp8
+ UkGv08cjyAc5ZEWmt6sQd0ltYZP7fRtxAmLrl+ttXHcXOA8yyiNowvobBvSLJZBS961VO1Na1
+ OtM+0yj8mhcYlrz3le4bPleUOuZ4C/T6psozIDGl1MEXreFuaBuVB6SbaztpiIDB4P0nNuUOZ
+ YM/LA/hRIUkRp0Lb9GpbWBsNGpqD7dEB5EwbQrT8SZQjhdZ6v6WPBW+e0rtK0EMjvKuggSoEZ
+ 1sLaBnc/W1x5te3q+ynOTeokQxybC+nHK666kYUD6ABlp1+I0tqfzx31UNSj3sg1hD6LWgGFv
+ s4xN9PcQ58f1zJjiRMwRX8wc81QMSzDWNcIS4E5tFUwaX2jfH9mNQui2pCPrigi+h92hQYeUC
+ VG+0sXC+wCPNm8D6VS5eeT2YxR9xNqyqX2OgCPDIZUgmvyswHuFqPRNvAM3AAwaIMe6yRkmoJ
+ S4SSAMBYz+67IgDq4YvvpuJXcKaeG/4PDTFIiGLtcPKrXf2VXU/Ab8uRYF2Lt6gshd3m0wLKN
+ hvlkSfpdxj0bUuPfgXbi1JYtVEHEsCQbxS+B9XyQxaTq1xB5sKieNsuFkl3cVUHLXJuKzSN1E
+ 1fGWREn0Tf7JwuFBz2yQlGZ3RDYUmK10aAuq7YUdgqOFMWSCP2U/ZNC6UFr7niV/DTT2cnniZ
+ DmisMpT2nbeXHz3zznECz2ugrkbgRNwXWTdMIYvi4g2iGaB27o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_115911_243996_18F89803 
-X-CRM114-Status: GOOD (  12.73  )
+X-CRM114-CacheID: sfid-20200408_120320_490245_84BBE1E1 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,81 +75,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Roy Pledge <roy.pledge@nxp.com>,
- linux-kernel@vger.kernel.org, Colin Ian King <colin.king@canonical.com>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Baluta <daniel.baluta@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Building dpio for 32 bit shows a new compiler warning from converting
-a pointer to a u64:
+It is nice to allow compile-testing the firmware drivers, but this
+fails when the dependency is a loadable module:
 
-drivers/soc/fsl/dpio/qbman-portal.c: In function 'qbman_swp_enqueue_multiple_desc_direct':
-drivers/soc/fsl/dpio/qbman-portal.c:870:14: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  870 |  addr_cena = (uint64_t)s->addr_cena;
+aarch64-linux-ld: drivers/firmware/imx/scu-pd.o: in function `imx_sc_pd_power':
+scu-pd.c:(.text+0xd8): undefined reference to `imx_scu_call_rpc'
+aarch64-linux-ld: scu-pd.c:(.text+0x108): undefined reference to `imx_scu_call_rpc'
+aarch64-linux-ld: drivers/firmware/imx/scu-pd.o: in function `imx_sc_pd_probe':
 
-The variable is not used anywhere, so removing the assignment seems
-to be the correct workaround. After spotting what seemed to be
-some confusion about address spaces, I ran the file through sparse,
-which showed more warnings:
+Change the dependencies to ensure that any driver we depend on is
+either reachable or we are compile-testing and it is disabled,
+effectively reverting most of the previous changes that turned
+out to be incorrect.
 
-drivers/soc/fsl/dpio/qbman-portal.c:756:42: warning: incorrect type in argument 1 (different address spaces)
-drivers/soc/fsl/dpio/qbman-portal.c:756:42:    expected void const volatile [noderef] <asn:2> *addr
-drivers/soc/fsl/dpio/qbman-portal.c:756:42:    got unsigned int [usertype] *[assigned] p
-drivers/soc/fsl/dpio/qbman-portal.c:902:42: warning: incorrect type in argument 1 (different address spaces)
-drivers/soc/fsl/dpio/qbman-portal.c:902:42:    expected void const volatile [noderef] <asn:2> *addr
-drivers/soc/fsl/dpio/qbman-portal.c:902:42:    got unsigned int [usertype] *[assigned] p
-
-Here, the problem is passing a token from memremap() into __raw_readl(),
-which is only defined to work on MMIO addresses but not RAM. Turning
-this into a simple pointer dereference avoids this warning as well.
-
-Fixes: 3b2abda7d28c ("soc: fsl: dpio: Replace QMAN array mode with ring mode enqueue")
+Fixes: a9f85f93ed73 ("firmware: imx: add COMPILE_TEST support")
+Fixes: 5b00b8375416 ("firmware: imx: add COMPILE_TEST for IMX_SCU driver")
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/soc/fsl/dpio/qbman-portal.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ drivers/firmware/imx/Kconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/soc/fsl/dpio/qbman-portal.c b/drivers/soc/fsl/dpio/qbman-portal.c
-index d1f49caa5b13..804b8ba9bf5c 100644
---- a/drivers/soc/fsl/dpio/qbman-portal.c
-+++ b/drivers/soc/fsl/dpio/qbman-portal.c
-@@ -753,7 +753,7 @@ int qbman_swp_enqueue_multiple_mem_back(struct qbman_swp *s,
- 	if (!s->eqcr.available) {
- 		eqcr_ci = s->eqcr.ci;
- 		p = s->addr_cena + QBMAN_CENA_SWP_EQCR_CI_MEMBACK;
--		s->eqcr.ci = __raw_readl(p) & full_mask;
-+		s->eqcr.ci = *p & full_mask;
- 		s->eqcr.available = qm_cyc_diff(s->eqcr.pi_ring_size,
- 					eqcr_ci, s->eqcr.ci);
- 		if (!s->eqcr.available) {
-@@ -823,7 +823,6 @@ int qbman_swp_enqueue_multiple_desc_direct(struct qbman_swp *s,
- 	const uint32_t *cl;
- 	uint32_t eqcr_ci, eqcr_pi, half_mask, full_mask;
- 	int i, num_enqueued = 0;
--	uint64_t addr_cena;
+diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
+index 116707a075f3..1d2e5b85d7ca 100644
+--- a/drivers/firmware/imx/Kconfig
++++ b/drivers/firmware/imx/Kconfig
+@@ -12,7 +12,7 @@ config IMX_DSP
  
- 	half_mask = (s->eqcr.pi_ci_mask>>1);
- 	full_mask = s->eqcr.pi_ci_mask;
-@@ -867,7 +866,6 @@ int qbman_swp_enqueue_multiple_desc_direct(struct qbman_swp *s,
+ config IMX_SCU
+ 	bool "IMX SCU Protocol driver"
+-	depends on IMX_MBOX || COMPILE_TEST
++	depends on IMX_MBOX
+ 	help
+ 	  The System Controller Firmware (SCFW) is a low-level system function
+ 	  which runs on a dedicated Cortex-M core to provide power, clock, and
+@@ -24,6 +24,6 @@ config IMX_SCU
  
- 	/* Flush all the cacheline without load/store in between */
- 	eqcr_pi = s->eqcr.pi;
--	addr_cena = (uint64_t)s->addr_cena;
- 	for (i = 0; i < num_enqueued; i++)
- 		eqcr_pi++;
- 	s->eqcr.pi = eqcr_pi & full_mask;
-@@ -901,7 +899,7 @@ int qbman_swp_enqueue_multiple_desc_mem_back(struct qbman_swp *s,
- 	if (!s->eqcr.available) {
- 		eqcr_ci = s->eqcr.ci;
- 		p = s->addr_cena + QBMAN_CENA_SWP_EQCR_CI_MEMBACK;
--		s->eqcr.ci = __raw_readl(p) & full_mask;
-+		s->eqcr.ci = *p & full_mask;
- 		s->eqcr.available = qm_cyc_diff(s->eqcr.pi_ring_size,
- 					eqcr_ci, s->eqcr.ci);
- 		if (!s->eqcr.available)
+ config IMX_SCU_PD
+ 	bool "IMX SCU Power Domain driver"
+-	depends on IMX_SCU || COMPILE_TEST
++	depends on IMX_SCU
+ 	help
+ 	  The System Controller Firmware (SCFW) based power domain driver.
 -- 
 2.26.0
 
