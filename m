@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A1EC1A2C77
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 01:37:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 983AD1A2C81
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 01:40:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=dTucL83KNYRuNmjr9/j2YkeFKnG2WH/4nhw8wS5NLEA=; b=CUyUATizlP6A7BIWrYf97DJqiY
-	MHL09ABYON7J0ZYPBmeTRAESI9M35I0ricX1eXuwJLVpzLMD/nZxFuAULD/skyK6aCwKjT3VFii/4
-	8bZm2agrFafb01nzW/DDtL7b5rQnnYxEQ9v1+17kkd4k87RGzjr3Rb95Yl8xRL7pW1itVGXaEFXPk
-	s8vjM75xWTPuVmP1XwXW1La0YoDotJrD+1hsh04w5tE9emTA4Owo+cRHqzuM09qSdtvZYcOkh3S0V
-	HLwpsgB0vYYHhJmtgVhH3C71qG1ehNUYxoonSJb2cYRCV7TXe1dsOAp/vFjCV6huE2m3XNE1V4/vS
-	mqLY4Kww==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AJ1Q19c7Qhc4ZRSmRVE07QzxWDsvFkNPBBSMgPWUVaY=; b=V8awiSwcZdntXy
+	yk/+BoP/T+2SMVnEWyXHLHp7MLtoFr5pPa3nG4SNPnHV1LbKdqkfHE1f4LVrL25ZtCOGdsqmJWsKU
+	kSKMF8LkOUZUubz1wOp1nY1pruZ3McVl9CPzk2POxPlSyLzLlP14q/BVfvhFep8cWaPZsiLKsHaDm
+	sgTW5v1+QlnvYaTjzTdJ8qfhzwaG6CrI4gunFadzR/JjtZb1bu7xYXIQ593yyEuw29QsY5fnyHngv
+	aNAoDMCyZ1k4QVp1vh74MiM1a+rLIf9dLr2owyRP06op//8FTBbhJjLluXVlIOEc8HPKt0z53wFcR
+	7qz9DLZqkk9PzXBdzgRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMKGH-0007VS-Vj; Wed, 08 Apr 2020 23:37:37 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jMKIV-0000iN-Rc; Wed, 08 Apr 2020 23:39:55 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMKFn-00076t-WC
- for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 23:37:12 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1586389031; h=References: In-Reply-To: Message-Id: Date:
- Subject: Cc: To: From: Sender;
- bh=qptNmHUGIaiinw/HDGnYvf9ekz8pYIo5r0zLW+lMxJ4=;
- b=CaUs+1dbWWzYl4GnntLFRodUGRkAzVx0jcxm8tuIkYoFC6C9Xm7sFTtKdPfqPtxUx1arx9rT
- Ypdv9D5aDJHni2WUoMeQBe1E4EvmEOj2uzrgNyh8M18uhdG1Z/9bpHkCqv7LEdGkoVW0+1qn
- uhxjH2Zp3Rsv12girBTTDgu7isw=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e8e6020.7f9558cd1dc0-smtp-out-n03;
- Wed, 08 Apr 2020 23:37:04 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id D2586C433F2; Wed,  8 Apr 2020 23:37:04 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from sidgup-linux.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: sidgup)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id A48CEC44791;
- Wed,  8 Apr 2020 23:37:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org A48CEC44791
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=sidgup@codeaurora.org
-From: Siddharth Gupta <sidgup@codeaurora.org>
-To: agross@kernel.org,
-	bjorn.andersson@linaro.org,
-	ohad@wizery.com
-Subject: [PATCH v2 6/6] remoteproc: qcom: Add notification types to SSR
-Date: Wed,  8 Apr 2020 16:36:43 -0700
-Message-Id: <1586389003-26675-7-git-send-email-sidgup@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
-References: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
+ id 1jMKIN-0000hm-E5
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 23:39:49 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 038Ndhfx027199;
+ Wed, 8 Apr 2020 18:39:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1586389183;
+ bh=dNLr8EfQEXOPmFeqYhnB4WKln9Z3bKnjLvo8cSm4Gh0=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=lSP9Dzy49fvXCphbuMSVSaoWvHFMRMYVfQ/a5EQHFMjSQFbIEemgllMqQM5g3wyw7
+ 5ALK4dq/xgrov9t/SyT5oS7bClMmt+k0JKn1hXKVT/Cm7U5IVulRTBvvjdcaRbxEiN
+ 6r8cVq36hN6S9zSP93+dW+SAmrPL96M0y3510sN8=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 038NdhN8127485
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 8 Apr 2020 18:39:43 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 8 Apr
+ 2020 18:39:43 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 8 Apr 2020 18:39:43 -0500
+Received: from [10.250.86.212] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 038NdgBU041435;
+ Wed, 8 Apr 2020 18:39:42 -0500
+Subject: Re: [PATCH 1/7] remoteproc: add prepare and unprepare ops
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <20200324201819.23095-1-s-anna@ti.com>
+ <20200324201819.23095-2-s-anna@ti.com> <20200406172018.GA11572@xps15>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <042074fb-46b3-f6d9-8203-27a8bc540666@ti.com>
+Date: Wed, 8 Apr 2020 18:39:42 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20200406172018.GA11572@xps15>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_163711_428587_C5A4FBE0 
-X-CRM114-Status: GOOD (  14.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200408_163947_552816_2AD84B15 
+X-CRM114-Status: GOOD (  24.61  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,125 +92,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- rishabhb@codeaurora.org, Siddharth Gupta <sidgup@codeaurora.org>,
- psodagud@codeaurora.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Loic Pallardy <loic.pallardy@st.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SSR subdevice only adds callback for the unprepare event. Add callbacks
-for unprepare, start and prepare events. The client driver for a particular
-remoteproc might be interested in knowing the status of the remoteproc
-while undergoing SSR, not just when the remoteproc has finished shutting
-down.
+Hi Mathieu,
 
-Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
----
- drivers/remoteproc/qcom_common.c | 39 +++++++++++++++++++++++++++++++++++----
- include/linux/remoteproc.h       | 15 +++++++++++++++
- 2 files changed, 50 insertions(+), 4 deletions(-)
+On 4/6/20 12:20 PM, Mathieu Poirier wrote:
+> Good morning Suman,
+> 
+> I have started to work on this set - comments will come in over the next few
+> days...
+> 
+> On Tue, Mar 24, 2020 at 03:18:13PM -0500, Suman Anna wrote:
+>> From: Loic Pallardy <loic.pallardy@st.com>
+>>
+>> On some SoC architecture, it is needed to enable HW like
+>> clock, bus, regulator, memory region... before loading
+>> co-processor firmware.
+>>
+>> This patch introduces prepare and unprepare ops to execute
+>> platform specific function before firmware loading and after
+>> stop execution.
+>>
+>> Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
+>> Signed-off-by: Suman Anna <s-anna@ti.com>
+>> ---
+>>  drivers/remoteproc/remoteproc_core.c | 20 +++++++++++++++++++-
+>>  include/linux/remoteproc.h           |  4 ++++
+>>  2 files changed, 23 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+>> index 26f6947267d2..aca6d022901a 100644
+>> --- a/drivers/remoteproc/remoteproc_core.c
+>> +++ b/drivers/remoteproc/remoteproc_core.c
+>> @@ -1394,12 +1394,22 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
+>>  		return ret;
+>>  	}
+>>  
+>> +	/* Prepare rproc for firmware loading if needed */
+>> +	if (rproc->ops->prepare) {
+>> +		ret = rproc->ops->prepare(rproc);
+> 
+> In my patchset on MCU synchronisation I have moved ops->{start/stop} to
+> remoteproc_internal.h and called them rproc_start/stop_device() (after Loic's
+> suggestion).  In order to be consistent and remove boiler plate code in the core
+> we could do the same, i.e have rproc_prepare/unprepare_device() in
+> remoteproc_internal.h .
 
-diff --git a/drivers/remoteproc/qcom_common.c b/drivers/remoteproc/qcom_common.c
-index 56b0c3e..06611f2 100644
---- a/drivers/remoteproc/qcom_common.c
-+++ b/drivers/remoteproc/qcom_common.c
-@@ -183,9 +183,9 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
-  *
-  * Returns pointer to srcu notifier head on success, ERR_PTR on failure.
-  *
-- * This registers the @notify function as handler for restart notifications. As
-- * remote processors are stopped this function will be called, with the rproc
-- * pointer passed as a parameter.
-+ * This registers the @notify function as handler for powerup/shutdown
-+ * notifications. This function will be invoked inside the callbacks registered
-+ * for the ssr subdevice, with the rproc pointer passed as a parameter.
-  */
- void *qcom_register_ssr_notifier(struct rproc *rproc, struct notifier_block *nb)
- {
-@@ -227,11 +227,39 @@ int qcom_unregister_ssr_notifier(void *notify, struct notifier_block *nb)
- }
- EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
- 
-+static int ssr_notify_prepare(struct rproc_subdev *subdev)
-+{
-+	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
-+
-+	srcu_notifier_call_chain(ssr->rproc_notif_list,
-+				 RPROC_BEFORE_POWERUP, (void *)ssr->name);
-+	return 0;
-+}
-+
-+static int ssr_notify_start(struct rproc_subdev *subdev)
-+{
-+	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
-+
-+	srcu_notifier_call_chain(ssr->rproc_notif_list,
-+				 RPROC_AFTER_POWERUP, (void *)ssr->name);
-+	return 0;
-+}
-+
-+static void ssr_notify_stop(struct rproc_subdev *subdev, bool crashed)
-+{
-+	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
-+
-+	srcu_notifier_call_chain(ssr->rproc_notif_list,
-+				 RPROC_BEFORE_SHUTDOWN, (void *)ssr->name);
-+}
-+
-+
- static void ssr_notify_unprepare(struct rproc_subdev *subdev)
- {
- 	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
- 
--	srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void *)ssr->name);
-+	srcu_notifier_call_chain(ssr->rproc_notif_list,
-+				 RPROC_AFTER_SHUTDOWN, (void *)ssr->name);
- }
- 
- /**
-@@ -248,6 +276,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr,
- {
- 	ssr->name = ssr_name;
- 	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
-+	ssr->subdev.prepare = ssr_notify_prepare;
-+	ssr->subdev.start = ssr_notify_start;
-+	ssr->subdev.stop = ssr_notify_stop;
- 	ssr->subdev.unprepare = ssr_notify_unprepare;
- 	ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
- 								GFP_KERNEL);
-diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-index 687e1eb..facadb07 100644
---- a/include/linux/remoteproc.h
-+++ b/include/linux/remoteproc.h
-@@ -452,6 +452,21 @@ struct rproc_dump_segment {
- };
- 
- /**
-+ * enum rproc_notif_type - Different stages of remoteproc notifications
-+ * @RPROC_BEFORE_SHUTDOWN:	unprepare stage of  remoteproc
-+ * @RPROC_AFTER_SHUTDOWN:	stop stage of  remoteproc
-+ * @RPROC_BEFORE_POWERUP:	prepare stage of  remoteproc
-+ * @RPROC_AFTER_POWERUP:	start stage of  remoteproc
-+ */
-+enum rproc_notif_type {
-+	RPROC_BEFORE_SHUTDOWN,
-+	RPROC_AFTER_SHUTDOWN,
-+	RPROC_BEFORE_POWERUP,
-+	RPROC_AFTER_POWERUP,
-+	RPROC_MAX
-+};
-+
-+/**
-  * struct rproc - represents a physical remote processor device
-  * @node: list node of this rproc object
-  * @domain: iommu domain
--- 
-Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
+Yes, I will update so for v2. I plan to separate out this patch and the
+next patch for v2 to go alongside your cleanup and Alex's patch on the
+idr_init move.
+
+regards
+Suman
+
+> 
+> With the above:
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> 
+> Thanks,
+> Mathieu
+> 
+>> +		if (ret) {
+>> +			dev_err(dev, "can't prepare rproc %s: %d\n",
+>> +				rproc->name, ret);
+>> +			goto disable_iommu;
+>> +		}
+>> +	}
+>> +
+>>  	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
+>>  
+>>  	/* Load resource table, core dump segment list etc from the firmware */
+>>  	ret = rproc_parse_fw(rproc, fw);
+>>  	if (ret)
+>> -		goto disable_iommu;
+>> +		goto unprepare_rproc;
+>>  
+>>  	/* reset max_notifyid */
+>>  	rproc->max_notifyid = -1;
+>> @@ -1433,6 +1443,10 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
+>>  	kfree(rproc->cached_table);
+>>  	rproc->cached_table = NULL;
+>>  	rproc->table_ptr = NULL;
+>> +unprepare_rproc:
+>> +	/* release HW resources if needed */
+>> +	if (rproc->ops->unprepare)
+>> +		rproc->ops->unprepare(rproc);
+>>  disable_iommu:
+>>  	rproc_disable_iommu(rproc);
+>>  	return ret;
+>> @@ -1838,6 +1852,10 @@ void rproc_shutdown(struct rproc *rproc)
+>>  	/* clean up all acquired resources */
+>>  	rproc_resource_cleanup(rproc);
+>>  
+>> +	/* release HW resources if needed */
+>> +	if (rproc->ops->unprepare)
+>> +		rproc->ops->unprepare(rproc);
+>> +
+>>  	rproc_disable_iommu(rproc);
+>>  
+>>  	/* Free the copy of the resource table */
+>> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+>> index 07bd73a6d72a..ddce7a7775d1 100644
+>> --- a/include/linux/remoteproc.h
+>> +++ b/include/linux/remoteproc.h
+>> @@ -355,6 +355,8 @@ enum rsc_handling_status {
+>>  
+>>  /**
+>>   * struct rproc_ops - platform-specific device handlers
+>> + * @prepare:	prepare device for code loading
+>> + * @unprepare:	unprepare device after stop
+>>   * @start:	power on the device and boot it
+>>   * @stop:	power off the device
+>>   * @kick:	kick a virtqueue (virtqueue id given as a parameter)
+>> @@ -371,6 +373,8 @@ enum rsc_handling_status {
+>>   * @get_boot_addr:	get boot address to entry point specified in firmware
+>>   */
+>>  struct rproc_ops {
+>> +	int (*prepare)(struct rproc *rproc);
+>> +	int (*unprepare)(struct rproc *rproc);
+>>  	int (*start)(struct rproc *rproc);
+>>  	int (*stop)(struct rproc *rproc);
+>>  	void (*kick)(struct rproc *rproc, int vqid);
+>> -- 
+>> 2.23.0
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
