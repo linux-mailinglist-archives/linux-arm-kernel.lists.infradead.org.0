@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 498F41A2923
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 21:09:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB9D01A293F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 Apr 2020 21:16:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5/Rszl6puWCsfoqMN1NKbQE48Su8X7RvQDkDvNocsEE=; b=CAXaIMJ+VV29Zw
-	zKw1vzGbEBZRzzqYR//vUDvnlWsXGJa5/BhZqjm4EY8U8ki1iw6asR7vr6HSZ7Cqsv0/vgGPcWO7L
-	LI+ir+ogXUBMWaePM1u9imlaR4y+4dVf3qmUVwgx6bZNMo9I9NjCSb5YunV2Jnt1sYZdCOu91CeH7
-	aq7rNiZXLRL4Y3er5l0n9jaU6PLnNjdXlATbdphrL8eC8aeKBx7gtWfS5hvwwwannxKB/7Xh3Q/No
-	VswQbd+wprebfrUqpyMqMDnVowIBLYLJd0go7tWhDea177ZOEqVRZQySuW6CN5I633lIWkh9lJCPe
-	Cp+7DutSul1MWp6wq/Uw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hdptUPEa9D/f12dTApzzcdi1HDa/dlh0aO/jqmN9kl0=; b=SozVM/3xRbFAce
+	14O9eFuHVMmvY3/7s1xLIijvtZ6HUV8syAt6IBKhkDnYFak38ptZwLvWehdJU6yP8CfiDr7uHKMg7
+	FXG4wuqb7MHtmA2MmkthkIMnZagLoBTZ2mNbvfbAbVkOuDZ6k73fJdWhzIidSv4KwmqiNX0zGPf9v
+	G7cKfBaGO8kRbsIWLksDdzHYHUxhK0JoM9KPH3t5kkM/fZsVRkcB3viBZk3LILm8fZrScV7SkF8y2
+	f6Uvxie65CTIt/XQIGhn14CGPk+3thgb5AgHq9bfOgSLBECrmTUMDmorK8sHVy57RTog8OK0NU5Dw
+	Onha29qSrXYm5H+h+zLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMG4b-0007cK-9u; Wed, 08 Apr 2020 19:09:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jMGB7-0005SW-4F; Wed, 08 Apr 2020 19:16:01 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMG4T-0007aa-3R; Wed, 08 Apr 2020 19:09:10 +0000
-Received: from mail-qt1-f171.google.com ([209.85.160.171]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1M3UlW-1jLi6d3x4s-000dKs; Wed, 08 Apr 2020 21:09:06 +0200
-Received: by mail-qt1-f171.google.com with SMTP id s30so815404qth.2;
- Wed, 08 Apr 2020 12:09:05 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYt+Hd5WG5FcJu2805RpUM9Yws7e9ksBRvQLqfQ5AesOVeid7dK
- fSilZTFq9akChMjLyLbi+qfOSmSgPeTUEs+IltE=
-X-Google-Smtp-Source: APiQypLVZg9HrJ8HaBMPoIbgmXFLy2wkvpPQbu4xfZqD2UDsW3+2l9wXsJzoILy3lNnN0lCMXpZUMWd32YBEbRrW7/A=
-X-Received: by 2002:aed:3b4c:: with SMTP id q12mr8495378qte.18.1586372944700; 
- Wed, 08 Apr 2020 12:09:04 -0700 (PDT)
+ id 1jMGB0-0005S0-ND
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 Apr 2020 19:15:56 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 038JFfeK086312;
+ Wed, 8 Apr 2020 14:15:41 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1586373341;
+ bh=Qb5ZeAVRpJh28ykpe0w7F87pvW1U8JceUNeMw/ITQaM=;
+ h=From:To:CC:Subject:Date;
+ b=h/owNDU1NivTnUt4VOatmB7/pwiAwiGO1KnfFF8IFkZul3QdgNDidiTYL/o3l1hll
+ kXryCYfMntuBeGKA7Ah9IF/Q9UTRqm4+td+BX1SpVNFMToYkuPwKMvM4UiT4z8O1im
+ Eum9Yemss3CvZfy7/Vghx9qn4KEldqv4AyhDGl+I=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 038JFfTg006789
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 8 Apr 2020 14:15:41 -0500
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 8 Apr
+ 2020 14:15:41 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 8 Apr 2020 14:15:41 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 038JFd3K108863;
+ Wed, 8 Apr 2020 14:15:40 -0500
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
+ Shilimkar <ssantosh@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>
+Subject: [PATCH] irqchip/ti-sci-inta: fix processing of masked irqs
+Date: Wed, 8 Apr 2020 22:15:32 +0300
+Message-ID: <20200408191532.31252-1-grygorii.strashko@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20200408155325.2077345-1-arnd@arndb.de>
- <3336c3105120d2f90dbc20d47ff98e722a123d5b.camel@collabora.com>
-In-Reply-To: <3336c3105120d2f90dbc20d47ff98e722a123d5b.camel@collabora.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 8 Apr 2020 21:08:48 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1K5T2e2kAQMVi=ubPN3v4rYgtb9TaGC6evNXSUc4embQ@mail.gmail.com>
-Message-ID: <CAK8P3a1K5T2e2kAQMVi=ubPN3v4rYgtb9TaGC6evNXSUc4embQ@mail.gmail.com>
-Subject: Re: [PATCH] media: staging: rkisp1: avoid unused variable warning
-To: Ezequiel Garcia <ezequiel@collabora.com>
-X-Provags-ID: V03:K1:ZHzyAxc4Zl2FZl+MMfSgYt3GCW7UrV9T9pwFjqOF6swX9Y7gSsE
- hJ9HjRum88ksWA0pWE/VO2T0jKUNzUUpTIt5DfGwLlElGE9S17o5zo+TKIYsuZUB3It7Qh4
- jwSVj/zjstO4SswpgEEq4rmM15kH7ruZhMY12CmJaCXOSgbXoU3EGjHOIGPRaselwtZHZYA
- +s9Jd0lAPc72fuXGSNQ9Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:1FBaUaK+ujs=:eMGs83NfAmC/8qAeZjZv/B
- 1HyxMQH89+MMMOoY6kdrw5dFWH/S6UjiFaiIEarD61BUtBrDhSELfG7zGZyDrJMrGZ9+cKmT3
- GrhOoImq6/byqLItpM7FU4agWSigk4C6ULo5mWcC6yDQ4V9FnTO6NWM0ty9voBrJAtVZfDWYB
- MARG5ypW7xZS7PHSLyldVN8jXl8efz0l8hxSLw48jJUw0XGgjpHnfGIdXxDEivjnYAptWzNkq
- +n5Sf6HCLRPRzGFBk6oq+t8zPjstvu37WtvKof8BZFzQAysxDNdbsAHbjdO68BEmIqV2nF0Kd
- EJhJzRbHNIxbqWiEdgzvU/T0DOzn8Cqkj4HUWCcZX4nT1LaRbbukMNLnI1x32+mdkF6Srt+ps
- ETQ/Zn8l8y4961FknaEpVaGfD4d/z9gepM3h2fHWa3riu4NuArEOd44xNmMkQOENtslAg8JcF
- 6eBdB4pBiwyz5DIxxDyoN8fNJ9c433Dk7roKYFsykDAvW4Dri0WSnwD/F43XZ+Qo0e2oLSje+
- PR3oqFJwdAXMmLsj52D6s9ofdsXaO9USs0+bfUBBnONCR3bMNM2C4LylhLQwUv6Y2cInHIZgK
- Ye45w74hMFJ93zx7cQXWit8Z9/zCNXKl/ueJuX5mgTVaq1c+l/7RqvBg4+BvTSzO150dZvw7x
- D+xhyf+ng8tQseqAWXMqcp5teCWEFgjj/CuX1mUXyH4H9immCx55R8LjoPxZM73RVCuAsinvd
- qrgQqQFQXLlvFtjQ+cmjqJLimXVFQ3FkIujHrxlNesnILsTYJ0VadWrD6nJdwhIVFvp0/mbZe
- fkzUofdTplaQUNKdVG6XHzKnHbS3OufbJnoJ+adSYXq0zlxAi0=
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_120909_431150_C980CAEE 
-X-CRM114-Status: GOOD (  14.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200408_121554_836594_6C704094 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,64 +90,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: driverdevel <devel@driverdev.osuosl.org>,
- Eddie Cai <eddie.cai.linux@gmail.com>, Jacob Chen <cc@rock-chips.com>,
- Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- Jeffy Chen <jeffy.chen@rock-chips.com>, Yichong Zhong <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>,
- "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Allon Huang <allon.huang@rock-chips.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Shunqian Zheng <zhengsq@rock-chips.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Grygorii Strashko <grygorii.strashko@ti.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 8, 2020 at 7:56 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
->
-> On Wed, 2020-04-08 at 17:52 +0200, Arnd Bergmann wrote:
-> > When compile-testing with CONFIG_OF disabled, we get a warning
-> > about an unused variable, and about inconsistent Kconfig dependencies:
-> >
-> > WARNING: unmet direct dependencies detected for PHY_ROCKCHIP_DPHY_RX0
-> >   Depends on [n]: STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y]) && OF [=n]
-> >   Selected by [m]:
-> >   - VIDEO_ROCKCHIP_ISP1 [=m] && STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && VIDEO_V4L2 [=m] && VIDEO_V4L2_SUBDEV_API [=y] &&
-> > (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y])
-> >
-> > drivers/staging/media/rkisp1/rkisp1-dev.c: In function 'rkisp1_probe':
-> > drivers/staging/media/rkisp1/rkisp1-dev.c:457:22: error: unused variable 'node' [-Werror=unused-variable]
-> >   457 |  struct device_node *node = pdev->dev.of_node;
-> >
-> > Simply open-coding the pointer dereference in the only place
-> > the variable is used avoids the warning in all configurations,
-> > so we can allow compile-testing as well.
-> >
->
-> Hello Arnd,
->
-> Thanks for your patch.
->
-> I believe this is already fixed here:
->
-> https://patchwork.linuxtv.org/patch/62774/
-> https://patchwork.linuxtv.org/patch/62775/
+The ti_sci_inta_irq_handler() does not take into account INTA IRQs state
+(masked/unmasked) as it uses INTA_STATUS_CLEAR_j register to get INTA IRQs
+status, which provides raw status value.
+This causes hard IRQ handlers to be called or threaded handlers to be
+scheduled many times even if corresponding INTA IRQ is masked.
+Above, first of all, affects the LEVEL interrupts processing and causes
+unexpected behavior up the system stack or crash.
 
-Ok, sorry for the duplicate. I only tested on mainline from a few days ago,
-so I must have missed it getting merged in the meantime.
+Fix it by using the Interrupt Masked Status INTA_STATUSM_j register which
+provides masked INTA IRQs status.
 
-    Arnd
+Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
+Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+---
+ drivers/irqchip/irq-ti-sci-inta.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
+index 8f6e6b08eadf..7e3ebf6ed2cd 100644
+--- a/drivers/irqchip/irq-ti-sci-inta.c
++++ b/drivers/irqchip/irq-ti-sci-inta.c
+@@ -37,6 +37,7 @@
+ #define VINT_ENABLE_SET_OFFSET	0x0
+ #define VINT_ENABLE_CLR_OFFSET	0x8
+ #define VINT_STATUS_OFFSET	0x18
++#define VINT_STATUS_MASKED_OFFSET	0x20
+ 
+ /**
+  * struct ti_sci_inta_event_desc - Description of an event coming to
+@@ -116,7 +117,7 @@ static void ti_sci_inta_irq_handler(struct irq_desc *desc)
+ 	chained_irq_enter(irq_desc_get_chip(desc), desc);
+ 
+ 	val = readq_relaxed(inta->base + vint_desc->vint_id * 0x1000 +
+-			    VINT_STATUS_OFFSET);
++			    VINT_STATUS_MASKED_OFFSET);
+ 
+ 	for_each_set_bit(bit, &val, MAX_EVENTS_PER_VINT) {
+ 		virq = irq_find_mapping(domain, vint_desc->events[bit].hwirq);
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
