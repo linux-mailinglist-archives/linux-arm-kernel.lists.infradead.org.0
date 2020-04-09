@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9490E1A32F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:09:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B2B11A32F7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:10:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKiyvTDAG9Pm9bNDbb9umM6UtrCfma/C1/KPtYDGWxQ=; b=MK1RKt5Wm7EO9b
-	YZJAUZ01JS/L22AEcGrnZubtU+4sltiULj4XnlozUBvyuzb6BCL4yl/T3mwJXcT6mjJRinQI7HNvM
-	ULiqIjmLg30W9P+RDSkbFVk2gS7qSquJNH2WXCYOTlmEmrhQy3RuxAYLsrWw9shVS2McJRlcGHqFV
-	wmD/+GyeRV7w7E74BB1+B+UJj7HyvpJh26pqMHrdO3yXMlIBnKTzwQegtwg7v0FNi368hoOfpk1UU
-	oOjDcI+l/SxrMsj5FrD+DcitBsSf1pbcqIE9uk88YeTMRVbUehxEHKU/G/K3O6+Qwl6ETKx10E9cf
-	qF3sIRAMNUQ+5v9If+iA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QBeWk7o1ZbzOEfCTAbt56AjoZtV6Xjmkn7a/weqLrc0=; b=CI/NFPGbCBlk4XXgH7a0wOeWN
+	ZBabK/ThGymcooWPohLS0nPXzhielx4FWfeig557LfGRc+ZFEndZYF9YAtfi+t7Lmry6nUr9SaWxO
+	BYzj2BYBHTN09G0umLItKwRLcgWC4UFVB1nb/rrtpgsKXizMZ2ARmIRIfxZf4oCfd44E48bKCVPyN
+	H2B0A/9Kwun4sDzhDa7vxA9EZZpTp3rWOo2nJr7uAK8w65UKBU9nhtyDv3S90jYXRh15FPfcblY9z
+	jOdOORoIJNZblilTGgFyFXdpHYmnbJSjnbwMgWoeOLno5/w+wCLMeXkd+UkN6wLJ7bOrpr3JlFkZX
+	Q9p6XQE0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMV3S-0004kn-8r; Thu, 09 Apr 2020 11:09:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMV3J-0004kA-Oz
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:08:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D39B731B;
- Thu,  9 Apr 2020 04:08:56 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 92A433F73D;
- Thu,  9 Apr 2020 04:08:50 -0700 (PDT)
-Date: Thu, 9 Apr 2020 12:08:43 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH] sched/arm64: store cpu topology before notify_cpu_starting
-Message-ID: <20200409110843.GA8451@bogus>
-References: <855831b59e1b3774b11c3e33050eac4cc4639f06.1583332765.git.vpillai@digitalocean.com>
- <20200401114215.36640-1-cj.chengjian@huawei.com>
- <jhjwo6zjq5m.mognet@arm.com> <20200409095941.GA25948@bogus>
- <jhj5ze9t0er.mognet@arm.com>
+	id 1jMV4g-0007QM-BI; Thu, 09 Apr 2020 11:10:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMV4X-0006nQ-Oh
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:10:15 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 81A6D2979A5
+Subject: Re: [RFC 0/8] Stop monitoring disabled devices
+To: Daniel Lezcano <daniel.lezcano@linaro.org>, linux-pm@vger.kernel.org
+References: <20200407174926.23971-1-andrzej.p@collabora.com>
+ <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <aeec2ce8-8fb9-9353-f3dd-36a476ceeb3b@collabora.com>
+Date: Thu, 9 Apr 2020 13:10:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <jhj5ze9t0er.mognet@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_040857_898006_D5CAD084 
-X-CRM114-Status: GOOD (  25.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200409_041013_961363_E39DE33B 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,102 +60,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: joelaf@google.com, Cheng Jian <cj.chengjian@huawei.com>,
- peterz@infradead.org, fweisbec@gmail.com, huawei.libin@huawei.com,
- joel@joelfernandes.org, mingo@kernel.org, aubrey.li@linux.intel.com,
- naravamudan@digitalocean.com, aaron.lwe@gmail.com,
- torvalds@linux-foundation.org, jdesfossez@digitalocean.com, w.f@huawei.com,
- pawan.kumar.gupta@linux.intel.com, pjt@google.com, kerrnel@google.com,
- keescook@chromium.org, xiexiuqi@huawei.com, vpillai@digitalocean.com,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, pauld@redhat.com,
- mgorman@techsingularity.net, linux-kernel@vger.kernel.org,
- aubrey.intel@gmail.com, Sudeep Holla <sudeep.holla@arm.com>,
- pbonzini@redhat.com, tim.c.chen@linux.intel.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Ido Schimmel <idosch@mellanox.com>, Jiri Pirko <jiri@mellanox.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ Peter Kaestle <peter@piie.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 09, 2020 at 11:32:12AM +0100, Valentin Schneider wrote:
->
-> On 09/04/20 10:59, Sudeep Holla wrote:
-> > On Wed, Apr 01, 2020 at 02:23:33PM +0100, Valentin Schneider wrote:
-> >>
-> >> (+LAKML, +Sudeep)
-> >>
-> >
-> > Thanks Valentin.
-> >
-> >> On Wed, Apr 01 2020, Cheng Jian wrote:
-> >> > when SCHED_CORE enabled, sched_cpu_starting() uses thread_sibling as
-> >> > SMT_MASK to initialize rq->core, but only after store_cpu_topology(),
-> >> > the thread_sibling is ready for use.
-> >> >
-> >> >       notify_cpu_starting()
-> >> >           -> sched_cpu_starting()	# use thread_sibling
-> >> >
-> >> >       store_cpu_topology(cpu)
-> >> >           -> update_siblings_masks	# set thread_sibling
-> >> >
-> >> > Fix this by doing notify_cpu_starting later, just like x86 do.
-> >> >
-> >>
-> >> I haven't been following the sched core stuff closely; can't this
-> >> rq->core assignment be done in sched_cpu_activate() instead? We already
-> >> look at the cpu_smt_mask() in there, and it is valid (we go through the
-> >> entirety of secondary_start_kernel() before getting anywhere near
-> >> CPUHP_AP_ACTIVE).
-> >>
-> >
-> > I too came to same conclusion. Did you see any issues ? Or is it
-> > just code inspection in parity with x86 ?
-> >
->
-> With mainline this isn't a problem; with the core scheduling stuff there is
-> an expectation that we can use the SMT masks in sched_cpu_starting().
->
-
-Ah, OK. I prefer this to be specified in the commit message as it is not
-obvious.
-
-> >> I don't think this breaks anything, but without this dependency in
-> >> sched_cpu_starting() then there isn't really a reason for this move.
-> >>
-> >
-> > Based on the commit message, had a quick look at x86 code and I agree
-> > this shouldn't break anything. However the commit message does make
-> > complete sense to me, especially reference to sched_cpu_starting
-> > while smt_masks are accessed in sched_cpu_activate. Or am I missing
-> > to understand something here ?
->
-> As stated above, it's not a problem for mainline, and AIUI we can change
-> the core scheduling bits to only use the SMT mask in sched_cpu_activate()
-> instead, therefore not requiring any change in the arch code.
->
-
-Either way is fine. If it is already set expectation that SMT masks needs
-to be set before sched_cpu_starting, then let us just stick with that.
-
-> I'm not aware of any written rule that the topology masks should be usable
-> from a given hotplug state upwards, only that right now we need them in
-> sched_cpu_(de)activate() for SMT scheduling - and that is already working
-> fine.
->
-
-Sure, we can at-least document as part of this change even if it is just
-in ARM64 so that someone need not wonder the same in future.
-
-> So really this should be considering as a simple neutral cleanup; I don't
-> really have any opinion on picking it up or not.
-
-I am fine with the change too, just need some tweaking in the commit
-message.
-
---
-Regards,
-Sudeep
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgRGFuaWVsLAoKVyBkbml1IDA5LjA0LjIwMjAgb8KgMTI6MjksIERhbmllbCBMZXpjYW5vIHBp
+c3plOgo+IE9uIDA3LzA0LzIwMjAgMTk6NDksIEFuZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToK
+Pj4gVGhlIGN1cnJlbnQga2VybmVsIGJlaGF2aW9yIGlzIHRvIGtlZXAgcG9sbGluZyB0aGUgdGhl
+cm1hbCB6b25lIGRldmljZXMKPj4gcmVnYXJkbGVzcyBvZiB0aGVpciBjdXJyZW50IG1vZGUuIFRo
+aXMgaXMgbm90IGRlc2lyZWQsIGFzIGFsbCBzdWNoICJkaXNhYmxlZCIKPj4gZGV2aWNlcyBhcmUg
+bWVhbnQgdG8gYmUgaGFuZGxlZCBieSB1c2Vyc3BhY2UsPiBzbyBwb2xsaW5nIHRoZW0gbWFrZXMg
+bm8gc2Vuc2UuCj4gCj4gVGhhbmtzIGZvciBwcm9wb3NpbmcgdGhlc2UgY2hhbmdlcy4KPiAKPiBJ
+J3ZlIGJlZW4gKHF1aWNrbHkpIHRocm91Z2ggdGhlIHNlcmllcyBhbmQgdGhlIGRlc2NyaXB0aW9u
+IGJlbG93LiBJIGhhdmUKPiB0aGUgZmVlbGluZyB0aGUgc2VyaWVzIG1ha2VzIG1vcmUgY29tcGxl
+eCB3aGlsZSB0aGUgY3VycmVudCBjb2RlIHdoaWNoCj4gd291bGQgZGVzZXJ2ZSBhIGNsZWFudXAu
+Cj4gCj4gV2h5IG5vdCBmaXJzdDoKPiAKPiAgIC0gQWRkIGEgJ21vZGUnIGZpZWxkIGluIHRoZSB0
+aGVybWFsIHpvbmUgZGV2aWNlCj4gICAtIEtpbGwgYWxsIHNldC9nZXRfbW9kZSBjYWxsYmFja3Mg
+aW4gdGhlIGRyaXZlcnMgd2hpY2ggYXJlIGR1cGxpY2F0ZWQgY29kZS4KPiAgIC0gQWRkIGEgZnVu
+Y3Rpb246Cj4gCj4gICBlbnVtIHRoZXJtYWxfZGV2aWNlX21vZGUgdGhlcm1hbF96b25lX2dldF9t
+b2RlKCAqdHopCj4gICB7Cj4gCS4uLgo+IAlpZiAodHotPm9wcy0+Z2V0X21vZGUpCj4gCQlyZXR1
+cm4gdHotPm9wcy0+Z2V0X21vZGUoKTsKPiAKPiAJcmV0dXJuIHR6LT5tb2RlOwo+ICAgfQo+IAo+
+IAo+ICAgaW50IHRoZXJtYWxfem9uZV9zZXRfbW9kZSguLip0eiwgZW51bSB0aGVybWFsX2Rldmlj
+ZV9tb2RlIG1vZGUpCj4gICB7Cj4gCS4uLgo+IAlpZiAodHotPm9wcy0+c2V0X21vZGUpCj4gCQly
+ZXR1cm4gdHotPm9wcy0+c2V0X21vZGUodHosIG1vZGUpOwo+IAo+IAl0ei0+bW9kZSA9IG1vZGU7
+Cj4gCj4gCXJldHVybiAwOwo+ICAgfQo+IAo+ICAgc3RhdGljIGlubGluZSB0aGVybWFsX3pvbmVf
+ZW5hYmxlKC4uLiAqdHopCj4gICB7Cj4gCXRoZXJtYWxfem9uZV9zZXRfbW9kZSh0eiwgVEhFUk1B
+TF9ERVZJQ0VfRU5BQkxFRCk7Cj4gICB9Cj4gCj4gICBzdGF0aWMgaW5saW5lIHRoZXJtYWxfem9u
+ZV9kaXNhYmxlKC4uLiAqdHopIHsKPiAJdGhlcm1hbF96b25lX3NldF9tb2RlKHR6LCBUSEVSTUFM
+X0RFVklDRV9ESVNBQkxFRCk7Cj4gICB9Cj4gCj4gQW5kIHRoZW4gd2hlbiB0aGUgY29kZSBpcyBj
+b25zb2xpZGF0ZWQsIHVzZSB0aGUgbW9kZSB0byBlbmFibGUvZGlzYWJsZQo+IHRoZSBwb2xsaW5n
+IGFuZCBjb250aW51ZSBraWxsaW5nIHRoZSBkdXBsaWNhdGVkIGNvZGUgaW4gb2YtdGhlcm1hbC5j
+IGFuZAo+IGFueXdoZXJlIGVsc2UuCj4gCj4gCgpUaGFua3MgZm9yIGZlZWRiYWNrLgoKQW55b25l
+IGVsc2U/CgpBbmRyemVqCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
