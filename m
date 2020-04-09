@@ -2,83 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 071701A3223
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 11:56:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5F061A322B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 12:00:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KSu0k8fSLH33QpEhvlrJZSf4e4sp3HQLD8XeGr/9uqE=; b=ryDJjbSLBGHuxi
-	Hd03lWL38qC1jsUBL4zaHOoE8KES8EbQLNp8yD7UL5maWnccKnnQZS2mR90CvSgtMDLfCMHiKgyVY
-	/CSa45kZZr+fn9UeLtRQ3PW+TkrOpyX4laL/blXlYfmUmahIx2+NYBmVRb9cvz4uIpXokZI5ZY48n
-	MjJ5duD706q7BVbqrgnKfwwtqUFrVyFp0pnfPDgIw4VmI5Hj/vfc5LJCZT1wrwzcx5C/6EmEN+pCg
-	ggvhg/xszQmZOfl4jyMabgZs0RNQMtDoo/GYWwuGe91igapCQeJ2J4uIP/IXlx/uTSsHrf6jhucJ2
-	Fk7KqTYt1ohQ+0vfUf1A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=467yDeSb54v1QqBc1If9gQXfSouhrQV2VFEd4abymF8=; b=OhrwSNbJ2EjWH4
+	+onqlZSCmnPruWn7GeKjcT80YN5034kvmopDqalr70CWLgQkjFzH5uP65uNVPLbc0CvynftEYkV3P
+	siVgjt7fgoLf8gun/Zu1OVrhdnNtnJoET4oy/fZRl+Jt4Jq7FWk1OwyCHle3YGA4S9mn9pjebRcwk
+	7A+ta9lcx03TRbe7JyWicF6h2FvWmhJ9CNDY+N1Bd09ikA0np4ZYGOpAJE+p+v1E2vghJePgjbo+A
+	zp1uCJSH2mLh8GgaThcWbs8t/PkrS2F6uXPW4AMb4M6W7EMbnwvMWA3rMz6oRYsg2XzMpQ7mnm+0O
+	I0Dc3qlGi4JHKMG3uqIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMTuf-0002F5-24; Thu, 09 Apr 2020 09:55:57 +0000
-Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMTuY-0002EV-96
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 09:55:51 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e8ef0ee0000>; Thu, 09 Apr 2020 02:54:54 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Thu, 09 Apr 2020 02:55:47 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Thu, 09 Apr 2020 02:55:47 -0700
-Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 9 Apr
- 2020 09:55:47 +0000
-Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Thu, 9 Apr 2020 09:55:47 +0000
-Received: from moonraker.nvidia.com (Not Verified[10.26.73.58]) by
- hqnvemgw03.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5e8ef1210001>; Thu, 09 Apr 2020 02:55:47 -0700
-From: Jon Hunter <jonathanh@nvidia.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
- Thierry Reding <thierry.reding@gmail.com>, Vidya Sagar <vidyas@nvidia.com>
-Subject: [PATCH] arm64: defconfig: Re-enable Tegra PCIe Host driver
-Date: Thu, 9 Apr 2020 10:55:30 +0100
-Message-ID: <20200409095530.12004-1-jonathanh@nvidia.com>
-X-Mailer: git-send-email 2.17.1
-X-NVConfidentiality: public
+	id 1jMTyq-00030X-VA; Thu, 09 Apr 2020 10:00:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMTyW-0002zq-6M
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 09:59:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A868B31B;
+ Thu,  9 Apr 2020 02:59:53 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E4C9A3F73D;
+ Thu,  9 Apr 2020 02:59:47 -0700 (PDT)
+Date: Thu, 9 Apr 2020 10:59:41 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [PATCH] sched/arm64: store cpu topology before notify_cpu_starting
+Message-ID: <20200409095941.GA25948@bogus>
+References: <855831b59e1b3774b11c3e33050eac4cc4639f06.1583332765.git.vpillai@digitalocean.com>
+ <20200401114215.36640-1-cj.chengjian@huawei.com>
+ <jhjwo6zjq5m.mognet@arm.com>
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1586426094; bh=LC+xdxWnqrjeSuG6FbiFd91p56RmdIaWaTsvY+88hs0=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- X-NVConfidentiality:MIME-Version:Content-Type;
- b=d+NFzngmRDCjLzZ/7jgwMohEtEFfkoWEYCBhmwabkTUgkH4OZY90wDi4yXlpdmc9w
- 00tJIGVHH40hDZKXDwtlYmjsGk+3j+KaJFx90W13XdqW3wRTuCAzD1zprXKMTyFAOK
- 2PAyY0JfiuUbkx49MWMKtvEV7ajugZRggGUenD0e6MCfR24Qj15nPpE8NJXYqLpYg+
- U7vSsKs2oSjz/sYFfYrUQOEIKvb0nQdIsGocOk+IhiS7bX+cwqSfw9zwvb1mqYKjwY
- 5uQTMY8PVXi8IITDDGpdmxo9fmrwMoJw/6A3ogNJCs9i9Yri3eOsW8aVb7f5wyNzc9
- 3iHJK/qyCGQ+A==
+Content-Disposition: inline
+In-Reply-To: <jhjwo6zjq5m.mognet@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_025550_332852_37AF2CFC 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200409_025956_696672_1D130DBA 
+X-CRM114-Status: GOOD (  14.42  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,47 +64,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-tegra@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
+Cc: joelaf@google.com, Cheng Jian <cj.chengjian@huawei.com>,
+ peterz@infradead.org, fweisbec@gmail.com, huawei.libin@huawei.com,
+ joel@joelfernandes.org, mingo@kernel.org, aubrey.li@linux.intel.com,
+ naravamudan@digitalocean.com, aaron.lwe@gmail.com,
+ torvalds@linux-foundation.org, jdesfossez@digitalocean.com, w.f@huawei.com,
+ pawan.kumar.gupta@linux.intel.com, pjt@google.com, kerrnel@google.com,
+ keescook@chromium.org, xiexiuqi@huawei.com, vpillai@digitalocean.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, pauld@redhat.com,
+ mgorman@techsingularity.net, linux-kernel@vger.kernel.org,
+ aubrey.intel@gmail.com, Sudeep Holla <sudeep.holla@arm.com>,
+ pbonzini@redhat.com, tim.c.chen@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit c57247f940e8 ("PCI: tegra: Add support for PCIe endpoint mode in
-Tegra194") updated the Tegra PCIe Kconfig symbol for building the Tegra
-PCIe host controller driver. Following this change the Tegra PCIe host
-controller driver is no longer built by default and so no works without
-updating the arm64 defconfig. Fix this by updating the Kconfig symbol
-in the arm64 for the Tegra PCIe host controller so that again it is
-built by default.
+On Wed, Apr 01, 2020 at 02:23:33PM +0100, Valentin Schneider wrote:
+>
+> (+LAKML, +Sudeep)
+>
 
-Fixes: c57247f940e8 ("PCI: tegra: Add support for PCIe endpoint mode in Tegra194")
+Thanks Valentin.
 
-Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
----
-Please note that this is needed as a fix for v5.7.
+> On Wed, Apr 01 2020, Cheng Jian wrote:
+> > when SCHED_CORE enabled, sched_cpu_starting() uses thread_sibling as
+> > SMT_MASK to initialize rq->core, but only after store_cpu_topology(),
+> > the thread_sibling is ready for use.
+> >
+> >       notify_cpu_starting()
+> >           -> sched_cpu_starting()	# use thread_sibling
+> >
+> >       store_cpu_topology(cpu)
+> >           -> update_siblings_masks	# set thread_sibling
+> >
+> > Fix this by doing notify_cpu_starting later, just like x86 do.
+> >
+>
+> I haven't been following the sched core stuff closely; can't this
+> rq->core assignment be done in sched_cpu_activate() instead? We already
+> look at the cpu_smt_mask() in there, and it is valid (we go through the
+> entirety of secondary_start_kernel() before getting anywhere near
+> CPUHP_AP_ACTIVE).
+>
 
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+I too came to same conclusion. Did you see any issues ? Or is it
+just code inspection in parity with x86 ?
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 24e534d85045..266ad7b5ce91 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -208,7 +208,7 @@ CONFIG_PCIE_QCOM=y
- CONFIG_PCIE_ARMADA_8K=y
- CONFIG_PCIE_KIRIN=y
- CONFIG_PCIE_HISI_STB=y
--CONFIG_PCIE_TEGRA194=m
-+CONFIG_PCIE_TEGRA194_HOST=m
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
- CONFIG_FW_LOADER_USER_HELPER=y
--- 
-2.17.1
+> I don't think this breaks anything, but without this dependency in
+> sched_cpu_starting() then there isn't really a reason for this move.
+>
 
+Based on the commit message, had a quick look at x86 code and I agree
+this shouldn't break anything. However the commit message does make
+complete sense to me, especially reference to sched_cpu_starting
+while smt_masks are accessed in sched_cpu_activate. Or am I missing
+to understand something here ?
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
