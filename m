@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E90451A3A50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:14:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 041761A3A37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:13:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xEK44z/RbeX43M+KxoLlKC5lqfx8iUOgX93GLW+PG6M=; b=s94TyTEiQ3orRp
-	gD23sNVCmqV+8Su92jhIzwasqXeswGDp1coK/+4iqgPXpO+2dTnYa9mmV+sljie1XcnkIaiqqO12C
-	+eyqR+vMw02coC+TXAyxK5IcS+Q4t2wIltfTmBwJiuc4zfh1VFGSEG0uzvKon75tz0lJbUHPvLYDq
-	o5/Pnywe3JXwEbbBO+ajZEVNSoYdY56NDH7lpQuzq7V4b0k21oZL/4gyakgl8FqyPriSL2ynvimpK
-	emw4Sdf6Rcw/uttErUDaauZ6SSvsaO3/+2ZtcN8EmpikPlC9XG3mePhpKckzWjQS7QGa5NB4ze59v
-	wjNK8HpDAYwZJI7hhcYQ==;
+	List-Owner; bh=iDmjkbq0TDAhkQoIMgpV06r+QcCW9WOjrGhy6UR7O4A=; b=XLcJcz7VkzVbqs
+	ly9ByrIgImqPUR3voFTijvW7Wn9VGBNqyB1cz5L/brCULxkavuwlVlH9jz1x5QAjw0qjnZd8RbPox
+	1l/IAo3F82oCvHFOx1hOkWQnv8OZ+WQUAw/Pv6h93mYgw9Laod9tWqcjwrGyvW3+MpUO+zEd540x4
+	Q2sQz3WyiTnzyAYrD1SCE4IzfNcKgKzSCXhroM4aFo8gwKsXPtn5hZ3A9//qtjJaeGzbLMNaL6JDN
+	utdf7Ke0R0GCAE6U98QC8/1aWYtCRlWU88d4dcfnkiJOyHBLzYK2HuPUYQjO405dEebp9uXf5Ht4k
+	En4ibb5lFkpoXMT+EoQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMcdO-0000Eo-2I; Thu, 09 Apr 2020 19:14:42 +0000
-Received: from mail-dm6nam12on2040.outbound.protection.outlook.com
- ([40.107.243.40] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jMcbg-0007Pv-Bs; Thu, 09 Apr 2020 19:12:56 +0000
+Received: from mail-co1nam11on2078.outbound.protection.outlook.com
+ ([40.107.220.78] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMcbd-0007KG-AP
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:12:57 +0000
+ id 1jMcbc-0007K5-MQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:12:54 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MFsiEUn45GQ2skd7DxBlHDcHKcMAbPs5VXa/gk0FnsTg06EzWG5zrXoxUErWo0dB7QHbLvOEMITq3wf/v/N0zkNIve9NJexYvoIPlWk6T59hf3oGEbNkMkPLeyH/3PB5s0Q1+a5u1S11PnQZd5M2p1Rwss7LzYmk8KsuXB2iV7YjHSqr2FXjvu4rCTu9TTVJHY5foM6RQ85EOHFABkOWWLXe96M+V2fuq1AFZ9u9xjSStmr/McTueWtcRSAJH/LzB9USKXYqMu5Nsb2TohHsNuKIq4FfWPrJCucrP+mJqQ98eJC0pg05zAvpEVXHwNIm4hAn5jFvu8mRE4GlGftZDg==
+ b=a6TpltS1M2N+GpoJRU6aPgbAhn9Bki0MlOn4vFQOSBZOYnQyXkxa6iYVDh5RAJ4k7etN0xlYO8DqTTJKnsNSoEyev8EjLf1U1q9lWo8MQ1nMBHyGNNbJHyBDoBMnNiH/KciC9bVi60Wu4oZkn3kKUt/VV05XhqrwBN7pgXqDZG0IGYvtrXGDiaZBsc6o7+SVwiH8jNThWI5nazHUMGJnW5zXwifPnJVOdSbcDctDe0TZy/SfjpMdGZvKxooQZWTYpb+Bd9pSNSFCguLw2Iv5MbH88QnHxJeXIyZSWDRfPwreofQn5Eoxlifdnl9F3ZuHLldaIl8ldbsIYBkHX3tJ2A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lAl5DV4g6pOCd56rFXeJcxsQII7ho7EKejt8SioNjd4=;
- b=OLFkiSedjmOslNjB8wr2Ws0X26RUwmFRlYoI2yhxV5aIoaLcy88z2P6m+COy4651clv4O7CwSket1CsAiojWDi5kmZ+DapDXA9yXC9peeCX7xE4sQhhbM4+08R+APM0c1l92rhdkySH8/GfoaYKAZML3pK6C23StVt5tbWg3XPPgkYHAdyTyHX2ZowtKFLB/YmZ51rZjjg3A+v7gWQHmhfp73D9XyfBJs7qOvDBdFBnDut+k78FwMjxHKEMI6kH0Iyid2e28nnrODY271VygztjzGXYG2e48T71vwYihWVbkNP1TW0c0co6708qmAFByVl5YVWTGyCYrUMQaGqbAoQ==
+ bh=4Wn0MOr//dSvPxJzOp7hW7sFwpMBUymVIfq0k0171Nk=;
+ b=X+YHQHXyKQ3Pu3F39joVp2rWJuJlEpHhhnbneXvJMYGqJQhraLB4MU5HZwXBlB7Glxs9sv7GofhJdT7FJISsA66Rq76UpQGTO5G8Y7UvkJNMrFaYEhWaJvSLW7gu+oZ9hZ2C6CmA7VpHdgm6mI3bnzk9F0T7e4+nwVO/mRjkmYhCySKkTrKcobYUo2D6DcYc7yp0pzT6L5YChgzJoI72rCNIdYQNgSY6KGzXQnNBiKQ/h3SyauJyZEXODa8badYE1X74Xnj0FuwZELn/DIZqwPzzqqMc4PQ8Z2f3UZq4k1sSRhn9KYyaaL6KmgPz+DmxWOW6s6VbuIAPSP2Puy2NXw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lAl5DV4g6pOCd56rFXeJcxsQII7ho7EKejt8SioNjd4=;
- b=qMcC4lU2+FkdNProwcyiuoY/Aoih8+KavpEdBdoYwMma62AArRFK3/VVyxcab6TXN/mRu+NX+Tk3J1lm5XHK4GZpLt1ijf+cNJJodZXKtysEPZrRw5A3jFXjC1kMBkimw39GTltJ+j/PQP4geCw9gl4htw85zItZ08tJvV8614g=
-Received: from BL0PR02CA0042.namprd02.prod.outlook.com (2603:10b6:207:3d::19)
- by DM6PR02MB4842.namprd02.prod.outlook.com (2603:10b6:5:fb::21) with
+ bh=4Wn0MOr//dSvPxJzOp7hW7sFwpMBUymVIfq0k0171Nk=;
+ b=l8O/nU//s79yFHKlMwvSsj1KPWNuL9USwwM9iWB+n4tXbODD87YbyLMHCOIzZtJq6cwz2wgGI/FrsKdESiKOyqSK93vfpmims+e1iEih13+g5tpU/ySC4KS16vjF++y6IfNFrd9G5ltNTZCz2/xYSCGak7Y9oj5m7mRb018gRYI=
+Received: from CY4PR22CA0083.namprd22.prod.outlook.com (2603:10b6:903:ad::21)
+ by CY4PR02MB2197.namprd02.prod.outlook.com (2603:10b6:903:c::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17; Thu, 9 Apr
- 2020 19:12:51 +0000
-Received: from BL2NAM02FT046.eop-nam02.prod.protection.outlook.com
- (2603:10b6:207:3d:cafe::b5) by BL0PR02CA0042.outlook.office365.com
- (2603:10b6:207:3d::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.20; Thu, 9 Apr
+ 2020 19:12:49 +0000
+Received: from CY1NAM02FT010.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:903:ad:cafe::20) by CY4PR22CA0083.outlook.office365.com
+ (2603:10b6:903:ad::21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15 via Frontend
- Transport; Thu, 9 Apr 2020 19:12:51 +0000
+ Transport; Thu, 9 Apr 2020 19:12:49 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
  header.d=none;linaro.org; dmarc=bestguesspass action=none
@@ -58,28 +58,28 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT046.mail.protection.outlook.com (10.152.76.118) with Microsoft SMTP
- Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 19:12:50
+ CY1NAM02FT010.mail.protection.outlook.com (10.152.75.50) with Microsoft SMTP
+ Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 19:12:49
  +0000
-Received: from [149.199.38.66] (port=44333 helo=xsj-pvapsmtp01)
+Received: from [149.199.38.66] (port=44241 helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcb9-00060c-NS; Thu, 09 Apr 2020 12:12:23 -0700
+ id 1jMcb8-0005zq-L3; Thu, 09 Apr 2020 12:12:22 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcba-0007NV-5v; Thu, 09 Apr 2020 12:12:50 -0700
+ id 1jMcbZ-0007NV-2w; Thu, 09 Apr 2020 12:12:49 -0700
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcbR-0007La-Vz; Thu, 09 Apr 2020 12:12:42 -0700
+ id 1jMcbS-0007La-1k; Thu, 09 Apr 2020 12:12:42 -0700
 From: Jolly Shah <jolly.shah@xilinx.com>
 To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
  matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
  keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH v4 05/25] firmware: xilinx: Remove eemi ops for clock_disable
-Date: Thu,  9 Apr 2020 12:11:54 -0700
-Message-Id: <1586459534-8997-6-git-send-email-jolly.shah@xilinx.com>
+Subject: [PATCH v4 06/25] firmware: xilinx: Remove eemi ops for clock_getstate
+Date: Thu,  9 Apr 2020 12:11:55 -0700
+Message-Id: <1586459534-8997-7-git-send-email-jolly.shah@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
 References: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
@@ -90,39 +90,37 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(39860400002)(396003)(136003)(376002)(346002)(46966005)(4326008)(478600001)(356004)(6666004)(82740400003)(47076004)(107886003)(2906002)(70586007)(70206006)(36756003)(9786002)(316002)(7696005)(54906003)(2616005)(7416002)(81156014)(336012)(426003)(8676002)(8936002)(26005)(186003)(44832011)(81166007)(6636002)(5660300002);
+ SFS:(10009020)(4636009)(396003)(136003)(39860400002)(376002)(346002)(46966005)(426003)(478600001)(82740400003)(8936002)(81156014)(6636002)(2616005)(107886003)(8676002)(316002)(336012)(44832011)(47076004)(81166007)(4326008)(9786002)(2906002)(54906003)(36756003)(7696005)(5660300002)(7416002)(356004)(6666004)(26005)(70206006)(70586007)(186003);
  DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 1c0659ac-7390-477e-ac62-08d7dcb9ff40
-X-MS-TrafficTypeDiagnostic: DM6PR02MB4842:
-X-Microsoft-Antispam-PRVS: <DM6PR02MB4842FABF9CF9C6846BDAC339B8C10@DM6PR02MB4842.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: 7333ba0f-b290-4fb1-beda-08d7dcb9fe95
+X-MS-TrafficTypeDiagnostic: CY4PR02MB2197:
+X-Microsoft-Antispam-PRVS: <CY4PR02MB2197B02D88AF6DF0DF18CB56B8C10@CY4PR02MB2197.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:107;
+X-MS-Oob-TLC-OOBClassifiers: OLM:229;
 X-Forefront-PRVS: 0368E78B5B
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: z0N05/3KMm1YBh7uFxILFyMCL+E4DGwi15ZX0xHbrvkEMZLOOK5n8CPnEhOqD2y/+X3XO5Q5JhLTJTmsd1CRGEr7bEeMy+4gA9EG0uw3gQeq4EhLs36YviKItkh3B+n8oHSmn4Ta+UjdlzUeaS5juCPungWHcrVtZYXmpMx9syP4hudTEe3D6KaN+cM8XMo7tvT2JI1GyHdHnomqoaL1Ygf5qZ5mIgZ2IJcB0XucBdqibTkVjPZmh/NLXsQGj0AevzSGPWD+C3nclGJ9OFYgjlHd6OBzs8lplRoCZQ8rkBRsv8intx/CFO00ojOUqohGJp8ZT+TeoxX/kRUReAiTAvW+uJOCrBXgajy3d1eWK5HJLV/IeVlcj09ESVn64Cii+cZCbkL8Ce9HYSVYNAg0QpFHSB1fV/g89C+om+C0bNmA032nfGFUp10bzPTCiNj11skrtOO71yk7MOwBlxLS0YHyAFdyhVO734GcYSdYnxZpfw7Ujs8cnxi2IDvFabvqLaZt21qSnllx48v7CVJAGA==
+X-Microsoft-Antispam-Message-Info: +FkSHRkaNKrgsysmq/yzuH3jWgTrtRRfNM0rzLJpGUAzWu9WnrvK2G6zbpMookI20tJ6j5zJilXN/rVKST9FTLdmZZzpHV50OJXPHTZekUmt/YiTye6RN03v3xGJZVOwYEtNf29Hv0o6T5d+V+Hvhjr7qnsdu/p/Elahv437VXmk13Elti8XI20oPoAYMNRTFy14YrVzmaYClXoQ1+l1Co5zg1sf36dEHpjJqrvG5T/bgYMAtEX0yA5CwCQpBxMQaqhh3hOPkLHRFGY8sxn2lFcQk67cB1k3ffCaklth9AYN+YL4K6L4Fzs/dTVdhR3zlrxbqZut5LVbKcLBEtaILrJAfXSKNwgk/W9MrEqycP/M4MYzaDiTEiTZ6NzxszB1h3RG1n3ArsoSvSXPJigIY4acpMoR2PnLBAi4T4ja4z6oOWMfzewWFVnMMbCLLMzQEEvaT2EfkUe6amEnBHKVdKY96k6IIRLm6h19t4fHi5PnwTIvIFP53SRJzxcAJibKqKqoqhG3C3e6yTv7ihnt5A==
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:50.5543 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1c0659ac-7390-477e-ac62-08d7dcb9ff40
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:49.4346 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7333ba0f-b290-4fb1-beda-08d7dcb9fe95
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4842
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR02MB2197
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_121253_376647_302CF06B 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20200409_121252_797870_337ED21D 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.243.40 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.243.40 listed in wl.mailspike.net]
+ no trust [40.107.220.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -149,108 +147,101 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 
-Use direct function call for clock_disable instead using of eemi ops.
+Use direct function call instead of eemi ops for clock_getstate.
 
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- drivers/clk/zynqmp/clk-gate-zynqmp.c | 4 +---
+ drivers/clk/zynqmp/clk-gate-zynqmp.c | 3 +--
  drivers/clk/zynqmp/pll.c             | 3 +--
  drivers/firmware/xilinx/zynqmp.c     | 4 ++--
  include/linux/firmware/xlnx-zynqmp.h | 6 +++++-
- 4 files changed, 9 insertions(+), 8 deletions(-)
+ 4 files changed, 9 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/clk/zynqmp/clk-gate-zynqmp.c b/drivers/clk/zynqmp/clk-gate-zynqmp.c
-index 437b921..11f1b97 100644
+index 11f1b97..10c9b88 100644
 --- a/drivers/clk/zynqmp/clk-gate-zynqmp.c
 +++ b/drivers/clk/zynqmp/clk-gate-zynqmp.c
-@@ -37,7 +37,6 @@ static int zynqmp_clk_gate_enable(struct clk_hw *hw)
+@@ -77,9 +77,8 @@ static int zynqmp_clk_gate_is_enabled(struct clk_hw *hw)
  	const char *clk_name = clk_hw_get_name(hw);
  	u32 clk_id = gate->clk_id;
- 	int ret;
+ 	int state, ret;
 -	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
  
- 	ret = zynqmp_pm_clock_enable(clk_id);
- 
-@@ -58,9 +57,8 @@ static void zynqmp_clk_gate_disable(struct clk_hw *hw)
- 	const char *clk_name = clk_hw_get_name(hw);
- 	u32 clk_id = gate->clk_id;
- 	int ret;
--	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
- 
--	ret = eemi_ops->clock_disable(clk_id);
-+	ret = zynqmp_pm_clock_disable(clk_id);
- 
- 	if (ret)
- 		pr_warn_once("%s() clock disable failed for %s, ret = %d\n",
+-	ret = eemi_ops->clock_getstate(clk_id, &state);
++	ret = zynqmp_pm_clock_getstate(clk_id, &state);
+ 	if (ret) {
+ 		pr_warn_once("%s() clock get state failed for %s, ret = %d\n",
+ 			     __func__, clk_name, ret);
 diff --git a/drivers/clk/zynqmp/pll.c b/drivers/clk/zynqmp/pll.c
-index 153aa67..38b8dbc 100644
+index 38b8dbc..41f376a 100644
 --- a/drivers/clk/zynqmp/pll.c
 +++ b/drivers/clk/zynqmp/pll.c
-@@ -268,12 +268,11 @@ static void zynqmp_pll_disable(struct clk_hw *hw)
- 	const char *clk_name = clk_hw_get_name(hw);
+@@ -222,9 +222,8 @@ static int zynqmp_pll_is_enabled(struct clk_hw *hw)
  	u32 clk_id = clk->clk_id;
+ 	unsigned int state;
  	int ret;
 -	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
  
- 	if (!zynqmp_pll_is_enabled(hw))
- 		return;
- 
--	ret = eemi_ops->clock_disable(clk_id);
-+	ret = zynqmp_pm_clock_disable(clk_id);
- 	if (ret)
- 		pr_warn_once("%s() clock disable failed for %s, ret = %d\n",
+-	ret = eemi_ops->clock_getstate(clk_id, &state);
++	ret = zynqmp_pm_clock_getstate(clk_id, &state);
+ 	if (ret) {
+ 		pr_warn_once("%s() clock get state failed for %s, ret = %d\n",
  			     __func__, clk_name, ret);
 diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-index da13627..d884805 100644
+index d884805..c11b528 100644
 --- a/drivers/firmware/xilinx/zynqmp.c
 +++ b/drivers/firmware/xilinx/zynqmp.c
-@@ -366,10 +366,11 @@ EXPORT_SYMBOL_GPL(zynqmp_pm_clock_enable);
+@@ -382,7 +382,7 @@ EXPORT_SYMBOL_GPL(zynqmp_pm_clock_disable);
   *
   * Return: Returns status, either success or error+reason
   */
--static int zynqmp_pm_clock_disable(u32 clock_id)
-+int zynqmp_pm_clock_disable(u32 clock_id)
+-static int zynqmp_pm_clock_getstate(u32 clock_id, u32 *state)
++int zynqmp_pm_clock_getstate(u32 clock_id, u32 *state)
  {
- 	return zynqmp_pm_invoke_fn(PM_CLOCK_DISABLE, clock_id, 0, 0, 0, NULL);
+ 	u32 ret_payload[PAYLOAD_ARG_CNT];
+ 	int ret;
+@@ -393,6 +393,7 @@ static int zynqmp_pm_clock_getstate(u32 clock_id, u32 *state)
+ 
+ 	return ret;
  }
-+EXPORT_SYMBOL_GPL(zynqmp_pm_clock_disable);
++EXPORT_SYMBOL_GPL(zynqmp_pm_clock_getstate);
  
  /**
-  * zynqmp_pm_clock_getstate() - Get the clock state for given id
-@@ -738,7 +739,6 @@ static int zynqmp_pm_aes_engine(const u64 address, u32 *out)
+  * zynqmp_pm_clock_setdivider() - Set the clock divider for given id
+@@ -739,7 +740,6 @@ static int zynqmp_pm_aes_engine(const u64 address, u32 *out)
  }
  
  static const struct zynqmp_eemi_ops eemi_ops = {
--	.clock_disable = zynqmp_pm_clock_disable,
- 	.clock_getstate = zynqmp_pm_clock_getstate,
+-	.clock_getstate = zynqmp_pm_clock_getstate,
  	.clock_setdivider = zynqmp_pm_clock_setdivider,
  	.clock_getdivider = zynqmp_pm_clock_getdivider,
+ 	.clock_setrate = zynqmp_pm_clock_setrate,
 diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index 77365d1..f9a84d9 100644
+index f9a84d9..e874f0c 100644
 --- a/include/linux/firmware/xlnx-zynqmp.h
 +++ b/include/linux/firmware/xlnx-zynqmp.h
 @@ -296,7 +296,6 @@ struct zynqmp_pm_query_data {
  struct zynqmp_eemi_ops {
  	int (*fpga_load)(const u64 address, const u32 size, const u32 flags);
  	int (*fpga_get_status)(u32 *value);
--	int (*clock_disable)(u32 clock_id);
- 	int (*clock_getstate)(u32 clock_id, u32 *state);
+-	int (*clock_getstate)(u32 clock_id, u32 *state);
  	int (*clock_setdivider)(u32 clock_id, u32 divider);
  	int (*clock_getdivider)(u32 clock_id, u32 *divider);
-@@ -331,6 +330,7 @@ int zynqmp_pm_get_api_version(u32 *version);
- int zynqmp_pm_get_chipid(u32 *idcode, u32 *version);
+ 	int (*clock_setrate)(u32 clock_id, u64 rate);
+@@ -331,6 +330,7 @@ int zynqmp_pm_get_chipid(u32 *idcode, u32 *version);
  int zynqmp_pm_query_data(struct zynqmp_pm_query_data qdata, u32 *out);
  int zynqmp_pm_clock_enable(u32 clock_id);
-+int zynqmp_pm_clock_disable(u32 clock_id);
+ int zynqmp_pm_clock_disable(u32 clock_id);
++int zynqmp_pm_clock_getstate(u32 clock_id, u32 *state);
  #else
  static inline struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void)
  {
-@@ -353,6 +353,10 @@ static inline int zynqmp_pm_clock_enable(u32 clock_id)
+@@ -357,6 +357,10 @@ static inline int zynqmp_pm_clock_disable(u32 clock_id)
  {
  	return -ENODEV;
  }
-+static inline int zynqmp_pm_clock_disable(u32 clock_id)
++static inline int zynqmp_pm_clock_getstate(u32 clock_id, u32 *state)
 +{
 +	return -ENODEV;
 +}
