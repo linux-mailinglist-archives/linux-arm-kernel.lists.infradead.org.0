@@ -2,84 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3D51A3D1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:56:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 498B31A3D25
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:58:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3YF5yRiVYHnovNABYRaGPM8RhJlDh1XXOdPlPZo5sUg=; b=bE7knIVu5jxMA/
-	ky2pkrRfwlBntenSwUPvzwIh+ylwBg4KSi1KRKCD/Bgqb/aP3Lmko0arkN8UO93mrLB8KKM4nz4tA
-	6WfHqpwcSjvX7lzdWI49lNZ7SfxrA9f1Mrbn8s6XZxk4xDybgAKGdxjDmiSPCaxU9ZmaZTJum6gKX
-	0XwaN1VG+oUNJ07pbQlzHFjM435/iICFrscQD5XeUHcqx4p/pbBqzexesn4CMSW2L4KY48xid8KSO
-	n1hPXwrTTvBBTgvd69aWTaPAPEn1yXZJP23mbWGwm2tVbHrZ65pY/lmKsqitirPunWqQ97wm4YNw4
-	dSI6A8t5kSBiDxCMoXhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xV8W9V04X0AwgGXmoAJAxANzvTKnyAhU+8n7hWotAyo=; b=hCLE3xEWQNoCt+
+	wqOLRpVK6NNNplS+tf4pHVD3+ui++0AwHV/OHL1/TeL5Ci1gfQMWHNyc13jI6RbvcnsZsaFSl0bzz
+	krGQ4ayRmGFWyPWWO2XhFVXIsmfKNZRwI3ey+qBkWdJN6Q1M9NZioIU8Obb5FULfzUUjr/p4FlheY
+	Im1HyfYbNH3hYmqUdIavVz2fXd90HAy0R0WSgv7keoNrQWFmkyqkgixmKBSMYZdYQ30d/zhhSn0UX
+	NQtZphka5NdE34MCGX6slJwe1vwxLSKfIivkR5eBhVOAfwz2b3TjHDYbDEPfie9Gu0g2lAO6A2NHS
+	Z9hCH1Clrq1mC7qsg+Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMh1Z-0004Te-8S; Thu, 09 Apr 2020 23:55:57 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+	id 1jMh4C-0007jE-9D; Thu, 09 Apr 2020 23:58:40 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMgvO-0001CJ-On
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:49:36 +0000
-Received: by mail-io1-f67.google.com with SMTP id b12so192055ion.8
+ id 1jMh2W-0007aj-S3
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:57:12 +0000
+Received: by mail-lf1-x142.google.com with SMTP id r17so220323lff.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 16:49:34 -0700 (PDT)
+ Thu, 09 Apr 2020 16:56:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=h7ou2+MWS5yebpK+PkJaL1qSzOXz/nH64pUokezkgN0=;
+ b=ZGFleZwjigSbIXhSeJj/RBOKq1ORM7YyqiRg8grGG6Po3qc4jpwEaMak9ZRmwk5wgN
+ WQsVxyJRGFydj9/1SpgNvPKwTWBHH1DEl36qBoV7xT2CEf54yhW1pnsXZ1UVO3dqjbkM
+ zyUcsUE7ua7lUZVMlhyOuRctiGCtcx7Xim3Yhv6JH0uKTJCfhX9G3UyieZDK5Tj1YlaK
+ r86f6QFFQZ9pCkzdHPTWxxRGZ5LKzctKjCaXbzDkhzv22N+HJSIPm4EsSN+yjkEFf6Af
+ 8APR0MGmRFSoptFGAFCozmY3c4WBszAEVSfZKkAApzaPBRpZ66insE26eSaFkKPdd2m+
+ NbPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=fsFz03cVlyUKvUVnGieh3oxHpNilVECqAGJgEoC0c7M=;
- b=Ve2xf2c/SYAvIxZXDY0wGHFkEv/Nv24xsdvVZ6NWXineQD8DN/KDRu5ULwwFJICq3g
- 4tdvf4gHqFTuYuL9zIOC4TJ0lKsU1RY1/kl0AE0kInRqjm9gjKv5Gdr018o3ABLT63zJ
- xbm31pzZB6+hwGZoYg5AW8GWUeP0FcaNBCUf4YmW7wQ4PTNkBDaoLyjgxKLPmvQSsOqu
- E/ABSGzqh5ESB0Q+yEKoNWBL19nnA04r3iKZXYfYkTXp1glSQ1ID09LKR/KYhWU40Ode
- /W07kIpsJihgzM/FHm2SIM6/A5Pt6I++lG4/5T9qJgS9w3P2oBhvPHkdFKNxXqySYMKl
- la9A==
-X-Gm-Message-State: AGi0PuaPQsBHp2ExSyiVEWqp+55vrIikslvTquk64tnB1cc0uhuBSmUZ
- LzzLIyZt46zZ6DHLpPNJdg==
-X-Google-Smtp-Source: APiQypLqrY1IbsEwkeqc1fPB7uBxtzjUwc62zIg6o0IpJEI79OSAmxl+HVZGBtZ2DF2+YhPeGl8i+w==
-X-Received: by 2002:a02:9a0d:: with SMTP id b13mr2129894jal.60.1586476174014; 
- Thu, 09 Apr 2020 16:49:34 -0700 (PDT)
-Received: from xps15.herring.priv ([64.188.179.248])
- by smtp.googlemail.com with ESMTPSA id w7sm93416ior.51.2020.04.09.16.49.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 16:49:33 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Will Deacon <will@kernel.org>
-Subject: [PATCH 3/3] PCI: host-generic: Eliminate pci_host_common_probe
- wrappers
-Date: Thu,  9 Apr 2020 17:49:23 -0600
-Message-Id: <20200409234923.21598-4-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200409234923.21598-1-robh@kernel.org>
-References: <20200409234923.21598-1-robh@kernel.org>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=h7ou2+MWS5yebpK+PkJaL1qSzOXz/nH64pUokezkgN0=;
+ b=cEPLRIqwZvYcBiKT1CB1so/B7lC+VOw2QLPqxd81OGqQzXAHfhziMnRuN34CZMaHxv
+ SyrkHhtLqcIlKrHi+7fvLyzxJwmxeWNDqHvhqzmEUHww7kefLz37X2yfhnBsAW7xcOOi
+ nRHpyhaE1ysYTUZkggKWahiJ2SXsqBA1qKXJr7Z1KRSHcLzt+UUIAHR4n1h6aXbqsrbV
+ yFPomV06Hx61xaPnvNjUTZGhTmggkV8Y1Zp0dDWwJ0q5JNyJq+IHrH+4sHlT7TiKUEC7
+ cp66/7UhdzxNYvp/YVxna5v7UHWNl2599QhdHlGxz8hSmxJNjjXhJMiNA3PYaPudak91
+ mcww==
+X-Gm-Message-State: AGi0PuYIuKhXItZ4oprMsKde+QP7Js6npvs251hx7osqd7a84Izvx3yl
+ qpanbD9/0b41kLGzvgpfk18XVVZB
+X-Google-Smtp-Source: APiQypJR6KOA3fPvqfWuaqk/S2szvx9gudiDB0qTYW3KcISCqn+kQOJFAM8qa4TSuauFyPNKMPiElg==
+X-Received: by 2002:a19:5f45:: with SMTP id a5mr1006421lfj.18.1586476614994;
+ Thu, 09 Apr 2020 16:56:54 -0700 (PDT)
+Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
+ [91.78.208.152])
+ by smtp.googlemail.com with ESMTPSA id i25sm131562ljg.82.2020.04.09.16.56.53
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 09 Apr 2020 16:56:54 -0700 (PDT)
+Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
+ Tegra210
+To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-10-thierry.reding@gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
+Date: Fri, 10 Apr 2020 02:56:53 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200409175238.3586487-10-thierry.reding@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_164934_835528_F9798D6E 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200409_165659_739934_A79C0F48 
+X-CRM114-Status: GOOD (  11.60  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ provider [digetx[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,251 +105,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mans Rullgard <mans@mansr.com>, Marc Gonzalez <marc.w.gonzalez@free.fr>,
- linux-pci@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
- Zhou Wang <wangzhou1@hisilicon.com>, Robert Richter <rrichter@marvell.com>,
- Jonathan Chocron <jonnyc@amazon.com>, Toan Le <toan@os.amperecomputing.com>,
- Len Brown <lenb@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Most ECAM host drivers are just different pci_ecam_ops which can be DT
-match table data. That's already the case in some cases, but let's
-do that for all the ECAM drivers. Then we can use
-of_device_get_match_data() in pci_host_common_probe() and eliminate the
-probe wrapper functions and use pci_host_common_probe() directly for
-probe.
-
-Cc: Zhou Wang <wangzhou1@hisilicon.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Andrew Murray <amurray@thegoodpenguin.co.uk>
-Cc: Bjorn Helgaas <bhelgaas@google.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Robert Richter <rrichter@marvell.com>
-Cc: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Cc: Mans Rullgard <mans@mansr.com>
-Cc: linux-pci@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- drivers/pci/controller/dwc/pcie-hisi.c    | 11 +----------
- drivers/pci/controller/pci-host-common.c  |  9 +++++++--
- drivers/pci/controller/pci-host-generic.c | 15 +--------------
- drivers/pci/controller/pci-thunder-ecam.c | 12 +++++-------
- drivers/pci/controller/pci-thunder-pem.c  | 12 +++++-------
- drivers/pci/controller/pcie-tango.c       |  7 +++++--
- include/linux/pci-ecam.h                  |  3 +--
- 7 files changed, 25 insertions(+), 44 deletions(-)
-
-diff --git a/drivers/pci/controller/dwc/pcie-hisi.c b/drivers/pci/controller/dwc/pcie-hisi.c
-index 90017045334d..0ba50fb473b1 100644
---- a/drivers/pci/controller/dwc/pcie-hisi.c
-+++ b/drivers/pci/controller/dwc/pcie-hisi.c
-@@ -332,15 +332,6 @@ static struct platform_driver hisi_pcie_driver = {
- };
- builtin_platform_driver(hisi_pcie_driver);
- 
--static int hisi_pcie_almost_ecam_probe(struct platform_device *pdev)
--{
--	struct device *dev = &pdev->dev;
--	struct pci_ecam_ops *ops;
--
--	ops = (struct pci_ecam_ops *)of_device_get_match_data(dev);
--	return pci_host_common_probe(pdev, ops);
--}
--
- static int hisi_pcie_platform_init(struct pci_config_window *cfg)
- {
- 	struct device *dev = cfg->parent;
-@@ -385,7 +376,7 @@ static const struct of_device_id hisi_pcie_almost_ecam_of_match[] = {
- };
- 
- static struct platform_driver hisi_pcie_almost_ecam_driver = {
--	.probe  = hisi_pcie_almost_ecam_probe,
-+	.probe  = pci_host_common_probe,
- 	.driver = {
- 		   .name = "hisi-pcie-almost-ecam",
- 		   .of_match_table = hisi_pcie_almost_ecam_of_match,
-diff --git a/drivers/pci/controller/pci-host-common.c b/drivers/pci/controller/pci-host-common.c
-index 6d15bc12e726..953de57f6c57 100644
---- a/drivers/pci/controller/pci-host-common.c
-+++ b/drivers/pci/controller/pci-host-common.c
-@@ -10,6 +10,7 @@
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/of_address.h>
-+#include <linux/of_device.h>
- #include <linux/of_pci.h>
- #include <linux/pci-ecam.h>
- #include <linux/platform_device.h>
-@@ -55,15 +56,19 @@ static struct pci_config_window *gen_pci_init(struct device *dev,
- 	return ERR_PTR(err);
- }
- 
--int pci_host_common_probe(struct platform_device *pdev,
--			  const struct pci_ecam_ops *ops)
-+int pci_host_common_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct pci_host_bridge *bridge;
- 	struct pci_config_window *cfg;
- 	struct list_head resources;
-+	const struct pci_ecam_ops *ops;
- 	int ret;
- 
-+	ops = of_device_get_match_data(&pdev->dev);
-+	if (!ops)
-+		return -ENODEV;
-+
- 	bridge = devm_pci_alloc_host_bridge(dev, 0);
- 	if (!bridge)
- 		return -ENOMEM;
-diff --git a/drivers/pci/controller/pci-host-generic.c b/drivers/pci/controller/pci-host-generic.c
-index fd8cff61de14..b51977abfdf1 100644
---- a/drivers/pci/controller/pci-host-generic.c
-+++ b/drivers/pci/controller/pci-host-generic.c
-@@ -11,8 +11,6 @@
- #include <linux/kernel.h>
- #include <linux/init.h>
- #include <linux/module.h>
--#include <linux/of_address.h>
--#include <linux/of_pci.h>
- #include <linux/pci-ecam.h>
- #include <linux/platform_device.h>
- 
-@@ -79,23 +77,12 @@ static const struct of_device_id gen_pci_of_match[] = {
- };
- MODULE_DEVICE_TABLE(of, gen_pci_of_match);
- 
--static int gen_pci_probe(struct platform_device *pdev)
--{
--	const struct of_device_id *of_id;
--	struct pci_ecam_ops *ops;
--
--	of_id = of_match_node(gen_pci_of_match, pdev->dev.of_node);
--	ops = (struct pci_ecam_ops *)of_id->data;
--
--	return pci_host_common_probe(pdev, ops);
--}
--
- static struct platform_driver gen_pci_driver = {
- 	.driver = {
- 		.name = "pci-host-generic",
- 		.of_match_table = gen_pci_of_match,
- 	},
--	.probe = gen_pci_probe,
-+	.probe = pci_host_common_probe,
- 	.remove = pci_host_common_remove,
- };
- module_platform_driver(gen_pci_driver);
-diff --git a/drivers/pci/controller/pci-thunder-ecam.c b/drivers/pci/controller/pci-thunder-ecam.c
-index c3fdd3e6b21c..7e8835fee5f7 100644
---- a/drivers/pci/controller/pci-thunder-ecam.c
-+++ b/drivers/pci/controller/pci-thunder-ecam.c
-@@ -357,22 +357,20 @@ const struct pci_ecam_ops pci_thunder_ecam_ops = {
- #ifdef CONFIG_PCI_HOST_THUNDER_ECAM
- 
- static const struct of_device_id thunder_ecam_of_match[] = {
--	{ .compatible = "cavium,pci-host-thunder-ecam" },
-+	{
-+		.compatible = "cavium,pci-host-thunder-ecam",
-+		.data = &pci_thunder_ecam_ops,
-+	},
- 	{ },
- };
- 
--static int thunder_ecam_probe(struct platform_device *pdev)
--{
--	return pci_host_common_probe(pdev, &pci_thunder_ecam_ops);
--}
--
- static struct platform_driver thunder_ecam_driver = {
- 	.driver = {
- 		.name = KBUILD_MODNAME,
- 		.of_match_table = thunder_ecam_of_match,
- 		.suppress_bind_attrs = true,
- 	},
--	.probe = thunder_ecam_probe,
-+	.probe = pci_host_common_probe,
- };
- builtin_platform_driver(thunder_ecam_driver);
- 
-diff --git a/drivers/pci/controller/pci-thunder-pem.c b/drivers/pci/controller/pci-thunder-pem.c
-index 2e792707ceab..3f847969143e 100644
---- a/drivers/pci/controller/pci-thunder-pem.c
-+++ b/drivers/pci/controller/pci-thunder-pem.c
-@@ -451,22 +451,20 @@ static const struct pci_ecam_ops pci_thunder_pem_ops = {
- };
- 
- static const struct of_device_id thunder_pem_of_match[] = {
--	{ .compatible = "cavium,pci-host-thunder-pem" },
-+	{
-+		.compatible = "cavium,pci-host-thunder-pem",
-+		.data = &pci_thunder_pem_ops,
-+	},
- 	{ },
- };
- 
--static int thunder_pem_probe(struct platform_device *pdev)
--{
--	return pci_host_common_probe(pdev, &pci_thunder_pem_ops);
--}
--
- static struct platform_driver thunder_pem_driver = {
- 	.driver = {
- 		.name = KBUILD_MODNAME,
- 		.of_match_table = thunder_pem_of_match,
- 		.suppress_bind_attrs = true,
- 	},
--	.probe = thunder_pem_probe,
-+	.probe = pci_host_common_probe,
- };
- builtin_platform_driver(thunder_pem_driver);
- 
-diff --git a/drivers/pci/controller/pcie-tango.c b/drivers/pci/controller/pcie-tango.c
-index 3b2b10906fdd..c56c5539da6b 100644
---- a/drivers/pci/controller/pcie-tango.c
-+++ b/drivers/pci/controller/pcie-tango.c
-@@ -295,11 +295,14 @@ static int tango_pcie_probe(struct platform_device *pdev)
- 	spin_lock_init(&pcie->used_msi_lock);
- 	irq_set_chained_handler_and_data(virq, tango_msi_isr, pcie);
- 
--	return pci_host_common_probe(pdev, &smp8759_ecam_ops);
-+	return pci_host_common_probe(pdev);
- }
- 
- static const struct of_device_id tango_pcie_ids[] = {
--	{ .compatible = "sigma,smp8759-pcie" },
-+	{
-+		.compatible = "sigma,smp8759-pcie",
-+		.data = &smp8759_ecam_ops,
-+ 	},
- 	{ },
- };
- 
-diff --git a/include/linux/pci-ecam.h b/include/linux/pci-ecam.h
-index fd0edb8b8a00..1af5cb02ef7f 100644
---- a/include/linux/pci-ecam.h
-+++ b/include/linux/pci-ecam.h
-@@ -61,8 +61,7 @@ extern const struct pci_ecam_ops al_pcie_ops;	/* Amazon Annapurna Labs PCIe */
- 
- #if IS_ENABLED(CONFIG_PCI_HOST_COMMON)
- /* for DT-based PCI controllers that support ECAM */
--int pci_host_common_probe(struct platform_device *pdev,
--			  const struct pci_ecam_ops *ops);
-+int pci_host_common_probe(struct platform_device *pdev);
- int pci_host_common_remove(struct platform_device *pdev);
- #endif
- #endif
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4gKyNkZWZp
+bmUgQ0xLX1JTVF9DT05UUk9MTEVSX0NMS19TT1VSQ0VfRU1DCQkweDE5YwouLi4KPiArI2RlZmlu
+ZSBDTEtfUlNUX0NPTlRST0xMRVJfQ0xLX1NPVVJDRV9FTUNfRExMCQkweDY2NAoKSSdkIHN1Z2dl
+c3QgdG8gZG91YmxlIGNoZWNrIGFsbCB0aGUgbWFjcm9zIGFuZCByZW1vdmUgZXZlcnl0aGluZyB1
+bnVzZWQsCnRvIG5vdCBwb2xsdXRlIHRoZSBjb2RlLgoKLi4uCj4gKyNkZWZpbmUgVFJJTV9SRUco
+Y2hhbiwgcmFuaywgcmVnLCBieXRlKQkJCQkJXAo+ICsJKCgoRU1DX1BNQUNST19PQl9ERExMX0xP
+TkdfRFFfUkFOSyAjIyByYW5rICMjIF8gIyMgcmVnICMjCVwKPiArCSAgIF9PQl9ERExMX0xPTkdf
+RFFfUkFOSyAjIyByYW5rICMjIF9CWVRFICMjIGJ5dGUgIyMgX01BU0sgJglcCj4gKwkgICBuZXh0
+LT50cmltX3JlZ3NbRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFfUkFOSyAjIwkJXAo+ICsJCQkJ
+IHJhbmsgIyMgXyAjIyByZWcgIyMgX0lOREVYXSkgPj4JXAo+ICsJICBFTUNfUE1BQ1JPX09CX0RE
+TExfTE9OR19EUV9SQU5LICMjIHJhbmsgIyMgXyAjIyByZWcgIyMJXAo+ICsJICBfT0JfRERMTF9M
+T05HX0RRX1JBTksgIyMgcmFuayAjIyBfQllURSAjIyBieXRlICMjIF9TSElGVCkJXAo+ICsJICsJ
+CQkJCQkJCVwKPiArCSAoKChFTUNfREFUQV9CUkxTSEZUXyAjIyByYW5rICMjIF9SQU5LICMjIHJh
+bmsgIyMgX0JZVEUgIyMJXAo+ICsJICAgIGJ5dGUgIyMgX0RBVEFfQlJMU0hGVF9NQVNLICYJCQkJ
+XAo+ICsJICAgIG5leHQtPnRyaW1fcGVyY2hfcmVnc1tFTUMgIyMgY2hhbiAjIwkJCVwKPiArCQkJ
+ICAgICAgX0VNQ19EQVRBX0JSTFNIRlRfICMjIHJhbmsgIyMgX0lOREVYXSkgPj4JXAo+ICsJICAg
+RU1DX0RBVEFfQlJMU0hGVF8gIyMgcmFuayAjIyBfUkFOSyAjIyByYW5rICMjIF9CWVRFICMjCVwK
+PiArCSAgIGJ5dGUgIyMgX0RBVEFfQlJMU0hGVF9TSElGVCkgKiA2NCkpCj4gKwo+ICsjZGVmaW5l
+IENBTENfVEVNUChyYW5rLCByZWcsIGJ5dGUxLCBieXRlMiwgbikJCQkJXAo+ICsJKCgobmV3W25d
+IDw8IEVNQ19QTUFDUk9fT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFuayAjIyBfICMjCVwKPiAr
+CSAgIHJlZyAjIyBfT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFuayAjIyBfQllURSAjIyBieXRl
+MSAjIyBfU0hJRlQpICYgXAo+ICsJICBFTUNfUE1BQ1JPX09CX0RETExfTE9OR19EUV9SQU5LICMj
+IHJhbmsgIyMgXyAjIyByZWcgIyMJXAo+ICsJICBfT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFu
+ayAjIyBfQllURSAjIyBieXRlMSAjIyBfTUFTSykJXAo+ICsJIHwJCQkJCQkJCVwKPiArCSAoKG5l
+d1tuICsgMV0gPDwgRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFfUkFOSyAjIyByYW5rICMjIF8g
+IyNcCj4gKwkgICByZWcgIyMgX09CX0RETExfTE9OR19EUV9SQU5LICMjIHJhbmsgIyMgX0JZVEUg
+IyMgYnl0ZTIgIyMgX1NISUZUKSAmIFwKPiArCSAgRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFf
+UkFOSyAjIyByYW5rICMjIF8gIyMgcmVnICMjCVwKPiArCSAgX09CX0RETExfTE9OR19EUV9SQU5L
+ICMjIHJhbmsgIyMgX0JZVEUgIyMgYnl0ZTIgIyMgX01BU0spKQoKTXkgZXllcy4uIDpQCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
