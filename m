@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 727BC1A36C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:17:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B13D21A36CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:18:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R2RNUI3zG0kwJkNPV033x7MxAoYZJbjvckge/CpF9TM=; b=hH3dwA/39sK+I2
-	HG5K7XknHPoe+HWCdhuzUtH4JCOkE6Qr8h4aJ+V/U4Qs1noZSstkDsNIj05Vah0KoMzHS+BBEa6hZ
-	H7794bwObDisl+gDmCzPy/XJyorrsI8NBpeqJ8CQ5UmwI4Cn6e45/FPc6Lxthig5C4yfsS2qwsXfC
-	jhAxy566mqG1znk4CeDAgxuhInhIUCg3Yqur75N7WmO+G1U7pGSjidVgBv3VyYYxHuD6UBNYsMD5m
-	4MVAe+dbVt6bLlWUsTNIUBLvCL0aSyI4AG318XcwCiS8Uk4VUXZrRvqCXHQqnHoOQny3ALAYNsNjQ
-	S0R1i2LfmybLQvJ0TKVw==;
+	List-Owner; bh=aksR3WTDGYzHMnGmdYVu0wsy1ZmiukZVQDHDJxtxMF8=; b=ad75GH5sM1MBv4
+	eoDp1QH4CCo2doI6sIyAcr2mpMtTyls+V0aRuV4A3vgt4nyboz1j/En2H8pPTTtV672OcUh0UAS1h
+	uldbmLGCZWVs+4/fZjkekqPreAXZm8BCZg8apW/W0K99GdhGSPDeO9JGYWx9LvuvFgISVfp8dt23c
+	rDoSBvRjME0tQtJZg3y2B2XGzLXnkM6SlO4g1mCuUA58+LQJbMfeKMeFmi3HgC4qBYwSio5BlxZ+e
+	y5Ev24ztX+RWTfAW81xZvBSVxKr9RQLQFMbPGNse5s3Rq5fD9ExfWFcToXgYNFU1qL0rKCKLfzYON
+	17r/j4hZt5iQhlYVgV7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMYvc-0005xy-TS; Thu, 09 Apr 2020 15:17:16 +0000
-Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
- helo=mx0b-0016f401.pphosted.com)
+	id 1jMYwm-0006KB-L4; Thu, 09 Apr 2020 15:18:28 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMYvV-0005xZ-Kw
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:17:11 +0000
-Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
- by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 039FFWBC014747; Thu, 9 Apr 2020 08:16:46 -0700
+ id 1jMYwe-0006Jj-RP
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:18:23 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 039FGrOm019691; Thu, 9 Apr 2020 08:17:43 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
  h=from : to : cc :
  subject : date : message-id : references : in-reply-to : content-type :
  content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
- b=sUp3r0bIO5hScSiL0TcnvoiHNLaTnxqALnZPiXMQY2VU6Ia9zIVFxebwcn1i65lg3/nH
- E/2qNshFC/GQS7k7+/TY6NrveMNZ/dbF3sEN3ZQhZWmgyHKKJo5EZ8DqvE1aqkSztDXb
- OWHzyDQ9IVa6KHpqHrld/n174lQl1ZVXeJ7kRd0OlTH93QP0poYLNjbWm95QTmrHkv6E
- EZDs6ek6vN+wDSo9GP8GDGPswHAQOZ08GbaQfx8/GJLv5lEvaBnC+BmfuFRMzdVcpB/g
- bKMzZdd/UqQQkHDRYwm35fnI+aJ88MWcwSJLwq54hrsQi9p3eRCNwPMGSEt6RuQCYKkG 3A== 
-Received: from sc-exch01.marvell.com ([199.233.58.181])
- by mx0a-0016f401.pphosted.com with ESMTP id 3091jwh05s-1
+ bh=kZ2+j0FCzkWqNio6rCPrs7enWlq6NYbcuZo1CoUS2GQ=;
+ b=Kc94aWrlfz0KrcCajAThCRyZax+qV77EhqG68kHApX4VYvxR1OH0ggcZ+PG5M7NUxIbX
+ 8urkkm0P4aUVxNSQe9/ZihHSL+8vGXISDj5+sd/mbtbHSPjMFCVXSTd3hJJI518Vtd7x
+ OxAlZPN2zBFvaUnlZq/fcCmPp041n/W7gCN1DzZHQIBqJleVebwDr67XsWH9QaA3n0lA
+ 2fi7z5V5BqvTTQ1IN5OEmqmFGQh0vX+F69amx+5eRVnBDmeB/hR5cHXZlY35GhwFKI00
+ Mlo5I5pgnpgTVrsYE8Hxrz5Y8lSIIJqtQi0ZnMz7V1A8TDDU1ODyudRKHXTdya+GMbdb cA== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 3091me8y58-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 09 Apr 2020 08:16:45 -0700
-Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH01.marvell.com
- (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Thu, 9 Apr
- 2020 08:16:44 -0700
-Received: from NAM04-BN3-obe.outbound.protection.outlook.com (104.47.46.55) by
- SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
- (TLS) id
- 15.0.1497.2 via Frontend Transport; Thu, 9 Apr 2020 08:16:44 -0700
+ Thu, 09 Apr 2020 08:17:43 -0700
+Received: from SC-EXCH04.marvell.com (10.93.176.84) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Thu, 9 Apr
+ 2020 08:17:41 -0700
+Received: from NAM10-MW2-obe.outbound.protection.outlook.com (104.47.55.107)
+ by SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Thu, 9 Apr 2020 08:17:41 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LsnOIk35nrprwRoCPBsZQQPqYwHKEurGuyF/3ae9CoxkOlmAu6sqB7LmTluL+EZERCaVL+0P9Rqi9Sl72/rXlpcWztx0zqGYWbKp7nDKGTAh4qZ9OGkyTQ6kIR8uMh8p8fEtt2ZQkgCjm1Ml7qtnL8F7W43bXZVZMqZh+f+n3/Ucct9oBszjLq6sR+k0FJyQ5vKgPAHLdTuuGqrK40g9V3Iho9nCy7/H9CiQOsGB26/zIzYKQYdkebWur9Vw9md99u5eJtK0pkS7WAkHMYrHqUim1FAkKIBauJWOUWhX530HPQb3R4n+39GrzI3Ha0MuRpWB/FvEQNKRZ0GRidHruQ==
+ b=gSuTPqzcO3FdRszOiqJFCb4/R46kRs0DMNgNyQpex3GiSEPdKhBcDVmByOO1zUsrXtdklh80sW/9fg/wEZR41a9j6s2zjMo2JNxOmrCsaOrzV6gW1sB2oGJoR53u3Mn6EwlQIz851wGIuHiIb9utVqGqMubNoTy0yK+rEj2D64Ie5qcRM5VB5IAci0pLL+rbhrNWCB4+92pyC+5stXLknJMk6uDO5H8Add7XiWnVJI1HTkDpR6Di0yVn4H0lyNSLJVdA4PDwyvPrzaj5pwm1swV4Q4c3HgYpTFxHtCtILkvnFkyhETjuSJGI1AkgtiiQgui139ackrS5wYgd317CQQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
- b=QJuPQJ1U4+mBYkOiNJrxwXAI7O3AYoygCGb3K14xnvhZxv55TcONjwkmuTKOqygdMAgNAt3hKV4YVo2CG/3JpAH917Jp6pMixedpaacYQwYl4W4d6vMS6gEr381p3RNi+zz0RK5Wz/1aQKhcAC2ZOFkjPMbVF24iWLsY8GW45BPg451w91z3HrthELpNYBKvCsRDP8/sT54p25ABjYy8fuHZQYhttE5tXjyMmpyB/oud6Hc1d/WIsQHU6k+3sCQY5NilCbkJwZCEadJ/+h8d15o8Gybdj/wDtVsvVSqDTOJ0LUm/0Clh+y7LuKTUh6JWIVBUvLGbRU8yuxmCfgXLAQ==
+ bh=kZ2+j0FCzkWqNio6rCPrs7enWlq6NYbcuZo1CoUS2GQ=;
+ b=WvoNSrliSluATuBJ18+QokXB0i9FyBDAaa0Z8uK6hzyif/kUU1iBYoYvKZwObAz0wim/M2aMbXtTgx/pX8l6jOAxUq4LVB/Vo4FuTEmDdE8Uxvfr8gUQsj+/zWUJ2kfQ98YyChrPdLdNaWwxPagySk+cWoQaDefMricmqav2IL9ghTLwgDjZEjnWeXwNAZ9ogQ8CHR6WPkmzCvx+q9T0pMzcZrHEoyjVO85FTgnkGD7h8Y07u2PlIXAby+ojp+T917as1OfInkZ5QJl6BgNDSsJh2DO0sur201fIlQMowyDHZd7bbM2vfGEzi/KIhOq6Tf/U4Rzle3mX0kbueZ5oyQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
  dkim=pass header.d=marvell.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
- b=Qtb0JMnWhJPvc0ry72i7ykbiPNn9qXtIqfAC+rLbzWr0b585oXY2dRVW+mMgDA7Tqy/q8jrsuNTl8mbGvlSLfUSDksbdO2RBDbFeCA6rI6v7QCaONmGDrOulsNUyjKGHIghaSaunqQIZd1nQ+sE2zzLxKrrXKS4EtEfE+cQNIUw=
+ bh=kZ2+j0FCzkWqNio6rCPrs7enWlq6NYbcuZo1CoUS2GQ=;
+ b=sfGOb5qoCEnzYa/fCbPmRauBX/6FCvd5fpADnmDvfey0HttKvHsQSh03dspYFBiOSKj+VD4PG/b4xESCs8p9iMlsq61N/5NScabJPtb+fUw4Z9GSPh2p9+7E5SYOCqUEPr9Gacko9d1QVWbpHV+3PYdVk4Ja64C6/rochgDZ8+Q=
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com (2603:10b6:a03:137::17)
- by BYAPR18MB2616.namprd18.prod.outlook.com (2603:10b6:a03:13c::17)
+ by BYAPR18MB2758.namprd18.prod.outlook.com (2603:10b6:a03:112::31)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.19; Thu, 9 Apr
- 2020 15:16:42 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.18; Thu, 9 Apr
+ 2020 15:17:40 +0000
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::65f8:9bfe:5fa5:1280]) by BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::65f8:9bfe:5fa5:1280%3]) with mapi id 15.20.2878.022; Thu, 9 Apr 2020
- 15:16:42 +0000
+ 15:17:40 +0000
 From: Alex Belits <abelits@marvell.com>
 To: "frederic@kernel.org" <frederic@kernel.org>, "rostedt@goodmis.org"
  <rostedt@goodmis.org>
-Subject: [PATCH 02/13] task_isolation: vmstat: add vmstat_idle function
-Thread-Topic: [PATCH 02/13] task_isolation: vmstat: add vmstat_idle function
-Thread-Index: AQHWDoHfkpuEbVFPn02f+uWSy0xqog==
-Date: Thu, 9 Apr 2020 15:16:42 +0000
-Message-ID: <6b3631e4543e467b6261f7a4bf0792d6f86eafc7.camel@marvell.com>
+Subject: [PATCH v3 03/13] task_isolation: add instruction synchronization
+ memory barrier
+Thread-Topic: [PATCH v3 03/13] task_isolation: add instruction synchronization
+ memory barrier
+Thread-Index: AQHWDoICUCw40vC9nkuNpTFu2Vf0Xg==
+Date: Thu, 9 Apr 2020 15:17:40 +0000
+Message-ID: <d995795c731d6ecceb36bdf1c1df3d72fefd023d.camel@marvell.com>
 References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
  <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
  <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
@@ -90,46 +90,46 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [173.228.7.197]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a53c63b6-40b1-40c9-2b77-08d7dc990282
-x-ms-traffictypediagnostic: BYAPR18MB2616:
+x-ms-office365-filtering-correlation-id: f48ac113-0493-42dc-d74a-08d7dc992507
+x-ms-traffictypediagnostic: BYAPR18MB2758:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR18MB261621C1E2CADC3B6D1D0FD0BCC10@BYAPR18MB2616.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
+x-microsoft-antispam-prvs: <BYAPR18MB275888C99422094A841557ADBCC10@BYAPR18MB2758.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1303;
 x-forefront-prvs: 0368E78B5B
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:BYAPR18MB2535.namprd18.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(376002)(136003)(366004)(346002)(39860400002)(396003)(7416002)(8676002)(5660300002)(26005)(71200400001)(2616005)(6486002)(6506007)(86362001)(2906002)(186003)(81156014)(64756008)(4326008)(316002)(6512007)(66946007)(81166007)(76116006)(66476007)(66446008)(478600001)(8936002)(54906003)(110136005)(36756003)(66556008);
+ SFS:(10009020)(4636009)(39860400002)(366004)(396003)(136003)(376002)(346002)(478600001)(36756003)(7416002)(71200400001)(2906002)(186003)(26005)(86362001)(2616005)(316002)(6506007)(110136005)(54906003)(64756008)(66556008)(6486002)(8936002)(66946007)(66476007)(4326008)(5660300002)(66446008)(6512007)(8676002)(81166007)(76116006)(81156014);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: marvell.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: QjxweUkuXp/ZshR6xy6o4DYotktxOEFmsODwQKeGHfo+rUkO1EjFxsw4A5hHfL/8mAMETU5XhdznmGFRuvPhgGWZaAjdWcK8cV43JiUP+sfgj3vy0EAjYAy56bSJ0J2vQVmE32SM4HD95bDFDVtoKJursaPG7BLD5d7wNqxAQiWTvCRNtOfIP9Dh2VDYz7J8oI7FS2jnlf4CgP32XDu3fkSj/Zx2G7eSqqo7+vY3P1Nx+xVzgvs9IVW0Kzbj8FQ8ZTQB0IhIlDxNlWjpqG+VGtUaOqcSPj5MwccUuLS0O2O4pbDtp5k5OLz8jT5PlwHZRmcCETB1IWgPoURIiohISTiA3lny8gZ45LQPXN5Cer91RHToKy0O1w7zWiOiFWRPs2zQ1+XVUl4ya9HiRVBHoIo7KcLJCdkehfLLy0AXhDlSQN99VmHXiclz7YYFwtvC
-x-ms-exchange-antispam-messagedata: +fmh8wJONgk5aIB5lyoWnYAYcdby1Xnftvcgw3LGZvG64aKRZk+SbSF740SPEjgZiBahW6AKeYRMCc+NP2Hlcc1Y4V9qVdptP1qNg9X1YRnBtlZBWVMPWeOZ/CNcdOifFHc6ygYVOfMevSU/HgRPdA==
-Content-ID: <56A6499FF35C8548BB3097BDC4A1FF84@namprd18.prod.outlook.com>
+x-microsoft-antispam-message-info: 1UPrewe9j5MkY+wG/WKajqXFVDTnUiTHFMhogoclXy0Rw/5moqUaZ5jCOSkPCfSINsK3k73LcFWKobQkCbjbeA4KiB3hndNDDdwWaG7BYshR5Tz0Sv0pE/bJ5C0wAh3lfckuoQzrzwwrj2JSdSXOvYlfzYzI2InWyr8EjNsR+0unUv4EaGF33fciOSoRJ0VmxdBwBn4mOnFv3YBl8dN8cOTrsYteihDjkgQyOTFuRBYqwVA4Z+lZCkdBBiSGVxZPmUemwQ2Angf925SJZzAuDrPs5Jn8q0FPlQNC4wp/vjMIuS7aiRx6gJm2r+SDn3CF0nsw19oQ5tEL8MN/E58qHfAO2EPiuvlaXox3sY9mEhtcM1V4BEejq4uGdTwdb1POruFSZh1mUo2cZN8lD8S+MeLZIQ4YowWhuPqR60d/lA+KaxKajNivYISa61ZsdJwt
+x-ms-exchange-antispam-messagedata: 0o8qkoLBk/b1R3YpNyeGdgB8rpVkEHsucY6QTU9XECOwnAeKLsjq8jDAc6JLtVm4nvujBXjDG8aq3nREQ8bzgbZne5itngwLnDTxI5ES16p+BQQyhoG1Wy+RY9fRcQtht6AgPU2eTIYUfRGYugibOg==
+Content-ID: <C879A473818C5842AE8227975E64E5F0@namprd18.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a53c63b6-40b1-40c9-2b77-08d7dc990282
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Apr 2020 15:16:42.4387 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f48ac113-0493-42dc-d74a-08d7dc992507
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Apr 2020 15:17:40.4002 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HQpdoAq+oCceNbT/WvBlENAVb/q8aPTQnJOZzyrKQ4kCYguiLJ+rs85VEaKOt2qGSu0fAcCdxRX6O/stToMErg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2616
+X-MS-Exchange-CrossTenant-userprincipalname: W3KXvRHORmUTmHCt1fRAQvcViE7LPxCbEhHIEFOke9o+mCnnWbZxxGws1+KrZHRdhNqBTtPQy7og592j5gd6Ug==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2758
 X-OriginatorOrg: marvell.com
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-09_05:2020-04-07,
  2020-04-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_081710_048040_FE2207C9 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20200409_081821_172327_C3F9994B 
+X-CRM114-Status: GOOD (  12.19  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.148.174 listed in list.dnswl.org]
+ low trust [67.231.156.173 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -166,59 +166,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This function checks to see if a vmstat worker is not running,
-and the vmstat diffs don't require an update.  The function is
-called from the task-isolation code to see if we need to
-actually do some work to quiet vmstat.
+Some architectures implement memory synchronization instructions for instruction cache. Make a separate kind of barrier that calls them.
 
-Signed-off-by: Chris Metcalf <cmetcalf@mellanox.com>
 Signed-off-by: Alex Belits <abelits@marvell.com>
 ---
- include/linux/vmstat.h |  2 ++
- mm/vmstat.c            | 10 ++++++++++
- 2 files changed, 12 insertions(+)
+ arch/arm/include/asm/barrier.h   | 2 ++
+ arch/arm64/include/asm/barrier.h | 2 ++
+ include/asm-generic/barrier.h    | 4 ++++
+ 3 files changed, 8 insertions(+)
 
-diff --git a/include/linux/vmstat.h b/include/linux/vmstat.h
-index 2bc5e85f2514..66d9ae32cf07 100644
---- a/include/linux/vmstat.h
-+++ b/include/linux/vmstat.h
-@@ -271,6 +271,7 @@ extern void __dec_node_state(struct pglist_data *, enum node_stat_item);
+diff --git a/arch/arm/include/asm/barrier.h b/arch/arm/include/asm/barrier.h
+index 83ae97c049d9..6def62c95937 100644
+--- a/arch/arm/include/asm/barrier.h
++++ b/arch/arm/include/asm/barrier.h
+@@ -64,12 +64,14 @@ extern void arm_heavy_mb(void);
+ #define mb()		__arm_heavy_mb()
+ #define rmb()		dsb()
+ #define wmb()		__arm_heavy_mb(st)
++#define imb()		isb()
+ #define dma_rmb()	dmb(osh)
+ #define dma_wmb()	dmb(oshst)
+ #else
+ #define mb()		barrier()
+ #define rmb()		barrier()
+ #define wmb()		barrier()
++#define imb()		barrier()
+ #define dma_rmb()	barrier()
+ #define dma_wmb()	barrier()
+ #endif
+diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
+index 7d9cc5ec4971..12a7dbd68bed 100644
+--- a/arch/arm64/include/asm/barrier.h
++++ b/arch/arm64/include/asm/barrier.h
+@@ -45,6 +45,8 @@
+ #define rmb()		dsb(ld)
+ #define wmb()		dsb(st)
  
- void quiet_vmstat(void);
- void quiet_vmstat_sync(void);
-+bool vmstat_idle(void);
- void cpu_vm_stats_fold(int cpu);
- void refresh_zone_stat_thresholds(void);
- 
-@@ -374,6 +375,7 @@ static inline void refresh_zone_stat_thresholds(void) { }
- static inline void cpu_vm_stats_fold(int cpu) { }
- static inline void quiet_vmstat(void) { }
- static inline void quiet_vmstat_sync(void) { }
-+static inline bool vmstat_idle(void) { return true; }
- 
- static inline void drain_zonestat(struct zone *zone,
- 			struct per_cpu_pageset *pset) { }
-diff --git a/mm/vmstat.c b/mm/vmstat.c
-index 1fa0b2d04afa..5c4aec651062 100644
---- a/mm/vmstat.c
-+++ b/mm/vmstat.c
-@@ -1879,6 +1879,16 @@ void quiet_vmstat_sync(void)
- 	refresh_cpu_vm_stats(false);
- }
- 
-+/*
-+ * Report on whether vmstat processing is quiesced on the core currently:
-+ * no vmstat worker running and no vmstat updates to perform.
-+ */
-+bool vmstat_idle(void)
-+{
-+	return !delayed_work_pending(this_cpu_ptr(&vmstat_work)) &&
-+		!need_update(smp_processor_id());
-+}
++#define imb()		isb()
 +
- /*
-  * Shepherd worker thread that checks the
-  * differentials of processors that have their worker
+ #define dma_rmb()	dmb(oshld)
+ #define dma_wmb()	dmb(oshst)
+ 
+diff --git a/include/asm-generic/barrier.h b/include/asm-generic/barrier.h
+index 85b28eb80b11..d5a822fb3e92 100644
+--- a/include/asm-generic/barrier.h
++++ b/include/asm-generic/barrier.h
+@@ -46,6 +46,10 @@
+ #define dma_wmb()	wmb()
+ #endif
+ 
++#ifndef imb
++#define imb		barrier()
++#endif
++
+ #ifndef read_barrier_depends
+ #define read_barrier_depends()		do { } while (0)
+ #endif
 -- 
 2.20.1
 
