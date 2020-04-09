@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4B381A30CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:26:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A0801A30D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ReWyIdZ4Cct74na3JMB6ZHzQ19jGF2SdFboBDncMkdQ=; b=Xd35haRVp0pBaP
-	4gQwRu7WQ1bFA/x9BNESsQynS/ZNvEVrWishmRcvCorvpDKhoTK1iBh8lOO7Ynl1TuI1NGDTVLX5R
-	mK6HuSDRqyCVzCvyWxOrizM/udYwCUSXGn/pZ8YFMT0uR6l68waOlPdOMa2lxpTUJ7MNHCglauInx
-	WskQGz9n2Vp262SUqB9kumi42eSYWvg/zZ0DTBn2zYAnljTkAE1uQzmYUPeYUJ8VODcvdecLzIC0f
-	dn/Jl1G6fdtax/Gp6exOkh2vbIs+r2wm3DHUWNgm6KANU+BIJpieM+oWYnz7jZ0u61JrqxieWc8r9
-	rQZWa1OOLaW9mK7ISAuQ==;
+	List-Owner; bh=TkWL4O6PfnUmjFysaP2xviEBvqez/xxXSqTuRh+l3aw=; b=mgeoV/6gj2ApY0
+	NqnkeUSDh+Dx2Ub4WO1mPrDYacf5LXV6YHXX4zamums/ZDr5Nbhiic5dWWvV2q4v/dJna6LlLlRBO
+	2OidFHuW0vsnFgeTlMO2YhiUurbWYc0sJmidw4Rfi7jM5AULU38zOFpUtVFOgil+n065pbKyfitj2
+	bLO3v3kIx0Ld99YAd8vWTwG93O4uKyJOlnkaH65nc9vkm2uyHhMoOTffnLVGG+4ox+I7QVtOGbTg6
+	XRpvqolw8vJVie8tWoezqOrVCR1k8lmb4efEURNmjyjxv6MUChj0nQW6zlw3t5wNTFAy17wfVRPVu
+	B7MQU4GfZTjh0YGEmqpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMSVZ-0003hi-0x; Thu, 09 Apr 2020 08:25:57 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1jMSWt-0003z7-52; Thu, 09 Apr 2020 08:27:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMSVR-0003h0-1V
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:25:52 +0000
-X-Originating-IP: 78.193.40.249
-Received: from kb-xps (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id D6FF9240013;
- Thu,  9 Apr 2020 08:25:32 +0000 (UTC)
-Date: Thu, 9 Apr 2020 10:25:31 +0200
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: William Breathitt Gray <vilhelm.gray@gmail.com>
-Subject: Re: [PATCH 3/3] counter: Add atmel TCB capture counter
-Message-ID: <20200409082531.GE1489441@kb-xps>
-References: <20200406155320.1291701-1-kamel.bouhara@bootlin.com>
- <20200406155320.1291701-4-kamel.bouhara@bootlin.com>
- <20200408213013.GA30867@icarus>
+ id 1jMSWk-0003xu-8T
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:27:12 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B964120784;
+ Thu,  9 Apr 2020 08:27:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586420829;
+ bh=nCDNU4IlgiFK5b54p5i4/sKzgnH90+gZuGoD5pEuGJ4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Y9aJo5AUWaQuszvfGfnXk5dN6FBi6IFFk8qqm8O7xKAPKSfsJwMiGSxGjxXr/ljM1
+ qAJX5Zt68OT3cGQz8xnCgYTE6F7PUAGu5F5M3gR7g1q+EzYGbOWB140zXXpz7yknmx
+ y84FuWlxdp2GXaL9aETF3n3ei+e48tBA1sLxf/ko=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jMSWh-001qkp-SG; Thu, 09 Apr 2020 09:27:08 +0100
+Date: Thu, 9 Apr 2020 09:27:06 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
+Message-ID: <20200409092706.74e6bd1d@why>
+In-Reply-To: <cc6bed09-33dd-027a-126f-ed22389c1624@arm.com>
+References: <20200406150355.4859-1-james.morse@arm.com>
+ <20200408110726.4d81bc3b@why>
+ <cc6bed09-33dd-027a-126f-ed22389c1624@arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408213013.GA30867@icarus>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, andre.przywara@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_012549_360109_71ABC676 
-X-CRM114-Status: GOOD (  33.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200409_012710_344610_5210D09E 
+X-CRM114-Status: GOOD (  33.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,543 +91,261 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Andre Przywara <andre.przywara@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 05:31:03PM -0400, William Breathitt Gray wrote:
-> On Mon, Apr 06, 2020 at 05:53:20PM +0200, Kamel Bouhara wrote:
-> > This drivers allows to use the capture mode of the Timer Counter Block
-> > hardware block available in Atmel SoCs through the counter subsystem.
-> >
-> > Two functions of the counter are supported for the moment: period
-> > capture and quadrature decoder. The latter is only supported by the
-> > SAMA5 series of SoCs.
-> >
-> > For the period capture mode a basic setup has been chosen that will
-> > reset the counter each time the period is actually reached. Of course
-> > the device offers much more possibilities.
-> >
-> > For quadrature mode, both channel 0 and 1 must be configured even if we
-> > only capture the position (no revolution/rotation).
-> >
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
->
-> Hi Kamel,
->
+Hi James,
 
-Hi William,
+On Wed, 8 Apr 2020 12:16:01 +0100
+James Morse <james.morse@arm.com> wrote:
 
-> Thank you for submitting support for this driver. Since this is a new
-> counter driver, make sure to create an entry for it in the top-level
-> MAINTAINERS file so users know who to contact to report bugs and other
-> issues.
->
+> Hi Marc,
+> 
+> On 08/04/2020 11:07, Marc Zyngier wrote:
+> > On Mon,  6 Apr 2020 16:03:55 +0100
+> > James Morse <james.morse@arm.com> wrote:
+> >   
+> >> kvm_arch_timer_get_input_level() needs to get the arch_timer_context for
+> >> a particular vcpu, and uses kvm_get_running_vcpu() to find it.
+> >>
+> >> kvm_arch_timer_get_input_level() may be called to handle a user-space
+> >> write to the redistributor, where the vcpu is not loaded. This causes
+> >> kvm_get_running_vcpu() to return NULL:
+> >> | Unable to handle kernel paging request at virtual address 0000000000001ec0
+> >> | Mem abort info:
+> >> |   ESR = 0x96000004
+> >> |   EC = 0x25: DABT (current EL), IL = 32 bits
+> >> |   SET = 0, FnV = 0
+> >> |   EA = 0, S1PTW = 0
+> >> | Data abort info:
+> >> |   ISV = 0, ISS = 0x00000004
+> >> |   CM = 0, WnR = 0
+> >> | user pgtable: 4k pages, 48-bit VAs, pgdp=000000003cbf9000
+> >> | [0000000000001ec0] pgd=0000000000000000
+> >> | Internal error: Oops: 96000004 [#1] PREEMPT SMP
+> >> | Modules linked in: r8169 realtek efivarfs ip_tables x_tables
+> >> | CPU: 1 PID: 2615 Comm: qemu-system-aar Not tainted 5.6.0-rc7 #30
+> >> | Hardware name: Marvell mvebu_armada-37xx/mvebu_armada-37xx, BIOS 2018.03-devel-18.12.3-gc9aa92c-armbian 02/20/2019
+> >> | pstate: 00000085 (nzcv daIf -PAN -UAO)
+> >> | pc : kvm_arch_timer_get_input_level+0x1c/0x68
+> >> | lr : kvm_arch_timer_get_input_level+0x1c/0x68
+> >>
+> >> | Call trace:
+> >> |  kvm_arch_timer_get_input_level+0x1c/0x68
+> >> |  vgic_get_phys_line_level+0x3c/0x90
+> >> |  vgic_mmio_write_senable+0xe4/0x130
+> >> |  vgic_uaccess+0xe0/0x100
+> >> |  vgic_v3_redist_uaccess+0x5c/0x80
+> >> |  vgic_v3_attr_regs_access+0xf0/0x200
+> >> |  nvgic_v3_set_attr+0x234/0x250
+> >> |  kvm_device_ioctl_attr+0xa4/0xf8
+> >> |  kvm_device_ioctl+0x7c/0xc0
+> >> |  ksys_ioctl+0x1fc/0xc18
+> >> |  __arm64_sys_ioctl+0x24/0x30
+> >> |  do_el0_svc+0x7c/0x148
+> >> |  el0_sync_handler+0x138/0x258
+> >> |  el0_sync+0x140/0x180
+> >> | Code: 910003fd f9000bf3 2a0003f3 97ff650c (b95ec001)
+> >> | ---[ end trace 81287612d93f1e70 ]---
+> >> | note: qemu-system-aar[2615] exited with preempt_count 1
+> >>
+> >> Loading the vcpu doesn't make a lot of sense for handling a device ioctl(),
+> >> so instead pass the vcpu through to kvm_arch_timer_get_input_level(). Its
+> >> not clear that an intid makes much sense without the paired vcpu.  
+> > 
+> > I don't fully agree with the analysis, Remember we are looking at the
+> > state of the physical interrupt associated with a virtual interrupt, so
+> > the vcpu doesn't quite make sense here if it isn't loaded.
+> > 
+> > What does it mean to look at the HW timer when we are not in the right
+> > context? For all we know, it is completely random (the only guarantee
+> > we have is that it is disabled, actually).  
+> 
+> > My gut feeling is that this is another instance where we should provide
+> > specific userspace accessors that would only deal with the virtual
+> > state, and leave anything that deals with the physical state of the
+> > interrupt to be exercised only by the guest.  
+> 
+> > Does it make sense?  
+> 
+> Broadly, yes. Specifically ... I'm not familiar enough with this code to work out where
+> such a change should go!
+> 
+> ~20 mins of grepping later~
+> 
+> Remove REGISTER_DESC_WITH_LENGTH() so that uaccess helpers have to be provided, and forbid
+> NULL for the ur/uw values in REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED()...?
 
-I'll skip this if you're ok with the fact that the file name already
-match the at91 maintainers ?
+I'd suggest something like this (untested, of course):
 
-> I've written some more comments inline below.
->
-> > ---
-> >  drivers/counter/Kconfig             |  11 +
-> >  drivers/counter/Makefile            |   1 +
-> >  drivers/counter/atmel-tcb-capture.c | 388 ++++++++++++++++++++++++++++
-> >  3 files changed, 400 insertions(+)
-> >  create mode 100644 drivers/counter/atmel-tcb-capture.c
-> >
-> > diff --git a/drivers/counter/Kconfig b/drivers/counter/Kconfig
-> > index c80fa76bb531..c50d7453ec33 100644
-> > --- a/drivers/counter/Kconfig
-> > +++ b/drivers/counter/Kconfig
-> > @@ -70,4 +70,15 @@ config FTM_QUADDEC
-> >  	  To compile this driver as a module, choose M here: the
-> >  	  module will be called ftm-quaddec.
-> >
-> > +config ATMEL_TCB_CAPTURE
-> > +	tristate "Atmel Timer Counter Capture driver"
-> > +	depends on HAS_IOMEM && OF
-> > +	select REGMAP_MMIO
-> > +	help
-> > +	  Select this option to enable the Atmel Timer Counter Block
-> > +	  capture driver.
-> > +
-> > +	  To compile this driver as a module, choose M here: the
-> > +	  module will be called atmel-tcb-capture.
-> > +
-> >  endif # COUNTER
-> > diff --git a/drivers/counter/Makefile b/drivers/counter/Makefile
-> > index 55142d1f4c43..70c5b8924588 100644
-> > --- a/drivers/counter/Makefile
-> > +++ b/drivers/counter/Makefile
-> > @@ -10,3 +10,4 @@ obj-$(CONFIG_STM32_TIMER_CNT)	+= stm32-timer-cnt.o
-> >  obj-$(CONFIG_STM32_LPTIMER_CNT)	+= stm32-lptimer-cnt.o
-> >  obj-$(CONFIG_TI_EQEP)		+= ti-eqep.o
-> >  obj-$(CONFIG_FTM_QUADDEC)	+= ftm-quaddec.o
-> > +obj-$(CONFIG_ATMEL_TCB_CAPTURE)	+= atmel-tcb-capture.o
-> > diff --git a/drivers/counter/atmel-tcb-capture.c b/drivers/counter/atmel-tcb-capture.c
-> > new file mode 100644
-> > index 000000000000..6ac809503f90
-> > --- /dev/null
-> > +++ b/drivers/counter/atmel-tcb-capture.c
-> > @@ -0,0 +1,388 @@
-> > +// SPDX-License-Identifier: GPL-2.0-only
-> > +/**
-> > + * Copyright (C) 2020 Atmel
-> > + *
-> > + * Author: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > + *
-> > + */
-> > +#include <linux/clk.h>
-> > +#include <linux/counter.h>
-> > +#include <linux/mfd/syscon.h>
-> > +#include <linux/module.h>
-> > +#include <linux/mutex.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <soc/at91/atmel_tcb.h>
-> > +
-> > +#define ATMEL_TC_CMR_MASK	(ATMEL_TC_LDRA_RISING | ATMEL_TC_LDRB_FALLING | \
-> > +				 ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_LDBDIS | \
-> > +				 ATMEL_TC_LDBSTOP)
-> > +
-> > +#define ATMEL_TC_QDEN			BIT(8)
-> > +#define ATMEL_TC_POSEN			BIT(9)
-> > +
-> > +struct atmel_tc_data {
-> > +	const struct atmel_tcb_config *tc_cfg;
-> > +	struct counter_device counter;
-> > +	struct regmap *regmap;
-> > +	int qdec_mode;
-> > +	int num_channels;
-> > +	int channel[2];
-> > +	bool trig_inverted;
-> > +};
-> > +
-> > +enum atmel_tc_count_function {
-> > +	ATMEL_TC_FUNCTION_INCREASE,
-> > +	ATMEL_TC_FUNCTION_QUADRATURE,
-> > +};
-> > +
-> > +static enum counter_count_function atmel_tc_count_functions[] = {
-> > +	[ATMEL_TC_FUNCTION_INCREASE] = COUNTER_COUNT_FUNCTION_INCREASE,
-> > +	[ATMEL_TC_FUNCTION_QUADRATURE] = COUNTER_COUNT_FUNCTION_QUADRATURE_X4,
-> > +};
-> > +
-> > +enum atmel_tc_synapse_action {
-> > +	ATMEL_TC_SYNAPSE_ACTION_NONE = 0,
-> > +	ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE,
-> > +	ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE,
-> > +	ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE
-> > +};
-> > +
-> > +static enum counter_synapse_action atmel_tc_synapse_actions[] = {
-> > +	[ATMEL_TC_SYNAPSE_ACTION_NONE] = COUNTER_SYNAPSE_ACTION_NONE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE] = COUNTER_SYNAPSE_ACTION_RISING_EDGE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE] = COUNTER_SYNAPSE_ACTION_FALLING_EDGE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE] = COUNTER_SYNAPSE_ACTION_BOTH_EDGES,
-> > +};
-> > +
-> > +static struct counter_signal atmel_tc_count_signals[] = {
-> > +	{
-> > +		.id = 0,
-> > +		.name = "Channel A",
-> > +	},
-> > +	{
-> > +		.id = 1,
-> > +		.name = "Channel B",
-> > +	}
-> > +};
-> > +
-> > +static struct counter_synapse atmel_tc_count_synapses[] = {
-> > +	{
-> > +		.actions_list = atmel_tc_synapse_actions,
-> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-> > +		.signal = &atmel_tc_count_signals[0]
-> > +	},
-> > +	{
-> > +		.actions_list = atmel_tc_synapse_actions,
-> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-> > +		.signal = &atmel_tc_count_signals[1]
-> > +	}
-> > +};
-> > +
-> > +static int atmel_tc_count_function_get(struct counter_device *counter,
-> > +				       struct counter_count *count,
-> > +				       size_t *function)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +
-> > +	if (priv->qdec_mode)
-> > +		*function = ATMEL_TC_FUNCTION_QUADRATURE;
-> > +	else
-> > +		*function = ATMEL_TC_FUNCTION_INCREASE;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_function_set(struct counter_device *counter,
-> > +				       struct counter_count *count,
-> > +				       size_t function)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 bmr, cmr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_BMR, &bmr);
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-> > +
-> > +	/* Set capture mode */
-> > +	cmr &= ~ATMEL_TC_WAVE;
-> > +
-> > +	switch (function) {
-> > +	case ATMEL_TC_FUNCTION_INCREASE:
-> > +		priv->qdec_mode = 0;
-> > +		/* Set highest rate based on whether soc has gclk or not */
-> > +		bmr &= ~(ATMEL_TC_QDEN | ATMEL_TC_POSEN);
-> > +		if (priv->tc_cfg->has_gclk)
-> > +			cmr |= ATMEL_TC_TIMER_CLOCK2;
-> > +		else
-> > +			cmr |= ATMEL_TC_TIMER_CLOCK1;
-> > +		/* Setup the period capture mode */
-> > +		cmr |=  ATMEL_TC_CMR_MASK;
-> > +		cmr &= ~(ATMEL_TC_ABETRG | ATMEL_TC_XC0);
-> > +		break;
-> > +	case ATMEL_TC_FUNCTION_QUADRATURE:
-> > +		if (!priv->tc_cfg->has_qdec)
-> > +			return -ENODEV;
->
-> I think returning an -EINVAL here might be better. I can understand that
-> the system does not have a quadrature encoder device in this case, but
-> from the user perspective they are requesting to set the function for
-> the existing counter device. Therefore, if the existing counter device
-> does not support the requested function, it makes sense to report the
-> issue as simply an invalid argument (return -EINVAL) for this particular
-> device.
->
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+index d63881f60e1a..f51c6e939c76 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+@@ -409,10 +409,12 @@ static const struct vgic_register_region vgic_v2_dist_registers[] = {
+ 		NULL, vgic_mmio_uaccess_write_v2_group, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ENABLE_SET,
+-		vgic_mmio_read_enable, vgic_mmio_write_senable, NULL, NULL, 1,
++		vgic_mmio_read_enable, vgic_mmio_write_senable,
++		NULL, vgic_uaccess_write_senable, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ENABLE_CLEAR,
+-		vgic_mmio_read_enable, vgic_mmio_write_cenable, NULL, NULL, 1,
++		vgic_mmio_read_enable, vgic_mmio_write_cenable,
++		NULL, vgic_uaccess_write_cenable, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_PENDING_SET,
+ 		vgic_mmio_read_pending, vgic_mmio_write_spending, NULL, NULL, 1,
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 77c8ba1a2535..a9c45048fadb 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -538,10 +538,12 @@ static const struct vgic_register_region vgic_v3_dist_registers[] = {
+ 		vgic_mmio_read_group, vgic_mmio_write_group, NULL, NULL, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ISENABLER,
+-		vgic_mmio_read_enable, vgic_mmio_write_senable, NULL, NULL, 1,
++		vgic_mmio_read_enable, vgic_mmio_write_senable,
++		NULL, vgic_uaccess_write_senable, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ICENABLER,
+-		vgic_mmio_read_enable, vgic_mmio_write_cenable, NULL, NULL, 1,
++		vgic_mmio_read_enable, vgic_mmio_write_cenable,
++	       NULL, vgic_uaccess_write_cenable, 1,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ISPENDR,
+ 		vgic_mmio_read_pending, vgic_mmio_write_spending,
+@@ -609,11 +611,13 @@ static const struct vgic_register_region vgic_v3_rd_registers[] = {
+ 	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_IGROUPR0,
+ 		vgic_mmio_read_group, vgic_mmio_write_group, 4,
+ 		VGIC_ACCESS_32bit),
+-	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_ISENABLER0,
+-		vgic_mmio_read_enable, vgic_mmio_write_senable, 4,
++	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ISENABLER0,
++		vgic_mmio_read_enable, vgic_mmio_write_senable,
++		NULL, vgic_uaccess_write_senable, 4,
+ 		VGIC_ACCESS_32bit),
+-	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_ICENABLER0,
+-		vgic_mmio_read_enable, vgic_mmio_write_cenable, 4,
++	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ICENABLER0,
++		vgic_mmio_read_enable, vgic_mmio_write_cenable,
++		NULL, vgic_uaccess_write_cenable, 4,
+ 		VGIC_ACCESS_32bit),
+ 	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ISPENDR0,
+ 		vgic_mmio_read_pending, vgic_mmio_write_spending,
+diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
+index 4012cd68ac93..2ca11b05b17b 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio.c
++++ b/virt/kvm/arm/vgic/vgic-mmio.c
+@@ -184,6 +184,48 @@ void vgic_mmio_write_cenable(struct kvm_vcpu *vcpu,
+ 	}
+ }
+ 
++int vgic_uaccess_write_senable(struct kvm_vcpu *vcpu,
++			       gpa_t addr, unsigned int len,
++			       unsigned long val)
++{
++	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
++	int i;
++	unsigned long flags;
++
++	for_each_set_bit(i, &val, len * 8) {
++		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
++
++		raw_spin_lock_irqsave(&irq->irq_lock, flags);
++		irq->enabled = true;
++		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
++
++		vgic_put_irq(vcpu->kvm, irq);
++	}
++
++	return 0;
++}
++
++int vgic_uaccess_write_cenable(struct kvm_vcpu *vcpu,
++			       gpa_t addr, unsigned int len,
++			       unsigned long val)
++{
++	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
++	int i;
++	unsigned long flags;
++
++	for_each_set_bit(i, &val, len * 8) {
++		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
++
++		raw_spin_lock_irqsave(&irq->irq_lock, flags);
++		irq->enabled = false;
++		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
++
++		vgic_put_irq(vcpu->kvm, irq);
++	}
++
++	return 0;
++}
++
+ unsigned long vgic_mmio_read_pending(struct kvm_vcpu *vcpu,
+ 				     gpa_t addr, unsigned int len)
+ {
+diff --git a/virt/kvm/arm/vgic/vgic-mmio.h b/virt/kvm/arm/vgic/vgic-mmio.h
+index 30713a44e3fa..327d0a6938e4 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio.h
++++ b/virt/kvm/arm/vgic/vgic-mmio.h
+@@ -138,6 +138,14 @@ void vgic_mmio_write_cenable(struct kvm_vcpu *vcpu,
+ 			     gpa_t addr, unsigned int len,
+ 			     unsigned long val);
+ 
++int vgic_uaccess_write_senable(struct kvm_vcpu *vcpu,
++			       gpa_t addr, unsigned int len,
++			       unsigned long val);
++
++int vgic_uaccess_write_cenable(struct kvm_vcpu *vcpu,
++			       gpa_t addr, unsigned int len,
++			       unsigned long val);
++
+ unsigned long vgic_mmio_read_pending(struct kvm_vcpu *vcpu,
+ 				     gpa_t addr, unsigned int len);
+ 
 
-Good point, fixed for v2.
 
-> > +		/* In QDEC mode settings both channels 0 and 1 are required */
-> > +		if (priv->num_channels < 2 || priv->channel[0] != 0 ||
-> > +		    priv->channel[1] != 1) {
-> > +			pr_err("Invalid channels number or id for quadrature mode\n");
-> > +			return -EINVAL;
-> > +		}
-> > +		priv->qdec_mode = 1;
-> > +		bmr |= ATMEL_TC_QDEN | ATMEL_TC_POSEN;
-> > +		cmr |= ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_ABETRG | ATMEL_TC_XC0;
-> > +		break;
-> > +	}
-> > +
-> > +	regmap_write(priv->regmap, ATMEL_TC_BMR, bmr);
-> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), cmr);
-> > +
-> > +	/* Enable clock and trigger counter */
-> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CCR),
-> > +		     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-> > +
-> > +	if (priv->qdec_mode) {
-> > +		regmap_write(priv->regmap,
-> > +			     ATMEL_TC_REG(priv->channel[1], CMR), cmr);
-> > +		regmap_write(priv->regmap,
-> > +			     ATMEL_TC_REG(priv->channel[1], CCR),
-> > +			     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_signal_read(struct counter_device *counter,
-> > +				      struct counter_signal *signal,
-> > +				      enum counter_signal_value *val)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	bool sigstatus;
-> > +	u32 sr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], SR), &sr);
-> > +
-> > +	if (priv->trig_inverted)
-> > +		sigstatus = (sr & ATMEL_TC_MTIOB);
-> > +	else
-> > +		sigstatus = (sr & ATMEL_TC_MTIOA);
-> > +
-> > +	*val = sigstatus ? COUNTER_SIGNAL_HIGH : COUNTER_SIGNAL_LOW;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_action_get(struct counter_device *counter,
-> > +				     struct counter_count *count,
-> > +				     struct counter_synapse *synapse,
-> > +				     size_t *action)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 cmr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-> > +
-> > +	*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-> > +
-> > +	if (cmr & ATMEL_TC_ETRGEDG_NONE)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_RISING)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_FALLING)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_BOTH)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_action_set(struct counter_device *counter,
-> > +				     struct counter_count *count,
-> > +				     struct counter_synapse *synapse,
-> > +				     size_t action)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 edge = ATMEL_TC_ETRGEDG_NONE;
-> > +
-> > +	switch (action) {
-> > +	case ATMEL_TC_SYNAPSE_ACTION_NONE:
-> > +		edge = ATMEL_TC_ETRGEDG_NONE;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_RISING;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_FALLING;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_BOTH;
-> > +		break;
-> > +	}
-> > +
-> > +	return regmap_write_bits(priv->regmap,
-> > +				ATMEL_TC_REG(priv->channel[0], CMR),
-> > +				ATMEL_TC_ETRGEDG, edge);
->
-> Are users able to adjust the edges like this even if the device is
-> configured for QDEC mode? If not, you should return -EINVAL if the
-> device is in QDEC mode.
->
+> 
+> Or if that is too invasive, something like, (totally, untested):
+> ----------------%<----------------
+> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
+> index 97fb2a40e6ba..30ae5f29e429 100644
+> --- a/virt/kvm/arm/vgic/vgic-mmio.c
+> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
+> @@ -113,10 +113,11 @@ void vgic_mmio_write_senable(struct kvm_vcpu *vcpu,
+>                 struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
+> 
+>                 raw_spin_lock_irqsave(&irq->irq_lock, flags);
+> -               if (vgic_irq_is_mapped_level(irq)) {
+> +               if (kvm_running_vcpu() && vgic_irq_is_mapped_level(irq)) {
+>                         bool was_high = irq->line_level;
+> 
+>                         /*
+> +                        * Unless we are running due to a user-space access,
+>                          * We need to update the state of the interrupt because
+>                          * the guest might have changed the state of the device
+>                          * while the interrupt was disabled at the VGIC level.
+> ----------------%<----------------
 
-You're right, in QDEC mode, rising edge must be selected as the external
-trigger edge.
-
-Fixed.
-
-> > +}
-> > +
-> > +static int atmel_tc_count_read(struct counter_device *counter,
-> > +			       struct counter_count *count,
-> > +			       unsigned long *val)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 cnt;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CV), &cnt);
-> > +	*val = cnt;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct counter_count atmel_tc_count = {
-> > +	.id = 0,
-> > +	.name = "Timer Counter",
-> > +	.functions_list = atmel_tc_count_functions,
-> > +	.num_functions = ARRAY_SIZE(atmel_tc_count_functions),
-> > +	.synapses = atmel_tc_count_synapses,
-> > +	.num_synapses = ARRAY_SIZE(atmel_tc_count_synapses),
-> > +};
-> > +
-> > +static struct counter_ops atmel_tc_ops = {
-> > +	.signal_read  = atmel_tc_count_signal_read,
-> > +	.count_read   = atmel_tc_count_read,
-> > +	.count_write  = NULL,
->
-> No need to explicitly set count_write to NULL since it will be NULL by
-> default in this static structure.
->
-
-Fixed, thanks.
-
-> > +	.function_get = atmel_tc_count_function_get,
-> > +	.function_set = atmel_tc_count_function_set,
-> > +	.action_get   = atmel_tc_count_action_get,
-> > +	.action_set   = atmel_tc_count_action_set
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_rm9200_config = {
-> > +		.counter_width = 16,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sam9x5_config = {
-> > +		.counter_width = 32,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sama5d2_config = {
-> > +		.counter_width = 32,
-> > +		.has_gclk = true,
-> > +		.has_qdec = true,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sama5d3_config = {
-> > +		.counter_width = 32,
-> > +		.has_qdec = true,
-> > +};
-> > +
-> > +static const struct of_device_id atmel_tc_of_match[] = {
-> > +	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
-> > +	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
-> > +	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
-> > +	{ .compatible = "atmel,sama5d3-tcb", .data = &tcb_sama5d3_config, },
-> > +	{ /* sentinel */ }
-> > +};
-> > +
-> > +static int atmel_tc_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device_node *np = pdev->dev.of_node;
-> > +	const struct atmel_tcb_config *tcb_config;
-> > +	const struct of_device_id *match;
-> > +	struct atmel_tc_data *priv;
-> > +	char clk_name[] = "t0_clk";
-> > +	struct regmap *regmap;
-> > +	struct clk *clk[3];
-> > +	int channel;
-> > +	int ret, i;
-> > +
-> > +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-> > +	if (!priv)
-> > +		return -ENOMEM;
-> > +
-> > +	platform_set_drvdata(pdev, priv);
-> > +
-> > +	match = of_match_node(atmel_tc_of_match, np->parent);
-> > +	tcb_config = match->data;
-> > +	if (!tcb_config) {
-> > +		dev_err(&pdev->dev, "No matching parent node found\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	regmap = syscon_node_to_regmap(np->parent);
-> > +	if (IS_ERR(priv->regmap))
-> > +		return PTR_ERR(priv->regmap);
-> > +
-> > +	/* max. channels number is 2 when in QDEC mode */
-> > +	priv->num_channels = of_property_count_u32_elems(np, "reg");
-> > +	if (priv->num_channels < 0) {
-> > +		dev_err(&pdev->dev, "Invalid or missing channel\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	/* Register channels and initialize clocks */
-> > +	for (i = 0; i < priv->num_channels; i++) {
-> > +		ret = of_property_read_u32_index(np, "reg", i, &channel);
-> > +		if (ret < 0 || channel > 2)
-> > +			return -ENODEV;
-> > +
-> > +		priv->channel[i] = channel;
-> > +
-> > +		clk_name[1] += channel;
->
-> You're being clever here (not a bad thing) but this looks too easy to
-> get wrong and confused. I'd much rather see a snprintf here for clarity
-> and know that nothing funny is going to happen.
->
-
-Well ok let's be less clever for the sake of clarity :).
-
-> > +		clk[i] = of_clk_get_by_name(np->parent, clk_name);
-> > +		if (IS_ERR(clk[i])) {
-> > +			/* Fallback to t0_clk */
-> > +			clk[i] = of_clk_get_by_name(np->parent, "t0_clk");
-> > +			if (IS_ERR(clk[i]))
-> > +				return PTR_ERR(clk[i]);
-> > +		}
-> > +
-> > +		ret = clk_prepare_enable(clk[i]);
-> > +		if (ret)
-> > +			return ret;
-> > +
-> > +		dev_info(&pdev->dev,
-> > +			 "Initialized capture mode on channel %d\n",
-> > +			 channel);
-> > +	}
-> > +
-> > +	priv->tc_cfg = tcb_config;
-> > +	priv->regmap = regmap;
-> > +	priv->counter.name = dev_name(&pdev->dev);
-> > +	priv->counter.parent = &pdev->dev;
-> > +	priv->counter.ops = &atmel_tc_ops;
-> > +	priv->counter.num_counts = 1;
->
-> Use ARRAY_SIZE here so that future reviewers will know that num_counts
-> matches what's in the atmel_tc_count array without having to check so
-> themselves.
->
-
-OK, yet the atmel_tc_count isn't an array I guess that it shall be.
+Huh, nice try! ;-) Unfortunately, I think there is more than the enable
+register that suffers from a similar problem (see how the pending
+register write is also accessing the HW state, even if accessed from
+userspace).
 
 Thanks,
 
-Kamel
-
-> William Breathitt Gray
->
-> > +	priv->counter.counts = &atmel_tc_count;
-> > +	priv->counter.num_signals = ARRAY_SIZE(atmel_tc_count_signals);
-> > +	priv->counter.signals = atmel_tc_count_signals;
-> > +	priv->counter.priv = priv;
-> > +
-> > +	ret = devm_counter_register(&pdev->dev, &priv->counter);
-> > +	if (ret < 0) {
-> > +		for (i = 0; i < priv->num_channels; i++)
-> > +			clk_disable_unprepare(clk[i]);
-> > +		return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct of_device_id atmel_tc_dt_ids[] = {
-> > +	{ .compatible = "atmel,tcb-capture", },
-> > +	{ /* sentinel */ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, atmel_tc_dt_ids);
-> > +
-> > +static struct platform_driver atmel_tc_driver = {
-> > +	.probe = atmel_tc_probe,
-> > +	.driver = {
-> > +		.name = "atmel-tcb-capture",
-> > +		.of_match_table = atmel_tc_dt_ids,
-> > +	},
-> > +};
-> > +module_platform_driver(atmel_tc_driver);
-> > +
-> > +MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
-> > +MODULE_DESCRIPTION("Atmel TCB Capture driver");
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.25.0
-> >
-
-
-
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
