@@ -2,67 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB961A2F28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:27:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B4071A2F27
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:26:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bPuzqZUyADtkkeZvYnsVmzasKn5Cc5zKJWp457/x+zw=; b=OTYc8TLUKrdI8B
-	w4D5445bUCnaFH/aZL+zbza2LMEq83MOT7Xa6RyZ0hb9b4WQzYffOGLc8IbdLdskVYTBThr0+DenC
-	6gEeb0vldiV12o4Onou95ro4htsKprmcpwn9n0OcyLktoFWtvxv87k6zjG/G0fO93e+61rzZpfT6C
-	VWNhj3IFxnmwjQJb7Y/5bXX78J2oISxn6AOMx45+RAZmgcQ0+t/7iZzorX6lwNnB0k4G4iitpS96m
-	8g7vsle/OWy5DDVxWpXjwBOd0DqPfz0Q2nD/B4jyb+IHANkntA27KXixyjt6ERH/Fg+Mu62ThWRhE
-	aLQr5oTp0tStXLCG7fGQ==;
+	List-Owner; bh=wV6sZyc0jRBgeYehneiG7soqy6ZAxyHNjPQIzbjzDQA=; b=e1bumLEJt/BKN8
+	16Majxc+X6AsZqqCi+ghUx4gRytFPUe5pxeushM7G80yhLTsXC5wmjeE2mq8m8Js6tvb+Vm0q+GOZ
+	0jeJVAzJcEJnqqKrrWnGdGnLZO1+Fibaf4r9nT5aA0wRFLrveaG0KXe3f7k9Lxwwb1HY61X91ihDe
+	lx1il17ftPyHmoNi+et9Cn67MVsCxMlj1bMJg25a77WSvblEM6P/HI9UtKgdEHh/PsxRazlPmnMRJ
+	/bVM+yWd/HNiLIxboRwi4rgeCO8gkkCjzQlgGshBVtaUtjdSND9Bsnp1UcTCb6W6saOZgTzS/O8r/
+	NUY0Gx1lafk5V2td1AcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMQeI-00031Q-IL; Thu, 09 Apr 2020 06:26:50 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1jMQe1-0002pm-1l; Thu, 09 Apr 2020 06:26:33 +0000
+Received: from mail-mw2nam12on2071.outbound.protection.outlook.com
+ ([40.107.244.71] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMQe6-0002z1-BR
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:26:40 +0000
-IronPort-SDR: 8zGCG6RMGCtMSx0IkDWU3vTuzFvQNUgr1U3rKyu0DZl78ryFHZg4vlJdmEjkDqENisPcbbYjaC
- xr2ghb1USLkQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 08 Apr 2020 23:26:37 -0700
-IronPort-SDR: m8WN6J9uNsEDaxru+99Hbd3xgP3SwBjuPKmnbz/BmF5gPIRXmyltoFt8fEqTYeyV4Z5Y12EY/y
- s5MZUo4mFFLA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,361,1580803200"; d="scan'208";a="242565865"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga007.fm.intel.com with ESMTP; 08 Apr 2020 23:26:35 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jMQe3-00023k-6J; Thu, 09 Apr 2020 14:26:35 +0800
-Date: Thu, 9 Apr 2020 14:25:57 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: [arm-platforms:hack/vim3l-crap 2/5]
- drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:27:8: warning: Variable
- 'value' is reassigned a value before the old one has been used.
- [redundantAssignment]
-Message-ID: <202004091448.HSHDfHXZ%lkp@intel.com>
+ id 1jMQdu-0002pB-0S
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:26:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=eR2xFY1fZXMWycJ5Gwd8lb1a/zsKmTG7vkI+aR5rJDn1xjgImZdNhFMtCZV52MOguzLP5PGiOS1SXVPIYeaTQZKVvKSql8E08eIhw62cdaOllRhYwG2e/DTTkTgSLfTYkXv/T/+ni55tG1vTvwVco7EmS6A3vUrCCoUZmH/qmLSc+bRTmjewi7qkUJJrcPQTSoqUPi6b7LRzOqhzTMrdO7i1qtB+VlbazjMsysmpRX3L+zymM2kvtYiMxWLUAyUrA6VfnOC4AgioxOJItMqDpImnwJT2K+nQ2vROmONqgekBvqYE8/tC4E7OiqmITFFzkEXRTU4v31JwEp9ZEdIbcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fKuKpoe6hh1QX4TgtNYZISjBL0mlRHdI5azSZg5JJ+s=;
+ b=XtSQgArLheu0cIcBbNdie1znG4jvbu5mMbyaPcl6z4r6c2ObCH39AOZve89UKeJHac23h8C7gS5HLYOIjyErg164RbdHkfsx9PrMUlUlZVRDmFqwOWjX6pLkJyacAcUpe4gDfki18eUn+KU+ZWuVQj7EkLMJ7DkTvwWRioIXaQsM4MsMpvd2HgfyOhRu3Kj4N/+EOCLFX+rK5y3Vjpej7acUiOib8a+KcriEJUy0ouviiQS4gIPiRpHV8IK9kitueJiHTNxV2yVkGh0TR1DFhmuXrZsCHfY/KGRH5ooy7rFsHcTbJj6aCa3Ae0mkVW8bXFQ6T1jXKE/NKscPGKu1oQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fKuKpoe6hh1QX4TgtNYZISjBL0mlRHdI5azSZg5JJ+s=;
+ b=fSQJ2aePXRN+WBj6YVBNHIOlOpJvpoJaULKXXTcjxvFu4b7DTn07pcdG+KxZ92QTwBWLBzpJJ1am5XzXPlzdnpU1y52sMPJxng7GcePdtUMLdT112IdrNG/UhTF0JWzPiIBTDemxJflFVEYd1UowGMBsZaR8di2VRb3D1uLW1W4=
+Received: from CY4PR22CA0064.namprd22.prod.outlook.com (2603:10b6:903:ae::26)
+ by DM6PR02MB5546.namprd02.prod.outlook.com (2603:10b6:5:35::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.15; Thu, 9 Apr
+ 2020 06:26:23 +0000
+Received: from CY1NAM02FT024.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:903:ae:cafe::7e) by CY4PR22CA0064.outlook.office365.com
+ (2603:10b6:903:ae::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17 via Frontend
+ Transport; Thu, 9 Apr 2020 06:26:23 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT024.mail.protection.outlook.com (10.152.74.210) with Microsoft SMTP
+ Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 06:26:23
+ +0000
+Received: from [149.199.38.66] (port=46429 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <raviteja.narayanam@xilinx.com>)
+ id 1jMQdR-00086K-Sn; Wed, 08 Apr 2020 23:25:57 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <raviteja.narayanam@xilinx.com>)
+ id 1jMQdq-0004Wo-QA; Wed, 08 Apr 2020 23:26:22 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp1.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 0396QCGa027217; 
+ Wed, 8 Apr 2020 23:26:13 -0700
+Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <raviteja.narayanam@xilinx.com>)
+ id 1jMQdg-00046h-7C; Wed, 08 Apr 2020 23:26:12 -0700
+From: Raviteja Narayanam <raviteja.narayanam@xilinx.com>
+To: linux-serial@vger.kernel.org
+Subject: [PATCH v2 0/2] serial: uartps: Add tx_empty checks
+Date: Thu,  9 Apr 2020 11:56:01 +0530
+Message-Id: <1586413563-29125-1-git-send-email-raviteja.narayanam@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(136003)(396003)(39860400002)(376002)(346002)(46966005)(7696005)(6916009)(47076004)(8676002)(9786002)(107886003)(356004)(6666004)(26005)(81156014)(5660300002)(81166007)(70586007)(316002)(478600001)(4744005)(2616005)(426003)(82740400003)(70206006)(186003)(2906002)(36756003)(44832011)(8936002)(336012)(4326008);
+ DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 567a3e74-a6a2-491c-b491-08d7dc4eec94
+X-MS-TrafficTypeDiagnostic: DM6PR02MB5546:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB5546B66725C8C23346FB8B84CAC10@DM6PR02MB5546.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:5797;
+X-Forefront-PRVS: 0368E78B5B
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: MWfAEwZKz9OLl8dSfhr2ALWUXGK9b9BLHRpUUyax/dHqUWp8twUqUd8Rw1ZjJerfmudRMMD/pQdgSsrV45RKWTrWWBVbz4edi/e5whcZ7jpzOGojYgtlePv865cGt2N8ZvXOG9L9ZDiak/94Z1Ks3SbbItiJOmAm1SoScb24sxmCO9ngRopD43IWgbfoCblnENqLZAj01sywIAOCXom+OTlF/3plIab/w2nrSYHo18a76ur/pD5ZuoXhyeFgrP9Kznp8Cez7ABBHR2ztPn2Fm2RA1VIXyf5280QCFa2d1/pduY9QxfTMqP3Zphouov0VFXRGGDdj/uwkV2ya04DY1lBljP6tRBWZvv82kI5DcMbgOVAzT7RaaOYRQ8w5IUCRHo66saQzutMSV8i4w0gnSqJWWSgkZWkpTT4rEf8QmgfayqiU3Y70VoaMQIPX/zAuw9bcP3+pLAaiuL0OepjlHj1P/nKwzYl1CBRgjuL+NQT61XE6WEPD53o+fW6aLzq+IP/vIcRTqinr40h0oJ5fxg==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 06:26:23.0862 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 567a3e74-a6a2-491c-b491-08d7dc4eec94
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB5546
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_232638_440856_CE542233 
-X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-CacheID: sfid-20200408_232627_124125_D07BE857 
+X-CRM114-Status: UNSURE (   5.37  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.244.71 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,153 +138,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
+Cc: Raviteja Narayanam <raviteja.narayanam@xilinx.com>,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ michal.simek@xilinx.com, git@xilinx.com, jslaby@suse.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git hack/vim3l-crap
-head:   bdf08c52d4aaabc11f0b83dce15decda3fa67537
-commit: afc99f4ddd4f97fb3af4dedca81a3a50451f85d0 [2/5] dwmac: workaround random DMA reset failures
+This patch series does the following:
+Use cdns_uart_tx_empty function in the driver.
+Wait for empty.
 
-If you fix the issue, kindly add following tag as appropriate
-Reported-by: kbuild test robot <lkp@intel.com>
+v2:
+Modified the wait in console setup and used cdns_uart_tx_empty function
+in console_write as suggested by Maarten.
 
+Raviteja Narayanam (2):
+  serial: uartps: Wait for tx_empty in console setup
+  serial: uartps: Use cdns_uart_tx_empty in console_write
 
-cppcheck warnings: (new ones prefixed by >>)
+ drivers/tty/serial/xilinx_uartps.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
->> drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:27:8: warning: Variable 'value' is reassigned a value before the old one has been used. [redundantAssignment]
-    value = DMA_BUS_MODE_SFT_RESET;
-          ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:24:8: note: value is assigned
-    value = readl(ioaddr + DMA_BUS_MODE);
-          ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:27:8: note: value is overwritten
-    value = DMA_BUS_MODE_SFT_RESET;
-          ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:21:19: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(0, ioaddr + DMA_CONTROL);
-                     ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:22:19: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(0, ioaddr + DMA_INTR_ENA);
-                     ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:24:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    value = readl(ioaddr + DMA_BUS_MODE);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:28:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_BUS_MODE);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:32:35: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    while (readl_poll_timeout(ioaddr + DMA_BUS_MODE, value,
-                                     ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:43:19: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(1, ioaddr + DMA_XMT_POLL_DEMAND);
-                     ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:48:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_INTR_ENA);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:55:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_INTR_ENA);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:60:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_INTR_ENA);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:67:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_INTR_ENA);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:72:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_CONTROL);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:74:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_CONTROL);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:79:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_CONTROL);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:81:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_CONTROL);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:86:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_CONTROL);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:88:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_CONTROL);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:93:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + DMA_CONTROL);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:95:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + DMA_CONTROL);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:173:33: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 intr_status = readl(ioaddr + DMA_STATUS);
-                                   ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:214:29: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-      u32 value = readl(ioaddr + DMA_INTR_ENA);
-                               ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:234:41: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel((intr_status & 0x1ffff), ioaddr + DMA_STATUS);
-                                           ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:241:26: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 csr6 = readl(ioaddr + DMA_CONTROL);
-                            ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:242:42: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel((csr6 | DMA_CONTROL_FTF), ioaddr + DMA_CONTROL);
-                                            ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:244:29: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    do {} while ((readl(ioaddr + DMA_CONTROL) & DMA_CONTROL_FTF));
-                               ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:257:39: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(data | GMAC_HI_REG_AE, ioaddr + high);
-                                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:259:22: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(data, ioaddr + low);
-                        ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:266:27: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    u32 value = readl(ioaddr + MAC_CTRL_REG);
-                             ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:273:23: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    writel(value, ioaddr + MAC_CTRL_REG);
-                         ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:282:25: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    hi_addr = readl(ioaddr + high);
-                           ^
-   drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c:283:25: warning: 'ioaddr' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
-    lo_addr = readl(ioaddr + low);
-                           ^
+-- 
+2.7.4
 
-vim +/value +27 drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c
-
-    15	
-    16	int dwmac_dma_reset(void __iomem *ioaddr)
-    17	{
-    18		u32 value;
-    19	
-    20	
-    21		writel(0, ioaddr + DMA_CONTROL);
-    22		writel(0, ioaddr + DMA_INTR_ENA);
-    23		dsb(sy);
-    24		value = readl(ioaddr + DMA_BUS_MODE);
-    25	
-    26		/* DMA SW reset */
-  > 27		value = DMA_BUS_MODE_SFT_RESET;
-    28		writel(value, ioaddr + DMA_BUS_MODE);
-    29	
-    30		dsb(sy);
-    31	
-    32		while (readl_poll_timeout(ioaddr + DMA_BUS_MODE, value,
-    33					  !(value & DMA_BUS_MODE_SFT_RESET),
-    34					  100000, 1000000))
-    35			pr_info("Reset failed\n");
-    36	
-    37		return 0;
-    38	}
-    39	
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
