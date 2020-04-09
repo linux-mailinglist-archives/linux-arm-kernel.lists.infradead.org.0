@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 907741A2DEB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 05:24:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD3641A2D31
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 03:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=84+9irgqvrjuHHjozRGo9rpGXuX2LCLcnm1Q0Jnn5zU=; b=JOJA7kEe12Et/E
-	cBKOw/h/VB7to86IMbs9J3/+PtSdvvCJ6vz83tUvWXwi1jTTyQRlIPuciQsITrLAwhW/M91hLAp+F
-	Ofco7Z+cF50ijco/TRkv2lHH9RNvzn/YHdSdgXFrdsVyUFF6kgojtb620c7BuGNm9ctBdH0jhB91O
-	rGXddZ8SEQbfbJKB38O0XPGrLXEnFODG0xhu7rbQw0VA8kQagdLtrXcZ3yQp4BvdDhWu30WZ0FjDb
-	dhahqujOoOSRk/30qoAnIW7Vwg5Ckdw1T5T7E8gGPPCr4uWNA1alEUqiYQKCX3jjpLnKa7SShGqYn
-	ci+xjSI71IQDPe9pJumw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=90dcZkZiDKFLrD2ksP70cAWNsmsuLGab63yvfNlWrS4=; b=lhqq6m5Kys/8v/
+	IYIsz49x09/PsYyUCcBs+Qzna3fFsAhUa743XCV/+F8qD3kuQxk4Hie2Qh8cl6Ym1zmRoFN8O8E/F
+	GVVNimWkEjghz4bxe0SBFGOR1Ywqii3NV5jeQ/yXWMBvwMWFSzyDb//umfu5NK9Ra8GPeSHezE4Iy
+	m1Ek9U82GUvyMMM31Tw/B27sDbxudY9378ul/3k/cVrMiC3002G3ufXzodLq+fZwRsF+l+vrnAjr7
+	1ygxfmAXf+oNRkgVns/fj7Xkv8E8ZzKQ/d66DyZ600iRNXoSr1jjVoze/+fwe+vawGVI18Bk8WsFp
+	7yxxXCoBfFMuLpUVWNww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMNn5-0003Qn-WB; Thu, 09 Apr 2020 03:23:44 +0000
-Received: from sonic304-47.consmr.mail.ne1.yahoo.com ([66.163.191.173])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMNn0-0003QB-Qc
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 03:23:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aol.com; s=a2048;
- t=1586402614; bh=/6EYCRlfa2umBwyf6HMqnS88iYA4EIXadLKaqqSMGXc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From:Subject;
- b=bnjdxeN8RjiCAR0Gp4l7zXrwCjxV3ZPw3ZOk2VxzOipNuyE++/wvehKnAIAvPNSEwFr9PknLd/TMbUquiLtRr+fx1ORTHfjqeRFMxTRLELakoqg73XjiOHLLnR2peUmVlxQuieascQ9HdL4Z3xpkEL+AmjqgjFPAMZVu12YlcYo9IflQ1ibZDh/N2TU0zVIiqX4mjzQQIi7MCLWsvjPkJF76zChkAWwX/FGZKQHForkFEjWnJjM6dMbWiOD21J++4cKcB2+dB3sMWboQV0fnlUE+c956ju+IYP15nb7MRBQ0jg7LLO2+v8Z0WBPXicez/dIh2C7Qx2klRYg7JKuuLw==
-X-YMail-OSG: Kjs_hFQVM1mYR3Bbv__auOf2fhoaIk9dbexLkMUvZvDcgibPrEIH2uN_nb7TSk.
- AjTVDttprz38pf2agkDENCO9OlpstM6AKa5fqJSzz9g9BDnD9cEKZ6Kcqg9CatwzLNYThMuSUeYX
- 2yEgN2U8e5xgtZHtWmAFsIbznPJD_UPhljYJl2r_EoL5qqrqeJu9Nnd9Y.Ff.0cQ6SO_SlnVXMbj
- JYEgiFEkwq6TWViREF0oZDh5a7V1WTHk_fQL7mKo.zfkeUUkf9r2PC3YbrlM36YDrBNE7Vu_H_23
- 7SUm_oYUdCkn.imVzOSTsbg1UKej12C_c6DVKmb2bShJF7ckagBec7h.F7Pz2jADVU.RAf_SzeRw
- jnXQU.OYwZs7DtYvRPtgjcVfmgAxeq8RUp0VPoOeRchdyRoGHKkYEH1l0ufQv3CAgRqC9S3zsOd9
- fnhObZjDMfX58eXYxHjcxjHRReqFOhx5Hz6aq8FIq7jw8y8OEbWPMrjaCpR4FKEn_bozdR4qyDFm
- 4sbsu66FrZifwa3kj9UeUr.wGSL5S042VmSyGfETFpHOTRvx51GHTkDHF4kqnnRQjnt9cOY_TXoy
- 6ikjZzl8Rym8MnuDSY3t2UEnyXfrQM8zmKcZMaBXZA.1JruNMW__SZDUsuarZwJACQIZFjYaEYcB
- 6Fx2cC_OXlNG7d102FBbLxbbWE51eCCn6.Ao3BUdftIqkSfQqE8AmEChvpnb3Hjczsgr87hSe_ZY
- FNPGuabtMxRjTV5vOhJN9EVsFZjNMIpNdxApHaOp9BBa0mK8Hd4Y8_sLLzgFE_OX._p_ww8OgQCS
- _PZw5TJANZTRxfmtlnIT9WY8nJxFEz0ZzkRbyJrD7lBRVCuL2qRMMrbnVCU.d3atpGGNT71.FMTl
- XJp9kOjDwdiPhEHaNTf0wy9.286eHx9hDHZx13ycI4lCw.BNZVla9tTflJZSkBR622oDAvju0pYi
- chnjA_f0d_Rs3Y.w_0UWDDtsiqrp7Nd.ENOvnjBk3WtBBjbeqzYHxInpU0ICw.akO5xUiF4HXGRD
- NGu7bFyqgIPHiVSYVkpfC.PnR3fZmrfgYy1Ktc5D_y5Xh2Z7vFADl5LC6uRiCqJ9Y4yLuHo1ATrn
- PxNppKa486Nn86yT5d.pKQ3q49VQAxNEB7EGZ_QmK0uyT9X6oF2qpuwBBPhXWKUMiK3EbPuATGVw
- L.4MdTecfHCHslUWJtwrtw2v46CslPDJY3TtzPBEF3b6hKOBHSxZ.8CqTxF3S2_xcA64udxpFdja
- 9c_vKNU82cTswpLxDeBimIz._J7Xaum1i6dZEwCbc.uspehQ3L04kL45bX0fhpi7dDoUJat5aE3S
- p_Fl8AHbSq3P.bkBJGmoklW4vRdsCXSUz4v5SYoPxJ86d1eVDsQ0qrpylWpfgRvkXgRw467FBrzC
- _ECRk3ijYTNyDsC7idxPty4i4XJSa9KM2uH5RWvaV.R8phY0hHU.lO54DG8mygB9TxdZscMBwbtP
- JqFlYvAh9BGSO_QyxpGrs
-Received: from sonic.gate.mail.ne1.yahoo.com by
- sonic304.consmr.mail.ne1.yahoo.com with HTTP; Thu, 9 Apr 2020 03:23:34 +0000
-Received: by smtp412.mail.gq1.yahoo.com (Oath Hermes SMTP Server) with ESMTPA
- ID 07bc1f76d2033b5244ea2e327c66bf87; 
- Thu, 09 Apr 2020 00:39:51 +0000 (UTC)
-Date: Thu, 9 Apr 2020 08:39:35 +0800
-From: Gao Xiang <hsiangkao@aol.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 17/28] mm: remove the prot argument from vm_map_ram
-Message-ID: <20200409003931.GA8418@hsiangkao-HP-ZHAN-66-Pro-G1>
-References: <20200408115926.1467567-1-hch@lst.de>
- <20200408115926.1467567-18-hch@lst.de>
+	id 1jMLeg-0002k9-P2; Thu, 09 Apr 2020 01:06:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMLeZ-0002ii-2B; Thu, 09 Apr 2020 01:06:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 371301FB;
+ Wed,  8 Apr 2020 18:06:43 -0700 (PDT)
+Received: from [10.163.1.2] (unknown [10.163.1.2])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 16C383F73D;
+ Wed,  8 Apr 2020 18:06:32 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+ <20200331143059.29fca8fa@thinkpad>
+ <e3e35885-6852-16aa-3889-e22750a0cc87@arm.com>
+ <20200407175440.41cc00a5@thinkpad>
+ <253cf5c8-e43e-5737-24e8-3eda3b6ba7b3@arm.com>
+ <20200408141500.75b2e1a7@thinkpad>
+Message-ID: <b35210ec-7084-9c77-bdf5-820cfc7f96bc@arm.com>
+Date: Thu, 9 Apr 2020 06:36:23 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408115926.1467567-18-hch@lst.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Mailer: WebService/1.1.15620 hermes Apache-HttpAsyncClient/4.1.4
- (Java/11.0.6)
+In-Reply-To: <20200408141500.75b2e1a7@thinkpad>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_202338_917949_240B687D 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_180647_192496_5509EB8B 
+X-CRM114-Status: GOOD (  26.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [66.163.191.173 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hsiangkao[at]aol.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,44 +67,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
  linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
- x86@kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
- Daniel Vetter <daniel@ffwll.ch>, Haiyang Zhang <haiyangz@microsoft.com>,
- linaro-mm-sig@lists.linaro.org, bpf@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 01:59:15PM +0200, Christoph Hellwig wrote:
-> This is always GFP_KERNEL - for long term mappings with other properties
-> vmap should be used.
+
+On 04/08/2020 05:45 PM, Gerald Schaefer wrote:
+> On Wed, 8 Apr 2020 12:41:51 +0530
+> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  drivers/gpu/drm/i915/gem/selftests/mock_dmabuf.c   | 2 +-
->  drivers/media/common/videobuf2/videobuf2-dma-sg.c  | 3 +--
->  drivers/media/common/videobuf2/videobuf2-vmalloc.c | 3 +--
->  fs/erofs/decompressor.c                            | 2 +-
+> [...]
+>>>   
+>>>>
+>>>> Some thing like this instead.
+>>>>
+>>>> pte_t pte = READ_ONCE(*ptep);
+>>>> pte = pte_mkhuge(__pte((pte_val(pte) | RANDOM_ORVALUE) & PMD_MASK));
+>>>>
+>>>> We cannot use mk_pte_phys() as it is defined only on some platforms
+>>>> without any generic fallback for others.  
+>>>
+>>> Oh, didn't know that, sorry. What about using mk_pte() instead, at least
+>>> it would result in a present pte:
+>>>
+>>> pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));  
+>>
+>> Lets use mk_pte() here but can we do this instead
+>>
+>> paddr = (__pfn_to_phys(pfn) | RANDOM_ORVALUE) & PMD_MASK;
+>> pte = pte_mkhuge(mk_pte(phys_to_page(paddr), prot));
+>>
+> 
+> Sure, that will also work.
+> 
+> BTW, this RANDOM_ORVALUE is not really very random, the way it is
+> defined. For s390 we already changed it to mask out some arch bits,
+> but I guess there are other archs and bits that would always be
+> set with this "not so random" value, and I wonder if/how that would
+> affect all the tests using this value, see also below.
 
-For EROFS part,
+RANDOM_ORVALUE is a constant which was added in order to make sure
+that the page table entries should have some non-zero value before
+getting called with pxx_clear() and followed by a pxx_none() check.
+This is currently used only in pxx_clear_tests() tests. Hence there
+is no impact for the existing tests.
 
-Acked-by: Gao Xiang <xiang@kernel.org>
+> 
+>>>
+>>> And if you also want to do some with the existing value, which seems
+>>> to be an empty pte, then maybe just check if writing and reading that
+>>> value with set_huge_pte_at() / huge_ptep_get() returns the same,
+>>> i.e. initially w/o RANDOM_ORVALUE.
+>>>
+>>> So, in combination, like this (BTW, why is the barrier() needed, it
+>>> is not used for the other set_huge_pte_at() calls later?):  
+>>
+>> Ahh missed, will add them. Earlier we faced problem without it after
+>> set_pte_at() for a test on powerpc (64) platform. Hence just added it
+>> here to be extra careful.
+>>
+>>>
+>>> @@ -733,24 +733,28 @@ static void __init hugetlb_advanced_test
+>>>         struct page *page = pfn_to_page(pfn);
+>>>         pte_t pte = READ_ONCE(*ptep);
+>>>  
+>>> -       pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
+>>> +       set_huge_pte_at(mm, vaddr, ptep, pte);
+>>> +       WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+>>> +
+>>> +       pte = pte_mkhuge(mk_pte(phys_to_page(RANDOM_ORVALUE & PMD_MASK), prot));
+>>>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>>>         barrier();
+>>>         WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+>>>
+>>> This would actually add a new test "write empty pte with
+>>> set_huge_pte_at(), then verify with huge_ptep_get()", which happens
+>>> to trigger a warning on s390 :-)  
+>>
+>> On arm64 as well which checks for pte_present() in set_huge_pte_at().
+>> But PTE present check is not really present in each set_huge_pte_at()
+>> implementation especially without __HAVE_ARCH_HUGE_SET_HUGE_PTE_AT.
+>> Hence wondering if we should add this new test here which will keep
+>> giving warnings on s390 and arm64 (at the least).
+> 
+> Hmm, interesting. I forgot about huge swap / migration, which is not
+> (and probably cannot be) supported on s390. The pte_present() check
+> on arm64 seems to check for such huge swap / migration entries,
+> according to the comment.
+> 
+> The new test "write empty pte with set_huge_pte_at(), then verify
+> with huge_ptep_get()" would then probably trigger the
+> WARN_ON(!pte_present(pte)) in arm64 code. So I guess "writing empty
+> ptes with set_huge_pte_at()" is not really a valid use case in practice,
+> or else you would have seen this warning before. In that case, it
+> might not be a good idea to add this test.
 
-Thanks,
-Gao Xiang
+Got it.
 
+> 
+> I also do wonder now, why the original test with
+> "pte = __pte(pte_val(pte) | RANDOM_ORVALUE);"
+> did not also trigger that warning on arm64. On s390 this test failed
+> exactly because the constructed pte was not present (initially empty,
+> or'ing RANDOM_ORVALUE does not make it present for s390). I guess this
+> just worked by chance on arm64, because the bits from RANDOM_ORVALUE
+> also happened to mark the pte present for arm64.
+
+That is correct. RANDOM_ORVALUE has got PTE_PROT_NONE bit set that makes
+the PTE test for pte_present().
+
+On arm64 platform,
+
+#define pte_present(pte)  (!!(pte_val(pte) & (PTE_VALID | PTE_PROT_NONE)))
+
+> 
+> This brings us back to the question above, regarding the "randomness"
+> of RANDOM_ORVALUE. Not really sure what the intention behind that was,
+> but maybe it would make sense to restrict this RANDOM_ORVALUE to
+> non-arch-specific bits, i.e. only bits that would be part of the
+> address value within a page table entry? Or was it intentionally
+> chosen to also mess with other bits?
+
+As mentioned before, RANDOM_ORVALUE just helped make a given page table
+entry contain non-zero values before getting cleared. AFAICS we should
+not need RANDOM_ORVALUE for HugeTLB test here. I believe the following
+'paddr' construct will just be fine instead.
+
+paddr = __pfn_to_phys(pfn) & PMD_MASK;
+pte = pte_mkhuge(mk_pte(phys_to_page(paddr), prot));
+
+> 
+> Regards,
+> Gerald
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
