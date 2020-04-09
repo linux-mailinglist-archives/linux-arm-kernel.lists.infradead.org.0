@@ -2,67 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A0801A30D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 964C71A30EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:30:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TkWL4O6PfnUmjFysaP2xviEBvqez/xxXSqTuRh+l3aw=; b=mgeoV/6gj2ApY0
-	NqnkeUSDh+Dx2Ub4WO1mPrDYacf5LXV6YHXX4zamums/ZDr5Nbhiic5dWWvV2q4v/dJna6LlLlRBO
-	2OidFHuW0vsnFgeTlMO2YhiUurbWYc0sJmidw4Rfi7jM5AULU38zOFpUtVFOgil+n065pbKyfitj2
-	bLO3v3kIx0Ld99YAd8vWTwG93O4uKyJOlnkaH65nc9vkm2uyHhMoOTffnLVGG+4ox+I7QVtOGbTg6
-	XRpvqolw8vJVie8tWoezqOrVCR1k8lmb4efEURNmjyjxv6MUChj0nQW6zlw3t5wNTFAy17wfVRPVu
-	B7MQU4GfZTjh0YGEmqpA==;
+	List-Owner; bh=ACdFRsDukTdDNygHsWUqLqtBDH84gWOmzxWImoEmrVw=; b=SlZWqE2u5HPE5O
+	ZUEuqV3Jpg+1yaLEa0XkkitpWv9Te8y6zV2Zy2fDkmbxJB5BGZXuslo5XVDUqp1oSJ/ALBtd9m5wH
+	rHhWB7SaIMkLlTg4MABVp/8osEloJvcusExGEp1m7LM30WAzeeIAXUjK9z4nIWcAZpqKOGzjE53xZ
+	j3SFlTUQvxv1Kq79X21196WkP8PgJF/sGOLxrvZNmPUV20ELc5FPFFhZazQpv36rJ5L/f2dnFbNO5
+	uWPHA8r3fc46R8oreW7o9a6Uk5zf/vs7x3nTyFmGmHVDCUTUI/tMHE99Mds99/JS/cY/saaocna8a
+	Tl5z5PnK8uAvnnhENJ8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMSWt-0003z7-52; Thu, 09 Apr 2020 08:27:19 +0000
+	id 1jMSaH-0007RB-NX; Thu, 09 Apr 2020 08:30:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMSWk-0003xu-8T
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:27:12 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jMSaA-0007Ql-Va
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:30:44 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B964120784;
- Thu,  9 Apr 2020 08:27:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8D2E620784;
+ Thu,  9 Apr 2020 08:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586420829;
- bh=nCDNU4IlgiFK5b54p5i4/sKzgnH90+gZuGoD5pEuGJ4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Y9aJo5AUWaQuszvfGfnXk5dN6FBi6IFFk8qqm8O7xKAPKSfsJwMiGSxGjxXr/ljM1
- qAJX5Zt68OT3cGQz8xnCgYTE6F7PUAGu5F5M3gR7g1q+EzYGbOWB140zXXpz7yknmx
- y84FuWlxdp2GXaL9aETF3n3ei+e48tBA1sLxf/ko=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jMSWh-001qkp-SG; Thu, 09 Apr 2020 09:27:08 +0100
-Date: Thu, 9 Apr 2020 09:27:06 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
-Message-ID: <20200409092706.74e6bd1d@why>
-In-Reply-To: <cc6bed09-33dd-027a-126f-ed22389c1624@arm.com>
-References: <20200406150355.4859-1-james.morse@arm.com>
- <20200408110726.4d81bc3b@why>
- <cc6bed09-33dd-027a-126f-ed22389c1624@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1586421042;
+ bh=tecY0VJsbe8EdmmXXtksU0Y0zBQ4pnIaVfI2igeka+g=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=ptohimgNcSS6YVP6voh44L9Sg9U4vla0zIuPhH//YJlP0Pij9fyw2K+ZNUAEHVrPo
+ Ro/p1DceVy1DmnpHiLRWeBbTqOmFjwO56VpfspN5AASuHpAIJ7hqo6PYHpZolmT3RQ
+ PQprX0YetLoQeGYubZAI1tdqQfcS3ncgfxC7byN4=
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, andre.przywara@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200408160044.2550437-1-arnd@arndb.de>
+References: <20200408160044.2550437-1-arnd@arndb.de>
+Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
+From: Stephen Boyd <sboyd@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>, catalin.marinas@arm.com,
+ chunyan.zhang@unisoc.com, mturquette@baylibre.com, will@kernel.org
+Date: Thu, 09 Apr 2020 01:30:41 -0700
+Message-ID: <158642104168.126188.8440219577017239983@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_012710_344610_5210D09E 
-X-CRM114-Status: GOOD (  33.21  )
+X-CRM114-CacheID: sfid-20200409_013043_035745_E21AAF4D 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,261 +76,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: gregkh@linuxfoundation.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
-
-On Wed, 8 Apr 2020 12:16:01 +0100
-James Morse <james.morse@arm.com> wrote:
-
-> Hi Marc,
+Quoting Arnd Bergmann (2020-04-08 09:00:44)
+> I got a build failure with CONFIG_ARCH_SPRD=m when the
+> main portion of the clock driver failed to get linked into
+> the kernel:
 > 
-> On 08/04/2020 11:07, Marc Zyngier wrote:
-> > On Mon,  6 Apr 2020 16:03:55 +0100
-> > James Morse <james.morse@arm.com> wrote:
-> >   
-> >> kvm_arch_timer_get_input_level() needs to get the arch_timer_context for
-> >> a particular vcpu, and uses kvm_get_running_vcpu() to find it.
-> >>
-> >> kvm_arch_timer_get_input_level() may be called to handle a user-space
-> >> write to the redistributor, where the vcpu is not loaded. This causes
-> >> kvm_get_running_vcpu() to return NULL:
-> >> | Unable to handle kernel paging request at virtual address 0000000000001ec0
-> >> | Mem abort info:
-> >> |   ESR = 0x96000004
-> >> |   EC = 0x25: DABT (current EL), IL = 32 bits
-> >> |   SET = 0, FnV = 0
-> >> |   EA = 0, S1PTW = 0
-> >> | Data abort info:
-> >> |   ISV = 0, ISS = 0x00000004
-> >> |   CM = 0, WnR = 0
-> >> | user pgtable: 4k pages, 48-bit VAs, pgdp=000000003cbf9000
-> >> | [0000000000001ec0] pgd=0000000000000000
-> >> | Internal error: Oops: 96000004 [#1] PREEMPT SMP
-> >> | Modules linked in: r8169 realtek efivarfs ip_tables x_tables
-> >> | CPU: 1 PID: 2615 Comm: qemu-system-aar Not tainted 5.6.0-rc7 #30
-> >> | Hardware name: Marvell mvebu_armada-37xx/mvebu_armada-37xx, BIOS 2018.03-devel-18.12.3-gc9aa92c-armbian 02/20/2019
-> >> | pstate: 00000085 (nzcv daIf -PAN -UAO)
-> >> | pc : kvm_arch_timer_get_input_level+0x1c/0x68
-> >> | lr : kvm_arch_timer_get_input_level+0x1c/0x68
-> >>
-> >> | Call trace:
-> >> |  kvm_arch_timer_get_input_level+0x1c/0x68
-> >> |  vgic_get_phys_line_level+0x3c/0x90
-> >> |  vgic_mmio_write_senable+0xe4/0x130
-> >> |  vgic_uaccess+0xe0/0x100
-> >> |  vgic_v3_redist_uaccess+0x5c/0x80
-> >> |  vgic_v3_attr_regs_access+0xf0/0x200
-> >> |  nvgic_v3_set_attr+0x234/0x250
-> >> |  kvm_device_ioctl_attr+0xa4/0xf8
-> >> |  kvm_device_ioctl+0x7c/0xc0
-> >> |  ksys_ioctl+0x1fc/0xc18
-> >> |  __arm64_sys_ioctl+0x24/0x30
-> >> |  do_el0_svc+0x7c/0x148
-> >> |  el0_sync_handler+0x138/0x258
-> >> |  el0_sync+0x140/0x180
-> >> | Code: 910003fd f9000bf3 2a0003f3 97ff650c (b95ec001)
-> >> | ---[ end trace 81287612d93f1e70 ]---
-> >> | note: qemu-system-aar[2615] exited with preempt_count 1
-> >>
-> >> Loading the vcpu doesn't make a lot of sense for handling a device ioctl(),
-> >> so instead pass the vcpu through to kvm_arch_timer_get_input_level(). Its
-> >> not clear that an intid makes much sense without the paired vcpu.  
-> > 
-> > I don't fully agree with the analysis, Remember we are looking at the
-> > state of the physical interrupt associated with a virtual interrupt, so
-> > the vcpu doesn't quite make sense here if it isn't loaded.
-> > 
-> > What does it mean to look at the HW timer when we are not in the right
-> > context? For all we know, it is completely random (the only guarantee
-> > we have is that it is disabled, actually).  
+> ERROR: modpost: "sprd_pll_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_comp_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_clk_probe" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_clk_regmap_init" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+> ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+> ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
 > 
-> > My gut feeling is that this is another instance where we should provide
-> > specific userspace accessors that would only deal with the virtual
-> > state, and leave anything that deals with the physical state of the
-> > interrupt to be exercised only by the guest.  
+> This is a combination of two trivial bugs:
 > 
-> > Does it make sense?  
+> - A platform should not be 'tristate', it should be a 'bool' symbol
+>   like the other platforms, if only for consistency, and to avoid
+>   surprises like this one.
 > 
-> Broadly, yes. Specifically ... I'm not familiar enough with this code to work out where
-> such a change should go!
+> - The clk Makefile does not traverse into the sprd subdirectory
+>   if the platform is disabled but the drivers are enabled for
+>   compile-testing.
 > 
-> ~20 mins of grepping later~
+> Fixing either of the two would be sufficient to address the link failure,
+> but for correctness, both need to be changed.
 > 
-> Remove REGISTER_DESC_WITH_LENGTH() so that uaccess helpers have to be provided, and forbid
-> NULL for the ur/uw values in REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED()...?
+> Fixes: 2b1b799d7630 ("arm64: change ARCH_SPRD Kconfig to tristate")
+> Fixes: d41f59fd92f2 ("clk: sprd: Add common infrastructure")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm64/Kconfig.platforms | 2 +-
+>  drivers/clk/Makefile         | 2 +-
 
-I'd suggest something like this (untested, of course):
+For clk part
 
-diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c b/virt/kvm/arm/vgic/vgic-mmio-v2.c
-index d63881f60e1a..f51c6e939c76 100644
---- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
-+++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
-@@ -409,10 +409,12 @@ static const struct vgic_register_region vgic_v2_dist_registers[] = {
- 		NULL, vgic_mmio_uaccess_write_v2_group, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ENABLE_SET,
--		vgic_mmio_read_enable, vgic_mmio_write_senable, NULL, NULL, 1,
-+		vgic_mmio_read_enable, vgic_mmio_write_senable,
-+		NULL, vgic_uaccess_write_senable, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ENABLE_CLEAR,
--		vgic_mmio_read_enable, vgic_mmio_write_cenable, NULL, NULL, 1,
-+		vgic_mmio_read_enable, vgic_mmio_write_cenable,
-+		NULL, vgic_uaccess_write_cenable, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_PENDING_SET,
- 		vgic_mmio_read_pending, vgic_mmio_write_spending, NULL, NULL, 1,
-diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-index 77c8ba1a2535..a9c45048fadb 100644
---- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-@@ -538,10 +538,12 @@ static const struct vgic_register_region vgic_v3_dist_registers[] = {
- 		vgic_mmio_read_group, vgic_mmio_write_group, NULL, NULL, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ISENABLER,
--		vgic_mmio_read_enable, vgic_mmio_write_senable, NULL, NULL, 1,
-+		vgic_mmio_read_enable, vgic_mmio_write_senable,
-+		NULL, vgic_uaccess_write_senable, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ICENABLER,
--		vgic_mmio_read_enable, vgic_mmio_write_cenable, NULL, NULL, 1,
-+		vgic_mmio_read_enable, vgic_mmio_write_cenable,
-+	       NULL, vgic_uaccess_write_cenable, 1,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ISPENDR,
- 		vgic_mmio_read_pending, vgic_mmio_write_spending,
-@@ -609,11 +611,13 @@ static const struct vgic_register_region vgic_v3_rd_registers[] = {
- 	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_IGROUPR0,
- 		vgic_mmio_read_group, vgic_mmio_write_group, 4,
- 		VGIC_ACCESS_32bit),
--	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_ISENABLER0,
--		vgic_mmio_read_enable, vgic_mmio_write_senable, 4,
-+	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ISENABLER0,
-+		vgic_mmio_read_enable, vgic_mmio_write_senable,
-+		NULL, vgic_uaccess_write_senable, 4,
- 		VGIC_ACCESS_32bit),
--	REGISTER_DESC_WITH_LENGTH(SZ_64K + GICR_ICENABLER0,
--		vgic_mmio_read_enable, vgic_mmio_write_cenable, 4,
-+	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ICENABLER0,
-+		vgic_mmio_read_enable, vgic_mmio_write_cenable,
-+		NULL, vgic_uaccess_write_cenable, 4,
- 		VGIC_ACCESS_32bit),
- 	REGISTER_DESC_WITH_LENGTH_UACCESS(SZ_64K + GICR_ISPENDR0,
- 		vgic_mmio_read_pending, vgic_mmio_write_spending,
-diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-index 4012cd68ac93..2ca11b05b17b 100644
---- a/virt/kvm/arm/vgic/vgic-mmio.c
-+++ b/virt/kvm/arm/vgic/vgic-mmio.c
-@@ -184,6 +184,48 @@ void vgic_mmio_write_cenable(struct kvm_vcpu *vcpu,
- 	}
- }
- 
-+int vgic_uaccess_write_senable(struct kvm_vcpu *vcpu,
-+			       gpa_t addr, unsigned int len,
-+			       unsigned long val)
-+{
-+	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
-+	int i;
-+	unsigned long flags;
-+
-+	for_each_set_bit(i, &val, len * 8) {
-+		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
-+
-+		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-+		irq->enabled = true;
-+		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-+
-+		vgic_put_irq(vcpu->kvm, irq);
-+	}
-+
-+	return 0;
-+}
-+
-+int vgic_uaccess_write_cenable(struct kvm_vcpu *vcpu,
-+			       gpa_t addr, unsigned int len,
-+			       unsigned long val)
-+{
-+	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
-+	int i;
-+	unsigned long flags;
-+
-+	for_each_set_bit(i, &val, len * 8) {
-+		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
-+
-+		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-+		irq->enabled = false;
-+		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-+
-+		vgic_put_irq(vcpu->kvm, irq);
-+	}
-+
-+	return 0;
-+}
-+
- unsigned long vgic_mmio_read_pending(struct kvm_vcpu *vcpu,
- 				     gpa_t addr, unsigned int len)
- {
-diff --git a/virt/kvm/arm/vgic/vgic-mmio.h b/virt/kvm/arm/vgic/vgic-mmio.h
-index 30713a44e3fa..327d0a6938e4 100644
---- a/virt/kvm/arm/vgic/vgic-mmio.h
-+++ b/virt/kvm/arm/vgic/vgic-mmio.h
-@@ -138,6 +138,14 @@ void vgic_mmio_write_cenable(struct kvm_vcpu *vcpu,
- 			     gpa_t addr, unsigned int len,
- 			     unsigned long val);
- 
-+int vgic_uaccess_write_senable(struct kvm_vcpu *vcpu,
-+			       gpa_t addr, unsigned int len,
-+			       unsigned long val);
-+
-+int vgic_uaccess_write_cenable(struct kvm_vcpu *vcpu,
-+			       gpa_t addr, unsigned int len,
-+			       unsigned long val);
-+
- unsigned long vgic_mmio_read_pending(struct kvm_vcpu *vcpu,
- 				     gpa_t addr, unsigned int len);
- 
-
-
-> 
-> Or if that is too invasive, something like, (totally, untested):
-> ----------------%<----------------
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-> index 97fb2a40e6ba..30ae5f29e429 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
-> @@ -113,10 +113,11 @@ void vgic_mmio_write_senable(struct kvm_vcpu *vcpu,
->                 struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
-> 
->                 raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> -               if (vgic_irq_is_mapped_level(irq)) {
-> +               if (kvm_running_vcpu() && vgic_irq_is_mapped_level(irq)) {
->                         bool was_high = irq->line_level;
-> 
->                         /*
-> +                        * Unless we are running due to a user-space access,
->                          * We need to update the state of the interrupt because
->                          * the guest might have changed the state of the device
->                          * while the interrupt was disabled at the VGIC level.
-> ----------------%<----------------
-
-Huh, nice try! ;-) Unfortunately, I think there is more than the enable
-register that suffers from a similar problem (see how the pending
-register write is also accessing the HW state, even if accessed from
-userspace).
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
