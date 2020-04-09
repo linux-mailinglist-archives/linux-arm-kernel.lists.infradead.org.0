@@ -2,62 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 660581A3574
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:12:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A7981A35A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:15:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i6jpW+MC5F5wNZq3HiUj+/pTr5tCPQQLpJVM1l4jDY8=; b=RqHh+w8RZQGnC6
-	SyntcUPxC8be2v97V3Nb0pTca26JKJ+P5zRmIpiWQR3VRVB1VH+M5F6/w+m3fiaCAxdz+dg6eCeUk
-	IJwjvLAAY/UXBZEEe6okc2B2IIRsmtqpDBcKWzMjzfPnVFCg1Ir6Ds2nBjYE4k72lXW1fGRm9k4Cf
-	OzQUSnzoLuToz52iaflE4aY1/gGXxCsy+2XeAwWUk7YCCq6j/9siwaFf+v1QdGm6CDMAy3Fws0JXg
-	zspr7Yf3wPhzzowU0RXAR6j7HqQ27E8fac12aAc1tfy7GLSMzPMRPG5y/GUkR7FsMYRZHj+j2tnnI
-	VrM0E9fP7rTiz2Lxg8fA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=smkeWPiIL95VVuSL3I8pzltR6C7C3ant44vYHX4qOZo=; b=iFm
+	p/feo0L+wlIY7cfHE7q1jRAvCAWX+LyqY4U0GA/fjYGyeSeeY5m2/LTpp0s/GBJfOpFesX3WzMDzv
+	XZVHCdxRfnOAOfYxI8vBLIslAxBELlafBbbyZUJQYZc+T9GayxUBgvJdvuXbyigEn3RiaA3OYEypf
+	Ds/hEJhMKaHadreEYHMCVXMM75qpSrpRWRZQ3q6vhMyqwFQU0vbLB44Bbpa0KfUv1+Lqfr5NPrjS7
+	Es3LZ7mdTRZr6LUH33D9Ql6008NuPixOXDDNen61qt13jaDia1mBgexUnB/dG7hKQdUkCp/w6K+j1
+	hfhtl+d3llkMcPAwGe6+4vD3GFhM2DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMXuq-0001T1-2S; Thu, 09 Apr 2020 14:12:24 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1jMXxu-000326-Fa; Thu, 09 Apr 2020 14:15:34 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMXug-0001Sh-9P
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:12:15 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id D3A1E2008A;
- Thu,  9 Apr 2020 16:12:11 +0200 (CEST)
-Date: Thu, 9 Apr 2020 16:12:10 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 1/3] drm: pl111: Fix module autoloading
-Message-ID: <20200409141210.GA4673@ravnborg.org>
-References: <20200409013947.12667-1-robh@kernel.org>
- <20200409013947.12667-2-robh@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200409013947.12667-2-robh@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=-VAfIpHNAAAA:8
- a=e5mUnYsNAAAA:8 a=VwQbUJbxAAAA:8 a=7gkXJVJtAAAA:8 a=mw6QnLOueByRGjQxhEAA:9
- a=CjuIK1q_8ugA:10 a=srlwD-8ojaedGGhPAyx8:22 a=Vxmtnl_E_bksehYqCbjh:22
- a=AjGcO6oz07-iQ99wixmX:22 a=E9Po1WZjFZOl8hwRPBS3:22
+ id 1jMXwg-00023j-57
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:14:19 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id q16so1054350pje.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 07:14:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=uI5Y7Iz6wEdm5rxqvMay0aecrVsycJlfiKALlRK1TEY=;
+ b=DOQ42rXPfTNch2EjG+zaAiC7Z4dYLn+EmfLBr0Br2LYseg2VIUP6RIgbsVqoyNc1Yp
+ +RFegdSut8BIZPelJWPF/9PNZzfYSWC3bd9ivsnI8Ma0LjI3MrccBYARLmFSZncP7jEy
+ oV2XSnO+AsJGgsZo7+1AdWaanMxTbzfeVEXPfckFTH4/ohQRAqrhEyujmPS72LuFrd+Z
+ 2fdDnZ79A4AW3ZK7ViAab0wNqsJhNHf1LXRhAm5ibCz+jNJnFGKj8NN6zvGq2prA8gzB
+ F80kzViXZwTOuvoAn+kVKU5aa8Iy5ovUw3R4QVTJXbke/nZXT2Fw2F3H3CvdeLnbUd7A
+ xVNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=uI5Y7Iz6wEdm5rxqvMay0aecrVsycJlfiKALlRK1TEY=;
+ b=TD6Vy6Iii6gg6ia3p952jVJnTSD6QnimgwJ7zLsu6v2saTMRBb9rfQt/4vLrxeT/Lt
+ C7riEDDtyzBASLBlIooIBgTEYVGTJ0DKv3P1dkZPbMlLTq+CICITUyPw2a7rqXBuqKDw
+ +Ti0nRsWg4hqUt3oVhgzNEl/vyGg1nn3GBCv0F0p3JxkUBkpiACf6h7E5cQgswZfIiak
+ a95nJMP86xN2rqsxV5CeuUPttXQJXe6AHYMOorbrfIY30JATq+TxopPxXPq0kG74U3fW
+ 8wasfYdYibVnpqVnaHMuofJJH9qcZb0JuYQupnT04g6+SKZlMMcMYS9LEzpaQObd1Q2M
+ 4uUQ==
+X-Gm-Message-State: AGi0PubDzVLn+sdB8uIQEGMu9zT5hpGflarWGm75WCG7aDb31EcsbL13
+ aT7B88CYqLtMm/lxFJT7Lp0=
+X-Google-Smtp-Source: APiQypL7mQ0rjhq7MJ8igG0FzbTjMHziSp4qVWjwRDmloGrVOGwRZhiAOXJzZTtsK53nMr4lTDoGKA==
+X-Received: by 2002:a17:90a:2489:: with SMTP id
+ i9mr11116184pje.183.1586441655752; 
+ Thu, 09 Apr 2020 07:14:15 -0700 (PDT)
+Received: from localhost.localdomain ([2409:4072:700:a20f:d50:b01b:c4e4:35ad])
+ by smtp.gmail.com with ESMTPSA id
+ j4sm1285354pjy.34.2020.04.09.07.14.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Apr 2020 07:14:14 -0700 (PDT)
+From: Aishwarya R <aishwaryarj100@gmail.com>
+To: 
+Subject: [PATCH] iio: adc: sun4i-gpadc-iio: Use devm_platform_ioremap_resource
+Date: Thu,  9 Apr 2020 19:43:30 +0530
+Message-Id: <20200409141331.30882-1-aishwaryarj100@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_071214_504312_D419D59F 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200409_071418_209851_0488C5AD 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aishwaryarj100[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aishwaryarj100[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,48 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Anholt <eric@anholt.net>, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Lars-Peter Clausen <lars@metafoo.de>, Yangtao Li <tiny.windzz@gmail.com>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-iio@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ Thomas Gleixner <tglx@linutronix.de>, aishwaryarj100@gmail.com,
+ Jonathan Cameron <jic23@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob.
+Use the helper function that wraps the calls to platform_get_resource()
+and devm_ioremap_resource() together.
 
-On Wed, Apr 08, 2020 at 07:39:45PM -0600, Rob Herring wrote:
-> Add a missing MODULE_DEVICE_TABLE entry to fix module autoloading.
-> 
-> Cc: Eric Anholt <eric@anholt.net>
-> Cc: dri-devel@lists.freedesktop.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Aishwarya R <aishwaryarj100@gmail.com>
+---
+ drivers/iio/adc/sun4i-gpadc-iio.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-Change looks straightforward.
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
+diff --git a/drivers/iio/adc/sun4i-gpadc-iio.c b/drivers/iio/adc/sun4i-gpadc-iio.c
+index 176e1cb4abb1..0f2c1738a90d 100644
+--- a/drivers/iio/adc/sun4i-gpadc-iio.c
++++ b/drivers/iio/adc/sun4i-gpadc-iio.c
+@@ -496,7 +496,6 @@ static int sun4i_gpadc_probe_dt(struct platform_device *pdev,
+ 				struct iio_dev *indio_dev)
+ {
+ 	struct sun4i_gpadc_iio *info = iio_priv(indio_dev);
+-	struct resource *mem;
+ 	void __iomem *base;
+ 	int ret;
+ 
+@@ -508,8 +507,7 @@ static int sun4i_gpadc_probe_dt(struct platform_device *pdev,
+ 	indio_dev->num_channels = ARRAY_SIZE(sun8i_a33_gpadc_channels);
+ 	indio_dev->channels = sun8i_a33_gpadc_channels;
+ 
+-	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	base = devm_ioremap_resource(&pdev->dev, mem);
++	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base))
+ 		return PTR_ERR(base);
+ 
+-- 
+2.17.1
 
-> ---
->  drivers/gpu/drm/pl111/pl111_drv.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/gpu/drm/pl111/pl111_drv.c b/drivers/gpu/drm/pl111/pl111_drv.c
-> index aa8aa8d9e405..7f405b1374c2 100644
-> --- a/drivers/gpu/drm/pl111/pl111_drv.c
-> +++ b/drivers/gpu/drm/pl111/pl111_drv.c
-> @@ -444,6 +444,7 @@ static const struct amba_id pl111_id_table[] = {
->  	},
->  	{0, 0},
->  };
-> +MODULE_DEVICE_TABLE(amba, pl111_id_table);
->  
->  static struct amba_driver pl111_amba_driver __maybe_unused = {
->  	.drv = {
-> -- 
-> 2.20.1
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
