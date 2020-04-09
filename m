@@ -2,86 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A15F1A31DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 11:34:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4B331A31E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 11:36:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=o6SDkyLrdhmQsU5O3jNMsQjiQQ+3HXToAIuLUK7Mtd4=; b=J/rOOtHn8bW/Qj1EIZLvx7DOf
-	BcWsRokXtOvB2ceA9OqB4VnVX9ribo/b15rp7ifp9IMfPFfrw54zuTP4LiVfZ2pjYB88o047o5WRP
-	h63mnNFbNmBgFbSKZ4iwdWdXpSzHzNAYpb2tDdrhcQSxc9O+/o9coPoNnY3ExhuOqEN+Qbt97IIeD
-	8MLNupkT71q24HZJhwhBWMYj+K7+mOnOVmCEZFFoGpb4SQ8ajOVClQSxkOtUpmyin0z6RKodUIdf2
-	xJ3WREqtRGJvFo/yPbIREmwhIirlCZYLGLOACiTK53VwQJ1wt+eFzpl6w7N3vfcGF+IQ5x/cp63Q8
-	14XziKP+A==;
+	 bh=qSjPaXaIRsVCTTxdqgyKCx/OAjCUL+zdyfios7iHRd8=; b=s6V/1ACpBDE11kyAqN+pVIOPX
+	GdftWBuI2c/fm/SU+n1Qzej8lYHk7n4eS7BYrzCDsxp+IEI0NS3ht5eXBJ/61+aXLqgd+9SE0H2wj
+	WH9qLo2c1ddzezyDoXwdKwW37vCQFxS4rE5NN8bMXnhsDkFpY81wCfsnJ4u+0rMO9gQq4SJGewDv6
+	qLwdXmrIDgj360DKP69oy8mHwXz3nGRwEn7mHQ7WWcGPgCSTuEAEoQDcLCQBHDPHAKctM/MmGuJjQ
+	803k268JfnMNFjfWnt6VoY5pHLWkmYLc1wGFGpSWQyXt8Mz4LME9bB7YriqRtNM1CxQkjRIBYSLJL
+	rq6xhBe1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMTa8-0003oA-UW; Thu, 09 Apr 2020 09:34:44 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jMTbn-0006WA-EM; Thu, 09 Apr 2020 09:36:27 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMTZz-0003nU-K7
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 09:34:38 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1586424876; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=FawigcI4otjknp22YFn6zSI5pcdBGoJv9cwzgd6qVCA=;
- b=wtAC5nzJgAGfSNBSQZdkNbtmCM44kBTk34t7UlipE7aw8wbaGNAguQOEcjtSdNqO49WcFMv+
- EssZtuAMRYhOWLn3dj8IfBlRyVvJyhCMfj1ysOVFLwT5lcCd6NJW09fL8UhhdgXcj/0Qd83C
- qZWu/LBGO7IF0ZWUmyWP3o6S1sE=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e8eec24.7fb1ff134dc0-smtp-out-n05;
- Thu, 09 Apr 2020 09:34:28 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 74ABFC4478F; Thu,  9 Apr 2020 09:34:28 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 7A32DC433D2;
- Thu,  9 Apr 2020 09:34:27 +0000 (UTC)
+ id 1jMTbf-0006V6-Nx
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 09:36:21 +0000
+Received: by mail-lf1-x141.google.com with SMTP id k28so7381217lfe.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 02:36:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=F1hqxHeKu6Sn0qcjBqnpzejmFgF8FiXlYOaHHEiN1U4=;
+ b=r9cnIsxGH9g45TL7ekMdcxZMpShKraueO64GLT6yyMthC56S+z0hvUACligVUNToNY
+ jEkYid9BTnN3B5HO4QP/VfE5DGdN0bxdrR8s4OCUvRGYmBeB2Vt7DVMO+L2S4fQs9Mlo
+ /bT01v49+1apQOFowKkkbv16nQ/dExTSSHDWSJrSHVo9rPhcVwwBhycU/O84PHNyGiwb
+ XChLTMm/zk9pii0YUfIMKe32XG+WA01ZozvSayP2PsvF26YcunRcCwIgRgrrVvC85tBU
+ C9PfSfl5ITUvE9euSaNitly9N5M+/zfDLpQsFiaF7BQ9GM7k2/a0kwluucySEMF+2lIe
+ JwqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=F1hqxHeKu6Sn0qcjBqnpzejmFgF8FiXlYOaHHEiN1U4=;
+ b=rmubKNuyiGgSufqKAavGn0P3bBWffeT/L27CAQgQJ6UpgtA/ZDUfFOFA04LKPY7Ky3
+ vP3rCzuiI9rMq6Mdvx6icQbyuSWUTC4pUTyOdEYbrJIlc/zZmmbfOLQ2ocOWOJZKKNUv
+ J12J5qpCGMue4g+ouvMvP5Wbh3AUILi8uCFBMvcV6S/G3qzKQ1BDJmgf2bVNcv0lsQWC
+ X9pxpkjaS6odMbqVOjUORfZS7LRqXLQOKAvE/bC+id+hAErPQwUg1E+UKljq+JNTYO0D
+ YrjBjt6iCBcbmB3Z0x1S3fKAyMnfnosEbhNaPJLg7S9TcfKyHGOfK7EAPZNR3M80BS+b
+ +odw==
+X-Gm-Message-State: AGi0PuZsLgW2NrbL7Y+HTBa5PR1N0zhR3joBHK52doLheXdq3E+ZMekN
+ zKVFx5+RGm2TlbLRgqf9pPU1Og==
+X-Google-Smtp-Source: APiQypK/OqsgUggpyVaKp/qQ7mjyDy1mfGomhSAWpX/eUf3QmYwoKQnIdpStF6Miir15JkNuk554jA==
+X-Received: by 2002:a05:6512:54e:: with SMTP id
+ h14mr7301299lfl.56.1586424975925; 
+ Thu, 09 Apr 2020 02:36:15 -0700 (PDT)
+Received: from ?IPv6:2a00:1fa0:429a:a2f1:594e:c9e:26a1:8a11?
+ ([2a00:1fa0:429a:a2f1:594e:c9e:26a1:8a11])
+ by smtp.gmail.com with ESMTPSA id 125sm14965138lfb.89.2020.04.09.02.36.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 09 Apr 2020 02:36:15 -0700 (PDT)
+Subject: Re: [PATCH v7 7/8] PCI: Add Renesas R8A774C0 device ID
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Tom Joseph <tjoseph@cadence.com>, Heiko Stuebner <heiko@sntech.de>
+References: <1586360280-10956-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1586360280-10956-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Message-ID: <e3f5fa77-f78e-edbf-9efc-53b5ea620460@cogentembedded.com>
+Date: Thu, 9 Apr 2020 12:36:06 +0300
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Date: Thu, 09 Apr 2020 15:04:27 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [RFC PATCH] coresight: dynamic-replicator: Fix handling of
- multiple connections
-In-Reply-To: <671892c3-b90d-73f0-4706-b74b40002260@arm.com>
-References: <20200405102819.28460-1-saiprakash.ranjan@codeaurora.org>
- <CAJ9a7VgQzK1XSCvLwuqODwkWfvo=6Wwps7Db+pL5xYDeCuktrg@mail.gmail.com>
- <6c0f45488f8a44bf860759e00fcabd09@codeaurora.org>
- <906d374d-a4d6-f2f2-6845-88b97a5ff7d9@arm.com>
- <39a2b3fff165a108fa59d72b630b5f14@codeaurora.org>
- <bb209f80-ac02-6321-dac4-ebf9ee6fa9a0@arm.com>
- <bd05b31c2391edfff5044f22f2f83edf@codeaurora.org>
- <e9c299c4-caeb-9eb8-f019-b311bfce756a@arm.com>
- <a7074f44ebbde720b5e0189801eab7c9@codeaurora.org>
- <20200408224347.GA388414@ewhatever.cambridge.arm.com>
- <9ad167836b0a22694d58d24f39db89a6@codeaurora.org>
- <671892c3-b90d-73f0-4706-b74b40002260@arm.com>
-Message-ID: <fd20605ba5b98b5c1120e24f0f330166@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <1586360280-10956-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_023436_261248_BCFB5CB0 
-X-CRM114-Status: GOOD (  19.24  )
+X-CRM114-CacheID: sfid-20200409_023619_962007_75B25D4F 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,66 +108,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, alexander.shishkin@linux.intel.com,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- swboyd@chromium.org, leo.yan@linaro.org, linux-arm-kernel@lists.infradead.org,
- mike.leach@linaro.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU3V6dWtpLAoKT24gMjAyMC0wNC0wOSAxNDo0NywgU3V6dWtpIEsgUG91bG9zZSB3cm90ZToK
-PiBIaSBTYWksCj4gCj4gCj4gVGhhbmtzIGZvciB0aGUgcXVpY2sgdGVzdGluZyAhIFBsZWFzZSBz
-ZWUgYmVsb3cgZm9yIHRoZQo+IHRtY19ldHIgcHJvYmUgZmFpbHVyZS4KPiAKPiBPbiAwNC8wOS8y
-MDIwIDA4OjUxIEFNLCBTYWkgUHJha2FzaCBSYW5qYW4gd3JvdGU6Cj4+IEhpIFN1enVraSwKPj4g
-Cj4+IE9uIDIwMjAtMDQtMDkgMDQ6MTMsIFN1enVraSBLIFBvdWxvc2Ugd3JvdGU6Cj4+PiBPbiBU
-dWUsIEFwciAwNywgMjAyMCBhdCAwODo0ODo1NFBNICswNTMwLCBTYWkgUHJha2FzaCBSYW5qYW4g
-d3JvdGU6Cj4+PiAKPj4+IFBsZWFzZSBmaW5kIHRoZSB1bnRlc3RlZCBwYXRjaCBiZWxvdy4KPj4+
-IAo+Pj4gLS0tOD4tLS0KPj4+IAo+Pj4gW3VudGVzdGVkXSBjb3Jlc2lnaHQ6IEZpeCBzdXBwb3J0
-IGZvciBzcGFyc2UgcG9ydCBudW1iZXJzCj4+PiAKPj4+IE9uIHNvbWUgc3lzdGVtcyB0aGUgZmly
-bXdhcmUgbWF5IG5vdCBkZXNjcmliZSBhbGwgdGhlIHBvcnRzCj4+PiBjb25uZWN0ZWQgdG8gYSBj
-b21wb25lbnQgKGUuZywgZm9yIHNlY3VyaXR5IHJlYXNvbnMpLiBUaGlzCj4+PiBjb3VsZCBiZSBl
-c3BlY2lhbGx5IHByb2JsZW1hdGljIGZvciAiZnVubmVscyIgd2hlcmUgd2UgY291bGQKPj4+IGVu
-ZCB1cCBpbiBtb2RpZnlpbmcgbWVtb3J5IGJleW9uZCB0aGUgYWxsb2NhdGVkIHNwYWNlIGZvcgo+
-Pj4gcmVmY291bnRzLgo+Pj4gCj4+PiBlLmcsIGZvciBhIGZ1bm5lbCB3aXRoIGlucHV0IHBvcnRz
-IGxpc3RlZCAwLCAzLCA1LCBucl9pbnBvcnQgPSAzLgo+Pj4gSG93ZXZlciB0aGUgd2UgY291bGQg
-YWNjZXNzIHJlZmNudHNbNV0gd2hpbGUgY2hlY2tpbmcgZm9yCj4+PiByZWZlcmVuY2VzLgo+Pj4g
-Cj4+PiBTaWduZWQtb2ZmLWJ5OiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2kucG91bG9zZUBhcm0u
-Y29tPgo+Pj4gLS0tCj4+PiDCoC4uLi9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1wbGF0
-Zm9ybS5jwqAgfCA3NCAKPj4+ICsrKysrKysrKysrKy0tLS0tLS0KPj4+IMKgZHJpdmVycy9od3Ry
-YWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC5jwqDCoMKgwqDCoMKgIHzCoCA4ICstCj4+PiDCoDIg
-ZmlsZXMgY2hhbmdlZCwgNTYgaW5zZXJ0aW9ucygrKSwgMjYgZGVsZXRpb25zKC0pCj4+PiAKPj4+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0LXBsYXRm
-b3JtLmMKPj4+IGIvZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1wbGF0Zm9y
-bS5jCj4+PiBpbmRleCAzYzViZWU0MjkxMDUuLjFjNjEwZDZlOTQ0YiAxMDA2NDQKPj4+IC0tLSBh
-L2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2lnaHQtcGxhdGZvcm0uYwo+Pj4gKysr
-IGIvZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1wbGF0Zm9ybS5jCj4+PiBA
-QCAtNjcsNiArNjcsNyBAQCBzdGF0aWMgdm9pZCBvZl9jb3Jlc2lnaHRfZ2V0X3BvcnRzX2xlZ2Fj
-eShjb25zdAo+IAo+IFsuLi5dCj4gCj4+PiBAQCAtNjg0LDggKzcwMiwxMyBAQCBzdGF0aWMgaW50
-IGFjcGlfY29yZXNpZ2h0X3BhcnNlX2dyYXBoKHN0cnVjdAo+Pj4gYWNwaV9kZXZpY2UgKmFkZXYs
-Cj4+PiDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiByYzsKPj4+IAo+Pj4gwqDCoMKgwqAgLyogQ29w
-eSB0aGUgY29ubmVjdGlvbiBpbmZvcm1hdGlvbiB0byB0aGUgZmluYWwgbG9jYXRpb24gKi8KPj4+
-IC3CoMKgwqAgZm9yIChpID0gMDsgaSA8IHBkYXRhLT5ucl9vdXRwb3J0OyBpKyspCj4+PiAtwqDC
-oMKgwqDCoMKgwqAgcGRhdGEtPmNvbm5zW2ldID0gY29ubnNbaV07Cj4+PiArwqDCoMKgIGZvciAo
-aSA9IDA7IGNvbm5zICsgaSA8IHB0cjsgaSsrKSB7Cj4+PiArwqDCoMKgwqDCoMKgwqAgaW50IHBv
-cnQgPSBjb25uc1tpXS5vdXRwb3J0Owo+Pj4gKwo+Pj4gK8KgwqDCoMKgwqDCoMKgIC8qIER1cGxp
-Y2F0ZSBvdXRwdXQgcG9ydCAqLwo+Pj4gK8KgwqDCoMKgwqDCoMKgIFdBUk5fT04ocGRhdGEtPmNv
-bm5zW3BvcnRdLmNoaWxkX2Z3bm9kZSk7Cj4+PiArwqDCoMKgwqDCoMKgwqAgcGRhdGEtPmNvbm5z
-W3BvcnRdID0gY29ubnNbaV07Cj4+PiArwqDCoMKgIH0KPj4+IAo+Pj4gwqDCoMKgwqAgZGV2bV9r
-ZnJlZSgmYWRldi0+ZGV2LCBjb25ucyk7Cj4+PiDCoMKgwqDCoCByZXR1cm4gMDsKPj4+IEBAIC03
-ODcsNiArODEwLDcgQEAgY29yZXNpZ2h0X2dldF9wbGF0Zm9ybV9kYXRhKHN0cnVjdCBkZXZpY2Ug
-KmRldikKPj4+IMKgwqDCoMKgwqDCoMKgwqAgZ290byBlcnJvcjsKPj4+IAo+Pj4gwqDCoMKgwqAg
-cGRhdGEgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKnBkYXRhKSwgR0ZQX0tFUk5FTCk7Cj4+
-PiArwqDCoMKgIHBkYXRhLT5ucl9vdXRwb3J0ID0gcGRhdGEtPm5yX2lucG9ydCA9IC0xOwo+IAo+
-IAo+IFBsZWFzZSBjb3VsZCB5b3UgcmVtb3ZlIHRoaXMgaHVuayBhbmQgdGVzdCBpdCA/IEkgZm9y
-Z290IHRvIHVwZGF0ZSB0aGUKPiBjb21taXQgYmVmb3JlIEkgc2VudCB0aGlzIG92ZXIuCj4gCgpJ
-IGRvbid0IHNlZSB0aGUgRVRSIHByb2JlIGZhaWx1cmUgYW5kIHRoZSBLQVNBTiB3YXJuaW5nIGFu
-eW1vcmUgd2l0aCAKdGhpcyBjaGFuZ2UuCgpUZXN0ZWQtYnk6IFNhaSBQcmFrYXNoIFJhbmphbiA8
-c2FpcHJha2FzaC5yYW5qYW5AY29kZWF1cm9yYS5vcmc+CgpUaGFua3MsClNhaQoKLS0gClFVQUxD
-T01NIElORElBLCBvbiBiZWhhbGYgb2YgUXVhbGNvbW0gSW5ub3ZhdGlvbiBDZW50ZXIsIEluYy4g
-aXMgYSAKbWVtYmVyCm9mIENvZGUgQXVyb3JhIEZvcnVtLCBob3N0ZWQgYnkgVGhlIExpbnV4IEZv
-dW5kYXRpb24KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Hello!
+
+On 08.04.2020 18:37, Lad Prabhakar wrote:
+
+> Add R8A774C0 device ID so that this can be used by
+> pci_endpoint_test driver.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> ---
+>   include/linux/pci_ids.h | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
+> index 1dfc4e1dcb94..9e957c18abeb 100644
+> --- a/include/linux/pci_ids.h
+> +++ b/include/linux/pci_ids.h
+> @@ -2460,6 +2460,7 @@
+>   #define PCI_DEVICE_ID_RENESAS_SH7763	0x0004
+>   #define PCI_DEVICE_ID_RENESAS_SH7785	0x0007
+>   #define PCI_DEVICE_ID_RENESAS_SH7786	0x0010
+> +#define PCI_DEVICE_ID_RENESAS_R8A774C0	0x002d
+
+    We don't add the device IDs in this file, unless used in several places.
+Is it?
+
+[...]
+
+MBR, Sergei
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
