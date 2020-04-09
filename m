@@ -2,57 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC8AB1A3C94
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 00:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E7171A3C9C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 00:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wZgLBRH+KBN8A+vp1CBSoJNMeCv3oDq1IzZ3iP7enfI=; b=Xl5fGjPAnUeiOH
-	Gn8gU4/HFQwDH8t3Sdbq6sAJEfP2YsNliUoHUtW7tNwgpXKJF+bRW+x55JsYRwWGTBeESIU2uvtw/
-	jR/WnIuhSRc2B882umRmVolNSV9kEaClIwvYDOr6MEMCgZ+r6nrUCXwqJkL4NDpMw4Igf2HFCTT8b
-	0611KsOxlR8q3r3eBMGs26lSNeKxT5Ci1lCrVkFMBNgU5UKZx6PQIH3IziQXyAUqR2Q8c4NkKSRLQ
-	5VIRNsLNHIlIPnlonS4VgyyVnEjOmB+DjIdu9R/Dc5tH+y/5vGYd7nixEZgzP0ZJsIKMaGmDjlupv
-	3qpXlwjV+SujW3DCghbA==;
+	List-Owner; bh=fsaKOs7d40nD+g8yx093KaOKa7isRxoWSoZ/B05Y21k=; b=nxhaopbLjCfosD
+	zzLtbarcsjFMZnHL6CA5snuON/rbL9snoPteSjjeWSEpECyBjpOwRCOgm4v1REkWfH6JKViZvN3uB
+	g1wSBl+3EhdEOYgeStYikj+9WzPjapygUADbPOBQisiNJ7fqYhp0uSAwyEI7qNWKB5qEGr9/xlLl6
+	itVd+IcLpssKXbyniNql413zByqw8pqmme/DG9lpJC5jty47ReX8kd1fNjdmUZJZP9jEDZkp+w6kl
+	l2hAVMs2bqScxoP4b7OGdcnia5GBnrQzwX+yEZQ6YzHYVcCdDqpCIuqvG2dtJtPSx+joJ9LaYMWSP
+	AlgHmoE/SHJH8iuxOGkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMg5W-0003lw-DF; Thu, 09 Apr 2020 22:55:58 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
+	id 1jMg7V-0004Ag-5Z; Thu, 09 Apr 2020 22:58:01 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMg5O-0003lF-C4
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 22:55:52 +0000
+ id 1jMg7P-0004AZ-BU
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 09 Apr 2020 22:57:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Mime-Version:
+ Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=oD3djH5DlcC31yc+MRaheQ+6rLrLydUnJygeuWmoHWg=; b=NvRfh4NsQngwmRsKwEiRIKBLw+
+ bfZ9OAIc9wTmvrvfch03+Ve7Jo2qzF1t0y3jtmCIMULRJFxAOMcSbNeprg1SRTnszI+IiFmpNlskM
+ XXFHsLHAgP9LwwNoBuJzwrlP9wCYmjNAgwQiQlCMFV8Sr0IOaSuUpBzQvb9s9ghHJBv5r7JTFVrFJ
+ WiC7m7hb6OVaZKl5ZyP3ZYFmdewVPVepwrQJLGW7wcYCL/bwwGOD/Ipt/G80P33/AP6bG7V9gAM7z
+ gGHPbFyPBUZ/uvr0suSnaDfwhbHxixrQ19ZzDikBpy33zqPKL5colOcMM0h+npN+Z8nz7HXE+20ix
+ iYxgdGYg==;
+Received: from kernel.crashing.org ([76.164.61.194])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMg7L-0001pW-S3
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 22:57:54 +0000
 Received: from localhost (gate.crashing.org [63.228.1.57])
  (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 039MtGxC010105
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 039Muffv010125
  (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 9 Apr 2020 17:55:19 -0500
-Message-ID: <8c7a48e1b06771edf0aa46f5b4cee300aa1eeb06.camel@kernel.crashing.org>
-Subject: Re: [PATCH v4] usb: gadget: aspeed: improve vhub port irq handling
+ Thu, 9 Apr 2020 17:56:47 -0500
+Message-ID: <0f360b9cb72b80bae0d0db8150f65598c2776268.camel@kernel.crashing.org>
+Subject: Re: [PATCH 19/28] gpu/drm: remove the powerpc hack in
+ drm_legacy_sg_alloc
 From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: rentao.bupt@gmail.com, Felipe Balbi <balbi@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Stephen Boyd <swboyd@chromium.org>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org, taoren@fb.com
-Date: Fri, 10 Apr 2020 08:55:15 +1000
-In-Reply-To: <20200409204030.21330-1-rentao.bupt@gmail.com>
-References: <20200409204030.21330-1-rentao.bupt@gmail.com>
+To: Daniel Vetter <daniel@ffwll.ch>
+Date: Fri, 10 Apr 2020 08:56:41 +1000
+In-Reply-To: <CAKMK7uHtkLvdsWFGiAtkzVa5mpnDvXkn3CHZQ6bgJ_enbyAc8A@mail.gmail.com>
+References: <20200408115926.1467567-1-hch@lst.de>
+ <20200408115926.1467567-20-hch@lst.de>
+ <20200408122504.GO3456981@phenom.ffwll.local>
+ <eb48f7b6327e482ea9911b129210c0417ab48345.camel@kernel.crashing.org>
+ <CAKMK7uHtkLvdsWFGiAtkzVa5mpnDvXkn3CHZQ6bgJ_enbyAc8A@mail.gmail.com>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_155550_601837_ECB9FE9B 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20200409_235752_412362_471F17C3 
+X-CRM114-Status: GOOD (  12.65  )
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-0.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ 1.0 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,113 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Linux MM <linux-mm@kvack.org>,
+ "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
+ "open list:GENERIC INCLUDE/A..." <linux-arch@vger.kernel.org>,
+ linux-s390@vger.kernel.org, Wei Liu <wei.liu@kernel.org>,
+ Stephen Hemminger <sthemmin@microsoft.com>, X86 ML <x86@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, Peter Zijlstra <peterz@infradead.org>,
+ Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
+ Haiyang Zhang <haiyangz@microsoft.com>,
+ "moderated list:DMA BUFFER SHARING FRAMEWORK" <linaro-mm-sig@lists.linaro.org>,
+ bpf <bpf@vger.kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Minchan Kim <minchan@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>, Joerg 
+ Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-04-09 at 13:40 -0700, rentao.bupt@gmail.com wrote:
-> From: Tao Ren <rentao.bupt@gmail.com>
-> 
-> This patch evaluates vhub ports' irq mask before going through per-
-> port
-> irq handling one by one, which helps to speed up irq handling in case
-> there is no port interrupt.
-> 
-> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+On Thu, 2020-04-09 at 11:41 +0200, Daniel Vetter wrote:
+> Now if these boxes didn't ever have agp then I think we can get away
+> with deleting this, since we've already deleted the legacy radeon
+> driver. And that one used vmalloc for everything. The new kms one does
+> use the dma-api if the gpu isn't connected through agp
 
-Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Definitely no AGP there.
 
-> ---
->  Changes in v4:
->    - use simple for() loop as it runs faster than for_each_set_bit()
->      loop on aspeed BMCs.
->  Changes in v3:
->    - assign istat to (unsigned long) bitmap before calling
->      "for_each_set_bit_from".
->  Changes in v2:
->    - use "for_each_set_bit" to speed up port irq handling.
-> 
->  drivers/usb/gadget/udc/aspeed-vhub/core.c | 12 +++++++-----
->  drivers/usb/gadget/udc/aspeed-vhub/vhub.h | 11 ++++++-----
->  2 files changed, 13 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> index f8d35dd60c34..fb36bad2c0b7 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> @@ -134,11 +134,11 @@ static irqreturn_t ast_vhub_irq(int irq, void
-> *data)
->  	}
->  
->  	/* Handle device interrupts */
-> -	for (i = 0; i < vhub->max_ports; i++) {
-> -		u32 dev_mask = VHUB_IRQ_DEVICE1 << i;
-> -
-> -		if (istat & dev_mask)
-> -			ast_vhub_dev_irq(&vhub->ports[i].dev);
-> +	if (istat & vhub->port_irq_mask) {
-> +		for (i = 0; i < vhub->max_ports; i++) {
-> +			if (istat & VHUB_DEV_IRQ(i))
-> +				ast_vhub_dev_irq(&vhub->ports[i].dev);
-> +		}
->  	}
->  
->  	/* Handle top-level vHub EP0 interrupts */
-> @@ -332,6 +332,8 @@ static int ast_vhub_probe(struct platform_device
-> *pdev)
->  
->  	spin_lock_init(&vhub->lock);
->  	vhub->pdev = pdev;
-> +	vhub->port_irq_mask = GENMASK(VHUB_IRQ_DEV1_BIT + vhub-
-> >max_ports - 1,
-> +				      VHUB_IRQ_DEV1_BIT);
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	vhub->regs = devm_ioremap_resource(&pdev->dev, res);
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> index fac79ef6d669..b80e3ddff797 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> @@ -51,14 +51,11 @@
->  #define VHUB_CTRL_UPSTREAM_CONNECT		(1 << 0)
->  
->  /* IER & ISR */
-> +#define VHUB_IRQ_DEV1_BIT			9
->  #define VHUB_IRQ_USB_CMD_DEADLOCK		(1 << 18)
->  #define VHUB_IRQ_EP_POOL_NAK			(1 << 17)
->  #define VHUB_IRQ_EP_POOL_ACK_STALL		(1 << 16)
-> -#define VHUB_IRQ_DEVICE5			(1 << 13)
-> -#define VHUB_IRQ_DEVICE4			(1 << 12)
-> -#define VHUB_IRQ_DEVICE3			(1 << 11)
-> -#define VHUB_IRQ_DEVICE2			(1 << 10)
-> -#define VHUB_IRQ_DEVICE1			(1 << 9)
-> +#define VHUB_IRQ_DEVICE1			(1 <<
-> (VHUB_IRQ_DEV1_BIT))
->  #define VHUB_IRQ_BUS_RESUME			(1 << 8)
->  #define VHUB_IRQ_BUS_SUSPEND 			(1 << 7)
->  #define VHUB_IRQ_BUS_RESET 			(1 << 6)
-> @@ -70,6 +67,9 @@
->  #define VHUB_IRQ_HUB_EP0_SETUP			(1 << 0)
->  #define VHUB_IRQ_ACK_ALL			0x1ff
->  
-> +/* Downstream device IRQ mask. */
-> +#define VHUB_DEV_IRQ(n)				(VHUB_IRQ_DEVIC
-> E1 << (n))
-> +
->  /* SW reset reg */
->  #define VHUB_SW_RESET_EP_POOL			(1 << 9)
->  #define VHUB_SW_RESET_DMA_CONTROLLER		(1 << 8)
-> @@ -402,6 +402,7 @@ struct ast_vhub {
->  	/* Per-port info */
->  	struct ast_vhub_port		*ports;
->  	u32				max_ports;
-> +	u32				port_irq_mask;
->  
->  	/* Generic EP data structures */
->  	struct ast_vhub_ep		*epns;
+Cheers
+Ben.
+
 
 
 _______________________________________________
