@@ -2,93 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08A931A30FE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:33:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1097B1A311B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:43:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q0oYXL2PsMI0fJnyvfr44+w+9vfh+iurry+AMXIwrpg=; b=Ntso5wzPyG39Qc
-	r7ixjr/MMnp8OQE+XS2so949VN1kf9IpoRAtyjds6suiaaIw6QYbhjRr2a5YTyeauiwJtc42i2/gf
-	2P7s5Z/tRb0MvIbvGSFf024qR3ALmeQp751GBhXO3+ccrBv4RuLWNeW12RRdh3w5XYGnLONQIzhSO
-	mW0npPOkdnv9YZ7gLY5hWoAWjhn68/3pBJfirfYMSI6CjEy6vTlR9e2lSaqb8zfm80ajsQGBSM1kg
-	2MhsWYTEmIJDGD1uRq0nfpFjrMn4dHmRTMKhB5gRUJOKLb3FOhM60LKjxYTMutcTdEXRVdutihhUq
-	D/hskFFbHmxKLKVjyf9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iHXavlxE7ws+uw0Iai5f2UaIbhhnzE8xI0OBpr93sGA=; b=nPmebmmboTCnXf
+	luiywexEYK2aRhRI+QL2sxEEURs5BqPn7GqOEPIdrmRB6cZasSyq0jJOoI6UuLvM4Okba66LVArHp
+	zcK1lqwcRToO9NFwPF3btTaAU005zvqc0gsezol3V8wNJiuIi0zlzzoRHbUY0eT/GfBGAz0ACeQmk
+	Dq6gnQIVfrkA1XvXBFUV7RIf4jVJsjRZjlJsPKQ/aL5pnr5fO9+2Wc5+CIgz7/RqoqljdAFNi4rYW
+	LMbtB7ub0nMwOu+MgdRAVZh5FsT+iiot1iOAiQaGl5aWRrGaLg2KAlA5SuLGgpu8i4ZZoOOws5RB1
+	tl9/QwvKejzDUblmwyrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMScH-00080A-LI; Thu, 09 Apr 2020 08:32:53 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1jMSmB-0005me-PS; Thu, 09 Apr 2020 08:43:07 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMSc7-0007zC-8Y
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:32:45 +0000
-Received: by mail-oi1-x243.google.com with SMTP id u20so2567460oic.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 01:32:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pJpaYFDjfzzvcvYVsv7tnkT+Uj3FaSt07vFYzfz/iJE=;
- b=y0lpZy9Dn6HsYQW/+bGMmTHdYtRzhyYKpkKEVlw4ttxb1YjqAn353GchUiwQqtO/EL
- 6+ZGCSUEGq04ULviclGbHXMWU4iV7AjTXHEhFAhi6t653pJCMfiwEYprh2qzxvg3w52e
- wy/OiRaLOOtVaOTvskYDf8feBuCfg2xgdkal+97vZZU5SBLeu6VUTqbqmihtcejVUIYx
- pz1/V2epnMRkqO9Yckb4KMGUczc0rSsEiUC5Tn6SK85DeX2GVecrDe4h4AcEAxgI4Qjb
- MhQjaENopxf0du5w78dYrzw5o/G5H+r2fwZt8l/oE5/Lt9z9SKPJxOcWmb0L/4Gx7zM/
- tE7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pJpaYFDjfzzvcvYVsv7tnkT+Uj3FaSt07vFYzfz/iJE=;
- b=aNlYLSYvpR622i10mPmb5JXreWw3KSqZkSk8IMEuPp4Nkjpw1XhteyGTVCYA6Wvqrk
- XJUpJR1foThDWqF6EWn4qYP/RmQhfSWZNJLNf+2IpqyP0OuEaoMJQC8wXrp3LxY9BkP/
- PmsT4htb17LFwDx4jH+d7LJns/NAqAIDT/UNs23BRMDCRq54ZjZv5cjiowWTUTNovFoh
- y2KEtQJg6G7ooJm5r6aoCMT/dSoaaboMLOGWNWLhAZW6flDpeJchtuG90hhECDlrRR/F
- BW665iy5L6X6zpj5sotM07gUz0SVaOD1VzN7RiKopVzcSCKe44BZ7eU2hEWyTbivFpDi
- iD4w==
-X-Gm-Message-State: AGi0PuYv5e7nLKg7XcXF6gmEVeY1grfAqXPfZ3mVn10/Gc9LhHTiA8Pv
- DuMKhSwH+DhexzmR0aaF5kIR8RBmY++omYZibH/Emw==
-X-Google-Smtp-Source: APiQypL7QT1RUQBYoH3bLNuwPgd/B7JhqceE4pniefZZAH9pLmRzac2Q3zEsxVxL3WB/dAAULbryVBhT6MLCad7jBRA=
-X-Received: by 2002:aca:fcd8:: with SMTP id a207mr5694824oii.56.1586421162212; 
- Thu, 09 Apr 2020 01:32:42 -0700 (PDT)
+ id 1jMSm2-0005kl-SL
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:43:00 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id DC70DA5DBE5E0A569B7A;
+ Thu,  9 Apr 2020 16:42:40 +0800 (CST)
+Received: from [127.0.0.1] (10.74.184.86) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.487.0; Thu, 9 Apr 2020
+ 16:42:30 +0800
+Subject: Re: Question about SEA handling process happened in user space
+To: James Morse <james.morse@arm.com>
+References: <5E81EFCD.6020605@huawei.com>
+ <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E83104A.7020803@huawei.com>
+ <f9732852-046c-347c-21e1-7690e6b84a50@arm.com> <5E840F3B.6040803@huawei.com>
+ <7d6668d6-ec4a-e362-94a3-c31950651c02@arm.com>
+From: Xiaofei Tan <tanxiaofei@huawei.com>
+Message-ID: <5E8EDFF6.4050903@huawei.com>
+Date: Thu, 9 Apr 2020 16:42:30 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.5.1
 MIME-Version: 1.0
-References: <20200407083647.4mocdl7aqa3x737q@gilmour.lan>
- <CAG3jFyvd32pWppubMoOoyH9eO2XLjwUXMC7p4xtv8m+JkPv6vw@mail.gmail.com>
- <20200407123232.ktvaifhqntgzvkap@gilmour.lan>
- <CAG3jFysSrZJRE2TvL0bWoRFNnscgDGj8yGr-iwWBm4=1wMbJ9A@mail.gmail.com>
- <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
- <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
- <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
- <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
- <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
- <20200408134315.a7cemmto6bi26arg@gilmour.lan>
- <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
-In-Reply-To: <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
-From: Robert Foss <robert.foss@linaro.org>
-Date: Thu, 9 Apr 2020 10:32:26 +0200
-Message-ID: <CAG3jFyvf=uUSsswY66mgB4yBuddFEmNGn2sCiT6zSHwO=2hodA@mail.gmail.com>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-To: Sakari Ailus <sakari.ailus@iki.fi>
+In-Reply-To: <7d6668d6-ec4a-e362-94a3-c31950651c02@arm.com>
+X-Originating-IP: [10.74.184.86]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_013243_819933_976F19BA 
-X-CRM114-Status: GOOD (  36.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200409_014259_082345_EE34D688 
+X-CRM114-Status: GOOD (  25.21  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,157 +67,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- linux-media <linux-media@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Maxime Ripard <maxime@cerno.tech>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
-
-On Wed, 8 Apr 2020 at 17:30, Sakari Ailus <sakari.ailus@iki.fi> wrote:
->
-> Hi Maxime,
->
-> On Wed, Apr 08, 2020 at 03:43:15PM +0200, Maxime Ripard wrote:
-> > On Wed, Apr 08, 2020 at 02:35:28PM +0200, Tomasz Figa wrote:
-> > > On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
-> > > > > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
-> > > > > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus@iki.fi> wrote:
-> > > > > > >
-> > > > > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss wrote:
-> > > > > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > > > > > >
-> > > > > > > > > Hi Robert,
-> > > > > > > > >
-> > > > > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Foss wrote:
-> > > > > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakari Ailus wrote:
-> > > > > > > > > > > > > But that 19.2MHz is not a limitation of the device itself, it's a
-> > > > > > > > > > > > > limitation of our implementation, so we can instead implement
-> > > > > > > > > > > > > something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
-> > > > > > > > > > > > > sure that our parent clock is configured at the right rate) and the
-> > > > > > > > > > > > > clk_get_rate and compare that to 19.2MHz (to make sure that it's not
-> > > > > > > > > > > > > been rounded too far apart from the frequency we expect).
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > This is doing exactly the same thing, except that we don't encode our
-> > > > > > > > > > > > > implementation limitations in the DT, but in the driver instead.
-> > > > > > > > > > > >
-> > > > > > > > > > > > What I really wanted to say that a driver that doesn't get the clock
-> > > > > > > > > > > > frequency from DT but still sets that frequency is broken.
-> > > > > > > > > > > >
-> > > > > > > > > > > > This frequency is highly system specific, and in many cases only a certain
-> > > > > > > > > > > > frequency is usable, for a few reasons: On many SoCs, not all common
-> > > > > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 MHz and 24 MHz; while others
-> > > > > > > > > > > > are being used as well), and then that frequency affects the usable CSI-2
-> > > > > > > > > > > > bus frequencies directly --- and of those, only safe, known-good ones
-> > > > > > > > > > > > should be used. IOW, getting the external clock frequency wrong typically
-> > > > > > > > > > > > has an effect that that none of the known-good CSI-2 bus clock frequencies
-> > > > > > > > > > > > are available.
-> > > > > > > > > > >
-> > > > > > > > > > > So clock-frequency is not about the "Frequency of the xvclk clock in
-> > > > > > > > > > > Hertz", but the frequency at which that clock must run on this
-> > > > > > > > > > > particular SoC / board to be functional?
-> > > > > > > > > > >
-> > > > > > > > > > > If so, then yeah, we should definitely keep it, but the documentation
-> > > > > > > > > > > of the binding should be made clearer as well.
-> > > > > > > > > >
-> > > > > > > > > > Alright so, let me summarise the desired approach then.
-> > > > > > > > >
-> > > > > > > > > There's a separate discussion on the same topic here:
-> > > > > > > > > https://lore.kernel.org/linux-media/20200407122106.GD4751@pendragon.ideasonboard.com/
-> > > > > > > >
-> > > > > > > > Thanks for the link.
-> > > > > > > >
-> > > > > > > > >
-> > > > > > > > > > ACPI:
-> > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > >
-> > > > > > > > > > DT:
-> > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > >   - Get xvclk clock
-> > > > > > > > > >   - Get xvclk clock rate
-> > > > > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
-> > > > > > > > >
-> > > > > > > > > The current status is that you should
-> > > > > > > > > 's/clock-frequency/link-frequencies/', and in order to replace
-> > > > > > > > > assigned-clock-rates, you'll want to have a clk_set_rate to 19.2MHz
-> > > > > > > > > between steps 3 and 4
-> > > > > > > >
-> > > > > > > > Would we want to 's/clock-frequency/link-frequencies/' for ACPI too?
-> > > > > > > > I imagine that would cause some breakage.
-> > > > > > >
-> > > > > > > It would, yes, and it would be no more correct on DT either.
-> > > > > > >
-> > > > > > > There are basically two possibilities here; either use the clock-frequency
-> > > > > > > property and set the frequency, or rely on assigned-clock-rates, and get
-> > > > > > > the frequency instead.
-> > > > > > >
-> > > > > > > The latter, while I understand it is generally preferred, comes with having
-> > > > > > > to figure out the register list set that closest matches the frequency
-> > > > > > > obtained. The former generally gets around this silently by the clock
-> > > > > > > driver setting the closest frequency it can support.
-> > > > > >
-> > > > > > Wouldn't the former actually cause problems, because the closest
-> > > > > > frequency the clock driver can support could be pretty far from the
-> > > > > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs to check the
-> > > > > > resulting frequency anyway.
-> > > > >
-> > > > > That's possible, yes; in this case there wouldn't be a guarantee the
-> > > > > frequency wouldn't be far off.
-> > > >
-> > > > assigned-clock-rates is really fragile... There's zero guarantee on
-> > > > how far the actual rate is going to be from the asked one, but more
-> > > > importantly you have zero guarantee on the time frame that rate is
-> > > > going to be enforced for.
-> > >
-> > > Is there such a guarantee if clk_set_rate() is called?
-> >
-> > with clk_set_rate itself, no, but...
-> >
-> > > > It's simply going to change the rate as a one-off thing, and if
-> > > > there's the next millisecond someone else is going to change its rate
-> > > > one way or another, it's going to do so and you won't have any
-> > > > notification.
-> >
-> > You can get notified, and you can use clk_set_rate_exclusive if you
-> > *really* want to enforce it.
->
-> Is the conclusion then we should go back to relying on the clock-frequency
-> property?
-
-I too am curious about the conclusion, if we have arrived at one yet.
-
-I sent out v4 of this series yesterday, which used the
-'assigned-clock-rates' approach but I would like update the series
-with whatever is deemed the best approach.
-
->
-> This has been discussed multiple times over the years, and I don't really
-> disagree with the above. The frequency is typically indeed hand-picked for
-> the hardware, and no other frequency should be used in any circumstances.
->
-> No sensor driver I've seen has used clk_set_rate_exclusive() but I guess
-> they should. The absence of practical problems has been probably because of
-> two factors; firstly, these are typically clocks dedicated to the sensors
-> and secondly, good luck.
->
-> --
-> Regards,
->
-> Sakari Ailus
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmFtZXPvvIwKCk9uIDIwMjAvNC84IDA6MzcsIEphbWVzIE1vcnNlIHdyb3RlOgo+IE9uIDAx
+LzA0LzIwMjAgMDQ6NDksIFhpYW9mZWkgVGFuIHdyb3RlOgo+PiBPbiAyMDIwLzQvMSAxOjAwLCBK
+YW1lcyBNb3JzZSB3cm90ZToKPj4+IE9uIDMvMzEvMjAgMTA6NDEgQU0sIFhpYW9mZWkgVGFuIHdy
+b3RlOgo+Pj4+IDEubWVtb3J5X2ZhaWx1cmUoKSBpcyBvbmx5IGNhbGxlZCBmb3IgIm1lbW9yeSBl
+cnJvciBzZWN0aW9uIiByZWNvcmQuIFRoZW4KPj4+PiBzaG91bGQgd2UgdXNlIHRoaXMgbWVtb3J5
+IHJlY29yZCBmb3IgZ2hlcyBzZWEgcmVwb3J0PyBPdXIgcGxhdGZvcm0gaXMKPj4+PiB1c2luZyAi
+QVJNIHByb2Nlc3NvciBlcnJvciBzZWN0aW9uIi4KPiAKPj4+IEZvciB3aGF0IGNsYXNzZXMgb2Yg
+ZXJyb3I/Cj4gCj4+IEJvdGggcHJvY2Vzc29yIGNhY2hlIGVjYyBlcnJvciBhbmQgbWVtb3J5IGVy
+cm9yIChtYXJrZWQgYnkgcG9pc29uKSBjYW4gbGVhZCB0byBTRUEuCj4gCj4gVGhlc2UgYXJlIHRo
+ZSBlcnJvcnMgdGhhdCBjYW4gY2F1c2UgdGhlIGhhcmR3YXJlIHRvIG5vdGlmeSBzb2Z0d2FyZSB2
+aWEgZXh0ZXJuYWwgYWJvcnQuCj4gRm9yIHdoaWNoIGNsYXNzZXMgb2YgZXJyb3IgZG9lcyB5b3Vy
+IGZpcm13YXJlIHRoZW4gdXNlIGEgJ3Byb2Nlc3NvciBlcnJvcic/Cj4gCgpGb3IgYWxsIHByb2Nl
+c3NvciBnZW5lcmF0aW9uIGFuZCBjb25zdW1wdGlvbiBlcnJvcnMuCgo+IEl0IHNvdW5kcyBsaWtl
+IHlvdSBhc3N1bWUgZXZlcnl0aGluZyByZXBvcnRlZCBpbiB0aGUgQ1BVIHJlY29yZHMgbXVzdCBi
+ZSBhIHByb2Nlc3Nvcgo+IGVycm9yLCBhbmQgZXZlcnl0aGluZyByZXBvcnRlZCBieSB0aGUgbWVt
+b3J5IGVycm9yIG11c3QgYmUgYSBtZW1vcnkgZXJyb3IuCj4gCgpOb3QgZXhhY3RseSwgd2UgdXNl
+IHByb2Nlc3NvciBlcnJvciBzZWN0aW9uIGZvciBldmVyeXRoaW5nIHJlcG9ydGVkIGluIHRoZSBD
+UFUgcmVjb3JkcywgYW5kCnRoZSBtZW1vcnkgaXMgc2ltaWxhci4gVGhvdWdoIGl0IGp1c3QgY29u
+c3VtZWQgZXJyb3JzIGZyb20gb3RoZXIgbm9kZS4gU28sIHRoZSBwcm9ibGVtIGlzIHdoYXQKa2lu
+ZHMgb2YgZXJyb3Igc2VjdGlvbiBzaG91bGQgd2UgdXNlIGZvciBlcnJvciBjb25zdW1wdGlvbiBj
+YXNlLgoKPiAKPiAoZGlncmVzc2lvbjogdGhpcyBpc24ndCByZWFsbHkgdHJ1ZSEKPiBUaGUgQ1BV
+IGNvdWxkIHJlcG9ydCB0aGF0IGl0IHJlYWQgcG9pc29uIGZyb20gbWVtb3J5LiBJcyB0aGlzIGEg
+bWVtb3J5IGVycm9yLCBvciBhIENQVQo+IGVycm9yPyBFcXVhbGx5IHRoZSBtZW1vcnkgY29udHJv
+bGxlciBjb3VsZCByZXBvcnQgdGhhdCBhIFBDSWUgZGV2aWNlIHdyb3RlIHRvIGEKPiBub3QtcHJl
+c2VudCBESU1NLiBJcyB0aGlzIGEgbWVtb3J5IGVycm9yPykKPiAKClllcywgdGhpcyBpcyBlcnJv
+ciBjb25zdW1wdGlvbiBjYXNlLgoKPiAKPj4+IElmIG1lbW9yeSBoYXMgYmVjb21lIGNvcnJ1cHRl
+ZCwgeW91IHNob3VsZCB0ZWxsIHRoZSBPUyBhYm91dCB0aGUgbWVtb3J5IGVycm9yLgo+Pj4KPj4+
+ID5Gcm9tIChteSkgbWVtb3J5OiBsaW51eCB3aWxsIGp1c3QgcHJpbnQgb3V0ICdwcm9jZXNzb3Ig
+ZXJyb3JzJywgYW5kIHBhbmljKCkgaWYKPj4+IHRoZXkgYXJlIG1hcmtlZCBhcyBmYXRhbC4gSSBk
+b24ndCB0aGluayB5b3UgY2FuIHVzZSB0aGVzZSB0byBjb252ZXkgYSBtZW1vcnkKPj4+IGVycm9y
+Li4uCj4+Pgo+Pgo+PiBPSy4gVGhlbiBmaXJtd2FyZSBzaG91bGQgZGV0ZWN0IGVycm9yIHNvdXJj
+ZS4gSWYgaXQgaXMgcHJvY2Vzc29yIGNhY2hlIGVycm9yLAo+PiB3ZSB1c2UgIkFSTSBwcm9jZXNz
+b3IgZXJyb3Igc2VjdGlvbiIsIGVsc2UgaWYgaXQgaXMgbWVtb3J5IGVycm9yLCB3ZSB1c2UgIm1l
+bW9yeSBlcnJvciBzZWN0aW9uIi4KPiAKPj4gTm9ybWFsbHksIHdlIHJlcG9ydCBtZW1vcnkgZXJy
+b3Igb25seSBmcm9tIFJBUyBub2RlIG9mIEREUkMgb3IgSEhBIG1vZHVsZS4gRm9yIFNFQSwKPiAK
+PiBEbyB5b3UgaGF2ZSBwYXRjaGVzIHRvIGdldCBsaW51eCB0byBkbyBzb21ldGhpbmcgdXNlZnVs
+IHdpdGggdGhlIHByb2Nlc3NvciBlcnJvciBub2Rlcz8KPiAKPiBXZSdkIG5lZWQgaXQgdG8gaGFu
+ZGxlIHVuY29ycmVjdGVkIGNhY2hlIGVycm9ycyB3aXRoIGEgcGh5c2ljYWwgYWRkcmVzcywgYXMg
+aWYgdGhleSB3ZXJlCj4gbWVtb3J5IGVycm9ycy4uLgo+IAoKWWVzLCB3ZSBoYXZlIHNvbWUgcGF0
+Y2hlcyB0byBkbyB0aGlzIHRoaW5nIGluc2lkZS4gVGhlbiBtZW1vcnlfZmFpbHVyZSgpIHdpbGwg
+YmUgY2FsbGVkIGZvcgphcm0gcHJvY2Vzc29yIGVycm9yIHNlY3Rpb24gd2hlbiBwaHlzaWNhbCBh
+ZGRyZXNzIGlzIGF2YWlsYWJsZS4KCj4gQSB2aXJ0dWFsIGFkZHJlc3MgaXMgbm8tdXNlIGFzIHRo
+ZSBtZW1vcnkgbWF5IGhhdmUgYmVlbiByZS1tYXBwZWQgaW4gdGhlIG1lYW50aW1lLgo+IAoKUmln
+aHQuCgo+IAo+PiBJdCBpcyBhIGxpdHRsZSBzdHJhbmdlIHRvIHJlcG9ydCBhcyBtZW1vcnkgZXJy
+b3Igd2hlbiBjb2xsZWN0IGVycm9ycyBmcm9tIHByb2Nlc3Nvcgo+PiBSQVMgbm9kZS4KPiAKPiBJ
+dHMgcHJhZ21hdGljOiB0b2RheSBsaW51eCBpZ25vcmVzIHRoZSBwcm9jZXNzb3IgZXJyb3JzLgo+
+IElmIHlvdSBzdWZmZXIgYSBjYWNoZSBlcnJvciwgdGhlIG1lbW9yeSB0aGF0IGJhY2tlZCB0aGF0
+IGNhY2hlZCBsb2NhdGlvbiBpcyBub3cgYWxzbwo+IGNvcnJ1cHQsIGFzIHlvdSd2ZSBsb3N0IHRo
+ZSB3cml0ZXMgdGhhdCBtYWRlIHRoZSBjYWNoZS1saW5lIGRpcnR5Lgo+IAo+IElmIHlvdSBjYW4g
+ZGVzY3JpYmUgdGhpcyBtZW1vcnkgY29ycnVwdGlvbiwgd2l0aG91dCB0cmVhdGluZyBpdCBhcyAn
+dGhlIGVycm9yJyB0aGVuIGFuIE9TCj4gdGhhdCBkb2Vzbid0IGtub3cgYWJvdXQgdGhlIHByb2Nl
+c3MgZXJyb3Igc2VjdGlvbnMgd2lsbCBzdGlsbCBkbyB0aGUgcmlnaHQgdGhpbmcuIChpLmUuCj4g
+bGVhdmUgb3V0IHRoZSBkZXZpY2Uvcm93L3Jhbmsgc3R1ZmYgdG8gYXZvaWQgaXQgYmVpbmcgYXR0
+cmlidXRlZCB0byBhIERJTU0pCj4gCj4gVGhlIGRvd25zaWRlIGlzIHlvdSBoYXZlIGZha2UgbWVt
+b3J5IGVycm9ycyB3aGVuIG5vdGhpbmcgYmFkIGhhcHBlbmVkIHRvIHRoZSBESU1NLiBUaGVzZQo+
+IHNob3VsZCBiZSB1bmlmb3JtLCBhbmQgc21hbGxlciB0aGFuIHRoZSBlcnJvcnMgYWN0dWFsbHkg
+b2NjdXJyaW5nIGF0IHRoZSBESU1NLgo+IAoKYWdyZWUuCgo+IEkndmUgbm8gaWRlYSBpZiBwYXRj
+aGVzIGFkZGluZyBzdXBwb3J0IGZvciB0aGUgcHJvY2Vzc29yIGVycm9yIG5vZGVzIHdvdWxkIGJl
+IGNvbnNpZGVyZWQKPiBmb3Igc3RhYmxlLgo+IAoKSSB0aGluayB0aGlzIHBhcnQgaXMgd29ydGgg
+aW1wcm92aW5nLgpCVFcsIHNob3VsZCBBUk0gcHJvY2Vzc29yIHJlY29yZCBwaHlzaWNhbCBhZGRy
+ZXNzIHdoZW4gY29uc3VtZWQgYW4gbWVtb3J5IHBvaXNvbiBlcnJvciBmb3IgU0VBPwpJdCBpcyBo
+ZWxwZnVsIHRvIGRvIGVycm9yIHJlY292ZXJ5LiBJcyB0aGlzIG1hbmRhdG9yeSBmb3IgYXJtIHNw
+ZWM/Cgo+IAo+Pj4+IDIuU2hvdWxkIHdlIGRlZmluZSBhbiBlcnJvciBzb3VyY2Ugc3RydWN0dXJl
+IGZvciBlYWNoIGNwdSBjb3JlIGluIEhFU1QgdGFibGU/Cj4+Pj4gSWYgbm90LCB0aGVyZSBtYXkg
+YmUgY29uZmxpY3QgaWYgbW9yZSB0aGFuIG9uZSBjcHUgY29yZSBmYWxsIGludG8gU0VBLgo+Pj4K
+Pj4+IFRoaXMgaXMgYSBxdWVzdGlvbiBmb3IgdGhlIHBlb3BsZSB3aG8gd3JvdGUgeW91ciBmaXJt
+d2FyZS4KPj4+IEZvciBmaXJtd2FyZSBmaXJzdCwgeW91IG11c3QgaGF2ZSBzZXQgU0NSX0VMMy5F
+QS4gV2hhdCBkb2VzIHlvdXIgZmlybXdhcmUgZG8gaWYKPj4+IHR3byBDUFVzIHRha2UgYW4gZXh0
+ZXJuYWwgYWJvcnQgYXQgdGhlIHNhbWUgdGltZT8KPj4KPj4gV2lsbCBibG9jayB0aGUgc2Vjb25k
+IG9uZSB1bnRpbCBmaXJzdCBTRUEgZmluaXNoZWQgYW5kIGVycm9yIHNvdXJjZSBvZiBIRVNUIHRh
+YmxlIGZyZWUuCj4gCj4gT2theSwgc28gb25lICdTRUEnIGVudHJ5IGluIHRoZSBIRVNUIGRlc2Ny
+aWJlcyB0aGUgc2luZ2xlIHJlZ2lvbiB0aGF0IENQRVIgd2lsbCBiZSB3cml0dGVuIHRvLgo+IAo+
+IAo+Pj4gRWFjaCBDUFUgaGF2aW5nIGl0cyBvd24gYXJlYSB0byByZWFkL3dyaXRlIENQRVIgd291
+bGQgbWVhbiB5b3UgbmVlZCBvbmUKPj4+IE5PVElGWV9TRUEgZW50cnkgaW4gdGhlIEhFU1QgZm9y
+IGVhY2ggYXJlYSAuLi4gYnV0IGhvdyBkb2VzIHRoZSBPUyBrbm93IHdoaWNoCj4+PiBDUFUgaXMg
+d2hpY2g/Cj4+Cj4+IFllcywgT1MgZG9uJ3Qga25vdyB0aGlzLgo+PiBTbywgaXQgaXMgb2sgdG8g
+c2hhcmUgdGhlIG9ubHkgb25lIGFyZWEgZm9yIGFsbCBDUFVzLgo+IAo+IFllcywgYXMgdGhlcmUg
+aXMgbm8gd2F5IHRvIHBhaXIgdGhlIG1lbW9yeSB3aXRoIHRoZSBDUFVzLgo+IAo+IElmIHRoZXJl
+IGlzIG1vcmUgdGhhbiBvbmUgcmVnaW9uLCB0aGVuIGVhY2ggQ1BVIHRha2luZyBhbiBleHRlcm5h
+bCBhYm9ydCB3aWxsIHdhbGsgdGhlCj4gbGlzdCwgY2hlY2tpbmcgZWFjaCBvbmUuCj4gCj4gSXRz
+IHVwIHRvIGZpcm13YXJlIHRvIGVuc3VyZSB0aGlzIGlzIHNlcmlhbGlzZWQuIFNvdW5kcyBsaWtl
+IHlvdSd2ZSBnb3QgdGhpcyBzb3J0ZWQuCj4gCgpZZXMKCj4gCj4gVGhhbmtzLAo+IAo+IEphbWVz
+Cj4gCj4gLgo+IAoKLS0gCiB0aGFua3MKdGFueGlhb2ZlaQoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
