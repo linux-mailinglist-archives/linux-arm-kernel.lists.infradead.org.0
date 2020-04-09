@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 859661A3C78
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 00:39:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC8AB1A3C94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 00:56:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1MvjyIBC8UDRTJJu+BiwkCg06JLxb3vlYOwciy5rQY4=; b=A3eYyPU59KKLot
-	RYUgEn8ZIJnI+5gfGfnFnPU+u26voNp0RCeTmFcpihfW01k4VsvfxBStCFmUojvWdBzNdq4LQeHlo
-	oPHye0nCwaK9Mj34MBaKBfGFMRZJ1T5UnZchFpPZ+cWqvk01M7yYp3hCo0Ps84a/MGvn17nxfKoCe
-	OcGbmxYU/cr8UA0BVjMvsU0XkO6AwWigZUqfOmlZZbNK7dWMQwmgTvZxuDtXSpRYZD/ljUyzhFlAO
-	82KE9yA2bw2TtqosxEYEWb30XjK0gYqGL35umaX8c2wd0vuTNenF9DBt+XQE0bkvsU6wHCijZ5sEW
-	0JQ1KI3z6Vu0iI8EOjJw==;
+	List-Owner; bh=wZgLBRH+KBN8A+vp1CBSoJNMeCv3oDq1IzZ3iP7enfI=; b=Xl5fGjPAnUeiOH
+	Gn8gU4/HFQwDH8t3Sdbq6sAJEfP2YsNliUoHUtW7tNwgpXKJF+bRW+x55JsYRwWGTBeESIU2uvtw/
+	jR/WnIuhSRc2B882umRmVolNSV9kEaClIwvYDOr6MEMCgZ+r6nrUCXwqJkL4NDpMw4Igf2HFCTT8b
+	0611KsOxlR8q3r3eBMGs26lSNeKxT5Ci1lCrVkFMBNgU5UKZx6PQIH3IziQXyAUqR2Q8c4NkKSRLQ
+	5VIRNsLNHIlIPnlonS4VgyyVnEjOmB+DjIdu9R/Dc5tH+y/5vGYd7nixEZgzP0ZJsIKMaGmDjlupv
+	3qpXlwjV+SujW3DCghbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMfpT-0000Bx-85; Thu, 09 Apr 2020 22:39:23 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1jMg5W-0003lw-DF; Thu, 09 Apr 2020 22:55:58 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMfpL-0000B3-Ku
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 22:39:17 +0000
-X-Originating-IP: 86.202.105.35
-Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
- [86.202.105.35])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 78876FF803;
- Thu,  9 Apr 2020 22:39:07 +0000 (UTC)
-Date: Fri, 10 Apr 2020 00:39:07 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
-Message-ID: <20200409223907.GW3628@piout.net>
-References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
- <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
- <20200409222115.GT75430@dtor-ws>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200409222115.GT75430@dtor-ws>
+ id 1jMg5O-0003lF-C4
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 22:55:52 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 039MtGxC010105
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 9 Apr 2020 17:55:19 -0500
+Message-ID: <8c7a48e1b06771edf0aa46f5b4cee300aa1eeb06.camel@kernel.crashing.org>
+Subject: Re: [PATCH v4] usb: gadget: aspeed: improve vhub port irq handling
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: rentao.bupt@gmail.com, Felipe Balbi <balbi@kernel.org>, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Stephen Boyd <swboyd@chromium.org>, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org, taoren@fb.com
+Date: Fri, 10 Apr 2020 08:55:15 +1000
+In-Reply-To: <20200409204030.21330-1-rentao.bupt@gmail.com>
+References: <20200409204030.21330-1-rentao.bupt@gmail.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_153915_954488_CDFD9EE5 
-X-CRM114-Status: GOOD (  23.94  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200409_155550_601837_ECB9FE9B 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,119 +64,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kamel Bouhara <kamel.bouhara@bootlin.com>, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dmitry,
-
-On 09/04/2020 15:21:15-0700, Dmitry Torokhov wrote:
-> On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
-> > Add dt binding for the counter variant of the rotary encoder driver.
-> > 
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > ---
-> >  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
-> >  1 file changed, 67 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > new file mode 100644
-> > index 000000000000..a59f7c1faf0c
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
-> > @@ -0,0 +1,67 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Rotary Encoder Counter
-> > +
-> > +maintainers:
-> > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > +
-> > +description:
-> > +  Registers a Rotary encoder connected through a counter device.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: rotary-encoder-counter
+On Thu, 2020-04-09 at 13:40 -0700, rentao.bupt@gmail.com wrote:
+> From: Tao Ren <rentao.bupt@gmail.com>
 > 
-> I wonder if a separate driver is really needed. The original driver be
-> taught to use counter device when available?
+> This patch evaluates vhub ports' irq mask before going through per-
+> port
+> irq handling one by one, which helps to speed up irq handling in case
+> there is no port interrupt.
 > 
+> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 
-By the original driver, do you mean drivers/input/misc/rotary_encoder.c
-that is using gpios ?
+Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 
-> > +
-> > +  counter:
-> > +    description: Phandle for the counter device providing rotary position.
-> > +
-> > +  linux-axis:
-> > +    description: The input subsystem axis to map to this rotary encoder.
-> > +    type: boolean
-> > +
-> > +  qdec-mode:
-> > +    description: |
-> > +      Quadrature decoder function to set in the counter device.
-> > +      3: x1-PHA
-> > +      4: x1-PHB
-> > +      5: x2-PHA
-> > +      6: x2-PHB
-> > +      7: x4-PHA and PHB
+> ---
+>  Changes in v4:
+>    - use simple for() loop as it runs faster than for_each_set_bit()
+>      loop on aspeed BMCs.
+>  Changes in v3:
+>    - assign istat to (unsigned long) bitmap before calling
+>      "for_each_set_bit_from".
+>  Changes in v2:
+>    - use "for_each_set_bit" to speed up port irq handling.
 > 
-> Is it really property of the rotary encoder itself or property of the
-> counter device?
+>  drivers/usb/gadget/udc/aspeed-vhub/core.c | 12 +++++++-----
+>  drivers/usb/gadget/udc/aspeed-vhub/vhub.h | 11 ++++++-----
+>  2 files changed, 13 insertions(+), 10 deletions(-)
 > 
+> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> b/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> index f8d35dd60c34..fb36bad2c0b7 100644
+> --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> @@ -134,11 +134,11 @@ static irqreturn_t ast_vhub_irq(int irq, void
+> *data)
+>  	}
+>  
+>  	/* Handle device interrupts */
+> -	for (i = 0; i < vhub->max_ports; i++) {
+> -		u32 dev_mask = VHUB_IRQ_DEVICE1 << i;
+> -
+> -		if (istat & dev_mask)
+> -			ast_vhub_dev_irq(&vhub->ports[i].dev);
+> +	if (istat & vhub->port_irq_mask) {
+> +		for (i = 0; i < vhub->max_ports; i++) {
+> +			if (istat & VHUB_DEV_IRQ(i))
+> +				ast_vhub_dev_irq(&vhub->ports[i].dev);
+> +		}
+>  	}
+>  
+>  	/* Handle top-level vHub EP0 interrupts */
+> @@ -332,6 +332,8 @@ static int ast_vhub_probe(struct platform_device
+> *pdev)
+>  
+>  	spin_lock_init(&vhub->lock);
+>  	vhub->pdev = pdev;
+> +	vhub->port_irq_mask = GENMASK(VHUB_IRQ_DEV1_BIT + vhub-
+> >max_ports - 1,
+> +				      VHUB_IRQ_DEV1_BIT);
+>  
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	vhub->regs = devm_ioremap_resource(&pdev->dev, res);
+> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
+> b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
+> index fac79ef6d669..b80e3ddff797 100644
+> --- a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
+> +++ b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
+> @@ -51,14 +51,11 @@
+>  #define VHUB_CTRL_UPSTREAM_CONNECT		(1 << 0)
+>  
+>  /* IER & ISR */
+> +#define VHUB_IRQ_DEV1_BIT			9
+>  #define VHUB_IRQ_USB_CMD_DEADLOCK		(1 << 18)
+>  #define VHUB_IRQ_EP_POOL_NAK			(1 << 17)
+>  #define VHUB_IRQ_EP_POOL_ACK_STALL		(1 << 16)
+> -#define VHUB_IRQ_DEVICE5			(1 << 13)
+> -#define VHUB_IRQ_DEVICE4			(1 << 12)
+> -#define VHUB_IRQ_DEVICE3			(1 << 11)
+> -#define VHUB_IRQ_DEVICE2			(1 << 10)
+> -#define VHUB_IRQ_DEVICE1			(1 << 9)
+> +#define VHUB_IRQ_DEVICE1			(1 <<
+> (VHUB_IRQ_DEV1_BIT))
+>  #define VHUB_IRQ_BUS_RESUME			(1 << 8)
+>  #define VHUB_IRQ_BUS_SUSPEND 			(1 << 7)
+>  #define VHUB_IRQ_BUS_RESET 			(1 << 6)
+> @@ -70,6 +67,9 @@
+>  #define VHUB_IRQ_HUB_EP0_SETUP			(1 << 0)
+>  #define VHUB_IRQ_ACK_ALL			0x1ff
+>  
+> +/* Downstream device IRQ mask. */
+> +#define VHUB_DEV_IRQ(n)				(VHUB_IRQ_DEVIC
+> E1 << (n))
+> +
+>  /* SW reset reg */
+>  #define VHUB_SW_RESET_EP_POOL			(1 << 9)
+>  #define VHUB_SW_RESET_DMA_CONTROLLER		(1 << 8)
+> @@ -402,6 +402,7 @@ struct ast_vhub {
+>  	/* Per-port info */
+>  	struct ast_vhub_port		*ports;
+>  	u32				max_ports;
+> +	u32				port_irq_mask;
+>  
+>  	/* Generic EP data structures */
+>  	struct ast_vhub_ep		*epns;
 
-The mode the quadrature decoder has to be put in depends on both the
-rotary encoder and the qdec.
-
-> > +
-> > +  steps:
-> > +    description: Number of steps in a full turnaround of the encoder.
-> > +      Only relevant for absolute axis. Defaults to 24 which is a typical
-> > +      value for such devices.
-> > +
-> > +  relative-axis:
-> > +    description: Register a relative axis rather than an absolute one.
-> > +    type: boolean
-> > +
-> > +  rollover:
-> > +    description: Automatic rollover when the rotary value becomes greater
-> > +      than the specified steps or smaller than 0. For absolute axis only.
-> > +    type: boolean
-> > +
-> > +  poll-interval:
-> > +    description: Poll interval at which the position is read from the counter
-> > +      device (default 500ms).
-> 
-> Is there a way found counters to signal an interrupt?
-> 
-
-For some counters, there are interrupts available, this is not trivial
-with the counter that is the target of this work but this is on the TODO
-list. Of course, this will also require adding a bit more to the
-in-kernel counter API to allow registering a callback that would be
-called when an interrupt happens.
-
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
