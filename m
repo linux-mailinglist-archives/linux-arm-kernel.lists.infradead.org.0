@@ -2,53 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B2B11A32F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:10:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE38E1A32F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QBeWk7o1ZbzOEfCTAbt56AjoZtV6Xjmkn7a/weqLrc0=; b=CI/NFPGbCBlk4XXgH7a0wOeWN
-	ZBabK/ThGymcooWPohLS0nPXzhielx4FWfeig557LfGRc+ZFEndZYF9YAtfi+t7Lmry6nUr9SaWxO
-	BYzj2BYBHTN09G0umLItKwRLcgWC4UFVB1nb/rrtpgsKXizMZ2ARmIRIfxZf4oCfd44E48bKCVPyN
-	H2B0A/9Kwun4sDzhDa7vxA9EZZpTp3rWOo2nJr7uAK8w65UKBU9nhtyDv3S90jYXRh15FPfcblY9z
-	jOdOORoIJNZblilTGgFyFXdpHYmnbJSjnbwMgWoeOLno5/w+wCLMeXkd+UkN6wLJ7bOrpr3JlFkZX
-	Q9p6XQE0w==;
+	 bh=VXrdtlclX2qIOgvKx0YH0NC10bK92hPQ6QtHbc3ieOk=; b=Mhj7l/vUDltJ/JEPGIVtp8xQV
+	igBMmzoWNP3DRgafMaAUJKCOFGqTuVmAYr8J5UO8WiwiWmYICmyAk+wM2obSxGoKynbp4cL4ojKwz
+	9sAA8X5o0/NrOBCiKD4EMMeZphFmysj1tmwLYQ1FhuVLAINIGdExQ42ZjHNnfXJ5GgR/ou59M3527
+	qA0N2ZvHSkVnYc0o8LuKK0U3lESe6P4cofRXDi6GukWvzAhbs0ClmRQPp4GM8/qLgT7/AvVkorEFD
+	3OYRqiG9VROm7R34+9MP1okm/42zWZ0emnvGdfp1meGFrZIWpUzjAGgw2s/hH4UVyQLhLVMhYr5mG
+	rGx8Oj1gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMV4g-0007QM-BI; Thu, 09 Apr 2020 11:10:22 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jMV5y-0007hS-DF; Thu, 09 Apr 2020 11:11:42 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMV4X-0006nQ-Oh
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:10:15 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 81A6D2979A5
-Subject: Re: [RFC 0/8] Stop monitoring disabled devices
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, linux-pm@vger.kernel.org
-References: <20200407174926.23971-1-andrzej.p@collabora.com>
- <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <aeec2ce8-8fb9-9353-f3dd-36a476ceeb3b@collabora.com>
-Date: Thu, 9 Apr 2020 13:10:01 +0200
+ id 1jMV5r-0007h8-F1
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:11:36 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 039BBJcq106985;
+ Thu, 9 Apr 2020 06:11:19 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1586430679;
+ bh=E8tVnmNNO/6VeJ/pnizdaaUgKBPhHIA/HRlOTtiF0JQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=i/wAPC2YVcfdMrzt+LiAwyLGuDfxSYteoAx6ZWWevHYH2uXsA9oetr7TQF+Dm8wpI
+ +n+92Em4VqNYwUC+jt67NhODhNELjbcatkrJocY+uTc6EbWYu/c81PKKzC4JR6OptM
+ ECF8buK0rLt2enK/ZiDr5CvgM69VOwKHw1ABzNN4=
+Received: from DLEE111.ent.ti.com (dlee111.ent.ti.com [157.170.170.22])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 039BBJPI045541;
+ Thu, 9 Apr 2020 06:11:19 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 9 Apr
+ 2020 06:11:18 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 9 Apr 2020 06:11:18 -0500
+Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 039BBDME125366;
+ Thu, 9 Apr 2020 06:11:13 -0500
+Subject: Re: [PATCH] irqchip/ti-sci-inta: fix processing of masked irqs
+To: Marc Zyngier <maz@kernel.org>
+References: <20200408191532.31252-1-grygorii.strashko@ti.com>
+ <20200409103144.3b2169bf@why>
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+Message-ID: <851d5063-475e-ea7b-6609-684b08283550@ti.com>
+Date: Thu, 9 Apr 2020 14:11:12 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+In-Reply-To: <20200409103144.3b2169bf@why>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_041013_961363_E39DE33B 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200409_041135_627740_C61D9AF3 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,54 +91,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- platform-driver-x86@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-acpi@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- Len Brown <lenb@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Ido Schimmel <idosch@mellanox.com>, Jiri Pirko <jiri@mellanox.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
- Peter Kaestle <peter@piie.net>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Jason Cooper <jason@lakedaemon.net>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Vignesh Raghavendra <vigneshr@ti.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRGFuaWVsLAoKVyBkbml1IDA5LjA0LjIwMjAgb8KgMTI6MjksIERhbmllbCBMZXpjYW5vIHBp
-c3plOgo+IE9uIDA3LzA0LzIwMjAgMTk6NDksIEFuZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToK
-Pj4gVGhlIGN1cnJlbnQga2VybmVsIGJlaGF2aW9yIGlzIHRvIGtlZXAgcG9sbGluZyB0aGUgdGhl
-cm1hbCB6b25lIGRldmljZXMKPj4gcmVnYXJkbGVzcyBvZiB0aGVpciBjdXJyZW50IG1vZGUuIFRo
-aXMgaXMgbm90IGRlc2lyZWQsIGFzIGFsbCBzdWNoICJkaXNhYmxlZCIKPj4gZGV2aWNlcyBhcmUg
-bWVhbnQgdG8gYmUgaGFuZGxlZCBieSB1c2Vyc3BhY2UsPiBzbyBwb2xsaW5nIHRoZW0gbWFrZXMg
-bm8gc2Vuc2UuCj4gCj4gVGhhbmtzIGZvciBwcm9wb3NpbmcgdGhlc2UgY2hhbmdlcy4KPiAKPiBJ
-J3ZlIGJlZW4gKHF1aWNrbHkpIHRocm91Z2ggdGhlIHNlcmllcyBhbmQgdGhlIGRlc2NyaXB0aW9u
-IGJlbG93LiBJIGhhdmUKPiB0aGUgZmVlbGluZyB0aGUgc2VyaWVzIG1ha2VzIG1vcmUgY29tcGxl
-eCB3aGlsZSB0aGUgY3VycmVudCBjb2RlIHdoaWNoCj4gd291bGQgZGVzZXJ2ZSBhIGNsZWFudXAu
-Cj4gCj4gV2h5IG5vdCBmaXJzdDoKPiAKPiAgIC0gQWRkIGEgJ21vZGUnIGZpZWxkIGluIHRoZSB0
-aGVybWFsIHpvbmUgZGV2aWNlCj4gICAtIEtpbGwgYWxsIHNldC9nZXRfbW9kZSBjYWxsYmFja3Mg
-aW4gdGhlIGRyaXZlcnMgd2hpY2ggYXJlIGR1cGxpY2F0ZWQgY29kZS4KPiAgIC0gQWRkIGEgZnVu
-Y3Rpb246Cj4gCj4gICBlbnVtIHRoZXJtYWxfZGV2aWNlX21vZGUgdGhlcm1hbF96b25lX2dldF9t
-b2RlKCAqdHopCj4gICB7Cj4gCS4uLgo+IAlpZiAodHotPm9wcy0+Z2V0X21vZGUpCj4gCQlyZXR1
-cm4gdHotPm9wcy0+Z2V0X21vZGUoKTsKPiAKPiAJcmV0dXJuIHR6LT5tb2RlOwo+ICAgfQo+IAo+
-IAo+ICAgaW50IHRoZXJtYWxfem9uZV9zZXRfbW9kZSguLip0eiwgZW51bSB0aGVybWFsX2Rldmlj
-ZV9tb2RlIG1vZGUpCj4gICB7Cj4gCS4uLgo+IAlpZiAodHotPm9wcy0+c2V0X21vZGUpCj4gCQly
-ZXR1cm4gdHotPm9wcy0+c2V0X21vZGUodHosIG1vZGUpOwo+IAo+IAl0ei0+bW9kZSA9IG1vZGU7
-Cj4gCj4gCXJldHVybiAwOwo+ICAgfQo+IAo+ICAgc3RhdGljIGlubGluZSB0aGVybWFsX3pvbmVf
-ZW5hYmxlKC4uLiAqdHopCj4gICB7Cj4gCXRoZXJtYWxfem9uZV9zZXRfbW9kZSh0eiwgVEhFUk1B
-TF9ERVZJQ0VfRU5BQkxFRCk7Cj4gICB9Cj4gCj4gICBzdGF0aWMgaW5saW5lIHRoZXJtYWxfem9u
-ZV9kaXNhYmxlKC4uLiAqdHopIHsKPiAJdGhlcm1hbF96b25lX3NldF9tb2RlKHR6LCBUSEVSTUFM
-X0RFVklDRV9ESVNBQkxFRCk7Cj4gICB9Cj4gCj4gQW5kIHRoZW4gd2hlbiB0aGUgY29kZSBpcyBj
-b25zb2xpZGF0ZWQsIHVzZSB0aGUgbW9kZSB0byBlbmFibGUvZGlzYWJsZQo+IHRoZSBwb2xsaW5n
-IGFuZCBjb250aW51ZSBraWxsaW5nIHRoZSBkdXBsaWNhdGVkIGNvZGUgaW4gb2YtdGhlcm1hbC5j
-IGFuZAo+IGFueXdoZXJlIGVsc2UuCj4gCj4gCgpUaGFua3MgZm9yIGZlZWRiYWNrLgoKQW55b25l
-IGVsc2U/CgpBbmRyemVqCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+
+On 09/04/2020 12:31, Marc Zyngier wrote:
+> On Wed, 8 Apr 2020 22:15:32 +0300
+> Grygorii Strashko <grygorii.strashko@ti.com> wrote:
+> 
+>> The ti_sci_inta_irq_handler() does not take into account INTA IRQs state
+>> (masked/unmasked) as it uses INTA_STATUS_CLEAR_j register to get INTA IRQs
+>> status, which provides raw status value.
+>> This causes hard IRQ handlers to be called or threaded handlers to be
+>> scheduled many times even if corresponding INTA IRQ is masked.
+>> Above, first of all, affects the LEVEL interrupts processing and causes
+>> unexpected behavior up the system stack or crash.
+>>
+>> Fix it by using the Interrupt Masked Status INTA_STATUSM_j register which
+>> provides masked INTA IRQs status.
+>>
+>> Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
+>> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+> 
+> Given the failure mode, doesn't this deserve a Cc stable?
+
+Sorry, was not sure how it works here.
+"Fixes" tag now is usually enough to get included in stable.
+Any way, I'll track it and if not included will re-send for stable.
+
+> 
+>> ---
+>>   drivers/irqchip/irq-ti-sci-inta.c | 3 ++-
+>>   1 file changed, 2 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
+>> index 8f6e6b08eadf..7e3ebf6ed2cd 100644
+>> --- a/drivers/irqchip/irq-ti-sci-inta.c
+>> +++ b/drivers/irqchip/irq-ti-sci-inta.c
+>> @@ -37,6 +37,7 @@
+>>   #define VINT_ENABLE_SET_OFFSET	0x0
+>>   #define VINT_ENABLE_CLR_OFFSET	0x8
+>>   #define VINT_STATUS_OFFSET	0x18
+>> +#define VINT_STATUS_MASKED_OFFSET	0x20
+>>   
+>>   /**
+>>    * struct ti_sci_inta_event_desc - Description of an event coming to
+>> @@ -116,7 +117,7 @@ static void ti_sci_inta_irq_handler(struct irq_desc *desc)
+>>   	chained_irq_enter(irq_desc_get_chip(desc), desc);
+>>   
+>>   	val = readq_relaxed(inta->base + vint_desc->vint_id * 0x1000 +
+>> -			    VINT_STATUS_OFFSET);
+>> +			    VINT_STATUS_MASKED_OFFSET);
+>>   
+>>   	for_each_set_bit(bit, &val, MAX_EVENTS_PER_VINT) {
+>>   		virq = irq_find_mapping(domain, vint_desc->events[bit].hwirq);
+> 
+> 
+> Otherwise queued for post -rc1.
+
+Thanks.
+
+-- 
+Best regards,
+grygorii
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
