@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21F3E1A2EE9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:00:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F2961A2EEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:02:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lIPhi6qtUJzOldlIzTqoUZ3ZrCy2xpCSRkH6stvGnzg=; b=U/cgjHKR1YwbM2
-	INl2/kLOadzvXEcSTyNwFpgoQoPVD9oZayX1utF9zOuIC9AzuD741G7lCMVq7wedmHl+1zcr5nx34
-	aYVXnvqls7839gdeA4YLIDSsxsPV3elmIjHlpFwwyZCX7RY3cDFhbL1CjhIOvbOJm7HpNc1FZrMRo
-	Aohlcn1BHKaHeJq7gM0cVV9B/pVyAX3NP4gwB+Vcbv41DPMvfOx6im6nVx6BGkTrtKbRqVz4oUO1y
-	bk54zfvQjk99lVrc2mKeZXLMzSnV0JkAW28clrwlKaApu+Y6X1mnRkrynDS0AvxpuKytG5cxspDVZ
-	485dPyqOie7rBfrqumAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9pRJaKqCfFGgp3Wx4QA0mJFQ1gsbMueX/872zyWOdnk=; b=EhCrDj0wvkao91
+	p0brL7pmYMeN/uPq4d8VYfX2x3qX6p5gVrnHqIuxYj/5dORidp+uVpoZw4cSkL21R5vVySIfC2CK0
+	E+r9QJxvqZffp6CW/UxijW+9BW1S9w0lu9c2VI5r9U7+5bAHHgUntLtgI383r5h7WWhwBr+M5Wknb
+	d4oCGwRMuO/biu1XBbhUWwzbsbEBSmF8jqkaQ4t16lDosj8ZbeQc9a69ZyyGwLqbe8oKv7vBedE5G
+	0v1tYVxIXflUisL3sPFb579a7LgUCnP1lJYW2/G+0mC9dmwjK0nT3KJ4wxh1q3yT8cjyTiirmduN9
+	SOa3CGNEYToN1AoJv5cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMQEh-00043R-JO; Thu, 09 Apr 2020 06:00:23 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jMQGd-0004Og-Gg; Thu, 09 Apr 2020 06:02:23 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMQEb-000434-3o
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:00:18 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 039602cF076105;
- Thu, 9 Apr 2020 01:00:02 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1586412002;
- bh=s4NGEtbZ5WYEhRGTwG73IITDcV3DTILxumrNxiY14yA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=KInjLFJRVLXusMx96Svk4Gbi7ix1TYjECmt+JP9oO+41VlD5G3Qug1F6vWKoJCF6L
- VBCs6iVLXV4EyB3eRU0Zvt3zMCoW9Iu6O76KcEp/0R+lgfKddbtVTM3FtLoKTnGphA
- M62uMWshi3CGYn0cMeZArdLCXbgM3DIRhe22IIq8=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 039601YW128360
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 9 Apr 2020 01:00:01 -0500
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 9 Apr
- 2020 01:00:01 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 9 Apr 2020 01:00:01 -0500
-Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0395xvDZ048578;
- Thu, 9 Apr 2020 00:59:58 -0500
-Subject: Re: [PATCH] irqchip/ti-sci-inta: fix processing of masked irqs
-To: Grygorii Strashko <grygorii.strashko@ti.com>, Nishanth Menon <nm@ti.com>, 
- Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>
-References: <20200408191532.31252-1-grygorii.strashko@ti.com>
-From: Lokesh Vutla <lokeshvutla@ti.com>
-Message-ID: <85de7f21-2e9b-da16-589e-b4c2144f3ab4@ti.com>
-Date: Thu, 9 Apr 2020 11:29:56 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1jMQGU-0004NA-S6
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:02:16 +0000
+Received: by mail-pf1-x443.google.com with SMTP id k15so3632798pfh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Apr 2020 23:02:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LIZVAq7xeySwQmWqTMtWLzT3ZnpjRce1QK8YJF3B6lA=;
+ b=L1WRbXtfVXrT3HXPWD00KG1nxuFSYrWBgXFk4bRo9iE2SQC73JN4rDwGcVRRLRd76w
+ 5840611TdDz7Jp7c8mLSuUuEAaUCM2OD6SGmXB8Blb4eyN/OXSWfgn7pk/WgYfn3Juwt
+ 9uDSZVlPK7PibTEsypLQ/DEdelkme+qsc1Pag=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LIZVAq7xeySwQmWqTMtWLzT3ZnpjRce1QK8YJF3B6lA=;
+ b=LRvqmaLWnd9msX0uJ/1OjMjCH4NKqCLswrOGSjpfWE+aJ13y7cnX7QgeqGcI+/smlN
+ rajlGEC3f+E2OQSFXciuoyFrPLhLkwhRta0S9Gbg8/5RvWm3EGB6AjG2aDJe4T7FzgDG
+ by2zK8CWOP7uoRRfCU0L0K1LAjSExoXEhfmFtohuo6UpS1Sto73BisuOn+PvEFjkpFoz
+ u4bNbdBvWyOEtRdhjRZqfMx/ibl3RoZAa70xUEENGJydB5qG945fEO+Xz6WRhnA/jijq
+ Z9tofPFciHEcrtK/2TcKl/JQvmoV/VgRtZLXkQfkmTERsVXrU1AMAVzbrGfkewvJL01A
+ t48g==
+X-Gm-Message-State: AGi0PuagkfQ5jmkVuolfzz3i8rb22ZN/cRumMCmk1XpCSQ6lj3pHNS3G
+ R7CnDZL5tp0r+cHuwuW0/kscJ8jiUQE=
+X-Google-Smtp-Source: APiQypJ9qI2t3pspPrOWIlE7/3vyVy7azmPo/Qc+dpNgwSnPI0bXNEXcIKDQeD8aDbDAZmL3cT8sHg==
+X-Received: by 2002:aa7:99d1:: with SMTP id v17mr12234526pfi.165.1586412133880; 
+ Wed, 08 Apr 2020 23:02:13 -0700 (PDT)
+Received: from hsinyi-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:b852:bd51:9305:4261])
+ by smtp.gmail.com with ESMTPSA id w205sm18193515pfc.75.2020.04.08.23.02.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Apr 2020 23:02:13 -0700 (PDT)
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] drm: mediatek: fix device passed to cmdq
+Date: Thu,  9 Apr 2020 14:02:09 +0800
+Message-Id: <20200409060209.202677-1-hsinyi@chromium.org>
+X-Mailer: git-send-email 2.26.0.292.g33ef6b2f38-goog
 MIME-Version: 1.0
-In-Reply-To: <20200408191532.31252-1-grygorii.strashko@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_230017_216150_88F6B6BE 
-X-CRM114-Status: GOOD (  11.34  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200408_230214_907482_515B9732 
+X-CRM114-Status: GOOD (  12.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,35 +93,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Vignesh Raghavendra <vigneshr@ti.com>
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ CK Hu <ck.hu@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+drm device is now probed from mmsys. We need to use mmsys device to get gce
+nodes. Fix following errors:
 
+[    0.740068] mediatek-drm mediatek-drm.1.auto: error -2 can't parse gce-client-reg property (0)
+[    0.748721] mediatek-drm mediatek-drm.1.auto: error -2 can't parse gce-client-reg property (0)
+...
+[    2.659645] mediatek-drm mediatek-drm.1.auto: failed to request channel
+[    2.666270] mediatek-drm mediatek-drm.1.auto: failed to request channel
 
-On 09/04/20 12:45 AM, Grygorii Strashko wrote:
-> The ti_sci_inta_irq_handler() does not take into account INTA IRQs state
-> (masked/unmasked) as it uses INTA_STATUS_CLEAR_j register to get INTA IRQs
-> status, which provides raw status value.
-> This causes hard IRQ handlers to be called or threaded handlers to be
-> scheduled many times even if corresponding INTA IRQ is masked.
-> Above, first of all, affects the LEVEL interrupts processing and causes
-> unexpected behavior up the system stack or crash.
-> 
-> Fix it by using the Interrupt Masked Status INTA_STATUSM_j register which
-> provides masked INTA IRQs status.
-> 
-> Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
-> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+Fixes: 1d367541aded ("soc / drm: mediatek: Fix mediatek-drm device probing")
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+---
+The patch is based on
+https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git
+branch v5.6-next/soc
 
-Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
+Change log:
+v1->v2:
+align with 60fa8c13ab1a ("drm/mediatek: Move gce event property to mutex device node")
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 3 ++-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
-Thanks and regards,
-Lokesh
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 615a54e60fe2..7247c6f87f4a 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -822,7 +822,8 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 
+ #if IS_REACHABLE(CONFIG_MTK_CMDQ)
+ 	mtk_crtc->cmdq_client =
+-			cmdq_mbox_create(dev, drm_crtc_index(&mtk_crtc->base),
++			cmdq_mbox_create(mtk_crtc->mmsys_dev,
++					 drm_crtc_index(&mtk_crtc->base),
+ 					 2000);
+ 	if (IS_ERR(mtk_crtc->cmdq_client)) {
+ 		dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index e2bb0d19ef99..28418e5b83ee 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -517,7 +517,7 @@ static int mtk_drm_probe(struct platform_device *pdev)
+ 				goto err_node;
+ 			}
+ 
+-			ret = mtk_ddp_comp_init(dev, node, comp, comp_id, NULL);
++			ret = mtk_ddp_comp_init(dev->parent, node, comp, comp_id, NULL);
+ 			if (ret) {
+ 				of_node_put(node);
+ 				goto err_node;
+-- 
+2.26.0.292.g33ef6b2f38-goog
 
 
 _______________________________________________
