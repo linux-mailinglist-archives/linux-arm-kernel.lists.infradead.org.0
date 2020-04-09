@@ -2,90 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66A071A3D0A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BD3C1A3D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:46:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7wXaJV/EiDTD1dRRS4b+QUQ8tz7Vp80mabVD52elEU=; b=XEtaW1fD9nSD6r
-	KUsGBjT5Yjcqb8O5ulCfFc4PBbLgY57fujdTgmTUQQADAaH39AvZY7M03S9Ok3WRUnXGS/urMkgPg
-	P2DjnlQjJ+/ySXsK3j0kDkdrpAfmmVfq0eXPNUW88Vaufu3i0fCAl7EOk8VRTYjWnRtFC9YdgshfB
-	0vGDeNiz5TOdp/gKY53Geqv9MHDngdLkPTQmVUnE96vc1iKpGU3z86eHIYG2zRqXQGynCzh/6rVXU
-	DnLQ97kCPI4ibSgH1ZE/9LucO1oxmeOcEaHka1Rw3Tc7L/oa4obnXz0pvOR4CnqPym24PH2/jBtnD
-	adN3c9tPa0MLN7Coi0dg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3HCxEULDAQ+Sug0HGkJENyXoXxjcI7zhzwUFr8rok30=; b=G4kcYjJ2zLuT94
+	BmNCpZOnIXlIIH6pBVhf1FnsZznoytUZgcPDR7vPckgQtZ2ow1hjiH6ga+VSu+8X2Zr4K0lzieq5C
+	kNsrOXypEcVYE3L8GtRAYjV1cj/OkBAxb7QBRDBY7JHqy7RHuC68mSiSGzax46SshqZ2Aq1egzvRM
+	fHGFlLHc1QTbl9Nrg53CvHDPV4i3rszUdhjN1shCQVcBfW9HcUGefqXhSb0OiQgLWZ25xM5a+xIm8
+	qc01g9gKp6m3HLWCgwpWiPHUS530NVYMQZqa24qv+cC6AnGJeTC3Oub7WLYrEmQGfAKXJP4hGewqY
+	LA7hPugOQbZVhHdXTq9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMgqR-0006Nh-UK; Thu, 09 Apr 2020 23:44:27 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jMgsY-0000nH-4V; Thu, 09 Apr 2020 23:46:38 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMgqL-0006NO-5y
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:44:22 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m8so391020lji.1
+ id 1jMgsN-0000mq-8A
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:46:29 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 22so277766pfa.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 16:44:20 -0700 (PDT)
+ Thu, 09 Apr 2020 16:46:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=eplP7HigK8Ewza+SjO81i9tb9swgjSdpeTM2vE+t2FI=;
- b=Z+OFqTSEtWD+OR0/pzr+dM8ugXHWeikyhxm/KgbzcPr0hpv7bgSSKGq1REFh393r9Y
- +cjiNaten3HWmd7TxIHO3zqw54SrSOcpfrZFCIrd6ZPeX8z3tuYZGZybmwKgVsYzYMZv
- eaHQahH+nMqmL8ymsrSYu0pUiacrioYnJ+jb4B6zLDyFv07S2Qenm395qW5Z3Ua0fx6y
- zL6ESY9Mh8/zrOc1NJEE1+dZEp9WaL/bG8glG3/JD0+fyAPuMQSuHsCUVj0MRqVMxj9o
- VmddSw5J9OruFahcTsOUaNrxs4X1GoXvMZIfHrSbUf+tKQtQIkzoFZvCZDQ5jUc14PLx
- nViw==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=X1Y8bnD3QMGmRcwUVI82L0iDUV1q8Fy3GQNmvFYnS2I=;
+ b=EBxEUf08dMeA2iEQohC5/R3ZVAHRMWWtefrFAHbK3WBKDA3GsxHCGkxIMncKubJ14s
+ ZqP447beS2tDu8NLH1Z44HuydTaUOJwx4UvmH8w9UE66LnWULAeThpHVGv7KL/t1IQ0z
+ nXGlMIXpzqjB9hMb2IcXye17mn11vmGodw94zXUXdpypQtgltIkMQUBpX3lpyQLcQhKs
+ kQI2/Tz08GLv0yr0aet1S8RRQlqzSM7yN+zQ+e+KhdgepQmmcXKW4fxnkQaG1Dt82L0h
+ xYs6faP7szYqAUT2Vq+a4PoC+D7liwiWUMPO1Y6tmyF0KcAKHRiKCImaEY+I5eSH5Prx
+ zO6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=eplP7HigK8Ewza+SjO81i9tb9swgjSdpeTM2vE+t2FI=;
- b=Mven17/isst9MrF+pZyKVw7PW45JISy6cZ1LbnY3BLgX/zSUOZapgRnWKuPqsYCD6c
- J7XX3q4Xm6R/9ntDZFVlBRWhatNzRT773eF+oS0RDAGOLtr/Hs9AdP9KhjRfh1mtpuCZ
- 9YN5yXijS8n9VK67K4o0SzrEAiBMZYb1u9CfpI1I0Gvk7UL1i92uMAntKz4O/PVKfpFc
- PCYdrTiezk1byL2/onLJ9pPEZSeW+L7zk4Pg4HxN1ZTIL6OYSod9TkblJEx64RS3y+wz
- OraYq2coyZtj8wClQD/bpisvd57e4ELXBqJAg8EQ1Av5YlSRB0JuOk+C1Pq5LXK6Y1Tq
- pYSQ==
-X-Gm-Message-State: AGi0PualUq4AZQYSCBR4Ro96Jt1Ox6kLLrfvFmwa9zKfHnDE1RBeBtRK
- HD4vzHRdHVExOA5vmRGmNZDG6M4Z
-X-Google-Smtp-Source: APiQypKOjhusE3Y7SNrXp1CXEoE/mqfoQN6rYgf5UIc2VAPmQ3PefCXTqRsbwrmhttzvDhBHDOpurA==
-X-Received: by 2002:a2e:8511:: with SMTP id j17mr1356714lji.292.1586475858785; 
- Thu, 09 Apr 2020 16:44:18 -0700 (PDT)
-Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
- [91.78.208.152])
- by smtp.googlemail.com with ESMTPSA id 64sm283254lfh.32.2020.04.09.16.44.17
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Apr 2020 16:44:17 -0700 (PDT)
-Subject: Re: [PATCH v6 11/14] memory: tegra: Support derated timings on
- Tegra210
-To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-12-thierry.reding@gmail.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <7f23f140-4c56-3d9a-946e-f29bc569f40c@gmail.com>
-Date: Fri, 10 Apr 2020 02:44:16 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=X1Y8bnD3QMGmRcwUVI82L0iDUV1q8Fy3GQNmvFYnS2I=;
+ b=JucxPz3jXPsvtueWn6dcH52Mhqj961LCPRNhx0Myj42zkGA1dnEScyGf0h8I8oETVR
+ PaXOCNeJeZSQIsbaHgRsaqo4fAXWMJWyXf8EEO5j6/fvRguMTowaePqEykzKOpFOPq9p
+ CkHsn/bTsjUMs49YcwnXvDxeqHEUgGDK1Wy8JNq1uyzRtZHomMcq9w+fhrWWQgiSerMF
+ 5NXiZlXIms51eWpjzrRf478NbFIVdvjwtQnTXZ8NqJM6fycwsZqoyOq4+uWxgFgXu1eY
+ Sa28phMtcgtIyEDhGaAZVLkemqFr43y4UFpgmRTv72o6XlkGoxKMNZhOQuZspxICegeP
+ C9EA==
+X-Gm-Message-State: AGi0PuaCpeC6OCg2lsfEfPJk1SlS77BE+YTS0xtJl3oA/4RaOIRXJtE1
+ ogOSa1/C+XpedypwXCLT0B8=
+X-Google-Smtp-Source: APiQypJ1xTM0Kzl/R2WKceZ2kuvIzhM7XWOQrpUymOEdXWNA+ZOn9J7ew7DVykXrVkUi5rHMe4xDrg==
+X-Received: by 2002:a62:648f:: with SMTP id y137mr2268339pfb.199.1586475986437; 
+ Thu, 09 Apr 2020 16:46:26 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
+ by smtp.gmail.com with ESMTPSA id w27sm191851pfq.211.2020.04.09.16.46.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Apr 2020 16:46:25 -0700 (PDT)
+Date: Thu, 9 Apr 2020 16:46:23 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH 2/3] Input: rotary-encoder-counter: add DT bindings
+Message-ID: <20200409234623.GU75430@dtor-ws>
+References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
+ <20200406155806.1295169-3-kamel.bouhara@bootlin.com>
+ <20200409222115.GT75430@dtor-ws> <20200409223907.GW3628@piout.net>
 MIME-Version: 1.0
-In-Reply-To: <20200409175238.3586487-12-thierry.reding@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200409223907.GW3628@piout.net>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_164421_243803_AE440723 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20200409_164627_292928_88EB619B 
+X-CRM114-Status: GOOD (  28.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
+ provider [dmitry.torokhov[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,23 +101,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kamel Bouhara <kamel.bouhara@bootlin.com>, devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4gIAl0ZWdy
-YTIxMF9lbWNfZGVidWdmc19pbml0KGVtYyk7Cj4gIAo+ICsJY2QgPSBkZXZtX3RoZXJtYWxfb2Zf
-Y29vbGluZ19kZXZpY2VfcmVnaXN0ZXIoZW1jLT5kZXYsIG5wLCAiZW1jIiwgZW1jLAo+ICsJCQkJ
-CQkgICAgICZ0ZWdyYTIxMF9lbWNfY2Rfb3BzKTsKPiArCWlmIChJU19FUlIoY2QpKSB7Cj4gKwkJ
-ZXJyID0gUFRSX0VSUihjZCk7Cj4gKwkJZGV2X2VycihlbWMtPmRldiwgImZhaWxlZCB0byByZWdp
-c3RlciBjb29saW5nIGRldmljZTogJWRcbiIsCj4gKwkJCWVycik7Cgo+ICsJCWdvdG8gZGV0YWNo
-OwoKSSB0aGluayBpdCdzIG5vdCByZWFsbHkgd29ydGh3aGlsZSB0byBmYWlsIHdob2xlIEVNQyBk
-cml2ZXIgYmVjYXVzZSBvZgp0aGUgZmFpbGVkIENERVYuCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, Apr 10, 2020 at 12:39:07AM +0200, Alexandre Belloni wrote:
+> Hi Dmitry,
+> 
+> On 09/04/2020 15:21:15-0700, Dmitry Torokhov wrote:
+> > On Mon, Apr 06, 2020 at 05:58:05PM +0200, Kamel Bouhara wrote:
+> > > Add dt binding for the counter variant of the rotary encoder driver.
+> > > 
+> > > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > > ---
+> > >  .../input/rotary-encoder-counter.yaml         | 67 +++++++++++++++++++
+> > >  1 file changed, 67 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > > new file mode 100644
+> > > index 000000000000..a59f7c1faf0c
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/input/rotary-encoder-counter.yaml
+> > > @@ -0,0 +1,67 @@
+> > > +# SPDX-License-Identifier: GPL-2.0
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/input/rotary-encoder-counter.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Rotary Encoder Counter
+> > > +
+> > > +maintainers:
+> > > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > > +
+> > > +description:
+> > > +  Registers a Rotary encoder connected through a counter device.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    const: rotary-encoder-counter
+> > 
+> > I wonder if a separate driver is really needed. The original driver be
+> > taught to use counter device when available?
+> > 
+> 
+> By the original driver, do you mean drivers/input/misc/rotary_encoder.c
+> that is using gpios ?
+
+Yes.
+
+> 
+> > > +
+> > > +  counter:
+> > > +    description: Phandle for the counter device providing rotary position.
+> > > +
+> > > +  linux-axis:
+> > > +    description: The input subsystem axis to map to this rotary encoder.
+> > > +    type: boolean
+> > > +
+> > > +  qdec-mode:
+> > > +    description: |
+> > > +      Quadrature decoder function to set in the counter device.
+> > > +      3: x1-PHA
+> > > +      4: x1-PHB
+> > > +      5: x2-PHA
+> > > +      6: x2-PHB
+> > > +      7: x4-PHA and PHB
+> > 
+> > Is it really property of the rotary encoder itself or property of the
+> > counter device?
+> > 
+> 
+> The mode the quadrature decoder has to be put in depends on both the
+> rotary encoder and the qdec.
+
+OK.
+
+> 
+> > > +
+> > > +  steps:
+> > > +    description: Number of steps in a full turnaround of the encoder.
+> > > +      Only relevant for absolute axis. Defaults to 24 which is a typical
+> > > +      value for such devices.
+> > > +
+> > > +  relative-axis:
+> > > +    description: Register a relative axis rather than an absolute one.
+> > > +    type: boolean
+> > > +
+> > > +  rollover:
+> > > +    description: Automatic rollover when the rotary value becomes greater
+> > > +      than the specified steps or smaller than 0. For absolute axis only.
+> > > +    type: boolean
+> > > +
+> > > +  poll-interval:
+> > > +    description: Poll interval at which the position is read from the counter
+> > > +      device (default 500ms).
+> > 
+> > Is there a way found counters to signal an interrupt?
+> > 
+> 
+> For some counters, there are interrupts available, this is not trivial
+> with the counter that is the target of this work but this is on the TODO
+> list. Of course, this will also require adding a bit more to the
+> in-kernel counter API to allow registering a callback that would be
+> called when an interrupt happens.
+
+Should it be a callback, or can counter create an irqchip so that users
+do not need to know how exactly it is wired up?
+
+Thanks.
+
+-- 
+Dmitry
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
