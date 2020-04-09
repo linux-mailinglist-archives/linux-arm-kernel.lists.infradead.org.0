@@ -2,7 +2,7 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91D6F1A2DEC
+	by mail.lfdr.de (Postfix) with ESMTPS id 907741A2DEB
 	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 05:24:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -18,15 +18,15 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	ci+xjSI71IQDPe9pJumw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMNnL-0003aN-P5; Thu, 09 Apr 2020 03:23:59 +0000
-Received: from sonic311-52.consmr.mail.ne1.yahoo.com ([66.163.188.233])
+	id 1jMNn5-0003Qn-WB; Thu, 09 Apr 2020 03:23:44 +0000
+Received: from sonic304-47.consmr.mail.ne1.yahoo.com ([66.163.191.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMNn9-0003X4-JC
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 03:23:48 +0000
+ id 1jMNn0-0003QB-Qc
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 03:23:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aol.com; s=a2048;
- t=1586402625; bh=/6EYCRlfa2umBwyf6HMqnS88iYA4EIXadLKaqqSMGXc=;
+ t=1586402614; bh=/6EYCRlfa2umBwyf6HMqnS88iYA4EIXadLKaqqSMGXc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From:Subject;
- b=GRVMTbU/POEHU1MNO/OYgoJXaWNwMXOPB2ZtdnKMHpKCP3cmbdVSjbHrJ9TZWS3p+NXemjdHY5usFeRGNZpk+KwvlCvmC1GXmMUYslYNiVNR7sjyyP1T8BjJ3Sikj4hsPidS2FhDII/FJVEA7ryHAFOy70BOtUBvWCVgqoanILwsu0VVa0Wj4lmza15mpj70RY4pmUnZLEb97pviSRhGpYJllOUHqPnPhGh4r8LCbp7W1eI8MGTCUv/0YgTaqIv8/FYEszHvmlVWLt0lcdvVZVT4rIddZ4mge9NKDg8f6omNfYRN6XZErDGx7Yg7jRnkK5i9qH9UrGuPiB5/hzTTEw==
+ b=bnjdxeN8RjiCAR0Gp4l7zXrwCjxV3ZPw3ZOk2VxzOipNuyE++/wvehKnAIAvPNSEwFr9PknLd/TMbUquiLtRr+fx1ORTHfjqeRFMxTRLELakoqg73XjiOHLLnR2peUmVlxQuieascQ9HdL4Z3xpkEL+AmjqgjFPAMZVu12YlcYo9IflQ1ibZDh/N2TU0zVIiqX4mjzQQIi7MCLWsvjPkJF76zChkAWwX/FGZKQHForkFEjWnJjM6dMbWiOD21J++4cKcB2+dB3sMWboQV0fnlUE+c956ju+IYP15nb7MRBQ0jg7LLO2+v8Z0WBPXicez/dIh2C7Qx2klRYg7JKuuLw==
 X-YMail-OSG: Kjs_hFQVM1mYR3Bbv__auOf2fhoaIk9dbexLkMUvZvDcgibPrEIH2uN_nb7TSk.
  AjTVDttprz38pf2agkDENCO9OlpstM6AKa5fqJSzz9g9BDnD9cEKZ6Kcqg9CatwzLNYThMuSUeYX
  2yEgN2U8e5xgtZHtWmAFsIbznPJD_UPhljYJl2r_EoL5qqrqeJu9Nnd9Y.Ff.0cQ6SO_SlnVXMbj
@@ -49,7 +49,7 @@ X-YMail-OSG: Kjs_hFQVM1mYR3Bbv__auOf2fhoaIk9dbexLkMUvZvDcgibPrEIH2uN_nb7TSk.
  _ECRk3ijYTNyDsC7idxPty4i4XJSa9KM2uH5RWvaV.R8phY0hHU.lO54DG8mygB9TxdZscMBwbtP
  JqFlYvAh9BGSO_QyxpGrs
 Received: from sonic.gate.mail.ne1.yahoo.com by
- sonic311.consmr.mail.ne1.yahoo.com with HTTP; Thu, 9 Apr 2020 03:23:45 +0000
+ sonic304.consmr.mail.ne1.yahoo.com with HTTP; Thu, 9 Apr 2020 03:23:34 +0000
 Received: by smtp412.mail.gq1.yahoo.com (Oath Hermes SMTP Server) with ESMTPA
  ID 07bc1f76d2033b5244ea2e327c66bf87; 
  Thu, 09 Apr 2020 00:39:51 +0000 (UTC)
@@ -67,7 +67,7 @@ User-Agent: Mutt/1.10.1 (2018-07-13)
 X-Mailer: WebService/1.1.15620 hermes Apache-HttpAsyncClient/4.1.4
  (Java/11.0.6)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_202347_688457_5D572B06 
+X-CRM114-CacheID: sfid-20200408_202338_917949_240B687D 
 X-CRM114-Status: UNSURE (   8.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [66.163.188.233 listed in list.dnswl.org]
+ no trust [66.163.191.173 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -88,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [66.163.188.233 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
