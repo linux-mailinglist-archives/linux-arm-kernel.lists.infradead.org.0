@@ -2,92 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 524A31A3524
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:49:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBB1B1A3532
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:54:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0dpSmvoTcUY+HRJeuyPeZQNvBCsdHnthd3valtGP1s=; b=HQJwvut2cNVPLs
-	iLSUZfRw6DEj46cTGcZeVldG1PwcYyRWuluZoKyxMmvtDk3a6hMbJqVbeuksFE7WyOd6u1kyumFzA
-	eSPiUJWFnE3+0ILyz6RSLfBR2J862Nqw7XhzF9e7CZXs92mHKsmLsWE3tK7Kuq7oVCjkDfeXUcYZ2
-	vJ7WnqCBUlKcByHUyQ6XkarWB2+b641k/ReW2Xft16grsUnuuX2fTMIaiMuuMI3/+icQWvN+CRARJ
-	Hfs7hh8WA9EIVwlmsayyJd+RQbFlo519wcXrYRYGx1a4t2KpdqfEFrbOxLwySuH0Vq6IkT1KdJPJG
-	VrlJiHsyVDO1/WgSWb/g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ns5lNLK4FKiz+4L1CDVS+0LL1c3krEf3f46K4OK1rjs=; b=fx0YbTI/yEy0ao
+	D8z2uXKs1UpNwsuwYZA6d+MTpYLMScWplX0p4XVrMStrnAs5jDdcsjL9Cz8LUSMWPbUc7lwXOM9wH
+	31iNXO6EWHYHQaETDfMDVT7q3IgitEqLeZNZmycReuMTW+Tdo1xDG/K+xCBDhVsjB+1/tXx7voee1
+	uiSfaYTPkIkLmNRQd2aDBpBCBdzmPB+6oVYdVGD/fby+6HOkRR698ddKKoWeYYGsr0tODIgj9lUcn
+	puEKmJBtsPrxwsTEwPOQtjy4Xp0Ut/jdCexCSV3ZG29roxijNtljqK/xUweJHjgfOtiymU4ewKFmt
+	lQICqSxBi7/AAnRxru/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMXYv-0002yj-Oh; Thu, 09 Apr 2020 13:49:45 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jMXd6-0005qE-9F; Thu, 09 Apr 2020 13:54:04 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMXYj-0002xT-Ro
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 13:49:35 +0000
-Received: by mail-wr1-x443.google.com with SMTP id s8so11979078wrt.7
+ id 1jMXcx-0005pt-RU
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 13:53:57 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id f63so2769918vkh.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 06:49:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=xI/13ahNFkzIs4fIOUGU+GiPaJZFLk48sQn0t25jaGY=;
- b=afn5TbxaSodVr0dusUmbWTENkDb2K7KmcDYRZvC1s1/ABXD0YGMH+o0CUhuulFvK8D
- TiiyY59rpWL2aj/8BFvJcBbzZd3kS72CwBWjKimtNHITiDCpdWPXbpMyrq9VIGeapAoZ
- JFj9e9zNZjLMKip1oZo6xLrulUab5B0RopS2krK6YhQKUVhDJ6EV9zHcdxi/tlYmIp9P
- VHDGc9RTvC9FU8xTekWP6oBJ5KhFJfwCMx5E5AR/Co0fbbo4lyQbXK0Xvl4OjHtuEn8I
- +9cIQsqMGxquOA3ok8x7PkaJl2UIYpHP6F93Dfn0cMZrwnprNo9JjDjGiynZ3f4NEKRS
- oxgg==
+ Thu, 09 Apr 2020 06:53:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dwoCAYUicLqYBaO2hxUisMrF80YNdDxwi3wgZyFZPfY=;
+ b=wweADUP5FzxaHiLF24hi0m7NCNmG+wWWvNjJ1eiOO/OlSay/LG3/+OL7VRWt+AD1mh
+ ZH52JsZOextHKATsMZttP9sdaEEMofKEi6yH9s6CgYHwfByd/lm5rOpUXF1YK1/qTN8O
+ bfzayFsyH9z3xOO+OGPTz3eDCybehJkSgorlgO8Sl0h0um8cgs1uq2T1hjBjDVHXdIFP
+ YkQCHQbuMbl4VVPKNGuJ2X1sYlHDweECPisSywxLmg30PknIkU1xwvBk+Bzu8HxgvMEP
+ hAKGSuBFt54bjpyrQ/GPEEGgAP3aunJ4+vie6fAEomGmeNhRfFsK9xt8v+qJC+LhEoww
+ WgaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=xI/13ahNFkzIs4fIOUGU+GiPaJZFLk48sQn0t25jaGY=;
- b=sXY8EFE5/q1+eORo8p+yKKPQwtecnCayyTkONUEbTu3Z+8+7v9BhXQfNFpkvKoyYJQ
- y5jqpgcJhaE8hYsPTNwPXCNabfvVI7D5LGKgqHR+UHiixhaj+/r9wUmqD6X2yieq0dVG
- YFfl7F2QjifALRx3O8SSEBYu6wcgULXpDaUKfP8suxlWtLkK37PvEjdafo2u2s29Wm2Y
- tlRhurWsT6kXDHOTfkznx57Hqb9wCE+0aHoWE0bspaq90GjyICXW3OXmCSVcvoyrfVi3
- pX8eVFftjGydY+18HcxPBu9oY6P2vmxjHPEO1v4WNFXQZaz9297EZWOJUGciMVC/rVvz
- EY8w==
-X-Gm-Message-State: AGi0PubfZhTuN3VqhgKCXJOulxDDPSGDbM04TY0uGJjA9OCpUenV9uQs
- qHTdCRwVn861GQGEmuOPDmaTCA==
-X-Google-Smtp-Source: APiQypLdC3AyJfiHJHy5bpqo/UY+01I+BfVknqM3QSrQr+ChtRt3Ew2TsNKjwXQyBVHN0NcAEWTNsg==
-X-Received: by 2002:adf:aacc:: with SMTP id i12mr15309250wrc.116.1586440171850; 
- Thu, 09 Apr 2020 06:49:31 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:4e:2ab3:ef46:7bda?
- ([2a01:e34:ed2f:f020:4e:2ab3:ef46:7bda])
- by smtp.googlemail.com with ESMTPSA id u17sm45525611wra.63.2020.04.09.06.49.30
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Apr 2020 06:49:31 -0700 (PDT)
-Subject: Re: [PATCH v6 0/4] thermal: k3: Add support for bandgap sensors
-To: Keerthy <j-keerthy@ti.com>, rui.zhang@intel.com, robh+dt@kernel.org
-References: <20200407055116.16082-1-j-keerthy@ti.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <3c69e3c6-5549-e891-fde6-95a2ecc49f77@linaro.org>
-Date: Thu, 9 Apr 2020 15:49:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dwoCAYUicLqYBaO2hxUisMrF80YNdDxwi3wgZyFZPfY=;
+ b=opA3sWg8WNgpzki214Ctn07MmakPBtx5gRmPro+No1QKObeMt1S+khrx9VN+n3OAYE
+ FHOwWUqqZw/NPWhlknc+/9FoJM08+1Snp1l1NokBTHrqEN5Npn6iqZWklhZSQymF5fjE
+ k/2any+PhXOmLkBlemy1KNXBd9OJHmwJAHD0O5LbsxO3+CU9gakAJfyBmhEUI10IqI8w
+ A5TDiWXR/2ed8zGHQphGj6Qa0XkW8BbVvL+AF8CYD9npIU+iqEQWgHVVde0l4nCMCGnU
+ 8Seow/3nTPCT5C/6fEvfiasxOrA5o45kBcDhz16Sqr9amtdDVMb5Z1oSMei04cFmqomF
+ je8Q==
+X-Gm-Message-State: AGi0Pub3W7Hswa+wP/ZQoRtwE/xAAjsF4oc2xppeBk89ofbRRlEfsYmX
+ 3/qIlqLBuZajxc6u1poQwijVypPrpkMwd7iWQJbtTQ==
+X-Google-Smtp-Source: APiQypJpp/sbsI5ihDNmtxV/fEa+CftX/eQjWcUjtA7pyebaLAuJHu4CYdMxU68qtsXicyllRa5cVZ+HSgPtk8QZ6s0=
+X-Received: by 2002:a1f:ce86:: with SMTP id e128mr9764243vkg.86.1586440434685; 
+ Thu, 09 Apr 2020 06:53:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200407055116.16082-1-j-keerthy@ti.com>
-Content-Language: en-US
+References: <1586407908-27139-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1586407908-27139-1-git-send-email-Anson.Huang@nxp.com>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Thu, 9 Apr 2020 19:23:43 +0530
+Message-ID: <CAHLCerOY9gBM-E2oJXi0TnUODj5bzpDpgvD3ixW_oLNN8hnpDg@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: thermal: Convert i.MX to json-schema
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_064933_942571_655932E6 
-X-CRM114-Status: GOOD (  17.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200409_065355_892943_520CD1B0 
+X-CRM114-Status: GOOD (  23.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -100,61 +87,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <Linux-imx@nxp.com>, kernel@pengutronix.de,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ lakml <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhpIEtlZXJ0aHksCgpPbiAwNy8wNC8yMDIwIDA3OjUxLCBLZWVydGh5IHdyb3RlOgo+IEFkZCBW
-VE0gdGhlcm1hbCBzdXBwb3J0LiBJbiB0aGUgVm9sdGFnZSBUaGVybWFsCj4gTWFuYWdlbWVudCBN
-b2R1bGUoVlRNKSwgSzMgQU02NTQgc3VwcGxpZXMgYSB2b2x0YWdlCj4gcmVmZXJlbmNlIGFuZCBh
-IHRlbXBlcmF0dXJlIHNlbnNvciBmZWF0dXJlIHRoYXQgYXJlIGdhdGhlcmVkIGluIHRoZSBiYW5k
-Cj4gZ2FwIHZvbHRhZ2UgYW5kIHRlbXBlcmF0dXJlIHNlbnNvciAoVkJHQVBUUykgbW9kdWxlLiBU
-aGUgYmFuZAo+IGdhcCBwcm92aWRlcyBjdXJyZW50IGFuZCB2b2x0YWdlIHJlZmVyZW5jZSBmb3Ig
-aXRzIGludGVybmFsCj4gY2lyY3VpdHMgYW5kIG90aGVyIGFuYWxvZyBJUCBibG9ja3MuIFRoZSBh
-bmFsb2ctdG8tZGlnaXRhbAo+IGNvbnZlcnRlciAoQURDKSBwcm9kdWNlcyBhbiBvdXRwdXQgdmFs
-dWUgdGhhdCBpcyBwcm9wb3J0aW9uYWwKPiB0byB0aGUgc2lsaWNvbiB0ZW1wZXJhdHVyZS4KPiAK
-PiBBZGQgc3VwcG9ydCBmb3IgYmFuZGdhcCBzZW5zb3JzLiBDdXJyZW50bHkgcmVhZGluZyB0ZW1w
-ZXJhdHVyZXMKPiBpcyBzdXBwb3J0ZWQuCgpIb3cgZG8geW91IHdhbnQgdG8gcHJvY2VlZD8gU2hh
-bGwgSSB0YWtlIHBhdGNoZXMgMSAmIDIgPwoKCj4gQ2hhbmdlcyBpbiB2NjoKPiAKPiAgICogUmVt
-b3ZlZCBidW5jaCBvZiB1bnVzZWQgI2RlZmluZXMgYW5kIGNvdXBsZSBvZiByZWR1bmRhbnQgdmFy
-aWFibGVzLgo+ICAgKiBSZW9yZGVyZWQgcGF0Y2hlcyBhIGJpdC4KPiAgICogTWlub3IgcmVvcmRl
-cmluZyBpbiBkdCBiaW5kaW5nIHBhdGNoLgo+IAo+IENoYW5nZXMgaW4gdjU6Cj4gCj4gICAqIFJl
-bW92ZWQgdGhlcm1hbCB3b3JrIGZ1bmN0aW9uIHdoaWNoIHdhcyB1bnVzZWQuCj4gICAqIFJlbW92
-ZWQgdW51c2VkIHByZXZlX3Rlbm1wIGFuZCBhIGNvdXBsZSBtb3JlIHN0cnVjdCB2YXJpYWJsZXMu
-Cj4gICAqIFJlbW92ZWQgY291cGxlIG9mIHJlZHVuZGFudCBoZWFkZXIgZnVuY3Rpb24gaW5jbHVk
-ZS4KPiAKPiBDaGFuZ2VzIGluIHY0Ogo+IAo+ICAgKiBGaXhlZCBjb21tZW50cyBmcm9tIERhbmll
-bCB0byByZW1vdmUgdHJlbmQgZnVuY3Rpb24uCj4gICAqIE1vc3RseSBjbGVhbmVkIHVwIGFsbCB0
-aGUgdW51c2VkIHZhcmlhYmxlcy4KPiAgICogRHJpdmVyIGZyb20gYm9vbCB0byB0cmlzdGF0ZS4K
-PiAKPiBDaGFuZ2VzIGluIHYzOgo+IAo+ICAgKiBGaXhlZCBlcnJvcnMgc2VlbiB3aXRoOgo+ICAg
-ICBkdF9iaW5kaW5nX2NoZWNrIERUX1NDSEVNQV9GSUxFUz1Eb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvdGhlcm1hbC90aSxhbTY1NC10aGVybWFsLnlhbWwKPiAKPiBDaGFuZ2VzIGlu
-IHYyOgo+IAo+ICAgKiBGaXhlZCB5YW1sIGVycm9ycwo+ICAgKiByZW5hbWVkIGFtNjU0LWluZHVz
-dHJpYWwtdGhlcm1hbC5kdHNpIHRvIGszLWFtNjU0LWluZHVzdHJpYWwtdGhlcm1hbC5kdHNpCj4g
-ICAgIHRvIGZvbGxvdyB0aGUgY29udmVudGlvbiBmb3IgazMgZmFtaWx5LiAgCj4gCj4gS2VlcnRo
-eSAoNCk6Cj4gICBkdC1iaW5kaW5nczogdGhlcm1hbDogazM6IEFkZCBWVE0gYmluZGluZ3MgZG9j
-dW1lbnRhdGlvbgo+ICAgdGhlcm1hbDogazM6IEFkZCBzdXBwb3J0IGZvciBiYW5kZ2FwIHNlbnNv
-cnMKPiAgIGFybTY0OiBkdHM6IHRpOiBhbTY1LXdha2V1cDogQWRkIFZUTSBub2RlCj4gICBhcm02
-NDogZHRzOiB0aTogYW02NTQ6IEFkZCB0aGVybWFsIHpvbmVzCj4gCj4gIC4uLi9iaW5kaW5ncy90
-aGVybWFsL3RpLGFtNjU0LXRoZXJtYWwueWFtbCAgICB8ICA1NiArKysrCj4gIGFyY2gvYXJtNjQv
-Ym9vdC9kdHMvdGkvazMtYW02NS13YWtldXAuZHRzaSAgICB8ICAxMSArCj4gIC4uLi9kdHMvdGkv
-azMtYW02NTQtaW5kdXN0cmlhbC10aGVybWFsLmR0c2kgICB8ICA0NSArKysKPiAgZHJpdmVycy90
-aGVybWFsL0tjb25maWcgICAgICAgICAgICAgICAgICAgICAgIHwgIDEwICsKPiAgZHJpdmVycy90
-aGVybWFsL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICAgIHwgICAxICsKPiAgZHJpdmVycy90
-aGVybWFsL2szX2JhbmRnYXAuYyAgICAgICAgICAgICAgICAgIHwgMjY0ICsrKysrKysrKysrKysr
-KysrKwo+ICA2IGZpbGVzIGNoYW5nZWQsIDM4NyBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2Rl
-IDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdGhlcm1hbC90aSxhbTY1
-NC10aGVybWFsLnlhbWwKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMv
-dGkvazMtYW02NTQtaW5kdXN0cmlhbC10aGVybWFsLmR0c2kKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0
-IGRyaXZlcnMvdGhlcm1hbC9rM19iYW5kZ2FwLmMKPiAKCgotLSAKPGh0dHA6Ly93d3cubGluYXJv
-Lm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoK
-Rm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZh
-Y2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0
-cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Apr 9, 2020 at 10:29 AM Anson Huang <Anson.Huang@nxp.com> wrote:
+>
+> Convert the i.MX thermal binding to DT schema format using json-schema
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  .../devicetree/bindings/thermal/imx-thermal.txt    | 61 --------------
+>  .../devicetree/bindings/thermal/imx-thermal.yaml   | 97 ++++++++++++++++++++++
+>  2 files changed, 97 insertions(+), 61 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.txt
+>  create mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.txt b/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> deleted file mode 100644
+> index 823e417..0000000
+> --- a/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> +++ /dev/null
+> @@ -1,61 +0,0 @@
+> -* Temperature Monitor (TEMPMON) on Freescale i.MX SoCs
+> -
+> -Required properties:
+> -- compatible : must be one of following:
+> -  - "fsl,imx6q-tempmon" for i.MX6Q,
+> -  - "fsl,imx6sx-tempmon" for i.MX6SX,
+> -  - "fsl,imx7d-tempmon" for i.MX7S/D.
+> -- interrupts : the interrupt output of the controller:
+> -  i.MX6Q has one IRQ which will be triggered when temperature is higher than high threshold,
+> -  i.MX6SX and i.MX7S/D have two more IRQs than i.MX6Q, one is IRQ_LOW and the other is IRQ_PANIC,
+> -  when temperature is below than low threshold, IRQ_LOW will be triggered, when temperature
+> -  is higher than panic threshold, system will auto reboot by SRC module.
+> -- fsl,tempmon : phandle pointer to system controller that contains TEMPMON
+> -  control registers, e.g. ANATOP on imx6q.
+> -- nvmem-cells: A phandle to the calibration cells provided by ocotp.
+> -- nvmem-cell-names: Should be "calib", "temp_grade".
+> -
+> -Deprecated properties:
+> -- fsl,tempmon-data : phandle pointer to fuse controller that contains TEMPMON
+> -  calibration data, e.g. OCOTP on imx6q.  The details about calibration data
+> -  can be found in SoC Reference Manual.
+> -
+> -Direct access to OCOTP via fsl,tempmon-data is incorrect on some newer chips
+> -because it does not handle OCOTP clock requirements.
+> -
+> -Optional properties:
+> -- clocks : thermal sensor's clock source.
+> -
+> -Example:
+> -ocotp: ocotp@21bc000 {
+> -       #address-cells = <1>;
+> -       #size-cells = <1>;
+> -       compatible = "fsl,imx6sx-ocotp", "syscon";
+> -       reg = <0x021bc000 0x4000>;
+> -       clocks = <&clks IMX6SX_CLK_OCOTP>;
+> -
+> -       tempmon_calib: calib@38 {
+> -               reg = <0x38 4>;
+> -       };
+> -
+> -       tempmon_temp_grade: temp-grade@20 {
+> -               reg = <0x20 4>;
+> -       };
+> -};
+> -
+> -tempmon: tempmon {
+> -       compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
+> -       interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+> -       fsl,tempmon = <&anatop>;
+> -       nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
+> -       nvmem-cell-names = "calib", "temp_grade";
+> -       clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
+> -};
+> -
+> -Legacy method (Deprecated):
+> -tempmon {
+> -       compatible = "fsl,imx6q-tempmon";
+> -       fsl,tempmon = <&anatop>;
+> -       fsl,tempmon-data = <&ocotp>;
+> -       clocks = <&clks 172>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> new file mode 100644
+> index 0000000..ad12622
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> @@ -0,0 +1,97 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/imx-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP i.MX Thermal Binding
+> +
+> +maintainers:
+> +  - Anson Huang <Anson.Huang@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - fsl,imx6q-tempmon
+> +              - fsl,imx6sx-tempmon
+> +              - fsl,imx7d-tempmon
+> +
+> +  interrupts:
+> +    description: |
+> +      The interrupt output of the controller, the IRQ will be triggered
+> +      when temperature is higher than high threshold.
+> +    maxItems: 1
+> +
+> +  nvmem-cells:
+> +    description: |
+> +      Phandle to the calibration cells provided by ocotp for calibration
+> +      data and temperature grade.
+> +    maxItems: 2
+> +
+> +  nvmem-cell-names:
+> +    maxItems: 2
+> +    items:
+> +      - const: calib
+> +      - const: temp_grade
+> +
+> +  fsl,tempmon:
+> +    description: |
+> +      Phandle pointer to system controller that contains TEMPMON control
+> +      registers, e.g. ANATOP on imx6q.
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
+> +
+> +  fsl,tempmon-data:
+> +    description: |
+> +      Deprecated property, phandle pointer to fuse controller that contains
+> +      TEMPMON calibration data, e.g. OCOTP on imx6q. The details about
+> +      calibration data can be found in SoC Reference Manual.
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
+> +
+> +  clocks:
+> +    description: |
+> +      Thermal sensor's clock source.
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - fsl,tempmon
+> +  - clocks
+> +  - nvmem-cells
+> +  - nvmem-cell-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx6sx-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    ocotp: ocotp@21bc000 {
+> +         #address-cells = <1>;
+> +         #size-cells = <1>;
+> +         compatible = "fsl,imx6sx-ocotp", "syscon";
+> +         reg = <0x021bc000 0x4000>;
+> +         clocks = <&clks IMX6SX_CLK_OCOTP>;
+> +
+> +         tempmon_calib: calib@38 {
+> +             reg = <0x38 4>;
+> +         };
+> +
+> +         tempmon_temp_grade: temp-grade@20 {
+> +             reg = <0x20 4>;
+> +         };
+> +    };
+> +
+> +    tempmon: tempmon {
+> +         compatible = "fsl,imx6sx-tempmon";
+> +         interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+> +         fsl,tempmon = <&anatop>;
+> +         nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
+> +         nvmem-cell-names = "calib", "temp_grade";
+> +         clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
+
+Also, #thermal-sensor-cells property is missing in the example and in
+the property list above.
+
+> +    };
+> +
+> +...
+> --
+> 2.7.4
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
