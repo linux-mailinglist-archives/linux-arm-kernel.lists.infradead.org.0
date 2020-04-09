@@ -2,49 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF39A1A3A73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:19:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF5C41A3A71
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:18:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JDDjXwNHr50Y6+He7wYSLy9jQ2ae7vJq3FoDHVpPWhs=; b=HcwrpeMC09Lvbe
-	+Wy64kXXsKCRgpPtqtCaL9d1e8cqJCKCiZAHSEpXDIdF8+bEKrXJ7tKrvnbN4APgHCbFiD9fGEe1k
-	aUq8I5iMSCz0Tp5zm6lPc8CcCP29/Yy7ukxGmtl9k1bMQg9v5F+JW7TGBBxMshtvDKAehIaYUDwec
-	xXKR1Vr8RArM/1byUCQEEis/QtM7+oiFyYXQfl2Sp4pXHTKXcqGxCD0Tfo/orp31BybcfMQScBBQX
-	8cJ1bbhp/usZROGaybAQUj+qlOcA4OXTKKy20oujjjVMgXwoGmKftq1zBp5Lzdu8p65eYW1vrJbhf
-	oHAQ6VyIcGRqlUs5yyrw==;
+	List-Owner; bh=njrQ9BJjsIDtdRslupiPXDcWrxS4/4EACwCNvkk8eJY=; b=Hebj67go4zCQgQ
+	S+8w+lm6t1ypHwMn1OSM5Og20ALR05RDQU8poKEZ63hzJzfyuXRMVDrVyCZffVQMXeLJlKVllyjcQ
+	pqFKqOP3H33gB7VKCl0mn9EDCaCD4XW5Bo0TLDvsunGwSGKJ4XAAV+PLdvsoLfWMBdteZCGKT+VA/
+	OBvDc06pQf8X52rgBBgSOoA4YX9JwLw385mWwG8iFTxFH9+2ZgXAfU8/IfOF2gvSD+xpWaesTVUOR
+	rtd/oymf7S2sW6jFI1KtZKoB6ZBl1eDsoBAVIPF3J6cR26gom+PATUe3HcpeBveWKrA11JqFK0hka
+	4W4iID+O+oEuqysq7W1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMchp-0006rj-M2; Thu, 09 Apr 2020 19:19:17 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jMchI-0006N2-Nz; Thu, 09 Apr 2020 19:18:44 +0000
+Received: from mail-bn8nam12on2044.outbound.protection.outlook.com
+ ([40.107.237.44] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMcbv-0007Z4-0k
- for linux-arm-kernel@bombadil.infradead.org; Thu, 09 Apr 2020 19:13:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=z8vxUs/0dedErrEdwi1bx+iB6oF92F7WrtxM2KNCHZM=; b=k4D82gZlr/7P8evtppW+l+qxpX
- GlcB3uVfiGr1veDrJCV5LxphimWwWqe74btFASUkpkzqPwmc/9a56N7HTvXLaFL+aLeAa6DnkjKHN
- SGtZdfhwxC50b46YY5Rwyaxh4orRAije1ks3MSp0Qeidk96NgzBpW+EgoJJOGBus2Gx16Zq9GNN08
- hSlTBY/Klgk60VC5tLSwDguYbYzz7NnXR3tWopb1MCfauPCrh3vLZEoeqv58uHIuG1lEb2SunKxlO
- aPJU0rYffamHRx0990z1HAMdogWKaN7tzgnv8s9zMjHpda37VsG1mgrcOLfkeP3Jek32li+hIBFDJ
- 47WAGZxw==;
-Received: from mail-dm6nam11on2051.outbound.protection.outlook.com
- ([40.107.223.51] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMcbm-0003HZ-1r
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:13:09 +0000
+ id 1jMcbm-0007TN-8n
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:13:06 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UXN4udbAS+qHmGx2FLBZlhW/3PEDjk+hWByTj3F4LX3zShDrlVzilH1qaYYVGS7f0vsQlf4VEVEy395P5QwJXi/xhLnUJicBCwg5gX0u9snjFG/98BdWTK4DQpUjBnfTDonP8/THs+PPc7dIiHOlBPrLC9Kbof0tsugUjrG612YkkVsdoAToI6uCsClgYD70PMK92irmQ9gqGURXTvmVFydYsUQq5LdwsSFqFOAXNiGLfw0RKsiULqy+EeBLwLzdl+1wj4lVJ6oqTGGzYbEWwMQgFUO/5pSHmrcl0Orzorcf1D0yfrEKGfN+dTu6BZsvNvtyntP7+6ahWJEUVpjRXw==
+ b=NW2P+tG4uF7MsCwq0EsF2sM5uoRux2t9EeahtqIVmxaUZeG/0/0wcyNSMsonbwN3WZ4URvTYhc3finLPOmoRBGap11Z+On1TiywRp/jf5R20NK6c7Kt8jDnvd09L7UeF/COmyr5TjkjaETLlphx1qL7oFaSDQu5A8cFchkeWrrUvETJdebCAGcfwAwx6WQw8hjAj568jE8PRH+Gsb+Nucy+YSqXUX/1Yu8LWN+drqe4rPlHoTKPRF97aF1H/MkJbSrw6RlN6HKufY3CIq6PP2qvJayADFHIUIhAuueJyAG1X4vIIHnstQW6IaxmOEC80x/pFYdTj07pRdSWun0uDjw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=z8vxUs/0dedErrEdwi1bx+iB6oF92F7WrtxM2KNCHZM=;
- b=MBb6GXGhYrE2BPs3DhANTsyA71D7/6EGLiqHOoZCCgVm0Zf6lUlJ8mLZLaNZJW50oryj3ldIQDBOc2q1UQgITr1oioF/KJGF1RljuhaLcC1Zz0CNBJhiHAPT1qmRBtDmprCYfWcEcwW9cBXzRjy543qK6pObT5DZgs+gqTCdQY6PY4Troz7ePDo9wCCG8DZqPIsBGEExqmeEvx45wAT54BqKObVAHupGcDkrSpBlFITWavdsA9RKGcVNQ7pKBhmBmVyULIHL1XrJQnyntrpnyMvD2J3VaPWhhPl7GWLov4ahxK4uYtXSAuvtXO6KOywC3TO3lOkXdqPbIZaiA8ZClw==
+ bh=r0nLemtZ0w8h4ajLjICpZVwTtE+gvitXSzz8fRW9AZE=;
+ b=MHGu2ZQI9DoIWiDCoiDnGEEZW27Yik3QhoPZzQAwCmnpJ95ANLwYDseXHSOEBBHn4dBrmhXd1xs4Ng+lOVQ6xaMKkC9XZ+ipiXS4O0bQ7sUmL/1M9F0TVKaz7RRsugwSmBtoxGaHpxpRVw5CBYFsaWm/mnE/b0X5frQgdubnMZ2jL+9DrsdSUikRRi/cFeyUzmrunV5FCLcAk1NvR6gY/AocYP8kZIbO0cfF+I0ddSaUPh1a54ZjP/8ZOs0Yni8kjWT6CwiqerLH5OqGyHAD+aXSnkfX+RM6GrLXXHNg67uCaPg86s7BFz0EOHz+rt+mKh9y5fTOo+35TFhNkJASMQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -52,17 +38,17 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=z8vxUs/0dedErrEdwi1bx+iB6oF92F7WrtxM2KNCHZM=;
- b=rpi7R3aOxeiPR22+i+nFW9ZKxOEpyVswO9ETNQ2I1tnR3AhFDjIL4Q+dN8IcIR0Nkbotu18sC1Eci0SbzuGPsn5uptjWg5nzPBgOufUClrAn3AUjrpGTOw3L8c/5h2H0IwZ24g3bc7tbfuHsMi2ruaEPnnXbp9M7cBBKeQ1sf14=
-Received: from SN6PR08CA0011.namprd08.prod.outlook.com (2603:10b6:805:66::24)
- by BY5PR02MB6658.namprd02.prod.outlook.com (2603:10b6:a03:209::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.20; Thu, 9 Apr
+ bh=r0nLemtZ0w8h4ajLjICpZVwTtE+gvitXSzz8fRW9AZE=;
+ b=m0BlenTgM1z68+NnnwtcRJjSNkFuHDl65SUMYwg4yLWaqPaFYyjmv1DQl1cp1WzDXag3pWulj3OM8RL+mxGpi29HhmBtfDdHDucVLViNydA9vF19T7myWT6Io56WaTVX8Kl3jFj6o6bLeGJi2I0l8SiBFvALKizRtbA0oXTj0F0=
+Received: from CY1PR07CA0035.namprd07.prod.outlook.com
+ (2a01:111:e400:c60a::45) by DM6PR02MB4602.namprd02.prod.outlook.com
+ (2603:10b6:5:2e::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.15; Thu, 9 Apr
  2020 19:12:51 +0000
-Received: from SN1NAM02FT016.eop-nam02.prod.protection.outlook.com
- (2603:10b6:805:66:cafe::3c) by SN6PR08CA0011.outlook.office365.com
- (2603:10b6:805:66::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15 via Frontend
+Received: from CY1NAM02FT016.eop-nam02.prod.protection.outlook.com
+ (2a01:111:e400:c60a:cafe::ee) by CY1PR07CA0035.outlook.office365.com
+ (2a01:111:e400:c60a::45) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17 via Frontend
  Transport; Thu, 9 Apr 2020 19:12:51 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
@@ -72,29 +58,28 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT016.mail.protection.outlook.com (10.152.72.113) with Microsoft SMTP
- Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 19:12:51
+ CY1NAM02FT016.mail.protection.outlook.com (10.152.75.164) with Microsoft SMTP
+ Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 19:12:50
  +0000
-Received: from [149.199.38.66] (port=44387 helo=xsj-pvapsmtp01)
+Received: from [149.199.38.66] (port=44359 helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcbA-00060v-Dr; Thu, 09 Apr 2020 12:12:24 -0700
+ id 1jMcbA-00060i-1v; Thu, 09 Apr 2020 12:12:24 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcba-0007NV-SU; Thu, 09 Apr 2020 12:12:50 -0700
+ id 1jMcba-0007NV-GV; Thu, 09 Apr 2020 12:12:50 -0700
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcbS-0007La-9y; Thu, 09 Apr 2020 12:12:42 -0700
+ id 1jMcbS-0007La-C0; Thu, 09 Apr 2020 12:12:42 -0700
 From: Jolly Shah <jolly.shah@xilinx.com>
 To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
  matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
  keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH v4 10/25] firmware: xilinx: Remove eemi ops for clock set/get
- parent
-Date: Thu,  9 Apr 2020 12:11:59 -0700
-Message-Id: <1586459534-8997-11-git-send-email-jolly.shah@xilinx.com>
+Subject: [PATCH v4 11/25] firmware: xilinx: Use APIs instead of IOCTLs
+Date: Thu,  9 Apr 2020 12:12:00 -0700
+Message-Id: <1586459534-8997-12-git-send-email-jolly.shah@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
 References: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
@@ -105,43 +90,39 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(39860400002)(136003)(396003)(346002)(376002)(46966005)(81156014)(316002)(8676002)(47076004)(5660300002)(107886003)(44832011)(7416002)(2906002)(336012)(426003)(356004)(2616005)(81166007)(4326008)(6666004)(7696005)(186003)(36756003)(26005)(6636002)(70586007)(9786002)(70206006)(478600001)(8936002)(54906003)(82740400003);
+ SFS:(10009020)(4636009)(136003)(346002)(396003)(376002)(39860400002)(46966005)(82740400003)(478600001)(336012)(54906003)(4326008)(36756003)(107886003)(26005)(186003)(316002)(70206006)(6636002)(2616005)(9786002)(426003)(81166007)(7416002)(2906002)(5660300002)(8676002)(7696005)(30864003)(6666004)(47076004)(356004)(44832011)(70586007)(8936002)(81156014);
  DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: ba478a0f-6dd5-4dfb-1d0a-08d7dcb9ffa6
-X-MS-TrafficTypeDiagnostic: BY5PR02MB6658:
-X-Microsoft-Antispam-PRVS: <BY5PR02MB6658655463769C47D448F7A6B8C10@BY5PR02MB6658.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: dcf8e0c4-1423-4954-a92f-08d7dcb9ff6e
+X-MS-TrafficTypeDiagnostic: DM6PR02MB4602:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB46025462429D051F583E45A0B8C10@DM6PR02MB4602.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:115;
+X-MS-Oob-TLC-OOBClassifiers: OLM:188;
 X-Forefront-PRVS: 0368E78B5B
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 6QwiDyE2HUgIp7cazvtenIVIGpHHWn6jKmL4fnCpjhaB21czuEUBkRnLMmCKydO4vADRjq/zHN+alQnbjxH7hcCRWTxMz1WNV3CyheZqATgFRIWx8kY5t+h/qiXRw56VxwH8J+/2yI8F5jBa4yJe47MbskufMX3k+pJun1jRcK00ZXP48cq5Wj/l8VuhIO+xSBiJPImTLC0YxOvHjOB8IUSbQIm7c94pFUGjQmYAkFxh9ZIOZ2JA29WIDXZDuY145zwYKBa4lhxEcbN1eUTl7TkI3jh9rjKNdn7GKu2buq3ieM7CFewbDPoXOCViyAuhV7DxUqUYwCwOqZEyU/uu8Bmg+uxTOYIEDAnsCsG3cwpdsgMDKz++mg11JZ4Q4sgVc8+OQMFviXBZzdx1oQaK/r34JqjSqraHUtw/Ewp92AxFfcEe05uAtJtqhUfRe3B7hdOU+FUdGEvwijBbASfQHE4e8jpVGAQAVcHOuXdMHC2/Kx8VZ5ezgn2xNY3wScUajT30+m6Yy6kBYYElqM9bhA==
+X-Microsoft-Antispam-Message-Info: CVsrA8pwS8ArebonCMYa+GkA2eA7x9AxcGpZeNGArRe6nysFZlHBdVTh2Bs+SezJJ+Q+BGSI1Z56/ShWfGbv5osdF9bLrgtMg98r3RW4CQ/UaJZXNv2bNNi4I4VU/fqOqdkx57w3TPHyrnd3s8606uKO0LTdJskubyOWip9T4kmNmc9mXSk5964WZyGgs/zEoRS1vLlt5DjPuyTHFoTMOnzrKbVWjjRj/c6j6DmKx6Zi6rV4Jl+jKZCW4XhUnPzRepKiF+zLaCA/dEDqFO+igoAxTPa8ghdXJ+ZkBuS/MX4K7SAy2JxssgWqIbDRcTtJsmZZhYYf6XISdZ/5u72151ddfLyTAPSmzjc+MJu2TqinHM4E+q0r6PVzAaPAY6cWctzQpU9bE0akidLQTxARD9wHP4ixqTdXdNSTPGeT7xnzzpJQvgrArvb31VBvV/R1kX6PXaywY1ur1WewJNrwAvyETFOhtddUs5VohIRRM2lhzJfBIHXl2BkUk3D+ENcDgabgJqlHDVMAXfw9ZZqB0w==
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:51.2201 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ba478a0f-6dd5-4dfb-1d0a-08d7dcb9ffa6
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:50.8567 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dcf8e0c4-1423-4954-a92f-08d7dcb9ff6e
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR02MB6658
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4602
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_201303_675131_FA6649DA 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -1.9 (-)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-1.9 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200409_121302_411167_C91836E9 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.223.51 listed in wl.mailspike.net]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.223.51 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [40.107.237.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -166,117 +147,381 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 
-Use direct function call instead of eemi ops for clock set/get parent.
+Remove IOCTL API and use individual APIs for better readability.
 
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- drivers/clk/zynqmp/clk-mux-zynqmp.c  |  6 ++----
- drivers/firmware/xilinx/zynqmp.c     |  8 ++++----
- include/linux/firmware/xlnx-zynqmp.h | 12 ++++++++++--
- 3 files changed, 16 insertions(+), 10 deletions(-)
+ drivers/clk/zynqmp/pll.c             |  14 ++---
+ drivers/firmware/xilinx/zynqmp.c     | 118 ++++++++++++++++++++++++++---------
+ drivers/mmc/host/sdhci-of-arasan.c   |  38 +----------
+ include/linux/firmware/xlnx-zynqmp.h |  31 ++++++++-
+ 4 files changed, 126 insertions(+), 75 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/clk-mux-zynqmp.c b/drivers/clk/zynqmp/clk-mux-zynqmp.c
-index 0af8f74..0619414 100644
---- a/drivers/clk/zynqmp/clk-mux-zynqmp.c
-+++ b/drivers/clk/zynqmp/clk-mux-zynqmp.c
-@@ -47,9 +47,8 @@ static u8 zynqmp_clk_mux_get_parent(struct clk_hw *hw)
- 	u32 clk_id = mux->clk_id;
- 	u32 val;
- 	int ret;
--	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
- 
--	ret = eemi_ops->clock_getparent(clk_id, &val);
-+	ret = zynqmp_pm_clock_getparent(clk_id, &val);
- 
- 	if (ret)
- 		pr_warn_once("%s() getparent failed for clock: %s, ret = %d\n",
-@@ -71,9 +70,8 @@ static int zynqmp_clk_mux_set_parent(struct clk_hw *hw, u8 index)
+diff --git a/drivers/clk/zynqmp/pll.c b/drivers/clk/zynqmp/pll.c
+index 73fb5bb..92f449e 100644
+--- a/drivers/clk/zynqmp/pll.c
++++ b/drivers/clk/zynqmp/pll.c
+@@ -50,10 +50,8 @@ static inline enum pll_mode zynqmp_pll_get_mode(struct clk_hw *hw)
  	const char *clk_name = clk_hw_get_name(hw);
- 	u32 clk_id = mux->clk_id;
- 	int ret;
--	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
- 
--	ret = eemi_ops->clock_setparent(clk_id, index);
-+	ret = zynqmp_pm_clock_setparent(clk_id, index);
- 
- 	if (ret)
- 		pr_warn_once("%s() set parent failed for clock: %s, ret = %d\n",
-diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-index 8462201..b0aa967 100644
---- a/drivers/firmware/xilinx/zynqmp.c
-+++ b/drivers/firmware/xilinx/zynqmp.c
-@@ -485,11 +485,12 @@ EXPORT_SYMBOL_GPL(zynqmp_pm_clock_getrate);
-  *
-  * Return: Returns status, either success or error+reason
-  */
--static int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id)
-+int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id)
- {
- 	return zynqmp_pm_invoke_fn(PM_CLOCK_SETPARENT, clock_id,
- 				   parent_id, 0, 0, NULL);
- }
-+EXPORT_SYMBOL_GPL(zynqmp_pm_clock_setparent);
- 
- /**
-  * zynqmp_pm_clock_getparent() - Get the clock parent for given id
-@@ -501,7 +502,7 @@ static int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id)
-  *
-  * Return: Returns status, either success or error+reason
-  */
--static int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
-+int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
- {
  	u32 ret_payload[PAYLOAD_ARG_CNT];
  	int ret;
-@@ -512,6 +513,7 @@ static int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
  
- 	return ret;
- }
-+EXPORT_SYMBOL_GPL(zynqmp_pm_clock_getparent);
+-	ret = eemi_ops->ioctl(0, IOCTL_GET_PLL_FRAC_MODE, clk_id, 0,
+-			      ret_payload);
++	ret = zynqmp_pm_get_pll_frac_mode(clk_id, ret_payload);
+ 	if (ret)
+ 		pr_warn_once("%s() PLL get frac mode failed for %s, ret = %d\n",
+ 			     __func__, clk_name, ret);
+@@ -73,14 +71,13 @@ static inline void zynqmp_pll_set_mode(struct clk_hw *hw, bool on)
+ 	const char *clk_name = clk_hw_get_name(hw);
+ 	int ret;
+ 	u32 mode;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
+ 
+ 	if (on)
+ 		mode = PLL_MODE_FRAC;
+ 	else
+ 		mode = PLL_MODE_INT;
+ 
+-	ret = eemi_ops->ioctl(0, IOCTL_SET_PLL_FRAC_MODE, clk_id, mode, NULL);
++	ret = zynqmp_pm_set_pll_frac_mode(clk_id, mode);
+ 	if (ret)
+ 		pr_warn_once("%s() PLL set frac mode failed for %s, ret = %d\n",
+ 			     __func__, clk_name, ret);
+@@ -139,7 +136,6 @@ static unsigned long zynqmp_pll_recalc_rate(struct clk_hw *hw,
+ 	unsigned long rate, frac;
+ 	u32 ret_payload[PAYLOAD_ARG_CNT];
+ 	int ret;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
+ 
+ 	ret = zynqmp_pm_clock_getdivider(clk_id, &fbdiv);
+ 	if (ret)
+@@ -148,8 +144,7 @@ static unsigned long zynqmp_pll_recalc_rate(struct clk_hw *hw,
+ 
+ 	rate =  parent_rate * fbdiv;
+ 	if (zynqmp_pll_get_mode(hw) == PLL_MODE_FRAC) {
+-		eemi_ops->ioctl(0, IOCTL_GET_PLL_FRAC_DATA, clk_id, 0,
+-				ret_payload);
++		zynqmp_pm_get_pll_frac_data(clk_id, ret_payload);
+ 		data = ret_payload[1];
+ 		frac = (parent_rate * data) / FRAC_DIV;
+ 		rate = rate + frac;
+@@ -177,7 +172,6 @@ static int zynqmp_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+ 	u32 fbdiv;
+ 	long rate_div, frac, m, f;
+ 	int ret;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
+ 
+ 	if (zynqmp_pll_get_mode(hw) == PLL_MODE_FRAC) {
+ 		rate_div = (rate * FRAC_DIV) / parent_rate;
+@@ -194,7 +188,7 @@ static int zynqmp_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+ 		else if (ret)
+ 			pr_warn_once("%s() set divider failed for %s, ret = %d\n",
+ 				     __func__, clk_name, ret);
+-		eemi_ops->ioctl(0, IOCTL_SET_PLL_FRAC_DATA, clk_id, f, NULL);
++		zynqmp_pm_set_pll_frac_data(clk_id, f);
+ 
+ 		return rate + frac;
+ 	}
+diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+index b0aa967..94fd755 100644
+--- a/drivers/firmware/xilinx/zynqmp.c
++++ b/drivers/firmware/xilinx/zynqmp.c
+@@ -516,47 +516,108 @@ int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
+ EXPORT_SYMBOL_GPL(zynqmp_pm_clock_getparent);
  
  /**
-  * zynqmp_is_valid_ioctl() - Check whether IOCTL ID is valid or not
-@@ -744,8 +746,6 @@ static int zynqmp_pm_aes_engine(const u64 address, u32 *out)
+- * zynqmp_is_valid_ioctl() - Check whether IOCTL ID is valid or not
+- * @ioctl_id:	IOCTL ID
++ * zynqmp_pm_set_pll_frac_mode() - PM API for set PLL mode
+  *
+- * Return: 1 if IOCTL is valid else 0
++ * @clk_id:	PLL clock ID
++ * @mode:	PLL mode (PLL_MODE_FRAC/PLL_MODE_INT)
++ *
++ * This function sets PLL mode
++ *
++ * Return: Returns status, either success or error+reason
+  */
+-static inline int zynqmp_is_valid_ioctl(u32 ioctl_id)
++int zynqmp_pm_set_pll_frac_mode(u32 clk_id, u32 mode)
+ {
+-	switch (ioctl_id) {
+-	case IOCTL_SD_DLL_RESET:
+-	case IOCTL_SET_SD_TAPDELAY:
+-	case IOCTL_SET_PLL_FRAC_MODE:
+-	case IOCTL_GET_PLL_FRAC_MODE:
+-	case IOCTL_SET_PLL_FRAC_DATA:
+-	case IOCTL_GET_PLL_FRAC_DATA:
+-		return 1;
+-	default:
+-		return 0;
+-	}
++	return zynqmp_pm_invoke_fn(PM_IOCTL, 0, IOCTL_SET_PLL_FRAC_MODE,
++				   clk_id, mode, NULL);
+ }
++EXPORT_SYMBOL_GPL(zynqmp_pm_set_pll_frac_mode);
+ 
+ /**
+- * zynqmp_pm_ioctl() - PM IOCTL API for device control and configs
+- * @node_id:	Node ID of the device
+- * @ioctl_id:	ID of the requested IOCTL
+- * @arg1:	Argument 1 to requested IOCTL call
+- * @arg2:	Argument 2 to requested IOCTL call
+- * @out:	Returned output value
++ * zynqmp_pm_get_pll_frac_mode() - PM API for get PLL mode
++ *
++ * @clk_id:	PLL clock ID
++ * @mode:	PLL mode
+  *
+- * This function calls IOCTL to firmware for device control and configuration.
++ * This function return current PLL mode
+  *
+  * Return: Returns status, either success or error+reason
+  */
+-static int zynqmp_pm_ioctl(u32 node_id, u32 ioctl_id, u32 arg1, u32 arg2,
+-			   u32 *out)
++int zynqmp_pm_get_pll_frac_mode(u32 clk_id, u32 *mode)
+ {
+-	if (!zynqmp_is_valid_ioctl(ioctl_id))
+-		return -EINVAL;
++	return zynqmp_pm_invoke_fn(PM_IOCTL, 0, IOCTL_GET_PLL_FRAC_MODE,
++				   clk_id, 0, mode);
++}
++EXPORT_SYMBOL_GPL(zynqmp_pm_get_pll_frac_mode);
++
++/**
++ * zynqmp_pm_set_pll_frac_data() - PM API for setting pll fraction data
++ *
++ * @clk_id:	PLL clock ID
++ * @data:	fraction data
++ *
++ * This function sets fraction data.
++ * It is valid for fraction mode only.
++ *
++ * Return: Returns status, either success or error+reason
++ */
++int zynqmp_pm_set_pll_frac_data(u32 clk_id, u32 data)
++{
++	return zynqmp_pm_invoke_fn(PM_IOCTL, 0, IOCTL_SET_PLL_FRAC_DATA,
++				   clk_id, data, NULL);
++}
++EXPORT_SYMBOL_GPL(zynqmp_pm_set_pll_frac_data);
++
++/**
++ * zynqmp_pm_get_pll_frac_data() - PM API for getting pll fraction data
++ *
++ * @clk_id:	PLL clock ID
++ * @data:	fraction data
++ *
++ * This function returns fraction data value.
++ *
++ * Return: Returns status, either success or error+reason
++ */
++int zynqmp_pm_get_pll_frac_data(u32 clk_id, u32 *data)
++{
++	return zynqmp_pm_invoke_fn(PM_IOCTL, 0, IOCTL_GET_PLL_FRAC_DATA,
++				   clk_id, 0, data);
++}
++EXPORT_SYMBOL_GPL(zynqmp_pm_get_pll_frac_data);
+ 
+-	return zynqmp_pm_invoke_fn(PM_IOCTL, node_id, ioctl_id,
+-				   arg1, arg2, out);
++/**
++ * zynqmp_pm_set_sd_tapdelay() -  Set tap delay for the SD device
++ *
++ * @node_id	Node ID of the device
++ * @type	Type of tap delay to set (input/output)
++ * @value	Value to set fot the tap delay
++ *
++ * This function sets input/output tap delay for the SD device.
++ *
++ * @return	Returns status, either success or error+reason
++ */
++int zynqmp_pm_set_sd_tapdelay(u32 node_id, u32 type, u32 value)
++{
++	return zynqmp_pm_invoke_fn(PM_IOCTL, node_id, IOCTL_SET_SD_TAPDELAY,
++				   type, value, NULL);
++}
++EXPORT_SYMBOL_GPL(zynqmp_pm_set_sd_tapdelay);
++
++/**
++ * zynqmp_pm_sd_dll_reset() - Reset DLL logic
++ *
++ * @node_id	Node ID of the device
++ * @type	Reset type
++ *
++ * This function resets DLL logic for the SD device.
++ *
++ * @return	Returns status, either success or error+reason
++ */
++int zynqmp_pm_sd_dll_reset(u32 node_id, u32 type)
++{
++	return zynqmp_pm_invoke_fn(PM_IOCTL, node_id, IOCTL_SET_SD_TAPDELAY,
++				   type, 0, NULL);
+ }
++EXPORT_SYMBOL_GPL(zynqmp_pm_sd_dll_reset);
+ 
+ /**
+  * zynqmp_pm_reset_assert - Request setting of reset (1 - assert, 0 - release)
+@@ -746,7 +807,6 @@ static int zynqmp_pm_aes_engine(const u64 address, u32 *out)
  }
  
  static const struct zynqmp_eemi_ops eemi_ops = {
--	.clock_setparent = zynqmp_pm_clock_setparent,
--	.clock_getparent = zynqmp_pm_clock_getparent,
- 	.ioctl = zynqmp_pm_ioctl,
+-	.ioctl = zynqmp_pm_ioctl,
  	.reset_assert = zynqmp_pm_reset_assert,
  	.reset_get_status = zynqmp_pm_reset_get_status,
+ 	.init_finalize = zynqmp_pm_init_finalize,
+diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
+index d4905c1..d01f762 100644
+--- a/drivers/mmc/host/sdhci-of-arasan.c
++++ b/drivers/mmc/host/sdhci-of-arasan.c
+@@ -98,10 +98,6 @@ struct sdhci_arasan_clk_data {
+ 	void		*clk_of_data;
+ };
+ 
+-struct sdhci_arasan_zynqmp_clk_data {
+-	const struct zynqmp_eemi_ops *eemi_ops;
+-};
+-
+ /**
+  * struct sdhci_arasan_data
+  * @host:		Pointer to the main SDHCI host structure.
+@@ -630,9 +626,6 @@ static int sdhci_zynqmp_sdcardclk_set_phase(struct clk_hw *hw, int degrees)
+ 	struct sdhci_arasan_data *sdhci_arasan =
+ 		container_of(clk_data, struct sdhci_arasan_data, clk_data);
+ 	struct sdhci_host *host = sdhci_arasan->host;
+-	struct sdhci_arasan_zynqmp_clk_data *zynqmp_clk_data =
+-		clk_data->clk_of_data;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_clk_data->eemi_ops;
+ 	const char *clk_name = clk_hw_get_name(hw);
+ 	u32 node_id = !strcmp(clk_name, "clk_out_sd0") ? NODE_SD_0 : NODE_SD_1;
+ 	u8 tap_delay, tap_max = 0;
+@@ -672,8 +665,7 @@ static int sdhci_zynqmp_sdcardclk_set_phase(struct clk_hw *hw, int degrees)
+ 	tap_delay = (degrees * tap_max) / 360;
+ 
+ 	/* Set the Clock Phase */
+-	ret = eemi_ops->ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
+-			      PM_TAPDELAY_OUTPUT, tap_delay, NULL);
++	ret = zynqmp_pm_set_sd_tapdelay(node_id, PM_TAPDELAY_OUTPUT, tap_delay);
+ 	if (ret)
+ 		pr_err("Error setting Output Tap Delay\n");
+ 
+@@ -702,9 +694,6 @@ static int sdhci_zynqmp_sampleclk_set_phase(struct clk_hw *hw, int degrees)
+ 	struct sdhci_arasan_data *sdhci_arasan =
+ 		container_of(clk_data, struct sdhci_arasan_data, clk_data);
+ 	struct sdhci_host *host = sdhci_arasan->host;
+-	struct sdhci_arasan_zynqmp_clk_data *zynqmp_clk_data =
+-		clk_data->clk_of_data;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_clk_data->eemi_ops;
+ 	const char *clk_name = clk_hw_get_name(hw);
+ 	u32 node_id = !strcmp(clk_name, "clk_in_sd0") ? NODE_SD_0 : NODE_SD_1;
+ 	u8 tap_delay, tap_max = 0;
+@@ -744,8 +733,7 @@ static int sdhci_zynqmp_sampleclk_set_phase(struct clk_hw *hw, int degrees)
+ 	tap_delay = (degrees * tap_max) / 360;
+ 
+ 	/* Set the Clock Phase */
+-	ret = eemi_ops->ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
+-			      PM_TAPDELAY_INPUT, tap_delay, NULL);
++	ret = zynqmp_pm_set_sd_tapdelay(node_id, PM_TAPDELAY_INPUT, tap_delay);
+ 	if (ret)
+ 		pr_err("Error setting Input Tap Delay\n");
+ 
+@@ -759,11 +747,6 @@ static const struct clk_ops zynqmp_sampleclk_ops = {
+ 
+ static void arasan_zynqmp_dll_reset(struct sdhci_host *host, u32 deviceid)
+ {
+-	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+-	struct sdhci_arasan_data *sdhci_arasan = sdhci_pltfm_priv(pltfm_host);
+-	struct sdhci_arasan_zynqmp_clk_data *zynqmp_clk_data =
+-		sdhci_arasan->clk_data.clk_of_data;
+-	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_clk_data->eemi_ops;
+ 	u16 clk;
+ 
+ 	clk = sdhci_readw(host, SDHCI_CLOCK_CONTROL);
+@@ -771,8 +754,7 @@ static void arasan_zynqmp_dll_reset(struct sdhci_host *host, u32 deviceid)
+ 	sdhci_writew(host, clk, SDHCI_CLOCK_CONTROL);
+ 
+ 	/* Issue DLL Reset */
+-	eemi_ops->ioctl(deviceid, IOCTL_SD_DLL_RESET,
+-			PM_DLL_RESET_PULSE, 0, NULL);
++	zynqmp_pm_sd_dll_reset(deviceid, PM_DLL_RESET_PULSE);
+ 
+ 	clk = sdhci_readw(host, SDHCI_CLOCK_CONTROL);
+ 
+@@ -1277,20 +1259,6 @@ static int sdhci_arasan_probe(struct platform_device *pdev)
+ 		goto clk_disable_all;
+ 
+ 	if (of_device_is_compatible(np, "xlnx,zynqmp-8.9a")) {
+-		struct sdhci_arasan_zynqmp_clk_data *zynqmp_clk_data;
+-		const struct zynqmp_eemi_ops *eemi_ops;
+-
+-		zynqmp_clk_data = devm_kzalloc(&pdev->dev,
+-					       sizeof(*zynqmp_clk_data),
+-					       GFP_KERNEL);
+-		eemi_ops = zynqmp_pm_get_eemi_ops();
+-		if (IS_ERR(eemi_ops)) {
+-			ret = PTR_ERR(eemi_ops);
+-			goto unreg_clk;
+-		}
+-
+-		zynqmp_clk_data->eemi_ops = eemi_ops;
+-		sdhci_arasan->clk_data.clk_of_data = zynqmp_clk_data;
+ 		host->mmc_host_ops.execute_tuning =
+ 			arasan_zynqmp_execute_tuning;
+ 	}
 diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index a71f52c..7abb683 100644
+index 7abb683..5aff896 100644
 --- a/include/linux/firmware/xlnx-zynqmp.h
 +++ b/include/linux/firmware/xlnx-zynqmp.h
-@@ -296,8 +296,6 @@ struct zynqmp_pm_query_data {
+@@ -296,7 +296,6 @@ struct zynqmp_pm_query_data {
  struct zynqmp_eemi_ops {
  	int (*fpga_load)(const u64 address, const u32 size, const u32 flags);
  	int (*fpga_get_status)(u32 *value);
--	int (*clock_setparent)(u32 clock_id, u32 parent_id);
--	int (*clock_getparent)(u32 clock_id, u32 *parent_id);
- 	int (*ioctl)(u32 node_id, u32 ioctl_id, u32 arg1, u32 arg2, u32 *out);
+-	int (*ioctl)(u32 node_id, u32 ioctl_id, u32 arg1, u32 arg2, u32 *out);
  	int (*reset_assert)(const enum zynqmp_pm_reset reset,
  			    const enum zynqmp_pm_reset_action assert_flag);
-@@ -331,6 +329,8 @@ int zynqmp_pm_clock_setdivider(u32 clock_id, u32 divider);
- int zynqmp_pm_clock_getdivider(u32 clock_id, u32 *divider);
- int zynqmp_pm_clock_setrate(u32 clock_id, u64 rate);
+ 	int (*reset_get_status)(const enum zynqmp_pm_reset reset, u32 *status);
+@@ -331,6 +330,12 @@ int zynqmp_pm_clock_setrate(u32 clock_id, u64 rate);
  int zynqmp_pm_clock_getrate(u32 clock_id, u64 *rate);
-+int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id);
-+int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id);
+ int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id);
+ int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id);
++int zynqmp_pm_set_pll_frac_mode(u32 clk_id, u32 mode);
++int zynqmp_pm_get_pll_frac_mode(u32 clk_id, u32 *mode);
++int zynqmp_pm_set_pll_frac_data(u32 clk_id, u32 data);
++int zynqmp_pm_get_pll_frac_data(u32 clk_id, u32 *data);
++int zynqmp_pm_set_sd_tapdelay(u32 node_id, u32 type, u32 value);
++int zynqmp_pm_sd_dll_reset(u32 node_id, u32 type);
  #else
  static inline struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void)
  {
-@@ -377,6 +377,14 @@ static inline int zynqmp_pm_clock_getrate(u32 clock_id, u64 *rate)
+@@ -385,6 +390,30 @@ static inline int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
  {
  	return -ENODEV;
  }
-+static inline int zynqmp_pm_clock_setparent(u32 clock_id, u32 parent_id)
++static inline int zynqmp_pm_set_pll_frac_mode(u32 clk_id, u32 mode)
 +{
 +	return -ENODEV;
 +}
-+static inline int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
++static inline int zynqmp_pm_get_pll_frac_mode(u32 clk_id, u32 *mode)
++{
++	return -ENODEV;
++}
++static inline int zynqmp_pm_set_pll_frac_data(u32 clk_id, u32 data)
++{
++	return -ENODEV;
++}
++static inline int zynqmp_pm_get_pll_frac_data(u32 clk_id, u32 *data)
++{
++	return -ENODEV;
++}
++static inline int zynqmp_pm_set_sd_tapdelay(u32 node_id, u32 type, u32 value)
++{
++	return -ENODEV;
++}
++static inline int zynqmp_pm_sd_dll_reset(u32 node_id, u32 type)
 +{
 +	return -ENODEV;
 +}
