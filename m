@@ -2,56 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1483D1A35A5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED1341A35A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:16:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RDRRuwCOyWTN1CxsxQxLNwdlkOvz/mwerip6H+YIwBE=; b=vABE4rjJpCCpz1
-	xRJSEa9zJmhunQeNT1+1t1IEs+VpdiLdXYfk5dL8nMN/amNJBuNfnZDUuqG6UbqhbxnfLnN9rJ2q6
-	MjqCWawcITPXjni3K5+7XQ0xAkMPADB7ks21WIZQBSj1is/WrbBvulofCnrfeBspbUNMcUVnEnulJ
-	IxTPds1Pw25Bbg5etXVik1AYmEHy53MTwSqzfw9ybwLYvAaQln1BZ2OPjelNzdk8WzyN7omVb/qDN
-	38mS+xdKvl/Vp6TgMCMVAhyupcaELCeygkuz/v/ruziCnNXCGVLksiFLGnePzzvrs+NpDEPekAluk
-	I23M0NzlHmQbFxVmSbGg==;
+	List-Owner; bh=XwkyJnV5yfr3ypocON7Ch5MDn9aAe1TKDQq2h3429Rs=; b=PSLy34yWqn0LIs
+	wHAGdwl0Eop+lFxVc52vyVpWpKsVJ7hvqxCblWNKYKVJoHJ18u72oy1G6EW4DUua81TcclKdPNcYq
+	AzYjrQ0sfpGAlFElxUt1eMx1XxrhJ8AqZAbZOSeWnqc3DaJ65FbwAAyRUeUv3c/fkG+NTfxLCzW1+
+	xnzX0FGktQevmXsM51jVz3c68G+IZlqCqqFeMwPoXvCRoLc/gWxUkk3eKxK7dj1YzmzSrajjCyvvV
+	gRYXLJx4/ZQEUNlUTzqzO1At9NRc0xNFMWdJuI/+EXBbTiT/JTk/mt9M2bSkq9uFsCSeL2omhLY+L
+	Ih5K1fWoM8tTZY2X7MHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMXxU-0002nJ-Ip; Thu, 09 Apr 2020 14:15:08 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1jMXyZ-0005zk-Lg; Thu, 09 Apr 2020 14:16:15 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMXwZ-0001ww-8M
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:14:13 +0000
-Received: from localhost (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id D3D4820000B;
- Thu,  9 Apr 2020 14:14:08 +0000 (UTC)
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: William Breathitt Gray <vilhelm.gray@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 3/3] counter: Add atmel TCB capture counter
-Date: Thu,  9 Apr 2020 16:14:01 +0200
-Message-Id: <20200409141401.321222-4-kamel.bouhara@bootlin.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
-References: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
+ id 1jMXyQ-0005z7-Mf
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:16:08 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 1998A2008E;
+ Thu,  9 Apr 2020 16:16:05 +0200 (CEST)
+Date: Thu, 9 Apr 2020 16:16:03 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 2/3] drm: pl111: Simplify vexpress init
+Message-ID: <20200409141603.GB4673@ravnborg.org>
+References: <20200409013947.12667-1-robh@kernel.org>
+ <20200409013947.12667-3-robh@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200409013947.12667-3-robh@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=-VAfIpHNAAAA:8
+ a=e5mUnYsNAAAA:8 a=VwQbUJbxAAAA:8 a=7gkXJVJtAAAA:8 a=p5rtVDZEVmgweJBV8HQA:9
+ a=CjuIK1q_8ugA:10 a=srlwD-8ojaedGGhPAyx8:22 a=Vxmtnl_E_bksehYqCbjh:22
+ a=AjGcO6oz07-iQ99wixmX:22 a=E9Po1WZjFZOl8hwRPBS3:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_071411_626854_2FE9507F 
-X-CRM114-Status: GOOD (  23.43  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200409_071607_096372_016E7AAC 
+X-CRM114-Status: GOOD (  25.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,480 +69,176 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
- Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org
+Cc: Eric Anholt <eric@anholt.net>, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This drivers allows to use the capture mode of the Timer Counter Block
-hardware block available in Atmel SoCs through the counter subsystem.
+Hi Rob.
 
-Two functions of the counter are supported for the moment: period
-capture and quadrature decoder. The latter is only supported by the
-SAMA5 series of SoCs.
+On Wed, Apr 08, 2020 at 07:39:46PM -0600, Rob Herring wrote:
+> The init VExpress variants currently instantiates a 'muxfpga' driver for
+> the sole purpose of getting a regmap for it. There's no reason to
+> instantiate a driver and doing so just complicates things. The muxfpga
+> driver also isn't unregistered properly on module unload. Let's
+> just simplify all this this by just calling
+> devm_regmap_init_vexpress_config() directly.
+> 
+> Cc: Eric Anholt <eric@anholt.net>
+> Cc: dri-devel@lists.freedesktop.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-For the period capture mode a basic setup has been chosen that will
-reset the counter each time the period is actually reached. Of course
-the device offers much more possibilities.
+Procastinating, so I took a look at this.
+Nice simplification - on nit below.
+Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> ---
+>  drivers/gpu/drm/pl111/pl111_versatile.c | 21 +++----------
+>  drivers/gpu/drm/pl111/pl111_vexpress.c  | 42 -------------------------
+>  drivers/gpu/drm/pl111/pl111_vexpress.h  |  7 -----
+>  3 files changed, 4 insertions(+), 66 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/pl111/pl111_versatile.c b/drivers/gpu/drm/pl111/pl111_versatile.c
+> index 09aeaffb7660..8c2551088f26 100644
+> --- a/drivers/gpu/drm/pl111/pl111_versatile.c
+> +++ b/drivers/gpu/drm/pl111/pl111_versatile.c
+> @@ -8,6 +8,7 @@
+>  #include <linux/of.h>
+>  #include <linux/of_platform.h>
+>  #include <linux/regmap.h>
+> +#include <linux/vexpress.h>
+>  
+>  #include "pl111_versatile.h"
+>  #include "pl111_vexpress.h"
+> @@ -325,17 +326,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
+>  	versatile_clcd_type = (enum versatile_clcd)clcd_id->data;
+>  
+>  	/* Versatile Express special handling */
+> -	if (versatile_clcd_type == VEXPRESS_CLCD_V2M) {
+> +	if (IS_ENABLED(CONFIG_VEXPRESS_CONFIG) && versatile_clcd_type == VEXPRESS_CLCD_V2M) {
+>  		struct platform_device *pdev;
+> -
+> -		/* Registers a driver for the muxfpga */
+> -		ret = vexpress_muxfpga_init();
+> -		if (ret) {
+> -			dev_err(dev, "unable to initialize muxfpga driver\n");
+> -			of_node_put(np);
+> -			return ret;
+> -		}
+> -
+>  		/* Call into deep Vexpress configuration API */
+>  		pdev = of_find_device_by_node(np);
+>  		if (!pdev) {
+> @@ -343,13 +335,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
+>  			of_node_put(np);
+>  			return -EPROBE_DEFER;
+>  		}
+> -		map = dev_get_drvdata(&pdev->dev);
+> -		if (!map) {
+> -			dev_err(dev, "sysreg has not yet probed\n");
+> -			platform_device_put(pdev);
+> -			of_node_put(np);
+> -			return -EPROBE_DEFER;
+> -		}
+> +		map = devm_regmap_init_vexpress_config(&pdev->dev);
+> +		platform_device_put(pdev);
+>  	} else {
+>  		map = syscon_node_to_regmap(np);
+>  	}
 
-For quadrature mode, both channel 0 and 1 must be configured even if we
-only capture the position (no revolution/rotation).
+On the following line there is:
+	if (IS_ERR(map)) {
+                dev_err(dev, "no Versatile syscon regmap\n");
+                return PTR_ERR(map);
+        }
 
-Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
----
-Changes from v2:
- - Updated return code to -EINVAL when user is requesting qdec mode on
-   a counter device not supporting it.
- - Added an error case returning -EINVAL when action edge is performed in
-   qdec mode.
- - Removed no need to explicity setting ops to NULL from static struct as
-   it is the default value.
- - Changed confusing code by using snprintf for the sake of clarity.
- - Changed code to use ARRAY_SIZE so that future reviewers will know
-   that num_counts matches what's in the atmel_tc_count array without
-   having to check so themselves.
+The error message no longer tell if this was
+devm_regmap_init_vexpress_config() or syscon_node_to_regmap() that
+caused the error.
 
- drivers/counter/Kconfig             |  11 +
- drivers/counter/Makefile            |   1 +
- drivers/counter/atmel-tcb-capture.c | 394 ++++++++++++++++++++++++++++
- 3 files changed, 406 insertions(+)
- create mode 100644 drivers/counter/atmel-tcb-capture.c
+	Sam
 
-diff --git a/drivers/counter/Kconfig b/drivers/counter/Kconfig
-index c80fa76bb531..c50d7453ec33 100644
---- a/drivers/counter/Kconfig
-+++ b/drivers/counter/Kconfig
-@@ -70,4 +70,15 @@ config FTM_QUADDEC
- 	  To compile this driver as a module, choose M here: the
- 	  module will be called ftm-quaddec.
-
-+config ATMEL_TCB_CAPTURE
-+	tristate "Atmel Timer Counter Capture driver"
-+	depends on HAS_IOMEM && OF
-+	select REGMAP_MMIO
-+	help
-+	  Select this option to enable the Atmel Timer Counter Block
-+	  capture driver.
-+
-+	  To compile this driver as a module, choose M here: the
-+	  module will be called atmel-tcb-capture.
-+
- endif # COUNTER
-diff --git a/drivers/counter/Makefile b/drivers/counter/Makefile
-index 55142d1f4c43..70c5b8924588 100644
---- a/drivers/counter/Makefile
-+++ b/drivers/counter/Makefile
-@@ -10,3 +10,4 @@ obj-$(CONFIG_STM32_TIMER_CNT)	+= stm32-timer-cnt.o
- obj-$(CONFIG_STM32_LPTIMER_CNT)	+= stm32-lptimer-cnt.o
- obj-$(CONFIG_TI_EQEP)		+= ti-eqep.o
- obj-$(CONFIG_FTM_QUADDEC)	+= ftm-quaddec.o
-+obj-$(CONFIG_ATMEL_TCB_CAPTURE)	+= atmel-tcb-capture.o
-diff --git a/drivers/counter/atmel-tcb-capture.c b/drivers/counter/atmel-tcb-capture.c
-new file mode 100644
-index 000000000000..4f2b3d60584f
---- /dev/null
-+++ b/drivers/counter/atmel-tcb-capture.c
-@@ -0,0 +1,394 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/**
-+ * Copyright (C) 2020 Atmel
-+ *
-+ * Author: Kamel Bouhara <kamel.bouhara@bootlin.com>
-+ *
-+ */
-+#include <linux/clk.h>
-+#include <linux/counter.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <soc/at91/atmel_tcb.h>
-+
-+#define ATMEL_TC_CMR_MASK	(ATMEL_TC_LDRA_RISING | ATMEL_TC_LDRB_FALLING | \
-+				 ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_LDBDIS | \
-+				 ATMEL_TC_LDBSTOP)
-+
-+#define ATMEL_TC_QDEN			BIT(8)
-+#define ATMEL_TC_POSEN			BIT(9)
-+
-+struct atmel_tc_data {
-+	const struct atmel_tcb_config *tc_cfg;
-+	struct counter_device counter;
-+	struct regmap *regmap;
-+	int qdec_mode;
-+	int num_channels;
-+	int channel[2];
-+	bool trig_inverted;
-+};
-+
-+enum atmel_tc_count_function {
-+	ATMEL_TC_FUNCTION_INCREASE,
-+	ATMEL_TC_FUNCTION_QUADRATURE,
-+};
-+
-+static enum counter_count_function atmel_tc_count_functions[] = {
-+	[ATMEL_TC_FUNCTION_INCREASE] = COUNTER_COUNT_FUNCTION_INCREASE,
-+	[ATMEL_TC_FUNCTION_QUADRATURE] = COUNTER_COUNT_FUNCTION_QUADRATURE_X4,
-+};
-+
-+enum atmel_tc_synapse_action {
-+	ATMEL_TC_SYNAPSE_ACTION_NONE = 0,
-+	ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE,
-+	ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE,
-+	ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE
-+};
-+
-+static enum counter_synapse_action atmel_tc_synapse_actions[] = {
-+	[ATMEL_TC_SYNAPSE_ACTION_NONE] = COUNTER_SYNAPSE_ACTION_NONE,
-+	[ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE] = COUNTER_SYNAPSE_ACTION_RISING_EDGE,
-+	[ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE] = COUNTER_SYNAPSE_ACTION_FALLING_EDGE,
-+	[ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE] = COUNTER_SYNAPSE_ACTION_BOTH_EDGES,
-+};
-+
-+static struct counter_signal atmel_tc_count_signals[] = {
-+	{
-+		.id = 0,
-+		.name = "Channel A",
-+	},
-+	{
-+		.id = 1,
-+		.name = "Channel B",
-+	}
-+};
-+
-+static struct counter_synapse atmel_tc_count_synapses[] = {
-+	{
-+		.actions_list = atmel_tc_synapse_actions,
-+		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-+		.signal = &atmel_tc_count_signals[0]
-+	},
-+	{
-+		.actions_list = atmel_tc_synapse_actions,
-+		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-+		.signal = &atmel_tc_count_signals[1]
-+	}
-+};
-+
-+static int atmel_tc_count_function_get(struct counter_device *counter,
-+				       struct counter_count *count,
-+				       size_t *function)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+
-+	if (priv->qdec_mode)
-+		*function = ATMEL_TC_FUNCTION_QUADRATURE;
-+	else
-+		*function = ATMEL_TC_FUNCTION_INCREASE;
-+
-+	return 0;
-+}
-+
-+static int atmel_tc_count_function_set(struct counter_device *counter,
-+				       struct counter_count *count,
-+				       size_t function)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+	u32 bmr, cmr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_BMR, &bmr);
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-+
-+	/* Set capture mode */
-+	cmr &= ~ATMEL_TC_WAVE;
-+
-+	switch (function) {
-+	case ATMEL_TC_FUNCTION_INCREASE:
-+		priv->qdec_mode = 0;
-+		/* Set highest rate based on whether soc has gclk or not */
-+		bmr &= ~(ATMEL_TC_QDEN | ATMEL_TC_POSEN);
-+		if (priv->tc_cfg->has_gclk)
-+			cmr |= ATMEL_TC_TIMER_CLOCK2;
-+		else
-+			cmr |= ATMEL_TC_TIMER_CLOCK1;
-+		/* Setup the period capture mode */
-+		cmr |=  ATMEL_TC_CMR_MASK;
-+		cmr &= ~(ATMEL_TC_ABETRG | ATMEL_TC_XC0);
-+		break;
-+	case ATMEL_TC_FUNCTION_QUADRATURE:
-+		if (!priv->tc_cfg->has_qdec)
-+			return -EINVAL;
-+		/* In QDEC mode settings both channels 0 and 1 are required */
-+		if (priv->num_channels < 2 || priv->channel[0] != 0 ||
-+		    priv->channel[1] != 1) {
-+			pr_err("Invalid channels number or id for quadrature mode\n");
-+			return -EINVAL;
-+		}
-+		priv->qdec_mode = 1;
-+		bmr |= ATMEL_TC_QDEN | ATMEL_TC_POSEN;
-+		cmr |= ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_ABETRG | ATMEL_TC_XC0;
-+		break;
-+	}
-+
-+	regmap_write(priv->regmap, ATMEL_TC_BMR, bmr);
-+	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), cmr);
-+
-+	/* Enable clock and trigger counter */
-+	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CCR),
-+		     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-+
-+	if (priv->qdec_mode) {
-+		regmap_write(priv->regmap,
-+			     ATMEL_TC_REG(priv->channel[1], CMR), cmr);
-+		regmap_write(priv->regmap,
-+			     ATMEL_TC_REG(priv->channel[1], CCR),
-+			     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-+	}
-+
-+	return 0;
-+}
-+
-+static int atmel_tc_count_signal_read(struct counter_device *counter,
-+				      struct counter_signal *signal,
-+				      enum counter_signal_value *val)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+	bool sigstatus;
-+	u32 sr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], SR), &sr);
-+
-+	if (priv->trig_inverted)
-+		sigstatus = (sr & ATMEL_TC_MTIOB);
-+	else
-+		sigstatus = (sr & ATMEL_TC_MTIOA);
-+
-+	*val = sigstatus ? COUNTER_SIGNAL_HIGH : COUNTER_SIGNAL_LOW;
-+
-+	return 0;
-+}
-+
-+static int atmel_tc_count_action_get(struct counter_device *counter,
-+				     struct counter_count *count,
-+				     struct counter_synapse *synapse,
-+				     size_t *action)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+	u32 cmr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-+
-+	*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-+
-+	if (cmr & ATMEL_TC_ETRGEDG_NONE)
-+		*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_RISING)
-+		*action = ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_FALLING)
-+		*action = ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_BOTH)
-+		*action = ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE;
-+
-+	return 0;
-+}
-+
-+static int atmel_tc_count_action_set(struct counter_device *counter,
-+				     struct counter_count *count,
-+				     struct counter_synapse *synapse,
-+				     size_t action)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+	u32 edge = ATMEL_TC_ETRGEDG_NONE;
-+
-+	/* QDEC mode is rising edge only */
-+	if (priv->qdec_mode)
-+		return -EINVAL;
-+
-+	switch (action) {
-+	case ATMEL_TC_SYNAPSE_ACTION_NONE:
-+		edge = ATMEL_TC_ETRGEDG_NONE;
-+		break;
-+	case ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_RISING;
-+		break;
-+	case ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_FALLING;
-+		break;
-+	case ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_BOTH;
-+		break;
-+	}
-+
-+	return regmap_write_bits(priv->regmap,
-+				ATMEL_TC_REG(priv->channel[0], CMR),
-+				ATMEL_TC_ETRGEDG, edge);
-+}
-+
-+static int atmel_tc_count_read(struct counter_device *counter,
-+			       struct counter_count *count,
-+			       unsigned long *val)
-+{
-+	struct atmel_tc_data *const priv = counter->priv;
-+	u32 cnt;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CV), &cnt);
-+	*val = cnt;
-+
-+	return 0;
-+}
-+
-+static struct counter_count atmel_tc_counts[] = {
-+	{
-+		.id = 0,
-+		.name = "Timer Counter",
-+		.functions_list = atmel_tc_count_functions,
-+		.num_functions = ARRAY_SIZE(atmel_tc_count_functions),
-+		.synapses = atmel_tc_count_synapses,
-+		.num_synapses = ARRAY_SIZE(atmel_tc_count_synapses),
-+	},
-+};
-+
-+static struct counter_ops atmel_tc_ops = {
-+	.signal_read  = atmel_tc_count_signal_read,
-+	.count_read   = atmel_tc_count_read,
-+	.function_get = atmel_tc_count_function_get,
-+	.function_set = atmel_tc_count_function_set,
-+	.action_get   = atmel_tc_count_action_get,
-+	.action_set   = atmel_tc_count_action_set
-+};
-+
-+static const struct atmel_tcb_config tcb_rm9200_config = {
-+		.counter_width = 16,
-+};
-+
-+static const struct atmel_tcb_config tcb_sam9x5_config = {
-+		.counter_width = 32,
-+};
-+
-+static const struct atmel_tcb_config tcb_sama5d2_config = {
-+		.counter_width = 32,
-+		.has_gclk = true,
-+		.has_qdec = true,
-+};
-+
-+static const struct atmel_tcb_config tcb_sama5d3_config = {
-+		.counter_width = 32,
-+		.has_qdec = true,
-+};
-+
-+static const struct of_device_id atmel_tc_of_match[] = {
-+	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
-+	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
-+	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
-+	{ .compatible = "atmel,sama5d3-tcb", .data = &tcb_sama5d3_config, },
-+	{ /* sentinel */ }
-+};
-+
-+static int atmel_tc_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	const struct atmel_tcb_config *tcb_config;
-+	const struct of_device_id *match;
-+	struct atmel_tc_data *priv;
-+	char clk_name[7];
-+	struct regmap *regmap;
-+	struct clk *clk[3];
-+	int channel;
-+	int ret, i;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	match = of_match_node(atmel_tc_of_match, np->parent);
-+	tcb_config = match->data;
-+	if (!tcb_config) {
-+		dev_err(&pdev->dev, "No matching parent node found\n");
-+		return -ENODEV;
-+	}
-+
-+	regmap = syscon_node_to_regmap(np->parent);
-+	if (IS_ERR(priv->regmap))
-+		return PTR_ERR(priv->regmap);
-+
-+	/* max. channels number is 2 when in QDEC mode */
-+	priv->num_channels = of_property_count_u32_elems(np, "reg");
-+	if (priv->num_channels < 0) {
-+		dev_err(&pdev->dev, "Invalid or missing channel\n");
-+		return -EINVAL;
-+	}
-+
-+	/* Register channels and initialize clocks */
-+	for (i = 0; i < priv->num_channels; i++) {
-+		ret = of_property_read_u32_index(np, "reg", i, &channel);
-+		if (ret < 0 || channel > 2)
-+			return -ENODEV;
-+
-+		priv->channel[i] = channel;
-+
-+		snprintf(clk_name, sizeof(clk_name), "t%d_clk", channel);
-+
-+		clk[i] = of_clk_get_by_name(np->parent, clk_name);
-+		if (IS_ERR(clk[i])) {
-+			/* Fallback to t0_clk */
-+			clk[i] = of_clk_get_by_name(np->parent, "t0_clk");
-+			if (IS_ERR(clk[i]))
-+				return PTR_ERR(clk[i]);
-+		}
-+
-+		ret = clk_prepare_enable(clk[i]);
-+		if (ret)
-+			return ret;
-+
-+		dev_info(&pdev->dev,
-+			 "Initialized capture mode on channel %d\n",
-+			 channel);
-+	}
-+
-+	priv->tc_cfg = tcb_config;
-+	priv->regmap = regmap;
-+	priv->counter.name = dev_name(&pdev->dev);
-+	priv->counter.parent = &pdev->dev;
-+	priv->counter.ops = &atmel_tc_ops;
-+	priv->counter.num_counts = ARRAY_SIZE(atmel_tc_counts);
-+	priv->counter.counts = atmel_tc_counts;
-+	priv->counter.num_signals = ARRAY_SIZE(atmel_tc_count_signals);
-+	priv->counter.signals = atmel_tc_count_signals;
-+	priv->counter.priv = priv;
-+
-+	ret = devm_counter_register(&pdev->dev, &priv->counter);
-+	if (ret < 0) {
-+		for (i = 0; i < priv->num_channels; i++)
-+			clk_disable_unprepare(clk[i]);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id atmel_tc_dt_ids[] = {
-+	{ .compatible = "atmel,tcb-capture", },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, atmel_tc_dt_ids);
-+
-+static struct platform_driver atmel_tc_driver = {
-+	.probe = atmel_tc_probe,
-+	.driver = {
-+		.name = "atmel-tcb-capture",
-+		.of_match_table = atmel_tc_dt_ids,
-+	},
-+};
-+module_platform_driver(atmel_tc_driver);
-+
-+MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
-+MODULE_DESCRIPTION("Atmel TCB Capture driver");
-+MODULE_LICENSE("GPL v2");
---
-2.25.0
-
+> diff --git a/drivers/gpu/drm/pl111/pl111_vexpress.c b/drivers/gpu/drm/pl111/pl111_vexpress.c
+> index 350570fe06b5..37ed3f1da820 100644
+> --- a/drivers/gpu/drm/pl111/pl111_vexpress.c
+> +++ b/drivers/gpu/drm/pl111/pl111_vexpress.c
+> @@ -94,45 +94,3 @@ int pl111_vexpress_clcd_init(struct device *dev,
+>  
+>  	return 0;
+>  }
+> -
+> -/*
+> - * This sets up the regmap pointer that will then be retrieved by
+> - * the detection code in pl111_versatile.c and passed in to the
+> - * pl111_vexpress_clcd_init() function above.
+> - */
+> -static int vexpress_muxfpga_probe(struct platform_device *pdev)
+> -{
+> -	struct device *dev = &pdev->dev;
+> -	struct regmap *map;
+> -
+> -	map = devm_regmap_init_vexpress_config(&pdev->dev);
+> -	if (IS_ERR(map))
+> -		return PTR_ERR(map);
+> -	dev_set_drvdata(dev, map);
+> -
+> -	return 0;
+> -}
+> -
+> -static const struct of_device_id vexpress_muxfpga_match[] = {
+> -	{ .compatible = "arm,vexpress-muxfpga", },
+> -	{}
+> -};
+> -
+> -static struct platform_driver vexpress_muxfpga_driver = {
+> -	.driver = {
+> -		.name = "vexpress-muxfpga",
+> -		.of_match_table = of_match_ptr(vexpress_muxfpga_match),
+> -	},
+> -	.probe = vexpress_muxfpga_probe,
+> -};
+> -
+> -int vexpress_muxfpga_init(void)
+> -{
+> -	int ret;
+> -
+> -	ret = platform_driver_register(&vexpress_muxfpga_driver);
+> -	/* -EBUSY just means this driver is already registered */
+> -	if (ret == -EBUSY)
+> -		ret = 0;
+> -	return ret;
+> -}
+> diff --git a/drivers/gpu/drm/pl111/pl111_vexpress.h b/drivers/gpu/drm/pl111/pl111_vexpress.h
+> index 5d3681bb4c00..bb54864ca91e 100644
+> --- a/drivers/gpu/drm/pl111/pl111_vexpress.h
+> +++ b/drivers/gpu/drm/pl111/pl111_vexpress.h
+> @@ -10,8 +10,6 @@ int pl111_vexpress_clcd_init(struct device *dev,
+>  			     struct pl111_drm_dev_private *priv,
+>  			     struct regmap *map);
+>  
+> -int vexpress_muxfpga_init(void);
+> -
+>  #else
+>  
+>  static inline int pl111_vexpress_clcd_init(struct device *dev,
+> @@ -21,9 +19,4 @@ static inline int pl111_vexpress_clcd_init(struct device *dev,
+>  	return -ENODEV;
+>  }
+>  
+> -static inline int vexpress_muxfpga_init(void)
+> -{
+> -	return 0;
+> -}
+> -
+>  #endif
+> -- 
+> 2.20.1
+> 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
