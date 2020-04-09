@@ -2,74 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D3C31A2EF7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BAB71A2F09
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:09:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RRRgJBZcvDd1J4A3apB1R3sVIvwvdLhFYQ5YAgFnQFs=; b=TfrR3SzdGOnW/c
-	z/ePg5/ETy2+z8IMSShQsaLvcA5EQEW6dYlkkRFta08GGMy14QUkKIeqfQ6ApfwiGfpgCW9YKssRg
-	KfQs9t6AqbLaGDuS3XPs37+6WyCPaz5Qur3izflMwaPg6FlpDafYyzZ3Pe+UMF4cM4ylJsH3dEFfS
-	AWsB8dCfUzsWLMqkVkAyDVNtLN+3eXI3JFCRE9d7i9sxzYqnS+FfHvU3ON6Ylnl3k+TEzzuqaxmLj
-	aEHDHsEW27epfjuR/XeQmT3qayRT7FfmEgZ/asAxXjF1oD0P9hqajhZh4RkLkciAakiM6BlNLx/lX
-	YTQAQGkjaVPf/l2q7qfg==;
+	List-Owner; bh=N6u/4ESQQhdg4Nlq2EsRa5RR31yloJP6QU1JbpBEOZ4=; b=f9MeMN4leLzTJW
+	xCPy4a7hTC68rPObof8r0YXQeDgPwJy24C4WaEhFtyO+4h0bmy6Xeb0Hen1e/Lk+4rq2if8QLlZk1
+	O65VtmNz3TWAYAPPpDaogGNL6K3K43Tg4JbKxS3nN+omMBUNc9fbSNDWuwLSNEo42zfbMNkXoyOhG
+	N/1EFn5Y2lgsflRHX3ybcbCVQDb7aEjX+1tDszOhq8UpfuIBmPJBpoM2QNN/QcKAlvj91fB+0gXej
+	KosUW8pCVfc2T3WaGeneOhoTJpblUDnmA+2rTPSLA+H93AVVTWQjNUs18ewvmy7EoXduDG/V5FX1D
+	NNy0n1ApWi76X+5LpbFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMQJV-0007Cc-JV; Thu, 09 Apr 2020 06:05:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jMQNe-0008BA-MB; Thu, 09 Apr 2020 06:09:38 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMQJH-00064n-55; Thu, 09 Apr 2020 06:05:09 +0000
-X-UUID: 72407f7231164b65aa2ce659b98dc9f6-20200408
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=QjC6+5aZUfxTDsvCSyH7TSX3u8Y6oTeri4n9IkqY/8M=; 
- b=u+ys5QFl9aDfhLTVUVZZQaXLaZ/eF0tOTjcLD+T0ycDvr6GMR5UauIFp5BxYwAZ4jEbf+EmcfDt85GuzApcXMfkW91SXimaSyW/rWDeVpeP2LOrLVwCHPxKhzeqnSLmTqrhJEZI9InfvU+slJ94hf4bC7esTztfkzhwyh5hxJaM=;
-X-UUID: 72407f7231164b65aa2ce659b98dc9f6-20200408
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 704950589; Wed, 08 Apr 2020 22:04:56 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 8 Apr 2020 23:04:58 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 9 Apr 2020 14:04:50 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 9 Apr 2020 14:04:50 +0800
-Message-ID: <1586412280.8804.38.camel@mhfsdcap03>
-Subject: Re: [V6, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Date: Thu, 9 Apr 2020 14:04:40 +0800
-In-Reply-To: <20200408122037.GG5206@paasikivi.fi.intel.com>
-References: <20191211112849.16705-1-dongchun.zhu@mediatek.com>
- <20191211112849.16705-3-dongchun.zhu@mediatek.com>
- <20191211143640.GU32742@smile.fi.intel.com>
- <faf3482d4127464195d04a17cae446b7@mtkmbs05n1.mediatek.inc>
- <1586346824.8804.12.camel@mhfsdcap03>
- <20200408122037.GG5206@paasikivi.fi.intel.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jMQNW-0008AJ-8F
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:09:31 +0000
+Received: by mail-qt1-x842.google.com with SMTP id m33so1960140qtb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 Apr 2020 23:09:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MxEhGz5UyIPVusyT6gNiVGR9tTVUKwc52tZdZCq8MK0=;
+ b=a6Ydmy5JKYTw5OOcKe6O8mQC0kpMXmZ8iP0WuwzotU7b1kni7pBqZQ20c7JNP7LAmr
+ 0UsXEdQaGYzSF9tebFBJvaQs/By6+7f0Fnuc9K6nfKwtG6rFdMJDSBgkzvyEQIcZNC/d
+ sgbgGIeRfl/QeapZ66gJm0yoY6Ss1iuVDPii+rBxeAC0GBuK7qzkDzY73/KfdSGDVC+x
+ 5irQz7Ls80+3Vf9Z/FfTof+NKJZlCLsE74SdMFSKV58IP0VLHlmuJC8NizNP1L4s0OMF
+ R7GnY59c53Zqd2gO4JVqzz1e9anupipR+kVjh0oyGKGr0TpkgW1UyHcTeAagbKwRFRCx
+ wcEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MxEhGz5UyIPVusyT6gNiVGR9tTVUKwc52tZdZCq8MK0=;
+ b=He8rbfIIb52AGsRFOtZGnEUWjKg5F/ZfgUSreR8QBIt5CYIEaCKNUKkVe8LbzVtU7+
+ 82He8GAZOoRw2yXeJD0oLdAM+zv1yyv1S/ZTMVBGuWtD8bycsEWy4VkL6p+cE+BknvdY
+ vItIITysoZVZ+WVqqbV5iiXl0RdmU751Qzlgd5y79MnQFJMm8P0hfZO6JgPjwhm0Nbjj
+ GiPlYPeiaHOkSGi9o+khtbaxgNXYitmYT35GzXBiX0PgRbmn96ck8W57HPtg7G7sMvqm
+ dMJl3dEeCyzJqfpvTTQ1LxwL41QUsNozk5MjQZ9lBIJ1mYGxtilgEx9BlzrVqx9sJ6WD
+ F14g==
+X-Gm-Message-State: AGi0PubzxY4csItjEO1HBQnbMI2BCy65MFEW0sce103HZ5B9Eev2bSdw
+ chzLKFzrKQCU+yYThjKi9g62CJyHQBMhM0Js6k0=
+X-Google-Smtp-Source: APiQypJDJKVPaiW2osqATHrnNzQrZDeGLTK3uOxKyZ8S4iPvkFtam8Xzjq8h9Aq8GBl72G+WAkd1j1MzyeeAiT6W8xs=
+X-Received: by 2002:ac8:888:: with SMTP id v8mr3065428qth.194.1586412567849;
+ Wed, 08 Apr 2020 23:09:27 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 513442C1DEC60A504510EEBD8595EB1CADD9A36F2B881A70E081811C03A06B7C2000:8
-X-MTK: N
+References: <20200408160044.2550437-1-arnd@arndb.de>
+In-Reply-To: <20200408160044.2550437-1-arnd@arndb.de>
+From: Chunyan Zhang <zhang.lyra@gmail.com>
+Date: Thu, 9 Apr 2020 14:09:16 +0800
+Message-ID: <CABOV4+UocLs3jLi7-vTi8muiFqACVdxH7Td8=U1ABveLnmyCuw@mail.gmail.com>
+Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_230507_243969_6D83B152 
-X-CRM114-Status: GOOD (  23.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_230930_321747_EB989AFF 
+X-CRM114-Status: GOOD (  20.06  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [zcy33415[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zcy33415[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,8 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,277 +94,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, sj.huang@mediatek.com,
- robh+dt@kernel.org, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: kernel-team@android.com, sboyd@kernel.org, catalin.marinas@arm.com,
+ mturquette@baylibre.com, LKML <linux-kernel@vger.kernel.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, orson.zhai@unisoc.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, will@kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
+Hi Arnd,
 
-On Wed, 2020-04-08 at 15:20 +0300, Sakari Ailus wrote:
-> Hi Dongchun,
-> 
-> On Wed, Apr 08, 2020 at 07:53:44PM +0800, Dongchun Zhu wrote:
-> > Hello Andy,
-> > 
-> > Thanks for the review. Sorry for the late reply.
-> > 
-> > On Mon, 2019-12-11 at 16:36 +0200, Andy Shevchenko wrote:
-> > > On Wed, Dec 11, 2019 at 07:28:49PM +0800, Dongchun Zhu wrote:
-> > > > Add a V4L2 sub-device driver for OV02A10 image sensor. The OV02A10 is
-> > > > a 1/5" CMOS sensor from Omnivision, asupporting output format: 10-bit Raw.
-> > > >
-> > > > This chip has a single MIPI lane interface and use the I2C bus for
-> > > > control and the CSI-2 bus for data.
-> > > 
-> > > ...
-> > > 
-> > > > +#define OV02A10_MASK_8_BITS                            0xff
-> > > 
-> > > Besides GENMASK() why do you need a definition here? What's the point?
-> > > 
-> > 
-> > Fixed in next release.
-> > 
-> > > ...
-> > > 
-> > > > +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
-> > > > +   struct v4l2_subdev_pad_config *cfg) {
-> > > > +struct v4l2_subdev_format fmt = {
-> > > > +.which = cfg ? V4L2_SUBDEV_FORMAT_TRY
-> > > > +     : V4L2_SUBDEV_FORMAT_ACTIVE,
-> > > > +.format = {
-> > > > +.width = 1600,
-> > > 
-> > > > +.height = 1200
-> > > 
-> > > Leave comma here.
-> > > 
-> > 
-> > Fixed in next release.
-> > 
-> > > > +}
-> > > > +};
-> > > > +
-> > > > +ov02a10_set_fmt(sd, cfg, &fmt);
-> > > > +
-> > > > +return 0;
-> > > > +}
-> > > 
-> > > ...
-> > > 
-> > > > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_GAIN,
-> > > > +(val & OV02A10_MASK_8_BITS));
-> > > 
-> > > Too many parentheses.
-> > > 
-> > 
-> > Fixed in next release.
-> > 
-> > > > +if (ret < 0)
-> > > > +return ret;
-> > > 
-> > > ...
-> > > 
-> > > > +static int ov02a10_set_vblank(struct ov02a10 *ov02a10, int val) {
-> > > > +struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> > > 
-> > > if you do
-> > > 
-> > > int vts = val + ov02a10->cur_mode->height - OV02A10_BASIC_LINE;
-> > > 
-> > > you may increase readability below...
-> > > 
-> > 
-> > Thanks for the suggestion.
-> > It seems better now.
-> > 
-> > > > +int ret;
-> > > > +
-> > > > +ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
-> > > > +if (ret < 0)
-> > > > +return ret;
-> > > > +
-> > > > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
-> > > > +(((val + ov02a10->cur_mode->height -
-> > > > +OV02A10_BASIC_LINE) >>
-> > > > +OV02A10_VTS_SHIFT) &
-> > > > +OV02A10_MASK_8_BITS));
-> > > 
-> > > ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
-> > > (vts >> OV02A10_VTS_SHIFT) &
-> > > OV02A10_MASK_8_BITS));
-> > > 
-> > > And actually why do you need this mask here? Isn't enough to call
-> > > 
-> > > ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
-> > > vts >> OV02A10_VTS_SHIFT);
-> > > 
-> > > here...
-> > > 
-> > > 
-> > 
-> > Yes. Now we code like this.
-> > 
-> > > > +if (ret < 0)
-> > > > +return ret;
-> > > > +
-> > > > +ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L,
-> > > > +((val + ov02a10->cur_mode->height -
-> > > > +OV02A10_BASIC_LINE) &
-> > > > +OV02A10_MASK_8_BITS));
-> > > 
-> > > ...and
-> > > 
-> > > ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L, vts);
-> > > 
-> > > here?
-> > > 
-> > 
-> > Yes. Fixed in next release.
-> > 
-> > > > +if (ret < 0)
-> > > > +return ret;
-> > > > +
-> > > > +return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
-> > > > + REG_ENABLE);
-> > > > +}
-> > > 
-> > > ...
-> > > 
-> > > > +static int ov02a10_check_hwcfg(struct device *dev, struct ov02a10
-> > > > +*ov02a10) {
-> > > > +struct fwnode_handle *ep;
-> > > > +struct fwnode_handle *fwnode = dev_fwnode(dev);
-> > > > +struct v4l2_fwnode_endpoint bus_cfg = {
-> > > 
-> > > > +.bus_type = V4L2_MBUS_CSI2_DPHY
-> > > 
-> > > Leave comma here.
-> > > 
-> > 
-> > Fixed in next release.
-> > 
-> > > > +};
-> > > > +unsigned int i, j;
-> > > > +int ret;
-> > > 
-> > > > +if (!fwnode)
-> > > > +return -ENXIO;
-> > > 
-> > > A bit strange error code here.
-> > > 
-> > 
-> > This should be reported as -EINVAL.
-> > Fixed in next release.
-> > 
-> > > > +
-> > > > +ep = fwnode_graph_get_next_endpoint(fwnode, NULL);
-> > > > +if (!ep)
-> > > > +return -ENXIO;
-> > > > +
-> > > > +ret = v4l2_fwnode_endpoint_alloc_parse(ep, &bus_cfg);
-> > > > +fwnode_handle_put(ep);
-> > > > +if (ret)
-> > > > +return ret;
-> > > 
-> > > > +if (!bus_cfg.nr_of_link_frequencies) {
-> > > > +dev_err(dev, "no link frequencies defined");
-> > > > +ret = -EINVAL;
-> > > > +goto check_hwcfg_error;
-> > > > +}
-> > > 
-> > > I still think it's redundant check, though it's up to maintainers.
-> > > 
-> > 
-> > We still wanna keep this check.
-> > Keep same as ov2659 and ov8856.
-> > 
-> > > > +
-> > > > +for (i = 0; i < ARRAY_SIZE(link_freq_menu_items); i++) {
-> > > > +for (j = 0; j < bus_cfg.nr_of_link_frequencies; j++) {
-> > > > +if (link_freq_menu_items[i] ==
-> > > > +bus_cfg.link_frequencies[j])
-> > > > +break;
-> > > > +}
-> > > > +
-> > > > +if (j == bus_cfg.nr_of_link_frequencies) {
-> > > > +dev_err(dev, "no link frequency %lld supported",
-> > > > +link_freq_menu_items[i]);
-> > > > +ret = -EINVAL;
-> > > > +goto check_hwcfg_error;
-> > > > +}
-> > > > +}
-> > > > +
-> > > > +check_hwcfg_error:
-> > > > +v4l2_fwnode_endpoint_free(&bus_cfg);
-> > > > +
-> > > > +return ret;
-> > > > +}
-> > > 
-> > > ...
-> > > 
-> > > > +static int ov02a10_probe(struct i2c_client *client) {
-> > > 
-> > > > +/* Optional indication of physical rotation of sensor */
-> > > > +ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation",
-> > > > +&rotation);
-> > > 
-> > > > +if (!ret) {
-> > > 
-> > > Why not positive conditional?
-> > > 
-> > 
-> > Okay. Fixed in next release.
-> > 
-> > > > +ov02a10->upside_down = rotation == 180;
-> > > > +if (rotation == 180) {
-> > > > +ov02a10->upside_down = true;
-> > > > +ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
-> > > > +}
-> > > > +} else {
-> > > > +dev_warn(dev, "failed to get rotation\n");
-> > > > +}
-> > > > +
-> > > > +/* Optional indication of mipi TX speed */
-> > > > +ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
-> > > > +       &clock_lane_tx_speed);
-> > > > +
-> > > 
-> > > > +if (!ret)
-> > > 
-> > > Ditto.
-> > > 
-> > 
-> > As Sakari mentioned earlier, the property "ovti,mipi-tx-speed" is
-> > optional that shouldn't warn it's missing when ret is 0.
-> > So we would keep the condition like that, just removing else case.
-> 
-> I don't remember discussing this, but could be because it was quite some
-> time ago.
-> 
-> It doesn't seem to be documented. What is it for?
-> 
+Thanks for finding out this and fixing it, but we have a minor concern
+for changing ARCH_APRD back to bool.
 
-Sorry for not addressing this point on v6.
-"ovti,mipi-tx-speed" is one private property in DT, which is abstracted
-to handle different register settings for different Chrome projects.
+On Thu, Apr 9, 2020 at 2:57 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> I got a build failure with CONFIG_ARCH_SPRD=m when the
+> main portion of the clock driver failed to get linked into
+> the kernel:
+>
+> ERROR: modpost: "sprd_pll_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_comp_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_clk_probe" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_clk_regmap_init" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+> ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+> ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+> ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+>
+> This is a combination of two trivial bugs:
+>
+> - A platform should not be 'tristate', it should be a 'bool' symbol
+>   like the other platforms, if only for consistency, and to avoid
+>   surprises like this one.
 
-More details please see the Google Issue:
-https://partnerissuetracker.corp.google.com/issues/143749215
+After a discussion, we decided to change ARCH_SPRD to tristate, the
+idea was that we hope we can simply switch all sprd drivers' configs
+(whose default is ARCH_SPRD) to 'm' by setting ARCH_SPRD=m, or switch
+all them to 'y' by setting ARCH_SPRD=y, instead of changing them one
+by one. This requirement originally came from that Google GKI project
+asks all vendor drivers to be built as modules.
 
-And it would be documented in next release.
+Thanks,
+Chunyan
 
-> > > *********************MEDIATEK Confidential/Internal Use*********************
-> 
-> Is this intentional?
-> 
+>
+> - The clk Makefile does not traverse into the sprd subdirectory
+>   if the platform is disabled but the drivers are enabled for
+>   compile-testing.
+>
+> Fixing either of the two would be sufficient to address the link failure,
+> but for correctness, both need to be changed.
+>
+> Fixes: 2b1b799d7630 ("arm64: change ARCH_SPRD Kconfig to tristate")
+> Fixes: d41f59fd92f2 ("clk: sprd: Add common infrastructure")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm64/Kconfig.platforms | 2 +-
+>  drivers/clk/Makefile         | 2 +-
+>  2 files changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+> index 55d70cfe0f9e..3c7e310fd8bf 100644
+> --- a/arch/arm64/Kconfig.platforms
+> +++ b/arch/arm64/Kconfig.platforms
+> @@ -248,7 +248,7 @@ config ARCH_TEGRA
+>           This enables support for the NVIDIA Tegra SoC family.
+>
+>  config ARCH_SPRD
+> -       tristate "Spreadtrum SoC platform"
+> +       bool "Spreadtrum SoC platform"
+>         help
+>           Support for Spreadtrum ARM based SoCs
+>
+> diff --git a/drivers/clk/Makefile b/drivers/clk/Makefile
+> index f4169cc2fd31..60e811d3f226 100644
+> --- a/drivers/clk/Makefile
+> +++ b/drivers/clk/Makefile
+> @@ -105,7 +105,7 @@ obj-$(CONFIG_CLK_SIFIVE)            += sifive/
+>  obj-$(CONFIG_ARCH_SIRF)                        += sirf/
+>  obj-$(CONFIG_ARCH_SOCFPGA)             += socfpga/
+>  obj-$(CONFIG_PLAT_SPEAR)               += spear/
+> -obj-$(CONFIG_ARCH_SPRD)                        += sprd/
+> +obj-y                                  += sprd/
+>  obj-$(CONFIG_ARCH_STI)                 += st/
+>  obj-$(CONFIG_ARCH_STRATIX10)           += socfpga/
+>  obj-$(CONFIG_ARCH_SUNXI)               += sunxi/
+> --
+> 2.26.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
