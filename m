@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C298B1A36BF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:16:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 727BC1A36C8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:17:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pRHnqia6HEJqKymgbPOG6eYFCaL9THvsmkeqEoIlIPo=; b=PHIeKxmWaiGdF8
-	yZSa4pNKB1sHe4E5pBeGPVX5OMult0nj/4KoZXe8XPanLW0mbl+Mzy2xI6h8/hd9zVXHDMGKUPw46
-	HPS5jfM41aAmQ6xiabrEAI1QpaDB/MqyLBNOtzLZlbAQMRnVaZ33TbOazZNMzv4/pjlUvRUufguBg
-	0SMTk0j1Sz0BWGB5Ay6cZ7zfXnZSMaHJon2Cz1Mb+PUwLTzQ8NTRoDV3FhnrFWHf3hZG7qkreiLM8
-	/Iep6htcmDDhjY0T5F2L2gQhK4g6hOCKOrxCnpQsBl1wFKH9SUYYwA4yN1IdXpUu4k1qHrrWMuMbA
-	oH1gvylrYjTWGvMUD2pA==;
+	List-Owner; bh=R2RNUI3zG0kwJkNPV033x7MxAoYZJbjvckge/CpF9TM=; b=hH3dwA/39sK+I2
+	HG5K7XknHPoe+HWCdhuzUtH4JCOkE6Qr8h4aJ+V/U4Qs1noZSstkDsNIj05Vah0KoMzHS+BBEa6hZ
+	H7794bwObDisl+gDmCzPy/XJyorrsI8NBpeqJ8CQ5UmwI4Cn6e45/FPc6Lxthig5C4yfsS2qwsXfC
+	jhAxy566mqG1znk4CeDAgxuhInhIUCg3Yqur75N7WmO+G1U7pGSjidVgBv3VyYYxHuD6UBNYsMD5m
+	4MVAe+dbVt6bLlWUsTNIUBLvCL0aSyI4AG318XcwCiS8Uk4VUXZrRvqCXHQqnHoOQny3ALAYNsNjQ
+	S0R1i2LfmybLQvJ0TKVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMYuw-0005fC-Dk; Thu, 09 Apr 2020 15:16:34 +0000
+	id 1jMYvc-0005xy-TS; Thu, 09 Apr 2020 15:17:16 +0000
 Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
  helo=mx0b-0016f401.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMYup-0005eX-Gu
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:16:28 +0000
+ id 1jMYvV-0005xZ-Kw
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:17:11 +0000
 Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
  by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 039FFXVk014764; Thu, 9 Apr 2020 08:15:47 -0700
+ 039FFWBC014747; Thu, 9 Apr 2020 08:16:46 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
  h=from : to : cc :
  subject : date : message-id : references : in-reply-to : content-type :
  content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=QWu2M76m9hVSAXAAtmF1o1VVMW+6Oofv940UBtiP6Bs=;
- b=d7XLeGfUM1m7K618JK++g7W7UXJ+XWAvNSmd+pwohBeLpfKu+N7rnV5Fbr4vhfCK8SAz
- Zo17mHkKpWv6cuLKgK4w2Q7HJ4gkhC532bBb4mSu59OMS360vjKE/9ijNHKiep7XO0tK
- NsVjFrQsnu37+c1XBz/Kczs/4R0xglsx0YVGopfcndWPhVs2PtpCJAcmGZnPPv+GkVCG
- MIRvrATv8BrSKCIBbOz70uwVciuPMt/2O6Yh2ZzRYxJB2ohYh1X2OMT+Yd7oNjiqqkjB
- H9AdWBvhvSVtAfSSc3AbAGX1SACp6tQOss3619vUj1qRD9P4DuHNHjvaQtIQKYAC1SR6 Hg== 
+ bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
+ b=sUp3r0bIO5hScSiL0TcnvoiHNLaTnxqALnZPiXMQY2VU6Ia9zIVFxebwcn1i65lg3/nH
+ E/2qNshFC/GQS7k7+/TY6NrveMNZ/dbF3sEN3ZQhZWmgyHKKJo5EZ8DqvE1aqkSztDXb
+ OWHzyDQ9IVa6KHpqHrld/n174lQl1ZVXeJ7kRd0OlTH93QP0poYLNjbWm95QTmrHkv6E
+ EZDs6ek6vN+wDSo9GP8GDGPswHAQOZ08GbaQfx8/GJLv5lEvaBnC+BmfuFRMzdVcpB/g
+ bKMzZdd/UqQQkHDRYwm35fnI+aJ88MWcwSJLwq54hrsQi9p3eRCNwPMGSEt6RuQCYKkG 3A== 
 Received: from sc-exch01.marvell.com ([199.233.58.181])
- by mx0a-0016f401.pphosted.com with ESMTP id 3091jwh01r-1
+ by mx0a-0016f401.pphosted.com with ESMTP id 3091jwh05s-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 09 Apr 2020 08:15:46 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH01.marvell.com
- (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 9 Apr 2020 08:15:44 -0700
-Received: from SC-EXCH03.marvell.com (10.93.176.83) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 9 Apr 2020 08:15:43 -0700
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (104.47.55.103)
- by SC-EXCH03.marvell.com (10.93.176.83) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2 via Frontend Transport; Thu, 9 Apr 2020 08:15:43 -0700
+ Thu, 09 Apr 2020 08:16:45 -0700
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH01.marvell.com
+ (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Thu, 9 Apr
+ 2020 08:16:44 -0700
+Received: from NAM04-BN3-obe.outbound.protection.outlook.com (104.47.46.55) by
+ SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1497.2 via Frontend Transport; Thu, 9 Apr 2020 08:16:44 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ek5TuMsiUSRAlc7kJhdHLHK8nGltkIeB8G1xfCHP7jiLyj0iqCSWAKDg/i+lxv4+4+Bk8g06NvHIJNF/QuJ7mgAhGE/0axsKm/GdzlgCeJnT4zntONMUj2aKxSs8HUhRQa5nnHTclXZb1UQWg+Xw2QB5ZGzfsUIdy5kQAVVwIHnPxZ8V8HRtNS8OWSAYR/rJjBJnn5BI/wwaPdSD65OMPwkHpnDPLVRX3Ds/Fm2gsJ2GPc5wZ5QDPzoBWQr2DBw73y0KptA2nLRXUtZ7OAFcrTdnU5ed9d7r85AGm4ef3923uBGGpYTsQAT5hw4H/nmk35PcTDxCg7sruwQ43VXGdg==
+ b=LsnOIk35nrprwRoCPBsZQQPqYwHKEurGuyF/3ae9CoxkOlmAu6sqB7LmTluL+EZERCaVL+0P9Rqi9Sl72/rXlpcWztx0zqGYWbKp7nDKGTAh4qZ9OGkyTQ6kIR8uMh8p8fEtt2ZQkgCjm1Ml7qtnL8F7W43bXZVZMqZh+f+n3/Ucct9oBszjLq6sR+k0FJyQ5vKgPAHLdTuuGqrK40g9V3Iho9nCy7/H9CiQOsGB26/zIzYKQYdkebWur9Vw9md99u5eJtK0pkS7WAkHMYrHqUim1FAkKIBauJWOUWhX530HPQb3R4n+39GrzI3Ha0MuRpWB/FvEQNKRZ0GRidHruQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QWu2M76m9hVSAXAAtmF1o1VVMW+6Oofv940UBtiP6Bs=;
- b=DBM/Sco5QhdOi1rNmPB85+rDn8IvPj3j3i8+kpiCtOhJYV3xScAlM+P1vVn3DLP55cznmAnFBTSyJkRMsBshj/15UFuvIgbrQJmoIVhjBCa/2ICwr3CUXXlG3s0SvlBC+g0K6T3iYXUlhPPAHhE+ytvVQYf4WDvCiXjcOdB0R0Vw+jvlN9MCSDOL4NtizhiM3o2/dukA6Ndqda9vRt4WDSfYpzdhcOcolJRILEInN6fEi7wwudqW451VzWw7x/i9qXbil2pq0xWGE4/w7Lhq4qC4HmZvFlZiu3fipj6S54x+xw5GPgWYW1f1VEVQ9n/9KFkR3NZzDKcDTNPt44SvDQ==
+ bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
+ b=QJuPQJ1U4+mBYkOiNJrxwXAI7O3AYoygCGb3K14xnvhZxv55TcONjwkmuTKOqygdMAgNAt3hKV4YVo2CG/3JpAH917Jp6pMixedpaacYQwYl4W4d6vMS6gEr381p3RNi+zz0RK5Wz/1aQKhcAC2ZOFkjPMbVF24iWLsY8GW45BPg451w91z3HrthELpNYBKvCsRDP8/sT54p25ABjYy8fuHZQYhttE5tXjyMmpyB/oud6Hc1d/WIsQHU6k+3sCQY5NilCbkJwZCEadJ/+h8d15o8Gybdj/wDtVsvVSqDTOJ0LUm/0Clh+y7LuKTUh6JWIVBUvLGbRU8yuxmCfgXLAQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
  dkim=pass header.d=marvell.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QWu2M76m9hVSAXAAtmF1o1VVMW+6Oofv940UBtiP6Bs=;
- b=GgGRiAbg69eJwWEGUBUIjzwWmizNfoJ7v3f3Oq/jHK2/ajKL8IjdfkIlwIcT8klX/41xLCYu92d+K5l5K1CZl3wT+GRlYR2qcvXF5EbJjum9GgM+6t37ZHWQqx+emeHsXehUbkwyb7E73J2bByGMW2W16ytQeVs81FkUndGNdoQ=
+ bh=P/QdfP55QYWG5XptPDCRiJ1xixBQnz+wRP0fE4vTmHY=;
+ b=Qtb0JMnWhJPvc0ry72i7ykbiPNn9qXtIqfAC+rLbzWr0b585oXY2dRVW+mMgDA7Tqy/q8jrsuNTl8mbGvlSLfUSDksbdO2RBDbFeCA6rI6v7QCaONmGDrOulsNUyjKGHIghaSaunqQIZd1nQ+sE2zzLxKrrXKS4EtEfE+cQNIUw=
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com (2603:10b6:a03:137::17)
- by BYAPR18MB2758.namprd18.prod.outlook.com (2603:10b6:a03:112::31)
+ by BYAPR18MB2616.namprd18.prod.outlook.com (2603:10b6:a03:13c::17)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.18; Thu, 9 Apr
- 2020 15:15:42 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.19; Thu, 9 Apr
+ 2020 15:16:42 +0000
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::65f8:9bfe:5fa5:1280]) by BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::65f8:9bfe:5fa5:1280%3]) with mapi id 15.20.2878.022; Thu, 9 Apr 2020
- 15:15:42 +0000
+ 15:16:42 +0000
 From: Alex Belits <abelits@marvell.com>
 To: "frederic@kernel.org" <frederic@kernel.org>, "rostedt@goodmis.org"
  <rostedt@goodmis.org>
-Subject: [PATCH 01/13] task_isolation: vmstat: add quiet_vmstat_sync function
-Thread-Topic: [PATCH 01/13] task_isolation: vmstat: add quiet_vmstat_sync
- function
-Thread-Index: AQHWDoG87dqkhBWgL0Cw8QsE6xEP5A==
-Date: Thu, 9 Apr 2020 15:15:42 +0000
-Message-ID: <bc58884986ec85418dda9bf629cb6b3c389de4f0.camel@marvell.com>
+Subject: [PATCH 02/13] task_isolation: vmstat: add vmstat_idle function
+Thread-Topic: [PATCH 02/13] task_isolation: vmstat: add vmstat_idle function
+Thread-Index: AQHWDoHfkpuEbVFPn02f+uWSy0xqog==
+Date: Thu, 9 Apr 2020 15:16:42 +0000
+Message-ID: <6b3631e4543e467b6261f7a4bf0792d6f86eafc7.camel@marvell.com>
 References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
  <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
  <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
@@ -93,39 +90,39 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [173.228.7.197]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 283ce317-d806-4a32-2928-08d7dc98ded4
-x-ms-traffictypediagnostic: BYAPR18MB2758:
+x-ms-office365-filtering-correlation-id: a53c63b6-40b1-40c9-2b77-08d7dc990282
+x-ms-traffictypediagnostic: BYAPR18MB2616:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR18MB2758EBC3B5D31A6370955CE0BCC10@BYAPR18MB2758.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1186;
+x-microsoft-antispam-prvs: <BYAPR18MB261621C1E2CADC3B6D1D0FD0BCC10@BYAPR18MB2616.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4502;
 x-forefront-prvs: 0368E78B5B
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:BYAPR18MB2535.namprd18.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(39860400002)(366004)(396003)(136003)(376002)(346002)(478600001)(36756003)(7416002)(71200400001)(2906002)(186003)(26005)(86362001)(2616005)(316002)(6506007)(110136005)(54906003)(64756008)(66556008)(6486002)(8936002)(66946007)(66476007)(4326008)(5660300002)(66446008)(6512007)(8676002)(81166007)(76116006)(81156014);
+ SFS:(10009020)(4636009)(376002)(136003)(366004)(346002)(39860400002)(396003)(7416002)(8676002)(5660300002)(26005)(71200400001)(2616005)(6486002)(6506007)(86362001)(2906002)(186003)(81156014)(64756008)(4326008)(316002)(6512007)(66946007)(81166007)(76116006)(66476007)(66446008)(478600001)(8936002)(54906003)(110136005)(36756003)(66556008);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: marvell.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: OkwhCHAY5goLA0fQmiM6TetQYIglVy7xWFOKhXivynbLClOQ3oSc7jUexvvEVtl0BeNMUB41/+QsbfTgSYd7yshdAKeK5N85vVL5Jz4ug0e1biHvEAbwPgnhLZ8nGMS54LHBIOmnuSn3h+eVtis6MZlSAkAntYISlagyHl0OmJXmymvHIwars335/uoVvT/7zxOSaMzSSigO8Y+z6jsVbj3Ha7DEdV1YprNmsh2YvhkYqqXFlraS+szYPkLuyO0lvSc6wN31hbXYojoUyquH7AkrQpnm5Z4kXOhwAbls8Ln/eYMJbzvdFrq9QlxfI/tKS4G0LmCPivYGE8STIReWGNMzUD5i3w+ceNaRHX0CCA/p/oQQVSv5jR27eFwbMa13mRIbaf+98kYODci+3xFaeNFayiCjGSrk62QjPDbvYIhiWyPrlEaf4ri9cdcBTqa4
-x-ms-exchange-antispam-messagedata: rpSTL6Qw1A2IO3ff98dfyXjfnCGP0IVkVLdkFM/N3oqbIxV/UhcW5lwVJTs0FTV+UYhH8/IIp/6Uu07rPz9L2ziIn74rXXwnghxaev4hboLMbKqmjXfalsuCrlA+XlbgQLwFl1okGvVfIQzwYSLjNw==
-Content-ID: <C996980330DF1341843865C54D056175@namprd18.prod.outlook.com>
+x-microsoft-antispam-message-info: QjxweUkuXp/ZshR6xy6o4DYotktxOEFmsODwQKeGHfo+rUkO1EjFxsw4A5hHfL/8mAMETU5XhdznmGFRuvPhgGWZaAjdWcK8cV43JiUP+sfgj3vy0EAjYAy56bSJ0J2vQVmE32SM4HD95bDFDVtoKJursaPG7BLD5d7wNqxAQiWTvCRNtOfIP9Dh2VDYz7J8oI7FS2jnlf4CgP32XDu3fkSj/Zx2G7eSqqo7+vY3P1Nx+xVzgvs9IVW0Kzbj8FQ8ZTQB0IhIlDxNlWjpqG+VGtUaOqcSPj5MwccUuLS0O2O4pbDtp5k5OLz8jT5PlwHZRmcCETB1IWgPoURIiohISTiA3lny8gZ45LQPXN5Cer91RHToKy0O1w7zWiOiFWRPs2zQ1+XVUl4ya9HiRVBHoIo7KcLJCdkehfLLy0AXhDlSQN99VmHXiclz7YYFwtvC
+x-ms-exchange-antispam-messagedata: +fmh8wJONgk5aIB5lyoWnYAYcdby1Xnftvcgw3LGZvG64aKRZk+SbSF740SPEjgZiBahW6AKeYRMCc+NP2Hlcc1Y4V9qVdptP1qNg9X1YRnBtlZBWVMPWeOZ/CNcdOifFHc6ygYVOfMevSU/HgRPdA==
+Content-ID: <56A6499FF35C8548BB3097BDC4A1FF84@namprd18.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 283ce317-d806-4a32-2928-08d7dc98ded4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Apr 2020 15:15:42.6311 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a53c63b6-40b1-40c9-2b77-08d7dc990282
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Apr 2020 15:16:42.4387 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8u8TVyVD7tNTSHD8Owz+u3APJ5DFMVfstqYsxbm9MB1J2iyaX7/ob1DIUJBgCwRHzy15Kow9OrQXcDuoxHmcfg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2758
+X-MS-Exchange-CrossTenant-userprincipalname: HQpdoAq+oCceNbT/WvBlENAVb/q8aPTQnJOZzyrKQ4kCYguiLJ+rs85VEaKOt2qGSu0fAcCdxRX6O/stToMErg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2616
 X-OriginatorOrg: marvell.com
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-09_05:2020-04-07,
  2020-04-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_081627_577078_E790B3E7 
-X-CRM114-Status: GOOD (  14.65  )
+X-CRM114-CacheID: sfid-20200409_081710_048040_FE2207C9 
+X-CRM114-Status: GOOD (  15.83  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -169,56 +166,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In commit f01f17d3705b ("mm, vmstat: make quiet_vmstat lighter")
-the quiet_vmstat() function became asynchronous, in the sense that
-the vmstat work was still scheduled to run on the core when the
-function returned.  For task isolation, we need a synchronous
-version of the function that guarantees that the vmstat worker
-will not run on the core on return from the function.  Add a
-quiet_vmstat_sync() function with that semantic.
+This function checks to see if a vmstat worker is not running,
+and the vmstat diffs don't require an update.  The function is
+called from the task-isolation code to see if we need to
+actually do some work to quiet vmstat.
 
 Signed-off-by: Chris Metcalf <cmetcalf@mellanox.com>
 Signed-off-by: Alex Belits <abelits@marvell.com>
 ---
- include/linux/vmstat.h | 2 ++
- mm/vmstat.c            | 9 +++++++++
- 2 files changed, 11 insertions(+)
+ include/linux/vmstat.h |  2 ++
+ mm/vmstat.c            | 10 ++++++++++
+ 2 files changed, 12 insertions(+)
 
 diff --git a/include/linux/vmstat.h b/include/linux/vmstat.h
-index 292485f3d24d..2bc5e85f2514 100644
+index 2bc5e85f2514..66d9ae32cf07 100644
 --- a/include/linux/vmstat.h
 +++ b/include/linux/vmstat.h
-@@ -270,6 +270,7 @@ extern void __dec_zone_state(struct zone *, enum zone_stat_item);
- extern void __dec_node_state(struct pglist_data *, enum node_stat_item);
+@@ -271,6 +271,7 @@ extern void __dec_node_state(struct pglist_data *, enum node_stat_item);
  
  void quiet_vmstat(void);
-+void quiet_vmstat_sync(void);
+ void quiet_vmstat_sync(void);
++bool vmstat_idle(void);
  void cpu_vm_stats_fold(int cpu);
  void refresh_zone_stat_thresholds(void);
  
-@@ -372,6 +373,7 @@ static inline void __dec_node_page_state(struct page *page,
- static inline void refresh_zone_stat_thresholds(void) { }
+@@ -374,6 +375,7 @@ static inline void refresh_zone_stat_thresholds(void) { }
  static inline void cpu_vm_stats_fold(int cpu) { }
  static inline void quiet_vmstat(void) { }
-+static inline void quiet_vmstat_sync(void) { }
+ static inline void quiet_vmstat_sync(void) { }
++static inline bool vmstat_idle(void) { return true; }
  
  static inline void drain_zonestat(struct zone *zone,
  			struct per_cpu_pageset *pset) { }
 diff --git a/mm/vmstat.c b/mm/vmstat.c
-index 78d53378db99..1fa0b2d04afa 100644
+index 1fa0b2d04afa..5c4aec651062 100644
 --- a/mm/vmstat.c
 +++ b/mm/vmstat.c
-@@ -1870,6 +1870,15 @@ void quiet_vmstat(void)
+@@ -1879,6 +1879,16 @@ void quiet_vmstat_sync(void)
  	refresh_cpu_vm_stats(false);
  }
  
 +/*
-+ * Synchronously quiet vmstat so the work is guaranteed not to run on return.
++ * Report on whether vmstat processing is quiesced on the core currently:
++ * no vmstat worker running and no vmstat updates to perform.
 + */
-+void quiet_vmstat_sync(void)
++bool vmstat_idle(void)
 +{
-+	cancel_delayed_work_sync(this_cpu_ptr(&vmstat_work));
-+	refresh_cpu_vm_stats(false);
++	return !delayed_work_pending(this_cpu_ptr(&vmstat_work)) &&
++		!need_update(smp_processor_id());
 +}
 +
  /*
