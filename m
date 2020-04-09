@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FA771A2EDA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 07:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21F3E1A2EE9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 08:00:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mTuG4YGala17m7xDGUtMGqoQ3NHVuMZIx9MB9+F3oAE=; b=aD4QEgHii5Rpwi
-	iiLoXGMcAzjngYpMd4hz3JMrpu1UpYdmoFbAglt8OPXlVx7syAczkPcFVgHt6BSOZrAs2I3a0EFed
-	nuWRD/V0wEcgdJXfuCvx7PARQFodde1YCCKDxVGZYyqjFUEZt+rp485iPxsMdIzQVFGjtOP93Pf+l
-	kELnWbK3qK4FejmOoT4/r8rsIkTZ/DdsMt9eCW8hO1VgZl4fdMDeRB/Nq6MfIHxTEvmisFHPOQJaJ
-	BRqP4u5JX3ox1MsjE3bNwsnQskl8g/3NGudOllmtSdH9g3aWL9VbUc+ybUf0DpYvKwxEVHK0S1Akj
-	aldqS7S+ywNd3EqqZM/Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lIPhi6qtUJzOldlIzTqoUZ3ZrCy2xpCSRkH6stvGnzg=; b=U/cgjHKR1YwbM2
+	INl2/kLOadzvXEcSTyNwFpgoQoPVD9oZayX1utF9zOuIC9AzuD741G7lCMVq7wedmHl+1zcr5nx34
+	aYVXnvqls7839gdeA4YLIDSsxsPV3elmIjHlpFwwyZCX7RY3cDFhbL1CjhIOvbOJm7HpNc1FZrMRo
+	Aohlcn1BHKaHeJq7gM0cVV9B/pVyAX3NP4gwB+Vcbv41DPMvfOx6im6nVx6BGkTrtKbRqVz4oUO1y
+	bk54zfvQjk99lVrc2mKeZXLMzSnV0JkAW28clrwlKaApu+Y6X1mnRkrynDS0AvxpuKytG5cxspDVZ
+	485dPyqOie7rBfrqumAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMQ58-0006eV-BG; Thu, 09 Apr 2020 05:50:30 +0000
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
+	id 1jMQEh-00043R-JO; Thu, 09 Apr 2020 06:00:23 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMQ52-0006dj-Js
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 05:50:26 +0000
-Received: by mail-pl1-x632.google.com with SMTP id v2so2070219plp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 22:50:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oD+3H5EUXyXsIZqvMLC6/CrJcPMIkJIU4sPceYOTfRs=;
- b=F1npRqchyAr0X0Lz8WopTJ4+ES+oIcIfoiGvDxtYi2XSm8IP40UWH46FMGHafKnYGr
- XB4qW92qvkHjtS+KUYVDdB62YtBL3aPuusfHH+Cf0KWY159W+Xj5RcIvtBa635UW7aab
- d9HzZdAscSUZIsTJP7zcM9NPOrAbilWA6706Y=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oD+3H5EUXyXsIZqvMLC6/CrJcPMIkJIU4sPceYOTfRs=;
- b=WF1ab0FLRdMO6SPM90Lfel23oIap/YOGhouZkJKlf7riya0RpRBR/5EKC5IFK1Be+D
- a6VV6TYpPtggvedkZOKJNXB0gZS82NR9ziQDBgsKXFFy0uYMUrR2GKaSOGmxhrMv6jfa
- n6zdhOB77F93FygKuujPBaoT6dovseIMsgXZQaI7vZq65F0WrjXmiMB4qz3AdOQwC6Jb
- Gf6dII0AbRLJwEkrVC/0cGsfcYVjSClmzR4ziuROhGqe2rE1u7KT+FZqLCfspbgWah0a
- K8JuCKfzDtR5Pdrz4rTaFikhJzmO3pUB2fvVXGiyD9HosEzrJsl5hx2mn3fZKXvlTgwq
- veHA==
-X-Gm-Message-State: AGi0PuZpAiqlgB7EAyL7zDYJMn1/eezFhUW2LfQRtYBh4S8Ci7EtaWxm
- ikONmDKQ1DN7syjbihp/4pPET45HW2s=
-X-Google-Smtp-Source: APiQypLK+pYxgG3+6e6LhdOWp0EqgJ5nl8iuNInYwCrYi/OgrCelBK9E5/cYQjucscbvzheyUhVjbA==
-X-Received: by 2002:a17:902:7897:: with SMTP id
- q23mr10557900pll.312.1586411421919; 
- Wed, 08 Apr 2020 22:50:21 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id 198sm18471721pfa.87.2020.04.08.22.50.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 22:50:21 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] arm64: dts: mt8173: Add gce setting in mmsys and display
- node
-Date: Thu,  9 Apr 2020 13:50:12 +0800
-Message-Id: <20200409055012.199320-1-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.26.0.292.g33ef6b2f38-goog
+ id 1jMQEb-000434-3o
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 06:00:18 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 039602cF076105;
+ Thu, 9 Apr 2020 01:00:02 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1586412002;
+ bh=s4NGEtbZ5WYEhRGTwG73IITDcV3DTILxumrNxiY14yA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=KInjLFJRVLXusMx96Svk4Gbi7ix1TYjECmt+JP9oO+41VlD5G3Qug1F6vWKoJCF6L
+ VBCs6iVLXV4EyB3eRU0Zvt3zMCoW9Iu6O76KcEp/0R+lgfKddbtVTM3FtLoKTnGphA
+ M62uMWshi3CGYn0cMeZArdLCXbgM3DIRhe22IIq8=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 039601YW128360
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 9 Apr 2020 01:00:01 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 9 Apr
+ 2020 01:00:01 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 9 Apr 2020 01:00:01 -0500
+Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0395xvDZ048578;
+ Thu, 9 Apr 2020 00:59:58 -0500
+Subject: Re: [PATCH] irqchip/ti-sci-inta: fix processing of masked irqs
+To: Grygorii Strashko <grygorii.strashko@ti.com>, Nishanth Menon <nm@ti.com>, 
+ Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>
+References: <20200408191532.31252-1-grygorii.strashko@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <85de7f21-2e9b-da16-589e-b4c2144f3ab4@ti.com>
+Date: Thu, 9 Apr 2020 11:29:56 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200408191532.31252-1-grygorii.strashko@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_225024_677339_C3150464 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_230017_216150_88F6B6BE 
+X-CRM114-Status: GOOD (  11.34  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:632 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,152 +94,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- linux-kernel@vger.kernel.org,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Vignesh Raghavendra <vigneshr@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to use GCE function, we need add some informations
-into display node (mboxes, mediatek,gce-client-reg, mediatek,gce-events).
 
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-Reviewed-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
----
-change log:
-v1->v2: align with
-19d8e335d58a ("dt-binding: gce: remove atomic_exec in mboxes property")
-60fa8c13ab1a ("drm/mediatek: Move gce event property to mutex device node")
----
- arch/arm64/boot/dts/mediatek/mt8173.dtsi | 18 +++++++++++++++++-
- 1 file changed, 17 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-index ccb8e88a60c5..8337ba42845d 100644
---- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-@@ -549,7 +549,7 @@ gce: mailbox@10212000 {
- 			interrupts = <GIC_SPI 135 IRQ_TYPE_LEVEL_LOW>;
- 			clocks = <&infracfg CLK_INFRA_GCE>;
- 			clock-names = "gce";
--			#mbox-cells = <3>;
-+			#mbox-cells = <2>;
- 		};
- 
- 		mipi_tx0: mipi-dphy@10215000 {
-@@ -916,6 +916,9 @@ mmsys: clock-controller@14000000 {
- 			assigned-clocks = <&topckgen CLK_TOP_MM_SEL>;
- 			assigned-clock-rates = <400000000>;
- 			#clock-cells = <1>;
-+			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST>,
-+				 <&gce 1 CMDQ_THR_PRIO_HIGHEST>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
- 		};
- 
- 		mdp_rdma0: rdma@14001000 {
-@@ -996,6 +999,7 @@ ovl0: ovl@1400c000 {
- 			clocks = <&mmsys CLK_MM_DISP_OVL0>;
- 			iommus = <&iommu M4U_PORT_DISP_OVL0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
- 		};
- 
- 		ovl1: ovl@1400d000 {
-@@ -1006,6 +1010,7 @@ ovl1: ovl@1400d000 {
- 			clocks = <&mmsys CLK_MM_DISP_OVL1>;
- 			iommus = <&iommu M4U_PORT_DISP_OVL1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xd000 0x1000>;
- 		};
- 
- 		rdma0: rdma@1400e000 {
-@@ -1016,6 +1021,7 @@ rdma0: rdma@1400e000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
- 		};
- 
- 		rdma1: rdma@1400f000 {
-@@ -1026,6 +1032,7 @@ rdma1: rdma@1400f000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
- 		};
- 
- 		rdma2: rdma@14010000 {
-@@ -1036,6 +1043,7 @@ rdma2: rdma@14010000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA2>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA2>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
- 		};
- 
- 		wdma0: wdma@14011000 {
-@@ -1046,6 +1054,7 @@ wdma0: wdma@14011000 {
- 			clocks = <&mmsys CLK_MM_DISP_WDMA0>;
- 			iommus = <&iommu M4U_PORT_DISP_WDMA0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
- 		};
- 
- 		wdma1: wdma@14012000 {
-@@ -1056,6 +1065,7 @@ wdma1: wdma@14012000 {
- 			clocks = <&mmsys CLK_MM_DISP_WDMA1>;
- 			iommus = <&iommu M4U_PORT_DISP_WDMA1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
- 		};
- 
- 		color0: color@14013000 {
-@@ -1064,6 +1074,7 @@ color0: color@14013000 {
- 			interrupts = <GIC_SPI 187 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x3000 0x1000>;
- 		};
- 
- 		color1: color@14014000 {
-@@ -1072,6 +1083,7 @@ color1: color@14014000 {
- 			interrupts = <GIC_SPI 188 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_COLOR1>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x4000 0x1000>;
- 		};
- 
- 		aal@14015000 {
-@@ -1080,6 +1092,7 @@ aal@14015000 {
- 			interrupts = <GIC_SPI 189 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_AAL>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x5000 0x1000>;
- 		};
- 
- 		gamma@14016000 {
-@@ -1088,6 +1101,7 @@ gamma@14016000 {
- 			interrupts = <GIC_SPI 190 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_GAMMA>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x6000 0x1000>;
- 		};
- 
- 		merge@14017000 {
-@@ -1193,6 +1207,8 @@ mutex: mutex@14020000 {
- 			interrupts = <GIC_SPI 169 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_MUTEX_32K>;
-+			mediatek,gce-events = <CMDQ_EVENT_MUTEX0_STREAM_EOF>,
-+                                              <CMDQ_EVENT_MUTEX1_STREAM_EOF>;
- 		};
- 
- 		larb0: larb@14021000 {
--- 
-2.26.0.292.g33ef6b2f38-goog
+On 09/04/20 12:45 AM, Grygorii Strashko wrote:
+> The ti_sci_inta_irq_handler() does not take into account INTA IRQs state
+> (masked/unmasked) as it uses INTA_STATUS_CLEAR_j register to get INTA IRQs
+> status, which provides raw status value.
+> This causes hard IRQ handlers to be called or threaded handlers to be
+> scheduled many times even if corresponding INTA IRQ is masked.
+> Above, first of all, affects the LEVEL interrupts processing and causes
+> unexpected behavior up the system stack or crash.
+> 
+> Fix it by using the Interrupt Masked Status INTA_STATUSM_j register which
+> provides masked INTA IRQs status.
+> 
+> Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
+> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+
+Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
+
+Thanks and regards,
+Lokesh
 
 
 _______________________________________________
