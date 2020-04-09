@@ -2,87 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E5971A360E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:37:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 614171A3614
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 16:40:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NS6XQMFhWwJY2ug5sU+3wWdRruMCuBVogDYuWaPVP0Y=; b=DSTTjcEWzr8EExXvE8wydquHL
-	WT9M6hxzGT2h21vFRMxg7kHHn9nK8dgO6ollEN48HCRTHId9aX9kAvq/AydR3WeeJioV47GJgVFxF
-	FwzdpeeoF1neQ4Pq0ykDXcdkkUTbrSFKBXsqLt7WOoxe8Eh6Qo/ACKcNKJtFnoml4uKzz5ayipMiy
-	l0sgvLEOp29IxxQ9jguvfV3I7sf+gETs9CTS6V3gtO5ykdiPle9ons2mVUeNV6LvBI7GabQuYfAlm
-	Cy6PbgzOj2p8LIXu0hj4UQ1z0vuq2I0YktX/nKEZUncVmmzdzaF3PsSSSGQdlMupOoMjdWzQkE+E4
-	nBejbvpmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U53ZJgs7iLoX2myWooizeQ+r6wVcglycVwwM6TZWxUg=; b=JQ+lQ0q5DGmz+v
+	35GubY8pX93QHTiGXWCNcTfc09KKgrhCoqLte8HQYDicZ9SNThodBbmdsXXFTC3L6jB1oBJ+lnIkW
+	osR9k67RonRPWZqKFac/e7pxGoRD6JlBhszlgvRLbFaHyoMSMjZZ6B+QQiN71qDpEo4RuniwfnufH
+	WGhChJLuDq5OsyjrK1MWHuf1zwr3usBh18CzFfJLzEWEi1czlW4AIYoyqptP9/u3tHE+ZjFQ17k6U
+	7leJoRHHfUmTC0JzDjIOkUjs9h6Qx3xa6DdC6yxRLygBwr5p8a9vPF85uPLW2Hi+G1uhnouafX4aB
+	a6/j1x55uhqUgVkwdwVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMYJ6-0003gJ-W6; Thu, 09 Apr 2020 14:37:29 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jMYLP-000458-69; Thu, 09 Apr 2020 14:39:51 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMYIx-0003fN-Gt
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:37:21 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 039EbA5j008107;
- Thu, 9 Apr 2020 09:37:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1586443030;
- bh=t0Pz8343qyR0XZCGjZzKoEfLBwp8RY74fZEv6viiDRk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=wQflHXbmBySjer9/hT20YQkA86nduHAOQSxNmJ+JkcmfIybnRtPjd/+QLdn6sXnAh
- q3n9Sgybhy/GZJNlkTgoZXm/j8qRzyRSSJC25TycQOpENGyElgMxLxVKhz3kx7jSi+
- U9oXaQOZxwn2oS+o8pb9d4QW+B5hAjNHkE39Un1k=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 039EbANt016166
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 9 Apr 2020 09:37:10 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 9 Apr
- 2020 09:37:08 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 9 Apr 2020 09:37:08 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 039Eb6BD069628;
- Thu, 9 Apr 2020 09:37:06 -0500
-Subject: Re: [PATCH v6 0/4] thermal: k3: Add support for bandgap sensors
-To: "J, KEERTHY" <j-keerthy@ti.com>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, <rui.zhang@intel.com>, <robh+dt@kernel.org>
-References: <20200407055116.16082-1-j-keerthy@ti.com>
- <3c69e3c6-5549-e891-fde6-95a2ecc49f77@linaro.org>
- <0817f9ee-c72f-3e9f-00cf-e8ddaf608020@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <e7dd6470-5992-8d22-5d0c-7532a47a400c@ti.com>
-Date: Thu, 9 Apr 2020 17:37:05 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jMYLH-00044l-ON
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 14:39:45 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id p123so22319vkg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 07:39:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xEkP9tsPmG6xIpP1vzjRU5PHmw91Ij8x4EQYq0ffIRY=;
+ b=gRRRZ1sMj922xak2A74EFoOiHADrJzQm7/rJaeK5pfAuVSHS3gB2+2r+tsPF5OS3eU
+ d6WCreqRsPuEuBmb7GUYzdYOWcj35hAhSyknSdX72vRTG8MWdz56Xa0CxZ3wF6m+lNY+
+ LTFdC2ag6KmzAX+wWZkumO7x9+kjKJCrPw4XheX1XI6vClZR6jJ3v9g8n+UDk6Y5h+94
+ DCmS5TZheYWqU1IJ9febMYwkGVw3Spycnc9wl32T284wdq1MJvmrwQuP6SJyi2M0qycW
+ JoLTjabvZkTA6YKrrBRs8HZv8gpzqbcKC+Km/0ddJSh+SHoNn/WtjQiXGv+2ykhEopSO
+ 4W4A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xEkP9tsPmG6xIpP1vzjRU5PHmw91Ij8x4EQYq0ffIRY=;
+ b=labJQlUgwN1B+1Tne6QDWeDY94FAl2BCMnwPNPQdEquqzrNYl5FZHoWsJlwplmy9aL
+ L4T2T4py+PER3eFSbLhZQBxUg5wnPw2bI7O0AOlGT8WsqO/RLtFdcnxNuUq97+PJCyio
+ miHeUH6h0bvlEnGfNXPDKzv3nqV2oSqRlRAN0HduVP9UoMyGkHao8Qpy4esqea7nNPam
+ 7HmhYmDIgI5ja+oA4JzmQWsxHY0+KhrEWLtN3/gBbhrrfmOH1gsHje7ZxLg+M2M1+jx7
+ m9XtBQ5j+aJPYO4hFO4yPx3tfREpyHdt9svfSkniBQXyY/fHEKL9oAO7uqRxhccRPQQz
+ YePw==
+X-Gm-Message-State: AGi0PuaO/co4FIaeDKpSk292rA0CfPOHMRv+LR+bPqAcyLOxgmSjq2hn
+ FBeUsAvMwGU2s44Su77AxAmz/ytWEiyzryHa+uMvrw==
+X-Google-Smtp-Source: APiQypLrVG6KjexVOrXdXNiyGWmOu+0dTmnud+29Y24Oy2Dagz3JnegvbbcroVkVqLcf1po17uWnVbKTKKTfeO305Zg=
+X-Received: by 2002:a05:6122:446:: with SMTP id
+ f6mr1083497vkk.79.1586443182560; 
+ Thu, 09 Apr 2020 07:39:42 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <0817f9ee-c72f-3e9f-00cf-e8ddaf608020@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <1586402293-30579-1-git-send-email-Anson.Huang@nxp.com>
+ <CAHLCerNonZ7qJi8Qihmj87QteEnxTF0PRS6vw5GPemMurOfS9Q@mail.gmail.com>
+ <DB3PR0402MB39160A94CD5E97AA79E2DB5AF5C10@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB39160A94CD5E97AA79E2DB5AF5C10@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Thu, 9 Apr 2020 20:09:31 +0530
+Message-ID: <CAHLCerM+UpmdvvxV2KpEZuJSKQNjz2ONpXdFPdyUxCOj0PjnGA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: thermal: Convert i.MX8MM to json-schema
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_073719_658527_5612EBE1 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200409_073943_794062_D2D65A05 
+X-CRM114-Status: GOOD (  23.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,72 +90,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ lakml <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDkvMDQvMjAyMCAxNzowNywgSiwgS0VFUlRIWSB3cm90ZToKPiAKPiAKPiBPbiA0LzkvMjAy
-MCA3OjE5IFBNLCBEYW5pZWwgTGV6Y2FubyB3cm90ZToKPj4KPj4gSGkgS2VlcnRoeSwKPj4KPj4g
-T24gMDcvMDQvMjAyMCAwNzo1MSwgS2VlcnRoeSB3cm90ZToKPj4+IEFkZCBWVE0gdGhlcm1hbCBz
-dXBwb3J0LiBJbiB0aGUgVm9sdGFnZSBUaGVybWFsCj4+PiBNYW5hZ2VtZW50IE1vZHVsZShWVE0p
-LCBLMyBBTTY1NCBzdXBwbGllcyBhIHZvbHRhZ2UKPj4+IHJlZmVyZW5jZSBhbmQgYSB0ZW1wZXJh
-dHVyZSBzZW5zb3IgZmVhdHVyZSB0aGF0IGFyZSBnYXRoZXJlZCBpbiB0aGUgYmFuZAo+Pj4gZ2Fw
-IHZvbHRhZ2UgYW5kIHRlbXBlcmF0dXJlIHNlbnNvciAoVkJHQVBUUykgbW9kdWxlLiBUaGUgYmFu
-ZAo+Pj4gZ2FwIHByb3ZpZGVzIGN1cnJlbnQgYW5kIHZvbHRhZ2UgcmVmZXJlbmNlIGZvciBpdHMg
-aW50ZXJuYWwKPj4+IGNpcmN1aXRzIGFuZCBvdGhlciBhbmFsb2cgSVAgYmxvY2tzLiBUaGUgYW5h
-bG9nLXRvLWRpZ2l0YWwKPj4+IGNvbnZlcnRlciAoQURDKSBwcm9kdWNlcyBhbiBvdXRwdXQgdmFs
-dWUgdGhhdCBpcyBwcm9wb3J0aW9uYWwKPj4+IHRvIHRoZSBzaWxpY29uIHRlbXBlcmF0dXJlLgo+
-Pj4KPj4+IEFkZCBzdXBwb3J0IGZvciBiYW5kZ2FwIHNlbnNvcnMuIEN1cnJlbnRseSByZWFkaW5n
-IHRlbXBlcmF0dXJlcwo+Pj4gaXMgc3VwcG9ydGVkLgo+Pgo+PiBIb3cgZG8geW91IHdhbnQgdG8g
-cHJvY2VlZD8gU2hhbGwgSSB0YWtlIHBhdGNoZXMgMSAmIDIgPwo+IAo+ICtUZXJvCj4gCj4gSGkg
-VGVybywKPiAKPiBDYW4geW91IHB1bGwgMyAmIDQ/IE9yIERhbmllbCBjYW4gdGFrZSBhbGwgND8K
-CkxldCBtZSBwdWxsIHRoZSBEVCBwYXRjaGVzLCB0aGF0IHdheSB3ZSBhdm9pZCBhbnkgY29uZmxp
-Y3RzIGluIHRoZSAKYXJtNjQvZHRzIHRyZWUuIFRoZXJlIGhhcyBiZWVuIHF1aXRlIGEgYml0IG9m
-IHRyYWZmaWMgb24gdGhhdCBmcm9udCAKbGF0ZWx5IGFuZCB3ZSBkaWQgbWVzcyB1cCBzb21ldGhp
-bmcgd2l0aCB0aGUgY3VycmVudCBtZXJnZSB3aW5kb3cgYWxyZWFkeS4KCkkgYmVsaWV2ZSB5b3Ug
-YXJlIHBpY2tpbmcgdGhlIGRyaXZlciBzaWRlIGNoYW5nZXMgdG8gNS44PwoKLVRlcm8KCj4gCj4g
-LSBLZWVydGh5Cj4gCj4+Cj4+Cj4+PiBDaGFuZ2VzIGluIHY2Ogo+Pj4KPj4+IMKgwqAgKiBSZW1v
-dmVkIGJ1bmNoIG9mIHVudXNlZCAjZGVmaW5lcyBhbmQgY291cGxlIG9mIHJlZHVuZGFudCB2YXJp
-YWJsZXMuCj4+PiDCoMKgICogUmVvcmRlcmVkIHBhdGNoZXMgYSBiaXQuCj4+PiDCoMKgICogTWlu
-b3IgcmVvcmRlcmluZyBpbiBkdCBiaW5kaW5nIHBhdGNoLgo+Pj4KPj4+IENoYW5nZXMgaW4gdjU6
-Cj4+Pgo+Pj4gwqDCoCAqIFJlbW92ZWQgdGhlcm1hbCB3b3JrIGZ1bmN0aW9uIHdoaWNoIHdhcyB1
-bnVzZWQuCj4+PiDCoMKgICogUmVtb3ZlZCB1bnVzZWQgcHJldmVfdGVubXAgYW5kIGEgY291cGxl
-IG1vcmUgc3RydWN0IHZhcmlhYmxlcy4KPj4+IMKgwqAgKiBSZW1vdmVkIGNvdXBsZSBvZiByZWR1
-bmRhbnQgaGVhZGVyIGZ1bmN0aW9uIGluY2x1ZGUuCj4+Pgo+Pj4gQ2hhbmdlcyBpbiB2NDoKPj4+
-Cj4+PiDCoMKgICogRml4ZWQgY29tbWVudHMgZnJvbSBEYW5pZWwgdG8gcmVtb3ZlIHRyZW5kIGZ1
-bmN0aW9uLgo+Pj4gwqDCoCAqIE1vc3RseSBjbGVhbmVkIHVwIGFsbCB0aGUgdW51c2VkIHZhcmlh
-Ymxlcy4KPj4+IMKgwqAgKiBEcml2ZXIgZnJvbSBib29sIHRvIHRyaXN0YXRlLgo+Pj4KPj4+IENo
-YW5nZXMgaW4gdjM6Cj4+Pgo+Pj4gwqDCoCAqIEZpeGVkIGVycm9ycyBzZWVuIHdpdGg6Cj4+PiDC
-oMKgwqDCoCBkdF9iaW5kaW5nX2NoZWNrIAo+Pj4gRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy90aGVybWFsL3RpLGFtNjU0LXRoZXJtYWwueWFtbCAKPj4+
-Cj4+Pgo+Pj4gQ2hhbmdlcyBpbiB2MjoKPj4+Cj4+PiDCoMKgICogRml4ZWQgeWFtbCBlcnJvcnMK
-Pj4+IMKgwqAgKiByZW5hbWVkIGFtNjU0LWluZHVzdHJpYWwtdGhlcm1hbC5kdHNpIHRvIAo+Pj4g
-azMtYW02NTQtaW5kdXN0cmlhbC10aGVybWFsLmR0c2kKPj4+IMKgwqDCoMKgIHRvIGZvbGxvdyB0
-aGUgY29udmVudGlvbiBmb3IgazMgZmFtaWx5Lgo+Pj4KPj4+IEtlZXJ0aHkgKDQpOgo+Pj4gwqDC
-oCBkdC1iaW5kaW5nczogdGhlcm1hbDogazM6IEFkZCBWVE0gYmluZGluZ3MgZG9jdW1lbnRhdGlv
-bgo+Pj4gwqDCoCB0aGVybWFsOiBrMzogQWRkIHN1cHBvcnQgZm9yIGJhbmRnYXAgc2Vuc29ycwo+
-Pj4gwqDCoCBhcm02NDogZHRzOiB0aTogYW02NS13YWtldXA6IEFkZCBWVE0gbm9kZQo+Pj4gwqDC
-oCBhcm02NDogZHRzOiB0aTogYW02NTQ6IEFkZCB0aGVybWFsIHpvbmVzCj4+Pgo+Pj4gwqAgLi4u
-L2JpbmRpbmdzL3RoZXJtYWwvdGksYW02NTQtdGhlcm1hbC55YW1swqDCoMKgIHzCoCA1NiArKysr
-Cj4+PiDCoCBhcmNoL2FybTY0L2Jvb3QvZHRzL3RpL2szLWFtNjUtd2FrZXVwLmR0c2nCoMKgwqAg
-fMKgIDExICsKPj4+IMKgIC4uLi9kdHMvdGkvazMtYW02NTQtaW5kdXN0cmlhbC10aGVybWFsLmR0
-c2nCoMKgIHzCoCA0NSArKysKPj4+IMKgIGRyaXZlcnMvdGhlcm1hbC9LY29uZmlnwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgIDEwICsKPj4+IMKgIGRyaXZl
-cnMvdGhlcm1hbC9NYWtlZmlsZcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCB8wqDCoCAxICsKPj4+IMKgIGRyaXZlcnMvdGhlcm1hbC9rM19iYW5kZ2FwLmPCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMjY0ICsrKysrKysrKysrKysrKysrKwo+Pj4g
-wqAgNiBmaWxlcyBjaGFuZ2VkLCAzODcgaW5zZXJ0aW9ucygrKQo+Pj4gwqAgY3JlYXRlIG1vZGUg
-MTAwNjQ0IAo+Pj4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3RoZXJtYWwvdGks
-YW02NTQtdGhlcm1hbC55YW1sCj4+PiDCoCBjcmVhdGUgbW9kZSAxMDA2NDQgCj4+PiBhcmNoL2Fy
-bTY0L2Jvb3QvZHRzL3RpL2szLWFtNjU0LWluZHVzdHJpYWwtdGhlcm1hbC5kdHNpCj4+PiDCoCBj
-cmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy90aGVybWFsL2szX2JhbmRnYXAuYwo+Pj4KPj4KPj4K
-Ci0tClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgw
-IEhlbHNpbmtpLiBZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0Rv
-bWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Apr 9, 2020 at 7:52 PM Anson Huang <anson.huang@nxp.com> wrote:
+>
+> Hi, Amit
+>
+> > Subject: Re: [PATCH] dt-bindings: thermal: Convert i.MX8MM to json-schema
+> >
+> > Hi Anson,
+> >
+> > On Thu, Apr 9, 2020 at 8:56 AM Anson Huang <Anson.Huang@nxp.com>
+> > wrote:
+> > >
+> > > Convert the i.MX8MM thermal binding to DT schema format using
+> > > json-schema
+> >
+> > Would it be possible to have a single yaml file for all i.MX thermal sensors by
+> > playing with required and optional properties ?
+>
+> i.MX SoCs have many different thermal sensor IP and hence different thermal driver
+> is used, and different i.MX thermal drivers have different DT bindings, so is it good to
+> put all of them into single yaml file? For example, imx_thermal.c is for i.MX6/7 SoCs which
+> do NOT use of_thermal framework, imx8mm_thermal.c is for i.MX8MM/i.MX8MP which
+> use of_thermal framework.
+>
+> If putting all of them into 1 yaml file, it will be almost like just putting 2 files together, I
+> Personally don't think it is a good idea.
+
+OK.
+
+> >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > ---
+> > >  .../devicetree/bindings/thermal/imx8mm-thermal.txt | 15 ------
+> > >  .../bindings/thermal/imx8mm-thermal.yaml           | 53
+> > ++++++++++++++++++++++
+> > >  2 files changed, 53 insertions(+), 15 deletions(-)  delete mode
+> > > 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+> > >  create mode 100644
+> > > Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+> > >
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+> > > b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+> > > deleted file mode 100644
+> > > index 3629d3c..0000000
+> > > --- a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+> > > +++ /dev/null
+> > > @@ -1,15 +0,0 @@
+> > > -* Thermal Monitoring Unit (TMU) on Freescale i.MX8MM SoC
+> > > -
+> > > -Required properties:
+> > > -- compatible : Must be "fsl,imx8mm-tmu" or "fsl,imx8mp-tmu".
+> > > -- reg : Address range of TMU registers.
+> > > -- clocks : TMU's clock source.
+> > > -- #thermal-sensor-cells : Should be 0 or 1. See ./thermal.txt for a description.
+> > > -
+> > > -Example:
+> > > -tmu: tmu@30260000 {
+> > > -       compatible = "fsl,imx8mm-tmu";
+> > > -       reg = <0x30260000 0x10000>;
+> > > -       clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
+> > > -       #thermal-sensor-cells = <0>;
+> > > -};
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+> > > b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+> > > new file mode 100644
+> > > index 0000000..53a42b3
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+> > > @@ -0,0 +1,53 @@
+> > > +# SPDX-License-Identifier: GPL-2.0
+> > > +%YAML 1.2
+> > > +---
+> > > +$id:
+> > > +https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
+> > >
+> > +cetree.org%2Fschemas%2Fthermal%2Fimx8mm-thermal.yaml%23&amp;data
+> > =02%7
+> > >
+> > +C01%7CAnson.Huang%40nxp.com%7Cb190e049130e49e0750d08d7dc8e48
+> > a3%7C686e
+> > >
+> > +a1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637220375963888457&am
+> > p;sdata=s
+> > >
+> > +S8%2FR2j%2BT1UmDqXFIPPzPgWs26lMiwW3saTq4qlZAUs%3D&amp;reserve
+> > d=0
+> > > +$schema:
+> > > +https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
+> > >
+> > +cetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7CAns
+> > on.Hua
+> > >
+> > +ng%40nxp.com%7Cb190e049130e49e0750d08d7dc8e48a3%7C686ea1d3bc
+> > 2b4c6fa92
+> > >
+> > +cd99c5c301635%7C0%7C0%7C637220375963898454&amp;sdata=tXIh9d%
+> > 2BszcExH0
+> > > +7ic7s%2BqJyUdbE0aHM3tH%2BwkWgnbhQ%3D&amp;reserved=0
+> > > +
+> > > +title: NXP i.MX8M Mini Thermal Binding
+> > > +
+> > > +maintainers:
+> > > +  - Anson Huang <Anson.Huang@nxp.com>
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    oneOf:
+> > > +      - items:
+> > > +          - enum:
+> > > +              - fsl,imx8mm-tmu
+> > > +              - fsl,imx8mp-tmu
+> > > +  reg:
+> > > +    description: |
+> > > +      Address range of TMU registers.
+> > > +    maxItems: 1
+> > > +  clocks:
+> > > +    description: |
+> > > +      TMU's clock source.
+> > > +    maxItems: 1
+> > > +
+> > > +  # See ./thermal.txt for details
+> >
+> > Don't point to thermal.txt anymore. thermal.txt will be replaced by
+> > thermal-*.yaml files at some point soon.
+>
+> OK, will remove it.
+>
+> >
+> > > +  "#thermal-sensor-cells":
+> > > +    enum:
+> > > +      - 0
+> >
+> > Don't you have multiple sensors connected to this controller? In that case, 0
+> > won't be a valid value.
+>
+> imx8mm_thermal driver is for i.MX8MM and i.MX8MP, i.MX8MM ONLY has 1 sensor,
+> while i.MX8MP has 2 sensors, that is why I put both 0 and 1 here.
+
+Please put this in description after maintainers above.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
