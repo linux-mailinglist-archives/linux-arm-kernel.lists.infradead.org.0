@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99E931A36DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFCFD1A36DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 17:21:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SaOMMc6G9fk5nla8EPM6ftxr8Rfwai558ngAnoXWfNY=; b=T2hbEwGR+insYG
-	WY1vIilF2rIL2qcMVg8Kg3nBSBkhyJHXqDMRYlnUBYsUj7j0yAQm4If9MSD9U+FnO5CsUJK9/1rwn
-	4Hn5wshguTtiAG5gFzJhZZ7tmxp83Ko95MDlG51pU9CuQie97R2uiNSul/OdUx/TvFIJzHYPZ2oAW
-	ZOj7l9WSibui5hYR3HNqYiZyljiyniENSon0za8hyv1GfVyG7unzlEEQ/TpQvkize/EzoOsJMTAw0
-	yQUftXELtsb9aWC8WrtpCH70YNqDrpwVdwZN4mJa2iTc+Eo9GGegBGeCw9Onor9Rf3xXOIGrIWxgi
-	caswwhfJc8JFVR9T6WKg==;
+	List-Owner; bh=rvBPuHKeYDxF/pXvZPmQ2cKRBCfDxzSYpG7/VDQx8V8=; b=s9roZu5Sk9HdvC
+	spYkrX4SXJW7JoW981SOGsudrZqJ7kY+S9mtm1fZxp5GS+7VY9bT8G0VGCSZYNVCKc2dCv9YfI6LH
+	ewK/D1RK2qhhkjDMX/jL9IApMG6r8AZs6Utn0bO25QRMZ9SCcf5ODyyF5Uo6hioeASQvCU+b9VANX
+	vR9AlfhO/uY642jdkx9yZkxmm4G1EjdeA/N09/30XSPlZL4w/pgejc+Ah85bilQNfSmZrIYTOgvvO
+	clWtHtns9ci5hfoiQe2+RrlFrxwKeu6ZHtJkp2Jb0SgBR5a0od1tZ6ETegSUvI8y0DZDnw4fYafjB
+	7NVfjGcuRoFE3Xxn2+Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMYyt-0000ov-Og; Thu, 09 Apr 2020 15:20:39 +0000
+	id 1jMYz9-00014a-5M; Thu, 09 Apr 2020 15:20:55 +0000
 Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMYyg-0000mY-Gp
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:20:27 +0000
-Received: by mail-ed1-f67.google.com with SMTP id m12so98305edl.12
+ id 1jMYyr-0000w6-Go
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 15:20:40 +0000
+Received: by mail-ed1-f67.google.com with SMTP id i7so190254edq.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 08:20:26 -0700 (PDT)
+ Thu, 09 Apr 2020 08:20:36 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=T94ek2P1vYjI/992XAZLBRMZNsTOICz9I5cPd7mOb1Y=;
- b=nqRotqgeG4x+7LqOki94PpSdlOctvMqIPxznvv3F+GE7tqoCeVZaIdpV7zgNsKCz39
- 6GuP+AuoXLkLb5XOaPZq5WUYFFGqzB5C4QiSa01u8Ih2I0L/JNeUBUCdaSIYYaQvfGgV
- hBclPdyR81NuT2V2ua1SododL53ilDu35o8hFEGBx7QGhZDEEO/BxZPGtyJjprdheDDi
- 23qCj1dkLnEpv8Ng7opQls+6vAUb6XhtAuSIknr654sjjsVeUS1gd7CpRRvRfVKGuiHG
- AotSfkYZqj/mRLl3LmZcsRLBUZjsabamopVS2m+RPRPSbgAX0wLZI6Ay3ZjdW/H32rtZ
- QayA==
-X-Gm-Message-State: AGi0PuZXhadr96nAYC3YQcQxDSdD+kEEi4Ric/MbXjg0anoFUO3frh/h
- QMelQrmHAvoU8Dq+iFzZlO1dIFJT0BE=
-X-Google-Smtp-Source: APiQypI9hsjr62m5QHQ08Su2X1Awv4La+ul0Yuyoh+63cdp18TQ5vUBVnnb42iwRsGJy9MKL/Tqkgg==
-X-Received: by 2002:aa7:d457:: with SMTP id q23mr549347edr.66.1586445624847;
- Thu, 09 Apr 2020 08:20:24 -0700 (PDT)
-Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com.
- [209.85.221.46])
- by smtp.gmail.com with ESMTPSA id l19sm3749274ejn.31.2020.04.09.08.20.23
+ bh=clzy1dbE4dM3+sTXvQLGQ3bT7gyjD6WOWMoUygp0K10=;
+ b=lYKa9WpI3O2sMVU5jLzekMEkzXzdSRbWy2KL8b//MSp5x4DhDPAx3M+Rl4AaVXC+M3
+ CjNuKS8ClsIW3mXVU+05HNFKeLBddbK8lER4epDZhfGXJcAKj5VrW1xRPqvZr08g3cF0
+ vFSaiXkYPq459zBOPDKi7EKdwFFmt12LU0LvtNSaWGYK9kzcwfY/AHUZg3fTC1VKrhPH
+ ODQP5MwBlc75VkjhPjLb8VfSI06kT005WIdu8M0gOmBtf/Mc5I4vPs3q8ekFgW16O2Vo
+ ikg3WWqbwZlgyAO36XDfcbDaeBEhMHWWEtjyZ5f4W48s/0QgT6eGjoX0fjbK77mXS9TD
+ pvyg==
+X-Gm-Message-State: AGi0PuYRdJ82m4FyHtMGo+jSKOPkVTqQ/X8HYywm6UuV+qVklr7VieaV
+ au8qO9KZRSq9Ex2Oh63kUfZv1cfYxzY=
+X-Google-Smtp-Source: APiQypLhofCnjIcYQoAZyvGCOH+2LUyVwBB6oGXVjc3DqCdP5c00PCoFj0vBVYdzRLiB6xIv+Hf2OA==
+X-Received: by 2002:a17:906:4bc4:: with SMTP id
+ x4mr11902772ejv.201.1586445634807; 
+ Thu, 09 Apr 2020 08:20:34 -0700 (PDT)
+Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com.
+ [209.85.221.50])
+ by smtp.gmail.com with ESMTPSA id p8sm3108708edm.96.2020.04.09.08.20.34
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Apr 2020 08:20:23 -0700 (PDT)
-Received: by mail-wr1-f46.google.com with SMTP id s8so12342143wrt.7
+ Thu, 09 Apr 2020 08:20:34 -0700 (PDT)
+Received: by mail-wr1-f50.google.com with SMTP id k1so12413458wrm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 08:20:23 -0700 (PDT)
-X-Received: by 2002:a5d:670f:: with SMTP id o15mr14577113wru.120.1586445622945; 
- Thu, 09 Apr 2020 08:20:22 -0700 (PDT)
+ Thu, 09 Apr 2020 08:20:34 -0700 (PDT)
+X-Received: by 2002:adf:ec02:: with SMTP id x2mr14639381wrn.365.1586445634028; 
+ Thu, 09 Apr 2020 08:20:34 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200317155906.31288-1-dev@pascalroeleven.nl>
- <20200317155906.31288-4-dev@pascalroeleven.nl>
-In-Reply-To: <20200317155906.31288-4-dev@pascalroeleven.nl>
+ <20200317155906.31288-5-dev@pascalroeleven.nl>
+In-Reply-To: <20200317155906.31288-5-dev@pascalroeleven.nl>
 From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu, 9 Apr 2020 23:20:12 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65X3QoopHn11K48UbRMfTH2b9SseOR8U4jWWprGTTQB2A@mail.gmail.com>
-Message-ID: <CAGb2v65X3QoopHn11K48UbRMfTH2b9SseOR8U4jWWprGTTQB2A@mail.gmail.com>
-Subject: Re: [linux-sunxi] [RFC PATCH 3/4] pwm: sun4i: Move delay to function
-To: dev@pascalroeleven.nl
+Date: Thu, 9 Apr 2020 23:20:23 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67GR2x2TJU_MVfD8S=gQO7gv4ohhfGBkLD2CtSCMyNktw@mail.gmail.com>
+Message-ID: <CAGb2v67GR2x2TJU_MVfD8S=gQO7gv4ohhfGBkLD2CtSCMyNktw@mail.gmail.com>
+Subject: Re: [RFC PATCH 4/4] pwm: sun4i: Delay after writing the period
+To: Pascal Roeleven <dev@pascalroeleven.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_082026_555952_BE4689CE 
-X-CRM114-Status: UNSURE (   7.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200409_082037_588803_342A4875 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -110,7 +110,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Mar 18, 2020 at 12:00 AM Pascal Roeleven <dev@pascalroeleven.nl> wrote:
 >
-> Move the delay to a function so we can reuse it.
+> When disabling, ensure the period write is complete before continuing.
+> This fixes an issue on some devices when the write isn't complete before
+> the panel is turned off but the clock gate is still on.
 >
 > Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
 
