@@ -2,50 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2321C1A317F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 11:04:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 137AB1A3141
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:52:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3W9Q7mxhCcTdMDCBjRd5W0oahSSJEUC1s0VxI7nk61s=; b=M0w
-	z9c15DxVirtONnHXVFck04wjwKvICpoOzHXo58/t/YXO/0kfu0Znm266lAuaqhBdYYDDMo7sONLNw
-	rF9CLYPtcBfI32JJgqITou96TvKMe/ze3/Ttt05Dn1Z1oTOFfrV0lvd62iEK4DkxcGeECoe9AV27s
-	XBWjOapwSfm0TYsnyYPTI1S+rWK+X1EH4AzdZUs9R5WVoE/DedPB6eTwPkIEwP3c8ZGrtzlnp4q5O
-	NhkN4+UXBpJ9z9pjgIVHrl1v/fTs1s8KJbix7cg5Hvsa+S+P0LgixKUTCc1nF1/eNKpuyGX9+g354
-	ti3lgh/p+UWrK+FfgJL0e7mXcJOOyHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3l9ZBRpNjjhJFii6PDpPa8ktKrfVilE+T7l9G7y6pp0=; b=kmaePR5JxUhWU4
+	QB9XeiDgq6JxFmmid/tpPLcw2wAWjenKcflv6vlBuSuf+la4T2YiB2L6Bjs/wx7Lr1urpVKC7Vp/T
+	shOX1YixJL26PjGDDy+PUqAZoI8zjEC+y6DocZx0AZGpI6k9RJ8DplDEkfEcUfTlHsOBCpTDw7Jth
+	mjUR+d4+df/+MucCDyJ2YH6wP9wTMK91azQ4efXSA9gR8ieiOupzZBv84nYdG+4WRGwkZUC5FNe3a
+	uBJK8WhQWHQnlnRw4slT5N3a6GN3OsEL3qZ5mAR4cEX/ndSbEXUeDn+CDWlhsuOZwHB/eVdcryXqc
+	kViXEuVEzBicvdYmAjXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMT6m-000241-NQ; Thu, 09 Apr 2020 09:04:24 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jMSun-0003N6-Gf; Thu, 09 Apr 2020 08:52:01 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMT6d-00023K-Ax
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 09:04:16 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 05A8B1A03EC;
- Thu,  9 Apr 2020 11:04:13 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D3B61A01DE;
- Thu,  9 Apr 2020 11:04:07 +0200 (CEST)
-Received: from titan.ap.freescale.net (titan.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 13F2840294;
- Thu,  9 Apr 2020 17:04:00 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH] gpio: mpc8xxx: Add shutdown function.
-Date: Thu,  9 Apr 2020 16:49:53 +0800
-Message-Id: <20200409084953.46265-1-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jMSuh-0003MJ-92; Thu, 09 Apr 2020 08:51:56 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id B51C658B19EB8263FEEF;
+ Thu,  9 Apr 2020 16:51:43 +0800 (CST)
+Received: from huawei.com (10.175.124.28) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Thu, 9 Apr 2020
+ 16:51:36 +0800
+From: Jason Yan <yanaijie@huawei.com>
+To: <broonie@kernel.org>, <matthias.bgg@gmail.com>,
+ <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] spi: spi-mtk-nor: make mtk_nor_exec_op() statuc
+Date: Thu, 9 Apr 2020 16:50:09 +0800
+Message-ID: <20200409085009.44971-1-yanaijie@huawei.com>
+X-Mailer: git-send-email 2.17.2
+MIME-Version: 1.0
+X-Originating-IP: [10.175.124.28]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_020415_518899_A440B84E 
-X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-CacheID: sfid-20200409_015155_500464_B9E73B61 
+X-CRM114-Status: UNSURE (   8.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -53,9 +49,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,56 +63,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-MIME-Version: 1.0
+Cc: Jason Yan <yanaijie@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Song Hui <hui.song_1@nxp.com>
+Fix the following sparse warning:
 
-When the kexec command is executed, the memory area will be re-paginated.
-The shutdown function needed to make interrupt handler to be NULL.If
-not, an interrupt will be generated during this period. When the interrupt
-handler is executed,the handler function address changed and crash will
-occur.
+drivers/spi/spi-mtk-nor.c:394:5: warning: symbol 'mtk_nor_exec_op' was
+not declared. Should it be static?
 
-Signed-off-by: Song Hui <hui.song_1@nxp.com>
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Jason Yan <yanaijie@huawei.com>
 ---
- drivers/gpio/gpio-mpc8xxx.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ drivers/spi/spi-mtk-nor.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-index 604dfec..a24e6c5 100644
---- a/drivers/gpio/gpio-mpc8xxx.c
-+++ b/drivers/gpio/gpio-mpc8xxx.c
-@@ -446,9 +446,21 @@ static int mpc8xxx_remove(struct platform_device *pdev)
- 	return 0;
+diff --git a/drivers/spi/spi-mtk-nor.c b/drivers/spi/spi-mtk-nor.c
+index c15a9910549f..7bc302b50396 100644
+--- a/drivers/spi/spi-mtk-nor.c
++++ b/drivers/spi/spi-mtk-nor.c
+@@ -391,7 +391,7 @@ static int mtk_nor_pp_unbuffered(struct mtk_nor *sp,
+ 	return mtk_nor_cmd_exec(sp, MTK_NOR_CMD_WRITE, 6 * BITS_PER_BYTE);
  }
  
-+static int mpc8xxx_shutdown(struct platform_device *pdev)
-+{
-+	struct mpc8xxx_gpio_chip *mpc8xxx_gc = platform_get_drvdata(pdev);
-+
-+	if (mpc8xxx_gc->irq) {
-+		irq_set_chained_handler_and_data(mpc8xxx_gc->irqn, NULL, NULL);
-+		irq_domain_remove(mpc8xxx_gc->irq);
-+	}
-+
-+	return 0;
-+}
- static struct platform_driver mpc8xxx_plat_driver = {
- 	.probe		= mpc8xxx_probe,
- 	.remove		= mpc8xxx_remove,
-+	.shutdown	= mpc8xxx_shutdown,
- 	.driver		= {
- 		.name = "gpio-mpc8xxx",
- 		.of_match_table	= mpc8xxx_gpio_ids,
+-int mtk_nor_exec_op(struct spi_mem *mem, const struct spi_mem_op *op)
++static int mtk_nor_exec_op(struct spi_mem *mem, const struct spi_mem_op *op)
+ {
+ 	struct mtk_nor *sp = spi_controller_get_devdata(mem->spi->master);
+ 	int ret;
 -- 
-2.9.5
+2.17.2
 
 
 _______________________________________________
