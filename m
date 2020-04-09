@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18A651A2D64
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 03:40:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BCCA1A2D65
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 03:41:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WSMDC+qLcTjFZf0qq+hoNgmgpEaJB2meu9MysL+2DBE=; b=pHr4Miw5dzUkLy
-	PyH5vB7yTVnXMAfF3RvZAx8uLd1PliwHwh5nYhLJ6iYphkfwvoc6woTHp0r44U8G/eKXGNIaPZyVo
-	ULRYF1x7x81Q2SmkbU9RHeIHz+engSbnmf0B3ZZw3ljDPMlXORT9CycdfP8fkxuDb15veXcxBylFA
-	qPBoOCF7rQ4rkFyMzOt4n03H8tsphzGpKbTzqRKz8XfF4YWzS8+5WGfez9PxoXswzoyYXkrpb5K/D
-	0efNLtlAODsI38P0mUSfEMH3QVjsB3iwJiqUEsblW6tBcmyDlAQ8n56oEHMPAbjlEqdzZ/p7RwOEi
-	LVC+Q9aoCSeX7JXW3kAg==;
+	List-Owner; bh=jKBN4XZg9q2rFY4f9U8qs6DFljnOrW+8tTYmKSy+w94=; b=jPgtrAdAqwA9vO
+	ZRq+vKK7SoTc9IUp/VFXNwbQFQnijAsMuzHTy+I/abxKpxH+soAWInT9RVGPKG8+K7rigLLLKCv0V
+	3lOc+FXr40AUU/u7b++3P4NT/5R1gcqPOsNaF1YQxtJMOGQnHL7iJtfhTToX0aKzwgPeUd822of7r
+	C7iAiG/bOKr142vxgIjVgRknagEeWJpVTEkj345WQ4UCe7hOBZEH3UQgvLVHOCYZDn/cRHvm2cPs2
+	asYPVk6sPLKrI557C9V0NMQsR/Yx4v2lOjTmBczCVUrGvVKSlEiWMTmyPhMWmBDN5jiTzUy7GOzxJ
+	JC0+wGAaXAZE81tfLr2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMMBJ-0005TF-3l; Thu, 09 Apr 2020 01:40:37 +0000
+	id 1jMMBa-0005j9-RR; Thu, 09 Apr 2020 01:40:54 +0000
 Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMMAa-0002hB-K6
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 01:39:54 +0000
-Received: by mail-il1-f196.google.com with SMTP id i14so3657394ilr.11
+ id 1jMMAb-0002ha-Vl
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 01:39:55 +0000
+Received: by mail-il1-f196.google.com with SMTP id o11so4514695ilq.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 Apr 2020 18:39:52 -0700 (PDT)
+ Wed, 08 Apr 2020 18:39:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HFS4oexa8VbxIfGS3dCImonH0q6N8MSETlkblsu0EG8=;
- b=BzEqyM8/keydd/xqYmp5kklkvRs9UsMuMoOTrldEdCQ+4rIx88W/4EpnRh42JWR5gS
- ZOWiKY3mTnKoFUD0yK6NchQ/FRYPyk9a6hJ9bSWzk640CXLwSUmdO5qVWh3Kysom/8HM
- LaGzLntYQ/yyvEe233GJbxDo4erPVWW+HTmXUoF4OVWNby+SPVYQYsQlxoDx1xXmJ3mg
- BdaW23lZyMYMpDWba9DXy4+kMlNbEiHri+MvxciEr2xV4axMYJinZXn4e66NA3Ts7Aap
- TQR4B7p7pADAKtaOA7Du+c830cL3wI1igUT2Oi8wzZiGzHXTRXZ4mFY1IKedN2yC1xw9
- v1fg==
-X-Gm-Message-State: AGi0Pua1c+vjPS3IacxfXh25NvVGQri38DUMPnAVsZzP0bE5tfSxhEYN
- qyOblSNTkIyA8KBgKQ78Mw==
-X-Google-Smtp-Source: APiQypLQ7roonLNXmPwaFrhmHM5FOyTwNVh6VW+W1cZaaPuEcLAxJDFk+kj0iC9HkPT2OY35Q+wo0g==
-X-Received: by 2002:a92:3548:: with SMTP id c69mr10886585ila.216.1586396391699; 
- Wed, 08 Apr 2020 18:39:51 -0700 (PDT)
+ bh=NeMxgJdH/jWjk4OdPtDmPyqe4xiEJf5jOviRoYI8eDQ=;
+ b=ZGuyurkSJjZ96KVMOezjCxWH1NHM0QFgjG03U5mKEqaqjMP1R7Wg0xHkRuj4Zmmugr
+ 0nbxtGl+IKiMB1vZosNMgqVff5SSAmJHPs1oWN2VslGpkBgPrlBgSpttB2Rpe2QZb3Cm
+ qgL/y0dX6DgqDKE8aa4zHK2aJ/LSf7bDKUzYiuebhE4CIttD0jprqLWCeBeD4mwBjyKy
+ Ov0oJC0itYU6sdlrkC/z2fe/DyNa64TR4hBF2ENMK95N2PlrJRStv013nfdoSNqmkIOa
+ fog+Q/AOTpBY1TMpKVSygByGy2HTdLalRisJrNNpPWnIPym5G8Nvi0xHbr9RFet/kaA9
+ We/A==
+X-Gm-Message-State: AGi0PuaALaart5aMzsIX7TobMPMJTG/HGDR48tB6KbOoyVK3+d8worZE
+ 1XlL8eefOF2nphvhsmzkmpGwWZ8=
+X-Google-Smtp-Source: APiQypJDvvUA1E07FL+7EPjit+1Aevzg7BjR6K3kcQX1/FdaqpMlNVcBBsvTg8H0nzmvnygDavWRYw==
+X-Received: by 2002:a92:af03:: with SMTP id n3mr2858690ili.180.1586396393315; 
+ Wed, 08 Apr 2020 18:39:53 -0700 (PDT)
 Received: from xps15.herring.priv ([64.188.179.248])
- by smtp.googlemail.com with ESMTPSA id b5sm2353026ilf.23.2020.04.08.18.39.50
+ by smtp.googlemail.com with ESMTPSA id b5sm2353026ilf.23.2020.04.08.18.39.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 18:39:51 -0700 (PDT)
+ Wed, 08 Apr 2020 18:39:52 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Eric Anholt <eric@anholt.net>
-Subject: [PATCH 2/3] drm: pl111: Simplify vexpress init
-Date: Wed,  8 Apr 2020 19:39:46 -0600
-Message-Id: <20200409013947.12667-3-robh@kernel.org>
+Subject: [PATCH 3/3] drm: pl111: Move VExpress setup into versatile init
+Date: Wed,  8 Apr 2020 19:39:47 -0600
+Message-Id: <20200409013947.12667-4-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200409013947.12667-1-robh@kernel.org>
 References: <20200409013947.12667-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_183952_655828_CA5608C1 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20200408_183954_023014_3EA1C29E 
+X-CRM114-Status: GOOD (  22.44  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.166.196 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -73,8 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -95,142 +95,325 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The init VExpress variants currently instantiates a 'muxfpga' driver for
-the sole purpose of getting a regmap for it. There's no reason to
-instantiate a driver and doing so just complicates things. The muxfpga
-driver also isn't unregistered properly on module unload. Let's
-just simplify all this this by just calling
-devm_regmap_init_vexpress_config() directly.
+Since the VExpress setup in pl111_vexpress.c is now just a single
+function call, let's move it into pl111_versatile.c and we can further
+simplify pl111_versatile_init() by moving the other pieces for VExpress
+into pl111_vexpress_clcd_init().
 
 Cc: Eric Anholt <eric@anholt.net>
 Cc: dri-devel@lists.freedesktop.org
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/gpu/drm/pl111/pl111_versatile.c | 21 +++----------
- drivers/gpu/drm/pl111/pl111_vexpress.c  | 42 -------------------------
- drivers/gpu/drm/pl111/pl111_vexpress.h  |  7 -----
- 3 files changed, 4 insertions(+), 66 deletions(-)
+ drivers/gpu/drm/pl111/Makefile          |   1 -
+ drivers/gpu/drm/pl111/pl111_versatile.c | 122 ++++++++++++++++++++----
+ drivers/gpu/drm/pl111/pl111_vexpress.c  |  96 -------------------
+ drivers/gpu/drm/pl111/pl111_vexpress.h  |  22 -----
+ 4 files changed, 102 insertions(+), 139 deletions(-)
+ delete mode 100644 drivers/gpu/drm/pl111/pl111_vexpress.c
+ delete mode 100644 drivers/gpu/drm/pl111/pl111_vexpress.h
 
+diff --git a/drivers/gpu/drm/pl111/Makefile b/drivers/gpu/drm/pl111/Makefile
+index 0c70f0e91d21..67d430d433e0 100644
+--- a/drivers/gpu/drm/pl111/Makefile
++++ b/drivers/gpu/drm/pl111/Makefile
+@@ -3,7 +3,6 @@ pl111_drm-y +=	pl111_display.o \
+ 		pl111_versatile.o \
+ 		pl111_drv.o
+ 
+-pl111_drm-$(CONFIG_ARCH_VEXPRESS) += pl111_vexpress.o
+ pl111_drm-$(CONFIG_ARCH_NOMADIK) += pl111_nomadik.o
+ pl111_drm-$(CONFIG_DEBUG_FS) += pl111_debugfs.o
+ 
 diff --git a/drivers/gpu/drm/pl111/pl111_versatile.c b/drivers/gpu/drm/pl111/pl111_versatile.c
-index 09aeaffb7660..8c2551088f26 100644
+index 8c2551088f26..1b55f977e945 100644
 --- a/drivers/gpu/drm/pl111/pl111_versatile.c
 +++ b/drivers/gpu/drm/pl111/pl111_versatile.c
-@@ -8,6 +8,7 @@
- #include <linux/of.h>
- #include <linux/of_platform.h>
- #include <linux/regmap.h>
-+#include <linux/vexpress.h>
+@@ -11,7 +11,6 @@
+ #include <linux/vexpress.h>
  
  #include "pl111_versatile.h"
- #include "pl111_vexpress.h"
-@@ -325,17 +326,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
+-#include "pl111_vexpress.h"
+ #include "pl111_drm.h"
+ 
+ static struct regmap *versatile_syscon_map;
+@@ -309,13 +308,110 @@ static const struct pl111_variant_data pl111_vexpress = {
+ 	.broken_clockdivider = true,
+ };
+ 
++#define VEXPRESS_FPGAMUX_MOTHERBOARD		0x00
++#define VEXPRESS_FPGAMUX_DAUGHTERBOARD_1	0x01
++#define VEXPRESS_FPGAMUX_DAUGHTERBOARD_2	0x02
++
++static int pl111_vexpress_clcd_init(struct device *dev, struct device_node *np,
++				    struct pl111_drm_dev_private *priv)
++{
++	struct platform_device *pdev;
++	struct device_node *root;
++	struct device_node *child;
++	struct device_node *ct_clcd = NULL;
++	struct regmap *map;
++	bool has_coretile_clcd = false;
++	bool has_coretile_hdlcd = false;
++	bool mux_motherboard = true;
++	u32 val;
++	int ret;
++
++	if (!IS_ENABLED(CONFIG_VEXPRESS_CONFIG))
++		return -ENODEV;
++
++	/*
++	 * Check if we have a CLCD or HDLCD on the core tile by checking if a
++	 * CLCD or HDLCD is available in the root of the device tree.
++	 */
++	root = of_find_node_by_path("/");
++	if (!root)
++		return -EINVAL;
++
++	for_each_available_child_of_node(root, child) {
++		if (of_device_is_compatible(child, "arm,pl111")) {
++			has_coretile_clcd = true;
++			ct_clcd = child;
++			break;
++		}
++		if (of_device_is_compatible(child, "arm,hdlcd")) {
++			has_coretile_hdlcd = true;
++			of_node_put(child);
++			break;
++		}
++	}
++
++	of_node_put(root);
++
++	/*
++	 * If there is a coretile HDLCD and it has a driver,
++	 * do not mux the CLCD on the motherboard to the DVI.
++	 */
++	if (has_coretile_hdlcd && IS_ENABLED(CONFIG_DRM_HDLCD))
++		mux_motherboard = false;
++
++	/*
++	 * On the Vexpress CA9 we let the CLCD on the coretile
++	 * take precedence, so also in this case do not mux the
++	 * motherboard to the DVI.
++	 */
++	if (has_coretile_clcd)
++		mux_motherboard = false;
++
++	if (mux_motherboard) {
++		dev_info(dev, "DVI muxed to motherboard CLCD\n");
++		val = VEXPRESS_FPGAMUX_MOTHERBOARD;
++	} else if (ct_clcd == dev->of_node) {
++		dev_info(dev,
++			 "DVI muxed to daughterboard 1 (core tile) CLCD\n");
++		val = VEXPRESS_FPGAMUX_DAUGHTERBOARD_1;
++	} else {
++		dev_info(dev, "core tile graphics present\n");
++		dev_info(dev, "this device will be deactivated\n");
++		return -ENODEV;
++	}
++
++	/* Call into deep Vexpress configuration API */
++	pdev = of_find_device_by_node(np);
++	if (!pdev) {
++		dev_err(dev, "can't find the sysreg device, deferring\n");
++		return -EPROBE_DEFER;
++	}
++
++	map = devm_regmap_init_vexpress_config(&pdev->dev);
++	if (IS_ERR(map)) {
++		platform_device_put(pdev);
++		return PTR_ERR(map);
++	}
++
++	ret = regmap_write(map, 0, val);
++	platform_device_put(pdev);
++	if (ret) {
++		dev_err(dev, "error setting DVI muxmode\n");
++		return -ENODEV;
++	}
++
++	priv->variant = &pl111_vexpress;
++	dev_info(dev, "initializing Versatile Express PL111\n");
++
++	return 0;
++}
++
+ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
+ {
+ 	const struct of_device_id *clcd_id;
+ 	enum versatile_clcd versatile_clcd_type;
+ 	struct device_node *np;
+ 	struct regmap *map;
+-	int ret;
+ 
+ 	np = of_find_matching_node_and_match(NULL, versatile_clcd_of_match,
+ 					     &clcd_id);
+@@ -326,17 +422,10 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
  	versatile_clcd_type = (enum versatile_clcd)clcd_id->data;
  
  	/* Versatile Express special handling */
--	if (versatile_clcd_type == VEXPRESS_CLCD_V2M) {
-+	if (IS_ENABLED(CONFIG_VEXPRESS_CONFIG) && versatile_clcd_type == VEXPRESS_CLCD_V2M) {
- 		struct platform_device *pdev;
--
--		/* Registers a driver for the muxfpga */
--		ret = vexpress_muxfpga_init();
--		if (ret) {
--			dev_err(dev, "unable to initialize muxfpga driver\n");
--			of_node_put(np);
--			return ret;
--		}
--
- 		/* Call into deep Vexpress configuration API */
- 		pdev = of_find_device_by_node(np);
- 		if (!pdev) {
-@@ -343,13 +335,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
- 			of_node_put(np);
- 			return -EPROBE_DEFER;
- 		}
--		map = dev_get_drvdata(&pdev->dev);
--		if (!map) {
--			dev_err(dev, "sysreg has not yet probed\n");
--			platform_device_put(pdev);
+-	if (IS_ENABLED(CONFIG_VEXPRESS_CONFIG) && versatile_clcd_type == VEXPRESS_CLCD_V2M) {
+-		struct platform_device *pdev;
+-		/* Call into deep Vexpress configuration API */
+-		pdev = of_find_device_by_node(np);
+-		if (!pdev) {
+-			dev_err(dev, "can't find the sysreg device, deferring\n");
 -			of_node_put(np);
 -			return -EPROBE_DEFER;
 -		}
-+		map = devm_regmap_init_vexpress_config(&pdev->dev);
-+		platform_device_put(pdev);
+-		map = devm_regmap_init_vexpress_config(&pdev->dev);
+-		platform_device_put(pdev);
++	if (versatile_clcd_type == VEXPRESS_CLCD_V2M) {
++		int ret = pl111_vexpress_clcd_init(dev, np, priv);
++		of_node_put(np);
++		return ret;
  	} else {
  		map = syscon_node_to_regmap(np);
  	}
+@@ -380,13 +469,6 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
+ 		priv->variant_display_disable = pl111_realview_clcd_disable;
+ 		dev_info(dev, "set up callbacks for RealView PL111\n");
+ 		break;
+-	case VEXPRESS_CLCD_V2M:
+-		priv->variant = &pl111_vexpress;
+-		dev_info(dev, "initializing Versatile Express PL111\n");
+-		ret = pl111_vexpress_clcd_init(dev, priv, map);
+-		if (ret)
+-			return ret;
+-		break;
+ 	default:
+ 		dev_info(dev, "unknown Versatile system controller\n");
+ 		break;
 diff --git a/drivers/gpu/drm/pl111/pl111_vexpress.c b/drivers/gpu/drm/pl111/pl111_vexpress.c
-index 350570fe06b5..37ed3f1da820 100644
+deleted file mode 100644
+index 37ed3f1da820..000000000000
 --- a/drivers/gpu/drm/pl111/pl111_vexpress.c
-+++ b/drivers/gpu/drm/pl111/pl111_vexpress.c
-@@ -94,45 +94,3 @@ int pl111_vexpress_clcd_init(struct device *dev,
- 
- 	return 0;
- }
--
++++ /dev/null
+@@ -1,96 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
 -/*
-- * This sets up the regmap pointer that will then be retrieved by
-- * the detection code in pl111_versatile.c and passed in to the
-- * pl111_vexpress_clcd_init() function above.
+- * Versatile Express PL111 handling
+- * Copyright (C) 2018 Linus Walleij
+- *
+- * This module binds to the "arm,vexpress-muxfpga" device on the
+- * Versatile Express configuration bus and sets up which CLCD instance
+- * gets muxed out on the DVI bridge.
 - */
--static int vexpress_muxfpga_probe(struct platform_device *pdev)
+-#include <linux/device.h>
+-#include <linux/module.h>
+-#include <linux/regmap.h>
+-#include <linux/vexpress.h>
+-#include <linux/platform_device.h>
+-#include <linux/of.h>
+-#include <linux/of_address.h>
+-#include <linux/of_platform.h>
+-#include "pl111_drm.h"
+-#include "pl111_vexpress.h"
+-
+-#define VEXPRESS_FPGAMUX_MOTHERBOARD		0x00
+-#define VEXPRESS_FPGAMUX_DAUGHTERBOARD_1	0x01
+-#define VEXPRESS_FPGAMUX_DAUGHTERBOARD_2	0x02
+-
+-int pl111_vexpress_clcd_init(struct device *dev,
+-			     struct pl111_drm_dev_private *priv,
+-			     struct regmap *map)
 -{
--	struct device *dev = &pdev->dev;
--	struct regmap *map;
--
--	map = devm_regmap_init_vexpress_config(&pdev->dev);
--	if (IS_ERR(map))
--		return PTR_ERR(map);
--	dev_set_drvdata(dev, map);
--
--	return 0;
--}
--
--static const struct of_device_id vexpress_muxfpga_match[] = {
--	{ .compatible = "arm,vexpress-muxfpga", },
--	{}
--};
--
--static struct platform_driver vexpress_muxfpga_driver = {
--	.driver = {
--		.name = "vexpress-muxfpga",
--		.of_match_table = of_match_ptr(vexpress_muxfpga_match),
--	},
--	.probe = vexpress_muxfpga_probe,
--};
--
--int vexpress_muxfpga_init(void)
--{
+-	struct device_node *root;
+-	struct device_node *child;
+-	struct device_node *ct_clcd = NULL;
+-	bool has_coretile_clcd = false;
+-	bool has_coretile_hdlcd = false;
+-	bool mux_motherboard = true;
+-	u32 val;
 -	int ret;
 -
--	ret = platform_driver_register(&vexpress_muxfpga_driver);
--	/* -EBUSY just means this driver is already registered */
--	if (ret == -EBUSY)
--		ret = 0;
--	return ret;
--}
-diff --git a/drivers/gpu/drm/pl111/pl111_vexpress.h b/drivers/gpu/drm/pl111/pl111_vexpress.h
-index 5d3681bb4c00..bb54864ca91e 100644
---- a/drivers/gpu/drm/pl111/pl111_vexpress.h
-+++ b/drivers/gpu/drm/pl111/pl111_vexpress.h
-@@ -10,8 +10,6 @@ int pl111_vexpress_clcd_init(struct device *dev,
- 			     struct pl111_drm_dev_private *priv,
- 			     struct regmap *map);
- 
--int vexpress_muxfpga_init(void);
+-	/*
+-	 * Check if we have a CLCD or HDLCD on the core tile by checking if a
+-	 * CLCD or HDLCD is available in the root of the device tree.
+-	 */
+-	root = of_find_node_by_path("/");
+-	if (!root)
+-		return -EINVAL;
 -
- #else
- 
- static inline int pl111_vexpress_clcd_init(struct device *dev,
-@@ -21,9 +19,4 @@ static inline int pl111_vexpress_clcd_init(struct device *dev,
- 	return -ENODEV;
- }
- 
--static inline int vexpress_muxfpga_init(void)
--{
+-	for_each_available_child_of_node(root, child) {
+-		if (of_device_is_compatible(child, "arm,pl111")) {
+-			has_coretile_clcd = true;
+-			ct_clcd = child;
+-			break;
+-		}
+-		if (of_device_is_compatible(child, "arm,hdlcd")) {
+-			has_coretile_hdlcd = true;
+-			of_node_put(child);
+-			break;
+-		}
+-	}
+-
+-	of_node_put(root);
+-
+-	/*
+-	 * If there is a coretile HDLCD and it has a driver,
+-	 * do not mux the CLCD on the motherboard to the DVI.
+-	 */
+-	if (has_coretile_hdlcd && IS_ENABLED(CONFIG_DRM_HDLCD))
+-		mux_motherboard = false;
+-
+-	/*
+-	 * On the Vexpress CA9 we let the CLCD on the coretile
+-	 * take precedence, so also in this case do not mux the
+-	 * motherboard to the DVI.
+-	 */
+-	if (has_coretile_clcd)
+-		mux_motherboard = false;
+-
+-	if (mux_motherboard) {
+-		dev_info(dev, "DVI muxed to motherboard CLCD\n");
+-		val = VEXPRESS_FPGAMUX_MOTHERBOARD;
+-	} else if (ct_clcd == dev->of_node) {
+-		dev_info(dev,
+-			 "DVI muxed to daughterboard 1 (core tile) CLCD\n");
+-		val = VEXPRESS_FPGAMUX_DAUGHTERBOARD_1;
+-	} else {
+-		dev_info(dev, "core tile graphics present\n");
+-		dev_info(dev, "this device will be deactivated\n");
+-		return -ENODEV;
+-	}
+-
+-	ret = regmap_write(map, 0, val);
+-	if (ret) {
+-		dev_err(dev, "error setting DVI muxmode\n");
+-		return -ENODEV;
+-	}
+-
 -	return 0;
 -}
+diff --git a/drivers/gpu/drm/pl111/pl111_vexpress.h b/drivers/gpu/drm/pl111/pl111_vexpress.h
+deleted file mode 100644
+index bb54864ca91e..000000000000
+--- a/drivers/gpu/drm/pl111/pl111_vexpress.h
++++ /dev/null
+@@ -1,22 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
 -
- #endif
+-struct device;
+-struct pl111_drm_dev_private;
+-struct regmap;
+-
+-#ifdef CONFIG_ARCH_VEXPRESS
+-
+-int pl111_vexpress_clcd_init(struct device *dev,
+-			     struct pl111_drm_dev_private *priv,
+-			     struct regmap *map);
+-
+-#else
+-
+-static inline int pl111_vexpress_clcd_init(struct device *dev,
+-					   struct pl111_drm_dev_private *priv,
+-					   struct regmap *map)
+-{
+-	return -ENODEV;
+-}
+-
+-#endif
 -- 
 2.20.1
 
