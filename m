@@ -2,85 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBDF81A3CCD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:11:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ACDB1A3CD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:29:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mSUqz0TPwkjozrpIl3ZXn6FWRH5eRg65llfEJVmU5zc=; b=d+8IvY1Eb1JWAB
-	lzSmPeVaxfb2GZRWw9DKC1noxtI1oBbtAp8izgw2EqKELi9lBBMtsUZAiM4hcg+EuA+qY5VWILdxG
-	aGirnvuOFhOnRD0rpgK8p1vbymX65zyrRomjjA99WMV4Hb76kWCdqJGEBcQkAgP8YVCCdBXbqp8T4
-	tr/E3E++ilhMwKnzKJ46ZQfEudNFVY11UYwzZkT8FUkmm25MBtHriNsTPkFRsTyC5AFlWgT6Dx+QX
-	tQLPSTEkfRdCcG4V/abSUpPDXpNhSOosJcWgIgsoDlKfuV3h66R81sqzvRvkRmJATYGxjwqPcuPdr
-	4D41hcNdvede7Q6p7bnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Afu7o0rTcISiBhr/rkQ4T76yr9bzvIOmGlZEN4Dzyr8=; b=W9DH8qY2O3g1Lg
+	CmNzZZeH9BSy5fbcWloc8LiXb0FYzIv3k5GhyCZVebBRCA36ZmkToAj7LoRounuS40NIOKlyEr6LR
+	cfsTec7hqQWenLn0uTLiDYsN383C7QPKFP833nj0rLwVy6Z59k/+QeFz41UvTr90ZqLVjXR+1C1/6
+	PJEnVP+AVe5YSvVxNIKtymqB0C0XH+sFk8yYBnxAxBjXejLmXkvtntL9zyg1lNUxZgHS0koNtzwNX
+	1ZjEM7nEPEbz/tc59HlgHcWoZfuHXGj0g01fIUqQKjdNO99BFaizSTKjspil15Eau0pCEodYADRKj
+	OCSI2e9lTGf9fHwpHQMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMgKN-0004LN-DU; Thu, 09 Apr 2020 23:11:19 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jMgbY-0004kD-P0; Thu, 09 Apr 2020 23:29:04 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMgKG-0004Km-28
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:11:13 +0000
-Received: by mail-il1-f196.google.com with SMTP id i14so331628ilr.11
+ id 1jMgbS-0004ji-PB
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:29:00 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id ng8so130014pjb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 16:11:12 -0700 (PDT)
+ Thu, 09 Apr 2020 16:28:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=j6nOAWhXcgV50dfI2kOZff7IGheVzW2uE0Ud7W3fojM=;
+ b=B0EmNRpPG3qUZ3ki1VFuqMMc+PMOwSxu3W+99zScDTZqHZppWGVrXFypjNErcBcb7d
+ 8su+rPppfd83ZmBiUPytOLnl4gEM7gf33O3I8Ox05Jc8EA3H3wCkqZ0HPDXom1Q4thVt
+ pRDSrZyUBqUTZ9sj4BnDE9pQO98BL1sBxGVaKQtHSUFFOIBQ0lcWLJvYjaNZrfq0q5O6
+ 2BRBR3aKkqsYP9A0vqHGPHwx5TI2udc0xKgTFmNUMIvvB28/T85dkLmsEZGmM83SZPFC
+ zrGpQpiU+eYkjZ2k0+JOJQBWmrAqUaPcdCQ1lt7JzgrhfsFK5O3nQgRI9MEFtwWrlMfl
+ O/Nw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=XHTHGCsgfXX19VGzpIF+rrRJOUUg2k/5itbti4Sluiw=;
- b=hHoELPLGaqvIfCoSrcuLTiAX468JZb1jO4aW27PapeHtWmptp0BOytiF2nVHS+4I7t
- S19cwe0w8NMYRXDqG6Bw3JUk2P5dqSw8sZH89AmLtEt7VBLxiZewZEr7miLCMKY6W5qE
- UJ9vjiZI2Bka1/qtBumSlbQxuLpGQv/Em/urjqs/RB0VmjKc8BODrQU5fmEKwWMjnrrc
- jxZGZpR/qZSChikNmFf2JW8JfhRXiBnZ9wPiTgtYheJYv8loaf206nuv46hFRoNNZD/V
- PSfpFsgMzwg7Y1NiwID4ouuemBTONXxo0+W0x25DQAb72fuYq6+sOqr66HYiVlLlfWVH
- 0vng==
-X-Gm-Message-State: AGi0Pua4nrxl98nY8e5NKFDM+t2XLZRXbe9b5IqCPdaav6po3D+qnRzm
- eVryzWQaJYfzf9eMikZKVkX4WMY=
-X-Google-Smtp-Source: APiQypLqo2zaWnSheojFEJB8E++9Zq1uWFEbh1m5g1x8qcvNxZ1Pn4QvM+fA/kuyDlypQvUKQCdWKQ==
-X-Received: by 2002:a92:912:: with SMTP id y18mr2357154ilg.299.1586473871414; 
- Thu, 09 Apr 2020 16:11:11 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.248])
- by smtp.gmail.com with ESMTPSA id h29sm157861ili.19.2020.04.09.16.11.09
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=j6nOAWhXcgV50dfI2kOZff7IGheVzW2uE0Ud7W3fojM=;
+ b=CVmpPWKgR96hDeo4KO3cVdg5pKT65/M0GwtbLD3IoMedl+ajlT+snGY0ydDTMSldTo
+ OqOCEKE2zDgDQN0cjEqSN6iE2iDg9h7dLoBK5vttTP1s5hNF5yo125CExe3uZRwklBRF
+ WIIbMljvC0HrdSHJuldyiWjjrv5I2D/OwhaTnBPkrfSMtrJkWjdWmj5og9wLNm0nl7KC
+ MSbZaK0gMNDLfjYh6IR72fk4yltzgpQZ4uNk0m4NTz8P+RTKLRAAUUNZmHCK00EJ/zXt
+ jgTZd+6rF4f6N7QLBMn7jMT8IPYdLFcJ6Xeyza2RZSDCn3wZR6PTTVZY4lu5Sql1zL3i
+ ZvXw==
+X-Gm-Message-State: AGi0PuZRHo2NRertGl61gkvE7FzcLMfRCD24+h4uDMu15bp4ifQZIp/1
+ /rzLPylcjBTcxAWIJ/hGtx8=
+X-Google-Smtp-Source: APiQypJkOAJgzdjrZ5GN/MIDJIBjwRM9IlRGCSU88exDh+QlIZEQ6V2hqaTExMrzbHebhtP4DehuRw==
+X-Received: by 2002:a17:90b:3585:: with SMTP id
+ mm5mr2132232pjb.168.1586474936962; 
+ Thu, 09 Apr 2020 16:28:56 -0700 (PDT)
+Received: from jiancai.svl.corp.google.com
+ ([2620:15c:2ce:0:b7ed:16a3:9dc0:21bb])
+ by smtp.googlemail.com with ESMTPSA id e14sm238783pjg.0.2020.04.09.16.28.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 16:11:10 -0700 (PDT)
-Received: (nullmailer pid 26485 invoked by uid 1000);
- Thu, 09 Apr 2020 23:11:08 -0000
-Date: Thu, 9 Apr 2020 17:11:08 -0600
-From: Rob Herring <robh@kernel.org>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v2 2/3] dt-bindings: counter: atmel-tcb-capture counter
-Message-ID: <20200409231108.GA25954@bogus>
-References: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
- <20200409141401.321222-3-kamel.bouhara@bootlin.com>
+ Thu, 09 Apr 2020 16:28:56 -0700 (PDT)
+From: Jian Cai <caij2003@gmail.com>
+To: 
+Subject: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
+Date: Thu,  9 Apr 2020 16:27:26 -0700
+Message-Id: <20200409232728.231527-1-caij2003@gmail.com>
+X-Mailer: git-send-email 2.26.0.110.g2183baf09c-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200409141401.321222-3-kamel.bouhara@bootlin.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_161112_107306_189B32F0 
-X-CRM114-Status: GOOD (  10.96  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200409_162858_841231_B397E1D9 
+X-CRM114-Status: GOOD (  13.60  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ provider [caij2003[at]gmail.com]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ in digit [caij2003[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,50 +100,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kamel Bouhara <kamel.bouhara@bootlin.com>, linux-iio@vger.kernel.org,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>, Peter.Smith@arm.com,
+ stefan@agner.ch, David Howells <dhowells@redhat.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, manojgupta@google.com,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "Joel Fernandes \(Google\)" <joel@joelfernandes.org>, caij2003@gmail.com,
+ clang-built-linux@googlegroups.com, ilie.halip@gmail.com,
+ Masahiro Yamada <masahiroy@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, samitolvanen@google.com,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Arnd Bergmann <arnd@arndb.de>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>, jiancai@google.com,
+ Doug Anderson <armlinux@m.disordat.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, ndesaulniers@google.com,
+ linux-kernel@vger.kernel.org, Patrick Bellasi <patrick.bellasi@arm.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Tejun Heo <tj@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu,  9 Apr 2020 16:14:00 +0200, Kamel Bouhara wrote:
-> Describe the devicetree binding for the ATMEL TCB counter. Each counter
-> blocks exposes three independent counters.
-> 
-> However, when configured in quadrature decoder, both channel <0> and <1>
-> are required for speed/position and rotation capture (yet only the
-> position is captured).
-> 
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> ---
->  .../bindings/counter/atmel-tcb-capture.yaml   | 35 +++++++++++++++++++
->  1 file changed, 35 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/counter/atmel-tcb-capture.yaml
-> 
+iwmmxt.S contains XScale instructions LLVM ARM backend does not support.
+Skip this file if LLVM integrated assemmbler or LLD is used to build ARM
+kernel.
 
-My bot found errors running 'make dt_binding_check' on your patch:
+Signed-off-by: Jian Cai <caij2003@gmail.com>
+---
+ arch/arm/Kconfig | 2 +-
+ init/Kconfig     | 6 ++++++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
 
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dts:20.17-32: Warning (reg_format): /example-0/timer@f800c000/timer@0:reg: property has invalid length (8 bytes) (#address-cells == 2, #size-cells == 1)
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dt.yaml: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dt.yaml: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dt.yaml: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dts:18.27-21.15: Warning (avoid_default_addr_size): /example-0/timer@f800c000/timer@0: Relying on default #address-cells value
-Documentation/devicetree/bindings/counter/atmel-tcb-capture.example.dts:18.27-21.15: Warning (avoid_default_addr_size): /example-0/timer@f800c000/timer@0: Relying on default #size-cells value
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 66a04f6f4775..39de8fc64a73 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -804,7 +804,7 @@ source "arch/arm/mm/Kconfig"
+ 
+ config IWMMXT
+ 	bool "Enable iWMMXt support"
+-	depends on CPU_XSCALE || CPU_XSC3 || CPU_MOHAWK || CPU_PJ4 || CPU_PJ4B
++	depends on !AS_IS_CLANG && !LD_IS_LLD && (CPU_XSCALE || CPU_XSC3 || CPU_MOHAWK || CPU_PJ4 || CPU_PJ4B)
+ 	default y if PXA27x || PXA3xx || ARCH_MMP || CPU_PJ4 || CPU_PJ4B
+ 	help
+ 	  Enable support for iWMMXt context switching at run time if
+diff --git a/init/Kconfig b/init/Kconfig
+index 1c12059e0f7e..b0ab3271e900 100644
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -19,6 +19,12 @@ config GCC_VERSION
+ config CC_IS_CLANG
+ 	def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
+ 
++config AS_IS_CLANG
++	def_bool $(success,$(AS) --version | head -n 1 | grep -q clang)
++
++config LD_IS_LLD
++	def_bool $(success,$(LD) --version | head -n 1 | grep -q LLD)
++
+ config CLANG_VERSION
+ 	int
+ 	default $(shell,$(srctree)/scripts/clang-version.sh $(CC))
+-- 
+2.26.0.110.g2183baf09c-goog
 
-See https://patchwork.ozlabs.org/patch/1268623
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
-
-Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
