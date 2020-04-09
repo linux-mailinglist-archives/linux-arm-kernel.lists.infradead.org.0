@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A3251A395C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 677681A395D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GM6mX5kJQ3YG5OcSwYGdrckWqtGrKP7q1Y/uYxqW+2A=; b=GTCOBLKfqwewrg
-	inT+5FVEKNMZyd2BWAruWlLWlyOJojjN4MrLw2zurlmj9Yc4Zw4nd+WgUO17vEI6CkRHpBRI8TStw
-	iY+Z5j0Z9+rFstSaDwnDJ4zGoi6WGC18RVTF65Y9kILxCaorlbQLlO2XXl+d1Mlt3DzB/M7BNVZB/
-	OtesPS3xp9Id6dpZ40biPdWemvscIqPV3WFYekIaNXGUL9kO29I4SkrfVLyO7vH6ED3DFAtj0FV2B
-	sJ6QCOMY2R0dNzKWnXvPjo9BrT/P8hg2KstRPCUjrZCsUbr72mJTS3AqqgrUOUJ3zIvTst3GZEL46
-	kdXFcJ5o4Kfmi2WsC3vg==;
+	List-Owner; bh=AU1Yt8W2fx2NLG2pl6y8ECklooPhvcEna4oBRIQXGrI=; b=cRcMC40sRCC2bf
+	EsPWz/quOSgRIalhadLqvL9ApLibq8F3qkZCQ11JhG9mn3UFxlHrPYR/csbtNbQXkvp+jjcuE12Tw
+	fMTjG0HEi6VTzmOWOAZvNHZuTx/uxM76NlqTHbcsV2bl/Uq9KvUchP045nkDGHNdd0fzH0sYB9KWx
+	sMqy7TjCyp0yJsvx+AJaGMYYpyZmwW21V9jnztX9beDEGX8rKtu+oD1E3d4Dskdhh/CkmWS2TV8yZ
+	1DsevwMok4AYMMDwM2ehCqe+VfTeJFckffngckMlMFqGlpcIS7WOknzWpk9Lb1HpVogRh+2tdq6Xv
+	TOIjz1BSDmDpoQmoLOmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMbNB-0006Y4-UL; Thu, 09 Apr 2020 17:53:53 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jMbNP-0006pA-NH; Thu, 09 Apr 2020 17:54:07 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMbMC-0005pf-OQ
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 17:52:54 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p10so12881016wrt.6
+ id 1jMbMD-0005qf-NV
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 17:52:55 +0000
+Received: by mail-wm1-x331.google.com with SMTP id v8so3072286wma.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 10:52:52 -0700 (PDT)
+ Thu, 09 Apr 2020 10:52:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+npoMRH1DogTx3QRDDmEwhJHjrDR5km4V6W1qEq1dIw=;
- b=icsrGpdRQJY9lszK58AQnbiy670BvHRajERyWY4p4p9uE5zH9pW+2+DWyU6grB83Q3
- oXn9h9KkLl36xZ9HU5i/vD8C5L9dRVSgBxB5pK8u/j20zUz/USaWrS01RNGUnyp/bDMJ
- tfPlemKjaYbjFXXugxm0hX6D0okBg5t6w5kskS64s7hQHXHtr6drjuDyWE9S9eKL1mNU
- YYG6TPJFD4lgcR9Lw7Z3uQcU6LcndAAWKLem9hgj9fnBIMqWVeQTAU1oW4oyXy3N45Hb
- Xs4FMgcTTISlc6WLt5O+MuC6ckB72wflNMeFgIP+pI8veVsMZ9YKhfbWw2OWkgIgbKP4
- v1MA==
+ bh=JXbS4Svzqk1Z8bCDsWfX5K++fFmOKh7LOIAzqa7Oph4=;
+ b=gwzJ4sCsFraPFBysmE88o+9ELSdwCXwGYyJx6m+SUAQiGeW/xmYk5E9kiaw/9Za3iK
+ mb9C6J5IcI087eLCLmRCVaLffbIoOcAMm6sWykYmhU8vwTVMVESkmfcGg7mIXtaDJLoq
+ wCnew9R+ynIxydvnyMINFn20RCYTgxfvvRDgCVDGfLhO1k4GLMBZiqMT+6s+ESPi5+PU
+ gk+9CeRXeJzqGxLEFtT7V8R83kYUwBaMIIy27EVTHq4LUgz/DXAaMCV7m6s6pfTpJ88t
+ taAHVf6/DHetqXQNNNnXXmwKfwxcWsfp2MAK8BlxDKWmquf5A+ypZRB7zFWbmJWZuv2U
+ fr4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+npoMRH1DogTx3QRDDmEwhJHjrDR5km4V6W1qEq1dIw=;
- b=WfzaS52IeF/JkhMk2cQqyBAmRlLrWIgMYOfYVxi/ZD+eyaY1LXhCnu2lfT5CRZc1Gt
- pL9vH/tqZhB7LcmJjT7klL50SVIvJAu4Kf4kWgnx8pU8leWXUVLoHB7EJ9YrvlEk17Qu
- 0og44ji1lvnBhlJWbeliLerX/n5gZEW7wJC3WaKQ4xYB05o/LbkYeUZrrSC+Y5sbCD86
- 4iPXA62A0tkpdrYWhtiZNQTig4WeekJPPrrEldO2GB7s2iVtmH60uUKd5P+eKhVTzR7X
- BcbG8vX69/MSduRUMmk0nj+mg01ou+LnayRh4ruUmEv2QfJQsN8eRwxh1R73vViCLXjc
- 68TQ==
-X-Gm-Message-State: AGi0Pubh7AoGybStpwQ2AGZXRS24GAdncSMWrcKCqd91E3+Y2enxVRF9
- ShOf3EkTqcX86l5PvxLBJn4=
-X-Google-Smtp-Source: APiQypLkNEMayEReLKHpNAw3KW7p+Ln/jI3qzu1rsT25+Lx1TXXou8ePxrBQpRZ8TpLH/DlfeODV3g==
-X-Received: by 2002:adf:fe4b:: with SMTP id m11mr341985wrs.20.1586454770160;
- Thu, 09 Apr 2020 10:52:50 -0700 (PDT)
+ bh=JXbS4Svzqk1Z8bCDsWfX5K++fFmOKh7LOIAzqa7Oph4=;
+ b=Xu1q5tPYrmEvhWJKO/0spRFyfxyH9BIzC6vLbsCms/+3coJryxJ8vDBwTSgONIhgfJ
+ qWzJAbPvQ3rgA5bkj+bdjdqqHcR/EgxyV+idSIRTGUxjcAGB0scidNOGBUaqjpF11FjR
+ fMFL5SM0h9VJy7dHa7vm/4WVVufk5ZfI6yY6u7b4UOVjMX3mUoUHmaABWt2DgeGNPc7z
+ bYUGyAmbQ9lg7PLzeCUraXU3WcYKMb3ZFQPdsZmh28KEFxsSS7yyCjHkgdXao4kJZb7C
+ NR1wdt5BeHREUhMzTPdAK7mGXv7wYC9UdGan9J0PwmXgDngEaDM7QEZLb+Aa4gRPIGsY
+ w1xQ==
+X-Gm-Message-State: AGi0PuYY9e/65ZUWO7ni1FbpDVKTMFsY+6roYoXWgwabNs1icD7IzuWz
+ +n+w0CU6LizrHxxzyCKU2Rs=
+X-Google-Smtp-Source: APiQypIOlJqf4MQPaE8pJ7IsdKAGi+rLG4dEYSpvHJFqoqxHl4SenXqyD0xjfN7zAWjMB9yvQpvNMA==
+X-Received: by 2002:a1c:6503:: with SMTP id z3mr1079964wmb.92.1586454772182;
+ Thu, 09 Apr 2020 10:52:52 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id k3sm4437176wmf.16.2020.04.09.10.52.49
+ by smtp.gmail.com with ESMTPSA id 68sm3200213wrm.65.2020.04.09.10.52.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 10:52:49 -0700 (PDT)
+ Thu, 09 Apr 2020 10:52:51 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 03/14] of: reserved-memory: Support multiple regions per
- device
-Date: Thu,  9 Apr 2020 19:52:27 +0200
-Message-Id: <20200409175238.3586487-4-thierry.reding@gmail.com>
+Subject: [PATCH v6 04/14] clk: tegra: Rename Tegra124 EMC clock source file
+Date: Thu,  9 Apr 2020 19:52:28 +0200
+Message-Id: <20200409175238.3586487-5-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200409175238.3586487-1-thierry.reding@gmail.com>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_105252_833495_098FCAB0 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20200409_105253_802834_157219A8 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:331 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,58 +111,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-While the lookup/initialization code already supports multiple memory
-regions per device, the release code will only ever release the first
-matching memory region.
-
-Enhance the code to release all matching regions. Each attachment of
-a region to a device is uniquely identifiable using a struct device
-pointer and a pointer to the memory region's struct reserved_mem.
+This code is only used on Tegra124, so rename it accordingly to make it
+more consistent with other file names.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/of/of_reserved_mem.c | 22 ++++++++++------------
- 1 file changed, 10 insertions(+), 12 deletions(-)
+ drivers/clk/tegra/Makefile                          | 2 +-
+ drivers/clk/tegra/{clk-emc.c => clk-tegra124-emc.c} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename drivers/clk/tegra/{clk-emc.c => clk-tegra124-emc.c} (100%)
 
-diff --git a/drivers/of/of_reserved_mem.c b/drivers/of/of_reserved_mem.c
-index ed2ff6f01d32..f61e8739502a 100644
---- a/drivers/of/of_reserved_mem.c
-+++ b/drivers/of/of_reserved_mem.c
-@@ -385,24 +385,22 @@ EXPORT_SYMBOL_GPL(of_reserved_mem_device_init_by_name);
-  */
- void of_reserved_mem_device_release(struct device *dev)
- {
--	struct rmem_assigned_device *rd;
--	struct reserved_mem *rmem = NULL;
-+	struct rmem_assigned_device *rd, *tmp;
-+	LIST_HEAD(release_list);
- 
- 	mutex_lock(&of_rmem_assigned_device_mutex);
--	list_for_each_entry(rd, &of_rmem_assigned_device_list, list) {
--		if (rd->dev == dev) {
--			rmem = rd->rmem;
--			list_del(&rd->list);
--			kfree(rd);
--			break;
--		}
-+	list_for_each_entry_safe(rd, tmp, &of_rmem_assigned_device_list, list) {
-+		if (rd->dev == dev)
-+			list_move_tail(&rd->list, &release_list);
- 	}
- 	mutex_unlock(&of_rmem_assigned_device_mutex);
- 
--	if (!rmem || !rmem->ops || !rmem->ops->device_release)
--		return;
-+	list_for_each_entry_safe(rd, tmp, &release_list, list) {
-+		if (rd->rmem && rd->rmem->ops && rd->rmem->ops->device_release)
-+			rd->rmem->ops->device_release(rd->rmem, dev);
- 
--	rmem->ops->device_release(rmem, dev);
-+		kfree(rd);
-+	}
- }
- EXPORT_SYMBOL_GPL(of_reserved_mem_device_release);
- 
+diff --git a/drivers/clk/tegra/Makefile b/drivers/clk/tegra/Makefile
+index 1f7c30f87ece..dec508ef2ada 100644
+--- a/drivers/clk/tegra/Makefile
++++ b/drivers/clk/tegra/Makefile
+@@ -14,7 +14,6 @@ obj-y					+= clk-tegra-audio.o
+ obj-y					+= clk-tegra-periph.o
+ obj-y					+= clk-tegra-fixed.o
+ obj-y					+= clk-tegra-super-gen4.o
+-obj-$(CONFIG_TEGRA_CLK_EMC)		+= clk-emc.o
+ obj-$(CONFIG_ARCH_TEGRA_2x_SOC)         += clk-tegra20.o
+ obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= clk-tegra20-emc.o
+ obj-$(CONFIG_ARCH_TEGRA_3x_SOC)         += clk-tegra30.o
+@@ -22,6 +21,7 @@ obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= clk-tegra20-emc.o
+ obj-$(CONFIG_ARCH_TEGRA_114_SOC)	+= clk-tegra114.o
+ obj-$(CONFIG_ARCH_TEGRA_124_SOC)	+= clk-tegra124.o
+ obj-$(CONFIG_TEGRA_CLK_DFLL)		+= clk-tegra124-dfll-fcpu.o
++obj-$(CONFIG_TEGRA_CLK_EMC)		+= clk-tegra124-emc.o
+ obj-$(CONFIG_ARCH_TEGRA_132_SOC)	+= clk-tegra124.o
+ obj-y					+= cvb.o
+ obj-$(CONFIG_ARCH_TEGRA_210_SOC)	+= clk-tegra210.o
+diff --git a/drivers/clk/tegra/clk-emc.c b/drivers/clk/tegra/clk-tegra124-emc.c
+similarity index 100%
+rename from drivers/clk/tegra/clk-emc.c
+rename to drivers/clk/tegra/clk-tegra124-emc.c
 -- 
 2.24.1
 
