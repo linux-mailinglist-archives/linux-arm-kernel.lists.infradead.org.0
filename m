@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E109D1A3363
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A32701A3362
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 13:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oK3/two1kRYGOJTjtAfsMk2BSvbpGLLKZqpN3Oaatf8=; b=ZmBd+AxkHbmYOX
-	s3zPrfr5hcdItDLVj1UMn0a6uRclOuCpzctIUuMiR8GsfTyx9rkFvJwDB4EMFDXRcKTNIItSWU78j
-	JlwhBnNxd9f02jKZvJLBVlWYp4xAz1giGf85W132ebi26t0so3NSImVnw6jRhO14VQnvCGBIFqOpQ
-	JL7byOPIfR5KyzrDSSPcgZrITkFxUSlY5CN+u0wE2g/dcJeW4b8FdZLgSN7qbENl4wJ7cLhdSdwea
-	ZrTbJTAzyuQ8jt7Jf/miqUkp8lKuMFNvx4o1lFqtgwjODV3Agiq4S2FmF8EbZDcXre3BTKyWeu+H0
-	lLexXeMyga3Oz8lrJ3Xw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MBV3hKlgInPghiIK7OFNEovx+PRXn83bvozjBT06vJE=; b=ZWXgEE4BPBgZnk
+	/Xh5VvWAn7LeTW1bP8dCxvD7Z8Kzq/OPTr6MnAx5jPPDmEtwp299Y3DunyhJrDAL+IHlPwPZBg+2m
+	QCYtowJIXGGPtnO/C1WZ8Pv6RdFPaUvWj5RUgRD/7USJ8rYoPJ3ZbCcS78IgmhWxcO7LCGPuRqwJI
+	SzcMR0i4KAdf2j7ESWb/oBt0OKiB/ldu+0SNDO/SdW6vHZyYJCpMFRO4XKEJNKEbELgpGenJWJbMc
+	ePJt7LqyF846KAs3Kh6C6nrycVilFBO0Ob8hO7h0WrjpNDpdc7o01zQwU/EY142MNVJ4XsVEl3JON
+	sL6It6Sk57eQ/dpRNpLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMVbn-00027L-Mq; Thu, 09 Apr 2020 11:44:35 +0000
+	id 1jMVbT-0001oc-3c; Thu, 09 Apr 2020 11:44:15 +0000
 Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMVbL-0001l9-D6
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:44:10 +0000
+ id 1jMVbL-0001ju-0g
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 11:44:09 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1586432648; h=Content-Transfer-Encoding: MIME-Version:
- Message-Id: Date: Subject: Cc: To: From: Sender;
- bh=TXEhcyucuYKWLJsGT3T9vXlvyVf4FPT2niPKR6PH99s=;
- b=EA4AfruyWoUSVDE3tSgwkB3RnW535GO2XAjvP5jNU3RVftOGrCupNZFuxyE/PjIDERymlc9N
- 9MLVCpHPse2R+6KdxHJOBibhJkzU0vEmHDY4c33UGFV7czC+ZIefV/Xzhsd7oCYz6EsMMPzR
- 93r/wB2qKYtc/LOfl2f6RBVyT2Q=
+ s=smtp; t=1586432646; h=Content-Transfer-Encoding: MIME-Version:
+ References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=ygeSdjv3qyXRxfKD3H52vRAiT9C9fDAwrd4y1KxJuvM=;
+ b=D4p0e1tty3IOUhMPOQZlB9bM6IdPkykrH0v9fT2/jozC3IeMgILqBKzeg/88R/IwxnpNfQoZ
+ RrBclRFqPIrWlglE4fiMOUEitNtN/q5r60jk/A/gWAxvkGRO0DlaOpILwp0VQ56dp+6Hi+QQ
+ bR45ZXGccLxtR2UKK3BehqkppK4=
 X-Mailgun-Sending-Ip: 104.130.122.27
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e8f0a77.7f3e13be5ea0-smtp-out-n01;
- Thu, 09 Apr 2020 11:43:51 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e8f0a7e.7ff83cc6bed8-smtp-out-n03;
+ Thu, 09 Apr 2020 11:43:58 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 2A262C43636; Thu,  9 Apr 2020 11:43:51 +0000 (UTC)
+ id 02DCAC433BA; Thu,  9 Apr 2020 11:43:57 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 0766BC433D2;
- Thu,  9 Apr 2020 11:43:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0766BC433D2
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id CDA40C433CB;
+ Thu,  9 Apr 2020 11:43:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org CDA40C433CB
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -62,15 +62,16 @@ To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
  Stephen Boyd <swboyd@chromium.org>
-Subject: [PATCHv2 0/3] Add coresight support for QCOM SC7180 SoC
-Date: Thu,  9 Apr 2020 17:13:35 +0530
-Message-Id: <cover.1586263250.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv2 1/3] coresight: etm4x: Add support for Qualcomm SC7180 SoC
+Date: Thu,  9 Apr 2020 17:13:36 +0530
+Message-Id: <996ca03f9d6785c692287ff1c13dd3f129a5ff3d.1586263250.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <cover.1586263250.git.saiprakash.ranjan@codeaurora.org>
+References: <cover.1586263250.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_044409_036370_EF579418 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200409_044407_152541_29D9A2D7 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -102,23 +103,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Patch 1 adds the ETM UCI IDs for Kryo 4XX CPU cores.
-Patch 2 adds the DT nodes for coresight components on SC7180.
-Patch 3 replaces ETM PIDs with UCI IDs for Kryo385 CPUs on SDM845.
+Add ETM UCI IDs for Qualcomm SC7180 SoC. It has 2
+big CPU cores based on Cortex-A76 and 6 LITTLE CPU
+cores based on Cortex-A55.
 
-v2:
- * Placed the DT properties for ports in one line as suggested by Stephen.
- * Add UCI IDs for SC7180 and SDM845(Kryo385 CPUs) as suggested by Suzuki.
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+Tested-by: Stephen Boyd <swboyd@chromium.org>
+---
+ drivers/hwtracing/coresight/coresight-etm4x.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Sai Prakash Ranjan (3):
-  coresight: etm4x: Add support for Qualcomm SC7180 SoC
-  arm64: dts: qcom: sc7180: Add Coresight support
-  coresight: etm4x: Replace ETM PIDs with UCI IDs for Kryo385
-
- arch/arm64/boot/dts/qcom/sc7180.dtsi          | 471 ++++++++++++++++++
- drivers/hwtracing/coresight/coresight-etm4x.c |   6 +-
- 2 files changed, 475 insertions(+), 2 deletions(-)
-
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index a90d757f7043..4fb4874981e1 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1556,6 +1556,8 @@ static const struct amba_id etm4_ids[] = {
+ 	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
+ 	CS_AMBA_ID(0x000bb802),			/* Qualcomm Kryo 385 Cortex-A55 */
+ 	CS_AMBA_ID(0x000bb803),			/* Qualcomm Kryo 385 Cortex-A75 */
++	CS_AMBA_UCI_ID(0x000bb805, uci_id_etm4),/* Qualcomm Kryo 4XX Cortex-A55 */
++	CS_AMBA_UCI_ID(0x000bb804, uci_id_etm4),/* Qualcomm Kryo 4XX Cortex-A76 */
+ 	CS_AMBA_UCI_ID(0x000cc0af, uci_id_etm4),/* Marvell ThunderX2 */
+ 	{},
+ };
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
