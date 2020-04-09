@@ -2,49 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BEDD1A3A83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:30:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 071BA1A3A6F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 21:18:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yy0WCG/lXVJS5TQ1XRembHNgyktK9zfzu+OXcy26bP0=; b=IXY6hs9PdsjxV7
-	QiEtoslDJwI4QFCj2dtiHxUS5faWkQBMDhwlKiJFz/Eunr57izvgBZXOk+1xmIMDcBPnnme3KKEWT
-	N4Wx6B1FMqvaP8hDyp2GW7EDNw2yTSumRxuYM8AbfqUWd0cnBLvoFZEj92D2qS6S6nRLPH+BEOEW7
-	YR+WUlPLyzcmf7SzJT8DqdBur1oolqm3orC7+0naZjEeLIUEWHK3gUEuzdmoEpgXK4CZEN2v8hOOg
-	bTC5kP2e5x6hqunfYtYjhJOQlfqnXp14b+PPYyBxMaUn2E1klnbt15Mryky1zpwHUCTXPAhTZw545
-	auXL7xV736f9eX/nYERw==;
+	List-Owner; bh=BCG6UVaKJiB9mwnzb6P2Y/BQ72BhvsUk44vPhEb2fVc=; b=SBSKMSWhClfmwW
+	BEgxm7hulQcI2WVjNGbJ7o+sZD16HbO1YGCpnNGZDOxw7rZmCB51/8kGGv7t8uvF0wjQvYrlm3gcT
+	8o3xWncS2GGc7pNKBuo6kmQfBKEAvVFaiNmS6KXuaSrdTQPb4I87XFP0v6plhS/zB0+JPti3h5yV+
+	oGFZxS9OmnLMUpuvYXlowh5g0TXjF/DLTkH8t08Rg5rlmZBRBDx7HtS1aLAYEQZZlmpzsTSXV8tiH
+	liQUMKzEowAu7GIe9Dz/9BR5z3p8c0YxTZfmBg4sXjS8eln8F+eok8OkWcu5X6EVWQ7bZux0wGh95
+	M4p6kIX4U3PIbdCDCbcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMcsq-00069V-MU; Thu, 09 Apr 2020 19:30:40 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jMcgo-0005wE-23; Thu, 09 Apr 2020 19:18:14 +0000
+Received: from mail-dm6nam11on2044.outbound.protection.outlook.com
+ ([40.107.223.44] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMcsh-0005yT-C7
- for linux-arm-kernel@bombadil.infradead.org; Thu, 09 Apr 2020 19:30:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=UtkfAb+OctstBJIdILKS1FBwP2Cp3vedcBC+0xJGhUE=; b=sAeY+nUzXtzEBuMWmGs/jmq21s
- HSuQ16oBmvY7wt/ML0qprzov8h/OORhr1n9Z5Zaa4lbfY8PrmQRIK4kho6WDA6mNiRviiBggw5Vah
- GINb6NOuRwyASJZUoOu+tw5oLvGggiBoS5QZknrQLMmGENQrU1NGWuhI1CuSahrZBmiBYqs44UaH5
- S2e/M4AjYBjqjnVUo5k4hR7X7GTl5XWkQo5YDjILvDua/zyEgXYyXm/LOCmTsqSOwNCUC4wfMCKkv
- egWpHCVYL43vHyOIZjFEXSwiKTZZKbItbRp9QrrV4E4ulrGITmkKMNpT2yLehfFOty6L2Jhvflod2
- j258gHVA==;
-Received: from mail-bn8nam11on2058.outbound.protection.outlook.com
- ([40.107.236.58] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMcbi-0006w0-0v
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:12:59 +0000
+ id 1jMcbf-0007NF-8g
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 19:13:04 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ElGWHadgKf5a7SDkfnnMKLAX1idqrzJzRKSqdmP0tJF/lBBr+ttQjTvJfu0ssIByOwZvKi66DgJfCmpCBJMk9l2sB1C1xCib0yiGBxn5Rg5XKgTDkYqui+YszmiCzWDbnVEXJdSlg+AMZg8nB39eznMiXjljJ1pPcVdT25c4KGifa/VLdYV1IOUo72w+q8ofByj36WlTzvW3k7E7p7up0s/jBurQWy9UC9VvXPLpRIKJ0Y5GwtY1K3x3IisHSRlKz0m0zU4aY0BujhHGd015MJwdGOqg0yjpOo6kA5UOVGTHgDqY3F4SghVD3c8MQkn3a04fNiKHvfZl7uoUlSxAJQ==
+ b=F786lz5YDBn91ogJwElS1mzJT05yEihYKMs7shzpbJ8GC45BpFjSdvW2x5w35zk3pGVGbd4oHYjHO77gyLV9cYhZi/57cTwMtVny2Zxi/kqcvsAp1YfylHedl5NltnG29JWc9TfPLWawqO9MaKFSI82ghjxALFc8fzo6emWj4Egmu/ZAgLnw2ataV0j1NCY1tL8nCEG43zfH3tpt3B5nss/i/dNF3PV6T+hGF6Uf/5SaRlz3SnfGVG/kW7INbpzEbi5iWKB5gTZHkml6AMgxN9qt8j1+nB9Ww/Jb5g+RU5KhEY3x2LoW74ld1JoDB1icZtHRUfEFfRsn+RvNWwTZEw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UtkfAb+OctstBJIdILKS1FBwP2Cp3vedcBC+0xJGhUE=;
- b=cfniobyZlttjFvV/4mqwVKl2psNH6hNqbpalr3gbYQZUSfarL/JBthvqjFGc9mlb9Hb+PQcrC4lNH81SjxQIB9U44CRw6mSUCFGoBDc9k7cCpQc9v0J3iS8XRGGZYnFy2od2qMd6n6tQfqrv6mGlRpG/Anv79/uzMKqTwSwvwtWnpRzSAL4d0V9ZN2ZGfUHGja/1yUAs0xAjPrYO6JAagNz5mnLivjepsH38uqRiB29g/ZAuXYtsVlr1ic1ozk/sFhFjmtxzz5QX5NZcir9Yvlh7FM5+SyCR0MEENJRxQLVCRCcBYzNvT6khmhDRomDIvdFGmfnMsUfZKg7S6Wv4/g==
+ bh=MYMpy/m/kT2XAeV+FuLIblvsW8H16frR16o5kpPnYbw=;
+ b=L+KhDkPhZBq5wP9EpXQ0NQXdn7Vox6Pu2JNgPL3R0D8bvPX+EH1s7aBMDgMnVFgFlxIXycYUWH1KWkCeqv3ZnMtfh2r7bAXIRhDTIuNzfh1gXRbvB5yVGBlMTDhV0W3+OU2TXO152ynclrqyhVnazq7XtlDDxXUxP7f56xImbbUYJSrK7alEtQkXhd+hVEUY0HMuYCM+kffGuPnSHXnVlOINll8s5M8xDJbvq8Z6LoI1SmIYGQfTjvoc05wOK2IgKrQ9YoMa8nidHB9uKW3L7l3+2zL8CFvnNHvtfaTUr5rmOoKPWxLzhVHf5eEoga+4H8NWla8kXl2Az4ZPgrKzqg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -52,16 +38,16 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UtkfAb+OctstBJIdILKS1FBwP2Cp3vedcBC+0xJGhUE=;
- b=lGnit14vCdZf7Eg6wNeSwLh3Km9PRY0iI9YGyQFp6nX9q88kXSCGlP4ixaMxTc5ftYLf518MqZIh+5cmmaOQefvUyXfuKvx/SlTvqg2H8vxRtAlg7/okvOuVo6MoGSqeSJj9bCme2OMAdwD0QC7Hk3gd8p/JFMIbmmj3wQ4lmN8=
-Received: from MN2PR14CA0016.namprd14.prod.outlook.com (2603:10b6:208:23e::21)
- by SN6PR02MB5342.namprd02.prod.outlook.com (2603:10b6:805:74::29)
+ bh=MYMpy/m/kT2XAeV+FuLIblvsW8H16frR16o5kpPnYbw=;
+ b=Oyv9fYBq3hlnP8bDe8pSLiTU5X7BbIouqEMU3hvO6xmNVwy+oQJIG+s7kkyWrCpHJQgNcxtaVFccOvgO0z7MyAnoJE7iePjvofiuinxdjfrnvj9MQKutodo+SksLaLWhPlTa1P0K2zKd2ZSjKMjNKi/lX1lbga3bHbzM8CARenQ=
+Received: from MN2PR16CA0016.namprd16.prod.outlook.com (2603:10b6:208:134::29)
+ by BN6PR02MB2404.namprd02.prod.outlook.com (2603:10b6:404:2b::18)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.20; Thu, 9 Apr
  2020 19:12:50 +0000
-Received: from BL2NAM02FT051.eop-nam02.prod.protection.outlook.com
- (2603:10b6:208:23e:cafe::e5) by MN2PR14CA0016.outlook.office365.com
- (2603:10b6:208:23e::21) with Microsoft SMTP Server (version=TLS1_2,
+Received: from BL2NAM02FT021.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:208:134:cafe::3f) by MN2PR16CA0016.outlook.office365.com
+ (2603:10b6:208:134::29) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.16 via Frontend
  Transport; Thu, 9 Apr 2020 19:12:50 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
@@ -72,28 +58,29 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT051.mail.protection.outlook.com (10.152.76.181) with Microsoft SMTP
+ BL2NAM02FT021.mail.protection.outlook.com (10.152.77.158) with Microsoft SMTP
  Server id 15.20.2900.15 via Frontend Transport; Thu, 9 Apr 2020 19:12:50
  +0000
-Received: from [149.199.38.66] (port=44311 helo=xsj-pvapsmtp01)
+Received: from [149.199.38.66] (port=44302 helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcb9-00060J-D7; Thu, 09 Apr 2020 12:12:23 -0700
+ id 1jMcb9-00060D-A9; Thu, 09 Apr 2020 12:12:23 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcbZ-0007NV-Rp; Thu, 09 Apr 2020 12:12:49 -0700
+ id 1jMcbZ-0007NV-Oj; Thu, 09 Apr 2020 12:12:49 -0700
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jMcbT-0007La-ED; Thu, 09 Apr 2020 12:12:43 -0700
+ id 1jMcbT-0007La-GO; Thu, 09 Apr 2020 12:12:43 -0700
 From: Jolly Shah <jolly.shah@xilinx.com>
 To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
  matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
  keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH v4 24/25] firmware: xilinx: Add sysfs to set shutdown scope
-Date: Thu,  9 Apr 2020 12:12:13 -0700
-Message-Id: <1586459534-8997-25-git-send-email-jolly.shah@xilinx.com>
+Subject: [PATCH v4 25/25] firmware: xilinx: Add sysfs and API to set boot
+ health status
+Date: Thu,  9 Apr 2020 12:12:14 -0700
+Message-Id: <1586459534-8997-26-git-send-email-jolly.shah@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
 References: <1586459534-8997-1-git-send-email-jolly.shah@xilinx.com>
@@ -104,40 +91,44 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(46966005)(186003)(70586007)(36756003)(26005)(8936002)(9786002)(81156014)(81166007)(70206006)(4326008)(7696005)(498600001)(5660300002)(54906003)(8676002)(107886003)(7416002)(44832011)(2616005)(6636002)(2906002)(356004)(6666004)(47076004)(336012)(426003);
+ SFS:(10009020)(4636009)(39860400002)(376002)(346002)(136003)(396003)(46966005)(26005)(186003)(6666004)(356004)(426003)(44832011)(7416002)(5660300002)(107886003)(336012)(2616005)(70206006)(70586007)(8936002)(81156014)(82740400003)(54906003)(9786002)(4326008)(36756003)(478600001)(7696005)(6636002)(8676002)(2906002)(316002)(81166007)(47076004);
  DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 70bc3e54-a723-4e42-7e09-08d7dcb9ff17
-X-MS-TrafficTypeDiagnostic: SN6PR02MB5342:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB53423C22E7C815B6D350B5F3B8C10@SN6PR02MB5342.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: cb03e767-73af-4cee-57f2-08d7dcb9ff0f
+X-MS-TrafficTypeDiagnostic: BN6PR02MB2404:
+X-Microsoft-Antispam-PRVS: <BN6PR02MB24041E30811FAC3C76A14C1BB8C10@BN6PR02MB2404.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
+X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
 X-Forefront-PRVS: 0368E78B5B
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: spfkOjKsCRjJ3KPONTci/YKDmf4I0pZDWOteQQxykvffaMHfC8MvC9WWLM79FULS6cVze2JYSGiNvNnXS74linS9AosGrSaXkB3KdGPecmrrLSBk94spxrC3Q/Z97KN60GpVRsCVPaEBXMff50lHE6cDYQDv2Dex5sfR9XoNASMC0eR2M5LqX2sZezVYae1cvs0RgxxaIeIdnAULECJ4s2ucsXXBUHOrdB3TiT0BRs/EeRXcDq4JoQB9vX1SxePdh7vfR+G+x5LUDBQ5Vo+KuVeP/yw8yeLtmwgW0rFYlxARrYXhOHFeexVf2OorG/V0eyo3Kcm2/1KElQpmhhLomoksgRX1J49dkTiQrXp0d+fD/8WtPRJHH8wd0qNs9lfHkDHnAuNhonjo/858oesOIBvj3Tu5AGjJbS7ng1H0nlZk2zyCUZqtb01t1CE0mhCFPWrYIKwbFcXScmmUy+2OJ6KAU2thcNFCfPDMJBnIgF9xlBMvhDKXdd400XbmEW0mgbnRyPgJgIPFxXNycN2tIA==
+X-Microsoft-Antispam-Message-Info: xEcM9csIqACiZrObfXVOFrvlRK/CiWPkGxwU/2cucTqzvhBHaya9YAxr4+1C9aHZRbyrmfg/L+vOUSIelDKnyhaTIm1ju7ovc+gZoiXmvhrqAeYbsRkRgKSLzR0SaOU+ilUkC40hsn7rRsR6AOgnqa1kjUKCdVEB9Qtg2RvUkmPROx7xMM5geNLG8gczzVCmadfvx8nHyU0EoZV5KmMOq6yn531P38dOjGZ3o7EeXSeNfMqCNwQ4mFr4KjnQOGxTu2aUpQxHfIdEvhsRIb0wiEkU+9N/j6tib7zjyIik5Q8HQAGzqcZ9gEIu4uryWrUXD2N1ivZPC+3rFk4uCPOZP27wjV3IBMBBIu4Ahh9SJiDBXt1i27l+WwhgBzZksW0gXF7zs52KEiTUZ0qJPXt1ZMFW3seDisiJOVtBKLnfI2kVlaLlx0URtyT6L1TXunaKYbJ/Iw0WsEOKBqv1T+sUIPEt/M7+rb778ttqWY2jZ4lAxub/vVlakPK+OGdIZtxvC13PQs8ir+PtwO7RtpF/Yg==
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:50.2839 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 70bc3e54-a723-4e42-7e09-08d7dcb9ff17
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2020 19:12:50.2310 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cb03e767-73af-4cee-57f2-08d7dcb9ff0f
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5342
-X-Spam-Note: CRM114 invocation failed
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2404
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200409_121255_327398_C59E4845 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.58 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [40.107.223.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.223.44 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,11 +140,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>,
- Stefan Krsmanovic <stefan.krsmanovic@aggios.com>,
- Rajan Vaja <rajan.vaja@xilinx.com>, linux-kernel@vger.kernel.org,
- rajanv@xilinx.com, Jolly Shah <jolly.shah@xilinx.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Tejas Patel <tejas.patel@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
+ linux-kernel@vger.kernel.org, rajanv@xilinx.com,
+ Jolly Shah <jolly.shah@xilinx.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -161,211 +150,150 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 
-The Linux shutdown functionality implemented via PSCI system_off does
-not include an option to set a scope, i.e. which parts of the system to
-shut down.
+Add sysfs interface to set boot health status from user space.
+Add API used by this interface to communicate with firmware.
 
-This patch creates sysfs that allows to set the shutdown scope for the
-next shutdown request. When the next shutdown is performed, the platform
-specific portion of PSCI-system_off can use the chosen shutdown scope.
+If PMUFW is compiled with CHECK_HEALTHY_BOOT, it will check the
+healthy bit on FPD WDT expiration. If healthy bit is set by a user
+application running in Linux, PMUFW will do APU only restart. If
+healthy bit is not set during FPD WDT expiration, PMUFW will do
+system restart.
 
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-Signed-off-by: Stefan Krsmanovic <stefan.krsmanovic@aggios.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- .../ABI/stable/sysfs-driver-firmware-zynqmp        | 32 +++++++
- drivers/firmware/xilinx/zynqmp.c                   | 98 +++++++++++++++++++++-
- include/linux/firmware/xlnx-zynqmp.h               | 12 +++
- 3 files changed, 141 insertions(+), 1 deletion(-)
+ .../ABI/stable/sysfs-driver-firmware-zynqmp        | 21 ++++++++++++
+ drivers/firmware/xilinx/zynqmp.c                   | 39 ++++++++++++++++++++++
+ include/linux/firmware/xlnx-zynqmp.h               |  7 ++++
+ 3 files changed, 67 insertions(+)
 
 diff --git a/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp b/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
-index 2e3aebd..554f30c 100644
+index 554f30c..00fa04c 100644
 --- a/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
 +++ b/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
-@@ -48,3 +48,35 @@ Description:
- 		# echo 0x1234ABCD > /sys/devices/platform/firmware\:zynqmp-firmware/pggs0
+@@ -80,3 +80,24 @@ Description:
+ 		# echo "subsystem" > /sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
  
  Users:		Xilinx
 +
-+What:		/sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
++What:		/sys/devices/platform/firmware\:zynqmp-firmware/health_status
 +Date:		March 2020
 +KernelVersion:	5.6
 +Contact:	"Jolly Shah" <jollys@xilinx.com>
 +Description:
-+		This sysfs interface allows to set the shutdown scope for the
-+		next shutdown request. When the next shutdown is performed, the
-+		platform specific portion of PSCI-system_off can use the chosen
-+		shutdown scope.
-+
-+		Following are available shutdown scopes(subtypes):
-+
-+		subsystem:	Only the APU along with all of its peripherals
-+				not used by other processing units will be
-+				shut down. This may result in the FPD power
-+				domain being shut down provided that no other
-+				processing unit uses FPD peripherals or DRAM.
-+		ps_only:	The complete PS will be shut down, including the
-+				RPU, PMU, etc.  Only the PL domain (FPGA)
-+				remains untouched.
-+		system:		The complete system/device is shut down.
++		This sysfs interface allows to set the health status. If PMUFW
++		is compiled with CHECK_HEALTHY_BOOT, it will check the healthy
++		bit on FPD WDT expiration. If healthy bit is set by a user
++		application running in Linux, PMUFW will do APU only restart. If
++		healthy bit is not set during FPD WDT expiration, PMUFW will do
++		system restart.
 +
 +		Usage:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
-+		# echo <scope> > /sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
++		Set healthy bit
++		# echo 1 > /sys/devices/platform/firmware\:zynqmp-firmware/health_status
 +
-+		Example:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
-+		# echo "subsystem" > /sys/devices/platform/firmware\:zynqmp-firmware/shutdown_scope
++		Unset healthy bit
++		# echo 0 > /sys/devices/platform/firmware\:zynqmp-firmware/health_status
 +
 +Users:		Xilinx
 diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-index 9ba376c..8d36618 100644
+index 8d36618..bfaf29a 100644
 --- a/drivers/firmware/xilinx/zynqmp.c
 +++ b/drivers/firmware/xilinx/zynqmp.c
-@@ -888,6 +888,102 @@ int zynqmp_pm_system_shutdown(const u32 type, const u32 subtype)
- 				   0, 0, NULL);
- }
+@@ -684,6 +684,21 @@ int zynqmp_pm_read_pggs(u32 index, u32 *value)
+ EXPORT_SYMBOL_GPL(zynqmp_pm_read_pggs);
  
-+/**
-+ * struct zynqmp_pm_shutdown_scope - Struct for shutdown scope
-+ * @subtype:	Shutdown subtype
-+ * @name:	Matching string for scope argument
+ /**
++ * zynqmp_pm_set_boot_health_status() - PM API for setting healthy boot status
++ * @value	Status value to be written
 + *
-+ * This struct encapsulates mapping between shutdown scope ID and string.
-+ */
-+struct zynqmp_pm_shutdown_scope {
-+	const enum zynqmp_pm_shutdown_subtype subtype;
-+	const char *name;
-+};
-+
-+static struct zynqmp_pm_shutdown_scope shutdown_scopes[] = {
-+	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM] = {
-+		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM,
-+		.name = "subsystem",
-+	},
-+	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY] = {
-+		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY,
-+		.name = "ps_only",
-+	},
-+	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM] = {
-+		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM,
-+		.name = "system",
-+	},
-+};
-+
-+static struct zynqmp_pm_shutdown_scope *selected_scope =
-+		&shutdown_scopes[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM];
-+
-+/**
-+ * zynqmp_pm_is_shutdown_scope_valid - Check if shutdown scope string is valid
-+ * @scope_string:	Shutdown scope string
++ * This function sets healthy bit value to indicate boot health status
++ * to firmware.
 + *
-+ * Return:		Return pointer to matching shutdown scope struct from
-+ *			array of available options in system if string is valid,
-+ *			otherwise returns NULL.
++ * @return      Returns status, either success or error+reason
 + */
-+static struct zynqmp_pm_shutdown_scope*
-+		zynqmp_pm_is_shutdown_scope_valid(const char *scope_string)
++int zynqmp_pm_set_boot_health_status(u32 value)
 +{
-+	int count;
-+
-+	for (count = 0; count < ARRAY_SIZE(shutdown_scopes); count++)
-+		if (sysfs_streq(scope_string, shutdown_scopes[count].name))
-+			return &shutdown_scopes[count];
-+
-+	return NULL;
++	return zynqmp_pm_invoke_fn(PM_IOCTL, 0, IOCTL_SET_BOOT_HEALTH_STATUS,
++				   value, 0, NULL);
 +}
 +
-+static ssize_t shutdown_scope_show(struct device *device,
++/**
+  * zynqmp_pm_reset_assert - Request setting of reset (1 - assert, 0 - release)
+  * @reset:		Reset to be configured
+  * @assert_flag:	Flag stating should reset be asserted (1) or
+@@ -984,6 +999,29 @@ static ssize_t shutdown_scope_store(struct device *device,
+ 
+ static DEVICE_ATTR_RW(shutdown_scope);
+ 
++static ssize_t health_status_store(struct device *device,
 +				   struct device_attribute *attr,
-+				   char *buf)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(shutdown_scopes); i++) {
-+		if (&shutdown_scopes[i] == selected_scope) {
-+			strcat(buf, "[");
-+			strcat(buf, shutdown_scopes[i].name);
-+			strcat(buf, "]");
-+		} else {
-+			strcat(buf, shutdown_scopes[i].name);
-+		}
-+		strcat(buf, " ");
-+	}
-+	strcat(buf, "\n");
-+
-+	return strlen(buf);
-+}
-+
-+static ssize_t shutdown_scope_store(struct device *device,
-+				    struct device_attribute *attr,
-+				    const char *buf, size_t count)
++				   const char *buf, size_t count)
 +{
 +	int ret;
-+	struct zynqmp_pm_shutdown_scope *scope;
++	unsigned int value;
 +
-+	scope = zynqmp_pm_is_shutdown_scope_valid(buf);
-+	if (!scope)
-+		return -EINVAL;
++	ret = kstrtouint(buf, 10, &value);
++	if (ret)
++		return ret;
 +
-+	ret = zynqmp_pm_system_shutdown(ZYNQMP_PM_SHUTDOWN_TYPE_SETSCOPE_ONLY,
-+					scope->subtype);
++	ret = zynqmp_pm_set_boot_health_status(value);
 +	if (ret) {
-+		pr_err("unable to set shutdown scope %s\n", buf);
++		dev_err(device, "unable to set healthy bit value to %u\n",
++			value);
 +		return ret;
 +	}
-+
-+	selected_scope = scope;
 +
 +	return count;
 +}
 +
-+static DEVICE_ATTR_RW(shutdown_scope);
++static DEVICE_ATTR_WO(health_status);
 +
  static ssize_t ggs_show(struct device *device,
  			struct device_attribute *attr,
  			char *buf,
-@@ -923,7 +1019,6 @@ static ssize_t ggs_store(struct device *device,
- 	ret = zynqmp_pm_write_ggs(reg, value);
- 	if (ret)
- 		count = -EFAULT;
--
- err:
- 	return count;
- }
-@@ -1047,6 +1142,7 @@ static struct attribute *zynqmp_firmware_attrs[] = {
- 	&dev_attr_pggs1.attr,
+@@ -1143,6 +1181,7 @@ static struct attribute *zynqmp_firmware_attrs[] = {
  	&dev_attr_pggs2.attr,
  	&dev_attr_pggs3.attr,
-+	&dev_attr_shutdown_scope.attr,
+ 	&dev_attr_shutdown_scope.attr,
++	&dev_attr_health_status.attr,
  	NULL,
  };
  
 diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index 2254c7c..c297333 100644
+index c297333..5968df8 100644
 --- a/include/linux/firmware/xlnx-zynqmp.h
 +++ b/include/linux/firmware/xlnx-zynqmp.h
-@@ -286,6 +286,18 @@ enum dll_reset_type {
- 	PM_DLL_RESET_PULSE,
+@@ -114,6 +114,8 @@ enum pm_ioctl_id {
+ 	IOCTL_READ_GGS = 13,
+ 	IOCTL_WRITE_PGGS = 14,
+ 	IOCTL_READ_PGGS = 15,
++	/* Set healthy bit value */
++	IOCTL_SET_BOOT_HEALTH_STATUS = 17,
  };
  
-+enum zynqmp_pm_shutdown_type {
-+	ZYNQMP_PM_SHUTDOWN_TYPE_SHUTDOWN,
-+	ZYNQMP_PM_SHUTDOWN_TYPE_RESET,
-+	ZYNQMP_PM_SHUTDOWN_TYPE_SETSCOPE_ONLY,
-+};
-+
-+enum zynqmp_pm_shutdown_subtype {
-+	ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM,
-+	ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY,
-+	ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM,
-+};
-+
- /**
-  * struct zynqmp_pm_query_data - PM query data
-  * @qid:	query ID
+ enum pm_query_id {
+@@ -354,6 +356,7 @@ int zynqmp_pm_read_ggs(u32 index, u32 *value);
+ int zynqmp_pm_write_pggs(u32 index, u32 value);
+ int zynqmp_pm_read_pggs(u32 index, u32 *value);
+ int zynqmp_pm_system_shutdown(const u32 type, const u32 subtype);
++int zynqmp_pm_set_boot_health_status(u32 value);
+ #else
+ static inline struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void)
+ {
+@@ -500,6 +503,10 @@ static inline int zynqmp_pm_system_shutdown(const u32 type, const u32 subtype)
+ {
+ 	return -ENODEV;
+ }
++static inline int zynqmp_pm_set_boot_health_status(u32 value)
++{
++	return -ENODEV;
++}
+ #endif
+ 
+ #endif /* __FIRMWARE_ZYNQMP_H__ */
 -- 
 2.7.4
 
