@@ -2,52 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2919D1A34D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83CDD1A34DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ji9q8NrBsyqf+Wci2/Nyi2nwPcA7f+UvkPyXMd3o54k=; b=qwhJNOaTdBLSVt
-	k+O74fxq+eUUyeBNkpZqjjf/nWAJOKv6tEh1QfMtlC/XGjSWOoaWemqZqbOyNQ1CB/AM1Oid6I5Jk
-	c3cXL+dgHyguAM31oaEopz5UbqXPYhHVFjmr4SOMDduB5d5mQMYc0ob7GeCRd5ptmSDCeoeqWflFH
-	FHiGOFEMNs5gXLSbUi68NYwKk2QNHo4/Y1mXK1kKkFTqATmQDc1zVXlzpQ2qjieeLxOnPNBbC96wl
-	u9+JKdqmT2eswm5/iC+Y42YmbXdjZQAJe7nnhsxhYvAX9ywb/OfOSrfRgPtGNpxolxeOz6kIzjBNx
-	r7cZGzIS1kSGODMgYmPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ldhf5ViAN2gBGVu9u+wb10VOmx9BKVGVmdeMgR+umrY=; b=OZEFgDp2er6WXf
+	ytTo7tqVja9Da7cwAAMl6g3XbpggY9QOdm2lC9zzJt1Ruc81IlVun4lsEJR8kaUJRiuNlNVkYAl2t
+	4rQHK2pUZ77uW/ZZsrqOmrjZuGxO19BFDq5pPfmF4caxMVDQguZ3gobkh3qzA6OrbLfpU8vTRZjjD
+	pEuWH/qGdjRNWJFmrTI1XU0uU5SS66Z9sLFkhsE+RnAPYVfYLXFLFP+9LrBddkISkRSZl4C0K/zBc
+	WJuoVNDrih9jKwFrGq+lNbs/FYh4/cnBwjXAcb7G4MLsUgYQiQircXUo/ZtAnJ4CTQMWKsJGNB8pr
+	rXGMpzOCRZ3WYYFxzNcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMXBI-0007QD-BN; Thu, 09 Apr 2020 13:25:20 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jMXCi-0007ls-K6; Thu, 09 Apr 2020 13:26:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMXBA-0006fY-2g; Thu, 09 Apr 2020 13:25:14 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 0A542297B00
-Subject: Re: [PATCH v2] arm64: dts: mt8173: Add gce setting in mmsys and
- display node
-To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
-References: <20200409055012.199320-1-hsinyi@chromium.org>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <63058ea1-9cce-2c2e-0041-9369033a7b33@collabora.com>
-Date: Thu, 9 Apr 2020 15:25:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jMXCb-0007lX-Oa
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 13:26:43 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62E882072F;
+ Thu,  9 Apr 2020 13:26:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586438801;
+ bh=cV6hSehyX6lw4Tv9+IglB58tggNYFJ6BalVHwJs8cI8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=H9uzvWqkZoza1WwcQy6lLYj+vDp8hvrlgELwPMjzCUzfYJ5JZZHkeINQiHfngaRFe
+ 7WOLZlaXP9ZxF2dUO/OHweSokzXySPzG3A+GzKiIDeTCRFX6R5SSdhlywofkdfwzLU
+ IdwaSKjwyHFZtTWRiPWDOJOI9+eAPT6vkZvZF0Jk=
+Date: Thu, 9 Apr 2020 14:26:34 +0100
+From: Will Deacon <will@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v3 21/26] arm64: Introduce asm/vdso/arch_timer.h
+Message-ID: <20200409132633.GD13078@willie-the-truck>
+References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
+ <20200313154345.56760-22-vincenzo.frascino@arm.com>
+ <20200315183151.GE32205@mbp>
+ <4914ad9c-3eaf-b328-f31b-5d3077ef272f@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200409055012.199320-1-hsinyi@chromium.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <4914ad9c-3eaf-b328-f31b-5d3077ef272f@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_062512_388698_3356DCEA 
-X-CRM114-Status: GOOD (  14.75  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200409_062641_820259_E2990A93 
+X-CRM114-Status: GOOD (  15.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,159 +79,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, linux-mips@vger.kernel.org,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hsin-Yi,
+Hi Vincenzo,
 
-Thanks for sending the patch upstream
+Sorry, I was on holiday when you posted this and it slipped through the
+cracks.
 
-On 9/4/20 7:50, Hsin-Yi Wang wrote:
-> In order to use GCE function, we need add some informations
-> into display node (mboxes, mediatek,gce-client-reg, mediatek,gce-events).
+On Mon, Mar 16, 2020 at 03:37:23PM +0000, Vincenzo Frascino wrote:
+> > On Fri, Mar 13, 2020 at 03:43:40PM +0000, Vincenzo Frascino wrote:
+> >> The vDSO library should only include the necessary headers required for
+> >> a userspace library (UAPI and a minimal set of kernel headers). To make
+> >> this possible it is necessary to isolate from the kernel headers the
+> >> common parts that are strictly necessary to build the library.
+> >>
+> >> Introduce asm/vdso/arch_timer.h to contain all the arm64 specific
+> >> code. This allows to replace the second isb() in __arch_get_hw_counter()
+> >> with a fake dependent stack read of the counter which improves the vdso
+> >> library peformances of ~4.5%. Below the results of vdsotest [1] ran for
+> >> 100 iterations.
+> > 
+> > The subject seems to imply a non-functional change but as you read, it
+> > gets a lot more complicated. Could you keep the functional change
+> > separate from the header clean-up, maybe submit it as an independent
+> > patch? And it shouldn't go in without Will's ack ;).
+> > 
 > 
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> Reviewed-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> It is fine by me. I will repost the series with the required fixes and without
+> this patch. This will give to me enough time to address Mark's comments as well
+> and to Will to have a proper look.
 
-Tested on my Acer Chromebook R13, so
+Please can you post whatever is left at -rc1? I'll have a look then, but
+let's stick to just moving code around rather than randomly changing it
+at the same time, ok?
 
-Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Thanks,
 
-> ---
-> change log:
-> v1->v2: align with
-> 19d8e335d58a ("dt-binding: gce: remove atomic_exec in mboxes property")
-> 60fa8c13ab1a ("drm/mediatek: Move gce event property to mutex device node")
-> ---
->  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 18 +++++++++++++++++-
->  1 file changed, 17 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> index ccb8e88a60c5..8337ba42845d 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> @@ -549,7 +549,7 @@ gce: mailbox@10212000 {
->  			interrupts = <GIC_SPI 135 IRQ_TYPE_LEVEL_LOW>;
->  			clocks = <&infracfg CLK_INFRA_GCE>;
->  			clock-names = "gce";
-> -			#mbox-cells = <3>;
-> +			#mbox-cells = <2>;
->  		};
->  
->  		mipi_tx0: mipi-dphy@10215000 {
-> @@ -916,6 +916,9 @@ mmsys: clock-controller@14000000 {
->  			assigned-clocks = <&topckgen CLK_TOP_MM_SEL>;
->  			assigned-clock-rates = <400000000>;
->  			#clock-cells = <1>;
-> +			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST>,
-> +				 <&gce 1 CMDQ_THR_PRIO_HIGHEST>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
->  		};
->  
->  		mdp_rdma0: rdma@14001000 {
-> @@ -996,6 +999,7 @@ ovl0: ovl@1400c000 {
->  			clocks = <&mmsys CLK_MM_DISP_OVL0>;
->  			iommus = <&iommu M4U_PORT_DISP_OVL0>;
->  			mediatek,larb = <&larb0>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
->  		};
->  
->  		ovl1: ovl@1400d000 {
-> @@ -1006,6 +1010,7 @@ ovl1: ovl@1400d000 {
->  			clocks = <&mmsys CLK_MM_DISP_OVL1>;
->  			iommus = <&iommu M4U_PORT_DISP_OVL1>;
->  			mediatek,larb = <&larb4>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xd000 0x1000>;
->  		};
->  
->  		rdma0: rdma@1400e000 {
-> @@ -1016,6 +1021,7 @@ rdma0: rdma@1400e000 {
->  			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
->  			iommus = <&iommu M4U_PORT_DISP_RDMA0>;
->  			mediatek,larb = <&larb0>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
->  		};
->  
->  		rdma1: rdma@1400f000 {
-> @@ -1026,6 +1032,7 @@ rdma1: rdma@1400f000 {
->  			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
->  			iommus = <&iommu M4U_PORT_DISP_RDMA1>;
->  			mediatek,larb = <&larb4>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
->  		};
->  
->  		rdma2: rdma@14010000 {
-> @@ -1036,6 +1043,7 @@ rdma2: rdma@14010000 {
->  			clocks = <&mmsys CLK_MM_DISP_RDMA2>;
->  			iommus = <&iommu M4U_PORT_DISP_RDMA2>;
->  			mediatek,larb = <&larb4>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
->  		};
->  
->  		wdma0: wdma@14011000 {
-> @@ -1046,6 +1054,7 @@ wdma0: wdma@14011000 {
->  			clocks = <&mmsys CLK_MM_DISP_WDMA0>;
->  			iommus = <&iommu M4U_PORT_DISP_WDMA0>;
->  			mediatek,larb = <&larb0>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
->  		};
->  
->  		wdma1: wdma@14012000 {
-> @@ -1056,6 +1065,7 @@ wdma1: wdma@14012000 {
->  			clocks = <&mmsys CLK_MM_DISP_WDMA1>;
->  			iommus = <&iommu M4U_PORT_DISP_WDMA1>;
->  			mediatek,larb = <&larb4>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
->  		};
->  
->  		color0: color@14013000 {
-> @@ -1064,6 +1074,7 @@ color0: color@14013000 {
->  			interrupts = <GIC_SPI 187 IRQ_TYPE_LEVEL_LOW>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
->  			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x3000 0x1000>;
->  		};
->  
->  		color1: color@14014000 {
-> @@ -1072,6 +1083,7 @@ color1: color@14014000 {
->  			interrupts = <GIC_SPI 188 IRQ_TYPE_LEVEL_LOW>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
->  			clocks = <&mmsys CLK_MM_DISP_COLOR1>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x4000 0x1000>;
->  		};
->  
->  		aal@14015000 {
-> @@ -1080,6 +1092,7 @@ aal@14015000 {
->  			interrupts = <GIC_SPI 189 IRQ_TYPE_LEVEL_LOW>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
->  			clocks = <&mmsys CLK_MM_DISP_AAL>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x5000 0x1000>;
->  		};
->  
->  		gamma@14016000 {
-> @@ -1088,6 +1101,7 @@ gamma@14016000 {
->  			interrupts = <GIC_SPI 190 IRQ_TYPE_LEVEL_LOW>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
->  			clocks = <&mmsys CLK_MM_DISP_GAMMA>;
-> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x6000 0x1000>;
->  		};
->  
->  		merge@14017000 {
-> @@ -1193,6 +1207,8 @@ mutex: mutex@14020000 {
->  			interrupts = <GIC_SPI 169 IRQ_TYPE_LEVEL_LOW>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
->  			clocks = <&mmsys CLK_MM_MUTEX_32K>;
-> +			mediatek,gce-events = <CMDQ_EVENT_MUTEX0_STREAM_EOF>,
-> +                                              <CMDQ_EVENT_MUTEX1_STREAM_EOF>;
->  		};
->  
->  		larb0: larb@14021000 {
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
