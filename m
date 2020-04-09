@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C73D1A3968
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:56:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E740E1A396B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LruBz8s/cBVa9bULjAufsTTTCWmsLLiJC+rtQwpXMXM=; b=X043Obg/oSZmYl
-	/5A3dhcxz163a74CnzxFfmfZkuXdg2Akc0t87GxIIDqMLQHpbSf6GGY4QvJxFmhZSh2KxenZGTJHE
-	+sT13zqyeLjRYavFBfLxvbiGE3Adx4XdTBv5LEqTYzjTcLK6XmOf34euC6guaRW2+xgsEUrWlNmzb
-	K0IqEBg032K7OVTKKMYfsVoXvOim7o6aRlt2wpmsw3QhvLvAUeb/YvWeyNLji4owCu8bPBpgdB0Nr
-	e1q3JqvVaVoDSd576gN1Xu0RlZoxvfMBmXTA3QyxKS/kW4kJXnxdM9JMLmzkU5KcpIW64f5BWXiP9
-	E7H14fub0AOaBCEEztRw==;
+	List-Owner; bh=fkX6nQ8u4oos+WO9+FABwqW4ALj6Px4b5gbN+KmLAqA=; b=McFGHvw+xrgBDi
+	X2AVkhhKGrLddx9kxu0KgZddE2DfXsqo1vjul3VFgvu3V4qZ6P/Sxc0RjMiyPrxz0JFMC/LjpxS4c
+	dKlf+sGNUsgqeLcgw12cvifurkYZ1huaGvO70AopMoWHSSRDbqsdJUoPLMXkg6CSI7LEgEwVs4svK
+	PtX47WiPYjf6KezCgwBpuHSFUEqiPZYSu1iM+0xAH6cEuzZwga1bhk++71dKrUS3Ym59dbGgFzy+Z
+	hLa+IS48ZJ4KK7N5pAm3q5tamTqQ24AItwPGhsHcJASYbjixVYIum1FEubPAO7kQfs9X49a5RbgIE
+	x9yCvA7Kds/lqkXybmJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMbPb-0002rq-Lg; Thu, 09 Apr 2020 17:56:23 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jMbQC-0003S1-Dz; Thu, 09 Apr 2020 17:57:00 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMbMY-0006BE-La
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 17:53:18 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k1so12955249wrm.3
+ id 1jMbMc-0006Dl-9P
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 17:53:21 +0000
+Received: by mail-wm1-x343.google.com with SMTP id d202so657062wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 10:53:14 -0700 (PDT)
+ Thu, 09 Apr 2020 10:53:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=fDFW17LWXFc/94mIfr99qe3Pgfej3YzVj6EQ4PJofks=;
- b=ZQg9DrpwZimQRjmcdrdaOBKmRP8ka2jN/MTap+6C2Z40SMdWAE6EEDvH+rjfmlY3Sv
- fGU7sjybDXwxub42UsTA3uiZ9LtX2gMgUXvEDb6VrQUI4+b6sdzUEts/fu5N+fZsiqWB
- v99YbzBGhWYNjm5pDy6qxGJFe5+Lw1+PW02JF6wqA/xCCgIlD+4KMnFRITgskztMy1rQ
- nD8Z6ibpjymE3JWFfEwkNYW16iXdQIgZxanr/6ED7gKRm81bbUoW+lODfbnEJRlxvvbF
- 7smdq1zXAFf0oVNRZVv/NBvZBM6F64JI0AOmukqI80+G/JaTl6hRGUjPBbQhItOi5YA5
- gP7w==
+ bh=kd2k1S51AJoxXmx0CELtwbdw2XFSi2rd3QAA3OfIUBE=;
+ b=CZc7Av/tDJHLKb+y3ZYorBL2C0GVxIn1jVZAODB13uuE2DVT3+L/Blmn9FPUp/rx2s
+ uCVIOh/jKKkm54vHf5q/5GZ5o9nXjkR8WlBGMEIR35UyL/6A5+Dam5JV864tVgSbkZpm
+ afcLSkwbBLZECsrj8QklCQGQPgYMb1O20ZQyQNT+H8z2FGfaR5m8nXLeqeoGjr7TxV+r
+ z0zRJwXDDP4q35I400nXE8Ewgg6N1F9jQ512zB4OW2tldbgYTrc/zt3GKeO/eEjVxPzR
+ PMoiW0DphxH/q8c9UVCSIpJamzL/oXASQeG/+IcLwbnBRhgDxhEAyMXP1rH6d1R+isvM
+ oCsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fDFW17LWXFc/94mIfr99qe3Pgfej3YzVj6EQ4PJofks=;
- b=oIMA/ZRgVHdj6vNyXOPUZShW7KrFfoOGUUZp7t5sRhCgzUFRltUl4AZDgawgC3/D3W
- pGXmL3EqFzBY+7FAETqXwJIw3zhzoAz7jA1ddD0/nZ3AGwyVt4FRNOpkJIW4uvORRK7O
- usV2xXOyKSlzwsqMczwWoGcbw+lKnQFBKP5qp9fWHgrk+qY74Ygc6EtxTdsvIzKZR7dJ
- sAAFzVX/jtPAzAi7LxikuBUhBinpsCL7QLSm4k3KaU9ndQTeXR6258d16FHOpgf1cHAv
- Most0ZZaxOoBDw1pUa0+KOWxxRO353y4T2vzNGlNPNDwK+X9yqk8umbJlWiXuql34K2t
- QY5Q==
-X-Gm-Message-State: AGi0PuYzURfI1NIyz/n3AoMxqjpnJrN8fPRlUecxbyBLcZVfE8MRlSll
- xp/Kp5Me0OFXZWn8pnB0mzg=
-X-Google-Smtp-Source: APiQypJ8M5w/KbN97Gv2Y1EF2Us8A4iAtlYtQsyDmJ6YsDXB6cP7fvFs5Sz1z0ZlYu9eeHqtXIBzuA==
-X-Received: by 2002:adf:ef08:: with SMTP id e8mr386611wro.66.1586454793113;
- Thu, 09 Apr 2020 10:53:13 -0700 (PDT)
+ bh=kd2k1S51AJoxXmx0CELtwbdw2XFSi2rd3QAA3OfIUBE=;
+ b=i9DOUPA2jE8xNfYktzyGO65A1QfvvzkabVr4O8q62Y/sfIj9L9lNlAtpUhGYp5VV7z
+ cTrmAzDRtsIEZ6PCxDRI0rOVmKqbvQIkYYdLjmRc3q0vvYhq3BWlxEEzt6G+qh+DZyMI
+ RcZftBH7tUKehn06VY76C0mIZz48i97HygM+SNTYHrFarASpu+5QzqiExpzXOZ3HEQW6
+ Qi2gddrwuN2RZlIbzPM/VheLiIFoF7gdN38KzpigTw19UPrydY7RBybbfpuuV7Z97tD3
+ w+EPk38dEoRRFTTu0kqruZP/NR++J9XS8Y2TEa1DhfMmnA/5y/Yx0/zXjBqxmUXQMDBa
+ jqWA==
+X-Gm-Message-State: AGi0PubjeyONKURoArkkgTdeykV47fJpKJhmlF4SJrHHLyrsch5RTiVU
+ rW5OIYNUJrZY6NhMyr4PsLs=
+X-Google-Smtp-Source: APiQypI9UtNZG2r3E9m02wmzNZ2WOjfhJifbGFR+gxfruOnf+Bfm1wLq7C79VH+JrzevKZ4ojZvrCA==
+X-Received: by 2002:a05:600c:2341:: with SMTP id
+ 1mr941714wmq.153.1586454795997; 
+ Thu, 09 Apr 2020 10:53:15 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id 145sm4849769wma.1.2020.04.09.10.53.11
+ by smtp.gmail.com with ESMTPSA id w11sm4460804wmi.32.2020.04.09.10.53.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 10:53:12 -0700 (PDT)
+ Thu, 09 Apr 2020 10:53:14 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 13/14] arm64: tegra: Hook up EMC cooling device
-Date: Thu,  9 Apr 2020 19:52:37 +0200
-Message-Id: <20200409175238.3586487-14-thierry.reding@gmail.com>
+Subject: [PATCH v6 14/14] clk: tegra: Remove the old emc_mux clock for Tegra210
+Date: Thu,  9 Apr 2020 19:52:38 +0200
+Message-Id: <20200409175238.3586487-15-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200409175238.3586487-1-thierry.reding@gmail.com>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_105314_794258_258CCE6F 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20200409_105318_382855_5D3319AB 
+X-CRM114-Status: GOOD (  14.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,81 +109,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+From: Joseph Lo <josephl@nvidia.com>
 
-The external memory controller can be used as a cooling device for the
-LPDDR chips. Hook it up to the "mem" thermal zone of the SOCTHERM block
-so that temperature polling can be enabled on the EMC when a given
-temperature is exceeded.
+Remove the old emc_mux clock and don't use the common EMC clock
+definition. This will be replaced by a new clock defined in the
+EMC driver.
 
+Signed-off-by: Joseph Lo <josephl@nvidia.com>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
-Changes in v6:
-- new patch
+ drivers/clk/tegra/clk-tegra210.c | 50 ++++++++++++++++++++------------
+ 1 file changed, 31 insertions(+), 19 deletions(-)
 
- arch/arm64/boot/dts/nvidia/tegra210.dtsi | 28 +++++++++++++++++++-----
- 1 file changed, 23 insertions(+), 5 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/nvidia/tegra210.dtsi b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
-index 3fa92dd8350b..a550e7b828e6 100644
---- a/arch/arm64/boot/dts/nvidia/tegra210.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
-@@ -895,7 +895,7 @@ mc: memory-controller@70019000 {
- 		#iommu-cells = <1>;
- 	};
+diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-tegra210.c
+index 798920ec50e9..f2bb188fbc6a 100644
+--- a/drivers/clk/tegra/clk-tegra210.c
++++ b/drivers/clk/tegra/clk-tegra210.c
+@@ -319,12 +319,6 @@ static unsigned long tegra210_input_freq[] = {
+ 	[8] = 12000000,
+ };
  
--	external-memory-controller@7001b000 {
-+	emc: external-memory-controller@7001b000 {
- 		compatible = "nvidia,tegra210-emc";
- 		reg = <0x0 0x7001b000 0x0 0x1000>,
- 		      <0x0 0x7001e000 0x0 0x1000>,
-@@ -904,6 +904,7 @@ external-memory-controller@7001b000 {
- 		clock-names = "emc";
- 		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
- 		nvidia,memory-controller = <&mc>;
-+		#cooling-cells = <2>;
- 	};
+-static const char *mux_pllmcp_clkm[] = {
+-	"pll_m", "pll_c", "pll_p", "clk_m", "pll_m_ud", "pll_mb", "pll_mb",
+-	"pll_p",
+-};
+-#define mux_pllmcp_clkm_idx NULL
+-
+ #define PLL_ENABLE			(1 << 30)
  
- 	sata@70020000 {
-@@ -1561,6 +1562,18 @@ mem {
- 				<&soctherm TEGRA124_SOCTHERM_SENSOR_MEM>;
+ #define PLLCX_MISC1_IDDQ		(1 << 27)
+@@ -2336,7 +2330,6 @@ static struct tegra_clk tegra210_clks[tegra_clk_max] __initdata = {
+ 	[tegra_clk_i2c2] = { .dt_id = TEGRA210_CLK_I2C2, .present = true },
+ 	[tegra_clk_uartc_8] = { .dt_id = TEGRA210_CLK_UARTC, .present = true },
+ 	[tegra_clk_mipi_cal] = { .dt_id = TEGRA210_CLK_MIPI_CAL, .present = true },
+-	[tegra_clk_emc] = { .dt_id = TEGRA210_CLK_EMC, .present = true },
+ 	[tegra_clk_usb2] = { .dt_id = TEGRA210_CLK_USB2, .present = true },
+ 	[tegra_clk_bsev] = { .dt_id = TEGRA210_CLK_BSEV, .present = true },
+ 	[tegra_clk_uartd_8] = { .dt_id = TEGRA210_CLK_UARTD, .present = true },
+@@ -2979,6 +2972,27 @@ static const char * const sor1_parents[] = {
  
- 			trips {
-+				dram_nominal: mem-nominal-trip {
-+					temperature = <50000>;
-+					hysteresis = <1000>;
-+					type = "passive";
-+				};
+ static u32 sor1_parents_idx[] = { 0, 2, 5, 6 };
+ 
++static const struct clk_div_table mc_div_table_tegra210[] = {
++	{ .val = 0, .div = 2 },
++	{ .val = 1, .div = 4 },
++	{ .val = 2, .div = 1 },
++	{ .val = 3, .div = 2 },
++	{ .val = 0, .div = 0 },
++};
 +
-+				dram_throttle: mem-throttle-trip {
-+					temperature = <70000>;
-+					hysteresis = <1000>;
-+					type = "active";
-+				};
++static void tegra210_clk_register_mc(const char *name,
++				     const char *parent_name)
++{
++	struct clk *clk;
 +
- 				mem-shutdown-trip {
- 					temperature = <103000>;
- 					hysteresis = <0>;
-@@ -1569,10 +1582,15 @@ mem-shutdown-trip {
- 			};
- 
- 			cooling-maps {
--				/*
--				 * There are currently no cooling maps,
--				 * because there are no cooling devices.
--				 */
-+				dram-passive {
-+					cooling-device = <&emc 0 0>;
-+					trip = <&dram_nominal>;
-+				};
++	clk = clk_register_divider_table(NULL, name, parent_name,
++					 CLK_IS_CRITICAL,
++					 clk_base + CLK_SOURCE_EMC,
++					 15, 2, CLK_DIVIDER_READ_ONLY,
++					 mc_div_table_tegra210, &emc_lock);
++	clks[TEGRA210_CLK_MC] = clk;
++}
 +
-+				dram-active {
-+					cooling-device = <&emc 1 1>;
-+					trip = <&dram_throttle>;
-+				};
- 			};
- 		};
+ static const char * const sor1_out_parents[] = {
+ 	/*
+ 	 * Bit 0 of the mux selects sor1_pad_clkout, irrespective of bit 1, so
+@@ -3021,7 +3035,8 @@ static const char * const la_parents[] = {
+ static struct tegra_clk_periph tegra210_la =
+ 	TEGRA_CLK_PERIPH(29, 7, 9, 0, 8, 1, TEGRA_DIVIDER_ROUND_UP, 76, 0, NULL, NULL);
  
+-static __init void tegra210_periph_clk_init(void __iomem *clk_base,
++static __init void tegra210_periph_clk_init(struct device_node *np,
++					    void __iomem *clk_base,
+ 					    void __iomem *pmc_base)
+ {
+ 	struct clk *clk;
+@@ -3067,16 +3082,6 @@ static __init void tegra210_periph_clk_init(void __iomem *clk_base,
+ 			CLK_SOURCE_LA, 0);
+ 	clks[TEGRA210_CLK_LA] = clk;
+ 
+-	/* emc mux */
+-	clk = clk_register_mux(NULL, "emc_mux", mux_pllmcp_clkm,
+-			       ARRAY_SIZE(mux_pllmcp_clkm), 0,
+-			       clk_base + CLK_SOURCE_EMC,
+-			       29, 3, 0, &emc_lock);
+-
+-	clk = tegra_clk_register_mc("mc", "emc_mux", clk_base + CLK_SOURCE_EMC,
+-				    &emc_lock);
+-	clks[TEGRA210_CLK_MC] = clk;
+-
+ 	/* cml0 */
+ 	clk = clk_register_gate(NULL, "cml0", "pll_e", 0, clk_base + PLLE_AUX,
+ 				0, 0, &pll_e_lock);
+@@ -3119,6 +3124,13 @@ static __init void tegra210_periph_clk_init(void __iomem *clk_base,
+ 	}
+ 
+ 	tegra_periph_clk_init(clk_base, pmc_base, tegra210_clks, &pll_p_params);
++
++	/* emc */
++	clk = tegra210_clk_register_emc(np, clk_base);
++	clks[TEGRA210_CLK_EMC] = clk;
++
++	/* mc */
++	tegra210_clk_register_mc("mc", "emc");
+ }
+ 
+ static void __init tegra210_pll_init(void __iomem *clk_base,
+@@ -3717,7 +3729,7 @@ static void __init tegra210_clock_init(struct device_node *np)
+ 
+ 	tegra_fixed_clk_init(tegra210_clks);
+ 	tegra210_pll_init(clk_base, pmc_base);
+-	tegra210_periph_clk_init(clk_base, pmc_base);
++	tegra210_periph_clk_init(np, clk_base, pmc_base);
+ 	tegra_audio_clk_init(clk_base, pmc_base, tegra210_clks,
+ 			     tegra210_audio_plls,
+ 			     ARRAY_SIZE(tegra210_audio_plls), 24576000);
 -- 
 2.24.1
 
