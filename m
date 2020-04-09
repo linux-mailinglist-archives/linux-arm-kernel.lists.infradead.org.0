@@ -2,59 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E64081A34F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:36:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 864071A351E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 15:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ofCG0p4hr1MZixNlLY2wpfh2PGmV8fE7hszBqTS68Xs=; b=px9MA5m56jnknT
-	cCkYpHq16rvVSNi5mGmh1Uf8xjmZznRqIa29P5pFApF2iniaNol5ClDFwpGBdzRT6tDdex2jDmGjc
-	ucKy8j/E6wOsncTuj4POtWGmRE+wuaendTSK7qOPGdeDDTX1M7g9bFFfEPJgOw6wJrtLKpYtGhGuj
-	NArQVNHTOCJkr1CQh148I67GGOF8wfgutq7QHF35gagdYzjWZJS+kbsErg+QLeYsW4HCQdrB778Wq
-	DVuCnVa6EdrCNO09OfRcBKJ4e4ayqM7xSeTTfzGlbmDxPGYLQ8PdngZaFsHcbtpFluG9zlV7TSLwT
-	FVeyzPBXm6L9Fym3SGyQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=huMJ9jFhZa/UpyUDAxsIgNzhIlpisdq689DAND9ZBhU=; b=iDLBjv1wXIelIT
+	ST0uVh70/3318PtphF1gl/swCfJEow6cUZUB2s9LS3nCH5417ZKGlnN6ACadM0D2UMmcjmSGGoDRU
+	iaq/kFJliXntyiuefoJSqeLWYMXghzdn8FK4Qos7BgighxFBTQxrRkWGj3mf9oBgpNf/IkeeQmw1p
+	WS0ptD2RYNVLqEnx7/jgJTQgqoefoJcxncnu5Ra4IMbKfZL4lZZZkhVf6O5gLTl0nf3HqDMKREYHa
+	j3GFzkssUL3FXZbGKhBTxhBvIV5QTnhmVmpYxKHzGzBK0Fiyq5sk6MqS7u7f2seR7w19uF8lYNHaD
+	84Zr/rLFiFtdjIVwmoYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMXLt-00051v-5C; Thu, 09 Apr 2020 13:36:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMXLk-00050l-O9
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 13:36:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD66930E;
- Thu,  9 Apr 2020 06:36:07 -0700 (PDT)
-Received: from [10.37.8.193] (unknown [10.37.8.193])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B1603F73D;
- Thu,  9 Apr 2020 06:36:03 -0700 (PDT)
-Subject: Re: [PATCH v3 21/26] arm64: Introduce asm/vdso/arch_timer.h
-To: Will Deacon <will@kernel.org>
-References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-22-vincenzo.frascino@arm.com>
- <20200315183151.GE32205@mbp> <4914ad9c-3eaf-b328-f31b-5d3077ef272f@arm.com>
- <20200409132633.GD13078@willie-the-truck>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <d578db85-7581-9bbb-2dab-25555e424ceb@arm.com>
-Date: Thu, 9 Apr 2020 14:36:48 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jMXYV-0002gM-M1; Thu, 09 Apr 2020 13:49:19 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMXYL-0002fq-Rm
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 13:49:11 +0000
+Received: by mail-ua1-x941.google.com with SMTP id m18so3932550uap.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 06:49:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5dJ2iz6mYeufR/3a819TAwvmat0FG6WlCPrzsZs/LR0=;
+ b=amKfqnd8WQyQUAwi4cZoNrTICQeFaNVJPH28XmKBDQXacysYodktIyiN2ndQx+TQcv
+ bE1YQidGEZu1EqGjm0MH4mmpq5nA+42ldSSrTL99PS28PvRiy5Hu36Cw1+BHd0Q73auH
+ i7MxRDbVc1bfVrS2iATOcjNUHRMwaGOf7ARFElgadRaI+Se1QV8mAOs2BNZiqLtpCn8c
+ oTRo6ATdFF9BsWVB81GBQe4ny1no9JSpdhqD2Z9AjhLDI+EVj/kkJjI4KioULc4bTIrU
+ 53JZXLEI3Y9kZK43il6Z+a7GkDur/yKP+teUqIU/+86Cx0fcoAj2NCUItb1asfK4YGnz
+ WjZw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5dJ2iz6mYeufR/3a819TAwvmat0FG6WlCPrzsZs/LR0=;
+ b=XmoVMxPV2JzSFgCHZf0XF938YKPS38Cx8x0hfjFgOfr6gVWIEuJ8OF+Aaqzhw37jhd
+ pTvEZQ78f6aFkUHSvdwpzr/GKC2EYIPj9t/H2K0kjznX0b/4nZfwz/Vn523NNVlOsJ52
+ ZlgoHk+nduoXqyZmQkhLbz9W07A7DOso9iFgMy2PUJ2BStsDFxzmDIDLo/p3lQBwJUa5
+ LlBEnbXw1rKEYRbZl+uuMg+5LnNIi0iekwZ1OWXBgmu6AGBeGJn8AASkgcs8rZ2jLukU
+ ii4ObPBofZPbI/nxc394A9N1in7KC6HKT4kpTQOu+gph8+9ompRFd3AgMspt3rKB+wlw
+ sHDA==
+X-Gm-Message-State: AGi0PuY1AJgZAG0bEbbBgT4CeGm8gOlKXfKay6w0uEoR1za2Po+wC+K5
+ uwbCpu7FDdmhMPuEQqyk+j4rTqfLciMyy1gmnb+X4A==
+X-Google-Smtp-Source: APiQypJeghsuGIyn0WvqoYX5wxkTIWjxtH/G1Qe+Ftm6KAYOlTTo2AJGBIWDmRQ2iRf8Hp4GTBdezU70qfNWPExhJhA=
+X-Received: by 2002:ab0:654c:: with SMTP id x12mr9506156uap.48.1586440147159; 
+ Thu, 09 Apr 2020 06:49:07 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200409132633.GD13078@willie-the-truck>
-Content-Language: en-US
+References: <1586407908-27139-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1586407908-27139-1-git-send-email-Anson.Huang@nxp.com>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Thu, 9 Apr 2020 19:18:56 +0530
+Message-ID: <CAHLCerPi36z4z4DLmP9czEp8aw8yQq7EHAtHdCFLO2ZVYBZsRA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: thermal: Convert i.MX to json-schema
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_063608_836547_204D3A67 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200409_064909_968566_A6DD77A7 
+X-CRM114-Status: GOOD (  24.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,73 +87,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>, linux-mips@vger.kernel.org,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
- Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <Linux-imx@nxp.com>, kernel@pengutronix.de,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ lakml <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
+Hi Anson,
 
-On 4/9/20 2:26 PM, Will Deacon wrote:
-> Hi Vincenzo,
-> 
-> Sorry, I was on holiday when you posted this and it slipped through the
-> cracks.
-> 
+On Thu, Apr 9, 2020 at 10:29 AM Anson Huang <Anson.Huang@nxp.com> wrote:
+>
+> Convert the i.MX thermal binding to DT schema format using json-schema
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  .../devicetree/bindings/thermal/imx-thermal.txt    | 61 --------------
+>  .../devicetree/bindings/thermal/imx-thermal.yaml   | 97 ++++++++++++++++++++++
+>  2 files changed, 97 insertions(+), 61 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.txt
+>  create mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.txt b/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> deleted file mode 100644
+> index 823e417..0000000
+> --- a/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> +++ /dev/null
+> @@ -1,61 +0,0 @@
+> -* Temperature Monitor (TEMPMON) on Freescale i.MX SoCs
+> -
+> -Required properties:
+> -- compatible : must be one of following:
+> -  - "fsl,imx6q-tempmon" for i.MX6Q,
+> -  - "fsl,imx6sx-tempmon" for i.MX6SX,
+> -  - "fsl,imx7d-tempmon" for i.MX7S/D.
+> -- interrupts : the interrupt output of the controller:
+> -  i.MX6Q has one IRQ which will be triggered when temperature is higher than high threshold,
+> -  i.MX6SX and i.MX7S/D have two more IRQs than i.MX6Q, one is IRQ_LOW and the other is IRQ_PANIC,
+> -  when temperature is below than low threshold, IRQ_LOW will be triggered, when temperature
+> -  is higher than panic threshold, system will auto reboot by SRC module.
+> -- fsl,tempmon : phandle pointer to system controller that contains TEMPMON
+> -  control registers, e.g. ANATOP on imx6q.
+> -- nvmem-cells: A phandle to the calibration cells provided by ocotp.
+> -- nvmem-cell-names: Should be "calib", "temp_grade".
+> -
+> -Deprecated properties:
+> -- fsl,tempmon-data : phandle pointer to fuse controller that contains TEMPMON
+> -  calibration data, e.g. OCOTP on imx6q.  The details about calibration data
+> -  can be found in SoC Reference Manual.
+> -
+> -Direct access to OCOTP via fsl,tempmon-data is incorrect on some newer chips
+> -because it does not handle OCOTP clock requirements.
+> -
+> -Optional properties:
+> -- clocks : thermal sensor's clock source.
+> -
+> -Example:
+> -ocotp: ocotp@21bc000 {
+> -       #address-cells = <1>;
+> -       #size-cells = <1>;
+> -       compatible = "fsl,imx6sx-ocotp", "syscon";
+> -       reg = <0x021bc000 0x4000>;
+> -       clocks = <&clks IMX6SX_CLK_OCOTP>;
+> -
+> -       tempmon_calib: calib@38 {
+> -               reg = <0x38 4>;
+> -       };
+> -
+> -       tempmon_temp_grade: temp-grade@20 {
+> -               reg = <0x20 4>;
+> -       };
+> -};
+> -
+> -tempmon: tempmon {
+> -       compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
+> -       interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+> -       fsl,tempmon = <&anatop>;
+> -       nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
+> -       nvmem-cell-names = "calib", "temp_grade";
+> -       clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
+> -};
+> -
+> -Legacy method (Deprecated):
+> -tempmon {
+> -       compatible = "fsl,imx6q-tempmon";
+> -       fsl,tempmon = <&anatop>;
+> -       fsl,tempmon-data = <&ocotp>;
+> -       clocks = <&clks 172>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> new file mode 100644
+> index 0000000..ad12622
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> @@ -0,0 +1,97 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/imx-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP i.MX Thermal Binding
+> +
+> +maintainers:
+> +  - Anson Huang <Anson.Huang@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - fsl,imx6q-tempmon
+> +              - fsl,imx6sx-tempmon
+> +              - fsl,imx7d-tempmon
+> +
 
-No issue at all. Thank you for getting back to me.
+> +  interrupts:
+> +    description: |
+> +      The interrupt output of the controller, the IRQ will be triggered
+> +      when temperature is higher than high threshold.
+> +    maxItems: 1
+> +
 
-> On Mon, Mar 16, 2020 at 03:37:23PM +0000, Vincenzo Frascino wrote:
->>> On Fri, Mar 13, 2020 at 03:43:40PM +0000, Vincenzo Frascino wrote:
->>>> The vDSO library should only include the necessary headers required for
->>>> a userspace library (UAPI and a minimal set of kernel headers). To make
->>>> this possible it is necessary to isolate from the kernel headers the
->>>> common parts that are strictly necessary to build the library.
->>>>
->>>> Introduce asm/vdso/arch_timer.h to contain all the arm64 specific
->>>> code. This allows to replace the second isb() in __arch_get_hw_counter()
->>>> with a fake dependent stack read of the counter which improves the vdso
->>>> library peformances of ~4.5%. Below the results of vdsotest [1] ran for
->>>> 100 iterations.
->>>
->>> The subject seems to imply a non-functional change but as you read, it
->>> gets a lot more complicated. Could you keep the functional change
->>> separate from the header clean-up, maybe submit it as an independent
->>> patch? And it shouldn't go in without Will's ack ;).
->>>
->>
->> It is fine by me. I will repost the series with the required fixes and without
->> this patch. This will give to me enough time to address Mark's comments as well
->> and to Will to have a proper look.
-> 
-> Please can you post whatever is left at -rc1? I'll have a look then, but
-> let's stick to just moving code around rather than randomly changing it
-> at the same time, ok?
-> 
+imx6sx and imx7d have 3 interrupts each. So you need an if clause to
+change the interrupt number based on what compatible is provided. See
+qcom-tsens.yaml for an example.
 
-Sure, I will try to re-post it by -rc1 and take on board your comments.
+> +  nvmem-cells:
+> +    description: |
+> +      Phandle to the calibration cells provided by ocotp for calibration
+> +      data and temperature grade.
+> +    maxItems: 2
+> +
+> +  nvmem-cell-names:
+> +    maxItems: 2
+> +    items:
+> +      - const: calib
+> +      - const: temp_grade
+> +
+> +  fsl,tempmon:
+> +    description: |
+> +      Phandle pointer to system controller that contains TEMPMON control
+> +      registers, e.g. ANATOP on imx6q.
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
 
-> Thanks,
-> 
-> Will
-> 
+Nit: move $ref line above description. IMO it makes the binding easier to read.
 
--- 
-Regards,
-Vincenzo
+> +
+> +  fsl,tempmon-data:
+> +    description: |
+> +      Deprecated property, phandle pointer to fuse controller that contains
+> +      TEMPMON calibration data, e.g. OCOTP on imx6q. The details about
+> +      calibration data can be found in SoC Reference Manual.
+> +    $ref: '/schemas/types.yaml#/definitions/phandle'
+
+Nit: move $ref line above description. IMO it makes the binding easier to read.
+
+> +
+> +  clocks:
+> +    description: |
+> +      Thermal sensor's clock source.
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - fsl,tempmon
+> +  - clocks
+
+Clocks was an optional property before, are you sure?
+
+> +  - nvmem-cells
+> +  - nvmem-cell-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx6sx-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    ocotp: ocotp@21bc000 {
+> +         #address-cells = <1>;
+> +         #size-cells = <1>;
+> +         compatible = "fsl,imx6sx-ocotp", "syscon";
+> +         reg = <0x021bc000 0x4000>;
+> +         clocks = <&clks IMX6SX_CLK_OCOTP>;
+> +
+> +         tempmon_calib: calib@38 {
+> +             reg = <0x38 4>;
+> +         };
+> +
+> +         tempmon_temp_grade: temp-grade@20 {
+> +             reg = <0x20 4>;
+> +         };
+> +    };
+> +
+> +    tempmon: tempmon {
+> +         compatible = "fsl,imx6sx-tempmon";
+> +         interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+> +         fsl,tempmon = <&anatop>;
+> +         nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
+> +         nvmem-cell-names = "calib", "temp_grade";
+> +         clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
+> +    };
+> +
+> +...
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
