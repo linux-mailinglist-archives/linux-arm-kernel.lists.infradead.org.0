@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D75C1A3152
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:55:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CEF81A3165
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 10:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AuhhpFd6yLm9GNR9d7doVPxVZdl/oKHispAn0zyOaMs=; b=X3ceC3Ifv39LNj
-	P2qBylmqx7/WYCPF8KZXH/UOx+QJNE/o0ft8Slg4QKS317ATWQOkP86Fwz8lzG/jki9hiPFDHH5Qi
-	5Ksqc7+EV1GCnpfcB0nYJNgNuYSfZizzOhj5kUKCp/TXLZPCg6Mq9+lcTybiMjZ5V7MFK87oAQCBo
-	Zw2IJQ2cE76TkNJ6gc6Tybjq53GbFWkZdpQ3yPQa0dWAJ8Yylx0tAb56opneSPRalCbc6sRLS22JW
-	e1upBueJtMFl2B08jsBq2Vwp4Z8DjpAJ75POjGaW3yk2aM7cHBcjF8LMYp0LYjGhjZMyI6/Q21V1a
-	nhKGcG+9J8RPCaUspLfQ==;
+	List-Owner; bh=lSCamSjs0SrB9gzAspKHwTOPZrOXnmyvjNiyTpaP+C8=; b=mlhQjjDz197TkZ
+	EK0ysEPpu2FI0rv0hIgPw2qwbBidPSbzxuhTJiTQmbvoqmNykRdlR/4f5TkM4wiIoY8XqnjX5cEBB
+	xaa1ea6ix2t4d4k4QTH4UBTogKlithIBbAiEivXmZRooZI+xVzPKOrKv73Ghq5CnnNN5RxAk/zhco
+	j+kmu+K+Qsrksx/SU2ncxRP9cemDuuEV1zna1z8iGp3ejSR/OtrHL9PAp/iT0yViOkvBKcAaNaA/5
+	0WhDFd1Q+CchP9eIGnOp9ziI7fclL/ZZnyfhKxw6rs3S2rwBTD8p/69Zc9Y82K/DGi0IHj0srf+1j
+	GySVoUPz23CzDEHRq3Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMSyU-0006XV-D6; Thu, 09 Apr 2020 08:55:50 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jMT1c-0006z1-Th; Thu, 09 Apr 2020 08:59:04 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMSyL-0006Wz-Er
- for linux-arm-kernel@bombadil.infradead.org; Thu, 09 Apr 2020 08:55:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Mime-Version:
- Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=5z1uw8OZGUO7jsufzYsrLCvpLFzb4YyPeQK3R4WjlEo=; b=cItfEPK3jx6pZoXo8UWpKFsZRa
- c7Ma+a6FTcrqvGCrQwZfwFqZQ86wyUjddDZtdbqjzGHZokocRx5P3RHVvdS5N6f8aP61cJP72Tz4F
- v4FQ3m6rSIPrSIKnIE6SsvJw69jxqqY/Hjm+XknMfZgX5Dh/n376gOBKgFcrBuUgl4tHWUCF3rclZ
- et17+6rDLbf3wcqB7riuf7rzkqpy05+QnV30xNNQoRpHxoJtA3n7Mn/m83OB9J+u5mWcKfSsaZtDK
- bstEsJniwdJA37PVNPIc7usfdDfLmIP5uUIB3nl/VMy7ydSGej3MIKX/NEaGdGtwUaH4LK9oz4wEk
- +UsR67RA==;
-Received: from kernel.crashing.org ([76.164.61.194])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMSyH-0003G5-TJ
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:55:40 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 0398s3us004063
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 9 Apr 2020 03:54:07 -0500
-Message-ID: <eb48f7b6327e482ea9911b129210c0417ab48345.camel@kernel.crashing.org>
-Subject: Re: [PATCH 19/28] gpu/drm: remove the powerpc hack in
- drm_legacy_sg_alloc
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Daniel Vetter <daniel@ffwll.ch>, Christoph Hellwig <hch@lst.de>
-Date: Thu, 09 Apr 2020 18:54:01 +1000
-In-Reply-To: <20200408122504.GO3456981@phenom.ffwll.local>
-References: <20200408115926.1467567-1-hch@lst.de>
- <20200408115926.1467567-20-hch@lst.de>
- <20200408122504.GO3456981@phenom.ffwll.local>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1jMT1U-0006yd-AQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 08:58:57 +0000
+Received: from mail-qt1-f181.google.com ([209.85.160.181]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MpDRp-1iwkSX1csR-00qfhQ for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 09 Apr 2020 10:58:54 +0200
+Received: by mail-qt1-f181.google.com with SMTP id 13so2179292qtt.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 01:58:54 -0700 (PDT)
+X-Gm-Message-State: AGi0PuaAQTvspev2kSXRPdaWd8iNix1kz8pPsB7VSwUe1RXp3tU80fND
+ 3RXbd70PdyLFUyMbbJCnJ8o0iSm+c6H9Qj/YmXs=
+X-Google-Smtp-Source: APiQypJGQnSKvwEmA3Uxqr21N7C28AlJ4H4USNdYjJ7jBa7oUXIlp/5GQn3RknUCUlZR5y4GP5LLx3U/KPQi69ASHsQ=
+X-Received: by 2002:aed:3b4c:: with SMTP id q12mr10854453qte.18.1586422733282; 
+ Thu, 09 Apr 2020 01:58:53 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200409064416.83340-1-sboyd@kernel.org>
+In-Reply-To: <20200409064416.83340-1-sboyd@kernel.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 9 Apr 2020 10:58:36 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1mOS4bVs+FQNcWPXuAdXpB-rKAuRE-at-Pr0m=43D68g@mail.gmail.com>
+Message-ID: <CAK8P3a1mOS4bVs+FQNcWPXuAdXpB-rKAuRE-at-Pr0m=43D68g@mail.gmail.com>
+Subject: Re: [PATCH v2 00/10] Allow COMMON_CLK to be selectable
+To: Stephen Boyd <sboyd@kernel.org>
+X-Provags-ID: V03:K1:rlO5QZFNG/WnK39ukFr3WyrZl/xl8gnQCdQAwBeHYx/sCKdBpwb
+ a1olA+IJz6FlKVBFqccHc1/zSm80VhAARsmSR7o1ZMXUBZAy5TGS9Lh1SexfTEve4C8WTFn
+ mLLZVpSvra9waqjipyuNw+MAZSifRwAAcHTuRlD8Y0S+36FxNEHEjcduzP7fmf3/ZkmMJGW
+ h8VCM03XhT/YxjM7zVNZg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5ys664IrDVk=:UIUMBaG7PLagGGACOuzldi
+ 13YKEb5unNT2mX4tI9jSw+Y6ZbvtcvCY41iyiYTQfhbxdU2wUXl/jATvpP4cEssbecCe+4EJU
+ Vs276UbLwCg5bFML2u4pC86d+63HQhOCWGt2WFmRLjkNOZPp2ED1ewb7x5GW+Tu3p85RMhw6V
+ gGUdLhTBJGLAu8AhajcDWT/lDiYTB1aN7IzrbKZHOynxWAJfA8vOrzv6i6R5wfIB0ydZNFxrD
+ nUkM6Jcam96IqeQI+h+abWgOQq3cI8A2gN0fPgIfYkmJrOmZY7gxkEs/8mP/UOfIjMYlOoKg7
+ Ysibvjg+koeJgxwl7BumOwZtndEzIPvOsasAt4bAQn/9yp41mjOdCKNz+fXvD9LunlU/eJFEo
+ cdQw7LdnanTwp6/vxfJ+V3uEmuHnSi+tFWNo288w65ehQxJvdAfPVk2gyeFOG0Fzpo6f9SxY1
+ fp3HlEffC54q2cmeaM2XUqFSvDXowzp9Yapv4F0qIvcS2dmzP+xQX52CMWKK2Cm2Cv33cpNDH
+ 0apHzxwQMC+SuPIXQnMWnf71CZpCBW2fAyJBG+Qn5afD5XeWyw+Iu5m724xBY5VkuMZoFUfjY
+ 6+7uj7/a23Yg4W6g76e7e3ySnrSPh/TZYEPv01nsmxUXMy3f/ZZnInoZUsL0/VYqJPPIbb9Pb
+ DhDYxflL/ZBsTtuakU/c5ufY3VVoCoUsJTIyFyp38QOUQE/FwoOBpty7S0l3oq3n4V3PwzW4L
+ RieqZVCnXR3XhkeA1wLGpZf5Jc8PqIgz0bXPnhJU0W0IjR543nHNogz+X2iqHMaFF8HbcmVdh
+ 0B/FyjXHZcL0XCs2g/siR+Q7MtoWl+dQJK880Rs19lg1Pgoe4Y=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_095538_320046_296B8222 
-X-CRM114-Status: GOOD (  24.23  )
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-0.9 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200409_015856_654724_B058D4E4 
+X-CRM114-Status: GOOD (  18.72  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 1.0 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.73 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,88 +85,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
- x86@kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
- Haiyang Zhang <haiyangz@microsoft.com>, linaro-mm-sig@lists.linaro.org,
- bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Rich Felker <dalias@libc.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Huacai Chen <chenhc@lemote.com>, Will Deacon <will@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Alexander Shiyan <shc_work@mail.ru>, Neil Armstrong <narmstrong@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
+ Thierry Reding <treding@nvidia.com>,
+ "moderated list:H8/300 ARCHITECTURE" <uclinux-h8-devel@lists.sourceforge.jp>,
+ Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
+ Lubomir Rintel <lkundrak@v3.sk>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Mark Brown <broonie@kernel.org>, Guan Xuetao <gxt@pku.edu.cn>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Paul Walmsley <paul@pwsan.com>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Paul Burton <paulburton@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tony Prisk <linux@prisktech.co.nz>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-04-08 at 14:25 +0200, Daniel Vetter wrote:
-> On Wed, Apr 08, 2020 at 01:59:17PM +0200, Christoph Hellwig wrote:
-> > If this code was broken for non-coherent caches a crude powerpc hack
-> > isn't going to help anyone else.  Remove the hack as it is the last
-> > user of __vmalloc passing a page protection flag other than PAGE_KERNEL.
-> 
-> Well Ben added this to make stuff work on ppc, ofc the home grown dma
-> layer in drm from back then isn't going to work in other places. I guess
-> should have at least an ack from him, in case anyone still cares about
-> this on ppc. Adding Ben to cc.
+On Thu, Apr 9, 2020 at 8:44 AM Stephen Boyd <sboyd@kernel.org> wrote:
+>
+> This patch series cleans up a handful of selects that were redundant and
+> deletes presumably dead code with the goal of making it possible to add
+> kunit tests for the CCF in the future. To do that, we introduce a
+> "legacy" clk Kconfig option to mark code that hasn't migrated to the
+> common clk framework and then make the COMMON_CLK config option visible
+> in the menuconfig as long as that legacy option isn't enabled. I've also
+> included a couple patches at the end that may be more controversial but
+> helped me consolidate all this logic/code.
+>
+> I haven't done more than compile test a few configs for arm, arm64,
+> h8300, and mips. More testing is welcome.
+>
+> The plan is that I'll just merge the whole pile through the clk tree. If
+> the first five patches or the last three patches are better going
+> through another tree like arm-soc or architecture trees that's fine too,
+> but there are potential conflicts between trees so maybe it's better to
+> just leave it all in one tree.
+>
+> Changes from v1:
+>  * Fixed MIPS ralink build problem pointed out by Arnd
+>  * Fixed meson mx sdio build due to bad Kconfig exposed by this change
+>  * Picked up acks
 
-This was due to some drivers (radeon ?) trying to use vmalloc pages for
-coherent DMA, which means on those 4xx powerpc's need to be non-cached.
+Whole series
 
-There were machines using that (440 based iirc), though I honestly
-can't tell if anybody still uses any of it.
+Reviewed-by: Arnd Bergmann <arnd@arndb.de>
 
-Cheers,
-Ben.
+I also made a patch to completely remove the private clk implementation
+for mips/loongson2f, but it obviously clashes with your series at the moment.
 
-> -Daniel
-> 
-> > 
-> > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> > ---
-> >  drivers/gpu/drm/drm_scatter.c | 11 +----------
-> >  1 file changed, 1 insertion(+), 10 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/drm_scatter.c b/drivers/gpu/drm/drm_scatter.c
-> > index ca520028b2cb..f4e6184d1877 100644
-> > --- a/drivers/gpu/drm/drm_scatter.c
-> > +++ b/drivers/gpu/drm/drm_scatter.c
-> > @@ -43,15 +43,6 @@
-> >  
-> >  #define DEBUG_SCATTER 0
-> >  
-> > -static inline void *drm_vmalloc_dma(unsigned long size)
-> > -{
-> > -#if defined(__powerpc__) && defined(CONFIG_NOT_COHERENT_CACHE)
-> > -	return __vmalloc(size, GFP_KERNEL, pgprot_noncached_wc(PAGE_KERNEL));
-> > -#else
-> > -	return vmalloc_32(size);
-> > -#endif
-> > -}
-> > -
-> >  static void drm_sg_cleanup(struct drm_sg_mem * entry)
-> >  {
-> >  	struct page *page;
-> > @@ -126,7 +117,7 @@ int drm_legacy_sg_alloc(struct drm_device *dev, void *data,
-> >  		return -ENOMEM;
-> >  	}
-> >  
-> > -	entry->virtual = drm_vmalloc_dma(pages << PAGE_SHIFT);
-> > +	entry->virtual = vmalloc_32(pages << PAGE_SHIFT);
-> >  	if (!entry->virtual) {
-> >  		kfree(entry->busaddr);
-> >  		kfree(entry->pagelist);
-> > -- 
-> > 2.25.1
-> > 
-> 
-> 
+I'll send you what I have today and you can decide if you want to
+add it to your series after it gets an Ack from the maintainers, or I'll
+send it separately later.
 
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
