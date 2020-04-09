@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 123FF1A3966
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:56:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C73D1A3968
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 Apr 2020 19:56:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PBP9RCJ8mkOn0PhPZDfAvcaBWAttzBwLn9hQoxz5c9o=; b=lr7cNOI92UV2mG
-	BB2cbbT+nbK6799B059ITlchwmrqgbgZJ4ntMXwHVYseQDMMCR/5cL5n/GH1hM+4AEXm/mfzOGByw
-	81blTErtzE+sJkavqjArWukXbwOtxgC4jDsIIs46mzWptuSRx4JbdDR9naUNGjAKyLGJUwx1ENbFI
-	lNpiL9el/cvWj9C44aJAuAYpH8bvCqyNcRneSGTzhvEW/jkPVsIHVfD3wXhiN7OPRjAH/njxhSddd
-	KyONturaeWZwFshkEPIcJCq1oAOR4DPA/AXjywrayvwyu2n4WNy8D2egjefUsVhuKgp0s4Ez+pZPX
-	xtZRihDLRiV7+oPQ+y+A==;
+	List-Owner; bh=LruBz8s/cBVa9bULjAufsTTTCWmsLLiJC+rtQwpXMXM=; b=X043Obg/oSZmYl
+	/5A3dhcxz163a74CnzxFfmfZkuXdg2Akc0t87GxIIDqMLQHpbSf6GGY4QvJxFmhZSh2KxenZGTJHE
+	+sT13zqyeLjRYavFBfLxvbiGE3Adx4XdTBv5LEqTYzjTcLK6XmOf34euC6guaRW2+xgsEUrWlNmzb
+	K0IqEBg032K7OVTKKMYfsVoXvOim7o6aRlt2wpmsw3QhvLvAUeb/YvWeyNLji4owCu8bPBpgdB0Nr
+	e1q3JqvVaVoDSd576gN1Xu0RlZoxvfMBmXTA3QyxKS/kW4kJXnxdM9JMLmzkU5KcpIW64f5BWXiP9
+	E7H14fub0AOaBCEEztRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMbPJ-0002fH-Nf; Thu, 09 Apr 2020 17:56:05 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1jMbPb-0002rq-Lg; Thu, 09 Apr 2020 17:56:23 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMbMX-00069n-6u
+ id 1jMbMY-0006BE-La
  for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 17:53:18 +0000
-Received: by mail-wm1-x333.google.com with SMTP id x4so666431wmj.1
+Received: by mail-wr1-x442.google.com with SMTP id k1so12955249wrm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 10:53:12 -0700 (PDT)
+ Thu, 09 Apr 2020 10:53:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ejespMMiPzZHhFOGLxs6wv6JPThWUWz2rdaye1ZX1xE=;
- b=na/nJGjgFezO8e/vI8YJvG17CZDC1pJR3wDAwHVN0Kg6zg3WJuuVg+ZtBXEV9gXEhu
- 1hVIkpbsQz2h7BqycBWxaVmdWltbSoLHYyWEAkoYGXK9/KW0eBljif+28LpIyCBotil8
- urLBLTYl/PTUz5aTuighqc+9M/DVMPrd5HwWRUMHNbOnjbDCD9encsjzXiD3ErlPc70o
- zL+C/3fTFg+dr7Rihy6P4rfG0VtdeGVW3LqD7pqTIrmosdtjOxxnLai1z5aWNYqIk/Mm
- cjuiLQwvmHkQlWBEhEE4XnJ60+dfOAEohvIv3fVFGE0PrpyFfwlFX5ILGtlEpNmCsmKq
- SBHQ==
+ bh=fDFW17LWXFc/94mIfr99qe3Pgfej3YzVj6EQ4PJofks=;
+ b=ZQg9DrpwZimQRjmcdrdaOBKmRP8ka2jN/MTap+6C2Z40SMdWAE6EEDvH+rjfmlY3Sv
+ fGU7sjybDXwxub42UsTA3uiZ9LtX2gMgUXvEDb6VrQUI4+b6sdzUEts/fu5N+fZsiqWB
+ v99YbzBGhWYNjm5pDy6qxGJFe5+Lw1+PW02JF6wqA/xCCgIlD+4KMnFRITgskztMy1rQ
+ nD8Z6ibpjymE3JWFfEwkNYW16iXdQIgZxanr/6ED7gKRm81bbUoW+lODfbnEJRlxvvbF
+ 7smdq1zXAFf0oVNRZVv/NBvZBM6F64JI0AOmukqI80+G/JaTl6hRGUjPBbQhItOi5YA5
+ gP7w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ejespMMiPzZHhFOGLxs6wv6JPThWUWz2rdaye1ZX1xE=;
- b=Km5fUWUZ8RVBpWOQlLYVVK+J+XBBvmUoRDSJGYF3KxWWgd33qKD3nuqP/clBRoRh1Z
- d/T1ZYoYO0XJCazCesQMNyNW8muBY7S0lMSk9V7wzaEaawDnH5wC03qb80hJA2svkhP/
- NNnVqosvz5Uf2KJE4SwKwFIrolSQwvrOZ5HNE75luGezonzsC/mG+AcRI2pbboVXBV9Y
- /qNGVmYVxb7SfILxFS2/OVHuu4W7cYKFtwOrgN72RpHOYMBozlaJt8bgLSBD+jOSdbC3
- 1cu2uQuoQXMy3VLk4bJhfHmz1nihY+l2/6bykAj2g03o2CngYbULrK6D3gmRwb2eJKLf
- vKhA==
-X-Gm-Message-State: AGi0PuYZb366MBexj0PAaD4xe9uJqgkTdIsaP2NbtjsTPYX18eCT445b
- PYbeypMGD0ItoG2c6ykkNWM=
-X-Google-Smtp-Source: APiQypL3dKnOO7FXsoV/3e3npn5r/roD4WenYMVwtUGfeoyUcdQ+9jTvwDH338TVj4Ni9rYVIlOWUA==
-X-Received: by 2002:a1c:9658:: with SMTP id y85mr977190wmd.63.1586454790974;
- Thu, 09 Apr 2020 10:53:10 -0700 (PDT)
+ bh=fDFW17LWXFc/94mIfr99qe3Pgfej3YzVj6EQ4PJofks=;
+ b=oIMA/ZRgVHdj6vNyXOPUZShW7KrFfoOGUUZp7t5sRhCgzUFRltUl4AZDgawgC3/D3W
+ pGXmL3EqFzBY+7FAETqXwJIw3zhzoAz7jA1ddD0/nZ3AGwyVt4FRNOpkJIW4uvORRK7O
+ usV2xXOyKSlzwsqMczwWoGcbw+lKnQFBKP5qp9fWHgrk+qY74Ygc6EtxTdsvIzKZR7dJ
+ sAAFzVX/jtPAzAi7LxikuBUhBinpsCL7QLSm4k3KaU9ndQTeXR6258d16FHOpgf1cHAv
+ Most0ZZaxOoBDw1pUa0+KOWxxRO353y4T2vzNGlNPNDwK+X9yqk8umbJlWiXuql34K2t
+ QY5Q==
+X-Gm-Message-State: AGi0PuYzURfI1NIyz/n3AoMxqjpnJrN8fPRlUecxbyBLcZVfE8MRlSll
+ xp/Kp5Me0OFXZWn8pnB0mzg=
+X-Google-Smtp-Source: APiQypJ8M5w/KbN97Gv2Y1EF2Us8A4iAtlYtQsyDmJ6YsDXB6cP7fvFs5Sz1z0ZlYu9eeHqtXIBzuA==
+X-Received: by 2002:adf:ef08:: with SMTP id e8mr386611wro.66.1586454793113;
+ Thu, 09 Apr 2020 10:53:13 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id q9sm23295986wrp.61.2020.04.09.10.53.09
+ by smtp.gmail.com with ESMTPSA id 145sm4849769wma.1.2020.04.09.10.53.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 10:53:09 -0700 (PDT)
+ Thu, 09 Apr 2020 10:53:12 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 12/14] arm64: tegra: Add external memory controller node
- for Tegra210
-Date: Thu,  9 Apr 2020 19:52:36 +0200
-Message-Id: <20200409175238.3586487-13-thierry.reding@gmail.com>
+Subject: [PATCH v6 13/14] arm64: tegra: Hook up EMC cooling device
+Date: Thu,  9 Apr 2020 19:52:37 +0200
+Message-Id: <20200409175238.3586487-14-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200409175238.3586487-1-thierry.reding@gmail.com>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_105313_291802_D32336C1 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200409_105314_794258_258CCE6F 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:333 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,43 +108,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Joseph Lo <josephl@nvidia.com>
+From: Thierry Reding <treding@nvidia.com>
 
-Add external memory controller (EMC) node for Tegra210
+The external memory controller can be used as a cooling device for the
+LPDDR chips. Hook it up to the "mem" thermal zone of the SOCTHERM block
+so that temperature polling can be enabled on the EMC when a given
+temperature is exceeded.
 
-Signed-off-by: Joseph Lo <josephl@nvidia.com>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
-Changes in v5:
-- drop list of clocks because we need very strict ordering that DT can't
-  guarantee
-- drop hard-coded EMC table, bootloaders should add it dynamically
+Changes in v6:
+- new patch
 
- arch/arm64/boot/dts/nvidia/tegra210.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm64/boot/dts/nvidia/tegra210.dtsi | 28 +++++++++++++++++++-----
+ 1 file changed, 23 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra210.dtsi b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
-index 64c46ce3849d..3fa92dd8350b 100644
+index 3fa92dd8350b..a550e7b828e6 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra210.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra210.dtsi
-@@ -895,6 +895,17 @@ mc: memory-controller@70019000 {
+@@ -895,7 +895,7 @@ mc: memory-controller@70019000 {
  		#iommu-cells = <1>;
  	};
  
-+	external-memory-controller@7001b000 {
-+		compatible = "nvidia,tegra210-emc";
-+		reg = <0x0 0x7001b000 0x0 0x1000>,
-+		      <0x0 0x7001e000 0x0 0x1000>,
-+		      <0x0 0x7001f000 0x0 0x1000>;
-+		clocks = <&tegra_car TEGRA210_CLK_EMC>;
-+		clock-names = "emc";
-+		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-+		nvidia,memory-controller = <&mc>;
-+	};
-+
+-	external-memory-controller@7001b000 {
++	emc: external-memory-controller@7001b000 {
+ 		compatible = "nvidia,tegra210-emc";
+ 		reg = <0x0 0x7001b000 0x0 0x1000>,
+ 		      <0x0 0x7001e000 0x0 0x1000>,
+@@ -904,6 +904,7 @@ external-memory-controller@7001b000 {
+ 		clock-names = "emc";
+ 		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+ 		nvidia,memory-controller = <&mc>;
++		#cooling-cells = <2>;
+ 	};
+ 
  	sata@70020000 {
- 		compatible = "nvidia,tegra210-ahci";
- 		reg = <0x0 0x70027000 0x0 0x2000>, /* AHCI */
+@@ -1561,6 +1562,18 @@ mem {
+ 				<&soctherm TEGRA124_SOCTHERM_SENSOR_MEM>;
+ 
+ 			trips {
++				dram_nominal: mem-nominal-trip {
++					temperature = <50000>;
++					hysteresis = <1000>;
++					type = "passive";
++				};
++
++				dram_throttle: mem-throttle-trip {
++					temperature = <70000>;
++					hysteresis = <1000>;
++					type = "active";
++				};
++
+ 				mem-shutdown-trip {
+ 					temperature = <103000>;
+ 					hysteresis = <0>;
+@@ -1569,10 +1582,15 @@ mem-shutdown-trip {
+ 			};
+ 
+ 			cooling-maps {
+-				/*
+-				 * There are currently no cooling maps,
+-				 * because there are no cooling devices.
+-				 */
++				dram-passive {
++					cooling-device = <&emc 0 0>;
++					trip = <&dram_nominal>;
++				};
++
++				dram-active {
++					cooling-device = <&emc 1 1>;
++					trip = <&dram_throttle>;
++				};
+ 			};
+ 		};
+ 
 -- 
 2.24.1
 
