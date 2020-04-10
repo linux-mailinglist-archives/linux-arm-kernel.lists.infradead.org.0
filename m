@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 498B31A3D25
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 01:58:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 557FB1A3D2A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 02:02:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xV8W9V04X0AwgGXmoAJAxANzvTKnyAhU+8n7hWotAyo=; b=hCLE3xEWQNoCt+
-	wqOLRpVK6NNNplS+tf4pHVD3+ui++0AwHV/OHL1/TeL5Ci1gfQMWHNyc13jI6RbvcnsZsaFSl0bzz
-	krGQ4ayRmGFWyPWWO2XhFVXIsmfKNZRwI3ey+qBkWdJN6Q1M9NZioIU8Obb5FULfzUUjr/p4FlheY
-	Im1HyfYbNH3hYmqUdIavVz2fXd90HAy0R0WSgv7keoNrQWFmkyqkgixmKBSMYZdYQ30d/zhhSn0UX
-	NQtZphka5NdE34MCGX6slJwe1vwxLSKfIivkR5eBhVOAfwz2b3TjHDYbDEPfie9Gu0g2lAO6A2NHS
-	Z9hCH1Clrq1mC7qsg+Jg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N5Ts2kuCHYBCfFnYcJ8JIaUa96eLX4mXpnuRkQHP2TE=; b=o/tDi4XgqJgsKL
+	8W/0vI5q8t5wbsBEUUupONLpsBY8iOJMazeFYf4ZUJAapVgOYrS8UEiyoC4+WcOhmqZoFR0Zp50sW
+	ZsOxj404Kj4fSNyDcHcRH54AF3eM0plsh4ImaZzCuFKi41eCTqwb4Om7UcGHfTurSNhy15jIUpxtR
+	0CoRAHThMEnIRnFWufTrmhehmQALlGb8/j4gQiCLLaf/PcS+Q1jDhS29+0HkewckTb2KR6pS1c9HB
+	9MzRqMEkQGZkqo5wcvg1Zw+vLUXddHfF+ivNwxxc8j9zFVB/5euXOkM4VXsIDioC4iH7Gx2kzM2ob
+	Q6D6ZwpvkFxxDyZJjuaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMh4C-0007jE-9D; Thu, 09 Apr 2020 23:58:40 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1jMh7N-0002MK-0t; Fri, 10 Apr 2020 00:01:57 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMh2W-0007aj-S3
- for linux-arm-kernel@lists.infradead.org; Thu, 09 Apr 2020 23:57:12 +0000
-Received: by mail-lf1-x142.google.com with SMTP id r17so220323lff.2
+ id 1jMh7G-0002LR-3f
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 00:01:51 +0000
+Received: by mail-pf1-x443.google.com with SMTP id l1so289893pff.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 16:56:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=h7ou2+MWS5yebpK+PkJaL1qSzOXz/nH64pUokezkgN0=;
- b=ZGFleZwjigSbIXhSeJj/RBOKq1ORM7YyqiRg8grGG6Po3qc4jpwEaMak9ZRmwk5wgN
- WQsVxyJRGFydj9/1SpgNvPKwTWBHH1DEl36qBoV7xT2CEf54yhW1pnsXZ1UVO3dqjbkM
- zyUcsUE7ua7lUZVMlhyOuRctiGCtcx7Xim3Yhv6JH0uKTJCfhX9G3UyieZDK5Tj1YlaK
- r86f6QFFQZ9pCkzdHPTWxxRGZ5LKzctKjCaXbzDkhzv22N+HJSIPm4EsSN+yjkEFf6Af
- 8APR0MGmRFSoptFGAFCozmY3c4WBszAEVSfZKkAApzaPBRpZ66insE26eSaFkKPdd2m+
- NbPg==
+ Thu, 09 Apr 2020 17:01:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WfliXDX1Ymsggc4DabpVxNTeN6zHMaFuavIUQZv83/0=;
+ b=DvFGg3oFXnnQxUL5pHpYQ6dHu8U3ro9D6atqz+8PGLUtvoCIPsx+DmaDo3D5jjW3TN
+ mStoRntCkHKEdA9/JMNf9ulVM0JVlltV+AxI41WETYYnbFzXx17p/iusZ1LyZNKFzZ59
+ CghU1HcG4Mbq3OnwN41Q2bjdQmUcOL+6vOzGu5nSELnNSYP6Ms9+L2sPoAhYMCJImXf1
+ rM/8CNlIcAsCywNiK8mC60qgqjcS+UgleeCpKz7nig09hx8DmJRvy0Sw4DMymxuevGDZ
+ WmHOdum/QKHkYki2S5R4/q7GLFkGFaz2GL/BCnu62WsDC9QbpyenGwbIBuMyWp+4jyqw
+ UEzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=h7ou2+MWS5yebpK+PkJaL1qSzOXz/nH64pUokezkgN0=;
- b=cEPLRIqwZvYcBiKT1CB1so/B7lC+VOw2QLPqxd81OGqQzXAHfhziMnRuN34CZMaHxv
- SyrkHhtLqcIlKrHi+7fvLyzxJwmxeWNDqHvhqzmEUHww7kefLz37X2yfhnBsAW7xcOOi
- nRHpyhaE1ysYTUZkggKWahiJ2SXsqBA1qKXJr7Z1KRSHcLzt+UUIAHR4n1h6aXbqsrbV
- yFPomV06Hx61xaPnvNjUTZGhTmggkV8Y1Zp0dDWwJ0q5JNyJq+IHrH+4sHlT7TiKUEC7
- cp66/7UhdzxNYvp/YVxna5v7UHWNl2599QhdHlGxz8hSmxJNjjXhJMiNA3PYaPudak91
- mcww==
-X-Gm-Message-State: AGi0PuYIuKhXItZ4oprMsKde+QP7Js6npvs251hx7osqd7a84Izvx3yl
- qpanbD9/0b41kLGzvgpfk18XVVZB
-X-Google-Smtp-Source: APiQypJR6KOA3fPvqfWuaqk/S2szvx9gudiDB0qTYW3KcISCqn+kQOJFAM8qa4TSuauFyPNKMPiElg==
-X-Received: by 2002:a19:5f45:: with SMTP id a5mr1006421lfj.18.1586476614994;
- Thu, 09 Apr 2020 16:56:54 -0700 (PDT)
-Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
- [91.78.208.152])
- by smtp.googlemail.com with ESMTPSA id i25sm131562ljg.82.2020.04.09.16.56.53
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Apr 2020 16:56:54 -0700 (PDT)
-Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
- Tegra210
-To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-10-thierry.reding@gmail.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
-Date: Fri, 10 Apr 2020 02:56:53 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WfliXDX1Ymsggc4DabpVxNTeN6zHMaFuavIUQZv83/0=;
+ b=ZxCm0Yyyb1gftt2paphvfjInqNR7Y84inqbAk8IJSSApeJvprypsKGq5AFwzDpA1HR
+ ZBnH9LjJzYPAv+aklkKHZeuyqR25KhGZDO5HRWGS3yqvKAAZCY3G0SoG+VjaCn4IDU2O
+ gp2xvtQXFP9zin1u/vCP/uqO8aVQEE3oDBQaSm2WGG2uwlCqEgsJ+R+BJWghwKfHGmFz
+ Nik6yKYZQNW50Cw2Ecq7A958nLk60m5TUa+O+teH63PIp4NzefxpdY9wDUuhbsDf1xwe
+ BicCW3iWdY7STYl1sVq9h0GvFi5FkdhJmX7yCVvzobvkmdFxocRzoPJkVlzh7iu6JsZg
+ Mf+w==
+X-Gm-Message-State: AGi0PuYYysAmukpG3XjA/NVDeLacUVNlgBI4kCop9asHvW4uEkKcxptt
+ XlM/vek/DzBE8y74zKbkjDX0r3ZF5KHgSLj3ip1kDA==
+X-Google-Smtp-Source: APiQypJseTCHzeZtziKweVcMeV2FfOR5o5Zn7BHGyFeGb76AXp7DOTg9ScYedtjAFCzO+5s/pN/1Ly0ICNpwNhDzLcQ=
+X-Received: by 2002:a65:6704:: with SMTP id u4mr1927192pgf.263.1586476904758; 
+ Thu, 09 Apr 2020 17:01:44 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200409175238.3586487-10-thierry.reding@gmail.com>
-Content-Language: en-US
+References: <20200409232728.231527-1-caij2003@gmail.com>
+In-Reply-To: <20200409232728.231527-1-caij2003@gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Thu, 9 Apr 2020 17:01:33 -0700
+Message-ID: <CAKwvOdkot0Q7FSCMKGm6ti4hhvD3N+AMUK4Xv2Xxiiu3+pURgQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
+To: Jian Cai <caij2003@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_165659_739934_A79C0F48 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200409_170150_174718_1C602D5F 
+X-CRM114-Status: GOOD (  22.44  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,45 +96,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
+ Stefan Agner <stefan@agner.ch>, David Howells <dhowells@redhat.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Manoj Gupta <manojgupta@google.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Ilie Halip <ilie.halip@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sami Tolvanen <samitolvanen@google.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Arnd Bergmann <arnd@arndb.de>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Jian Cai <jiancai@google.com>, Doug Anderson <armlinux@m.disordat.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Patrick Bellasi <patrick.bellasi@arm.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Tejun Heo <tj@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4gKyNkZWZp
-bmUgQ0xLX1JTVF9DT05UUk9MTEVSX0NMS19TT1VSQ0VfRU1DCQkweDE5YwouLi4KPiArI2RlZmlu
-ZSBDTEtfUlNUX0NPTlRST0xMRVJfQ0xLX1NPVVJDRV9FTUNfRExMCQkweDY2NAoKSSdkIHN1Z2dl
-c3QgdG8gZG91YmxlIGNoZWNrIGFsbCB0aGUgbWFjcm9zIGFuZCByZW1vdmUgZXZlcnl0aGluZyB1
-bnVzZWQsCnRvIG5vdCBwb2xsdXRlIHRoZSBjb2RlLgoKLi4uCj4gKyNkZWZpbmUgVFJJTV9SRUco
-Y2hhbiwgcmFuaywgcmVnLCBieXRlKQkJCQkJXAo+ICsJKCgoRU1DX1BNQUNST19PQl9ERExMX0xP
-TkdfRFFfUkFOSyAjIyByYW5rICMjIF8gIyMgcmVnICMjCVwKPiArCSAgIF9PQl9ERExMX0xPTkdf
-RFFfUkFOSyAjIyByYW5rICMjIF9CWVRFICMjIGJ5dGUgIyMgX01BU0sgJglcCj4gKwkgICBuZXh0
-LT50cmltX3JlZ3NbRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFfUkFOSyAjIwkJXAo+ICsJCQkJ
-IHJhbmsgIyMgXyAjIyByZWcgIyMgX0lOREVYXSkgPj4JXAo+ICsJICBFTUNfUE1BQ1JPX09CX0RE
-TExfTE9OR19EUV9SQU5LICMjIHJhbmsgIyMgXyAjIyByZWcgIyMJXAo+ICsJICBfT0JfRERMTF9M
-T05HX0RRX1JBTksgIyMgcmFuayAjIyBfQllURSAjIyBieXRlICMjIF9TSElGVCkJXAo+ICsJICsJ
-CQkJCQkJCVwKPiArCSAoKChFTUNfREFUQV9CUkxTSEZUXyAjIyByYW5rICMjIF9SQU5LICMjIHJh
-bmsgIyMgX0JZVEUgIyMJXAo+ICsJICAgIGJ5dGUgIyMgX0RBVEFfQlJMU0hGVF9NQVNLICYJCQkJ
-XAo+ICsJICAgIG5leHQtPnRyaW1fcGVyY2hfcmVnc1tFTUMgIyMgY2hhbiAjIwkJCVwKPiArCQkJ
-ICAgICAgX0VNQ19EQVRBX0JSTFNIRlRfICMjIHJhbmsgIyMgX0lOREVYXSkgPj4JXAo+ICsJICAg
-RU1DX0RBVEFfQlJMU0hGVF8gIyMgcmFuayAjIyBfUkFOSyAjIyByYW5rICMjIF9CWVRFICMjCVwK
-PiArCSAgIGJ5dGUgIyMgX0RBVEFfQlJMU0hGVF9TSElGVCkgKiA2NCkpCj4gKwo+ICsjZGVmaW5l
-IENBTENfVEVNUChyYW5rLCByZWcsIGJ5dGUxLCBieXRlMiwgbikJCQkJXAo+ICsJKCgobmV3W25d
-IDw8IEVNQ19QTUFDUk9fT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFuayAjIyBfICMjCVwKPiAr
-CSAgIHJlZyAjIyBfT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFuayAjIyBfQllURSAjIyBieXRl
-MSAjIyBfU0hJRlQpICYgXAo+ICsJICBFTUNfUE1BQ1JPX09CX0RETExfTE9OR19EUV9SQU5LICMj
-IHJhbmsgIyMgXyAjIyByZWcgIyMJXAo+ICsJICBfT0JfRERMTF9MT05HX0RRX1JBTksgIyMgcmFu
-ayAjIyBfQllURSAjIyBieXRlMSAjIyBfTUFTSykJXAo+ICsJIHwJCQkJCQkJCVwKPiArCSAoKG5l
-d1tuICsgMV0gPDwgRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFfUkFOSyAjIyByYW5rICMjIF8g
-IyNcCj4gKwkgICByZWcgIyMgX09CX0RETExfTE9OR19EUV9SQU5LICMjIHJhbmsgIyMgX0JZVEUg
-IyMgYnl0ZTIgIyMgX1NISUZUKSAmIFwKPiArCSAgRU1DX1BNQUNST19PQl9ERExMX0xPTkdfRFFf
-UkFOSyAjIyByYW5rICMjIF8gIyMgcmVnICMjCVwKPiArCSAgX09CX0RETExfTE9OR19EUV9SQU5L
-ICMjIHJhbmsgIyMgX0JZVEUgIyMgYnl0ZTIgIyMgX01BU0spKQoKTXkgZXllcy4uIDpQCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On Thu, Apr 9, 2020 at 4:28 PM Jian Cai <caij2003@gmail.com> wrote:
+>
+> iwmmxt.S contains XScale instructions LLVM ARM backend does not support.
+> Skip this file if LLVM integrated assemmbler or LLD is used to build ARM
+
+Hi Jian, thank you for the patch.  It's pretty much spot on for what I
+was looking for.  Some notes below:
+
+s/assemmbler/assembler
+
+:set spell
+
+;)
+
+Also, could use a link tag, ie.
+
+Link: https://github.com/ClangBuiltLinux/linux/issues/975
+
+(Always include the link tag to help us track when and where patches land).
+
+Finally, I think the hunks for the two different files should be
+split; the init/Kconfig change should be it's own dedicated change
+that goes to Masahiro, the maintainer of the Kbuild tree.  Then when
+we have that, the dependent configs should go separately.  Would you
+mind splitting this patch in two, and re-sending just the Kbuild patch
+for now?  Since you used Sami's patch for inspiration
+(https://github.com/ClangBuiltLinux/linux/issues/975#issuecomment-611694153,
+https://github.com/samitolvanen/linux/commit/fe9786cb52a0100273c75117dcea8b8e07006fde),
+it would be polite to Sami to add a tag like:
+
+Suggested-by: Sami Tolvanen <samitolvanen@google.com>
+
+or maybe better yet, take Sami's patch, add your signed off by tag
+(maintaining him as the git author, see `git log --pretty=fuller`),
+then rebase your AS_IS_CLANG hunk on top, make that a second patch,
+then finally have the arm change as a third patch.
+
+This change is exactly what I'm looking for, so these are just process concerns.
+
+> kernel.
+>
+> Signed-off-by: Jian Cai <caij2003@gmail.com>
+> ---
+>  arch/arm/Kconfig | 2 +-
+>  init/Kconfig     | 6 ++++++
+>  2 files changed, 7 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> index 66a04f6f4775..39de8fc64a73 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -804,7 +804,7 @@ source "arch/arm/mm/Kconfig"
+>
+>  config IWMMXT
+>         bool "Enable iWMMXt support"
+> -       depends on CPU_XSCALE || CPU_XSC3 || CPU_MOHAWK || CPU_PJ4 || CPU_PJ4B
+> +       depends on !AS_IS_CLANG && !LD_IS_LLD && (CPU_XSCALE || CPU_XSC3 || CPU_MOHAWK || CPU_PJ4 || CPU_PJ4B)
+>         default y if PXA27x || PXA3xx || ARCH_MMP || CPU_PJ4 || CPU_PJ4B
+>         help
+>           Enable support for iWMMXt context switching at run time if
+> diff --git a/init/Kconfig b/init/Kconfig
+> index 1c12059e0f7e..b0ab3271e900 100644
+> --- a/init/Kconfig
+> +++ b/init/Kconfig
+> @@ -19,6 +19,12 @@ config GCC_VERSION
+>  config CC_IS_CLANG
+>         def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
+>
+> +config AS_IS_CLANG
+> +       def_bool $(success,$(AS) --version | head -n 1 | grep -q clang)
+> +
+> +config LD_IS_LLD
+> +       def_bool $(success,$(LD) --version | head -n 1 | grep -q LLD)
+> +
+>  config CLANG_VERSION
+>         int
+>         default $(shell,$(srctree)/scripts/clang-version.sh $(CC))
+> --
+
+-- 
+Thanks,
+~Nick Desaulniers
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
