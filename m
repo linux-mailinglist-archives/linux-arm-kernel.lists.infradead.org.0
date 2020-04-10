@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E80791A3F3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:53:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 910291A3F3F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:53:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gs8+oCz7pCsWfJuvb2/ggbtNt97V0UuIvHsQ2Oe/vSk=; b=Kxh7hXTAeHamqV
-	zGMZ1HXJIsMECLE3EYAr+lhxNjYD6Dfg9fl+NPT5CzqOj5BZ0Jqo4uIJ9Yc4OIA12AQcpAmHG59rY
-	GJxeP8x2hJ9eg5Gpee/DLtbfqruqhFgS7nI9LTsBG9lzle7oe8kAvMQFnJRI4jwbGwc7gv7yXHI4O
-	eNBOdvoxsEo8HUXMV7tnnEVHpqMp8aWaKeVITpfz7EPMCeS/5Bz2m+LQZBuBeHLBMhsnRdJXjFDj2
-	0iNI/Oi/Wn5CdgO5JrIRPyq9pL5ejg/jwS3KLJ3XCWTrGg5EDajYgx/V00miS0fHzOUE4ua2WoX1v
-	rj1pX+CTBk4fOSRpfxqg==;
+	List-Owner; bh=Dret5XngAzf/zkaTGjrjZakjymZJ5XyA+iopxwxh6pI=; b=DK+kS/kp4P6ZjD
+	uxM8710F3t1Zc0LxvVOrxOvdYyL5BTWGm5J6uhapNRrgUADh5rqK3dYfe5KOgcwhc5PHDHfCW0xGE
+	iH6Z0zJegU03KPGbp/H5uqMpolJwt5YFpQWqv+PafzH7DYWIyeOlvRXJVcX3wMK4E5pUcHycr7c/h
+	/FlK6cN38LUji6XvqZHLh4eROp2UcBSHESyrv+V0LLQoS67kdV3ovHCLJgvheCnDmekpbbhd1YT/A
+	MOgaoF0m/Ldo5kkvSIj9Y8RXlqtPjTT36BpRGzcDMchT88+tQ2NUF5m/lz4hVkDwFhF+KjKkn0cUU
+	ah4Y7bPkiy4gyWarhmSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkjG-0002QD-FW; Fri, 10 Apr 2020 03:53:18 +0000
+	id 1jMkjU-0002hm-Lw; Fri, 10 Apr 2020 03:53:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkfM-0004e5-Gy
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:19 +0000
+ id 1jMkfR-0004j8-Df
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:28 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9ADF8214DB;
- Fri, 10 Apr 2020 03:49:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B89CB20B1F;
+ Fri, 10 Apr 2020 03:49:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490555;
- bh=uq4hJNtqFZPJMrmWI/E4aG4wnFS/dFvqaSP8vydg5S0=;
+ s=default; t=1586490560;
+ bh=zkoCdeQNCnljh/Pk2J3iQ5iD97vNPeJM7BkIKOX2p88=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ayq10PwTTa3BHpR1+TGt2gKx+OVxbBbc66qBToEHXuqQg5cS52IHkWJWIPa9c6itn
- HKLlmkVR4GIX3lGurdxaGyfO4WlQLfM1MkVCfNFqDT79aILFpofsVVO/z5MJjIGFmx
- 2epRvwhpGE/UaPIywuYIWcUYl53g8zWtle5FR2Zk=
+ b=s94Is37SvwfK0BkfLORz5MVEiZRFYtHmQ/P/Upq4h570E/5jbNYUfK5I7YySho+LH
+ 1ob1eKPBovRyqPO+oq9rwPUKrEfwtNtjbviEcNyAMc03tl7AGOBkqorm+wfMhcjyPE
+ PSgo31wHksz6UFLSWs3cr6E2xZH3675Z9FTq39As=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 04/46] firmware: arm_sdei: fix double-lock on
- hibernate with shared events
-Date: Thu,  9 Apr 2020 23:48:27 -0400
-Message-Id: <20200410034909.8922-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 08/46] media: imx: imx7_mipi_csis: Power off the
+ source when stopping streaming
+Date: Thu,  9 Apr 2020 23:48:31 -0400
+Message-Id: <20200410034909.8922-8-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200410034909.8922-1-sashal@kernel.org>
 References: <20200410034909.8922-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204916_811846_01B00ACB 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20200409_204921_507747_3A763982 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,124 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Liguang Zhang <zhangliguang@linux.alibaba.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Rui Miguel Silva <rmfrfs@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-[ Upstream commit 6ded0b61cf638bf9f8efe60ab8ba23db60ea9763 ]
+[ Upstream commit 770cbf89f90b0663499dbb3f03aa81b3322757ec ]
 
-SDEI has private events that must be registered on each CPU. When
-CPUs come and go they must re-register and re-enable their private
-events. Each event has flags to indicate whether this should happen
-to protect against an event being registered on a CPU coming online,
-while all the others are unregistering the event.
+The .s_stream() implementation incorrectly powers on the source when
+stopping the stream. Power it off instead.
 
-These flags are protected by the sdei_list_lock spinlock, because
-the cpuhp callbacks can't take the mutex.
-
-Hibernate needs to unregister all events, but keep the in-memory
-re-register and re-enable as they are. sdei_unregister_shared()
-takes the spinlock to walk the list, then calls _sdei_event_unregister()
-on each shared event. _sdei_event_unregister() tries to take the
-same spinlock to update re-register and re-enable. This doesn't go
-so well.
-
-Push the re-register and re-enable updates out to their callers.
-sdei_unregister_shared() doesn't want these values updated, so
-doesn't need to do anything.
-
-This also fixes shared events getting lost over hibernate as this
-path made them look unregistered.
-
-Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system power states")
-Reported-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
-Signed-off-by: James Morse <james.morse@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Fixes: 7807063b862b ("media: staging/imx7: add MIPI CSI-2 receiver subdev for i.MX7")
+Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
+Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/firmware/arm_sdei.c | 32 +++++++++++++++-----------------
- 1 file changed, 15 insertions(+), 17 deletions(-)
+ drivers/staging/media/imx/imx7-mipi-csis.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index 9cd70d1a56221..eb2df89d4924f 100644
---- a/drivers/firmware/arm_sdei.c
-+++ b/drivers/firmware/arm_sdei.c
-@@ -491,11 +491,6 @@ static int _sdei_event_unregister(struct sdei_event *event)
- {
- 	lockdep_assert_held(&sdei_events_lock);
- 
--	spin_lock(&sdei_list_lock);
--	event->reregister = false;
--	event->reenable = false;
--	spin_unlock(&sdei_list_lock);
--
- 	if (event->type == SDEI_EVENT_TYPE_SHARED)
- 		return sdei_api_event_unregister(event->event_num);
- 
-@@ -518,6 +513,11 @@ int sdei_event_unregister(u32 event_num)
- 			break;
- 		}
- 
-+		spin_lock(&sdei_list_lock);
-+		event->reregister = false;
-+		event->reenable = false;
-+		spin_unlock(&sdei_list_lock);
-+
- 		err = _sdei_event_unregister(event);
- 		if (err)
- 			break;
-@@ -585,26 +585,15 @@ static int _sdei_event_register(struct sdei_event *event)
- 
- 	lockdep_assert_held(&sdei_events_lock);
- 
--	spin_lock(&sdei_list_lock);
--	event->reregister = true;
--	spin_unlock(&sdei_list_lock);
--
- 	if (event->type == SDEI_EVENT_TYPE_SHARED)
- 		return sdei_api_event_register(event->event_num,
- 					       sdei_entry_point,
- 					       event->registered,
- 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
- 
--
- 	err = sdei_do_cross_call(_local_event_register, event);
--	if (err) {
--		spin_lock(&sdei_list_lock);
--		event->reregister = false;
--		event->reenable = false;
--		spin_unlock(&sdei_list_lock);
--
-+	if (err)
- 		sdei_do_cross_call(_local_event_unregister, event);
--	}
- 
- 	return err;
- }
-@@ -632,8 +621,17 @@ int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
- 			break;
- 		}
- 
-+		spin_lock(&sdei_list_lock);
-+		event->reregister = true;
-+		spin_unlock(&sdei_list_lock);
-+
- 		err = _sdei_event_register(event);
- 		if (err) {
-+			spin_lock(&sdei_list_lock);
-+			event->reregister = false;
-+			event->reenable = false;
-+			spin_unlock(&sdei_list_lock);
-+
- 			sdei_event_destroy(event);
- 			pr_warn("Failed to register event %u: %d\n", event_num,
- 				err);
+diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
+index e50b1f88e25b5..6f628195c4daa 100644
+--- a/drivers/staging/media/imx/imx7-mipi-csis.c
++++ b/drivers/staging/media/imx/imx7-mipi-csis.c
+@@ -579,7 +579,7 @@ static int mipi_csis_s_stream(struct v4l2_subdev *mipi_sd, int enable)
+ 		state->flags |= ST_STREAMING;
+ 	} else {
+ 		v4l2_subdev_call(state->src_sd, video, s_stream, 0);
+-		ret = v4l2_subdev_call(state->src_sd, core, s_power, 1);
++		ret = v4l2_subdev_call(state->src_sd, core, s_power, 0);
+ 		mipi_csis_stop_stream(state);
+ 		state->flags &= ~ST_STREAMING;
+ 		if (state->debug)
 -- 
 2.20.1
 
