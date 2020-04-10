@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74CC61A487C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:29:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E4511A487D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:29:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SefxekegwJ5Y1mpvgSdQjxN1NpKsgJyBdV3JCeuqaUE=; b=jahYb4JGWdmMob
-	2bIFYy9KMdbkL/W+7FizFhYkpbjBS9jYbAnJxnPCcTwwdSArDiss7DMOzZw7JCRKwIvlWCdJg1CCU
-	LD4zNqq8qOBtpDAl8GLF9WcDUIKWUGvGbzCiBF4SRK2Yz6wSTChTdb3+0nr06vt1rHlD1s1Bd+TUE
-	V5EaLU4sTWd7MqowIt5cIwduHS1JZyvgskmn9zksuqz4xkulFIzlSfMIsQQ53X5rdngS2OhSIJvml
-	4qyKIism+Prnh5LNEdqUg4OsJeE2fjVOrXDGToeBUg/6pDDOYSwlGADdXgYh/K2VEAcTXW6cJLnog
-	VPtgYjnEpxk3OhPH/+MA==;
+	List-Owner; bh=BmT0egga3mQp0lXrEiqLiuyYE8/z4nWCtURbJ5mX+rE=; b=L7wY/hjlIrsGH4
+	TuAsYvXQlru+ib/kg+P5Ve1w4cZ0B6O5CDC3ewNsC/L//MoxLmK8s9T9rIKCVLbVRxmcwGHPmyUdx
+	PgdUJYo95OrUKMOmVPQDTmeCxKEXmEL88DFGZ1/8sNNi2Toy9SS/02hlBzMcMuewaEW2oHnHNcheA
+	oCUfX/zLHVuSaSFx4zWVK5pwbh8tgDqm44N/O70gCBTh3F9UN4hpJa2IIkDhLBGRvOU0tJN+jDYBj
+	JDFPskPn5G7IymZPLjoOnzoy2pCdDxnngU1UNEyTc89WdncuqEN5j+EUjh2mlikS2pTJ95RM9XmhR
+	KSbQTvLQ+egxh41kw83Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMwWg-0005Cy-AZ; Fri, 10 Apr 2020 16:29:06 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1jMwWs-0005Pm-Py; Fri, 10 Apr 2020 16:29:18 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMwVP-0003z0-Hj
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 16:27:48 +0000
+ id 1jMwVZ-0004DA-9J
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 16:27:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1586536067; x=1618072067;
+ t=1586536076; x=1618072076;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=js0FbCmxEhjJKEduX+K6uBUvUMXaYmimYj7qA6nb3f8=;
- b=VBY6t6bWebIuYzkb36RpDqayJeLixAiuKqWekHnQtjVC1pT8BtexbnQq
- kIoCtKI9xI82L6J2haAaH+UVyfBOR/ysXI3Le2WgJP+2fydy0wUkW5a4Z
- RGQKsEjvjgyQUWHOP3ycTsdJe0kzaqfwHP497UFz8z5wAIaqG7c8WwzZt
- 1m83hyFqbHmDQfargXz9lv+9ZQMohjfVenVRk+BsMCdoIY7Qwri6Qim4/
- 46L+5pw7QOeigRtEuFugk7X/9kPPOhkKz9Q39Tspnjy/S6sIqnGxjlgAl
- Jysj1ZY+uokAFMzSyuNaVJKrikQCP4U3Lx1YCgnFUQEUMCtxTDBBwu7kq w==;
-IronPort-SDR: sVe3P91x0uf4YCbN8jYnZ34Zv2l0xLcA0W9UcwgbqYBPyJUEw3w51NmDWz/gP1MkjQKzq5o75L
- ZpCo+ifBM9mD7TsSIc11+x+prct/yUbBxuAMkL7rk5gzVlca5U/P3R54mZd3Tz5/E4IEnyVQ7M
- baW85UdaHo5JrevESOMwfaMiWFMNdHHMUY+TZmVm/3L/FrovjmBzqDThMmU9zXrDJymtTe3ryn
- x2XRyP4MQz9+xcZ9/+B7zrUGKM4abSHcx2kJNLT3bVOJa7vAsI0O/+6hDiljOdun6tJKDGbmwC
- M5g=
-X-IronPort-AV: E=Sophos;i="5.72,367,1580799600"; d="scan'208";a="71870960"
+ bh=Eo6p7pz7SWCokkfrt5eRPXSs0G7FQfJNhTJCV7p33Xs=;
+ b=FGuRL6FGeeFtge4TB3Kgx9yiUfk0pYsnDGprTm7WdQh6T6yU/+1fo4M2
+ poN/LXL39fj86hrozUAqNWZ4BoZQWYHkTmqWl1wZjROCx9swvXx9sjit5
+ Cs6HHBjkXZTQGfvFLDvDEHwYOvTpNxOkazIOis652MMnITYNfh2c+GGMN
+ WmmAHvV6rqcmvdCTcDBoTvh1ZHc6XbA0TmQenw0BQfrDItq49tE+2z29E
+ SEI7emMppG43flMoEU/j0Bb6A1Jhb99z+4lOsJ3TkkmVBxCFbQrbdrbl4
+ 5p4Mv4CAHaw8a3rbNb8mVyv2dwyivvu94HtayP8oH8Tn5XEsLCfy8dyvk w==;
+IronPort-SDR: 6AjG0RliC4W9S/dyMTnwaFK7Z5jnQrNDSajrnRVi9WQ8FDMQwgDLEfEQyQfYdt/XDsiKYVDPX2
+ PCJ+pboexCDMyPhDPUk+mzAWX/KPZgyYzRBRRJwRiQM0dziGw9l8Y5BRXWUfkMTqf9FIXsGHNJ
+ A+VmcUd5+RTxtIK21lubyhRLqL4HkweQmOtAv+pA4ojIWulof504n7U9yuerGxH+Z6+xJfiXzA
+ P42OQnNy2pPHlp4j/yO3rqGBZBMHt7gLBUAOmgeBSu1nrD5optfq6bsrhxk5plyq3d84ibci03
+ 89E=
+X-IronPort-AV: E=Sophos;i="5.72,367,1580799600"; d="scan'208";a="75498407"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Apr 2020 09:27:47 -0700
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Apr 2020 09:27:51 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 10 Apr 2020 09:27:46 -0700
+ 15.1.1713.5; Fri, 10 Apr 2020 09:27:51 -0700
 Received: from m18063-ThinkPad-T460p.microchip.com (10.10.115.15) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 09:27:37 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 09:27:42 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <a.zummo@towertech.it>, <alexandre.belloni@bootlin.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
  <ludovic.desroches@microchip.com>, <tglx@linutronix.de>,
  <jason@lakedaemon.net>, <maz@kernel.org>
-Subject: [PATCH 4/5] ARM: dts: sam9x60: add rtt
-Date: Fri, 10 Apr 2020 19:26:58 +0300
-Message-ID: <1586536019-12348-5-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 5/5] rtc: at91sam9: add microchip,sam9x60-rtt
+Date: Fri, 10 Apr 2020 19:26:59 +0300
+Message-ID: <1586536019-12348-6-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_092747_689906_CA38D545 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20200410_092757_361791_15E33ECD 
+X-CRM114-Status: UNSURE (   9.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,48 +103,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add RTT.
+Add microchip,sam9x60-rtt to compatible list.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- arch/arm/boot/dts/at91-sam9x60ek.dts | 5 +++++
- arch/arm/boot/dts/sam9x60.dtsi       | 7 +++++++
- 2 files changed, 12 insertions(+)
+ Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/at91-sam9x60ek.dts b/arch/arm/boot/dts/at91-sam9x60ek.dts
-index ab3d2d9a420a..4020e79a958e 100644
---- a/arch/arm/boot/dts/at91-sam9x60ek.dts
-+++ b/arch/arm/boot/dts/at91-sam9x60ek.dts
-@@ -617,6 +617,11 @@
- 	};
- };
+diff --git a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
+index 6ae79d1843f3..b2f913ff6c69 100644
+--- a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
++++ b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
+@@ -1,7 +1,7 @@
+ Atmel AT91SAM9260 Real Time Timer
  
-+&rtt {
-+	atmel,rtt-rtc-time-reg = <&gpbr 0x0>;
-+	status = "okay";
-+};
-+
- &shutdown_controller {
- 	atmel,shdwc-debouncer = <976>;
- 	status = "okay";
-diff --git a/arch/arm/boot/dts/sam9x60.dtsi b/arch/arm/boot/dts/sam9x60.dtsi
-index 326b39328b58..e1d8e3a4cb0b 100644
---- a/arch/arm/boot/dts/sam9x60.dtsi
-+++ b/arch/arm/boot/dts/sam9x60.dtsi
-@@ -661,6 +661,13 @@
- 				status = "disabled";
- 			};
- 
-+			rtt: rtt@fffffe20 {
-+				compatible = "microchip,sam9x60-rtt";
-+				reg = <0xfffffe20 0x20>;
-+				interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
-+				clocks = <&clk32k 0>;
-+			};
-+
- 			pit: timer@fffffe40 {
- 				compatible = "atmel,at91sam9260-pit";
- 				reg = <0xfffffe40 0x10>;
+ Required properties:
+-- compatible: should be: "atmel,at91sam9260-rtt"
++- compatible: should be: "atmel,at91sam9260-rtt" or "microchip,sam9x60-rtt"
+ - reg: should encode the memory region of the RTT controller
+ - interrupts: rtt alarm/event interrupt
+ - clocks: should contain the 32 KHz slow clk that will drive the RTT block.
 -- 
 2.7.4
 
