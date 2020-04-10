@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D97D51A4878
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 238C81A4879
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZTHVbXWTT/4yHpAnWFJMYGAAYMENTTH1sPOXlYTQT5o=; b=iBPB2S9PUjHbVt
-	wcMLqdtIbYDFFDnlO42w8DSS4lDHDg7tCrxe7irNzU+FtReghCU4B3xxzuvP6Ordy0LO4z4F0iVGf
-	Jv2O+gGfL8Ckz20nc9oMd2JjWN4w+QKjPLfsEujOJFtBbWB96nozBEiYxW+WIE/9EfaxZn8chY/5i
-	bz0fQd83oKo9K5o5emEhU6Oh93V4yFz4g1+9pbu/hqrk90lEd+IKAm8lt2M2bcukNTl/NaOhQi4zV
-	RKjTOlTZ3s1lUkBb9w98NfTGrv2yZU2Sl0tgAbKLHQzViRNZzui3BhT1cJWTJi6Wi0nreNSme+MIL
-	Vgy+Jei+EsVpG0hol06A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uhu30wgAiG9ob0uWISL0gqXVVW+QfJwkP6mQWwXguYk=; b=eNdMNGmcfkIf90
+	JBGA/4cYPnmYtuIal72hmMsnSJ5Y97CMu1CciNBdTq0VpEGT7taFQlVusgsixtJFK3BHs6NaMUy0U
+	n40fN8RwCI2U49xYpeZpN3NGoaG7KvRcqmb3+gMsjJDzd9NvIOPc41B/DQznoF1gdU5l00m/5Buc/
+	DMo6afQLC+rGAC1jjSGWD7TVgOu0ymX5fA9YykRqx7T7uJFKt9J+nF5Eztzt0+g50/3PKWcfudayA
+	L5AL1lvTmxnoAPNtMd/1GmtRkGFCygpTZpc+JxWKNZ+y+xATrEHPYrFh1QuokCTQYj17e2swi1jp4
+	bl4LUnJguF82aktnxptg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMwVi-0004AP-9O; Fri, 10 Apr 2020 16:28:06 +0000
+	id 1jMwVx-0004Op-Um; Fri, 10 Apr 2020 16:28:21 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMwVL-0003yb-I6
+ id 1jMwVL-0003zo-4n
  for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 16:27:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1586536063; x=1618072063;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=zr0Ggw5HD1A8LRe/mt3YAqOJsFRxxBVnqpuZVViM2tY=;
- b=VxGhjLqyAm+c4pwLncESDUGDwdBhmjxslwraW+NjwTMXVd81mFtJJ5LX
- eY9D3AgQoWX26XcaY0gHw3u5cAMdH44OhcviR25laMjnHW6pbuFMnlM97
- Mi2Lpc1ukONWETTzfY9Ku9P5LcwS/shr4h5arhQPv9GAt0xgwf/hjqAY1
- kXKz8V3R33K19VlDYXYzLnGTIFcHlXi3Yc2L/zSfItiXhgDTKHfu0UKDg
- Wi1ZhPQ1JO/jZ0wjUGBgcjsK9S0FQ/yulTc1H+tNNLdqW6t8ivW7dc87R
- Mtrevojc5Zv9KCdhFAD5ts078tj3yUo6fglepXqs8qP1r6Lw2ZRnjlJn1 A==;
-IronPort-SDR: dcQHvo1Tp+DwO8ph7m4XMUxGX8s3fRDJf307Wju2OXU0I8VAGZ+0cPP5Br/thD7Xa9DYAIEwnu
- CqAV2L3cOcdKzmmVsPYk7FA4QMUL1QzL9PX18cSv35NtmjosZH2LioRQGuKSc3/Z2kAnvNHBs4
- Y2YypEBUytMFVZZ7J4brZOcj0uoS/Dxnqlm/F7031oukA/IUqrbFJ0UGd8QhTHf80IEkXaHR+g
- Hd/loSkz16ZVl0dj60XKaOjvOxqps1aReqmc8MNxB7SGeWJ7AyZmQyywL0NrhY0efEfkFgED8l
- LiU=
+ t=1586536062; x=1618072062;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=aCd7V+af5Jadl43I0vNMGaR28drNOTy1KPZ4//kZ7rU=;
+ b=2H4Yv3Ob/l+lSrPjZZlvdhnJFuyxrrDCgTVySzGghNBxKtbuwnpQ3rTv
+ yZ1ASDTYsCafKXX1AAzB89FEmt9JB2xaNf3l8R6Y7aRSQj7NpAvujdJqz
+ qM1ZbL7U+ov7fLHLTRwl0WSqboVpwm4UA107oRKLjRLrSYEQVddzC33sh
+ y6/HyASMskPaWQ0D0G5DSPTs5tkb08u4knlDTpapI/Vi3+Xtb4YN54pbP
+ JDWpccjPme1EQBY4XUoi+WLvWtHC2pPtlKT0RULumX/psDDSz7uqz0+Xk
+ oOkHwAC7TW8cof/1W8KLwJw+OZL0+xBJ8+h95FZHYy18CMp1EPppzspFR Q==;
+IronPort-SDR: OWfhyt5f4n/UHw37sg5p75/fNqYt7vB9oATzW44DQilGwdeK0cncJhoslVhwkvc1Y2QPGHgN4X
+ W1jS+BQESrFJehC02PXuZh2JuNiTsKEwvdk+1GEMQ8jnofZD79HLD2kGgEeTh0z7E3Q++Fz7Oo
+ 72Zotpvbvo+LIJFZwRCC9+5d2q4oQ80jXcIvY3Qh2PUCAQioKVpwh57Q1RvtsDwC2b+tuwb11x
+ c4Ma6vfYYd+1BAYZq7p6R1OHuxaMnWxU7xWT3Ds1mpKPFi0iel7BZfcUGW4nz5NdOarFlpaXkZ
+ U8A=
 X-IronPort-AV: E=Sophos;i="5.72,367,1580799600"; 
-   d="scan'208";a="8791173"
+   d="scan'208";a="8791187"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Apr 2020 09:27:27 -0700
+ 10 Apr 2020 09:27:32 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 10 Apr 2020 09:27:38 -0700
+ 15.1.1713.5; Fri, 10 Apr 2020 09:27:43 -0700
 Received: from m18063-ThinkPad-T460p.microchip.com (10.10.115.15) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 09:27:18 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 09:27:23 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <a.zummo@towertech.it>, <alexandre.belloni@bootlin.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
  <ludovic.desroches@microchip.com>, <tglx@linutronix.de>,
  <jason@lakedaemon.net>, <maz@kernel.org>
-Subject: [PATCH 0/5] add RTT support for SAM9X60
-Date: Fri, 10 Apr 2020 19:26:54 +0300
-Message-ID: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 1/5] irqchip/atmel-aic5: add support for sam9x60 rtt fixup
+Date: Fri, 10 Apr 2020 19:26:55 +0300
+Message-ID: <1586536019-12348-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_092743_678013_4371DFBF 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200410_092743_234318_9C405913 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -101,23 +103,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds RTT support for SAM9X60.
+Add support for SAM9X60 RTT fixup.
 
-Claudiu Beznea (5):
-  irqchip/atmel-aic5: add support for sam9x60 rtt fixup
-  rtc: at91sam9: enable driver for sam9x60
-  ARM: dts: sam9x60ek: enable gpbr
-  ARM: dts: sam9x60: add rtt
-  rtc: at91sam9: add microchip,sam9x60-rtt
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ drivers/irqchip/irq-atmel-aic-common.c | 36 +++++++++++++++++++++-------------
+ drivers/irqchip/irq-atmel-aic5.c       |  8 +++++++-
+ 2 files changed, 29 insertions(+), 15 deletions(-)
 
- .../devicetree/bindings/rtc/atmel,at91sam9-rtc.txt |  2 +-
- arch/arm/boot/dts/at91-sam9x60ek.dts               |  9 ++++++
- arch/arm/boot/dts/sam9x60.dtsi                     |  7 +++++
- drivers/irqchip/irq-atmel-aic-common.c             | 36 +++++++++++++---------
- drivers/irqchip/irq-atmel-aic5.c                   |  8 ++++-
- drivers/rtc/rtc-at91sam9.c                         |  1 +
- 6 files changed, 47 insertions(+), 16 deletions(-)
-
+diff --git a/drivers/irqchip/irq-atmel-aic-common.c b/drivers/irqchip/irq-atmel-aic-common.c
+index 072bd227b6c6..e8681133162b 100644
+--- a/drivers/irqchip/irq-atmel-aic-common.c
++++ b/drivers/irqchip/irq-atmel-aic-common.c
+@@ -169,21 +169,29 @@ void __init aic_common_rtt_irq_fixup(void)
+ {
+ 	struct device_node *np;
+ 	void __iomem *regs;
++	static const  struct of_device_id aic_rtt_fixup_ids[] = {
++		{ .compatible = "atmel,at91sam9260-rtt", },
++		{ .compatible = "microchip,sam9x60-rtt", },
++	};
++	int i;
+ 
+-	/*
+-	 * The at91sam9263 SoC has 2 instances of the RTT block, hence we
+-	 * iterate over the DT to find each occurrence.
+-	 */
+-	for_each_compatible_node(np, NULL, "atmel,at91sam9260-rtt") {
+-		regs = of_iomap(np, 0);
+-		if (!regs)
+-			continue;
+-
+-		writel(readl(regs + AT91_RTT_MR) &
+-		       ~(AT91_RTT_ALMIEN | AT91_RTT_RTTINCIEN),
+-		       regs + AT91_RTT_MR);
+-
+-		iounmap(regs);
++	for (i = 0; i < ARRAY_SIZE(aic_rtt_fixup_ids); i++) {
++		/*
++		 * The at91sam9263 SoC has 2 instances of the RTT block, hence
++		 * we iterate over the DT to find each occurrence.
++		 */
++		for_each_compatible_node(np, NULL,
++					 aic_rtt_fixup_ids[i].compatible) {
++			regs = of_iomap(np, 0);
++			if (!regs)
++				continue;
++
++			writel(readl(regs + AT91_RTT_MR) &
++			       ~(AT91_RTT_ALMIEN | AT91_RTT_RTTINCIEN),
++			       regs + AT91_RTT_MR);
++
++			iounmap(regs);
++		}
+ 	}
+ }
+ 
+diff --git a/drivers/irqchip/irq-atmel-aic5.c b/drivers/irqchip/irq-atmel-aic5.c
+index 29333497ba10..74a66cd05553 100644
+--- a/drivers/irqchip/irq-atmel-aic5.c
++++ b/drivers/irqchip/irq-atmel-aic5.c
+@@ -310,10 +310,16 @@ static void __init sama5d3_aic_irq_fixup(void)
+ 	aic_common_rtc_irq_fixup();
+ }
+ 
++static void __init sam9x60_aic_irq_fixup(void)
++{
++	aic_common_rtc_irq_fixup();
++	aic_common_rtt_irq_fixup();
++}
++
+ static const struct of_device_id aic5_irq_fixups[] __initconst = {
+ 	{ .compatible = "atmel,sama5d3", .data = sama5d3_aic_irq_fixup },
+ 	{ .compatible = "atmel,sama5d4", .data = sama5d3_aic_irq_fixup },
+-	{ .compatible = "microchip,sam9x60", .data = sama5d3_aic_irq_fixup },
++	{ .compatible = "microchip,sam9x60", .data = sam9x60_aic_irq_fixup },
+ 	{ /* sentinel */ },
+ };
+ 
 -- 
 2.7.4
 
