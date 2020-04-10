@@ -2,68 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37AB31A48B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:00:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EE061A4957
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:39:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K/wEhtcWnd4jkwohOU5rbNdi3KYT7yAw85HbhZJc1Y0=; b=G6XjNsk5w81+Lh
-	LwK7jeHx0zFcYj6TWSAq2sm/vmM/rdBl828C8hygCH9Nk8G+9LP0e4avd1VrgXh9TzALS9H6COrZu
-	JVAfXwrJa0GBDdDl/iMRJFo7YbT3IutYKOSkSPy9kGvo1UsRmkr4W3Cya7xPOvxr+WIwpTtwoYgqG
-	Z66M+lD110tswkQNnHKXIHZGAYoVX6UWLfjFwQronZaGwGaZ9BEiGuDZpPZuJNTru0hLZFctgsy1I
-	Z1uc7p+ug8Z+9kbIN9YDJFaUT4pInyO4APKnxVnzKoOe2MjkEZygb4vXnq5HUfVcZIB/KzV9anRZB
-	UF9L9sIAUn+/yHjFTHcw==;
+	List-Owner; bh=FiRzNT85P0sl8apVqClHNdN+nC7sk9A7iC6WTOs6IPk=; b=ts3VjdfJmzPfSA
+	cThJ4in3bpg0U/zaPAuOHSEIzaN+riOosd2HvWHb3MoxvcXzgPKIWQyYilN2L0uxXJZ8cjEyThzQy
+	V7IdHdkrylI4U97tgmR4hq/B3EV0Uqe4c6xQm7gz57m0TWeFqjei5jmF5Sdbe9ZhX+mhoDWf6LWAN
+	S/MJkQfOAaHCIPg1KzhRf+0RmF4AWKVeokj+Ih8COFecm2aoH1ZsGx4DqUTi2fwQqfDvtlsPFK2aL
+	URRDAS9Lv7ftPsEYDlCxR7lVgIOFn1Jui/osIIvi/O6wKRqfOMJgD9MKMcc1qvxaAvNbUqkqFApuO
+	HzCeqZSZ2EmFyOFYbpXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMx1K-0001BI-Kg; Fri, 10 Apr 2020 17:00:46 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jMxct-0006zH-NF; Fri, 10 Apr 2020 17:39:35 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMx1E-00018h-KX
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 17:00:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=oUKFqLg3+HDFm2vs2QWf5wGOnTF90+YW2FpbPNodGzs=; b=Gug0M9UyuSpEBsOoExHvkg79nj
- RraZD7s/HpjWHeZhbOm1BTN9DBDiI2Isn1+bvmxmTSDIrbX8CQXtqQh3YB3OwGB7+l/o9XGoDoWCC
- pRm39IUagOU54lOG36W8XUoJ/UXPMnC67Qf+gqMTWNVdbv/3Bt5Fjum7MZRraqCdCQCI=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jMx0O-001zrZ-H4; Fri, 10 Apr 2020 18:59:48 +0200
-Date: Fri, 10 Apr 2020 18:59:48 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Jian Cai <caij2003@gmail.com>
-Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
-Message-ID: <20200410165948.GD448831@lunn.ch>
-References: <20200409232728.231527-1-caij2003@gmail.com>
+ id 1jMxcR-0006ir-Bk
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 17:39:08 +0000
+Received: by mail-ot1-f65.google.com with SMTP id 60so2479105otl.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 10 Apr 2020 10:39:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sMpQBRP8FS5/1RZ8Jd5Q+SlXPKexMnkYQKuvOFERAmM=;
+ b=YFmtE0/L12tNmbzMey47Rd/8ywM5D35aG+2ymDdeBrbBu+2IG0xXtVjLx/o6DRxTFg
+ F6AU1XhfZ/WhdEu9p++4wpbnPoW8P5b6NZJjAwFBmWIZOXFdzR/CSi1aIk6eNy/Y4HqH
+ BKfPmkmzACXrR7undFhqKtS/prM5FGH8qMvHT+puifFoQlK5c/Jm+vrPJDbi4h9kFf1K
+ c75aWL29ObDKgxV0fuL9kDe9aD8oIZOY/fB0U815PefJ/Kpnn1Cx1OIFH7qq+FzhyvIp
+ TqGdG8JAx68vj4SrLThIqLO1kzex8YGJ/jv+/OUIp0PmEGZzikLBP5hNHIzoUcmD95MM
+ ziNg==
+X-Gm-Message-State: AGi0PuaTMFBuVTFj6vYRcS8QF9nvrmxnu1tgB2RYItq7TLjE4dvqPmhX
+ yBYik3iDFRBiXtYbQXIJrA==
+X-Google-Smtp-Source: APiQypLOpDs/VWOK6XL5g7aYp34maDUCWLeFvZay6f1FWhW6f3+p9gzEOnFLor7ULmSrlOR2HJ54hg==
+X-Received: by 2002:a05:6830:1e79:: with SMTP id
+ m25mr4962035otr.36.1586540345966; 
+ Fri, 10 Apr 2020 10:39:05 -0700 (PDT)
+Received: from rob-hp-laptop (ip-99-203-29-27.pools.cgn.spcsdns.net.
+ [99.203.29.27])
+ by smtp.gmail.com with ESMTPSA id r24sm1518599otq.9.2020.04.10.10.39.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 10 Apr 2020 10:39:05 -0700 (PDT)
+Received: (nullmailer pid 11877 invoked by uid 1000);
+ Fri, 10 Apr 2020 17:14:05 -0000
+Date: Fri, 10 Apr 2020 12:14:05 -0500
+From: Rob Herring <robh@kernel.org>
+To: Oleksij Rempel <o.rempel@pengutronix.de>
+Subject: Re: [PATCH v4 1/5] dt-bindings: vendor-prefixes: Add an entry for
+ Protonic Holland
+Message-ID: <20200410171405.GA11823@bogus>
+References: <20200330120640.9810-1-o.rempel@pengutronix.de>
+ <20200330120640.9810-2-o.rempel@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200409232728.231527-1-caij2003@gmail.com>
+In-Reply-To: <20200330120640.9810-2-o.rempel@pengutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_100040_676582_1E3E3376 
-X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-CacheID: sfid-20200410_103907_420952_DC2B89E1 
+X-CRM114-Status: UNSURE (   8.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,41 +97,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Peter.Smith@arm.com,
- stefan@agner.ch, David Howells <dhowells@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, manojgupta@google.com,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, ilie.halip@gmail.com,
- Masahiro Yamada <masahiroy@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Krzysztof Kozlowski <krzk@kernel.org>, clang-built-linux@googlegroups.com,
- samitolvanen@google.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>, jiancai@google.com,
- Doug Anderson <armlinux@m.disordat.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, Patrick Bellasi <patrick.bellasi@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 09, 2020 at 04:27:26PM -0700, Jian Cai wrote:
-> iwmmxt.S contains XScale instructions
+On Mon, 30 Mar 2020 14:06:36 +0200, Oleksij Rempel wrote:
+> Add "prt" entry for Protonic Holland: https://www.protonic.nl/en/
+> 
+> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> ---
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
-Dumb question....
+Applied, thanks.
 
-Are these Xscale instructions? My understanding is that they are an
-instruction set of their own, implementing something similar to IA-32
-MMX. 
-
-Would it be more accurate to say CLANG does not support the iwmmxt
-instruction set?
-
-	    Andrew
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
