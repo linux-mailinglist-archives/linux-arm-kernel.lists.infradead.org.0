@@ -2,57 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C8331A44B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:50:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 359931A44DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:59:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tIYGND9eWp46B1J+Pp7/kt8zLhb7wr+J7zZNZ8QUEtw=; b=rJ1DL0xoyiMRZx
-	2G0zEq5pXi+ozfNAxblv/J8aTx+EbiESuR8sk/An0jG2p7VKL4UOO4Q+yZZFNMo+7PgSXk9ThgL3a
-	1QebTEGC5ylwwrkCTZ7902WQu2ROvnInSJNExXZLvlGniYogU3WqqJUERXwwVK1xLs2ZrMfsVX6YC
-	MB01+3tNt6T2O7DO9iaAG9FhhUYmIJptE0/s6PP9hj9a7MDP2+J+Bok15IMbx6bquKXnmKdB9Qmvp
-	eS5eifv3dMUumx/mWL4U9QjXV6F+aZu+5SjztzzMONYDPerd2OCdYCMaHfe7ggPCmaIKSVM3ac2+L
-	wgN7eOG91WcqwmbjWtMg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wykYvtpW5ffq2j9QcCz7l7KrVF+IPCZd1+K+VohWJxQ=; b=UTRdhW7AGyjwnC
+	naf7jbSebCiWgGlfev6hMGJIfdieT6MSLsUdPivvs0ReBhqaFN2QBCi/dp1ivUk8zxIHf96KPKI2g
+	isXR6Vmoyfn9x2KsCyBHqvRiTBoCRDebYeUxZRHV0ELctDGkuPAnE8a2jiKp6OmKbRBysRFwJafdJ
+	aSearUJrsf9XIG9bAUtAHopGFPY04pUC0CWJ183PdI8P//qZMZ5lpX5FnB1hRNUFRZuh9AHQGEyZI
+	yK6yODL+0ypHeg5XKrG8xqErTGFkERbiBiZjKiljmI/4ff4MeVNQ2TPeMSVO7nXMvr8mE6IOd5cx5
+	D2zEjy57TXalqh2EC7jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMqIn-0001EU-3t; Fri, 10 Apr 2020 09:50:21 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1jMqR7-00064t-9L; Fri, 10 Apr 2020 09:58:57 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMqIe-0000II-3t
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:50:14 +0000
-Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
- (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 31ACB240007;
- Fri, 10 Apr 2020 09:49:47 +0000 (UTC)
-Message-ID: <a8cb67ed99d09de20583835a994586669f5dc0a5.camel@aparcar.org>
-Subject: Re: [PATCH 0/5] arm: dts: linksys: rename codename to model
-From: Paul Spooren <mail@aparcar.org>
-To: Daniel Golle <daniel@makrotopia.org>, Imre Kaloz <kaloz@dune.hu>
-Date: Thu, 09 Apr 2020 23:49:42 -1000
-In-Reply-To: <20200408162009.GC1995@makrotopia.org>
-References: <20200407210816.866084-1-mail@aparcar.org>
- <20200407224615.GA359603@lunn.ch>
- <004a2ef9c1e04f9ffbb9c3cc9907ca656a406713.camel@aparcar.org>
- <ecf4dc01-81f8-a33d-b4a7-2065748993ed@gmail.com>
- <VI1PR02MB5325621D39BF0FFAFE3993C4A0C00@VI1PR02MB5325.eurprd02.prod.outlook.com>
- <20200408162009.GC1995@makrotopia.org>
-User-Agent: Evolution 3.36.1-1 
+ id 1jMqQl-0005vC-2g
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:58:36 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48zD3r2ZS4z1qs03;
+ Fri, 10 Apr 2020 11:58:32 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48zD3r1mPzz1r0bb;
+ Fri, 10 Apr 2020 11:58:32 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id pKkWzqO_kBUE; Fri, 10 Apr 2020 11:58:31 +0200 (CEST)
+X-Auth-Info: XQLV1ClFM1naE+JGYy1hLRJfDDIRvx30OUheRE4o4Wg=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Fri, 10 Apr 2020 11:58:31 +0200 (CEST)
+From: Marek Vasut <marex@denx.de>
+Subject: Re: [PATCH V4 00/22] ARM: dts: stm32: Repair AV96 board
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+References: <20200401132237.60880-1-marex@denx.de>
+ <20200406072728.GI2937@Mani-XPS-13-9360>
+ <9c51236f-a543-99dc-ca4f-5113831451ea@denx.de>
+ <20200410090024.GB5723@Mani-XPS-13-9360>
+Message-ID: <7035b570-d1aa-532d-c70b-2fc1e04f9c28@denx.de>
+Date: Fri, 10 Apr 2020 11:55:57 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200410090024.GB5723@Mani-XPS-13-9360>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_025012_438733_6FE31B0B 
-X-CRM114-Status: GOOD (  38.70  )
+X-CRM114-CacheID: sfid-20200410_025835_267170_72316483 
+X-CRM114-Status: GOOD (  17.02  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,201 +80,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "freifunk@adrianschmutzler.de" <freifunk@adrianschmutzler.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "kaloz@openwrt.org" <kaloz@openwrt.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-04-08 at 17:23 +0100, Daniel Golle wrote:
-> Hi Imre,
-> 
-> On Wed, Apr 08, 2020 at 08:32:41AM +0000, Imre Kaloz wrote:
-> > Hi,
-> > 
-> > I'm on the same page here - this has not an issue for years. The
-> > common sense and policy was always to reject kernel changes that
-> > would only make the userland's job easier - and here were are not
-> > even talking about the userland, but a script that's being used for
-> > image generation.
-> > 
-> > The reason codenames are preffered to marketing names is simple:
-> > the same board can be sold under multiple marketing names.
-> > 
-> > The Linksys Viper has been sold as E4200v2 and EA4500. The Linksys
-> > Focus as EA6100 and EA5800. The LeMans is the EA6300 and the
-> > EA6200. The Macan is both EA7500 and EA7400 - on the other hand,
-> > the EA7500v2 and the EA7400v2 are the Savannah.
-> 
-> What Paul, Adian and others are trying to achieve here is
-> consistency.
-> See also the debate on openwrt-devel:
-> 
-> http://lists.infradead.org/pipermail/openwrt-devel/2020-April/022567.html
-> 
-> The goal is to make it easier for users and semi-automated processes
-> to identify the right OpenWrt image for a specific device.
-> This especially becomes necessary for OTA updates and we have
-> invested
-> quite a bit of work to no longer need to scrape and translate that
-> with additional layers of abstraction but simply use the first (ie.
-> most significant) compatible from DTS to indentify the right image.
-> 
-> As product-name aliases are indeed very common, we usually deal with
-> it
-> in a way that the first product name which hits the OpenWrt tree is
-> used for model, compatible, DTS- and image filenames. We then add
-> aliases to that in our build-scripts which allows web-based wizards
-> and
-> such to match the alternative names as well when entered by the user.
+On 4/10/20 11:00 AM, Manivannan Sadhasivam wrote:
+> Hi,
 
-I think if renaming of the label names is out of the questions (for ABI
-stability), the situation becomes worse adding the OpenWrt profile-name 
-as first item to the compatible list: The OpenWrt build system would
-use internally `linksys_wrt3200acm` while other scripts for LEDs would
-still use `rango`.
+Hi,
 
-Therefore I'd suggest to reject the patch and I'll see if we apply them
-within OpenWrt only or come up with something entirely different.
-
-Thanks everyone for your time, this first Kernel patch run was a bit
-exciting!
-
-Stay safe & healthy,
-Paul
-
+> On Tue, Apr 07, 2020 at 05:32:31PM +0200, Marek Vasut wrote:
+>> On 4/6/20 9:27 AM, Manivannan Sadhasivam wrote:
+>>> Hi,
+>>
+>> Hi,
+>>
+>>> On Wed, Apr 01, 2020 at 03:22:15PM +0200, Marek Vasut wrote:
+>>>> The AV96 board device tree is completely broken and does not match the
+>>>> hardware. This series fixes it up.
+>>>>
+>>>> Marek Vasut (22):
+>>>>   ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
+>>>>   ARM: dts: stm32: Repair ethernet operation on AV96
+>>>>   ARM: dts: stm32: Add missing ethernet PHY reset on AV96
+>>>>   ARM: dts: stm32: Add missing ethernet PHY skews on AV96
+>>>
+>>> Ethernet works fine with cold boot but after warm reboot it fails with below
+>>> message,
+>>>
+>>> [   18.192842] stm32-dwmac 5800a000.ethernet eth0: no phy at addr -1
+>>> [   18.197539] stm32-dwmac 5800a000.ethernet eth0: stmmac_open: Cannot attach to PHY (err)
+>>
+>> Try this patch:
+>>
 > 
+> [   17.270826] stm32-dwmac 5800a000.ethernet eth0: no phy at addr -1
+> [   17.275519] stm32-dwmac 5800a000.ethernet eth0: stmmac_open: Cannot attach to PHY (err)
 > 
-> > 
-> > Best,
-> > 
-> > Imre
-> > 
-> > ________________________________
-> > From: Florian Fainelli <f.fainelli@gmail.com>
-> > Sent: Wednesday, April 8, 2020 2:07:38 AM
-> > To: Paul Spooren <mail@aparcar.org>; Andrew Lunn <andrew@lunn.ch>
-> > Cc: devicetree@vger.kernel.org <devicetree@vger.kernel.org>; 
-> > jason@lakedaemon.net <jason@lakedaemon.net>; 
-> > gregory.clement@bootlin.com <gregory.clement@bootlin.com>; 
-> > linux-kernel@vger.kernel.org <linux-kernel@vger.kernel.org>; 
-> > daniel@makrotopia.org <daniel@makrotopia.org>; 
-> > freifunk@adrianschmutzler.de <freifunk@adrianschmutzler.de>; 
-> > robh+dt@kernel.org <robh+dt@kernel.org>; kaloz@openwrt.org <
-> > kaloz@openwrt.org>; linux-arm-kernel@lists.infradead.org <
-> > linux-arm-kernel@lists.infradead.org>; 
-> > sebastian.hesselbarth@gmail.com <sebastian.hesselbarth@gmail.com>
-> > Subject: Re: [PATCH 0/5] arm: dts: linksys: rename codename to
-> > model
-> > 
-> > 
-> > 
-> > On 4/7/2020 4:38 PM, Paul Spooren wrote:
-> > > Hi Andrew,
-> > > 
-> > > thank you very much for the quick response!
-> > > 
-> > > On Wed, 2020-04-08 at 00:46 +0200, Andrew Lunn wrote:
-> > > > On Tue, Apr 07, 2020 at 11:08:10AM -1000, Paul Spooren wrote:
-> > > > > Linksys chose to use codenames for a few of their devices and
-> > > > > sell
-> > > > > their
-> > > > > them under an entirely different name.
-> > > > > 
-> > > > > codename  model name
-> > > > > rango  -> wrt3200acm
-> > > > > mamba  -> wrt1900ac
-> > > > > cobra  -> wrt1900ac-v2
-> > > > > caiman -> wrt1200ac
-> > > > > shelby -> wrt1900acs
-> > > > 
-> > > > Hi Paul
-> > > > 
-> > > > There was quite a bit of discussion about this when the first
-> > > > board
-> > > > was added. If i remember correctly, it was Mamba.
-> > > > 
-> > > > Imre Kaloz, <kaloz@openwrt.org> was the one arguing for
-> > > > the name armada-xp-linksys-mamba.dts.
-> > > > 
-> > > > So it seems that openwrt.org has now come full circle?
-> > > 
-> > > I talked with three currently active OpenWrt core developers and
-> > > all
-> > > were in favor of a unification. I wasn't aware of any previous
-> > > discussions nor any pro arguments to keep code names.
-> > > 
-> > > I've added Imre via CC so maybe he can share his opinion, too.
-> > > > > This introduces some extra loops in OpenWrt, a distribution
-> > > > > specialized
-> > > > > on embedded Internet facing devices, as both codename and
-> > > > > model
-> > > > > name are
-> > > > > used within the build system. The double naming requires
-> > > > > developers
-> > > > > to
-> > > > > keep track of that mapping and introduces inconsistencies:
-> > > > > 
-> > > > > To build a specific device in OpenWrt profiles are used,
-> > > > > named
-> > > > > after the
-> > > > > the compatible string for targets using device tree (similar
-> > > > > to how
-> > > > > .dts
-> > > > > files are named in the linux source tree). However, the first
-> > > > > item
-> > > > > of
-> > > > > the DT `compatible` list in this case is `linksys,rango`,
-> > > > > which is
-> > > > > inconsistent with the model name and not what common users
-> > > > > would
-> > > > > expect.
-> > > > > 
-> > > > > Such double naming complicates currently the automatic search
-> > > > > for
-> > > > > firmware upgrade as the build system does not support such
-> > > > > mapping.
-> > > > > Ideally the first item of the DT `compatible` list would
-> > > > > contain a
-> > > > > string suitable to be used as a filename recognizable by
-> > > > > normal
-> > > > > users to
-> > > > > belong to that device.
-> > > > > With this patch set the Linksys device tree files are moved
-> > > > > from
-> > > > > containing the codename to contain a sanitized model name and
-> > > > > also
-> > > > > use
-> > > > > it as first entry of the DT `compatible` list.
-> > > > 
-> > > > I've no problems adding another compatible to the list. But i
-> > > > don't
-> > > > like the idea of renaming the files. The file names could be
-> > > > considered ABI! What installers/bootloaders are you going to
-> > > > break by
-> > > > renaming them?
-> > > 
-> > > Are you okay with adding the new compatible string as first
-> > > element of
-> > > the list? This would already simplify the OpenWrt build system.
-> > 
-> > Having a mapping table between model names in OpenWrt profiles and
-> > .dts
-> > file names in the kernel sources is not that complicated to
-> > maintain,
-> > changing the kernel for that reason sounds a bit weak IMHO.
-> > --
-> > Florian
+> It doesn't work. Sorry, I don't have much time to dig into this issue so
+> I'll leave it up to you :)
 
+I see, it does work on the new board, so I don't really know what to do
+here. Maybe we should just not support the old prototype board ?
 
 _______________________________________________
 linux-arm-kernel mailing list
