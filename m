@@ -2,79 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA3891A456B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 12:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F029F1A457B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 13:07:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXlnBBA3oRjLRwXXU4MEOFoNtpGTaghMWn6LD84O17s=; b=tIorrRECBVZmbs
-	5mfg8jcwCJ14aSrWrerrDO9eIudX9pJi4J8gs+5/GOL/3ew3Ct5h9/YethlNUZ8UFHhHPaRoM/9OD
-	MNmOGiXGhJrN/ASr1WGQRvGFagdoUh4qC0oGeTyumjfgjr2UqLkJNcIJy38FIS+M18BaOs81xfZcy
-	7tgNM4SIQ3GSiDq/uapR0B5OCBX7ppcZNTLzXUO8Nw6cR/LNdf/dJy1K+8OuAt6OS/4usXYMrnsli
-	fbaLE4luzDPpbKvxnWNommHZyY0XkuyFoPgAc/9NbcyBhO34+r1XbRN/O4GPu3QYtoeyXx1uAcE17
-	XtOX8mt8gipvffthIaog==;
+	List-Owner; bh=vhjyScEJw1dKR+csHmgPX7Jmigcv7gi4GLv7zF1DUfk=; b=oFz8+99Ot0sU0L
+	zDJw1wLf8WMowCTQGYUc30a8ot1NSKlcdgDEcdfiRSOEFU2GnYUc6oOjlYAIWTBboQSNk2/yy7pDU
+	tZHOkBnuwJ0/HwWbYYZosdW6aeUx9PN46O8t9mbSOdoyjipobga9zTxjyrp9zpaJUeUmY4GhTqKJ0
+	L4aOx82is0ja8El8F915lCNJo3TjIOzX1s7pg9buouSp1y+9wvTD4IwkH6zMwNWcYqZ1FMHkgePdY
+	LoNspOhB1Jvn4pohnp+9HBAJAAJTKCR1JEf4Fwze/gNKFXqoTTVT8CD4wocaPm1PrH1+IvKwFMtzd
+	BO9X4edi4NDyk4ortGyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMrK6-0000bV-5m; Fri, 10 Apr 2020 10:55:46 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jMrVh-0007BP-Hn; Fri, 10 Apr 2020 11:07:45 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMrJz-0000bA-1H
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 10:55:40 +0000
-Received: by mail-pg1-x541.google.com with SMTP id c5so848008pgi.7
+ id 1jMrVb-0007B6-0N
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 11:07:40 +0000
+Received: by mail-wm1-x341.google.com with SMTP id x4so2171744wmj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 03:55:38 -0700 (PDT)
+ Fri, 10 Apr 2020 04:07:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aIcnFNlKwbhEUKuern25WOvqQEVVsTXqGIr0A8WwShs=;
- b=OHsTaGa0WQ0YKhuVGOQ6pPcIKYKJQmtrS2+T8Szuyi16vomvG6C+YQ0O3IlqEnYEuY
- vu9zRhcCwSVWKFUOlCa+2e9JI8Q6x940HHClWPfwkcZnMF5hnXZKbD0oS6/aaG+TnVYc
- pRBFg5mAzqvql2AcdtPhjL9lMpMJ9J2zqmyzybRd0MWTbak6q6rP9UheTARiDh2qHMmB
- OQLbxh7glsMqwXOzDPqJ8GoCU7fjGbJFO+iSiVuKbM6+M63B4ffbioe7km4BzU/PYU9j
- hGP5CFwcd6r6oL55/u1/wjFFN6GAWEnYsAY8JBGSBgVtGEPYEMk727gMMDVvVW+2vJC+
- YoRg==
+ h=from:to:cc:references:in-reply-to:subject:date:message-id
+ :mime-version:content-transfer-encoding:content-language
+ :thread-index; bh=VjzS9uW/4mzFpGFiK2xCLm+I4dAqpbLmOJp3GnXktwg=;
+ b=XowhG9RBP0WyRGId3Q6ohZqzB+zuM4Ys8Fzy6W5ATPU/fZz6ySR0985vQkRPY8BSde
+ +XGjyKdDSI0PCulzsS7J4kqV4AYyXsb5sPDeiuMz7np/1J3OAjH19u3/lxZ4NMJ+Ptv3
+ XxP66Bok4gXAmlv994lpFdQ68WgBkHYGphqVGlkMfXtsQ7c0/NliLYOOQLmiIhgHpzyR
+ 1R7IxSvYKi6GE4DSL3oZ+sWgfMS8spLeLd8c4w5IOROPC09w1r7oo01HK2fX3inH2yUV
+ tmjBgrU6YnIw/lgmxZLaWcQV4wFvsRi1oI9hcuQqhbr7XEiHSXdtzmCXJEneoGGanCSq
+ IxPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aIcnFNlKwbhEUKuern25WOvqQEVVsTXqGIr0A8WwShs=;
- b=H+bACMyG5Vv/stO0QPaanSOroBmYwEDJTFDPtW0yrkVoeABWhgdx4ivPNssfKflj1q
- VV0WlUBOVy2trP0Yue6i5Qql9YDxKOoSdYoQ/WUV1KYNTucgxOFSEAcEukUxqJJp+Ad5
- xORzFjRcZgiAmblJ4U9RgqdEMPd1G3TtFU2qPXgJSsrYt/bPb1DRtli8XmFp3aHBDmNg
- zoFw9JXK43zq4QR4LHXsTsHUYJS59xoNBAan2WhGzoyijIU+bFE7iV+ioCk/Fnu4wEr1
- W9JuGn4A1QC8hgQ/NWv6dkpTahdCjdXHPfcOQPzWS5ulG5wITLRr7Gkxt6AjZEJFbVL8
- Gjqw==
-X-Gm-Message-State: AGi0PuYZy/ILTic5sHizce+LdKJuCvU7JcjyRs27HUMJisgdpPp06VWg
- CZndKPqE1O3m4kK+8uKw9saCqZc+nfbrqX6PCBA=
-X-Google-Smtp-Source: APiQypJjTjt8JGmxlFWTs2L3oU8ewPIPy4jYOmNiUW8hyrSurIcnqOta9nx1FhHqib1d/JIBljwPbBXFfHF5+tGhjZg=
-X-Received: by 2002:aa7:958f:: with SMTP id z15mr4357812pfj.130.1586516137980; 
- Fri, 10 Apr 2020 03:55:37 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:references:in-reply-to:subject:date
+ :message-id:mime-version:content-transfer-encoding:content-language
+ :thread-index;
+ bh=VjzS9uW/4mzFpGFiK2xCLm+I4dAqpbLmOJp3GnXktwg=;
+ b=JpTKk7ji1Re3J8FnONTWtDlrWi79Rt9YuRbUdPnbIIyh7hnjsL7YoKzuC8sy91hh2m
+ akdORtFfkl+cDk2ktlC0SkiUmhOlnXNZbNGzpcs17sUaMo3vepMY4oe9PcAGp8jihitt
+ zbuYqy7hNDI0MxpcjuohqKnqr2ezKbMrumv3n1XiYSwDCNZ/CLQ0gNDBkHXczhXgzfdF
+ LjGJ4i1ziIDU3tXZJVpsdITJZjD2/D9mkr7dpNpDTHglzyUj7zukxP9scNHj97WgC8IB
+ vh/+Eu0GSIfnWuVWoiI8zpdsNFp+YCDqYfp+If60XpaUtFF5P5LxHesmIHG4jQe9uV3W
+ RJ+g==
+X-Gm-Message-State: AGi0PuZxODSMMz6GkXDTlQDwvyTrwdjhSyKlpipEOAo9JHpzGt3xgaNV
+ Quw5DGUp/z7FaubC8smL75A=
+X-Google-Smtp-Source: APiQypJ4cn6GX7eyEVI/qPrqPRf8DfkFFnLVwed6+Uxm5i3EPBBYP5BzsJmII0VFs/oldwPmIYYE6g==
+X-Received: by 2002:a1c:6241:: with SMTP id w62mr4569233wmb.27.1586516856778; 
+ Fri, 10 Apr 2020 04:07:36 -0700 (PDT)
+Received: from AnsuelXPS
+ (host117-205-dynamic.180-80-r.retail.telecomitalia.it. [80.180.205.117])
+ by smtp.gmail.com with ESMTPSA id b7sm2150988wrn.67.2020.04.10.04.07.34
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 10 Apr 2020 04:07:36 -0700 (PDT)
+From: <ansuelsmth@gmail.com>
+To: "'Fabio Estevam'" <festevam@gmail.com>
+References: <20200410004738.19668-1-ansuelsmth@gmail.com>
+ <20200410004738.19668-3-ansuelsmth@gmail.com>
+ <CAOMZO5AKYO3xLsp4k6_fJCV9qW=rAtRKEGWnxksixU794dOw8A@mail.gmail.com>
+In-Reply-To: <CAOMZO5AKYO3xLsp4k6_fJCV9qW=rAtRKEGWnxksixU794dOw8A@mail.gmail.com>
+Subject: R: [PATCH 2/4] drivers: pci: dwc: pci-imx6: update binding to generic
+ name
+Date: Fri, 10 Apr 2020 13:07:33 +0200
+Message-ID: <003401d60f28$3d045190$b70cf4b0$@gmail.com>
 MIME-Version: 1.0
-References: <20200409151125.32677-1-aishwaryarj100@gmail.com>
- <20200409155936.GV3628@piout.net>
-In-Reply-To: <20200409155936.GV3628@piout.net>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 10 Apr 2020 13:55:26 +0300
-Message-ID: <CAHp75VcLLjjc5T+Qq8du4QgnQ-rtzFLh=5Jt-DPjigb+QUWOSg@mail.gmail.com>
-Subject: Re: [PATCH] iio: adc: at91-adc: Use devm_platform_ioremap_resource
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: it
+Thread-Index: AQJxOzeYiZkD8UITQ1/aTwnouqE5vAHrEXcAAuDSQDWnFXqbEA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_035539_074751_E49D7109 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200410_040739_071717_9CABDDBF 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
+ provider [ansuelsmth[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,6 +91,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,41 +105,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Kefeng Wang <wangkefeng.wang@huawei.com>, Lars-Peter Clausen <lars@metafoo.de>,
- linux-iio <linux-iio@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Allison Randal <allison@lohutok.net>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>, Aishwarya R <aishwaryarj100@gmail.com>,
- Jonathan Cameron <jic23@kernel.org>
+Cc: 'Mark Rutland' <mark.rutland@arm.com>,
+ "'open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS'"
+ <devicetree@vger.kernel.org>, 'Lorenzo Pieralisi' <lorenzo.pieralisi@arm.com>,
+ 'Richard Zhu' <hongxing.zhu@nxp.com>, linux-pci@vger.kernel.org,
+ 'Sascha Hauer' <s.hauer@pengutronix.de>,
+ 'linux-kernel' <linux-kernel@vger.kernel.org>,
+ 'Rob Herring' <robh+dt@kernel.org>, 'NXP Linux Team' <linux-imx@nxp.com>,
+ 'Pengutronix Kernel Team' <kernel@pengutronix.de>,
+ 'Bjorn Helgaas' <bhelgaas@google.com>,
+ 'Andrew Murray' <amurray@thegoodpenguin.co.uk>,
+ 'Shawn Guo' <shawnguo@kernel.org>,
+ "'moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE'"
+ <linux-arm-kernel@lists.infradead.org>, 'Lucas Stach' <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 9, 2020 at 7:00 PM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
-> On 09/04/2020 20:41:23+0530, Aishwarya R wrote:
-> > Use the helper function that wraps the calls to
-> > platform_get_resource() and devm_ioremap_resource()
-> > together.
+> Hi Ansuel,
+> 
+> On Thu, Apr 9, 2020 at 9:47 PM Ansuel Smith <ansuelsmth@gmail.com>
+> wrote:
+> >
+> > Rename specific bindings to generic name.
+> >
+> > Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
+> > ---
+> >  drivers/pci/controller/dwc/pci-imx6.c | 12 ++++++------
+> >  1 file changed, 6 insertions(+), 6 deletions(-)
+> >
+> > diff --git a/drivers/pci/controller/dwc/pci-imx6.c
+> b/drivers/pci/controller/dwc/pci-imx6.c
+> > index acfbd34032a8..4ac140e007b4 100644
+> > --- a/drivers/pci/controller/dwc/pci-imx6.c
+> > +++ b/drivers/pci/controller/dwc/pci-imx6.c
+> > @@ -1146,28 +1146,28 @@ static int imx6_pcie_probe(struct
+> platform_device *pdev)
+> >         }
+> >
+> >         /* Grab PCIe PHY Tx Settings */
+> > -       if (of_property_read_u32(node, "fsl,tx-deemph-gen1",
+> > +       if (of_property_read_u32(node, "tx-deemph-gen1",
+> 
+> This breaks compatibility with older dtbs.
 
-> Please elaborate the actual value of doing that.
+so no chance of changing this? 
 
-Please, elaborate actual value of not doing that.
-
-Yes, I know that you are p* off of these changes, but why you not
-going further and forbid all clean ups we are doing in the code?
-
-To the point. Above change is reducing code base and showing the new
-comers modern APIs to use.
-
--- 
-With Best Regards,
-Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
