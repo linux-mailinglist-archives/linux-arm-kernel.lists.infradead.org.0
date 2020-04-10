@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29AEC1A3EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:47:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B164B1A3EFF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:47:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ESApDHAUPOS1Gax6mA9udastlX6WNAgCFNHe8tFwqjg=; b=PLttwA7BChZpj8
-	iJwomJ5/JGveoPM9gGeT5rbVNyM+Csan6NZ2iDeKu7TTh/dZd9wHnuNwn7vjqLi7Bx2i4QJPsNkE8
-	mnzDyVV5qdrs0/C+MikqEt/NJ0Fdv+mtl4CRQJ+3ukWIajZ2A8NBQcWSVcG1OMmlIMhct9bp6fDUi
-	JPV8mjcwpRy9uwQ0YmtcOZylJNzWgGfZ8YMGLE+I8eBfI9cmHQos9t1jGLkKwemFIZRPHNysclWT1
-	fWHEFR0c7Fj6PEwDhvLxKvQNTs1xgCXlm0XgC9bmVzN+iNXVz4DIVhMOH7sybbM947GJSka5t81x2
-	Bqv0Cz9Uuc9VcrZ9I1GQ==;
+	List-Owner; bh=jdqGxD4gW/CZxy8eEl6tUm048gvcpIa7kopL+pIsh+c=; b=GXWiPBWmjmOXfd
+	IxGw9OzPUwxVlwlHe9wGOO0mlEzsjwxgxwGLdL8Ju8NcS04RUYhZebJmgSahVMts2LqYG2Ty08/56
+	98mJzxr8stDKerYCIa0GG/rIASmYyR6acCasKNtKGxeKktCL6/WDfe97luQqF2moT4meb/3dzC01b
+	r3BNdOycakfDn/Y0YEn0MmzsCmhvrKtA1wrQHhrSBixN++4sDGsHpQBG2NXf1gCbSs+ZupuXqsa6/
+	ZB2BJdu77I9TISiAru6wcGaUftkxC9fadzWJchZ9c8/L1sYj/H/O4Kg2vzS3oEGyeVd31B3QM+cC5
+	fVkDL++vjNdX5GLVg6Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkdE-0002H8-78; Fri, 10 Apr 2020 03:47:04 +0000
+	id 1jMkdX-0002ZG-6G; Fri, 10 Apr 2020 03:47:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkcy-0002AN-EE
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:46:49 +0000
+ id 1jMkcz-0002Bf-KU; Fri, 10 Apr 2020 03:46:50 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F301215A4;
- Fri, 10 Apr 2020 03:46:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2CED320BED;
+ Fri, 10 Apr 2020 03:46:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490407;
- bh=YDlUlH9cxoPoePJ/BVt1VLVyGDJmuuZt3f/vtA5eHsQ=;
+ s=default; t=1586490409;
+ bh=u8YqO5KRkDMJkvpaDUQlB5lQevXHKx6UCjjbjXQemGU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KBI8znHO9SpKB8M/7w//kYSOEbZQSujUGMyS0EcZWbBWrjEZqsdpkHaVUjEGfEbvY
- sbS6wU1uH1ZDuRm2ndN6E0hJTiiMNdhXoUSLz2aUve3uTbvunzgWSEUvf6+fUsawDm
- xxjtHYB0lZSZmXTOfjCwEDduVSeuy+PdhxNcaqtc=
+ b=FyehbGI3uKjc/GZqo3fKv7NKyuTxGogTcBsEaUy737dVauoUXEbgJKYQlQREV76dY
+ DieQNIysfQ3M/iI/FTUHFWwlRULY0rOlYo3PwI+OMG6t7CBzkbDX6vkZYArM0jkoXl
+ zJE5lVgAYyBOiGla1b0Pxr/9Vz9jsx+Q3f78jtG8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 10/68] firmware: arm_sdei: fix double-lock on
- hibernate with shared events
-Date: Thu,  9 Apr 2020 23:45:35 -0400
-Message-Id: <20200410034634.7731-10-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 11/68] media: arm64: dts: amlogic: add
+ rc-videostrong-kii-pro keymap
+Date: Thu,  9 Apr 2020 23:45:36 -0400
+Message-Id: <20200410034634.7731-11-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200410034634.7731-1-sashal@kernel.org>
 References: <20200410034634.7731-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204648_519700_BF7B0BD1 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20200409_204649_696255_846D3EDB 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,124 +80,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Liguang Zhang <zhangliguang@linux.alibaba.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Sean Young <sean@mess.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ linux-amlogic@lists.infradead.org, Mohammad Rasim <mohammad.rasim96@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+From: Mohammad Rasim <mohammad.rasim96@gmail.com>
 
-[ Upstream commit 6ded0b61cf638bf9f8efe60ab8ba23db60ea9763 ]
+[ Upstream commit 806d06161af045dba29f3c7747550c93b2ea3ca9 ]
 
-SDEI has private events that must be registered on each CPU. When
-CPUs come and go they must re-register and re-enable their private
-events. Each event has flags to indicate whether this should happen
-to protect against an event being registered on a CPU coming online,
-while all the others are unregistering the event.
+videostrong kii pro comes with a nec rc, add the keymap to the dts
 
-These flags are protected by the sdei_list_lock spinlock, because
-the cpuhp callbacks can't take the mutex.
-
-Hibernate needs to unregister all events, but keep the in-memory
-re-register and re-enable as they are. sdei_unregister_shared()
-takes the spinlock to walk the list, then calls _sdei_event_unregister()
-on each shared event. _sdei_event_unregister() tries to take the
-same spinlock to update re-register and re-enable. This doesn't go
-so well.
-
-Push the re-register and re-enable updates out to their callers.
-sdei_unregister_shared() doesn't want these values updated, so
-doesn't need to do anything.
-
-This also fixes shared events getting lost over hibernate as this
-path made them look unregistered.
-
-Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system power states")
-Reported-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
-Signed-off-by: James Morse <james.morse@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Mohammad Rasim <mohammad.rasim96@gmail.com>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Sean Young <sean@mess.org>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/firmware/arm_sdei.c | 32 +++++++++++++++-----------------
- 1 file changed, 15 insertions(+), 17 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index a479023fa036e..77eaa9a2fd156 100644
---- a/drivers/firmware/arm_sdei.c
-+++ b/drivers/firmware/arm_sdei.c
-@@ -491,11 +491,6 @@ static int _sdei_event_unregister(struct sdei_event *event)
- {
- 	lockdep_assert_held(&sdei_events_lock);
- 
--	spin_lock(&sdei_list_lock);
--	event->reregister = false;
--	event->reenable = false;
--	spin_unlock(&sdei_list_lock);
--
- 	if (event->type == SDEI_EVENT_TYPE_SHARED)
- 		return sdei_api_event_unregister(event->event_num);
- 
-@@ -518,6 +513,11 @@ int sdei_event_unregister(u32 event_num)
- 			break;
- 		}
- 
-+		spin_lock(&sdei_list_lock);
-+		event->reregister = false;
-+		event->reenable = false;
-+		spin_unlock(&sdei_list_lock);
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
+index 2f1f829450a29..6c9cc45fb417e 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-kii-pro.dts
+@@ -76,3 +76,7 @@
+ 		};
+ 	};
+ };
 +
- 		err = _sdei_event_unregister(event);
- 		if (err)
- 			break;
-@@ -585,26 +585,15 @@ static int _sdei_event_register(struct sdei_event *event)
- 
- 	lockdep_assert_held(&sdei_events_lock);
- 
--	spin_lock(&sdei_list_lock);
--	event->reregister = true;
--	spin_unlock(&sdei_list_lock);
--
- 	if (event->type == SDEI_EVENT_TYPE_SHARED)
- 		return sdei_api_event_register(event->event_num,
- 					       sdei_entry_point,
- 					       event->registered,
- 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
- 
--
- 	err = sdei_do_cross_call(_local_event_register, event);
--	if (err) {
--		spin_lock(&sdei_list_lock);
--		event->reregister = false;
--		event->reenable = false;
--		spin_unlock(&sdei_list_lock);
--
-+	if (err)
- 		sdei_do_cross_call(_local_event_unregister, event);
--	}
- 
- 	return err;
- }
-@@ -632,8 +621,17 @@ int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
- 			break;
- 		}
- 
-+		spin_lock(&sdei_list_lock);
-+		event->reregister = true;
-+		spin_unlock(&sdei_list_lock);
-+
- 		err = _sdei_event_register(event);
- 		if (err) {
-+			spin_lock(&sdei_list_lock);
-+			event->reregister = false;
-+			event->reenable = false;
-+			spin_unlock(&sdei_list_lock);
-+
- 			sdei_event_destroy(event);
- 			pr_warn("Failed to register event %u: %d\n", event_num,
- 				err);
++&ir {
++	linux,rc-map-name = "rc-videostrong-kii-pro";
++};
 -- 
 2.20.1
 
