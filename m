@@ -2,94 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D21341A443F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:08:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEB051A44DA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qMi7VmV/pO23pbZSVbt6kc0sRhpfs3DfH+dNFI3xj6o=; b=DdnU/IzlWrfY0P
-	eChltYJEpktxpOkmJg6Mb86s2JFmbisut3mJ8xsOA+pvGnscQhP0s3fDdtI2pAuNKku4VEW8f/mTD
-	66L9kKO9hK3rm9kO3/oA/PbANbmodmvmjkcrZ4uJGZ5Ey0i1buRvNBGzIooQliDGFKPGo2TNlfPX9
-	MjQmXYfFjmagho7RPH1CcCgVyhcZnL9dq1G3QsTwluhUZaIge9+NBVglb5dPcNUlYiA7IDtNIUhZV
-	10dkxJsyXUFT9ViMqsFKrxqwi4oCz6chKJXvZ+dlY96TX+R2nyEoDOR9/b2LdON/7E02E4BhQBkqe
-	SyOLREWCe9EabwN7frCw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xi/43aq6/4AG8RkSGEQ2upP4WSJ8xsRHMmE6wy9b1Pk=; b=XBZxpX+JjGHtTZ
+	X1vwURvlrgwP7NLfrXCz9lmUN3P7Ack11RmpJJA9s8EgjZe30//hyAFO0IENSWrP0SBoWQJxYSTp5
+	j8MNqaTo80G9tr2vJh27mEasfgMzzXUD6VowrgWyUKSTgQKI4xE2LrkfQdaOeFbFRpQJDkXHkWHti
+	S1QD/29XGlZsgXuFcFk3cqIVnt+kuZm8ec+p/OOUzeDV+2Oebe07CtX/J4DZrvNiAOXLuFSRSQ06y
+	VKr6UOGruNODFGZDOXwz3sV76Y91osQaOtpAibtcXOOmS0AaxDzbAKyyMBDacVHUWO7daWqjdOYK7
+	NYSwGc/kGMFexiPvkvpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMpeZ-000072-5y; Fri, 10 Apr 2020 09:08:47 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jMqQv-0005w8-7C; Fri, 10 Apr 2020 09:58:45 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMpeO-00006j-Rm
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:08:38 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q3so798475pff.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 02:08:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=SarLi1PRzF64qy8fzOc7J54ATYrGPWgHsJKTIfsQelY=;
- b=nOTgMRp40ilO6W7Q7nIS2dkmQsY+3CtU60Uexa/gXwqHjj3BCOhZ6PFTpwNyAG8/uF
- n41fGPffby19S7s9P5eA9GB13o1x8hYYa51QMT5ycN/j4ZdODxLKUz7ZwSWWSDPp8sh9
- QaXMF2iO7Oij97cFE3nybcC0VIXnxw2B4/5MOQdzD/z1GDPScs9AhXk/lTYzypeWhwCN
- wO+0KMHPSys/NJoOd0FFvVq6TLKBZeseA5sZy6fTjJSEmFsH6DkE4wCCdHCzUIQG5+Z4
- BiAAwpvar08yateFWe0nIa8z0jDbiP0YvJM7xoLpOpAIGxQYt95MGWMeKTe+lAVicPXi
- sK7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SarLi1PRzF64qy8fzOc7J54ATYrGPWgHsJKTIfsQelY=;
- b=Z9ZpfL0HUJQww2PAEFaGGX+Soj/n9xA8RkY+LXkfz6CxOkTDa5CYRvDFfP7yuyiuYU
- bjufc/HRgkhpfvLNjO8arGdWYitooVeioBGoCxcfWnrvsLLKhqXSP99HplRMRYjEiZou
- aA0wncekS+EDdenAwJlf0US06C3MU/u+qiEN/ZhlVf4Cu3vcPzV96JousnmMmlueE997
- 4yUvOFL36h208HRpFuvyyGCatgJEmdPRvo97eErK1Pw/0NFin/RvdHvnZf3MXM2AQmQ5
- KUN9BMFxFY/6A0VGJWt18pX/F55Ylg6HN1a6il1p4K0bMyqtr6X9KbJnlmIX1CPG+zSY
- IjxA==
-X-Gm-Message-State: AGi0PuYEd7Euu+Ha7175B+5Tgku0Gf6yyuaERAa8FZCqXOCLn9UYgrIt
- 5rYj99wzWUnsy9ECxbupeAJxnsRHsE6J
-X-Google-Smtp-Source: APiQypKxRv7GK9PQjZT+jtoLP//aw98pK+L2n2e5E9kDgv24JHO8+pJ67xlE+uq27IkGarYweW/70g==
-X-Received: by 2002:a62:19d8:: with SMTP id 207mr4205797pfz.278.1586509716293; 
- Fri, 10 Apr 2020 02:08:36 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:999:4ceb:ac45:4d4a:5a11:afed])
- by smtp.gmail.com with ESMTPSA id z15sm1265921pfg.152.2020.04.10.02.08.31
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 10 Apr 2020 02:08:35 -0700 (PDT)
-Date: Fri, 10 Apr 2020 14:38:28 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Marek Vasut <marex@denx.de>
+ id 1jMqQk-0005vB-TX
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:58:36 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48zD3p5QWBz1qs0H;
+ Fri, 10 Apr 2020 11:58:30 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48zD3p4Msxz1r0bb;
+ Fri, 10 Apr 2020 11:58:30 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id wkmvuz9bxBqv; Fri, 10 Apr 2020 11:58:29 +0200 (CEST)
+X-Auth-Info: hdxjcCBA9QbhMuhWdgbfglETnU3ZdUJJWIepPA3XWkc=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Fri, 10 Apr 2020 11:58:29 +0200 (CEST)
 Subject: Re: [PATCH V4 21/22] ARM: dts: stm32: Add bindings for USB on AV96
-Message-ID: <20200410090828.GC5723@Mani-XPS-13-9360>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 References: <20200401132237.60880-1-marex@denx.de>
  <20200401132237.60880-22-marex@denx.de>
  <20200406072242.GG2937@Mani-XPS-13-9360>
  <59d1cc85-a65e-d2bf-4591-0828cf7b8390@denx.de>
  <f952f1ad-53bb-7b85-caad-2174a4333a2c@denx.de>
+ <20200410090828.GC5723@Mani-XPS-13-9360>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <9d3b3a76-9711-6fd9-cb1b-af412c2babcd@denx.de>
+Date: Fri, 10 Apr 2020 11:16:53 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f952f1ad-53bb-7b85-caad-2174a4333a2c@denx.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200410090828.GC5723@Mani-XPS-13-9360>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_020837_413858_3EBC8F6B 
-X-CRM114-Status: GOOD (  20.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200410_025835_105914_45BC62BC 
+X-CRM114-Status: GOOD (  19.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,49 +92,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 4/10/20 11:08 AM, Manivannan Sadhasivam wrote:
+> Hi,
+
 Hi,
 
-On Tue, Apr 07, 2020 at 08:37:50PM +0200, Marek Vasut wrote:
-> On 4/6/20 1:08 PM, Marek Vasut wrote:
-> > On 4/6/20 9:22 AM, Manivannan Sadhasivam wrote:
-> >> On Wed, Apr 01, 2020 at 03:22:36PM +0200, Marek Vasut wrote:
-> >>> Fill in the bindings for USB host and gadget on AV96.
-> >>>
-> >>> Signed-off-by: Marek Vasut <marex@denx.de>
-> >>
-> >> I can't get the USB B-Micro OTG port to work with this patch. Do I need to
-> >> enable any configs other than PHY and USB DWC2 drivers?
-> > 
-> > Only the DWC2 GADGET (and possibly host, for dual-role) and some gadget
-> > implementation (e.g. gadget zero).
+> On Tue, Apr 07, 2020 at 08:37:50PM +0200, Marek Vasut wrote:
+>> On 4/6/20 1:08 PM, Marek Vasut wrote:
+>>> On 4/6/20 9:22 AM, Manivannan Sadhasivam wrote:
+>>>> On Wed, Apr 01, 2020 at 03:22:36PM +0200, Marek Vasut wrote:
+>>>>> Fill in the bindings for USB host and gadget on AV96.
+>>>>>
+>>>>> Signed-off-by: Marek Vasut <marex@denx.de>
+>>>>
+>>>> I can't get the USB B-Micro OTG port to work with this patch. Do I need to
+>>>> enable any configs other than PHY and USB DWC2 drivers?
+>>>
+>>> Only the DWC2 GADGET (and possibly host, for dual-role) and some gadget
+>>> implementation (e.g. gadget zero).
+>>
+>> I think I see what doesn't work for you.
+>>
+>> It seems the following works on next:
+>> power on -> plug in USB stick (or any other USB device) -> unplug ->
+>> plug in usb host (e.g. PC)
+>>
+>> But this does not:
+>> power on -> plug in usb host (e.g. PC)
+>>  - the PC is not detected
+>>
 > 
-> I think I see what doesn't work for you.
+> Both doesn't work. I have the rndis gadget configured in userspace but plugging
+> in the micro-b cable doesn't do anything.
 > 
-> It seems the following works on next:
-> power on -> plug in USB stick (or any other USB device) -> unplug ->
-> plug in usb host (e.g. PC)
+>> Did that ^ ever work for you before ? I suspect this is a bug in the
+>> DWC2 driver. The OTG operation there is known to be flaky at best.
 > 
-> But this does not:
-> power on -> plug in usb host (e.g. PC)
->  - the PC is not detected
+> Not on this board. I don't recall what happended with vendor image. But I do
+> have another STM32MP1 based 96Board (which will be submitted soon), there I can
+> get OTG port working.
 > 
+> But in that board a BG96 modem is connected to USB2 port on the board itself
+> which gets enumerated during probe.
 
-Both doesn't work. I have the rndis gadget configured in userspace but plugging
-in the micro-b cable doesn't do anything.
-
-> Did that ^ ever work for you before ? I suspect this is a bug in the
-> DWC2 driver. The OTG operation there is known to be flaky at best.
-
-Not on this board. I don't recall what happended with vendor image. But I do
-have another STM32MP1 based 96Board (which will be submitted soon), there I can
-get OTG port working.
-
-But in that board a BG96 modem is connected to USB2 port on the board itself
-which gets enumerated during probe.
-
-Thanks,
-Mani
-
+But it's not configured as OTG on this other board, right ?
 
 _______________________________________________
 linux-arm-kernel mailing list
