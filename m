@@ -2,41 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 144221A48FD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:34:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BCC71A4967
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fEwSvo72jCF3cwvlJjMJ4R6VV8DyglsEbH352vwiv5s=; b=tQmaUSMf65wQCF
-	Hfi6MS0Vmwh0/7IwgIpLkEFjv78ls/cghIPy+YqitJq9YY7gfUmSj0cE1prCiqe4wom8pZGp3w/Yd
-	7l11vz1PMrwcSOwMuUBbJZ/0rERHlLjQEAFvOoNwoeRSGyFqWiGn7Uyw9CDAkWZESmwz7ppdFOtMu
-	hx0qP2zaDUdpdNyeZlbK7WoJ6bYSo5FztTBauRDQ/zyUNOsnMbe1P8NEe9gJn1m7QjY/+BJgF15LS
-	kIYqbNQH+fOirYVpyAAzXfM+h7iwGFdux6aOfwKy8E8HRyagXEkpRo11dPr3kzQcVc9i2dUirMFiT
-	F3xuagCcWhtsOfFKdurA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hbts5w60savKmXur0huIieA+TM9oovoZwILCfQ3YR5c=; b=T1m1lwfrhXMyJL
+	Z69Bt6PByJpOk6DU9mM7D3DxDo/hpKiunQoZkX857TbTII55cFMCxL5AvHkGQ5RgT7CcTPhsCnm+u
+	GnNm0UwgpZs06O/MppPBG0sCoUzNCDLIJzQYz7X4Kv5MClgs9rG7T6Gn0hdMJy1RiBwArkq7iTaVj
+	7KPk7zkA9CAr8GvtV4YIj5ztwB9fDp9+Cp5eOdp4fqTdBRb1oO3k6Pb7syeLYN6w8ZsDHnaYa9sUY
+	5oGPRIE3cxhK012hsa4tAk9EHsgkbQjvTt1L5v5Xu+YuITlqAyFe0fJii35s18tBC0+suwyCKuP5I
+	H5wvMfo9FyKZ38NeWxWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMxYC-0003De-BM; Fri, 10 Apr 2020 17:34:44 +0000
-Received: from [2601:1c0:6280:3f0::19c2]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMxY4-0003Cu-MJ; Fri, 10 Apr 2020 17:34:36 +0000
-Subject: Re: [PATCH 1/3] counter: add an inkernel API
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-References: <20200406155806.1295169-1-kamel.bouhara@bootlin.com>
- <20200406155806.1295169-2-kamel.bouhara@bootlin.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <7651ea0d-91c2-49db-9af7-b01a78868d7e@infradead.org>
-Date: Fri, 10 Apr 2020 10:34:34 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jMxei-0002F3-Ku; Fri, 10 Apr 2020 17:41:28 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMxeY-0002D0-Lz
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 17:41:20 +0000
+X-Originating-IP: 86.202.105.35
+Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
+ [86.202.105.35])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 445DBFF810;
+ Fri, 10 Apr 2020 17:41:14 +0000 (UTC)
+Date: Fri, 10 Apr 2020 19:41:13 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH 5/5] rtc: at91sam9: add microchip,sam9x60-rtt
+Message-ID: <20200410174113.GZ3628@piout.net>
+References: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
+ <1586536019-12348-6-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <20200406155806.1295169-2-kamel.bouhara@bootlin.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1586536019-12348-6-git-send-email-claudiu.beznea@microchip.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200410_104118_848259_1F128D10 
+X-CRM114-Status: GOOD (  15.31  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,206 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, jason@lakedaemon.net,
+ devicetree@vger.kernel.org, maz@kernel.org, linux-kernel@vger.kernel.org,
+ ludovic.desroches@microchip.com, robh+dt@kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi--
+Hi,
 
-On 4/6/20 8:58 AM, Kamel Bouhara wrote:
-> ---
->  drivers/counter/counter.c | 213 ++++++++++++++++++++++++++++++++++++++
->  include/linux/counter.h   |  27 +++++
->  2 files changed, 240 insertions(+)
+This patch must come first. Also, the correct prefix is
+dt-bindings: rtc:
+
+On 10/04/2020 19:26:59+0300, Claudiu Beznea wrote:
+> Add microchip,sam9x60-rtt to compatible list.
 > 
-> diff --git a/drivers/counter/counter.c b/drivers/counter/counter.c
-> index 6a683d086008..f81d2d1dbca7 100644
-> --- a/drivers/counter/counter.c
-> +++ b/drivers/counter/counter.c
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+> ---
+>  Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
+> index 6ae79d1843f3..b2f913ff6c69 100644
+> --- a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
+> +++ b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
+> @@ -1,7 +1,7 @@
+>  Atmel AT91SAM9260 Real Time Timer
+>  
+>  Required properties:
+> -- compatible: should be: "atmel,at91sam9260-rtt"
+> +- compatible: should be: "atmel,at91sam9260-rtt" or "microchip,sam9x60-rtt"
 
-[snip]
+If you had a fallback on atmel,at91sam9260-rtt, this would make merging
+this series easier as this removes the need for 1/5 and 2/5.
 
-Please use
-/**
-on these functions so that kernel-doc will process them.
+I think 2/5 may be useful in the future but as far as the aic fixup
+is concerned, both IPs are identical.
 
-> +
-> +/*
-> + * devm_counter_get - Obtain an exclusive access to a counter.
-> + * @dev: device for counter "consumer"
-> + *
-> + * Returns a struct counter_device matching the counter producer, or
-> + * IS_ERR() condition containing errno.
-> + *
-> + */
-> +struct counter_device *devm_counter_get(struct device *dev)
-> +{
-> +	struct counter_device **ptr, *counter;
-> +
-> +	ptr = devres_alloc(devm_counter_release, sizeof(*ptr), GFP_KERNEL);
-> +	if (!ptr)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	counter = counter_get(dev);
-> +	if (IS_ERR(counter)) {
-> +		devres_free(ptr);
-> +		return counter;
-> +	}
-> +
-> +	*ptr = counter;
-> +	devres_add(dev, ptr);
-> +
-> +	return counter;
-> +}
-> +EXPORT_SYMBOL_GPL(devm_counter_get);
-> +
-> +/*
-> + * counter_action_get - get counter synapse mode
-> + * @counter: counter device to operate with
-> + * @action: pointer to store the current counter synapse mode
+>  - reg: should encode the memory region of the RTT controller
+>  - interrupts: rtt alarm/event interrupt
+>  - clocks: should contain the 32 KHz slow clk that will drive the RTT block.
+> -- 
+> 2.7.4
+> 
 
-should be @mode: ^^^^^
-
-> + * returns:
-> + *	0 on success, error code on failure.
-> + */
-> +int counter_action_get(struct counter_device *counter, int *mode)
-> +{
-> +	struct counter_synapse *synapse = counter->counts->synapses;
-> +	size_t action_index;
-> +	int err;
-> +
-> +	err = counter->ops->action_get(counter, counter->counts, synapse,
-> +				       &action_index);
-> +	if (err)
-> +		return err;
-> +
-> +	*mode = synapse->actions_list[action_index];
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(counter_action_get);
-> +
-> +/*
-> + * counter_action_set - set counter device synapse
-> + * @counter: counter device to operate with
-> + * @action: enum of the synapse mode
-> + * returns:
-> + *	0 on success, error code on failure.
-> + */
-> +int counter_action_set(struct counter_device *counter,
-> +		       enum counter_synapse_action action)
-> +{
-> +	struct counter_synapse *synapse = counter->counts->synapses;
-> +	const size_t num_actions = synapse->num_actions;
-> +	size_t action_index;
-> +
-> +	/* Find requested action mode */
-> +	for (action_index = 0; action_index < num_actions; action_index++) {
-> +		if (action == synapse->actions_list[action_index])
-> +			break;
-> +	}
-> +
-> +	if (action_index >= num_actions)
-> +		return -EINVAL;
-> +
-> +	return counter->ops->action_set(counter, counter->counts, synapse,
-> +					action_index);
-> +}
-> +EXPORT_SYMBOL_GPL(counter_action_set);
-> +
-> +/*
-> + * counter_function_get - get the count function
-> + * @counter: pointer to counter device to operate with
-> + * @mode: pointer to store the current counter function mode
-> + * returns:
-> + *	0 on success, error code on failure.
-> + */
-> +int counter_function_get(struct counter_device *counter, int *mode)
-> +{
-> +	size_t func_index;
-> +	int err;
-> +
-> +	err = counter->ops->function_get(counter, counter->counts,
-> +					 &func_index);
-> +	if (err)
-> +		return err;
-> +
-> +	*mode = counter->counts->functions_list[func_index];
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(counter_function_get);
-> +
-> +/*
-> + * counter_function_set - set a count function
-> + * @counter: pointer to a counter device to operate with
-> + * @function: enum of the function mode
-> + * returns:
-> + *	0 on success, error code on failure.
-> + */
-> +int counter_function_set(struct counter_device *counter,
-> +			  enum counter_count_function function)
-> +{
-> +	const size_t num_functions = counter->counts->num_functions;
-> +	size_t func_index;
-> +
-> +	for (func_index = 0; func_index < num_functions; func_index++) {
-> +		if (function == counter->counts->functions_list[func_index])
-> +			break;
-> +	}
-> +
-> +	if (func_index >= num_functions)
-> +		return -EINVAL;
-> +
-> +	return counter->ops->function_set(counter, counter->counts, func_index);
-> +}
-> +EXPORT_SYMBOL_GPL(counter_function_set);
-> +
-> +/*
-> + * counter_count_set - set a count value
-> + * @counter: pointer to the counter device to operate with
-> + * @val: count value to write into the counter
-> + * @len: length of the value written to the counter
-> + * returns:
-> + *	bytes length of the value on success, error code on failure.
-> + */
-> +size_t counter_count_set(struct counter_device *counter,
-> +			 unsigned long val, size_t len)
-> +{
-> +	return counter->ops->count_write(counter, counter->counts, val);
-> +}
-> +EXPORT_SYMBOL_GPL(counter_count_set);
-> +
-> +/*
-> + * counter_count_get - read the count value
-> + * @counter: pointer to the counter device to operate with
-> + * @val: pointer to store the count value
-> + * returns:
-> + *  0 on success, error code on failure.
-> + */
-> +int counter_count_get(struct counter_device *counter, unsigned long *val)
-> +{
-> +	return counter->ops->count_read(counter, counter->counts, val);
-> +}
-> +EXPORT_SYMBOL_GPL(counter_count_get);
-> +
->  /**
->   * devm_counter_unregister - Resource-managed counter_unregister
->   * @dev:	device this counter_device belongs to
-
-
-thanks.
 -- 
-~Randy
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
