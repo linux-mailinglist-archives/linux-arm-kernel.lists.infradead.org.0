@@ -2,135 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C8DD1A4394
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 10:35:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10A881A43A9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 10:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EbkJTWUPJVdrKkyPEbXfKRKS9jhSOzicl6v2RoOxtVg=; b=LuHmCtz3SZzvEy
-	nsTvrmXtE0i+SOFJSKxZTjpNlDqk72qCTB9FICC+8Tm3vwumEaLu4asBF1+ooAFZWLNWL+AG2FaHA
-	wtyfSgrKunr+dn0+i2fGQgtMIcRniIC0Dre2iq5hLN44tyTRy3YMhVwAol93aeZlsYHnLKD0vXrNP
-	65BtUhe2jPHoDzt8TPn/L43c0sdMMPOrI2xzFSbKYIXfIC7DkNXWOcWNY2NvnrlOZ88x39ZdSzmgW
-	AXp5aLEkiiX/uOLjAz66NJsHVATojyVPgj+66KhaT4Jb77A14fzzH1COvmrKqzqVvRB0xttBYVgWr
-	T3YhQrIToHkLfWuIBCaQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=uKbpap81qg/1buSDPLXKnrxR/YB/O4Dgr93G4skm2JI=; b=Juc
+	uzFu9N4L9yD0G6aHh8YGEXvh+jnSwCg1K4YuB/XZAdyQZdQxTCiY/7h3u0gzRnJDyPwfgAW2mc+Bk
+	rA3Ifcaw+7N2kuS1stghOwSNsDQ9P5jJjQfE4aBSW9v3jy82/YNBcHlv0/efTMV63PK23uAQYAHbn
+	2e+f6uvn/MfMPZ7Zucc2JaPl7A/vq8sqQ/S+Uzl/yrDAOSxER+huprE/N7fwHwggYczBaLc0FbKko
+	fykj8udEZvkh7ttYQ2T3089er5A6uVGPy/zzCh0sVNSZq85J065W3HduuG0I8/xKEql5SNcEedsj/
+	hm4nocrziD4WY151iq8nMXdTFkn+sRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMp8b-000196-51; Fri, 10 Apr 2020 08:35:45 +0000
-Received: from mail-bn8nam11on2066.outbound.protection.outlook.com
- ([40.107.236.66] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMp8S-00018Y-GQ
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 08:35:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=O4R7/E36YT/BPC7zHudUyWdlMtoAi4x2ucUiL6CD1Ir2XO+xsHUxbEV4ggsyZc6+zySSp89YW2VJgZFBDy1uYwKPD1YYazdSODJSc5QnRkbcPYE30RYRUVBzydPxLlPygBC0k30lu4GKjsSPZB4E9rONbl+UOof0HhinQOP9kIkxi0cPAaqy0/kDhoT0+dKrTmhvuaEihLTS/bAIepxmgiAxmmEfGnKBMcgUI+2MG49/MSUglChDXBiKpWChbPGGzLnhKcwNQrOics1gJxmv3E6eOFuMSD80v2gnXgltaxhKCAJBX+6S976tVRid/AOltEYod5/SoazPnHh03WX1Bw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GMLw1rY46Div6ct6EoqWd87MdBeI321WyxjyrggU60Q=;
- b=aF0IeOsHHVQ5y7h7AEGtAAIwkbZXED0xDRCl+OBE/KiiSwAkfUjcRw77k1ZU5lXblkvA8cCefS4v4KPmkp9W6MMnsgRkw5pVKbpbQYNuI1Ew+H6XUqRlHDp0Ck28yuk7RaL6QEaTdAwR4tZVIlqyfPR13FAn9hqdWvNvBUgAy5DY7MsbkV1TZFXC9426v5V1gPMZpQ2mDRoylW/hZF7Vbn7bXj3gzGTVu16TBF1OhU9PNqbL5ug4hOs+toq2Ikj+nI3ZLR6k1Kiv+ejLOXCKMGAtJ0+ptxMkvCuDVCe4cFR/ThkCgQ9iv1RkLppASmmEo1lsWcMXC3WGR0vAmQTHQQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GMLw1rY46Div6ct6EoqWd87MdBeI321WyxjyrggU60Q=;
- b=ry34SqGHPH/tzzI0zOFxUyQDYXSIJiCDy/MwjjgLlrlJ/lD1VTnWk6PUS2yngDYVuLE4n3MlIwdi8NaVPLrVvAMhWbjHfsNcXgpIVhEVAHC/FGlj/P1ZPKvCJNqaFTOvjboOSeFFlSzB9N2l/Xhiq4GIKmLGw5ub6apb8cH+POA=
-Received: from SN4PR0401CA0018.namprd04.prod.outlook.com
- (2603:10b6:803:21::28) by BL0PR02MB6532.namprd02.prod.outlook.com
- (2603:10b6:208:1c9::21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15; Fri, 10 Apr
- 2020 08:35:31 +0000
-Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:21:cafe::5d) by SN4PR0401CA0018.outlook.office365.com
- (2603:10b6:803:21::28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17 via Frontend
- Transport; Fri, 10 Apr 2020 08:35:31 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
- Server id 15.20.2900.15 via Frontend Transport; Fri, 10 Apr 2020 08:35:31
- +0000
-Received: from [149.199.38.66] (port=48220 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jMp7v-0007nR-5z; Fri, 10 Apr 2020 01:35:03 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jMp8N-0000un-91; Fri, 10 Apr 2020 01:35:31 -0700
-Received: from xsj-pvapsmtp01 (xsj-pvapsmtp01.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 03A8ZLRk006010; 
- Fri, 10 Apr 2020 01:35:21 -0700
-Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1jMp8D-0000sI-54; Fri, 10 Apr 2020 01:35:21 -0700
-Subject: Re: [PATCH] ARM: zynq: Don't select CONFIG_ICST
-To: Rob Herring <robh@kernel.org>, Michal Simek <michal.simek@xilinx.com>
-References: <20200409221829.29421-1-robh@kernel.org>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <642d4c6a-46c2-d9dd-923e-f34473ced17b@xilinx.com>
-Date: Fri, 10 Apr 2020 10:35:19 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200409221829.29421-1-robh@kernel.org>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(376002)(39860400002)(346002)(136003)(396003)(46966005)(4326008)(81156014)(2616005)(70586007)(44832011)(70206006)(186003)(478600001)(5660300002)(8936002)(31696002)(2906002)(8676002)(9786002)(47076004)(31686004)(110136005)(356005)(4744005)(316002)(26005)(81166007)(426003)(82740400003)(336012)(36756003)(341764005);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 159b89a3-d2b5-4403-6cb4-08d7dd2a2174
-X-MS-TrafficTypeDiagnostic: BL0PR02MB6532:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB6532C8C841D426A7C3247C73C6DE0@BL0PR02MB6532.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-Forefront-PRVS: 0369E8196C
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 9oYQdLPD3cmNaXeZxNuSSQ/+42ITFD1/xu4DspMtocamDRhokSFsBySvvvayNuFGTAs5yQMqlN1Sdx6smiF78WKLU6a02XFQU65T7fzoSKDusWKRQSwPl1pERC74cxX3TzgIajnHkxCnWSif9CNOYZjHLGsFEdUGr1rMfo95D6B8VpNuPw25yOSR4hICAmEBXQg0cDLJqjyQG8uYUerI2pQ4iGHL3UlQvZHTUQAAe207iAGxATPFW+EhVRPe+Gn2K8/a0Evkd6Fj+PuYDMPUnETE7RLdK98pG8CfwncJ344XHYiqSM+iEdCx9WADpXpK4RFAqNx8bMek0w0qkmDJJ4PIYMrBtRj7iVegzqpIrdOZLrTORR9bAkitCV0dXkmPix55DH0dujG5fgJTtPh55tgakeGxh0yWTbhxJRUd9Y9jgTo/bsEOxEHHM9t17KH7nzjv9l+KSXYjzpdl1mlylgCrm1dhqcn5SB6247lEqH0Sw/l/EXAs1oHhzpOlE57puilHLZxBtSjQTjYh2XoQxpXnOxOg6DCe2wvMXqvbjKk=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Apr 2020 08:35:31.5807 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 159b89a3-d2b5-4403-6cb4-08d7dd2a2174
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB6532
+	id 1jMpFJ-0004Cy-BS; Fri, 10 Apr 2020 08:42:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMpFA-0004CB-A0; Fri, 10 Apr 2020 08:42:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BDA131B;
+ Fri, 10 Apr 2020 01:42:28 -0700 (PDT)
+Received: from e123648.arm.com (unknown [10.37.12.30])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4884D3F68F;
+ Fri, 10 Apr 2020 01:42:18 -0700 (PDT)
+From: Lukasz Luba <lukasz.luba@arm.com>
+To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
+Subject: [PATCH v6 00/10] Add support for devices in the Energy Model
+Date: Fri, 10 Apr 2020 09:42:00 +0100
+Message-Id: <20200410084210.24932-1-lukasz.luba@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_013536_597510_4568DB71 
-X-CRM114-Status: GOOD (  13.18  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200410_014232_435951_BCBA7340 
+X-CRM114-Status: GOOD (  20.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.236.66 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,42 +60,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, mka@chromium.org, robh@kernel.org,
+ amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com, khilman@kernel.org,
+ daniel.lezcano@linaro.org, steven.price@arm.com, cw00.choi@samsung.com,
+ mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
+ alyssa.rosenzweig@collabora.com, orjan.eide@arm.com, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
+ matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
+ tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
+ rdunlap@infradead.org, rjw@rjwysocki.net, agross@kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org, lukasz.luba@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10. 04. 20 0:18, Rob Herring wrote:
-> CONFIG_ICST is for ARM Ltd reference platforms and isn't used by Zynq
-> platform, so remove selecting it. It appears to be a copy-n-paste error.
-> 
-> Cc: Michal Simek <michal.simek@xilinx.com>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  arch/arm/mach-zynq/Kconfig | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-zynq/Kconfig b/arch/arm/mach-zynq/Kconfig
-> index 1ca633e3d024..43fb941dcd07 100644
-> --- a/arch/arm/mach-zynq/Kconfig
-> +++ b/arch/arm/mach-zynq/Kconfig
-> @@ -10,7 +10,6 @@ config ARCH_ZYNQ
->  	select CADENCE_TTC_TIMER
->  	select HAVE_ARM_SCU if SMP
->  	select HAVE_ARM_TWD if SMP
-> -	select ICST
->  	select MFD_SYSCON
->  	select PINCTRL
->  	select PINCTRL_ZYNQ
-> 
+Hi all,
 
-It is c&p error.
+This patch set introduces support for devices in the Energy Model (EM)
+framework. It will unify the power model for thermal subsystem. It will
+make simpler to add support for new devices willing to use more
+advanced features (like Intelligent Power Allocation). Now it should
+require less knowledge and effort for driver developer to add e.g.
+GPU driver with simple energy model. A more sophisticated energy model
+in the thermal framework is also possible, driver needs to provide
+a dedicated callback function. More information can be found in the
+updated documentation file.
 
-Will apply when rc1 is out.
+First 7 patches are refactoring Energy Model framework to add support
+of other devices that CPUs. They change:
+- naming convention from 'capacity' to 'performance' state,
+- API arguments adding device pointer and not rely only on cpumask,
+- change naming when 'cpu' was used, now it's a 'device'
+- internal structure to maintain registered devices
+- update users to the new API
+Patch 8 updates OPP framework helper function to be more generic, not
+CPU specific.
+Patch 9 changes devfreq cooling, dropping part of old power model and
+adding registration with Energy Model via exported GPL function. It uses
+as a base the new PM QoS mechanism which is now in thermal-next.
+Patch 10 is a simple change for Panfrost GPU driver.
 
-Thanks,
-Michal
+The patch set is based on linux-next tag next-20200409.
+
+Changes:
+v6:
+- split patch 1/5 from v5 into smaller patches as requested by Daniel
+  and dropped ACK from Quentin which was in the old there
+- added function em_dev_register_perf_domain as suggested by Daniel, which
+  would help transition into the new API
+- changed 'cs' (capacity state) in different places into 'ps' (performance state),
+  since now there are many smaller patches (previously skipped because
+  of too big size of the patch with main features and left to do later)
+- changed cpumask_equal() to cpumask_intersects() when checking if 'cpus' coming
+  as an argument to registration function might overlap with already known;
+  this shouldn't be an issue when cpufreq policy is OK, but a check doesn't harm
+- added Reviewed-by from Alyssa into Panfrost related patch
+- dropped Matthias patch with PM QoS from the series since it's in the next now
+v5 [5]:
+- devfreq cooling: rebased on top of pending patch introducing PM QoS limits
+- devfreq cooling: added Matthias's patch to make this series build check pass
+- devfreq cooling: removed OPP disable code and switched to PM QoS
+- devfreq cooling: since thermal code always used a pointer to devfreq_dev_status,
+  switched to work on a local copy and avoid potential race when either busy_time or
+  total_time could change in the background
+- devfreq cooling: added _normalize_load() and handle all scenarios when
+  busy_time and total_time could have odd values (even raw counters)
+- Energy Model patch 2/4: removed prints from cpufreq drivers and added print inside
+  dev_pm_opp_of_register_em()
+- update patch 2/4 description to better reflect upcoming changes
+- collected ACK from Quentin for patch 1/4 and Reviewed-by from Steven for 4/4
+v4 [4]:
+- devfreq cooling: added two new registration functions, which will take care
+  of registering EM for the device and simplify drivers code
+  (suggested by Robin and Rob)
+- Energy Model: changed unregistering code, added kref to track usage, added
+  code freeing tables, added helper function
+- added return value to function dev_pm_opp_of_register_em() and updated
+  CPUFreq drivers code, added debug prints in case of failure
+- updated comments in devfreq cooling removing statement that only
+  simple_ondemand devfreq governor is supported to work with power extentions
+- fixed spelling in the documentation (reported by Randy)
+v3 [3]:
+- added back the cpumask 'cpus' in the em_perf_domain due potential cache misses
+- removed _is_cpu_em() since there is no need for it
+- changed function name from em_pd_energy() to em_cpu_energy(), which is
+  optimized for usage from the scheduler making some assumptions and not
+  validating arguments to speed-up, there is a comment stressing that it should
+  be used only for CPUs em_perf_domain
+- changed em_get_pd() to em_pd_get() which is now aligned with em_cpu_get()
+  naming
+- Energy Model: add code which checks if the EM is already registered for the
+  devfreq device
+- extended comment in em_cpu_get() describing the need for this function
+- fixed build warning reported on x86 by kbuild test robot in devfreq_cooling.c
+- updated documentation in the energy-model.rst
+- changed print messages from 'energy_model' to 'EM'
+- changed dev_warn to dev_dbg, should calm down test scripts in case the
+  platform has OPPs less efficient in the OPP table (some of them are there for
+  cooling reasons, we shouldn't warn in this case, debug info is enough)
+v2 [2]:
+- changed EM API em_register_perf_domain() adding cpumask_t pointer
+  as last argument (which was discussed with Dietmar and Quentin)
+- removed dependency on PM_OPP, thanks to the cpumask_t argument
+- removed enum em_type and em->type dependent code
+- em_get_pd() can handle CPU device as well as devfreq device
+- updated EM documentation
+- in devfreq cooling added code which prevents from race condition with
+  devfreq governors which are trying to use OPPs while thermal is in the middle
+  of disabling them.
+- in devfreq cooling added code which updates state of the devfreq device to
+  avoid working on stale data when governor has not updated it for a long time
+- in devfreq cooling added backward compatibility frequency table for drivers
+  which did not provide EM
+- added Steven's Reviewed-by to trace code in thermal
+- added another CPUFreq driver which needs to be updated to the new API
+
+The v1 can be found here [1].
+
+Regards,
+Lukasz Luba
+
+[1] https://lkml.org/lkml/2020/1/16/619
+[2] https://lkml.org/lkml/2020/2/6/377
+[3] https://lkml.org/lkml/2020/2/21/1910
+[4] https://lkml.org/lkml/2020/3/9/471
+[5] https://lkml.org/lkml/2020/3/18/351
+
+Lukasz Luba (10):
+  PM / EM: change naming convention from 'capacity' to 'performance'
+  PM / EM: introduce em_dev_register_perf_domain function
+  PM / EM: update callback structure and add device pointer
+  PM / EM: add support for other devices than CPUs in Energy Model
+  PM / EM: remove em_register_perf_domain
+  PM / EM: change name of em_pd_energy to em_cpu_energy
+  Documentation: power: update Energy Model description
+  OPP: refactor dev_pm_opp_of_register_em() and update related drivers
+  thermal: devfreq_cooling: Refactor code and switch to use Energy Model
+  drm/panfrost: Register devfreq cooling and attempt to add Energy Model
+
+ Documentation/power/energy-model.rst        | 135 +++---
+ drivers/cpufreq/cpufreq-dt.c                |   2 +-
+ drivers/cpufreq/imx6q-cpufreq.c             |   2 +-
+ drivers/cpufreq/mediatek-cpufreq.c          |   2 +-
+ drivers/cpufreq/omap-cpufreq.c              |   2 +-
+ drivers/cpufreq/qcom-cpufreq-hw.c           |   2 +-
+ drivers/cpufreq/scmi-cpufreq.c              |  11 +-
+ drivers/cpufreq/scpi-cpufreq.c              |   2 +-
+ drivers/cpufreq/vexpress-spc-cpufreq.c      |   2 +-
+ drivers/gpu/drm/panfrost/panfrost_devfreq.c |   2 +-
+ drivers/opp/of.c                            |  76 ++--
+ drivers/thermal/cpufreq_cooling.c           |  12 +-
+ drivers/thermal/devfreq_cooling.c           | 474 +++++++++----------
+ include/linux/devfreq_cooling.h             |  39 +-
+ include/linux/energy_model.h                | 152 ++++---
+ include/linux/pm_opp.h                      |  15 +-
+ include/trace/events/thermal.h              |  19 +-
+ kernel/power/energy_model.c                 | 477 ++++++++++++++++----
+ kernel/sched/fair.c                         |   2 +-
+ kernel/sched/topology.c                     |  20 +-
+ 20 files changed, 918 insertions(+), 530 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
