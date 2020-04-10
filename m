@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88D011A4892
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:37:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B40B1A489F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 18:44:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LKUc0pv1oaDXYb+XWrlK1F3sp+WvZDzblpa9/zmog5M=; b=WHoje7v/tItrF2
-	F0RrkbUZZ6CIetNC2eqKn/tUVElPXhbqyy24lNMO1ouFj9tFMx2nadlTaQ3M8NtByS710/cKkGxL8
-	VzHaQ06iepRfqh+SI1DTnX14ntUi3EDcbJQBRv8LQ5PTvGXs+h8zUQx/bSPEV5YtLCNDlkeeDDixK
-	U00ftHlfg0Ux3oF0a8b+jWMua+X9M6OQjs1W0I5Sqk2I6uyHAkYcZVZD1z7t42t9YoIUcGgBGS4K4
-	txdsZ76QCC36oLKmA1xVCWzmAUPv2d5qWpUmr2DdQiSUqIwZVQXS69zuKTzkrCVGQ9sjp+qwQCUPy
-	dH15OAyZAqY3yQlEDG0g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PwiIoz5YB3Egwud/Lwu3d7dbZkKhfBQN84EbzYaH288=; b=nNBrVytiADITu/
+	dl8OCGqMTmzcxad5Pt6w+j0ejzL9WDmAKrDlA6jlpvwxemoYuwfATknYLrQnpT/GeuoyJDyh8LfP3
+	e8ZVI4oTSbDTiU5AEE5jE6bToZfLPzIctWyICPvDv13Je6ih5pchXmbZDc7zSCVnhxr1FfFOmST06
+	gIJ1gYnOg6jXyjZX+Cpj8gtRtKOFKF+vf7ze9Ya84+H4zi/ubJHCH56R7VdT8lLUITC1gtfa4dQJ4
+	J/RSPdsKutYdIQ4J3HgyA2pEK+am3d76ZpxbiY0JHSTkYZXTz8hAmI+eS3M0jPcYBu317AyLrtUmX
+	Ok1oegwUnePCZnhpmN9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMwf3-000312-6F; Fri, 10 Apr 2020 16:37:45 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jMwl8-00069q-US; Fri, 10 Apr 2020 16:44:03 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMwev-00030c-PE
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 16:37:39 +0000
-Received: by mail-pf1-x444.google.com with SMTP id k15so1244143pfh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 09:37:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kMGQicetD64osreTQ6vhdHosnrVVm4nm7kya26WOitg=;
- b=oRm6j05JIM7UtqWRYrfSaxrrD/Ym6w6VtNQlVuCeHZOGUlJq9iJJAh63qp1VuVWcnA
- 6tUrvMc5w4jbFD/AEDrwfhn0pnO8VUMXS9o2V3U88KWSQjZyXn01Pr4uT8GZzHYHUUlj
- d45zmXh82TAbafnNSli99toZ75v+WESMrHLBti5hZNs09ZkSQMY6t37mDOPxI54VxfsQ
- NCSL++sfB7WZeeWQBhiT53A66H5yn/uKbxYxLAwjfHXGLl4KDmVP9gEYLWtPsNy6iie2
- F6ZjMej+3ND1Zh5h5E4dlvdeik9GhQCePrfp7d1nHUVJz4i6+6SUj+1g9ApCazQWm2Sl
- 3HgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kMGQicetD64osreTQ6vhdHosnrVVm4nm7kya26WOitg=;
- b=ZQg6Wx/OCgJWZgBZ/4+6GEZiM7FAXYxf1dAAhV4Q+XgEH3zd4yotxxxtKsBVfr6KPs
- bgTJ7B8NeVKIeK9QIDjFR6kjVLdz8GmZaNdemH3vvMNCbCRA+Nn02Pd2jW3PjyVMApWx
- 2IAbKxg0y66ZwLiIOtQgPkXBghn9obtF78s7QPqW7FiUVCif5gQlTzRkWPcjikHifNsQ
- J4b183ZqKJzbH+Zn1M9aMHYiWCndogTTdFUxz2aSfjfktYzxEzQ6f82G2Ui4+TbLy8Tm
- pY34rXOLqSMFmEbHJrkINBkryLDtgcEqypl1+N1R0gqHXZ3GrizQCnmV7wCXqivfS56i
- bc3Q==
-X-Gm-Message-State: AGi0PuY9CIqZut7SRbkdpeeLXx/GP63X8skQlWtoU+EBdEcH9e5vaUBu
- LN3URKF8CfY52rcT/SNzisKYEMTRKecOykWuJTU=
-X-Google-Smtp-Source: APiQypJSQVwaIbthGggDlTt2w0s1ErVhplhyXFG6YjdOuX1gpc0tMcIF6YG/7QdSDKsX+jLRYmIsK3fng1xEOpqLE+M=
-X-Received: by 2002:a63:1d4:: with SMTP id 203mr5113227pgb.74.1586536656920;
- Fri, 10 Apr 2020 09:37:36 -0700 (PDT)
+ id 1jMwl2-00069N-9Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 16:43:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1586537036; x=1618073036;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=IZtgr281NErrC4ObsXh3MQXKvxHUfMzv2fvTAErzi5s=;
+ b=i3fRgdHSLlxLX8yvx8K1kCDJS3Izh5vJc/eZnR4UjlD/zD4DO8fkz0UJ
+ a4rEeoDZRvKyAoXMP9f3X8l3OPtW7MSFSGLO6ysMeZrWgG13sVdPMjDE6
+ z1Sg4ZC4cVrX5Rh1nKoTEfsuic5X7m0BLgXKdFdtULGelqCDS9nt++14l
+ XupSn5R10CFe2IWPPR+aDOW7kuwPS3jWHQ+hYMklvu7LHduubdhercA6G
+ +7rduybxGppHTUr5pYZLbaPruQcxe3nid7acMQ1dsNaBUT2aaGGjifJ4y
+ fauZsC9HTf1opLmjPoDyFf51NqC/TKo5GwbRMsOTtgQLO84fCCQKv1Xqb w==;
+IronPort-SDR: PXJOqZSFecMhn6NVignQpMzVGcP3WR0oAaJwMXHXQjJZXUM0iCdbt094IHyDB21H6SVQdf0Uo7
+ 2ALtn/JsADLBdmOwTP1XTMIbqbjdpHib3ranqxO0PuRIMTaPtV6Od8G2JKiyzakdJOjbWpI2mU
+ QVVQEVu7tYcbGJmsYU7WlA8aoLsV9H8/hYNZMBLfbEnTlXHmyaOdj5FPM4EkfGD05IgEevYSKa
+ eYYcAg56gZdXQKFGTaBXAtqOWzSLEdpSW1s6iBd4yhJHxqfmsv6JWmedSy+SF1iizx/oS/WRgT
+ Dwg=
+X-IronPort-AV: E=Sophos;i="5.72,367,1580799600"; d="scan'208";a="75501639"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Apr 2020 09:43:50 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 10 Apr 2020 09:43:50 -0700
+Received: from cristi-P53.amer.actel.com (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 09:43:43 -0700
+From: <cristian.birsan@microchip.com>
+To: <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <ludovic.desroches@microchip.com>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <linux-arm-kernel@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH 0/2] ARM: at91: Add initial support for SAMA5D2-ICP
+Date: Fri, 10 Apr 2020 19:43:18 +0300
+Message-ID: <20200410164320.7658-1-cristian.birsan@microchip.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20200409151125.32677-1-aishwaryarj100@gmail.com>
- <20200409155936.GV3628@piout.net>
- <CAHp75VcLLjjc5T+Qq8du4QgnQ-rtzFLh=5Jt-DPjigb+QUWOSg@mail.gmail.com>
- <20200410112236.GX3628@piout.net>
-In-Reply-To: <20200410112236.GX3628@piout.net>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 10 Apr 2020 19:37:25 +0300
-Message-ID: <CAHp75VfJMsVB2rC-Qx6mQw+e8Vw9sVaWTu2Jvxj-nO1LzadHeA@mail.gmail.com>
-Subject: Re: [PATCH] iio: adc: at91-adc: Use devm_platform_ioremap_resource
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_093737_841329_B1E8E484 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200410_094356_343390_E23E91F8 
+X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -95,75 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Kefeng Wang <wangkefeng.wang@huawei.com>, Lars-Peter Clausen <lars@metafoo.de>,
- linux-iio <linux-iio@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Allison Randal <allison@lohutok.net>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>, Aishwarya R <aishwaryarj100@gmail.com>,
- Jonathan Cameron <jic23@kernel.org>
+Cc: Cristian Birsan <cristian.birsan@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 2:22 PM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
-> On 10/04/2020 13:55:26+0300, Andy Shevchenko wrote:
-> > On Thu, Apr 9, 2020 at 7:00 PM Alexandre Belloni
-> > <alexandre.belloni@bootlin.com> wrote:
-> > > On 09/04/2020 20:41:23+0530, Aishwarya R wrote:
-> > > > Use the helper function that wraps the calls to
-> > > > platform_get_resource() and devm_ioremap_resource()
-> > > > together.
-> >
-> > > Please elaborate the actual value of doing that.
-> >
-> > Please, elaborate actual value of not doing that.
-> >
-> > Yes, I know that you are p* off of these changes, but why you not
-> > going further and forbid all clean ups we are doing in the code?
-> >
-> > To the point. Above change is reducing code base and showing the new
-> > comers modern APIs to use.
+From: Cristian Birsan <cristian.birsan@microchip.com>
 
-> The value of doing it is to reduce the code size by 16 bytes. The same
-> people doing that will actively ruin that by adding error string for
-> error that will never ever happen.
+This patch series adds initial support for SAMA5D2 Industrial
+Communication Platform.
 
-I don't see it in the patch we are discussing, so, not an argument.
+Codrin Ciubotariu (1):
+  dt-bindings: ARM: Document SAMA5D2-ICP
 
-> Also, the commit message is definitively lacking. A good commit message
-> would say that the patch has been generated using coccinelle, that no
-> testing has been done and that no thought has been given.
+Cristian Birsan (1):
+  ARM: dts: at91: sama5d2-icp: add SAMA5D2-ICP
 
-That's I agree with.
-But somebody need to teach people how to do it better.
-
-> It would definitively make sense to send one patch per subsystem instead
-> of having 475 different patches each changing only one location.
-
-Depends on the maintainer and subsystem. This is arguable argument.
-In my subsystems (let's forget about PDx86, where one per subsystem in
-principle is not working by nature of the subsystem, but consider
-others I'm maintaining) I prefer to have a possibility to track
-changes independently on driver basis.
-
-> The whole "let's let newcomers fix trivial bugs" thing is definitively
-> not working and it is not leading to an increase of the number of useful
-> reviewers and contributors
-
-Semi-agree. That people can be self-organized into a reviewer gang and
-try to learn together.
-In any case, as for maintainers, the task has not only technical
-aspects, but mentoring as well.
+ .../devicetree/bindings/arm/atmel-at91.yaml   |   7 +
+ arch/arm/boot/dts/Makefile                    |   1 +
+ arch/arm/boot/dts/at91-sama5d2_icp.dts        | 797 ++++++++++++++++++
+ 3 files changed, 805 insertions(+)
+ create mode 100644 arch/arm/boot/dts/at91-sama5d2_icp.dts
 
 -- 
-With Best Regards,
-Andy Shevchenko
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
