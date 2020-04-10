@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3AA1A3F40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:53:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F8391A3F41
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:54:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o+66NCdfpju7Qpnuyp1GHFwtk//7CUF1sBHlFytF6ZA=; b=oEr59Rj4gbzqE4
-	/6LTybhTgK/gh99cq1gdvmwy7jU1Kqizz1NXrM4XnHLz4mzX9JklRJOoQN6pNqChy4L1M/R39dPpQ
-	fvGxmY4B19Qj2rVGskO90LRDtQlv0E2SdsCAcYyyz/TX4gTXHdrHtoit730IMVNQf7M0KjyI2y78V
-	46e88OlaCw4ARZJUjurbFy9diA5fjCcC8M2FZ1eyDtdZQq2g757Jyf1xL/brESKT9uHHwVXRfpJBo
-	8YRrZ3Ly6s70XHhGlcFoZ4IieYwHxcFXUujJzQUNbWQu5nXrixgiFBMnPj8WhO2ibLunZT2GGFXB6
-	eikQROUiNam6+ih3cANw==;
+	List-Owner; bh=+gz7czqEOjJGMm5kVw8+PS/vH2DAWZn2/IARla6cyQg=; b=Co7KOS9+rQDNMR
+	Ti/x1mCopzo52drVzeqra1sE1b3AHzAlb1O+DWkSIQlC6qHCqwu8GpJqj2vhpPRcfc6h3jB42KoiZ
+	To/xcM8UgEbQXL+bMEE4/sawyL0b+kWnql/ucVpma4g8Rbdbt7gNVdCjN1FbSQbKJN3n4fOyeLnnR
+	kKcf0/UnEzfPAb/u7ettaR8F3AJgd+AAZgwcjsHgZRQp8yRWGcuTtTe+qX4hqsO92gUKUw+xtMvpq
+	XfCJXX8+Zi1fvOj6g4pGpJTxc89zs85P8mjFhGMF+6PeS2MLopXtqYNjP/jFq7sdlaBPjphAGzHma
+	KpPCvZQ3xkHANMYun90A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkjk-0002w3-TN; Fri, 10 Apr 2020 03:53:48 +0000
+	id 1jMkk3-0003Df-Nw; Fri, 10 Apr 2020 03:54:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkfS-0004kh-NC
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:28 +0000
+ id 1jMkfa-0004rY-Ds
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1A70420A8B;
- Fri, 10 Apr 2020 03:49:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A3D5212CC;
+ Fri, 10 Apr 2020 03:49:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490562;
- bh=cD3HNfjxwqG1X/QHqJC2nXVmCHZlJSzV9ZXuWKVzoYA=;
+ s=default; t=1586490569;
+ bh=7RdBcKbcSA8txvE3ou1/hXYhwhq2DHXO8rive13W17M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UMpHauiMSIjIWxAbN3dKrrk9e1HJ01gM98LTQ4j+xvVH2UKY2Y5Nb+gWWG0f56VeO
- 28jVjayFiFXp4H+AxQhGeHG6uvvdJ9HmDJV3f2oIGwaKaiY/iCeSYWU47wZ2BDuu3Z
- xSoMPUkqIHeEqCi4/s/Wi5WsIvWrSGo/YOGb1ap8=
+ b=RKuh0dL2nTJkhA5e5W6l/3UKKIE/ush1t2Zw8t3fa+M/DJiNEX8Alfr0vbUixJ0aW
+ k94c39NvK/76nwFdhYnbPFKsmhhPdAgZYtLiSRGYjOt+GKPScATlI5ecyg122P7aBw
+ xxE95ZbDAfi34DTB8VgH935p5GbBXPMTZjrt0iY0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 09/46] media: imx: imx7-media-csi: Fix video field
- handling
-Date: Thu,  9 Apr 2020 23:48:32 -0400
-Message-Id: <20200410034909.8922-9-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 16/46] irqchip/versatile-fpga: Handle chained IRQs
+ properly
+Date: Thu,  9 Apr 2020 23:48:39 -0400
+Message-Id: <20200410034909.8922-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200410034909.8922-1-sashal@kernel.org>
 References: <20200410034909.8922-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204922_791542_F510D022 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200409_204930_557601_C91AB6FF 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,60 +80,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Rui Miguel Silva <rmfrfs@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Sungbo Eo <mans0n@gorani.run>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+From: Sungbo Eo <mans0n@gorani.run>
 
-[ Upstream commit f7b8488bd39ae8feced4dfbb41cf1431277b893f ]
+[ Upstream commit 486562da598c59e9f835b551d7cf19507de2d681 ]
 
-Commit 4791bd7d6adc ("media: imx: Try colorimetry at both sink and
-source pads") reworked the way that formats are set on the sink pad of
-the CSI subdevice, and accidentally removed video field handling.
-Restore it by defaulting to V4L2_FIELD_NONE if the field value isn't
-supported, with the only two supported value being V4L2_FIELD_NONE and
-V4L2_FIELD_INTERLACED.
+Enclose the chained handler with chained_irq_{enter,exit}(), so that the
+muxed interrupts get properly acked.
 
-Fixes: 4791bd7d6adc ("media: imx: Try colorimetry at both sink and source pads")
-Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+This patch also fixes a reboot bug on OX820 SoC, where the jiffies timer
+interrupt is never acked. The kernel waits a clock tick forever in
+calibrate_delay_converge(), which leads to a boot hang.
+
+Fixes: c41b16f8c9d9 ("ARM: integrator/versatile: consolidate FPGA IRQ handling code")
+Signed-off-by: Sungbo Eo <mans0n@gorani.run>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+Link: https://lore.kernel.org/r/20200319023448.1479701-1-mans0n@gorani.run
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/imx/imx7-media-csi.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/irqchip/irq-versatile-fpga.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
-index bfd6b5fbf4841..d24897d06947f 100644
---- a/drivers/staging/media/imx/imx7-media-csi.c
-+++ b/drivers/staging/media/imx/imx7-media-csi.c
-@@ -1009,6 +1009,7 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
- 		sdformat->format.width = in_fmt->width;
- 		sdformat->format.height = in_fmt->height;
- 		sdformat->format.code = in_fmt->code;
-+		sdformat->format.field = in_fmt->field;
- 		*cc = in_cc;
+diff --git a/drivers/irqchip/irq-versatile-fpga.c b/drivers/irqchip/irq-versatile-fpga.c
+index 928858dada756..70e2cfff8175f 100644
+--- a/drivers/irqchip/irq-versatile-fpga.c
++++ b/drivers/irqchip/irq-versatile-fpga.c
+@@ -6,6 +6,7 @@
+ #include <linux/irq.h>
+ #include <linux/io.h>
+ #include <linux/irqchip.h>
++#include <linux/irqchip/chained_irq.h>
+ #include <linux/irqchip/versatile-fpga.h>
+ #include <linux/irqdomain.h>
+ #include <linux/module.h>
+@@ -68,12 +69,16 @@ static void fpga_irq_unmask(struct irq_data *d)
  
- 		sdformat->format.colorspace = in_fmt->colorspace;
-@@ -1023,6 +1024,9 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
- 							 false);
- 			sdformat->format.code = (*cc)->codes[0];
- 		}
+ static void fpga_irq_handle(struct irq_desc *desc)
+ {
++	struct irq_chip *chip = irq_desc_get_chip(desc);
+ 	struct fpga_irq_data *f = irq_desc_get_handler_data(desc);
+-	u32 status = readl(f->base + IRQ_STATUS);
++	u32 status;
 +
-+		if (sdformat->format.field != V4L2_FIELD_INTERLACED)
-+			sdformat->format.field = V4L2_FIELD_NONE;
- 		break;
- 	default:
- 		return -EINVAL;
++	chained_irq_enter(chip, desc);
+ 
++	status = readl(f->base + IRQ_STATUS);
+ 	if (status == 0) {
+ 		do_bad_IRQ(desc);
+-		return;
++		goto out;
+ 	}
+ 
+ 	do {
+@@ -82,6 +87,9 @@ static void fpga_irq_handle(struct irq_desc *desc)
+ 		status &= ~(1 << irq);
+ 		generic_handle_irq(irq_find_mapping(f->domain, irq));
+ 	} while (status);
++
++out:
++	chained_irq_exit(chip, desc);
+ }
+ 
+ /*
 -- 
 2.20.1
 
