@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B201A402F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:56:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD9A11A4055
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:57:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jmwXwuH3t6440hLuDnRmveM4k505wZoKQKerHtoW0g8=; b=aJkTegdYmjCEu2
-	F8AgI0k8wyl/TtcK3fNgfACdz2OeptKCLLQe09hrMVWG72ZbmTIUfLkQ24Wx3VkOmHREivT4kRpZa
-	fTiMegqm0ilW0/oN2LuKnVgeHPCwzeR4GLU16A5S74cZtX3Dizkac6kTlxEWUvbTltbjyrGtKuUSw
-	/7aiRLeux0EmBTZrRlB6+ILWqOl/zfzWAw3WO3mfuE0o9XO6IOvSW6yH1LSsT0l2JBWIdx8VndMdH
-	BPrAJS5EnDXXPzpzZxBAooE97Y2xN1OuN2miGlO42ZQZ8TjGhIiQhob9EU1rdSBNHSCJuWNNwIpSx
-	aNuWjnvMO/K9qLDQLb+w==;
+	List-Owner; bh=jE4ALqxbKc+09XkLldMWVmZ0w+X5ckHVEXKfK4HrFHQ=; b=W3mODBIF9FjvKR
+	vnNPw1HOlPH1ycy/l2wVV7zs8YXsYjxPQ/VZ8RsRrWwsBaD25LbtpFTWitw39rNMJGYLyc1zsVXfj
+	PvsS/J+Ihv4XxUjUHeVNJ9gN4pMdp9vFk4Lpx0vTUC+JQ/mkDj36erHw6l3Q9/1hXugNDu0W+80UH
+	tSeHCMZSZ5TMnXJOVbrZ2wlnQNFCtRtgWWlncpWBeaFfNySgt2BqEX/lLYOr+0iLFSg7LZQipY37R
+	4hFfNdwQpBfd2TmRh1mjmKkYcHOOqlh3nA4rL8MSdyrbSqe2GjA3QKK/jGf8/eyY/te/4lEC3Z6ki
+	34GIk/cVi/KJZzCUmWlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkmd-00089E-8P; Fri, 10 Apr 2020 03:56:47 +0000
+	id 1jMkmr-0008Q7-39; Fri, 10 Apr 2020 03:57:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkhG-0000YR-3e
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:51:19 +0000
+ id 1jMkhQ-0000hw-Dn
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:51:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1020C214DB;
- Fri, 10 Apr 2020 03:51:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1499D20936;
+ Fri, 10 Apr 2020 03:51:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490672;
- bh=KT2yBYzFcnG6X4wReHanZXpSDB758iWo6MWEDYasil8=;
+ s=default; t=1586490683;
+ bh=We/vyhe2cfJd2qfF9pcHX4vqYU/yzKoy1e/YSwJxI2k=;
  h=From:To:Cc:Subject:Date:From;
- b=1DAfRrmKbS4SMnu7iz3GDvyNbsY09k5nXa1eOQr4Y5bYggFhkoSSutHeUGvxEQjnj
- +6o35rny+8HGvbldACoyqOfcjn7bgD+/GElqnKBA4lwXnpqKfFY686jPniSC5tVdO4
- /q5splXGSg4/FeevOZ+L/sJb+8lZFcaCeKwc2SGE=
+ b=GspE30Q3rosI7bHxd1C1XyS8Hv8rqHUYAolNlKXSikB0UVN8ZXsGyt518M9RHMqsb
+ UKfzylvBUA3Zmh4COaObYY3G4VmnazoqG3ih46hhEICxP26z9IDDwbqv2wDdBrFtSv
+ bZjUSLAmnA7qVodGMy63WiMU6HvPlRW9lya7RaSE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 1/9] irqchip/versatile-fpga: Handle chained IRQs
+Subject: [PATCH AUTOSEL 4.4 1/8] irqchip/versatile-fpga: Handle chained IRQs
  properly
-Date: Thu,  9 Apr 2020 23:51:02 -0400
-Message-Id: <20200410035111.9938-1-sashal@kernel.org>
+Date: Thu,  9 Apr 2020 23:51:14 -0400
+Message-Id: <20200410035122.10065-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_205114_320753_62D1369C 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20200409_205124_491248_8F0E3F59 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -106,7 +106,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 10 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/irqchip/irq-versatile-fpga.c b/drivers/irqchip/irq-versatile-fpga.c
-index 37dd4645bf188..66502bdefdf78 100644
+index cadf104e30746..c18f6bdd03b12 100644
 --- a/drivers/irqchip/irq-versatile-fpga.c
 +++ b/drivers/irqchip/irq-versatile-fpga.c
 @@ -5,6 +5,7 @@
