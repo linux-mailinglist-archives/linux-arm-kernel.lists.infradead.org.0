@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 806121A45FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 13:55:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30B491A4621
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 14:02:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1GrxcVhVpYE9MJeyoY9ghFG1yh2rF/WDJLdwXN8dJNg=; b=ejWa84y781oFBo
-	1DF41XLFLKcgZr6vWFYb8jhTUljfJrb+j3pQ9hGp4heU/tJj4QRvlS08HhbhslRiKwdgJtj0At8+E
-	m7l3G9GacFmL3CoxpCNSTJu+7g21erYgz+J5VTYObtvhomY9dvGnJ1olOr8w4it6yQjibW/c+yRxH
-	OrU8xJw8ckYZhkywwp8P7XYvCA4PDajc3JYAuQwvG4Ta1lsB9kfknMlbUP2jc+1ZWSulp1a7gOc1s
-	9YAyMd13RjDxZ9Kgi9nyzqTkqrDk2vHarv6BkP05AqG57mZbER6R9bKt7gJsGCK9FlfDigbMlzOeN
-	yjiUzmdPPFs3khJa8roA==;
+	List-Owner; bh=MOlFTd+pskPw+E1ZzD57s6aItTnSWd8l1++94yNRs+0=; b=lObrqn7rzqrwo6
+	iTo8C9Da3hWoohm0IDTu+t+34Qq8w48LTgs/YLzP9Kijb/rCIj2dgNcgB+TP+f/WQ1Zx2A8ekYb0w
+	/oSckiDz91R8zqx8H1iviZNCH4zvAHDrj+1fR9kh3H+D2BQNh8jWaWR0n8ZQ/1qWtHi24XR5UmP05
+	AvlZWDr8H2kN3UQ4+OJOJQPsN+zEs7jRwJJES/aP/hL66AAryvWndTGpLrH2kzcrJ5/2c6PjMsn9v
+	zP9M9ZDuZ0G4Bw18YNq8GfBchOgbsqSScd2iaoMTtXZKlRM6ES9RKcxVNCwY/Ew1bfvIab+hyUWMg
+	IEXYCFEN1as3muFMDHig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMsFQ-0002fP-4w; Fri, 10 Apr 2020 11:55:00 +0000
+	id 1jMsMz-00088M-BR; Fri, 10 Apr 2020 12:02:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMsFJ-0002f4-OT
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 11:54:54 +0000
+ id 1jMsMs-00087t-0Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 12:02:43 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 33F8220769;
- Fri, 10 Apr 2020 11:54:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 201EB2082D;
+ Fri, 10 Apr 2020 12:02:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586519692;
- bh=o+CQzbgHOG2tsd35vnw41EOBr4volv2Kz4qD+fukZOU=;
+ s=default; t=1586520161;
+ bh=Nv2pXatIqD68w/N5cyB/YmKTeoXvBy/No04xylq046o=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HOJFDPMOO8WGt4clfPskCQhqsc7GzEp6Wi3CvIRqOenKQpGl0DnGbd9nqoGSOuM5e
- rHZWZaWhsuvvKPaN0PJb5yxa+cI0bg7WxiSPu9Dtn6CkhUxVYzUGOlmm1PUYH+mTYw
- 0MnRDcAYtLU9QqCtGfVXBC8qgEDs4EQl2/mTCgGY=
-Date: Fri, 10 Apr 2020 12:54:46 +0100
+ b=XRevdh9H8acoAotn70g+BQ7d6/W7dBxFNTzePAAUJyjldWcsS9Sz2S00eYzHNtZ3q
+ B5GoBGkPxH0ljIjoIWbKhmup6Zrk3THu4mMU+vyjNZj0REK9QU2YvkSuTDdeTJTn1w
+ jPu39iEQU76xmCBWe9M3tQxcF1v7rYGLjpTx3gow=
+Date: Fri, 10 Apr 2020 13:02:35 +0100
 From: Will Deacon <will@kernel.org>
 To: Hanjun Guo <guohanjun@huawei.com>
 Subject: Re: [RFC PATCH v2] arm64: cpufeatures: add support for tlbi range
  instructions
-Message-ID: <20200410115446.GA24814@willie-the-truck>
+Message-ID: <20200410120235.GC24814@willie-the-truck>
 References: <5DC960EB.9050503@huawei.com>
  <20191111132716.GA9394@willie-the-truck>
  <5DC96660.8040505@huawei.com>
@@ -49,13 +49,14 @@ References: <5DC960EB.9050503@huawei.com>
  <e6d2ad1c5392c2c3503ed8bb7560e04f@www.loen.fr>
  <3b833c82-2c1b-462a-f06f-d4c8b373dac1@huawei.com>
  <b24f3c62-128c-c4b2-e1d3-d6ae2162c754@huawei.com>
+ <20200410115446.GA24814@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b24f3c62-128c-c4b2-e1d3-d6ae2162c754@huawei.com>
+In-Reply-To: <20200410115446.GA24814@willie-the-truck>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_045453_816113_1960E86E 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20200410_050242_526421_8208D00C 
+X-CRM114-Status: GOOD (  22.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,39 +98,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 09:43:49AM +0800, Hanjun Guo wrote:
-> On 2019/11/20 9:29, Hanjun Guo wrote:
+On Fri, Apr 10, 2020 at 12:54:46PM +0100, Will Deacon wrote:
+> On Fri, Apr 10, 2020 at 09:43:49AM +0800, Hanjun Guo wrote:
+> > On 2019/11/20 9:29, Hanjun Guo wrote:
+> > > > 
+> > > > I also wonder if the ARMv8.4-TTL extension (which I have patches for in
+> > > > the nested virt series) requires the same kind of treatment (after all,
+> > > > it has an implicit range based on the base granule size and level).
+> > > > 
+> > > > In any way, this requires careful specification, and I don't think
+> > > > we can improvise this on the ML... ;-)
 > > > 
-> > > I also wonder if the ARMv8.4-TTL extension (which I have patches for in
-> > > the nested virt series) requires the same kind of treatment (after all,
-> > > it has an implicit range based on the base granule size and level).
+> > > Sure :), the good news is that ARM officially announced will be
+> > > working with Huawei again.
 > > > 
-> > > In any way, this requires careful specification, and I don't think
-> > > we can improvise this on the ML... ;-)
+> > > So if I understand your point correctly, we need steps to take:
+> > >   - ARM spec needs to make TIBi by range crystal clear and being
+> > >     written down in the spec;
+> > >   - Firmware description of supporting TLBi by range in system level
+> > >     for both FDT and ACPI;
+> > >   - Then upstream the code.
 > > 
-> > Sure :), the good news is that ARM officially announced will be
-> > working with Huawei again.
+> > Do we have update here? I noticed that the TLBI by rang for SMMU is
+> > merged for upstream from Rob, any plan or progress for the CPU side?
 > > 
-> > So if I understand your point correctly, we need steps to take:
-> >   - ARM spec needs to make TIBi by range crystal clear and being
-> >     written down in the spec;
-> >   - Firmware description of supporting TLBi by range in system level
-> >     for both FDT and ACPI;
-> >   - Then upstream the code.
+> > Sorry to ping you on the mailling list, our upcoming new chip has
+> > this feature and it's good to enable it, so it's a bit urgent for us.
 > 
-> Do we have update here? I noticed that the TLBI by rang for SMMU is
-> merged for upstream from Rob, any plan or progress for the CPU side?
+> Have you tried look at the latest version of the patches rather than
+> "pinging" old history? We're also in the merge window at the moment, so
+> please cut us some slack.
 > 
-> Sorry to ping you on the mailling list, our upcoming new chip has
-> this feature and it's good to enable it, so it's a bit urgent for us.
+> I also fail to see the urgency. This thing is a pure performance play, and a
+> fairly niche one at that. I'm not especially comfortable ripping up our TLBI
+> code without being able to test it.
 
-Have you tried look at the latest version of the patches rather than
-"pinging" old history? We're also in the merge window at the moment, so
-please cut us some slack.
+Argh, so while it *is* the middle of the merge window and I do fail to see
+the urgency of this, I also mixed it up with the TTL series, which is the one
+I'm really worried about.
 
-I also fail to see the urgency. This thing is a pure performance play, and a
-fairly niche one at that. I'm not especially comfortable ripping up our TLBI
-code without being able to test it.
+Please post a v3 at -rc1.
 
 Will
 
