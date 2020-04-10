@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B11821A3F32
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:51:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1FB41A3F36
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:51:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sC2LExiGrHdaonWCQeh/Orcrd2bgtZOYXC/aroeYWQI=; b=VPUP/q+Q7Hrr/b
-	8SgxF4nXppE89Eea4XCE2UleX3zB0VvEzWXMTDg1YMCn5lWkFdpMNoodvsHOwSIHIeOAT0MyppFKb
-	rzBm5tBYPQ44MogyzbZvCN3wj98RBKmFWtXdebR8bueDpVXj+IAO9V9NwEW277WRtVy8B5+Z4glGG
-	LC9v1E+nJVknnSYn6qPhnbihs0jDmHjXo62afgjY4+5g90FpiCdf4CxsM6c5YkkAfnBwVN/mK0lZn
-	Mqd9NMsw83REyQZTRozaGT/h8WWIg7obn9drsmM2Bfoe2qVJoeAl2UM29iC11mTruCx3b2DbYKQ8n
-	HszxnEZ8sp1CsHiW+kxA==;
+	List-Owner; bh=XbSuLgUCsfV+Qlq7rXylESRPIxM7CtQY7XFRgxodRDs=; b=hYn3cdnVOk3EfY
+	m7wqmL/cIMYE1fijznVvVEO4oPrEi8s33AbuU/5m7spyMngvbF4BhZwa8Z9XG2hQJxDWBHtRwtH3I
+	1XT8audHPVdULhjF1/cMeJc/v6vmpSkgAjl6YI/PyIJuK1uuxgrdZtfIoDzxbCHqJ7sP3LgTv/SQE
+	hUsq11U9Eu26wD5d0BbV9BTypZtM+YT7H5XGVsNbH+6Do7bKe6D16n0fSnyXlJ6SJN1xgM2r/1E7L
+	3c2mE3xt6fY6l6et++ex3ePSK9BxP1oVQhEckALIQbQRtCyVB+DlyrNCq46ScDKH4byo/bdCxbEmz
+	W6YYR/9wh89mmVbKlIyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkh8-00008Q-9r; Fri, 10 Apr 2020 03:51:06 +0000
+	id 1jMkha-0000YD-Jz; Fri, 10 Apr 2020 03:51:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkeR-0003lh-A6
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:48:22 +0000
+ id 1jMkeS-0003n8-Rw
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:48:25 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 70BDC20936;
- Fri, 10 Apr 2020 03:48:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D244420CC7;
+ Fri, 10 Apr 2020 03:48:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490498;
- bh=gWKi+M4ukqnEuUHDdXxPRoNAqrcK8KTNaaTDcH/tEEU=;
+ s=default; t=1586490499;
+ bh=0XrRqotfepK3zUNWdd8fnIccrvPnNVyNdW6GWO8JWtQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xM9laWuAmu3XGI1070zymbPndZ7gSAFvay7jdXQc22rgc7io600urieKmJpfCfoN+
- whixbINC/GIQzLF6GxXUxZQ6xYVfsQeX+sQfCnQgZmesRBeuJYop02gct94BGNccrE
- fW94aqUrWrlI1TriDIxxo+qkYJlGU8dvP12mQdh0=
+ b=fkS9Ecexy10VU35f198dJ0j5M2XOSQ9xkohSIUGYVr0F0wl6hPcxdWoV9XV+kENAc
+ W0c5OZD0ehqDHddM9gb932nzxTpneQdIDE9caopAFIkkckxkmRl/agn8asP2yqKVXQ
+ kxarXbwIypMmi0/KDkCDh+eEu4HZQLHMStONewao=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 14/56] media: imx: imx7_mipi_csis: Power off the
- source when stopping streaming
-Date: Thu,  9 Apr 2020 23:47:18 -0400
-Message-Id: <20200410034800.8381-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 15/56] media: imx: imx7-media-csi: Fix video field
+ handling
+Date: Thu,  9 Apr 2020 23:47:19 -0400
+Message-Id: <20200410034800.8381-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200410034800.8381-1-sashal@kernel.org>
 References: <20200410034800.8381-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204819_403171_6B62CD41 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200409_204821_161540_CA3CB751 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,34 +94,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-[ Upstream commit 770cbf89f90b0663499dbb3f03aa81b3322757ec ]
+[ Upstream commit f7b8488bd39ae8feced4dfbb41cf1431277b893f ]
 
-The .s_stream() implementation incorrectly powers on the source when
-stopping the stream. Power it off instead.
+Commit 4791bd7d6adc ("media: imx: Try colorimetry at both sink and
+source pads") reworked the way that formats are set on the sink pad of
+the CSI subdevice, and accidentally removed video field handling.
+Restore it by defaulting to V4L2_FIELD_NONE if the field value isn't
+supported, with the only two supported value being V4L2_FIELD_NONE and
+V4L2_FIELD_INTERLACED.
 
-Fixes: 7807063b862b ("media: staging/imx7: add MIPI CSI-2 receiver subdev for i.MX7")
+Fixes: 4791bd7d6adc ("media: imx: Try colorimetry at both sink and source pads")
 Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
 Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/imx/imx7-mipi-csis.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/staging/media/imx/imx7-media-csi.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-index 99166afca071b..aa1749b1e28fc 100644
---- a/drivers/staging/media/imx/imx7-mipi-csis.c
-+++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-@@ -579,7 +579,7 @@ static int mipi_csis_s_stream(struct v4l2_subdev *mipi_sd, int enable)
- 		state->flags |= ST_STREAMING;
- 	} else {
- 		v4l2_subdev_call(state->src_sd, video, s_stream, 0);
--		ret = v4l2_subdev_call(state->src_sd, core, s_power, 1);
-+		ret = v4l2_subdev_call(state->src_sd, core, s_power, 0);
- 		mipi_csis_stop_stream(state);
- 		state->flags &= ~ST_STREAMING;
- 		if (state->debug)
+diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+index db30e2c70f2fe..f45920b3137e4 100644
+--- a/drivers/staging/media/imx/imx7-media-csi.c
++++ b/drivers/staging/media/imx/imx7-media-csi.c
+@@ -1009,6 +1009,7 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
+ 		sdformat->format.width = in_fmt->width;
+ 		sdformat->format.height = in_fmt->height;
+ 		sdformat->format.code = in_fmt->code;
++		sdformat->format.field = in_fmt->field;
+ 		*cc = in_cc;
+ 
+ 		sdformat->format.colorspace = in_fmt->colorspace;
+@@ -1023,6 +1024,9 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
+ 							 false);
+ 			sdformat->format.code = (*cc)->codes[0];
+ 		}
++
++		if (sdformat->format.field != V4L2_FIELD_INTERLACED)
++			sdformat->format.field = V4L2_FIELD_NONE;
+ 		break;
+ 	default:
+ 		return -EINVAL;
 -- 
 2.20.1
 
