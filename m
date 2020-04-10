@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B274B1A462D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 14:15:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E561B1A4645
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 14:30:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8+f8N7QcCZv4kwGO0+0b9ymLOg3qZGPjkDx1q8K5E28=; b=qdPHeug7leUXWo
-	3ek8bvqY+d31/Q8eaeJbZH6ZXvu2vj7IbPrIjgxCs3EZ/uwFECGbTOdv7J9pIlA9QI7Et+wcIIG3y
-	3/yW3yS4i/PadOvAQVeuboOcC35T+QwPa2HMc8N1H6+TJqp+QfwdSPh7FqI+4oYrAvdQFKpPT4q90
-	qeQPLFl9PNdMGcO01PnDTYbshpyUDUt53rHuroSxEc1khvNewmnifodXCxwHoSAdyKjykpCMDmCV6
-	9GvTsYn24d7CJJeG+BFtjCIfM8O8uRkCFyDz1PtQQsIOZJhmtwl0MuHmav76YRiG9E0fUoz7qojv9
-	EVYZ6BbVel4N1LpiXSlA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KnCcoikYFLO1UFyL5tbtfPY8UCn1CfO1/Kmiq7+afeo=; b=jzGE1Pd+n3uzVV
+	hDbiFBnPgVb89nxwbU+z6ywzMJEVlQcgQntWTadKBxxZVf9QbaZpdAgV6Zw/XrwAvZqZWsCK+Svi9
+	QlVlFEL6phF7y6Fm5DXTP9U5Pr+DgN9p6ZvCewuOVZ7pRs9RHF7sBam5/mEAPx7V3pmWvh8w6PDue
+	3iK/3UmlQu4QdONpUpZCF3ew22TfQeraOdqHtJR7XDcF/7QeevfbVyllm44aJaCrDHQwGSm6UAjPf
+	hfthffS22WWp46ag5m58vDbrVWadvhqbkxOp0aP5RY4gl9KZjYps/zhhqhU+WQdwnABXtYomMKJ0Q
+	OkJaZAhInpUmDnPI6sFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMsZ3-0007mD-3i; Fri, 10 Apr 2020 12:15:17 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1jMsnv-0008Vj-M8; Fri, 10 Apr 2020 12:30:39 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMsYs-0006SQ-I4
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 12:15:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1586520906; x=1618056906;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=m3FWoK6Y8xDM6L0eq8fCEFhglfBFC6g0jRlmV8SpRiU=;
- b=q/DFYMJxnMroKfppD8ISXY5UxEIhGRnVG1F1u+40DxwlGDVK9XXn7tzL
- AqRwF6fCccehz0+5faoJlfw9ZpkHIfYfQMLzTXLkjdY3icLapb0iTrcec
- QdKss2T0eFqKiOQM93v1XDi+qxDZDPAkpWc0SEaOMkBpzC0fV3hQXNrNi
- i51dRaMwbM+HmOIcTzlcyqOYI0F6IL5oULQb7uClzDHHdsjZVGQg0e4Vv
- ZzrVMbyxoIsgyzS9dR7UPzll2DIXrZPfwgoMJKUAu+ZkChExeC0qaHt2+
- 0zXrC0mK/3JOiV0XYIj0ZpY8UBe4AbRBwDc3qgSB+Uajv8JowUypM/Wiw Q==;
-IronPort-SDR: +QBiI5KtTx7JSKCxD7BcPwmhf/jbu/DMnznp8zok4NxcHFGSENic4IlEYzGNmYi7LSH3pINaU6
- M1CZ6kcXFblX7IUucXlW6XZX69nJ+eX26TnwsRQcd4rxTV1e7TYsYjwPJRZw46+Eoj/ZLF+U/V
- 1iRnNnbuhxiaKEl9bx0i6TOLdfIV3ZsmCTE9tBOWrTGWYjtZLkUQTzi6EKzRnCyLIYx8wU69A0
- D7BT8CJx766PTvWrZY87oGwqzgFBIkSAvnLvLzpl/oWphgkmBwON0K83FzWrWYhKNhzR8RSNVb
- 67g=
-X-IronPort-AV: E=Sophos;i="5.72,366,1580799600"; d="scan'208";a="75482373"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Apr 2020 05:15:02 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 10 Apr 2020 05:14:57 -0700
-Received: from cristi-P53.amer.actel.com (10.10.115.15) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 10 Apr 2020 05:15:00 -0700
-From: <cristian.birsan@microchip.com>
-To: <balbi@kernel.org>, <gregkh@linuxfoundation.org>,
- <nicolas.ferre@microchip.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] usb: gadget: udc: atmel: Fix vbus disconnect handling
-Date: Fri, 10 Apr 2020 15:14:52 +0300
-Message-ID: <20200410121452.17642-1-cristian.birsan@microchip.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jMsnp-0008VA-MG
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 12:30:34 +0000
+Received: by mail-lf1-x144.google.com with SMTP id s13so1247075lfb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 10 Apr 2020 05:30:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/wxc7mReIW0I/9bGXTr0ixTFqsRHmu5x96+RkLeeN6c=;
+ b=UhdOUThDXUsEVxm+BcFPoLrZbBISCqLbMnOIO/+ksl/iwGQHXK3T1IW0amcnMn/D7o
+ b7WR7IVdaR1vh0IEOCs7T3aESfBr8WerWgHuOqOfwflaChJolVe2Q+1zMXQW3mwqvbkN
+ hpa9JCs3OxbAtaB9qBquyWPyGIapVOVmhE5VzYsmd21eAqaHIXeZMlZ06TfMD/CMsKU5
+ brdw62stUhFRn2sTkPcSf76O5ane6G7uKY+5oDpe/vwLH0R6CITKNsFX0iJL2PTjk6b5
+ GZtH4lbj1RCvXIdLUmj70Y55HAF2B1rI6d4fJN459gL1mfBMRaXAq0AhE09Ux8rxpvBx
+ VFPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/wxc7mReIW0I/9bGXTr0ixTFqsRHmu5x96+RkLeeN6c=;
+ b=QszohjMBHvT4xm6d7H2+msWK+BeSX4vE2H5VQwctJI1iRcxd8CoP/nstI9bAAyVHUo
+ Hf1Jh6CErALIhIScidGlKb4drS5XOX7ApQhOsbPunTsz1lvCAin2vMeUXfdY2FmnlxtB
+ kvJes8GeOOM0Vsy4h2dUS2V1qaF1603B7io4GsdYZeCDYCs30GtoBBfrb/HJyYfI5hAl
+ hLlG2wk9Xzb0ubXtEAb31wLosrYt+BmP+iCaBztVnyPC1GSg4RNGR/A4Xxsqj+3Q7I9F
+ wNkoA44NSxh5F/oD+EZxBUoGXbz7W/18OKwS6OB5bVlZ56XuYhjgLhJdv1ZAri1+FGeT
+ 1EDg==
+X-Gm-Message-State: AGi0PubRz8zywHIOizxhxG5W+hABFf6ez1kkh+GwZ03UfaTU1+j35Rkf
+ dMlHKwyYjxlXU0tNdDjkUwEJeIFvQnB/y/Nh/eI=
+X-Google-Smtp-Source: APiQypKbT1f0FIBVJXC+bXz14yNA1I+1UT6w/M7bmkAigetfHQuvslFLulfIjNzdwy6W3aAIolbWZMQR+WwhVNs5wLc=
+X-Received: by 2002:ac2:57cc:: with SMTP id k12mr2456508lfo.69.1586521831805; 
+ Fri, 10 Apr 2020 05:30:31 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200410004738.19668-1-ansuelsmth@gmail.com>
+ <20200410004738.19668-3-ansuelsmth@gmail.com>
+ <CAOMZO5AKYO3xLsp4k6_fJCV9qW=rAtRKEGWnxksixU794dOw8A@mail.gmail.com>
+ <003401d60f28$3d045190$b70cf4b0$@gmail.com>
+In-Reply-To: <003401d60f28$3d045190$b70cf4b0$@gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Fri, 10 Apr 2020 09:31:00 -0300
+Message-ID: <CAOMZO5B+rEoQD_ujt9cx9VXO-i2oqfW2UN2cVeB5hZB3aVpGeQ@mail.gmail.com>
+Subject: Re: [PATCH 2/4] drivers: pci: dwc: pci-imx6: update binding to
+ generic name
+To: Ansuel Smith <ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_051506_649184_D9EB6F21 
-X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-CacheID: sfid-20200410_053033_732847_92ACC177 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -91,46 +97,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
- Cristian Birsan <cristian.birsan@microchip.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Richard Zhu <hongxing.zhu@nxp.com>, linux-pci@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Cristian Birsan <cristian.birsan@microchip.com>
+Hi Ansuel,
 
-A DMA transfer can be in progress while vbus is lost due to a cable
-disconnect. For endpoints that use DMA, this condition can lead to
-peripheral hang. The patch ensures that endpoints are disabled before
-the clocks are stopped to prevent this issue.
+On Fri, Apr 10, 2020 at 8:07 AM <ansuelsmth@gmail.com> wrote:
 
-Fixes: a64ef71ddc13 ("usb: gadget: atmel_usba_udc: condition clocks to vbus state")
-Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
----
- drivers/usb/gadget/udc/atmel_usba_udc.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> so no chance of changing this?
 
-diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
-index 6e0432141c40..22200341c8ec 100644
---- a/drivers/usb/gadget/udc/atmel_usba_udc.c
-+++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
-@@ -1951,10 +1951,10 @@ static irqreturn_t usba_vbus_irq_thread(int irq, void *devid)
- 			usba_start(udc);
- 		} else {
- 			udc->suspended = false;
--			usba_stop(udc);
--
- 			if (udc->driver->disconnect)
- 				udc->driver->disconnect(&udc->gadget);
-+
-+			usba_stop(udc);
- 		}
- 		udc->vbus_prev = vbus;
- 	}
--- 
-2.17.1
+Reading the commit log I don't see any explanation as to why you need
+to change the current bindings.
 
+What is the motivation for doing this? Is this really worth it?
 
 _______________________________________________
 linux-arm-kernel mailing list
