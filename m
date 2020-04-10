@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4A201A3D82
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 02:48:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C0711A3D86
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 02:48:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+PD0T9tJIKtw1DMt8FWzbgu+Zo5OtK7ZzYHa3RKXCDI=; b=FT9EXajgjtoqRv
-	Ib54Lv86NtjSPFfynEEECLgjOW/4K+zbSk/hgMfJoGS45FBDBaz4nVjXpzT05Zmz2z7+TW1ZMqMST
-	VahEOPd6KbCi4DKxKnyecVcsGBHHjFTIsZ/JNQyZHD+fM1C/0McOox8GniUnlf16IN0rUW8o9fWsN
-	vJzJoxtSydS3cyhcGaLs0FEvc89TGPsHjHsjed70y4e25G24xcmqfSdWUm2qTLJ+4UvkRPvREOLYU
-	nPmMuUFDRUHqN45q0WMOqzZJkDpnJBs+WOxmqMlXi48mrrOeVoTOHwLbULK+4rEv0hAOeYxdqEV81
-	30E/Gn1O9gHqdcnupxhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f3ILdKmNnWlQ/s3bNtRe+3JTT7sE12Gex/UdKYzUdGk=; b=G5GVLWnG9/CHa3
+	UdZf2YfkGhZqTtEXvK7gxGrPAiGD2G0RffneU1Pf9SqdIHparPGNzHHiEigCOuEQxabuzNPi5KBKe
+	oWBAWmci3RbL5cdNw76AHGp2IpcaB4GdTz+FcKsiphCC9wCK0Rxm5ZL87UPd8FfkpDMJrttmOsn2H
+	4oar8DExbrmUSGBuNTgAWREafVUwJsRU6+k+UStfC7LPVsiNXRx79HQ5J3SU52Y8xpwNK2ND1sUdq
+	YAuQo8dTXxmRixBtekPsSaLP0kAdVlD5YzdiT9YAm9HmDBgxAPuM0s7mC67U9O+ELYhNa+OpGJRdO
+	gg01nl++QHwWeyr2ujPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMhpx-0002Qz-Kk; Fri, 10 Apr 2020 00:48:01 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1jMhqU-0002sT-Ob; Fri, 10 Apr 2020 00:48:34 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMhpl-0002Ps-Vp
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 00:47:51 +0000
-Received: by mail-ed1-x543.google.com with SMTP id v1so531769edq.8
+ id 1jMhpp-0002Pv-Vi
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 00:47:55 +0000
+Received: by mail-ed1-x544.google.com with SMTP id p6so518938edu.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 17:47:47 -0700 (PDT)
+ Thu, 09 Apr 2020 17:47:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AaXKqqNhWwXTEhyoNjhEC/wZ5IBgda9BijmlHrsyAzs=;
- b=rlX6YEU9uaIFZ8ZG6zqSY97HPpxFwjg8LybI2X+embhgop3KgGzATQRsGQwNSfDQ7a
- VZu9Eh8ZQtzQ+O7iooYPpAsdzCgUvQ9uqz83rrrhC7DOGgejll1BoyqsB4/ttHFCmGgP
- 8fUyKOkmEzER5DlcJpUfau8Hh4gBy46CktuIR1nSXmI4s4zC3oXHHPKZU30Q1XO63rVk
- YrgfBJPbZwdYhuu4G4qCtXV7gmoStSKSemfQCt2kM4ks1UzMJI04G7CeVAjV0uguRA9Z
- DVrZZoZRM8RTidVfCzcc0m1ypTJNYBrLdVaMrsHffulpw1xNU0U2CCxRpaECGy/KbGXS
- 3ZeQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Aeb6WaCv9+BqBEPfkzxDMWuTT6GpZmxwwCdelm77Gbc=;
+ b=GAo1LCkscF+/t0GiJq5CqFhSJsAXoQCLXRI5K8wZlBDeenlGWbDDYRzgLHCR6NkbvL
+ FOG8Jfcted4yeKOiTk+PjwUn16uZbLtfT7AAkLNkaYiQ9cIX+yQJx9Fq5TNKkwd8Yz4z
+ OWvEaDD4aHUYV8/2bMW4HIyKtekvS5cDUdT801CK04XSzh8ddz3eDq8PzmpO1+Xv2w41
+ sYrSN9KHWYWg1bU7Y3pGrvdW1V+KlI2KUW1QxKGZcMNuyMi3jeGCWhFP8aBTAMTyHpO4
+ ETcztWRl11jYuTq4HqeYvSBhSjZQgwZau5fpgXnAn77d/+JMHRxDSMUiav8i/GfQejlm
+ staA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AaXKqqNhWwXTEhyoNjhEC/wZ5IBgda9BijmlHrsyAzs=;
- b=RtEDRWF1Hv1NMYU5VpFs8tNYjb/WHvlX9WnXbM05Tz3NT8pjTRpHw4juKMeG5WhwAR
- YhN9oBtXIyoLRanGvKbfI6dW1Mo6LyJWGI6OoHQTdoX/KCDxOB7tULHs9wAmJB5WUr4+
- 2hwDQPT1N43VCLCHJcGCSOefOLLi6adplto+n9DIBWBvWmHsISjHDDTFRgpOvO27tjGf
- BN8s9s2/OvVVpPhrhgaFK7+6aP4izZSJu05RvDy5I0yNiWaEpLY2eNM2aZVsoDwJ3A0x
- 40ce67yNFqRskgsqTrA8pkjjJi1SJeQHd13yhP8+8sXlRsmzcleUBZOACIsGCXvfvFBD
- KMlQ==
-X-Gm-Message-State: AGi0Pubj+vZjXAa/+5bVqcPvOZ+CZcDsC1CqD1gcPrxFfwyGHY/FsARR
- OXQw5QrTIat8iu1IefUVIiA=
-X-Google-Smtp-Source: APiQypIDgPP5SYnSGNGLtJlzJvRK3ujDA4LiVyVvMnB5ny2rpXt+EMRELOoEoRsm95Z4o7IVoL/mEA==
-X-Received: by 2002:aa7:c893:: with SMTP id p19mr2597008eds.19.1586479666469; 
- Thu, 09 Apr 2020 17:47:46 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Aeb6WaCv9+BqBEPfkzxDMWuTT6GpZmxwwCdelm77Gbc=;
+ b=NR7nWiqxgai+IEESv+3vTMAQWmSUh7G8NYgukKSTyOaohPStSwMZCT2SvWMxEDd7Tw
+ qEMsCUFrCvkf6tOWQS9aZubjAZbsgN22jszy3f98ct533QHKF7un2RXb0xDFA+u9tMTw
+ aY9LXprqv6lRTElXtSlKHqxs+E7cN0sodhfTYRD3DnfHe4axjbp5IZBoPeBMt+oA5+w6
+ VABNzyeNyFWzxMypqJaB7YS35p24WONQ4Vt4hSkn5bDBi/nazPKpMouoU5AAG1G/oaqb
+ fw5FzrH+rnFMKS5TY+wDbvDzCPgrm7PSA9ltE2w7zmEoOxrH52iBdp5nSXAhUSQgdZW/
+ ax4Q==
+X-Gm-Message-State: AGi0PuaY3Hrq0WJBUVht/OS0XvcgAK1Fw7iTiqsC0/SNm0Nk1Crec1NL
+ 14Unm7upjLFq6qQw1N8h6+c=
+X-Google-Smtp-Source: APiQypIdEyfEOx5q5eI9Aq9XOBio5duIss+ITVGGn0sW+sZmX/FPNCSsU+kshlb3ePbWwBuwIagx3Q==
+X-Received: by 2002:aa7:c559:: with SMTP id s25mr2671184edr.2.1586479669036;
+ Thu, 09 Apr 2020 17:47:49 -0700 (PDT)
 Received: from Ansuel-XPS.localdomain
  (host117-205-dynamic.180-80-r.retail.telecomitalia.it. [80.180.205.117])
- by smtp.googlemail.com with ESMTPSA id z16sm30523edm.52.2020.04.09.17.47.44
+ by smtp.googlemail.com with ESMTPSA id z16sm30523edm.52.2020.04.09.17.47.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 17:47:45 -0700 (PDT)
+ Thu, 09 Apr 2020 17:47:48 -0700 (PDT)
 From: Ansuel Smith <ansuelsmth@gmail.com>
 To: devicetree@vger.kernel.org
-Subject: [PATCH 0/4] Move tx-deempth and tx swing to pci.txt
-Date: Fri, 10 Apr 2020 02:47:34 +0200
-Message-Id: <20200410004738.19668-1-ansuelsmth@gmail.com>
+Subject: [PATCH 1/4] devicetree: bindings: pci: document tx-deempth tx swing
+ and rx-eq property
+Date: Fri, 10 Apr 2020 02:47:35 +0200
+Message-Id: <20200410004738.19668-2-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200410004738.19668-1-ansuelsmth@gmail.com>
+References: <20200410004738.19668-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_174750_047469_D51A49D9 
-X-CRM114-Status: GOOD (  11.42  )
+X-CRM114-CacheID: sfid-20200409_174754_022754_FF7DD03F 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [ansuelsmth[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,27 +115,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In pushing some fixes to pcie qcom driver, one of the patch had to make
-some fixes to tx deempth and tx swing. It was suggested to propose this
-to the generic pci.txt as they are actually standard parameter than can
-be tuned per board. I also notice these property are already used in
-imx6 driver so this would also help to generalize it.
+Document tx-deempth, tx swing and rx-eq property property used on some
+device (qcom ipq806x or imx6q) to tune and fix init error of the pci
+bridge.
 
-Ansuel Smith (4):
-  devicetree: bindings: pci: document tx-deempth tx swing and rx-eq
-    property
-  drivers: pci: dwc: pci-imx6: update binding to generic name
-  arm: dts: imx6: update pci binding to generic name
-  devicetree: bindings: pci: fsl,imx6q-pcie: rename tx deemph and swing
+Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
+---
+ Documentation/devicetree/bindings/pci/pci.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
- .../devicetree/bindings/pci/fsl,imx6q-pcie.txt | 12 ++++++------
- Documentation/devicetree/bindings/pci/pci.txt  | 18 ++++++++++++++++++
- arch/arm/boot/dts/imx6q-ba16.dtsi              |  4 ++--
- arch/arm/boot/dts/imx6qdl-var-dart.dtsi        |  4 ++--
- arch/arm/boot/dts/imx7d.dtsi                   |  2 +-
- drivers/pci/controller/dwc/pci-imx6.c          | 12 ++++++------
- 6 files changed, 35 insertions(+), 17 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/pci/pci.txt b/Documentation/devicetree/bindings/pci/pci.txt
+index 29bcbd88f457..df37486f1853 100644
+--- a/Documentation/devicetree/bindings/pci/pci.txt
++++ b/Documentation/devicetree/bindings/pci/pci.txt
+@@ -24,6 +24,24 @@ driver implementation may support the following properties:
+    unsupported link speed, for instance, trying to do training for
+    unsupported link speed, etc.  Must be '4' for gen4, '3' for gen3, '2'
+    for gen2, and '1' for gen1. Any other values are invalid.
++- tx-deemph-gen1
++   If present this property will tune the Transmit De-Emphasis level for GEN1 if
++   supported by the driver.
++- tx-deemph-gen2-3p5db
++   If present this property will tune the Transmit De-Emphasis level for GEN2 in
++   3.5db band if supported by the driver.
++- tx-deempth-gen2-6db
++   If present this property will tune the Transmit De-Emphasis level for GEN2 in
++   6db band if supported by the driver.
++- tx-swing-full
++   If present this property will tune the Tx Swing Full value if supported by the
++   driver.
++- tx-swing-low
++   If present this property will tune the Tx Swing Low value if supported by the
++   driver.
++- rx-equalization
++   If present this property will tune the Rx equalization value if supported by
++   the driver.
+ - reset-gpios:
+    If present this property specifies PERST# GPIO. Host drivers can parse the
+    GPIO and apply fundamental reset to endpoints.
 -- 
 2.25.1
 
