@@ -2,86 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DD821A4360
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 10:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C8DD1A4394
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 10:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jAbBo9KPS9T+0Ygdx19eq/VrPsO5TSoCUv70VYQZYbo=; b=BCkLvUuCjcCH+o
-	GQrIQ5IWSSN+MO+rvN34o9JGP/TLy+hbZ8XbwoXxu8gyTbBdj9qo3EPbXi54gAUZdin3QGYJ4nIO+
-	q4Uyexnt/fkKI3WV6yHBGK3TTS4fQpKo/bEdIBc9mCfNFbAjhTaMnDSEdSfbsjk0v4ZX02A3D/G5l
-	nYaHqwm4wzWiJrPs84y1GVuOCPrzhO3gWj+zS471idbqdvJmQBKaFZ5YS0P/OHXA+H7dr7uEWzB8C
-	wG5j+iKl33W9PE3c9r4GN0MB3AQHe0+LdFUHxZiCixMVQZ8uQG918nRwrdBwa0u/IguaQQ5yKrIsP
-	jM41/YDWNdsC3s6ojNew==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EbkJTWUPJVdrKkyPEbXfKRKS9jhSOzicl6v2RoOxtVg=; b=LuHmCtz3SZzvEy
+	nsTvrmXtE0i+SOFJSKxZTjpNlDqk72qCTB9FICC+8Tm3vwumEaLu4asBF1+ooAFZWLNWL+AG2FaHA
+	wtyfSgrKunr+dn0+i2fGQgtMIcRniIC0Dre2iq5hLN44tyTRy3YMhVwAol93aeZlsYHnLKD0vXrNP
+	65BtUhe2jPHoDzt8TPn/L43c0sdMMPOrI2xzFSbKYIXfIC7DkNXWOcWNY2NvnrlOZ88x39ZdSzmgW
+	AXp5aLEkiiX/uOLjAz66NJsHVATojyVPgj+66KhaT4Jb77A14fzzH1COvmrKqzqVvRB0xttBYVgWr
+	T3YhQrIToHkLfWuIBCaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMokz-000469-P5; Fri, 10 Apr 2020 08:11:21 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jMp8b-000196-51; Fri, 10 Apr 2020 08:35:45 +0000
+Received: from mail-bn8nam11on2066.outbound.protection.outlook.com
+ ([40.107.236.66] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMokt-00045e-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 08:11:16 +0000
-Received: by mail-ot1-x343.google.com with SMTP id x11so1188021otp.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 01:11:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hgf3DAUC4/KD19F9Gq5AGfjZOzS9LXWN/bbu/vFg+qA=;
- b=dFrk5z2BtMEmisYXExkZBismSlsWb5Q4k/3n94YDOvTZuh2CzIpH/i8KoNWzlv4bXk
- /+Bzn+RqlG2O4N1iciPqbf359lmAxRrY7woQmtsWzKRq9DFPU3AhxhJ6V+T7GDyl1tRC
- 5xNRsfm5urzQ2GX3QtuJdU9JR4uI52qA4fFG8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hgf3DAUC4/KD19F9Gq5AGfjZOzS9LXWN/bbu/vFg+qA=;
- b=QcyBvdiWQOgbFNLj0IBtFwndmWuBJ9hGEARxkpkB+rWIpyRtgelUEg9ikGet6oXFdr
- H8JZ6M4q0dAhFB4VQvj3VioIsUx52KFKY46sAZ1fNVYr2/k9DRnG/aC2zY9MeSsiKZrB
- vCkKqKgLZYfd2jIwP9acd5j0MymWvSsiM/fQ9OKNNMksJ9UXD6kR9isBUPR8e0NzyBOd
- dvruxyGPrRaJvjNTy7mlhEK5oNfffcrqM3bvhYbYGqd+MusZVrmiqhBoxy+w3F6YEXgm
- 6U8RdJVO7vGi2ogu9JPcM9ajwuDlKRX1XRu9GE1E/E2fz4UzL1YyqHGs2dnL24JBvlgq
- dwUQ==
-X-Gm-Message-State: AGi0PuY+hCBU+61Dfvl50WDmRb1KfLCikl/lPf02QB5p1M65CW6A1wqe
- kTm3MyfpTXrwjwTfYY2Thv9NJEtiJL9+LQFm/5oj4A==
-X-Google-Smtp-Source: APiQypJumpZ6N8vscDAXJtrZPRakBWDA3qYtIErOA5tqj0XblmFZSMuMiwpkQHsTVZs7vae7PdjUGGhKyrX4Ng8eQNQ=
-X-Received: by 2002:a9d:6e8f:: with SMTP id a15mr3449972otr.188.1586506273249; 
- Fri, 10 Apr 2020 01:11:13 -0700 (PDT)
+ id 1jMp8S-00018Y-GQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 08:35:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=O4R7/E36YT/BPC7zHudUyWdlMtoAi4x2ucUiL6CD1Ir2XO+xsHUxbEV4ggsyZc6+zySSp89YW2VJgZFBDy1uYwKPD1YYazdSODJSc5QnRkbcPYE30RYRUVBzydPxLlPygBC0k30lu4GKjsSPZB4E9rONbl+UOof0HhinQOP9kIkxi0cPAaqy0/kDhoT0+dKrTmhvuaEihLTS/bAIepxmgiAxmmEfGnKBMcgUI+2MG49/MSUglChDXBiKpWChbPGGzLnhKcwNQrOics1gJxmv3E6eOFuMSD80v2gnXgltaxhKCAJBX+6S976tVRid/AOltEYod5/SoazPnHh03WX1Bw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GMLw1rY46Div6ct6EoqWd87MdBeI321WyxjyrggU60Q=;
+ b=aF0IeOsHHVQ5y7h7AEGtAAIwkbZXED0xDRCl+OBE/KiiSwAkfUjcRw77k1ZU5lXblkvA8cCefS4v4KPmkp9W6MMnsgRkw5pVKbpbQYNuI1Ew+H6XUqRlHDp0Ck28yuk7RaL6QEaTdAwR4tZVIlqyfPR13FAn9hqdWvNvBUgAy5DY7MsbkV1TZFXC9426v5V1gPMZpQ2mDRoylW/hZF7Vbn7bXj3gzGTVu16TBF1OhU9PNqbL5ug4hOs+toq2Ikj+nI3ZLR6k1Kiv+ejLOXCKMGAtJ0+ptxMkvCuDVCe4cFR/ThkCgQ9iv1RkLppASmmEo1lsWcMXC3WGR0vAmQTHQQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GMLw1rY46Div6ct6EoqWd87MdBeI321WyxjyrggU60Q=;
+ b=ry34SqGHPH/tzzI0zOFxUyQDYXSIJiCDy/MwjjgLlrlJ/lD1VTnWk6PUS2yngDYVuLE4n3MlIwdi8NaVPLrVvAMhWbjHfsNcXgpIVhEVAHC/FGlj/P1ZPKvCJNqaFTOvjboOSeFFlSzB9N2l/Xhiq4GIKmLGw5ub6apb8cH+POA=
+Received: from SN4PR0401CA0018.namprd04.prod.outlook.com
+ (2603:10b6:803:21::28) by BL0PR02MB6532.namprd02.prod.outlook.com
+ (2603:10b6:208:1c9::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15; Fri, 10 Apr
+ 2020 08:35:31 +0000
+Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:803:21:cafe::5d) by SN4PR0401CA0018.outlook.office365.com
+ (2603:10b6:803:21::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17 via Frontend
+ Transport; Fri, 10 Apr 2020 08:35:31 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
+ Server id 15.20.2900.15 via Frontend Transport; Fri, 10 Apr 2020 08:35:31
+ +0000
+Received: from [149.199.38.66] (port=48220 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jMp7v-0007nR-5z; Fri, 10 Apr 2020 01:35:03 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jMp8N-0000un-91; Fri, 10 Apr 2020 01:35:31 -0700
+Received: from xsj-pvapsmtp01 (xsj-pvapsmtp01.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 03A8ZLRk006010; 
+ Fri, 10 Apr 2020 01:35:21 -0700
+Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1jMp8D-0000sI-54; Fri, 10 Apr 2020 01:35:21 -0700
+Subject: Re: [PATCH] ARM: zynq: Don't select CONFIG_ICST
+To: Rob Herring <robh@kernel.org>, Michal Simek <michal.simek@xilinx.com>
+References: <20200409221829.29421-1-robh@kernel.org>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <642d4c6a-46c2-d9dd-923e-f34473ced17b@xilinx.com>
+Date: Fri, 10 Apr 2020 10:35:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200408115926.1467567-1-hch@lst.de>
- <20200408115926.1467567-20-hch@lst.de>
- <20200408122504.GO3456981@phenom.ffwll.local>
- <eb48f7b6327e482ea9911b129210c0417ab48345.camel@kernel.crashing.org>
- <CAKMK7uHtkLvdsWFGiAtkzVa5mpnDvXkn3CHZQ6bgJ_enbyAc8A@mail.gmail.com>
- <0f360b9cb72b80bae0d0db8150f65598c2776268.camel@kernel.crashing.org>
-In-Reply-To: <0f360b9cb72b80bae0d0db8150f65598c2776268.camel@kernel.crashing.org>
-From: Daniel Vetter <daniel@ffwll.ch>
-Date: Fri, 10 Apr 2020 10:11:02 +0200
-Message-ID: <CAKMK7uHKyN+c5oTEYVursx4at9br7LSXRb8PMoNEAEBh0hfBLQ@mail.gmail.com>
-Subject: Re: [PATCH 19/28] gpu/drm: remove the powerpc hack in
- drm_legacy_sg_alloc
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+In-Reply-To: <20200409221829.29421-1-robh@kernel.org>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(376002)(39860400002)(346002)(136003)(396003)(46966005)(4326008)(81156014)(2616005)(70586007)(44832011)(70206006)(186003)(478600001)(5660300002)(8936002)(31696002)(2906002)(8676002)(9786002)(47076004)(31686004)(110136005)(356005)(4744005)(316002)(26005)(81166007)(426003)(82740400003)(336012)(36756003)(341764005);
+ DIR:OUT; SFP:1101; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 159b89a3-d2b5-4403-6cb4-08d7dd2a2174
+X-MS-TrafficTypeDiagnostic: BL0PR02MB6532:
+X-Microsoft-Antispam-PRVS: <BL0PR02MB6532C8C841D426A7C3247C73C6DE0@BL0PR02MB6532.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
+X-Forefront-PRVS: 0369E8196C
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 9oYQdLPD3cmNaXeZxNuSSQ/+42ITFD1/xu4DspMtocamDRhokSFsBySvvvayNuFGTAs5yQMqlN1Sdx6smiF78WKLU6a02XFQU65T7fzoSKDusWKRQSwPl1pERC74cxX3TzgIajnHkxCnWSif9CNOYZjHLGsFEdUGr1rMfo95D6B8VpNuPw25yOSR4hICAmEBXQg0cDLJqjyQG8uYUerI2pQ4iGHL3UlQvZHTUQAAe207iAGxATPFW+EhVRPe+Gn2K8/a0Evkd6Fj+PuYDMPUnETE7RLdK98pG8CfwncJ344XHYiqSM+iEdCx9WADpXpK4RFAqNx8bMek0w0qkmDJJ4PIYMrBtRj7iVegzqpIrdOZLrTORR9bAkitCV0dXkmPix55DH0dujG5fgJTtPh55tgakeGxh0yWTbhxJRUd9Y9jgTo/bsEOxEHHM9t17KH7nzjv9l+KSXYjzpdl1mlylgCrm1dhqcn5SB6247lEqH0Sw/l/EXAs1oHhzpOlE57puilHLZxBtSjQTjYh2XoQxpXnOxOg6DCe2wvMXqvbjKk=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Apr 2020 08:35:31.5807 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 159b89a3-d2b5-4403-6cb4-08d7dd2a2174
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB6532
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_011115_352178_D0900925 
-X-CRM114-Status: GOOD (  12.72  )
-X-Spam-Score: 2.1 (++)
+X-CRM114-CacheID: sfid-20200410_013536_597510_4568DB71 
+X-CRM114-Status: GOOD (  13.18  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 2.3 TVD_SUBJ_WIPE_DEBT     Spam advertising a way to eliminate debt
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.236.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.236.66 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,51 +142,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
- dri-devel <dri-devel@lists.freedesktop.org>, Linux MM <linux-mm@kvack.org>,
- "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
- "open list:GENERIC INCLUDE/A..." <linux-arch@vger.kernel.org>,
- linux-s390@vger.kernel.org, Wei Liu <wei.liu@kernel.org>,
- Stephen Hemminger <sthemmin@microsoft.com>, X86 ML <x86@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Peter Zijlstra <peterz@infradead.org>,
- Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
- Haiyang Zhang <haiyangz@microsoft.com>,
- "moderated list:DMA BUFFER SHARING FRAMEWORK" <linaro-mm-sig@lists.linaro.org>,
- bpf <bpf@vger.kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Minchan Kim <minchan@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 12:57 AM Benjamin Herrenschmidt
-<benh@kernel.crashing.org> wrote:
->
-> On Thu, 2020-04-09 at 11:41 +0200, Daniel Vetter wrote:
-> > Now if these boxes didn't ever have agp then I think we can get away
-> > with deleting this, since we've already deleted the legacy radeon
-> > driver. And that one used vmalloc for everything. The new kms one does
-> > use the dma-api if the gpu isn't connected through agp
->
-> Definitely no AGP there.
+On 10. 04. 20 0:18, Rob Herring wrote:
+> CONFIG_ICST is for ARM Ltd reference platforms and isn't used by Zynq
+> platform, so remove selecting it. It appears to be a copy-n-paste error.
+> 
+> Cc: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  arch/arm/mach-zynq/Kconfig | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-zynq/Kconfig b/arch/arm/mach-zynq/Kconfig
+> index 1ca633e3d024..43fb941dcd07 100644
+> --- a/arch/arm/mach-zynq/Kconfig
+> +++ b/arch/arm/mach-zynq/Kconfig
+> @@ -10,7 +10,6 @@ config ARCH_ZYNQ
+>  	select CADENCE_TTC_TIMER
+>  	select HAVE_ARM_SCU if SMP
+>  	select HAVE_ARM_TWD if SMP
+> -	select ICST
+>  	select MFD_SYSCON
+>  	select PINCTRL
+>  	select PINCTRL_ZYNQ
+> 
 
-Ah in that case I think we can be sure that this code is dead.
+It is c&p error.
 
-Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+Will apply when rc1 is out.
 
-Cheers, Daniel
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-+41 (0) 79 365 57 48 - http://blog.ffwll.ch
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
