@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35A31A4289
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 08:35:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A6111A4288
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 08:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=x8Zo6P4zOi03ndHBK19EXE7cTY4YUbL6MgoXsYWW4GE=; b=XY+
-	ecNjGKY+mkSETmZvkH2eFTJSfwtkauSfnnNVYwAyFoGcFUMPqm+N6FbOlWsup2HBLR2soJSgFKvVc
-	N8HywcsZr85JsgYDYDjsv8Z8Xzv9T7jU6QVKTpXN986btKln70nCWTZdkwBEMxEMLMAsPttZuAbHx
-	HK59iTGxAvpZJ2aSAHaWpyJA5iRTphPYwxy6rzmL8kGWguTYQxJn5zM0ccNxKWghHDTjqZmpgRQYv
-	5KhDcXTG3q4RcdYzK3wawCrKgwBs+DyxxCI+nLAF6PZjYIk4dH/r4+w6BGg2cgYwTdCmiyT/aYPzq
-	jaE7GpMC2wzaSZ+/C1jgwVq+sawdEIQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=a8BHgvi+pipApfBMblg//g0Pmq0brm8JYsxaEz28mWk=; b=ii/Dw4sab7dcMo5mFqeaElMR6i
+	vvwx5oYtSowWNKrDmz1AKaxEb29byX77urPAnGyg5Lj7xg0iBwvQDoxXVK1qMvwJ26+m00udG3lIe
+	FHz/JXtJThgW4SdH3EWM0ISYqjWBqNYWJO/3fHqUuI+jzvsLFOHyiZLLSrd/7YSk/teWvxOGZhn91
+	kv3wP3E87qTmqu9UwV5Zl46pyV4x/aQCg7NF5FZgbKCzi3b9Tw9FNB7fKtf+IsLWJxxBm8vAMYHxT
+	dH5nMe6+BU43Hnufz1MLsBQWwymoL+uwVq/h6sh38LlNN/9ooxVcM55pw2HwwVvkEoSZCVhz8Cl2n
+	IRgTr9xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMnG4-0006KN-9s; Fri, 10 Apr 2020 06:35:20 +0000
+	id 1jMnFg-0006Dk-3b; Fri, 10 Apr 2020 06:34:56 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMnFY-0006CL-CD
+ id 1jMnFY-0006C8-Lx
  for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 06:34:50 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4A2442007B2;
- Fri, 10 Apr 2020 08:34:43 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6CB302007A2;
+ Fri, 10 Apr 2020 08:34:44 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 50C282007A2;
- Fri, 10 Apr 2020 08:34:39 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 71A572007A4;
+ Fri, 10 Apr 2020 08:34:40 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E884C402AE;
- Fri, 10 Apr 2020 14:34:33 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 16A70402D5;
+ Fri, 10 Apr 2020 14:34:34 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: catalin.marinas@arm.com, will@kernel.org, daniel.lezcano@linaro.org,
  tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] clocksource: Add support for i.MX TPM driver with ARM64
-Date: Fri, 10 Apr 2020 14:26:47 +0800
-Message-Id: <1586500008-4418-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] arm64: imx: Select TPM driver by default
+Date: Fri, 10 Apr 2020 14:26:48 +0800
+Message-Id: <1586500008-4418-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1586500008-4418-1-git-send-email-Anson.Huang@nxp.com>
+References: <1586500008-4418-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_233448_555131_74A17F4C 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20200409_233448_851302_D2459E66 
+X-CRM114-Status: UNSURE (   6.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,26 +77,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allows building and compile-testing the i.MX TPM driver for ARM64.
+Select CLKSRC_IMX_TPM for ARCH_MXC by default.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/clocksource/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/Kconfig.platforms | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
-index f2142e6..e9e7fe1 100644
---- a/drivers/clocksource/Kconfig
-+++ b/drivers/clocksource/Kconfig
-@@ -617,7 +617,7 @@ config CLKSRC_IMX_GPT
- 
- config CLKSRC_IMX_TPM
- 	bool "Clocksource using i.MX TPM" if COMPILE_TEST
--	depends on ARM && CLKDEV_LOOKUP
-+	depends on (ARM || ARM64) && CLKDEV_LOOKUP
- 	select CLKSRC_MMIO
- 	help
- 	  Enable this option to use IMX Timer/PWM Module (TPM) timer as
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 55d70cf..3e9011c 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -169,6 +169,7 @@ config ARCH_MXC
+ 	bool "ARMv8 based NXP i.MX SoC family"
+ 	select ARM64_ERRATUM_843419
+ 	select ARM64_ERRATUM_845719 if COMPAT
++	select CLKSRC_IMX_TPM
+ 	select IMX_GPCV2
+ 	select IMX_GPCV2_PM_DOMAINS
+ 	select PM
 -- 
 2.7.4
 
