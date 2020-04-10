@@ -2,114 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 794221A4A40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 21:17:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC84F1A4A44
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 21:17:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u2CqixLHZbjs8tku17co+fFY1wQXo8Sw5iAfCzGQzl0=; b=jkewPKbDI5ELeI
-	t+MWGSubiEVIaxc5GsCx+3F08qTrkUugCq5zgr5KCQbwC77t/F4etD4pQ8FUtpn3xTrvXG1gmZko2
-	t1oPMy+mpfkG/Mdp4H1AF/r4jkGSuddM74JmjLbWQRzc715c3SdXfGsNAO0A/4odxG1QdgpXO6QlW
-	Xlrk0pxySfnvmZnRBdzHJ40dND12c7Sr/C37MXktcRf+HZWQYU7I3jqWrfiC2ftVqV4lwznW+tMB1
-	TfRGkQYt/jQ8FM42zNuDaSul2Az5Cn5hfsDXJAZL6M4zETXHZUb/vNj/iasfDCP2h8Vv5ZQHhkMuv
-	3lQs+b6vmE6lGnAFK1wQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hHSAWYqy36XMZeyJvu/p6SXD8DMhPQF8MkTl5+opjvo=; b=gfpzFPCsRekCJJ
+	Gr2Y/Y/TmNtAIWsdAGX7U/+H/Vp4fTSzHFQqIw5yWww7CYFurbBzs1QryDn4dL0JsUSh/P1Xe3YrI
+	BGxAIboq0tkhKYWmuO47l9m03edtGxVWyjSQVQGA9nx3WbX1qMDtv32APFU5KuOIbxMHFy4uOq4/Y
+	iDMGqicfoWvcYXCHkN3yy+pJSVdUx3CX/FnHEo+BZ45NT+vOvNFbHw6yybvD/uwghhpGU/G0BzNAR
+	lAUA0nvA4Ar3gpF3iXTKhMEJD8CYLyHVeLWwJ8fQoN+w9nyWyFkbmrtlssos/VhjkWD+YAziLHBGW
+	IhgHTCon0D5MkeaolZxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMz9R-0001db-5U; Fri, 10 Apr 2020 19:17:17 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jMz9t-00026s-As; Fri, 10 Apr 2020 19:17:45 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMz9J-0001dT-Ie
- for linux-arm-kernel@bombadil.infradead.org; Fri, 10 Apr 2020 19:17:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=Cv7iW9UAPEbptJQ7pxTuJ8mpCyBB8TXm9+xjBE0kLBw=; b=dD5eh5Q3b9cEzELjpbBglt00Qa
- 8d/mhr3eOyAGQaY+dEhcx+ZLdoBw4FpLOnX/ZFacuJp72rmx2N6T67ewrAiviMuUCnzx+709PhUsu
- MDL0SEHTTwpyF9cGFetggcFHE+tUsqMC8c5LAU7Vz4eYYPwrVOup8TwRWIu3eND4gly/+RHuZdMmz
- XQZuZUQx8iKXJ9iyWFF6oOq55QkscRbvKn4i46gNttdWngFUivPA70zM0MLKZ9NWoX6HGzo2o9cnv
- z4yYEdK8YQyxdDFUX4uzYbpBZdtQkveXtZNw2+ILHZXYBFP4Ei/oTbYdwhqEshAA9Uy/ftlRftyS8
- nmZd8D0Q==;
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMz9H-00034y-CG
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 19:17:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586546182;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Cv7iW9UAPEbptJQ7pxTuJ8mpCyBB8TXm9+xjBE0kLBw=;
- b=ZImRXK2eISPkdK2mdP51X077s6DBUxlxRwug1ebb/muNQTrH0h3JQLq/YlM/p4QssytnS7
- rslKjNDaKfH3ZAd9z1TqTmq+iBIOdhTNnZokxcxjIEa/DI5eoGR20tEMbkx/JceWBHQrqg
- 18+SZ8Fo+7lAYVQoeW9+v+ShE5+WwdU=
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com
- [209.85.160.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-247-coHnGXkSOh66C2DhB_E9SQ-1; Fri, 10 Apr 2020 15:16:20 -0400
-X-MC-Unique: coHnGXkSOh66C2DhB_E9SQ-1
-Received: by mail-qt1-f200.google.com with SMTP id g55so2644573qtk.14
+ id 1jMz9k-0001zY-PQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 19:17:38 +0000
+Received: by mail-ot1-x342.google.com with SMTP id n25so2748678otr.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 12:16:20 -0700 (PDT)
+ Fri, 10 Apr 2020 12:17:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pGMNxl5yMaSl8w4TVy6/u5eqbJHU/Il2MpyvoWjq+Hs=;
+ b=cJ4hIknacOZTf+wTNHq17b7pSjadFHPOsl31Rr/7cFhiBWqXjznKp4SYO/Fa30y1oU
+ CDgEOxy2o0za+R4gRtGHD8ZTCDK/vata9dknSwXvyhiP0jkBxQOh/HFgD82OvIKxZ5Qg
+ GVlL42E+DSIrJWrjAB/hLCC41H1by0iDzKbzytR2Dyi5U4nFTQ9utqE8kI1+PKxK68Tn
+ PTmNiSgYbjlMyUDrbb9Y9dGq42a28vdsobMxH29zntYKSwNEIeuqawyqtvbJ1l45uIo/
+ FQFhsXzEqhns0G+zB3YZvjF8PPkiVpp4DR9/uZdINhyyajINXUs1xVP73IH1e/avxy+9
+ RG1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=mwSL4Svde7cDyREN44P4y94Qc6dx9Sv2bNY13UCrEho=;
- b=PuzMDwONIMLONl1XD8b60l6H4bEk7hrWWVOFFPFwCAS8+jOt264bIh9MQWx9Brt7KU
- DgmAP9ZlPnTwB9EpHu5Ppbi6nfa+uM5U9+VH2v8yu5xeFoL+JZzjRXrBYJ+isBCg1Z3y
- knYM6xnZHiOu/RAoUsURpToitXOLGUUC2dGORqDDVoi5YkFZxbAP9NfG0cYxDLl/y7wJ
- BNM/6CycKHlw1LNjzxsGCHlHrlPmeFf+dvtPVlQswwz570IxgIZnae1ck+EFbjhc/esa
- KUEwA9d7RCwjJCQZxgsahDqX9Fye1jKE16Jd1P8ur1GBk4xFIwgdhTXbns1z5wKD0Zox
- /kew==
-X-Gm-Message-State: AGi0PuYsm8IRiU9G0j3Y6XQUEfxP91gkF9JjMJplyoTrFbwVumWhmH7x
- zBl/Ctp5b4Ba5Ymi3ARu55MAua/n0FcZw9vi/fNZ3CvAQfoQWKrhA6CLYh82SZAN1mmaIXfTO8d
- evi9Nc1Oq9oZI60EGWzAV+oXJbVZ5zTHmjYI=
-X-Received: by 2002:a05:620a:89d:: with SMTP id
- b29mr5792457qka.329.1586546180326; 
- Fri, 10 Apr 2020 12:16:20 -0700 (PDT)
-X-Google-Smtp-Source: APiQypLiuHO8rQfrWs/w6IUs43Srn34pCDFpZie/ieWUpJNT3bX04my6S/Xtwb+5j5ZmCFgzwIqbpg==
-X-Received: by 2002:a05:620a:89d:: with SMTP id
- b29mr5792202qka.329.1586546177111; 
- Fri, 10 Apr 2020 12:16:17 -0700 (PDT)
-Received: from xz-x1 ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id b13sm1590230qtp.46.2020.04.10.12.16.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 12:16:16 -0700 (PDT)
-Date: Fri, 10 Apr 2020 15:16:13 -0400
-From: Peter Xu <peterx@redhat.com>
-To: Mike Kravetz <mike.kravetz@oracle.com>
-Subject: Re: [PATCH v2 1/4] hugetlbfs: add arch_hugetlb_valid_size
-Message-ID: <20200410191613.GD3172@xz-x1>
-References: <20200401183819.20647-1-mike.kravetz@oracle.com>
- <20200401183819.20647-2-mike.kravetz@oracle.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pGMNxl5yMaSl8w4TVy6/u5eqbJHU/Il2MpyvoWjq+Hs=;
+ b=amyq5bgBP75KtnBEAhYAsYlXi7XO+w79ewCBuwBzZ60JxFXaaaHFq6wi2KUWyfinC6
+ 4O9j9Jc1cnUoDpPk7WfFB9HvHIswCb3m+MxC2pxWbYffXDVjd4X4OAEV0IrQpMP+f5lv
+ bzoj0O+jbLX/4b36XcAECbmQl0+EZmXM1ef4EM3BGtxXDYQxqNSu5hETCqR2JgKUHTuJ
+ gvDS4Ye4mH7cU18g/CC+kXAPWezkVZ/zjHE1uAluqOk4LAZsMTqsX5anKvnyjMn/nKky
+ yGMEcHJNXvocbdRBFxONkp4EK3GwtWfw6/eVLllQhljYWd0tVZSm03ulqtQOGmm43+bD
+ iW2A==
+X-Gm-Message-State: AGi0PuZNyzvS2Nefrp7xTscOPZDu5cIMU4apDFneRG0tm2NsHkRd4JuP
+ Yuk2gTIqEawSRbFE/oQQnoI=
+X-Google-Smtp-Source: APiQypIPe6SDOZEbT2UuatfbKpEq3Q7lnEcSmKVNAe9RU1+ELrHnloyze7yIhau2lR+NFI1Io5EAuA==
+X-Received: by 2002:a9d:6a95:: with SMTP id l21mr5173279otq.237.1586546255357; 
+ Fri, 10 Apr 2020 12:17:35 -0700 (PDT)
+Received: from Andrews-MBP-2.attlocal.net
+ (45-18-127-186.lightspeed.austtx.sbcglobal.net. [45.18.127.186])
+ by smtp.gmail.com with ESMTPSA id i17sm1597363otc.16.2020.04.10.12.17.34
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 10 Apr 2020 12:17:34 -0700 (PDT)
+From: Andrew Geissler <geissonator@gmail.com>
+To: openbmc@lists.ozlabs.org, joel@jms.id.au, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: dts: aspeed: rainier: Add gpio line names
+Date: Fri, 10 Apr 2020 14:17:04 -0500
+Message-Id: <20200410191704.82625-1-geissonator@gmail.com>
+X-Mailer: git-send-email 2.21.0 (Apple Git-122)
 MIME-Version: 1.0
-In-Reply-To: <20200401183819.20647-2-mike.kravetz@oracle.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200410_121736_847114_C8079C2A 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geissonator[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,57 +101,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Mina Almasry <almasrymina@google.com>, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S . Miller" <davem@davemloft.net>
+Cc: linux-gpio@vger.kernel.org, Andrew Geissler <geisonator@yahoo.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 01, 2020 at 11:38:16AM -0700, Mike Kravetz wrote:
-> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
-> index 2eb6c234d594..81606223494f 100644
-> --- a/arch/arm64/include/asm/hugetlb.h
-> +++ b/arch/arm64/include/asm/hugetlb.h
-> @@ -59,6 +59,8 @@ extern void huge_pte_clear(struct mm_struct *mm, unsigned long addr,
->  extern void set_huge_swap_pte_at(struct mm_struct *mm, unsigned long addr,
->  				 pte_t *ptep, pte_t pte, unsigned long sz);
->  #define set_huge_swap_pte_at set_huge_swap_pte_at
-> +bool __init arch_hugetlb_valid_size(unsigned long size);
-> +#define arch_hugetlb_valid_size arch_hugetlb_valid_size
+From: Andrew Geissler <geisonator@yahoo.com>
 
-Sorry for chimming in late.
+Name the GPIOs to help userspace work with them. The names describe the
+functionality the lines provide, not the net or ball name. This makes it
+easier to share userspace code across different systems and makes the
+use of the lines more obvious.
 
-Since we're working on removing arch-dependent codes after all.. I'm
-thinking whether we can define arch_hugetlb_valid_size() once in the
-common header (e.g. linux/hugetlb.h), then in mm/hugetlb.c:
+Signed-off-by: Andrew Geissler <geisonator@yahoo.com>
+---
+ arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts | 34 ++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
 
-bool __init __attribute((weak)) arch_hugetlb_valid_size(unsigned long size)
-{
-	return size == HPAGE_SIZE;
-}
-
-We can simply redefine arch_hugetlb_valid_size() in arch specific C
-files where we want to override the default.  Would that be slightly
-cleaner?
-
-Thanks,
-
+diff --git a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+index 0a7a8b84c118..01db238ce741 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+@@ -70,6 +70,40 @@
+ 
+ };
+ 
++&gpio0 {
++	gpio-line-names =
++	/*A0-A7*/	"","","","","","","","",
++	/*B0-B7*/	"","","","","","","","",
++	/*C0-C7*/	"","","","","","","","",
++	/*D0-D7*/	"","","","","","","","",
++	/*E0-E7*/	"","","","","","","","",
++	/*F0-F7*/	"","","","","","","","",
++	/*G0-G7*/	"","","","","","","","",
++	/*H0-H7*/	"","","","","","","","",
++	/*I0-I7*/	"","","","","","","","",
++	/*J0-J7*/	"","","","","","","","",
++	/*K0-K7*/	"","","","","","","","",
++	/*L0-L7*/	"","","","","","","","",
++	/*M0-M7*/	"","","","","","","","",
++	/*N0-N7*/	"","","","","","","","",
++	/*O0-O7*/	"","","","","","","","",
++	/*P0-P7*/	"","","","","","","","",
++	/*Q0-Q7*/	"cfam-reset","","","","","","","",
++	/*R0-R7*/	"","","","","","","","",
++	/*S0-S7*/	"presence-ps0","presence-ps1","presence-ps2","presence-ps3",
++				"","","","",
++	/*T0-T7*/	"","","","","","","","",
++	/*U0-U7*/	"","","","","","","","",
++	/*V0-V7*/	"","","","","","","","",
++	/*W0-W7*/	"","","","","","","","",
++	/*X0-X7*/	"","","","","","","","",
++	/*Y0-Y7*/	"","","","","","","","",
++	/*Z0-Z7*/	"","","","","","","","",
++	/*AA0-AA7*/	"","","","","","","","",
++	/*AB0-AB7*/	"","","","","","","","",
++	/*AC0-AC7*/	"","","","","","","","";
++};
++
+ &emmc_controller {
+ 	status = "okay";
+ };
 -- 
-Peter Xu
+2.17.1
 
 
 _______________________________________________
