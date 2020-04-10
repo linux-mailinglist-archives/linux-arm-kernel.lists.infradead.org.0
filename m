@@ -2,72 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10F471A469D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 15:09:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F181A474D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 16:19:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MEYTWdIRmwYfDWIEEShHYxle4OPSskkv8RSdBr/I6g0=; b=RCgNbWS7YeO5t1
-	9y6Imva6PfMXvzGbI4wpRkMmaSr9clGch/XBV2NplZKWa+31vzoeRC/94EFUi3FEEoRUfpPveyMn0
-	38Srp0njp0F9zAeGbCwbsTQ/Cvuge80kxnLU6XvTXRXBCLu5NxZaqTu7ePN9o+hALWEwOys3O8di+
-	07wL8kdAQ/1pqLtUT8Wp40D/o9UkVyXKbO5DBpCVxPLlbZNqzqhsSJsvZSw1qi1iBFph7rdn5oJIr
-	ZxlzzRN4Hwztew2XpMDTF8JaOVKYMhe2KXwjJvGAYDu0LSaD/ASvKjzq8J5a8uZDZjNcZBpUcD+tb
-	BzxahmyqXhPmLOaXzesg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2jC0foyFixWq7oP93//oAzs6S1u83cNIbGvPBwTYusw=; b=po53EEuFZFYJsy
+	s58g3WVYKCTITESmUurojNcCxqnooPPEwizNLOQ413GW5YMKEFnlfWDNbAX1zNvqxEvk+ML8Gdq5P
+	mBahnQh6XTJK9nyNGtnQJlV2aFlfQhppxnMsjhxqEJbh+zwoENmzvLXw9ipSa1UNZCiJjYNHm+sjT
+	Wp7Fy3dhOIHOYThPV6gi9a9VFpx3V8aCTwq0NxIzrAXOAutP+02IQuxXI7Atc58ygwgXsWYhzhDtc
+	wDcDSu4cm93sEdiLK+kFQy80KN8QUD9l/h0Jrty/BmIiF0HAp4/MzXQfGjcAPvIEIsAbKSjhCSzsz
+	qpZjPAIYtTAYWyi65c/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMtPe-0005CQ-SU; Fri, 10 Apr 2020 13:09:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jMuUp-0001xj-LN; Fri, 10 Apr 2020 14:19:03 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMtPX-0005Bh-QQ
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 13:09:33 +0000
-Received: from mail-io1-f53.google.com (mail-io1-f53.google.com
- [209.85.166.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A93BD2173E
+ id 1jMuUj-0001wh-8R
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 14:18:58 +0000
+Received: by mail-lj1-x243.google.com with SMTP id h25so2074738lja.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 13:09:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586524170;
- bh=5WEAdeZ8NM+kR6JK6kOLkmqphGERh/J8AVjGUV+iPQY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=caS+XUIlsZgEBCk0w81MRE5mbSZtdXe4yqVEt0cnPlu52QuX5bmImMK2nkajPiSo9
- YB+AH+b0GrSlS7Utesplob7Zd5ITab82QMoiOSvCGvEU/Xq2pDlmRjpATmKKQdEBKH
- 2xFxh5W3oLDva3TuIdNahMQWYQ5yedELcEbj1z+s=
-Received: by mail-io1-f53.google.com with SMTP id w20so1700331iob.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 06:09:30 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZCFj8CXc5aK6io1xh6Vs8CxnluDw6d5lePAQ87njxJ+3r5eX6g
- WrpwvlZF0tO+nJko+BOUSlvxHFPsM9Zx6nORqLU=
-X-Google-Smtp-Source: APiQypJzjP70bMJVA9Led2HH6Kvs7dSVTDdgeJwjrGG2MlqETHUYaT3ZORmi/8MXQCOjZehGXh7uYslJtOjfoYtPCkM=
-X-Received: by 2002:a6b:f413:: with SMTP id i19mr4216512iog.203.1586524169887; 
- Fri, 10 Apr 2020 06:09:29 -0700 (PDT)
+ Fri, 10 Apr 2020 07:18:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=csrvl1c+O62QiY1i5I2vPcapPdMbP20Dc619rzOjrHg=;
+ b=PzrJ1G+gJpRmx0ywjb/789Cgg1GrSezUTE0/LfFzYMCsmYLNAHM3H+oGpUNICrgdXZ
+ aXDTfyc0dgSMHiUT0s17XtuLyqQ06SYP5mE6aS8fnmTyIBM60Bg/jOLf7F6dna5NMsMR
+ 8n0Day9czPDgppvmia1qnyEtX0wPI2TIOWRzxq3STR0XS15woWHGVFLhBq8allCjGoKF
+ ZQIpbIK2AkLA8IK/svBpH3HlGRA0XqhT0UrWCMZJD5OKCi+gJxXFaWst4tqCQZ86tJC6
+ 6Zzd/T/yvHS7hdvhNJUTqfZCPnRjhSDuBJ7RgbYfIIkJEGXucntlRS+tR6tOQ0y6+xdF
+ kASA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=csrvl1c+O62QiY1i5I2vPcapPdMbP20Dc619rzOjrHg=;
+ b=Ss30XlO7cCQpQwvHLk6eWvL88mPWN7ymLAHaUDL2G2BJfcWQ9yM8U+jgp9ijIsZGtB
+ DXolWjeyR8isEkt5hpKm05Se6OzA/vhDA2PwWgC0ElhVi7Bb9wQv7eVmg4zW0kQUeWJg
+ dpw+YffcS8UZsh4FvRUT8T4wFDc8/togOMgiWhqxf3P8poI/T8k+yt0Xwvo6MLb7314L
+ Gf7F03Decsa3piF4tX4jubkc/HlWffdix77yItNXvaKSXvAzpkeqU40wK06r0GgJSNHK
+ FurWrWdweJdWv2klR6YBsQvuiKqQ/7JrbUYnFj3BZpJmckeeXOCeoFXf1jnHPuzvr4/S
+ rIEg==
+X-Gm-Message-State: AGi0PuZHEsC8lgLz1SF5gkf7PcexUpgtcWl+6ULQ6LDVC5hHGuTqUXQR
+ wQkOH8doUU7t6ioEB/VppJ4JR880
+X-Google-Smtp-Source: APiQypL8wSZ3+zuj3JdwrMxl2nUdiO7+MYxW0LLqG0DA915dib8zv1EuWcyyuRt5PD81k/AxqIRe1g==
+X-Received: by 2002:a2e:b80d:: with SMTP id u13mr3126155ljo.166.1586528333328; 
+ Fri, 10 Apr 2020 07:18:53 -0700 (PDT)
+Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
+ [91.78.208.152])
+ by smtp.googlemail.com with ESMTPSA id u1sm1129675ljo.65.2020.04.10.07.18.52
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 10 Apr 2020 07:18:52 -0700 (PDT)
+Subject: Re: [PATCH v6 10/14] memory: tegra: Add EMC scaling sequence code for
+ Tegra210
+To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-11-thierry.reding@gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <682c661d-ea3a-7b9a-42f0-d5473b969aa2@gmail.com>
+Date: Fri, 10 Apr 2020 17:18:51 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200409232728.231527-1-caij2003@gmail.com>
- <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
- <CAMj1kXGXNxXGiC4dmNXHkZ6n=J0Fhim3oSwNx4Bz5m9fEphJvQ@mail.gmail.com>
- <20200410123301.GX25745@shell.armlinux.org.uk>
-In-Reply-To: <20200410123301.GX25745@shell.armlinux.org.uk>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Fri, 10 Apr 2020 15:09:18 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXFpknCfwb6JMdk_SHopnGqMswgSqaQUeAUEh5yaV10vJg@mail.gmail.com>
-Message-ID: <CAMj1kXFpknCfwb6JMdk_SHopnGqMswgSqaQUeAUEh5yaV10vJg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+In-Reply-To: <20200409175238.3586487-11-thierry.reding@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_060931_897029_5188AC59 
-X-CRM114-Status: GOOD (  29.98  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200410_071857_300826_CBB9D76F 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,143 +104,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
- Stefan Agner <stefan@agner.ch>, David Howells <dhowells@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Manoj Gupta <manojgupta@google.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
- Jian Cai <caij2003@gmail.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>, jiancai@google.com,
- Doug Anderson <armlinux@m.disordat.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Apr 2020 at 14:33, Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Fri, Apr 10, 2020 at 01:15:08PM +0200, Ard Biesheuvel wrote:
-> > On Fri, 10 Apr 2020 at 11:56, Arnd Bergmann <arnd@arndb.de> wrote:
-> > >
-> > > On Fri, Apr 10, 2020 at 1:28 AM Jian Cai <caij2003@gmail.com> wrote:
-> > > >
-> > > > iwmmxt.S contains XScale instructions LLVM ARM backend does not support.
-> > > > Skip this file if LLVM integrated assemmbler or LLD is used to build ARM
-> > > > kernel.
-> > > >
-> > > > Signed-off-by: Jian Cai <caij2003@gmail.com>
-> > >
-> > > It clearly makes sense to limit the Kconfig option to compilers that
-> > > can actually build it.
-> > > A few questions though:
-> > >
-> > > - Given that Armada XP with its PJ4B was still marketed until fairly
-> > > recently[1],
-> > >   wouldn't it make sense to still add support for it? Is it a lot of work?
-> > >
-> >
-> > The part of that file that the assembler chokes on hasn't been touched
-> > by anyone since Nico added it 15+ years ago. It can only be built in
-> > ARM mode, and it disassembles to the sequence below (the ld/st fe/fp
-> > mnemonics are not document in recent versions of the ARM ARM, and
-> > aren't understood by Clang either)
->
-> For older CPUs, it doesn't matter what the latest ARM ARM says, the
-> appropriate version of the ARM ARM is the one relevant for the CPU
-> architecture.  This is a mistake frequently made, and it's been pointed
-> out by Arm Ltd in the past (before ARMv6 even came on the scene) that
-> keeping older revisions is necessary if you want to be interested in
-> the older architectures.
->
-> However, there's an additional complication here: DEC's license from
-> Arm Ltd back in the days of StrongARM allowed them to make changes to
-> the architecture - that was passed over to Intel when they bought that
-> part of DEC.  Consequently, these "non-Arm vendor" cores contain
-> extensions that are not part of the ARM ARM.  iWMMXT is one such
-> example, which first appeared in the Intel PXA270 SoC (an ARMv5
-> derived CPU).
->
-> In fact, several of the features found in later versions of the ARM
-> architecture came from DEC and Intel enhancements.
->
-> If your compiler/assembler only implements what is in the latest ARM
-> ARM, then it is not going to be suitable for these older CPUs and
-> alternate vendor "ARM compatible" CPUs.
->
-
-Indeed, and I'm a bit disappointed at the willingness to leave stuff
-by the wayside, especially since Clang's integrated assembler has no
-other benefit to it than being built into the compiler.
-
-> > Instead of playing all these tricks with Kconfig, couldn't we simply
-> > insert the bare opcodes and be done with it?
->
-> That gets close to a GPL violation; the GPL requires that source code
-> be in the preferred form for making modifications. Encoding raw opcodes
-> can in no way be argued to be the preferred form. Arguing that raw
-> opcodes is acceptable sets a precedent that makes it acceptable for
-> other "works" to do the same, which makes arguments against firmware
-> supplied as a hexdump null and void.
->
-> Using macros to emulate the instructions and create the appropriate
-> opcodes is an alternative; we already have that for some of the VFP
-> code as early toolchains had no support for the VFP instructions.
->
-> So no, bare opcodes are unacceptable.
->
-
-Fair enough.
-
-The following set of macros appears to emit the opcodes correctly,
-assuming we're willing to tweak the source code somewhat, i.e., drop
-square brackets and leading # for immediate offsets. (The tmcr/tmrc
-instructions are left as an exercise for the reader)
-
-
-.irp b, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-.set .LwR\b, \b
-.set .Lr\b, \b
-.endr
-
-.set .LwCSSF, 0x2
-.set .LwCASF, 0x3
-.set .LwCGR0, 0x8
-.set .LwCGR1, 0x9
-.set .LwCGR2, 0xa
-.set .LwCGR3, 0xb
-
-.macro wldrd, reg:req, base:req, offset:req
-.inst 0xedd00100 | (.L\reg << 12) | (.L\base << 16) | (\offset >> 2)
-.endm
-
-.macro wldrw, reg:req, base:req, offset:req
-.inst 0xfd900100 | (.L\reg << 12) | (.L\base << 16) | (\offset >> 2)
-.endm
-
-.macro wstrd, reg:req, base:req, offset:req
-.inst 0xedc00100 | (.L\reg << 12) | (.L\base << 16) | (\offset >> 2)
-.endm
-
-.macro wstrw, reg:req, base:req, offset:req
-.inst 0xfd800100 | (.L\reg << 12) | (.L\base << 16) | (\offset >> 2)
-.endm
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4gK3N0YXRp
+YyB2b2lkIHRlZ3JhMjEwX2VtY19yMjEwMjFfc2V0X2Nsb2NrKHN0cnVjdCB0ZWdyYTIxMF9lbWMg
+KmVtYywgdTMyIGNsa3NyYykKPiArewo+ICsJLyoKPiArCSAqIFRoaXMgaXMgdGhlIHRpbWluZyB0
+YWJsZSBmb3IgdGhlIHNvdXJjZSBmcmVxdWVuY3kuIEl0IGRvZXMgX25vdF8KPiArCSAqIG5lY2Vz
+c2FyaWx5IGNvcnJlc3BvbmQgdG8gdGhlIGFjdHVhbCB0aW1pbmcgdmFsdWVzIGluIHRoZSBFTUMg
+YXQgdGhlCj4gKwkgKiBtb21lbnQuIElmIHRoZSBib290IEJDVCBkaWZmZXJzIGZyb20gdGhlIHRh
+YmxlIHRoZW4gdGhpcyBjYW4gaGFwcGVuLgo+ICsJICogSG93ZXZlciwgd2UgbmVlZCBpdCBmb3Ig
+YWNjZXNzaW5nIHRoZSBkcmFtX3RpbWluZ3MgKHdoaWNoIGFyZSBub3QKPiArCSAqIHJlYWxseSBy
+ZWdpc3RlcnMpIGFycmF5IGZvciB0aGUgY3VycmVudCBmcmVxdWVuY3kuCj4gKwkgKi8KPiArCXUz
+MiB0bXAsIGN5YV9hbGxvd19yZWZfY2MgPSAwLCByZWZfYjRfc3JlZl9lbiA9IDAsIGN5YV9pc3N1
+ZV9wY19yZWYgPSAwOwo+ICsJc3RydWN0IHRlZ3JhMjEwX2VtY190aW1pbmcgKmZha2UsICpsYXN0
+ID0gZW1jLT5sYXN0LCAqbmV4dCA9IGVtYy0+bmV4dDsKPiArCXUzMiBiZ19yZWd1bGF0b3Jfc3dp
+dGNoX2NvbXBsZXRlX3dhaXRfY2xrcywgYmdfcmVndWxhdG9yX21vZGVfY2hhbmdlOwo+ICsJdTMy
+IG9wdF96Y2FsX2VuX2NjLCBvcHRfZG9fc3dfcXJzdCA9IDEsIG9wdF9kdmZzX21vZGUsIG9wdF9k
+bGxfbW9kZTsKPiArCXUzMiBlbWNfemNhbF93YWl0X2NudF9vbGQsIGVtY196Y2FsX3dhaXRfY250
+X25ldywgZW1jX2RiZ19hY3RpdmU7Cj4gKwl1MzIgb3B0X2NjX3Nob3J0X3pjYWwgPSAxLCBvcHRf
+c2hvcnRfemNhbCA9IDEsIG9wdF93YXJfMjAwMDI0OTA3Owo+ICsJdTMyIHRSVE0sIFJQX3dhciwg
+UjJQX3dhciwgVFJQYWJfd2FyLCBkZWx0YVRXQVRNLCBXMlBfd2FyLCB0UlBTVDsKPiArCXUzMiBh
+ZGVsID0gMCwgY29tcGVuc2F0ZV90cmltbWVyX2FwcGxpY2FibGUgPSAwLCBtcndfcmVxLCB2YWx1
+ZTsKPiArCXVuc2lnbmVkIGxvbmcgbmV4dF90aW1pbmdfcmF0ZV9taHogPSBuZXh0LT5yYXRlIC8g
+MTAwMCwgZGVsYXk7Cj4gKwl1MzIgdFpRQ0FMX2xwZGRyNCA9IDEwMDAwMDAsIHpxX3dhaXRfbG9u
+Zywgc2hhcmVkX3pxX3Jlc2lzdG9yOwo+ICsJczMyIHpxX2xhdGNoX2R2ZnNfd2FpdF90aW1lLCB0
+WlFDQUxfbHBkZHI0X2ZjX2FkaiwgblJUUDsKPiArCXUzMiB0RkNfbHBkZHI0ID0gMTAwMCAqIG5l
+eHQtPmRyYW1fdGltaW5nc1tUX0ZDX0xQRERSNF07Cj4gKwl1MzIgZW1jX2F1dG9fY2FsX2NvbmZp
+ZywgYXV0b19jYWxfZW4sIG1yMTNfY2F0cl9lbmFibGU7Cj4gKwl1MzIgenFfb3AsIHpjYWxfd2Fp
+dF90aW1lX2Nsb2NrcywgemNhbF93YWl0X3RpbWVfcHM7Cj4gKwl1MzIgZW1jX2NmZywgZW1jX3Nl
+bF9kcGRfY3RybCwgZW1jX3pjYWxfaW50ZXJ2YWw7Cj4gKwlpbnQgbmV4dF9wdXNoLCBuZXh0X2Rx
+X2VfaXZyZWYsIG5leHRfZHFzX2VfaXZyZWY7Cj4gKwl1MzIgbXIxM19mbGlwX2ZzcHdyLCBtcjEz
+X2ZsaXBfZnNwb3AsIGlzX2xwZGRyMzsKPiArCXUzMiBlbmFibGVfYmdscF9yZWd1bGF0b3IsIGVu
+YWJsZV9iZ19yZWd1bGF0b3I7Cj4gKwl1MzIgZW1jX2RiZ19vLCBlbWNfY2ZnX3BpcGVfY2xrX28s
+IGVtY19waW5fbzsKPiArCXUzMiByYW1wX3VwX3dhaXQgPSAwLCByYW1wX2Rvd25fd2FpdCA9IDA7
+Cj4gKwl1MzIgc2F2ZV9yZXN0b3JlX2Nsa3N0b3BfcGQgPSAxLCBkbGxfb3V0Owo+ICsJdTMyIHJl
+Zl9kZWxheV9tdWx0LCByZWZfZGVsYXksIGRyYW1fdHlwZTsKPiArCXN0YXRpYyB1MzIgZnNwX2Zv
+cl9uZXh0X2ZyZXE7Cj4gKwkvKiBJbiBwaWNvc2Vjb25kcy4gKi8KPiArCXUzMiBzb3VyY2VfY2xv
+Y2tfcGVyaW9kLCBkZXN0aW5hdGlvbl9jbG9ja19wZXJpb2Q7Cj4gKwl1MzIgenFjYWxfYmVmb3Jl
+X2NjX2N1dG9mZiA9IDI0MDA7Cj4gKwl1bnNpZ25lZCBpbnQgaTsKCldoYXQgYWJvdXQgdG8gdHJ5
+IHRvIHJlcGxhY2UgdGhpcyBtYXNzaXZlIGVneXB0aWFuIGNvbnN0cnVjdGlvbiB3aXRoIGEKc2lu
+Z2xlICJ1MzIgdmFsOyIgPwoKLi4uCgo+ICsJZW1jX3JlYWRsKGVtYywgRU1DX0NGRyk7Cj4gKwll
+bWNfYXV0b19jYWxfY29uZmlnID0gZW1jX3JlYWRsKGVtYywgRU1DX0FVVE9fQ0FMX0NPTkZJRyk7
+CgpBbmQgcmVtb3ZlIGFsbCB0aGUgImR1bW15IiB2YXJpYWJsZSBhc3NpZ25zIGluIHRoZSBjb2Rl
+PwoKLi4uCj4gZW1jX2F1dG9fY2FsX2NvbmZpZyA9IG5leHQtPmVtY19hdXRvX2NhbF9jb25maWc7
+Ci4uLj4gKwllbWNfemNhbF9pbnRlcnZhbCA9IDA7CgpBbmQgcmVwbGFjZSBhbGwgImNvbnN0YW50
+IiB2YXJpYWJsZXMgd2l0aCBhIHJhdyB2YWx1ZSBpbiBwbGFjZSBpbiB0aGUgY29kZT8KCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
