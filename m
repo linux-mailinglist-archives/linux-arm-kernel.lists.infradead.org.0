@@ -2,72 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28DFA1A4562
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 12:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA3891A456B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 12:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VguSiYVR+H47OGtB9yDSyG6B9VV2Ef7YrGw5zHzb+UI=; b=I2teJZEYpDmVt5
-	+MmhS31dC1rsw4bVnbzhZezo3ugobwN9abP1RDlWUqY6mpEM/4uIZe8x7NOrF1WpxY7pIzOgaKSQI
-	j7z3YNQCBmL9BE1nd9Tf3lQoevaas1T2hJvuGTyiQep7bWEgw8aSwmv6UXxRW5PtScis/uZB53Pgv
-	zponCi+tKqFq/ZFYFXf3V0vCc1Qs9f+3eLZZSOlV0TyMPNWFAgeEs5bgaGrltZS7gYtYEimHP4L+i
-	jQSCSdxB7ehrG1ZlscTWfJzr+RWwjm/rsUuzkp/ieYj4Kc6ebwz1B0H/w0s5hxz6UzLXKrhY/YVU9
-	C6p7ETS37+FltqC+K06A==;
+	List-Owner; bh=iXlnBBA3oRjLRwXXU4MEOFoNtpGTaghMWn6LD84O17s=; b=tIorrRECBVZmbs
+	5mfg8jcwCJ14aSrWrerrDO9eIudX9pJi4J8gs+5/GOL/3ew3Ct5h9/YethlNUZ8UFHhHPaRoM/9OD
+	MNmOGiXGhJrN/ASr1WGQRvGFagdoUh4qC0oGeTyumjfgjr2UqLkJNcIJy38FIS+M18BaOs81xfZcy
+	7tgNM4SIQ3GSiDq/uapR0B5OCBX7ppcZNTLzXUO8Nw6cR/LNdf/dJy1K+8OuAt6OS/4usXYMrnsli
+	fbaLE4luzDPpbKvxnWNommHZyY0XkuyFoPgAc/9NbcyBhO34+r1XbRN/O4GPu3QYtoeyXx1uAcE17
+	XtOX8mt8gipvffthIaog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMrCJ-0003hR-Pi; Fri, 10 Apr 2020 10:47:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jMrK6-0000bV-5m; Fri, 10 Apr 2020 10:55:46 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMrCB-0003h6-PT
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 10:47:37 +0000
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com
- [209.85.166.49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6829221841
+ id 1jMrJz-0000bA-1H
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 10:55:40 +0000
+Received: by mail-pg1-x541.google.com with SMTP id c5so848008pgi.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 10:47:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586515655;
- bh=U3wmJx6hLjdbpi9nNIeT1fEN5cdk/6ttAPKJ4Brye00=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Kp997bcLfABP723lf8fm7ymzoCZy/BOcnjK6rtWodOzvp8kJN74/xyXNE0RPwAZnX
- ipCy6HSzeQykN+E0hK/HgtKDpuccoOP68HJoF4S+4bywrx6uMTA+sziQCSvnmwEMW2
- cym5bSmxRYBoYkThrYRtGNNvsrN8XqromYU8b5eI=
-Received: by mail-io1-f49.google.com with SMTP id w1so1358996iot.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 03:47:35 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYdmNpOmRH/IgbVir8WlOb21hxkbO4Nu15z3hqH57Tw8d+x2Gzo
- a9mdS6j4QkZRjNocr1BPRa9DNGmTJJYopV5H2H4=
-X-Google-Smtp-Source: APiQypKXvEl7sIHmBvdTO2/Sq82nNedbtcTWI9il5KSUN0FhnjNovFdxXB0laKwHoxVv+x13Op2+8K9kQu7VpjrjlQY=
-X-Received: by 2002:a5d:8b57:: with SMTP id c23mr3679119iot.161.1586515654446; 
- Fri, 10 Apr 2020 03:47:34 -0700 (PDT)
+ Fri, 10 Apr 2020 03:55:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=aIcnFNlKwbhEUKuern25WOvqQEVVsTXqGIr0A8WwShs=;
+ b=OHsTaGa0WQ0YKhuVGOQ6pPcIKYKJQmtrS2+T8Szuyi16vomvG6C+YQ0O3IlqEnYEuY
+ vu9zRhcCwSVWKFUOlCa+2e9JI8Q6x940HHClWPfwkcZnMF5hnXZKbD0oS6/aaG+TnVYc
+ pRBFg5mAzqvql2AcdtPhjL9lMpMJ9J2zqmyzybRd0MWTbak6q6rP9UheTARiDh2qHMmB
+ OQLbxh7glsMqwXOzDPqJ8GoCU7fjGbJFO+iSiVuKbM6+M63B4ffbioe7km4BzU/PYU9j
+ hGP5CFwcd6r6oL55/u1/wjFFN6GAWEnYsAY8JBGSBgVtGEPYEMk727gMMDVvVW+2vJC+
+ YoRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=aIcnFNlKwbhEUKuern25WOvqQEVVsTXqGIr0A8WwShs=;
+ b=H+bACMyG5Vv/stO0QPaanSOroBmYwEDJTFDPtW0yrkVoeABWhgdx4ivPNssfKflj1q
+ VV0WlUBOVy2trP0Yue6i5Qql9YDxKOoSdYoQ/WUV1KYNTucgxOFSEAcEukUxqJJp+Ad5
+ xORzFjRcZgiAmblJ4U9RgqdEMPd1G3TtFU2qPXgJSsrYt/bPb1DRtli8XmFp3aHBDmNg
+ zoFw9JXK43zq4QR4LHXsTsHUYJS59xoNBAan2WhGzoyijIU+bFE7iV+ioCk/Fnu4wEr1
+ W9JuGn4A1QC8hgQ/NWv6dkpTahdCjdXHPfcOQPzWS5ulG5wITLRr7Gkxt6AjZEJFbVL8
+ Gjqw==
+X-Gm-Message-State: AGi0PuYZy/ILTic5sHizce+LdKJuCvU7JcjyRs27HUMJisgdpPp06VWg
+ CZndKPqE1O3m4kK+8uKw9saCqZc+nfbrqX6PCBA=
+X-Google-Smtp-Source: APiQypJjTjt8JGmxlFWTs2L3oU8ewPIPy4jYOmNiUW8hyrSurIcnqOta9nx1FhHqib1d/JIBljwPbBXFfHF5+tGhjZg=
+X-Received: by 2002:aa7:958f:: with SMTP id z15mr4357812pfj.130.1586516137980; 
+ Fri, 10 Apr 2020 03:55:37 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200117224839.23531-1-f.fainelli@gmail.com>
- <20200117224839.23531-8-f.fainelli@gmail.com>
- <CAKv+Gu_6wWhi418=GpMjfMpE2E+XHbL-DYKT8MJ1jE3+VybrAg@mail.gmail.com>
-In-Reply-To: <CAKv+Gu_6wWhi418=GpMjfMpE2E+XHbL-DYKT8MJ1jE3+VybrAg@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Fri, 10 Apr 2020 12:47:23 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEmSk6Sq+WPAMc=x=HyP2EzVYbNYjB-4YSLByUurbXa0A@mail.gmail.com>
-Message-ID: <CAMj1kXEmSk6Sq+WPAMc=x=HyP2EzVYbNYjB-4YSLByUurbXa0A@mail.gmail.com>
-Subject: Re: [PATCH v7 7/7] ARM: Enable KASan for ARM
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>
+References: <20200409151125.32677-1-aishwaryarj100@gmail.com>
+ <20200409155936.GV3628@piout.net>
+In-Reply-To: <20200409155936.GV3628@piout.net>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 10 Apr 2020 13:55:26 +0300
+Message-ID: <CAHp75VcLLjjc5T+Qq8du4QgnQ-rtzFLh=5Jt-DPjigb+QUWOSg@mail.gmail.com>
+Subject: Re: [PATCH] iio: adc: at91-adc: Use devm_platform_ioremap_resource
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_034735_863537_611C9E81 
-X-CRM114-Status: GOOD (  28.53  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200410_035539_074751_E49D7109 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,149 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Michal Hocko <mhocko@suse.com>, Julien Thierry <julien.thierry@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- David Howells <dhowells@redhat.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andrey Ryabinin <ryabinin.a.a@gmail.com>,
- Alexander Potapenko <glider@google.com>, kvmarm <kvmarm@lists.cs.columbia.edu>,
- Jonathan Corbet <corbet@lwn.net>, Abbott Liu <liuwenliang@huawei.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- bcm-kernel-feedback-list@broadcom.com, Andrew Jones <drjones@redhat.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Marc Zyngier <marc.zyngier@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Philippe Ombredanne <pombredanne@nexb.com>, Jinbum Park <jinb.park7@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Dmitry Vyukov <dvyukov@google.com>,
- Nicolas Pitre <nico@fluxnic.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+Cc: linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Kefeng Wang <wangkefeng.wang@huawei.com>, Lars-Peter Clausen <lars@metafoo.de>,
+ linux-iio <linux-iio@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andrey Ryabinin <ryabinin@virtuozzo.com>, Rob Landley <rob@landley.net>,
- Philip Derrin <philip@cog.systems>, Andrew Morton <akpm@linux-foundation.org>,
- Thomas Garnier <thgarnie@google.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+ Stephen Boyd <swboyd@chromium.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Allison Randal <allison@lohutok.net>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Aishwarya R <aishwaryarj100@gmail.com>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(+ Linus)
+On Thu, Apr 9, 2020 at 7:00 PM Alexandre Belloni
+<alexandre.belloni@bootlin.com> wrote:
+> On 09/04/2020 20:41:23+0530, Aishwarya R wrote:
+> > Use the helper function that wraps the calls to
+> > platform_get_resource() and devm_ioremap_resource()
+> > together.
 
-On Fri, 10 Apr 2020 at 12:45, Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> On Fri, 17 Jan 2020 at 23:52, Florian Fainelli <f.fainelli@gmail.com> wrote:
-> >
-> > From: Andrey Ryabinin <ryabinin@virtuozzo.com>
-> >
-> > This patch enables the kernel address sanitizer for ARM. XIP_KERNEL has
-> > not been tested and is therefore not allowed.
-> >
-> > Acked-by: Dmitry Vyukov <dvyukov@google.com>
-> > Tested-by: Linus Walleij <linus.walleij@linaro.org>
-> > Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
-> > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> > ---
-> >  Documentation/dev-tools/kasan.rst     | 4 ++--
-> >  arch/arm/Kconfig                      | 9 +++++++++
-> >  arch/arm/boot/compressed/Makefile     | 1 +
-> >  drivers/firmware/efi/libstub/Makefile | 3 ++-
-> >  4 files changed, 14 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
-> > index e4d66e7c50de..6acd949989c3 100644
-> > --- a/Documentation/dev-tools/kasan.rst
-> > +++ b/Documentation/dev-tools/kasan.rst
-> > @@ -21,8 +21,8 @@ global variables yet.
-> >
-> >  Tag-based KASAN is only supported in Clang and requires version 7.0.0 or later.
-> >
-> > -Currently generic KASAN is supported for the x86_64, arm64, xtensa and s390
-> > -architectures, and tag-based KASAN is supported only for arm64.
-> > +Currently generic KASAN is supported for the x86_64, arm, arm64, xtensa and
-> > +s390 architectures, and tag-based KASAN is supported only for arm64.
-> >
-> >  Usage
-> >  -----
-> > diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> > index 96dab76da3b3..70a7eb50984e 100644
-> > --- a/arch/arm/Kconfig
-> > +++ b/arch/arm/Kconfig
-> > @@ -65,6 +65,7 @@ config ARM
-> >         select HAVE_ARCH_BITREVERSE if (CPU_32v7M || CPU_32v7) && !CPU_32v6
-> >         select HAVE_ARCH_JUMP_LABEL if !XIP_KERNEL && !CPU_ENDIAN_BE32 && MMU
-> >         select HAVE_ARCH_KGDB if !CPU_ENDIAN_BE32 && MMU
-> > +       select HAVE_ARCH_KASAN if MMU && !XIP_KERNEL
-> >         select HAVE_ARCH_MMAP_RND_BITS if MMU
-> >         select HAVE_ARCH_SECCOMP_FILTER if AEABI && !OABI_COMPAT
-> >         select HAVE_ARCH_THREAD_STRUCT_WHITELIST
-> > @@ -212,6 +213,14 @@ config ARCH_MAY_HAVE_PC_FDC
-> >  config ZONE_DMA
-> >         bool
-> >
-> > +config KASAN_SHADOW_OFFSET
-> > +       hex
-> > +       depends on KASAN
-> > +       default 0x1f000000 if PAGE_OFFSET=0x40000000
-> > +       default 0x5f000000 if PAGE_OFFSET=0x80000000
-> > +       default 0x9f000000 if PAGE_OFFSET=0xC0000000
-> > +       default 0xffffffff
-> > +
-> >  config ARCH_SUPPORTS_UPROBES
-> >         def_bool y
-> >
-> > diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-> > index 83991a0447fa..efda24b00a44 100644
-> > --- a/arch/arm/boot/compressed/Makefile
-> > +++ b/arch/arm/boot/compressed/Makefile
-> > @@ -25,6 +25,7 @@ endif
-> >
-> >  GCOV_PROFILE           := n
-> >  KASAN_SANITIZE         := n
-> > +CFLAGS_KERNEL          += -D__SANITIZE_ADDRESS__
-> >
-> >  # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
-> >  KCOV_INSTRUMENT                := n
-> > diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-> > index c35f893897e1..c8b36824189b 100644
-> > --- a/drivers/firmware/efi/libstub/Makefile
-> > +++ b/drivers/firmware/efi/libstub/Makefile
-> > @@ -20,7 +20,8 @@ cflags-$(CONFIG_ARM64)                := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
-> >                                    -fpie $(DISABLE_STACKLEAK_PLUGIN)
-> >  cflags-$(CONFIG_ARM)           := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
-> >                                    -fno-builtin -fpic \
-> > -                                  $(call cc-option,-mno-single-pic-base)
-> > +                                  $(call cc-option,-mno-single-pic-base) \
-> > +                                  -D__SANITIZE_ADDRESS__
-> >
->
-> I am not too crazy about this need to unconditionally 'enable' KASAN
-> on the command line like this, in order to be able to disable it again
-> when CONFIG_KASAN=y.
->
-> Could we instead add something like this at the top of
-> arch/arm/boot/compressed/string.c?
->
-> #ifdef CONFIG_KASAN
-> #undef memcpy
-> #undef memmove
-> #undef memset
-> void *__memcpy(void *__dest, __const void *__src, size_t __n) __alias(memcpy);
-> void *__memmove(void *__dest, __const void *__src, size_t count)
-> __alias(memmove);
-> void *__memset(void *s, int c, size_t count) __alias(memset);
-> #endif
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Please elaborate the actual value of doing that.
+
+Please, elaborate actual value of not doing that.
+
+Yes, I know that you are p* off of these changes, but why you not
+going further and forbid all clean ups we are doing in the code?
+
+To the point. Above change is reducing code base and showing the new
+comers modern APIs to use.
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
