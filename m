@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F8391A3F41
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5E5E1A3F42
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:54:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+gz7czqEOjJGMm5kVw8+PS/vH2DAWZn2/IARla6cyQg=; b=Co7KOS9+rQDNMR
-	Ti/x1mCopzo52drVzeqra1sE1b3AHzAlb1O+DWkSIQlC6qHCqwu8GpJqj2vhpPRcfc6h3jB42KoiZ
-	To/xcM8UgEbQXL+bMEE4/sawyL0b+kWnql/ucVpma4g8Rbdbt7gNVdCjN1FbSQbKJN3n4fOyeLnnR
-	kKcf0/UnEzfPAb/u7ettaR8F3AJgd+AAZgwcjsHgZRQp8yRWGcuTtTe+qX4hqsO92gUKUw+xtMvpq
-	XfCJXX8+Zi1fvOj6g4pGpJTxc89zs85P8mjFhGMF+6PeS2MLopXtqYNjP/jFq7sdlaBPjphAGzHma
-	KpPCvZQ3xkHANMYun90A==;
+	List-Owner; bh=mXonK8381BwIgq0XW5E4arHA71zi1GC85RUgf8hFZfM=; b=TGvqXa/KGWgsOb
+	W9YRTk5TpdMEw+MFQ1NT9OX1wGfUdf92PfyRYcmKOecbmj9PdCGfcPE/rTdnxc+eu54G2wu8O7M5j
+	HQm3ax/EVzOxOLlp0gwr0CSSm1ipzO0ll6pvBcYwUlWjP9650S4HlDHGIuyMyxjO2L+5qLSzTPBF/
+	r+wgJJJ8GTgZVgozC8EhONB/K4ZclajFAe6iCjTPzdPfD1KNBM1/U6ejg8GNxo5ATaqcY3TsULrE0
+	OHuSejhjuT5itg6f/9FMjO6vDfqSn9xMp6npL0IuN7a8mV9Xa9JdMnhZPLFbOgdOd0Bfu6TVE/cov
+	d1VJFPaMo7KTB+lBp7cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkk3-0003Df-Nw; Fri, 10 Apr 2020 03:54:07 +0000
+	id 1jMkkM-0003V6-CX; Fri, 10 Apr 2020 03:54:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkfa-0004rY-Ds
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:32 +0000
+ id 1jMkfn-00054N-CB
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:49:45 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0A3D5212CC;
- Fri, 10 Apr 2020 03:49:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2004E20B1F;
+ Fri, 10 Apr 2020 03:49:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490569;
- bh=7RdBcKbcSA8txvE3ou1/hXYhwhq2DHXO8rive13W17M=;
+ s=default; t=1586490582;
+ bh=Ikc0AYvLKTZZv4VYpqWl7cUBvSOW5ZMNjoOQKDLh2aA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RKuh0dL2nTJkhA5e5W6l/3UKKIE/ush1t2Zw8t3fa+M/DJiNEX8Alfr0vbUixJ0aW
- k94c39NvK/76nwFdhYnbPFKsmhhPdAgZYtLiSRGYjOt+GKPScATlI5ecyg122P7aBw
- xxE95ZbDAfi34DTB8VgH935p5GbBXPMTZjrt0iY0=
+ b=RlS3E8Sn4wqddE2IZtsQpsCJq0t6fvsG6COpxD5wyIAH1tvcGLDIt8bFN8qm2eSYb
+ AfZqdFL+YyC7i+05KiIBkTSmXn415/vUB/OPrfryk4RxUHuJ5NxIoN9R7eQbSl7Rgb
+ yTajNtPvxPC8uTiDJKx0/RFvx9q5MUnqmYmPmHkU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 16/46] irqchip/versatile-fpga: Handle chained IRQs
- properly
-Date: Thu,  9 Apr 2020 23:48:39 -0400
-Message-Id: <20200410034909.8922-16-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 28/46] cpufreq: imx6q: fix error handling
+Date: Thu,  9 Apr 2020 23:48:51 -0400
+Message-Id: <20200410034909.8922-28-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200410034909.8922-1-sashal@kernel.org>
 References: <20200410034909.8922-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204930_557601_C91AB6FF 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20200409_204943_436500_F2F8E51B 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,74 +79,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Sungbo Eo <mans0n@gorani.run>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Peng Fan <peng.fan@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sungbo Eo <mans0n@gorani.run>
+From: Peng Fan <peng.fan@nxp.com>
 
-[ Upstream commit 486562da598c59e9f835b551d7cf19507de2d681 ]
+[ Upstream commit 3646f50a3838c5949a89ecbdb868497cdc05b8fd ]
 
-Enclose the chained handler with chained_irq_{enter,exit}(), so that the
-muxed interrupts get properly acked.
+When speed checking failed, direclty jumping to put_node label
+is not correct. Need jump to out_free_opp to avoid resources leak.
 
-This patch also fixes a reboot bug on OX820 SoC, where the jiffies timer
-interrupt is never acked. The kernel waits a clock tick forever in
-calibrate_delay_converge(), which leads to a boot hang.
-
-Fixes: c41b16f8c9d9 ("ARM: integrator/versatile: consolidate FPGA IRQ handling code")
-Signed-off-by: Sungbo Eo <mans0n@gorani.run>
-Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200319023448.1479701-1-mans0n@gorani.run
+Fixes: 2733fb0d0699 ("cpufreq: imx6q: read OCOTP through nvmem for imx6ul/imx6ull")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/irqchip/irq-versatile-fpga.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ drivers/cpufreq/imx6q-cpufreq.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/irqchip/irq-versatile-fpga.c b/drivers/irqchip/irq-versatile-fpga.c
-index 928858dada756..70e2cfff8175f 100644
---- a/drivers/irqchip/irq-versatile-fpga.c
-+++ b/drivers/irqchip/irq-versatile-fpga.c
-@@ -6,6 +6,7 @@
- #include <linux/irq.h>
- #include <linux/io.h>
- #include <linux/irqchip.h>
-+#include <linux/irqchip/chained_irq.h>
- #include <linux/irqchip/versatile-fpga.h>
- #include <linux/irqdomain.h>
- #include <linux/module.h>
-@@ -68,12 +69,16 @@ static void fpga_irq_unmask(struct irq_data *d)
- 
- static void fpga_irq_handle(struct irq_desc *desc)
- {
-+	struct irq_chip *chip = irq_desc_get_chip(desc);
- 	struct fpga_irq_data *f = irq_desc_get_handler_data(desc);
--	u32 status = readl(f->base + IRQ_STATUS);
-+	u32 status;
-+
-+	chained_irq_enter(chip, desc);
- 
-+	status = readl(f->base + IRQ_STATUS);
- 	if (status == 0) {
- 		do_bad_IRQ(desc);
--		return;
-+		goto out;
+diff --git a/drivers/cpufreq/imx6q-cpufreq.c b/drivers/cpufreq/imx6q-cpufreq.c
+index 1fcbbd53a48a2..edef3399c9794 100644
+--- a/drivers/cpufreq/imx6q-cpufreq.c
++++ b/drivers/cpufreq/imx6q-cpufreq.c
+@@ -381,23 +381,24 @@ static int imx6q_cpufreq_probe(struct platform_device *pdev)
+ 		goto put_reg;
  	}
  
- 	do {
-@@ -82,6 +87,9 @@ static void fpga_irq_handle(struct irq_desc *desc)
- 		status &= ~(1 << irq);
- 		generic_handle_irq(irq_find_mapping(f->domain, irq));
- 	} while (status);
++	/* Because we have added the OPPs here, we must free them */
++	free_opp = true;
 +
-+out:
-+	chained_irq_exit(chip, desc);
- }
+ 	if (of_machine_is_compatible("fsl,imx6ul") ||
+ 	    of_machine_is_compatible("fsl,imx6ull")) {
+ 		ret = imx6ul_opp_check_speed_grading(cpu_dev);
+ 		if (ret) {
+ 			if (ret == -EPROBE_DEFER)
+-				goto put_node;
++				goto out_free_opp;
  
- /*
+ 			dev_err(cpu_dev, "failed to read ocotp: %d\n",
+ 				ret);
+-			goto put_node;
++			goto out_free_opp;
+ 		}
+ 	} else {
+ 		imx6q_opp_check_speed_grading(cpu_dev);
+ 	}
+ 
+-	/* Because we have added the OPPs here, we must free them */
+-	free_opp = true;
+ 	num = dev_pm_opp_get_opp_count(cpu_dev);
+ 	if (num < 0) {
+ 		ret = num;
 -- 
 2.20.1
 
