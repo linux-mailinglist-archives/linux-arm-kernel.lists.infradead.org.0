@@ -2,73 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 600091A4207
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 06:33:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44C701A4226
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 06:59:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZXcqrcou9LV5et5zq8k0RU2TwdT69Oas6YfP/bkle58=; b=nECZR633QOO1eP
-	PeqBuxkD+VJXyfSj9K46FG4HGi66rTT2YjVgli5Gdo9009RTYJ5M83A6VG53Il2NI9k0Q9fbFstdH
-	7qN8q5p3W+UGzZkTETI9DZDIt7vQ0HX5QsUrOpw5uQUuPxOF3nxLl5iSGL6/iGsWB6YLRy14YhdTh
-	vdNAfymiGyIg14O4slTHlfrktVcbK8xK6SdOIEOReUGP84X7OHhOhNtZN7+Y2M1YiiVZCwiOCfbH3
-	qKDhIrCE71jaqDTyJ4KSK5iDlCRSLSxL2qbwW28GAwWo+4nD4cN5SYvwzAUVhaxpyeyLDbAjc0Zrr
-	Rhl8xXnkae+Ftq2YfUOA==;
+	List-Owner; bh=M0Ty/Fc2fKBdwEI/ZalNeVOhTiyR3tHrLo7m4ebuq+w=; b=gh3/SxYdTINKD4
+	6jXpLft5hLlLoDrhM70AtD5YmjFQ4jWPOCLoGn9T1LimXRu6C8FpaKE1YFjH8e557bGtsnyPv+/IZ
+	cvxX1sJ53GeVjsZK50S9i2EvcaMVevXVGs0cgQs06TxeKXL/+WJP3YzAh3xrM7XotiYtc5bg0G8hR
+	egsz/k3DxAqemgEEQttpsFGVEGVCItc5rjPm2Pp2ZeULH1lL/3BlDVv7gZn8DUcGVKDOkBeKYw1ef
+	DaCTYuspdgn+zbddc0PTDy3vGftukR0f9IsHBfV2WYPhAXn8u2lEamjPZMw2Xmkg/kltY6y7osAn0
+	djHyzKke8dV0a908C28Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMlMK-0004au-GB; Fri, 10 Apr 2020 04:33:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jMllS-0003EJ-Hp; Fri, 10 Apr 2020 04:59:38 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMlLn-0004P8-CC; Fri, 10 Apr 2020 04:33:09 +0000
-X-UUID: 5e1f2bb051be4ed48a5a4561a4dab140-20200409
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=mHf6jiGpr7KeVe7S0awWVzvSk807Yo2QlCE0YtnWX7w=; 
- b=GismMTcnv5BtfTLILJE6ntl/jGOc4Ha7h3YdiVZ8wZBaF39M5sqQVK1cy/9rJ0P33QOVciZLS2ViSO+9yO8DxUwaGWjY4KlkZVUcQ0ilSLodOzmOvFJcchyTNswNtPR8eiFRmNn2ZkODLkSst5Xd16Os+yDKfIBfoE4VtHzwNOo=;
-X-UUID: 5e1f2bb051be4ed48a5a4561a4dab140-20200409
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2030180450; Thu, 09 Apr 2020 20:32:58 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 9 Apr 2020 21:32:58 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 10 Apr 2020 12:32:57 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
- MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1497.2 via Frontend Transport; Fri, 10 Apr 2020 12:32:55 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH v5 4/4] drm/mediatek: config mipitx impedance with calibration
- data
-Date: Fri, 10 Apr 2020 12:32:48 +0800
-Message-ID: <20200410043248.114384-5-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20200410043248.114384-1-jitao.shi@mediatek.com>
-References: <20200410043248.114384-1-jitao.shi@mediatek.com>
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: E7751B2F5E74A0DD2D4F9F4687FC3C9AA570AB677C0BBF1D9A0DD199084342622000:8
-X-MTK: N
+ id 1jMllJ-0003DT-96
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 04:59:31 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 1E6AB5C0126;
+ Fri, 10 Apr 2020 00:59:24 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute3.internal (MEProxy); Fri, 10 Apr 2020 00:59:24 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=l+pa00YeFhRWf3yUkvmzf5IhZ6ShPDi
+ /vzUvd0fJVvs=; b=qjFsBSZgiFhNN9l/dKC+k62MkUgMy5ujwGm1s6+0xylmEYg
+ vsnJKIm4oWB0UWEdy4vaXEFk3mAxItUJVP+q5+ao5ho8gem3Sc625G5unGx4OgOm
+ H30a/N7QwOo9lXvV8C4EY61T3lFFW7txJdRRGdFHwXZJlOLG4ekOJTn2AEDPbo+N
+ ITHxdfCb/BYMkh4AmzJxXfS19F8fbzM9IIPTeAvt955M0kXJ1RiitxXRr4cofKyd
+ z7+HWVws5z6TOO1/YXKQvpG8PLQZRjJrcS0YwiHk9c/Vn7UZXu15CiluhQ88ZLfK
+ NgJSD0tW6PzAPWcF9nYvx0hL0UL6fAqQTYR15Qg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=l+pa00
+ YeFhRWf3yUkvmzf5IhZ6ShPDi/vzUvd0fJVvs=; b=enmKH4Nz6PE/EJf64TQkCA
+ 9HLyeTr1EIPByCPzIAXdir3jniKho53M87mXXTZWuhKKhazpMn9Ltmx7gzqWReTx
+ HGifv6FRl3ErADvQWzMwUWGHjpUGBj4tmGrhXK34ADG9rVHmAS+IWT+392V4VH+B
+ bPZUbCSfBEwbIKLCINyz2vusggC3tqrZlg+ZaiDkW4f/3RS6OIU3eW4dU+7zXxeh
+ h4GsT7WG/Pr8Ra+3o9rinhAx7j9/Kp0WwMtQ6y6+VE1nY/yEQzjSyDKoQPnL7Tjv
+ M9GlNXb+hc9tJCNqIr5ua//khSYSTE80GSMcin7eCGl6j8N3iF+8sKrY1ByJkJoQ
+ ==
+X-ME-Sender: <xms:K_2PXn3-wTJHyg6Zk1Y7L4XNH90OACyLnxV1hJCEcTqvREKvZaaZqA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrvddugdekkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
+ htvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
+ rdhiugdrrghu
+X-ME-Proxy: <xmx:K_2PXtI_1ahTj1KIQIxkoZKiudzHz8iIHDa8uV89Jt7ANstOrrgMyQ>
+ <xmx:K_2PXvn5hHXxSVf3V1pugvjLnLNd2ZaJzzMLZJwEV-u8QPRf-uil6g>
+ <xmx:K_2PXjPZzqvpCgC-m7nWXNltLI1n_ylcsuSZG414N7IJN0ygOR34bg>
+ <xmx:LP2PXvLnE0RxjrCnrtC6e1IhADoWv0eDhRqspT70S6oqsFEPCqzqlQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 38DB7E00A5; Fri, 10 Apr 2020 00:59:23 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-1104-g203475c-fmstable-20200408v2
+Mime-Version: 1.0
+Message-Id: <ad46ff33-8ce2-4ffa-b12e-204053e4f705@www.fastmail.com>
+In-Reply-To: <20200406101553.28958-1-a.filippov@yadro.com>
+References: <20200406101553.28958-1-a.filippov@yadro.com>
+Date: Fri, 10 Apr 2020 14:29:47 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Alexander A. Filippov" <a.filippov@yadro.com>,
+ linux-aspeed@lists.ozlabs.org
+Subject: Re: [PATCH] ARM: DTS: Aspeed: Add YADRO Nicole BMC
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_213307_426266_5B3818BD 
-X-CRM114-Status: GOOD (  12.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200409_215929_606197_D70F9A5F 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.28 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.28 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -76,8 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,156 +106,335 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
- srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
- cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Joel Stanley <joel@jms.id.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Read calibration data from nvmem, and config mipitx impedance with
-calibration data to make sure their impedance are 100ohm.
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_mipi_tx.c        | 40 +++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_mipi_tx.h        |  3 ++
- drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c | 21 ++++++++++
- 3 files changed, 64 insertions(+)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-index e301af64809e..5e91fc2c1318 100644
---- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-+++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-@@ -88,6 +88,44 @@ static const struct phy_ops mtk_mipi_tx_ops = {
- 	.owner = THIS_MODULE,
- };
- 
-+static void mtk_mipi_tx_get_calibration_datal(struct mtk_mipi_tx *mipi_tx)
-+{
-+	struct nvmem_cell *cell;
-+	size_t len;
-+	u32 *buf;
-+
-+	memset(mipi_tx->rt_code, 0, sizeof(mipi_tx->rt_code));
-+	cell = nvmem_cell_get(mipi_tx->dev, "calibration-data");
-+	if (IS_ERR(cell)) {
-+		dev_info(mipi_tx->dev, "can't get nvmem_cell_get, ignore it\n");
-+	} else {
-+		buf = (u32 *)nvmem_cell_read(cell, &len);
-+		nvmem_cell_put(cell);
-+
-+		if (IS_ERR(buf)) {
-+			dev_info(mipi_tx->dev, "can't get data, ignore it\n");
-+		} else {
-+			if (len < 3 * sizeof(u32)) {
-+				dev_info(mipi_tx->dev, "invalid calibration data\n");
-+				kfree(buf);
-+				return;
-+			}
-+
-+			mipi_tx->rt_code[0] = ((buf[0] >> 6 & 0x1f) << 5) |
-+					       (buf[0] >> 11 & 0x1f);
-+			mipi_tx->rt_code[1] = ((buf[1] >> 27 & 0x1f) << 5) |
-+					       (buf[0] >> 1 & 0x1f);
-+			mipi_tx->rt_code[2] = ((buf[1] >> 17 & 0x1f) << 5) |
-+					       (buf[1] >> 22 & 0x1f);
-+			mipi_tx->rt_code[3] = ((buf[1] >> 7 & 0x1f) << 5) |
-+					       (buf[1] >> 12 & 0x1f);
-+			mipi_tx->rt_code[4] = ((buf[2] >> 27 & 0x1f) << 5) |
-+					       (buf[1] >> 2 & 0x1f);
-+			kfree(buf);
-+		}
-+	}
-+}
-+
- static int mtk_mipi_tx_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -174,6 +212,8 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 
- 	mipi_tx->dev = dev;
- 
-+	mtk_mipi_tx_get_calibration_datal(mipi_tx);
-+
- 	return of_clk_add_provider(dev->of_node, of_clk_src_simple_get,
- 				   mipi_tx->pll);
- }
-diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-index eea44327fe9f..c76f07c3fdeb 100644
---- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-+++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-@@ -12,9 +12,11 @@
- #include <linux/delay.h>
- #include <linux/io.h>
- #include <linux/module.h>
-+#include <linux/nvmem-consumer.h>
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/phy/phy.h>
-+#include <linux/slab.h>
- 
- struct mtk_mipitx_data {
- 	const u32 mppll_preserve;
-@@ -28,6 +30,7 @@ struct mtk_mipi_tx {
- 	void __iomem *regs;
- 	u32 data_rate;
- 	u32 mipitx_drive;
-+	u32 rt_code[5];
- 	const struct mtk_mipitx_data *driver_data;
- 	struct clk_hw pll_hw;
- 	struct clk *pll;
-diff --git a/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
-index e4cc967750cb..9f3e55aeebb2 100644
---- a/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
-+++ b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
-@@ -28,6 +28,7 @@
- #define MIPITX_PLL_CON4		0x003c
- #define RG_DSI_PLL_IBIAS		(3 << 10)
- 
-+#define MIPITX_D2P_RTCODE	0x0100
- #define MIPITX_D2_SW_CTL_EN	0x0144
- #define MIPITX_D0_SW_CTL_EN	0x0244
- #define MIPITX_CK_CKMODE_EN	0x0328
-@@ -108,6 +109,24 @@ static const struct clk_ops mtk_mipi_tx_pll_ops = {
- 	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
- };
- 
-+static void mtk_mipi_tx_config_calibration_data(struct mtk_mipi_tx *mipi_tx)
-+{
-+	int i, j;
-+
-+	for (i = 0; i < 5; i++) {
-+		if ((mipi_tx->rt_code[i] & 0x1f) == 0)
-+			mipi_tx->rt_code[i] |= 0x10;
-+
-+		if ((mipi_tx->rt_code[i] >> 5 & 0x1f) == 0)
-+			mipi_tx->rt_code[i] |= 0x10 << 5;
-+
-+		for (j = 0; j < 10; j++)
-+			mtk_mipi_tx_update_bits(mipi_tx,
-+				MIPITX_D2P_RTCODE * (i + 1) + j * 4,
-+				1, mipi_tx->rt_code[i] >> j & 1);
-+	}
-+}
-+
- static void mtk_mipi_tx_power_on_signal(struct phy *phy)
- {
- 	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
-@@ -130,6 +149,8 @@ static void mtk_mipi_tx_power_on_signal(struct phy *phy)
- 				RG_DSI_HSTX_LDO_REF_SEL,
- 				(mipi_tx->mipitx_drive - 3000) / 200 << 6);
- 
-+	mtk_mipi_tx_config_calibration_data(mipi_tx);
-+
- 	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_CK_CKMODE_EN, DSI_CK_CKMODE_EN);
- }
- 
--- 
-2.21.0
+On Mon, 6 Apr 2020, at 19:45, Alexander Filippov wrote:
+> Nicole is an OpenPower machine with an Aspeed 2500 BMC SoC manufactured
+> by YADRO.
+> 
+> Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+> ---
+>  arch/arm/boot/dts/Makefile                  |   1 +
+>  arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts | 284 ++++++++++++++++++++
+>  2 files changed, 285 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+> 
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index e8dd99201397..6f9fe0f959f2 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1347,6 +1347,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+>  	aspeed-bmc-microsoft-olympus.dtb \
+>  	aspeed-bmc-opp-lanyang.dtb \
+>  	aspeed-bmc-opp-mihawk.dtb \
+> +	aspeed-bmc-opp-nicole.dtb \
+>  	aspeed-bmc-opp-palmetto.dtb \
+>  	aspeed-bmc-opp-romulus.dtb \
+>  	aspeed-bmc-opp-swift.dtb \
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+> new file mode 100644
+> index 000000000000..0c8a9e7838ff
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+> @@ -0,0 +1,284 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +// Copyright 2019 YADRO
+> +/dts-v1/;
+> +#include "aspeed-g5.dtsi"
+> +#include <dt-bindings/gpio/aspeed-gpio.h>
+> +
+> +/ {
+> +	model = "Nicole BMC";
+> +	compatible = "yadro,nicole-bmc", "aspeed,ast2500";
+> +
+> +	chosen {
+> +		stdout-path = &uart5;
+> +		bootargs = "console=ttyS4,115200 earlyprintk";
+> +	};
+> +
+> +	memory@80000000 {
+> +		reg = <0x80000000 0x20000000>;
+> +	};
+> +
+> +	reserved-memory {
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		ranges;
+> +
+> +		vga_memory: framebuffer@9f000000 {
+> +			no-map;
+> +			reg = <0x9f000000 0x01000000>; /* 16M */
+> +		};
+> +
+> +		flash_memory: region@98000000 {
+> +			no-map;
+> +			reg = <0x98000000 0x04000000>; /* 64M */
+> +		};
+> +
+> +		coldfire_memory: codefire_memory@9ef00000 {
+> +			reg = <0x9ef00000 0x00100000>;
+> +			no-map;
+> +		};
+> +
+> +		gfx_memory: framebuffer {
+> +			size = <0x01000000>;
+> +			alignment = <0x01000000>;
+> +			compatible = "shared-dma-pool";
+> +			reusable;
+> +		};
+> +
+> +		video_engine_memory: jpegbuffer {
+> +			size = <0x02000000>;	/* 32M */
+> +			alignment = <0x01000000>;
+> +			compatible = "shared-dma-pool";
+> +			reusable;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		power {
+> +			gpios = <&gpio ASPEED_GPIO(AA, 4) GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		identify {
+> +			gpios = <&gpio ASPEED_GPIO(AA, 7) GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		alarm_red {
+> +			gpios = <&gpio ASPEED_GPIO(AA, 3) GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		alarm_yellow {
+> +			gpios = <&gpio ASPEED_GPIO(AA, 1) GPIO_ACTIVE_HIGH>;
+> +		};
+> +	};
+> +
+> +	fsi: gpio-fsi {
+> +		compatible = "aspeed,ast2500-cf-fsi-master", "fsi-master";
+> +		#address-cells = <2>;
+> +		#size-cells = <0>;
+> +		no-gpio-delays;
+> +
+> +		memory-region = <&coldfire_memory>;
+> +		aspeed,sram = <&sram>;
+> +		aspeed,cvic = <&cvic>;
+> +
+> +		clock-gpios = <&gpio ASPEED_GPIO(AA, 0) GPIO_ACTIVE_HIGH>;
+> +		data-gpios = <&gpio ASPEED_GPIO(AA, 2) GPIO_ACTIVE_HIGH>;
+> +		mux-gpios = <&gpio ASPEED_GPIO(A, 6) GPIO_ACTIVE_HIGH>;
+> +		enable-gpios = <&gpio ASPEED_GPIO(D, 0) GPIO_ACTIVE_HIGH>;
+> +		trans-gpios = <&gpio ASPEED_GPIO(P, 1) GPIO_ACTIVE_HIGH>;
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		checkstop {
+> +			label = "checkstop";
+> +			gpios = <&gpio ASPEED_GPIO(J, 2) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(J, 2)>;
+> +		};
+> +	};
+> +};
+> +
+> +&fmc {
+> +	status = "okay";
+> +	flash@0 {
+> +		status = "okay";
+> +		m25p,fast-read;
+> +		label = "bmc";
+> +		spi-max-frequency = <50000000>;
+> +#include "openbmc-flash-layout.dtsi"
+> +	};
+> +};
+> +
+> +&spi1 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_spi1_default>;
+> +
+> +	flash@0 {
+> +		status = "okay";
+> +		m25p,fast-read;
+> +		label = "pnor";
+> +		spi-max-frequency = <100000000>;
+> +	};
+> +};
+> +
+> +&lpc_ctrl {
+> +	status = "okay";
+> +	memory-region = <&flash_memory>;
+> +	flash = <&spi1>;
+> +};
+> +
+> +&uart1 {
+> +	/* Rear RS-232 connector */
+> +	status = "okay";
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd1_default
+> +			&pinctrl_rxd1_default
+> +			&pinctrl_nrts1_default
+> +			&pinctrl_ndtr1_default
+> +			&pinctrl_ndsr1_default
+> +			&pinctrl_ncts1_default
+> +			&pinctrl_ndcd1_default
+> +			&pinctrl_nri1_default>;
+> +};
+> +
+> +&uart5 {
+> +	status = "okay";
+> +};
+> +
+> +&mac0 {
+> +	status = "okay";
+> +
+> +	use-ncsi;
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_rmii1_default>;
+> +	clocks = <&syscon ASPEED_CLK_GATE_MAC1CLK>,
+> +		 <&syscon ASPEED_CLK_MAC1RCLK>;
+> +	clock-names = "MACCLK", "RCLK";
+> +};
+> +
+> +&i2c0 {
+> +	status = "okay";
+> +
+> +	eeprom@50 {
+> +		compatible = "atmel,24c256";
+> +		reg = <0x50>;
+> +		pagesize = <64>;
+> +	};
+> +};
+> +
+> +&i2c1 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c2 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c3 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c4 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c5 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c6 {
+> +	status = "okay";
+> +
+> +	rtc@32 {
+> +		compatible = "epson,rx8900";
+> +		reg = <0x32>;
+> +	};
+> +};
+> +
+> +&i2c7 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c8 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c9 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c10 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c11 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c12 {
+> +	status = "okay";
+> +};
+
+Are you accessing devices on the busses from userspace? It would
+be helpful to comment here why you're enabling all of these busses
+but not describing any devices on them, if it's necessary to enable
+them at all.
+
+> +
+> +&gpio {
+> +	nic_func_mode0 {
+> +		gpio-hog;
+> +		gpios = <ASPEED_GPIO(D, 3) GPIO_ACTIVE_HIGH>;
+> +		output-low;
+> +		line-name = "nic_func_mode0";
+> +	};
+> +	nic_func_mode1 {
+> +		gpio-hog;
+> +		gpios = <ASPEED_GPIO(D, 4) GPIO_ACTIVE_HIGH>;
+> +		output-low;
+> +		line-name = "nic_func_mode1";
+> +	};
+> +	seq_cont {
+> +		gpio-hog;
+> +		gpios = <ASPEED_GPIO(S, 7) GPIO_ACTIVE_HIGH>;
+> +		output-low;
+> +		line-name = "seq_cont";
+> +	};
+> +	ncsi_cfg {
+> +		gpio-hog;
+> +		input;
+> +		gpios = <ASPEED_GPIO(E, 1) GPIO_ACTIVE_HIGH>;
+> +		line-name = "ncsi_cfg";
+> +	};
+> +};
+> +
+> +&vuart {
+> +	status = "okay";
+> +};
+> +
+> +&gfx {
+> +	status = "okay";
+> +	memory-region = <&gfx_memory>;
+> +};
+> +
+> +&pinctrl {
+> +	aspeed,external-nodes = <&gfx &lhc>;
+> +};
+> +
+> +&ibt {
+> +	status = "okay";
+> +};
+> +
+> +&vhub {
+> +	status = "okay";
+> +};
+> +
+> +&adc {
+> +	status = "okay";
+
+You should specify the pinmux configuration for the channels you're using
+to ensure exclusive access to those pins (otherwise they could be exported
+e.g. as GPIOs).
+
+Andrew
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
