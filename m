@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45AF91A3EE1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:46:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29AEC1A3EE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bec3H4tye5gY5IGuOGsuN1pFygz4miZNn/Z4uyW1f9U=; b=PwpnXvlaxy/SS0
-	pg4CMB9kd8pmjNK+qYd5baZ3UEnmQp6xb+o1PX2336zx2RleGaMqd7HYJ/tFM0LBINUinpLc9V7R8
-	R3UYLoayrTlSIbFnh3ZTezbEUc5l6GjdZbOsDMagNIC6z7Mgd8GHn921IhM7JfxsP7SYAMB5du/8D
-	nwRTw9Coo0fjxY2obq3uz8iJB53i1T4fPXjBcXJQCtU4scMuOUdkChSeWX62u4oY4jirCODhg/Vf9
-	d+KnyPQPWkUwAIWr522vrKByoIj9NkzgfZJ9l6iBdpNwS3H9AMRdQ+cN9XTbXXHd1DWbvBGuIzj/B
-	Sfw5dRQlCU/owlwN0JcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ESApDHAUPOS1Gax6mA9udastlX6WNAgCFNHe8tFwqjg=; b=PLttwA7BChZpj8
+	iJwomJ5/JGveoPM9gGeT5rbVNyM+Csan6NZ2iDeKu7TTh/dZd9wHnuNwn7vjqLi7Bx2i4QJPsNkE8
+	mnzDyVV5qdrs0/C+MikqEt/NJ0Fdv+mtl4CRQJ+3ukWIajZ2A8NBQcWSVcG1OMmlIMhct9bp6fDUi
+	JPV8mjcwpRy9uwQ0YmtcOZylJNzWgGfZ8YMGLE+I8eBfI9cmHQos9t1jGLkKwemFIZRPHNysclWT1
+	fWHEFR0c7Fj6PEwDhvLxKvQNTs1xgCXlm0XgC9bmVzN+iNXVz4DIVhMOH7sybbM947GJSka5t81x2
+	Bqv0Cz9Uuc9VcrZ9I1GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkcw-0001z7-A2; Fri, 10 Apr 2020 03:46:46 +0000
+	id 1jMkdE-0002H8-78; Fri, 10 Apr 2020 03:47:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkcn-0001yn-Mu
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:46:39 +0000
+ id 1jMkcy-0002AN-EE
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:46:49 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F2CBE20936;
- Fri, 10 Apr 2020 03:46:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0F301215A4;
+ Fri, 10 Apr 2020 03:46:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586490396;
- bh=AL4Duf7m5IvoTTD4d2+gCaDhn7bLAW1D0iwX6syCWJw=;
- h=From:To:Cc:Subject:Date:From;
- b=CVPqHkZ1K/ERlREdTqvk8eiNtwkATH6e3qmGz2NAuSZw1rSJ+FcBFqPP45x55dinu
- 0j+WXTV5kB8s8cZapgpX9HJpaxPWmlKRV/eGHBG6kW7jE47o0CJBBxQZa0EokXV31C
- ZAAyfBHD1fmZoeBp0xYwupz4ZMNKj2I8aQvyoRcQ=
+ s=default; t=1586490407;
+ bh=YDlUlH9cxoPoePJ/BVt1VLVyGDJmuuZt3f/vtA5eHsQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=KBI8znHO9SpKB8M/7w//kYSOEbZQSujUGMyS0EcZWbBWrjEZqsdpkHaVUjEGfEbvY
+ sbS6wU1uH1ZDuRm2ndN6E0hJTiiMNdhXoUSLz2aUve3uTbvunzgWSEUvf6+fUsawDm
+ xxjtHYB0lZSZmXTOfjCwEDduVSeuy+PdhxNcaqtc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 01/68] cpufreq: imx6q: Fixes unwanted cpu
- overclocking on i.MX6ULL
-Date: Thu,  9 Apr 2020 23:45:26 -0400
-Message-Id: <20200410034634.7731-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 10/68] firmware: arm_sdei: fix double-lock on
+ hibernate with shared events
+Date: Thu,  9 Apr 2020 23:45:35 -0400
+Message-Id: <20200410034634.7731-10-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200410034634.7731-1-sashal@kernel.org>
+References: <20200410034634.7731-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_204638_079387_F9D6BB95 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20200409_204648_519700_BF7B0BD1 
+X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,50 +80,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoph Niedermaier <cniedermaier@dh-electronics.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Sasha Levin <sashal@kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Liguang Zhang <zhangliguang@linux.alibaba.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christoph Niedermaier <cniedermaier@dh-electronics.com>
+From: James Morse <james.morse@arm.com>
 
-[ Upstream commit 36eb7dc1bd42fe5f850329c893768ff89b696fba ]
+[ Upstream commit 6ded0b61cf638bf9f8efe60ab8ba23db60ea9763 ]
 
-imx6ul_opp_check_speed_grading is called for both i.MX6UL and i.MX6ULL.
-Since the i.MX6ULL was introduced to a separate ocotp compatible node
-later, it is possible that the i.MX6ULL has also dtbs with
-"fsl,imx6ull-ocotp". On a system without nvmem-cell speed grade a
-missing check on this node causes a driver fail without considering
-the cpu speed grade.
+SDEI has private events that must be registered on each CPU. When
+CPUs come and go they must re-register and re-enable their private
+events. Each event has flags to indicate whether this should happen
+to protect against an event being registered on a CPU coming online,
+while all the others are unregistering the event.
 
-This patch prevents unwanted cpu overclocking on i.MX6ULL with compatible
-node "fsl,imx6ull-ocotp" in old dtbs without nvmem-cell speed grade.
+These flags are protected by the sdei_list_lock spinlock, because
+the cpuhp callbacks can't take the mutex.
 
-Fixes: 2733fb0d0699 ("cpufreq: imx6q: read OCOTP through nvmem for imx6ul/imx6ull")
-Signed-off-by: Christoph Niedermaier <cniedermaier@dh-electronics.com>
-Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+Hibernate needs to unregister all events, but keep the in-memory
+re-register and re-enable as they are. sdei_unregister_shared()
+takes the spinlock to walk the list, then calls _sdei_event_unregister()
+on each shared event. _sdei_event_unregister() tries to take the
+same spinlock to update re-register and re-enable. This doesn't go
+so well.
+
+Push the re-register and re-enable updates out to their callers.
+sdei_unregister_shared() doesn't want these values updated, so
+doesn't need to do anything.
+
+This also fixes shared events getting lost over hibernate as this
+path made them look unregistered.
+
+Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system power states")
+Reported-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
+Signed-off-by: James Morse <james.morse@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/cpufreq/imx6q-cpufreq.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/firmware/arm_sdei.c | 32 +++++++++++++++-----------------
+ 1 file changed, 15 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/cpufreq/imx6q-cpufreq.c b/drivers/cpufreq/imx6q-cpufreq.c
-index 648a09a1778a3..1fcbbd53a48a2 100644
---- a/drivers/cpufreq/imx6q-cpufreq.c
-+++ b/drivers/cpufreq/imx6q-cpufreq.c
-@@ -280,6 +280,9 @@ static int imx6ul_opp_check_speed_grading(struct device *dev)
- 		void __iomem *base;
+diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
+index a479023fa036e..77eaa9a2fd156 100644
+--- a/drivers/firmware/arm_sdei.c
++++ b/drivers/firmware/arm_sdei.c
+@@ -491,11 +491,6 @@ static int _sdei_event_unregister(struct sdei_event *event)
+ {
+ 	lockdep_assert_held(&sdei_events_lock);
  
- 		np = of_find_compatible_node(NULL, NULL, "fsl,imx6ul-ocotp");
-+		if (!np)
-+			np = of_find_compatible_node(NULL, NULL,
-+						     "fsl,imx6ull-ocotp");
- 		if (!np)
- 			return -ENOENT;
+-	spin_lock(&sdei_list_lock);
+-	event->reregister = false;
+-	event->reenable = false;
+-	spin_unlock(&sdei_list_lock);
+-
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_unregister(event->event_num);
  
+@@ -518,6 +513,11 @@ int sdei_event_unregister(u32 event_num)
+ 			break;
+ 		}
+ 
++		spin_lock(&sdei_list_lock);
++		event->reregister = false;
++		event->reenable = false;
++		spin_unlock(&sdei_list_lock);
++
+ 		err = _sdei_event_unregister(event);
+ 		if (err)
+ 			break;
+@@ -585,26 +585,15 @@ static int _sdei_event_register(struct sdei_event *event)
+ 
+ 	lockdep_assert_held(&sdei_events_lock);
+ 
+-	spin_lock(&sdei_list_lock);
+-	event->reregister = true;
+-	spin_unlock(&sdei_list_lock);
+-
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_register(event->event_num,
+ 					       sdei_entry_point,
+ 					       event->registered,
+ 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
+ 
+-
+ 	err = sdei_do_cross_call(_local_event_register, event);
+-	if (err) {
+-		spin_lock(&sdei_list_lock);
+-		event->reregister = false;
+-		event->reenable = false;
+-		spin_unlock(&sdei_list_lock);
+-
++	if (err)
+ 		sdei_do_cross_call(_local_event_unregister, event);
+-	}
+ 
+ 	return err;
+ }
+@@ -632,8 +621,17 @@ int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
+ 			break;
+ 		}
+ 
++		spin_lock(&sdei_list_lock);
++		event->reregister = true;
++		spin_unlock(&sdei_list_lock);
++
+ 		err = _sdei_event_register(event);
+ 		if (err) {
++			spin_lock(&sdei_list_lock);
++			event->reregister = false;
++			event->reenable = false;
++			spin_unlock(&sdei_list_lock);
++
+ 			sdei_event_destroy(event);
+ 			pr_warn("Failed to register event %u: %d\n", event_num,
+ 				err);
 -- 
 2.20.1
 
