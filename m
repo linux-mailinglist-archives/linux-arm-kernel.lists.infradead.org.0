@@ -2,68 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFD361A3EC1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:29:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90A411A3EDD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 05:46:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zLVg9Vhc1gO7priWYrJjwk34uqLGKYZgumosw6OZfMY=; b=Nb0qRYbU15IGzd
-	vmZf10m+vSkZ+zKoj4olq70cgK2RuCYxqAIYwmUNmvvs1GC1/LT2hOucfX/NR5AeC5FREFCLTLPDz
-	cqGXkXVrVOSXS/mSQFnUIgxYUYmzC51t2AesP3ti9GJkGTceyM2c9+fqeGXUSTv0kfs5C4/qkk3lM
-	kWaxJY4GHsl0/yT8tFCnFy6tf6yEW8x90ZPal2ZPg7FveZWcn87N8X6dR/0rEbNF6gBvD8Hn/y2nU
-	NLZiGOO/sbiE/FN/uzrb4Zmjs1etBreHItG+9MmWv6Z0zpXWxhqyzvx0AyOH8NdcEts6j2nw+PzmL
-	HJgwBsqvyOF/IZ8z5qIw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a+IYYW7VqF6WPCG8eWCq/I6M4B8FKiJfsAEXM9fjmhE=; b=g3TztgzXDTVAwZ
+	cA2OdIweRuQDcvZ1LyfinGBoPZU6VE26f19KR6ugxL3Nlu3PwdatS6r+jZ0Ev0AH6bE+IoXLstJ90
+	Ov+TsJ9q2eF4yhryEIWOqLxTJb+1dJyLS25eEzNaNaE91Jtl4DfvNfx03k5KeSCftYu9CFC5ygGCE
+	jirrKzotVl7IbPQPpw5lHFwFAmis1yF31aJ6mnY8Ykn0IbKWRtduNScw/nHLSOnTeCUcWfwU6M51Z
+	wNs9oyt43Vfk3AsBtnWKv2Q8SPOTLn6KtdTLRp5l97wMroSFldQ5XaovjgqJzGcqbFDrVD+EdfmAY
+	GMecyM0vg3o1zBvvQzTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkM4-0006Dv-Lr; Fri, 10 Apr 2020 03:29:20 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jMkcF-0001bj-Te; Fri, 10 Apr 2020 03:46:03 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkLv-0006Bu-3I; Fri, 10 Apr 2020 03:29:12 +0000
-X-UUID: 25187aa067414c19b60b5a32603391aa-20200409
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=8OzjROGkHfg1CooU6NBX4B+qS/5k+TWJfoCWP6Iz6tc=; 
- b=mT+9dbCEciYUnrQn2Ayc2mon+XhMNQJxbGhGiOcTSVTI4aXWUDhuVY6Md84XsuAx76Zfhx4mD5VLNYxKtF9bT/47isqWsRXdbA+gqDLCym9a092VZfWveUisXgH3DVhAkAw7XNzfN3RH2t0VrURbAjF/EmAD6ovdzRnKHhtrX7k=;
-X-UUID: 25187aa067414c19b60b5a32603391aa-20200409
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1387699924; Thu, 09 Apr 2020 19:28:58 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 9 Apr 2020 20:20:04 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 10 Apr 2020 11:20:03 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
- MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1497.2 via Frontend Transport; Fri, 10 Apr 2020 11:19:58 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Thierry Reding <thierry.reding@gmail.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH 1/1] pwm: mtk_disp: implement .apply()
-Date: Fri, 10 Apr 2020 11:19:55 +0800
-Message-ID: <20200410031955.111392-1-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
+ id 1jMkc8-0001aQ-7p
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 03:45:57 +0000
+Received: by mail-wr1-x443.google.com with SMTP id 65so899319wrl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 Apr 2020 20:45:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=xTD8jqLlyYTauiGbffTw5JArkDLk+kEpu+J7BOSObAA=;
+ b=jIrHtHD3eVDB4o2K9fZ6SYpFWqv66O3QgKUSr9wLyIIOFI+xwEQUUB0RoJRKoWu/lk
+ 3N22KRkgVpUHZmji3bKQJqgtBcxAuM3vonhAc+4Cc+ZIzo+qy/QUfH4QqPP3KMra3jsj
+ BFVcmTUYnRpJKzoNNQ2vUZFejdAGXf8mFDGYYehjcisndSDRtU56VO1qcGOrBLdR97A+
+ KEYaUo78t31Lwf4AyPipPLcAvynfo9yYnzn5J4FIP67FR0R9w/qevYR9XnGRDMnY83pk
+ 5wRXYwL7YbG3nF8/al4qhGIQ5IjxlA/zg1sgpa3DVhURe24NBqwE0MZ3ouTlQH597qwn
+ vZxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=xTD8jqLlyYTauiGbffTw5JArkDLk+kEpu+J7BOSObAA=;
+ b=FIbcr7A+6dqXFbk5wuwUNsy7hxWmF6mT2H3xt56C5zqY9GKAyk9JDGQ7aE0oEp6QU0
+ O2/DK2lS6jvthXICWME2wgPk+ZDfQanCYCwf20hT3DqPVBO4dK/n3waDGhNkeIz0wXaW
+ 6kn+uOcFyYLsNgazrmbjAObFYAsAutpHP1QBC7vWyZw41H3Ivq9ojr+O7clKDjzpwyUi
+ TSPrFIF2xsSYOkEd3ipXR5un21mUGA4ELQ7I3mDZxIVS4RUODyhxKlKsS04ZgqbPjrdj
+ vRfT6pUVuGMCN5fkxRuqhKMn4meOswfLKboMa3o9pO7nyTQvupgwsqh50LvfRUosis1H
+ yVQQ==
+X-Gm-Message-State: AGi0PuanB+3lox9WBsVQ2KHSaj69gU4/LqAS2RSJjbH4MzwjM/5sBq6d
+ g628+gu4vLEc9xaEiISZdisokhEoHq+a66bsi6A=
+X-Google-Smtp-Source: APiQypK+6oiYdmYVei4clXzwDHywzqlfmDFgVXzV+CwMdP3SEr9xkQ9HbMDkBCL7vxLBY781R9P01r8CZgBU69TJAtM=
+X-Received: by 2002:adf:e98a:: with SMTP id h10mr2420186wrm.370.1586490353317; 
+ Thu, 09 Apr 2020 20:45:53 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 1D83F094F6E15C6AE36EBCFB8D0EB957F322BB0E739695B42E2692AAB36440532000:8
-X-MTK: N
+References: <20200408160044.2550437-1-arnd@arndb.de>
+ <CABOV4+UocLs3jLi7-vTi8muiFqACVdxH7Td8=U1ABveLnmyCuw@mail.gmail.com>
+ <CA+nhYX0H-czfJ6Kg+FK7X2=hHQK185UOLGoPdEP3nqWQWcA+bg@mail.gmail.com>
+In-Reply-To: <CA+nhYX0H-czfJ6Kg+FK7X2=hHQK185UOLGoPdEP3nqWQWcA+bg@mail.gmail.com>
+From: Chunyan Zhang <zhang.lyra@gmail.com>
+Date: Fri, 10 Apr 2020 11:45:16 +0800
+Message-ID: <CAAfSe-s=dZe=6y7UH8CBcddL1BKoLOAvi24RekgdmVv0StxTTA@mail.gmail.com>
+Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
+To: Sandeep Patil <sspatil@android.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_202911_169236_4CE71029 
-X-CRM114-Status: GOOD (  16.68  )
+X-CRM114-CacheID: sfid-20200409_204556_284535_3BDC018F 
+X-CRM114-Status: GOOD (  23.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zhang.lyra[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -71,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,307 +95,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
- srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
- linux-kernel@vger.kernel.org, cawa.cheng@mediatek.com,
- linux-mediatek@lists.infradead.org, bibby.hsieh@mediatek.com,
- ck.hu@mediatek.com, yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Android Kernel Team <kernel-team@android.com>,
+ Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ LKML <linux-kernel@vger.kernel.org>, Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ Orson Zhai <orson.zhai@unisoc.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Will Deacon <will@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-implement the apply() for pwm.
+On Fri, 10 Apr 2020 at 04:17, Sandeep Patil <sspatil@android.com> wrote:
+>
+>
+>
+> On Wed, Apr 8, 2020 at 11:09 PM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+>>
+>> Hi Arnd,
+>>
+>> Thanks for finding out this and fixing it, but we have a minor concern
+>> for changing ARCH_APRD back to bool.
+>>
+>> On Thu, Apr 9, 2020 at 2:57 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>> >
+>> > I got a build failure with CONFIG_ARCH_SPRD=m when the
+>> > main portion of the clock driver failed to get linked into
+>> > the kernel:
+>> >
+>> > ERROR: modpost: "sprd_pll_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_comp_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_sc_gate_ops" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_clk_probe" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_clk_regmap_init" [drivers/clk/sprd/sc9863a-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_pll_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_div_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+>> > ERROR: modpost: "sprd_mux_ops" [drivers/clk/sprd/sc9860-clk.ko] undefined!
+>> >
+>> > This is a combination of two trivial bugs:
+>> >
+>> > - A platform should not be 'tristate', it should be a 'bool' symbol
+>> >   like the other platforms, if only for consistency, and to avoid
+>> >   surprises like this one.
+>>
+>> After a discussion, we decided to change ARCH_SPRD to tristate, the
+>> idea was that we hope we can simply switch all sprd drivers' configs
+>> (whose default is ARCH_SPRD) to 'm' by setting ARCH_SPRD=m, or switch
+>> all them to 'y' by setting ARCH_SPRD=y, instead of changing them one
+>> by one. This requirement originally came from that Google GKI project
+>> asks all vendor drivers to be built as modules.
+>
+>
+>
+> Unfortunately, even if ARCH_SPRD can be tristate, we found out (like Ard did here) that none of the other platform symbols can be tristate :(.
+>
+> So, we are going to enable all CONFIG_ARCH_XXXX in our defconfig[1]. Chunyan, Please feel free to submit that patch to AOSP for that.
+>
+> This does present us with a problem. We found that a bunch of drivers are  'default y if ARCH_XXX'. A lot of them have no symbol dependencies on the code that gets compiled with ARCH_XXX. They depend on it only because "the driver is only needed for the XXX SoC or the family".
+>
+> For example, enabling CONFIG_ARCH_MEDIATEK, will end up building almost all drivers in drivers/pinctrl/mediatek as far as I can see.
+>
+> This does add up. It increases the size of the kernel considerably. I have plans to send out the comparison in the future (later this year) once we are done collecting all def configs and see how bad that is.
+>
+> The only sane way I can see that can be resolved (if people agree that's a problem), is to make the ARCH_XXX code tristate-able and make the ARCH_XXX Kconfig select every driver it needs, instead of the other way round.
 
-Fix the clock clk_prepare_enable and clk_disable_unprepare mismatch,
-switch the driver to support the ->apply() method.
+If we making the ARCH_XXX Kconfig select all drivers it needs, we will
+not have chance to custom the kernel Image for debug purpose. For
+example we can bringup a minimum system with only serial driver on
+sprd platforms.
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- drivers/pwm/pwm-mtk-disp.c | 179 +++++++++++++++++++++----------------
- 1 file changed, 104 insertions(+), 75 deletions(-)
+>
+> All that being said, It is obviously not ok to have the allmodconfig broken like this without adding explicit dependencies as suggested above, or revert CONFIG_ARCH_SPRD to be a 'bool'.
 
-diff --git a/drivers/pwm/pwm-mtk-disp.c b/drivers/pwm/pwm-mtk-disp.c
-index 83b8be0209b7..c1b0ed27f278 100644
---- a/drivers/pwm/pwm-mtk-disp.c
-+++ b/drivers/pwm/pwm-mtk-disp.c
-@@ -20,6 +20,7 @@
- #define PWM_CLKDIV_SHIFT	16
- #define PWM_CLKDIV_MAX		0x3ff
- #define PWM_CLKDIV_MASK		(PWM_CLKDIV_MAX << PWM_CLKDIV_SHIFT)
-+#define PWM_POLARITY	BIT(2)
- 
- #define PWM_PERIOD_BIT_WIDTH	12
- #define PWM_PERIOD_MASK		((1 << PWM_PERIOD_BIT_WIDTH) - 1)
-@@ -47,6 +48,7 @@ struct mtk_disp_pwm {
- 	struct clk *clk_main;
- 	struct clk *clk_mm;
- 	void __iomem *base;
-+	bool enabled;
- };
- 
- static inline struct mtk_disp_pwm *to_mtk_disp_pwm(struct pwm_chip *chip)
-@@ -66,11 +68,11 @@ static void mtk_disp_pwm_update_bits(struct mtk_disp_pwm *mdp, u32 offset,
- 	writel(value, address);
- }
- 
--static int mtk_disp_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
--			       int duty_ns, int period_ns)
-+static int mtk_disp_pwm_enable(struct pwm_chip *chip,
-+			       const struct pwm_state *state)
- {
- 	struct mtk_disp_pwm *mdp = to_mtk_disp_pwm(chip);
--	u32 clk_div, period, high_width, value;
-+	u32 clk_div, period, high_width, value, polarity;
- 	u64 div, rate;
- 	int err;
- 
-@@ -84,33 +86,47 @@ static int mtk_disp_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
- 	 * period = (PWM_CLK_RATE * period_ns) / (10^9 * (clk_div + 1)) - 1
- 	 * high_width = (PWM_CLK_RATE * duty_ns) / (10^9 * (clk_div + 1))
- 	 */
-+	if (!mdp->enabled) {
-+		err = clk_prepare_enable(mdp->clk_main);
-+		if (err < 0) {
-+			dev_err(chip->dev, "Can't enable mdp->clk_main: %d\n",
-+				err);
-+			return err;
-+		}
-+		err = clk_prepare_enable(mdp->clk_mm);
-+		if (err < 0) {
-+			dev_err(chip->dev, "Can't enable mdp->clk_mm: %d\n",
-+				err);
-+			clk_disable_unprepare(mdp->clk_main);
-+			return err;
-+		}
-+	}
- 	rate = clk_get_rate(mdp->clk_main);
--	clk_div = div_u64(rate * period_ns, NSEC_PER_SEC) >>
-+	clk_div = div_u64(rate * state->period, NSEC_PER_SEC) >>
- 			  PWM_PERIOD_BIT_WIDTH;
--	if (clk_div > PWM_CLKDIV_MAX)
-+	if (clk_div > PWM_CLKDIV_MAX) {
-+		dev_err(chip->dev, "clock rate is too high: rate = %d Hz\n",
-+			rate);
-+		clk_disable_unprepare(mdp->clk_mm);
-+		clk_disable_unprepare(mdp->clk_main);
- 		return -EINVAL;
--
-+	}
- 	div = NSEC_PER_SEC * (clk_div + 1);
--	period = div64_u64(rate * period_ns, div);
-+	period = div64_u64(rate * state->period, div);
- 	if (period > 0)
- 		period--;
- 
--	high_width = div64_u64(rate * duty_ns, div);
-+	high_width = div64_u64(rate * state->duty_cycle, div);
- 	value = period | (high_width << PWM_HIGH_WIDTH_SHIFT);
--
--	err = clk_enable(mdp->clk_main);
--	if (err < 0)
--		return err;
--
--	err = clk_enable(mdp->clk_mm);
--	if (err < 0) {
--		clk_disable(mdp->clk_main);
--		return err;
--	}
-+	polarity = 0;
-+	if (state->polarity == PWM_POLARITY_INVERSED)
-+		polarity = PWM_POLARITY;
- 
- 	mtk_disp_pwm_update_bits(mdp, mdp->data->con0,
- 				 PWM_CLKDIV_MASK,
- 				 clk_div << PWM_CLKDIV_SHIFT);
-+	mtk_disp_pwm_update_bits(mdp, mdp->data->con0,
-+				 PWM_POLARITY, polarity);
- 	mtk_disp_pwm_update_bits(mdp, mdp->data->con1,
- 				 PWM_PERIOD_MASK | PWM_HIGH_WIDTH_MASK,
- 				 value);
-@@ -122,50 +138,95 @@ static int mtk_disp_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
- 		mtk_disp_pwm_update_bits(mdp, mdp->data->commit,
- 					 mdp->data->commit_mask,
- 					 0x0);
-+	} else {
-+		mtk_disp_pwm_update_bits(mdp, mdp->data->bls_debug,
-+					 mdp->data->bls_debug_mask,
-+					 mdp->data->bls_debug_mask);
-+		mtk_disp_pwm_update_bits(mdp, mdp->data->con0,
-+					 mdp->data->con0_sel,
-+					 mdp->data->con0_sel);
- 	}
- 
--	clk_disable(mdp->clk_mm);
--	clk_disable(mdp->clk_main);
--
-+	mtk_disp_pwm_update_bits(mdp, DISP_PWM_EN, mdp->data->enable_mask,
-+				 mdp->data->enable_mask);
-+	mdp->enabled = true;
- 	return 0;
- }
- 
--static int mtk_disp_pwm_enable(struct pwm_chip *chip, struct pwm_device *pwm)
-+static int mtk_disp_pwm_disable(struct pwm_chip *chip,
-+				const struct pwm_state *state)
- {
- 	struct mtk_disp_pwm *mdp = to_mtk_disp_pwm(chip);
--	int err;
--
--	err = clk_enable(mdp->clk_main);
--	if (err < 0)
--		return err;
- 
--	err = clk_enable(mdp->clk_mm);
--	if (err < 0) {
--		clk_disable(mdp->clk_main);
--		return err;
-+	mtk_disp_pwm_update_bits(mdp, DISP_PWM_EN, mdp->data->enable_mask,
-+				 0x0);
-+	if (mdp->enabled) {
-+		clk_disable_unprepare(mdp->clk_mm);
-+		clk_disable_unprepare(mdp->clk_main);
- 	}
- 
--	mtk_disp_pwm_update_bits(mdp, DISP_PWM_EN, mdp->data->enable_mask,
--				 mdp->data->enable_mask);
-+	mdp->enabled = false;
- 
- 	return 0;
- }
- 
--static void mtk_disp_pwm_disable(struct pwm_chip *chip, struct pwm_device *pwm)
-+static int mtk_disp_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
-+			      const struct pwm_state *state)
-+{
-+	if (!state->enabled)
-+		return mtk_disp_pwm_disable(chip, state);
-+
-+	return mtk_disp_pwm_enable(chip, state);
-+}
-+
-+static void mtk_disp_pwm_get_state(struct pwm_chip *chip,
-+				   struct pwm_device *pwm,
-+				   struct pwm_state *state)
- {
- 	struct mtk_disp_pwm *mdp = to_mtk_disp_pwm(chip);
-+	u32 clk_div, period, high_width, con0, con1;
-+	u64 rate;
-+	int err;
- 
--	mtk_disp_pwm_update_bits(mdp, DISP_PWM_EN, mdp->data->enable_mask,
--				 0x0);
-+	err = clk_prepare_enable(mdp->clk_main);
-+	if (err < 0) {
-+		dev_err(chip->dev, "Can't enable mdp->clk_main: %d\n", err);
-+		return;
-+	}
-+	err = clk_prepare_enable(mdp->clk_mm);
-+	if (err < 0) {
-+		dev_err(chip->dev, "Can't enable mdp->clk_mm: %d\n", err);
-+		clk_disable_unprepare(mdp->clk_main);
-+		return;
-+	}
-+
-+	rate = clk_get_rate(mdp->clk_main);
-+
-+	con0 = readl(mdp->base + mdp->data->con0);
-+	con1 = readl(mdp->base + mdp->data->con1);
- 
--	clk_disable(mdp->clk_mm);
--	clk_disable(mdp->clk_main);
-+	state->polarity = con0 & PWM_POLARITY ?
-+			  PWM_POLARITY_INVERSED : PWM_POLARITY_NORMAL;
-+	state->enabled = !!(con0 & BIT(0));
-+
-+	clk_div = (con0 & PWM_CLKDIV_MASK) >> PWM_CLKDIV_SHIFT;
-+	period = con1 & PWM_PERIOD_MASK;
-+	state->period = div_u64(period * (clk_div + 1) * NSEC_PER_SEC, rate);
-+	high_width = (con1 & PWM_HIGH_WIDTH_MASK) >> PWM_HIGH_WIDTH_SHIFT;
-+	state->duty_cycle = div_u64(high_width * (clk_div + 1) * NSEC_PER_SEC,
-+				    rate);
-+
-+	if (!state->enabled) {
-+		clk_disable_unprepare(mdp->clk_mm);
-+		clk_disable_unprepare(mdp->clk_main);
-+	}
-+
-+	mdp->enabled = state->enabled;
- }
- 
- static const struct pwm_ops mtk_disp_pwm_ops = {
--	.config = mtk_disp_pwm_config,
--	.enable = mtk_disp_pwm_enable,
--	.disable = mtk_disp_pwm_disable,
-+	.apply = mtk_disp_pwm_apply,
-+	.get_state = mtk_disp_pwm_get_state,
- 	.owner = THIS_MODULE,
- };
- 
-@@ -194,14 +255,6 @@ static int mtk_disp_pwm_probe(struct platform_device *pdev)
- 	if (IS_ERR(mdp->clk_mm))
- 		return PTR_ERR(mdp->clk_mm);
- 
--	ret = clk_prepare(mdp->clk_main);
--	if (ret < 0)
--		return ret;
--
--	ret = clk_prepare(mdp->clk_mm);
--	if (ret < 0)
--		goto disable_clk_main;
--
- 	mdp->chip.dev = &pdev->dev;
- 	mdp->chip.ops = &mtk_disp_pwm_ops;
- 	mdp->chip.base = -1;
-@@ -210,43 +263,19 @@ static int mtk_disp_pwm_probe(struct platform_device *pdev)
- 	ret = pwmchip_add(&mdp->chip);
- 	if (ret < 0) {
- 		dev_err(&pdev->dev, "pwmchip_add() failed: %d\n", ret);
--		goto disable_clk_mm;
-+		return ret;
- 	}
- 
- 	platform_set_drvdata(pdev, mdp);
- 
--	/*
--	 * For MT2701, disable double buffer before writing register
--	 * and select manual mode and use PWM_PERIOD/PWM_HIGH_WIDTH.
--	 */
--	if (!mdp->data->has_commit) {
--		mtk_disp_pwm_update_bits(mdp, mdp->data->bls_debug,
--					 mdp->data->bls_debug_mask,
--					 mdp->data->bls_debug_mask);
--		mtk_disp_pwm_update_bits(mdp, mdp->data->con0,
--					 mdp->data->con0_sel,
--					 mdp->data->con0_sel);
--	}
--
- 	return 0;
--
--disable_clk_mm:
--	clk_unprepare(mdp->clk_mm);
--disable_clk_main:
--	clk_unprepare(mdp->clk_main);
--	return ret;
- }
- 
- static int mtk_disp_pwm_remove(struct platform_device *pdev)
- {
- 	struct mtk_disp_pwm *mdp = platform_get_drvdata(pdev);
--	int ret;
--
--	ret = pwmchip_remove(&mdp->chip);
--	clk_unprepare(mdp->clk_mm);
--	clk_unprepare(mdp->clk_main);
- 
--	return ret;
-+	return pwmchip_remove(&mdp->chip);
- }
- 
- static const struct mtk_pwm_data mt2701_pwm_data = {
--- 
-2.21.0
+We see this broken because I shouldn't leave clk Makefile a tristate
+compile [1] after changing ARCH_SPRD to be tristate.
+
+If we will make ARCH_SPRD tristate-able in the future and you all
+aggree that, I would like to do it now, and pay more attention to
+Makefiles and dependencies.
+
+I can also make a change like below:
+
+diff --git a/drivers/clk/sprd/Kconfig b/drivers/clk/sprd/Kconfig
+index e18c80fbe804..9f7d9d8899a5 100644
+--- a/drivers/clk/sprd/Kconfig
++++ b/drivers/clk/sprd/Kconfig
+@@ -2,6 +2,7 @@
+ config SPRD_COMMON_CLK
+        tristate "Clock support for Spreadtrum SoCs"
+        depends on ARCH_SPRD || COMPILE_TEST
++       depends on m || ARCH_SPRD != m
+        default ARCH_SPRD
+        select REGMAP_MMIO
+
+Arnd, Stephen, Sandeep, what do you think? Does that make sense?
+
+Thanks,
+Chunyan
+
+[1] https://elixir.bootlin.com/linux/v5.6.3/source/drivers/clk/Makefile#L108
+
+>
+> So fwiw,
+>
+> Acked-by: Sandeep Patil <sspatil@android.com>
+>
+> - ssp
+>
+> 1. https://android.googlesource.com/kernel/common/+/refs/heads/android-5.4/arch/arm64/configs/gki_defconfig#45
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
