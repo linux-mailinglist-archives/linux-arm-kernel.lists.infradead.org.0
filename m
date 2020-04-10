@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5E811A3E1B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 04:16:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F8FB1A3E20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 04:17:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pVJ12kZLwit6j2fw/n5QgHEIoLS5uXvfcJtzvR4JJLU=; b=UxJZbkmLgjzyzI
-	eohNDi3b+5Me4ThXhdbn0cOBc6RktdU3XQ+3UhbCfEGgDY/uXRC+PpAU9mxXviKCddnW7jE432I/R
-	VImcunyhkBZ0/dVo2hGztNAzh3usATkHddbXiPL0FryscVZmpGbT9XOUXQI5HouAr9JSxhWch9eC9
-	LOER+wCqZoeHbVk8v4TcQyUj2DV+VDzRgRvxbGAvSsLHlp6pgTgblCLIFMIhtcWJqEVS6ROnlJUd9
-	Dhue6IfvfI4l+RPs/xp9QBbtzBE45BVsyCYa4zVy5lKKdBZoufZOU43KUn+R3zFJ1JiBGBUjLM71m
-	vZ/M9g/093ZtRGC8hFpQ==;
+	List-Owner; bh=u3hrU1mgfNuBW9HkKT6nkN2miVqo93Dd40u+Wa9IYqg=; b=olIUBuh+T8/FF2
+	DE7IV2UOSouSKGacoxJO9bFZD++xR/S4M2KXYev6B+c9tPCDoJ4Db7wMb/x4VuTdA+MKf6hocFKn4
+	eV6dMs4h0L2ve81KpigdozkY9dlo5rV13xI4KbBLa20WqgoVRzKLKKs1RdugkLosGAQybRq1aGZuz
+	9DUU39SvPGpEF3XQOWpYtXMZ+z3ZyAL+m9UFNTz0js/o8p8D1kaUxDgDrxrWchnEr9mEs6P1vtrGX
+	ujny1YrPx+LL+xkQZHbnyQOpJI9XoeLKGgW9m4AmDQp2gKwfR980CiLxAqfEqQJICpQzmO28gicBD
+	lXQVJL9IMX060bWhkGhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMjDk-0006fu-3j; Fri, 10 Apr 2020 02:16:40 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jMjE3-0006vw-Dp; Fri, 10 Apr 2020 02:16:59 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMjDZ-0006eX-E4
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 02:16:30 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id q16so1452230pje.1
+ id 1jMjDs-0006uZ-Bk
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 02:16:49 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id n4so269217pjp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 19:16:28 -0700 (PDT)
+ Thu, 09 Apr 2020 19:16:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=g3ezOHVTu/DVs9eQ5bfvyVgR22CPV+9l8W/1ERsAjaM=;
- b=EjhWVyK8B16rqGj6Gwx5TFqcG4pWyYbL0yI3j0qO+Vgv03KmaDbFUV31ZOkNUKSTQG
- Oo+dPvSSEBlfQd3X2Y1b5mv/P6y/uU73n8TD8YHf0etFsRWXJ4Uyy/N5YbKVNmoqaP/R
- q2BH8emgUM1SUM5ig2Z4BNPG1a9ZMURsoXsRbaZuVAlmJTbpeAowU825GDC+URy4HxIS
- fRsDmlxFFWLYCxO4zl711XVyLlJTr+cWWmvskWRcCz5gAyrKvSGmj3ZgM6vpygv+9L1U
- 3hoiykwzzPGrmxqac7T5E6Qk1yb/jIxb4cxrZSDC8ykI1ZO4S5hfyJtW7okCq7W/uaKy
- sGFw==
+ bh=epcePNPH75ZrOgRmkPaWETOFUufSwk1exuBAOcMmYKU=;
+ b=pjfn/IP8jAV7H7R+w1ysZc+k8OBRHDB+7tnnwKs9KOlerSrQpXe+PcIJfqm/jgAfrK
+ Zv8qRfcT4RqhPlTiGwjYle9eLBeczRlE6OCGR8Ap3OJXpPVyDfxxTrbErDCQUyltqm1f
+ AX2lzP5P+Z9q7nOWpd+ib1y8DAR391Ers/N0LqsMn/uBK2EsoZQCiiIlAwmHdjyLU4mk
+ LoR0nHuuDquB04+10oLTkQCAPwjKTa6UcFE/KxLXt5sgtYgo00JfW5lIUzxmsq0gNlwP
+ oqHFrMQn1H3/YWhoksSyKOI1P9dvFP0a8q/kBjAoPxLQZ4ux7c9M+Jh90W1N+7YPeFs0
+ uFng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=g3ezOHVTu/DVs9eQ5bfvyVgR22CPV+9l8W/1ERsAjaM=;
- b=s0nC3cndhY7JF2wIqdecT3oEAmi51n9HL9MPP0AiqB1qAwTMP77JvObIf0VSDM6lz4
- WOQlTBtwkOWHChkU1bWhV6nvCBJBrVwVCLzLW2tvOYDJqGUrx3mEy96KwjQJhCz1bpKi
- iTQ27W34Od2IeOOLmpphSghaOgQ7VL3TkbZCRnkUmsN0g50Y1OH6c5BsvR0V79ekzG2A
- BPHYJwB9aqZnY3sy7QP4EHvzvknLrrbeQOcsNNVIdbZq17mZMMDK8hB9KvRdTU94QaZG
- 9pvDRVSt07txGrkPoyTmgEFqd2ezkgTFTSh1ONTbnf/jro4a1hp9n6ZoPkqDO4iqHH3D
- m8vw==
-X-Gm-Message-State: AGi0PuZBozlgjoajwMQXA58NK4jxDqUD8wpVYeNmqWk2ZQN7O+AgC+cE
- tu8l1MI7SWyqD04ssrs9V17ooA==
-X-Google-Smtp-Source: APiQypJNHYZiUTXCViITxQIb0jbA9ZW5wv2BarRhmw9hMnx+q5iry/q6pNmWq864Mk8uqzFlF3vOkg==
-X-Received: by 2002:a17:90a:8a08:: with SMTP id
- w8mr2762112pjn.119.1586484988292; 
- Thu, 09 Apr 2020 19:16:28 -0700 (PDT)
+ bh=epcePNPH75ZrOgRmkPaWETOFUufSwk1exuBAOcMmYKU=;
+ b=M1kuXvwiX7klDEtiOYzCJ824xsbN+NI/SqmkcDrylMk36fGyiE93bVQznFL92o9Jj3
+ 4dHerRmIvU1BOJ9RQtn1UNJq3t6RpGizuxQMYdZR+Ff/iP5QS9/w1EvI+L7sydOKOjV1
+ lIGvT1nj4DJll2sY88FKCaQQuu7Q/0cHDmBqMhofiUHyHKySVGpf0vaRc7nBZYWImn6o
+ r+EM+lfekvuBTMiQlpNkpIdkbuNYqz5iCVvGS7+HuYmpmir+6cOIX6sJA7SpkwiGusE/
+ uuzQhpSuKTg+okKCb+4BmJtKHbI/Vp80FW8FgNDKAYgbBeG3C/5wcQd2RfnooEHu/Z1i
+ +t6Q==
+X-Gm-Message-State: AGi0PuaVdKiKHHZgyeakZ3xdg77F0YbPJo5ClWTQkqUhUzb9u7+2Lfwc
+ x084BeXqo5NnJGrVyz8DUaw3OA==
+X-Google-Smtp-Source: APiQypJqyKR3rsDc5ml7bDajSOWFoKnB5Kl1YpiY804f+Y5ThLwopJ6r9asJ14nxdI4SJULEUHHkNg==
+X-Received: by 2002:a17:902:ab83:: with SMTP id
+ f3mr2612236plr.197.1586485007444; 
+ Thu, 09 Apr 2020 19:16:47 -0700 (PDT)
 Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 6sm403583pfx.69.2020.04.09.19.16.27
+ by smtp.gmail.com with ESMTPSA id q15sm381086pgj.4.2020.04.09.19.16.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 19:16:27 -0700 (PDT)
-Date: Thu, 9 Apr 2020 19:16:36 -0700
+ Thu, 09 Apr 2020 19:16:46 -0700 (PDT)
+Date: Thu, 9 Apr 2020 19:16:55 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: "Michael S. Tsirkin" <mst@redhat.com>
-Subject: Re: [PATCH] rpmsg: pull in slab.h
-Message-ID: <20200410021636.GZ20625@builder.lan>
-References: <20200409211045.12025-1-mst@redhat.com>
+Subject: Re: [PATCH] remoteproc: pull in slab.h
+Message-ID: <20200410021655.GA20625@builder.lan>
+References: <20200409211054.12091-1-mst@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200409211045.12025-1-mst@redhat.com>
+In-Reply-To: <20200409211054.12091-1-mst@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_191629_473854_935D185D 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20200409_191648_448108_7B8519AF 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,10 +98,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -114,30 +114,24 @@ On Thu 09 Apr 14:10 PDT 2020, Michael S. Tsirkin wrote:
 > 
 > Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
 
-I presume you have some series where you need these? Otherwise let me
-know and I'll pick them up.
-
 Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-Regards,
-Bjorn
-
 > ---
->  drivers/rpmsg/mtk_rpmsg.c | 1 +
+>  drivers/remoteproc/stm32_rproc.c | 1 +
 >  1 file changed, 1 insertion(+)
 > 
-> diff --git a/drivers/rpmsg/mtk_rpmsg.c b/drivers/rpmsg/mtk_rpmsg.c
-> index 232aa4e40133..83f2b8804ee9 100644
-> --- a/drivers/rpmsg/mtk_rpmsg.c
-> +++ b/drivers/rpmsg/mtk_rpmsg.c
-> @@ -8,6 +8,7 @@
->  #include <linux/platform_device.h>
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index a18f88044111..7ef931e9605c 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -19,6 +19,7 @@
+>  #include <linux/regmap.h>
 >  #include <linux/remoteproc.h>
->  #include <linux/rpmsg/mtk_rpmsg.h>
+>  #include <linux/reset.h>
 > +#include <linux/slab.h>
 >  #include <linux/workqueue.h>
 >  
->  #include "rpmsg_internal.h"
+>  #include "remoteproc_internal.h"
 > -- 
 > MST
 > 
