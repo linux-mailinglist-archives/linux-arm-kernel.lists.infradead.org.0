@@ -2,87 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FC471A3E2A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 04:24:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AFB61A3E2F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 04:27:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNl8vfgXT9B14zJZxjjcgpUpJvBTxRwJZq43qstLgrc=; b=DgCHrkH4Ef04Jd
-	6guT7ycwbKadYfsz4OaFnhI3qGcn21FRzc6kWC6i9UgLRursThYNBx6KY0niQ3THBR2G5T79WPX7V
-	jZkN88cGWkNGGwZ+lYvIL44+/3I1HDLVaPGQ8/NcnV2slOdqL+RXtVuV4w/1j2TQIpK4GvWlsDF1U
-	YbndJHCSb4RhLNM+wuIP81rYrLG+npBw9XiN4wDhbIqHpFwWyqU/uI1JmpPnwKHLQWySVPa/B7yHc
-	6qt0VvxeAgowbR0v4RmqEdsGiQnYskhU1bJv56KN+59mk+6LMMo1z6twjkAhgbc7lnQUxCoErnrbJ
-	rLp8iMwGpOaH0u0JaIhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=mp2GoO5/lRAU4HJlcMpMzQyzaYCK4CORQ4GE+WEtNsU=; b=MV/1qoxIOZFrNHlsa+sTrPYlZp
+	9K7s723fnKFH9Y/evC0qYAwI2229FbvfSzF+s3YGXiOu7EljyIwPm3M1fCYvUAgu8ZMPUk/izhgi4
+	X4RL9oZXqvhZqcJ3wDs+C9agLdfLIPJSKgU0QfEHitZ4xrLPkS2vc0y+LkyIK21JSHmYvTaoP4sEP
+	2Dz6H7qILKD7Z53pPUeuZufytxs+ucCUHZ7wZj4XhSilY7Fi0rzuec93/yL2PItA+kAiPf0i/dFYm
+	Xct7y70JOV+Ds0JoFVS4xUWcCtCOYqzOXC2ZSGb367AwV89OBGpfMd1oXATWq1MuuwjHJcSJwirfY
+	0axE8rTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMjKl-0001ht-JA; Fri, 10 Apr 2020 02:23:55 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jMjNr-0004dH-3v; Fri, 10 Apr 2020 02:27:07 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMjKf-0001gn-LN
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 02:23:50 +0000
-Received: by mail-lj1-x242.google.com with SMTP id n17so599824lji.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 Apr 2020 19:23:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C7nub2iC7HflOtCQHAAafbgeNv5reSfX1ICVh/feaUg=;
- b=JFVBcnHtGbIdWIzex5YH9WvtY0JYL61bG3IWoWHDvhab8sS7zyKzabEW+N1KhP6CDJ
- o//t4xh1c9ED3fWEGmYjw8T9ATBMJ/HsSaaCo2OzTHaNWXgova2j3RPoUf7Jcb/KRTfd
- thrhVzgcQM1Cdxy4FaObzOCGdPDYBMaTZAh9N14VKmxdNK2cxmxyAuU5S+jBoK6qlwH9
- SdXdmi1R2j4UVjl94PbHzLTiGa8dXQ+8UN2Tj2PggHIHyEcZC9GQblO15j3CWmobYXZQ
- C2ZtS8XrVOnIW0U/pRCtlF/VPDHqKhnaU/byLhjlQEN/YjHPMXbO8ctaE6Hs/jQceDBx
- YdHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=C7nub2iC7HflOtCQHAAafbgeNv5reSfX1ICVh/feaUg=;
- b=sd0+lqbCQAuACKkPmuxx8txenWbz9sHxSzYod5yINFAZF2jBhqg/QWEJY3dToZSlpg
- jz/jE0LMIyG8nE3hRwR2xCz/Jz+vqS2wYjb+s7z/7b3jUbs788MNBSB3C2yWfrwNQ/ZW
- Wg+VTqOp+fh23zZ7YdkZXvLo4edGPk6w9tZxgc5z489VTmZdf4I1z7C7Er8Fh4kN7FtO
- 4BrykHsSnlXYsj+RpxPihMMxl/B2rPOVPgc0WBAoWm9Fmh0YYIsKS4gafmwJyh0b+xoc
- 42kyeLUSppwEFPXaWzb5uQySNCaYKhIicTPEE2B2WGhqv8rYBeoQF7Hp6eOuaVSZhJcr
- xeRQ==
-X-Gm-Message-State: AGi0PuaKEy3Yu+CHKo+zBJ+Q8cIrw1DVXpY8+jVbQThxLoWDkuq3Kvwb
- mdB5VAJZadhUQ9ozVSK7lLGQ12KkR4VO/JZpX6I=
-X-Google-Smtp-Source: APiQypLnZGTvqOGESVBjKQo4/Lj3hRB1ay/3mDXASjqrLo7VK00BjILY9FTR5FqYsL8gYvGI1WpmBu69VNNGszWlHjI=
-X-Received: by 2002:a2e:974d:: with SMTP id f13mr1694240ljj.178.1586485424861; 
- Thu, 09 Apr 2020 19:23:44 -0700 (PDT)
+ id 1jMjNk-0004cp-Ir
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 02:27:02 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 4CAA7F0BAA4467AE4D68;
+ Fri, 10 Apr 2020 10:26:53 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.190) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.487.0;
+ Fri, 10 Apr 2020 10:26:42 +0800
+To: Sudeep Holla <sudeep.holla@arm.com>, 'Thanu Rangarajan'
+ <Thanu.Rangarajan@arm.com>, Charles Garcia-Tobin
+ <Charles.Garcia-Tobin@arm.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Subject: ACPI support for System Control and Management Interface (SCMI)
+Message-ID: <52a50069-7140-b9b4-31b4-8c99e8c0d991@huawei.com>
+Date: Fri, 10 Apr 2020 10:26:41 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <20200410004738.19668-1-ansuelsmth@gmail.com>
- <20200410004738.19668-3-ansuelsmth@gmail.com>
-In-Reply-To: <20200410004738.19668-3-ansuelsmth@gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 9 Apr 2020 23:24:12 -0300
-Message-ID: <CAOMZO5AKYO3xLsp4k6_fJCV9qW=rAtRKEGWnxksixU794dOw8A@mail.gmail.com>
-Subject: Re: [PATCH 2/4] drivers: pci: dwc: pci-imx6: update binding to
- generic name
-To: Ansuel Smith <ansuelsmth@gmail.com>
+Content-Language: en-GB
+X-Originating-IP: [10.173.220.190]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_192349_698695_94D8B357 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200409_192700_806551_50F8A0D5 
+X-CRM114-Status: UNSURE (   5.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,46 +66,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Richard Zhu <hongxing.zhu@nxp.com>, linux-pci@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: John Garry <john.garry@huawei.com>,
+ 'Matteo Carlini' <Matteo.Carlini@arm.com>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>, Jonathan Cameron <jonathan.cameron@huawei.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ansuel,
+Hi Sudeep,
 
-On Thu, Apr 9, 2020 at 9:47 PM Ansuel Smith <ansuelsmth@gmail.com> wrote:
->
-> Rename specific bindings to generic name.
->
-> Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
-> ---
->  drivers/pci/controller/dwc/pci-imx6.c | 12 ++++++------
->  1 file changed, 6 insertions(+), 6 deletions(-)
->
-> diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-> index acfbd34032a8..4ac140e007b4 100644
-> --- a/drivers/pci/controller/dwc/pci-imx6.c
-> +++ b/drivers/pci/controller/dwc/pci-imx6.c
-> @@ -1146,28 +1146,28 @@ static int imx6_pcie_probe(struct platform_device *pdev)
->         }
->
->         /* Grab PCIe PHY Tx Settings */
-> -       if (of_property_read_u32(node, "fsl,tx-deemph-gen1",
-> +       if (of_property_read_u32(node, "tx-deemph-gen1",
+We are working on the enablement of SCMI for Kunepeng920,
+which is a server chip using ACPI, but I didn't see the
+ACPI support in the mainline kernel for SCMI.
 
-This breaks compatibility with older dtbs.
+Kunpeng920 and the upcomming Kunpeng930 have thermal
+sensors and other system management features which
+needs the SCMI for abstraction layer, do we have plan
+to support ACPI for SCMI?
+
+Happy easter!
+
+Thanks
+Hanjun
+
 
 _______________________________________________
 linux-arm-kernel mailing list
