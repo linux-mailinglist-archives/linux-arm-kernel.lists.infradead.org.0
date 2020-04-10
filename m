@@ -2,92 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B9C71A4A7F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 21:34:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8C031A4B2A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 22:30:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ynJr1I2k6Qk617HngD4XXqhs9Q1aImTmIXMfJI5S4ck=; b=EBPKWMugeJVAzp
-	qIwnrGIWWGaVj07dfZ11oaqDzfs5T8HoMyDrd1CzU54YRUrAha4YtKlonJcMdkozXrtXtHdZdwyOn
-	U6Rw8L2x8i8o1RzCphfYhtDf9JmED9sNPMF7pfMd4F/5+KnznP9Z37Eyqr/w70shO6rwJMFP2XsP8
-	DbIhP8Px6ilKZRxyxD7+5FbdrRDaKRi4+I6n5F6WlCxv8KFoxXJJ4Xa3ZZxkLNyjI33GDYKQqiily
-	9U/7gQ3iwAmOw+m0qj3ezAHyt/Ds2+2OsM/M067AhPCO2iY2+oYBqLnGLFiuoMT1UnxxC1mjcIimC
-	E5AKdO1RuKuHy/CokTyg==;
+	List-Owner; bh=mHsyhhIsFkapVIz6Ly5fPmH7b7naim8ZHtWxngY6Xns=; b=uSvLYIR9ygJ+Zv
+	Yv3MKtf2vn1xJmiybG8AbTv0Sp1MRMnyh328c4ca4F0ebA/KPaVhJw9he7jNGeKlwhSliiuqCJCxx
+	stLq6waifjz/2XyFfb69JT2+65QgZshVjDvshhjkzQs8FgTExMSpCaT8me1CqddfxfcTbwSyFCV2j
+	itS9QPsX6gLZADeJXALETxBeg+XQTf9UuZX/2GZahtKhC2aH8Y4zm3nYGwlvJaHPcUvDqCdtNPUjF
+	dxYoFTWDp1v/wCRfMaxB7W5vEjAoqqdsfAGKN+6eThVhUqvKiks9GwvJghSxA44HqpTVd25rOaE/J
+	4G9FPSZUQDdFqAbVSTjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMzQF-0002pC-RZ; Fri, 10 Apr 2020 19:34:39 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jN0I7-0002j8-Hc; Fri, 10 Apr 2020 20:30:19 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMzQ5-0002lu-8a
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 19:34:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586547265;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=pSDLH5WsDUY0Ls+Yi5DMpK6wFwspuCJoAo5jQ7V/Ijc=;
- b=HTjtrTCPCtqlucaZeYXO9hdRWKKNAckT7ekZDJXF4mJhpipaNA9I2CNaZ2kSj9hZ8JMDfd
- x8O+SqhSx6dStv8V30+AeWP2e15nVJrSHFhqsats/yWfEKX2i5V8jL8upV5bG1UT+dmM/5
- 7kohKTXNMLmKBR1LDF3Ev3cAOymTgN8=
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com
- [209.85.160.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-505-VPqh-TJFPLits0HAweB96w-1; Fri, 10 Apr 2020 15:34:23 -0400
-X-MC-Unique: VPqh-TJFPLits0HAweB96w-1
-Received: by mail-qt1-f199.google.com with SMTP id x7so2670314qtv.23
+ id 1jN0Hy-0002KK-W6
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 20:30:12 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y12so701369pll.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 12:34:23 -0700 (PDT)
+ Fri, 10 Apr 2020 13:30:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wm2I/9l0ZSUtMU6eFNvpKjwD13hR3fJP0erslNTJ0Rg=;
+ b=BJOWgcJrTwuu4yNHFjFMhQ5w2wbQTBX7TzJS6iJpWfMTmQNbTDG0bi0tcJ1aX1qIp8
+ ILfrFF8WrCxWwSiiOSquAOwGijGqfrgSiwZmu2mb7K5It0Pf8ENWd6UHYjqAbQXb+aDl
+ lyVguT9UGyfrsTxyvySlBfwwOTxE7Xp8wi+fCc/DOxfduwXyY2jbpVcx18WklFPiUFT9
+ dnaXzRj/kb9CneXKVz62cNHYGfuG5fnNMA8oU5m96Q6zU24DC5Td7pdm/S/x8JAlDrIF
+ VyUp+ZljwzyoJC5QS62DDju6HX1USH7RBD6VlWi4KnET+xfQ4iaHguoX/6YOJ5z52oAk
+ Qukw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=dR0pnT92lTl7PiXH1/vycyqLlKqG/upjftJ1HpISkMA=;
- b=i4oGko1NpxFOR4Cx58pNQQbVHOF1ykJRO/W5sEkHtjDuQ4tPzOGGJhufkaQunhMOxU
- U2CD0cnb1FpdEwf2XwuJP/kLkeGhqI5TUVhARdewkhVTnA+j7jJNNqVOgdGvgImTEuNj
- jzvNQeIgOynicjylie3zoqgg1wffoUg3Xca0eJNR2z17Rj0Cbi6iuTi1fXxVt8+8eQwS
- 5NzmU7SImqc0u7CQTpIT1xUvHAIecjtOmsaZy1jEbD1vLZWNXgjNskek+8h+yE/7y+bz
- FHwiZj701++3+GpUZylwwFiXHHmcmzGF8+FB8+B5xCOLSRLtGgG9q/egIDBLbRIOVrKV
- SDlw==
-X-Gm-Message-State: AGi0PuanJkDBn5cKkJOPIH84D1UCbW7Hu3mlzHZhUpPGa6g/VzLslbkG
- av7ZlDr6kEy1vGhwbW54IE4nfrzl/4/QJHpfL86fsJZZoHAr7TCvzKoytARz48Fuw3ChvDnpxq2
- CcpTwhG/C6FjGO97BT30rCTj+QllKj2JGcTo=
-X-Received: by 2002:ac8:6d06:: with SMTP id o6mr768750qtt.165.1586547263230;
- Fri, 10 Apr 2020 12:34:23 -0700 (PDT)
-X-Google-Smtp-Source: APiQypKE+9gdKAAzqM7E075abKl7yEhzpSisddiPAFgdbjLHprLwAVDEdymEnBo0qMB8GT4NFqVJjg==
-X-Received: by 2002:ac8:6d06:: with SMTP id o6mr768725qtt.165.1586547263017;
- Fri, 10 Apr 2020 12:34:23 -0700 (PDT)
-Received: from xz-x1 ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id m11sm2214328qkg.130.2020.04.10.12.34.20
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wm2I/9l0ZSUtMU6eFNvpKjwD13hR3fJP0erslNTJ0Rg=;
+ b=G8wOPxmNtgJRaoWOcWo8UKjNsbG40E8n46Tk7jY3c55nvcoD3AofEs/JSLMYhUJ8Rj
+ nqnV9JrRYtP4HpfiGF/ElieBPvDzmBd4PgDkedHVT+6cyw9pMZo6/ro6QzpetEHqyoIl
+ m4FfHSbE/6hryLNUCsMQjfQa0d+ag5HaCHy9qvcvuShspYYluDXd2MbxYIARNw0FAJAN
+ zpwYCFIKi09hQHESYwqnpI7CDnsAJJ5LhQnUXBy4gMeySd2MYaomMDEW49sV0qFThdsr
+ 1zED7m0UAWLUfUdt7QNI8Vfrv3pIa9LJ2bi3qHMKkkyB7LhrhdYAcne6JuqpDjA9K6qP
+ 8qnA==
+X-Gm-Message-State: AGi0PuaE10wPJlzelfv1TCtK4031+9uitAdSPqhZXvMQCFnbeZT2BCq+
+ f0Y6JaMcjPFiSE2QriaqKs8ZYQ==
+X-Google-Smtp-Source: APiQypK69YgPl3Ql4HrQ0ELNvGRN1zb1pV0YmESscULM4GxocFCj0uNA8hsUMMwivEMYpP4RG6Bphw==
+X-Received: by 2002:a17:90b:1b05:: with SMTP id
+ nu5mr7416590pjb.110.1586550609349; 
+ Fri, 10 Apr 2020 13:30:09 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id i14sm2267175pgh.47.2020.04.10.13.30.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 12:34:22 -0700 (PDT)
-Date: Fri, 10 Apr 2020 15:34:19 -0400
-From: Peter Xu <peterx@redhat.com>
-To: Mike Kravetz <mike.kravetz@oracle.com>
-Subject: Re: [PATCH v2 3/4] hugetlbfs: remove hugetlb_add_hstate() warning
- for existing hstate
-Message-ID: <20200410193419.GF3172@xz-x1>
-References: <20200401183819.20647-1-mike.kravetz@oracle.com>
- <20200401183819.20647-4-mike.kravetz@oracle.com>
+ Fri, 10 Apr 2020 13:30:08 -0700 (PDT)
+Date: Fri, 10 Apr 2020 14:30:06 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Suman Anna <s-anna@ti.com>
+Subject: Re: [PATCH 7/7] remoteproc/k3-r5: Add loading support for on-chip
+ SRAM regions
+Message-ID: <20200410203006.GA9146@xps15>
+References: <20200324201819.23095-1-s-anna@ti.com>
+ <20200324201819.23095-8-s-anna@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <20200401183819.20647-4-mike.kravetz@oracle.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <20200324201819.23095-8-s-anna@ti.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_123429_376056_0A242380 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200410_133011_085970_3A42170F 
+X-CRM114-Status: GOOD (  24.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,46 +100,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Mina Almasry <almasrymina@google.com>, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 01, 2020 at 11:38:18AM -0700, Mike Kravetz wrote:
-
-[...]
-
-> @@ -3255,7 +3254,6 @@ void __init hugetlb_add_hstate(unsigned int order)
->  	unsigned long i;
->  
->  	if (size_to_hstate(PAGE_SIZE << order)) {
-> -		pr_warn("hugepagesz= specified twice, ignoring\n");
->  		return;
+On Tue, Mar 24, 2020 at 03:18:19PM -0500, Suman Anna wrote:
+> The K3 SoCs has various internal on-chip SRAM memories like the SRAM
+> within the MCU domain or the shared MSMC RAM within NavSS that can be
+> used for multiple purposes. One such purpose is to have the R5F cores
+> use a portion of such on-chip SRAM for fast-access data or to directly
+> execute code.
+> 
+> Add support to the K3 R5 remoteproc driver to parse and support
+> loading into such memories. The SRAM regions need to be mapped as
+> normal non-cacheable memory to avoid kernel crashes when the remoteproc
+> loader code uses the Arm64 memset library function (the "DC ZVA"
+> instruction throws a alignment fault on device type memory).
+> 
+> These SRAM regions are completely optional as not all firmware images
+> require these memories, and any such memory has to be reserved as such
+> in the DTS files.
+> 
+> Signed-off-by: Suman Anna <s-anna@ti.com>
+> ---
+>  drivers/remoteproc/ti_k3_r5_remoteproc.c | 106 ++++++++++++++++++++++-
+>  1 file changed, 105 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/remoteproc/ti_k3_r5_remoteproc.c b/drivers/remoteproc/ti_k3_r5_remoteproc.c
+> index 8c9b7ae5d8b7..0ae0b66ec9eb 100644
+> --- a/drivers/remoteproc/ti_k3_r5_remoteproc.c
+> +++ b/drivers/remoteproc/ti_k3_r5_remoteproc.c
+> @@ -85,7 +85,9 @@ struct k3_r5_cluster {
+>   * @dev: cached device pointer
+>   * @rproc: rproc handle representing this core
+>   * @mem: internal memory regions data
+> + * @sram: on-chip SRAM memory regions data
+>   * @num_mems: number of internal memory regions
+> + * @num_sram: number of on-chip SRAM memory regions
+>   * @reset: reset control handle
+>   * @tsp: TI-SCI processor control handle
+>   * @ti_sci: TI-SCI handle
+> @@ -99,7 +101,9 @@ struct k3_r5_core {
+>  	struct device *dev;
+>  	struct rproc *rproc;
+>  	struct k3_r5_mem *mem;
+> +	struct k3_r5_mem *sram;
+>  	int num_mems;
+> +	int num_sram;
+>  	struct reset_control *reset;
+>  	struct ti_sci_proc *tsp;
+>  	const struct ti_sci_handle *ti_sci;
+> @@ -585,6 +589,18 @@ static void *k3_r5_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
+>  		}
 >  	}
+>  
+> +	/* handle any SRAM regions using SoC-view addresses */
+> +	for (i = 0; i < core->num_sram; i++) {
+> +		dev_addr = core->sram[i].dev_addr;
+> +		size = core->sram[i].size;
+> +
+> +		if (da >= dev_addr && ((da + len) <= (dev_addr + size))) {
+> +			offset = da - dev_addr;
+> +			va = core->sram[i].cpu_addr + offset;
+> +			return (__force void *)va;
+> +		}
+> +	}
+> +
+>  	/* handle static DDR reserved memory regions */
+>  	for (i = 0; i < kproc->num_rmems; i++) {
+>  		dev_addr = kproc->rmem[i].dev_addr;
+> @@ -1017,6 +1033,77 @@ static int k3_r5_core_of_get_internal_memories(struct platform_device *pdev,
+>  	return ret;
+>  }
+>  
+> +static int k3_r5_core_of_get_sram_memories(struct platform_device *pdev,
+> +					   struct k3_r5_core *core)
+> +{
+> +	struct device_node *np = pdev->dev.of_node;
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *sram_np;
+> +	struct resource res;
+> +	int num_sram;
+> +	int i, ret;
+> +
+> +	num_sram = of_property_count_elems_of_size(np, "sram", sizeof(phandle));
+> +	if (num_sram <= 0) {
+> +		dev_dbg(dev, "device does not use reserved on-chip memories, num_sram = %d\n",
+> +			num_sram);
+> +		return 0;
+> +	}
+> +
+> +	core->sram = kcalloc(num_sram, sizeof(*core->sram), GFP_KERNEL);
+> +	if (!core->sram)
+> +		return -ENOMEM;
+> +
+> +	for (i = 0; i < num_sram; i++) {
+> +		sram_np = of_parse_phandle(np, "sram", i);
+> +		if (!sram_np) {
+> +			ret = -EINVAL;
+> +			goto fail;
+> +		}
+> +
+> +		if (!of_device_is_available(sram_np)) {
+> +			of_node_put(sram_np);
+> +			ret = -EINVAL;
+> +			goto fail;
+> +		}
+> +
+> +		ret = of_address_to_resource(sram_np, 0, &res);
+> +		of_node_put(sram_np);
+> +		if (ret) {
+> +			ret = -EINVAL;
+> +			goto fail;
+> +		}
+> +		core->sram[i].bus_addr = res.start;
+> +		core->sram[i].dev_addr = res.start;
+> +		core->sram[i].size = resource_size(&res);
+> +		core->sram[i].cpu_addr = ioremap_wc(res.start,
+> +						    resource_size(&res));
+> +		if (!core->sram[i].cpu_addr) {
+> +			dev_err(dev, "failed to parse and map sram%d memory at %pad\n",
+> +				i, &res.start);
+> +			ret = -ENOMEM;
+> +			goto fail;
+> +		}
+> +
+> +		dev_dbg(dev, "memory    sram%d: bus addr %pa size 0x%zx va %pK da 0x%x\n",
 
-Nitpick: I think the brackets need to be removed to follow linux
-coding style.  With that:
+s/"memory    sram%d:..."/"memory sram%d:..."
 
-Reviewed-by: Peter Xu <peterx@redhat.com>
+With the above:
+Acked-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
--- 
-Peter Xu
+I am done reviewing this set.  Despite the significant amount of material to
+process and the comments here and there, I haven't found anything to really
+complain about.
 
+Thanks,
+Mathieu
+
+> +			i, &core->sram[i].bus_addr,
+> +			core->sram[i].size, core->sram[i].cpu_addr,
+> +			core->sram[i].dev_addr);
+> +	}
+> +	core->num_sram = num_sram;
+> +
+> +	return 0;
+> +
+> +fail:
+> +	for (i--; i >= 0; i--) {
+> +		if (core->sram[i].cpu_addr)
+> +			iounmap(core->sram[i].cpu_addr);
+> +	}
+> +	kfree(core->sram);
+> +
+> +	return ret;
+> +}
+> +
+>  static
+>  struct ti_sci_proc *k3_r5_core_of_get_tsp(struct device *dev,
+>  					  const struct ti_sci_handle *sci)
+> @@ -1048,7 +1135,7 @@ static int k3_r5_core_of_init(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct device_node *np = dev->of_node;
+>  	struct k3_r5_core *core;
+> -	int ret, ret1;
+> +	int ret, ret1, i;
+>  
+>  	core = devm_kzalloc(dev, sizeof(*core), GFP_KERNEL);
+>  	if (!core)
+> @@ -1125,10 +1212,23 @@ static int k3_r5_core_of_init(struct platform_device *pdev)
+>  		goto err_intmem;
+>  	}
+>  
+> +	ret = k3_r5_core_of_get_sram_memories(pdev, core);
+> +	if (ret) {
+> +		dev_err(dev, "failed to get sram memories, ret = %d\n", ret);
+> +		goto err_sram;
+> +	}
+> +
+>  	platform_set_drvdata(pdev, core);
+>  
+>  	return 0;
+>  
+> +err_sram:
+> +	for (i = 0; i < core->num_mems; i++) {
+> +		devm_iounmap(dev, core->mem[i].cpu_addr);
+> +		devm_release_mem_region(dev, core->mem[i].bus_addr,
+> +					core->mem[i].size);
+> +	}
+> +	devm_kfree(dev, core->mem);
+>  err_intmem:
+>  	ret1 = ti_sci_proc_release(core->tsp);
+>  	if (ret1)
+> @@ -1156,6 +1256,10 @@ static int k3_r5_core_of_exit(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	int i, ret;
+>  
+> +	for (i = 0; i < core->num_sram; i++)
+> +		iounmap(core->sram[i].cpu_addr);
+> +	kfree(core->sram);
+> +
+>  	for (i = 0; i < core->num_mems; i++) {
+>  		devm_release_mem_region(dev, core->mem[i].bus_addr,
+>  					core->mem[i].size);
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
