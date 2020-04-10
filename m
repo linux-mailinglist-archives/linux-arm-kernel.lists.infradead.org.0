@@ -2,94 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37A251A4490
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C12F91A4491
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 11:44:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eQJeIiiIdutSClIqeLM5n5jcyltRu1+TE558U/i736s=; b=flmJeb5T8klwlUrZK+hoEbpo5/
-	NzNFvZ5vlLCX87DByJ8perN+3f8qqNq4e/Q9ZTAk0TOlgVIOJ+b5OAdhsLkGZV2OqS3+5Pwfh1tLn
-	OTvKrFTGy7BuOrtrtpo/yNQeyMJsFzM1u4QAVULqQZcr82Q+hEFZRP9XAj6av8gssBzZr19D4BP5t
-	zFAmUGsCP6fv+fSbzSfX7+NpHjPMjI+H1N4DpBCWQw1181UbnDBuurdVXGrr8AujSXviQ7Ah0WI1J
-	lec/AFrDG1+axy9TjE2ZKHyK26kAQMiz9YmcB2IDobTHgDf9RmJpaDAQOCsHFMqUieguT2c00MLm1
-	09NtqsqQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jHcwhULV7o1VkQV13R7T4DEga/ZzyEJ6dOPsISf8uk4=; b=enyiZwAHIPOSxy
+	+Vn25ACvrv/l+O1ZfkkSINMWnOPXCG9aKTxtAVJnJ3/z7N1WDnOKrX9wpThzSqJdlSWByhEHKl+dP
+	AyphK0n04CCagKv/EJFNVjgSIjbxUeXpynOqkjoEW0WKGjn3FjS4iTPrEhUHez5dTJzNHemw2Vnsw
+	BmrJoNAwgVopjHq2GH99iUtfU6YRSCt4KQn2zSn546yK29w1c9JvZNLYMwbi+zfcJkwVoF139pv98
+	vKF+ZSCpYa6zVHxhiQMKHKRnqbKc+ZU9rzTBctnlecxqmNoVa/LBM7BugjYbFnfZcESFR/y0dcZ4n
+	Qzi9pXdD/95I/uYplVow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMqCV-0003iJ-F7; Fri, 10 Apr 2020 09:43:51 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jMqD1-00041j-Ja; Fri, 10 Apr 2020 09:44:23 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMqCQ-0003hu-1m
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:43:47 +0000
-Received: by mail-pl1-x641.google.com with SMTP id m16so515462pls.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 02:43:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=F8UqKiWgsSHiMoGQyCyV9GY+lAN74tpZIBErevA5oYw=;
- b=XgBxphpJWngdfKxnfX8bAaKwdG2vny8asgZwyRWTHV/jfBABLlC2MHjXHJy7fU6dKZ
- mSEouQatBheEvxHnSI8XN9x2dDyvuvMDKlJWmt3lT4v2+AdcFTIe7hls6zTCik+qMjHP
- e8NgjTFGyq7/WP3uQ0i+o0QY6TWLN0AUMfbtMB96kwfnHxJ9kOo+WJrUi0HxkluS/iCt
- s0Ki/JHJlpIALiiwpMJR4NMUfAicgZBOaiOQnOybPUrGHWIQBpT7DJfgQotRoV/XNPPU
- 2Q0ljXPcL3T2bdrJtHEF/Ysiz5SWP513TgiUOXtqX6rnZTqrfb+CZ8bJTHkNJtLXC3sa
- 2UiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=F8UqKiWgsSHiMoGQyCyV9GY+lAN74tpZIBErevA5oYw=;
- b=TJ1XgBiThmAqg7Vto/BjYnQXvjzStkR5mlhJKg/Z6Jz/bMiOzDb3IbKCdzEPTYjlZ6
- BrqNL1D2cNvFwtDtEo2bJY7Z2N3K9tZvDBkUd4p6fBOMLJKa0fyOtvXkL8tk52XmbBLf
- bE5ByCx5/q4+lmqGfXMFIU3BiAVmZIy1NMa2MOm/5Q7qbOn3gD/ksHhaVWEElFothQVQ
- WINaitgx91m9SqrPltf7U5HHo2Wnlj5G1/KYPAsa1bsOQRrUgnpfDoG8sykco9NfY96I
- /T462u2WUZsa/BkLYzdIiIloJQ54yAq/3FA7qQeXHq/Xj7gY6Z1Aa2dvBNe0ikCgDDXy
- DSeA==
-X-Gm-Message-State: AGi0PubPQmVZ8dFN+D8XO6rjkOgkjNOy6nfnGN4LySzrrHRtgi2auQjM
- z5yXwff5IkymydYSQR5vMV8=
-X-Google-Smtp-Source: APiQypJ+LbV+D+G1TrlHUJ3PKuk1FxsEEVKE0QOuRP0/L2bFIcyjzftDIsBNpq5Oyg1lvchBoRyGAQ==
-X-Received: by 2002:a17:902:8d91:: with SMTP id
- v17mr3700951plo.53.1586511823774; 
- Fri, 10 Apr 2020 02:43:43 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:991:ccd7:9dbb:79c0:fda5:adef])
- by smtp.gmail.com with ESMTPSA id bt19sm1305507pjb.3.2020.04.10.02.43.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 02:43:43 -0700 (PDT)
-From: Aishwarya R <aishwaryarj100@gmail.com>
-To: alexandre.belloni@bootlin.com
-Subject: [PATCH] iio: adc: at91-adc: Use devm_platform_ioremap_resource
-Date: Fri, 10 Apr 2020 15:13:09 +0530
-Message-Id: <20200410094324.4334-1-aishwaryarj100@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200409151125.32677-1-aishwaryarj100@gmail.com>
-References: <20200409151125.32677-1-aishwaryarj100@gmail.com>
+ id 1jMqCo-0003z9-4f
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 09:44:13 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 58D42A4F5147C91BC171;
+ Fri, 10 Apr 2020 17:44:05 +0800 (CST)
+Received: from [127.0.0.1] (10.74.184.86) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Fri, 10 Apr 2020
+ 17:43:57 +0800
+Subject: Re: Question about SEA handling process happened in user space
+To: James Morse <james.morse@arm.com>
+References: <5E81EFCD.6020605@huawei.com>
+ <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E8587A3.6030101@huawei.com>
+ <558ffd42-74d7-e364-2b79-93ab0998ab6e@arm.com> <5E8EE845.8090406@huawei.com>
+ <66db5a6a-e68b-00b7-6a78-2c8cd9e63aab@arm.com>
+From: Xiaofei Tan <tanxiaofei@huawei.com>
+Message-ID: <5E903FDD.4080106@huawei.com>
+Date: Fri, 10 Apr 2020 17:43:57 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.5.1
+MIME-Version: 1.0
+In-Reply-To: <66db5a6a-e68b-00b7-6a78-2c8cd9e63aab@arm.com>
+X-Originating-IP: [10.74.184.86]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_024346_091859_EE082E81 
-X-CRM114-Status: UNSURE (   7.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200410_024411_149671_46E104B4 
+X-CRM114-Status: GOOD (  21.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [aishwaryarj100[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [aishwaryarj100[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,25 +67,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Kefeng Wang <wangkefeng.wang@huawei.com>, Lars-Peter Clausen <lars@metafoo.de>,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>, aishwaryarj100@gmail.com,
- Jonathan Cameron <jic23@kernel.org>
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use helper function to simply the code.
-The devm_platform_ioremap_resource() helper in the
-kernel which helps to make code cleaner a tad by
-replacing few "boilerplate" lines of code with a single line.
+Hi James,
+
+On 2020/4/9 22:28, James Morse wrote:
+> On 09/04/2020 10:17, Xiaofei Tan wrote:
+>> On 2020/4/8 0:37, James Morse wrote:
+>>> On 02/04/2020 07:35, Xiaofei Tan wrote:
+>>>> On 2020/3/31 0:49, James Morse wrote:
+>>>>> If the CPU doesn't tell us the address, we can't tell user-space what it is. The
+>>>>> alternative is to upgrade to SIGKILL in that case.
+>>>>>
+>>>>>
+>>>>> If you see this instead of the address provided via firmware-first, there is a
+>>>>> series to improve that here:
+>>>>> https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
+>>>>>
+>>>>> (We skip this signal code of APEI promises it did all the work. This lets you
+>>>>> take the signal from memory_failure() instead, which may have better information.)
+>>>
+>>>> There may be an competition issue.
+>>>> APEI run memory_failure() in an bottom half for memory errors. Then it may be not finished
+>>>> before here SEA handling end, and application process may back to run.
+> 
+>>> With that series, it runs in process-context as task-work. memory_failure() needs to
+>>> sleep, so it has to run in process-context. 
+>>
+>>
+>>> Doing it as task-work means it runs before the thread returns to user-space.
+>>
+>> Sorry, i don't understand this. i thought the task-work need to reschedule, and current thread should
+>> have returned to user-space before it.
+> 
+> ret_to_user has a loop around do_notify_resume(), if the _TIF_NOTIFY_RESUME flag is set
+> and we call tracehook_notify_resume() which ends up in task_work_run()...
+> 
+> That TIF flag effectively prevents this thread returning to user-space until that task
+> work has run.
+> 
+
+Got it. This function is great.
+BTW, i have not found the place of setting the flag _TIF_NOTIFY_RESUME. Is it set by default for each thread?
+
+> 
+>> BTW, What context synchronous exception abort is? I thought it was process-context.
+> 
+> It depends what you interrupted.
+> 32bit had different CPU modes for different contexts, we don't have that in 64bit. Instead
+> we mask asynchronous interrupts, and tinker with the preempt count to track the context.
+> Synchronous exceptions can't be masked, so they happen in whatever context you were
+> already in.
+> This means the exception handlers have to be be prepared for each eventuality.
+> (which is why that code is starting to look complex)
+> 
+
+OK.
+
+> 
+>> Because in_interrupt() return false called in do_sea().
+> 
+> If you took the exception from EL0, or EL1 process context, yes. If you took the exception
+> from an IRQ handler, in_interrupt() would return true.
+> 
+
+Got it.
+
+> 
+>>> If another thread in the same process accesses the affected memory, I'd expect to take a
+>>> second external abort. If another process had the page mapped, it could access the
+>>> affected memory, again taking an external abort.
+> 
+>> Yes, it is hard to avoid another thread to access the affected memory.
+>> I just worry the same thread access it again.
+> 
+> This is the race that that series fixes.
+> It can't happen with mainline as the arch code unconditionally signals the affected
+> process, which was the pre-RAS behaviour.
+> 
+
+OK
+
+>>> These two could happen while the first CPU was in firmware generating the CPER records, so
+>>> its not a race we can fix. It should be harmless, the recovery action is the same, its
+>>> just the error counters that count more events than errors. If you actually see it happen,
+>>> we can try and make it smaller...
+> 
+>> Hmm, maybe this double SEA handling is an solution.
+> 
+> It assumes you get a second external-abort. We know this thread is affected, and will try
+> and consume the error again if we restart it. We shouldn't restart it until we've given
+> the recovery our best shot.
+> Letting it loose is a poor choice if you have any kind of threshold for error-counts. They
+> may jump NR_CPUs at a time until every CPU is waiting in memory_failure()...
+> 
+
+Got it. Thanks.
+
+> 
+> Thanks,
+> 
+> James
+> 
+> .
+> 
+
+-- 
+ thanks
+tanxiaofei
+
 
 _______________________________________________
 linux-arm-kernel mailing list
