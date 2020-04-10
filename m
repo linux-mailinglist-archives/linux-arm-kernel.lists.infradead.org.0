@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F31221A4915
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10BE81A4960
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 19:39:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yyE/sx9KxkX1iVLEMLmNHBylKJr9DlhBa9XTgxJh6RE=; b=SS+0xhtt2bAoRY
-	mF/4e2RQ7A5U49KvcsjpQx8RGesxUekJaNPeYpCrTf/BQ+YF6n5/FJsvodnklqYhPAldx0fCsSAc0
-	tHQ9H+FTqGWF0LFDyA7UCCT/IGN21zljw4ZF6Tzbtloe27tHp5mVHIcqOaVo6UMcH2Qfpf6BbIn28
-	gXwZOQv8BEHpFe0oz+lRe3YbS6mgVuBRBpo1ycVzJgDA4kLqsNImQWSHklEYLcMlAzUBhuLj/MxKL
-	2WZmDnHyVgzjIlRw7y+H9bO7+iZVRN2xPMSxWkEiPO3fttTtyaCHuBHl8UvDzDJIiuAyoSnSEMIOr
-	hrDpUdng7+PytIgveLhA==;
+	List-Owner; bh=0s27OOzkCPxmpi8OtQSy/piOSi2eW5QRWXQnRc1s2RM=; b=MFKn7KW+EtUtUV
+	UQUN+yRoBSvyva+9z0IS4mFa/GnXXipJvhA4rgUJk9sr+YLoeUVUqAeaJqLVHuDbtXQjwxLQFidS8
+	BsthxtyMwzuM2n9YQQkl/SGbSJvlbnYM0PFUwfUkXI4YHpTulHqI4wqovf7/b7IeqxjWsv8s2vqfo
+	en/UndwacmRYwnt3hAjPmkDb9CJtlhuAqtEgjTEQXzzVwrj7DQMEV0HHaOPi6GLBpY256QZ7yzpy8
+	oBbmMvkXQiqn4oBNt8g/P+wKtW3aExU1nSq7HRDf7W11Aye/MHtCVfCD8CMtNYMuvnLmj1DJ67N87
+	4os1NWj2AKCrZOSw8O4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMxaS-00063H-CU; Fri, 10 Apr 2020 17:37:04 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1jMxd6-0007GL-Oo; Fri, 10 Apr 2020 17:39:48 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMxaG-00061C-Oi; Fri, 10 Apr 2020 17:36:54 +0000
-Received: by mail-oi1-f193.google.com with SMTP id k133so1241817oih.12;
- Fri, 10 Apr 2020 10:36:49 -0700 (PDT)
+ id 1jMxcm-000724-Ip
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 17:39:30 +0000
+Received: by mail-oi1-f195.google.com with SMTP id k9so1961710oia.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 10 Apr 2020 10:39:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QBEtm9wj9+GCsvuO7AqmsQRpKjkshfnjy93bDn3pJjg=;
- b=mrKwzGO4zR4LmE3PcVo4aUvamCnjP1rJHqjjVMyBBZ+WQ9vluI9a2adBdf8IbcM33J
- awQCGIJ2ayP1ubiiYw+syfp0UtyFNfdnrdbCzR6gEY7VyAeuXMwV8NcDTImVFNh6ruGD
- 23DM1g1k5KXTO9DWOqT4HgtstyjoCxOrc9DhKXMd5+ibFyRlufQuV827EczC+ak9wIlh
- qXpudfGdixJbT4Ko9khJQe5QGiI3rMsBlVqM14YU8evFzOjKssG5T7dImW5DBzQguexU
- CcWf9oxD6jv2cowaAf+pN+okBWIyDYEtFtddZgI1O3IIQOTz8hXhCZSBdtezkykP0FM3
- O49g==
-X-Gm-Message-State: AGi0Pub56CdbrTbL/jprHipwm5uSk9R6NIwgnsBvN4fHL16gfGZLvifB
- t19XgRe9psqpwBXQ9mvoyQ==
-X-Google-Smtp-Source: APiQypJvIzXiGQUkFI9BjUhby/lCJa4wLGEtjD/gV8K12mkSAWYPQSvkgPt6INjIArj9sD7aK4V+Kg==
-X-Received: by 2002:aca:34c6:: with SMTP id b189mr4027120oia.63.1586540208773; 
- Fri, 10 Apr 2020 10:36:48 -0700 (PDT)
+ bh=UVlxIE0CSKdKwuyXIBQDvbaJJFV3N43f9jUNTBByOKM=;
+ b=gDxcVT0z5nVJeqcI/gRyQikuMNlFpz3V2gT6Ah933olscIA0I1RNZOTKOS7rDhfvkt
+ omPQZKuqNE3OinZcmGSrgjLMtqXRNCjkRPX3mEyOrPb20CGrTnKnZMW6JRQW+PH6UyY5
+ 2f9Ct7EbofFb23GXRajY7ZdwltcYEIUgSzKXA576OajTVYejuhmBlgZPj7TsiiS+1ky1
+ 8xepbglqRmtQxpqXMdjTebvY58tEyuIHR9M/ZTqYE4RdVhD23fmQPwDYbzj8q2IgSaft
+ At7v/Q9JuqLOqrQ0GG3PYIJfqgePNVFQBnpU5wTWvWmIrxM++jr026ShdtzORJQAN537
+ jTuA==
+X-Gm-Message-State: AGi0Puasg5sDzM5B16KXSfOpUVgWOICSeLgsoiQVqDfMWjFJNdSgPQAh
+ dI0G+1Yj//6KWzKv1J6Lzg==
+X-Google-Smtp-Source: APiQypIbEr9eAuDn8ap/2ErWe8F05Nq4R1u7xjJ+3zCkjJKKNwFWVUzijYYdI42B6WOSqS3yiJsmAw==
+X-Received: by 2002:a05:6808:1c1:: with SMTP id
+ x1mr3845478oic.55.1586540363863; 
+ Fri, 10 Apr 2020 10:39:23 -0700 (PDT)
 Received: from rob-hp-laptop (ip-99-203-29-27.pools.cgn.spcsdns.net.
  [99.203.29.27])
- by smtp.gmail.com with ESMTPSA id q187sm1541807oih.48.2020.04.10.10.36.40
+ by smtp.gmail.com with ESMTPSA id d21sm1480776otp.39.2020.04.10.10.39.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 10:36:47 -0700 (PDT)
-Received: (nullmailer pid 27880 invoked by uid 1000);
- Fri, 10 Apr 2020 17:25:27 -0000
-Date: Fri, 10 Apr 2020 12:25:27 -0500
+ Fri, 10 Apr 2020 10:39:23 -0700 (PDT)
+Received: (nullmailer pid 6854 invoked by uid 1000);
+ Fri, 10 Apr 2020 17:33:24 -0000
+Date: Fri, 10 Apr 2020 12:33:24 -0500
 From: Rob Herring <robh@kernel.org>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V4, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
-Message-ID: <20200410172527.GA24529@bogus>
-References: <20200330123634.363-1-dongchun.zhu@mediatek.com>
- <20200330123634.363-2-dongchun.zhu@mediatek.com>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH v2 2/2] powerpc: Remove Xilinx PPC405/PPC440 support
+Message-ID: <20200410173324.GA28512@bogus>
+References: <cover.1585575111.git.michal.simek@xilinx.com>
+ <9c3e02ffa9812c6f046708b45932d40f33e8817a.1585575111.git.michal.simek@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200330123634.363-2-dongchun.zhu@mediatek.com>
+In-Reply-To: <9c3e02ffa9812c6f046708b45932d40f33e8817a.1585575111.git.michal.simek@xilinx.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_103652_801476_1AB72802 
-X-CRM114-Status: GOOD (  16.46  )
+X-CRM114-CacheID: sfid-20200410_103928_654039_601D014A 
+X-CRM114-Status: GOOD (  15.71  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
@@ -77,7 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,126 +94,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com,
- andriy.shevchenko@linux.intel.com, tfiga@chromium.org, louis.kuo@mediatek.com,
- sj.huang@mediatek.com, linux-mediatek@lists.infradead.org,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "Desnes A. Nunes do Rosario" <desnesn@linux.ibm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-fbdev@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Paul Mackerras <paulus@samba.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sasha Levin <sashal@kernel.org>,
+ sfr@canb.auug.org.au, Jonathan Corbet <corbet@lwn.net>, maz@kernel.org,
+ Masahiro Yamada <masahiroy@kernel.org>, YueHaibing <yuehaibing@huawei.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Allison Randal <allison@lohutok.net>,
+ Matt Porter <mporter@kernel.crashing.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Andrew Donnellan <ajd@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Alistair Popple <alistair@popple.id.au>, linuxppc-dev@lists.ozlabs.org,
+ Nicholas Piggin <npiggin@gmail.com>, Alexios Zavras <alexios.zavras@intel.com>,
+ git@xilinx.com, Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Dmitry Vyukov <dvyukov@google.com>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ monstr@monstr.eu, Wei Hu <weh@microsoft.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Enrico Weigelt <info@metux.net>,
+ "David S. Miller" <davem@davemloft.net>,
+ Thiago Jung Bauermann <bauerman@linux.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 30, 2020 at 08:36:33PM +0800, Dongchun Zhu wrote:
-> This patch is to add the Devicetreee binding documentation and
-> MAINTAINERS entry for dw9768 actuator.
+On Mon, Mar 30, 2020 at 03:32:17PM +0200, Michal Simek wrote:
+> The latest Xilinx design tools called ISE and EDK has been released in
+> October 2013. New tool doesn't support any PPC405/PPC440 new designs.
+> These platforms are no longer supported and tested.
 > 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> PowerPC 405/440 port is orphan from 2013 by
+> commit cdeb89943bfc ("MAINTAINERS: Fix incorrect status tag") and
+> commit 19624236cce1 ("MAINTAINERS: Update Grant's email address and maintainership")
+> that's why it is time to remove the support fot these platforms.
+> 
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> Acked-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 62 ++++++++++++++++++++++
->  MAINTAINERS                                        |  7 +++
->  2 files changed, 69 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> new file mode 100644
-> index 0000000..8a353dc
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> @@ -0,0 +1,62 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (c) 2020 MediaTek Inc.
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/i2c/dongwoon,dw9768.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Dongwoon Anatech DW9768 Voice Coil Motor (VCM) Device Tree Bindings
-> +
-> +maintainers:
-> +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> +
-> +description: |-
-> +  The Dongwoon DW9768 is a single 10-bit digital-to-analog (DAC) converter
-> +  with 100 mA output current sink capability. VCM current is controlled with
-> +  a linear mode driver. The DAC is controlled via a 2-wire (I2C-compatible)
-> +  serial interface that operates at clock rates up to 1MHz. This chip
-> +  integrates Advanced Actuator Control (AAC) technology and is intended for
-> +  driving voice coil lenses in camera modules.
-> +
-> +properties:
-> +  compatible:
-> +    const: dongwoon,dw9768
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  vin-supply:
-> +    description:
-> +      Definition of the regulator used as I2C I/O interface power supply.
-> +    maxItems: 1
+> Changes in v2:
+> - Based on my chat with Arnd I removed arch/powerpc/xmon/ changes done in
+>   v1 to keep them the same as before. (kbuild reported some issues with it
+>   too)
+> 
+>  Documentation/devicetree/bindings/xilinx.txt | 143 ------
 
-You can drop this. *-supply is always a single entry.
+Acked-by: Rob Herring <robh@kernel.org>
 
-> +
-> +  vdd-supply:
-> +    description:
-> +      Definition of the regulator used as VCM chip power supply.
-> +    maxItems: 1
-
-Same here.
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - vin-supply
-> +  - vdd-supply
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    i2c2: i2c@11009000 {
-
-i2c {
-
-> +        clock-frequency = <400000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        dw9768: camera-lens@c {
-> +            compatible = "dongwoon,dw9768";
-> +            reg = <0x0c>;
-> +
-> +            vin-supply = <&mt6358_vcamio_reg>;
-> +            vdd-supply = <&mt6358_vcama2_reg>;
-> +        };
-> +    };
-> +
-> +...
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 38fe2f3..5e124d2 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -5134,6 +5134,13 @@ S:	Maintained
->  F:	drivers/media/i2c/dw9714.c
->  F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9714.txt
->  
-> +DONGWOON DW9768 LENS VOICE COIL DRIVER
-> +M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
-> +L:	linux-media@vger.kernel.org
-> +S:	Maintained
-> +T:	git git://linuxtv.org/media_tree.git
-> +F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> +
->  DONGWOON DW9807 LENS VOICE COIL DRIVER
->  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
->  L:	linux-media@vger.kernel.org
-> -- 
-> 2.9.2
+>  Documentation/powerpc/bootwrapper.rst        |  28 +-
+>  MAINTAINERS                                  |   6 -
+>  arch/powerpc/Kconfig.debug                   |   2 +-
+>  arch/powerpc/boot/Makefile                   |   7 +-
+>  arch/powerpc/boot/dts/Makefile               |   1 -
+>  arch/powerpc/boot/dts/virtex440-ml507.dts    | 406 ----------------
+>  arch/powerpc/boot/dts/virtex440-ml510.dts    | 466 -------------------
+>  arch/powerpc/boot/ops.h                      |   1 -
+>  arch/powerpc/boot/serial.c                   |   5 -
+>  arch/powerpc/boot/uartlite.c                 |  79 ----
+>  arch/powerpc/boot/virtex.c                   |  97 ----
+>  arch/powerpc/boot/virtex405-head.S           |  31 --
+>  arch/powerpc/boot/wrapper                    |   8 -
+>  arch/powerpc/configs/40x/virtex_defconfig    |  75 ---
+>  arch/powerpc/configs/44x/virtex5_defconfig   |  74 ---
+>  arch/powerpc/configs/ppc40x_defconfig        |   8 -
+>  arch/powerpc/configs/ppc44x_defconfig        |   8 -
+>  arch/powerpc/include/asm/xilinx_intc.h       |  16 -
+>  arch/powerpc/include/asm/xilinx_pci.h        |  21 -
+>  arch/powerpc/kernel/cputable.c               |  39 --
+>  arch/powerpc/platforms/40x/Kconfig           |  31 --
+>  arch/powerpc/platforms/40x/Makefile          |   1 -
+>  arch/powerpc/platforms/40x/virtex.c          |  54 ---
+>  arch/powerpc/platforms/44x/Kconfig           |  37 --
+>  arch/powerpc/platforms/44x/Makefile          |   2 -
+>  arch/powerpc/platforms/44x/virtex.c          |  60 ---
+>  arch/powerpc/platforms/44x/virtex_ml510.c    |  30 --
+>  arch/powerpc/platforms/Kconfig               |   4 -
+>  arch/powerpc/sysdev/Makefile                 |   2 -
+>  arch/powerpc/sysdev/xilinx_intc.c            |  88 ----
+>  arch/powerpc/sysdev/xilinx_pci.c             | 132 ------
+>  drivers/char/Kconfig                         |   2 +-
+>  drivers/video/fbdev/Kconfig                  |   2 +-
+>  34 files changed, 7 insertions(+), 1959 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
