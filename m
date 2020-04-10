@@ -2,61 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D27BF1A3DAB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 03:19:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D4051A3DCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 Apr 2020 03:44:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ctyiq/YqD2RlGhW1syDuLQGQo1OVzy6p3TgxHkNYpCk=; b=duz
-	RsZLwYyP4F6oJ+53f7/1J+8Di/pYp89Q/cM1gXi7bqQnmAVFRacjR7oOCJf8/iCSeQdV1ABIl7uQT
-	OWJOU/EDcwuQnoSHh9pctByqvWZjI5DE91EqfGi5DeZWkvPkJuInOO7ZCfw1Prs67v6EolTLUfc0k
-	EZkqUoGsGBHQFO7fgm+lw6vjSBidAPwfX1IC8eF5cc/teauH2RhTxn3IrD/35DrtOeBZA8CorG42B
-	46E+e9DYLZCsLMigVT6tE6RE2JMQU8fY0st7uaU45a17+EOyDLXYQsrAT+Sq8ytoSvGYxWvUHeSwL
-	D+fKIJYKhdoDGyg7Flr2YFRxEA5okfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Z01IsTm4fy5BSwEE/gX7ZUsYMdVXdTj51GO9RHlWbc4=; b=gz3tD107FQ+bwofUfGuYm1Xxp
+	RpVP1V93EZR2ViP/XGNUNUztx+YpToDPfbtpTacJeg9gTL4ipCg8eeLpcgcizb1lXOTUOSKIJ4QJ9
+	GJRrtcn9cPMz+SgrjcpBnXH9AGR9jpb2pqv4P+yE4wx1eWlZWw62+iKE017u4hKbh34Oy/+G0iAkf
+	l/IOJCz/cyX2DLkIDlzjRdF3BSWrqw2oaUo0Z0dn3KRZXMhH7NUQguu4WpeZLVnOdvYPp69krZqd3
+	paNrxyUO2mvudje2J7/CG2cwByg4torWajfEIr8uGW9TgmzF3dM1mMl27RbqS1LzXjMi48vgpx/Sp
+	9oh6PHr9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMiJs-0003h3-5M; Fri, 10 Apr 2020 01:18:56 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jMiiT-0001OP-9w; Fri, 10 Apr 2020 01:44:21 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMiJk-0003ga-3S
- for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 01:18:49 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 88AF32006B9;
- Fri, 10 Apr 2020 03:18:43 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E6F47200531;
- Fri, 10 Apr 2020 03:18:36 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B21B1402B6;
- Fri, 10 Apr 2020 09:18:28 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, robh+dt@kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2] dt-bindings: thermal: Convert i.MX8MM to json-schema
-Date: Fri, 10 Apr 2020 09:10:44 +0800
-Message-Id: <1586481044-19283-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jMiiK-0001GA-PV
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 Apr 2020 01:44:15 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 6B2A413EDA8019B845EB;
+ Fri, 10 Apr 2020 09:43:56 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.190) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0;
+ Fri, 10 Apr 2020 09:43:50 +0800
+Subject: Re: [RFC PATCH v2] arm64: cpufeatures: add support for tlbi range
+ instructions
+From: Hanjun Guo <guohanjun@huawei.com>
+To: <catalin.marinas@arm.com>, Rob Herring <robh@kernel.org>,
+ <Anna.Chen@arm.com>, 'Matteo Carlini' <Matteo.Carlini@arm.com>
+References: <5DC960EB.9050503@huawei.com>
+ <20191111132716.GA9394@willie-the-truck> <5DC96660.8040505@huawei.com>
+ <d4542758f83b3df3ab391341499fecfb@www.loen.fr>
+ <c9dfb341-9d14-1a62-0c34-6ec8bd9b4c55@huawei.com>
+ <e6d2ad1c5392c2c3503ed8bb7560e04f@www.loen.fr>
+ <3b833c82-2c1b-462a-f06f-d4c8b373dac1@huawei.com>
+Message-ID: <b24f3c62-128c-c4b2-e1d3-d6ae2162c754@huawei.com>
+Date: Fri, 10 Apr 2020 09:43:49 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <3b833c82-2c1b-462a-f06f-d4c8b373dac1@huawei.com>
+Content-Language: en-GB
+X-Originating-IP: [10.173.220.190]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_181848_415662_F66E61E6 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200409_184413_813974_7B83704E 
+X-CRM114-Status: GOOD (  12.12  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,119 +72,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, wanghuiqiang <wanghuiqiang@huawei.com>,
+ suzuki.poulose@arm.com, Marc Zyngier <maz@kernel.org>,
+ Zhenyu Ye <yezhenyu2@huawei.com>, Linuxarm <linuxarm@huawei.com>,
+ xiexiangyou@huawei.com, Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ tangnianyao@huawei.com, Will
+ Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ qiuzhenfa@hisilicon.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX8MM thermal binding to DT schema format using json-schema
+Hi ARM folks,
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-Changes since V1:
-	- Add description to mention that i.MX8MM thermal driver supports
-	  both i.MX8MM(1 sensor) and i.MX8MP(2 sensors).
-	- Remove ./thermal.txt reference.
----
- .../devicetree/bindings/thermal/imx8mm-thermal.txt | 15 ------
- .../bindings/thermal/imx8mm-thermal.yaml           | 62 ++++++++++++++++++++++
- 2 files changed, 62 insertions(+), 15 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
- create mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+On 2019/11/20 9:29, Hanjun Guo wrote:
+>>
+>> I also wonder if the ARMv8.4-TTL extension (which I have patches for in
+>> the nested virt series) requires the same kind of treatment (after all,
+>> it has an implicit range based on the base granule size and level).
+>>
+>> In any way, this requires careful specification, and I don't think
+>> we can improvise this on the ML... ;-)
+> 
+> Sure :), the good news is that ARM officially announced will be
+> working with Huawei again.
+> 
+> So if I understand your point correctly, we need steps to take:
+>   - ARM spec needs to make TIBi by range crystal clear and being
+>     written down in the spec;
+>   - Firmware description of supporting TLBi by range in system level
+>     for both FDT and ACPI;
+>   - Then upstream the code.
 
-diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
-deleted file mode 100644
-index 3629d3c..0000000
---- a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
-+++ /dev/null
-@@ -1,15 +0,0 @@
--* Thermal Monitoring Unit (TMU) on Freescale i.MX8MM SoC
--
--Required properties:
--- compatible : Must be "fsl,imx8mm-tmu" or "fsl,imx8mp-tmu".
--- reg : Address range of TMU registers.
--- clocks : TMU's clock source.
--- #thermal-sensor-cells : Should be 0 or 1. See ./thermal.txt for a description.
--
--Example:
--tmu: tmu@30260000 {
--	compatible = "fsl,imx8mm-tmu";
--	reg = <0x30260000 0x10000>;
--	clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
--	#thermal-sensor-cells = <0>;
--};
-diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
-new file mode 100644
-index 0000000..71807e5
---- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
-@@ -0,0 +1,62 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/thermal/imx8mm-thermal.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP i.MX8M Mini Thermal Binding
-+
-+maintainers:
-+  - Anson Huang <Anson.Huang@nxp.com>
-+
-+description: |
-+  i.MX8MM has TMU IP to allow temperature measurement, there are
-+  currently two distinct major versions of the IP that is supported
-+  by a single driver. The IP versions are named v1 and v2, v1 is
-+  for i.MX8MM which has ONLY 1 sensor, v2 is for i.MX8MP which has
-+  2 sensors.
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - items:
-+          - enum:
-+              - fsl,imx8mm-tmu
-+              - fsl,imx8mp-tmu
-+  reg:
-+    description: |
-+      Address range of TMU registers.
-+    maxItems: 1
-+  clocks:
-+    description: |
-+      TMU's clock source.
-+    maxItems: 1
-+
-+  "#thermal-sensor-cells":
-+    description: |
-+      Number of cells required to uniquely identify the thermal
-+      sensors, 0 for ONLY one sensor and 1 for multiple sensors.
-+    enum:
-+      - 0
-+      - 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - '#thermal-sensor-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx8mm-clock.h>
-+
-+    tmu: tmu@30260000 {
-+         compatible = "fsl,imx8mm-tmu";
-+         reg = <0x30260000 0x10000>;
-+         clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
-+         #thermal-sensor-cells = <0>;
-+    };
-+
-+...
--- 
-2.7.4
+Do we have update here? I noticed that the TLBI by rang for SMMU is
+merged for upstream from Rob, any plan or progress for the CPU side?
+
+Sorry to ping you on the mailling list, our upcoming new chip has
+this feature and it's good to enable it, so it's a bit urgent for us.
+
+Best regards,
+Hanjun
 
 
 _______________________________________________
