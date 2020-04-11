@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E5F01A4EAD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 09:46:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B99321A4EA5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 09:45:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9TUAamSTOv34uR8bY8gKfFrOI0wblZXFKcBfDpOVb0k=; b=E1DfifX1jgskKd
-	QD8WQvdgj/elexbSuQzaoRGUaGEx9mJ2s/6CtU9nKVQjB+6Z0ToAW7nE9jr0WBzt6kITedWbUdX8F
-	01bzx7v6uglL3XDBr6Y7Qp8CcwEZctjvthSbxnV6XBEJDfpi1R71tTVDQVK+fkGPqphSR39TkTT4h
-	rVhEK4lr2PVDXpixL7QI3qnzpDJ9XYldqKe9VUwghX1OAyeBW2ODvYo+Ivm8spWdtHplF5AtKl2cX
-	IqqEcJcTu36OvQfVQcouAuM4O0kxFEAeYJmefQRevCtpBVkgA8TAj//kswcwWYPgvjOTSCqA7+1UE
-	q3XDO4UhkcCVUDg/XTOQ==;
+	List-Owner; bh=Z/vSE+tOK9YgGd7rcU05DoON6by6S05YjGymCOjWsRc=; b=hCCQp+Qf+bNpxK
+	CBXzG0vDZLvEJBhietG3XwI1ZSny1VIZZSzBajJnJFxMnDv1KuyyPEoxTOmQJHQE99/C4U/xbJTQj
+	ahbEHVjPbIHa5kCxXy8q2snsBr+teZCACqCI0nskpqFgtvFvUjL8Dh61jR2A0dEE7nSXvBnP1dpSs
+	sezrH68b0XOpgTG3+bmfZWSYuwvNRT/31aRaXKGkc+mTnjTHFp5IavEbIgAGPEDmq5aNCjIersLFh
+	Ru90iAn+jHyrBUjIH/sSragrRkIB9DormKeDRWOwNCHDOV1VzW2U7OxllpssthOqcf+xT/4q+Z1p1
+	UW0gfZFyAIDxsL+tyI5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNAqG-0003Qn-VS; Sat, 11 Apr 2020 07:46:16 +0000
+	id 1jNAot-0008A5-Jz; Sat, 11 Apr 2020 07:44:51 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNAoj-00086p-Je; Sat, 11 Apr 2020 07:44:42 +0000
-X-UUID: b282d628fb9244f685179f65f835a7ce-20200410
+ id 1jNAog-00086p-Mv; Sat, 11 Apr 2020 07:44:40 +0000
+X-UUID: 4fb5f90a952e4e1482dd177e76a1263a-20200410
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=oXyxi7IUgBNHR+VYtiCeIx+6ezK7zPDvVd2okeNBTBs=; 
- b=eY4Ajc6lPfU6UoW6d+Zgyi8zWN6CEIVkaop2Eb0I4YNX1i8E+kxlL5OeFlEmVxZNscTTrraLVNIpIa3K2eLXQFE3Q0/MKnPBP0qR1m854F1ZXCubDeHJgeK2zXNdpVVZCgtIOn1Mm0Y5n8KI/MwI+SgW4eSDXODvKmm+1gatLQQ=;
-X-UUID: b282d628fb9244f685179f65f835a7ce-20200410
+ bh=iR0rPL64FU19qOW727A31bTZVI8PeoEj1NeCit81CAU=; 
+ b=rBI0rBbbrgS5oZTIk478/NoGMQpWw1FTo0Jm9EeHGxFaMXvD5IW1JLYK7PZYgS+zh63Nn7dsxZpJw1jwl3Brp324WcO+9vcEkVKBQrCm7ZSpO0UKgRmnLTQouV+Fel0yoO+EqIOwE8qAC3Y5LY5xcuhnLGXVw6OZwSpb2VKWkXA=;
+X-UUID: 4fb5f90a952e4e1482dd177e76a1263a-20200410
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1749055299; Fri, 10 Apr 2020 23:44:33 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ with ESMTP id 92068835; Fri, 10 Apr 2020 23:44:33 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 11 Apr 2020 00:44:31 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ 15.0.1497.2; Sat, 11 Apr 2020 00:44:32 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
  Sat, 11 Apr 2020 15:44:26 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
  MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1497.2 via Frontend Transport; Sat, 11 Apr 2020 15:44:23 +0800
+ 15.0.1497.2 via Frontend Transport; Sat, 11 Apr 2020 15:44:24 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v6 1/4] dt-bindings: display: mediatek: add property to
- control mipi tx drive current
-Date: Sat, 11 Apr 2020 15:44:05 +0800
-Message-ID: <20200411074408.38090-2-jitao.shi@mediatek.com>
+Subject: [PATCH v6 2/4] dt-bindings: display: mediatek: get mipitx calibration
+ data from nvmem
+Date: Sat, 11 Apr 2020 15:44:06 +0800
+Message-ID: <20200411074408.38090-3-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200411074408.38090-1-jitao.shi@mediatek.com>
 References: <20200411074408.38090-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 0005373B2C71D73AF1CED7A230B00BB7B6A072EA461E12CD676996CB520C10192000:8
+X-TM-SNTS-SMTP: 3F5C87B68CD97C73DA1F90AAF118FD8FA8B79DD9371F8F179B5BB437835841A32000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_004441_671474_7C61AA70 
-X-CRM114-Status: UNSURE (   6.99  )
+X-CRM114-CacheID: sfid-20200411_004438_759437_91E75191 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -96,42 +96,42 @@ Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
  srv_heupstream@mediatek.com, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  huijuan.xie@mediatek.com, stonea168@163.com, cawa.cheng@mediatek.com,
  linux-mediatek@lists.infradead.org, bibby.hsieh@mediatek.com,
- ck.hu@mediatek.com, yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org
+ ck.hu@mediatek.com, yingjoe.chen@mediatek.com, eddie.huang@mediatek.com, Rob
+ Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a property to control mipi tx drive current:
-"drive-strength-microamp"
+Add properties to get get mipitx calibration data.
 
 Reviewed-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
  .../devicetree/bindings/display/mediatek/mediatek,dsi.txt    | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-index a19a6cc375ed..d78b6d6d8fab 100644
+index d78b6d6d8fab..8e4729de8c85 100644
 --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
 +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-@@ -33,6 +33,10 @@ Required properties:
- - #clock-cells: must be <0>;
- - #phy-cells: must be <0>.
+@@ -36,6 +36,9 @@ Required properties:
+ Optional properties:
+ - drive-strength-microamp: adjust driving current, should be 3000 ~ 6000. And
+ 						   the step is 200.
++- nvmem-cells: A phandle to the calibration data provided by a nvmem device. If
++               unspecified default values shall be used.
++- nvmem-cell-names: Should be "calibration-data"
  
-+Optional properties:
-+- drive-strength-microamp: adjust driving current, should be 3000 ~ 6000. And
-+						   the step is 200.
-+
  Example:
  
- mipi_tx0: mipi-dphy@10215000 {
-@@ -42,6 +46,7 @@ mipi_tx0: mipi-dphy@10215000 {
- 	clock-output-names = "mipi_tx0_pll";
+@@ -47,6 +50,8 @@ mipi_tx0: mipi-dphy@10215000 {
  	#clock-cells = <0>;
  	#phy-cells = <0>;
-+	drive-strength-microamp = <4600>;
+ 	drive-strength-microamp = <4600>;
++	nvmem-cells= <&mipi_tx_calibration>;
++	nvmem-cell-names = "calibration-data";
  };
  
  dsi0: dsi@1401b000 {
