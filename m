@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 396091A567D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:17:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DB4D1A569E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:17:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EXZ2fu028aw91gnu02qSdo7R0jV9q3bN9OZqwVDVGEk=; b=S/JW3PiChTYK/p
-	f+Z1OapWXZSoROsVFyv9dgjKpooa3ozPFprx1EqSEgnLi3CIU2DJtpXXbDnspISjGIweHkQLgSNJw
-	knU4IOIsj0kypcjzt4LzNfrf4tWlLOr1U54J+psBRlBcBJEW5G1RXrZCXhUY6epq2QCn65B05Yshr
-	lDa0sAa2IyCdzqZopFX3vhbshCpcNloTc91+MaJfowi5NFnfj5oIm3TY+/1hQfB3vdqew+FxwW7ak
-	fDhd+ZzHDN5EzNAj3WqkqSdqUp/s0a8qerFbPcvfAtlQn6pdf5FhAxGtyss5USSNecgDAW0FYsHHp
-	bR3oEKTQbXC4J0fvSs4A==;
+	List-Owner; bh=YhWYDBzXyMgRfad9CgAN3pWh9uxz2SYfzE8btn0KqLc=; b=MUGGqJK0PeLldC
+	E+xMBe2uSy60Iu84IwfquFNdgcbXDNldamwITwIka/fWZIIP8kWT+0olYsD9R0PEIrIp07h0OCZHn
+	UDAqRV4ooe/MfDI4e9MrZzSBi4IigJgH0JytDGFngAOvt/FOhIxgje3qJpFoAhzKUkLRGLgGzOIrm
+	Othd6wRNcl87dLJNBv9Hzcb1W7tlEY8+YfFeEAKcR2Ib2GngmxBnJ6at7GsF+2rhLRzAFqMxVQvlu
+	ut+SNsUrBYG6MiGR9jHhZBcGsFjK4lZtX0raeC/1aSzmEjg6zyS0Nr8ZO6sNE2E1rGZLvbL8arwXM
+	3BRrCc7QLJdbNiF/s1xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNPN5-0006c8-Gg; Sat, 11 Apr 2020 23:17:07 +0000
+	id 1jNPNM-0006rd-QL; Sat, 11 Apr 2020 23:17:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNPGl-0006hi-P1
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:10:37 +0000
+ id 1jNPGm-0006iu-U7; Sat, 11 Apr 2020 23:10:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7879A20757;
- Sat, 11 Apr 2020 23:10:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 99C172166E;
+ Sat, 11 Apr 2020 23:10:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586646635;
- bh=G6doahWEhEoWqA7g3gA5FqgZGobBc8m5pKoJLoAJSdA=;
+ s=default; t=1586646636;
+ bh=PKD20W0zqGHCtHxkmyIqExkny9+8SxyE/zHYatc8Ap4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ea3/W8vppEjMZBJj+YmXu2blDJKIRzCSlAVkoW/H0Uw6rrUBqo8faOJgXm/6oivrv
- uXPNKghB+oLNk6ueZPpGIeGWRa3tq4or1e/crA55rViajBXgSYwBUnSNt4a9n/lHdg
- Q5m+HQK07EEMmGN4DJbyl2PoNIvY5xaQE/LjBoPM=
+ b=KH3Q8Y3311EQD4ydnkpZBd/ZPunO6+l9l0ZxDrlfP+trPZGueIfBtRNAYeFcQoIsS
+ 2QxkSdR4MXS4qcMSJHpykILUZ3zbIeDEIUrqRU40Zx60sMnImfL7nXpl7Dk6jqYave
+ xVFaysX+VK4s6aZ15PaIhOOmz7pBZLwNeTcEQnO0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 042/108] drm/sun4i: dsi: Use NULL to signify "no
- panel"
-Date: Sat, 11 Apr 2020 19:08:37 -0400
-Message-Id: <20200411230943.24951-42-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 043/108] mt76: fix handling full tx queues in
+ mt76_dma_tx_queue_skb_raw
+Date: Sat, 11 Apr 2020 19:08:38 -0400
+Message-Id: <20200411230943.24951-43-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200411230943.24951-1-sashal@kernel.org>
 References: <20200411230943.24951-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_161035_853237_064E05D1 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200411_161037_000384_F2C21558 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,83 +80,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>, dri-devel@lists.freedesktop.org,
- Samuel Holland <samuel@sholland.org>
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Samuel Holland <samuel@sholland.org>
+From: Felix Fietkau <nbd@nbd.name>
 
-[ Upstream commit 0e4e3fb4901d19f49e5c0a582f383b10dda8d1c5 ]
+[ Upstream commit 93eaec7625f13cffb593b471405b017c7e64d4ee ]
 
-The continued use of an ERR_PTR to signify "no panel" outside of
-sun6i_dsi_attach is confusing because it is a double negative. Because
-the connector always reports itself as connected, there is also the
-possibility of sending an ERR_PTR to drm_panel_get_modes(), which would
-crash.
+Fixes a theoretical issue where it could potentially overwrite an existing
+descriptor entry (and leaking its skb)
 
-Solve both of these by only storing the panel pointer if it is valid.
-
-Fixes: 133add5b5ad4 ("drm/sun4i: Add Allwinner A31 MIPI-DSI controller support")
-Signed-off-by: Samuel Holland <samuel@sholland.org>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-Link: https://patchwork.freedesktop.org/patch/msgid/20200211072858.30784-2-samuel@sholland.org
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+ drivers/net/wireless/mediatek/mt76/dma.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index f83522717488a..d2ade0ad67708 100644
---- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-+++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -748,7 +748,7 @@ static void sun6i_dsi_encoder_enable(struct drm_encoder *encoder)
- 	phy_configure(dsi->dphy, &opts);
- 	phy_power_on(dsi->dphy);
+diff --git a/drivers/net/wireless/mediatek/mt76/dma.c b/drivers/net/wireless/mediatek/mt76/dma.c
+index 6249a46c19762..026d996612fbe 100644
+--- a/drivers/net/wireless/mediatek/mt76/dma.c
++++ b/drivers/net/wireless/mediatek/mt76/dma.c
+@@ -261,10 +261,13 @@ mt76_dma_tx_queue_skb_raw(struct mt76_dev *dev, enum mt76_txq_id qid,
+ 	struct mt76_queue_buf buf;
+ 	dma_addr_t addr;
  
--	if (!IS_ERR(dsi->panel))
-+	if (dsi->panel)
- 		drm_panel_prepare(dsi->panel);
- 
- 	/*
-@@ -763,7 +763,7 @@ static void sun6i_dsi_encoder_enable(struct drm_encoder *encoder)
- 	 * ordering on the panels I've tested it with, so I guess this
- 	 * will do for now, until that IP is better understood.
- 	 */
--	if (!IS_ERR(dsi->panel))
-+	if (dsi->panel)
- 		drm_panel_enable(dsi->panel);
- 
- 	sun6i_dsi_start(dsi, DSI_START_HSC);
-@@ -779,7 +779,7 @@ static void sun6i_dsi_encoder_disable(struct drm_encoder *encoder)
- 
- 	DRM_DEBUG_DRIVER("Disabling DSI output\n");
- 
--	if (!IS_ERR(dsi->panel)) {
-+	if (dsi->panel) {
- 		drm_panel_disable(dsi->panel);
- 		drm_panel_unprepare(dsi->panel);
- 	}
-@@ -941,11 +941,13 @@ static int sun6i_dsi_attach(struct mipi_dsi_host *host,
- 			    struct mipi_dsi_device *device)
- {
- 	struct sun6i_dsi *dsi = host_to_sun6i_dsi(host);
-+	struct drm_panel *panel = of_drm_find_panel(device->dev.of_node);
- 
-+	if (IS_ERR(panel))
-+		return PTR_ERR(panel);
++	if (q->queued + 1 >= q->ndesc - 1)
++		goto error;
 +
-+	dsi->panel = panel;
- 	dsi->device = device;
--	dsi->panel = of_drm_find_panel(device->dev.of_node);
--	if (IS_ERR(dsi->panel))
--		return PTR_ERR(dsi->panel);
+ 	addr = dma_map_single(dev->dev, skb->data, skb->len,
+ 			      DMA_TO_DEVICE);
+ 	if (unlikely(dma_mapping_error(dev->dev, addr)))
+-		return -ENOMEM;
++		goto error;
  
- 	dev_info(host->dev, "Attached device %s\n", device->name);
+ 	buf.addr = addr;
+ 	buf.len = skb->len;
+@@ -275,6 +278,10 @@ mt76_dma_tx_queue_skb_raw(struct mt76_dev *dev, enum mt76_txq_id qid,
+ 	spin_unlock_bh(&q->lock);
  
+ 	return 0;
++
++error:
++	dev_kfree_skb(skb);
++	return -ENOMEM;
+ }
+ 
+ static int
 -- 
 2.20.1
 
