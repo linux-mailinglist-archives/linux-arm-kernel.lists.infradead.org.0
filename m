@@ -2,81 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1C951A52B4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 18:01:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 701AC1A52D8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 18:12:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DDbcFBKWQSyhikuqQj9q7BF+pGGZWeT0heALEhe+M+A=; b=Ss4AkEFlo7eVJr8aQZ3R6KuuU
-	ENXYLSAaoULf5UAgKzuTtwYXCR/DNFvG/ptrL6nVq7+9UddIgwqTq+bIT+kyteZaqA3MnClM0GxmV
-	ghDdpdBv9DC25wi/4p0ikQc2gvIlwERhADrqUoXquXJsDdg9PaqAfWEnTkyssX0U2TjiV/4ADutrk
-	EMH0OK6iq4UGhDErPpHzRDPvSmnVy6bnfWEm6xjLcvTP6b9y4OLFae00iKDbJ4PPeMiBm4RpXZnD3
-	qimHfevc6L6MFt2kiCJdL4i8gLOfuT1Z02nYhVa70eo4c3ufMJct5o6b6dwsCYnclVZZMOeLSAUSX
-	4VgmTdKNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gH2MKeFDPjhbHuuC3WfGhL9gjWOW0vYNFQFvTw265JQ=; b=LHPiWN7a3Ohh1M
+	vRfDLJjyTv+2wf2nUNJt5jLaU3ovDka7nlBasajLMDi7qUZCj7xDsT8Qxq+vK4M7AYHueJDCNLp0O
+	VcPsxTRlntT2BaIGBytvFjOHiu1QJRm0omp8uMF8E0/If22TKwvtcHDhkAkfHMYW3Zb9AzKwZaM2A
+	WwxArICZJwdbJe/bWrceMkq82pJ3NjGkGk7X8wJWIkIgCbG3ZYI1/ep0F7wVIv8GQWifTgjzRoEbt
+	S5x7whnENz3erhhu50cQiqR9dOFKLXwvRzF6PxptORnEGw57qb5yDEId/Nc2Tw21Llck70/qN/Boo
+	vZvQdkUeULGConrv+mXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNIZj-0004Ik-Gn; Sat, 11 Apr 2020 16:01:43 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jNIjq-0001iS-3B; Sat, 11 Apr 2020 16:12:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNIZc-0004I7-IT
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 16:01:37 +0000
-Received: by mail-qt1-x841.google.com with SMTP id q17so3526024qtp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 11 Apr 2020 09:01:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=zhRskEKtP61k0yqbLaLsqJL1DLZl52yNBvZ6bXRfLCM=;
- b=fNxHgv832WDYysIX0jD9QPCDscvmTf43PY81UgQokDRgCjw1x1ogToIhqT4QwC1E/D
- jQV+i9/yOZevJrfP6URcG91dfGR9MznldAw4c9lwIRLy4K+ZkuSns4XOT1z3VBwCqQmU
- XzTzVOGpvddRB382w7EZKk580NNwa5C89GZQQwQRRhXGgvtshGQX/A6MFnVfeYIDEOkX
- dynKyb2bw0spA8bBE2buTF1e2TQArisyj26LhuTWPO95DRiiSIuwlSkiheCCjTpnk4Pp
- lfMpv2u4xMOoIH+aZxcBEnjjJB/c0PWEva93mmt67JDYMVjP1vdZqgNOTnWVAdisd9Bd
- qadA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=zhRskEKtP61k0yqbLaLsqJL1DLZl52yNBvZ6bXRfLCM=;
- b=UtcBJugyrpUXVotlHgveOGpaO+yLsGKnYjVOaXT0BDW5YMm5ZVzjL/WBsZErRK2BU3
- mjUUYzOPw1Wyi1Lb3pFlpCUQcthvE9ladOpyt5VqNZAX3f6lRloo4OBSC98GXlRrzBAv
- /5gkX7bfrtkRMHotpmeJmtKtPe9XLsALhVnAw4dyDhiOHJDWQnY7p5WfmqXoYYRGxsrU
- Xh/P2LllEKEgNBEiwgKy7KTYSdI09W0kG/CMn91hwzYcia2AjHaWXsMiAPmUoKv4q3kx
- joNcCtHX2hcgzhxR6kpQ4i3Lb4LdQOoNsUtHhMRePrgr1uqEja6OpvqetBLL5FwShvcd
- WPBA==
-X-Gm-Message-State: AGi0Pua9r0koKhkgFBmfLUw09rz13xBKHGOdIzPn9M7kJlAFl6SYpgp9
- 41keSg95qNqOmajcddqJhwY=
-X-Google-Smtp-Source: APiQypLVRG/zAWgaDeXS+aPd3v3rXiHthdj4V64zP9c4KydlcwVH+GkllKXLr6/Q5Q4sF7pMJNhTqA==
-X-Received: by 2002:aed:3b75:: with SMTP id q50mr4232741qte.23.1586620893939; 
- Sat, 11 Apr 2020 09:01:33 -0700 (PDT)
-Received: from icarus (072-189-064-225.res.spectrum.com. [72.189.64.225])
- by smtp.gmail.com with ESMTPSA id o13sm3853059qkg.111.2020.04.11.09.01.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Apr 2020 09:01:32 -0700 (PDT)
-Date: Sat, 11 Apr 2020 12:01:16 -0400
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v2 0/3] Atmel TCB capture driver
-Message-ID: <20200411160116.GA95806@icarus>
-References: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
+ id 1jNIjj-0001hr-8v; Sat, 11 Apr 2020 16:12:04 +0000
+Received: from localhost (unknown [213.57.247.131])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 708232078E;
+ Sat, 11 Apr 2020 16:12:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586621522;
+ bh=xGSrZYsmr8Rx4rTlJx8S0cahLkNk3/rISN1e36L5dfw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=PJuvLC60UfUFZJ6c6uAbd2GfsMnVqppzNcrJkgGE26coDxnU244BVymNHyLFxVvh/
+ SGVBw4msc7PUOKxizlBOLa+Zn/nyY2mOeFWU/EoNXeoNDBtx/E+f2V7a03X+E0IQLE
+ zchs/QnkHPcr3mObpoAV1v4FVmYW1XFsrDBGjrbw=
+Date: Sat, 11 Apr 2020 19:11:56 +0300
+From: Leon Romanovsky <leon@kernel.org>
+To: Borislav Petkov <bp@alien8.de>
+Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
+Message-ID: <20200411161156.GA200683@unreal>
+References: <20200224085311.460338-1-leon@kernel.org>
+ <20200224085311.460338-4-leon@kernel.org>
+ <20200411155623.GA22175@zn.tnic>
 MIME-Version: 1.0
-In-Reply-To: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20200411155623.GA22175@zn.tnic>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_090136_635702_9B9572D5 
-X-CRM114-Status: GOOD (  21.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200411_091203_350786_5705CEB6 
+X-CRM114-Status: GOOD (  16.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [vilhelm.gray[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,115 +76,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1327496242870367217=="
+Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
+ Igor Russkikh <irusskikh@marvell.com>, Andreas Larsson <andreas@gaisler.com>,
+ Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
+ Jes Sorensen <jes@trained-monkey.org>,
+ Iyappan Subramanian <iyappan@os.amperecomputing.com>,
+ Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
+ Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
+ Jay Cliburn <jcliburn@gmail.com>, Jay Vosburgh <j.vosburgh@gmail.com>,
+ Keyur Chudgar <keyur@os.amperecomputing.com>,
+ Maxime Ripard <mripard@kernel.org>, Don Fry <pcnet32@frontier.com>,
+ nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ion Badulescu <ionut@badula.org>, Netanel Belgazal <netanel@amazon.com>,
+ Mark Einon <mark.einon@gmail.com>, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, Apr 11, 2020 at 05:56:23PM +0200, Borislav Petkov wrote:
+> From: Borislav Petkov <bp@suse.de>
+>
+> Change the include order so that MODULE_ARCH_VERMAGIC from the arch
+> header arch/x86/include/asm/module.h gets used instead of the fallback
+> from include/linux/vermagic.h and thus fix:
+>
+>   In file included from ./include/linux/module.h:30,
+>                    from drivers/net/ethernet/3com/3c515.c:56:
+>   ./arch/x86/include/asm/module.h:73: warning: "MODULE_ARCH_VERMAGIC" redefined
+>      73 | # define MODULE_ARCH_VERMAGIC MODULE_PROC_FAMILY
+>         |
+>   In file included from drivers/net/ethernet/3com/3c515.c:25:
+>   ./include/linux/vermagic.h:28: note: this is the location of the previous definition
+>      28 | #define MODULE_ARCH_VERMAGIC ""
+>         |
+>
+> Fixes: 6bba2e89a88c ("net/3com: Delete driver and module versions from 3com drivers")
+> Signed-off-by: Borislav Petkov <bp@suse.de>
+> ---
+>  drivers/net/ethernet/3com/3c515.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
---===============1327496242870367217==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="J/dobhs11T7y2rNN"
-Content-Disposition: inline
+Probably, this is the right change, but I have a feeling that the right
+solution will be inside headers itself. It is a little bit strange that
+both very common kernel headers like module.h and vermagic.h are location
+dependant.
 
+Thanks
 
---J/dobhs11T7y2rNN
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Apr 09, 2020 at 04:13:58PM +0200, Kamel Bouhara wrote:
-> Hello,
->=20
-> Here is a new counter driver to support Atmel TCB capture devices.
->=20
-> Each SoC has two TCB blocks, each one including three independent
-> channels.The following series adds support for two counter modes:
-> increase and quadrature decoder.
->=20
-> As for the atmel clocksource and pwm, the counter driver needs to fill
-> some tcb capabilities in order to operate with the right configuration.
-> This is achieved in first patch of this series.
->=20
-> Please feel free to comment.
->=20
-> Cheers,
->=20
-> Changes from v2:
->  - Fixed first patch not applying on mainline
->  - Updated return code to -EINVAL when user is requesting qdec mode on
->    a counter device not supporting it.
->  - Added an error case returning -EINVAL when action edge is performed in
->    qdec mode.
->  - Removed no need to explicity setting ops to NULL from static struct as
->    it is the default value.
->  - Changed confusing code by using snprintf for the sake of clarity.
->  - Changed code to use ARRAY_SIZE so that future reviewers will know
->    that num_counts matches what's in the atmel_tc_count array without
->    having to check so themselves.
->=20
-> Kamel Bouhara (3):
->   ARM: at91: add atmel tcb capabilities
->   dt-bindings: counter: atmel-tcb-capture counter
->   counter: Add atmel TCB capture counter
->=20
->  .../bindings/counter/atmel-tcb-capture.yaml   |  35 ++
->  drivers/counter/Kconfig                       |  11 +
->  drivers/counter/Makefile                      |   1 +
->  drivers/counter/atmel-tcb-capture.c           | 394 ++++++++++++++++++
->  include/soc/at91/atmel_tcb.h                  |   2 +
->  5 files changed, 443 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/counter/atmel-tcb-c=
-apture.yaml
->  create mode 100644 drivers/counter/atmel-tcb-capture.c
->=20
+>
+> diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
+> index 90312fcd6319..cdceef891dbd 100644
+> --- a/drivers/net/ethernet/3com/3c515.c
+> +++ b/drivers/net/ethernet/3com/3c515.c
+> @@ -22,7 +22,6 @@
+>
+>  */
+>
+> -#include <linux/vermagic.h>
+>  #define DRV_NAME		"3c515"
+>
+>  #define CORKSCREW 1
+> @@ -67,6 +66,7 @@ static int max_interrupt_work = 20;
+>  #include <linux/timer.h>
+>  #include <linux/ethtool.h>
+>  #include <linux/bitops.h>
+> +#include <linux/vermagic.h>
+>
+>  #include <linux/uaccess.h>
+>  #include <asm/io.h>
 > --
-> 2.25.0
-
-Thanks Kamel, this version applies nicely now. Fix the error messages
-Rob Herring pointed out in the dt-bindings patch and I should be able to
-sign off on these.
-
-William Breathitt Gray
-
---J/dobhs11T7y2rNN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEk5I4PDJ2w1cDf/bghvpINdm7VJIFAl6R6b8ACgkQhvpINdm7
-VJJT3hAAtJGYMWuStziOpn3oiehL6iBN7av6JLXQ1xaNk4DP0R6MyU0qGUQJCH27
-Cbckx4xNpwUmPK+7tV1NISlzXjBj9hEt3cRoPjf3Sd6Gw2x/F4GDSzbbcPot9KOD
-jqQL6HqJ/n9YPv/UYr5NtJ5Joh312TCf0mPdJ//GXWRCG7AzHa6b5CrBfz6bWb4x
-ylK0myhYbPEs5ViHlWSC69TUs+rrRqRgmIyJSBuaSukB0JYXFsj7BOMmgV7ymr9t
-91Qvf43jmzsXy0F4/lpp5u5d0DliHPhMk7J9LTILIECs7AvOxKB3D0mJSEoq++ws
-hugZXe1vbo39+gzf7QD1hEkVHOTwnWSG5wXUXxmjDpPqt7Ic9h1fu+mP3Nd8OLFx
-PmCeKyqBgkdQxUAb75Y+YObrgTDnBiWtnn391K0kpwy22aPQ10RzZYSCHY8pBvrB
-rkYsQs+KzHgH+/YtGkkohmPAialRUXEdMaGfIC/ZAggQdExxhdgtIEO49gV/yDL/
-+Cp4MDfoBlomK4oLX3m1sagP9/Fzh+6yREa2EBajPMn9ZQ692Sy4hQCXfE1pFCs6
-1IXRuFXRZFETnyvT+SWcDxbizKYCVm7yCrA0M55tczJvoaDQOC93/i4hNf2aVMaT
-glv8dfI+2oNtO+AUclf7F1EX3izFvCqvUD89nuxhKZxfHbKkmJA=
-=rbCt
------END PGP SIGNATURE-----
-
---J/dobhs11T7y2rNN--
-
-
---===============1327496242870367217==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 2.21.0
+>
+> --
+> Regards/Gruss,
+>     Boris.
+>
+> https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1327496242870367217==--
-
