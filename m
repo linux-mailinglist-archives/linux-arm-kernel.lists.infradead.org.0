@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5658B1A5739
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:21:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0DB21A5749
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:22:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jhi4kOTmmL2eX1S/kZv/b+X6KPtlUDMRT26G0QYAr8I=; b=SywO4wptlwvF4Z
-	YbmQa7OK8qXp4N3J6EUgtci9nkXO6lra19VAEG3qK3jyJIRmryfgGWqZWGaG/Kc6EfYzeZIQx2A+b
-	e+RytsLn5Cno76hd7q2x7BdWfSiAVsoRLzQeVSUUJVAxntT8lNLJ9+IAiSxosZJABc933QQfA+f+f
-	ndwRk0dtpjvUxrMZPqii7u7aA62Ue3cAyHxT2C8tmvkcDUVlOLuKIg5WCSCBz8l2ugH3XOdRA6SiD
-	q9TGebDVCrrMOUQZHdPN3ean1hlQ6PKic1LuqLSYGPmyXk1Jwkpp6PTZMOS7t0HC8DGtdgQyDPsp8
-	5+CnAvHuYG27v/8FR+Tw==;
+	List-Owner; bh=kWKcR9kaw0cyoz7S75vSq/hTODEg7glwuHq+7nZC/Lw=; b=OS6lhx5aqwVIvh
+	JxFokJtXbyyAkF99rHSLay6IDT9gxTZhzhlGOb9tBcmZn9Y+KD7J/aXGzwnrWqZRoA0CTY9oyNDhq
+	hrj5CLwEYVxCvgg6BI6EkvpPlTZmcaWCbz4lgWImwP3335ZVGZD8EpLi2I2hky5wGkazqVpwPO0uu
+	29j8WKJbTcGsaEibsN0//aRLyYOjty6E9mKZqWgz1cLtp+0X+co9q47U8R83zoZaRb+OGsycOMa51
+	N7/yEgl9shRysnwzuQ6SwnnUjO/9cvtqd/qaZdr5SXriPzYy8PDOt0klbHxR26ta1fjvWikiajvpL
+	6HVU2wIkHLLpw9y224AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNPRK-0004hj-Jz; Sat, 11 Apr 2020 23:21:30 +0000
+	id 1jNPRm-0005AK-0B; Sat, 11 Apr 2020 23:21:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNPIt-0000Aw-Hm
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:12:49 +0000
+ id 1jNPJJ-0000Yt-1m
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:13:15 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4FB7A20787;
- Sat, 11 Apr 2020 23:12:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9C48B21974;
+ Sat, 11 Apr 2020 23:13:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586646767;
- bh=PB5LeeK9gLfULaoWaG7wXKIYwJxE6ymIS5vN8CaVL9k=;
+ s=default; t=1586646792;
+ bh=biaprx8Yc5sJmohey7+0X3wBw157H0uUbUm0/m8ms5g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ePvTPnzf5A6BAC8iTwvp5a020KB0hgmu1wixFlxS7zqZ1zMoDTW7MwnF9zqHlsUkw
- MKz10fqkYkZc2F4dUxrMmd9vEhtMF9NazqmE5c7/AMlaenBwmacgCEVPJd4OPZ9NVM
- Ijk/evkXsup+UgmLG2IlbvCxnVS8QfWVZJfJOSLo=
+ b=Ge4eLeMqPzVbYEn0C6Mxm9953FLBsZsJtVAcgBBICo2dukU48m3Nt1oNB9SwMUGen
+ LtR0l/Whm+QLefFoAYq4hKpmIHLeZXEy3SDPMpwvyH/daBmOyvkqC2wUE7sE/TM95q
+ mYWoMUM/KMzsrGorHZVqZ7cDeGNMg5DNXFdi6hnY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 36/66] drm/stm: ltdc: check crtc state before
- enabling LIE
-Date: Sat, 11 Apr 2020 19:11:33 -0400
-Message-Id: <20200411231203.25933-36-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 56/66] dmaengine: stm32-dma: use reset controller
+ only at probe time
+Date: Sat, 11 Apr 2020 19:11:53 -0400
+Message-Id: <20200411231203.25933-56-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200411231203.25933-1-sashal@kernel.org>
 References: <20200411231203.25933-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_161247_615348_4060D951 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20200411_161313_177598_7CE10137 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,54 +80,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Philippe Cornu <philippe.cornu@st.com>, dri-devel@lists.freedesktop.org,
- Yannick Fertre <yannick.fertre@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Etienne Carriere <etienne.carriere@st.com>, Sasha Levin <sashal@kernel.org>,
+ Amelie Delaunay <amelie.delaunay@st.com>, Vinod Koul <vkoul@kernel.org>,
+ dmaengine@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yannick Fertre <yannick.fertre@st.com>
+From: Etienne Carriere <etienne.carriere@st.com>
 
-[ Upstream commit a6bd58c51ac43083f3977057a7ad668def55812f ]
+[ Upstream commit 8cf1e0fc50fcc25021567bb2755580504c57c83a ]
 
-Following investigations of a hardware bug, the LIE interrupt
-can occur while the display controller is not activated.
-LIE interrupt (vblank) don't have to be set if the CRTC is not
-enabled.
+Remove reset controller reference from device instance since it is
+used only at probe time.
 
-Signed-off-by: Yannick Fertre <yannick.fertre@st.com>
-Acked-by: Philippe Cornu <philippe.cornu@st.com>
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-Link: https://patchwork.freedesktop.org/patch/msgid/1579601650-7055-1-git-send-email-yannick.fertre@st.com
+Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
+Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+Link: https://lore.kernel.org/r/20200129153628.29329-3-amelie.delaunay@st.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/stm/ltdc.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ drivers/dma/stm32-dma.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/gpu/drm/stm/ltdc.c b/drivers/gpu/drm/stm/ltdc.c
-index 477d0a27b9a5d..75d108db127c8 100644
---- a/drivers/gpu/drm/stm/ltdc.c
-+++ b/drivers/gpu/drm/stm/ltdc.c
-@@ -612,9 +612,14 @@ static const struct drm_crtc_helper_funcs ltdc_crtc_helper_funcs = {
- static int ltdc_crtc_enable_vblank(struct drm_crtc *crtc)
- {
- 	struct ltdc_device *ldev = crtc_to_ltdc(crtc);
-+	struct drm_crtc_state *state = crtc->state;
+diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
+index 4903a408fc146..e58cee8ec2410 100644
+--- a/drivers/dma/stm32-dma.c
++++ b/drivers/dma/stm32-dma.c
+@@ -207,7 +207,6 @@ struct stm32_dma_device {
+ 	struct dma_device ddev;
+ 	void __iomem *base;
+ 	struct clk *clk;
+-	struct reset_control *rst;
+ 	bool mem2mem;
+ 	struct stm32_dma_chan chan[STM32_DMA_MAX_CHANNELS];
+ };
+@@ -1215,6 +1214,7 @@ static int stm32_dma_probe(struct platform_device *pdev)
+ 	struct dma_device *dd;
+ 	const struct of_device_id *match;
+ 	struct resource *res;
++	struct reset_control *rst;
+ 	int i, ret;
  
- 	DRM_DEBUG_DRIVER("\n");
--	reg_set(ldev->regs, LTDC_IER, IER_LIE);
-+
-+	if (state->enable)
-+		reg_set(ldev->regs, LTDC_IER, IER_LIE);
-+	else
-+		return -EPERM;
+ 	match = of_match_device(stm32_dma_of_match, &pdev->dev);
+@@ -1243,11 +1243,11 @@ static int stm32_dma_probe(struct platform_device *pdev)
+ 	dmadev->mem2mem = of_property_read_bool(pdev->dev.of_node,
+ 						"st,mem2mem");
  
- 	return 0;
- }
+-	dmadev->rst = devm_reset_control_get(&pdev->dev, NULL);
+-	if (!IS_ERR(dmadev->rst)) {
+-		reset_control_assert(dmadev->rst);
++	rst = devm_reset_control_get(&pdev->dev, NULL);
++	if (!IS_ERR(rst)) {
++		reset_control_assert(rst);
+ 		udelay(2);
+-		reset_control_deassert(dmadev->rst);
++		reset_control_deassert(rst);
+ 	}
+ 
+ 	dma_cap_set(DMA_SLAVE, dd->cap_mask);
 -- 
 2.20.1
 
