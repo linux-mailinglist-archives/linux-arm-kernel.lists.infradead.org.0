@@ -2,60 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 636B51A5343
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 20:10:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 913BA1A5369
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 20:41:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hvm712BtBZTZAoPqblDyyyEgD6ddkELCDOAvxtGGQcI=; b=ul7OYUGOgQ8CjE
-	C40oG9BqW4mf7sROugRIAZY14kkOIQImGg4dc0WTCxQ0poAy9Ze5+WT4KPLtF6KRgyD0vTGdp+Ymk
-	2fLdXQf9HI0qy3K9pElgz9XspjEXUh32QxlBQV8UKKxIhnU1l9Ti4OrFF+Eu09ZIiq7VFTFsBYtDt
-	sbCKkKP2rsNPX6Tufjkpt5yKxt+ydv6dXySubycGrYUEEyALiKYAQfO4CYTcDTCxvig/KcwKyDxZy
-	6B1Jq4oQDd88/yQVsES8pvzxHnVifLybJxsi5pUDS//0ZcZ9YIXUJnJo/dgsP8826/me2eHNfzAWP
-	z2B9iedl7r5Cb+l22oZg==;
+	List-Owner; bh=1qQqvcdvXBPn8R7MsFNdp26aIGNO2ZigR+gt4iGD5WM=; b=eCkpLro2pwUmL9
+	tHkvuseL8L6YsE/X/aB3hNpLQarmdGrlmzBqaazA4W/W5ZtYbmJX3pBgg0bDZ2AlYl/8eV+jRKhXt
+	ArKlv1iWKdqIBVxElev869dyCZh8qRRw4W92h5R3UP9Gjh4rmxDxXYlMsy5tSwmD1BpESYijpQ+30
+	8bjMbfB8h3I9NJny9HMA/6UJk67cViLYmQXiqgTlN4lPtGIWgU9FFJuTc7fAyRaaX6BGZCMyHp5p+
+	8eu3mmC2cef1b4mjqLttgQJ3wI4JkNbRRkvYX6dfv/AiWFBWoR78/Rx5tB8qkylGEICvMsPiCoq4w
+	gn0Rx6tCaAAfbobrCJSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNKaJ-0003JW-UH; Sat, 11 Apr 2020 18:10:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jNL4G-00032u-HG; Sat, 11 Apr 2020 18:41:24 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNKaD-0003J4-G7; Sat, 11 Apr 2020 18:10:22 +0000
-Received: from localhost (unknown [213.57.247.131])
+ id 1jNL48-00031z-KK; Sat, 11 Apr 2020 18:41:18 +0000
+Received: from zn.tnic (p200300EC2F1EE200B53534244D96C31E.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f1e:e200:b535:3424:4d96:c31e])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E1AE420732;
- Sat, 11 Apr 2020 18:10:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586628620;
- bh=cR0eHiEhVEU/CYCz8ttOIHBrqvYs0p6ey3Uw55qOSGo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dcNVzinV8moP+fO5RfqQizJEQ1Fo5MA/EWcPhgl3anCgpKoqChGaQQMh6g6lxD8Zu
- U4Uz5GI9QK6vrVpGwcn3HSXE+MfBDWSMFeD7yfpw5OsGv/2b1L7VjOahk8qLWPZWwn
- jvyrMweq0NnBZhQyYqoGjPPwE0zfMs2kGVTNuapw=
-Date: Sat, 11 Apr 2020 21:10:15 +0300
-From: Leon Romanovsky <leon@kernel.org>
-To: Borislav Petkov <bp@alien8.de>
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 57E7B1EC0CC5;
+ Sat, 11 Apr 2020 20:41:07 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1586630467;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=79SuGIhtfZH4AVqTBicnM2HnJJujV/UZuU+29Y4r+D0=;
+ b=aVtlaW0y0wdDjE3pYEMBPnZDohg3ynnwv3dcVJ1I9mtiaLlV6bk0h7tr83V1cZ8NY4Wn73
+ HQBj/E8z3vpAQxCyAl3r9i4B24Ea0cbJIQItbnOxBca2xtPHpO6VJu15jK0Em1Nm2xFrRy
+ CqTtHoUiU5dic0cUPEtZhoKzomTssRI=
+Date: Sat, 11 Apr 2020 20:41:01 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: Leon Romanovsky <leon@kernel.org>
 Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200411181015.GC200683@unreal>
+Message-ID: <20200411184101.GB11128@zn.tnic>
 References: <20200224085311.460338-1-leon@kernel.org>
  <20200224085311.460338-4-leon@kernel.org>
  <20200411155623.GA22175@zn.tnic> <20200411161156.GA200683@unreal>
- <20200411173504.GA11128@zn.tnic>
+ <20200411173504.GA11128@zn.tnic> <20200411181015.GC200683@unreal>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200411173504.GA11128@zn.tnic>
+In-Reply-To: <20200411181015.GC200683@unreal>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_111021_580232_4395731F 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200411_114116_820652_AE112BD0 
+X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +70,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,72 +103,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 11, 2020 at 07:35:04PM +0200, Borislav Petkov wrote:
-> On Sat, Apr 11, 2020 at 07:11:56PM +0300, Leon Romanovsky wrote:
-> > Probably, this is the right change, but I have a feeling that the right
-> > solution will be inside headers itself. It is a little bit strange that
-> > both very common kernel headers like module.h and vermagic.h are location
-> > dependant.
->
-> Judging by how only a couple of net drivers include vermagic.h directly,
-> doh, of course:
->
-> diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
-> index b762176a1406..139d0120f511 100644
-> --- a/drivers/net/ethernet/3com/3c509.c
-> +++ b/drivers/net/ethernet/3com/3c509.c
-> @@ -85,7 +85,6 @@
->  #include <linux/device.h>
->  #include <linux/eisa.h>
->  #include <linux/bitops.h>
-> -#include <linux/vermagic.h>
->
->  #include <linux/uaccess.h>
->  #include <asm/io.h>
-> diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
-> index 90312fcd6319..47b4215bb93b 100644
-> --- a/drivers/net/ethernet/3com/3c515.c
-> +++ b/drivers/net/ethernet/3com/3c515.c
-> @@ -22,7 +22,6 @@
->
->  */
->
-> -#include <linux/vermagic.h>
->  #define DRV_NAME		"3c515"
->
->  #define CORKSCREW 1
->
-> ---
->
-> Drivers include
->
-> #include <linux/module.h>
->
-> which includes
->
-> #include <asm/module.h>
->
-> which defines the arch-specific MODULE_ARCH_VERMAGIC.
->
-> Why did you need to include vermagic.h directly? i386 builds fine with
-> the vermagic.h includes removed or was it some other arches which needed
-> it?
+On Sat, Apr 11, 2020 at 09:10:15PM +0300, Leon Romanovsky wrote:
+> I want to think that it was an outcome of some 0-day kbuild report,
+> but I am not sure about that anymore [1].
 
-I want to think that it was an outcome of some 0-day kbuild report,
-but I am not sure about that anymore [1].
+I pushed it here:
 
-Thanks
+https://git.kernel.org/pub/scm/linux/kernel/git/bp/bp.git/log/?h=rc0%2b0-3c
 
-[1] https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org/
+The 0day bot will send me a mail soon. :)
 
->
-> Thx.
->
-> --
-> Regards/Gruss,
->     Boris.
->
-> https://people.kernel.org/tglx/notes-about-netiquette
+-- 
+Regards/Gruss,
+    Boris.
+
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
