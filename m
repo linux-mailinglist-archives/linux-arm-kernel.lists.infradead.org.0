@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42C31A54C7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:08:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F171F1A54DB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:08:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rvwFkxvelWnQ9Jx8fGQJRVP9quAx/2sdQna1TGjKvLQ=; b=qIGCiyg7Ntncp2
-	TqmSANGN1DsJtc1KIjxh2ougRZwFezpZPIHMfl88EN0QjIj8BG0UX5ScafvF69lY7QrzEIc/QwXdh
-	fWV/wvGIicnYz0NGoyhKf+D0iRPQM0NIybS9lJPzzpG7Er3uCok3Byhn6Je83/qVYgsYoSqC1WaW+
-	ZO4VCP7JErQ8quGFBmym5taFnSXAFgjo1g5nZpaWV5lSEXbK9xsNeUlDsR4ltdIkPwPJzw/2ZEjIs
-	H1+ZKkzf/9TskxW0b+QxA2fMXmVrgXzP0lGiddVnClUwCFyt+QGv3AixVRT80+k8kBl4GvqWDS8D3
-	FftunULTs7DxmK4p57Ew==;
+	List-Owner; bh=PQVe3weOZpjDUN89uRNF/X1dTuta4ZS7BL88zZ9ghrc=; b=LyvDPU0L8BVqgP
+	KWvu/muptEIDomeO+2XNFVX36VN1NPvG74biOx/BmuusdIFWv8IVYK7IgS3lnwDGC4Qqlwnck1mb5
+	V5ItvlNY2xQayd+Tv5nyG86oLm1SVIqiuaN7rfPepTROzX8dy+NKpUlITbc/pIFLQKRE1LVs+JFwM
+	k1dRtgDPwa79qIv1pI1MyrzalCBPG6Fsl1CKFwRrDLQVnK0budSE10Y1lfrAxwwdUZgFX/VVGV6d2
+	mq0YZRD9nmoa8iyAsnfPKZL/wpjPVy6EupVV/wT2OBSzBjhAiDE9AsAveXruNTOX/qUROYxwJqbWJ
+	2ifLSYG6xOShBQj+aWWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNPE7-0001Wu-90; Sat, 11 Apr 2020 23:07:51 +0000
+	id 1jNPEM-0001xe-8s; Sat, 11 Apr 2020 23:08:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNPCc-0000Pl-SE
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:06:20 +0000
+ id 1jNPCj-0000XW-FY
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:06:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C1C6217D8;
- Sat, 11 Apr 2020 23:06:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2FBED21744;
+ Sat, 11 Apr 2020 23:06:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586646378;
- bh=vkkBVzW/sRQX6NVpM58Zt+UhlaswQDSkXRNwMThHjj4=;
+ s=default; t=1586646385;
+ bh=BuT+U3bSnltRoLUw4bLKl1iPe6gDp2CGnADnaOvLaGw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=abKp1SR72Rn+z1P+EY7C0Y1ecCBSKjUbWx6ihXlnHvi4jgjGp8UYTux2a6cB60ECy
- rdm9W+LKckN/yW+Xx907hWz5G4i1fm5lFEswwtG10LPMSi/ipmz9D3stl97jL7zzGb
- UrAQCS6DjwqpkU4iqTDnEWjg72vBAYdkJ7yLAC4M=
+ b=Dj+MXXl3tEVDbBM9atZ+l4MXuS1bs6JQXof0uUsgsPMFbxqsDJh8FevQ/cP62ia0y
+ pw78lT6C8gZDv0O1wn7Sv2dJJWLjGrIH/aXcRbxIjgbdTULL7rIC5h+MDqTSG/2eoA
+ 9/LZvlw2XifzxVjYJ01wqwBNIjtUD321sGnT5/vI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 119/149] ASoC: stm32: spdifrx: fix regmap status
- check
-Date: Sat, 11 Apr 2020 19:03:16 -0400
-Message-Id: <20200411230347.22371-119-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 125/149] dmaengine: stm32-dma: use reset
+ controller only at probe time
+Date: Sat, 11 Apr 2020 19:03:22 -0400
+Message-Id: <20200411230347.22371-125-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200411230347.22371-1-sashal@kernel.org>
 References: <20200411230347.22371-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_160619_016148_92CB39D6 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200411_160625_582070_9E45DD6D 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,43 +80,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Olivier Moysan <olivier.moysan@st.com>, Mark Brown <broonie@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Etienne Carriere <etienne.carriere@st.com>, Sasha Levin <sashal@kernel.org>,
+ Amelie Delaunay <amelie.delaunay@st.com>, Vinod Koul <vkoul@kernel.org>,
+ dmaengine@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Olivier Moysan <olivier.moysan@st.com>
+From: Etienne Carriere <etienne.carriere@st.com>
 
-[ Upstream commit a168dae5ea14283e8992d5282237bb0d6a3e1c06 ]
+[ Upstream commit 8cf1e0fc50fcc25021567bb2755580504c57c83a ]
 
-Release resources when exiting on error.
+Remove reset controller reference from device instance since it is
+used only at probe time.
 
-Fixes: 1a5c0b28fc56 ("ASoC: stm32: spdifrx: manage identification registers")
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20200318144125.9163-2-olivier.moysan@st.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
+Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+Link: https://lore.kernel.org/r/20200129153628.29329-3-amelie.delaunay@st.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/stm/stm32_spdifrx.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/dma/stm32-dma.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index 3769d9ce5dbef..e6e75897cce83 100644
---- a/sound/soc/stm/stm32_spdifrx.c
-+++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -1009,6 +1009,8 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
+diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
+index 5989b08935211..ff34a10fc8d89 100644
+--- a/drivers/dma/stm32-dma.c
++++ b/drivers/dma/stm32-dma.c
+@@ -207,7 +207,6 @@ struct stm32_dma_device {
+ 	struct dma_device ddev;
+ 	void __iomem *base;
+ 	struct clk *clk;
+-	struct reset_control *rst;
+ 	bool mem2mem;
+ 	struct stm32_dma_chan chan[STM32_DMA_MAX_CHANNELS];
+ };
+@@ -1275,6 +1274,7 @@ static int stm32_dma_probe(struct platform_device *pdev)
+ 	struct dma_device *dd;
+ 	const struct of_device_id *match;
+ 	struct resource *res;
++	struct reset_control *rst;
+ 	int i, ret;
  
- 	if (idr == SPDIFRX_IPIDR_NUMBER) {
- 		ret = regmap_read(spdifrx->regmap, STM32_SPDIFRX_VERR, &ver);
-+		if (ret)
-+			goto error;
+ 	match = of_match_device(stm32_dma_of_match, &pdev->dev);
+@@ -1309,11 +1309,11 @@ static int stm32_dma_probe(struct platform_device *pdev)
+ 	dmadev->mem2mem = of_property_read_bool(pdev->dev.of_node,
+ 						"st,mem2mem");
  
- 		dev_dbg(&pdev->dev, "SPDIFRX version: %lu.%lu registered\n",
- 			FIELD_GET(SPDIFRX_VERR_MAJ_MASK, ver),
+-	dmadev->rst = devm_reset_control_get(&pdev->dev, NULL);
+-	if (!IS_ERR(dmadev->rst)) {
+-		reset_control_assert(dmadev->rst);
++	rst = devm_reset_control_get(&pdev->dev, NULL);
++	if (!IS_ERR(rst)) {
++		reset_control_assert(rst);
+ 		udelay(2);
+-		reset_control_deassert(dmadev->rst);
++		reset_control_deassert(rst);
+ 	}
+ 
+ 	dma_cap_set(DMA_SLAVE, dd->cap_mask);
 -- 
 2.20.1
 
