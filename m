@@ -2,61 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3ACB61A4D82
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 04:27:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F9F11A4DA5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 05:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zm8akpXygOJsl5uYJ/7tCCw70ziLmHKhBFfrOVUyzXI=; b=VpgATuPJHwi2LU
-	2YDygoOSc08HDagHd0XICgEab9YiFIUv/kKD3PJF1cSl92X0Tt0XqH+4MP2GMOmmBiFrNl+37UO8S
-	xPG0m9kryuhWZRYNpVJkPw6UCQ0dO4goGr1qJZVEYxyCNEWKBXwzn/l8AvqUictrWAgwAsyof6R08
-	QF4AEvS1WQ6r7HYlfUqEYYZEv7ASKCqEMPXS+F1G9SIADDgmAW8cK3R+3WjQzW49n+SReuJaLNjTV
-	duiEGxKmTlpUwzfTvRgQBDdmsn5IlQLLZDHK4eQzoXbTNs5gp87UPPrUxQ2RJQ9w9AJ7lrbn0dD2z
-	TiugHqxvRgfmerOQEzUg==;
+	List-Owner; bh=WxS2MllyLJ6c59dg3NiDgqu9u61xV6eTJvyIs908bC0=; b=YV7Lp9yvCzBt2K
+	y1V2L1XfNC8KQ5RYqGjcIYefa0svHMvZoWlkjvB0XCAMU0Ji5tlxpZeRC9AhIaxqnQHdiC9AFNoqo
+	PTFuVmEFBucIA5mK4pNlE6a87OXMmK2d354W+GvpkRfpv+L8d+NKjJFc6yM/zo76dAJ08zzRnXf6f
+	3u4IoZ1yo3kImlRjTxQMworaSoB26FxOv7y1olWbOb5LfLFab03x1jhmW7xnDT/svxSXZK/g9UUeG
+	vaJ2iNdLGAPBDQ0B7N41qJ36e92meN7s83x0pCaVuW2iXRU2ggSBRemRXWtZmuQgUldWwRyJdeD4W
+	78v35mzI8wI/I5Ijx7SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jN5rr-0005Xi-Rn; Sat, 11 Apr 2020 02:27:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jN74N-0004NU-UD; Sat, 11 Apr 2020 03:44:35 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jN5rk-0005Wx-R4
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 02:27:30 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jN74G-0004JQ-JR
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 03:44:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586576664;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=tSX3QudJ2iHkyu7Zntp3JHz55Dv2K9nr9Vw4rINki0g=;
+ b=do6GC9pknGDlJETDHu10GICBfpQFSHPCiTdkVg3Bf0IKYMqzxOZx0uESctVK59rr9vRjK/
+ HTQ6FDCBcPdEbqxPCaN3iOxSWf9HNY+35Uv6rYA4XuuAFvwDD4D8W7MXsnU9okAbC1ExmK
+ ORmxF/OhLXlThny43hkmhLAWV4bf8XQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-223-uXpjzOt_P8C_VBef4dtHRQ-1; Fri, 10 Apr 2020 23:44:22 -0400
+X-MC-Unique: uXpjzOt_P8C_VBef4dtHRQ-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 004E0206A1;
- Sat, 11 Apr 2020 02:27:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586572047;
- bh=HUi2hrUBSigypj7OLb4O+ntBuDmB4tsP4LR2Q8kzRy8=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=p74Y9fw4spXP8pf4T5VF32/bLgWuuZPiqXJ+qwE6TdU3spWHWZoocPJZCScu098NO
- mdzxubA+o7uu/V75cIWSMbkFN8o6UIgFacDnbNELRUcunPHJiZoPFA9aV7E7Z/fX0x
- osRc40ASzj49v7Fz/0J96Bm8nLJO7F0FQJIkLfNs=
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B93F5107ACC7;
+ Sat, 11 Apr 2020 03:44:20 +0000 (UTC)
+Received: from localhost (ovpn-12-67.pek2.redhat.com [10.72.12.67])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 29FC160C05;
+ Sat, 11 Apr 2020 03:44:16 +0000 (UTC)
+Date: Sat, 11 Apr 2020 11:44:14 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+Message-ID: <20200411034414.GH2129@MiWiFi-R3L-srv>
+References: <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
+ <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
+ <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
+ <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
+ <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
+ <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
+ <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
+ <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
+ <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
+ <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
 MIME-Version: 1.0
-In-Reply-To: <CAAfSe-s=dZe=6y7UH8CBcddL1BKoLOAvi24RekgdmVv0StxTTA@mail.gmail.com>
-References: <20200408160044.2550437-1-arnd@arndb.de>
- <CABOV4+UocLs3jLi7-vTi8muiFqACVdxH7Td8=U1ABveLnmyCuw@mail.gmail.com>
- <CA+nhYX0H-czfJ6Kg+FK7X2=hHQK185UOLGoPdEP3nqWQWcA+bg@mail.gmail.com>
- <CAAfSe-s=dZe=6y7UH8CBcddL1BKoLOAvi24RekgdmVv0StxTTA@mail.gmail.com>
-Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
-From: Stephen Boyd <sboyd@kernel.org>
-To: Chunyan Zhang <zhang.lyra@gmail.com>, Sandeep Patil <sspatil@android.com>
-Date: Fri, 10 Apr 2020 19:27:26 -0700
-Message-ID: <158657204622.199533.16589832598336244320@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+In-Reply-To: <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_192728_895783_38F8729C 
-X-CRM114-Status: GOOD (  12.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200410_204428_737948_4D0A48FC 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,50 +101,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Android Kernel Team <kernel-team@android.com>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- LKML <linux-kernel@vger.kernel.org>, Chunyan Zhang <chunyan.zhang@unisoc.com>,
- Orson Zhai <orson.zhai@unisoc.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Will Deacon <will@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, James Morse <james.morse@arm.com>,
+ Eric Biederman <ebiederm@xmission.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Chunyan Zhang (2020-04-09 20:45:16)
-> We see this broken because I shouldn't leave clk Makefile a tristate
-> compile [1] after changing ARCH_SPRD to be tristate.
-> 
-> If we will make ARCH_SPRD tristate-able in the future and you all
-> aggree that, I would like to do it now, and pay more attention to
-> Makefiles and dependencies.
-> 
-> I can also make a change like below:
-> 
-> diff --git a/drivers/clk/sprd/Kconfig b/drivers/clk/sprd/Kconfig
-> index e18c80fbe804..9f7d9d8899a5 100644
-> --- a/drivers/clk/sprd/Kconfig
-> +++ b/drivers/clk/sprd/Kconfig
-> @@ -2,6 +2,7 @@
->  config SPRD_COMMON_CLK
->         tristate "Clock support for Spreadtrum SoCs"
->         depends on ARCH_SPRD || COMPILE_TEST
-> +       depends on m || ARCH_SPRD != m
->         default ARCH_SPRD
->         select REGMAP_MMIO
-> 
-> Arnd, Stephen, Sandeep, what do you think? Does that make sense?
+On 04/10/20 at 12:10pm, Andrew Morton wrote:
+> It's unclear (to me) what is the status of this patchset.  But it does appear that
+> an new version can be expected?
 
-Sorry, doesn't make any sense to me. The ARCH_FOO configs for various
-platforms are intended to be used to limit the configuration space of
-various other Kconfig symbols for the code that only matters to those
-platforms. The usage of depends and default is correct here already. The
-ARCH_FOO configs should always be bool. Any code bloat problems seen by
-config symbols enabling because they're 'default ARCH_FOO' can be
-resolved by explicitly disabling those configs.
+As we discussed in the thread of replying to the cover letter, the
+idea of this patchset is not good. 
+
+Because We tend to use kexec_file_load more and improve/enhance it in the
+future, and gradually obsolete the old kexec_load interface which this
+patchset is trying to fix on. 
+
+And the issue James spot is a very corner case, we have suggested
+another easier way to avoid it by adding systemd service to load kexec
+and monitor memory adding/removing uevent, juas as we have done for
+kdump loading. Bhupesh is working on this to add a service in Fedora
+and test, and will put it to RHEL too if nobody is unsatisfied.
+
+Thanks
+Baoquan
+
 
 _______________________________________________
 linux-arm-kernel mailing list
