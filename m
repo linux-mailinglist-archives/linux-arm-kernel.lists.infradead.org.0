@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0768E1A5466
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:06:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43FA91A546E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:06:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JIsA4h9NtIeKy3p+57BlQINLq2c+90fTyOk3zpN/rpo=; b=QytbHp6VVyHOAK
-	fhOEkZcWmtIanO66GqEBcb6qdKDOBUkHuB6d5kVYYPnrfUvfZGdv3DpiSuHUKotqXJ2NEIybHH9cu
-	3bvBs897U8iUfoy/FEXGO9lz1OpyxAKeKlYWsPXODMj+SoNykv9o9MQqH7owvJ3y2P0hePn0ENTbv
-	ul1KNjR796dY3FoP16uxWfBk5g8feeLT3mTfPRUXjM54eYrz7t48jWoC6hhH6OMEVJNiR1aZmzfYk
-	v95wZPLBoDEiDgOt4IRkf0TPdKHI3qqlLN9hJSLn1yjRLDvNxYv4mjnLFii+7fmh1dTRI1raQ9js+
-	h73LxCZVWG8duwSL+drQ==;
+	List-Owner; bh=EW0DAu7rzPz9v7rD5ZzaBcmqccIBUC9koQm/S2lNea8=; b=YQZhu77s5xGzq8
+	C+VJGqYkCSnEb5gFFr7EYDWc5NDcuWnSgdQgVqZyzZw4ZX7XZARwbu1Bc1agyNp8pj2paETl8yD7g
+	flSWa1Cd+/FtyOfmgvUCgIe22T6KGt16UU3BElfyMxlEDxDd0T18o6yrY8pQW1PeVahuYUv+CcL/S
+	b+k6KwAc0R08vtnzX1Ks1sKsRY8LN9rJ44bE9Qx5xeeWmr4qwpUqoiPmLwEyv6oaN6n/h3U46WvW1
+	7xdiqkO4/uXI7YCIL9WcNIQrTDqKWisPNBgDBmt1VbZg8bjC+yhc26caAluMTQD5PHGygvpiJhrmp
+	56Gyx1DiCh0jRdAZSy/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNPCG-0008C4-9k; Sat, 11 Apr 2020 23:05:56 +0000
+	id 1jNPCa-00006t-Ul; Sat, 11 Apr 2020 23:06:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNPBO-0005Wv-Vv; Sat, 11 Apr 2020 23:05:05 +0000
+ id 1jNPBc-0007m0-W1
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:05:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA92E21841;
- Sat, 11 Apr 2020 23:05:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62F6420787;
+ Sat, 11 Apr 2020 23:05:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586646302;
- bh=w68oapllwXBcXuPwr+A/R2ShE4TVv5AB6GPxa7PIA1g=;
+ s=default; t=1586646316;
+ bh=dOUycVNeaP9QZ2jnw7c8HSAmuHLJ1l+I7jvRXSXZbMg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=X3Dgskd7nGUMEBBHuGSQoYj9yAvax7I2NUvGpeeMCeNst65cbnSrMWJR9XUB+TW73
- lFmGYK41NlbIaA6lUJwqe8km3LmP5OhqNpuu/LA79a0A7ezSMTuJl1WeW6tFPpWXQB
- WCtpsCErDMA0Fk1xSpNfSitmywZnY1h1rVfRhYcE=
+ b=1WfWBThYuInJzuEy9OXDRNIxMkzdLL9IT+eMref3vHxvub7CMj1EtKLvQQsVuVGLA
+ Klyn2ucNzt3Uo3VzBrPrbYiZLoHwvUZ7SY6mYrecPWFlUBn5ntq7041teojCArRQQC
+ KrSTEsRcE0NZ5IB6lvr7lP1RDuClSOgHcHOO2RaA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 061/149] mt76: fix handling full tx queues in
- mt76_dma_tx_queue_skb_raw
-Date: Sat, 11 Apr 2020 19:02:18 -0400
-Message-Id: <20200411230347.22371-61-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 072/149] drm/stm: ltdc: check crtc state before
+ enabling LIE
+Date: Sat, 11 Apr 2020 19:02:29 -0400
+Message-Id: <20200411230347.22371-72-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200411230347.22371-1-sashal@kernel.org>
 References: <20200411230347.22371-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_160503_080828_81B9DEBB 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200411_160517_091689_4E8C7F37 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,57 +80,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Philippe Cornu <philippe.cornu@st.com>, dri-devel@lists.freedesktop.org,
+ Yannick Fertre <yannick.fertre@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Felix Fietkau <nbd@nbd.name>
+From: Yannick Fertre <yannick.fertre@st.com>
 
-[ Upstream commit 93eaec7625f13cffb593b471405b017c7e64d4ee ]
+[ Upstream commit a6bd58c51ac43083f3977057a7ad668def55812f ]
 
-Fixes a theoretical issue where it could potentially overwrite an existing
-descriptor entry (and leaking its skb)
+Following investigations of a hardware bug, the LIE interrupt
+can occur while the display controller is not activated.
+LIE interrupt (vblank) don't have to be set if the CRTC is not
+enabled.
 
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+Signed-off-by: Yannick Fertre <yannick.fertre@st.com>
+Acked-by: Philippe Cornu <philippe.cornu@st.com>
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+Link: https://patchwork.freedesktop.org/patch/msgid/1579601650-7055-1-git-send-email-yannick.fertre@st.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/dma.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/stm/ltdc.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/dma.c b/drivers/net/wireless/mediatek/mt76/dma.c
-index 1847f55e199b0..c001d94958d83 100644
---- a/drivers/net/wireless/mediatek/mt76/dma.c
-+++ b/drivers/net/wireless/mediatek/mt76/dma.c
-@@ -261,10 +261,13 @@ mt76_dma_tx_queue_skb_raw(struct mt76_dev *dev, enum mt76_txq_id qid,
- 	struct mt76_queue_buf buf;
- 	dma_addr_t addr;
+diff --git a/drivers/gpu/drm/stm/ltdc.c b/drivers/gpu/drm/stm/ltdc.c
+index c2815e8ae1da2..ea654c7280f7e 100644
+--- a/drivers/gpu/drm/stm/ltdc.c
++++ b/drivers/gpu/drm/stm/ltdc.c
+@@ -648,9 +648,14 @@ static const struct drm_crtc_helper_funcs ltdc_crtc_helper_funcs = {
+ static int ltdc_crtc_enable_vblank(struct drm_crtc *crtc)
+ {
+ 	struct ltdc_device *ldev = crtc_to_ltdc(crtc);
++	struct drm_crtc_state *state = crtc->state;
  
-+	if (q->queued + 1 >= q->ndesc - 1)
-+		goto error;
+ 	DRM_DEBUG_DRIVER("\n");
+-	reg_set(ldev->regs, LTDC_IER, IER_LIE);
 +
- 	addr = dma_map_single(dev->dev, skb->data, skb->len,
- 			      DMA_TO_DEVICE);
- 	if (unlikely(dma_mapping_error(dev->dev, addr)))
--		return -ENOMEM;
-+		goto error;
- 
- 	buf.addr = addr;
- 	buf.len = skb->len;
-@@ -275,6 +278,10 @@ mt76_dma_tx_queue_skb_raw(struct mt76_dev *dev, enum mt76_txq_id qid,
- 	spin_unlock_bh(&q->lock);
++	if (state->enable)
++		reg_set(ldev->regs, LTDC_IER, IER_LIE);
++	else
++		return -EPERM;
  
  	return 0;
-+
-+error:
-+	dev_kfree_skb(skb);
-+	return -ENOMEM;
  }
- 
- static int
 -- 
 2.20.1
 
