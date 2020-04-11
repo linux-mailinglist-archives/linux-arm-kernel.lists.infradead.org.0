@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26DCF1A4D7F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 04:26:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ACB61A4D82
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 04:27:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WotpbORakUauSco4/PMhkBjE/doGCqH3cHa+XLZajjo=; b=k7N753idNyc3M6
-	5nP1F6ZjJSfJgoLD2b0QUZJklc99OtdVudinKT0B7Zu4oqkIeNFyD5bqeV6gK5FQTJMxafrQ8VaS8
-	Ag6/h6goGG225l9Oo06Y0jzB2UPMqT10i6N9EpdvnSvhr5LOxGfe5mEgGx5Cx0uiyznrSSi7cvafS
-	AJTxRKsAtCpHdA0tS/i8sqLEDAFRx0fPf49bAERICHx2+GlwZW2f04+jMPoTs/E3zlY2df9oxLdfl
-	3ZNVaVGgQx0o0/k6ka8OT2ZnRMWYFKEBFXw41a9dbdMrefQ3/7gdrQlKsUJvpgYK3ub7SdFdgPGQY
-	m56+5K32C2uAQ10sw7iA==;
+	List-Owner; bh=zm8akpXygOJsl5uYJ/7tCCw70ziLmHKhBFfrOVUyzXI=; b=VpgATuPJHwi2LU
+	2YDygoOSc08HDagHd0XICgEab9YiFIUv/kKD3PJF1cSl92X0Tt0XqH+4MP2GMOmmBiFrNl+37UO8S
+	xPG0m9kryuhWZRYNpVJkPw6UCQ0dO4goGr1qJZVEYxyCNEWKBXwzn/l8AvqUictrWAgwAsyof6R08
+	QF4AEvS1WQ6r7HYlfUqEYYZEv7ASKCqEMPXS+F1G9SIADDgmAW8cK3R+3WjQzW49n+SReuJaLNjTV
+	duiEGxKmTlpUwzfTvRgQBDdmsn5IlQLLZDHK4eQzoXbTNs5gp87UPPrUxQ2RJQ9w9AJ7lrbn0dD2z
+	TiugHqxvRgfmerOQEzUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jN5qm-0005Gr-K4; Sat, 11 Apr 2020 02:26:28 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jN5rr-0005Xi-Rn; Sat, 11 Apr 2020 02:27:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jN5qe-0005Fw-Dq
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 02:26:22 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id o1so553350pjs.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 19:26:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=9QWTHRRLu2SNoXMVr8er30dtVtDUkqmUu8dqdXp0zBo=;
- b=gwGyNDkE+v0753EJpooO71QpVYwsLyrGTVnJYTW7Yzj6M0xU/QZj76chLAuTLZWSAG
- 9lHH/MJUJLj4kFuBpNvzcZQPf1j9fZu7O9hvQENB7QVNK+S/54ggxGTxL1m6I0ymfRWV
- rkO3WVrqJECAUj5XBVaZWIG3U2bVUfy0yY0NskrWVbSysKwt+Dp3bPHtrllJ3u2ZurMS
- D4XSSm4pjVrZ8kVJNSQeFuijeEjqdnYSePe1hz44i2MzsEbSyi1fTzVdIgOkKodgYmFB
- 5Q6p6aABytM5dpS+g2IPPItTlH0qU5SRAFRvv5uh5UNah6tRqWX/igx5ZsvwukX5xUX/
- IvVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=9QWTHRRLu2SNoXMVr8er30dtVtDUkqmUu8dqdXp0zBo=;
- b=is6tXVRCDY+u/ex04aYakTf7tTQHiF9GCv1rV1DHvo8a05uSqxoZWLKR1QtH8fODkf
- f3DlLrx6nOZJZxXXW7lDaF8Q+QROBF+FNUCP1bQjnRXysaFy9G9Lb+kagLQ2ciYOE1/c
- 3g4jsBkdxoBKLv+2tT+/N5UgTDaL5dZTyXhbJBclzmkAifRND22oXdRugR0e1ljZmtVe
- 3NmL1TglzvN8fEiqnkQ1MOigBVmQ5P5zLD4iCNUX1DnUIRJusIPUwzS0x5N0NxvG3ns9
- dXymRYiPXPEZdC29HdaWGJWnddKI1NgCsCiBrkRoa0J2G1eeITc2bHZa8y14lDvgWQKz
- 80pw==
-X-Gm-Message-State: AGi0PuaqQcTFn53fzc8wH+1Cn2LNbw1GmgP+wFV2STBdK8NDw0w4prqf
- hrA5bfpHYvZZGT/Rxa3Nbck+wA==
-X-Google-Smtp-Source: APiQypIAUsk9JXZ4eZ7z5c+24lbiiLbP6zb1dK3BsKgHpLxi25S9VapHngUiDqP0Qg9FgGN/gX1gkg==
-X-Received: by 2002:a17:90a:de0e:: with SMTP id
- m14mr8702041pjv.54.1586571977804; 
- Fri, 10 Apr 2020 19:26:17 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id g14sm2895868pjd.15.2020.04.10.19.26.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 19:26:17 -0700 (PDT)
-Date: Fri, 10 Apr 2020 19:26:27 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Siddharth Gupta <sidgup@codeaurora.org>
-Subject: Re: [PATCH v2 2/2] remoteproc: core: Prevent sleep when rproc crashes
-Message-ID: <20200411022627.GA826227@builder.lan>
-References: <1586384305-7825-1-git-send-email-sidgup@codeaurora.org>
- <1586384305-7825-3-git-send-email-sidgup@codeaurora.org>
+ id 1jN5rk-0005Wx-R4
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 02:27:30 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 004E0206A1;
+ Sat, 11 Apr 2020 02:27:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586572047;
+ bh=HUi2hrUBSigypj7OLb4O+ntBuDmB4tsP4LR2Q8kzRy8=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=p74Y9fw4spXP8pf4T5VF32/bLgWuuZPiqXJ+qwE6TdU3spWHWZoocPJZCScu098NO
+ mdzxubA+o7uu/V75cIWSMbkFN8o6UIgFacDnbNELRUcunPHJiZoPFA9aV7E7Z/fX0x
+ osRc40ASzj49v7Fz/0J96Bm8nLJO7F0FQJIkLfNs=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586384305-7825-3-git-send-email-sidgup@codeaurora.org>
+In-Reply-To: <CAAfSe-s=dZe=6y7UH8CBcddL1BKoLOAvi24RekgdmVv0StxTTA@mail.gmail.com>
+References: <20200408160044.2550437-1-arnd@arndb.de>
+ <CABOV4+UocLs3jLi7-vTi8muiFqACVdxH7Td8=U1ABveLnmyCuw@mail.gmail.com>
+ <CA+nhYX0H-czfJ6Kg+FK7X2=hHQK185UOLGoPdEP3nqWQWcA+bg@mail.gmail.com>
+ <CAAfSe-s=dZe=6y7UH8CBcddL1BKoLOAvi24RekgdmVv0StxTTA@mail.gmail.com>
+Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
+From: Stephen Boyd <sboyd@kernel.org>
+To: Chunyan Zhang <zhang.lyra@gmail.com>, Sandeep Patil <sspatil@android.com>
+Date: Fri, 10 Apr 2020 19:27:26 -0700
+Message-ID: <158657204622.199533.16589832598336244320@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_192620_513053_C31DD494 
-X-CRM114-Status: GOOD (  18.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200410_192728_895783_38F8729C 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,83 +78,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- rishabhb@codeaurora.org, psodagud@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Android Kernel Team <kernel-team@android.com>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ LKML <linux-kernel@vger.kernel.org>, Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ Orson Zhai <orson.zhai@unisoc.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Will Deacon <will@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 08 Apr 15:18 PDT 2020, Siddharth Gupta wrote:
-
-> Remoteproc recovery should be fast and any delay will have an impact on the
-> user-experience. Add a wakeup source to remoteproc which ensures that the
-> system does not go into idle state while a remoteproc is recovering, thus
-> prevent any delays that might occur during system resume.
+Quoting Chunyan Zhang (2020-04-09 20:45:16)
+> We see this broken because I shouldn't leave clk Makefile a tristate
+> compile [1] after changing ARCH_SPRD to be tristate.
 > 
-
-This is better, but I think it can be reworded further to show that it's
-not a matter of making it "fast", it's a matter of preventing suspend
-from interrupting the recovery of a remoteproc.
-
-> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
-> ---
->  drivers/remoteproc/qcom_q6v5_pas.c   | 1 +
->  drivers/remoteproc/remoteproc_core.c | 4 ++++
->  2 files changed, 5 insertions(+)
+> If we will make ARCH_SPRD tristate-able in the future and you all
+> aggree that, I would like to do it now, and pay more attention to
+> Makefiles and dependencies.
 > 
-> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-> index 7a63efb..6bb2c7d 100644
-> --- a/drivers/remoteproc/qcom_q6v5_pas.c
-> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
-> @@ -401,6 +401,7 @@ static int adsp_probe(struct platform_device *pdev)
->  
->  	adsp = (struct qcom_adsp *)rproc->priv;
->  	adsp->dev = &pdev->dev;
-> +	device_wakeup_enable(adsp->dev);
+> I can also make a change like below:
+> 
+> diff --git a/drivers/clk/sprd/Kconfig b/drivers/clk/sprd/Kconfig
+> index e18c80fbe804..9f7d9d8899a5 100644
+> --- a/drivers/clk/sprd/Kconfig
+> +++ b/drivers/clk/sprd/Kconfig
+> @@ -2,6 +2,7 @@
+>  config SPRD_COMMON_CLK
+>         tristate "Clock support for Spreadtrum SoCs"
+>         depends on ARCH_SPRD || COMPILE_TEST
+> +       depends on m || ARCH_SPRD != m
+>         default ARCH_SPRD
+>         select REGMAP_MMIO
+> 
+> Arnd, Stephen, Sandeep, what do you think? Does that make sense?
 
-Move this 5 lines down and give it an empty line before and after.
-
->  	adsp->rproc = rproc;
->  	adsp->pas_id = desc->pas_id;
->  	adsp->has_aggre2_clk = desc->has_aggre2_clk;
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 9f99fe2..19a360d 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -1729,6 +1729,8 @@ static void rproc_crash_handler_work(struct work_struct *work)
->  
->  	if (!rproc->recovery_disabled)
->  		rproc_trigger_recovery(rproc);
-> +
-> +	pm_relax(rproc->dev.parent);
->  }
->  
->  /**
-> @@ -2273,6 +2275,8 @@ void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type)
->  		return;
->  	}
->  
-
-	/* Prevent suspend while the remoteproc is being recovered */
-
-
-PS. This patch is unrelated to patch 1/2, so please resubmit it
-separately.
-
-Regards,
-Bjorn
-
-> +	pm_stay_awake(rproc->dev.parent);
-> +
->  	dev_err(&rproc->dev, "crash detected in %s: type %s\n",
->  		rproc->name, rproc_crash_to_string(type));
->  
-> -- 
-> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-> a Linux Foundation Collaborative Project
+Sorry, doesn't make any sense to me. The ARCH_FOO configs for various
+platforms are intended to be used to limit the configuration space of
+various other Kconfig symbols for the code that only matters to those
+platforms. The usage of depends and default is correct here already. The
+ARCH_FOO configs should always be bool. Any code bloat problems seen by
+config symbols enabling because they're 'default ARCH_FOO' can be
+resolved by explicitly disabling those configs.
 
 _______________________________________________
 linux-arm-kernel mailing list
