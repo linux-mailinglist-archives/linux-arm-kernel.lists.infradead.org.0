@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97E381A54F1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:08:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6B411A5504
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 01:08:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TWsYy959tA4cJv2HE/s0yWy7Y89XCnjKiIFsyRdZuvI=; b=h3nLR658CiNEpW
-	W+6JJVC7OiCJS4oiZIH1c1lJ2udsNB2nShEXwu0rFmV0BTRteOUgrveh8ZQENR2iukVI3C+TbE+cs
-	BHbV5Es9sxCEzeh/VJEHOKaIyqvFEZM0cGcueFXRKbFBY7p1F8MB00l+yvUD/uCkQDQwkfafrkwOU
-	Fr746tAnLDpf3XHTZ0O4Wlhz7YUTXtAMKJVXUPhRvUOnBS+a7iQydA43FiR9Hb9VeVyfEWkq32IKQ
-	SfqIgk5YTqReZR5UXkrS7RG1JXIStRNpGtDFFx8iHkggQILlvmVM1smZH0u/xPVmeUL9ScnXja1fd
-	dIXTvToEoZq6R+VjmFDg==;
+	List-Owner; bh=rCZ3NTGVYSuDGk/69doxfGIt3pwTEXlAo1Ftltflj1g=; b=nAHyzpz4mLDCzf
+	eWEQQGC/VrlCWxrH8kN+kLMuRZPARjV2BJtj7b8MeaNelX3yFm0cu2bZFkmydbGvQDvXHNV7V6oyK
+	rr0WGEG7F7tJiRXMAqBOT47lsTseAAxDl3OoPZIObsIZQhHOlkGV61dT5XXPUQe6wZaepjnFvgRTM
+	JkF30thjQgBkgW3f8TSvzCY6aiuHxGvwLS+OI3gp06GZrJlqPyWKKOD4lWajcmcO80hH2dMN8qMb7
+	zPpOiXsiFjNW+RDTh9wfTZDSVcImRPFSGUwNrO6wPeJsO3o/2+kAuKDrtXszkAfBQUZB9290xpyc3
+	5F488rujNYiDVqwnHAkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNPEg-0002ET-16; Sat, 11 Apr 2020 23:08:26 +0000
+	id 1jNPF2-0002VZ-TB; Sat, 11 Apr 2020 23:08:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNPCo-0000cv-G9; Sat, 11 Apr 2020 23:06:32 +0000
+ id 1jNPCq-0000eE-Ps
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 23:06:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D63A520708;
- Sat, 11 Apr 2020 23:06:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7DC6E20787;
+ Sat, 11 Apr 2020 23:06:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586646390;
- bh=0go0yJt6cQE8yciLIioduH6bZbOdpupXHF1LgaHvoGc=;
+ s=default; t=1586646391;
+ bh=0SPryoYmUi+Ig0ImQ453oQJ0Z9MhCZSQAku6YWUmkKo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=U7x79t9DRX3kEv51Q48FK83g4y9M6GB7xqZpW763n0PkPaEC0zpgAZeRigxhMVQjo
- OtoKVM7e2SHI4fzgYgTyfj14bB3u0fhVHKLC+JSflnhwtVSJcEi/MGWOQN98zgVjn4
- TUHorDm34RH057+EG9QoMjk/XPZ9GBf3e6+FPnBg=
+ b=2fBEObkAJ35wKc3ZZj6xzc8uZ2qM03sWwkfAP1OMGpq7xcK2k2b9DLg8Em3IEnAUh
+ a35PQw/qij4T2/ank3eDTRv84qgrr1EN1igmACLYP8H4BcVOt0WTyn9MZ+CzrldMcr
+ G3yvyeJQWWUBjquXFJTois8BpV6jZN4CwGGS3170=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 129/149] scsi: ufs: Fix ufshcd_hold() caused
- scheduling while atomic
-Date: Sat, 11 Apr 2020 19:03:26 -0400
-Message-Id: <20200411230347.22371-129-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 130/149] dmaengine: sun4i: use 'linear_mode' in
+ sun4i_dma_prep_dma_cyclic
+Date: Sat, 11 Apr 2020 19:03:27 -0400
+Message-Id: <20200411230347.22371-130-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200411230347.22371-1-sashal@kernel.org>
 References: <20200411230347.22371-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_160630_570139_B1F882D6 
-X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-CacheID: sfid-20200411_160633_021478_82D4C125 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,56 +81,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-scsi@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- Asutosh Das <asutoshd@codeaurora.org>, Can Guo <cang@codeaurora.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Stanley Chu <stanley.chu@mediatek.com>, Hongwu Su <hongwus@codeaurora.org>,
- Bean Huo <beanhuo@micron.com>
+Cc: Sasha Levin <sashal@kernel.org>, YueHaibing <yuehaibing@huawei.com>,
+ Hulk Robot <hulkci@huawei.com>, Vinod Koul <vkoul@kernel.org>,
+ dmaengine@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Can Guo <cang@codeaurora.org>
+From: YueHaibing <yuehaibing@huawei.com>
 
-[ Upstream commit c63d6099a7959ecc919b2549dc6b71f53521f819 ]
+[ Upstream commit 6ebb827f7aad504ea438d0d2903293bd6f904463 ]
 
-The async version of ufshcd_hold(async == true), which is only called in
-queuecommand path as for now, is expected to work in atomic context, thus
-it should not sleep or schedule out. When it runs into the condition that
-clocks are ON but link is still in hibern8 state, it should bail out
-without flushing the clock ungate work.
+drivers/dma/sun4i-dma.c: In function sun4i_dma_prep_dma_cyclic:
+drivers/dma/sun4i-dma.c:672:24: warning:
+ variable linear_mode set but not used [-Wunused-but-set-variable]
 
-Fixes: f2a785ac2312 ("scsi: ufshcd: Fix race between clk scaling and ungate work")
-Link: https://lore.kernel.org/r/1581392451-28743-6-git-send-email-cang@codeaurora.org
-Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-Reviewed-by: Bean Huo <beanhuo@micron.com>
-Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
-Signed-off-by: Can Guo <cang@codeaurora.org>
-Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+commit ffc079a4accc ("dmaengine: sun4i: Add support for cyclic requests with dedicated DMA")
+involved this, explicitly using the value makes the code more readable.
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Link: https://lore.kernel.org/r/20200207024445.44600-1-yuehaibing@huawei.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/scsi/ufs/ufshcd.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/dma/sun4i-dma.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 2d705694636c2..682f85f800d0f 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool async)
- 		 */
- 		if (ufshcd_can_hibern8_during_gating(hba) &&
- 		    ufshcd_is_link_hibern8(hba)) {
-+			if (async) {
-+				rc = -EAGAIN;
-+				hba->clk_gating.active_reqs--;
-+				break;
-+			}
- 			spin_unlock_irqrestore(hba->host->host_lock, flags);
- 			flush_work(&hba->clk_gating.ungate_work);
- 			spin_lock_irqsave(hba->host->host_lock, flags);
+diff --git a/drivers/dma/sun4i-dma.c b/drivers/dma/sun4i-dma.c
+index bbc2bda3b902f..e87fc7c460dd4 100644
+--- a/drivers/dma/sun4i-dma.c
++++ b/drivers/dma/sun4i-dma.c
+@@ -698,10 +698,12 @@ sun4i_dma_prep_dma_cyclic(struct dma_chan *chan, dma_addr_t buf, size_t len,
+ 		endpoints = SUN4I_DMA_CFG_DST_DRQ_TYPE(vchan->endpoint) |
+ 			    SUN4I_DMA_CFG_DST_ADDR_MODE(io_mode) |
+ 			    SUN4I_DMA_CFG_SRC_DRQ_TYPE(ram_type);
++			    SUN4I_DMA_CFG_SRC_ADDR_MODE(linear_mode);
+ 	} else {
+ 		src = sconfig->src_addr;
+ 		dest = buf;
+ 		endpoints = SUN4I_DMA_CFG_DST_DRQ_TYPE(ram_type) |
++			    SUN4I_DMA_CFG_DST_ADDR_MODE(linear_mode) |
+ 			    SUN4I_DMA_CFG_SRC_DRQ_TYPE(vchan->endpoint) |
+ 			    SUN4I_DMA_CFG_SRC_ADDR_MODE(io_mode);
+ 	}
 -- 
 2.20.1
 
