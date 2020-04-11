@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A28501A4D3D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 03:30:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8BC31A4D4A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 03:35:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DLqUunNviT8h/NEPdr9rtX9Tfn8Jtv8zvF8pUBSP4BA=; b=gk/cSEJryjfj7+
-	/9lQ3FFklGJtqIWYBAaBDR3WRAq67ruANK6tZxag8FK/DbZeXKEJCPi8TCyi5U2dE70rI7nb7x4Sv
-	Tf26jBbf+d+YBmTFXwjaECar3mEOLbKCgPLJNGPVeNhuL7nn4hZlJEApKGTuGrESHLsh0npyWh/tJ
-	0Ic0spjwQZaCYpgxaG+Ax9WQX5nMYtqIV0vwKur5nn14Kw4WpZ761oqwc2IolBxoit2zNM+jUEbp+
-	wcxshNZzymdRfZxhjaAkBsOqtypR8s8hDOfVbGy9BzPAkgAwnQC33hUaQxTRSgvhpqLFHCaPPJtfa
-	b99EfLRq1r36C93sOAHA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vbeOY+wAuXci13U/VyiEIsaQvL6epm7zSHudFebqEuQ=; b=pR5sqhQFl1ZnRw
+	aI9nITPo92bb94kiGTyZu+k4SP0FbfLpHBUOZSKDwq+gcnmws5Utw202kHhv7XGwpafyg+vcyWtFk
+	nJjAbyLuSXE8UD2gzuurab8cnfAOzT+1Xt+6DItD9euKctIkIijhTnyWbmXjL1NqY1YrZOqKswkxE
+	3VipYiF0gSJbOQIuk4NyUmRjli6sI+N8JBfYo0GNoGi6+dMR2qEPyI5IyrBZr7jm2TbLavBBh+0iV
+	Jra+CFUEcxOjwUJri1XmrcCF/JIYWQLjwsPz13CuDqmkX60pnWi19RlkWEyUSB15bdemh7w+9uwr0
+	biFKgK2h9SDQYOG2BOsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jN4yQ-0005Q2-Dc; Sat, 11 Apr 2020 01:30:18 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jN53b-0002Sn-OF; Sat, 11 Apr 2020 01:35:39 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jN4y0-0005NL-N4
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 01:29:54 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id t40so1357132pjb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 Apr 2020 18:29:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=oViI8SklfCpZEbbYlFvgdpzM6/kZH9ALRRalOuYsvgM=;
- b=UNiShD7wlrWrXzBNeCBUu2DcSXJtHq7Z0Y8/MbsvAvNfpVWxNN7VvKLAuR31RGhV31
- LEOiAQi3VF/qJssY+mxdRur0UBNn39b9pLsPV87xF1fdZAvudU3b0CZ2rnInopThwfyR
- 0XyuuwJblsOtu+P+1AbiEW7/c1NwHvY+NZM2Yfy140kEFWTiqkSKfSbdXm9/RHxRv2dT
- aSrwEV2ox1H3Oz/URa8lu4yUXLj3AURT7dyuFqOEpYrfMklx44SQAiIFR6yGKCAs06K0
- aC2AR5lgaz9SoZn9OzR3ZhLbqpuDjsRS1k5vUFBhYBtLPbOJ3BqPH9S5MlQeBTE1ux+9
- OfeA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=oViI8SklfCpZEbbYlFvgdpzM6/kZH9ALRRalOuYsvgM=;
- b=oPZG5GZEKbWG+rDRoULNHWbx2adlTCm986hmQzTZ1eZKT4gHax3VdWYjLR6xnq0Yot
- pGIPv5h30rX5KkC/dtNm6/s4LNnKjZkZx3ilOv51cT96y63qww2RpeKshUJOtF889KcW
- 1tu0bw8nIfmP3bNQzp3bEomfISddiq3+hjOJ95sDf+GGsc9v3WClwQot561WnUdAqTZg
- /F6zB1oSx7kvUj0J5/GIN3iNTeX4H9U7N9IDwNiQfmRpYorpvCuo5qtc7pToydso8upN
- 8jh7Jhkj/fxhnQlr8LwxxGkgZqKAdGh4Zz4hJYCtDG71NsnoUY1HI0HhH0aadftfsxPf
- PCPw==
-X-Gm-Message-State: AGi0Pub4MTMBcry4sSFzIj09xcmlgYTFIkrVXPrexE8By5roOBDlddQI
- Yhwn3UXyv9wmWrHoM6fNkJgMHA==
-X-Google-Smtp-Source: APiQypIXEXPs9ksy3YjzBn7ixpo5mSMrugBfNzjkDJTpNfz4i3ihrt5TAUeFr8YSL7/BbVFVdh0/LA==
-X-Received: by 2002:a17:90a:6c22:: with SMTP id
- x31mr8469537pjj.124.1586568591685; 
- Fri, 10 Apr 2020 18:29:51 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id s62sm2575561pgb.94.2020.04.10.18.29.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 18:29:51 -0700 (PDT)
-Date: Fri, 10 Apr 2020 18:30:01 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Clement Leger <cleger@kalray.eu>
-Subject: Re: [PATCH 2/2] remoteproc: use rproc_coredump_set_elf_info in drivers
-Message-ID: <20200411013001.GG576963@builder.lan>
-References: <20200410102433.2672-1-cleger@kalray.eu>
- <20200410102433.2672-3-cleger@kalray.eu>
+ id 1jN53S-0002RY-8n
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 01:35:31 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id E82B65C0101;
+ Fri, 10 Apr 2020 21:35:25 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 10 Apr 2020 21:35:25 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=lX5SGrlx6dPNxsuJN5NmbTk0p2
+ Mtpif3mvePdQ+RePg=; b=fDkiFm5WzcUikKeixJo5ASn6AULPPD9mIrtmfzYDyl
+ O0+NJ8BUM7srr96K9ZJz5bvnDSb/+PdyaeIqJOfn8FIWOPFzM2QLpdJhCjHhYodg
+ a2JtfnryubnZPlR1TCsCJpWrFPsdyOkb5wySaUiBLZKnAwixen6YqXZmM+SlOHoK
+ ywzhsbYlXA31yZyXLVmp95YH86BGilf9C/eVqxBu+JwqfBqDXQGld+EABGmBrD/l
+ W4tA8S8zOXuZrXzBCwiUQ3O+XY9vGD0uGbhfkTLEsq6ErkPSuX8skYsPfp6dEmnV
+ Cp5Awbio17LbN12670xx4cX2bXeVUbVw+/rNnQg9O8ig==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=lX5SGrlx6dPNxsuJN
+ 5NmbTk0p2Mtpif3mvePdQ+RePg=; b=oMAMVJr9Mcrr9Itvy/kOZSdI1t8goQB8R
+ Jy45fP2X8qlCiaWP1Y8B+a86EhnxHfir1+xzLSeRCX5Ggpwk0jdG0zXC8oLD7XNa
+ QEt8fFenp/OJ5rGQpltTuC7dF7qZnp0zvlGJNbnvXIfGp22QizDThL17x/4C79bm
+ dY09Qy8QFr+y7upVHWIjWARtuRIsyl9MRU0cPcAjJFPNt7TUWAyHWqtmYu+pUJzA
+ 9XYuduzgyBvG6FuQ63tranvfSHyzRq2ma0XDy8cL5//V+TVQlFWFL9YIEzSQcLLr
+ u/Ns7dfGPiucAXsz6Jp3ZDuPus+9+lp6zh0rex670jU+uppuV0oKQ==
+X-ME-Sender: <xms:0x6RXtpWYErjWA3RCTC3an9Nm4rjOzU3Sxm9SvkzO4nTNhsjglQhjg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrvdefgdegfecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomheptehnughrvgifucfl
+ vghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedugedrvddrud
+ dtkedrudegleenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhr
+ ohhmpegrnhgurhgvfiesrghjrdhiugdrrghu
+X-ME-Proxy: <xmx:0x6RXtDNhKx7xsCIS_nKcZKYtOf6dw1Zowk7geYxJQeYWH5KaIkm6g>
+ <xmx:0x6RXmN2FrZtib9MQzUYRQS7Bx-dzwhW0kOOCfDMjVcb-93QcEzwVg>
+ <xmx:0x6RXsnc-1SLoW684WZiKWpkSQz04TLmi-Gj9MTfj00Z4MEuxjHM-Q>
+ <xmx:3R6RXtNuZJ681W7M1Uo85YksUUkbxhVrfWrb_cCIKvEOj9psWcWhGA>
+Received: from localhost.localdomain
+ (ppp14-2-108-149.adl-apt-pir-bras32.tpg.internode.on.net [14.2.108.149])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 7B4673280059;
+ Fri, 10 Apr 2020 21:35:08 -0400 (EDT)
+From: Andrew Jeffery <andrew@aj.id.au>
+To: linux-aspeed@lists.ozlabs.org
+Subject: [PATCH] ARM: dts: aspeed: Change KCS nodes to v2 binding
+Date: Sat, 11 Apr 2020 11:05:14 +0930
+Message-Id: <20200411013514.15950-1-andrew@aj.id.au>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200410102433.2672-3-cleger@kalray.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_182952_779320_596DF104 
-X-CRM114-Status: GOOD (  14.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200410_183530_527927_B9FAA03B 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,106 +104,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Andy Gross <agross@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Haiyue Wang <haiyue.wang@linux.intel.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, joel@jms.id.au, Vijay Khemka <vijaykhemka@fb.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 10 Apr 03:24 PDT 2020, Clement Leger wrote:
+Fixes the following warnings for both g5 and g6 SoCs:
 
-> Modify drivers which are using remoteproc coredump functionnality to use
-> rproc_coredump_set_elf_info in order to create correct elf coredump
-> format.
-> 
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:388.19-393.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-host@80/lpc-ctrl@0)
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Haiyue Wang <haiyue.wang@linux.intel.com>
+Cc: Vijay Khemka <vijaykhemka@fb.com>
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+---
+ .../dts/aspeed-bmc-facebook-tiogapass.dts     |  4 ++--
+ arch/arm/boot/dts/aspeed-g5.dtsi              | 24 +++++++++----------
+ arch/arm/boot/dts/aspeed-g6.dtsi              | 23 +++++++++---------
+ 3 files changed, 26 insertions(+), 25 deletions(-)
 
-> Signed-off-by: Clement Leger <cleger@kalray.eu>
-> ---
->  drivers/remoteproc/qcom_q6v5_adsp.c | 1 +
->  drivers/remoteproc/qcom_q6v5_mss.c  | 3 +++
->  drivers/remoteproc/qcom_q6v5_pas.c  | 1 +
->  drivers/remoteproc/qcom_wcnss.c     | 1 +
->  drivers/remoteproc/stm32_rproc.c    | 1 +
->  5 files changed, 7 insertions(+)
-> 
-> diff --git a/drivers/remoteproc/qcom_q6v5_adsp.c b/drivers/remoteproc/qcom_q6v5_adsp.c
-> index 2b01f2282062..8c3bd0954a13 100644
-> --- a/drivers/remoteproc/qcom_q6v5_adsp.c
-> +++ b/drivers/remoteproc/qcom_q6v5_adsp.c
-> @@ -423,6 +423,7 @@ static int adsp_probe(struct platform_device *pdev)
->  		dev_err(&pdev->dev, "unable to allocate remoteproc\n");
->  		return -ENOMEM;
->  	}
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
->  
->  	adsp = (struct qcom_adsp *)rproc->priv;
->  	adsp->dev = &pdev->dev;
-> diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
-> index 03ffc6db4c68..5a7ff1092362 100644
-> --- a/drivers/remoteproc/qcom_q6v5_mss.c
-> +++ b/drivers/remoteproc/qcom_q6v5_mss.c
-> @@ -1355,6 +1355,8 @@ static int qcom_q6v5_register_dump_segments(struct rproc *rproc,
->  		return ret;
->  	}
->  
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
-> +
->  	ehdr = (struct elf32_hdr *)fw->data;
->  	phdrs = (struct elf32_phdr *)(ehdr + 1);
->  	qproc->dump_complete_mask = 0;
-> @@ -1632,6 +1634,7 @@ static int q6v5_probe(struct platform_device *pdev)
->  	}
->  
->  	rproc->auto_boot = false;
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
->  
->  	qproc = (struct q6v5 *)rproc->priv;
->  	qproc->dev = &pdev->dev;
-> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-> index a41860d2243a..991f57e8e55b 100644
-> --- a/drivers/remoteproc/qcom_q6v5_pas.c
-> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
-> @@ -390,6 +390,7 @@ static int adsp_probe(struct platform_device *pdev)
->  	}
->  
->  	rproc->auto_boot = desc->auto_boot;
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
->  
->  	adsp = (struct qcom_adsp *)rproc->priv;
->  	adsp->dev = &pdev->dev;
-> diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
-> index 0c7afd038f0d..5d65e1a9329a 100644
-> --- a/drivers/remoteproc/qcom_wcnss.c
-> +++ b/drivers/remoteproc/qcom_wcnss.c
-> @@ -480,6 +480,7 @@ static int wcnss_probe(struct platform_device *pdev)
->  		dev_err(&pdev->dev, "unable to allocate remoteproc\n");
->  		return -ENOMEM;
->  	}
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
->  
->  	wcnss = (struct qcom_wcnss *)rproc->priv;
->  	wcnss->dev = &pdev->dev;
-> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index 6a66dbf2df40..0f9d02ca4f5a 100644
-> --- a/drivers/remoteproc/stm32_rproc.c
-> +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -625,6 +625,7 @@ static int stm32_rproc_probe(struct platform_device *pdev)
->  	if (!rproc)
->  		return -ENOMEM;
->  
-> +	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
->  	rproc->has_iommu = false;
->  	ddata = rproc->priv;
->  	ddata->workqueue = create_workqueue(dev_name(dev));
-> -- 
-> 2.17.1
-> 
+diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
+index 6b88c7f26bf7..8b880003a838 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
+@@ -113,13 +113,13 @@
+ &kcs2 {
+ 	// BMC KCS channel 2
+ 	status = "okay";
+-	kcs_addr = <0xca8>;
++	slave-reg = <0xca8>;
+ };
+ 
+ &kcs3 {
+ 	// BMC KCS channel 3
+ 	status = "okay";
+-	kcs_addr = <0xca2>;
++	slave-reg = <0xca2>;
+ };
+ 
+ &gpio {
+diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+index 284face7de2c..de7fd80b022a 100644
+--- a/arch/arm/boot/dts/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+@@ -445,22 +445,22 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x0 0x80>;
+ 
+-					kcs1: kcs1@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs1: kcs@24 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <1>;
+ 						status = "disabled";
+ 					};
+-					kcs2: kcs2@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs2: kcs@28 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x28 0x1>, <0x34 0x1>, <0x40 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <2>;
+ 						status = "disabled";
+ 					};
+-					kcs3: kcs3@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs3: kcs@2c {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x2c 0x1>, <0x38 0x1>, <0x44 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <3>;
+ 						status = "disabled";
+ 					};
+ 				};
+@@ -474,10 +474,10 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x80 0x1e0>;
+ 
+-					kcs4: kcs4@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs4: kcs@94 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x94 0x1>, <0x98 0x1>, <0x9c 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <4>;
+ 						status = "disabled";
+ 					};
+ 
+diff --git a/arch/arm/boot/dts/aspeed-g6.dtsi b/arch/arm/boot/dts/aspeed-g6.dtsi
+index 1ffc15177b79..f4113275a7f9 100644
+--- a/arch/arm/boot/dts/aspeed-g6.dtsi
++++ b/arch/arm/boot/dts/aspeed-g6.dtsi
+@@ -471,22 +471,23 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x0 0x80>;
+ 
+-					kcs1: kcs1@0 {
+-						compatible = "aspeed,ast2600-kcs-bmc";
++					kcs1: kcs@24 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+ 						interrupts = <GIC_SPI 138 IRQ_TYPE_LEVEL_HIGH>;
+ 						kcs_chan = <1>;
+ 						status = "disabled";
+ 					};
+-					kcs2: kcs2@0 {
+-						compatible = "aspeed,ast2600-kcs-bmc";
++					kcs2: kcs@28 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x28 0x1>, <0x34 0x1>, <0x40 0x1>;
+ 						interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>;
+-						kcs_chan = <2>;
+ 						status = "disabled";
+ 					};
+-					kcs3: kcs3@0 {
+-						compatible = "aspeed,ast2600-kcs-bmc";
++					kcs3: kcs@2c {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x2c 0x1>, <0x38 0x1>, <0x44 0x1>;
+ 						interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+-						kcs_chan = <3>;
+ 						status = "disabled";
+ 					};
+ 				};
+@@ -500,10 +501,10 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x80 0x1e0>;
+ 
+-					kcs4: kcs4@0 {
+-						compatible = "aspeed,ast2600-kcs-bmc";
++					kcs4: kcs@94 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x94 0x1>, <0x98 0x1>, <0x9c 0x1>;
+ 						interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>;
+-						kcs_chan = <4>;
+ 						status = "disabled";
+ 					};
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
