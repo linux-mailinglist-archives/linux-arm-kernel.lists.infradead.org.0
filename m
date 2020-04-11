@@ -2,83 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B80391A4F16
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 11:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B5981A4F1E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 11:24:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vgvXSJkMepvvRNJ2pNi4xoHW2Y094YfHH6KqUJbG1+k=; b=Zbkspri4MnsPZ0XCl6Te0RZLt
-	uxEUtAmuV6Gxl1EZy+Ur6fHVBYlz3dBeVyZux2N5pPfl6nSGczvqhfqZLKYzQR74KFQDyC30BcXgr
-	cQO0BQf4jbkduumSl3v5k5Dhacjb2SRLng6kTiXzjnlZwbRoNYjwy30/CFHew3WlvLC0JvtukVpB6
-	B3zyYcksPqHmRZGUoTC2JD5gQnYkNkw41zR2GKTTFJVVhJx9IrOrxU66pKHZoom5YmfBuhiC426/X
-	8B09lyZEPu1dC7uYKZZXmNjmXJTbm/YjHKLffH7KR9wKK2VOc+dRPyhcezDPhbSLDesanVDjhXZZv
-	S03AehWLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uffGn4+7eP2sc0kL2TKihHiylbWjiEN4sjqjHFxN6vI=; b=dAyPP1e5kn+/o8
+	qyHzP3lErPIyG0W7R51QgGS/DyidDEUn4R/ImvQ2m9B4q6CHtRB1yjUh6cDr4STktkKeUkaa0mOV7
+	gSBK2ZOBamPqikFS72UWYbpgdWGMv3YncZeZMsFlz7/MJaJHEuEZaAz3d3YOTXX2XOmMMre5iE6uP
+	ETZTlwimDkY5H41yTKTFjnnGrbmFRZ+oIc59EPPM2rZ/7nNngChQ6p1a8MF9XeiMwcjtAHI+G7scE
+	zPBwTUWWkNbUJTKDI7BLQCIgovXPAtjeXvSOPtEoF3zunnTs6K/HINnT1t2+vEPqAais7pxscBp8v
+	kQLCGyqnFR93ZXVaCo0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNCJV-00078P-IO; Sat, 11 Apr 2020 09:20:33 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jNCMz-0007d1-Pc; Sat, 11 Apr 2020 09:24:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNCJO-00077r-5B
- for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 09:20:27 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1586596826; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=m64rlGIY/ze74hM+6TJxI24Fs9sSBQEMm8EnQhf5+Gs=;
- b=nQNDqT082GMujGEtNshnXr3ugqjyryqYkewh5X80l3eaSpxtxxhNVgdQSK+VpmFbOXuXRuro
- R1nt6H9nr2EQ9UqrI9ASVA8Bg/2wG5XRRHfl4Ou13pubhcSB33pTbTLP6BeyxGKOI/XxswWC
- zMn/DC9Ej5/SrdCzBUeivOW5xfc=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e918bce.7f3974b8e848-smtp-out-n01;
- Sat, 11 Apr 2020 09:20:14 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id A4579C44788; Sat, 11 Apr 2020 09:20:13 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ id 1jNCMq-0007cb-4t
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 09:24:01 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 01845C433CB;
- Sat, 11 Apr 2020 09:20:12 +0000 (UTC)
-MIME-Version: 1.0
-Date: Sat, 11 Apr 2020 14:50:12 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Matthias Kaehlcke <mka@chromium.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 0/2] iommu/arm-smmu: Allow client devices to select direct
- mapping
-In-Reply-To: <20200409233124.GW199755@google.com>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <7761534cdb4f1891d993e73931894a63@codeaurora.org>
- <20200409233124.GW199755@google.com>
-Message-ID: <6714ba4f73f6518e5f2f427a0bcc6c53@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+ by mail.kernel.org (Postfix) with ESMTPSA id 64B6B20857;
+ Sat, 11 Apr 2020 09:23:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586597039;
+ bh=K90rgXY4TWpAkIW5KZCWi0jhW+x/kY4ZiXFZIllEs2M=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=UiRa/RX4NHEViHO5ccU94Pb69h0ReC90LoUClRg83c7t3C5hRykS+47XYO75Io4iL
+ QowIYv6pUSwZ5qUkJdmhOPyV1IDkAsBcy5+insjLhJ28goWRSy0QiJvnhrG/UROtyv
+ vKHPVASCOiu14AB3sTGI3i0R3Kc7Zvyi/OZT4fZg=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jNCMn-002LiR-Nk; Sat, 11 Apr 2020 10:23:57 +0100
+Date: Sat, 11 Apr 2020 10:23:56 +0100
+Message-ID: <86r1wus7df.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: "Zengtao (B)" <prime.zeng@hisilicon.com>
+Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
+ support
+In-Reply-To: <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
+References: <MN2PR18MB26869A6CA4E67558324F655CC5C70@MN2PR18MB2686.namprd18.prod.outlook.com>
+ <06d08f904f003160a48eac3c5ab3c7ff@kernel.org>
+ <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: prime.zeng@hisilicon.com, gcherian@marvell.com,
+ Dave.Martin@arm.com, alexandru.elisei@arm.com, andre.przywara@arm.com,
+ christoffer.dall@arm.com, james.morse@arm.com, jintack@cs.columbia.edu,
+ julien.thierry.kdev@gmail.com, kvm@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com, areddy3@marvell.com, gkulkarni@marvell.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_022026_585488_9BD4D29C 
-X-CRM114-Status: GOOD (  15.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200411_022400_210630_0F104F97 
+X-CRM114-Status: GOOD (  11.36  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,60 +97,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Rajendra Nayak <rnayak@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, iommu@lists.linux-foundation.org,
- linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
+ "jintack@cs.columbia.edu" <jintack@cs.columbia.edu>,
+ George Cherian <gcherian@marvell.com>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Anil Kumar Reddy H <areddy3@marvell.com>,
+ "alexandru.elisei@arm.com" <alexandru.elisei@arm.com>,
+ "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Matthias,
+Hi Zengtao,
 
-On 2020-04-10 05:01, Matthias Kaehlcke wrote:
-> On Tue, Feb 04, 2020 at 11:12:17PM +0530, Sai Prakash Ranjan wrote:
->> Hello Robin, Will
->> 
->> On 2020-01-22 17:18, Sai Prakash Ranjan wrote:
->> > This series allows drm devices to set a default identity
->> > mapping using iommu_request_dm_for_dev(). First patch is
->> > a cleanup to support other SoCs to call into QCOM specific
->> > implementation and preparation for second patch.
->> > Second patch sets the default identity domain for drm devices.
->> >
->> > Jordan Crouse (1):
->> >   iommu/arm-smmu: Allow client devices to select direct mapping
->> >
->> > Sai Prakash Ranjan (1):
->> >   iommu: arm-smmu-impl: Convert to a generic reset implementation
->> >
->> >  drivers/iommu/arm-smmu-impl.c |  8 +++--
->> >  drivers/iommu/arm-smmu-qcom.c | 55 +++++++++++++++++++++++++++++++++--
->> >  drivers/iommu/arm-smmu.c      |  3 ++
->> >  drivers/iommu/arm-smmu.h      |  5 ++++
->> >  4 files changed, 65 insertions(+), 6 deletions(-)
->> 
->> Any review comments?
+On Sat, 11 Apr 2020 05:10:05 +0100,
+"Zengtao (B)" <prime.zeng@hisilicon.com> wrote:
 > 
-> Ping
+> Hi Marc:
 > 
-> What is the status of this series, is it ready to land or are any 
-> changes
-> needed?
-> 
+> Since it's a very large patch series, I want to test it on my platform
+>  which don't support nv, and want to make sure if this patch series
+> affects the existed virtualization functions or not.
+>  
+> Any suggestion about the test focus?
 
-I am wondering the same :)
+Not really. Given that the NV patches affect absolutely every
+architectural parts of KVM/arm64, everything needs careful
+testing. But more than testing, it needs reviewing.
 
 Thanks,
-Sai
+
+	M.
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
