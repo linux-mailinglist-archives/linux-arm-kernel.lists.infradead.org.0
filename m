@@ -2,63 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1DE61A532D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 19:35:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CABD1A5332
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 19:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oRkrQcze28bKEDxQprKPfdYhp5ujxO+EyTAhPvJk4PM=; b=nsSoHxZJQDOygu
-	1kIEHAMvxleMB6w9aAWwclcNazOGKT2QWR724oUDnnXls0c2X8vNx20a10yUJhfvJUFZe4WlhQ0za
-	LvHwTw8LjOrrx3nd/JAYQGzPA/JfA5EIshVACkfUoCWkQVMeUoapus1guLsFP3ISNXFQ3pfXGRGvA
-	dGKsI0nobURN7xqpQnFeAbxACYPrvYJEtIEo/nilD/Aqxsz+SSkhJy3j7NrkLCHgr11IP8KBu1jQ2
-	hNwtViCIe1v2uLLOtb/fd301pQ35MgbExqzT+aGhKVdsti91xC638JV/O4Dm4zGf69BeLWPrP3SdY
-	JNjCR/VBWsMWe0khoq/A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mNLNB96kY0TRqg5Iaj0ePH/t3rwZRTwdsYYUs5dbWNs=; b=IHaoBW25SEL5HK
+	U/RnXmuKQ/VjD+e4IVwoxJevaMOuF0ie7TXkU5Cp3q/ZTuhwW8wMQI+UYR/KHB6BjEfx2BMuDUZUN
+	I6BnfyduC6gduAxC0Mh6CU6ewV5pLc4yLDQTrEJITcT0Xi0iq0wXN0qpjS5ChiFQFttVLwx7bLZ6R
+	ArC6Y8khUIw2TqWUac3wjmzbXnIjtmhsIuDEsCFS6HbqtOL+8sR8CQjXlY9qkUvSQx1+PGKQHqtQS
+	G23ZIoB2+Nujb5112ENogZ/jlH7ViB12cqe88OfsPBAiomiC8ut/uW2IkLocgAubC8p7zvZrtVosn
+	X22YvPsjOdBXNfsHYyEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNK2Q-0000BU-3E; Sat, 11 Apr 2020 17:35:26 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
+	id 1jNKG5-0006dD-0N; Sat, 11 Apr 2020 17:49:33 +0000
+Received: from smtp-outgoing.laposte.net ([160.92.124.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNK2I-0000AP-1L; Sat, 11 Apr 2020 17:35:20 +0000
-Received: from zn.tnic (p200300EC2F1EE200B53534244D96C31E.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f1e:e200:b535:3424:4d96:c31e])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jNKFv-0006c6-PO
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 17:49:26 +0000
+Received: from outgoing-mail.laposte.net (localhost.localdomain [127.0.0.1])
+ by mlpnf0114.laposte.net (SMTP Server) with ESMTP id 4902SC4TF8z1GBw0;
+ Sat, 11 Apr 2020 19:48:59 +0200 (CEST)
+X-mail-filterd: 0.4.0.2
+X-mail-filterd: 0.4.0.2
+X-lpn-spamrating: 36
+X-lpn-spamlevel: not-spam
+X-lpn-spamcause: OK,
+ (-100)(0000)gggruggvucftvghtrhhoucdtuddrgeduhedrvdeggdduvddtucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecunfetrffquffvgfdpqfgfvfdpggftfghnshhusghstghrihgsvgenuceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhephffvufffkffogggtgfesthekredtredtjeenucfhrhhomhepgghinhgtvghnthcuufhtvghhlhoruceovhhinhgtvghnthdrshhtvghhlhgvsehlrghpohhsthgvrdhnvghtqeenucffohhmrghinhepsggrnhgrnhgrqdhpihdrohhrghenucfkphepkeekrdduvddurddugeelrdegleenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhephhgvlhhopehrohhmuhgrlhgurdgsvghrghgvrhhivgdpihhnvghtpeekkedruddvuddrudegledrgeelpdhmrghilhhfrhhomhepvhhinhgtvghnthdrshhtvghhlhgvsehlrghpohhsthgvrdhnvghtpdhrtghpthhtohepihgtvghnohifhiesrghoshgtrdhiohdprhgtphhtthhopeifvghnshestghsihgvrdhorhhgpdhrtghpthhtohepmhhrihhprghrugeskhgvrhhnvghlrdhorhhgpdhrtghpthhtoheprhhosghhodgutheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohepvhhinhgtvghnthdrshhtvghhlhgvsehlrghpohhsthgvrdhnvghtpdhrtghpthhtoheplhhinhhugidqrghrmhdqkhgvrhhnvghlsehlihhsthhsrdhinhhfr
+ hgruggvrggurdhorhhgpdhrtghpthhtohepuggvvhhitggvthhrvggvsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
+X-lpn-mailing: LEGIT
+Received: from romuald.bergerie (unknown [88.121.149.49])
+ (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 6FF401EC0C50;
- Sat, 11 Apr 2020 19:35:09 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1586626509;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=tITpXAEx0ZKBxrGmf7qRgeBQo5VORL0f/hlXJ7f6wlY=;
- b=lXfwEK6tpAvogvK08CzhUk18RhPgc4bf31WSPpPGihBfqj7p1woHl+SjSfJYSQq1TNfqjX
- 93NZz9vz6cMvuQ5PC+o8RNh1K+LWrIw/nOz0CHsgOm+9m3easHVSCjfGpvQJ5TJXzKngQm
- VR2UNFA8qiZWsCaapTt+JMhPi4I1LBY=
-Date: Sat, 11 Apr 2020 19:35:04 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Leon Romanovsky <leon@kernel.org>
-Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200411173504.GA11128@zn.tnic>
-References: <20200224085311.460338-1-leon@kernel.org>
- <20200224085311.460338-4-leon@kernel.org>
- <20200411155623.GA22175@zn.tnic> <20200411161156.GA200683@unreal>
+ by mlpnf0114.laposte.net (SMTP Server) with ESMTPSA id 4902SC0h0Vz1GBvc;
+ Sat, 11 Apr 2020 19:48:59 +0200 (CEST)
+Received: from radicelle.bergerie (radicelle.bergerie [192.168.124.12])
+ by romuald.bergerie (Postfix) with ESMTPS id A70DA37FE060;
+ Sat, 11 Apr 2020 19:48:58 +0200 (CEST)
+Received: from vincent by radicelle.bergerie with local (Exim 4.93)
+ (envelope-from <vincent@radicelle.bergerie>)
+ id 1jNKFW-000152-BQ; Sat, 11 Apr 2020 19:48:58 +0200
+From: =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>
+To: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: dts: sun8i-h2-plus-bananapi-m2-zero: Fix led polarity
+Date: Sat, 11 Apr 2020 19:48:43 +0200
+Message-Id: <20200411174843.4112-1-vincent.stehle@laposte.net>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200411161156.GA200683@unreal>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=laposte.net; s=lpn-wlmd;
+ t=1586627348; bh=AcBvHLPmHFu6rApjMG0R0hlig2Vi1pp7NLIlCkMKiWA=;
+ h=From:To:Cc:Subject:Date:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ b=bYUz2ZjV0XZDUsGFNUJX6TTKN1+v6GcM2bWmNQgNkj6ywVs7BtoXE8XmY1LOFTwLD3RfhvoFdd+TLjt/FVK7J3lfF0PJKNu4InPtsyX6k5+nH3IKW9d3DHihcPul14iNXF6fDHFLhia92QntjKJ2Ds53g2CJ1dvYm925wzMqmy6lLcj6Kb/qgkjNK+0nK3ldyE3ug1Pp68+mSVqeiCIxX2ykrelaayvImXlPpwURUTIfedoarZrsnUe7BSzqS+N+MTG9XT/CYHWCmfci1AX/Fm5sPdC667LUvFAe0sN1uLWUr6Bzc5N0HTA11zFlvok3ia36r2Nd8UroTuKSsWwE0Q==;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_103518_228461_705637F6 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20200411_104924_132003_7848FC1D 
+X-CRM114-Status: GOOD (  12.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [vincent.stehle[at]laposte.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,87 +87,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
- Igor Russkikh <irusskikh@marvell.com>, Andreas Larsson <andreas@gaisler.com>,
- Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
- Jes Sorensen <jes@trained-monkey.org>,
- Iyappan Subramanian <iyappan@os.amperecomputing.com>,
- Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
- Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
- Jay Cliburn <jcliburn@gmail.com>, Jay Vosburgh <j.vosburgh@gmail.com>,
- Keyur Chudgar <keyur@os.amperecomputing.com>,
- Maxime Ripard <mripard@kernel.org>, Don Fry <pcnet32@frontier.com>,
- nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ion Badulescu <ionut@badula.org>, Netanel Belgazal <netanel@amazon.com>,
- Mark Einon <mark.einon@gmail.com>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Icenowy Zheng <icenowy@aosc.io>, Maxime Ripard <mripard@kernel.org>,
+ =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 11, 2020 at 07:11:56PM +0300, Leon Romanovsky wrote:
-> Probably, this is the right change, but I have a feeling that the right
-> solution will be inside headers itself. It is a little bit strange that
-> both very common kernel headers like module.h and vermagic.h are location
-> dependant.
-
-Judging by how only a couple of net drivers include vermagic.h directly,
-doh, of course:
-
-diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
-index b762176a1406..139d0120f511 100644
---- a/drivers/net/ethernet/3com/3c509.c
-+++ b/drivers/net/ethernet/3com/3c509.c
-@@ -85,7 +85,6 @@
- #include <linux/device.h>
- #include <linux/eisa.h>
- #include <linux/bitops.h>
--#include <linux/vermagic.h>
- 
- #include <linux/uaccess.h>
- #include <asm/io.h>
-diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
-index 90312fcd6319..47b4215bb93b 100644
---- a/drivers/net/ethernet/3com/3c515.c
-+++ b/drivers/net/ethernet/3com/3c515.c
-@@ -22,7 +22,6 @@
- 
- */
- 
--#include <linux/vermagic.h>
- #define DRV_NAME		"3c515"
- 
- #define CORKSCREW 1
-
----
-
-Drivers include
-
-#include <linux/module.h>
-
-which includes
-
-#include <asm/module.h>
-
-which defines the arch-specific MODULE_ARCH_VERMAGIC.
-
-Why did you need to include vermagic.h directly? i386 builds fine with
-the vermagic.h includes removed or was it some other arches which needed
-it?
-
-Thx.
-
--- 
-Regards/Gruss,
-    Boris.
-
-https://people.kernel.org/tglx/notes-about-netiquette
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIFBXUi1MRUQgb24gdGhlIGJhbmFuYXBpIG0yIHplcm8gYm9hcmQgaXMgb24gd2hlbiBncGlv
+IFBMMTAgaXMgbG93LgpUaGlzIGhhcyBiZWVuIHZlcmlmaWVkIG9uIGEgYm9hcmQgYW5kIGluIHRo
+ZSBzY2hlbWF0aWNzIFsxXS4KClsxXTogaHR0cDovL3dpa2kuYmFuYW5hLXBpLm9yZy9CYW5hbmFf
+UGlfQlBJLU0yX1pFUk8jRG9jdW1lbnRzCgpGaXhlczogOGI4MDYxZmNiZmFlICgiQVJNOiBkdHM6
+IHN1bjhpOiBoMis6IGFkZCBzdXBwb3J0IGZvciBCYW5hbmEgUGkgTTIgWmVybyBib2FyZCIpClNp
+Z25lZC1vZmYtYnk6IFZpbmNlbnQgU3RlaGzDqSA8dmluY2VudC5zdGVobGVAbGFwb3N0ZS5uZXQ+
+CkNjOiBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+CkNjOiBNYXhpbWUgUmlwYXJkIDxt
+cmlwYXJkQGtlcm5lbC5vcmc+Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktaDItcGx1cy1i
+YW5hbmFwaS1tMi16ZXJvLmR0cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigr
+KSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgy
+LXBsdXMtYmFuYW5hcGktbTItemVyby5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9zdW44aS1oMi1w
+bHVzLWJhbmFuYXBpLW0yLXplcm8uZHRzCmluZGV4IGQyNzdkMDQzMDMxYjIuLjRjNjcwNGU0YzU3
+ZWMgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWgyLXBsdXMtYmFuYW5hcGkt
+bTItemVyby5kdHMKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktaDItcGx1cy1iYW5hbmFw
+aS1tMi16ZXJvLmR0cwpAQCAtMzEsNyArMzEsNyBAQCBsZWRzIHsKIAogCQlwd3JfbGVkIHsKIAkJ
+CWxhYmVsID0gImJhbmFuYXBpLW0yLXplcm86cmVkOnB3ciI7Ci0JCQlncGlvcyA9IDwmcl9waW8g
+MCAxMCBHUElPX0FDVElWRV9ISUdIPjsgLyogUEwxMCAqLworCQkJZ3Bpb3MgPSA8JnJfcGlvIDAg
+MTAgR1BJT19BQ1RJVkVfTE9XPjsgLyogUEwxMCAqLwogCQkJZGVmYXVsdC1zdGF0ZSA9ICJvbiI7
+CiAJCX07CiAJfTsKLS0gCjIuMjUuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
