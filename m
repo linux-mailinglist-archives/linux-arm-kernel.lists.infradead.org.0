@@ -2,65 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 913BA1A5369
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 20:41:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08F2C1A53B5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 Apr 2020 22:39:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1qQqvcdvXBPn8R7MsFNdp26aIGNO2ZigR+gt4iGD5WM=; b=eCkpLro2pwUmL9
-	tHkvuseL8L6YsE/X/aB3hNpLQarmdGrlmzBqaazA4W/W5ZtYbmJX3pBgg0bDZ2AlYl/8eV+jRKhXt
-	ArKlv1iWKdqIBVxElev869dyCZh8qRRw4W92h5R3UP9Gjh4rmxDxXYlMsy5tSwmD1BpESYijpQ+30
-	8bjMbfB8h3I9NJny9HMA/6UJk67cViLYmQXiqgTlN4lPtGIWgU9FFJuTc7fAyRaaX6BGZCMyHp5p+
-	8eu3mmC2cef1b4mjqLttgQJ3wI4JkNbRRkvYX6dfv/AiWFBWoR78/Rx5tB8qkylGEICvMsPiCoq4w
-	gn0Rx6tCaAAfbobrCJSQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=487FHEyScsPprk9H2T08AawZwDeDt6uocIPNSy05920=; b=dY/BNVYIvhI6q7
+	lMKmuFhKQFZYtEUTtQA6FaO5s13SBCmJt6BJwkmcoVCG2dG1GCsZ8j+GGGp6HJJfnKEEPF3XIJa4+
+	MMjFxmzRVN3gSYTFoAJZ/T/sv0f3GqY19NMZ4hWjDqrxOvZM/8oIVFYS8+L8dUTySIBrwy88uFRsL
+	7yFlt8BMMDfC5M4kDVSQpKsdJU1dIFIig3RyfM283htrcAggrm/tOBTpm4m/UMVQn6zEYqoh7MkgZ
+	SnXx8x+AHjs4zN28/z/IUS5mxGK4J8/ZwC8EZPtI4CrNdU8L0ysBurzbOD5PvZ1aLHt9AZSuXL4K5
+	Lf3x9SovXVb1xp8UzXRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNL4G-00032u-HG; Sat, 11 Apr 2020 18:41:24 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
+	id 1jNMuM-0000Zi-20; Sat, 11 Apr 2020 20:39:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNL48-00031z-KK; Sat, 11 Apr 2020 18:41:18 +0000
-Received: from zn.tnic (p200300EC2F1EE200B53534244D96C31E.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f1e:e200:b535:3424:4d96:c31e])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 57E7B1EC0CC5;
- Sat, 11 Apr 2020 20:41:07 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1586630467;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=79SuGIhtfZH4AVqTBicnM2HnJJujV/UZuU+29Y4r+D0=;
- b=aVtlaW0y0wdDjE3pYEMBPnZDohg3ynnwv3dcVJ1I9mtiaLlV6bk0h7tr83V1cZ8NY4Wn73
- HQBj/E8z3vpAQxCyAl3r9i4B24Ea0cbJIQItbnOxBca2xtPHpO6VJu15jK0Em1Nm2xFrRy
- CqTtHoUiU5dic0cUPEtZhoKzomTssRI=
-Date: Sat, 11 Apr 2020 20:41:01 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Leon Romanovsky <leon@kernel.org>
-Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200411184101.GB11128@zn.tnic>
-References: <20200224085311.460338-1-leon@kernel.org>
- <20200224085311.460338-4-leon@kernel.org>
- <20200411155623.GA22175@zn.tnic> <20200411161156.GA200683@unreal>
- <20200411173504.GA11128@zn.tnic> <20200411181015.GC200683@unreal>
+ id 1jNMuG-0000Yy-5p
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 Apr 2020 20:39:13 +0000
+Received: by mail-lf1-x144.google.com with SMTP id h6so3762025lfc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 11 Apr 2020 13:39:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=dUvGhh7rtUygLtFL6NkahS3nxFZQQQrd2UgQKXcfbs8=;
+ b=p6IKm4P6WSbEAcbj6S3ltnZ2NHV2t8qTSW0NL2+R1TTGZLa2zbXXAMYSPOg3HVBLlL
+ B0yFCzrnvUvMCA115IQVPj0FnoUHUGTnoN2E9xgDUJlhqT2ELFNVI2zKmxrqx1KgPA44
+ UM48pJIiGIqE+sZgpbvelQmutKABl6UJE8DP+wwgnfTiamSfHHZu7Cbaxqj0makocRSi
+ Gib5ayNACzWZla1dCsAZi0BHo0ltCbFGSQw8nxkcsvEE61nImKKS9veEH2g+6hrXjGwb
+ Dc9V+WHNF7ldjSXauscKvQNCzhQMlN4G6jUkSRkXs0C5elMngQ+xd/8Kx+av69ix8NH8
+ d1BA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=dUvGhh7rtUygLtFL6NkahS3nxFZQQQrd2UgQKXcfbs8=;
+ b=AwQ3cXPkGR8jEiZgy0OJmU1jZUHec2L5K61ulVCG6paWrbtARvzyN96wz1Uxov0V+p
+ IU9XPtjDcVLeHSB/y/vF61KT/fy/9aYTxmfEWeyN0mSM6s0OUzymbJ9R/MrIcfvQZE+M
+ 0MSQPqrQY09U2IVQO5O4S9zEOsgUixArQC79Ss3ceapivFCY9gz9txLAZ9050CYgYjuW
+ nDxpG5AQW4suHbxWkLO5PWTabXO+tnoDPnlSTOCTtLG9Qdqlt8GJ9g7jJq8BJYFrD22x
+ N/vqfb+W2XZuIG2L2P8EcAYb8j5OXjyfZltT+bIiR6CJPHa9LWANTrLSUaCkeFfYjDpa
+ dS/g==
+X-Gm-Message-State: AGi0PuZfserz94MopkQPssV+VxYC7bCBUeq7tx4Mbh3PG04s+2X5XVLF
+ 74tCgX3iDJIgv33LEmLqTM9nTHVl
+X-Google-Smtp-Source: APiQypITUq6qdmf7TaiDE8oKDktp99wvNTm7FyxMm+PVWG07LwV9SMzTF9rfMVSJnQ9VQ9hHrT6pog==
+X-Received: by 2002:ac2:43b1:: with SMTP id t17mr6149082lfl.9.1586637550065;
+ Sat, 11 Apr 2020 13:39:10 -0700 (PDT)
+Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
+ [91.78.208.152])
+ by smtp.googlemail.com with ESMTPSA id u19sm2435448lji.61.2020.04.11.13.39.08
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 11 Apr 2020 13:39:09 -0700 (PDT)
+Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
+ Tegra210
+From: Dmitry Osipenko <digetx@gmail.com>
+To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-10-thierry.reding@gmail.com>
+ <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
+Message-ID: <6976796c-6972-328e-3e9f-60c1737cf0e2@gmail.com>
+Date: Sat, 11 Apr 2020 23:39:08 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200411181015.GC200683@unreal>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_114116_820652_AE112BD0 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20200411_133912_213966_40CE375C 
+X-CRM114-Status: UNSURE (   9.93  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -70,6 +95,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,43 +107,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
- Igor Russkikh <irusskikh@marvell.com>, Andreas Larsson <andreas@gaisler.com>,
- Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
- Jes Sorensen <jes@trained-monkey.org>,
- Iyappan Subramanian <iyappan@os.amperecomputing.com>,
- Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
- Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
- Jay Cliburn <jcliburn@gmail.com>, Jay Vosburgh <j.vosburgh@gmail.com>,
- Keyur Chudgar <keyur@os.amperecomputing.com>,
- Maxime Ripard <mripard@kernel.org>, Don Fry <pcnet32@frontier.com>,
- nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ion Badulescu <ionut@badula.org>, Netanel Belgazal <netanel@amazon.com>,
- Mark Einon <mark.einon@gmail.com>, "David S. Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 11, 2020 at 09:10:15PM +0300, Leon Romanovsky wrote:
-> I want to think that it was an outcome of some 0-day kbuild report,
-> but I am not sure about that anymore [1].
+> ...
+>> +#define TRIM_REG(chan, rank, reg, byte)					\
+>> +	(((EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+>> +	   _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _MASK &	\
+>> +	   next->trim_regs[EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ##		\
+>> +				 rank ## _ ## reg ## _INDEX]) >>	\
+>> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+>> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _SHIFT)	\
+>> +	 +								\
+>> +	 (((EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
+>> +	    byte ## _DATA_BRLSHFT_MASK &				\
+>> +	    next->trim_perch_regs[EMC ## chan ##			\
+>> +			      _EMC_DATA_BRLSHFT_ ## rank ## _INDEX]) >>	\
+>> +	   EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
+>> +	   byte ## _DATA_BRLSHFT_SHIFT) * 64))
+>> +
+>> +#define CALC_TEMP(rank, reg, byte1, byte2, n)				\
+>> +	(((new[n] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##	\
+>> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _SHIFT) & \
+>> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+>> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _MASK)	\
+>> +	 |								\
+>> +	 ((new[n + 1] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##\
+>> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _SHIFT) & \
+>> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+>> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _MASK))
 
-I pushed it here:
+What about replacing those barely readable concatenated macros with a
+raw values?
 
-https://git.kernel.org/pub/scm/linux/kernel/git/bp/bp.git/log/?h=rc0%2b0-3c
+Like:
 
-The 0day bot will send me a mail soon. :)
-
--- 
-Regards/Gruss,
-    Boris.
-
-https://people.kernel.org/tglx/notes-about-netiquette
+TRIM_REG(brlshft_idx, ob_ddll_long_dq_rank_mask, ...)
 
 _______________________________________________
 linux-arm-kernel mailing list
