@@ -2,92 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A2C61A5BF2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 04:07:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2C741A5C63
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 05:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gRE5za1Ekf2hR9KI6YUYeFQBgKQx9f6oqBMfgYozqnQ=; b=KVn/INeurErneO
-	2J4+R0OOXQVWpZbqw84sGREft+OiEaQfGqjtK0X7pLExiaE2E4gM5Dl6HAuKlOlQBOvg8Ehux+SrQ
-	yABxVDAR2MMH2c+5xoDJSXm47kom+WyJHmO60FXDs6Hhh+Jzb80MxKlrvt84jlF4kn1IIr9dXIR0I
-	fH3H2gHk1kvLAsXZ/vfGZ6CyX/abwnkOT4aCD861FLstMHOy+HcnhXhVITdTpRzykvLyt4ZsKvJsr
-	Ukpv/w9mXt9/O6r9XlUJH6Wc9iURFubxyA0wUrUjYbZwXiK89fEiYAODjHVPLuj6ySZr+sy1HDr7S
-	jn2KSUQbuT/ndRlWXKXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tn70l1cMgRIQcv8KN9/2zeB0IQoT2+D1CqceE+GLB8w=; b=rNzkHc+H/Nxw7D
+	lM293M2T4EqlBvtzjRHfb4vZl5q73e2TBlbzBuvPNzw0YCeJEt6AMHhV38gx7ppyIZCFV1hRvo1M+
+	2gYXqSbx7XufijWMxM93UKUqfrhAG50md9OuYrqY0WYMUSI95kvAk76ded+6FOMbWUkVxvtx7ouRA
+	qyQVkstcclTPKXNb5dFrytkiWkXOSDr2UMOoXXQ6K1MY7Ad3se16fUN1rDf2ubSEkC55LtpxqBFje
+	FurMa/hiYG2Dc5c84RcFUiyVUiC4wUkCksNJvbcYLT7B9hxPOgrFmmowHFKn2hC1f4MW1Qm905n8N
+	uAoGI2HoSN7qttqPx+pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNS1s-000253-QO; Sun, 12 Apr 2020 02:07:24 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1jNTcv-0006e7-9D; Sun, 12 Apr 2020 03:49:45 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNS1P-0001lH-Ox
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 02:06:57 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id 352327D2;
- Sat, 11 Apr 2020 22:06:51 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Sat, 11 Apr 2020 22:06:52 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=ILg74KFQ4/u/i
- LEbpVIGKPDUn0lqkuyVDFTjVVQFF4M=; b=Z2VROd3cksLy59OFEYAZL9M8LDtvZ
- KMcHoTfCidG1Wyu37u1nOaBA+b5S+JMJ0UBe9BbSYTpnjLw+IbuL/UK1X3conhTF
- Ur7JYC77svy+8dPKTQAvcPawgLGooTHe9qNvy5Vx5aSmV/XNmOadiO747XkehKHG
- VPKE4ygSyn37VUMwdRR4UKU58zaN9jEZqMpoaOnY7ObKQNOjfy5Up+G/O3N2nn6a
- 4u0cYeS3yknd9irbeUiIBM04JK/dquR99xKnAS+9Nd8vDoWs3sFOUpujiXEYQOt/
- Era4ByWmgz3UFN9i4f7KFEc243/M2FbVfR1AyjZGwFkZxOUqnv2xApNPw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=ILg74KFQ4/u/iLEbpVIGKPDUn0lqkuyVDFTjVVQFF4M=; b=g9KvwmYn
- eJ/kAe+B4GnCJRJwnteJYQcvOgjCM6OU0BUSDNW61hwzlZZXfVmKqrTWDedFx5YL
- 2j/8Qiq6qS8XOGadu68rb9owF123hw9Pl/lsX2GG+5v5Dmde7Pjhu4ln0sc8rcTZ
- GilG681ThX+ScC+79R81y58dUJNzqnF3xVIjCi6KpOHqUWfx3GIJI6aDF5H8vNvw
- RcLPwSgmBd9mscJ6NoBGWu/L05Y41VLBdbrWD+NurvV0Pui3HZEpoS9vnj8uQR+r
- GcpPzpiJRfoZqW016jUvhUwmhlLz7ET8fLaSgbPSlewsQ8foJ32QuId4lxzcJ+wG
- YzwT+mltb7StnQ==
-X-ME-Sender: <xms:uneSXnd3s7H2zgZMTUWaXQSosb54exS7z_YfnSjrSBahd6sD-bpZuA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrvdehgdehvdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeetlhhishhtrghirhcuhfhrrghntghishcuoegrlhhishhtrghi
- rhesrghlihhsthgrihhrvdefrdhmvgeqnecukfhppeejfedrleefrdekgedrvddtkeenuc
- evlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrlhhishht
- rghirhesrghlihhsthgrihhrvdefrdhmvg
-X-ME-Proxy: <xmx:uneSXilz-yxPtpaS9JqNFRCE037pq-2EUteiN20Jp1vyyDPGkf7s-g>
- <xmx:uneSXkJZqEE-xL8dRDQRjJYEZIPNakMdx2wGe81VzFG-nsw-4BDGVg>
- <xmx:uneSXo3GlwI2ejJrwEX4fYIUNlX13p2FRimucRXHEirHzzACum3ffg>
- <xmx:uneSXo7pROq4Uixu48QJ9uELZQuqiBMiIudDmpGL5CTcKwe43uyCBXITU2c>
-Received: from alistair-xps-14z.alistair23.me
- (c-73-93-84-208.hsd1.ca.comcast.net [73.93.84.208])
- by mail.messagingengine.com (Postfix) with ESMTPA id 8824C3280069;
- Sat, 11 Apr 2020 22:06:49 -0400 (EDT)
-From: Alistair Francis <alistair@alistair23.me>
-To: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, marcel@holtmann.org,
- johan.hedberg@gmail.com, linux-bluetooth@vger.kernel.org,
- mripard@kernel.org, wens@csie.org
-Subject: [PATCH v3 3/3] arm64: allwinner: Enable Bluetooth and WiFi on sopine
- baseboard
-Date: Sat, 11 Apr 2020 19:06:44 -0700
-Message-Id: <20200412020644.355142-3-alistair@alistair23.me>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200412020644.355142-1-alistair@alistair23.me>
-References: <20200412020644.355142-1-alistair@alistair23.me>
+ id 1jNTco-0006di-Sk
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 03:49:40 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n13so2930599pgp.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 11 Apr 2020 20:49:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=AZDILVGrcKvmYChqNYehZ2onRDlNxnDquPgS6AG9YkA=;
+ b=A42g95LqGNwYhESYqnGpreIG4EbnfwMkhHJSaQiGA575hBn/pQPQWgMYj0tw7iJFNj
+ rN3AssDNxaB4zrqX0Dx6dZgALJ5CPwKGVnaACxGSk7OdopRaUn5y1EATMmvWSrH/t9Uu
+ sVajcAdhvlVkgtP93uksvkAJX7WHNPCNpAZX4HJ2MZyn/GV61aY8oUhJMzYtu+YtzdsR
+ YhiIaEcgpa2zwdEe00uHupW2c2aOL1AMMJ5FCXAdHzYAPik9ZClWgNqEjKTz9cdCDkW4
+ VapuwljUPCa8x0v+nPFyY7MWhscbaCHQW3VsKmqAy3cjpznvKHab6lD8k1J2fOkIefbP
+ GupA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=AZDILVGrcKvmYChqNYehZ2onRDlNxnDquPgS6AG9YkA=;
+ b=Ks9Dgww4kBQVQSPK5UC7dzCjboCS58E56Pbx2KkiBXSSChPMJAclG/eMy2WbMZlqk3
+ iFWqQM2a2Sfu7iy/b1p2otyVcy2at/7/9WrqPABXxV8lRRvQszFtzmq4UOtEsupr6+gz
+ 4mwmDgpCIVWs6uNojghlF69TJagpSIEXrYDqMGtInVbryDgLeXwtH1azk9P/QU3YmWez
+ Bv66rLGouK6jwel4nvuEKS7rbplWwpBW7QqF0KuXqRwXYbSuCKxHH13V00HowFodjIDA
+ ic+ALjE3oTb3jt7eus84uPS9VKyZfk4ChGgsXgvUPPfed5QrXYVrO8p0KSkg8dn/wNCr
+ bjSg==
+X-Gm-Message-State: AGi0PuZbXKR/4nCXgKmfJPBX6AajYfFCOmTk0yqWn8tl/U0MlyKXy+TE
+ 71kxjBQjW4i2NM1mPqvRZwA=
+X-Google-Smtp-Source: APiQypLO0t3hZTP5D7PcbbjFaFd4Pb6oPXH1Y5G0rR7sLuG1LsgDyAfFcEQ7c5W57vgyzeVogfVHXw==
+X-Received: by 2002:a63:c44b:: with SMTP id m11mr11839604pgg.313.1586663375996; 
+ Sat, 11 Apr 2020 20:49:35 -0700 (PDT)
+Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
+ [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id t7sm1841024pfh.143.2020.04.11.20.49.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 11 Apr 2020 20:49:35 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net] net: stmmac: Guard against txfifosz=0
+Date: Sat, 11 Apr 2020 20:49:31 -0700
+Message-Id: <20200412034931.9558-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_190655_848091_33B1DFF9 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200411_204938_951041_91B792F7 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.18 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,78 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alistair Francis <alistair@alistair23.me>,
- linux-arm-kernel@lists.infradead.org, alistair23@gmail.com
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ open list <linux-kernel@vger.kernel.org>, mripard@kernel.org,
+ "moderated list:ARM/STM32 ARCHITECTURE"
+ <linux-stm32@st-md-mailman.stormreply.com>, Jose Abreu <joabreu@synopsys.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, olteanv@gmail.com,
+ "David S. Miller" <davem@davemloft.net>,
+ "moderated list:ARM/STM32 ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The sopine board has an optional RTL8723BS WiFi + BT module that can be
-connected to UART1. Add this to the device tree so that it will work
-for users if connected.
+After commit bfcb813203e619a8960a819bf533ad2a108d8105 ("net: dsa:
+configure the MTU for switch ports") my Lamobo R1 platform which uses
+an allwinner,sun7i-a20-gmac compatible Ethernet MAC started to fail
+by rejecting a MTU of 1536. The reason for that is that the DMA
+capabilities are not readable on this version of the IP, and there is
+also no 'tx-fifo-depth' property being provided in Device Tree. The
+property is documented as optional, and is not provided.
 
-Signed-off-by: Alistair Francis <alistair@alistair23.me>
+The minimum MTU that the network device accepts is ETH_ZLEN - ETH_HLEN,
+so rejecting the new MTU based on the txfifosz value unchecked seems a
+bit too heavy handed here.
+
+Fixes: eaf4fac47807 ("net: stmmac: Do not accept invalid MTU values")
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../allwinner/sun50i-a64-sopine-baseboard.dts | 29 +++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-index 2f6ea9f3f6a2..34357ba143cb 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-@@ -42,6 +42,11 @@ reg_vcc1v8: vcc1v8 {
- 		regulator-min-microvolt = <1800000>;
- 		regulator-max-microvolt = <1800000>;
- 	};
-+
-+	wifi_pwrseq: wifi_pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		reset-gpios = <&r_pio 0 2 GPIO_ACTIVE_LOW>; /* PL2 */
-+	};
- };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index e6898fd5223f..9c63ba6f86a9 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -3993,7 +3993,7 @@ static int stmmac_change_mtu(struct net_device *dev, int new_mtu)
+ 	new_mtu = STMMAC_ALIGN(new_mtu);
  
- &ac_power_supply {
-@@ -103,6 +108,17 @@ ext_rgmii_phy: ethernet-phy@1 {
- 	};
- };
+ 	/* If condition true, FIFO is too small or MTU too large */
+-	if ((txfifosz < new_mtu) || (new_mtu > BUF_SIZE_16KiB))
++	if ((txfifosz < new_mtu && txfifosz) || (new_mtu > BUF_SIZE_16KiB))
+ 		return -EINVAL;
  
-+&mmc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc1_pins>;
-+	vmmc-supply = <&reg_dldo4>;
-+	vqmmc-supply = <&reg_eldo1>;
-+	mmc-pwrseq = <&wifi_pwrseq>;
-+	non-removable;
-+	bus-width = <4>;
-+	status = "okay";
-+};
-+
- &mmc2 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&mmc2_pins>;
-@@ -174,6 +190,19 @@ &uart0 {
- 	status = "okay";
- };
- 
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
-+	uart-has-rtscts = <1>;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "realtek,rtl8723bs-bt";
-+		device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
-+		host-wake-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
-+	};
-+};
-+
- /* On Pi-2 connector */
- &uart2 {
- 	pinctrl-names = "default";
+ 	dev->mtu = new_mtu;
 -- 
-2.26.0
+2.19.1
 
 
 _______________________________________________
