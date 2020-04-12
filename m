@@ -2,80 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86C7E1A5F3C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 17:59:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0214F1A5F54
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 18:25:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=84tVjOCD3BC+RLUnq7XOYbGvJb1NimdcziO+5EUMlPE=; b=QuuC35U/hpDe+r
-	zIeHAmEGLwlL61H3zYIRMupi4DTjyskJ+1YoOT7o9PkvgYq4atWNmI3nLQTzJf5LqfOg1LEsUdfoO
-	ORyjWYqxSIwOxFA50j0/wVkfadESLRVMWpf6OcgKiGM4JJIVJkQ8sN6LD281ytzOKqhFZw66/lNEd
-	0QQOAZKWMakfEGsQ7WJPjianr4TCtDY57aE8jE4qGwwsUS8klIYhPG1qYhgrEGiImBM3PLP1e3IzR
-	43IKCXnkBNq+Fpha0n+x1a1XsTIg0v9Pz9xRrb3KZxrEwKEKDwucLlcWPhMV6itvpT4Y8P72ncvYr
-	E4c2pXPxahMtxSKJFvqA==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UoMR0WJv0fA0kekg0QVPKM9dICvSA/jk4YKhlsWobeU=; b=L6wc0brkV2PzDa
+	5N4M0VM00pMLvSjB7x1IX6cKiDk9/apoiXxi07cbfNl4VB3o/+YLZfRWsj0LYCU6Be+LLl+CDg/ND
+	kz6RmMJjsOx3sLx9R1qn21kRkxc4rYtz1n3VRDLkkOJ2Q8S5Z1O3eQL60ckWBhDxukjkW+FvYoMTS
+	5NQZYR82pVTcInL7ifSoUPxTrqK9SWwMmMfSB2v0y0HDh/47JVUyBcfRpROHLhDbY4pm3VjHBmorJ
+	zpGO74wEbB0ZE8tA0SykDienRs2CbQpFce6TouShNuy/+roowOlNXum3ZDJ4xaQCvR//srqw031OK
+	EECjWpyDbyPlrG5BNFAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNf0j-0007bg-J3; Sun, 12 Apr 2020 15:59:05 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jNfQ5-0006So-3Z; Sun, 12 Apr 2020 16:25:17 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNf0b-0007aj-HQ; Sun, 12 Apr 2020 15:58:59 +0000
-Received: by mail-pf1-x441.google.com with SMTP id k15so3479426pfh.6;
- Sun, 12 Apr 2020 08:58:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7zoHsqvmfICV2TLA2Y8FhvagDaKGBc7JQQXu8HzlkVo=;
- b=mHa/0if53kgZ2oaF4zTPS4WAjflWi8dLVIjMWpv9R5cB4rb/XmyCF3yGAdF7ENeDXM
- dcNdj7ORBu9ejLD6265VteoocPacsWYwZhAiPj4/bd0Wg8VSrSbhrXkd1DkIcmM0xvWW
- 35356vWDWrIZ7WsWmWWH7D1GlEPtU+t5dGnDy8sxJOvjPYMScPP3PIv6OW+Q1m03Zfbq
- oAVq+94MOVsQEICxav2t14EQcUHOMFug4Seid9GpIGBxOrYdBejaJCFp039uSfRsUbfM
- RW6rL6fvwSgZk7XrI2e9onFo+/TSjlXIhrXml8KwsNV+Pj8ieMywGvsQVCl2hITtk7A7
- L8wA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7zoHsqvmfICV2TLA2Y8FhvagDaKGBc7JQQXu8HzlkVo=;
- b=LH0o+MvywCsGcmlqtqSkXcM3zraZPvbQVtslYYAVlsqR/0uIV2bMRcFHefMDD6hXyl
- l9eOFDcXsfrFVzNf4jR2LAtBGhoNszZX+GbLwSPgnpy25zvJJ078IWDcudE5tL58lAUP
- IT3d23ZGdEb/kXwwgMWM2f6SQpNJCvZ0XBkv6nP/rfjmxw5TUE+SeLsrS7+zdF4hAPSc
- 8fItovUB+aVKSA0YPkYsrxZahGEiJzH2Uz1aaBAs5uYBE8+sbLOJd7NcDiERYUtptaur
- 2slPMnP6mdOiJTJnzaZWl3shhQ03jCN0OVgN1Kj4wuER11w2MPGyp1YSRF0Mwvtuug+q
- z0xg==
-X-Gm-Message-State: AGi0PuYQxF9Yn3iWu/paeuqTjOSoJrU2so/stlNtpLJOkaY/rCQos6tC
- LSu6gLcE7p64S2WTfTjeFCw=
-X-Google-Smtp-Source: APiQypI4CktBcTIuAchsLEqulUi0iTr/+kWVKJqxm1EIgUAMZRt0x6DTJd8APdI9W2AAzazVy70LsQ==
-X-Received: by 2002:a63:5d7:: with SMTP id 206mr1894909pgf.136.1586707135042; 
- Sun, 12 Apr 2020 08:58:55 -0700 (PDT)
-Received: from example.com ([2402:f000:1:1501::7416:1d81])
- by smtp.gmail.com with ESMTPSA id kb18sm7311019pjb.14.2020.04.12.08.58.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 12 Apr 2020 08:58:54 -0700 (PDT)
-From: DENG Qingfang <dqfext@gmail.com>
-To: linux-wireless@vger.kernel.org
-Subject: [PATCH] mt76: mt7615: add support for MT7611N
-Date: Sun, 12 Apr 2020 23:58:48 +0800
-Message-Id: <20200412155848.15506-1-dqfext@gmail.com>
-X-Mailer: git-send-email 2.26.0
+ id 1jNfPu-0005Fe-C7
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 16:25:08 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20200412162501epoutp03cc6c7805ca4f7f16a49eebf0ffd1a496~FHygpES201383313833epoutp03f
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 12 Apr 2020 16:25:01 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20200412162501epoutp03cc6c7805ca4f7f16a49eebf0ffd1a496~FHygpES201383313833epoutp03f
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586708701;
+ bh=7gehAhvPd0bQ/3Pb49DoC4efoIHtTlTiKUVA2ybcyCc=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=Y1Ic/brO5Q4p1E7KdT+B4Pt8Ikb4MRKjswj3wN12wAQlD5iuqviWPm86R/AoLOVHb
+ TlfYDEcNomw75Z6tK5s38u0QvQ4iKm8e7Dr9B8zu3U61Mihrl6679WlpQ4K9r9cIOa
+ Ez9b1hEUZc+TIfs3FHQ/+XiT4964B0wxmdx8ve8Y=
+Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
+ epcas5p3.samsung.com (KnoxPortal) with ESMTP id
+ 20200412162500epcas5p348d02863b15b9d63e3ca730d2ae126b3~FHygIYJOc2939929399epcas5p3p;
+ Sun, 12 Apr 2020 16:25:00 +0000 (GMT)
+Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
+ epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 41.91.04778.CD0439E5; Mon, 13 Apr 2020 01:25:00 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200412162459epcas5p299fae74f80ad5ec2f68a9df865b4bff2~FHye6aPd-2705227052epcas5p2k;
+ Sun, 12 Apr 2020 16:24:59 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200412162459epsmtrp1f6f67211c3b49863ed1db785630a8cf8~FHye2ymy70693706937epsmtrp1s;
+ Sun, 12 Apr 2020 16:24:59 +0000 (GMT)
+X-AuditID: b6c32a4a-353ff700000012aa-fc-5e9340dc000e
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ DB.15.04024.AD0439E5; Mon, 13 Apr 2020 01:24:59 +0900 (KST)
+Received: from alimakhtar02 (unknown [107.108.234.165]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200412162455epsmtip2882de67d478a270b552da62c75357cad~FHybmFtyD2101821018epsmtip27;
+ Sun, 12 Apr 2020 16:24:55 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Christoph Hellwig'" <hch@infradead.org>
+In-Reply-To: <20200412080947.GA6524@infradead.org>
+Subject: RE: [PATCH v5 4/5] scsi: ufs-exynos: add UFS host support for
+ Exynos SoCs
+Date: Sun, 12 Apr 2020 21:54:53 +0530
+Message-ID: <000001d610e6$e8b11450$ba133cf0$@samsung.com>
 MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHr+Y8xYXIsvNQeqORDaXjXFCUqCgIAvgGXAbEacNoBTCAGf6gh6cLQ
+Content-Language: en-in
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0hTYRTvu69dR7PbLDzN6DGQcmClGd2ih4TEpYIK6o8ispUXHzmV3dQS
+ I+lhti0fJZFDNDNn2sOaVsss17KVmlq+ykeaNkt7CCpIYlRud5L//c45v8c5Hx+Nyz+TCjoy
+ 5hivjVFHKykp8fCF33L/7uDLB1cVGhTs0EQbxY6WmUg2v6aRZIvf3sDY+szrGNvUdE/CdlS8
+ JFjz53aSbanMpdirTc8wVv/eQrHFr/5g7N8qi4QtetCBgj25lvSLGPfY+FHCld9UcebSCxRX
+ fuMUd7a2muBGBjoJLr2iFHFj5kXcease2yXdL90QxkdHJvDalZsOSSOG345jcWkex0c/eaag
+ 9xId8qCBCYJqSwbSISktZ54gsPb0uItRBNkTJZiTJWfGETS9WzitsN7vokTSUwS2kkfu4geC
+ IV2Ny5di/MFSmEo58bwp3FAw6LLFmdM4/DbnuEgeTCDcLrEhJ/Zi9kB1d+uUgKYJxhdGHa62
+ jFkHFvs5QsRzoTbH4cI4sxge/czFxY2WwMSAiRSztkLv86tujje8nDDgzlxgbBLIrjMTTn9g
+ QsCkOylqveDbqwr3WyhgKCNVIlKOgqFytdhOhqI8OyHizWBtzXW54IwflFWuFJM84eKkAxOV
+ MkhLlYtsXzgz3OZW+kCWXk+KmIPqwX4iEy01zrjLOOMu44z9jf/DriGiFC3g4wRNOC+siQuM
+ 4RNXCGqNEB8TvuJIrMaMXF9Ptc2CTI07bIihkXK2zNqedVBOqhOEExobAhpXzpM5EqdasjD1
+ iSReGxuqjY/mBRvyoQmlt+wS2XZAzoSrj/FHeT6O105PMdpDkYJMezYmPwjaYiorff1V26+S
+ To6U1EfVDXw3DG/wb46X5H/xvKvI3fJ1+MPIsiu3euz2fSHZswbG7hT1betbG5IfED45Od6F
+ Og1EfU2dI287tTvpcF2WLjR0772dsxmVPXE++eZT5+uGZk1B/lO5XvDKvPtrzpqqqN71OweD
+ pfKo9eNKQohQB6hwraD+Bza284Z2AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrGIsWRmVeSWpSXmKPExsWy7bCSvO5th8lxBqd3MVm8/HmVzeLT+mWs
+ FvOPnGO1WH5hCZPF6QmLmCzOn9/AbnFzy1EWi02Pr7FaXN41h81ixvl9TBbd13ewWSw//o/J
+ 4v+eHewWS7feZHTg87jc18vksXPWXXaPzSu0PDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1Zxejx
+ eZOcR/uBbqYArigum5TUnMyy1CJ9uwSujHcXvjEVdHBWfHrA18B4nb2LkZNDQsBE4sDG22wg
+ tpDAbkaJw+0VEHFpiesbJ0DVCEus/PecHaLmFaPEnasJIDabgK7EjsVtYL0iQPbZhS8Yuxi5
+ OJgFJjBLnLg3kwXEERJ4yiixYcsnZpAqTgEjiTUrDzGC2MICQRL/ex4CdXNwsAioSnx6Ahbm
+ FbCU2HGslQXCFpQ4OfMJC0gJs4CeRNtGsBJmAXmJ7W/nMEPcpiDx8+kyVogb3CTuH5zBAlEj
+ LnH0Zw/zBEbhWUgmzUKYNAvJpFlIOhYwsqxilEwtKM5Nzy02LDDMSy3XK07MLS7NS9dLzs/d
+ xAiOXS3NHYyXl8QfYhTgYFTi4T1wbWKcEGtiWXFl7iFGCQ5mJRHeJ+VAId6UxMqq1KL8+KLS
+ nNTiQ4zSHCxK4rxP845FCgmkJ5akZqemFqQWwWSZODilGhjjLI4/DDJ4/fx+71uPrxdKTry+
+ oR15o8K2KoJ7zarXsxyO37eamMz77fcM3vApC97uXe9UOPml720BrVnH7+sWPTh8enmh8MVr
+ GzOrpfaxTW+rllsr9e/uk5YJy7Xfuv9ZGdbNJCGwflGhjIrNv5OMXtd7n3F8rvFcmDBL38mE
+ YUrtg41hHzesVGIpzkg01GIuKk4EAORK9mLZAgAA
+X-CMS-MailID: 20200412162459epcas5p299fae74f80ad5ec2f68a9df865b4bff2
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20200412074218epcas5p3ef7973c8a47533a15a359b069da8003c
+References: <20200412073159.37747-1-alim.akhtar@samsung.com>
+ <CGME20200412074218epcas5p3ef7973c8a47533a15a359b069da8003c@epcas5p3.samsung.com>
+ <20200412073159.37747-5-alim.akhtar@samsung.com>
+ <20200412080947.GA6524@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_085857_602909_1F65EE32 
-X-CRM114-Status: GOOD (  14.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200412_092506_802121_047BCA97 
+X-CRM114-Status: GOOD (  12.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.33 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dqfext[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,6 +128,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,191 +141,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryder Lee <ryder.lee@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Roy Luo <royluo@google.com>,
- Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
- Kalle Valo <kvalo@codeaurora.org>, Felix Fietkau <nbd@nbd.name>
+Cc: robh@kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, krzk@kernel.org,
+ kwmad.kim@samsung.com, avri.altman@wdc.com, cang@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org, stanley.chu@mediatek.com,
+ 'Seungwon Jeon' <essuuj@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MT7611N is basically the same as MT7615N, except it only supports 5 GHz
-It is used by some TP-Link and Mercury wireless routers
+Hello Christoph,
 
-Signed-off-by: DENG Qingfang <dqfext@gmail.com>
----
- drivers/net/wireless/mediatek/mt76/mt7615/debugfs.c | 2 +-
- drivers/net/wireless/mediatek/mt76/mt7615/dma.c     | 8 ++++----
- drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c  | 7 +++++++
- drivers/net/wireless/mediatek/mt76/mt7615/init.c    | 2 +-
- drivers/net/wireless/mediatek/mt76/mt7615/mac.c     | 8 ++++----
- drivers/net/wireless/mediatek/mt76/mt7615/mt7615.h  | 5 +++++
- drivers/net/wireless/mediatek/mt76/mt7615/pci.c     | 1 +
- 7 files changed, 23 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/debugfs.c b/drivers/net/wireless/mediatek/mt76/mt7615/debugfs.c
-index b4d0795154e3..fac705e1621f 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/debugfs.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/debugfs.c
-@@ -264,7 +264,7 @@ int mt7615_init_debugfs(struct mt7615_dev *dev)
- 	if (!dir)
- 		return -ENOMEM;
- 
--	if (is_mt7615(&dev->mt76))
-+	if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76))
- 		debugfs_create_devm_seqfile(dev->mt76.dev, "queues", dir,
- 					    mt7615_queues_read);
- 	else
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/dma.c b/drivers/net/wireless/mediatek/mt76/mt7615/dma.c
-index b19f208e3d54..274053311749 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/dma.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/dma.c
-@@ -74,7 +74,7 @@ mt7615_init_tx_queues(struct mt7615_dev *dev)
- 	if (ret)
- 		return ret;
- 
--	if (!is_mt7615(&dev->mt76))
-+	if (!is_mt7615(&dev->mt76) && !is_mt7611(&dev->mt76))
- 		return mt7622_init_tx_queues_multi(dev);
- 
- 	ret = mt7615_init_tx_queue(dev, &dev->mt76.q_tx[0], 0,
-@@ -139,7 +139,7 @@ mt7615_tx_cleanup(struct mt7615_dev *dev)
- 	int i;
- 
- 	mt76_queue_tx_cleanup(dev, MT_TXQ_MCU, false);
--	if (is_mt7615(&dev->mt76)) {
-+	if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76)) {
- 		mt76_queue_tx_cleanup(dev, MT_TXQ_BE, false);
- 	} else {
- 		for (i = 0; i < IEEE80211_NUM_ACS; i++)
-@@ -250,7 +250,7 @@ int mt7615_dma_init(struct mt7615_dev *dev)
- 	mt76_rmw_field(dev, MT_WPDMA_GLO_CFG,
- 		       MT_WPDMA_GLO_CFG_MULTI_DMA_EN, 0x3);
- 
--	if (is_mt7615(&dev->mt76)) {
-+	if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76)) {
- 		mt76_set(dev, MT_WPDMA_GLO_CFG,
- 			 MT_WPDMA_GLO_CFG_FIRST_TOKEN_ONLY);
- 
-@@ -276,7 +276,7 @@ int mt7615_dma_init(struct mt7615_dev *dev)
- 	if (ret)
- 		return ret;
- 
--	if (!is_mt7615(&dev->mt76))
-+	if (!is_mt7615(&dev->mt76) && !is_mt7611(&dev->mt76))
- 	    rx_ring_size /= 2;
- 
- 	ret = mt76_queue_alloc(dev, &dev->mt76.q_rx[MT_RXQ_MAIN], 0,
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c b/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-index dfa9a08b896d..bb6f28305733 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-@@ -109,6 +109,12 @@ mt7615_eeprom_parse_hw_band_cap(struct mt7615_dev *dev)
- 		return;
- 	}
- 
-+	if (is_mt7611(&dev->mt76)) {
-+		/* 5GHz only */
-+		dev->mt76.cap.has_5ghz = true;
-+		return;
-+	}
-+
- 	val = FIELD_GET(MT_EE_NIC_WIFI_CONF_BAND_SEL,
- 			eeprom[MT_EE_WIFI_CONF]);
- 	switch (val) {
-@@ -260,6 +266,7 @@ static void mt7615_cal_free_data(struct mt7615_dev *dev)
- 		mt7622_apply_cal_free_data(dev);
- 		break;
- 	case 0x7615:
-+	case 0x7611:
- 		mt7615_apply_cal_free_data(dev);
- 		break;
- 	}
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/init.c b/drivers/net/wireless/mediatek/mt76/mt7615/init.c
-index 03b1e56534d6..33472a2493e2 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/init.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/init.c
-@@ -349,7 +349,7 @@ mt7615_init_wiphy(struct ieee80211_hw *hw)
- 
- 	ieee80211_hw_set(hw, TX_STATUS_NO_AMPDU_LEN);
- 
--	if (is_mt7615(&phy->dev->mt76))
-+	if (is_mt7615(&phy->dev->mt76) || is_mt7611(&phy->dev->mt76))
- 		hw->max_tx_fragments = MT_TXP_MAX_BUF_NUM;
- 	else
- 		hw->max_tx_fragments = MT_HW_TXP_MAX_BUF_NUM;
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-index a27a6d164009..b5b760b081cb 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-@@ -427,7 +427,7 @@ void mt7615_tx_complete_skb(struct mt76_dev *mdev, enum mt76_txq_id qid,
- 		dev = container_of(mdev, struct mt7615_dev, mt76);
- 		txp = mt7615_txwi_to_txp(mdev, e->txwi);
- 
--		if (is_mt7615(&dev->mt76))
-+		if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76))
- 			token = le16_to_cpu(txp->fw.token);
- 		else
- 			token = le16_to_cpu(txp->hw.msdu_id[0]) &
-@@ -697,7 +697,7 @@ void mt7615_txp_skb_unmap(struct mt76_dev *dev,
- 	struct mt7615_txp_common *txp;
- 
- 	txp = mt7615_txwi_to_txp(dev, t);
--	if (is_mt7615(dev))
-+	if (is_mt7615(dev) || is_mt7611(dev))
- 		mt7615_txp_skb_unmap_fw(dev, &txp->fw);
- 	else
- 		mt7615_txp_skb_unmap_hw(dev, &txp->hw);
-@@ -1212,7 +1212,7 @@ int mt7615_tx_prepare_skb(struct mt76_dev *mdev, void *txwi_ptr,
- 
- 	txp = txwi + MT_TXD_SIZE;
- 	memset(txp, 0, sizeof(struct mt7615_txp_common));
--	if (is_mt7615(&dev->mt76))
-+	if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76))
- 		mt7615_write_fw_txp(dev, tx_info, txp, id);
- 	else
- 		mt7615_write_hw_txp(dev, tx_info, txp, id);
-@@ -1482,7 +1482,7 @@ void mt7615_mac_tx_free(struct mt7615_dev *dev, struct sk_buff *skb)
- 	u8 i, count;
- 
- 	count = FIELD_GET(MT_TX_FREE_MSDU_ID_CNT, le16_to_cpu(free->ctrl));
--	if (is_mt7615(&dev->mt76)) {
-+	if (is_mt7615(&dev->mt76) || is_mt7611(&dev->mt76)) {
- 		__le16 *token = &free->token[0];
- 
- 		for (i = 0; i < count; i++)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mt7615.h b/drivers/net/wireless/mediatek/mt76/mt7615/mt7615.h
-index 676ca622c35a..8daf1027de8a 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/mt7615.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/mt7615.h
-@@ -353,6 +353,11 @@ static inline bool is_mt7663(struct mt76_dev *dev)
- 	return mt76_chip(dev) == 0x7663;
- }
- 
-+static inline bool is_mt7611(struct mt76_dev *dev)
-+{
-+	return mt76_chip(dev) == 0x7611;
-+}
-+
- static inline void mt7615_irq_enable(struct mt7615_dev *dev, u32 mask)
- {
- 	mt76_set_irq_mask(&dev->mt76, MT_INT_MASK_CSR, 0, mask);
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/pci.c b/drivers/net/wireless/mediatek/mt76/mt7615/pci.c
-index c8d0f893a47f..54c0ea2701bd 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/pci.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/pci.c
-@@ -14,6 +14,7 @@
- static const struct pci_device_id mt7615_pci_device_table[] = {
- 	{ PCI_DEVICE(0x14c3, 0x7615) },
- 	{ PCI_DEVICE(0x14c3, 0x7663) },
-+	{ PCI_DEVICE(0x14c3, 0x7611) },
- 	{ },
- };
- 
--- 
-2.26.0
+> -----Original Message-----
+> From: Christoph Hellwig <hch@infradead.org>
+> Sent: 12 April 2020 13:40
+> To: Alim Akhtar <alim.akhtar@samsung.com>
+> Cc: robh@kernel.org; devicetree@vger.kernel.org;
+linux-scsi@vger.kernel.org;
+> linux-samsung-soc@vger.kernel.org; martin.petersen@oracle.com; linux-
+> kernel@vger.kernel.org; krzk@kernel.org; kwmad.kim@samsung.com;
+> avri.altman@wdc.com; cang@codeaurora.org; Seungwon Jeon
+> <essuuj@gmail.com>; stanley.chu@mediatek.com; linux-arm-
+> kernel@lists.infradead.org
+> Subject: Re: [PATCH v5 4/5] scsi: ufs-exynos: add UFS host support for
+Exynos
+> SoCs
+> 
+> On Sun, Apr 12, 2020 at 01:01:58PM +0530, Alim Akhtar wrote:
+> > This patch introduces Exynos UFS host controller driver, which mainly
+> > handles vendor-specific operations including link startup, power mode
+> > change and hibernation/unhibernation.
+> 
+> So this doesn't actually require the various removed or not added quirks
+after
+> all?
+This driver is actual consumer of those quirks, so those are still needed.
+On Martin's 5.7/scsi-queue need to revert " 492001990f64 scsi: ufshcd:
+remove unused quirks"
 
 
 _______________________________________________
