@@ -2,134 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0214F1A5F54
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 18:25:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E98C71A5F62
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 18:39:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UoMR0WJv0fA0kekg0QVPKM9dICvSA/jk4YKhlsWobeU=; b=L6wc0brkV2PzDa
-	5N4M0VM00pMLvSjB7x1IX6cKiDk9/apoiXxi07cbfNl4VB3o/+YLZfRWsj0LYCU6Be+LLl+CDg/ND
-	kz6RmMJjsOx3sLx9R1qn21kRkxc4rYtz1n3VRDLkkOJ2Q8S5Z1O3eQL60ckWBhDxukjkW+FvYoMTS
-	5NQZYR82pVTcInL7ifSoUPxTrqK9SWwMmMfSB2v0y0HDh/47JVUyBcfRpROHLhDbY4pm3VjHBmorJ
-	zpGO74wEbB0ZE8tA0SykDienRs2CbQpFce6TouShNuy/+roowOlNXum3ZDJ4xaQCvR//srqw031OK
-	EECjWpyDbyPlrG5BNFAQ==;
+	List-Owner; bh=g1EYA+kOiGjezutib0yzVUlp8pm7xV5rXJa+MQ6NeJ8=; b=tsd9qeI1Z6t9fU
+	5Z92XgI3Nt/sVsGMutrWe0izHQiAHyY0GfLEjlRT76H3yIl102JoB0YhLtA505d4JQwhjrBEpShBs
+	E76bxZUxxNXNo+viNg/fod1wpiAQQbpIDOh/XDRa2bszuIy0mEABeJ/lARMKyZyUfyn/40RfD1Z/T
+	pZKltWFLnIpRTcLXmcpLRkl0Wf7uw2LMg7g7WS7MSPeaHsm9zRH4FPrJ5WSsahaKQuxpUKsL40Gqo
+	mZsCNx1neycKHgfrW8BsX9rXPGsHGevtO1fuhJd5WU2zYlWcBu7XzK+yPrWfRa9lY2EELqOxJXXl9
+	FNdp3bGOrUb/lwvhxwgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNfQ5-0006So-3Z; Sun, 12 Apr 2020 16:25:17 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1jNfdH-0004nY-FM; Sun, 12 Apr 2020 16:38:55 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNfPu-0005Fe-C7
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 16:25:08 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20200412162501epoutp03cc6c7805ca4f7f16a49eebf0ffd1a496~FHygpES201383313833epoutp03f
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Apr 2020 16:25:01 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20200412162501epoutp03cc6c7805ca4f7f16a49eebf0ffd1a496~FHygpES201383313833epoutp03f
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1586708701;
- bh=7gehAhvPd0bQ/3Pb49DoC4efoIHtTlTiKUVA2ybcyCc=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=Y1Ic/brO5Q4p1E7KdT+B4Pt8Ikb4MRKjswj3wN12wAQlD5iuqviWPm86R/AoLOVHb
- TlfYDEcNomw75Z6tK5s38u0QvQ4iKm8e7Dr9B8zu3U61Mihrl6679WlpQ4K9r9cIOa
- Ez9b1hEUZc+TIfs3FHQ/+XiT4964B0wxmdx8ve8Y=
-Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTP id
- 20200412162500epcas5p348d02863b15b9d63e3ca730d2ae126b3~FHygIYJOc2939929399epcas5p3p;
- Sun, 12 Apr 2020 16:25:00 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
- epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 41.91.04778.CD0439E5; Mon, 13 Apr 2020 01:25:00 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200412162459epcas5p299fae74f80ad5ec2f68a9df865b4bff2~FHye6aPd-2705227052epcas5p2k;
- Sun, 12 Apr 2020 16:24:59 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200412162459epsmtrp1f6f67211c3b49863ed1db785630a8cf8~FHye2ymy70693706937epsmtrp1s;
- Sun, 12 Apr 2020 16:24:59 +0000 (GMT)
-X-AuditID: b6c32a4a-353ff700000012aa-fc-5e9340dc000e
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- DB.15.04024.AD0439E5; Mon, 13 Apr 2020 01:24:59 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200412162455epsmtip2882de67d478a270b552da62c75357cad~FHybmFtyD2101821018epsmtip27;
- Sun, 12 Apr 2020 16:24:55 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Christoph Hellwig'" <hch@infradead.org>
-In-Reply-To: <20200412080947.GA6524@infradead.org>
-Subject: RE: [PATCH v5 4/5] scsi: ufs-exynos: add UFS host support for
- Exynos SoCs
-Date: Sun, 12 Apr 2020 21:54:53 +0530
-Message-ID: <000001d610e6$e8b11450$ba133cf0$@samsung.com>
+ id 1jNfd9-0004mZ-FW
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 16:38:50 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 5DAB7FB03;
+ Sun, 12 Apr 2020 18:38:38 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id KFNyfXJzYr2u; Sun, 12 Apr 2020 18:38:35 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 2FCF640601; Sun, 12 Apr 2020 18:38:35 +0200 (CEST)
+Date: Sun, 12 Apr 2020 18:38:35 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v11 1/2] dt-bindings: display/bridge: Add binding for NWL
+ mipi dsi host controller
+Message-ID: <20200412163835.GB4007@bogon.m.sigxcpu.org>
+References: <cover.1586427783.git.agx@sigxcpu.org>
+ <147ffc1e4dee3a623e5dca25d84565d386a34112.1586427783.git.agx@sigxcpu.org>
+ <20200410112342.GB4751@pendragon.ideasonboard.com>
+ <20200410124516.GA27532@bogon.m.sigxcpu.org>
+ <20200410125732.GE4751@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQHr+Y8xYXIsvNQeqORDaXjXFCUqCgIAvgGXAbEacNoBTCAGf6gh6cLQ
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0hTYRTvu69dR7PbLDzN6DGQcmClGd2ih4TEpYIK6o8ispUXHzmV3dQS
- I+lhti0fJZFDNDNn2sOaVsss17KVmlq+ykeaNkt7CCpIYlRud5L//c45v8c5Hx+Nyz+TCjoy
- 5hivjVFHKykp8fCF33L/7uDLB1cVGhTs0EQbxY6WmUg2v6aRZIvf3sDY+szrGNvUdE/CdlS8
- JFjz53aSbanMpdirTc8wVv/eQrHFr/5g7N8qi4QtetCBgj25lvSLGPfY+FHCld9UcebSCxRX
- fuMUd7a2muBGBjoJLr2iFHFj5kXcease2yXdL90QxkdHJvDalZsOSSOG345jcWkex0c/eaag
- 9xId8qCBCYJqSwbSISktZ54gsPb0uItRBNkTJZiTJWfGETS9WzitsN7vokTSUwS2kkfu4geC
- IV2Ny5di/MFSmEo58bwp3FAw6LLFmdM4/DbnuEgeTCDcLrEhJ/Zi9kB1d+uUgKYJxhdGHa62
- jFkHFvs5QsRzoTbH4cI4sxge/czFxY2WwMSAiRSztkLv86tujje8nDDgzlxgbBLIrjMTTn9g
- QsCkOylqveDbqwr3WyhgKCNVIlKOgqFytdhOhqI8OyHizWBtzXW54IwflFWuFJM84eKkAxOV
- MkhLlYtsXzgz3OZW+kCWXk+KmIPqwX4iEy01zrjLOOMu44z9jf/DriGiFC3g4wRNOC+siQuM
- 4RNXCGqNEB8TvuJIrMaMXF9Ptc2CTI07bIihkXK2zNqedVBOqhOEExobAhpXzpM5EqdasjD1
- iSReGxuqjY/mBRvyoQmlt+wS2XZAzoSrj/FHeT6O105PMdpDkYJMezYmPwjaYiorff1V26+S
- To6U1EfVDXw3DG/wb46X5H/xvKvI3fJ1+MPIsiu3euz2fSHZswbG7hT1betbG5IfED45Od6F
- Og1EfU2dI287tTvpcF2WLjR0772dsxmVPXE++eZT5+uGZk1B/lO5XvDKvPtrzpqqqN71OweD
- pfKo9eNKQohQB6hwraD+Bza284Z2AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrGIsWRmVeSWpSXmKPExsWy7bCSvO5th8lxBqd3MVm8/HmVzeLT+mWs
- FvOPnGO1WH5hCZPF6QmLmCzOn9/AbnFzy1EWi02Pr7FaXN41h81ixvl9TBbd13ewWSw//o/J
- 4v+eHewWS7feZHTg87jc18vksXPWXXaPzSu0PDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1Zxejx
- eZOcR/uBbqYArigum5TUnMyy1CJ9uwSujHcXvjEVdHBWfHrA18B4nb2LkZNDQsBE4sDG22wg
- tpDAbkaJw+0VEHFpiesbJ0DVCEus/PecHaLmFaPEnasJIDabgK7EjsVtYL0iQPbZhS8Yuxi5
- OJgFJjBLnLg3kwXEERJ4yiixYcsnZpAqTgEjiTUrDzGC2MICQRL/ex4CdXNwsAioSnx6Ahbm
- FbCU2HGslQXCFpQ4OfMJC0gJs4CeRNtGsBJmAXmJ7W/nMEPcpiDx8+kyVogb3CTuH5zBAlEj
- LnH0Zw/zBEbhWUgmzUKYNAvJpFlIOhYwsqxilEwtKM5Nzy02LDDMSy3XK07MLS7NS9dLzs/d
- xAiOXS3NHYyXl8QfYhTgYFTi4T1wbWKcEGtiWXFl7iFGCQ5mJRHeJ+VAId6UxMqq1KL8+KLS
- nNTiQ4zSHCxK4rxP845FCgmkJ5akZqemFqQWwWSZODilGhjjLI4/DDJ4/fx+71uPrxdKTry+
- oR15o8K2KoJ7zarXsxyO37eamMz77fcM3vApC97uXe9UOPml720BrVnH7+sWPTh8enmh8MVr
- GzOrpfaxTW+rllsr9e/uk5YJy7Xfuv9ZGdbNJCGwflGhjIrNv5OMXtd7n3F8rvFcmDBL38mE
- YUrtg41hHzesVGIpzkg01GIuKk4EAORK9mLZAgAA
-X-CMS-MailID: 20200412162459epcas5p299fae74f80ad5ec2f68a9df865b4bff2
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200412074218epcas5p3ef7973c8a47533a15a359b069da8003c
-References: <20200412073159.37747-1-alim.akhtar@samsung.com>
- <CGME20200412074218epcas5p3ef7973c8a47533a15a359b069da8003c@epcas5p3.samsung.com>
- <20200412073159.37747-5-alim.akhtar@samsung.com>
- <20200412080947.GA6524@infradead.org>
+Content-Disposition: inline
+In-Reply-To: <20200410125732.GE4751@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_092506_802121_047BCA97 
-X-CRM114-Status: GOOD (  12.08  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200412_093847_842633_EAD602BE 
+X-CRM114-Status: GOOD (  35.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.33 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,45 +70,368 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, krzk@kernel.org,
- kwmad.kim@samsung.com, avri.altman@wdc.com, cang@codeaurora.org,
- linux-arm-kernel@lists.infradead.org, stanley.chu@mediatek.com,
- 'Seungwon Jeon' <essuuj@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Robert Chiras <robert.chiras@nxp.com>,
+ Lee Jones <lee.jones@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Christoph,
+Hi Laurent,
+On Fri, Apr 10, 2020 at 03:57:32PM +0300, Laurent Pinchart wrote:
+> Hi Guido,
+> =
 
-> -----Original Message-----
-> From: Christoph Hellwig <hch@infradead.org>
-> Sent: 12 April 2020 13:40
-> To: Alim Akhtar <alim.akhtar@samsung.com>
-> Cc: robh@kernel.org; devicetree@vger.kernel.org;
-linux-scsi@vger.kernel.org;
-> linux-samsung-soc@vger.kernel.org; martin.petersen@oracle.com; linux-
-> kernel@vger.kernel.org; krzk@kernel.org; kwmad.kim@samsung.com;
-> avri.altman@wdc.com; cang@codeaurora.org; Seungwon Jeon
-> <essuuj@gmail.com>; stanley.chu@mediatek.com; linux-arm-
-> kernel@lists.infradead.org
-> Subject: Re: [PATCH v5 4/5] scsi: ufs-exynos: add UFS host support for
-Exynos
-> SoCs
-> 
-> On Sun, Apr 12, 2020 at 01:01:58PM +0530, Alim Akhtar wrote:
-> > This patch introduces Exynos UFS host controller driver, which mainly
-> > handles vendor-specific operations including link startup, power mode
-> > change and hibernation/unhibernation.
-> 
-> So this doesn't actually require the various removed or not added quirks
-after
-> all?
-This driver is actual consumer of those quirks, so those are still needed.
-On Martin's 5.7/scsi-queue need to revert " 492001990f64 scsi: ufshcd:
-remove unused quirks"
+> On Fri, Apr 10, 2020 at 02:45:16PM +0200, Guido G=FCnther wrote:
+> > On Fri, Apr 10, 2020 at 02:23:42PM +0300, Laurent Pinchart wrote:
+> > > On Thu, Apr 09, 2020 at 12:42:01PM +0200, Guido G=FCnther wrote:
+> > > > The Northwest Logic MIPI DSI IP core can be found in NXPs i.MX8 SoC=
+s.
+> > > > =
+
+> > > > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> > > > Tested-by: Robert Chiras <robert.chiras@nxp.com>
+> > > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > > Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> > > > Reviewed-by: Fabio Estevam <festevam@gmail.com>
+> > > > ---
+> > > >  .../bindings/display/bridge/nwl-dsi.yaml      | 226 ++++++++++++++=
+++++
+> > > >  1 file changed, 226 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/display/bridg=
+e/nwl-dsi.yaml
+> > > > =
+
+> > > > diff --git a/Documentation/devicetree/bindings/display/bridge/nwl-d=
+si.yaml b/Documentation/devicetree/bindings/display/bridge/nwl-dsi.yaml
+> > > > new file mode 100644
+> > > > index 000000000000..8aff2d68fc33
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/display/bridge/nwl-dsi.yaml
+> > > > @@ -0,0 +1,226 @@
+> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > > +%YAML 1.2
+> > > > +---
+> > > > +$id: http://devicetree.org/schemas/display/bridge/nwl-dsi.yaml#
+> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > +
+> > > > +title: Northwest Logic MIPI-DSI controller on i.MX SoCs
+> > > > +
+> > > > +maintainers:
+> > > > +  - Guido G=FAnther <agx@sigxcpu.org>
+> > > > +  - Robert Chiras <robert.chiras@nxp.com>
+> > > > +
+> > > > +description: |
+> > > > +  NWL MIPI-DSI host controller found on i.MX8 platforms. This is a=
+ dsi bridge for
+> > > > +  the SOCs NWL MIPI-DSI host controller.
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    const: fsl,imx8mq-nwl-dsi
+> > > > +
+> > > > +  reg:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  interrupts:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  '#address-cells':
+> > > > +    const: 1
+> > > > +
+> > > > +  '#size-cells':
+> > > > +    const: 0
+> > > > +
+> > > > +  clocks:
+> > > > +    items:
+> > > > +      - description: DSI core clock
+> > > > +      - description: RX_ESC clock (used in escape mode)
+> > > > +      - description: TX_ESC clock (used in escape mode)
+> > > > +      - description: PHY_REF clock
+> > > > +      - description: LCDIF clock
+> > > > +
+> > > > +  clock-names:
+> > > > +    items:
+> > > > +      - const: core
+> > > > +      - const: rx_esc
+> > > > +      - const: tx_esc
+> > > > +      - const: phy_ref
+> > > > +      - const: lcdif
+> > > > +
+> > > > +  mux-controls:
+> > > > +    description:
+> > > > +      mux controller node to use for operating the input mux
+> > > > +
+> > > > +  phys:
+> > > > +    maxItems: 1
+> > > > +    description:
+> > > > +      A phandle to the phy module representing the DPHY
+> > > > +
+> > > > +  phy-names:
+> > > > +    items:
+> > > > +      - const: dphy
+> > > > +
+> > > > +  power-domains:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  resets:
+> > > > +    items:
+> > > > +      - description: dsi byte reset line
+> > > > +      - description: dsi dpi reset line
+> > > > +      - description: dsi esc reset line
+> > > > +      - description: dsi pclk reset line
+> > > > +
+> > > > +  reset-names:
+> > > > +    items:
+> > > > +      - const: byte
+> > > > +      - const: dpi
+> > > > +      - const: esc
+> > > > +      - const: pclk
+> > > > +
+> > > > +  ports:
+> > > > +    type: object
+> > > > +    description:
+> > > > +      A node containing DSI input & output port nodes with endpoint
+> > > > +      definitions as documented in
+> > > > +      Documentation/devicetree/bindings/graph.txt.
+> > > > +    properties:
+> > > > +      port@0:
+> > > > +        type: object
+> > > > +        description:
+> > > > +          Input port node to receive pixel data from the
+> > > > +          display controller. Exactly one endpoint must be
+> > > > +          specified.
+> > > > +        properties:
+> > > > +          '#address-cells':
+> > > > +            const: 1
+> > > > +
+> > > > +          '#size-cells':
+> > > > +            const: 0
+> > > > +
+> > > > +          endpoint@0:
+> > > > +            description: sub-node describing the input from LCDIF
+> > > > +            type: object
+> > > > +
+> > > > +          endpoint@1:
+> > > > +            description: sub-node describing the input from DCSS
+> > > > +            type: object
+> > > =
+
+> > > This models the two inputs to the IP core, that are connected to a mux
+> > > internally, controlled through mux-controls, right ? Why is a single
+> > > endpoint supported then, if there are two connections at the hardware
+> > > level, and why is this using endpoints instead of ports as there are
+> > > really two input ports ?
+> > =
+
+> > That came out of
+> > =
+
+> > https://lore.kernel.org/linux-arm-kernel/c86b7ca2-7799-eafd-c380-e4b551=
+520837@samsung.com/
+> > =
+
+> > # If the ip has separate lines for DCSS and LCDIF you should distinguish
+> > # by port number. If they are shared
+> > # you can use endpoint number to specify DCSS or LCDIF, in both cases
+> > # bindings should be adjusted.
+> > =
+
+> > I read that as
+> > =
+
+> > - distinguish by endpoint number:
+> > =
+
+> >     eLCDIF--\    |
+> >              ----| nwl
+> >     DCSS----/    |
+> > =
+
+> > - distinguish by port number:
+> > =
+
+> >     eLCDIF-------|
+> >                  | nwl
+> >     DCSS --------|
+> =
+
+> I fully agree with you here, but in the first case I would expect the
+> mux to be outside of the NWL, while in the second case it would be
+> inside. If I understand the issue correctly, the mux is not part of the
+> NWL, right ? The endpoint model would then be good, but leaves the issue
+> Documentation/devicetree/bindings/media/video-mux.txt, but that would
+> require some support on the driver side. Do you think it would be a good
+> way forward ?
+
+Binding wise that looks like a good fit. I then thought about the
+implementation and figured we'd end up with something like a bridge that
+basically muxes inputs - or did you have something different in mind? That
+sounds generally useful when we e.g. look at runtime switching the input
+display controller.
+
+> The alternative is to consider the mux + NWL as one device (more or less
+> an i.MX8M-specific integration wrapper of the NWL), but in that case
+> there should be two ports I believe.
+
+I'd go with that for the moment and fold in the above at a later
+point if needed. I'm happy to work on that but would like to work on
+some parts of the imx8mq display stack first.
+Cheers,
+ -- Guido
+
+> > From the imx8mq ref manual i didn't see separate input lines for DCSS vs
+> > eLCDIF the the NWL IP so i went with endpoints instead of ports.  I'm
+> > happy to change that if i got it wrong.
+> > =
+
+> > > Apart from that the bindings look ok to me.
+> > > =
+
+> > > > +
+> > > > +          reg:
+> > > > +            const: 0
+> > > > +
+> > > > +        required:
+> > > > +          - '#address-cells'
+> > > > +          - '#size-cells'
+> > > > +          - reg
+> > > > +
+> > > > +        oneOf:
+> > > > +          - required:
+> > > > +              - endpoint@0
+> > > > +          - required:
+> > > > +              - endpoint@1
+> > > > +
+> > > > +        additionalProperties: false
+> > > > +
+> > > > +      port@1:
+> > > > +        type: object
+> > > > +        description:
+> > > > +          DSI output port node to the panel or the next bridge
+> > > > +          in the chain
+> > > > +
+> > > > +      '#address-cells':
+> > > > +        const: 1
+> > > > +
+> > > > +      '#size-cells':
+> > > > +        const: 0
+> > > > +
+> > > > +    required:
+> > > > +      - '#address-cells'
+> > > > +      - '#size-cells'
+> > > > +      - port@0
+> > > > +      - port@1
+> > > > +
+> > > > +    additionalProperties: false
+> > > > +
+> > > > +patternProperties:
+> > > > +  "^panel@[0-9]+$":
+> > > > +    type: object
+> > > > +
+> > > > +required:
+> > > > +  - '#address-cells'
+> > > > +  - '#size-cells'
+> > > > +  - clock-names
+> > > > +  - clocks
+> > > > +  - compatible
+> > > > +  - interrupts
+> > > > +  - mux-controls
+> > > > +  - phy-names
+> > > > +  - phys
+> > > > +  - ports
+> > > > +  - reg
+> > > > +  - reset-names
+> > > > +  - resets
+> > > > +
+> > > > +additionalProperties: false
+> > > > +
+> > > > +examples:
+> > > > + - |
+> > > > +
+> > > > +   #include <dt-bindings/clock/imx8mq-clock.h>
+> > > > +   #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > > > +   #include <dt-bindings/reset/imx8mq-reset.h>
+> > > > +
+> > > > +   mipi_dsi: mipi_dsi@30a00000 {
+> > > > +              #address-cells =3D <1>;
+> > > > +              #size-cells =3D <0>;
+> > > > +              compatible =3D "fsl,imx8mq-nwl-dsi";
+> > > > +              reg =3D <0x30A00000 0x300>;
+> > > > +              clocks =3D <&clk IMX8MQ_CLK_DSI_CORE>,
+> > > > +                       <&clk IMX8MQ_CLK_DSI_AHB>,
+> > > > +                       <&clk IMX8MQ_CLK_DSI_IPG_DIV>,
+> > > > +                       <&clk IMX8MQ_CLK_DSI_PHY_REF>,
+> > > > +                       <&clk IMX8MQ_CLK_LCDIF_PIXEL>;
+> > > > +              clock-names =3D "core", "rx_esc", "tx_esc", "phy_ref=
+", "lcdif";
+> > > > +              interrupts =3D <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+> > > > +              mux-controls =3D <&mux 0>;
+> > > > +              power-domains =3D <&pgc_mipi>;
+> > > > +              resets =3D <&src IMX8MQ_RESET_MIPI_DSI_RESET_BYTE_N>,
+> > > > +                       <&src IMX8MQ_RESET_MIPI_DSI_DPI_RESET_N>,
+> > > > +                       <&src IMX8MQ_RESET_MIPI_DSI_ESC_RESET_N>,
+> > > > +                       <&src IMX8MQ_RESET_MIPI_DSI_PCLK_RESET_N>;
+> > > > +              reset-names =3D "byte", "dpi", "esc", "pclk";
+> > > > +              phys =3D <&dphy>;
+> > > > +              phy-names =3D "dphy";
+> > > > +
+> > > > +              panel@0 {
+> > > > +                      #address-cells =3D <1>;
+> > > > +                      #size-cells =3D <0>;
+> > > > +                      compatible =3D "rocktech,jh057n00900";
+> > > > +                      reg =3D <0>;
+> > > > +                      port@0 {
+> > > > +                           reg =3D <0>;
+> > > > +                           panel_in: endpoint {
+> > > > +                                     remote-endpoint =3D <&mipi_ds=
+i_out>;
+> > > > +                           };
+> > > > +                      };
+> > > > +              };
+> > > > +
+> > > > +              ports {
+> > > > +                    #address-cells =3D <1>;
+> > > > +                    #size-cells =3D <0>;
+> > > > +
+> > > > +                    port@0 {
+> > > > +                           #size-cells =3D <0>;
+> > > > +                           #address-cells =3D <1>;
+> > > > +                           reg =3D <0>;
+> > > > +                           mipi_dsi_in: endpoint@0 {
+> > > > +                                        reg =3D <0>;
+> > > > +                                        remote-endpoint =3D <&lcdi=
+f_mipi_dsi>;
+> > > > +                           };
+> > > > +                    };
+> > > > +                    port@1 {
+> > > > +                           reg =3D <1>;
+> > > > +                           mipi_dsi_out: endpoint {
+> > > > +                                         remote-endpoint =3D <&pan=
+el_in>;
+> > > > +                           };
+> > > > +                    };
+> > > > +              };
+> > > > +      };
+> =
+
+> -- =
+
+> Regards,
+> =
+
+> Laurent Pinchart
+> =
 
 
 _______________________________________________
