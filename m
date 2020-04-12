@@ -2,93 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A0281A5F05
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 16:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61F801A5F0B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 16:35:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DRSUVkb9SuZUT3ErZizbw8/6JNAAna5wCJjrpkClAjQ=; b=qqnt9CSVQfNdGd
-	ZVNGG4ayA4ltLvGT64CN1ryWucKc9Dsf6xsrPyK9yAswVaTW2wo42q2wINfGVvHGQGtKlIUMezVGh
-	sZsNI8Nwwkj+384BtpeJ8+0ODiTwdFL2OdZO0ObDrPhDcl06pv3MLzJenm3ZuK8K5nrfsld3MenzY
-	d+ytjU2HvfzTA039vwPkFt6xsWd08vKeoR3jkteBGSUWzzc+38Jlg9scEXHNxA5estoou1JQhx2zs
-	rfqk073zewVycduqRW35gUYeRO2xV/VfF5kLYixiZ26e2i5um6AX2Qqecbl2I+IZ5naTUaBRd2Igw
-	V4DdrwY/BpC4Uie1FcIg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vjlavtdHlcXldbXaE9/KKHy7eOmx16o9JmX6ZuIJkSE=; b=BRe
+	Ik/LCdY409TkEl/hb84z48OUuBQdS3ZZgP3pz63l9aeRPRdFcvJxqr64I8uy/jwZYGRRCNPAimkBs
+	1tvxlecFRLeQ5MQLkbXGpOVwycur0HCGEAvSewLlt1NFINsOlR66zqWA5mPB7ZsInnBi1qezLFsKY
+	xz3rrcvI3CCbp+Ch3DJkVJ251e6e+JaGeNncFYLenIPfkiu/L9aUbV0HgH4ZXVBvyP5UB72x2eUrD
+	3l3fjibk/3e2dj0EJZFPoNDwXpwGft8UkROoSS1SGcQ5cvUWmKSIGzAgU5AAy6tTjsCDqaMK0BWP6
+	zzwhKsH8sHYn6g1s0/2Pkl0sq24qbPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNdfL-0001WQ-CJ; Sun, 12 Apr 2020 14:32:55 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jNdhc-0002sO-Ag; Sun, 12 Apr 2020 14:35:16 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNdfD-0001VL-Ne
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 14:32:49 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id cl8so1674452pjb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Apr 2020 07:32:47 -0700 (PDT)
+ id 1jNdhP-0001s8-3d; Sun, 12 Apr 2020 14:35:04 +0000
+Received: by mail-pg1-x543.google.com with SMTP id x26so2192389pgc.10;
+ Sun, 12 Apr 2020 07:35:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references;
- bh=/Lj7/UVhiRjtSh2yT7HeljEOXZWQTtN5YOXyQ/wCWCY=;
- b=XZ7fYEt706nnXOsWwkkXV2znCaV1uZBc/qih5IwvviHtoehAHgl7D2w5sm2q4JkDla
- bhW1LSzxRFE5g/tbJs7NLpW3VjRMN77n5H+lblLrdJNtzPurzYwrsyzAp9JsGzDndDkf
- kXm319skeqK3tUz9BETmdCtclFGfvGD6GPfSwpjpkgPZChiJ4iUZ0BP109p11OFQTesx
- OyVrRBu63ZjOyD/pLRBdpjrgjB6OghdeyMaMMalQh4rl1kqT7CbzLCzTLXsP+xDYlCUa
- 41wSEX2VxDRSuZEKzIFoU8EGxrinmfawOEiHz/FIIHtFF/Yyv3GeBSVSfFP7I56FiEeC
- YV4A==
+ h=from:to:cc:subject:date:message-id;
+ bh=t3l/b3BkwVPw7rBu6NQJtxUnkNuDJSDnYtrlNw2pk4E=;
+ b=IxklJ81uyWWTUB3x7GnjKq1Z8WTAT5yxkw3HoSMYeizKXA6JQR1jwIVCjhdXgTyrW9
+ vBubtKgNEMz/wyls8aL4BIGR5cmmXGLEKqzR3cDdIeKBc7bQvz5szbM5bV5qQnhaxOIF
+ 8QvtMDe3pG2GHCltB2gXSwzvzguXZZ1ARwgC88wSDLBzW2u5cY9fau5ExmbhAIyKCaOO
+ 7Fcglc7qUAkL1f/R49785+BSOR465O3C26Of2Ywh24egTAO4OCZqCZvIv+anPE0SuQ48
+ SjBkgrF+f1f3vAeGh2badX5ZdfgSQuLsfRAyMELLAxgPJVtkg8P4QR0N7UNJ9vO0MFWp
+ crNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references;
- bh=/Lj7/UVhiRjtSh2yT7HeljEOXZWQTtN5YOXyQ/wCWCY=;
- b=aBjHf2SzE5JvuAVprxEY4p1HYV1UEkm58PUl3ikEgHdnQy+nO9PqJAQlYCsV9GO3FK
- S5szOhl8azIv6HbtcjrKrQxLqfJJPYDtLNqx1kB6xHVfqEy2Ud2gPlEDcdoWDUrQdXJ2
- /GZn3E0nYpw/UghaawXXNUsof50SdCRGRT/D5p6kC8JusdvDq3/3N7abzKGjh8+kxasE
- 1G2t537rKu4A5yGaM5vIp5p7bKdsaBK3jMjyw4UhapSQUajuESMgQmmg/9lrIfc9alKR
- vk4k4yxKp2teY/SDoe+YW7fvr+sziRzLcxjfstvVRz69LkB9rsthyHpdDt4nZinuTj2B
- o1zA==
-X-Gm-Message-State: AGi0PuZxAp5gb9NkSlMFDg3X0ki7JYfsiegoy8jem3M/Q2eNo1YKOesA
- CT/6orhvUj7mrMUHrz4x6L0=
-X-Google-Smtp-Source: APiQypI8Aw8VypliK7WobMXeNhlVyHnh78NM3mTSMY1+2n993F5rJj/bworYiZmPZNFkPwrvout9+g==
-X-Received: by 2002:a17:90a:a111:: with SMTP id
- s17mr17362116pjp.129.1586701966819; 
- Sun, 12 Apr 2020 07:32:46 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:992:22ab:f465:67ce:fbea:c439])
- by smtp.gmail.com with ESMTPSA id o11sm5804266pgh.78.2020.04.12.07.32.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 12 Apr 2020 07:32:46 -0700 (PDT)
-From: Aishwarya R <aishwaryarj100@gmail.com>
-To: Jonathan Cameron <jic23@kernel.org>, Hartmut Knaack <knaack.h@gmx.de>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Enrico Weigelt <info@metux.net>, Allison Randal <allison@lohutok.net>,
- Yangtao Li <tiny.windzz@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
- Aishwarya R <aishwaryarj100@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-iio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] iio: adc: sun4i-gpadc-iio: Use devm_platform_ioremap_resource
-Date: Sun, 12 Apr 2020 20:02:18 +0530
-Message-Id: <20200412143220.4476-1-aishwaryarj100@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200409141331.30882-1-aishwaryarj100@gmail.com>
-References: <20200409141331.30882-1-aishwaryarj100@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=t3l/b3BkwVPw7rBu6NQJtxUnkNuDJSDnYtrlNw2pk4E=;
+ b=eKZG7PEYULk8wJRyV+Mx3v3tIdCf0i7u1ziVqW99ZUQQUG5BCzaYgONxR4a2lbVArm
+ 0aoIW0H6v6Vt3nPUo5iiRd3Ev43gDDs3Gp9gBjxNoZQ6CwLOoxjuZ1bGe8+FCyN4QjSK
+ g3YPnaQRq0DefhANCdWMmaiat3Z9WyPsaHRUUMabot/8HQftrRQmBEaMw0QhqXJIymOv
+ 9Qgy9LdERtHZL2aWz9TjFO1SmSkma483/l1Ycw5+QIpcBrQahSdcDuL+Z4J8l8gmoSll
+ Nx906timxYMDnH+Q2BBT2oFFg5vPpnAnRF3l+G+hHICYn401KxKITIVIPdsW17FDSSns
+ sQEw==
+X-Gm-Message-State: AGi0PuY7cauK6EOC8w+c3fR23paL7PNfO+qf1UcCWz1SUanLZQY77URC
+ ehGTtWNmHpFv9Dism43GSEY=
+X-Google-Smtp-Source: APiQypL3VozPjhSynVo+qpa75w8IPU8Y+h1fiju2DQtQYj5jvzBcovETWHbuzwmucZVg/c6mu5UKuw==
+X-Received: by 2002:a62:5c1:: with SMTP id 184mr1691507pff.68.1586702101288;
+ Sun, 12 Apr 2020 07:35:01 -0700 (PDT)
+Received: from localhost.localdomain ([106.215.54.38])
+ by smtp.gmail.com with ESMTPSA id y13sm6403901pfp.88.2020.04.12.07.34.57
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 12 Apr 2020 07:35:00 -0700 (PDT)
+From: Amit Singh Tomar <amittomer25@gmail.com>
+To: andre.przywara@arm.com, matheus@castello.eng.br,
+ manivannan.sadhasivam@linaro.org, afaerber@suse.de,
+ linus.walleij@linaro.org
+Subject: [PATCH] pinctrl: actions:  fix function group name for i2c0_group
+Date: Sun, 12 Apr 2020 20:04:20 +0530
+Message-Id: <1586702060-3769-1-git-send-email-amittomer25@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_073247_796035_6D7134DE 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200412_073503_170101_81AADD24 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [aishwaryarj100[at]gmail.com]
+ in digit [amittomer25[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [aishwaryarj100[at]gmail.com]
+ provider [amittomer25[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -107,47 +96,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-gpio@vger.kernel.org, linux-actions@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Amit Singh Tomar <amittomer25@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+After commit 6f87359e8bcaf88381b9c9c038929e0e6872d308("pinctrl: actions: Fix
+functions groups names for S700 SoC") following error has been observed
+while booting Linux on Cubieboard7-lite(based on S700 SoC).
 
-Use the helper function that wraps the calls to platform_get_resource()
-and devm_ioremap_resource() together.Reduces boilerplate and suggested
-by coccinelle.
+[    1.206245] pinctrl-s700 e01b0000.pinctrl: invalid group "i2c0_mfp" for function "i2c0"
 
-Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+This commit fixes it by using correct name for i2c0_group.
+
+Fixes: 6f87359 ("pinctrl: actions: Fix functions groups names for S700 SoC")
+Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
 ---
- drivers/iio/adc/sun4i-gpadc-iio.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/pinctrl/actions/pinctrl-s700.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/iio/adc/sun4i-gpadc-iio.c b/drivers/iio/adc/sun4i-gpadc-iio.c
-index 176e1cb4abb1..0f2c1738a90d 100644
---- a/drivers/iio/adc/sun4i-gpadc-iio.c
-+++ b/drivers/iio/adc/sun4i-gpadc-iio.c
-@@ -496,7 +496,6 @@ static int sun4i_gpadc_probe_dt(struct platform_device *pdev,
- 				struct iio_dev *indio_dev)
- {
- 	struct sun4i_gpadc_iio *info = iio_priv(indio_dev);
--	struct resource *mem;
- 	void __iomem *base;
- 	int ret;
+diff --git a/drivers/pinctrl/actions/pinctrl-s700.c b/drivers/pinctrl/actions/pinctrl-s700.c
+index 47a4ccd..f579a65 100644
+--- a/drivers/pinctrl/actions/pinctrl-s700.c
++++ b/drivers/pinctrl/actions/pinctrl-s700.c
+@@ -1435,7 +1435,7 @@ static const char * const sd2_groups[] = {
+ static const char * const i2c0_groups[] = {
+ 	"uart0_rx_mfp",
+ 	"uart0_tx_mfp",
+-	"i2c0_mfp_mfp",
++	"i2c0_mfp",
+ };
  
-@@ -508,8 +507,7 @@ static int sun4i_gpadc_probe_dt(struct platform_device *pdev,
- 	indio_dev->num_channels = ARRAY_SIZE(sun8i_a33_gpadc_channels);
- 	indio_dev->channels = sun8i_a33_gpadc_channels;
- 
--	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	base = devm_ioremap_resource(&pdev->dev, mem);
-+	base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
- 
+ static const char * const i2c1_groups[] = {
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
