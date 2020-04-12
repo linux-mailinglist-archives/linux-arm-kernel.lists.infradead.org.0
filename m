@@ -2,75 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A62151A5BA5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 02:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C39691A5BAB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 02:34:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xSvR/WLGvScItq2K4+dS9RE7wQnNYoe/lEs4DOWgi/A=; b=jiHxTL9cgNJxgI
-	PfK1SGPrpEDMW+imv4fsUeVItNd+9SEEziPVdxFmqs/ytQFnCL8bA9hE/SOn0RM8UwFT6sQtL3maB
-	wnJd0oWnkOtm66/3oXliavL+GmV4G8O+o8NIPLzrTU6u2eELwYyoCl3zrQMec6irfkm7ZfkTe/w0Q
-	xgXk4sxOX16B6FzLEi6+se198nV873STHU3OiOPCshoYIU/5p0SyZPPLLELJZblzSgZsm4fQRduW/
-	WnsKwHlESgKz9sAAo1ce3RpJo5fu++0ZJawROm1AlS/pDqyDfF+dbKF9fHxNrbw8fDZ6TfoXBMLef
-	NFleW8F4qmJiFz0DpEIA==;
+	List-Owner; bh=HRC2Cn9rWk9lA4nNsTNX8FRyyplabgM646g29hfrXc4=; b=IeEaN716vFOjAL
+	yPagea00MTCZm83JKK529b64thGw/dkLrac+ICJVJiPxnNg3bVnZnbzInWdvpMdvwTnS6Nglf74yg
+	6iSh81lIlBGUvaMbLKtSsZQh9Dxl6Z41Trsv5C9+l2tHEMIh19EB3kqp01iSBgcci9SL3JJAUgG7q
+	ammR0hxxinPdtqonwyIEMDYSGiLolx/7VQcgFpcEIUTeWhuVR0tmwN8L39h0dbFsvayy/S7Qjhxgz
+	estjPvpwvqBexP+mE1HRZeNuBGO7KLiKaKO08HuOn9N/3tzIEt3hsGaLIxi9PNrUJNzXRNO2jhiGD
+	SDPgg6FAE1j4WjTL7shA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNQUU-0004fO-Sz; Sun, 12 Apr 2020 00:28:50 +0000
+	id 1jNQZV-0007hd-6S; Sun, 12 Apr 2020 00:34:01 +0000
 Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNQT6-0003kJ-Dc
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 00:27:25 +0000
-Received: by mail-lf1-x144.google.com with SMTP id 198so3937289lfo.7
+ id 1jNQZL-0007hF-74
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 00:33:52 +0000
+Received: by mail-lf1-x144.google.com with SMTP id h6so3970350lfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 11 Apr 2020 17:27:24 -0700 (PDT)
+ Sat, 11 Apr 2020 17:33:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=fHKoplYFxoQLQhXHoGF+ijfq6s6m1RbHqeEl83lbyFI=;
- b=AITvCVpscrZGcYEtTdPZ8bnHXm70GmWU4CODY3O08StjYpkXpDhz6oaV80pshUG1/1
- MnpixoLYd4VEH8sspUi262Urr4JUkx29UMKL+Rbz9Psq2uaGoh917WU/Xm3djtps8ib0
- UUDwQ//IAIontRmMF6YHDQB7cFaCW7BQ1+iThL/5wBib13Dh9LLvv7kJjVBSF8q86Hri
- KTsy/Vl3lPCqiR8U2NTc0DEmBVHl0nzScdcp2XB7/AmdIKKRQGm015O/sJv4Rc/oKzkK
- oObVkjWijFcVqChrkAYsyv0Iky5aevH8j7O7aM8VsGvvJ3+JYrzQKiUpEVzDEz8t129f
- nYDQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zsyaQJSTyWtQU6SNb3d/B5KGEXk22uVClxXXTgsbd6E=;
+ b=kV/LeCGT51tDEQA6jixYwmFJMhwu+sfWPjZdgnLCFvMfPYUoeMciBwTxKz8slhIA9Q
+ QWA2SQ0DoEF4KcBJ2ugrGlY6oybNlOP3mTjUj02Wr0RrkcNl2xtc81cOXyImM4uRmfCh
+ qHFe6s3jbXCLQZHpY1gfAD4pb0z7WUFQaZtVlYfD3husYMs4QPBsa7IqM7dVgNiBcm0j
+ l+CqzwLgWhQyQ6lYBMOXmRaHGTqL3jxOCcQSriocgol9p2VvpZTL7/pWWZWy4UhhPTI8
+ w07GlQOHtAFmejubyEhftiSAWmxQa3xOjY0uZlHCLUd6DBp11BdB5BddyZZUhdfxf268
+ Yyrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=fHKoplYFxoQLQhXHoGF+ijfq6s6m1RbHqeEl83lbyFI=;
- b=Dru45MC10zzx/KIgT6lz/FoYPbcijIHMMdS+r5YZZoDBjw72knb5DxFtnuSrFDYQm4
- 0tUYsV8J6ZoeGmPGbTDzACj2aHlDUACzVStCifcrzW4Vc0hlEpHxZttKddriz4O/v4e7
- LfGYaYl731tZ6MG1TO7Ft9ytjKxKlQQFraEgKoQBet06VDrzXNIxImCBEAI4CJZGuIFE
- vSAe6yKByAunYWXUQBknXqWurQp/8vuQShLDZRUtfvE57K6m1pX7cjiZ3xm7QHVXiWxY
- EEN8u/HgmWL1oUZGYdU71kdUpEdoDy/qgKB4d+uO1Ec5UYNI9G84I88F/t93SnySQEdR
- pblg==
-X-Gm-Message-State: AGi0PubUrWbXqjs1Iw3OBzxEqN4skC8wGwELVn9cTDkkUcTodqnlGTTe
- OM75r2XlZn+MDGLy0wW+LdX0HC305yw=
-X-Google-Smtp-Source: APiQypLgxFrsFMBdZBlylEQWno/RTMJhyM9w8GGGFnbvkFtkLCFNpSHl/OjCpXSsdDZFHrjAWRmV4Q==
-X-Received: by 2002:ac2:548f:: with SMTP id t15mr6336083lfk.107.1586651242640; 
- Sat, 11 Apr 2020 17:27:22 -0700 (PDT)
-Received: from localhost.localdomain
- (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
- by smtp.gmail.com with ESMTPSA id x29sm4907345lfn.64.2020.04.11.17.27.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Apr 2020 17:27:21 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
- Ard Biesheuvel <ardb@kernel.org>, Andrey Ryabinin <aryabinin@virtuozzo.com>
-Subject: [PATCH 5/5 v2] ARM: Enable KASan for ARM
-Date: Sun, 12 Apr 2020 02:24:07 +0200
-Message-Id: <20200412002407.396790-6-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200412002407.396790-1-linus.walleij@linaro.org>
-References: <20200412002407.396790-1-linus.walleij@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zsyaQJSTyWtQU6SNb3d/B5KGEXk22uVClxXXTgsbd6E=;
+ b=WRdtomGtpbFWMuGRzRn2373k1g0dWjG3KsK5OgXSS9/ZfTJnwMee2/YAKTvT5imd9l
+ XrV5YE6s2XOiiIp8hmdxN5JVrHs4WnpapaijjHfDihyZrTpmJUsE4uV8t2fgwDyyFvmd
+ yi6RQyFh2kNHljRtp278WQPRGEheX5phkJ7has+ZmRncZrnelgtOi2fgaK2Z6LZgjasg
+ S7OUHMl3jotH+W4sVYajn290C6G7bi4iW2Yz2eblmdvQGU34N+U+AqIlEm9uydIBuRPK
+ NhFweOTXuz27SrgdVYNijXI1M97BA8idwuAhU46r6mFeSvpkxklSZ3YkzpbODkE5fgFi
+ pVug==
+X-Gm-Message-State: AGi0PuYZXqKzKnVTTvvr4i+8F5U8NoN2KZA2p/AKbU4uCqBrU04Lf+rO
+ FpxvDeXpQbXZYG1a5sTMVkssi0dgrX7mRW0Sj0x2Tyqh
+X-Google-Smtp-Source: APiQypL4dP3s3w7dYreIWE/U9Pw7ftEq+ZzcH56ILtKHt9LXITsoPKEt+dyrtZrmqSv0ag9Tqx6r+iOrde8l3AYonrY=
+X-Received: by 2002:a19:48c3:: with SMTP id v186mr6282470lfa.194.1586651629741; 
+ Sat, 11 Apr 2020 17:33:49 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200117224839.23531-1-f.fainelli@gmail.com>
+ <20200117224839.23531-8-f.fainelli@gmail.com>
+ <CAKv+Gu_6wWhi418=GpMjfMpE2E+XHbL-DYKT8MJ1jE3+VybrAg@mail.gmail.com>
+In-Reply-To: <CAKv+Gu_6wWhi418=GpMjfMpE2E+XHbL-DYKT8MJ1jE3+VybrAg@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sun, 12 Apr 2020 02:33:38 +0200
+Message-ID: <CACRpkdbR2VG422X0-nhOeWtS3Mhm7M1+RKMozBZbg0Jv5c_TTQ@mail.gmail.com>
+Subject: Re: [PATCH v7 7/7] ARM: Enable KASan for ARM
+To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_172724_499054_72C0A34F 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20200411_173351_269013_24B4A5B5 
+X-CRM114-Status: GOOD (  15.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,65 +92,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Vyukov <dvyukov@google.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Andrey Ryabinin <ryabinin@virtuozzo.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Michal Hocko <mhocko@suse.com>, Julien Thierry <julien.thierry@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andrey Ryabinin <ryabinin.a.a@gmail.com>,
+ Alexander Potapenko <glider@google.com>, kvmarm <kvmarm@lists.cs.columbia.edu>,
+ Florian Fainelli <f.fainelli@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Abbott Liu <liuwenliang@huawei.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Andrew Jones <drjones@redhat.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Marc Zyngier <marc.zyngier@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>, Philip Derrin <philip@cog.systems>,
+ Jinbum Park <jinb.park7@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Dmitry Vyukov <dvyukov@google.com>, Nicolas Pitre <nico@fluxnic.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Thomas Garnier <thgarnie@google.com>, Rob Landley <rob@landley.net>,
+ Philippe Ombredanne <pombredanne@nexb.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andrey Ryabinin <ryabinin@virtuozzo.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrey Ryabinin <ryabinin@virtuozzo.com>
+On Fri, Apr 10, 2020 at 12:45 PM Ard Biesheuvel <ardb@kernel.org> wrote:
 
-This patch enables the kernel address sanitizer for ARM. XIP_KERNEL
-has not been tested and is therefore not allowed for now.
+> > +CFLAGS_KERNEL          += -D__SANITIZE_ADDRESS__
+(...)
+> > -                                  $(call cc-option,-mno-single-pic-base)
+> > +                                  $(call cc-option,-mno-single-pic-base) \
+> > +                                  -D__SANITIZE_ADDRESS__
+>
+> I am not too crazy about this need to unconditionally 'enable' KASAN
+> on the command line like this, in order to be able to disable it again
+> when CONFIG_KASAN=y.
+>
+> Could we instead add something like this at the top of
+> arch/arm/boot/compressed/string.c?
+>
+> #ifdef CONFIG_KASAN
+> #undef memcpy
+> #undef memmove
+> #undef memset
+> void *__memcpy(void *__dest, __const void *__src, size_t __n) __alias(memcpy);
+> void *__memmove(void *__dest, __const void *__src, size_t count)
+> __alias(memmove);
+> void *__memset(void *s, int c, size_t count) __alias(memset);
+> #endif
 
-Acked-by: Dmitry Vyukov <dvyukov@google.com>
-Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
-ChangeLog v1->v2:
-- Moved the hacks to __ADDRESS_SANITIZE__ to the patch
-  replacing the memory access functions.
-- Moved the definition of KASAN_OFFSET out of this patch
-  and to the patch that defines the virtual memory used by
-  KASan.
----
- Documentation/dev-tools/kasan.rst | 4 ++--
- arch/arm/Kconfig                  | 1 +
- 2 files changed, 3 insertions(+), 2 deletions(-)
+I obviously missed this before I sent out my new version of the series.
+It bothers me too.
 
-diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
-index c652d740735d..0962365e1405 100644
---- a/Documentation/dev-tools/kasan.rst
-+++ b/Documentation/dev-tools/kasan.rst
-@@ -21,8 +21,8 @@ global variables yet.
- 
- Tag-based KASAN is only supported in Clang and requires version 7.0.0 or later.
- 
--Currently generic KASAN is supported for the x86_64, arm64, xtensa, s390 and
--riscv architectures, and tag-based KASAN is supported only for arm64.
-+Currently generic KASAN is supported for the x86_64, arm, arm64, xtensa, s390
-+and riscv architectures, and tag-based KASAN is supported only for arm64.
- 
- Usage
- -----
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index f6f2d3b202f5..f5d26cbe2f42 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -64,6 +64,7 @@ config ARM
- 	select HAVE_ARCH_BITREVERSE if (CPU_32v7M || CPU_32v7) && !CPU_32v6
- 	select HAVE_ARCH_JUMP_LABEL if !XIP_KERNEL && !CPU_ENDIAN_BE32 && MMU
- 	select HAVE_ARCH_KGDB if !CPU_ENDIAN_BE32 && MMU
-+	select HAVE_ARCH_KASAN if MMU && !XIP_KERNEL
- 	select HAVE_ARCH_MMAP_RND_BITS if MMU
- 	select HAVE_ARCH_SECCOMP_FILTER if AEABI && !OABI_COMPAT
- 	select HAVE_ARCH_THREAD_STRUCT_WHITELIST
--- 
-2.25.1
+I will try this approach when I prepare the next iteration.
 
+Thanks a lot!
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
