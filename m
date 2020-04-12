@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5594A1A5BA2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 02:27:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F92F1A5BA3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 Apr 2020 02:28:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9K5SmhhVryskU+R33YFtJydA/9B8P5K0Xu/I+rXzFWE=; b=Fndzosj+UEoLd7
-	YIJCkMYFBv5fSCpt8cB4sSMD2BPeT1Mqm2sFqKC7aTB4f9u16g5HE7Mlj4eVZFnu5QiDnaqdZmG3H
-	Zy868IpAW6HBSO9ptHGp8TFZk0BbGebN/vefXbd0E73XaUTOEbFQxuGENRxkJU/3gI9iVN6b8qX6W
-	Ic4aU8Q4tBKkFkEvT4bzqGBhEuPBIzJDPZUEf1/2o+GOUr/YekLHyW0Ts4D3Gz0qhwPcYWZEDvpqE
-	68GxupBB0yBMvws6LuAituMmJ5JnPvXvV2MmoKi67bHtgZJrtcZYvofKa3PfFc+lX8g5ghK3uH7IH
-	7crbytFfGR3Mv5jO82mQ==;
+	List-Owner; bh=i0UH1TYtbbyRjntBiUIBzytOfzMvCJR8xtdIagMgRTU=; b=Y4BmVek0pwhQDw
+	XWTLKTnetezOTu+4zWbR5wEJ3Expn8p4RqPMg7hrklw+vfMvteKQATa0SsTXD3SDhE0Ggz65Yr26Y
+	VylBnpoijeJCd3amfea+1SLHsRUAbSePYzmu6j+a8umyMg2YnJaiD3W0iUUpWT+HigsYPBRz3fZVQ
+	51loSqRvt5ykHVxXZys1Hv5Ltbe2qTAXZLy0UoccFY8Zh4kl89D6cPuHt5zDj2OXi4RCHS9o8Qtzb
+	sSnfUixO216dWIGHjSDRYUYEPqUv0CPva0zY7hajWoqal6lwGbmK//+yfUzWlOztRdjlIISFiZXF8
+	SzL6xjNKs78FeSMmpcZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNQTT-0003qv-OO; Sun, 12 Apr 2020 00:27:47 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jNQTq-00047a-8C; Sun, 12 Apr 2020 00:28:10 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNQSz-0003eD-40
- for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 00:27:18 +0000
-Received: by mail-lf1-x144.google.com with SMTP id s13so3936465lfb.9
+ id 1jNQT2-0003f6-5t
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 Apr 2020 00:27:22 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 142so5411773ljj.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 11 Apr 2020 17:27:16 -0700 (PDT)
+ Sat, 11 Apr 2020 17:27:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=wwkk3VythQ0wU54UkyWVQEC2udEVTZXJIK9Z4kxpFQQ=;
- b=LXZp2q5leTqlGpI09Yxw9zMmgEAgwuna1AKO32tueFfa0eUudCEG5GsfrwXsRD8CJY
- mOeUVLf7d8snGxPBjlNnrJChoGVfcgHKqy4Gjhi3MV0+VbuscCMUlt+aXIfaav90oYC9
- cuZbcb+FH+NzcDVIxqmvORgvQ2z6pC8Lu/3K0EK6e8PsOKfxn3HS9hF/YIk2Tusx3UBx
- bpM4NTWUOPGv1wlsnHPw+Y1w5xpwNWyFrsNkPNtnJZIwPE6CUYe9K6rEeN6fspdoDCgh
- xwmLrAyym4vHTAugBM+ywQXnFrRqiwqBb2b6luQiJDBNzkr54EKHi2f3AKpAQUty2CnO
- uKRg==
+ bh=Z3oZrovgYI6ibRC2dZZwgX91B7ApMZoWVdk7x6VtQNo=;
+ b=B+tgx/VVtjDN44Tty48E4a/2JKhm4CL74PNbB5g7vG9eekDoujrD9NhZwtqLqZIkvJ
+ a0K9+AUucaJgqe6vCF1arZ8okIfnpA4r75396gW+WJA4Fb/TCMNiKx48DofAWkSDH2IY
+ vmp6nM5zIbuzbok6AYRkMaqZgml3znlE3YSGXaE8ATibzRQS5Cx6zWmPwzzu2c4tN7Vu
+ jS0a9OvxAdGBel5bnlA4Q5vRcVY/o+qYa7TqAKCAgWl68OBNdpbUMBNJ54No3d4O/rhH
+ qGRRSx5/q51l1prldUWmJQmjtNY4HBaXfuX0DygWlrh1sjm+dX/RA46YN/eLiMSrD7u/
+ wDkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=wwkk3VythQ0wU54UkyWVQEC2udEVTZXJIK9Z4kxpFQQ=;
- b=Yn4OAz83LBoGPRNyF/865KOdmyJRGXizPSCBrvOm8zXRKwjy4swzwi36+MeGPzLscR
- UaNT9pTO8cSdpvBAFeGQs1v4xjeWYIxpbzvk4b/YYJdw/tYx5XdDhKgEtc7AHrwENdwX
- CzyDYTBv9phDC0N/H8QvdCXqTohEMwC14YzFtfd0S+irQybHIOSuWq+PIlezqEhIkB0T
- NLNuPBz/h3EBs/P0BVCNktZpQSUyPEA+vWlpq9aYRtDzimvfDRtmPHhEtoKJEJE/ILRJ
- /0oDF9+fIC5M/ag9NV+E1ajH3J6WnQfSwOK96ytKPB7/m+l+5BTz0Da/KG8jA+i/WoG/
- xptQ==
-X-Gm-Message-State: AGi0PuacMNAyECmCtQj96JOSkNPx27OH2vC83blpUZWJpfipkBvh/VkM
- vDFxWncvVZKc0u2TSyaxw7UR9A==
-X-Google-Smtp-Source: APiQypI+/g7RM24yq9OS3jpqQKBAKKQMOleL3612mQgF/X7hWShi9VBikG9QUNhUozaZ4nt6PB8aTA==
-X-Received: by 2002:ac2:519c:: with SMTP id u28mr6390162lfi.17.1586651235444; 
- Sat, 11 Apr 2020 17:27:15 -0700 (PDT)
+ bh=Z3oZrovgYI6ibRC2dZZwgX91B7ApMZoWVdk7x6VtQNo=;
+ b=W+ynXZexAcfgWp0djRisqWvtuPHg9OpvKk5su5UsQgPby2ph8srxXPNPOlWJKm5K9E
+ lIVMiE0FBDJOZtqnZ2OkOBCJ6jsVOR70Au/n9NKdF070hyKV1dQPOiEoPzW9SBWnpTuU
+ qE/A6fyLl6eHrNiEu1bMQNtgi1yms4Vx9MWYhKp9A+OhZAJ66zUlPv5247XTprS3Qiuw
+ jCQTDOUmWPIE+9J2pFKD69Zv1yHAFnHXUZGFwjYZpZj9G90f39qtGkLsZZ6od3fLytOo
+ nXDlvV28RBCm3futuAAELykXZA/NTiIBXIPSMqzALtohecAIcmFC2z4np0PFMk1rZ+nA
+ yr6w==
+X-Gm-Message-State: AGi0PuYeZpztNLb3xgcXzoWlEOV2+TfLGxiQ7s0arRBU0uSun1KJZ54t
+ 81OTwLXPgdi2Fe4yiHIUZkotvg==
+X-Google-Smtp-Source: APiQypK3iM0JrUHUAXAvcyH0ia3F0JAbewyDW0rlpyyKxrzLoSgyzdsazBVFQGL50pO9vw4XWwQUdA==
+X-Received: by 2002:a2e:8195:: with SMTP id e21mr6695043ljg.49.1586651238099; 
+ Sat, 11 Apr 2020 17:27:18 -0700 (PDT)
 Received: from localhost.localdomain
  (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
- by smtp.gmail.com with ESMTPSA id x29sm4907345lfn.64.2020.04.11.17.27.14
+ by smtp.gmail.com with ESMTPSA id x29sm4907345lfn.64.2020.04.11.17.27.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Apr 2020 17:27:14 -0700 (PDT)
+ Sat, 11 Apr 2020 17:27:17 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: Florian Fainelli <f.fainelli@gmail.com>,
  Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
  Ard Biesheuvel <ardb@kernel.org>, Andrey Ryabinin <aryabinin@virtuozzo.com>
-Subject: [PATCH 2/5 v2] ARM: Replace memory functions for KASan
-Date: Sun, 12 Apr 2020 02:24:04 +0200
-Message-Id: <20200412002407.396790-3-linus.walleij@linaro.org>
+Subject: [PATCH 3/5 v2] ARM: Define the virtual space of KASan's shadow region
+Date: Sun, 12 Apr 2020 02:24:05 +0200
+Message-Id: <20200412002407.396790-4-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200412002407.396790-1-linus.walleij@linaro.org>
 References: <20200412002407.396790-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_172717_157744_40E1C08C 
-X-CRM114-Status: GOOD (  20.02  )
+X-CRM114-CacheID: sfid-20200411_172720_321692_AD4B71E5 
+X-CRM114-Status: GOOD (  29.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,242 +100,450 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+From: Abbott Liu <liuwenliang@huawei.com>
 
-Functions like memset()/memmove()/memcpy() do a lot of memory
-accesses.
+Define KASAN_SHADOW_OFFSET,KASAN_SHADOW_START and KASAN_SHADOW_END for
+the Arm kernel address sanitizer. We are "stealing" lowmem (the 4GB
+addressable by a 32bit architecture) out of the virtual address
+space to use as shadow memory for KASan as follows:
 
-If a bad pointer is passed to one of these functions it is important
-to catch this. Compiler instrumentation cannot do this since these
-functions are written in assembly.
+ +----+ 0xffffffff
+ |    |\
+ |    | |-> Static kernel image (vmlinux) BSS and page table
+ |    |/
+ +----+ PAGE_OFFSET
+ |    |\
+ |    | |->  Loadable kernel modules virtual address space area
+ |    |/
+ +----+ MODULES_VADDR = KASAN_SHADOW_END
+ |    |\
+ |    | |-> The shadow area of kernel virtual address.
+ |    |/
+ +----+->  TASK_SIZE (start of kernel space) = KASAN_SHADOW_START the
+ |    |\   shadow address of MODULES_VADDR
+ |    | |
+ |    | |
+ |    | |-> The user space area in lowmem. The kernel address
+ |    | |   sanitizer do not use this space, nor does it map it.
+ |    | |
+ |    | |
+ |    | |
+ |    | |
+ |    |/
+ ------ 0
 
-KASan replaces these memory functions with instrumented variants.
+0 .. TASK_SIZE is the memory that can be used by shared
+userspace/kernelspace. It us used for userspace processes and for
+passing parameters and memory buffers in system calls etc. We do not
+need to shadow this area.
 
-The original functions are declared as weak symbols so that
-the strong definitions in mm/kasan/kasan.c can replace them.
+KASAN_SHADOW_START:
+ This value begins with the MODULE_VADDR's shadow address. It is the
+ start of kernel virtual space. Since we have modules to load, we need
+ to cover also that area with shadow memory so we can find memory
+ bugs in modules.
 
-The original functions have aliases with a '__' prefix in their
-name, so we can call the non-instrumented variant if needed.
+KASAN_SHADOW_END
+ This value is the 0x100000000's shadow address: the mapping that would
+ be after the end of the kernel memory at 0xffffffff. It is the end of
+ kernel address sanitizer shadow area. It is also the start of the
+ module area.
 
-We must use __memcpy()/__memset() in place of memcpy()/memset()
-when we copy .data to RAM and when we clear .bss, because
-kasan_early_init cannot be called before the initialization of
-.data and .bss.
+KASAN_SHADOW_OFFSET:
+ This value is used to map an address to the corresponding shadow
+ address by the following formula:
 
-For the kernel compression and EFI libstub we need to tag on
-the -D__SANITIZE_ADDRESS__ CFLAG, which is unfortunate: this is
-used only when building with KASan enabled.
+   shadow_addr = (address >> 3) + KASAN_SHADOW_OFFSET;
 
-When building with KASan, all mem*() functions such as memcpy()
-etc are instrumented. However, code that disable KASan for an
-entire directory with KASAN_SANITIZE := n in the Kconfig file will
-run into problems if they try to use the mem*() functions, as the
-define that guards the uninstrumented variants look like so:
+ As you would expect, >> 3 is equal to dividing by 8, meaning each
+ byte in the shadow memory covers 8 bytes of kernel memory, so one
+ bit shadow memory per byte of kernel memory is used.
 
-  #if defined(CONFIG_KASAN) && !defined(__SANITIZE_ADDRESS__)
-  (...)
-  define memcpy(dst, src, len) __memcpy(dst, src, len)
-  (...)
+ The KASAN_SHADOW_OFFSET is provided in a Kconfig option depending
+ on the VMSPLIT layout of the system: the kernel and userspace can
+ split up lowmem in different ways according to needs, so we calculate
+ the shadow offset depending on this.
 
-As you see, KASAN is enabled, but the compilation procedure
-relies on the Makefile passing -fsanitize=kernel-address
-to the compiler for each instrumented file so that in turn
-__SANITIZE_ADDRESS__ gets set and these weakly defined functions
-are usually replaced with instrumented KASan variants.
+When kasan is enabled, the definition of TASK_SIZE is not an 8-bit
+rotated constant, so we need to modify the TASK_SIZE access code in the
+*.s file.
 
-If KASAN is enabled but __SANITIZE_ADDRESS__ is not set,
-i.e. -fsanitize is not passed, the idea is that these #defines
-kick in and define e.g. memcpy() to __memcpy() - all good.
+The kernel and modules may use different amounts of memory,
+according to the VMSPLIT configuration, which in turn
+determines the PAGE_OFFSET.
 
-Uncompress and libstub uses memcpy(), disables KASan with
-KASAN_SANITIZE := n so CONFIG_KASAN is defined, but not
-__SANITIZE_ADDRESS__ and we get a compilation error unless
-we patch in -D__SANITIZE_ADDRESS__ to these Makefiles.
+We use the following KASAN_SHADOW_OFFSETs depending on how the
+virtual memory is split up:
 
-Reported-by: Russell King - ARM Linux <linux@armlinux.org.uk>
+- 0x1f000000 if we have 1G userspace / 3G kernelspace split:
+  - The kernel address space is 3G (0xc0000000)
+  - PAGE_OFFSET is then set to 0x40000000 so the kernel static
+    image (vmlinux) uses addresses 0x40000000 .. 0xffffffff
+  - On top of that we have the MODULES_VADDR which under
+    the worst case (using ARM instructions) is
+    PAGE_OFFSET - 16M (0x01000000) = 0x3f000000
+    so the modules use addresses 0x3f000000 .. 0x3fffffff
+  - So the addresses 0x3f000000 .. 0xffffffff need to be
+    covered with shadow memory. That is 0xc1000000 bytes
+    of memory.
+  - 1/8 of that is needed for its shadow memory, so
+    0x18200000 bytes of shadow memory is needed. We
+    "steal" that from the remaining lowmem.
+  - The KASAN_SHADOW_START becomes 0x26e00000, to
+    KASAN_SHADOW_END at 0x3effffff.
+  - Now we can calculate the KASAN_SHADOW_OFFSET for any
+    kernel address as 0x3f000000 needs to map to the first
+    byte of shadow memory and 0xffffffff needs to map to
+    the last byte of shadow memory. Since:
+    SHADOW_ADDR = (address >> 3) + KASAN_SHADOW_OFFSET
+    0x26e00000 = (0x3f000000 >> 3) + KASAN_SHADOW_OFFSET
+    KASAN_SHADOW_OFFSET = 0x26e00000 - (0x3f000000 >> 3)
+    KASAN_SHADOW_OFFSET = 0x26e00000 - 0x07e00000
+    KASAN_SHADOW_OFFSET = 0x1f000000
+
+- 0x5f000000 if we have 2G userspace / 2G kernelspace split:
+  - The kernel space is 2G (0x80000000)
+  - PAGE_OFFSET is set to 0x80000000 so the kernel static
+    image uses 0x80000000 .. 0xffffffff.
+  - On top of that we have the MODULES_VADDR which under
+    the worst case (using ARM instructions) is
+    PAGE_OFFSET - 16M (0x01000000) = 0x7f000000
+    so the modules use addresses 0x7f000000 .. 0x7fffffff
+  - So the addresses 0x7f000000 .. 0xffffffff need to be
+    covered with shadow memory. That is 0x81000000 bytes
+    of memory.
+  - 1/8 of that is needed for its shadow memory, so
+    0x10200000 bytes of shadow memory is needed. We
+    "steal" that from the remaining lowmem.
+  - The KASAN_SHADOW_START becomes 0x6ee00000, to
+    KASAN_SHADOW_END at 0x7effffff.
+  - Now we can calculate the KASAN_SHADOW_OFFSET for any
+    kernel address as 0x7f000000 needs to map to the first
+    byte of shadow memory and 0xffffffff needs to map to
+    the last byte of shadow memory. Since:
+    SHADOW_ADDR = (address >> 3) + KASAN_SHADOW_OFFSET
+    0x6ee00000 = (0x7f000000 >> 3) + KASAN_SHADOW_OFFSET
+    KASAN_SHADOW_OFFSET = 0x6ee00000 - (0x7f000000 >> 3)
+    KASAN_SHADOW_OFFSET = 0x6ee00000 - 0x0fe00000
+    KASAN_SHADOW_OFFSET = 0x5f000000
+
+- 0x9f000000 if we have 3G userspace / 1G kernelspace split,
+  and this is the default split for ARM:
+  - The kernel address space is 1GB (0x40000000)
+  - PAGE_OFFSET is set to 0xc0000000 so the kernel static
+    image uses 0xc0000000 .. 0xffffffff.
+  - On top of that we have the MODULES_VADDR which under
+    the worst case (using ARM instructions) is
+    PAGE_OFFSET - 16M (0x01000000) = 0xbf000000
+    so the modules use addresses 0xbf000000 .. 0xbfffffff
+  - So the addresses 0xbf000000 .. 0xffffffff need to be
+    covered with shadow memory. That is 0x41000000 bytes
+    of memory.
+  - 1/8 of that is needed for its shadow memory, so
+    0x08200000 bytes of shadow memory is needed. We
+    "steal" that from the remaining lowmem.
+  - The KASAN_SHADOW_START becomes 0xb6e00000, to
+    KASAN_SHADOW_END at 0xbfffffff.
+  - Now we can calculate the KASAN_SHADOW_OFFSET for any
+    kernel address as 0xbf000000 needs to map to the first
+    byte of shadow memory and 0xffffffff needs to map to
+    the last byte of shadow memory. Since:
+    SHADOW_ADDR = (address >> 3) + KASAN_SHADOW_OFFSET
+    0xb6e00000 = (0xbf000000 >> 3) + KASAN_SHADOW_OFFSET
+    KASAN_SHADOW_OFFSET = 0xb6e00000 - (0xbf000000 >> 3)
+    KASAN_SHADOW_OFFSET = 0xb6e00000 - 0x17e00000
+    KASAN_SHADOW_OFFSET = 0x9f000000
+
+- 0x8f000000 if we have 3G userspace / 1G kernelspace with
+  full 1 GB low memory (VMSPLIT_3G_OPT):
+  - The kernel address space is 1GB (0x40000000)
+  - PAGE_OFFSET is set to 0xb0000000 so the kernel static
+    image uses 0xb0000000 .. 0xffffffff.
+  - On top of that we have the MODULES_VADDR which under
+    the worst case (using ARM instructions) is
+    PAGE_OFFSET - 16M (0x01000000) = 0xaf000000
+    so the modules use addresses 0xaf000000 .. 0xaffffff
+  - So the addresses 0xaf000000 .. 0xffffffff need to be
+    covered with shadow memory. That is 0x51000000 bytes
+    of memory.
+  - 1/8 of that is needed for its shadow memory, so
+    0x0a200000 bytes of shadow memory is needed. We
+    "steal" that from the remaining lowmem.
+  - The KASAN_SHADOW_START becomes 0xa4e00000, to
+    KASAN_SHADOW_END at 0xaeffffff.
+  - Now we can calculate the KASAN_SHADOW_OFFSET for any
+    kernel address as 0xaf000000 needs to map to the first
+    byte of shadow memory and 0xffffffff needs to map to
+    the last byte of shadow memory. Since:
+    SHADOW_ADDR = (address >> 3) + KASAN_SHADOW_OFFSET
+    0xa4e00000 = (0xaf000000 >> 3) + KASAN_SHADOW_OFFSET
+    KASAN_SHADOW_OFFSET = 0xa4e00000 - (0xaf000000 >> 3)
+    KASAN_SHADOW_OFFSET = 0xa4e00000 - 0x15e00000
+    KASAN_SHADOW_OFFSET = 0x8f000000
+
+- The default value of 0xffffffff for KASAN_SHADOW_OFFSET
+  is an error value. We should always match one of the
+  above shadow offsets.
+
+When we do this, TASK_SIZE will sometimes get a bit odd values
+that will not fit into immediate mov assembly instructions.
+To account for this, we need to rewrite some assembly using
+TASK_SIZE like this:
+
+-       mov     r1, #TASK_SIZE
++       ldr     r1, =TASK_SIZE
+
+or
+
+-       cmp     r4, #TASK_SIZE
++       ldr     r0, =TASK_SIZE
++       cmp     r4, r0
+
+this is done to avoid the immediate #TASK_SIZE that need to
+fit into a limited number of bits.
+
+Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Reported-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
 ChangeLog v1->v2:
-- Move the hacks around __SANITIZE_ADDRESS__ into this file
-- Edit the commit message
-- Rebase on the other v2 patches
+- Use the SPDX license identifier.
+- Rewrote the commit message and updates the illustration.
+- Move KASAN_OFFSET Kconfig set-up into this patch and put it
+  right after PAGE_OFFSET so it is clear how this works, and
+  we have all defines in one patch.
+- Added KASAN_SHADOW_OFFSET of 0x8f000000 for 3G_OPT.
+  See the calculation in the commit message.
+- Updated the commit message with detailed information on
+  how KASAN_SHADOW_OFFSET is obtained for the different
+  VMSPLIT/PAGE_OFFSET options.
 ---
- arch/arm/boot/compressed/Makefile     |  2 ++
- arch/arm/include/asm/string.h         | 17 +++++++++++++++++
- arch/arm/kernel/head-common.S         |  4 ++--
- arch/arm/lib/memcpy.S                 |  3 +++
- arch/arm/lib/memmove.S                |  5 ++++-
- arch/arm/lib/memset.S                 |  3 +++
- drivers/firmware/efi/libstub/Makefile |  5 ++++-
- 7 files changed, 35 insertions(+), 4 deletions(-)
+ arch/arm/Kconfig                 |  9 ++++
+ arch/arm/include/asm/kasan_def.h | 81 ++++++++++++++++++++++++++++++++
+ arch/arm/include/asm/memory.h    |  5 ++
+ arch/arm/kernel/entry-armv.S     |  5 +-
+ arch/arm/kernel/entry-common.S   |  9 ++--
+ arch/arm/mm/mmu.c                |  7 ++-
+ 6 files changed, 110 insertions(+), 6 deletions(-)
+ create mode 100644 arch/arm/include/asm/kasan_def.h
 
-diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-index abd6f3d5c2ba..9d0316876052 100644
---- a/arch/arm/boot/compressed/Makefile
-+++ b/arch/arm/boot/compressed/Makefile
-@@ -25,6 +25,8 @@ endif
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 66a04f6f4775..f6f2d3b202f5 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1325,6 +1325,15 @@ config PAGE_OFFSET
+ 	default 0xB0000000 if VMSPLIT_3G_OPT
+ 	default 0xC0000000
  
- GCOV_PROFILE		:= n
- KASAN_SANITIZE		:= n
-+# Make sure we get the uninstrumented __mem*() functions
-+CFLAGS_KERNEL		:= -D__SANITIZE_ADDRESS__
- 
- # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
- KCOV_INSTRUMENT		:= n
-diff --git a/arch/arm/include/asm/string.h b/arch/arm/include/asm/string.h
-index 111a1d8a41dd..2e1dd7a0cf63 100644
---- a/arch/arm/include/asm/string.h
-+++ b/arch/arm/include/asm/string.h
-@@ -15,15 +15,18 @@ extern char * strchr(const char * s, int c);
- 
- #define __HAVE_ARCH_MEMCPY
- extern void * memcpy(void *, const void *, __kernel_size_t);
-+extern void *__memcpy(void *dest, const void *src, __kernel_size_t n);
- 
- #define __HAVE_ARCH_MEMMOVE
- extern void * memmove(void *, const void *, __kernel_size_t);
-+extern void *__memmove(void *dest, const void *src, __kernel_size_t n);
- 
- #define __HAVE_ARCH_MEMCHR
- extern void * memchr(const void *, int, __kernel_size_t);
- 
- #define __HAVE_ARCH_MEMSET
- extern void * memset(void *, int, __kernel_size_t);
-+extern void *__memset(void *s, int c, __kernel_size_t n);
- 
- #define __HAVE_ARCH_MEMSET32
- extern void *__memset32(uint32_t *, uint32_t v, __kernel_size_t);
-@@ -39,4 +42,18 @@ static inline void *memset64(uint64_t *p, uint64_t v, __kernel_size_t n)
- 	return __memset64(p, v, n * 8, v >> 32);
- }
- 
++config KASAN_SHADOW_OFFSET
++	hex
++	depends on KASAN
++	default 0x1f000000 if PAGE_OFFSET=0x40000000
++	default 0x5f000000 if PAGE_OFFSET=0x80000000
++	default 0x9f000000 if PAGE_OFFSET=0xC0000000
++	default 0x8f000000 if PAGE_OFFSET=0xB0000000
++	default 0xffffffff
 +
-+
-+#if defined(CONFIG_KASAN) && !defined(__SANITIZE_ADDRESS__)
-+
+ config NR_CPUS
+ 	int "Maximum number of CPUs (2-32)"
+ 	range 2 32
+diff --git a/arch/arm/include/asm/kasan_def.h b/arch/arm/include/asm/kasan_def.h
+new file mode 100644
+index 000000000000..5739605aa7cf
+--- /dev/null
++++ b/arch/arm/include/asm/kasan_def.h
+@@ -0,0 +1,81 @@
++/* SPDX-License-Identifier: GPL-2.0 */
 +/*
-+ * For files that are not instrumented (e.g. mm/slub.c) we
-+ * must use non-instrumented versions of the mem* functions.
++ *  arch/arm/include/asm/kasan_def.h
++ *
++ *  Copyright (c) 2018 Huawei Technologies Co., Ltd.
++ *
++ *  Author: Abbott Liu <liuwenliang@huawei.com>
 + */
 +
-+#define memcpy(dst, src, len) __memcpy(dst, src, len)
-+#define memmove(dst, src, len) __memmove(dst, src, len)
-+#define memset(s, c, n) __memset(s, c, n)
++#ifndef __ASM_KASAN_DEF_H
++#define __ASM_KASAN_DEF_H
++
++#ifdef CONFIG_KASAN
++
++/*
++ * Define KASAN_SHADOW_OFFSET,KASAN_SHADOW_START and KASAN_SHADOW_END for
++ * the Arm kernel address sanitizer. We are "stealing" lowmem (the 4GB
++ * addressable by a 32bit architecture) out of the virtual address
++ * space to use as shadow memory for KASan as follows:
++ *
++ * +----+ 0xffffffff
++ * |    |							\
++ * |    | |-> Static kernel image (vmlinux) BSS and page table
++ * |    |/
++ * +----+ PAGE_OFFSET
++ * |    |							\
++ * |    | |->  Loadable kernel modules virtual address space area
++ * |    |/
++ * +----+ MODULES_VADDR = KASAN_SHADOW_END
++ * |    |						\
++ * |    | |-> The shadow area of kernel virtual address.
++ * |    |/
++ * +----+->  TASK_SIZE (start of kernel space) = KASAN_SHADOW_START the
++ * |    |\   shadow address of MODULES_VADDR
++ * |    | |
++ * |    | |
++ * |    | |-> The user space area in lowmem. The kernel address
++ * |    | |   sanitizer do not use this space, nor does it map it.
++ * |    | |
++ * |    | |
++ * |    | |
++ * |    | |
++ * |    |/
++ * ------ 0
++ *
++ * 1) KASAN_SHADOW_START
++ *   This value begins with the MODULE_VADDR's shadow address. It is the
++ *   start of kernel virtual space. Since we have modules to load, we need
++ *   to cover also that area with shadow memory so we can find memory
++ *   bugs in modules.
++ *
++ * 2) KASAN_SHADOW_END
++ *   This value is the 0x100000000's shadow address: the mapping that would
++ *   be after the end of the kernel memory at 0xffffffff. It is the end of
++ *   kernel address sanitizer shadow area. It is also the start of the
++ *   module area.
++ *
++ * 3) KASAN_SHADOW_OFFSET:
++ *   This value is used to map an address to the corresponding shadow
++ *   address by the following formula:
++ *
++ *	shadow_addr = (address >> 3) + KASAN_SHADOW_OFFSET;
++ *
++ *  As you would expect, >> 3 is equal to dividing by 8, meaning each
++ *  byte in the shadow memory covers 8 bytes of kernel memory, so one
++ *  bit shadow memory per byte of kernel memory is used.
++ *
++ *  The KASAN_SHADOW_OFFSET is provided in a Kconfig option depending
++ *  on the VMSPLIT layout of the system: the kernel and userspace can
++ *  split up lowmem in different ways according to needs, so we calculate
++ *  the shadow offset depending on this.
++ */
++
++#define KASAN_SHADOW_SCALE_SHIFT	3
++#define KASAN_SHADOW_OFFSET	_AC(CONFIG_KASAN_SHADOW_OFFSET, UL)
++#define KASAN_SHADOW_END	((UL(1) << (32 - KASAN_SHADOW_SCALE_SHIFT)) \
++				 + KASAN_SHADOW_OFFSET)
++#define KASAN_SHADOW_START      ((KASAN_SHADOW_END >> 3) + KASAN_SHADOW_OFFSET)
++
++#endif
++#endif
+diff --git a/arch/arm/include/asm/memory.h b/arch/arm/include/asm/memory.h
+index 99035b5891ef..5cfa9e5dc733 100644
+--- a/arch/arm/include/asm/memory.h
++++ b/arch/arm/include/asm/memory.h
+@@ -18,6 +18,7 @@
+ #ifdef CONFIG_NEED_MACH_MEMORY_H
+ #include <mach/memory.h>
+ #endif
++#include <asm/kasan_def.h>
+ 
+ /* PAGE_OFFSET - the virtual address of the start of the kernel image */
+ #define PAGE_OFFSET		UL(CONFIG_PAGE_OFFSET)
+@@ -28,7 +29,11 @@
+  * TASK_SIZE - the maximum size of a user space task.
+  * TASK_UNMAPPED_BASE - the lower boundary of the mmap VM area
+  */
++#ifndef CONFIG_KASAN
+ #define TASK_SIZE		(UL(CONFIG_PAGE_OFFSET) - UL(SZ_16M))
++#else
++#define TASK_SIZE		(KASAN_SHADOW_START)
++#endif
+ #define TASK_UNMAPPED_BASE	ALIGN(TASK_SIZE / 3, SZ_16M)
+ 
+ /*
+diff --git a/arch/arm/kernel/entry-armv.S b/arch/arm/kernel/entry-armv.S
+index 77f54830554c..7548d38599ae 100644
+--- a/arch/arm/kernel/entry-armv.S
++++ b/arch/arm/kernel/entry-armv.S
+@@ -180,7 +180,7 @@ ENDPROC(__und_invalid)
+ 
+ 	get_thread_info tsk
+ 	ldr	r0, [tsk, #TI_ADDR_LIMIT]
+-	mov	r1, #TASK_SIZE
++	ldr	r1, =TASK_SIZE
+ 	str	r1, [tsk, #TI_ADDR_LIMIT]
+ 	str	r0, [sp, #SVC_ADDR_LIMIT]
+ 
+@@ -434,7 +434,8 @@ ENDPROC(__fiq_abt)
+ 	@ if it was interrupted in a critical region.  Here we
+ 	@ perform a quick test inline since it should be false
+ 	@ 99.9999% of the time.  The rest is done out of line.
+-	cmp	r4, #TASK_SIZE
++	ldr	r0, =TASK_SIZE
++	cmp	r4, r0
+ 	blhs	kuser_cmpxchg64_fixup
+ #endif
+ #endif
+diff --git a/arch/arm/kernel/entry-common.S b/arch/arm/kernel/entry-common.S
+index 271cb8a1eba1..fee279e28a72 100644
+--- a/arch/arm/kernel/entry-common.S
++++ b/arch/arm/kernel/entry-common.S
+@@ -50,7 +50,8 @@ __ret_fast_syscall:
+  UNWIND(.cantunwind	)
+ 	disable_irq_notrace			@ disable interrupts
+ 	ldr	r2, [tsk, #TI_ADDR_LIMIT]
+-	cmp	r2, #TASK_SIZE
++	ldr	r1, =TASK_SIZE
++	cmp	r2, r1
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]		@ re-check for syscall tracing
+ 	tst	r1, #_TIF_SYSCALL_WORK | _TIF_WORK_MASK
+@@ -87,7 +88,8 @@ __ret_fast_syscall:
+ #endif
+ 	disable_irq_notrace			@ disable interrupts
+ 	ldr	r2, [tsk, #TI_ADDR_LIMIT]
+-	cmp	r2, #TASK_SIZE
++	ldr     r1, =TASK_SIZE
++	cmp     r2, r1
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]		@ re-check for syscall tracing
+ 	tst	r1, #_TIF_SYSCALL_WORK | _TIF_WORK_MASK
+@@ -128,7 +130,8 @@ ret_slow_syscall:
+ 	disable_irq_notrace			@ disable interrupts
+ ENTRY(ret_to_user_from_irq)
+ 	ldr	r2, [tsk, #TI_ADDR_LIMIT]
+-	cmp	r2, #TASK_SIZE
++	ldr     r1, =TASK_SIZE
++	cmp	r2, r1
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]
+ 	tst	r1, #_TIF_WORK_MASK
+diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+index 69a337df619f..0cc53cc903ec 100644
+--- a/arch/arm/mm/mmu.c
++++ b/arch/arm/mm/mmu.c
+@@ -1246,9 +1246,14 @@ static inline void prepare_page_table(void)
+ 	/*
+ 	 * Clear out all the mappings below the kernel image.
+ 	 */
+-	for (addr = 0; addr < MODULES_VADDR; addr += PMD_SIZE)
++	for (addr = 0; addr < TASK_SIZE; addr += PMD_SIZE)
+ 		pmd_clear(pmd_off_k(addr));
+ 
++#ifdef CONFIG_KASAN
++	/*TASK_SIZE ~ MODULES_VADDR is the KASAN's shadow area -- skip over it*/
++	addr = MODULES_VADDR;
 +#endif
 +
- #endif
-diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
-index 4a3982812a40..6840c7c60a85 100644
---- a/arch/arm/kernel/head-common.S
-+++ b/arch/arm/kernel/head-common.S
-@@ -95,7 +95,7 @@ __mmap_switched:
-  THUMB(	ldmia	r4!, {r0, r1, r2, r3} )
-  THUMB(	mov	sp, r3 )
- 	sub	r2, r2, r1
--	bl	memcpy				@ copy .data to RAM
-+	bl	__memcpy			@ copy .data to RAM
- #endif
- 
-    ARM(	ldmia	r4!, {r0, r1, sp} )
-@@ -103,7 +103,7 @@ __mmap_switched:
-  THUMB(	mov	sp, r3 )
- 	sub	r2, r1, r0
- 	mov	r1, #0
--	bl	memset				@ clear .bss
-+	bl	__memset			@ clear .bss
- 
- 	ldmia	r4, {r0, r1, r2, r3}
- 	str	r9, [r0]			@ Save processor ID
-diff --git a/arch/arm/lib/memcpy.S b/arch/arm/lib/memcpy.S
-index 09a333153dc6..ad4625d16e11 100644
---- a/arch/arm/lib/memcpy.S
-+++ b/arch/arm/lib/memcpy.S
-@@ -58,6 +58,8 @@
- 
- /* Prototype: void *memcpy(void *dest, const void *src, size_t n); */
- 
-+.weak memcpy
-+ENTRY(__memcpy)
- ENTRY(mmiocpy)
- ENTRY(memcpy)
- 
-@@ -65,3 +67,4 @@ ENTRY(memcpy)
- 
- ENDPROC(memcpy)
- ENDPROC(mmiocpy)
-+ENDPROC(__memcpy)
-diff --git a/arch/arm/lib/memmove.S b/arch/arm/lib/memmove.S
-index b50e5770fb44..fd123ea5a5a4 100644
---- a/arch/arm/lib/memmove.S
-+++ b/arch/arm/lib/memmove.S
-@@ -24,12 +24,14 @@
-  * occurring in the opposite direction.
-  */
- 
-+.weak memmove
-+ENTRY(__memmove)
- ENTRY(memmove)
- 	UNWIND(	.fnstart			)
- 
- 		subs	ip, r0, r1
- 		cmphi	r2, ip
--		bls	memcpy
-+		bls	__memcpy
- 
- 		stmfd	sp!, {r0, r4, lr}
- 	UNWIND(	.fnend				)
-@@ -222,3 +224,4 @@ ENTRY(memmove)
- 18:		backward_copy_shift	push=24	pull=8
- 
- ENDPROC(memmove)
-+ENDPROC(__memmove)
-diff --git a/arch/arm/lib/memset.S b/arch/arm/lib/memset.S
-index 6ca4535c47fb..0e7ff0423f50 100644
---- a/arch/arm/lib/memset.S
-+++ b/arch/arm/lib/memset.S
-@@ -13,6 +13,8 @@
- 	.text
- 	.align	5
- 
-+.weak memset
-+ENTRY(__memset)
- ENTRY(mmioset)
- ENTRY(memset)
- UNWIND( .fnstart         )
-@@ -132,6 +134,7 @@ UNWIND( .fnstart            )
- UNWIND( .fnend   )
- ENDPROC(memset)
- ENDPROC(mmioset)
-+ENDPROC(__memset)
- 
- ENTRY(__memset32)
- UNWIND( .fnstart         )
-diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-index 094eabdecfe6..ea37c9c21273 100644
---- a/drivers/firmware/efi/libstub/Makefile
-+++ b/drivers/firmware/efi/libstub/Makefile
-@@ -19,9 +19,12 @@ cflags-$(CONFIG_X86)		+= -m$(BITS) -D__KERNEL__ -O2 \
- # disable the stackleak plugin
- cflags-$(CONFIG_ARM64)		:= $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
- 				   -fpie $(DISABLE_STACKLEAK_PLUGIN)
-+# Define __SANITIZE_ADDRESS__ in order to get the weak __mem*() functions
-+# when building with KASan.
- cflags-$(CONFIG_ARM)		:= $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
- 				   -fno-builtin -fpic \
--				   $(call cc-option,-mno-single-pic-base)
-+				   $(call cc-option,-mno-single-pic-base) \
-+				   -D__SANITIZE_ADDRESS__
- 
- cflags-$(CONFIG_EFI_ARMSTUB)	+= -I$(srctree)/scripts/dtc/libfdt
- 
+ #ifdef CONFIG_XIP_KERNEL
+ 	/* The XIP kernel is mapped in the module area -- skip over it */
+ 	addr = ((unsigned long)_exiprom + PMD_SIZE - 1) & PMD_MASK;
 -- 
 2.25.1
 
