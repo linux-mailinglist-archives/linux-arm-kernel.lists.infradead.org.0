@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A38C1A6477
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 11:08:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A020A1A648B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 11:17:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kcc8etFcmfEukny5OFxSYemOW+R6xoP5KSML3uvN/PA=; b=pih9UcU2N+U0azKZn10vb9fJz
-	ZjIxYGYlIlhAItn1xzhoWD3qjc1fsLTcjghm4vw7H998nPleuuvkEZiPvuwMNAldEbA0zBbRmHbu5
-	DQfPDrgQLDCjLF31N4N+tkjqolGPFWadlfcMBawzXJuIaSmi5eEkEJqIH543fJ8xEALSigBJxMMEK
-	TS0yqeAssKs0T/3OqVRFoNE+5elsmAqtySD8FihgVL7wKKBvmjL+rpq3Wj9grsAxIZrn4kIIEEobP
-	BDjkaLIawHiv3/Zm6HqFnRcUVrIgIfFF5rFXgWhHy61lDSKtGe2zZfOc7AHjAQn6Va5hxRyEyWgsB
-	kBc1wTAuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iRhhGwyGhIOYZLTa9OJfB3ylJFrbixYSGMBbqmFWA9c=; b=Mfd94oFPdUUEbh
+	EJuA3zbNJTxS/DYKzpaCOj+MOKt2sH9tJm+lL8Sesrnp227b5Chajy/lw8hNJikgh1IxU3AyiWzGy
+	G3278lP4pjNq9LVMevY9ufHFEuKrmlyX/2iQPr85nuiDpKHdHonyRfVrLY/FeAWTLm6EBruSPb3pD
+	yZRRV5gNHFaotNe06ZI5K55zWeupm1gTq0XXNh0GHmmGldX7QBW2Q6EXZujudgtHee+FwOQKbjFHX
+	ES7FfDoYsV0dyiVEJIufuHvWVcVzRKKYt241FzAJ5t96p6Nr1U3s2ESLhrIKshrkwR3pfdSbKZ7RE
+	G1XqRJVK8l9B88eeAr9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNv4M-0001PN-5k; Mon, 13 Apr 2020 09:07:54 +0000
-Received: from out4436.biz.mail.alibaba.com ([47.88.44.36])
+	id 1jNvDr-0007ik-Cs; Mon, 13 Apr 2020 09:17:43 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNv4D-0001Od-JI
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 09:07:47 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R671e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e01355;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=19; SR=0;
- TI=SMTPD_---0TvMk-zp_1586768848; 
-Received: from 30.27.118.45(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0TvMk-zp_1586768848) by smtp.aliyun-inc.com(127.0.0.1);
- Mon, 13 Apr 2020 17:07:29 +0800
-Subject: Re: [PATCH] KVM: Optimize kvm_arch_vcpu_ioctl_run function
-To: Marc Zyngier <maz@kernel.org>
-References: <20200413034523.110548-1-tianjia.zhang@linux.alibaba.com>
- <17097df45c7fe76ee3c09ac180b844d2@kernel.org>
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Message-ID: <a06c5435-8790-a970-519b-92ea4ee70f7d@linux.alibaba.com>
-Date: Mon, 13 Apr 2020 17:07:28 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jNvDk-0007ho-89
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 09:17:37 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y12so2893114pll.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Apr 2020 02:17:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+Es/1kSX+2DTfIEl11xOgF+dKXSLyBYadIDMkf6JWRY=;
+ b=uD88jc+H5svxYWnFnmOVmZGhizFVGLAqr3CGeRWDO71LcsasJpC+gS6bTbGRjKJPM3
+ oZ9POJtkVxjLCFTbcL+p8nnQySxbLL31W4FoXcAJX3ZzjWVGDARV0SImqIOX2W/pEOon
+ VNWH55nNVoBjMsIDFb8wwRfiKr0nqmZqI1/dBsNbIj2R9CC6u/yGTisg10eG5ytX8cMI
+ EvG8HXr+df/G5G78N96KOfukqqYSuC0n4PXJR38NSI3N1XwImkZhSlFym87QkkP6mlcN
+ uuEiLWJ+0805c7VirFoRpj+kz8ZQJXGK5w90D5bDCpywG0dKP5HsHGALfFUSO/gVPw4l
+ oR6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+Es/1kSX+2DTfIEl11xOgF+dKXSLyBYadIDMkf6JWRY=;
+ b=fLOy7UNLL2huJYyt/Bbvxot+KxETD1hZjH6zi87FRVVsgr0AC30xzecFrDhN6d1AsT
+ 3tlSIWlzX3lP0Qzmtm3/w3/skrJT9JiTnC90B0FsAbjrPWDB2F8vhiEJ+mGLKUOV5elQ
+ e526ouJsNhgpzR90I0LDRhW/0EgdOKXthnCR8rG0edIMXxBvtKgm+xEO1DkKXEXBesIe
+ CGYx6N+zSBsINhMh8+6F1/r9hGctoU4NoDOdEWWT4N+BjVRBPk3QivHbcntplaHXtbED
+ pD1fqPhjzuxg/r5HVKWTscck1i9OcZuFtbQaTbG4dpkV5C/QCt9TUopn7UYTrdu7z0qb
+ CS2Q==
+X-Gm-Message-State: AGi0PuZ3/CFNpMvp5hgwXTQ8ltuqY2K7Ddv5wKUhh2tuzFSshfMleug3
+ ZL1m2BGolt4QPk9NFnyg3yPvuGZgZRx6rT2uRMU+axxSAQI=
+X-Google-Smtp-Source: APiQypKrhwIBdb9K5xK6+BTvgkhgXaWgjvsbqf2WCnQLazfGOFLVhIlgZpBJQNARmhWX7ScRLGvI/AGMLB5ktOM49e0=
+X-Received: by 2002:a17:902:9306:: with SMTP id
+ bc6mr16330033plb.255.1586769453549; 
+ Mon, 13 Apr 2020 02:17:33 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <17097df45c7fe76ee3c09ac180b844d2@kernel.org>
+References: <20200412180923.30774-1-mani@kernel.org>
+In-Reply-To: <20200412180923.30774-1-mani@kernel.org>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Mon, 13 Apr 2020 12:17:21 +0300
+Message-ID: <CAHp75VfDUoFMWg42OFHZtKQ972eoR3UDLVAs+BQjJm3h3-fOGw@mail.gmail.com>
+Subject: Re: [PATCH 0/2] Add software flow control support for STM32 UART
+To: mani@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_020745_770752_955FB6AF 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: -8.7 (--------)
+X-CRM114-CacheID: sfid-20200413_021736_292249_EEF52370 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [47.88.44.36 listed in list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,67 +93,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, james.morse@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, joro@8bytes.org, x86@kernel.org,
- linux-kernel@vger.kernel.org, sean.j.christopherson@intel.com,
- kvmarm@lists.cs.columbia.edu, mingo@redhat.com, bp@alien8.de,
- linux-arm-kernel@lists.infradead.org, hpa@zytor.com, pbonzini@redhat.com,
- vkuznets@redhat.com, tglx@linutronix.de, julien.thierry.kdev@gmail.com,
- jmattson@google.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLzQvMTMgMTY6NTYsIE1hcmMgWnluZ2llciB3cm90ZToKPiBUaWFuamlhLAo+IAo+
-IE9uIDIwMjAtMDQtMTMgMDQ6NDUsIFRpYW5qaWEgWmhhbmcgd3JvdGU6Cj4+IGt2bV9hcmNoX3Zj
-cHVfaW9jdGxfcnVuKCkgaXMgb25seSBjYWxsZWQgaW4gdGhlIGZpbGUga3ZtX21haW4uYywKPj4g
-d2hlcmUgdmNwdS0+cnVuIGlzIHRoZSBrdm1fcnVuIHBhcmFtZXRlciwgc28gaXQgaGFzIGJlZW4g
-cmVwbGFjZWQuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFRpYW5qaWEgWmhhbmcgPHRpYW5qaWEuemhh
-bmdAbGludXguYWxpYmFiYS5jb20+Cj4+IC0tLQo+PiDCoGFyY2gveDg2L2t2bS94ODYuYyB8IDgg
-KysrKy0tLS0KPj4gwqB2aXJ0L2t2bS9hcm0vYXJtLmMgfCAyICstCj4+IMKgMiBmaWxlcyBjaGFu
-Z2VkLCA1IGluc2VydGlvbnMoKyksIDUgZGVsZXRpb25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9h
-cmNoL3g4Ni9rdm0veDg2LmMgYi9hcmNoL3g4Ni9rdm0veDg2LmMKPj4gaW5kZXggM2JmMmVjYWZk
-MDI3Li43MGUzZjRhYmJkNGQgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gveDg2L2t2bS94ODYuYwo+PiAr
-KysgYi9hcmNoL3g4Ni9rdm0veDg2LmMKPj4gQEAgLTg3MjYsMTggKzg3MjYsMTggQEAgaW50IGt2
-bV9hcmNoX3ZjcHVfaW9jdGxfcnVuKHN0cnVjdCBrdm1fdmNwdQo+PiAqdmNwdSwgc3RydWN0IGt2
-bV9ydW4gKmt2bV9ydW4pCj4+IMKgwqDCoMKgwqDCoMKgwqAgciA9IC1FQUdBSU47Cj4+IMKgwqDC
-oMKgwqDCoMKgwqAgaWYgKHNpZ25hbF9wZW5kaW5nKGN1cnJlbnQpKSB7Cj4+IMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCByID0gLUVJTlRSOwo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB2Y3B1
-LT5ydW4tPmV4aXRfcmVhc29uID0gS1ZNX0VYSVRfSU5UUjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAga3ZtX3J1bi0+ZXhpdF9yZWFzb24gPSBLVk1fRVhJVF9JTlRSOwo+PiDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgKyt2Y3B1LT5zdGF0LnNpZ25hbF9leGl0czsKPj4gwqDCoMKgwqDCoMKg
-wqDCoCB9Cj4+IMKgwqDCoMKgwqDCoMKgwqAgZ290byBvdXQ7Cj4+IMKgwqDCoMKgIH0KPj4KPj4g
-LcKgwqDCoCBpZiAodmNwdS0+cnVuLT5rdm1fdmFsaWRfcmVncyAmIH5LVk1fU1lOQ19YODZfVkFM
-SURfRklFTERTKSB7Cj4+ICvCoMKgwqAgaWYgKGt2bV9ydW4tPmt2bV92YWxpZF9yZWdzICYgfktW
-TV9TWU5DX1g4Nl9WQUxJRF9GSUVMRFMpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoCByID0gLUVJTlZB
-TDsKPj4gwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4gwqDCoMKgwqAgfQo+Pgo+PiAtwqDC
-oMKgIGlmICh2Y3B1LT5ydW4tPmt2bV9kaXJ0eV9yZWdzKSB7Cj4+ICvCoMKgwqAgaWYgKGt2bV9y
-dW4tPmt2bV9kaXJ0eV9yZWdzKSB7Cj4+IMKgwqDCoMKgwqDCoMKgwqAgciA9IHN5bmNfcmVncyh2
-Y3B1KTsKPj4gwqDCoMKgwqDCoMKgwqDCoCBpZiAociAhPSAwKQo+PiDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgZ290byBvdXQ7Cj4+IEBAIC04NzY3LDcgKzg3NjcsNyBAQCBpbnQga3ZtX2FyY2hf
-dmNwdV9pb2N0bF9ydW4oc3RydWN0IGt2bV92Y3B1Cj4+ICp2Y3B1LCBzdHJ1Y3Qga3ZtX3J1biAq
-a3ZtX3J1bikKPj4KPj4gwqBvdXQ6Cj4+IMKgwqDCoMKgIGt2bV9wdXRfZ3Vlc3RfZnB1KHZjcHUp
-Owo+PiAtwqDCoMKgIGlmICh2Y3B1LT5ydW4tPmt2bV92YWxpZF9yZWdzKQo+PiArwqDCoMKgIGlm
-IChrdm1fcnVuLT5rdm1fdmFsaWRfcmVncykKPj4gwqDCoMKgwqDCoMKgwqDCoCBzdG9yZV9yZWdz
-KHZjcHUpOwo+PiDCoMKgwqDCoCBwb3N0X2t2bV9ydW5fc2F2ZSh2Y3B1KTsKPj4gwqDCoMKgwqAg
-a3ZtX3NpZ3NldF9kZWFjdGl2YXRlKHZjcHUpOwo+PiBkaWZmIC0tZ2l0IGEvdmlydC9rdm0vYXJt
-L2FybS5jIGIvdmlydC9rdm0vYXJtL2FybS5jCj4+IGluZGV4IDQ4ZDBlYzQ0YWQ3Ny4uYWI5ZDc5
-NjZhNGM4IDEwMDY0NAo+PiAtLS0gYS92aXJ0L2t2bS9hcm0vYXJtLmMKPj4gKysrIGIvdmlydC9r
-dm0vYXJtL2FybS5jCj4+IEBAIC02NTksNyArNjU5LDcgQEAgaW50IGt2bV9hcmNoX3ZjcHVfaW9j
-dGxfcnVuKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4gc3RydWN0IGt2bV9ydW4gKnJ1bikKPj4g
-wqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmV0Owo+Pgo+PiDCoMKgwqDCoCBpZiAocnVuLT5leGl0
-X3JlYXNvbiA9PSBLVk1fRVhJVF9NTUlPKSB7Cj4+IC3CoMKgwqDCoMKgwqDCoCByZXQgPSBrdm1f
-aGFuZGxlX21taW9fcmV0dXJuKHZjcHUsIHZjcHUtPnJ1bik7Cj4+ICvCoMKgwqDCoMKgwqDCoCBy
-ZXQgPSBrdm1faGFuZGxlX21taW9fcmV0dXJuKHZjcHUsIHJ1bik7Cj4+IMKgwqDCoMKgwqDCoMKg
-wqAgaWYgKHJldCkKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+IMKg
-wqDCoMKgIH0KPiAKPiBEbyB5b3UgaGF2ZSBhbnkgbnVtYmVyIHN1cHBvcnRpbmcgdGhlIGlkZWEg
-dGhhdCB5b3UgYXJlIG9wdGltaXppbmcgYW55dGhpbmcKPiBoZXJlPyBQZXJmb3JtYW5jZSwgY29k
-ZSBzaXplLCByZWdpc3RlciBwcmVzc3VyZSBvciBhbnkgb3RoZXIgcmVsZXZhbnQgCj4gbWV0cmlj
-Pwo+IAo+IFRoYW5rcywKPiAKPiAgwqDCoMKgwqDCoMKgwqAgTS4KClRoaXMgaXMgb25seSBhIHNp
-bXBsaWZpZWQgaW1wbGVtZW50YXRpb24gb2YgdGhlIGZ1bmN0aW9uLCB0aGUgaW1wYWN0IG9uIApw
-ZXJmb3JtYW5jZSBhbmQgcmVnaXN0ZXIgcHJlc3N1cmUgY2FuIGJlIGlnbm9yZWQuCgpUaGFua3Ms
-ClRpYW5qaWEKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+On Mon, Apr 13, 2020 at 7:06 AM <mani@kernel.org> wrote:
+>
+> From: Manivannan Sadhasivam <mani@kernel.org>
+>
+> Hello,
+>
+> This patchset adds software flow control support for STM32 UART controller.
+> This is necessary for the upcoming STM32MP1 based board called Stinger96
+> IoT-Box. On that board, a bluetooth chip is connected to one of the UART
+> controller but the CTS/RTS lines got swapped mistakenly. So in order to
+> workaround that hardware bug and also to support the usecase of using only
+> Tx/Rx pins, this patchset adds software flow control support.
+>
+> This patchset has been validated w/ Stinger96 IoT-Box connected to Murata
+> WiFi-BT combo chip.
+>
+
+I think it's a mix of terminology or so. Looking into the patches I
+found that it's required to have GPIOs for SW flow control.
+No, SW flow control does not require any additional signals, except RxD/TxD.
+
+On top of that, it seems you adding mctrl-gpio functionality. Why
+can't you use that one? And thus no bindings needs to be updated.
+
+> Thanks,
+> Mani
+>
+> Manivannan Sadhasivam (2):
+>   dt-bindings: serial: Add binding for software flow control in STM32
+>     UART
+>   tty: serial: Add software flow control support for STM32 USART
+>
+>  .../bindings/serial/st,stm32-uart.yaml        |  15 +-
+>  drivers/tty/serial/stm32-usart.c              | 143 +++++++++++++++++-
+>  drivers/tty/serial/stm32-usart.h              |   4 +
+>  3 files changed, 155 insertions(+), 7 deletions(-)
+>
+> --
+> 2.17.1
+>
+
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
