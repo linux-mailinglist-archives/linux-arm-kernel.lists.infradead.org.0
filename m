@@ -2,54 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8A21A68FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:38:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFFFC1A693E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:55:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mIaxD49ThoFp7lJ8vxcsynYAotnS8dvYMm+fEioV/Lk=; b=cJKIqG5/pZlkOq
-	uqmmarsUF/xQLTrAfaC+PnhUGRHrwlkWlQsbQl3js8qBofU2BZs/OeAJGYUY7SHDXgio/3JEr4obs
-	qKiXMMeXE6/DU6p0kRYZArQfJslcZ2EhwHbdtaNK8d1OLadcQM1IhAjOrFNiE7FfcPW7dyPAlem5J
-	Tz+WqtbYe9PebaNoDa96zutoqiemjFxDwOVkiw5q4Jv2cdJvfRlbgAPeBDgX/MLjkxexnxGRjj8+9
-	SsW63+msSmjX1IBJq21L0F6t+QX5wijEHu8hza2TNbE/mOgaDSI5Bd+IB8usR0j6V5oHLyPWVVEzV
-	qb8ASf8VHpdawc2RapRA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zZh6XrRAkt/sPBeUOBdS/w/LBrQBlma6O7HzNiVBuTc=; b=UgS
+	dLUiEVSBxGC52Mn67zfccxO+8LrDZbc4GxWLB+MmgRj7gzq2qM+iXn3iTanaIYPddzCPlXdc+9uoM
+	5kQpdrlLtl3YHI1aWawS1KWYDOY6PDURAczRRtINzp9EuFoXvdrRZtT5kZAycLuYTVHqBvkYslO9f
+	5bWrYfYiNV+3MB9Ep/+QeY3y8Bkuu9fp0UHD9Qh7yDjVsdMSJqgxjb6OYxGlLH+UP3iNxz+rBuAtG
+	vrj79oV/ChJfB7EcHqcmNo/lCDWaI4SQrQm79K5M6o1PgijfuzR3s2EbOivX6s4ZuU3mmOnahRjAx
+	Yxoobn3WVoF/z1q99id05qSqHYCTfIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO19n-0003Ny-KR; Mon, 13 Apr 2020 15:37:55 +0000
+	id 1jO1Qw-00073R-9v; Mon, 13 Apr 2020 15:55:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO19d-0003Nb-IF
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:37:47 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jO1Qn-00071W-Al
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:55:30 +0000
+Received: from e123331-lin.home
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7F8B32072C;
- Mon, 13 Apr 2020 15:37:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 94EFF20656;
+ Mon, 13 Apr 2020 15:55:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586792265;
- bh=lQ8kyjkpMTyR85fSUdpR9VATKBOfxGyqeQRWXIWSwHw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=NfgsGatWPdOuSoVilt1i+8H0bYzRjSVvm2+qN90yARaeKWT9voanCYZ0YuSmgXyNH
- Bvt10f/cQ0+5gdY4GvfKOLicT01q51fsLe62EYzgnMV82Ot0jabjgwRcoq43YTH+R8
- 9X6PgLY6pG97BuQuPDt88moH3eYsx9hmLw8Duu5k=
-Date: Mon, 13 Apr 2020 16:37:39 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Aishwarya R <aishwaryarj100@gmail.com>
-Subject: Re: [PATCH] iio: adc: fsl-imx25-gcq: Use
- devm_platform_ioremap_resource
-Message-ID: <20200413163739.38474d8a@archlinux>
-In-Reply-To: <20200412135023.3831-1-aishwaryarj100@gmail.com>
-References: <20200409151306.308-1-aishwaryarj100@gmail.com>
- <20200412135023.3831-1-aishwaryarj100@gmail.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ s=default; t=1586793328;
+ bh=KTk9cwV2T7FyWit4wXThuE2JxgSVPpcA0ysORxgBS4A=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ourQLy0Pu50wfyvmPf0GEFw6SRXfymR7uwYQ6s5a0bKlQDWia3uriewvRTq9fm0C6
+ r2I9mTKQxpfeWX+DRLGVIcFkgydSJmh6AFNqKWoWIPFTO1D7sIkt9F7d8H3aimkvIV
+ kCbo25zAlrlaefFHeNSkWR+iKDNJbrH2GQMxl3dI=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [PATCH v2 0/8] efi/libstub: simplify arm64 kernel image loading
+Date: Mon, 13 Apr 2020 17:55:13 +0200
+Message-Id: <20200413155521.24698-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_083745_622703_F5FAF914 
-X-CRM114-Status: GOOD (  16.55  )
+X-CRM114-CacheID: sfid-20200413_085529_403249_97568F37 
+X-CRM114-Status: GOOD (  14.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,66 +73,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Enrico Weigelt <info@metux.net>, Lars-Peter Clausen <lars@metafoo.de>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-iio@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Thomas Gleixner <tglx@linutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, nivedita@alum.mit.edu,
+ Jonathan.Cameron@huawei.com, will@kernel.org, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 12 Apr 2020 19:20:20 +0530
-Aishwarya R <aishwaryarj100@gmail.com> wrote:
+On arm64, the kernel image used to be virtually mapped via the linear
+region, making the two mappings correlated in a way that required the
+kernel to be located at the start of the linear region, or the memory
+below would not be accessible. For this reason, the EFI stub loader
+code for arm64 has the notion of a 'preferred offset' for the physical
+placement of the kernel image, and tries to put the kernel there, or
+at least as low as possible in physical memory (unless KASLR is active,
+in which case the placement is randomized)
 
-> From: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-> 
-> Use the helper function that wraps the calls to
-> platform_get_resource() and devm_ioremap_resource()
-> together.It reduces boilerplate and suggested by coccinelle.
-> 
-> Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-Again see earlier patches for comments but applied anyway to
-save myself time.
+When KASLR was introduced, the virtual mapping of the kernel was moved
+into the vmalloc region, and now, regardless of whether KASLR support
+is built in or active, the kernel can be placed anywhere in physical
+memory without any detrimental side effects on the linear region.
 
-Applied to the togreg branch of iio.git and pushed out as testing for
-the autobuilders to play with it.
+This means that we can drop the notion of 'preferred offset' entirely,
+and invoke the kernel in place if the PE/COFF loader loaded it at the
+right offset. If not, we can invoke the ordinary UEFI top down page
+allocator to reallocate it elsewhere in memory. By updating the PE/COFF
+metadata, we can inform the PE/COFF loader about the desired alignment,
+making it less likely that we need to move the kernel image in the first
+place.
 
-Thanks,
+Ard Biesheuvel (8):
+  efi/libstub/random: align allocate size to EFI_ALLOC_ALIGN
+  efi/libstub/random: increase random alloc granularity
+  efi/libstub/arm64: replace 'preferred' offset with alignment check
+  efi/libstub/arm64: simplify randomized loading of kernel image
+  efi/libstub/arm64: align PE/COFF sections to segment alignment
+  efi/libstub: add API function to allocate aligned memory
+  efi/libstub/arm64: switch to ordinary page allocator for kernel image
+  efi/libstub: move efi_relocate_kernel() into separate source file
 
-Jonathan
+ arch/arm64/kernel/efi-header.S             |   2 +-
+ arch/arm64/kernel/vmlinux.lds.S            |   3 +-
+ drivers/firmware/efi/libstub/Makefile      |   3 +-
+ drivers/firmware/efi/libstub/alignedmem.c  |  57 ++++++
+ drivers/firmware/efi/libstub/arm64-stub.c  |  92 +++-------
+ drivers/firmware/efi/libstub/efistub.h     |  18 +-
+ drivers/firmware/efi/libstub/mem.c         | 191 +-------------------
+ drivers/firmware/efi/libstub/randomalloc.c |   6 +-
+ drivers/firmware/efi/libstub/relocate.c    | 174 ++++++++++++++++++
+ 9 files changed, 280 insertions(+), 266 deletions(-)
+ create mode 100644 drivers/firmware/efi/libstub/alignedmem.c
+ create mode 100644 drivers/firmware/efi/libstub/relocate.c
 
-> ---
->  drivers/iio/adc/fsl-imx25-gcq.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
-> 
-> diff --git a/drivers/iio/adc/fsl-imx25-gcq.c b/drivers/iio/adc/fsl-imx25-gcq.c
-> index fa71489195c6..b0a4dc88ba9b 100644
-> --- a/drivers/iio/adc/fsl-imx25-gcq.c
-> +++ b/drivers/iio/adc/fsl-imx25-gcq.c
-> @@ -294,7 +294,6 @@ static int mx25_gcq_probe(struct platform_device *pdev)
->  	struct mx25_gcq_priv *priv;
->  	struct mx25_tsadc *tsadc = dev_get_drvdata(pdev->dev.parent);
->  	struct device *dev = &pdev->dev;
-> -	struct resource *res;
->  	void __iomem *mem;
->  	int ret;
->  	int i;
-> @@ -305,8 +304,7 @@ static int mx25_gcq_probe(struct platform_device *pdev)
->  
->  	priv = iio_priv(indio_dev);
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	mem = devm_ioremap_resource(dev, res);
-> +	mem = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(mem))
->  		return PTR_ERR(mem);
->  
+-- 
+2.17.1
 
 
 _______________________________________________
