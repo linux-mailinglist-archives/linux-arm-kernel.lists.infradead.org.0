@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82FFA1A6C66
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 21:21:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F36D31A6C6D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 21:24:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9229W3Vt7arrxt9r6QIJnnZ+uk4RSmcRHl4nGQQTiRk=; b=VQWPV534Sc/mRE
-	LWi9X4EQKCercDzyS7/fn54ILN3E5NUBB0OPaBd2fNvI1RqdunfqTZk27PVZvzvZGqIGWSXtxjPmI
-	mElrkLEDlbnJoY4mwAU8EFn/uwLVHA6BkbDMRum/UlcfjfGlMHGicwQVQk9IUArTK3/JoqsvxXIAg
-	hbegEoblTh5OCZ2ip1JW9Tb7rHqg6QjQeipVilX3IEP3P2ZI4ExuspY9W7aRIwMGSmEdiNa4dKSsb
-	sedWwpbX96qrRBocCsAUoaOOXhB/s77qca2p69UIVV0U8vSweZuASVT2UQTNLTIQXlgv7TgawH+OR
-	8r1wYX+KG6Q01VGT1zPQ==;
+	List-Owner; bh=pspESVkFl/EFVefTGTm8eGgIU2UTntlXwegJlC3MerU=; b=r/ZRLnfyR0hYxL
+	BjWv9ZLxw8e62evK0paXdlEYfwxR8B/Y7emQ18/8IhjmvszQVzMane+GVueCdJVrhjh9nq5zBHfD/
+	NGOG/T7R4+GpYUz+jCTSOWsx5K1+fH4tYTGm/lDqHcfARQUrseYcAF4WchGuDkzZv6YihKQpyptQu
+	mPxRnNKP/fRRyRA1DRm4Ni+kKxg0RwLSE6PPjQZpQYCm8k3loteVLmZ6epDWy0b8o4B0plLKa+sUH
+	thsIQKtWdz+iDnvo3bilT9EiomFBcReV8RC9/XcQCe3i3NyHI7GAGlWWsbahL8NUC6QqqN9SdiieV
+	MBZbCyttsuqsAhrkFYWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO4dz-0001UJ-7D; Mon, 13 Apr 2020 19:21:19 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jO4gc-0001sK-F0; Mon, 13 Apr 2020 19:24:02 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO4dr-0001Tr-Qh
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 19:21:14 +0000
-Received: by mail-pf1-x441.google.com with SMTP id k15so4955230pfh.6
+ id 1jO4gS-0001ro-2t
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 19:23:54 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id np9so4258263pjb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 12:21:09 -0700 (PDT)
+ Mon, 13 Apr 2020 12:23:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=E3v3lMYX71OYS7ExZ5JtALb3DwWrKTziHCm5gwOcJBM=;
- b=U+GilTzgZn485m/gVVQKl0E/vydgYV4Oo0+zwr4XwvKuxpKqL+QwXG2ln/L4Mn74YF
- h/HlvMXQhjsvO7mPI0nEp602ii5l2JuMg7rMSQDxXIlJT7OQ0frEfnM7qr23+3INNBlu
- vpXRHGk4Mzlw9bNmhJa85wmgows5iO/doPGu6Zh2Le+wKvxVZTwvM6ZnqPpphhE1mGQl
- 2kn7v5XayBdAr+5YOJJdYgKr1hX+PpNd/opcHTYr1mhYApKBa/Qvn6nPTUIESjHR53+q
- z5t+/rP/XvHjSVbYR7CBlvnzv/vk9ywknCKwWQfoyRSAYHql/TrK1VMXYj+N/D7tWsqj
- 3TSg==
+ :cc; bh=8lE32io1NRyqSa7MHqCZDRttxoRhAaBAKKn04pJslSA=;
+ b=BvE9X5S9Y0cIXImu51NYc31tHh4aVt0KseCDiyJkR7OZzY2JlIRDMkyDZdTNOPuC4R
+ 9IYJkyCLyatQ9MCEd+g3PH5wq3a+NdnlcnQwJGnU5WCj0BtJz72G8SPSDblVjuOUBKvh
+ yhtI9Co6zz/+w4Y2ZsWWLZBcNOjxZAl0nlqk8AeM04HBptMq3I/aR+OocaBYkQ8aIM1n
+ jmagVkld4noTl+Up7eXZH2LGLT23dOn9qhWpW7udKYuYLNiClPgVQu0sh/zlvqTdjr7c
+ AkUSLYive4wNiDPW4Iix+C1+FjWDB6jiNv3afz3djTNXVT9cjCdb3G9SfKdliIBkFdtZ
+ CXhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=E3v3lMYX71OYS7ExZ5JtALb3DwWrKTziHCm5gwOcJBM=;
- b=b0BnsLPL/jzw5VYdYcf4Uq6NwP4G3D9EuuexeK6Lt0wI1J/j9pSrgoTM9qSxMvm4Gx
- YDYFfaAgvJs9qnbP1x9TpeYTDYXsq2W3cB/sCIJ+qcGIdY5A2dZHVYOYeIWCkNCyV130
- spzqnHh3HnV0nPPsAtayd3Aqrlmdc6MSgg/oS5bl8MKM0WBJJ76zGTbnl+RawlMxb2Lx
- 2Yt/jYkUVivqdVYKez/uyCzSZDw6AfkNDLc8L5+UogGoQbwT14KStlU/5ggkZgFqq6xp
- lpNaws7fnAfNHOJ7XDsp6SnUElyelRtxSZj4mVDUmhJfuf2PZApA0UJQhj7XveAmdez5
- Q5rw==
-X-Gm-Message-State: AGi0PuaoJJ/eUhq0g+vmXejceE8Z2zEVxNMGv2E1AYJQgiIpl4psQRld
- ZNdfOcVzPj+06m4dJQNVF1QW7BBYa9fB44dAtqNO1A==
-X-Google-Smtp-Source: APiQypLc2bGWndwrv130fbQvw2IFcVCXMnlN7wZcX+BhWB/S4mwUuLNY4H7yB7zdGhQFDGWjmd3oMw6khE9rZUz1Pws=
-X-Received: by 2002:aa7:919a:: with SMTP id x26mr19063745pfa.39.1586805669240; 
- Mon, 13 Apr 2020 12:21:09 -0700 (PDT)
+ bh=8lE32io1NRyqSa7MHqCZDRttxoRhAaBAKKn04pJslSA=;
+ b=c1/nzdaobY/8vMp3SJvpQ3JAuMNJGSaQDEzsvxIAsmbUnQoLT1Zy48g7sWg3WUu+lP
+ dY8RpO0ZEd0vMxfsLmt+wl/r4NJ+CGKuyiwTfgSoON4aPO4HDvPmvIoxjumTXmul+gj5
+ xYTfQBouAXhR4vd5h91cJP1fcPSL3q7EehfXmERJVlpnQmR3cyBakh+sAm0pbJjajL1b
+ Nj0mDO03hb3WUkFWDz4hI+w46CI6eIP4/ubkNmDgVUg25qdaN+X0E+DFxPSTrUGjfynZ
+ wD2OWoe6xU0aDawEE3QOseev4H58NGv0HosX3LvYWJToCJzmo2fdkTkYW4/vkzqxx7Mn
+ W8bw==
+X-Gm-Message-State: AGi0PubONWlIaKMKo8P40oOmSL79htS755rokt1fSg8ux2dNI434EkCT
+ GXm5B6wWCZ1MidvmCiHijKE2uSqCNBjzaUlF/VfxZA==
+X-Google-Smtp-Source: APiQypKO1KUFCBfb3oR8QeV6GdNn+LL1TlznBqs1HPMQVZ+C86o3a66gINbmsxoBZH/I8gA95LPPPkmkWiOv+MWhxzc=
+X-Received: by 2002:a17:90a:266c:: with SMTP id
+ l99mr13602789pje.186.1586805830250; 
+ Mon, 13 Apr 2020 12:23:50 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200409232728.231527-1-caij2003@gmail.com>
  <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
-In-Reply-To: <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
+ <CAMj1kXGXNxXGiC4dmNXHkZ6n=J0Fhim3oSwNx4Bz5m9fEphJvQ@mail.gmail.com>
+ <20200410123301.GX25745@shell.armlinux.org.uk>
+In-Reply-To: <20200410123301.GX25745@shell.armlinux.org.uk>
 From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 13 Apr 2020 12:20:57 -0700
-Message-ID: <CAKwvOdnpW0VSRdD6958xyWh-tDbuVTti265aqOpvfhvh6iQEXQ@mail.gmail.com>
+Date: Mon, 13 Apr 2020 12:23:38 -0700
+Message-ID: <CAKwvOd=-u3grX3O4CtBayJYhv=mmsxMrRTF=AMcKMbphN5Xkgg@mail.gmail.com>
 Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
-To: Arnd Bergmann <arnd@arndb.de>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_122111_887845_3F9C1877 
-X-CRM114-Status: GOOD (  16.06  )
+X-CRM114-CacheID: sfid-20200413_122352_154964_69E43368 
+X-CRM114-Status: GOOD (  17.20  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -103,13 +106,12 @@ Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
  Manoj Gupta <manojgupta@google.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
  "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
- Jian Cai <caij2003@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
+ Jian Cai <caij2003@gmail.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
  Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
  Sami Tolvanen <samitolvanen@google.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
  "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
  Jian Cai <jiancai@google.com>, Doug Anderson <armlinux@m.disordat.com>,
  Dan Williams <dan.j.williams@intel.com>,
@@ -117,46 +119,44 @@ Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Patrick Bellasi <patrick.bellasi@arm.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Tejun Heo <tj@kernel.org>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
  Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 2:56 AM Arnd Bergmann <arnd@arndb.de> wrote:
+On Fri, Apr 10, 2020 at 5:33 AM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
 >
-> On Fri, Apr 10, 2020 at 1:28 AM Jian Cai <caij2003@gmail.com> wrote:
-> >
-> > iwmmxt.S contains XScale instructions LLVM ARM backend does not support.
-> > Skip this file if LLVM integrated assemmbler or LLD is used to build ARM
-> > kernel.
-> >
-> > Signed-off-by: Jian Cai <caij2003@gmail.com>
->
-> It clearly makes sense to limit the Kconfig option to compilers that
-> can actually build it.
-> A few questions though:
->
-> - Given that Armada XP with its PJ4B was still marketed until fairly
-> recently[1],
->   wouldn't it make sense to still add support for it? Is it a lot of work?
+> For older CPUs, it doesn't matter what the latest ARM ARM says, the
+> appropriate version of the ARM ARM is the one relevant for the CPU
+> architecture.  This is a mistake frequently made, and it's been pointed
+> out by Arm Ltd in the past (before ARMv6 even came on the scene) that
+> keeping older revisions is necessary if you want to be interested in
+> the older architectures.
 
-Sorry, can you help me verify from that link that PJ4B uses XSCALE?  I
-didn't see references to either in the link provided.  Also, given the
-history of XSCALE as noted by Russell, I'm surprised to see Marvell in
-the mix.
+As if it never existed *waves hands*.  Interesting.  Does ARM still
+distribute these older reference manuals? Do you keep copies of the
+older revisions?
 
 >
-> - Why does the linker have to understand it, rather than just the assembler?
-
-It doesn't, just the assembler is the problem.
-
+> However, there's an additional complication here: DEC's license from
+> Arm Ltd back in the days of StrongARM allowed them to make changes to
+> the architecture - that was passed over to Intel when they bought that
+> part of DEC.  Consequently, these "non-Arm vendor" cores contain
+> extensions that are not part of the ARM ARM.  iWMMXT is one such
+> example, which first appeared in the Intel PXA270 SoC (an ARMv5
+> derived CPU).
 >
-> [1] http://web.archive.org/web/20191015165247/https://www.marvell.com/embedded-processors/armada/index.jsp
+> In fact, several of the features found in later versions of the ARM
+> architecture came from DEC and Intel enhancements.
+>
+> If your compiler/assembler only implements what is in the latest ARM
+> ARM, then it is not going to be suitable for these older CPUs and
+> alternate vendor "ARM compatible" CPUs.
 
-
-
+This is a neat piece of history, thanks for sharing.
 -- 
 Thanks,
 ~Nick Desaulniers
