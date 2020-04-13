@@ -2,88 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2393E1A6CF0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 22:03:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 974E31A6D37
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 22:26:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RY6jqSMKM6thj46BGCcqiV+p5099vvDFjJh6HjJz8Cs=; b=Ni9M7HE9trub6G
-	+rdH2HJBzjALv7MnrPoG/x+glC6In0k7Exhe5dSVcYHwuaPWc1wLj8gjhHRDyDVyNgRzvEylCh8uU
-	IVVR4fKuzH7/XoUI5PeTBuaPe6v6K2oKKF10Am/iesHMq28gdvuKJ6JuJn+nfuhRympDVTJXTP+Br
-	UcZUvNQwESLn5rmJsncRnzjZQCLe8xy0zIhAyVf/NyFTZBQh6QExY1D+dF5SoPwaLIEkkNGzHcnSy
-	ETkPIBICXjSUrM6wyfu7ytEeJZ/MewgRDInCw7RTQ8U+ss32IsMX+n+5EAUgaOgCUhu7qMtzm1L1E
-	WrxIu4VxxZnoB91Lrmsw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=NjAdD63OKqEWRi1nnYWSIej4IJVONSrsFGLyu+DswII=; b=uEZbK1p3O4yBrR
+	OkC2jhWVjRPtIAwr9HEwSKsw7HXLb6yV9dnDnDH53DILJ3HiSgBshpW0nMBjyHm0b77gUEcJdU8Cc
+	8puxSalV3Wfua16IboCCK4aod4G+GBL0KvFe6PB0W5I4hvkFs0nb3hHw3WwRuKt1TlToSfaw57IJf
+	HcaG/Kwv/q9VGbVub1Rzpqssjv4l6VsRcBglEmPSaI1LXshtJ3PUwBM09l2FqBqoCGFOxwdJ4qzWT
+	OBrrvWyiANzDNIoLXs5ZhPgfgvFMPC5Py4jPY/+p58YcUO+u9z5Ft0j2cfR7H38AdtunHuUFD6wPe
+	UQCC+NX5F7nJ6JjsAU+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO5Ib-0000FJ-FB; Mon, 13 Apr 2020 20:03:17 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jO5eY-0005ld-Qi; Mon, 13 Apr 2020 20:25:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO5IU-0000Er-AU
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 20:03:12 +0000
-Received: by mail-qk1-x744.google.com with SMTP id t3so7006825qkg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 13:03:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cmpxchg-org.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=OEtNtfUfCfknsSkfuodbs8GxJYII1GNua8MgFwL7K04=;
- b=juG10l2QIUDc0d5n1SeOUdB0siwuJQOGCU6pnQRUaf/usairEJnMWI4NCHxVUL2frR
- HT8Dj0G2KFCEAuDZkPEiGVv3NLV5ooo7kJcA7V4T4xV81925vc++8cQ5KHVSBI1+By+5
- +/+66XSDZZW/XkKLCzanTlv78m+KRuVYwmVlKC0N09gqxCMtKrGm1srU2i7+Kw1dkX5x
- DPoyq7kDqoEsqgMu8qGEr3vtIBlmiQWaBKBOz/tbp3ah+kvBa7aU6x3A1gaLlMlwJUeg
- hUM97swfra3YIkYNCDFX0ZcS8Au+7KacD3c88l4X9gBMGqiNfPjeT92Va5NYJ5lvz0rD
- aygw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=OEtNtfUfCfknsSkfuodbs8GxJYII1GNua8MgFwL7K04=;
- b=uh6xTeWDVv/5LvqoOl7dKGfCsaquC/+CUBl1goWi5ReJlV22fge8T+njOtqy5Ygx5q
- H3po+qZrJKKbVYESwfvNwH55N0oh3agffI17fwwloysBN52W/IS+yKS51HEAV9+WF+HK
- 6CfsfA7d2KfPKWgQyceR/kMF+xZcWk5ci1+fjvCcZ8zg37iRmcHPpcOBuc9yq1t4FrvB
- 5+DIPZQKUFi9aR99ptGBgNUdw5d+wEnvGEahXo9eJMb0JNkTySL/ZRC9DsKJrh1eDPdC
- AR2YpTNbLhpcsS3hZL+bM7evtNM3KfmABJiJ+abMIAQj9AFGFFvpc+me6WWvcO60xOXi
- fpig==
-X-Gm-Message-State: AGi0PuZuuN6ylGUUTuTOcGQDBan5BLFy//Ry5A4AzXQOhv5iPZslLA9V
- KRy+5FaoeKQHV7Jc6KiHcc7R+Q==
-X-Google-Smtp-Source: APiQypJVwvSR1oEkK4bhCoeIIw8batoCJN92/jh4PNjnx+deBvO5XKiPj+RRAmN7IK2twvZnNWUNMA==
-X-Received: by 2002:a37:d93:: with SMTP id 141mr7293908qkn.32.1586808188246;
- Mon, 13 Apr 2020 13:03:08 -0700 (PDT)
-Received: from localhost (70.44.39.90.res-cmts.bus.ptd.net. [70.44.39.90])
- by smtp.gmail.com with ESMTPSA id x66sm9119423qka.121.2020.04.13.13.03.06
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 13:03:07 -0700 (PDT)
-Date: Mon, 13 Apr 2020 16:03:06 -0400
-From: Johannes Weiner <hannes@cmpxchg.org>
-To: Andrii Nakryiko <andrii.nakryiko@gmail.com>
-Subject: Re: [PATCH 25/28] mm: remove vmalloc_user_node_flags
-Message-ID: <20200413200306.GC99267@cmpxchg.org>
-References: <20200408115926.1467567-1-hch@lst.de>
- <20200408115926.1467567-26-hch@lst.de>
- <CAEf4BzZOC2tLrqt_Km=WQb=9xiya2e31i6K3oJuzgYQt6wp1LQ@mail.gmail.com>
+ id 1jO5eS-0005l9-Kd
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 20:25:53 +0000
+Received: from localhost (mobile-166-175-184-103.mycingular.net
+ [166.175.184.103])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EBA2220663;
+ Mon, 13 Apr 2020 20:25:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586809549;
+ bh=7PcGTf+Br3iofGrHqpT1Lk86E7HQeOdsnGtnmkXmQXU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=at1uT8/PSg/+IWjPO7DOJs5nfPYZthY1ltxXmI5cn1TByUbMH4Uqus6jTmfnvKdbx
+ fPnj04MTgRm1UPZAc2+zQdLr+uHnTLQVgryUeGLtrK02GEsQpuO4MYFsO3a4+mCf8m
+ qNA5QJvKmPUCDr/YMcvS4/dfyC3ORWClhg6vO+Z4=
+Date: Mon, 13 Apr 2020 15:25:46 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Ansuel Smith <ansuelsmth@gmail.com>
+Subject: Re: [PATCH 2/4] drivers: pci: dwc: pci-imx6: update binding to
+ generic name
+Message-ID: <20200413202546.GA147401@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAEf4BzZOC2tLrqt_Km=WQb=9xiya2e31i6K3oJuzgYQt6wp1LQ@mail.gmail.com>
+In-Reply-To: <20200410004738.19668-3-ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_130310_420778_BB7A6A43 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200413_132552_696456_E42B578F 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,44 +76,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
- x86@kernel.org, Christoph Hellwig <hch@lst.de>,
- Peter Zijlstra <peterz@infradead.org>, Laura Abbott <labbott@redhat.com>,
- Nitin Gupta <ngupta@vflare.org>, Daniel Vetter <daniel@ffwll.ch>,
- Haiyang Zhang <haiyangz@microsoft.com>, linaro-mm-sig@lists.linaro.org,
- bpf <bpf@vger.kernel.org>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Robin Murphy <robin.murphy@arm.com>, open list <linux-kernel@vger.kernel.org>,
- Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Richard Zhu <hongxing.zhu@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-pci@vger.kernel.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 09, 2020 at 03:25:03PM -0700, Andrii Nakryiko wrote:
-> cc Johannes who suggested this API call originally
+If/when you repost this, please update the subject to match the
+convention:
 
-I forgot why we did it this way - probably just cruft begetting more
-cruft. Either way, Christoph's cleanup makes this look a lot better.
+  $ git log --oneline drivers/pci/controller/dwc/pci-imx6.c
+  2170a09fb4b0 PCI: imx6: Propagate errors for optional regulators
+  075af61c19cd PCI: imx6: Limit DBI register length
+  1b8df7aa7874 PCI: imx6: Allow asynchronous probing
+  87cb312777b5 PCI: imx6: Use usleep_range() in imx6_pcie_enable_ref_clk()
 
-> On Wed, Apr 8, 2020 at 5:03 AM Christoph Hellwig <hch@lst.de> wrote:
-> >
-> > Open code it in __bpf_map_area_alloc, which is the only caller.  Also
-> > clean up __bpf_map_area_alloc to have a single vmalloc call with
-> > slightly different flags instead of the current two different calls.
-> >
-> > For this to compile for the nommu case add a __vmalloc_node_range stub
-> > to nommu.c.
-> >
-> > Signed-off-by: Christoph Hellwig <hch@lst.de>
+As Fabio pointed out, we can't break backward compatibility without a
+good reason.
 
-Acked-by: Johannes Weiner <hannes@cmpxchg.org>
+On Fri, Apr 10, 2020 at 02:47:36AM +0200, Ansuel Smith wrote:
+> Rename specific bindings to generic name.
+> 
+> Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
+> ---
+>  drivers/pci/controller/dwc/pci-imx6.c | 12 ++++++------
+>  1 file changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
+> index acfbd34032a8..4ac140e007b4 100644
+> --- a/drivers/pci/controller/dwc/pci-imx6.c
+> +++ b/drivers/pci/controller/dwc/pci-imx6.c
+> @@ -1146,28 +1146,28 @@ static int imx6_pcie_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	/* Grab PCIe PHY Tx Settings */
+> -	if (of_property_read_u32(node, "fsl,tx-deemph-gen1",
+> +	if (of_property_read_u32(node, "tx-deemph-gen1",
+>  				 &imx6_pcie->tx_deemph_gen1))
+>  		imx6_pcie->tx_deemph_gen1 = 0;
+>  
+> -	if (of_property_read_u32(node, "fsl,tx-deemph-gen2-3p5db",
+> +	if (of_property_read_u32(node, "tx-deemph-gen2-3p5db",
+>  				 &imx6_pcie->tx_deemph_gen2_3p5db))
+>  		imx6_pcie->tx_deemph_gen2_3p5db = 0;
+>  
+> -	if (of_property_read_u32(node, "fsl,tx-deemph-gen2-6db",
+> +	if (of_property_read_u32(node, "tx-deemph-gen2-6db",
+>  				 &imx6_pcie->tx_deemph_gen2_6db))
+>  		imx6_pcie->tx_deemph_gen2_6db = 20;
+>  
+> -	if (of_property_read_u32(node, "fsl,tx-swing-full",
+> +	if (of_property_read_u32(node, "tx-swing-full",
+>  				 &imx6_pcie->tx_swing_full))
+>  		imx6_pcie->tx_swing_full = 127;
+>  
+> -	if (of_property_read_u32(node, "fsl,tx-swing-low",
+> +	if (of_property_read_u32(node, "tx-swing-low",
+>  				 &imx6_pcie->tx_swing_low))
+>  		imx6_pcie->tx_swing_low = 127;
+>  
+>  	/* Limit link speed */
+> -	ret = of_property_read_u32(node, "fsl,max-link-speed",
+> +	ret = of_property_read_u32(node, "max-link-speed",
+>  				   &imx6_pcie->link_gen);
+>  	if (ret)
+>  		imx6_pcie->link_gen = 1;
+> -- 
+> 2.25.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
