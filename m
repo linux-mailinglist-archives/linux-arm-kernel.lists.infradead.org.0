@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 031AA1A6DB5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 23:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FE121A6DD4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 23:16:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x4njuqYo21lKKvpkYmquTO0C8bULPJZaWDLyAIPue1k=; b=Rjz/QNP5w9WGey
-	zArlr/3lJEKCuPA7Q/DwgRpEsjlsliSYR56X3cdFEQ/FQtGlvbhvD8iyMQc1dr6DL6VshvQwIPG/9
-	JZrSnswEYYpwrqj7kZDm/mJfiLOZA0BmODJPR9bwoype6Bj7btWbwL4P8icGtHVfevusvq78Azq0U
-	ZP79sHresFhVOThwm/m9LguLfi5OLPnylucgD6UiGvyNgbhyLlFtTKrKN9WVMoaNdjhzup34K9f8o
-	lHvD9Jh/dGxtV/DLwjXLbXOzVxyc1y7E5rjCz7BPDx/V42p1jGfOPZrsWqK05TnsjvUC8cIJdBaqR
-	2Z0PDWjU+wrL9Igjl0tA==;
+	List-Owner; bh=MXEW5ATFjYl25W/GMYlJTehnTlx3g9XczAEIOVdpESg=; b=D36aHE+7XUN/mE
+	ZkWi/pmY3/IUn6BoVaSuBZm4I2E0GH7Ad+Hpd9r5e/ybtZbYMb9y9nnsTBbQJ3gYmjb6ta9sZJp+x
+	77bzBW/qxXGHWrEIgUSs7fnRWEGz6jPlBs2qy4QOoou9RtAzQDB2I5UK6DtLxlIhYyPbU8LLxcMkC
+	fHlUE6TJ4s/Fev6goMLlRlFzKOg3xnJ0kYqsAz1CXN6dOdGLOX85nAnV/24spPHL+iYQc1JLGcpUk
+	5Yv1AX1yQAvPSIrB3r3ZMHj9vjp6UL3SDcUZtyB+LR9tVzIaafBq+r/waiRAB8IDmbOkYSFADqGX+
+	ClgitDavVj2+E6PUc6ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO6DD-0001PC-Tf; Mon, 13 Apr 2020 21:01:47 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jO6R7-0001SM-1P; Mon, 13 Apr 2020 21:16:09 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO6D6-0001Nb-Mf
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 21:01:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ws2nR0EpxKl2RJkJk3e0Vaf6eTLG8ASGEhenXWS4AfY=; b=Dzxd7eN4Q7tKI7wkTM+04sKxs
- 5Tv2wkNSh4cyWzjeq8y4LGxAKRKEvWAeUXH+MGKS+rVoVfeZQkGQL9TZoeyw9gY6q85Sq4NWuAVKo
- 2fo03TIBlIr/qc/AIvuRzJXycJuL1e4BAT0zzb1M+8cOnj7Z+Neg/YAtFHQEZbqQxAgdR2MSDyEBE
- cSMTbfuKCJ+Z4ndEQm5fQo7zmDxg75ugA+PkjkCKEHD9cSVcRrMa+9IAGMnmQi0mf7lVHx9EpDezD
- VmeiH0S0sd+8T0DlkVNUMcYuuU0YWZ5ieoYqAuiaZ+BuGGA1Q8qeXsKqW86nm2rFDA45xYxbXAEyz
- ha2KBtFgw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:49652)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jO6CQ-0003wo-Gw; Mon, 13 Apr 2020 22:00:58 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jO6CH-0007Ht-8g; Mon, 13 Apr 2020 22:00:49 +0100
-Date: Mon, 13 Apr 2020 22:00:49 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1jO6Qz-0001Rh-7n
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 21:16:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=idZP78QLfRjhluguquTHPSQeRBXMkj6qqFAj2rwGa5w=; b=cOXAiD8Z/xYKoms96+wgVqIB23
+ M6eSFqZbbD7Lcbr7Iy9lPSGpmY+zjW1RGpWYDh5z7H7xnxizf6McwVPLyGt6bcJI1dOYWkTChf31P
+ nQbZp+BPnlKBjaUGQdbAjrDxq2f3JIL6L6mgeYUC/ISqV2z+tzJDTXoJU97JWRggxV6s=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jO6Q8-002W4d-Hz; Mon, 13 Apr 2020 23:15:08 +0200
+Date: Mon, 13 Apr 2020 23:15:08 +0200
+From: Andrew Lunn <andrew@lunn.ch>
 To: Nick Desaulniers <ndesaulniers@google.com>
 Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
-Message-ID: <20200413210049.GQ25745@shell.armlinux.org.uk>
+Message-ID: <20200413211508.GE436020@lunn.ch>
 References: <20200409232728.231527-1-caij2003@gmail.com>
  <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
- <CAMj1kXGXNxXGiC4dmNXHkZ6n=J0Fhim3oSwNx4Bz5m9fEphJvQ@mail.gmail.com>
- <20200410123301.GX25745@shell.armlinux.org.uk>
- <CAKwvOd=-u3grX3O4CtBayJYhv=mmsxMrRTF=AMcKMbphN5Xkgg@mail.gmail.com>
+ <CAKwvOdnpW0VSRdD6958xyWh-tDbuVTti265aqOpvfhvh6iQEXQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKwvOd=-u3grX3O4CtBayJYhv=mmsxMrRTF=AMcKMbphN5Xkgg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAKwvOdnpW0VSRdD6958xyWh-tDbuVTti265aqOpvfhvh6iQEXQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_140140_907453_ED3B72F8 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200413_141601_279476_00116C81 
+X-CRM114-Status: GOOD (  15.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,13 +82,12 @@ Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
  Manoj Gupta <manojgupta@google.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
  "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Jian Cai <caij2003@gmail.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
  Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jian Cai <caij2003@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
  clang-built-linux <clang-built-linux@googlegroups.com>,
  Sami Tolvanen <samitolvanen@google.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>, Arnd Bergmann <arnd@arndb.de>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
  "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
  Jian Cai <jiancai@google.com>, Doug Anderson <armlinux@m.disordat.com>,
  Dan Williams <dan.j.williams@intel.com>,
@@ -110,39 +95,52 @@ Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Patrick Bellasi <patrick.bellasi@arm.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Tejun Heo <tj@kernel.org>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
  Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 12:23:38PM -0700, Nick Desaulniers wrote:
-> On Fri, Apr 10, 2020 at 5:33 AM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
+On Mon, Apr 13, 2020 at 12:20:57PM -0700, Nick Desaulniers wrote:
+> On Fri, Apr 10, 2020 at 2:56 AM Arnd Bergmann <arnd@arndb.de> wrote:
 > >
-> > For older CPUs, it doesn't matter what the latest ARM ARM says, the
-> > appropriate version of the ARM ARM is the one relevant for the CPU
-> > architecture.  This is a mistake frequently made, and it's been pointed
-> > out by Arm Ltd in the past (before ARMv6 even came on the scene) that
-> > keeping older revisions is necessary if you want to be interested in
-> > the older architectures.
+> > On Fri, Apr 10, 2020 at 1:28 AM Jian Cai <caij2003@gmail.com> wrote:
+> > >
+> > > iwmmxt.S contains XScale instructions LLVM ARM backend does not support.
+> > > Skip this file if LLVM integrated assemmbler or LLD is used to build ARM
+> > > kernel.
+> > >
+> > > Signed-off-by: Jian Cai <caij2003@gmail.com>
+> >
+> > It clearly makes sense to limit the Kconfig option to compilers that
+> > can actually build it.
+> > A few questions though:
+> >
+> > - Given that Armada XP with its PJ4B was still marketed until fairly
+> > recently[1],
+> >   wouldn't it make sense to still add support for it? Is it a lot of work?
 > 
-> As if it never existed *waves hands*.  Interesting.  Does ARM still
-> distribute these older reference manuals? Do you keep copies of the
-> older revisions?
+> Sorry, can you help me verify from that link that PJ4B uses XSCALE?
 
-I keep copies of every document I've needed that I'm allowed to keep
-as a general rule, including the early paper copies of the ARM
-architecture reference manual. I even have the original VLSI ARM2
-databook.
+I think you missed my email. iwmmxt is not Xscale. iwmmxt is an
+instruction set of its own, which any ARM processor could implement.
 
-For the ARMv5TE architecture, you're looking for DDI0100E which can be
-found via google.
+> I
+> didn't see references to either in the link provided.  Also, given the
+> history of XSCALE as noted by Russell, I'm surprised to see Marvell in
+> the mix.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+https://en.wikipedia.org/wiki/XScale
+
+	XScale comprises several distinct families: IXP, IXC, IOP, PXA
+	and CE.
+
+	Intel sold the PXA family to Marvell Technology Group
+	in June 2006.[1] Marvell then extended the brand to include
+	processors with other microarchitectures, like ARM's Cortex.
+
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
