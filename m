@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE7E41A69C2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 18:22:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44FFF1A69C5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 18:22:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8iTQspXyRbox2Kws72njaZZ/UIq1eeTmGOTusuzrz3Y=; b=jcP
-	/MK/Kgwl8w6VriEZriMdMMKcfaRuB8eJryopmE3p6+kttuBLqsNori2LiP2YG+q1QLqJCcxbLj2N2
-	qhXJOBVlnUsSt5o7PG3d5PTfclrwLmYONaTTK2bh3axjxTNLW9H5sfc6llxXGSFRNISPyw9qrpVVJ
-	MoXVt8++X2qYY6mZJkKtJdbD1P+yRnK/TstU+uh1jS08YpaDoaFpf0LY3GQeYI6n38mnPAZ8nbsF0
-	9f6CAi23MRY+OJFmrzf/Ollc5jInsHzDp8cR9YztXB4I+cnitQ93lUvIsO01JPBhcFodSihU+aVmQ
-	86LavBQ83jvv7LQKsJnoG4d6jx1zE4w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=2MVtijeu/gC0OxqiBrg2aXJOkvfQYs7N4xR6uycGLzI=; b=F5eYU0AkPdye2il88nTovtLwZe
+	yrP2tmxf80Jf/2iveRglnaN+zg/Ily3/9dWMhihIwmNv7MN3x15UVsfwvCHSQP3oM/HTBL21A/7NM
+	qRAXgdgBwppEvVoP/SaO5MBzFZpKsfEDyT3HJiWWAYjQLUI5a6H+InWrpw0LIfAklpBEI7FojLopo
+	DAMLYQ80lnKHIZvC8Lnoyk1MPOTzZLiS76VZPJMJRkzhnDn0fA/1y0QxRRPaCgvqzN0EiYVKbNBee
+	XgDFvglZW2pODcmXCuah1E9PJGhEmePtq7EHC1tLev6xMO2TFV2iHUVn0rCRC2Ukscrh/J2J5NSwa
+	XjZBwc1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO1qN-0007kG-JD; Mon, 13 Apr 2020 16:21:55 +0000
+	id 1jO1qf-0007sB-B4; Mon, 13 Apr 2020 16:22:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO1qE-0007jZ-QR
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 16:21:48 +0000
+ id 1jO1qG-0007jt-Hv
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 16:21:49 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 06DD020678;
- Mon, 13 Apr 2020 16:21:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D45682072C;
+ Mon, 13 Apr 2020 16:21:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586794906;
- bh=IqpUxkVtHDEgwWhX20VGe8wZL2/R4vFyk/X+sHaBDTI=;
- h=From:To:Cc:Subject:Date:From;
- b=IDI3leQ+aYl2QfNm1UfMxzARYKVpCwhL+mdURWoQsBbQKowKg30LvzrqGIIiSpAwa
- pPxelkW+Yot2fR9cud0erCGgqWjG2mH0I7wIHfyjbroHR/BX49XsSzRUXvh8h5tU+2
- z5bg9CLBwPAy8BOz0P+im+3M4g2IlnWRHyBMZkOk=
+ s=default; t=1586794908;
+ bh=9NQ8R9DhZRgLAt9e4VrhoWte1yWObtKJdqxMgjCyQ3c=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=1WrtGANA8+fBvK2lVHif5A62z+LHP30GAL84+ZMb9NidXr18tuHh6zQknlcrY+ut+
+ BYIwvdQ0YnvrfzHf9QEWwTsSc9nFd2O9YzIrYzNJWvBnZchG4x6Fb/cYYgRcP3tRLD
+ T/fV8Tl1jhipRBN8wFpNaK3R1rfOCHWVIZRcYbZk=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 0/5] ARM: simplify handover from UEFI to decompressor
-Date: Mon, 13 Apr 2020 18:21:30 +0200
-Message-Id: <20200413162135.14955-1-ardb@kernel.org>
+Subject: [PATCH v2 1/5] ARM: decompressor: move headroom variable out of LC0
+Date: Mon, 13 Apr 2020 18:21:31 +0200
+Message-Id: <20200413162135.14955-2-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200413162135.14955-1-ardb@kernel.org>
+References: <20200413162135.14955-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_092146_875662_2ABE8F0E 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20200413_092148_607256_FDAF494E 
+X-CRM114-Status: GOOD (  11.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,45 +86,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The EFI stub in the ARM kernel runs in the context of the firmware, which
-means it runs with the caches and MMU on. Currently, we relocate the zImage
-so it appears in the first 128 MiB, disable the MMU and caches and invoke
-the decompressor via its ordinary entry point. However, since we can pass
-the base of DRAM directly, there is no need to relocate the zImage, which
-also means there is no need to disable and re-enable the caches and create
-new page tables etc.
+Before breaking up LC0 into different pieces, move out the variable
+that is already place-relative (given that it subtracts 'restart' in
+the expression) and so its value does not need to be added to the
+runtime address of the LC0 symbol itself.
 
-This simplification is implemented by patch #5. Patches #1 - #4 are
-prerequisite changes to permit the decompressor to execute from the
-offset chosen by the UEFI firmware.
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm/boot/compressed/head.S | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-Note that this applies onto v5.7-rc1 with Geert's patch 'ARM: boot: Obtain
-start of physical memory from DTB' applied [0]
-
-Changes since v1:
-- tweak some asm sequences in #2 to fix the Thumb2 build
-- switch immediately to the new stack in #5
-
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Nicolas Pitre <nico@fluxnic.net>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Russell King <linux@armlinux.org.uk>
-
-[0] https://lore.kernel.org/linux-arm-kernel/20200320144348.12865-1-geert+renesas@glider.be/
-
-Ard Biesheuvel (5):
-  ARM: decompressor: move headroom variable out of LC0
-  ARM: decompressor: split off _edata and stack base into separate
-    object
-  ARM: decompressor: defer loading of the contents of the LC0 structure
-  ARM: decompressor: move GOT into .data for EFI enabled builds
-  ARM: decompressor: run decompressor in place if loaded via UEFI
-
- arch/arm/boot/compressed/head.S           | 89 ++++++++------------
- arch/arm/boot/compressed/vmlinux.lds.S    |  5 ++
- drivers/firmware/efi/libstub/arm32-stub.c | 45 ++--------
- 3 files changed, 45 insertions(+), 94 deletions(-)
-
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index 2d2a42865b39..bb674febf640 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -339,7 +339,7 @@ not_angel:
+ 		 */
+ 		mov	r0, pc
+ 		cmp	r0, r4
+-		ldrcc	r0, LC0+28
++		ldrcc	r0, .Lheadroom
+ 		addcc	r0, r0, pc
+ 		cmpcc	r4, r0
+ 		orrcc	r4, r4, #1		@ remember we skipped cache_on
+@@ -716,9 +716,11 @@ LC0:		.word	LC0			@ r1
+ 		.word	_got_start		@ r11
+ 		.word	_got_end		@ ip
+ 		.word	.L_user_stack_end	@ sp
+-		.word	_end - restart + 16384 + 1024*1024
+ 		.size	LC0, . - LC0
+ 
++.Lheadroom:
++		.word	_end - restart + 16384 + 1024*1024
++
+ .Linflated_image_size_offset:
+ 		.long	(input_data_end - 4) - .
+ 
 -- 
 2.17.1
 
