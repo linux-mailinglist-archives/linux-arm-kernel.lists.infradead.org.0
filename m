@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78D9A1A61C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 05:40:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 439731A61CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 05:45:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FQolch3OfX7fpk8HXvRYoN6Fe5zLXFbJue0vJh/+Ljw=; b=hP88mapK21eaOY
-	UuaH9F25J6vUqPJfUdVo5SbDw4YwPilEktjZTcxNXxDIBw9tNbIOyV1um58KONc7VgDGmzaG2vHXF
-	J9+hOJeGgqxx6sZnbtI6axSTiFFRHIT1f1l6x2zF3LOAdpKxJk2ep0YDjRYg3uOLwO/1fbFSCZS3y
-	re5+sMgyZIuYrGDNM01nouqmHd6D6ZjxwRopCv65MBfGTbJgm5vg9wNbfsNnXE1wuvIKgCs1SKar/
-	loTraTW7Su5glmQDaaF2oEXLpoAxcpRVusfmI6HIGns/ZfiNrzGZ73sNXoIuKQIxEFxz92Pr9zwUY
-	5CLUpF18BDRh/wXeVGqA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bdN0676VfXKOV6X8BeDrfqHLZBF9r9/tonz8aFdJZ5k=; b=sNb
+	3bSWRNcLKvcIDvZyngNS3r9N8DrOGdPEbGjCtnjw5/AUhg+drsmMQbDX14nJuutoDWkewgYNOIOuO
+	zVe8J/GRNpCQnddDeTuPLlDzwUeiBeRNFicVpi9tJXRJWId86GBwCfvpOKZJ4r7r/tPRCkFT7kFVM
+	rygLcutSNNM5zQNzeTI0AczkLQPGxrLHcjcGqy8jJWzQDoAQaTR2dlCsHQHoUjjzQym0eZ/su2l1g
+	Bg3HA8QdXxxR1fh61QNlI9S63a0ynPBHiu6VNP3PiTF9ZMJWdWeO0zacygxAa5neL6plM7h5/YuPM
+	NDr+Sf12geX6t+rE2pi7+UUWKyIIxDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNpxH-0005SP-MF; Mon, 13 Apr 2020 03:40:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNpx6-0004Yj-Qs
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 03:40:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB47630E;
- Sun, 12 Apr 2020 20:40:03 -0700 (PDT)
-Received: from [10.163.1.49] (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8DFCC3F6C4;
- Sun, 12 Apr 2020 20:40:00 -0700 (PDT)
-Subject: Re: [PATCH 5/6] arm64/cpufeature: Drop TraceFilt feature exposure
- from ID_DFR0 register
-To: Will Deacon <will@kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>
-References: <1580215149-21492-1-git-send-email-anshuman.khandual@arm.com>
- <1580215149-21492-6-git-send-email-anshuman.khandual@arm.com>
- <bb4d5175-1c72-a1a6-1e79-116991717fdf@arm.com>
- <20200409125255.GA13078@willie-the-truck>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <42122aa6-9cce-c45e-d67f-f672badce675@arm.com>
-Date: Mon, 13 Apr 2020 09:09:52 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20200409125255.GA13078@willie-the-truck>
-Content-Language: en-US
+	id 1jNq2V-0001b4-NB; Mon, 13 Apr 2020 03:45:39 +0000
+Received: from out30-132.freemail.mail.aliyun.com ([115.124.30.132])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jNq2O-0001Z0-Vi
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 03:45:34 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R771e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04397;
+ MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=20; SR=0;
+ TI=SMTPD_---0TvK0H1G_1586749524; 
+Received: from localhost(mailfrom:tianjia.zhang@linux.alibaba.com
+ fp:SMTPD_---0TvK0H1G_1586749524) by smtp.aliyun-inc.com(127.0.0.1);
+ Mon, 13 Apr 2020 11:45:24 +0800
+From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+To: pbonzini@redhat.com, sean.j.christopherson@intel.com, vkuznets@redhat.com,
+ wanpengli@tencent.com, jmattson@google.com, joro@8bytes.org,
+ tglx@linutronix.de, mingo@redhat.com, bp@alien8.de, x86@kernel.org,
+ hpa@zytor.com, maz@kernel.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+Subject: [PATCH] KVM: Optimize kvm_arch_vcpu_ioctl_run function
+Date: Mon, 13 Apr 2020 11:45:23 +0800
+Message-Id: <20200413034523.110548-1-tianjia.zhang@linux.alibaba.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_204004_920363_163F8627 
-X-CRM114-Status: GOOD (  10.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200412_204533_157295_BA98D08B 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [115.124.30.132 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,37 +69,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, maz@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, tianjia.zhang@linux.alibaba.com,
+ linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+kvm_arch_vcpu_ioctl_run() is only called in the file kvm_main.c,
+where vcpu->run is the kvm_run parameter, so it has been replaced.
 
+Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+---
+ arch/x86/kvm/x86.c | 8 ++++----
+ virt/kvm/arm/arm.c | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
-On 04/09/2020 06:23 PM, Will Deacon wrote:
-> On Fri, Mar 20, 2020 at 06:19:21PM +0000, Suzuki K Poulose wrote:
->> On 01/28/2020 12:39 PM, Anshuman Khandual wrote:
->>> ID_DFR0 based TraceFilt feature should not be exposed.
->>
->> ... to guests.
->>
->>  Hence lets drop it.
->>
->> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> 
-> Hmm, doesn't dropping cause it to become NONSTRICT? In general, I'd prefer
-> that we list all fields in these tables, rather than have implicit behaviour
-> in their absence.
+diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+index 3bf2ecafd027..70e3f4abbd4d 100644
+--- a/arch/x86/kvm/x86.c
++++ b/arch/x86/kvm/x86.c
+@@ -8726,18 +8726,18 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+ 		r = -EAGAIN;
+ 		if (signal_pending(current)) {
+ 			r = -EINTR;
+-			vcpu->run->exit_reason = KVM_EXIT_INTR;
++			kvm_run->exit_reason = KVM_EXIT_INTR;
+ 			++vcpu->stat.signal_exits;
+ 		}
+ 		goto out;
+ 	}
+ 
+-	if (vcpu->run->kvm_valid_regs & ~KVM_SYNC_X86_VALID_FIELDS) {
++	if (kvm_run->kvm_valid_regs & ~KVM_SYNC_X86_VALID_FIELDS) {
+ 		r = -EINVAL;
+ 		goto out;
+ 	}
+ 
+-	if (vcpu->run->kvm_dirty_regs) {
++	if (kvm_run->kvm_dirty_regs) {
+ 		r = sync_regs(vcpu);
+ 		if (r != 0)
+ 			goto out;
+@@ -8767,7 +8767,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+ 
+ out:
+ 	kvm_put_guest_fpu(vcpu);
+-	if (vcpu->run->kvm_valid_regs)
++	if (kvm_run->kvm_valid_regs)
+ 		store_regs(vcpu);
+ 	post_kvm_run_save(vcpu);
+ 	kvm_sigset_deactivate(vcpu);
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 48d0ec44ad77..ab9d7966a4c8 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -659,7 +659,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 		return ret;
+ 
+ 	if (run->exit_reason == KVM_EXIT_MMIO) {
+-		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
++		ret = kvm_handle_mmio_return(vcpu, run);
+ 		if (ret)
+ 			return ret;
+ 	}
+-- 
+2.17.1
 
-Just trying to understand, so we should just leave it unchanged.
-
-ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0)
-
-> 
-> Will
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
