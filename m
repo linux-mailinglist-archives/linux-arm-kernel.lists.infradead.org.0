@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45ACF1A6943
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:56:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1CC31A6944
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Dn/EXANPaJ5THnrp79KywbeOZb0HnGCLSS3Q1EZurPA=; b=MBhxc3E0BcEoT8QbYrie2ShxTQ
-	x4WT1nQsEbeO0R456zEVhpnRE+/6E9tNOFDU45siCzelbrrbxdazFi031EA/wTYfWzG/C2saoaig6
-	CFOpqZ44gS3Oe1JiLUwOT0ql+hGnchPUXxvAvOHJbluHiKLoy1I8H3pVsZF3lLXtWg6kJUlomslwZ
-	xrKK2sqQ+J6DROx5EYXeqNh/enFjFT8synTkZL8jp5O++nl5qfLwBXV0fqZgO8QhzQYG9kEW2IXge
-	9mppSisdBzOvGG4kwO6QYzbQFs0AvtNcP08cs+f9VlAPqv1jEaxNbTuG8hzCiv4aMZh6m6jUPkChe
-	NR9oe9ng==;
+	bh=t8bU7BjSm3f2fmFs5ngtyoGwQgQejL9j9Q+2L4YU7q8=; b=BECwgb7f564+fMRDceR9p+FRhE
+	ND6zxZLVQcI+QK21FDlsX1yZEIz+flbEhZlTx7d9cX+AtSX1882eavx3MXaMjQTuXEjnAI8rhW0RH
+	R7HShYX38DioDl+DejJn9o1iwaRicWnZXEwpa8ju8kRmXfeoj8JIVrimRz7EJ9GYqeCzVBC6j4QyL
+	BY2V2hmyv1Qzxd3SUDUz31zeeX86FwerGfVVt6eVI/VJxGFl8Fc7493LymxI2BBttmHrCN/iuHhpG
+	nu0T+OMChrXymQRJ5+Tskbyo/Eq9M2oliSdyijGvOh6GH17qZr+7ETnLjYHurQyy3z9BW8HnlBSwE
+	exDYHrXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO1S1-00080e-Il; Mon, 13 Apr 2020 15:56:45 +0000
+	id 1jO1SF-0008Dw-5n; Mon, 13 Apr 2020 15:56:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO1Qy-0007Br-3D
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:55:41 +0000
+ id 1jO1R0-0007EQ-Ea
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:55:44 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A30C820656;
- Mon, 13 Apr 2020 15:55:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E10472074B;
+ Mon, 13 Apr 2020 15:55:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586793339;
- bh=VaI+rKotkHbmEOBPfdJZ7MBqgoLLXlfnO+NwSu9169I=;
+ s=default; t=1586793341;
+ bh=+Tttb0huoTKw4Ijl4wZLMTzjGhDuFYIUmN0xtS3Uu8k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CYa+62IFPe+5jhDiE0ClLd93M9boPUkagr66R+g0/apFWpnNvsSwLYm/G+DsJ9+JM
- 8fLRcJ8K7RfMJYIBj3b0F2ilO+qO3nfqrFksOUaw8I2Ez8s4BYaGF3sLwcTPdl1ZXJ
- GNFhkMTVJheVx6HRogegHJIToS8wi4YF9kQ7Zaq8=
+ b=aYt4ZJwov+lrO9dBwuFbE+/3tT7eKk4Q4lPtkNDOCp6pDeidruxK0ndeNlAMftJ/6
+ EE55wHJhPL7J0Qnrw1Di8SZ6hArpEGneqpIU8YHS27gIOMqK78Xp+dh58o1RQgJ38b
+ xiQC1am92GQc/1nJS7JAq1KKdLpCkx6a3RB81Fw0=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 4/8] efi/libstub/arm64: simplify randomized loading of
- kernel image
-Date: Mon, 13 Apr 2020 17:55:17 +0200
-Message-Id: <20200413155521.24698-5-ardb@kernel.org>
+Subject: [PATCH v2 5/8] efi/libstub/arm64: align PE/COFF sections to segment
+ alignment
+Date: Mon, 13 Apr 2020 17:55:18 +0200
+Message-Id: <20200413155521.24698-6-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200413155521.24698-1-ardb@kernel.org>
 References: <20200413155521.24698-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_085540_278823_E0C6CAE0 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20200413_085542_646573_2BA182B1 
+X-CRM114-Status: GOOD (  12.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,91 +86,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The KASLR code path in the arm64 version of the EFI stub incorporates
-some overly complicated logic to randomly allocate a region of the right
-alignment: there is no need to randomize the placement of the kernel
-modulo 2 MiB separately from the placement of the 2 MiB aligned allocation
-itself - we can simply follow the same logic used by the non-randomized
-placement, which is to allocate at the correct alignment, and only take
-TEXT_OFFSET into account if it is not a round multiple of the alignment.
+The arm64 kernel's segment alignment is fixed at 64 KB for any page
+size, and relocatable kernels are able to fix up any misalignment of
+the kernel image with respect to the 2 MB section alignment that is
+mandated by the arm64 boot protocol.
+
+Let's increase the PE/COFF section alignment to the same value, so that
+kernels loaded by the UEFI PE/COFF loader are guaranteed to end up at
+an address that doesn't require any reallocation to be done if the
+kernel is relocatable.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/firmware/efi/libstub/arm64-stub.c | 32 +++-----------------
- 1 file changed, 5 insertions(+), 27 deletions(-)
+ arch/arm64/kernel/efi-header.S  | 2 +-
+ arch/arm64/kernel/vmlinux.lds.S | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-index cfd535c13242..6fc3bd9a56db 100644
---- a/drivers/firmware/efi/libstub/arm64-stub.c
-+++ b/drivers/firmware/efi/libstub/arm64-stub.c
-@@ -52,7 +52,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- {
- 	efi_status_t status;
- 	unsigned long kernel_size, kernel_memsize = 0;
--	u64 phys_seed = 0;
-+	u32 phys_seed = 0;
+diff --git a/arch/arm64/kernel/efi-header.S b/arch/arm64/kernel/efi-header.S
+index 914999ccaf8a..6f58998ef647 100644
+--- a/arch/arm64/kernel/efi-header.S
++++ b/arch/arm64/kernel/efi-header.S
+@@ -32,7 +32,7 @@ optional_header:
  
- 	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE)) {
- 		if (!nokaslr()) {
-@@ -74,36 +74,15 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 
- 	kernel_size = _edata - _text;
- 	kernel_memsize = kernel_size + (_end - _edata);
-+	*reserve_size = kernel_memsize + TEXT_OFFSET % min_kimg_align;
- 
- 	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && phys_seed != 0) {
--		/*
--		 * Produce a displacement in the interval [0, MIN_KIMG_ALIGN)
--		 * that doesn't violate this kernel's de-facto alignment
--		 * constraints.
--		 */
--		u32 mask = (MIN_KIMG_ALIGN - 1) & ~(EFI_KIMG_ALIGN - 1);
--		u32 offset = (phys_seed >> 32) & mask;
--
--		/*
--		 * With CONFIG_RANDOMIZE_TEXT_OFFSET=y, TEXT_OFFSET may not
--		 * be a multiple of EFI_KIMG_ALIGN, and we must ensure that
--		 * we preserve the misalignment of 'offset' relative to
--		 * EFI_KIMG_ALIGN so that statically allocated objects whose
--		 * alignment exceeds PAGE_SIZE appear correctly aligned in
--		 * memory.
--		 */
--		offset |= TEXT_OFFSET % EFI_KIMG_ALIGN;
--
- 		/*
- 		 * If KASLR is enabled, and we have some randomness available,
- 		 * locate the kernel at a randomized offset in physical memory.
- 		 */
--		*reserve_size = kernel_memsize + offset;
--		status = efi_random_alloc(*reserve_size,
--					  MIN_KIMG_ALIGN, reserve_addr,
--					  (u32)phys_seed);
--
--		*image_addr = *reserve_addr + offset;
-+		status = efi_random_alloc(*reserve_size, min_kimg_align,
-+					  reserve_addr, phys_seed);
- 	} else {
- 		status = EFI_OUT_OF_RESOURCES;
- 	}
-@@ -119,7 +98,6 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 			return EFI_SUCCESS;
- 		}
- 
--		*reserve_size = kernel_memsize + TEXT_OFFSET % min_kimg_align;
- 		status = efi_low_alloc(*reserve_size,
- 				       min_kimg_align, reserve_addr);
- 
-@@ -128,9 +106,9 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 			*reserve_size = 0;
- 			return status;
- 		}
--		*image_addr = *reserve_addr + TEXT_OFFSET % min_kimg_align;
+ extra_header_fields:
+ 	.quad	0					// ImageBase
+-	.long	SZ_4K					// SectionAlignment
++	.long	SEGMENT_ALIGN				// SectionAlignment
+ 	.long	PECOFF_FILE_ALIGNMENT			// FileAlignment
+ 	.short	0					// MajorOperatingSystemVersion
+ 	.short	0					// MinorOperatingSystemVersion
+diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+index 497f9675071d..1d399db0644f 100644
+--- a/arch/arm64/kernel/vmlinux.lds.S
++++ b/arch/arm64/kernel/vmlinux.lds.S
+@@ -175,7 +175,7 @@ SECTIONS
+ 		*(.altinstr_replacement)
  	}
  
-+	*image_addr = *reserve_addr + TEXT_OFFSET % min_kimg_align;
- 	memcpy((void *)*image_addr, _text, kernel_size);
+-	. = ALIGN(PAGE_SIZE);
++	. = ALIGN(SEGMENT_ALIGN);
+ 	__inittext_end = .;
+ 	__initdata_begin = .;
  
- 	return EFI_SUCCESS;
+@@ -246,6 +246,7 @@ SECTIONS
+ 	. += INIT_DIR_SIZE;
+ 	init_pg_end = .;
+ 
++	. = ALIGN(SEGMENT_ALIGN);
+ 	__pecoff_data_size = ABSOLUTE(. - __initdata_begin);
+ 	_end = .;
+ 
 -- 
 2.17.1
 
