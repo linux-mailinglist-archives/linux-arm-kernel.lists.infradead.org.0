@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A051A630A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 08:25:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 694A61A630B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 08:25:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cuxMiTbVIeESkGHKZV7pD84gkIxl/DYZVhYAtpBu1DM=; b=MVBNoSO5IQomNH
-	69SiiYXd+i9TxZLGrJQiwZY0gTvmR64SC1JF3M/vMddpTYXqhknW4JgJpDPi1KVgV/Tiwf/ZCFZBH
-	EhZZG9gZ37FPVsaEVSBjGpi/Hn1RYX9wwm3UmzLxsgYAIykgstE5typr6CAxcDWSG3TUf4hTf5xH+
-	pfO4Ji+ozpSBxn6sLonZPHJpUWrTjnaup7lIJYU+Re5A2EnZg3BkkJ4kx4TgDYF82J3sjx531a7HU
-	GQT9JNN2EHrH5r7suY3JfoveGlYOH8J1Z3kuwv1/6+LPOCDoC1QHD2J66//CgLjHL1Sx+8l59oDyZ
-	gUlSEfk/eBAePDmfJeFg==;
+	List-Owner; bh=PPHbnLtPDBBjbIQHWjjPKR/u0xh2+Ws140fzcx29FZY=; b=t0e9KSoAVb5TwL
+	AmL85SZqCXdEibE6mR7j8JsaV27nGFGgVQ+RaxOLNht72MN2YmyZAgr7VRG728XzZ0yUeMzWYwOB/
+	Q4tSKjkL5cxoEV5tJVSChEKcy5P4qqc0RispZdrBdpHwfrw1bY/FLfI4FHu9/x3F353Qkljsab2YI
+	6i2xgV/nn9lMibC6uson46wBOgperfEm7VorXqJn7rxTqZwjdCkgiTn2TsqpUrE8HQt1gMr22HQgm
+	B+CBc1Pxo23AdVZIMbO/inYtdiGKXJpRZ+TJ09ZArexD3tNRpbgPHjPDSm++tXN/NnYnabHi//x8w
+	UtkSx1txWfHD4R9KL1FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNsXC-0003C2-0c; Mon, 13 Apr 2020 06:25:30 +0000
-Received: from mailoutvs40.siol.net ([185.57.226.231] helo=mail.siol.net)
+	id 1jNsXL-0003Pv-UF; Mon, 13 Apr 2020 06:25:39 +0000
+Received: from mailoutvs37.siol.net ([185.57.226.228] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNsWd-0000ao-8R
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 06:24:56 +0000
+ id 1jNsWd-0000az-H8
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 06:24:57 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 2137A522E3E;
- Mon, 13 Apr 2020 08:24:51 +0200 (CEST)
+ by mail.siol.net (Zimbra) with ESMTP id 5C5E1522E4D;
+ Mon, 13 Apr 2020 08:24:53 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id NvdWUDaGcZ_S; Mon, 13 Apr 2020 08:24:50 +0200 (CEST)
+ with ESMTP id 8Np3a-S-7_aZ; Mon, 13 Apr 2020 08:24:53 +0200 (CEST)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id D3E42522E48;
- Mon, 13 Apr 2020 08:24:50 +0200 (CEST)
+ by mail.siol.net (Zimbra) with ESMTPS id 1BC9C522E48;
+ Mon, 13 Apr 2020 08:24:53 +0200 (CEST)
 Received: from localhost.localdomain (89-212-178-211.dynamic.t-2.net
  [89.212.178.211]) (Authenticated sender: 031275009)
- by mail.siol.net (Zimbra) with ESMTPSA id 4ECB5522E3E;
- Mon, 13 Apr 2020 08:24:48 +0200 (CEST)
+ by mail.siol.net (Zimbra) with ESMTPSA id D8CA3522E4D;
+ Mon, 13 Apr 2020 08:24:50 +0200 (CEST)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 1/3] arm64: dts: allwinner: h6: orangepi: Add gpio power supply
-Date: Mon, 13 Apr 2020 08:24:31 +0200
-Message-Id: <20200413062433.1145043-2-jernej.skrabec@siol.net>
+Subject: [PATCH 2/3] arm64: dts: allwinner: h6: orangepi: Disable OTG mode
+Date: Mon, 13 Apr 2020 08:24:32 +0200
+Message-Id: <20200413062433.1145043-3-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200413062433.1145043-1-jernej.skrabec@siol.net>
 References: <20200413062433.1145043-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_232455_450052_374E47E8 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200412_232455_718535_FE914A6C 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.231 listed in list.dnswl.org]
+ low trust [185.57.226.228 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,42 +79,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OrangePi Lite2 and One Plus have GPIO ports powered by same power
-supplies. Add them in common DT.
+As can be seen from OrangePi Lite 2 and One Plus schematics, VBUS pin on
+USB OTG port is directly connected to 5 V power supply. This mean that
+OTG port can safely operate only in host mode, even though these two
+boards have ID pin connected.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-index 9287976c4a50..f1be3dd558ca 100644
+index f1be3dd558ca..ebc120a9232f 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-@@ -106,6 +106,12 @@ &ohci3 {
+@@ -251,7 +251,12 @@ &uart0 {
+ };
+ 
+ &usb2otg {
+-	dr_mode = "otg";
++	/*
++	 * OrangePi Lite 2 and One Plus, where this DT is used, don't
++	 * have a controllable VBUS even though they do have an ID pin.
++	 * Using it as anything but a USB host is unsafe.
++	 */
++	dr_mode = "host";
  	status = "okay";
  };
  
-+&pio {
-+	vcc-pc-supply = <&reg_bldo2>;
-+	vcc-pd-supply = <&reg_cldo1>;
-+	vcc-pg-supply = <&reg_aldo1>;
-+};
-+
- &r_i2c {
- 	status = "okay";
- 
-@@ -230,6 +236,10 @@ &r_ir {
- 	status = "okay";
- };
- 
-+&r_pio {
-+	vcc-pm-supply = <&reg_bldo3>;
-+};
-+
- &rtc {
- 	clocks = <&ext_osc32k>;
- };
 -- 
 2.26.0
 
