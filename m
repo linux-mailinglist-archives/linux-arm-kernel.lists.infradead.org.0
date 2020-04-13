@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A0AF1A6241
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 06:50:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 150C31A6245
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 06:56:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tOhXqvWhbJHbhtEafLOL3dU4XSPKzsptklcCqdgyxz0=; b=ZHEErIjqB8WRDL
-	TKw4wjp/1Etlqe3p+Hj1KOhjfn+YLLZMsBOZ2IewvdNxgPMKPvYdyJSYe6UQOHGdKdIymtWfz8Hxa
-	BNYONEjrkEr9P5CwL1Xdg7wjcAOSl5lVZuulETdd8JODRnN+tZ+IQMUBTEg+XZFgR0MJjieMquKvZ
-	pWFOnKqqfA7QvEOQSQl4AXEqQdsVdAmMon0jP6kkfnHv6HlWEFacGQcYYbUaJGEqy3UnPbwt7ZW3J
-	T7D0DP89uVY9H4bkSxXwlOWzEdodMfBLaKDyHKiREYsVL+xZGEhCRHNNSUSI3Kjgf3JQOBMskdN5K
-	SxB2uS2HBk8dVHgYhKVg==;
+	List-Owner; bh=McnkePQLv4Y6+K0Xp8iTIFKe3ud5j4TqYRfd2wQKFQQ=; b=VpTLt3/5e4G5bX
+	mt3eMOrhTw6X7SocROkBzLH/zWbXkeMuzf2eF4b07tNX2UqGXhBZtxfLaqaUiUGUWj3pWhP6BaYXp
+	cT1Z2S0Ws9NkZ5uAeFxgmpGjsEKRE5kf5uf6rJxGCie/SQPj86phbSEGtkaze7VorxU1lbeagMkJ1
+	p4km2kPIEFPMuHhgrnZCV4FygGkH/MnN9+uIGh3Q4ngv1vH4uDMm5t3lJRhyLRtJzdwxsTXZihikc
+	cd+h15d6L8aFjYLYC9uPwiDgb+buvx8M4jq4pUo1YSD0EmgxaOaZVnsBoNGPlnxB75gFWjLEDQrup
+	+bHy6uZuvGNlY9a7XCkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNr34-0007PS-FJ; Mon, 13 Apr 2020 04:50:18 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jNr8k-0001sQ-10; Mon, 13 Apr 2020 04:56:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNr2v-0006QN-VF
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 04:50:12 +0000
-Received: by mail-pl1-x643.google.com with SMTP id h11so2990215plr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 Apr 2020 21:50:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=NhWWJKHzx6HRDsAvn1ifQlJriij6MaMtMDKuj/k9bmI=;
- b=Ilf0eHpIqXWj5aYziVWyWEVczzYaKO7xs3TOtGKjHZzpBRWKefSNqvpSIRz9SNA1An
- 9T9MWJEW7SY+f2k1L1XT31fWJtol2e1d2HjiRCRiFhBnNqqDLSp0jz4yZhcBzFEXFCJl
- DqC+0HiE9pjACjrXoTJ0vnvCva1g7VOu4ySPHUM0rrmgfO4hZCugABlWPanwKiffA9Cr
- 6jxz+bi8J10Hz69rgG3VeWy5fqc9aB6QN+Ch3O93EWByn3KSYkIepa9lZFJQlXM7LHza
- 2Y9O8QagnqoBVDmWaYzh2rHHWsJHajxeOrWC+dBIyQHY6mbM5I/nw7gTU5zY+B1m+GU0
- vnqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=NhWWJKHzx6HRDsAvn1ifQlJriij6MaMtMDKuj/k9bmI=;
- b=Kuml8XukrWWfG9GjXzD4YuiJzvkyN1Q16FGfeLlZvbooiOsI/du29oWJW4+bRWQUVW
- uBgTia9kPkGci1ohuit3LfXC7IeeH9HAr8I5zvcqhTC+xU7jrIicbphwMHXCB7FbKE8d
- YXsii2M6H/xtgofYDvGS8hZ3B00/c0jCEFyKvTuUvpr8QuSMbg83YVbZolqdjvRN1rAP
- kAH+Fa0ulclL2T9vhphKkhvrHwz70Rn+PY+9SpzrXBfxL3dqKzRugsGojlFt5UozG/9b
- 9EjZ/mR8WepH/fekxwe/p+RQV1nZNlq+3Q2VLWXL9WnxUFhcmuIwgc2zv5QNqkzE21c1
- BeSQ==
-X-Gm-Message-State: AGi0PuZ1Kt9DAYAqClvknXU/EsuHFJeDCffsyFl3lCRgnrjZSc36cH8h
- TAWC1R1YhwI3Q7urlmJ97QUYF0q9Ww==
-X-Google-Smtp-Source: APiQypLxN2kWhH7Hd3VY0khso1oP2c+rM/YXoKt5qQA/anPTSaA65z9Pb4w05IXpmzUAuzbW/FopKw==
-X-Received: by 2002:a17:902:7d89:: with SMTP id
- a9mr388312plm.233.1586753407086; 
- Sun, 12 Apr 2020 21:50:07 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:621d:5eab:88eb:9bf8:e528:ec6])
- by smtp.gmail.com with ESMTPSA id f10sm8020649pjt.7.2020.04.12.21.50.02
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 12 Apr 2020 21:50:06 -0700 (PDT)
-Date: Mon, 13 Apr 2020 10:19:59 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Amit Singh Tomar <amittomer25@gmail.com>
-Subject: Re: [PATCH] pinctrl: actions: fix function group name for i2c0_group
-Message-ID: <20200413044959.GA3071@Mani-XPS-13-9360>
-References: <1586702060-3769-1-git-send-email-amittomer25@gmail.com>
- <2d629e23-ddb1-6033-5ea3-fe9e02476e18@suse.de>
+ id 1jNr8b-0001ro-1f; Mon, 13 Apr 2020 04:56:02 +0000
+Received: from localhost (unknown [213.57.247.131])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A3D9206A1;
+ Mon, 13 Apr 2020 04:55:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586753759;
+ bh=ntRtM/0XRAKESl58dPv8YFdKb0z/yYug4RvgbiDPSAY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h24HO9c4n/g0j4mIV/Nln3QBeWywG0Xui2ZucpyyvlaRblXFDymGGT5dtcV4wgsqO
+ KSHEvuR1ApPvx70Wz2xIsy44vCBQlP3Z+WTzHL7hVFO9zO/B7sspw1bsbv7VTQmLAk
+ MeGiBuAxN903NVm9i0yn2OyCcdU/tQr1zNM20nXs=
+Date: Mon, 13 Apr 2020 07:55:55 +0300
+From: Leon Romanovsky <leon@kernel.org>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
+Message-ID: <20200413045555.GE334007@unreal>
+References: <20200224085311.460338-1-leon@kernel.org>
+ <20200224085311.460338-4-leon@kernel.org>
+ <20200411155623.GA22175@zn.tnic>
+ <20200412.210341.1711540878857604145.davem@davemloft.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2d629e23-ddb1-6033-5ea3-fe9e02476e18@suse.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200412.210341.1711540878857604145.davem@davemloft.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_215010_537195_797C90B4 
-X-CRM114-Status: GOOD (  18.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200412_215601_113149_23A21B5B 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,89 +77,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: matheus@castello.eng.br, andre.przywara@arm.com, linus.walleij@linaro.org,
- linux-actions@lists.infradead.org, linux-gpio@vger.kernel.org,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: thor.thayer@linux.intel.com, heiko@sntech.de, irusskikh@marvell.com,
+ andreas@gaisler.com, chris.snook@gmail.com, dave@thedillows.org,
+ jes@trained-monkey.org, iyappan@os.amperecomputing.com,
+ quan@os.amperecomputing.com, linux-acenic@sunsite.dk, andy@greyhouse.net,
+ akiyano@amazon.com, linux-rockchip@lists.infradead.org, wens@csie.org,
+ LinoSanfilippo@gmx.de, vfalico@gmail.com, kuba@kernel.org,
+ thomas.lendacky@amd.com, jcliburn@gmail.com, j.vosburgh@gmail.com,
+ keyur@os.amperecomputing.com, mripard@kernel.org, pcnet32@frontier.com,
+ bp@alien8.de, nios2-dev@lists.rocketboards.org,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, ionut@badula.org, netanel@amazon.com,
+ mark.einon@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 12, 2020 at 11:58:05PM +0200, Andreas F=E4rber wrote:
-> Hi,
-> =
+On Sun, Apr 12, 2020 at 09:03:41PM -0700, David Miller wrote:
+> From: Borislav Petkov <bp@alien8.de>
+> Date: Sat, 11 Apr 2020 17:56:23 +0200
+>
+> > From: Borislav Petkov <bp@suse.de>
+> >
+> > Change the include order so that MODULE_ARCH_VERMAGIC from the arch
+> > header arch/x86/include/asm/module.h gets used instead of the fallback
+> > from include/linux/vermagic.h and thus fix:
+> >
+> >   In file included from ./include/linux/module.h:30,
+> >                    from drivers/net/ethernet/3com/3c515.c:56:
+> >   ./arch/x86/include/asm/module.h:73: warning: "MODULE_ARCH_VERMAGIC" redefined
+> >      73 | # define MODULE_ARCH_VERMAGIC MODULE_PROC_FAMILY
+> >         |
+> >   In file included from drivers/net/ethernet/3com/3c515.c:25:
+> >   ./include/linux/vermagic.h:28: note: this is the location of the previous definition
+> >      28 | #define MODULE_ARCH_VERMAGIC ""
+> >         |
+> >
+> > Fixes: 6bba2e89a88c ("net/3com: Delete driver and module versions from 3com drivers")
+> > Signed-off-by: Borislav Petkov <bp@suse.de>
+>
+> I'm so confused, that commit in the Fixes: tag is _removing_ code but adding
+> new #include directives?!?!
+>
+> Is vermagic.h really needed in these files?
 
-> Am 12.04.20 um 16:34 schrieb Amit Singh Tomar:
-> > After commit 6f87359e8bcaf88381b9c9c038929e0e6872d308("pinctrl: actions=
-: Fix
-> > functions groups names for S700 SoC") following error has been observed
-> > while booting Linux on Cubieboard7-lite(based on S700 SoC).
-> > =
+You are completely right, it is not needed at all in those files.
 
-> > [    1.206245] pinctrl-s700 e01b0000.pinctrl: invalid group "i2c0_mfp" =
-for function "i2c0"
-> > =
-
-> > This commit fixes it by using correct name for i2c0_group.
-> > =
-
-> > Fixes: 6f87359 ("pinctrl: actions: Fix functions groups names for S700 =
-SoC")
-> =
-
-> The commit hash should have 12 digits.
-> =
-
-> Please also check the white spaces: The subject seems to have too many af=
-ter
-> "actions:", and there's one missing before each parenthesis above.
-> =
-
-
-Amit, you can use something like this
-
-git log -1 --abbrev-commit --pretty=3Dformat:"Fixes: %h (\"%s\")%n" <commit=
--hash>
-
-Thanks,
-Mani
-
-> Regards,
-> Andreas
-> =
-
-> > Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
-> > ---
-> >   drivers/pinctrl/actions/pinctrl-s700.c | 2 +-
-> >   1 file changed, 1 insertion(+), 1 deletion(-)
-> > =
-
-> > diff --git a/drivers/pinctrl/actions/pinctrl-s700.c b/drivers/pinctrl/a=
-ctions/pinctrl-s700.c
-> > index 47a4ccd..f579a65 100644
-> > --- a/drivers/pinctrl/actions/pinctrl-s700.c
-> > +++ b/drivers/pinctrl/actions/pinctrl-s700.c
-> > @@ -1435,7 +1435,7 @@ static const char * const sd2_groups[] =3D {
-> >   static const char * const i2c0_groups[] =3D {
-> >   	"uart0_rx_mfp",
-> >   	"uart0_tx_mfp",
-> > -	"i2c0_mfp_mfp",
-> > +	"i2c0_mfp",
-> >   };
-> >   static const char * const i2c1_groups[] =3D {
-> > =
-
-> =
-
-> =
-
-> -- =
-
-> SUSE Software Solutions Germany GmbH
-> Maxfeldstr. 5, 90409 N=FCrnberg, Germany
-> GF: Felix Imend=F6rffer
-> HRB 36809 (AG N=FCrnberg)
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
