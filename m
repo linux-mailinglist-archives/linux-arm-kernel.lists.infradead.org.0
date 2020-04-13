@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5271F1A6FC7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 01:13:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 023CB1A6FDB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 01:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0UyCKKcjkvsKmkAn6ytcwSbrKn5H1N71K8Yf+ERZW58=; b=c4PW6ICpEabIPU
-	574KP2FDU2XYx59j5vEk8Ellyza1fOYHvJ+pCMEUf7ndIMjCLrLKf2LuoHEGrafw9OwbfZ6OGqaa2
-	el1693LyyQlhODm55jBX/zaMMPwwUHtyEToz4M3IiYvXSiNn/2k7WXfkDA6DIllxO8QAihdVeYxL3
-	OqS1QePu+Clv2jBWO0q2dP1AfkrxmHonhCubID3ETiecmTQS5PSwJeKSd+TdqpEWlCWNR3g/FLVyk
-	frM9zRlDcyW46pN929Gr1CMYxtQWZf6z2GF9jYypuUQ6zvJs46jdTTnLHAIK+b3IVzLHu6CsobYAI
-	jPAMya6SWBInMFVqN4mg==;
+	List-Owner; bh=rCLpjjynbirq7a/sh5NNdfaNJPiDQjhM4DGDN0a6NtI=; b=hKjUlJpwwZQ2Gb
+	tXzRww38wauG29q7Go2HMbdPVuqsLn23CFomt0PZbhpExd/jFZX3OqE+lEKVR08kNqPNHwwT9LCT3
+	dXVv3QamQQN0RreASHgNocvrHminP8AdP3byT2ZbJC2YFNkDgMaUSom3WsDkMLhzIw776LML3vBsO
+	/Fhw9wpOZ4YBypq4ug/437ihiEWitWzJhWqjh2GsaeMoTJWIicBCZHcMzpYr1DLvQmKiZ6ND8ayhV
+	0qGSPSGHOEyviItyTJgzeW2f5kAGTloYfoy9HSlh0CPUjkOXXOL+Kw/UZrBzeUzMB6pYQZ3nE3NDj
+	rwq4q1cMa4OVb9qc2C5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO8Gm-0000qA-64; Mon, 13 Apr 2020 23:13:36 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jO8dt-0007I3-Gm; Mon, 13 Apr 2020 23:37:29 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO8Gd-0000pZ-Je
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 23:13:28 +0000
-Received: by mail-lj1-x243.google.com with SMTP id r7so10473785ljg.13
+ id 1jO8dn-0007HN-Tm
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 23:37:25 +0000
+Received: by mail-pf1-x442.google.com with SMTP id r14so5227832pfl.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 16:13:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Mon, 13 Apr 2020 16:37:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zXGNQQP4X3VX81J+kdAMQQHyCz96RnLdOdy+FSwZIMU=;
- b=c4eu2TsEdrQ5/05Gmd4JKvLX1E9PqFEvEqAm++vbEwjW5ViflcKiCykyDvWlCsMKip
- Ln9fa5zS5CzsUazSEwGQuS6uLeUtQXeuUsRs8rHx/ZSgb7malGhvFYaTAW3dqdWegXYF
- NDNnFSbGrDUe+wgoG3LKqKNwlWDWgWIuod6Ds=
+ :cc; bh=lMPIRjn0PE7jnqkkSuf3FQb+qv7klZT/6x17CMWdL34=;
+ b=d9NwDt3IHShJ2ZFMU0WdEcCis4G+93NeL33oosLAJ0QBuuU2m6PWo3KMjSfpLJlU4I
+ t06sp32EumYZEhSVDRcWGyPkyeetQP8+MvbdwRXYykzoH3+AITWvVP64YO93bwnOJxLF
+ D5KfnhButbLosSN8/qU629tHEf6ViakscnvvxpZ3hhQXplpdLVNheOPeHCaq8xhmjbzn
+ s6Z9ObCL9VQ4ioIaVHFzpurAEI0OZDQEdMmeCPFrIo58ZFT/7Xe0wdFRaU5Vdi3dQhlc
+ rYQcrSsUKZOdKvzTe+NmJgyRZz7G74rogHaSGx7C4MrN6k8npbyfw+gF6whUx0hQek9X
+ eQOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=zXGNQQP4X3VX81J+kdAMQQHyCz96RnLdOdy+FSwZIMU=;
- b=rLQLgkSuTganQsPs2Qs+RYnhckYytj/xrz6k9tWtgGz6Ini8x0MSWMb8W8/k+pBSEw
- llv0VUeuhBwaQ8cc6CXZStXP/MryxnKgdSQukfnTxnyWFlgi8PdqibsYEkmGX6rh7aM3
- 5qLi7SP7TeiviFCPsVPAUvIH/fSjGBCkwEvunWOiOKS1m7KFVdJw/Q9E+4y18RBW6sPp
- 6FMXd0m1YzsRbwC+0O9q+9JNiu45LnXdpJMk9d299seq6AglAr1jvDoF7hm6NBpnNSYQ
- 1qRWKgT4gNoSwRgjYUCW1b8LSNk/XP/lNAqKYHPHqszXOSJRmad68mXyXg9PcDDqtL3z
- m7bw==
-X-Gm-Message-State: AGi0PubavDVuK6J54eWpVKw3GKTmaebhShMUtHME6bup2upH9c8t51gB
- JejdqGcmgpfebtBaUUKF6GAH5Pm1H3Y=
-X-Google-Smtp-Source: APiQypIEQbmuXNjTG9vtXcI2HqpzQA+bJkVc5mibv0zUmNSKqUu5MQOCJOjNxj3ZtlJAQVpwx9k1vA==
-X-Received: by 2002:a2e:a584:: with SMTP id m4mr11910186ljp.194.1586819603446; 
- Mon, 13 Apr 2020 16:13:23 -0700 (PDT)
-Received: from mail-lf1-f52.google.com (mail-lf1-f52.google.com.
- [209.85.167.52])
- by smtp.gmail.com with ESMTPSA id c21sm8999388lfh.16.2020.04.13.16.13.22
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Apr 2020 16:13:22 -0700 (PDT)
-Received: by mail-lf1-f52.google.com with SMTP id u10so6724260lfo.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 16:13:22 -0700 (PDT)
-X-Received: by 2002:a19:4a03:: with SMTP id x3mr11835226lfa.159.1586819601453; 
- Mon, 13 Apr 2020 16:13:21 -0700 (PDT)
+ bh=lMPIRjn0PE7jnqkkSuf3FQb+qv7klZT/6x17CMWdL34=;
+ b=PKFU/G29F/lVtIxEb6p8Z1WE7vv79qWJwcEWiYEqp9gkrv3NNKxUtNKK5k1BkOK9pF
+ 1xkmE0svCV+4Wwy0BLH4b39JIT3vdMJ3HNNutEJ6T195s8amviNRqcZ7BqqLygzjJJM2
+ U9PZMhmiAhE5hSTTx4tEJynJkMxezJUgKD3a5OKkmR5B1/fEAuszf0ZCmPh0uRxS4rlh
+ KGNC7RN82yznQ8BGCa7djBeb9zsMENhJ1CB35JeiG+l638HtDKta18FUWB12nacxcG31
+ Dx54hnWJ+I92JQ0mfgGnu7P/rUftxyY5GtkgMGuUlB6YcWvkK2WdAVsd32Quovu4vDmu
+ 1yMQ==
+X-Gm-Message-State: AGi0PuZFbj7+J1wBytUZRB0iwBattQa/yZ8RRKYLZtmKJmFYTv2H9UR3
+ q44kRkJRTbATgxRMDxFUXxDpH4UGGfmKhACW/AytTg==
+X-Google-Smtp-Source: APiQypIIArEcMtBa+6lU3ecAVeDtyJ9+R/7AtvwXV6mkhFTgICAF71cY/Q7KBQ2W2N1aHsHsV6yeVXwI/BROaWewvSM=
+X-Received: by 2002:a63:6604:: with SMTP id a4mr18265124pgc.381.1586821042616; 
+ Mon, 13 Apr 2020 16:37:22 -0700 (PDT)
 MIME-Version: 1.0
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <813cc5b2da10c27db982254b274bf26008a9e6da.1579692800.git.saiprakash.ranjan@codeaurora.org>
-In-Reply-To: <813cc5b2da10c27db982254b274bf26008a9e6da.1579692800.git.saiprakash.ranjan@codeaurora.org>
-From: Evan Green <evgreen@chromium.org>
-Date: Mon, 13 Apr 2020 16:12:44 -0700
-X-Gmail-Original-Message-ID: <CAE=gft7HFBc7XtgiV1hkG-m3ONMUiE2vu8Vg_7Mu1dfe2BjYpA@mail.gmail.com>
-Message-ID: <CAE=gft7HFBc7XtgiV1hkG-m3ONMUiE2vu8Vg_7Mu1dfe2BjYpA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] iommu/arm-smmu: Allow client devices to select direct
- mapping
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+References: <20200413231016.250737-1-maskray@google.com>
+In-Reply-To: <20200413231016.250737-1-maskray@google.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Mon, 13 Apr 2020 16:37:10 -0700
+Message-ID: <CAKwvOdn35v5LkvhWugfLmK_FjVsd0RdPtBCRSqVaM9EP_1KU7w@mail.gmail.com>
+Subject: Re: [PATCH] arm64: kvm: Delete duplicated label: in invalid_vector
+To: Fangrui Song <maskray@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_161327_668872_4982BAF8 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200413_163723_986271_580CB1E7 
+X-CRM114-Status: GOOD (  13.87  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -90,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,65 +96,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@gmail.com>, Tomasz Figa <tfiga@chromium.org>,
- Rajendra Nayak <rnayak@codeaurora.org>, Will Deacon <will@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- LKML <linux-kernel@vger.kernel.org>, Jordan Crouse <jcrouse@codeaurora.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 22, 2020 at 3:48 AM Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
+On Mon, Apr 13, 2020 at 4:10 PM Fangrui Song <maskray@google.com> wrote:
 >
-> From: Jordan Crouse <jcrouse@codeaurora.org>
+> SYM_CODE_START defines \label , so it is redundant to define \label again.
+> A redefinition at the same place is accepted by GNU as
+> (https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=159fbb6088f17a341bcaaac960623cab881b4981)
+> but rejected by the clang integrated assembler.
 >
-> Some client devices want to directly map the IOMMU themselves instead
-> of using the DMA domain. Allow those devices to opt in to direct
-> mapping by way of a list of compatible strings.
->
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Fixes: 617a2f392c92 ("arm64: kvm: Annotate assembly using modern annoations")
+
+Thanks for the patch!  I think a more accurate Fixes tag would be:
+Fixes: 2b28162cf65a ("arm64: KVM: HYP mode entry points")
+
+With this patch applied, and your other arm64 integrated assembler
+patch (https://lore.kernel.org/linux-arm-kernel/20200413033811.75074-1-maskray@google.com/T/#u),
+I can now assemble arch/arm64/kvm/.
+
+Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+
+> Link: https://github.com/ClangBuiltLinux/linux/issues/988
+> Signed-off-by: Fangrui Song <maskray@google.com>
 > ---
->  drivers/iommu/arm-smmu-qcom.c | 39 +++++++++++++++++++++++++++++++++++
->  drivers/iommu/arm-smmu.c      |  3 +++
->  drivers/iommu/arm-smmu.h      |  5 +++++
->  3 files changed, 47 insertions(+)
+>  arch/arm64/kvm/hyp/hyp-entry.S | 1 -
+>  1 file changed, 1 deletion(-)
 >
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 64a4ab270ab7..ff746acd1c81 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -3,6 +3,7 @@
->   * Copyright (c) 2019, The Linux Foundation. All rights reserved.
->   */
+> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+> index c2a13ab3c471..9c5cfb04170e 100644
+> --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> @@ -198,7 +198,6 @@ SYM_CODE_END(__hyp_panic)
+>  .macro invalid_vector  label, target = __hyp_panic
+>         .align  2
+>  SYM_CODE_START(\label)
+> -\label:
+>         b \target
+>  SYM_CODE_END(\label)
+>  .endm
+> --
+> 2.26.0.110.g2183baf09c-goog
 >
-> +#include <linux/of_device.h>
->  #include <linux/qcom_scm.h>
->
->  #include "arm-smmu.h"
-> @@ -11,6 +12,43 @@ struct qcom_smmu {
->         struct arm_smmu_device smmu;
->  };
->
-> +static const struct arm_smmu_client_match_data qcom_adreno = {
-> +       .direct_mapping = true,
-> +};
-> +
-> +static const struct arm_smmu_client_match_data qcom_mdss = {
-> +       .direct_mapping = true,
 
-I don't actually see direct_mapping being used. Shouldn't this member
-be checked somewhere?
 
--Evan
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
