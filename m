@@ -2,95 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEDDA1A6AF2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 19:06:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99EBA1A6B1B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 19:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m9lf7VMomKuBofsWiCq01lZ3ZnbJwV+p4n2crBL0z84=; b=G7Hbp7vVGBfNqD
-	hqri+CrblRuQB4Y4j/yTvW/8SECsjor6GaMvHcYvFazgIrwnt1IV8v+aWswMDKC7eKatgMwHovxk3
-	lGEdzJVoC2v7rui/lh1EKvWvFecRTp9hbKdhvmtv4oxHfH73ZTSbhgQHXU3j5f2cNgP0U25/+hGs9
-	t/ebdd9cX4zbh9Q6UFKotElr8DomMWLLeNmgfU6EE6fsKZ7JARRS3QLT0s55NUUHvz30ZuuARcTIu
-	htvcj7b7SqW5ftIZ0eNnXqiVjVZO+s4BJBJepgtqlofiaBwwUxYhdv/hzg+fQb/cOQT4R6mMEOUb8
-	uFksecMFQIdS/ZROfTjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9muXL7d/2xegPhmXhBlh77CiX15mFWaCPu7VyLnkbK8=; b=hejblYo62UsdBL
+	nWokbtQKcSx0lr7dWiib0/wqSk45h202baCrKA1C6w9v7V0hNidlYQPEc66PPeA8a46Qe2vfmcDNS
+	PjWdOyAfXYbUgY/YSRluCi6O26Q22hEel7lpXtZPUDfWppZCVriXzUPGufnmp6Fc5j1Sn0CKZOrZE
+	tS41nkhDPFGhqZGbTVton+OencJUvE3QMDvWvgLdS7J6xMsbP+/z5Gs5DRmlEjRxieWvy75BqqzsT
+	dIzGZdmdyPfrG9D5F82YpX3JP0H5UHh91rN9ixX1w92CkHEKll6WBTWSce9dMXYwFjFtwws/awKhh
+	sQWvm+pq6Y0s8LKxva1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO2X8-0003Ck-T8; Mon, 13 Apr 2020 17:06:06 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jO2fK-0008Uj-QC; Mon, 13 Apr 2020 17:14:34 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO2X0-0003Aj-Fc; Mon, 13 Apr 2020 17:05:59 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03DH56CR151699;
- Mon, 13 Apr 2020 17:05:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=R/QHTJEbvK5wYmg2dWl63irRcFp2irztNeFiTFWafoM=;
- b=kktfuV3K3lSuFHBc31Ythkb5SLenATE1abhmvREP6KJho8IZK25DiUJDRqDQpY80dSlB
- zPKH4s1foBQcVIjdX6VteTFGLWt1In4vXh6UzrVmtOnamoWJsw+sNkaoGUEteL7Wj6Id
- TSK835Gllrv0py7zpZNvy9pWpkHJe18XhM0YR+R855Lxj/R5mtRO/U8RN0GwMx1Q8Im/
- c9b28/VAT/sCGDL4wnkRBwLKlEoDTQEILj5wqFoG9ey6BDT5YsIgFU0yG4+FjoBk4xb/
- nbySP3Xdz35peCoj4Mbp7NAABCO8dUFBIWIufIqDvvSWCR9DwJBRLWf5sZIItwDNTtMR qw== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 30b5ukyrq1-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 13 Apr 2020 17:05:05 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03DH1t0h105739;
- Mon, 13 Apr 2020 17:05:05 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3020.oracle.com with ESMTP id 30bqpck4ag-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 13 Apr 2020 17:05:05 +0000
-Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03DH4vor012212;
- Mon, 13 Apr 2020 17:04:57 GMT
-Received: from [192.168.1.206] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 13 Apr 2020 10:04:56 -0700
-Subject: Re: [PATCH v2 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Peter Xu <peterx@redhat.com>
-References: <20200401183819.20647-1-mike.kravetz@oracle.com>
- <20200401183819.20647-2-mike.kravetz@oracle.com>
- <20200410191613.GD3172@xz-x1>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <8d2f8066-98af-4db2-8ffa-f78533a50674@oracle.com>
-Date: Mon, 13 Apr 2020 10:04:54 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jO2f9-0008Tw-D1
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 17:14:25 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t4so3596317plq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Apr 2020 10:14:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=va2uPd7gyyI5OiovlTyEhOf6lRyi6dJtoYK2M5SWvPM=;
+ b=gDWh6j14JvPT3UwCLGJEB581EJj/w7HBfF70Jt8j93xZ7zbCUBl1BGGp+O1blegZ5j
+ ZNtL+VfX5FYPjsybQNTlZfkUzatyh84vpAt7L31U828RIgD9fkhhNEy8ZiUBUy6WtOYC
+ 2mGYOQzaSlbNaDIO4+bWLh+WlRGu56Sop0xyxcjoWKQV1ONe2xeOFIHJaTztAImHE2nQ
+ ojpv0kKIUqCb340rPaFztaiQOM3ZYo3DT4JxHw3cNQp3812k1rIQN0PY+heJ69V8Sf+P
+ oBbh721jD1bOs2dAAFNlaKKMKwZEWJZWcOnTNX9QMwBFjnjdFv4Cm8p/eUi961RH0K5z
+ P/PA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=va2uPd7gyyI5OiovlTyEhOf6lRyi6dJtoYK2M5SWvPM=;
+ b=HnpsjyCNpq5/BREhUVkUvyt0t/Cuv4EkBW5ydAB1Xdw1hM7zIzMFnZiCkPXS/LI8nh
+ 16hc70CZ3t+a1CewjNybhBSKFu98oVvtWtQ1tHMgSmfLL4Unb0o31H/HJBMVa8x/B579
+ NaE7fnzk40wLFmJoKKu9FnGOvwc3xVYjPBJYM+c+0GcwbiiEEznluimYWnAmbMW6hAQz
+ rdtMCghxzIpu/N5Jf9xDhKS3pWGawMSTN36Xr/pwvW34O+BtBmznS7umK7hNXIxo8A3Q
+ vx94dbmwmKnuRQfCoZpvfgT2+HZB31op1HCM4G50NiKQE1s9Qc61UgaaXPaQ7sFtyU7v
+ e+Nw==
+X-Gm-Message-State: AGi0PuYv081s/H9bHtMYZZRDjwLSaVnrbZ1xMYPtZFTZ0S8y5kkUXNHg
+ EFd9s9kVihWSeAMnDOIphbnETw==
+X-Google-Smtp-Source: APiQypIZZkrX9RIT+bliapkNwsQYSFqXGatRjoO5IhedqJDm2E4IrnHVkdqum/bKSYnJ+rvyhlol8Q==
+X-Received: by 2002:a17:90a:890a:: with SMTP id
+ u10mr14709181pjn.154.1586798061368; 
+ Mon, 13 Apr 2020 10:14:21 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id v24sm8978016pfm.94.2020.04.13.10.14.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 13 Apr 2020 10:14:20 -0700 (PDT)
+Date: Mon, 13 Apr 2020 11:14:18 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCH] coresight: tmc: Read TMC mode only when TMC hw is enabled
+Message-ID: <20200413171418.GB28804@xps15>
+References: <20200409113538.5008-1-saiprakash.ranjan@codeaurora.org>
+ <9a792e3e-5a17-156d-4b59-4a3ec8f9993e@arm.com>
+ <1751aeabd22bee18d2eef0f643883265@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20200410191613.GD3172@xz-x1>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9590
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- malwarescore=0
- adultscore=0 bulkscore=0 spamscore=0 suspectscore=0 phishscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004130131
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9590
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
- bulkscore=0 mlxscore=0
- mlxlogscore=999 lowpriorityscore=0 impostorscore=0 adultscore=0
- phishscore=0 spamscore=0 suspectscore=0 malwarescore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004130131
+Content-Disposition: inline
+In-Reply-To: <1751aeabd22bee18d2eef0f643883265@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_100558_616120_8EFA20B7 
-X-CRM114-Status: GOOD (  18.23  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200413_101423_469592_50E623C2 
+X-CRM114-Status: GOOD (  27.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,63 +100,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Mina Almasry <almasrymina@google.com>, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S.Miller" <davem@davemloft.net>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, swboyd@chromium.org,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/10/20 12:16 PM, Peter Xu wrote:
-> On Wed, Apr 01, 2020 at 11:38:16AM -0700, Mike Kravetz wrote:
->> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
->> index 2eb6c234d594..81606223494f 100644
->> --- a/arch/arm64/include/asm/hugetlb.h
->> +++ b/arch/arm64/include/asm/hugetlb.h
->> @@ -59,6 +59,8 @@ extern void huge_pte_clear(struct mm_struct *mm, unsigned long addr,
->>  extern void set_huge_swap_pte_at(struct mm_struct *mm, unsigned long addr,
->>  				 pte_t *ptep, pte_t pte, unsigned long sz);
->>  #define set_huge_swap_pte_at set_huge_swap_pte_at
->> +bool __init arch_hugetlb_valid_size(unsigned long size);
->> +#define arch_hugetlb_valid_size arch_hugetlb_valid_size
+On Mon, Apr 13, 2020 at 01:55:30PM +0530, Sai Prakash Ranjan wrote:
+> Hi Suzuki,
 > 
-> Sorry for chimming in late.
-
-Thank you for taking a look!
-
-> Since we're working on removing arch-dependent codes after all.. I'm
-> thinking whether we can define arch_hugetlb_valid_size() once in the
-> common header (e.g. linux/hugetlb.h), then in mm/hugetlb.c:
+> On 2020-04-13 04:47, Suzuki K Poulose wrote:
+> > Hi Sai,
+> > 
+> > On 04/09/2020 12:35 PM, Sai Prakash Ranjan wrote:
+> > > Reading TMC mode register in tmc_read_prepare_etb without
+> > > enabling the TMC hardware leads to async exceptions like
+> > > the one in the call trace below. This can happen if the
+> > > user tries to read the TMC etf data via device node without
+> > > setting up source and the sink first which enables the TMC
+> > > hardware in the path. So make sure that the TMC is enabled
+> > > before we try to read TMC data.
+> > 
+> > So, one can trigger the same SError by simply :
+> > 
+> > $ cat /sys/bus/coresight/device/tmc_etb0/mgmt/mode
+> > 
 > 
-> bool __init __attribute((weak)) arch_hugetlb_valid_size(unsigned long size)
-> {
-> 	return size == HPAGE_SIZE;
-> }
+> I do not see any SError when I run the above command.
 > 
-> We can simply redefine arch_hugetlb_valid_size() in arch specific C
-> files where we want to override the default.  Would that be slightly
-> cleaner?
+> localhost ~ # cat /sys/bus/coresight/devices/tmc_etf0/mgmt/mode
+> 0x0
+> 
+> And this is most likely due to
+> 
+> commit cd9e3474bb793dc ("coresight: add PM runtime calls to
+> coresight_simple_func()")
 
-I think both the #define X X and weak attribute methods are acceptable.
-I went with the #define method only because it was most familiar to me.
-Using the weak attribute method does appear to be cleaner.  I'll code it up.
+Ok, so this is related to power management (you can ignore my question in the
+previous email).
 
-Anyone else have a preference?
--- 
-Mike Kravetz
+Regarding function tmc_read_prepare_etb(), the best way to deal with this is
+probably make sure drvdata->mode != CS_MODE_DISABLED before reading TMC_MODE.
+If there is a buffer to read it will have been copied when the ETB was disabled
+and there won't be a need to access the HW.
+
+Mathieu
+
+> 
+> > And also :
+> > 
+> > > 
+> > >   Kernel panic - not syncing: Asynchronous SError Interrupt
+> > >   CPU: 7 PID: 2605 Comm: hexdump Tainted: G S                5.4.30
+> > > #122
+> > >   Call trace:
+> > >    dump_backtrace+0x0/0x188
+> > >    show_stack+0x20/0x2c
+> > >    dump_stack+0xdc/0x144
+> > >    panic+0x168/0x36c
+> > >    panic+0x0/0x36c
+> > >    arm64_serror_panic+0x78/0x84
+> > >    do_serror+0x130/0x138
+> > >    el1_error+0x84/0xf8
+> > >    tmc_read_prepare_etb+0x88/0xb8
+> > >    tmc_open+0x40/0xd8
+> > >    misc_open+0x120/0x158
+> > >    chrdev_open+0xb8/0x1a4
+> > >    do_dentry_open+0x268/0x3a0
+> > >    vfs_open+0x34/0x40
+> > >    path_openat+0x39c/0xdf4
+> > >    do_filp_open+0x90/0x10c
+> > >    do_sys_open+0x150/0x3e8
+> > >    __arm64_compat_sys_openat+0x28/0x34
+> > >    el0_svc_common+0xa8/0x160
+> > >    el0_svc_compat_handler+0x2c/0x38
+> > >    el0_svc_compat+0x8/0x10
+> > > 
+> > > Fixes: 4525412a5046 ("coresight: tmc: making prepare/unprepare
+> > > functions generic")
+> > > Reported-by: Stephen Boyd <swboyd@chromium.org>
+> > > Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> > > ---
+> > >   drivers/hwtracing/coresight/coresight-tmc.c | 5 +++++
+> > >   drivers/hwtracing/coresight/coresight-tmc.h | 1 +
+> > >   2 files changed, 6 insertions(+)
+> > > 
+> > > diff --git a/drivers/hwtracing/coresight/coresight-tmc.c
+> > > b/drivers/hwtracing/coresight/coresight-tmc.c
+> > > index 1cf82fa58289..7bae69748ab7 100644
+> > > --- a/drivers/hwtracing/coresight/coresight-tmc.c
+> > > +++ b/drivers/hwtracing/coresight/coresight-tmc.c
+> > > @@ -62,11 +62,13 @@ void tmc_flush_and_stop(struct tmc_drvdata
+> > > *drvdata)
+> > >     void tmc_enable_hw(struct tmc_drvdata *drvdata)
+> > >   {
+> > > +	drvdata->enable = true;
+> > >   	writel_relaxed(TMC_CTL_CAPT_EN, drvdata->base + TMC_CTL);
+> > >   }
+> > >     void tmc_disable_hw(struct tmc_drvdata *drvdata)
+> > >   {
+> > > +	drvdata->enable = false;
+> > >   	writel_relaxed(0x0, drvdata->base + TMC_CTL);
+> > >   }
+> > >   @@ -102,6 +104,9 @@ static int tmc_read_prepare(struct tmc_drvdata
+> > > *drvdata)
+> > >   {
+> > >   	int ret = 0;
+> > >   +	if (!drvdata->enable)
+> > > +		return -EINVAL;
+> > > +
+> > 
+> > Does this check always guarantee that the TMC is enabled when
+> > we actually get to reading the MODE ? This needs to be done
+> > under the spinlock.
+> > 
+> 
+> Ok I will make this change.
+> 
+> Thanks,
+> Sai
+> 
+> -- 
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
