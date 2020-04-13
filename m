@@ -2,82 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 329921A650D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:12:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2E341A651A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:20:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QqUrAMkzNabBIkn7st56ocQzD+aJad2KZCKLj1g6ggY=; b=ArFGkSmANTeIvr
-	1gsBlw+u25SglEesHOwSRb8HIanIHnQ9+/2+uTXC5JG0kedEiPm2t+3q4aqlND8OoCrgxH3es2B7H
-	KEfChQvnYIgwHsXR+uIvY1kJIA+26PuwdCkny7iLTNqe+wD5RepDonE1lGDPQ5pTKlCB1BuW30cDP
-	o3CIOtiGXc33NhXJDaQOwasx5JMEsuVtEQb/f5ocFLu9lHNlPqBQhfwFoFk4mrpuPbqTviPXVfnpT
-	GVCPgb6glFX5mJWkZZQjKh8JGcACmc/DP4uiv9ejpAmQAPRiscyqLbltxK5EpVcDT1Ze64lbNW+xq
-	SpFGfXvTYyJFfP9OxwoA==;
+	List-Owner; bh=UBDr05k4UIPG4VgB9I4PE35GoJf9Typ2dM5mdx38g2M=; b=RV8FJI5Zd86BOH
+	KprdTnoZP/Pvf0DtHqkK62wzN1exXc4Kbza6xY7kZCzurh03v/4AKBe7+wpDbJjBz/6P24Vu9d8lW
+	PR/cV02N8a3YP1JuqvKgSgNW+UxH9kuljNtiJS7bR81NQufB6ELEnbNHSQKRhVb1+qZ1yeArYsw1A
+	Yv89AkSBuoOsPn+SBtuNkf5Tyt+JA9XvBomqhEJG3+EoRaUSul0bFWhIn0lbWhNFd0JDn2IWiLr42
+	WpoHQ4xoHRgTmBTvyweUbZKpbQmPDwSiot/+QlZzo8sCkgv0BeZdVVW1bG2BWAJg22S0O+ywI20xf
+	GpP2CzV2l27KpsGEO0eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNw46-0000hk-Vc; Mon, 13 Apr 2020 10:11:43 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1jNwCN-0005wM-39; Mon, 13 Apr 2020 10:20:15 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNw3w-0000hJ-F5
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:11:33 +0000
-Received: by mail-ed1-f65.google.com with SMTP id ca21so8995647edb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 03:11:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=IHzUNdwPsTQhqLll3sOK8O3xrvJdBlinyJZ6YxNwq5s=;
- b=nM4M+j/sGoJAgY51ZLKAskL5VoLsRTCs0I3D+UMhBFt7jWG/C4hVjNxsQiqKjQpQss
- N4efsafH350aj9ArcZGomD9iHl2zuzgimHSKNIQcAoEsOwyeq7zyVftmlfVfzV2jkpzg
- TIVcKpjAPZ4amK7nA3Z3omGJ9UgHSN05EHoTKmw0GBhZ91yxcGcFRREcOviWZdo8lCXy
- R+Gq+sSQlGEcqXEGoxvi9LoanobkM7sgIEPRQ9yH4eHJ0V6LyPJBAtKZbuMUlrYyIQRj
- Y3IaLlqDuJem770oaLXyMll4+vbPo7T81DG6Tyk/E7PYXyRQIiKHXL5DCjb5M5HlsnX5
- phqA==
-X-Gm-Message-State: AGi0Pua+eQQ+Na1Sqxtkr1HKnrx1PKATgV01n5RtqQ0P1zNSvv4MMZqq
- Mb/LNjwualUBm93J8TxF2w4=
-X-Google-Smtp-Source: APiQypLbUzeNvAIZR67vxpLwZzQRg3r3rXpBNYhH+Po0Qp1noxa7A8r1ABhf2bhfL8AcuoH9Rr3W4g==
-X-Received: by 2002:a05:6402:1383:: with SMTP id
- b3mr15439537edv.217.1586772689922; 
- Mon, 13 Apr 2020 03:11:29 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id g2sm1307883edm.77.2020.04.13.03.11.28
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 Apr 2020 03:11:29 -0700 (PDT)
-Date: Mon, 13 Apr 2020 12:11:27 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jonathan Bakker <xc-racer2@live.ca>
-Subject: Re: [PATCH] pinctrl: samsung: Correct setting of eint wakeup mask on
- s5pv210
-Message-ID: <20200413101127.GA10535@kozik-lap>
-References: <BYAPR10MB3479E878C547053C6B952E01A3C40@BYAPR10MB3479.namprd10.prod.outlook.com>
+ id 1jNwCC-0004gP-0w
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:20:05 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <rhi@pengutronix.de>)
+ id 1jNwC6-0001Dz-1g; Mon, 13 Apr 2020 12:19:58 +0200
+Received: from rhi by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <rhi@pengutronix.de>)
+ id 1jNwC4-0003AX-KM; Mon, 13 Apr 2020 12:19:56 +0200
+Date: Mon, 13 Apr 2020 12:19:56 +0200
+From: Roland Hieber <rhi@pengutronix.de>
+To: Ahmad Fatoum <a.fatoum@pengutronix.de>
+Subject: Re: [PATCH] ARM: imx: provide v7_cpu_resume() only on
+ ARM_CPU_SUSPEND=y
+Message-ID: <20200413101956.47ggeq4q2hei76yz@pengutronix.de>
+References: <20200323081933.31497-1-a.fatoum@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <BYAPR10MB3479E878C547053C6B952E01A3C40@BYAPR10MB3479.namprd10.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200323081933.31497-1-a.fatoum@pengutronix.de>
+User-Agent: NeoMutt/20180716
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: rhi@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_031132_501971_3BDC81D7 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20200413_032004_079919_E2E38D34 
+X-CRM114-Status: GOOD (  15.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,33 +68,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
- tomasz.figa@gmail.com, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, kgene@kernel.org, s.nawrocki@samsung.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Clemens Gruber <clemens.gruber@pqgruber.com>,
+ Rouven Czerwinski <r.czerwinski@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Russell King <linux@armlinux.org.uk>, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 04, 2020 at 10:08:49AM -0700, Jonathan Bakker wrote:
-> Commit a8be2af0218c ("pinctrl: samsung: Write external wakeup interrupt
-> mask") started writing the eint wakeup mask from the pinctrl driver.
-> Unfortunately, it made the assumption that the private retention data
-> was always a regmap while in the case of s5pv210 it is a raw pointer
-> to the clock base (as the eint wakeup mask not in the PMU as with newer
-> Exynos platforms).
+On Mon, Mar 23, 2020 at 09:19:33AM +0100, Ahmad Fatoum wrote:
+> 512a928affd5 ("ARM: imx: build v7_cpu_resume() unconditionally")
+> introduced an unintended linker error for i.MX6 configurations that have
+> ARM_CPU_SUSPEND=n which can happen if neither CONFIG_PM, CONFIG_CPU_IDLE,
+> nor ARM_PSCI_FW are selected.
 > 
-> Fixes: a8be2af0218c ("pinctrl: samsung: Write external wakeup interrupt mask")
-> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+> Fix this by having v7_cpu_resume() compiled only when cpu_resume() it
+> calls is available as well.
+> 
+> The C declaration for the function remains unguarded to avoid future code
+> inadvertently using a stub and introducing a regression to the bug the
+> original commit fixed.
+> 
+> Cc: <stable@vger.kernel.org>
+> Fixes: 512a928affd5 ("ARM: imx: build v7_cpu_resume() unconditionally")
+> Reported-by: Clemens Gruber <clemens.gruber@pqgruber.com>
+> Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
+
+Tested-by: Roland Hieber <rhi@pengutronix.de>
+
+What's the status here? master is still broken on most of my builds, and
+there were no other comments at all :-(
+
+ - Roland
+
 > ---
->  drivers/pinctrl/samsung/pinctrl-exynos.c | 73 ++++++++++++++++--------
+>  arch/arm/mach-imx/Makefile | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm/mach-imx/Makefile b/arch/arm/mach-imx/Makefile
+> index 03506ce46149..e7364e6c8c6b 100644
+> --- a/arch/arm/mach-imx/Makefile
+> +++ b/arch/arm/mach-imx/Makefile
+> @@ -91,8 +91,10 @@ AFLAGS_suspend-imx6.o :=-Wa,-march=armv7-a
+>  obj-$(CONFIG_SOC_IMX6) += suspend-imx6.o
+>  obj-$(CONFIG_SOC_IMX53) += suspend-imx53.o
+>  endif
+> +ifeq ($(CONFIG_ARM_CPU_SUSPEND),y)
+>  AFLAGS_resume-imx6.o :=-Wa,-march=armv7-a
+>  obj-$(CONFIG_SOC_IMX6) += resume-imx6.o
+> +endif
+>  obj-$(CONFIG_SOC_IMX6) += pm-imx6.o
+>  
+>  obj-$(CONFIG_SOC_IMX1) += mach-imx1.o
+> -- 
+> 2.25.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
-Thanks, applied (with Cc-stable tag).
-
-Best regards,
-Krzysztof
-
+-- 
+Roland Hieber, Pengutronix e.K.          | r.hieber@pengutronix.de     |
+Steuerwalder Str. 21                     | https://www.pengutronix.de/ |
+31137 Hildesheim, Germany                | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686         | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
