@@ -2,97 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 181961A6641
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 14:19:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEA191A664B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 14:23:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sExtC3lWuzIlXLoc7bdfqYa+aeYeuibxi6hiIu6SpgI=; b=nusb6OAJ5YS/m0JBq2uza/ucb
-	UHyWJXZj6V5da0wBp5HcMbcI9oklbfJASwWybcnCI4nLIvN10DbbS/LBAr38gGN83iwcLx/6n4+Pq
-	maX8vx8TlxvzyqABE6bPBhBjIuIf6pTh85FG2yzK5Yko5f01IXBgwtUFwR3tRnjvFxjmhOvm6mKaL
-	hFvhDOYWa/ZHrp/C4L9984bXEO60UAHbad69+gJuUmXxOJbGzt2dn9bTafJsbh0YfgzXdOY7+SE4A
-	ozvF9dBPePitEMtFqeMWyyyLtyNWjTnAPRwsEPWhBWpLsslY5I9fgs/b/oGGUortDttgukjlfg18I
-	r2/qUl5AQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=o9p3O1HCBTea8xnzX2NS/fZLaQ0MK7X3Xn2rwtZiscs=; b=sZc5B5AjJNz5s7
+	UVmgbzJJT6MRGj3UWhzbpYXMlAmo2mONbB4mrefZZsYjlVMuYVUcQUvzEEmUnfwzI6D2Ej7elk/8X
+	YvXADZJ9xW4A3kfOHTC0kqDFSaK1zOSVBRCzetZ2B2QNNFAYwHLLiuHsdJNKAq7R55htlG3d8r91C
+	dIK0FQbMjZcvrwZc9LuGuV38l8AFz/ygj3HmoJlRN74NHrkUH55NTg8Pbp0/ZU2RU0kjn0Lp9lHr8
+	ywfPc60GLoK1lvp8kb96JI+ezvmdL1sMUR/g54nSOp8cpLaRxispbiW2Rk1M8GcW1aMvy+IxWa0rI
+	OTU/vkDOcBFcYL+X5A/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNy3z-0000P9-LI; Mon, 13 Apr 2020 12:19:43 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1jNy7V-0003dO-8w; Mon, 13 Apr 2020 12:23:21 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNy3p-0000Od-BN
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 12:19:34 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e9458680001>; Mon, 13 Apr 2020 05:17:44 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Mon, 13 Apr 2020 05:19:32 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Mon, 13 Apr 2020 05:19:32 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 Apr
- 2020 12:19:32 +0000
-Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 Apr
- 2020 12:19:28 +0000
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-To: Viresh Kumar <viresh.kumar@linaro.org>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
- <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
- <d233b26b-6b50-7d41-9f33-a5dc151e0e7d@nvidia.com>
- <20200406025549.qfwzlk3745y3r274@vireshk-i7>
- <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
- <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
- <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
- <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
- <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
- <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
-From: Sumit Gupta <sumitg@nvidia.com>
-Message-ID: <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
-Date: Mon, 13 Apr 2020 17:50:00 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jNy7M-0003LO-LQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 12:23:14 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 6B73DF5F703402750F59;
+ Mon, 13 Apr 2020 20:22:52 +0800 (CST)
+Received: from linux-kDCJWP.huawei.com (10.175.104.212) by
+ DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
+ 14.3.487.0; Mon, 13 Apr 2020 20:22:45 +0800
+From: Keqian Zhu <zhukeqian1@huawei.com>
+To: <kvm@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>
+Subject: [PATCH v2] KVM/arm64: Support enabling dirty log gradually in small
+ chunks
+Date: Mon, 13 Apr 2020 20:20:23 +0800
+Message-ID: <20200413122023.52583-1-zhukeqian1@huawei.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-In-Reply-To: <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1586780264; bh=sm196NiMqA8gyR8DT4vdRI+KvcOo8ha9TmgFSKUPb3I=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=SagSxSkltbuOB5/r68bXwwj2Py22FS0okY336BB5sSpzMGJd+D4SfPeDrbLizmuLi
- FL3tnoxu3StWADbYI1GhBsP9wJIoxZ94WO+1lfqHNV6qQjHaYITR8Dng3YGYwpsdqB
- CBgUXEv4fhMD+z8G7TsKXaGLnByZEWvjK4ygbim5H44rSzc2FCxRfvtpLLbz/8dYbD
- m8LYWPG47mTzvFPYr5EEYsjlfHTCod5MqtPdKHqrdXpPlVFyl+9IjxuoH0Lv/nnAht
- +ETx8yIwVHTH/LBs+15idwsSoSdYWZI4aixVx24qtttaWYIpxtGYZzsPt2VQtUHD+t
- gux1X9yQKzipA==
+X-Originating-IP: [10.175.104.212]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_051933_398778_707B32B1 
-X-CRM114-Status: GOOD (  13.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200413_052312_884056_F152F8B0 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,76 +63,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Keqian Zhu <zhukeqian1@huawei.com>,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>, wanghaibin.wang@huawei.com,
+ Jay Zhou <jianjay.zhou@huawei.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+There is already support of enabling dirty log graually in small chunks
+for x86 in commit 3c9bd4006bfc ("KVM: x86: enable dirty log gradually in
+small chunks"). This adds support for arm64.
 
+x86 still writes protect all huge pages when DIRTY_LOG_INITIALLY_ALL_SET
+is eanbled. However, for arm64, both huge pages and normal pages can be
+write protected gradually by userspace.
 
-On 13/04/20 11:51 AM, Viresh Kumar wrote:
-> External email: Use caution opening links or attachments
-> 
-> 
-> On 09-04-20, 16:51, Sumit Gupta wrote:
->> We are using "read_counters_work" as local variable. So every invocation the
->> function will have its own copy of counters for corresponding cpu. That's
->> why are doing INIT_WORK_ONSTACK here.
-> 
-> Why? To support parallel calls to reading the freq ?
-> 
-Yes.
+Under the Huawei Kunpeng 920 2.6GHz platform, I did some tests on 128G
+Linux VMs with different page size. The memory pressure is 127G in each
+case. The time taken of memory_global_dirty_log_start in QEMU is listed
+below:
 
->>>>>>>>>> +     queue_work_on(cpu, read_counters_wq, &read_counters_work.work);
->>>>>>>>>> +     flush_work(&read_counters_work.work);
->>>>>>>>>
->>>>>>>>> Why can't this be done in current context ?
->>>>>>>>>
->>>>>>>> We used work queue instead of smp_call_function_single() to have long delay.
->>>>>>>
->>>>>>> Please explain completely, you have raised more questions than you
->>>>>>> answered :)
->>>>>>>
->>>>>>> Why do you want to have long delays ?
->>>>>>>
->>>>>> Long delay value is used to have the observation window long enough for
->>>>>> correctly reconstructing the CPU frequency considering noise.
->>>>>> In next patch version, changed delay value to 500us which in our tests is
->>>>>> considered reliable.
->>>>>
->>>>> I understand that you need to put a udelay() while reading the freq from
->>>>> hardware, that is fine, but why do you need a workqueue for that? Why can't you
->>>>> just read the values directly from the same context ?
->>>>>
->>>> The register to read frequency is per core and not accessible to other
->>>> cores. So, we have to execute the function remotely as the target core to
->>>> read frequency might be different from current.
->>>> The functions for that are smp_call_function_single or queue_work_on.
->>>> We used queue_work_on() to avoid long delay inside ipi interrupt context
->>>> with interrupts disabled.
->>>
->>> Okay, I understand this now, finally :)
->>>
->>> But if the interrupts are disabled during some call, won't workqueues face the
->>> same problem ?
->>>
->> Yes, we are trying to minimize the case.
-> 
-> But how do you know workqueues will perform better than
-> smp_call_function_single() ? Just asking for clarity on this as normally
-> everyone tries to do smp_call_function_single().
-> 
-This was done considering long delay value as explained previously.
-Do you think that smp_call_function_single() would be better than work 
-queue here?
+Page Size      Before    After Optimization
+  4K            650ms         1.8ms
+  2M             4ms          1.8ms
+  1G             2ms          1.8ms
 
-> --
-> viresh
-> 
+Besides the time reduction, the biggest income is that we will minimize
+the performance side effect (because of dissloving huge pages and marking
+memslots dirty) on guest after enabling dirty log.
+
+Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
+---
+ Documentation/virt/kvm/api.rst    |  2 +-
+ arch/arm64/include/asm/kvm_host.h |  3 +++
+ virt/kvm/arm/mmu.c                | 12 ++++++++++--
+ 3 files changed, 14 insertions(+), 3 deletions(-)
+
+diff --git a/Documentation/virt/kvm/api.rst b/Documentation/virt/kvm/api.rst
+index efbbe570aa9b..0017f63fa44f 100644
+--- a/Documentation/virt/kvm/api.rst
++++ b/Documentation/virt/kvm/api.rst
+@@ -5777,7 +5777,7 @@ will be initialized to 1 when created.  This also improves performance because
+ dirty logging can be enabled gradually in small chunks on the first call
+ to KVM_CLEAR_DIRTY_LOG.  KVM_DIRTY_LOG_INITIALLY_SET depends on
+ KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (it is also only available on
+-x86 for now).
++x86 and arm64 for now).
+ 
+ KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 was previously available under the name
+ KVM_CAP_MANUAL_DIRTY_LOG_PROTECT, but the implementation had bugs that make
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 32c8a675e5a4..a723f84fab83 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -46,6 +46,9 @@
+ #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+ #define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
+ 
++#define KVM_DIRTY_LOG_MANUAL_CAPS   (KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE | \
++				     KVM_DIRTY_LOG_INITIALLY_SET)
++
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+ 
+ extern unsigned int kvm_sve_max_vl;
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index e3b9ee268823..1077f653a611 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -2265,8 +2265,16 @@ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 	 * allocated dirty_bitmap[], dirty pages will be be tracked while the
+ 	 * memory slot is write protected.
+ 	 */
+-	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES)
+-		kvm_mmu_wp_memory_region(kvm, mem->slot);
++	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES) {
++		/*
++		 * If we're with initial-all-set, we don't need to write
++		 * protect any pages because they're all reported as dirty.
++		 * Huge pages and normal pages will be write protect gradually.
++		 */
++		if (!kvm_dirty_log_manual_protect_and_init_set(kvm)) {
++			kvm_mmu_wp_memory_region(kvm, mem->slot);
++		}
++	}
+ }
+ 
+ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+-- 
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
