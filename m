@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2E341A651A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:20:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99B3C1A6533
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:29:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UBDr05k4UIPG4VgB9I4PE35GoJf9Typ2dM5mdx38g2M=; b=RV8FJI5Zd86BOH
-	KprdTnoZP/Pvf0DtHqkK62wzN1exXc4Kbza6xY7kZCzurh03v/4AKBe7+wpDbJjBz/6P24Vu9d8lW
-	PR/cV02N8a3YP1JuqvKgSgNW+UxH9kuljNtiJS7bR81NQufB6ELEnbNHSQKRhVb1+qZ1yeArYsw1A
-	Yv89AkSBuoOsPn+SBtuNkf5Tyt+JA9XvBomqhEJG3+EoRaUSul0bFWhIn0lbWhNFd0JDn2IWiLr42
-	WpoHQ4xoHRgTmBTvyweUbZKpbQmPDwSiot/+QlZzo8sCkgv0BeZdVVW1bG2BWAJg22S0O+ywI20xf
-	GpP2CzV2l27KpsGEO0eQ==;
+	List-Owner; bh=y8vfwvFiTPnp9tDW4svFY8K4+le6MzZRUw3Z2MKDtwc=; b=pgQHlw18xLH/vP
+	SxgTBQn3VL4PkLlMzCLKOn8kWX7XCIcTFmreyYEIJ1hYUPnoYaltx/AlYBsifaYwzpWd3rRnjPVQb
+	RcblTcI1VnRgYdLUWQCntHCIduteRvXdtXXMme9Lwz74R+QAYXzwf4ynJe5wzBUieUL+p+s3gytqD
+	1QtsU2b9ItDnxkSDb878TrtIk8EO6ytcLDun0A2mWwgtSXRXt6Lk1WrIgzSWb0zP+We2V6CLYQ0IV
+	GblTwAc7xdeEVaOGhFwacf7ajJuqmuqHXqSaPuJulu6KfxFmiGaT3BKh2bfidIQ6iPR6Odt7thtfZ
+	+RkFMvEA/vN20GmBqFIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNwCN-0005wM-39; Mon, 13 Apr 2020 10:20:15 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jNwLI-0002Ta-9Q; Mon, 13 Apr 2020 10:29:28 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNwCC-0004gP-0w
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:20:05 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <rhi@pengutronix.de>)
- id 1jNwC6-0001Dz-1g; Mon, 13 Apr 2020 12:19:58 +0200
-Received: from rhi by ptx.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <rhi@pengutronix.de>)
- id 1jNwC4-0003AX-KM; Mon, 13 Apr 2020 12:19:56 +0200
-Date: Mon, 13 Apr 2020 12:19:56 +0200
-From: Roland Hieber <rhi@pengutronix.de>
-To: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Subject: Re: [PATCH] ARM: imx: provide v7_cpu_resume() only on
- ARM_CPU_SUSPEND=y
-Message-ID: <20200413101956.47ggeq4q2hei76yz@pengutronix.de>
-References: <20200323081933.31497-1-a.fatoum@pengutronix.de>
+ id 1jNwLB-0002Ru-4m
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:29:22 +0000
+Received: by mail-ed1-f68.google.com with SMTP id cb27so11334357edb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Apr 2020 03:29:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BbWHjSsUQrh2BcH16tvNHQAGyd0qaneJDULzKls8PTI=;
+ b=OVRkWQmwoFxMFI11hyF8xPpHo7nAQUH5UE7FUzh4a21Duvv+UO5BiUPQ/6120Abmu0
+ IFSj0/uyepxl7wXTftf13PZgCz7MCpKYNZ/Nlpatx5kd7acnwiBdp7a7/dvDIowblMjY
+ Hps4TAci58TeaugO1B7JQMpbmMWA4yeDI6BpZ0Ld7eRJak8NNqJYF0FToFrEAF3ffZ+L
+ SqVB+aFl22Z1PQmhINf37hx2LvlqD8IRQRQg3WOuGUcF/tblBvzM6bEPvtyLTnb/Xhut
+ MEuJJPr4uAADW5CeTf3LT64/QE5zyHE+sZwxd61WeUdAja21B4B2PxLzibCanvYO5i7h
+ dS2Q==
+X-Gm-Message-State: AGi0PuaRYw66vwCrVXbieCFCnmqxojthNrDk6o0Sl5xgyhYXP+Ij1FuM
+ gdONW022Ysyl30ZTZX+pbFQ=
+X-Google-Smtp-Source: APiQypIedXmcxclTCvgH+IO52NsgOdHSPUM9V+iK7b0YTTiONfFblt3zVHInsMkfzBnfKdib4MGamw==
+X-Received: by 2002:a05:6402:16d5:: with SMTP id
+ r21mr5822530edx.150.1586773757041; 
+ Mon, 13 Apr 2020 03:29:17 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id w3sm1557471ejf.21.2020.04.13.03.29.15
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 Apr 2020 03:29:16 -0700 (PDT)
+Date: Mon, 13 Apr 2020 12:29:14 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Subject: Re: [PATCH 1/1] ARM: mach-s3c64xx: convert to use
+ i2c_new_client_device()
+Message-ID: <20200413102914.GA14922@kozik-lap>
+References: <20200326211014.13591-1-wsa+renesas@sang-engineering.com>
+ <20200326211014.13591-2-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200323081933.31497-1-a.fatoum@pengutronix.de>
-User-Agent: NeoMutt/20180716
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: rhi@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200326211014.13591-2-wsa+renesas@sang-engineering.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_032004_079919_E2E38D34 
-X-CRM114-Status: GOOD (  15.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200413_032921_179709_359E994A 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,77 +90,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Clemens Gruber <clemens.gruber@pqgruber.com>,
- Rouven Czerwinski <r.czerwinski@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King <linux@armlinux.org.uk>, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: linux-samsung-soc@vger.kernel.org, patches@opensource.cirrus.com,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 09:19:33AM +0100, Ahmad Fatoum wrote:
-> 512a928affd5 ("ARM: imx: build v7_cpu_resume() unconditionally")
-> introduced an unintended linker error for i.MX6 configurations that have
-> ARM_CPU_SUSPEND=n which can happen if neither CONFIG_PM, CONFIG_CPU_IDLE,
-> nor ARM_PSCI_FW are selected.
+On Thu, Mar 26, 2020 at 10:10:14PM +0100, Wolfram Sang wrote:
+> Move away from the deprecated API and remove printing a stale 'ret'
+> value.
 > 
-> Fix this by having v7_cpu_resume() compiled only when cpu_resume() it
-> calls is available as well.
-> 
-> The C declaration for the function remains unguarded to avoid future code
-> inadvertently using a stub and introducing a regression to the bug the
-> original commit fixed.
-> 
-> Cc: <stable@vger.kernel.org>
-> Fixes: 512a928affd5 ("ARM: imx: build v7_cpu_resume() unconditionally")
-> Reported-by: Clemens Gruber <clemens.gruber@pqgruber.com>
-> Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
-
-Tested-by: Roland Hieber <rhi@pengutronix.de>
-
-What's the status here? master is still broken on most of my builds, and
-there were no other comments at all :-(
-
- - Roland
-
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 > ---
->  arch/arm/mach-imx/Makefile | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm/mach-imx/Makefile b/arch/arm/mach-imx/Makefile
-> index 03506ce46149..e7364e6c8c6b 100644
-> --- a/arch/arm/mach-imx/Makefile
-> +++ b/arch/arm/mach-imx/Makefile
-> @@ -91,8 +91,10 @@ AFLAGS_suspend-imx6.o :=-Wa,-march=armv7-a
->  obj-$(CONFIG_SOC_IMX6) += suspend-imx6.o
->  obj-$(CONFIG_SOC_IMX53) += suspend-imx53.o
->  endif
-> +ifeq ($(CONFIG_ARM_CPU_SUSPEND),y)
->  AFLAGS_resume-imx6.o :=-Wa,-march=armv7-a
->  obj-$(CONFIG_SOC_IMX6) += resume-imx6.o
-> +endif
->  obj-$(CONFIG_SOC_IMX6) += pm-imx6.o
->  
->  obj-$(CONFIG_SOC_IMX1) += mach-imx1.o
-> -- 
-> 2.25.1
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>  arch/arm/mach-s3c64xx/mach-crag6410-module.c | 7 +++----
 
--- 
-Roland Hieber, Pengutronix e.K.          | r.hieber@pengutronix.de     |
-Steuerwalder Str. 21                     | https://www.pengutronix.de/ |
-31137 Hildesheim, Germany                | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686         | Fax:   +49-5121-206917-5555 |
+Thanks, applied.
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
