@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 929F61A6BC1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 19:58:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86CF91A6BC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 19:59:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TPBsDYPsoEifgSnneyOIG6XYoGUMav9rCy1TCpW1KVU=; b=oKolHadbF94ekP
-	MvevbDM7fhvlGjvVh/F/IyGKcsMqo0yVZJXW3IUhPCJWeYJPyP0MgaX/hAPs3lE6GLHYGnYwxVoX6
-	IHLevYCpyuhqBMPYYv76sZQfYBdQ1r9op+/ttBmOzYjZ5orsHMXHuwoiVsa9B6YFqWDZSkF9IxGjq
-	jbJ1Bt4b+PXiJVxEE/lU8ejfN1djiIHC5JCNWGnkmN2fcgsvoEffHlQhpDr46F5lV0ofJmUp28kyG
-	boMdCWpqZutZ2+vCvEe9PLK6nMbWm/ipgb0mu29Tb7dMpebOkIusAXK1k23pVE9T+x7H8Og+ALl1F
-	t91NRn3ZTJBf/yMjPeSg==;
+	List-Owner; bh=0ZVmnt/mMdYq1NxqMYXv8qTjWKJXI4cEZl4LS83h15o=; b=K2jdfY2mf0YWCw
+	Fr0PxT081AyytAoHHxcI0aiuSE8O2INguCADztQDIW8ih80iUYjQRnooV8SG2Qcqp+Qy09kt/N6XY
+	fB09NGjBat8MgxQjWGMyi6cIwKsfg+RL8/q3NZWKuB4am4bVvlFlHKUYW8yhUFHr5SjJo3W5GNsuX
+	+dbdu89rq2X65fKrFHayuaM3zm9Ez5FcpAJz6yxZN+TWSrcVKUXEyjQIxV8NB1T/6gol5bN3r4VHE
+	m9U264WkLCC9ect23toX8PLCIc1MWNAnrUYfBXWQ8RcFE5HBgDOS93UUYM9TRvSi9fiwJ/nWIsyKx
+	v5qUPp/MwesfiKZUHAiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO3M9-0002oD-FW; Mon, 13 Apr 2020 17:58:49 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jO3Mk-0003FL-Kf; Mon, 13 Apr 2020 17:59:26 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO3M0-0002nd-V1
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 17:58:42 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y25so2555793pfn.5
+ id 1jO3Mc-0003Ey-OP
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 17:59:19 +0000
+Received: by mail-pf1-x442.google.com with SMTP id a13so4846514pfa.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 10:58:40 -0700 (PDT)
+ Mon, 13 Apr 2020 10:59:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=0keu4PMkXs5TE6dOL0jOplSK+Gz3D/D04Bdh0nv5W9k=;
- b=tayvGblV1EfBLNq0bf+Hjdu/L2wKd2UceRTwQ1v19v8RV3smljbw0OA/W+X5dFWJVr
- a2+IlQV/BBPuG11edlV+cV365l4aNIk9ep5IDta3jXd09Pu/3xh7uszaCGrFncBaU+Ui
- EUtGI95pwilWwoK6P+j5LWHGJSFzkwWVgW9/IIOy+WgqrwcjgyseljiidiZJEKCTYBQf
- KBxn8OO7/b02pl9El+PV0wyK2PT0DEJMObQq8E5N9NJT+JJKwC3F7pTNYIW+oUYUbq5G
- 6reA87/CXmwnAs2eWMkVK9bfoYolzEwoiHvWtDH1NwjoAuIpL2pmeYVDU5rCm6QWVU5W
- Tahg==
+ bh=RzcS9dRjplQeBWpxQLCXEXIw7gitZm1gAW9ZRZ00JbM=;
+ b=Fhx/J80DpVsmu+cLUqjdPvmyDwYoktkYfDZhsVCejMCrmvXSQYuN7q8RGV+/7FJTSe
+ gxwHjIBkE523cnzRzXNRG+vlC7YTx94UEN92lZ5uGaiq79mzJZZ4OWqoIRA5528eEicC
+ Oy4mfHD1Lyl/ve65vY9KultzKvFwUwGqw7Ugka5chw485gmoZY0NpkwljOGbiMuYq6C+
+ wEUGe0U0SMjku1d1aPq7Mx9xoguMM96PnmkiERyOC4UVkG58aFCw9wW93fhJaxS0Ko7y
+ Ssl2SHPS90PVKzLedehqy0QS53VnlbU1dQKNJCkZt9i3l/znPWvXcjWQPqy7Lx36yrGl
+ K4lw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0keu4PMkXs5TE6dOL0jOplSK+Gz3D/D04Bdh0nv5W9k=;
- b=Mh0ggi7/52xLugqFbecu3DLboIDw4hb1+bfgGZAKzQZQ/CUYiDfPEGx6KT+Ihg2eIe
- kTNqDy3gankJJx0yAHipeh5LaKnN06ERBuxRun0jTSrSp1VoE+av3bL+FeR8+qagsa6W
- dhVBT6spX2U8f9oEpQ4sy0+6c63emiWKxZOxwhSx+nN01VqWqtF7Z0hDFA0rxpnkye5+
- aX2pQxbw4zSReBL5xLHS1rK8mVLhgs12gG3DXrTY1sE4c7EuxsZ8kqvF/67hGRN2rWnx
- YLWsPKjJ/A10YaIeyczp4AdY3B3KQlyF3LE6fdRgHecicWNRMiNZ12i8SkAcFm44UScx
- 5i3w==
-X-Gm-Message-State: AGi0PuZigya3x4CHXZKYELhPERpy2jD7CLGnHIOB5hEL9hdJS6TXa5qB
- NOvFcv0F7/tbJ//lccot3cDPWQ==
-X-Google-Smtp-Source: APiQypJ4hG26wy+uvhPhK5njQ4Mt6FjcLeTkBC1tThGtSZgPZMfB0noJ/QWQnqj6exVsBvFvBuy8Tw==
-X-Received: by 2002:a62:7786:: with SMTP id
- s128mr19494733pfc.144.1586800720395; 
- Mon, 13 Apr 2020 10:58:40 -0700 (PDT)
+ bh=RzcS9dRjplQeBWpxQLCXEXIw7gitZm1gAW9ZRZ00JbM=;
+ b=GqVAc6cwDB0ex3G/OLVlC/f/XbOOBRNtoprs0s6Qe+woDRoss7nLlmwE+cm90EK4xj
+ h9N3xK23NMNRJvmmkLTdM7Na1y4IByZd3aIcoFZ529n/ciJ4cB23H+rpFQa+cvjKl+Wq
+ KpMVh55dVtt1/FzHS53Z9laJYWLb8KU0JdXiQbRvn+nnYi16ZZ17NBTkBRFVgwGCbz1Z
+ z9zeiirE03cuLOmjap5XU9vEbfar6zZKzluqf0Id/RO14ThhE2zItf4xpzPB+tU60HTe
+ uRuhlzzT48vRs7aECwzMg+1UkNGFP7n1U0ZJ6FVTgENZQ9pTjHXcoJKWQAHMtSQEILd3
+ 6qow==
+X-Gm-Message-State: AGi0PuY/Y5doWyI4JHv/t3toGW/ujJlkMv6yy3NcE3nAiMS5n6MGC9dw
+ 5DmvyFyaLGbZYyg9B03olK6Ipw==
+X-Google-Smtp-Source: APiQypJqwg/RDqB4fxKPMLKyDOESIeZ68eCl9+qIGJMwBOEmADpmfodFX3xhci9FLB6X0hLQj/YpGw==
+X-Received: by 2002:a62:1552:: with SMTP id 79mr18771642pfv.215.1586800757596; 
+ Mon, 13 Apr 2020 10:59:17 -0700 (PDT)
 Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k14sm9306208pfg.15.2020.04.13.10.58.39
+ by smtp.gmail.com with ESMTPSA id s22sm9544676pfh.18.2020.04.13.10.59.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 10:58:39 -0700 (PDT)
-Date: Mon, 13 Apr 2020 11:58:37 -0600
+ Mon, 13 Apr 2020 10:59:17 -0700 (PDT)
+Date: Mon, 13 Apr 2020 11:59:15 -0600
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: Jason Yan <yanaijie@huawei.com>
-Subject: Re: [PATCH] coresight: cti: make some symbols static
-Message-ID: <20200413175837.GE28804@xps15>
-References: <20200413082224.23090-1-yanaijie@huawei.com>
+Subject: Re: [PATCH] coresight: etb10: make coresight_etb_groups static
+Message-ID: <20200413175915.GF28804@xps15>
+References: <20200413082237.23177-1-yanaijie@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200413082224.23090-1-yanaijie@huawei.com>
+In-Reply-To: <20200413082237.23177-1-yanaijie@huawei.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_105841_009971_7BE360A5 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20200413_105918_791007_39F8662C 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,54 +105,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 04:22:24PM +0800, Jason Yan wrote:
+On Mon, Apr 13, 2020 at 04:22:37PM +0800, Jason Yan wrote:
 > Fix the following sparse warning:
 > 
-> drivers/hwtracing/coresight/coresight-cti.c:22:1: warning: symbol
-> 'ect_net' was not declared. Should it be static?
-> drivers/hwtracing/coresight/coresight-cti.c:625:32: warning: symbol
-> 'cti_ops_ect' was not declared. Should it be static?
-> drivers/hwtracing/coresight/coresight-cti.c:630:28: warning: symbol
-> 'cti_ops' was not declared. Should it be static?
+> drivers/hwtracing/coresight/coresight-etb10.c:720:30: warning: symbol
+> 'coresight_etb_groups' was not declared. Should it be static?
 > 
 > Reported-by: Hulk Robot <hulkci@huawei.com>
 > Signed-off-by: Jason Yan <yanaijie@huawei.com>
 > ---
->  drivers/hwtracing/coresight/coresight-cti.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  drivers/hwtracing/coresight/coresight-etb10.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> index 9e262f5a85e3..7fc1fc8d7738 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> @@ -19,7 +19,7 @@
->   */
->  
->  /* net of CTI devices connected via CTM */
-> -LIST_HEAD(ect_net);
-> +static LIST_HEAD(ect_net);
->  
->  /* protect the list */
->  static DEFINE_MUTEX(ect_mutex);
-> @@ -622,12 +622,12 @@ int cti_disable(struct coresight_device *csdev)
->  	return cti_disable_hw(drvdata);
->  }
->  
-> -const struct coresight_ops_ect cti_ops_ect = {
-> +static const struct coresight_ops_ect cti_ops_ect = {
->  	.enable = cti_enable,
->  	.disable = cti_disable,
+> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+> index 3810290e6d07..03e3f2590191 100644
+> --- a/drivers/hwtracing/coresight/coresight-etb10.c
+> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
+> @@ -717,7 +717,7 @@ static const struct attribute_group coresight_etb_mgmt_group = {
+>  	.name = "mgmt",
 >  };
 >  
-> -const struct coresight_ops cti_ops = {
-> +static const struct coresight_ops cti_ops = {
->  	.ect_ops = &cti_ops_ect,
->  };
+> -const struct attribute_group *coresight_etb_groups[] = {
+> +static const struct attribute_group *coresight_etb_groups[] = {
+>  	&coresight_etb_group,
+>  	&coresight_etb_mgmt_group,
+>  	NULL,
 
 Applied - thanks,
 Mathieu
 
->  
 > -- 
 > 2.21.1
 > 
