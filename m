@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4ADD1A68FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:36:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA8A21A68FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wHpgSSwjUw2ieqPGh0/Asx7EfrXi9CPu4DA0z7PwQ/o=; b=E5epCIv3XO/pAP
-	vmfgNN6pK4EwQnwZ4q6tllSiUPqlV9vAfoXmIPTEbuR/iS/sJLatsLWEZOcbbuEoElVpLB1igIVez
-	X6sAgSyWbfClaTO9JWMUGTjs6X5VzWiqka/E0LncmPgAhhdR+3RZ+tZpgG10ThJqbjnfLkkWrOmOK
-	+veEx6BkDe/OYKiOYiS/5ZXoHnXVylWzzxIvlL9uunnQdG7jSPNR88cOWuMjpJPjZh8rtdzjgRjU5
-	cVrRRwQ5RXiKsICTEHGXNALvMsxIAiQjUDUdSaQ/LIA49aH3AMYnh/GzL4W9c7MFku4jN+1murmF9
-	Yq7cdQ4gquOi7LNQthyw==;
+	List-Owner; bh=mIaxD49ThoFp7lJ8vxcsynYAotnS8dvYMm+fEioV/Lk=; b=cJKIqG5/pZlkOq
+	uqmmarsUF/xQLTrAfaC+PnhUGRHrwlkWlQsbQl3js8qBofU2BZs/OeAJGYUY7SHDXgio/3JEr4obs
+	qKiXMMeXE6/DU6p0kRYZArQfJslcZ2EhwHbdtaNK8d1OLadcQM1IhAjOrFNiE7FfcPW7dyPAlem5J
+	Tz+WqtbYe9PebaNoDa96zutoqiemjFxDwOVkiw5q4Jv2cdJvfRlbgAPeBDgX/MLjkxexnxGRjj8+9
+	SsW63+msSmjX1IBJq21L0F6t+QX5wijEHu8hza2TNbE/mOgaDSI5Bd+IB8usR0j6V5oHLyPWVVEzV
+	qb8ASf8VHpdawc2RapRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO18H-00036o-5S; Mon, 13 Apr 2020 15:36:21 +0000
+	id 1jO19n-0003Ny-KR; Mon, 13 Apr 2020 15:37:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO189-000368-Kd
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:36:15 +0000
+ id 1jO19d-0003Nb-IF
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:37:47 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EA5622072C;
- Mon, 13 Apr 2020 15:36:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F8B32072C;
+ Mon, 13 Apr 2020 15:37:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586792173;
- bh=ySJ/GZ+In15NYeLHoiARho05iwPwM96hM78oDSnn3u4=;
+ s=default; t=1586792265;
+ bh=lQ8kyjkpMTyR85fSUdpR9VATKBOfxGyqeQRWXIWSwHw=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=k2i6dfph/vfNL/JUvwdMldgHGQna7KMCx43iJ0B9PPYZKoRGdbusbuGVzC0ZkzgtI
- bZt9ct5xW8bBDEiZ0elrES7yPSglluNUH/YQxJmoV3tyXa/FDS+4ABNXA4bH3fQk/N
- 7/bGXJKBPnBjKzo6QjgwwGud7rg617wrjKbPoBcA=
-Date: Mon, 13 Apr 2020 16:36:07 +0100
+ b=NfgsGatWPdOuSoVilt1i+8H0bYzRjSVvm2+qN90yARaeKWT9voanCYZ0YuSmgXyNH
+ Bvt10f/cQ0+5gdY4GvfKOLicT01q51fsLe62EYzgnMV82Ot0jabjgwRcoq43YTH+R8
+ 9X6PgLY6pG97BuQuPDt88moH3eYsx9hmLw8Duu5k=
+Date: Mon, 13 Apr 2020 16:37:39 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Aishwarya R <aishwaryarj100@gmail.com>
-Subject: Re: [PATCH] iio: adc: at91-adc: Use devm_platform_ioremap_resource
-Message-ID: <20200413163607.4fc548a2@archlinux>
-In-Reply-To: <20200412135644.4027-1-aishwaryarj100@gmail.com>
-References: <20200409151125.32677-1-aishwaryarj100@gmail.com>
- <20200412135644.4027-1-aishwaryarj100@gmail.com>
+Subject: Re: [PATCH] iio: adc: fsl-imx25-gcq: Use
+ devm_platform_ioremap_resource
+Message-ID: <20200413163739.38474d8a@archlinux>
+In-Reply-To: <20200412135023.3831-1-aishwaryarj100@gmail.com>
+References: <20200409151306.308-1-aishwaryarj100@gmail.com>
+ <20200412135023.3831-1-aishwaryarj100@gmail.com>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_083613_695328_746268AA 
-X-CRM114-Status: GOOD (  15.48  )
+X-CRM114-CacheID: sfid-20200413_083745_622703_F5FAF914 
+X-CRM114-Status: GOOD (  16.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,64 +78,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Lars-Peter Clausen <lars@metafoo.de>, Kefeng Wang <wangkefeng.wang@huawei.com>,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Richard Fontana <rfontana@redhat.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: Enrico Weigelt <info@metux.net>, Lars-Peter Clausen <lars@metafoo.de>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-iio@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 12 Apr 2020 19:26:42 +0530
+On Sun, 12 Apr 2020 19:20:20 +0530
 Aishwarya R <aishwaryarj100@gmail.com> wrote:
 
 > From: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
 > 
 > Use the helper function that wraps the calls to
 > platform_get_resource() and devm_ioremap_resource()
-> together. It reduces boilerplate and suggested by coccinelle.
+> together.It reduces boilerplate and suggested by coccinelle.
 > 
 > Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-Same comments as the previous patch.  Applied anyway (this time)
-mostly because it's quicker for me than insisting on a v3.
+Again see earlier patches for comments but applied anyway to
+save myself time.
 
-Applied to the togreg branch of iio.git and pushed out as testing
-for the autobuilders to play with it.
+Applied to the togreg branch of iio.git and pushed out as testing for
+the autobuilders to play with it.
 
 Thanks,
 
 Jonathan
 
 > ---
->  drivers/iio/adc/at91_adc.c | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
+>  drivers/iio/adc/fsl-imx25-gcq.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
 > 
-> diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
-> index abe99856c823..0368b6dc6d60 100644
-> --- a/drivers/iio/adc/at91_adc.c
-> +++ b/drivers/iio/adc/at91_adc.c
-> @@ -1152,7 +1152,6 @@ static int at91_adc_probe(struct platform_device *pdev)
->  	int ret;
->  	struct iio_dev *idev;
->  	struct at91_adc_state *st;
+> diff --git a/drivers/iio/adc/fsl-imx25-gcq.c b/drivers/iio/adc/fsl-imx25-gcq.c
+> index fa71489195c6..b0a4dc88ba9b 100644
+> --- a/drivers/iio/adc/fsl-imx25-gcq.c
+> +++ b/drivers/iio/adc/fsl-imx25-gcq.c
+> @@ -294,7 +294,6 @@ static int mx25_gcq_probe(struct platform_device *pdev)
+>  	struct mx25_gcq_priv *priv;
+>  	struct mx25_tsadc *tsadc = dev_get_drvdata(pdev->dev.parent);
+>  	struct device *dev = &pdev->dev;
 > -	struct resource *res;
->  	u32 reg;
+>  	void __iomem *mem;
+>  	int ret;
+>  	int i;
+> @@ -305,8 +304,7 @@ static int mx25_gcq_probe(struct platform_device *pdev)
 >  
->  	idev = devm_iio_device_alloc(&pdev->dev, sizeof(struct at91_adc_state));
-> @@ -1182,9 +1181,7 @@ static int at91_adc_probe(struct platform_device *pdev)
->  	if (st->irq < 0)
->  		return -ENODEV;
+>  	priv = iio_priv(indio_dev);
 >  
 > -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -
-> -	st->reg_base = devm_ioremap_resource(&pdev->dev, res);
-> +	st->reg_base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(st->reg_base))
->  		return PTR_ERR(st->reg_base);
+> -	mem = devm_ioremap_resource(dev, res);
+> +	mem = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(mem))
+>  		return PTR_ERR(mem);
 >  
 
 
