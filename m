@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 970471A6945
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:57:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEEF81A6946
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 17:57:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Oddnxd6B127Gd6a2W+isP9zvbbcA3z+6kp3RNXolynk=; b=raQr0yleAyKV8v5SoxFrh6Arl9
-	vlssVU/FfiIhqkhho3HZ0XeDJlQw9rIV+RbpUzmeOW96Qw0cSpHo6rUjgiRWKnJuIX4VLndS6aTsk
-	d8yit24OkC/Nrth1TnPtTRaqmR8/pZb7XUh/Zz/LfbMahvcuI3tKyvnOCepncAXTnQl1pRLpUHx+d
-	9bVYIHfOCPBqV3BpWnYEIfBTFLpJlnqBQrDwzBPr9UCQairFPpKQ607iWpiDPtcQod/cNJ9MtV0Fy
-	egR/4yLqNTLGsAqL9/hwRJkpdcgOX9IG3lL3u45tnYsmmSqBppIXx5qn3Xg2VUzSboetc0n/LQZe/
-	EFz0XhHw==;
+	bh=uNAv5eVPK1M6hGwotemZDr9e3mqDRq5zAj8e4zhbG4g=; b=ssb4L0bGmSrlVz71to3ndb7Xkm
+	p0UVI8ciD0RlJFMf8CaMXbY85Aqw7d1tscy4ATU9S+OfJABkxia+kUDNp83BTRititG3uEmYKoQbB
+	LgOgjdFzKVVBq4TwraTEK3VZVtR5Nsj3IBiMXkNiWj6vfszhlXU4sSFLWgaKft0FjejibZAoA5rnx
+	8/jCA0Jc6BsRVt8HKZ2EXWeXbtU8glN6VaB/ZJNqErlQdJ8ITgjmVBnPNCH2HSVbCR3pFuC5FtSky
+	P+I9dhYKiXBBDBKwpXmiszoYmoEKDYOVVENAG93d8S4U5IDrr5SikQYT9e1089tJ6RG/yH47hY+FM
+	l0Ay2Lpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO1SW-0008Sl-IE; Mon, 13 Apr 2020 15:57:16 +0000
+	id 1jO1Sg-0000Fl-Qh; Mon, 13 Apr 2020 15:57:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO1R3-0007Gm-8n
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:55:47 +0000
+ id 1jO1R5-0007Iq-Uq
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 15:55:49 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5337120732;
- Mon, 13 Apr 2020 15:55:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9A9E620739;
+ Mon, 13 Apr 2020 15:55:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586793344;
- bh=QJx5bZ/r+EHM7IX8iW+NXziBZcauihD5KOeYUipllUo=;
+ s=default; t=1586793346;
+ bh=3Fh3BffeAc7NkYh1mfmRJ9kkzBxnlWD78shHS+Df4II=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=grZD0rDD/H4cc30MC2tMqWimYiRD2bHPiJXZC6Qv5+IOoIwEk63/fCEWYm8HJh9aV
- rquevc/gx9qC5OgBB9rbhZgfhtF/jJ7Zy60gSpFNQnMgW7AR9e5O7uGzs4Bmk5/DOP
- I7J/ZccqWB+YDqIyJclEMGh4VD2YR8G5Rc+ePcgQ=
+ b=DHKqIrFSn/z+3bCN0lXSwkvimyV3XbtswX+4+IU1uRvjArc+Aa8JphL0B5GO3vkQP
+ BFIIrrqg3p5kdDU6FayyPB2mlYiXbpO1SWuv/ioUeLg6TdGGAsL6iXmNwIDBD6Q0ir
+ 1QYWRWNGlPLPTMMIb5dlIdq9M67fER5jy3iOSEzk=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 6/8] efi/libstub: add API function to allocate aligned
- memory
-Date: Mon, 13 Apr 2020 17:55:19 +0200
-Message-Id: <20200413155521.24698-7-ardb@kernel.org>
+Subject: [PATCH v2 7/8] efi/libstub/arm64: switch to ordinary page allocator
+ for kernel image
+Date: Mon, 13 Apr 2020 17:55:20 +0200
+Message-Id: <20200413155521.24698-8-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200413155521.24698-1-ardb@kernel.org>
 References: <20200413155521.24698-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_085545_442477_04E3FB51 
-X-CRM114-Status: GOOD (  19.36  )
+X-CRM114-CacheID: sfid-20200413_085548_085975_3A093210 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,158 +86,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Break out the code to create an aligned page allocation from mem.c
-and move it into a function efi_allocate_pages_aligned() in alignedmem.c.
-Update efi_allocate_pages() to invoke it unless the minimum alignment
-equals the EFI page size (4 KB), in which case the ordinary page
-allocator is sufficient. This way, efi_allocate_pages_aligned() will
-only be pulled into the build if it is actually being used (which will
-be on arm64 only in the immediate future)
+It is no longer necessary to locate the kernel as low as possible in
+physical memory, and so we can switch from efi_low_alloc() [which is
+a rather nasty concoction on top of GetMemoryMap()] to a new helper
+called efi_allocate_pages_aligned(), which simply rounds up the size
+to account for the alignment, and frees the misaligned pages again.
+
+So considering that the kernel can live anywhere in the physical
+address space, as long as its alignment requirements are met, let's
+switch to efi_allocate_pages_aligned() to allocate the pages.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/firmware/efi/libstub/Makefile     |  3 +-
- drivers/firmware/efi/libstub/alignedmem.c | 57 ++++++++++++++++++++
- drivers/firmware/efi/libstub/efistub.h    |  3 ++
- drivers/firmware/efi/libstub/mem.c        | 25 ++++-----
- 4 files changed, 71 insertions(+), 17 deletions(-)
+ drivers/firmware/efi/libstub/arm64-stub.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-index 094eabdecfe6..1a09b9445394 100644
---- a/drivers/firmware/efi/libstub/Makefile
-+++ b/drivers/firmware/efi/libstub/Makefile
-@@ -42,7 +42,8 @@ KCOV_INSTRUMENT			:= n
+diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
+index 6fc3bd9a56db..99b67e88a33b 100644
+--- a/drivers/firmware/efi/libstub/arm64-stub.c
++++ b/drivers/firmware/efi/libstub/arm64-stub.c
+@@ -98,8 +98,8 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 			return EFI_SUCCESS;
+ 		}
  
- lib-y				:= efi-stub-helper.o gop.o secureboot.o tpm.o \
- 				   file.o mem.o random.o randomalloc.o pci.o \
--				   skip_spaces.o lib-cmdline.o lib-ctype.o
-+				   skip_spaces.o lib-cmdline.o lib-ctype.o \
-+				   alignedmem.o
+-		status = efi_low_alloc(*reserve_size,
+-				       min_kimg_align, reserve_addr);
++		status = efi_allocate_pages_aligned(*reserve_size, reserve_addr,
++						    ULONG_MAX, min_kimg_align);
  
- # include the stub's generic dependencies from lib/ when building for ARM/arm64
- arm-deps-y := fdt_rw.c fdt_ro.c fdt_wip.c fdt.c fdt_empty_tree.c fdt_sw.c
-diff --git a/drivers/firmware/efi/libstub/alignedmem.c b/drivers/firmware/efi/libstub/alignedmem.c
-new file mode 100644
-index 000000000000..cc89c4d6196f
---- /dev/null
-+++ b/drivers/firmware/efi/libstub/alignedmem.c
-@@ -0,0 +1,57 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#include <linux/efi.h>
-+#include <asm/efi.h>
-+
-+#include "efistub.h"
-+
-+/**
-+ * efi_allocate_pages_aligned() - Allocate memory pages
-+ * @size:	minimum number of bytes to allocate
-+ * @addr:	On return the address of the first allocated page. The first
-+ *		allocated page has alignment EFI_ALLOC_ALIGN which is an
-+ *		architecture dependent multiple of the page size.
-+ * @max:	the address that the last allocated memory page shall not
-+ *		exceed
-+ * @align:	minimum alignment of the base of the allocation
-+ *
-+ * Allocate pages as EFI_LOADER_DATA. The allocated pages are aligned according
-+ * to @align, which should be >= EFI_ALLOC_ALIGN. The last allocated page will
-+ * not exceed the address given by @max.
-+ *
-+ * Return:	status code
-+ */
-+efi_status_t efi_allocate_pages_aligned(unsigned long size, unsigned long *addr,
-+					unsigned long max, unsigned long align)
-+{
-+	efi_physical_addr_t alloc_addr;
-+	efi_status_t status;
-+	int slack;
-+
-+	if (align < EFI_ALLOC_ALIGN)
-+		align = EFI_ALLOC_ALIGN;
-+
-+	alloc_addr = ALIGN_DOWN(max + 1, align) - 1;
-+	size = round_up(size, EFI_ALLOC_ALIGN);
-+	slack = align / EFI_PAGE_SIZE - 1;
-+
-+	status = efi_bs_call(allocate_pages, EFI_ALLOCATE_MAX_ADDRESS,
-+			     EFI_LOADER_DATA, size / EFI_PAGE_SIZE + slack,
-+			     &alloc_addr);
-+	if (status != EFI_SUCCESS)
-+		return status;
-+
-+	*addr = ALIGN((unsigned long)alloc_addr, align);
-+
-+	if (slack > 0) {
-+		int l = (alloc_addr % align) / EFI_PAGE_SIZE;
-+
-+		if (l) {
-+			efi_bs_call(free_pages, alloc_addr, slack - l + 1);
-+			slack = l - 1;
-+		}
-+		if (slack)
-+			efi_bs_call(free_pages, *addr + size, slack);
-+	}
-+	return EFI_SUCCESS;
-+}
-diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
-index 4844c3bd40df..5dcfadcf2bc1 100644
---- a/drivers/firmware/efi/libstub/efistub.h
-+++ b/drivers/firmware/efi/libstub/efistub.h
-@@ -641,6 +641,9 @@ efi_status_t efi_low_alloc(unsigned long size, unsigned long align,
- efi_status_t efi_allocate_pages(unsigned long size, unsigned long *addr,
- 				unsigned long max);
- 
-+efi_status_t efi_allocate_pages_aligned(unsigned long size, unsigned long *addr,
-+					unsigned long max, unsigned long align);
-+
- efi_status_t efi_relocate_kernel(unsigned long *image_addr,
- 				 unsigned long image_size,
- 				 unsigned long alloc_size,
-diff --git a/drivers/firmware/efi/libstub/mem.c b/drivers/firmware/efi/libstub/mem.c
-index 869a79c8946f..0020b0fa9587 100644
---- a/drivers/firmware/efi/libstub/mem.c
-+++ b/drivers/firmware/efi/libstub/mem.c
-@@ -93,31 +93,24 @@ efi_status_t efi_get_memory_map(struct efi_boot_memmap *map)
- efi_status_t efi_allocate_pages(unsigned long size, unsigned long *addr,
- 				unsigned long max)
- {
--	efi_physical_addr_t alloc_addr = ALIGN_DOWN(max + 1, EFI_ALLOC_ALIGN) - 1;
--	int slack = EFI_ALLOC_ALIGN / EFI_PAGE_SIZE - 1;
-+	efi_physical_addr_t alloc_addr;
- 	efi_status_t status;
- 
--	size = round_up(size, EFI_ALLOC_ALIGN);
-+	if (EFI_ALLOC_ALIGN > EFI_PAGE_SIZE)
-+		return efi_allocate_pages_aligned(size, addr, max,
-+						  EFI_ALLOC_ALIGN);
-+
-+	alloc_addr = ALIGN_DOWN(max + 1, EFI_ALLOC_ALIGN) - 1;
- 	status = efi_bs_call(allocate_pages, EFI_ALLOCATE_MAX_ADDRESS,
--			     EFI_LOADER_DATA, size / EFI_PAGE_SIZE + slack,
-+			     EFI_LOADER_DATA, DIV_ROUND_UP(size, EFI_PAGE_SIZE),
- 			     &alloc_addr);
- 	if (status != EFI_SUCCESS)
- 		return status;
- 
--	*addr = ALIGN((unsigned long)alloc_addr, EFI_ALLOC_ALIGN);
--
--	if (slack > 0) {
--		int l = (alloc_addr % EFI_ALLOC_ALIGN) / EFI_PAGE_SIZE;
--
--		if (l) {
--			efi_bs_call(free_pages, alloc_addr, slack - l + 1);
--			slack = l - 1;
--		}
--		if (slack)
--			efi_bs_call(free_pages, *addr + size, slack);
--	}
-+	*addr = alloc_addr;
- 	return EFI_SUCCESS;
- }
-+
- /**
-  * efi_low_alloc_above() - allocate pages at or above given address
-  * @size:	size of the memory area to allocate
+ 		if (status != EFI_SUCCESS) {
+ 			pr_efi_err("Failed to relocate kernel\n");
 -- 
 2.17.1
 
