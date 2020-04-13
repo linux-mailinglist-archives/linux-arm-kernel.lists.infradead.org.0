@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 023CB1A6FDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 01:37:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDAB11A6FE2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 01:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rCLpjjynbirq7a/sh5NNdfaNJPiDQjhM4DGDN0a6NtI=; b=hKjUlJpwwZQ2Gb
-	tXzRww38wauG29q7Go2HMbdPVuqsLn23CFomt0PZbhpExd/jFZX3OqE+lEKVR08kNqPNHwwT9LCT3
-	dXVv3QamQQN0RreASHgNocvrHminP8AdP3byT2ZbJC2YFNkDgMaUSom3WsDkMLhzIw776LML3vBsO
-	/Fhw9wpOZ4YBypq4ug/437ihiEWitWzJhWqjh2GsaeMoTJWIicBCZHcMzpYr1DLvQmKiZ6ND8ayhV
-	0qGSPSGHOEyviItyTJgzeW2f5kAGTloYfoy9HSlh0CPUjkOXXOL+Kw/UZrBzeUzMB6pYQZ3nE3NDj
-	rwq4q1cMa4OVb9qc2C5Q==;
+	List-Owner; bh=uYMNlgEkb1Jg4lN+w+TinF4n43LEDEdEByu9MhQWGp0=; b=u6gLyM8iwBurkz
+	ttXk+z5vl1e5rjm3tfee/1YpLONL+FOC72ogzSZCV2DoQTXHQiIAFYpC9Sst1+1Pas5uBQURv/Nrj
+	hesarFGkk1lhdEg1WtF1UYMjyuwooRqAL33Jjf9hiZMqMzsaKuZxesisGgHhqGrK7Nc9gMU4Tz8om
+	C4pUjbvLDAQp91AhD/uv0jOX4tfZzhU+9HEDnD54Z0mI1qAPVu9K8B0XgcADoncJiOzPNrvqsqZ7Q
+	RhwT1gUbqjLJNnSkWvhE1qY7OosFobh8EkfDQAX7fURNUccsGvd4lbm+mc2yaZq2aNNV/e9Sbrqeo
+	pSACLeQjRsZjabIlv5gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO8dt-0007I3-Gm; Mon, 13 Apr 2020 23:37:29 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jO8lm-0004kj-OA; Mon, 13 Apr 2020 23:45:38 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO8dn-0007HN-Tm
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 23:37:25 +0000
-Received: by mail-pf1-x442.google.com with SMTP id r14so5227832pfl.12
+ id 1jO8le-0004kD-00
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 23:45:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586821528;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=fkuIBZXpOYtkdAminZQBHReCbB6Qkdy15KJRjC2e7/Q=;
+ b=NO2PwfmYILoerZoBT/VmdUg9+UHg2IU+/2DMlssy7EJE1Q08kKG6lGI+9gVtN3n+sojPPB
+ ASjY/NBjxbarFowlJiIPxYjR0jqCoX/mr0Kz3Jb3MbokvHzIUx+ugkstbksDz9gGaoYgP9
+ q0c1VoxMh2qEIA2gPl23thMK2WMmCXY=
+Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
+ [209.85.208.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-113-SIBlkhU6M1CWu4kf4ALqNA-1; Mon, 13 Apr 2020 19:43:40 -0400
+X-MC-Unique: SIBlkhU6M1CWu4kf4ALqNA-1
+Received: by mail-ed1-f72.google.com with SMTP id f25so7728064edt.23
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 16:37:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lMPIRjn0PE7jnqkkSuf3FQb+qv7klZT/6x17CMWdL34=;
- b=d9NwDt3IHShJ2ZFMU0WdEcCis4G+93NeL33oosLAJ0QBuuU2m6PWo3KMjSfpLJlU4I
- t06sp32EumYZEhSVDRcWGyPkyeetQP8+MvbdwRXYykzoH3+AITWvVP64YO93bwnOJxLF
- D5KfnhButbLosSN8/qU629tHEf6ViakscnvvxpZ3hhQXplpdLVNheOPeHCaq8xhmjbzn
- s6Z9ObCL9VQ4ioIaVHFzpurAEI0OZDQEdMmeCPFrIo58ZFT/7Xe0wdFRaU5Vdi3dQhlc
- rYQcrSsUKZOdKvzTe+NmJgyRZz7G74rogHaSGx7C4MrN6k8npbyfw+gF6whUx0hQek9X
- eQOw==
+ Mon, 13 Apr 2020 16:43:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=lMPIRjn0PE7jnqkkSuf3FQb+qv7klZT/6x17CMWdL34=;
- b=PKFU/G29F/lVtIxEb6p8Z1WE7vv79qWJwcEWiYEqp9gkrv3NNKxUtNKK5k1BkOK9pF
- 1xkmE0svCV+4Wwy0BLH4b39JIT3vdMJ3HNNutEJ6T195s8amviNRqcZ7BqqLygzjJJM2
- U9PZMhmiAhE5hSTTx4tEJynJkMxezJUgKD3a5OKkmR5B1/fEAuszf0ZCmPh0uRxS4rlh
- KGNC7RN82yznQ8BGCa7djBeb9zsMENhJ1CB35JeiG+l638HtDKta18FUWB12nacxcG31
- Dx54hnWJ+I92JQ0mfgGnu7P/rUftxyY5GtkgMGuUlB6YcWvkK2WdAVsd32Quovu4vDmu
- 1yMQ==
-X-Gm-Message-State: AGi0PuZFbj7+J1wBytUZRB0iwBattQa/yZ8RRKYLZtmKJmFYTv2H9UR3
- q44kRkJRTbATgxRMDxFUXxDpH4UGGfmKhACW/AytTg==
-X-Google-Smtp-Source: APiQypIIArEcMtBa+6lU3ecAVeDtyJ9+R/7AtvwXV6mkhFTgICAF71cY/Q7KBQ2W2N1aHsHsV6yeVXwI/BROaWewvSM=
-X-Received: by 2002:a63:6604:: with SMTP id a4mr18265124pgc.381.1586821042616; 
- Mon, 13 Apr 2020 16:37:22 -0700 (PDT)
+ bh=xqr4dsXCGQ7mBSR00NAzM1Q6acm6mNGXK+xaVCuI9s0=;
+ b=WjAlLDjpJUcZ9pxR7IEIrjVgrVQYNUNcxcM89XjG/xGvxpHy9ssIgtTweQytipiWNu
+ h0Hm9Jp3bYfVXcMMhHleGa1Vi7cBgdXPeizFzgCe5bNQmld46uiDESxZvE/DdU9WN0G9
+ ZVrlB7ngDhiu+GrW6s/+j22Mq0VNAabT252k8aYYeWXMLS7WtD46FMInRj2g1eug36oW
+ M+gNtQYeUzvd9pw4cCI1Ie7hyZZYLsPQfBnyJSc2CmyuuJDtq/hermoF3ZVKTsWSPLmf
+ imzjwApyHyBPIsBCiUyhtGZMT8ZFZcyFXNHxssX4C3SRMiD5WY9kbLh/cF20IMUEiePD
+ zNdg==
+X-Gm-Message-State: AGi0Pua12XvvGNsH5TbQAfDCQU4z7VpgbeCfkvtUhN5PP6JOZqPIGY6g
+ KOKbd+ENlBARA799aBwPd6/TIhwm6bZkQ2eogPVgjLrAUcWHdJtIzG1gGayT1pVQ7RjkSnNuZxp
+ d70pwTqQK5QUaPenWcyE/EemsIn+Lqk3hJ9bHcmhemtyFrghG7nI=
+X-Received: by 2002:a17:906:a418:: with SMTP id
+ l24mr4284473ejz.362.1586821418588; 
+ Mon, 13 Apr 2020 16:43:38 -0700 (PDT)
+X-Google-Smtp-Source: APiQypKa/t6ZDKsi78psOMm2ofYlu33r+ev1cgYcUx7E9J7maeva3YKq+x4SEnS8Mxo6UUPZcXftIkJxkGJxL//DCa8=
+X-Received: by 2002:a17:906:a418:: with SMTP id
+ l24mr4284462ejz.362.1586821418314; 
+ Mon, 13 Apr 2020 16:43:38 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200413231016.250737-1-maskray@google.com>
-In-Reply-To: <20200413231016.250737-1-maskray@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 13 Apr 2020 16:37:10 -0700
-Message-ID: <CAKwvOdn35v5LkvhWugfLmK_FjVsd0RdPtBCRSqVaM9EP_1KU7w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: kvm: Delete duplicated label: in invalid_vector
-To: Fangrui Song <maskray@google.com>
+References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
+ <20190524100554.8606-4-maxime.chevallier@bootlin.com>
+In-Reply-To: <20190524100554.8606-4-maxime.chevallier@bootlin.com>
+From: Matteo Croce <mcroce@redhat.com>
+Date: Tue, 14 Apr 2020 01:43:02 +0200
+Message-ID: <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
+Subject: Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts to handle
+ RSS tables
+To: Maxime Chevallier <maxime.chevallier@bootlin.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_163723_986271_580CB1E7 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200413_164530_120474_039CEEE2 
+X-CRM114-Status: GOOD (  17.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -83,8 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,61 +105,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
+ netdev <netdev@vger.kernel.org>, gregory.clement@bootlin.com,
+ LKML <linux-kernel@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Nadav Haklai <nadavh@marvell.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, miquel.raynal@bootlin.com,
+ Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 4:10 PM Fangrui Song <maskray@google.com> wrote:
+On Tue, Apr 14, 2020 at 1:21 AM Maxime Chevallier
+<maxime.chevallier@bootlin.com> wrote:
 >
-> SYM_CODE_START defines \label , so it is redundant to define \label again.
-> A redefinition at the same place is accepted by GNU as
-> (https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=159fbb6088f17a341bcaaac960623cab881b4981)
-> but rejected by the clang integrated assembler.
+> The PPv2 controller has 8 RSS tables that are shared across all ports on
+> a given PPv2 instance. The previous implementation allocated one table
+> per port, leaving others unused.
 >
-> Fixes: 617a2f392c92 ("arm64: kvm: Annotate assembly using modern annoations")
-
-Thanks for the patch!  I think a more accurate Fixes tag would be:
-Fixes: 2b28162cf65a ("arm64: KVM: HYP mode entry points")
-
-With this patch applied, and your other arm64 integrated assembler
-patch (https://lore.kernel.org/linux-arm-kernel/20200413033811.75074-1-maskray@google.com/T/#u),
-I can now assemble arch/arm64/kvm/.
-
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-
-> Link: https://github.com/ClangBuiltLinux/linux/issues/988
-> Signed-off-by: Fangrui Song <maskray@google.com>
-> ---
->  arch/arm64/kvm/hyp/hyp-entry.S | 1 -
->  1 file changed, 1 deletion(-)
+> By using RSS contexts, we can make use of multiple RSS tables per
+> port, one being the default table (always id 0), the other ones being
+> used as destinations for flow steering, in the same way as rx rings.
 >
-> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
-> index c2a13ab3c471..9c5cfb04170e 100644
-> --- a/arch/arm64/kvm/hyp/hyp-entry.S
-> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
-> @@ -198,7 +198,6 @@ SYM_CODE_END(__hyp_panic)
->  .macro invalid_vector  label, target = __hyp_panic
->         .align  2
->  SYM_CODE_START(\label)
-> -\label:
->         b \target
->  SYM_CODE_END(\label)
->  .endm
-> --
-> 2.26.0.110.g2183baf09c-goog
+> This commit introduces RSS contexts management in the PPv2 driver. We
+> always reserve one table per port, allocated when the port is probed.
 >
+> The global table list is stored in the struct mvpp2, as it's a global
+> resource. Each port then maintains a list of indices in that global
+> table, that way each port can have it's own numbering scheme starting
+> from 0.
+>
+> One limitation that seems unavoidable is that the hashing parameters are
+> shared across all RSS contexts for a given port. Hashing parameters for
+> ctx 0 will be applied to all contexts.
+>
+> Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
 
+Hi all,
 
--- 
+I noticed that enabling rxhash blocks the RX on my Macchiatobin. It
+works fine with the 10G ports (the RX rate goes 4x up) but it
+completely kills the gigabit interface.
+
+# 10G port
+root@macchiatobin:~# iperf3 -c 192.168.0.2
+Connecting to host 192.168.0.2, port 5201
+[  5] local 192.168.0.1 port 42394 connected to 192.168.0.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   941 MBytes  7.89 Gbits/sec  4030    250 KBytes
+[  5]   1.00-2.00   sec   933 MBytes  7.82 Gbits/sec  4393    240 KBytes
+root@macchiatobin:~# ethtool -K eth0 rxhash on
+root@macchiatobin:~# iperf3 -c 192.168.0.2
+Connecting to host 192.168.0.2, port 5201
+[  5] local 192.168.0.1 port 42398 connected to 192.168.0.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   860 MBytes  7.21 Gbits/sec  428    410 KBytes
+[  5]   1.00-2.00   sec   859 MBytes  7.20 Gbits/sec  185    563 KBytes
+
+# gigabit port
+root@macchiatobin:~# iperf3 -c turbo
+Connecting to host turbo, port 5201
+[  5] local 192.168.85.42 port 45144 connected to 192.168.85.6 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   113 MBytes   948 Mbits/sec    0    407 KBytes
+[  5]   1.00-2.00   sec   112 MBytes   942 Mbits/sec    0    428 KBytes
+root@macchiatobin:~# ethtool -K eth2 rxhash on
+root@macchiatobin:~# iperf3 -c turbo
+iperf3: error - unable to connect to server: Resource temporarily unavailable
+
+I've bisected and it seems that this commit causes the issue. I tried
+to revert it on nex-next as a second test, but the code has changed a
+lot much since, generating too much conflicts.
+Can you have a look into this?
+
 Thanks,
-~Nick Desaulniers
+-- 
+Matteo Croce
+per aspera ad upstream
+
 
 _______________________________________________
 linux-arm-kernel mailing list
