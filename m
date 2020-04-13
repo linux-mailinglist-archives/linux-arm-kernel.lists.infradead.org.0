@@ -2,83 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99B3C1A6533
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:29:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 008921A6543
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y8vfwvFiTPnp9tDW4svFY8K4+le6MzZRUw3Z2MKDtwc=; b=pgQHlw18xLH/vP
-	SxgTBQn3VL4PkLlMzCLKOn8kWX7XCIcTFmreyYEIJ1hYUPnoYaltx/AlYBsifaYwzpWd3rRnjPVQb
-	RcblTcI1VnRgYdLUWQCntHCIduteRvXdtXXMme9Lwz74R+QAYXzwf4ynJe5wzBUieUL+p+s3gytqD
-	1QtsU2b9ItDnxkSDb878TrtIk8EO6ytcLDun0A2mWwgtSXRXt6Lk1WrIgzSWb0zP+We2V6CLYQ0IV
-	GblTwAc7xdeEVaOGhFwacf7ajJuqmuqHXqSaPuJulu6KfxFmiGaT3BKh2bfidIQ6iPR6Odt7thtfZ
-	+RkFMvEA/vN20GmBqFIA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cfaJF5FxzvSw2mR3smPkscuX5kIU5DcLSBCr2vZz4BE=; b=V+m
+	4msL/4i74mo6cHm5SlDqPQpiKpZWYHPpcPhYfm0hCAXOx+Y1Df0L0NsloGr/Y568cCDEY0mMwXmDX
+	KNmhhH/TbalV6FOFoS73ZePsMSduH7LoyqVZurn0QSvslKahmyoNZ5ZrBjenp92ZbVPBSHsKJx5kN
+	69bScr2r3191GKfVwsSLDOQ1T92JtYh1wHehwK3RsjQg49edKhn3T3o/qJ5GabfVX0iKVwof+oJt5
+	3yNYHWgbPQrNv87wtrPlrdTUFVRC/xWLe8QjLQBk5xRQNFqxrvPiYsqmBBcrKJXFuNdLQ8lgsnHIj
+	+1mGLEpdH6ExEj53EYYAZlIYkaI+7dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNwLI-0002Ta-9Q; Mon, 13 Apr 2020 10:29:28 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1jNwSn-0008UM-U8; Mon, 13 Apr 2020 10:37:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNwLB-0002Ru-4m
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:29:22 +0000
-Received: by mail-ed1-f68.google.com with SMTP id cb27so11334357edb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 03:29:18 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BbWHjSsUQrh2BcH16tvNHQAGyd0qaneJDULzKls8PTI=;
- b=OVRkWQmwoFxMFI11hyF8xPpHo7nAQUH5UE7FUzh4a21Duvv+UO5BiUPQ/6120Abmu0
- IFSj0/uyepxl7wXTftf13PZgCz7MCpKYNZ/Nlpatx5kd7acnwiBdp7a7/dvDIowblMjY
- Hps4TAci58TeaugO1B7JQMpbmMWA4yeDI6BpZ0Ld7eRJak8NNqJYF0FToFrEAF3ffZ+L
- SqVB+aFl22Z1PQmhINf37hx2LvlqD8IRQRQg3WOuGUcF/tblBvzM6bEPvtyLTnb/Xhut
- MEuJJPr4uAADW5CeTf3LT64/QE5zyHE+sZwxd61WeUdAja21B4B2PxLzibCanvYO5i7h
- dS2Q==
-X-Gm-Message-State: AGi0PuaRYw66vwCrVXbieCFCnmqxojthNrDk6o0Sl5xgyhYXP+Ij1FuM
- gdONW022Ysyl30ZTZX+pbFQ=
-X-Google-Smtp-Source: APiQypIedXmcxclTCvgH+IO52NsgOdHSPUM9V+iK7b0YTTiONfFblt3zVHInsMkfzBnfKdib4MGamw==
-X-Received: by 2002:a05:6402:16d5:: with SMTP id
- r21mr5822530edx.150.1586773757041; 
- Mon, 13 Apr 2020 03:29:17 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id w3sm1557471ejf.21.2020.04.13.03.29.15
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 Apr 2020 03:29:16 -0700 (PDT)
-Date: Mon, 13 Apr 2020 12:29:14 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Subject: Re: [PATCH 1/1] ARM: mach-s3c64xx: convert to use
- i2c_new_client_device()
-Message-ID: <20200413102914.GA14922@kozik-lap>
-References: <20200326211014.13591-1-wsa+renesas@sang-engineering.com>
- <20200326211014.13591-2-wsa+renesas@sang-engineering.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200326211014.13591-2-wsa+renesas@sang-engineering.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1jNwSg-0008Tm-L9
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:37:07 +0000
+Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
+ [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 91C0B206A1;
+ Mon, 13 Apr 2020 10:37:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586774225;
+ bh=jkcvWZE7rCWCpMU6IBICurdE07KqvjYlh1/nycP4dbk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ZbBYl7EL9ae64vJl/U8pqqqqjXNVjKL/Mal+e2xm/na8E8t4FD+P9Yku7h5neZQR8
+ SKr566bNZOtjfydAcubcROS5B+Zljr+hUZD1uKqWf9Xj6AtNp3hJS+ASqRSGl31h9/
+ DWirNO3L6d4d5gbWurZzLda4hbfCQP8suRdG7Pxc=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: mm: drop kimage_voffset which was only used by KVM
+Date: Mon, 13 Apr 2020 12:36:45 +0200
+Message-Id: <20200413103645.25183-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_032921_179709_359E994A 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20200413_033706_709296_3D21AC8B 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,27 +74,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, patches@opensource.cirrus.com,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Kukjin Kim <kgene@kernel.org>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: maz@kernel.org, linux@armlinux.org.uk, Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 10:10:14PM +0100, Wolfram Sang wrote:
-> Move away from the deprecated API and remove printing a stale 'ret'
-> value.
-> 
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> ---
->  arch/arm/mach-s3c64xx/mach-crag6410-module.c | 7 +++----
+Now that KVM support has been removed from the 32-bit ARM port,
+drop the export kimage_voffset symbol, which no longer has any
+users.
 
-Thanks, applied.
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm/mm/mmu.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-Best regards,
-Krzysztof
+diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+index ec8d0008bfa1..36660bb031d1 100644
+--- a/arch/arm/mm/mmu.c
++++ b/arch/arm/mm/mmu.c
+@@ -74,8 +74,6 @@ struct cachepolicy {
+ 	pteval_t	pte;
+ };
+ 
+-unsigned long kimage_voffset __ro_after_init;
+-
+ static struct cachepolicy cache_policies[] __initdata = {
+ 	{
+ 		.policy		= "uncached",
+@@ -1636,9 +1634,6 @@ void __init paging_init(const struct machine_desc *mdesc)
+ 
+ 	empty_zero_page = virt_to_page(zero_page);
+ 	__flush_dcache_page(NULL, empty_zero_page);
+-
+-	/* Compute the virt/idmap offset, mostly for the sake of KVM */
+-	kimage_voffset = (unsigned long)&kimage_voffset - virt_to_idmap(&kimage_voffset);
+ }
+ 
+ void __init early_mm_init(const struct machine_desc *mdesc)
+-- 
+2.17.1
 
 
 _______________________________________________
