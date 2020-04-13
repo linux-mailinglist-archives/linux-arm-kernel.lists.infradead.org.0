@@ -2,92 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96C331A6ED7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 00:01:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18B9F1A6EE5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 00:09:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YnjKUtjN2UhH+5+TBe8ygSQ60FMVhN7AK0tf+9Njvac=; b=frPvmyCA5Wl5Kj
-	WpWwm8mJs1YOwxljEicHOHE4HWwutXIK1ZtML/9zVgA+P8su6iZARzJ8egCbLPi/Zsa7PbB6F7r+N
-	KjiO/JDeIJo+v1QAc0tNWzWPoLT9elZPb8mFBaCjJHavIYEQldVfn7Mi7kcN2j8NtFd0whfm3K6Y8
-	Vi/CTWMHWXxG0CSpYy0OzbKttKOSq8kx4r57OhgwUTX7Y+Gz/cDaLr9JK5oi7EdndkhMcyFHzrytR
-	VKF0tHongxfNbET5U9x3gU21FkvPStPcRvlkyOorTZNq75L1R01UIjY86XJAYMoSMXonqeyqwhfvo
-	kCLFIC4HTTcTHeauvr4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UHtdY/uU6i8Ze3Ky+chRHv85Xt2HAvDXIxdFd3++sFc=; b=BXXxpzeokbO7jL
+	O1YJdGaYkB66/rpcPQWXJ1mAgDRexq5KdRBxTH9mBu3lK4s4TzjqOEPWR0wJ5F0LMu8w503iGgoS2
+	ELyxwLrMcWz80EVfrqilx3RnUFkjfrGtJflkaAdCkaTiBy2SDNHhChO2HIi8d/QdUeSBRRhRkxzpg
+	J/6O2RBrDUBjAKkQ9Rrw7OC7MXmm/HCL80Dz780WebbhKdC19e+Rg7KMWO+Afy/cSF/4sqLVjVHvn
+	j4OK08NfiCe8+2pulXMkybOj8r7IdAOefK+6Ak1vADBS3tc6oA7gHizYSPOtqs4KL6/WkowCCHjeX
+	xJO4eX1o0iF2efn41AvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO78i-0005CE-Tq; Mon, 13 Apr 2020 22:01:12 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jO7G7-0008SC-S3; Mon, 13 Apr 2020 22:08:51 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO78a-0005Bi-JN
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 22:01:06 +0000
-Received: by mail-lj1-x243.google.com with SMTP id v9so3743818ljk.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 15:01:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
- bh=beTCdjD9mBgR4YFC6YHzV+CN3PBybk3lFl2C+p4DAr8=;
- b=aNqF5LQDjh4Jp0mxwWNgS0pt/uW2vrMEbddCLpbtPMleQOwSqg5qsugFI1V9mUlGbD
- ftrMhnFk9sy9a8perUPxaIuwSrshwZSYBCFSRyDKdNWeUgWDmNm1yefqEouqJQKi3aL5
- OSr7jygpgTbU0vL9lNW8cVo309JUUldgCEIjF9TdqAB6l82nP9rF9m84vLEKwNKTerNB
- ANuf7D0mn2wVK23++i23E9LAomqYnbTWPrfvgc4lBWMg6uTC3LH7DHfmVJ/mZvu+TmLt
- O+s+mBzuVH8VU1IDOnrDP8aktTHgv14DKUkOmK/6Zc84BXQNIJ5JWzQUBxJ4g5Gt3ii8
- ou6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition;
- bh=beTCdjD9mBgR4YFC6YHzV+CN3PBybk3lFl2C+p4DAr8=;
- b=AgBE2YReq60Omv4OoNQ6Y2L00VbESpnOReUvfZqa0x6TCMZRiK1VUMKr0TUHTtE2iO
- jhF1QErq4Qocg7Z8xf2fQzvbaj3NzbNp4CEeamG4nXl8Do8vclYmRcW1vWwaHO1wnqjF
- qYWBGQVx32m6XyEHjU49new77j0Whtj3XxNtWSbKk2ayePQVuuoAUObrk9hFv7MpUsFY
- Q9GB5DBAh8pZ/VbsdhjUx9fxqLAg2euQbhnsBgi7S2k5vnmJ03qJQVcRIcC1yHbh9ax5
- goICqvOHqf6AFL/4Q6cWOD4ZkpUK6vh1C4XvMe6TBHa+4NKYaZdrXEKs7ePcCH01g/D0
- BgCg==
-X-Gm-Message-State: AGi0PuatmGC8WijINzbGoncrR39LKeKMu0SxQbjNcvzuFV3PUEy6zMF5
- irwXo6Ks4eHfeFjrh+4uHyE=
-X-Google-Smtp-Source: APiQypK3XR6vxv0lxmZIgBdXP2rEtblb0MiCnDiaK3vm6MF2w9zA8bW20rxretqwoRZBcqnHTACpOw==
-X-Received: by 2002:a2e:86d8:: with SMTP id n24mr4349639ljj.129.1586815261957; 
- Mon, 13 Apr 2020 15:01:01 -0700 (PDT)
-Received: from curiosity (ip-195-182-157-78.clients.cmk.ru. [195.182.157.78])
- by smtp.gmail.com with ESMTPSA id
- c4sm8871509lfg.82.2020.04.13.15.00.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 15:01:01 -0700 (PDT)
-Date: Tue, 14 Apr 2020 01:05:20 +0300
-From: Sergey Matyukevich <geomatsi@gmail.com>
-To: Russell King <linux@armlinux.org.uk>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: [bug report] armada-8040-mcbin: 5.6-rc5 boot failure
-Message-ID: <20200413220520.GA25917@curiosity>
+ id 1jO7G0-0008Ri-Ri
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 22:08:46 +0000
+X-Originating-IP: 86.202.105.35
+Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
+ [86.202.105.35])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 8F425C0005;
+ Mon, 13 Apr 2020 22:08:32 +0000 (UTC)
+Date: Tue, 14 Apr 2020 00:08:32 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Diego Elio =?iso-8859-1?Q?Petten=F2?= <flameeyes@flameeyes.com>
+Subject: Re: [PATCH 1/4] at76c50x-usb: update dead links.
+Message-ID: <20200413220832.GA34509@piout.net>
+References: <20200413170031.13104-1-flameeyes@flameeyes.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20200413170031.13104-1-flameeyes@flameeyes.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_150104_637826_EC53DC3A 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200413_150845_030377_3AAC052E 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geomatsi[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,49 +61,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Baruch Siach <baruch@tkos.co.il>,
- Gregory CLEMENT <gregory.clement@bootlin.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russel, Miquel, and all,
+On 13/04/2020 18:00:31+0100, Diego Elio Petten=F2 wrote:
+> Update wiki TODO link, and point at an actually-existing page for the
+> firmware download.
+> =
 
-MacchiatoBin Double-shot board fails to boot v5.6-rc5 kernel properly:
-USB, PCIe, and ethernet interfaces are not enabled. Before that I have
-been running v5.3 kernel w/o any noticeable issues.
+> Signed-off-by: Diego Elio Petten=F2 <flameeyes@flameeyes.com>
+> ---
+>  drivers/net/wireless/atmel/at76c50x-usb.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> =
 
-In brief, USB and PCIe devices are not detected, ethernet PHY fails
-to initialize with the following warnings:
-[    2.444150] mvebu-comphy f4120000.phy: unsupported SMC call, try updating your firmware
-[    2.452191] mvebu-comphy f4120000.phy: Firmware could not configure PHY 0 with mode 15 (ret: -1), trying legacy method
-[    2.474615] mvpp2 f4000000.ethernet eth2: Using firmware node mac address ...
-[    2.484420] mvebu-comphy f4120000.phy: unsupported SMC call, try updating your firmware
+> diff --git a/drivers/net/wireless/atmel/at76c50x-usb.c b/drivers/net/wire=
+less/atmel/at76c50x-usb.c
+> index 3b2680772f03..36e667d9f5cb 100644
+> --- a/drivers/net/wireless/atmel/at76c50x-usb.c
+> +++ b/drivers/net/wireless/atmel/at76c50x-usb.c
+> @@ -10,14 +10,14 @@
+>   * Copyright (c) 2007 Kalle Valo <kalle.valo@iki.fi>
+>   * Copyright (c) 2010 Sebastian Smolorz <sesmo@gmx.net>
+>   *
+> - * This file is part of the Berlios driver for WLAN USB devices based on=
+ the
+> + * This file is part of the driver for WLAN USB devices based on the
+>   * Atmel AT76C503A/505/505A.
+>   *
+>   * Some iw_handler code was taken from airo.c, (C) 1999 Benjamin Reed
+>   *
+>   * TODO list is at the wiki:
+>   *
+> - * http://wireless.kernel.org/en/users/Drivers/at76c50x-usb#TODO
+> + * https://wireless.wiki.kernel.org/en/users/drivers/at76c50x-usb#TODO
+>   */
+>  =
 
-After quick bisection of the board dts files, I came to the following results:
+>  #include <linux/init.h>
+> @@ -1621,7 +1621,7 @@ static struct fwentry *at76_load_firmware(struct us=
+b_device *udev,
+>  		dev_err(&udev->dev, "firmware %s not found!\n",
+>  			fwe->fwname);
+>  		dev_err(&udev->dev,
+> -			"you may need to download the firmware from http://developer.berlios.=
+de/projects/at76c503a/\n");
+> +			"you may need to download the firmware from http://www.thekelleys.org=
+.uk/atmel/\n");
 
-- USB works again after reverting the following two commits:
-  -- 96018a6fafb1 ("arm64: dts: marvell: Convert 7k/8k usb-phy properties to phy-supply")
-  -- 01d0deba28f6 ("arm64: dts: marvell: Add 7k/8k PHYs in USB3 nodes")
+Maybe it is worth having those as part of linux-firmware instead.
 
-- PCIe works again after reverting armada-8040-mcbin.dtsi parts of the
-  following two commits:
-  -- 1399672e48b5 ("arm64: dts: marvell: Drop PCIe I/O ranges from CP11x file")
-  -- ce55522c035e ("arm64: dts: marvell: Add 7k/8k PHYs in PCIe nodes")
+>  		goto exit;
+>  	}
+>  =
 
-- ethernet: not yet...
+> -- =
 
-However looking at firmware version complaints, I guess that the actual
-reason of all those issues could be in ATF version rather than in the
-latest DTS changes. Probably I am using ATF version which is too old
-to work with up-to-date kernel: armada-17.10.3 from atf-marvell
-repository on github. If this is indeed the actual root cause of all
-the issues, then could you please recommend a preferable ATF version
-to test with ?
+> 2.26.0
+> =
 
-Regards,
-Sergey
+
+-- =
+
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
