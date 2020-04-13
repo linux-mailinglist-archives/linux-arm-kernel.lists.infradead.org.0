@@ -2,75 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 360AC1A6EC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 23:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96C331A6ED7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 00:01:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g7/GtMKr9ENDlrSKSWKtnxywhvaiE9Obl0KIOae1VvQ=; b=EDprZIfyF167lC
-	FBRFUTL2i2xANMpQ8bpgwcpask7uEeEKqOwhwDDZf9d1LvHbQLlySVwkk63UwFTrk9Yf0GspXorSX
-	oiKBYvz51PtI13fiLwII+f/XzCHjCWCqSiwxxNP8j2Ug4CGjnP0/XLdF353mNm6zabDrUxQR8I93n
-	PumcoJ0ff4JLLM+yxbETdTRGjC0A0R0dJ2bzxG8tpuM4HEOwago9pQii0HI4rwL/a/3iS05dp05eE
-	/WoDpNeUTmYL1JiSvpWrVCJzSfJ6oW3cdUpqw3y9v4lkAGkcXqVEuxEm4OA8DonAAAWRaKsG99ynh
-	EIiVaqeWKS+ZczRXhK8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YnjKUtjN2UhH+5+TBe8ygSQ60FMVhN7AK0tf+9Njvac=; b=frPvmyCA5Wl5Kj
+	WpWwm8mJs1YOwxljEicHOHE4HWwutXIK1ZtML/9zVgA+P8su6iZARzJ8egCbLPi/Zsa7PbB6F7r+N
+	KjiO/JDeIJo+v1QAc0tNWzWPoLT9elZPb8mFBaCjJHavIYEQldVfn7Mi7kcN2j8NtFd0whfm3K6Y8
+	Vi/CTWMHWXxG0CSpYy0OzbKttKOSq8kx4r57OhgwUTX7Y+Gz/cDaLr9JK5oi7EdndkhMcyFHzrytR
+	VKF0tHongxfNbET5U9x3gU21FkvPStPcRvlkyOorTZNq75L1R01UIjY86XJAYMoSMXonqeyqwhfvo
+	kCLFIC4HTTcTHeauvr4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO72D-0008As-4F; Mon, 13 Apr 2020 21:54:29 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jO78i-0005CE-Tq; Mon, 13 Apr 2020 22:01:12 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO71v-00085i-BA
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 21:54:12 +0000
-Received: by mail-wm1-x343.google.com with SMTP id d77so10807869wmd.3
+ id 1jO78a-0005Bi-JN
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 22:01:06 +0000
+Received: by mail-lj1-x243.google.com with SMTP id v9so3743818ljk.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 14:54:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=atishpatra.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=n2YrxFswkx7hDllVIsDVbzNNztgUR6Vkh9Ws2W9v0sU=;
- b=S9tY0EwJ0DuckJovjeInEXlrGKO2+8M+UJjAQNxtSEHCABWcJrCv/FH8NxKGKNYGgk
- eyx0wTZ5zhhpfDX1eFiNK7yAbuWgJ3GrMZ0cinZzhaqluce2O7yyc1PXRfrsWqI0N7mH
- f9iB6dT8Fbpxh4Vmc19lHugKZi/s6WM4hqAbOWtMw5baLt1tc5TNXR7//SDq/IcUyAbw
- lQVSvBUJnK4g8MhUdHCQjuoczqcMFlRzHMDNpZZyLZb1d2p7bZac1MTQ21FKk2tHTMxV
- Pv7pBwT1bKUu8LgcDVVS+Vv37thyxOSQTxmqu9lBp7VR0gtifwgNeL7cbJwW86dACaYK
- rGEg==
+ Mon, 13 Apr 2020 15:01:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=beTCdjD9mBgR4YFC6YHzV+CN3PBybk3lFl2C+p4DAr8=;
+ b=aNqF5LQDjh4Jp0mxwWNgS0pt/uW2vrMEbddCLpbtPMleQOwSqg5qsugFI1V9mUlGbD
+ ftrMhnFk9sy9a8perUPxaIuwSrshwZSYBCFSRyDKdNWeUgWDmNm1yefqEouqJQKi3aL5
+ OSr7jygpgTbU0vL9lNW8cVo309JUUldgCEIjF9TdqAB6l82nP9rF9m84vLEKwNKTerNB
+ ANuf7D0mn2wVK23++i23E9LAomqYnbTWPrfvgc4lBWMg6uTC3LH7DHfmVJ/mZvu+TmLt
+ O+s+mBzuVH8VU1IDOnrDP8aktTHgv14DKUkOmK/6Zc84BXQNIJ5JWzQUBxJ4g5Gt3ii8
+ ou6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=n2YrxFswkx7hDllVIsDVbzNNztgUR6Vkh9Ws2W9v0sU=;
- b=Hzh8Y5X8fqmSYl7Gj0auGYHqMsntPU9FqJ3C6dpyTZmZuZtg3wLw1yZevNh8rI2zZc
- pAWZJ9zSg+ostVF8mbgIV52dW14tN6c3Dskte2iKvbSY7M+8W9B0gULVA9EhAlyXHdKP
- 5WCxLkhT4w3VNytWBmBBzrCJzHNXq120FOaYwuWHQR3fk2rgqhYpcZw2hVVK+QOD+L2T
- +/Aw3Ax3gWdXKD/Ia/mdolqQV5bKRY2kEEas2FaHUoP3FI1odzHCM6IQO7QW9ByiAaRD
- sMsIoiw7++dqVIGU0EY6/BQcneesm7W7SEy2A7BFiSGGRVW5H67xMuJRpF4VCnPzoiCU
- PzVA==
-X-Gm-Message-State: AGi0PuYtPLS2NkJQxuRU7/AKga/OLdWoU6O++yUcLgDxdExx6bi5K6zT
- lY5Ie1d53CRJ0eJOiGvYUoVAnQrOj18op8mKnq+A
-X-Google-Smtp-Source: APiQypLR+TgWBKP/kkMmQfl3pNKIeF2HWnQrkpYuKf4da4NMDuLoi6OHvBqTmJaukhMVepYAflj20L2qUMY42xQhy9s=
-X-Received: by 2002:a7b:cdfa:: with SMTP id p26mr9270601wmj.186.1586814849695; 
- Mon, 13 Apr 2020 14:54:09 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=beTCdjD9mBgR4YFC6YHzV+CN3PBybk3lFl2C+p4DAr8=;
+ b=AgBE2YReq60Omv4OoNQ6Y2L00VbESpnOReUvfZqa0x6TCMZRiK1VUMKr0TUHTtE2iO
+ jhF1QErq4Qocg7Z8xf2fQzvbaj3NzbNp4CEeamG4nXl8Do8vclYmRcW1vWwaHO1wnqjF
+ qYWBGQVx32m6XyEHjU49new77j0Whtj3XxNtWSbKk2ayePQVuuoAUObrk9hFv7MpUsFY
+ Q9GB5DBAh8pZ/VbsdhjUx9fxqLAg2euQbhnsBgi7S2k5vnmJ03qJQVcRIcC1yHbh9ax5
+ goICqvOHqf6AFL/4Q6cWOD4ZkpUK6vh1C4XvMe6TBHa+4NKYaZdrXEKs7ePcCH01g/D0
+ BgCg==
+X-Gm-Message-State: AGi0PuatmGC8WijINzbGoncrR39LKeKMu0SxQbjNcvzuFV3PUEy6zMF5
+ irwXo6Ks4eHfeFjrh+4uHyE=
+X-Google-Smtp-Source: APiQypK3XR6vxv0lxmZIgBdXP2rEtblb0MiCnDiaK3vm6MF2w9zA8bW20rxretqwoRZBcqnHTACpOw==
+X-Received: by 2002:a2e:86d8:: with SMTP id n24mr4349639ljj.129.1586815261957; 
+ Mon, 13 Apr 2020 15:01:01 -0700 (PDT)
+Received: from curiosity (ip-195-182-157-78.clients.cmk.ru. [195.182.157.78])
+ by smtp.gmail.com with ESMTPSA id
+ c4sm8871509lfg.82.2020.04.13.15.00.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 13 Apr 2020 15:01:01 -0700 (PDT)
+Date: Tue, 14 Apr 2020 01:05:20 +0300
+From: Sergey Matyukevich <geomatsi@gmail.com>
+To: Russell King <linux@armlinux.org.uk>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [bug report] armada-8040-mcbin: 5.6-rc5 boot failure
+Message-ID: <20200413220520.GA25917@curiosity>
 MIME-Version: 1.0
-References: <20200413155521.24698-1-ardb@kernel.org>
-In-Reply-To: <20200413155521.24698-1-ardb@kernel.org>
-From: Atish Patra <atishp@atishpatra.org>
-Date: Mon, 13 Apr 2020 14:53:58 -0700
-Message-ID: <CAOnJCULxNtk99sudMD5Rn5ao0orwcarOAwg7NPXMK6ZdXmwNOA@mail.gmail.com>
-Subject: Re: [PATCH v2 0/8] efi/libstub: simplify arm64 kernel image loading
-To: Ard Biesheuvel <ardb@kernel.org>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_145411_476206_32DEB13E 
-X-CRM114-Status: GOOD (  22.15  )
+X-CRM114-CacheID: sfid-20200413_150104_637826_EC53DC3A 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geomatsi[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,73 +99,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-efi@vger.kernel.org, catalin.marinas@arm.com,
- nivedita@alum.mit.edu, Jonathan.Cameron@huawei.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Baruch Siach <baruch@tkos.co.il>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 8:55 AM Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> On arm64, the kernel image used to be virtually mapped via the linear
-> region, making the two mappings correlated in a way that required the
-> kernel to be located at the start of the linear region, or the memory
-> below would not be accessible. For this reason, the EFI stub loader
-> code for arm64 has the notion of a 'preferred offset' for the physical
-> placement of the kernel image, and tries to put the kernel there, or
-> at least as low as possible in physical memory (unless KASLR is active,
-> in which case the placement is randomized)
->
-> When KASLR was introduced, the virtual mapping of the kernel was moved
-> into the vmalloc region, and now, regardless of whether KASLR support
-> is built in or active, the kernel can be placed anywhere in physical
-> memory without any detrimental side effects on the linear region.
->
-> This means that we can drop the notion of 'preferred offset' entirely,
-> and invoke the kernel in place if the PE/COFF loader loaded it at the
-> right offset. If not, we can invoke the ordinary UEFI top down page
-> allocator to reallocate it elsewhere in memory. By updating the PE/COFF
-> metadata, we can inform the PE/COFF loader about the desired alignment,
-> making it less likely that we need to move the kernel image in the first
-> place.
->
-> Ard Biesheuvel (8):
->   efi/libstub/random: align allocate size to EFI_ALLOC_ALIGN
->   efi/libstub/random: increase random alloc granularity
->   efi/libstub/arm64: replace 'preferred' offset with alignment check
->   efi/libstub/arm64: simplify randomized loading of kernel image
->   efi/libstub/arm64: align PE/COFF sections to segment alignment
->   efi/libstub: add API function to allocate aligned memory
->   efi/libstub/arm64: switch to ordinary page allocator for kernel image
->   efi/libstub: move efi_relocate_kernel() into separate source file
->
->  arch/arm64/kernel/efi-header.S             |   2 +-
->  arch/arm64/kernel/vmlinux.lds.S            |   3 +-
->  drivers/firmware/efi/libstub/Makefile      |   3 +-
->  drivers/firmware/efi/libstub/alignedmem.c  |  57 ++++++
->  drivers/firmware/efi/libstub/arm64-stub.c  |  92 +++-------
->  drivers/firmware/efi/libstub/efistub.h     |  18 +-
->  drivers/firmware/efi/libstub/mem.c         | 191 +-------------------
->  drivers/firmware/efi/libstub/randomalloc.c |   6 +-
->  drivers/firmware/efi/libstub/relocate.c    | 174 ++++++++++++++++++
->  9 files changed, 280 insertions(+), 266 deletions(-)
->  create mode 100644 drivers/firmware/efi/libstub/alignedmem.c
->  create mode 100644 drivers/firmware/efi/libstub/relocate.c
->
-> --
-> 2.17.1
->
+Hi Russel, Miquel, and all,
 
-Oops. I just noticed this series after I sent out a v2.
-I see that efi_low_alloc is removed now and the handle_kernel_image is
-simplified for arm64.
-I will update the risc-v uefi series accordingly. Sorry for the noise.
+MacchiatoBin Double-shot board fails to boot v5.6-rc5 kernel properly:
+USB, PCIe, and ethernet interfaces are not enabled. Before that I have
+been running v5.3 kernel w/o any noticeable issues.
 
---
+In brief, USB and PCIe devices are not detected, ethernet PHY fails
+to initialize with the following warnings:
+[    2.444150] mvebu-comphy f4120000.phy: unsupported SMC call, try updating your firmware
+[    2.452191] mvebu-comphy f4120000.phy: Firmware could not configure PHY 0 with mode 15 (ret: -1), trying legacy method
+[    2.474615] mvpp2 f4000000.ethernet eth2: Using firmware node mac address ...
+[    2.484420] mvebu-comphy f4120000.phy: unsupported SMC call, try updating your firmware
+
+After quick bisection of the board dts files, I came to the following results:
+
+- USB works again after reverting the following two commits:
+  -- 96018a6fafb1 ("arm64: dts: marvell: Convert 7k/8k usb-phy properties to phy-supply")
+  -- 01d0deba28f6 ("arm64: dts: marvell: Add 7k/8k PHYs in USB3 nodes")
+
+- PCIe works again after reverting armada-8040-mcbin.dtsi parts of the
+  following two commits:
+  -- 1399672e48b5 ("arm64: dts: marvell: Drop PCIe I/O ranges from CP11x file")
+  -- ce55522c035e ("arm64: dts: marvell: Add 7k/8k PHYs in PCIe nodes")
+
+- ethernet: not yet...
+
+However looking at firmware version complaints, I guess that the actual
+reason of all those issues could be in ATF version rather than in the
+latest DTS changes. Probably I am using ATF version which is too old
+to work with up-to-date kernel: armada-17.10.3 from atf-marvell
+repository on github. If this is indeed the actual root cause of all
+the issues, then could you please recommend a preferable ATF version
+to test with ?
+
 Regards,
-Atish
+Sergey
 
 _______________________________________________
 linux-arm-kernel mailing list
