@@ -2,89 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EF621A650E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:12:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 329921A650D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 12:12:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ODqYP2bQQyj0IFh6GMlEmPoDOLYURE745N1luij/a+c=; b=a6YOjVvvSYumCJ
-	KcErIv+qBxkF/RcknCihUfbJ97HJ7xscAGpfi0tWpn4D3g0WPb/YqGsicKeSSWM04QWGn0l5//S/B
-	igtM2+fRYyRDuBy7SL84rRptbWiR7z/NVBkaMJJ+87gBKclS31AUQvGxlN/d1WLoVHuJpgc2BL9Lu
-	sFMx+dxU5IiYcAk91HoGVtoyjTK4+VPf/zQy4OHlQZK8qlsCTkvjxH07v7lCWnxSz9s3qD8uvLtY1
-	86FbpSEeakDaoHSAlFykRUxi/OfFRFelH/w6ysz9N+wB9k7nFFnRyYc18NTjOGz7ONoX9S69zTlIt
-	w74MR9vPtv/nGLQjsrRw==;
+	List-Owner; bh=QqUrAMkzNabBIkn7st56ocQzD+aJad2KZCKLj1g6ggY=; b=ArFGkSmANTeIvr
+	1gsBlw+u25SglEesHOwSRb8HIanIHnQ9+/2+uTXC5JG0kedEiPm2t+3q4aqlND8OoCrgxH3es2B7H
+	KEfChQvnYIgwHsXR+uIvY1kJIA+26PuwdCkny7iLTNqe+wD5RepDonE1lGDPQ5pTKlCB1BuW30cDP
+	o3CIOtiGXc33NhXJDaQOwasx5JMEsuVtEQb/f5ocFLu9lHNlPqBQhfwFoFk4mrpuPbqTviPXVfnpT
+	GVCPgb6glFX5mJWkZZQjKh8JGcACmc/DP4uiv9ejpAmQAPRiscyqLbltxK5EpVcDT1Ze64lbNW+xq
+	SpFGfXvTYyJFfP9OxwoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNw4M-0000qK-RK; Mon, 13 Apr 2020 10:11:58 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1jNw46-0000hk-Vc; Mon, 13 Apr 2020 10:11:43 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNw3z-0000hd-IM
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:11:37 +0000
-Received: by mail-ed1-f67.google.com with SMTP id p6so11322605edu.10
+ id 1jNw3w-0000hJ-F5
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 10:11:33 +0000
+Received: by mail-ed1-f65.google.com with SMTP id ca21so8995647edb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 03:11:33 -0700 (PDT)
+ Mon, 13 Apr 2020 03:11:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=k+7Q/wT0Mnct4ipSNlbYLt8kOVOarKScVBUfZKd/RJw=;
- b=EKBMoLwFGGis+l0r0sbLccPUFRc3V4tvb236UrXDTnXSUMBx/czd2xua9dJBTA7BZK
- dN+c9gDfIgsTmFr+gHW/IO43h2sOUE44w1aH2HiGqJjNKrXB4ZmM6jIRk8EH68D6B/6c
- jUtR7+hjivS5CyJaAcAI9L3PJaPVwJq3zf15pDF3TJNj1bGiMuhK1DIYs9FIOhU5DeoN
- zLuU0zijb51BUoGFQzoWT0JZX0ABmE7yr+D5LJ+7GV0+kEdLkfcbC5OMNukUPaxxAQJO
- j6b5uecuPKMKAF2c85XHZvsmzRIDdkGjKcY79wy1lQ46jnYLZkCgl/yPWJTRc6IQ0EZu
- VXwQ==
-X-Gm-Message-State: AGi0PuYUClcar9JxshyKSch6ZXTEurksXpbVDbAhgdaLI9FDAo//1lDp
- z81mTGqqI+MdNcPTYz/P4y7iTE7Fkt4=
-X-Google-Smtp-Source: APiQypLxGhG3EmFt8mmfpXk+Zh4YsXDNpWtjHcJCoR+oC5mRv/SoctbK52Yt0mgiaXKrpI9uwlQj0Q==
-X-Received: by 2002:a17:906:32d8:: with SMTP id
- k24mr15380317ejk.2.1586772692425; 
- Mon, 13 Apr 2020 03:11:32 -0700 (PDT)
-Received: from mail-wm1-f50.google.com (mail-wm1-f50.google.com.
- [209.85.128.50])
- by smtp.gmail.com with ESMTPSA id u13sm1283616edi.82.2020.04.13.03.11.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Apr 2020 03:11:31 -0700 (PDT)
-Received: by mail-wm1-f50.google.com with SMTP id r26so9450256wmh.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 03:11:31 -0700 (PDT)
-X-Received: by 2002:a7b:c927:: with SMTP id h7mr17717288wml.122.1586772691230; 
- Mon, 13 Apr 2020 03:11:31 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=IHzUNdwPsTQhqLll3sOK8O3xrvJdBlinyJZ6YxNwq5s=;
+ b=nM4M+j/sGoJAgY51ZLKAskL5VoLsRTCs0I3D+UMhBFt7jWG/C4hVjNxsQiqKjQpQss
+ N4efsafH350aj9ArcZGomD9iHl2zuzgimHSKNIQcAoEsOwyeq7zyVftmlfVfzV2jkpzg
+ TIVcKpjAPZ4amK7nA3Z3omGJ9UgHSN05EHoTKmw0GBhZ91yxcGcFRREcOviWZdo8lCXy
+ R+Gq+sSQlGEcqXEGoxvi9LoanobkM7sgIEPRQ9yH4eHJ0V6LyPJBAtKZbuMUlrYyIQRj
+ Y3IaLlqDuJem770oaLXyMll4+vbPo7T81DG6Tyk/E7PYXyRQIiKHXL5DCjb5M5HlsnX5
+ phqA==
+X-Gm-Message-State: AGi0Pua+eQQ+Na1Sqxtkr1HKnrx1PKATgV01n5RtqQ0P1zNSvv4MMZqq
+ Mb/LNjwualUBm93J8TxF2w4=
+X-Google-Smtp-Source: APiQypLbUzeNvAIZR67vxpLwZzQRg3r3rXpBNYhH+Po0Qp1noxa7A8r1ABhf2bhfL8AcuoH9Rr3W4g==
+X-Received: by 2002:a05:6402:1383:: with SMTP id
+ b3mr15439537edv.217.1586772689922; 
+ Mon, 13 Apr 2020 03:11:29 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id g2sm1307883edm.77.2020.04.13.03.11.28
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 Apr 2020 03:11:29 -0700 (PDT)
+Date: Mon, 13 Apr 2020 12:11:27 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jonathan Bakker <xc-racer2@live.ca>
+Subject: Re: [PATCH] pinctrl: samsung: Correct setting of eint wakeup mask on
+ s5pv210
+Message-ID: <20200413101127.GA10535@kozik-lap>
+References: <BYAPR10MB3479E878C547053C6B952E01A3C40@BYAPR10MB3479.namprd10.prod.outlook.com>
 MIME-Version: 1.0
-References: <20200413095457.1176754-1-jernej.skrabec@siol.net>
-In-Reply-To: <20200413095457.1176754-1-jernej.skrabec@siol.net>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 13 Apr 2020 18:11:20 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65qetxxVX1yoCjyduM4zRTyF3YKX1g9CuaHZkF_Z+AKQg@mail.gmail.com>
-Message-ID: <CAGb2v65qetxxVX1yoCjyduM4zRTyF3YKX1g9CuaHZkF_Z+AKQg@mail.gmail.com>
-Subject: Re: [PATCH] drm/sun4i: hdmi ddc clk: Fix size of m divider
-To: Jernej Skrabec <jernej.skrabec@siol.net>,
- Maxime Ripard <mripard@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <BYAPR10MB3479E878C547053C6B952E01A3C40@BYAPR10MB3479.namprd10.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_031135_622765_BDD3A2E6 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200413_031132_501971_3BDC81D7 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
+ no trust [209.85.208.65 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
+ provider [k.kozlowski.k[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,23 +89,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
+ tomasz.figa@gmail.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, kgene@kernel.org, s.nawrocki@samsung.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 5:55 PM Jernej Skrabec <jernej.skrabec@siol.net> wrote:
->
-> m divider in DDC clock register is 4 bits wide. Fix that.
->
-> Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+On Sat, Apr 04, 2020 at 10:08:49AM -0700, Jonathan Bakker wrote:
+> Commit a8be2af0218c ("pinctrl: samsung: Write external wakeup interrupt
+> mask") started writing the eint wakeup mask from the pinctrl driver.
+> Unfortunately, it made the assumption that the private retention data
+> was always a regmap while in the case of s5pv210 it is a raw pointer
+> to the clock base (as the eint wakeup mask not in the PMU as with newer
+> Exynos platforms).
+> 
+> Fixes: a8be2af0218c ("pinctrl: samsung: Write external wakeup interrupt mask")
+> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+> ---
+>  drivers/pinctrl/samsung/pinctrl-exynos.c | 73 ++++++++++++++++--------
 
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+Thanks, applied (with Cc-stable tag).
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
