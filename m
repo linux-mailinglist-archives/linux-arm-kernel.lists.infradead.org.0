@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FFC71A644F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 10:50:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E57941A6455
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 10:51:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SIrzos5D4gRRBkhHH9wuE5k2u74VxZYwFjbUF8RQRS8=; b=pzOwMFEssjmg0Q
-	WgRQZ2btpT6I/RVYIq4qtAOQoirtFOEYMMG3OYWUhGwRxHcXtnLuLAFk1GkQNwNyp70VKZE44tZU0
-	vxx+jFZPR/qs5mDKcPOVT/WvXJSPc/WiwKLnGYxfj3/0ffQt4LMWaj6YcPTolLHs0ciJwKLa97AZG
-	qDg89tgL7LPG240WLWtRkz2W3GqBHUFpqf4rqWcjotWWFNC1YsLBPESjFPBzhQ/aTD69QpL1Xk9vP
-	LxZqeYwslgouhGIRyyCvsctPVzuiAoabEU4Sd+Zoy720V2mtd6hwF9qzH6SVMg35FE4iT2JXMhdRy
-	ESOCZgdvulludnH2F/uA==;
+	List-Owner; bh=LM0NHqvB3ZAsdQNpZKOEMmISg3IeVNFIKcygs9a8diw=; b=UHTuSiBSegVw4O
+	mV/iUGULppvIV1L1Iqf3Gc6/xZM+W80iXHmoEs2X3f2As4d9HGF46o22A9AFNNC7WbiiIOVvsgHLh
+	Anakp2XJ9RzGm0Td93nPxWA9ybkZ/NQksigqKi2VU1Q7judA8EIXUeatXa6R9SqdCDNpVVvD87zPK
+	jUDH6zvpx/OkXBIxeL/RYjlPTpl+qDmXQq7KlGHMpgRbC6MW8e3doDtkYNXIGaInB9TPCmRTiwR0L
+	sFnxAoxS+wUf6N4xKlMJGtM/pvTeJmyZ4e8nvGtSioTnxga9/KEVvMAAhQSKIP4J8cAOi/Mgi+Qt/
+	mhtaBtHrlnCxiIjHVT9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNunJ-000062-HS; Mon, 13 Apr 2020 08:50:17 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1jNuoO-0000Mx-Ao; Mon, 13 Apr 2020 08:51:24 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNunA-0007Ic-Ve
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 08:50:11 +0000
+ id 1jNuoF-0000MT-3i
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 08:51:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1586767808; x=1618303808;
+ t=1586767874; x=1618303874;
  h=from:to:cc:subject:date:message-id:references:
  in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=g+BoujTaXmL7RzkQF/U6ORkv3elN4x17pBJHtsOnGzU=;
- b=l59t5zRA64GTlR2ViaJhDBCkS/nzX/YicJPtKvV/v143LleKukfDBsCd
- vjvfPGfvYfMvx7+3SGO7ClZ+gRKm1ada6EaP+DvUbhHvQsWbuPiPyToCG
- WQ3eh2dQYjEmkJ/ksFFUg6wtfwYcaytA1RKC1jgjez9hZg3CDJpWzVT/m
- BB6RJKLIwFTCl/AgpDkbCsITuqYxr1SxxverxotNbu1EnspUrZfXyo7/c
- ZZm4PpFFjTqaGqY0KaZejPAMF3gImBJPTodAW5gIS/HxQVUGrRX7sk9MV
- gpY4UwEd8j7ehVGQD/a5c78sNebuiEd4rgDGhw9xIo3lmqBbzmBFiMZuC A==;
-IronPort-SDR: P41cqiYl6gAUK91I29g2Wc0yXqRMrzS1+7Qot+C9rKXm0JtGr0RzjOHyHqMdPMnp7w8EvEB6GH
- A1Pd/VpvzcgPbLPWWDG6OxfQQWP8CRUM/yovCT781hBOw3bLGEkc1dgwtaFAwEau9SBcbdTvvk
- riNMMnr7+rdqy+1tknbXkun1z+ynPQXDwUE2Y6a/K/YviirCGpeybrUDH4nurAyLGq9gaIAPh7
- Z1n2veH9YyBFh5L8ssX0CbBajjPzx7UWeVLzBleP/gG9vqi/uZyStZ5I0QwAHUlNYj+CWVSk6i
- feg=
-X-IronPort-AV: E=Sophos;i="5.72,378,1580799600"; d="scan'208";a="72004610"
+ bh=A/BfzDM0SiCjl7M5EmTj6SXKtRysbudhvxwHBw3R5e0=;
+ b=cBIRhc2iMCHKJ9bNEsCFhOrUsRDPwweiNtJooFRnTntH+WkkeCJB0pZf
+ ULA9xzd5X2kCSE6KCsrCfGcz66G3X1ix8RG5GH5sf8MYKEISm18JMGo7W
+ ItjOtvLqWVSXm7Vq1B4ksV94xHLMij8yDcQO11mCEoUcls8iF+zPJ7ICL
+ zgIL5ZXSsiDYVlplioHTw5Nb7N2XUBZJbKMkL4FRPzcMFQEZWC58XB09y
+ fiCCOYlE20zGbg95Sz1mCdc3+CZkphwFZxpSqgVqhLJYbQ4Vutub4GZUk
+ 2gwm3vQ7CnIQuqBq8GcM+yCF43nb5TbGNyRcY2AbWUhWMu03RcSYa5mAv A==;
+IronPort-SDR: xrUkWg1bsWSDOG6w7WtiCZPrRWeNBNoIXhHzxedhOKwm8saNQuq9RXXOXoiuZiBT8llRaD2tL/
+ khwulhjYm0DAEF8+8FQ6lnZmzspwSYnIyblitMksIOibZdn3sFnkPJP8C2cAxIxgZXpz4bnUx8
+ PxtNul+f2hRX7gJa1CVMQVkRaGjA6Y/3Wk3d1ZcIXaN6x+bxMV/vt5KnkN67ivbOXRXuyb7S3a
+ d4J2+qRWneqCCGSHOG04rr0mUBH5N7DlPDzC6ltvbuXfcOwwAsmuOa43kUEYoJSfpO0zfHLttS
+ wJw=
+X-IronPort-AV: E=Sophos;i="5.72,378,1580799600"; 
+   d="scan'208";a="8939627"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Apr 2020 01:50:04 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Apr 2020 01:51:13 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 13 Apr 2020 01:49:53 -0700
+ 15.1.1713.5; Mon, 13 Apr 2020 01:51:13 -0700
 Received: from NAM10-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Mon, 13 Apr 2020 01:49:53 -0700
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 13 Apr 2020 01:51:13 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cf+/UBwgcK32A9OjeUN/QBKAPt0s0s4CnzEZ2wD9IPGWF/64D1pb84qRIaOKBrrl9Vi16WGjbP7rJFlCwlJiuAqWE7Jet2oQUjFsNHA4EDpFW7j924HyHNVjS+9uzfdwjdjb6bLDnO4pE1TViNuY0MFEBiO6qN9yP83pjcxZ2WhHS6HFzMYHD4IVPDELN04nXSn3AEsoNdwfpFA0S+p4SJBp2Byygpf+ahxHsAAdXim3qe2yEkFjRzeh4InipvIhW+IZJtlcGQSuf2C4yh+FKbB0CYTRhtBomNhxtk8UBFvMrcWBsDv4sg1BCatUbEfjjXc5hO44HA7wdn0v4UYwEg==
+ b=UImM2AzJUbKY3D59hPeswaYhddaNanAFeZK6+7q1sg+F05SU/qJ2zcgCdhZOcgLCPiC/VnwwPr75Nwrrxq3keUWdyBUqPEqUC5L50trTr/NDb5tQunuB+ezi6BLNhoMydR01Ya97eqBKor448qCB9WNc1FsQT9KQcSaiKznybH4Y8Ta2bMfSQaMQuX/3cniAw+vnQ51u6bfUJ1uh4jA7YkEJ2seOHj/hHvonNH33moMUALG6emciKOzoRMfnSjS0WNTqmkNN7uxzpgkU94yjpFZ1P4jR2ola+B1dnkRXFxaRzKfrocubHyECtsHc2BelzslPD+DuWL9r0fed9DmPIw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=g+BoujTaXmL7RzkQF/U6ORkv3elN4x17pBJHtsOnGzU=;
- b=ADIglFXf3K6+X1nxUTWR6gLEZNpG3+POCsACDdF3qqXG6FdR8jYfmudrUFX9JfXOQ4JTsZfwn/B1i9quIP3SlwDsdgPMGvlKbMKBoO+CXdnCSYnw0qsCVLwSSOKGVQn/Kaf4Iyd8gM43AxNAxXmvNaDIiANbNErBadRhyExe3A6p/qdpLNEhOl/xZW/nZozYMFugFtk4FDMOfoaDEMUmAv/+FlkhS3S9YSL3GLPEDBeB9tzzYgItnW4SBTmiR5XWUWcAhpB1brpyUWm2tB83UEy+QvuJUy/ml+ztXtwXqOJp3wSLo/UPQu3svMag9KMQTjiZ+dOYKIo+qUns220pkg==
+ bh=A/BfzDM0SiCjl7M5EmTj6SXKtRysbudhvxwHBw3R5e0=;
+ b=asdoSECeXzeNWk4pAMfW7pA867/yatqDFAh31/JGC29/rCE9qjGu2nJYndujdjZd8C7QVgpEBixnU3xicHBEh+r7hCW3tjxR7lZsuhHRQEjqg1RzXxdKhQacozgPHbglUo6rfWZznEhWDuK8q3iqRg//fR/SDWvjwS+lu84YXOCvGDIvr4kWC3rXHFDaAnbAU26rwHdN5QS1mElgA6Y9Tv4xgmzUBoMqBreUtZn/fY3IY6j19+2LxB/Ps1AeJVMIta1Z0jig+SpbBvwdJg+XiFIQtYj51/kTKyB0JIe5cqVPu7aNXZ9fXZdiWs28USJIkTh5EDbsvZxvDb4GNXt8lQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -68,28 +68,28 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=g+BoujTaXmL7RzkQF/U6ORkv3elN4x17pBJHtsOnGzU=;
- b=vewzA0YKLw9dmCANYdvTeieUgfh9J94A4tfEBFUVB1a00tEI+KMn5tUGDncqtLMIH8Po0qK/ey/d2d3HE6dnD4iFuY7DYJmuyFvxratbc4Y3DSjf+DBNsQfLt1C17YqLCTgY+FADeu/FNSAhXBmbrWaQ32HNuLDJohNjlhfsQbY=
+ bh=A/BfzDM0SiCjl7M5EmTj6SXKtRysbudhvxwHBw3R5e0=;
+ b=Lr+2Q+eHTG8x6QdQx4l32ePToMureYk69nVutiGhQA+yHxfeajzGHHaWiazNq3h0b9vtRG8IxGhQ60RIg6uKfFu6RiHrd45vUnGbHRfYySBSpLWKf2jhf2xLLzwT0IIj2aT6Zr3O06ROEcHSszdGr+rG8usyA2xmOsmE/oV0/l8=
 Received: from DM6PR11MB3420.namprd11.prod.outlook.com (2603:10b6:5:69::31) by
  DM6PR11MB4010.namprd11.prod.outlook.com (2603:10b6:5:194::15) with
  Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2900.26; Mon, 13 Apr 2020 08:50:02 +0000
+ 15.20.2900.26; Mon, 13 Apr 2020 08:51:12 +0000
 Received: from DM6PR11MB3420.namprd11.prod.outlook.com
  ([fe80::91cb:6555:db9b:53fa]) by DM6PR11MB3420.namprd11.prod.outlook.com
  ([fe80::91cb:6555:db9b:53fa%7]) with mapi id 15.20.2900.026; Mon, 13 Apr 2020
- 08:50:02 +0000
+ 08:51:12 +0000
 From: <Claudiu.Beznea@microchip.com>
 To: <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 5/5] rtc: at91sam9: add microchip,sam9x60-rtt
-Thread-Topic: [PATCH 5/5] rtc: at91sam9: add microchip,sam9x60-rtt
-Thread-Index: AQHWEXCCLb5+HJo6A0Cdc6S18/omnA==
-Date: Mon, 13 Apr 2020 08:50:02 +0000
-Message-ID: <fa6366a0-e1a7-a7b3-e743-2517437b2b3d@microchip.com>
+Subject: Re: [PATCH 4/5] ARM: dts: sam9x60: add rtt
+Thread-Topic: [PATCH 4/5] ARM: dts: sam9x60: add rtt
+Thread-Index: AQHWEXCuyP8yxRbKYUqiuXPeALwxyw==
+Date: Mon, 13 Apr 2020 08:51:12 +0000
+Message-ID: <c4d46198-488b-c5d6-2a66-865a16840dc4@microchip.com>
 References: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
- <1586536019-12348-6-git-send-email-claudiu.beznea@microchip.com>
- <20200410174113.GZ3628@piout.net>
-In-Reply-To: <20200410174113.GZ3628@piout.net>
+ <1586536019-12348-5-git-send-email-claudiu.beznea@microchip.com>
+ <20200410222658.GB3628@piout.net>
+In-Reply-To: <20200410222658.GB3628@piout.net>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -100,43 +100,43 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=Claudiu.Beznea@microchip.com; 
 x-originating-ip: [86.120.235.162]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d81bfa62-36bc-4013-8fc5-08d7df87a7ed
+x-ms-office365-filtering-correlation-id: accfc48b-0cf1-4354-300d-08d7df87d16e
 x-ms-traffictypediagnostic: DM6PR11MB4010:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB40105475D43A95333EC18FAA87DD0@DM6PR11MB4010.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <DM6PR11MB401078BB1D2570983A55A3CC87DD0@DM6PR11MB4010.namprd11.prod.outlook.com>
 x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 037291602B
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DM6PR11MB3420.namprd11.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10009020)(396003)(376002)(346002)(136003)(39860400002)(366004)(7416002)(36756003)(66946007)(26005)(2906002)(66446008)(64756008)(66556008)(66476007)(76116006)(91956017)(6512007)(6506007)(478600001)(53546011)(54906003)(316002)(966005)(2616005)(8936002)(8676002)(6486002)(86362001)(31696002)(31686004)(6916009)(5660300002)(186003)(81156014)(4326008)(71200400001)(142933001);
+ SFS:(10009020)(396003)(376002)(346002)(136003)(39860400002)(366004)(7416002)(36756003)(66946007)(26005)(2906002)(66446008)(64756008)(66556008)(66476007)(76116006)(91956017)(6512007)(6506007)(478600001)(53546011)(54906003)(316002)(966005)(2616005)(8936002)(8676002)(6486002)(86362001)(31696002)(31686004)(6916009)(5660300002)(186003)(81156014)(4326008)(71200400001);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vUr0lYDSLZykIq9gZ+MBtT921bpofV0CXnv3EA7LOYLnKvASu6spwMTBxWDNzXzPROijD2bGLplHXX3SdzJ1uf3xzz7ApbunBNfZRUDHf+B3ylpNkuHOEGg1u07ZtVjMFWGg4UOnpKELkGqoBLFDDdTJKvbJlgkMMPoZU075ZZxG5joT5XjuYmcG7sjz9vAyKEAPj8QTjgK2fZmIEGj9HdX4FsaGrFwbuUrkoSyDOi6gwtHSbqObCOUmN/DEcKqBguGTNnT/MmFJCM/br+oL952TrUJc5PF5T2YJ+ZXtBf+Qh3XufbU/KnsXXqumlcuWTk5C7UQ5/Aix9mv824cbjJ14deX42NPlUJOyPwBupeCG9il8WOtrUyc5JzKbu5tVfgvXiIOD7nPI3rFQv7JS/z5VKQQIOsij/AV+KfXqozDZzfZHlj/oaogT3sPaiuPTDByTVITSwc3kU+XLU1cH9n90CjVxlfjXPLASr0p5PYkKajKg8yYCnPLGOTbp0HNi88KFrlMma4Ib9Q38ZqpAcY3QhhFAmAkh/KIlUP7RIfet40ZZbDjL2pb8HKGQQrsh
-x-ms-exchange-antispam-messagedata: b1leqvzIdNAeqYVDCtq3deH8G72YtkDNz+MyBD81ydV6rcCkg2SrIfVpgXw8+Czdd47Z2/PLqIOnjYIchVOWM8VKzAGcj50L1KvnXezBBHK86YkEY5II805qy+rhCDgkgeZmEMNvsLxECkyo6+Ue4A==
-Content-ID: <C63CEFED00853941AA35BEDE6178E5F9@namprd11.prod.outlook.com>
+x-microsoft-antispam-message-info: wUjRAC4ni4oCUUqv2n/iw67ziHROVh1ubFZ/6ZOpq5FtjwTNOcbbIe0UNFDpOeaTpvgW8rjDzLn0Kl+27Gsj1DLjveIMVBpsnI7MHXE1aX2oGTonvXrCHikdecVq58vooeiKycSFVUTr+qchN09D25loWgIERQcGjV8O4fGNuCn/W5MNxXodkEDv2I9CB1V+c6r0nKuOm87b1QR4WQA3UBCNYUEAMflUdXWCJbxOk5lTbRhf9Cu3YqPuEs9VraHPpFY/wNp6XHWPdDtHW5825Pc6Xs2fkaZdJHftZxnh26XFOnQl38gJBCfQ2igC+lKbTcPuAh2fnvgThovk0u081/GZkEVaDzNrlnzaPjp2H351Xlv9Zz0RlUde2qKvpkBkBz9QT0NEXn8sxPsYhzdJOdHiAjSkGeqyQXRLPKmbsthWW5UEJl3Q160flDbpTlXF7yZbU5qydswuWou95Y40zLzfKoFqDoiAtWZSnCUS1HCv9eGz/ZExwswAAOyFgM2OVS0Rvph80xiF8LPYdXIeKw==
+x-ms-exchange-antispam-messagedata: qFFFvktiDwk+i/JtkkbA2/AbcvJz/5ll1hATFh5TqW/8FTX7SnE9DEPrY+YoBcrXUata5Q7TLVaEA6Lk1aWdmdbuQlCMlqgm0PSKbTJEr6ZRuxiNOeBllxzee+5HhUfdXeYhZdTgj/Zfc19hT6hPgg==
+Content-ID: <45CB4E31E730EB459A36BB36E22C6AAA@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: d81bfa62-36bc-4013-8fc5-08d7df87a7ed
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2020 08:50:02.6028 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: accfc48b-0cf1-4354-300d-08d7df87d16e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2020 08:51:12.1673 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Yut3OV/q9lD+Fea4eQS2FhEDnR4viRDud4gIhTZDKivZie13svHOjs/WP8t3gcDjqp27ZI96D6SUwXEooHj7xORKyvVdZiV5Nl5hsgUBFOQ=
+X-MS-Exchange-CrossTenant-userprincipalname: rZabScQp4KvMpaIbQQWh+OYdXA1mP4Ju/91TF/+vcKrezzHXQBadtdlca5bjqDjkInKmMXC/2NCj9ot1/xPbsvixFy0knMqfdADIUGNe/Pc=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_015009_180581_14FE51D1 
-X-CRM114-Status: GOOD (  24.16  )
+X-CRM114-CacheID: sfid-20200413_015115_204147_7D8E89C7 
+X-CRM114-Status: GOOD (  16.68  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -168,92 +168,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 10.04.2020 20:41, Alexandre Belloni wrote:
+On 11.04.2020 01:26, Alexandre Belloni wrote:
 > EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 > 
-> Hi,
-> 
-> This patch must come first.
-
-OK!
-
- Also, the correct prefix is
-> dt-bindings: rtc:
-
-OK! I used the prefix that was previously used.
-
-> 
-> On 10/04/2020 19:26:59+0300, Claudiu Beznea wrote:
->> Add microchip,sam9x60-rtt to compatible list.
+> On 10/04/2020 19:26:58+0300, Claudiu Beznea wrote:
+>> Add RTT.
 >>
 >> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 >> ---
->>  Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>  arch/arm/boot/dts/at91-sam9x60ek.dts | 5 +++++
+>>  arch/arm/boot/dts/sam9x60.dtsi       | 7 +++++++
+>>  2 files changed, 12 insertions(+)
 >>
->> diff --git a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
->> index 6ae79d1843f3..b2f913ff6c69 100644
->> --- a/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
->> +++ b/Documentation/devicetree/bindings/rtc/atmel,at91sam9-rtc.txt
->> @@ -1,7 +1,7 @@
->>  Atmel AT91SAM9260 Real Time Timer
+>> diff --git a/arch/arm/boot/dts/at91-sam9x60ek.dts b/arch/arm/boot/dts/at91-sam9x60ek.dts
+>> index ab3d2d9a420a..4020e79a958e 100644
+>> --- a/arch/arm/boot/dts/at91-sam9x60ek.dts
+>> +++ b/arch/arm/boot/dts/at91-sam9x60ek.dts
+>> @@ -617,6 +617,11 @@
+>>       };
+>>  };
 >>
->>  Required properties:
->> -- compatible: should be: "atmel,at91sam9260-rtt"
->> +- compatible: should be: "atmel,at91sam9260-rtt" or "microchip,sam9x60-rtt"
+>> +&rtt {
+>> +     atmel,rtt-rtc-time-reg = <&gpbr 0x0>;
+>> +     status = "okay";
 > 
-> If you had a fallback on atmel,at91sam9260-rtt, this would make merging
-> this series easier as this removes the need for 1/5 and 2/5.
+> Is there any point using a gpbr register while there is already a much
+> better RTC in the system?
 
-The:
-
-diff --git a/drivers/irqchip/irq-atmel-aic5.c
-b/drivers/irqchip/irq-atmel-aic5.c
-index 29333497ba10..74a66cd05553 100644
---- a/drivers/irqchip/irq-atmel-aic5.c
-+++ b/drivers/irqchip/irq-atmel-aic5.c
-@@ -310,10 +310,16 @@ static void __init sama5d3_aic_irq_fixup(void)
- 	aic_common_rtc_irq_fixup();
- }
-
-+static void __init sam9x60_aic_irq_fixup(void)
-+{
-+	aic_common_rtc_irq_fixup();
-+	aic_common_rtt_irq_fixup();
-+}
-+
- static const struct of_device_id aic5_irq_fixups[] __initconst = {
- 	{ .compatible = "atmel,sama5d3", .data = sama5d3_aic_irq_fixup },
- 	{ .compatible = "atmel,sama5d4", .data = sama5d3_aic_irq_fixup },
--	{ .compatible = "microchip,sam9x60", .data = sama5d3_aic_irq_fixup },
-+	{ .compatible = "microchip,sam9x60", .data = sam9x60_aic_irq_fixup },
- 	{ /* sentinel */ },
- };
-
-part of 1/5 is still necessary.
-
-Regarding the fallback to "atmel,at91sam9260-rtt" I am aware of that. I
-chose this approach because this IP is a bit different than the one with
-"atmel,at91sam9260-rtt" compatible, meaning it has a features that the old
-one has not. I'm talking about [1] which I cannot see on a SAM9G45 [2]
-where RTT IP uses "atmel,at91sam9260-rtt" as compatible.
-
-Is true it may be necessary in the future when new features may be
-implemented. Taking this into account, would you like to get rid of the new
-compatible in code and keep it only in device tree?
-
-[1]
-http://ww1.microchip.com/downloads/en/DeviceDoc/SAM9X60-Data-Sheet-DS60001579B.pdf#_OPENTOPIC_TOC_PROCESSING_d137e64502
-[2]
-http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6438-32-bit-ARM926-Embedded-Microprocessor-SAM9G45_Datasheet.pdf
+Only to have it also enabled.
 
 > 
-> I think 2/5 may be useful in the future but as far as the aic fixup
-> is concerned, both IPs are identical.
+> In any case, this diff should be merge with the other at91-sam9x60ek.dts
+> change instead of being with the dtsi change.
+
+The changes in this patch are related to enabling the RTT. The other dts
+change is related to enabling gpbr. The RTT uses that enabled gpbr -> one
+change per patch.
+
+If you still want to merge then, I'll do it, but then it becomes mixed.
+
 > 
->>  - reg: should encode the memory region of the RTT controller
->>  - interrupts: rtt alarm/event interrupt
->>  - clocks: should contain the 32 KHz slow clk that will drive the RTT block.
+>> +};
+>> +
+>>  &shutdown_controller {
+>>       atmel,shdwc-debouncer = <976>;
+>>       status = "okay";
+>> diff --git a/arch/arm/boot/dts/sam9x60.dtsi b/arch/arm/boot/dts/sam9x60.dtsi
+>> index 326b39328b58..e1d8e3a4cb0b 100644
+>> --- a/arch/arm/boot/dts/sam9x60.dtsi
+>> +++ b/arch/arm/boot/dts/sam9x60.dtsi
+>> @@ -661,6 +661,13 @@
+>>                               status = "disabled";
+>>                       };
+>>
+>> +                     rtt: rtt@fffffe20 {
+>> +                             compatible = "microchip,sam9x60-rtt";
+>> +                             reg = <0xfffffe20 0x20>;
+>> +                             interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
+>> +                             clocks = <&clk32k 0>;
+>> +                     };
+>> +
+>>                       pit: timer@fffffe40 {
+>>                               compatible = "atmel,at91sam9260-pit";
+>>                               reg = <0xfffffe40 0x10>;
 >> --
 >> 2.7.4
 >>
@@ -262,11 +239,6 @@ http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-6438-32-bit-ARM926-Embedde
 > Alexandre Belloni, Bootlin
 > Embedded Linux and Kernel engineering
 > https://bootlin.com
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 > 
 _______________________________________________
 linux-arm-kernel mailing list
