@@ -2,30 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B73511A662A
+	by mail.lfdr.de (Postfix) with ESMTPS id 24B911A6629
 	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 14:05:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XNodiOBrsQzISn3OORrXUT8EdhVOMH0yEgwS+VjLcO4=; b=IJ/
-	z5xGJcfxP8/PUVrl0w/yhXvBXjb5AwN9CCej0klco6boBaDm+6SIwG/XOX74HyiSgbZQf2oeWsS6o
-	VvjrL8jKGpBmp7csye6Rn+WjvdJBQgevFFP0/rwlMFf+kbRbyg0gAe4EDRyZHr4B/aLRfE/tKE99Q
-	DlMTnFoj1da+eYjCjrX5rSNwqLOrIBCbNGKM1PcuP8EDJKGXYNJDnNqNgNhXRoC0WhhhIJBbpHgIt
-	GOlyzGMW7N61lkzhMlOYtDHn1S2pxhuPpjSIBLOWY0h+g9oMJ0XyJCVPqK/Bch5ROR4sjdmHhsuFL
-	3lu6zvgdZ/FPEGS4ALAMQgC8qOpKTlg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eztfoEEf8UpvZvyN4HI8NgkqfRGdR6XEwSiOmtZgbFQ=; b=CxF7fjw+goLaTIc/dDMnwQb9Hr
+	iXWt9Yhfqs78WjBqhxDQKAvI4n3WnVaNoMUt7lGxt5edRfsJrBPeit1UDboJw94hq9QCqVHsYbqZF
+	mh49mzKaUWpioJsWqBaQsgjPfot0F8YAj00zzinQxwq1h6GpM7LPUpZjCHJr43/sg+pcUR3aoa1uN
+	LVeja/ldSOgJEu+z1EPjyVTl+HKs4soqmuHYyG8Xcb2DN8r8doAkPRK+OOUj72o9Q+3yn7U5J32+Q
+	QwPpUWkglPsoE2QxFjrhxfczUv8zMNzhYHvd91tBlxx+16GK9kLCvt0zsup9CwoPSLXbQHvUnsn55
+	I2xiYQHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNxq2-0000yX-3M; Mon, 13 Apr 2020 12:05:18 +0000
+	id 1jNxqC-0002SE-Nq; Mon, 13 Apr 2020 12:05:28 +0000
 Received: from m17617.mail.qiye.163.com ([59.111.176.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNxpm-0008M1-Uu
+ id 1jNxpm-0008M2-UD
  for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 12:05:05 +0000
 Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
- by m17617.mail.qiye.163.com (Hmail) with ESMTPA id 8A9CD26246F;
- Mon, 13 Apr 2020 20:04:53 +0800 (CST)
+ by m17617.mail.qiye.163.com (Hmail) with ESMTPA id 77C5926249B;
+ Mon, 13 Apr 2020 20:04:57 +0800 (CST)
 From: Wang Qing <wangqing@vivo.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Ingo Molnar <mingo@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
@@ -39,19 +40,21 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>, jinho lim <jordan.lim@samsung.com>,
  Wang Qing <wangqing@vivo.com>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 0/2] fixed dump_backtrace() when task running on another cpu
-Date: Mon, 13 Apr 2020 20:04:22 +0800
-Message-Id: <1586779466-4439-1-git-send-email-wangqing@vivo.com>
+Subject: [PATCH 1/2] [V2 1/2]sched:add task_running_oncpu
+Date: Mon, 13 Apr 2020 20:04:23 +0800
+Message-Id: <1586779466-4439-2-git-send-email-wangqing@vivo.com>
 X-Mailer: git-send-email 2.7.4
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZTlVMQk5LS0tLTE1JQkhCTllXWShZQU
+In-Reply-To: <1586779466-4439-1-git-send-email-wangqing@vivo.com>
+References: <1586779466-4439-1-git-send-email-wangqing@vivo.com>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSVVPTkhLS0tLTUNNTU9OTllXWShZQU
  hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MTo6SSo5KTgzKAsRT041Pz42
- OhQKFEtVSlVKTkNNTExCT0JIQk9KVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
- VUtVSEpVSklJWVdZCAFZQUlOSEo3Bg++
-X-HM-Tid: 0a71736d95e09375kuws8a9cd26246f
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MjY6FDo6Pjg6PAstCk4DPysy
+ Tk1PCz5VSlVKTkNNTExCT0JMQ05LVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
+ VUtVSEpVSklJWVdZCAFZQUhKSE43Bg++
+X-HM-Tid: 0a71736da5329375kuws77c5926249b
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_050503_193094_7CA16E58 
-X-CRM114-Status: UNSURE (   6.16  )
+X-CRM114-CacheID: sfid-20200413_050503_224263_43A780A6 
+X-CRM114-Status: UNSURE (   8.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -82,21 +85,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We cannot get FP and PC when the task is running on another CPU,
-task->thread.cpu_context is the last time the task was switched out,
-it's better to give a reminder than to provide wrong information.
-
 We have no interface whether the task is running,
 so we need to add an interface and distinguish CONFIG_SMP.
 
-Wang Qing (2):
-  [V2 1/2]sched:add task_running_oncpu
-  [V2 2/2]ARM64:fixed dump_backtrace() when task running on another cpu
+Signed-off-by: Wang Qing <wangqing@vivo.com>
+---
+ include/linux/sched.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
- arch/arm64/kernel/traps.c |  7 +++++++
- include/linux/sched.h     | 10 ++++++++++
- 2 files changed, 17 insertions(+)
-
+diff --git a/include/linux/sched.h b/include/linux/sched.h
+index 4418f5c..13cc8f5 100644
+--- a/include/linux/sched.h
++++ b/include/linux/sched.h
+@@ -1843,6 +1843,11 @@ static inline unsigned int task_cpu(const struct task_struct *p)
+ 
+ extern void set_task_cpu(struct task_struct *p, unsigned int cpu);
+ 
++static inline int task_running_oncpu(const struct task_struct *p)
++{
++	return p->on_cpu;
++}
++
+ #else
+ 
+ static inline unsigned int task_cpu(const struct task_struct *p)
+@@ -1854,6 +1859,11 @@ static inline void set_task_cpu(struct task_struct *p, unsigned int cpu)
+ {
+ }
+ 
++static inline int task_running_oncpu(const struct task_struct *p)
++{
++	return p == current;
++}
++
+ #endif /* CONFIG_SMP */
+ 
+ /*
 -- 
 2.7.4
 
