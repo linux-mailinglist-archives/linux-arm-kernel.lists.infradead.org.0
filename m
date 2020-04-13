@@ -2,85 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B5F41A6783
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 16:06:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A88751A6790
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 16:09:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=d5JBnBQ0YTX6COR6aPQNyGR/CzUa3BLRC2VoKhmUJzg=; b=i4i
-	8jRhZV36MPzHH921yLeix6MG1OGi9A1u06J4dTy66erk8tSJMUP0xQ9eFj8yn/SfjzaqaQzZcc5Fu
-	xKJJMRTxA1bJWmiDQex1HImU6eNrv/gnIFJ0+EhxcuC503gq+tqHA+AqkaAfjvi3w0tBw8AorNunk
-	+wASWqFobqRC5IC365v1jxrpm+P/OBZy64eIx0Zto1cUM2xcih2TUrHxQvVmMHcPKNRWMMZdIGD6u
-	3c6sOVXowJe6XvCaEFPEIy04jLrmExX4zkkItxv5Ox3lHKiQZjFWEJ6XI1cw4EyqZ8Dl+gt0GWb9L
-	8oECt5H2jfV1GkwdXuUk+YfQpq+P+/A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+ZKjZQjLGdtx4PtcKQ3MspSirC4V16VBhlYsYU3cRBw=; b=l+ojg0xwimZQ7s
+	Pck6agSviDIBRdgEWUS+w5n2aguixWYD9SKqTf/0yHSnAwbA9NQdD0ZCQ2MQ5c2h21Ov0vh9phGaj
+	foQwcdWvoCETgK2EIsHAUpZjwiTyU0qSEvVT8m05eijy2VeuIychWRDewf3LvRMNEpDQaSveUR+Pz
+	a5vHQoG5uyWbtYnMyy/yqYU/rLcqzEXoEywBNNAhV5sq9tQ2XNZOz20xSf6/yOof5mk3SrCZjbFYt
+	sk9kGLLJvU83ME8bATn/zAv56kGXjPwx1eKvpMU4/wq6Vd/bC6kLm3LHH2Ww2uVPCO8wJccy1u+3s
+	3vv3Am+RG4Wq/+vk3acA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNzj5-0000J3-Pw; Mon, 13 Apr 2020 14:06:15 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jNzmO-0000i1-Q7; Mon, 13 Apr 2020 14:09:40 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNziz-0000I2-2y
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 14:06:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586786766;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=tr36Ztz1zaNKdeDfrf7SQyxfeOTbsC/uHO5FgmoVJ30=;
- b=LSUK3x+Q2IEqcASc7bupgPnLYlO3Bg/nouLKy5jtIQIFFCGmyN6D7KjbOkIyxpVayFVAUh
- Mx5EI6T+C64HX7iyqpsnD2W3Aa+foPKUlZpSbVVlILupqLvoDN4F8qZ52IXcZVjfkzZ7AD
- gvWh4Mz/5/WKsB6DHd+pMXNiR/2JL0g=
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-73-uMGeuVTBOPOz_VE0cBUL5w-1; Mon, 13 Apr 2020 10:03:57 -0400
-X-MC-Unique: uMGeuVTBOPOz_VE0cBUL5w-1
-Received: by mail-wm1-f71.google.com with SMTP id f8so2697120wmh.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 07:03:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=DMxjnALOO+13jpd4EXyv1/+VreDyJBNjIrO01oQGGFU=;
- b=jVVkJYJPR7+qj+QhRGMdXI7Np+qZZmLBbyQ1t55B3991jGJoBlfffr7Vh7dVllQ55n
- 78hhIx4dILuEKxSvgUQjSmwbLK8mljVpdC6ux5gTIde01BDweaR16muQjbqum6CuJKFb
- VC6jbX4HWPasPre70yODlROCKyelAoVi+Zv8lSR1xsmnwtU56UGyCvxztjOBgyvNNlCh
- EQDic4LW/MW4dhMpmc5gWY59xf5TSiVJC9DUJ0i/F4C5lD9UlD09G4DfgvNraVoMlJMx
- /VBri7zluqNJjNH/cyZeHx7FUDsdwaohiVnNrm33NsWz4w0qJcRAYDhi4CusXrJFPhw/
- zZkQ==
-X-Gm-Message-State: AGi0PuZQRfnKiBH9A+amGhVOMGQMSYMRwbW9v9aLLvacfgozvz697K+F
- buf1gccI/nMvKCxj5/wQC1Og2LwO+/NpdH2srcnC2BH52w31l7GnH8jIEqDFtHYiwGuUjajQC3i
- 33gTZM7dBJ01mzc/w5w2XhDr+qj0qyveDebU=
-X-Received: by 2002:adf:fc4c:: with SMTP id e12mr18660363wrs.265.1586786635621; 
- Mon, 13 Apr 2020 07:03:55 -0700 (PDT)
-X-Google-Smtp-Source: APiQypLRZJuELUsSHD7peAwU3uRWTiihVpgUEtD1l8rr9Jo5lHrC+5Swh69bNDnIpYlTippwc8wt9Q==
-X-Received: by 2002:adf:fc4c:: with SMTP id e12mr18660255wrs.265.1586786634361; 
- Mon, 13 Apr 2020 07:03:54 -0700 (PDT)
-Received: from emanuele-MacBookPro.redhat.com ([194.230.155.239])
- by smtp.gmail.com with ESMTPSA id j10sm11726263wmi.18.2020.04.13.07.03.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 07:03:53 -0700 (PDT)
-From: Emanuele Giuseppe Esposito <eesposit@redhat.com>
-To: kvm@vger.kernel.org
-Subject: [PATCH] kvm_host: unify VM_STAT and VCPU_STAT definitions in a single
- place
-Date: Mon, 13 Apr 2020 16:03:32 +0200
-Message-Id: <20200413140332.22896-1-eesposit@redhat.com>
-X-Mailer: git-send-email 2.17.1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+ id 1jNzmF-0000hY-Ki
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 14:09:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1586786971; x=1618322971;
+ h=from:to:cc:subject:date:message-id:
+ content-transfer-encoding:mime-version;
+ bh=JnXSZ379qRkkfEv87vw5+JmNSNxkHGW1u7TU/vPKT00=;
+ b=SBiBkkBHBYuxXLQ1EgR19R7RnkQ8UNzSO7IVLmvcttjPlDvV+WnQ8cj3
+ BxriJBf6vt3S+UOLLrZcTMQFByFWdnJOcR8iNGCdV9Goo09m8x6nfusN6
+ egB2FfD5z6UwR8jepkK1ZH+xCs8m56/ExwaaEAwQJbmPV5eksR4KzL6z1
+ z1BL2tkJxHPfsmQYXD3McgwZrRLYvHDxE6XnPZBiq9IKS+TALfFwgVqJq
+ Y3s2ORv7l+0Qm9vCD7Gkv+ZuwqhfwvXbs9+u7wXHSeM0tNew5ae9gwy7X
+ AS6+knJ6MlDO2sEv8vy4nQu0v7AjYWgl2BKrLLUv84zH8Z10Ef7r5Kck3 g==;
+IronPort-SDR: 5UPko/UFTbXU/P3441GfgJHvwVtYh6A+hThTAB+n4VxGiDtZhHLY4CTMJpu3Oba5DyEg2VKFlZ
+ ckFhEtnZkA1HvB1gF8szyZ9t47OTqaKJg7N28pumiW4oP54Non58iPEH+mP6hJ029DHX79XQis
+ aXc7ER5iJ//gNVmg/0p+kaaZv8DU4/qJOtRcvg+6nt62vVgbOx+FYzYRVBBZvxhr1OHzsZtgrX
+ X8jbx1Xjfy7cO5TgLDBN6AqxqMLb2OFrrSVYRXtxVvkYMjOcsRUaBm6rJEmdVwXio1rodgNYzX
+ N9s=
+X-IronPort-AV: E=Sophos;i="5.72,378,1580799600"; d="scan'208";a="70150515"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Apr 2020 07:09:28 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 13 Apr 2020 07:09:27 -0700
+Received: from NAM11-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 13 Apr 2020 07:09:27 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TPd75aWcU3kOuxRnBP87QYfAxgzHxHDMnSnnmuvH09qz7fLt0KOEGroPAXRSy5mZPv9Imj0CzrfrnRHRvjpvLYwLvFBwoy5hTTBGzkhiUgcq3InZuQgcl1MCYAJdypS2nSdyr1arAlf9T6QDsJZmkit3xerJXUOu3yKzUnpDLXHqxH3PNSWTNAPxLnUDmyteHLvs53uDlAHQcSLNQY7HREiMLI5mN90/dl5XxWr8zFwfrEp3XY5eSloyFMwZ9yJ4QKXkdmMnCgybeUKEpTW+H9lYJc7ELx/sxd/6gAZx7g/ZnIUULcADv7QAt/HeSr9zkDNUCl6IdF+MMx5CrjZiVA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dtzS1hxVqt++OLXjX2IYHlYrx39ZzfFXS29eRWbmRa4=;
+ b=AIpQ70wyNYFXu4rsv/Wu0rPWuKXmmIaykKC1e70S0Bh1/KBcN5XpUK48xzipmyZEkds4GQmslWhCs1rwKRLAeWCoJJ6k2e0gC9eiDVKm8bWeLWNOV8pydmrtZmpcNhup0wfzhCC9Ii+UfAO+3pss9v0JlsgsUlsCliLk4lRacBFyW6os69XArOoMmMRMOOa9Yg7S5ocBpP9UFUa/utSYK73mLUMOWgPzZhz8NNTeitvaC9gc2TLSHMUxIPV9aCtuUGckGs0rFYTuySv/SbHkzwQp9VeO8WqXKUN4wdwpXJMApcpEQ5dvmVnjysdmgyCEW1qYc1Es+LY5TBWUO5XP+g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dtzS1hxVqt++OLXjX2IYHlYrx39ZzfFXS29eRWbmRa4=;
+ b=T2ZbURgCSWW/QLh+AVAqexQFiBvP+A211g5NzODlvkJ0+8qAUug9TVnl0KAxCETXZaCwkwwG1hrTCPG73m787NdEXfpcCvyK/7WDA8x4jIf2E5I9qijX8r/G2/4bX67jKCebIQd7+cPQWRWm15S8EozRRePU/wI9QhLB5sNd/+k=
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com (2603:10b6:a03:1c8::13)
+ by BY5PR11MB4500.namprd11.prod.outlook.com (2603:10b6:a03:1c3::24)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.26; Mon, 13 Apr
+ 2020 14:09:25 +0000
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536]) by BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536%7]) with mapi id 15.20.2900.028; Mon, 13 Apr 2020
+ 14:09:25 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <Nicolas.Ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <Ludovic.Desroches@microchip.com>
+Subject: [PATCH] ARM: dts: at91: sama5d27_wlsom1: Add alias for i2c0
+Thread-Topic: [PATCH] ARM: dts: at91: sama5d27_wlsom1: Add alias for i2c0
+Thread-Index: AQHWEZ0jFkAKqwF//E++5sIL47bPHA==
+Date: Mon, 13 Apr 2020 14:09:25 +0000
+Message-ID: <20200413140922.154886-1-tudor.ambarus@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Tudor.Ambarus@microchip.com; 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ef1cba8a-baf9-49f1-d389-08d7dfb445ed
+x-ms-traffictypediagnostic: BY5PR11MB4500:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BY5PR11MB450045F30E2CABA9FEBC4BFEF0DD0@BY5PR11MB4500.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 037291602B
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BY5PR11MB4419.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(366004)(136003)(396003)(39860400002)(376002)(346002)(8936002)(86362001)(478600001)(2616005)(8676002)(81156014)(6486002)(186003)(2906002)(71200400001)(26005)(6636002)(54906003)(64756008)(107886003)(6512007)(5660300002)(66446008)(66556008)(66476007)(91956017)(6506007)(1076003)(316002)(76116006)(4744005)(4326008)(36756003)(110136005)(66946007)(138113003);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: xQZq0w92Xv5qV0MFW+AKGkQoznlDa3kY6tf0r1FFz3nWREXKJxx2XyY/GRp4eKM87Wv8MHSeUVFRr1IgCT6b3SFxPgr56hVDxR0QVnVotVDtRbtwOeGtX4MYcBjqm80KNUTdJgxWrz91EBvZDeh2IB4Kfp1mfwie43w27AqidIaa65aMNx0nFC4xHSIEY+dco0YW2EHVwfop+2NxFxMKnvo+gdTKwX8bUmDclbZd95Eak9UvR8I+a7yoieZWAnFIbjAHFTomoRjbSn9dWR4G9mpU+tdPi9ZWxL3g58OlaZKNNyVSbfJJcNHZ8JyoJlJlHIsxjnaTfQmKUt5eYpsOZzCDKbMwHEE97dg1JOKFZPGpUOnxBoQh33EvwZ18reNRJeVhcFYy4Hk8+aftzOMi7gi6Vdj67MrPpaFOiBdlqW4HpJm5R1q8o2lge+ifIWIsOl0VnaTkYjDDwgHKFf78zYK6KP68anHrFb0mu1cblGY2qYXjq31PC9NvD9OKraoc
+x-ms-exchange-antispam-messagedata: Df7gYqBh9zPmjegLBTaO+dEii8cFYKLP3rVIwsqkRfvO8sQn8WiW7e3x3uVCJMzJAtP1Rs5CKJYJTf9QOZUfa6rNeyHBHnIPp4mKB/kyOL0sF9cVYDhj/RLwoST0mcSmNeyrXSau7Xc6WA9IyutUXA==
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: ef1cba8a-baf9-49f1-d389-08d7dfb445ed
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2020 14:09:25.4497 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hUSAweF2EcEN4eZNK5yojLumsSljo1z79u27LpJADe33Y6fmOnAV2H/UWnyXhi8GHSDkAuxakagyZBron9yogA8wlOzitCcN4dEn1K2O880=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4500
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_070609_210280_A7B2BD92 
-X-CRM114-Status: GOOD (  10.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200413_070931_730268_EB2132AE 
+X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,7 +140,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,225 +151,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, David Hildenbrand <david@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Emanuele Giuseppe Esposito <eesposit@redhat.com>, linux-s390@vger.kernel.org,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- James Morse <james.morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Tudor.Ambarus@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The macros VM_STAT and VCPU_STAT are redundantly implemented in multiple
-files, each used by a different architecure to initialize the debugfs
-entries for statistics. Since they all have the same purpose, they can be
-unified in a single common definition in include/linux/kvm_host.h
+From: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-Signed-off-by: Emanuele Giuseppe Esposito <eesposit@redhat.com>
+wlsom1 has an ATECC608A-TNGTLS Secure Element connected on the i2c0
+bus. Add alias for the i2c device to not rely on probe order for the
+i2c device numbering.
+
+Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 ---
- arch/arm64/kvm/guest.c    | 23 +++++++--------
- arch/mips/kvm/mips.c      | 61 +++++++++++++++++++--------------------
- arch/powerpc/kvm/book3s.c |  3 --
- arch/powerpc/kvm/booke.c  |  3 --
- arch/s390/kvm/kvm-s390.c  |  3 --
- arch/x86/kvm/x86.c        |  3 --
- include/linux/kvm_host.h  |  3 ++
- 7 files changed, 43 insertions(+), 56 deletions(-)
+ arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-index 23ebe51410f0..3e3aee8b37c0 100644
---- a/arch/arm64/kvm/guest.c
-+++ b/arch/arm64/kvm/guest.c
-@@ -29,20 +29,17 @@
+diff --git a/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi b/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
+index db3e2239eee8..bea3d60b9722 100644
+--- a/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
++++ b/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
+@@ -17,6 +17,10 @@
+ 	model = "Microchip SAMA5D27 WLSOM1";
+ 	compatible = "microchip,sama5d27-wlsom1", "atmel,sama5d27", "atmel,sama5d2", "atmel,sama5";
  
- #include "trace.h"
- 
--#define VM_STAT(x) { #x, offsetof(struct kvm, stat.x), KVM_STAT_VM }
--#define VCPU_STAT(x) { #x, offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU }
--
- struct kvm_stats_debugfs_item debugfs_entries[] = {
--	VCPU_STAT(halt_successful_poll),
--	VCPU_STAT(halt_attempted_poll),
--	VCPU_STAT(halt_poll_invalid),
--	VCPU_STAT(halt_wakeup),
--	VCPU_STAT(hvc_exit_stat),
--	VCPU_STAT(wfe_exit_stat),
--	VCPU_STAT(wfi_exit_stat),
--	VCPU_STAT(mmio_exit_user),
--	VCPU_STAT(mmio_exit_kernel),
--	VCPU_STAT(exits),
-+	{ "halt_successful_poll", VCPU_STAT(halt_successful_poll) },
-+	{ "halt_attempted_poll", VCPU_STAT(halt_attempted_poll) },
-+	{ "halt_poll_invalid", VCPU_STAT(halt_poll_invalid) },
-+	{ "halt_wakeup", VCPU_STAT(halt_wakeup) },
-+	{ "hvc_exit_stat", VCPU_STAT(hvc_exit_stat) },
-+	{ "wfe_exit_stat", VCPU_STAT(wfe_exit_stat) },
-+	{ "wfi_exit_stat", VCPU_STAT(wfi_exit_stat) },
-+	{ "mmio_exit_user", VCPU_STAT(mmio_exit_user) },
-+	{ "mmio_exit_kernel", VCPU_STAT(mmio_exit_kernel) },
-+	{ "exits", VCPU_STAT(exits) },
- 	{ NULL }
- };
- 
-diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
-index 8f05dd0a0f4e..f14b93d02f02 100644
---- a/arch/mips/kvm/mips.c
-+++ b/arch/mips/kvm/mips.c
-@@ -39,40 +39,39 @@
- #define VECTORSPACING 0x100	/* for EI/VI mode */
- #endif
- 
--#define VCPU_STAT(x) offsetof(struct kvm_vcpu, stat.x)
- struct kvm_stats_debugfs_item debugfs_entries[] = {
--	{ "wait",	  VCPU_STAT(wait_exits),	 KVM_STAT_VCPU },
--	{ "cache",	  VCPU_STAT(cache_exits),	 KVM_STAT_VCPU },
--	{ "signal",	  VCPU_STAT(signal_exits),	 KVM_STAT_VCPU },
--	{ "interrupt",	  VCPU_STAT(int_exits),		 KVM_STAT_VCPU },
--	{ "cop_unusable", VCPU_STAT(cop_unusable_exits), KVM_STAT_VCPU },
--	{ "tlbmod",	  VCPU_STAT(tlbmod_exits),	 KVM_STAT_VCPU },
--	{ "tlbmiss_ld",	  VCPU_STAT(tlbmiss_ld_exits),	 KVM_STAT_VCPU },
--	{ "tlbmiss_st",	  VCPU_STAT(tlbmiss_st_exits),	 KVM_STAT_VCPU },
--	{ "addrerr_st",	  VCPU_STAT(addrerr_st_exits),	 KVM_STAT_VCPU },
--	{ "addrerr_ld",	  VCPU_STAT(addrerr_ld_exits),	 KVM_STAT_VCPU },
--	{ "syscall",	  VCPU_STAT(syscall_exits),	 KVM_STAT_VCPU },
--	{ "resvd_inst",	  VCPU_STAT(resvd_inst_exits),	 KVM_STAT_VCPU },
--	{ "break_inst",	  VCPU_STAT(break_inst_exits),	 KVM_STAT_VCPU },
--	{ "trap_inst",	  VCPU_STAT(trap_inst_exits),	 KVM_STAT_VCPU },
--	{ "msa_fpe",	  VCPU_STAT(msa_fpe_exits),	 KVM_STAT_VCPU },
--	{ "fpe",	  VCPU_STAT(fpe_exits),		 KVM_STAT_VCPU },
--	{ "msa_disabled", VCPU_STAT(msa_disabled_exits), KVM_STAT_VCPU },
--	{ "flush_dcache", VCPU_STAT(flush_dcache_exits), KVM_STAT_VCPU },
-+	{ "wait",	  VCPU_STAT(wait_exits) },
-+	{ "cache",	  VCPU_STAT(cache_exits) },
-+	{ "signal",	  VCPU_STAT(signal_exits) },
-+	{ "interrupt",	  VCPU_STAT(int_exits) },
-+	{ "cop_unusable", VCPU_STAT(cop_unusable_exits) },
-+	{ "tlbmod",	  VCPU_STAT(tlbmod_exits) },
-+	{ "tlbmiss_ld",	  VCPU_STAT(tlbmiss_ld_exits) },
-+	{ "tlbmiss_st",	  VCPU_STAT(tlbmiss_st_exits) },
-+	{ "addrerr_st",	  VCPU_STAT(addrerr_st_exits) },
-+	{ "addrerr_ld",	  VCPU_STAT(addrerr_ld_exits) },
-+	{ "syscall",	  VCPU_STAT(syscall_exits) },
-+	{ "resvd_inst",	  VCPU_STAT(resvd_inst_exits) },
-+	{ "break_inst",	  VCPU_STAT(break_inst_exits) },
-+	{ "trap_inst",	  VCPU_STAT(trap_inst_exits) },
-+	{ "msa_fpe",	  VCPU_STAT(msa_fpe_exits) },
-+	{ "fpe",	  VCPU_STAT(fpe_exits) },
-+	{ "msa_disabled", VCPU_STAT(msa_disabled_exits) },
-+	{ "flush_dcache", VCPU_STAT(flush_dcache_exits) },
- #ifdef CONFIG_KVM_MIPS_VZ
--	{ "vz_gpsi",	  VCPU_STAT(vz_gpsi_exits),	 KVM_STAT_VCPU },
--	{ "vz_gsfc",	  VCPU_STAT(vz_gsfc_exits),	 KVM_STAT_VCPU },
--	{ "vz_hc",	  VCPU_STAT(vz_hc_exits),	 KVM_STAT_VCPU },
--	{ "vz_grr",	  VCPU_STAT(vz_grr_exits),	 KVM_STAT_VCPU },
--	{ "vz_gva",	  VCPU_STAT(vz_gva_exits),	 KVM_STAT_VCPU },
--	{ "vz_ghfc",	  VCPU_STAT(vz_ghfc_exits),	 KVM_STAT_VCPU },
--	{ "vz_gpa",	  VCPU_STAT(vz_gpa_exits),	 KVM_STAT_VCPU },
--	{ "vz_resvd",	  VCPU_STAT(vz_resvd_exits),	 KVM_STAT_VCPU },
-+	{ "vz_gpsi",	  VCPU_STAT(vz_gpsi_exits) },
-+	{ "vz_gsfc",	  VCPU_STAT(vz_gsfc_exits) },
-+	{ "vz_hc",	  VCPU_STAT(vz_hc_exits) },
-+	{ "vz_grr",	  VCPU_STAT(vz_grr_exits) },
-+	{ "vz_gva",	  VCPU_STAT(vz_gva_exits) },
-+	{ "vz_ghfc",	  VCPU_STAT(vz_ghfc_exits) },
-+	{ "vz_gpa",	  VCPU_STAT(vz_gpa_exits) },
-+	{ "vz_resvd",	  VCPU_STAT(vz_resvd_exits) },
- #endif
--	{ "halt_successful_poll", VCPU_STAT(halt_successful_poll), KVM_STAT_VCPU },
--	{ "halt_attempted_poll", VCPU_STAT(halt_attempted_poll), KVM_STAT_VCPU },
--	{ "halt_poll_invalid", VCPU_STAT(halt_poll_invalid), KVM_STAT_VCPU },
--	{ "halt_wakeup",  VCPU_STAT(halt_wakeup),	 KVM_STAT_VCPU },
-+	{ "halt_successful_poll", VCPU_STAT(halt_successful_poll) },
-+	{ "halt_attempted_poll", VCPU_STAT(halt_attempted_poll) },
-+	{ "halt_poll_invalid", VCPU_STAT(halt_poll_invalid) },
-+	{ "halt_wakeup",  VCPU_STAT(halt_wakeup) },
- 	{NULL}
- };
- 
-diff --git a/arch/powerpc/kvm/book3s.c b/arch/powerpc/kvm/book3s.c
-index 5690a1f9b976..55cb728ba06e 100644
---- a/arch/powerpc/kvm/book3s.c
-+++ b/arch/powerpc/kvm/book3s.c
-@@ -36,9 +36,6 @@
- #include "book3s.h"
- #include "trace.h"
- 
--#define VM_STAT(x, ...) offsetof(struct kvm, stat.x), KVM_STAT_VM, ## __VA_ARGS__
--#define VCPU_STAT(x, ...) offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU, ## __VA_ARGS__
--
- /* #define EXIT_DEBUG */
- 
- struct kvm_stats_debugfs_item debugfs_entries[] = {
-diff --git a/arch/powerpc/kvm/booke.c b/arch/powerpc/kvm/booke.c
-index 6c18ea88fd25..fb8fa7060804 100644
---- a/arch/powerpc/kvm/booke.c
-+++ b/arch/powerpc/kvm/booke.c
-@@ -35,9 +35,6 @@
- 
- unsigned long kvmppc_booke_handlers;
- 
--#define VM_STAT(x) offsetof(struct kvm, stat.x), KVM_STAT_VM
--#define VCPU_STAT(x) offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU
--
- struct kvm_stats_debugfs_item debugfs_entries[] = {
- 	{ "mmio",       VCPU_STAT(mmio_exits) },
- 	{ "sig",        VCPU_STAT(signal_exits) },
-diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
-index 19a81024fe16..1a7bf8759750 100644
---- a/arch/s390/kvm/kvm-s390.c
-+++ b/arch/s390/kvm/kvm-s390.c
-@@ -57,9 +57,6 @@
- #define VCPU_IRQS_MAX_BUF (sizeof(struct kvm_s390_irq) * \
- 			   (KVM_MAX_VCPUS + LOCAL_IRQS))
- 
--#define VCPU_STAT(x) offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU
--#define VM_STAT(x) offsetof(struct kvm, stat.x), KVM_STAT_VM
--
- struct kvm_stats_debugfs_item debugfs_entries[] = {
- 	{ "userspace_handled", VCPU_STAT(exit_userspace) },
- 	{ "exit_null", VCPU_STAT(exit_null) },
-diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-index b8124b562dea..fb035d304004 100644
---- a/arch/x86/kvm/x86.c
-+++ b/arch/x86/kvm/x86.c
-@@ -97,9 +97,6 @@ static u64 __read_mostly efer_reserved_bits = ~((u64)EFER_SCE);
- 
- static u64 __read_mostly cr4_reserved_bits = CR4_RESERVED_BITS;
- 
--#define VM_STAT(x, ...) offsetof(struct kvm, stat.x), KVM_STAT_VM, ## __VA_ARGS__
--#define VCPU_STAT(x, ...) offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU, ## __VA_ARGS__
--
- #define KVM_X2APIC_API_VALID_FLAGS (KVM_X2APIC_API_USE_32BIT_IDS | \
-                                     KVM_X2APIC_API_DISABLE_BROADCAST_QUIRK)
- 
-diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-index 6d58beb65454..e02d38c7fff1 100644
---- a/include/linux/kvm_host.h
-+++ b/include/linux/kvm_host.h
-@@ -1130,6 +1130,9 @@ struct kvm_stats_debugfs_item {
- #define KVM_DBGFS_GET_MODE(dbgfs_item)                                         \
- 	((dbgfs_item)->mode ? (dbgfs_item)->mode : 0644)
- 
-+#define VM_STAT(x, ...) offsetof(struct kvm, stat.x), KVM_STAT_VM, ## __VA_ARGS__
-+#define VCPU_STAT(x, ...) offsetof(struct kvm_vcpu, stat.x), KVM_STAT_VCPU, ## __VA_ARGS__
++	aliases {
++		i2c0 = &i2c0;
++	};
 +
- extern struct kvm_stats_debugfs_item debugfs_entries[];
- extern struct dentry *kvm_debugfs_dir;
- 
+ 	clocks {
+ 		slow_xtal {
+ 			clock-frequency = <32768>;
 -- 
-2.17.1
-
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
