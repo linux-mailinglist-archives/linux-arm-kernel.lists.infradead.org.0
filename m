@@ -2,84 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A223E1A668E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 14:56:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 734E51A66CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 15:13:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ae926JRTOiI6iyF4zufWJUtO5mG6GNZwpmhX7JRh4+E=; b=NLpjeAn7ovV+o2
-	TTikmgCNY8Rc64DBwL71MUVCmyCfq9OwZHd4rcW7vnDxRgFcYDk43OU14qr8qFxwAmQwZdDFXL4TB
-	7pVcnzN0aysFTGEatEgzwiYe3gDQzugBcwDr9U5f174FFARWiRmjA8hOfmmGARZA99O/eE6wwQB2n
-	BUhJKcScr1FjpJf8/+FCsOvIhf4iaQ7KhnGlNHYErfkTwBqTJ6wzRXGWqsjcTWeijwcghHWXv/vi7
-	yzq4rE7hwaxpM3ELprxciszu294N8m0Qn1Q1s1eEmPHaslsvYJuIBOlEzJsojFYS//jvtaBQCxn/x
-	5/xWp2zDiPBJAKo3xchQ==;
+	List-Owner; bh=lL94UbwRBp86a2ch3KOPpdv9vO8Fd70LkMok8Bn6Yz8=; b=NAGLrwEyuxMgnq
+	pt5YgBC9viZrwhjxf4bVHQ63c8eEXRhFyYAM2isyqXB+oRlQDwBcbDsbp6nUQPv0JQ9hgzYLoYlMY
+	Y1p2kJGg3qmXxlgZh3+MsXBJDZa1E951RY7347/OLUXLVjTjdyUvaX+hZqcfOryMrws0lcAIEX41l
+	zYOWAnJ3x8kWLnuUsjiLdnICbpFj99AE9b6/RNZ2ynXBewqp0xRXYNFRqzAygUE7UNWN8R8ZkBN8W
+	VOfBuGwC5Pi6C6Enbc+WAx+7d+Tahfe8LqcecAu7hQorWpIEdXBEG3O1YaW1D5C+ziMjH8vAHKtK7
+	Uh5W0GjMxbJwhVNXTLAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNycy-0008JW-Ed; Mon, 13 Apr 2020 12:55:52 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jNyuC-00008s-FK; Mon, 13 Apr 2020 13:13:40 +0000
+Received: from mail-eopbgr130052.outbound.protection.outlook.com
+ ([40.107.13.52] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNybu-0005GY-CP
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 12:54:48 +0000
-Received: by mail-pg1-x541.google.com with SMTP id g32so4407607pgb.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 05:54:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Qk4un8ULMdXpM0K9LjOM98cSXRzF1nvffzEAv4Kshq8=;
- b=Q9cq4BSXvpDJkF44OYvCY3c1oNlMk/HQ/nVFmgKXULYf5hnvynyl4LikGYswNKiEGx
- /yI4NA4BAwec+DJ3xhTEO0gofWhtNsGyf/hrZsBHWCpFKdDzKptE6HacW24fZC43hd2B
- lG9h6Woq//WusKGad+EiF+BpB0Hhlj0V2OYr6VuW4/mWs8SUEfQvSBaGxx2CwbivYy0P
- z4B2EE3rOjqIN6Kup7jkFz6VasY4jB7+ESfCMYXSdBdo0bXRccODX4ziXzXrF162FjkF
- /oxw3WE+k0Q+lf9GxyYv5KWuztzuUHdjSEQWPxQ2yEUHEB6xZtR9h6YclLmVop3r8z9S
- c/tw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Qk4un8ULMdXpM0K9LjOM98cSXRzF1nvffzEAv4Kshq8=;
- b=l7mIOAVjm1Dz+6yHQcsqeEppu0en//LGQo3r+yNYiFVeNJt3tRHCPfIHNPBSsLe0qR
- gFJa0+4U6zaZgng3I3JR3+SSF1EVMqamhx+U7gh6wF1bzrg8c6mDJ3VCo9SI4FrVNKoe
- q5rKBaGqHd+qt/2w3p9vcWP9sbWDpLIPpWEHCj0CVDWppEezU7f7pmgDceaJA8nvLKKA
- Ym9njJCF8uoNfoOeGhY6f8pZ68yC7y1oC53xd6ri57LiC3TDXwiRnrLjJOqnfffz9F17
- A8EMm/GY+pO4sB47qWqEXCTp+6lJsJ+BBjcQvf/JuD2//mNRSRFWyc/wZQEVxt9pLVcj
- bjtg==
-X-Gm-Message-State: AGi0PubLkAb0wG6toxMW5wN4rqqseLxqbpxlxwY++WV0uIW3JiW1LPfe
- 13IBm87J8bTs5nRGIlihIRBZpFV0
-X-Google-Smtp-Source: APiQypIDipqbTZlvQxQvYbcGI5NK+NXEeeCaaI1z/YyLpYU1GKzS0bbZemmOMw2bVFHR03T3+hzcDw==
-X-Received: by 2002:a62:7b84:: with SMTP id
- w126mr18057331pfc.202.1586782485609; 
- Mon, 13 Apr 2020 05:54:45 -0700 (PDT)
-Received: from bobo.ibm.com (60-241-117-97.tpgi.com.au. [60.241.117.97])
- by smtp.gmail.com with ESMTPSA id j24sm9235610pji.20.2020.04.13.05.54.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 05:54:45 -0700 (PDT)
-From: Nicholas Piggin <npiggin@gmail.com>
-To: linux-mm@kvack.org
-Subject: [PATCH v2 4/4] mm/vmalloc: Hugepage vmalloc mappings
-Date: Mon, 13 Apr 2020 22:53:03 +1000
-Message-Id: <20200413125303.423864-5-npiggin@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20200413125303.423864-1-npiggin@gmail.com>
-References: <20200413125303.423864-1-npiggin@gmail.com>
+ id 1jNyu6-00007s-BN
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 13:13:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A5ZNyWyYC3bVavvk0ht4exgWWU98Wqx7iZ27hREBJPsxnWtFTE74gcgGf2Z/cIwykLZ3O+fWbi8nNo48szyjTysuRXTYAvwSq5LLxw0dt0X4D/M/FTLmeJHzH2C14rbAe8zq1ZK7J+bDFW1LX6UXQrmtgcno92payNix5ngWZ1GPsSJS0S710NsjORw6cPYTwLyjQcbSeH0i+/UwmhglAJHqIWCiBtFJy3Pvybpva/8TMrsOw2QBCHkStfRNSQPe04CQpJQWeF4Wo8bhDEqMi6x9o16nAf0LtXICzT/UC79nd9E9uJecoLwf9ij857NM3C+HB5yJV8pIwIDF8DHTVg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GAYt4QuHIGNrVJA5lk48MVy08csP6tNMhtTpvsA//io=;
+ b=GnAIOiT/Mmv9DoTbrQH6adPHVlqucQK6aC9oLvAkm3i6OaWCwHQT6Sa9ObXewp6NK2+5YpnKKnbW4YQG4NOlzb7b0cG+5c3pW5G9SRcWhFYioxzA9u7bneiu8MfNmAWXAUkStejaxQ2OfIFHzvg1OhvYc7rGcWa2AGntg0BDJ8PAA2tC+8alEHOxck5azyFo8fE382OgSavG7S5HPK/XLoETmI8NHQ3pDHnM7U4Od+UblwSe5jAqnciLKZGuQM+7fjiDwpLQtVV7FX4M4CRoUdkbk1Px9kMlXvW9M9dvaorSN1DWVc5CKMOFtn2Qbe6TLe8ZO9wdaQxlFK9/L7CfXQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GAYt4QuHIGNrVJA5lk48MVy08csP6tNMhtTpvsA//io=;
+ b=lygYX7S7hvhJM2ZnkQsXLrEj3VYxSUDqIKI08wGLa3wHgjDX11n2hnvGYVeGnUoaJQ1JZj1gwoMKbbEUfp6JHzgSm+OJbC1uIy11NMgJO8U3kdZh89C1oVKwfPYNEveIadBz4uzudyAyjVUDegtrmEn4hkU5uW3uEsnN38L9hp0=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3835.eurprd04.prod.outlook.com (2603:10a6:8:3::30) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.26; Mon, 13 Apr
+ 2020 13:13:28 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2900.028; Mon, 13 Apr 2020
+ 13:13:28 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Marc Kleine-Budde <mkl@pengutronix.de>, "jassisinghbrar@gmail.com"
+ <jassisinghbrar@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] mailbox: imx: Support runtime PM
+Thread-Topic: [PATCH] mailbox: imx: Support runtime PM
+Thread-Index: AQHWEY+/xCVMpCFwWEOKIpvxyYiJiah3AcmAgAAEhbA=
+Date: Mon, 13 Apr 2020 13:13:28 +0000
+Message-ID: <DB3PR0402MB3916D05B44D776E5242434B1F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1586780730-6117-1-git-send-email-Anson.Huang@nxp.com>
+ <eb0eae78-35e9-1496-0869-94b48270f544@pengutronix.de>
+In-Reply-To: <eb0eae78-35e9-1496-0869-94b48270f544@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: da4fc591-4a88-443a-4457-08d7dfac74e6
+x-ms-traffictypediagnostic: DB3PR0402MB3835:|DB3PR0402MB3835:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3835EA9BA1A98A68EED34BD5F5DD0@DB3PR0402MB3835.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-forefront-prvs: 037291602B
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(136003)(39860400002)(366004)(396003)(376002)(346002)(81156014)(66946007)(76116006)(6506007)(55016002)(64756008)(316002)(2906002)(44832011)(52536014)(9686003)(8676002)(7696005)(66476007)(66556008)(71200400001)(478600001)(33656002)(86362001)(66446008)(4326008)(26005)(53546011)(5660300002)(15650500001)(110136005)(186003)(8936002);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 6L/M8ZYaBwjQI7aTzn+6y0Us3AX7TYqI1mIgi3YWuQ/zGlfTOvS5hduB5KcAq0x6lX8PAo2RBmr2HavYsZSeo9oMySNUJmSTRhMdZ1gCrtjAvXQ/oqIWlN2mN0m3aUH1X5gUwvjXhABfXiQo+IvvXQR0RxYwsCrJfWYBoAIkcNr5FH1fOaJ7L+ntsEthST+eX8EzB10PHcOTo9ShKARdMsDhG9/BiliiTmd9ZZ3DUChYQp/H1apZmfJN7G9ZTLBrXyKTJsMEa5Zp756Fk2NRUmM15MkdHnWEr22CLv1CNRxJbgVBonraIjTvx37Q4auW4I0+6IUPAazmv25C1AAXXniV28Jj+OGAaskihRWofks4wnowETLXIo31rz7LaKX+X9aZkMjerbpRc2gT+VB0RlIRku5nNaDv2OAkNlFQESOki0Rrd+YIt8xVpN+9qOQA
+x-ms-exchange-antispam-messagedata: zFmZrbqAoRq8BMqZ/K6SHCLSHMXjFdyKhGPwtXduLHeYQX5w+EP49o2rbIDAz2f+MOSE+Ta7cJQ58B4CpXQ4PiFfEjobcAoCcmHS6iq+YAyhaTD9FQKBKSSQpSvqCcHCUesBIHhSclC016MgSrOETw==
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: da4fc591-4a88-443a-4457-08d7dfac74e6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2020 13:13:28.3991 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: r0rtf/QQ5XbzxgJibuzqZZ2ihYqv2UgAIgY4XB+3p127ns/W2InmKduNbnz5jJoNK6/sTaIYs/nw/vDzl/BY6g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3835
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_055446_447577_BD5A5A2C 
-X-CRM114-Status: GOOD (  20.73  )
+X-CRM114-CacheID: sfid-20200413_061334_500855_B10C50A0 
+X-CRM114-Status: GOOD (  22.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [npiggin[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.13.52 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,365 +127,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- x86@kernel.org, linuxppc-dev@lists.ozlabs.org,
- Nicholas Piggin <npiggin@gmail.com>, linux-kernel@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For platforms that define HAVE_ARCH_HUGE_VMAP and support PMD vmap mappings,
-have vmalloc attempt to allocate PMD-sized pages first, before falling back
-to small pages. Allocations which use something other than PAGE_KERNEL
-protections are not permitted to use huge pages yet, not all callers expect
-this (e.g., module allocations vs strict module rwx).
+Hi, Marc
 
-This gives a 6x reduction in dTLB misses for a `git diff` (of linux), from
-45600 to 6500 and a 2.2% reduction in cycles on a 2-node POWER9.
+> Subject: Re: [PATCH] mailbox: imx: Support runtime PM
+> 
+> On 4/13/20 2:25 PM, Anson Huang wrote:
+> > Some power hungry sub-systems like VPU has its own MUs which also use
+> > mailbox driver, current mailbox driver uses platform driver model and
+> > MU's power will be ON after driver probed and left ON there, it may
+> > cause the whole sub-system can NOT enter lower power mode, take VPU
+> > driver for example, it has runtime PM support, but due to its MU
+> > always ON, the VPU sub-system will be always ON and consume many power
+> > during kernel idle.
+> >
+> > To save power in kernel idle, mailbox driver needs to support runtime
+> > PM in order to power off MU when it is unused. However, the runtime
+> > suspend/resume can ONLY be implemented in mailbox's .shutdown/.startup
+> > callback, so its consumer needs to call
+> > mbox_request_channel()/mbox_free_channel() in consumer driver's
+> > runtime PM callback, then the MU's power will be ON/OFF along with
+> > consumer's runtime PM status.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> >  drivers/mailbox/imx-mailbox.c | 27 ++++++++++++++++++++++++++-
+> >  1 file changed, 26 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/mailbox/imx-mailbox.c
+> > b/drivers/mailbox/imx-mailbox.c index 7906624..97bf0ac 100644
+> > --- a/drivers/mailbox/imx-mailbox.c
+> > +++ b/drivers/mailbox/imx-mailbox.c
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/mailbox_controller.h>  #include <linux/module.h>
+> > #include <linux/of_device.h>
+> > +#include <linux/pm_runtime.h>
+> >  #include <linux/slab.h>
+> >
+> >  #define IMX_MU_xSR_GIPn(x)	BIT(28 + (3 - (x)))
+> > @@ -287,6 +288,7 @@ static int imx_mu_startup(struct mbox_chan *chan)
+> >  	struct imx_mu_con_priv *cp = chan->con_priv;
+> >  	int ret;
+> >
+> > +	pm_runtime_get_sync(priv->dev);
+> >  	if (cp->type == IMX_MU_TYPE_TXDB) {
+> >  		/* Tx doorbell don't have ACK support */
+> >  		tasklet_init(&cp->txdb_tasklet, imx_mu_txdb_tasklet, @@ -323,6
+> > +325,7 @@ static void imx_mu_shutdown(struct mbox_chan *chan)
+> >
+> >  	if (cp->type == IMX_MU_TYPE_TXDB) {
+> >  		tasklet_kill(&cp->txdb_tasklet);
+> > +		pm_runtime_put_sync(priv->dev);
+> >  		return;
+> >  	}
+> >
+> > @@ -341,6 +344,7 @@ static void imx_mu_shutdown(struct mbox_chan
+> *chan)
+> >  	}
+> >
+> >  	free_irq(priv->irq, chan);
+> > +	pm_runtime_put_sync(priv->dev);
+> >  }
+> >
+> >  static const struct mbox_chan_ops imx_mu_ops = { @@ -508,7 +512,27
+> @@
+> > static int imx_mu_probe(struct platform_device *pdev)
+> >
+> >  	platform_set_drvdata(pdev, priv);
+> >
+> > -	return devm_mbox_controller_register(dev, &priv->mbox);
+> > +	ret = devm_mbox_controller_register(dev, &priv->mbox);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	pm_runtime_enable(dev);
+> > +
+> 
+> First registering at the system and then setting up the power management
+> looks racy. Don't know if this is serialized by some other means.
 
-This can result in more internal fragmentation and memory overhead for a
-given allocation. It can also cause greater NUMA unbalance on hashdist
-allocations.
+Don't have other means, just refer to
+drivers/mailbox/omap-mailbox.c, it has same sequence, NOT sure if there is
+special requirement about this sequence.
 
-There may be other callers that expect small pages under vmalloc but use
-PAGE_KERNEL, I'm not sure if it's feasible to catch them all. An
-alternative would be a new function or flag which enables large mappings,
-and use that in callers.
-
-Signed-off-by: Nicholas Piggin <npiggin@gmail.com>
----
- include/linux/vmalloc.h |   2 +
- mm/vmalloc.c            | 135 +++++++++++++++++++++++++++++-----------
- 2 files changed, 102 insertions(+), 35 deletions(-)
-
-diff --git a/include/linux/vmalloc.h b/include/linux/vmalloc.h
-index 291313a7e663..853b82eac192 100644
---- a/include/linux/vmalloc.h
-+++ b/include/linux/vmalloc.h
-@@ -24,6 +24,7 @@ struct notifier_block;		/* in notifier.h */
- #define VM_UNINITIALIZED	0x00000020	/* vm_struct is not fully initialized */
- #define VM_NO_GUARD		0x00000040      /* don't add guard page */
- #define VM_KASAN		0x00000080      /* has allocated kasan shadow memory */
-+#define VM_HUGE_PAGES		0x00000100	/* may use huge pages */
- 
- /*
-  * VM_KASAN is used slighly differently depending on CONFIG_KASAN_VMALLOC.
-@@ -58,6 +59,7 @@ struct vm_struct {
- 	unsigned long		size;
- 	unsigned long		flags;
- 	struct page		**pages;
-+	unsigned int		page_order;
- 	unsigned int		nr_pages;
- 	phys_addr_t		phys_addr;
- 	const void		*caller;
-diff --git a/mm/vmalloc.c b/mm/vmalloc.c
-index c898d16ddd25..7b7e992c5ff1 100644
---- a/mm/vmalloc.c
-+++ b/mm/vmalloc.c
-@@ -436,7 +436,7 @@ static int vmap_pages_p4d_range(pgd_t *pgd, unsigned long addr,
-  *
-  * Ie. pte at addr+N*PAGE_SIZE shall point to pfn corresponding to pages[N]
-  */
--static int vmap_pages_range_noflush(unsigned long start, unsigned long end,
-+static int vmap_small_pages_range_noflush(unsigned long start, unsigned long end,
- 				   pgprot_t prot, struct page **pages)
- {
- 	pgd_t *pgd;
-@@ -457,13 +457,44 @@ static int vmap_pages_range_noflush(unsigned long start, unsigned long end,
- 	return nr;
- }
- 
-+static int vmap_pages_range_noflush(unsigned long start, unsigned long end,
-+				    pgprot_t prot, struct page **pages,
-+				    unsigned int page_shift)
-+{
-+	if (page_shift == PAGE_SIZE) {
-+		return vmap_small_pages_range_noflush(start, end, prot, pages);
-+	} else {
-+		unsigned long addr = start;
-+		unsigned int i, nr = (end - start) >> page_shift;
-+
-+		for (i = 0; i < nr; i++) {
-+			int err;
-+
-+			err = vmap_range_noflush(addr,
-+					addr + (1UL << page_shift),
-+					__pa(page_address(pages[i])), prot,
-+					page_shift);
-+			if (err)
-+				return err;
-+
-+			addr += 1UL << page_shift;
-+		}
-+
-+		return 0;
-+	}
-+}
-+
- static int vmap_pages_range(unsigned long start, unsigned long end,
--			   pgprot_t prot, struct page **pages)
-+			    pgprot_t prot, struct page **pages,
-+			    unsigned int page_shift)
- {
- 	int ret;
- 
--	ret = vmap_pages_range_noflush(start, end, prot, pages);
-+	BUG_ON(page_shift < PAGE_SHIFT);
-+
-+	ret = vmap_pages_range_noflush(start, end, prot, pages, page_shift);
- 	flush_cache_vmap(start, end);
-+
- 	return ret;
- }
- 
-@@ -2064,7 +2095,7 @@ void *vm_map_ram(struct page **pages, unsigned int count, int node, pgprot_t pro
- 
- 	kasan_unpoison_vmalloc(mem, size);
- 
--	if (vmap_pages_range(addr, addr + size, prot, pages) < 0) {
-+	if (vmap_pages_range(addr, addr + size, prot, pages, PAGE_SHIFT) < 0) {
- 		vm_unmap_ram(mem, count);
- 		return NULL;
- 	}
-@@ -2230,7 +2261,7 @@ void __init vmalloc_init(void)
- int map_kernel_range_noflush(unsigned long addr, unsigned long size,
- 			     pgprot_t prot, struct page **pages)
- {
--	return vmap_pages_range_noflush(addr, addr + size, prot, pages);
-+	return vmap_pages_range_noflush(addr, addr + size, prot, pages, PAGE_SHIFT);
- }
- 
- /**
-@@ -2277,7 +2308,7 @@ int map_vm_area(struct vm_struct *area, pgprot_t prot, struct page **pages)
- 	unsigned long end = addr + get_vm_area_size(area);
- 	int err;
- 
--	err = vmap_pages_range(addr, end, prot, pages);
-+	err = vmap_pages_range(addr, end, prot, pages, PAGE_SHIFT);
- 
- 	return err > 0 ? 0 : err;
- }
-@@ -2325,9 +2356,11 @@ static struct vm_struct *__get_vm_area_node(unsigned long size,
- 	if (unlikely(!size))
- 		return NULL;
- 
--	if (flags & VM_IOREMAP)
--		align = 1ul << clamp_t(int, get_count_order_long(size),
--				       PAGE_SHIFT, IOREMAP_MAX_ORDER);
-+	if (flags & VM_IOREMAP) {
-+		align = max(align,
-+			    1ul << clamp_t(int, get_count_order_long(size),
-+					   PAGE_SHIFT, IOREMAP_MAX_ORDER));
-+	}
- 
- 	area = kzalloc_node(sizeof(*area), gfp_mask & GFP_RECLAIM_MASK, node);
- 	if (unlikely(!area))
-@@ -2534,7 +2567,7 @@ static void __vunmap(const void *addr, int deallocate_pages)
- 			struct page *page = area->pages[i];
- 
- 			BUG_ON(!page);
--			__free_pages(page, 0);
-+			__free_pages(page, area->page_order);
- 		}
- 		atomic_long_sub(area->nr_pages, &nr_vmalloc_pages);
- 
-@@ -2672,26 +2705,29 @@ void *vmap(struct page **pages, unsigned int count,
- EXPORT_SYMBOL(vmap);
- 
- static void *__vmalloc_node(unsigned long size, unsigned long align,
--			    gfp_t gfp_mask, pgprot_t prot,
--			    int node, const void *caller);
-+			gfp_t gfp_mask, pgprot_t prot, unsigned long vm_flags,
-+			int node, const void *caller);
- static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
--				 pgprot_t prot, int node)
-+				 pgprot_t prot, unsigned int page_shift,
-+				 int node)
- {
- 	struct page **pages;
-+	unsigned long addr = (unsigned long)area->addr;
-+	unsigned long size = get_vm_area_size(area);
-+	unsigned int page_order = page_shift - PAGE_SHIFT;
- 	unsigned int nr_pages, array_size, i;
- 	const gfp_t nested_gfp = (gfp_mask & GFP_RECLAIM_MASK) | __GFP_ZERO;
- 	const gfp_t alloc_mask = gfp_mask | __GFP_NOWARN;
- 	const gfp_t highmem_mask = (gfp_mask & (GFP_DMA | GFP_DMA32)) ?
--					0 :
--					__GFP_HIGHMEM;
-+					0 : __GFP_HIGHMEM;
- 
--	nr_pages = get_vm_area_size(area) >> PAGE_SHIFT;
-+	nr_pages = size >> page_shift;
- 	array_size = (nr_pages * sizeof(struct page *));
- 
- 	/* Please note that the recursion is strictly bounded. */
- 	if (array_size > PAGE_SIZE) {
- 		pages = __vmalloc_node(array_size, 1, nested_gfp|highmem_mask,
--				PAGE_KERNEL, node, area->caller);
-+				PAGE_KERNEL, 0, node, area->caller);
- 	} else {
- 		pages = kmalloc_node(array_size, nested_gfp, node);
- 	}
-@@ -2704,14 +2740,13 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
- 
- 	area->pages = pages;
- 	area->nr_pages = nr_pages;
-+	area->page_order = page_order;
- 
- 	for (i = 0; i < area->nr_pages; i++) {
- 		struct page *page;
- 
--		if (node == NUMA_NO_NODE)
--			page = alloc_page(alloc_mask|highmem_mask);
--		else
--			page = alloc_pages_node(node, alloc_mask|highmem_mask, 0);
-+		page = alloc_pages_node(node,
-+				alloc_mask|highmem_mask, page_order);
- 
- 		if (unlikely(!page)) {
- 			/* Successfully allocated i pages, free them in __vunmap() */
-@@ -2725,8 +2760,9 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
- 	}
- 	atomic_long_add(area->nr_pages, &nr_vmalloc_pages);
- 
--	if (map_vm_area(area, prot, pages))
-+	if (vmap_pages_range(addr, addr + size, prot, pages, page_shift) < 0)
- 		goto fail;
-+
- 	return area->addr;
- 
- fail:
-@@ -2760,22 +2796,39 @@ void *__vmalloc_node_range(unsigned long size, unsigned long align,
- 			pgprot_t prot, unsigned long vm_flags, int node,
- 			const void *caller)
- {
--	struct vm_struct *area;
-+	struct vm_struct *area = NULL;
- 	void *addr;
- 	unsigned long real_size = size;
-+	unsigned long real_align = align;
-+	unsigned int shift = PAGE_SHIFT;
- 
- 	size = PAGE_ALIGN(size);
- 	if (!size || (size >> PAGE_SHIFT) > totalram_pages())
- 		goto fail;
- 
--	area = __get_vm_area_node(real_size, align, VM_ALLOC | VM_UNINITIALIZED |
-+	if (IS_ENABLED(CONFIG_HAVE_ARCH_HUGE_VMAP) &&
-+			(vm_flags & VM_HUGE_PAGES)) {
-+		unsigned long size_per_node;
-+
-+		size_per_node = size;
-+		if (node == NUMA_NO_NODE)
-+			size_per_node /= num_online_nodes();
-+		if (size_per_node >= PMD_SIZE)
-+			shift = PMD_SHIFT;
-+	}
-+
-+again:
-+	align = max(real_align, 1UL << shift);
-+	size = ALIGN(real_size, align);
-+
-+	area = __get_vm_area_node(size, align, VM_ALLOC | VM_UNINITIALIZED |
- 				vm_flags, start, end, node, gfp_mask, caller);
- 	if (!area)
- 		goto fail;
- 
--	addr = __vmalloc_area_node(area, gfp_mask, prot, node);
-+	addr = __vmalloc_area_node(area, gfp_mask, prot, shift, node);
- 	if (!addr)
--		return NULL;
-+		goto fail;
- 
- 	/*
- 	 * In this function, newly allocated vm_struct has VM_UNINITIALIZED
-@@ -2789,8 +2842,16 @@ void *__vmalloc_node_range(unsigned long size, unsigned long align,
- 	return addr;
- 
- fail:
--	warn_alloc(gfp_mask, NULL,
-+	if (shift > PAGE_SHIFT) {
-+		shift = PAGE_SHIFT;
-+		goto again;
-+	}
-+
-+	if (!area) {
-+		/* Warn for area allocation, page allocations already warn */
-+		warn_alloc(gfp_mask, NULL,
- 			  "vmalloc: allocation failure: %lu bytes", real_size);
-+	}
- 	return NULL;
- }
- 
-@@ -2825,16 +2886,19 @@ EXPORT_SYMBOL_GPL(__vmalloc_node_range);
-  * Return: pointer to the allocated memory or %NULL on error
-  */
- static void *__vmalloc_node(unsigned long size, unsigned long align,
--			    gfp_t gfp_mask, pgprot_t prot,
--			    int node, const void *caller)
-+			gfp_t gfp_mask, pgprot_t prot, unsigned long vm_flags,
-+			int node, const void *caller)
- {
- 	return __vmalloc_node_range(size, align, VMALLOC_START, VMALLOC_END,
--				gfp_mask, prot, 0, node, caller);
-+				gfp_mask, prot, vm_flags, node, caller);
- }
- 
- void *__vmalloc(unsigned long size, gfp_t gfp_mask, pgprot_t prot)
- {
--	return __vmalloc_node(size, 1, gfp_mask, prot, NUMA_NO_NODE,
-+	unsigned long vm_flags = 0;
-+	if (pgprot_val(prot) == pgprot_val(PAGE_KERNEL))
-+		vm_flags |= VM_HUGE_PAGES;
-+	return __vmalloc_node(size, 1, gfp_mask, prot, vm_flags, NUMA_NO_NODE,
- 				__builtin_return_address(0));
- }
- EXPORT_SYMBOL(__vmalloc);
-@@ -2842,7 +2906,7 @@ EXPORT_SYMBOL(__vmalloc);
- static inline void *__vmalloc_node_flags(unsigned long size,
- 					int node, gfp_t flags)
- {
--	return __vmalloc_node(size, 1, flags, PAGE_KERNEL,
-+	return __vmalloc_node(size, 1, flags, PAGE_KERNEL, VM_HUGE_PAGES,
- 					node, __builtin_return_address(0));
- }
- 
-@@ -2850,7 +2914,8 @@ static inline void *__vmalloc_node_flags(unsigned long size,
- void *__vmalloc_node_flags_caller(unsigned long size, int node, gfp_t flags,
- 				  void *caller)
- {
--	return __vmalloc_node(size, 1, flags, PAGE_KERNEL, node, caller);
-+	return __vmalloc_node(size, 1, flags, PAGE_KERNEL, VM_HUGE_PAGES,
-+					node, caller);
- }
- 
- /**
-@@ -2925,7 +2990,7 @@ EXPORT_SYMBOL(vmalloc_user);
-  */
- void *vmalloc_node(unsigned long size, int node)
- {
--	return __vmalloc_node(size, 1, GFP_KERNEL, PAGE_KERNEL,
-+	return __vmalloc_node(size, 1, GFP_KERNEL, PAGE_KERNEL, VM_HUGE_PAGES,
- 					node, __builtin_return_address(0));
- }
- EXPORT_SYMBOL(vmalloc_node);
-@@ -3014,7 +3079,7 @@ void *vmalloc_exec(unsigned long size)
-  */
- void *vmalloc_32(unsigned long size)
- {
--	return __vmalloc_node(size, 1, GFP_VMALLOC32, PAGE_KERNEL,
-+	return __vmalloc_node(size, 1, GFP_VMALLOC32, PAGE_KERNEL, 0,
- 			      NUMA_NO_NODE, __builtin_return_address(0));
- }
- EXPORT_SYMBOL(vmalloc_32);
--- 
-2.23.0
-
-
+Thanks,
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
