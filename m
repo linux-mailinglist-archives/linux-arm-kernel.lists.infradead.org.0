@@ -2,112 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8013A1A6352
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 08:58:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86C281A6334
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 08:51:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qa0DvwmlGWKtLZnXh5uRWdzFQKma8HQuIl95KYbFS3o=; b=o9pXW6wXch0qEv
-	djyRhjGKabNCfcEBF34pmc1ilVwQAiFkFdxODbADwJZgTI02i5QzG+OYfitcZhwvH9bQkN5Y1Kdst
-	jJFBDXsf+N3x8nAASStRg00GXN4r9jjLlCzxYFfPOJ5Upv1m3WOfLotsykdacefQODpTT+qdpDg2q
-	yHlx084yHCmS9sLxoBd06EqUmcSL/mz+k/rCpt4thhq5uD92YtK69WsTLM6QyvFc9pJ+4MfTfapMu
-	4kPRGoomDxZT13BGnGXTu2oFhbSV8ajo9djR/tqzh3CojPgxiEWuBOm5gZTWVo+J5kzlQ4PEWqgis
-	W16iuEv4s8DmICeRil6Q==;
+	List-Owner; bh=kgq3h0i8feVLY1LnW7lgIz4m7waxvl1DUFKPE7dHZ9M=; b=ueif6+AJkq4gNJ
+	tpa3rmQ+HWjx4J2K0ULbDYSY8t5hsG4RPTj/e1GPBp2wSW3BJ9e+0eNxvyvVB92Hz6WmGWcvK/k2z
+	HbHkO/lr8OeVEIDxl7pQHPho+l25R4MSrF7yzmEv7hsZYMElqIUODj603QDDT3CWA6sbJMhFPy7Jz
+	I+uvYvyGkeu7fPwm+wokORW6M9n3Lu56BenMgLiewAKWlpEU7MgiY6qW/ECqulwvR40uaFBqg9Zr9
+	x9G0oRapOXbX2rCoCPLDCD96DqZ2u00EdSvHFlNs6vRnlzAYKzA2YpywqP78DawViOYkyaUHOr+4F
+	+rhntb05qNbEaBrL7KCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNt3M-0006zK-69; Mon, 13 Apr 2020 06:58:44 +0000
-Received: from mail-eopbgr40086.outbound.protection.outlook.com ([40.107.4.86]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1jNsw1-0002cQ-E9; Mon, 13 Apr 2020 06:51:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNt2F-0005zA-BJ
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 06:57:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hgnJw+rSwlHlCGDYrOQTfnAbdEDNa2akLDZzzwwO8N97E9FcSzq07E77ehHEdrOXqq/slXu+s4D9dPz/LUZV2QxPaa1fn8W/Su4ba8ErRP430fHW4WfOFcbZZwgj26gMduQy0B02IEXuB8PT1e3VVpk1r/0owE/qe0usAd3JtHUDDkQ2IxDzCS4AuvriY5megdgLV5mVuGfJ7ab617aMsNAU6d5QL6Z+fML2j5ejISQrpyMJcNoMp5JlLbb6VmYfyus1dLxA0RzjVfWuosElaSPEwIdcOypecCUnRNg/cgeOa/EpuHkpCPTNfhISnh0hXfUMLEBj+WEM2rHdCLQcdQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G5bNGB4Vj1ndOSm2R0ZXcZjkYN8QJ6Q5K/dcnYYyrK4=;
- b=ih89WqhdW+cHoO0VuDC4zgOV5A3qMIKOWWbupY4zUBk9JK1bceh7NXwe20utq/K+jDeddp6uHnFpn4cSiMIMc/+z2+pMpt8q34fN6XVIxw5dFt9ZGTnhMaP3lkqw7+wozmYZeYfXGoJfFE5zpu3AOfZztah79ocfa9bziobIw73/Jq7qA2KRmlfiLdHpPXrjqYcrmh4VlbEEGKu1hSjTZnpCw3oiHSwFQxeMkUaEjpzVmw0k1xda+J0E/eG9E08QRABRgLzTsCVOx09kN1C1ZWqCN7qy0DBYnIijvDiiaEzQfIQJcgFJ0oE87TlDAOYQb++58Zgde29gpMAZpKl42Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G5bNGB4Vj1ndOSm2R0ZXcZjkYN8QJ6Q5K/dcnYYyrK4=;
- b=qGb06RJymLFHu1u+ZThbRleLNA9P4J7wh7PqxhmN5mEjTD2rsaQaQY4KZmHi3EIiZOgSDWvUP/QZe611IU7nFfd/MCtD/1TN+EJOZKRPOYHNq7Xvq5qjSOoxRSj0XpRhlRJ9IgtFYv1+COm4fjEkgij5/sQAMM/3zmS5Jw/iK4I=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (2603:10a6:208:70::15)
- by AM0PR04MB4564.eurprd04.prod.outlook.com (2603:10a6:208:74::14)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15; Mon, 13 Apr
- 2020 06:57:34 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2900.026; Mon, 13 Apr 2020
- 06:57:34 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, sboyd@kernel.org,
- robh+dt@kernel.org
-Subject: [PATCH V2 4/4] ARM: imx: cpuidle-imx7ulp: Stop mode disallowed when
- HSRUN
-Date: Mon, 13 Apr 2020 14:49:08 +0800
-Message-Id: <1586760548-23046-5-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1586760548-23046-1-git-send-email-peng.fan@nxp.com>
-References: <1586760548-23046-1-git-send-email-peng.fan@nxp.com>
-X-ClientProxiedBy: SG2PR06CA0143.apcprd06.prod.outlook.com
- (2603:1096:1:1f::21) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
+ id 1jNsvs-0002bl-Kv
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 06:51:02 +0000
+Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com
+ [209.85.128.52])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 778F420776
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 Apr 2020 06:50:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586760659;
+ bh=itKlPWSDIUfhI/V0PdIrWdvWF2mjKklAzi7kXAkEZiI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=lW3fo4YIURoALAvNoGs50jvKKZweTovFobX14fD0uBwlVuO4RyTv0pyyCDG7MpSE5
+ dnwQO0jwz1kaTBAwdAL3oEbM/3LoOGVflmF3Otd1Du4AeCZasNdsRzrTFIsifP197H
+ FXYfFraBDh2np0cyUdjy2ZyLMzx3XOI1ZexOvtYk=
+Received: by mail-wm1-f52.google.com with SMTP id a81so8975659wmf.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 12 Apr 2020 23:50:59 -0700 (PDT)
+X-Gm-Message-State: AGi0Pubu8sFuC9j8KYpjMQxPP4u/pRPs81KjmWxWyGZ5fT/8nYtSWNF0
+ yhjVESDQ+KVEtWwc0Uh7VnxSvn2Ud7RtYrRMvU0=
+X-Google-Smtp-Source: APiQypKIXDrIWUMhun56k6+tJYD42DUVxbckoIRpXheJTy2siWfYFqEyrdTvndxnQqeH0hqwHeJDnfIGKI9HD42tuII=
+X-Received: by 2002:a05:600c:2214:: with SMTP id
+ z20mr18682592wml.189.1586760657834; 
+ Sun, 12 Apr 2020 23:50:57 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SG2PR06CA0143.apcprd06.prod.outlook.com (2603:1096:1:1f::21) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2900.15 via Frontend Transport; Mon, 13 Apr 2020 06:57:30 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 44ffc4fa-0533-4cc0-511d-08d7df77f154
-X-MS-TrafficTypeDiagnostic: AM0PR04MB4564:|AM0PR04MB4564:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB4564FBE802C76011877F154988DD0@AM0PR04MB4564.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:64;
-X-Forefront-PRVS: 037291602B
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(396003)(39860400002)(366004)(376002)(136003)(346002)(4326008)(86362001)(8936002)(478600001)(9686003)(316002)(16526019)(26005)(6512007)(6506007)(6666004)(52116002)(186003)(8676002)(81156014)(6486002)(69590400007)(66476007)(66556008)(2616005)(956004)(36756003)(5660300002)(66946007)(2906002);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: M8bQ6w+3ovmmvW2CpEYxoyC3f38saQDP+Ftaqn81zuuCFmROCAY27ZuR6PUloSzBaaMvj5wOf/WtTjVe9fRzhxpPpAfONxHIUFnOu0hTjp68D00cxmMYkXJ/N+zHKAXVAtAsymjH11FCNb3Qjxk2iL2MgshtrDwsD4nLKlN7+H/MP8W4Wd2njRobiSiW1S/6SuRY0iBN3M+UZnXiK+G84FryRGYgiRsTe18RYuunxtM75gpuNAQ1Cw0vYEaGJ8MVB66R4N7/BQDTSETeCwuBSPmch9jJIxX/jDo31MHN9jI1tYANSuLiH6gyeJrRu6/x9LH1jHfBa6TsRCCA+NiM+PAfRxDe1im/jO8033oxjh/eDfA6HVUv7WfxbWPZTUlV9tq2/nW6W1ZOPdwlSm3/5dxuSpVsmJCykd1Wc9d/3rmQsobH6LNQVnjJUgGfraypRAq1dCC+KZPeAzismQxZ3hrlMbe+MwKUNep+T9mHMbtCDGZsZFldeVkVeTIysqp+
-X-MS-Exchange-AntiSpam-MessageData: ocnVeYye+I3gXEAzkGIA3zEbNMBnSvgWz68vt/2ELxD5GUU8rixLJK4x73E3KwZMsdrty5NrOHV+7MAYpWe+xSl7zVjKY8vv2JPsTrVNOJW7rOrUu0AeicyottOHMmhij5omOVN7U/2kdsEs3rxBuw==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 44ffc4fa-0533-4cc0-511d-08d7df77f154
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Apr 2020 06:57:34.1670 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WI56JPmiNZuHbR7+kCFMSkqpW6X4eQtPhQ9qqCHbfAr80dbmSPhOGgtQj8huIHLeeAqg6+h0CRvwU34DIwZhnw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4564
+References: <20200412034931.9558-1-f.fainelli@gmail.com>
+ <20200412112756.687ff227@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <ae06b4c6-6818-c053-6f33-55c96f88a4ae@gmail.com>
+ <BN8PR12MB3266A47DE93CEAEBDB4F288AD3DD0@BN8PR12MB3266.namprd12.prod.outlook.com>
+In-Reply-To: <BN8PR12MB3266A47DE93CEAEBDB4F288AD3DD0@BN8PR12MB3266.namprd12.prod.outlook.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Mon, 13 Apr 2020 14:50:47 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65wjtphcN4DEM4mfv+=U5KUmsTujVoPb9L0idwy=ysDZw@mail.gmail.com>
+Message-ID: <CAGb2v65wjtphcN4DEM4mfv+=U5KUmsTujVoPb9L0idwy=ysDZw@mail.gmail.com>
+Subject: Re: [PATCH net] net: stmmac: Guard against txfifosz=0
+To: Jose Abreu <Jose.Abreu@synopsys.com>,
+ Florian Fainelli <f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_235735_401143_86AA7AB8 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200412_235100_728036_6DE3C928 
+X-CRM114-Status: GOOD (  25.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -116,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,93 +90,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, abel.vesa@nxp.com, Anson.Huang@nxp.com,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jakub Kicinski <kuba@kernel.org>,
+ "olteanv@gmail.com" <olteanv@gmail.com>,
+ "moderated list:ARM/STM32 ARCHITECTURE"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "moderated list:ARM/STM32 ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+On Mon, Apr 13, 2020 at 2:42 PM Jose Abreu <Jose.Abreu@synopsys.com> wrote:
+>
+> From: Florian Fainelli <f.fainelli@gmail.com>
+> Date: Apr/12/2020, 19:31:55 (UTC+00:00)
+>
+> >
+> >
+> > On 4/12/2020 11:27 AM, Jakub Kicinski wrote:
+> > > On Sat, 11 Apr 2020 20:49:31 -0700 Florian Fainelli wrote:
+> > >> After commit bfcb813203e619a8960a819bf533ad2a108d8105 ("net: dsa:
+> > >> configure the MTU for switch ports") my Lamobo R1 platform which uses
+> > >> an allwinner,sun7i-a20-gmac compatible Ethernet MAC started to fail
+> > >> by rejecting a MTU of 1536. The reason for that is that the DMA
+> > >> capabilities are not readable on this version of the IP, and there is
+> > >> also no 'tx-fifo-depth' property being provided in Device Tree. The
+> > >> property is documented as optional, and is not provided.
+> > >>
+> > >> The minimum MTU that the network device accepts is ETH_ZLEN - ETH_HLEN,
+> > >> so rejecting the new MTU based on the txfifosz value unchecked seems a
+> > >> bit too heavy handed here.
+> > >
+> > > OTOH is it safe to assume MTUs up to 16k are valid if device tree lacks
+> > > the optional property? Is this change purely to preserve backward
+> > > (bug-ward?) compatibility, even if it's not entirely correct to allow
+> > > high MTU values? (I think that'd be worth stating in the commit message
+> > > more explicitly.) Is there no "reasonable default" we could select for
+> > > txfifosz if property is missing?
+> >
+> > Those are good questions, and I do not know how to answer them as I am
+> > not familiar with the stmmac HW design, but I am hoping Jose can respond
+> > on this patch. It does sound like providing a default TX FIFO size would
+> > solve that MTU problem, too, but without a 'tx-fifo-depth' property
+> > specified in Device Tree, and with the "dma_cap" being empty for this
+> > chip, I have no idea what to set it to.
+>
+> Unfortunately, allwinner uses GMAC which does not have any mean to detect
+> TX FIFO Size. Default value in HW is 2k but this can not be the case in
+> these platforms if HW team decided to change it.
 
-When cpu runs in HSRUN mode, cpuidle is not allowed to run into
-Stop mode. So add imx7ulp_get_mode to get thr cpu run mode,
-and use WAIT mode instead, when cpu in HSRUN mode.
+I looked at all the publicly available datasheets and Allwinner uses
+4K TX FIFO and 16K RX FIFO in all SoCs. Not sure if this would help.
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
+ChenYu
 
-V2:
- None
-
- arch/arm/mach-imx/common.h          |  1 +
- arch/arm/mach-imx/cpuidle-imx7ulp.c | 14 +++++++++++---
- arch/arm/mach-imx/pm-imx7ulp.c      | 10 ++++++++++
- 3 files changed, 22 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
-index 5aa5796cff0e..db542da4fe67 100644
---- a/arch/arm/mach-imx/common.h
-+++ b/arch/arm/mach-imx/common.h
-@@ -104,6 +104,7 @@ void imx6_set_int_mem_clk_lpm(bool enable);
- void imx6sl_set_wait_clk(bool enter);
- int imx_mmdc_get_ddr_type(void);
- int imx7ulp_set_lpm(enum ulp_cpu_pwr_mode mode);
-+u32 imx7ulp_get_mode(void);
- 
- void imx_cpu_die(unsigned int cpu);
- int imx_cpu_kill(unsigned int cpu);
-diff --git a/arch/arm/mach-imx/cpuidle-imx7ulp.c b/arch/arm/mach-imx/cpuidle-imx7ulp.c
-index ca86c967d19e..e7009d10b331 100644
---- a/arch/arm/mach-imx/cpuidle-imx7ulp.c
-+++ b/arch/arm/mach-imx/cpuidle-imx7ulp.c
-@@ -15,10 +15,18 @@
- static int imx7ulp_enter_wait(struct cpuidle_device *dev,
- 			    struct cpuidle_driver *drv, int index)
- {
--	if (index == 1)
-+	u32 mode;
-+
-+	if (index == 1) {
- 		imx7ulp_set_lpm(ULP_PM_WAIT);
--	else
--		imx7ulp_set_lpm(ULP_PM_STOP);
-+	} else {
-+		mode = imx7ulp_get_mode();
-+
-+		if (mode == 3)
-+			imx7ulp_set_lpm(ULP_PM_WAIT);
-+		else
-+			imx7ulp_set_lpm(ULP_PM_STOP);
-+	}
- 
- 	cpu_do_idle();
- 
-diff --git a/arch/arm/mach-imx/pm-imx7ulp.c b/arch/arm/mach-imx/pm-imx7ulp.c
-index 393faf1e8382..1410ccfc71bd 100644
---- a/arch/arm/mach-imx/pm-imx7ulp.c
-+++ b/arch/arm/mach-imx/pm-imx7ulp.c
-@@ -63,6 +63,16 @@ int imx7ulp_set_lpm(enum ulp_cpu_pwr_mode mode)
- 	return 0;
- }
- 
-+u32 imx7ulp_get_mode(void)
-+{
-+	u32 mode;
-+
-+	mode = readl_relaxed(smc1_base + SMC_PMCTRL) & BM_PMCTRL_RUNM;
-+	mode >>= BP_PMCTRL_RUNM;
-+
-+	return mode;
-+}
-+
- void __init imx7ulp_pm_init(void)
- {
- 	struct device_node *np;
--- 
-2.16.4
-
+> Anyway, your patch looks sane to me. But if you start seeing TX Queue
+> Timeout for higher MTU values then you'll need to add tx-fifo-depth
+> property.
+>
+> ---
+> Thanks,
+> Jose Miguel Abreu
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
