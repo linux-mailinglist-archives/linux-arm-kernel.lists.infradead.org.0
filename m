@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 234481A6C72
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 21:26:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FA271A6C96
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 Apr 2020 21:37:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SBHaOAwwGP7EUaon3k8RLsEsDBcmpP+YlUtsk/gF+8g=; b=EpyvWvBBWzXpqs
-	lwWxoGcXUjP85Hs0i+8TieMOAT7NHleSQBr1ykhwuAlICS9+NeV746pc7zhNZgx0JRS6ThP7aBwqx
-	4/Jk2dHiXQtH7+GA9WU4W5UizfSJqpqW9/CpZ7EX88N7TF4X8C7XQ3rsVC6jxcFGHC0kZonuEKDPq
-	433xr/dIX+jYVgZDPlPQHazO2iaVZ47rga+k0EqBto28x7mCNCv3kdHNbZJ0rCSE/Xo1umcaPQNPO
-	tyi4reKbW8/7r8fIofhbo/LrcXHInDZfYh8PK+AO5uqGMk/eot2dkakmH+vTDLu2ShxFHt+R6FGLA
-	0EoNiDycRW794EHa+xOw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xhu05viEdltFgJla/QreOOPZyXjtwGhNGeh4Y+cm6Co=; b=DDu
+	ELnz7QdsHV+3BHCrBtqAHFAWv0bQ2lS6M2MVqzvui4hqdqidnVQ17l+RDfYNSJeBgU9FOu8RGRbKi
+	xvvn6HFrjI7tQI3p+H3cmYKLD76wLwgFAKWb2FpdzLtHN/zdS9ZAwswSI6OVT248qP4XKIoOtcyuE
+	UqTeZ61gXC12zlJW3QDiXZotXAbU5v2GNZl1Hgh4tM0Gbm0nDGCzVXXKyjve4Qz8Y0DWs/fHiAWHu
+	IUXdlW1xCA/pWK1sRf9H3bEYQ0b0Ww87muj6sJHX42g7EPvdbpMrX7rHSsb5yuKT9PjPSDEBbs0XS
+	u+LxPyz4s/phQwYjTwQmGsCalf9Mozg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO4j8-0004lk-I3; Mon, 13 Apr 2020 19:26:38 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jO4tL-000389-Lq; Mon, 13 Apr 2020 19:37:11 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO4iz-0004kd-Du
- for linux-arm-kernel@lists.infradead.org; Mon, 13 Apr 2020 19:26:30 +0000
-Received: by mail-pf1-x444.google.com with SMTP id l1so4950196pff.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 12:26:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KdK0zPwtveoXwIU/pJ0It4FhLQkN9xabxjzAbXM7HUg=;
- b=pCeStENdG/6hj1L+u+cxwBd+lxmKze8JFGF8eG5T6Rojz3ubtHvutlqKjh1KPf6A1O
- aVJALpWYIoX41Wh69ZxBMS5ZrlWERrkzwlEgCrDO/r+22JmIYx76G5gf1ZTL97p90L07
- RaKonfqiZWxrjLkWbK3up26Zr9TpJVztjD7fmUypSnBONt4CK8hKMTgKAlUz4vTqWPR9
- m1vmfM8NjyP7tp1Wr6BPswfx8rXp27YDEOmnMAHKaw2g6gy0HL1RmN/M2oftUt8BZq+N
- xfxfpd+p8cC/w61Ukhm/QDEtNS9d35nxOgPWvBQrgI3bs8FgJwfqoHaCQNESYpmQj60s
- LIBA==
+ id 1jO4tE-00037g-Fl; Mon, 13 Apr 2020 19:37:05 +0000
+Received: by mail-wr1-x442.google.com with SMTP id h9so11411667wrc.8;
+ Mon, 13 Apr 2020 12:37:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=IL8UM2G8ckEvz5Q1HLyYzF8mVCI5/VI6cQ0z6c472EQ=;
+ b=XV7U7X1uveyRb9PqFljNV4aJTxa3bkX51B52APKWQ966g3JSC5gvNoJEzwMITXvu4w
+ 8WpFgNgK3PYryJPfcnHdA2tdc5pEiqnZwrjX/EFiy1skmg9LqAER1U7Fvc9ozcKXNnd+
+ X74GyxoMg6w5PmxaQbeq0BkHivsnaSSItAbCEC7nMfw/h48FJ6xZJJzjndZqHyfpiVuf
+ hjwj8hRiy6jk7Oo2QTQeDKtIKyWR/3OkYUQrdlTWqBDVYgU3w1UJJEKzLoqug9CsS2kV
+ vD1DLdh1amsg09ityJ4RQFMUYoNN620mliVCKOf4GCjk1bCieTf0vo2d6hjZHvUC0Z4W
+ udcQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KdK0zPwtveoXwIU/pJ0It4FhLQkN9xabxjzAbXM7HUg=;
- b=pe3hQr5xfrBsZ62kWyI/82/ynT8u9ezA4VCVrm+KYHUJoh8L5mtrWjm7Jk34Vcd1eP
- NRinFTvbi6yVhKkRIM5rLJw7MAGDSaMeFQetFIpR66kbhrFzre0l53rdxZpoMRcXiYQj
- UiXtc4RO1ldgfAZSNYNFX9vHsyg/ZbPBm8hZap50m8tgC5svCe/A3i3CHN9Qbao7J81b
- /4m4hV1sRO571/gx/KgtDAqsRH2HRCWh5OqvHZa6R9bpQGFmczt4FS+raayXWuMLshE8
- sfrA/L9hqkMz9lARBKGwLWGVlBQ84WUx5GF4ttZlT55G0Ysnp/EC7XiSr7LdlMZ9Lks/
- fnlQ==
-X-Gm-Message-State: AGi0PuZsxt4e28+RR0ipVsxceE/ab3K4O2ODNNTfo+hsP7ct9yjdFVvA
- LUwbP60WVkcvKKrYM5AU+8RAzDZY9mT/9WlYHhrYoA==
-X-Google-Smtp-Source: APiQypIUhqWcYiDcyMcc+YPUUWgJ1hH3x1WwMExIHnVSN2oF/LeLDnug09prydJRjw+z6TLAVtOg78Y4PPWpvE+OoMg=
-X-Received: by 2002:a63:6546:: with SMTP id z67mr6229011pgb.10.1586805988175; 
- Mon, 13 Apr 2020 12:26:28 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200409232728.231527-1-caij2003@gmail.com>
- <20200410165948.GD448831@lunn.ch>
- <20200410183420.GE25745@shell.armlinux.org.uk>
-In-Reply-To: <20200410183420.GE25745@shell.armlinux.org.uk>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 13 Apr 2020 12:26:16 -0700
-Message-ID: <CAKwvOd=SusRJxzKqq=tBGgjq0tdcgeA1ukK79PyMjadWB8w=Qw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=IL8UM2G8ckEvz5Q1HLyYzF8mVCI5/VI6cQ0z6c472EQ=;
+ b=SQIRue6zXHXIVYa108agoqaA4yN+VIJmqQz9E8zx8j4N/ETvjnrjqf3s6ytORiMqWp
+ 9v14d6j0RXBvH0IFVB0r4sW7XdFGa0680UT6K7Lqw5E1o3IDsHoN+wKqqoJRu4se19mU
+ lBksdOmBfevzWm8V9u+qT+0+Ji1qtiCxY/vmxRmKBugZ0xY6bai4RKYKYc4wXxw8SfL+
+ OGQ0vgMnApabS5pkmune4pwnPwBWH+J2UkVRLgb6X/J0nRE8iKN/zAJf9KPaakEEySwc
+ iYVhgrrvJ45taMZXkmGJ6cj1WtzgDskdDYG90ky8+tQ6ZRLEIbYqTl4SJIKqgTptHkjr
+ Of/g==
+X-Gm-Message-State: AGi0PubnuELE4+OwCesibEfL+/pjcXOBu5BOiZOIYJPG9HB/aVFaAV0c
+ IzhdMm1lU+KARSbAq6pNsbw=
+X-Google-Smtp-Source: APiQypL9aZQMlpGKhdYWyFuCrzaNq51hpaS4p3qbtjobH7zo8hHacrhQXSiGqmJXkX1J+79WQN70IQ==
+X-Received: by 2002:adf:f8d2:: with SMTP id f18mr20903930wrq.139.1586806621899; 
+ Mon, 13 Apr 2020 12:37:01 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id b4sm11121659wrv.42.2020.04.13.12.37.00
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 13 Apr 2020 12:37:01 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: remove bus-width from mmc nodes in
+ rk3308.dtsi
+Date: Mon, 13 Apr 2020 21:36:52 +0200
+Message-Id: <20200413193652.1952-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_122629_491319_E672BD48 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200413_123704_548222_CD20D889 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -85,8 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,83 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Linus Walleij <linus.walleij@linaro.org>,
- Peter Smith <Peter.Smith@arm.com>, Stefan Agner <stefan@agner.ch>,
- David Howells <dhowells@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Manoj Gupta <manojgupta@google.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
- Jian Cai <caij2003@gmail.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
- Jian Cai <jiancai@google.com>, Doug Anderson <armlinux@m.disordat.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, Patrick Bellasi <patrick.bellasi@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 11:34 AM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Fri, Apr 10, 2020 at 06:59:48PM +0200, Andrew Lunn wrote:
-> > On Thu, Apr 09, 2020 at 04:27:26PM -0700, Jian Cai wrote:
-> > > iwmmxt.S contains XScale instructions
-> >
-> > Dumb question....
-> >
-> > Are these Xscale instructions? My understanding is that they are an
-> > instruction set of their own, implementing something similar to IA-32
-> > MMX.
-> >
-> > Would it be more accurate to say CLANG does not support the iwmmxt
-> > instruction set?
->
-> Yes, because the XScale core on its own (otherwise known as 80200)
-> doesn't support iWMMXT.
->
-> It's worth pointing out that the iWMMXT instruction set uses the
-> co-processor #1 instruction space as defined by the ARMv5 ARM ARM,
-> which is also the FPA (floating point accelerator) instruction
-> space - which is the FP instruction set prior to VFP.
+The 'bus-width' property for mmc nodes is defined both in
+'rk3308.dtsi' and 'rk3308-roc-cc.dts'.
+In line with the other Rockchip SoCs define that in a user dts only,
+so remove all entries from mmc nodes in 'rk3308.dtsi'.
 
-Reusing instruction encoding space? :-X  I'll have to look and see how
-we define cases like this in LLVM.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 3 ---
+ 1 file changed, 3 deletions(-)
 
->
-> The LDFP and similar instructions that binutils decodes the opcodes
-> as are FPA instructions, and the LDC2 instructions are their "generic
-> co-processor" versions where there's no FPA instruction that matches
-> the op-code.
->
-> I'll also point out that the reason the iWMMXT code has never been
-> ported to Thumb2 is because there are no equivalents for the
-> co-processor instructions in the Thumb2 instruction set defined in
-> ARMv5.  Hence why the file has a .arm.  So, the fact the file hasn't
-> changed for a long time and hasn't been updated with "improvements"
-> such as Thumb2 kernels is because that's completely irrelevent to
-> the ISA.
->
-> It is an example of code that has become stable and mature, and
-> requires no maintanence with GNU toolchains.
-
-I agree.  I think this is something we can mark broken for our
-toolchain in Kconfig for the time being, and revisit once we have more
-resources to implement (leaving the sources as is).
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index a9b98555d..130771ede 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -587,7 +587,6 @@
+ 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x0 0xff480000 0x0 0x4000>;
+ 		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
+-		bus-width = <4>;
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+ 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+@@ -602,7 +601,6 @@
+ 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x0 0xff490000 0x0 0x4000>;
+ 		interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
+-		bus-width = <8>;
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+ 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+@@ -615,7 +613,6 @@
+ 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x0 0xff4a0000 0x0 0x4000>;
+ 		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+-		bus-width = <4>;
+ 		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+ 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
 -- 
-Thanks,
-~Nick Desaulniers
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
