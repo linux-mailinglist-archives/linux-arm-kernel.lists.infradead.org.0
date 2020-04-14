@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE27B1A7D08
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:21:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C62181A7D45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:22:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W8x0MBI+qi6byXrbX4SmoehekksuOdEGKX5OcYbJpKo=; b=l7N5Y2q8hB32u3
-	1IWi+CgqjBqKZjvYwhPBG72Fb8I2ILRiImJeANp2dmaeIa/XGi1bSPj8v40p9GJ/es3oKydvlFeyZ
-	nkKO5s67+9b9KsJWIkgetci1geQ2ZELY9JqrZ1mb5E0AF3rINBn+KKbOEFct6vE1uQ/unNtoU37e9
-	ch2fZLRs1frtk3AbOVFvKCH00WcMdGsNWNYkHLVnfhCgGd/I4wt0lLvghz4wnwy9hE/7JyD2fmGjn
-	eheW5dJZq6AvcTYc65vWBcobLIybZJfsbYYZ56gJA+B93gD+oar1W0RXJInCgFnZUyjMZFHh7t5Kr
-	lQ/CnLsrOUtfzhYY2c5g==;
+	List-Owner; bh=4F6tDV5dSdNcyO1vWeUhoVkuy095NggpqxZpZGoNyb4=; b=GFsqhWuHwRge9U
+	+2GdOM/t8x0qvESZdYj2YwjtEIVb3Pbk2t37Q9zLnUj2JSFaes3qhTSlWx2ITqWMCOzIlsNckozGd
+	hFzcmdgWqI5VV1g7HYekrtqsY4IAQ/vLilNZqa714qSiDs7W325W+n0wQqP1wB0WHtyTS/d0mE54+
+	2a+E5kSc/6WcjSoPjYj8MPBNW+da1nbTBsIkA+yRqpiqtjLvp36Defa7hwr2r1UsjylxmXzRssSBI
+	SVTO2sS0MtrQBErU+HPQ82Dn3UJkc1SzzmTVsdmy+fl7tpeoKbKXuQZanf0WeT2Jn7HyVOUnILjtC
+	g8VPein57+3ZzNfY/mow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLV3-0001Rv-VX; Tue, 14 Apr 2020 13:21:13 +0000
+	id 1jOLVt-0002Do-G3; Tue, 14 Apr 2020 13:22:05 +0000
 Received: from [2001:4bb8:180:384b:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLP9-0007sF-W9; Tue, 14 Apr 2020 13:15:08 +0000
+ id 1jOLPD-0008Me-8R; Tue, 14 Apr 2020 13:15:11 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>,
  "K. Y. Srinivasan" <kys@microsoft.com>,
@@ -32,9 +32,9 @@ To: Andrew Morton <akpm@linux-foundation.org>,
  Sumit Semwal <sumit.semwal@linaro.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Minchan Kim <minchan@kernel.org>, Nitin Gupta <ngupta@vflare.org>
-Subject: [PATCH 22/29] mm: remove the prot argument to __vmalloc_node
-Date: Tue, 14 Apr 2020 15:13:41 +0200
-Message-Id: <20200414131348.444715-23-hch@lst.de>
+Subject: [PATCH 23/29] mm: remove both instances of __vmalloc_node_flags
+Date: Tue, 14 Apr 2020 15:13:42 +0200
+Message-Id: <20200414131348.444715-24-hch@lst.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200414131348.444715-1-hch@lst.de>
 References: <20200414131348.444715-1-hch@lst.de>
@@ -62,123 +62,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is always PAGE_KERNEL now.
+The real version just had a few callers that can open code it and
+remove one layer of indirection.  The nommu stub was public but only
+had a single caller, so remove it and avoid a CONFIG_MMU ifdef in
+vmalloc.h.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 ---
- mm/vmalloc.c | 35 ++++++++++++++---------------------
- 1 file changed, 14 insertions(+), 21 deletions(-)
+ include/linux/vmalloc.h |  9 ---------
+ mm/nommu.c              |  3 ++-
+ mm/vmalloc.c            | 20 ++++++--------------
+ 3 files changed, 8 insertions(+), 24 deletions(-)
 
-diff --git a/mm/vmalloc.c b/mm/vmalloc.c
-index 466a449b3a15..de7952959e82 100644
---- a/mm/vmalloc.c
-+++ b/mm/vmalloc.c
-@@ -2401,8 +2401,7 @@ void *vmap(struct page **pages, unsigned int count,
- EXPORT_SYMBOL(vmap);
+diff --git a/include/linux/vmalloc.h b/include/linux/vmalloc.h
+index c1b9d6eca05f..4a46d296e70d 100644
+--- a/include/linux/vmalloc.h
++++ b/include/linux/vmalloc.h
+@@ -115,17 +115,8 @@ extern void *__vmalloc_node_range(unsigned long size, unsigned long align,
+ 			unsigned long start, unsigned long end, gfp_t gfp_mask,
+ 			pgprot_t prot, unsigned long vm_flags, int node,
+ 			const void *caller);
+-#ifndef CONFIG_MMU
+-extern void *__vmalloc_node_flags(unsigned long size, int node, gfp_t flags);
+-static inline void *__vmalloc_node_flags_caller(unsigned long size, int node,
+-						gfp_t flags, void *caller)
+-{
+-	return __vmalloc_node_flags(size, node, flags);
+-}
+-#else
+ extern void *__vmalloc_node_flags_caller(unsigned long size,
+ 					 int node, gfp_t flags, void *caller);
+-#endif
  
- static void *__vmalloc_node(unsigned long size, unsigned long align,
--			    gfp_t gfp_mask, pgprot_t prot,
--			    int node, const void *caller);
-+			    gfp_t gfp_mask, int node, const void *caller);
- static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
- 				 pgprot_t prot, int node)
- {
-@@ -2420,7 +2419,7 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
- 	/* Please note that the recursion is strictly bounded. */
- 	if (array_size > PAGE_SIZE) {
- 		pages = __vmalloc_node(array_size, 1, nested_gfp|highmem_mask,
--				PAGE_KERNEL, node, area->caller);
-+				node, area->caller);
- 	} else {
- 		pages = kmalloc_node(array_size, nested_gfp, node);
- 	}
-@@ -2539,13 +2538,11 @@ EXPORT_SYMBOL_GPL(__vmalloc_node_range);
-  * @size:	    allocation size
-  * @align:	    desired alignment
-  * @gfp_mask:	    flags for the page level allocator
-- * @prot:	    protection mask for the allocated pages
-  * @node:	    node to use for allocation or NUMA_NO_NODE
-  * @caller:	    caller's return address
-  *
-- * Allocate enough pages to cover @size from the page level
-- * allocator with @gfp_mask flags.  Map them into contiguous
-- * kernel virtual space, using a pagetable protection of @prot.
-+ * Allocate enough pages to cover @size from the page level allocator with
-+ * @gfp_mask flags.  Map them into contiguous kernel virtual space.
-  *
-  * Reclaim modifiers in @gfp_mask - __GFP_NORETRY, __GFP_RETRY_MAYFAIL
-  * and __GFP_NOFAIL are not supported
-@@ -2556,16 +2553,15 @@ EXPORT_SYMBOL_GPL(__vmalloc_node_range);
-  * Return: pointer to the allocated memory or %NULL on error
-  */
- static void *__vmalloc_node(unsigned long size, unsigned long align,
--			    gfp_t gfp_mask, pgprot_t prot,
--			    int node, const void *caller)
-+			    gfp_t gfp_mask, int node, const void *caller)
- {
- 	return __vmalloc_node_range(size, align, VMALLOC_START, VMALLOC_END,
--				gfp_mask, prot, 0, node, caller);
-+				gfp_mask, PAGE_KERNEL, 0, node, caller);
- }
- 
- void *__vmalloc(unsigned long size, gfp_t gfp_mask)
- {
--	return __vmalloc_node(size, 1, gfp_mask, PAGE_KERNEL, NUMA_NO_NODE,
-+	return __vmalloc_node(size, 1, gfp_mask, NUMA_NO_NODE,
- 				__builtin_return_address(0));
+ extern void vfree(const void *addr);
+ extern void vfree_atomic(const void *addr);
+diff --git a/mm/nommu.c b/mm/nommu.c
+index 2df549adb22b..9553efa59787 100644
+--- a/mm/nommu.c
++++ b/mm/nommu.c
+@@ -150,7 +150,8 @@ void *__vmalloc(unsigned long size, gfp_t gfp_mask)
  }
  EXPORT_SYMBOL(__vmalloc);
-@@ -2573,15 +2569,15 @@ EXPORT_SYMBOL(__vmalloc);
- static inline void *__vmalloc_node_flags(unsigned long size,
- 					int node, gfp_t flags)
+ 
+-void *__vmalloc_node_flags(unsigned long size, int node, gfp_t flags)
++void *__vmalloc_node_flags_caller(unsigned long size, int node, gfp_t flags,
++		void *caller)
  {
--	return __vmalloc_node(size, 1, flags, PAGE_KERNEL,
--					node, __builtin_return_address(0));
-+	return __vmalloc_node(size, 1, flags, node,
-+				__builtin_return_address(0));
+ 	return __vmalloc(size, flags);
  }
+diff --git a/mm/vmalloc.c b/mm/vmalloc.c
+index de7952959e82..3d59d848ad48 100644
+--- a/mm/vmalloc.c
++++ b/mm/vmalloc.c
+@@ -2566,14 +2566,6 @@ void *__vmalloc(unsigned long size, gfp_t gfp_mask)
+ }
+ EXPORT_SYMBOL(__vmalloc);
  
- 
+-static inline void *__vmalloc_node_flags(unsigned long size,
+-					int node, gfp_t flags)
+-{
+-	return __vmalloc_node(size, 1, flags, node,
+-				__builtin_return_address(0));
+-}
+-
+-
  void *__vmalloc_node_flags_caller(unsigned long size, int node, gfp_t flags,
  				  void *caller)
  {
--	return __vmalloc_node(size, 1, flags, PAGE_KERNEL, node, caller);
-+	return __vmalloc_node(size, 1, flags, node, caller);
- }
- 
- /**
-@@ -2656,8 +2652,8 @@ EXPORT_SYMBOL(vmalloc_user);
+@@ -2594,8 +2586,8 @@ void *__vmalloc_node_flags_caller(unsigned long size, int node, gfp_t flags,
   */
- void *vmalloc_node(unsigned long size, int node)
+ void *vmalloc(unsigned long size)
  {
--	return __vmalloc_node(size, 1, GFP_KERNEL, PAGE_KERNEL,
--					node, __builtin_return_address(0));
-+	return __vmalloc_node(size, 1, GFP_KERNEL, node,
-+			__builtin_return_address(0));
+-	return __vmalloc_node_flags(size, NUMA_NO_NODE,
+-				    GFP_KERNEL);
++	return __vmalloc_node(size, 1, GFP_KERNEL, NUMA_NO_NODE,
++				__builtin_return_address(0));
  }
- EXPORT_SYMBOL(vmalloc_node);
+ EXPORT_SYMBOL(vmalloc);
  
-@@ -2670,9 +2666,6 @@ EXPORT_SYMBOL(vmalloc_node);
-  * allocator and map them into contiguous kernel virtual space.
-  * The memory allocated is set to zero.
-  *
-- * For tight control over page level allocator and protection flags
-- * use __vmalloc_node() instead.
-- *
-  * Return: pointer to the allocated memory or %NULL on error
+@@ -2614,8 +2606,8 @@ EXPORT_SYMBOL(vmalloc);
+  */
+ void *vzalloc(unsigned long size)
+ {
+-	return __vmalloc_node_flags(size, NUMA_NO_NODE,
+-				GFP_KERNEL | __GFP_ZERO);
++	return __vmalloc_node(size, 1, GFP_KERNEL | __GFP_ZERO, NUMA_NO_NODE,
++				__builtin_return_address(0));
+ }
+ EXPORT_SYMBOL(vzalloc);
+ 
+@@ -2670,8 +2662,8 @@ EXPORT_SYMBOL(vmalloc_node);
   */
  void *vzalloc_node(unsigned long size, int node)
-@@ -2745,8 +2738,8 @@ void *vmalloc_exec(unsigned long size)
-  */
- void *vmalloc_32(unsigned long size)
  {
--	return __vmalloc_node(size, 1, GFP_VMALLOC32, PAGE_KERNEL,
--			      NUMA_NO_NODE, __builtin_return_address(0));
-+	return __vmalloc_node(size, 1, GFP_VMALLOC32, NUMA_NO_NODE,
-+			__builtin_return_address(0));
+-	return __vmalloc_node_flags(size, node,
+-			 GFP_KERNEL | __GFP_ZERO);
++	return __vmalloc_node(size, 1, GFP_KERNEL | __GFP_ZERO, node,
++				__builtin_return_address(0));
  }
- EXPORT_SYMBOL(vmalloc_32);
+ EXPORT_SYMBOL(vzalloc_node);
  
 -- 
 2.25.1
