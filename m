@@ -2,82 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB9D61A847E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:19:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 471421A84A6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:25:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Jr0kKRVO3+NHw9YwCkKxrrlBdg1O5TBRtdoVcxG0ZF0=; b=pFxUs2GbgIQU/BE37+QVXvrR/
-	aAhGBKdXkk2Jtexa8RgwdKd9cBJzry7yDrydT/kzTxuMIeG/yPszfK0wa+qS626VJVUz9lQgB+nGC
-	YCtIeHUFfIWOafa8P5sbr+VFudRxzxB6vzgYRW2zNbtVe7bVHv5d5KshR9RX/6UEusbcamQWDlFlP
-	Dgsvieah1gt3kCAtL2Flwyi6cgYd6Bz4Lew3eadqh2jE0jK8gZtxuGOahavKfRac/Y4WNswhcVrGV
-	NIWNXth1IWn4LXH9J0qjwSOzKTEBQBNfYx3BbdgNA9FVNPjiSQnB9PF5KKNLC71BCatjh3o2WF7Ok
-	I0oNzvO4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EvP05HkVj5f6n89EXvoCaR/gEo8saPTxnY/PvUd9kpQ=; b=GitFHuSBt4hDC4
+	YijKVO9Uei5PeXtV2cQJsdt++NV7ed33wi1IMnbGK/dAk3ix+t6/oNSfzuStma3s/ih/cXJow51Z5
+	3esh9337kZp+Q/RvULrTQXne/Beuoj7gWpdSrpV92gaDwLq+NSJQO2gBvVcUjLu6cnUPZj62SjCiZ
+	f8OGIMrKFxbPFxaYqmGpWtEavHmee6Y8MIEkkUJMmU/VWGAv4WcfFSTqyoFEDzzcdDY0LvG+cehRJ
+	XXn0U15X/9ImGJWHTKbrNwtN7vMYl8PSGgHGXR5nX6+3OQM3OaQqczAA2XAu0E3D9QlWfZpkJhlXV
+	6no+GcSO2Pb6IRtwjSng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOH9-00012j-CW; Tue, 14 Apr 2020 16:19:03 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jOONB-0007bo-PW; Tue, 14 Apr 2020 16:25:17 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOGv-00011b-01
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:18:58 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1586881131; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=pjzwfTcChHnISigCJHUetoRvOtw8Q36XYbff0pt71XY=;
- b=dVbhOHBAW8S1XODH+8GNu1JH9oKKrg36XUTrpnURORgU8CJbwRSCuwMGvpu3l5OpWw0Iwern
- iB+wdZcokEhzcYRiOgyiqXkImoEZE39WauaOar1ZM0EYZVbkt+XZzzdyNJ3LPI5466WoDUzo
- 5dEE00X8fc4sKNWUpNJLDFaeaCY=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e95e25e.7f0219a64d88-smtp-out-n05;
- Tue, 14 Apr 2020 16:18:38 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 02A82C44788; Tue, 14 Apr 2020 16:18:37 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ id 1jOOMw-00058M-AN
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:25:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586881501;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=yW8t58m2bp1NhazlqC7/k8J+nPWsrZBYDWUsjTyk2qQ=;
+ b=NsgcQPq0gDRRzr+WCv6O+IejAhACeGf91UcZUch7xVIEkk4F0++6WsAKwkQ+6nkMoq/jD7
+ lzSV3f1EuKP3Hxnp2JivHQcF6Vr/Z22M++foNVb8RdxR7eWsyL6QJbeO4NazIgQ9svAhXl
+ 7AFa78Hn9YCF68TMh9hKXOVlm2kXUcc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-87-m_CJjLwlPvyXxruKyZ4cKA-1; Tue, 14 Apr 2020 12:24:56 -0400
+X-MC-Unique: m_CJjLwlPvyXxruKyZ4cKA-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 28FA7C433F2;
- Tue, 14 Apr 2020 16:18:37 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 12123107ACC4;
+ Tue, 14 Apr 2020 16:24:50 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-118-173.rdu2.redhat.com [10.10.118.173])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0E02D118DEE;
+ Tue, 14 Apr 2020 16:24:36 +0000 (UTC)
+Subject: Re: [PATCH v2 2/2] crypto: Remove unnecessary memzero_explicit()
+To: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ David Howells <dhowells@redhat.com>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ James Morris <jmorris@namei.org>, "Serge E. Hallyn" <serge@hallyn.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Joe Perches
+ <joe@perches.com>, Matthew Wilcox <willy@infradead.org>,
+ David Rientjes <rientjes@google.com>
+References: <20200413211550.8307-1-longman@redhat.com>
+ <20200413222846.24240-1-longman@redhat.com>
+ <eca85e0b-0af3-c43a-31e4-bd5c3f519798@c-s.fr>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <e194a51f-a5e5-a557-c008-b08cac558572@redhat.com>
+Date: Tue, 14 Apr 2020 12:24:36 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Date: Tue, 14 Apr 2020 21:48:37 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Evan Green <evgreen@chromium.org>
-Subject: Re: [PATCH 2/2] iommu/arm-smmu: Allow client devices to select direct
- mapping
-In-Reply-To: <CAE=gft7HFBc7XtgiV1hkG-m3ONMUiE2vu8Vg_7Mu1dfe2BjYpA@mail.gmail.com>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <813cc5b2da10c27db982254b274bf26008a9e6da.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <CAE=gft7HFBc7XtgiV1hkG-m3ONMUiE2vu8Vg_7Mu1dfe2BjYpA@mail.gmail.com>
-Message-ID: <eb30fcf85127676e401ca5d83f9a6ad7@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <eca85e0b-0af3-c43a-31e4-bd5c3f519798@c-s.fr>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_091851_610385_A3398F35 
-X-CRM114-Status: GOOD (  18.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200414_092502_475814_067C2066 
+X-CRM114-Status: GOOD (  17.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,97 +100,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@gmail.com>, Tomasz Figa <tfiga@chromium.org>,
- Rajendra Nayak <rnayak@codeaurora.org>, Will Deacon <will@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- LKML <linux-kernel@vger.kernel.org>, Jordan Crouse <jcrouse@codeaurora.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: samba-technical@lists.samba.org, virtualization@lists.linux-foundation.org,
+ linux-mm@kvack.org, linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, devel@driverdev.osuosl.org,
+ linux-s390@vger.kernel.org, linux-scsi@vger.kernel.org, x86@kernel.org,
+ kasan-dev@googlegroups.com, cocci@systeme.lip6.fr, linux-wpan@vger.kernel.org,
+ intel-wired-lan@lists.osuosl.org, linux-crypto@vger.kernel.org,
+ linux-pm@vger.kernel.org, ecryptfs@vger.kernel.org, linux-nfs@vger.kernel.org,
+ linux-fscrypt@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-cifs@vger.kernel.org, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, linux-security-module@vger.kernel.org,
+ keyrings@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
+ wireguard@lists.zx2c4.com, linux-ppp@vger.kernel.org,
+ linux-integrity@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-btrfs@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Evan,
-
-On 2020-04-14 04:42, Evan Green wrote:
-> On Wed, Jan 22, 2020 at 3:48 AM Sai Prakash Ranjan
-> <saiprakash.ranjan@codeaurora.org> wrote:
->> 
->> From: Jordan Crouse <jcrouse@codeaurora.org>
->> 
->> Some client devices want to directly map the IOMMU themselves instead
->> of using the DMA domain. Allow those devices to opt in to direct
->> mapping by way of a list of compatible strings.
->> 
->> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
->> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> ---
->>  drivers/iommu/arm-smmu-qcom.c | 39 
->> +++++++++++++++++++++++++++++++++++
->>  drivers/iommu/arm-smmu.c      |  3 +++
->>  drivers/iommu/arm-smmu.h      |  5 +++++
->>  3 files changed, 47 insertions(+)
->> 
->> diff --git a/drivers/iommu/arm-smmu-qcom.c 
->> b/drivers/iommu/arm-smmu-qcom.c
->> index 64a4ab270ab7..ff746acd1c81 100644
->> --- a/drivers/iommu/arm-smmu-qcom.c
->> +++ b/drivers/iommu/arm-smmu-qcom.c
->> @@ -3,6 +3,7 @@
->>   * Copyright (c) 2019, The Linux Foundation. All rights reserved.
->>   */
->> 
->> +#include <linux/of_device.h>
->>  #include <linux/qcom_scm.h>
->> 
->>  #include "arm-smmu.h"
->> @@ -11,6 +12,43 @@ struct qcom_smmu {
->>         struct arm_smmu_device smmu;
->>  };
->> 
->> +static const struct arm_smmu_client_match_data qcom_adreno = {
->> +       .direct_mapping = true,
->> +};
->> +
->> +static const struct arm_smmu_client_match_data qcom_mdss = {
->> +       .direct_mapping = true,
-> 
-> I don't actually see direct_mapping being used. Shouldn't this member
-> be checked somewhere?
-> 
-
-Thanks for spotting this, my bad. It should be checked in 
-qcom_smmu_request_domain().
-
-diff --git a/drivers/iommu/arm-smmu-qcom.c 
-b/drivers/iommu/arm-smmu-qcom.c
-index ff746acd1c81..3ff62ca13ad5 100644
---- a/drivers/iommu/arm-smmu-qcom.c
-+++ b/drivers/iommu/arm-smmu-qcom.c
-@@ -43,7 +43,7 @@ static int qcom_smmu_request_domain(struct device 
-*dev)
-         const struct arm_smmu_client_match_data *client;
-
-         client = qcom_smmu_client_data(dev);
--       if (client)
-+       if (client && client->direct_mapping)
-                 iommu_request_dm_for_dev(dev);
-
-         return 0;
-
--Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNC8xNC8yMCAyOjA4IEFNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+Cj4KPiBMZSAxNC8w
+NC8yMDIwIMOgIDAwOjI4LCBXYWltYW4gTG9uZyBhIMOpY3JpdMKgOgo+PiBTaW5jZSBrZnJlZV9z
+ZW5zaXRpdmUoKSB3aWxsIGRvIGFuIGltcGxpY2l0IG1lbXplcm9fZXhwbGljaXQoKSwgdGhlcmUK
+Pj4gaXMgbm8gbmVlZCB0byBjYWxsIG1lbXplcm9fZXhwbGljaXQoKSBiZWZvcmUgaXQuIEVsaW1p
+bmF0ZSB0aG9zZQo+PiBtZW16ZXJvX2V4cGxpY2l0KCkgYW5kIHNpbXBsaWZ5IHRoZSBjYWxsIHNp
+dGVzLiBGb3IgYmV0dGVyIGNvcnJlY3RuZXNzLAo+PiB0aGUgc2V0dGluZyBvZiBrZXlsZW4gaXMg
+YWxzbyBtb3ZlZCBkb3duIGFmdGVyIHRoZSBrZXkgcG9pbnRlciBjaGVjay4KPj4KPj4gU2lnbmVk
+LW9mZi1ieTogV2FpbWFuIExvbmcgPGxvbmdtYW5AcmVkaGF0LmNvbT4KPj4gLS0tCj4+IMKgIC4u
+Li9hbGx3aW5uZXIvc3VuOGktY2Uvc3VuOGktY2UtY2lwaGVyLmPCoMKgwqDCoMKgIHwgMTkgKysr
+KystLS0tLS0tLS0tLS0tCj4+IMKgIC4uLi9hbGx3aW5uZXIvc3VuOGktc3Mvc3VuOGktc3MtY2lw
+aGVyLmPCoMKgwqDCoMKgIHwgMjAgKysrKystLS0tLS0tLS0tLS0tLQo+PiDCoCBkcml2ZXJzL2Ny
+eXB0by9hbWxvZ2ljL2FtbG9naWMtZ3hsLWNpcGhlci5jwqDCoCB8IDEyICsrKy0tLS0tLS0tCj4+
+IMKgIGRyaXZlcnMvY3J5cHRvL2luc2lkZS1zZWN1cmUvc2FmZXhjZWxfaGFzaC5jwqAgfMKgIDMg
+Ky0tCj4+IMKgIDQgZmlsZXMgY2hhbmdlZCwgMTQgaW5zZXJ0aW9ucygrKSwgNDAgZGVsZXRpb25z
+KC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2NyeXB0by9hbGx3aW5uZXIvc3VuOGktY2Uv
+c3VuOGktY2UtY2lwaGVyLmMKPj4gYi9kcml2ZXJzL2NyeXB0by9hbGx3aW5uZXIvc3VuOGktY2Uv
+c3VuOGktY2UtY2lwaGVyLmMKPj4gaW5kZXggYWE0ZThmZGMyYjMyLi44MzU4ZmFjOTg3MTkgMTAw
+NjQ0Cj4+IC0tLSBhL2RyaXZlcnMvY3J5cHRvL2FsbHdpbm5lci9zdW44aS1jZS9zdW44aS1jZS1j
+aXBoZXIuYwo+PiArKysgYi9kcml2ZXJzL2NyeXB0by9hbGx3aW5uZXIvc3VuOGktY2Uvc3VuOGkt
+Y2UtY2lwaGVyLmMKPj4gQEAgLTM2NiwxMCArMzY2LDcgQEAgdm9pZCBzdW44aV9jZV9jaXBoZXJf
+ZXhpdChzdHJ1Y3QgY3J5cHRvX3RmbSAqdGZtKQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAgc3RydWN0
+IHN1bjhpX2NpcGhlcl90Zm1fY3R4ICpvcCA9IGNyeXB0b190Zm1fY3R4KHRmbSk7Cj4+IMKgIC3C
+oMKgwqAgaWYgKG9wLT5rZXkpIHsKPj4gLcKgwqDCoMKgwqDCoMKgIG1lbXplcm9fZXhwbGljaXQo
+b3AtPmtleSwgb3AtPmtleWxlbik7Cj4+IC3CoMKgwqDCoMKgwqDCoCBrZnJlZShvcC0+a2V5KTsK
+Pj4gLcKgwqDCoCB9Cj4+ICvCoMKgwqAga2ZyZWVfc2Vuc2l0aXZlKG9wLT5rZXkpOwo+PiDCoMKg
+wqDCoMKgIGNyeXB0b19mcmVlX3N5bmNfc2tjaXBoZXIob3AtPmZhbGxiYWNrX3RmbSk7Cj4+IMKg
+wqDCoMKgwqAgcG1fcnVudGltZV9wdXRfc3luY19zdXNwZW5kKG9wLT5jZS0+ZGV2KTsKPj4gwqAg
+fQo+PiBAQCAtMzkxLDE0ICszODgsMTEgQEAgaW50IHN1bjhpX2NlX2Flc19zZXRrZXkoc3RydWN0
+IGNyeXB0b19za2NpcGhlcgo+PiAqdGZtLCBjb25zdCB1OCAqa2V5LAo+PiDCoMKgwqDCoMKgwqDC
+oMKgwqAgZGV2X2RiZyhjZS0+ZGV2LCAiRVJST1I6IEludmFsaWQga2V5bGVuICV1XG4iLCBrZXls
+ZW4pOwo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+IMKgwqDCoMKgwqAg
+fQo+PiAtwqDCoMKgIGlmIChvcC0+a2V5KSB7Cj4+IC3CoMKgwqDCoMKgwqDCoCBtZW16ZXJvX2V4
+cGxpY2l0KG9wLT5rZXksIG9wLT5rZXlsZW4pOwo+PiAtwqDCoMKgwqDCoMKgwqAga2ZyZWUob3At
+PmtleSk7Cj4+IC3CoMKgwqAgfQo+PiAtwqDCoMKgIG9wLT5rZXlsZW4gPSBrZXlsZW47Cj4+ICvC
+oMKgwqAga2ZyZWVfc2Vuc2l0aXZlKG9wLT5rZXkpOwo+PiDCoMKgwqDCoMKgIG9wLT5rZXkgPSBr
+bWVtZHVwKGtleSwga2V5bGVuLCBHRlBfS0VSTkVMIHwgR0ZQX0RNQSk7Cj4+IMKgwqDCoMKgwqAg
+aWYgKCFvcC0+a2V5KQo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FTk9NRU07Cj4+ICvC
+oMKgwqAgb3AtPmtleWxlbiA9IGtleWxlbjsKPgo+IERvZXMgaXQgbWF0dGVyIGF0IGFsbCB0byBl
+bnN1cmUgb3AtPmtleWxlbiBpcyBub3Qgc2V0IHdoZW4gb2YtPmtleSBpcwo+IE5VTEwgPyBJJ20g
+bm90IHN1cmUuCj4KPiBCdXQgaWYgaXQgZG9lcywgdGhlbiBvcC0+a2V5bGVuIHNob3VsZCBiZSBz
+ZXQgdG8gMCB3aGVuIGZyZWVpbmcgb3AtPmtleS4gCgpNeSB0aGlua2luZyBpcyB0aGF0IGlmIG1l
+bW9yeSBhbGxvY2F0aW9uIGZhaWxzLCB3ZSBqdXN0IGRvbid0IHRvdWNoCmFueXRoaW5nIGFuZCBy
+ZXR1cm4gYW4gZXJyb3IgY29kZS4gSSB3aWxsIG5vdCBleHBsaWNpdGx5IHNldCBrZXlsZW4gdG8g
+MAppbiB0aGlzIGNhc2UgdW5sZXNzIGl0IGlzIHNwZWNpZmllZCBpbiB0aGUgQVBJIGRvY3VtZW50
+YXRpb24uCgpDaGVlcnMsCkxvbmdtYW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
