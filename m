@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 557371A87D4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:44:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE24A1A87D9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:44:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ND9Gs70Zzic7cA183/W3AqzE6A/jYTSISBE1gGmqkU4=; b=Bm/lPsfqRdlhZc
-	xdXgemNasw0wgzX5c8dBTdf1V62KQVDMCiPDSns8AMIT+4Ql/9JZFyjalsXhIAH/nZ7cFMHnh7KH+
-	UoFrWCc4fVoym1YYATrpCvQGbrB41N9dpCJE353VaM1zFAUfpJ8PBdkLIx8S+ET4F7sfYPAkgqKWy
-	1PKfdStWZVM1mBxBBgofYIQI/ciCaSEM0fGd4QQMpuAwVD4Ro8m03RkNfTTYuRUTvzJDzmDvMdfhG
-	ya4/5ENXBIOrTvz/6j6pOQWMLbY6yV92sRhkUG5KzSHF5jxzqsIwhb0cDB6MSB+sqrjhflDazakiT
-	V5o1pMFSfEvrh6lu+jpg==;
+	List-Owner; bh=5SUc/5p6Ow0T3cU9simXtrtlTU6XL9mJLfBqPfe+xP8=; b=Gf2JyN0v8unmFS
+	ExG/MokXn1gtfgNdCqjulzsr9gp8jHKMCkhWmqOJUmNzywwch+dRD+fxopOWpI5BSy6pcpRdGFoRD
+	oEwzTce0NPOuGE+m6ZTth1KLH+mW6wRedbbktvzikuxeaixHQU+YIKnnR3DSBq65iT5cjfBjMrOVl
+	qLk9ItIeof3WQpAc6RhkcCp/Ju8++CrFV3XSVd5wMXw4+oJQhTZUVdjGcaDS4NpYF4xY7eaz27nIQ
+	sYrv/HG95xG/+JaK+0Gu9KQx5G1HgdaQZD3dJ3bsRwI+wP1lROA8+ZsgsinGXCxmc7t3rLucH0YVw
+	3lKjMmcixZnfqS7URNdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPbq-0005Ec-9R; Tue, 14 Apr 2020 17:44:30 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1jOPc9-0005QH-Lf; Tue, 14 Apr 2020 17:44:49 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPbJ-0004qV-1L
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:43:59 +0000
-IronPort-SDR: k3CdnVtq68VtMKei6NgwcMJ2H/CI6e2KgbjnaYDbhgbnfgUnonrxWpskeiEYmYPFLMhrKzP/Io
- t+Nx+PHTApjQ==
+ id 1jOPbK-0004qm-2t
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:44:02 +0000
+IronPort-SDR: BMZbwzIsQlEw3tFN9piFp6RtOEEQPCGIjgMMDao8YjzNSMw0wW/lx6piDVtGy65OzT89eNXWS/
+ +oYqNiSVgNuw==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
  14 Apr 2020 10:43:54 -0700
-IronPort-SDR: MFpwAelBKPE6kFSS1JyQ+vGiXp9whUCSNfdKtCXyyd3PpMriEBiPzS4FfAoiBaSJTyaZBpo/ll
- DUmFH/U/r8Hw==
+IronPort-SDR: GZuKlzB/8z5doblgSMrI5iaK+i//jnWJRpI0AV0mafhwYuYoAnIf8thxSBkk66VI0M9BU477m1
+ sRcKjbCmy46g==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,383,1580803200"; d="scan'208";a="243882447"
+X-IronPort-AV: E=Sophos;i="5.72,383,1580803200"; d="scan'208";a="253263100"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga007.fm.intel.com with ESMTP; 14 Apr 2020 10:43:53 -0700
+ by orsmga003.jf.intel.com with ESMTP; 14 Apr 2020 10:43:53 -0700
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1jOPbE-000DRG-PE; Wed, 15 Apr 2020 01:43:52 +0800
-Date: Wed, 15 Apr 2020 01:42:43 +0800
+ id 1jOPbE-000DR2-OD; Wed, 15 Apr 2020 01:43:52 +0800
+Date: Wed, 15 Apr 2020 01:42:48 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [stericsson:ux500-dts] BUILD SUCCESS
- 2ae6193a1b95a128d040f0181d592bbf2705407b
-Message-ID: <5e95f613.3z1EtplmHxLfFbf5%lkp@intel.com>
+Subject: [stericsson:tc3589x-gpiohack-test] BUILD SUCCESS
+ 868f118d3d58276fcd3d961418bf49bc48aa8c57
+Message-ID: <5e95f618.A8cWCmc+003M2A6t%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_104357_585091_B758AF8E 
-X-CRM114-Status: UNSURE (   6.07  )
+X-CRM114-CacheID: sfid-20200414_104359_142878_A29ABFB6 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -57,9 +57,12 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  3.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,13 +81,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git  ux500-dts
-branch HEAD: 2ae6193a1b95a128d040f0181d592bbf2705407b  ARM: dts: ux500: samsung-golden: Add proximity sensor
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git  tc3589x-gpiohack-test
+branch HEAD: 868f118d3d58276fcd3d961418bf49bc48aa8c57  Uglyhack for testing GPIO on Ux500, do not apply
 
 elapsed time: 483m
 
 configs tested: 161
-configs skipped: 122
+configs skipped: 119
 
 The following configs have been built successfully.
 More configs may be tested in the coming days.
