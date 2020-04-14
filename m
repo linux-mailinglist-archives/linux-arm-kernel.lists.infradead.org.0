@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E737F1A7305
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 07:32:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADE8B1A7306
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 07:32:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fT1NZGHZb7LfGNfdZBFzgSVrLZOwNnHzPiTsUr1GdFk=; b=LQG
-	q2YWPPRQehqjYOcTLFKtwCnU/U5UjnS/FgbD8NF4ZW6wVuN0IkQ3gTJWl+PDe6uQjychSQpLPr3b1
-	2HlycVsbYI5OCgCxClAQ7erumxDi1WulnchU1aWv0nLBNyTO1XsgiJGDVFShH2VGwtxCe1N7Qk6Eg
-	l5mXI8vDTNGgjwIZZZK71M4Q7oCbphcRC/zMso6R8aeundYJQVjbv4rv8Q01FVAgJc1p0k+HI6xPK
-	PvYoFsIB6DMDefwG/8sSJPzhoRXlGGoDYu5uq+8ZiQ2IOF+ZnBZP7cKJomnOOfHO4kH8qbZUh5C7f
-	kLokaGUasSnw7lwBLBzePAFRFYX3zAw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bHejWfr2AwJ8i9q0thGo/7YOIVsVisi7nxF93+M9fnY=; b=tbE55AaXnwV5xsidq7ItgzoNi1
+	2kjavRjGIeVRR45AJ4tLmAUYMogsHnllJCUaEKO9W08NrgFmYbJmHAsPPHrlwdfPbBOVuYwLFqbFw
+	NSVKikiTJL8NoWseMqzkabAcCQXijhBPd/8+MbOTIi2DsvGQkM6s5vIXgKytDDvuBesSZDyoMNBc4
+	5LI5UtoluueDry+Wm+WDJb+hMAOJjyXDK/nEXhwhOclnQf9Ysmi/r+n6ENpsUXqCl3dvXgr5u+5UK
+	2I47aqdp9oFPhzjwew7BMUAZ+MxprhR1XruRo0RnvwBYBulOm49uZEGnWWaxDXM3RNSBi+8kNUDub
+	887glu7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOEBQ-0001OO-C4; Tue, 14 Apr 2020 05:32:28 +0000
+	id 1jOEBk-0001ZX-Kj; Tue, 14 Apr 2020 05:32:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOEBC-0001M2-Ig
+ id 1jOEBC-0001Mf-Vk
  for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 05:32:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CE6230E;
- Mon, 13 Apr 2020 22:32:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A8B131B;
+ Mon, 13 Apr 2020 22:32:13 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 490DA3F68F;
- Mon, 13 Apr 2020 22:36:21 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0D8C73F68F;
+ Mon, 13 Apr 2020 22:36:24 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/4] arm64: add Armv8.6 pointer authentication
-Date: Tue, 14 Apr 2020 11:01:50 +0530
-Message-Id: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v2 1/4] arm64: cpufeature: Extract meta-capability scope from
+ list
+Date: Tue, 14 Apr 2020 11:01:51 +0530
+Message-Id: <1586842314-19527-2-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
+References: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_223214_667747_403343FB 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200413_223215_116319_4EBB8163 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,53 +76,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+This fixes the earlier commit 3ff047f6971d3c ("arm64: cpufeature: Fix
+meta-capability cpufeature check"). This patch was added to fix the
+dependency of individual meta-cpucaps checks on the array entry order. This
+dependency was specifically added for cpufeature of system scope.
 
-These patch series adds support for Armv8.6 pointer authentication
-enhanced mandatory features. These features are,
+However this dependency can occur for cpufeature of boot scope such as
+ARM64_HAS_ADDRESS_AUTH so this patch renames the helper function
+__system_matches_cap to __cpufeature_matches_cap and invokes the match
+handler with the scope fetched from the cpufeatures array list.
 
- * Enhanced PAC generation algorithm.
- * Generate fault when authenticate instruction fails.
+Fixes: 3ff047f6971d3c ("arm64: cpufeature: Fix meta-capability cpufeature check")
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+ arch/arm64/kernel/cpufeature.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-For the first feature no code change is done and for the second feature
-a ptrauth fault handler is added.
-More details can be found here [1].
-
-Changes since v1:
-* Patch 1 is newly added and fixes a meta cpucapability check.
-* Patch 3 is forked out from earlier patch 1 ("arm64: ptrauth: add pointer
-  authentication Armv8.6 enhanced feature"). This was suggested by Will
-  [2].
-
-This series is based on kernel version v5.7-rc1.
-
-Note: patch 4 may need some changes with Mark Brown's work on whitelisting
-of hint instructions [3].
-
-Regards,
-Amit
-
-[1]: https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/arm-architecture-developments-armv8-6-a
-[2]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-March/715443.html
-[3]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-March/720280.html
-
-Amit Daniel Kachhap (4):
-  arm64: cpufeature: Extract meta-capability scope from list
-  arm64: ptrauth: add pointer authentication Armv8.6 enhanced feature
-  arm64: cpufeature: Modify address authentication cpufeature to exact
-  arm64: kprobe: disable probe of fault prone ptrauth instruction
-
- arch/arm64/include/asm/esr.h           |  4 +++-
- arch/arm64/include/asm/exception.h     |  1 +
- arch/arm64/include/asm/insn.h          | 13 +++++++------
- arch/arm64/include/asm/sysreg.h        | 24 ++++++++++++++++--------
- arch/arm64/kernel/cpufeature.c         | 22 +++++++++++-----------
- arch/arm64/kernel/entry-common.c       | 25 +++++++++++++++++++++++++
- arch/arm64/kernel/insn.c               |  1 +
- arch/arm64/kernel/probes/decode-insn.c |  2 +-
- arch/arm64/kernel/traps.c              | 18 ++++++++++++++++++
- 9 files changed, 83 insertions(+), 27 deletions(-)
-
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9fac745aa7bb..08795025409c 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -116,7 +116,7 @@ cpufeature_pan_not_uao(const struct arm64_cpu_capabilities *entry, int __unused)
+ 
+ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
+ 
+-static bool __system_matches_cap(unsigned int n);
++static bool __cpufeature_matches_cap(unsigned int n);
+ 
+ /*
+  * NOTE: Any changes to the visibility of features should be kept in
+@@ -1373,15 +1373,15 @@ static void cpu_clear_disr(const struct arm64_cpu_capabilities *__unused)
+ static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
+ 			     int __unused)
+ {
+-	return __system_matches_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
+-	       __system_matches_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF);
++	return __cpufeature_matches_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
++	       __cpufeature_matches_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF);
+ }
+ 
+ static bool has_generic_auth(const struct arm64_cpu_capabilities *entry,
+ 			     int __unused)
+ {
+-	return __system_matches_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
+-	       __system_matches_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF);
++	return __cpufeature_matches_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
++	       __cpufeature_matches_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF);
+ }
+ #endif /* CONFIG_ARM64_PTR_AUTH */
+ 
+@@ -2251,16 +2251,16 @@ bool this_cpu_has_cap(unsigned int n)
+ /*
+  * This helper function is used in a narrow window when,
+  * - The system wide safe registers are set with all the SMP CPUs and,
+- * - The SYSTEM_FEATURE cpu_hwcaps may not have been set.
++ * - The cpu_hwcaps may not have been set.
+  * In all other cases cpus_have_{const_}cap() should be used.
+  */
+-static bool __system_matches_cap(unsigned int n)
++static bool __cpufeature_matches_cap(unsigned int n)
+ {
+ 	if (n < ARM64_NCAPS) {
+ 		const struct arm64_cpu_capabilities *cap = cpu_hwcaps_ptrs[n];
+ 
+ 		if (cap)
+-			return cap->matches(cap, SCOPE_SYSTEM);
++			return cap->matches(cap, cpucap_default_scope(cap));
+ 	}
+ 	return false;
+ }
+@@ -2337,7 +2337,7 @@ void __init setup_cpu_features(void)
+ static bool __maybe_unused
+ cpufeature_pan_not_uao(const struct arm64_cpu_capabilities *entry, int __unused)
+ {
+-	return (__system_matches_cap(ARM64_HAS_PAN) && !__system_matches_cap(ARM64_HAS_UAO));
++	return (__cpufeature_matches_cap(ARM64_HAS_PAN) && !__cpufeature_matches_cap(ARM64_HAS_UAO));
+ }
+ 
+ static void __maybe_unused cpu_enable_cnp(struct arm64_cpu_capabilities const *cap)
 -- 
 2.17.1
 
