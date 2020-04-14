@@ -2,66 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B931A7627
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:32:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C01231A764F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:40:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=a74n273nwnKoKODo27iayoecYY/drtGsvWUtIOGABh4=; b=IteR0zFu+4weCpjWNjFw7Lgq5
-	V5ll0jkA3/pQlkRuZxAjRk9UQMnB6CVXhKpkIi85oimqasq/ej7ECR53zFFIA683qzTbdR9JEfpFG
-	XyiB2Vqun1qQT64aiRUx/FnakkItHdzoUwVz4LeZEUTDIkGndbUIEgCmx+zqDDNQwQLUIsE1tZlOV
-	ZO2tDUtA7hWk1XeDo+c1HTnm26fi5MkaoPBbY64TBgsFdBTozBJsY1DahGwIEg6SN4dPLQ8iWAhGa
-	WbI+HJMfUTt7TGG0eCr4fD28ASEkN6cuQd8Q7D0IzF4TbOlyoFb2b9MxhGkkVja1FfdYpaQnmYaD4
-	LvqhHCjpg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CT8qFrvvpNFAxZQUzMHYC1Mx2xRi21wQ29/s3Y38uJE=; b=hvAb5Wh4SWmNlJ
+	q+W69kIFlMhD4QB3n65D71CqTi+NzoGVN3Nq2bCkI5r7+GBei3lHgLdC7m1gdMvSrzdu7yoBphzrt
+	HubqpSLgMiKjQwS41KzWw8OpMvpYF/Rn4e2V5QQOUBurAKW1u5HfM7enTTDWHnt+e4U5neuC4iiid
+	3vTpDh2CYOma2XRGLbXLjlam7UVZMg5UDxH5VjhZcndaqENnrmqyF4o2jliYdjTWoXT/g1XVSgSxj
+	QjTPU4kJ41VX9n2aUTBUFRML0XbrlNIrQH0HETXAWorFI5KDTyZVNTkHE/ooREAYuSuvF+iuSVYny
+	ZF7v+q/6HRkgSzLyVtpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGzS-0001aU-Pz; Tue, 14 Apr 2020 08:32:18 +0000
-Received: from mail.zx2c4.com ([192.95.5.64])
+	id 1jOH7Z-0007yT-He; Tue, 14 Apr 2020 08:40:41 +0000
+Received: from mail-db8eur05on2040.outbound.protection.outlook.com
+ ([40.107.20.40] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGzL-0001Yx-P0; Tue, 14 Apr 2020 08:32:13 +0000
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 9d220a78;
- Tue, 14 Apr 2020 08:22:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=subject:to:cc
- :references:from:message-id:date:mime-version:in-reply-to
- :content-type:content-transfer-encoding; s=mail; bh=Bn42dUX94nPZ
- VI2aresTt2verm4=; b=sx6IKJIxzuEOA3MDWmGK5eH/64R8mpMYlG8WURWdfzRD
- XFeah0rjLnpfJ/wNxDNPuLqvGkOXg2tTc6/J9yxFJV/B/IyVASTm/xV1AWFh8sOT
- E+Zkl2VUcl4Y0wf6Mu5iapMmn3g8Ztyi36JLXdlWN66PEuOJynjCGScQFzOu0tep
- 4+h/FZal3et8UceGQF9vqtL2mbwwUOtzAFh6NniwZkygh5iiMorXd4zwhnYD2AoL
- UBjxDBvR+PqwgLJDDNN43HRxAe1Ka1ICHvrV5FNQIfjCNS9xZTJzxiJXAqnsHyrN
- w3BT8jw4OmracAotC1L9+6WCZMUQn8YWdWOjpIB/Jw==
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id e4f42b92
- (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO); 
- Tue, 14 Apr 2020 08:22:18 +0000 (UTC)
-Subject: Re: [PATCH 1/2] mm, treewide: Rename kzfree() to kfree_sensitive()
-To: Waiman Long <longman@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- David Howells <dhowells@redhat.com>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- James Morris <jmorris@namei.org>, "Serge E. Hallyn" <serge@hallyn.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, Joe Perches
- <joe@perches.com>, Matthew Wilcox <willy@infradead.org>,
- David Rientjes <rientjes@google.com>
-References: <20200413211550.8307-1-longman@redhat.com>
- <20200413211550.8307-2-longman@redhat.com>
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-Message-ID: <4babf834-c531-50ba-53f6-e88410b15ce3@zx2c4.com>
-Date: Tue, 14 Apr 2020 02:32:03 -0600
-MIME-Version: 1.0
-In-Reply-To: <20200413211550.8307-2-longman@redhat.com>
+ id 1jOH7S-0007xy-6L
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 08:40:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GdHOBagvB8lGfg256VZ1rlNJqpjRY5Ycg8k9EfHuY6ZG9DF8W9D133CV1QJ/7Qs2Mt3FnGHAwhjollxO7mitNOUEGHuZTbEU/Ttc/Atu2bi5mzKphBCCTCV2JI/ENx/n4RqLG5KIlhurs/FhM3+lJ4gjQqa2okcLwAxUcNw1fxdKTKZ/wWi3Iv4m0J+qUtZf3LM4nZ2dxC7vm3dz5zEmoIpG8c606ISt22OTAGtm5cGg5bntLHgeelep2bx35Y1Y3H7fpS8OLF/eKL8sNR3uxObHolqQOvmpBpRN+IYHjklD1mZQIGhUEUWS53A4mobQwTc9lzPbTkkBp4cj0gE23Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xc5c9qVSbdIVQvIgLLc3BYBS6U6GkcdHbgGkL6PgOY0=;
+ b=HGnYm/TvcV1l48RD3O5msI/P91inBpGRCXTFSMxrKsf5pdWzNkBKHKP7qemfQDpxLRTw0T+LEQkNWgzQAoJkv+92A+T2g20NSia93hXip/V3cYWpRt+jweD8GILdleWpv7ii9hOcA28OnVEtvZjlAvQsdzJJdwEuf+MP8DdeJLNn7xYRj9i+R+wdid9CNG/uhdO5B4G7SvnEKRXgeTmnAbOw1hfhmw2DNAvKZV2Y+ySW9NELBLn7JFa1PuGcyE9P9Va98eOGmtftAnUL4zifwb1DCdO1XMPTvyJG/kQW4tRERfLYZSTd7gHUba255CbwK9QkJ2GnVXi9ANjSr6DK9g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xc5c9qVSbdIVQvIgLLc3BYBS6U6GkcdHbgGkL6PgOY0=;
+ b=gY3dzy/W6ZQMFfdWxJkIJsvsgGyXqhMP7eYD0lkq55jLGmiN43kGOEDCWsL3kGks7++yfbRAoM6hNteAz2Q9vq1u6lomk2v4G5NdcnbgUhWYDu5ivwK2n++dVByyNyYVIwQSQtVLf3opcEas7summwVWpJOHtNXKGfdmsua279M=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (2603:10a6:208:70::15)
+ by AM0PR04MB5204.eurprd04.prod.outlook.com (2603:10a6:208:bf::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.28; Tue, 14 Apr
+ 2020 08:40:20 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
+ 08:40:20 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: =?iso-8859-1?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: RE: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+Thread-Topic: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+Thread-Index: AQHWEjVOJqZ73kq4ZkWCSd6i237Mtah4SGeAgAAB9XA=
+Date: Tue, 14 Apr 2020 08:40:19 +0000
+Message-ID: <AM0PR04MB4481562AFA8A4B9CDDD3E55F88DA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1586851826-16596-1-git-send-email-peng.fan@nxp.com>
+ <20200414082635.jo5yljonh5xgnujd@pengutronix.de>
+In-Reply-To: <20200414082635.jo5yljonh5xgnujd@pengutronix.de>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 27bc825e-c552-4fde-3821-08d7e04f7710
+x-ms-traffictypediagnostic: AM0PR04MB5204:|AM0PR04MB5204:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5204E38DDC0F6EDEBCE4FEAC88DA0@AM0PR04MB5204.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0373D94D15
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(366004)(346002)(39860400002)(136003)(376002)(396003)(6506007)(55016002)(45080400002)(7696005)(86362001)(54906003)(8676002)(71200400001)(52536014)(478600001)(83080400001)(316002)(2906002)(44832011)(4326008)(5660300002)(15650500001)(26005)(186003)(9686003)(66476007)(8936002)(66556008)(6916009)(966005)(64756008)(66574012)(66446008)(33656002)(76116006)(81156014)(66946007);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: UeEkyWS6tiuNQRH0tLo2BsVxdt+TVVXYSMN9R57Ku5MPkdVVsdeJ9xj/o0EZ/ducreXQHA6WlyTRqQcfaBO/cq4/q4zaTAJNuVDeDEwQ1RPOjNWjieQ0jk8qXS7SGXa8GV+H+NDu8RvPmyIT5/rAoQkJ5fag1aD8sevi3xV5222muUW0B/HMWkjyqX4JmTxr//ozkEP0McdoRYq+Ra9gmOLF4uIXD9HBlSnoiyQOzeBL8Ibdi1OgbJ5nLfCyUk1J7jtqqj9vRyvsSuHj6z2Mh45UH+fgzeYOyYW/2zCV6gJXSGKYoW1QYcEktVQpAc/lN0luYyP6bTepBpLLwgbJXmwJO4IH7Bkgmly3BKC3Y/OeapHfVGN5a6ovNM1R9whq1ESzjgqvTFw4UMMxRcas3TW3iz1rcgzEylW6GDi7PL/UJOcyGC4fQAaWcoSzIOczwZDfanrrq04a4DxxOXILOhUFy8GvWZogLkI6wJkYAdsa8q3D2gea1kLgZkn07da1BreH0Q0twZ0z+6Lm32/SLg==
+x-ms-exchange-antispam-messagedata: zwKq6yiyAwqodp1P+N+CfxT0B8ix9Wz3zBAtwVBoOdJvO/Q2495BmEOApG8BLlukeivaHuA5KLEWzDm9R1nTiFQxAbcj/FyWP97Yn15uW8GVILEm3NSzzFuYVmuLj+jc3VUxn/GWGtkWrAV6fLbv1w==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 27bc825e-c552-4fde-3821-08d7e04f7710
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2020 08:40:19.8695 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Np5pxY//l4ahF22/XylSevcBP+V3YwxyyN5T90Ny2DkYzfiq14sFRu47jVITfALS9jXOEQiQ6k3Oue6RSS2LgA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5204
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_013211_975356_E4BB287C 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20200414_014034_234945_8B9A7286 
+X-CRM114-Status: GOOD (  17.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.20.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,67 +122,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: samba-technical@lists.samba.org, virtualization@lists.linux-foundation.org,
- linux-mm@kvack.org, linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, devel@driverdev.osuosl.org,
- linux-s390@vger.kernel.org, linux-scsi@vger.kernel.org, x86@kernel.org,
- kasan-dev@googlegroups.com, cocci@systeme.lip6.fr, linux-wpan@vger.kernel.org,
- intel-wired-lan@lists.osuosl.org, linux-crypto@vger.kernel.org,
- linux-pm@vger.kernel.org, ecryptfs@vger.kernel.org, linux-nfs@vger.kernel.org,
- linux-fscrypt@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-cifs@vger.kernel.org, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
- wireguard@lists.zx2c4.com, linux-ppp@vger.kernel.org,
- linux-integrity@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-btrfs@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/13/20 3:15 PM, Waiman Long wrote:
-> As said by Linus:
-> 
->    A symmetric naming is only helpful if it implies symmetries in use.
->    Otherwise it's actively misleading.
-> 
->    In "kzalloc()", the z is meaningful and an important part of what the
->    caller wants.
-> 
->    In "kzfree()", the z is actively detrimental, because maybe in the
->    future we really _might_ want to use that "memfill(0xdeadbeef)" or
->    something. The "zero" part of the interface isn't even _relevant_.
-> 
-> The main reason that kzfree() exists is to clear sensitive information
-> that should not be leaked to other future users of the same memory
-> objects.
-> 
-> Rename kzfree() to kfree_sensitive() to follow the example of the
-> recently added kvfree_sensitive() and make the intention of the API
-> more explicit. 
+> Subject: Re: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+> =
 
-Seems reasonable to me. One bikeshed, that you can safely discard and 
-ignore as a mere bikeshed: kfree_memzero or kfree_scrub or 
-kfree_{someverb} seems like a better function name, as it describes what 
-the function does, rather than "_sensitive" that suggests something 
-about the data maybe but who knows what that entails. If you disagree, 
-not a big deal either way.
+> On Tue, Apr 14, 2020 at 04:10:26PM +0800, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > The i.MX8 SCU message header size is the number of "u32" elements, not
+> > "u8", so fix the check.
+> >
+> > Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
+> > Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >
+> > V2:
+> >  I not include the fixes tag, since this patch still in next tree.
+> >
+> >  drivers/mailbox/imx-mailbox.c | 8 ++++----
+> >  1 file changed, 4 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/mailbox/imx-mailbox.c
+> > b/drivers/mailbox/imx-mailbox.c index 7906624a731c..c2398cb63ea0
+> > 100644
+> > --- a/drivers/mailbox/imx-mailbox.c
+> > +++ b/drivers/mailbox/imx-mailbox.c
+> > @@ -154,12 +154,12 @@ static int imx_mu_scu_tx(struct imx_mu_priv
+> > *priv,
+> >
+> >  	switch (cp->type) {
+> >  	case IMX_MU_TYPE_TX:
+> > -		if (msg->hdr.size > sizeof(*msg)) {
+> > +		if (msg->hdr.size > (sizeof(*msg) / 4)) {
+> =
 
- > In addition, memzero_explicit() is used to clear the
- > memory to make sure that it won't get optimized away by the compiler.
+> No need for the parenthesis. Maybe a comment would be helpful here,
+> something like:
+> =
 
-This had occurred to me momentarily a number of years ago, but I was 
-under the impression that the kernel presumes extern function calls to 
-always imply a compiler barrier, making it difficult for the compiler to 
-reason about what happens in/after kfree, in order to be able to 
-optimize out the preceding memset. With LTO, that rule obviously 
-changes. I guess new code should be written with cross-object 
-optimizations in mind now a days? [Meanwhile, it would be sort of 
-interesting to teach gcc about kfree to enable additional scary 
-optimizations...]
+> 	/*
+> 	 * msg->hdr.size specifies the number of u32 words while sizeof
+> 	 * yields bytes.
+> 	 */
+
+V2 will have the update.
+
+> =
+
+> >  			/*
+> >  			 * The real message size can be different to
+> >  			 * struct imx_sc_rpc_msg_max size
+> >  			 */
+> > -			dev_err(priv->dev, "Exceed max msg size (%zu) on TX,
+> got: %i\n", sizeof(*msg), msg->hdr.size);
+> > +			dev_err(priv->dev, "Exceed max msg size (%zu) on TX,
+> got: %i\n",
+> > +sizeof(*msg) / 4, msg->hdr.size);
+> =
+
+> The unit here is also "number of u32 words", maybe bytes is more natural?
+
+ok. Will change to msg->hdr.size << 2 keeping sizeof(*msg).
+
+> And I suggesting specifying the unit in the error message.
+
+Is this ok to you?
+dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i, =
+
+msg->hdr.size: %i\n", sizeof(*msg), msg->hdr.size << 2, msg->hdr.size);
+
+Thanks,
+Peng.
+
+> =
+
+> Best regards
+> Uwe
+> =
+
+> --
+> Pengutronix e.K.                           | Uwe Kleine-K=F6nig
+> |
+> Industrial Linux Solutions                 |
+> https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fwww.
+> pengutronix.de%2F&amp;data=3D02%7C01%7Cpeng.fan%40nxp.com%7Ca6a32
+> 1daf8f84601a28808d7e04d8def%7C686ea1d3bc2b4c6fa92cd99c5c301635%
+> 7C0%7C0%7C637224496010304343&amp;sdata=3DGebTJ82O2xOf52yISwVZTM
+> 6s2q%2Blar533PAGnm%2FAPHI%3D&amp;reserved=3D0 |
 
 _______________________________________________
 linux-arm-kernel mailing list
