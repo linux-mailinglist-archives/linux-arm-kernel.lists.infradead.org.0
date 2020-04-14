@@ -2,79 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F0FC1A7573
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:07:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CB781A75B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:19:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WsIvALxE+BPdfycngaRQ7/jcvFd+t/5+tSuPcpi84SQ=; b=LsMA+kCns03LKo
-	DrKW46gHGDjdbo0n0ysGHUnXYlZqA6wRraQEY/HMGTgLIp5s36xeowtZaoHdQiglLaRFTKTWrazxp
-	dYzAk9kPvg7+NKxxLIKZjcDaHbV3Mep7Sn/LBnP0ZSM5JR5koPU1MZq8KCNMEwfJwP842xYwz2Yaz
-	zdOfUAzDAc9ma9FltFEjLXRKdN37IamWtIRq1yQPBEG445fiRAH5FU9uJ0MIPzMFfJlBuIKB0OQNw
-	z0AXioXBZmdnX28fiY/d5mXmkts0D4ki9axD/W0F2jPUkyGCoGUwgDdOcAHZmBeRXtYsHEO8+yWVw
-	afGdspdkO0ZOGSI9SnrA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LzuxLOHNOQhxsZy9fSVoUobND1wTgYhuVTlkpTA3mr4=; b=fRSr2oMHd8Np/u
+	LkxNGTkWnhapGL6zhinM7pwzUwF7B+lRTa+Hnl0IHRrZLjDFumGIWfGNMHfmkWak+GQ/RQKtVhBbM
+	RZ8pUlv3pqK+Q5lzjuh9BVFRftlLLxBG7FKKUEqYN8oVZU8NVorNDrl6Y3rwZQyaxRQE194x4mLF4
+	bbvXRLlchY5574g07aeb1Q3e/oBIH69/SgqPMNZrzuZbPylTzegESlXgg1FWcy5hn0CAFz2i4FrSO
+	Ria0cG4q6RFpDIvNeLbmY4Lbfbq6JN5AMfhMcIs3ur0Fcohkb4TW9zMvwiNY3gJuU+aMJi/IfIhGf
+	O+DMApf2Y35YmYXVuIBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGbk-0001V7-P8; Tue, 14 Apr 2020 08:07:48 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1jOGmU-0000TF-Gz; Tue, 14 Apr 2020 08:18:54 +0000
+Received: from mail-eopbgr150077.outbound.protection.outlook.com
+ ([40.107.15.77] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGbC-00014Q-3r; Tue, 14 Apr 2020 08:07:16 +0000
-Received: by mail-lj1-f194.google.com with SMTP id v9so4842336ljk.12;
- Tue, 14 Apr 2020 01:07:13 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wb0sza6Q5ty4d/qdwvzNDwl9p6b2ZoB5gGx5QbNev/c=;
- b=O5SNAAqMBoFbi73WKtUynQ0sfSm8SOKbJhZnxl7GxSZW1CDYfXyQdE/CsEVnN0TBFV
- RTv+HCh0qLHy09pn56tcV/WuH/mlZCvVi5qsYHxSYJEmGakoAu9V8eHEz+OOa2ElRZAm
- JcyG7j4TIYj1EiJMOJT6vDExE7JAACfFzzkxE22kdUge97rM+2/C9d34bL1rsraz7DFZ
- 6qsbyBktVAo/p3oK5xtlxJgWnrOYWZQ+bOM/kQNU4qVYjXVa5eMs0MpHOC3aO4YPlkMs
- IVUHWM9dJUP0zRycv8z81VXurK8q5mPVnt953c59uRW+J9LWdUloCUseRWQwcvqvHHW9
- tACA==
-X-Gm-Message-State: AGi0PuYRjgHgPGZ62Xl1snVCjf8DNc9H3IsvKogSrDRj+YbUQE5NXauv
- ADPtCXtSBjSQ0+l62jUGBDk=
-X-Google-Smtp-Source: APiQypIRzmpTgQCOgOkjyFOgh+lfjXKp6L3/Q+98/UR8F4mUGLsDM/5FCaCx7nYXmp/6oZXiEv6WtQ==
-X-Received: by 2002:a2e:140d:: with SMTP id u13mr4164104ljd.152.1586851631828; 
- Tue, 14 Apr 2020 01:07:11 -0700 (PDT)
-Received: from localhost.localdomain
- (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
- by smtp.gmail.com with ESMTPSA id x67sm9788458lfa.76.2020.04.14.01.07.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 01:07:11 -0700 (PDT)
-Date: Tue, 14 Apr 2020 11:06:57 +0300
-From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v9 10/10] power: supply: Fix Kconfig help text indentiation
-Message-ID: <b14e8887ece1bf1fafb600321c9410fe0791d57d.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
-References: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+ id 1jOGmN-0000Sf-FK
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 08:18:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iTmsh+6u1b+9LKOIQNJww3FgO1MUSDFclLXRVxfVPk9WUPTH0Szhs//ArCi7gxV4SnyvgsR0H9gw7i2ULoh4rY+ZNysNlAlKvyzxvI/AwLE1VQQXl43jiZCb0lylNm4Nuq9PA2XtMPswDNTBsoAL/MMoVmuhEmHJCcAMrQJqIlbohginnMDrMlGFxjcFgP9PI/hrlX9QnkaZSrg6GIFZFwkdg50eW+VhzvhHgwqeEx1roUXiz9MZ4g+xE5IKtyy6DzvDeqBQ2HkayOiztdJkcMS3l5cOMRIgkmZfM0Q8kfSRjJpZdcAbiW3sJlSTKLIRO/2Z7lRR1TZtWAdftw9g+Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4tC66cTJ89BNeaHvzMKQcbO3/xuvJdWcFBmJTwpL6Tc=;
+ b=XnmRDvPp6u/Wqd23K1vTP6EbKy0FuXgQHYX9WZDatcaaos0OwrB/pJVlOtXLAvSCFA+H/tyb2UiYIgPOenjCHfpmtRySq+2nxdxxfvfsRs9+wZMZKU46sRo+Gc3sHKbcosMpZsfF1yOmqkcFFY8rqX3BFLuRKrWu650u29ZKU/139aV6tP3JYYTa3GvXY/o8S4ylVoXIUiXN4LJFMF3MgBLaV+yAcgDSvrAmRtcNNmY9nB+ynIJ0oUeDq7ElX5ysCCka5fq6Rw4Rulw0kEstlk0b/jOB1HNhiHXWy38+T2Ps4SvbYu63ZkbtFhDfkHy+A8oEPMppS1zVg+qH7kpw2g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4tC66cTJ89BNeaHvzMKQcbO3/xuvJdWcFBmJTwpL6Tc=;
+ b=PU3oFjoC6LmUjmT+GgiO2GsdEqCc6lFM6fYz/dLQI1YTo+U6+pKMFZAEW9YTkXXXmox0bX+HHncdKDag3SSRpYzfqbvXUfU/2ibD7Sz+Z+qLpqnNKAud0ZrBk7Qf40p+dqktzOulMHwAGDjRrdaG6DZhrdgZMBjXV7bsyGtMs+M=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (2603:10a6:208:70::15)
+ by AM0PR04MB6724.eurprd04.prod.outlook.com (2603:10a6:208:17a::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.16; Tue, 14 Apr
+ 2020 08:18:41 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
+ 08:18:41 +0000
+From: peng.fan@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, jassisinghbrar@gmail.com,
+ o.rempel@pengutronix.de, leonard.crestez@nxp.com
+Subject: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+Date: Tue, 14 Apr 2020 16:10:26 +0800
+Message-Id: <1586851826-16596-1-git-send-email-peng.fan@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR02CA0093.apcprd02.prod.outlook.com
+ (2603:1096:4:90::33) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.67) by
+ SG2PR02CA0093.apcprd02.prod.outlook.com (2603:1096:4:90::33) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2900.16 via Frontend Transport; Tue, 14 Apr 2020 08:18:37 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.67]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 641d2a65-68c9-460c-0027-08d7e04c70ce
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6724:|AM0PR04MB6724:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR04MB67241FFA827BDA53397544A288DA0@AM0PR04MB6724.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
+X-Forefront-PRVS: 0373D94D15
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(376002)(346002)(396003)(39850400004)(136003)(366004)(69590400007)(316002)(16526019)(8936002)(9686003)(6512007)(8676002)(5660300002)(478600001)(66946007)(66476007)(81156014)(6666004)(2906002)(36756003)(66556008)(86362001)(52116002)(186003)(2616005)(4326008)(26005)(6506007)(956004)(15650500001)(6486002);
+ DIR:OUT; SFP:1101; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 93Zb3XKBd7s3dUxmpSUpB/9fHGkGAb80nIUZ351TSrge3k7pt1UkWeEOobxm1mlijjJtdpEQmOtDkYTX7/dANH9/HTrFnsJPDNnhhKOFh1lUOHh+JcNRjGeD7d3pakSAgRC0YJ+rMiGcsPpjKHYZOIbmdJ7i/z7pw1injAZOV5PpvU9LseQDdhgjQe4vo5kKQL/jRT67fSkKJdGY28yr5n3JgBESMKQCfAweJE8FO5oKSzsvB5L3Eki6qz1mgdzWhg9ScUk65iMkrNhtTMZZnoHIE2Vi3a9Imdxf8eNvrjXx4f86MJi78X2pmHoJLOJuh9pnx/mh/4wOQsPt4XmM0goKVpXq3hzZDn4njDdabW9/oASQwfMytqn03+XIuOD4hOW5dkAM1vZSuAjW58gEGNrCZR7XBX6xT2Opd5LnkGleGNJtA+Y9b7XQCTDU46oyYiUmor704jwBHICgcR1o+QKzzI25zMXMFOuXqOQijSKfrDU28h/mNDdPO3olPqdN
+X-MS-Exchange-AntiSpam-MessageData: TOfm9Iue543fqmYrmFvZuioKoiOZLRDgA1QIKQxHLD2nYNggMYSVk7JtPxnrl0Gs+QqKkOrEtrIAa+dyaPus4/eEi+SNWtsl/FTNLcSQ9eMkGQc3H2pgqrNsXmwVhId8+EK5imqV8CrkKWGY0R0yXA==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 641d2a65-68c9-460c-0027-08d7e04c70ce
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Apr 2020 08:18:41.3138 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: ayxUYNV3b+gqRX7Fa2ed2WnMAW59YjmMzGjdy+kxdrgMvFOq3/KB/MX85boWt4bK90q4Sz987Ao6ggXom4JBQw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6724
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_010714_323911_0FB57BFD 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20200414_011847_609802_7ABCAAA1 
+X-CRM114-Status: GOOD (  10.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mazziesaccount[at]gmail.com]
+ no trust [40.107.15.77 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,142 +125,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Andrei Stefanescu <andrei.stefanescu@microchip.com>,
- Heiko Stuebner <heiko@sntech.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Linus Walleij <linus.walleij@linaro.org>,
- Brendan Higgins <brendanhiggins@google.com>,
- Sebastian Reichel <sre@kernel.org>, Andreas Kemnade <andreas@kemnade.info>,
- "Angelo G. Del Regno" <kholk11@gmail.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
- linux-samsung-soc@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Axel Lin <axel.lin@ingics.com>, Gregory CLEMENT <gregory.clement@bootlin.com>,
- linux-pm@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Markus Reichl <m.reichl@fivetechno.de>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- Andy Gross <agross@kernel.org>, markus.laine@fi.rohmeurope.com,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, devicetree@vger.kernel.org,
- Charles Keepax <ckeepax@opensource.cirrus.com>, linux-omap@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>,
- Baolin Wang <baolin.wang@linaro.org>, Sangbeom Kim <sbkim73@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- mikko.mutanen@fi.rohmeurope.com, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, patches@opensource.cirrus.com
+Cc: aisheng.dong@nxp.com, Peng Fan <peng.fan@nxp.com>, Anson.Huang@nxp.com,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Indent the help text as explained in
-Documentation/process/coding-style.rst
+From: Peng Fan <peng.fan@nxp.com>
 
-Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+The i.MX8 SCU message header size is the number of "u32" elements,
+not "u8", so fix the check.
+
+Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
+Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
 
-Changes since v8 - rebased and reordered series.
+V2:
+ I not include the fixes tag, since this patch still in next tree.
 
-I just learned the help text in Kconfigs should be indented by two
-spaces. I fixed this for BD99954 as suggested by Randy and decided
-that I could do this for few other entries as well while I was at
-it anyways.
+ drivers/mailbox/imx-mailbox.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
- drivers/power/supply/Kconfig | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
-
-diff --git a/drivers/power/supply/Kconfig b/drivers/power/supply/Kconfig
-index 436680ee8523..ec028e47c3c2 100644
---- a/drivers/power/supply/Kconfig
-+++ b/drivers/power/supply/Kconfig
-@@ -415,7 +415,7 @@ config CHARGER_PCF50633
- 	tristate "NXP PCF50633 MBC"
- 	depends on MFD_PCF50633
- 	help
--	 Say Y to include support for NXP PCF50633 Main Battery Charger.
-+	  Say Y to include support for NXP PCF50633 Main Battery Charger.
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index 7906624a731c..c2398cb63ea0 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -154,12 +154,12 @@ static int imx_mu_scu_tx(struct imx_mu_priv *priv,
  
- config BATTERY_RX51
- 	tristate "Nokia RX-51 (N900) battery driver"
-@@ -609,15 +609,15 @@ config CHARGER_TPS65090
- 	tristate "TPS65090 battery charger driver"
- 	depends on MFD_TPS65090
- 	help
--	 Say Y here to enable support for battery charging with TPS65090
--	 PMIC chips.
-+	  Say Y here to enable support for battery charging with TPS65090
-+	  PMIC chips.
+ 	switch (cp->type) {
+ 	case IMX_MU_TYPE_TX:
+-		if (msg->hdr.size > sizeof(*msg)) {
++		if (msg->hdr.size > (sizeof(*msg) / 4)) {
+ 			/*
+ 			 * The real message size can be different to
+ 			 * struct imx_sc_rpc_msg_max size
+ 			 */
+-			dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i\n", sizeof(*msg), msg->hdr.size);
++			dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i\n", sizeof(*msg) / 4, msg->hdr.size);
+ 			return -EINVAL;
+ 		}
  
- config CHARGER_TPS65217
- 	tristate "TPS65217 battery charger driver"
- 	depends on MFD_TPS65217
- 	help
--	 Say Y here to enable support for battery charging with TPS65217
--	 PMIC chips.
-+	  Say Y here to enable support for battery charging with TPS65217
-+	  PMIC chips.
+@@ -198,9 +198,9 @@ static int imx_mu_scu_rx(struct imx_mu_priv *priv,
+ 	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_RIEn(0));
+ 	*data++ = imx_mu_read(priv, priv->dcfg->xRR[0]);
  
- config BATTERY_GAUGE_LTC2941
- 	tristate "LTC2941/LTC2943 Battery Gauge Driver"
-@@ -671,16 +671,16 @@ config CHARGER_SC2731
- 	tristate "Spreadtrum SC2731 charger driver"
- 	depends on MFD_SC27XX_PMIC || COMPILE_TEST
- 	help
--	 Say Y here to enable support for battery charging with SC2731
--	 PMIC chips.
-+	  Say Y here to enable support for battery charging with SC2731
-+	  PMIC chips.
+-	if (msg.hdr.size > sizeof(msg)) {
++	if (msg.hdr.size > (sizeof(msg) / 4)) {
+ 		dev_err(priv->dev, "Exceed max msg size (%zu) on RX, got: %i\n",
+-			sizeof(msg), msg.hdr.size);
++			sizeof(msg) / 4, msg.hdr.size);
+ 		return -EINVAL;
+ 	}
  
- config FUEL_GAUGE_SC27XX
- 	tristate "Spreadtrum SC27XX fuel gauge driver"
- 	depends on MFD_SC27XX_PMIC || COMPILE_TEST
- 	depends on IIO
- 	help
--	 Say Y here to enable support for fuel gauge with SC27XX
--	 PMIC chips.
-+	  Say Y here to enable support for fuel gauge with SC27XX
-+	  PMIC chips.
- 
- config CHARGER_UCS1002
- 	tristate "Microchip UCS1002 USB Port Power Controller"
-@@ -698,9 +698,9 @@ config CHARGER_BD70528
- 	select LINEAR_RANGES
- 	default n
- 	help
--	 Say Y here to enable support for getting battery status
--	 information and altering charger configurations from charger
--	 block of the ROHM BD70528 Power Management IC.
-+	  Say Y here to enable support for getting battery status
-+	  information and altering charger configurations from charger
-+	  block of the ROHM BD70528 Power Management IC.
- 
- config CHARGER_BD99954
- 	tristate "ROHM bd99954 charger driver"
 -- 
-2.21.0
+2.16.4
 
-
--- 
-Matti Vaittinen, Linux device drivers
-ROHM Semiconductors, Finland SWDC
-Kiviharjunlenkki 1E
-90220 OULU
-FINLAND
-
-~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
-Simon says - in Latin please.
-~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
-Thanks to Simon Glass for the translation =] 
 
 _______________________________________________
 linux-arm-kernel mailing list
