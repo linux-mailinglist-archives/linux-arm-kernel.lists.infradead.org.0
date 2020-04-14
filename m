@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A6481A7547
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 09:59:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 850C31A7549
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:00:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x03HVoi0RoWTsj2qOg+fk5OdyS1/+cjjTfB+dJIq0HI=; b=JjWRAReix4XMSG
-	POr0zLWPZggv09Qxw7nFom1EOPyFOI+KKd+nlIcTU5X+4GelhYTsaPSre5z/LchvxE4zVtTUfl0Jy
-	jVtVESU4Xo7PuvEN4U3cebDiwszdushyZHN5ThVOJGmWh3YjX3AwLJwoFKGgTtm9EOnCQb3/Fc2z1
-	48fqUCgqr0dKDLPdhuXgCrkNt934LxOIjypa53fDSrsfFDxvxuUy76kKAjW0XV2OxFphI0omcMvLB
-	owM+tXWEQzcfMaRd2vPUjukD24IuLneBX4N6OYK75v5w+RN8PdUwRtQ1g6/+idKUCJf2nOiov5NEc
-	qPDuQrLn+t7U25UU8SQA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RLbf5OsPiMbccQm/OnFv4aSsFB5bl6DMKW/tag6oaGY=; b=ZmXQKkPjoeO6oZ
+	h3G5eYBMU6Onmm18Kiyf+xfEXgy9Npq0YWuJsyKagJweLAPbwjaBXzAndQh9aG8jG8JjfXqUVASwE
+	F36WP99j+oYvD8ZGdnFD6gzErQ+OfVqevD75m5Lj9eCMHwycKXu8GRAxXkdiak44A09KeHCUGfw1g
+	lB9Ds/CWSNnTYv4+T3pSVSrmAHihpghQ/+CfBlrs3dKWInBG2BOFYPpwghoyeOG/rD0IzRB07LFi2
+	OBLhDFlr4nLwm2hwMfHtOqdRMadn5tcg+OJI/lHutMqE5bngbL4WhmASAVcDYi+BMVZAMAEtPqoLs
+	hUPFR08c9k5kth/KWC1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGTW-0000Em-UR; Tue, 14 Apr 2020 07:59:18 +0000
-Received: from mail-lj1-f196.google.com ([209.85.208.196])
+	id 1jOGU5-0000fc-Tc; Tue, 14 Apr 2020 07:59:53 +0000
+Received: from mail-lf1-f67.google.com ([209.85.167.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGTO-0000DS-Vu; Tue, 14 Apr 2020 07:59:12 +0000
-Received: by mail-lj1-f196.google.com with SMTP id q22so11466622ljg.0;
- Tue, 14 Apr 2020 00:59:09 -0700 (PDT)
+ id 1jOGTx-0000fB-Fk; Tue, 14 Apr 2020 07:59:47 +0000
+Received: by mail-lf1-f67.google.com with SMTP id 131so8594429lfh.11;
+ Tue, 14 Apr 2020 00:59:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=JdLyAccaWUmkXdTSspp6ynm82lQAH9maXmu165bianE=;
- b=I0OxgQ8I0ZPxQFzNzCVkb+AQ7RxjB1pXFMAOJ8Kl+i4HhPs/z9QtODe6USiE0HNEU6
- zXuNrJYMesP8AbDfwNcMXXOQJyw76vYmkzO6rytciisllL4Yrerm9IIJDxWpwnog952F
- II4GnbjOVPAxzXhb82TLbsbk8uGzRxOQtN+fUJ9njDatttuYj1CsZqiIuB5n9bqFqlYw
- 2Ho92m8Npk04oObc5l5ZGBi/nQBnmHrhzu8AmKkgUmsYKuEuxHUVui+mrBNb9kfQXvsV
- oyywDboxESxZpdUXp1G8C5USJJYxwjsTcEG8dHhAFUlNNDRU0C+CgvU0jKRTYGyGUPZ0
- Z8Wg==
-X-Gm-Message-State: AGi0PuZoJ2iF2SiTmZ3fWGyIQBSWXMZM+6KmqrqeH4uY4gmNwwlNDWpa
- A2ehbd8x5AFA3zJQhxC7ecY=
-X-Google-Smtp-Source: APiQypIKVVpHV8FdmvKZHTVeW9rdWsW6z9wcz3ylvVynt+m/NXjro1ePx2JWYy6pnmuTmx+cloznQw==
-X-Received: by 2002:a2e:6a08:: with SMTP id f8mr564677ljc.8.1586851144063;
- Tue, 14 Apr 2020 00:59:04 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5TLrB/kqQxRMxzfGHtqwHcPMyhUVMBZD3rIBIrmRccU=;
+ b=O3V2iCsW5ODlD4Qy7GzfHA6YcOoNIyPZCuPSgzMAwleaKYXLlwzNxt86TDjw+l4/Ri
+ fdC6NnopZcpWYnvumOFuUU4//25Keht+4EODt5lZbuqy9qR8kyP5G0+fWkfy+PPu39nI
+ eUp0VCBuce51oJvsRGpfLkWF1T42qu4xG35VsI6JiTa3/Ish17d3C2mei9V1gx4f8ex5
+ PieAJT19F8A0ueRaa6N/zr9LGigpX9NZMvveazcCCdTgPqqXJ0cVGQvZonAlVJ6RxE7u
+ tSJzGLK1adKIKc+5iBl9rvmsC6vLY81dq/gxQgzjuNXCuOlgnJDYfx7OiCDJfuyiyLiG
+ ZWzQ==
+X-Gm-Message-State: AGi0PubK4zhWtLjWY0nWLkp/VYUSYziqtUju+oM13Gw+1GRfQmflWot2
+ dLENbqJOdfFWUb3ae/fcAnM=
+X-Google-Smtp-Source: APiQypIYOzc6Dv2vSE+t+tg1bL00nHB4Y6PfAXOqyoHyv58w7laGUa+s6rC2+M3lVRCsNBtQpeXXMg==
+X-Received: by 2002:a19:c8cf:: with SMTP id
+ y198mr12350717lff.197.1586851183634; 
+ Tue, 14 Apr 2020 00:59:43 -0700 (PDT)
 Received: from localhost.localdomain
  (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
- by smtp.gmail.com with ESMTPSA id t19sm9414024lfl.53.2020.04.14.00.59.00
+ by smtp.gmail.com with ESMTPSA id o21sm8651567ljg.71.2020.04.14.00.59.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 00:59:03 -0700 (PDT)
-Date: Tue, 14 Apr 2020 10:58:53 +0300
+ Tue, 14 Apr 2020 00:59:42 -0700 (PDT)
+Date: Tue, 14 Apr 2020 10:59:33 +0300
 From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v9 00/10] Support ROHM BD99954 charger IC
-Message-ID: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+Subject: [PATCH v9 01/10] lib: add linear ranges helpers
+Message-ID: <aadd70ad382276e8ccbf6c6b91a596d9898a5afd.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+References: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_005911_035469_29A05FA3 
-X-CRM114-Status: GOOD (  18.14  )
+X-CRM114-CacheID: sfid-20200414_005945_526401_861F80AD 
+X-CRM114-Status: GOOD (  26.37  )
 X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.196 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.196 listed in wl.mailspike.net]
+ no trust [209.85.167.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mazziesaccount[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.67 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -121,224 +124,374 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support ROHM BD99954 Battery Management IC
+Many devices have control registers which control some measurable
+property. Often a register contains control field so that change in
+this field causes linear change in the controlled property. It is not
+a rare case that user wants to give 'meaningful' control values and
+driver needs to convert them to register field values. Even more
+often user wants to 'see' the currently set value - again in
+meaningful units - and driver needs to convert the values it reads
+from register to these meaningful units. Examples of this include:
 
-ROHM BD99954 is a Battery Management IC for 1-4 cell Lithium-Ion
-secondary battery. BD99954 is intended to be used in space-constraint
-equipment such as Low profile Notebook PC, Tablets and other
-applications.
+- regulators, voltage/current configurations
+- power, voltage/current configurations
+- clk(?) NCOs
 
-Series extracts a "linear ranges" helper out of the regulator
-framework. Linear ranges helper is intended to help converting
-real-world values to register values when conversion is linear. I
-suspect this is useful also for power subsystem and possibly for clk.
+and maybe others I can't think of right now.
+
+Provide a linear_range helper which can do conversion from user value
+to register value 'selector'.
+
+The idea here is stolen from regulator framework and patches refactoring
+the regulator helpers to use this are following.
 
 Current implementation does not support inversely proportional ranges
-but adding support for that could be helpful.
+but it might be useful if we could support also inversely proportional
+ranges?
 
-This version of series introduces new battry DT binding entries and
-adds the parsing in power_supply_get_battery_info().
-
-Changelog v9:
- General:
-   - rebased on top of v5.7-rc1
-   - re-ordered patches as suggested by Sebastian Reichel
-   - added few acks
- BD99954 driver:
-   - Moved bd99954-charger.h to drivers/power/supply
-   - fixed a typo from print
-   - used devm_add_action_or_reset and removed remove callback
-
-Changelog v8:
- Linear ranges
-   - small improvements suggested by Andy Shevchenko, no functional changes
-
-Changelog v7:
- General:
-   - rebased on top of v5.6
- bd99954 driver:
-   - fixed bunch of styling issues spotted by Andy Shevchenko
-   - dropped ACPI table as ACPI properties are not supported at this
-     version of driver.
-   - added few acks
-
-Changelog v6:
- generic:
-   - rebased on top of 5.6-rc7.
- linear ranges:
-   - moved to lib as requested by Greg KH
-   - EXPORT_SYMBOL => EXPORT_SYMBOL_GPL
-   - licence GPL-2.0, not later
-   - added KUnit test for linear ranges
-
-Changelog v5:
- generic:
-   - rebased on top of 5.6-rc6.
- DT-bindings:
-   - Dropped -charger extension from compatible and removed wildcard x.
- regulators:
-   - squashed the regulator changes in one patch.
- power-supply KConfig:
-   - fixed indentiation
-   - dropped unnecessary 'default N' from BD99954.
-
-Changelog v4:
- generic:
-   - rebase and drop RFC.
- DT-bindings:
-   - add I2C node address-cells and size-cells to fix yaml check errors
-   - uncomment multipleOf:
- bd70528:
-   - add patch which renames driver internal linear_range struct to
-     avoid collision when regulator/driver.h (which gets included from
-     rohm generic header) introduces the linear_range struct.
- regulators:
-   - rebase to v5.6-rc2 and convert also the two newly introduced
-     drivers to use linear_range struct instead of
-     regulator_linear_range.
- linear_ranges:
-   - Fix kerneldoc.
-
-Changelog RFC-v3:
- DT-bindings:
-   - fix the BD99954 binding (the *-microvolt Vs. *-microvolts issue is
-     still there. Not sure which one is correct)
-   - renabe tricklecharge-* binding to trickle-charge-* as suggested by
-     Rob.
- - drop the linear-ranges helper which was written for BD70528 and
-   extract the linear-range code from regulator framework instead.
- - refactor regulator framework to utilize extracted linear-ranges
-   code.
- - change the struct regulator_linear_range to linear_range from
-   regulator drivers.
- - refactor BD70528 to use regulator framework originated
-   linear-ranges code.
- - change BD99954 to use linear-ranges code from regulator framework
-
-Changelog RFC-v2:
- DT-bindings:
-   - Used the battery parameters described in battery.txt
-   - Added few new parameters to battery.txt
-   - Added ASCII art charging profile chart for BD99954 to explain
-     states and limits.
- Linear ranges:
-   - Fixed division by zero error from linear-ranges code if step 0 is
-     used.
- Power-supply core:
-   - Added parsing of new battery parameters.
- BD99954 driver:
-   - converted to use battery parameters from battery node
-   - Added step 0 ranges for reg values which do not change voltage
-   - added dt-node to psy-config
-
-Patch 1:
-	Linear ranges helpers
-Patch 2:
-	Test for linear ranges helpers
-Patch 3:
-	Rename driver internal struct linear_range from bd70528-power
-Patch 4:
-	Use linear-ranges helpers in regulator framework and
-	convert regulator drivers to use new linear_range struct.
-Patch 5:
-	Use linear-ranges helpers in bd70528 driver
-Patch 6:
-	DT binding docs for the new battery parameters
-Patch 7:
-	Parsing of new battery parameters
-Patch 8:
-	BD99954 charger DT binding docs
-Patch 9:
-	ROHM BD99954 charger IC driver
-Patch 10:
-	Fix Kconfig help text indentiation for other entries as well.
-
+Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Reviewed-by: Mark Brown <broonie@kernel.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 ---
 
-Matti Vaittinen (10):
-  lib: add linear ranges helpers
-  lib/test_linear_ranges: add a test for the 'linear_ranges'
-  power: supply: bd70528: rename linear_range to avoid collision
-  regulator: use linear_ranges helper
-  power: supply: bd70528: use linear ranges
-  dt-bindings: battery: add new battery parameters
-  power: supply: add battery parameters
-  dt_bindings: ROHM BD99954 Charger
-  power: supply: Support ROHM bd99954 charger
-  power: supply: Fix Kconfig help text indentiation
+Changes since v8 - rebased and reordered series.
 
- .../bindings/power/supply/battery.txt         |    6 +
- .../bindings/power/supply/rohm,bd99954.yaml   |  155 +++
- drivers/power/supply/Kconfig                  |   34 +-
- drivers/power/supply/Makefile                 |    1 +
- drivers/power/supply/bd70528-charger.c        |  140 +-
- drivers/power/supply/bd99954-charger.c        | 1142 +++++++++++++++++
- drivers/power/supply/bd99954-charger.h        | 1075 ++++++++++++++++
- drivers/power/supply/power_supply_core.c      |    8 +
- drivers/regulator/88pg86x.c                   |    4 +-
- drivers/regulator/88pm800-regulator.c         |    4 +-
- drivers/regulator/Kconfig                     |    1 +
- drivers/regulator/act8865-regulator.c         |    4 +-
- drivers/regulator/act8945a-regulator.c        |    2 +-
- drivers/regulator/arizona-ldo1.c              |    2 +-
- drivers/regulator/arizona-micsupp.c           |    4 +-
- drivers/regulator/as3711-regulator.c          |    6 +-
- drivers/regulator/as3722-regulator.c          |    4 +-
- drivers/regulator/axp20x-regulator.c          |   16 +-
- drivers/regulator/bcm590xx-regulator.c        |    8 +-
- drivers/regulator/bd70528-regulator.c         |    8 +-
- drivers/regulator/bd71828-regulator.c         |   10 +-
- drivers/regulator/bd718x7-regulator.c         |   26 +-
- drivers/regulator/da903x.c                    |    2 +-
- drivers/regulator/helpers.c                   |  130 +-
- drivers/regulator/hi6421-regulator.c          |    4 +-
- drivers/regulator/lochnagar-regulator.c       |    4 +-
- drivers/regulator/lp873x-regulator.c          |    4 +-
- drivers/regulator/lp87565-regulator.c         |    2 +-
- drivers/regulator/lp8788-buck.c               |    2 +-
- drivers/regulator/max77650-regulator.c        |    2 +-
- drivers/regulator/mcp16502.c                  |    4 +-
- drivers/regulator/mp8859.c                    |    2 +-
- drivers/regulator/mt6323-regulator.c          |    6 +-
- drivers/regulator/mt6358-regulator.c          |    8 +-
- drivers/regulator/mt6380-regulator.c          |    6 +-
- drivers/regulator/mt6397-regulator.c          |    6 +-
- drivers/regulator/palmas-regulator.c          |    4 +-
- drivers/regulator/qcom-rpmh-regulator.c       |    2 +-
- drivers/regulator/qcom_rpm-regulator.c        |   14 +-
- drivers/regulator/qcom_smd-regulator.c        |   70 +-
- drivers/regulator/rk808-regulator.c           |   10 +-
- drivers/regulator/s2mps11.c                   |   14 +-
- drivers/regulator/sky81452-regulator.c        |    2 +-
- drivers/regulator/stpmic1_regulator.c         |   18 +-
- drivers/regulator/tps65086-regulator.c        |   10 +-
- drivers/regulator/tps65217-regulator.c        |    4 +-
- drivers/regulator/tps65218-regulator.c        |    6 +-
- drivers/regulator/tps65912-regulator.c        |    4 +-
- drivers/regulator/twl-regulator.c             |    4 +-
- drivers/regulator/twl6030-regulator.c         |    2 +-
- drivers/regulator/wm831x-dcdc.c               |    2 +-
- drivers/regulator/wm831x-ldo.c                |    4 +-
- drivers/regulator/wm8350-regulator.c          |    2 +-
- drivers/regulator/wm8400-regulator.c          |    2 +-
- include/linux/linear_range.h                  |   48 +
- include/linux/power_supply.h                  |    4 +
- include/linux/regulator/driver.h              |   27 +-
- lib/Kconfig                                   |    3 +
- lib/Kconfig.debug                             |   11 +
- lib/Makefile                                  |    2 +
- lib/linear_ranges.c                           |  241 ++++
- lib/test_linear_ranges.c                      |  228 ++++
- 62 files changed, 3224 insertions(+), 356 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
- create mode 100644 drivers/power/supply/bd99954-charger.c
- create mode 100644 drivers/power/supply/bd99954-charger.h
+ include/linux/linear_range.h |  48 +++++++
+ lib/Kconfig                  |   3 +
+ lib/Makefile                 |   1 +
+ lib/linear_ranges.c          | 241 +++++++++++++++++++++++++++++++++++
+ 4 files changed, 293 insertions(+)
  create mode 100644 include/linux/linear_range.h
  create mode 100644 lib/linear_ranges.c
- create mode 100644 lib/test_linear_ranges.c
 
-
-base-commit: 8f3d9f354286745c751374f5f1fcafee6b3f3136
+diff --git a/include/linux/linear_range.h b/include/linux/linear_range.h
+new file mode 100644
+index 000000000000..17b5943727d5
+--- /dev/null
++++ b/include/linux/linear_range.h
+@@ -0,0 +1,48 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/* Copyright (C) 2020 ROHM Semiconductors */
++
++#ifndef LINEAR_RANGE_H
++#define LINEAR_RANGE_H
++
++#include <linux/types.h>
++
++/**
++ * struct linear_range - table of selector - value pairs
++ *
++ * Define a lookup-table for range of values. Intended to help when looking
++ * for a register value matching certaing physical measure (like voltage).
++ * Usable when increment of one in register always results a constant increment
++ * of the physical measure (like voltage).
++ *
++ * @min:  Lowest value in range
++ * @min_sel: Lowest selector for range
++ * @max_sel: Highest selector for range
++ * @step: Value step size
++ */
++struct linear_range {
++	unsigned int min;
++	unsigned int min_sel;
++	unsigned int max_sel;
++	unsigned int step;
++};
++
++unsigned int linear_range_values_in_range(const struct linear_range *r);
++unsigned int linear_range_values_in_range_array(const struct linear_range *r,
++						int ranges);
++unsigned int linear_range_get_max_value(const struct linear_range *r);
++
++int linear_range_get_value(const struct linear_range *r, unsigned int selector,
++			   unsigned int *val);
++int linear_range_get_value_array(const struct linear_range *r, int ranges,
++				 unsigned int selector, unsigned int *val);
++int linear_range_get_selector_low(const struct linear_range *r,
++				  unsigned int val, unsigned int *selector,
++				  bool *found);
++int linear_range_get_selector_high(const struct linear_range *r,
++				   unsigned int val, unsigned int *selector,
++				   bool *found);
++int linear_range_get_selector_low_array(const struct linear_range *r,
++					int ranges, unsigned int val,
++					unsigned int *selector, bool *found);
++
++#endif
+diff --git a/lib/Kconfig b/lib/Kconfig
+index 5d53f9609c25..8ec05335426c 100644
+--- a/lib/Kconfig
++++ b/lib/Kconfig
+@@ -19,6 +19,9 @@ config RAID6_PQ_BENCHMARK
+ 	  Benchmark all available RAID6 PQ functions on init and choose the
+ 	  fastest one.
+ 
++config LINEAR_RANGES
++	tristate
++
+ config PACKING
+ 	bool "Generic bitfield packing and unpacking"
+ 	default n
+diff --git a/lib/Makefile b/lib/Makefile
+index 685aee60de1d..20b9cfdcad69 100644
+--- a/lib/Makefile
++++ b/lib/Makefile
+@@ -125,6 +125,7 @@ obj-$(CONFIG_DEBUG_LIST) += list_debug.o
+ obj-$(CONFIG_DEBUG_OBJECTS) += debugobjects.o
+ 
+ obj-$(CONFIG_BITREVERSE) += bitrev.o
++obj-$(CONFIG_LINEAR_RANGES) += linear_ranges.o
+ obj-$(CONFIG_PACKING)	+= packing.o
+ obj-$(CONFIG_CRC_CCITT)	+= crc-ccitt.o
+ obj-$(CONFIG_CRC16)	+= crc16.o
+diff --git a/lib/linear_ranges.c b/lib/linear_ranges.c
+new file mode 100644
+index 000000000000..d1336c75ccd7
+--- /dev/null
++++ b/lib/linear_ranges.c
+@@ -0,0 +1,241 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * helpers to map values in a linear range to range index
++ *
++ * Original idea borrowed from regulator framework
++ *
++ * It might be useful if we could support also inversely proportional ranges?
++ * Copyright 2020 ROHM Semiconductors
++ */
++
++#include <linux/errno.h>
++#include <linux/export.h>
++#include <linux/kernel.h>
++#include <linux/linear_range.h>
++
++/**
++ * linear_range_values_in_range - return the amount of values in a range
++ * @r:		pointer to linear range where values are counted
++ *
++ * Compute the amount of values in range pointed by @r. Note, values can
++ * be all equal - range with selectors 0,...,2 with step 0 still contains
++ * 3 values even though they are all equal.
++ *
++ * Return: the amount of values in range pointed by @r
++ */
++unsigned int linear_range_values_in_range(const struct linear_range *r)
++{
++	if (!r)
++		return 0;
++	return r->max_sel - r->min_sel + 1;
++}
++EXPORT_SYMBOL_GPL(linear_range_values_in_range);
++
++/**
++ * linear_range_values_in_range_array - return the amount of values in ranges
++ * @r:		pointer to array of linear ranges where values are counted
++ * @ranges:	amount of ranges we include in computation.
++ *
++ * Compute the amount of values in ranges pointed by @r. Note, values can
++ * be all equal - range with selectors 0,...,2 with step 0 still contains
++ * 3 values even though they are all equal.
++ *
++ * Return: the amount of values in first @ranges ranges pointed by @r
++ */
++unsigned int linear_range_values_in_range_array(const struct linear_range *r,
++						int ranges)
++{
++	int i, values_in_range = 0;
++
++	for (i = 0; i < ranges; i++) {
++		int values;
++
++		values = linear_range_values_in_range(&r[i]);
++		if (!values)
++			return values;
++
++		values_in_range += values;
++	}
++	return values_in_range;
++}
++EXPORT_SYMBOL_GPL(linear_range_values_in_range_array);
++
++/**
++ * linear_range_get_max_value - return the largest value in a range
++ * @r:		pointer to linear range where value is looked from
++ *
++ * Return: the largest value in the given range
++ */
++unsigned int linear_range_get_max_value(const struct linear_range *r)
++{
++	return r->min + (r->max_sel - r->min_sel) * r->step;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_max_value);
++
++/**
++ * linear_range_get_value - fetch a value from given range
++ * @r:		pointer to linear range where value is looked from
++ * @selector:	selector for which the value is searched
++ * @val:	address where found value is updated
++ *
++ * Search given ranges for value which matches given selector.
++ *
++ * Return: 0 on success, -EINVAL given selector is not found from any of the
++ * ranges.
++ */
++int linear_range_get_value(const struct linear_range *r, unsigned int selector,
++			   unsigned int *val)
++{
++	if (r->min_sel > selector || r->max_sel < selector)
++		return -EINVAL;
++
++	*val = r->min + (selector - r->min_sel) * r->step;
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_value);
++
++/**
++ * linear_range_get_value_array - fetch a value from array of ranges
++ * @r:		pointer to array of linear ranges where value is looked from
++ * @ranges:	amount of ranges in an array
++ * @selector:	selector for which the value is searched
++ * @val:	address where found value is updated
++ *
++ * Search through an array of ranges for value which matches given selector.
++ *
++ * Return: 0 on success, -EINVAL given selector is not found from any of the
++ * ranges.
++ */
++int linear_range_get_value_array(const struct linear_range *r, int ranges,
++				 unsigned int selector, unsigned int *val)
++{
++	int i;
++
++	for (i = 0; i < ranges; i++)
++		if (r[i].min_sel <= selector && r[i].max_sel >= selector)
++			return linear_range_get_value(&r[i], selector, val);
++
++	return -EINVAL;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_value_array);
++
++/**
++ * linear_range_get_selector_low - return linear range selector for value
++ * @r:		pointer to linear range where selector is looked from
++ * @val:	value for which the selector is searched
++ * @selector:	address where found selector value is updated
++ * @found:	flag to indicate that given value was in the range
++ *
++ * Return selector which which range value is closest match for given
++ * input value. Value is matching if it is equal or smaller than given
++ * value. If given value is in the range, then @found is set true.
++ *
++ * Return: 0 on success, -EINVAL if range is invalid or does not contain
++ * value smaller or equal to given value
++ */
++int linear_range_get_selector_low(const struct linear_range *r,
++				  unsigned int val, unsigned int *selector,
++				  bool *found)
++{
++	*found = false;
++
++	if (r->min > val)
++		return -EINVAL;
++
++	if (linear_range_get_max_value(r) < val) {
++		*selector = r->max_sel;
++		return 0;
++	}
++
++	*found = true;
++
++	if (r->step == 0)
++		*selector = r->min_sel;
++	else
++		*selector = (val - r->min) / r->step + r->min_sel;
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_selector_low);
++
++/**
++ * linear_range_get_selector_low_array - return linear range selector for value
++ * @r:		pointer to array of linear ranges where selector is looked from
++ * @ranges:	amount of ranges to scan from array
++ * @val:	value for which the selector is searched
++ * @selector:	address where found selector value is updated
++ * @found:	flag to indicate that given value was in the range
++ *
++ * Scan array of ranges for selector which which range value matches given
++ * input value. Value is matching if it is equal or smaller than given
++ * value. If given value is found to be in a range scanning is stopped and
++ * @found is set true. If a range with values smaller than given value is found
++ * but the range max is being smaller than given value, then the ranges
++ * biggest selector is updated to @selector but scanning ranges is continued
++ * and @found is set to false.
++ *
++ * Return: 0 on success, -EINVAL if range array is invalid or does not contain
++ * range with a value smaller or equal to given value
++ */
++int linear_range_get_selector_low_array(const struct linear_range *r,
++					int ranges, unsigned int val,
++					unsigned int *selector, bool *found)
++{
++	int i;
++	int ret = -EINVAL;
++
++	for (i = 0; i < ranges; i++) {
++		int tmpret;
++
++		tmpret = linear_range_get_selector_low(&r[i], val, selector,
++						       found);
++		if (!tmpret)
++			ret = 0;
++
++		if (*found)
++			break;
++	}
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_selector_low_array);
++
++/**
++ * linear_range_get_selector_high - return linear range selector for value
++ * @r:		pointer to linear range where selector is looked from
++ * @val:	value for which the selector is searched
++ * @selector:	address where found selector value is updated
++ * @found:	flag to indicate that given value was in the range
++ *
++ * Return selector which which range value is closest match for given
++ * input value. Value is matching if it is equal or higher than given
++ * value. If given value is in the range, then @found is set true.
++ *
++ * Return: 0 on success, -EINVAL if range is invalid or does not contain
++ * value greater or equal to given value
++ */
++int linear_range_get_selector_high(const struct linear_range *r,
++				   unsigned int val, unsigned int *selector,
++				   bool *found)
++{
++	*found = false;
++
++	if (linear_range_get_max_value(r) < val)
++		return -EINVAL;
++
++	if (r->min > val) {
++		*selector = r->min_sel;
++		return 0;
++	}
++
++	*found = true;
++
++	if (r->step == 0)
++		*selector = r->max_sel;
++	else
++		*selector = DIV_ROUND_UP(val - r->min, r->step) + r->min_sel;
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(linear_range_get_selector_high);
 -- 
 2.21.0
 
