@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ADD91A77D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:51:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BCEB1A77D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:51:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Uwj7pBxVvr+WmFcUaOgL2refB9CEBdWpyoEd/ppgxZE=; b=PG8DyvRgLXCECnzkmrj9NlfcAC
-	hjd+5Xu+mqGac+EZfMZTSGrs9dJL4UXXG3+OUzZ9S6l0EFoqNDDvnrzXE5emkumsjDoxuWRkXJW3U
-	fnfZbPe/B4IcXAGKQy9931UxDlSWYRyYd0yk8HC89xvsw3ivKParUEo6b4E3N/vnGABn8xJq4FaL7
-	n9rPAAz6vt8c+/khzFqPM7JtklDccPgZqd49TRab/1taENrBKcJKost5JB9WPUSZ3GN23QAexdEeR
-	nsGpf5FQHMXwRoVy+O5c//4pVQoiW6YPcYImSlimDaJdrJ3tOFDnUyzG1VMi5K0KM8hI0+d7JdX36
-	PtPr7tug==;
+	bh=n7ZUytf7KMO0ScEfTYCfsAZf41mEKpWSxZf0iX/HhQM=; b=LpIuqdK1qHxd6kO1FwS+PiW5F1
+	m12bljumMyo8tGbmEa6fUaJkLjqY0Q9yL4gj+qkMbY+9HSXxTQ2L3f6vC8C2HUb8QvmLwUntwHRrQ
+	hv+/xolaSh6MzSF0sL6LGiIFaxiRCEUC84azqUivznCPUJnGCZWaSM6CrJkQWi4NRXnCu0nYNqR/V
+	o/KpsHnGHhDgkdc+Ef/C8yVLETQp7k4XIHAaUsKsnAE010js+6BY1OSKRquDMDwLgFzAFwueHsWiv
+	TUeWJT8bE3iNyZFp1hC/ibH0BS6WxyfydLhlq087Apw1kvP2mxRJvV6MKXPzz+91lASMzTSF4RK1w
+	/PGs1COQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOIE6-0004ol-5C; Tue, 14 Apr 2020 09:51:30 +0000
+	id 1jOIEK-00054v-PY; Tue, 14 Apr 2020 09:51:44 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOIBt-0000wn-ET
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:15 +0000
+ id 1jOIBy-00010f-5T
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9A7711FB;
- Tue, 14 Apr 2020 02:49:12 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 253A71FB;
+ Tue, 14 Apr 2020 02:49:17 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1DD733F6C4;
- Tue, 14 Apr 2020 02:49:09 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1EC9B3F6C4;
+ Tue, 14 Apr 2020 02:49:12 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 07/16] arm64/cpufeature: Add remaining feature bits in
- ID_PFR0 register
-Date: Tue, 14 Apr 2020 15:18:21 +0530
-Message-Id: <1586857710-17154-8-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V2 08/16] arm64/cpufeature: Add remaining feature bits in
+ ID_MMFR4 register
+Date: Tue, 14 Apr 2020 15:18:22 +0530
+Message-Id: <1586857710-17154-9-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 References: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_024914_013666_C11ED77D 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200414_024918_435900_AACD26C7 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,8 +71,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable DIT and CSV2 feature bits in ID_PFR0 register as per ARM DDI 0487F.a
-specification. Except RAS and AMU, all other feature bits are now enabled.
+Enable all remaining feature bits like EVT, CCIDX, LSM, HPDS, CnP, XNX,
+SpecSEI in ID_MMFR4 register per ARM DDI 0487F.a.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -86,37 +85,54 @@ Suggested-by: Mark Rutland <mark.rutland@arm.com>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm64/include/asm/sysreg.h | 3 +++
- arch/arm64/kernel/cpufeature.c  | 2 ++
- 2 files changed, 5 insertions(+)
+ arch/arm64/include/asm/sysreg.h |  8 ++++++++
+ arch/arm64/kernel/cpufeature.c  | 13 +++++++++++++
+ 2 files changed, 21 insertions(+)
 
 diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 88b3a16defbb..32b7539b965f 100644
+index 32b7539b965f..8a2421a0d76a 100644
 --- a/arch/arm64/include/asm/sysreg.h
 +++ b/arch/arm64/include/asm/sysreg.h
-@@ -780,6 +780,9 @@
+@@ -778,6 +778,14 @@
+ #define ID_ISAR6_DP_SHIFT		4
+ #define ID_ISAR6_JSCVT_SHIFT		0
  
++#define ID_MMFR4_EVT_SHIFT		28
++#define ID_MMFR4_CCIDX_SHIFT		24
++#define ID_MMFR4_LSM_SHIFT		20
++#define ID_MMFR4_HPDS_SHIFT		16
++#define ID_MMFR4_CNP_SHIFT		12
++#define ID_MMFR4_XNX_SHIFT		8
++#define ID_MMFR4_SPECSEI_SHIFT		0
++
  #define ID_MMFR5_ETS_SHIFT		0
  
-+#define ID_PFR0_DIT_SHIFT		24
-+#define ID_PFR0_CSV2_SHIFT		16
-+
- #define ID_PFR2_SSBS_SHIFT		4
- #define ID_PFR2_CSV3_SHIFT		0
- 
+ #define ID_PFR0_DIT_SHIFT		24
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 233adc32b842..8b289a6815eb 100644
+index 8b289a6815eb..7de6abbafb35 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -359,6 +359,8 @@ static const struct arm64_ftr_bits ftr_id_isar6[] = {
+@@ -338,7 +338,20 @@ static const struct arm64_ftr_bits ftr_id_isar5[] = {
  };
  
- static const struct arm64_ftr_bits ftr_id_pfr0[] = {
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_DIT_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_PFR0_CSV2_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 12, 4, 0),		/* State3 */
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 8, 4, 0),		/* State2 */
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 4, 4, 0),		/* State1 */
+ static const struct arm64_ftr_bits ftr_id_mmfr4[] = {
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_EVT_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_CCIDX_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_LSM_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_HPDS_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_CNP_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR4_XNX_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 4, 4, 0),	/* ac2 */
++	/*
++	 * SpecSEI = 1 indicates that the PE might generate an SError on an
++	 * external abort on speculative read. It is safe to assume that an
++	 * SError might be generated than it will not be. Hence it has been
++	 * classified as FTR_HIGHER_SAFE.
++	 */
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_HIGHER_SAFE, ID_MMFR4_SPECSEI_SHIFT, 4, 0),
+ 	ARM64_FTR_END,
+ };
+ 
 -- 
 2.20.1
 
