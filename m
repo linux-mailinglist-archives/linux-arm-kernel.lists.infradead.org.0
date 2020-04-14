@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 688091A7AEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:37:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A1721A7AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:37:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=scQD09Z3n7AwjB6tqCyKkkVyfVe4RlpRnSQ5H4TEQlk=; b=RmLJlO/JkCNoGvTbTug6CuSU2C
-	lUIm2BT+BPKaxBKvcIxuqhE9fkmz6hcKYNDoTBvPbH1XuM84qZ9j43uISfK9wcivYOFnC4acBVLR6
-	TnGuvzqPuM4kcTW6g95Is8Fn24AP6MOW8LP54AIwSl+f2SqPJkt8ikaz2puEDDxPlyFZBqNrSZLMR
-	r27mWPEgTYI0Qydc9dI9/ILz/R03uLSiPRTbBBLizdsQs3Qrf6x4NUibujE4+QcSMUjgFBjKn8uZD
-	4b2xLM63BMXQS05ZG9qrLUvzZ0wCx7Uv7ynNmpDwcQI6FrXXuUWJ0OycWtz7a1I16ryzlrFWCqx/H
-	KLz8xWWA==;
+	bh=a36Nag0IHmv+gi6AvWxjkYd9N49aSljwTloySo52MLU=; b=evyssl8OhcYon1edKDzyoI96dq
+	BNuTW15AFJsg+6DLTkkDknZV2hjYpSOnVDnnxL464XS0xEgl7IZYXNywBI5OdaJx+r9la7Q4GuR8a
+	Hk5caINrqwJaWgS2hoACbUw++PjuKDy2DVEqnS08GHHD3aRDeD9dpTBv9Nf3OFF8U4qaVoE1vfz9n
+	IEZIGdALWUZbv+hVd86AdrYtOfNXSr55Nxot5CpBiQnM4gwJj2+D77CaPl8mW/Ff0toT2kqG15tOs
+	h8gbJ1YpxMnO1n2bFPIuYKmQLNM5o3kqCnaxT80+L26FYTeGhUpn7cXha3JOW+v0T0s5Yh2PtZvkj
+	fehH6Nuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKoW-0003l4-M9; Tue, 14 Apr 2020 12:37:16 +0000
+	id 1jOKp2-0004Dm-47; Tue, 14 Apr 2020 12:37:48 +0000
 Received: from m17617.mail.qiye.163.com ([59.111.176.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKo7-0003ZS-Iz
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:36:52 +0000
+ id 1jOKoA-0003aH-Rr
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:36:56 +0000
 Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
- by m17617.mail.qiye.163.com (Hmail) with ESMTPA id 50D4F2612E9;
- Tue, 14 Apr 2020 20:36:48 +0800 (CST)
+ by m17617.mail.qiye.163.com (Hmail) with ESMTPA id 572BB261975;
+ Tue, 14 Apr 2020 20:36:51 +0800 (CST)
 From: Wang Qing <wangqing@vivo.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Ingo Molnar <mingo@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
@@ -40,22 +40,21 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>, jinho lim <jordan.lim@samsung.com>,
  Wang Qing <wangqing@vivo.com>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [V3 2/3] sched:add task_running()
-Date: Tue, 14 Apr 2020 20:36:31 +0800
-Message-Id: <1586867796-5768-3-git-send-email-wangqing@vivo.com>
+Subject: [V3 3/3] sched:rename task_running() and to task_running_on_rq
+Date: Tue, 14 Apr 2020 20:36:32 +0800
+Message-Id: <1586867796-5768-4-git-send-email-wangqing@vivo.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586867796-5768-1-git-send-email-wangqing@vivo.com>
 References: <1586867796-5768-1-git-send-email-wangqing@vivo.com>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSVVPQkxCQkJCS01OSEJCSVlXWShZQU
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVKTExLS0tLT05MTE1ITFlXWShZQU
  hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PjI6NSo*Njg6SwosQhoaMB4W
- LiFPFElVSlVKTkNNQ01MQ0tDTE9DVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
- VUtVSEpVSklJWVdZCAFZQUhKTEs3Bg++
-X-HM-Tid: 0a7178b129879375kuws50d4f2612e9
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pz46Kjo6DDgxAgpMHRkRMC9L
+ FQMaFD1VSlVKTkNNQ01MQ0pKQ0tJVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
+ VUtVSEpVSklJWVdZCAFZQUxCSEM3Bg++
+X-HM-Tid: 0a7178b135589375kuws572bb261975
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_053651_769013_656515A3 
-X-CRM114-Status: UNSURE (   8.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200414_053655_248079_D0DEC9CC 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: -0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.8 points)
@@ -89,41 +88,152 @@ The task_running() should be renamed to task_running_on_rq()
 like the naming of task_running_on_cpu(), this is what it
 originally mean.
 
-Add task_running() no rq required.
+This solves the confusing naming problem.
 
 Signed-off-by: Wang Qing <wangqing@vivo.com>
 ---
- include/linux/sched.h | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ kernel/sched/core.c     | 14 +++++++-------
+ kernel/sched/deadline.c |  6 +++---
+ kernel/sched/fair.c     |  2 +-
+ kernel/sched/rt.c       |  6 +++---
+ kernel/sched/sched.h    |  2 +-
+ 5 files changed, 15 insertions(+), 15 deletions(-)
 
-diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 4418f5c..0a7b150 100644
---- a/include/linux/sched.h
-+++ b/include/linux/sched.h
-@@ -1843,6 +1843,11 @@ static inline unsigned int task_cpu(const struct task_struct *p)
+diff --git a/kernel/sched/core.c b/kernel/sched/core.c
+index a2694ba..7ba1840 100644
+--- a/kernel/sched/core.c
++++ b/kernel/sched/core.c
+@@ -1672,7 +1672,7 @@ static int __set_cpus_allowed_ptr(struct task_struct *p,
+ 	if (cpumask_test_cpu(task_cpu(p), new_mask))
+ 		goto out;
  
- extern void set_task_cpu(struct task_struct *p, unsigned int cpu);
+-	if (task_running(rq, p) || p->state == TASK_WAKING) {
++	if (task_running_on_rq(rq, p) || p->state == TASK_WAKING) {
+ 		struct migration_arg arg = { p, dest_cpu };
+ 		/* Need help from migration thread: drop lock and wait. */
+ 		task_rq_unlock(rq, p, &rf);
+@@ -1905,11 +1905,11 @@ unsigned long wait_task_inactive(struct task_struct *p, long match_state)
+ 		 *
+ 		 * NOTE! Since we don't hold any locks, it's not
+ 		 * even sure that "rq" stays as the right runqueue!
+-		 * But we don't care, since "task_running()" will
+-		 * return false if the runqueue has changed and p
+-		 * is actually now running somewhere else!
++		 * But we don't care, since "task_running_on_rq()"
++		 * will return false if the runqueue has changed
++		 * and p is actually now running somewhere else!
+ 		 */
+-		while (task_running(rq, p)) {
++		while (task_running_on_rq(rq, p)) {
+ 			if (match_state && unlikely(p->state != match_state))
+ 				return 0;
+ 			cpu_relax();
+@@ -1922,7 +1922,7 @@ unsigned long wait_task_inactive(struct task_struct *p, long match_state)
+ 		 */
+ 		rq = task_rq_lock(p, &rf);
+ 		trace_sched_wait_task(p);
+-		running = task_running(rq, p);
++		running = task_running_on_rq(rq, p);
+ 		queued = task_on_rq_queued(p);
+ 		ncsw = 0;
+ 		if (!match_state || p->state == match_state)
+@@ -5745,7 +5745,7 @@ int __sched yield_to(struct task_struct *p, bool preempt)
+ 	if (curr->sched_class != p->sched_class)
+ 		goto out_unlock;
  
-+static inline int task_running(const struct task_struct *p)
-+{
-+	return READ_ONCE(p->on_cpu);
-+}
-+
- #else
+-	if (task_running(p_rq, p) || p->state)
++	if (task_running_on_rq(p_rq, p) || p->state)
+ 		goto out_unlock;
  
- static inline unsigned int task_cpu(const struct task_struct *p)
-@@ -1854,6 +1859,11 @@ static inline void set_task_cpu(struct task_struct *p, unsigned int cpu)
+ 	yielded = curr->sched_class->yield_to_task(rq, p, preempt);
+diff --git a/kernel/sched/deadline.c b/kernel/sched/deadline.c
+index 504d2f5..c04cecd 100644
+--- a/kernel/sched/deadline.c
++++ b/kernel/sched/deadline.c
+@@ -1838,7 +1838,7 @@ static void task_fork_dl(struct task_struct *p)
+ 
+ static int pick_dl_task(struct rq *rq, struct task_struct *p, int cpu)
  {
+-	if (!task_running(rq, p) &&
++	if (!task_running_on_rq(rq, p) &&
+ 	    cpumask_test_cpu(cpu, p->cpus_ptr))
+ 		return 1;
+ 	return 0;
+@@ -1990,7 +1990,7 @@ static struct rq *find_lock_later_rq(struct task_struct *task, struct rq *rq)
+ 		if (double_lock_balance(rq, later_rq)) {
+ 			if (unlikely(task_rq(task) != rq ||
+ 				     !cpumask_test_cpu(later_rq->cpu, task->cpus_ptr) ||
+-				     task_running(rq, task) ||
++				     task_running_on_rq(rq, task) ||
+ 				     !dl_task(task) ||
+ 				     !task_on_rq_queued(task))) {
+ 				double_unlock_balance(rq, later_rq);
+@@ -2217,7 +2217,7 @@ static void pull_dl_task(struct rq *this_rq)
+  */
+ static void task_woken_dl(struct rq *rq, struct task_struct *p)
+ {
+-	if (!task_running(rq, p) &&
++	if (!task_running_on_rq(rq, p) &&
+ 	    !test_tsk_need_resched(rq->curr) &&
+ 	    p->nr_cpus_allowed > 1 &&
+ 	    dl_task(rq->curr) &&
+diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
+index 1ea3ddd..6cc0b5b 100644
+--- a/kernel/sched/fair.c
++++ b/kernel/sched/fair.c
+@@ -7503,7 +7503,7 @@ int can_migrate_task(struct task_struct *p, struct lb_env *env)
+ 	/* Record that we found atleast one task that could run on dst_cpu */
+ 	env->flags &= ~LBF_ALL_PINNED;
+ 
+-	if (task_running(env->src_rq, p)) {
++	if (task_running_on_rq(env->src_rq, p)) {
+ 		schedstat_inc(p->se.statistics.nr_failed_migrations_running);
+ 		return 0;
+ 	}
+diff --git a/kernel/sched/rt.c b/kernel/sched/rt.c
+index df11d88..ea647d9 100644
+--- a/kernel/sched/rt.c
++++ b/kernel/sched/rt.c
+@@ -1655,7 +1655,7 @@ static void put_prev_task_rt(struct rq *rq, struct task_struct *p)
+ 
+ static int pick_rt_task(struct rq *rq, struct task_struct *p, int cpu)
+ {
+-	if (!task_running(rq, p) &&
++	if (!task_running_on_rq(rq, p) &&
+ 	    cpumask_test_cpu(cpu, p->cpus_ptr))
+ 		return 1;
+ 
+@@ -1810,7 +1810,7 @@ static struct rq *find_lock_lowest_rq(struct task_struct *task, struct rq *rq)
+ 			 */
+ 			if (unlikely(task_rq(task) != rq ||
+ 				     !cpumask_test_cpu(lowest_rq->cpu, task->cpus_ptr) ||
+-				     task_running(rq, task) ||
++				     task_running_on_rq(rq, task) ||
+ 				     !rt_task(task) ||
+ 				     !task_on_rq_queued(task))) {
+ 
+@@ -2218,7 +2218,7 @@ static void pull_rt_task(struct rq *this_rq)
+  */
+ static void task_woken_rt(struct rq *rq, struct task_struct *p)
+ {
+-	bool need_to_push = !task_running(rq, p) &&
++	bool need_to_push = !task_running_on_rq(rq, p) &&
+ 			    !test_tsk_need_resched(rq->curr) &&
+ 			    p->nr_cpus_allowed > 1 &&
+ 			    (dl_task(rq->curr) || rt_task(rq->curr)) &&
+diff --git a/kernel/sched/sched.h b/kernel/sched/sched.h
+index 0f616bf..e5b6538 100644
+--- a/kernel/sched/sched.h
++++ b/kernel/sched/sched.h
+@@ -1659,7 +1659,7 @@ static inline int task_current(struct rq *rq, struct task_struct *p)
+ 	return rq->curr == p;
  }
  
-+static inline int task_running(const struct task_struct *p)
-+{
-+	return p == current;
-+}
-+
- #endif /* CONFIG_SMP */
- 
- /*
+-static inline int task_running(struct rq *rq, struct task_struct *p)
++static inline int task_running_on_rq(struct rq *rq, struct task_struct *p)
+ {
+ #ifdef CONFIG_SMP
+ 	return p->on_cpu;
 -- 
 2.7.4
 
