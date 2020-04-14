@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBEF41A8370
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A979D1A837D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:41:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1xh4QjnyCGqGvF/q8ysJLQjxHWPbw//iDr6OxydoedM=; b=Aa3370JXn2t21c+7pB0RmF52C
-	1nIDnmYrZimpYIIXIw0y4Py6p8azQ6aHlUZ0WjFc8Q26Rr7DMhYkhGevjRuawtmICBZkdJ0k0/L8w
-	d2cvQeuJLoFpEbttEEGfBnslIhMC4sbOpL7f6XGvfU60pa6ebmOmDAEq6bToqGw75+i7dX4fZG0Tr
-	aRH0W84VbXRp8vVg8lNw6Idc/P0oxGBtOCPIXQ6BUGyfyxmEUzU64Aj6i4JUgRSkjx3LoTx3k8baX
-	BEsGS5PVtubKK1h6Li8g61Vp1CSduIYAPzmR8VdyNALoFfURKgPglYC2G97B7uy4bdvnSX8h3e5fQ
-	XZc8IYZaQ==;
+	 bh=mqq7hJ3Z5DLcTVkQlQo+byCYaGOxUyiMZtVXgzd2h3c=; b=U68UJ2gCHr9RBPbIDbwlCOXTU
+	SLMiIOj0N6mtHAYaXS6AhVSpGO5cyUVRuPjfn2jkvD2/JgTTf+j5MbLMnNIpl3bZ32C4dXqcRXAUZ
+	hFrVIv8qh4bJjZ5kePH0p/jekwlAfsnAGxVap4ySZQ/ZZSodlegP7DBl02LO2mwLqs63Nns2lDN5z
+	CO9T2I+KgHdJdBgbM2zwfG0oo8KtXnBk8zZVfyPIKcbi1U95CkEcJFPTZ3VoI5iQdNK02zXnuxUQb
+	4MVdjLH6IX89sw1VyboipkgJO44MsywRLbBYOIzgG8DXl1RLxtOosCO8e3nJQ0cfPEr7zbAkHWwab
+	GqrsQqDVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONfq-0006xV-Md; Tue, 14 Apr 2020 15:40:30 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jONgf-0000EO-P1; Tue, 14 Apr 2020 15:41:21 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONfF-0005S7-Bs
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:39:59 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v8so12778690wma.0
+ id 1jONgV-0000DX-0l
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:41:12 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a81so14496207wmf.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:39:52 -0700 (PDT)
+ Tue, 14 Apr 2020 08:41:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=U8GTwHnMm7fOWiSJPOBSV6m2y2+1A4gg/neQHtMHeu4=;
- b=gSs78mzVUPzzb0Vtyt4Lc1QixoWe7H7cf6B6egjWdVtHb9B5L6NVmzrZUx9t7dQODf
- G3pnNRIkj73wSgRSASKAOjVj3VmsRNMftpE/15acQ6ThjmXwFcdpr8l52NAUxS9Xy0DX
- a1QBBW5FV+oPu87GsBA6+e4EqYf06QE7qk/mVvM7O4uox1MJqh2jtGye7KQxgFhEidzW
- qr5hAxjM8ekqexWSqATS4QqfcNot12W2p2P4RopdGtg6taxyDROuXe0QYS1Dmrx0tn6b
- 7cFTDr8bkjCs/a7bR5D8Drfwl6HpJ6GjdwVogV5LtVeV5LU9yXArXZiK9MpiGzegagS8
- e2ww==
+ bh=4KIJ7Z8QHneV0X1Aw4cw4TnPAzva6UVqk+ohip+aCHA=;
+ b=k0QPf8PxlgXVPpJeiGFRQvzeNwPtNMq/M+I+z3/RCveZTGKN3Jp4LnWp3yGCLYnF0J
+ p36x6AQsPX16Y8kvI5oKO6rgAdrdaJza5uJQZRjrSB1R05vNVHhmyqpaL5xUzZCYO+HO
+ CsIaVwf+5l/Ohau25PHYSI/DNF39ETHOkjyW8O92rdHb7+nWHJCw9R413+c4H7z2CW32
+ WB+HLHuC5RhYC58wVLvLAX/OreOkCQbTVVLdIXXmg1lCpaiM/tfk9Jgkull45zTq58LQ
+ TpKVGYxSBLRT+7YcnvUIDF3JT5fZoQV75gH0Ji8aReL24iA2Mf86LtRD7joGMJbGUNwL
+ tQVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=U8GTwHnMm7fOWiSJPOBSV6m2y2+1A4gg/neQHtMHeu4=;
- b=ax43Kkp5AP86vq30ACPXh2ExT/SNY+5L9KWBMI4hXSB2h635Dohd+q8syyUbWLZ8fJ
- bo24zb6SdSXCAz14h+f69vKTwFV+vxvCsa44tM2tW86lc2ULN1ZRStmNZM3c4/wqi5Li
- 1KreGrxyPgSwwsj2MlValqQs56SV+L0Pv4yYVGmZZfpBYF8PC3b6A7hE/xzN9gnoZfBJ
- 0uUel5UjnmQboLWf6PbVe1T5ZaGQ8XrKUpJtGgXLZzzpPZc42QLb5LQFm3kARTRK+/CP
- 4feWiZZPilnL2paw99RulGy1gfqvaGyHYe4NVP5uZKdloHdvq5Keix+ILD0/mJ0RGi9Z
- LiCQ==
-X-Gm-Message-State: AGi0PuaaaSeLYo7Bhvm6Rnpu6a7T3KaUpi0ab8/DZSS3COExtdJlq2eO
- UUuNT4L75WqxHmtGNwblbcg=
-X-Google-Smtp-Source: APiQypK/HbILUE64zYGJ4iCNavoetIFjifDKWsRL8QZtl/ZK/muMlXMnhBuOMRFkXujuT8XNkoTovQ==
-X-Received: by 2002:a7b:c642:: with SMTP id q2mr466521wmk.41.1586878791725;
- Tue, 14 Apr 2020 08:39:51 -0700 (PDT)
+ bh=4KIJ7Z8QHneV0X1Aw4cw4TnPAzva6UVqk+ohip+aCHA=;
+ b=jS9jPJpYB+hOGTB/4fRb5+8aicUFXd2jZyFpQXak6EOjtgx5oF047ajzVvHC4esM8u
+ HBCkmTikERVLZOio1LM7HkTgSiNs0JghoSISFvmn1klGNbXhAfubGmYf6H8GMk8g+m1H
+ M7Zow+CZ+IitHdpGlbabhFMn0CeYh0QOxBTaec7yMuqVDOH0qiFfuouO+GweFIdkZOBQ
+ QSRTcDsMQuBNb8KrhkCsI0+fGGKOTC3DBJz08QiD2N0zzwLDVoaOTd20bPSS/XAR7b0w
+ O6gfa8gOSgVvfBJCgzcUaI/AtP8wb1MG7YOpBIibPDYwvKuQDd3d2gp5PidjdNJVEnn3
+ nGBg==
+X-Gm-Message-State: AGi0PuafsRI7VGH8GuY+3kQMw2GLP8BTY/lUk7vLQeAlGnuVnpN97Ql7
+ F+ftmokMkFRC6Ksht7Q/xH8=
+X-Google-Smtp-Source: APiQypJyzx/6HOKMI1u7Om4PgjL1eVsXXm4Nj7wfOsqql9qJ2/n8u8KebAVlElgJl6KhF7QVc8mSCg==
+X-Received: by 2002:a1c:a794:: with SMTP id q142mr476428wme.4.1586878869402;
+ Tue, 14 Apr 2020 08:41:09 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id t67sm20474257wmg.40.2020.04.14.08.39.50
+ by smtp.gmail.com with ESMTPSA id h2sm971602wro.9.2020.04.14.08.41.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 08:39:50 -0700 (PDT)
-Date: Tue, 14 Apr 2020 17:39:49 +0200
+ Tue, 14 Apr 2020 08:41:08 -0700 (PDT)
+Date: Tue, 14 Apr 2020 17:41:07 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Dmitry Osipenko <digetx@gmail.com>
 Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
  Tegra210
-Message-ID: <20200414153846.GN3593749@ulmo>
+Message-ID: <20200414154107.GO3593749@ulmo>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
  <20200409175238.3586487-10-thierry.reding@gmail.com>
- <14cfd13a-5fde-f167-64cb-a61cba119a97@gmail.com>
+ <fae8e1f5-753b-b2ce-d14f-c6e8b2061fdd@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <14cfd13a-5fde-f167-64cb-a61cba119a97@gmail.com>
+In-Reply-To: <fae8e1f5-753b-b2ce-d14f-c6e8b2061fdd@gmail.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_083953_494911_DED6C561 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20200414_084111_083398_33305FF1 
+X-CRM114-Status: GOOD (  17.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,69 +106,78 @@ Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
  linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0231952970842562730=="
+Content-Type: multipart/mixed; boundary="===============6995828985114394957=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0231952970842562730==
+--===============6995828985114394957==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="0fZkDq/H4AmqaB8D"
+	protocol="application/pgp-signature"; boundary="TMgB3/Ch1aWgZB1L"
 Content-Disposition: inline
 
 
---0fZkDq/H4AmqaB8D
+--TMgB3/Ch1aWgZB1L
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Apr 10, 2020 at 05:26:23PM +0300, Dmitry Osipenko wrote:
+On Fri, Apr 10, 2020 at 11:46:25PM +0300, Dmitry Osipenko wrote:
 > 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
-> > +static int tegra210_emc_table_device_init(struct reserved_mem *rmem,
-> > +					  struct device *dev)
-> > +{
-> > +	struct tegra210_emc *emc =3D dev_get_drvdata(dev);
-> > +	unsigned int i;
-> > +	void *table;
-> > +
-> > +	table =3D memremap(rmem->base, rmem->size, MEMREMAP_WB);
-> > +	if (!table) {
-> > +		dev_err(dev, "failed to map EMC table\n");
-> > +		return -ENOMEM;
-> > +	}
-> > +
-> > +	emc->timings =3D (struct tegra210_emc_timing *)table;
+> ...
+> > ---
+> > Changes in v6:
+> > - use __maybe_unused instead of #ifdef'ery for suspend/resume callbacks
+> > - take exclusive control of EMC clock during suspend/resume
+> > - move EMC driver changes from clk patch to this patch
+> > - make the driver buildable as a module
+> > - remove unnecessary suspend tracking
+> > - remove duplicate register defines
+> > - add tegra210-emc.h for Tegra210-specific registers
+> > - detect number of channels, number of devices and DRAM type at probe
+> >   time and store them in struct tegra210_emc, remove the corresponding
+> >   function parameters where no longer needed
+> > - properly clean up on failure
+> >=20
+> > Changes in v5:
+> > - major rework and cleanup
 >=20
-> No need to cast the void.
+> I happened to notice that the patches have an individual changelog only
+> by accident :)
+>=20
+> Next time will be nice if at least you could mention about this in the
+> cover-letter, or move (or duplicate) the whole log in the cover-letter.
 
-Indeed, looks like I can get rid of that table variable altogether.
+Given the amount of changes that seemed a little impractical. I can try
+to give a high-level overview of the changes and perhaps mention in the
+cover letter that there will be individual changelogs for each patch.
 
 Thierry
 
---0fZkDq/H4AmqaB8D
+--TMgB3/Ch1aWgZB1L
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V2UUACgkQ3SOs138+
-s6GmYg//WAKvtCE2533jvRwm9viWE7gIwO4+5Qc+gBHrtYeZc/s1jQZHipianYQu
-9kbwBh6XO6UgeyzaaK7f3qQQrgjyy3zqy8dyINW6FgQBBJndPDTzN45cZ3rjVpoZ
-FMnnJotiX/1tl+YBkMbr84hh1ZYDucuH/BktLynsv/nowYs/0gAMExQs/wShOWz6
-E7+D4uddL567mbQLN/ssHJb5HysMLNwAIMg2IeFa+kUXq9gC/x3PbstpRCeY9L7r
-/gCwTnWGRscH9JT6Cyw1qoSr00CX5jZSXP2A4dY81YsGyfmNqJsrkd+X+oemqV27
-oBTJFFZvTY2ShEP8AXKyP91BUzSsECpY7iPYM0ji7a1l4avpFBJCrKOHkhHZukUZ
-+VAWpr2XnQgeJtHMz6dAfFJQyPw+KPEhdRFMgqcZYUzYFiVe0b3W4D1WIkl50oJL
-rFLUGhnjgpGhnNezkWwHN1NYbgf+GsCe2gkk99IKLHAnfj/ds2sUNOZD7qIVrTAm
-6Otq32sdI3T2T0BeRkY/ysF5ChkASMGjmD6xkDGFrk9Ddz94WNPa+wwrCiUnrr4e
-Ceu/4HxF8ncU63g+f7N35dpfdZZpb/qWwrfFkDtEZ48tVf4fkKBs8YKyzuPliGIM
-dAt7FZL3/mTm3l263IjkJuYarBBB+Ggs/hR4NB/ulB0oleeCD1A=
-=MoN0
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V2ZMACgkQ3SOs138+
+s6FVCw/+MTxlJhCzaf3mRbl2CqipZNHLKX5jAJK8K1SPWAv0fTVLuIKTFNVz1KY3
+wuxrgDZT+97eeXS8w7J0B83iLgKEeX5hCepqnOzb716x9sU95XgAfQUZsHsJhBYQ
+hjQycXgvlRXLMpEsbHuA87JT4ILV2DsxSngVdbK8GaKCZSkfj0g5Ov8g2H8SghAs
+Tv4POtJpUnDWR0ypK8+1o0OzFS7vuy6ctew+8wTAnEqTW8I4bd/RCFMCBqhD+4oS
+JuchrTdRRy23tQ3h+QxXhXHxXA3IsZiGzaQ5PL+/AKkebj6k5UR3GgnowBnJyB5m
+/i8TQDHGGrw2MPW3VrTKKI5gKqpUYPBKOZirL+MEdY02jOmaUcCkA9cSfKyFPidf
+pOfGPi5LhuNmkEAChJItWNJaRALrNcKjcKqV38xeMT94ji/1jAA8cjVPukMs/Clr
+kfKba0UOAWTVDZDp1MnxQrNK1E+LJN+hE2qPpKLB2ZI4H9UaKR9uATh/JhmxcnJp
+wJB25m9eHTUymsuAfenvL2nwBoato1jHeYiitEkntbfD6ybAjq0PDCotq4/2bBWU
+VwoMjKVEW6FgL+LYTAbLAyDva0ckCp07aEVZzXBeOhFVtd2BuQP0PLvfDbDcsBnV
+37mhZq5lYyKiL93hNyb/GGwm47r+bcNMl+zRvGTHXQf/ifMdrqo=
+=l66T
 -----END PGP SIGNATURE-----
 
---0fZkDq/H4AmqaB8D--
+--TMgB3/Ch1aWgZB1L--
 
 
---===============0231952970842562730==
+--===============6995828985114394957==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -179,5 +188,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0231952970842562730==--
+--===============6995828985114394957==--
 
