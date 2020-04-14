@@ -2,109 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 032971A8B89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:54:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B56DC1A8BA1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:57:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=LOqyotBQuA5cpIX6m62PINpNXQgWds8UrdAvjDIru9A=; b=KjrdsV8Db9MO4I
-	+50JKSOM0Zgvfs72+RYa8GvVwK3hA0bRWG36lRzHUni171apKN4YqRRyxi8gA1vm4/g0R9brbUsTi
-	Qe2WKcc3KRhvMKLnlfeP0ztuovNwpz7wCBMmmn83EI7naZ6HUWwlNQc6b55HgL+QP2vpEVpfIF+ha
-	vAAPAJEdbMUL/nIXVK4gn3TB16rKkvrPGILmKppFThQ/FcYbFZKxJcw1arP063zATkmJzW4BrGJWR
-	Inn1QI5wgTTAZWC1ob0XPhxz4Acj8BwGqB5QDSXjlu06AwdKJ9BWdEuVjojNYenby93sLDebNHeB+
-	cLH26HV4CpKO0DsQIWJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zU262Gy5tD4+4C364w8JYRoSujhMncXF2QRAi0FEHxQ=; b=IJkQ1tWe/Gd7kyBydGOnm10iv
+	W3XymiNCMzq8r5GtFIT3f4FeAaEVyp2o6SrGOc8aZprpyCEgeJGBCvAIxOtqvH4GuMD9y0+w7ARQ+
+	tSVdxWN9Yay6M1jGpGptifPF4ziEC1QPYfWUDypR5CIxPNN/N2mxE0gvAbZy3RNes/xeYVwZKH4mH
+	03OsWtsZzwsgOdcfJPfwBO7AvRxVnuhGHxcXcYArkK/H2eYYtyJDOai0Ex9U5N75ay+HXTAWdbKIG
+	MqqEiAP+TWNYM5jrpXwCDC8T6FiHbfrzgI9nmke/u+5thpWOyHD1+sFWlriEkWjL8QWWxDsMieTd0
+	O/Y8r7Axw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jORdr-0007Zm-OJ; Tue, 14 Apr 2020 19:54:43 +0000
-Received: from mail-vi1eur05on2056.outbound.protection.outlook.com
- ([40.107.21.56] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jORgX-0002CT-7w; Tue, 14 Apr 2020 19:57:29 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jORdk-0007YI-Af
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 19:54:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=j6xL0GrY/tFoNahqe+hs1n/qqY28teNHmaKNZ+aIWV2qRott0LHC0zeUz2Ksrn2Kbp5uk6Au+/DJ3VEzjfC/sysTQuk0qM9qakwLJnBdNqXrSRo4YqZSXsOFTUCVM5B8OsdKqL7xI0MTwTfB8OOjLejHkfoq35UU9R5MYAJv9+3fkl8onNveBhUMHK6aMajcnjeYzPkUi8QBMb1K/lYxGpsgAfO1Na35I9Xc6SS1y8cQOHnzbmh4sRPKUqygah1NhZU5o4rcQ3E7W+wAzcVQO1UwwSR7tyTfS5YqeIgEroepxgIPrOwl/RQWi4V56LgkEI18LcKPAOQ1IvFGo+SiXQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NAbA7TrEcUnypmMqfcDxi3hA4qK/qCuWGuM1yqv9xNM=;
- b=BeQP0W25zWF7WpctH6E9kvuqSIK/NhKNAdv5+UVvU2iDeKc5jtb4jLrgGi5TrTtydvyMvQhRVZ1fX3n9oKf4VNxZ79UsTamzEWLDU2UWh2ixu8LLUN76oSKoDokE7M1mFZVuXhuvmkg2tyE8eYNAf3WkjltazqAkV3sDuoLFsUQJOzS4DHPk6NQZ4sw1pSbuB90KWMQHKE7uvvpNYxtHIkmrdVKKnBGmXkyau8sC1A9lLpaG9rjdpc9bb03uEO+iYaYCRZd2Vyerr0Rh2J7dNEfA5j4T9lhZwNnd69iJ3As0JvDzAelRJJluF3ZPQ52WMdAOIyH0rHYRM0ZEaUtiiQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NAbA7TrEcUnypmMqfcDxi3hA4qK/qCuWGuM1yqv9xNM=;
- b=UBzHBSnQcVFu0Flrm6GKq83vIVxCxLhEdtx+XXEOIJbkHY2nov7ctPIr/9Pe7RBGZm9kzX5e1xPgO3i6tXo4QHbZnDGxvCZvoCfJhP6PBUFNhUdn+zOtxSuo3qonGkAHfGmwbNnA5j4vcB8bJJqme/CUTSBPbRxMl7d/0ZtpN6c=
-Received: from VI1PR04MB6941.eurprd04.prod.outlook.com (2603:10a6:803:12e::23)
- by VI1PR04MB4573.eurprd04.prod.outlook.com (2603:10a6:803:73::24)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17; Tue, 14 Apr
- 2020 19:54:29 +0000
-Received: from VI1PR04MB6941.eurprd04.prod.outlook.com
- ([fe80::289c:fdf8:faf0:3200]) by VI1PR04MB6941.eurprd04.prod.outlook.com
- ([fe80::289c:fdf8:faf0:3200%2]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
- 19:54:29 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH V2] mailbox: imx-mailbox: fix scu msg header size check
-Thread-Topic: [PATCH V2] mailbox: imx-mailbox: fix scu msg header size check
-Thread-Index: AQHWEmDd5kEp+mUChUCEq05fLBSjFw==
-Date: Tue, 14 Apr 2020 19:54:29 +0000
-Message-ID: <VI1PR04MB69417717438360A9858DD0D6EEDA0@VI1PR04MB6941.eurprd04.prod.outlook.com>
-References: <1586870475-32532-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [95.76.3.222]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d1d2ecd9-3fd5-46a5-8aeb-08d7e0ada4e0
-x-ms-traffictypediagnostic: VI1PR04MB4573:|VI1PR04MB4573:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB45730CF46F0347609CA553DAEEDA0@VI1PR04MB4573.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1247;
-x-forefront-prvs: 0373D94D15
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR04MB6941.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(396003)(39860400002)(366004)(376002)(136003)(346002)(9686003)(316002)(6506007)(110136005)(54906003)(5660300002)(7696005)(53546011)(52536014)(558084003)(71200400001)(55016002)(33656002)(66556008)(8676002)(91956017)(4326008)(26005)(66476007)(76116006)(44832011)(8936002)(2906002)(186003)(64756008)(478600001)(66446008)(66946007)(81156014)(86362001)(15650500001);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: a1AhqmjX3lbRSqlbWv3YRxRV/UdZK+SIS2iKRNQUGlPtYILaeFvF4eQ9puGLEnhflt2bLTrSDZECLcCHS51ANc0ITevqXfF6yFFqtDHzR8/QTXFDdPASfkmkx5LnT1rkjeyBcIKBh/WKEAEbtJyUxy7s+Tmz3dSwqsCCpgnPi/Bbv/eh7nlSjP813AR6RB3Rjy390s95xYigjATZtJPf0dl33jSHX2h3eyQljSzmirUuKNW/dL/UKYgwpa6Hn9+yefJAyIkwMwPKEKs1RZ4wFfCA7Xz0Cp+Qa6GGdzwOLXLDlUTUk2wjqERuhz7Ff6cPNuY7ejyqzybKYELWfXoPKO94nb4uhWbLiklPRyaKkjfAg8Mbm0O1XuUMBiZecES/rOYAS7q+QyInJq3wilA97SUWArYgoqP5puJV/zxp2PHj4Bw/itL2xc0FLgRr03sZ
-x-ms-exchange-antispam-messagedata: JKP8+Y+26ZNQZnpHKZQZ4/huXFB+BM+XXOOZb1qc1+t38a5ZcgnjtCwlWaHHnMtTem/NulMTkgMkuwkKOTJqtBHp7nYlRAsy1Q1Emkc//Z2GOUdl59YNrctcXXtzw0kSGB1mY42WzhENdi2SWAtw7A==
+ id 1jORgO-0002Ba-Cf
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 19:57:21 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 6B92922FEC;
+ Tue, 14 Apr 2020 21:57:15 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1586894236;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=c1MxhBoeYs71xwy2H0AJkghL+7Y+1QwLOd9ofZWf8mY=;
+ b=oYyi/K9Wgv1J8oUv562gbV/e/cxfMAv1K6H8unRKColnTKhwpm+o2zuVXXywnycQemE920
+ 49lVQd/oeC++cP1U8UAjd2wqxmRkE+CsXw4zAXo8aqoBXwRTVNIy+ObJKwMDB2s3LXJS0A
+ SUYA2YwD+G6uEd0VIP7BN8x0gr1wjC0=
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d1d2ecd9-3fd5-46a5-8aeb-08d7e0ada4e0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2020 19:54:29.4684 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8kWnKJANn7VXq5W/KhF0gyXWaPLpBumki6omih3Dwj9c9cmcD9Vkx9mcEG1eq+1HxJQYeLdRodV7LOzBSTWkOQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4573
+Date: Tue, 14 Apr 2020 21:57:15 +0200
+From: Michael Walle <michael@walle.cc>
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: Re: [PATCH v2 10/16] gpio: add a reusable generic gpio_chip using
+ regmap
+In-Reply-To: <62d157198a75a59ada15c496deeab49b@walle.cc>
+References: <20200402203656.27047-1-michael@walle.cc>
+ <20200402203656.27047-11-michael@walle.cc>
+ <CAMpxmJVE3PgVCxkQ-ryc5=KSrKcpdmk1cnJUxJBz9QFCx-e_+A@mail.gmail.com>
+ <80bd8661ec8a1f5eda3f09a267846eaa@walle.cc>
+ <CAMpxmJVC7e9JnHzBo-h8M1+KmcA32=Rvxo7+znH=-kAbcCr_LQ@mail.gmail.com>
+ <e0388a2137e23d76b2415a7549c01dd1@walle.cc>
+ <CAMpxmJW1x4Orh1BZ4TUoCsYeaAAZ4NBUNvoMG9JgP0iLvXTOtg@mail.gmail.com>
+ <62d157198a75a59ada15c496deeab49b@walle.cc>
+Message-ID: <eab972adf53bbac20b5a9e613fcfb5b0@walle.cc>
+X-Sender: michael@walle.cc
+User-Agent: Roundcube Webmail/1.3.10
+X-Spamd-Bar: +
+X-Spam-Level: *
+X-Rspamd-Server: web
+X-Spam-Status: No, score=1.40
+X-Spam-Score: 1.40
+X-Rspamd-Queue-Id: 6B92922FEC
+X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_TWELVE(0.00)[23]; NEURAL_HAM(-0.00)[-0.400];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,linaro.org,kernel.org,suse.com,roeck-us.net,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org];
+ MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_125436_440846_E723BD71 
-X-CRM114-Status: UNSURE (   6.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20200414_125720_585472_6C0570FA 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.56 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [95.76.3.222 listed in dnsbl.sorbs.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -124,32 +102,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ linux-gpio <linux-gpio@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-14 4:30 PM, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> The i.MX8 SCU message header size is the number of "u32" elements,
-> not "u8", so fix the check.
-> 
-> Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
-> Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-
-Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyaywgSGkgQmFydG9zeiwgSGkgTGludXMsCgpBbSAyMDIwLTA0LTE0IDIwOjQxLCBzY2hy
+aWViIE1pY2hhZWwgV2FsbGU6Cj4gQW0gMjAyMC0wNC0xNCAxOTowMCwgc2NocmllYiBCYXJ0b3N6
+IEdvbGFzemV3c2tpOgo+PiB3dC4sIDE0IGt3aSAyMDIwIG8gMTI6MDcgTWljaGFlbCBXYWxsZSA8
+bWljaGFlbEB3YWxsZS5jYz4gbmFwaXNhxYIoYSk6Cj4+PiA+Pgo+Pj4gPj4gU28gdGhlIGJlc3Qg
+ZnJvbSBhIHVzZXIgcGVyc3BlY3RpdmUgSSd2ZSBjb3VsZCBjb21lIHVwIHdpdGggd2FzOgo+Pj4g
+Pj4KPj4+ID4+ICAgIC0+YmFzZV9yZWcgPSBHUElPX1JFR01BUF9BRERSKGFkZHIpOwo+Pj4gPj4K
+Pj4+ID4+IEknbSBvcGVuIGZvciBzdWdnZXN0aW9ucy4KPj4+ID4+Cj4+PiA+Cj4+PiA+IE1heWJl
+IHNldHRpbmcgdGhlIHBvaW50ZXIgdG8gRVJSX1BUUigtRU5PRU5UKSB3aGljaCB3aWxsIHJlc3Vs
+dCBpbgo+Pj4gPiBJU19FUlIoKSByZXR1cm5pbmcgdHJ1ZT8KPj4+IAo+Pj4gVW5mb3J0dW5hdGx5
+LCBpdHMgbm90IGEgcG9pbnRlciwgYnV0IG9ubHkgYSByZWd1bGFyIHVuc2lnbmVkIGludCAoaWUK
+Pj4+IHRoZSB0eXBlIHRoZSByZWdtYXAgQVBJIGhhcyBmb3IgaXRzICJyZWciIHByb3BlcnR5KS4g
+SXQgY291bGQgYmUgYQo+Pj4gcG9pbnRlciBvZiBjb3Vyc2UgYnV0IHRoZW4gdGhlIHVzZXIgd291
+bGQgaGF2ZSB0byBhbGxvY2F0ZSBhZGRpdGlvbmFsCj4+PiBtZW1vcnkuCj4+PiAKPj4+IC1taWNo
+YWVsCj4+PiAKPj4gCj4+IEVlaywgb2YgY291cnNlIGl0J3Mgbm90IGEgcG9pbnRlci4gSWYgcG9z
+c2libGUgSSdkIGxpa2UgdG8gYXZvaWQgdGhpcwo+PiBHUElPX1JFR01BUF9BRERSKCkgbWFjcm8s
+IHNvIGhvdyBhYm91dCBoYXZpbmcgc29tZSBzZXBhcmF0ZSBmaWVsZCBmb3IKPj4gaW52YWxpZCBv
+ZmZzZXRzIG1ha2luZyBldmVyeSBvZmZzZXQgJ3ZhbGlkJyBieSBkZWZhdWx0Pwo+IAo+IElNSE8g
+dGhpcyBoYXMgdGhlIHNhbWUgcHJvYmxlbXMgYXMgbWVudGlvbmVkIGluIHRoZSByZXNwb25zZSB0
+byBNYXJrJ3MKPiBpZGVhLiBOb3JtYWxseSwgdGhlIHVzZXIgc2V0cyBvbmx5IHNvbWUgYWRkcmVz
+c2VzLCB0aHVzIGhlIGhhcyB0byBtYXJrCj4gYWxsIG90aGVyIGFzIGludmFsaWQuIEFuZCBpZiB5
+b3UgYWRkIGFub3RoZXIgYWRkcmVzcywgeW91IGhhdmUgdG8gdG91Y2gKPiBhbGwgdGhlIGRyaXZl
+cnMgdG8gbWFyayBpdCBhcyBpbnZhbGlkLgo+IAo+IFdlIGNvdWxkIGFkZCBzb21lIGZvcmNlIGJp
+dHMgbGlrZSB0aGUgInVzZV9hY2siIGZsYWcgaW4gdGhlIGJncGlvIAo+IGRyaXZlciwKPiB3aGVy
+ZSB5b3UgY2FuIGZvcmNlIHRoZSB1c2Ugb2YgdGhlIHZhbHVlIDAuIEJ1dCBJJ2QgcmVhbGx5IGxp
+a2UgdG8gZmluZAo+IGEgYmV0dGVyIHdheS4uCgpTbyB3aGF0IGFib3V0IHRoZSBmb2xsb3dpbmc6
+CgojZGVmaW5lIEdQSU9fUkVHTUFQX0FERFJfWkVSTyAodW5zaWduZWQgaW50KSgtMSkKClNvIHRo
+aXMgd2F5IHRoZSB1c2VyIG1pZ2h0IGFzc2lnbiB0aGUgYmFzZSBhZGRyZXNzZXMgdGhlIG5vcm1h
+bCB3YXkKZXhjZXB0IHdoZW4gaGUgd2FudHMgdG8gdXNlIHplcm8sIGluIHRoYXQgY2FzZSBoZSBo
+YXMgdG8gdXNlCgogICAtPmJhc2VfYWRyID0gR1BJT19SRUdNQVBfQUREUl9aRVJPOwoKZ3Bpby1y
+ZWdtYXAuYyBjb3VsZCB1c2UgdGhlbjoKCmlmIChiYXNlX2FkZHIpCiAgIHNvbWV0aGluZ191c2Vm
+dWwoZ3Bpb19yZWdtYXBfYWRkcihiYXNlX2FkZHIpKTsKCnVuc2lnbmVkIGludCBncGlvX3JlZ21h
+cF9hZGRyKHVuc2lnbmVkIGludCBhZGRyKQp7CiAgIHJldHVybiAoYWRkciA9PSBHUElPX1JFR01B
+UF9BRERSX1pFUk8pID8gMCA6IGFkZHI7Cn0KCi1taWNoYWVsCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
