@@ -2,109 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CB781A75B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:19:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 424461A75B2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LzuxLOHNOQhxsZy9fSVoUobND1wTgYhuVTlkpTA3mr4=; b=fRSr2oMHd8Np/u
-	LkxNGTkWnhapGL6zhinM7pwzUwF7B+lRTa+Hnl0IHRrZLjDFumGIWfGNMHfmkWak+GQ/RQKtVhBbM
-	RZ8pUlv3pqK+Q5lzjuh9BVFRftlLLxBG7FKKUEqYN8oVZU8NVorNDrl6Y3rwZQyaxRQE194x4mLF4
-	bbvXRLlchY5574g07aeb1Q3e/oBIH69/SgqPMNZrzuZbPylTzegESlXgg1FWcy5hn0CAFz2i4FrSO
-	Ria0cG4q6RFpDIvNeLbmY4Lbfbq6JN5AMfhMcIs3ur0Fcohkb4TW9zMvwiNY3gJuU+aMJi/IfIhGf
-	O+DMApf2Y35YmYXVuIBw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gTC6fWFvslMToR2brWIqO0ypPD8vdht4eVTL+G7eBJ4=; b=YYMgC6D8N13DUG
+	VTW8Qpe4wFcUJU3dNcw3sCJ4vrYJVqQwupPfnRObkPaM78vS3B6i53MDWavWpOBCMfgLD37ZikB5T
+	0RP+ypRtVTa07CwUJp+Ct1zLEsZEomK4VC4sYB0/6ZLnvQG9AnClVQ0lLX6UJVQdn1Np9LAyddwqx
+	Sx8ftgpu1nXonrjS8/17aPNO4SgZ3l3asz5G/ZQhqmmeZ7DBWxh6uow1O0gtIZ3CfBbIjfMc6u6hH
+	dHLU0p1ZII5W9T0p8TWecveBz1N+10vlVxyuLiPrbSZnpFMSq2cGrlVzSjNj7ffJciBYPSXZXqWWT
+	Zo9IuoRjPbz6HqpAV5vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGmU-0000TF-Gz; Tue, 14 Apr 2020 08:18:54 +0000
-Received: from mail-eopbgr150077.outbound.protection.outlook.com
- ([40.107.15.77] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jOGmq-0000hp-Sd; Tue, 14 Apr 2020 08:19:16 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGmN-0000Sf-FK
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 08:18:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iTmsh+6u1b+9LKOIQNJww3FgO1MUSDFclLXRVxfVPk9WUPTH0Szhs//ArCi7gxV4SnyvgsR0H9gw7i2ULoh4rY+ZNysNlAlKvyzxvI/AwLE1VQQXl43jiZCb0lylNm4Nuq9PA2XtMPswDNTBsoAL/MMoVmuhEmHJCcAMrQJqIlbohginnMDrMlGFxjcFgP9PI/hrlX9QnkaZSrg6GIFZFwkdg50eW+VhzvhHgwqeEx1roUXiz9MZ4g+xE5IKtyy6DzvDeqBQ2HkayOiztdJkcMS3l5cOMRIgkmZfM0Q8kfSRjJpZdcAbiW3sJlSTKLIRO/2Z7lRR1TZtWAdftw9g+Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4tC66cTJ89BNeaHvzMKQcbO3/xuvJdWcFBmJTwpL6Tc=;
- b=XnmRDvPp6u/Wqd23K1vTP6EbKy0FuXgQHYX9WZDatcaaos0OwrB/pJVlOtXLAvSCFA+H/tyb2UiYIgPOenjCHfpmtRySq+2nxdxxfvfsRs9+wZMZKU46sRo+Gc3sHKbcosMpZsfF1yOmqkcFFY8rqX3BFLuRKrWu650u29ZKU/139aV6tP3JYYTa3GvXY/o8S4ylVoXIUiXN4LJFMF3MgBLaV+yAcgDSvrAmRtcNNmY9nB+ynIJ0oUeDq7ElX5ysCCka5fq6Rw4Rulw0kEstlk0b/jOB1HNhiHXWy38+T2Ps4SvbYu63ZkbtFhDfkHy+A8oEPMppS1zVg+qH7kpw2g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4tC66cTJ89BNeaHvzMKQcbO3/xuvJdWcFBmJTwpL6Tc=;
- b=PU3oFjoC6LmUjmT+GgiO2GsdEqCc6lFM6fYz/dLQI1YTo+U6+pKMFZAEW9YTkXXXmox0bX+HHncdKDag3SSRpYzfqbvXUfU/2ibD7Sz+Z+qLpqnNKAud0ZrBk7Qf40p+dqktzOulMHwAGDjRrdaG6DZhrdgZMBjXV7bsyGtMs+M=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (2603:10a6:208:70::15)
- by AM0PR04MB6724.eurprd04.prod.outlook.com (2603:10a6:208:17a::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.16; Tue, 14 Apr
- 2020 08:18:41 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
- 08:18:41 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, jassisinghbrar@gmail.com,
- o.rempel@pengutronix.de, leonard.crestez@nxp.com
-Subject: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
-Date: Tue, 14 Apr 2020 16:10:26 +0800
-Message-Id: <1586851826-16596-1-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SG2PR02CA0093.apcprd02.prod.outlook.com
- (2603:1096:4:90::33) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
+ id 1jOGmg-0000gL-JM
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 08:19:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586852344;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=5Wb7ghxdvKYdRHUeDIrwZRLDN53fs9i+DGns+KVd+no=;
+ b=PkTSlSFuPa3VHPfkwulYvXZXNWKPSqnP6MKwyfdAH/CtMAG9ixUBadV96a2iIFtplJkuof
+ +Pf/4L5xGmUNSBj0r5Chp14DGoHvwwK6QqPSk0BAuGfoNwVyZGDnAzZsIbiAq9nhfRGx0S
+ oi0yCtUlTd5/6cqd7bzGEgCXIY46AdU=
+Received: from mail-wr1-f72.google.com (mail-wr1-f72.google.com
+ [209.85.221.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-503-EO9GemnBN0agBQ4iQXkNOw-1; Tue, 14 Apr 2020 04:19:02 -0400
+X-MC-Unique: EO9GemnBN0agBQ4iQXkNOw-1
+Received: by mail-wr1-f72.google.com with SMTP id j22so8331990wrb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 01:19:02 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=TtBLM3c8JTLmBP2uDmSrWuT9/+Pwll6JJwpjBt6QX00=;
+ b=gLdJtnS8yRmcIZJonAQcUeQ78pOpDYepnPNCMDgsTr7sZs6jRhjB8tt54Q+AyuP7NN
+ IdELPnuQuXx3x9/Ape0UmpqegIFl8l/8rND5flbAtqvTKFdtAlH9X5ls+vsA8/vvinUv
+ kcOtQlCjHRNl7wmuEaNpK7MKxnyiEv04Lfyej6R+IorHN4HhzHY2kRTIHVZ9Sgbggj2f
+ 58O7RhYg3VxNAtLo9EfHVsQu5Z4fsAsNEjx8JSmJK5vjtC8Cg3zKVYnJkJaKk3LB/OyT
+ D+35Ex8NhQGwDp3FKNK24trO2fzP8VtiUv3U0lj8gCE+SPu2BW+5QGTqHIWBGDvjgHnA
+ MWNw==
+X-Gm-Message-State: AGi0PuZmKgX5fqXD2ykB80R2bPKr+QQnbw9CiH4pOTzb2EVx6UHJ0+7O
+ LiLrUH1jf3/t8qelsoGXN2KQZL4PiQmPR1WpzTgEqyyIVO6RusweO2OIV4mGre1Ce+RP4P/Qs8t
+ GU/vtVizm+9DXDKEQTkm8p6El5uaEPAniKT0=
+X-Received: by 2002:a05:6000:8b:: with SMTP id
+ m11mr8390698wrx.168.1586852341224; 
+ Tue, 14 Apr 2020 01:19:01 -0700 (PDT)
+X-Google-Smtp-Source: APiQypKNVMzJLyv+Go05DzXWcde1VJnPobjfS5TpC3OSGCsAYJkHQBkL4kr8iyDzRWBXP64iQWFZGA==
+X-Received: by 2002:a05:6000:8b:: with SMTP id
+ m11mr8390681wrx.168.1586852340970; 
+ Tue, 14 Apr 2020 01:19:00 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:e159:eda1:c472:fcfa?
+ ([2001:b07:6468:f312:e159:eda1:c472:fcfa])
+ by smtp.gmail.com with ESMTPSA id o28sm3426907wra.84.2020.04.14.01.18.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 14 Apr 2020 01:19:00 -0700 (PDT)
+Subject: Re: [PATCH] kvm_host: unify VM_STAT and VCPU_STAT definitions in a
+ single place
+To: =?UTF-8?Q?Philippe_Mathieu-Daud=c3=a9?= <f4bug@amsat.org>,
+ Emanuele Giuseppe Esposito <eesposit@redhat.com>, kvm@vger.kernel.org
+References: <20200413140332.22896-1-eesposit@redhat.com>
+ <03a481a8-bcf2-8755-d113-71ef393508bf@amsat.org>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Message-ID: <bf870876-9f9a-7ba8-d941-a3883e519eed@redhat.com>
+Date: Tue, 14 Apr 2020 10:18:58 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.67) by
- SG2PR02CA0093.apcprd02.prod.outlook.com (2603:1096:4:90::33) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2900.16 via Frontend Transport; Tue, 14 Apr 2020 08:18:37 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.67]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 641d2a65-68c9-460c-0027-08d7e04c70ce
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6724:|AM0PR04MB6724:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB67241FFA827BDA53397544A288DA0@AM0PR04MB6724.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
-X-Forefront-PRVS: 0373D94D15
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(376002)(346002)(396003)(39850400004)(136003)(366004)(69590400007)(316002)(16526019)(8936002)(9686003)(6512007)(8676002)(5660300002)(478600001)(66946007)(66476007)(81156014)(6666004)(2906002)(36756003)(66556008)(86362001)(52116002)(186003)(2616005)(4326008)(26005)(6506007)(956004)(15650500001)(6486002);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 93Zb3XKBd7s3dUxmpSUpB/9fHGkGAb80nIUZ351TSrge3k7pt1UkWeEOobxm1mlijjJtdpEQmOtDkYTX7/dANH9/HTrFnsJPDNnhhKOFh1lUOHh+JcNRjGeD7d3pakSAgRC0YJ+rMiGcsPpjKHYZOIbmdJ7i/z7pw1injAZOV5PpvU9LseQDdhgjQe4vo5kKQL/jRT67fSkKJdGY28yr5n3JgBESMKQCfAweJE8FO5oKSzsvB5L3Eki6qz1mgdzWhg9ScUk65iMkrNhtTMZZnoHIE2Vi3a9Imdxf8eNvrjXx4f86MJi78X2pmHoJLOJuh9pnx/mh/4wOQsPt4XmM0goKVpXq3hzZDn4njDdabW9/oASQwfMytqn03+XIuOD4hOW5dkAM1vZSuAjW58gEGNrCZR7XBX6xT2Opd5LnkGleGNJtA+Y9b7XQCTDU46oyYiUmor704jwBHICgcR1o+QKzzI25zMXMFOuXqOQijSKfrDU28h/mNDdPO3olPqdN
-X-MS-Exchange-AntiSpam-MessageData: TOfm9Iue543fqmYrmFvZuioKoiOZLRDgA1QIKQxHLD2nYNggMYSVk7JtPxnrl0Gs+QqKkOrEtrIAa+dyaPus4/eEi+SNWtsl/FTNLcSQ9eMkGQc3H2pgqrNsXmwVhId8+EK5imqV8CrkKWGY0R0yXA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 641d2a65-68c9-460c-0027-08d7e04c70ce
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Apr 2020 08:18:41.3138 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ayxUYNV3b+gqRX7Fa2ed2WnMAW59YjmMzGjdy+kxdrgMvFOq3/KB/MX85boWt4bK90q4Sz987Ao6ggXom4JBQw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6724
+In-Reply-To: <03a481a8-bcf2-8755-d113-71ef393508bf@amsat.org>
+Content-Language: en-US
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_011847_609802_7ABCAAA1 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20200414_011906_722089_A7036948 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -113,7 +104,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,66 +116,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, Peng Fan <peng.fan@nxp.com>, Anson.Huang@nxp.com,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Wanpeng Li <wanpengli@tencent.com>, David Hildenbrand <david@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ linux-s390@vger.kernel.org, Janosch Frank <frankja@linux.ibm.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
-
-The i.MX8 SCU message header size is the number of "u32" elements,
-not "u8", so fix the check.
-
-Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
-Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
-
-V2:
- I not include the fixes tag, since this patch still in next tree.
-
- drivers/mailbox/imx-mailbox.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 7906624a731c..c2398cb63ea0 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -154,12 +154,12 @@ static int imx_mu_scu_tx(struct imx_mu_priv *priv,
- 
- 	switch (cp->type) {
- 	case IMX_MU_TYPE_TX:
--		if (msg->hdr.size > sizeof(*msg)) {
-+		if (msg->hdr.size > (sizeof(*msg) / 4)) {
- 			/*
- 			 * The real message size can be different to
- 			 * struct imx_sc_rpc_msg_max size
- 			 */
--			dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i\n", sizeof(*msg), msg->hdr.size);
-+			dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i\n", sizeof(*msg) / 4, msg->hdr.size);
- 			return -EINVAL;
- 		}
- 
-@@ -198,9 +198,9 @@ static int imx_mu_scu_rx(struct imx_mu_priv *priv,
- 	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_RIEn(0));
- 	*data++ = imx_mu_read(priv, priv->dcfg->xRR[0]);
- 
--	if (msg.hdr.size > sizeof(msg)) {
-+	if (msg.hdr.size > (sizeof(msg) / 4)) {
- 		dev_err(priv->dev, "Exceed max msg size (%zu) on RX, got: %i\n",
--			sizeof(msg), msg.hdr.size);
-+			sizeof(msg) / 4, msg.hdr.size);
- 		return -EINVAL;
- 	}
- 
--- 
-2.16.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTMvMDQvMjAgMjM6MzQsIFBoaWxpcHBlIE1hdGhpZXUtRGF1ZMOpIHdyb3RlOgo+PiArI2Rl
+ZmluZSBWTV9TVEFUKHgsIC4uLikgb2Zmc2V0b2Yoc3RydWN0IGt2bSwgc3RhdC54KSwgS1ZNX1NU
+QVRfVk0sICMjIF9fVkFfQVJHU19fCj4+ICsjZGVmaW5lIFZDUFVfU1RBVCh4LCAuLi4pIG9mZnNl
+dG9mKHN0cnVjdCBrdm1fdmNwdSwgc3RhdC54KSwgS1ZNX1NUQVRfVkNQVSwgIyMgX19WQV9BUkdT
+X18KPiBJIGZpbmQgdGhpcyBtYWNybyBleHBhbmRpbmcgaW50byBtdWx0aXBsZSBmaWVsZHMgb2Rk
+Li4uIE1heWJlIGEgbWF0dGVyCj4gb2YgdGFzdGUuIFN1Z2dnZXN0aW9uLCBoYXZlIHRoZSBtYWNy
+byBkZWZpbmUgdGhlIGZ1bGwgc3RydWN0dXJlLCBhcyBpbgo+IHRoZSBhcm02NCBhcmNoOgo+IAo+
+ICNkZWZpbmUgVk1fU1RBVChuLCB4LCAuLi4pIHsgbiwgb2Zmc2V0b2Yoc3RydWN0IGt2bSwgc3Rh
+dC54KSwKPiBLVk1fU1RBVF9WTSwgIyMgX19WQV9BUkdTX18gfQo+IAo+IERpdHRvIGZvciBWQ1BV
+X1NUQVQoKS4KPiAKClllcywgdGhhdCdzIGEgZ29vZCBpZGVhLiAgRW1hbnVlbGUsIGNhbiB5b3Ug
+c3dpdGNoIGl0IHRvIHRoaXMgZm9ybWF0PwoKVGhhbmtzLAoKUGFvbG8KCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
