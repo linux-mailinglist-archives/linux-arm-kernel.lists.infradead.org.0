@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F0A11A824B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DBA91A8245
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:21:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KvuVfVGfMvNetbTrSCW2Kq+OYPCkr3nB4N8O+SQ5DJQ=; b=ceSsZQaarws4tF
-	2rd1xUy7wNfKZzpJRYaFUGG83uz73aRq6v0vwdg7yUvc5RRD7R1ljGaZVCxADVgepp8mg6hMnEtjN
-	qRGWcNQlS1jnkb2XxDCKnTT53tqniDKjHzZjuo2kqnxahy/y5EGKvuCxt/z87hqjLJDMjspRBYjUy
-	9xMn0y4OedDmUGd7GNeFia1noba7uJfgcOdd0WbnGRYCsRhHL4MoC/rFlUbDHIz3hAdrVF7+2rScX
-	zAR4dTAfnVrga4gRdGXj+HWoH6+jOUxCPUuwV2PDltGOEmNBV/CsJOZ7KcvqFwZryzOymAhQQhIlC
-	QjQ2ZfN22jcXwI+KsyhQ==;
+	List-Owner; bh=gHFZzrFB2NRssGGUERe8Ew+MVwAx9sTUJ6hqKVpLWls=; b=KocqG/fmfJ989j
+	08I28fBF456Pyngh0pqlH1Q+QuVVJO+7Fo/lImhzZySuHWgGRYr8n8L2BRy0UXwpVYCmIxaCc9C2A
+	ZLabugibCMNg+4fR9v5ya1w1URNVje7l+0w7ONDwVMYW++tb+kqQm6ySqVlK83xHogpLl7gLfGMBi
+	CA6tOX53vbmk7u37ppkBArMIl/b5mJMf2zYRntvnuhQEnR1fLqpECBqtGj4sYsgQmo0pGMuS6uJ59
+	5/lUwREe0G/Ay67HNAiY/HrGZFMlWCShYnrzFubNlAdkUp09msS3Pjs3yHNn5VCBfhCUX+xIfYnCT
+	0VVMJg2Gdsdl/K65jyFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONNo-00079i-Ay; Tue, 14 Apr 2020 15:21:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jONNW-0006wE-0r; Tue, 14 Apr 2020 15:21:34 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONL0-0002OL-0s; Tue, 14 Apr 2020 15:19:02 +0000
+ id 1jONL0-0002PW-T6; Tue, 14 Apr 2020 15:19:02 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id EAA782A171B
+ (Authenticated sender: aratiu) with ESMTPSA id B031A2A1730
 From: Adrian Ratiu <adrian.ratiu@collabora.com>
 To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-rockchip@lists.infradead.org
-Subject: [PATCH v6 7/8] drm: bridge: dw-mipi-dsi: split low power cfg register
- into fields
-Date: Tue, 14 Apr 2020 18:19:54 +0300
-Message-Id: <20200414151955.311949-8-adrian.ratiu@collabora.com>
+Subject: [PATCH v6 8/8] drm: bridge: dw-mipi-dsi: fix bad register field
+ offsets
+Date: Tue, 14 Apr 2020 18:19:55 +0300
+Message-Id: <20200414151955.311949-9-adrian.ratiu@collabora.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200414151955.311949-1-adrian.ratiu@collabora.com>
 References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_081858_344894_329BFF7B 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20200414_081859_209135_C15AAA69 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -72,13 +71,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the Host Registers documentation for IMX, STM and RK
-the LP cfg register should not be written entirely in one go because
-some bits are reserved and should be kept to reset values, for eg.
-BIT(15) which is reserved in all versions.
-
-This also cleans up the code by removing the the ugly defines
-and making field ranges & values written more explicit.
+According to the DSI Host Registers sections available in the IMX,
+STM and RK ref manuals for 1.01, 1.30 and 1.31, the register fields
+are smaller or bigger than what's coded in the driver, leading to
+r/w in reserved spaces which might cause undefined behaviours.
 
 Tested-by: Adrian Pop <pop.adrian61@gmail.com>
 Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
@@ -86,171 +82,94 @@ Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
 ---
 New in v6.
 ---
- drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 105 ++++++------------
- 1 file changed, 33 insertions(+), 72 deletions(-)
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 46 +++++++++----------
+ 1 file changed, 23 insertions(+), 23 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-index 0ce2697d17a3..cbbe31c0dbac 100644
+index cbbe31c0dbac..7f6e3d1e2ad2 100644
 --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
 +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-@@ -120,60 +120,6 @@
- #define DSI_TO_CNT_CFG_V101		0x40
- #define DSI_PCKHDL_CFG_V101		0x18
- 
--#define MAX_RD_PKT_SIZE_LP		BIT(24)
--#define DCS_LW_TX_LP			BIT(19)
--#define DCS_SR_0P_TX_LP			BIT(18)
--#define DCS_SW_1P_TX_LP			BIT(17)
--#define DCS_SW_0P_TX_LP			BIT(16)
--#define GEN_LW_TX_LP			BIT(14)
--#define GEN_SR_2P_TX_LP			BIT(13)
--#define GEN_SR_1P_TX_LP			BIT(12)
--#define GEN_SR_0P_TX_LP			BIT(11)
--#define GEN_SW_2P_TX_LP			BIT(10)
--#define GEN_SW_1P_TX_LP			BIT(9)
--#define GEN_SW_0P_TX_LP			BIT(8)
--#define TEAR_FX_EN			BIT(0)
--
--#define CMD_MODE_ALL_LP			(MAX_RD_PKT_SIZE_LP | \
--					 DCS_LW_TX_LP | \
--					 DCS_SR_0P_TX_LP | \
--					 DCS_SW_1P_TX_LP | \
--					 DCS_SW_0P_TX_LP | \
--					 GEN_LW_TX_LP | \
--					 GEN_SR_2P_TX_LP | \
--					 GEN_SR_1P_TX_LP | \
--					 GEN_SR_0P_TX_LP | \
--					 GEN_SW_2P_TX_LP | \
--					 GEN_SW_1P_TX_LP | \
--					 GEN_SW_0P_TX_LP)
--
--#define EN_TEAR_FX_V101			BIT(14)
--#define DCS_LW_TX_LP_V101		BIT(12)
--#define GEN_LW_TX_LP_V101		BIT(11)
--#define MAX_RD_PKT_SIZE_LP_V101		BIT(10)
--#define DCS_SW_2P_TX_LP_V101		BIT(9)
--#define DCS_SW_1P_TX_LP_V101		BIT(8)
--#define DCS_SW_0P_TX_LP_V101		BIT(7)
--#define GEN_SR_2P_TX_LP_V101		BIT(6)
--#define GEN_SR_1P_TX_LP_V101		BIT(5)
--#define GEN_SR_0P_TX_LP_V101		BIT(4)
--#define GEN_SW_2P_TX_LP_V101		BIT(3)
--#define GEN_SW_1P_TX_LP_V101		BIT(2)
--#define GEN_SW_0P_TX_LP_V101		BIT(1)
--
--#define CMD_MODE_ALL_LP_V101		(DCS_LW_TX_LP_V101 | \
--					 GEN_LW_TX_LP_V101 | \
--					 MAX_RD_PKT_SIZE_LP_V101 | \
--					 DCS_SW_2P_TX_LP_V101 | \
--					 DCS_SW_1P_TX_LP_V101 | \
--					 DCS_SW_0P_TX_LP_V101 | \
--					 GEN_SR_2P_TX_LP_V101 | \
--					 GEN_SR_1P_TX_LP_V101 | \
--					 GEN_SR_0P_TX_LP_V101 | \
--					 GEN_SW_2P_TX_LP_V101 | \
--					 GEN_SW_1P_TX_LP_V101 | \
--					 GEN_SW_0P_TX_LP_V101)
--
- #define DSI_GEN_HDR			0x6c
- #define DSI_GEN_PLD_DATA		0x70
- 
-@@ -257,7 +203,11 @@ struct dw_mipi_dsi {
- 	struct regmap_field	*field_dpi_vsync_active_low;
- 	struct regmap_field	*field_dpi_hsync_active_low;
- 	struct regmap_field	*field_cmd_mode_ack_rqst_en;
--	struct regmap_field	*field_cmd_mode_all_lp_en;
-+	struct regmap_field	*field_cmd_mode_gen_sw_sr_en;
-+	struct regmap_field	*field_cmd_mode_dcs_sw_sr_en;
-+	struct regmap_field	*field_cmd_mode_gen_lw_en;
-+	struct regmap_field	*field_cmd_mode_dcs_lw_en;
-+	struct regmap_field	*field_cmd_mode_max_rd_pkt_size;
- 	struct regmap_field	*field_cmd_mode_en;
- 	struct regmap_field	*field_cmd_pkt_status;
- 	struct regmap_field	*field_vid_mode_en;
-@@ -315,7 +265,11 @@ struct dw_mipi_dsi_variant {
- 	struct reg_field	cfg_dpi_hsync_active_low;
- 	struct reg_field	cfg_cmd_mode_en;
- 	struct reg_field	cfg_cmd_mode_ack_rqst_en;
--	struct reg_field	cfg_cmd_mode_all_lp_en;
-+	struct reg_field	cfg_cmd_mode_gen_sw_sr_en;
-+	struct reg_field	cfg_cmd_mode_dcs_sw_sr_en;
-+	struct reg_field	cfg_cmd_mode_gen_lw_en;
-+	struct reg_field	cfg_cmd_mode_dcs_lw_en;
-+	struct reg_field	cfg_cmd_mode_max_rd_pkt_size;
- 	struct reg_field	cfg_cmd_pkt_status;
- 	struct reg_field	cfg_vid_mode_en;
- 	struct reg_field	cfg_vid_mode_type;
-@@ -366,7 +320,11 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
+@@ -316,7 +316,7 @@ struct dw_mipi_dsi_variant {
+ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
+ 	.cfg_dpi_color_coding =		REG_FIELD(DSI_DPI_COLOR_CODING, 0, 3),
+ 	.cfg_dpi_18loosely_en =		REG_FIELD(DSI_DPI_COLOR_CODING, 8, 8),
+-	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 2),
++	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 1),
  	.cfg_dpi_vsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 1, 1),
  	.cfg_dpi_hsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 2, 2),
  	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG, 1, 1),
--	.cfg_cmd_mode_all_lp_en =	REG_FIELD(DSI_CMD_MODE_CFG, 8, 24),
-+	.cfg_cmd_mode_gen_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 8, 13),
-+	.cfg_cmd_mode_gen_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 14, 14),
-+	.cfg_cmd_mode_dcs_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 16, 18),
-+	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 19, 19),
-+	.cfg_cmd_mode_max_rd_pkt_size =	REG_FIELD(DSI_CMD_MODE_CFG, 24, 24),
- 	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
- 	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 31),
- 	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
-@@ -418,7 +376,11 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v101_layout = {
- 	.cfg_dpi_vsync_active_low =	REG_FIELD(DSI_DPI_CFG, 6, 6),
- 	.cfg_dpi_hsync_active_low =	REG_FIELD(DSI_DPI_CFG, 7, 7),
- 	.cfg_cmd_mode_en =		REG_FIELD(DSI_CMD_MODE_CFG_V101, 0, 0),
--	.cfg_cmd_mode_all_lp_en =	REG_FIELD(DSI_CMD_MODE_CFG_V101, 1, 12),
-+	.cfg_cmd_mode_gen_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 1, 6),
-+	.cfg_cmd_mode_dcs_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 7, 9),
-+	.cfg_cmd_mode_max_rd_pkt_size =	REG_FIELD(DSI_CMD_MODE_CFG, 10, 10),
-+	.cfg_cmd_mode_gen_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 11, 11),
-+	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 12, 12),
+@@ -325,29 +325,29 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
+ 	.cfg_cmd_mode_dcs_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 16, 18),
+ 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 19, 19),
+ 	.cfg_cmd_mode_max_rd_pkt_size =	REG_FIELD(DSI_CMD_MODE_CFG, 24, 24),
+-	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
+-	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 31),
+-	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
++	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
++	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 6),
++	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
+ 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG, 0, 1),
+ 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG, 8, 13),
+ 	.cfg_vid_mode_vpg_en =		REG_FIELD(DSI_VID_MODE_CFG, 16, 16),
+ 	.cfg_vid_mode_vpg_horiz =	REG_FIELD(DSI_VID_MODE_CFG, 24, 24),
+-	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 10),
+-	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 31),
+-	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 31),
+-	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 31),
+-	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 31),
+-	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 31),
+-	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 31),
+-	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 31),
++	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 13),
++	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 11),
++	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 11),
++	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 14),
++	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 9),
++	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 9),
++	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 9),
++	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 13),
+ 	.cfg_phy_txrequestclkhs =	REG_FIELD(DSI_LPCLK_CTRL, 0, 0),
+-	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 31),
+-	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
++	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 15),
++	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 14),
+ 	.cfg_phy_lp2hs_time =		REG_FIELD(DSI_PHY_TMR_CFG, 16, 23),
+ 	.cfg_phy_hs2lp_time =		REG_FIELD(DSI_PHY_TMR_CFG, 24, 31),
+-	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 15),
+-	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
+-	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 31),
++	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 14),
++	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 9),
++	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 25),
+ 	.cfg_phy_clklp2hs_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 0, 15),
+ 	.cfg_phy_clkhs2lp_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 16, 31),
+ 	.cfg_phy_testclr =		REG_FIELD(DSI_PHY_TST_CTRL0, 0, 0),
+@@ -361,11 +361,11 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
+ 	.cfg_pckhdl_cfg =		REG_FIELD(DSI_PCKHDL_CFG, 0, 4),
+ 	.cfg_hstx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 16, 31),
+ 	.cfg_lprx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 0, 15),
+-	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 31),
+-	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 31),
+-	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 31),
+-	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 31),
+-	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 31),
++	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 20),
++	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 12),
++	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 20),
++	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 12),
++	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 23),
+ 	.cfg_gen_payload =		REG_FIELD(DSI_GEN_PLD_DATA, 0, 31),
+ };
+ 
+@@ -382,7 +382,7 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v101_layout = {
+ 	.cfg_cmd_mode_gen_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 11, 11),
+ 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 12, 12),
  	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG_V101, 13, 13),
- 	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 14),
+-	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 14),
++	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 6),
  	.cfg_vid_mode_en =		REG_FIELD(DSI_VID_MODE_CFG_V101, 0, 0),
-@@ -554,23 +516,18 @@ static void dw_mipi_message_config(struct dw_mipi_dsi *dsi,
- 				   const struct mipi_dsi_msg *msg)
- {
- 	bool lpm = msg->flags & MIPI_DSI_MSG_USE_LPM;
--	u32 cmd_mode_lp = 0;
--
--	switch (dsi->hw_version) {
--	case HWVER_130:
--	case HWVER_131:
--		cmd_mode_lp = CMD_MODE_ALL_LP;
--		break;
--	case HWVER_101:
--		cmd_mode_lp = CMD_MODE_ALL_LP_V101;
--		break;
--	}
- 
- 	if (msg->flags & MIPI_DSI_MSG_REQ_ACK)
- 		regmap_field_write(dsi->field_cmd_mode_ack_rqst_en, 1);
- 
--	if (lpm)
--		regmap_field_write(dsi->field_cmd_mode_all_lp_en, cmd_mode_lp);
-+	if (lpm) {
-+		regmap_field_write(dsi->field_cmd_mode_gen_sw_sr_en,
-+				   ENABLE_LOW_POWER);
-+		regmap_field_write(dsi->field_cmd_mode_dcs_sw_sr_en, 7);
-+		regmap_field_write(dsi->field_cmd_mode_gen_lw_en, 1);
-+		regmap_field_write(dsi->field_cmd_mode_dcs_lw_en, 1);
-+		regmap_field_write(dsi->field_cmd_mode_max_rd_pkt_size, 1);
-+	}
- 
- 	regmap_field_write(dsi->field_phy_txrequestclkhs, lpm ? 0 : 1);
- }
-@@ -1252,7 +1209,11 @@ static int dw_mipi_dsi_regmap_fields_init(struct dw_mipi_dsi *dsi)
- 	INIT_FIELD(dpi_vsync_active_low);
- 	INIT_FIELD(dpi_hsync_active_low);
- 	INIT_FIELD(cmd_mode_ack_rqst_en);
--	INIT_FIELD(cmd_mode_all_lp_en);
-+	INIT_FIELD(cmd_mode_gen_sw_sr_en);
-+	INIT_FIELD(cmd_mode_dcs_sw_sr_en);
-+	INIT_FIELD(cmd_mode_gen_lw_en);
-+	INIT_FIELD(cmd_mode_dcs_lw_en);
-+	INIT_FIELD(cmd_mode_max_rd_pkt_size);
- 	INIT_FIELD(cmd_mode_en);
- 	INIT_FIELD(cmd_pkt_status);
- 	INIT_FIELD(vid_mode_en);
+ 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG_V101, 1, 2),
+ 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG_V101, 3, 8),
 -- 
 2.26.0
 
