@@ -2,56 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E7F1A7A86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:18:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0294E1A7A8F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:20:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9ywMFTqaEvk067szzP20dM2v2GXmjhbbSATVxAtHHM=; b=GW9JaF3w/Hs+69
-	D3O2YE7bHl1+0iKBpLYQL28qwym2EhED0/0TwMD27DcI5tZhpquWF7Go+ab3AzvrYZZQGBDwgx+rL
-	skszPxp7rQezoqitzTpFf4Uh9LI/7Wyfl/tzvRPtN52BEQrH9juN/sacUTd138eyBjWInZxeGdNwP
-	s2fTxRKzZmDafmZmOP5IKExVjwyiS5pWvDpN8U899bqCUdRZWzwVeHhMZVA6dau3c7gYH+yoKtYnZ
-	fVWgUZVdGhLkP8sylg8pGgtJpO7shQAlhsrZZxQ8bCfx9V2cmC3SSsNGESy5g/Jh9CSP8gwYoxfeP
-	a6EjJjHSlJWCyzfjTqXA==;
+	List-Owner; bh=FL/V6vxz0Tm2U90lVvjwuPFYb8E00+6QlRpEcN/Oqy0=; b=CPoHAEH1WgDiN9
+	CenuZmgz46jM0uXwA/tQEAc/PlAgiV7bGeOY3unGTAxQozzuIUko1ReyN4KCjbeJcs/oMGOhFv/5T
+	Jk8I0WSYiaEMzQ/svyryFWdAwWURxQKXt0MptEaBE3YSBh9v1EfMeH2O/kix4CuPQSUZy8R/qO3HX
+	km9Nhvijukg2hjRM5BQwIECqaZnwAP4Dl1iZC0NwT7mz4/Sjnnk4L9VRw9oCJJBAQFd0ea2tvz8o5
+	k9HwV4584VIxl9ptMKUkGzSWpbSR4RDVKHZSJooMOKlGp3xjKu4ICdIP79LfohL4D6B//8FofzfPN
+	dDSHlDo6Zd0W99bsFQFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKWF-0007C7-A4; Tue, 14 Apr 2020 12:18:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKW4-0007BP-F4
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:18:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B2731FB;
- Tue, 14 Apr 2020 05:18:11 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 646C23F6C4;
- Tue, 14 Apr 2020 05:18:09 -0700 (PDT)
-Subject: Re: [PATCH] KVM: handle the right RAS SEA(Synchronous External Abort)
- type
-To: Dongjiu Geng <gengdongjiu@huawei.com>
-References: <20200411121740.37615-1-gengdongjiu@huawei.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <0fa259ab-0e2f-a8b3-783d-24a725b4cc5d@arm.com>
-Date: Tue, 14 Apr 2020 13:18:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jOKY1-0008Tc-Bx; Tue, 14 Apr 2020 12:20:13 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOKXp-0007V4-4e
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:20:03 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 593FA43AC802EDBA096C;
+ Tue, 14 Apr 2020 20:19:49 +0800 (CST)
+Received: from [127.0.0.1] (10.173.221.49) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Tue, 14 Apr 2020
+ 20:19:42 +0800
+Subject: Re: [PATCH] arm64: panic on synchronous external abort in kernel
+ context
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20200410015245.23230-1-xiexiuqi@huawei.com>
+ <20200414105923.GA2486@C02TD0UTHF1T.local>
+From: Xie XiuQi <xiexiuqi@huawei.com>
+Message-ID: <9982d344-328e-320d-020f-218ab74ae2b1@huawei.com>
+Date: Tue, 14 Apr 2020 20:19:41 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200411121740.37615-1-gengdongjiu@huawei.com>
-Content-Language: en-GB
+In-Reply-To: <20200414105923.GA2486@C02TD0UTHF1T.local>
+Content-Language: en-US
+X-Originating-IP: [10.173.221.49]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_051812_549973_E7E1BE31 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20200414_052001_827549_86C5687C 
+X-CRM114-Status: GOOD (  16.56  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,80 +67,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
- linuxarm@huawei.com, zhengxiang9@huawei.com, tanxiaofei@huawei.com,
- julien.thierry.kdev@gmail.com, catalin.marinas@arm.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ tanxiaofei@huawei.com, james.morse@arm.com, tglx@linutronix.de,
+ will@kernel.org, wangxiongfeng2@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geng,
+Hi Mark,
 
-On 11/04/2020 13:17, Dongjiu Geng wrote:
-> When the RAS Extension is implemented, b0b011000, 0b011100,
-> 0b011101, 0b011110, and 0b011111, are not used and reserved
-> to the DFSC[5:0] of ESR_ELx, but the code still checks these
-> unused bits, so remove them.
+On 2020/4/14 18:59, Mark Rutland wrote:
+> On Fri, Apr 10, 2020 at 09:52:45AM +0800, Xie XiuQi wrote:
+>> We should panic even panic_on_oops is not set, when we can't recover
+>> from synchronous external abort in kernel context.
+>>
+>> Othervise, there are two issues:
+>> 1) fallback to do_exit() in exception context, cause this core hung up.
+>>    do_sea()
+>>    -> arm64_notify_die
+>>       -> die
+>>          -> do_exit
+>> 2) errors may propagated.
+>>
+>> Signed-off-by: Xie XiuQi <xiexiuqi@huawei.com>
+>> Cc: Xiaofei Tan <tanxiaofei@huawei.com>
+>> ---
+>>  arch/arm64/include/asm/esr.h | 12 ++++++++++++
+>>  arch/arm64/kernel/traps.c    |  2 ++
+>>  2 files changed, 14 insertions(+)
+>>
+>> diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
+>> index cb29253ae86b..acfc71c6d148 100644
+>> --- a/arch/arm64/include/asm/esr.h
+>> +++ b/arch/arm64/include/asm/esr.h
+>> @@ -326,6 +326,18 @@ static inline bool esr_is_data_abort(u32 esr)
+>>  	return ec == ESR_ELx_EC_DABT_LOW || ec == ESR_ELx_EC_DABT_CUR;
+>>  }
+>>  
+>> +static inline bool esr_is_inst_abort(u32 esr)
+>> +{
+>> +	const u32 ec = ESR_ELx_EC(esr);
+>> +
+>> +	return ec == ESR_ELx_EC_IABT_LOW || ec == ESR_ELx_EC_IABT_CUR;
+>> +}
+>> +
+>> +static inline bool esr_is_ext_abort(u32 esr)
+>> +{
+>> +	return esr_is_data_abort(esr) || esr_is_inst_abort(esr);
+>> +}
+> 
+> A data abort or an intstruction abort are not necessarily synchronus
+> external aborts, so this isn't right.
+> 
+> What exactly are you trying to catch here? If you are seeing a problem
+> in practice, can you please share your log from a crash?
 
-They aren't unused: CPUs without the RAS extensions may still generate these.
+Yes, I meet a problem in practice.
 
-kvm_handle_guest_abort() wants to know if this is an external abort.
-KVM doesn't really care if the CPU has the RAS extensions or not, its the arch code's job
-to sort all that out.
+Tan Xiaofei report this issue when doing ras error inject testing:
+1) panic_on_oops is not set;
+2) trigger a sea by inject a ECC error;
+3) a cpu core receive a sea in kernel context:
+   do_mem_abort
+     -> arm64_notify_die
+        -> die                    # kernel context, call die() directly;
+           -> do_exit             # kernel process context, call do_exit(SIGSEGV);
+              -> do_task_dead()   # call do_task_dead(), and hung up this core;
 
-
-> If the handling of guest ras data error fails, it should
-> inject data instead of SError to let the guest recover as
-> much as possible.
-
-(I don't quite follow your point here).
-
-If KVM injected a synchronous external abort due to a RAS error here, then you wouldn't be
-able to support firmware-first RAS with Qemu. I don't think this is what you want.
-
-
-The handling is (and should be) decoupled.
-
-KVM guests aren't special. Whatever happens for a normal user-space process is what should
-happen here. KVM is just doing the plumbing:
-
-When the hypervisor takes an external abort due to the guest, it should plumb the error
-into the arch code to be handled. This is what would happen for a normal EL0 process.
-This is what do_sea() and kvm_handle_guest_sea() do with apei_claim_sea().
-
-If the RAS code says it handled this error, then we can continue. For user-space, we
-return to user-space. For a guest, we return to the guest. (for user-space this piece is
-not quite complete in mainline, see:
-https://lore.kernel.org/linux-acpi/20200228174817.74278-4-james.morse@arm.com/ )
-
-This first part happens even if the errors are notified by IRQs, or found in a polled buffer.
-
-The RAS code may have 'handled' the memory by unmapping it, and marking the corresponding
-page as HWPOISONed. If user-space tries to access this, it will be give an
-SIGBUS:MCEERR_AR. If a guest tries to do this, the same things happens. (The signal goes
-to Qemu).
-(See do_page_fault()s use of the MCEERR si_code's, and kvm_send_hwpoison_signal)
-
-This second part is the same regardless of how the kernel discovered the RAS error in the
-first place.
-
-
-If the RAS code says it did not handle this error, it means it wasn't a RAS error, or your
-platform doesn't support RAS. For an external-abort there is very little the hypervisor
-can do in this situation. It does what KVM has always done: inject an asynchronous
+Actually, we should not call do_exit() for kernel task, or before return from
 external abort.
-This should only happen if the host has failed to handle the error. KVM's use of
-asynchronous abort is the simplest one size fits all.
 
-Are you seeing this happen? If so, what are the circumstances. Did the host handle the
-error? (if not: why not!)
+So, I send this patch intend to panic directly when receive a sea in kernel context.
+
+crash log:
+
+NOTICE:  [TotemRasIntCpuNodeEri]:[1879L]
+NOTICE:  [RasEriInterrupt]:[173L]NodeTYP2Status = 0x0
+[  387.740609] {1}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 9
+[  387.748837] {1}[Hardware Error]: event severity: recoverable
+[  387.754470] {1}[Hardware Error]:  Error 0, type: recoverable
+[  387.760103] {1}[Hardware Error]:   section_type: ARM processor error
+[  387.766425] {1}[Hardware Error]:   MIDR: 0x00000000481fd010
+[  387.771972] {1}[Hardware Error]:   Multiprocessor Affinity Register (MPIDR): 0x0000000081080000
+[  387.780628] {1}[Hardware Error]:   error affinity level: 0
+[  387.786088] {1}[Hardware Error]:   running state: 0x1
+[  387.791115] {1}[Hardware Error]:   Power State Coordination Interface state: 0
+[  387.798301] {1}[Hardware Error]:   Error info structure 0:
+[  387.803761] {1}[Hardware Error]:   num errors: 1
+[  387.808356] {1}[Hardware Error]:    error_type: 0, cache error
+[  387.814160] {1}[Hardware Error]:    error_info: 0x0000000024400017
+[  387.820311] {1}[Hardware Error]:     transaction type: Instruction
+[  387.826461] {1}[Hardware Error]:     operation type: Generic error (type cannot be determined)
+[  387.835031] {1}[Hardware Error]:     cache level: 1
+[  387.839878] {1}[Hardware Error]:     the error has been corrected
+[  387.845942] {1}[Hardware Error]:    physical fault address: 0x00000027caf50770
+[  387.853162] Internal error: synchronous external abort: 96000610 [#1] PREEMPT SMP
+[  387.860611] Modules linked in: l1l2_inject(O) vfio_iommu_type1 vfio_pci vfio_virqfd vfio ib_ipoib ib_umad rpcrdma ib_iser libiscsi scsi_transport_iscsi hns_roce_hw_v2 crct10dif_ce ses hns3 hclge hnae3 hisi_trng_v2 rng_core hisi_zip hisi_sec2 hisi_hpre hisi_qm uacce hisi_sas_v3_hw hisi_sas_main libsas scsi_transport_sas
+[  387.888725] CPU: 0 PID: 940 Comm: kworker/0:3 Kdump: loaded Tainted: G           O      5.5.0-rc4-g5993cbe #1
+[  387.898592] Hardware name: Huawei TaiShan 2280 V2/BC82AMDC, BIOS 2280-V2 CS V3.B210.01 03/12/2020
+[
+ Message from  387.907429] Workqueue: events error_inject [l1l2_inject]
+[  387.914098] pstate: 80c00009 (Nzcv daif +PAN +UAO)
+ s[yslogd@localho  387.918867] pc : lsu_inj_ue+0x58/0x70 [l1l2_inject]
+[  387.925103] lr : error_inject+0x64/0xb0 [l1l2_inject]
+[  387.930132] sp : ffff800020af3d90
+[  387.933435] x29: ffff800020af3d90 x28: 0000000000000000
+st[ at Mar 30 11:  387.938723] x27: ffff0027dae6e838 x26: ffff80001178bcc8
+[  387.945391] x25: 0000000000000000 x24: ffffa2c77162e090
+[  387.950680] x23: 0000000000000000 x22: ffff2027d7c33d40
+33[:55 ...
+ ker  387.955968] x21: ffff2027d7c37a00 x20: ffff0027d679c000
+[  387.962636] x19: ffffa2c77162e088 x18: 0000000020cbf59a
+ne[l:Internal err  387.967924] x17: 000000000000000e x16: ffffa2c7b812bc98
+[  387.974592] x15: 0000000000000001 x14: 0000000000000000
+[  387.979880] x13: ffff2027cf75a780 x12: ffffa2c7b8299c18
+or[: synchronous   387.985168] x11: 0000000000000000 x10: 00000000000009f0
+[  387.991836] x9 : ffff800020af3d50 x8 : fefefefefefefeff
+ex[ternal abort:   387.997124] x7 : 0000000000000000 x6 : 001d4ed88e000000
+[  388.003792] x5 : 000073746e657665 x4 : 0000080110f81381
+[  388.009080] x3 : 000000000000002f x2 : 807fffffffffffff
+96[000610 [#1] PR  388.014369] x1 : ffffa2c77162c518 x0 : 0000000000000081
+[  388.021037] Call trace:
+EEMPT SMP
+[  388.023475]  lsu_inj_ue+0x58/0x70 [l1l2_inject]
+[  388.029019]  error_inject+0x64/0xb0 [l1l2_inject]
+[  388.033707]  process_one_work+0x158/0x4b8
+[  388.037699]  worker_thread+0x50/0x498
+[  388.041348]  kthread+0xfc/0x128
+[  388.044480]  ret_from_fork+0x10/0x1c
+[  388.048042] Code: b2790000 d519f780 f9800020 d5033f9f (58001001)
+[  388.054109] ---[ end trace 39d51c21b0e42ba6 ]---
+
+core 0 hung up at here.
 
 
-Thanks,
+> 
+> Thanks,
+> Mark.
+> 
+>> +
+>>  const char *esr_get_class_string(u32 esr);
+>>  #endif /* __ASSEMBLY */
+>>  
+>> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+>> index cf402be5c573..08f7f7688d5b 100644
+>> --- a/arch/arm64/kernel/traps.c
+>> +++ b/arch/arm64/kernel/traps.c
+>> @@ -202,6 +202,8 @@ void die(const char *str, struct pt_regs *regs, int err)
+>>  		panic("Fatal exception in interrupt");
+>>  	if (panic_on_oops)
+>>  		panic("Fatal exception");
+>> +	if (esr_is_ext_abort(err))
+>> +		panic("Synchronous external abort in kernel context");
+>>  
+>>  	raw_spin_unlock_irqrestore(&die_lock, flags);
+>>  
+>> -- 
+>> 2.20.1
+>>
+> .
+> 
 
-James
 
 _______________________________________________
 linux-arm-kernel mailing list
