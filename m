@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC7AC1A8CFB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 22:57:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D12821A8D1C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:02:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HMbw3ot3esIunqdEuyr8CDWzoPqzCrDMCFumsuzAKWE=; b=gc7qDdHKjR6ejW
-	bmngRHCCtcUUAu//LIXiLS+c05Yxsn/kDD9/zjYZ+5Q7XJDqOQpTcho6XDjrQTzLv/7UhLH6nySY8
-	LtDhiyybu43T74zej9OYdvid2RVG3ougyCpkQS9ZRlrk4POoz9j0YEmyd6wyoJTEguZhmSvsiCEmY
-	nTQwHTpvOh1zpWwOxxgS+wk8pTC7hIxRaff1sHdyLOOVffMGU9s3EK4gQZASu4Tyqs2BTNt9QqSjJ
-	HHx0NCGtLGa7uvSLM2oeMbL7+Q6RCqzn41DG0x/DyGoUDJtLwoAUkzG8LKeA5HQ5otNStDKvOSAot
-	MQbNzNztu+w2QB0QxQfQ==;
+	List-Owner; bh=RPxf0aQI6KIdfNcX2N6ez/6MlbHGgaCsd9I7hOgJ3po=; b=cpLBfQGd7T2fWX
+	RlkpAKpQ+MfGN9QkR4LNTRf0zLeb2RucNGVjlpwZgImqh+ovIf9sRCvQAnErj2qsweil0znbp+KhC
+	LDsiSpASc5J0YfCrjNGN2MT22cpizDMs0D6rYFOslC8glDPmutwp7BoXADYjmQKNq4G9fh5GoEN4x
+	KlaSt2W9EcOXWvEgqBh/fdpAerevs0YoXMMo0vWSBdSP3LTjpZ00doayyaTW89ZGRuiaK4Q/9y8uY
+	KVfKq0DSpz9xpGg4p1/YvtxXLI7ytFUiVzo//K/9xmi7BxsWrjTGQaLL8sI5UtzKMfvH1eSIsKqsi
+	/AgrZfIKNikd2EAsyrlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOScQ-0003La-Dq; Tue, 14 Apr 2020 20:57:18 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jOShg-0007zW-Kw; Tue, 14 Apr 2020 21:02:44 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOScG-0003LG-U6
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 20:57:10 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 13C81521;
- Tue, 14 Apr 2020 22:57:07 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586897827;
- bh=+opjKMJynJ2yyGq/b6mxDNSq3e8f5ZXoGqlv0GJOl4c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Hwu3PZpm77wy9qhNgn34zcCfb8HT0nsEaRmSyepW5eBqDSjv/PUGzdc0Gw9UzJP7Q
- 1PlZPJcIoaT11Li8C2XvOTx875+2WLYsx57TjIbr1/JbQ2AHjXV91dvPFkDZJzugNy
- FufJ5UISqswefu7BV6wUkjGeAC/ZTDCfDlEsCg8w=
-Date: Tue, 14 Apr 2020 23:56:55 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: Re: [PATCH v5 2/5] media: i2c: ov5645: Drop reading clock-frequency
- dt-property
-Message-ID: <20200414205655.GO19819@pendragon.ideasonboard.com>
-References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200406165108.GA7646@kekkonen.localdomain>
- <20200406173234.GD16885@pendragon.ideasonboard.com>
- <20200407062241.GA8883@kekkonen.localdomain>
- <20200407122106.GD4751@pendragon.ideasonboard.com>
- <20200407151401.GA5206@paasikivi.fi.intel.com>
- <20200414205552.GN19819@pendragon.ideasonboard.com>
+ id 1jOShW-0007yz-69; Tue, 14 Apr 2020 21:02:35 +0000
+Received: by mail-ot1-f66.google.com with SMTP id e20so1231112otl.2;
+ Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1nuyaAjNqXWnHHUJzL2XAoGa0wH4Zq86LiHy6nqxsJQ=;
+ b=SGaH/mk82EDwIrMIRBIWEO3wNZI1yqPuUe+oMV+XnQ9eAcmp1NkIhadvDED6EWwwpQ
+ 2PkOa1jGrTyMUw7bfijZ+mA4DC+HP6hXDbR7JJQgn++qIkPhDp4ICPkxZRPoWnD6lT0b
+ KTG/zW4YyX05CQyNG/UquD2xYhRXSQh+w/OA3Mvig2wU4G45FiXZyF7d1MwdnMHzZY8j
+ JzAbQH9IOg/ZJN8cvYa+2kA4U6GUkveFukMCxiDeRjxg2petDKbwwabJSWf+HC+Kss3X
+ fYRcdPsnDppTmYuDSA1nX/KrFwY2lOK8R4oqwOr6LDM+QmmyZK9nMJzbwRESQ5T1gM1n
+ stUQ==
+X-Gm-Message-State: AGi0PuZ6yPovmXaDQkNObiVGjRZ3XfmI8pR9bsYLgPaLCNc01yfRE9Cq
+ oV+abyxe7rX6WsArfOVotA==
+X-Google-Smtp-Source: APiQypKapzYt9/7Q7GX3xQeCXyCjneXL8ofq3ZPCgF3NijaDtaMlETjB5mxGRQw13Z/0NIvx/NAIzg==
+X-Received: by 2002:a05:6830:573:: with SMTP id
+ f19mr11105288otc.195.1586898153253; 
+ Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s73sm1425254oih.14.2020.04.14.14.02.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 14:02:32 -0700 (PDT)
+Received: (nullmailer pid 5278 invoked by uid 1000);
+ Tue, 14 Apr 2020 21:02:31 -0000
+Date: Tue, 14 Apr 2020 16:02:31 -0500
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH v2 28/33] docs: dt: rockchip, dwc3.txt: fix a pointer to a
+ renamed file
+Message-ID: <20200414210231.GA5218@bogus>
+References: <cover.1586881715.git.mchehab+huawei@kernel.org>
+ <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200414205552.GN19819@pendragon.ideasonboard.com>
+In-Reply-To: <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_135709_125373_6EC44A55 
-X-CRM114-Status: GOOD (  27.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_140234_225304_9D23B6FE 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,108 +94,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Maxime Ripard <maxime@cerno.tech>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
-
-On Tue, Apr 14, 2020 at 11:55:54PM +0300, Laurent Pinchart wrote:
-> On Tue, Apr 07, 2020 at 06:14:01PM +0300, Sakari Ailus wrote:
-> > On Tue, Apr 07, 2020 at 03:21:06PM +0300, Laurent Pinchart wrote:
-> >> On Tue, Apr 07, 2020 at 09:22:41AM +0300, Sakari Ailus wrote:
-> >>> On Mon, Apr 06, 2020 at 08:32:34PM +0300, Laurent Pinchart wrote:
-> >>>> On Mon, Apr 06, 2020 at 07:51:08PM +0300, Sakari Ailus wrote:
-> >>>>> On Mon, Apr 06, 2020 at 05:42:38PM +0100, Lad Prabhakar wrote:
-> >>>>>> Modes in the driver are based on xvclk frequency fixed to 24MHz, but where
-> >>>>>> as the OV5645 sensor can support the xvclk frequency ranging from 6MHz to
-> >>>>>> 24MHz. So instead making clock-frequency as dt-property just let the
-> >>>>>> driver enforce the required clock frequency.
-> >>>>> 
-> >>>>> Even if some current systems where the driver is used are using 24 MHz
-> >>>>> clock, that doesn't mean there wouldn't be systems using another frequency
-> >>>>> that the driver does not support right now.
-> >>>>> 
-> >>>>> The driver really should not set the frequency unless it gets it from DT,
-> >>>>> but I think the preferred means is to use assigned-clock-rates instead, and
-> >>>>> not to involve the driver with setting the frequency.
-> >>>>> 
-> >>>>> Otherwise we'll make it impossible to support other frequencies, at least
-> >>>>> without more or less random defaults.
-> >>>> 
-> >>>> We're running in circles here.
-> >>>> 
-> >>>> As the driver only supports 24MHz at the moment, the frequency should be
-> >>>> set by the driver, as it's a driver limitation. We can then work on
-> >>>> supporting additional frequencies, which will require DT to provide a
-> >>>> list of supported frequencies for the system, but that can be done on
-> >>>> top.
-> >>> 
-> >>> I guess it would be possible to use different external clock frequencies on
-> >>> a sensor in a given system but that seems to be a bit far fetched, to the
-> >>> extent I've never seen anyone doing that in practice.
-> >>> 
-> >>> Originally, the driver set the frequency based on the clock-frequency
-> >>> property. If we're removing that but use a fixed frequency instead, then
-> >>> how is that going to work going forward when someone adds support for other
-> >>> frequencies in the driver and has a system requiring that, while there are
-> >>> some other platforms relying on the driver setting a particular frequency?
-> >> 
-> >> The standard property for this is link-frequencies, not clock-frequency.
-> >> Deprecating clock-frequency now paves the way to use the standard
-> >> property later when/if someone implements support for additional
-> >> frequencies.
-> > 
-> > The external clock frequency and link frequency are different indeed, but
-> > they are related. The link frequency has been selected in a way that it is
-> > possible to generate that exact frequency using the chosen external clock
-> > frequency. If you change the external clock frequency, chances are good
-> > there is no PLL configuration to generate that link frequency.
+On Tue, 14 Apr 2020 18:48:54 +0200, Mauro Carvalho Chehab wrote:
+> phy-rockchip-inno-usb2.txt was converted to yaml.
 > 
-> But aren't we supposed to pick the clock frequency based on the link
-> frequency specified in DT ?
+> Fix the corresponding reference.
 > 
-> In any case, this policy needs to be carefully documented.
-
-And by this I mean in a central place, not leaving it to individual
-bindings.
-
-Maxime, we've previously discussed this issue privately on IRC, what's
-your opinion ?
-
-> >>> Although, if you're saying that this driver only needs to work with DT that
-> >>> comes with the kernel and you don't care about DT binary compatibility,
-> >>> this would be fine.
-> >> 
-> >> I believe this series to not break backward compatibility, as the driver
-> >> only works with a 24MHz clock, so I expect all DTs to specify that.
-> > 
-> > What you're still doing here is defining the DT bindings based on the
-> > current driver implementation, not the device properties.
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/usb/rockchip,dwc3.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> Quite the contrary, the device doesn't require any particular input
-> clock frequency, so we're removing that from DT :-) Specifying the clock
-> frequency in DT is in my opinion a manual workaround for not computing
-> it at runtime based on the desired link frequency, while the link
-> frequency is a property of the system as it specifies the range of link
-> frequencies that are safe to use from an EMC point of view.
 
--- 
-Regards,
+Applied, thanks.
 
-Laurent Pinchart
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
