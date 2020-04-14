@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 242061A8021
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E10B1A802C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:46:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=o0+jXvGiFdT60Ty3fFQr5EDAEtw6ZRJJj1r1yzsBNyk=; b=dYwdrCXAzVp61aW1sAJWwM7QH
-	nXOEQGB+Us7zGk4G2U+oNcs5iDEvNacPRBTQy82mCUGGb1NXFlkDFrVBCU/TrIG8PKwTujLCxwrIy
-	YjBzDgGvbQDUG6cBTEcd7pUssfILPpbYfvAJkCDe+tSCY2VQU6sJMGfeDMXjvGokJX51aPazx0sLR
-	BwBSqvPEtPWzyPVbDiYXUo8wX207aJCqjdU+pUF6iQm9Kv7bcEvfbolf+77UIyE0V0jkHaaZ36s5m
-	dOziZsnmbJU6HFVayQrKe8wz51EdnmHKtG4VaLk1hVMJrobwB4B97tWFlJp14kHAAICu72lKaOBjC
-	/e0mNOvBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=fH7TRi0xsky/iAvxk0r7nH5bIPN/btnzTp8cjqywkpc=; b=h70
+	c7EESULBbaIJvg6KhjHqDI3WO2d72ZirO/2SGJwvoMCs78q6q7h0wF+Ul/pHZOgmPz5DmlUwVT/yE
+	CIBEzxpGZURPo0vGab+7twA0HR97fG2v6JdHaPv9347a7/CrwxlKcPjbeXYmL1gAn19nJ3TQa5zh9
+	QGeRH4N15lHBs/f0TwL3a6gKmrTEuc5T0/DQ6dqrOUYhqQWOqPAnscIknhybnW8eS1T6NTaSkSEBF
+	4WZs3L9eB9PRRbVID/BoolQ3oaEtwVoKFqcJG7maYr42J09yU/G1zEXmhzZclCxDfUP9CEBTGVTqe
+	atn2adoMATJsghOmCUQvuemvQk4nvHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMok-0002pE-VY; Tue, 14 Apr 2020 14:45:38 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jOMpB-0003HS-50; Tue, 14 Apr 2020 14:46:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMob-0002oY-Sr
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 14:45:31 +0000
-Received: by mail-wm1-x341.google.com with SMTP id r26so14299966wmh.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 07:45:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=S5LW6D/JcvIQbts8mNWNWJg+lFlcHdJhPjdhCsJJX+o=;
- b=dH1SVmnbLSEtE5Nag8z/s8FzhNR23uclW3TSHMu8V+do40TBTY1Z8sGsJUANArQbG3
- 2V334Fe5n+zCW5Hq023W8cud2/enlRi6ZvMDhwNm96BF4r2uKn1N2DnHO8pa/cjI834n
- 2WIZeqtYuv8pjKHOsYXEk3KH+SCw+2VshFn3QDBtcLuH4IBK6v+9UfvUbY8WE3hZxIzN
- dIGBwP5hMJbHBT4xwplhv25+Aqwlse4IT8/+lDPi4td0xIVZb2vt7C16AV9n0Igl2I9O
- Vxwbyw/uRWet/5A9UDnFutVGGet1EIvbShUHBOXlRzk2+pluD27vgscnwFfbnMZwIqeW
- iJIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=S5LW6D/JcvIQbts8mNWNWJg+lFlcHdJhPjdhCsJJX+o=;
- b=scZpsuBzVA026ePr4xviGQQjvHeBNYqklugEY2/ZDyX2oQGGVqUOkzZZJ24eMwrPIX
- fBB3KzQnyXIX74hcdquZzAOjssvDcA78KOqUX/vwsUV27scyp1zSQ/lI5J3ZWsV4On+A
- WoLYX+LHVR6SVYVcSLft8sFP+//SOHIrM4ajvg1p3whDLnc2HbyS2D7sJJnC8vfcZltq
- iQXJ0v74qkl6SKNVxvQP5p8BKMYYMNPsbCbB9Xw57WT448rSw+UJue9isJ0AdIu1z9IM
- OoRfh/+GIbtNCN56VDj+YGbHflxrlmS9feUwJ/Hq7Rm/OzYdoNaEFubcOctlpVG59CoC
- VTaw==
-X-Gm-Message-State: AGi0PuZX9DjYEleT9h2yIIbjdSo0NepXY8Vc68Fhk0wPdubF6PtMOi9M
- +nNY1zQjiV4t2QiNiYgBEA0=
-X-Google-Smtp-Source: APiQypJydRRmPqeZPePM/ORVt+TFEv+iAXAOLY9ehjv1P9T718jiOAQJnqvWZKHsT/FYkPvGrPKKsQ==
-X-Received: by 2002:a05:600c:2341:: with SMTP id
- 1mr175764wmq.153.1586875527952; 
- Tue, 14 Apr 2020 07:45:27 -0700 (PDT)
-Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id f79sm18139610wme.32.2020.04.14.07.45.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 07:45:26 -0700 (PDT)
-Date: Tue, 14 Apr 2020 16:45:25 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Dmitry Osipenko <digetx@gmail.com>
-Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
- Tegra210
-Message-ID: <20200414144525.GI3593749@ulmo>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-10-thierry.reding@gmail.com>
- <7b2f8a7c-94f1-08d0-b0ce-c61f4eb0a436@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <7b2f8a7c-94f1-08d0-b0ce-c61f4eb0a436@gmail.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+ id 1jOMp0-0003EV-9P; Tue, 14 Apr 2020 14:45:56 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7EA4320578;
+ Tue, 14 Apr 2020 14:45:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586875553;
+ bh=BKt0ly0X0uSnzjL/jCTuX7kQW79brFOyTVWQb3pvaVg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=Xj0eRvpcd0zAHHGgS+wlkuC4N5yFk7/Jl/HNtK96l4XQMHdwnPoEAvivqpMhgIeM0
+ vPngoZWMyKMqw4h4vqjDFcvzCxx/XMchC3Fwy/4lD2/mzfQ7AASvzYHB+w1bkMcJI+
+ NNDw8/wBVhwYCKjYJlDHd/tPPcA8jAUWZt/e+Xmw=
+Date: Tue, 14 Apr 2020 15:45:50 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Applied "ASoC: rockchip-i2s: add power-domains property" to the asoc
+ tree
+In-Reply-To: <20200324094149.6904-3-jbx6244@gmail.com>
+Message-Id: <applied-20200324094149.6904-3-jbx6244@gmail.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_074529_957393_34B53CE6 
-X-CRM114-Status: GOOD (  14.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_074554_358788_C57FC607 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,122 +74,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
- linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1550549066479096905=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============1550549066479096905==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="VaKJWhUROU/xPxjb"
-Content-Disposition: inline
+   ASoC: rockchip-i2s: add power-domains property
 
+has been applied to the asoc tree at
 
---VaKJWhUROU/xPxjb
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
 
-On Thu, Apr 09, 2020 at 10:00:13PM +0300, Dmitry Osipenko wrote:
-> 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
-> ...
-> > +static void tegra210_emc_debugfs_init(struct tegra210_emc *emc)
-> > +{
-> > +	struct device *dev =3D emc->dev;
-> > +	unsigned int i;
-> > +	int err;
-> > +
-> > +	emc->debugfs.min_rate =3D ULONG_MAX;
-> > +	emc->debugfs.max_rate =3D 0;
-> > +
-> > +	for (i =3D 0; i < emc->num_timings; i++) {
-> > +		if (emc->timings[i].rate * 1000UL < emc->debugfs.min_rate)
-> > +			emc->debugfs.min_rate =3D emc->timings[i].rate * 1000UL;
-> > +
-> > +		if (emc->timings[i].rate * 1000UL > emc->debugfs.max_rate)
-> > +			emc->debugfs.max_rate =3D emc->timings[i].rate * 1000UL;
-> > +	}
-> > +
-> > +	if (!emc->num_timings) {
-> > +		emc->debugfs.min_rate =3D clk_get_rate(emc->clk);
-> > +		emc->debugfs.max_rate =3D emc->debugfs.min_rate;
-> > +	}
-> > +
-> > +	err =3D clk_set_rate_range(emc->clk, emc->debugfs.min_rate,
-> > +				 emc->debugfs.max_rate);
-> > +	if (err < 0) {
-> > +		dev_err(dev, "failed to set rate range [%lu-%lu] for %pC\n",
-> > +			emc->debugfs.min_rate, emc->debugfs.max_rate,
-> > +			emc->clk);
-> > +		return;
-> > +	}
-> > +
-> > +	emc->debugfs.root =3D debugfs_create_dir("emc", NULL);
-> > +	if (!emc->debugfs.root) {
-> > +		dev_err(dev, "failed to create debugfs directory\n");
-> > +		return;
-> > +	}
-> > +
-> > +	debugfs_create_file("available_rates", S_IRUGO, emc->debugfs.root, em=
-c,
-> > +			    &tegra210_emc_debug_available_rates_fops);
-> > +	debugfs_create_file("min_rate", S_IRUGO | S_IWUSR, emc->debugfs.root,
-> > +			    emc, &tegra210_emc_debug_min_rate_fops);
-> > +	debugfs_create_file("max_rate", S_IRUGO | S_IWUSR, emc->debugfs.root,
-> > +			    emc, &tegra210_emc_debug_max_rate_fops);
->=20
-> I assume you used the checkpatch before sending the patches, no?
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-I have a pre-commit hook that runs checkpatch, but for some reason it
-was disabled. Fixed these to be numeric now.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-> I sent out a patch recently to make the permissions readable, please
-> take a look if you haven't seen it yet.
->=20
-> https://patchwork.ozlabs.org/patch/1254301/
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-I've applied this now.
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-Thierry
+Thanks,
+Mark
 
---VaKJWhUROU/xPxjb
-Content-Type: application/pgp-signature; name="signature.asc"
+From 2a79c31a498e002eeb7c7d759241c3cca95b28d9 Mon Sep 17 00:00:00 2001
+From: Johan Jonker <jbx6244@gmail.com>
+Date: Tue, 24 Mar 2020 10:41:49 +0100
+Subject: [PATCH] ASoC: rockchip-i2s: add power-domains property
 
------BEGIN PGP SIGNATURE-----
+In the old txt situation we add/describe only properties that are used
+by the driver/hardware itself. With yaml it also filters things in a
+node that are used by other drivers like 'power-domains' for rk3399,
+so add it to 'rockchip-i2s.yaml'.
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6VzIUACgkQ3SOs138+
-s6FpRRAAk0TEKZBPjG+SsTHg1xIN9BMOUI9LqXdMGnagdaP0yEi/mTRNkmrsImxZ
-awLe6BQXHKI9FGW/mrjyB1d3Ly+FQSerx04N5iwg6imigOmaTXRyuy4gXuEH6+D1
-R4U84Jnx74lntZsS3aqcg/P1gNborKoirVl1xkcvn/mJ4K+BhFBq3NqbgyKJ7xGa
-51izgm0mPVSldljky86GBwHfYiyirLXF4K6+Qg3Is1m40p01z3jhrUGYXtnD0cOr
-29VnWLSpJs+Qrzs0Fy9Q66C3h5f+ZeshjDCdQJorVDbaiXp8+7YIUW1LPCZcwUrI
-tCBxKuzyi7KpFpZmno/li8nOEv+ByqEcg3fF0SrDton95JKMuK/WplZJsVisQ/lN
-8SQePeIzU005hN5GwnPfoQVMqLsMqans4M0lh+qRtdzqX4JlH1aBjHsG6UHPcwQb
-7ePg54J49LruLhrDaipx5YMZ+zfRuidiat4l5lxvtgxoKImx2iKXRS+w0X1kNVX5
-byOLywrBi5wNbAz5G4nsCwA67f3JuB+M5m6VA48MoY3NANz4AdRtE3gcsmmgK2Ac
-rM+asAhZyI3p+b1iQujqDdRBE5FvOBFEkS3CwZzZ5kl+wdFTdWPXVDwGYbCKS7NR
-bH9mSiKbX48G/8pq6m4xFteYGr91cstkAwv1o7Km4Pe1vsOZN54=
-=WHMF
------END PGP SIGNATURE-----
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20200324094149.6904-3-jbx6244@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
---VaKJWhUROU/xPxjb--
+diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+index 7cd0e278ed85..a3ba2186d6a1 100644
+--- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
++++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+@@ -56,6 +56,9 @@ properties:
+       - const: tx
+       - const: rx
+ 
++  power-domains:
++    maxItems: 1
++
+   rockchip,capture-channels:
+     allOf:
+       - $ref: /schemas/types.yaml#/definitions/uint32
+-- 
+2.20.1
 
-
---===============1550549066479096905==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1550549066479096905==--
-
