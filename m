@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E4201A8856
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:03:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A27681A8864
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,33 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=k4TZcEEDD4D2HQzXsTH8gN8OeANDivRf9RlKvbftOoA=; b=mKTfQngRzLQpBXvKRijEyAMvlf
-	dElorCV0MJ+HmGIa1aWMJaJopB859TVolW2imIM66IhPFZDsOABv1/CwzIEoFszTKKmAP+prTCRsi
-	DjX3+A0JVA7exsji7FcNNR2j3fFpdw6ftWkiib1cVcBvcUpVdchKKUSmsg9dVGWkQ/dP3YNMxB7p4
-	Yc/FS65oH3HZQ1dXoEiPhbWQ3CnaWEnMHicUCkA8jGI/Q6EMGkFvgL6e1evMI8O51Lh93gKD55kz/
-	2H+DLf9sGDctLXaXzDE/5RTNCVTQmV86+slrRqCpq7A2DJPDxN7HSs7MjmcrATdhNoYpEGDkNluGU
-	nb/1lnjw==;
+	bh=JRl6DhORQKMP/ex+139dL02PtxYxnhyiAC9LGq35S3I=; b=mH1L1NalNzR6yBjf16GZoNJmkP
+	lqehteBFpHrwpCu45OjQAGdHukyEf/SA5kHUj7gQGLeCsWTnBLF69RUI6ocdL6ui4t2lMA05eLyJg
+	86kCH8MT8APVuMm1JrXc+dfNQVy2WvhPYn9Af/J8NAbeMB3z6SG9dR4ydxAzN2tNXUwbEO2WUGbyU
+	MI+b+HR+ocWtcgkO9/xG7rxQIRnDFVnJdhkDR+Xvb1dcU3oA9DejREduExvW5hSltADc6jV10W2Is
+	2+QKzi23y+UqVTUuBKJyiONVHKMJw1avbG0wRaeX+R40SAMB6qlCJV6UGmOtrZbDRzGh9PB+o0w8X
+	s0UKp5VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPtl-0003c6-J0; Tue, 14 Apr 2020 18:03:01 +0000
+	id 1jOPuF-00045J-Oc; Tue, 14 Apr 2020 18:03:31 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPsM-0002Pm-OG
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:01:37 +0000
+ id 1jOPsO-0002SP-VM
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:01:38 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id A8CD92A1BE7
+ (Authenticated sender: andrzej.p) with ESMTPSA id 5A9202A1BDC
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org
-Subject: [RFC v2 7/9] thermal: core: Monitor thermal zone after mode change
-Date: Tue, 14 Apr 2020 20:01:03 +0200
-Message-Id: <20200414180105.20042-8-andrzej.p@collabora.com>
+Subject: [RFC v2 8/9] thermal: of: Monitor thermal zone after enabling it
+Date: Tue, 14 Apr 2020 20:01:04 +0200
+Message-Id: <20200414180105.20042-9-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200414180105.20042-1-andrzej.p@collabora.com>
 References: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
  <20200414180105.20042-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_110134_940970_F11A5595 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200414_110137_356024_F8C65F38 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -81,72 +82,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mode changing might imply a need to stop/start polling the device.
-monitor_thermal_zone() when mode changes.
+thermal/of calls its own ->set_mode() method, so monitor thermal zone
+afterwards. This is needed for the DISABLED->ENABLED transition.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/thermal/thermal_core.c  | 2 +-
- drivers/thermal/thermal_core.h  | 2 ++
- drivers/thermal/thermal_sysfs.c | 7 +++++++
- 3 files changed, 10 insertions(+), 1 deletion(-)
+ drivers/thermal/of-thermal.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
-index a59c3411fb9c..7637ddb79813 100644
---- a/drivers/thermal/thermal_core.c
-+++ b/drivers/thermal/thermal_core.c
-@@ -305,7 +305,7 @@ static void thermal_zone_device_set_polling(struct thermal_zone_device *tz,
- 		cancel_delayed_work(&tz->poll_queue);
- }
+diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
+index 0f1e134e90ea..aa4cbc904c5c 100644
+--- a/drivers/thermal/of-thermal.c
++++ b/drivers/thermal/of-thermal.c
+@@ -542,8 +542,11 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
+ 		if (id == sensor_id) {
+ 			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+ 							 data, ops);
+-			if (!IS_ERR(tzd))
++			if (!IS_ERR(tzd)) {
+ 				thermal_zone_device_enable(tzd);
++				thermal_zone_device_update(tzd,
++						THERMAL_EVENT_UNSPECIFIED);
++			}
  
--static void monitor_thermal_zone(struct thermal_zone_device *tz)
-+void monitor_thermal_zone(struct thermal_zone_device *tz)
- {
- 	mutex_lock(&tz->lock);
- 
-diff --git a/drivers/thermal/thermal_core.h b/drivers/thermal/thermal_core.h
-index a9bf00e91d64..469258778161 100644
---- a/drivers/thermal/thermal_core.h
-+++ b/drivers/thermal/thermal_core.h
-@@ -89,6 +89,8 @@ thermal_cooling_device_stats_update(struct thermal_cooling_device *cdev,
- 				    unsigned long new_state) {}
- #endif /* CONFIG_THERMAL_STATISTICS */
- 
-+void monitor_thermal_zone(struct thermal_zone_device *tz);
-+
- /* device tree support */
- #ifdef CONFIG_THERMAL_OF
- int of_parse_thermal_zones(void);
-diff --git a/drivers/thermal/thermal_sysfs.c b/drivers/thermal/thermal_sysfs.c
-index cbb27b3c96d2..bc34d0f9768b 100644
---- a/drivers/thermal/thermal_sysfs.c
-+++ b/drivers/thermal/thermal_sysfs.c
-@@ -62,11 +62,14 @@ mode_store(struct device *dev, struct device_attribute *attr,
- 	   const char *buf, size_t count)
- {
- 	struct thermal_zone_device *tz = to_thermal_zone(dev);
-+	enum thermal_device_mode old_mode, mode;
- 	int result;
- 
- 	if (!tz->ops->set_mode)
- 		return -EPERM;
- 
-+	old_mode = thermal_zone_device_get_mode(tz);
-+
- 	if (!strncmp(buf, "enabled", sizeof("enabled") - 1))
- 		result = thermal_zone_device_enable(tz);
- 	else if (!strncmp(buf, "disabled", sizeof("disabled") - 1))
-@@ -77,6 +80,10 @@ mode_store(struct device *dev, struct device_attribute *attr,
- 	if (result)
- 		return result;
- 
-+	mode = thermal_zone_device_get_mode(tz);
-+	if (mode != old_mode)
-+		monitor_thermal_zone(tz);
-+
- 	return count;
- }
- 
+ 			of_node_put(child);
+ 			goto exit;
 -- 
 2.17.1
 
