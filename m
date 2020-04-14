@@ -2,87 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F8DA1A8555
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55B631A855F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:42:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xDwvVo2MpBuskjuoIG95Pokj8UcLBZeqQlErua9Bfo=; b=hkLhwUY+ATaYHr
-	q5NkFErDrothkZem3Bi36j3oD7x7WtqGCzRH67w9QNOok+UIEhiBt6pOUSqCinXZcM4aJS4zXOWbf
-	hUT7J86jHwOwg1jKxu2DvOP/2000F3vhVRwykyBum+I7nzVEHHedIeK+cuw1AscL5htiWa/TBCD5E
-	1IoKlnT/i94eRu796oeGTsRJOVB7zjY6bzGgJJlKhZJHDJPlci9RKuIMIwDcpH2lq42NAGiIJpvmW
-	t+vTZ5Akp62KJ3eb9mQFtHQnu6f6w21AhlFvEabkjtakeAZ1eHvK8oNsCbHZQRgddkJiVrD+2WCbX
-	sof7St0kYxj1MqUpnotw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=653Db9avmlE019n9efDCQsqUJ67aV7tCwklDszdCCY0=; b=b3GRjKBZIyumKL
+	7CXqe4PNTIqivSXNE33m1k1rGzM0pLInwBQE78+QsElxoI7on/OnQSdNuZuQ98lfEyrjrk3p2STlH
+	mcIczgEz/UN79//i2LZcRw+10AvsOcPo7Bvsmg7oLS2H3adaCDesB7w/SX1ZGaWmi1+Mr3hdKwhfN
+	9VAvJ30JmT/ze93U8ENrjiooIBIamiV3Et6woh3g6hEkKy/lqgXtoMXZ3WWnqO0AYe+pgUOhbeSvn
+	2u0sb4ZBH3oehPn5HjGeUI7gsEqnoBxO4itb9wO02jHsBcgJ9ywA2yjDLPIpnzH11UfUrU+6ChA/N
+	1sCE+0D8cskjmGDKGs1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOdz-0002Dj-Md; Tue, 14 Apr 2020 16:42:39 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jOOeA-0002PK-P6; Tue, 14 Apr 2020 16:42:50 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOObq-00028K-Vt
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:40:33 +0000
-Received: by mail-oi1-f196.google.com with SMTP id o25so10925881oic.11
+ id 1jOOcN-0002AI-RR
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:41:09 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q19so469955ljp.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 09:40:25 -0700 (PDT)
+ Tue, 14 Apr 2020 09:40:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=42zN/JWZMrImPOHqxaziIrOnovVE6HSOm6ZZB3qclDs=;
+ b=PipUNxuxy3Q6sLRqz5k1a/Npe7zldh+VoHciAjWwpKNErtKr8tfgneF3cIcmDBppP5
+ sbUjTK8ubc5x1aKFktL3nhoxYA4bsRwv9kRUNV+N7MRxcWwVoN+tG3mcRLq23qxfMqs/
+ N13AiKb9ZenPnaIqf2o+g1Ek7GX2F851aM7WK+VJVA2BZYBhBZ3a8bwkin052ZRUd8Za
+ pqB4djj8qbZfyY0Fx65++1zu83iPtDs71tzW0enbb/I6st1Wkzh4QMvFLW3TReiIuahJ
+ /ZgqUcEVVXnSES/SzeKljm5HMOFJ5MRjl+7Z2vUgfFS9ruNWde/KvgtcE9yUqnGYyS1A
+ wn0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3x35azgG+lJCU/gZaEiAMxuZVIwGctATbm5bUTVlau4=;
- b=aVGiOjx2NnzF7eiuIkedB34eqDKSgY+hBTUhvNi+0Ud+Fd7ofnojMn9roRI0+O4J9j
- OqPV+CogYYyecteroLzNzohgb+Q5aYYulixnLumUKPtMraQd03ikd0+rYuRmit05KN5T
- fZDN4zM568zi7WGe1Iws9MkRgGHYutM8MtiTeWomrRFOS3n+C0ioxH0LaRLfE7f9Kzag
- 96Qk9M7O8nJcDL34IAv071JmqHrGuXj4F1pXcHPcS0IymLKdi6sKkQIWlWbvMrWJYlWC
- IWnQcIXb8WAUDaP//bp/XRhK8wItUG9WHmrhKhF4BCaEEHVqt+CQ4vwsQm0T3ET/Nrnn
- ZlYA==
-X-Gm-Message-State: AGi0PuZIVcWj6WOYzRA0MDgxSmQt9L+3T7DM5/jTdTDfeBu7YTzKiz10
- ue/+AnEUheQBAXfrN5e3Bg==
-X-Google-Smtp-Source: APiQypL0oSub6bEtdmYrLp1hotMjYYelqHyjSliWQQvH3rQAEdz2dRbHzqQ3NfLOhbbfyOvDATjPug==
-X-Received: by 2002:aca:fdd5:: with SMTP id b204mr8487693oii.167.1586882424671; 
- Tue, 14 Apr 2020 09:40:24 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id f26sm4225778otp.28.2020.04.14.09.40.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 09:40:24 -0700 (PDT)
-Received: (nullmailer pid 6287 invoked by uid 1000);
- Tue, 14 Apr 2020 16:40:23 -0000
-Date: Tue, 14 Apr 2020 11:40:23 -0500
-From: Rob Herring <robh@kernel.org>
-To: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
-Subject: Re: [PATCH] dt-bindings: timer: cadence_ttc: Migrate
- timer-cadence-ttc documentation to YAML
-Message-ID: <20200414164023.GA6221@bogus>
-References: <20200401141449.66905-1-iwamatsu@nigauri.org>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=42zN/JWZMrImPOHqxaziIrOnovVE6HSOm6ZZB3qclDs=;
+ b=TVehGHxgi8av0BffmVn2pgxi0kYIu01MikiAuGjpGLK31OzjHlOQLRLDgOglWjzNtc
+ Xe35b/aXh/5frcIjG8pFn9qhemGT/r6ux6zuvVtDfVA5UjiG7n/A+60EK0q0xmMVH5DC
+ BXASRIkADwADwL1DUYZ1zbwqPZzSmReCIov0jqePIjcq0VL1bVNMmzdyb2cwsIX7IsVx
+ cBTlH65rM74FW/4PIyG9nqIl2qDHaSPWorRW96lmuWlsQd8KvRjhV3mYUuQ+QzdKrs/5
+ SqumKvyNb5zf5pcYTYzz+ZPwJ6gkIMd91nHiUIjoq+syP2EkbjnyQfZU3wfo8EddwQCA
+ nBSQ==
+X-Gm-Message-State: AGi0PuaU0g1WdXMXUx3FbvZ8papIKvfc3veHWALua6I0kx887QbtPnds
+ V1xKxx9h0b0JnLB+iq8Q0qP3B3gb
+X-Google-Smtp-Source: APiQypIsIVTReol7rZyJyAlFKw87DWeZ7xkU4PVTXTRJYLKhxkNO6FDzjCKYW+CTaMG6SrEu8MK46g==
+X-Received: by 2002:a2e:6c15:: with SMTP id h21mr635259ljc.248.1586882456643; 
+ Tue, 14 Apr 2020 09:40:56 -0700 (PDT)
+Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
+ [91.78.208.152])
+ by smtp.googlemail.com with ESMTPSA id l13sm9448259ljc.84.2020.04.14.09.40.55
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 14 Apr 2020 09:40:56 -0700 (PDT)
+Subject: Re: [PATCH v6 11/14] memory: tegra: Support derated timings on
+ Tegra210
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-12-thierry.reding@gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <543bfc3b-2bb9-01d3-62da-89d1f0b18a5b@gmail.com>
+Date: Tue, 14 Apr 2020 19:40:55 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200401141449.66905-1-iwamatsu@nigauri.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200409175238.3586487-12-thierry.reding@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_094029_879079_6643BB57 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200414_094104_929262_99F38ED2 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,32 +104,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nobuhiro Iwamatsu <iwamatsu@nigauri.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
+ linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed,  1 Apr 2020 23:14:49 +0900, Nobuhiro Iwamatsu wrote:
-> The document was migrated to YAML format and renamed cdns,ttc.yaml.
-> And updated the example to the latest format.
-> 
-> Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
-> ---
->  .../bindings/timer/cadence,ttc-timer.txt      | 21 --------
->  .../devicetree/bindings/timer/cdns,ttc.yaml   | 48 +++++++++++++++++++
->  2 files changed, 48 insertions(+), 21 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/timer/cadence,ttc-timer.txt
->  create mode 100644 Documentation/devicetree/bindings/timer/cdns,ttc.yaml
-> 
-
-Applied, thanks.
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiAtCS8qIEVNQyB0
+cmFpbmluZyB0aW1lciAqLwoKR3Vlc3MgdGhpcyBjb21tZW50IGlzbid0IHJlYWxseSBuZWVkZWQg
+ZnJvbSB0aGUgc3RhcnQsIG9yIHNob3VsZCBpdCBiZSBrZXB0PwoKPiArCXRpbWVyX3NldHVwKCZl
+bWMtPnJlZnJlc2hfdGltZXIsIHRlZ3JhMjEwX2VtY19wb2xsX3JlZnJlc2gsCj4gKwkJICAgIFRJ
+TUVSX0RFRkVSUkFCTEUpOwo+ICsJYXRvbWljX3NldCgmZW1jLT5yZWZyZXNoX3BvbGwsIDApOwo+
+ICsJZW1jLT5yZWZyZXNoX3BvbGxfaW50ZXJ2YWwgPSAxMDAwOwoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
