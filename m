@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8952D1A7EF0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E32E51A7EF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:57:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U+HDRl2nGhguW01Q+Q/z1XrLqXt67CcLre77Gvj5xzc=; b=gx09ztTSS7YdsC
-	qkLzAbd7qnENPk+S3rpW2z7lMPSKRpVC72gm1sMAawokxbu1a7cPIPeDxVOAQN+vUPkqaqr3JU7Ec
-	8dRWdV4JVCC2nCbDtl0R84DVlH5z6/tGwf4n4jOxhCtcBv3JNZDUQfKIPcnBEdoqs7A5KPz1yuHhT
-	Yi4Oo2uh2IrW6jOgCg0FWdRE4sV6NxQ3e71NvVkZt0z+1C/vgWt66iRIht1D5d38IUbtDE2hBJrgf
-	OIIZPZlBEPGYj1yiz1y98su2KPPdJjf1gj5cZzACOo81YG60pLdf+2LD5C7MTBOzMcWUD4PcjqwRq
-	Inzagzc5WSrAZ0ixcfeg==;
+	List-Owner; bh=3NAKbnlDtvguj4WFtHKpupoPcXZuQxRAFKS3j9oXtBM=; b=KBJ2+c59aw1cE/
+	eC0bZ4MJIPV0U2pwswXoQaaC7BsDYHoUPKQf9IOU94IRzPtEmGG2itypiMnrmogUXMUqHp8mqp5Yx
+	Zhxy0x3K/TjzLKX+08GaKiCrbUF1YgZMs2EgyLOc5wyjjTHOrxYs5HmAUTzLYOCNzBTYlvkY8tAYD
+	YLdC91er64z+WkYRF+z0+BOfm5W7s+EeMcvfKk98XpXddJ49YS67mlv6Cc/Ro2/SAvN3doOxB/FZj
+	Gk8QecXy3hUDjkij4mdU3Rj7u82ohmellt18lHMN1NLuUKgtssRKcmrO3Q4dIBKheNFzPJ6GRg8vR
+	ZX2GLcZ1vp4s4KGfipoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOM2h-0007Xq-HN; Tue, 14 Apr 2020 13:55:59 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1jOM44-00089p-Pe; Tue, 14 Apr 2020 13:57:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOM2N-0007LN-0m
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:55:40 +0000
-Received: by mail-ot1-f68.google.com with SMTP id f52so12818951otf.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 06:55:38 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MPnBVuMb9gERNtPk1qaCs0pkeSDmOcTJZhbSPaMIInQ=;
- b=fNwdKWSjlRh+3zbX34uGRi+WzYCo2YJmQAr8XXm8OPP2J3ndHQgRY8RpbKqnC9rW/U
- ztOq/ogUYSpBLMpOgx1/bN7cWhJL95hQfVFb2dVUpRgfoPuKLwe66wtG8JuOY1SkbxiH
- UeE7gqRyEUdOr28i5pImv1syIoNEqH0oqaMfPTuo+pazrT5O0XoquDp9uuA7bLP0wD/k
- S7sJybhcXw2/RO8Wx4hNDLipFak34NKyl4su/vRsaz/bLluvQUME8UMzKkiZ5rswSb4q
- GFd88Mh545GKlmuw4H6m+YosWqgDg0Jsz7ohW2D5MqluF0Du68lovXFp7e0cAPvx22GY
- IBUQ==
-X-Gm-Message-State: AGi0PuaLuS1xYqSjUrd2wPa7WCD8Py3KozlL+Xd29iAgclfODjd7Valt
- 7MnWRD3Yq39IzcNoWaGByQ==
-X-Google-Smtp-Source: APiQypJyEmmSmrZw1imbtJEg7HOnNBo7KdO2HJ4aRVczpnTT3rEGdeMvfO3dmGmCaFLZv459u6BWYg==
-X-Received: by 2002:a9d:c61:: with SMTP id 88mr19218457otr.144.1586872537121; 
- Tue, 14 Apr 2020 06:55:37 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id f26sm4128832otp.28.2020.04.14.06.55.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 06:55:36 -0700 (PDT)
-Received: (nullmailer pid 29325 invoked by uid 1000);
- Tue, 14 Apr 2020 13:55:35 -0000
-Date: Tue, 14 Apr 2020 08:55:35 -0500
-From: Rob Herring <robh@kernel.org>
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v5 1/5] media: dt-bindings: media: i2c: Deprecate usage
- of the clock-frequency property
-Message-ID: <20200414135535.GA29221@bogus>
-References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ id 1jOM3w-00089C-D1
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:57:17 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EF22620656;
+ Tue, 14 Apr 2020 13:57:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586872636;
+ bh=n9zV/CUm5fQ6kJG9xx9uBNkS1o6bnb2V/CMUwlWKrf0=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=b/kuN0mMrGpZr4ilxxpfussBIw4+VR3Qlk9Sl3WR2i289CFIIqOtaL7p7RASlKDZ9
+ vfPpAOPXooK8inL7i2YwIB/rSjj0cncaL/gt2OX7jThO1ap0y36WURbAwnGgHOf4ut
+ fLSxAyZq70gzsRO490XT4UfNLbRwPP3L1RQSmHh0=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jOM3u-003AqO-B3; Tue, 14 Apr 2020 14:57:14 +0100
+Date: Tue, 14 Apr 2020 14:57:12 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH] arm64: kvm: Delete duplicated label: in invalid_vector
+Message-ID: <20200414145712.603e37d5@why>
+In-Reply-To: <CAKwvOdn35v5LkvhWugfLmK_FjVsd0RdPtBCRSqVaM9EP_1KU7w@mail.gmail.com>
+References: <20200413231016.250737-1-maskray@google.com>
+ <CAKwvOdn35v5LkvhWugfLmK_FjVsd0RdPtBCRSqVaM9EP_1KU7w@mail.gmail.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: ndesaulniers@google.com, maskray@google.com,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
+ clang-built-linux@googlegroups.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_065539_115080_36697EA3 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_065716_480142_BD57EC27 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,39 +91,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-media@vger.kernel.org,
- linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
+Cc: Fangrui Song <maskray@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon,  6 Apr 2020 17:42:37 +0100, Lad Prabhakar wrote:
-> OV5645 sensor supports input clock frequency ranging from 6MHz to 27MHz
-> but the driver strictly expects this to be 24MHz (with tolerance of 1%)
-> with this restrictions let the driver enforce the clock frequency
-> internally to 24MHz rather then being passed as dt-property.
+Hi Nick,
+
+On Mon, 13 Apr 2020 16:37:10 -0700
+Nick Desaulniers <ndesaulniers@google.com> wrote:
+
+> On Mon, Apr 13, 2020 at 4:10 PM Fangrui Song <maskray@google.com> wrote:
+> >
+> > SYM_CODE_START defines \label , so it is redundant to define \label again.
+> > A redefinition at the same place is accepted by GNU as
+> > (https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=159fbb6088f17a341bcaaac960623cab881b4981)
+> > but rejected by the clang integrated assembler.
+> >
+> > Fixes: 617a2f392c92 ("arm64: kvm: Annotate assembly using modern annoations")  
 > 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  Documentation/devicetree/bindings/media/i2c/ov5645.txt | 2 --
->  1 file changed, 2 deletions(-)
+> Thanks for the patch!  I think a more accurate Fixes tag would be:
+> Fixes: 2b28162cf65a ("arm64: KVM: HYP mode entry points")
+
+I'm not sure this commit is accurate. At that time, there was no other
+declaration for \label and dropping it would simply break compilation.
+I believe that Fangrui is correct in his analysis that 617a2f392c92 is
+the first broken commit.
+
+> With this patch applied, and your other arm64 integrated assembler
+> patch (https://lore.kernel.org/linux-arm-kernel/20200413033811.75074-1-maskray@google.com/T/#u),
+> I can now assemble arch/arm64/kvm/.
+
+Progress! ;-)
+
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+> Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+> 
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/988
+> > Signed-off-by: Fangrui Song <maskray@google.com>
+> > ---
+> >  arch/arm64/kvm/hyp/hyp-entry.S | 1 -
+> >  1 file changed, 1 deletion(-)
+> >
+> > diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+> > index c2a13ab3c471..9c5cfb04170e 100644
+> > --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> > +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> > @@ -198,7 +198,6 @@ SYM_CODE_END(__hyp_panic)
+> >  .macro invalid_vector  label, target = __hyp_panic
+> >         .align  2
+> >  SYM_CODE_START(\label)
+> > -\label:
+> >         b \target
+> >  SYM_CODE_END(\label)
+> >  .endm
+> > --
+> > 2.26.0.110.g2183baf09c-goog
+> >  
+> 
 > 
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
+I'll pick this up as soon as we've sorted the queue with the rest of
+the fixes.
 
-If a tag was not added on purpose, please state why and what changed.
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
