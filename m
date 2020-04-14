@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 211A61A8836
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:02:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 930011A882B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,32 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Nx5ACVbXgzdK8PnQeT9dcVXWmu0lQGeZ6+T3/vc7C7s=; b=a16JLx34jskdvt7SffbfTB2SqB
-	yMy2CZZjm/w8ySAYBg6KX9JWgloaSr0l3zDolGXiUU6iPp3dVHKDu3ugc+tNXTD143CgXl9LX5i6g
-	3qahUYaz29N0+3cbL9eC9PSaTQCCGIB9l6RtHYi56Iy4dIj3UR81lo3WeX2HVi8bGqWNRKfFHA5zB
-	p2N2FxuWOfexjFF8LASw5IyG/Yy5fyeErqxo4UekMgGP+byBYaAu1EoMGRz0iiBG+G+wulhU1a/vc
-	VcxAutqwna9FDjHTcibULW22BkOJAyw26aTOEQ78NmWVfEhi1/8Kh6hmL3MiDAPZwESCTL93pARuk
-	GlViRxiQ==;
+	bh=Gn72e61PHV3iMuZgbhQb0h8cGD7tt5oNDnIBXcXmVwI=; b=J9KY2gSYAnNIuFOi9Yym5rqxuH
+	4U1PO5cKM34A1buQa+FbHptSbK97GtZRpEceJuAsKoAP1V9hrpUlOn7KEuKFACApft8u+B/o8MyJi
+	wcTIRdz4O+SMLdhPKyLWUg1BhR+8PrDzzZbNKWSz78/6ucoOOU0b7shG8iOfVCVBOBPcfapeC0VUB
+	1QJDXBCh5WKW69IJX8A3+Ws7w//MlfU7XK+zEwuPuDdnv3LMtMbGXKs23gT9WgF9sZd3Mwawk845/
+	fWdc9cvDxKrIyp0PcPSvFbUwxynXoHysqfbcRjVB7FrjpuATjYJ/7Qt5wy5w5AaFB+kOcC96RWUDe
+	DzlfSf3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPse-0002Lt-Ke; Tue, 14 Apr 2020 18:01:52 +0000
+	id 1jOPsG-0002EE-7L; Tue, 14 Apr 2020 18:01:28 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPs5-0002D6-8a
+ id 1jOPs6-0002DL-M4
  for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:01:20 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 5A7222A1BDC
+ (Authenticated sender: andrzej.p) with ESMTPSA id 9C1F42A1BDD
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org
-Subject: [RFC v2 0/9] Stop monitoring disabled devices
-Date: Tue, 14 Apr 2020 20:00:56 +0200
-Message-Id: <20200414180105.20042-1-andrzej.p@collabora.com>
+Subject: [RFC v2 1/9] thermal: int3400_thermal: Statically initialize
+ .get_mode()/.set_mode() ops
+Date: Tue, 14 Apr 2020 20:00:57 +0200
+Message-Id: <20200414180105.20042-2-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+In-Reply-To: <20200414180105.20042-1-andrzej.p@collabora.com>
 References: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+ <20200414180105.20042-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_110117_445269_5C39DAE1 
-X-CRM114-Status: UNSURE (   7.06  )
+X-CRM114-CacheID: sfid-20200414_110118_845288_03DBED2C 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -83,50 +85,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is the second iteration of this RFC.
+int3400_thermal_ops is used inside int3400_thermal_probe() only after
+the assignments, which can just as well be made statically at struct's
+initizer.
 
-The series now focuses on cleaning up the code in the first place.
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+---
+ drivers/thermal/intel/int340x_thermal/int3400_thermal.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-After the cleanups in patches 1-3 struct thermal_zone_device is extended
-so that it contains a "mode" member (patch 4/9).
-
-The next patch (5/9) makes all thermal zone devices use the "mode" member.
-This patch makes drivers' ->get_mode() methods redundant, so the next one
-(6/9) removes the method altogether.
-
-Patches 7-8/9 ensure that after changing thermal zone device's mode
-an attempt will be made to monitor the device.
-
-And finally patch 9/9 prevents DISABLED devices from being monitored.
-It also adds THERMAL_DEVICE_INITIAL to accommodate the devices, which
-should be monitored but cannot be initially ENABLED.
-
-Andrzej Pietrasiewicz (9):
-  thermal: int3400_thermal: Statically initialize
-    .get_mode()/.set_mode() ops
-  thermal: Eliminate an always-false condition
-  thermal: Properly handle mode values in .set_mode()
-  thermal: core: Let thermal zone device's mode be stored in its struct
-  thermal: Store mode in thermal_zone_device
-  thermal: Remove get_mode() method
-  thermal: core: Monitor thermal zone after mode change
-  thermal: of: Monitor thermal zone after enabling it
-  thermal: core: Stop polling DISABLED thermal devices
-
- drivers/acpi/thermal.c                        | 44 +++++----------
- .../ethernet/mellanox/mlxsw/core_thermal.c    | 43 ++++-----------
- drivers/platform/x86/acerhdf.c                | 28 +++++-----
- drivers/thermal/da9062-thermal.c              | 12 +---
- drivers/thermal/imx_thermal.c                 | 30 ++++------
- .../intel/int340x_thermal/int3400_thermal.c   | 39 +++----------
- .../thermal/intel/intel_quark_dts_thermal.c   | 27 ++++-----
- drivers/thermal/of-thermal.c                  | 28 ++++------
- drivers/thermal/thermal_core.c                | 40 ++++++++++++--
- drivers/thermal/thermal_core.h                |  2 +
- drivers/thermal/thermal_sysfs.c               | 40 ++++----------
- include/linux/thermal.h                       | 55 ++++++++++++++++++-
- 12 files changed, 180 insertions(+), 208 deletions(-)
-
+diff --git a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
+index ceef89c956bd..e802922a13cf 100644
+--- a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
++++ b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
+@@ -271,6 +271,8 @@ static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
+ 
+ static struct thermal_zone_device_ops int3400_thermal_ops = {
+ 	.get_temp = int3400_thermal_get_temp,
++	.get_mode = int3400_thermal_get_mode,
++	.set_mode = int3400_thermal_set_mode,
+ };
+ 
+ static struct thermal_zone_params int3400_thermal_params = {
+@@ -309,9 +311,6 @@ static int int3400_thermal_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, priv);
+ 
+-	int3400_thermal_ops.get_mode = int3400_thermal_get_mode;
+-	int3400_thermal_ops.set_mode = int3400_thermal_set_mode;
+-
+ 	priv->thermal = thermal_zone_device_register("INT3400 Thermal", 0, 0,
+ 						priv, &int3400_thermal_ops,
+ 						&int3400_thermal_params, 0, 0);
 -- 
 2.17.1
 
