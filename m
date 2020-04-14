@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2D881A7915
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:06:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86E101A7923
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:09:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E8uvnJAI5wn51/lNkvCFifJGS1uLJ18LyYqz1cEDMVw=; b=hDYeSAaA+uHIKL
-	xnmuvgG0STjx8GpXqhcL4zcfvGWcyo9Ib0hEXbF95h1zNH5DD4KtO9juhQ5RO6f/mUNL7TbZE8PEf
-	72Jx1nyPt0ILkbIwHOsWggQDWCdGfsndzBRTwXFoV/fkeI42wDc0vsAaHDaFRn3Iha0Njf9pGLsUo
-	U03vhfPcr/YdHOPR/dMLLmnQJpgUobaIMngTht/7z4w5wj2ExYr4i95aTpDzv0mJRcn77dgef6iYC
-	EqzW1xrFfcwGe+jh+0mhAFYlAKDnMghll2uU8YXcQMeFvQbbkxaU0SlQBDKQgSSOFlHIYNgKhabH0
-	XDkS/iy+hfDvR3u/kFhQ==;
+	List-Owner; bh=H/yRX33ptO9PqZl5RV6qICRX3B/Mue8+b01yj9VSd9M=; b=sQ0oJIkTpLoUEl
+	FC0d+oa4EkwV4MocVzfGIP7MeaPYMlWhNDuqgUv+dFiC0n+b3fldBkffqaIPpD/6AfZYeDLZ8v7uA
+	GrCtetQFYan9dl4Hs8sNqdrLgF7DeRCsR6gnfO2L00hioLLWY/lNDtgHDxodFvPIxoCIAVWYdJ4wf
+	UUJLTYXxm0OcYglupEX4AxYuGIgL6Y8wevKoEWSTzz3uLCXA73MVYlqlq5mXBQKQSuaAqHq7zykXl
+	s0SyoSi3g99Jh7JWCJKAQjTRZhrYFHgKw8X4+2bEFBpgLR15H1NarfNCVogBfgiyRjk/t5WAC8uz9
+	EUrBEM/7D4mmNgsvIz8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOJOM-0001hv-LD; Tue, 14 Apr 2020 11:06:10 +0000
+	id 1jOJRg-00026g-Sk; Tue, 14 Apr 2020 11:09:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOJOE-0001hY-C8
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 11:06:04 +0000
+ id 1jOJRY-00026J-8n
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 11:09:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9A441FB;
- Tue, 14 Apr 2020 04:05:59 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBB741FB;
+ Tue, 14 Apr 2020 04:09:26 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (unknown [10.57.30.4])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 748723F6C4;
- Tue, 14 Apr 2020 04:05:57 -0700 (PDT)
-Date: Tue, 14 Apr 2020 12:05:54 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF5113F6C4;
+ Tue, 14 Apr 2020 04:09:24 -0700 (PDT)
+Date: Tue, 14 Apr 2020 12:09:22 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: Gavin Shan <gshan@redhat.com>
-Subject: Re: [PATCH RFCv1 0/7] Support Async Page Fault
-Message-ID: <20200414110554.GB2486@C02TD0UTHF1T.local>
-References: <20200410085820.758686-1-gshan@redhat.com>
- <d2882e806ad2f9793437160093c8d3fa@kernel.org>
- <6a1d7e8b-da10-409f-16d0-354004566a1a@redhat.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: Optimize ptrauth by enabling it for non-leaf
+ functions
+Message-ID: <20200414110922.GC2486@C02TD0UTHF1T.local>
+References: <1586856741-26839-1-git-send-email-amit.kachhap@arm.com>
+ <20200414100033.GA26395@willie-the-truck>
+ <20200414101649.GC1278@C02TD0UTHF1T.local>
+ <20200414110056.GB26395@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6a1d7e8b-da10-409f-16d0-354004566a1a@redhat.com>
+In-Reply-To: <20200414110056.GB26395@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_040602_455735_5A5477B6 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20200414_040928_352701_380A5734 
+X-CRM114-Status: GOOD (  17.25  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,48 +65,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drjones@redhat.com, suzuki.poulose@arm.com, Marc Zyngier <maz@kernel.org>,
- sudeep.holla@arm.com, eric.auger@redhat.com, james.morse@arm.com,
- shan.gavin@gmail.com, catalin.marinas@arm.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Gavin,
+On Tue, Apr 14, 2020 at 12:00:56PM +0100, Will Deacon wrote:
+> On Tue, Apr 14, 2020 at 11:16:49AM +0100, Mark Rutland wrote:
+> > On Tue, Apr 14, 2020 at 11:00:33AM +0100, Will Deacon wrote:
+> > > On Tue, Apr 14, 2020 at 03:02:21PM +0530, Amit Daniel Kachhap wrote:
+> > > > Compilers are optimized to not store the stack frame record for the leaf
+> > > > function in the stack so applying pointer authentication in the leaf
+> > > > function is not useful from security point of view.
+> > > 
+> > > I'm missing the reasoning here -- why don't we care about leaf functions?
+> > > 
+> > > Sounds like there's a performance/security trade-off that needs spelling
+> > > out and justifying with some numbers, or is it clear-cut and I'm missing
+> > > something?
+> > 
+> > I believe this is because leaf functions don't store the LR to the stack
+> > (as they don't create a frame record), so it cannot be modified by a
+> > stray memory write.
+> 
+> That makes some sense, but doesn't it also mean you can jump into the middle
+> of a leaf function and it will happily return to whatever sits in LR?
 
-On Tue, Apr 14, 2020 at 03:39:56PM +1000, Gavin Shan wrote:
-> On 4/10/20 10:52 PM, Marc Zyngier wrote:
-> > On 2020-04-10 09:58, Gavin Shan wrote:
-> > > In order to fulfil the control flow and convey signals between host
-> > > and guest. A IMPDEF system register (SYS_ASYNC_PF_EL1) is introduced.
-> > > The register accepts control block's physical address, plus requested
-> > > features. Also, the signal is sent using data abort with the specific
-> > > IMPDEF Data Fault Status Code (DFSC). The specific signal is stored
-> > > in the control block by host, to be consumed by guest.
+If you can do that, you've already subverted control flow, and can
+probably do the same for a regular function, since for:
 
-> > - We don't add IMPDEF sysregs, period. That's reserved for the HW. If
-> >    you want to trap, there's the HVC instruction to that effect.
+| AUTIASP
+| RET
 
-> I really don't understand how IMPDEF sysreg is used by hardware vendors.
-> Do we have an existing functionality, which depends on IMPDEF sysreg?
-> I was thinking the IMPDEF sysreg can be used by software either, but
-> it seems I'm wrong.
+... you can just jump to the RET instead.
 
-The key is in the name: an IMPLEMENTATION DEFINED register is defined by
-the implementation (i.e. the specific CPU microarchitecture), so it's
-wrong for software to come up with an arbitrary semantic as this will
-differ from the implementation's defined semantic for the register.
+I agree that with RETAA/RETAB this would be different.
 
-Typically, IMP DEF resgisters are used for things that firmware needs to
-do (e.g. enter/exit coherency), or for bringup-time debug (e.g. poking
-into TLB/cache internals), and are not usually intended for general
-purpose software.
+> Perhaps it would make sense to relax to the 'non-leaf' version only if
+> stack protector is enabled?
 
-Linux generally avoids the use of IMP DEF registers, but does so in some
-cases (e.g. for PMUs) after FW explicitly describes that those are safe
-to access.
+I'm not sure I follow the rationale for that? What does stack protector
+help with for leaf functions?
 
 Thanks,
 Mark.
