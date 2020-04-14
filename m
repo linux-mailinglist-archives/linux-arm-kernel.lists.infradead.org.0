@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E45521A77DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:52:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75E9F1A77DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:52:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E3hjNmA/reXOBErYGBYy0AviMLcm3cmb99hWnXjeiu8=; b=pTMxXY/Mj9e5Pcljx+IhuyvHs9
-	oJw1iQUtjNW3g2MabqtLnzNqx4hPGLRvHcueI2YaQU7HqUdyM7ewXD8s24lp8HKZARUG/vyp2J8XX
-	bcJvP7hQnbQdB98ZMUkjuz47vQ+KAkBTl8YPnkoUAi0g4PYq7IiyCLWxXzFi8ooZaC34mmx7TxiBU
-	imwVT5pzvCXWiJZmTn8gctRyPS6f8PYj3fQmjS8PQoowJfxQy/h8qnLw5l7gURuUAcTHyKypYzwg8
-	W8LdjM9Xym1pm29QiWLyjgnDRMuJ6hzF8Uu+cRhkOQCEi00rbRiMvau9xgHQIJ43YNh7bAv6t++pp
-	L5+EgRGA==;
+	bh=dVrJtjuz/kTslKw9JkGx1KOxhuQDnQBEw1MEQA95kWw=; b=Z1vdfFFXsfRZP3Q4IPcp+4k9rr
+	gc5uKiW/SY6DNmQatIcfeSeEkWZPujsxCncxNQc13P6bvzo4v3MZpG9gCtWyKtTwWckUebw+65izN
+	lcpRsmg6FNjdEY9MJw1z5cR51NyQGFo/az9oF4sx3YJ3IDQ7fHLQRKyAwkRLo9rhFAUeMyLT4D5rZ
+	4JbYKtlPo+DQ50//SZkttaCqpO1XJ58HfRPRrkUwPej2uME18aiJszRFv9z4oM190OG9PukcIjSY5
+	flakR4i53kUHJCnFInJ6orkAT5aEjqe36qlToOOloaqRDZFn1A1n4vamynwlsXr1NMqFG45Src81/
+	eRF2OHYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOIEl-0005bK-Dg; Tue, 14 Apr 2020 09:52:11 +0000
+	id 1jOIF4-0005ra-Ve; Tue, 14 Apr 2020 09:52:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOIC4-00014y-RJ
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:26 +0000
+ id 1jOIC7-000184-HY
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C84B531B;
- Tue, 14 Apr 2020 02:49:23 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23D7E1FB;
+ Tue, 14 Apr 2020 02:49:27 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2F2233F6C4;
- Tue, 14 Apr 2020 02:49:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 669AE3F6C4;
+ Tue, 14 Apr 2020 02:49:24 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 10/16] arm64/cpufeature: Add remaining feature bits in
- ID_AA64PFR0 register
-Date: Tue, 14 Apr 2020 15:18:24 +0530
-Message-Id: <1586857710-17154-11-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V2 11/16] arm64/cpufeature: Add remaining feature bits in
+ ID_AA64PFR1 register
+Date: Tue, 14 Apr 2020 15:18:25 +0530
+Message-Id: <1586857710-17154-12-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 References: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_024924_939679_0FF6166A 
-X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-CacheID: sfid-20200414_024927_648579_9B619705 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable MPAM and SEL2 features bits in ID_AA64PFR0 register as per ARM DDI
+Enable the following features bits in ID_AA64PFR1 register as per ARM DDI
 0487F.a specification.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
@@ -85,36 +85,42 @@ Cc: linux-kernel@vger.kernel.org
 Suggested-by: Will Deacon <will@kernel.org>
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm64/include/asm/sysreg.h | 2 ++
- arch/arm64/kernel/cpufeature.c  | 2 ++
- 2 files changed, 4 insertions(+)
+ arch/arm64/include/asm/sysreg.h | 4 ++++
+ arch/arm64/kernel/cpufeature.c  | 4 ++++
+ 2 files changed, 8 insertions(+)
 
 diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 50b9396a8187..e4d1e128285d 100644
+index e4d1e128285d..2e04a8586067 100644
 --- a/arch/arm64/include/asm/sysreg.h
 +++ b/arch/arm64/include/asm/sysreg.h
-@@ -639,6 +639,8 @@
- #define ID_AA64PFR0_CSV2_SHIFT		56
- #define ID_AA64PFR0_DIT_SHIFT		48
- #define ID_AA64PFR0_AMU_SHIFT		44
-+#define ID_AA64PFR0_MPAM_SHIFT		40
-+#define ID_AA64PFR0_SEL2_SHIFT		36
- #define ID_AA64PFR0_SVE_SHIFT		32
- #define ID_AA64PFR0_RAS_SHIFT		28
- #define ID_AA64PFR0_GIC_SHIFT		24
+@@ -663,7 +663,11 @@
+ #define ID_AA64PFR0_EL0_32BIT_64BIT	0x2
+ 
+ /* id_aa64pfr1 */
++#define ID_AA64PFR1_MPAMFRAC_SHIFT	16
++#define ID_AA64PFR1_RASFRAC_SHIFT	12
++#define ID_AA64PFR1_MTE_SHIFT		8
+ #define ID_AA64PFR1_SSBS_SHIFT		4
++#define ID_AA64PFR1_BT_SHIFT		0
+ 
+ #define ID_AA64PFR1_SSBS_PSTATE_NI	0
+ #define ID_AA64PFR1_SSBS_PSTATE_ONLY	1
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 32d6a842c255..6bfcade6a159 100644
+index 6bfcade6a159..3d9c500555f3 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -167,6 +167,8 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_DIT_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_AMU_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_MPAM_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_SEL2_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
- 				   FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_SVE_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_RAS_SHIFT, 4, 0),
+@@ -184,7 +184,11 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+ };
+ 
+ static const struct arm64_ftr_bits ftr_id_aa64pfr1[] = {
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_MPAMFRAC_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_RASFRAC_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_MTE_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_SSBS_SHIFT, 4, ID_AA64PFR1_SSBS_PSTATE_NI),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_BT_SHIFT, 4, 0),
+ 	ARM64_FTR_END,
+ };
+ 
 -- 
 2.20.1
 
