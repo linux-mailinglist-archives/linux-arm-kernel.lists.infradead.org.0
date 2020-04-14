@@ -2,86 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B66E1A8B7A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:52:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032971A8B89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yF7f/rwDyXeZtLYQC05UXeXWKhu03fHjESPSk/C0Ebs=; b=A80KzUp3giLqlp
-	8x/zE4j0X0i02zqbbG5TyeE2oKvtMUwQlpaOjdQ32IFQ+7nbCh7BMaBjRdkkyWqzRtW0BkLqgMsQU
-	33Z4qSQFwSwUr1QoWm0aGy06bTiX13+H68iD7KOladkRDv3zwdpfdpDo6S5zcGha/Xh/qdMgFhY8K
-	XHfc4jgk7Liq7u7QpEwb5nsM6ZGx8rzTlyac7ywUgHIzIni+N7Br75mgGtjAM0nYXwiMcRt+gI/Op
-	4MMO0m+bl5n+ptSCKnfZ1rnKvOM+y/PVtKYW9ZL0SDHlxMa90FLtW2nKs1gWXioyTJwoMLo8rbyAy
-	DfXn0WXYWH9fxYzyN1jg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=LOqyotBQuA5cpIX6m62PINpNXQgWds8UrdAvjDIru9A=; b=KjrdsV8Db9MO4I
+	+50JKSOM0Zgvfs72+RYa8GvVwK3hA0bRWG36lRzHUni171apKN4YqRRyxi8gA1vm4/g0R9brbUsTi
+	Qe2WKcc3KRhvMKLnlfeP0ztuovNwpz7wCBMmmn83EI7naZ6HUWwlNQc6b55HgL+QP2vpEVpfIF+ha
+	vAAPAJEdbMUL/nIXVK4gn3TB16rKkvrPGILmKppFThQ/FcYbFZKxJcw1arP063zATkmJzW4BrGJWR
+	Inn1QI5wgTTAZWC1ob0XPhxz4Acj8BwGqB5QDSXjlu06AwdKJ9BWdEuVjojNYenby93sLDebNHeB+
+	cLH26HV4CpKO0DsQIWJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jORbK-00078t-At; Tue, 14 Apr 2020 19:52:06 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jORdr-0007Zm-OJ; Tue, 14 Apr 2020 19:54:43 +0000
+Received: from mail-vi1eur05on2056.outbound.protection.outlook.com
+ ([40.107.21.56] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jORaa-0006WP-Gc; Tue, 14 Apr 2020 19:51:23 +0000
-Received: by mail-wm1-x342.google.com with SMTP id v8so13246000wma.0;
- Tue, 14 Apr 2020 12:51:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=wmfcMhvG8Z0vEINCyaO7pmox4TkBpgd1lx9zOICoTqE=;
- b=EtkFVJ4P6kPq5zDhchMj44e/ao7tDFLAS5fHqVSp67Vc69oau+0lapCkGg4FAIEK0Y
- 3FwfBUpis4d+hn4MaQNoyQBYMD1RzN/d7yIslSCMyjynMvOsCK3htGSvk4XqFeC4X/wx
- Ng74LeujzCDpUAcRKt9CGQw99YaEJdmHfcppaoRR7H8krAU5zuB6vga4msDAkdoKqgO9
- AvuMS8NRgieEf/lICbyIfw7UrGkFiJvFPJvRPLYgJMxXl2KfNjOYKmHwDvRh79gARiHM
- ac7Y9lL/7d0CiyZHui9LyXZ5U43j7xh/hXw2H6xTd9SkY/I/KkrKa1zkwgoCosFqrk2U
- jTMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=wmfcMhvG8Z0vEINCyaO7pmox4TkBpgd1lx9zOICoTqE=;
- b=PDcV3U4fBI5zbtW+eZk2nSmti9jwlrbDeBPebXSUy4Fg9HNZ6piHlU5wdee3ofpuq3
- 4GFUeIVYWzOFD8j+VidG21/uIta3cbCMg9DOTuOl3jkinTbsBakqG7eLzmLipCqz/r8E
- OxZeBij6wLQrpH6L00fZ7AwkpBMtHunZlg1B4XRJaAPc97FQsu/9ifs40CPs5/9sni6u
- CHEU5bIf01UlqI0nbg9OiN2ZnffYdG0GWQtqO+KRZPE8AAHpfwxmHNYF7Ok3xzk6qUmM
- mrcXtKPM/tXAxTVdU2gAa2r7xTxcp7xPZKtZZ3p8UZ+CNzwtsj6g6/8hdYaZXLtPzOp5
- +anA==
-X-Gm-Message-State: AGi0Puagwty5+ap6mLc1NBW1VT6Co46rG2W5BJRXl/qOxo71GCpeWAEF
- hVR4GUpvIHboMV8VDiu6fl0=
-X-Google-Smtp-Source: APiQypIRkBwsxASMLC6HHXJ5UwuAZ6o8hDlK7RWcSFluHkg0o2JANop6K6rTzyBdwrXR4xh1aml9rQ==
-X-Received: by 2002:a1c:e1c1:: with SMTP id y184mr1450299wmg.143.1586893878852; 
- Tue, 14 Apr 2020 12:51:18 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F13717DF00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:3717:df00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id s14sm20886844wme.33.2020.04.14.12.51.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 12:51:18 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org
-Subject: [PATCH v2 2/2] clk: meson: g12a: Prepare the GPU clock tree to change
- at runtime
-Date: Tue, 14 Apr 2020 21:50:31 +0200
-Message-Id: <20200414195031.224021-3-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
-References: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
+ id 1jORdk-0007YI-Af
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 19:54:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=j6xL0GrY/tFoNahqe+hs1n/qqY28teNHmaKNZ+aIWV2qRott0LHC0zeUz2Ksrn2Kbp5uk6Au+/DJ3VEzjfC/sysTQuk0qM9qakwLJnBdNqXrSRo4YqZSXsOFTUCVM5B8OsdKqL7xI0MTwTfB8OOjLejHkfoq35UU9R5MYAJv9+3fkl8onNveBhUMHK6aMajcnjeYzPkUi8QBMb1K/lYxGpsgAfO1Na35I9Xc6SS1y8cQOHnzbmh4sRPKUqygah1NhZU5o4rcQ3E7W+wAzcVQO1UwwSR7tyTfS5YqeIgEroepxgIPrOwl/RQWi4V56LgkEI18LcKPAOQ1IvFGo+SiXQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NAbA7TrEcUnypmMqfcDxi3hA4qK/qCuWGuM1yqv9xNM=;
+ b=BeQP0W25zWF7WpctH6E9kvuqSIK/NhKNAdv5+UVvU2iDeKc5jtb4jLrgGi5TrTtydvyMvQhRVZ1fX3n9oKf4VNxZ79UsTamzEWLDU2UWh2ixu8LLUN76oSKoDokE7M1mFZVuXhuvmkg2tyE8eYNAf3WkjltazqAkV3sDuoLFsUQJOzS4DHPk6NQZ4sw1pSbuB90KWMQHKE7uvvpNYxtHIkmrdVKKnBGmXkyau8sC1A9lLpaG9rjdpc9bb03uEO+iYaYCRZd2Vyerr0Rh2J7dNEfA5j4T9lhZwNnd69iJ3As0JvDzAelRJJluF3ZPQ52WMdAOIyH0rHYRM0ZEaUtiiQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NAbA7TrEcUnypmMqfcDxi3hA4qK/qCuWGuM1yqv9xNM=;
+ b=UBzHBSnQcVFu0Flrm6GKq83vIVxCxLhEdtx+XXEOIJbkHY2nov7ctPIr/9Pe7RBGZm9kzX5e1xPgO3i6tXo4QHbZnDGxvCZvoCfJhP6PBUFNhUdn+zOtxSuo3qonGkAHfGmwbNnA5j4vcB8bJJqme/CUTSBPbRxMl7d/0ZtpN6c=
+Received: from VI1PR04MB6941.eurprd04.prod.outlook.com (2603:10a6:803:12e::23)
+ by VI1PR04MB4573.eurprd04.prod.outlook.com (2603:10a6:803:73::24)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17; Tue, 14 Apr
+ 2020 19:54:29 +0000
+Received: from VI1PR04MB6941.eurprd04.prod.outlook.com
+ ([fe80::289c:fdf8:faf0:3200]) by VI1PR04MB6941.eurprd04.prod.outlook.com
+ ([fe80::289c:fdf8:faf0:3200%2]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
+ 19:54:29 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>
+Subject: Re: [PATCH V2] mailbox: imx-mailbox: fix scu msg header size check
+Thread-Topic: [PATCH V2] mailbox: imx-mailbox: fix scu msg header size check
+Thread-Index: AQHWEmDd5kEp+mUChUCEq05fLBSjFw==
+Date: Tue, 14 Apr 2020 19:54:29 +0000
+Message-ID: <VI1PR04MB69417717438360A9858DD0D6EEDA0@VI1PR04MB6941.eurprd04.prod.outlook.com>
+References: <1586870475-32532-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [95.76.3.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: d1d2ecd9-3fd5-46a5-8aeb-08d7e0ada4e0
+x-ms-traffictypediagnostic: VI1PR04MB4573:|VI1PR04MB4573:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB45730CF46F0347609CA553DAEEDA0@VI1PR04MB4573.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1247;
+x-forefront-prvs: 0373D94D15
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR04MB6941.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(396003)(39860400002)(366004)(376002)(136003)(346002)(9686003)(316002)(6506007)(110136005)(54906003)(5660300002)(7696005)(53546011)(52536014)(558084003)(71200400001)(55016002)(33656002)(66556008)(8676002)(91956017)(4326008)(26005)(66476007)(76116006)(44832011)(8936002)(2906002)(186003)(64756008)(478600001)(66446008)(66946007)(81156014)(86362001)(15650500001);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: a1AhqmjX3lbRSqlbWv3YRxRV/UdZK+SIS2iKRNQUGlPtYILaeFvF4eQ9puGLEnhflt2bLTrSDZECLcCHS51ANc0ITevqXfF6yFFqtDHzR8/QTXFDdPASfkmkx5LnT1rkjeyBcIKBh/WKEAEbtJyUxy7s+Tmz3dSwqsCCpgnPi/Bbv/eh7nlSjP813AR6RB3Rjy390s95xYigjATZtJPf0dl33jSHX2h3eyQljSzmirUuKNW/dL/UKYgwpa6Hn9+yefJAyIkwMwPKEKs1RZ4wFfCA7Xz0Cp+Qa6GGdzwOLXLDlUTUk2wjqERuhz7Ff6cPNuY7ejyqzybKYELWfXoPKO94nb4uhWbLiklPRyaKkjfAg8Mbm0O1XuUMBiZecES/rOYAS7q+QyInJq3wilA97SUWArYgoqP5puJV/zxp2PHj4Bw/itL2xc0FLgRr03sZ
+x-ms-exchange-antispam-messagedata: JKP8+Y+26ZNQZnpHKZQZ4/huXFB+BM+XXOOZb1qc1+t38a5ZcgnjtCwlWaHHnMtTem/NulMTkgMkuwkKOTJqtBHp7nYlRAsy1Q1Emkc//Z2GOUdl59YNrctcXXtzw0kSGB1mY42WzhENdi2SWAtw7A==
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d1d2ecd9-3fd5-46a5-8aeb-08d7e0ada4e0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2020 19:54:29.4684 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8kWnKJANn7VXq5W/KhF0gyXWaPLpBumki6omih3Dwj9c9cmcD9Vkx9mcEG1eq+1HxJQYeLdRodV7LOzBSTWkOQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4573
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_125120_547993_4DA81D73 
-X-CRM114-Status: GOOD (  14.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_125436_440846_E723BD71 
+X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ no trust [40.107.21.56 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [95.76.3.222 listed in dnsbl.sorbs.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,125 +124,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: narmstrong@baylibre.com, sboyd@kernel.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The "mali_0" or "mali_1" clock trees should not be updated while the
-clock is running. Enforce this by setting CLK_SET_RATE_GATE on the
-"mali_0" and "mali_1" gates. This makes the CCF switch to the "mali_1"
-tree when "mali_0" is currently active and vice versa, which is exactly
-what the vendor driver does when updating the frequency of the mali
-clock.
-Also propagate set_rate requests from the gate to the divider and from
-the divider to the the mux so the GPU clock frequency can be updated at
-runtime (which will be required for GPU DVFS). Don't propagate rate
-changes to the mux parents because we don't want to change the MPLL
-clocks (these are reserved for audio).
+On 2020-04-14 4:30 PM, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> The i.MX8 SCU message header size is the number of "u32" elements,
+> not "u8", so fix the check.
+> 
+> Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
+> Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/clk/meson/g12a.c | 30 ++++++++++++++++++++++--------
- 1 file changed, 22 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-index fad616cac01e..30c15766ebb1 100644
---- a/drivers/clk/meson/g12a.c
-+++ b/drivers/clk/meson/g12a.c
-@@ -3702,7 +3702,9 @@ static struct clk_regmap g12a_hdmi = {
- 
- /*
-  * The MALI IP is clocked by two identical clocks (mali_0 and mali_1)
-- * muxed by a glitch-free switch.
-+ * muxed by a glitch-free switch. The CCF can manage this glitch-free
-+ * mux because it does top-to-bottom updates the each clock tree and
-+ * switches to the "inactive" one when CLK_SET_RATE_GATE is set.
-  */
- static const struct clk_parent_data g12a_mali_0_1_parent_data[] = {
- 	{ .fw_name = "xtal", },
-@@ -3726,7 +3728,13 @@ static struct clk_regmap g12a_mali_0_sel = {
- 		.ops = &clk_regmap_mux_ops,
- 		.parent_data = g12a_mali_0_1_parent_data,
- 		.num_parents = 8,
--		.flags = CLK_SET_RATE_NO_REPARENT,
-+		/*
-+		 * Don't request the parent to change the rate because
-+		 * all GPU frequencies can be derived from the fclk_*
-+		 * clocks and one special GP0_PLL setting. This is
-+		 * important because we need the MPLL clocks for audio.
-+		 */
-+		.flags = 0,
- 	},
- };
- 
-@@ -3743,7 +3751,7 @@ static struct clk_regmap g12a_mali_0_div = {
- 			&g12a_mali_0_sel.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_NO_REPARENT,
-+		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -3759,7 +3767,7 @@ static struct clk_regmap g12a_mali_0 = {
- 			&g12a_mali_0_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -3774,7 +3782,13 @@ static struct clk_regmap g12a_mali_1_sel = {
- 		.ops = &clk_regmap_mux_ops,
- 		.parent_data = g12a_mali_0_1_parent_data,
- 		.num_parents = 8,
--		.flags = CLK_SET_RATE_NO_REPARENT,
-+		/*
-+		 * Don't request the parent to change the rate because
-+		 * all GPU frequencies can be derived from the fclk_*
-+		 * clocks and one special GP0_PLL setting. This is
-+		 * important because we need the MPLL clocks for audio.
-+		 */
-+		.flags = 0,
- 	},
- };
- 
-@@ -3791,7 +3805,7 @@ static struct clk_regmap g12a_mali_1_div = {
- 			&g12a_mali_1_sel.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_NO_REPARENT,
-+		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -3807,7 +3821,7 @@ static struct clk_regmap g12a_mali_1 = {
- 			&g12a_mali_1_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -3827,7 +3841,7 @@ static struct clk_regmap g12a_mali = {
- 		.ops = &clk_regmap_mux_ops,
- 		.parent_hws = g12a_mali_parent_hws,
- 		.num_parents = 2,
--		.flags = CLK_SET_RATE_NO_REPARENT,
-+		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
- 
--- 
-2.26.0
-
+Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
