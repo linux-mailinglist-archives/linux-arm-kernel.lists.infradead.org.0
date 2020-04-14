@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE1041A77DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:52:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCA411A77DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:53:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=lLLmHWoFHC5xwdK8WBX/rotlmAIKQ4nAFAlxnetFHXQ=; b=BbyXWJMpeB1qyUQnCgc1/jB6Ct
-	bDGLGk9Blr83oqAaPsjhM3jIjduchzddtiYGfYSnzjLlURswVAPaV1r3AUotnOtzIubQkY+4tgLFm
-	qCjZ5gxIpSshVn33nktF6AmUthBPJ9VgZ31xZtXeavdUvF9kDmvJuDQR+ck8Z0usrFcseVBZNUTIQ
-	B1aFGWNr7gsAcC5LLIJ/puvIEmFn3Hgiz8uItGMicihMJqR2GgVe8DiiM03Jy9XN85oYtTGYtyrRZ
-	hcsAcwa9Y2gO3GWwIRj4LG9G+IHPWWEBhj5LfzB18l1Yt6TYqQy3+H+GJQ4rwYE4q0ZN+Biz4NQDA
-	n4C4rS8Q==;
+	bh=qRYvPok4q5QAwZZFh3Tv9jHuuXJe1/u5sNSr9VC4ZSw=; b=lg72euo0j0ZJ9x7ThW4qNkg77M
+	bDWG+omwqcdj1Fxdk8WFAsv6jMN8CTkC52Zjbh7FOc3DKFSG3xOaLt4Ld17KAxqPf4kfeiV55Bqgl
+	7jc3k6m5fGMiTPZUVh3rR/cNLIS9g2TgAj73upzuL4I0sUEsNyqgQsXqZ0sLmrJXcFtfYa3OmkOHO
+	RoO7mXk+GTSqAwKlZ8481ut9Y9F37jfpQqwz+bV378u7BSKs34FrdoL3EYL0m9GPiBoDuudHlSu4Q
+	iCZnrsfEhQ0mUP93FYopq7vT/AgoT4KQgzfEra73ebflpzsIhnys5zGcZJgcXZVwAdOS1rW82G5+r
+	3EwEC1wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOIFK-00066f-Mz; Tue, 14 Apr 2020 09:52:46 +0000
+	id 1jOIFY-0006Jz-KL; Tue, 14 Apr 2020 09:53:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOICB-0001Be-56
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:32 +0000
+ id 1jOICE-0001FL-RG
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 09:49:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 57A301FB;
- Tue, 14 Apr 2020 02:49:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 522FD1FB;
+ Tue, 14 Apr 2020 02:49:33 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9B6CD3F6C4;
- Tue, 14 Apr 2020 02:49:27 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CCCDC3F6C4;
+ Tue, 14 Apr 2020 02:49:30 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 12/16] arm64/cpufeature: Add remaining feature bits in
- ID_AA64MMFR0 register
-Date: Tue, 14 Apr 2020 15:18:26 +0530
-Message-Id: <1586857710-17154-13-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V2 13/16] arm64/cpufeature: Add remaining feature bits in
+ ID_AA64MMFR1 register
+Date: Tue, 14 Apr 2020 15:18:27 +0530
+Message-Id: <1586857710-17154-14-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 References: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_024931_341455_9E371719 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20200414_024935_065741_E71285F1 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,8 +72,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable EVC, FGT, EXS, TGRAN4_2, TGRAN64_2 and TGRAN16_2 features bits in
-ID_AA64MMFR0 register as per ARM DDI 0487F.a specification.
+Enable ETS, TWED, XNX and SPECSEI features bits in ID_AA64MMFR1 register as
+per ARM DDI 0487F.a specification.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -84,66 +85,40 @@ Cc: linux-kernel@vger.kernel.org
 Suggested-by: Will Deacon <will@kernel.org>
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm64/include/asm/sysreg.h | 13 +++++++++++++
- arch/arm64/kernel/cpufeature.c  |  7 +++++++
- 2 files changed, 20 insertions(+)
+ arch/arm64/include/asm/sysreg.h | 4 ++++
+ arch/arm64/kernel/cpufeature.c  | 4 ++++
+ 2 files changed, 8 insertions(+)
 
 diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 2e04a8586067..041b4fd7a84c 100644
+index 041b4fd7a84c..914fd6270f80 100644
 --- a/arch/arm64/include/asm/sysreg.h
 +++ b/arch/arm64/include/asm/sysreg.h
-@@ -696,6 +696,12 @@
- #define ID_AA64ZFR0_SVEVER_SVE2		0x1
+@@ -727,6 +727,10 @@
+ #endif
  
- /* id_aa64mmfr0 */
-+#define ID_AA64MMFR0_ECV_SHIFT		60
-+#define ID_AA64MMFR0_FGT_SHIFT		56
-+#define ID_AA64MMFR0_EXS_SHIFT		44
-+#define ID_AA64MMFR0_TGRAN4_2_SHIFT	40
-+#define ID_AA64MMFR0_TGRAN64_2_SHIFT	36
-+#define ID_AA64MMFR0_TGRAN16_2_SHIFT	32
- #define ID_AA64MMFR0_TGRAN4_SHIFT	28
- #define ID_AA64MMFR0_TGRAN64_SHIFT	24
- #define ID_AA64MMFR0_TGRAN16_SHIFT	20
-@@ -831,6 +837,13 @@
- #define ID_AA64MMFR0_TGRAN16_NI		0x0
- #define ID_AA64MMFR0_TGRAN16_SUPPORTED	0x1
- 
-+#define ID_AA64MMFR0_TGRAN4_2_NI	 0x1
-+#define ID_AA64MMFR0_TGRAN4_2_SUPPORTED	 0x2
-+#define ID_AA64MMFR0_TGRAN64_2_NI	 0x1
-+#define ID_AA64MMFR0_TGRAN64_2_SUPPORTED 0x2
-+#define ID_AA64MMFR0_TGRAN16_2_NI	 0x1
-+#define ID_AA64MMFR0_TGRAN16_2_SUPPORTED 0x2
-+
- #if defined(CONFIG_ARM64_4K_PAGES)
- #define ID_AA64MMFR0_TGRAN_SHIFT	ID_AA64MMFR0_TGRAN4_SHIFT
- #define ID_AA64MMFR0_TGRAN_SUPPORTED	ID_AA64MMFR0_TGRAN4_SUPPORTED
+ /* id_aa64mmfr1 */
++#define ID_AA64MMFR1_ETS_SHIFT		36
++#define ID_AA64MMFR1_TWED_SHIFT		32
++#define ID_AA64MMFR1_XNX_SHIFT		28
++#define ID_AA64MMFR1_SPECSEI_SHIFT	24
+ #define ID_AA64MMFR1_PAN_SHIFT		20
+ #define ID_AA64MMFR1_LOR_SHIFT		16
+ #define ID_AA64MMFR1_HPD_SHIFT		12
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 3d9c500555f3..3ab9f5b68d7b 100644
+index 3ab9f5b68d7b..d0e1b525d2bf 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -215,6 +215,10 @@ static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
+@@ -247,6 +247,10 @@ static const struct arm64_ftr_bits ftr_id_aa64mmfr0[] = {
  };
  
- static const struct arm64_ftr_bits ftr_id_aa64mmfr0[] = {
-+
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_ECV_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_FGT_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_EXS_SHIFT, 4, 0),
- 	/*
- 	 * We already refuse to boot CPUs that don't support our configured
- 	 * page size, so we can only detect mismatches for a page size other
-@@ -222,6 +226,9 @@ static const struct arm64_ftr_bits ftr_id_aa64mmfr0[] = {
- 	 * exist in the wild so, even though we don't like it, we'll have to go
- 	 * along with it and treat them as non-strict.
- 	 */
-+	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN4_2_SHIFT, 4, ID_AA64MMFR0_TGRAN4_2_NI),
-+	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN64_2_SHIFT, 4, ID_AA64MMFR0_TGRAN64_2_NI),
-+	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN16_2_SHIFT, 4, ID_AA64MMFR0_TGRAN16_2_NI),
- 	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN4_SHIFT, 4, ID_AA64MMFR0_TGRAN4_NI),
- 	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN64_SHIFT, 4, ID_AA64MMFR0_TGRAN64_NI),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN16_SHIFT, 4, ID_AA64MMFR0_TGRAN16_NI),
+ static const struct arm64_ftr_bits ftr_id_aa64mmfr1[] = {
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_ETS_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_TWED_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_XNX_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_SPECSEI_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_PAN_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_LOR_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR1_HPD_SHIFT, 4, 0),
 -- 
 2.20.1
 
