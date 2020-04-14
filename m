@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E921A86F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:07:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED05B1A86F5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:07:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/LekESUxLcYLsXEMYBZs6GkGqhrN+5gfxTb0SeAVCBI=; b=r4M7i1RNn52wqQ
-	zLV5ElHVf7fIRXK/GHcpwBi7lUHNQG3lwESk16Q/cR8gdNR4+x7ayYT2o8lM4hSjnPU872Pdb6fps
-	6myjwQROXOZoDTC59Hnj1yUftI5dE4uXTepQkeJZVS9Rdu4CVDLaFrycWgELi0LFUxYqjvDeMjmxa
-	mAiLIoqqKHIYhkgi2rXLlnMogcF7AKsx6nBjYpDatoZwZib84BphPKrwRYDNevycfBN+7hsPh5BR4
-	+i8NL7dBljs3j1k2QSrwHDJLZbhX+LtmbMlvFE2Hdm/xa8lt0RuivQ6qhaVUqtBJhU//r3DYyr7i0
-	udoPzJyzDOIH5vekDiTg==;
+	List-Owner; bh=H7n7BhHVaPfA/xbDvfnSfwLvPeCUecGikCemgCr+1rI=; b=YeXEpDZTpALa5F
+	hual/cpFo65EB0bdVkACD+LlryxgWrbsE+PbDmnf6hmwXhri6Pk8Y93OZRXvwh6KZibPWyqR9mTq0
+	r2gMDygIwR/VIYLt4m+rwZZF12rX/v3xk2SsTVUzOqahZpVt94N3vec+HGIDJag4lUHD/grngBdyV
+	rdf09H+7XV3qHzMChSG8LyO/LuqO0coFnctjA9DjonxiwvpfusXj2AYUx9YsNCGR4jDG5dRcTcg6E
+	tf8wP7DGJHCUGFnY/BIadQurb/opIupPasqRSoVAkrmNcCDscdhwwUGAPgs8cgX7nT/efrlGBy/xv
+	PMAJTedxEQRBTVj6/6aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOP2H-0007TP-F7; Tue, 14 Apr 2020 17:07:45 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jOP21-0007CR-FF; Tue, 14 Apr 2020 17:07:29 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOzA-000295-4z
+ id 1jOOzA-0002AD-TU
  for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:04:36 +0000
-Received: by mail-wm1-x344.google.com with SMTP id r26so14958361wmh.0
+Received: by mail-wm1-x342.google.com with SMTP id a201so14546831wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 10:04:31 -0700 (PDT)
+ Tue, 14 Apr 2020 10:04:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=erC/yZ4yqf+8sj3sT7z9RmtS2eJz/nnIlww3PMj9LNg=;
- b=Z/x8cPL2SESYSfgT7USIjcJ03j+yB0RlxWlgpL06IaYNqQQiDsvaIHSi8h1/6csvx5
- kK3IN5C+qcarpFXtn3clOaAiwcKXNvVa1EWM/usyv6coAE89GVxlq0y+++3RZEk606mS
- eK/EjQn6TUpXWOsA1a0nlNknOXuMZrhFMHmCmBAyiUyODyk/I0jtGaFPz3zFkgOjmMZf
- uD2X83kt/GQjoEZq/g3kTgLEpNi3zTYhvueIqbfhi3Y4uoytjUedxC4iTy6yeOtZC8Nv
- yQnYlRAUvzb6xUuSOOjFLyw5N5rMpXC5onjkVSQrucRWu0tMM59YEgFJOBJCzYIEWPgN
- 8ZNA==
+ bh=uHUqHTfoGR+1ZkqPou9Z5HBhwxdn8u/b73K/p08vGt4=;
+ b=hSOw4eWIOpcUGkqXNPQ9dtdmR/ipT2mxWsiI3pMLVH0qgRPNjHSMENCRjHZ4NJar66
+ 7/UT+rWF0VVOTwd6Qq1Ko5BGuW+jxJLwAD3xaf5wYQROloGanuLGb7IPMnVJv7HK78+I
+ 6ngZrW4BxXtksLmLmfoiWffLmjWadvjH0C7qLcRN+lO7dVaEm1JGvGctjkYtl4N944aK
+ W3n+wj6bEmpU/CznO6UiFv/JDUuQBgZiEQyXklusRoJ6jwr/CH6Wy/hgVNh5izNnczuz
+ 90748Du66RWc5+QokDus/aLjad+8nROeHW3JEc7vfg8mwm0Xu+810td/BaN7JKL0CQ6H
+ pY3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=erC/yZ4yqf+8sj3sT7z9RmtS2eJz/nnIlww3PMj9LNg=;
- b=PGY8THengtz2lssgJJE1uqPsDeMLWE/QgisKPPl/NgqE1CED6oJC+cyQ3Y6DaCOzYF
- lvXHJ1MoIuNSbij+OvB0H5Rw33CmruCJPsIj6F57lxClfz6MjS3uCO287S8GRcxDQxWE
- 4IrS5NQsof05fA1MRvKM2V+UBGEexL3q9L9f2NyEtzb8fEVOaUO1CwIudd2DvXo9Wl2f
- 8cysSmc9aAaRqM2SbyaA/jNZDJayd43swFXTNXTWRSs1LFzn2gvsC6zTQ3uJGlTRJbE8
- GywLNYWq54QgCiix3RWj03SkF1Pw6qQGLuL9gnLTerMYYBvq0UbRKjjakUbPSVP8c+39
- NxBw==
-X-Gm-Message-State: AGi0PuZDa4DiW9zmIHOmy8x4+xsFk+5vt2GiRBqnKCgROAvL6Pnjvrz2
- H031Wwd88UoJtlhgSCqAi7sqVQ==
-X-Google-Smtp-Source: APiQypII+WOd1DdLkhhXCc4VJ0kp8rxI4M4if6Dbn88/uuwISRQZtuLUUNyYcRkEY4LiB2fY33DLlA==
-X-Received: by 2002:a7b:c313:: with SMTP id k19mr802495wmj.100.1586883870064; 
- Tue, 14 Apr 2020 10:04:30 -0700 (PDT)
+ bh=uHUqHTfoGR+1ZkqPou9Z5HBhwxdn8u/b73K/p08vGt4=;
+ b=LISu8jd55zLwjeZ/qHLoAGUDwSydIMMyfhfDcqWVED0CWm2OfaU6IZf3hbROxPGNw6
+ 7RAhIr4NFYPUQQvxZv+QbJ+o4UGEIdhoIBMOKr59XoORmXipGNOG4lgV66vvPdjJHWRQ
+ LW1i8thyQ6goyMOP7GCgZQ9sCXRBtsOxI7iQA8WjSpXkZ/LNXI0YkUIvoaEjDQQ4Aies
+ a/ThjV5NqaMSjugMS+qqTWIq+y5t3MLQ8LPR/Refdla0yk8/eeImfUSq8+2ZmQKvwrUU
+ /WADg5QQrFtydgigl5PRrs/860pJr1GdCM0GxUTmzQI85XXls7lp14wzRLDdRFxcNMDk
+ XhYg==
+X-Gm-Message-State: AGi0PuaFVTT9xdi5kVs3NEXVRmLGNaGL6s5McYavv/W5dU730m17lSpV
+ //ZW6KuOnXugvVI9sfbs+Y06ow==
+X-Google-Smtp-Source: APiQypKS0JuC3gKtoh+XCp+shpu7gwSGraLZSLm/eXL7WMGLNhlt6UWbZ/JnbP6LfEz+El1lwsxHkg==
+X-Received: by 2002:a1c:2506:: with SMTP id l6mr784909wml.44.1586883871278;
+ Tue, 14 Apr 2020 10:04:31 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:226b:54a0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id x18sm19549147wrs.11.2020.04.14.10.04.28
+ by smtp.gmail.com with ESMTPSA id x18sm19549147wrs.11.2020.04.14.10.04.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 10:04:29 -0700 (PDT)
+ Tue, 14 Apr 2020 10:04:30 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v5 09/25] iommu/io-pgtable-arm: Move some definitions to a
- header
-Date: Tue, 14 Apr 2020 19:02:37 +0200
-Message-Id: <20200414170252.714402-10-jean-philippe@linaro.org>
+Subject: [PATCH v5 10/25] iommu/arm-smmu-v3: Manage ASIDs with xarray
+Date: Tue, 14 Apr 2020 19:02:38 +0200
+Message-Id: <20200414170252.714402-11-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200414170252.714402-1-jean-philippe@linaro.org>
 References: <20200414170252.714402-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_100432_248612_8A8ACCDA 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20200414_100433_049865_42E28BB7 
+X-CRM114-Status: GOOD (  15.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,104 +109,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Extract some of the most generic TCR defines, so they can be reused by
-the page table sharing code.
+In preparation for sharing some ASIDs with the CPU, use a global xarray to
+store ASIDs and their context. ASID#0 is now reserved, and the ASID
+space is global.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/io-pgtable-arm.h | 30 ++++++++++++++++++++++++++++++
- drivers/iommu/io-pgtable-arm.c | 27 ++-------------------------
- 2 files changed, 32 insertions(+), 25 deletions(-)
- create mode 100644 drivers/iommu/io-pgtable-arm.h
+ drivers/iommu/arm-smmu-v3.c | 27 ++++++++++++++++++---------
+ 1 file changed, 18 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/iommu/io-pgtable-arm.h b/drivers/iommu/io-pgtable-arm.h
-new file mode 100644
-index 0000000000000..ba7cfdf7afa03
---- /dev/null
-+++ b/drivers/iommu/io-pgtable-arm.h
-@@ -0,0 +1,30 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+#ifndef IO_PGTABLE_ARM_H_
-+#define IO_PGTABLE_ARM_H_
-+
-+#define ARM_LPAE_TCR_TG0_4K		0
-+#define ARM_LPAE_TCR_TG0_64K		1
-+#define ARM_LPAE_TCR_TG0_16K		2
-+
-+#define ARM_LPAE_TCR_TG1_16K		1
-+#define ARM_LPAE_TCR_TG1_4K		2
-+#define ARM_LPAE_TCR_TG1_64K		3
-+
-+#define ARM_LPAE_TCR_SH_NS		0
-+#define ARM_LPAE_TCR_SH_OS		2
-+#define ARM_LPAE_TCR_SH_IS		3
-+
-+#define ARM_LPAE_TCR_RGN_NC		0
-+#define ARM_LPAE_TCR_RGN_WBWA		1
-+#define ARM_LPAE_TCR_RGN_WT		2
-+#define ARM_LPAE_TCR_RGN_WB		3
-+
-+#define ARM_LPAE_TCR_PS_32_BIT		0x0ULL
-+#define ARM_LPAE_TCR_PS_36_BIT		0x1ULL
-+#define ARM_LPAE_TCR_PS_40_BIT		0x2ULL
-+#define ARM_LPAE_TCR_PS_42_BIT		0x3ULL
-+#define ARM_LPAE_TCR_PS_44_BIT		0x4ULL
-+#define ARM_LPAE_TCR_PS_48_BIT		0x5ULL
-+#define ARM_LPAE_TCR_PS_52_BIT		0x6ULL
-+
-+#endif /* IO_PGTABLE_ARM_H_ */
-diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-index 04fbd4bf0ff9f..f71a2eade04ab 100644
---- a/drivers/iommu/io-pgtable-arm.c
-+++ b/drivers/iommu/io-pgtable-arm.c
-@@ -20,6 +20,8 @@
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 60a415e8e2b6f..96ee60002e85e 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -664,7 +664,6 @@ struct arm_smmu_device {
  
- #include <asm/barrier.h>
+ #define ARM_SMMU_MAX_ASIDS		(1 << 16)
+ 	unsigned int			asid_bits;
+-	DECLARE_BITMAP(asid_map, ARM_SMMU_MAX_ASIDS);
  
-+#include "io-pgtable-arm.h"
+ #define ARM_SMMU_MAX_VMIDS		(1 << 16)
+ 	unsigned int			vmid_bits;
+@@ -724,6 +723,8 @@ struct arm_smmu_option_prop {
+ 	const char *prop;
+ };
+ 
++static DEFINE_XARRAY_ALLOC1(asid_xa);
 +
- #define ARM_LPAE_MAX_ADDR_BITS		52
- #define ARM_LPAE_S2_MAX_CONCAT_PAGES	16
- #define ARM_LPAE_MAX_LEVELS		4
-@@ -100,23 +102,6 @@
- #define ARM_LPAE_PTE_MEMATTR_DEV	(((arm_lpae_iopte)0x1) << 2)
+ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ 	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
+ 	{ ARM_SMMU_OPT_PAGE0_REGS_ONLY, "cavium,cn9900-broken-page1-regspace"},
+@@ -1763,6 +1764,14 @@ static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
+ 	cdcfg->cdtab = NULL;
+ }
  
- /* Register bits */
--#define ARM_LPAE_TCR_TG0_4K		0
--#define ARM_LPAE_TCR_TG0_64K		1
--#define ARM_LPAE_TCR_TG0_16K		2
--
--#define ARM_LPAE_TCR_TG1_16K		1
--#define ARM_LPAE_TCR_TG1_4K		2
--#define ARM_LPAE_TCR_TG1_64K		3
--
--#define ARM_LPAE_TCR_SH_NS		0
--#define ARM_LPAE_TCR_SH_OS		2
--#define ARM_LPAE_TCR_SH_IS		3
--
--#define ARM_LPAE_TCR_RGN_NC		0
--#define ARM_LPAE_TCR_RGN_WBWA		1
--#define ARM_LPAE_TCR_RGN_WT		2
--#define ARM_LPAE_TCR_RGN_WB		3
--
- #define ARM_LPAE_VTCR_SL0_MASK		0x3
++static void arm_smmu_free_asid(struct arm_smmu_ctx_desc *cd)
++{
++	if (!cd->asid)
++		return;
++
++	xa_erase(&asid_xa, cd->asid);
++}
++
+ /* Stream table manipulation functions */
+ static void
+ arm_smmu_write_strtab_l1_desc(__le64 *dst, struct arm_smmu_strtab_l1_desc *desc)
+@@ -2448,10 +2457,9 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
+ 	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
+ 		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
  
- #define ARM_LPAE_TCR_T0SZ_SHIFT		0
-@@ -124,14 +109,6 @@
- #define ARM_LPAE_VTCR_PS_SHIFT		16
- #define ARM_LPAE_VTCR_PS_MASK		0x7
+-		if (cfg->cdcfg.cdtab) {
++		if (cfg->cdcfg.cdtab)
+ 			arm_smmu_free_cd_tables(smmu_domain);
+-			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
+-		}
++		arm_smmu_free_asid(&cfg->cd);
+ 	} else {
+ 		struct arm_smmu_s2_cfg *cfg = &smmu_domain->s2_cfg;
+ 		if (cfg->vmid)
+@@ -2466,14 +2474,15 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+ 				       struct io_pgtable_cfg *pgtbl_cfg)
+ {
+ 	int ret;
+-	int asid;
++	u32 asid;
+ 	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+ 	typeof(&pgtbl_cfg->arm_lpae_s1_cfg.tcr) tcr = &pgtbl_cfg->arm_lpae_s1_cfg.tcr;
  
--#define ARM_LPAE_TCR_PS_32_BIT		0x0ULL
--#define ARM_LPAE_TCR_PS_36_BIT		0x1ULL
--#define ARM_LPAE_TCR_PS_40_BIT		0x2ULL
--#define ARM_LPAE_TCR_PS_42_BIT		0x3ULL
--#define ARM_LPAE_TCR_PS_44_BIT		0x4ULL
--#define ARM_LPAE_TCR_PS_48_BIT		0x5ULL
--#define ARM_LPAE_TCR_PS_52_BIT		0x6ULL
--
- #define ARM_LPAE_MAIR_ATTR_SHIFT(n)	((n) << 3)
- #define ARM_LPAE_MAIR_ATTR_MASK		0xff
- #define ARM_LPAE_MAIR_ATTR_DEVICE	0x04
+-	asid = arm_smmu_bitmap_alloc(smmu->asid_map, smmu->asid_bits);
+-	if (asid < 0)
+-		return asid;
++	ret = xa_alloc(&asid_xa, &asid, &cfg->cd,
++		       XA_LIMIT(1, (1 << smmu->asid_bits) - 1), GFP_KERNEL);
++	if (ret)
++		return ret;
+ 
+ 	cfg->s1cdmax = master->ssid_bits;
+ 
+@@ -2506,7 +2515,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+ out_free_cd_tables:
+ 	arm_smmu_free_cd_tables(smmu_domain);
+ out_free_asid:
+-	arm_smmu_bitmap_free(smmu->asid_map, asid);
++	arm_smmu_free_asid(&cfg->cd);
+ 	return ret;
+ }
+ 
 -- 
 2.26.0
 
