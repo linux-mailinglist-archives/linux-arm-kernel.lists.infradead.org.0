@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F208A1A7572
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:07:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F0FC1A7573
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:07:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BQCWnof0IJ/H/c+xpZO6OmANQ/CMAmfCLz+uMGTp/WA=; b=hwh/GsBNuLGA2R
-	DeGO4NIXFcj7kQBepvODZCesVQp4f1YCtu1DPn/23aK/D2hd2wfz7IPKb69J7LIsWoNuAwVkEtoYI
-	Y2XNTb0/lfCoFzSdcy7kgGn5R0NjmEoQA6CAPTUxLnFDaKDMlCntT/Xf2r5LK+SN4eAvBld6cltsM
-	p/uz8FJdUz8iQNu5jgaLwLDVjbrMpuahTTOh9aCAY/0Xy+wzFft6C0p0FmwEB0M4aSZPmYHZ3/M55
-	p0EmWHjckWgi2Kz0ANZiEJmjPV0+qi49Pz5V+S2/xSOnoDI5f+TN0WFx5lKAXP6LQyn2lvps9oGNk
-	gSf/Vy6pWkvmJ7AhK0QQ==;
+	List-Owner; bh=WsIvALxE+BPdfycngaRQ7/jcvFd+t/5+tSuPcpi84SQ=; b=LsMA+kCns03LKo
+	DrKW46gHGDjdbo0n0ysGHUnXYlZqA6wRraQEY/HMGTgLIp5s36xeowtZaoHdQiglLaRFTKTWrazxp
+	dYzAk9kPvg7+NKxxLIKZjcDaHbV3Mep7Sn/LBnP0ZSM5JR5koPU1MZq8KCNMEwfJwP842xYwz2Yaz
+	zdOfUAzDAc9ma9FltFEjLXRKdN37IamWtIRq1yQPBEG445fiRAH5FU9uJ0MIPzMFfJlBuIKB0OQNw
+	z0AXioXBZmdnX28fiY/d5mXmkts0D4ki9axD/W0F2jPUkyGCoGUwgDdOcAHZmBeRXtYsHEO8+yWVw
+	afGdspdkO0ZOGSI9SnrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGbX-00015U-GA; Tue, 14 Apr 2020 08:07:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOGbk-0001V7-P8; Tue, 14 Apr 2020 08:07:48 +0000
+Received: from mail-lj1-f194.google.com ([209.85.208.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGb6-000114-QM
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 08:07:10 +0000
-Received: from mail-il1-f180.google.com (mail-il1-f180.google.com
- [209.85.166.180])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8DBA82082E
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:07:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586851627;
- bh=NjcoS6FoeHprQ2wvOMz4dIaRGIgrGeu2l5Dn/BzuqOo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=n3UlIZoNal5q6Yiqbjnc9//1HRnmDZdKsIK9xJHqFFgYuzfShmNzSpssNxkI8X2jW
- uoGCvyJzoxoRpD+k0h+W+OCP1wAd9I02d/JL2yfg2FEgziUpKo0JHR4TS0Lq+lGN/G
- pFr9qjfmp6HZiS4dkU/vwkWl2HFUPN1u/lG7fmt8=
-Received: by mail-il1-f180.google.com with SMTP id o11so11127545ilq.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 01:07:07 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYvrsPmZGhhoDXh9SkH9FDsvyzdTy+XRTABjlCkHrajF9s33UHJ
- C9mcRby0ahaJrBiJ1z3XcjNrHiHNpfcb7fGP8Nc=
-X-Google-Smtp-Source: APiQypLQLP/ZI4tMLr6ebPQ0bR4YsIrccGVqw6J/dihbCsVIqgQD8U5+8RZJOaX3ZbBuK9zufCedF7pYyc8yYBMBmwg=
-X-Received: by 2002:a92:aa0f:: with SMTP id j15mr8713415ili.211.1586851626855; 
- Tue, 14 Apr 2020 01:07:06 -0700 (PDT)
+ id 1jOGbC-00014Q-3r; Tue, 14 Apr 2020 08:07:16 +0000
+Received: by mail-lj1-f194.google.com with SMTP id v9so4842336ljk.12;
+ Tue, 14 Apr 2020 01:07:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wb0sza6Q5ty4d/qdwvzNDwl9p6b2ZoB5gGx5QbNev/c=;
+ b=O5SNAAqMBoFbi73WKtUynQ0sfSm8SOKbJhZnxl7GxSZW1CDYfXyQdE/CsEVnN0TBFV
+ RTv+HCh0qLHy09pn56tcV/WuH/mlZCvVi5qsYHxSYJEmGakoAu9V8eHEz+OOa2ElRZAm
+ JcyG7j4TIYj1EiJMOJT6vDExE7JAACfFzzkxE22kdUge97rM+2/C9d34bL1rsraz7DFZ
+ 6qsbyBktVAo/p3oK5xtlxJgWnrOYWZQ+bOM/kQNU4qVYjXVa5eMs0MpHOC3aO4YPlkMs
+ IVUHWM9dJUP0zRycv8z81VXurK8q5mPVnt953c59uRW+J9LWdUloCUseRWQwcvqvHHW9
+ tACA==
+X-Gm-Message-State: AGi0PuYRjgHgPGZ62Xl1snVCjf8DNc9H3IsvKogSrDRj+YbUQE5NXauv
+ ADPtCXtSBjSQ0+l62jUGBDk=
+X-Google-Smtp-Source: APiQypIRzmpTgQCOgOkjyFOgh+lfjXKp6L3/Q+98/UR8F4mUGLsDM/5FCaCx7nYXmp/6oZXiEv6WtQ==
+X-Received: by 2002:a2e:140d:: with SMTP id u13mr4164104ljd.152.1586851631828; 
+ Tue, 14 Apr 2020 01:07:11 -0700 (PDT)
+Received: from localhost.localdomain
+ (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
+ by smtp.gmail.com with ESMTPSA id x67sm9788458lfa.76.2020.04.14.01.07.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 01:07:11 -0700 (PDT)
+Date: Tue, 14 Apr 2020 11:06:57 +0300
+From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
+Subject: [PATCH v9 10/10] power: supply: Fix Kconfig help text indentiation
+Message-ID: <b14e8887ece1bf1fafb600321c9410fe0791d57d.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+References: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
-References: <20200320144348.12865-1-geert+renesas@glider.be>
- <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
-In-Reply-To: <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 14 Apr 2020 10:06:56 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXFAEOWGgmMT4SMP=QafcT54mzMekLjm3wMTN8M4psNSKw@mail.gmail.com>
-Message-ID: <CAMj1kXFAEOWGgmMT4SMP=QafcT54mzMekLjm3wMTN8M4psNSKw@mail.gmail.com>
-Subject: Re: [PATCH v4] ARM: boot: Obtain start of physical memory from DTB
-To: Geert Uytterhoeven <geert+renesas@glider.be>,
- Nicolas Pitre <nico@fluxnic.net>
+Content-Disposition: inline
+In-Reply-To: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_010709_027050_4CB95674 
-X-CRM114-Status: GOOD (  19.45  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_010714_323911_0FB57BFD 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.194 listed in list.dnswl.org]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mazziesaccount[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,61 +86,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Andrei Stefanescu <andrei.stefanescu@microchip.com>,
+ Heiko Stuebner <heiko@sntech.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ Sebastian Reichel <sre@kernel.org>, Andreas Kemnade <andreas@kemnade.info>,
+ "Angelo G. Del Regno" <kholk11@gmail.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ linux-samsung-soc@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Axel Lin <axel.lin@ingics.com>, Gregory CLEMENT <gregory.clement@bootlin.com>,
+ linux-pm@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Markus Reichl <m.reichl@fivetechno.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>, markus.laine@fi.rohmeurope.com,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, devicetree@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, linux-omap@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Baolin Wang <baolin.wang@linaro.org>, Sangbeom Kim <sbkim73@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ mikko.mutanen@fi.rohmeurope.com, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, patches@opensource.cirrus.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 25 Mar 2020 at 17:40, Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> On Fri, 20 Mar 2020 at 15:43, Geert Uytterhoeven
-> <geert+renesas@glider.be> wrote:
-> >
-> > Currently, the start address of physical memory is obtained by masking
-> > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > was chosen as a balance between the requirements of different platforms.
-> > However, this does require that the start address of physical memory is
-> > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > requirement is not fulfilled.
-> >
-> > Fix this limitation by obtaining the start address from the DTB instead,
-> > if available (either explicitly passed, or appended to the kernel).
-> > Fall back to the traditional method when needed.
-> >
-> > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > i.e. not at a multiple of 128 MiB.
-> >
-> > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > ---
-> > v4:
-> >   - Fix stack location after commit 184bf653a7a452c1 ("ARM:
-> >     decompressor: factor out routine to obtain the inflated image
-> >     size"),
-> >
->
-> Apologies for the breakage. I was aware of the existence of this
-> patch, but I didn't realize it was accessing LC0 early on to find the
-> stack pointer value.
->
-> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
->
+Indent the help text as explained in
+Documentation/process/coding-style.rst
 
-OK, so one thing I did notice when playing with this code is that the
-phys/virt patching code requires that 'PHYS_OFFSET - PAGE_OFFSET' is a
-multiple of 16 MB, and so this needs to be taken into account by this
-change as well, given that PHYS_OFFSET is based on the placement of
-the uncompressed kernel in the physical address space.
+Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+
+Changes since v8 - rebased and reordered series.
+
+I just learned the help text in Kconfigs should be indented by two
+spaces. I fixed this for BD99954 as suggested by Randy and decided
+that I could do this for few other entries as well while I was at
+it anyways.
+
+ drivers/power/supply/Kconfig | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/drivers/power/supply/Kconfig b/drivers/power/supply/Kconfig
+index 436680ee8523..ec028e47c3c2 100644
+--- a/drivers/power/supply/Kconfig
++++ b/drivers/power/supply/Kconfig
+@@ -415,7 +415,7 @@ config CHARGER_PCF50633
+ 	tristate "NXP PCF50633 MBC"
+ 	depends on MFD_PCF50633
+ 	help
+-	 Say Y to include support for NXP PCF50633 Main Battery Charger.
++	  Say Y to include support for NXP PCF50633 Main Battery Charger.
+ 
+ config BATTERY_RX51
+ 	tristate "Nokia RX-51 (N900) battery driver"
+@@ -609,15 +609,15 @@ config CHARGER_TPS65090
+ 	tristate "TPS65090 battery charger driver"
+ 	depends on MFD_TPS65090
+ 	help
+-	 Say Y here to enable support for battery charging with TPS65090
+-	 PMIC chips.
++	  Say Y here to enable support for battery charging with TPS65090
++	  PMIC chips.
+ 
+ config CHARGER_TPS65217
+ 	tristate "TPS65217 battery charger driver"
+ 	depends on MFD_TPS65217
+ 	help
+-	 Say Y here to enable support for battery charging with TPS65217
+-	 PMIC chips.
++	  Say Y here to enable support for battery charging with TPS65217
++	  PMIC chips.
+ 
+ config BATTERY_GAUGE_LTC2941
+ 	tristate "LTC2941/LTC2943 Battery Gauge Driver"
+@@ -671,16 +671,16 @@ config CHARGER_SC2731
+ 	tristate "Spreadtrum SC2731 charger driver"
+ 	depends on MFD_SC27XX_PMIC || COMPILE_TEST
+ 	help
+-	 Say Y here to enable support for battery charging with SC2731
+-	 PMIC chips.
++	  Say Y here to enable support for battery charging with SC2731
++	  PMIC chips.
+ 
+ config FUEL_GAUGE_SC27XX
+ 	tristate "Spreadtrum SC27XX fuel gauge driver"
+ 	depends on MFD_SC27XX_PMIC || COMPILE_TEST
+ 	depends on IIO
+ 	help
+-	 Say Y here to enable support for fuel gauge with SC27XX
+-	 PMIC chips.
++	  Say Y here to enable support for fuel gauge with SC27XX
++	  PMIC chips.
+ 
+ config CHARGER_UCS1002
+ 	tristate "Microchip UCS1002 USB Port Power Controller"
+@@ -698,9 +698,9 @@ config CHARGER_BD70528
+ 	select LINEAR_RANGES
+ 	default n
+ 	help
+-	 Say Y here to enable support for getting battery status
+-	 information and altering charger configurations from charger
+-	 block of the ROHM BD70528 Power Management IC.
++	  Say Y here to enable support for getting battery status
++	  information and altering charger configurations from charger
++	  block of the ROHM BD70528 Power Management IC.
+ 
+ config CHARGER_BD99954
+ 	tristate "ROHM bd99954 charger driver"
+-- 
+2.21.0
+
+
+-- 
+Matti Vaittinen, Linux device drivers
+ROHM Semiconductors, Finland SWDC
+Kiviharjunlenkki 1E
+90220 OULU
+FINLAND
+
+~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
+Simon says - in Latin please.
+~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
+Thanks to Simon Glass for the translation =] 
 
 _______________________________________________
 linux-arm-kernel mailing list
