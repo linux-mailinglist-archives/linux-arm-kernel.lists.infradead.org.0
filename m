@@ -2,108 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBCB31A7374
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 08:17:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70D5C1A7379
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 08:17:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xYSV2aHHz+2wVgNongD6xScaPPwQPrkpAxSgORQacSs=; b=orf4+0Ex2SHiLh
-	vsy5/gzFfkFahBq0L44M3STcb7uhXGwmNqKTbP0ociq6OVCQm9NEJn0o6cT8ez2NYBd7yNO6T1LCT
-	+lBRWH7Gv8Yv2YrGhCp7vBUGTqaNlsPbpkMHmaWUtFraJK2jSxCufEO8al/TCaqcnaao9AKw07Lst
-	wXC72Ml28RIhfLNWJqA5nx2q3ww1gJKQhRxVRSNInrfCd7DVM3/DGNYKmvMDSvoFBNrla8ESiBqj0
-	U5xERqQYPj5x6l4g9/ulCupmUE36vvMGAKVjUbGWwyYoIRZc1daPviS8e4mzs9ero2nwX+T1s47jc
-	Hlgt9O1S2XLPO9pUpCaQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=z7b+5Q1nxBCxmE5rwPJgbMCsZfDaC2BeCXG5F8a2+oM=; b=Wcx
+	qE+H9+YyLUueYUhSvpVeoMrMutk/bs4tDXsYHABaS6CGGTeiJpGOQDOw5D0eweK3YQdGAY0EbwBxC
+	REkt7WSTkK8fXJ7gRoh/MMcN4/x/d/B925jFLu7h6fRV9NxQCpbD7Z8QnO0wMdL/uEbeCVO0E00Xr
+	kwwIEm23zU35an+HKGBkbTSVk7aQjVTCWFph8ZvbTBvNjCj2grqjxRFfHtrwqDQtZFCKdyjhBwyUO
+	fVbM4WGDh79u29U6Z3y9V+GDfOBYFM/SVrwAib4RQB8ImcIeoeMMuoX/oFOm5daoiLv01WiONFwHr
+	rKnJtDa0W8mOKb/E0m19u8h0xOg5JBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOEsU-0003A1-54; Tue, 14 Apr 2020 06:16:58 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jOEsv-0003Lu-Cu; Tue, 14 Apr 2020 06:17:25 +0000
+Received: from labrats.qualcomm.com ([199.106.110.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOEsM-00037q-JA; Tue, 14 Apr 2020 06:16:51 +0000
-Received: from in01.mta.xmission.com ([166.70.13.51])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOErv-0006zd-Cp; Tue, 14 Apr 2020 00:16:23 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOEru-0001V9-HH; Tue, 14 Apr 2020 00:16:23 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Andrew Morton <akpm@linux-foundation.org>
-References: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
- <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
- <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
- <20200411034414.GH2129@MiWiFi-R3L-srv>
- <20200411093009.GH25745@shell.armlinux.org.uk>
- <20200412053507.GA4247@MiWiFi-R3L-srv>
- <20200412080836.GM25745@shell.armlinux.org.uk>
- <87wo6klbw0.fsf@x220.int.ebiederm.org>
- <20200413023701.GA20265@MiWiFi-R3L-srv>
- <871rorjzmc.fsf@x220.int.ebiederm.org>
- <20200413160144.0e07c0033afc474228bc9218@linux-foundation.org>
-Date: Tue, 14 Apr 2020 01:13:25 -0500
-In-Reply-To: <20200413160144.0e07c0033afc474228bc9218@linux-foundation.org>
- (Andrew Morton's message of "Mon, 13 Apr 2020 16:01:44 -0700")
-Message-ID: <87tv1miohm.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
-MIME-Version: 1.0
-X-XM-SPF: eid=1jOEru-0001V9-HH; ; ; mid=<87tv1miohm.fsf@x220.int.ebiederm.org>;
- ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX18EIUyySboFEvwkJvY092/gKs+mtMsheRQ=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=0.7 required=8.0 tests=ALL_TRUSTED,BAYES_05,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels,XMSubLong
- autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- * -0.5 BAYES_05 BODY: Bayes spam probability is 1 to 5%
- *      [score: 0.0432] *  0.7 XMSubLong Long Subject
- *  1.5 XMNoVowels Alpha-numberic number with no vowels
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa07 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa07 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Andrew Morton <akpm@linux-foundation.org>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 351 ms - load_scoreonly_sql: 0.04 (0.0%),
- signal_user_changed: 11 (3.1%), b_tie_ro: 9 (2.7%), parse: 0.85 (0.2%),
- extract_message_metadata: 14 (4.0%), get_uri_detail_list: 1.25 (0.4%),
- tests_pri_-1000: 15 (4.2%), tests_pri_-950: 1.22 (0.3%),
- tests_pri_-900: 1.01 (0.3%), tests_pri_-90: 62 (17.7%), check_bayes:
- 61 (17.3%), b_tokenize: 7 (1.9%), b_tok_get_all: 7 (2.1%),
- b_comp_prob: 2.2 (0.6%), b_tok_touch_all: 41 (11.5%), b_finish: 0.96
- (0.3%), tests_pri_0: 228 (65.0%), check_dkim_signature: 0.73 (0.2%),
- check_dkim_adsp: 2.2 (0.6%), poll_dns_idle: 0.63 (0.2%), tests_pri_10:
- 3.1 (0.9%), tests_pri_500: 12 (3.5%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
+ id 1jOEsS-0003CP-Em; Tue, 14 Apr 2020 06:16:57 +0000
+IronPort-SDR: GF+nhx7pQG5Eg2UGkLUudbnUbCQzLoEq+k3j4XEYypW5RCLFBgcA1kgW9dhsR/G1jrHiUQ2pfu
+ y4tcVGbk6/oBJWG/HWuxHpiLGKh9Ujh2QzIpFKwO4FTUc9if6Jr1WeBNWUL8yJBUeC7UTcoM4I
+ EU3QbUOhpMpT4IGo408k+3dMtD18YNm202DnGiZZMz/bjvXUZXWPNiP6Af9mYJeKv8p8sA8IAg
+ RkJvlbQEnfZRQhOTMM1/o3dSLhfBAtguxNZPkYk9V2FZOW2VIEAUIFEJj87g44rsDN4GvnGP68
+ L2Y=
+X-IronPort-AV: E=Sophos;i="5.72,381,1580803200"; d="scan'208";a="46834943"
+Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
+ by labrats.qualcomm.com with ESMTP; 13 Apr 2020 23:14:56 -0700
+Received: from pacamara-linux.qualcomm.com ([192.168.140.135])
+ by ironmsg03-sd.qualcomm.com with ESMTP; 13 Apr 2020 23:14:54 -0700
+Received: by pacamara-linux.qualcomm.com (Postfix, from userid 359480)
+ id CE87E3B21; Mon, 13 Apr 2020 23:14:54 -0700 (PDT)
+From: Can Guo <cang@codeaurora.org>
+To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, hongwus@codeaurora.org,
+ rnayak@codeaurora.org, linux-scsi@vger.kernel.org, kernel-team@android.com,
+ saravanak@google.com, salyzyn@google.com, cang@codeaurora.org
+Subject: [PATCH v2 1/1] scsi: ufs: full reinit upon resume if link was off
+Date: Mon, 13 Apr 2020 23:14:48 -0700
+Message-Id: <1586844892-22720-1-git-send-email-cang@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_231650_630554_D8F23CFF 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200413_231656_536438_8C03D31E 
+X-CRM114-Status: GOOD (  11.79  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,49 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Bart Van Assche <bvanassche@acm.org>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Venkat Gopalakrishnan <venkatg@codeaurora.org>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Tomas Winkler <tomas.winkler@intel.com>,
+ Stanley Chu <stanley.chu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, Bean Huo <beanhuo@micron.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Andrew Morton <akpm@linux-foundation.org> writes:
+From: Asutosh Das <asutoshd@codeaurora.org>
 
-> On Mon, 13 Apr 2020 08:15:23 -0500 ebiederm@xmission.com (Eric W. Biederman) wrote:
->
->> > For 3), people can still use kexec_load and develop/fix for it, if no
->> > kexec_file_load supported. But 32-bit arm should be a different one,
->> > more like i386, we will leave it as is, and fix anything which could
->> > break it. But people really expects to improve or add feature to it? E.g
->> > in this patchset, the mem hotplug issue James raised, I assume James is
->> > focusing on arm64, x86_64, but not 32-bit arm. As DavidH commented in
->> > another reply, people even don't agree to continue supporting memory
->> > hotplug on 32-bit system. We ever took effort to fix a memory hotplug
->> > bug on i386 with a patch, but people would rather set it as BROKEN.
->> 
->> For memory hotplug just reload.  Userspace already gets good events.
->> 
->> We should not expect anything except a panic kernel to be loaded over a
->> memory hotplug event. The kexec on panic code should actually be loaded
->> in a location that we don't reliquish if asked for it.
->
-> Is that a nack for James's patchset?
+During suspend, if the link is put to off, it would require
+a full initialization during resume. This patch resets and
+restores both the host and the card during initialization,
+otherwise, host only reset and restore may fail occasionally.
 
-I have just read the end of the thread and I have the sense that the
-patchset had already been rejected.  I will see if I can go back and
-read the beginning.
+Signed-off-by: Asutosh Das <asutoshd@codeaurora.org>
+Signed-off-by: Can Guo <cang@codeaurora.org>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
+Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+Acked-by: Stanley Chu <stanley.chu@mediatek.com>
 
-I was mostly reacting to the idea that you could stop maintaining an
-interface that people are actively using because there is a newer
-interface.
+Change since v1:
+- Incorporated Alim's comments.
 
-Eric
+---
+ drivers/scsi/ufs/ufshcd.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 64e42ef..90313c8 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -8048,9 +8048,13 @@ static int ufshcd_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ 		else
+ 			goto vendor_suspend;
+ 	} else if (ufshcd_is_link_off(hba)) {
+-		ret = ufshcd_host_reset_and_restore(hba);
+ 		/*
+-		 * ufshcd_host_reset_and_restore() should have already
++		 * A full initialization of the host and the device is
++		 * required since the link was put to off during suspend.
++		 */
++		ret = ufshcd_reset_and_restore(hba);
++		/*
++		 * ufshcd_reset_and_restore() should have already
+ 		 * set the link state as active
+ 		 */
+ 		if (ret || !ufshcd_is_link_active(hba))
+-- 
+Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, a Linux Foundation Collaborative Project.
 
 
 _______________________________________________
