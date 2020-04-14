@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 564F21A80EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:05:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF9E11A8172
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:08:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U67xfgQRr1TzcGJphMZXsW71Y49i/FY4Kbndcws+RTA=; b=NObZ4LRpz+jRL9F8vTTNxjfTc
-	6BIrSpJshh1lM99QUF6Ju9WDWBhSwAS6i2uLsWqeGUvfGOTm1aXojz624sGG2pXdMIWet4rWri5ac
-	ThlqXBebYTvQNoTnz7xpBS4URU1SVrlrYKNeagAeg8WNjF0Z5K2Jq6wfvWjqlT2RA7KHz8k7FoHz9
-	QtL/4GY8lRizbn0/hOzKjW0hAsBYOoqcJ6P1NsQyomDc+a2XIgMcGYutUsqX9zhRa6px8yguoZcdt
-	Bf9jmaq8FGQQiK1KsR2Urjs+aFH30bQvt14EsnxRew+Fu/ABLNXQwdrmk7LtmPvA5JTrv+l0cZykf
-	AL4tuKDwA==;
+	 bh=edzmuuiiiZw+vO/ILZ1lg8GHh96b9ZLTnHq0JztwnE4=; b=XL6Q3RP+h/koDpSW66TEbCzE8
+	oxeTrdQQ47p1jzP05/m5HS5t1NfUwGzNhAsTiBgv0ejHDpactamf9NZloZ3PYXR5/xrxjn4mmban4
+	AVdL9juwvL2eDB77UmmHaAb1c9sY0cyjpRjaTO6vh+93X5YWnj6xIxzbKiqI568m78YnmvTbL85NY
+	UsI1hYeq2b4acIxuR4Yr8/vELF7mYXwBtLhcfXge+uFkYLwQwh5rPMl+XLTV1G195PWdKdmHL9Hpc
+	OquSu83GjsbwzvrZx2dPdEcL508/LcW1PSl0/9V/eEjbw3pSGPKk55TKZQHhN7lAoe42FxYKL0rv+
+	ent67/b2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jON7w-00026X-Nt; Tue, 14 Apr 2020 15:05:28 +0000
+	id 1jONAo-0002kc-Bp; Tue, 14 Apr 2020 15:08:26 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jON7o-00025V-3k
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:05:21 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j2so14722309wrs.9
+ id 1jONAg-0002jo-Fl
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:08:19 +0000
+Received: by mail-wr1-x441.google.com with SMTP id j2so14734673wrs.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:05:19 -0700 (PDT)
+ Tue, 14 Apr 2020 08:08:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=GRU+kcgoobFtz4hoc9alUDOZ5JZB4eIWqC87J2PCXRk=;
- b=iozrSE+ODjo7phmX5XfdlosqNbo3t0TMdHpJDlWfJjQxD2Be7dmyGsm7HEJ6G8eywm
- PmFTKHyhBUEbIY5HJdcE15H4TP5fottCSv3hxGVeLOnSe16rwy/HSbKHNBRUi/OomcMz
- FBDzQC+XGB7EmSd9xYEoOz5agEmD3EnjI3bkJToa+FaYB+yMQ7cFPBncjRIhhd+XxYRK
- nrPNWSzXfJPuW5FtyYjIH94QRZKewR/7LFug3ZxX4wRne1OkwKj6x6dm4I1zyuj4J+is
- LXupCb2NXql0fFVUnWwXlteqAoLQ1uyICAqX/o2VfgWau7PVCynypm8Uwwla/2ztowYu
- ggHw==
+ bh=k7q0i04JrV/LeWRv8qAlwGssC6S97Ez37RZ9eJFf4jw=;
+ b=s8K8q5iRtggqNP5qEoyp9NKhh1FcI+I/WpvocM2IwWOsRGN2OhmPWCtRPpKF0pSqur
+ kk6vqF/IOvEFrkaVsK25+SsTVR3Q33zsGE500TdhYf4fhtYvOROG/nhZJGYsK8vBIzQw
+ jTdQSgEfOfsUMZkimdJNkyvA2AyPfUP607BuhA2QDyUpyaTAgDwODdgJne/fIoF4Wax+
+ njNtUfZ0TJJX6fUbBlsxihKkggxTV5g+hv8GKrdrrUqpfu6QshbWFu9rtMQrmS5kxVss
+ BbkYk/46kdC1TtrT4Zte7uDcDIN0OYATpc38YKttt6+IXg1ZQFuaOdgwqY8bNqBQdBWr
+ xuZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GRU+kcgoobFtz4hoc9alUDOZ5JZB4eIWqC87J2PCXRk=;
- b=G/sfDCtQMLLi07y8Taj4pFJSAloU9YWO3o5saV5dv8hVdArLXAyFzkDuGYMYXfhQcD
- B9qWaJvpZ5XAh5oGOspR8EugVfEBPRIEevPQUNxuA8qTe/KLNXuWghwjouYa8ud1b6M6
- 3potDCizapgW5AwSzNL20AbGlUdXNJ1P/B8ZBj9EA9DCzJRCGplnPMv1lc3hqFqONXcJ
- /RlX7W70+JqGyXDw5EomDMYMDc3hvJljfIu1yKtUJ/3lHBtsOkmSN1lY9LfMOKTtpAsz
- IWCey57N5cQBUlbcbd5iwYJQ35oz8uSzQojrJAjei06/d7z8J16awndADGDtlCNpiAmd
- Ml7A==
-X-Gm-Message-State: AGi0PuYpDW0Pv5nDFK2SIuG0nOxBU6psXZYnO7NvcLUXWVhq9E2DF7yr
- kGvovGUaLHFUfkFsjtZ29DI=
-X-Google-Smtp-Source: APiQypJRZriRxHLKGFufZX51wCytt4lINIlsGHllnqqM/+6Wbga72x1sO/I+opanZVnZSJ1d8zqA6A==
-X-Received: by 2002:a05:6000:1287:: with SMTP id
- f7mr8495019wrx.345.1586876718789; 
- Tue, 14 Apr 2020 08:05:18 -0700 (PDT)
+ bh=k7q0i04JrV/LeWRv8qAlwGssC6S97Ez37RZ9eJFf4jw=;
+ b=aaL0A3VubdPxIlho40gLSfLMsK4Z4Dl52s6fGeYb9tIzZPVsWDx8+7pl8GlmXQJotr
+ 4W1suBd3lSjfGlBsYU/8SNoL5vQ2ikPS/nG84WcwMQCSHsF6dflW+Y9xNfMBgwn/u/IE
+ pH/bliZhJjVtKoFGPk1ox2Wn4v/TMvBxRvUrMMSrcsGlMbLGXpePC5cXdREHKDxnJtl8
+ rQ2HK6YwDI/YB5pcQ+pRqCXBB1xpxZkC/QTEMtL5nrf7XXEOhJS3kt21hQ177eRKQNeA
+ d8ME2pvjy8vfez7AOeid89GHQFsdTDRGD+oMmAqFAY72v8xXdomo5CKnRVT2/GQzr0FT
+ ++Rw==
+X-Gm-Message-State: AGi0PuYlCVYtsSz6LpQz5rbAJIy1MOhqaeYFt+nYeev2ni6aSj5L6D6w
+ 5TnAN3zOmGgFgA6SjtWMl/A=
+X-Google-Smtp-Source: APiQypLR+uWxiXs63aPjYfFPWMFe2n0Nn/f6HhopnZJbUeLcgUQfMkrWPO84Tz3WWOc4Hxo4F/dUmA==
+X-Received: by 2002:a5d:658e:: with SMTP id q14mr25214585wru.92.1586876897235; 
+ Tue, 14 Apr 2020 08:08:17 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id g74sm19229868wme.44.2020.04.14.08.05.17
+ by smtp.gmail.com with ESMTPSA id m14sm17431931wrs.76.2020.04.14.08.08.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 08:05:17 -0700 (PDT)
-Date: Tue, 14 Apr 2020 17:05:16 +0200
+ Tue, 14 Apr 2020 08:08:15 -0700 (PDT)
+Date: Tue, 14 Apr 2020 17:08:15 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Dmitry Osipenko <digetx@gmail.com>
 Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
  Tegra210
-Message-ID: <20200414150516.GL3593749@ulmo>
+Message-ID: <20200414150815.GM3593749@ulmo>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
  <20200409175238.3586487-10-thierry.reding@gmail.com>
- <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
- <6976796c-6972-328e-3e9f-60c1737cf0e2@gmail.com>
+ <e015e35b-3f82-56e1-2d86-ebc467eb92f7@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <6976796c-6972-328e-3e9f-60c1737cf0e2@gmail.com>
+In-Reply-To: <e015e35b-3f82-56e1-2d86-ebc467eb92f7@gmail.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_080520_155417_2FEA90FC 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20200414_080818_526758_C03E37CA 
+X-CRM114-Status: GOOD (  14.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,92 +106,72 @@ Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
  linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6817736749206469243=="
+Content-Type: multipart/mixed; boundary="===============9169072578923982654=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6817736749206469243==
+--===============9169072578923982654==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Ms5iOKSBOB9YS8zC"
+	protocol="application/pgp-signature"; boundary="75WsOQSofUOhcSOp"
 Content-Disposition: inline
 
 
---Ms5iOKSBOB9YS8zC
-Content-Type: text/plain; charset=us-ascii
+--75WsOQSofUOhcSOp
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, Apr 11, 2020 at 11:39:08PM +0300, Dmitry Osipenko wrote:
-> > ...
-> >> +#define TRIM_REG(chan, rank, reg, byte)					\
-> >> +	(((EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> >> +	   _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _MASK &	\
-> >> +	   next->trim_regs[EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ##		\
-> >> +				 rank ## _ ## reg ## _INDEX]) >>	\
-> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _SHIFT)	\
-> >> +	 +								\
-> >> +	 (((EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
-> >> +	    byte ## _DATA_BRLSHFT_MASK &				\
-> >> +	    next->trim_perch_regs[EMC ## chan ##			\
-> >> +			      _EMC_DATA_BRLSHFT_ ## rank ## _INDEX]) >>	\
-> >> +	   EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
-> >> +	   byte ## _DATA_BRLSHFT_SHIFT) * 64))
-> >> +
-> >> +#define CALC_TEMP(rank, reg, byte1, byte2, n)				\
-> >> +	(((new[n] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##	\
-> >> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _SHIFT)=
- & \
-> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _MASK)	\
-> >> +	 |								\
-> >> +	 ((new[n + 1] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##\
-> >> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _SHIFT)=
- & \
-> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _MASK))
+On Fri, Apr 10, 2020 at 05:25:06PM +0300, Dmitry Osipenko wrote:
+> 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
+> ...
+> > +static int tegra210_emc_remove(struct platform_device *pdev)
+> > +{
+> > +	struct tegra210_emc *emc =3D platform_get_drvdata(pdev);
+> > +
+> > +	debugfs_remove_recursive(emc->debugfs.root);
+> > +	tegra210_clk_emc_detach(emc->clk);
 >=20
-> What about replacing those barely readable concatenated macros with a
-> raw values?
+> It's great that you want to make this driver modular, but I don't think
+> that it's a good idea to suddenly rip off the EMC clock from the users.
 >=20
-> Like:
->=20
-> TRIM_REG(brlshft_idx, ob_ddll_long_dq_rank_mask, ...)
+> It should be better to simply disallow unloading of this driver once
+> it's loaded.
 
-That's just going to move the complexity from the macros to the
-callsites, isn't it?
+That's not what we're doing. The clock is going to stay around and users
+will be able to access it. The only thing that the above does is take
+away the possibility to change the rate of the EMC clock.
 
-I suppose I could spend a few cycles trying to make this a little more
-readable, but to be frank, the complexity in this driver is already so
-high that this doesn't really make much of a difference, in my opinion.
+So I think this actually makes this really nice both for testing that
+unload/reload works and it also gives users an easy way to disable EMC
+frequency scaling by simply blacklisting the module.
 
 Thierry
 
---Ms5iOKSBOB9YS8zC
+--75WsOQSofUOhcSOp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V0SwACgkQ3SOs138+
-s6Ef9w//fxlmCh7FtrH73REQqtD+jRwwLCO5WMC+EHjBY4EUR5lv5mZnrA0uIaBc
-FNV4X8OExlN0dMsbYdRTp9CJO7Q8IPggLgaGJQOrR55cT+K8EUXhUPuRPyt83PNY
-2x5zUNxRJzxmVqH8OUrknejB/2bedly4MvLNz2rDo9orQVzGRCW05kl9sQmLTl+k
-ieyYqweSPPRMw/tgomH2tAz5SaQqnXvv6OK/7JD0Ic9eFBjm2R526wNThK5Tmmzm
-jpKuyQv6tksZ5QqLouZHvJIBxN54gF55p57v5SY1LFoj+8Aas1GtdbO9ioKvM86L
-OveTWkfYxQUHMDITXcpvnCP3UJOWygeuqxb1azRphChylfgtcppQN/od2ms0AJ0t
-femDyT/oDOUbNtwau0hUpckUD3Iag0IkBxu5RKa0aOzQwtxqy0uAL1Oi6qbmYJnN
-gzy0PfSnDJqUsIuVxt+S1fKZwnMsCFeGvvqe8IH04drmxLbg1z3OqbCJeBV3xNyg
-mK1tsOoFIBnr8nf7ZHODgp5etjxFofaSHV5Ox8oFhNutC+hpmLi5/rQ90P5Jxu/L
-3qUkOEGo+MzCMXiUEgJmKjWFLdTxlAQxH3Kq8KnjaedTBgU9NVKvJr97aTWMo/NI
-hq9dUvpBJcU01rW0hwcuoeEFOO0ntQo4RzH9ugOBZLQ/Wx1/24A=
-=ktP9
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V0d4ACgkQ3SOs138+
+s6GsWw/+M5/HCC6YVqevVHN5rlOJp1Ymn8G8PfobgyJaQ+IQ5YBian1VcklzBhNx
+jqEPh0NaQTMm8Lq30si3Es6lnPugjOhhsYpGP2PVQ8Fpgr33hqoileVYzHYe4uMP
+uk7SUYzZMoBAdO936koxzvfVIS86NGqzVciHH7xDQqndF1PoRShxkHA+Fmg7FuwA
+BNKrTPyYObiEZD0KO45fHkyWxrBl7lfk6Qm9gMyM5wpp80JHI/gGkmE3kUocMW/w
+zYXnGLES5NcrDgBDv1aRAlt8pafa1TrFtZIpADX2Y3q533/TEojbb3f9BtYkLCAP
+8cfmAfFdHK9gOo68OGpPFePzFZRYdxEH3xCGOsISgMoE5PRIKpLhVZW1/zlaVGHG
+yQUuKR2c/G+qlPgD1vb42B7b7cPmA3DU7KGZn7aUhDTuR8ovDd29Xzzqzvf9Gq52
+CKZFYirYrVuNF4Yu81JCQejfoOy3dah1EILZ/H4rwsIZGbNmzNt8uMPJ9/b0UAht
+9aCgJJC05SNFFeWT7PYgleJHLLl5zpdStTbZgSHdjyS7az2+hTCU/ZxEFVUbfARp
+yMauGoTgjC+Tmlo2i8u/TO91xvVVLx0jnhAT9QETnjYkTZtr1T5h8jh9u2EIguHb
+oFtPdGtkf4+73XZxomkd6XA3sThbRwKYCuzJUIupCz+fwe2ByZQ=
+=UtAs
 -----END PGP SIGNATURE-----
 
---Ms5iOKSBOB9YS8zC--
+--75WsOQSofUOhcSOp--
 
 
---===============6817736749206469243==
+--===============9169072578923982654==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -204,5 +182,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6817736749206469243==--
+--===============9169072578923982654==--
 
