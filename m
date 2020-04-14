@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED05B1A86F5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:07:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5FB11A86FE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:08:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H7n7BhHVaPfA/xbDvfnSfwLvPeCUecGikCemgCr+1rI=; b=YeXEpDZTpALa5F
-	hual/cpFo65EB0bdVkACD+LlryxgWrbsE+PbDmnf6hmwXhri6Pk8Y93OZRXvwh6KZibPWyqR9mTq0
-	r2gMDygIwR/VIYLt4m+rwZZF12rX/v3xk2SsTVUzOqahZpVt94N3vec+HGIDJag4lUHD/grngBdyV
-	rdf09H+7XV3qHzMChSG8LyO/LuqO0coFnctjA9DjonxiwvpfusXj2AYUx9YsNCGR4jDG5dRcTcg6E
-	tf8wP7DGJHCUGFnY/BIadQurb/opIupPasqRSoVAkrmNcCDscdhwwUGAPgs8cgX7nT/efrlGBy/xv
-	PMAJTedxEQRBTVj6/6aQ==;
+	List-Owner; bh=S3osgJnt8YOl5i5Tso1WjOJuEMkAheHaDseYn+K++QI=; b=gr0B/nVhDn7rda
+	nYTadK9eWMIkSCkUoTVlT1dGBxtzGJnzF+tn99u2ReZpUY+ygSrgcLNtOwbjmhJuhzDlP9RXkrjv+
+	nX5ADOpwJs4F9biMIypqq0aWe5dD0IKwwLmYzjh6eFc8NmLYQmBUSAugVLJ8hGwCaTUtEuVHbAwwy
+	P2UQCUGUkLgtJIhN2DJ+CXIEFuhWcseqidrsydevekxLFwn2GeJrIq2d0fJ83FoNXBTT5GLv9ZWRg
+	gXnKo8diLDLy6q/FPOOLQ0dRpEXNXIKqnzaiGDDucjidWyp1C9G+NR0qDzyWu/qBMrs9WOala7X5U
+	lDCude36M/EZ3FejIjhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOP21-0007CR-FF; Tue, 14 Apr 2020 17:07:29 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jOP2a-0007nH-QP; Tue, 14 Apr 2020 17:08:04 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOzA-0002AD-TU
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:04:36 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a201so14546831wme.1
+ id 1jOOzC-0002Cc-F5
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:04:39 +0000
+Received: by mail-wm1-x343.google.com with SMTP id x4so13827175wmj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 10:04:32 -0700 (PDT)
+ Tue, 14 Apr 2020 10:04:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=uHUqHTfoGR+1ZkqPou9Z5HBhwxdn8u/b73K/p08vGt4=;
- b=hSOw4eWIOpcUGkqXNPQ9dtdmR/ipT2mxWsiI3pMLVH0qgRPNjHSMENCRjHZ4NJar66
- 7/UT+rWF0VVOTwd6Qq1Ko5BGuW+jxJLwAD3xaf5wYQROloGanuLGb7IPMnVJv7HK78+I
- 6ngZrW4BxXtksLmLmfoiWffLmjWadvjH0C7qLcRN+lO7dVaEm1JGvGctjkYtl4N944aK
- W3n+wj6bEmpU/CznO6UiFv/JDUuQBgZiEQyXklusRoJ6jwr/CH6Wy/hgVNh5izNnczuz
- 90748Du66RWc5+QokDus/aLjad+8nROeHW3JEc7vfg8mwm0Xu+810td/BaN7JKL0CQ6H
- pY3A==
+ bh=aOn2/ivBf+XmB6Al4WmdsHcps0QyIiLuo8qefeV2C0s=;
+ b=Z0Yp2WFwHT70u0R7Wr7R5AhtdbVQPNTMNufdFuXd+ENpRenI7zcZxRtj1eDH/8DVxK
+ w7N9nOpW7sEG9K/u3l1KC6rScagAtd4Om9U5KNXAa5xEBG0aKQFAomBQj49jMwAx80bm
+ VnyWFWc4Yzp3RbBcbzqkmhqjzSXUGlBrfV9Kgixw0dzjGUnOx/ApPNVuQ8gPPBhxSY5/
+ 4wGrHj0nf+rS03Agdvzb84edls0jQzbEhQ/0sOzl94i50gjL44IGJs4I98eE/dCmXuXl
+ D4QQcRCEFAxwwKcohtYfh0JlVaKZdefOyxLVJTOa7V2u0lkZCvT24PKYz706K9mF45p0
+ UpIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=uHUqHTfoGR+1ZkqPou9Z5HBhwxdn8u/b73K/p08vGt4=;
- b=LISu8jd55zLwjeZ/qHLoAGUDwSydIMMyfhfDcqWVED0CWm2OfaU6IZf3hbROxPGNw6
- 7RAhIr4NFYPUQQvxZv+QbJ+o4UGEIdhoIBMOKr59XoORmXipGNOG4lgV66vvPdjJHWRQ
- LW1i8thyQ6goyMOP7GCgZQ9sCXRBtsOxI7iQA8WjSpXkZ/LNXI0YkUIvoaEjDQQ4Aies
- a/ThjV5NqaMSjugMS+qqTWIq+y5t3MLQ8LPR/Refdla0yk8/eeImfUSq8+2ZmQKvwrUU
- /WADg5QQrFtydgigl5PRrs/860pJr1GdCM0GxUTmzQI85XXls7lp14wzRLDdRFxcNMDk
- XhYg==
-X-Gm-Message-State: AGi0PuaFVTT9xdi5kVs3NEXVRmLGNaGL6s5McYavv/W5dU730m17lSpV
- //ZW6KuOnXugvVI9sfbs+Y06ow==
-X-Google-Smtp-Source: APiQypKS0JuC3gKtoh+XCp+shpu7gwSGraLZSLm/eXL7WMGLNhlt6UWbZ/JnbP6LfEz+El1lwsxHkg==
-X-Received: by 2002:a1c:2506:: with SMTP id l6mr784909wml.44.1586883871278;
- Tue, 14 Apr 2020 10:04:31 -0700 (PDT)
+ bh=aOn2/ivBf+XmB6Al4WmdsHcps0QyIiLuo8qefeV2C0s=;
+ b=uTQIuCcfvUuj+nYi4giCjsnbAaYecMIt6yajRKTh5xTiGrKyk+F+oLUsxmQtgREmR2
+ RXKceqWYK6aroLNYkYpNSCDlmB0mVJFu/6964cazmKPKsNHSmDqQcmldfHVNPI252OD+
+ mj/M9PX7XWjghMLCS/L8uFab3MWvzwgu1sjiJutGwwEIU79rfByVyoISvWvknrpe/qny
+ yvIbqZKviYsNgjA321uH7EnOG/mEp2B2RfsPLlXho0b3yvxkL+HtsCV8BSYhC3NYNECK
+ oQSk2ON4R2OL0Uzm0zuKizIujIIG0ERxAHiucsJBvnMxHgokxkT7AGfI2v8+86Lde6SB
+ NbxA==
+X-Gm-Message-State: AGi0PuYdteZOvxAhg+Pxm7vMES1eyjatMrtoRwllzax1AmFEgqBjWV4b
+ fEyxpKoMHlBazI9/BvdhVGJbuw==
+X-Google-Smtp-Source: APiQypJHABOUo0l69p8cEPC/4JaEesvnVVdt7c8KNCFhOJxICd+3rtd3OwSved0AadUjHTnKij1dPw==
+X-Received: by 2002:a1c:e906:: with SMTP id q6mr776151wmc.62.1586883872984;
+ Tue, 14 Apr 2020 10:04:32 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:226b:54a0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id x18sm19549147wrs.11.2020.04.14.10.04.30
+ by smtp.gmail.com with ESMTPSA id x18sm19549147wrs.11.2020.04.14.10.04.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 10:04:30 -0700 (PDT)
+ Tue, 14 Apr 2020 10:04:32 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v5 10/25] iommu/arm-smmu-v3: Manage ASIDs with xarray
-Date: Tue, 14 Apr 2020 19:02:38 +0200
-Message-Id: <20200414170252.714402-11-jean-philippe@linaro.org>
+Subject: [PATCH v5 11/25] arm64: cpufeature: Export symbol
+ read_sanitised_ftr_reg()
+Date: Tue, 14 Apr 2020 19:02:39 +0200
+Message-Id: <20200414170252.714402-12-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200414170252.714402-1-jean-philippe@linaro.org>
 References: <20200414170252.714402-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_100433_049865_42E28BB7 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20200414_100434_531397_A8F0DD6E 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,102 +101,37 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, catalin.marinas@arm.com, joro@8bytes.org,
- robin.murphy@arm.com, jgg@ziepe.ca, Jonathan.Cameron@huawei.com,
- zhangfei.gao@linaro.org, xuzaibo@huawei.com, will@kernel.org,
- christian.koenig@amd.com, baolu.lu@linux.intel.com
+ jacob.jun.pan@linux.intel.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ catalin.marinas@arm.com, joro@8bytes.org, robin.murphy@arm.com, jgg@ziepe.ca,
+ Jonathan.Cameron@huawei.com, zhangfei.gao@linaro.org, xuzaibo@huawei.com,
+ will@kernel.org, christian.koenig@amd.com, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for sharing some ASIDs with the CPU, use a global xarray to
-store ASIDs and their context. ASID#0 is now reserved, and the ASID
-space is global.
+The SMMUv3 driver would like to read the MMFR0 PARANGE field in order to
+share CPU page tables with devices. Allow the driver to be built as
+module by exporting the read_sanitized_ftr_reg() cpufeature symbol.
 
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 27 ++++++++++++++++++---------
- 1 file changed, 18 insertions(+), 9 deletions(-)
+ arch/arm64/kernel/cpufeature.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 60a415e8e2b6f..96ee60002e85e 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -664,7 +664,6 @@ struct arm_smmu_device {
- 
- #define ARM_SMMU_MAX_ASIDS		(1 << 16)
- 	unsigned int			asid_bits;
--	DECLARE_BITMAP(asid_map, ARM_SMMU_MAX_ASIDS);
- 
- #define ARM_SMMU_MAX_VMIDS		(1 << 16)
- 	unsigned int			vmid_bits;
-@@ -724,6 +723,8 @@ struct arm_smmu_option_prop {
- 	const char *prop;
- };
- 
-+static DEFINE_XARRAY_ALLOC1(asid_xa);
-+
- static struct arm_smmu_option_prop arm_smmu_options[] = {
- 	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
- 	{ ARM_SMMU_OPT_PAGE0_REGS_ONLY, "cavium,cn9900-broken-page1-regspace"},
-@@ -1763,6 +1764,14 @@ static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
- 	cdcfg->cdtab = NULL;
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9fac745aa7bb2..5f6adbf4ae893 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -841,6 +841,7 @@ u64 read_sanitised_ftr_reg(u32 id)
+ 	BUG_ON(!regp);
+ 	return regp->sys_val;
  }
++EXPORT_SYMBOL_GPL(read_sanitised_ftr_reg);
  
-+static void arm_smmu_free_asid(struct arm_smmu_ctx_desc *cd)
-+{
-+	if (!cd->asid)
-+		return;
-+
-+	xa_erase(&asid_xa, cd->asid);
-+}
-+
- /* Stream table manipulation functions */
- static void
- arm_smmu_write_strtab_l1_desc(__le64 *dst, struct arm_smmu_strtab_l1_desc *desc)
-@@ -2448,10 +2457,9 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
- 	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
- 		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
- 
--		if (cfg->cdcfg.cdtab) {
-+		if (cfg->cdcfg.cdtab)
- 			arm_smmu_free_cd_tables(smmu_domain);
--			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
--		}
-+		arm_smmu_free_asid(&cfg->cd);
- 	} else {
- 		struct arm_smmu_s2_cfg *cfg = &smmu_domain->s2_cfg;
- 		if (cfg->vmid)
-@@ -2466,14 +2474,15 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
- 				       struct io_pgtable_cfg *pgtbl_cfg)
- {
- 	int ret;
--	int asid;
-+	u32 asid;
- 	struct arm_smmu_device *smmu = smmu_domain->smmu;
- 	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
- 	typeof(&pgtbl_cfg->arm_lpae_s1_cfg.tcr) tcr = &pgtbl_cfg->arm_lpae_s1_cfg.tcr;
- 
--	asid = arm_smmu_bitmap_alloc(smmu->asid_map, smmu->asid_bits);
--	if (asid < 0)
--		return asid;
-+	ret = xa_alloc(&asid_xa, &asid, &cfg->cd,
-+		       XA_LIMIT(1, (1 << smmu->asid_bits) - 1), GFP_KERNEL);
-+	if (ret)
-+		return ret;
- 
- 	cfg->s1cdmax = master->ssid_bits;
- 
-@@ -2506,7 +2515,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
- out_free_cd_tables:
- 	arm_smmu_free_cd_tables(smmu_domain);
- out_free_asid:
--	arm_smmu_bitmap_free(smmu->asid_map, asid);
-+	arm_smmu_free_asid(&cfg->cd);
- 	return ret;
- }
- 
+ #define read_sysreg_case(r)	\
+ 	case r:		return read_sysreg_s(r)
 -- 
 2.26.0
 
