@@ -2,87 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DBBE1A8510
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:33:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FB261A8528
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:36:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OwxT8DLawW8RvhZ82VUjpz/U0+SC/U3jx/HeJ3gu/44=; b=gKm822a+PrA58/
-	9IsE/68nC2Juxz+9v8GjOei21J2lwxqFJmvEmuUg8y2yob9jNaz4Ei7gRqFvenVXO2qEZd3L85HNt
-	+ukpJCwMTlgEkwx1B5gyF9etCbtn3UbTmxbY6Mw5KNHCrzr/Dmrx3RVkgzcUn3n4ZOrhjwk4X0Qlv
-	gtvoVWQGyqQG5dv6QSCGFRFABMktdcONPFTs/Jtr2qZ29es05xK/XFX4En7dj1ryHLUL/hP/QIFhD
-	/GMGFqa0GpdP+87ETY5DiJTbgCCBjfwd2h8kJIR2O0OeePY6TCMCDjIVLRXZymdLbvR7qZMLvCqeu
-	bDc72y4dn9eezc75td6A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iuzipL8R8pDdGwgIqVExSvXcClwHBU4cyhpIBz+kVFE=; b=tJsqvb8s2yqoXa
+	buYfKfLEVoKvE8HZcnH4ceB3eFJPq2Pd82GWhHkvoNZPvCu+0VFoqlhOLMdPWYz3ctY2i3aK8cs6V
+	TCjplq9tXkR1feW0ZXtaBvmPzOkouq3FPQd396TZgBrtVVDQ8kwfkR3Tbg0POyqjUqpstDvpOE1Ml
+	gvENRaBZmRGIioZ90kc+Ew9p0DmDJv8ZGu4LiMy+1pI1yvsOMqZqpVsRgavxzoALI9/FNMR8x+yEv
+	F/IziCjmQEDViKSTLzYttlAJl5bWUBrxMBH6qxUqvtvjj7fngNrimta6teyCko1QBfB4j8Ja0aUcA
+	jw/DRLtS8nSmB1mC4mWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOUu-00046q-UQ; Tue, 14 Apr 2020 16:33:16 +0000
-Received: from mail-ua1-x94a.google.com ([2607:f8b0:4864:20::94a])
+	id 1jOOY9-0007IX-AL; Tue, 14 Apr 2020 16:36:37 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOUo-00046V-37
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:33:11 +0000
-Received: by mail-ua1-x94a.google.com with SMTP id g14so216030uaq.5
+ id 1jOOY1-0007IC-CR
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:36:30 +0000
+Received: by mail-ot1-f66.google.com with SMTP id j4so202057otr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 09:33:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=C/WMPxWmNKBqJ/Zz9SNZ/9dLp/Pjl7eWvbmkGXyv5l8=;
- b=gwOWdDcr8K2xj9bCTj7H5OL85GAIl6qKwa9aYWhyWu1Rn5CPfXHvSHlcLupYSb+aNy
- Hhvbi7HVhzDRTVj1FQJhmoVvVW0EJ45dX1P6BDPkSE/+XklQDRWskVCf0zeCRRdQvXog
- iBOjzhbsYUBtOdcFJnwtrxajIPEzSc58MWMoqofCIGjCmQuLE4DKZhCRSNAydisOSAhj
- ILLq36JK5Ke6AD0l/kg/Z6WzFiIqOig6iBOEeLGDDrBw762y0GBLAH+Bb0+ynatGlrkS
- C+e9T2LfS+F5yZTVUFEwAnkfN0fe5gOmUNc7Bcu1aYgve/Lj9EmOsoX83Q5BObCWGYjs
- 0M2g==
+ Tue, 14 Apr 2020 09:36:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=C/WMPxWmNKBqJ/Zz9SNZ/9dLp/Pjl7eWvbmkGXyv5l8=;
- b=O7Z8fmzGmdXJFFVW0iN6nvxDeLFgMCfiPq3K5LjEai+GJWioPHL3p7yfFbOuegwtMM
- yqTLu7wbMxj8djXv1on4gLUYm0FupW1FuTbwVQ8jDTbPbHSdVamIJNduCmm2E74bduX8
- L0sUkJ4T83phzu7QWM0I6ekZKI9QbtQ80q3eUxqkOnWkcb7W9aGm7I9k1ikOyfNoC5Mv
- uJxQz12JHW6LYhzTKrO2IGzPEb233Gd5cw5LaAOwmVChh6xTRCapVfn0XcGkQxJ021/T
- SK+s3tWK0agTmkJRJIe6OYPEsxgsPvcMMD7jYMJ4sYhQnTg856EP7hGjUOwqyLZWHmlz
- zQ8Q==
-X-Gm-Message-State: AGi0PubIsinmk+2zlQFU0GB+Vc+DxzBGH9o25lpT2DouWv+VqDLRDjsR
- sTW4YUOnxMIEAuR1z3sHTUeFXzHeyZxyf8Fc/+5fH5f+haF78XerBFdD1ogJv1My4R7xFsLrmy/
- j/s+iaUCW4keRb3DvPf8YZZ/OZVpJrPke+UTjBVDSRZlqVNOgGPtyiXZe+xgBPj5I2DxUmVBhmZ
- +Qg/Eh//I=
-X-Google-Smtp-Source: APiQypL2292vcdQOPgM/pbOZPk9A8GWPQ48YdWAzRpisGiQjViIba//xyUIANE+PSCLKQ5rg8OUQVFnSzjm+
-X-Received: by 2002:a67:2284:: with SMTP id i126mr890118vsi.223.1586881988191; 
- Tue, 14 Apr 2020 09:33:08 -0700 (PDT)
-Date: Tue, 14 Apr 2020 09:32:55 -0700
-Message-Id: <20200414163255.66437-1-maskray@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.26.0.110.g2183baf09c-goog
-Subject: [PATCH v2] arm64: Delete the space separator in __emit_inst
-From: Fangrui Song <maskray@google.com>
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5JeNccLd8aWL/q2I0Uphl5Xh3ywOX9/yfdTm/7l6/XI=;
+ b=VPdm6xOvFPzTrFPvi/QWS9LSvbQRmMcrZ5euSIUNDmJ05o+9Jtzp6K9qbcp31AQ3tc
+ Ra9ldoyjAmMvrWxB+lKWaUuFn7qno2Ko3GbD6lE0dCPgxhH7n+c3SWOai8qOiaHKteGY
+ vOkmPCwDx40OF//sB3Ry8LaHgrwhnpM/rUx2GT5tkHSD5xi6iZ5RF1FKcV2jxd2VeqZK
+ NivoWkjYieHzItQ4FMvy+UZ1RCkBNpKsZcAwiPJLRTBLME8k5Cbf9WYV5DCRwQoR3COx
+ EtPm0uXVPuDlVKWsOr9mxxc9R1ZARfi9Ll0Une6InIVCtVT4W5FnqJ3sHMAuQu6xnFfK
+ XvQA==
+X-Gm-Message-State: AGi0PubVlAt4AM4CfexYKrGjoi/d4kDbVLtBc/nknpmPjTA0rooxs+RN
+ BT4Gy7Shp1uYtS1SgpLGhw==
+X-Google-Smtp-Source: APiQypLvmzuIr2B3MuICj58NF+sqsPGPZR1D382m0X0wuXwjQvpVcD5kduqQRrGmHS7qQc+zq4tyHQ==
+X-Received: by 2002:a9d:58c:: with SMTP id 12mr19943668otd.156.1586882188166; 
+ Tue, 14 Apr 2020 09:36:28 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id l188sm5726102oib.44.2020.04.14.09.36.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 09:36:27 -0700 (PDT)
+Received: (nullmailer pid 32342 invoked by uid 1000);
+ Tue, 14 Apr 2020 16:36:26 -0000
+Date: Tue, 14 Apr 2020 11:36:26 -0500
+From: Rob Herring <robh@kernel.org>
+To: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+Subject: Re: [PATCH] dt-bindings: i2c: cadence: Migrate i2c-cadence
+ documentation to YAML
+Message-ID: <20200414163626.GA27722@bogus>
+References: <20200401134222.60317-1-iwamatsu@nigauri.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200401134222.60317-1-iwamatsu@nigauri.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_093310_156312_3D5D125B 
-X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-CacheID: sfid-20200414_093629_418820_51D89097 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:94a listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,73 +95,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Fangrui Song <maskray@google.com>,
- Ilie Halip <ilie.halip@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>, Jian Cai <jiancai@google.com>,
- clang-built-linux@googlegroups.com, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, Nobuhiro Iwamatsu <iwamatsu@nigauri.org>,
+ Wolfram Sang <wsa@the-dreams.de>, Michal Simek <michal.simek@xilinx.com>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In assembly, many instances of __emit_inst(x) expand to a directive. In
-a few places __emit_inst(x) is used as an assembler macro argument. For
-example, in arch/arm64/kvm/hyp/entry.S
+On Wed,  1 Apr 2020 22:42:22 +0900, Nobuhiro Iwamatsu wrote:
+> The document was migrated to YAML format and renamed cdns,i2c-r1p10.yaml
+> 
+> Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+> ---
+>  .../bindings/i2c/cdns,i2c-r1p10.yaml          | 58 +++++++++++++++++++
+>  .../devicetree/bindings/i2c/i2c-cadence.txt   | 28 ---------
+>  MAINTAINERS                                   |  2 +-
+>  3 files changed, 59 insertions(+), 29 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/i2c/cdns,i2c-r1p10.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-cadence.txt
+> 
 
-  ALTERNATIVE(nop, SET_PSTATE_PAN(1), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
+Applied, thanks.
 
-expands to the following by the C preprocessor:
-
-  alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
-
-Both comma and space are separators, with an exception that content
-inside a pair of parentheses/quotes is not split, so the clang
-integrated assembler splits the arguments to:
-
-   nop, .inst, (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
-
-GNU as preprocesses the input with do_scrub_chars(). Its arm64 backend
-(along with many other non-x86 backends) sees:
-
-  alternative_insn nop,.inst(0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
-  # .inst(...) is parsed as one argument
-
-while its x86 backend sees:
-
-  alternative_insn nop,.inst (0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
-  # The extra space before '(' makes the whole .inst (...) parsed as two arguments
-
-The non-x86 backend's behavior is considered unintentional
-(https://sourceware.org/bugzilla/show_bug.cgi?id=25750).
-So drop the space separator inside `.inst (...)` to make the clang
-integrated assembler work.
-
-Suggested-by: Ilie Halip <ilie.halip@gmail.com>
-Signed-off-by: Fangrui Song <maskray@google.com>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Link: https://github.com/ClangBuiltLinux/linux/issues/939
----
- arch/arm64/include/asm/sysreg.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index ebc622432831..c4ac0ac25a00 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -49,7 +49,9 @@
- #ifndef CONFIG_BROKEN_GAS_INST
- 
- #ifdef __ASSEMBLY__
--#define __emit_inst(x)			.inst (x)
-+// The space separator is omitted so that __emit_inst(x) can be parsed as
-+// either an assembler directive or an assembler macro argument.
-+#define __emit_inst(x)			.inst(x)
- #else
- #define __emit_inst(x)			".inst " __stringify((x)) "\n\t"
- #endif
--- 
-2.26.0.110.g2183baf09c-goog
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
