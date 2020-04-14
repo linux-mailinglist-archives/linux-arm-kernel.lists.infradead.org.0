@@ -2,86 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 825871A87D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:44:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296F11A87E6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:47:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGeILkFXXYE7XdKEUi+MuQ/DBxrxFgAri8hoJpyOx7g=; b=t4a+HXUmi4ASqq
-	MorYtkOUX49CAk9IMQ1HTfdqboNdhWq3KBjv8mA8Ckj/2CIaWDVblWTibJwjx4+8fUPTC4RmLMFYj
-	hAmXMudcc/UMamwSvmstyvpcOCh5ab3TnWZHvsZqXau/RQlhJ9obtK8OXbJd0vVG0lvVbQMrNuXRN
-	N9KTGp4iZWb7J4GkRGaqs9X3Z1xwRAYaDg8m+y/BBhFCjnaxc4WtM4s6d/z64+PUj3TZ8fgA8Cd/P
-	YFTS4pi8n00BGQPcA9v0dKTchWH0HTT7SeWFLDSu3FUw1ACV0+n82CG0iFp6fSxs7BUECsbMn8GIu
-	YgiM1Z6Cop4j9COe8uNw==;
+	List-Owner; bh=iPjnD/JuT6wQR8sesVANQiVQ1Oka0KvZ8tdIG6k+dpw=; b=KXiycz8y5VMsMq
+	pLMeS9cwa1vtA3IJXvBef946V0F9tXwqdBl6nrMKEcSMD5cEE6WxT7dPT4M93RYFfffoz2cEERCvx
+	zCke4E6QDO1LzBNXRzUdaIkOdBrXsTPNk5TiHFOUFG4zkjSNwz4XwIAO/bOPbaJqeIlbkQcSPmQ6T
+	j1jk69V11aK11DR/vN8JY3hLPYHrwNbGzdBei0Di1NhzhiU2Now7iUhhuNOOMBFxgdMg180nII2n6
+	0YfT42c73y6NddOG2N+mW8dDVMG9Les5F1/ykp/VaOgXjg9Em/3Gh4Awmtz1VCjBIGIoLEdK2ndaF
+	IZvVlNCcrRWQiEV3U/Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPbP-0004l1-Ey; Tue, 14 Apr 2020 17:44:03 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1jOPeD-000054-Db; Tue, 14 Apr 2020 17:46:57 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPb4-0004ii-Cg; Tue, 14 Apr 2020 17:43:44 +0000
-Received: by mail-ot1-f68.google.com with SMTP id i22so451356otp.12;
- Tue, 14 Apr 2020 10:43:41 -0700 (PDT)
+ id 1jOPe4-0008WC-Pm
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:46:51 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id z9so5529552pjd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 10:46:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=uUqCLEUu2H6lIfzOkbWN7RXqGhP5oga/oBPmYfH4Jc4=;
+ b=YtNO9P2nJRzVJ8hBQ5mtlbfJJloopvXLHBin+Ugrh/GQ81x0Cihhmo+01EpwxacrTZ
+ LdLoIM5B3npC8XH+Ww9P9u3bg3PnWa+x7Ch7IUyiBFQKSc7c8CSRS15byzf3cJQP1MG/
+ 1Rpk21q0DdVF+HhHZ0OVvb624Lkv5N2A2x48bAiljEl6wohdfLdCtN4w2aWNXfucQVFJ
+ ldxKUlND6Qk4k07NbHnsBLiI/p8oMQNHsiY4vaa71yBMfGY1qbyARBTAbm+IfkIKy+5p
+ 5VVhupJNQjGE927s4hGvN5fXAYSUvrLdYDeU3NjBPgp3VwxvFCCP14lprV6FPuY/NMt8
+ 4o5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=CRHsdXgHa+vlx10diMU/bK8sKF7Wucha61AmLhZ8R5U=;
- b=KomF+wPCYS0S6OIWOpo97TthfhQuFI/8FxBtM9eaNOUB/vSJwEcQ7OHcmGrTHY63E5
- 2Kl5fZ5SnA/J4GKd65OZaHmutBMHHmuWGESmD70YHSMpR8zAKGljKcuyytK9oEF2uPHV
- sgKhud0WXHvCGfZ0Mb1MvBfpze07WhbN4gQROKn4mtnGl9hQE+m2JCbMYl87IP4LQnkE
- i5Nmbust+OXHUcZKobEA4vXqgCjPfohoe2gECf62m9evMeGbBudPOD+VAFRfaHibvz8N
- 4ieOu0wBX5Mq1wd3L8RmnDpSvfZ5JZ5sP1b1gYX31Ol7fzeZzSB+dxt9G6a3PsJ8cuq5
- TiCQ==
-X-Gm-Message-State: AGi0PuaLxjgvcT4nkDZvPjd3aOOkEOqmJuZKcaLLodsdrqDU0aj/otcw
- +IQO90UrhdV7SRZBHFFE5g==
-X-Google-Smtp-Source: APiQypK2V5U3/0zVRuO5nJ300D760b8P59trd/OCGqtKVr1uSq3uAqJnaCUmN0kI3wtf0QF9nN+o7Q==
-X-Received: by 2002:a9d:aa7:: with SMTP id 36mr15848070otq.142.1586886220895; 
- Tue, 14 Apr 2020 10:43:40 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i7sm5707906otl.12.2020.04.14.10.43.39
+ bh=uUqCLEUu2H6lIfzOkbWN7RXqGhP5oga/oBPmYfH4Jc4=;
+ b=aUOslBJrqh5b2AW5A9qgDnpQbdGhTiuomi4x+jl6YTFdtr0fOREhuQ31Fl1JowGetv
+ A3fB7vGKzHUotkeLtfO36wqhElY429sRQS7O9acpGl+YUHzYND3ggc6RWTsl/StVbjj+
+ 5/WRZu3lXMWFDH//p/KB02YamxLpLm2WyqX+yhxxwCBBTsRqvRHUgZ8LqyzuHqnLT6TI
+ ZU7ya/NXEBJo4h6A894YVwd4CPn5+nJWo+KjO2LkjMWRTYg7ZyHtizweq5c95AouiB5+
+ NTsGhMtq5x2lfGe9k3fGf7NIxP7GiD5n4o8b1kEY0THCHFX6CgrilNvLh7L8vOfK77jw
+ EANw==
+X-Gm-Message-State: AGi0PuZpI3RLWLAKKj9KxM3nQ6sbuOmWiNi2HXZoe49vFkytBS4FmAcZ
+ tcLEp0O40gHtww0cDNdGtw7LYg==
+X-Google-Smtp-Source: APiQypLLGfXEXNefPbevmRPO8sLymk0b/mFL5I49TZUSnnbR2+/ON5Bg4/ow29/RTFxpi8SAsxbUqg==
+X-Received: by 2002:a17:902:8641:: with SMTP id
+ y1mr1073499plt.27.1586886407636; 
+ Tue, 14 Apr 2020 10:46:47 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id m14sm10565619pgk.56.2020.04.14.10.46.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 10:43:40 -0700 (PDT)
-Received: (nullmailer pid 9697 invoked by uid 1000);
- Tue, 14 Apr 2020 17:43:38 -0000
-Date: Tue, 14 Apr 2020 12:43:38 -0500
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v14 2/3] dt-bindings: display: mediatek: convert the
- document format from txt to yaml
-Message-ID: <20200414174338.GA6322@bogus>
-References: <20200403080350.95826-1-jitao.shi@mediatek.com>
- <20200403080350.95826-3-jitao.shi@mediatek.com>
+ Tue, 14 Apr 2020 10:46:46 -0700 (PDT)
+Date: Tue, 14 Apr 2020 11:46:44 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: nikita.shubin@maquefel.me
+Subject: Re: [PATCH v2 3/3] remoteproc: imx_rproc: memory regions
+Message-ID: <20200414174644.GD24061@xps15>
+References: <20200304142628.8471-1-NShubin@topcon.com>
+ <20200406113310.3041-1-nikita.shubin@maquefel.me>
+ <20200406113310.3041-4-nikita.shubin@maquefel.me>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200403080350.95826-3-jitao.shi@mediatek.com>
+In-Reply-To: <20200406113310.3041-4-nikita.shubin@maquefel.me>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_104342_425507_469AD5F0 
-X-CRM114-Status: GOOD (  18.18  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_104649_358061_E205F27C 
+X-CRM114-Status: GOOD (  21.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,184 +100,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
+ Nikita Shubin <NShubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 03, 2020 at 04:03:49PM +0800, Jitao Shi wrote:
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../display/mediatek/mediatek,dpi.txt         | 42 --------
->  .../display/mediatek/mediatek,dpi.yaml        | 97 +++++++++++++++++++
->  2 files changed, 97 insertions(+), 42 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+On Mon, Apr 06, 2020 at 02:33:10PM +0300, nikita.shubin@maquefel.me wrote:
+> Add support for carveout memory regions required for vdev vring's and
+> buffer.
 > 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> deleted file mode 100644
-> index 77def4456706..000000000000
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> +++ /dev/null
-> @@ -1,42 +0,0 @@
-> -Mediatek DPI Device
-> -===================
-> -
-> -The Mediatek DPI function block is a sink of the display subsystem and
-> -provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
-> -output bus.
-> -
-> -Required properties:
-> -- compatible: "mediatek,<chip>-dpi"
-> -  the supported chips are mt2701 , mt8173 and mt8183.
-> -- reg: Physical base address and length of the controller's registers
-> -- interrupts: The interrupt signal from the function block.
-> -- clocks: device clocks
-> -  See Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-> -- clock-names: must contain "pixel", "engine", and "pll"
-> -- port: Output port node with endpoint definitions as described in
-> -  Documentation/devicetree/bindings/graph.txt. This port should be connected
-> -  to the input port of an attached HDMI or LVDS encoder chip.
-> -
-> -Optional properties:
-> -- pinctrl-names: Contain "default" and "sleep".
-> -
-> -Example:
-> -
-> -dpi0: dpi@1401d000 {
-> -	compatible = "mediatek,mt8173-dpi";
-> -	reg = <0 0x1401d000 0 0x1000>;
-> -	interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
-> -	clocks = <&mmsys CLK_MM_DPI_PIXEL>,
-> -		 <&mmsys CLK_MM_DPI_ENGINE>,
-> -		 <&apmixedsys CLK_APMIXED_TVDPLL>;
-> -	clock-names = "pixel", "engine", "pll";
-> -	pinctrl-names = "default", "sleep";
-> -	pinctrl-0 = <&dpi_pin_func>;
-> -	pinctrl-1 = <&dpi_pin_idle>;
-> -
-> -	port {
-> -		dpi0_out: endpoint {
-> -			remote-endpoint = <&hdmi0_in>;
-> -		};
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> new file mode 100644
-> index 000000000000..effdaa96aec3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> @@ -0,0 +1,97 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> Search in device tree and allocate memory regions like for ocram:
+> 
+> vdev0vring0: vdev0vring0@00920000 {
+> 	compatible = "shared-dma-pool";
+>         reg = <0x00920000 0x2000>;
+>         no-map;
+> };
+> 
+> vdev0vring1: vdev0vring1@00922000 {
+> 	compatible = "shared-dma-pool";
+> 	reg = <0x00922000 0x2000>;
+> 	no-map;
+> };
+> 
+> vdev0buffer: vdev0buffer@00924000 {
+> 	compatible = "shared-dma-pool";
+> 	reg = <0x00924000 0x4000>;
+> 	no-map;
+> };
+> 
+> imx7d-cm4 {
+> 	compatible = "fsl,imx7d-cm4";
+> 	memory-region = <&ocram>, <&vdev0vring0>, <&vdev0vring1>, \
+> 		<&vdev0buffer>;
+> }
+> 
+> vdev0vring0, vdev0vring1, vdev0buffer are required for virtio
+> functioning.
+> 
+> Signed-off-by: Nikita Shubin <NShubin@topcon.com>
+> ---
+>  drivers/remoteproc/imx_rproc.c | 119 ++++++++++++++++++++++++++++++++-
+>  1 file changed, 118 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
+> index d2bede4ccb70..cdcff2bd2867 100644
+> --- a/drivers/remoteproc/imx_rproc.c
+> +++ b/drivers/remoteproc/imx_rproc.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/module.h>
+>  #include <linux/of_address.h>
+>  #include <linux/of_device.h>
+> +#include <linux/of_reserved_mem.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+>  #include <linux/remoteproc.h>
+> @@ -238,6 +239,29 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
+>  	return -ENOENT;
+>  }
+>  
+> +static int imx_rproc_sys_to_da(struct imx_rproc *priv, u64 sys,
+> +				int len, u64 *da)
+> +{
+> +	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
+> +	int i;
 > +
-> +title: mediatek DPI Controller Device Tree Bindings
+> +	/* parse address translation table */
+> +	for (i = 0; i < dcfg->att_size; i++) {
+> +		const struct imx_rproc_att *att = &dcfg->att[i];
 > +
-> +maintainers:
-> +  - CK Hu <ck.hu@mediatek.com>
-> +  - Jitao shi <jitao.shi@mediatek.com>
+> +		if (sys >= att->sa && sys + len <= att->sa + att->size) {
+> +			unsigned int offset = sys - att->sa;
 > +
-> +description: |
-> +  The Mediatek DPI function block is a sink of the display subsystem and
-> +  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
-> +  output bus.
+> +			*da = att->da + offset;
+> +			return 0;
+> +		}
+> +	}
 > +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mediatek,mt2701-dpi
-> +      - mediatek,mt8173-dpi
-> +      - mediatek,mt8183-dpi
+> +	dev_warn(priv->dev, "Translation failed: sys = 0x%llx len = 0x%x\n",
+> +			 sys, len);
+> +	return -ENOENT;
+> +}
 > +
-> +  reg:
-> +    maxItems: 1
+>  static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+>  {
+>  	struct imx_rproc *priv = rproc->priv;
+> @@ -372,16 +396,109 @@ static void imx_rproc_kick(struct rproc *rproc, int vqid)
+>  		err = mbox_send_message(ddata->mb[i].chan, &vqid);
+>  		if (err < 0)
+>  			dev_err(&rproc->dev, "%s: failed (%s, err:%d)\n",
+> -					__func__, ddata->mb[i].name, err);
+> +				__func__, ddata->mb[i].name, err);
+>  			return;
+>  	}
+>  }
+>  
+> +static int imx_rproc_mem_alloc(struct rproc *rproc,
+> +				struct rproc_mem_entry *mem)
+> +{
+> +	struct device *dev = rproc->dev.parent;
+> +	void *va;
 > +
-> +  interrupts:
-> +    maxItems: 1
+> +	dev_dbg(dev, "map memory: %pa+%x\n", &mem->dma, mem->len);
+> +	va = ioremap_wc(mem->dma, mem->len);
+> +	if (IS_ERR_OR_NULL(va)) {
+> +		dev_err(dev, "Unable to map memory region: %pa+%x\n",
+> +				&mem->dma, mem->len);
+> +		return -ENOMEM;
+> +	}
 > +
-> +  clocks:
-> +    items:
-> +      - description: Pixel Clock
-> +      - description: Engine Clock
-> +      - description: DPI PLL
+> +	/* Update memory entry va */
+> +	mem->va = va;
 > +
-> +  clock-names:
-> +    items:
-> +      - const: pixel
-> +      - const: engine
-> +      - const: pll
+> +	return 0;
+> +}
 > +
-> +  pinctrl-0: true
-> +  pinctrl-1: true
+> +static int imx_rproc_mem_release(struct rproc *rproc,
+> +				struct rproc_mem_entry *mem)
+> +{
+> +	dev_dbg(rproc->dev.parent, "unmap memory: %pa\n", &mem->dma);
+> +	iounmap(mem->va);
 > +
-> +  pinctrl-names:
-> +    items:
-> +      - const: default
-> +      - const: sleep
+> +	return 0;
+> +}
 > +
-> +  port@0:
+> +static int imx_rproc_parse_fw(struct rproc *rproc, const struct firmware *fw)
+> +{
+> +	struct imx_rproc *priv = rproc->priv;
+> +	struct device *dev = rproc->dev.parent;
+> +	struct device_node *np = dev->of_node;
+> +	struct of_phandle_iterator it;
+> +	struct rproc_mem_entry *mem = 0;
+> +	struct reserved_mem *rmem;
+> +	u64 da;
+> +	int index = 0;
+> +
+> +	/* Register associated reserved memory regions */
+> +	of_phandle_iterator_init(&it, np, "memory-region", NULL, 0);
 
-Should be 'port'. No 'reg' property, so no unit-address.
+This will likely clash with the parsing done in imx_rproc_addr_init(), and the
+parsing in there will also clash with what is done below...  I advise you to
+register carvouts in imx_rproc_addr_init() as you parse the rest of the memory
+regions.
 
-> +    type: object
-> +    description:
-> +      Output port node with endpoint definitions as described in
-> +      Documentation/devicetree/bindings/graph.txt. This port should be connected
-> +      to the input port of an attached HDMI or LVDS encoder chip.
+Thanks,
+Mathieu
+
+> +	while (of_phandle_iterator_next(&it) == 0) {
+> +		rmem = of_reserved_mem_lookup(it.node);
+> +		if (!rmem) {
+> +			dev_err(dev, "unable to acquire memory-region\n");
+> +			return -EINVAL;
+> +		}
 > +
-> +    properties:
-> +      endpoint:
-> +        type: object
+> +		/*
+> +		 * Let's assume all data in device tree is from
+> +		 * CPU A7 point of view then we should translate
+> +		 * rmem->base into M4 da
+> +		 */
+> +		if (imx_rproc_sys_to_da(priv, rmem->base, rmem->size, &da)) {
+> +			dev_err(dev, "memory region not valid %pa\n",
+> +				&rmem->base);
+> +			return -EINVAL;
+> +		}
 > +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - port@0
+> +		if (strcmp(it.node->name, "vdev0buffer")) {
+> +			/* Register memory region */
+> +			mem = rproc_mem_entry_init(dev, NULL,
+> +						(dma_addr_t)rmem->base,
+> +						rmem->size, da,
+> +						imx_rproc_mem_alloc,
+> +						imx_rproc_mem_release,
+> +						it.node->name);
 > +
-> +additionalProperties: false
+> +			if (mem)
+> +				rproc_coredump_add_segment(rproc, da,
+> +							rmem->size);
+> +		} else {
+> +			mem = rproc_of_resm_mem_entry_init(dev, index,
+> +							rmem->size,
+> +							rmem->base,
+> +							it.node->name);
+> +		}
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/mt8173-clk.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    dpi0: dpi@1401d000 {
-> +        compatible = "mediatek,mt8173-dpi";
-> +        reg = <0 0x1401d000 0 0x1000>;
-> +        interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
-> +        clocks = <&mmsys CLK_MM_DPI_PIXEL>,
-> +             <&mmsys CLK_MM_DPI_ENGINE>,
-> +             <&apmixedsys CLK_APMIXED_TVDPLL>;
-> +        clock-names = "pixel", "engine", "pll";
-> +        pinctrl-names = "default", "sleep";
-> +        pinctrl-0 = <&dpi_pin_func>;
-> +        pinctrl-1 = <&dpi_pin_idle>;
+> +		if (!mem)
+> +			return -ENOMEM;
 > +
-> +        port@0 {
-> +            dpi0_out: endpoint {
-> +                remote-endpoint = <&hdmi0_in>;
-> +            };
-> +        };
-> +    };
+> +		rproc_add_carveout(rproc, mem);
+> +		index++;
+> +	}
 > +
-> +...
+> +	return rproc_elf_load_rsc_table(rproc, fw);
+> +}
+> +
+>  static const struct rproc_ops imx_rproc_ops = {
+>  	.start		= imx_rproc_start,
+>  	.stop		= imx_rproc_stop,
+>  	.da_to_va	= imx_rproc_da_to_va,
+>  	.kick		= imx_rproc_kick,
+> +	.load		= rproc_elf_load_segments,
+> +	.parse_fw	= imx_rproc_parse_fw,
+> +	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+> +	.sanity_check	= rproc_elf_sanity_check,
+>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>  };
+>  
 > -- 
-> 2.21.0
+> 2.25.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
