@@ -2,85 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C1021A8820
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:59:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211A61A8836
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:02:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dV7+7tlmanuyt8zMHvz6ta8YkOau0QQodoXOE4MmRMw=; b=u3DZoMe4WhcMFU
-	Gfu+D0LUf8hq6A1qY4cCRcrKkSeWTI7dKs8luRE0KFWKBskFq2fu0MuxmayqvniTip1hiYGmsPOom
-	Oi9/cqjYXZohQiTyJSlE4w6VeNULL12tmMnth41TxR3db7BErJo4p7yU/ZLWXbuSVJKwDWZMhAnwa
-	0m3+W6UFyzJWUrUx6WOdHSNTe6sUFKNv6aBaIxOWWtLg4GLKS7Q9K22eGsqkbYHvYRnOa5J6BUI+T
-	vz+SQ4qispHyQ3yEDL01Z2OKROGXsLJHCUSrsIWP/p2JJke1FXqgmDqfdLK1b1Zko3V2blwAjG8f8
-	dkeFGzIX8ZQK25JO7wmQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Nx5ACVbXgzdK8PnQeT9dcVXWmu0lQGeZ6+T3/vc7C7s=; b=a16JLx34jskdvt7SffbfTB2SqB
+	yMy2CZZjm/w8ySAYBg6KX9JWgloaSr0l3zDolGXiUU6iPp3dVHKDu3ugc+tNXTD143CgXl9LX5i6g
+	3qahUYaz29N0+3cbL9eC9PSaTQCCGIB9l6RtHYi56Iy4dIj3UR81lo3WeX2HVi8bGqWNRKfFHA5zB
+	p2N2FxuWOfexjFF8LASw5IyG/Yy5fyeErqxo4UekMgGP+byBYaAu1EoMGRz0iiBG+G+wulhU1a/vc
+	VcxAutqwna9FDjHTcibULW22BkOJAyw26aTOEQ78NmWVfEhi1/8Kh6hmL3MiDAPZwESCTL93pARuk
+	GlViRxiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPqH-0007u3-Qr; Tue, 14 Apr 2020 17:59:25 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1jOPse-0002Lt-Ke; Tue, 14 Apr 2020 18:01:52 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPq6-0007tY-1k; Tue, 14 Apr 2020 17:59:15 +0000
-Received: by mail-oi1-f195.google.com with SMTP id x10so1790502oie.1;
- Tue, 14 Apr 2020 10:59:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MbLt7+mg6Oetm1gbvDN0HE/9QqLc7vIPQSx4pz/IWko=;
- b=cTj9K2a42/ndl6nBwo5sNlJilyc6bSDTGtqyF3GXLWatUU/M7FKI0P+igk5PEAdOCx
- y0oP9ISHLVVMHLZ+jBaQnQA0XM0EV0hEL3pH9fnc014Etb0nx9NzNZRP/+dvqcsOpmJJ
- zsAstvfkKGa08NsFgFNg6nt3fyuhRs54eXX0gwSWkPHFW27FfsiNVmvbLwV1OwhUtNFf
- 16a5HcXgdQiG0fkp3Sn13aWSDOjmMQGNj6QMYOmJ4r/6akTNfm2nbrTDkdrfVPRVOwxp
- JstSRv2oSv88b95BIQHg6/p6OS2dWQGyQd2D8qzRhAogwmeZSbcbPW2G5uUxKePLS4WA
- UGjA==
-X-Gm-Message-State: AGi0PuYFakfmC4YO32/DuMd2GfUh+MneD4TDuDGPqSqC3NucgaFhAF2C
- xGcaU6nbPM/h66BJUEM9z+14KTA=
-X-Google-Smtp-Source: APiQypJlaXG4zu9PmD/DgToYH3heydOg9ica+o6s8kLB78gY3Gm05N1iYUwxCQz5c3+ZNDu+sl4n8A==
-X-Received: by 2002:aca:f491:: with SMTP id
- s139mr16592669oih.128.1586887153366; 
- Tue, 14 Apr 2020 10:59:13 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k64sm5691828oia.57.2020.04.14.10.59.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 10:59:12 -0700 (PDT)
-Received: (nullmailer pid 4704 invoked by uid 1000);
- Tue, 14 Apr 2020 17:59:11 -0000
-Date: Tue, 14 Apr 2020 12:59:11 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2] dt-bindings: display: convert rockchip rk3066 hdmi
- bindings to yaml
-Message-ID: <20200414175911.GA4583@bogus>
-References: <20200403133630.7377-1-jbx6244@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200403133630.7377-1-jbx6244@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jOPs5-0002D6-8a
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:01:20 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 5A7222A1BDC
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org
+Subject: [RFC v2 0/9] Stop monitoring disabled devices
+Date: Tue, 14 Apr 2020 20:00:56 +0200
+Message-Id: <20200414180105.20042-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+References: <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_105914_088130_325D4ADD 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200414_110117_445269_5C39DAE1 
+X-CRM114-Status: UNSURE (   7.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,33 +60,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, airlied@linux.ie,
- hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
+Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Ido Schimmel <idosch@mellanox.com>, Jiri Pirko <jiri@mellanox.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  3 Apr 2020 15:36:30 +0200, Johan Jonker wrote:
-> Current dts files with 'hdmi' nodes for rk3066 are manually verified.
-> In order to automate this process rockchip,rk3066-hdmi.txt
-> has to be converted to yaml.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
-> Changes v2:
->   Fix irq.h already included in arm-gic.h
-> ---
->  .../display/rockchip/rockchip,rk3066-hdmi.txt      |  72 -----------
->  .../display/rockchip/rockchip,rk3066-hdmi.yaml     | 140 +++++++++++++++++++++
->  2 files changed, 140 insertions(+), 72 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
->  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
-> 
+This is the second iteration of this RFC.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+The series now focuses on cleaning up the code in the first place.
+
+After the cleanups in patches 1-3 struct thermal_zone_device is extended
+so that it contains a "mode" member (patch 4/9).
+
+The next patch (5/9) makes all thermal zone devices use the "mode" member.
+This patch makes drivers' ->get_mode() methods redundant, so the next one
+(6/9) removes the method altogether.
+
+Patches 7-8/9 ensure that after changing thermal zone device's mode
+an attempt will be made to monitor the device.
+
+And finally patch 9/9 prevents DISABLED devices from being monitored.
+It also adds THERMAL_DEVICE_INITIAL to accommodate the devices, which
+should be monitored but cannot be initially ENABLED.
+
+Andrzej Pietrasiewicz (9):
+  thermal: int3400_thermal: Statically initialize
+    .get_mode()/.set_mode() ops
+  thermal: Eliminate an always-false condition
+  thermal: Properly handle mode values in .set_mode()
+  thermal: core: Let thermal zone device's mode be stored in its struct
+  thermal: Store mode in thermal_zone_device
+  thermal: Remove get_mode() method
+  thermal: core: Monitor thermal zone after mode change
+  thermal: of: Monitor thermal zone after enabling it
+  thermal: core: Stop polling DISABLED thermal devices
+
+ drivers/acpi/thermal.c                        | 44 +++++----------
+ .../ethernet/mellanox/mlxsw/core_thermal.c    | 43 ++++-----------
+ drivers/platform/x86/acerhdf.c                | 28 +++++-----
+ drivers/thermal/da9062-thermal.c              | 12 +---
+ drivers/thermal/imx_thermal.c                 | 30 ++++------
+ .../intel/int340x_thermal/int3400_thermal.c   | 39 +++----------
+ .../thermal/intel/intel_quark_dts_thermal.c   | 27 ++++-----
+ drivers/thermal/of-thermal.c                  | 28 ++++------
+ drivers/thermal/thermal_core.c                | 40 ++++++++++++--
+ drivers/thermal/thermal_core.h                |  2 +
+ drivers/thermal/thermal_sysfs.c               | 40 ++++----------
+ include/linux/thermal.h                       | 55 ++++++++++++++++++-
+ 12 files changed, 180 insertions(+), 208 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
