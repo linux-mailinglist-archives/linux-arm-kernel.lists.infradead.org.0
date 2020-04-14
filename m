@@ -2,89 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9F2C1A7ACB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:29:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 671CC1A7AF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:37:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cW1Z+34dl0HkGPOL/a6mhVR4YYWxc5mlGsesMJLR3XI=; b=m6xIPPqiLR+bzFLzG9cYrXHYv
-	KhsteKNxP8aW+tKGA27rwtkz/vA76kPU59y0HTYTmBzWIy5leR9At3tXpMV7+YWpWJ7Z+fD7xY/cE
-	yUxvIm0yVbS+Fmw1MEDwd4/CmmuVVkqmUp64YtcMqjQyOabVYXkAc1i58UIgzOw2TzsfMDzbNY5r0
-	AU0fn3Ur1cZ20g3T+iXaS89Uy9ThoyNVhyQr486mXOzdCyJa01qekvp6R3TmteBHd614AnDrDJJgj
-	DjCHjIly+LUklgySJ/lTBxJN6K8cphPEFKdRBteoWaml+l2K1SGFCMnf4j3ykB9A9d6Ppk6ezgv6k
-	2Yg8wBb6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CgK4tAwhSsI25iYfXIs5NOLGlpta0GYPJ3qJ/J1uuFs=; b=AuL
+	Oseqh8ObalDHikDccq4K72ssrzl6ZWVigoKWh1vfAhOU6tLQZJBqRJ5m8m96lANjWbMQmjFR/pzyF
+	gd7zYOUxV3VURbcJLsV5GCHOcxn4vyXvCBKY2xrNCrfRxAKIUhu8KwCFOEy+j+F+9wpSnHIPAMEjK
+	boBYOKycnRBzj+zV5K8GYXVcHjD5NEBk4eFd6kaRpXyKk3ma9I/7AycXOBegrpneVzVxIvCa1jRfk
+	O+yEBqp9H3d/70V//gm2mP/Gk2evhWiH+ense3fJzcEtpyAJLSh1iT+6l0eUHJ8rWHZaIVBXSDrEU
+	SzLsQCoY0wC5Feexyd81p4rpOwZ8SVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKgM-00063C-P5; Tue, 14 Apr 2020 12:28:50 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1jOKoi-00040B-G2; Tue, 14 Apr 2020 12:37:28 +0000
+Received: from m177134.mail.qiye.163.com ([123.58.177.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKgE-00062S-AQ
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:28:44 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 491lCB2VyJz9ty2q;
- Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=IXS45WnH; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id OnGikXuRMKJq; Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 491lCB1Nqtz9ty2r;
- Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1586867318; bh=q5tuqv3XX5tdFZ2Nwqglyq4XexfbdM7sUkp/aIyLDRw=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=IXS45WnHSm1Ayq4SS0uiPxa3vST+WWMTF8g5pm0xicL0YmkmdHBVHM7MqFdvFivSy
- 4VKx/15HSGMZn84Khq7Sc+ziISswwhSUCUvDincDkchHmmJIjHMEuycCM/NgnTr/Xv
- cQH5RqaZiSzViAlD2v1Y1/wud6OaF/wj8MGMt9vo=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 8E0138B7EB;
- Tue, 14 Apr 2020 14:28:39 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id 91o1xMRYsudU; Tue, 14 Apr 2020 14:28:39 +0200 (CEST)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 8F2278B7EA;
- Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
-Subject: Re: [PATCH v2 4/4] mm/vmalloc: Hugepage vmalloc mappings
-To: Matthew Wilcox <willy@infradead.org>, Nicholas Piggin <npiggin@gmail.com>
-References: <20200413125303.423864-1-npiggin@gmail.com>
- <20200413125303.423864-5-npiggin@gmail.com>
- <20200413134106.GN21484@bombadil.infradead.org>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <36616218-1d3a-b18a-8fb8-4fc9eff22780@c-s.fr>
-Date: Tue, 14 Apr 2020 14:28:35 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200413134106.GN21484@bombadil.infradead.org>
-Content-Language: fr
+ id 1jOKo7-0003ZO-N1
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:36:53 +0000
+Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
+ by m17617.mail.qiye.163.com (Hmail) with ESMTPA id CFD13261925;
+ Tue, 14 Apr 2020 20:36:41 +0800 (CST)
+From: Wang Qing <wangqing@vivo.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ Juri Lelli <juri.lelli@redhat.com>,
+ Vincent Guittot <vincent.guittot@linaro.org>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ Steven Rostedt <rostedt@goodmis.org>, Ben Segall <bsegall@google.com>,
+ Mel Gorman <mgorman@suse.de>, James Morse <james.morse@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Thomas Gleixner <tglx@linutronix.de>, jinho lim <jordan.lim@samsung.com>,
+ Wang Qing <wangqing@vivo.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [V3 0/3] Fixed dump_backtrace() when task running on another cpu 
+Date: Tue, 14 Apr 2020 20:36:29 +0800
+Message-Id: <1586867796-5768-1-git-send-email-wangqing@vivo.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Spam-Status: e1kfGhgUHx5ZQUlXWQgYFAkeWUFZTVVOTUxCQkJDSEJMQ0lMSllXWShZQU
+ hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Mi46Aio4KjgzQwoTHRkwMCkL
+ LQ4wCTBVSlVKTkNNQ01MQ0tJSU5NVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
+ VUtVSEpVSklJWVdZCAFZQUhLTks3Bg++
+X-HM-Tid: 0a7178b1103a9375kuwscfd13261925
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_052842_667693_73034F19 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_053651_982293_E3DD1267 
+X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [123.58.177.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,40 +73,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: opensource.kernel@vivo.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAxMy8wNC8yMDIwIMOgIDE1OjQxLCBNYXR0aGV3IFdpbGNveCBhIMOpY3JpdMKgOgo+IE9u
-IE1vbiwgQXByIDEzLCAyMDIwIGF0IDEwOjUzOjAzUE0gKzEwMDAsIE5pY2hvbGFzIFBpZ2dpbiB3
-cm90ZToKPj4gK3N0YXRpYyBpbnQgdm1hcF9wYWdlc19yYW5nZV9ub2ZsdXNoKHVuc2lnbmVkIGxv
-bmcgc3RhcnQsIHVuc2lnbmVkIGxvbmcgZW5kLAo+PiArCQkJCSAgICBwZ3Byb3RfdCBwcm90LCBz
-dHJ1Y3QgcGFnZSAqKnBhZ2VzLAo+PiArCQkJCSAgICB1bnNpZ25lZCBpbnQgcGFnZV9zaGlmdCkK
-Pj4gK3sKPj4gKwlpZiAocGFnZV9zaGlmdCA9PSBQQUdFX1NJWkUpIHsKPiAKPiAuLi4gSSB0aGlu
-ayB5b3UgbWVhbnQgJ3BhZ2Vfc2hpZnQgPT0gUEFHRV9TSElGVCcKPiAKPiBPdmVyYWxsIEkgbGlr
-ZSB0aGlzIHNlcmllcywgYWx0aG91Z2ggaXQncyBhIGJpdCBiaWFzZWQgdG93YXJkcyBDUFVzCj4g
-d2hpY2ggaGF2ZSBwYWdlIHNpemVzIHdoaWNoIG1hdGNoIFBNRC9QVUQgc2l6ZXMuICBJdCBkb2Vz
-bid0IG9mZmVyIHRoZQo+IHBvc3NpYmlsaXR5IG9mIHVzaW5nIDY0a0IgcGFnZSBzaXplcyBvbiBB
-Uk0sIGZvciBleGFtcGxlLiAgQnV0IGl0J3MgYQo+IHN0ZXAgaW4gdGhlIHJpZ2h0IGRpcmVjdGlv
-bi4KPiAKCkkgd2FzIGdvaW5nIHRvIGFzayBtb3JlIG9yIGxlc3MgdGhlIHNhbWUgcXVlc3Rpb24s
-IEkgd291bGQgaGF2ZSBsaWtlZCB0byAKdXNlIDUxMmtCIGh1Z2VwYWdlcyBvbiBwb3dlcnBjIDh4
-eC4KCkV2ZW4gdGhlIDhNIGh1Z2VwYWdlcyAoc3RpbGwgb24gdGhlIDh4eCksIGNhbiB0aGV5IGJl
-IHVzZWQgYXMgd2VsbCwgCnRha2luZyBpbnRvIGFjY291bnQgdGhhdCB0d28gUEdEIGVudHJpZXMg
-aGF2ZSB0byBwb2ludCB0byB0aGUgc2FtZSA4TSBwYWdlID8KCkkgc2VudCBvdXQgYSBzZXJpZXMg
-d2hpY2ggdGVuZHMgdG8gbWFrZSB0aGUgbWFuYWdlbWVudCBvZiA1MTJrIGFuZCA4TSAKcGFnZXMg
-Y2xvc2VyIHRvIHdoYXQgTGludXggZXhwZWN0cywgaW4gb3JkZXIgdG8gdXNlIHRoZW0gaW5zaWRl
-IGtlcm5lbCwgCmZvciBMaW5lYXIgbWFwcGluZ3MgYW5kIEthc2FuIG1hcHBpbmdzIGZvciB0aGUg
-bW9tZW50LiBTZWUgCmh0dHBzOi8vcGF0Y2h3b3JrLm96bGFicy5vcmcvcHJvamVjdC9saW51eHBw
-Yy1kZXYvbGlzdC8/c2VyaWVzPTE2NDYyMApJdCB3b3VsZCBiZSBuaWNlIGlmIHdlIGNvdWxkIGFt
-cGxpZnkgaXQgYSB1c2UgaXQgZm9yIGlvcmVtYXBzIGFuZCAKdm1hbGxvY3MgYXMgd2VsbC4KCkNo
-cmlzdG9waGUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+We cannot get FP and PC when the task is running on another CPU,
+task->thread.cpu_context is the last time the task was switched out,
+it's better to give a reminder than to provide wrong information
+for example when Task blocked in spinlock/interrupt/busy loop.
+
+The task_running() should be renamed to task_running_on_rq()
+like the naming of task_running_on_cpu(), this is what it
+originally mean.
+
+Add task_running() no rq required.
+
+V2:
+- Add task_running_oncpu()
+v3:
+- Renamed task_running() to task_running_on_rq()
+- Renamed task_running_oncpu() to task_running()
+
+Wang Qing (3):
+  ARM64:fixed dump_backtrace() when task running on another cpu
+  sched:add task_running()
+  sched:rename task_running() and to task_running_on_rq
+
+ arch/arm64/kernel/traps.c |  7 +++++++
+ include/linux/sched.h     | 10 ++++++++++
+ kernel/sched/core.c       | 14 +++++++-------
+ kernel/sched/deadline.c   |  6 +++---
+ kernel/sched/fair.c       |  2 +-
+ kernel/sched/rt.c         |  6 +++---
+ kernel/sched/sched.h      |  2 +-
+ 7 files changed, 32 insertions(+), 15 deletions(-)
+
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
