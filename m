@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E10B1A802C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:46:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A60D21A802F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:46:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=fH7TRi0xsky/iAvxk0r7nH5bIPN/btnzTp8cjqywkpc=; b=h70
-	c7EESULBbaIJvg6KhjHqDI3WO2d72ZirO/2SGJwvoMCs78q6q7h0wF+Ul/pHZOgmPz5DmlUwVT/yE
-	CIBEzxpGZURPo0vGab+7twA0HR97fG2v6JdHaPv9347a7/CrwxlKcPjbeXYmL1gAn19nJ3TQa5zh9
-	QGeRH4N15lHBs/f0TwL3a6gKmrTEuc5T0/DQ6dqrOUYhqQWOqPAnscIknhybnW8eS1T6NTaSkSEBF
-	4WZs3L9eB9PRRbVID/BoolQ3oaEtwVoKFqcJG7maYr42J09yU/G1zEXmhzZclCxDfUP9CEBTGVTqe
-	atn2adoMATJsghOmCUQvuemvQk4nvHw==;
+	References:List-Owner; bh=zMmGFQssW1AJ7Kj3mQyV5wMg96sNU8j4J6ifOJ8otJs=; b=qcx
+	H4sQHA/506rByBHWzpmwTt7gMdPsYc9xQvncVfxfizx4+64audhAfvFJ92hbFBfINhooX3eE3Uv3S
+	+Q2XAiPz688GYK/Az3wDIF+O14k3AqP2b7OUVXn61EDNlvPhZ8IBvP8GgWC94qsOGBo7jbKeuHL9L
+	5+vsbolomUVUJTDqlAX3Uei16iE0qalYsYn5Ud3oN5hebtmYG2VVjoiNNKBRUdqdtVHh04dIwIl33
+	j9f2/I8R1z8F3qBJk/lToryjf+MGvPPxsb/fvKgDjbS5GYsf/UMZp7QVZ9SSBg63WNu/89wbx+BEc
+	U3LncLGqPQSoZWUeC6ldkwOOOJwEEeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMpB-0003HS-50; Tue, 14 Apr 2020 14:46:05 +0000
+	id 1jOMpa-0003eh-FP; Tue, 14 Apr 2020 14:46:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMp0-0003EV-9P; Tue, 14 Apr 2020 14:45:56 +0000
+ id 1jOMpK-0003cZ-PR
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 14:46:16 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7EA4320578;
- Tue, 14 Apr 2020 14:45:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E397120787;
+ Tue, 14 Apr 2020 14:46:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586875553;
- bh=BKt0ly0X0uSnzjL/jCTuX7kQW79brFOyTVWQb3pvaVg=;
+ s=default; t=1586875574;
+ bh=NF+ReJtRcTYkXwWbn0gQZMoewENSGMQLJ68bqwW6Mmo=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=Xj0eRvpcd0zAHHGgS+wlkuC4N5yFk7/Jl/HNtK96l4XQMHdwnPoEAvivqpMhgIeM0
- vPngoZWMyKMqw4h4vqjDFcvzCxx/XMchC3Fwy/4lD2/mzfQ7AASvzYHB+w1bkMcJI+
- NNDw8/wBVhwYCKjYJlDHd/tPPcA8jAUWZt/e+Xmw=
-Date: Tue, 14 Apr 2020 15:45:50 +0100
+ b=C/BTHfQDUOzrAqshiXGCZxUd05u6HaBj3kdNTyGK93zm96V/C6YRj9GuyfLwpYHcv
+ dDP9o79bwt+lLfi4bXk2Efv0bJ/OFYlMVVYA2XN5bZhQt7C0DK+iNSpnUcBnfCIxAT
+ OuSaau+3AnAquDPsh12gpkVSza7hSxUQm9smVQ3Q=
+Date: Tue, 14 Apr 2020 15:46:11 +0100
 From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "ASoC: rockchip-i2s: add power-domains property" to the asoc
- tree
-In-Reply-To: <20200324094149.6904-3-jbx6244@gmail.com>
-Message-Id: <applied-20200324094149.6904-3-jbx6244@gmail.com>
+To: Sebastian Fricke <sebastian.fricke.linux@gmail.com>
+Subject: Applied "soc/stm/stm32_sub_sai: Add missing '\n' in log messages" to
+ the asoc tree
+In-Reply-To: <20200413042952.7675-1-sebastian.fricke.linux@gmail.com>
+Message-Id: <applied-20200413042952.7675-1-sebastian.fricke.linux@gmail.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_074554_358788_C57FC607 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20200414_074614_844889_BA1F733C 
+X-CRM114-Status: GOOD (  14.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -74,10 +75,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, Takashi Iwai <tiwai@suse.com>,
+ kernel-janitors@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-kernel@vger.kernel.org, sebastian.fricke.linux@gmail.com,
+ Mark Brown <broonie@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -86,7 +90,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: rockchip-i2s: add power-domains property
+   soc/stm/stm32_sub_sai: Add missing '\n' in log messages
 
 has been applied to the asoc tree at
 
@@ -111,38 +115,35 @@ to this mail.
 Thanks,
 Mark
 
-From 2a79c31a498e002eeb7c7d759241c3cca95b28d9 Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Tue, 24 Mar 2020 10:41:49 +0100
-Subject: [PATCH] ASoC: rockchip-i2s: add power-domains property
+From 9de300abb71f24b190362ff53907ab90505517bc Mon Sep 17 00:00:00 2001
+From: Sebastian Fricke <sebastian.fricke.linux@gmail.com>
+Date: Mon, 13 Apr 2020 06:29:52 +0200
+Subject: [PATCH] soc/stm/stm32_sub_sai: Add missing '\n' in log messages
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like 'power-domains' for rk3399,
-so add it to 'rockchip-i2s.yaml'.
+Message logged by 'dev_xxx()' or 'pr_xxx()' should end with a '\n'.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20200324094149.6904-3-jbx6244@gmail.com
+Fixes: 3e086ed("ASoC: stm32: add SAI drivers")
+
+Signed-off-by: Sebastian Fricke <sebastian.fricke.linux@gmail.com>
+Link: https://lore.kernel.org/r/20200413042952.7675-1-sebastian.fricke.linux@gmail.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+ sound/soc/stm/stm32_sai_sub.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-index 7cd0e278ed85..a3ba2186d6a1 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-@@ -56,6 +56,9 @@ properties:
-       - const: tx
-       - const: rx
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index 0d0c9afd8791..34a7c3d6fb91 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -837,7 +837,7 @@ static int stm32_sai_set_config(struct snd_soc_dai *cpu_dai,
+ 		cr1 = SAI_XCR1_DS_SET(SAI_DATASIZE_32);
+ 		break;
+ 	default:
+-		dev_err(cpu_dai->dev, "Data format not supported");
++		dev_err(cpu_dai->dev, "Data format not supported\n");
+ 		return -EINVAL;
+ 	}
  
-+  power-domains:
-+    maxItems: 1
-+
-   rockchip,capture-channels:
-     allOf:
-       - $ref: /schemas/types.yaml#/definitions/uint32
 -- 
 2.20.1
 
