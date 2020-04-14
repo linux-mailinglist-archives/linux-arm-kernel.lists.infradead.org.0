@@ -2,84 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3A891A8723
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:12:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9E5E1A872E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:13:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cSfmLTE583CaFXEFPbXtFAyWzUhmLjXrohVePx/yje0=; b=PZfupzHIw/Vkuw
-	L4W/rh4KueFwUMUlkC948DnmB45eILFZjJ1kzhQg2b+ALCHKh3jpMDwyC2Jly82Wi78Siyb77VQTA
-	fSJfpOUNfA79kt/k5gEdwOGSBl3pIxUBSG5hnZ7o6qEf8XP7rNg0nND3mPCqNkmjnkRswisgrr7TV
-	54nBJDt+Eqyqi0KEvfu07+LfA6hEaE4+s2OfMgdzkovU4JGc1sPvHQVOf3sDv8Z/9ISGGZJjsXwGK
-	59CzXzM1ITMUvGrUlh6hyOrItFWmE60VFEjgLcCfXJuoU8Yfa2/ZjiLMRjE59RKFHSPuqwUxHVVxJ
-	jXNzxDwduIsPIFPQ+FrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AO3pkGwcs9HmO7HOEWCVUDSpo8ksX+KAecDD+jeyY2o=; b=MPlRofI/mEA+ifaHfOJPnpmUd
+	05nmlmUWIe6fYmbBBQTyCMapASMJOu6kxeEG8R6PKiKw6/LlC8N4vHl0/O+422OufSG45DbXZSUXc
+	xfiFkqESLoAJiGiAGp4mxsjREOh8Esvm8W8thQBLLq+uDTrFTWizdoI8SgnDI6dJALny3Ke96OUvM
+	9x+NA8e4sKmyB0y/EIlujWOx1cbYw0wmC9E+NbkOLQTt4ERKp3CqhF68KkF4fXetxG2BRfeew9Jkm
+	eq9vQVwEkwt9xS1pamd4JBICQ+QF/clUbt7jCfle2rmT8YMDSz33xbK8SRRSajVtbaV1ZvZ/j4wZd
+	m8PkiLObw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOP6h-0005IW-TZ; Tue, 14 Apr 2020 17:12:19 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jOP7P-0005ri-I2; Tue, 14 Apr 2020 17:13:03 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOzW-0002dg-Sq
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:05:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id v8so12945946wma.0
+ id 1jOP4s-0003xN-IK
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:10:29 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r26so14990671wmh.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 10:04:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=u0HAzwSaZgER/8QZ83ZQZ3tP3MIVx8mETnUVm6/V0ok=;
- b=JkRjzmM2nMv/rv2CSYLN179blYrWt4qE24gHB6fvaK7iiCOzcyiruWS8RU9vxYUOUd
- 0DZH/sOQaty0opTw21po0Pm0ce4idbw6mhOoJyXv3eY9TOcKLpYHanIILGQXh0SPsuBH
- h9azjdsiRzdAW07LSYDzEApf7YxGv371mAn1Xh9vAcvWKSIsmFS44VWE5+1YU+JMwimg
- mWkknrUrtlHzRjoS5eJYOwn673r7L12TP2n2Mx4tjf3LC5ho++Wq5QhNzHWG6JpcdRzo
- mzkuOLuA/vuC/zDAS62oUNeZMqxysc/T5vD8EvfiVKBMC5a1CYf1g6Tcih7PJmG6ir92
- ekMw==
+ Tue, 14 Apr 2020 10:10:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bu1W45bcgQFVSHHvrZnu1OhprTvQ/cBAqXoUBxCGTks=;
+ b=JKeaJsx/IVZ0S/IqlJRc6hZ/M5bhRIbOkZXhcYLqG96PL7JNdXqqM6J7cmtwsfJUjz
+ 2m3rgZAtofnVHEErj8K9XEzwJaavr9k/lh+oTZuUXb5WrMsNaMC00vCA4lPuhwP4vCem
+ yvdbXE3Zk5iHyH9tRgyBV+tE34mmXpJ7LMjNDWlggVq27f4X7QrQzBAFMU8M3HAZ9Ehf
+ u6KKtlH3pSE27PlfOZf4j9uGZN1G8VHjKdiHfDG0S9jEg/qKzgdwK04yBtV8OkWcn2FS
+ oDQxLtjWyyK414Qpu6JrxM9sbYv2UqTVsnSHye5LFKmnl0KqoQbkpbFrsxJVXIViQ0vO
+ 6yaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=u0HAzwSaZgER/8QZ83ZQZ3tP3MIVx8mETnUVm6/V0ok=;
- b=Ky/R3O3BXSSKht0sykK3sfwyKVyjFVkVlV39aaYA2G8DT5oL9rvsHPk4QlEZ8uyh6v
- lJGQ2QIBmkVkJahqVb7AAVTViBZtER/3g+a1cXaidS7u9xfHg5qhMZxqxvrWqmuo+rAv
- kStATGpRr11+1yttf4l2O8rpe5dWGlkRa8MwAgb63t2zuY0UDk58cEHShlIRBPfX7wul
- yG3Hq8eeOn7pdqWTcdwS9GYpdps6NbVYlgueV5y/BJnppM+sCMVhOzD+acLq4aOeR3Xy
- CMXK0K/ny/i9AWGYmKAe3My60F4KGyzBTyNMmT/CrT6Np8LCU59AeE+HQ5lkshcIRrhs
- /mxA==
-X-Gm-Message-State: AGi0PuaOE/ivMAQO3UN+Gkndq26oIhcgwC303ZFttaPmW1RQf9TbJVfJ
- rPSE1zI2iRATUry/spafeAPs5w==
-X-Google-Smtp-Source: APiQypLUqywIpZq3/12p2mCLDdQ4JGrywsXNVqfp8FvSh3tZw2ecvsNlH/ESSfnJwGNoxP55MEbspw==
-X-Received: by 2002:a7b:c459:: with SMTP id l25mr796940wmi.52.1586883893294;
- Tue, 14 Apr 2020 10:04:53 -0700 (PDT)
-Received: from localhost.localdomain
- ([2001:171b:226b:54a0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id x18sm19549147wrs.11.2020.04.14.10.04.52
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bu1W45bcgQFVSHHvrZnu1OhprTvQ/cBAqXoUBxCGTks=;
+ b=KBaHoZKylZACdaTWz95l/AYVP7TOg6rw3k2WXYRQrNCNNbIYIPWrAXowm84d2O5OpW
+ dHIBv0uiOFNBCsuIFy5qBM+NAvRBZ4UsurOVLObzpL35DxT47Ru5+F87hEb5rJPpK+MW
+ X0qOP4Gdij4y8ZkxsN2cfRh94Ab6DL7RcIYoLbJ/zuKcmyi5E82OfbIxBQAA87l+MczY
+ 2o3tTtZmV5D8SANlQOkNccBAGIhmIt8ipiU9VC+iobYqiBdGkg/0U39BA17a19yb0O0F
+ 913D5mclGGib80evgre8dgVeNyu9aGWgawzgK5lgHkkPysfnRbUPSNPQU+7Vu07h5mTS
+ GOzA==
+X-Gm-Message-State: AGi0PuZM6hiEhVkT1DvUA6A3p3FWEnt6Buv++Hjpu7zJqU2vNfFEQcDF
+ AXV0KuOWTIaSGJKBEEzJjGQ=
+X-Google-Smtp-Source: APiQypI+KQxMP3i3+MDgFxrK5E1p7XsqlGmODv79VinHxIAjnqkas/fyHZzHEec9cQybaQtmap7HBw==
+X-Received: by 2002:a1c:9aca:: with SMTP id c193mr805632wme.38.1586884212134; 
+ Tue, 14 Apr 2020 10:10:12 -0700 (PDT)
+Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
+ by smtp.gmail.com with ESMTPSA id o28sm5240239wra.84.2020.04.14.10.10.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 10:04:52 -0700 (PDT)
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-mm@kvack.org
-Subject: [PATCH v5 25/25] iommu/arm-smmu-v3: Add support for PRI
-Date: Tue, 14 Apr 2020 19:02:53 +0200
-Message-Id: <20200414170252.714402-26-jean-philippe@linaro.org>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200414170252.714402-1-jean-philippe@linaro.org>
-References: <20200414170252.714402-1-jean-philippe@linaro.org>
+ Tue, 14 Apr 2020 10:10:10 -0700 (PDT)
+Date: Tue, 14 Apr 2020 19:10:10 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Dmitry Osipenko <digetx@gmail.com>
+Subject: Re: [PATCH v6 07/14] clk: tegra: Implement Tegra210 EMC clock
+Message-ID: <20200414171010.GB15932@ulmo>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-8-thierry.reding@gmail.com>
+ <8dc000fb-8867-cf8f-8204-a9e1e79a4811@gmail.com>
+ <20200414143424.GG3593749@ulmo>
+ <92eb73ba-73e4-f9f1-bb22-9b515e32cee6@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <92eb73ba-73e4-f9f1-bb22-9b515e32cee6@gmail.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_100455_112054_2268C859 
-X-CRM114-Status: GOOD (  23.36  )
+X-CRM114-CacheID: sfid-20200414_101026_750980_85FC6AB9 
+X-CRM114-Status: GOOD (  33.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,482 +102,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, catalin.marinas@arm.com, joro@8bytes.org,
- robin.murphy@arm.com, jgg@ziepe.ca, Jonathan.Cameron@huawei.com,
- zhangfei.gao@linaro.org, xuzaibo@huawei.com, will@kernel.org,
- christian.koenig@amd.com, baolu.lu@linux.intel.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
+ linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1332114155711446600=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For PCI devices that support it, enable the PRI capability and handle PRI
-Page Requests with the generic fault handler. It is enabled on demand by
-iommu_sva_device_init().
 
-Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
----
- drivers/iommu/arm-smmu-v3.c | 284 +++++++++++++++++++++++++++++-------
- 1 file changed, 234 insertions(+), 50 deletions(-)
+--===============1332114155711446600==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="Bn2rw/3z4jIqBvZU"
+Content-Disposition: inline
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index a7becf1c5347e..8017700c33c46 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -251,6 +251,7 @@
- #define STRTAB_STE_1_S1COR		GENMASK_ULL(5, 4)
- #define STRTAB_STE_1_S1CSH		GENMASK_ULL(7, 6)
- 
-+#define STRTAB_STE_1_PPAR		(1UL << 18)
- #define STRTAB_STE_1_S1STALLD		(1UL << 27)
- 
- #define STRTAB_STE_1_EATS		GENMASK_ULL(29, 28)
-@@ -381,6 +382,9 @@
- #define CMDQ_PRI_0_SID			GENMASK_ULL(63, 32)
- #define CMDQ_PRI_1_GRPID		GENMASK_ULL(8, 0)
- #define CMDQ_PRI_1_RESP			GENMASK_ULL(13, 12)
-+#define CMDQ_PRI_1_RESP_FAILURE		0UL
-+#define CMDQ_PRI_1_RESP_INVALID		1UL
-+#define CMDQ_PRI_1_RESP_SUCCESS		2UL
- 
- #define CMDQ_RESUME_0_SID		GENMASK_ULL(63, 32)
- #define CMDQ_RESUME_0_RESP_TERM		0UL
-@@ -453,12 +457,6 @@ module_param_named(disable_bypass, disable_bypass, bool, S_IRUGO);
- MODULE_PARM_DESC(disable_bypass,
- 	"Disable bypass streams such that incoming transactions from devices that are not attached to an iommu domain will report an abort back to the device and will not be allowed to pass through the SMMU.");
- 
--enum pri_resp {
--	PRI_RESP_DENY = 0,
--	PRI_RESP_FAIL = 1,
--	PRI_RESP_SUCC = 2,
--};
--
- enum arm_smmu_msi_index {
- 	EVTQ_MSI_INDEX,
- 	GERROR_MSI_INDEX,
-@@ -545,7 +543,7 @@ struct arm_smmu_cmdq_ent {
- 			u32			sid;
- 			u32			ssid;
- 			u16			grpid;
--			enum pri_resp		resp;
-+			u8			resp;
- 		} pri;
- 
- 		#define CMDQ_OP_RESUME		0x44
-@@ -623,6 +621,7 @@ struct arm_smmu_evtq {
- 
- struct arm_smmu_priq {
- 	struct arm_smmu_queue		q;
-+	struct iopf_queue		*iopf;
- };
- 
- /* High-level stream table and context descriptor structures */
-@@ -756,6 +755,8 @@ struct arm_smmu_master {
- 	unsigned int			num_streams;
- 	bool				ats_enabled;
- 	bool				stall_enabled;
-+	bool				pri_supported;
-+	bool				prg_resp_needs_ssid;
- 	unsigned int			ssid_bits;
- };
- 
-@@ -1034,14 +1035,6 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
- 		cmd[0] |= FIELD_PREP(CMDQ_PRI_0_SSID, ent->pri.ssid);
- 		cmd[0] |= FIELD_PREP(CMDQ_PRI_0_SID, ent->pri.sid);
- 		cmd[1] |= FIELD_PREP(CMDQ_PRI_1_GRPID, ent->pri.grpid);
--		switch (ent->pri.resp) {
--		case PRI_RESP_DENY:
--		case PRI_RESP_FAIL:
--		case PRI_RESP_SUCC:
--			break;
--		default:
--			return -EINVAL;
--		}
- 		cmd[1] |= FIELD_PREP(CMDQ_PRI_1_RESP, ent->pri.resp);
- 		break;
- 	case CMDQ_OP_RESUME:
-@@ -1621,6 +1614,7 @@ static int arm_smmu_page_response(struct device *dev,
- {
- 	struct arm_smmu_cmdq_ent cmd = {0};
- 	struct arm_smmu_master *master = dev_iommu_priv_get(dev);
-+	bool pasid_valid = resp->flags & IOMMU_PAGE_RESP_PASID_VALID;
- 	int sid = master->streams[0].id;
- 
- 	if (master->stall_enabled) {
-@@ -1638,8 +1632,27 @@ static int arm_smmu_page_response(struct device *dev,
- 		default:
- 			return -EINVAL;
- 		}
-+	} else if (master->pri_supported) {
-+		cmd.opcode		= CMDQ_OP_PRI_RESP;
-+		cmd.substream_valid	= pasid_valid &&
-+					  master->prg_resp_needs_ssid;
-+		cmd.pri.sid		= sid;
-+		cmd.pri.ssid		= resp->pasid;
-+		cmd.pri.grpid		= resp->grpid;
-+		switch (resp->code) {
-+		case IOMMU_PAGE_RESP_FAILURE:
-+			cmd.pri.resp = CMDQ_PRI_1_RESP_FAILURE;
-+			break;
-+		case IOMMU_PAGE_RESP_INVALID:
-+			cmd.pri.resp = CMDQ_PRI_1_RESP_INVALID;
-+			break;
-+		case IOMMU_PAGE_RESP_SUCCESS:
-+			cmd.pri.resp = CMDQ_PRI_1_RESP_SUCCESS;
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
- 	} else {
--		/* TODO: insert PRI response here */
- 		return -ENODEV;
- 	}
- 
-@@ -2236,6 +2249,9 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
- 			 FIELD_PREP(STRTAB_STE_1_S1CSH, ARM_SMMU_SH_ISH) |
- 			 FIELD_PREP(STRTAB_STE_1_STRW, strw));
- 
-+		if (master->prg_resp_needs_ssid)
-+			dst[1] |= STRTAB_STE_1_PPAR;
-+
- 		if (smmu->features & ARM_SMMU_FEAT_STALLS &&
- 		    !master->stall_enabled)
- 			dst[1] |= cpu_to_le64(STRTAB_STE_1_S1STALLD);
-@@ -2480,61 +2496,110 @@ static irqreturn_t arm_smmu_evtq_thread(int irq, void *dev)
- 
- static void arm_smmu_handle_ppr(struct arm_smmu_device *smmu, u64 *evt)
- {
--	u32 sid, ssid;
--	u16 grpid;
--	bool ssv, last;
--
--	sid = FIELD_GET(PRIQ_0_SID, evt[0]);
--	ssv = FIELD_GET(PRIQ_0_SSID_V, evt[0]);
--	ssid = ssv ? FIELD_GET(PRIQ_0_SSID, evt[0]) : 0;
--	last = FIELD_GET(PRIQ_0_PRG_LAST, evt[0]);
--	grpid = FIELD_GET(PRIQ_1_PRG_IDX, evt[1]);
--
--	dev_info(smmu->dev, "unexpected PRI request received:\n");
--	dev_info(smmu->dev,
--		 "\tsid 0x%08x.0x%05x: [%u%s] %sprivileged %s%s%s access at iova 0x%016llx\n",
--		 sid, ssid, grpid, last ? "L" : "",
--		 evt[0] & PRIQ_0_PERM_PRIV ? "" : "un",
--		 evt[0] & PRIQ_0_PERM_READ ? "R" : "",
--		 evt[0] & PRIQ_0_PERM_WRITE ? "W" : "",
--		 evt[0] & PRIQ_0_PERM_EXEC ? "X" : "",
--		 evt[1] & PRIQ_1_ADDR_MASK);
--
--	if (last) {
--		struct arm_smmu_cmdq_ent cmd = {
--			.opcode			= CMDQ_OP_PRI_RESP,
--			.substream_valid	= ssv,
--			.pri			= {
--				.sid	= sid,
--				.ssid	= ssid,
--				.grpid	= grpid,
--				.resp	= PRI_RESP_DENY,
--			},
-+	u32 sid = FIELD_PREP(PRIQ_0_SID, evt[0]);
-+
-+	bool pasid_valid, last;
-+	struct arm_smmu_master *master;
-+	struct iommu_fault_event fault_evt = {
-+		.fault.type = IOMMU_FAULT_PAGE_REQ,
-+		.fault.prm = {
-+			.pasid		= FIELD_GET(PRIQ_0_SSID, evt[0]),
-+			.grpid		= FIELD_GET(PRIQ_1_PRG_IDX, evt[1]),
-+			.addr		= evt[1] & PRIQ_1_ADDR_MASK,
-+		},
-+	};
-+	struct iommu_fault_page_request *pr = &fault_evt.fault.prm;
-+
-+	pasid_valid = evt[0] & PRIQ_0_SSID_V;
-+	last = evt[0] & PRIQ_0_PRG_LAST;
-+
-+	/* Discard Stop PASID marker, it isn't used */
-+	if (!(evt[0] & (PRIQ_0_PERM_READ | PRIQ_0_PERM_WRITE)) && last)
-+		return;
-+
-+	if (last)
-+		pr->flags |= IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE;
-+	if (pasid_valid)
-+		pr->flags |= IOMMU_FAULT_PAGE_REQUEST_PASID_VALID;
-+	if (evt[0] & PRIQ_0_PERM_READ)
-+		pr->perm |= IOMMU_FAULT_PERM_READ;
-+	if (evt[0] & PRIQ_0_PERM_WRITE)
-+		pr->perm |= IOMMU_FAULT_PERM_WRITE;
-+	if (evt[0] & PRIQ_0_PERM_EXEC)
-+		pr->perm |= IOMMU_FAULT_PERM_EXEC;
-+	if (evt[0] & PRIQ_0_PERM_PRIV)
-+		pr->perm |= IOMMU_FAULT_PERM_PRIV;
-+
-+	master = arm_smmu_find_master(smmu, sid);
-+	if (WARN_ON(!master))
-+		return;
-+
-+	if (iommu_report_device_fault(master->dev, &fault_evt)) {
-+		/*
-+		 * No handler registered, so subsequent faults won't produce
-+		 * better results. Try to disable PRI.
-+		 */
-+		struct iommu_page_response resp = {
-+			.flags		= pasid_valid ?
-+					  IOMMU_PAGE_RESP_PASID_VALID : 0,
-+			.pasid		= pr->pasid,
-+			.grpid		= pr->grpid,
-+			.code		= IOMMU_PAGE_RESP_FAILURE,
- 		};
- 
--		arm_smmu_cmdq_issue_cmd(smmu, &cmd);
-+		dev_warn(master->dev,
-+			 "PPR 0x%x:0x%llx 0x%x: nobody cared, disabling PRI\n",
-+			 pasid_valid ? pr->pasid : 0, pr->addr, pr->perm);
-+		if (last)
-+			arm_smmu_page_response(master->dev, NULL, &resp);
- 	}
- }
- 
- static irqreturn_t arm_smmu_priq_thread(int irq, void *dev)
- {
-+	int num_handled = 0;
-+	bool overflow = false;
- 	struct arm_smmu_device *smmu = dev;
- 	struct arm_smmu_queue *q = &smmu->priq.q;
- 	struct arm_smmu_ll_queue *llq = &q->llq;
-+	size_t queue_size = 1 << llq->max_n_shift;
- 	u64 evt[PRIQ_ENT_DWORDS];
- 
-+	spin_lock(&q->wq.lock);
- 	do {
--		while (!queue_remove_raw(q, evt))
-+		while (!queue_remove_raw(q, evt)) {
-+			spin_unlock(&q->wq.lock);
- 			arm_smmu_handle_ppr(smmu, evt);
-+			spin_lock(&q->wq.lock);
-+			if (++num_handled == queue_size) {
-+				q->batch++;
-+				wake_up_all_locked(&q->wq);
-+				num_handled = 0;
-+			}
-+		}
- 
--		if (queue_sync_prod_in(q) == -EOVERFLOW)
-+		if (queue_sync_prod_in(q) == -EOVERFLOW) {
- 			dev_err(smmu->dev, "PRIQ overflow detected -- requests lost\n");
-+			overflow = true;
-+		}
- 	} while (!queue_empty(llq));
- 
- 	/* Sync our overflow flag, as we believe we're up to speed */
- 	llq->cons = Q_OVF(llq->prod) | Q_WRP(llq, llq->cons) |
- 		      Q_IDX(llq, llq->cons);
- 	queue_sync_cons_out(q);
-+
-+	wake_up_all_locked(&q->wq);
-+	spin_unlock(&q->wq.lock);
-+
-+	/*
-+	 * On overflow, the SMMU might have discarded the last PPR in a group.
-+	 * There is no way to know more about it, so we have to discard all
-+	 * partial faults already queued.
-+	 */
-+	if (overflow)
-+		iopf_queue_discard_partial(smmu->priq.iopf);
-+
- 	return IRQ_HANDLED;
- }
- 
-@@ -2569,6 +2634,36 @@ static int arm_smmu_flush_evtq(void *cookie, struct device *dev, int pasid)
- 	return ret;
- }
- 
-+/*
-+ * arm_smmu_flush_priq - wait until all requests currently in the queue have
-+ *                       been consumed.
-+ *
-+ * See arm_smmu_flush_evtq().
-+ */
-+static int arm_smmu_flush_priq(void *cookie, struct device *dev, int pasid)
-+{
-+	int ret;
-+	u64 batch;
-+	bool overflow = false;
-+	struct arm_smmu_device *smmu = cookie;
-+	struct arm_smmu_queue *q = &smmu->priq.q;
-+
-+	spin_lock(&q->wq.lock);
-+	if (queue_sync_prod_in(q) == -EOVERFLOW) {
-+		dev_err(smmu->dev, "priq overflow detected -- requests lost\n");
-+		overflow = true;
-+	}
-+
-+	batch = q->batch;
-+	ret = wait_event_interruptible_locked(q->wq, queue_empty(&q->llq) ||
-+					      q->batch >= batch + 2);
-+	spin_unlock(&q->wq.lock);
-+
-+	if (overflow)
-+		iopf_queue_discard_partial(smmu->priq.iopf);
-+	return ret;
-+}
-+
- static int arm_smmu_device_disable(struct arm_smmu_device *smmu);
- 
- static irqreturn_t arm_smmu_gerror_handler(int irq, void *dev)
-@@ -3270,6 +3365,75 @@ static void arm_smmu_disable_pasid(struct arm_smmu_master *master)
- 	pci_disable_pasid(pdev);
- }
- 
-+static int arm_smmu_init_pri(struct arm_smmu_master *master)
-+{
-+	int pos;
-+	struct pci_dev *pdev;
-+
-+	if (!dev_is_pci(master->dev))
-+		return -EINVAL;
-+
-+	if (!(master->smmu->features & ARM_SMMU_FEAT_PRI))
-+		return 0;
-+
-+	pdev = to_pci_dev(master->dev);
-+	pos = pci_find_ext_capability(pdev, PCI_EXT_CAP_ID_PRI);
-+	if (!pos)
-+		return 0;
-+
-+	/* If the device supports PASID and PRI, set STE.PPAR */
-+	if (master->ssid_bits)
-+		master->prg_resp_needs_ssid = pci_prg_resp_pasid_required(pdev);
-+
-+	master->pri_supported = true;
-+	return 0;
-+}
-+
-+static int arm_smmu_enable_pri(struct arm_smmu_master *master)
-+{
-+	int ret;
-+	struct pci_dev *pdev;
-+	/*
-+	 * TODO: find a good inflight PPR number. We should divide the PRI queue
-+	 * by the number of PRI-capable devices, but it's impossible to know
-+	 * about future (probed late or hotplugged) devices. So we're at risk of
-+	 * dropping PPRs (and leaking pending requests in the FQ).
-+	 */
-+	size_t max_inflight_pprs = 16;
-+
-+	if (!master->pri_supported || !master->ats_enabled)
-+		return -ENODEV;
-+
-+	pdev = to_pci_dev(master->dev);
-+
-+	ret = pci_reset_pri(pdev);
-+	if (ret)
-+		return ret;
-+
-+	ret = pci_enable_pri(pdev, max_inflight_pprs);
-+	if (ret) {
-+		dev_err(master->dev, "cannot enable PRI: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static void arm_smmu_disable_pri(struct arm_smmu_master *master)
-+{
-+	struct pci_dev *pdev;
-+
-+	if (!dev_is_pci(master->dev))
-+		return;
-+
-+	pdev = to_pci_dev(master->dev);
-+
-+	if (!pdev->pri_enabled)
-+		return;
-+
-+	pci_disable_pri(pdev);
-+}
-+
- static void arm_smmu_detach_dev(struct arm_smmu_master *master)
- {
- 	unsigned long flags;
-@@ -3705,6 +3869,8 @@ static int arm_smmu_add_device(struct device *dev)
- 	    smmu->features & ARM_SMMU_FEAT_STALL_FORCE)
- 		master->stall_enabled = true;
- 
-+	arm_smmu_init_pri(master);
-+
- 	ret = iommu_device_link(&smmu->iommu, dev);
- 	if (ret)
- 		goto err_disable_pasid;
-@@ -3741,6 +3907,7 @@ static void arm_smmu_remove_device(struct device *dev)
- 	master = dev_iommu_priv_get(dev);
- 	smmu = master->smmu;
- 	iopf_queue_remove_device(smmu->evtq.iopf, dev);
-+	iopf_queue_remove_device(smmu->priq.iopf, dev);
- 	WARN_ON(iommu_sva_disable(dev));
- 	arm_smmu_detach_dev(master);
- 	iommu_group_remove_device(dev);
-@@ -3864,7 +4031,7 @@ static void arm_smmu_get_resv_regions(struct device *dev,
- 
- static bool arm_smmu_iopf_supported(struct arm_smmu_master *master)
- {
--	return master->stall_enabled;
-+	return master->stall_enabled || master->pri_supported;
- }
- 
- static bool arm_smmu_dev_has_feature(struct device *dev,
-@@ -3922,6 +4089,15 @@ static int arm_smmu_dev_enable_sva(struct device *dev)
- 		ret = iopf_queue_add_device(master->smmu->evtq.iopf, dev);
- 		if (ret)
- 			goto err_disable_sva;
-+	} else if (master->pri_supported) {
-+		ret = iopf_queue_add_device(master->smmu->priq.iopf, dev);
-+		if (ret)
-+			goto err_disable_sva;
-+
-+		if (arm_smmu_enable_pri(master)) {
-+			iopf_queue_remove_device(master->smmu->priq.iopf, dev);
-+			goto err_disable_sva;
-+		}
- 	}
- 	return 0;
- 
-@@ -3957,7 +4133,9 @@ static int arm_smmu_dev_disable_feature(struct device *dev,
- 
- 	switch (feat) {
- 	case IOMMU_DEV_FEAT_SVA:
-+		arm_smmu_disable_pri(master);
- 		iopf_queue_remove_device(master->smmu->evtq.iopf, dev);
-+		iopf_queue_remove_device(master->smmu->priq.iopf, dev);
- 		return iommu_sva_disable(dev);
- 	default:
- 		return -EINVAL;
-@@ -4101,6 +4279,11 @@ static int arm_smmu_init_queues(struct arm_smmu_device *smmu)
- 	if (!(smmu->features & ARM_SMMU_FEAT_PRI))
- 		return 0;
- 
-+	smmu->priq.iopf = iopf_queue_alloc(dev_name(smmu->dev),
-+					   arm_smmu_flush_priq, smmu);
-+	if (!smmu->priq.iopf)
-+		return -ENOMEM;
-+
- 	return arm_smmu_init_one_queue(smmu, &smmu->priq.q, ARM_SMMU_PRIQ_PROD,
- 				       ARM_SMMU_PRIQ_CONS, PRIQ_ENT_DWORDS,
- 				       "priq");
-@@ -5078,6 +5261,7 @@ static int arm_smmu_device_remove(struct platform_device *pdev)
- 	iommu_device_sysfs_remove(&smmu->iommu);
- 	arm_smmu_device_disable(smmu);
- 	iopf_queue_free(smmu->evtq.iopf);
-+	iopf_queue_free(smmu->priq.iopf);
- 
- 	return 0;
- }
--- 
-2.26.0
 
+--Bn2rw/3z4jIqBvZU
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Apr 14, 2020 at 06:18:29PM +0300, Dmitry Osipenko wrote:
+> 14.04.2020 17:34, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
+> > On Thu, Apr 09, 2020 at 09:24:31PM +0300, Dmitry Osipenko wrote:
+> >> 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
+> >> ...
+> >>> +static long tegra210_clk_emc_round_rate(struct clk_hw *hw, unsigned =
+long rate,
+> >>> +					unsigned long *prate)
+> >>> +{
+> >>> +	struct tegra210_clk_emc *emc =3D to_tegra210_clk_emc(hw);
+> >>> +	struct tegra210_clk_emc_provider *provider =3D emc->provider;
+> >>> +	unsigned int i;
+> >>> +
+> >>> +	if (!provider || !provider->configs || provider->num_configs =3D=3D=
+ 0)
+> >>> +		return clk_hw_get_rate(hw);
+> >>
+> >> This still looks wrong to me. Nobody should be able to get EMC clock
+> >> until provider is registered.
+> >=20
+> > The EMC clock is mostly orthogonal to the provider. The provider really
+> > only allows you to actually change the frequency. The clock will still
+> > remain even if the provider goes away, it just will loose the ability to
+> > change rate.
+>=20
+> It's not only about changing the clock rate, but also about rounding the
+> rate and etc.
+
+The code will currently just return the configured rate when no provider
+is available. It's going to always round to that one rate and it will
+refuse to set another one. The EMC clock is basically going to function
+as a fixed clock while no provider is attached.
+
+> Besides, you won't be able to change the rate until provider is
+> registered, which might be a quite big problem by itself.
+
+Until the provider is registered, there's just no way to change the
+rate. You always need to write MC and EMC registers in order to change
+the rate, so trying to change it when the MC/EMC drivers aren't
+available isn't going to work.
+
+> >> This is troublesome, especially given that you're allowing the EMC
+> >> driver to be compiled as a loadable module. For example, this won't wo=
+rk
+> >> with the current ACTMON driver because it builds OPP table based on the
+> >> clk-rate rounding during the driver's probe, so it won't be able to do
+> >> it properly if provider is "temporarily" missing.
+> >>
+> >> ... I think that in a longer run we should stop manually building the
+> >> ACTMON's OPP table and instead define a proper OPP table (per-HW Speedo
+> >> ID, with voltages) in a device-tree. But this is just a vague plans for
+> >> the future for now.
+> >=20
+> > This code only applies to Tegra210 and we don't currently support ACTMON
+> > on Tegra210. I'm also not sure we'll ever do because using interconnects
+> > to describe paths to system memory and then using ICC requests for each
+> > driver to submit memory bandwidth requests seems like a better way of
+> > dealing with this problem than using ACTMON to monitor activity because
+> > that only allows you to react, whereas we really want to be able to
+> > allocate memory bandwidth upfront.
+>=20
+> You absolutely have to have the ACTMON support if you want to provide a
+> good user experience because interconnect won't take into account the
+> dynamic CPU memory traffic. Without ACTMON support CPU will turn into a
+> "turtle" if memory runs on a lowest freq, while CPU needs the highest.
+
+Can we not guess a bandwidth based on the CPU frequency? Yes, that's
+perhaps going to be an overestimation if the CPU doesn't actually access
+memory, but that's better than nothing at all.
+
+Also, at this point I'm less worried about power consumption rather than
+making Tegra210 devices perform useful tasks. Yes, eventually we'll want
+to fine-tune power consumption, but it's going to take a bit of work to
+get there. In the meantime, giving people a way to set an EMC frequency
+other than that set on boot is going to make them very happy.
+
+> Secondly, the interconnect could underestimate the memory BW requirement
+> because memory performance depends quite a lot on the memory-accessing
+> patterns and it's not possible to predict it properly. Otherwise you may
+> need to always overestimate the BW, which perhaps is not what anyone
+> would really want to have.
+
+Overestimating might be a good starting point, though. At this point I'm
+mostly concerned about being able to change the memory frequency at all
+because many systems are mostly unusable at the boot EMC frequency.
+
+Like I said, if ACTMON really does prove to be useful I'm all for adding
+support on Tegra210, but I don't think trying to do everything all at
+once is a very good plan. So I'm trying to get there in incremental
+steps.
+
+> I'm not sure why you're resisting to do it all properly from the start,
+> it looks to me that it will take you just a few lines of code (like in a
+> case of the T20/30 EMC).
+
+I'm not trying to resist anything. I'm just saying that all of the
+issues that you're bringing up aren't an immediate concern.
+
+My main concerns right now are to: a) allow people to change the EMC
+frequency (and hopefully soon also allow the EMC frequency to be changed
+based on bandwidth demands by memory client drivers) and b) not bloat
+the kernel more than it has to (while my configuration isn't tweaked,
+it's pretty standard and the resulting image is roughly 20 MiB; adding
+the Tegra210 EMC driver adds another 64 KiB).
+
+And if we really do want to add ACTMON support later on, you already
+suggested a better way of moving forward, so it sounds to me like that
+would be a nice incremental improvement, certainly much better than
+bloating the kernel even further by requiring this to be built-in and
+preventing it from being unloaded.
+
+Thierry
+
+--Bn2rw/3z4jIqBvZU
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V7m4ACgkQ3SOs138+
+s6Em4w/9FNIpaqlBNPaffejDRoFi8gSCtTpS700LImB1P8xffbHSrrAGNzhnUN6h
+NK9mJp5ZtIxNawa+OgVyTqLMBvEhLnlbqNXypj2v0KjMEnWldZNO0i6kZ0B74WDx
+j3LHJyhnap8VZYdxGafGCn3mx91XRfmfkXpt/RXR4AFhBCh+tS6MLXm9oKYVElRq
+vydnkirSA55jAZaLObaTfji9z+UdkjQQOXr8D49Ef4qfFPXTSCfCLGrrNCBV8RMb
+AjbIRCNPsJ0JMb99wEc/3iR82MkLFOqQZ/W76iYFpKZjqzOgePoENndse6VFa710
+E4lZ1iG/Mu+FT38tKDFpgfScTTJq8sGLdgPbCbIjDl2ltlX+JoM8qCuEvSrAQq9i
+P1BTYXS7LR5n74BqMSB+s1TS9/KvDOe0rZb91JmrpSPrNZJsN0NKCZwJXrdftAQu
+RL7HombQdmrSdmv9fqLK7JdDOaWr0K/2PyuUyX0Zd6SsdxtvpW6hZKye+Ca05QCe
+N3lcZnJVAlSGGF/wcp6NkY1lXr9AtqTyJoXpHra0yu1QyCTZgqK0ZPJdVC4ot7/N
+SOx0/tp2tWaMJr5xVud7JeUnrM5wgIMK09bOkE9Dsh3DM52EB5s2DgeE7cLCzuzL
+JH0FgfsIyx9Fb+fwUnJmLoRvA/1uadd6LOZErg8nqtZyvFksA/M=
+=XN3P
+-----END PGP SIGNATURE-----
+
+--Bn2rw/3z4jIqBvZU--
+
+
+--===============1332114155711446600==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1332114155711446600==--
+
