@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0138A1A7DE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:27:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB67E1A7DE7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:28:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shl85zFU0cIHEO9MBvmsFhLU2bVp8qy8FO389wpUgzA=; b=C0W7now2B7+IPM
-	JBm6xl7pqpxgpo2KH2Q6a6IQdA3Z9dNi97YKgwqwxgk5d86rqZpfGk8qlejH2g8qBCBUde3VwASt2
-	2w5QEeftO/NQcdkyg4Cr9fpQXEDg2PFbyD8gs6WmYyROguTZK09bgtezI858wqH7PliYZdcNgZhiy
-	B8/WjBubQd41seCQZ3IP8Gr3YvDJyLVDl3viUpRsWTQY+ULjG05jDg1sRZxSZz6nPeoyU4Ak3Nnbe
-	5FOvex0+hFnAeoKpvi1SlFmDigNTiU8bVX434eh08oEkOUTd9kx1k9zdTMVGBOVaSio2STyqJvM8M
-	ApOgpWZ7AXkS/DEbpDpw==;
+	List-Owner; bh=FPBklYY8RIJzgoTONPYU7/2kVdFp3l4AF1O5ncou66g=; b=L0wh5cBre4+99J
+	ch5PxNHMEk55/TNZakTeriCqnf/weaLH0jtSnJNMJCLBWaABsdx4TBZuGlrHkh5BU+3FdeifN3maq
+	RkkBOcxN3mJhDHd/OFpoj6viDVb+8sanTDmlY7E45nzVy/OMFo21knx14Kh7t5nvirWP0jvTAj+JC
+	bVCLOw2L3ipuFlhpB2NPwop6tVcP0PVGkuBFyz2tM6knLWJekcR+87mv8KCyHDkj9ZEceNnX1zKzO
+	tCKRbGiLrctLwvrX6iTqJOgxJavPq7F+82dhL5D8BJqZmcpD5EZnD4YrwxDmTHgKJKR4YLAXVNr4q
+	iLKIar7GybOWcBoMe+Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLaa-0001Pb-Bn; Tue, 14 Apr 2020 13:26:56 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLaR-0001Ok-Lv
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:26:49 +0000
-Received: by mail-ot1-f65.google.com with SMTP id k21so1221950otl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 06:26:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uBhOSKycNvwYl7l6E83n7sL5ut/2EC0wcW7rRu2+vgQ=;
- b=o7COyf8pj4WukrXqd5O+jdLZemstWB2wtJi9i9IjuZntC8a9Sv7aZC8xysZWRE/dK0
- aNFsgtm5CDQFNi7edZjQ9+1FtsPKjWOk1dx8KgVzbLRg7n2n49TUAGdjFqk7EgIMH492
- Lsfj1Vs6a418Cz5GEmVAcoQWYQLf4xkt59qGvzs9uw5wH3sn5YtCLiCChHGfSd9Jwfbl
- httyUPsNXBNLUv0fZi/s6O8d/usccSWLRtMSMzAmABseo4b84TGri1x/T3q82Y7VQlb+
- xXciaUH/SW0bXZ7RDGXtbmwPEKjVbWSSeKZK7S05Tt5B4I8B84+fOHUJldiAoBTRNxGi
- 2Iqg==
-X-Gm-Message-State: AGi0Puby2V0ukAim09q1LXsdtN6TzJgBPnWamwpHSU4Ix0J+LeALa7Cp
- jG72fitfxwnuPF1GEU0Lqg==
-X-Google-Smtp-Source: APiQypKulh49diU5WYrDhPSyt9XOk4wDWnAaaQ7DGWExGEYwcWK2zN/uZk6o5BO0wBK0tmXEJhy44A==
-X-Received: by 2002:a9d:32a4:: with SMTP id u33mr19357758otb.23.1586870804064; 
- Tue, 14 Apr 2020 06:26:44 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t23sm5711880ooq.20.2020.04.14.06.26.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 06:26:43 -0700 (PDT)
-Received: (nullmailer pid 15088 invoked by uid 1000);
- Tue, 14 Apr 2020 13:26:42 -0000
-Date: Tue, 14 Apr 2020 08:26:42 -0500
-From: Rob Herring <robh@kernel.org>
-To: Alistair Francis <alistair@alistair23.me>
-Subject: Re: [PATCH v3 1/3] dt-bindings: net: bluetooth: Add
- rtl8723bs-bluetooth
-Message-ID: <20200414132642.GA13898@bogus>
-References: <20200412020644.355142-1-alistair@alistair23.me>
+	id 1jOLbh-0001mh-RH; Tue, 14 Apr 2020 13:28:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOLbZ-0001m6-29
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:27:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 829A930E;
+ Tue, 14 Apr 2020 06:27:55 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.30.4])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 467793F73D;
+ Tue, 14 Apr 2020 06:27:54 -0700 (PDT)
+Date: Tue, 14 Apr 2020 14:27:51 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH 1/5] arm64: vdso: don't free unallocated pages
+Message-ID: <20200414132751.GF2486@C02TD0UTHF1T.local>
+References: <20200414104252.16061-1-mark.rutland@arm.com>
+ <20200414104252.16061-2-mark.rutland@arm.com>
+ <c5596228-2685-abb3-5ab1-9519759e1f7a@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200412020644.355142-1-alistair@alistair23.me>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <c5596228-2685-abb3-5ab1-9519759e1f7a@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_062647_719918_74EDEEF8 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_062757_497623_27E4EA25 
+X-CRM114-Status: GOOD (  24.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +63,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, johan.hedberg@gmail.com, netdev@vger.kernel.org,
- marcel@holtmann.org, Alistair Francis <alistair@alistair23.me>,
- linux-kernel@vger.kernel.org, mripard@kernel.org,
- linux-bluetooth@vger.kernel.org, wens@csie.org, alistair23@gmail.com,
+Cc: catalin.marinas@arm.com, will@kernel.org, stable@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 11 Apr 2020 19:06:42 -0700, Alistair Francis wrote:
-> From: Vasily Khoruzhick <anarsoul@gmail.com>
+On Tue, Apr 14, 2020 at 01:50:38PM +0100, Vincenzo Frascino wrote:
+> Hi Mark,
 > 
-> Add binding document for bluetooth part of RTL8723BS/RTL8723CS
+> On 4/14/20 11:42 AM, Mark Rutland wrote:
+> > The aarch32_vdso_pages[] array never has entries allocated in the C_VVAR
+> > or C_VDSO slots, and as the array is zero initialized these contain
+> > NULL.
+> > 
+> > However in __aarch32_alloc_vdso_pages() when
+> > aarch32_alloc_kuser_vdso_page() fails we attempt to free the page whose
+> > struct page is at NULL, which is obviously nonsensical.
 > 
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Signed-off-by: Alistair Francis <alistair@alistair23.me>
-> ---
->  .../bindings/net/realtek,rtl8723bs-bt.yaml    | 52 +++++++++++++++++++
->  1 file changed, 52 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.yaml
+> Could you please explain why do you think that free(NULL) is "nonsensical"? 
+
+Regardless of the below, can you please explain why it is sensical? I'm
+struggling to follow your argument here.
+
+* It serves no legitimate purpose. One cannot free a page without a
+  corresponding struct page.
+
+* It is redundant. Removing the code does not detract from the utility
+  of the remainging code, or make that remaing code more complex.
+
+* It hinders comprehension of the code. When a developer sees the
+  free_page() they will assume that the page was allocated somewhere,
+  but there is no corresponding allocation as the pointers are never
+  assigned to. Even if the code in question is not harmful to the
+  functional correctness of the code, it is an unnecessary burden to
+  developers.
+
+* page_to_virt(NULL) does not have a well-defined result, and
+  page_to_virt() should only be called for a valid struct page pointer.
+  The result of page_to_virt(NULL) may not be a pointer into the linear
+  map as would be expected.
+
+* free_page(x) calls free_pages(x, 0), which checks virt_addr_valid(x).
+  As page_to_virt(NULL) is not a valid linear map address, this can
+  trigger a VM_BUG_ON()
+
+* Even if page_to_virt(virt_to_page(NULL)) is NULL, within
+  __free_pages(NULL, 0) we'd call put_page_testzero(NULL) which will
+  fault when dereferencing NULL to get at the fields in struct page.
+  Likewise for everything under free_the_page(NULL, 0).
+
+> And if this is causing a bug (according to the cover-letter), could
+> you please provide a stack-trace?
+
+I haven't triggered it, as I found it by inspection. As above the
+behaviour is clearly erroneous and can trigger several failures to
+occur.
+
+Note that this only happens if aarch32_alloc_kuser_vdso_page() fails in
+the boot path, which is unlikely.
+
+Thanks,
+Mark.
+
+> > This patch removes the erroneous page freeing.
+> > 
+> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: stable@vger.kernel.org
+> > ---
+> >  arch/arm64/kernel/vdso.c | 13 +------------
+> >  1 file changed, 1 insertion(+), 12 deletions(-)
+> > 
+> > diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
+> > index 354b11e27c07..033a48f30dbb 100644
+> > --- a/arch/arm64/kernel/vdso.c
+> > +++ b/arch/arm64/kernel/vdso.c
+> > @@ -260,18 +260,7 @@ static int __aarch32_alloc_vdso_pages(void)
+> >  	if (ret)
+> >  		return ret;
+> >  
+> > -	ret = aarch32_alloc_kuser_vdso_page();
+> > -	if (ret) {
+> > -		unsigned long c_vvar =
+> > -			(unsigned long)page_to_virt(aarch32_vdso_pages[C_VVAR]);
+> > -		unsigned long c_vdso =
+> > -			(unsigned long)page_to_virt(aarch32_vdso_pages[C_VDSO]);
+> > -
+> > -		free_page(c_vvar);
+> > -		free_page(c_vdso);
+> > -	}
+> > -
+> > -	return ret;
+> > +	return aarch32_alloc_kuser_vdso_page();
+> >  }
+> >  #else
+> >  static int __aarch32_alloc_vdso_pages(void)
+> > 
 > 
-
-My bot found errors running 'make dt_binding_check' on your patch:
-
-Error: Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.example.dts:17.1-7 syntax error
-FATAL ERROR: Unable to parse input tree
-scripts/Makefile.lib:311: recipe for target 'Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.example.dt.yaml' failed
-make[1]: *** [Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.example.dt.yaml] Error 1
-Makefile:1262: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
-
-See https://patchwork.ozlabs.org/patch/1269392
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
-
-Please check and re-submit.
+> -- 
+> Regards,
+> Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
