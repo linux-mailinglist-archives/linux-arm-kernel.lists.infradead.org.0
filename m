@@ -2,60 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55D531A71EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 05:41:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 421891A71EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 05:41:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2KUEbCE3wV7frkea7gLp+QhGKLQ9wguuyl9JcQG56Do=; b=EQfa3f2bxoaUCt
-	+s2/t0/yj2BcHMnJ9k4m9bqo7qlXFDTW+jI9uGyAyfJ1YgF3hyFoT4HYkT1uK2P4KUOQJU4gnwvoO
-	vabip3gzEjdrMx0flu+VpPW9qcAiIzFnAQCO6s5EsOKIZG9jBFXkXSi7kq3ULhZBoaZzkvFX0MBTo
-	Y+zCBo8WwSKzscj5R/YmVF1qASI+eq6xBdabBxKs3qPAiloBV6G8B5NdqhEgYTv9Okyj+bwjBrCDV
-	8y8kCywEzIsht22KDTPBUcH9YtvSr4Yqo0JAm2zNstcSg1GealjfGP71T7nK0bwPl2yDoz2xxIaGQ
-	6xZB5tqeMCjLbz50/hRQ==;
+	List-Owner; bh=lyw5smYCJXN99ykv9oAXosGBD/yhksYrOpswII+R0hc=; b=ORKlqI72wsV/ln
+	ga6WxnUP0/hTyWOh3OQZs3D/OnkQyYOhINsQ9LrmUpFn616J69FvEe058cDJkz5AeiReauWwOC6uZ
+	AWFoQDjmnpFGIcwOKC72OMzVwWoBn741YquCAxPn1F2+EjjB0I14LQh6dEVduXHgVUjC7omhcqJcg
+	XJQ1ELLYT6IMQXjgfygZfVu9qjpV+nXPH1l47rLRI3CU2uweHMr2+PZNeT7xMhcpiMk+yT5NSGjio
+	QQSbKmz8WYO8Sw5K+Em51Uu5FhP3+KAjOYtlXeHB6zsTC6J1X0LmPJlPcP6Ln2x1VIDtq6JtmanNE
+	RGzrukC+JN+laosnqLIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOCRg-0003HP-Sl; Tue, 14 Apr 2020 03:41:08 +0000
+	id 1jOCRx-0003Mr-Rn; Tue, 14 Apr 2020 03:41:25 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOCRY-0003Fa-WF; Tue, 14 Apr 2020 03:41:02 +0000
-X-UUID: 9c93adbe31cf4638b2505d09d2bc3586-20200413
+ id 1jOCRZ-0003Fe-01; Tue, 14 Apr 2020 03:41:02 +0000
+X-UUID: fd01ed7e97d241e285bd99c3de5f8f15-20200413
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=pXbuHYf29wq9I5dB9+bPlMg2JqoQVfcEPpb8kdg9al4=; 
- b=WOKQGFXHfVI/VIGaXPZyHMPLRnupYoN2y/YqVZyftVjEx5/1eO3QiaNVZ+qhCrR1RzQUfwVGQ1GkE36pkUftFDezbcphpkGR5yCmmSvCUaK4YdK4URSmesoEiFBg6udCBwd3Wo+TXG3cAsRD+/favOs723Knrt/6oO2Oky6Rm5Y=;
-X-UUID: 9c93adbe31cf4638b2505d09d2bc3586-20200413
+ bh=JsY5/5MxfWy5R02rcWXL2W12h0vpsAqE2P25DGsOcwQ=; 
+ b=qMawx4L1R/SjXIumd+N18jT98mhib9GBHE/6xKN4SzsESCYRKHzRFy2RFV/S12IkcmRMtOP8nuA40Yr4WSdE1IqQrgFlKhNQXzUB0F78b2+qDR+6rcKIBXyD4YvKtI9zOZ1r+tTLDm5AIXe9awqXheBy1WtQ/Qr88X2Bb4VKYGQ=;
+X-UUID: fd01ed7e97d241e285bd99c3de5f8f15-20200413
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.mao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1656740524; Mon, 13 Apr 2020 19:40:57 -0800
+ with ESMTP id 1933411572; Mon, 13 Apr 2020 19:40:57 -0800
 Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Mon, 13 Apr 2020 20:40:56 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 14 Apr 2020 11:40:54 +0800
+ 15.0.1497.2; Tue, 14 Apr 2020 11:40:55 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
  Transport; Tue, 14 Apr 2020 11:40:49 +0800
 From: Yong Mao <yong.mao@mediatek.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH 1/3] mmc: core: need do mmc_power_cycle in
- mmc_sdio_resend_if_cond
-Date: Tue, 14 Apr 2020 11:40:09 +0800
-Message-ID: <1586835611-13857-2-git-send-email-yong.mao@mediatek.com>
+Subject: [PATCH 2/3] mmc: core: rocr verification
+Date: Tue, 14 Apr 2020 11:40:10 +0800
+Message-ID: <1586835611-13857-3-git-send-email-yong.mao@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
 References: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_204101_048972_D38F81C5 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20200413_204101_048964_2854300D 
+X-CRM114-Status: GOOD (  11.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,30 +98,70 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: yong mao <yong.mao@mediatek.com>
 
-When mmc_sdio_resned_if_cond is invoked, it indicates the SDIO
-device is not in the right state. In this condition, the previous
-implementation of mmc_sdio_resend_if_cond can't make sure SDIO
-device be back to idle state. mmc_power_cycle can reset the SDIO
-device by HW and also make sure SDIO device enter to idle state
-correctly.
+Some UHS SDIO devices can't enter to stable state after changing the
+voltage from 1.8v to 3.3v even after a power cycle.
+Verifying the rocr and the result of mmc_set_signal_voltage, if it
+is not expected, power cycle SDIO device and re-initialize it again.
+Thus will re-initialize the SDIO device successfully.
 
 Signed-off-by: Yong Mao <yong.mao@mediatek.com>
 ---
- drivers/mmc/core/sdio.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/mmc/core/sdio.c  | 14 +++++++++++++-
+ include/linux/mmc/sdio.h |  2 ++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/mmc/core/sdio.c b/drivers/mmc/core/sdio.c
-index ebb387a..ada0a80 100644
+index ada0a80..f173cad 100644
 --- a/drivers/mmc/core/sdio.c
 +++ b/drivers/mmc/core/sdio.c
-@@ -546,6 +546,7 @@ static int mmc_sdio_init_uhs_card(struct mmc_card *card)
- static void mmc_sdio_resend_if_cond(struct mmc_host *host,
- 				    struct mmc_card *card)
- {
-+	mmc_power_cycle(host, host->card->ocr);
- 	sdio_reset(host);
- 	mmc_go_idle(host);
- 	mmc_send_if_cond(host, host->ocr_avail);
+@@ -553,6 +553,12 @@ static void mmc_sdio_resend_if_cond(struct mmc_host *host,
+ 	mmc_remove_card(card);
+ }
+ 
++static bool mmc_sdio_valid_rocr(u32 rocr)
++{
++	return (rocr & MMC_CARD_BUSY) && R4_OCR(rocr) &&
++		R4_FUNCTION_NUMBER(rocr);
++}
++
+ /*
+  * Handle the detection and initialisation of a card.
+  *
+@@ -605,6 +611,12 @@ static int mmc_sdio_init_card(struct mmc_host *host, u32 ocr,
+ 		goto err;
+ 	}
+ 
++	if (!mmc_sdio_valid_rocr(rocr)) {
++		mmc_sdio_resend_if_cond(host, card);
++		retries--;
++		goto try_again;
++	}
++
+ 	if ((rocr & R4_MEMORY_PRESENT) &&
+ 	    mmc_sd_get_cid(host, ocr & rocr, card->raw_cid, NULL) == 0) {
+ 		card->type = MMC_TYPE_SD_COMBO;
+@@ -646,7 +658,7 @@ static int mmc_sdio_init_card(struct mmc_host *host, u32 ocr,
+ 	 */
+ 	if (rocr & ocr & R4_18V_PRESENT) {
+ 		err = mmc_set_uhs_voltage(host, ocr_card);
+-		if (err == -EAGAIN) {
++		if (err == -EAGAIN || err == -EILSEQ) {
+ 			mmc_sdio_resend_if_cond(host, card);
+ 			retries--;
+ 			goto try_again;
+diff --git a/include/linux/mmc/sdio.h b/include/linux/mmc/sdio.h
+index e287699..03e23ec 100644
+--- a/include/linux/mmc/sdio.h
++++ b/include/linux/mmc/sdio.h
+@@ -36,6 +36,8 @@
+ 
+ #define R4_18V_PRESENT (1<<24)
+ #define R4_MEMORY_PRESENT (1 << 27)
++#define R4_OCR(x)		((x) & 0xFFFFFF)
++#define R4_FUNCTION_NUMBER(x)	(((x) & 0x70000000) >> 28)
+ 
+ /*
+   SDIO status in R5
 -- 
 1.9.1
 _______________________________________________
