@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A979D1A837D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:41:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 063A61A8392
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mqq7hJ3Z5DLcTVkQlQo+byCYaGOxUyiMZtVXgzd2h3c=; b=U68UJ2gCHr9RBPbIDbwlCOXTU
-	SLMiIOj0N6mtHAYaXS6AhVSpGO5cyUVRuPjfn2jkvD2/JgTTf+j5MbLMnNIpl3bZ32C4dXqcRXAUZ
-	hFrVIv8qh4bJjZ5kePH0p/jekwlAfsnAGxVap4ySZQ/ZZSodlegP7DBl02LO2mwLqs63Nns2lDN5z
-	CO9T2I+KgHdJdBgbM2zwfG0oo8KtXnBk8zZVfyPIKcbi1U95CkEcJFPTZ3VoI5iQdNK02zXnuxUQb
-	4MVdjLH6IX89sw1VyboipkgJO44MsywRLbBYOIzgG8DXl1RLxtOosCO8e3nJQ0cfPEr7zbAkHWwab
-	GqrsQqDVw==;
+	 bh=bOT5naWvsHWVybm20E2rNlBAVnDTGEFS1TmjwQ7HTcU=; b=nhJ6uKJKPnWjJvY+cICmLKb1i
+	S0B1pWPpu3s4ymJhd7VT/JqmMlxdPEgfTsKUjek11jIxZjifkHOtiCUg+gSoEvLJnyNjJ+FbOgwg/
+	dAMXxe63hLlVHDevy8L+7Lqg0TbSVna3pUA60m7ErEfh0kW/OzQ9HpZtQ35HLzpvVi3NmEXJk0JfG
+	eFypyoN0nK3viG0VQYKxZl+tDlb9V0+noT3p4PZrId2j3NsdSmOVkrPiyD4bUjeGOpr7Dydufeq+k
+	Slsfkk4VGCGG3rxzBcSoZFaYcgTsP4WPC3QczTzOI6hYHa6QDJhe7PDNXqnwaiRR7Y8ghxhq1GGt4
+	SIO5NRFHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONgf-0000EO-P1; Tue, 14 Apr 2020 15:41:21 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jONie-0000iG-Hk; Tue, 14 Apr 2020 15:43:24 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONgV-0000DX-0l
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:41:12 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a81so14496207wmf.5
+ id 1jONiT-0000hq-NA
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:43:15 +0000
+Received: by mail-pf1-x443.google.com with SMTP id k15so82901pfh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:41:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Tue, 14 Apr 2020 08:43:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=4KIJ7Z8QHneV0X1Aw4cw4TnPAzva6UVqk+ohip+aCHA=;
- b=k0QPf8PxlgXVPpJeiGFRQvzeNwPtNMq/M+I+z3/RCveZTGKN3Jp4LnWp3yGCLYnF0J
- p36x6AQsPX16Y8kvI5oKO6rgAdrdaJza5uJQZRjrSB1R05vNVHhmyqpaL5xUzZCYO+HO
- CsIaVwf+5l/Ohau25PHYSI/DNF39ETHOkjyW8O92rdHb7+nWHJCw9R413+c4H7z2CW32
- WB+HLHuC5RhYC58wVLvLAX/OreOkCQbTVVLdIXXmg1lCpaiM/tfk9Jgkull45zTq58LQ
- TpKVGYxSBLRT+7YcnvUIDF3JT5fZoQV75gH0Ji8aReL24iA2Mf86LtRD7joGMJbGUNwL
- tQVg==
+ :content-disposition:in-reply-to;
+ bh=HrHc89msdXgi2Y4Q0qH1yTEHGNBhvf5/H8327yK+Ls4=;
+ b=YedDG0ZFTRyqyAnKIG8z1JZFuDUEx5ng/hd+NQImZj6HKH3GWoHZv0p4lx3TpGALhZ
+ 0qQoPEflzIgF6SfYYPStjVZve457G0ZBKn0C4+GyrXP90wjqyuOaWcwOYMJLTN1Kf9IH
+ fCwuZd0xvBU0B+dv3VE61SLogfaxzz8/hPw5W/tgGRa6JD5RX1Q1P0nAiUwvIGyIJ+rP
+ 1v+4mMz2/8PCz8/50zqXGyDQ2VcxWbkl8DmfpVhbio84eoaC9hcIMloYnWqZQjy+IcAz
+ xL1P9teLDVAzbR346QhSdbQML5K+vB+crLmnYqhiM2kFg9BTV4/BHo8ERW3n1xxobog0
+ pp+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4KIJ7Z8QHneV0X1Aw4cw4TnPAzva6UVqk+ohip+aCHA=;
- b=jS9jPJpYB+hOGTB/4fRb5+8aicUFXd2jZyFpQXak6EOjtgx5oF047ajzVvHC4esM8u
- HBCkmTikERVLZOio1LM7HkTgSiNs0JghoSISFvmn1klGNbXhAfubGmYf6H8GMk8g+m1H
- M7Zow+CZ+IitHdpGlbabhFMn0CeYh0QOxBTaec7yMuqVDOH0qiFfuouO+GweFIdkZOBQ
- QSRTcDsMQuBNb8KrhkCsI0+fGGKOTC3DBJz08QiD2N0zzwLDVoaOTd20bPSS/XAR7b0w
- O6gfa8gOSgVvfBJCgzcUaI/AtP8wb1MG7YOpBIibPDYwvKuQDd3d2gp5PidjdNJVEnn3
- nGBg==
-X-Gm-Message-State: AGi0PuafsRI7VGH8GuY+3kQMw2GLP8BTY/lUk7vLQeAlGnuVnpN97Ql7
- F+ftmokMkFRC6Ksht7Q/xH8=
-X-Google-Smtp-Source: APiQypJyzx/6HOKMI1u7Om4PgjL1eVsXXm4Nj7wfOsqql9qJ2/n8u8KebAVlElgJl6KhF7QVc8mSCg==
-X-Received: by 2002:a1c:a794:: with SMTP id q142mr476428wme.4.1586878869402;
- Tue, 14 Apr 2020 08:41:09 -0700 (PDT)
-Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id h2sm971602wro.9.2020.04.14.08.41.07
+ :mime-version:content-disposition:in-reply-to;
+ bh=HrHc89msdXgi2Y4Q0qH1yTEHGNBhvf5/H8327yK+Ls4=;
+ b=Z3e8k2hvVuhKYLYjBqY3t817J5zowrpJlwaX7xdhpormIOT2hD8GRBTO+QbZbkczZ+
+ kuJ2O5Emax2Rt/W3c9ZC6eiz+uk/6ZIVi/IOxW6GtV3dwPmRLoYfnaoiqPiQbcJvzyzy
+ 2kVQDVCqgx3WXon+sAocRpOu7oyKK2MzmKaOWEi076x/Had+TA6UjhkuxFBBaVncvmVt
+ ISv8nCenRrBap6n0E5ZExpi4AGmmbrAQ8J2t+aD1v8npQ+V38HvzZMn/cASQ1Sz7qeu2
+ MXO/zoKsJKHi5+CupzAWFnMqxw9ywr/sfBu0/LiWArqRFK55PKKFmsW5ByRBcr2ltYhA
+ pM7w==
+X-Gm-Message-State: AGi0PuYlGm+xTjDVIGXGsE1tYLrb/qB6pT4IjKcZZ4Ij32Dtc1Cjsd+s
+ 8yo/j/tbsAkb7CnChDvxNUxffA==
+X-Google-Smtp-Source: APiQypLrT1386zPYBPL87WSGpCvwjpvwKbln64uclI2ODgTX44mVS85T8KsJwkSSsXo6kzAPWf/95g==
+X-Received: by 2002:a63:1e0a:: with SMTP id e10mr23094381pge.417.1586878990825; 
+ Tue, 14 Apr 2020 08:43:10 -0700 (PDT)
+Received: from google.com ([2620:15c:2ce:0:9efe:9f1:9267:2b27])
+ by smtp.gmail.com with ESMTPSA id s9sm11766283pjr.5.2020.04.14.08.43.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 08:41:08 -0700 (PDT)
-Date: Tue, 14 Apr 2020 17:41:07 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Dmitry Osipenko <digetx@gmail.com>
-Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
- Tegra210
-Message-ID: <20200414154107.GO3593749@ulmo>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-10-thierry.reding@gmail.com>
- <fae8e1f5-753b-b2ce-d14f-c6e8b2061fdd@gmail.com>
+ Tue, 14 Apr 2020 08:43:10 -0700 (PDT)
+Date: Tue, 14 Apr 2020 08:43:07 -0700
+From: Fangrui Song <maskray@google.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm64: Delete the space separator in __emit_inst
+Message-ID: <20200414154307.2cke3x5ocz3q2as4@google.com>
+References: <20200413033811.75074-1-maskray@google.com>
+ <20200414095904.GB1278@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-In-Reply-To: <fae8e1f5-753b-b2ce-d14f-c6e8b2061fdd@gmail.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+Content-Disposition: inline
+In-Reply-To: <20200414095904.GB1278@C02TD0UTHF1T.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_084111_083398_33305FF1 
-X-CRM114-Status: GOOD (  17.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_084313_776207_0EE51044 
+X-CRM114-Status: GOOD (  16.88  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,6 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,92 +103,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
- linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6995828985114394957=="
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ clang-built-linux@googlegroups.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6995828985114394957==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="TMgB3/Ch1aWgZB1L"
-Content-Disposition: inline
+On 2020-04-14, Mark Rutland wrote:
+>Hi Fangrui,
+>
+>On Sun, Apr 12, 2020 at 08:38:11PM -0700, Fangrui Song wrote:
+>> Many instances of __emit_inst(x) expand to a directive. In a few places
+>> it is used as a macro argument, e.g.
+>>
+>>   arch/arm64/include/asm/sysreg.h
+>>   #define __emit_inst(x)                       .inst (x)
+>>
+>>   arch/arm64/include/asm/sysreg.h
+>>   #define SET_PSTATE_PAN(x)            __emit_inst(0xd500401f | PSTATE_PAN | ((!!x) << PSTATE_Imm_shift))
+>>
+>>   arch/arm64/kvm/hyp/entry.S
+>>   ALTERNATIVE(nop, SET_PSTATE_PAN(1), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
+>>
+>> Clang integrated assembler parses `.inst (x)` as two arguments passing
+>> to a macro. We delete the space separator so that `.inst(x)` will be
+>> parsed as one argument.
+>
+>I'm a little confused by the above; sorry if the below sounds stupid or
+>pedantic, but I just want to make sure I've understood the problem
+>correctly.
+>
+>For the above, ALTERNATIVE() and SET_PSTATE_PAN() are both preprocessor
+>macros, so I would expect those to be expanded before either the
+>integrated assembler or an external assembler consumes any of the
+>assembly (and both would see the same expanded text). Given that, I'm a
+>bit confused as to why the integrated assembly would have an impact on
+>preprocessing.
+>
+>Does compiling the pre-processed source using the integrated assembler
+>result in the same behaviour? Can we see the expanded text to make that
+>clear?
+>
+>... at what stage exactly does this go wrong?
+>
+>Thanks,
+>Mark.
 
+Hi Mark,
 
---TMgB3/Ch1aWgZB1L
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The C preprocessor expands arch/arm64/kvm/hyp/entry.S
+    ALTERNATIVE(nop, SET_PSTATE_PAN(1), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
 
-On Fri, Apr 10, 2020 at 11:46:25PM +0300, Dmitry Osipenko wrote:
-> 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
-> ...
-> > ---
-> > Changes in v6:
-> > - use __maybe_unused instead of #ifdef'ery for suspend/resume callbacks
-> > - take exclusive control of EMC clock during suspend/resume
-> > - move EMC driver changes from clk patch to this patch
-> > - make the driver buildable as a module
-> > - remove unnecessary suspend tracking
-> > - remove duplicate register defines
-> > - add tegra210-emc.h for Tegra210-specific registers
-> > - detect number of channels, number of devices and DRAM type at probe
-> >   time and store them in struct tegra210_emc, remove the corresponding
-> >   function parameters where no longer needed
-> > - properly clean up on failure
-> >=20
-> > Changes in v5:
-> > - major rework and cleanup
->=20
-> I happened to notice that the patches have an individual changelog only
-> by accident :)
->=20
-> Next time will be nice if at least you could mention about this in the
-> cover-letter, or move (or duplicate) the whole log in the cover-letter.
+to:
+    alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
 
-Given the amount of changes that seemed a little impractical. I can try
-to give a high-level overview of the changes and perhaps mention in the
-cover letter that there will be individual changelogs for each patch.
+`alternative_insn` is an assembler macro, not handled by the C preprocessor.
 
-Thierry
+Both comma and space are separators, with an exception that content
+inside a pair of parentheses/quotes is not split, so clang -cc1as or GNU
+as x86 splits arguments this way:
 
---TMgB3/Ch1aWgZB1L
-Content-Type: application/pgp-signature; name="signature.asc"
+    nop, .inst, (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
 
------BEGIN PGP SIGNATURE-----
+I actually feel that GNU as arm64's behavior is a little bit buggy. It
+works just because GNU as has another preprocessing step `do_scrub_chars`
+and its arm64 backend deletes the space before '('
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V2ZMACgkQ3SOs138+
-s6FVCw/+MTxlJhCzaf3mRbl2CqipZNHLKX5jAJK8K1SPWAv0fTVLuIKTFNVz1KY3
-wuxrgDZT+97eeXS8w7J0B83iLgKEeX5hCepqnOzb716x9sU95XgAfQUZsHsJhBYQ
-hjQycXgvlRXLMpEsbHuA87JT4ILV2DsxSngVdbK8GaKCZSkfj0g5Ov8g2H8SghAs
-Tv4POtJpUnDWR0ypK8+1o0OzFS7vuy6ctew+8wTAnEqTW8I4bd/RCFMCBqhD+4oS
-JuchrTdRRy23tQ3h+QxXhXHxXA3IsZiGzaQ5PL+/AKkebj6k5UR3GgnowBnJyB5m
-/i8TQDHGGrw2MPW3VrTKKI5gKqpUYPBKOZirL+MEdY02jOmaUcCkA9cSfKyFPidf
-pOfGPi5LhuNmkEAChJItWNJaRALrNcKjcKqV38xeMT94ji/1jAA8cjVPukMs/Clr
-kfKba0UOAWTVDZDp1MnxQrNK1E+LJN+hE2qPpKLB2ZI4H9UaKR9uATh/JhmxcnJp
-wJB25m9eHTUymsuAfenvL2nwBoato1jHeYiitEkntbfD6ybAjq0PDCotq4/2bBWU
-VwoMjKVEW6FgL+LYTAbLAyDva0ckCp07aEVZzXBeOhFVtd2BuQP0PLvfDbDcsBnV
-37mhZq5lYyKiL93hNyb/GGwm47r+bcNMl+zRvGTHXQf/ifMdrqo=
-=l66T
------END PGP SIGNATURE-----
+    alternative_insn nop,.inst(0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
 
---TMgB3/Ch1aWgZB1L--
+The x86 backend keeps the space before the outmost '('
 
+   alternative_insn nop,.inst (0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
 
---===============6995828985114394957==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+By reading its state machine, I think keeping the spaces will be the
+most reasonable behavior.
+
+If .inst were only used as arguments,
+
+    alternative_insn nop, ".inst (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8))", 4, 1
+
+would be the best to avoid parsing issues.
+
+>>
+>> Note, GNU as parsing `.inst (x)` as one argument is unintentional (for
+>> example the x86 backend will parse the construct as two arguments).
+>> See https://sourceware.org/bugzilla/show_bug.cgi?id=25750#c10
+>>
+>> Link: https://github.com/ClangBuiltLinux/linux/issues/939
+>> Cc: clang-built-linux@googlegroups.com
+>> Signed-off-by: Fangrui Song <maskray@google.com>
+>> ---
+>>  arch/arm64/include/asm/sysreg.h | 4 +++-
+>>  1 file changed, 3 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+>> index ebc622432831..af21e2ec5e3e 100644
+>> --- a/arch/arm64/include/asm/sysreg.h
+>> +++ b/arch/arm64/include/asm/sysreg.h
+>> @@ -49,7 +49,9 @@
+>>  #ifndef CONFIG_BROKEN_GAS_INST
+>>
+>>  #ifdef __ASSEMBLY__
+>> -#define __emit_inst(x)			.inst (x)
+>> +// The space separator is omitted so that __emit_inst(x) can be parsed as
+>> +// either a directive or a macro argument.
+>> +#define __emit_inst(x)			.inst(x)
+>>  #else
+>>  #define __emit_inst(x)			".inst " __stringify((x)) "\n\t"
+>>  #endif
+>> --
+>> 2.26.0.110.g2183baf09c-goog
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6995828985114394957==--
-
