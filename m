@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90CD71A7563
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:06:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E691A7565
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 10:06:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kPwOZUp4AiP3kLJVErlOLJPB7tKWQr1bz8lc5U+0G+I=; b=NF7F41lavPAd5Y
-	JLdgP8mtiARbIcaU9n6dQDpN0+kDBrRkuLZyCSTn/UGGTy1ccmo77GU+Z1Brskk2wZAy541aP6pHU
-	V35xphoMYG7HVE+L+DWZVQ4Vi8dE/hrHpkB9sVWex7hBblu64QizRPMOGclYQE+6m7h4Ru5aHt+4T
-	A5YtlVCevm+PBd/JYNL937PaIg3GL7tKvRDWfy9cMoeApWO+cSElo1ttru1+GROcGnUSVbjYs4HT4
-	x1k3+C3nCc+cPHvnfxPc/QPxBgKuw8coGpD39H6u2Gg0IKhr2MODOZNOwPHki6he7Bw27emKgtJx5
-	LLsnEBDISL+yMV0jYGkQ==;
+	List-Owner; bh=Z7sOOZ6HE1g0ucLzI7ldmyRh0p2lNLc3R8IkLbNJOh0=; b=T9oSN+hU1v/L3I
+	figTF3/WErydYr3blGG+ZwXYwRHEOgYkPhTiQ1IHS9G8mkAgOUJl1Qz/gx9sKpXXTtE5JIDeBhtjE
+	uRPQoneiqn7XEklIgO6uF0DxvUd1MopfMv2FbCqlwZlEWTcrLDzRuWhMXWwg8QyyASIoB5uY0sWiC
+	ewRm1aRcgENvQtYcm4piA4bvOQhZ6Bh7p4mjZ8iyOypmRaIxH0fR5VvIwx2G/5lKboui8LEK3MXFi
+	BsxMlfaWiGzcxiGYca5YMXqY/Q/5DHlgLNZqKn0Fewo9eVZaHMLB9WG1Gza3q4knB+VW37wAuzLCi
+	ZU9n838bX1Eugwfq8agQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGa2-00007X-Pg; Tue, 14 Apr 2020 08:06:02 +0000
-Received: from mail-lf1-f66.google.com ([209.85.167.66])
+	id 1jOGac-0000Uv-E2; Tue, 14 Apr 2020 08:06:38 +0000
+Received: from mail-lj1-f193.google.com ([209.85.208.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGZt-00006k-57; Tue, 14 Apr 2020 08:05:54 +0000
-Received: by mail-lf1-f66.google.com with SMTP id w145so8648571lff.3;
- Tue, 14 Apr 2020 01:05:53 -0700 (PDT)
+ id 1jOGaK-0000Sx-OF; Tue, 14 Apr 2020 08:06:24 +0000
+Received: by mail-lj1-f193.google.com with SMTP id l14so4470396ljj.5;
+ Tue, 14 Apr 2020 01:06:20 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uXBBLC51I01jMthOumtLiZBaTEIsbpU2/NFNpFRAREc=;
- b=kDfubYHBTAS9ns5fgGjc/TgzehLci9sSL6rXddU0TlX7wHwwpFN1Z+BN90vU/PdXWW
- 0du0y+R8Q2kK4aWk1ju28FgAFinnC5dQz5VDnyKnBltdFFm+rF6N3yQ5c8b5Pe0H58Ct
- ER2kIF6XCWpSVkq+4cWv+fHqllU5KVySMEC0eDkt2itjtyua+5o5gSep2HdenOCObWVF
- vc1f9uczuc/0EcIJJ8R46j78TL+Du6mYBbquZH3G0SVopI+kYcSfoZpT1IPU6q1aRBp8
- KsacVwzEorU4qyWO5suKcoSTJ1ZbuYELIarIIq4DdBlemo0RogDI8fGsGQ8oMKWm/eAs
- VkuQ==
-X-Gm-Message-State: AGi0PuaqtHv0x+8nam+8rBaotm7k9LZcm0zy6WQc2GVxEbXVRLp2WSBF
- fLWDalSQGEdqLd9ibLlXUlM=
-X-Google-Smtp-Source: APiQypLj9h3zbzYnYE3ZGoQTKubl1HUCkkplNhlTZ2Y0sHUshOeIRw6I5TR1qgyK8Gz6eO/BlyUlNw==
-X-Received: by 2002:ac2:4da7:: with SMTP id h7mr12643704lfe.95.1586851551731; 
- Tue, 14 Apr 2020 01:05:51 -0700 (PDT)
+ bh=/LqrT3PqtkvsnMTAK07awdCKIo/iJs2uRWnKjEOGF5c=;
+ b=kyJYmYuQgOlJvScCoddAuWML2Uan+8gvLYJYT+pdOI1NgRLwyTLI0oux/smPHRN95T
+ 7Kh45i3TJ7H88Vll0zmUKzJ1DS/5LzTJfigOvYHJXK3W2UUa1IHdnCRmMKtDNJ/9W95H
+ 0N+ApW2QvMMV7PdW8TYRaY/QTCUV7iSO6L0qxXHTUZQAMjT/Ae4G4mlVRvTranN0qWt6
+ H9qYz/zn7EnykclUrRjWmLv5FOpmTky+COOcXgSjX9YQejB5e0E35sE+MOJUvvk4DZx9
+ wmRtupi9iLCSlFh6Gju2Ol0VEyBtlYlxxPjDEV4FEZ/5qNTAth9+s4UmSE2t8y4XG87z
+ hR4A==
+X-Gm-Message-State: AGi0PubblAZrOiZYZAMGpW98xIgcQVdq1BbKXy+3+ibqxevV35Dc9+6h
+ v5uw74wsk60t0gEnabHKiTQYYSIJ
+X-Google-Smtp-Source: APiQypIBjxZp1qpvsKOfxAGwuz5/0AaZfTMR+jHUArG+pWwXgVni6ZdR17UNdLbMcTi1ceozCUcAZA==
+X-Received: by 2002:a2e:9ac9:: with SMTP id p9mr12800099ljj.222.1586851575932; 
+ Tue, 14 Apr 2020 01:06:15 -0700 (PDT)
 Received: from localhost.localdomain
  (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
- by smtp.gmail.com with ESMTPSA id j22sm9975883lfg.96.2020.04.14.01.05.49
+ by smtp.gmail.com with ESMTPSA id 28sm9854666lfr.7.2020.04.14.01.06.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 01:05:51 -0700 (PDT)
-Date: Tue, 14 Apr 2020 11:05:43 +0300
+ Tue, 14 Apr 2020 01:06:15 -0700 (PDT)
+Date: Tue, 14 Apr 2020 11:06:06 +0300
 From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v9 07/10] power: supply: add battery parameters
-Message-ID: <2a244c4cca0e443e3bc37f9657d39acfaf0e4427.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+Subject: [PATCH v9 08/10] dt_bindings: ROHM BD99954 Charger
+Message-ID: <e176221d77050cca1c84ae3f9bd61750f41b2504.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 References: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_010553_201936_76E7EB55 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20200414_010620_800638_AA2E238C 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.66 listed in list.dnswl.org]
+ no trust [209.85.208.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.193 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mazziesaccount[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.66 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -123,63 +123,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add parsing of new device-tree battery bindings.
+The ROHM BD99954 is a Battery Management LSI for 1-4 cell Lithium-Ion
+secondary battery. Intended to be used in space-constraint equipment such
+as Low profile Notebook PC, Tablets and other applications. BD99954
+provides a Dual-source Battery Charger, two port BC1.2 detection and a
+Battery Monitor.
 
-     - trickle-charge-current-microamp
-     - precharge-upper-limit-microvolt
-     - re-charge-voltage-microvolt
-     - over-voltage-threshold-microvolt
+Document the DT bindings for BD99954
 
 Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
 
 Changes since v8 - rebased and reordered series.
 
- drivers/power/supply/power_supply_core.c | 8 ++++++++
- include/linux/power_supply.h             | 4 ++++
- 2 files changed, 12 insertions(+)
+ .../bindings/power/supply/rohm,bd99954.yaml   | 155 ++++++++++++++++++
+ 1 file changed, 155 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
 
-diff --git a/drivers/power/supply/power_supply_core.c b/drivers/power/supply/power_supply_core.c
-index 1a9a9fae73d3..02b37fe6061c 100644
---- a/drivers/power/supply/power_supply_core.c
-+++ b/drivers/power/supply/power_supply_core.c
-@@ -620,10 +620,18 @@ int power_supply_get_battery_info(struct power_supply *psy,
- 			     &info->voltage_min_design_uv);
- 	of_property_read_u32(battery_np, "voltage-max-design-microvolt",
- 			     &info->voltage_max_design_uv);
-+	of_property_read_u32(battery_np, "trickle-charge-current-microamp",
-+			     &info->tricklecharge_current_ua);
- 	of_property_read_u32(battery_np, "precharge-current-microamp",
- 			     &info->precharge_current_ua);
-+	of_property_read_u32(battery_np, "precharge-upper-limit-microvolt",
-+			     &info->precharge_voltage_max_uv);
- 	of_property_read_u32(battery_np, "charge-term-current-microamp",
- 			     &info->charge_term_current_ua);
-+	of_property_read_u32(battery_np, "re-charge-voltage-microvolt",
-+			     &info->charge_restart_voltage_uv);
-+	of_property_read_u32(battery_np, "over-voltage-threshold-microvolt",
-+			     &info->overvoltage_limit_uv);
- 	of_property_read_u32(battery_np, "constant-charge-current-max-microamp",
- 			     &info->constant_charge_current_max_ua);
- 	of_property_read_u32(battery_np, "constant-charge-voltage-max-microvolt",
-diff --git a/include/linux/power_supply.h b/include/linux/power_supply.h
-index dcd5a71e6c67..d01322d1ab52 100644
---- a/include/linux/power_supply.h
-+++ b/include/linux/power_supply.h
-@@ -346,8 +346,12 @@ struct power_supply_battery_info {
- 	int charge_full_design_uah;	    /* microAmp-hours */
- 	int voltage_min_design_uv;	    /* microVolts */
- 	int voltage_max_design_uv;	    /* microVolts */
-+	int tricklecharge_current_ua;	    /* microAmps */
- 	int precharge_current_ua;	    /* microAmps */
-+	int precharge_voltage_max_uv;	    /* microVolts */
- 	int charge_term_current_ua;	    /* microAmps */
-+	int charge_restart_voltage_uv;	    /* microVolts */
-+	int overvoltage_limit_uv;	    /* microVolts */
- 	int constant_charge_current_max_ua; /* microAmps */
- 	int constant_charge_voltage_max_uv; /* microVolts */
- 	int factory_internal_resistance_uohm;   /* microOhms */
+diff --git a/Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml b/Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
+new file mode 100644
+index 000000000000..7e0f73a898c7
+--- /dev/null
++++ b/Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
+@@ -0,0 +1,155 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/power/supply/rohm,bd99954.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ROHM BD99954 Battery charger
++
++maintainers:
++  - Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
++  - Markus Laine <markus.laine@fi.rohmeurope.com>
++  - Mikko Mutanen <mikko.mutanen@fi.rohmeurope.com>
++
++description: |
++  The ROHM BD99954 is a Battery Management LSI for 1-4 cell Lithium-Ion
++  secondary battery intended to be used in space-constraint equipment such
++  as Low profile Notebook PC, Tablets and other applications. BD99954
++  provides a Dual-source Battery Charger, two port BC1.2 detection and a
++  Battery Monitor.
++
++
++properties:
++  compatible:
++    const: rohm,bd99954
++#
++#    The battery charging profile of BD99954.
++#
++#    Curve (1) represents charging current.
++#    Curve (2) represents battery voltage.
++#
++#    The BD99954 data sheet divides charging to three phases.
++#    a) Trickle-charge with constant current (8).
++#    b) pre-charge with constant current (6)
++#    c) fast-charge with:
++#       First a constant current (5) phase (CC)
++#       Then constant voltage (CV) phase (after the battery voltage has reached
++#       target level - until charging current has dropped to termination
++#       level (7)
++#
++#     V ^                                                        ^ I
++#       .                                                        .
++#       .                                                        .
++# (4)- -.- - - - - - - - - - - - - -  +++++++++++++++++++++++++++.
++#       .                            /                           .
++#       .                     ++++++/++ - - - - - - - - - - - - -.- - (5)
++#       .                     +    /  +                          .
++#       .                     +   -   --                         .
++#       .                     +  -     +                         .
++#       .                     +.-      -:                        .
++#       .                    .+         +`                       .
++#       .                  .- +       | `/                       .
++#       .               .."   +          .:                      .
++#       .             -"      +           --                     .
++#       .    (2)  ..."        +       |    :-                    .
++#       .    ...""            +             -:                   .
++# (3)- -.-.""- - - - -+++++++++ - - - - - - -.:- - - - - - - - - .- - (6)
++#       .             +                       `:.                .
++#       .             +               |         -:               .
++#       .             +                           -:             .
++#       .             +                             ..           .
++#       .   (1)       +               |               "+++- - - -.- - (7)
++#       -++++++++++++++- - - - - - - - - - - - - - - - - + - - - .- - (8)
++#       .                                                +       -
++#       -------------------------------------------------+++++++++-->
++#       |             |       |   CC   |      CV         |
++#       | --trickle-- | -pre- | ---------fast----------- |
++#
++#   The charger uses the following battery properties
++# - trickle-charge-current-microamp:
++#     Current used at trickle-charge phase (8 in above chart)
++#     minimum: 64000
++#     maximum: 1024000
++#     multipleOf: 64000
++# - precharge-current-microamp:
++#     Current used at pre-charge phase (6 in above chart)
++#     minimum: 64000
++#     maximum: 1024000
++#     multipleOf: 64000
++# - constant-charge-current-max-microamp
++#     Current used at fast charge constant current phase (5 in above chart)
++#     minimum: 64000
++#     maximum: 1024000
++#     multipleOf: 64000
++# - constant-charge-voltage-max-microvolt
++#     The constant voltage used in fast charging phase (4 in above chart)
++#     minimum: 2560000
++#     maximum: 19200000
++#     multipleOf: 16000
++# - precharge-upper-limit-microvolt
++#     charging mode is changed from trickle charging to pre-charging
++#     when battery voltage exceeds this limit voltage (3 in above chart)
++#     minimum: 2048000
++#     maximum: 19200000
++#     multipleOf: 64000
++# - re-charge-voltage-microvolt
++#     minimum: 2560000
++#     maximum: 19200000
++#     multipleOf: 16000
++#     re-charging is automatically started when battry has been discharging
++#     to the point where the battery voltage drops below this limit
++# - over-voltage-threshold-microvolt
++#     battery is expected to be faulty if battery voltage exceeds this limit.
++#     Charger will then enter to a "battery faulty" -state
++#     minimum: 2560000
++#     maximum: 19200000
++#     multipleOf: 16000
++# - charge-term-current-microamp
++#     minimum: 0
++#     maximum: 1024000
++#     multipleOf: 64000
++#     a charge cycle terminates when the battery voltage is above recharge
++#     threshold, and the current is below this setting (7 in above chart)
++#   See also Documentation/devicetree/bindings/power/supply/battery.txt
++
++  monitored-battery:
++    description:
++      phandle of battery characteristics devicetree node
++
++  rohm,vsys-regulation-microvolt:
++    description: system specific lower limit for system voltage.
++    minimum: 2560000
++    maximum: 19200000
++    multipleOf: 64000
++
++  rohm,vbus-input-current-limit-microamp:
++    description: system specific VBUS input current limit (in microamps).
++    minimum: 32000
++    maximum: 16352000
++    multipleOf: 32000
++
++  rohm,vcc-input-current-limit-microamp:
++    description: system specific VCC/VACP input current limit (in microamps).
++    minimum: 32000
++    maximum: 16352000
++    multipleOf: 32000
++
++required:
++  - compatible
++
++examples:
++  - |
++    i2c {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        charger@9 {
++            compatible = "rohm,bd99954";
++            monitored-battery = <&battery>;
++            reg = <0x9>;
++            interrupt-parent = <&gpio1>;
++            interrupts = <29 8>;
++            rohm,vsys-regulation-microvolt = <8960000>;
++            rohm,vbus-input-current-limit-microamp = <1472000>;
++            rohm,vcc-input-current-limit-microamp = <1472000>;
++        };
++    };
 -- 
 2.21.0
 
