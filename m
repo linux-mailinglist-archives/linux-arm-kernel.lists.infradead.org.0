@@ -2,37 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 288AA1A7F79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:20:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4457C1A7F8A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:21:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QdE4m1efMMvr89bKWKaiR7PfnxoHnx54puhb86L6Ecg=; b=Xxbjj2zRP0LHQN
-	P6N7oWm3Pi25josEOpMkPl5O9NIsvlMhAxNvbBkuNMrS4Ll4XkIzDYctgliTzTqAtzfw8HNodZeUq
-	sdH8Oy5CthcsmjfSAmc+XGDW2Tz2a/ucq05MGb9H4QwEowWr8ENzjzcQTAtO9OrKxabZA34g48bZk
-	7QydZicKhAm4TEYiwbaQ9XWyMnQR7qezCiMoms+EJfDop3z1S1KC405rX5tr8k/BdoPGVrOc6NXH8
-	GN6JdPQ54vLxAu67KMOU+M3eZNrQW8A3o97N/Pw/i4OkDwLJ3Y6LcS7oviBqWA283OKaV/sowjFKI
-	KskunT9gJOv9v6Itt9lA==;
+	List-Owner; bh=hCKoSNobDoEuzeZiQUOjPN+gLUJT+91IFAZOKCS7eDU=; b=eDW47QZ6DYOvn8
+	9KUp7f5j/h3KA+jE5Is2ZUF3JS8EIsiiHpVqPeZ1eedoUb160f9Jm3X5GBrH1TVWbNNF8pqbA4LPO
+	oroZoDgUF0e7tuhcXXQlhr9lQy2CG3VPxHC7ZuLOXLHMQ+G1DOREUc0I0UUSRnWuVZqGjx+8fdOT1
+	zE73IZC5/JhCP1SXNEgnoJZe6FMft4IPSJ2YcIPSpqkwzz4Qa0wJcco93GMbsBAilgtnnTsctyWKx
+	TlQabTR6IkAMq/nQ/uSvu4kq4U2Crc2jN6mGjZA5Yw/0mOFlKDJ+FrBWhDIXFEllR/6wHV2qZjsJs
+	J0dNvvMbYKntwP6THltw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMQH-0000cH-Lb; Tue, 14 Apr 2020 14:20:21 +0000
-Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jOMQA-0000bu-TE; Tue, 14 Apr 2020 14:20:14 +0000
-Date: Tue, 14 Apr 2020 07:20:14 -0700
-From: Matthew Wilcox <willy@infradead.org>
-To: Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: Re: [PATCH v2 4/4] mm/vmalloc: Hugepage vmalloc mappings
-Message-ID: <20200414142014.GO21484@bombadil.infradead.org>
-References: <20200413125303.423864-1-npiggin@gmail.com>
- <20200413125303.423864-5-npiggin@gmail.com>
- <20200413134106.GN21484@bombadil.infradead.org>
- <36616218-1d3a-b18a-8fb8-4fc9eff22780@c-s.fr>
+	id 1jOMRa-00018O-Da; Tue, 14 Apr 2020 14:21:42 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOMRT-000184-2e
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 14:21:36 +0000
+Received: by mail-ot1-f65.google.com with SMTP id w12so12038937otm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 07:21:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7qB5XS57n67MYXQJiHnjoHHOlP+v7Plet2PJhhKm2pA=;
+ b=Qpymeh05VwSR73RD8nrGts4ozi7BOZ3DvMSoI6ZYErsuEurzReR+iZFc6sjZBWOhab
+ hJjsFuH01Si72Yy0K+lI0p18mFtNmiR8zU56ZW3TTYFAMAEFJmtWLMxDY7FAmhEzA7e7
+ 4A8M4zOrfgx9ZRQOlluDCc5pQxVQh1bSY+9HLtupuceBWZ7xb7lOO8WLr1DQKgkRT0Ne
+ syb5+nrvMZR5y8a1Z3AoWJS06soPdFAW6UCLCbQ09cNrvwmnBJAbPiu6WMphd7ltj3lp
+ EFTbgGIaeqrEAvAmuFlQCrHzKi6S0nB3Jv0YrBDza8YE9T5uwuRBd5lK1BCPvJRNFYbh
+ 3Tdw==
+X-Gm-Message-State: AGi0PuZnOuK/raOA0DKs/AKw+fhxeunOKGH4Nes+9eQ5Uw5MN7QWGV3U
+ ouE8ajWeRtY85LRogJKYxQ==
+X-Google-Smtp-Source: APiQypLoB//SQjLQBkpXtSSlfjCiCaFzojDq5PxSqn/uIWY6+9eAJg0r+nHSgJSEib1fkfvlSTLSsA==
+X-Received: by 2002:a05:6830:1190:: with SMTP id
+ u16mr19562600otq.83.1586874093641; 
+ Tue, 14 Apr 2020 07:21:33 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c7sm1257994otp.3.2020.04.14.07.21.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 07:21:32 -0700 (PDT)
+Received: (nullmailer pid 18159 invoked by uid 1000);
+ Tue, 14 Apr 2020 14:21:31 -0000
+Date: Tue, 14 Apr 2020 09:21:31 -0500
+From: Rob Herring <robh@kernel.org>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH] dt-bindings: dma: uniphier-xdmac: switch to single reg
+ region
+Message-ID: <20200414142131.GA18052@bogus>
+References: <20200401032150.19767-1-yamada.masahiro@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <36616218-1d3a-b18a-8fb8-4fc9eff22780@c-s.fr>
+In-Reply-To: <20200401032150.19767-1-yamada.masahiro@socionext.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200414_072135_113429_381320B0 
+X-CRM114-Status: GOOD (  15.69  )
+X-Spam-Score: 0.8 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.8 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,71 +95,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Nicholas Piggin <npiggin@gmail.com>,
- linux-mm@kvack.org, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+Cc: devicetree@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 02:28:35PM +0200, Christophe Leroy wrote:
-> Le 13/04/2020 =E0 15:41, Matthew Wilcox a =E9crit=A0:
-> > On Mon, Apr 13, 2020 at 10:53:03PM +1000, Nicholas Piggin wrote:
-> > > +static int vmap_pages_range_noflush(unsigned long start, unsigned lo=
-ng end,
-> > > +				    pgprot_t prot, struct page **pages,
-> > > +				    unsigned int page_shift)
-> > > +{
-> > > +	if (page_shift =3D=3D PAGE_SIZE) {
-> > =
+On Wed,  1 Apr 2020 12:21:50 +0900, Masahiro Yamada wrote:
+> The reg in the example "<0x5fc10000 0x1000>, <0x5fc20000 0x800>"
+> is wrong. The register region of this controller is much smaller,
+> and there is no other hardware register interleaved. There is no
+> good reason to split it into two regions.
+> 
+> Just use a single, contiguous register region.
+> 
+> While I am here, I made the 'dma-channels' property mandatory because
+> otherwise there is no way to determine the number of the channels.
+> 
+> Please note the original binding was merged recently. Since there
+> is no user yet, this change has no actual impact.
+> 
+> Fixes: b9fb56b6ba8a ("dt-bindings: dmaengine: Add UniPhier external DMA controller bindings")
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+> ---
+> 
+> We do not need to touch the driver either because the second
+> region is not used.
+> 
+> 
+>  .../devicetree/bindings/dma/socionext,uniphier-xdmac.yaml  | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
+> 
 
-> > ... I think you meant 'page_shift =3D=3D PAGE_SHIFT'
-> > =
-
-> > Overall I like this series, although it's a bit biased towards CPUs
-> > which have page sizes which match PMD/PUD sizes.  It doesn't offer the
-> > possibility of using 64kB page sizes on ARM, for example.  But it's a
-> > step in the right direction.
-> =
-
-> I was going to ask more or less the same question, I would have liked to =
-use
-> 512kB hugepages on powerpc 8xx.
-> =
-
-> Even the 8M hugepages (still on the 8xx), can they be used as well, taking
-> into account that two PGD entries have to point to the same 8M page ?
-> =
-
-> I sent out a series which tends to make the management of 512k and 8M pag=
-es
-> closer to what Linux expects, in order to use them inside kernel, for Lin=
-ear
-> mappings and Kasan mappings for the moment. See
-> https://patchwork.ozlabs.org/project/linuxppc-dev/list/?series=3D164620
-> It would be nice if we could amplify it a use it for ioremaps and vmallocs
-> as well.
-
-I haven't been looking at vmalloc at all; I've been looking at the page
-cache.  See:
-https://lore.kernel.org/linux-mm/20200212041845.25879-1-willy@infradead.org/
-
-Once we have large pages in the page cache, I want to sort out the API
-for asking the CPU to insert a TLB entry.  Right now, we use set_pte_at(),
-set_pmd_at() and set_pud_at().  I'm thinking something along the lines of:
-
-vm_fault_t vmf_set_page_at(struct vm_fault *vmf, struct page *page);
-
-and the architecture can insert whatever PTEs and/or TLB entries it
-likes based on compound_order(page) -- if, say, it's a 1MB page, it might
-choose to insert 2 * 512kB entries, or just the upper or lower 512kB entry
-(depending which half of the 1MB page the address sits in).
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
