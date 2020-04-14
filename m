@@ -2,69 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1721A7AF2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:37:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7766D1A7AF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:40:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=a36Nag0IHmv+gi6AvWxjkYd9N49aSljwTloySo52MLU=; b=evyssl8OhcYon1edKDzyoI96dq
-	BNuTW15AFJsg+6DLTkkDknZV2hjYpSOnVDnnxL464XS0xEgl7IZYXNywBI5OdaJx+r9la7Q4GuR8a
-	Hk5caINrqwJaWgS2hoACbUw++PjuKDy2DVEqnS08GHHD3aRDeD9dpTBv9Nf3OFF8U4qaVoE1vfz9n
-	IEZIGdALWUZbv+hVd86AdrYtOfNXSr55Nxot5CpBiQnM4gwJj2+D77CaPl8mW/Ff0toT2kqG15tOs
-	h8gbJ1YpxMnO1n2bFPIuYKmQLNM5o3kqCnaxT80+L26FYTeGhUpn7cXha3JOW+v0T0s5Yh2PtZvkj
-	fehH6Nuw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J9ahMJo1J++CbLeCSBLBG8ESLcC01OIOr69NAID8rZU=; b=vBv/QIjpL6yPv+
+	GvVj0Re2wj1SeNwq5OLeq6Rpu7a8whnQ85QIzK8/PxgJwAlZP2krZmUsWM7TcswPvMg1GpjXLtYRh
+	4TxtyLbjeiczn9Z2xluQa97zTlP9pQ7pw1U5BImhI26DNu3cHLbiw/o+3gA+Or6x8Xkt2xVPMYdUZ
+	YbABHrIcQApLCkFmWThXWV8ng2oII199IUUnXPDYNTgjXsq9MMWfRkNDcojhy78Gf4JQo9Oz+H8It
+	RJK/CKSZGT7DmE48xQk9bRYVQW/Qf5ATYw9lYpK6RAAwFuJIhwwYDJAmfHQl3q3m/V8Bb3HwN8/YH
+	TfedkJ54P6UZqUhLnDIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKp2-0004Dm-47; Tue, 14 Apr 2020 12:37:48 +0000
-Received: from m17617.mail.qiye.163.com ([59.111.176.17])
+	id 1jOKrX-0007oe-6T; Tue, 14 Apr 2020 12:40:23 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKoA-0003aH-Rr
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:36:56 +0000
-Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
- by m17617.mail.qiye.163.com (Hmail) with ESMTPA id 572BB261975;
- Tue, 14 Apr 2020 20:36:51 +0800 (CST)
-From: Wang Qing <wangqing@vivo.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- Juri Lelli <juri.lelli@redhat.com>,
- Vincent Guittot <vincent.guittot@linaro.org>,
- Dietmar Eggemann <dietmar.eggemann@arm.com>,
- Steven Rostedt <rostedt@goodmis.org>, Ben Segall <bsegall@google.com>,
- Mel Gorman <mgorman@suse.de>, James Morse <james.morse@arm.com>,
- Mark Rutland <mark.rutland@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Thomas Gleixner <tglx@linutronix.de>, jinho lim <jordan.lim@samsung.com>,
- Wang Qing <wangqing@vivo.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [V3 3/3] sched:rename task_running() and to task_running_on_rq
-Date: Tue, 14 Apr 2020 20:36:32 +0800
-Message-Id: <1586867796-5768-4-git-send-email-wangqing@vivo.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1586867796-5768-1-git-send-email-wangqing@vivo.com>
-References: <1586867796-5768-1-git-send-email-wangqing@vivo.com>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVKTExLS0tLT05MTE1ITFlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pz46Kjo6DDgxAgpMHRkRMC9L
- FQMaFD1VSlVKTkNNQ01MQ0pKQ0tJVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
- VUtVSEpVSklJWVdZCAFZQUxCSEM3Bg++
-X-HM-Tid: 0a7178b135589375kuws572bb261975
+ id 1jOKrP-0007ne-0D
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:40:17 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 00FCB62405C43A7BFF93;
+ Tue, 14 Apr 2020 20:40:04 +0800 (CST)
+Received: from [127.0.0.1] (10.173.221.49) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.487.0; Tue, 14 Apr 2020
+ 20:39:54 +0800
+Subject: Re: [PATCH] arm64: panic on synchronous external abort in kernel
+ context
+To: James Morse <james.morse@arm.com>, Mark Rutland <mark.rutland@arm.com>
+References: <20200410015245.23230-1-xiexiuqi@huawei.com>
+ <20200414105923.GA2486@C02TD0UTHF1T.local>
+ <adc93578-5cfc-09c3-0b88-b265e310ef97@arm.com>
+From: Xie XiuQi <xiexiuqi@huawei.com>
+Message-ID: <21997719-c521-c39a-f521-54feae16fc45@huawei.com>
+Date: Tue, 14 Apr 2020 20:39:53 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <adc93578-5cfc-09c3-0b88-b265e310ef97@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.173.221.49]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_053655_248079_D0DEC9CC 
-X-CRM114-Status: GOOD (  12.84  )
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20200414_054015_218355_8971B83B 
+X-CRM114-Status: GOOD (  19.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.17 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [59.111.176.17 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -77,165 +68,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com
-MIME-Version: 1.0
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ tanxiaofei@huawei.com, tglx@linutronix.de, will@kernel.org,
+ wangxiongfeng2@huawei.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The task_running() should be renamed to task_running_on_rq()
-like the naming of task_running_on_cpu(), this is what it
-originally mean.
+Hi James,
 
-This solves the confusing naming problem.
+On 2020/4/14 20:16, James Morse wrote:
+> Hi Xie,
+> 
+> On 14/04/2020 11:59, Mark Rutland wrote:
+>> On Fri, Apr 10, 2020 at 09:52:45AM +0800, Xie XiuQi wrote:
+>>> We should panic even panic_on_oops is not set, when we can't recover
+>>> from synchronous external abort in kernel context.
+> 
+> Hmm, fault-from-kernel-context doesn't mean the fault affects the kernel. If the kernel is
+> reading or writing from user-space memory for a syscall, its the user-space memory that is
+> affected. This thread can't make progress, so we kill it.
+> If its a kernel thread or we were in irq context, we panic().
+> 
+> I don't think you really want all faults that happen as a result of a kernel access to be
+> fatal!
 
-Signed-off-by: Wang Qing <wangqing@vivo.com>
----
- kernel/sched/core.c     | 14 +++++++-------
- kernel/sched/deadline.c |  6 +++---
- kernel/sched/fair.c     |  2 +-
- kernel/sched/rt.c       |  6 +++---
- kernel/sched/sched.h    |  2 +-
- 5 files changed, 15 insertions(+), 15 deletions(-)
+Yes, you're right. I just want to fix a hung up when ras error inject testing.
 
-diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index a2694ba..7ba1840 100644
---- a/kernel/sched/core.c
-+++ b/kernel/sched/core.c
-@@ -1672,7 +1672,7 @@ static int __set_cpus_allowed_ptr(struct task_struct *p,
- 	if (cpumask_test_cpu(task_cpu(p), new_mask))
- 		goto out;
- 
--	if (task_running(rq, p) || p->state == TASK_WAKING) {
-+	if (task_running_on_rq(rq, p) || p->state == TASK_WAKING) {
- 		struct migration_arg arg = { p, dest_cpu };
- 		/* Need help from migration thread: drop lock and wait. */
- 		task_rq_unlock(rq, p, &rf);
-@@ -1905,11 +1905,11 @@ unsigned long wait_task_inactive(struct task_struct *p, long match_state)
- 		 *
- 		 * NOTE! Since we don't hold any locks, it's not
- 		 * even sure that "rq" stays as the right runqueue!
--		 * But we don't care, since "task_running()" will
--		 * return false if the runqueue has changed and p
--		 * is actually now running somewhere else!
-+		 * But we don't care, since "task_running_on_rq()"
-+		 * will return false if the runqueue has changed
-+		 * and p is actually now running somewhere else!
- 		 */
--		while (task_running(rq, p)) {
-+		while (task_running_on_rq(rq, p)) {
- 			if (match_state && unlikely(p->state != match_state))
- 				return 0;
- 			cpu_relax();
-@@ -1922,7 +1922,7 @@ unsigned long wait_task_inactive(struct task_struct *p, long match_state)
- 		 */
- 		rq = task_rq_lock(p, &rf);
- 		trace_sched_wait_task(p);
--		running = task_running(rq, p);
-+		running = task_running_on_rq(rq, p);
- 		queued = task_on_rq_queued(p);
- 		ncsw = 0;
- 		if (!match_state || p->state == match_state)
-@@ -5745,7 +5745,7 @@ int __sched yield_to(struct task_struct *p, bool preempt)
- 	if (curr->sched_class != p->sched_class)
- 		goto out_unlock;
- 
--	if (task_running(p_rq, p) || p->state)
-+	if (task_running_on_rq(p_rq, p) || p->state)
- 		goto out_unlock;
- 
- 	yielded = curr->sched_class->yield_to_task(rq, p, preempt);
-diff --git a/kernel/sched/deadline.c b/kernel/sched/deadline.c
-index 504d2f5..c04cecd 100644
---- a/kernel/sched/deadline.c
-+++ b/kernel/sched/deadline.c
-@@ -1838,7 +1838,7 @@ static void task_fork_dl(struct task_struct *p)
- 
- static int pick_dl_task(struct rq *rq, struct task_struct *p, int cpu)
- {
--	if (!task_running(rq, p) &&
-+	if (!task_running_on_rq(rq, p) &&
- 	    cpumask_test_cpu(cpu, p->cpus_ptr))
- 		return 1;
- 	return 0;
-@@ -1990,7 +1990,7 @@ static struct rq *find_lock_later_rq(struct task_struct *task, struct rq *rq)
- 		if (double_lock_balance(rq, later_rq)) {
- 			if (unlikely(task_rq(task) != rq ||
- 				     !cpumask_test_cpu(later_rq->cpu, task->cpus_ptr) ||
--				     task_running(rq, task) ||
-+				     task_running_on_rq(rq, task) ||
- 				     !dl_task(task) ||
- 				     !task_on_rq_queued(task))) {
- 				double_unlock_balance(rq, later_rq);
-@@ -2217,7 +2217,7 @@ static void pull_dl_task(struct rq *this_rq)
-  */
- static void task_woken_dl(struct rq *rq, struct task_struct *p)
- {
--	if (!task_running(rq, p) &&
-+	if (!task_running_on_rq(rq, p) &&
- 	    !test_tsk_need_resched(rq->curr) &&
- 	    p->nr_cpus_allowed > 1 &&
- 	    dl_task(rq->curr) &&
-diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-index 1ea3ddd..6cc0b5b 100644
---- a/kernel/sched/fair.c
-+++ b/kernel/sched/fair.c
-@@ -7503,7 +7503,7 @@ int can_migrate_task(struct task_struct *p, struct lb_env *env)
- 	/* Record that we found atleast one task that could run on dst_cpu */
- 	env->flags &= ~LBF_ALL_PINNED;
- 
--	if (task_running(env->src_rq, p)) {
-+	if (task_running_on_rq(env->src_rq, p)) {
- 		schedstat_inc(p->se.statistics.nr_failed_migrations_running);
- 		return 0;
- 	}
-diff --git a/kernel/sched/rt.c b/kernel/sched/rt.c
-index df11d88..ea647d9 100644
---- a/kernel/sched/rt.c
-+++ b/kernel/sched/rt.c
-@@ -1655,7 +1655,7 @@ static void put_prev_task_rt(struct rq *rq, struct task_struct *p)
- 
- static int pick_rt_task(struct rq *rq, struct task_struct *p, int cpu)
- {
--	if (!task_running(rq, p) &&
-+	if (!task_running_on_rq(rq, p) &&
- 	    cpumask_test_cpu(cpu, p->cpus_ptr))
- 		return 1;
- 
-@@ -1810,7 +1810,7 @@ static struct rq *find_lock_lowest_rq(struct task_struct *task, struct rq *rq)
- 			 */
- 			if (unlikely(task_rq(task) != rq ||
- 				     !cpumask_test_cpu(lowest_rq->cpu, task->cpus_ptr) ||
--				     task_running(rq, task) ||
-+				     task_running_on_rq(rq, task) ||
- 				     !rt_task(task) ||
- 				     !task_on_rq_queued(task))) {
- 
-@@ -2218,7 +2218,7 @@ static void pull_rt_task(struct rq *this_rq)
-  */
- static void task_woken_rt(struct rq *rq, struct task_struct *p)
- {
--	bool need_to_push = !task_running(rq, p) &&
-+	bool need_to_push = !task_running_on_rq(rq, p) &&
- 			    !test_tsk_need_resched(rq->curr) &&
- 			    p->nr_cpus_allowed > 1 &&
- 			    (dl_task(rq->curr) || rt_task(rq->curr)) &&
-diff --git a/kernel/sched/sched.h b/kernel/sched/sched.h
-index 0f616bf..e5b6538 100644
---- a/kernel/sched/sched.h
-+++ b/kernel/sched/sched.h
-@@ -1659,7 +1659,7 @@ static inline int task_current(struct rq *rq, struct task_struct *p)
- 	return rq->curr == p;
- }
- 
--static inline int task_running(struct rq *rq, struct task_struct *p)
-+static inline int task_running_on_rq(struct rq *rq, struct task_struct *p)
- {
- #ifdef CONFIG_SMP
- 	return p->on_cpu;
--- 
-2.7.4
+panic_on_oops is not set in the kernel image for testing. When receiving a sea in kernel
+context, the PE trap in do_exit(), and can't return any more.
+
+I analyze the source code, the call trace might like this:
+   do_mem_abort
+     -> arm64_notify_die
+        -> die                    # kernel context, call die() directly;
+           -> do_exit             # kernel process context, call do_exit(SIGSEGV);
+              -> do_task_dead()   # call do_task_dead(), and hung up this core;
+
+> 
+> [...]
+> 
+>> What exactly are you trying to catch here? If you are seeing a problem
+>> in practice, can you please share your log from a crash?
+> 
+> Yes please!
+> 
+
+crash log:
+
+NOTICE:  [TotemRasIntCpuNodeEri]:[1879L]
+NOTICE:  [RasEriInterrupt]:[173L]NodeTYP2Status = 0x0
+[  387.740609] {1}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 9
+[  387.748837] {1}[Hardware Error]: event severity: recoverable
+[  387.754470] {1}[Hardware Error]:  Error 0, type: recoverable
+[  387.760103] {1}[Hardware Error]:   section_type: ARM processor error
+[  387.766425] {1}[Hardware Error]:   MIDR: 0x00000000481fd010
+[  387.771972] {1}[Hardware Error]:   Multiprocessor Affinity Register (MPIDR): 0x0000000081080000
+[  387.780628] {1}[Hardware Error]:   error affinity level: 0
+[  387.786088] {1}[Hardware Error]:   running state: 0x1
+[  387.791115] {1}[Hardware Error]:   Power State Coordination Interface state: 0
+[  387.798301] {1}[Hardware Error]:   Error info structure 0:
+[  387.803761] {1}[Hardware Error]:   num errors: 1
+[  387.808356] {1}[Hardware Error]:    error_type: 0, cache error
+[  387.814160] {1}[Hardware Error]:    error_info: 0x0000000024400017
+[  387.820311] {1}[Hardware Error]:     transaction type: Instruction
+[  387.826461] {1}[Hardware Error]:     operation type: Generic error (type cannot be determined)
+[  387.835031] {1}[Hardware Error]:     cache level: 1
+[  387.839878] {1}[Hardware Error]:     the error has been corrected
+[  387.845942] {1}[Hardware Error]:    physical fault address: 0x00000027caf50770
+[  387.853162] Internal error: synchronous external abort: 96000610 [#1] PREEMPT SMP
+[  387.860611] Modules linked in: l1l2_inject(O) vfio_iommu_type1 vfio_pci vfio_virqfd vfio ib_ipoib ib_umad rpcrdma ib_iser libiscsi scsi_transport_iscsi hns_roce_hw_v2 crct10dif_ce ses hns3 hclge hnae3 hisi_trng_v2 rng_core hisi_zip hisi_sec2 hisi_hpre hisi_qm uacce hisi_sas_v3_hw hisi_sas_main libsas scsi_transport_sas
+[  387.888725] CPU: 0 PID: 940 Comm: kworker/0:3 Kdump: loaded Tainted: G           O      5.5.0-rc4-g5993cbe #1
+[  387.898592] Hardware name: Huawei TaiShan 2280 V2/BC82AMDC, BIOS 2280-V2 CS V3.B210.01 03/12/2020
+[
+ Message from  387.907429] Workqueue: events error_inject [l1l2_inject]
+[  387.914098] pstate: 80c00009 (Nzcv daif +PAN +UAO)
+ s[yslogd@localho  387.918867] pc : lsu_inj_ue+0x58/0x70 [l1l2_inject]
+[  387.925103] lr : error_inject+0x64/0xb0 [l1l2_inject]
+[  387.930132] sp : ffff800020af3d90
+[  387.933435] x29: ffff800020af3d90 x28: 0000000000000000
+st[ at Mar 30 11:  387.938723] x27: ffff0027dae6e838 x26: ffff80001178bcc8
+[  387.945391] x25: 0000000000000000 x24: ffffa2c77162e090
+[  387.950680] x23: 0000000000000000 x22: ffff2027d7c33d40
+33[:55 ...
+ ker  387.955968] x21: ffff2027d7c37a00 x20: ffff0027d679c000
+[  387.962636] x19: ffffa2c77162e088 x18: 0000000020cbf59a
+ne[l:Internal err  387.967924] x17: 000000000000000e x16: ffffa2c7b812bc98
+[  387.974592] x15: 0000000000000001 x14: 0000000000000000
+[  387.979880] x13: ffff2027cf75a780 x12: ffffa2c7b8299c18
+or[: synchronous   387.985168] x11: 0000000000000000 x10: 00000000000009f0
+[  387.991836] x9 : ffff800020af3d50 x8 : fefefefefefefeff
+ex[ternal abort:   387.997124] x7 : 0000000000000000 x6 : 001d4ed88e000000
+[  388.003792] x5 : 000073746e657665 x4 : 0000080110f81381
+[  388.009080] x3 : 000000000000002f x2 : 807fffffffffffff
+96[000610 [#1] PR  388.014369] x1 : ffffa2c77162c518 x0 : 0000000000000081
+[  388.021037] Call trace:
+EEMPT SMP
+[  388.023475]  lsu_inj_ue+0x58/0x70 [l1l2_inject]
+[  388.029019]  error_inject+0x64/0xb0 [l1l2_inject]
+[  388.033707]  process_one_work+0x158/0x4b8
+[  388.037699]  worker_thread+0x50/0x498
+[  388.041348]  kthread+0xfc/0x128
+[  388.044480]  ret_from_fork+0x10/0x1c
+[  388.048042] Code: b2790000 d519f780 f9800020 d5033f9f (58001001)
+[  388.054109] ---[ end trace 39d51c21b0e42ba6 ]---
+
+core 0 hung up at here.
+
+> 
+> I suspect you want to make memory_failure() smarter about faults that affect the kernel
+> text or data. If so, please do it in memory_failure() where it benefits all architectures,
+> and all methods of reporting errors.
+> (we may need a 'synchronous' hint to memory_failure(), it expects everything to be
+> asynchronous).
+> 
+> If its not memory, we should extend the RAS handling to know what this error is, and that
+> it is fatal. (e.g. PE state is infected)
+> 
+> 
+> Thanks,
+> 
+> James
+> .
+> 
 
 
 _______________________________________________
