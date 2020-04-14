@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48CC71A7767
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:33:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A7351A7772
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 11:35:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MqhA9mSCBNx2cSOCEXvOdLvhqVupNcdEemsznb1NRKo=; b=SG9gU9mGUx+km2
-	nduSy1wR0q1SmnthRJMPIZJWfwVRaIMDxG0GaAVWWTEoT4mKGVIywow1Rq2ZkyfgkmI2vUvBjsNtO
-	EgYldwabuBtluHeOUJFhXCHnrD0QINmF0hQoWzMbeL6cROIlB6lVBgWndhmNJV4rOo7ntRy5hWQAk
-	/bG3q/EP1my+BZ+eGtitwXEwck3BET09ZK7MFHHef1jKi81NJCq8VKbLrNgJtjqRMRNfUMZjsUBTG
-	QwxdJ1UqfianVi0cS4Mm9MJOcrN9uBauNPK3nbhxVWBLtiUPuoS0B+8DsHNqfGBgLot32pisqNBsf
-	xijzXFSWV1B8c2mEsGSA==;
+	List-Owner; bh=zY0gTCh7VmgdyRjkHpEli4YdKmK+BnQWk0+Wpn49iRo=; b=pAjmxx61tslOL5
+	gsrty6NCWoJ37m4QEibRDDuxIn2udLP3CEF6FyPfu+e5eSwGx+TuIDGZcO1wM5pNCQE2f9Kxle+tj
+	SCfKM52QJPVPQ5GdmFgYYRTo2O6lOkuOHsdP9ehNXVWxn/HXZomrC+aIjstq1jlB5/BuX576kOcVH
+	KDtvVZmvu2URfTizsh4GNTlDrtlqzVLbUJBUPrqylutgtSjiWdPDxZl0DTXbK1zydtOr9gy3Q7CnC
+	qsr9LncRrHq7MfCmEQCP14bnmkrttoPJ4xUUK6TNH+4NfhQv6mc2Gj528814cs8GO93asbzKt3ugf
+	Fewf3BCLy6FC/PZEEG8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOHwI-00077E-4j; Tue, 14 Apr 2020 09:33:06 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1jOHyh-0001kW-0m; Tue, 14 Apr 2020 09:35:35 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOHw5-00075I-W8; Tue, 14 Apr 2020 09:32:55 +0000
-IronPort-SDR: 9iphxwe5ziNw+96s2/Ou/5s7pMoPW2zaOa5u8ccVMuZwodckRdLK05cxMYqOyAie5Ad9LXsg0o
- C8NBv2zRwmEw==
+ id 1jOHyV-0001jz-Gp; Tue, 14 Apr 2020 09:35:28 +0000
+IronPort-SDR: t6uILsKy17G7mkuQMd8k9FpX+K53DhKEsnZUEaOlvN/rg7uVduzCpOADY5qi+9oFysGNJsG91q
+ 7CNMFv0LGGgQ==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 14 Apr 2020 02:32:53 -0700
-IronPort-SDR: fyKEwlWyiTPTJtm86vivI8s1UqiyL3h8kvihRjOK1ggFZoj8r1fnBL3w0HGFMwKRwpaV+TKTsQ
- o6ACfjdp5Qaw==
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 14 Apr 2020 02:35:22 -0700
+IronPort-SDR: gZMXuRG+DwMXhibMHthYrh9eztu9ABAkZ8OokL5UVQ6tf6XqedvzMK1DckUlttKussD2p8SBql
+ /TGa6XZ+NQVw==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,382,1580803200"; d="scan'208";a="277199554"
+X-IronPort-AV: E=Sophos;i="5.72,382,1580803200"; d="scan'208";a="253148521"
 Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga004.fm.intel.com with ESMTP; 14 Apr 2020 02:32:42 -0700
+ by orsmga003.jf.intel.com with ESMTP; 14 Apr 2020 02:35:12 -0700
 Received: from andy by smile with local (Exim 4.93)
  (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jOHvv-000UVe-PA; Tue, 14 Apr 2020 12:32:43 +0300
-Date: Tue, 14 Apr 2020 12:32:43 +0300
+ id 1jOHyL-000UXS-Gw; Tue, 14 Apr 2020 12:35:13 +0300
+Date: Tue, 14 Apr 2020 12:35:13 +0300
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 Subject: Re: [PATCH v9 05/10] power: supply: bd70528: use linear ranges
-Message-ID: <20200414093243.GI34613@smile.fi.intel.com>
+Message-ID: <20200414093513.GJ34613@smile.fi.intel.com>
 References: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
  <8dcf498134adb09d88bd16138cdce65e9ffa0bb6.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+ <20200414093243.GI34613@smile.fi.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8dcf498134adb09d88bd16138cdce65e9ffa0bb6.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
+In-Reply-To: <20200414093243.GI34613@smile.fi.intel.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_023254_069528_AA488B92 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20200414_023523_571797_AA40F7C3 
+X-CRM114-Status: GOOD (  16.73  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
+ [192.55.52.88 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -109,56 +110,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 11:04:21AM +0300, Matti Vaittinen wrote:
-> Change the bd70528 to use common linear_range code instead of
-> implementing a copy of it in this driver.
+On Tue, Apr 14, 2020 at 12:32:43PM +0300, Andy Shevchenko wrote:
+> On Tue, Apr 14, 2020 at 11:04:21AM +0300, Matti Vaittinen wrote:
+> > Change the bd70528 to use common linear_range code instead of
+> > implementing a copy of it in this driver.
+> 
+> Couple of nits below which you can take as TODO items for the future.
+> (Because maintainer is fine with it according to the tags)
+> 
+> ...
+> 
+> >  config CHARGER_BD70528
+> >  	tristate "ROHM bd70528 charger driver"
+> >  	depends on MFD_ROHM_BD70528
+> > +	select LINEAR_RANGES
+> 
+> >  	default n
+> 
+> At some point you can remove this kind of defaults (see [1] for the details).
 
-Couple of nits below which you can take as TODO items for the future.
-(Because maintainer is fine with it according to the tags)
+Missed reference
 
-...
+[1]: commit 0192f17529fa ("clean up x86 platform driver default values")
 
->  config CHARGER_BD70528
->  	tristate "ROHM bd70528 charger driver"
->  	depends on MFD_ROHM_BD70528
-> +	select LINEAR_RANGES
-
->  	default n
-
-At some point you can remove this kind of defaults (see [1] for the details).
-
-...
-
-> +static const struct linear_range current_limit_ranges[] = {
->  	{
->  		.min = 5,
->  		.step = 1,
-> -		.vals = 36,
-> -		.low_sel = 0,
-
-> +		.min_sel = 0,
-
-Perhaps it's better to have it aligned with max_sel, i.e. be 0x00.
-Same applies to the rest of a such.
-
-> +		.max_sel = 0x22,
->  	},
-
-...
-
-> +static const struct linear_range warm_charge_curr[] = {
->  	{
->  		.min = 10,
->  		.step = 10,
-> -		.vals = 20,
-> -		.low_sel = 0,
-> +		.min_sel = 0,
-> +		.max_sel = 0x12
-
-Perhaps leaving comma is a good thing to avoid potential churn in the future
-(if any of fields will be added here). Same applies to the reset of a such.
-
->  	},
+> ...
+> 
+> > +static const struct linear_range current_limit_ranges[] = {
+> >  	{
+> >  		.min = 5,
+> >  		.step = 1,
+> > -		.vals = 36,
+> > -		.low_sel = 0,
+> 
+> > +		.min_sel = 0,
+> 
+> Perhaps it's better to have it aligned with max_sel, i.e. be 0x00.
+> Same applies to the rest of a such.
+> 
+> > +		.max_sel = 0x22,
+> >  	},
+> 
+> ...
+> 
+> > +static const struct linear_range warm_charge_curr[] = {
+> >  	{
+> >  		.min = 10,
+> >  		.step = 10,
+> > -		.vals = 20,
+> > -		.low_sel = 0,
+> > +		.min_sel = 0,
+> > +		.max_sel = 0x12
+> 
+> Perhaps leaving comma is a good thing to avoid potential churn in the future
+> (if any of fields will be added here). Same applies to the reset of a such.
+> 
+> >  	},
+> 
+> -- 
+> With Best Regards,
+> Andy Shevchenko
+> 
+> 
 
 -- 
 With Best Regards,
