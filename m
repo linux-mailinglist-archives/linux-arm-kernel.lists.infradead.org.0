@@ -2,89 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63E2E1A859A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:48:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 588A01A85AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J/INS6IQ7H/7XTc41OHAGpXG/HkA8gEadGJGF7sYqEk=; b=Ksj5Ez5h7bGG2v
-	I/r80Iu9JsCG8hr/983T445Ds5hPnZ1QWSjrSGjpqRduNso9dINtBBo41HfZ0y96hv8e1YhDB2GVg
-	NL3nai7rM1ieEqvqnhn1Nhgptvl3nEBsQCOkSXtErgSMKvP9oiG/yM9TfUooxqqYeoI5ahwtHTuKN
-	hSzCc+gG1VM3vlWKpF2VDqBpvLgib3fluiiIrdKmG1NklhevusUchjjjiEprm2JnuzMXxlaxbcP27
-	QJ9T0dbYRH23RP2Dv2WdjZCiZhWo1lOK2JjAFNQsJDi1svgny1PexdgvBCrAK3pO69I2ioTQq6aAj
-	1akVlUD3QlYY1J91X5nQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aAalkMKAP2Svj4BAzOMPjCR/7f8JvfKT6fpL7ymGND4=; b=eDn1ECtpD90TKU
+	x4b/VSD1MUP/iYcdxhnrR+R1yLqhu1is3s2Y8+e/vYsJEt+eg2zHG43xzu1Uc/4753VmaNTLVj+Yb
+	xa6DWNGd9Q3P6KevzJpoRmt5uwpwV3mI6uGaPWfiB5FWSnpSCgsLrC7JyxGHLVYjhX8kYRrgYkG1A
+	UL6yLbPTFi7P6I60FP9MqxcVn0HUG0RjLAeAzPzQebjwSkJ5hwZaFUFD3A/LJnOvfWCA42mxcwFXP
+	6UMr9mrhzUTFw20XePtCFpO4y3tyoIbv2F1fw8My1bRGy7+NFqd0oa+Em1NgWsrZcijGNysI95JrO
+	Vs/58lkUB1CCVokVJJ/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOjl-0006lE-6X; Tue, 14 Apr 2020 16:48:37 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jOOkQ-0007Ka-6C; Tue, 14 Apr 2020 16:49:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOjP-0006cx-Hs
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 16:48:21 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 131so258593lfh.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 09:48:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=4Kw/fyFEkyNl4nhmDgy4d2CWUNDFR/R0fTw+bRmg16o=;
- b=PamThkVbVW4+gLLvVbtvpBDc87SyAtJSlwa21DAei0japxekALaBraAxt9et9FJiCS
- ia2ZL7HnGN6JUL1BhDZHEuyRRDFmLq1HlPzVyzDUX/0b4IWzCcPP4cUdIB0UEUz1lEfN
- oM4uiYH0kyVMGAsyOlFUOfN/lkNr8Wy1Xa2I/liL1d/+24xBAA4JuRRd57lVFXEBxj4Z
- n5vtAYmpamHQ9CnqBVSzUNtQq73JXTo00Id069Oi1wSotOOrQl4QFJAc9dDxHfpVnBYe
- Qsu9tqVzpeH8QHWVGPd8qZnkwTtUXBs9Zy7nUcGANRr5AfmFgrlj28QPGQo9cHrZGFvr
- zMfQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=4Kw/fyFEkyNl4nhmDgy4d2CWUNDFR/R0fTw+bRmg16o=;
- b=rFmUnmoBbXBIUInliJGjEuVavyKwzGwncjzZ0fq9anngRqdy+PkSnllVsqsXv/o/oH
- KAR18FPZPQpdKjOAu92HzXnP3Vw8FONYXtxTK6G52dFFa6iCR4kvecDx0U+OWaw9SPqA
- Su9n436ybbywpM7skYcp7g6ldrxrLoJKOTo6wSKpLEeKHb1XgChn8a70VoGarnlG8lsy
- 8qTitiOihjW4o9YdwG8gZqX6tmvY+0fewALI6CXb7M4ChEYgeYpNcMivliGONFaHfU0X
- bgle+qmyJ+fDdQd5lRv6C6RP2FHp5+tNpA0cGEbxzErxQoHkJqGZqBNAq+znrFU5oKb6
- GbEA==
-X-Gm-Message-State: AGi0PubK6+WHJLGqixF8QvzUc5aO5KgT8ikI4cgSTfFMN9EY8/3/P/cX
- RdSzGAIrtq5IaKOK597DxPM=
-X-Google-Smtp-Source: APiQypLkikpgZUnOTOdp6SzcFWIX++W+faWrLSWt8Ymz5B2tCPgZUoXWJOOrOAF/DKPTCiQ5Zyeyug==
-X-Received: by 2002:a05:6512:490:: with SMTP id
- v16mr418834lfq.71.1586882893937; 
- Tue, 14 Apr 2020 09:48:13 -0700 (PDT)
-Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
- [91.78.208.152])
- by smtp.googlemail.com with ESMTPSA id r23sm9540512ljh.34.2020.04.14.09.48.12
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Apr 2020 09:48:13 -0700 (PDT)
-Subject: Re: [PATCH v6 04/14] clk: tegra: Rename Tegra124 EMC clock source file
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-5-thierry.reding@gmail.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <a7209708-6e67-5885-5935-2db3d92174e8@gmail.com>
-Date: Tue, 14 Apr 2020 19:48:12 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jOOkB-0007ID-Ct; Tue, 14 Apr 2020 16:49:08 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 64BDD20787;
+ Tue, 14 Apr 2020 16:49:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586882942;
+ bh=hpU3ilpDhIBh1EkpHoT8CRglKxDNGuySrswIRHuRmXU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=qP/fh2JuBrTWMBDU0Po9QgHcYacrRlFhnHwEY8en7h953JH1K2J6xRWgtWi+ouXIY
+ 3gGiDenojv2rrUzJ4Wxk3whARW64aaikv0MOeHbofi1sPuRVe5IZT8BpzPaRPNxcO+
+ 07Ps8XSWU9UmRtIfijlblMPlQG+5+iBYwuA7KjAY=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jOOk8-0068kv-FR; Tue, 14 Apr 2020 18:49:00 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH v2 00/33] Documentation fixes for Kernel 5.8
+Date: Tue, 14 Apr 2020 18:48:26 +0200
+Message-Id: <cover.1586881715.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.2
 MIME-Version: 1.0
-In-Reply-To: <20200409175238.3586487-5-thierry.reding@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_094815_588809_DF094740 
-X-CRM114-Status: GOOD (  15.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_094903_487191_62A0AB56 
+X-CRM114-Status: GOOD (  14.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,44 +76,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mikko Perttunen <cyndis@kapsi.fi>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kvm@vger.kernel.org, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ linux-unionfs@vger.kernel.org, linux-mm@kvack.org, netdev@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ kvmarm@lists.cs.columbia.edu, linux-arch@vger.kernel.org,
+ Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, Sandeep Maheswaram <sanm@codeaurora.org>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ ecryptfs@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>, Yuti Amonkar <yamonkar@cadence.com>,
+ linux-ide@vger.kernel.org, linux-ntfs-dev@lists.sourceforge.net,
+ freedreno@lists.freedesktop.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rdma@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-fsdevel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, ocfs2-devel@oss.oracle.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiBGcm9tOiBUaGll
-cnJ5IFJlZGluZyA8dHJlZGluZ0BudmlkaWEuY29tPgo+IAo+IFRoaXMgY29kZSBpcyBvbmx5IHVz
-ZWQgb24gVGVncmExMjQsIHNvIHJlbmFtZSBpdCBhY2NvcmRpbmdseSB0byBtYWtlIGl0Cj4gbW9y
-ZSBjb25zaXN0ZW50IHdpdGggb3RoZXIgZmlsZSBuYW1lcy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBU
-aGllcnJ5IFJlZGluZyA8dHJlZGluZ0BudmlkaWEuY29tPgo+IC0tLQo+ICBkcml2ZXJzL2Nsay90
-ZWdyYS9NYWtlZmlsZSAgICAgICAgICAgICAgICAgICAgICAgICAgfCAyICstCj4gIGRyaXZlcnMv
-Y2xrL3RlZ3JhL3tjbGstZW1jLmMgPT4gY2xrLXRlZ3JhMTI0LWVtYy5jfSB8IDAKPiAgMiBmaWxl
-cyBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+ICByZW5hbWUgZHJpdmVy
-cy9jbGsvdGVncmEve2Nsay1lbWMuYyA9PiBjbGstdGVncmExMjQtZW1jLmN9ICgxMDAlKQo+IAo+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL2Nsay90ZWdyYS9NYWtlZmlsZSBiL2RyaXZlcnMvY2xrL3Rl
-Z3JhL01ha2VmaWxlCj4gaW5kZXggMWY3YzMwZjg3ZWNlLi5kZWM1MDhlZjJhZGEgMTAwNjQ0Cj4g
-LS0tIGEvZHJpdmVycy9jbGsvdGVncmEvTWFrZWZpbGUKPiArKysgYi9kcml2ZXJzL2Nsay90ZWdy
-YS9NYWtlZmlsZQo+IEBAIC0xNCw3ICsxNCw2IEBAIG9iai15CQkJCQkrPSBjbGstdGVncmEtYXVk
-aW8ubwo+ICBvYmoteQkJCQkJKz0gY2xrLXRlZ3JhLXBlcmlwaC5vCj4gIG9iai15CQkJCQkrPSBj
-bGstdGVncmEtZml4ZWQubwo+ICBvYmoteQkJCQkJKz0gY2xrLXRlZ3JhLXN1cGVyLWdlbjQubwo+
-IC1vYmotJChDT05GSUdfVEVHUkFfQ0xLX0VNQykJCSs9IGNsay1lbWMubwo+ICBvYmotJChDT05G
-SUdfQVJDSF9URUdSQV8yeF9TT0MpICAgICAgICAgKz0gY2xrLXRlZ3JhMjAubwo+ICBvYmotJChD
-T05GSUdfQVJDSF9URUdSQV8yeF9TT0MpCQkrPSBjbGstdGVncmEyMC1lbWMubwo+ICBvYmotJChD
-T05GSUdfQVJDSF9URUdSQV8zeF9TT0MpICAgICAgICAgKz0gY2xrLXRlZ3JhMzAubwo+IEBAIC0y
-Miw2ICsyMSw3IEBAIG9iai0kKENPTkZJR19BUkNIX1RFR1JBXzN4X1NPQykJCSs9IGNsay10ZWdy
-YTIwLWVtYy5vCj4gIG9iai0kKENPTkZJR19BUkNIX1RFR1JBXzExNF9TT0MpCSs9IGNsay10ZWdy
-YTExNC5vCj4gIG9iai0kKENPTkZJR19BUkNIX1RFR1JBXzEyNF9TT0MpCSs9IGNsay10ZWdyYTEy
-NC5vCj4gIG9iai0kKENPTkZJR19URUdSQV9DTEtfREZMTCkJCSs9IGNsay10ZWdyYTEyNC1kZmxs
-LWZjcHUubwo+ICtvYmotJChDT05GSUdfVEVHUkFfQ0xLX0VNQykJCSs9IGNsay10ZWdyYTEyNC1l
-bWMubwoKV2hhdCBhYm91dCB0byByZW5hbWUgQ09ORklHX1RFR1JBX0NMS19FTUMgdG8gQ09ORklH
-X1RFR1JBMTI0X0NMS19FTUMgYXMKd2VsbD8KCkFsc28uLiBtYXliZSB0aGUgQ09ORklHX1RFR1JB
-X0NMS19FTUMgaXNuJ3QgcmVhbGx5IG5lZWRlZCBhdCBhbGwgYW5kIHRoZQpURUdSQTEyNF9FTUMg
-b2YgbWVtb3J5L3RlZ3JhIGNvdWxkIGJlIHJlLXVzZWQgaGVyZT8KCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Patches 1 to 5 contain changes to the documentation toolset:
+
+- The first 3 patches help to reduce a lot the number of reported
+  kernel-doc issues, by making the tool more smart.
+
+- Patches 4 and 5 are meant to partially address the PDF
+  build, with now requires Sphinx version 2.4 or upper.
+
+The remaining patches fix broken references detected by
+this tool:
+
+        ./scripts/documentation-file-ref-check
+
+and address other random errors due to tags being mis-interpreted
+or mis-used.
+
+They are independent each other, but some may depend on
+the kernel-doc improvements.
+
+PS.: Due to the large number of C/C, I opted to keep a smaller
+set of C/C at this first e-mail (only e-mails with "L:" tag from
+MAINTAINERS file).
+
+Jon,
+
+Those patches should apply cleanly at docs-next, once you
+pull from v5.7-rc1.
+
+
+-
+
+v2:
+
+- patches re-ordered;
+- added reviewed/acked-by tags;
+- rebased on the top of docs-next + v5.7-rc1.
+
+
+Mauro Carvalho Chehab (33):
+  scripts: kernel-doc: proper handle @foo->bar()
+  scripts: kernel-doc: accept negation like !@var
+  scripts: kernel-doc: accept blank lines on parameter description
+  docs: update recommended Sphinx version to 2.4.4
+  docs: LaTeX/PDF: drop list of documents
+  MAINTAINERS: dt: update display/allwinner file entry
+  MAINTAINERS: dt: fix pointers for ARM Integrator, Versatile and
+    RealView
+  docs: dt: fix broken reference to phy-cadence-torrent.yaml
+  docs: fix broken references to text files
+  docs: fix broken references for ReST files that moved around
+  docs: filesystems: fix renamed references
+  docs: amu: supress some Sphinx warnings
+  docs: arm64: booting.rst: get rid of some warnings
+  docs: pci: boot-interrupts.rst: improve html output
+  docs: ras: get rid of some warnings
+  docs: ras: don't need to repeat twice the same thing
+  docs: infiniband: verbs.c: fix some documentation warnings
+  docs: spi: spi.h: fix a doc building warning
+  docs: drivers: fix some warnings at base/platform.c when building docs
+  docs: mm: userfaultfd.rst: use ``foo`` for literals
+  docs: mm: userfaultfd.rst: use a cross-reference for a section
+  docs: vm: index.rst: add an orphan doc to the building system
+  docs: dt: qcom,dwc3.txt: fix cross-reference for a converted file
+  docs: dt: fix a broken reference for a file converted to json
+  docs: powerpc: cxl.rst: mark two section titles as such
+  docs: i2c: rename i2c.svg to i2c_bus.svg
+  docs: Makefile: place final pdf docs on a separate dir
+  docs: dt: rockchip,dwc3.txt: fix a pointer to a renamed file
+  ata: libata-core: fix a doc warning
+  firewire: firewire-cdev.hL get rid of a docs warning
+  fs: inode.c: get rid of docs warnings
+  futex: get rid of a kernel-docs build warning
+  lib: bitmap.c: get rid of some doc warnings
+
+ Documentation/ABI/stable/sysfs-devices-node   |   2 +-
+ Documentation/ABI/testing/procfs-smaps_rollup |   2 +-
+ Documentation/Makefile                        |   6 +-
+ Documentation/PCI/boot-interrupts.rst         |  34 +--
+ Documentation/admin-guide/cpu-load.rst        |   2 +-
+ Documentation/admin-guide/mm/userfaultfd.rst  | 209 +++++++++---------
+ Documentation/admin-guide/nfs/nfsroot.rst     |   2 +-
+ Documentation/admin-guide/ras.rst             |  18 +-
+ Documentation/arm64/amu.rst                   |   5 +
+ Documentation/arm64/booting.rst               |  36 +--
+ Documentation/conf.py                         |  38 ----
+ .../bindings/net/qualcomm-bluetooth.txt       |   2 +-
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        |   2 +-
+ .../devicetree/bindings/usb/qcom,dwc3.txt     |   4 +-
+ .../devicetree/bindings/usb/rockchip,dwc3.txt |   2 +-
+ .../doc-guide/maintainer-profile.rst          |   2 +-
+ .../driver-api/driver-model/device.rst        |   4 +-
+ .../driver-api/driver-model/overview.rst      |   2 +-
+ Documentation/filesystems/dax.txt             |   2 +-
+ Documentation/filesystems/dnotify.txt         |   2 +-
+ .../filesystems/ramfs-rootfs-initramfs.rst    |   2 +-
+ Documentation/filesystems/sysfs.rst           |   2 +-
+ Documentation/i2c/{i2c.svg => i2c_bus.svg}    |   2 +-
+ Documentation/i2c/summary.rst                 |   2 +-
+ Documentation/memory-barriers.txt             |   2 +-
+ Documentation/powerpc/cxl.rst                 |   2 +
+ .../powerpc/firmware-assisted-dump.rst        |   2 +-
+ Documentation/process/adding-syscalls.rst     |   2 +-
+ Documentation/process/submit-checklist.rst    |   2 +-
+ Documentation/sphinx/requirements.txt         |   2 +-
+ .../it_IT/process/adding-syscalls.rst         |   2 +-
+ .../it_IT/process/submit-checklist.rst        |   2 +-
+ .../translations/ko_KR/memory-barriers.txt    |   2 +-
+ .../translations/zh_CN/filesystems/sysfs.txt  |   8 +-
+ .../zh_CN/process/submit-checklist.rst        |   2 +-
+ Documentation/virt/kvm/arm/pvtime.rst         |   2 +-
+ Documentation/virt/kvm/devices/vcpu.rst       |   2 +-
+ Documentation/virt/kvm/hypercalls.rst         |   4 +-
+ Documentation/virt/kvm/mmu.rst                |   2 +-
+ Documentation/virt/kvm/review-checklist.rst   |   2 +-
+ Documentation/vm/index.rst                    |   1 +
+ MAINTAINERS                                   |   7 +-
+ arch/powerpc/include/uapi/asm/kvm_para.h      |   2 +-
+ arch/x86/kvm/mmu/mmu.c                        |   2 +-
+ drivers/ata/libata-core.c                     |   2 +-
+ drivers/base/core.c                           |   2 +-
+ drivers/base/platform.c                       |   6 +-
+ .../allwinner/sun8i-ce/sun8i-ce-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |   2 +-
+ .../allwinner/sun8i-ss/sun8i-ss-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c |   2 +-
+ drivers/gpu/drm/Kconfig                       |   2 +-
+ drivers/gpu/drm/drm_ioctl.c                   |   2 +-
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.h       |   2 +-
+ drivers/hwtracing/coresight/Kconfig           |   2 +-
+ drivers/infiniband/core/verbs.c               |   7 +-
+ drivers/media/v4l2-core/v4l2-fwnode.c         |   2 +-
+ fs/Kconfig                                    |   2 +-
+ fs/Kconfig.binfmt                             |   2 +-
+ fs/adfs/Kconfig                               |   2 +-
+ fs/affs/Kconfig                               |   2 +-
+ fs/afs/Kconfig                                |   6 +-
+ fs/bfs/Kconfig                                |   2 +-
+ fs/cramfs/Kconfig                             |   2 +-
+ fs/ecryptfs/Kconfig                           |   2 +-
+ fs/fat/Kconfig                                |   8 +-
+ fs/fuse/Kconfig                               |   2 +-
+ fs/fuse/dev.c                                 |   2 +-
+ fs/hfs/Kconfig                                |   2 +-
+ fs/hpfs/Kconfig                               |   2 +-
+ fs/inode.c                                    |   6 +-
+ fs/isofs/Kconfig                              |   2 +-
+ fs/namespace.c                                |   2 +-
+ fs/notify/inotify/Kconfig                     |   2 +-
+ fs/ntfs/Kconfig                               |   2 +-
+ fs/ocfs2/Kconfig                              |   2 +-
+ fs/overlayfs/Kconfig                          |   6 +-
+ fs/proc/Kconfig                               |   4 +-
+ fs/romfs/Kconfig                              |   2 +-
+ fs/sysfs/dir.c                                |   2 +-
+ fs/sysfs/file.c                               |   2 +-
+ fs/sysfs/mount.c                              |   2 +-
+ fs/sysfs/symlink.c                            |   2 +-
+ fs/sysv/Kconfig                               |   2 +-
+ fs/udf/Kconfig                                |   2 +-
+ include/linux/kobject.h                       |   2 +-
+ include/linux/kobject_ns.h                    |   2 +-
+ include/linux/mm.h                            |   4 +-
+ include/linux/relay.h                         |   2 +-
+ include/linux/spi/spi.h                       |   1 +
+ include/linux/sysfs.h                         |   2 +-
+ include/uapi/linux/ethtool_netlink.h          |   2 +-
+ include/uapi/linux/firewire-cdev.h            |   2 +-
+ include/uapi/linux/kvm.h                      |   4 +-
+ include/uapi/rdma/rdma_user_ioctl_cmds.h      |   2 +-
+ kernel/futex.c                                |   3 +
+ kernel/relay.c                                |   2 +-
+ lib/bitmap.c                                  |  27 +--
+ lib/kobject.c                                 |   4 +-
+ mm/gup.c                                      |  12 +-
+ scripts/kernel-doc                            |  41 ++--
+ tools/include/uapi/linux/kvm.h                |   4 +-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c              |   2 +-
+ virt/kvm/arm/vgic/vgic.h                      |   4 +-
+ 104 files changed, 343 insertions(+), 326 deletions(-)
+ rename Documentation/i2c/{i2c.svg => i2c_bus.svg} (99%)
+
+-- 
+2.25.2
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
