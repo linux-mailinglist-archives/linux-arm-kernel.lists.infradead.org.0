@@ -2,71 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE99D1A8DC4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 203B21A8DE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:43:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p0y2lLktMYCa9zZZBiZP6FDeV7HrjxXuO1RLNz0qZR8=; b=Te13tdiNxEf+sd
-	tzy0HE7mI9UEPEg2LR7WScYJTG2sJFCa+xGalTxdMt8X28CFOp2lTtxdFVWPNRh7JjGwy2r0NdGbB
-	gvbo5wOrA7iGTMQcdk3fX19BAfH49VLalm5OxCQ+XI62BWpc2gwjEUayrtLjYTePfbsK7UsVEzYm4
-	hgFhFS6pzCl5fNVq2HmLphOtlyKtQiMKY9yIxm/HIUm8CIls3Pj6HYckR+Koev+frMktDbCorDvnH
-	x/+C7PfbHDKEBPtT3AbbUgr0vYfVJVSLsbZodNo94OL6NUvk2kP9Eoelf+OGGCMBgInABFrdhTk0f
-	CYHM+MpbutO/Z5MeKHfA==;
+	List-Owner; bh=OA8TukpiB2rFLZ6N08PPmWXDlCnpP8p8ao4yDKwh4dg=; b=QWaNweolLlhtuq
+	AWcQH489eTxDuEhg4xHiu0DZj1QBYYlNVDJwusy5RnQseRzYhbDLoGjV+mfolISPo/G5KOUBS6ndk
+	sRnDwflF2A3tRpfESq4/uEpCQ59dWHvn9WsiBtPEBo/g7vt9I/NGxj0C8TxoacQGWO7Z10Hcp/JW9
+	GworiFzKYC+sXEkzAaQ2NoQCE29p/wsi/qQDJzySQGuRoj8AZbfw+UAa++frtqz0+Ai6uT5eOhU01
+	ycy6ZKJtODGHX/Fg3IFqZVWkOv5uaZ96VADAsHTdp4Jg+5BpqxtUnGUMiX2ekrxppesQ1Xeo/n4TR
+	2tZwBpsgdZzIcCw1gDhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOTBs-00043x-71; Tue, 14 Apr 2020 21:33:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOTLL-0002Hl-1C; Tue, 14 Apr 2020 21:43:43 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOT9k-0002Gz-3n
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 21:31:45 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BDBBC2076B;
- Tue, 14 Apr 2020 21:31:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586899903;
- bh=+4zzU2fuJ9s9+cU9NhMA4XEGvV70Ry3qcTYCVF/73gw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PFMFUepTALEYUPqJXI/PzspEAX4Pv39fFv/FXh0r88qaYB0hLf1esUplItP5A4JOw
- 4EezN0pOI2paWuXZj7UuomuNpYnE5R0311Na6W8nQfCz4E+2zs2RmutkgKwRMDQjDP
- rM1Et8rMdPVTGoY3YFsP/xzC3b3vBAVNRmOxQHmA=
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org,
-	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 8/8] arm64: cpufeature: Add an overview comment for the
- cpufeature framework
-Date: Tue, 14 Apr 2020 22:31:14 +0100
-Message-Id: <20200414213114.2378-9-will@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200414213114.2378-1-will@kernel.org>
-References: <20200414213114.2378-1-will@kernel.org>
+ id 1jOTLD-0002HL-LL
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 21:43:37 +0000
+Received: by mail-ot1-f67.google.com with SMTP id x11so1312516otp.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 14:43:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=uvozqtfEr9bESGHX3UpchnJ8A2PhYWDydvpfuPdbYhc=;
+ b=DysLEUS7JKlxSEdtDF4ciwJJMp9Vg7t/nIJJS6uzXx0SJLITceV6qd4qjtprtIgQ0z
+ wtcNRVf1kZv7cATRLdP/Q07zsfy/3VWiPyZP4PUtuDhWy67da4KHLSNWWa39IX4ZZQxS
+ iOWPVyyzA6yzpKzH/9626t55CSAE3NjFsV/PeFwlrypgwJYY0w7bffAPrJCtfmRH8Urd
+ h7XFptcWZPaSQgMO1HLbaB9RUxvf3SLcAiSjTuWslsGWUQD65g7RftLQ6LBcwb/ncPIx
+ RplQc4FnAcRyNmU7S8g101kOT4eHLAxLzZscLdWoa45LHq1k11L/9A+2bN/0h13k5hzt
+ INwA==
+X-Gm-Message-State: AGi0PuafWUm2zQ6+eATDf+9ReDRVWMQrr9jNska/mzFNK9BpiT/oE95G
+ RpM4rcbLQX7VpKOhWCCeIg==
+X-Google-Smtp-Source: APiQypKkc3mkxopBmD8q3Q9BAh/YpU4AikDfqfbekmDrulLTaWnF6YhmPFGgCuE0Wn2xDDc3dm4eEw==
+X-Received: by 2002:a9d:24a4:: with SMTP id z33mr20460527ota.105.1586900614278; 
+ Tue, 14 Apr 2020 14:43:34 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id e3sm4970371oii.6.2020.04.14.14.43.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 14:43:33 -0700 (PDT)
+Received: (nullmailer pid 9000 invoked by uid 1000);
+ Tue, 14 Apr 2020 21:43:32 -0000
+Date: Tue, 14 Apr 2020 16:43:32 -0500
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 2/2] dt-bindings: watchdog: Convert i.MX7ULP to json-schema
+Message-ID: <20200414214332.GA8620@bogus>
+References: <1586831568-24635-1-git-send-email-Anson.Huang@nxp.com>
+ <1586831568-24635-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1586831568-24635-2-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_143144_232426_4D1A3035 
-X-CRM114-Status: GOOD (  16.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_144335_699356_13C26166 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,83 +95,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>, kernel-team@android.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, Marc Zyngier <maz@kernel.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Doug Anderson <dianders@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ festevam@gmail.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
+ linux@roeck-us.net, Linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that Suzuki isn't within throwing distance, I thought I'd better add
-a rough overview comment to cpufeature.c so that it doesn't take me days
-to remember how it works next time.
+On Tue, 14 Apr 2020 10:32:48 +0800, Anson Huang wrote:
+> Convert the i.MX7ULP watchdog binding to DT schema format using json-schema.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  .../bindings/watchdog/fsl-imx7ulp-wdt.txt          | 22 --------
+>  .../bindings/watchdog/fsl-imx7ulp-wdt.yaml         | 60 ++++++++++++++++++++++
+>  2 files changed, 60 insertions(+), 22 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
+>  create mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.yaml
+> 
 
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/kernel/cpufeature.c | 43 ++++++++++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+My bot found errors running 'make dt_binding_check' on your patch:
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 680a453ca8c4..421ca99dc8fc 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -3,6 +3,49 @@
-  * Contains CPU feature definitions
-  *
-  * Copyright (C) 2015 ARM Ltd.
-+ *
-+ * A note for the weary kernel hacker: the code here is confusing and hard to
-+ * follow! That's partly because it's solving a nasty problem, but also because
-+ * there's a little bit of over-abstraction that tends to obscure what's going
-+ * on behind a maze of helper functions and macros.
-+ *
-+ * The basic problem is that hardware folks have started gluing together CPUs
-+ * with distinct architectural features; in some cases even creating SoCs where
-+ * user-visible instructions are available only on a subset of the available
-+ * cores. We try to address this by snapshotting the feature registers of the
-+ * boot CPU and comparing these with the feature registers of each secondary
-+ * CPU when bringing them up. If there is a mismatch, then we update the
-+ * snapshot state to indicate the lowest-common denominator of the feature,
-+ * known as the "safe" value. This snapshot state can be queried to view the
-+ * "sanitised" value of a feature register.
-+ *
-+ * The sanitised register values are used to decide which capabilities we
-+ * have in the system. These may be in the form of traditional "hwcaps"
-+ * advertised to userspace or internal "cpucaps" which are used to configure
-+ * things like alternative patching and static keys. While a feature mismatch
-+ * may result in a TAINT_CPU_OUT_OF_SPEC kernel taint, a capability mismatch
-+ * may prevent a CPU from being onlined at all.
-+ *
-+ * Some implementation details worth remembering:
-+ *
-+ * - Mismatched features are *always* sanitised to a "safe" value, which
-+ *   usually indicates that the feature is not supported.
-+ *
-+ * - A mismatched feature marked with FTR_STRICT will cause a "SANITY CHECK"
-+ *   warning when onlining an offending CPU and the kernel will be tainted
-+ *   with TAINT_CPU_OUT_OF_SPEC.
-+ *
-+ * - Features marked as FTR_VISIBLE have their sanitised value visible to
-+ *   userspace. FTR_VISIBLE features in registers that are only visible
-+ *   to EL0 by trapping *must* have a corresponding HWCAP so that late
-+ *   onlining of CPUs cannot lead to features disappearing at runtime.
-+ *
-+ * - A "feature" is typically a 4-bit register field. A "capability" is the
-+ *   high-level description derived from the sanitised field value.
-+ *
-+ * - Read the Arm ARM (DDI 0487F.a) section D13.1.3 ("Principles of the ID
-+ *   scheme for fields in ID registers") to understand when feature fields
-+ *   may be signed or unsigned (FTR_SIGNED and FTR_UNSIGNED accordingly).
-  */
- 
- #define pr_fmt(fmt) "CPU features: " fmt
--- 
-2.26.0.110.g2183baf09c-goog
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.example.dt.yaml: watchdog@403d0000: 'timeout-sec' does not match any of the regexes: 'pinctrl-[0-9]+'
 
+See https://patchwork.ozlabs.org/patch/1270024
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
+
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
