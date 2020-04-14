@@ -2,58 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7DC41A7AC7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:28:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9F2C1A7ACB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:29:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UYS5a3eDmxsIDd3PoW7jQjpFjvMmjbXWRu3hxAQ0SC0=; b=ubbveOnvtnPv8bTX+8PcasVeb
-	CwF/dyX27xMaZlaKpcY1ryLmLZ6YGE/4O4I455KriukzZCtuIsg96GhCggxCvld/RmI5XUV2JmsYU
-	7qszSSO9eJ/6AKprd54QbYR4/v1XfsxiM/Vams+0rVx1t5mAzMsZYpbFpdQYFsFXy3hbN56FsXadM
-	x3HfT/AVgVbAM75xmTRxBh6z/rIee2iJn0bl2R6VuvWPw+TfnbFJdzaCN2taBm69YmmXYdUQ/3rxF
-	SYTvXwtlZuLNyItllHuDYlQSwBsR1ptZNMiCcQkar68CjCFTfKmB7nW4D+DF4jZbPjUUuyontWd4+
-	B2ijzEeRw==;
+	 bh=cW1Z+34dl0HkGPOL/a6mhVR4YYWxc5mlGsesMJLR3XI=; b=m6xIPPqiLR+bzFLzG9cYrXHYv
+	KhsteKNxP8aW+tKGA27rwtkz/vA76kPU59y0HTYTmBzWIy5leR9At3tXpMV7+YWpWJ7Z+fD7xY/cE
+	yUxvIm0yVbS+Fmw1MEDwd4/CmmuVVkqmUp64YtcMqjQyOabVYXkAc1i58UIgzOw2TzsfMDzbNY5r0
+	AU0fn3Ur1cZ20g3T+iXaS89Uy9ThoyNVhyQr486mXOzdCyJa01qekvp6R3TmteBHd614AnDrDJJgj
+	DjCHjIly+LUklgySJ/lTBxJN6K8cphPEFKdRBteoWaml+l2K1SGFCMnf4j3ykB9A9d6Ppk6ezgv6k
+	2Yg8wBb6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKfv-0005kE-21; Tue, 14 Apr 2020 12:28:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKfi-0005jq-V4; Tue, 14 Apr 2020 12:28:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11BD91FB;
- Tue, 14 Apr 2020 05:28:10 -0700 (PDT)
-Received: from [10.57.33.145] (unknown [10.57.33.145])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AA6673F6C4;
- Tue, 14 Apr 2020 05:28:07 -0700 (PDT)
-Subject: Re: [BUG] PCI: rockchip: rk3399: pcie switch support
-To: Soeren Moch <smoch@web.de>, Shawn Lin <shawn.lin@rock-chips.com>
-References: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
- <3e9d2c53-4f0d-0c97-fbfa-6d799e223747@arm.com>
- <b088ad0e-bab1-0cff-dc43-eb5709555902@web.de>
- <1f180d4b-9e5d-c829-555b-c9750940361e@web.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <d02e0b72-5fb3-dd47-468c-08b86db07a9a@arm.com>
-Date: Tue, 14 Apr 2020 13:28:05 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+	id 1jOKgM-00063C-P5; Tue, 14 Apr 2020 12:28:50 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOKgE-00062S-AQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:28:44 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 491lCB2VyJz9ty2q;
+ Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=IXS45WnH; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id OnGikXuRMKJq; Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 491lCB1Nqtz9ty2r;
+ Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1586867318; bh=q5tuqv3XX5tdFZ2Nwqglyq4XexfbdM7sUkp/aIyLDRw=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=IXS45WnHSm1Ayq4SS0uiPxa3vST+WWMTF8g5pm0xicL0YmkmdHBVHM7MqFdvFivSy
+ 4VKx/15HSGMZn84Khq7Sc+ziISswwhSUCUvDincDkchHmmJIjHMEuycCM/NgnTr/Xv
+ cQH5RqaZiSzViAlD2v1Y1/wud6OaF/wj8MGMt9vo=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 8E0138B7EB;
+ Tue, 14 Apr 2020 14:28:39 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id 91o1xMRYsudU; Tue, 14 Apr 2020 14:28:39 +0200 (CEST)
+Received: from [192.168.4.90] (unknown [192.168.4.90])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 8F2278B7EA;
+ Tue, 14 Apr 2020 14:28:38 +0200 (CEST)
+Subject: Re: [PATCH v2 4/4] mm/vmalloc: Hugepage vmalloc mappings
+To: Matthew Wilcox <willy@infradead.org>, Nicholas Piggin <npiggin@gmail.com>
+References: <20200413125303.423864-1-npiggin@gmail.com>
+ <20200413125303.423864-5-npiggin@gmail.com>
+ <20200413134106.GN21484@bombadil.infradead.org>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <36616218-1d3a-b18a-8fb8-4fc9eff22780@c-s.fr>
+Date: Tue, 14 Apr 2020 14:28:35 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1f180d4b-9e5d-c829-555b-c9750940361e@web.de>
-Content-Language: en-GB
+In-Reply-To: <20200413134106.GN21484@bombadil.infradead.org>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_052811_085505_21C0D53F 
-X-CRM114-Status: GOOD (  19.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200414_052842_667693_73034F19 
+X-CRM114-Status: GOOD (  14.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,73 +96,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-arch@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-14 12:35 pm, Soeren Moch wrote:
-> On 06.04.20 19:12, Soeren Moch wrote:
->> On 06.04.20 14:52, Robin Murphy wrote:
->>> On 2020-04-04 7:41 pm, Soeren Moch wrote:
->>>> I want to use a PCIe switch on a RK3399 based RockPro64 V2.1 board.
->>>> "Normal" PCIe cards work (mostly) just fine on this board. The PCIe
->>>> switches (I tried Pericom and ASMedia based switches) also work fine on
->>>> other boards. The RK3399 PCIe controller with pcie_rockchip_host driver
->>>> also recognises the switch, but fails to initialize the buses behind the
->>>> bridge properly, see syslog from linux-5.6.0.
->>>>
->>>> Any ideas what I do wrong, or any suggestions what I can test here?
->>> See the thread here:
->>>
->>> https://lore.kernel.org/linux-pci/CAMdYzYoTwjKz4EN8PtD5pZfu3+SX+68JL+dfvmCrSnLL=K6Few@mail.gmail.com/
->>>
->> Thanks Robin!
->>
->> I also found out in the meantime that device enumeration fails in this
->> fatal way when probing non-existent devices. So if I hack my complete
->> bus topology into rockchip_pcie_valid_device, then all existing devices
->> come up properly. Of course this is not how PCIe should work.
->>> The conclusion there seems to be that the RK3399 root complex just
->>> doesn't handle certain types of response in a sensible manner, and
->>> there's not much that can reasonably be done to change that.
->> Hm, at least there is the promising suggestion to take over the SError
->> handler, maybe in ATF, as workaround.
-> Unfortunately it seems to be not that easy. Only when PCIe device
-> probing runs on one of the Cortex-A72 cores of rk3399 we see the SError.
-> When probing runs on one of the A53 cores, we get a synchronous external
-> abort instead.
-> 
-> Is this expected to see different error types on big.LITTLE systems? Or
-> is this another special property of the rk3399 pcie controller?
-
-As far as I'm aware, the CPU microarchitecture is indeed one of the 
-factors in whether it takes a given external abort synchronously or 
-asynchronously, so yes, I'd say that probably is expected. I wouldn't 
-necessarily even rely on a single microarchitecture only behaving one 
-way, since in principle it's possible that surrounding instructions 
-might affect whether the core still has enough context left to take the 
-exception synchronously or not at the point the abort does come back.
-
-In general external aborts are a "should never happen" kind of thing, so 
-they're not necessarily expected to be recoverable (I think the RAS 
-extensions might add a more robustness in terms of reporting, but aren't 
-relevant here either way).
-
-At this point I'm starting to wonder whether it might be possible to do 
-something similar to the Arm N1SDP workaround using the Cortex-M0, 
-albeit with the complication that probing would realistically have to be 
-explicitly invoked from the Linux driver due to clocks and external 
-regulators... :/
-
-Robin.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAxMy8wNC8yMDIwIMOgIDE1OjQxLCBNYXR0aGV3IFdpbGNveCBhIMOpY3JpdMKgOgo+IE9u
+IE1vbiwgQXByIDEzLCAyMDIwIGF0IDEwOjUzOjAzUE0gKzEwMDAsIE5pY2hvbGFzIFBpZ2dpbiB3
+cm90ZToKPj4gK3N0YXRpYyBpbnQgdm1hcF9wYWdlc19yYW5nZV9ub2ZsdXNoKHVuc2lnbmVkIGxv
+bmcgc3RhcnQsIHVuc2lnbmVkIGxvbmcgZW5kLAo+PiArCQkJCSAgICBwZ3Byb3RfdCBwcm90LCBz
+dHJ1Y3QgcGFnZSAqKnBhZ2VzLAo+PiArCQkJCSAgICB1bnNpZ25lZCBpbnQgcGFnZV9zaGlmdCkK
+Pj4gK3sKPj4gKwlpZiAocGFnZV9zaGlmdCA9PSBQQUdFX1NJWkUpIHsKPiAKPiAuLi4gSSB0aGlu
+ayB5b3UgbWVhbnQgJ3BhZ2Vfc2hpZnQgPT0gUEFHRV9TSElGVCcKPiAKPiBPdmVyYWxsIEkgbGlr
+ZSB0aGlzIHNlcmllcywgYWx0aG91Z2ggaXQncyBhIGJpdCBiaWFzZWQgdG93YXJkcyBDUFVzCj4g
+d2hpY2ggaGF2ZSBwYWdlIHNpemVzIHdoaWNoIG1hdGNoIFBNRC9QVUQgc2l6ZXMuICBJdCBkb2Vz
+bid0IG9mZmVyIHRoZQo+IHBvc3NpYmlsaXR5IG9mIHVzaW5nIDY0a0IgcGFnZSBzaXplcyBvbiBB
+Uk0sIGZvciBleGFtcGxlLiAgQnV0IGl0J3MgYQo+IHN0ZXAgaW4gdGhlIHJpZ2h0IGRpcmVjdGlv
+bi4KPiAKCkkgd2FzIGdvaW5nIHRvIGFzayBtb3JlIG9yIGxlc3MgdGhlIHNhbWUgcXVlc3Rpb24s
+IEkgd291bGQgaGF2ZSBsaWtlZCB0byAKdXNlIDUxMmtCIGh1Z2VwYWdlcyBvbiBwb3dlcnBjIDh4
+eC4KCkV2ZW4gdGhlIDhNIGh1Z2VwYWdlcyAoc3RpbGwgb24gdGhlIDh4eCksIGNhbiB0aGV5IGJl
+IHVzZWQgYXMgd2VsbCwgCnRha2luZyBpbnRvIGFjY291bnQgdGhhdCB0d28gUEdEIGVudHJpZXMg
+aGF2ZSB0byBwb2ludCB0byB0aGUgc2FtZSA4TSBwYWdlID8KCkkgc2VudCBvdXQgYSBzZXJpZXMg
+d2hpY2ggdGVuZHMgdG8gbWFrZSB0aGUgbWFuYWdlbWVudCBvZiA1MTJrIGFuZCA4TSAKcGFnZXMg
+Y2xvc2VyIHRvIHdoYXQgTGludXggZXhwZWN0cywgaW4gb3JkZXIgdG8gdXNlIHRoZW0gaW5zaWRl
+IGtlcm5lbCwgCmZvciBMaW5lYXIgbWFwcGluZ3MgYW5kIEthc2FuIG1hcHBpbmdzIGZvciB0aGUg
+bW9tZW50LiBTZWUgCmh0dHBzOi8vcGF0Y2h3b3JrLm96bGFicy5vcmcvcHJvamVjdC9saW51eHBw
+Yy1kZXYvbGlzdC8/c2VyaWVzPTE2NDYyMApJdCB3b3VsZCBiZSBuaWNlIGlmIHdlIGNvdWxkIGFt
+cGxpZnkgaXQgYSB1c2UgaXQgZm9yIGlvcmVtYXBzIGFuZCAKdm1hbGxvY3MgYXMgd2VsbC4KCkNo
+cmlzdG9waGUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwK
