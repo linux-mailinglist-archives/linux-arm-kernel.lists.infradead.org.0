@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8403E1A7500
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 09:42:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A6481A7547
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 09:59:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CT0O2v7ZapMux0kwOAFLiGdWkCx5siJN3biqzUJHq1Y=; b=stQnjQPIYSWlA5
-	8jKeSX79EjyU2PREprRZeesVsB5QoJ30fAAimm7suxso+NDftd17DEY4xNwHr9PfqNIYegg53Zqg4
-	bH7dP0NIkNo3e7qmNnsGfXE8FaqgCdC/aDk/ytGr+w6XD8eOHQVLDjU35ckPziN08xn0kY5x7SK1B
-	oaVen45Mhfj4JFSaOlukeldrF65hQVG+R9OlDbXlWFGvBwgdyX1IK5LZpWrDDUyH1MCYAHovQ2sQu
-	M5O73EZYQkB3GtoeRRBur3nyJPS2cXN/oXXnJO/DUp+fs0lt6DwZNrXe5dVzU32uL1Hm20l7WQlpf
-	AIXyrAVlmMcBMOCBjGgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=x03HVoi0RoWTsj2qOg+fk5OdyS1/+cjjTfB+dJIq0HI=; b=JjWRAReix4XMSG
+	POr0zLWPZggv09Qxw7nFom1EOPyFOI+KKd+nlIcTU5X+4GelhYTsaPSre5z/LchvxE4zVtTUfl0Jy
+	jVtVESU4Xo7PuvEN4U3cebDiwszdushyZHN5ThVOJGmWh3YjX3AwLJwoFKGgTtm9EOnCQb3/Fc2z1
+	48fqUCgqr0dKDLPdhuXgCrkNt934LxOIjypa53fDSrsfFDxvxuUy76kKAjW0XV2OxFphI0omcMvLB
+	owM+tXWEQzcfMaRd2vPUjukD24IuLneBX4N6OYK75v5w+RN8PdUwRtQ1g6/+idKUCJf2nOiov5NEc
+	qPDuQrLn+t7U25UU8SQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOGD2-0006iE-Ic; Tue, 14 Apr 2020 07:42:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOGTW-0000Em-UR; Tue, 14 Apr 2020 07:59:18 +0000
+Received: from mail-lj1-f196.google.com ([209.85.208.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOGCv-0006hZ-J5; Tue, 14 Apr 2020 07:42:11 +0000
-Received: from mail-il1-f176.google.com (mail-il1-f176.google.com
- [209.85.166.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E36F220857;
- Tue, 14 Apr 2020 07:42:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586850128;
- bh=6uhrz44i5eT5f7oLOC1OL5FsVtDT/iQzuTX/CEU8+zg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kkhRNFE9I2rpe6sQkWBvxuZaLVbg2k7qQG00iGfMn+/lB/f4EpTtiIstquxxZzcHx
- Boy3N8hW0XUYjpMpVWWDMxuiLsBLOIqw/GFFqVBO2tV9JEdob4OvPkRBe2168zb3DO
- KJ+dXf05/GRM9IhKGc/hQuPjx581hpLtIlKD/WKM=
-Received: by mail-il1-f176.google.com with SMTP id d2so10713323ilc.0;
- Tue, 14 Apr 2020 00:42:07 -0700 (PDT)
-X-Gm-Message-State: AGi0PubsagX0L2a6PnXs7fbwx7uFqn4kmJBAhrnNpdh8BvHfH1aJOp15
- FlBs8WkNVYibsZIlFLJsHAV9fRP8DodBzmcf9JM=
-X-Google-Smtp-Source: APiQypKnsZnymajbRGIINhll+k8W8ECmHw5zlJZoQtqgJ3tUHBY0WQrKdUP+h27ZLkZch8vBVYS7Xb9sP2akdj5i40E=
-X-Received: by 2002:a92:c788:: with SMTP id c8mr20566174ilk.279.1586850127067; 
- Tue, 14 Apr 2020 00:42:07 -0700 (PDT)
+ id 1jOGTO-0000DS-Vu; Tue, 14 Apr 2020 07:59:12 +0000
+Received: by mail-lj1-f196.google.com with SMTP id q22so11466622ljg.0;
+ Tue, 14 Apr 2020 00:59:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=JdLyAccaWUmkXdTSspp6ynm82lQAH9maXmu165bianE=;
+ b=I0OxgQ8I0ZPxQFzNzCVkb+AQ7RxjB1pXFMAOJ8Kl+i4HhPs/z9QtODe6USiE0HNEU6
+ zXuNrJYMesP8AbDfwNcMXXOQJyw76vYmkzO6rytciisllL4Yrerm9IIJDxWpwnog952F
+ II4GnbjOVPAxzXhb82TLbsbk8uGzRxOQtN+fUJ9njDatttuYj1CsZqiIuB5n9bqFqlYw
+ 2Ho92m8Npk04oObc5l5ZGBi/nQBnmHrhzu8AmKkgUmsYKuEuxHUVui+mrBNb9kfQXvsV
+ oyywDboxESxZpdUXp1G8C5USJJYxwjsTcEG8dHhAFUlNNDRU0C+CgvU0jKRTYGyGUPZ0
+ Z8Wg==
+X-Gm-Message-State: AGi0PuZoJ2iF2SiTmZ3fWGyIQBSWXMZM+6KmqrqeH4uY4gmNwwlNDWpa
+ A2ehbd8x5AFA3zJQhxC7ecY=
+X-Google-Smtp-Source: APiQypIKVVpHV8FdmvKZHTVeW9rdWsW6z9wcz3ylvVynt+m/NXjro1ePx2JWYy6pnmuTmx+cloznQw==
+X-Received: by 2002:a2e:6a08:: with SMTP id f8mr564677ljc.8.1586851144063;
+ Tue, 14 Apr 2020 00:59:04 -0700 (PDT)
+Received: from localhost.localdomain
+ (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
+ by smtp.gmail.com with ESMTPSA id t19sm9414024lfl.53.2020.04.14.00.59.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 00:59:03 -0700 (PDT)
+Date: Tue, 14 Apr 2020 10:58:53 +0300
+From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
+Subject: [PATCH v9 00/10] Support ROHM BD99954 charger IC
+Message-ID: <cover.1586849281.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
-References: <20200413212907.29244-1-atish.patra@wdc.com>
- <20200413212907.29244-6-atish.patra@wdc.com>
-In-Reply-To: <20200413212907.29244-6-atish.patra@wdc.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 14 Apr 2020 09:41:56 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEiQRORXMe4s_-iqmOefv-mbsPCtMT9ivJPvnkja+v0oQ@mail.gmail.com>
-Message-ID: <CAMj1kXEiQRORXMe4s_-iqmOefv-mbsPCtMT9ivJPvnkja+v0oQ@mail.gmail.com>
-Subject: Re: [v2 PATCH 5/5] RISC-V: Add EFI stub support.
-To: Atish Patra <atish.patra@wdc.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_004209_678766_CC6318BE 
-X-CRM114-Status: GOOD (  36.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_005911_035469_29A05FA3 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.196 listed in list.dnswl.org]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mazziesaccount[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,356 +84,276 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Palmer Dabbelt <palmer@dabbelt.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Andrei Stefanescu <andrei.stefanescu@microchip.com>,
+ Heiko Stuebner <heiko@sntech.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ Sebastian Reichel <sre@kernel.org>, Andreas Kemnade <andreas@kemnade.info>,
+ "Angelo G. Del Regno" <kholk11@gmail.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ linux-samsung-soc@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Axel Lin <axel.lin@ingics.com>, Gregory CLEMENT <gregory.clement@bootlin.com>,
+ linux-pm@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Markus Reichl <m.reichl@fivetechno.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>, markus.laine@fi.rohmeurope.com,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, devicetree@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, linux-omap@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Baolin Wang <baolin.wang@linaro.org>, Sangbeom Kim <sbkim73@samsung.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Randy Dunlap <rdunlap@infradead.org>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ mikko.mutanen@fi.rohmeurope.com, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, patches@opensource.cirrus.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 13 Apr 2020 at 23:29, Atish Patra <atish.patra@wdc.com> wrote:
->
-> Add a RISC-V architecture specific stub code that actually copies the
-> actual kernel image to a valid address and jump to it after boot services
-> are terminated. Enable UEFI related kernel configs as well for RISC-V.
->
-> Signed-off-by: Atish Patra <atish.patra@wdc.com>
-> ---
->  arch/riscv/Kconfig                        |  20 ++++
->  arch/riscv/Makefile                       |   1 +
->  arch/riscv/configs/defconfig              |   1 +
->  arch/riscv/include/asm/efi.h              |  45 ++++++++
->  drivers/firmware/efi/Kconfig              |   2 +-
->  drivers/firmware/efi/libstub/Makefile     |   8 ++
->  drivers/firmware/efi/libstub/riscv-stub.c | 131 ++++++++++++++++++++++
->  7 files changed, 207 insertions(+), 1 deletion(-)
->  create mode 100644 arch/riscv/include/asm/efi.h
->  create mode 100644 drivers/firmware/efi/libstub/riscv-stub.c
->
-> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> index f39e326a7a42..eb4f41c8f3ce 100644
-> --- a/arch/riscv/Kconfig
-> +++ b/arch/riscv/Kconfig
-> @@ -379,10 +379,30 @@ config CMDLINE_FORCE
->
->  endchoice
->
-> +config EFI_STUB
-> +       bool
-> +
-> +config EFI
-> +       bool "UEFI runtime support"
-> +       depends on OF
-> +       select LIBFDT
-> +       select UCS2_STRING
-> +       select EFI_PARAMS_FROM_FDT
-> +       select EFI_STUB
-> +       select EFI_GENERIC_STUB
-> +       default y
-> +       help
-> +         This option provides support for runtime services provided
-> +         by UEFI firmware (such as non-volatile variables, realtime
-> +          clock, and platform reset). A UEFI stub is also provided to
-> +         allow the kernel to be booted as an EFI application. This
-> +         is only useful on systems that have UEFI firmware.
-> +
->  endmenu
->
->  menu "Power management options"
->
->  source "kernel/power/Kconfig"
-> +source "drivers/firmware/Kconfig"
->
->  endmenu
-> diff --git a/arch/riscv/Makefile b/arch/riscv/Makefile
-> index fb6e37db836d..079435804d6d 100644
-> --- a/arch/riscv/Makefile
-> +++ b/arch/riscv/Makefile
-> @@ -80,6 +80,7 @@ head-y := arch/riscv/kernel/head.o
->  core-y += arch/riscv/
->
->  libs-y += arch/riscv/lib/
-> +core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
->
->  PHONY += vdso_install
->  vdso_install:
-> diff --git a/arch/riscv/configs/defconfig b/arch/riscv/configs/defconfig
-> index 4da4886246a4..ae69e12d306a 100644
-> --- a/arch/riscv/configs/defconfig
-> +++ b/arch/riscv/configs/defconfig
-> @@ -129,3 +129,4 @@ CONFIG_DEBUG_BLOCK_EXT_DEVT=y
->  # CONFIG_RUNTIME_TESTING_MENU is not set
->  CONFIG_MEMTEST=y
->  # CONFIG_SYSFS_SYSCALL is not set
-> +CONFIG_EFI=y
-> diff --git a/arch/riscv/include/asm/efi.h b/arch/riscv/include/asm/efi.h
-> new file mode 100644
-> index 000000000000..ba0a6d35cc15
-> --- /dev/null
-> +++ b/arch/riscv/include/asm/efi.h
-> @@ -0,0 +1,45 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
-> + * Based on arch/arm64/include/asm/efi.h
-> + */
-> +#ifndef _ASM_EFI_H
-> +#define _ASM_EFI_H
-> +
-> +#include <asm/io.h>
-> +#include <asm/mmu_context.h>
-> +#include <asm/ptrace.h>
-> +#include <asm/tlbflush.h>
-> +
-> +#define VA_BITS_MIN 39
-> +
-> +/* on RISC-V, the FDT may be located anywhere in system RAM */
-> +static inline unsigned long efi_get_max_fdt_addr(unsigned long dram_base)
-> +{
-> +       return ULONG_MAX;
-> +}
-> +
-> +/* Load initrd at enough distance from DRAM start */
-> +static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
-> +                                                   unsigned long image_addr)
-> +{
-> +       return dram_base + SZ_256M;
-> +}
-> +
-> +#define efi_bs_call(func, ...) efi_system_table()->boottime->func(__VA_ARGS__)
-> +#define efi_rt_call(func, ...) efi_system_table()->runtime->func(__VA_ARGS__)
-> +#define efi_is_native()                (true)
-> +
-> +#define efi_table_attr(inst, attr)     (inst->attr)
-> +
-> +#define efi_call_proto(inst, func, ...) inst->func(inst, ##__VA_ARGS__)
-> +
-> +#define alloc_screen_info(x...)                (&screen_info)
-> +extern char stext_offset[];
-> +
-> +static inline void free_screen_info(struct screen_info *si)
-> +{
-> +}
-> +#define EFI_ALLOC_ALIGN                SZ_64K
-> +
-> +#endif /* _ASM_EFI_H */
-> diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
-> index 2a2b2b96a1dc..fcdc789d3f87 100644
-> --- a/drivers/firmware/efi/Kconfig
-> +++ b/drivers/firmware/efi/Kconfig
-> @@ -111,7 +111,7 @@ config EFI_GENERIC_STUB
->
->  config EFI_ARMSTUB_DTB_LOADER
->         bool "Enable the DTB loader"
-> -       depends on EFI_GENERIC_STUB
-> +       depends on EFI_GENERIC_STUB && !RISCV
->         default y
->         help
->           Select this config option to add support for the dtb= command
-> diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-> index d590504541f6..b1db3a793c43 100644
-> --- a/drivers/firmware/efi/libstub/Makefile
-> +++ b/drivers/firmware/efi/libstub/Makefile
-> @@ -22,6 +22,8 @@ cflags-$(CONFIG_ARM64)                := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
->  cflags-$(CONFIG_ARM)           := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
->                                    -fno-builtin -fpic \
->                                    $(call cc-option,-mno-single-pic-base)
-> +cflags-$(CONFIG_RISCV)         := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
-> +                                  -fpic
->
->  cflags-$(CONFIG_EFI_GENERIC_STUB)      += -I$(srctree)/scripts/dtc/libfdt
->
-> @@ -56,6 +58,7 @@ lib-$(CONFIG_EFI_GENERIC_STUB)                += efi-stub.o fdt.o string.o \
->  lib-$(CONFIG_ARM)              += arm32-stub.o
->  lib-$(CONFIG_ARM64)            += arm64-stub.o
->  lib-$(CONFIG_X86)              += x86-stub.o
-> +lib-$(CONFIG_RISCV)            += riscv-stub.o
->  CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
->  CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
->
-> @@ -80,6 +83,11 @@ STUBCOPY_FLAGS-$(CONFIG_ARM64)       += --prefix-alloc-sections=.init \
->                                    --prefix-symbols=__efistub_
->  STUBCOPY_RELOC-$(CONFIG_ARM64) := R_AARCH64_ABS
->
-> +STUBCOPY_FLAGS-$(CONFIG_RISCV) += --prefix-alloc-sections=.init \
-> +                                  --prefix-symbols=__efistub_
-> +STUBCOPY_RELOC-$(CONFIG_RISCV) := R_RISCV_HI20
-> +
-> +
->  $(obj)/%.stub.o: $(obj)/%.o FORCE
->         $(call if_changed,stubcopy)
->
-> diff --git a/drivers/firmware/efi/libstub/riscv-stub.c b/drivers/firmware/efi/libstub/riscv-stub.c
-> new file mode 100644
-> index 000000000000..acb69eae187a
-> --- /dev/null
-> +++ b/drivers/firmware/efi/libstub/riscv-stub.c
-> @@ -0,0 +1,131 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2013, 2014 Linaro Ltd;  <roy.franz@linaro.org>
-> + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
-> + *
-> + * This file implements the EFI boot stub for the RISC-V kernel.
-> + * Adapted from ARM64 version at drivers/firmware/efi/libstub/arm64-stub.c.
-> + */
-> +
-> +#include <linux/efi.h>
-> +#include <linux/libfdt.h>
-> +#include <linux/libfdt_env.h>
-> +#include <asm/efi.h>
-> +#include <asm/sections.h>
-> +
-> +#include "efistub.h"
-> +/*
-> + * RISCV requires the kernel image to placed TEXT_OFFSET bytes beyond a 2 MB
-> + * aligned base for 64 bit and 4MB for 32 bit.
-> + */
-> +#ifdef CONFIG_64BIT
-> +#define MIN_KIMG_ALIGN SZ_2M
-> +#else
-> +#define MIN_KIMG_ALIGN SZ_4M
-> +#endif
-> +/*
-> + * TEXT_OFFSET ensures that we don't overwrite the firmware that probably sits
-> + * at the beginning of the DRAM.
-> + */
-> +#define TEXT_OFFSET MIN_KIMG_ALIGN
-> +
+Support ROHM BD99954 Battery Management IC
 
-Again, this is not the right approach. If there are any allocations in
-memory that EFI cannot touch, you have to mark them as reserved in the
-EFI memory map. Otherwise, anything running in the EFI context (GRUB,
-systemd-boot, shim, etc) could step on it, not just the kernel.
+ROHM BD99954 is a Battery Management IC for 1-4 cell Lithium-Ion
+secondary battery. BD99954 is intended to be used in space-constraint
+equipment such as Low profile Notebook PC, Tablets and other
+applications.
 
-> +typedef __attribute__((noreturn)) void (*jump_kernel_func)(unsigned int,
-> +                                                          unsigned long);
-> +efi_status_t check_platform_features(void)
-> +{
-> +       return EFI_SUCCESS;
-> +}
-> +
-> +static u32 get_boot_hartid_from_fdt(unsigned long fdt)
-> +{
-> +       int chosen_node, len;
-> +       const fdt32_t *prop;
-> +
-> +       chosen_node = fdt_path_offset((void *)fdt, "/chosen");
-> +       if (chosen_node < 0)
-> +               return U32_MAX;
-> +       prop = fdt_getprop((void *)fdt, chosen_node, "boot-hartid", &len);
-> +       if (!prop || len != sizeof(u32))
-> +               return U32_MAX;
-> +
-> +       return fdt32_to_cpu(*prop);
-> +}
-> +
-> +/*
-> + * Jump to real kernel here with following constraints.
-> + * 1. MMU should be disabled.
-> + * 2. a0 should contain hartid
-> + * 3. a1 should DT address
-> + */
-> +void __noreturn efi_enter_kernel(unsigned long entrypoint, unsigned long fdt,
-> +                                unsigned long fdt_size)
-> +{
-> +       unsigned long kernel_entry = entrypoint + (unsigned long)stext_offset;
-> +       jump_kernel_func jump_kernel = (void (*)(unsigned int, unsigned long))kernel_entry;
-> +       u32 hartid = get_boot_hartid_from_fdt(fdt);
-> +
-> +       if (hartid == U32_MAX)
-> +               /* We can not use panic or BUG at this point */
-> +               __asm__ __volatile__ ("ebreak");
-> +       /* Disable MMU */
-> +       csr_write(CSR_SATP, 0);
-> +       jump_kernel(hartid, fdt);
-> +}
-> +
-> +efi_status_t handle_kernel_image(unsigned long *image_addr,
-> +                                unsigned long *image_size,
-> +                                unsigned long *reserve_addr,
-> +                                unsigned long *reserve_size,
-> +                                unsigned long dram_base,
-> +                                efi_loaded_image_t *image)
-> +{
-> +       efi_status_t status;
-> +       unsigned long kernel_size, kernel_memsize = 0;
-> +       unsigned long preferred_offset;
-> +
-> +       /*
-> +        * The preferred offset of the kernel Image is TEXT_OFFSET bytes beyond
-> +        * a KIMG_ALIGN aligned base.
+Series extracts a "linear ranges" helper out of the regulator
+framework. Linear ranges helper is intended to help converting
+real-world values to register values when conversion is linear. I
+suspect this is useful also for power subsystem and possibly for clk.
 
-MIN_KIMG_ALIGN
+Current implementation does not support inversely proportional ranges
+but adding support for that could be helpful.
 
-> +        */
-> +       preferred_offset = round_up(dram_base, MIN_KIMG_ALIGN) + TEXT_OFFSET;
-> +
-> +       kernel_size = _edata - _start;
-> +       kernel_memsize = kernel_size + (_end - _edata);
-> +
-> +       /*
-> +        * Try a straight allocation at the preferred offset. It will also
-> +        * ensure that, on platforms where the [dram_base, dram_base + TEXT_OFFSET)
-> +        * interval is partially occupied by the firmware we can still place
-> +        * the kernel at the address 'dram_base + TEXT_OFFSET'. If the straight
-> +        * allocation fails, efi_low_alloc tries allocate memory from the lowest
-> +        * available LOADER_DATA mapped memory as long as address and size meet
-> +        * the alignment constraints.
-> +        */
-> +       if (*image_addr == preferred_offset)
-> +               return EFI_SUCCESS;
-> +
-> +       *image_addr = *reserve_addr = preferred_offset;
-> +       *reserve_size = round_up(kernel_memsize, EFI_ALLOC_ALIGN);
-> +
-> +       status = efi_bs_call(allocate_pages, EFI_ALLOCATE_ADDRESS,
-> +                               EFI_LOADER_DATA,
-> +                               *reserve_size / EFI_PAGE_SIZE,
-> +                               (efi_physical_addr_t *)reserve_addr);
-> +
-> +       if (status != EFI_SUCCESS) {
-> +               pr_efi("straight allocation failed do a low alloc\n");
-> +               *reserve_size = kernel_memsize + TEXT_OFFSET;
-> +               status = efi_low_alloc(*reserve_size, MIN_KIMG_ALIGN,
-> +                                      reserve_addr);
-> +
+This version of series introduces new battry DT binding entries and
+adds the parsing in power_supply_get_battery_info().
 
-So, instead of the above, could we simply allocate kernel_memsize
-bytes using efi_allocate_pages(), with the max address set to
-'round_up(dram_base, MIN_KIMG_ALIGN) + kernel_memsize + TEXT_OFFSET -
-1'? This should work in the majority of cases, and not trample on the
-TEXT_OFFSET bytes at the start, regardless of whether they are
-reserved or not.
+Changelog v9:
+ General:
+   - rebased on top of v5.7-rc1
+   - re-ordered patches as suggested by Sebastian Reichel
+   - added few acks
+ BD99954 driver:
+   - Moved bd99954-charger.h to drivers/power/supply
+   - fixed a typo from print
+   - used devm_add_action_or_reset and removed remove callback
 
-In the future, I imagine you may want to relax the requirements
-regarding the physical placement of the kernel, in which case you can
-start falling back to a suitably aligned allocation anywhere in
-memory.
+Changelog v8:
+ Linear ranges
+   - small improvements suggested by Andy Shevchenko, no functional changes
+
+Changelog v7:
+ General:
+   - rebased on top of v5.6
+ bd99954 driver:
+   - fixed bunch of styling issues spotted by Andy Shevchenko
+   - dropped ACPI table as ACPI properties are not supported at this
+     version of driver.
+   - added few acks
+
+Changelog v6:
+ generic:
+   - rebased on top of 5.6-rc7.
+ linear ranges:
+   - moved to lib as requested by Greg KH
+   - EXPORT_SYMBOL => EXPORT_SYMBOL_GPL
+   - licence GPL-2.0, not later
+   - added KUnit test for linear ranges
+
+Changelog v5:
+ generic:
+   - rebased on top of 5.6-rc6.
+ DT-bindings:
+   - Dropped -charger extension from compatible and removed wildcard x.
+ regulators:
+   - squashed the regulator changes in one patch.
+ power-supply KConfig:
+   - fixed indentiation
+   - dropped unnecessary 'default N' from BD99954.
+
+Changelog v4:
+ generic:
+   - rebase and drop RFC.
+ DT-bindings:
+   - add I2C node address-cells and size-cells to fix yaml check errors
+   - uncomment multipleOf:
+ bd70528:
+   - add patch which renames driver internal linear_range struct to
+     avoid collision when regulator/driver.h (which gets included from
+     rohm generic header) introduces the linear_range struct.
+ regulators:
+   - rebase to v5.6-rc2 and convert also the two newly introduced
+     drivers to use linear_range struct instead of
+     regulator_linear_range.
+ linear_ranges:
+   - Fix kerneldoc.
+
+Changelog RFC-v3:
+ DT-bindings:
+   - fix the BD99954 binding (the *-microvolt Vs. *-microvolts issue is
+     still there. Not sure which one is correct)
+   - renabe tricklecharge-* binding to trickle-charge-* as suggested by
+     Rob.
+ - drop the linear-ranges helper which was written for BD70528 and
+   extract the linear-range code from regulator framework instead.
+ - refactor regulator framework to utilize extracted linear-ranges
+   code.
+ - change the struct regulator_linear_range to linear_range from
+   regulator drivers.
+ - refactor BD70528 to use regulator framework originated
+   linear-ranges code.
+ - change BD99954 to use linear-ranges code from regulator framework
+
+Changelog RFC-v2:
+ DT-bindings:
+   - Used the battery parameters described in battery.txt
+   - Added few new parameters to battery.txt
+   - Added ASCII art charging profile chart for BD99954 to explain
+     states and limits.
+ Linear ranges:
+   - Fixed division by zero error from linear-ranges code if step 0 is
+     used.
+ Power-supply core:
+   - Added parsing of new battery parameters.
+ BD99954 driver:
+   - converted to use battery parameters from battery node
+   - Added step 0 ranges for reg values which do not change voltage
+   - added dt-node to psy-config
+
+Patch 1:
+	Linear ranges helpers
+Patch 2:
+	Test for linear ranges helpers
+Patch 3:
+	Rename driver internal struct linear_range from bd70528-power
+Patch 4:
+	Use linear-ranges helpers in regulator framework and
+	convert regulator drivers to use new linear_range struct.
+Patch 5:
+	Use linear-ranges helpers in bd70528 driver
+Patch 6:
+	DT binding docs for the new battery parameters
+Patch 7:
+	Parsing of new battery parameters
+Patch 8:
+	BD99954 charger DT binding docs
+Patch 9:
+	ROHM BD99954 charger IC driver
+Patch 10:
+	Fix Kconfig help text indentiation for other entries as well.
+
+---
+
+Matti Vaittinen (10):
+  lib: add linear ranges helpers
+  lib/test_linear_ranges: add a test for the 'linear_ranges'
+  power: supply: bd70528: rename linear_range to avoid collision
+  regulator: use linear_ranges helper
+  power: supply: bd70528: use linear ranges
+  dt-bindings: battery: add new battery parameters
+  power: supply: add battery parameters
+  dt_bindings: ROHM BD99954 Charger
+  power: supply: Support ROHM bd99954 charger
+  power: supply: Fix Kconfig help text indentiation
+
+ .../bindings/power/supply/battery.txt         |    6 +
+ .../bindings/power/supply/rohm,bd99954.yaml   |  155 +++
+ drivers/power/supply/Kconfig                  |   34 +-
+ drivers/power/supply/Makefile                 |    1 +
+ drivers/power/supply/bd70528-charger.c        |  140 +-
+ drivers/power/supply/bd99954-charger.c        | 1142 +++++++++++++++++
+ drivers/power/supply/bd99954-charger.h        | 1075 ++++++++++++++++
+ drivers/power/supply/power_supply_core.c      |    8 +
+ drivers/regulator/88pg86x.c                   |    4 +-
+ drivers/regulator/88pm800-regulator.c         |    4 +-
+ drivers/regulator/Kconfig                     |    1 +
+ drivers/regulator/act8865-regulator.c         |    4 +-
+ drivers/regulator/act8945a-regulator.c        |    2 +-
+ drivers/regulator/arizona-ldo1.c              |    2 +-
+ drivers/regulator/arizona-micsupp.c           |    4 +-
+ drivers/regulator/as3711-regulator.c          |    6 +-
+ drivers/regulator/as3722-regulator.c          |    4 +-
+ drivers/regulator/axp20x-regulator.c          |   16 +-
+ drivers/regulator/bcm590xx-regulator.c        |    8 +-
+ drivers/regulator/bd70528-regulator.c         |    8 +-
+ drivers/regulator/bd71828-regulator.c         |   10 +-
+ drivers/regulator/bd718x7-regulator.c         |   26 +-
+ drivers/regulator/da903x.c                    |    2 +-
+ drivers/regulator/helpers.c                   |  130 +-
+ drivers/regulator/hi6421-regulator.c          |    4 +-
+ drivers/regulator/lochnagar-regulator.c       |    4 +-
+ drivers/regulator/lp873x-regulator.c          |    4 +-
+ drivers/regulator/lp87565-regulator.c         |    2 +-
+ drivers/regulator/lp8788-buck.c               |    2 +-
+ drivers/regulator/max77650-regulator.c        |    2 +-
+ drivers/regulator/mcp16502.c                  |    4 +-
+ drivers/regulator/mp8859.c                    |    2 +-
+ drivers/regulator/mt6323-regulator.c          |    6 +-
+ drivers/regulator/mt6358-regulator.c          |    8 +-
+ drivers/regulator/mt6380-regulator.c          |    6 +-
+ drivers/regulator/mt6397-regulator.c          |    6 +-
+ drivers/regulator/palmas-regulator.c          |    4 +-
+ drivers/regulator/qcom-rpmh-regulator.c       |    2 +-
+ drivers/regulator/qcom_rpm-regulator.c        |   14 +-
+ drivers/regulator/qcom_smd-regulator.c        |   70 +-
+ drivers/regulator/rk808-regulator.c           |   10 +-
+ drivers/regulator/s2mps11.c                   |   14 +-
+ drivers/regulator/sky81452-regulator.c        |    2 +-
+ drivers/regulator/stpmic1_regulator.c         |   18 +-
+ drivers/regulator/tps65086-regulator.c        |   10 +-
+ drivers/regulator/tps65217-regulator.c        |    4 +-
+ drivers/regulator/tps65218-regulator.c        |    6 +-
+ drivers/regulator/tps65912-regulator.c        |    4 +-
+ drivers/regulator/twl-regulator.c             |    4 +-
+ drivers/regulator/twl6030-regulator.c         |    2 +-
+ drivers/regulator/wm831x-dcdc.c               |    2 +-
+ drivers/regulator/wm831x-ldo.c                |    4 +-
+ drivers/regulator/wm8350-regulator.c          |    2 +-
+ drivers/regulator/wm8400-regulator.c          |    2 +-
+ include/linux/linear_range.h                  |   48 +
+ include/linux/power_supply.h                  |    4 +
+ include/linux/regulator/driver.h              |   27 +-
+ lib/Kconfig                                   |    3 +
+ lib/Kconfig.debug                             |   11 +
+ lib/Makefile                                  |    2 +
+ lib/linear_ranges.c                           |  241 ++++
+ lib/test_linear_ranges.c                      |  228 ++++
+ 62 files changed, 3224 insertions(+), 356 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
+ create mode 100644 drivers/power/supply/bd99954-charger.c
+ create mode 100644 drivers/power/supply/bd99954-charger.h
+ create mode 100644 include/linux/linear_range.h
+ create mode 100644 lib/linear_ranges.c
+ create mode 100644 lib/test_linear_ranges.c
 
 
+base-commit: 8f3d9f354286745c751374f5f1fcafee6b3f3136
+-- 
+2.21.0
 
-> +               if (status != EFI_SUCCESS) {
-> +                       pr_efi_err("Failed to relocate kernel\n");
-> +                       *reserve_size = 0;
-> +                       return status;
-> +               }
-> +               *image_addr = *reserve_addr + TEXT_OFFSET;
-> +       }
-> +       memcpy((void *)*image_addr, image->image_base, kernel_size);
-> +
-> +       return EFI_SUCCESS;
-> +}
-> --
-> 2.24.0
->
+
+-- 
+Matti Vaittinen, Linux device drivers
+ROHM Semiconductors, Finland SWDC
+Kiviharjunlenkki 1E
+90220 OULU
+FINLAND
+
+~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
+Simon says - in Latin please.
+~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
+Thanks to Simon Glass for the translation =] 
 
 _______________________________________________
 linux-arm-kernel mailing list
