@@ -2,58 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56F521A81B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:13:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E75B1A81B3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:14:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JA5tl8aaSPxHSAUFoQ7FphHcbVqBPLlypgFH76CAkMo=; b=Xvdyn5fuj8SzHe
-	FdkATF5yx98WsqSm9YizFYAHwgjmu4cwqKmPyf9V4pWuW1kTa3a6nOXPgD3SjGdwA3PMTnxMR9sse
-	B/plsc6w12bTZH5VWtYp8fqchQ42DYKSoC89M3ydM5UXg5GTwZpUZ4PEbVizVpHAp1mWWlktMeWYR
-	K6PABjkAxZDqwTd/M7/c7P7YUdmb8ahkrNrhxlHsid+/T5Mf5JwZwHL5vptchq+BDAwgc3SrAR1Hq
-	dMAETH1osxaa/rQMwaTIswMAUd+VMbEQEfIlh+ydynPAlvn7pEsTo0zSUxXnoVhoGxj2LgEv5ZmaR
-	vrDnMOE0sMVvc+Nnx4Qw==;
+	List-Owner; bh=M4mKxOR6wvAkxyJk8Q7sNXQhv3OvutEdFOlboIroUEc=; b=IFODxOEshdSD+3
+	Fm8GLJ7cFGdntUjvKBc7Pq7lerXDNuCRmRiaNH3ITShZ/AXZdAzf1QGkVUULqHtxxsa7tlfZuxU8/
+	WAJ37lBjK7IhwEvRZGFANtZFyXIZ3auaFmLNgYgrda1fULMAZxobbDp6S2fR2pWjxnQWrR51D+x6a
+	JAH4KdKiWN3EI1Ejikw/hQlPhI/QwDCbVX1YVx9PbyfdTkYio8HXVjzfnAS9ZNERSv34YyAe5XdoO
+	zzwgD4bWQYO4CWEo9fR+CulhIkfjr16wng33gMxmyNOiiskrL4ibK4Mk/eWXDPZD70hq1C4hnmPZ4
+	ndcrdsEai46xgKGnIwDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONFC-0006Ty-Pj; Tue, 14 Apr 2020 15:12:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONF5-0006TL-TA
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:12:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E2E930E;
- Tue, 14 Apr 2020 08:12:51 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.30.4])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BBC83F73D;
- Tue, 14 Apr 2020 08:12:49 -0700 (PDT)
-Date: Tue, 14 Apr 2020 16:12:47 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH 1/5] arm64: vdso: don't free unallocated pages
-Message-ID: <20200414151247.GJ2486@C02TD0UTHF1T.local>
-References: <20200414104252.16061-1-mark.rutland@arm.com>
- <20200414104252.16061-2-mark.rutland@arm.com>
- <c5596228-2685-abb3-5ab1-9519759e1f7a@arm.com>
- <20200414132751.GF2486@C02TD0UTHF1T.local>
- <8681c958-0fd9-130e-f7bb-99bfd3a027cb@arm.com>
+	id 1jONGA-0006lr-I3; Tue, 14 Apr 2020 15:13:58 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jONG3-0006l2-1F
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:13:52 +0000
+Received: by mail-wm1-f65.google.com with SMTP id a201so14014487wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 08:13:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HmBLSR0xc1v+9c640X8yq/gCGBtmZiJRhg2yrai8Uso=;
+ b=gU/3Yez4l9OVbf0VNQ1COnMjeP409sCccPG+JOVFCIQmazqGzMWeZUvduYmnfflHiM
+ eMLn8pn6hUWkuIcVObDQ/m2Kr/KKFb6myO3/b0WvSXUf3ZihjNcRXnpXfR0GM8G6tuGd
+ k6146S/o4OmGPsEaXihxMvXLpL3maEF664eDpQ0y2SxlWOOnMw4cNWEAAyzAqRagksmp
+ 0yWtgbfPq+01uOFTN+jOXlvDSLgaljqsH2gCAfVysE4intATto/yZtAggvaIiRXgqYO4
+ oJVf8PLyJ2Qd2m1FV3xTYLzzaqJjvijy57D9g3pXSGHQta03RvBMp9mvseqLqOG/xB5H
+ R3tQ==
+X-Gm-Message-State: AGi0PuYO2A64iPpLktRg/+sjkoOHN16kswhu4mw7T5s5kQr+gzW1jM6o
+ HgtcyeR04a+7vTT6s/Ba9gc=
+X-Google-Smtp-Source: APiQypKJS2zs752mK3EmkKLPxDY+LMikzE4AHuLMlZzMU6rlOFHrjCq5D1gZZCfYEUzJLxq6M+CEVA==
+X-Received: by 2002:a7b:c190:: with SMTP id y16mr393464wmi.50.1586877227391;
+ Tue, 14 Apr 2020 08:13:47 -0700 (PDT)
+Received: from debian (44.142.6.51.dyn.plus.net. [51.6.142.44])
+ by smtp.gmail.com with ESMTPSA id t67sm20386094wmg.40.2020.04.14.08.13.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 08:13:46 -0700 (PDT)
+Date: Tue, 14 Apr 2020 16:13:44 +0100
+From: Wei Liu <wei.liu@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 21/29] mm: remove the pgprot argument to __vmalloc
+Message-ID: <20200414151344.zgt2pnq7cjq2bgv6@debian>
+References: <20200414131348.444715-1-hch@lst.de>
+ <20200414131348.444715-22-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8681c958-0fd9-130e-f7bb-99bfd3a027cb@arm.com>
+In-Reply-To: <20200414131348.444715-22-hch@lst.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_081252_002194_8988871C 
-X-CRM114-Status: GOOD (  17.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200414_081351_074229_4963A170 
+X-CRM114-Status: GOOD (  15.05  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wei.liu.linux[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,65 +88,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Michael Kelley <mikelley@microsoft.com>,
+ linux-mm@kvack.org, "K. Y. Srinivasan" <kys@microsoft.com>,
+ Sumit Semwal <sumit.semwal@linaro.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Wei Liu <wei.liu@kernel.org>,
+ Stephen Hemminger <sthemmin@microsoft.com>, x86@kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Gao Xiang <xiang@kernel.org>,
+ Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Haiyang Zhang <haiyangz@microsoft.com>,
+ linaro-mm-sig@lists.linaro.org, bpf@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 03:53:45PM +0100, Vincenzo Frascino wrote:
+On Tue, Apr 14, 2020 at 03:13:40PM +0200, Christoph Hellwig wrote:
+> The pgprot argument to __vmalloc is always PROT_KERNEL now, so remove
+> it.
 > 
-> On 4/14/20 2:27 PM, Mark Rutland wrote:
-> > On Tue, Apr 14, 2020 at 01:50:38PM +0100, Vincenzo Frascino wrote:
-> >> Hi Mark,
-> >>
-> >> On 4/14/20 11:42 AM, Mark Rutland wrote:
-> >>> The aarch32_vdso_pages[] array never has entries allocated in the C_VVAR
-> >>> or C_VDSO slots, and as the array is zero initialized these contain
-> >>> NULL.
-> >>>
-> >>> However in __aarch32_alloc_vdso_pages() when
-> >>> aarch32_alloc_kuser_vdso_page() fails we attempt to free the page whose
-> >>> struct page is at NULL, which is obviously nonsensical.
-> >>
-> >> Could you please explain why do you think that free(NULL) is "nonsensical"? 
-> > 
-> > Regardless of the below, can you please explain why it is sensical? I'm
-> > struggling to follow your argument here.
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Reviewed-by: Michael Kelley <mikelley@microsoft.com> [hyperv]
+> Acked-by: Gao Xiang <xiang@kernel.org> [erofs]
+> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+> ---
+>  arch/x86/hyperv/hv_init.c              |  3 +--
+[...]
 > 
-> free(NULL) is a no-operation ("no action occurs") according to the C standard
-> (ISO-IEC 9899 paragraph 7.20.3.2). Hence this should not cause any bug if the
-> allocator is correctly implemented.
+> diff --git a/arch/x86/hyperv/hv_init.c b/arch/x86/hyperv/hv_init.c
+> index 5a4b363ba67b..a3d689dfc745 100644
+> --- a/arch/x86/hyperv/hv_init.c
+> +++ b/arch/x86/hyperv/hv_init.c
+> @@ -95,8 +95,7 @@ static int hv_cpu_init(unsigned int cpu)
+>  	 * not be stopped in the case of CPU offlining and the VM will hang.
+>  	 */
+>  	if (!*hvp) {
+> -		*hvp = __vmalloc(PAGE_SIZE, GFP_KERNEL | __GFP_ZERO,
+> -				 PAGE_KERNEL);
+> +		*hvp = __vmalloc(PAGE_SIZE, GFP_KERNEL | __GFP_ZERO);
+>  	}
 
-This is true, but irrelevant. The C standard does not define
-free_page(), which is a Linnux kernel internal function, and does not
-have the same semantics as free().
-
-> > * It serves no legitimate purpose. One cannot free a page without a
-> >   corresponding struct page.
-> > 
-> > * It is redundant. Removing the code does not detract from the utility
-> >   of the remainging code, or make that remaing code more complex.
-
-> > * free_page(x) calls free_pages(x, 0), which checks virt_addr_valid(x).
-> >   As page_to_virt(NULL) is not a valid linear map address, this can
-> >   trigger a VM_BUG_ON()
-> > 
-> 
-> free_pages(x, 0) checks virt_addr_valid(x) only if "addr != 0" (as per C
-> standard) which makes me infer what I stated above. But maybe I am missing
-> something.
-
-Regardless, this is all academic unless you disagree with the first two
-bullets above.
-
-You don't randomly sprinkle a program with free(NULL) for the fun of it.
-Similarly, and regardless of how obfuscated, one should not do the same
-here.
-
-Thanks,
-Mark.
+Acked-by: Wei Liu <wei.liu@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
