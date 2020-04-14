@@ -2,59 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B94C1A8407
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:00:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 861D61A83FF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 18:00:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WPE2rq4Fg2K10tNh2Xj81vgbsPmx/kMLIYhE08UBQu8=; b=UAZPoO0wu1ZyWT
-	dAU7QbyULv+zDAAkcwZHXrmfufn/DzBNN6r3hBfzVCSKyL59znwqwOT+kjKKUGuW68dhI/2GBR9IX
-	GvhB3hhpX+dDhqqW673nRt8RZ8/Jx0fABltVu566ANDCM2fj7OWuLkXLvVtMrnU8VzhvtB97Vx5X/
-	3iZGidLQvhyU90RQavQouOsS1RHDFunAYwWMFf7d+RkmdKoKXT9xXwygYVynYBTJ4mr7TdEDktnPB
-	qJE3Q79DQn1T/0mZXKKczdFvw1CcvcLPpkEzELKCBlDJAO/ZQyk9OPJn4jmGf7hEDto08HEsP58T9
-	Mv0ufHN9nGE+idbQrB5g==;
+	List-Owner; bh=EDS+RPtBHx7QQraJzbnJjc89gPbJPa9xkAwxZL7ttQ8=; b=dP+v7kOBOdSrqZ
+	DiqRC7iy1YpvyVBfpCHT/jc4y8UP4Dldut7F4g/z2G575ZNNlHf5mjLzV2OuWRFKeEw/Mf+OS0iEW
+	Z6Oa4sjZ6tCKeqHLsnWxWUWxiMv1uOng3vP/vDduoSeCV0JmwcV+u5dxFij6KTbeGWcGsWPOoHY7N
+	eHeEh3F5gLOmbxIRSHRcclEQ2daZTd/1hsfnA1Y9RltXRDVnN5obtsRGelIzZQIEY9R+3v5WImuhx
+	ZualHsE2kGQV/tpwgoIGNHAUHAa59N+Y9WVNmPEOAj9OK2kfR3QGstaohLghIdcnIuN1rr+tJaNiT
+	LjzOTGUfNnKrpGrW1/wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONyt-0004s5-TR; Tue, 14 Apr 2020 16:00:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONyU-0004iN-3B
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:59:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 83D5CC14;
- Tue, 14 Apr 2020 08:59:45 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC8E83F6C4;
- Tue, 14 Apr 2020 08:59:44 -0700 (PDT)
-Date: Tue, 14 Apr 2020 16:59:42 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH 1/5] arm64: vdso: don't free unallocated pages
-Message-ID: <20200414155942.GC22140@gaia>
-References: <20200414104252.16061-1-mark.rutland@arm.com>
- <20200414104252.16061-2-mark.rutland@arm.com>
- <c5596228-2685-abb3-5ab1-9519759e1f7a@arm.com>
- <20200414132751.GF2486@C02TD0UTHF1T.local>
- <8681c958-0fd9-130e-f7bb-99bfd3a027cb@arm.com>
+	id 1jONyX-0004gk-7W; Tue, 14 Apr 2020 15:59:49 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jONyK-0004bp-KX
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:59:43 +0000
+Received: by mail-lj1-x244.google.com with SMTP id k21so368841ljh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 08:59:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Rms6uY6CaVS0vSi3goxkK0o2bZJ2P/sEKrGiTc8JDbs=;
+ b=Knet1f2YFczx+Bvkly4ATsCcdhmrsklTebUitDqlLsMrw3LqMzvVruqj3CQPZKV1Yj
+ /ycBcRyNhoItxGuHJPwS5RlOu6J5b+tRlSpyQpky4b7DCAZVp3IWHe0eFjX+25qzXN4j
+ T56HyXBHYqBKKaGTA5TytiwH64ksyAH9Ai653dTMo1Kw5uisWioqbeKHdeo+IBOmRdix
+ o/1MUYYNYJfED04KUzqhbJdrDwnRbHUQoRQ74Aop0Cn5LIATsrWwIuZOO64noMdNVpns
+ G7GjhicmqH3L3N6dB1nOyQUq2nB7C5L84kfOO7NB6ytZ+tkaHGDdowd471QUwf/fNBTh
+ zB2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Rms6uY6CaVS0vSi3goxkK0o2bZJ2P/sEKrGiTc8JDbs=;
+ b=o4Q7c8euyjc8iC4/goIzOIqPbaGCKsI7mRoa2o32DzI2pOpReHy4L1+skUxkEkEde0
+ LfU+tFB3kdvk3+rrqyn76yYH4kNiyd/PGnzJc8/KtApFGsTEq4uOiUOpY5IKs13JRgvy
+ vLjEScEjNDldmGCmP3oCImwo5hjf+HBGBfJYoiU0rGgnbg/Q9lJYC3Bz8Ws9eYpwjKc2
+ TLPH0ME3XpL4mm9/Xb29WYZFIUirD69Cf9i8Bt9x3xTuXUS/HP0JxMOY6rEUqb26E2NM
+ WbatG9B7QJJXLwqmBFusrNbbk9p2KjQyEnDVmepQSit6iyOFsvso9ZFOIHzBvSHBqhcM
+ Xm0g==
+X-Gm-Message-State: AGi0Puawzb7r1lYCP5oI4Ob1gHBx5AK1o73v5i/UTWJqfXbHH04gGjv1
+ aqnEV0ZTPH4w5w1dDM2smcI=
+X-Google-Smtp-Source: APiQypKoehuSnG4FD3G0KCu9dyHnNmILoTThe26Z09YTqPw9oyFO24Qc3tSrK+0QjMZ4BVcUiGn4rQ==
+X-Received: by 2002:a2e:854e:: with SMTP id u14mr504262ljj.182.1586879974504; 
+ Tue, 14 Apr 2020 08:59:34 -0700 (PDT)
+Received: from curiosity (ip-195-182-157-78.clients.cmk.ru. [195.182.157.78])
+ by smtp.gmail.com with ESMTPSA id
+ r20sm7278237ljk.42.2020.04.14.08.59.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 08:59:33 -0700 (PDT)
+Date: Tue, 14 Apr 2020 19:03:54 +0300
+From: Sergey Matyukevich <geomatsi@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [bug report] armada-8040-mcbin: 5.6-rc5 boot failure
+Message-ID: <20200414160354.GA463339@curiosity>
+References: <20200413220520.GA25917@curiosity>
+ <20200413222645.GT25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8681c958-0fd9-130e-f7bb-99bfd3a027cb@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200413222645.GT25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_085946_189014_EAE4FFA0 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200414_085936_669093_5BFEEA68 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geomatsi[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,49 +100,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, will@kernel.org,
- stable@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Baruch Siach <baruch@tkos.co.il>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 03:53:45PM +0100, Vincenzo Frascino wrote:
-> On 4/14/20 2:27 PM, Mark Rutland wrote:
-> > On Tue, Apr 14, 2020 at 01:50:38PM +0100, Vincenzo Frascino wrote:
-> >> On 4/14/20 11:42 AM, Mark Rutland wrote:
-> >>> The aarch32_vdso_pages[] array never has entries allocated in the C_VVAR
-> >>> or C_VDSO slots, and as the array is zero initialized these contain
-> >>> NULL.
-> >>>
-> >>> However in __aarch32_alloc_vdso_pages() when
-> >>> aarch32_alloc_kuser_vdso_page() fails we attempt to free the page whose
-> >>> struct page is at NULL, which is obviously nonsensical.
-> >>
-> >> Could you please explain why do you think that free(NULL) is "nonsensical"? 
+> > Hi Russel, Miquel, and all,
 > > 
-> > Regardless of the below, can you please explain why it is sensical? I'm
-> > struggling to follow your argument here.
-> 
-> free(NULL) is a no-operation ("no action occurs") according to the C standard
-> (ISO-IEC 9899 paragraph 7.20.3.2). Hence this should not cause any bug if the
-> allocator is correctly implemented. From what I can see the implementation of
-> the page allocator honors this assumption.
-[...]
-> > * page_to_virt(NULL) does not have a well-defined result, and
-> >   page_to_virt() should only be called for a valid struct page pointer.
-> >   The result of page_to_virt(NULL) may not be a pointer into the linear
-> >   map as would be expected.
-> 
-> Do you know why this is the case? To be compliant with what the page allocator
-> expects page_to_virt(NULL) should be equal to NULL.
+> > MacchiatoBin Double-shot board fails to boot v5.6-rc5 kernel properly:
+> > USB, PCIe, and ethernet interfaces are not enabled. Before that I have
+> > been running v5.3 kernel w/o any noticeable issues.
 
-Since __free_page(page) (note the two underscores and pointer type) does
-not accept a NULL argument, I don't see any reason for page_to_virt() to
-accept NULL as a valid argument.
+...
+ 
+> > However looking at firmware version complaints, I guess that the actual
+> > reason of all those issues could be in ATF version rather than in the
+> > latest DTS changes. Probably I am using ATF version which is too old
+> > to work with up-to-date kernel: armada-17.10.3 from atf-marvell
+> > repository on github. If this is indeed the actual root cause of all
+> > the issues, then could you please recommend a preferable ATF version
+> > to test with ?
+> 
+> I would strongly recommend upgrading the firmware in any case, because
+> of work I did (and submitted back through Jon @ SolidRun) to improve
+> the eye mask on the 10G Ethernet interfaces.  I'm using the 18.12
+> version.  Firmware build instructions can be found at:
+> 
+> https://developer.solid-run.com/knowledge-base/armada-8040-machiatobin-u-boot-and-atf/
+> 
+> I've booted 5.6 recently on a number of Armada 8040 based boards
+> without issue, likely all running the later firmware.
 
--- 
-Catalin
+Thanks ! After ATF update to 18.12 both USB and PCIe are working fine
+without any changes to DTS. But network interfaces including 1G copper
+interface still do not work as expected:
+
+$ ip link set eth0 up                                                                                                                                                                             
+[  626.774003] mvpp2 f2000000.ethernet eth0: could not attach PHY (-19) RTNETLINK answers: No such device
+$ ip link set eth2 up
+[  504.054084] mvpp2 f4000000.ethernet eth2: could not attach PHY (-19) RTNETLINK answers: No such device
+
+I have not changed configuration since 5.3, so all the marvell phy
+drivers are in place. Is there anything in configuration that could
+be missed after moving from 5.3 to 5.6 kernel ?
+
+Regards,
+Sergey
 
 _______________________________________________
 linux-arm-kernel mailing list
