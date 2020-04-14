@@ -2,65 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 744AE1A87D2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:44:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 825871A87D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 19:44:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aavLVWFc1ICQVeRQ5x+RIs88lWx9mA6b8eUvc+2YaV0=; b=gzYqDdp126wHcK
-	NQJKtyIeiwzdF/9tmHED2RwkCzZ1MkLu4WB+1VOgi7Nhci9YTHxrbAwG3Wf3lCrHcJ131cnNhB323
-	yPYAN5ARF+See+kwHg3PAag1obouFfBRWwAwzDCw3DaQKF6F0uvctMrH4yYz2BBCiZiKrIHXeTs8Y
-	RSRTgTLqBQVDmGksPaBClMpixjzff3BXbNfRbLGHuMQDFKh2X38mdP+LgQ5MpkVgEuJf/3RpW7pZp
-	7tWo9y+iP9nmzMf7x9PdOcnOZGT8DReet50Ag+wj4+ymBJJfsblSLrsD0S9SmsiGsvvpm0+wMUwh+
-	3jMHD/r+/KM3n0vyBw0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YGeILkFXXYE7XdKEUi+MuQ/DBxrxFgAri8hoJpyOx7g=; b=t4a+HXUmi4ASqq
+	MorYtkOUX49CAk9IMQ1HTfdqboNdhWq3KBjv8mA8Ckj/2CIaWDVblWTibJwjx4+8fUPTC4RmLMFYj
+	hAmXMudcc/UMamwSvmstyvpcOCh5ab3TnWZHvsZqXau/RQlhJ9obtK8OXbJd0vVG0lvVbQMrNuXRN
+	N9KTGp4iZWb7J4GkRGaqs9X3Z1xwRAYaDg8m+y/BBhFCjnaxc4WtM4s6d/z64+PUj3TZ8fgA8Cd/P
+	YFTS4pi8n00BGQPcA9v0dKTchWH0HTT7SeWFLDSu3FUw1ACV0+n82CG0iFp6fSxs7BUECsbMn8GIu
+	YgiM1Z6Cop4j9COe8uNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOPbd-0004xj-TE; Tue, 14 Apr 2020 17:44:17 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1jOPbP-0004l1-Ey; Tue, 14 Apr 2020 17:44:03 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOPbH-0004qR-Jo
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 17:43:57 +0000
-IronPort-SDR: Ym2vVQ2UtXTuQZm9EVYbKFflHi/B5aJVa+zqE6t6ubNbeAWOrs03Ks86860NWzmBNCHgZJhR6W
- A6mWzjhby/lQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 14 Apr 2020 10:43:54 -0700
-IronPort-SDR: mHPOjskkyQE+Rh5eHCMvGI2+NejPurj96wH1N2pDO2a8FTjI24d+xdwF5XsnajLtBLQxqEgpRF
- KcDEQF9gOnyw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,383,1580803200"; d="scan'208";a="427144493"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga005.jf.intel.com with ESMTP; 14 Apr 2020 10:43:53 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jOPbE-000DQw-N5; Wed, 15 Apr 2020 01:43:52 +0800
-Date: Wed, 15 Apr 2020 01:42:49 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [stericsson:earlydebug] BUILD SUCCESS
- 31d4c90d80a321a146f4d7130e9a3bb6a39476fe
-Message-ID: <5e95f619.jDUEW1y/2s9IJZjM%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jOPb4-0004ii-Cg; Tue, 14 Apr 2020 17:43:44 +0000
+Received: by mail-ot1-f68.google.com with SMTP id i22so451356otp.12;
+ Tue, 14 Apr 2020 10:43:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CRHsdXgHa+vlx10diMU/bK8sKF7Wucha61AmLhZ8R5U=;
+ b=KomF+wPCYS0S6OIWOpo97TthfhQuFI/8FxBtM9eaNOUB/vSJwEcQ7OHcmGrTHY63E5
+ 2Kl5fZ5SnA/J4GKd65OZaHmutBMHHmuWGESmD70YHSMpR8zAKGljKcuyytK9oEF2uPHV
+ sgKhud0WXHvCGfZ0Mb1MvBfpze07WhbN4gQROKn4mtnGl9hQE+m2JCbMYl87IP4LQnkE
+ i5Nmbust+OXHUcZKobEA4vXqgCjPfohoe2gECf62m9evMeGbBudPOD+VAFRfaHibvz8N
+ 4ieOu0wBX5Mq1wd3L8RmnDpSvfZ5JZ5sP1b1gYX31Ol7fzeZzSB+dxt9G6a3PsJ8cuq5
+ TiCQ==
+X-Gm-Message-State: AGi0PuaLxjgvcT4nkDZvPjd3aOOkEOqmJuZKcaLLodsdrqDU0aj/otcw
+ +IQO90UrhdV7SRZBHFFE5g==
+X-Google-Smtp-Source: APiQypK2V5U3/0zVRuO5nJ300D760b8P59trd/OCGqtKVr1uSq3uAqJnaCUmN0kI3wtf0QF9nN+o7Q==
+X-Received: by 2002:a9d:aa7:: with SMTP id 36mr15848070otq.142.1586886220895; 
+ Tue, 14 Apr 2020 10:43:40 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i7sm5707906otl.12.2020.04.14.10.43.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 10:43:40 -0700 (PDT)
+Received: (nullmailer pid 9697 invoked by uid 1000);
+ Tue, 14 Apr 2020 17:43:38 -0000
+Date: Tue, 14 Apr 2020 12:43:38 -0500
+From: Rob Herring <robh@kernel.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH v14 2/3] dt-bindings: display: mediatek: convert the
+ document format from txt to yaml
+Message-ID: <20200414174338.GA6322@bogus>
+References: <20200403080350.95826-1-jitao.shi@mediatek.com>
+ <20200403080350.95826-3-jitao.shi@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200403080350.95826-3-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_104355_820865_3FF6C776 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200414_104342_425507_469AD5F0 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 3.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,180 +93,184 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, ck.hu@mediatek.com,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git  earlydebug
-branch HEAD: 31d4c90d80a321a146f4d7130e9a3bb6a39476fe  Uglygack for earlydebug printascii
+On Fri, Apr 03, 2020 at 04:03:49PM +0800, Jitao Shi wrote:
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../display/mediatek/mediatek,dpi.txt         | 42 --------
+>  .../display/mediatek/mediatek,dpi.yaml        | 97 +++++++++++++++++++
+>  2 files changed, 97 insertions(+), 42 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> deleted file mode 100644
+> index 77def4456706..000000000000
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> +++ /dev/null
+> @@ -1,42 +0,0 @@
+> -Mediatek DPI Device
+> -===================
+> -
+> -The Mediatek DPI function block is a sink of the display subsystem and
+> -provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+> -output bus.
+> -
+> -Required properties:
+> -- compatible: "mediatek,<chip>-dpi"
+> -  the supported chips are mt2701 , mt8173 and mt8183.
+> -- reg: Physical base address and length of the controller's registers
+> -- interrupts: The interrupt signal from the function block.
+> -- clocks: device clocks
+> -  See Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> -- clock-names: must contain "pixel", "engine", and "pll"
+> -- port: Output port node with endpoint definitions as described in
+> -  Documentation/devicetree/bindings/graph.txt. This port should be connected
+> -  to the input port of an attached HDMI or LVDS encoder chip.
+> -
+> -Optional properties:
+> -- pinctrl-names: Contain "default" and "sleep".
+> -
+> -Example:
+> -
+> -dpi0: dpi@1401d000 {
+> -	compatible = "mediatek,mt8173-dpi";
+> -	reg = <0 0x1401d000 0 0x1000>;
+> -	interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
+> -	clocks = <&mmsys CLK_MM_DPI_PIXEL>,
+> -		 <&mmsys CLK_MM_DPI_ENGINE>,
+> -		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+> -	clock-names = "pixel", "engine", "pll";
+> -	pinctrl-names = "default", "sleep";
+> -	pinctrl-0 = <&dpi_pin_func>;
+> -	pinctrl-1 = <&dpi_pin_idle>;
+> -
+> -	port {
+> -		dpi0_out: endpoint {
+> -			remote-endpoint = <&hdmi0_in>;
+> -		};
+> -	};
+> -};
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> new file mode 100644
+> index 000000000000..effdaa96aec3
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> @@ -0,0 +1,97 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: mediatek DPI Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  The Mediatek DPI function block is a sink of the display subsystem and
+> +  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+> +  output bus.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt2701-dpi
+> +      - mediatek,mt8173-dpi
+> +      - mediatek,mt8183-dpi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Pixel Clock
+> +      - description: Engine Clock
+> +      - description: DPI PLL
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pixel
+> +      - const: engine
+> +      - const: pll
+> +
+> +  pinctrl-0: true
+> +  pinctrl-1: true
+> +
+> +  pinctrl-names:
+> +    items:
+> +      - const: default
+> +      - const: sleep
+> +
+> +  port@0:
 
-elapsed time: 483m
+Should be 'port'. No 'reg' property, so no unit-address.
 
-configs tested: 153
-configs skipped: 0
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm                         at91_dt_defconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                               defconfig
-sparc                            allyesconfig
-ia64                             allyesconfig
-h8300                       h8s-sim_defconfig
-riscv                          rv32_defconfig
-powerpc                       ppc64_defconfig
-microblaze                    nommu_defconfig
-parisc                generic-64bit_defconfig
-s390                              allnoconfig
-i386                              allnoconfig
-i386                             alldefconfig
-i386                              debian-10.3
-i386                                defconfig
-i386                             allyesconfig
-ia64                             alldefconfig
-ia64                             allmodconfig
-ia64                              allnoconfig
-ia64                                defconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-nds32                               defconfig
-nds32                             allnoconfig
-csky                                defconfig
-alpha                               defconfig
-h8300                     edosk2674_defconfig
-h8300                    h8300h-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-powerpc                           allnoconfig
-powerpc                             defconfig
-powerpc                          rhel-kconfig
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-parisc                            allnoconfig
-parisc                           allyesconfig
-parisc                generic-32bit_defconfig
-x86_64               randconfig-a001-20200414
-x86_64               randconfig-a002-20200414
-x86_64               randconfig-a003-20200414
-i386                 randconfig-a001-20200414
-i386                 randconfig-a002-20200414
-i386                 randconfig-a003-20200414
-alpha                randconfig-a001-20200414
-m68k                 randconfig-a001-20200414
-nds32                randconfig-a001-20200414
-parisc               randconfig-a001-20200414
-riscv                randconfig-a001-20200414
-c6x                  randconfig-a001-20200414
-h8300                randconfig-a001-20200414
-microblaze           randconfig-a001-20200414
-nios2                randconfig-a001-20200414
-sparc64              randconfig-a001-20200414
-s390                 randconfig-a001-20200414
-xtensa               randconfig-a001-20200414
-sh                   randconfig-a001-20200414
-openrisc             randconfig-a001-20200414
-csky                 randconfig-a001-20200414
-x86_64               randconfig-b001-20200414
-x86_64               randconfig-b002-20200414
-x86_64               randconfig-b003-20200414
-i386                 randconfig-b001-20200414
-i386                 randconfig-b002-20200414
-i386                 randconfig-b003-20200414
-x86_64               randconfig-c001-20200414
-x86_64               randconfig-c002-20200414
-x86_64               randconfig-c003-20200414
-i386                 randconfig-c001-20200414
-i386                 randconfig-c002-20200414
-i386                 randconfig-c003-20200414
-x86_64               randconfig-f001-20200414
-x86_64               randconfig-f002-20200414
-x86_64               randconfig-f003-20200414
-i386                 randconfig-f001-20200414
-i386                 randconfig-f002-20200414
-i386                 randconfig-f003-20200414
-x86_64               randconfig-g001-20200414
-x86_64               randconfig-g002-20200414
-x86_64               randconfig-g003-20200414
-i386                 randconfig-g001-20200414
-i386                 randconfig-g002-20200414
-i386                 randconfig-g003-20200414
-x86_64               randconfig-h001-20200414
-x86_64               randconfig-h002-20200414
-x86_64               randconfig-h003-20200414
-i386                 randconfig-h001-20200414
-i386                 randconfig-h002-20200414
-i386                 randconfig-h003-20200414
-arc                  randconfig-a001-20200414
-arm                  randconfig-a001-20200414
-arm64                randconfig-a001-20200414
-ia64                 randconfig-a001-20200414
-powerpc              randconfig-a001-20200414
-sparc                randconfig-a001-20200414
-riscv                            allmodconfig
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-sh                               allmodconfig
-sh                                allnoconfig
-sh                          rsk7269_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                            titan_defconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-um                                  defconfig
-um                             i386_defconfig
-um                           x86_64_defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-x86_64                    rhel-7.6-kselftests
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> +    type: object
+> +    description:
+> +      Output port node with endpoint definitions as described in
+> +      Documentation/devicetree/bindings/graph.txt. This port should be connected
+> +      to the input port of an attached HDMI or LVDS encoder chip.
+> +
+> +    properties:
+> +      endpoint:
+> +        type: object
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - port@0
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/mt8173-clk.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    dpi0: dpi@1401d000 {
+> +        compatible = "mediatek,mt8173-dpi";
+> +        reg = <0 0x1401d000 0 0x1000>;
+> +        interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
+> +        clocks = <&mmsys CLK_MM_DPI_PIXEL>,
+> +             <&mmsys CLK_MM_DPI_ENGINE>,
+> +             <&apmixedsys CLK_APMIXED_TVDPLL>;
+> +        clock-names = "pixel", "engine", "pll";
+> +        pinctrl-names = "default", "sleep";
+> +        pinctrl-0 = <&dpi_pin_func>;
+> +        pinctrl-1 = <&dpi_pin_idle>;
+> +
+> +        port@0 {
+> +            dpi0_out: endpoint {
+> +                remote-endpoint = <&hdmi0_in>;
+> +            };
+> +        };
+> +    };
+> +
+> +...
+> -- 
+> 2.21.0
 
 _______________________________________________
 linux-arm-kernel mailing list
