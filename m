@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD3E41A8338
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:38:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 338761A833A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:39:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ATSDEiokRDWwJsYAqS+9btzkxbGyHwqIeKHiAgB3IgU=; b=Q0AN3HKvk6dEmD
-	541llB0BfbeCL4wQ+tMnNz1dqIqItB44QfnAOJsao5PtJ3QNbgXiSl6ZmStaIH5bKEvhHktMdZYrQ
-	uhyNz9BKpi6ds8RXNlrmHNiuUp48z2hnZS/1Yl26jaqobRZPvBgIDtjSz8JxMSWa6EFb3iq6xufQh
-	Vq+4F7aWyhnAVheOCEstbb9h8agdiejAhG83pnBoWQ/DTONwOqfswDNYU3uC2EVjXKZfrO2DYGyME
-	o8QrUJilIDOT/LBFhD0+tpbXTko9iZBuLfqYpFBEPVfnqbMIY16rHGw2zBQNewnD8XTC1U5LyCzVn
-	G+zVlJjzc7Gdmh5aRHCA==;
+	List-Owner; bh=LPOLX8y4sPkMfhzdHsEKUZRz0d8wdWlvDX2xR87H7XI=; b=u2DI+dEuuLnayj
+	CldJo/sX0cnwOn2iMCnHXWwBlplSmVc9b6uz1En/ZROVLClhAhTfio2IK3MhPI67HTczItTelY9zl
+	+ZpZHhU62hhmYbqv7UwWkee1pfbeqM0TPyBP7j7/tgIFV1rHV3FyNU6iSFXVt+nQKWDRpRqlUzv9J
+	3TVq9Vt+NKdIHjtrq87dxKAYtiBeG8wJ8DFTO4QOiGWie6DcBRcoLvSrZ7pU0uLJ2DUBC8oB0k3P8
+	3eEJvE1qeRH72kXcI3/jjoFp2RGN9PX4Hzf8qpLzw3rgRB0z/8eJ60qOaGeO0frrQ9nkx1l7ndNL0
+	HNk9persSsEPqy200ALw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONe7-00042Y-GO; Tue, 14 Apr 2020 15:38:43 +0000
+	id 1jONeJ-0004Iy-VM; Tue, 14 Apr 2020 15:38:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONcF-0002UL-Eh
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:36:50 +0000
+ id 1jONcP-0002cF-HH
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:36:59 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B6B42076D;
- Tue, 14 Apr 2020 15:36:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2E5F920678;
+ Tue, 14 Apr 2020 15:36:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586878606;
- bh=fvLukdwkQTHO+51q3DGLoikuRIRMlioJ2DyvNE+LsyM=;
+ s=default; t=1586878616;
+ bh=+PM6cCkwYFqje74qzoRC6poZ06tSHFDDyFeAMiCHCeY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EsjR1/Yifkflit9+eKwFZLCCJFB8DergOAGiV4wfeGmM/V7L4EnrXxVxok0npwk6h
- WiBKvp5y1ti7RWPhFlbhCg0/KvxW5loI8ag/8FCL6WW1nK8DMZtzMhuoVRHVMUmF6W
- Av3cMdSJVEJr8PZ+JmDhYERiuyxHsfJxjLsfIVRk=
+ b=1uXYftVP+SP8zAkhuU/yZP3XxMdTuasDKvfSy5JabFslhgYvIqGAY3gx75EMaGZCP
+ c1BEUefD/ho3vwJjC8da0hE+eMTa9FhGFDTJyxFAmWVy+fIvJDP42sqU3PraFGMcTT
+ WfnmK5AWGpqRApF3UrQRroyPdYXW48Z1E2raP14Q=
 From: Mike Rapoport <rppt@kernel.org>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v4 10/14] sh: drop __pXd_offset() macros that duplicate
- pXd_index() ones
-Date: Tue, 14 Apr 2020 18:34:51 +0300
-Message-Id: <20200414153455.21744-11-rppt@kernel.org>
+Subject: [PATCH v4 11/14] sh: add support for folded p4d page tables
+Date: Tue, 14 Apr 2020 18:34:52 +0300
+Message-Id: <20200414153455.21744-12-rppt@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200414153455.21744-1-rppt@kernel.org>
 References: <20200414153455.21744-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_083647_558687_73E97FB4 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200414_083657_860177_C571423C 
+X-CRM114-Status: GOOD (  15.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,76 +103,325 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mike Rapoport <rppt@linux.ibm.com>
 
-The __pXd_offset() macros are identical to the pXd_index() macros and there
-is no point to keep both of them. All architectures define and use
-pXd_index() so let's keep only those to make mips consistent with the rest
-of the kernel.
+Implement primitives necessary for the 4th level folding, add walks of p4d
+level where appropriate and remove usage of __ARCH_USE_5LEVEL_HACK.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/sh/include/asm/pgtable_32.h | 5 ++---
- arch/sh/include/asm/pgtable_64.h | 5 ++---
- arch/sh/mm/init.c                | 6 +++---
- 3 files changed, 7 insertions(+), 9 deletions(-)
+ arch/sh/include/asm/pgtable-2level.h |  1 -
+ arch/sh/include/asm/pgtable-3level.h |  1 -
+ arch/sh/kernel/io_trapped.c          |  7 ++++++-
+ arch/sh/mm/cache-sh4.c               |  4 +++-
+ arch/sh/mm/cache-sh5.c               |  7 ++++++-
+ arch/sh/mm/fault.c                   | 26 +++++++++++++++++++++++---
+ arch/sh/mm/hugetlbpage.c             | 28 ++++++++++++++++++----------
+ arch/sh/mm/init.c                    |  9 ++++++++-
+ arch/sh/mm/kmap.c                    |  2 +-
+ arch/sh/mm/tlbex_32.c                |  6 +++++-
+ arch/sh/mm/tlbex_64.c                |  7 ++++++-
+ 11 files changed, 76 insertions(+), 22 deletions(-)
 
-diff --git a/arch/sh/include/asm/pgtable_32.h b/arch/sh/include/asm/pgtable_32.h
-index 29274f0e428e..4acce5f2cbf9 100644
---- a/arch/sh/include/asm/pgtable_32.h
-+++ b/arch/sh/include/asm/pgtable_32.h
-@@ -407,13 +407,12 @@ static inline pte_t pte_modify(pte_t pte, pgprot_t newprot)
- /* to find an entry in a page-table-directory. */
- #define pgd_index(address)	(((address) >> PGDIR_SHIFT) & (PTRS_PER_PGD-1))
- #define pgd_offset(mm, address)	((mm)->pgd + pgd_index(address))
--#define __pgd_offset(address)	pgd_index(address)
+diff --git a/arch/sh/include/asm/pgtable-2level.h b/arch/sh/include/asm/pgtable-2level.h
+index bf1eb51c3ee5..08bff93927ff 100644
+--- a/arch/sh/include/asm/pgtable-2level.h
++++ b/arch/sh/include/asm/pgtable-2level.h
+@@ -2,7 +2,6 @@
+ #ifndef __ASM_SH_PGTABLE_2LEVEL_H
+ #define __ASM_SH_PGTABLE_2LEVEL_H
  
- /* to find an entry in a kernel page-table-directory */
- #define pgd_offset_k(address)	pgd_offset(&init_mm, address)
- 
--#define __pud_offset(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
--#define __pmd_offset(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
-+#define pud_index(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
-+#define pmd_index(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
- 
- /* Find an entry in the third-level page table.. */
- #define pte_index(address)	((address >> PAGE_SHIFT) & (PTRS_PER_PTE - 1))
-diff --git a/arch/sh/include/asm/pgtable_64.h b/arch/sh/include/asm/pgtable_64.h
-index 1778bc5971e7..27cc282ec6c0 100644
---- a/arch/sh/include/asm/pgtable_64.h
-+++ b/arch/sh/include/asm/pgtable_64.h
-@@ -46,14 +46,13 @@ static __inline__ void set_pte(pte_t *pteptr, pte_t pteval)
- 
- /* To find an entry in a generic PGD. */
- #define pgd_index(address) (((address) >> PGDIR_SHIFT) & (PTRS_PER_PGD-1))
--#define __pgd_offset(address) pgd_index(address)
- #define pgd_offset(mm, address) ((mm)->pgd+pgd_index(address))
- 
- /* To find an entry in a kernel PGD. */
- #define pgd_offset_k(address) pgd_offset(&init_mm, address)
- 
--#define __pud_offset(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
--#define __pmd_offset(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
-+#define pud_index(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
-+/* #define pmd_index(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1)) */
+-#define __ARCH_USE_5LEVEL_HACK
+ #include <asm-generic/pgtable-nopmd.h>
  
  /*
-  * PMD level access routines. Same notes as above.
+diff --git a/arch/sh/include/asm/pgtable-3level.h b/arch/sh/include/asm/pgtable-3level.h
+index 779260b721ca..0f80097e5c9c 100644
+--- a/arch/sh/include/asm/pgtable-3level.h
++++ b/arch/sh/include/asm/pgtable-3level.h
+@@ -2,7 +2,6 @@
+ #ifndef __ASM_SH_PGTABLE_3LEVEL_H
+ #define __ASM_SH_PGTABLE_3LEVEL_H
+ 
+-#define __ARCH_USE_5LEVEL_HACK
+ #include <asm-generic/pgtable-nopud.h>
+ 
+ /*
+diff --git a/arch/sh/kernel/io_trapped.c b/arch/sh/kernel/io_trapped.c
+index 60c828a2b8a2..037aab2708b7 100644
+--- a/arch/sh/kernel/io_trapped.c
++++ b/arch/sh/kernel/io_trapped.c
+@@ -136,6 +136,7 @@ EXPORT_SYMBOL_GPL(match_trapped_io_handler);
+ static struct trapped_io *lookup_tiop(unsigned long address)
+ {
+ 	pgd_t *pgd_k;
++	p4d_t *p4d_k;
+ 	pud_t *pud_k;
+ 	pmd_t *pmd_k;
+ 	pte_t *pte_k;
+@@ -145,7 +146,11 @@ static struct trapped_io *lookup_tiop(unsigned long address)
+ 	if (!pgd_present(*pgd_k))
+ 		return NULL;
+ 
+-	pud_k = pud_offset(pgd_k, address);
++	p4d_k = p4d_offset(pgd_k, address);
++	if (!p4d_present(*p4d_k))
++		return NULL;
++
++	pud_k = pud_offset(p4d_k, address);
+ 	if (!pud_present(*pud_k))
+ 		return NULL;
+ 
+diff --git a/arch/sh/mm/cache-sh4.c b/arch/sh/mm/cache-sh4.c
+index eee911422cf9..45943bcb7042 100644
+--- a/arch/sh/mm/cache-sh4.c
++++ b/arch/sh/mm/cache-sh4.c
+@@ -209,6 +209,7 @@ static void sh4_flush_cache_page(void *args)
+ 	unsigned long address, pfn, phys;
+ 	int map_coherent = 0;
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte;
+@@ -224,7 +225,8 @@ static void sh4_flush_cache_page(void *args)
+ 		return;
+ 
+ 	pgd = pgd_offset(vma->vm_mm, address);
+-	pud = pud_offset(pgd, address);
++	p4d = p4d_offset(pgd, address);
++	pud = pud_offset(p4d, address);
+ 	pmd = pmd_offset(pud, address);
+ 	pte = pte_offset_kernel(pmd, address);
+ 
+diff --git a/arch/sh/mm/cache-sh5.c b/arch/sh/mm/cache-sh5.c
+index 445b5e69b73c..442a77cc2957 100644
+--- a/arch/sh/mm/cache-sh5.c
++++ b/arch/sh/mm/cache-sh5.c
+@@ -383,6 +383,7 @@ static void sh64_dcache_purge_user_pages(struct mm_struct *mm,
+ 				unsigned long addr, unsigned long end)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte;
+@@ -397,7 +398,11 @@ static void sh64_dcache_purge_user_pages(struct mm_struct *mm,
+ 	if (pgd_bad(*pgd))
+ 		return;
+ 
+-	pud = pud_offset(pgd, addr);
++	p4d = p4d_offset(pgd, addr);
++	if (p4d_none(*p4d) || p4d_bad(*p4d))
++		return;
++
++	pud = pud_offset(p4d, addr);
+ 	if (pud_none(*pud) || pud_bad(*pud))
+ 		return;
+ 
+diff --git a/arch/sh/mm/fault.c b/arch/sh/mm/fault.c
+index 7b74e18b71d7..8b3ab65c81c4 100644
+--- a/arch/sh/mm/fault.c
++++ b/arch/sh/mm/fault.c
+@@ -53,6 +53,7 @@ static void show_pte(struct mm_struct *mm, unsigned long addr)
+ 		 (u64)pgd_val(*pgd));
+ 
+ 	do {
++		p4d_t *p4d;
+ 		pud_t *pud;
+ 		pmd_t *pmd;
+ 		pte_t *pte;
+@@ -65,7 +66,20 @@ static void show_pte(struct mm_struct *mm, unsigned long addr)
+ 			break;
+ 		}
+ 
+-		pud = pud_offset(pgd, addr);
++		p4d = p4d_offset(pgd, addr);
++		if (PTRS_PER_P4D != 1)
++			pr_cont(", *p4d=%0*Lx", (u32)(sizeof(*p4d) * 2),
++			        (u64)p4d_val(*p4d));
++
++		if (p4d_none(*p4d))
++			break;
++
++		if (p4d_bad(*p4d)) {
++			pr_cont("(bad)");
++			break;
++		}
++
++		pud = pud_offset(p4d, addr);
+ 		if (PTRS_PER_PUD != 1)
+ 			pr_cont(", *pud=%0*llx", (u32)(sizeof(*pud) * 2),
+ 				(u64)pud_val(*pud));
+@@ -107,6 +121,7 @@ static inline pmd_t *vmalloc_sync_one(pgd_t *pgd, unsigned long address)
+ {
+ 	unsigned index = pgd_index(address);
+ 	pgd_t *pgd_k;
++	p4d_t *p4d, *p4d_k;
+ 	pud_t *pud, *pud_k;
+ 	pmd_t *pmd, *pmd_k;
+ 
+@@ -116,8 +131,13 @@ static inline pmd_t *vmalloc_sync_one(pgd_t *pgd, unsigned long address)
+ 	if (!pgd_present(*pgd_k))
+ 		return NULL;
+ 
+-	pud = pud_offset(pgd, address);
+-	pud_k = pud_offset(pgd_k, address);
++	p4d = p4d_offset(pgd, address);
++	p4d_k = p4d_offset(pgd_k, address);
++	if (!p4d_present(*p4d_k))
++		return NULL;
++
++	pud = pud_offset(p4d, address);
++	pud_k = pud_offset(p4d_k, address);
+ 	if (!pud_present(*pud_k))
+ 		return NULL;
+ 
+diff --git a/arch/sh/mm/hugetlbpage.c b/arch/sh/mm/hugetlbpage.c
+index 960deb1f24a1..acd5652a0de3 100644
+--- a/arch/sh/mm/hugetlbpage.c
++++ b/arch/sh/mm/hugetlbpage.c
+@@ -26,17 +26,21 @@ pte_t *huge_pte_alloc(struct mm_struct *mm,
+ 			unsigned long addr, unsigned long sz)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte = NULL;
+ 
+ 	pgd = pgd_offset(mm, addr);
+ 	if (pgd) {
+-		pud = pud_alloc(mm, pgd, addr);
+-		if (pud) {
+-			pmd = pmd_alloc(mm, pud, addr);
+-			if (pmd)
+-				pte = pte_alloc_map(mm, pmd, addr);
++		p4d = p4d_alloc(mm, pgd, addr);
++		if (p4d) {
++			pud = pud_alloc(mm, p4d, addr);
++			if (pud) {
++				pmd = pmd_alloc(mm, pud, addr);
++				if (pmd)
++					pte = pte_alloc_map(mm, pmd, addr);
++			}
+ 		}
+ 	}
+ 
+@@ -47,17 +51,21 @@ pte_t *huge_pte_offset(struct mm_struct *mm,
+ 		       unsigned long addr, unsigned long sz)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte = NULL;
+ 
+ 	pgd = pgd_offset(mm, addr);
+ 	if (pgd) {
+-		pud = pud_offset(pgd, addr);
+-		if (pud) {
+-			pmd = pmd_offset(pud, addr);
+-			if (pmd)
+-				pte = pte_offset_map(pmd, addr);
++		p4d = p4d_offset(pgd, addr);
++		if (p4d) {
++			pud = pud_offset(p4d, addr);
++			if (pud) {
++				pmd = pmd_offset(pud, addr);
++				if (pmd)
++					pte = pte_offset_map(pmd, addr);
++			}
+ 		}
+ 	}
+ 
 diff --git a/arch/sh/mm/init.c b/arch/sh/mm/init.c
-index b9de2d4fa57e..f445ba630790 100644
+index f445ba630790..60c33cf7acd1 100644
 --- a/arch/sh/mm/init.c
 +++ b/arch/sh/mm/init.c
-@@ -172,9 +172,9 @@ void __init page_table_range_init(unsigned long start, unsigned long end,
- 	unsigned long vaddr;
+@@ -45,6 +45,7 @@ void __init __weak plat_mem_setup(void)
+ static pte_t *__get_pte_phys(unsigned long addr)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
  
- 	vaddr = start;
--	i = __pgd_offset(vaddr);
--	j = __pud_offset(vaddr);
--	k = __pmd_offset(vaddr);
-+	i = pgd_index(vaddr);
-+	j = pud_index(vaddr);
-+	k = pmd_index(vaddr);
- 	pgd = pgd_base + i;
+@@ -54,7 +55,13 @@ static pte_t *__get_pte_phys(unsigned long addr)
+ 		return NULL;
+ 	}
  
- 	for ( ; (i < PTRS_PER_PGD) && (vaddr != end); pgd++, i++) {
+-	pud = pud_alloc(NULL, pgd, addr);
++	p4d = p4d_alloc(NULL, pgd, addr);
++	if (unlikely(!p4d)) {
++		p4d_ERROR(*p4d);
++		return NULL;
++	}
++
++	pud = pud_alloc(NULL, p4d, addr);
+ 	if (unlikely(!pud)) {
+ 		pud_ERROR(*pud);
+ 		return NULL;
+diff --git a/arch/sh/mm/kmap.c b/arch/sh/mm/kmap.c
+index 9e6b38b03cf7..0e7039137f5a 100644
+--- a/arch/sh/mm/kmap.c
++++ b/arch/sh/mm/kmap.c
+@@ -15,7 +15,7 @@
+ #include <asm/cacheflush.h>
+ 
+ #define kmap_get_fixmap_pte(vaddr)                                     \
+-	pte_offset_kernel(pmd_offset(pud_offset(pgd_offset_k(vaddr), (vaddr)), (vaddr)), (vaddr))
++	pte_offset_kernel(pmd_offset(pud_offset(p4d_offset(pgd_offset_k(vaddr), (vaddr)), (vaddr)), (vaddr)), vaddr)
+ 
+ static pte_t *kmap_coherent_pte;
+ 
+diff --git a/arch/sh/mm/tlbex_32.c b/arch/sh/mm/tlbex_32.c
+index 382262dc0c4b..1c53868632ee 100644
+--- a/arch/sh/mm/tlbex_32.c
++++ b/arch/sh/mm/tlbex_32.c
+@@ -23,6 +23,7 @@ handle_tlbmiss(struct pt_regs *regs, unsigned long error_code,
+ 	       unsigned long address)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte;
+@@ -42,7 +43,10 @@ handle_tlbmiss(struct pt_regs *regs, unsigned long error_code,
+ 		pgd = pgd_offset(current->mm, address);
+ 	}
+ 
+-	pud = pud_offset(pgd, address);
++	p4d = p4d_offset(pgd, address);
++	if (p4d_none_or_clear_bad(p4d))
++		return 1;
++	pud = pud_offset(p4d, address);
+ 	if (pud_none_or_clear_bad(pud))
+ 		return 1;
+ 	pmd = pmd_offset(pud, address);
+diff --git a/arch/sh/mm/tlbex_64.c b/arch/sh/mm/tlbex_64.c
+index 8ff966dd0c74..0d015f7556fa 100644
+--- a/arch/sh/mm/tlbex_64.c
++++ b/arch/sh/mm/tlbex_64.c
+@@ -44,6 +44,7 @@ static int handle_tlbmiss(unsigned long long protection_flags,
+ 			  unsigned long address)
+ {
+ 	pgd_t *pgd;
++	p4d_t *p4d;
+ 	pud_t *pud;
+ 	pmd_t *pmd;
+ 	pte_t *pte;
+@@ -58,7 +59,11 @@ static int handle_tlbmiss(unsigned long long protection_flags,
+ 		pgd = pgd_offset(current->mm, address);
+ 	}
+ 
+-	pud = pud_offset(pgd, address);
++	p4d = p4d_offset(pgd, address);
++	if (p4d_none(*p4d) || !p4d_present(*p4d))
++		return 1;
++
++	pud = pud_offset(p4d, address);
+ 	if (pud_none(*pud) || !pud_present(*pud))
+ 		return 1;
+ 
 -- 
 2.25.1
 
