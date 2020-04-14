@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0275A1A8036
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:46:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E288D1A8043
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
+	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=0JdE8gjoC7ZHpDcoU1AwDj7kZVFVItAPZOAbb1uLAqw=; b=T7V
-	+YGg/biLVDyNKyn2fjmzq+ZYCo1tirp66exaIJiWkJpQfgs7YqNxyyoAFpMOpRJvenjwX6UvHcQei
-	bu3sdA5zIQTmRorBBxhqhNk3MAucjZSxhRORXnvoPDt4W1pjzR2Du+rkbmVaWV6NRl4l8hSh5flDu
-	GBH9C5XXezwQ8lQahGb7g00CJMetRwJO0hWakodKgk4blXnpVKdZuWVRQDKEBXXL4O/cJT0LVuZEl
-	vt/A7RZ6pTvntEplGfmvKSnwPJZv5shV2kIIpDmFK6oo/4SDZikdW+Vq+wCtGmRYSuZPRZEMW5Q7b
-	Akg0AcPQ3lH1mBh3WHwHT4Ro8nmHlfQ==;
+	List-Owner; bh=qaNS8dawQXCKNu7WudiqHTP036e23NHEfcMgtNB9WsA=; b=bOHY8LTw4MvUhB
+	Mh/wAnY5P+mk3wFvV3fhCRIoWaWd8L9jWxbHyE2gSWR+wiI2MY97pO4OmBc3dWUL8HfphHNhpkwZ5
+	w9eKssREHt1DPtdHV8fZ3cCWVLUgzNxXk2mXHnXd3dU9Nx+2JU5Grp9UVq8ABc1sK66xNZDONIUZn
+	sIGLp9YiDZY19B2tvtBTYUVdh36oAscDJnlfJbiaGzf63OHDW0e1imwJhUZ4Jpg9daMoPhSKC4GMG
+	KnPnmVVWdhG+HfDSqnFk+MwUoBv1puZdvaxbCMrRyy7ql6m94HAu1+5jrqkLy5348kaMqSu3V++Bw
+	2iIPXejybCAx9jhcbm/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMpx-00041R-Nu; Tue, 14 Apr 2020 14:46:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOMrf-0004hy-Gr; Tue, 14 Apr 2020 14:48:39 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMpk-0003zY-Gk; Tue, 14 Apr 2020 14:46:42 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A724320578;
- Tue, 14 Apr 2020 14:46:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586875600;
- bh=g00iJtPzZcf8VyQjYtKqA/aEufNyrZ17hJE2UFDSDTQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=GfyFgj1INwbbPMiBOE/dh73dseOTY8FQWx5w2qLHZcdhWARYrmAhDHLVzbscAufN5
- MjP3PjLHDbYM7xri2xXaWV5AiJ3LgXzuw+tL8R2mKxCfgeObRfdlDX9o18UKWA3Tzy
- VYxT8QgDXyqRREidWCFZZA3Ck8Eu9LioF5Nqy4CY=
-Date: Tue, 14 Apr 2020 15:46:37 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "ASoC: convert rockchip spdif bindings to yaml" to the asoc
- tree
-In-Reply-To: <20200404115225.4314-1-jbx6244@gmail.com>
-Message-Id: <applied-20200404115225.4314-1-jbx6244@gmail.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1jOMrM-0004aw-Up
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 14:48:22 +0000
+Received: by mail-pg1-x542.google.com with SMTP id w11so6082720pga.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 Apr 2020 07:48:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:references:in-reply-to:mime-version
+ :message-id:content-transfer-encoding;
+ bh=L6wwBLpMMetY/zxOEci/JVLuRBV/3LI/LldPvH06RfY=;
+ b=jbyVR3i63K7T908IixpVArje1gguIVF9o17an2Ju6P4xd56heYoFmO/WcdvYUGOw83
+ 7DsRgEXQ7GdDOshFt28h6IZryHi6pCoL9TxpwNMwOPQ1WwJTF7JTL9c2RLAhjn11+Qtp
+ 81zgUeMjSRjvbeaU+lfmouqsrC6Fr6iqJFDEiznZAV1GOr4656U3Wr5nQootJ2ZQFOWS
+ HzUhnCiHoZIIV8+m2lFOeHdd0TIJ4MPu25GdxxAiCtY8PSM3nTP3iBUlJWWpsDaARXRV
+ 7mWxg96+Qw9Kqu5tSPqHXEfSOUh6hwqt5xIdzBQ9ngUs43LWc7bZzpLIK5dfh+q7KRpc
+ C80A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
+ :mime-version:message-id:content-transfer-encoding;
+ bh=L6wwBLpMMetY/zxOEci/JVLuRBV/3LI/LldPvH06RfY=;
+ b=Acsn4XLdBzqUfRnww8oG+MJX57cVGyeUtiR9ynTGCu3VofA/LJae6JcErbQaBRJFlS
+ A/yUuXQHMJ6p2VhYj1fqK0Xziar6JMIgxPb2t95D1chl8MM1P9YI04Xs2jNaFsBRyJV4
+ /4V6LCqnt6wjQd/71dXd1rdHrKrGWBKzybxSu0f1pXavCf9bU9j2MPZUe+tEoB4VZBKI
+ /96UFiwJBv0JqTK+NqQjbob6uRutOi7IyQykW/Jd4Nqdb/D3/l/Rmyw0mLCn41/6zn5u
+ I+c/WVHPR8pSRSdINlhV79zn48SZ+pRaRIBGOklTDeTCFoUypcXoae8wReBy0SRJ3m5n
+ /pXA==
+X-Gm-Message-State: AGi0PuaFdj/vCwy3EHr+QisCqNmK+WiszQaEViRjQtnl+OhdTnd0Tugj
+ iKyWXq4rmxK9l8r1AJOKq3pZWITq
+X-Google-Smtp-Source: APiQypK52jNzLdOIfO1gpMRdMkm3ocgjZEpddsb7bx1IdjG1eoLljeSOsDojocPs+NcHrGI7xJxuPA==
+X-Received: by 2002:a65:688c:: with SMTP id e12mr1438881pgt.194.1586875698800; 
+ Tue, 14 Apr 2020 07:48:18 -0700 (PDT)
+Received: from localhost ([203.18.28.220])
+ by smtp.gmail.com with ESMTPSA id k12sm10439963pgj.33.2020.04.14.07.48.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 07:48:17 -0700 (PDT)
+Date: Wed, 15 Apr 2020 00:48:13 +1000
+From: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH v2 4/4] mm/vmalloc: Hugepage vmalloc mappings
+To: Christoph Hellwig <hch@infradead.org>
+References: <20200413125303.423864-1-npiggin@gmail.com>
+ <20200413125303.423864-5-npiggin@gmail.com>
+ <20200414072316.GA5503@infradead.org>
+ <1586864403.0qfilei2ft.astroid@bobo.none>
+ <20200414130203.GA20867@infradead.org>
+In-Reply-To: <20200414130203.GA20867@infradead.org>
+MIME-Version: 1.0
+Message-Id: <1586875675.f8q1grbltc.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_074640_594918_1BD720BE 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_074821_058761_B84B1822 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [npiggin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -62,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,223 +102,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+Excerpts from Christoph Hellwig's message of April 14, 2020 11:02 pm:
+> On Tue, Apr 14, 2020 at 10:13:44PM +1000, Nicholas Piggin wrote:
+>> Which case? Usually the answer would be because you don't want to use
+>> contiguous physical memory and/or you don't want to use the linear 
+>> mapping.
+> 
+> But with huge pages you do by definition already use large contiguous
+> areas.  So you want allocations larger than "small" huge pages but not
+> using gigantic pages using vmalloc?
 
-   ASoC: convert rockchip spdif bindings to yaml
-
-has been applied to the asoc tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Yes.
 
 Thanks,
-Mark
-
-From 4d1a015a203c0249e3332ea217a38ec978118daa Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Sat, 4 Apr 2020 13:52:23 +0200
-Subject: [PATCH] ASoC: convert rockchip spdif bindings to yaml
-
-Current dts files with 'spdif' nodes are manually verified.
-In order to automate this process rockchip-spdif.txt
-has to be converted to yaml.
-
-Also rk3188.dtsi, rk3288.dtsi use an extra fallback string,
-so change this in the documentation.
-
-Changed:
-"rockchip,rk3188-spdif", "rockchip,rk3066-spdif"
-"rockchip,rk3288-spdif", "rockchip,rk3066-spdif"
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20200404115225.4314-1-jbx6244@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../bindings/sound/rockchip-spdif.txt         | 45 ---------
- .../bindings/sound/rockchip-spdif.yaml        | 93 +++++++++++++++++++
- 2 files changed, 93 insertions(+), 45 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.txt
- create mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt b/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-deleted file mode 100644
-index ec20c1271e92..000000000000
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-+++ /dev/null
-@@ -1,45 +0,0 @@
--* Rockchip SPDIF transceiver
--
--The S/PDIF audio block is a stereo transceiver that allows the
--processor to receive and transmit digital audio via an coaxial cable or
--a fibre cable.
--
--Required properties:
--
--- compatible: should be one of the following:
--   - "rockchip,rk3066-spdif"
--   - "rockchip,rk3188-spdif"
--   - "rockchip,rk3228-spdif"
--   - "rockchip,rk3288-spdif"
--   - "rockchip,rk3328-spdif"
--   - "rockchip,rk3366-spdif"
--   - "rockchip,rk3368-spdif"
--   - "rockchip,rk3399-spdif"
--- reg: physical base address of the controller and length of memory mapped
--  region.
--- interrupts: should contain the SPDIF interrupt.
--- dmas: DMA specifiers for tx dma. See the DMA client binding,
--  Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: should be "tx"
--- clocks: a list of phandle + clock-specifier pairs, one for each entry
--  in clock-names.
--- clock-names: should contain following:
--   - "hclk": clock for SPDIF controller
--   - "mclk" : clock for SPDIF bus
--
--Required properties on RK3288:
--  - rockchip,grf: the phandle of the syscon node for the general register
--                   file (GRF)
--
--Example for the rk3188 SPDIF controller:
--
--spdif: spdif@1011e000 {
--	compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
--	reg = <0x1011e000 0x2000>;
--	interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
--	dmas = <&dmac1_s 8>;
--	dma-names = "tx";
--	clock-names = "hclk", "mclk";
--	clocks = <&cru HCLK_SPDIF>, <&cru SCLK_SPDIF>;
--	#sound-dai-cells = <0>;
--};
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-new file mode 100644
-index 000000000000..bfd44fd8ecbc
---- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -0,0 +1,93 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/rockchip-spdif.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip SPDIF transceiver
-+
-+description:
-+  The S/PDIF audio block is a stereo transceiver that allows the
-+  processor to receive and transmit digital audio via a coaxial or
-+  fibre cable.
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3066-spdif
-+      - const: rockchip,rk3228-spdif
-+      - const: rockchip,rk3328-spdif
-+      - const: rockchip,rk3366-spdif
-+      - const: rockchip,rk3368-spdif
-+      - const: rockchip,rk3399-spdif
-+      - items:
-+          - enum:
-+            - rockchip,rk3188-spdif
-+            - rockchip,rk3288-spdif
-+          - const: rockchip,rk3066-spdif
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: clock for SPDIF bus
-+      - description: clock for SPDIF controller
-+
-+  clock-names:
-+    items:
-+      - const: mclk
-+      - const: hclk
-+
-+  dmas:
-+    maxItems: 1
-+
-+  dma-names:
-+    const: tx
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      The phandle of the syscon node for the GRF register.
-+      Required property on RK3288.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - dmas
-+  - dma-names
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: rockchip,rk3288-spdif
-+
-+then:
-+  required:
-+    - rockchip,grf
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    spdif: spdif@1011e000 {
-+      compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
-+      reg = <0x1011e000 0x2000>;
-+      interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_SPDIF>, <&cru HCLK_SPDIF>;
-+      clock-names = "mclk", "hclk";
-+      dmas = <&dmac1_s 8>;
-+      dma-names = "tx";
-+    };
--- 
-2.20.1
-
+Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
