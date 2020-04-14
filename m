@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A3041A8CAA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 22:40:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F6FE1A8CB8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 22:42:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHINQwlCVXVwcm4oP8UVeWPLJBw1kSZj+8WPW6qg3Y8=; b=V5g3kdxMDUtYTD
-	BrjZ/NpQWzJ0G1pYj9dg58YNqSZhI3NlFiRI7RmdfMrzbBEAumKrK5A8MyDl2C7I1HcZRq7Dyi6vG
-	ilaIjfaKB+7bkEKHAoPwBSNn+xgHgJ34QWelFzJwlMvAXv5WJknVEFxRm3DdH7s9LvMLXFOxrBatP
-	i4HYuk8U2Kvu1GLcqxSvBSgBdlmEX44R04Og/BeGXRqb1KLkAuEx3YPLaWu950C/DrimgnicGhP06
-	3R9/9wImxc4xmytNu4i1td1NVHM5Ad0OyCseK2nLHdfkDSRPkcCbNw+zp7M+OSCW1pDsSCwn1F9Nr
-	mkJTrT2td3HvAvWHTZdQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/DSVW39WGotDfMM+kbjzXo+HBQ7qrgXNNMLwkBk1lr8=; b=nJo2Eyh0mcwIMk
+	F1s7vYND/D3l/YSNg+4rVrzAEOLfmfYe3gVa2lwm++FQSDV8WUdkH2tYtdA32JDh6OeeflWPJEosq
+	1JxmWz3XzwwC8Q7d0CbJj1mVPmbZFLJKbbfmau2AsgMp+SVIQawRTFDjCqQ1T0pcqfaMOZ40R6Fjk
+	uXsWwAjCnaiwC/Zssia/L5BUdZvclLY/eSQ7KHPfHgMgI/1EJUlFtXcQnmByaFdDRJv9INW6kKEiQ
+	SDAjgARGmZAGCNToudX6DCI7qhzP4yBk4lgVzWYcLwKIMygeFmIRGW9j+C5oIcMu3L/In406c4F67
+	COBQDeHcQ03aydHuOmBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOSLd-0007Ca-Ko; Tue, 14 Apr 2020 20:39:57 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jOSOH-0001ai-6M; Tue, 14 Apr 2020 20:42:41 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOSLU-0007CF-DD
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 20:39:49 +0000
-Received: by mail-lj1-x244.google.com with SMTP id r7so1246960ljg.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 13:39:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=khTmp2TYHsRQBvVJOtQBRGE8HXfWWnh3qR1G0Y1hx2w=;
- b=WpMEIu6eM7FZWqOFDcKbvrCKcHbPw3WcuHFI4BxHyZ93xpuhcnnQYqgHNxBg4Ufyih
- AkXXlW+huvXJV0YfhZ2g4lbnpwTOyfDGTpkiqZErm9xItkhvHL14lNZYLAD6HjqekFtK
- QCiCWekjo3Yq7rD3OKGt7KeJ5uIdBnVsgT9kNJDkKSocvlyUdbwtrkkYJGgpA5LV4T/T
- +Ulz7lJ1oRXDP8DxCNCfwIqr1wmQ7e/Z2xj/ci87Oot5xlkd6NZ+0gDl4BxwrYyk0gHo
- +3WaTaMEFSGjT8XrKKlgzS44+xKAsErFDSA5gcTcrHRKMe8Uo///Ceg/LxYXN/0+Doqx
- Q7LQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=khTmp2TYHsRQBvVJOtQBRGE8HXfWWnh3qR1G0Y1hx2w=;
- b=Eo76ZsLDa1NSi8dKGRrdRYaaa8mk2bosnu8ItNo+q1Qe9idKA06cg5ibY/mN7jJyWx
- 4+uQQ9ystW2tVy3FBsiO16Up4jzI7beKiaL0hRS+vRqVlzhKMUe5ohUyiFj5YhUDBWgz
- 6UwR7gZEB6Lw/JCrEchD4DoeLn1xJfBzhW+ivcOx+PkLkVjB9O1CvDs4dqyNlL65t7OE
- no4EzmABl7MuFQRIMi0xSMLyjQhk3jzZ6EPor0VM2/B5S7sTefdQFF0cF3E/hYxSHzfz
- nxjW8kQVnJbyVgJyJPQpOPJninGjT8AN7HMqkbQvwrDiQVAMmlI7GbjXHyy8rmdaixnF
- Qlxg==
-X-Gm-Message-State: AGi0Puaeaewwyxd9Vzv8ZCHsXGuOaTk6C10Hx2xmiPhfD6RioxHrpe84
- pqJ7oWfsskHs3AZMfdTzX6w8Vzgc
-X-Google-Smtp-Source: APiQypLgro+dFqpUmd53bi7sLuYwFg61MWaD7404CUete81MLXi0Rc70RxWiF50erBpcVjZ61VKWeg==
-X-Received: by 2002:a2e:6c0a:: with SMTP id h10mr1090372ljc.195.1586896783990; 
- Tue, 14 Apr 2020 13:39:43 -0700 (PDT)
-Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
- [91.78.208.152]) by smtp.googlemail.com with ESMTPSA id
- r206sm11029258lff.65.2020.04.14.13.39.42
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Apr 2020 13:39:43 -0700 (PDT)
-Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
- Tegra210
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-10-thierry.reding@gmail.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <385ad42b-ebed-1783-0dd2-dc3693aeaf6b@gmail.com>
-Date: Tue, 14 Apr 2020 23:39:42 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jOSO8-0001aE-5T; Tue, 14 Apr 2020 20:42:34 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id D7B05521;
+ Tue, 14 Apr 2020 22:42:13 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1586896934;
+ bh=gUuaIJ3u+fel6jj4JqVEOGrL2STu9lBIgJke/U/dqJY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=NKMoMvq3toxLJ00KSu+xAkx6PhAfgq5ehyu67cm63r7bdZK3F9M+Js50OYUTf5wd8
+ ZkgyL8zrnF//1II9JfEzZnO+35ZpPAjQnZmABcq7cU8O04VTa066J3H3sIaMy+amCC
+ 0SIQj5mTegDI2a6TIb2y7j6rmdPML5PQiY9e61M0=
+Date: Tue, 14 Apr 2020 23:42:02 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v6 5/8] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+Message-ID: <20200414204202.GL19819@pendragon.ideasonboard.com>
+References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
+ <20200414151955.311949-6-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20200409175238.3586487-10-thierry.reding@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200414151955.311949-6-adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_133948_471805_E93231D6 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200414_134232_364364_6EA746B6 
+X-CRM114-Status: GOOD (  20.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,9 +62,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,26 +73,253 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
- linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
+Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Martyn Welch <martyn.welch@collabora.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDkuMDQuMjAyMCAyMDo1MiwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4gK3N0YXRp
-YyBpbnQgdGVncmEyMTBfZW1jX3NldF9yYXRlKHN0cnVjdCBkZXZpY2UgKmRldiwKPiArCQkJCSBj
-b25zdCBzdHJ1Y3QgdGVncmEyMTBfY2xrX2VtY19jb25maWcgKmNvbmZpZykKPiArewo+ICsJc3Ry
-dWN0IHRlZ3JhMjEwX2VtYyAqZW1jID0gZGV2X2dldF9kcnZkYXRhKGRldik7Cj4gKwlzdHJ1Y3Qg
-dGVncmEyMTBfZW1jX3RpbWluZyAqdGltaW5nID0gTlVMTDsKPiArCXVuc2lnbmVkIGxvbmcgcmF0
-ZSA9IGNvbmZpZy0+cmF0ZTsKPiArCXM2NCBsYXN0X2NoYW5nZV9kZWxheTsKPiArCXVuc2lnbmVk
-IGxvbmcgZmxhZ3M7Cj4gKwl1bnNpZ25lZCBpbnQgaTsKPiArCj4gKwlpZiAocmF0ZSA9PSBlbWMt
-Pmxhc3QtPnJhdGUgKiAxMDAwVUwpCj4gKwkJcmV0dXJuIDA7CgpJc24ndCBpdCBwb3NzaWJsZSB0
-aGF0IHBhcmVudCBpcyBjaGFuZ2VkLCB3aGlsZSB0aGUgcmF0ZSBpcyBub3Q/IEkgdGhpbmsKdGhl
-IGNsb2NrIGNoYW5nZSBzaG91bGQgcHJvY2VlZCBpbiB0aGlzIGNhc2UuCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Adrian,
+
+Thank you for the patch.
+
+On Tue, Apr 14, 2020 at 06:19:52PM +0300, Adrian Ratiu wrote:
+> This provides an example DT binding for the MIPI DSI host controller
+> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
+> 
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: devicetree@vger.kernel.org
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
+> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> Changes since v5:
+>   - Fixed missing reg warning (Fabio)
+>   - Updated dt-schema and fixed warnings (Rob)
+> 
+> Changes since v4:
+>   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
+>   and addressed received binding feedback (Rob)
+> 
+> Changes since v3:
+>   - Added commit message (Neil)
+>   - Converted to yaml format (Neil)
+>   - Minor dt node + driver fixes (Rob)
+>   - Added small panel example to the host controller binding
+> 
+> Changes since v2:
+>   - Fixed commit tags (Emil)
+> ---
+>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 139 ++++++++++++++++++
+>  1 file changed, 139 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> new file mode 100644
+> index 000000000000..10e289ea219a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> @@ -0,0 +1,139 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX6 DW MIPI DSI Host Controller
+> +
+> +maintainers:
+> +  - Adrian Ratiu <adrian.ratiu@collabora.com>
+> +
+> +description: |
+> +  The i.MX6 DSI host controller is a Synopsys DesignWare MIPI DSI v1.01
+> +  IP block with a companion PHY IP.
+> +
+> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
+> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
+> +  the following device-specific properties.
+
+Not necessarily a prerequisite for this patch, but it would be nice to
+get that converted to yaml, and included here with
+
+allOf:
+  $ref: ../bridge/snps,dw-mipi-dsi.yaml#
+
+(assuming that's how the file will be called).
+
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: fsl,imx6q-mipi-dsi
+> +      - const: snps,dw-mipi-dsi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Module Clock
+> +      - description: DSI bus clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ref
+> +      - const: pclk
+> +
+> +  fsl,gpr:
+> +    description: Phandle to the iomuxc-gpr region containing the multiplexer control register.
+
+Could you please wrap liens at a 80 columns boundary ?
+
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +
+> +  ports:
+> +    type: object
+> +    description: |
+> +      A node containing DSI input & output port nodes with endpoint
+> +      definitions as documented in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt
+> +      Documentation/devicetree/bindings/graph.txt
+> +    properties:
+
+You should add
+
+       '#address-cells':
+         const: 1
+
+       '#size-cells':
+         const: 0
+
+> +      port@0:
+> +        type: object
+> +        description:
+> +          DSI input port node, connected to the ltdc rgb output port.
+> +
+> +      port@1:
+> +        type: object
+> +        description:
+> +          DSI output port node, connected to a panel or a bridge input port"
+
+
+Should this be "RGB output port node" ? And s/"/./
+
+And here you should add
+
+       additionalProperties: false
+
+> +
+> +patternProperties:
+> +  "^panel@[0-3]$":
+> +    type: object
+> +    description: |
+> +      A node containing the panel or bridge description as documented in
+> +      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
+> +    properties:
+> +      port:
+> +        type: object
+> +        description:
+> +          Panel or bridge port node, connected to the DSI output port (port@1)
+
+Does this belong here ? I think the port property for the panel needs to
+be described in the panel's binding instead.
+
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 0
+
+These two properties are not pattern properties, right ? Should they be
+listed under the properties above ?
+
+> +
+> +required:
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |+
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/imx6qdl-clock.h>
+> +    #include <dt-bindings/gpio/gpio.h>
+
+Alphabetical order ?
+
+> +
+> +    dsi: dsi@21e0000 {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
+> +        reg = <0x021e0000 0x4000>;
+> +        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
+> +        fsl,gpr = <&gpr>;
+> +        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
+> +                 <&clks IMX6QDL_CLK_MIPI_IPG>;
+> +        clock-names = "ref", "pclk";
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +            port@1 {
+> +                reg = <1>;
+> +                dsi_out: endpoint {
+> +                    remote-endpoint = <&panel_in>;
+> +                };
+> +            };
+> +        };
+> +
+> +        panel@0 {
+> +            compatible = "sharp,ls032b3sx01";
+> +            reg = <0>;
+> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
+> +            ports {
+> +                #address-cells = <1>;
+> +                #size-cells = <0>;
+> +                port@0 {
+> +                    reg = <0>;
+> +                    panel_in: endpoint {
+> +                        remote-endpoint = <&dsi_out>;
+> +                    };
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +...
+
+-- 
+Regards,
+
+Laurent Pinchart
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
