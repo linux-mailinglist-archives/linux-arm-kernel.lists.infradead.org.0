@@ -2,91 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AB701A7B78
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 14:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BA6F1A7B9C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:02:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
-	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=onuA0R1F+yt7QftlCbrCxdeV142RAwegiB7Lr9RFgIU=; b=p29hB6mP32I0TH
-	gpK0zD5B3RjlqG/rJVkckm6jKcmrK1UyIhum5x0xApRcH4nDyubOYw9i0z+eHuswzNNsEsG6eiGDa
-	KbYO0LSGiRJ2YdRR9gsPiDu22zC+kQ/U0zIu6q7cAEnn6ta5pfA/lNTnf/ID0BrTQELi/zh+VLaxI
-	L4BwlpsDeBt3gO9WFMzIW+kNO/Dv13xKSks7zURhY3fcHsk1/s5E0omQpFiiMhsOlvfeFu2cr67Kx
-	91XWGDxoIZxRdbtMjglHE3QM6A9ay79a46EanUaAyfvTNIzzzJrFX8AiiwB1dhRm8M5LiZGcWcCiL
-	rN3QvEMOOhGkos3O7Hww==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=6r9i0s+ftsyhaipiiSvxfa8lLnp5Ob3jKQD72X9PjMg=; b=Vmo3fk/LtEdT0Nwltq4NdRjL4w
+	FVYMJ2s+MB2i+8FOsPIt6ChyjzJ15jYgeimBRThGlYIYRluppa3AfTUYxPIWuU+SWmXM8ZcuWHXyX
+	6MSsA80ZHdJyuUgE7SdYbdpMj8c2EzOpDbjLN1sqTQRZJWaFlBtl4MjnGkcAXgeaBqDNwXHpKbCNW
+	4tz0khv4wqCdnQozsxq0iGX6cQgIqSsFxh+O7TQ1IPWQV7kgdodW2VqRO35MyuVJuUDMSZqy2MHrS
+	dCuLAVT0jTujckLoRmnIn3PdDGilTtWkrqoC3OSu+MtiiE1nNm0NFQVZhfa4zQpZS7ruWQEnk8F33
+	ed4840qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOL70-0001NC-C5; Tue, 14 Apr 2020 12:56:22 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1jOLCX-0005cA-Ek; Tue, 14 Apr 2020 13:02:05 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOL6s-0001MQ-QP
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 12:56:16 +0000
-Received: by mail-io1-xd41.google.com with SMTP id y17so13029752iow.9
+ id 1jOLCP-0005aZ-4t
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:01:59 +0000
+Received: by mail-wm1-x343.google.com with SMTP id e26so12883535wmk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 05:56:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:reply-to:from:date:message-id
- :subject:to:cc;
- bh=WmKnt9IWUrzAuhEohqCY3TXSHVnyDH4OyXTe3heTqDQ=;
- b=mSlj5I5N6ehhOd94m6K9l1JhjiTvdUCgjA7WjJfcJHE8YlAUmzc0FPOmItSKX2m1gb
- FLnSo/GNMLUDo7doo4d2F+5/Zn1CuXZhjMgsbpQ/32D4/UvxLqkvjbGP/UnBs9Sh12Kr
- /GLmWHevddC7louBWX5YhQvkcZ155MJhzFgMGQqrpKKWmjx3Dv5VjIyf9gL3kt/aQGe+
- lf4yKLJME32xvAevGeqlq0WRTUZga0GcIhDOQfxEOT6jV+xnyBXI3cGgDDLtDrHxXILz
- rNh9UUlnzcDb4ftAD3Ky3WAwnFs8xy50o3hP1o9ued+NuZ/wTnCkcr1SCeJ6Nv0igfbK
- RESA==
+ Tue, 14 Apr 2020 06:01:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=YVNWdCQPKJKUDqzVBB1EjscpuxC/BVDNlLQR4zPQltE=;
+ b=F+NDxTzt0jSNyYuibeNcpYS29kH/dH9SgCKN6b+K3wMYaZUuxlLfgfyGcAbP2h0qdZ
+ v5ty2KiP40jcS2YPnLUs9N3wLbBGFlPsmxLBz9vYkJmAglbzu5s+mOrpAJ5SHAH1gCk/
+ RbLkmcGHtlfzo0bULOJlIvArXgTW/oEjAnUAiJ0LCi4ZBNTgD1NgT8uDdMRaxaKs0iUW
+ GAi8PV/bvtqXnJSi3/taYGo2up50KspNB97UU4DtyFS78WE7jbTDyHVMSY2dQLxInGjw
+ UQht2jQM0IoMKbzEzH6Mc/oo535EjsNaJEY0ODfgPfo0e+H/6DJngLZRx793PprZeo1D
+ rvBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
- :from:date:message-id:subject:to:cc;
- bh=WmKnt9IWUrzAuhEohqCY3TXSHVnyDH4OyXTe3heTqDQ=;
- b=e8N68rcFiXq4yQrGQk1Dbcg41A4Dvzub7mQPY4HN38/jadxWO+8LPzFBTvDzWbDpXF
- aq6Z9H+8nzmOM8jgtlmv5rBZVaf0ruAHRGxlCinAfmh0d2AvvuwlzTU+8dzhxv2szYVL
- IILf7Cn/Q3sgwfG+WJh1bydw3sObEAW0HqZ1ZTOn2CVrXy5N7W79W04IXK+olv+wNI6v
- mmjVL+zbvK51BQH6VisYDq367rEDWZ0CU5/F+lQlsan1H4i+1isot2WfJE3lNGK9RyGB
- u0rQXLOd7/Pljg3GkfMuojrWYXelGZzKbF+f4bjOEJWRUPxzLsrGBJbrxq8Ypo0oKc69
- N/Lw==
-X-Gm-Message-State: AGi0PuZ0Et1niwY1WgCPQ1qEYot607oXfkbkOLdJ3C1QSec0dBdLon9b
- 1oZcWl5aXHKGfOWf3IHQvoi+CH9YpgISUX/NPV4=
-X-Google-Smtp-Source: APiQypKGlOMc8nc6ZarSdgZtGNhQGKIDIWmWoaCNosUsKajgvTEytxLCZeLng0K4JWPPCQR353dMJhuQX+uVzEsakG0=
-X-Received: by 2002:a02:8785:: with SMTP id t5mr19987768jai.15.1586868972607; 
- Tue, 14 Apr 2020 05:56:12 -0700 (PDT)
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=YVNWdCQPKJKUDqzVBB1EjscpuxC/BVDNlLQR4zPQltE=;
+ b=bOgG6VV4NaG19eBR60fRhndNhFx3IksVK3/VxjBcMf+mTZj/qlKK2WxxoOKRNTUEzE
+ MAYk8pLcPY+JOGneUtgj/HbaHcc756W/cWlMJamFsHQrvWrM3ijUFD+AmE5lq2ZeE8Ty
+ 2pol9FZ5do3V3nw0hWhOEiaBdBYO32miAeQkQMHl/FaO9TEyCqIbDYwm2H45NP0ThJS4
+ r2EaRll6tfZndVFuxyhXs0jerDCH0CPyt274ksn8o1T41KHRNv6ZWp1N8wijwJAgb8OS
+ rgyLN9AHh+htk9YSc4AvLKH9+EAYL19bgAwibE8zruZyFu0geziYG3W6QwID5oOnoGij
+ fbYQ==
+X-Gm-Message-State: AGi0PubZgYWjx2gm/O5F6P7w/D+93PUrgQtvkP5rOg1wp9M2jKCHX7o3
+ L6KzUVes34kKcAPNH27aG1378w==
+X-Google-Smtp-Source: APiQypIOrOF7YYEaKaXDccoLPvbc0JkxGKYNccCQyRAQHIKq/YkGUH67S+Cjj2L2nU6/ItuV/nM6cA==
+X-Received: by 2002:a05:600c:414b:: with SMTP id
+ h11mr23316590wmm.9.1586869315652; 
+ Tue, 14 Apr 2020 06:01:55 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id h10sm21260991wrq.33.2020.04.14.06.01.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 14 Apr 2020 06:01:54 -0700 (PDT)
+References: <20200330234535.3327513-1-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
+Subject: Re: [PATCH 0/2] clk: meson8b: allow the HDMI driver to manage
+ "hdmi_sys"
+In-reply-to: <20200330234535.3327513-1-martin.blumenstingl@googlemail.com>
+Date: Tue, 14 Apr 2020 15:01:53 +0200
+Message-ID: <1jh7xmte4e.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-References: <202004140212.PdfY02eO%lkp@intel.com>
- <CABhMZUUEFK_b=3qx7O+puzfh6ioZbTcQHWCq9P=J-FV+d_r05w@mail.gmail.com>
- <b5da1119-bad3-9840-15f6-867a5d890b06@intel.com>
-In-Reply-To: <b5da1119-bad3-9840-15f6-867a5d890b06@intel.com>
-From: Bjorn Helgaas <bjorn.helgaas@gmail.com>
-Date: Tue, 14 Apr 2020 07:56:01 -0500
-Message-ID: <CABhMZUU-m9EGea3XbDDGgfnThxQ54iKj01WPDqciffNQRFVARw@mail.gmail.com>
-Subject: Re: [xlnx:master 9789/9999] drivers/usb/dwc3/core.h:1462: multiple
- definition of `dwc3_simple_wakeup_capable';
- drivers/usb/dwc3/core.o:drivers/usb/dwc3/core.h:1462:
- first defined here
-To: Rong Chen <rong.a.chen@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_055614_853467_0F24AB1B 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_060157_187148_E0D6AFF8 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [bjorn.helgaas[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,48 +99,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: bjorn@helgaas.com
-Cc: Michal Simek <monstr@monstr.eu>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Bjorn Helgaas <helgaas@kernel.org>, Bjorn Helgaas <bjorn@helgaas.com>,
- ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 7:36 PM Rong Chen <rong.a.chen@intel.com> wrote:
-> On 4/14/20 3:44 AM, Bjorn Helgaas wrote:
-> > On Mon, Apr 13, 2020 at 1:42 PM kbuild test robot <lkp@intel.com> wrote:
-> >> tree:   https://github.com/Xilinx/linux-xlnx master
-> >> head:   81566a0b82c7995ca879463e66573c76ba774ea2
-> >> commit: 16e9a62655524541cb2f2c59fd5f1f167fbf73dc [9789/9999] asm-generic: Make msi.h a mandatory include/asm header
-> > Why do I care about this?  I have no idea what the linux-xlnx tree
-> > mentioned above is.  The 16e9a6265552 commit doesn't exist in
-> > linux-xlnx or in Linus' tree.
-> >
+
+On Tue 31 Mar 2020 at 01:45, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 >
-> Hi Bjorn,
+> Martin Blumenstingl (2):
+>   clk: meson8b: export the HDMI system clock
+>   clk: meson: meson8b: make the hdmi_sys clock tree mutable
 >
-> Do you mean the above tree ("https://github.com/Xilinx/linux-xlnx") is
-> not the official tree,
-> Could you possibly tell us the official site?
+>  drivers/clk/meson/meson8b.c              | 6 +++---
+>  drivers/clk/meson/meson8b.h              | 1 -
+>  include/dt-bindings/clock/meson8b-clkc.h | 1 +
+>  3 files changed, 4 insertions(+), 4 deletions(-)
 
-I don't know anything about Xilinx trees, so I don't know whether that
-tree is official or not.  My only point was that I couldn't find the
-16e9a6265552 commit.
-
-But apparently I just don't know how to navigate github, because
-16e9a6265552 *does* exist in that tree; it's at
-https://github.com/Xilinx/linux-xlnx/commit/16e9a62655524541cb2f2c59fd5f1f167fbf73dc
-
-It corresponds to upstream commit a1b39bae16a6 ("asm-generic: Make
-msi.h a mandatory include/asm header") from Michal.
-
-So I assume Michal will take care of this.
-
-Bjorn
+Applied, Thx
 
 _______________________________________________
 linux-arm-kernel mailing list
