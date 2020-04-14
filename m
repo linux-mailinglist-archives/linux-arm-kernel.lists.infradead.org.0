@@ -2,74 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55DEE1A7BF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:10:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 512631A7C07
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:13:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lo7sW8q+RrzKdZAv/Y9PhyhbsDh159xaU8kjWZPXUGc=; b=A08r6fdI1wBY+u
-	uATwCCv9YexGab+OTG7Rsk/mmzPbAfP2D9M8QJVgSpELws7W8c4ma7yikrow/sDqi/jGeAkTEzQpL
-	VcyPZtrb5M4u/Aw3jhCRA71TaN2g7tE/UAgHTfToNAF+K93p7djWZIhVnwxUDTZ5iWMbmSav9G+/F
-	YyNOWE/eAOmdVkfcMdEjN4xTOcRLLfnsjH+rOvijwmbxQmUZIVtqB2LOT2NbWrz0ARAzCQo4iviCn
-	MuKbAIdA9BdbuhyShxx28kW2UAhyBaUrqQMQh/NN0PtNezbShRXdsmD7cXgua2XQTEV2ONDiz8xEq
-	HlZrdl23nRRv3X3gKemA==;
+	List-Owner; bh=PadZ77HybKcZ/0X1uzmFac5PL6VHR9aX5sjsmegXhAM=; b=QOnBQC2bCLhBrf
+	4BXMsHTz/vS9lYgM1xfg9TDgclfx5Vgq2IFvpydsb6S4xw8ljyHIwFQl/99CGkjtWXGgbRRm1Eq4n
+	tpDswgCW+wA5V9/GIOt8et60Iyr3EtB2sCDmhboS42UrROM1pGJL20oCneUa+8eYXg1ZgF5jyupC3
+	faPhc6g3yc42IKdwpSqAhya9Ty9oPkgMcYnKUA6+R5INVzWTBzEcoqrSaEqBlkVSkHsawQjItsHHl
+	GFW3engTySzybZgf1lukgnrkKAWlDt9K/1YHuuJvDhzfMsbNtwYZZSRl1RGBd7J+oNITLRGMZUJht
+	Zonl/n3Mb1NN/pv2j6PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLKV-0005Fi-CR; Tue, 14 Apr 2020 13:10:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOLNE-0005ng-Em; Tue, 14 Apr 2020 13:13:08 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLKN-0005EE-Na
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:10:13 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E5A1E208E0;
- Tue, 14 Apr 2020 13:10:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586869811;
- bh=5vHG4+6iErXLPmTRrJYEu4GrUc05+e+J4rIqGDHfSfE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ILWPsnQPTPGIrVz3E/SkylhdyjTnS5mf+ZbK/bIYQhYwCy5vatruKTmIL+AggyKC0
- YZChfr1/3a7zAJT18sIWxznjIfZLtnK6en1PBXR/Cb+P66xmQnvivEp/vpgAOWMrRy
- CHDh0Gud96YvnzpLRHkMgYGPNHQYWALf3BB1f0u0=
-Date: Tue, 14 Apr 2020 14:10:06 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: Optimize ptrauth by enabling it for non-leaf
- functions
-Message-ID: <20200414131005.GA28750@willie-the-truck>
-References: <1586856741-26839-1-git-send-email-amit.kachhap@arm.com>
- <20200414100033.GA26395@willie-the-truck>
- <20200414101649.GC1278@C02TD0UTHF1T.local>
- <20200414110056.GB26395@willie-the-truck>
- <20200414110922.GC2486@C02TD0UTHF1T.local>
+ id 1jOLN6-0005n7-Eh
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 13:13:02 +0000
+X-Originating-IP: 86.202.105.35
+Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
+ [86.202.105.35])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 98D6224000E;
+ Tue, 14 Apr 2020 13:12:55 +0000 (UTC)
+Date: Tue, 14 Apr 2020 15:12:55 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [PATCH 4/5] ARM: dts: sam9x60: add rtt
+Message-ID: <20200414131255.GK34509@piout.net>
+References: <1586536019-12348-1-git-send-email-claudiu.beznea@microchip.com>
+ <1586536019-12348-5-git-send-email-claudiu.beznea@microchip.com>
+ <20200410222658.GB3628@piout.net>
+ <c4d46198-488b-c5d6-2a66-865a16840dc4@microchip.com>
+ <20200413104652.GE3628@piout.net>
+ <3116d1fc-af96-1e0c-aa07-3b34cbd58209@microchip.com>
+ <20200414111600.GE34509@piout.net>
+ <a07d841e-efa9-6c01-69e2-0ed33f9759c5@microchip.com>
+ <20200414124741.GJ34509@piout.net>
+ <ae278226-7616-5306-a8b5-3f937aa6b322@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200414110922.GC2486@C02TD0UTHF1T.local>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <ae278226-7616-5306-a8b5-3f937aa6b322@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_061011_794381_95252751 
-X-CRM114-Status: GOOD (  16.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_061300_626535_749153AF 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,51 +73,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, Daniel Kiss <daniel.kiss@arm.com>
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, jason@lakedaemon.net,
+ devicetree@vger.kernel.org, maz@kernel.org, linux-kernel@vger.kernel.org,
+ Ludovic.Desroches@microchip.com, robh+dt@kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 12:09:22PM +0100, Mark Rutland wrote:
-> On Tue, Apr 14, 2020 at 12:00:56PM +0100, Will Deacon wrote:
-> > On Tue, Apr 14, 2020 at 11:16:49AM +0100, Mark Rutland wrote:
-> > > I believe this is because leaf functions don't store the LR to the stack
-> > > (as they don't create a frame record), so it cannot be modified by a
-> > > stray memory write.
+On 14/04/2020 13:05:03+0000, Claudiu.Beznea@microchip.com wrote:
+> >>> But this is very unlikely to happen because this would be limited to a
+> >>> single board device tree instead of impact every sam9x60 based boards.
+> >>
+> >> Very unlikely but a having a patch with diff like this:
+> >>
+> >> +&gpbr {
+> >> +     status = "okay";
+> >> +};
+> >> +
+> >> +&rtt {
+> >> +     atmel,rtt-rtc-time-reg = <&gpbr 0x0>;
+> >> +     status = "okay";
+> >> +};
+> >> +
+> >>
+> >> and reverting it may affect the other users of gpbr in sam9x60ek.dts.
+> >>
 > > 
-> > That makes some sense, but doesn't it also mean you can jump into the middle
-> > of a leaf function and it will happily return to whatever sits in LR?
+> > Again, this affects only sam9x60ek.dts instead of possibly multiple DTs
+> > that may be out of tree. So the risk of doing that is null.
 > 
-> If you can do that, you've already subverted control flow, and can
-> probably do the same for a regular function, since for:
+> Anyway... I'll merge it although I don't consider is the right way.
 > 
-> | AUTIASP
-> | RET
-> 
-> ... you can just jump to the RET instead.
 
-Perhaps, but it's not at all clear to me that being able to jump over the
-AUT instruction is just as easy or useful as being able to jump into the
-middle of a leaf function, which might act as a form of gadget. The commit
-message is quite bold in saying "[this] is not useful from security point
-of view".
+Do as you wish but a board DT change mixed with a dtsi is a no go.
 
-How would this interact with BTI? Would we need to have different landing
-pads for leaf functions?
 
-> > Perhaps it would make sense to relax to the 'non-leaf' version only if
-> > stack protector is enabled?
-> 
-> I'm not sure I follow the rationale for that? What does stack protector
-> help with for leaf functions?
-
-Yeah, course it doesn't help because we're not pushing a frame. Ignore me.
-
-Will
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
