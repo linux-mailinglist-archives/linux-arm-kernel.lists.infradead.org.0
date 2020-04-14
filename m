@@ -2,100 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC0C81A8966
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:27:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBBB51A8987
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 20:29:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Z1m7S/DoASLKALRm7LUrohnJWD5qzGRGFDi6wbI/m3k=; b=LTPQTLbuNYq/Yc13up6LHSRCEU
-	TXmH5rWOnaTl4u4tmdJUth5/v50ugFXBUHtB2kxB5t+dsLKAemfZ3B+As8tzi5kRgNvrKdmf0LIBa
-	RgDE4GZcHvK1PUh6M2D4339mC1LAzFoh0UrQJig6ZSmekWVpTjzeDyUqgvZNNJlJDAr83MjpCWTF5
-	/ekfhE+KTAYZgv3l9TMyA+Wb9nt3XoO61hjirg7U6oj0V8Ps4d+les9Y5i6uUPzVRrvE1YgkQKwaH
-	SqiSU0xEvwtmxfhYFmauo7jhQq4dU7ttu5cJJJfLLKI36twOSOLB0U1cgmsSp41W+dPKBdsrZ4DSy
-	FxmdW9+A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wEgQsYqjfBZlDJoIiCUS2VYjh+uFqVn+IAufvIJdPro=; b=AgWWunMwC58L9p
+	HMV0d1ES7C0sDXZnKzo8nd26ckkb/wtIV0M07Pt/a4iA9X1vYTBgEUjYL/qlStKna/UluYOLben4l
+	FKKNsPoiEGoMzkmKStGZXAjFkoGPzBvYQGy3SVoYuo2nF675LvJr06YLyC5UEmHBZvOg5/rcimyqI
+	fp2Ur6ptChVdINkrR0RaAlL7Ja2mKt+4fRPE5W+jDYsadMjdgAHu7GgbQqYnSbctfwza7jTIG0/3A
+	WenhUjbgMf95fBMPonml5ohYjncgFeIeOB59rhXdkOhtrage94mPNlMKokci1h8iUiU9YZvioBseY
+	VzZdjvyXg8i5wR5e+otw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOQHF-0005MG-5T; Tue, 14 Apr 2020 18:27:17 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jOQIq-00064j-Jp; Tue, 14 Apr 2020 18:28:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOQH4-0005JK-So
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:27:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586888825;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=TLv7+DlAPTIRbMlPGq/MKTxn9g95YUGNwTJol6ZbUDE=;
- b=evzNfjaBoC6wCoS1V+bzcOYtHbD9SzXUS83ZXqorselZop7fMYVcJA2XhtVcujpFYBL4ZR
- tfmaAyfvPWvASv2oK5uwpQSjcj3C1oCqIsgQPNL61hTJ/MHoA/ncXstn457cJWAIA7hwex
- B+PnsH/bRW41yP4beWIBSvT1KRsWynM=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-449-lrwga1poPzOYOa4E2pXY4A-1; Tue, 14 Apr 2020 14:27:01 -0400
-X-MC-Unique: lrwga1poPzOYOa4E2pXY4A-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1jOQIg-00064G-9q
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 18:28:47 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E975D13FA;
- Tue, 14 Apr 2020 18:26:55 +0000 (UTC)
-Received: from llong.remote.csb (ovpn-118-173.rdu2.redhat.com [10.10.118.173])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 936D410013A1;
- Tue, 14 Apr 2020 18:26:48 +0000 (UTC)
-Subject: Re: [PATCH 1/2] mm, treewide: Rename kzfree() to kfree_sensitive()
-To: dsterba@suse.cz, Andrew Morton <akpm@linux-foundation.org>,
- David Howells <dhowells@redhat.com>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- James Morris <jmorris@namei.org>, "Serge E. Hallyn" <serge@hallyn.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, Joe Perches
- <joe@perches.com>, Matthew Wilcox <willy@infradead.org>,
- David Rientjes <rientjes@google.com>, linux-mm@kvack.org,
- keyrings@vger.kernel.org, linux-kernel@vger.kernel.org, x86@kernel.org,
- linux-crypto@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- virtualization@lists.linux-foundation.org, netdev@vger.kernel.org,
- intel-wired-lan@lists.osuosl.org, linux-ppp@vger.kernel.org,
- wireguard@lists.zx2c4.com, linux-wireless@vger.kernel.org,
- devel@driverdev.osuosl.org, linux-scsi@vger.kernel.org,
- target-devel@vger.kernel.org, linux-btrfs@vger.kernel.org,
- linux-cifs@vger.kernel.org, samba-technical@lists.samba.org,
- linux-fscrypt@vger.kernel.org, ecryptfs@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-bluetooth@vger.kernel.org,
- linux-wpan@vger.kernel.org, linux-sctp@vger.kernel.org,
- linux-nfs@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
- cocci@systeme.lip6.fr, linux-security-module@vger.kernel.org,
- linux-integrity@vger.kernel.org
-References: <20200413211550.8307-1-longman@redhat.com>
- <20200413211550.8307-2-longman@redhat.com>
- <20200414124854.GQ5920@twin.jikos.cz>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <3d8c80cb-68e5-9211-9eda-bc343ed7d894@redhat.com>
-Date: Tue, 14 Apr 2020 14:26:48 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by mail.kernel.org (Postfix) with ESMTPSA id 7029520575;
+ Tue, 14 Apr 2020 18:28:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586888926;
+ bh=K3QDTLErPmik0eNGgtoPI8L0IPDArXU4WWjUHLpH5oQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=bJSPjbk/DLpXNKEssKl14IrX2SFvKQEmoYqjZHDtS25GJW2ObDQAm+INI9nFswhiu
+ 7vMgk7w6VIDuLrYGkWEqo6mY/nnxCxnw3W4WkMUkIYs9fQX7T3jxojW9IdqcQxaWn9
+ 0jpvrBm8ZJ6kIl9t/Qj/ahtqN13bdhtjTSv0OfIs=
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: lib: Consistently enable crc32 extension
+Date: Tue, 14 Apr 2020 19:28:43 +0100
+Message-Id: <20200414182843.31664-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200414124854.GQ5920@twin.jikos.cz>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_112707_005688_DE71E4A6 
-X-CRM114-Status: GOOD (  14.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200414_112846_360654_E3CFC7D7 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -117,33 +74,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Brown <broonie@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/14/20 8:48 AM, David Sterba wrote:
-> On Mon, Apr 13, 2020 at 05:15:49PM -0400, Waiman Long wrote:
->>  fs/btrfs/ioctl.c                              |  2 +-
->
->> diff --git a/fs/btrfs/ioctl.c b/fs/btrfs/ioctl.c
->> index 40b729dce91c..eab3f8510426 100644
->> --- a/fs/btrfs/ioctl.c
->> +++ b/fs/btrfs/ioctl.c
->> @@ -2691,7 +2691,7 @@ static int btrfs_ioctl_get_subvol_info(struct file *file, void __user *argp)
->>  	btrfs_put_root(root);
->>  out_free:
->>  	btrfs_free_path(path);
->> -	kzfree(subvol_info);
->> +	kfree_sensitive(subvol_info);
-> This is not in a sensitive context so please switch it to plain kfree.
-> With that you have my acked-by. Thanks.
->
-Thanks for letting me know about. I think I will send it out as a
-separate patch.
+Currently most of the assembly files that use architecture extensions
+enable them using the .arch directive but crc32.S uses .cpu instead. Move
+that over to .arch for consistency.
 
-Cheers,
-Longman
+Signed-off-by: Mark Brown <broonie@kernel.org>
+Acked-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm64/lib/crc32.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/lib/crc32.S b/arch/arm64/lib/crc32.S
+index 243e107e9896..0f9e10ecda23 100644
+--- a/arch/arm64/lib/crc32.S
++++ b/arch/arm64/lib/crc32.S
+@@ -9,7 +9,7 @@
+ #include <asm/alternative.h>
+ #include <asm/assembler.h>
+ 
+-	.cpu		generic+crc
++	.arch		armv8-a+crc
+ 
+ 	.macro		__crc32, c
+ 	cmp		x2, #16
+-- 
+2.20.1
 
 
 _______________________________________________
