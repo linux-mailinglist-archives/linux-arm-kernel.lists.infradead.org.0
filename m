@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A220F1A7F98
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:23:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F8341A7F9A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 16:23:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WG/3jJAZmOi4PXodMQcBDoJ3iRVF6WtmhRtinxlk4Mw=; b=uujsmE2xmqPx1Z
-	BvopPjXN4MEnISsnIr3TGwhnPO+MOirN87Qkc3wR65GUj0EcdPZY+wmAUooYpO75d+5Zh6pcjAlxT
-	YZ6wnEbOsf8g4Wl6QIsVEzLMXlQa4FRvRiRKFFYBgVLB/+iWbKU/nMogYV3hdnlfCcLnWQDj1zP1h
-	M+uhxWcIgc4qO0AoOtsWCIQG8kyoQlMb2FMfc6InkLCW1TPfk5bdLCDIWR7yLCuKQKbAfaCmW2XOF
-	RVLz/tbBDRDMJSkOoF/8OAenmR4oiha4CELkAKw4k0pEZLmWBy7YRbAuTyeuZNTFO1gPd792SVZf6
-	92tdNAKtTh57Nee9FpZw==;
+	List-Owner; bh=MFCZRwR0FlflUXIpAUSBe3+Ez4R6U5AYf3DC8PfFCtA=; b=DxslXblAUSDkp9
+	hbdkPlzHRdMPwCkQFmqNYBv21jpxcDKZLTDJgbJ8OWMU4RzTVf1GjyD5tUkoIMVUN7Plgkn/ShpWX
+	6rzjrqFzfixY2o2MvfaaTvCYA2YKBW3u8UqYX8SEQzwI2LjPHslm2FBdbZk7pwjad1PTE0Viu3Pjz
+	JsIgiJjZAxj2o2deHjpCiFh0B19keKHmxhVJs5FbzCzjJ7VvyRibmABZWNx88jH6zLxiuZi2xD87E
+	aMXrq4DnoJDZNUSTyaFSnnVIsNHSJSynUfOIndhit2etDySEQbJu7Fq9ouwp/+UJAFGI28gZqc9Ov
+	CWxeB76kADmK1ykc6uBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMTO-0002CY-5j; Tue, 14 Apr 2020 14:23:34 +0000
+	id 1jOMTa-0002Ro-PJ; Tue, 14 Apr 2020 14:23:46 +0000
 Received: from [2001:4bb8:180:384b:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMSz-00021k-Mf; Tue, 14 Apr 2020 14:23:10 +0000
+ id 1jOMT3-00024N-06; Tue, 14 Apr 2020 14:23:13 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: James Morse <james.morse@arm.com>
-Subject: [PATCH 1/2] firmware: arm_sdei: remove unused interfaces
-Date: Tue, 14 Apr 2020 16:23:01 +0200
-Message-Id: <20200414142302.448447-2-hch@lst.de>
+Subject: [PATCH 2/2] arm_sdei: remove the set_fs calls in sdei_event_handler
+Date: Tue, 14 Apr 2020 16:23:02 +0200
+Message-Id: <20200414142302.448447-3-hch@lst.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200414142302.448447-1-hch@lst.de>
 References: <20200414142302.448447-1-hch@lst.de>
@@ -48,114 +48,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The export symbols to register/unregister and enable/disable events
-aren't ever used outside of arm_sdei.c, so mark them static.
+There are only two callbacks that can be called, which both
+eventually end up calling __ghes_sdei_callback.
+
+__ghes_sdei_callback calls irq_work_queue which is a normal
+kernel helper called from all kinds of contexts and
+ghes_in_nmi_queue_one_entry.  ghes_in_nmi_queue_one_entry is
+also called from other code without messing with the address
+limit, so it better work without it.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/firmware/arm_sdei.c | 13 +++++--------
- include/linux/arm_sdei.h    | 15 ---------------
- 2 files changed, 5 insertions(+), 23 deletions(-)
+ drivers/firmware/arm_sdei.c | 7 -------
+ 1 file changed, 7 deletions(-)
 
 diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index 334c8be0c11f..bdd6461647d7 100644
+index bdd6461647d7..1c51b378dfca 100644
 --- a/drivers/firmware/arm_sdei.c
 +++ b/drivers/firmware/arm_sdei.c
-@@ -400,7 +400,7 @@ static void _local_event_enable(void *data)
- 	sdei_cross_call_return(arg, err);
- }
- 
--int sdei_event_enable(u32 event_num)
-+static int sdei_event_enable(u32 event_num)
- {
- 	int err = -EINVAL;
- 	struct sdei_event *event;
-@@ -429,7 +429,6 @@ int sdei_event_enable(u32 event_num)
- 
- 	return err;
- }
--EXPORT_SYMBOL(sdei_event_enable);
- 
- static int sdei_api_event_disable(u32 event_num)
- {
-@@ -447,7 +446,7 @@ static void _ipi_event_disable(void *data)
- 	sdei_cross_call_return(arg, err);
- }
- 
--int sdei_event_disable(u32 event_num)
-+static int sdei_event_disable(u32 event_num)
- {
- 	int err = -EINVAL;
- 	struct sdei_event *event;
-@@ -471,7 +470,6 @@ int sdei_event_disable(u32 event_num)
- 
- 	return err;
- }
--EXPORT_SYMBOL(sdei_event_disable);
- 
- static int sdei_api_event_unregister(u32 event_num)
- {
-@@ -502,7 +500,7 @@ static int _sdei_event_unregister(struct sdei_event *event)
- 	return sdei_do_cross_call(_local_event_unregister, event);
- }
- 
--int sdei_event_unregister(u32 event_num)
-+static int sdei_event_unregister(u32 event_num)
+@@ -1137,19 +1137,12 @@ int sdei_event_handler(struct pt_regs *regs,
+ 		       struct sdei_registered_event *arg)
  {
  	int err;
- 	struct sdei_event *event;
-@@ -533,7 +531,6 @@ int sdei_event_unregister(u32 event_num)
+-	mm_segment_t orig_addr_limit;
+ 	u32 event_num = arg->event_num;
  
+-	orig_addr_limit = get_fs();
+-	set_fs(USER_DS);
+-
+ 	err = arg->callback(event_num, regs, arg->callback_arg);
+ 	if (err)
+ 		pr_err_ratelimited("event %u on CPU %u failed with error: %d\n",
+ 				   event_num, smp_processor_id(), err);
+-
+-	set_fs(orig_addr_limit);
+-
  	return err;
  }
--EXPORT_SYMBOL(sdei_event_unregister);
- 
- /*
-  * unregister events, but don't destroy them as they are re-registered by
-@@ -603,7 +600,8 @@ static int _sdei_event_register(struct sdei_event *event)
- 	return err;
- }
- 
--int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
-+static int sdei_event_register(u32 event_num, sdei_event_callback *cb,
-+		void *arg)
- {
- 	int err;
- 	struct sdei_event *event;
-@@ -643,7 +641,6 @@ int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
- 
- 	return err;
- }
--EXPORT_SYMBOL(sdei_event_register);
- 
- static int sdei_reregister_event_llocked(struct sdei_event *event)
- {
-diff --git a/include/linux/arm_sdei.h b/include/linux/arm_sdei.h
-index 0a241c5c911d..5f9fb1d95d51 100644
---- a/include/linux/arm_sdei.h
-+++ b/include/linux/arm_sdei.h
-@@ -22,21 +22,6 @@
-  */
- typedef int (sdei_event_callback)(u32 event, struct pt_regs *regs, void *arg);
- 
--/*
-- * Register your callback to claim an event. The event must be described
-- * by firmware.
-- */
--int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg);
--
--/*
-- * Calls to sdei_event_unregister() may return EINPROGRESS. Keep calling
-- * it until it succeeds.
-- */
--int sdei_event_unregister(u32 event_num);
--
--int sdei_event_enable(u32 event_num);
--int sdei_event_disable(u32 event_num);
--
- /* GHES register/unregister helpers */
- int sdei_register_ghes(struct ghes *ghes, sdei_event_callback *normal_cb,
- 		       sdei_event_callback *critical_cb);
+ NOKPROBE_SYMBOL(sdei_event_handler);
 -- 
 2.25.1
 
