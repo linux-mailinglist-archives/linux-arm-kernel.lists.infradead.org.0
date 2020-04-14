@@ -2,98 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8A981A7316
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 07:45:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19C871A7323
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 07:49:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YfsvSvnwCxOm/2C+G44p5sINggiDyGQzwWNQ4Q/LLN4=; b=tYB7RqUggbcAxo
-	XZ3jex7qT4+cwlJeBHuIxxBsDpKgZo7aRPxtWa+NjpCY6xq84SnTQWi6aqD5f1m6vLhNba06TBakh
-	b8BgqPr0Dimqr8GMvwDq3psgcXuq7OVwPsvd9WUePu5QAtRe0petsiMAAw3TXrEL5GoZ+meGysT0J
-	6QYNXtd6hD/ZebbNlTDrTNB2A8DQ3ThvAYlJspmLKLvlFxSbv5mCOUjwUlbDk5oWT8tReUg93HwTX
-	u5gRYDbWR2kaZ4NDB2Mx26ETHqeAB9RJBZWklNEx9UQ8TrA2e88pVbgTQ3qCTdc636vw+tkN7XOV5
-	0j0iuKnZDyBlE2uIQ6tg==;
+	List-Owner; bh=iDKzczo5ovbb9NkJoY2g7lhonzdNCU0Jz4uvRhdflmE=; b=DY1GRaK4EYLC9Y
+	6b0US5xLeR5sPS6ZMSTUaiGnIKfZmTSP8Ul6rOpvZHVq3LMjqiY7CiU82pVkBJlLjFKblsfvT7f5u
+	b/wRFapMG8xXJuZ/zBkXdC7BbSaU0tUNN/JA3CCVwgvGRFumhXHHde3K8F1415HEQ49zekw3vWF21
+	mo+oiKcNLQ7Pw3OYCNrIHqYaqjC3ApgdkXdSXSUGvgGEOLvaKOMqnjsg2pFb3csYZTIMAISMZgo2i
+	MtcjthB5Q2hwexzyytD7ybpdeeuFkR9tE7wsRDs7RjDCpSPqFrz1g0SLvBH1dYNZYR9lQqzemAabb
+	WHAjYDhxOxTVeavGX9Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOENo-0002Th-1V; Tue, 14 Apr 2020 05:45:16 +0000
-Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
+	id 1jOERn-0002zu-Cq; Tue, 14 Apr 2020 05:49:23 +0000
+Received: from mail-mw2nam10on2081.outbound.protection.outlook.com
+ ([40.107.94.81] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOENg-0001tQ-7O
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 05:45:09 +0000
-Received: by mail-pg1-x531.google.com with SMTP id k191so5518208pgc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 22:45:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=y6dutUz+30OTRDfg3t8Pl2gIYhm9Chd9KMn0w/7vtgI=;
- b=VouzMP8cBdaVTNf4cBS+Lqgxn2DGWJ9tqJdiwXtybFJ9IMcnceKdjCSFOLtQJx5kk7
- OJbQMxqKIDYHxAXFRyrKdhpX7ngXcR25NtYh1aZFT7UzeXdRu4OYfsGproJYrLxLH/V6
- aCKTIhEmArxjdu5ZPoaULSawf55qspM3wlBMnzbNewddQ0HAFHdul2uxm0hvB3Zi+yqF
- RlSE6c6ebdpxtAa9+8gZXKTUiup4Gkq1FX4rE7cdiL6X88x6dAFyhdJSnxp1p0rGS2E3
- osTeZFeRIWwv7MC9Yxt5ujqApF2SQB1F0C7GNJ7PmpTBa2htp1t2XLYxff69bLgKFiWz
- RWtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=y6dutUz+30OTRDfg3t8Pl2gIYhm9Chd9KMn0w/7vtgI=;
- b=nyQlJgAEIBed+bdgIW00cXSDE9HQuAuYGinfBX1y4EKpdlHAR82oEaNLqvKjuFI5mC
- bceyNgnzht3xkCIWQ8Trpyg3viW7a1Z/O8FdVB5tqvaRexzuiAJty5cGxNZKvv84jZrL
- wgXbruCr7x+AoQnv7z2ISBHitp4QA1umoJuYhbbVRhnRnWe2X11jQ78JuH3mOXKELIGt
- PiIoLo3UFD7erAlYOf6Uz8IFR718b4ebHhny0Fl8SevZYufyg+Sc+b6TP3IsBRhPiDLF
- wGn+6Xca/asrl9XGgvqWxTpFyVnsT5CFt/zTVuxvt8uBlJGtzUgpIH9cnlCIgtWQ+rqT
- +DEw==
-X-Gm-Message-State: AGi0PuaQ59HPGmLoucYLn/BVyTi34DziNi2VMr1xPX8em7EYJyJ6xBSR
- FLPw9DMKYRG7faiGYscUeFA+iQ==
-X-Google-Smtp-Source: APiQypJMakzgo2Op5kuz+/4pNaCYEt7PY+7a3jClylVbKOOvkfuZrrv0E3uO5uJ53ip22+eTJCSCsA==
-X-Received: by 2002:a62:e80e:: with SMTP id c14mr12551415pfi.83.1586843107252; 
- Mon, 13 Apr 2020 22:45:07 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id t103sm10781479pjb.46.2020.04.13.22.45.06
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 Apr 2020 22:45:06 -0700 (PDT)
-Date: Tue, 14 Apr 2020 11:15:04 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sumit Gupta <sumitg@nvidia.com>
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-Message-ID: <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
-References: <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
- <d233b26b-6b50-7d41-9f33-a5dc151e0e7d@nvidia.com>
- <20200406025549.qfwzlk3745y3r274@vireshk-i7>
- <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
- <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
- <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
- <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
- <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
- <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
- <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
+ id 1jOERb-0002zX-2W
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 05:49:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=g0/myYQnNp6Mh+uIXG5Dkqq7hqHp28L7P6uWPVc2XcHP4+w/jhsAQBGFAUpeGCEo4ON89YqzmFLcdpWDXj1H74I6r5OlvF164mPl1maI9MgdUzQYrlzIbYXOq0nuYqjtFsrBDMUaMkipDSgzFuGKFO3ywUvfQoLBD6SLG1KsV7jY6IPzkhxiDG4K7mQNanmughzFFfSRwJT7eemwISLCkmbeoAx4IHxkhAr0j24V2zVnLkfoySgPk2Q3kQ45nyJHdTZomCDBhtOWFpk70aQoNTGDTQAMRU/MVi7dkgtWNw7DZEZ9m7q7RB7DMQR1MVHQw4IWREuYGXPi+fJY5mr2AQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1T+h6ZTNnmu/FTHXu5fdBtv4AFr3LYnrqQecMNzxO5U=;
+ b=Kti6wFgnktpJJJZMEiP2kUTlbPVrZiGPNscRC3ZeVtV03Lyl3DSNQv/hs6zz0r8NbWRONvUOTg2t8elfUpORYQZKJlO74mSZ5BYnV8UmuNLSpkXCYbiX3+uwGheRoOKAQ4yF78OvLOoWd2G/+NdmMPErmv6SDUGqdYJbPEGQwJtH6O+CiQrq+h6Odtm/hJrc+lTrWQoWJf0os+t4VksjLjJL2i17e6zu3pugAjRE6Vi3h6iJ2coNigANixYpaYMJe9CVOjF+kAVvxwXRokNC8HBctdTMQ/I4p++t5GlZwrLk+MlVV3WGh+B36SDokMVP9cV59NH2q9KIIvsHLq4ODw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1T+h6ZTNnmu/FTHXu5fdBtv4AFr3LYnrqQecMNzxO5U=;
+ b=SynwL+OKXxiWLQWFEWXnL88xZAzB/kXNmbDIC9mj0JhKHmWlGbnFXrbzJKsmUZEuqiEW30CEv1gtlC7/wciB4hrpVqAIsXhvZOrUX17GDB/PCvx0GH++bpaaFsZOnASHpmR1b1g74nUBAfKBwFoPJvU3NKRtqKz8S/WkkE6IUVQ=
+Received: from BYAPR02MB5896.namprd02.prod.outlook.com (2603:10b6:a03:122::10)
+ by BYAPR02MB5253.namprd02.prod.outlook.com (2603:10b6:a03:61::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.28; Tue, 14 Apr
+ 2020 05:49:06 +0000
+Received: from BYAPR02MB5896.namprd02.prod.outlook.com
+ ([fe80::c9d7:1fa3:6ec1:f7a9]) by BYAPR02MB5896.namprd02.prod.outlook.com
+ ([fe80::c9d7:1fa3:6ec1:f7a9%5]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
+ 05:49:06 +0000
+From: Manish Narani <MNARANI@xilinx.com>
+To: Manish Narani <MNARANI@xilinx.com>, "ulf.hansson@linaro.org"
+ <ulf.hansson@linaro.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "adrian.hunter@intel.com"
+ <adrian.hunter@intel.com>, Michal Simek <michals@xilinx.com>
+Subject: RE: [PATCH v3 0/6] Add support for Xilinx Versal SDHCI in Arasan
+ driver
+Thread-Topic: [PATCH v3 0/6] Add support for Xilinx Versal SDHCI in Arasan
+ driver
+Thread-Index: AQHWDDsANGwar7+SeUGv1U0VGn/7m6h4KBHg
+Date: Tue, 14 Apr 2020 05:49:06 +0000
+Message-ID: <BYAPR02MB5896E3E2BB1DC4C2D454B2E2C1DA0@BYAPR02MB5896.namprd02.prod.outlook.com>
+References: <1586195015-128992-1-git-send-email-manish.narani@xilinx.com>
+In-Reply-To: <1586195015-128992-1-git-send-email-manish.narani@xilinx.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MNARANI@xilinx.com; 
+x-originating-ip: [183.83.137.1]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 7b2dfda0-e2e2-4279-b329-08d7e0378baa
+x-ms-traffictypediagnostic: BYAPR02MB5253:|BYAPR02MB5253:
+x-ld-processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BYAPR02MB52534E3F5FFD5109835E607FC1DA0@BYAPR02MB5253.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0373D94D15
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR02MB5896.namprd02.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(376002)(39860400002)(346002)(136003)(396003)(366004)(478600001)(110136005)(7416002)(26005)(4326008)(6636002)(107886003)(54906003)(186003)(71200400001)(53546011)(86362001)(6506007)(316002)(7696005)(55016002)(66476007)(33656002)(64756008)(66446008)(9686003)(8676002)(52536014)(81156014)(66946007)(8936002)(2906002)(5660300002)(76116006)(66556008);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: i1Owk4emep2SVnad8d+DjVlKRwteCaqalPovln/QBAIK1suWLgEGio79ZmfYPO7XQxQfJ7lLc1LolhhPRv8/EP1TS/coOwzUc9b7+crNto1wdZB+EkwWN5tIhiYot1TwqVCKzBF7s6VJc/a+e6ZE/x0eIuAFrR7RIfL7+Oi/8zpOUq8Mo9P8SjORH4czCcnKNADm4gV1RRUJUSs9pb56c6V/ZtjeKnTsm1+Y0pXkAfB1JdW6HtilxT+vNpWUzUAuEWyQUJaXR4MDttjhFKzqXs09UYeFZtsYpckn6RlytSCyMjaP2qVXs80DWuSviKJL5Lgcqvhtpjn4O1XByEx3p6qPAWwvswxFS0hemFCYvCPCNbmwCs5aaGmBx0UOjp3Sc1DwRx353RrSog/4n8hVIpKyDAkWQxDQ61Cq6Y6fnpiooRg/40FpFDurXko5vmIA
+x-ms-exchange-antispam-messagedata: VVQ0k9LQpQB73gSRh4Neb/oIcMqQzQAsxHfCQTH+Wh6qbrnbCML2glnELf1E5V4MC4k2a10yTSrjt2sV4J+8IDVbdurorHd5cSOc3mtTUAW0cGf5X6WDP82ynME5wZ4sEU8Wxzls9jgZU/jsH04Qlg==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b2dfda0-e2e2-4279-b329-08d7e0378baa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2020 05:49:06.4989 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: u7sYt1lapZ6f/3vwiNdXEeQ5Rh9u5b33TpJB8y31bHHuEL3qipptBuDWb4XeDT8ilFMVgXWJudPiPfpvKZJTWw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5253
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_224508_285406_C9FC96F7 
-X-CRM114-Status: UNSURE (   6.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200413_224911_116587_802DB9E7 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:531 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.94.81 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.94.81 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -107,26 +127,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ git <git@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13-04-20, 17:50, Sumit Gupta wrote:
-> This was done considering long delay value as explained previously.
-> Do you think that smp_call_function_single() would be better than work queue
-> here?
+Ping!
 
-Don't work with assumptions, you should test both and see which one
-works better. Workqueue should never be faster than
-smp_call_function_single() with my understanding.
+> -----Original Message-----
+> From: Manish Narani <manish.narani@xilinx.com>
+> Sent: Monday, April 6, 2020 11:13 PM
+> To: ulf.hansson@linaro.org; robh+dt@kernel.org; mark.rutland@arm.com;
+> adrian.hunter@intel.com; Michal Simek <michals@xilinx.com>
+> Cc: linux-mmc@vger.kernel.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; git
+> <git@xilinx.com>; Manish Narani <MNARANI@xilinx.com>
+> Subject: [PATCH v3 0/6] Add support for Xilinx Versal SDHCI in Arasan driver
+> 
+> This patch series includes:
+>  -> Document the Xilinx Versal SD controller
+>  -> Add support for Versal SD Tap Delays
+>  -> Reorganizing the clock operations handling
+>  -> Resolve kernel-doc warnings
+> 
+> Changes in v2:
+> 	- Addressed review comments given in v1
+> 	- Changed clock operation handling for better modularity.
+> 	- Changed comments to fix kernel-doc warnings
+> 
+> Changes in v3:
+> 	- Addressed review comments from v2
+> 	- Move platform related structure before doing clock related changes
+> 	- Rename sdhci_arasan_data to avoid confusion with another struct
+> name
+> 
+> Manish Narani (6):
+>   dt-bindings: mmc: arasan: Document 'xlnx,versal-8.9a' controller
+>   sdhci: arasan: Add support for Versal Tap Delays
+>   mmc: sdhci-of-arasan: Rename sdhci_arasan_data to avoid confusion
+>   mmc: sdhci-of-arasan: Rearrange the platform data structs for
+>     modularity
+>   mmc: sdhci-of-arasan: Modify clock operations handling
+>   mmc: sdhci-of-arasan: Fix kernel-doc warnings
+> 
+>  .../devicetree/bindings/mmc/arasan,sdhci.txt       |  15 +
+>  drivers/mmc/host/sdhci-of-arasan.c                 | 473 +++++++++++++++------
+>  2 files changed, 361 insertions(+), 127 deletions(-)
+> 
+> --
+> 2.1.1
 
--- 
-viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
