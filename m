@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E71261A7C4F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:16:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1EE1A7C95
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:16:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uO8as5B2piieOykuDWRFxT6KZMtO+pvgAhPh72i4Wyc=; b=i3eXW4RiSZIUti
-	gH7Xn8IGurFmcKRxJZpvSn7MlT93DU652m+auVahDk46jkTD2swbtuikopqFi3LIRr3lAKJ4Wsnb3
-	3/gGXb0IWQZhoDaAW4uqpAXnl6OJkEyPc91SfoUOpFpDf2yIkfHKOilKKxYGNyt9qektfxHOF/JoZ
-	vae+9eqzZGrEj8Cqyx1M4smP1vUmdnQ+ljDDYnGTyKw5TaZBLXhCOOYN+IR1EinCiwcE35hE/3ZY6
-	TC/6Gf+3h4+Yr01+93QjlMpjYkJptULknxAKNjmDD2s7ZhGQrZQwp2dIphsZKCpOxGc1LAwqQypc2
-	DLqjJMjynaCjngDvx5zw==;
+	List-Owner; bh=8wShohYXNXGvw02cuSKHX4B9EK2q5B08Bp+Wtx+7OCQ=; b=s/YYPk+QGBNfzE
+	33XmnK2/NO/y/ew89nfzVL4gPnglF/zMCo1waCgaoFcrwo+w50U0Bc+mVJ9TDkX/0OstaRzz7d9qM
+	XmZtbta9PcNPUK5TgYk5efsihFu+c/qdSMfRA2vNtRy5KXW72k8J8lEmul0B+1jDlom0zJ4WxDvz7
+	iEZ7X2f/7QYc65+wnj/h+iFWVpNKdQwLHsMRGlH7cy1v4Wk9rc2kioIVBx8e8eNHwre1pxuP4ypPL
+	H8MEW4TQqZbudXnJg6UmipXE9VSjTFIOaoh7pVm5rXuSoRvwu8+nUJfoAqwuFK+sz3lcF8zThUbsV
+	vddU/Drum0e0E7QL/D/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLPl-0001oU-MB; Tue, 14 Apr 2020 13:15:45 +0000
+	id 1jOLQe-0002hS-Go; Tue, 14 Apr 2020 13:16:40 +0000
 Received: from [2001:4bb8:180:384b:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLOC-0006Q5-O2; Tue, 14 Apr 2020 13:14:09 +0000
+ id 1jOLOG-0006SH-MB; Tue, 14 Apr 2020 13:14:13 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>,
  "K. Y. Srinivasan" <kys@microsoft.com>,
@@ -32,9 +32,9 @@ To: Andrew Morton <akpm@linux-foundation.org>,
  Sumit Semwal <sumit.semwal@linaro.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Minchan Kim <minchan@kernel.org>, Nitin Gupta <ngupta@vflare.org>
-Subject: [PATCH 05/29] dma-mapping: use vmap insted of reimplementing it
-Date: Tue, 14 Apr 2020 15:13:24 +0200
-Message-Id: <20200414131348.444715-6-hch@lst.de>
+Subject: [PATCH 06/29] powerpc: add an ioremap_phb helper
+Date: Tue, 14 Apr 2020 15:13:25 +0200
+Message-Id: <20200414131348.444715-7-hch@lst.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200414131348.444715-1-hch@lst.de>
 References: <20200414131348.444715-1-hch@lst.de>
@@ -62,98 +62,221 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the open coded instance of vmap with the actual function.  In
-the non-contiguous (IOMMU) case this requires an extra find_vm_area,
-but given that this isn't a fast path function that is a small price
-to pay.
+Factor code shared between pci_64 and electra_cf into a ioremap_pbh
+helper that follows the normal ioremap semantics, and returns a
+useful __iomem pointer.  Note that it opencodes __ioremap_at as
+we know from the callers the slab is available.  Switch pci_64
+to also store the result as __iomem pointer, and unmap the result
+using iounmap instead of force casting and using vmalloc APIs.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 ---
- kernel/dma/remap.c | 48 ++++++++++++----------------------------------
- 1 file changed, 12 insertions(+), 36 deletions(-)
+ arch/powerpc/include/asm/io.h         |  2 +
+ arch/powerpc/include/asm/pci-bridge.h |  2 +-
+ arch/powerpc/kernel/pci_64.c          | 53 ++++++++++++++++++---------
+ drivers/pcmcia/electra_cf.c           | 45 ++++++++---------------
+ 4 files changed, 54 insertions(+), 48 deletions(-)
 
-diff --git a/kernel/dma/remap.c b/kernel/dma/remap.c
-index d14cbc83986a..914ff5a58dd5 100644
---- a/kernel/dma/remap.c
-+++ b/kernel/dma/remap.c
-@@ -20,23 +20,6 @@ struct page **dma_common_find_pages(void *cpu_addr)
- 	return area->pages;
- }
+diff --git a/arch/powerpc/include/asm/io.h b/arch/powerpc/include/asm/io.h
+index 635969b5b58e..91320985d33f 100644
+--- a/arch/powerpc/include/asm/io.h
++++ b/arch/powerpc/include/asm/io.h
+@@ -719,6 +719,8 @@ void __iomem *ioremap_coherent(phys_addr_t address, unsigned long size);
  
--static struct vm_struct *__dma_common_pages_remap(struct page **pages,
--			size_t size, pgprot_t prot, const void *caller)
--{
+ extern void iounmap(volatile void __iomem *addr);
+ 
++void __iomem *ioremap_phb(phys_addr_t paddr, unsigned long size);
++
+ int early_ioremap_range(unsigned long ea, phys_addr_t pa,
+ 			unsigned long size, pgprot_t prot);
+ void __iomem *do_ioremap(phys_addr_t pa, phys_addr_t offset, unsigned long size,
+diff --git a/arch/powerpc/include/asm/pci-bridge.h b/arch/powerpc/include/asm/pci-bridge.h
+index 69f4cb3b7c56..b92e81b256e5 100644
+--- a/arch/powerpc/include/asm/pci-bridge.h
++++ b/arch/powerpc/include/asm/pci-bridge.h
+@@ -66,7 +66,7 @@ struct pci_controller {
+ 
+ 	void __iomem *io_base_virt;
+ #ifdef CONFIG_PPC64
+-	void *io_base_alloc;
++	void __iomem *io_base_alloc;
+ #endif
+ 	resource_size_t io_base_phys;
+ 	resource_size_t pci_io_size;
+diff --git a/arch/powerpc/kernel/pci_64.c b/arch/powerpc/kernel/pci_64.c
+index f83d1f69b1dd..2a976314f169 100644
+--- a/arch/powerpc/kernel/pci_64.c
++++ b/arch/powerpc/kernel/pci_64.c
+@@ -109,23 +109,46 @@ int pcibios_unmap_io_space(struct pci_bus *bus)
+ 	/* Get the host bridge */
+ 	hose = pci_bus_to_host(bus);
+ 
+-	/* Check if we have IOs allocated */
+-	if (hose->io_base_alloc == NULL)
+-		return 0;
+-
+ 	pr_debug("IO unmapping for PHB %pOF\n", hose->dn);
+ 	pr_debug("  alloc=0x%p\n", hose->io_base_alloc);
+ 
+-	/* This is a PHB, we fully unmap the IO area */
+-	vunmap(hose->io_base_alloc);
+-
++	iounmap(hose->io_base_alloc);
+ 	return 0;
+ }
+ EXPORT_SYMBOL_GPL(pcibios_unmap_io_space);
+ 
+-static int pcibios_map_phb_io_space(struct pci_controller *hose)
++void __iomem *ioremap_phb(phys_addr_t paddr, unsigned long size)
+ {
+ 	struct vm_struct *area;
++	unsigned long addr;
++
++	WARN_ON_ONCE(paddr & ~PAGE_MASK);
++	WARN_ON_ONCE(size & ~PAGE_MASK);
++
++	/*
++	 * Let's allocate some IO space for that guy. We don't pass VM_IOREMAP
++	 * because we don't care about alignment tricks that the core does in
++	 * that case.  Maybe we should due to stupid card with incomplete
++	 * address decoding but I'd rather not deal with those outside of the
++	 * reserved 64K legacy region.
++	 */
++	area = __get_vm_area(size, 0, PHB_IO_BASE, PHB_IO_END);
++	if (!area)
++		return NULL;
++
++	addr = (unsigned long)area->addr;
++	if (ioremap_page_range(addr, addr + size, paddr,
++			pgprot_noncached(PAGE_KERNEL))) {
++		unmap_kernel_range(addr, size);
++		return NULL;
++	}
++
++	return (void __iomem *)addr;
++}
++EXPORT_SYMBOL_GPL(ioremap_phb);
++
++static int pcibios_map_phb_io_space(struct pci_controller *hose)
++{
+ 	unsigned long phys_page;
+ 	unsigned long size_page;
+ 	unsigned long io_virt_offset;
+@@ -146,12 +169,11 @@ static int pcibios_map_phb_io_space(struct pci_controller *hose)
+ 	 * with incomplete address decoding but I'd rather not deal with
+ 	 * those outside of the reserved 64K legacy region.
+ 	 */
+-	area = __get_vm_area(size_page, 0, PHB_IO_BASE, PHB_IO_END);
+-	if (area == NULL)
++	hose->io_base_alloc = ioremap_phb(phys_page, size_page);
++	if (!hose->io_base_alloc)
+ 		return -ENOMEM;
+-	hose->io_base_alloc = area->addr;
+-	hose->io_base_virt = (void __iomem *)(area->addr +
+-					      hose->io_base_phys - phys_page);
++	hose->io_base_virt = hose->io_base_alloc +
++				hose->io_base_phys - phys_page;
+ 
+ 	pr_debug("IO mapping for PHB %pOF\n", hose->dn);
+ 	pr_debug("  phys=0x%016llx, virt=0x%p (alloc=0x%p)\n",
+@@ -159,11 +181,6 @@ static int pcibios_map_phb_io_space(struct pci_controller *hose)
+ 	pr_debug("  size=0x%016llx (alloc=0x%016lx)\n",
+ 		 hose->pci_io_size, size_page);
+ 
+-	/* Establish the mapping */
+-	if (__ioremap_at(phys_page, area->addr, size_page,
+-			 pgprot_noncached(PAGE_KERNEL)) == NULL)
+-		return -ENOMEM;
+-
+ 	/* Fixup hose IO resource */
+ 	io_virt_offset = pcibios_io_space_offset(hose);
+ 	hose->io_resource.start += io_virt_offset;
+diff --git a/drivers/pcmcia/electra_cf.c b/drivers/pcmcia/electra_cf.c
+index f2741c04289d..35158cfd9c1a 100644
+--- a/drivers/pcmcia/electra_cf.c
++++ b/drivers/pcmcia/electra_cf.c
+@@ -178,10 +178,9 @@ static int electra_cf_probe(struct platform_device *ofdev)
+ 	struct device_node *np = ofdev->dev.of_node;
+ 	struct electra_cf_socket   *cf;
+ 	struct resource mem, io;
+-	int status;
++	int status = -ENOMEM;
+ 	const unsigned int *prop;
+ 	int err;
 -	struct vm_struct *area;
+ 
+ 	err = of_address_to_resource(np, 0, &mem);
+ 	if (err)
+@@ -202,30 +201,19 @@ static int electra_cf_probe(struct platform_device *ofdev)
+ 	cf->mem_phys = mem.start;
+ 	cf->mem_size = PAGE_ALIGN(resource_size(&mem));
+ 	cf->mem_base = ioremap(cf->mem_phys, cf->mem_size);
++	if (!cf->mem_base)
++		goto out_free_cf;
+ 	cf->io_size = PAGE_ALIGN(resource_size(&io));
 -
--	area = get_vm_area_caller(size, VM_DMA_COHERENT, caller);
--	if (!area)
--		return NULL;
--
--	if (map_vm_area(area, prot, pages)) {
--		vunmap(area->addr);
--		return NULL;
+-	area = __get_vm_area(cf->io_size, 0, PHB_IO_BASE, PHB_IO_END);
+-	if (area == NULL) {
+-		status = -ENOMEM;
+-		goto fail1;
 -	}
 -
--	return area;
--}
--
- /*
-  * Remaps an array of PAGE_SIZE pages into another vm_area.
-  * Cannot be used in non-sleeping contexts
-@@ -44,15 +27,12 @@ static struct vm_struct *__dma_common_pages_remap(struct page **pages,
- void *dma_common_pages_remap(struct page **pages, size_t size,
- 			 pgprot_t prot, const void *caller)
- {
--	struct vm_struct *area;
-+	void *vaddr;
+-	cf->io_virt = (void __iomem *)(area->addr);
++	cf->io_virt = ioremap_phb(io.start, cf->io_size);
++	if (!cf->io_virt)
++		goto out_unmap_mem;
  
--	area = __dma_common_pages_remap(pages, size, prot, caller);
--	if (!area)
--		return NULL;
--
--	area->pages = pages;
--
--	return area->addr;
-+	vaddr = vmap(pages, size >> PAGE_SHIFT, VM_DMA_COHERENT, prot);
-+	if (vaddr)
-+		find_vm_area(vaddr)->pages = pages;
-+	return vaddr;
- }
+ 	cf->gpio_base = ioremap(0xfc103000, 0x1000);
++	if (!cf->gpio_base)
++		goto out_unmap_virt;
+ 	dev_set_drvdata(device, cf);
  
- /*
-@@ -62,24 +42,20 @@ void *dma_common_pages_remap(struct page **pages, size_t size,
- void *dma_common_contiguous_remap(struct page *page, size_t size,
- 			pgprot_t prot, const void *caller)
- {
--	int i;
-+	int count = size >> PAGE_SHIFT;
- 	struct page **pages;
--	struct vm_struct *area;
-+	void *vaddr;
-+	int i;
- 
--	pages = kmalloc(sizeof(struct page *) << get_order(size), GFP_KERNEL);
-+	pages = kmalloc_array(count, sizeof(struct page *), GFP_KERNEL);
- 	if (!pages)
- 		return NULL;
+-	if (!cf->mem_base || !cf->io_virt || !cf->gpio_base ||
+-	    (__ioremap_at(io.start, cf->io_virt, cf->io_size,
+-			  pgprot_noncached(PAGE_KERNEL)) == NULL)) {
+-		dev_err(device, "can't ioremap ranges\n");
+-		status = -ENOMEM;
+-		goto fail1;
+-	}
 -
--	for (i = 0; i < (size >> PAGE_SHIFT); i++)
-+	for (i = 0; i < count; i++)
- 		pages[i] = nth_page(page, i);
 -
--	area = __dma_common_pages_remap(pages, size, prot, caller);
+ 	cf->io_base = (unsigned long)cf->io_virt - VMALLOC_END;
 -
-+	vaddr = vmap(pages, count, VM_DMA_COHERENT, prot);
- 	kfree(pages);
+ 	cf->iomem.start = (unsigned long)cf->mem_base;
+ 	cf->iomem.end = (unsigned long)cf->mem_base + (mem.end - mem.start);
+ 	cf->iomem.flags = IORESOURCE_MEM;
+@@ -305,14 +293,13 @@ static int electra_cf_probe(struct platform_device *ofdev)
+ 	if (cf->irq)
+ 		free_irq(cf->irq, cf);
  
--	if (!area)
--		return NULL;
--	return area->addr;
-+	return vaddr;
- }
+-	if (cf->io_virt)
+-		__iounmap_at(cf->io_virt, cf->io_size);
+-	if (cf->mem_base)
+-		iounmap(cf->mem_base);
+-	if (cf->gpio_base)
+-		iounmap(cf->gpio_base);
+-	if (area)
+-		device_init_wakeup(&ofdev->dev, 0);
++	iounmap(cf->gpio_base);
++out_unmap_virt:
++	device_init_wakeup(&ofdev->dev, 0);
++	iounmap(cf->io_virt);
++out_unmap_mem:
++	iounmap(cf->mem_base);
++out_free_cf:
+ 	kfree(cf);
+ 	return status;
  
- /*
+@@ -330,7 +317,7 @@ static int electra_cf_remove(struct platform_device *ofdev)
+ 	free_irq(cf->irq, cf);
+ 	del_timer_sync(&cf->timer);
+ 
+-	__iounmap_at(cf->io_virt, cf->io_size);
++	iounmap(cf->io_virt);
+ 	iounmap(cf->mem_base);
+ 	iounmap(cf->gpio_base);
+ 	release_mem_region(cf->mem_phys, cf->mem_size);
 -- 
 2.25.1
 
