@@ -2,55 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 047C51A7855
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 12:21:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C8371A786C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 12:32:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HCkaBPqDi2vs03TOVy4QRTkVejC/QmqpEK6wZnNkmLs=; b=S5bI1c0MnJJtiTR4I5uHEUEZ1
-	Eg2T/D5Mrdp8TC+5jzm+xrfGumgvw6vVOpW72xpu/LdVgPLHhrN7UCjoM/i8fVgT5h/pSqyutjhl+
-	kbtV0lmbiu/Mu7s/QN31u/RsFgbOguDE7fortZZllR1eqlTVZaamlm4fcoD9n9A4hTAHYEk7dua/a
-	bu/S1NakIwU+V1sEMvVYFl83i0Rc7dPfXz1btyD+WC/vyrrIxN9sBS5JYJT63in01UchBiga28CsJ
-	i69ft+igvXsEusIedW6ibG9LN3EgICfClpbIwyexD6do5rJtnz20ZLSFhmpQwYD1vkkYmydZZ8gFP
-	VwrdPzA3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y1fNwCaGZUoyvHFF8CZ6XZ+X+GATwPA2reWgvu2maAI=; b=uUNvtlIZxOeYz1
+	7Sv/CnmB+8NjadoqTrEqF5C+zkFuyjvFlYuLMW0O5YF7Q0WRTeIBC/rzhHgzhqTpmuNE9LrQR0JVq
+	lXzUKA3SlVQawAwSK7qYieuzuJAbbUz9VuC7myEj7nQKr7LHscuObOd+QBqKvaznB8T4kq6bYwGfu
+	PilzuBOwgbxYHSk+aqL10uvVqgScK23Glg+HMqP2su64fx+eIIuDbPSvLBayV4T5SzXv7i+v9Kvuh
+	4wscqm+92MTMVOqBNXrL+9fzqaQeinYbCePrhsnhVhrZdggmQu51LQUrlh60b6CxxAxCmXxRrYc0N
+	XAoCDhF9GRxSSkxaay1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOIgz-0002MW-Qo; Tue, 14 Apr 2020 10:21:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOIgs-0002M1-1U
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 10:21:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA7FF1FB;
- Tue, 14 Apr 2020 03:21:11 -0700 (PDT)
-Received: from [10.37.12.1] (unknown [10.37.12.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3A4FE3F6C4;
- Tue, 14 Apr 2020 03:21:10 -0700 (PDT)
-Subject: Re: [PATCH] coresight: Fix support for sparsely populated ports
-To: mathieu.poirier@linaro.org
-References: <20200409110316.409148-1-suzuki.poulose@arm.com>
- <20200410181745.GA13684@xps15>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <e63508ed-44ca-3844-809c-a8b356a89bf4@arm.com>
-Date: Tue, 14 Apr 2020 11:25:57 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1jOIrT-0000ps-A7; Tue, 14 Apr 2020 10:32:11 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOIrI-0000pI-Ei
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 10:32:01 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jOIrA-00078x-0v; Tue, 14 Apr 2020 12:31:52 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jOIr9-0000Ib-9D; Tue, 14 Apr 2020 12:31:51 +0200
+Date: Tue, 14 Apr 2020 12:31:51 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+Message-ID: <20200414103151.mm6w5gkgrdvt6z2b@pengutronix.de>
+References: <1586851826-16596-1-git-send-email-peng.fan@nxp.com>
+ <20200414082635.jo5yljonh5xgnujd@pengutronix.de>
+ <AM0PR04MB4481562AFA8A4B9CDDD3E55F88DA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20200410181745.GA13684@xps15>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB4481562AFA8A4B9CDDD3E55F88DA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_032114_125302_BA3C6692 
-X-CRM114-Status: GOOD (  20.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200414_033200_497120_30F781EE 
+X-CRM114-Status: GOOD (  20.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,82 +69,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: saiprakash.ranjan@codeaurora.org, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org, swboyd@chromium.org,
- leo.yan@linaro.org, linux-arm-kernel@lists.infradead.org,
- mike.leach@linaro.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+On Tue, Apr 14, 2020 at 08:40:19AM +0000, Peng Fan wrote:
+> > Subject: Re: [PATCH] mailbox: imx-mailbox: fix scu msg header size check
+> > =
 
-On 04/10/2020 07:17 PM, Mathieu Poirier wrote:
-> Hi Suzuki,
-> 
-> On Thu, Apr 09, 2020 at 12:03:16PM +0100, Suzuki K Poulose wrote:
->> On some systems the firmware may not describe all the ports
->> connected to a component (e.g, for security reasons). This
->> could be especially problematic for "funnels" where we could
->> end up in modifying memory beyond the allocated space for
->> refcounts.
+> > On Tue, Apr 14, 2020 at 04:10:26PM +0800, peng.fan@nxp.com wrote:
+> > > From: Peng Fan <peng.fan@nxp.com>
+> > >
+> > > The i.MX8 SCU message header size is the number of "u32" elements, not
+> > > "u8", so fix the check.
+> > >
+> > > Reported-by: coverity-bot <keescook+coverity-bot@chromium.org>
+> > > Addresses-Coverity-ID: 1461658 ("Memory - corruptions")
+> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > > ---
+> > >
+> > > V2:
+> > >  I not include the fixes tag, since this patch still in next tree.
+> > >
+> > >  drivers/mailbox/imx-mailbox.c | 8 ++++----
+> > >  1 file changed, 4 insertions(+), 4 deletions(-)
+> > >
+> > > diff --git a/drivers/mailbox/imx-mailbox.c
+> > > b/drivers/mailbox/imx-mailbox.c index 7906624a731c..c2398cb63ea0
+> > > 100644
+> > > --- a/drivers/mailbox/imx-mailbox.c
+> > > +++ b/drivers/mailbox/imx-mailbox.c
+> > > @@ -154,12 +154,12 @@ static int imx_mu_scu_tx(struct imx_mu_priv
+> > > *priv,
+> > >
+> > >  	switch (cp->type) {
+> > >  	case IMX_MU_TYPE_TX:
+> > > -		if (msg->hdr.size > sizeof(*msg)) {
+> > > +		if (msg->hdr.size > (sizeof(*msg) / 4)) {
+> > =
 
-...
+> > No need for the parenthesis. Maybe a comment would be helpful here,
+> > something like:
+> > =
 
->> @@ -672,10 +687,14 @@ static int acpi_coresight_parse_graph(struct acpi_device *adev,
->>   			return dir;
->>   
->>   		if (dir == ACPI_CORESIGHT_LINK_MASTER) {
->> -			pdata->nr_outport++;
->> +			if (ptr->outport > pdata->nr_outport)
->> +				pdata->nr_outport = ptr->outport;
->>   			ptr++;
->>   		} else {
->> -			pdata->nr_inport++;
->> +			WARN_ON(pdata->nr_inport == ptr->child_port);
->> +			/* Do not move the ptr for input connections */
->> +			if (ptr->child_port > pdata->nr_inport)
->> +				pdata->nr_inport = ptr->child_port;
-> 
-> How you are using the current ptr as a scratch pad for input port was definitely
-> a brain twister this morning...  I would certainly appreciate a richer comment
-> so that I (or anyone else) doesn't have to go through the same process the next
-> time around.
-> 
+> > 	/*
+> > 	 * msg->hdr.size specifies the number of u32 words while sizeof
+> > 	 * yields bytes.
+> > 	 */
+> =
 
-Sure, it deserves a better comment. I will add something like :
+> V2 will have the update.
+> =
 
-	/*
-	 * We don't track input connection details for a device,
-	 * except for the highest input port number. Thus we could
-	 * reuse the current record as a scratch pad and reuse it
-	 * by not moving the ptr ahead.
-	 */
+> > =
 
+> > >  			/*
+> > >  			 * The real message size can be different to
+> > >  			 * struct imx_sc_rpc_msg_max size
+> > >  			 */
+> > > -			dev_err(priv->dev, "Exceed max msg size (%zu) on TX,
+> > got: %i\n", sizeof(*msg), msg->hdr.size);
+> > > +			dev_err(priv->dev, "Exceed max msg size (%zu) on TX,
+> > got: %i\n",
+> > > +sizeof(*msg) / 4, msg->hdr.size);
+> > =
 
+> > The unit here is also "number of u32 words", maybe bytes is more natura=
+l?
+> =
 
->>   /**
->> - * struct coresight_platform_data - data harvested from the DT specification
->> - * @nr_inport:	number of input ports for this component.
->> - * @nr_outport:	number of output ports for this component.
->> - * @conns:	Array of nr_outport connections from this component
->> + * struct coresight_platform_data - data harvested from the firmware
->> + * specification.
->> + *
->> + * @nr_inport:	Number of elements for the input connections.
->> + * @nr_outport:	Number of elements for the output connections.
->> + * @conns:	Sparse arrray of nr_outport connections from this component.
-> 
-> s/arrray/array
-> 
-> Please rebase your work on my the coresight-next branch.  Other than the above
-> this patch looks fine to me.
+> ok. Will change to msg->hdr.size << 2 keeping sizeof(*msg).
+> =
 
-Thanks for the heads up, will do.
+> > And I suggesting specifying the unit in the error message.
+> =
 
-Cheers
-Suzuki
+> Is this ok to you?
+> dev_err(priv->dev, "Exceed max msg size (%zu) on TX, got: %i, =
+
+> msg->hdr.size: %i\n", sizeof(*msg), msg->hdr.size << 2, msg->hdr.size);
+
+I'd prefer:
+
+	dev_err(priv->dev, "Maximal message size (%zu bytes) exceeded on TX; got: =
+%i bytes\n"
+
+. Duplicating the value doesn't add much value.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
