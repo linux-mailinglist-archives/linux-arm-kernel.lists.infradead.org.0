@@ -2,91 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91C5B1A83D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:52:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C4BC1A83D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7UBNC1Z5jhQ4lpC4BdWIf8Yr3EwlBuU/0G+U4NYI9X4=; b=gabSI/Bk6vVHp+Fw+0qyOySDNj
-	6xgipIreAFO27uN1fwK47erhV8cIsDz84B4CyVtiQ1VzcAfRw9RIejS8zVYbT/S6Tj2bcyCJJSwsn
-	ETwB5c8bpB6SCYeSh6Qp3vV53PGHpocEtD2NJpnOnvEmlEFxxEiWLF1FN86vff9ltkPeiyq7a0qYa
-	rKraKekf7GWYDZzxiXCkA8cDrUNrwhuwbZk5WA6q2RA4goMr9ZULQk28pIASx7YN+jneOtaIqJKBn
-	aRAAOVXvTv5dN4oyg3tlicK7bK1KtByBPekgtrprGpRO6yuA2vzhNiRIUPFJqzqJa2CiYEf+Dilqn
-	0zcBvNiA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a56Ozv5go+V1x5BJsScC9owz0ZMiXkoeddn9zopDteE=; b=fk1UHw6fM/DR9+
+	XYy/CV3/izzbhSYDwZQsSwFVqzJPvPOSv05cTMxFsp6wdbYz45bvXap78MWDOt027Ssgmq4XA1ahd
+	aTEN1FeKsXNCRn70+Oz91xiD0/fDiYFPsgyHkLrhpIyMWotbskydvamyh6VTgD5C7R2W9dHEf8Smw
+	xOZv6yWYqzJaunSH0Pv4WhTl39Rzmo20I5ufjCX9Tk9IC3u9Vc+vyOet+PNOTB/aghh2TBWkYuc5y
+	zn0fCRYKFxQl4fHtcGVCedeM8fyYdSMXsA5eetZ4L7RJrejiQzWrPMS+VsSftXMNMbQFDakrmyzpz
+	gxcT6qjv8cqzZo1wULRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jONrf-00086X-Pk; Tue, 14 Apr 2020 15:52:43 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jONs2-0008MI-Se; Tue, 14 Apr 2020 15:53:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jONrQ-000851-Q7
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:52:35 +0000
-Received: by mail-wr1-x444.google.com with SMTP id u13so14439983wrp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:52:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=uN0TIUWhXWSobokMdn3Cae3WuG2MAfFXZCbP4BbRQYI=;
- b=LoFK+I6tpK526IXb/HJ63KdTycL+qUFmUZnxNw8NLro/U5V6BX/SlkDOLyAHVMnLyf
- MQYdOgBvWW1X/L60TkRCc9MqA++270r6iAJ3ZRwlPKb1/NPM6Nk2MqPxCkRV8WjFlNN6
- ZmRklPNnVF95N1yZaY2U9UjqlzubGJnw5Jt+14k6JqanWr1bFHv/r0ULo10OafDMXHkX
- SrTjzKM4L3IwKydPOEyvOOf2opVI6J5Tcf7pES5Rk7x84jK1sssdWh6SsSSs9ArEwZGc
- Hqej7gJERbL+fmTeMb5jyNoQPzFB1ZaF6WXrzEjkYZTX5y6yd8dZtcwIFWIVXqu9aSKd
- RnGQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=uN0TIUWhXWSobokMdn3Cae3WuG2MAfFXZCbP4BbRQYI=;
- b=Pfvie6iAQZ54zvrJiZ8bp9weJYRnvcdYe8GrXfpPWDrynIHkbUQXmlxaGaH5iXAFom
- TDJb2uIQe7mFb1jph0t/hIOrJKAd+zo3QjS5CUfSk8eoLo8yEyQlKMpaaBCkbUb8pfJn
- 6StCBiKdKBECJY4CAm/ujJPUmMi7FXamJa6dfDAE1X1DndlwjxlkhFREUIPTkXhe12O5
- 7sTlTjEmypihShp7FjyHtXJ9n1qgmpIXq2GB/V3ZntIniHMCnx18wmI9FlZOhQWKH40o
- PteYEx5twXSrMsh1s/ng0pIWeNu7++ZzpWoyhYC4EK1SLWtP278ZX1G7gQ6OQBU2/ELg
- /TAQ==
-X-Gm-Message-State: AGi0PuaZzI/bd9pw0FYDLShIOWzbgZ2CxUMWfi3sqR7t4rmCtyG+/qyt
- S9ICJD33RA4fw8O7uIaT77me4w==
-X-Google-Smtp-Source: APiQypJtqRV/cPyJgxPWg14A9VkXjv2ap4pSZVR4LkFlYNdUgsM2F2H1r9AIWBy+S8TWH93JMDygBQ==
-X-Received: by 2002:adf:fd0a:: with SMTP id e10mr10074700wrr.160.1586879547477; 
- Tue, 14 Apr 2020 08:52:27 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id n124sm19673794wma.11.2020.04.14.08.52.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 08:52:26 -0700 (PDT)
-References: <20200407144658.829246-1-maz@kernel.org>
- <20200414142018.6e7e5ec3@why>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] irqchip/meson-gpio: Fix HARDIRQ-safe -> HARDIRQ-unsafe
- lock order
-In-reply-to: <20200414142018.6e7e5ec3@why>
-Date: Tue, 14 Apr 2020 17:52:25 +0200
-Message-ID: <1jeesqt686.fsf@starbuckisacylon.baylibre.com>
+ id 1jONro-0008Kn-QS
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:52:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62617206D5;
+ Tue, 14 Apr 2020 15:52:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586879572;
+ bh=yqHZKVNbrXn5jUPqb41o3ei1Y87OyLHsxtZX44dqZDw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=WGN/cKlJyxhjFxonUGo6cKlXgkZMtCxquPhD6KKrT0ZQVunqlRVQfOsELDL+e0DFg
+ +24DuvnhsUlnssmny3PL3FcZ9H4oTi0oMSteWwZ0IJ/I/nYqsQpTEC/qBwf4uE8dGj
+ azpKdkTUjQTqf+qHJJw3wSicei2yESQ9ZloQa2Rg=
+Date: Tue, 14 Apr 2020 16:52:48 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 0/5] arm64: vdso: cleanups
+Message-ID: <20200414155247.GA30881@willie-the-truck>
+References: <20200414104252.16061-1-mark.rutland@arm.com>
+ <20200414152057.GB30288@willie-the-truck>
+ <20200414154319.GK2486@C02TD0UTHF1T.local>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200414154319.GK2486@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_085228_874296_EA72B8C3 
-X-CRM114-Status: GOOD (  17.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200414_085252_898223_0B778FE5 
+X-CRM114-Status: GOOD (  25.76  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,205 +78,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, Thomas Gleixner <tglx@linutronix.de>,
- Jason Cooper <jason@lakedaemon.net>
+Cc: catalin.marinas@arm.com, vincenzo.frascino@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Apr 14, 2020 at 04:43:19PM +0100, Mark Rutland wrote:
+> On Tue, Apr 14, 2020 at 04:20:58PM +0100, Will Deacon wrote:
+> > On Tue, Apr 14, 2020 at 11:42:47AM +0100, Mark Rutland wrote:
+> > > While attempting to review an arm64 vdso patch, I noticed some of the existing
+> > > code was somewhat baroque, making it harder than necessary to understand and
+> > > extend. These patches attempt to improve this by making the code more
+> > > consistent and avoiding unnecessary duplication.
+> > > 
+> > > The first patch in the series fixes a bug in a boot time error path. This bug
+> > > was made obvious during the refactoring but I've moved it to the start so that
+> > > it can be backported more easily.
+> > > 
+> > > The series is based on v5.7-rc1 and can be found in my arm64/vdso-cleanup
+> > > branch [1].
+> > 
+> > Cheers, this looks really good to me. The only thing I'm slightly confused
+> > by is that we still have something like this in __vdso_init():
+> > 
+> > 	/* Allocate the vDSO pagelist, plus a page for the data. */
+> > 	vdso_pagelist = kcalloc(vdso_lookup[arch_index].vdso_pages + 1,
+> > 				sizeof(struct page *),
+> > 				GFP_KERNEL);
+> > 
+> > But I don't see why this needs to be dynamic, and don't we leak the
+> > allocation on failure? Not a big deal, but seems silly if we could just
+> > have a couple of static page * arrays.
+> 
+> Unfortunately it has to be dynamic as the number of vdso code pages
+> isn't known until the vdso is linked into the kernel proper. The only
+> way to allocate that at build time would be as part of the linker
+> script, and I think that'd be far more confusing.
 
-On Tue 14 Apr 2020 at 15:20, Marc Zyngier <maz@kernel.org> wrote:
+I was wondering whether we could extend gen_vdso_offsets.sh to emit this
+information. Why isn't looking at the shared object enough? That said,
+it does get grotty so maybe it's not worth doing.
 
-> On Tue,  7 Apr 2020 15:46:58 +0100
-> Marc Zyngier <maz@kernel.org> wrote:
->
-> +Jerome, Martin,
->
->> Running a lockedp-enabled kernel on a vim3l board (Amlogic SM1)
->> leads to the following splat:
->> 
->> [   13.557138] WARNING: HARDIRQ-safe -> HARDIRQ-unsafe lock order detected
->> [   13.587485] ip/456 [HC0[0]:SC0[0]:HE0:SE1] is trying to acquire:
->> [   13.625922] ffff000059908cf0 (&irq_desc_lock_class){-.-.}-{2:2}, at: __setup_irq+0xf8/0x8d8
->> [   13.632273] which would create a new lock dependency:
->> [   13.637272]  (&irq_desc_lock_class){-.-.}-{2:2} -> (&ctl->lock){+.+.}-{2:2}
->> [   13.644209]
->> [   13.644209] but this new dependency connects a HARDIRQ-irq-safe lock:
->> [   13.654122]  (&irq_desc_lock_class){-.-.}-{2:2}
->> [   13.654125]
->> [   13.654125] ... which became HARDIRQ-irq-safe at:
->> [   13.664759]   lock_acquire+0xec/0x368
->> [   13.666926]   _raw_spin_lock+0x60/0x88
->> [   13.669979]   handle_fasteoi_irq+0x30/0x178
->> [   13.674082]   generic_handle_irq+0x38/0x50
->> [   13.678098]   __handle_domain_irq+0x6c/0xc8
->> [   13.682209]   gic_handle_irq+0x5c/0xb0
->> [   13.685872]   el1_irq+0xd0/0x180
->> [   13.689010]   arch_cpu_idle+0x40/0x220
->> [   13.692732]   default_idle_call+0x54/0x60
->> [   13.696677]   do_idle+0x23c/0x2e8
->> [   13.699903]   cpu_startup_entry+0x30/0x50
->> [   13.703852]   rest_init+0x1e0/0x2b4
->> [   13.707301]   arch_call_rest_init+0x18/0x24
->> [   13.711449]   start_kernel+0x4ec/0x51c
->> [   13.715167]
->> [   13.715167] to a HARDIRQ-irq-unsafe lock:
->> [   13.722426]  (&ctl->lock){+.+.}-{2:2}
->> [   13.722430]
->> [   13.722430] ... which became HARDIRQ-irq-unsafe at:
->> [   13.732319] ...
->> [   13.732324]   lock_acquire+0xec/0x368
->> [   13.735985]   _raw_spin_lock+0x60/0x88
->> [   13.739452]   meson_gpio_irq_domain_alloc+0xcc/0x290
->> [   13.744392]   irq_domain_alloc_irqs_hierarchy+0x24/0x60
->> [   13.749586]   __irq_domain_alloc_irqs+0x160/0x2f0
->> [   13.754254]   irq_create_fwspec_mapping+0x118/0x320
->> [   13.759073]   irq_create_of_mapping+0x78/0xa0
->> [   13.763360]   of_irq_get+0x6c/0x80
->> [   13.766701]   of_mdiobus_register_phy+0x10c/0x238 [of_mdio]
->> [   13.772227]   of_mdiobus_register+0x158/0x380 [of_mdio]
->> [   13.777388]   mdio_mux_init+0x180/0x2e8 [mdio_mux]
->> [   13.782128]   g12a_mdio_mux_probe+0x290/0x398 [mdio_mux_meson_g12a]
->> [   13.788349]   platform_drv_probe+0x5c/0xb0
->> [   13.792379]   really_probe+0xe4/0x448
->> [   13.795979]   driver_probe_device+0xe8/0x140
->> [   13.800189]   __device_attach_driver+0x94/0x120
->> [   13.804639]   bus_for_each_drv+0x84/0xd8
->> [   13.808474]   __device_attach+0xe4/0x168
->> [   13.812361]   device_initial_probe+0x1c/0x28
->> [   13.816592]   bus_probe_device+0xa4/0xb0
->> [   13.820430]   deferred_probe_work_func+0xa8/0x100
->> [   13.825064]   process_one_work+0x264/0x688
->> [   13.829088]   worker_thread+0x4c/0x458
->> [   13.832768]   kthread+0x154/0x158
->> [   13.836018]   ret_from_fork+0x10/0x18
->> [   13.839612]
->> [   13.839612] other info that might help us debug this:
->> [   13.839612]
->> [   13.850354]  Possible interrupt unsafe locking scenario:
->> [   13.850354]
->> [   13.855720]        CPU0                    CPU1
->> [   13.858774]        ----                    ----
->> [   13.863242]   lock(&ctl->lock);
->> [   13.866330]                                local_irq_disable();
->> [   13.872233]                                lock(&irq_desc_lock_class);
->> [   13.878705]                                lock(&ctl->lock);
->> [   13.884297]   <Interrupt>
->> [   13.886857]     lock(&irq_desc_lock_class);
->> [   13.891014]
->> [   13.891014]  *** DEADLOCK ***
->> 
->> The issue can occur when CPU1 is doing something like irq_set_type()
->> and CPU0 performing an interrupt allocation, for example. Taking
->> an interrupt (like the one being reconfigured) would lead to a
->> deadlock.
+> We calculate the number of pages from the bounds of the code:
+> 
+> |         vdso_info[abi].vdso_pages = (
+> |                         vdso_info[abi].vdso_code_end -
+> |                         vdso_info[abi].vdso_code_start) >>
+> |                         PAGE_SHIFT;
+> | 
+> |         /* Allocate the vDSO pagelist, plus a page for the data. */
+> |         vdso_pagelist = kcalloc(vdso_info[abi].vdso_pages + 1,
+> |                                 sizeof(struct page *),
+> |                                 GFP_KERNEL);
+> 
+> ... that said, conflating the data page list and code page list is
+> harming legibility, and I reckon that's worth cleaning up. The data page
+> list can be statically allocate given it's a single page.
+> 
+> There is a leak if we fail to allocate the compat vdso pages, but I
+> don't see a nice way of cleaning that up. It looks like
+> do_one_initcall() will WARN() in that case as we'll return a non-zero
+> error code.
 
-Just to make sure I understand
-* the 1st trace is a CPU getting interrupted while setting the irq type
-* the 2nd trace is another CPU trying to allocate an irq for network PHY.
+Yeah, I'm not really worried about that since I think we only fail if a
+subsequent allocation fails, it's just that the dynamic allocation seemed
+a bit OTT on first glance.
 
->> 
->> A solution to this is:
->> 
->> - Reorder the locking so that meson_gpio_irq_update_bits takes the lock
->>   itself at all times, instead of relying on the caller to lock or not,
->>   hence making the RMW sequence atomic,
->> 
->> - Rework the critical section in meson_gpio_irq_request_channel to only
->>   cover the allocation itself, and let the gpio_irq_sel_pin callback
->>   deal with its own locking if required,
->> 
->> - Take the private spin-lock with interrupts disabled at all times
-
-Looks like the only safe path if I understand correctly.
-The patch below looks good to me.
-
->> 
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
-
-Thanks for the fix Marc.
-
-Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
-
->> ---
->>  drivers/irqchip/irq-meson-gpio.c | 18 ++++++++++--------
->>  1 file changed, 10 insertions(+), 8 deletions(-)
->> 
->> diff --git a/drivers/irqchip/irq-meson-gpio.c b/drivers/irqchip/irq-meson-gpio.c
->> index ccc7f823911b..bc7aebcc96e9 100644
->> --- a/drivers/irqchip/irq-meson-gpio.c
->> +++ b/drivers/irqchip/irq-meson-gpio.c
->> @@ -144,12 +144,17 @@ struct meson_gpio_irq_controller {
->>  static void meson_gpio_irq_update_bits(struct meson_gpio_irq_controller *ctl,
->>  				       unsigned int reg, u32 mask, u32 val)
->>  {
->> +	unsigned long flags;
->>  	u32 tmp;
->>  
->> +	spin_lock_irqsave(&ctl->lock, flags);
->> +
->>  	tmp = readl_relaxed(ctl->base + reg);
->>  	tmp &= ~mask;
->>  	tmp |= val;
->>  	writel_relaxed(tmp, ctl->base + reg);
->> +
->> +	spin_unlock_irqrestore(&ctl->lock, flags);
->>  }
->>  
->>  static void meson_gpio_irq_init_dummy(struct meson_gpio_irq_controller *ctl)
->> @@ -196,14 +201,15 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
->>  			       unsigned long  hwirq,
->>  			       u32 **channel_hwirq)
->>  {
->> +	unsigned long flags;
->>  	unsigned int idx;
->>  
->> -	spin_lock(&ctl->lock);
->> +	spin_lock_irqsave(&ctl->lock, flags);
->>  
->>  	/* Find a free channel */
->>  	idx = find_first_zero_bit(ctl->channel_map, NUM_CHANNEL);
->>  	if (idx >= NUM_CHANNEL) {
->> -		spin_unlock(&ctl->lock);
->> +		spin_unlock_irqrestore(&ctl->lock, flags);
->>  		pr_err("No channel available\n");
->>  		return -ENOSPC;
->>  	}
->> @@ -211,6 +217,8 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
->>  	/* Mark the channel as used */
->>  	set_bit(idx, ctl->channel_map);
->>  
->> +	spin_unlock_irqrestore(&ctl->lock, flags);
->> +
->>  	/*
->>  	 * Setup the mux of the channel to route the signal of the pad
->>  	 * to the appropriate input of the GIC
->> @@ -225,8 +233,6 @@ meson_gpio_irq_request_channel(struct meson_gpio_irq_controller *ctl,
->>  	 */
->>  	*channel_hwirq = &(ctl->channel_irqs[idx]);
->>  
->> -	spin_unlock(&ctl->lock);
->> -
->>  	pr_debug("hwirq %lu assigned to channel %d - irq %u\n",
->>  		 hwirq, idx, **channel_hwirq);
->>  
->> @@ -287,13 +293,9 @@ static int meson_gpio_irq_type_setup(struct meson_gpio_irq_controller *ctl,
->>  			val |= REG_EDGE_POL_LOW(params, idx);
->>  	}
->>  
->> -	spin_lock(&ctl->lock);
->> -
->>  	meson_gpio_irq_update_bits(ctl, REG_EDGE_POL,
->>  				   REG_EDGE_POL_MASK(params, idx), val);
->>  
->> -	spin_unlock(&ctl->lock);
->> -
->>  	return 0;
->>  }
->>  
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
