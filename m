@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F3681A7CF9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:18:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 058D61A7CFB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 15:19:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=df2OUgmWdoCeOUjjEq1b90170+/IZ+05H+D6jXnMxWo=; b=Win1kFOEnSMnbH
-	8gg9glbCnAQfU/An9SuY70l+rXYhuKwWs2RoLgUCCgB5xdjDYL1xJJBks5goCA5X5t1DORQsPBIWT
-	TtL9yN/QFG3WpPwEGXJBxfZN+FYK6fF0q17MfTTmxjfN13iIl4d/ChrCu6QipHyDOqY93+zmJ2YgU
-	v4+wIjtyh/2CYAlLXAdYsBfbhpZDZtJpQhPFN7JSKWp4u7LKgqUyC/oZAjASpRFb/FiHwnC8/riPb
-	bQLFo1g+r4vLZKHhWsD+CPCt5D5Rk6h+bCtWAexQ2UhsLQ04kZ/Hgx605Bf3WQ29P5+lSQkj5Rko4
-	w+A2jj8B6iO93e77Lz+g==;
+	List-Owner; bh=k+FgC8NTNQ+c11QZkG/asib/wwJX16fo8ZxyouLHLAs=; b=UxDIviH9gIFaZa
+	1e2dKDz7PmNrqqQx7m+O/mhP0EZqqlIJbFthUNd7Ix6kTOOJR42SO4RYsQVbPqhnAyE967D6tOxkb
+	8CZul/t4oBBq6S+s7zly15UwA9SUbbWKFtm9XLbkRfXHut/+Cb9VXw4Rh3YOeUoqNrWa/T1aK+KkT
+	ouYqcZNvODP283dm5da3MC5sJW2q2M6oUfApuGlSVJTgL5iN9RuG1mTfxE/frCkWADhw5YT6OuD8y
+	EpnYcKxJqlfTOrFJ7qjlWBkX/niDOZ7BGNBCe/GTXFGhLvzig8QLQVjzJ274im387QRdP7lrjT4qz
+	bRUC5Z7FRSgRxRdmcWbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLSa-00055s-7G; Tue, 14 Apr 2020 13:18:40 +0000
+	id 1jOLSp-0005K5-Te; Tue, 14 Apr 2020 13:18:56 +0000
 Received: from [2001:4bb8:180:384b:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLOi-0006vf-4M; Tue, 14 Apr 2020 13:14:40 +0000
+ id 1jOLOl-0006yj-6V; Tue, 14 Apr 2020 13:14:43 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>,
  "K. Y. Srinivasan" <kys@microsoft.com>,
@@ -32,9 +32,10 @@ To: Andrew Morton <akpm@linux-foundation.org>,
  Sumit Semwal <sumit.semwal@linaro.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Minchan Kim <minchan@kernel.org>, Nitin Gupta <ngupta@vflare.org>
-Subject: [PATCH 14/29] mm: rename vmap_page_range to map_kernel_range
-Date: Tue, 14 Apr 2020 15:13:33 +0200
-Message-Id: <20200414131348.444715-15-hch@lst.de>
+Subject: [PATCH 15/29] mm: don't return the number of pages from
+ map_kernel_range{, _noflush}
+Date: Tue, 14 Apr 2020 15:13:34 +0200
+Message-Id: <20200414131348.444715-16-hch@lst.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200414131348.444715-1-hch@lst.de>
 References: <20200414131348.444715-1-hch@lst.de>
@@ -62,57 +63,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This matches the map_kernel_range_noflush API.  Also change to pass
-a size instead of the end, similar to the noflush version.
+None of the callers needs the number of pages, and a 0 / -errno return
+value is a lot more intuitive.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 ---
- mm/vmalloc.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ mm/vmalloc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/mm/vmalloc.c b/mm/vmalloc.c
-index 55df5dc6a9fc..a3d810def567 100644
+index a3d810def567..ca8dc5d42580 100644
 --- a/mm/vmalloc.c
 +++ b/mm/vmalloc.c
-@@ -272,13 +272,13 @@ int map_kernel_range_noflush(unsigned long addr, unsigned long size,
- 	return nr;
+@@ -249,7 +249,7 @@ static int vmap_p4d_range(pgd_t *pgd, unsigned long addr,
+  * function.
+  *
+  * RETURNS:
+- * The number of pages mapped on success, -errno on failure.
++ * 0 on success, -errno on failure.
+  */
+ int map_kernel_range_noflush(unsigned long addr, unsigned long size,
+ 			     pgprot_t prot, struct page **pages)
+@@ -269,7 +269,7 @@ int map_kernel_range_noflush(unsigned long addr, unsigned long size,
+ 			return err;
+ 	} while (pgd++, addr = next, addr != end);
+ 
+-	return nr;
++	return 0;
  }
  
--static int vmap_page_range(unsigned long start, unsigned long end,
-+static int map_kernel_range(unsigned long start, unsigned long size,
- 			   pgprot_t prot, struct page **pages)
- {
- 	int ret;
- 
--	ret = map_kernel_range_noflush(start, end - start, prot, pages);
--	flush_cache_vmap(start, end);
-+	ret = map_kernel_range_noflush(start, size, prot, pages);
-+	flush_cache_vmap(start, start + size);
- 	return ret;
- }
- 
-@@ -1866,7 +1866,7 @@ void *vm_map_ram(struct page **pages, unsigned int count, int node, pgprot_t pro
- 
- 	kasan_unpoison_vmalloc(mem, size);
- 
--	if (vmap_page_range(addr, addr + size, prot, pages) < 0) {
-+	if (map_kernel_range(addr, size, prot, pages) < 0) {
- 		vm_unmap_ram(mem, count);
- 		return NULL;
- 	}
-@@ -2030,10 +2030,9 @@ void unmap_kernel_range(unsigned long addr, unsigned long size)
- int map_vm_area(struct vm_struct *area, pgprot_t prot, struct page **pages)
- {
- 	unsigned long addr = (unsigned long)area->addr;
--	unsigned long end = addr + get_vm_area_size(area);
- 	int err;
- 
--	err = vmap_page_range(addr, end, prot, pages);
-+	err = map_kernel_range(addr, get_vm_area_size(area), prot, pages);
- 
- 	return err > 0 ? 0 : err;
- }
+ static int map_kernel_range(unsigned long start, unsigned long size,
 -- 
 2.25.1
 
