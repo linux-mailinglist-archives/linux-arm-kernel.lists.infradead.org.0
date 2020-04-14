@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 248AD1A80E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 564F21A80EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 17:05:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0H+TYvPXyAL7yJYQuDHiIkn0Vdxf9wCyTxL3UL9sQtw=; b=aK0k5oJTWoWScFjKquUx7giy2
-	3QzlsHVT3o5SoRYGXBCP84xW47bRdkTOB8HgXlslwdiM0Q9EMg56xOq4gJY8849KrTtruu8nSXs6y
-	0oe7wgPo/coTwdhpcAzOzIfqEkB3ZccLu7fz5/Msdf3LdnsD1PYVFsSD3VsnFzlTvkmsF511L4Lzv
-	Dq7r6v83oPisXnDqZKGu45XalisGScpJ+8RSB8oa/GrBFR/cBUoXSuekKUxpbDhvA94TeEp/jeXj4
-	w3dZqp27f9yZgHGJAXsh8PCy29z0PzsTUteaVGk3qHJcv2OFperqDvct7azHP4a9DhCuWFxOTPgJw
-	U84KURV+A==;
+	 bh=U67xfgQRr1TzcGJphMZXsW71Y49i/FY4Kbndcws+RTA=; b=NObZ4LRpz+jRL9F8vTTNxjfTc
+	6BIrSpJshh1lM99QUF6Ju9WDWBhSwAS6i2uLsWqeGUvfGOTm1aXojz624sGG2pXdMIWet4rWri5ac
+	ThlqXBebYTvQNoTnz7xpBS4URU1SVrlrYKNeagAeg8WNjF0Z5K2Jq6wfvWjqlT2RA7KHz8k7FoHz9
+	QtL/4GY8lRizbn0/hOzKjW0hAsBYOoqcJ6P1NsQyomDc+a2XIgMcGYutUsqX9zhRa6px8yguoZcdt
+	Bf9jmaq8FGQQiK1KsR2Urjs+aFH30bQvt14EsnxRew+Fu/ABLNXQwdrmk7LtmPvA5JTrv+l0cZykf
+	AL4tuKDwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jON5j-0006Xf-CB; Tue, 14 Apr 2020 15:03:11 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jON7w-00026X-Nt; Tue, 14 Apr 2020 15:05:28 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jON4x-0006Lk-9D
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:02:24 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b11so3320670wrs.6
+ id 1jON7o-00025V-3k
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 15:05:21 +0000
+Received: by mail-wr1-x441.google.com with SMTP id j2so14722309wrs.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 08:02:22 -0700 (PDT)
+ Tue, 14 Apr 2020 08:05:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=ViI/byXYkNTTv5WozqHMnLuUZ5EboqYJdzyRMLlG4+I=;
- b=gxQ2m3DRGB6KjDN+/gGk/ABqsAvAFy8Q4jvwgUUVnBmQQPs22L+air6X+vbNaFjrG+
- m4BazoDB9Mb8bLYUOVCrdxHbqQ1y4dzM+Pr66Ieb/1Zo6Cp8blP2LKu60alUspymuN4K
- DsLEmtbTiR1f/OzFQAx/TLHlzhaWdB7AwFV7w3JSqpxXeAItCpkfm7mQ/16goxGzsmfe
- E3A5W7R1FJTkBvUdq2JHuj/VvWZcGiu7gmL99+jvy3TFxDmMzqdpww2yxXj2qjxCPqxv
- 3XBMMFkQ6IJErv8H8BBWoxmdMJY+y2cihEFkFyLkZiQECDZvXuA4odCeXWYUMHqvywvv
- QU2Q==
+ bh=GRU+kcgoobFtz4hoc9alUDOZ5JZB4eIWqC87J2PCXRk=;
+ b=iozrSE+ODjo7phmX5XfdlosqNbo3t0TMdHpJDlWfJjQxD2Be7dmyGsm7HEJ6G8eywm
+ PmFTKHyhBUEbIY5HJdcE15H4TP5fottCSv3hxGVeLOnSe16rwy/HSbKHNBRUi/OomcMz
+ FBDzQC+XGB7EmSd9xYEoOz5agEmD3EnjI3bkJToa+FaYB+yMQ7cFPBncjRIhhd+XxYRK
+ nrPNWSzXfJPuW5FtyYjIH94QRZKewR/7LFug3ZxX4wRne1OkwKj6x6dm4I1zyuj4J+is
+ LXupCb2NXql0fFVUnWwXlteqAoLQ1uyICAqX/o2VfgWau7PVCynypm8Uwwla/2ztowYu
+ ggHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ViI/byXYkNTTv5WozqHMnLuUZ5EboqYJdzyRMLlG4+I=;
- b=WB83ztvHhdSUFp/arlf9s+kSuN+/QO+TQineEv91bFHfmTC4WYFsd3huhs4OWyeVym
- C864/hUnBaauBAuGKYMKvmoY2kY3OnCwoMkVTSNpTg0gBU8jSyiR/zBRHtV5r6h9GFJm
- ZWuVNxUVKhbiER6AXG3XCkzR8mCt5cZGsriGRt3mXLYxBmxDTUUJBnTj+jwYLpJIlMd7
- uFyNLkaa6srty3UZgeHymdAkULLZ9WM6JLhLpa2K3kxdDISS65ArugBJzClcfHLQuLS4
- hw0BYhvvhYi0kqtjKNBZbl8p+bDTIeqg50TiAfdm3dxt89MWaCVsRqZpLSLTSZSpthUo
- OWMw==
-X-Gm-Message-State: AGi0Publd/5kmC23Q0xKhUfT6Nnr3ikJkUbRnOp9HvRhl+56qBypSpsf
- DRnFX5lqfEGuQJtKDZ5eIEU=
-X-Google-Smtp-Source: APiQypK4+NIRYHEoApUJZAfNPlDoh2Xh3fKIbelUsv2sesJnlhQa+MjZoKcEwDhkrZyCCyBsPmqPEQ==
-X-Received: by 2002:adf:8149:: with SMTP id 67mr25052146wrm.60.1586876541371; 
- Tue, 14 Apr 2020 08:02:21 -0700 (PDT)
+ bh=GRU+kcgoobFtz4hoc9alUDOZ5JZB4eIWqC87J2PCXRk=;
+ b=G/sfDCtQMLLi07y8Taj4pFJSAloU9YWO3o5saV5dv8hVdArLXAyFzkDuGYMYXfhQcD
+ B9qWaJvpZ5XAh5oGOspR8EugVfEBPRIEevPQUNxuA8qTe/KLNXuWghwjouYa8ud1b6M6
+ 3potDCizapgW5AwSzNL20AbGlUdXNJ1P/B8ZBj9EA9DCzJRCGplnPMv1lc3hqFqONXcJ
+ /RlX7W70+JqGyXDw5EomDMYMDc3hvJljfIu1yKtUJ/3lHBtsOkmSN1lY9LfMOKTtpAsz
+ IWCey57N5cQBUlbcbd5iwYJQ35oz8uSzQojrJAjei06/d7z8J16awndADGDtlCNpiAmd
+ Ml7A==
+X-Gm-Message-State: AGi0PuYpDW0Pv5nDFK2SIuG0nOxBU6psXZYnO7NvcLUXWVhq9E2DF7yr
+ kGvovGUaLHFUfkFsjtZ29DI=
+X-Google-Smtp-Source: APiQypJRZriRxHLKGFufZX51wCytt4lINIlsGHllnqqM/+6Wbga72x1sO/I+opanZVnZSJ1d8zqA6A==
+X-Received: by 2002:a05:6000:1287:: with SMTP id
+ f7mr8495019wrx.345.1586876718789; 
+ Tue, 14 Apr 2020 08:05:18 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id y9sm18508247wmm.26.2020.04.14.08.02.19
+ by smtp.gmail.com with ESMTPSA id g74sm19229868wme.44.2020.04.14.08.05.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 08:02:20 -0700 (PDT)
-Date: Tue, 14 Apr 2020 17:02:19 +0200
+ Tue, 14 Apr 2020 08:05:17 -0700 (PDT)
+Date: Tue, 14 Apr 2020 17:05:16 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Dmitry Osipenko <digetx@gmail.com>
 Subject: Re: [PATCH v6 09/14] memory: tegra: Add EMC scaling support code for
  Tegra210
-Message-ID: <20200414150219.GK3593749@ulmo>
+Message-ID: <20200414150516.GL3593749@ulmo>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
  <20200409175238.3586487-10-thierry.reding@gmail.com>
  <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
+ <6976796c-6972-328e-3e9f-60c1737cf0e2@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <3e518dfa-cb3d-e2ce-a9b8-5e143e02fc61@gmail.com>
+In-Reply-To: <6976796c-6972-328e-3e9f-60c1737cf0e2@gmail.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_080223_347701_CDF17B69 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20200414_080520_155417_2FEA90FC 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,95 +108,92 @@ Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Joseph Lo <josephl@nvidia.com>,
  linux-tegra@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4163998088704717173=="
+Content-Type: multipart/mixed; boundary="===============6817736749206469243=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4163998088704717173==
+--===============6817736749206469243==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="fLj60tP2PZ34xyqD"
+	protocol="application/pgp-signature"; boundary="Ms5iOKSBOB9YS8zC"
 Content-Disposition: inline
 
 
---fLj60tP2PZ34xyqD
-Content-Type: text/plain; charset=utf-8
+--Ms5iOKSBOB9YS8zC
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Apr 10, 2020 at 02:56:53AM +0300, Dmitry Osipenko wrote:
-> 09.04.2020 20:52, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
-> ...
-> > +#define CLK_RST_CONTROLLER_CLK_SOURCE_EMC		0x19c
-> ...
-> > +#define CLK_RST_CONTROLLER_CLK_SOURCE_EMC_DLL		0x664
+On Sat, Apr 11, 2020 at 11:39:08PM +0300, Dmitry Osipenko wrote:
+> > ...
+> >> +#define TRIM_REG(chan, rank, reg, byte)					\
+> >> +	(((EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+> >> +	   _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _MASK &	\
+> >> +	   next->trim_regs[EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ##		\
+> >> +				 rank ## _ ## reg ## _INDEX]) >>	\
+> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _SHIFT)	\
+> >> +	 +								\
+> >> +	 (((EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
+> >> +	    byte ## _DATA_BRLSHFT_MASK &				\
+> >> +	    next->trim_perch_regs[EMC ## chan ##			\
+> >> +			      _EMC_DATA_BRLSHFT_ ## rank ## _INDEX]) >>	\
+> >> +	   EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
+> >> +	   byte ## _DATA_BRLSHFT_SHIFT) * 64))
+> >> +
+> >> +#define CALC_TEMP(rank, reg, byte1, byte2, n)				\
+> >> +	(((new[n] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##	\
+> >> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _SHIFT)=
+ & \
+> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _MASK)	\
+> >> +	 |								\
+> >> +	 ((new[n + 1] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##\
+> >> +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _SHIFT)=
+ & \
+> >> +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
+> >> +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _MASK))
 >=20
-> I'd suggest to double check all the macros and remove everything unused,
-> to not pollute the code.
-
-I recall checking most of these, but I'll make another pass to see if I
-can spot more that I can drop.
-
-> ...
-> > +#define TRIM_REG(chan, rank, reg, byte)					\
-> > +	(((EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> > +	   _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _MASK &	\
-> > +	   next->trim_regs[EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ##		\
-> > +				 rank ## _ ## reg ## _INDEX]) >>	\
-> > +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> > +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte ## _SHIFT)	\
-> > +	 +								\
-> > +	 (((EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
-> > +	    byte ## _DATA_BRLSHFT_MASK &				\
-> > +	    next->trim_perch_regs[EMC ## chan ##			\
-> > +			      _EMC_DATA_BRLSHFT_ ## rank ## _INDEX]) >>	\
-> > +	   EMC_DATA_BRLSHFT_ ## rank ## _RANK ## rank ## _BYTE ##	\
-> > +	   byte ## _DATA_BRLSHFT_SHIFT) * 64))
-> > +
-> > +#define CALC_TEMP(rank, reg, byte1, byte2, n)				\
-> > +	(((new[n] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##	\
-> > +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _SHIFT) =
-& \
-> > +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> > +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte1 ## _MASK)	\
-> > +	 |								\
-> > +	 ((new[n + 1] << EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ##\
-> > +	   reg ## _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _SHIFT) =
-& \
-> > +	  EMC_PMACRO_OB_DDLL_LONG_DQ_RANK ## rank ## _ ## reg ##	\
-> > +	  _OB_DDLL_LONG_DQ_RANK ## rank ## _BYTE ## byte2 ## _MASK))
+> What about replacing those barely readable concatenated macros with a
+> raw values?
 >=20
-> My eyes.. :P
+> Like:
+>=20
+> TRIM_REG(brlshft_idx, ob_ddll_long_dq_rank_mask, ...)
 
-Heh... yes, this is pretty bad. At least the code at the callsites is
-clean.
+That's just going to move the complexity from the macros to the
+callsites, isn't it?
+
+I suppose I could spend a few cycles trying to make this a little more
+readable, but to be frank, the complexity in this driver is already so
+high that this doesn't really make much of a difference, in my opinion.
 
 Thierry
 
---fLj60tP2PZ34xyqD
+--Ms5iOKSBOB9YS8zC
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V0HsACgkQ3SOs138+
-s6FXCg/7B0bMQSGWtJXVBNJfMTn8M0O+JF56fTgGvLoz+9OjrduZ3flJ5t1MVTvp
-o+MoMG4zK2JjlnMcMLG5o/6hSbLU0kAKJ7BlHbwgV252liWGABe3h0xV8923aWRi
-vbm8f1v9sab2U/KJGUdZxeSZ9NfrVzCzGzBlZmynLF6fKhnymS1usyKChKqwlvv2
-PZAZKF4hNDizXxy1ZpmSJHoZRsZ94qSj2NuAvLxMjx0Hmv6jJ8D7AZuY/GKeCZPN
-ByuGMahGXXaE8JaOzgxsfHx0TEC1hKb4Y017xgHpZzMU50ck4eqFJb/nHXBVddPH
-KjYmaDzYIfSqtYRrmPVmloUBVjb9Y1EDspe+5TbQvpSwSLjNFPeM0z5dZXrZU4w0
-W4bvghLzaZvgvC9thmTZur7QTcOOco3BRTIxv8hzA/2FO/oWX9p1CGbR6Ddsg/ly
-SzhUu5CUKCrKdob6YRTpfT+5CN+zCzR7dt+XJ2LcR1lg0UnCCMnmyf2kJUNdkwZp
-lWQQTm4pFrHNRv0a8DNN6ma4fK0yyS//7bJQVM/sGJZ8hnloT6skT8hUyfre9d9f
-AzpQypnVyqMv2PTFYthPYkF6CaLHHgE/NU4yUyQHyNIBCQT4OHZZZXBlS42azM10
-6/79zjdxTiIR6C0mHgIWY6kgTNiL7RiU9ctwpI9vnCrp+YzPfy0=
-=SSdO
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6V0SwACgkQ3SOs138+
+s6Ef9w//fxlmCh7FtrH73REQqtD+jRwwLCO5WMC+EHjBY4EUR5lv5mZnrA0uIaBc
+FNV4X8OExlN0dMsbYdRTp9CJO7Q8IPggLgaGJQOrR55cT+K8EUXhUPuRPyt83PNY
+2x5zUNxRJzxmVqH8OUrknejB/2bedly4MvLNz2rDo9orQVzGRCW05kl9sQmLTl+k
+ieyYqweSPPRMw/tgomH2tAz5SaQqnXvv6OK/7JD0Ic9eFBjm2R526wNThK5Tmmzm
+jpKuyQv6tksZ5QqLouZHvJIBxN54gF55p57v5SY1LFoj+8Aas1GtdbO9ioKvM86L
+OveTWkfYxQUHMDITXcpvnCP3UJOWygeuqxb1azRphChylfgtcppQN/od2ms0AJ0t
+femDyT/oDOUbNtwau0hUpckUD3Iag0IkBxu5RKa0aOzQwtxqy0uAL1Oi6qbmYJnN
+gzy0PfSnDJqUsIuVxt+S1fKZwnMsCFeGvvqe8IH04drmxLbg1z3OqbCJeBV3xNyg
+mK1tsOoFIBnr8nf7ZHODgp5etjxFofaSHV5Ox8oFhNutC+hpmLi5/rQ90P5Jxu/L
+3qUkOEGo+MzCMXiUEgJmKjWFLdTxlAQxH3Kq8KnjaedTBgU9NVKvJr97aTWMo/NI
+hq9dUvpBJcU01rW0hwcuoeEFOO0ntQo4RzH9ugOBZLQ/Wx1/24A=
+=ktP9
 -----END PGP SIGNATURE-----
 
---fLj60tP2PZ34xyqD--
+--Ms5iOKSBOB9YS8zC--
 
 
---===============4163998088704717173==
+--===============6817736749206469243==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -205,5 +204,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4163998088704717173==--
+--===============6817736749206469243==--
 
