@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DBEC1A8B78
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:51:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B66E1A8B7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 21:52:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GTtZUErV5NEfII6wQRZEEEbGQlBZ9fnaIVsoVSH4bos=; b=LGmb04czqqXTcd
-	TuI9Ff+yvB1B7ilAr1sfZDRTRMzydnItXBfA8A5QoCugCMavm5+qB5WxP3swUFMsi4A8YzoOyFfwR
-	7tyhBApLLfAYR5KI3gwr1IHPJSX/mkNmQ22k5HRKCnFaE3/rGgir7PWeUwqD1cGm6dKKjaiYLocl0
-	np4IA9TH8j4D5ieiEz/wJsOA2+d1UkOM8WNjYCiamJot8vuLMmJkpcKIkVduIj2Bfm+8IlWDjLjjO
-	Xe1f7+11+PAp5iVagaycE5qZ4Zl6YgBSPrYetrGZxHmcEzbnEJGeO5fjeDDRevt6MEXdTTI63ZlcH
-	NKDA64IGnRCh/OYbBYWQ==;
+	List-Owner; bh=yF7f/rwDyXeZtLYQC05UXeXWKhu03fHjESPSk/C0Ebs=; b=A80KzUp3giLqlp
+	8x/zE4j0X0i02zqbbG5TyeE2oKvtMUwQlpaOjdQ32IFQ+7nbCh7BMaBjRdkkyWqzRtW0BkLqgMsQU
+	33Z4qSQFwSwUr1QoWm0aGy06bTiX13+H68iD7KOladkRDv3zwdpfdpDo6S5zcGha/Xh/qdMgFhY8K
+	XHfc4jgk7Liq7u7QpEwb5nsM6ZGx8rzTlyac7ywUgHIzIni+N7Br75mgGtjAM0nYXwiMcRt+gI/Op
+	4MMO0m+bl5n+ptSCKnfZ1rnKvOM+y/PVtKYW9ZL0SDHlxMa90FLtW2nKs1gWXioyTJwoMLo8rbyAy
+	DfXn0WXYWH9fxYzyN1jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jORb3-0006lk-Ox; Tue, 14 Apr 2020 19:51:49 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jORbK-00078t-At; Tue, 14 Apr 2020 19:52:06 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jORaa-0006WO-4K; Tue, 14 Apr 2020 19:51:22 +0000
-Received: by mail-wm1-x341.google.com with SMTP id g12so7842899wmh.3;
- Tue, 14 Apr 2020 12:51:19 -0700 (PDT)
+ id 1jORaa-0006WP-Gc; Tue, 14 Apr 2020 19:51:23 +0000
+Received: by mail-wm1-x342.google.com with SMTP id v8so13246000wma.0;
+ Tue, 14 Apr 2020 12:51:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=buqvW+rh8aGkpkt6IACKm4M4fmbaWcmA3j17X8abtHA=;
- b=bS3/ROK/sffJXwV2Rj/G7kYPdJZgF8fmwMTwrUtrs4+TIJR2cD/R+dEM9aVovzLVRM
- pzi6C1aISUmH8ksCMqc3gm92h6/1Uq8KKn0Ypay5lSIl6V0owSap/QGLjCyAEDMtl9o6
- SvQfNryeGB2JDGc2JKmDQnnlG9ddJz20U/gsG38nHZiN4+dklzXWfw6u103Bhu/aYtaf
- fCQxZFaTuYaQkzteOC0UIk22jXkpuYCJ6YawiGWnZMX2ABBTggi9qPxxFLTGK17AQK6H
- IDjnwSBJg3aGm5n9ZaxVo+Ni4nS3685k7fXE8zp2to0b41sTjZWj6gWmZv4f6Y1CAxKC
- KI9g==
+ bh=wmfcMhvG8Z0vEINCyaO7pmox4TkBpgd1lx9zOICoTqE=;
+ b=EtkFVJ4P6kPq5zDhchMj44e/ao7tDFLAS5fHqVSp67Vc69oau+0lapCkGg4FAIEK0Y
+ 3FwfBUpis4d+hn4MaQNoyQBYMD1RzN/d7yIslSCMyjynMvOsCK3htGSvk4XqFeC4X/wx
+ Ng74LeujzCDpUAcRKt9CGQw99YaEJdmHfcppaoRR7H8krAU5zuB6vga4msDAkdoKqgO9
+ AvuMS8NRgieEf/lICbyIfw7UrGkFiJvFPJvRPLYgJMxXl2KfNjOYKmHwDvRh79gARiHM
+ ac7Y9lL/7d0CiyZHui9LyXZ5U43j7xh/hXw2H6xTd9SkY/I/KkrKa1zkwgoCosFqrk2U
+ jTMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=buqvW+rh8aGkpkt6IACKm4M4fmbaWcmA3j17X8abtHA=;
- b=D7X5C5ocoSOhZ4sQbh/fJyAajDz/UPXNe1j6jBTqnbfu5is+RKNO49asnrW6osJPGo
- Zhn0Tu4lKnPSs3phMS8ASsHvOCEJQVN6HsAspxa62mr33cDi6fbxRJriknet8HQDQ/t3
- v/UmWm2cNyfyCfgP2t2LaitMr4WDPZWcX/maKCHQYkIs7vt9Sz263YqOnVxdJ/PPgua4
- h/fttKEdm46KbovLG3JlzUMgbT9yF/LWDuVIESMycsdgJph3ZcmqJj0Bl+5y83usT7Ij
- 6kTfIdrOhXfO4hEeb7jFfYX8i7VL5blOMiHNFlKirFYbAFioc+jQWtXSsPYOx663aGdt
- 5aBg==
-X-Gm-Message-State: AGi0PuZQaRzS0EjF4PASOcnbpFXZa/wL4p+uMLeXDFAoFEsxXQchE4MZ
- Nuh02nwbzQzSY6vscRsPxaE=
-X-Google-Smtp-Source: APiQypK10yXfw/ApupMZEh8RomMmpTZfJoDiWwllfVAKE0XMN2fASSf+G5DjYOUuv0o/FowDJZafKQ==
-X-Received: by 2002:a1c:f20c:: with SMTP id s12mr1544202wmc.83.1586893877796; 
- Tue, 14 Apr 2020 12:51:17 -0700 (PDT)
+ bh=wmfcMhvG8Z0vEINCyaO7pmox4TkBpgd1lx9zOICoTqE=;
+ b=PDcV3U4fBI5zbtW+eZk2nSmti9jwlrbDeBPebXSUy4Fg9HNZ6piHlU5wdee3ofpuq3
+ 4GFUeIVYWzOFD8j+VidG21/uIta3cbCMg9DOTuOl3jkinTbsBakqG7eLzmLipCqz/r8E
+ OxZeBij6wLQrpH6L00fZ7AwkpBMtHunZlg1B4XRJaAPc97FQsu/9ifs40CPs5/9sni6u
+ CHEU5bIf01UlqI0nbg9OiN2ZnffYdG0GWQtqO+KRZPE8AAHpfwxmHNYF7Ok3xzk6qUmM
+ mrcXtKPM/tXAxTVdU2gAa2r7xTxcp7xPZKtZZ3p8UZ+CNzwtsj6g6/8hdYaZXLtPzOp5
+ +anA==
+X-Gm-Message-State: AGi0Puagwty5+ap6mLc1NBW1VT6Co46rG2W5BJRXl/qOxo71GCpeWAEF
+ hVR4GUpvIHboMV8VDiu6fl0=
+X-Google-Smtp-Source: APiQypIRkBwsxASMLC6HHXJ5UwuAZ6o8hDlK7RWcSFluHkg0o2JANop6K6rTzyBdwrXR4xh1aml9rQ==
+X-Received: by 2002:a1c:e1c1:: with SMTP id y184mr1450299wmg.143.1586893878852; 
+ Tue, 14 Apr 2020 12:51:18 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F13717DF00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3717:df00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id s14sm20886844wme.33.2020.04.14.12.51.16
+ by smtp.googlemail.com with ESMTPSA id s14sm20886844wme.33.2020.04.14.12.51.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 12:51:17 -0700 (PDT)
+ Tue, 14 Apr 2020 12:51:18 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH v2 1/2] clk: meson: gxbb: Prepare the GPU clock tree to change
+Subject: [PATCH v2 2/2] clk: meson: g12a: Prepare the GPU clock tree to change
  at runtime
-Date: Tue, 14 Apr 2020 21:50:30 +0200
-Message-Id: <20200414195031.224021-2-martin.blumenstingl@googlemail.com>
+Date: Tue, 14 Apr 2020 21:50:31 +0200
+Message-Id: <20200414195031.224021-3-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
 References: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_125120_169738_A8758DDB 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20200414_125120_547993_4DA81D73 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -124,14 +124,14 @@ clocks (these are reserved for audio).
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/clk/meson/gxbb.c | 40 ++++++++++++++++++++++------------------
- 1 file changed, 22 insertions(+), 18 deletions(-)
+ drivers/clk/meson/g12a.c | 30 ++++++++++++++++++++++--------
+ 1 file changed, 22 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/clk/meson/gxbb.c b/drivers/clk/meson/gxbb.c
-index 5fd6a574f8c3..0a68af6eec3d 100644
---- a/drivers/clk/meson/gxbb.c
-+++ b/drivers/clk/meson/gxbb.c
-@@ -957,7 +957,9 @@ static struct clk_regmap gxbb_sar_adc_clk = {
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index fad616cac01e..30c15766ebb1 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -3702,7 +3702,9 @@ static struct clk_regmap g12a_hdmi = {
  
  /*
   * The MALI IP is clocked by two identical clocks (mali_0 and mali_1)
@@ -140,18 +140,11 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
 + * mux because it does top-to-bottom updates the each clock tree and
 + * switches to the "inactive" one when CLK_SET_RATE_GATE is set.
   */
- 
- static const struct clk_parent_data gxbb_mali_0_1_parent_data[] = {
-@@ -980,14 +982,15 @@ static struct clk_regmap gxbb_mali_0_sel = {
- 	.hw.init = &(struct clk_init_data){
- 		.name = "mali_0_sel",
+ static const struct clk_parent_data g12a_mali_0_1_parent_data[] = {
+ 	{ .fw_name = "xtal", },
+@@ -3726,7 +3728,13 @@ static struct clk_regmap g12a_mali_0_sel = {
  		.ops = &clk_regmap_mux_ops,
--		/*
--		 * bits 10:9 selects from 8 possible parents:
--		 * xtal, gp0_pll, mpll2, mpll1, fclk_div7,
--		 * fclk_div4, fclk_div3, fclk_div5
--		 */
- 		.parent_data = gxbb_mali_0_1_parent_data,
+ 		.parent_data = g12a_mali_0_1_parent_data,
  		.num_parents = 8,
 -		.flags = CLK_SET_RATE_NO_REPARENT,
 +		/*
@@ -164,8 +157,8 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1004,7 +1007,7 @@ static struct clk_regmap gxbb_mali_0_div = {
- 			&gxbb_mali_0_sel.hw
+@@ -3743,7 +3751,7 @@ static struct clk_regmap g12a_mali_0_div = {
+ 			&g12a_mali_0_sel.hw
  		},
  		.num_parents = 1,
 -		.flags = CLK_SET_RATE_NO_REPARENT,
@@ -173,8 +166,8 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1020,7 +1023,7 @@ static struct clk_regmap gxbb_mali_0 = {
- 			&gxbb_mali_0_div.hw
+@@ -3759,7 +3767,7 @@ static struct clk_regmap g12a_mali_0 = {
+ 			&g12a_mali_0_div.hw
  		},
  		.num_parents = 1,
 -		.flags = CLK_SET_RATE_PARENT,
@@ -182,16 +175,9 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1033,14 +1036,15 @@ static struct clk_regmap gxbb_mali_1_sel = {
- 	.hw.init = &(struct clk_init_data){
- 		.name = "mali_1_sel",
+@@ -3774,7 +3782,13 @@ static struct clk_regmap g12a_mali_1_sel = {
  		.ops = &clk_regmap_mux_ops,
--		/*
--		 * bits 10:9 selects from 8 possible parents:
--		 * xtal, gp0_pll, mpll2, mpll1, fclk_div7,
--		 * fclk_div4, fclk_div3, fclk_div5
--		 */
- 		.parent_data = gxbb_mali_0_1_parent_data,
+ 		.parent_data = g12a_mali_0_1_parent_data,
  		.num_parents = 8,
 -		.flags = CLK_SET_RATE_NO_REPARENT,
 +		/*
@@ -204,8 +190,8 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1057,7 +1061,7 @@ static struct clk_regmap gxbb_mali_1_div = {
- 			&gxbb_mali_1_sel.hw
+@@ -3791,7 +3805,7 @@ static struct clk_regmap g12a_mali_1_div = {
+ 			&g12a_mali_1_sel.hw
  		},
  		.num_parents = 1,
 -		.flags = CLK_SET_RATE_NO_REPARENT,
@@ -213,8 +199,8 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1073,7 +1077,7 @@ static struct clk_regmap gxbb_mali_1 = {
- 			&gxbb_mali_1_div.hw
+@@ -3807,7 +3821,7 @@ static struct clk_regmap g12a_mali_1 = {
+ 			&g12a_mali_1_div.hw
  		},
  		.num_parents = 1,
 -		.flags = CLK_SET_RATE_PARENT,
@@ -222,9 +208,9 @@ index 5fd6a574f8c3..0a68af6eec3d 100644
  	},
  };
  
-@@ -1093,7 +1097,7 @@ static struct clk_regmap gxbb_mali = {
+@@ -3827,7 +3841,7 @@ static struct clk_regmap g12a_mali = {
  		.ops = &clk_regmap_mux_ops,
- 		.parent_hws = gxbb_mali_parent_hws,
+ 		.parent_hws = g12a_mali_parent_hws,
  		.num_parents = 2,
 -		.flags = CLK_SET_RATE_NO_REPARENT,
 +		.flags = CLK_SET_RATE_PARENT,
