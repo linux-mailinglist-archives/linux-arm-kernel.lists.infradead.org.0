@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEA351A717F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 05:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4725B1A7180
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 05:08:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=soC+eOOe0Sp3oSIMP6pdYWKxbMkAstzCsIy9on9YqVY=; b=G7uxZcMbCPkjJ2
-	ea10DayUtKsnK0nZ1fZzy2La/BSZoLKWDjlBFc7BlriDAcMyLIPSTfrI57vRBeCE8dVJwX18vXota
-	o8azkGm7xMkiMgUAMajal6k73NuFruU0v1jHLyV8H1/sTzaYUqSWNFvwIcYfHa0EvsZsUPmH6Krj+
-	erRV0U94UkM1e2kY1NLmNO9QhWXeqg9KVN+KyXwAwFH/uoQmGTA32tFaiyIYWkjoeJCFJPa2PRTVh
-	cFtuS6X7yyhhtq2wOr+/bLNoC0CcJt2GKyavlrjQVcfgiXOjqPB+uolEIOzHXJ3G0jQLSIzT9an8s
-	31i+iTIJQ8Ov9biY54hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CjYydDLvOn6aoXUUvlNnF249n1y0xzgkhQh1cDePW40=; b=XIqcQ23K4S6bRZ
+	WNgMyaaOL0t8BxMBb5sNpgX/T9Ro1H+YNY+oYToVWjr+T+/6G+kfgWM5wdNfi4PcAFoU43PinV3c9
+	HQva+9mGyPZ5r2cNg3GCgG+mSN0jqm5qfhtPmV8exxCBuxrJVU9WzrvbKNIFQci1C+DH1rPrcfvHH
+	YPveUuAqCD84cnrpEueUPIcDV1CKnnWeJp4Oe+G3Htxdl29lC/wGl3w/Lj6iGe5lKRFf7g+MxaVPS
+	9AY+RW2eF2uco5Es6BcdJndVz45K+qWpQKH+Kd9+BsX5w5BrCQqXrIxaRD3CE+xpl7zqx/tZA1rvd
+	krD/DuZAA4sS37lUzL7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOBwA-0008Q4-E1; Tue, 14 Apr 2020 03:08:34 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jOBwS-0000Cu-EF; Tue, 14 Apr 2020 03:08:52 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOBvz-0008Ok-RJ
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 03:08:25 +0000
-Received: by mail-pg1-x544.google.com with SMTP id w11so5377519pga.12
+ id 1jOBw3-0008R9-JS
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 03:08:28 +0000
+Received: by mail-pg1-x541.google.com with SMTP id w11so5377580pga.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 Apr 2020 20:08:22 -0700 (PDT)
+ Mon, 13 Apr 2020 20:08:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sK5J9WWtksNX77+NYMwDl6iDZ21wbSLhPOx9BD2BM8M=;
- b=LSXUefafyRPCK1BKfVXiyl8L6XfmghKkzW97uJsOEM4gDKMgCfDopHvzMyxX9Myj88
- Gl5rTEhzpS1OYgiBDgymvERjRoXimxL5xwpDoZPX/ySaHiEso7gshkntX1zU3eV/rMje
- P7odV0SrY0XzqZfAZFoea4TeBlA+Wp45m+108=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=5zRLvY/lFyVA8CmcHxoztfhLeB6Hcp8Rb9myeLFGE2Y=;
+ b=n2G/G4BdsXylPAXJFcQRTVHOuqsJKdpWbXtgpE0vRfTZ6zqn5UOIvHQK/E6B09RbBb
+ LDa0XYcYzYD5v7gjcGLOmaVvkxWAgoIi8UKyC9Xpli+XMHphDtBdltPVBndKpUx5BNVR
+ iPSvizo2wr2JHDiXX3MwqKvyQJlQ25Ua8hL7Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sK5J9WWtksNX77+NYMwDl6iDZ21wbSLhPOx9BD2BM8M=;
- b=X1BqSQIyirrJZ2x4qAgpkIYWg3yqezMknd5e+m4mQfWmgIp5Ng6wfRNeLTiOG36h2b
- wbpF5/GRuJ6Pn7GmmnLxYWqZVZUQYRYbsf58NnGgWRN9mckPm8a3Zo8Q45FedR0lqMEY
- uYc8/Ydj9/cEZRfwxe/PcXB6N595SBtHNlB6cbRpF4B2kty+/6t95Bk36XgPtFqJZcjX
- 1HFbIBTK6nQsRtRYeJpniLceMVfbwvv/JKQq5mz/lzrbpKU1pp3l4TTon6XrV2U706c6
- gI3DxbWhvr6TiDkF8YCrh7TLI+K4AZPYvwFZnNu4bkrYVwM5gHS3mVl21OcIH0glPbfv
- M6bA==
-X-Gm-Message-State: AGi0PuYuC+/10QemlgYmE4Q/UdOrz3+LYx29tzzJe1WDy6Z5sbqHXYGj
- eFjtM5VzZwwljgSKAwOiRuKJ3qdMtms=
-X-Google-Smtp-Source: APiQypJQpaS0PH8YnPtS/hZHhI9tNItaYB2TAmhKVyqtt1h2PIezqUr6JFZ0U4VOiU7IsrqBf+3Iqg==
-X-Received: by 2002:a63:6287:: with SMTP id
- w129mr10337254pgb.410.1586833702123; 
- Mon, 13 Apr 2020 20:08:22 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=5zRLvY/lFyVA8CmcHxoztfhLeB6Hcp8Rb9myeLFGE2Y=;
+ b=RjQJ6FMVQVlIksz0l6zv8XKUbfkyTJkh8qbxwAILI1R8J5Cau5kjuUy93Dfvg/fZ8J
+ 32as9ILAOSNPoEpB9fRL3yvNZtW9Ar9lcHc1kwyOnF1o60biJvjCtMEiRLdHKqA1aI2W
+ yLPAVAgSYkYa0HmY7DsramK15QE6fLFAEwUcfjT3FQ5/GD3dUmG50FMYWbgfREnX5Q2t
+ o1xLpF+mDOJsIFEyACZMRw8nnmFYuh1dN5NP3jy98Jxz78CysbC14EfhP0PNA+RuXe2K
+ 7027y6b6DSvQqWG0cuqn3siUAU9eFY1uf9xxURCrYlzb5LtbxDjG9yExlk1gQeN3YxCo
+ Zhvg==
+X-Gm-Message-State: AGi0PuZ56VArQneaOu0OXoynpW1SmyAvHKHa//1b3nsz2qMjhbZditFD
+ kYzuQConSCCddsEhbttJ73X2bHG5jiQ=
+X-Google-Smtp-Source: APiQypLDqSi+uJwrfXUjYacymxQYaq/+/Ey0TiNm/1+jCiQfoIEMLFJm77pkr/oXOdsSGluRuYv5UA==
+X-Received: by 2002:a62:1a4e:: with SMTP id a75mr8921678pfa.235.1586833706151; 
+ Mon, 13 Apr 2020 20:08:26 -0700 (PDT)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id z23sm3610897pfr.136.2020.04.13.20.08.19
+ by smtp.gmail.com with ESMTPSA id z23sm3610897pfr.136.2020.04.13.20.08.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Apr 2020 20:08:21 -0700 (PDT)
+ Mon, 13 Apr 2020 20:08:25 -0700 (PDT)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org
-Subject: [PATCH 1/2] arm64: dts: mt8173: fix mdp aliases property name
-Date: Tue, 14 Apr 2020 11:08:14 +0800
-Message-Id: <20200414030815.192104-1-hsinyi@chromium.org>
+Subject: [PATCH 2/2] media: mtk-mdp: Use correct aliases name
+Date: Tue, 14 Apr 2020 11:08:15 +0800
+Message-Id: <20200414030815.192104-2-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.26.0.110.g2183baf09c-goog
+In-Reply-To: <20200414030815.192104-1-hsinyi@chromium.org>
+References: <20200414030815.192104-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_200823_880794_3F9B6244 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200413_200827_654657_B944CB81 
+X-CRM114-Status: GOOD (  10.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,41 +106,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix warning:
-Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+aliases property name must include only lowercase and '-'. Fix in dts
+and driver.
 
 Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8173.dtsi | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/media/platform/mtk-mdp/mtk_mdp_comp.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-index a212bf124e81..d1e9c41004b4 100644
---- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-@@ -42,14 +42,14 @@ aliases {
- 		dpi0 = &dpi0;
- 		dsi0 = &dsi0;
- 		dsi1 = &dsi1;
--		mdp_rdma0 = &mdp_rdma0;
--		mdp_rdma1 = &mdp_rdma1;
--		mdp_rsz0 = &mdp_rsz0;
--		mdp_rsz1 = &mdp_rsz1;
--		mdp_rsz2 = &mdp_rsz2;
--		mdp_wdma0 = &mdp_wdma0;
--		mdp_wrot0 = &mdp_wrot0;
--		mdp_wrot1 = &mdp_wrot1;
-+		mdp-rdma0 = &mdp_rdma0;
-+		mdp-rdma1 = &mdp_rdma1;
-+		mdp-rsz0 = &mdp_rsz0;
-+		mdp-rsz1 = &mdp_rsz1;
-+		mdp-rsz2 = &mdp_rsz2;
-+		mdp-wdma0 = &mdp_wdma0;
-+		mdp-wrot0 = &mdp_wrot0;
-+		mdp-wrot1 = &mdp_wrot1;
- 		serial0 = &uart0;
- 		serial1 = &uart1;
- 		serial2 = &uart2;
+diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
+index 14991685adb7..58abfbdfb82d 100644
+--- a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
++++ b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
+@@ -15,10 +15,10 @@
+ 
+ 
+ static const char * const mtk_mdp_comp_stem[MTK_MDP_COMP_TYPE_MAX] = {
+-	"mdp_rdma",
+-	"mdp_rsz",
+-	"mdp_wdma",
+-	"mdp_wrot",
++	"mdp-rdma",
++	"mdp-rsz",
++	"mdp-wdma",
++	"mdp-wrot",
+ };
+ 
+ struct mtk_mdp_comp_match {
 -- 
 2.26.0.110.g2183baf09c-goog
 
