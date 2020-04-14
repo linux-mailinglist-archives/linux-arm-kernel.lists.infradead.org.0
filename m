@@ -2,87 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D12821A8D1C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B73D01A8DAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPxf0aQI6KIdfNcX2N6ez/6MlbHGgaCsd9I7hOgJ3po=; b=cpLBfQGd7T2fWX
-	RlkpAKpQ+MfGN9QkR4LNTRf0zLeb2RucNGVjlpwZgImqh+ovIf9sRCvQAnErj2qsweil0znbp+KhC
-	LDsiSpASc5J0YfCrjNGN2MT22cpizDMs0D6rYFOslC8glDPmutwp7BoXADYjmQKNq4G9fh5GoEN4x
-	KlaSt2W9EcOXWvEgqBh/fdpAerevs0YoXMMo0vWSBdSP3LTjpZ00doayyaTW89ZGRuiaK4Q/9y8uY
-	KVfKq0DSpz9xpGg4p1/YvtxXLI7ytFUiVzo//K/9xmi7BxsWrjTGQaLL8sI5UtzKMfvH1eSIsKqsi
-	/AgrZfIKNikd2EAsyrlQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V3EjUkr6pZbcqX9cvnIJ6Eqlo8q0tvnMfJJLab1JCVo=; b=Y3j41dcWNCXuxu
+	e16NHtt5yPLoD9NOngr+9+0jNOn5WzC75vFOx6qJ+Y86peuA7hMujbz6jnIMYNbRjo3BTaMZe4+gl
+	jkVAyv/QvR4WutC3AerN7DcqCju4RL7CjCudA+MoFFOhFpHfG+Jp/0F92AlJjZVCW6j9J77QlCz2X
+	QYeeAL1MQxBAX2JHU4WipK0GXsft/FPGIbrH32xVLIYaoT8UbjlZuqFwyKtMvJ7hZhsMYbZ4eVFzc
+	gUuQnPbgvngit7NJt4FzLLaPodiTYrmbxq7W3AfauZJZsNT+7xeeqkv5gH1ixMte9tjStwuLDfimp
+	XrjF8dF7qA6RnWYhMKyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOShg-0007zW-Kw; Tue, 14 Apr 2020 21:02:44 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jOT9Z-00020L-Pd; Tue, 14 Apr 2020 21:31:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOShW-0007yz-69; Tue, 14 Apr 2020 21:02:35 +0000
-Received: by mail-ot1-f66.google.com with SMTP id e20so1231112otl.2;
- Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1nuyaAjNqXWnHHUJzL2XAoGa0wH4Zq86LiHy6nqxsJQ=;
- b=SGaH/mk82EDwIrMIRBIWEO3wNZI1yqPuUe+oMV+XnQ9eAcmp1NkIhadvDED6EWwwpQ
- 2PkOa1jGrTyMUw7bfijZ+mA4DC+HP6hXDbR7JJQgn++qIkPhDp4ICPkxZRPoWnD6lT0b
- KTG/zW4YyX05CQyNG/UquD2xYhRXSQh+w/OA3Mvig2wU4G45FiXZyF7d1MwdnMHzZY8j
- JzAbQH9IOg/ZJN8cvYa+2kA4U6GUkveFukMCxiDeRjxg2petDKbwwabJSWf+HC+Kss3X
- fYRcdPsnDppTmYuDSA1nX/KrFwY2lOK8R4oqwOr6LDM+QmmyZK9nMJzbwRESQ5T1gM1n
- stUQ==
-X-Gm-Message-State: AGi0PuZ6yPovmXaDQkNObiVGjRZ3XfmI8pR9bsYLgPaLCNc01yfRE9Cq
- oV+abyxe7rX6WsArfOVotA==
-X-Google-Smtp-Source: APiQypKapzYt9/7Q7GX3xQeCXyCjneXL8ofq3ZPCgF3NijaDtaMlETjB5mxGRQw13Z/0NIvx/NAIzg==
-X-Received: by 2002:a05:6830:573:: with SMTP id
- f19mr11105288otc.195.1586898153253; 
- Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s73sm1425254oih.14.2020.04.14.14.02.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 14:02:32 -0700 (PDT)
-Received: (nullmailer pid 5278 invoked by uid 1000);
- Tue, 14 Apr 2020 21:02:31 -0000
-Date: Tue, 14 Apr 2020 16:02:31 -0500
-From: Rob Herring <robh@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH v2 28/33] docs: dt: rockchip, dwc3.txt: fix a pointer to a
- renamed file
-Message-ID: <20200414210231.GA5218@bogus>
-References: <cover.1586881715.git.mchehab+huawei@kernel.org>
- <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
+ id 1jOT9R-0001ze-QD
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 21:31:27 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F369320644;
+ Tue, 14 Apr 2020 21:31:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586899884;
+ bh=qeG55Sjfpyu47bFN+MIW7aw5s10goy92+ZhxxXPxgLA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=GJNTUFI7Ga6QB1tE8ADU5wTm6J3Znm9yDhnzk02eI1nHt2RXGL4ZBivouf8AzK+H+
+ 2r5KYB9HelKtM8LlTi5bi8/yFDKY3Jc0nUnhKXbOhKJDDy3xVyDIdguYTF0m7M0M8Z
+ E6cmcsfaMMjenVFhUnJb+ao24FOPYE0P4rxLGmRE=
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org,
+	kvmarm@lists.cs.columbia.edu
+Subject: [PATCH 0/8] Relax sanity checking for mismatched AArch32 EL1
+Date: Tue, 14 Apr 2020 22:31:06 +0100
+Message-Id: <20200414213114.2378-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_140234_225304_9D23B6FE 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_143125_873563_1BF32B87 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,32 +75,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>, kernel-team@android.com,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Doug Anderson <dianders@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 14 Apr 2020 18:48:54 +0200, Mauro Carvalho Chehab wrote:
-> phy-rockchip-inno-usb2.txt was converted to yaml.
-> 
-> Fix the corresponding reference.
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
->  Documentation/devicetree/bindings/usb/rockchip,dwc3.txt | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+Hi all,
 
-Applied, thanks.
+For better or worse, there are SoCs in production where some, but not
+all of the CPUs, support AArch32 at EL1 and above. Right now, that
+results in "SANITY CHECK" warnings during boot and an unconditional
+kernel taint.
 
-Rob
+This patch series tries to do a bit better: the only time we care about
+AArch32 at EL1 is for KVM, so rather than throw our toys out of the
+pram, we can instead just disable support for 32-bit guests on these
+systems. In the unlikely scenario of a late CPU hotplug being the first
+time we notice that AArch32 is not available, then we fail the hotplug
+(right now we let the thing come online, which leads to hilarious
+results for any pre-existing 32-bit guests).
+
+Feedback welcome,
+
+Will
+
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Cc: Doug Anderson <dianders@chromium.org>
+Cc: kernel-team@android.com
+
+--->8
+
+Sai Prakash Ranjan (1):
+  arm64: cpufeature: Relax check for IESB support
+
+Will Deacon (7):
+  arm64: cpufeature: Spell out register fields for ID_ISAR4 and ID_PFR1
+  arm64: cpufeature: Add CPU capability for AArch32 EL1 support
+  arm64: cpufeature: Remove redundant call to id_aa64pfr0_32bit_el0()
+  arm64: cpufeature: Factor out checking of AArch32 features
+  arm64: cpufeature: Relax AArch32 system checks if EL1 is 64-bit only
+  arm64: cpufeature: Relax checks for AArch32 support at EL[0-2]
+  arm64: cpufeature: Add an overview comment for the cpufeature
+    framework
+
+ arch/arm64/include/asm/cpucaps.h    |   3 +-
+ arch/arm64/include/asm/cpufeature.h |   7 +
+ arch/arm64/include/asm/sysreg.h     |  18 +++
+ arch/arm64/kernel/cpufeature.c      | 236 +++++++++++++++++++++-------
+ arch/arm64/kvm/reset.c              |  12 +-
+ 5 files changed, 206 insertions(+), 70 deletions(-)
+
+-- 
+2.26.0.110.g2183baf09c-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
