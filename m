@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE70E1A79F1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:46:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2102B1A79FB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:46:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GXJUsYgt8TdFL7j1zBtmPT1tciPBNP8GUJdEwhcHQsg=; b=OUaYU5QyzLgZpQOl+KYToXg2Nn
-	w/0Fvhb1xF93w9cznUQ0JPFAVEHswF+rVIC0kzlG4wSah0/HWY22nn+P4+VM8w4b8Vdjpbe8ISI+f
-	7olrBZhy7Hu08dXOOn4SyfOpTRKxm00huJDFyvugdLQ8GeAZ5tCprbMBTZpBSuq27jFHNA7/LXUa6
-	nxF+HDyNKmVaeAR4DZVsVR4PowH6Kb6O2i3wSsaprc7LTuix5zE/tizmqhtMJp6Orbo+y7NWZhhyr
-	Xcp2zXQ6YLYwoYh384uqresdcAzt0u2ePJGbjvqyZPLspa8ou2jJfEXI5Hj0Om3gcwCn8PKQzKsAU
-	xRovtN3A==;
+	bh=ulV5wWzJwxpAE6DsCZwuh05Dxtb5TxQpnKvStuMy2mU=; b=uH0d9VgJMmaqa0kmNzaXN1xJAX
+	6xmEkMTmDNMg1LjoAvmUyFmtlkmGjGxaib2YOl6JMx/oLktm/wrExvRjUlzTEYFV63v8CBXe46uIi
+	SoaXo1cELk7/NRE0EObWdfv7oEm9wNBP8o1S/DMi6SGo6+f9trPSKOdyxDoiQS0jSgvqYB/Iq7Aea
+	U4Q42nf2qiQQ+IuRoX+azNV9GeXIpsk6gp8OjddGH9BXgkIWzSm0HsBaiQWluuqzesc2TaUUbPEqr
+	7fJafpfPbt8QWsaGLkEcy9nMDYlIk/LihN4brScLPpG1PkijPWIjToMqNLmJKwB6SwwHYTk6VeGjP
+	yMwl2nLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOK0u-0004DN-Rs; Tue, 14 Apr 2020 11:46:00 +0000
+	id 1jOK1S-0004ll-8z; Tue, 14 Apr 2020 11:46:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOK03-0001vv-PV; Tue, 14 Apr 2020 11:45:11 +0000
+ id 1jOK0D-0003oB-3r; Tue, 14 Apr 2020 11:45:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10ADC1FB;
- Tue, 14 Apr 2020 04:45:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A672B1FB;
+ Tue, 14 Apr 2020 04:45:16 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0806F3F6C4;
- Tue, 14 Apr 2020 04:44:55 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8B1B93F6C4;
+ Tue, 14 Apr 2020 04:45:06 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH 2/3] mm/hugetlb: Introduce HAVE_ARCH_IS_HUGEPAGE_ONLY_RANGE
-Date: Tue, 14 Apr 2020 17:14:29 +0530
-Message-Id: <1586864670-21799-3-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH 3/3] mm/hugetlb: Introduce HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
+Date: Tue, 14 Apr 2020 17:14:30 +0530
+Message-Id: <1586864670-21799-4-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586864670-21799-1-git-send-email-anshuman.khandual@arm.com>
 References: <1586864670-21799-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_044508_307120_EF76809D 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20200414_044517_302906_54726B1A 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -87,11 +87,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are multiple similar definitions for is_hugepage_only_range() across
-platforms. This introduces HAVE_ARCH_IS_HUGEPAGE_ONLY_RANGE for platforms
-that need to define their own is_hugepage_only_range() but otherwise there
-is a generic fallback definition for others to use. This help reduce code
-duplication.
+There are multiple similar definitions for arch_clear_hugepage_flags() on
+various platforms. This introduces HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS for those
+platforms that need to define their own arch_clear_hugepage_flags() while
+also providing a generic fallback definition for others to use. This help
+reduce code duplication.
 
 Cc: Russell King <linux@armlinux.org.uk>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
@@ -132,213 +132,179 @@ Cc: linux-arch@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm/include/asm/hugetlb.h     | 6 ------
- arch/arm64/include/asm/hugetlb.h   | 6 ------
- arch/ia64/include/asm/hugetlb.h    | 1 +
- arch/mips/include/asm/hugetlb.h    | 7 -------
- arch/parisc/include/asm/hugetlb.h  | 6 ------
- arch/powerpc/include/asm/hugetlb.h | 1 +
- arch/riscv/include/asm/hugetlb.h   | 6 ------
- arch/s390/include/asm/hugetlb.h    | 7 -------
- arch/sh/include/asm/hugetlb.h      | 6 ------
- arch/sparc/include/asm/hugetlb.h   | 6 ------
- arch/x86/include/asm/hugetlb.h     | 6 ------
- include/linux/hugetlb.h            | 8 ++++++++
- 12 files changed, 10 insertions(+), 56 deletions(-)
+ arch/arm/include/asm/hugetlb.h     | 1 +
+ arch/arm64/include/asm/hugetlb.h   | 1 +
+ arch/ia64/include/asm/hugetlb.h    | 4 ----
+ arch/mips/include/asm/hugetlb.h    | 4 ----
+ arch/parisc/include/asm/hugetlb.h  | 4 ----
+ arch/powerpc/include/asm/hugetlb.h | 4 ----
+ arch/riscv/include/asm/hugetlb.h   | 4 ----
+ arch/s390/include/asm/hugetlb.h    | 1 +
+ arch/sh/include/asm/hugetlb.h      | 1 +
+ arch/sparc/include/asm/hugetlb.h   | 4 ----
+ arch/x86/include/asm/hugetlb.h     | 4 ----
+ include/linux/hugetlb.h            | 4 ++++
+ 12 files changed, 8 insertions(+), 28 deletions(-)
 
 diff --git a/arch/arm/include/asm/hugetlb.h b/arch/arm/include/asm/hugetlb.h
-index 318dcf5921ab..9ecd516d1ff7 100644
+index 9ecd516d1ff7..7107c1e6f020 100644
 --- a/arch/arm/include/asm/hugetlb.h
 +++ b/arch/arm/include/asm/hugetlb.h
-@@ -14,12 +14,6 @@
+@@ -14,6 +14,7 @@
  #include <asm/hugetlb-3level.h>
  #include <asm-generic/hugetlb.h>
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr, unsigned long len)
--{
--	return 0;
--}
--
++#define HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
  static inline void arch_clear_hugepage_flags(struct page *page)
  {
  	clear_bit(PG_dcache_clean, &page->flags);
 diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
-index b88878ddc88b..8f58e052697a 100644
+index 8f58e052697a..5369cf26a05d 100644
 --- a/arch/arm64/include/asm/hugetlb.h
 +++ b/arch/arm64/include/asm/hugetlb.h
-@@ -17,12 +17,6 @@
+@@ -17,6 +17,7 @@
  extern bool arch_hugetlb_migration_supported(struct hstate *h);
  #endif
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr, unsigned long len)
--{
--	return 0;
--}
--
++#define HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
  static inline void arch_clear_hugepage_flags(struct page *page)
  {
  	clear_bit(PG_dcache_clean, &page->flags);
 diff --git a/arch/ia64/include/asm/hugetlb.h b/arch/ia64/include/asm/hugetlb.h
-index 36cc0396b214..f17c1e228045 100644
+index f17c1e228045..2ecff18a32e5 100644
 --- a/arch/ia64/include/asm/hugetlb.h
 +++ b/arch/ia64/include/asm/hugetlb.h
-@@ -13,6 +13,7 @@ void hugetlb_free_pgd_range(struct mmu_gather *tlb, unsigned long addr,
- int prepare_hugepage_range(struct file *file,
- 			unsigned long addr, unsigned long len);
+@@ -28,10 +28,6 @@ static inline void huge_ptep_clear_flush(struct vm_area_struct *vma,
+ {
+ }
  
-+#define HAVE_ARCH_IS_HUGEPAGE_ONLY_RANGE
- static inline int is_hugepage_only_range(struct mm_struct *mm,
- 					 unsigned long addr,
- 					 unsigned long len)
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
+-}
+-
+ #include <asm-generic/hugetlb.h>
+ 
+ #endif /* _ASM_IA64_HUGETLB_H */
 diff --git a/arch/mips/include/asm/hugetlb.h b/arch/mips/include/asm/hugetlb.h
-index 425bb6fc3bda..8b201e281f67 100644
+index 8b201e281f67..10e3be870df7 100644
 --- a/arch/mips/include/asm/hugetlb.h
 +++ b/arch/mips/include/asm/hugetlb.h
-@@ -11,13 +11,6 @@
+@@ -75,10 +75,6 @@ static inline int huge_ptep_set_access_flags(struct vm_area_struct *vma,
+ 	return changed;
+ }
  
- #include <asm/page.h>
- 
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len)
+-static inline void arch_clear_hugepage_flags(struct page *page)
 -{
--	return 0;
 -}
 -
- #define __HAVE_ARCH_PREPARE_HUGEPAGE_RANGE
- static inline int prepare_hugepage_range(struct file *file,
- 					 unsigned long addr,
+ #include <asm-generic/hugetlb.h>
+ 
+ #endif /* __ASM_HUGETLB_H */
 diff --git a/arch/parisc/include/asm/hugetlb.h b/arch/parisc/include/asm/hugetlb.h
-index 7cb595dcb7d7..411d9d867baa 100644
+index 411d9d867baa..a69cf9efb0c1 100644
 --- a/arch/parisc/include/asm/hugetlb.h
 +++ b/arch/parisc/include/asm/hugetlb.h
-@@ -12,12 +12,6 @@ void set_huge_pte_at(struct mm_struct *mm, unsigned long addr,
- pte_t huge_ptep_get_and_clear(struct mm_struct *mm, unsigned long addr,
- 			      pte_t *ptep);
+@@ -42,10 +42,6 @@ int huge_ptep_set_access_flags(struct vm_area_struct *vma,
+ 					     unsigned long addr, pte_t *ptep,
+ 					     pte_t pte, int dirty);
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len) {
--	return 0;
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
 -}
 -
- /*
-  * If the arch doesn't supply something else, assume that hugepage
-  * size aligned regions are ok without further preparation.
+ #include <asm-generic/hugetlb.h>
+ 
+ #endif /* _ASM_PARISC64_HUGETLB_H */
 diff --git a/arch/powerpc/include/asm/hugetlb.h b/arch/powerpc/include/asm/hugetlb.h
-index bd6504c28c2f..9dd50e1e4fe5 100644
+index 9dd50e1e4fe5..d259e056e6cf 100644
 --- a/arch/powerpc/include/asm/hugetlb.h
 +++ b/arch/powerpc/include/asm/hugetlb.h
-@@ -22,6 +22,7 @@ void flush_dcache_icache_hugepage(struct page *page);
- int slice_is_hugepage_only_range(struct mm_struct *mm, unsigned long addr,
- 			   unsigned long len);
+@@ -61,10 +61,6 @@ int huge_ptep_set_access_flags(struct vm_area_struct *vma,
+ 			       unsigned long addr, pte_t *ptep,
+ 			       pte_t pte, int dirty);
  
-+#define HAVE_ARCH_IS_HUGEPAGE_ONLY_RANGE
- static inline int is_hugepage_only_range(struct mm_struct *mm,
- 					 unsigned long addr,
- 					 unsigned long len)
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
+-}
+-
+ #include <asm-generic/hugetlb.h>
+ 
+ #else /* ! CONFIG_HUGETLB_PAGE */
 diff --git a/arch/riscv/include/asm/hugetlb.h b/arch/riscv/include/asm/hugetlb.h
-index 728a5db66597..866f6ae6467c 100644
+index 866f6ae6467c..a5c2ca1d1cd8 100644
 --- a/arch/riscv/include/asm/hugetlb.h
 +++ b/arch/riscv/include/asm/hugetlb.h
-@@ -5,12 +5,6 @@
+@@ -5,8 +5,4 @@
  #include <asm-generic/hugetlb.h>
  #include <asm/page.h>
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len) {
--	return 0;
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
 -}
 -
- static inline void arch_clear_hugepage_flags(struct page *page)
- {
- }
+ #endif /* _ASM_RISCV_HUGETLB_H */
 diff --git a/arch/s390/include/asm/hugetlb.h b/arch/s390/include/asm/hugetlb.h
-index de8f0bf5f238..7d27ea96ec2f 100644
+index 7d27ea96ec2f..9f067a66609b 100644
 --- a/arch/s390/include/asm/hugetlb.h
 +++ b/arch/s390/include/asm/hugetlb.h
-@@ -21,13 +21,6 @@ pte_t huge_ptep_get(pte_t *ptep);
- pte_t huge_ptep_get_and_clear(struct mm_struct *mm,
- 			      unsigned long addr, pte_t *ptep);
+@@ -35,6 +35,7 @@ static inline int prepare_hugepage_range(struct file *file,
+ 	return 0;
+ }
  
--static inline bool is_hugepage_only_range(struct mm_struct *mm,
--					  unsigned long addr,
--					  unsigned long len)
--{
--	return false;
--}
--
- /*
-  * If the arch doesn't supply something else, assume that hugepage
-  * size aligned regions are ok without further preparation.
++#define HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
+ static inline void arch_clear_hugepage_flags(struct page *page)
+ {
+ 	clear_bit(PG_arch_1, &page->flags);
 diff --git a/arch/sh/include/asm/hugetlb.h b/arch/sh/include/asm/hugetlb.h
-index 6f025fe18146..536ad2cb8aa4 100644
+index 536ad2cb8aa4..869b5a947f07 100644
 --- a/arch/sh/include/asm/hugetlb.h
 +++ b/arch/sh/include/asm/hugetlb.h
-@@ -5,12 +5,6 @@
- #include <asm/cacheflush.h>
- #include <asm/page.h>
+@@ -26,6 +26,7 @@ static inline void huge_ptep_clear_flush(struct vm_area_struct *vma,
+ {
+ }
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len) {
--	return 0;
--}
--
- /*
-  * If the arch doesn't supply something else, assume that hugepage
-  * size aligned regions are ok without further preparation.
++#define HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
+ static inline void arch_clear_hugepage_flags(struct page *page)
+ {
+ 	clear_bit(PG_dcache_clean, &page->flags);
 diff --git a/arch/sparc/include/asm/hugetlb.h b/arch/sparc/include/asm/hugetlb.h
-index 3963f80d1cb3..a056fe1119f5 100644
+index a056fe1119f5..53838a173f62 100644
 --- a/arch/sparc/include/asm/hugetlb.h
 +++ b/arch/sparc/include/asm/hugetlb.h
-@@ -20,12 +20,6 @@ void set_huge_pte_at(struct mm_struct *mm, unsigned long addr,
- pte_t huge_ptep_get_and_clear(struct mm_struct *mm, unsigned long addr,
- 			      pte_t *ptep);
+@@ -47,10 +47,6 @@ static inline int huge_ptep_set_access_flags(struct vm_area_struct *vma,
+ 	return changed;
+ }
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len) {
--	return 0;
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
 -}
 -
- #define __HAVE_ARCH_HUGE_PTEP_CLEAR_FLUSH
- static inline void huge_ptep_clear_flush(struct vm_area_struct *vma,
- 					 unsigned long addr, pte_t *ptep)
+ #define __HAVE_ARCH_HUGETLB_FREE_PGD_RANGE
+ void hugetlb_free_pgd_range(struct mmu_gather *tlb, unsigned long addr,
+ 			    unsigned long end, unsigned long floor,
 diff --git a/arch/x86/include/asm/hugetlb.h b/arch/x86/include/asm/hugetlb.h
-index f65cfb48cfdd..cc98f79074d0 100644
+index cc98f79074d0..1721b1aadeb1 100644
 --- a/arch/x86/include/asm/hugetlb.h
 +++ b/arch/x86/include/asm/hugetlb.h
-@@ -7,12 +7,6 @@
+@@ -7,8 +7,4 @@
  
  #define hugepages_supported() boot_cpu_has(X86_FEATURE_PSE)
  
--static inline int is_hugepage_only_range(struct mm_struct *mm,
--					 unsigned long addr,
--					 unsigned long len) {
--	return 0;
+-static inline void arch_clear_hugepage_flags(struct page *page)
+-{
 -}
 -
- static inline void arch_clear_hugepage_flags(struct page *page)
- {
- }
+ #endif /* _ASM_X86_HUGETLB_H */
 diff --git a/include/linux/hugetlb.h b/include/linux/hugetlb.h
-index 1e897e4168ac..2342e5a8d1dd 100644
+index 2342e5a8d1dd..359cfa1b6f54 100644
 --- a/include/linux/hugetlb.h
 +++ b/include/linux/hugetlb.h
-@@ -536,6 +536,14 @@ static inline unsigned int blocks_per_huge_page(struct hstate *h)
+@@ -544,6 +544,10 @@ static inline int is_hugepage_only_range(struct mm_struct *mm,
+ }
+ #endif
  
- #include <asm/hugetlb.h>
- 
-+#ifndef HAVE_ARCH_IS_HUGEPAGE_ONLY_RANGE
-+static inline int is_hugepage_only_range(struct mm_struct *mm,
-+					unsigned long addr, unsigned long len)
-+{
-+	return 0;
-+}
++#ifndef HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
++static inline void arch_clear_hugepage_flags(struct page *page) { }
 +#endif
 +
  #ifndef arch_make_huge_pte
