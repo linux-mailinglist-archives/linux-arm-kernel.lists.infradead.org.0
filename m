@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 486E51A7904
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:00:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A22971A790B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 13:01:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LAUgGbDMByHWyiZM1HfBbRx5jgUQgUsolHX3Tj3+wso=; b=pYvkhRZCweVybJ
-	epJ922Jmzq4z8MtcSMvMU2vYbdr+V3hpooV6OgTLSPEa7psWOHbcb9Vet9yj7DTy0qMCsSG7UJ4JR
-	Qcg6ntPRZux7C6islY9PC9dVKBFwuL387n8F81I0Y8Jo1faL34zbtP2Ke5yMPEQJXGdMC+5mPhgwh
-	hVfqaPsnSKjkKETGtzG7NHsabEizyILsUNPiCP1g1Z3BKwt4vEcZY1v0Gy9FGF4W+qeh5nab3O6vY
-	RtU4NXySThEam/tzyD2Q8VjCtxNfvygmrvrqeRr8BVlzyj4YyN1I2N89iFoXSWF6oqUiPGFWK2RZH
-	z2aTap+oNpORvks3JpEQ==;
+	List-Owner; bh=ZbgN95KHJxe8sgM8x/mUoBLqTk3mhfDF8sM2D8sxm6Y=; b=L/Nd6BKxyiyE15
+	DSo+cVsVuZQm8NGGQgTIbTRkda0UX6a7SXtPmpMJ/h6hA1RoOyXzzYNQYpjlc0ijC3nAhHaSDSH07
+	aKernMug889aFwIPsv9eW+HIZGovEBSWYwYitZlda3gdM/y5XdyAL1eEiVz9Fjbs+xk+K0grzISCD
+	M742dMaCPCaMOEqSmusLinsYcu2uRkMoWxr8rlXKQwDM12Kz9SUjI1iqzadOZzzT1R1+OokZcxQnJ
+	T0r0n9zE/tL62iRzSrFSmrekgL2vLDoQZVmzb2yZxN9Bb5yJfu12x11y+RVMOCBsxJCXFNc4VVKUn
+	5vxs8n5nUQBydZgbWJ9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOJIC-0004FE-Pc; Tue, 14 Apr 2020 10:59:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOJI3-0004Ee-0e
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 10:59:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 71FBB1FB;
- Tue, 14 Apr 2020 03:59:38 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.30.4])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 413B03F6C4;
- Tue, 14 Apr 2020 03:59:36 -0700 (PDT)
-Date: Tue, 14 Apr 2020 11:59:23 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Xie XiuQi <xiexiuqi@huawei.com>
-Subject: Re: [PATCH] arm64: panic on synchronous external abort in kernel
- context
-Message-ID: <20200414105923.GA2486@C02TD0UTHF1T.local>
-References: <20200410015245.23230-1-xiexiuqi@huawei.com>
+	id 1jOJJU-0007D0-TS; Tue, 14 Apr 2020 11:01:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOJJO-0007CU-HE
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 11:01:03 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 83C902072D;
+ Tue, 14 Apr 2020 11:01:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586862061;
+ bh=4KfkzKJjz5RIUKdgy04cqT3v8IcNTwfDjxLuBg15CKU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HjUjbR/eiLWaR/rDWLBvSriLUazACWu9IaPJimMjkgUuwRFzpxmQEWuctrVnt0O40
+ kO/dk94ki+h5trKnGOadhSJHifqvgY+Y/DpZJDv++GbgAPrRgQvpgD3nt8QfrW0kKG
+ 57kDP7JH40nT7fI2TvXBM/ERgQ8qjIEqvrTldtA0=
+Date: Tue, 14 Apr 2020 12:00:56 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm64: Optimize ptrauth by enabling it for non-leaf
+ functions
+Message-ID: <20200414110056.GB26395@willie-the-truck>
+References: <1586856741-26839-1-git-send-email-amit.kachhap@arm.com>
+ <20200414100033.GA26395@willie-the-truck>
+ <20200414101649.GC1278@C02TD0UTHF1T.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200410015245.23230-1-xiexiuqi@huawei.com>
+In-Reply-To: <20200414101649.GC1278@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_035939_100145_1F26B8AB 
-X-CRM114-Status: GOOD (  15.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200414_040102_591454_9786B93B 
+X-CRM114-Status: GOOD (  14.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,83 +79,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- tanxiaofei@huawei.com, james.morse@arm.com, tglx@linutronix.de,
- will@kernel.org, wangxiongfeng2@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 09:52:45AM +0800, Xie XiuQi wrote:
-> We should panic even panic_on_oops is not set, when we can't recover
-> from synchronous external abort in kernel context.
+On Tue, Apr 14, 2020 at 11:16:49AM +0100, Mark Rutland wrote:
+> On Tue, Apr 14, 2020 at 11:00:33AM +0100, Will Deacon wrote:
+> > On Tue, Apr 14, 2020 at 03:02:21PM +0530, Amit Daniel Kachhap wrote:
+> > > Compilers are optimized to not store the stack frame record for the leaf
+> > > function in the stack so applying pointer authentication in the leaf
+> > > function is not useful from security point of view.
+> > 
+> > I'm missing the reasoning here -- why don't we care about leaf functions?
+> > 
+> > Sounds like there's a performance/security trade-off that needs spelling
+> > out and justifying with some numbers, or is it clear-cut and I'm missing
+> > something?
 > 
-> Othervise, there are two issues:
-> 1) fallback to do_exit() in exception context, cause this core hung up.
->    do_sea()
->    -> arm64_notify_die
->       -> die
->          -> do_exit
-> 2) errors may propagated.
-> 
-> Signed-off-by: Xie XiuQi <xiexiuqi@huawei.com>
-> Cc: Xiaofei Tan <tanxiaofei@huawei.com>
-> ---
->  arch/arm64/include/asm/esr.h | 12 ++++++++++++
->  arch/arm64/kernel/traps.c    |  2 ++
->  2 files changed, 14 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
-> index cb29253ae86b..acfc71c6d148 100644
-> --- a/arch/arm64/include/asm/esr.h
-> +++ b/arch/arm64/include/asm/esr.h
-> @@ -326,6 +326,18 @@ static inline bool esr_is_data_abort(u32 esr)
->  	return ec == ESR_ELx_EC_DABT_LOW || ec == ESR_ELx_EC_DABT_CUR;
->  }
->  
-> +static inline bool esr_is_inst_abort(u32 esr)
-> +{
-> +	const u32 ec = ESR_ELx_EC(esr);
-> +
-> +	return ec == ESR_ELx_EC_IABT_LOW || ec == ESR_ELx_EC_IABT_CUR;
-> +}
-> +
-> +static inline bool esr_is_ext_abort(u32 esr)
-> +{
-> +	return esr_is_data_abort(esr) || esr_is_inst_abort(esr);
-> +}
+> I believe this is because leaf functions don't store the LR to the stack
+> (as they don't create a frame record), so it cannot be modified by a
+> stray memory write.
 
-A data abort or an intstruction abort are not necessarily synchronus
-external aborts, so this isn't right.
+That makes some sense, but doesn't it also mean you can jump into the middle
+of a leaf function and it will happily return to whatever sits in LR?
+Perhaps it would make sense to relax to the 'non-leaf' version only if
+stack protector is enabled?
 
-What exactly are you trying to catch here? If you are seeing a problem
-in practice, can you please share your log from a crash?
-
-Thanks,
-Mark.
-
-> +
->  const char *esr_get_class_string(u32 esr);
->  #endif /* __ASSEMBLY */
->  
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index cf402be5c573..08f7f7688d5b 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -202,6 +202,8 @@ void die(const char *str, struct pt_regs *regs, int err)
->  		panic("Fatal exception in interrupt");
->  	if (panic_on_oops)
->  		panic("Fatal exception");
-> +	if (esr_is_ext_abort(err))
-> +		panic("Synchronous external abort in kernel context");
->  
->  	raw_spin_unlock_irqrestore(&die_lock, flags);
->  
-> -- 
-> 2.20.1
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
