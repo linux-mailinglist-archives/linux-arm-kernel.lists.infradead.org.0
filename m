@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06BB61A8DC3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:33:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE99D1A8DC4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 Apr 2020 23:34:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BBof0fNkMOI51L7LRsOV1V7nGt4CgfzKvkDlelm7zA4=; b=cM5ics3byyLMzz
-	5jbRdUJPFEsXRcIOM45y+0ImxCD+SPlV8qdudxHaMQSFbzbG4ZnDfNGmMyB+E1rc5HM35lcXT1hg0
-	2Z23swZDLGL56npPDk/OeBcZy9d8CBKeyJGqaUHAtg30rxZThqh9/w7eKgWA/NB+Bri4p+/CGMJw1
-	66uHDVpJQG+hyna1xuHa3Zsay/K4QpsNtWoh+bN7GVIjA4Syw2auAaERkn/rd8O19XXmLTL3KFvSw
-	EIhrv9Qj5ST4etnwMcikBzEyUkw5WjFCBrZiPsk3L58MVwlgwYkvbxlyVQwqWayW+emZUKKYZYiRk
-	VlnMnakoSV2qze6MXbcw==;
+	List-Owner; bh=p0y2lLktMYCa9zZZBiZP6FDeV7HrjxXuO1RLNz0qZR8=; b=Te13tdiNxEf+sd
+	tzy0HE7mI9UEPEg2LR7WScYJTG2sJFCa+xGalTxdMt8X28CFOp2lTtxdFVWPNRh7JjGwy2r0NdGbB
+	gvbo5wOrA7iGTMQcdk3fX19BAfH49VLalm5OxCQ+XI62BWpc2gwjEUayrtLjYTePfbsK7UsVEzYm4
+	hgFhFS6pzCl5fNVq2HmLphOtlyKtQiMKY9yIxm/HIUm8CIls3Pj6HYckR+Koev+frMktDbCorDvnH
+	x/+C7PfbHDKEBPtT3AbbUgr0vYfVJVSLsbZodNo94OL6NUvk2kP9Eoelf+OGGCMBgInABFrdhTk0f
+	CYHM+MpbutO/Z5MeKHfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOTBd-0003py-Lg; Tue, 14 Apr 2020 21:33:41 +0000
+	id 1jOTBs-00043x-71; Tue, 14 Apr 2020 21:33:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOT9i-0002EH-KP
- for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 21:31:44 +0000
+ id 1jOT9k-0002Gz-3n
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 Apr 2020 21:31:45 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 548AD2074D;
- Tue, 14 Apr 2020 21:31:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BDBBC2076B;
+ Tue, 14 Apr 2020 21:31:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586899901;
- bh=7PFsi1xvzYVZoaCa9uiNYX672sFrV56eIDLTk1BtspU=;
+ s=default; t=1586899903;
+ bh=+4zzU2fuJ9s9+cU9NhMA4XEGvV70Ry3qcTYCVF/73gw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Xx7GmJBT4ZOUEVA+T9roxrH0h7NnqUqVJz7MSHrqgrYTR5P5mfTORJHvNPHo7CsTT
- xVkpRQq5NiOEiJCoJwWXlmo04MW3La1H7oAVSkTx8U+1Sc/Zih2FC9B9zOX2ZViOHU
- fVNQhywIJO1UOW+0gxqwbwuQdInNzZ0938DXIeqQ=
+ b=PFMFUepTALEYUPqJXI/PzspEAX4Pv39fFv/FXh0r88qaYB0hLf1esUplItP5A4JOw
+ 4EezN0pOI2paWuXZj7UuomuNpYnE5R0311Na6W8nQfCz4E+2zs2RmutkgKwRMDQjDP
+ rM1Et8rMdPVTGoY3YFsP/xzC3b3vBAVNRmOxQHmA=
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org,
 	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 7/8] arm64: cpufeature: Relax checks for AArch32 support at
- EL[0-2]
-Date: Tue, 14 Apr 2020 22:31:13 +0100
-Message-Id: <20200414213114.2378-8-will@kernel.org>
+Subject: [PATCH 8/8] arm64: cpufeature: Add an overview comment for the
+ cpufeature framework
+Date: Tue, 14 Apr 2020 22:31:14 +0100
+Message-Id: <20200414213114.2378-9-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200414213114.2378-1-will@kernel.org>
 References: <20200414213114.2378-1-will@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_143142_782599_430117E6 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20200414_143144_232426_4D1A3035 
+X-CRM114-Status: GOOD (  16.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,55 +89,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We don't need to be quite as strict about mismatched AArch32 support,
-which is good because the friendly hardware folks have been busy
-mismatching this to their hearts' content.
-
-  * We don't care about EL2 or EL3 (there are silly comments concerning
-    the latter, so remove those)
-
-  * EL1 support is gated by the ARM64_HAS_32BIT_EL1 capability and handled
-    gracefully when a mismatch occurs
-
-  * EL1 support is gated by the ARM64_HAS_32BIT_EL0 capability and handled
-    gracefully when a mismatch occurs
-
-Relax the AArch32 checks to FTR_NONSTRICT.
+Now that Suzuki isn't within throwing distance, I thought I'd better add
+a rough overview comment to cpufeature.c so that it doesn't take me days
+to remember how it works next time.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/cpufeature.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ arch/arm64/kernel/cpufeature.c | 43 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 9e0321e3e581..680a453ca8c4 100644
+index 680a453ca8c4..421ca99dc8fc 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -172,11 +172,10 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_GIC_SHIFT, 4, 0),
- 	S_ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_ASIMD_SHIFT, 4, ID_AA64PFR0_ASIMD_NI),
- 	S_ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_FP_SHIFT, 4, ID_AA64PFR0_FP_NI),
--	/* Linux doesn't care about the EL3 */
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL3_SHIFT, 4, 0),
--	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL2_SHIFT, 4, 0),
--	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
--	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL0_SHIFT, 4, ID_AA64PFR0_EL0_64BIT_ONLY),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL2_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
-+	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL0_SHIFT, 4, ID_AA64PFR0_EL0_64BIT_ONLY),
- 	ARM64_FTR_END,
- };
+@@ -3,6 +3,49 @@
+  * Contains CPU feature definitions
+  *
+  * Copyright (C) 2015 ARM Ltd.
++ *
++ * A note for the weary kernel hacker: the code here is confusing and hard to
++ * follow! That's partly because it's solving a nasty problem, but also because
++ * there's a little bit of over-abstraction that tends to obscure what's going
++ * on behind a maze of helper functions and macros.
++ *
++ * The basic problem is that hardware folks have started gluing together CPUs
++ * with distinct architectural features; in some cases even creating SoCs where
++ * user-visible instructions are available only on a subset of the available
++ * cores. We try to address this by snapshotting the feature registers of the
++ * boot CPU and comparing these with the feature registers of each secondary
++ * CPU when bringing them up. If there is a mismatch, then we update the
++ * snapshot state to indicate the lowest-common denominator of the feature,
++ * known as the "safe" value. This snapshot state can be queried to view the
++ * "sanitised" value of a feature register.
++ *
++ * The sanitised register values are used to decide which capabilities we
++ * have in the system. These may be in the form of traditional "hwcaps"
++ * advertised to userspace or internal "cpucaps" which are used to configure
++ * things like alternative patching and static keys. While a feature mismatch
++ * may result in a TAINT_CPU_OUT_OF_SPEC kernel taint, a capability mismatch
++ * may prevent a CPU from being onlined at all.
++ *
++ * Some implementation details worth remembering:
++ *
++ * - Mismatched features are *always* sanitised to a "safe" value, which
++ *   usually indicates that the feature is not supported.
++ *
++ * - A mismatched feature marked with FTR_STRICT will cause a "SANITY CHECK"
++ *   warning when onlining an offending CPU and the kernel will be tainted
++ *   with TAINT_CPU_OUT_OF_SPEC.
++ *
++ * - Features marked as FTR_VISIBLE have their sanitised value visible to
++ *   userspace. FTR_VISIBLE features in registers that are only visible
++ *   to EL0 by trapping *must* have a corresponding HWCAP so that late
++ *   onlining of CPUs cannot lead to features disappearing at runtime.
++ *
++ * - A "feature" is typically a 4-bit register field. A "capability" is the
++ *   high-level description derived from the sanitised field value.
++ *
++ * - Read the Arm ARM (DDI 0487F.a) section D13.1.3 ("Principles of the ID
++ *   scheme for fields in ID registers") to understand when feature fields
++ *   may be signed or unsigned (FTR_SIGNED and FTR_UNSIGNED accordingly).
+  */
  
-@@ -867,9 +866,6 @@ void update_cpu_features(int cpu,
- 	taint |= check_update_ftr_reg(SYS_ID_AA64MMFR2_EL1, cpu,
- 				      info->reg_id_aa64mmfr2, boot->reg_id_aa64mmfr2);
- 
--	/*
--	 * EL3 is not our concern.
--	 */
- 	taint |= check_update_ftr_reg(SYS_ID_AA64PFR0_EL1, cpu,
- 				      info->reg_id_aa64pfr0, boot->reg_id_aa64pfr0);
- 	taint |= check_update_ftr_reg(SYS_ID_AA64PFR1_EL1, cpu,
+ #define pr_fmt(fmt) "CPU features: " fmt
 -- 
 2.26.0.110.g2183baf09c-goog
 
