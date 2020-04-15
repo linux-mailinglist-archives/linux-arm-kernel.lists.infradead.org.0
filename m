@@ -2,106 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EAC51AAD44
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:22:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4565C1AAD45
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:22:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Nxm+fbYVpwtMuDgXCIxL+Avq0jFXmwe+bpKO1J3fsE0=; b=c6mtczfxWN3Xnoftnt/JfcPgH
-	RaNHV/hsP8sOixfq0dhoJAhzzq99t2nZY69wh3p4qARHJfuqxqjHXWqAmBqvxgqHGvx8r2sck0NNo
-	zI+cqDCk+sOVLmS4/frW3enxwn5Iw84AuXcQg9f5WQSx/6TkJsqO7heW3MBmLkSaseZzK21l58Nzp
-	cJiqQOi1AyofOZCctzH0TDWYkWS0FPOBoLreRuglV9L6kowjm5fFJr1TLK5oEpY3CNS/GVgL+bFkI
-	k/TTpfSbq4kiNJFokBuPnsjlN2ncuEb5o+zO2BB2mn2oFfOTCgJnZrdlf+UWDuBKp3B3s8Vnmuu7t
-	ixDLm+hmQ==;
+	 bh=w+WJ3m15KQJBkQ9Y/yipog1IVBm15p58YacMy9uMkkU=; b=D6WUpjQNdmq1PO61q0l9VDmrX
+	xNVMgtrDDmzQegXG3YDKI7r+JjWbU6JEepi/y8Sm5hiLflOGqvMb44dq+d30bGgd6SooWdmMTOvvx
+	y3U3XyBhPmqRYHq3xmjjQeVLlRaTvIjc+dMj1Mylt7E0Z3FH0SJN8KAo2WGMT8UmLu2u5ZlKx1VBb
+	xRfZLFuicfuokWmJBWY9eBxkMG2VcqJUOrjNad0gO8g0hJT0gnn+/YZNLxSSsEDXFUzIkapouFZa6
+	F7RjxXKbak/jEBj2lTKoV6K/t2DEGdl3zqJDPQMydCnE7KYkui/ifxQizvR9Fhz6CLfst1Bvcewj3
+	Aj6tcd4zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOknj-0008MA-Jd; Wed, 15 Apr 2020 16:22:11 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOknW-0008Ld-DW
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:22:00 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3E027580133;
- Wed, 15 Apr 2020 12:21:55 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 15 Apr 2020 12:21:55 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=u9scvMZX0d04Kn3R0y+CYoy7IVW
- oF9BUIBhBMZ7xTQ4=; b=MTTjB7zbrBmqyMSWXv7QRhsmX2Q1vGgqO+YM7nHlyCz
- C1LNlyMorpxShEuJf2md4RxGK5nIGMKIcj6UroWHCoPMTZu2UZ1ZyWBcak71X57N
- bkCkS/SzxYxu3YP7dvK+R7C4J5j9sDlloifFD2Uny8p2t05p2OeyYQuMmppF80qv
- 8UFAjNPuLiqCbBTrsY9wM/Oftztaw+6yI00noEzhHgbKDGIfLJI/fTLSQCkOLg0N
- Po90TKLlEJpDqyWTPaq+V3LPX1g3IGW0DSwranqmS4w0rr2q1hm3UUsTUIFYTmj1
- MPFdzeC65CKFW7CG3Z4SZ2PxMA3aOgLiGdShESqWBhA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=u9scvM
- ZX0d04Kn3R0y+CYoy7IVWoF9BUIBhBMZ7xTQ4=; b=VW+8LawDZdtk7jKnlusa8f
- 0j0jUmRLsYCwbK6kqpfjHSPVbujw7FvpOjCiVzfg8PRdVY2igHyC0ffQ8Qs9CXI1
- 6MaPtRW2y/VN1k1eKp7tX/503/m4whChKErTvNnwmlCB0qxBCt28TKnKE8Q5LBCD
- AJo4Zkfww+08FJ1kXQ6Tr1CdcxiWGRqCHfaLGfPy4HtRjpsW4a8y5cvzgZuNHYUM
- ufmUGKTz/SbpHvcomPx07lVUa06GkJnL73PjwH5CbRzCgZQwpkucTecpCPop1SEz
- X5ooxv+wfX+XCW7vHwMyz4i8+sgtAwql3AW++j2ZS1UpvvGggsD/54zLlNumMO/g
- ==
-X-ME-Sender: <xms:oTSXXoIWnMvlqGVy8AaStKXEUhQPrkvTcQ86pmg8HWSqUs3uANtqTg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrfeefgdeltdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:oTSXXsZWqwp5ohe7OpVmOzP-_EQI_bDpXSWr2pKmZzhJrg7nq6Qo7Q>
- <xmx:oTSXXjvDHO9_QmqdCkTjvg2-Zj78oQPE0lPP4iy7yWuuzc3-0kQdkw>
- <xmx:oTSXXpsrCdreATG0MCLBoDdeITl5U9d7Josa7Th3OY0r4Lnm0pgXKw>
- <xmx:ozSXXtSsjCJYztWsp3i-3gOwsHTwJ-4VBerx14NJRu-GtrkbjDF6bw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id D563D3280066;
- Wed, 15 Apr 2020 12:21:52 -0400 (EDT)
-Date: Wed, 15 Apr 2020 18:21:51 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH v6 01/12] dt-bindings: add img, pvrsgx.yaml for
- Imagination GPUs
-Message-ID: <20200415162151.rwym4ioqz27migfn@gilmour.lan>
-References: <cover.1586939718.git.hns@goldelico.com>
- <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
- <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
- <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
- <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
- <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
- <20200415142124.yzfh6mtqq7cdq22e@gilmour.lan>
- <DC0A2DE2-3D77-46F8-8DE1-55050FDACC9B@goldelico.com>
+	id 1jOkoI-0000Py-7K; Wed, 15 Apr 2020 16:22:46 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOkoA-0000PN-Hv
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:22:39 +0000
+Received: from localhost (p54B33507.dip0.t-ipconnect.de [84.179.53.7])
+ by pokefinder.org (Postfix) with ESMTPSA id 38B962C1FF1;
+ Wed, 15 Apr 2020 18:22:37 +0200 (CEST)
+Date: Wed, 15 Apr 2020 18:22:36 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH v2] i2c: cadence: Added slave support
+Message-ID: <20200415162236.GA2830@ninjato>
+References: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
+ <20200415125850.GD910@ninjato>
+ <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
 MIME-Version: 1.0
-In-Reply-To: <DC0A2DE2-3D77-46F8-8DE1-55050FDACC9B@goldelico.com>
+In-Reply-To: <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_092158_795751_18B008A6 
-X-CRM114-Status: GOOD (  28.18  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200415_092238_735781_311B8B51 
+X-CRM114-Status: UNSURE (   6.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,197 +61,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, letux-kernel@openphoenux.org
-Content-Type: multipart/mixed; boundary="===============8329326831763771946=="
+Cc: Chirag Parekh <chirag.parekh@xilinx.com>, shubhrajyoti.datta@gmail.com,
+ Radu Pirea <radu_nicolae.pirea@upb.ro>, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7508033154439189719=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8329326831763771946==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tfobgrwcfdirkzal"
+--===============7508033154439189719==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="TB36FDmn/VVEgNH/"
 Content-Disposition: inline
 
 
---tfobgrwcfdirkzal
+--TB36FDmn/VVEgNH/
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Wed, Apr 15, 2020 at 05:09:45PM +0200, H. Nikolaus Schaller wrote:
-> Hi Maxime,
->
-> > Am 15.04.2020 um 16:21 schrieb Maxime Ripard <maxime@cerno.tech>:
-> >
-> >>
-> >> Well we could add clocks and resets as optional but that would
-> >> allow to wrongly define omap.
-> >>
-> >> Or delegate them to a parent "simple-pm-bus" node.
-> >>
-> >> I have to study that material more to understand what you seem
-> >> to expect.
-> >
-> > The thing is, once that binding is in, it has to be backward
-> > compatible. So every thing that you leave out is something that you'll
-> > need to support in the driver eventually.
->
-> >
-> > If you don't want it to be a complete nightmare, you'll want to figure
-> > out as much as possible on how the GPU is integrated and make a
-> > binding out of that.
->
-> Hm. Yes. We know that there likely are clocks and maybe reset
-> but for some SoC this seems to be undocumented and the reset
-> line the VHDL of the sgx gpu provides may be permanently tied
-> to "inactive".
->
-> So if clocks are optional and not provided, a driver simply can assume
-> they are enabled somewhere else and does not have to care about. If
-> they are specified, the driver can enable/disable them.
+> > Michal, do you want a second look or is your SoB good as-is?
+>=20
+> It should be good to go.
 
-Except that at the hardware level, the clock is always going to be
-there. You can't control it, but it's there.
+Thanks, Michal!
 
-> > If OMAP is too much of a pain, you can also make
-> > a separate binding for it, and a generic one for the rest of us.
->
-> No, omap isn't any pain at all.
->
-> The pain is that some other SoC are most easily defined by clocks in
-> the gpu node which the omap doesn't need to explicitly specify.
->
-> I would expect a much bigger nightmare if we split this into two
-> bindings variants.
->
-> > I'd say that it's pretty unlikely that the clocks, interrupts (and
-> > even regulators) are optional. It might be fixed on some SoCs, but
-> > that's up to the DT to express that using fixed clocks / regulators,
-> > not the GPU binding itself.
->
-> omap already has these defined them not to be part of the GPU binding.
-> The reason seems to be that this needs special clock gating control
-> especially for idle states which is beyond simple clock-enable.
->
-> This sysc target-module@56000000 node is already merged and therefore
-> we are only adding the gpu child node. Without defining clocks.
->
-> For example:
->
-> 		sgx_module: target-module@56000000 {
-> 			compatible = "ti,sysc-omap4", "ti,sysc";
-> 			reg = <0x5600fe00 0x4>,
-> 			      <0x5600fe10 0x4>;
-> 			reg-names = "rev", "sysc";
-> 			ti,sysc-midle = <SYSC_IDLE_FORCE>,
-> 					<SYSC_IDLE_NO>,
-> 					<SYSC_IDLE_SMART>;
-> 			ti,sysc-sidle = <SYSC_IDLE_FORCE>,
-> 					<SYSC_IDLE_NO>,
-> 					<SYSC_IDLE_SMART>;
-> 			clocks = <&gpu_clkctrl OMAP5_GPU_CLKCTRL 0>;
-> 			clock-names = "fck";
-> 			#address-cells = <1>;
-> 			#size-cells = <1>;
-> 			ranges = <0 0x56000000 0x2000000>;
->
-> 			gpu: gpu@0 {
-> 				compatible = "ti,omap5-sgx544-116", "img,sgx544-116", "img,sgx544";
-> 				reg = <0x0 0x10000>;
-> 				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-> 			};
-> 		};
->
-> The jz4780 example will like this:
->
-> 	gpu: gpu@13040000 {
-> 		compatible = "ingenic,jz4780-sgx540-130", "img,sgx540-130", "img,sgx540";
-> 		reg = <0x13040000 0x4000>;
->
-> 		clocks = <&cgu JZ4780_CLK_GPU>;
-> 		clock-names = "gpu";
->
-> 		interrupt-parent = <&intc>;
-> 		interrupts = <63>;
-> 	};
->
-> So the question is which one is "generic for the rest of us"?
 
-I'd say the latter.
-
-> And how can we make a single binding for the sgx. Not one for each
-> special SoC variant that may exist.
->
-> IMHO the best answer is to make clocks an optional property.
-> Or if we do not want to define them explicitly, we use
-> additionalProperties: true.
-
-If your clock is optional, then you define it but don't mandate
-it. Not documenting it will only result in a mess where everyone will
-put some clock into it, possibly with different semantics each and
-every time.
-
-> An alternative could be to use a simple-pm-bus like:
->
-> 	sgx_module: sgx_module@13040000 {
-> 		compatible = "simple-pm-bus";
->
-> 		clocks = <&cgu JZ4780_CLK_GPU>;
-> 		clock-names = "gpu";
->
-> 		#address-cells = <1>;
-> 		#size-cells = <1>;
-> 		ranges = <0 0x13040000 0x10000>;
->
-> 		gpu: gpu@0 {
-> 			compatible = "ingenic,jz4780-sgx540-130", "img,sgx540-130", "img,sgx540";
-> 			reg = <0x0 0x4000>;
->
-> 			interrupt-parent = <&intc>;
-> 			interrupts = <63>;
-> 		};
-> 	};
->
-> This gets rid of any clock, reset and pm definitions for the sgx bindings.
-> But how this is done is outside this sgx bindings.
->
-> With such a scheme, the binding I propose here would be complete and fully
-> generic. We can even add additionalProperties: false.
-
-This has nothing to do with the binding being complete. And if you use
-a binding like this one, you'll be severely limited when you'll want
-to implement things like DVFS.
-
-Maxime
-
---tfobgrwcfdirkzal
+--TB36FDmn/VVEgNH/
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXpc0nwAKCRDj7w1vZxhR
-xUDXAQCc7y/+vAoavZRmglq4lR2jquJFLRkH7PYZvWPuzBNdAAD/cb0ol1cdNUpA
-oCJwB2WILZ+2E78cCeIXmjyL7nqW6AA=
-=GQ1H
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6XNMgACgkQFA3kzBSg
+KbbAiw//RBrtmb0bH65DgAGQFsaUex9274i1aOt2WRAxBxxsU9KYpjYXZTJtJIPM
+H+rQ2NZORdTz4Vbk7zWzL5cPWVgTgayyAEgTUWmggvji1mahB9ATMMhRV+YT8IT8
+lfyLZ8jr8pkanVFa6FE0aC5fwY/O8mCLesPbIwV3UhFv4CkTgh9HZcBOs0zzyqFd
+gkSBkmn5y8A9YnovysL+Rq7HAfd05UUGdkGPca6zW5RzwdELizUC+Nh7ZREhyUUr
+w7IjyE61kxdxSs10+IEyKzv9YLdsBfWcDbjYwLCeyadeSwjPyW+quD37TdGxHjPM
+xdBKCnOffArucQz8PhghU52AUkjEWMhEdNE2ri9PlfsaodT7LweoqIRtpyinWH4D
+uPdsX071f/GA6I9nGtvbJRh/ogVYySTAZgRfxeMMexWptKcOp60Ta7q1Pkbh2Ryl
+E7b1eYm9wNriBi5vHpRyvSpLstfcJUL55fxlfdwlH+zGOuHP9ayDn5i+5T4b7HIu
+6QdGkeYQRoVCEbeTk1vlkAhE9q0dgeAWldtDrxrCWHx5VAJi0+PeR80avDwLXfyM
+78dA+74416jx2MEXu1LhAbQU1ep5P+qhtcQ5HHctU2hVdC0tMKMs6E9gT9sqdZaR
+/14imMDRUa6Qqu0gVJQBvAh7PsxoYPTd7tMBuyvJEuwfJ8SX41A=
+=orf9
 -----END PGP SIGNATURE-----
 
---tfobgrwcfdirkzal--
+--TB36FDmn/VVEgNH/--
 
 
---===============8329326831763771946==
+--===============7508033154439189719==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -314,5 +121,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8329326831763771946==--
+--===============7508033154439189719==--
 
