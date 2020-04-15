@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F17CB1A9E27
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AA4A1A9E29
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:53:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6mktWxKmtTEg5hrkILoUMOrbXfyHwa26RPLUkELcJ3g=; b=JNFbIdsfp4UxTL
-	AqVduOHu29JF7lzDZOwGj5GxLrdNUWhqf+iS2AUb1ykl8YgnaXZsgHrSUmg6CiYRdMYhi++4lNlsk
-	gsKrQLrErmQRPLrUH6BwxzZfAVOEwNrycdUPq+u1+NMIi+Ewmui0FxhiYoqY/rC12K/x0MAGsvxtx
-	kkHIKUOHKslXbMJHY04i8qhwGksJJGCyYDYIDhOZRQhZ4kVw62FU0q6JI92YNJ2bWjGay0WJkAz5x
-	/VfoZt7e9qYqwjAuufw+sNw6owBd8eipDmhmgUJ6v2HTpG0RlP341jkNEU8MWU6g0tRrr6wWIUeY9
-	br45WbG/PsnPj9pdG9kg==;
+	List-Owner; bh=DUJ5UFSoGm6M1CDGa982mov4O8NtZuCL2+l3RKo4BP8=; b=JgMyGW4B5UfHVt
+	F2h0NU1+w2VAdXZq0XX8WMxWAYR4WuWl4giPATkg4GsdyMvgD00JEQato3SMud9h4RN180O+kGmwE
+	eXhrCZekB09cBXskQvI9AsB9Gv0YbPHiDXMXAfKb3Y9D+jbNfBePFS/CMQkF1BqRkvHQzTRpsovxC
+	LgOun+BHY8U7zHK2wfSg1EG0y4kWPoFe2dT4HzIg5R0hiCLUkUbPxIViCbQw34lslbsyNYWmPpHuP
+	LA3c2qR0HuG4Zccm69iOA1n1PtqrvV1fTrkZzbDkLYDPk0X3v7yImQzBzavT0ccQCSButXwqhqQcw
+	eDw5mJ7Zb4SWwlLob0jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgbT-00052R-LR; Wed, 15 Apr 2020 11:53:15 +0000
+	id 1jOgbm-0005IJ-UF; Wed, 15 Apr 2020 11:53:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgWo-00070E-0W
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:48:28 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
+ id 1jOgYI-0008TY-KE
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:50:00 +0000
+Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com
+ [209.85.208.177])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 887B620775;
- Wed, 15 Apr 2020 11:48:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C2D221835
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 11:49:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586951304;
- bh=DJX25bhZXAoYinOF72m/TtqTOSIs7bBbtLa24YaT3Kk=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=g1OdW2K99DCfuOhtLxFzFUJ1c14WAoB+/L7VZCMSAqg9eMas2u7hrxyKkiM7Sm5dt
- 988d/OBKwgesjTSu411vjQo+SsJR0uNc5dR3nZ/J2QADJvhoXw3H9DTaP0W+l7ESAN
- rj22kJasCBCON++WKXG7BaGJX4Dp5IX5n2KGZTTY=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 08/14] net: stmmac: dwmac1000: fix out-of-bounds
- mac address reg setting
-Date: Wed, 15 Apr 2020 07:48:08 -0400
-Message-Id: <20200415114814.15954-8-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200415114814.15954-1-sashal@kernel.org>
-References: <20200415114814.15954-1-sashal@kernel.org>
+ s=default; t=1586951397;
+ bh=wuXS7RCUYgyS51p4SeDx49zy51VkJGb5/qdr8yBZ0d4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=xeYP5cgafRPn6YhT6fu/+txsms6Rtv2DIovKV6n2lrE++374gHweZw442o4eW6zsC
+ 0QPce/mOtpt2CYbuX3ZFAnyYNI2ZEwjJnhtikf8CEIIN6kqNvsnWY7Mv65g7qt/ye7
+ uxrNjWBorfjR3nRfrgurBt9sUOOix1lQMqGuSVeE=
+Received: by mail-lj1-f177.google.com with SMTP id u6so1718600ljl.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 04:49:57 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZO5hj/lPaoFk3LfudW9jPShUvHU+zoJexd5ZpH+nwbkAt6THwA
+ hR/CUgSGfNDKMzB0D6nTObh1KmR864eqqMfo8es=
+X-Google-Smtp-Source: APiQypJ6JgZvNxuPA2SlFZq3seBA6kaFPbk0RkqFDGIpIMdWvmYwpqEO8cmLBYYdZ/c1p1IHSS++MGMZGzTZDC6zHHI=
+X-Received: by 2002:a2e:9845:: with SMTP id e5mr3131512ljj.201.1586951395296; 
+ Wed, 15 Apr 2020 04:49:55 -0700 (PDT)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <cover.1586939718.git.hns@goldelico.com>
+ <b6733f80546bf3e6b3799f716b9c8e0f407de03d.1586939718.git.hns@goldelico.com>
+In-Reply-To: <b6733f80546bf3e6b3799f716b9c8e0f407de03d.1586939718.git.hns@goldelico.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 15 Apr 2020 13:49:44 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPcb9KWNAem-CAx_zCS+sZoEHYc0J8x0nk1xjY9hD4-M4w@mail.gmail.com>
+Message-ID: <CAJKOXPcb9KWNAem-CAx_zCS+sZoEHYc0J8x0nk1xjY9hD4-M4w@mail.gmail.com>
+Subject: Re: [PATCH v6 08/12] arm: dts: s5pv210: Add G3D node
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044826_405146_495ADE6A 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200415_044958_791870_23464B40 
+X-CRM114-Status: GOOD (  18.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,50 +86,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-omap@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ letux-kernel@openphoenux.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+On Wed, 15 Apr 2020 at 10:36, H. Nikolaus Schaller <hns@goldelico.com> wrote:
+>
+> From: Jonathan Bakker <xc-racer2@live.ca>
+>
+> to add support for SGX540 GPU.
 
-[ Upstream commit 3e1221acf6a8f8595b5ce354bab4327a69d54d18 ]
+Do not continue the subject in commit msg like it is one sentence.
+These are two separate sentences, so commit msg starts with capital
+letter and it is sentence by itself.
 
-Commit 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address
-entries") cleared the unused mac address entries, but introduced an
-out-of bounds mac address register programming bug -- After setting
-the secondary unicast mac addresses, the "reg" value has reached
-netdev_uc_count() + 1, thus we should only clear address entries
-if (addr < perfect_addr_number)
+> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> ---
+>  arch/arm/boot/dts/s5pv210.dtsi | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
+> index 2ad642f51fd9..e7fc709c0cca 100644
+> --- a/arch/arm/boot/dts/s5pv210.dtsi
+> +++ b/arch/arm/boot/dts/s5pv210.dtsi
+> @@ -512,6 +512,21 @@ vic3: interrupt-controller@f2300000 {
+>                         #interrupt-cells = <1>;
+>                 };
+>
+> +               g3d: g3d@f3000000 {
+> +                       compatible = "samsung,s5pv210-sgx540-120";
+> +                       reg = <0xf3000000 0x10000>;
+> +                       interrupt-parent = <&vic2>;
+> +                       interrupts = <10>;
+> +                       clock-names = "sclk";
+> +                       clocks = <&clocks CLK_G3D>;
 
-Fixes: 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address entries")
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Not part of bindings, please remove or add to the bindings.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index 1df84c8de9d75..b535f6c378386 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -188,7 +188,7 @@ static void dwmac1000_set_filter(struct mac_device_info *hw,
- 			reg++;
- 		}
- 
--		while (reg <= perfect_addr_number) {
-+		while (reg < perfect_addr_number) {
- 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
- 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
- 			reg++;
--- 
-2.20.1
+> +
+> +                       power-domains = <&pd S5PV210_PD_G3D>;
 
+Ditto
+
+> +
+> +                       assigned-clocks = <&clocks MOUT_G3D>, <&clocks DOUT_G3D>;
+> +                       assigned-clock-rates = <0>, <66700000>;
+> +                       assigned-clock-parents = <&clocks MOUT_MPLL>;
+
+Probably this should have status disabled because you do not set
+regulator supply.
+
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
