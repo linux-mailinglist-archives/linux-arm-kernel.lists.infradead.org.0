@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F9EF1AA3AE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:17:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 855911AA3B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:17:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l6NNQmlBE/xGk9lWV1bdoSE0M+I4BjEOxaZ8SibWIvM=; b=Lf7F5f8BV1qmGq
-	HTQBuLM/QTC0q5/2oP05wDIL6+vbWaFVMkS1XH8rYEb5KitGPkKfKAhCxH1soBmFAE6HHxL7nRjrf
-	kD+fWgFyGJ/FIV/9qO1NHmeoxpkZ82MQvXMBOGh1DBxR0HYndQ8mQIFKhyTwBY1RLlcfvIU1tNuif
-	TlHm/2lWVOXQfzq6apfhjNUi7EJqirJIoKy3GjRgEsSLZVXJPhdtIWfKsPL6LrZtMhgUcSn8k6+Bt
-	VuQoz5TrxGxyVad3RV5nn1Eoj3wx2VC5x6qYs2ypYbveYEF0A80wJIrhUWBOeE7nA5kdB2+HPg/C+
-	V4yu2HPyrZ27N7rG68fQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CUxYvJkE9lqJUqrqdS12s0+4a5Jjb1EuVUW8KA14Mms=; b=c23mqK8X8G+TlR
+	QHCPyKD6c4V2wGIkHxVAuFY9aqdbVDhvFA4gT5aey71tizJXmI97DPX8VdPB/yCjbPGrj+TknkRsD
+	p86ob7IPLJaHyEvXd/kAKEKFHjShoYTsowqVCOUPQ/REyQiLLMsIeVKnnC67ulAYtzP7UWfUZSUTw
+	4ZUpbUED3tY77a3gsHg3MUqHSs4Y/LrEZxlp75jJXEGr9vWkprQwicc1FL8OFBblD+JngS5BCTfDo
+	VZxIAfUlLxzXLrPhF/8Ovl6Ct8eMAYpV7Qmd2PQb3gVITPLOHeQJ+0EJhtGG4sgU5wiazcvsrZ4Tq
+	0qVV/+LFj8y1iPHufZNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhug-00079T-AT; Wed, 15 Apr 2020 13:17:10 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jOhvC-0007Uj-14; Wed, 15 Apr 2020 13:17:42 +0000
+Received: from mo6-p03-ob.smtp.rzone.de ([2a01:238:20a:202:5303::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhuW-00078o-Ka
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:17:02 +0000
-Received: by mail-ot1-f66.google.com with SMTP id m2so3369189otr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 06:17:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dbnocMf+YCXO6rynSRbZKTHwedc1p0SI4PJLE21o0ts=;
- b=bNCuxxt7n5OxVOpTEYU8n9lFN/JMXg7rQftdJiHnBcXXzU9gWdy2g1wm4cPQdceQi/
- WMPvEAEzvQZjBpw8yRvwnpuNOekidYWxMUsXwWr9JFfXvYsLawjcpn2knWmksjWOATRY
- nlUT3B0HYM2lYERW+RspqCt3A2tIs3Z+MfiWtoWClAQXJyaubnFrpV5YlJu5GsUpwGjU
- 7wS8pZ5hxv7cCoXGOluSnkBHrCdK1sT770NuiJvM3iLDIHUI345LQ8egTLcJsH5nrqWZ
- x/MpSsiQVpUNnfbKzya/KLJPtgJSKvaIdRZ31XsIXK0Uwq+XXzgirz+tL4MKAwXcobEN
- ZsnQ==
-X-Gm-Message-State: AGi0PuaV/YDZXDfb3Q+RFXwVVC5itC4b/rr6TU3LR7LT5WmhpY1SPCXf
- /wEtU1hFt1XjlWiwgO8+UNpauf0rYTLA8xEoaw04506h
-X-Google-Smtp-Source: APiQypI1n3n1HrpC733H6dekvk5p8H+HZWlAjswfFTnY0HYg7b/b8KXVZIN2QJT+RFB7PNoRdwSj8pariD7U/pYZeoo=
-X-Received: by 2002:a9d:6299:: with SMTP id x25mr16992635otk.107.1586956619730; 
- Wed, 15 Apr 2020 06:16:59 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200320144348.12865-1-geert+renesas@glider.be>
- <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
- <CAMj1kXFAEOWGgmMT4SMP=QafcT54mzMekLjm3wMTN8M4psNSKw@mail.gmail.com>
- <CAMuHMdUkrF9qBaZre0EJ-cuzPcL7A1j2ANmQNYV7FAngybb1bA@mail.gmail.com>
- <CAMj1kXEgXuizeQzBrt6aC-QODRGinoU5sjFrx0a1LRMg7zD85w@mail.gmail.com>
-In-Reply-To: <CAMj1kXEgXuizeQzBrt6aC-QODRGinoU5sjFrx0a1LRMg7zD85w@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 15 Apr 2020 15:16:48 +0200
-Message-ID: <CAMuHMdWxiSE5H=CEqrO5Zx4nyiLo8_xxRJUj20eHm=PHnANkdg@mail.gmail.com>
-Subject: Re: [PATCH v4] ARM: boot: Obtain start of physical memory from DTB
-To: Ard Biesheuvel <ardb@kernel.org>
+ id 1jOhv3-0007UM-Kk
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:17:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586956651;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=ggeVHX1ECoHuxb0UgkenFd/4IT/OkoIPA4CW4OSiH4U=;
+ b=iWhOPeDPJZtHwRrjzFudl8/9QoPGvj7QqycnI51K/kYMfhqWdK9u+h15zlQ/yoGF9g
+ QWMs1SHmuJoTx0bxTxsw088zrcVablKBpEasmJ2aTPSJ7emixWZpBy0F7pVaVJVCaG7f
+ Lp7TGaWFGL7u6sM0RHYqsD6iLcxM/DXmBPCHstPqWf+hGeOtp0Hytxu9fLnbaadyWSDX
+ YicMpbgZt3DW0Cu+6C1l76EEmllTqh2pCELGBn6oe4C0RFMpzJTV74hod5jBcDo+HI1A
+ 9/ouyR/UzwyGhv5en8czws56q5EQZDzKJTepPvzb1FDiUmUUS/WEWwBg8ZaXo7wskfBl
+ c+9w==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/PtwDConyM="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
+ with ESMTPSA id 6028a2w3FDHP26i
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Wed, 15 Apr 2020 15:17:25 +0200 (CEST)
+Subject: Re: [PATCH v6 01/12] dt-bindings: add img,
+ pvrsgx.yaml for Imagination GPUs
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
+Date: Wed, 15 Apr 2020 15:17:25 +0200
+Message-Id: <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
+ <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
+ <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
+ <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_061700_669445_68B88C91 
-X-CRM114-Status: GOOD (  24.96  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200415_061734_268536_91CE30EE 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ no trust [2a01:238:20a:202:5303:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,103 +87,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, letux-kernel@openphoenux.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ard,
+Hi Neil,
 
-On Wed, Apr 15, 2020 at 2:57 PM Ard Biesheuvel <ardb@kernel.org> wrote:
-> On Wed, 15 Apr 2020 at 14:45, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Tue, Apr 14, 2020 at 10:07 AM Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > On Wed, 25 Mar 2020 at 17:40, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > > On Fri, 20 Mar 2020 at 15:43, Geert Uytterhoeven
-> > > > <geert+renesas@glider.be> wrote:
-> > > > > Currently, the start address of physical memory is obtained by masking
-> > > > > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > > > > was chosen as a balance between the requirements of different platforms.
-> > > > > However, this does require that the start address of physical memory is
-> > > > > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > > > > requirement is not fulfilled.
-> > > > >
-> > > > > Fix this limitation by obtaining the start address from the DTB instead,
-> > > > > if available (either explicitly passed, or appended to the kernel).
-> > > > > Fall back to the traditional method when needed.
-> > > > >
-> > > > > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > > > > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > > > > i.e. not at a multiple of 128 MiB.
-> > > > >
-> > > > > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > > > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > > > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> > > > > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > > > > ---
-> > > > > v4:
-> > > > >   - Fix stack location after commit 184bf653a7a452c1 ("ARM:
-> > > > >     decompressor: factor out routine to obtain the inflated image
-> > > > >     size"),
-> > > > >
-> > > >
-> > > > Apologies for the breakage. I was aware of the existence of this
-> > > > patch, but I didn't realize it was accessing LC0 early on to find the
-> > > > stack pointer value.
-> > > >
-> > > > Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-> > >
-> > > OK, so one thing I did notice when playing with this code is that the
-> > > phys/virt patching code requires that 'PHYS_OFFSET - PAGE_OFFSET' is a
-> > > multiple of 16 MB, and so this needs to be taken into account by this
-> > > change as well, given that PHYS_OFFSET is based on the placement of
-> > > the uncompressed kernel in the physical address space.
-> >
-> > You mean fdt_get_mem_start() should round up the address to make sure
-> > it is a multiple of 16 MiB (assumed PAGE_OFFSET is a multiple of 16 MiB,
-> > too)?
->
-> Yes.
+> Am 15.04.2020 um 14:54 schrieb Neil Armstrong <narmstrong@baylibre.com>:
+> 
+> Hi,
+> 
+> On 15/04/2020 14:43, H. Nikolaus Schaller wrote:
+>> 
+>>> Am 15.04.2020 um 12:12 schrieb Maxime Ripard <maxime@cerno.tech>:
+>>> 
+>>> Hi,
+>>> 
+>>> On Wed, Apr 15, 2020 at 10:35:08AM +0200, H. Nikolaus Schaller wrote:
+>>>> The Imagination PVR/SGX GPU is part of several SoC from
+>>>> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
+>>>> Allwinner A83 and others.
+>>>> 
+>>>> With this binding, we describe how the SGX processor is
+>>>> interfaced to the SoC (registers, interrupt etc.).
+>>>> 
+>>>> In most cases, Clock, Reset and power management is handled
+>>>> by a parent node or elsewhere (e.g. code in the driver).
+>>> 
+>>> Wouldn't the "code in the driver" still require the clock / reset /
+>>> power domain to be set in the DT?
+>> 
+>> Well, some SoC seem to use existing clocks and have no reset.
+>> Or, although not recommended, they may have the io-address range
+>> hard-coded.
+> 
+> The possible clocks and resets should be added, even if optional.
+> 
+> Please look at the arm utgard, midgard and bifrost bindings.
 
-OK.
+Interesting to compare to. Maybe we should also add the
+$nodename: pattern: '^gpu@[a-f0-9]+$'
 
-> > Can PAGE_OFFSET actually be not a multiple of 16 MiB?
->
-> ARM's Kconfig has
->
-> config PAGE_OFFSET
->         hex
->         default PHYS_OFFSET if !MMU
->         default 0x40000000 if VMSPLIT_1G
->         default 0x80000000 if VMSPLIT_2G
->         default 0xB0000000 if VMSPLIT_3G_OPT
->         default 0xC0000000
->
-> which means that PHYS_OFFSET - PAGE_OFFSET is guaranteed to be 16 MB
-> aligned if PHYS_OFFSET is 16 MB aligned.
+But the sgx binding is difficult to grasp here. Some SoC like the
+omap series have their own ti,sysc based target modules and the
+gpu nodes is a child of it lacking any clock and reset references
+for purpose.
 
-Ah, I missed the lack of a prompt, and thought this was user-configurable,
-too.  Hence as you talked about the alignment of the difference of the two
-values only, I wondered if PAGE_OFFSET could be e.g. 0xb0800000,
-so PHYS_OFFSET has to be offset by 0x800000, too ;-)
+The jz4780 and some other need a clocks definition, but no reset.
+Having a reset seems to be an option for the SoC designer and
+not mandated by img. So is it part of the pvrsgx bindings or the
+SoC?
 
-Gr{oetje,eeting}s,
+Well we could add clocks and resets as optional but that would
+allow to wrongly define omap.
 
-                        Geert
+Or delegate them to a parent "simple-pm-bus" node.
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+I have to study that material more to understand what you seem
+to expect.
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+BR and thanks,
+Nikolaus Schaller
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
