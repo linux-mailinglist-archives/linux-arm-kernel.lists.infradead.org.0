@@ -2,72 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53991AAD56
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:27:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 803EE1AAD62
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:31:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1f3zxA+fIf5iFkg1bjQoSsvMRrRHAaLSXltV4US/Jn0=; b=K6DJ+/5qKKq2jS
-	UUx3vbr5Thxzc0cBJaBzF8N+qhfUmviCknSaQX2vNjt79Fycn7Epuncfam2JT9Mqqgg4Tk8Qy8EWd
-	zV6ayqSiTsij0lysqmlDJhU14N/kK4K0lgmpWLLTMHmRpEPI5dUPTllwAgODAD/T1VZfy4HqGF1FH
-	9LVzjx7hwWaGuFSz4VMUNnl2kywpiRJeJ2pGwdlougi7sjOXbC76FC8fo64TFHBf4GhLCOigmeMNb
-	GhLDmlgkeZSWi3WY8hlGFv1CuLbiBBIIsrg/jFV6H74kOz4H+00EKs7TTPKNVA9xcAaElSxMSXZYM
-	8FpVRR4QYemfWFsRvwJw==;
+	List-Owner; bh=UyyTetElqPwEbRdZW9w4Udtia243WFx3Y1K8x8nmtgI=; b=tBLJbb2Bnup3+3
+	MPC40QfRGrm74cRUoa9aM/+/AfG19TRju+VxFxMdlfHJEYNpb8qYCoCbSmFRhslctfYM5w6RoW0uA
+	AmmwwIRvYnNV5a5TWpTJR53/IV9S7aUcJClOZT20F+aR/ZcGcNITD/OtiSHRZwJr9ZH3Yv4IUjooJ
+	oT0z+aizFIBwiJiYkC1sMzMt87AZIhcwXRjIOnbUZAb3f7g861TCB061Fso/qC+Mzrx/1xQMZrd6a
+	io9Nk146vndjTspykgDkG3Dm9Z+i28iZMjViZSAtf1w7GMbQuudZ5g9xr407lboXeZsajAAGPPlwN
+	nUO4AzXZoIFuQwlNnYvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOktA-0005gj-5S; Wed, 15 Apr 2020 16:27:48 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1jOkwG-0001Nf-D9; Wed, 15 Apr 2020 16:31:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOksv-0005gI-Pc
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:27:35 +0000
-IronPort-SDR: N4nOdZRfh/tREIhMS/Qg29bfWKxZnUCMU9xpR1K2mgQGiOo6BjxX0tMz0suNW5P41tGGTgqzlI
- c3r3+EAULL0g==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 Apr 2020 09:27:32 -0700
-IronPort-SDR: 5eJIAnbaBUkT7vmvZkQM8f4n6QiHLKkUwZB9EHJFNVj+7PpXC3EXfK7UzRjNtMHYpKIkPPTApK
- LtRhGUpSvepA==
-X-IronPort-AV: E=Sophos;i="5.72,387,1580803200"; d="scan'208";a="256907570"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 Apr 2020 09:27:25 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id C6B5D20606; Wed, 15 Apr 2020 19:27:22 +0300 (EEST)
-Date: Wed, 15 Apr 2020 19:27:22 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v5 2/5] media: i2c: ov5645: Drop reading clock-frequency
- dt-property
-Message-ID: <20200415162722.GG27762@paasikivi.fi.intel.com>
-References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200406165108.GA7646@kekkonen.localdomain>
- <20200406173234.GD16885@pendragon.ideasonboard.com>
- <20200407062241.GA8883@kekkonen.localdomain>
- <20200407122106.GD4751@pendragon.ideasonboard.com>
- <20200407151401.GA5206@paasikivi.fi.intel.com>
- <20200414205552.GN19819@pendragon.ideasonboard.com>
+ id 1jOkw5-0001NG-Uf; Wed, 15 Apr 2020 16:30:51 +0000
+Received: from mail-ed1-f42.google.com (mail-ed1-f42.google.com
+ [209.85.208.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 405EA206F9;
+ Wed, 15 Apr 2020 16:30:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586968249;
+ bh=WUC8Bsx6n4kPP/2IvmXcJuk2IZsO1uij3Y2K4ebkwag=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=qoD96NzpK7QgSXs1pstv3QUs3bzPvS10hOg/Cud7gABEr1ehSGrIPNdxUckPQAU8b
+ gBaC4htl/yuH4clbVR4Aq+slSCfJF/Irvgmpf5i4opeEUiN5kQeNWdOr6JPTOFPSX0
+ NfT94R7mzYRXI94byhw9XFH098eTK5S2/cT41uDY=
+Received: by mail-ed1-f42.google.com with SMTP id p6so5673817edu.10;
+ Wed, 15 Apr 2020 09:30:49 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZMHTt0uJhIKRdd6/qlkWkHZpzsCF1+bKYBN3hb3xUFFvGKDSzN
+ xN5XIGp/FKNP8XNETAML+V4gxgW71kMurtgoRw==
+X-Google-Smtp-Source: APiQypLfzJMiKrjaHEhydOXdTWRa66BOG1MrE7lZ2rSnRI+v5Qgh7UJQS5J8mNuhBAJkynBr6SvIvV6gJxqWvKUSWUc=
+X-Received: by 2002:a17:906:124f:: with SMTP id
+ u15mr5582102eja.360.1586968247593; 
+ Wed, 15 Apr 2020 09:30:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200414205552.GN19819@pendragon.ideasonboard.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1586949506-22990-1-git-send-email-anthony.huang@mediatek.com>
+ <1586949506-22990-2-git-send-email-anthony.huang@mediatek.com>
+In-Reply-To: <1586949506-22990-2-git-send-email-anthony.huang@mediatek.com>
+From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Thu, 16 Apr 2020 00:30:35 +0800
+X-Gmail-Original-Message-ID: <CAAOTY_8VbgUtzCTv7NpCkZ0qVx4aXmX6ZWa_QA0Ph2JGx2GTfA@mail.gmail.com>
+Message-ID: <CAAOTY_8VbgUtzCTv7NpCkZ0qVx4aXmX6ZWa_QA0Ph2JGx2GTfA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: soc: mediatek: Add document for mmdvfs
+ driver
+To: Anthony Huang <anthony.huang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_092734_097337_7EBB8093 
-X-CRM114-Status: GOOD (  34.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_093050_027740_A4C71861 
+X-CRM114-Status: GOOD (  24.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,127 +85,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Maxime Ripard <maxime@cerno.tech>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
-
-On Tue, Apr 14, 2020 at 11:55:52PM +0300, Laurent Pinchart wrote:
-> Hi Sakari,
-> 
-> On Tue, Apr 07, 2020 at 06:14:01PM +0300, Sakari Ailus wrote:
-> > On Tue, Apr 07, 2020 at 03:21:06PM +0300, Laurent Pinchart wrote:
-> > > On Tue, Apr 07, 2020 at 09:22:41AM +0300, Sakari Ailus wrote:
-> > >> On Mon, Apr 06, 2020 at 08:32:34PM +0300, Laurent Pinchart wrote:
-> > >>> On Mon, Apr 06, 2020 at 07:51:08PM +0300, Sakari Ailus wrote:
-> > >>>> On Mon, Apr 06, 2020 at 05:42:38PM +0100, Lad Prabhakar wrote:
-> > >>>>> Modes in the driver are based on xvclk frequency fixed to 24MHz, but where
-> > >>>>> as the OV5645 sensor can support the xvclk frequency ranging from 6MHz to
-> > >>>>> 24MHz. So instead making clock-frequency as dt-property just let the
-> > >>>>> driver enforce the required clock frequency.
-> > >>>> 
-> > >>>> Even if some current systems where the driver is used are using 24 MHz
-> > >>>> clock, that doesn't mean there wouldn't be systems using another frequency
-> > >>>> that the driver does not support right now.
-> > >>>> 
-> > >>>> The driver really should not set the frequency unless it gets it from DT,
-> > >>>> but I think the preferred means is to use assigned-clock-rates instead, and
-> > >>>> not to involve the driver with setting the frequency.
-> > >>>> 
-> > >>>> Otherwise we'll make it impossible to support other frequencies, at least
-> > >>>> without more or less random defaults.
-> > >>> 
-> > >>> We're running in circles here.
-> > >>> 
-> > >>> As the driver only supports 24MHz at the moment, the frequency should be
-> > >>> set by the driver, as it's a driver limitation. We can then work on
-> > >>> supporting additional frequencies, which will require DT to provide a
-> > >>> list of supported frequencies for the system, but that can be done on
-> > >>> top.
-> > >> 
-> > >> I guess it would be possible to use different external clock frequencies on
-> > >> a sensor in a given system but that seems to be a bit far fetched, to the
-> > >> extent I've never seen anyone doing that in practice.
-> > >> 
-> > >> Originally, the driver set the frequency based on the clock-frequency
-> > >> property. If we're removing that but use a fixed frequency instead, then
-> > >> how is that going to work going forward when someone adds support for other
-> > >> frequencies in the driver and has a system requiring that, while there are
-> > >> some other platforms relying on the driver setting a particular frequency?
-> > > 
-> > > The standard property for this is link-frequencies, not clock-frequency.
-> > > Deprecating clock-frequency now paves the way to use the standard
-> > > property later when/if someone implements support for additional
-> > > frequencies.
-> > 
-> > The external clock frequency and link frequency are different indeed, but
-> > they are related. The link frequency has been selected in a way that it is
-> > possible to generate that exact frequency using the chosen external clock
-> > frequency. If you change the external clock frequency, chances are good
-> > there is no PLL configuration to generate that link frequency.
-> 
-> But aren't we supposed to pick the clock frequency based on the link
-> frequency specified in DT ?
-
-No. In a general case there is no reliable way to come up with an external
-clock frequency based on another, different if related, frequency.
-
-> 
-> In any case, this policy needs to be carefully documented.
-
-I thought after ten or so years this would be already an established
-practice. :-)
-
-I agree it should be documented. We don't seem to have specific
-documentation for camera sensor drivers at the moment. I can submit a
-patch...
-
-> 
-> > >> Although, if you're saying that this driver only needs to work with DT that
-> > >> comes with the kernel and you don't care about DT binary compatibility,
-> > >> this would be fine.
-> > > 
-> > > I believe this series to not break backward compatibility, as the driver
-> > > only works with a 24MHz clock, so I expect all DTs to specify that.
-> > 
-> > What you're still doing here is defining the DT bindings based on the
-> > current driver implementation, not the device properties.
-> 
-> Quite the contrary, the device doesn't require any particular input
-> clock frequency, so we're removing that from DT :-) Specifying the clock
-> frequency in DT is in my opinion a manual workaround for not computing
-> it at runtime based on the desired link frequency, while the link
-> frequency is a property of the system as it specifies the range of link
-> frequencies that are safe to use from an EMC point of view.
-
-The external clock frequency is significantly lower than the link frequency
-(usually), but it still comes out of the SoC (or a PMIC chip). The clock
-signal track on PCB as well as wiring may also be rather long, depending on
-where the camera sensor is --- quite possibly tens of centimetres.
-Therefore I wouldn't categorically rule out possible EMC issues with that
-one either.
-
-The bottom line is: use a known-good, safe frequency.
-
--- 
-Regards,
-
-Sakari Ailus
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIEFudGhvbnk6CgpBbnRob255IEh1YW5nIDxhbnRob255Lmh1YW5nQG1lZGlhdGVrLmNvbT4g
+5pa8IDIwMjDlubQ05pyIMTXml6Ug6YCx5LiJIOS4i+WNiDc6MTnlr6vpgZPvvJoKPgo+IFRoaXMg
+ZG9jdW1lbnQgZGVzY3JpYmVzIHRoZSBwcm9wZXJ0aWVzIHdoYXQgbXRrIG1tZHZmcwo+IGRldmlj
+ZSBub2RlIHN1cHBvcnQuCj4KPiBTaWduZWQtb2ZmLWJ5OiBBbnRob255IEh1YW5nIDxhbnRob255
+Lmh1YW5nQG1lZGlhdGVrLmNvbT4KPiAtLS0KPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3Mvc29j
+L21lZGlhdGVrL21tZHZmcy55YW1sICAgfCAgMTk4ICsrKysrKysrKysrKysrKysrKysrCj4gIDEg
+ZmlsZSBjaGFuZ2VkLCAxOTggaW5zZXJ0aW9ucygrKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NvYy9tZWRpYXRlay9tbWR2ZnMueWFtbAo+
+Cj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9zb2MvbWVk
+aWF0ZWsvbW1kdmZzLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc29j
+L21lZGlhdGVrL21tZHZmcy55YW1sCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAw
+MDAwLi45ZWYxODMzCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9zb2MvbWVkaWF0ZWsvbW1kdmZzLnlhbWwKPiBAQCAtMCwwICsxLDE5OCBA
+QAo+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4gKyVZQU1MIDEuMgo+ICst
+LS0KPiArJGlkOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvc2NoZW1hcy9zb2MvbWVkaWF0ZWsvbW1k
+dmZzLnlhbWwjCj4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMv
+Y29yZS55YW1sIwo+ICsKPiArdGl0bGU6IE1lZGlhdGVrIE1NRFZGUyBkcml2ZXIgYmluZGluZwo+
+ICsKPiArbWFpbnRhaW5lcnM6Cj4gKyAgLSBSb2IgSGVycmluZyA8cm9iaCtkdEBrZXJuZWwub3Jn
+Pgo+ICsgIC0gTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KPiArCj4gK2Rlc2Ny
+aXB0aW9uOiB8Cj4gKyAgVGhlIE1lZGlhdGVrIE1NRFZGUyhNdWx0aW1lZGlhIER5bmFtaWMgVm9s
+dGFnZSBhbmQgRnJlcXVlbmN5IFNjYWxpbmcpIGRyaXZlcgo+ICsgIGlzIHVzZWQgdG8gc2V0IGNs
+ayBmb3IgTWVkaWF0ZWsgbXVsdGltZWRpYSBoYXJkd2FyZXMsIHN1Y2ggYXMgZGlzcGxheSwKPiAr
+ICBjYW1lcmEsIG1kcCBhbmQgdmlkZW8gY29kZWMuIE1NRFZGUyBkcml2ZXIgcmVhZHMgd2hpY2gg
+Y2xvY2sgbXV4ZXMgYW5kIGNsb2NrCj4gKyAgc291cmNlcyBhcmUgdXNlZCBvbiB0aGlzIHBsYXRm
+b3JtIGZyb20gRFRTLCBhbmQgc2V0cyBjdXJyZW50IGNsb2NrIGFjY29yZGluZwo+ICsgIHRvIGN1
+cnJlbnQgdm9sdGFnZSBpbmZvcm1lZCBieSByZWd1bGF0b3IgY2FsbGJhY2suCj4gKwo+ICtwcm9w
+ZXJ0aWVzOgo+ICsgIGNvbXBhdGlibGU6Cj4gKyAgICBpdGVtczoKPiArICAgICAgLSBjb25zdDog
+bWVkaWF0ZWssbW1kdmZzCj4gKwo+ICsgIG9wZXJhdGluZy1wb2ludHMtdjI6Cj4gKyAgICBkZXNj
+cmlwdGlvbjoKPiArICAgICAgQ29udGFpbnMgYW55IG9uZSBvZiBvcHAgdGFibGVzIGZvciBtdWx0
+aW1lZGlhIG1vZHVsZXMuCj4gKyAgICAgIE1NRFZGUyB1c2VzIGl0IHRvIGdldCB2b2x0YWdlIHNl
+dHRpbmcgb24gdGhpcyBwbGF0Zm9ybS4KPiArCj4gKyAgbWVkaWF0ZWssc3VwcG9ydF9tdXg6Cj4g
+KyAgICBkZXNjcmlwdGlvbjogQSBsaXN0IG9mIGNsb2NrIG11eCBuYW1lcyBkZWZpbmVkIGluIGNs
+b2NrLW5hbWVzLgo+ICsgICAgYWxsT2Y6Cj4gKyAgICAgIC0gJHJlZjogL3NjaGVtYXMvdHlwZXMu
+eWFtbCMvZGVmaW5pdGlvbnMvc3RyaW5nLWFycmF5Cj4gKwo+ICsgIGNsb2NrczoKPiArICAgIGRl
+c2NyaXB0aW9uOgo+ICsgICAgICBBIGxpc3Qgb2YgcGhhbmRsZXMgb2YgY2xvY2sgbXV4ZXMgYW5k
+IGNsb2NrIHNvdXJjZXMgZm9yCj4gKyAgICAgIG11bHRpbWVkaWEgaGFyZHdhcmVzLgo+ICsKPiAr
+ICBjbG9jay1uYW1lczoKPiArICAgIGRlc2NyaXB0aW9uOgo+ICsgICAgICBBIGxpc3Qgb2YgbmFt
+ZSBzdHJpbmdzIG9mIGNsb2NrIG11eGVzIGFuZCBjbG9jayBzb3VyY2VzIGZvcgo+ICsgICAgICBt
+dWx0aW1lZGlhIGhhcmR3YXJlcy4KPiArCj4gKyAgIyBJZiB0aGUgcGxhdGZvcm0gbmVlZHMgZnJl
+cXVlbmN5IGhvcHBpbmcgZm9yIHNvbWUgY2xvY2sgc291cmNlcywgdGhlc2UKPiArICAjIGZvbGxv
+d2luZyBwcm9wZXJ0aWVzIHNob3VsZCBiZSBzZXQuCj4gKwo+ICsgIG1lZGlhdGVrLHN1cHBvcnRf
+aG9wcGluZzoKPiArICAgIGRlc2NyaXB0aW9uOiBhIGxpc3Qgb2YgY2xvY2sgbmFtZXMgc3VwcG9y
+dGluZyBmcmVxdWVuY3kgaG9wcGluZy4KPiArICAgIGFsbE9mOgo+ICsgICAgICAtICRyZWY6IC9z
+Y2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3N0cmluZy1hcnJheQo+ICsKPiArICBtZWRp
+YXRlayxhY3Rpb246Cj4gKyAgICBkZXNjcmlwdGlvbjoKPiArICAgICAgQSBjZWxsIHdpdGggb25l
+IGVudHJ5Lgo+ICsgICAgICBJdCByZXByZXNlbnRzIHRoZSBhY3Rpb24gdGFrZW4gd2hlbiBzZXR0
+aW5nIGNsb2Nrcy4KPiArICAgICAgMCBtZWFucyBub3Qgc2V0dGluZyBmcmVxdWVuY3kgaG9wcGlu
+ZyBhbmQganVzdCBzZXQgY2xvY2sgbXV4Lgo+ICsgICAgICAxIG1lYW5zIHNldHRpbmcgZnJlcXVl
+bmN5IGhvcHBpbmcgZmlyc3QgaWYgdGhlIHZvbHRhZ2UgaXMgaW5jcmVhc2luZywgYnV0Cj4gKyAg
+ICAgIHNldHRpbmcgY2xvY2sgbXV4IGZpcnN0IGlmIHRoZSB2b2x0YWdlIGlzIGRlY3JlYXNpbmcu
+Cj4gKyAgICBhbGxPZjoKPiArICAgICAgLSAkcmVmOiAiL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVm
+aW5pdGlvbnMvdWludDMyIgo+ICsgICAgICAtIGVudW06IFswLCAxXQo+ICsgICAgbWF4SXRlbXM6
+IDEKPiArCj4gK3BhdHRlcm5Qcm9wZXJ0aWVzOgo+ICsgICJebWVkaWF0ZWssbXV4XyskIjoKPiAr
+ICAgIGRlc2NyaXB0aW9uOgo+ICsgICAgICBBIHNlcmllcyBvZiBwcm9wZXJ0aWVzIHdpdGggIm1l
+ZGlhdGVrLG11eF8iIHByZWZpeC4KPiArICAgICAgRWFjaCBwcm9wZXJ0eSByZXByZXNlbnRzIG9u
+ZSBjbG9jayBtdXgsIGFuZCBpdHMgdmFsdWUgaXMgYSBsaXN0IG9mIGFsbAo+ICsgICAgICB0aGUg
+Y2xvY2sgc291cmNlcyBmb3IgaXQuIFRoZSBwb3N0Zml4IGFuZCBldmVyeSBpdGVtIGluIHRoZSBw
+cm9wZXJ0eQo+ICsgICAgICBtdXN0IGJlIGZyb20gdGhlIGNsb2NrLW5hbWVzLgo+ICsKPiArICAi
+Xm1lZGlhdGVrLGhvcHBpbmdfKyQiOgo+ICsgICAgZGVzY3JpcHRpb246Cj4gKyAgICAgIEEgY2Vs
+bCB3aXRoIHRoZSBzYW1lIHNpemUgYXMgb3BwIG51bWJlcnMgb2YgYW4gb3BwIHRhYmxlIGZvciBh
+bnkgTU0gbW9kdWxlCj4gKyAgICAgIGFuZCBlYWNoIGVudHJ5IHJlcHJlc2VudHMgdGhlIGNsb2Nr
+IHJhdGUgZm9yIGVhY2ggb3BwLiBGb3IgZXhhbXBsZSwgdGhlCj4gKyAgICAgIGZpcnN0IGVudHJ5
+IGlzIHRoZSBjbG9jayByYXRlIHNldCBpbiBvcHAtMCwgYW5kIHRoZSBzZWNvbmQgZW50cnkgaXMg
+dGhlCj4gKyAgICAgIGNsb2NrIHJhdGUgc2V0IGluIG9wcC0xLgo+ICsKPiArcmVxdWlyZWQ6Cj4g
+KyAgLSBjb21wYXRpYmxlCj4gKyAgLSBvcGVyYXRpbmctcG9pbnRzLXYyCj4gKyAgLSBtZWRpYXRl
+ayxzdXBwb3J0X211eAo+ICsgIC0gY2xvY2sKPiArICAtIGNsb2NrLW5hbWVzCj4gKwo+ICtleGFt
+cGxlczoKPiArICAtIHwKPiArICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9jbG9jay9tdDY3Nzkt
+Y2xrLmg+Cj4gKwo+ICsgICAgb3BwX3RhYmxlX21tOiBvcHAtdGFibGUtbW0gewo+ICsgICAgICAg
+IGNvbXBhdGlibGUgPSAib3BlcmF0aW5nLXBvaW50cy12MiI7Cj4gKwo+ICsgICAgICAgIG9wcC0w
+IHsKPiArICAgICAgICAgICAgb3BwLWh6ID0gL2JpdHMvIDY0IDwzMTUwMDAwMDA+Owo+ICsgICAg
+ICAgICAgICBvcHAtbWljcm92b2x0ID0gPDY1MDAwMD47Cj4gKyAgICAgICAgfTsKPiArICAgICAg
+ICBvcHAtMSB7Cj4gKyAgICAgICAgICAgIG9wcC1oeiA9IC9iaXRzLyA2NCA8NDUwMDAwMDAwPjsK
+PiArICAgICAgICAgICAgb3BwLW1pY3Jvdm9sdCA9IDw3MjUwMDA+Owo+ICsgICAgICAgIH07Cj4g
+KyAgICAgICAgb3BwLTIgewo+ICsgICAgICAgICAgICBvcHAtaHogPSAvYml0cy8gNjQgPDYwNjAw
+MDAwMD47Cj4gKyAgICAgICAgICAgIG9wcC1taWNyb3ZvbHQgPSA8ODI1MDAwPjsKPiArICAgICAg
+ICB9Owo+ICsgICAgfTsKPiArCj4gKyAgICBvcHBfdGFibGVfY2FtOiBvcHAtdGFibGUtY2FtIHsK
+PiArICAgICAgICBjb21wYXRpYmxlID0gIm9wZXJhdGluZy1wb2ludHMtdjIiOwo+ICsKPiArICAg
+ICAgICBvcHAtMCB7Cj4gKyAgICAgICAgICAgIG9wcC1oeiA9IC9iaXRzLyA2NCA8MzE1MDAwMDAw
+PjsKPiArICAgICAgICAgICAgb3BwLW1pY3Jvdm9sdCA9IDw2NTAwMDA+Owo+ICsgICAgICAgIH07
+Cj4gKyAgICAgICAgb3BwLTEgewo+ICsgICAgICAgICAgICBvcHAtaHogPSAvYml0cy8gNjQgPDQx
+NjAwMDAwMD47Cj4gKyAgICAgICAgICAgIG9wcC1taWNyb3ZvbHQgPSA8NzI1MDAwPjsKPiArICAg
+ICAgICB9Owo+ICsgICAgICAgIG9wcC0yIHsKPiArICAgICAgICAgICAgb3BwLWh6ID0gL2JpdHMv
+IDY0IDw1NjAwMDAwMDA+Owo+ICsgICAgICAgICAgICBvcHAtbWljcm92b2x0ID0gPDgyNTAwMD47
+Cj4gKyAgICAgICAgfTsKPiArICAgIH07Cj4gKwo+ICsgICAgLyogT3RoZXIgb3BwIHRhYmxlcyBm
+b3IgbXVsdGltZWRpYSBtb2R1bGVzICovCj4gKwo+ICsgICAgbW1kdmZzIHsKPiArICAgICAgICBj
+b21wYXRpYmxlID0gIm1lZGlhdGVrLG1tZHZmcyI7Cj4gKwo+ICsgICAgICAgIG9wZXJhdGluZy1w
+b2ludHMtdjIgPSA8Jm9wcF90YWJsZV9tbT47Cj4gKwo+ICsgICAgICAgIG1lZGlhdGVrLHN1cHBv
+cnRfbXV4ID0gIm1tIiwgImNhbSIsICJpbWciLCAiaXBlIiwKPiArICAgICAgICAgICAgInZlbmMi
+LCAidmRlYyIsICJkcGUiLCAiY2N1IjsKPiArCj4gKyAgICAgICAgbWVkaWF0ZWssbXV4X21tID0g
+ImNsa19tbXBsbF9kNV9kMiIsCj4gKyAgICAgICAgICAgICJjbGtfbW1wbGxfZDciLCAiY2xrX3R2
+ZHBsbF9tYWlucGxsX2QyX2NrIjsKPiArICAgICAgICBtZWRpYXRlayxtdXhfY2FtID0gImNsa19t
+bXBsbF9kNV9kMiIsCj4gKyAgICAgICAgICAgICJjbGtfdW5pdnBsbF9kMyIsICJjbGtfYWRzcHBs
+bF9kNSI7Cj4gKyAgICAgICAgbWVkaWF0ZWssbXV4X2ltZyA9ICJjbGtfbW1wbGxfZDVfZDIiLAo+
+ICsgICAgICAgICAgICAiY2xrX3VuaXZwbGxfZDMiLCAiY2xrX3R2ZHBsbF9tYWlucGxsX2QyX2Nr
+IjsKPiArICAgICAgICBtZWRpYXRlayxtdXhfaXBlID0gImNsa19tbXBsbF9kNV9kMiIsCj4gKyAg
+ICAgICAgICAgICJjbGtfdW5pdnBsbF9kMyIsICJjbGtfbWFpbnBsbF9kMiI7Cj4gKyAgICAgICAg
+bWVkaWF0ZWssbXV4X3ZlbmMgPSAiY2xrX21haW5wbGxfZDMiLAo+ICsgICAgICAgICAgICAiY2xr
+X21tcGxsX2Q3IiwgImNsa19tbXBsbF9kNSI7Cj4gKyAgICAgICAgbWVkaWF0ZWssbXV4X3ZkZWMg
+PSAiY2xrX3VuaXZwbGxfZDJfZDIiLAo+ICsgICAgICAgICAgICAiY2xrX3VuaXZwbGxfZDMiLCAi
+Y2xrX3VuaXZwbGxfZDIiOwo+ICsgICAgICAgIG1lZGlhdGVrLG11eF9kcGUgPSAiY2xrX21haW5w
+bGxfZDMiLAo+ICsgICAgICAgICAgICAiY2xrX21tcGxsX2Q3IiwgImNsa19tYWlucGxsX2QyIjsK
+PiArICAgICAgICBtZWRpYXRlayxtdXhfY2N1ID0gImNsa19tbXBsbF9kNV9kMiIsCj4gKyAgICAg
+ICAgICAgICJjbGtfdW5pdnBsbF9kMyIsICJjbGtfYWRzcHBsbF9kNSI7Cj4gKwo+ICsgICAgICAg
+IG1lZGlhdGVrLHN1cHBvcnRfaG9wcGluZyA9ICJjbGtfbW1wbGxfY2siOwo+ICsgICAgICAgIG1l
+ZGlhdGVrLGhvcHBpbmdfY2xrX21tcGxsX2NrID0gPDYzMDAwMDAwMCA2MzAwMDAwMDAgNjUwMDAw
+MDAwPjsKPiArICAgICAgICBtZWRpYXRlayxhY3Rpb24gPSA8MT47Cj4gKwo+ICsKPiArICAgICAg
+ICBjbG9ja3MgPSA8JnRvcGNrZ2VuIENMS19UT1BfTU0+LAo+ICsgICAgICAgICAgICAgICAgPCZ0
+b3Bja2dlbiBDTEtfVE9QX0NBTT4sCj4gKyAgICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19U
+T1BfSU1HPiwKPiArICAgICAgICAgICAgICAgIDwmdG9wY2tnZW4gQ0xLX1RPUF9JUEU+LAo+ICsg
+ICAgICAgICAgICAgICAgPCZ0b3Bja2dlbiBDTEtfVE9QX1ZFTkM+LAo+ICsgICAgICAgICAgICAg
+ICAgPCZ0b3Bja2dlbiBDTEtfVE9QX1ZERUM+LAo+ICsgICAgICAgICAgICAgICAgPCZ0b3Bja2dl
+biBDTEtfVE9QX0RQRT4sCj4gKyAgICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19UT1BfQ0NV
+PiwKPiArICAgICAgICAgICAgICAgIDwmdG9wY2tnZW4gQ0xLX1RPUF9NTVBMTF9ENT4sCj4gKyAg
+ICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19UT1BfVU5JVlBMTF9EMj4sCj4gKyAgICAgICAg
+ICAgICAgICA8JnRvcGNrZ2VuIENMS19UT1BfVFZEUExMX01BSU5QTExfRDJfQ0s+LAo+ICsgICAg
+ICAgICAgICAgICAgPCZ0b3Bja2dlbiBDTEtfVE9QX0FEU1BQTExfRDU+LAo+ICsgICAgICAgICAg
+ICAgICAgPCZ0b3Bja2dlbiBDTEtfVE9QX01BSU5QTExfRDI+LAo+ICsgICAgICAgICAgICAgICAg
+PCZ0b3Bja2dlbiBDTEtfVE9QX01NUExMX0Q2PiwKPiArICAgICAgICAgICAgICAgIDwmdG9wY2tn
+ZW4gQ0xLX1RPUF9NTVBMTF9ENz4sCj4gKyAgICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19U
+T1BfVU5JVlBMTF9EMz4sCj4gKyAgICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19UT1BfTUFJ
+TlBMTF9EMz4sCj4gKyAgICAgICAgICAgICAgICA8JnRvcGNrZ2VuIENMS19UT1BfTU1QTExfRDVf
+RDI+LAo+ICsgICAgICAgICAgICAgICAgPCZ0b3Bja2dlbiBDTEtfVE9QX1VOSVZQTExfRDJfRDI+
+LAo+ICsgICAgICAgICAgICAgICAgPCZ0b3Bja2dlbiBDTEtfVE9QX01NUExMX0NLPjsKPiArICAg
+ICAgICBjbG9jay1uYW1lcyA9ICJtbSIsCj4gKyAgICAgICAgICAgICAgICAiY2FtIiwKPiArICAg
+ICAgICAgICAgICAgICJpbWciLAo+ICsgICAgICAgICAgICAgICAgImlwZSIsCj4gKyAgICAgICAg
+ICAgICAgICAidmVuYyIsCj4gKyAgICAgICAgICAgICAgICAidmRlYyIsCj4gKyAgICAgICAgICAg
+ICAgICAiZHBlIiwKPiArICAgICAgICAgICAgICAgICJjY3UiLAo+ICsgICAgICAgICAgICAgICAg
+ImNsa19tbXBsbF9kNSIsCj4gKyAgICAgICAgICAgICAgICAiY2xrX3VuaXZwbGxfZDIiLAo+ICsg
+ICAgICAgICAgICAgICAgImNsa190dmRwbGxfbWFpbnBsbF9kMl9jayIsCj4gKyAgICAgICAgICAg
+ICAgICAiY2xrX2Fkc3BwbGxfZDUiLAo+ICsgICAgICAgICAgICAgICAgImNsa19tYWlucGxsX2Qy
+IiwKPiArICAgICAgICAgICAgICAgICJjbGtfbW1wbGxfZDYiLAo+ICsgICAgICAgICAgICAgICAg
+ImNsa19tbXBsbF9kNyIsCj4gKyAgICAgICAgICAgICAgICAiY2xrX3VuaXZwbGxfZDMiLAo+ICsg
+ICAgICAgICAgICAgICAgImNsa19tYWlucGxsX2QzIiwKPiArICAgICAgICAgICAgICAgICJjbGtf
+bW1wbGxfZDVfZDIiLAo+ICsgICAgICAgICAgICAgICAgImNsa191bml2cGxsX2QyX2QyIiwKPiAr
+ICAgICAgICAgICAgICAgICJjbGtfbW1wbGxfY2siOwo+ICsgICAgfTsKCldlIGRvIG5vdCBsaWtl
+IGEgdmlydHVhbCBkZXZpY2Ugd2hpY2ggZG9lcyBub3QgbWFwIHRvIGEgcmVhbCBoYXJkd2FyZQpi
+ZWNhdXNlIGRldmljZSB0cmVlIGlzIHVzZWQgdG8gZGVzY3JpYmUgaGFyZHdhcmUuIEFsbCBtbWR2
+ZnMgZHJpdmVyIGRvCmlzIHRvIGNvbnRyb2xsIHRoZSBjbG9jaywgc28gSSB0aGluayB5b3Ugc2hv
+dWxkIG1vdmUgdGhlIGRyaXZlciBpbnRvCmRyaXZlcnMvY2xrL21lZGlhdGVrLCBtb3ZlIG9wcF90
+YWJsZSBpbnRvIGRyaXZlciwgYW5kIGZvcmdldCBhbnl0aGluZwppbiBkZXZpY2UgdHJlZS4KClJl
+Z2FyZHMsCkNodW4tS3VhbmcuCgo+ICsuLi4KPiAtLQo+IDEuNy45LjUKPiBfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IExpbnV4LW1lZGlhdGVrIG1haWxp
+bmcgbGlzdAo+IExpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LW1lZGlhdGVrCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
