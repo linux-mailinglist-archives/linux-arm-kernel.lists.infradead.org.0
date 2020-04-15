@@ -2,87 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F15B1AAC69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 17:57:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 423A31AACA9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jm45JINUC1rL7coeWX9nqUBhnxOF7rfwXkkSe8+juX8=; b=ZzlvCXmvhoXh7Z
-	9Rq/TeWLOthXK4nDabCBlAursxCNR6mPwK7+/VSybB0MOyB7TVtJRbmHu9CNAruAVnlfvf6NKKYRf
-	O0K8ImjdCKe1mh8bs/CXGBdR4opvdVu1SkMQXPFBGJDMtToj1mS/upYQrFXcYTnEfnX/6YGJ2afXf
-	t+1hBcC8SxElF7BbuKNsCjmelbmcZw2c0HRdDQhGKITScFw17lNcQJiuo9rUih7l5dscCMQ9YzGO+
-	du71AhHfdMMY/IeClNun+hqsnUEFQdLRojOg/uQk8lXxyTNyGG/gUZSmR7RgCyFwBg8ZsoMvlPS4y
-	NqwXUrjpymw3nWp8eTRA==;
+	List-Owner; bh=W1VbPjxvlI0MraNsf5v269Vf3hpmoC6PfNyhhjnlneA=; b=U4x7r4zgsZricV
+	q97OwO4oKoY8LRgVbCkTenNTxnIftEuPO9dDjb6MB+KgXUOPxnMb+KM+hdX1q+snxHV1VukkK/FZV
+	V1adYCATEuxsnxxW3sjhI2adA57pEUU7BvH/TVl7ZYUMrxFjcEwTNttmKbQUuTyxQbtHZXXSgg3TB
+	xJjOppM8WKg4VdvyhUhY/G//humoMmZz/izA0sekNvqHw2l53g3aueNK/mu4i6CzIRq12DKuHeTQB
+	8gJjmKnA/GoW59ikSAkuitb3y39qKeASm8TDeYp5aCWz8BaD+kpDJHbmspQImkC88XFHebZqDQbZM
+	HEwa5V+LCFv2x8+ZStJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOkPG-0002WB-BG; Wed, 15 Apr 2020 15:56:54 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOkP6-0002Vn-0b
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 15:56:47 +0000
-Received: by mail-il1-x144.google.com with SMTP id d2so3836003ilc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 08:56:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=B9MXhYCYetRAbTwmXzTq/cHtzrXsP07P1r9YbCMxRJ0=;
- b=RHXjl4nb/Oy28ie0zxV0vpLR6hc/Jq5ukBL/OcMix0dK3AqfaHCMr7TrVeSh2Ax14w
- bwM9eSAn98iU6hfOOjgyjHxAGs5atXlzY3xr9INwhtogNgLo0DPaPaeKFIZ9zrPBABpH
- au8zhHmONlmXyZf0MP6OblRKfls0mlkIY8oASo9BToM/Fja5/mLKmlY4YJ0b8dbeS6W2
- 4FEb+/IZhvRRYARXtF1R0/MTMHdrlPKsL5UslgnKVPzhaHiDq0R1ZbfLOsOg7U38h15a
- aZza/MZHr329GSPMMY1HLeDxOdn66J8qUtE0DAmmkWATGa/TS7WfwfR/IRU0ZwAKz/Vh
- o7zw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=B9MXhYCYetRAbTwmXzTq/cHtzrXsP07P1r9YbCMxRJ0=;
- b=H7P32QjktZaeXId5yMlm4yhrSne8EvZULIS3eyUGOgjfOaQO3pLnR90DxgwPgPtV+F
- kB8VZmtARML7swAZXGZYbQVRvnS7H31NGNQfaFSuxAhaexWkzBav+QGIAY/bxWLDqULh
- A10UMhlvvaOE+q/XMjT7DNBKvEBJ/xD26+FYAx0z6ZzxnmNbIQpPRSwXAXsB/lKLsBOL
- QjIVKkyYIL1kQybQNmviFYec7+ue+Z3PjGoZVicmsvsgHZ4/fz42Lois+L/gqrkfSwxo
- yPqJ1EnhKa5GzKlEt9CNrHzp/Op8sNWiT3jRyki790yEGOvUBNbQ9EN+F6iCvKurlKtG
- DnQg==
-X-Gm-Message-State: AGi0PuYG6Yx5SL9EN9O9z2DiTpPTUSZwsRh1+tP2WlzMoJdtb5YKsD6L
- kVqc7pNhbTevMLOy4A8tvqwKItJ2Pyle7v/eWX386g==
-X-Google-Smtp-Source: APiQypKVzyuJcbicWAEIxRgg1A+gem0GWiCs2bZOAaL/EVmkJ0g+4v6HC8k/rcGL2d2Zuq9Nzb/jrRrpvcn69U+xglY=
-X-Received: by 2002:a92:158c:: with SMTP id 12mr5984810ilv.58.1586966202755;
- Wed, 15 Apr 2020 08:56:42 -0700 (PDT)
+	id 1jOkWq-0001PO-GJ; Wed, 15 Apr 2020 16:04:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOkWg-0001Oh-C0
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:04:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD6FF1FB;
+ Wed, 15 Apr 2020 09:04:33 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 38A133F6C4;
+ Wed, 15 Apr 2020 09:04:31 -0700 (PDT)
+Date: Wed, 15 Apr 2020 17:04:25 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Subject: Re: [RFC PATCH 1/4] bus: fsl-mc: add custom .dma_configure
+ implementation
+Message-ID: <20200415160425.GA6436@e121166-lin.cambridge.arm.com>
+References: <20200227100542.13819-1-laurentiu.tudor@nxp.com>
+ <20200325125109.GA5430@red-moon.cambridge.arm.com>
+ <499fbf9a-416f-d7c7-0655-881d92138a6c@nxp.com>
+ <20200414143211.GA14905@red-moon.cambridge.arm.com>
+ <d37ca4e3-58cb-9d6f-3a98-5e4a21ca948b@nxp.com>
 MIME-Version: 1.0
-References: <20200409113538.5008-1-saiprakash.ranjan@codeaurora.org>
- <9a792e3e-5a17-156d-4b59-4a3ec8f9993e@arm.com>
- <1751aeabd22bee18d2eef0f643883265@codeaurora.org>
- <20200413171418.GB28804@xps15>
- <75ef334a7e2cc6d87deecadd12c74f59@codeaurora.org>
-In-Reply-To: <75ef334a7e2cc6d87deecadd12c74f59@codeaurora.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Wed, 15 Apr 2020 09:56:31 -0600
-Message-ID: <CANLsYkxVFMrAOtZhNgQ+uPE5mgt1z8RNa_yAxX2ju7DYrbvBZw@mail.gmail.com>
-Subject: Re: [PATCH] coresight: tmc: Read TMC mode only when TMC hw is enabled
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Content-Disposition: inline
+In-Reply-To: <d37ca4e3-58cb-9d6f-3a98-5e4a21ca948b@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_085644_572466_2F5C63A3 
-X-CRM114-Status: GOOD (  28.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_090434_501082_DD339D89 
+X-CRM114-Status: GOOD (  32.73  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,112 +68,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-msm-owner@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: jason@lakedaemon.net, calvin.johnson@nxp.com, ard.biesheuvel@linaro.org,
+ maz@kernel.org, pankaj.bansal@nxp.com, diana.craciun@oss.nxp.com,
+ jon@solid-run.com, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
+ cristian.sovaiala@nxp.com, tglx@linutronix.de, makarand.pawagi@nxp.com,
+ ioana.ciornei@nxp.com, Stuart.Yoder@arm.com, robin.murphy@arm.com,
+ joro@8bytes.org, linux-arm-kernel@lists.infradead.org, V.Sethi@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 14 Apr 2020 at 09:47, Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> Hi Mathieu,
->
-> On 2020-04-13 22:44, Mathieu Poirier wrote:
-> > On Mon, Apr 13, 2020 at 01:55:30PM +0530, Sai Prakash Ranjan wrote:
-> >> Hi Suzuki,
+On Wed, Apr 15, 2020 at 06:44:37PM +0300, Laurentiu Tudor wrote:
+> 
+> 
+> On 4/14/2020 5:32 PM, Lorenzo Pieralisi wrote:
+> > On Wed, Mar 25, 2020 at 06:48:55PM +0200, Laurentiu Tudor wrote:
+> >> Hi Lorenzo,
 > >>
-> >> On 2020-04-13 04:47, Suzuki K Poulose wrote:
-> >> > Hi Sai,
-> >> >
-> >> > On 04/09/2020 12:35 PM, Sai Prakash Ranjan wrote:
-> >> > > Reading TMC mode register in tmc_read_prepare_etb without
-> >> > > enabling the TMC hardware leads to async exceptions like
-> >> > > the one in the call trace below. This can happen if the
-> >> > > user tries to read the TMC etf data via device node without
-> >> > > setting up source and the sink first which enables the TMC
-> >> > > hardware in the path. So make sure that the TMC is enabled
-> >> > > before we try to read TMC data.
-> >> >
-> >> > So, one can trigger the same SError by simply :
-> >> >
-> >> > $ cat /sys/bus/coresight/device/tmc_etb0/mgmt/mode
-> >> >
+> >> On 3/25/2020 2:51 PM, Lorenzo Pieralisi wrote:
+> >>> On Thu, Feb 27, 2020 at 12:05:39PM +0200, laurentiu.tudor@nxp.com wrote:
+> >>>> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+> >>>>
+> >>>> The devices on this bus are not discovered by way of device tree
+> >>>> but by queries to the firmware. It makes little sense to trick the
+> >>>> generic of layer into thinking that these devices are of related so
+> >>>> that we can get our dma configuration. Instead of doing that, add
+> >>>> our custom dma configuration implementation.
+> >>>>
+> >>>> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+> >>>> ---
+> >>>>  drivers/bus/fsl-mc/fsl-mc-bus.c | 31 ++++++++++++++++++++++++++++++-
+> >>>>  1 file changed, 30 insertions(+), 1 deletion(-)
+> >>>>
+> >>>> diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
+> >>>> index 36eb25f82c8e..eafaa0e0b906 100644
+> >>>> --- a/drivers/bus/fsl-mc/fsl-mc-bus.c
+> >>>> +++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
+> >>>> @@ -132,11 +132,40 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
+> >>>>  static int fsl_mc_dma_configure(struct device *dev)
+> >>>>  {
+> >>>>  	struct device *dma_dev = dev;
+> >>>> +	struct iommu_fwspec *fwspec;
+> >>>> +	const struct iommu_ops *iommu_ops;
+> >>>> +	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
+> >>>> +	int ret;
+> >>>> +	u32 icid;
+> >>>>  
+> >>>>  	while (dev_is_fsl_mc(dma_dev))
+> >>>>  		dma_dev = dma_dev->parent;
+> >>>>  
+> >>>> -	return of_dma_configure(dev, dma_dev->of_node, 0);
+> >>>> +	fwspec = dev_iommu_fwspec_get(dma_dev);
+> >>>> +	if (!fwspec)
+> >>>> +		return -ENODEV;
+> >>>> +	iommu_ops = iommu_ops_from_fwnode(fwspec->iommu_fwnode);
+> >>>> +	if (!iommu_ops)
+> >>>> +		return -ENODEV;
+> >>>> +
+> >>>> +	ret = iommu_fwspec_init(dev, fwspec->iommu_fwnode, iommu_ops);
+> >>>> +	if (ret)
+> >>>> +		return ret;
+> >>>> +
+> >>>> +	icid = mc_dev->icid;
+> >>>> +	ret = iommu_fwspec_add_ids(dev, &icid, 1);
+> >>>
+> >>> I see. So with this patch we would use the MC named component only to
+> >>> retrieve the iommu_ops
 > >>
-> >> I do not see any SError when I run the above command.
+> >> Right. I'd also add that the implementation tries to follow the existing
+> >> standard .dma_configure implementations, e.g. of_dma_configure +
+> >> of_iommu_configure. I'd also note that similarly to the ACPI case, this
+> >> MC FW device is probed as a platform device in the DT scenario, binding
+> >> here [1].
+> >> A similar approach is used for the retrieval of the msi irq domain, see
+> >> following patch.
 > >>
-> >> localhost ~ # cat /sys/bus/coresight/devices/tmc_etf0/mgmt/mode
-> >> 0x0
+> >>> - the streamid are injected directly here bypassing OF/IORT bindings translations altogether. 
 > >>
-> >> And this is most likely due to
-> >>
-> >> commit cd9e3474bb793dc ("coresight: add PM runtime calls to
-> >> coresight_simple_func()")
-> >
-> > Ok, so this is related to power management (you can ignore my question
-> > in the
-> > previous email).
-> >
-> > Regarding function tmc_read_prepare_etb(), the best way to deal with
-> > this is
-> > probably make sure drvdata->mode != CS_MODE_DISABLED before reading
-> > TMC_MODE.
-> > If there is a buffer to read it will have been copied when the ETB was
-> > disabled
-> > and there won't be a need to access the HW.
-> >
->
-> This works as well, thanks.
->
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> index d0cc3985b72a..7ffe05930984 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> @@ -596,6 +596,11 @@ int tmc_read_prepare_etb(struct tmc_drvdata
-> *drvdata)
->                  goto out;
->          }
->
-> +       if (drvdata->mode == CS_MODE_DISABLED) {
-> +               ret = -EINVAL;
-> +               goto out;
-> +       }
-> +
+> >> Actually I've submitted a v2 [2] that calls into .of_xlate() to allow
+> >> the smmu driver to do some processing on the raw streamid coming from
+> >> the firmware. I have not yet tested this with ACPI but expect it to
+> >> work, however, it's debatable how valid is this approach in the context
+> >> of ACPI.
+> > 
+> > Actually, what I think you need is of_map_rid() (and an IORT
+> > equivalent, that I am going to write - generalizing iort_msi_map_rid()).
+> > 
+> > Would that be enough to enable IORT "normal" mappings in the MC bus
+> > named components ?
+> > 
+> 
+> At a first glance, looks like this could very well fix the ACPI
+> scenario, but I have some unclarities on the approach:
+>  * are we going to rely in DT and ACPI generic layers even if these
+> devices are not published / enumerated through DT or ACPI tables?
+>  * the firmware manages and provides discrete streamids for the devices
+> it exposes so there's no translation involved. There's no
+>    requestor_id / input_id involved but it seems that we would still do
+> some kind of translation relying for this on the DT/ACPI functions.
+>  * MC firmware has its own stream_id (e.g. on some chips 0x4000, others
+> 0xf00, so outside the range of stream_ids used for the mc devices)
+>    while for the devices on this bus, MC allocates stream_ids from a
+> range (e.g. 0x17 - 0x3f). Is it possible to describe this in the IORT table?
+>  * Regarding the of_map_rid() use you mentioned, I was planning to
+> decouple the mc bus from the DT layer by dropping the use of
+> of_map_rid(), see patch 4.
+> I briefly glanced over the iort code and spotted this static function:
+> iort_iommu_xlate(). Wouldn't it also help, of course after making it public?
 
-We are back to your original solution where the ETB buffer can't be
-read if the ETB itself is not enabled.  It _is_ possible to read the
-buffer of an ETB that has been disabled.
+Guys I have lost you honestly. I don't understand what you really need
+to do with DT and ACPI here. Are they needed to describe what you need
+or not ? If the MC dma configure function does not need any DT/ACPI
+bindings that's fine by me, I don't understand though why you are still
+asking how to represent MC in ACPI then, what for.
 
-To fix this consider the following [1].  Take the block at line 607
-and move it to line 598.  As part of the if() condition at line 619,
-read the value of the TMC_MODE register and exit if not in circular
-mode.  If it is in circular mode continue with disabling the hardware.
+Can you talk between *yourselves* please and decide what you need ?
 
-[1]. https://elixir.bootlin.com/linux/v5.7-rc1/source/drivers/hwtracing/coresight/coresight-tmc-etf.c
+What's the problem ?
 
->          /* There is no point in reading a TMC in HW FIFO mode */
->          mode = readl_relaxed(drvdata->base + TMC_MODE);
->          if (mode != TMC_MODE_CIRCULAR_BUFFER) {
->
->
-> Thanks,
-> Sai
->
-> --
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
-> member
-> of Code Aurora Forum, hosted by The Linux Foundation
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
