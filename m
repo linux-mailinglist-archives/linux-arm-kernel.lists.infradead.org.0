@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CCA41A9361
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 08:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976461A9367
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 08:41:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KDYZFwCtN5sBBWVwSqFXnt4gJnncBOdVsvSJvT+vMm8=; b=er+rlZ/p6q482ePCF24A2taWmJ
-	l0rRmNghXcjf3Wxjg2wbILt6yJdiQbzaVmQQSy3YR93kwjnas91jivE8hrRfzW308jx7RoroGkt/R
-	cOREm7dRxMbDu9bEFcQyqeOT/WJltdpCuRJbQoVpHSLOuQR7CO3U2WLjiJN89zdRQ7pZ1bCH2Xjhj
-	pxjeaqFywazAp9KGJ4QuciIbkSnOguXmV4ThaSj2R2POsBk0MeWw1bMh0fPjPAN2b+aG6pS8U6dZt
-	kxnst46Lkf5dK/X4AWuHj093MV0nMt72SjxZj/j3x+pPC9rmkdh4Phr4s+bJimLwdqxcMk7WFm4XX
-	MmZClTwA==;
+	bh=LrqB2QNmsT7Y3hIdlQddmym8j2napAEtleOTC06dtYk=; b=QLC9j+y4QLIBHve8bH3XRtBc78
+	bdPw40EtzHTRyug1vqjyevwKcYE/GX6J05DWznMazSD2FAHuxtUwcNfXwH0qFsRHHAHLD4UT7cvoW
+	nifduOMbnFnpHau8zw9Hx3zNbXiX6iHQrsUIAwfSODbaFtZXxfzgn8f8W+FGJ6ZLcKDd3Mxk8XRHm
+	R+nvUQZTO0zwSkU+Ss7hU7cFez6MpplNC/94X5QAU/9Dut+wGIZ01BxteYf7S3Xm40RSM5lOdBe5N
+	qiqa3hRHYXODaAM/4t+HvkNnd4dM0vGwRVaLtvccgWgAnL4xgzK/oMEEhNqpNXIJT4Rc2ZkEkLaMf
+	q81S7RkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jObj5-0000Iv-PQ; Wed, 15 Apr 2020 06:40:47 +0000
+	id 1jObjQ-0000eA-1G; Wed, 15 Apr 2020 06:41:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jObif-0000EY-Ps
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 06:40:23 +0000
+ id 1jObiq-0000R2-Ll
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 06:40:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F234F101E;
- Tue, 14 Apr 2020 23:40:20 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1FC971042;
+ Tue, 14 Apr 2020 23:40:31 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 049363F73D;
- Tue, 14 Apr 2020 23:44:28 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 14A233F73D;
+ Tue, 14 Apr 2020 23:44:37 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] mm/hotplug: Enumerate memory range offlining failure
- reasons
-Date: Wed, 15 Apr 2020 12:09:43 +0530
-Message-Id: <1586932784-16315-2-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH 2/2] arm64/hotplug: Process MEM_OFFLINE and MEM_CANCEL_OFFLINE
+Date: Wed, 15 Apr 2020 12:09:44 +0530
+Message-Id: <1586932784-16315-3-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1586932784-16315-1-git-send-email-anshuman.khandual@arm.com>
 References: <1586932784-16315-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_234021_993842_056F6B83 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20200414_234032_829000_ED87D5CB 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,204 +62,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Michal Hocko <mhocko@suse.com>, will@kernel.com,
- David Hildenbrand <david@redhat.com>, catalin.marinas@arm.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- akpm@linux-foundation.org, Dan Williams <dan.j.williams@intel.com>
+Cc: mark.rutland@arm.com, will@kernel.com, Steve Capper <steve.capper@arm.com>,
+ catalin.marinas@arm.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
+ Hsin-Yi Wang <hsinyi@chromium.org>, akpm@linux-foundation.org,
+ Thomas Gleixner <tglx@linutronix.de>, Yu Zhao <yuzhao@google.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently just a debug message is shown describing the reason during memory
-range offline failure. Even though just sufficient for debugging purpose,
-these messages can not be used in registered memory event notifiers that
-might be interested in MEM_CANCEL_OFFLINE event and it's possible reasons.
+Process MEM_OFFLINE and MEM_CANCEL_OFFLINE memory events to intercept any
+possible error conditions during memory offline operation. This includes if
+boot memory still got offlined even after an expilicit notifier failure or
+if non-boot memory got declined for an offline request. This help improve
+memory notifier robustness while also enhancing debug capabilities during
+various potential memory offlining error conditions.
 
-This enumerates all existing memory range offline failure reason codes thus
-enabling their further effective utilization. It also adds a new element in
-memory notifier structure (void *data) that will carry this offline failure
-reason code into all registered notifiers when offlining process fails and
-MEM_CANCEL_OFFLINE is triggered.
-
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.com>
 Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Steve Capper <steve.capper@arm.com>
 Cc: David Hildenbrand <david@redhat.com>
-Cc: Michal Hocko <mhocko@suse.com>
-Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Yu Zhao <yuzhao@google.com>
+Cc: Hsin-Yi Wang <hsinyi@chromium.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-mm@kvack.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- drivers/base/memory.c  |  9 +++++++++
- include/linux/memory.h | 27 +++++++++++++++++++++++++++
- mm/memory_hotplug.c    | 24 ++++++++++++++++--------
- 3 files changed, 52 insertions(+), 8 deletions(-)
+ arch/arm64/mm/mmu.c | 52 ++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 47 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/base/memory.c b/drivers/base/memory.c
-index dbec3a05590a..2a6d52984803 100644
---- a/drivers/base/memory.c
-+++ b/drivers/base/memory.c
-@@ -159,6 +159,15 @@ static ssize_t state_show(struct device *dev, struct device_attribute *attr,
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index a374e4f51a62..48c71d8a29b2 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -1422,13 +1422,55 @@ static int prevent_bootmem_remove_notifier(struct notifier_block *nb,
+ 	unsigned long end_pfn = arg->start_pfn + arg->nr_pages;
+ 	unsigned long pfn = arg->start_pfn;
  
- int memory_notify(unsigned long val, void *v)
- {
-+	struct memory_notify *arg = v;
+-	if (action != MEM_GOING_OFFLINE)
++	if ((action != MEM_GOING_OFFLINE) && (action != MEM_OFFLINE) &&
++		(action != MEM_CANCEL_OFFLINE))
+ 		return NOTIFY_OK;
+ 
+-	for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
+-		ms = __pfn_to_section(pfn);
+-		if (early_section(ms))
+-			return NOTIFY_BAD;
++	if (action == MEM_GOING_OFFLINE) {
++		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
++			ms = __pfn_to_section(pfn);
++			if (early_section(ms)) {
++				pr_warn("Boot memory offlining attempted\n");
++				return NOTIFY_BAD;
++			}
++		}
++	} else if (action == MEM_OFFLINE) {
++		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
++			ms = __pfn_to_section(pfn);
++			if (early_section(ms)) {
 +
-+	/*
-+	 * arg->data should be available and processed only for
-+	 * MEM_CANCEL_OFFLINE event. Drop this warning when it's
-+	 * usage goes beyond MEM_CANCEL_OFFLINE.
-+	 */
-+	WARN_ON((val != MEM_CANCEL_OFFLINE) && arg->data);
++				/*
++				 * This should have never happened. Boot memory
++				 * offlining should have been prevented by this
++				 * very notifier. Probably some memory removal
++				 * procedure might have changed which would then
++				 * require further debug.
++				 */
++				pr_err("Boot memory offlined\n");
++				return NOTIFY_BAD;
++			}
++		}
++	} else if (action == MEM_CANCEL_OFFLINE) {
++		enum offline_failure_reason reason = *(int *)arg->data;
 +
- 	return blocking_notifier_call_chain(&memory_chain, val, v);
++		if (reason != OFFLINE_FAILURE_NOTIFIER)
++			return NOTIFY_OK;
++
++		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
++			ms = __pfn_to_section(pfn);
++			if (early_section(ms))
++				return NOTIFY_OK;
++		}
++
++		/*
++		 * This should have never happened. Non boot memory
++		 * offlining should never have been prevented from
++		 * this notifier. Probably some memory hot removal
++		 * procedure might have changed which would then
++		 * require further debug.
++		 */
++		pr_err("Notifier declined non boot memory offlining\n");
++		return NOTIFY_BAD;
+ 	}
+ 	return NOTIFY_OK;
  }
- 
-diff --git a/include/linux/memory.h b/include/linux/memory.h
-index 439a89e758d8..7914b0dbd4bb 100644
---- a/include/linux/memory.h
-+++ b/include/linux/memory.h
-@@ -44,12 +44,39 @@ int set_memory_block_size_order(unsigned int order);
- #define	MEM_CANCEL_ONLINE	(1<<4)
- #define	MEM_CANCEL_OFFLINE	(1<<5)
- 
-+/*
-+ * Memory offline failure reasons
-+ */
-+enum offline_failure_reason {
-+	OFFLINE_FAILURE_MEMHOLES,
-+	OFFLINE_FAILURE_MULTIZONE,
-+	OFFLINE_FAILURE_ISOLATE,
-+	OFFLINE_FAILURE_NOTIFIER,
-+	OFFLINE_FAILURE_SIGNAL,
-+	OFFLINE_FAILURE_DISSOLVE,
-+};
-+
-+static const char *const offline_failure_names[] = {
-+	[OFFLINE_FAILURE_MEMHOLES]	= "memory holes",
-+	[OFFLINE_FAILURE_MULTIZONE]	= "multizone range",
-+	[OFFLINE_FAILURE_ISOLATE]	= "failure to isolate range",
-+	[OFFLINE_FAILURE_NOTIFIER]	= "notifier failure",
-+	[OFFLINE_FAILURE_SIGNAL]	= "signal backoff",
-+	[OFFLINE_FAILURE_DISSOLVE]	= "failure to dissolve huge pages",
-+};
-+
-+static inline const char *offline_failure(int reason)
-+{
-+	return offline_failure_names[reason];
-+}
-+
- struct memory_notify {
- 	unsigned long start_pfn;
- 	unsigned long nr_pages;
- 	int status_change_nid_normal;
- 	int status_change_nid_high;
- 	int status_change_nid;
-+	void *data;
- };
- 
- struct notifier_block;
-diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-index fc0aad0bc1f5..2b733902dfcf 100644
---- a/mm/memory_hotplug.c
-+++ b/mm/memory_hotplug.c
-@@ -787,6 +787,7 @@ int __ref online_pages(unsigned long pfn, unsigned long nr_pages,
- 
- 	arg.start_pfn = pfn;
- 	arg.nr_pages = nr_pages;
-+	arg.data = NULL;
- 	node_states_check_changes_online(nr_pages, zone, &arg);
- 
- 	ret = memory_notify(MEM_GOING_ONLINE, &arg);
-@@ -1466,7 +1467,7 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 	unsigned long flags;
- 	struct zone *zone;
- 	struct memory_notify arg;
--	char *reason;
-+	enum offline_failure_reason reason;
- 
- 	mem_hotplug_begin();
- 
-@@ -1482,7 +1483,7 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 			      count_system_ram_pages_cb);
- 	if (nr_pages != end_pfn - start_pfn) {
- 		ret = -EINVAL;
--		reason = "memory holes";
-+		reason = OFFLINE_FAILURE_MEMHOLES;
- 		goto failed_removal;
- 	}
- 
-@@ -1491,7 +1492,7 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 	zone = test_pages_in_a_zone(start_pfn, end_pfn);
- 	if (!zone) {
- 		ret = -EINVAL;
--		reason = "multizone range";
-+		reason = OFFLINE_FAILURE_MULTIZONE;
- 		goto failed_removal;
- 	}
- 	node = zone_to_nid(zone);
-@@ -1501,19 +1502,20 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 				       MIGRATE_MOVABLE,
- 				       MEMORY_OFFLINE | REPORT_FAILURE);
- 	if (ret < 0) {
--		reason = "failure to isolate range";
-+		reason = OFFLINE_FAILURE_ISOLATE;
- 		goto failed_removal;
- 	}
- 	nr_isolate_pageblock = ret;
- 
- 	arg.start_pfn = start_pfn;
- 	arg.nr_pages = nr_pages;
-+	arg.data = NULL;
- 	node_states_check_changes_offline(nr_pages, zone, &arg);
- 
- 	ret = memory_notify(MEM_GOING_OFFLINE, &arg);
- 	ret = notifier_to_errno(ret);
- 	if (ret) {
--		reason = "notifier failure";
-+		reason = OFFLINE_FAILURE_NOTIFIER;
- 		goto failed_removal_isolated;
- 	}
- 
-@@ -1521,7 +1523,7 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 		for (pfn = start_pfn; pfn;) {
- 			if (signal_pending(current)) {
- 				ret = -EINTR;
--				reason = "signal backoff";
-+				reason = OFFLINE_FAILURE_SIGNAL;
- 				goto failed_removal_isolated;
- 			}
- 
-@@ -1545,7 +1547,7 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 		 */
- 		ret = dissolve_free_huge_pages(start_pfn, end_pfn);
- 		if (ret) {
--			reason = "failure to dissolve huge pages";
-+			reason = OFFLINE_FAILURE_DISSOLVE;
- 			goto failed_removal_isolated;
- 		}
- 		/* check again */
-@@ -1599,12 +1601,18 @@ static int __ref __offline_pages(unsigned long start_pfn,
- 
- failed_removal_isolated:
- 	undo_isolate_page_range(start_pfn, end_pfn, MIGRATE_MOVABLE);
-+
-+	/*
-+	 * Send the offline failure reason to all registered
-+	 * notifiers for MEM_CANCEL_OFFLINE.
-+	 */
-+	arg.data = &reason;
- 	memory_notify(MEM_CANCEL_OFFLINE, &arg);
- failed_removal:
- 	pr_debug("memory offlining [mem %#010llx-%#010llx] failed due to %s\n",
- 		 (unsigned long long) start_pfn << PAGE_SHIFT,
- 		 ((unsigned long long) end_pfn << PAGE_SHIFT) - 1,
--		 reason);
-+		 offline_failure(reason));
- 	/* pushback to free area */
- 	mem_hotplug_done();
- 	return ret;
 -- 
 2.20.1
 
