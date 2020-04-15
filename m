@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C11221A9C6D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:35:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A8B31A9C79
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:35:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FQYTOzyP+mro++mUWNp9QPn0DglmTI0VAjZ9p5wz6QY=; b=Hdz/w9swpbUG0+
-	VJRdptCLw/34GT9uo1JjhNjrv4OOS5pPKVscEsUCYHXI9S4t34/TanD71XVKCH4RdtSQqWZV3CR+U
-	c9FQE7iGElqopQqb9sy0gk34s+E37sClXFVErVYdL45AHU3OvYwNPRMuTk1/ohXgFgrw5NPiI21WS
-	eTqLEiKpaLSlzps3u+IJTspKrMghADvqDB/04IRbAgdkqWdeBTS2Qv6GwxfqoTs08F4tKY7/htM1/
-	I611aPBmsm2v6/mozbjk0q9FIYCgWyt0XVnfp0DJQPczoSagk8At8o27H1SrkhHcx/qjgwkxwbB3x
-	Ii50lp9IJdsYWJW14UDA==;
+	List-Owner; bh=+KAWmNrB3+5WJn9dzfRBNZPSOGiYBJnDdWZS85c9ORw=; b=YVC0gPyUxR9cIH
+	3GiYBIz4NdwugqyOJYMDn4J6NrO2sqUkASzSizeo1nvm3Xhe5DtCoGJyZjOW19y9+iSYGS1O42nRc
+	LlH7OUAofaEMgTp4Mox0iMzT58mDu8lh0ncB602F8I6pM6MFGq9PobCPsCpsu6nqy1zvMPpupyZ50
+	OMNaQ9U74Ya95ngdHyTgtFxNhz1Nr5SOPZQZzWBrJawJldtFEn4NOXtZacQrmEuwAbBbNO70t+bGM
+	ai3X6RMA73R+akPhFJ5XoVID5enzeClSzfMtSZTnNJQHFVMPk1U/4AYQ+JFP4wZ2MV0jR8HHDCUqB
+	GMElnkSjewNRZSmPy8HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgKH-0005h7-HY; Wed, 15 Apr 2020 11:35:29 +0000
+	id 1jOgKZ-00007X-Fs; Wed, 15 Apr 2020 11:35:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgJg-0005YV-8F
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:34:54 +0000
+ id 1jOgJs-00063Y-Cr
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:35:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B68620857;
- Wed, 15 Apr 2020 11:34:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 064722137B;
+ Wed, 15 Apr 2020 11:35:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950492;
- bh=P04iBLwJn0vDXHqxsvdHNKZ9hXQfsXc2NSGvEKJvR4Q=;
+ s=default; t=1586950503;
+ bh=WX4FlKyay9j1hWgu6xpp6v0VrZMy0wIewRZTNsRtM3U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zSWS3TgHFL5j7cDYIkDdqA7peZDpEyGB3rHouiLCTMyGpinY9PQMY3PXra0LUy4wh
- GSVtCT6dc97Ab+rTsQfwEx3QD3vQDVUdc0VwCLiu5Y84t2zA34d7NL5TueQWwKlIns
- sXc9K3v8wKXT1F5wSoTl+8bONLYpb/+imc7wUzpw=
+ b=XqBtNRbGmcY6ben3e4djsiE6BYEQbjImAOqJoyXDSCamKDLpCUjcKAtzuq0An4Zd8
+ 0SA5mbfu1DLzxIDzZd8WT3hF58wgy3u1qCaBPo1Ak4NAECXtDMJwh9JztwZ39MWD0n
+ PjfDtRnT/UEXl197EDaowgJ00O0wtslID9WcnC6s=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 005/129] clk: imx: pll14xx: Add new frequency
- entries for pll1443x table
-Date: Wed, 15 Apr 2020 07:32:40 -0400
-Message-Id: <20200415113445.11881-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 015/129] arm64: dts: librem5-devkit: add a vbus
+ supply to usb0
+Date: Wed, 15 Apr 2020 07:32:50 -0400
+Message-Id: <20200415113445.11881-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
 References: <20200415113445.11881-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_043452_305407_CBDE8113 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200415_043504_532007_EBF58A76 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,44 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Martin Kepplinger <martin.kepplinger@puri.sm>, devicetree@vger.kernel.org,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-[ Upstream commit 57795654fb553a78f07a9f92d87fb2582379cd93 ]
+[ Upstream commit dde061b865598ad91f50140760e1d224e5045db9 ]
 
-Add new frequency entries to pll1443x table to meet different
-display settings requirement.
+Without a VBUS supply the dwc3 driver won't go into otg mode.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-Reviewed-by: Peng Fan <peng.fan@nxp.com>
+Fixes: eb4ea0857c83 ("arm64: dts: fsl: librem5: Add a device tree for the Librem5 devkit")
+Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/imx/clk-pll14xx.c | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
-index 5b0519a81a7af..37e311e1d0586 100644
---- a/drivers/clk/imx/clk-pll14xx.c
-+++ b/drivers/clk/imx/clk-pll14xx.c
-@@ -55,8 +55,10 @@ static const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+index 764a4cb4e1251..161406445fafe 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+@@ -750,6 +750,7 @@
  };
  
- static const struct imx_pll14xx_rate_table imx_pll1443x_tbl[] = {
-+	PLL_1443X_RATE(1039500000U, 173, 2, 1, 16384),
- 	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
- 	PLL_1443X_RATE(594000000U, 198, 2, 2, 0),
-+	PLL_1443X_RATE(519750000U, 173, 2, 2, 16384),
- 	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
- 	PLL_1443X_RATE(361267200U, 361, 3, 3, 17511),
+ &usb3_phy0 {
++	vbus-supply = <&reg_5v_p>;
+ 	status = "okay";
  };
+ 
 -- 
 2.20.1
 
