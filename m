@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 073411AA391
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:12:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BDF01AA393
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:12:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8WZIuhfGdmf75n7kqx/1SWmm8iAdk2yx41mTdRGsCeY=; b=CAjx4a1I882zp9
-	VSnbPzq/9TLsVp2xhoVqlyBcG6XSVT3xsb8SD12opQ6DeHbxgXitCBI28G+TRshMsuzLsXJ/Q6DVI
-	UWzYsq2kbqupKqf4FtF6c/csX/Xdv1QeZfB6W9iJArM2KrfOkxN5n4Tqc4C4yD0MAKit/DApgV4/a
-	WQ3Eb3aGPsYXc1eAA+3DOiGabRVZ+pxu0mJ84yeWP5LC2KVIJFML+/adRAFIgWFJd6g2I4twmvvTT
-	+qjFizvrx+bXzjmnzcIOU/3U4SO4Rf+C7vH0Xo/cwPjkHSeTtmWCp+t+DSpzSJv6ieoYKYOD7ezHS
-	Y57n4HRNw6DkUUKihsTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=luALs1xZyJ8k4+dhUmjojs/Fp7cGNPFMHnYGcjK/Eeg=; b=B1SWIbRP7cn1v3
+	xXDdo5V2w8aG0olnKYvzSLOpZ3xaxJjJ3MWR6Rk6pnM4l/shgGWTXkHh56MRWOJzod3MZzMEsz4WC
+	7hnN0UOPAporfBp7HZV1/FH2mxG/BCWmrZp/opSoDxAOD5+xQfXoel9w2G3p5EtLdY5mEBQswqEqs
+	tgkyOHwS1iTi1WZPEqsIllIe2Unl3VxEFuwdmyp5SWcmza4n0kRUtw3RO/2sThuwwCaLzaJBVF0KA
+	6tfhgHBsdZ/KmsSeY5DExYnbZ2fK8jaCHc7ONxBl/cGafjpGBzW8A9VBSXXRprbkF/BCDW8vniONg
+	5Vv1y5CCiEg1lY0LYQCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhpi-0000kL-8r; Wed, 15 Apr 2020 13:12:02 +0000
+	id 1jOhq5-00013n-Ks; Wed, 15 Apr 2020 13:12:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhpW-0000hC-5A
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:11:51 +0000
+ id 1jOhpZ-0000l6-9y
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:11:56 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 21A0D2076D;
- Wed, 15 Apr 2020 13:11:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 40987208FE;
+ Wed, 15 Apr 2020 13:11:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586956309;
- bh=YAVq84F2Sibfviu5tSsgkZLta3+EbDDcemBKh/sLASA=;
- h=From:To:Cc:Subject:Date:From;
- b=zYrd11fVH8KyEpRqk+3o7VZ1J4p7PcofGNVqYyB+Z+Dwtzt/Zehgn/ywjSNJayZWF
- ekknproPGZf0XCe3oSui4S8xjYPPKyQNelUIO85t8prCzqQnFCpUEXNCF+YtvpCOnj
- FAe/UkfHOyIqf1oDYSiNWp7mpCgebXBj8FhFwQBI=
+ s=default; t=1586956312;
+ bh=MFZsKHfIFo7cjjB+Qr76133t7A47v44lkRUhz5srTes=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=hYSt3ljHrOnMhKCSzzJgnXa+74wkgymV+N2VozAxAvQzf6GyzGhCk1k8ILEB+jekW
+ hp27BK1O2l/BLsiVfX/Xzoye4BYvZonAe+w8ar//gKm32Y6iHxLsY36RoP7xVvfs/q
+ DT+wznDa0SazztVb/QW65Kg5mrWWqG/XwyXQN7M4=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH 00/10] arm64: BTI kernel and vDSO support
-Date: Wed, 15 Apr 2020 14:07:39 +0100
-Message-Id: <20200415130750.18645-1-broonie@kernel.org>
+Subject: [PATCH 01/10] arm64: kernel: Convert to modern annotations for
+ assembly functions
+Date: Wed, 15 Apr 2020 14:07:40 +0100
+Message-Id: <20200415130750.18645-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415130750.18645-1-broonie@kernel.org>
+References: <20200415130750.18645-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_061150_215575_E2FBD337 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20200415_061153_447374_F9023F85 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,60 +84,494 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series builds on top of a merge of for-next/bti in the arm64
-tree and v5.7-rc1 to add support for protecting the kernel and vDSO with
-BTI.  It does not currently handle BPF, that will be added in a future
-update.
+In an effort to clarify and simplify the annotation of assembly functions
+in the kernel new macros have been introduced. These replace ENTRY and
+ENDPROC and also add a new annotation for static functions which previously
+had no ENTRY equivalent. Update the annotations in the core kernel code to
+the new macros.
 
-We build the kernel with annotations for BTI and then map the kernel
-with GP based on the support on the boot CPU, rejecting secondaries that
-don't have BTI support.  If there is a need to handle big.LITTLE systems
-with mismatched BTI support we will have to revisit this, currently no
-such implementations exist.
-
-Due to code generation issues with current versions of GCC we currently
-disable this support when building with GCC, these issues are under
-active investigation and once fixes are understood we can add suitable
-dependencies.
-
-Mark Brown (10):
-  arm64: kernel: Convert to modern annotations for assembly functions
-  arm64: bti: Support building kernel C code using BTI
-  arm64: asm: Override SYM_FUNC_START when building the kernel with BTI
-  arm64: Set GP bit in kernel page tables to enable BTI for the kernel
-  arm64: mm: Mark module text as guarded pages
-  arm64: bti: Provide Kconfig for kernel mode BTI
-  arm64: asm: Provide a mechanism for generating ELF note for BTI
-  arm64: vdso: Annotate for BTI
-  arm64: vdso: Force the vDSO to be linked as BTI when built for BTI
-  arm64: vdso: Map the vDSO text with guarded pages when built for BTI
-
- arch/arm64/Kconfig                            | 18 ++++++++
- arch/arm64/Makefile                           |  4 ++
- arch/arm64/include/asm/assembler.h            | 41 +++++++++++++++++
- arch/arm64/include/asm/linkage.h              | 46 +++++++++++++++++++
- arch/arm64/include/asm/pgtable-prot.h         |  5 ++
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
  arch/arm64/kernel/cpu-reset.S                 |  4 +-
- arch/arm64/kernel/cpufeature.c                |  4 ++
  arch/arm64/kernel/efi-rt-wrapper.S            |  4 +-
- arch/arm64/kernel/entry-fpsimd.S              | 20 ++++----
+ arch/arm64/kernel/entry-fpsimd.S              | 20 ++++-----
  arch/arm64/kernel/entry.S                     |  7 +--
  arch/arm64/kernel/hibernate-asm.S             | 16 +++----
- arch/arm64/kernel/hyp-stub.S                  | 20 ++++----
+ arch/arm64/kernel/hyp-stub.S                  | 20 ++++-----
  arch/arm64/kernel/probes/kprobes_trampoline.S |  4 +-
- arch/arm64/kernel/reloc_test_syms.S           | 44 +++++++++---------
+ arch/arm64/kernel/reloc_test_syms.S           | 44 +++++++++----------
  arch/arm64/kernel/relocate_kernel.S           |  4 +-
  arch/arm64/kernel/sleep.S                     | 12 ++---
  arch/arm64/kernel/smccc-call.S                |  8 ++--
- arch/arm64/kernel/vdso.c                      |  6 ++-
- arch/arm64/kernel/vdso/Makefile               |  4 +-
- arch/arm64/kernel/vdso/note.S                 |  3 ++
- arch/arm64/kernel/vdso/sigreturn.S            |  3 ++
- arch/arm64/kernel/vdso/vdso.S                 |  3 ++
- arch/arm64/mm/mmu.c                           | 24 ++++++++++
- arch/arm64/mm/pageattr.c                      |  4 +-
- 24 files changed, 233 insertions(+), 75 deletions(-)
+ 11 files changed, 72 insertions(+), 71 deletions(-)
 
+diff --git a/arch/arm64/kernel/cpu-reset.S b/arch/arm64/kernel/cpu-reset.S
+index 38087b4c0432..646103743a50 100644
+--- a/arch/arm64/kernel/cpu-reset.S
++++ b/arch/arm64/kernel/cpu-reset.S
+@@ -29,7 +29,7 @@
+  * branch to what would be the reset vector. It must be executed with the
+  * flat identity mapping.
+  */
+-ENTRY(__cpu_soft_restart)
++SYM_FUNC_START(__cpu_soft_restart)
+ 	/* Clear sctlr_el1 flags. */
+ 	mrs	x12, sctlr_el1
+ 	mov_q	x13, SCTLR_ELx_FLAGS
+@@ -47,6 +47,6 @@ ENTRY(__cpu_soft_restart)
+ 	mov	x1, x3				// arg1
+ 	mov	x2, x4				// arg2
+ 	br	x8
+-ENDPROC(__cpu_soft_restart)
++SYM_FUNC_END(__cpu_soft_restart)
+ 
+ .popsection
+diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
+index 3fc71106cb2b..1192c4bb48df 100644
+--- a/arch/arm64/kernel/efi-rt-wrapper.S
++++ b/arch/arm64/kernel/efi-rt-wrapper.S
+@@ -5,7 +5,7 @@
+ 
+ #include <linux/linkage.h>
+ 
+-ENTRY(__efi_rt_asm_wrapper)
++SYM_FUNC_START(__efi_rt_asm_wrapper)
+ 	stp	x29, x30, [sp, #-32]!
+ 	mov	x29, sp
+ 
+@@ -35,4 +35,4 @@ ENTRY(__efi_rt_asm_wrapper)
+ 	b.ne	0f
+ 	ret
+ 0:	b	efi_handle_corrupted_x18	// tail call
+-ENDPROC(__efi_rt_asm_wrapper)
++SYM_FUNC_END(__efi_rt_asm_wrapper)
+diff --git a/arch/arm64/kernel/entry-fpsimd.S b/arch/arm64/kernel/entry-fpsimd.S
+index 0f24eae8f3cc..f880dd63ddc3 100644
+--- a/arch/arm64/kernel/entry-fpsimd.S
++++ b/arch/arm64/kernel/entry-fpsimd.S
+@@ -16,34 +16,34 @@
+  *
+  * x0 - pointer to struct fpsimd_state
+  */
+-ENTRY(fpsimd_save_state)
++SYM_FUNC_START(fpsimd_save_state)
+ 	fpsimd_save x0, 8
+ 	ret
+-ENDPROC(fpsimd_save_state)
++SYM_FUNC_END(fpsimd_save_state)
+ 
+ /*
+  * Load the FP registers.
+  *
+  * x0 - pointer to struct fpsimd_state
+  */
+-ENTRY(fpsimd_load_state)
++SYM_FUNC_START(fpsimd_load_state)
+ 	fpsimd_restore x0, 8
+ 	ret
+-ENDPROC(fpsimd_load_state)
++SYM_FUNC_END(fpsimd_load_state)
+ 
+ #ifdef CONFIG_ARM64_SVE
+-ENTRY(sve_save_state)
++SYM_FUNC_START(sve_save_state)
+ 	sve_save 0, x1, 2
+ 	ret
+-ENDPROC(sve_save_state)
++SYM_FUNC_END(sve_save_state)
+ 
+-ENTRY(sve_load_state)
++SYM_FUNC_START(sve_load_state)
+ 	sve_load 0, x1, x2, 3, x4
+ 	ret
+-ENDPROC(sve_load_state)
++SYM_FUNC_END(sve_load_state)
+ 
+-ENTRY(sve_get_vl)
++SYM_FUNC_START(sve_get_vl)
+ 	_sve_rdvl	0, 1
+ 	ret
+-ENDPROC(sve_get_vl)
++SYM_FUNC_END(sve_get_vl)
+ #endif /* CONFIG_ARM64_SVE */
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index ddcde093c433..664a833aa619 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -730,7 +730,7 @@ SYM_CODE_END(el0_error)
+ /*
+  * Ok, we need to do extra processing, enter the slow path.
+  */
+-work_pending:
++SYM_CODE_START_LOCAL(work_pending)
+ 	mov	x0, sp				// 'regs'
+ 	bl	do_notify_resume
+ #ifdef CONFIG_TRACE_IRQFLAGS
+@@ -738,10 +738,11 @@ work_pending:
+ #endif
+ 	ldr	x1, [tsk, #TSK_TI_FLAGS]	// re-check for single-step
+ 	b	finish_ret_to_user
++SYM_CODE_END(work_pending)
+ /*
+  * "slow" syscall return path.
+  */
+-ret_to_user:
++SYM_CODE_START_LOCAL(ret_to_user)
+ 	disable_daif
+ 	gic_prio_kentry_setup tmp=x3
+ 	ldr	x1, [tsk, #TSK_TI_FLAGS]
+@@ -753,7 +754,7 @@ finish_ret_to_user:
+ 	bl	stackleak_erase
+ #endif
+ 	kernel_exit 0
+-ENDPROC(ret_to_user)
++SYM_CODE_END(ret_to_user)
+ 
+ 	.popsection				// .entry.text
+ 
+diff --git a/arch/arm64/kernel/hibernate-asm.S b/arch/arm64/kernel/hibernate-asm.S
+index 6532105b3e32..8ccca660034e 100644
+--- a/arch/arm64/kernel/hibernate-asm.S
++++ b/arch/arm64/kernel/hibernate-asm.S
+@@ -65,7 +65,7 @@
+  * x5: physical address of a  zero page that remains zero after resume
+  */
+ .pushsection    ".hibernate_exit.text", "ax"
+-ENTRY(swsusp_arch_suspend_exit)
++SYM_CODE_START(swsusp_arch_suspend_exit)
+ 	/*
+ 	 * We execute from ttbr0, change ttbr1 to our copied linear map tables
+ 	 * with a break-before-make via the zero page
+@@ -110,7 +110,7 @@ ENTRY(swsusp_arch_suspend_exit)
+ 	cbz	x24, 3f		/* Do we need to re-initialise EL2? */
+ 	hvc	#0
+ 3:	ret
+-ENDPROC(swsusp_arch_suspend_exit)
++SYM_CODE_END(swsusp_arch_suspend_exit)
+ 
+ /*
+  * Restore the hyp stub.
+@@ -119,15 +119,15 @@ ENDPROC(swsusp_arch_suspend_exit)
+  *
+  * x24: The physical address of __hyp_stub_vectors
+  */
+-el1_sync:
++SYM_CODE_START_LOCAL(el1_sync)
+ 	msr	vbar_el2, x24
+ 	eret
+-ENDPROC(el1_sync)
++SYM_CODE_END(el1_sync)
+ 
+ .macro invalid_vector	label
+-\label:
++SYM_CODE_START_LOCAL(\label)
+ 	b \label
+-ENDPROC(\label)
++SYM_CODE_END(\label)
+ .endm
+ 
+ 	invalid_vector	el2_sync_invalid
+@@ -141,7 +141,7 @@ ENDPROC(\label)
+ 
+ /* el2 vectors - switch el2 here while we restore the memory image. */
+ 	.align 11
+-ENTRY(hibernate_el2_vectors)
++SYM_CODE_START(hibernate_el2_vectors)
+ 	ventry	el2_sync_invalid		// Synchronous EL2t
+ 	ventry	el2_irq_invalid			// IRQ EL2t
+ 	ventry	el2_fiq_invalid			// FIQ EL2t
+@@ -161,6 +161,6 @@ ENTRY(hibernate_el2_vectors)
+ 	ventry	el1_irq_invalid			// IRQ 32-bit EL1
+ 	ventry	el1_fiq_invalid			// FIQ 32-bit EL1
+ 	ventry	el1_error_invalid		// Error 32-bit EL1
+-END(hibernate_el2_vectors)
++SYM_CODE_END(hibernate_el2_vectors)
+ 
+ .popsection
+diff --git a/arch/arm64/kernel/hyp-stub.S b/arch/arm64/kernel/hyp-stub.S
+index e473ead806ed..160f5881a0b7 100644
+--- a/arch/arm64/kernel/hyp-stub.S
++++ b/arch/arm64/kernel/hyp-stub.S
+@@ -21,7 +21,7 @@
+ 
+ 	.align 11
+ 
+-ENTRY(__hyp_stub_vectors)
++SYM_CODE_START(__hyp_stub_vectors)
+ 	ventry	el2_sync_invalid		// Synchronous EL2t
+ 	ventry	el2_irq_invalid			// IRQ EL2t
+ 	ventry	el2_fiq_invalid			// FIQ EL2t
+@@ -41,11 +41,11 @@ ENTRY(__hyp_stub_vectors)
+ 	ventry	el1_irq_invalid			// IRQ 32-bit EL1
+ 	ventry	el1_fiq_invalid			// FIQ 32-bit EL1
+ 	ventry	el1_error_invalid		// Error 32-bit EL1
+-ENDPROC(__hyp_stub_vectors)
++SYM_CODE_END(__hyp_stub_vectors)
+ 
+ 	.align 11
+ 
+-el1_sync:
++SYM_CODE_START_LOCAL(el1_sync)
+ 	cmp	x0, #HVC_SET_VECTORS
+ 	b.ne	2f
+ 	msr	vbar_el2, x1
+@@ -68,12 +68,12 @@ el1_sync:
+ 
+ 9:	mov	x0, xzr
+ 	eret
+-ENDPROC(el1_sync)
++SYM_CODE_END(el1_sync)
+ 
+ .macro invalid_vector	label
+-\label:
++SYM_CODE_START_LOCAL(\label)
+ 	b \label
+-ENDPROC(\label)
++SYM_CODE_END(\label)
+ .endm
+ 
+ 	invalid_vector	el2_sync_invalid
+@@ -106,15 +106,15 @@ ENDPROC(\label)
+  * initialisation entry point.
+  */
+ 
+-ENTRY(__hyp_set_vectors)
++SYM_FUNC_START(__hyp_set_vectors)
+ 	mov	x1, x0
+ 	mov	x0, #HVC_SET_VECTORS
+ 	hvc	#0
+ 	ret
+-ENDPROC(__hyp_set_vectors)
++SYM_FUNC_END(__hyp_set_vectors)
+ 
+-ENTRY(__hyp_reset_vectors)
++SYM_FUNC_START(__hyp_reset_vectors)
+ 	mov	x0, #HVC_RESET_VECTORS
+ 	hvc	#0
+ 	ret
+-ENDPROC(__hyp_reset_vectors)
++SYM_FUNC_END(__hyp_reset_vectors)
+diff --git a/arch/arm64/kernel/probes/kprobes_trampoline.S b/arch/arm64/kernel/probes/kprobes_trampoline.S
+index 45dce03aaeaf..890ca72c5a51 100644
+--- a/arch/arm64/kernel/probes/kprobes_trampoline.S
++++ b/arch/arm64/kernel/probes/kprobes_trampoline.S
+@@ -61,7 +61,7 @@
+ 	ldp x28, x29, [sp, #S_X28]
+ 	.endm
+ 
+-ENTRY(kretprobe_trampoline)
++SYM_CODE_START(kretprobe_trampoline)
+ 	sub sp, sp, #S_FRAME_SIZE
+ 
+ 	save_all_base_regs
+@@ -79,4 +79,4 @@ ENTRY(kretprobe_trampoline)
+ 	add sp, sp, #S_FRAME_SIZE
+ 	ret
+ 
+-ENDPROC(kretprobe_trampoline)
++SYM_CODE_END(kretprobe_trampoline)
+diff --git a/arch/arm64/kernel/reloc_test_syms.S b/arch/arm64/kernel/reloc_test_syms.S
+index 16a34f188f26..53e8cdfe80e1 100644
+--- a/arch/arm64/kernel/reloc_test_syms.S
++++ b/arch/arm64/kernel/reloc_test_syms.S
+@@ -5,81 +5,81 @@
+ 
+ #include <linux/linkage.h>
+ 
+-ENTRY(absolute_data64)
++SYM_CODE_START(absolute_data64)
+ 	ldr	x0, 0f
+ 	ret
+ 0:	.quad	sym64_abs
+-ENDPROC(absolute_data64)
++SYM_CODE_END(absolute_data64)
+ 
+-ENTRY(absolute_data32)
++SYM_CODE_START(absolute_data32)
+ 	ldr	w0, 0f
+ 	ret
+ 0:	.long	sym32_abs
+-ENDPROC(absolute_data32)
++SYM_CODE_END(absolute_data32)
+ 
+-ENTRY(absolute_data16)
++SYM_CODE_START(absolute_data16)
+ 	adr	x0, 0f
+ 	ldrh	w0, [x0]
+ 	ret
+ 0:	.short	sym16_abs, 0
+-ENDPROC(absolute_data16)
++SYM_CODE_END(absolute_data16)
+ 
+-ENTRY(signed_movw)
++SYM_CODE_START(signed_movw)
+ 	movz	x0, #:abs_g2_s:sym64_abs
+ 	movk	x0, #:abs_g1_nc:sym64_abs
+ 	movk	x0, #:abs_g0_nc:sym64_abs
+ 	ret
+-ENDPROC(signed_movw)
++SYM_CODE_END(signed_movw)
+ 
+-ENTRY(unsigned_movw)
++SYM_CODE_START(unsigned_movw)
+ 	movz	x0, #:abs_g3:sym64_abs
+ 	movk	x0, #:abs_g2_nc:sym64_abs
+ 	movk	x0, #:abs_g1_nc:sym64_abs
+ 	movk	x0, #:abs_g0_nc:sym64_abs
+ 	ret
+-ENDPROC(unsigned_movw)
++SYM_CODE_END(unsigned_movw)
+ 
+ 	.align	12
+ 	.space	0xff8
+-ENTRY(relative_adrp)
++SYM_CODE_START(relative_adrp)
+ 	adrp	x0, sym64_rel
+ 	add	x0, x0, #:lo12:sym64_rel
+ 	ret
+-ENDPROC(relative_adrp)
++SYM_CODE_END(relative_adrp)
+ 
+ 	.align	12
+ 	.space	0xffc
+-ENTRY(relative_adrp_far)
++SYM_CODE_START(relative_adrp_far)
+ 	adrp	x0, memstart_addr
+ 	add	x0, x0, #:lo12:memstart_addr
+ 	ret
+-ENDPROC(relative_adrp_far)
++SYM_CODE_END(relative_adrp_far)
+ 
+-ENTRY(relative_adr)
++SYM_CODE_START(relative_adr)
+ 	adr	x0, sym64_rel
+ 	ret
+-ENDPROC(relative_adr)
++SYM_CODE_END(relative_adr)
+ 
+-ENTRY(relative_data64)
++SYM_CODE_START(relative_data64)
+ 	adr	x1, 0f
+ 	ldr	x0, [x1]
+ 	add	x0, x0, x1
+ 	ret
+ 0:	.quad	sym64_rel - .
+-ENDPROC(relative_data64)
++SYM_CODE_END(relative_data64)
+ 
+-ENTRY(relative_data32)
++SYM_CODE_START(relative_data32)
+ 	adr	x1, 0f
+ 	ldr	w0, [x1]
+ 	add	x0, x0, x1
+ 	ret
+ 0:	.long	sym64_rel - .
+-ENDPROC(relative_data32)
++SYM_CODE_END(relative_data32)
+ 
+-ENTRY(relative_data16)
++SYM_CODE_START(relative_data16)
+ 	adr	x1, 0f
+ 	ldrsh	w0, [x1]
+ 	add	x0, x0, x1
+ 	ret
+ 0:	.short	sym64_rel - ., 0
+-ENDPROC(relative_data16)
++SYM_CODE_END(relative_data16)
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index c40ce496c78b..542d6edc6806 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -26,7 +26,7 @@
+  * control_code_page, a special page which has been set up to be preserved
+  * during the copy operation.
+  */
+-ENTRY(arm64_relocate_new_kernel)
++SYM_CODE_START(arm64_relocate_new_kernel)
+ 
+ 	/* Setup the list loop variables. */
+ 	mov	x18, x2				/* x18 = dtb address */
+@@ -111,7 +111,7 @@ ENTRY(arm64_relocate_new_kernel)
+ 	mov	x3, xzr
+ 	br	x17
+ 
+-ENDPROC(arm64_relocate_new_kernel)
++SYM_CODE_END(arm64_relocate_new_kernel)
+ 
+ .align 3	/* To keep the 64-bit values below naturally aligned. */
+ 
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index 7b2f2e650c44..70e5e697ebc7 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -62,7 +62,7 @@
+  *
+  *  x0 = struct sleep_stack_data area
+  */
+-ENTRY(__cpu_suspend_enter)
++SYM_FUNC_START(__cpu_suspend_enter)
+ 	stp	x29, lr, [x0, #SLEEP_STACK_DATA_CALLEE_REGS]
+ 	stp	x19, x20, [x0,#SLEEP_STACK_DATA_CALLEE_REGS+16]
+ 	stp	x21, x22, [x0,#SLEEP_STACK_DATA_CALLEE_REGS+32]
+@@ -95,10 +95,10 @@ ENTRY(__cpu_suspend_enter)
+ 	ldp	x29, lr, [sp], #16
+ 	mov	x0, #1
+ 	ret
+-ENDPROC(__cpu_suspend_enter)
++SYM_FUNC_END(__cpu_suspend_enter)
+ 
+ 	.pushsection ".idmap.text", "awx"
+-ENTRY(cpu_resume)
++SYM_FUNC_START(cpu_resume)
+ 	bl	el2_setup		// if in EL2 drop to EL1 cleanly
+ 	mov	x0, #ARM64_CPU_RUNTIME
+ 	bl	__cpu_setup
+@@ -107,11 +107,11 @@ ENTRY(cpu_resume)
+ 	bl	__enable_mmu
+ 	ldr	x8, =_cpu_resume
+ 	br	x8
+-ENDPROC(cpu_resume)
++SYM_FUNC_END(cpu_resume)
+ 	.ltorg
+ 	.popsection
+ 
+-ENTRY(_cpu_resume)
++SYM_FUNC_START(_cpu_resume)
+ 	mrs	x1, mpidr_el1
+ 	adr_l	x8, mpidr_hash		// x8 = struct mpidr_hash virt address
+ 
+@@ -147,4 +147,4 @@ ENTRY(_cpu_resume)
+ 	ldp	x29, lr, [x29]
+ 	mov	x0, #0
+ 	ret
+-ENDPROC(_cpu_resume)
++SYM_FUNC_END(_cpu_resume)
+diff --git a/arch/arm64/kernel/smccc-call.S b/arch/arm64/kernel/smccc-call.S
+index 54655273d1e0..1f93809528a4 100644
+--- a/arch/arm64/kernel/smccc-call.S
++++ b/arch/arm64/kernel/smccc-call.S
+@@ -30,9 +30,9 @@
+  *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
+  *		  struct arm_smccc_quirk *quirk)
+  */
+-ENTRY(__arm_smccc_smc)
++SYM_FUNC_START(__arm_smccc_smc)
+ 	SMCCC	smc
+-ENDPROC(__arm_smccc_smc)
++SYM_FUNC_END(__arm_smccc_smc)
+ EXPORT_SYMBOL(__arm_smccc_smc)
+ 
+ /*
+@@ -41,7 +41,7 @@ EXPORT_SYMBOL(__arm_smccc_smc)
+  *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
+  *		  struct arm_smccc_quirk *quirk)
+  */
+-ENTRY(__arm_smccc_hvc)
++SYM_FUNC_START(__arm_smccc_hvc)
+ 	SMCCC	hvc
+-ENDPROC(__arm_smccc_hvc)
++SYM_FUNC_END(__arm_smccc_hvc)
+ EXPORT_SYMBOL(__arm_smccc_hvc)
 -- 
 2.20.1
 
