@@ -2,96 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C6651A9A43
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:18:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 166781A9A44
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:19:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pW3SJsDw94Wp9j9fJFM7mNP+i/DJEwOo27XGvwiZ9a0=; b=p+hudrZrc+RPTNrU5Vh68dJQX
-	rUcIDiHhjF19H2vq3mblzSNn3+3K3Bfnn2f1IU23aPKTIKwLgiuUzT7c5k9844rOeVg1gAHYC+Zob
-	D7pGTpi9kQ9BB6TttpAlO90hKM+nEhrVa7ARPvIc5HK9xgnbzxCgibVDtnzgC1nj5kQ9gO5RogBl1
-	6zHHwxFciXkw+iMCOrH/2tCH/S0BAGiGAsuNYdKfb2UE7QmGMoybUYPoVZoa1Xzl010npchuYf2ta
-	8QsVRqdCYu/L6Am9eqy5+y9j91+YA8quloLygcFgnzgxk7RQuFUBQeGk/TIDjknwX4VtH/oeHXPsK
-	5obOp3fcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0hIDP4Up71o07Rr/lOx1qqCbei7LQdQiVvxCE7cwtTk=; b=djaHUBBQXx1+WE
+	XBB4zVWjl9YY63Bzf11HfweEvJ/JlEZukoifvYKglVJqVBas7PyfuXuVVxBh523EKcJbZOV6hRzc2
+	hAdAAFIhW04lhCfPCcW77gjN8MbT3TGW05NqMK99T2ic+CM4vPim3YoK9gHCef76mYf3KQsMs45Fl
+	79BEWlx0xuVrhCnGdjF3jxb5VI0QNfZYP/b/qRJvV+YIh3AWPGKvjef+EVyCLk16d5NDpAZvxySbU
+	zSXanRbqgmZ9Uue4tsrOjNorLUaC73BUVPeOMcgtDbRB2iLzqOjhhkwHyL5yp+ik8wEkZDce1w89s
+	grOFfeOtVdwCF8GqTBMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOf7x-0007FR-Oy; Wed, 15 Apr 2020 10:18:41 +0000
-Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
+	id 1jOf8F-0007MW-BP; Wed, 15 Apr 2020 10:18:59 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOf7o-0007Eh-To
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 10:18:34 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id D4FD480E;
- Wed, 15 Apr 2020 06:18:30 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 15 Apr 2020 06:18:31 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=pC7yvVnFLmc0WK4x+uGmYIrKhsS
- Qyhagqa5MEVVJuoE=; b=ULLZm674TrlR00qFVGl4UlTEmZkUgylnKVthGaTwAt0
- DjCOV7pktVOwSCzccxqAKhsjAMNEyhl3ZUQY9wkJRR5fFE2wH6rpi3vVxN0yax8r
- J34iuBfFBm5RCqGrCGH/59Ephj0/pLXLV9oMFclYOkyiJo4dEiw0IXS98WXIQ+j6
- 8/xfq5kJiMuYB/aLM+9K5oYe+v0bbOL5ye7EPrBT6oP1AZTc6zKcVBck/6m6QAvA
- Ez069ZLmwWtxJmMOsDQ4fGtGw3MAAl+QhgHuPK9R/rRdAgQF0VhRhsXFdUSVoWjl
- R053DN1zTZiVVFZ7y9WvjG6jRpR5NiZfYuGfOm5AwzQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=pC7yvV
- nFLmc0WK4x+uGmYIrKhsSQyhagqa5MEVVJuoE=; b=2jLE8cSCrndRhcMyJRIXYp
- 9Oqd15rB9A0XWXRXxdEUp36YNtwFQXYHhvl4Nit0Xk78Snox4o/fQF+3XKbburhn
- BbkQh9y749aEtBdxBqdTfXl33zcnUiybiT/rTxpdJFLskuJAk1pUEnVkVqnUgn03
- 5OmLhqa2VsruiBMa3wUxSLkzi4UY2RbvsG4FcEy73xU3lLQeC9obXvRVLRdouFs1
- mWeQvdr7PEym6V4fTfveDGtFdMwHSDl+9iLydtprk6lpg667oMzq6HfOXQWLiMyO
- 8+cuAY3UgashB0XuFL3iJp6uT7lTu0V68b7xIQ33RD/Mxpkhkx1qsqizEkx1lM2g
- ==
-X-ME-Sender: <xms:dN-WXr5B5g0dJB_qAIyr1diBMMPEgyFJ_6wSII99rhOVgSkdA3pArw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrfeefgdduhecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
- rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
- hordhtvggthh
-X-ME-Proxy: <xmx:dN-WXkC0Zvx98MDbKBdxtP2zHAMkk-q9FYjODdbx8wCX20I-xrmZaQ>
- <xmx:dN-WXv7Q7Iwc7NK9EuaSlDOcHTP2JjeTeU_n7aJZVKYwlGnELXVdjw>
- <xmx:dN-WXguv48EFFIy6BmZGzToHbI_Hm9DapW3UIcc5xIVQql0HH677qw>
- <xmx:dt-WXsqvYP13Ihx95XMcjVpZCS6uesVoG67QodBrI8siSl_pevgH4cx-Ogs>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id A651E3280067;
- Wed, 15 Apr 2020 06:18:28 -0400 (EDT)
-Date: Wed, 15 Apr 2020 12:18:27 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200415101827.owf5babnigev2vit@gilmour.lan>
-References: <20200407123232.ktvaifhqntgzvkap@gilmour.lan>
- <CAG3jFysSrZJRE2TvL0bWoRFNnscgDGj8yGr-iwWBm4=1wMbJ9A@mail.gmail.com>
- <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
- <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
- <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
- <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
- <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
- <20200408134315.a7cemmto6bi26arg@gilmour.lan>
- <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
- <20200408153051.GP6127@valkosipuli.retiisi.org.uk>
+ id 1jOf7p-0007Eg-Vq
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 10:18:35 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200415101830euoutp02c61c50608364290f67b2d55f6d213bce~F9uXDWTET0314503145euoutp02O
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 10:18:30 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200415101830euoutp02c61c50608364290f67b2d55f6d213bce~F9uXDWTET0314503145euoutp02O
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586945910;
+ bh=Fwm50T/nZ6Q2k3MWGzt6zeBPATrNUNxyHfySoKDQwlY=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=lXPF7cxnDACNCik/GROwnay4jk8bk4K5g6tynb7zIkCJu/yp3Av9f81xYtr+uETgM
+ 41kcOO6CUNtwyQzEuYuU+uUtdgrI0k8QdHuv8MgrwZh0ue5dKfCsT8YywPXmQhkFqY
+ A8b4VZkg6uVbljSW62MRzEnu7OzYYL/zfofd4FdA=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200415101830eucas1p2be6eac13c3466aa1d65852252569e21c~F9uWtYhif2165521655eucas1p2O;
+ Wed, 15 Apr 2020 10:18:30 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 31.D0.61286.57FD69E5; Wed, 15
+ Apr 2020 11:18:29 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200415101829eucas1p18e21324d3c39926fffc6c8b5dc52f206~F9uWKjmky2321723217eucas1p1N;
+ Wed, 15 Apr 2020 10:18:29 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200415101829eusmtrp2613be7d6379690c8e59bf53666811072~F9uWJhCso1953519535eusmtrp2R;
+ Wed, 15 Apr 2020 10:18:29 +0000 (GMT)
+X-AuditID: cbfec7f2-ef1ff7000001ef66-3c-5e96df7569df
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 67.C1.08375.57FD69E5; Wed, 15
+ Apr 2020 11:18:29 +0100 (BST)
+Received: from [106.120.51.71] (unknown [106.120.51.71]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200415101828eusmtip2f5c4763ad14611bd3948c396b71632d9~F9uVHoPir2416924169eusmtip2b;
+ Wed, 15 Apr 2020 10:18:28 +0000 (GMT)
+Subject: Re: [RFC 7/8] thermal: of: Monitor thermal zone after enabling it
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Message-ID: <40316054-5e39-f1fa-81f2-bfda787d2167@samsung.com>
+Date: Wed, 15 Apr 2020 12:18:28 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200408153051.GP6127@valkosipuli.retiisi.org.uk>
+In-Reply-To: <20200407174926.23971-8-andrzej.p@collabora.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0wTaRTNNzOdDsWSoai9EVxjE00kUVA0+aIrakQzMWbdGGM2ZkVHnUUi
+ LaYF1DXxLUpVQAzS7RJey6OFFbAQaHdZ0aq0Bq34jPiuogKxRlpEqzxsGcjy79xzz8m5J7kM
+ qbDT05hkTZqg1fApKlpGNbX5XXPTX5xPjC0bWILNzmEKf3b5CVz5+jmF8wwjJC7yTceFt49R
+ WF8ai90P1uFMn4HC7ssrcefhfwlc2J2BG1ynJbg630Zhm9tD46pLOQhbXj+UYP1XM4l9Z64h
+ 3FYyFXd0/IprWrpJfLP9rgR3ubNpPNRsoXB3oxL/d/wOiRss+eTyKM76rBxxjeZOgjN5Yzib
+ 8ZmUazBFc3+19BCcpTqL5p4+bKG5Dy5XgC8/yPW975JybwuuElzuRw/NXfxgJbicoVjuy733
+ kp8jNsl+3CGkJGcI2pj4rbKd2d/60O4v8r2n7S+kh1BNqB6FMMAuhCdnzhF6JGMUrAnBrdYB
+ Shz6EVzoO0KLgw+BafAdPW7J8j8hxUUVgotFeok4eBBct3pRUBXBrgFjzRVpEE9m48Df5JEG
+ RSQ7IAX7/R4yuKDZxXD2RPWoQc7Gw/XHXiKIKXYWOIYdkiCewv4C3pdXJaImHG780UUFcQi7
+ FJzOktEAklXC465iQsQzoNlTOHoesDkh0HtbLxXvToB77X9SIo6AXkfjGB8FI7ZiQjTUIhg6
+ 2T3mbkZQdW54rPUSeOr6GsBMIGIO1P0TI9IroLPIQAZpYMPgkSdcPCIM8poKxmg5nMxUiOrZ
+ UF9ZT4/H6m1mMhepjBOqGSfUMU6oY/w/twRR1UgppOvUSYJuvkbYM0/Hq3XpmqR521PVFhT4
+ 7PZhh9eKPt3dZkcsg1ST5M6/8xMVEj5Dt09tR8CQqsnyOnWAku/g9/0uaFO3aNNTBJ0dRTKU
+ SimPK+vZrGCT+DRhlyDsFrTjW4IJmXYIZST6jh8onLmeHdHq41InzckMz3NurzNcKJ3S1lp3
+ av0Vvrw+6yh6Eyrn1nb8VPtupkYWZpa9Ki2u/PSGfxkTNejamB232R1fua6iYpHQs7x1WWu0
+ dWnHlsH+fmRKS/ihd0FyrT90RuRqlUFaEJkwd3XuqooBh7K2fP+G3xyhqWX7VZRuJz8/mtTq
+ +O+XxsAh1QMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHec85OztWo9PU9iJFsRJDa3pcttewFfWhQ/ewQMqyaYdpuS12
+ Nsmki1BW67JWmTWGTcrSKYqb1SSL1FK7YGZkaXZZjTJqkkroKq1NC/z2e5//78/DCw+FizsE
+ EVSW1sDptapsKTmJeDza8naB8d2F7XE9ZeGovHWUQENtfgxd+/iWQGcv/sFR8eBMZHt6mECm
+ kjjkebEeFQxeJJDn3grUlX8bQ7beHORqOylAjsI6AtV5fCS6ftcMkPNjpwCZfpbjaPDUfYCa
+ 7dNRe3sqqqjvxdGTxx0C5PWcJtHILSeBemsl6M6RZzhyOQvxZTNY95urgK0t78LYsoFYts76
+ Rsi6yqLZK/VfMNbpOE6yPZ31JNvX1haYXz3I9n/zCtlPRU0Ye+a7j2Rr+twYax6JY4effxNs
+ CN0iS9LrjAZudqaONyyRbmVQvIxJRLL4hYkyRq7Ytjg+QRqrTNrJZWflcPpY5Q5Z5ulf/WDP
+ sGjvycZ3wkOgYrIJhFCQXgiP+1/jJjCJEtOlAA6frww8qEAwA7ZU54w7ofB3p4kcd74CaKs5
+ QgSDUHoVtFY0CIMcRsuh/6ZPGJRwelgIf3SX4cFATOtg3echQZBJejG0HHWAIItoJXzQPYAF
+ maAjYctoy5gTTqfAJrf1nzMNPrzkHVsWQi+Bra32sWU4HQV/F3fg4yyB3d7L2DjPgrd8NvwM
+ EFsn1K0TKtYJFeuEih0QDhDGGXmNWsMzMl6l4Y1atSxDp3GCwD3dbPa73KCjJrkR0BSQThG1
+ VhZuFwtUOXyuphFACpeGiao1gZFopyp3H6fXpemN2RzfCBICn7PgEeEZusB1ag1pTAKjQImM
+ Qq6QL0JSiegY3ZAqptUqA7eb4/Zw+v89jAqJOATmdbWbzbupjHS/BHu5Pz3Z8n5zWlMK1K4R
+ js7aURxTpH7lKHJF1pbIMzYueLRsnW7u1I3ql5OJpaUHCsin55Iv5a9azUQWqEvTRBbLsSiJ
+ 4nbz3RP+OT1np/7ElVURucon/UT8rg+2whuPlq+13svb5Mmab7d/yTXz7LOYKnfeSinBZ6qY
+ aFzPq/4COBkTEmUDAAA=
+X-CMS-MailID: 20200415101829eucas1p18e21324d3c39926fffc6c8b5dc52f206
+X-Msg-Generator: CA
+X-RootMTR: 20200415101829eucas1p18e21324d3c39926fffc6c8b5dc52f206
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200415101829eucas1p18e21324d3c39926fffc6c8b5dc52f206
+References: <20200407174926.23971-1-andrzej.p@collabora.com>
+ <20200407174926.23971-8-andrzej.p@collabora.com>
+ <CGME20200415101829eucas1p18e21324d3c39926fffc6c8b5dc52f206@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_031833_003667_5319CCC6 
-X-CRM114-Status: GOOD (  35.73  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200415_031834_222568_4AED866C 
+X-CRM114-Status: GOOD (  18.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.27 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,6 +133,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,196 +146,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Robert Foss <robert.foss@linaro.org>, Tomasz Figa <tfiga@chromium.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============1679850745512385503=="
+Cc: "Rafael J .
+ Wysocki" <rjw@rjwysocki.net>, platform-driver-x86@vger.kernel.org,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1679850745512385503==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="nyrshlxfcxcrev3h"
-Content-Disposition: inline
+On 4/7/20 7:49 PM, Andrzej Pietrasiewicz wrote:
+> thermal/of calls its own ->set_mode() method, so monitor thermal zone
+> afterwards. This is needed for the DISABLED->ENABLED transition.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> ---
+>  drivers/thermal/of-thermal.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
+> index b7621dfab17c..cf2c43ebcb78 100644
+> --- a/drivers/thermal/of-thermal.c
+> +++ b/drivers/thermal/of-thermal.c
+> @@ -523,8 +523,11 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
+>  		if (sensor_specs.np == sensor_np && id == sensor_id) {
+>  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+>  							 data, ops);
+> -			if (!IS_ERR(tzd))
+> +			if (!IS_ERR(tzd)) {
+>  				tzd->ops->set_mode(tzd, THERMAL_DEVICE_ENABLED);
+> +				thermal_zone_device_update(tzd,
+> +						THERMAL_EVENT_UNSPECIFIED);
+> +			}
+>  
+>  			of_node_put(sensor_specs.np);
+>  			of_node_put(child);
+> 
 
+This patch is bogus/redundant, please look at ->set_mode implementation for
+thermal/of drivers:
 
---nyrshlxfcxcrev3h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+static int of_thermal_set_mode(struct thermal_zone_device *tz,
+			       enum thermal_device_mode mode)
+{
+	struct __thermal_zone *data = tz->devdata;
 
-On Wed, Apr 08, 2020 at 06:30:51PM +0300, Sakari Ailus wrote:
-> Cc'ing Laurent as well.
->
-> On Wed, Apr 08, 2020 at 06:28:57PM +0300, Sakari Ailus wrote:
-> > Hi Maxime,
-> >
-> > On Wed, Apr 08, 2020 at 03:43:15PM +0200, Maxime Ripard wrote:
-> > > On Wed, Apr 08, 2020 at 02:35:28PM +0200, Tomasz Figa wrote:
-> > > > On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > > On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
-> > > > > > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
-> > > > > > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus@iki.fi> wrote:
-> > > > > > > >
-> > > > > > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss wrote:
-> > > > > > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > > > > > > >
-> > > > > > > > > > Hi Robert,
-> > > > > > > > > >
-> > > > > > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Foss wrote:
-> > > > > > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > > > > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakari Ailus wrote:
-> > > > > > > > > > > > > > But that 19.2MHz is not a limitation of the device itself, it's a
-> > > > > > > > > > > > > > limitation of our implementation, so we can instead implement
-> > > > > > > > > > > > > > something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
-> > > > > > > > > > > > > > sure that our parent clock is configured at the right rate) and the
-> > > > > > > > > > > > > > clk_get_rate and compare that to 19.2MHz (to make sure that it's not
-> > > > > > > > > > > > > > been rounded too far apart from the frequency we expect).
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > This is doing exactly the same thing, except that we don't encode our
-> > > > > > > > > > > > > > implementation limitations in the DT, but in the driver instead.
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > What I really wanted to say that a driver that doesn't get the clock
-> > > > > > > > > > > > > frequency from DT but still sets that frequency is broken.
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > This frequency is highly system specific, and in many cases only a certain
-> > > > > > > > > > > > > frequency is usable, for a few reasons: On many SoCs, not all common
-> > > > > > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 MHz and 24 MHz; while others
-> > > > > > > > > > > > > are being used as well), and then that frequency affects the usable CSI-2
-> > > > > > > > > > > > > bus frequencies directly --- and of those, only safe, known-good ones
-> > > > > > > > > > > > > should be used. IOW, getting the external clock frequency wrong typically
-> > > > > > > > > > > > > has an effect that that none of the known-good CSI-2 bus clock frequencies
-> > > > > > > > > > > > > are available.
-> > > > > > > > > > > >
-> > > > > > > > > > > > So clock-frequency is not about the "Frequency of the xvclk clock in
-> > > > > > > > > > > > Hertz", but the frequency at which that clock must run on this
-> > > > > > > > > > > > particular SoC / board to be functional?
-> > > > > > > > > > > >
-> > > > > > > > > > > > If so, then yeah, we should definitely keep it, but the documentation
-> > > > > > > > > > > > of the binding should be made clearer as well.
-> > > > > > > > > > >
-> > > > > > > > > > > Alright so, let me summarise the desired approach then.
-> > > > > > > > > >
-> > > > > > > > > > There's a separate discussion on the same topic here:
-> > > > > > > > > > https://lore.kernel.org/linux-media/20200407122106.GD4751@pendragon.ideasonboard.com/
-> > > > > > > > >
-> > > > > > > > > Thanks for the link.
-> > > > > > > > >
-> > > > > > > > > >
-> > > > > > > > > > > ACPI:
-> > > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > > >
-> > > > > > > > > > > DT:
-> > > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > > >   - Get xvclk clock
-> > > > > > > > > > >   - Get xvclk clock rate
-> > > > > > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
-> > > > > > > > > >
-> > > > > > > > > > The current status is that you should
-> > > > > > > > > > 's/clock-frequency/link-frequencies/', and in order to replace
-> > > > > > > > > > assigned-clock-rates, you'll want to have a clk_set_rate to 19.2MHz
-> > > > > > > > > > between steps 3 and 4
-> > > > > > > > >
-> > > > > > > > > Would we want to 's/clock-frequency/link-frequencies/' for ACPI too?
-> > > > > > > > > I imagine that would cause some breakage.
-> > > > > > > >
-> > > > > > > > It would, yes, and it would be no more correct on DT either.
-> > > > > > > >
-> > > > > > > > There are basically two possibilities here; either use the clock-frequency
-> > > > > > > > property and set the frequency, or rely on assigned-clock-rates, and get
-> > > > > > > > the frequency instead.
-> > > > > > > >
-> > > > > > > > The latter, while I understand it is generally preferred, comes with having
-> > > > > > > > to figure out the register list set that closest matches the frequency
-> > > > > > > > obtained. The former generally gets around this silently by the clock
-> > > > > > > > driver setting the closest frequency it can support.
-> > > > > > >
-> > > > > > > Wouldn't the former actually cause problems, because the closest
-> > > > > > > frequency the clock driver can support could be pretty far from the
-> > > > > > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs to check the
-> > > > > > > resulting frequency anyway.
-> > > > > >
-> > > > > > That's possible, yes; in this case there wouldn't be a guarantee the
-> > > > > > frequency wouldn't be far off.
-> > > > >
-> > > > > assigned-clock-rates is really fragile... There's zero guarantee on
-> > > > > how far the actual rate is going to be from the asked one, but more
-> > > > > importantly you have zero guarantee on the time frame that rate is
-> > > > > going to be enforced for.
-> > > >
-> > > > Is there such a guarantee if clk_set_rate() is called?
-> > >
-> > > with clk_set_rate itself, no, but...
-> > >
-> > > > > It's simply going to change the rate as a one-off thing, and if
-> > > > > there's the next millisecond someone else is going to change its rate
-> > > > > one way or another, it's going to do so and you won't have any
-> > > > > notification.
-> > >
-> > > You can get notified, and you can use clk_set_rate_exclusive if you
-> > > *really* want to enforce it.
-> >
-> > Is the conclusion then we should go back to relying on the clock-frequency
-> > property?
+	mutex_lock(&tz->lock);
 
-clock-frequency or link-frequencies. link-frequencies seems to be a
-better fit here, but we don't really have the choice for older
-bindings.
+	if (mode == THERMAL_DEVICE_ENABLED) {
+		tz->polling_delay = data->polling_delay;
+		tz->passive_delay = data->passive_delay;
+	} else {
+		tz->polling_delay = 0;
+		tz->passive_delay = 0;
+	}
 
-> > This has been discussed multiple times over the years, and I don't really
-> > disagree with the above. The frequency is typically indeed hand-picked for
-> > the hardware, and no other frequency should be used in any circumstances.
-> >
-> > No sensor driver I've seen has used clk_set_rate_exclusive() but I guess
-> > they should. The absence of practical problems has been probably because of
-> > two factors; firstly, these are typically clocks dedicated to the sensors
-> > and secondly, good luck.
+	mutex_unlock(&tz->lock);
 
-My point was that at least with handling the clock rate within the
-driver (as opposed to assigned-clock-rates) you have multiple options
-in dealing with changing colck rates / parents (Modelling the sensor
-clock as a clock itself, using clk_set_rate_exclusive, using a
-notifier, etc).. Some are more intrusive to the rest of the system
-than others (especially clk_set_rate_exclusive), so I'm not really
-advocating for any here, but we should make sure we have them in the
-first place.
+	data->mode = mode;
+	thermal_zone_device_update(tz, THERMAL_EVENT_UNSPECIFIED);
 
-Maxime
+	return 0;
+}
 
---nyrshlxfcxcrev3h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXpbfcwAKCRDj7w1vZxhR
-xZr+AQDkW0ChusXkCuuZ1ekMimOwuNYowZ2jcYuxc4OvYyQLEQEAm7ZbuCemshiW
-pfvKQV+PU9QKzQ9cuhAar07m8yiUfwI=
-=+VzY
------END PGP SIGNATURE-----
-
---nyrshlxfcxcrev3h--
-
-
---===============1679850745512385503==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+--
+Bartlomiej Zolnierkiewicz
+Samsung R&D Institute Poland
+Samsung Electronics
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1679850745512385503==--
-
