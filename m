@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE081AA107
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 14:42:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A2301AA10C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 14:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
 	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4c4Xliz9f5SbuWUZammOx6tmlpk8YHmH8SxAAqPgQQk=; b=BzKr3mUp5IvcrZ
-	PstNWjdBw2k92ukB73+4lYfpEPQk7LYfpPB8CnLROUUhnzc/Jyr3hUDt0xhOULoiBn7B3+uQN019M
-	eB+0Ko5YCATnJuJP9qqyvwo8SFt4Kh08p8SGppJFJxX496+7lK8KTj3u6/Yeo6QrbNxHjIZA1XoP2
-	z/MMKmIaeqSRG63e6rl/emG+IVFsLE3nACJoekJh4d0jaTO23Gzd3p57tHfqCOnRw2k988cVtYlKs
-	+PNxGYfa79UxfcLZKmEToe7bucJ0buhqyZMw8mChJZnDizlkpqsg0LyWVIJZ75ZDOgwWpXsmXkWX1
-	sE4Vd/30YgaKsPCDhyTA==;
+	List-Owner; bh=kgLLrMqVkoa5crjx79lMq4M0KTU4TRjHwSwULXQhfl8=; b=r/GFqmJP9tqfp4
+	BAmPgodJ0MBi5jl0sAl9o/CbBvk0N2D9Y2BTi2d84XKOSCZ3lMxUEPA2VUhcpDhuTrBCombgpJEBG
+	q6VTmtOO0ZxZHXjbpgPQa11gqyx3k9phfRxahEZ9MDRYBLzSUI+IIFhr98t047OHIdaPSOWb2wb9Y
+	anPOrlCeaZye+/IVuRi5yJb4mhattBQaDB+LQljBpokN6yhiaqdJEAUZYiVFRcFwUSBsI+lTMxUR5
+	EG4+O52DVX7F1RnP6rToohJZjEE3RaHRY+DDO8BaHRX7l242vMyTCzQCI/yqmLlqY2S8y/j+ftivc
+	NcXfWYgJjsFvz+pvubfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhMm-0006ye-Cy; Wed, 15 Apr 2020 12:42:08 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
+	id 1jOhNy-0007Kk-Ck; Wed, 15 Apr 2020 12:43:22 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhMd-0006xc-1f
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 12:42:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586954516;
+ id 1jOhNq-0007Jk-Fi
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 12:43:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586954592;
  s=strato-dkim-0002; d=goldelico.com;
  h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=FKESjbpPziqBCtdf8D9+b48eIHzcaxzwb3aIpI4k59s=;
- b=fbX4qQuYrXbgOJDqHJv2C7ns7vASN6bgFclcfQrp6rQPL8nPHabC1X6M0NgZWteycl
- +MeDp6BM8GA5l8i20NtSKbCwuZk6vuT0xj171YaSCwdYd5EnvhqQSxbW6y05e4m48f1c
- jk3LySstrmsOFcuxL0BI43lVf1UjskH3pvzYvoPFC5h+M61maryHYFr4eaWzC38N7LPb
- Gf60osH1YvoTbOFo4+QyZZHEXiE6myuDsqgtwBSiBiDivkH42FgOYgZEMg9Sqjdz/frC
- dUE77MpbzIqb+n8O81E2zDsaiJ8ynIfg5vGUGcvBc5XnmyHxWwYfzfD3nsL8aX1hx1oO
- 70rQ==
+ bh=8GK3WjET2U6wp+sgAkoboHJc3uorJ17qMHhKjYJZZNA=;
+ b=Y06+hmHpLHkvaol/ObsyWKr4yp0g4obAhrOUvr+1Pk6xQs+OiQ9DLKrQD+adtlK9kZ
+ 53sWStyvkJPMabfKEk9lXZ7ynnEeUoUOi2QyBaHjPyd/weSXqNj2nTn76yEbahWORoos
+ ryjn+gtv/Ayl6RvuySjHiXB0gbAuFOKPx10Z26QncJK/TcSZDzL35VwesqyxZDgNJrYL
+ jncLRpS5VttHzDqviLQ7dj1UNC67ou2IBOoFaJ9wrZwtMfqcZ0LRwyFCmhGcKXiQz4mw
+ V8MGNHnPpGx3z2yJp/33lf/pVujX5n+5R/xSm2hYGPzKcDOoRSJApUDIj4XyspKsICqW
+ 8Htg==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/PtwDConyM="
 X-RZG-CLASS-ID: mo00
 Received: from imac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
- with ESMTPSA id 6028a2w3FCfq1v4
+ with ESMTPSA id 6028a2w3FChB1vU
  (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
  ECDH bits, eq. 3072 bits RSA))
  (Client did not present a certificate);
- Wed, 15 Apr 2020 14:41:52 +0200 (CEST)
-Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
- PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
+ Wed, 15 Apr 2020 14:43:11 +0200 (CEST)
+Subject: Re: [PATCH v6 01/12] dt-bindings: add img,
+ pvrsgx.yaml for Imagination GPUs
 Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <20200415101008.zxzxca2vlfsefpdv@gilmour.lan>
-Date: Wed, 15 Apr 2020 14:41:52 +0200
-Message-Id: <2E3401F1-A106-4396-8FE6-51CAB72926A4@goldelico.com>
+In-Reply-To: <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
+Date: Wed, 15 Apr 2020 14:43:10 +0200
+Message-Id: <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
 References: <cover.1586939718.git.hns@goldelico.com>
- <20200415101008.zxzxca2vlfsefpdv@gilmour.lan>
+ <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
+ <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
 To: Maxime Ripard <maxime@cerno.tech>
 X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_054159_677349_36C2E64F 
-X-CRM114-Status: GOOD (  19.89  )
+X-CRM114-CacheID: sfid-20200415_054314_672030_2693B4EC 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:6 listed in]
+ no trust [2a01:238:20a:202:5302:0:0:10 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -103,86 +104,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
 
-> Am 15.04.2020 um 12:10 schrieb Maxime Ripard <maxime@cerno.tech>:
+> Am 15.04.2020 um 12:12 schrieb Maxime Ripard <maxime@cerno.tech>:
 > 
 > Hi,
 > 
-> On Wed, Apr 15, 2020 at 10:35:07AM +0200, H. Nikolaus Schaller wrote:
->> * rebased to v5.7-rc1
->> * added DTS for for a31, a31s, a83t - by Philipp Rossak <embed3d@gmail.com>
->> * added DTS for "samsung,s5pv210-sgx540-120" - by Jonathan Bakker <xc-racer2@live.ca>
->> * bindings.yaml fixes:
->>  - added a31, a31
->>  - fixes for omap4470
->>  - jz4780 contains an sgx540-130 and not -120
->>  - a83t contains an sgx544-115 and not -116
->>  - removed "additionalProperties: false" because some SoC may need additional properties
+> On Wed, Apr 15, 2020 at 10:35:08AM +0200, H. Nikolaus Schaller wrote:
+>> The Imagination PVR/SGX GPU is part of several SoC from
+>> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
+>> Allwinner A83 and others.
 >> 
->> PATCH V5 2020-03-29 19:38:32:
->> * reworked YAML bindings to pass dt_binding_check and be better grouped
->> * rename all nodes to "gpu: gpu@<address>"
->> * removed "img,sgx5" from example - suggested by Rob Herring <robh+dt@kernel.org>
+>> With this binding, we describe how the SGX processor is
+>> interfaced to the SoC (registers, interrupt etc.).
 >> 
->> PATCH V4 2019-12-17 19:02:11:
->> * MIPS: DTS: jz4780: removed "img,sgx5" from bindings
->> * YAML bindings: updated according to suggestions by Rob Herring
->> * MIPS: DTS: jz4780: insert-sorted gpu node by register address - suggested by Paul Cercueil
->> 
->> PATCH V3 2019-11-24 12:40:33:
->> * reworked YAML format with help by Rob Herring
->> * removed .txt binding document
->> * change compatible "ti,am335x-sgx" to "ti,am3352-sgx" - suggested by Tony Lindgren
->> 
->> PATCH V2 2019-11-07 12:06:17:
->> * tried to convert bindings to YAML format - suggested by Rob Herring
->> * added JZ4780 DTS node (proven to load the driver)
->> * removed timer and img,cores properties until we know we really need them - suggested by Rob Herring
->> 
->> PATCH V1 2019-10-18 20:46:35:
->> 
->> This patch series defines child nodes for the SGX5xx interface inside
->> different SoC so that a driver can be found and probed by the
->> compatible strings and can retrieve information about the SGX revision
->> that is included in a specific SoC. It also defines the interrupt number
->> to be used by the SGX driver.
->> 
->> There is currently no mainline driver for these GPUs, but a project
->> [1] is ongoing with the goal to get the open-source part as provided
->> by TI/IMG and others into drivers/gpu/drm/pvrsgx.
+>> In most cases, Clock, Reset and power management is handled
+>> by a parent node or elsewhere (e.g. code in the driver).
 > 
-> Just a heads up, DRM requires an open-source user-space, so if your
-> plan is to move the open-source kernel driver while using the
-> closed-source library (as that page seem to suggest), that might
-> change a few things.
+> Wouldn't the "code in the driver" still require the clock / reset /
+> power domain to be set in the DT?
 
-The far future goal is to arrive at a completely open implementation,
-but nobody knows how to get there. Therefore we bake smaller bread :)
+Well, some SoC seem to use existing clocks and have no reset.
+Or, although not recommended, they may have the io-address range
+hard-coded.
 
-step 1: get SoC integration right and stable (this is what this series is for)
-step 2: make the open source kernel driver work with closed-source libs
-step 3: write open-source replacements for user-space
-
-> 
->> The kernel modules built from this project have successfully
->> demonstrated to work with the DTS definitions from this patch set on
->> AM335x BeagleBone Black, DM3730 and OMAP5 Pyra and Droid 4. They
->> partially work on OMAP3530 and PandaBoard ES but that is likely a
->> problem in the kernel driver or the (non-free) user-space libraries
->> and binaries.
->> 
->> Wotk for JZ4780 (CI20 board) is in progress and there is potential
->> to extend this work to e.g. BananaPi-M3 (A83) and some Intel Poulsbo
->> and CedarView devices.
-> 
-> If it's not been tested on any Allwinner board yet, I'll leave it
-> aside until it's been properly shown to work.
-
-Phillip has testes something on a83.
-
-BR and thanks,
+BR,
 Nikolaus
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
