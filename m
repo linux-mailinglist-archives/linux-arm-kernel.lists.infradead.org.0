@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CC301A9D3E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02AC71A9D43
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:44:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7/zUkgQ7a6xf439rr5P3ahOauFzpN6Gv51PqoWZBig=; b=M/P/Fr4c4+IbIK
-	5iTJoXJXPsdmeaxdP9937eoAkzuxJA/CS9vulIB3Q2r/l+fIQ4SSXfPQYZK3ULzUHQ88g4KN9rEz2
-	AFNsIqnqckb4Sc+6o0OfwQR1ZishMqEmy1EDpKZumtQGsrtS/2ZKqGCro+esa3t0O3HZKE2g967Ie
-	QTfwhQe7eFCEKwnQ1wlus/UZkIgsZENqPsOYHJbdkmurSzhc/dvb8DqIIhURXpO7opGofRtu3p6Ti
-	/qzPK1OQ12H2w/pkLjMA00Xh/HtVfJJSZzLD6ls1TZjsFEtveWx76a+MHj7W4sAFSt5OCxA8XXYda
-	unsXh9wZhbZFEKhPIlAA==;
+	List-Owner; bh=A9Bm3RW4eoMtD8URVrIkb0JePfu7cy91DzEoYhmA4J0=; b=m/i/zT3+YbZQc/
+	QLzkGQMWc0Ah37eZeTvMSBvepWGhRnPjKpWt8fHrVSDr318IGGO5+449jtGDnheABEE1nfgKIhONr
+	Bo4x7nZlPKQU8KeWNVwpTe5WkWOxow0C+zZjMkNoBZf/pZvyOe8B03vKSPfE+Y6dOJqDKdNO6UXag
+	eFYWzcJBgRMNvrKyH+7fGRcMaur4C4pNMqIpuU/82lcvPkVbJ/y5FsH6DUubAQRlm1g0A/g6T3ylj
+	oymTKs9onHGODlRL+lUTGxtqDSwrU2r7kJdxjEAVl/mVXkiyzF2Dz5ChaFZjcIqUzqy4or1boOwAA
+	mOLDNfKPUvrgDc4Epa6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgSs-0000il-M1; Wed, 15 Apr 2020 11:44:22 +0000
+	id 1jOgT7-00012M-EF; Wed, 15 Apr 2020 11:44:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgRI-0007xc-K0
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:46 +0000
+ id 1jOgRP-00085B-V7
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:53 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B2D820775;
- Wed, 15 Apr 2020 11:42:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AB81E20936;
+ Wed, 15 Apr 2020 11:42:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950962;
- bh=GKSjlZDpSsH34pag1b7kvu2cZ6Kl6/zbeisGVvWw0j4=;
+ s=default; t=1586950971;
+ bh=VyOZnvDN6v7p/4EWitshi6AaubiDqI05pzbnVO4r8mA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Fe9YshogVe9zh40cXSQr0xmAAU4S9SYyIGeLcik9a2+LppJMhLd4q9qNrKQH0OmJD
- USr7uc6ZCWsJzYDpyRO1J2H9Za1lCmzPUQIXCvkKe45CbntIscJe0PoitiqIqstswv
- +XzKiAMKcL8Xy/9vMCw43Sv70M7mvMPdACz1C+C4=
+ b=iX7dPB623rPbvtHBk2KsU27CecUgvfazqs2xOjcJKJ5xO7wZdGowv2/0OlwqJeL2m
+ 9KO1l/eXqdUHmHv5HBS7EpqOM6f1E3N6XhjyHGD1pUIModeRYxbp2I0AVi92QzPMjC
+ jYU4zYAL1APBUObqEoTtpFsHJBo5KV6XrkM9AgAg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 013/106] arm64: dts: allwinner: a64: Fix display
- clock register range
-Date: Wed, 15 Apr 2020 07:40:53 -0400
-Message-Id: <20200415114226.13103-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 020/106] arm64: dts: marvell: espressobin: add
+ ethernet alias
+Date: Wed, 15 Apr 2020 07:41:00 -0400
+Message-Id: <20200415114226.13103-20-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
 References: <20200415114226.13103-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044244_782198_2899E32F 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200415_044252_178923_3911EBEE 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,45 +81,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Tomasz Maciej Nowak <tmn505@gmail.com>, Sasha Levin <sashal@kernel.org>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jernej Skrabec <jernej.skrabec@siol.net>
+From: Tomasz Maciej Nowak <tmn505@gmail.com>
 
-[ Upstream commit 3e9a1a8b7f811de3eb1445d72f68766b704ad17c ]
+[ Upstream commit 5253cb8c00a6f4356760efb38bca0e0393aa06de ]
 
-Register range of display clocks is 0x10000, as it can be seen from
-DE2 documentation.
+The maker of this board and its variants, stores MAC address in U-Boot
+environment. Add alias for bootloader to recognise, to which ethernet
+node inject the factory MAC address.
 
-Fix it.
-
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-Fixes: 2c796fc8f5dbd ("arm64: dts: allwinner: a64: add necessary device tree nodes for DE2 CCU")
-[wens@csie.org: added fixes tag]
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Signed-off-by: Tomasz Maciej Nowak <tmn505@gmail.com>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 27e48234f1c23..38ecd227c34c1 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -227,7 +227,7 @@
+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
+index 53b8ac55a7f3d..e5262dab28f58 100644
+--- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
+@@ -13,6 +13,12 @@
+ #include "armada-372x.dtsi"
  
- 			display_clocks: clock@0 {
- 				compatible = "allwinner,sun50i-a64-de2-clk";
--				reg = <0x0 0x100000>;
-+				reg = <0x0 0x10000>;
- 				clocks = <&ccu CLK_BUS_DE>,
- 					 <&ccu CLK_DE>;
- 				clock-names = "bus",
+ / {
++	aliases {
++		ethernet0 = &eth0;
++		serial0 = &uart0;
++		serial1 = &uart1;
++	};
++
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
 -- 
 2.20.1
 
