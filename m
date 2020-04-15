@@ -2,55 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 657781A970A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:42:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E47E81A9724
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:42:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZ4vzY3E62G6pKlbgZMJ/sx1n8ZEeboLV4SSoYJA/rc=; b=jeoB6ieOf2jL76
-	oeKTkY6RrdhnHaw3Sl05qMpgr4Jhpxid49HWKGMcwXDD9sI2Uy6cblh8MTh3CnqEoe2mvR5GbS2Xl
-	zFZ5sIIEozfixAiZMAdXfRiif6EcULugOfv2Fi8UeOA7J0pc6jWM+s7evDbQNSoqhxlGCFPqA8LFJ
-	MVgIBX2l9zxM2bhWAOFLcupb0g5ykPFznOUJkNfWpI4YWAccEDJQhsz4V6jzczs6dtMKAzxwfjHVQ
-	B0QsuKXWgVr2idFPIoUjhDD02/uwfUBr9J48YdB3KP7qKNCniqrgwJoB2SWO7X5fNqrTQd35YJZQX
-	vP+3s1SiZRr309Mpsd1g==;
+	List-Owner; bh=QkL4+7uil4icBFWCNo7bbY1G4nFskhcRod7EzGO07fs=; b=kZFBXbQWnOpPEN
+	JELrjRZO+UYX2rNlAt58VX1bu9y6Jz+qL3lYcgeXdcdL39ca3zKIoUPM6kfjXob1Lq1TM5sBCSLOx
+	VSyAo62sqSUbZZ7yCJKZICdYoGo9OUt5KsGhp+tUOx1jcXobn3BO3yL0hupTbBFoOuMsNcTldG1UJ
+	GUbkE0U5Y6UhY+CwEapLV7ABE/ghJq5rQLPUblSnd8LLrtCbDG3XD/ny3Dku6tamcg0qC68HzoOle
+	8z13a8iRVQG4R6lc1Vnftp2OVbVBdeWWTPRhjE1VfOH3Cr3AZCpWxAvdgQ7Qoy/LE+FtnEu4s3fiT
+	v6RvCqbjD84j4BMUUqEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdck-0007j7-AY; Wed, 15 Apr 2020 08:42:22 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jOdd7-00082k-Fa; Wed, 15 Apr 2020 08:42:45 +0000
+Received: from mail-eopbgr80071.outbound.protection.outlook.com ([40.107.8.71]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdbI-0006Lv-Bj
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:40:57 +0000
-X-Originating-IP: 78.193.40.249
-Received: from kb-xps (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id E2F9220013;
- Wed, 15 Apr 2020 08:40:47 +0000 (UTC)
-Date: Wed, 15 Apr 2020 10:40:46 +0200
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Jonathan Cameron <jic23@jic23.retrosnub.co.uk>
-Subject: Re: [PATCH v2 3/3] counter: Add atmel TCB capture counter
-Message-ID: <20200415084046.GD161090@kb-xps>
-References: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
- <20200409141401.321222-4-kamel.bouhara@bootlin.com>
- <20200412114433.03e1f163@archlinux>
+ id 1jOdbo-0006vg-OW
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:41:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M0QPiLQc3yWt5+5JODoKudYptPjcWka5/+wsiq2igoWA1MxhbnmeO/MWKoJ1br86BwSQlpNHN0skDJvyRWnSGH+yNdy/9yxQ64Rsf+WabNyYBGObw1XSYtl/Gr0imMOi9lYOLrmNTuocCJAZtLkO8CsALdiTOjsw5f47ENMIxI/ELZnwUc6Pt+9uoVOkY+Jm8WFWUE8z/I09POGNlDVEknsWT03UhqHKeRiorEmJuWypKIukIsz2uSaOPNRHdZg/UjJKhzd6MBkjEZuc3d67eNn4tgKiW8EB16UbajLv6RBDt5IkJ6O8UZuXd6yq1yqYFi0n4/vceHxir4cv8EtDYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jGGYagvqYonO9jb6cCJ4IeLj5zLHwvX2kLs45DplF9U=;
+ b=Ym9Eo5yrjKX4ZxdZTdLokPUMprwqhxckEBY6YJwIuM0B4e/Mmqp46mwBG/fVLdGKVzcNTiptEfKJAe7EpuI+xMhOjrHwjAl43Am5o10/zt8bc11FsgufFGAY99yq5cRCcA1FQx+Pb9H3+pORk7st+V/u9i/oYGyuK4ztUqTPWvhbHUZabZwziCHWiGApQbdysyi3nK2Cs65vdaKjKwIC8uz31kNY+e63GTUr75VxXhbMoJ22xZGKnIrDoGPRTbDrn0Uz0ACsn5xRU0/1voCQr+WL570fyso3cJ3Au5dTpiYRan6hnW/VoyMprwd3RPxm3UjdWq3dvLkwy0hVIWodTQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jGGYagvqYonO9jb6cCJ4IeLj5zLHwvX2kLs45DplF9U=;
+ b=BzkbGzXhpiAJVoeSFXPiQ3+f5efDsPIBpC+NQQh5NQxt3KRj2fl6Mc6+YhYgmLkn1zHNqGYCtewTbN9a63Urn36Jn+NBQAR6tNIyn0EmN4RnG66k59h3BTN/exFMB/b8OjzErWk59k5BlDMUg6B2TEvITWYU+qAF3nyFblDtl3s=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6557.eurprd04.prod.outlook.com (2603:10a6:803:129::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.16; Wed, 15 Apr
+ 2020 08:41:18 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.2900.028; Wed, 15 Apr 2020
+ 08:41:18 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Robin Gong <yibin.gong@nxp.com>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "u.kleine-koenig@pengutronix.de"
+ <u.kleine-koenig@pengutronix.de>, "broonie@kernel.org" <broonie@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "festevam@gmail.com"
+ <festevam@gmail.com>, "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "will.deacon@arm.com" <will.deacon@arm.com>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>
+Subject: RE: [PATCH v7 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Thread-Topic: [PATCH v7 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Thread-Index: AQHV93/7B768gsXihk2i42KIYKNYiqh6E8wA
+Date: Wed, 15 Apr 2020 08:41:17 +0000
+Message-ID: <VE1PR04MB6638AE84CD338AE1CF26FDFD89DB0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1583944596-23410-1-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1583944596-23410-1-git-send-email-yibin.gong@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.67]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: fd1e24be-f857-4ef1-ba6c-08d7e118c41f
+x-ms-traffictypediagnostic: VE1PR04MB6557:|VE1PR04MB6557:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6557FA07ACEBAB897FE21E3A89DB0@VE1PR04MB6557.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2887;
+x-forefront-prvs: 0374433C81
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(376002)(39860400002)(136003)(366004)(346002)(396003)(478600001)(26005)(71200400001)(81156014)(7696005)(7416002)(66556008)(66476007)(66946007)(53546011)(64756008)(66446008)(6506007)(76116006)(8936002)(186003)(8676002)(54906003)(5660300002)(110136005)(52536014)(4326008)(966005)(2906002)(316002)(55016002)(33656002)(9686003)(86362001)(921003)(1121003);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: /kvC95EK+kKjD6LaKk8X54FJ3oYiHPaGfsHfJKufc9Y7K9y3uGx3CPpgPCSfQPl7gKj+gMiN01jopZe7CPykcLYa9TuTGu+TQGzH7U9st3jMianrrXMEoXO81XHtinEPqZoAqia6CunTiBIKDUeMYT2s5+eePbb5/lGQLDWyoy/bpN/hezbKSAqez48JaSiWRjFZC1+m3TBLctCZJX/fwI0tnKMgKo7tHEpatOB80nJEDBIhB/6eU1NJ9Su8JQqgdKaASrR+vY+1WFmjjJQdeSEVT9j02yLHrPGvGtTBcW2K5RTLQScmEUh4n8849YocxXDZY29Q2pqIvycSTMFidPVnrrigDB8pagYdO29lCDGP3NbzJvI2nXkfVpA816Wpa0QV+ME2KqH4wogq8g/GEelCGYxLjfLp4P+Bvg28obxfcRbh6kBLKeqTnPHpRMEOyW+3qVY6exUgXSJGKhF2NX5ZMbyJ/575hz6tugnBB1rs0jpnXRi6JYAifH5yAA8KqM1dK7YKcr9m3Fy2xBYzSk73xtOb7gjX18bWQQiZvOKi0Arkyc7TM8ctYjr5BOQabNbnVsHhaBOtDUnDX5LU3w==
+x-ms-exchange-antispam-messagedata: BIvNf3AgOsGh1/pjEdAVGTY9PPR4CmIdI/Sae5g4Km7785nfY+zPDvrNXKadPswjvpksHRw8k1lnFiErJtE5dM0heyXmsN6naF/pFrAvJ4d4NU4T+v2wWWwzPB0su/znh0es0etIefn2nZWIK2aDAQ==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200412114433.03e1f163@archlinux>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd1e24be-f857-4ef1-ba6c-08d7e118c41f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Apr 2020 08:41:18.0154 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zsZBj1M5MDP0LJ0fcmLNWZyIqo+u+6JW6r+x1wbipb8A/GVlM6P7gDWjJTAXeM+BlvUmx6GV7uazWVxKWDxKUA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6557
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_014052_714327_5B357F1A 
-X-CRM114-Status: GOOD (  32.07  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200415_014124_908255_6F2B48F8 
+X-CRM114-Status: GOOD (  20.70  )
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.71 listed in list.dnswl.org]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.8.71 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,539 +132,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 12, 2020 at 11:44:33AM +0100, Jonathan Cameron wrote:
-> On Thu,  9 Apr 2020 16:14:01 +0200
-> Kamel Bouhara <kamel.bouhara@bootlin.com> wrote:
->
-> > This drivers allows to use the capture mode of the Timer Counter Block
-> > hardware block available in Atmel SoCs through the counter subsystem.
-> >
-> > Two functions of the counter are supported for the moment: period
-> > capture and quadrature decoder. The latter is only supported by the
-> > SAMA5 series of SoCs.
-> >
-> > For the period capture mode a basic setup has been chosen that will
-> > reset the counter each time the period is actually reached. Of course
-> > the device offers much more possibilities.
-> >
-> > For quadrature mode, both channel 0 and 1 must be configured even if we
-> > only capture the position (no revolution/rotation).
-> >
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> Hi Kamel,
->
+Ping....
+On 2020/03/11 16:35 Robin Gong <yibin.gong@nxp.com> wrote:
+> There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO transfer to
+> be send twice in DMA mode. Please get more information from:
+> https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is
+> adding new sdma ram script which works in XCH  mode as PIO inside sdma
+> instead of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue
+> should be exist on all legacy i.mx6/7 soc family before i.mx6ul.
+> NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
+> 6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips still
+> need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
+> for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata or not.
+> The first two reverted patches should be the same issue, though, it seems
+> 'fixed' by changing to other shp script. Hope Sean or Sascha could have the
+> chance to test this patch set if could fix their issues.
+> Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work on
+> i.mx8mm because the event id is zero.
+> 
+> PS:
+>    Please get sdma firmware from below linux-firmware and copy it to your
+> local rootfs /lib/firmware/imx/sdma.
+> https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tr
+> ee/imx/sdma
+> 
+> v2:
+>   1.Add commit log for reverted patches.
+>   2.Add comment for 'ecspi_fixed' in sdma driver.
+>   3.Add 'fsl,imx6sll-ecspi' compatible instead of 'fsl,imx6ul-ecspi'
+>     rather than remove.
+> v3:
+>   1.Confirm with design team make sure ERR009165 fixed on i.mx6ul/i.mx6ull
+>     /i.mx6sll, not fixed on i.mx8m/8mm and other i.mx6/7 legacy chips.
+>     Correct dts related dts patch in v2.
+>   2.Clean eratta information in binding doc and new 'tx_glitch_fixed' flag
+>     in spi-imx driver to state ERR009165 fixed or not.
+>   3.Enlarge burst size to fifo size for tx since tx_wml set to 0 in the
+>     errata workaroud, thus improve performance as possible.
+> v4:
+>   1.Add Ack tag from Mark and Vinod
+>   2.Remove checking 'event_id1' zero as 'event_id0'.
+> v5:
+>   1.Add the last patch for compatible with the current uart driver which
+>     using rom script, so both uart ram script and rom script supported
+>     in latest firmware, by default uart rom script used. UART driver
+>     will be broken without this patch.
+> v6:
+>   1.Resend after rebase the latest next branch.
+>   2.Remove below No.13~No.15 patches of v5 because they were mergered.
+>   	ARM: dts: imx6ul: add dma support on ecspi
+>   	ARM: dts: imx6sll: correct sdma compatible
+>   	arm64: defconfig: Enable SDMA on i.mx8mq/8mm
+>   3.Revert "dmaengine: imx-sdma: fix context cache" since
+>     'context_loaded' removed.
+> v7:
+>   1.Put the last patch 13/13 'Revert "dmaengine: imx-sdma: fix context
+>     cache"' to the ahead of 03/13 'Revert "dmaengine: imx-sdma: refine
+>     to load context only once" so that no building waring during comes out
+>     during bisect.
+>   2.Address Sascha's comments, including eliminating any i.mx6sx in this
+>     series, adding new 'is_imx6ul_ecspi()' instead imx in imx51 and taking
+>     care SMC bit for PIO.
+>   3.Add back missing 'Reviewed-by' tag on 08/15(v5):09/13(v7)
+>    'spi: imx: add new i.mx6ul compatible name in binding doc'
+> 
+> Robin Gong (13):
+>   Revert "ARM: dts: imx6q: Use correct SDMA script for SPI5 core"
+>   Revert "ARM: dts: imx6: Use correct SDMA script for SPI cores"
+>   Revert "dmaengine: imx-sdma: fix context cache"
+>   Revert "dmaengine: imx-sdma: refine to load context only once"
+>   dmaengine: imx-sdma: remove dupilicated sdma_load_context
+>   dmaengine: imx-sdma: add mcu_2_ecspi script
+>   spi: imx: fix ERR009165
+>   spi: imx: remove ERR009165 workaround on i.mx6ul
+>   spi: imx: add new i.mx6ul compatible name in binding doc
+>   dmaengine: imx-sdma: remove ERR009165 on i.mx6ul
+>   dma: imx-sdma: add i.mx6ul compatible name
+>   dmaengine: imx-sdma: fix ecspi1 rx dma not work on i.mx8mm
+>   dmaengine: imx-sdma: add uart rom script
+> 
+>  .../devicetree/bindings/dma/fsl-imx-sdma.txt       |  1 +
+>  .../devicetree/bindings/spi/fsl-imx-cspi.txt       |  1 +
+>  arch/arm/boot/dts/imx6q.dtsi                       |  2 +-
+>  arch/arm/boot/dts/imx6qdl.dtsi                     |  8 +--
+>  drivers/dma/imx-sdma.c                             | 67
+> ++++++++++++++--------
+>  drivers/spi/spi-imx.c                              | 61
+> +++++++++++++++++---
+>  include/linux/platform_data/dma-imx-sdma.h         |  8 ++-
+>  7 files changed, 108 insertions(+), 40 deletions(-)
+> 
+> --
+> 2.7.4
 
-Hi Jonathan,
-
-> An issue around cleanup inline + a few nitpicks.
->
-> Otherwise looks good to me.
->
-> Jonathan
->
-> > ---
-> > Changes from v2:
-> >  - Updated return code to -EINVAL when user is requesting qdec mode on
-> >    a counter device not supporting it.
-> >  - Added an error case returning -EINVAL when action edge is performed in
-> >    qdec mode.
-> >  - Removed no need to explicity setting ops to NULL from static struct as
-> >    it is the default value.
-> >  - Changed confusing code by using snprintf for the sake of clarity.
-> >  - Changed code to use ARRAY_SIZE so that future reviewers will know
-> >    that num_counts matches what's in the atmel_tc_count array without
-> >    having to check so themselves.
-> >
-> >  drivers/counter/Kconfig             |  11 +
-> >  drivers/counter/Makefile            |   1 +
-> >  drivers/counter/atmel-tcb-capture.c | 394 ++++++++++++++++++++++++++++
-> >  3 files changed, 406 insertions(+)
-> >  create mode 100644 drivers/counter/atmel-tcb-capture.c
-> >
-> > diff --git a/drivers/counter/Kconfig b/drivers/counter/Kconfig
-> > index c80fa76bb531..c50d7453ec33 100644
-> > --- a/drivers/counter/Kconfig
-> > +++ b/drivers/counter/Kconfig
-> > @@ -70,4 +70,15 @@ config FTM_QUADDEC
-> >  	  To compile this driver as a module, choose M here: the
-> >  	  module will be called ftm-quaddec.
-> >
-> > +config ATMEL_TCB_CAPTURE
-> > +	tristate "Atmel Timer Counter Capture driver"
-> > +	depends on HAS_IOMEM && OF
-> > +	select REGMAP_MMIO
-> > +	help
-> > +	  Select this option to enable the Atmel Timer Counter Block
-> > +	  capture driver.
-> > +
-> > +	  To compile this driver as a module, choose M here: the
-> > +	  module will be called atmel-tcb-capture.
-> > +
-> >  endif # COUNTER
-> > diff --git a/drivers/counter/Makefile b/drivers/counter/Makefile
-> > index 55142d1f4c43..70c5b8924588 100644
-> > --- a/drivers/counter/Makefile
-> > +++ b/drivers/counter/Makefile
-> > @@ -10,3 +10,4 @@ obj-$(CONFIG_STM32_TIMER_CNT)	+= stm32-timer-cnt.o
-> >  obj-$(CONFIG_STM32_LPTIMER_CNT)	+= stm32-lptimer-cnt.o
-> >  obj-$(CONFIG_TI_EQEP)		+= ti-eqep.o
-> >  obj-$(CONFIG_FTM_QUADDEC)	+= ftm-quaddec.o
-> > +obj-$(CONFIG_ATMEL_TCB_CAPTURE)	+= atmel-tcb-capture.o
-> > diff --git a/drivers/counter/atmel-tcb-capture.c b/drivers/counter/atmel-tcb-capture.c
-> > new file mode 100644
-> > index 000000000000..4f2b3d60584f
-> > --- /dev/null
-> > +++ b/drivers/counter/atmel-tcb-capture.c
-> > @@ -0,0 +1,394 @@
-> > +// SPDX-License-Identifier: GPL-2.0-only
-> > +/**
-> > + * Copyright (C) 2020 Atmel
-> > + *
-> > + * Author: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > + *
->
-> Nitpick. Blank line doesn't add anything :)
->
-
-Fixed, thanks.
-
-> > + */
-> > +#include <linux/clk.h>
-> > +#include <linux/counter.h>
-> > +#include <linux/mfd/syscon.h>
-> > +#include <linux/module.h>
-> > +#include <linux/mutex.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <soc/at91/atmel_tcb.h>
-> > +
-> > +#define ATMEL_TC_CMR_MASK	(ATMEL_TC_LDRA_RISING | ATMEL_TC_LDRB_FALLING | \
-> > +				 ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_LDBDIS | \
-> > +				 ATMEL_TC_LDBSTOP)
-> > +
-> > +#define ATMEL_TC_QDEN			BIT(8)
-> > +#define ATMEL_TC_POSEN			BIT(9)
-> > +
-> > +struct atmel_tc_data {
-> > +	const struct atmel_tcb_config *tc_cfg;
-> > +	struct counter_device counter;
-> > +	struct regmap *regmap;
-> > +	int qdec_mode;
-> > +	int num_channels;
-> > +	int channel[2];
-> > +	bool trig_inverted;
-> > +};
-> > +
-> > +enum atmel_tc_count_function {
-> > +	ATMEL_TC_FUNCTION_INCREASE,
-> > +	ATMEL_TC_FUNCTION_QUADRATURE,
-> > +};
-> > +
-> > +static enum counter_count_function atmel_tc_count_functions[] = {
-> > +	[ATMEL_TC_FUNCTION_INCREASE] = COUNTER_COUNT_FUNCTION_INCREASE,
-> > +	[ATMEL_TC_FUNCTION_QUADRATURE] = COUNTER_COUNT_FUNCTION_QUADRATURE_X4,
-> > +};
-> > +
-> > +enum atmel_tc_synapse_action {
-> > +	ATMEL_TC_SYNAPSE_ACTION_NONE = 0,
-> > +	ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE,
-> > +	ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE,
-> > +	ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE
-> > +};
-> > +
-> > +static enum counter_synapse_action atmel_tc_synapse_actions[] = {
-> > +	[ATMEL_TC_SYNAPSE_ACTION_NONE] = COUNTER_SYNAPSE_ACTION_NONE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE] = COUNTER_SYNAPSE_ACTION_RISING_EDGE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE] = COUNTER_SYNAPSE_ACTION_FALLING_EDGE,
-> > +	[ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE] = COUNTER_SYNAPSE_ACTION_BOTH_EDGES,
-> > +};
-> > +
-> > +static struct counter_signal atmel_tc_count_signals[] = {
-> > +	{
-> > +		.id = 0,
-> > +		.name = "Channel A",
-> > +	},
-> > +	{
-> > +		.id = 1,
-> > +		.name = "Channel B",
-> > +	}
-> > +};
-> > +
-> > +static struct counter_synapse atmel_tc_count_synapses[] = {
-> > +	{
-> > +		.actions_list = atmel_tc_synapse_actions,
-> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-> > +		.signal = &atmel_tc_count_signals[0]
-> > +	},
-> > +	{
-> > +		.actions_list = atmel_tc_synapse_actions,
-> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
-> > +		.signal = &atmel_tc_count_signals[1]
-> > +	}
-> > +};
-> > +
-> > +static int atmel_tc_count_function_get(struct counter_device *counter,
-> > +				       struct counter_count *count,
-> > +				       size_t *function)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +
-> > +	if (priv->qdec_mode)
-> > +		*function = ATMEL_TC_FUNCTION_QUADRATURE;
-> > +	else
-> > +		*function = ATMEL_TC_FUNCTION_INCREASE;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_function_set(struct counter_device *counter,
-> > +				       struct counter_count *count,
-> > +				       size_t function)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 bmr, cmr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_BMR, &bmr);
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-> > +
-> > +	/* Set capture mode */
-> > +	cmr &= ~ATMEL_TC_WAVE;
-> > +
-> > +	switch (function) {
-> > +	case ATMEL_TC_FUNCTION_INCREASE:
-> > +		priv->qdec_mode = 0;
-> > +		/* Set highest rate based on whether soc has gclk or not */
-> > +		bmr &= ~(ATMEL_TC_QDEN | ATMEL_TC_POSEN);
-> > +		if (priv->tc_cfg->has_gclk)
-> > +			cmr |= ATMEL_TC_TIMER_CLOCK2;
-> > +		else
-> > +			cmr |= ATMEL_TC_TIMER_CLOCK1;
-> > +		/* Setup the period capture mode */
-> > +		cmr |=  ATMEL_TC_CMR_MASK;
-> > +		cmr &= ~(ATMEL_TC_ABETRG | ATMEL_TC_XC0);
-> > +		break;
-> > +	case ATMEL_TC_FUNCTION_QUADRATURE:
-> > +		if (!priv->tc_cfg->has_qdec)
-> > +			return -EINVAL;
-> > +		/* In QDEC mode settings both channels 0 and 1 are required */
-> > +		if (priv->num_channels < 2 || priv->channel[0] != 0 ||
-> > +		    priv->channel[1] != 1) {
-> > +			pr_err("Invalid channels number or id for quadrature mode\n");
-> > +			return -EINVAL;
-> > +		}
-> > +		priv->qdec_mode = 1;
-> > +		bmr |= ATMEL_TC_QDEN | ATMEL_TC_POSEN;
-> > +		cmr |= ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_ABETRG | ATMEL_TC_XC0;
-> > +		break;
-> > +	}
-> > +
-> > +	regmap_write(priv->regmap, ATMEL_TC_BMR, bmr);
-> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), cmr);
-> > +
-> > +	/* Enable clock and trigger counter */
-> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CCR),
-> > +		     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-> > +
-> > +	if (priv->qdec_mode) {
-> > +		regmap_write(priv->regmap,
-> > +			     ATMEL_TC_REG(priv->channel[1], CMR), cmr);
-> > +		regmap_write(priv->regmap,
-> > +			     ATMEL_TC_REG(priv->channel[1], CCR),
-> > +			     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_signal_read(struct counter_device *counter,
-> > +				      struct counter_signal *signal,
-> > +				      enum counter_signal_value *val)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	bool sigstatus;
-> > +	u32 sr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], SR), &sr);
-> > +
-> > +	if (priv->trig_inverted)
-> > +		sigstatus = (sr & ATMEL_TC_MTIOB);
-> > +	else
-> > +		sigstatus = (sr & ATMEL_TC_MTIOA);
-> > +
-> > +	*val = sigstatus ? COUNTER_SIGNAL_HIGH : COUNTER_SIGNAL_LOW;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_action_get(struct counter_device *counter,
-> > +				     struct counter_count *count,
-> > +				     struct counter_synapse *synapse,
-> > +				     size_t *action)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 cmr;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-> > +
-> > +	*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-> > +
-> > +	if (cmr & ATMEL_TC_ETRGEDG_NONE)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_RISING)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_FALLING)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE;
-> > +	else if (cmr & ATMEL_TC_ETRGEDG_BOTH)
-> > +		*action = ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int atmel_tc_count_action_set(struct counter_device *counter,
-> > +				     struct counter_count *count,
-> > +				     struct counter_synapse *synapse,
-> > +				     size_t action)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 edge = ATMEL_TC_ETRGEDG_NONE;
-> > +
-> > +	/* QDEC mode is rising edge only */
-> > +	if (priv->qdec_mode)
-> > +		return -EINVAL;
-> > +
-> > +	switch (action) {
-> > +	case ATMEL_TC_SYNAPSE_ACTION_NONE:
-> > +		edge = ATMEL_TC_ETRGEDG_NONE;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_RISING;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_FALLING;
-> > +		break;
-> > +	case ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE:
-> > +		edge = ATMEL_TC_ETRGEDG_BOTH;
-> > +		break;
-> > +	}
-> > +
-> > +	return regmap_write_bits(priv->regmap,
-> > +				ATMEL_TC_REG(priv->channel[0], CMR),
-> > +				ATMEL_TC_ETRGEDG, edge);
-> > +}
-> > +
-> > +static int atmel_tc_count_read(struct counter_device *counter,
-> > +			       struct counter_count *count,
-> > +			       unsigned long *val)
-> > +{
-> > +	struct atmel_tc_data *const priv = counter->priv;
-> > +	u32 cnt;
-> > +
-> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CV), &cnt);
-> > +	*val = cnt;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct counter_count atmel_tc_counts[] = {
-> > +	{
-> > +		.id = 0,
-> > +		.name = "Timer Counter",
-> > +		.functions_list = atmel_tc_count_functions,
-> > +		.num_functions = ARRAY_SIZE(atmel_tc_count_functions),
-> > +		.synapses = atmel_tc_count_synapses,
-> > +		.num_synapses = ARRAY_SIZE(atmel_tc_count_synapses),
-> > +	},
-> > +};
-> > +
-> > +static struct counter_ops atmel_tc_ops = {
-> > +	.signal_read  = atmel_tc_count_signal_read,
-> > +	.count_read   = atmel_tc_count_read,
-> > +	.function_get = atmel_tc_count_function_get,
-> > +	.function_set = atmel_tc_count_function_set,
-> > +	.action_get   = atmel_tc_count_action_get,
-> > +	.action_set   = atmel_tc_count_action_set
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_rm9200_config = {
-> > +		.counter_width = 16,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sam9x5_config = {
-> > +		.counter_width = 32,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sama5d2_config = {
-> > +		.counter_width = 32,
-> > +		.has_gclk = true,
-> > +		.has_qdec = true,
-> > +};
-> > +
-> > +static const struct atmel_tcb_config tcb_sama5d3_config = {
-> > +		.counter_width = 32,
-> > +		.has_qdec = true,
-> > +};
-> > +
-> > +static const struct of_device_id atmel_tc_of_match[] = {
-> > +	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
-> > +	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
-> > +	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
-> > +	{ .compatible = "atmel,sama5d3-tcb", .data = &tcb_sama5d3_config, },
-> > +	{ /* sentinel */ }
-> > +};
-> > +
-> > +static int atmel_tc_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device_node *np = pdev->dev.of_node;
-> > +	const struct atmel_tcb_config *tcb_config;
-> > +	const struct of_device_id *match;
-> > +	struct atmel_tc_data *priv;
-> > +	char clk_name[7];
-> > +	struct regmap *regmap;
-> > +	struct clk *clk[3];
-> > +	int channel;
-> > +	int ret, i;
-> > +
-> > +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-> > +	if (!priv)
-> > +		return -ENOMEM;
-> > +
-> > +	platform_set_drvdata(pdev, priv);
-> > +
-> > +	match = of_match_node(atmel_tc_of_match, np->parent);
-> > +	tcb_config = match->data;
-> > +	if (!tcb_config) {
-> > +		dev_err(&pdev->dev, "No matching parent node found\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	regmap = syscon_node_to_regmap(np->parent);
-> > +	if (IS_ERR(priv->regmap))
-> > +		return PTR_ERR(priv->regmap);
-> > +
-> > +	/* max. channels number is 2 when in QDEC mode */
-> > +	priv->num_channels = of_property_count_u32_elems(np, "reg");
-> > +	if (priv->num_channels < 0) {
-> > +		dev_err(&pdev->dev, "Invalid or missing channel\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	/* Register channels and initialize clocks */
-> > +	for (i = 0; i < priv->num_channels; i++) {
-> > +		ret = of_property_read_u32_index(np, "reg", i, &channel);
-> > +		if (ret < 0 || channel > 2)
-> > +			return -ENODEV;
-> > +
-> > +		priv->channel[i] = channel;
-> > +
-> > +		snprintf(clk_name, sizeof(clk_name), "t%d_clk", channel);
-> > +
-> > +		clk[i] = of_clk_get_by_name(np->parent, clk_name);
-> > +		if (IS_ERR(clk[i])) {
-> > +			/* Fallback to t0_clk */
-> > +			clk[i] = of_clk_get_by_name(np->parent, "t0_clk");
-> > +			if (IS_ERR(clk[i]))
-> > +				return PTR_ERR(clk[i]);
-> > +		}
-> > +
-> > +		ret = clk_prepare_enable(clk[i]);
-> > +		if (ret)
-> > +			return ret;
-> If you see the below, you'll note I mention this not being cleaned up on
-> remove.
->
-> I would suggest using devm_add_action_or_reset to automate the cleanup
-> (and let you get rid of the error path below).
->
-
-Alright, thanks for the tip.
-
-> > +
-> > +		dev_info(&pdev->dev,
-> > +			 "Initialized capture mode on channel %d\n",
-> > +			 channel);
->
-> Isn't this apparent from the resulting counter being created?  I'd argue
-> that it is therefore noise in the kernel log and demote it to dev_dbg
->
-
-Yes it is, thanks.
-
-> > +	}
-> > +
-> > +	priv->tc_cfg = tcb_config;
-> > +	priv->regmap = regmap;
-> > +	priv->counter.name = dev_name(&pdev->dev);
-> > +	priv->counter.parent = &pdev->dev;
-> > +	priv->counter.ops = &atmel_tc_ops;
-> > +	priv->counter.num_counts = ARRAY_SIZE(atmel_tc_counts);
-> > +	priv->counter.counts = atmel_tc_counts;
-> > +	priv->counter.num_signals = ARRAY_SIZE(atmel_tc_count_signals);
-> > +	priv->counter.signals = atmel_tc_count_signals;
-> > +	priv->counter.priv = priv;
-> > +
-> > +	ret = devm_counter_register(&pdev->dev, &priv->counter);
->
-> > +	if (ret < 0) {
-> > +		for (i = 0; i < priv->num_channels; i++)
-> > +			clk_disable_unprepare(clk[i]);
->
-> What does this in the remove path?
->
-> I initially thought you'll have a race here because of mixing managed
-> and unmanaged cleanup (which will be an issue if you do add this to remove
-> path) but then noticed there was no remove.
->
-
-Fixed.
-
->
-> > +		return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct of_device_id atmel_tc_dt_ids[] = {
-> > +	{ .compatible = "atmel,tcb-capture", },
-> > +	{ /* sentinel */ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, atmel_tc_dt_ids);
-> > +
-> > +static struct platform_driver atmel_tc_driver = {
-> > +	.probe = atmel_tc_probe,
-> > +	.driver = {
-> > +		.name = "atmel-tcb-capture",
-> > +		.of_match_table = atmel_tc_dt_ids,
-> > +	},
-> > +};
-> > +module_platform_driver(atmel_tc_driver);
-> > +
-> > +MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
-> > +MODULE_DESCRIPTION("Atmel TCB Capture driver");
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.25.0
-> >
->
-
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
