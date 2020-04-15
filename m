@@ -2,70 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A63F61AAC2D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 17:45:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737A81AAC23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 17:44:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w+vQzrsiiLt5NdooDD/gzZ4byYPIfgSzaoiROy3OA9s=; b=IO0lr5L1c5g4Gw
-	VZKHnkMqIcZpTBNDhTHkhpeu0MPjyRNNZ7xaG5Ku1Cwzc8sdpT/nSnlgQ3NtPThI9n3LMcU4f55YB
-	bCEWCT1A0q5saDEISF391/zLSF2YnHAHsROuvKW1LWUgjRzTlaU2cctb8jxvslrwSBRgHchKWsSOx
-	6r6Alah64gWK5/R2AXFEXfTx4zDTfH05ADysq/OUChE6g/zmxB9aUwA+v5lXft7+EYIevysXUv0Q8
-	9z3r2D/TKDxkVRirGpg1PgdveJ8XWjjfyrlTsvaodjEzXmyHVN0Tw4tcIV+bPZY84g/8hVhG5UB86
-	42GTDYxMkpC9JJvZJeUw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S4q39/FHlD0CJyUfHd5Cp3gtuLt6Z/MGa1j7BizbcQQ=; b=ZxRt1cdyg1IsR6
+	76mqxNcYUWdgGCIe8hKTG3dJmZMl9MOFWx2qwevADiEMBMSWxQPrMQp721VG1fc11pcHIfY3S40D3
+	PGvLm/cJ8TJIamyQU1ezEa2S0Hdhivy6wHrYtONnkb/62cGrJyHoCZUZ3bqfcWXxGJ6jHJVN2Nrq6
+	XxDGWnTtPi9H3VwUa9HUbmnZbcGNnDF11sD+UYEezVy0kyhyxsVRV0vMwL/zlnyiK1owr6CzPJicL
+	EdhF/xLi0QjAAe3aUghXQYO1t4a5p50c/Fl50oiPmy54o0pjxt0jodNISqvS3vJZc/6Nx+3v66ldd
+	bQS4qj3Bcgpvs5mZk5mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOkDy-0000ng-46; Wed, 15 Apr 2020 15:45:14 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jOkDV-0000d6-El; Wed, 15 Apr 2020 15:44:45 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOkDI-0000bd-TI
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 15:44:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RsMinqNBHcBxPu4JtPaqIeJQm1L0qtrioJ5JRN1lF0o=; b=OK8n0MgLyy5lBv39bB+Ps+Ev0T
- xzNOdSznDYeidxQllWwMptZVM8ebRqBDyL4FZA5xLISpRe51v3GTBbARD8g59Ug3RUWAeHbnVBkTK
- VMma3VaWtHqVWvjzZcVupcuG+MVHbcZYlljZVMsT3tVs+Sq0UxQh7+P2THvBWjvPUJyY7V609rkWf
- JAQwTZZx7I8uT5eFbNzcK7HYT8kW6+PogVvllv34eH6J79yJy1KFSAP3KA9tBk6WEogfVHBM+JJbH
- z1kn1F8Ru0xgM9cEnzhF1c/b9O8xTFFT04l5kmel6s3cvX6wXOH4KlNafH5c7ulX4yLH8z8e8oUps
- 0TaHqdpw==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:60590 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1jOkD4-0007IJ-Gd; Wed, 15 Apr 2020 16:44:18 +0100
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1jOkD3-00067R-RZ; Wed, 15 Apr 2020 16:44:17 +0100
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] arm: dts: imx6-sr-som: add ethernet PHY configuration
+ id 1jOkDG-0000bU-FZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 15:44:33 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id e16so19460pjp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 08:44:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=W+ikqrmBIBEKvVkXBn0UllA+OtUbb2X28KHF+kd9Sus=;
+ b=AKVoTgD+v3LRySKFXD0u43wjuBan3xtaU0vntmRP548nKCKRJn0SCAgfW2hl+sug79
+ xeeqyfuxOZgKSwZexJXDW24RXk+8RRO3rl1fPT5DUYrHkg6LRxn2QntT1+3CxgcBplIQ
+ PlGTKYDsfv4jrzvd5bekUSg8KqL742ven3KBA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=W+ikqrmBIBEKvVkXBn0UllA+OtUbb2X28KHF+kd9Sus=;
+ b=j40J2sqIXX4+IoDAw2tZfYxOwA3kHaxCh/iH5SsxD7E3/RT0NtyT2syxKwLfS3Y8fB
+ Hh+W+Vm1QArvu0Vz9Y+nWaFnN0s3YluUK1XijdJ/Kz+yAYlHk835udmj0yAVhRkqoPqs
+ Zllz/4gcFDY6ZG5RSz1tGTgqTFTOgV5RwibYACgybcmpr6CejAwpkYGRIaANyc7b+Mo0
+ /YqoJ15sWR3mkmbETjxKLXcyBUdLE9LwHdkF+hJPkjwSiZt7nJhz9lZEn5nXxWF1cYan
+ 3iwOiqZz5+Ee2W0doACvEC0FGw/9NHq+UgAEo8tlVdDlGrETpOziY1k40bB27EgjxCoA
+ tpkw==
+X-Gm-Message-State: AGi0PuYetHCFNGHrJZgfLHKZmEVvJ5SuVi+1bhvFeBESbDxP4jV/4KpB
+ MJkbSr+tE4QRe9Ea0vIRdvFKFg==
+X-Google-Smtp-Source: APiQypIpRyHaEbePO5FqjfTHo4ISu3LJ/Zlc8dY0TXjNWuA2eQxr4cd+H9NX2VZ+/N1gu6NTS64z9g==
+X-Received: by 2002:a17:902:9b8f:: with SMTP id
+ y15mr5654954plp.169.1586965468363; 
+ Wed, 15 Apr 2020 08:44:28 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id f30sm15052172pje.29.2020.04.15.08.44.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Apr 2020 08:44:27 -0700 (PDT)
+Date: Wed, 15 Apr 2020 08:44:26 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
+Message-ID: <202004150833.E2E9A89E0@keescook>
+References: <20200409232728.231527-1-caij2003@gmail.com>
+ <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
+ <CAMj1kXGXNxXGiC4dmNXHkZ6n=J0Fhim3oSwNx4Bz5m9fEphJvQ@mail.gmail.com>
+ <20200410123301.GX25745@shell.armlinux.org.uk>
+ <CAMj1kXFpknCfwb6JMdk_SHopnGqMswgSqaQUeAUEh5yaV10vJg@mail.gmail.com>
+ <CAKwvOdk-xwuppJzxd1+5sfsC8jYiP3t8D=aTNaYxnFCRDiEUmQ@mail.gmail.com>
+ <CAMj1kXFHb8th0rv1yjrsr=c1o-g9_ERPUy4itnrVN13fcQcXag@mail.gmail.com>
+ <CAKwvOdm5aawsa2-=atB8z6W8zo8YVgdDEVbU3i4evDcpo1_AxQ@mail.gmail.com>
+ <202004141258.6D9CB92507@keescook>
+ <CAMj1kXG6_CO6pzeJCSeWiCDyLfWw+ZMuvkv_DLxe-si00fLd1Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1jOkD3-00067R-RZ@rmk-PC.armlinux.org.uk>
-Date: Wed, 15 Apr 2020 16:44:17 +0100
+In-Reply-To: <CAMj1kXG6_CO6pzeJCSeWiCDyLfWw+ZMuvkv_DLxe-si00fLd1Q@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_084432_945790_6A8B5541 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200415_084430_559057_7D9575C7 
+X-CRM114-Status: GOOD (  16.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,59 +104,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Oleksij Rempel <o.rempel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
+ Stefan Agner <stefan@agner.ch>, David Howells <dhowells@redhat.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Manoj Gupta <manojgupta@google.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
+ Kristof Beyls <Kristof.Beyls@arm.com>, Jian Cai <caij2003@gmail.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Sami Tolvanen <samitolvanen@google.com>, Luis Lozano <llozano@google.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Jian Cai <jiancai@google.com>, Stephen Hines <srhines@google.com>,
+ Doug Anderson <armlinux@m.disordat.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Patrick Bellasi <patrick.bellasi@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add ethernet PHY configuration ahead of removing the quirk that
-configures the clocking mode for the PHY.  The RGMII delay is
-already set correctly.
+On Wed, Apr 15, 2020 at 12:32:17PM +0200, Ard Biesheuvel wrote:
+> To reiterate my point: I strongly prefer minor asm surgery over
+> elaborate Kconfig plumbing if it means we can retain the functionality
+> even when using LLVM tools. In particular, the use of macros to
+> implement missing ISA support should be considered before any other
+> solution, as these are already being used widely across architectures
+> to fill in such gaps.
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
-This patch depends on b1f4c209d840 ("net: phy: at803x: fix clock
-sink configuration on ATH8030 and ATH8035") which has been
-recently merged.
+Yeah, this seems like the right place to start from. It sounded like
+there were cases where the people with knowledge needed to accomplish
+the macro creation were not always immediately available. But, yes,
+let's get iwmmxt fixed up.
 
- arch/arm/boot/dts/imx6qdl-sr-som.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+> This code has been around since 2004. It has never been possible to
+> assemble it with Clang's assembler. So the only thing this patch gives
+> you is the ability to switch from a .config where IWMMXT was disabled
+> by hand to one where it gets disabled automatically by Kconfig.
 
-diff --git a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-index 6d7f6b9035bc..b06577808ff4 100644
---- a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-@@ -53,10 +53,21 @@
- &fec {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_microsom_enet_ar8035>;
-+	phy-handle = <&phy>;
- 	phy-mode = "rgmii-id";
- 	phy-reset-duration = <2>;
- 	phy-reset-gpios = <&gpio4 15 GPIO_ACTIVE_LOW>;
- 	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		phy: ethernet-phy@0 {
-+			reg = <0>;
-+			qca,clk-out-frequency = <125000000>;
-+		};
-+	};
- };
- 
- &iomuxc {
+Right -- I meant "let's fix iwmmxt with macro magic" not "let's disable
+it". I did want to point out the Kconfig disabling may be needed in
+other cases.
+
+> So what hard-won ground are we losing here? Did IWMMXT recently get
+> enabled in a defconfig that you care about?
+
+It's a CI's ability to do randconfig builds to catch new stuff. (i.e.
+where "disabled by hand" isn't part of the process.) Since there are
+multiple CIs doing multi-architecture builds we need to get these things
+fixed upstream, not a CI's local patch stacks or Kconfig whitelists,
+etc. And when the expertise isn't available to fix arch-specific stuff,
+Kconfig negative depends seems like a reasonable middle ground. I, too,
+prefer fixes that allow Clang to do its work without wrecking things
+for GNU as.
+
+> I am not disagreeing with you here, and I have worked with Nick,
+> Nathan and Stefan on numerous occasions to get Clang related build
+> issues solved.
+
+Yup! Totally; this thread just looked very familiar to me from doing
+treewide stuff and I didn't want what I thought looked like the core
+points to get lost in the details. :)
+
 -- 
-2.20.1
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
