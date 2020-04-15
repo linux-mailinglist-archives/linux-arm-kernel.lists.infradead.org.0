@@ -2,55 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2856C1A9970
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:51:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB3AA1A9982
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:51:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4HuVQ/5+lwy7YgL5RlC7xJrxDpbAftIdpy0bMg4E6zY=; b=WagQK3kXcUfImK
-	UOJbKOmjz0KraaIrFXbXix8CRMA6Kgra95bqRiRymoRwko+pAMwhqprq8OCnn76pVpH8323Y2KiMi
-	QW2VVSDGEqYuE1SZKuuRTX1eVYw0nmm0DSXSzykqYa03npW80/VCcbM2hc5n3MMJwMBKVCK/qr2N8
-	NhU/3tVOX4luCszb+J1tu0+rYNt7KDcz565AmS3GcrlCdLN5+V1FqJVVk5fqel0NJaLjVUEpYAV6b
-	cVD8dIcUXiQIEDc3vHMXZsbYML/XM0gcC584uwTgn5wReN/7CSOH4lt0/ZE4aaDQleO8u8bb7wrGS
-	o2sn1zfBcWnzOli/yh7w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jXQd/aKMVqYMqOM/xMycotS/wTeBckneBC1GJnYQWSw=; b=pJ7MP9XSzAJVmY
+	bzu8dQCq9t64abTyF5KISGTRjhWB9ypPh4me/0h8JinmIaTM/c/6XyAL2T6WG8+h4LRsvVUzQZ/HE
+	bhx+TpCfIBj+RZW0fqbYnfX6+hgua4GvyIa9a9n81gKpm7lD+ecS4kTUyxGfpKB0AfUEasTc56wpP
+	HsOAG+75Q9Qq46LVgdQGDEHKhQp7gmeMdXSdzF5Ki4oHhUPL7JWal7i8Cn/cTGvi+lC3kiFkgYrB5
+	6SP7UzIexlu7IFXvhcpvr63OnroJlG3NTan4bUlvclPN0dOBcHhVOXbiUrg6vSKa+Ty7rqIgPVWap
+	rdrgJ1c4graBqEzaH7XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOehP-0002Vh-Ue; Wed, 15 Apr 2020 09:51:15 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jOehs-00035R-So; Wed, 15 Apr 2020 09:51:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOefD-0006UQ-Fp
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:49:01 +0000
-X-Originating-IP: 86.202.105.35
-Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
- [86.202.105.35])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 1B46C20008;
- Wed, 15 Apr 2020 09:48:57 +0000 (UTC)
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH v2 9/9] clocksource/drivers/timer-atmel-tcb: add sama5d2
- support
-Date: Wed, 15 Apr 2020 11:48:26 +0200
-Message-Id: <20200415094826.132562-10-alexandre.belloni@bootlin.com>
+ id 1jOefj-00072E-Fu
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:49:33 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8FA2A20787;
+ Wed, 15 Apr 2020 09:49:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586944170;
+ bh=yizjy06EFNp5cBRnjnt/vw5ztC1lUh6kH2Srmve5Xz4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=mCVRVeomnk5S/oi2XnljzCL2xsQ1gBCMMsztZkTP9KUqX43To/iI3te5vBDh2Pmut
+ pGyl4op/golVPrevUKXmTLZVu3tP329A3BTzxPFVfznOKt3WrH+InGID7OnYUo+t0L
+ +eYo48tZ3T+EIKNwLtRTeKn8OP8xrl2haxsbA3yQ=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jOefg-006WIH-02; Wed, 15 Apr 2020 11:49:28 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Media Mailing List <linux-media@vger.kernel.org>
+Subject: [PATCH 0/4] Move CEC drivers and menu to be out of MEDIA_SUPPORT
+Date: Wed, 15 Apr 2020 11:49:23 +0200
+Message-Id: <cover.1586944045.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.25.2
-In-Reply-To: <20200415094826.132562-1-alexandre.belloni@bootlin.com>
-References: <20200415094826.132562-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_024859_682406_F644F605 
-X-CRM114-Status: GOOD (  12.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200415_024931_574457_42744D8D 
+X-CRM114-Status: GOOD (  13.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,59 +77,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org,
- Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
- linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Ettore Chimenti <ek5.chimenti@gmail.com>, linux-tegra@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, Kukjin Kim <kgene@kernel.org>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The first divisor for the sama5d2 is actually the gclk selector. Because
-the currently remaining divisors are fitting the use case, currently ensure
-it is skipped.
+The CEC_CORE doesn't depend on MEDIA_SUPPORT. So, it doesn't make
+much sense to keep it under its menu.
 
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
----
- drivers/clocksource/timer-atmel-tcb.c | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+This series move it to be just after RC support. As a side effect, now
+dependencies like PCI and USB are now selected, making easier to
+enable CEC drivers.
 
-diff --git a/drivers/clocksource/timer-atmel-tcb.c b/drivers/clocksource/timer-atmel-tcb.c
-index ccb77b9cb489..e373b02d509a 100644
---- a/drivers/clocksource/timer-atmel-tcb.c
-+++ b/drivers/clocksource/timer-atmel-tcb.c
-@@ -359,9 +359,15 @@ static struct atmel_tcb_config tcb_sam9x5_config = {
- 	.counter_width = 32,
- };
- 
-+static struct atmel_tcb_config tcb_sama5d2_config = {
-+	.counter_width = 32,
-+	.has_gclk = 1,
-+};
-+
- static const struct of_device_id atmel_tcb_of_match[] = {
- 	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
- 	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
-+	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
- 	{ /* sentinel */ }
- };
- 
-@@ -426,7 +432,10 @@ static int __init tcb_clksrc_init(struct device_node *node)
- 
- 	/* How fast will we be counting?  Pick something over 5 MHz.  */
- 	rate = (u32) clk_get_rate(t0_clk);
--	for (i = 0; i < ARRAY_SIZE(atmel_tcb_divisors); i++) {
-+	i = 0;
-+	if (tc.tcb_config->has_gclk)
-+		i = 1;
-+	for (; i < ARRAY_SIZE(atmel_tcb_divisors); i++) {
- 		unsigned divisor = atmel_tcb_divisors[i];
- 		unsigned tmp;
- 
+Mauro Carvalho Chehab (4):
+  media: cec: move the core to a separate directory
+  media: place CEC menu before MEDIA_SUPPORT
+  media: move CEC platform drivers to a separate directory
+  media: move CEC USB drivers to a separate directory
+
+ drivers/media/Kconfig                         |  30 +----
+ drivers/media/cec/Kconfig                     |  25 ++++
+ drivers/media/cec/Makefile                    |  16 +--
+ drivers/media/cec/core/Makefile               |  16 +++
+ drivers/media/cec/{ => core}/cec-adap.c       |   0
+ drivers/media/cec/{ => core}/cec-api.c        |   0
+ drivers/media/cec/{ => core}/cec-core.c       |   0
+ drivers/media/cec/{ => core}/cec-notifier.c   |   0
+ .../media/cec/{ => core}/cec-pin-error-inj.c  |   0
+ drivers/media/cec/{ => core}/cec-pin-priv.h   |   0
+ drivers/media/cec/{ => core}/cec-pin.c        |   0
+ drivers/media/cec/{ => core}/cec-priv.h       |   0
+ drivers/media/cec/platform/Kconfig            | 121 ++++++++++++++++++
+ drivers/media/cec/platform/Makefile           |  11 ++
+ .../{ => cec}/platform/cec-gpio/Makefile      |   0
+ .../{ => cec}/platform/cec-gpio/cec-gpio.c    |   0
+ .../s5p-cec => cec/platform/s5p}/Makefile     |   0
+ .../platform/s5p}/exynos_hdmi_cec.h           |   0
+ .../platform/s5p}/exynos_hdmi_cecctrl.c       |   0
+ .../s5p-cec => cec/platform/s5p}/regs-cec.h   |   0
+ .../s5p-cec => cec/platform/s5p}/s5p_cec.c    |   0
+ .../s5p-cec => cec/platform/s5p}/s5p_cec.h    |   0
+ .../seco-cec => cec/platform/seco}/Makefile   |   0
+ .../seco-cec => cec/platform/seco}/seco-cec.c |   0
+ .../seco-cec => cec/platform/seco}/seco-cec.h |   0
+ .../sti/cec => cec/platform/sti}/Makefile     |   0
+ .../sti/cec => cec/platform/sti}/stih-cec.c   |   0
+ .../tegra-cec => cec/platform/tegra}/Makefile |   0
+ .../platform/tegra}/tegra_cec.c               |   0
+ .../platform/tegra}/tegra_cec.h               |   0
+ drivers/media/cec/usb/Kconfig                 |   6 +
+ drivers/media/cec/usb/Makefile                |   6 +
+ .../pulse8-cec => cec/usb/pulse8}/Kconfig     |   3 +-
+ .../pulse8-cec => cec/usb/pulse8}/Makefile    |   0
+ .../usb/pulse8}/pulse8-cec.c                  |   0
+ .../usb/rainshadow}/Kconfig                   |   3 +-
+ .../usb/rainshadow}/Makefile                  |   0
+ .../usb/rainshadow}/rainshadow-cec.c          |   0
+ drivers/media/platform/Kconfig                | 121 ------------------
+ drivers/media/platform/Makefile               |   8 --
+ drivers/media/usb/Kconfig                     |   6 -
+ drivers/media/usb/Makefile                    |   2 -
+ 42 files changed, 192 insertions(+), 182 deletions(-)
+ create mode 100644 drivers/media/cec/core/Makefile
+ rename drivers/media/cec/{ => core}/cec-adap.c (100%)
+ rename drivers/media/cec/{ => core}/cec-api.c (100%)
+ rename drivers/media/cec/{ => core}/cec-core.c (100%)
+ rename drivers/media/cec/{ => core}/cec-notifier.c (100%)
+ rename drivers/media/cec/{ => core}/cec-pin-error-inj.c (100%)
+ rename drivers/media/cec/{ => core}/cec-pin-priv.h (100%)
+ rename drivers/media/cec/{ => core}/cec-pin.c (100%)
+ rename drivers/media/cec/{ => core}/cec-priv.h (100%)
+ create mode 100644 drivers/media/cec/platform/Kconfig
+ create mode 100644 drivers/media/cec/platform/Makefile
+ rename drivers/media/{ => cec}/platform/cec-gpio/Makefile (100%)
+ rename drivers/media/{ => cec}/platform/cec-gpio/cec-gpio.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/Makefile (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cec.h (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cecctrl.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/regs-cec.h (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.h (100%)
+ rename drivers/media/{platform/seco-cec => cec/platform/seco}/Makefile (100%)
+ rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.c (100%)
+ rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.h (100%)
+ rename drivers/media/{platform/sti/cec => cec/platform/sti}/Makefile (100%)
+ rename drivers/media/{platform/sti/cec => cec/platform/sti}/stih-cec.c (100%)
+ rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/Makefile (100%)
+ rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.c (100%)
+ rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.h (100%)
+ create mode 100644 drivers/media/cec/usb/Kconfig
+ create mode 100644 drivers/media/cec/usb/Makefile
+ rename drivers/media/{usb/pulse8-cec => cec/usb/pulse8}/Kconfig (91%)
+ rename drivers/media/{usb/pulse8-cec => cec/usb/pulse8}/Makefile (100%)
+ rename drivers/media/{usb/pulse8-cec => cec/usb/pulse8}/pulse8-cec.c (100%)
+ rename drivers/media/{usb/rainshadow-cec => cec/usb/rainshadow}/Kconfig (92%)
+ rename drivers/media/{usb/rainshadow-cec => cec/usb/rainshadow}/Makefile (100%)
+ rename drivers/media/{usb/rainshadow-cec => cec/usb/rainshadow}/rainshadow-cec.c (100%)
+
 -- 
 2.25.2
+
 
 
 _______________________________________________
