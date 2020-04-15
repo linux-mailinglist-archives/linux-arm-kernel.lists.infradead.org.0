@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06B8E1A9CB7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:38:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BE7A1A9CB8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:39:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rpiAPyZe43LZjzb0T+4jqIOvRYfhnjysbj8d7vaZEP0=; b=Fjh9IPJhG8GwTu
-	oaBUSepWq+JOp3mQ4V6kGuhNIf2SjaAFwXE7lyS22iaQXhhv9EDdZuOGx0vwWWrVE4KaKvzeEwt6V
-	uCwE9Lqo3f9bk3L85UKz8pKvKnExpLitJ+MZ1JSxtMDw71GAs669ytKTNDFec1EM6T20WDrwnbRKV
-	bzZCrcKARUxPYYncMLal/SDNfE5mfcJ7MrBRxBl66PkROgtch1VPdyvuBfk2dacro3aK6agFXyDPs
-	AJBs6cCxcTX2LF5caxhhnb71YXDtqE/AuuBsbbH+56hCNQaOOJWj/zUDiK7z29ffT4lpJc0GEKmOT
-	46N7jqT8w0yJptI4xEhA==;
+	List-Owner; bh=UyyAWuOAW6z1bNXDI3xaN39qN6EXP32QetfCNXsJiak=; b=NCltFLM0wPg+CS
+	uT5kf92nkgP1PmHCSvo6Ebb/nAeUARyFduksIBUk0mxYK0aFlok+1boXFdyVqoQMChsZxTwmlE3xO
+	lX7X1XTGjZOD2UxsZSVu+MgKh7w2TVmTykQKkY4XSgVpySuhRiZV8iuYTEZY6wLchuq1pEM7oySyP
+	l1ydlK/AwyxuvBfESBL476kPK5J/PO9tE9VfeHuRk7hkxgDGCreWG5GJtM04vf5tkmttzHp5V3gJe
+	r8p/Dpj6xvRFRA+Cm7tH3XDj7ODfY2uYQjpJgxsFa/IyJc3S4yXTEYEz/HOXlWHxWfidXGE8sEbki
+	CCVYyWqzMlafxOgpJrqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgNT-0002wo-0M; Wed, 15 Apr 2020 11:38:47 +0000
+	id 1jOgNj-0003Df-1h; Wed, 15 Apr 2020 11:39:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgKv-0000id-CT
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:36:12 +0000
+ id 1jOgKw-0000j1-WB; Wed, 15 Apr 2020 11:36:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2A7E82137B;
- Wed, 15 Apr 2020 11:36:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 677F52076D;
+ Wed, 15 Apr 2020 11:36:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950569;
- bh=evbnZiIFrAsIYXcCSJ9OBMYr3dZ/O+8OKQb8KFPAPjI=;
+ s=default; t=1586950570;
+ bh=0ZUxPgFWWCpFhZxGLYIIM9I5IILi6OM4r9BWUSVirQQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=r5TqXNA7tTh4qWmzexXdtS4jZjfnJnP20UxCLDDWcjYRH9Fel/h6ucdDI53V5UtxU
- Su3RpGLf8gzIhU1xPf3ioGyppncsYLZXgRHQvR2MP6+ZzmuuGYGUd8EiRhVpKug1s+
- sUr6Om6aLy+OnhqIjRHKy/PVnHhqx9NnXX9WlZc0=
+ b=m4ZDcCJiubMf1wJ6pWK+Ggl1qaCYH6psCekzmTaQB/QWVAigVmVQkI+QXgXxPnvZB
+ wYqHopaVGkvI3sz8NNQARRm9kcQ6zcXWc1w2RLPmW42D+po5gFlVOAbwf7C+GbwLXp
+ /p9pRUZ3SAMxW4+cIgDkjB06rtpOMwEa98Fd5cn0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 071/129] net: stmmac: dwmac1000: fix out-of-bounds
- mac address reg setting
-Date: Wed, 15 Apr 2020 07:33:46 -0400
-Message-Id: <20200415113445.11881-71-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 072/129] net: dsa: mt7530: fix null pointer
+ dereferencing in port5 setup
+Date: Wed, 15 Apr 2020 07:33:47 -0400
+Message-Id: <20200415113445.11881-72-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
 References: <20200415113445.11881-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_043610_729161_7608B0DD 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200415_043611_109024_347BDAD8 
+X-CRM114-Status: GOOD (  10.95  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +79,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+ =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, Chuanhong Guo <gch981213@gmail.com>,
+ Vivien Didelot <vivien.didelot@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-
-[ Upstream commit 3e1221acf6a8f8595b5ce354bab4327a69d54d18 ]
-
-Commit 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address
-entries") cleared the unused mac address entries, but introduced an
-out-of bounds mac address register programming bug -- After setting
-the secondary unicast mac addresses, the "reg" value has reached
-netdev_uc_count() + 1, thus we should only clear address entries
-if (addr < perfect_addr_number)
-
-Fixes: 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address entries")
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index 542784300620f..efc6ec1b8027c 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -207,7 +207,7 @@ static void dwmac1000_set_filter(struct mac_device_info *hw,
- 			reg++;
- 		}
- 
--		while (reg <= perfect_addr_number) {
-+		while (reg < perfect_addr_number) {
- 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
- 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
- 			reg++;
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogQ2h1YW5ob25nIEd1byA8Z2NoOTgxMjEzQGdtYWlsLmNvbT4KClsgVXBzdHJlYW0gY29t
+bWl0IDA0NTI4MDBmNmRiNGVkMGE0MmZmYjE1ODY3YzBhY2ZkNjg4MjlmNmEgXQoKVGhlIDJuZCBn
+bWFjIG9mIG1lZGlhdGVrIHNvYyBldGhlcm5ldCBtYXkgbm90IGJlIGNvbm5lY3RlZCB0byBhIFBI
+WQphbmQgYSBwaHktaGFuZGxlIGlzbid0IGFsd2F5cyBhdmFpbGFibGUuClVuZm9ydHVuYXRlbHks
+IG10NzUzMCBkc2EgZHJpdmVyIGFzc3VtZXMgdGhhdCB0aGUgMm5kIGdtYWMgaXMgYWx3YXlzCmNv
+bm5lY3RlZCB0byBzd2l0Y2ggcG9ydCA1IGFuZCBzZXR1cCBtdDc1MzAgYWNjb3JkaW5nIHRvIHBo
+eSBhZGRyZXNzCm9mIDJuZCBnbWFjIG5vZGUsIGNhdXNpbmcgbnVsbCBwb2ludGVyIGRlcmVmZXJl
+bmNpbmcgd2hlbiBwaHktaGFuZGxlCmlzbid0IGRlZmluZWQgaW4gZHRzLgpUaGlzIGNvbW1pdCBm
+aXggdGhpcyBzZXR1cCBjb2RlIGJ5IGNoZWNraW5nIHJldHVybiB2YWx1ZSBvZgpvZl9wYXJzZV9w
+aGFuZGxlIGJlZm9yZSB1c2luZyBpdC4KCkZpeGVzOiAzOGY3OTBhODA1NjAgKCJuZXQ6IGRzYTog
+bXQ3NTMwOiBBZGQgc3VwcG9ydCBmb3IgcG9ydCA1IikKU2lnbmVkLW9mZi1ieTogQ2h1YW5ob25n
+IEd1byA8Z2NoOTgxMjEzQGdtYWlsLmNvbT4KUmV2aWV3ZWQtYnk6IFZpdmllbiBEaWRlbG90IDx2
+aXZpZW4uZGlkZWxvdEBnbWFpbC5jb20+ClJldmlld2VkLWJ5OiBGbG9yaWFuIEZhaW5lbGxpIDxm
+LmZhaW5lbGxpQGdtYWlsLmNvbT4KVGVzdGVkLWJ5OiBSZW7DqSB2YW4gRG9yc3QgPG9wZW5zb3Vy
+Y2VAdmRvcnN0LmNvbT4KU2lnbmVkLW9mZi1ieTogRGF2aWQgUy4gTWlsbGVyIDxkYXZlbUBkYXZl
+bWxvZnQubmV0PgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+
+Ci0tLQogZHJpdmVycy9uZXQvZHNhL210NzUzMC5jIHwgMyArKysKIDEgZmlsZSBjaGFuZ2VkLCAz
+IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC9kc2EvbXQ3NTMwLmMgYi9k
+cml2ZXJzL25ldC9kc2EvbXQ3NTMwLmMKaW5kZXggN2NiZDFiZDRjNWE2Mi4uOWIwZGUyODUyYzY5
+OCAxMDA2NDQKLS0tIGEvZHJpdmVycy9uZXQvZHNhL210NzUzMC5jCisrKyBiL2RyaXZlcnMvbmV0
+L2RzYS9tdDc1MzAuYwpAQCAtMTM1Niw2ICsxMzU2LDkgQEAgbXQ3NTMwX3NldHVwKHN0cnVjdCBk
+c2Ffc3dpdGNoICpkcykKIAkJCQljb250aW51ZTsKIAogCQkJcGh5X25vZGUgPSBvZl9wYXJzZV9w
+aGFuZGxlKG1hY19ucCwgInBoeS1oYW5kbGUiLCAwKTsKKwkJCWlmICghcGh5X25vZGUpCisJCQkJ
+Y29udGludWU7CisKIAkJCWlmIChwaHlfbm9kZS0+cGFyZW50ID09IHByaXYtPmRldi0+b2Zfbm9k
+ZS0+cGFyZW50KSB7CiAJCQkJcmV0ID0gb2ZfZ2V0X3BoeV9tb2RlKG1hY19ucCwgJmludGVyZmFj
+ZSk7CiAJCQkJaWYgKHJldCAmJiByZXQgIT0gLUVOT0RFVikKLS0gCjIuMjAuMQoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
