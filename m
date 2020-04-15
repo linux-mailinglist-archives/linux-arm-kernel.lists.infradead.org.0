@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAF3D1A96BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:38:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 639A51A96BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:37:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+R16ulpg5YP7ynOFPv6LYQz3/YSAzxplXyy/0k3UpBA=; b=W3iBB+zCR/R5M0
-	XD9wwsPOD8piUb1GnoMvRnUpmVL/Q7s1bG+HJsoBbp4HHLHJJg/AjGoxXuUB7+PNp8CwDocm/hJhK
-	i3bcjHRMJBVxFw1d+IJPRrcFnx709ot/m4w1dqjXKRc07b3kJGW0WXD3QEykUfgVcHeV5slZSKdlh
-	GrhvvFOsTqeu+bCc4RLubWV330+vzGqUUjWXzzLX0oYgeV+tssa9u7Ka9GLq8DoPOAjvG3X4bdMR3
-	oNA1tEmLYqsC+zcSz/ewnD8zQVSW2AXtmilwKv256ZvYnJdAQlwVLSpGBVUkgUo0iWbWJRifX9GDT
-	DmoXAZ9uqw26H5EwhEyw==;
+	List-Owner; bh=L0Rmc3Gno94Te8wUm0I1SNPr8c4ZaSRIWEtIrR0yg8Y=; b=usUzLHIC2ltVKn
+	FYWMest5RQXvZK2m8ajpnodxFNvScq3UnJzbvdAK1l1FBXPHqO3s7WfMqJ12x94qa8UEktseIxiJC
+	mPe6Zps0Kp+c6SL2GGXEyENBN/LI19Ion6dwslkwjVgjt43aUDH+7gcEdhJJxiFDSgJ1tsVX9v3Qv
+	lgpWkcGfkALrAikKSvyDiQO8rTFVZ/7Ypl4GqUl5IUfB7DQVLQ7dsosQryr4kGYeBCx7rculEXMym
+	NGwLAdTII5Piw01zGYIL9ASX/swdcFXSZN42mtPECxPsjQ5PbFaNXsahLKyf9LJzKpb6h3j3OVGE+
+	144PEVsCzDOJon5ouqGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdYn-0001Y3-Ka; Wed, 15 Apr 2020 08:38:17 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::5])
+	id 1jOdXc-0000Ph-MO; Wed, 15 Apr 2020 08:37:04 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::8])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdWM-0007tI-DF
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:35:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586939736;
+ id 1jOdWJ-0007tO-ID
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:35:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586939737;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=iwq6f4uxoyZcQOQDzwMpNIO6Xy6nAFRtGvlqeQKWcIs=;
- b=N1HKXP+Bm3HK8fA/xjZv4HFQY398rbhST/C6DynqnhSPMMhzMLFy1cWpf30+BPxII1
- G9F2HznKnq0x52CzA7jmTQy42nAktQ/ttV1ph03oCEYAmgRDCRC4+l3zMjl3A819/M5n
- +FIhQrqhgjKV5B69vNFi03OB9aGCjLRXHBRMZ7UymZAqwamCt+vof2yysSdvtztSYibW
- PNaJ1XiH2CX4Jc5neoCUVv9zq8u7hfzXMsYYg7Co5Q/fRHHpKZrQtrjd/ieCJZ95XuEe
- sgI7C596n5/iI7Cn0b9wqf3tKii6dmEjIeitGXhcmjbDpMOSnE68yxZBSwJ9LfL5zwEi
- srbQ==
+ bh=fsIHgrJ2055pXXkZWP5JYdd7EoHmHevxMLsBqOhoJOE=;
+ b=TJ1fgUxh5bCoR7JM4AFwN9VLuf5p9TMI8zlprPk+pk8C0EwBP3C3cU5Ar+iGYfS1x8
+ E9oHjfv2C54EOxus8SjEjwAl/wLGH9yosMunuNvY97A5mNI5De7aidZABL62JI8QMRpC
+ 9vmtcDoFqy3TjLBmhEQy9pdbb23ZfFu3scWF6lhvszVMpti4Io5+TZc7Zroc4nMkMvk9
+ BggsaUpalSEk9roQFEhBGLeKjXWKKpWnpFlQUELdslGQ3T2ujt1+icnUIy2yuzPlmhyW
+ ACNgnbIEcYvmFrlWYrI9Py3s6uoEZ2bwFD9h5P5GE69OHnF7+dQSAaq6CWk4MCWeZloe
+ tZFw==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7O2CKN9ej"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
- with ESMTPSA id 6028a2w3F8ZS0Iw
+ with ESMTPSA id 6028a2w3F8ZT0Ix
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Wed, 15 Apr 2020 10:35:28 +0200 (CEST)
+ Wed, 15 Apr 2020 10:35:29 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -51,23 +51,23 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v6 10/12] ARM: dts: sun6i: a31s: add sgx gpu child node
-Date: Wed, 15 Apr 2020 10:35:17 +0200
-Message-Id: <fed0dc035c2e7cfe068588d7b5232924d2960ab1.1586939718.git.hns@goldelico.com>
+Subject: [PATCH v6 11/12] ARM: dts: sun8i: a83t: add sgx gpu child node
+Date: Wed, 15 Apr 2020 10:35:18 +0200
+Message-Id: <acc240eb8ccc2040dd90577f2e4bf429434583a1.1586939718.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <cover.1586939718.git.hns@goldelico.com>
 References: <cover.1586939718.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_013546_629014_8A412DD4 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20200415_013543_795942_308E5DC5 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:5 listed in]
+ no trust [2a01:238:20a:202:5304:0:0:8 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -115,27 +115,31 @@ complete and was already verifyed by loading the kernelmodule successful.
 Signed-off-by: Philipp Rossak <embed3d@gmail.com>
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- arch/arm/boot/dts/sun6i-a31s.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm/boot/dts/sun8i-a83t.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun6i-a31s.dtsi b/arch/arm/boot/dts/sun6i-a31s.dtsi
-index 97e2c51d0aea..669770d2934a 100644
---- a/arch/arm/boot/dts/sun6i-a31s.dtsi
-+++ b/arch/arm/boot/dts/sun6i-a31s.dtsi
-@@ -59,3 +59,13 @@ &pio {
- &tcon0 {
- 	compatible = "allwinner,sun6i-a31s-tcon";
- };
+diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
+index 655404d6d3a3..bfb900622bf6 100644
+--- a/arch/arm/boot/dts/sun8i-a83t.dtsi
++++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
+@@ -1192,6 +1192,17 @@ ths: thermal-sensor@1f04000 {
+ 			nvmem-cell-names = "calibration";
+ 			#thermal-sensor-cells = <1>;
+ 		};
 +
-+&gpu {
-+	compatible = "allwinner,sun8i-a31s-sgx544-115",
-+		     "img,sgx544-115", "img,sgx544";
-+	/*
-+	 * This node is currently a placeholder for the gpu.
-+	 * This will be completed when a full demonstration
-+	 * of the openpvrsgx driver is available for this board.
-+	 */
-+};
++		gpu: gpu@1c400000 {
++			compatible = "allwinner,sun8i-a83t-sgx544-115",
++				     "img,sgx544-115", "img,sgx544";
++			reg = <0x01c40000 0x10000>;
++			/*
++			 * This node is currently a placeholder for the gpu.
++			 * This will be completed when a full demonstration
++			 * of the openpvrsgx driver is available for this board.
++			 */
++		};
+ 	};
+ 
+ 	thermal-zones {
 -- 
 2.25.1
 
