@@ -2,91 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 404C71A9A6B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:28:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30B701A9A81
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:32:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=stGdydfsBSdOFW0rnYEzcWRVkuYBy9OLEQrdJ7yx/QE=; b=m2cwJx/S0zvzfvm0CG3rGUIuE
-	XXKaQJIkzCN0J+TDlh9KyKvhuzd+YeG8hxtkwdIJg3clp7barz5z4NPCoxe8xj+fAM5Gjl3kD+fID
-	9/7DsRUJzCSDBJWAUh/5rVuUia9mOnjOAeLn4a8HwYaY6mGSdfTBxy1V65ZKWo90D8Lr/qwnbBATO
-	zfdb7rR5NClnZHwptZM1RvJswj6F5Y8utJqOgi40nOmHTQBcfRJliMPHs42WdcYna9nwjbWmlpewc
-	hbGRw+ANcy3wWiq4ALf/M8EGYE1hNeyemBZ0W/GNXqM64ThXFaUflCc4U8qLBLbC0NumUzp0TF1+U
-	Q4KKgLS1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nyIYE4pIqAbIISh2F8y8mzkUL9nxo9m7LkCLZiWf7Kw=; b=I2SE9//0/UgFwa
+	kA7wnUJEoUJi0Ft5OYu9ifA0QAKm5JpRuj+ZAwiMrgmI7X/w/aeX+D74qVTZOCT3zgloXBQSeWVlu
+	rUg8o5XPSAPq1CsyNOuVLx22zR2aTYGFKLfEuUPLR0gYmJ4s9qE0DQl0rL6Nd208sL7auu1kt3QEs
+	FO+Bke7Kny5U10dLznWckFEymHNAeEk7LHJfV+XA7ch8353kpphGJrxP/O/xUcNXQmJFRQCLgD/q1
+	Pt5kIFvt9KuyIvWxi7Vl0rj7sUHNSPABo1b/MAAdx82SuUksk4FfLfGxjqvHxOgYhNPCxMNXWmzkZ
+	OjjwdXD6VP/Q3B5SN7qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOfHY-0006fc-BF; Wed, 15 Apr 2020 10:28:36 +0000
-Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
+	id 1jOfKj-0001qB-KM; Wed, 15 Apr 2020 10:31:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOfHO-0006f3-3g
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 10:28:27 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 01926896;
- Wed, 15 Apr 2020 06:28:23 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 15 Apr 2020 06:28:24 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=RoUMH5uplHJzYnyqDXTZLy21XNl
- /ku4HaCRXVlORw0M=; b=HysOTXkWgZt8klXzuHbITMV6pPNvsM3fbLVH+dZNxuo
- P02L58NPlrhVbP/aodTlSufTMf4U12br9zammRkmrFT0KIJXRA4VKesfQl5qKg0y
- me7hvY/yRTHge4za2aWQSU4VT3R1bZBL7wLwATk/K+kGCATENISVZmQ1b6BI8EiR
- 656hT075HCC6WP/SNOIPjwbbPQbnKqKPo+ka4xZNyT9RA3ucTwjsforP9e0aV9qF
- 6OgKgMq/U0elSDcrvUThoyYovfyPggbL03z5Z0zMFNN/v9G59H96bm22kMMc/N/a
- /0tA8+fFGcLacD7Xlo91KaGpF8euv0BqcVOD7Q76UAg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=RoUMH5
- uplHJzYnyqDXTZLy21XNl/ku4HaCRXVlORw0M=; b=wGcySNYHWD23Ogd4P+7Wqw
- ZL2FM8pu5ihO9+vIcaW4vKpIyJOjDnWY06NI0TKgMOexeXT0/XBjCq30YIiFZCb0
- 5WOk99ppUtI4Gs6nM38GwckmtFBcUXIHrvSt7MO0wLWOJ0TogKql+TlXWt0eeTNF
- JU3km9EmE2zcNM9Dk90jUv1mtcBnIUxofckup125Szf8ijLTI1mNzeCfWDiweyP5
- QGsz+irvZpDcRlu0QG+F+Us/WpLZul5ilJxj7e/B7pcCQlCGOv8RGZ2jS2DbjY5z
- HYCGFoTOj2PLvZUAbXpOh49RCBV7mZdJTnTgZ+fSkdUg4j8tCFMk8xY1nWPM+hfw
- ==
-X-ME-Sender: <xms:x-GWXqwZmpuUFCMkuvUlpab-GVJ1uYjfCiFZputQ7CPELfeHRbDwZA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrfeefgddujecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epghhithhhuhgsrdgtohhmnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
- rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
- hordhtvggthh
-X-ME-Proxy: <xmx:x-GWXh-v4_ktdhiqILsyNkYz8Cseb7nwQR9b5LnAqkIgToZSBcp0hQ>
- <xmx:x-GWXoxrUHggCrh4H-FChfczyTyR-IrpebLyWBG79c_VIl_g1IT12g>
- <xmx:x-GWXppqC2TA_QOoZTo-mT68PoXBxCWngX58qZBXk0O2Gy1WutcDjw>
- <xmx:x-GWXsBL4SCr4q_SQ0X3-HmNBoramB9RqFwhcsatm_ceUg-2LZeskA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id D9AA8328005A;
- Wed, 15 Apr 2020 06:28:22 -0400 (EDT)
-Date: Wed, 15 Apr 2020 12:28:21 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v2 0/7] Add support for Allwinner H6 DVFS
-Message-ID: <20200415102821.t4vm5y7zggxc3ezm@gilmour.lan>
-References: <20200405173601.24331-1-peron.clem@gmail.com>
- <20200406081007.k6wlaampgbe46yts@gilmour.lan>
- <CAJiuCccPxnW-YMjENr5-_XMMu_gs5pRnCtYvpXQtHTAVj1QQqw@mail.gmail.com>
- <CAJiuCcdqv=mGmUvZ8=35P7fC=sePCpXFWw0_K7rEH+qPQT7W+g@mail.gmail.com>
+ id 1jOfKX-0001o6-FJ; Wed, 15 Apr 2020 10:31:43 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DCEED208FE;
+ Wed, 15 Apr 2020 10:31:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586946701;
+ bh=uRks2HYiRyRdiR4g4ENZwFdl3nuMvUwAgHch1gvWFtU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=LjvFPPv18vTxu7vRGD7+5SofqLQC3JFt2Yh/g1J8TyUMrRbcnYNDjKFZXMbTvP+l2
+ 2b6QydhAIOc5+m83jy/p6rLevh6dSKnSQATtz2x1JvYlUAG1VDGoiNvLGHpZQ7NVpv
+ YUWuwFJRmt04Jol1FBOsxz2sWmgBvn5JgZW8sQPg=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jOfKV-006gM0-23; Wed, 15 Apr 2020 12:31:39 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Media Mailing List <linux-media@vger.kernel.org>
+Subject: [PATCH v2 0/6] Move CEC drivers and menu to be out of MEDIA_SUPPORT
+Date: Wed, 15 Apr 2020 12:31:31 +0200
+Message-Id: <cover.1586946605.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.2
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCcdqv=mGmUvZ8=35P7fC=sePCpXFWw0_K7rEH+qPQT7W+g@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_032826_185993_4F5C3A1C 
-X-CRM114-Status: GOOD (  19.37  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200415_033141_559596_BB941465 
+X-CRM114-Status: GOOD (  14.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,141 +76,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3900609689571872880=="
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Ettore Chimenti <ek5.chimenti@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Guenter Roeck <groeck@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-samsung-soc@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>, Russell King <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ Kukjin Kim <kgene@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-tegra@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, Benson Leung <bleung@chromium.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The CEC_CORE doesn't depend on MEDIA_SUPPORT. So, it doesn't make
+much sense to keep it under its menu.
 
---===============3900609689571872880==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="cfxk5euq6ylkqauh"
-Content-Disposition: inline
+This series move it to be just after RC support. As a side effect, now
+dependencies like PCI and USB are now selected, making easier to
+enable CEC drivers.
+
+- v2:
+  - move more CEC drivers from platform/
+  - rename kconfig options to be more coherent
+
+Mauro Carvalho Chehab (6):
+  media: cec: move the core to a separate directory
+  media: place CEC menu before MEDIA_SUPPORT
+  media: move CEC platform drivers to a separate directory
+  media: move CEC USB drivers to a separate directory
+  media: cec: rename CEC platform drivers config options
+  media: cec: rename USB config options
+
+ arch/arm/configs/exynos_defconfig             |   2 +-
+ arch/arm/configs/multi_v7_defconfig           |   2 +-
+ drivers/media/Kconfig                         |  30 +----
+ drivers/media/cec/Kconfig                     |  25 ++++
+ drivers/media/cec/Makefile                    |  16 +--
+ drivers/media/cec/core/Makefile               |  16 +++
+ drivers/media/cec/{ => core}/cec-adap.c       |   0
+ drivers/media/cec/{ => core}/cec-api.c        |   0
+ drivers/media/cec/{ => core}/cec-core.c       |   0
+ drivers/media/cec/{ => core}/cec-notifier.c   |   0
+ .../media/cec/{ => core}/cec-pin-error-inj.c  |   0
+ drivers/media/cec/{ => core}/cec-pin-priv.h   |   0
+ drivers/media/cec/{ => core}/cec-pin.c        |   0
+ drivers/media/cec/{ => core}/cec-priv.h       |   0
+ drivers/media/cec/platform/Kconfig            | 121 +++++++++++++++++
+ drivers/media/cec/platform/Makefile           |  14 ++
+ .../{ => cec}/platform/cec-gpio/Makefile      |   0
+ .../{ => cec}/platform/cec-gpio/cec-gpio.c    |   0
+ drivers/media/cec/platform/cros-ec/Makefile   |   2 +
+ .../platform/cros-ec}/cros-ec-cec.c           |   0
+ drivers/media/cec/platform/meson/Makefile     |   3 +
+ .../{ => cec}/platform/meson/ao-cec-g12a.c    |   0
+ .../media/{ => cec}/platform/meson/ao-cec.c   |   0
+ .../s5p-cec => cec/platform/s5p}/Makefile     |   2 +-
+ .../platform/s5p}/exynos_hdmi_cec.h           |   0
+ .../platform/s5p}/exynos_hdmi_cecctrl.c       |   0
+ .../s5p-cec => cec/platform/s5p}/regs-cec.h   |   0
+ .../s5p-cec => cec/platform/s5p}/s5p_cec.c    |   0
+ .../s5p-cec => cec/platform/s5p}/s5p_cec.h    |   0
+ drivers/media/cec/platform/seco/Makefile      |   2 +
+ .../seco-cec => cec/platform/seco}/seco-cec.c |   2 +-
+ .../seco-cec => cec/platform/seco}/seco-cec.h |   0
+ drivers/media/cec/platform/sti/Makefile       |   2 +
+ .../sti/cec => cec/platform/sti}/stih-cec.c   |   0
+ drivers/media/cec/platform/stm32/Makefile     |   2 +
+ .../{ => cec}/platform/stm32/stm32-cec.c      |   0
+ drivers/media/cec/platform/tegra/Makefile     |   2 +
+ .../platform/tegra}/tegra_cec.c               |   0
+ .../platform/tegra}/tegra_cec.h               |   0
+ drivers/media/cec/usb/Kconfig                 |   6 +
+ drivers/media/cec/usb/Makefile                |   6 +
+ .../pulse8-cec => cec/usb/pulse8}/Kconfig     |   5 +-
+ drivers/media/cec/usb/pulse8/Makefile         |   2 +
+ .../usb/pulse8}/pulse8-cec.c                  |   0
+ .../usb/rainshadow}/Kconfig                   |   5 +-
+ drivers/media/cec/usb/rainshadow/Makefile     |   2 +
+ .../usb/rainshadow}/rainshadow-cec.c          |   0
+ drivers/media/platform/Kconfig                | 125 ------------------
+ drivers/media/platform/Makefile               |  12 --
+ drivers/media/platform/cros-ec-cec/Makefile   |   2 -
+ drivers/media/platform/meson/Makefile         |   3 -
+ drivers/media/platform/seco-cec/Makefile      |   2 -
+ drivers/media/platform/sti/cec/Makefile       |   2 -
+ drivers/media/platform/stm32/Makefile         |   1 -
+ drivers/media/platform/tegra-cec/Makefile     |   2 -
+ drivers/media/usb/Kconfig                     |   6 -
+ drivers/media/usb/Makefile                    |   2 -
+ drivers/media/usb/pulse8-cec/Makefile         |   2 -
+ drivers/media/usb/rainshadow-cec/Makefile     |   2 -
+ 59 files changed, 218 insertions(+), 212 deletions(-)
+ create mode 100644 drivers/media/cec/core/Makefile
+ rename drivers/media/cec/{ => core}/cec-adap.c (100%)
+ rename drivers/media/cec/{ => core}/cec-api.c (100%)
+ rename drivers/media/cec/{ => core}/cec-core.c (100%)
+ rename drivers/media/cec/{ => core}/cec-notifier.c (100%)
+ rename drivers/media/cec/{ => core}/cec-pin-error-inj.c (100%)
+ rename drivers/media/cec/{ => core}/cec-pin-priv.h (100%)
+ rename drivers/media/cec/{ => core}/cec-pin.c (100%)
+ rename drivers/media/cec/{ => core}/cec-priv.h (100%)
+ create mode 100644 drivers/media/cec/platform/Kconfig
+ create mode 100644 drivers/media/cec/platform/Makefile
+ rename drivers/media/{ => cec}/platform/cec-gpio/Makefile (100%)
+ rename drivers/media/{ => cec}/platform/cec-gpio/cec-gpio.c (100%)
+ create mode 100644 drivers/media/cec/platform/cros-ec/Makefile
+ rename drivers/media/{platform/cros-ec-cec => cec/platform/cros-ec}/cros-ec-cec.c (100%)
+ create mode 100644 drivers/media/cec/platform/meson/Makefile
+ rename drivers/media/{ => cec}/platform/meson/ao-cec-g12a.c (100%)
+ rename drivers/media/{ => cec}/platform/meson/ao-cec.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/Makefile (63%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cec.h (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cecctrl.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/regs-cec.h (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.c (100%)
+ rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.h (100%)
+ create mode 100644 drivers/media/cec/platform/seco/Makefile
+ rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.c (99%)
+ rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.h (100%)
+ create mode 100644 drivers/media/cec/platform/sti/Makefile
+ rename drivers/media/{platform/sti/cec => cec/platform/sti}/stih-cec.c (100%)
+ create mode 100644 drivers/media/cec/platform/stm32/Makefile
+ rename drivers/media/{ => cec}/platform/stm32/stm32-cec.c (100%)
+ create mode 100644 drivers/media/cec/platform/tegra/Makefile
+ rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.c (100%)
+ rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.h (100%)
+ create mode 100644 drivers/media/cec/usb/Kconfig
+ create mode 100644 drivers/media/cec/usb/Makefile
+ rename drivers/media/{usb/pulse8-cec => cec/usb/pulse8}/Kconfig (86%)
+ create mode 100644 drivers/media/cec/usb/pulse8/Makefile
+ rename drivers/media/{usb/pulse8-cec => cec/usb/pulse8}/pulse8-cec.c (100%)
+ rename drivers/media/{usb/rainshadow-cec => cec/usb/rainshadow}/Kconfig (85%)
+ create mode 100644 drivers/media/cec/usb/rainshadow/Makefile
+ rename drivers/media/{usb/rainshadow-cec => cec/usb/rainshadow}/rainshadow-cec.c (100%)
+ delete mode 100644 drivers/media/platform/cros-ec-cec/Makefile
+ delete mode 100644 drivers/media/platform/meson/Makefile
+ delete mode 100644 drivers/media/platform/seco-cec/Makefile
+ delete mode 100644 drivers/media/platform/sti/cec/Makefile
+ delete mode 100644 drivers/media/platform/tegra-cec/Makefile
+ delete mode 100644 drivers/media/usb/pulse8-cec/Makefile
+ delete mode 100644 drivers/media/usb/rainshadow-cec/Makefile
+
+-- 
+2.25.2
 
 
---cfxk5euq6ylkqauh
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Clement,
-
-On Mon, Apr 13, 2020 at 03:37:19PM +0200, Cl=C3=A9ment P=C3=A9ron wrote:
-> On Mon, 6 Apr 2020 at 11:07, Cl=C3=A9ment P=C3=A9ron <peron.clem@gmail.co=
-m> wrote:
-> > On Mon, 6 Apr 2020 at 10:10, Maxime Ripard <maxime@cerno.tech> wrote:
-> > >
-> > > Hi,
-> > >
-> > > On Sun, Apr 05, 2020 at 07:35:54PM +0200, Cl=C3=A9ment P=C3=A9ron wro=
-te:
-> > > > Now that required drivers are merged we can contibute on DVFS
-> > > > support for Allwinner H6.
-> > > >
-> > > > This serie is based on Yangtao Li serie[0] and Ond=C5=99ej Jirman w=
-ork[1].
-> > > >
-> > > > Most of the OPP tables are taken from original vendor kernel[2].
-> > > > Plus there is a new CPU frequencies at 1.6GHz, 1.7GHz and 1.8GHz.
-> > > >
-> > > > I wrote a simple script to randomly set a frequency during
-> > > > a random time[3].
-> > >
-> > > If you ever need to do that ever again, cpufreq-ljt-stress-test (found
-> > > here https://github.com/ssvb/cpuburn-arm) has proven to be very
-> > > reliable to detect cpufreq related issues. stress-ng might not be
-> > > enough since the (at least older) Allwinner SoCs tend to create cache
-> > > corruption when undervolted, and that might not be unnoticed by
-> > > stress-ng but will be catched by cpufreq-ljt-stress-test.
->
-> The test seems good (see result below) :
->
-> # cpufreq-ljt-stress-test
-> Creating './whitenoise-1920x1080.jpg' ... done
-> CPU stress test, which is doing JPEG decoding by libjpeg-turbo
-> at different cpufreq operating points.
->
-> Testing CPU 0
->  1800 MHz ............................................................ OK
->  1704 MHz ............................................................ OK
->  1608 MHz ............................................................ OK
->  1488 MHz ............................................................ OK
->  1320 MHz ............................................................ OK
->  1080 MHz ............................................................ OK
->   888 MHz ............................................................ OK
->   816 MHz ............................................................ OK
->   720 MHz ............................................................ OK
->   480 MHz ............................................................ OK
->
-> Testing CPU 1
->  1800 MHz ............................................................ OK
->  1704 MHz ............................................................ OK
->  1608 MHz ............................................................ OK
->  1488 MHz ............................................................ OK
->  1320 MHz ............................................................ OK
->  1080 MHz ............................................................ OK
->   888 MHz ............................................................ OK
->   816 MHz ............................................................ OK
->   720 MHz ............................................................ OK
->   480 MHz ............................................................ OK
->
-> Testing CPU 2
->  1800 MHz ............................................................ OK
->  1704 MHz ............................................................ OK
->  1608 MHz ............................................................ OK
->  1488 MHz ............................................................ OK
->  1320 MHz ............................................................ OK
->  1080 MHz ............................................................ OK
->   888 MHz ............................................................ OK
->   816 MHz ............................................................ OK
->   720 MHz ............................................................ OK
->   480 MHz ............................................................ OK
->
-> Testing CPU 3
->  1800 MHz ............................................................ OK
->  1704 MHz ............................................................ OK
->  1608 MHz ............................................................ OK
->  1488 MHz ............................................................ OK
->  1320 MHz ............................................................ OK
->  1080 MHz ............................................................ OK
->   888 MHz ............................................................ OK
->   816 MHz ............................................................ OK
->   720 MHz ............................................................ OK
->   480 MHz ............................................................ OK
->
-> Overall result : PASSED
-
-Awesome, thanks for taking the time to do it :)
-
-Maxime
-
---cfxk5euq6ylkqauh
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXpbhxQAKCRDj7w1vZxhR
-xeJFAQCRpXa5/WGOWfd5YXXrqOCzk7cnB4h+JQSnMqmMLY0Z2QD9GOOUOwmBTZj2
-n3nqsY0/ztwdWeKtudJpz9pTOa6zxAE=
-=VDi4
------END PGP SIGNATURE-----
-
---cfxk5euq6ylkqauh--
-
-
---===============3900609689571872880==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3900609689571872880==--
-
