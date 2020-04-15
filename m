@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4876C1AAD47
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:23:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A60A1AAD4A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:25:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OdNvGAlI2KITrq47s/8bVzhvfhhjAB3who1H0yNp/HM=; b=n8UyuFA3J0EMfa
-	pvaceNTpsBUTtJiq66Ntgy0kiADMVoJRRGzEijo3eT3lAvUc7ZcoOBob3ffsrZJrxI+1bR8HQ0/bj
-	8thO4wkml601tiHWSZQ0R3TmOtoB8Y+PtLLp043uT5M8T6TQX9xeVhNJ7iAbmHhnO6vjAF5z5YDv2
-	Y8JMndz9qoDK/22AU2UoPhJ1FcIeB5SqF7dyfRTzOa2fAALqV+F2ty9d9gqj67/blAjAwnC53QzRa
-	lc5FJmaLFxEnRGdEMrOXCzwh5l8E838UHfAB8OIdzw8j4a0YjOe6vVm1PqSma+XyvPJ/vVNInVrqM
-	8CamxYGD7+tcrrG4GMTA==;
+	List-Owner; bh=Esq72kOLMOXRfZDdvsALVQLKqvkDvOZZB3VEg85i9y4=; b=mZMqdrtnkCzMIr
+	M2p26srHURWga+nT6DJL4bk/6zdRrvIh0qkq7D3z/59Aeorz5U+4ps125rHCj9CsnSyPgbcdTd6jt
+	tH1eu79n39jf4QKmp2LLRYc7sPUPq3CD9K9ojJm2PlA5oGCukRNFpeyLJI5ijP07FydWX+dp97pOD
+	nBUTZI7RCVQZnOV4nqYu8QeIiQOxESATJOE9WwQQ6Uy9FxW5CTS0TdhAaCNkWYvdZHqEYAixF7A5Q
+	gQ4mkQjTXxZR1bcz/mSNqpjViDIzD98g2WAcukQyaJiy1SnfxAQ6akjcSQNwrN6xRwsnOg644pyCf
+	fZes5Sj/oTDlmoN9eY2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOkpL-000112-Mg; Wed, 15 Apr 2020 16:23:51 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jOkqo-000273-Fu; Wed, 15 Apr 2020 16:25:22 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOkp5-0000wg-2S
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:23:36 +0000
-Received: by mail-ot1-f66.google.com with SMTP id i27so474231ota.7
+ id 1jOkqK-00024O-Gf
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:24:59 +0000
+Received: by mail-ot1-f65.google.com with SMTP id i27so478234ota.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 09:23:34 -0700 (PDT)
+ Wed, 15 Apr 2020 09:24:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dqCaYkT8OVNprkSigyoCp2ZPVsKvgzd87cPbi/J2G4k=;
- b=R+oPEsAqEXDYdkngsD6XlvgFLdP0vorLG+/zbkDskj5Dhl3+31acToblZyCtJkKh3j
- wtLXvFUJ2qxKuc8J/8cGwMMiYd2bXAtxxvsgy84HdZTWEjplyxdguM7zc7lttLVhcRie
- W++z1lapwasHOjsy8q3/vflLD8iPuoRRHi7ueaIrxIqY1eay1wbP/HOKbK4z1W2Y89fy
- I85SY5nc7N2L/I5p2u3y0oj9kCgS8uvKunrGZ6WBK+QL8pYaAH8yMN81HvY9pZwpAmGQ
- Yy1Q/BLpbaOKHWVbDqyz6/nZZbO1TTsm+ho+EleAIFhMpUlwtoWU2ZIIr8oPzMB6enH5
- GekQ==
-X-Gm-Message-State: AGi0PuZGzvc2eXsbAeILiPK2CqkZLgSaHV2l/my2poZuUKvw2yxeuAuX
- kJb/maJbs3C/GGK93eAbOA==
-X-Google-Smtp-Source: APiQypKR1UuoH9e32fZQ9cndTzQaO9IUxQZvKDBEkzyNV7mi2Ii3pK0yWsxcv3mWaq3m8wipHNp1MQ==
-X-Received: by 2002:a9d:1b4b:: with SMTP id l69mr13808068otl.179.1586967813963; 
- Wed, 15 Apr 2020 09:23:33 -0700 (PDT)
+ bh=s8Zpy7lNG4jWfwpFYAsM0x9AqOkd/hZJ5LGUrbOO5n4=;
+ b=fldObaCq8zzbg4eXZZ2JJlj46uhXhdQPqMsQcLbtgBeIyptnVgy5oFTSp6xfw9HRqA
+ w8fsQuD8dYQ0l1UTAPc3aqCFE9pMoiBx1BziTrSmmAvS1vjOscCintL5ROk4OUxHHryJ
+ NBv/a6VEF6dXyN/ukYSWxAAk3F/zvNiPHQP7h0E+/mj+WqBhG8gV4WyFB64NhWijtDan
+ oyqge1iVFo8F85i1G5xOrhY4ttrS65g+WgNiM8xY079r5XLVYn2ZPWeB7zchI4cWmOq8
+ tFwq0RDXjH6DAujO8Z/mXC/fER3Yf98T/4AgHXi8xyKRew2uhaNl5dx7VRA4AztGj6Yn
+ Eeiw==
+X-Gm-Message-State: AGi0PuZ+bWlPflzcpvgisnFtBVay6FYY7FvldOMk0rsBEuYCGNQbQXd/
+ ZF+nkwTFvuwhsjFzZOtsUQ==
+X-Google-Smtp-Source: APiQypJAsLyxcP4+sKsLlWhXU12d1z5YBzYdSqPCudaS6dtH2OtG+hAk5XL/zYYtRbtvjFPC3fUEYQ==
+X-Received: by 2002:a9d:23e2:: with SMTP id t89mr2623676otb.316.1586967891178; 
+ Wed, 15 Apr 2020 09:24:51 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 186sm6865669ooi.30.2020.04.15.09.23.32
+ by smtp.gmail.com with ESMTPSA id o204sm6413412oib.12.2020.04.15.09.24.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 09:23:33 -0700 (PDT)
-Received: (nullmailer pid 32365 invoked by uid 1000);
- Wed, 15 Apr 2020 16:23:32 -0000
-Date: Wed, 15 Apr 2020 11:23:32 -0500
+ Wed, 15 Apr 2020 09:24:50 -0700 (PDT)
+Received: (nullmailer pid 1884 invoked by uid 1000);
+ Wed, 15 Apr 2020 16:24:49 -0000
+Date: Wed, 15 Apr 2020 11:24:49 -0500
 From: Rob Herring <robh@kernel.org>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v6 01/14] dt-bindings: reserved-memory: Introduce
- memory-region-names
-Message-ID: <20200415162332.GA32297@bogus>
+Subject: Re: [PATCH v6 02/14] of: reserved-memory: Support lookup of regions
+ by name
+Message-ID: <20200415162449.GA1842@bogus>
 References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-2-thierry.reding@gmail.com>
+ <20200409175238.3586487-3-thierry.reding@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200409175238.3586487-2-thierry.reding@gmail.com>
+In-Reply-To: <20200409175238.3586487-3-thierry.reding@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_092335_108086_15CAF6CA 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20200415_092457_753335_4D470526 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -80,7 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [209.85.210.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -105,26 +105,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu,  9 Apr 2020 19:52:25 +0200, Thierry Reding wrote:
+On Thu,  9 Apr 2020 19:52:26 +0200, Thierry Reding wrote:
 > From: Thierry Reding <treding@nvidia.com>
 > 
-> In order to make the reserved-memory bindings more consistent with other
-> existing bindings, add a memory-region-names property that contains an
-> array of strings that name the entries of the memory-region property and
-> allows these regions to be looked up by name.
+> Add support for looking up memory regions by name. This looks up the
+> given name in the newly introduced memory-region-names property and
+> returns the memory region at the corresponding index in the memory-
+> region(s) property.
 > 
 > Signed-off-by: Thierry Reding <treding@nvidia.com>
 > ---
-> Changes in v6:
-> - drop addition of memory-regions alias
-> 
->  .../devicetree/bindings/reserved-memory/reserved-memory.txt     | 2 ++
->  1 file changed, 2 insertions(+)
+>  drivers/of/of_reserved_mem.c    | 19 +++++++++++++++++++
+>  include/linux/of_reserved_mem.h | 11 +++++++++++
+>  2 files changed, 30 insertions(+)
 > 
 
-Applied, thanks.
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
