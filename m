@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7667D1A9E21
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7462C1A9E23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:52:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CY/xrvZo11WyI0PeOsY/MPVGiEqvXpT1oMYHd8cvZD0=; b=UDdE9Qu14pK+Tk
-	Bpn3B1t0dtMAdSDHEy1+bjETPIJrR4V1WvoYRGmFxdTmopjl+qrcD55TKHvEhqoQSy9TNcQQWdiDk
-	O9VrJJEO8oMChPuOvudaXqNMePvcgaCkXTCv6Dcqk2GnMCJkGiY6m+ARIn9tfOwjyy9jm32nSeQv3
-	rSOEtjHKQAUExm9E6sW1QbTgiBnBGkLHBn5H3vKTgjwdO2xYxZP/kHziyl+aILFyqbHIYK4H+QaQ7
-	64EWqJDlzXcCyzfyIEv9fhbVOLl2Gq5nKF/eqExgn+pNry0eUbqBKphLN9wOLutVjFHdx5m4f4ZJ4
-	zKbEE9RnCDwYNYJ/M4/A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jvFHMoW7yzuQJqZ9T+gZqcBGX6pE0O7iQw9atGpwGUQ=; b=jnnDpV8NdPBN9e
+	uH5aTS2Z+f+1zfZ61hNpof5Iq34qGIR9YtvvjvpO9v1LlkbWYLwoBeicVLAZBWq992bHhYfu80t6R
+	rmu4LYLA/N1lqAn8pUh20Sy1BggJ4MDVu35SF165ma4kYjyQqr27dnEAr9NKlAlZ0icWJffvlzh4n
+	2GXQZ4G9lDGyQaQVK7imrgao+mOvBPom1bzhJOEkF1vVIpfyT9ArLJR1o41GvOBXc7yv3MCY7qoh3
+	KjybArZS0rlcSEtcjMDChyBMVt0oD+8M62HovK3FST3eGIUCELSkW6R1YdCzHzUxlZelMTsOdQh5u
+	Kirrl4uCynDFcy0KHuqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgaH-0003zT-8y; Wed, 15 Apr 2020 11:52:01 +0000
+	id 1jOgaX-0004FF-1k; Wed, 15 Apr 2020 11:52:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgVv-00064O-0x
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:47:34 +0000
+ id 1jOgWF-0006PN-Jn
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:47:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A3C4F2137B;
- Wed, 15 Apr 2020 11:47:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7350820775;
+ Wed, 15 Apr 2020 11:47:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586951249;
- bh=H1MvL/5l8ulfzpwoFzGeu+6646ZSVqP3YB6Czq3pgHM=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ynTOWuOO22TCPrJzdO67uprObOSyO/dTsixdBO6yuw4qzN4uAWWUkGzOINE98F9jv
- tsh485Wa7iIhNTlJJKbIIMBIchF85JYFIgB53tk3nkXodAPnuG5e7IJ0+mLUJFAHYE
- M5KDaHp10pm1xv+Ji8Z04Rux2mya9ydMVg4H5Mdc=
+ s=default; t=1586951270;
+ bh=S6wAKXdXmDJgv7u1+X6ARKowSlSQupWIYsmGHU1DPC0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=wKYUejmWZPlSF+pcIZEWH3GkpjSAmJ/52CKrW4hTqp9zhGToDUpH8VgVWztq/kQA1
+ RzjymV4Y2YKcE++JJCDackVcVTXJfDijVYyhdZ20zC+/qql4RfTkXF7Bw/BkKRFaCh
+ CoF3QL46FAtfo2OOi2wW4ZdTB/Kq2VR4lYawGxjY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 15/30] net: stmmac: dwmac1000: fix out-of-bounds
- mac address reg setting
-Date: Wed, 15 Apr 2020 07:46:56 -0400
-Message-Id: <20200415114711.15381-15-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 01/21] clk: at91: usb: continue if
+ clk_hw_round_rate() return zero
+Date: Wed, 15 Apr 2020 07:47:28 -0400
+Message-Id: <20200415114748.15713-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200415114711.15381-1-sashal@kernel.org>
-References: <20200415114711.15381-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044731_274858_6F0B2DC5 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200415_044751_745036_64EA8CF1 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +78,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Stephen Boyd <sboyd@kernel.org>, Sasha Levin <sashal@kernel.org>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-[ Upstream commit 3e1221acf6a8f8595b5ce354bab4327a69d54d18 ]
+[ Upstream commit b0ecf1c6c6e82da4847900fad0272abfd014666d ]
 
-Commit 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address
-entries") cleared the unused mac address entries, but introduced an
-out-of bounds mac address register programming bug -- After setting
-the secondary unicast mac addresses, the "reg" value has reached
-netdev_uc_count() + 1, thus we should only clear address entries
-if (addr < perfect_addr_number)
+clk_hw_round_rate() may call round rate function of its parents. In case
+of SAM9X60 two of USB parrents are PLLA and UPLL. These clocks are
+controlled by clk-sam9x60-pll.c driver. The round rate function for this
+driver is sam9x60_pll_round_rate() which call in turn
+sam9x60_pll_get_best_div_mul(). In case the requested rate is not in the
+proper range (rate < characteristics->output[0].min &&
+rate > characteristics->output[0].max) the sam9x60_pll_round_rate() will
+return a negative number to its caller (called by
+clk_core_round_rate_nolock()). clk_hw_round_rate() will return zero in
+case a negative number is returned by clk_core_round_rate_nolock(). With
+this, the USB clock will continue its rate computation even caller of
+clk_hw_round_rate() returned an error. With this, the USB clock on SAM9X60
+may not chose the best parent. I detected this after a suspend/resume
+cycle on SAM9X60.
 
-Fixes: 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address entries")
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+Link: https://lkml.kernel.org/r/1579261009-4573-2-git-send-email-claudiu.beznea@microchip.com
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clk/at91/clk-usb.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index 08dd6a06ac58d..f76d4a7281af0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -218,7 +218,7 @@ static void dwmac1000_set_filter(struct mac_device_info *hw,
- 			reg++;
- 		}
- 
--		while (reg <= perfect_addr_number) {
-+		while (reg < perfect_addr_number) {
- 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
- 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
- 			reg++;
+diff --git a/drivers/clk/at91/clk-usb.c b/drivers/clk/at91/clk-usb.c
+index 791770a563fcc..6fac6383d024e 100644
+--- a/drivers/clk/at91/clk-usb.c
++++ b/drivers/clk/at91/clk-usb.c
+@@ -78,6 +78,9 @@ static int at91sam9x5_clk_usb_determine_rate(struct clk_hw *hw,
+ 			tmp_parent_rate = req->rate * div;
+ 			tmp_parent_rate = clk_hw_round_rate(parent,
+ 							   tmp_parent_rate);
++			if (!tmp_parent_rate)
++				continue;
++
+ 			tmp_rate = DIV_ROUND_CLOSEST(tmp_parent_rate, div);
+ 			if (tmp_rate < req->rate)
+ 				tmp_diff = req->rate - tmp_rate;
 -- 
 2.20.1
 
