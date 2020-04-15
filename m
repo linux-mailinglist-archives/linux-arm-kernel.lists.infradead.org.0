@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB0F71A9C9A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:36:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5151B1A9CA5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:37:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A9Bm3RW4eoMtD8URVrIkb0JePfu7cy91DzEoYhmA4J0=; b=GgMeUAxLcOBysX
-	Ky6f+wP6YuIKk+lYdE9ZwFxKZkMM8rMhOePcTXN5CY71p5aCW4ZIYpeb7Z/8ApUxtWtOIZZTTdrJh
-	itTUJlQDNw5dsQp1YRdIiX0cXBmTombtK9ITJ+Z8W94WX3tnfSS3ZZc7a25qzYq+PGlT2QAfrDuO0
-	8MJfj1hkw8lEsTYquF1kQpsJ8zrcs31WRZKNs0akX9k1nOENu7XVK+y4se4d/juNz/oetspB4sNZR
-	Uee7y3p6WKXj3LS3eATutC9SLYej4Y8sxg9FbjZT1jsXl8N0tth2aRgsKRzdVdjx/yLzgMD8BO4Fj
-	E/X0ndDCtumgg9sJJ7Fg==;
+	List-Owner; bh=Xmfbv1fTK5o5jp+nWBKLJ5uGpcCiA2BExD/Z29RCb8g=; b=Ilj0toMhQs1ssW
+	AAaJemO3LX23+SVMvgMUS7/u4EPklT6SYvdb/OgsYdOW0QCM9PLZXHwbZjtslfTNZk/8u2zIPq4zA
+	LXtdTFZx4/cUXIFiEVxzmFwqXoaO4bm1R1IjNG2fj11p4ehbmgltUPtROEUaa7YRwzb4zcprJ1WnC
+	hu+Los+xclDRyZm4z0d3WoidHzq+LtM3gNW/gDcsNoLjhZxg9k9maWN8wMmJfbYFTJpuecODnuvsB
+	RuE14ofnVZAhyIBNWftsC4Xz1hNxLHyC9cyOoUG2AmrYJE53ov+9uqANMOo4uExntIWcZ/0gctabt
+	2P5XGE6mQocJ0C0X0whw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgLa-000102-IO; Wed, 15 Apr 2020 11:36:50 +0000
+	id 1jOgLq-0001PE-I7; Wed, 15 Apr 2020 11:37:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgK7-0008Pc-UD
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:35:21 +0000
+ id 1jOgK9-0008QR-4b
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:35:24 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 251C220775;
- Wed, 15 Apr 2020 11:35:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 40F062137B;
+ Wed, 15 Apr 2020 11:35:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950518;
- bh=VyOZnvDN6v7p/4EWitshi6AaubiDqI05pzbnVO4r8mA=;
+ s=default; t=1586950520;
+ bh=oooFEStGUZHNuhXxGFvK4GTwAIxHao8rhtCGvyKcdGo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pHecc/lv0CeaDB9mMCQZOmkzMEvZ/OZR1TA3xrg2i8FZNoeQs/Q91l3F1kCaLBYeD
- s43GMM/kujtTkGsf5exvu2m5ssNAdlcnxraIKFpU+r6Q7XXJuRh6him1/TFlhqEqjz
- cMAuMgwM0qFsFQnv9vGZiQVrjoPkp+9YM/hazP2k=
+ b=FykJemgG7Ow3yAdZxPQBROFyykzBT2ezgS4JTid1E06/vCLBHVmknklOijkuqO6rU
+ Uk9WtWUiN1wg8Fhfq3ugcz8dcyk+c9dDsM5LU4ggMduOJR8vOz4WzjjzASxW8AAjil
+ qgg+qbBFo5uXz6RqT9kL2NHc2dHmFioVHAcrVmXg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 028/129] arm64: dts: marvell: espressobin: add
- ethernet alias
-Date: Wed, 15 Apr 2020 07:33:03 -0400
-Message-Id: <20200415113445.11881-28-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 029/129] arm64: dts: clearfog-gt-8k: set gigabit
+ PHY reset deassert delay
+Date: Wed, 15 Apr 2020 07:33:04 -0400
+Message-Id: <20200415113445.11881-29-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
 References: <20200415113445.11881-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_043520_081999_EFE5F43C 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200415_043521_304616_0E055C6E 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,46 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Maciej Nowak <tmn505@gmail.com>, Sasha Levin <sashal@kernel.org>,
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Baruch Siach <baruch@tkos.co.il>,
  Gregory CLEMENT <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tomasz Maciej Nowak <tmn505@gmail.com>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 
-[ Upstream commit 5253cb8c00a6f4356760efb38bca0e0393aa06de ]
+[ Upstream commit 46f94c7818e7ab82758fca74935ef3d454340b4e ]
 
-The maker of this board and its variants, stores MAC address in U-Boot
-environment. Add alias for bootloader to recognise, to which ethernet
-node inject the factory MAC address.
+If the mv88e6xxx DSA driver is built as a module, it causes the
+ethernet driver to re-probe when it's loaded. This in turn causes
+the gigabit PHY to be momentarily reset and reprogrammed. However,
+we attempt to reprogram the PHY immediately after deasserting reset,
+and the PHY ignores the writes.
 
-Signed-off-by: Tomasz Maciej Nowak <tmn505@gmail.com>
+This results in the PHY operating in the wrong mode, and the copper
+link states down.
+
+Set a reset deassert delay of 10ms for the gigabit PHY to avoid this.
+
+Fixes: babc5544c293 ("arm64: dts: clearfog-gt-8k: 1G eth PHY reset signal")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Acked-by: Baruch Siach <baruch@tkos.co.il>
 Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
-index 53b8ac55a7f3d..e5262dab28f58 100644
---- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
-+++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
-@@ -13,6 +13,12 @@
- #include "armada-372x.dtsi"
- 
- / {
-+	aliases {
-+		ethernet0 = &eth0;
-+		serial0 = &uart0;
-+		serial1 = &uart1;
-+	};
-+
- 	chosen {
- 		stdout-path = "serial0:115200n8";
+diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
+index a211a046b2f2f..b90d78a5724b2 100644
+--- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
++++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
+@@ -367,6 +367,7 @@
+ 		pinctrl-0 = <&cp0_copper_eth_phy_reset>;
+ 		reset-gpios = <&cp0_gpio2 11 GPIO_ACTIVE_LOW>;
+ 		reset-assert-us = <10000>;
++		reset-deassert-us = <10000>;
  	};
+ 
+ 	switch0: switch0@4 {
 -- 
 2.20.1
 
