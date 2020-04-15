@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EB441A9DD5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:50:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED6561A9DF8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:51:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jvFHMoW7yzuQJqZ9T+gZqcBGX6pE0O7iQw9atGpwGUQ=; b=SjGJksc3nth1yM
-	Dxv7WqzUCjbxrd/xBS7T+803d0y2KcrQmxF1RDpGzIzkg4b42m/DraF3BttvZFot7E5GYwf6sx/BF
-	Ji6c3O8MeUDGVIs3fD2UIPslO1V12208G83BDbnmKaCaz3YjB4rCDGNdcchw4BA3lCGQi6GpmBdJj
-	DXxtq9lB/27VpkuJ4p2ggmgA0VGYphpImNnykfU4DG3Wbj6+uZF1XMlUNdab4JxBQJFxfuTckdVUq
-	O+JsDcHqqnbCkbhhn+jPIcn6Yxx6t1HyiE5LX8v6M6Rq5QIVxQEmtaLOMABKF2/mkeiivR7I+/Dm3
-	TU8ElLQ0pYKLb8JYsbIQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9mFEjtRxfxEPoCaxfjL+3HoycdYYBlmgCA4lqJqHlsQ=; b=YS6AcPpdQ7N8kC
+	+F2+8VfsZfhTwQQpNXShhCCXwSSudmentqWB4vrQIlv4yCdvlshVxzCZr32YVGZhCGbntKSOrnnrE
+	4kevs+tsvogtlz+GAgsW00CZT3FJTn0x9FmEU0DhRmlscFQJRodM0h/AtloFfLYzxLJ0ByUaUUp32
+	jBdVJDVC2xSMp/G6KFRNQIHtKGfW4kU/AKT83wrp8AxFyj4SID9HQN5fJtyJWJnzyl1Vvsg+1/RIN
+	idShx11er/N/ANZqcUCiELZigFsZJDZowr+vFpWm+d+Jgo/S8WyNoSowkrK0bFqoyZXhbj+FLbQH+
+	JramCnUbvIl1fi/r3Pig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgYv-0002lg-Fo; Wed, 15 Apr 2020 11:50:37 +0000
+	id 1jOgZB-0002wE-ER; Wed, 15 Apr 2020 11:50:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgUr-0004yj-Qe
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:46:27 +0000
+ id 1jOgUv-000534-FA
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:46:31 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B47F520732;
- Wed, 15 Apr 2020 11:46:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C36821655;
+ Wed, 15 Apr 2020 11:46:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586951185;
- bh=S6wAKXdXmDJgv7u1+X6ARKowSlSQupWIYsmGHU1DPC0=;
- h=From:To:Cc:Subject:Date:From;
- b=kO5x+tRECuozwkdxlM5lT8tGdqVFHEQnrnBJNMdvR48ztZRlG7rC8Lr6onxKfaeQC
- qjzUox6OUu4oWln+S7txWAFSYEdTdp9RGz6BY5wcbU2r7VohqbAv7TrPLyombSOslS
- SoVbI3zFdt+tfcVX3doymRi+REVn5mZuLYaBQvkI=
+ s=default; t=1586951188;
+ bh=24UPFmfXLNXBNCv+C/THtHtqcN+u1DIgdtOzJ/Ej+EE=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=LLMcu0nk3WzqjVwmPUDhVCHFSaO6zHi9tPd7A0+fPwfMRe0JYhDE5xg8QdPDv1k2H
+ TLWsOuB8pDr3OzrhyNvML8SoRG2nNOJEsjaDV4eG3zLJqWU6Pu05gv5CBnhgV9JBMQ
+ 0LABJbHmrc1q8fKC/yC6d+8ZBfDptG0/3FqSAcjs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 01/40] clk: at91: usb: continue if
- clk_hw_round_rate() return zero
-Date: Wed, 15 Apr 2020 07:45:44 -0400
-Message-Id: <20200415114623.14972-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 04/40] soc: imx: gpc: fix power up sequencing
+Date: Wed, 15 Apr 2020 07:45:47 -0400
+Message-Id: <20200415114623.14972-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415114623.14972-1-sashal@kernel.org>
+References: <20200415114623.14972-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044625_888009_690944C2 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200415_044629_529338_BF7BAA34 
+X-CRM114-Status: GOOD (  13.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,55 +79,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Sasha Levin <sashal@kernel.org>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
+From: Lucas Stach <l.stach@pengutronix.de>
 
-[ Upstream commit b0ecf1c6c6e82da4847900fad0272abfd014666d ]
+[ Upstream commit e0ea2d11f8a08ba7066ff897e16c5217215d1e68 ]
 
-clk_hw_round_rate() may call round rate function of its parents. In case
-of SAM9X60 two of USB parrents are PLLA and UPLL. These clocks are
-controlled by clk-sam9x60-pll.c driver. The round rate function for this
-driver is sam9x60_pll_round_rate() which call in turn
-sam9x60_pll_get_best_div_mul(). In case the requested rate is not in the
-proper range (rate < characteristics->output[0].min &&
-rate > characteristics->output[0].max) the sam9x60_pll_round_rate() will
-return a negative number to its caller (called by
-clk_core_round_rate_nolock()). clk_hw_round_rate() will return zero in
-case a negative number is returned by clk_core_round_rate_nolock(). With
-this, the USB clock will continue its rate computation even caller of
-clk_hw_round_rate() returned an error. With this, the USB clock on SAM9X60
-may not chose the best parent. I detected this after a suspend/resume
-cycle on SAM9X60.
+Currently we wait only until the PGC inverts the isolation setting
+before disabling the peripheral clocks. This doesn't ensure that the
+reset is properly propagated through the peripheral devices in the
+power domain.
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-Link: https://lkml.kernel.org/r/1579261009-4573-2-git-send-email-claudiu.beznea@microchip.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Wait until the PGC signals that the power up request is done and
+wait a bit for resets to propagate before disabling the clocks.
+
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/at91/clk-usb.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/soc/imx/gpc.c | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/clk/at91/clk-usb.c b/drivers/clk/at91/clk-usb.c
-index 791770a563fcc..6fac6383d024e 100644
---- a/drivers/clk/at91/clk-usb.c
-+++ b/drivers/clk/at91/clk-usb.c
-@@ -78,6 +78,9 @@ static int at91sam9x5_clk_usb_determine_rate(struct clk_hw *hw,
- 			tmp_parent_rate = req->rate * div;
- 			tmp_parent_rate = clk_hw_round_rate(parent,
- 							   tmp_parent_rate);
-+			if (!tmp_parent_rate)
-+				continue;
+diff --git a/drivers/soc/imx/gpc.c b/drivers/soc/imx/gpc.c
+index d160fc2a7b7a2..56c019ec7f14a 100644
+--- a/drivers/soc/imx/gpc.c
++++ b/drivers/soc/imx/gpc.c
+@@ -93,8 +93,8 @@ static int imx6_pm_domain_power_off(struct generic_pm_domain *genpd)
+ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
+ {
+ 	struct imx_pm_domain *pd = to_imx_pm_domain(genpd);
+-	int i, ret, sw, sw2iso;
+-	u32 val;
++	int i, ret;
++	u32 val, req;
+ 
+ 	if (pd->supply) {
+ 		ret = regulator_enable(pd->supply);
+@@ -113,17 +113,18 @@ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
+ 	regmap_update_bits(pd->regmap, pd->reg_offs + GPC_PGC_CTRL_OFFS,
+ 			   0x1, 0x1);
+ 
+-	/* Read ISO and ISO2SW power up delays */
+-	regmap_read(pd->regmap, pd->reg_offs + GPC_PGC_PUPSCR_OFFS, &val);
+-	sw = val & 0x3f;
+-	sw2iso = (val >> 8) & 0x3f;
+-
+ 	/* Request GPC to power up domain */
+-	val = BIT(pd->cntr_pdn_bit + 1);
+-	regmap_update_bits(pd->regmap, GPC_CNTR, val, val);
++	req = BIT(pd->cntr_pdn_bit + 1);
++	regmap_update_bits(pd->regmap, GPC_CNTR, req, req);
+ 
+-	/* Wait ISO + ISO2SW IPG clock cycles */
+-	udelay(DIV_ROUND_UP(sw + sw2iso, pd->ipg_rate_mhz));
++	/* Wait for the PGC to handle the request */
++	ret = regmap_read_poll_timeout(pd->regmap, GPC_CNTR, val, !(val & req),
++				       1, 50);
++	if (ret)
++		pr_err("powerup request on domain %s timed out\n", genpd->name);
 +
- 			tmp_rate = DIV_ROUND_CLOSEST(tmp_parent_rate, div);
- 			if (tmp_rate < req->rate)
- 				tmp_diff = req->rate - tmp_rate;
++	/* Wait for reset to propagate through peripherals */
++	usleep_range(5, 10);
+ 
+ 	/* Disable reset clocks for all devices in the domain */
+ 	for (i = 0; i < pd->num_clks; i++)
+@@ -345,6 +346,7 @@ static const struct regmap_config imx_gpc_regmap_config = {
+ 	.rd_table = &access_table,
+ 	.wr_table = &access_table,
+ 	.max_register = 0x2ac,
++	.fast_io = true,
+ };
+ 
+ static struct generic_pm_domain *imx_gpc_onecell_domains[] = {
 -- 
 2.20.1
 
