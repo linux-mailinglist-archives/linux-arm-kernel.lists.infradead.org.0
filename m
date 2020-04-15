@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B60B1A9DB7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:47:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B51111A9DBD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:48:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9/ddKixM4RwMLQgAND/fbqqzH+rbarC7iR45PloKjTg=; b=QRBKQidX6ld7BS
-	PArBURJXBUIQTrVfp5H0NRqjZar2Q0O3+h4JpTrlZ6iuLKB33tSrtYfOxgq11ruZS0cBFVM9h1AtK
-	Jx57pfN+IEMiUXMoj6Bo6Y1PeCxomxKJVI0lrZplB0ggJhwgE2NMbyoLZcfmovf2WKFqqWXhDF6K3
-	zzznhpuscWKbuyZvRMV6uEv5v5XO0Vc8QKKZGUmGeJ8B6slSOnkFewuJE3t9Yognbg8v/knKkMFOS
-	ya+iWiyMO+qT42lQW9Mmyk+Zdbt2gehSIeSGc9B4EiTJn0fWUX3qpBo9/lhP6i4wBLvMzP4RVRk7a
-	6TkMFEKfND15hOwDCgSg==;
+	List-Owner; bh=yZEpuDvy0E6ibeAe//KpdqMEXFy4wbuXWqOMs9hieWo=; b=alPJnhtNBcRxj6
+	qv7TYOgVeG5+lm1MyRYJRjexmCg2xDKfhqZlhQGNhV/OnGKFdwORL6GZ1M8zQt7L2nFTE9pLq7CF6
+	H26YUzYodJtGxqxPZLwSeIMJCMjupIhhutsrPatuNou406A6+W5YbGKczYOc8n2B4AX651SM5zM0w
+	vlZhGzDPfU1pFn2kxSL2WjYBHc2B2ksSsIrqpnPns0wz2AC6RWmhThdljoKNykXs0H4pPAGnPway8
+	COpJIvwENk7w96Dl3ziiUbLTjYFRo9HkaSnivb+4yzksnMqemzk4OJpIIz/BH3wnrJQBCauWGsFuQ
+	HiAo+uP7wxbqWuVkyHDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgW0-0005wu-RR; Wed, 15 Apr 2020 11:47:36 +0000
+	id 1jOgWE-0006BL-IF; Wed, 15 Apr 2020 11:47:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgTG-0001PA-Nv
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:44:50 +0000
+ id 1jOgTK-0001Rx-EY
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:44:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86521217BA;
- Wed, 15 Apr 2020 11:44:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EDA7C217D8;
+ Wed, 15 Apr 2020 11:44:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586951086;
- bh=cBk92c6nBULUxUTVafmDFD/ihP1iNDRokzEmXGn7xkk=;
+ s=default; t=1586951089;
+ bh=x3s5st2H0lALnwOPZGbSBw57FqPK0nzULfLkX85UHk8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=gKBFpsEr/3AstbE3l3psJTr3Cc+NIH4MKPE0wzlCjx5dwXkFxT7Dq9NEHqJxTw/w5
- BjHiPuXuePs7YTHLf1/ZpanERpU8xdXhJBIGCfTS4XP8JBdLJIrxRyUrZ1kMEhk+Bw
- cljfYDOHK04gHsLtb9AjfPW0PbB/Tn/AV5jaHpS8=
+ b=0UBoi2eRYqNvCwzO3tdaNoLAjVRvfCXTRBkaCFp+IqKJrYWO0GOG6coAMwFRDo4fb
+ jrUoqnicsUeuXCJ23P9bZxrkbfUYdQ45DVCWeLwtCopFEtxLxsfv14BUD0UyFaYOph
+ jRQDZX3N+45DOjLGDrCjWmiVRFu+eec5TIpPEUdU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 03/84] clk: at91: usb: continue if
- clk_hw_round_rate() return zero
-Date: Wed, 15 Apr 2020 07:43:20 -0400
-Message-Id: <20200415114442.14166-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 06/84] arm64: dts: librem5-devkit: add a vbus
+ supply to usb0
+Date: Wed, 15 Apr 2020 07:43:23 -0400
+Message-Id: <20200415114442.14166-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415114442.14166-1-sashal@kernel.org>
 References: <20200415114442.14166-1-sashal@kernel.org>
@@ -50,7 +50,7 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044446_815266_90185410 
+X-CRM114-CacheID: sfid-20200415_044450_624983_18A76307 
 X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,55 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Sasha Levin <sashal@kernel.org>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Martin Kepplinger <martin.kepplinger@puri.sm>, devicetree@vger.kernel.org,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
+From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-[ Upstream commit b0ecf1c6c6e82da4847900fad0272abfd014666d ]
+[ Upstream commit dde061b865598ad91f50140760e1d224e5045db9 ]
 
-clk_hw_round_rate() may call round rate function of its parents. In case
-of SAM9X60 two of USB parrents are PLLA and UPLL. These clocks are
-controlled by clk-sam9x60-pll.c driver. The round rate function for this
-driver is sam9x60_pll_round_rate() which call in turn
-sam9x60_pll_get_best_div_mul(). In case the requested rate is not in the
-proper range (rate < characteristics->output[0].min &&
-rate > characteristics->output[0].max) the sam9x60_pll_round_rate() will
-return a negative number to its caller (called by
-clk_core_round_rate_nolock()). clk_hw_round_rate() will return zero in
-case a negative number is returned by clk_core_round_rate_nolock(). With
-this, the USB clock will continue its rate computation even caller of
-clk_hw_round_rate() returned an error. With this, the USB clock on SAM9X60
-may not chose the best parent. I detected this after a suspend/resume
-cycle on SAM9X60.
+Without a VBUS supply the dwc3 driver won't go into otg mode.
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-Link: https://lkml.kernel.org/r/1579261009-4573-2-git-send-email-claudiu.beznea@microchip.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Fixes: eb4ea0857c83 ("arm64: dts: fsl: librem5: Add a device tree for the Librem5 devkit")
+Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/at91/clk-usb.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/at91/clk-usb.c b/drivers/clk/at91/clk-usb.c
-index 22aede42a3362..3c0bd7e51b09d 100644
---- a/drivers/clk/at91/clk-usb.c
-+++ b/drivers/clk/at91/clk-usb.c
-@@ -75,6 +75,9 @@ static int at91sam9x5_clk_usb_determine_rate(struct clk_hw *hw,
- 			tmp_parent_rate = req->rate * div;
- 			tmp_parent_rate = clk_hw_round_rate(parent,
- 							   tmp_parent_rate);
-+			if (!tmp_parent_rate)
-+				continue;
-+
- 			tmp_rate = DIV_ROUND_CLOSEST(tmp_parent_rate, div);
- 			if (tmp_rate < req->rate)
- 				tmp_diff = req->rate - tmp_rate;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+index 98cfe67b7db7b..19b427f68dad2 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+@@ -743,6 +743,7 @@
+ };
+ 
+ &usb3_phy0 {
++	vbus-supply = <&reg_5v_p>;
+ 	status = "okay";
+ };
+ 
 -- 
 2.20.1
 
