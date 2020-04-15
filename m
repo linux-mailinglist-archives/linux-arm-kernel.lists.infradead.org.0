@@ -2,150 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C95A1A9709
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:42:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 657781A970A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:42:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xICJ7o61qPK0f5tmBFX96cA9e7DdukGbBAR9VczaJc8=; b=KsKeFUdGuQ9uWzrKUx5ZPVCfl
-	XJaj1t+mO9Sj1H9yh881qBkvaI2yfTFRV2Jr8PRHEHNG8gn4uqKZ3woFU/INn+K9Q8HckOML+6TFf
-	kiCW6HuGvCVrI4TEFQ8a3QADIRGA8gVgZ5KeuMSoHFHyYSvXrmQ2vgs4E08gwGJftqKQucoSuBDQW
-	XRG4ItTEd5xdzChtMw0kJFdkzOc7seKwwK8zCMLzoQvowCkcIPTEcL1dvjDrYSuF++8URkbEDmBgs
-	IrS7885IRNiuIwA8bMyFYvKY4HSTN310R9PCktpC5gf5wjCkShTq/AhynQNTH4DanZZ3ZAM6OU7Zn
-	FpeZKfc0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LZ4vzY3E62G6pKlbgZMJ/sx1n8ZEeboLV4SSoYJA/rc=; b=jeoB6ieOf2jL76
+	oeKTkY6RrdhnHaw3Sl05qMpgr4Jhpxid49HWKGMcwXDD9sI2Uy6cblh8MTh3CnqEoe2mvR5GbS2Xl
+	zFZ5sIIEozfixAiZMAdXfRiif6EcULugOfv2Fi8UeOA7J0pc6jWM+s7evDbQNSoqhxlGCFPqA8LFJ
+	MVgIBX2l9zxM2bhWAOFLcupb0g5ykPFznOUJkNfWpI4YWAccEDJQhsz4V6jzczs6dtMKAzxwfjHVQ
+	B0QsuKXWgVr2idFPIoUjhDD02/uwfUBr9J48YdB3KP7qKNCniqrgwJoB2SWO7X5fNqrTQd35YJZQX
+	vP+3s1SiZRr309Mpsd1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdcQ-0007ON-V7; Wed, 15 Apr 2020 08:42:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jOdck-0007j7-AY; Wed, 15 Apr 2020 08:42:22 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdaa-0003HZ-AN
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:40:12 +0000
-Received: by mail-wr1-x442.google.com with SMTP id u13so17584044wrp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 01:40:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to;
- bh=UrgT7wSdMoxC/RrnuBGfx9Flpwdpyrd8OIIl88CP38Q=;
- b=r+q6VWwWplsZyK8nW0yyEAwuekMEL6XsOjfiaudV9Ea1rUGFjnQM3kg5GIjJtU4SeD
- rch9TIZsUmjifqDjK+WvJ37DANa7M52BZOts/wUDVxfpCEYTWpl8Nqom3I+0tdE9+xm7
- vfVJ7PMNELFSeQiU1VPmyCQkWHIYtolSqvN1AJTDf5byAc22M6Q4hKut57yG8i8NIr/f
- mgudi1Y/M52KtlhijfVi94wcy5BRnuLs+dMo9ev0xBrLBJk8QopP50GEK0xQe5YWdtBD
- yPshwm5izTWC8RiZYy8F/+TczADEo+UFhSh3hktyMgVgEGfZ+4j990MEpXpRicvC77bM
- KeLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to;
- bh=UrgT7wSdMoxC/RrnuBGfx9Flpwdpyrd8OIIl88CP38Q=;
- b=lg6kUsxC2l0qqnruPcjrwvn62HK/N20ELhNsvg3hoLkx9bQFHBFbLoElbf0Jjw9DFP
- g73kqR8h+eAw92y9CqspsX2kcauUMhbdwBIl5AMOFoD0yr++vmjvBeZ1HJq0tOujb86o
- 7gmTYXOS9rLAKkKz9VycVORLX1d6BD8Ak8bYk5f4zpJmqnz6y7pZzab+JT1A/XvQdeQ6
- 0n9SykuEnQ4JDTgOvXzegxnmpwvkMMpmRBS58TxbsEthJu28JQvaoKjLCm2cVbdN1URg
- VVvjxlInR/hmiFwKHkBTReF3bDaMs+hiHETdMC7/gaZLNkqB84vnAQaqWF3+0+DmuYKV
- diEA==
-X-Gm-Message-State: AGi0PuZo79QeJg5VBvyTuRRP9YlItYFf/0Pmic/QQKkKOuxnzx9Qsr2Z
- 7UnbCTCIhF/58as7jffAwcTIuw==
-X-Google-Smtp-Source: APiQypIktIBbOp0xkrRc8oV2zDeo5f6+XenMI8zyCwnGFas2If0f7LjCiy6hAmEZJ5vS57BM/+4grg==
-X-Received: by 2002:a5d:4283:: with SMTP id k3mr19357148wrq.238.1586940006141; 
- Wed, 15 Apr 2020 01:40:06 -0700 (PDT)
-Received: from [173.194.76.108] ([149.199.62.129])
- by smtp.gmail.com with ESMTPSA id j68sm23094011wrj.32.2020.04.15.01.39.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Apr 2020 01:40:04 -0700 (PDT)
-Subject: Re: [PATCH] arm64: zynqmp: Fix GIC compatible property
-To: Michal Simek <michal.simek@xilinx.com>,
- linux-arm-kernel@lists.infradead.org, git@xilinx.com
-References: <a50412fbb520954e4602f274f19a7ffbd1154ead.1582621224.git.michal.simek@xilinx.com>
-From: Michal Simek <monstr@monstr.eu>
-Autocrypt: addr=monstr@monstr.eu; keydata=
- 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
- 0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
-Message-ID: <f943a6ba-2040-4b78-8c90-cb6ee1d13c38@monstr.eu>
-Date: Wed, 15 Apr 2020 10:39:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jOdbI-0006Lv-Bj
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:40:57 +0000
+X-Originating-IP: 78.193.40.249
+Received: from kb-xps (unknown [78.193.40.249])
+ (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id E2F9220013;
+ Wed, 15 Apr 2020 08:40:47 +0000 (UTC)
+Date: Wed, 15 Apr 2020 10:40:46 +0200
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Jonathan Cameron <jic23@jic23.retrosnub.co.uk>
+Subject: Re: [PATCH v2 3/3] counter: Add atmel TCB capture counter
+Message-ID: <20200415084046.GD161090@kb-xps>
+References: <20200409141401.321222-1-kamel.bouhara@bootlin.com>
+ <20200409141401.321222-4-kamel.bouhara@bootlin.com>
+ <20200412114433.03e1f163@archlinux>
 MIME-Version: 1.0
-In-Reply-To: <a50412fbb520954e4602f274f19a7ffbd1154ead.1582621224.git.michal.simek@xilinx.com>
+Content-Disposition: inline
+In-Reply-To: <20200412114433.03e1f163@archlinux>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_014008_411368_2E618326 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200415_014052_714327_5B357F1A 
+X-CRM114-Status: GOOD (  32.07  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -158,113 +63,540 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Durga Challa <vnsl.durga.challa@xilinx.com>,
- Rajan Vaja <rajan.vaja@xilinx.com>, Nava kishore Manne <nava.manne@xilinx.com>,
- Michael Tretter <m.tretter@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Manish Narani <manish.narani@xilinx.com>
-Content-Type: multipart/mixed; boundary="===============5685441384528062156=="
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============5685441384528062156==
-Content-Type: multipart/signed; micalg=pgp-sha1;
- protocol="application/pgp-signature";
- boundary="8qCppseVFnBYesUMXQf2YqqxPjyp7Gte2"
+On Sun, Apr 12, 2020 at 11:44:33AM +0100, Jonathan Cameron wrote:
+> On Thu,  9 Apr 2020 16:14:01 +0200
+> Kamel Bouhara <kamel.bouhara@bootlin.com> wrote:
+>
+> > This drivers allows to use the capture mode of the Timer Counter Block
+> > hardware block available in Atmel SoCs through the counter subsystem.
+> >
+> > Two functions of the counter are supported for the moment: period
+> > capture and quadrature decoder. The latter is only supported by the
+> > SAMA5 series of SoCs.
+> >
+> > For the period capture mode a basic setup has been chosen that will
+> > reset the counter each time the period is actually reached. Of course
+> > the device offers much more possibilities.
+> >
+> > For quadrature mode, both channel 0 and 1 must be configured even if we
+> > only capture the position (no revolution/rotation).
+> >
+> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> Hi Kamel,
+>
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---8qCppseVFnBYesUMXQf2YqqxPjyp7Gte2
-Content-Type: multipart/mixed; boundary="h2oqIBgbjxjxvvrpHQfFPOMWLsTp5ZpTk";
- protected-headers="v1"
-From: Michal Simek <monstr@monstr.eu>
-To: Michal Simek <michal.simek@xilinx.com>,
- linux-arm-kernel@lists.infradead.org, git@xilinx.com
-Cc: Durga Challa <vnsl.durga.challa@xilinx.com>,
- Manish Narani <manish.narani@xilinx.com>, Mark Rutland
- <mark.rutland@arm.com>, Michael Tretter <m.tretter@pengutronix.de>,
- Nava kishore Manne <nava.manne@xilinx.com>,
- Rajan Vaja <rajan.vaja@xilinx.com>, Rob Herring <robh+dt@kernel.org>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Message-ID: <f943a6ba-2040-4b78-8c90-cb6ee1d13c38@monstr.eu>
-Subject: Re: [PATCH] arm64: zynqmp: Fix GIC compatible property
-References: <a50412fbb520954e4602f274f19a7ffbd1154ead.1582621224.git.michal.simek@xilinx.com>
-In-Reply-To: <a50412fbb520954e4602f274f19a7ffbd1154ead.1582621224.git.michal.simek@xilinx.com>
+Hi Jonathan,
 
---h2oqIBgbjxjxvvrpHQfFPOMWLsTp5ZpTk
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+> An issue around cleanup inline + a few nitpicks.
+>
+> Otherwise looks good to me.
+>
+> Jonathan
+>
+> > ---
+> > Changes from v2:
+> >  - Updated return code to -EINVAL when user is requesting qdec mode on
+> >    a counter device not supporting it.
+> >  - Added an error case returning -EINVAL when action edge is performed in
+> >    qdec mode.
+> >  - Removed no need to explicity setting ops to NULL from static struct as
+> >    it is the default value.
+> >  - Changed confusing code by using snprintf for the sake of clarity.
+> >  - Changed code to use ARRAY_SIZE so that future reviewers will know
+> >    that num_counts matches what's in the atmel_tc_count array without
+> >    having to check so themselves.
+> >
+> >  drivers/counter/Kconfig             |  11 +
+> >  drivers/counter/Makefile            |   1 +
+> >  drivers/counter/atmel-tcb-capture.c | 394 ++++++++++++++++++++++++++++
+> >  3 files changed, 406 insertions(+)
+> >  create mode 100644 drivers/counter/atmel-tcb-capture.c
+> >
+> > diff --git a/drivers/counter/Kconfig b/drivers/counter/Kconfig
+> > index c80fa76bb531..c50d7453ec33 100644
+> > --- a/drivers/counter/Kconfig
+> > +++ b/drivers/counter/Kconfig
+> > @@ -70,4 +70,15 @@ config FTM_QUADDEC
+> >  	  To compile this driver as a module, choose M here: the
+> >  	  module will be called ftm-quaddec.
+> >
+> > +config ATMEL_TCB_CAPTURE
+> > +	tristate "Atmel Timer Counter Capture driver"
+> > +	depends on HAS_IOMEM && OF
+> > +	select REGMAP_MMIO
+> > +	help
+> > +	  Select this option to enable the Atmel Timer Counter Block
+> > +	  capture driver.
+> > +
+> > +	  To compile this driver as a module, choose M here: the
+> > +	  module will be called atmel-tcb-capture.
+> > +
+> >  endif # COUNTER
+> > diff --git a/drivers/counter/Makefile b/drivers/counter/Makefile
+> > index 55142d1f4c43..70c5b8924588 100644
+> > --- a/drivers/counter/Makefile
+> > +++ b/drivers/counter/Makefile
+> > @@ -10,3 +10,4 @@ obj-$(CONFIG_STM32_TIMER_CNT)	+= stm32-timer-cnt.o
+> >  obj-$(CONFIG_STM32_LPTIMER_CNT)	+= stm32-lptimer-cnt.o
+> >  obj-$(CONFIG_TI_EQEP)		+= ti-eqep.o
+> >  obj-$(CONFIG_FTM_QUADDEC)	+= ftm-quaddec.o
+> > +obj-$(CONFIG_ATMEL_TCB_CAPTURE)	+= atmel-tcb-capture.o
+> > diff --git a/drivers/counter/atmel-tcb-capture.c b/drivers/counter/atmel-tcb-capture.c
+> > new file mode 100644
+> > index 000000000000..4f2b3d60584f
+> > --- /dev/null
+> > +++ b/drivers/counter/atmel-tcb-capture.c
+> > @@ -0,0 +1,394 @@
+> > +// SPDX-License-Identifier: GPL-2.0-only
+> > +/**
+> > + * Copyright (C) 2020 Atmel
+> > + *
+> > + * Author: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > + *
+>
+> Nitpick. Blank line doesn't add anything :)
+>
 
-On 25. 02. 20 10:00, Michal Simek wrote:
-> dtbs_check is showing warning around GIC compatible property as
-> interrupt-controller@f9010000: compatible: ['arm,gic-400', 'arm,cortex-=
-a15-gic']
-> is not valid under any of the given schemas
->=20
-> Similar change has been done also by commit 5400cdc1410b
-> ("ARM: dts: sunxi: Fix GIC compatible")
->=20
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
->=20
->  arch/arm64/boot/dts/xilinx/zynqmp.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi b/arch/arm64/boot/d=
-ts/xilinx/zynqmp.dtsi
-> index 1ebb540624de..cde6025b7e24 100644
-> --- a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
-> +++ b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
-> @@ -233,7 +233,7 @@ amba_apu: amba-apu@0 {
->  		ranges =3D <0 0 0 0 0xffffffff>;
-> =20
->  		gic: interrupt-controller@f9010000 {
-> -			compatible =3D "arm,gic-400", "arm,cortex-a15-gic";
-> +			compatible =3D "arm,gic-400";
->  			#interrupt-cells =3D <3>;
->  			reg =3D <0x0 0xf9010000 0x10000>,
->  			      <0x0 0xf9020000 0x20000>,
->=20
+Fixed, thanks.
 
-Applied.
-M
+> > + */
+> > +#include <linux/clk.h>
+> > +#include <linux/counter.h>
+> > +#include <linux/mfd/syscon.h>
+> > +#include <linux/module.h>
+> > +#include <linux/mutex.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_device.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/regmap.h>
+> > +#include <soc/at91/atmel_tcb.h>
+> > +
+> > +#define ATMEL_TC_CMR_MASK	(ATMEL_TC_LDRA_RISING | ATMEL_TC_LDRB_FALLING | \
+> > +				 ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_LDBDIS | \
+> > +				 ATMEL_TC_LDBSTOP)
+> > +
+> > +#define ATMEL_TC_QDEN			BIT(8)
+> > +#define ATMEL_TC_POSEN			BIT(9)
+> > +
+> > +struct atmel_tc_data {
+> > +	const struct atmel_tcb_config *tc_cfg;
+> > +	struct counter_device counter;
+> > +	struct regmap *regmap;
+> > +	int qdec_mode;
+> > +	int num_channels;
+> > +	int channel[2];
+> > +	bool trig_inverted;
+> > +};
+> > +
+> > +enum atmel_tc_count_function {
+> > +	ATMEL_TC_FUNCTION_INCREASE,
+> > +	ATMEL_TC_FUNCTION_QUADRATURE,
+> > +};
+> > +
+> > +static enum counter_count_function atmel_tc_count_functions[] = {
+> > +	[ATMEL_TC_FUNCTION_INCREASE] = COUNTER_COUNT_FUNCTION_INCREASE,
+> > +	[ATMEL_TC_FUNCTION_QUADRATURE] = COUNTER_COUNT_FUNCTION_QUADRATURE_X4,
+> > +};
+> > +
+> > +enum atmel_tc_synapse_action {
+> > +	ATMEL_TC_SYNAPSE_ACTION_NONE = 0,
+> > +	ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE,
+> > +	ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE,
+> > +	ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE
+> > +};
+> > +
+> > +static enum counter_synapse_action atmel_tc_synapse_actions[] = {
+> > +	[ATMEL_TC_SYNAPSE_ACTION_NONE] = COUNTER_SYNAPSE_ACTION_NONE,
+> > +	[ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE] = COUNTER_SYNAPSE_ACTION_RISING_EDGE,
+> > +	[ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE] = COUNTER_SYNAPSE_ACTION_FALLING_EDGE,
+> > +	[ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE] = COUNTER_SYNAPSE_ACTION_BOTH_EDGES,
+> > +};
+> > +
+> > +static struct counter_signal atmel_tc_count_signals[] = {
+> > +	{
+> > +		.id = 0,
+> > +		.name = "Channel A",
+> > +	},
+> > +	{
+> > +		.id = 1,
+> > +		.name = "Channel B",
+> > +	}
+> > +};
+> > +
+> > +static struct counter_synapse atmel_tc_count_synapses[] = {
+> > +	{
+> > +		.actions_list = atmel_tc_synapse_actions,
+> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
+> > +		.signal = &atmel_tc_count_signals[0]
+> > +	},
+> > +	{
+> > +		.actions_list = atmel_tc_synapse_actions,
+> > +		.num_actions = ARRAY_SIZE(atmel_tc_synapse_actions),
+> > +		.signal = &atmel_tc_count_signals[1]
+> > +	}
+> > +};
+> > +
+> > +static int atmel_tc_count_function_get(struct counter_device *counter,
+> > +				       struct counter_count *count,
+> > +				       size_t *function)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +
+> > +	if (priv->qdec_mode)
+> > +		*function = ATMEL_TC_FUNCTION_QUADRATURE;
+> > +	else
+> > +		*function = ATMEL_TC_FUNCTION_INCREASE;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int atmel_tc_count_function_set(struct counter_device *counter,
+> > +				       struct counter_count *count,
+> > +				       size_t function)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +	u32 bmr, cmr;
+> > +
+> > +	regmap_read(priv->regmap, ATMEL_TC_BMR, &bmr);
+> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
+> > +
+> > +	/* Set capture mode */
+> > +	cmr &= ~ATMEL_TC_WAVE;
+> > +
+> > +	switch (function) {
+> > +	case ATMEL_TC_FUNCTION_INCREASE:
+> > +		priv->qdec_mode = 0;
+> > +		/* Set highest rate based on whether soc has gclk or not */
+> > +		bmr &= ~(ATMEL_TC_QDEN | ATMEL_TC_POSEN);
+> > +		if (priv->tc_cfg->has_gclk)
+> > +			cmr |= ATMEL_TC_TIMER_CLOCK2;
+> > +		else
+> > +			cmr |= ATMEL_TC_TIMER_CLOCK1;
+> > +		/* Setup the period capture mode */
+> > +		cmr |=  ATMEL_TC_CMR_MASK;
+> > +		cmr &= ~(ATMEL_TC_ABETRG | ATMEL_TC_XC0);
+> > +		break;
+> > +	case ATMEL_TC_FUNCTION_QUADRATURE:
+> > +		if (!priv->tc_cfg->has_qdec)
+> > +			return -EINVAL;
+> > +		/* In QDEC mode settings both channels 0 and 1 are required */
+> > +		if (priv->num_channels < 2 || priv->channel[0] != 0 ||
+> > +		    priv->channel[1] != 1) {
+> > +			pr_err("Invalid channels number or id for quadrature mode\n");
+> > +			return -EINVAL;
+> > +		}
+> > +		priv->qdec_mode = 1;
+> > +		bmr |= ATMEL_TC_QDEN | ATMEL_TC_POSEN;
+> > +		cmr |= ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_ABETRG | ATMEL_TC_XC0;
+> > +		break;
+> > +	}
+> > +
+> > +	regmap_write(priv->regmap, ATMEL_TC_BMR, bmr);
+> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), cmr);
+> > +
+> > +	/* Enable clock and trigger counter */
+> > +	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CCR),
+> > +		     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
+> > +
+> > +	if (priv->qdec_mode) {
+> > +		regmap_write(priv->regmap,
+> > +			     ATMEL_TC_REG(priv->channel[1], CMR), cmr);
+> > +		regmap_write(priv->regmap,
+> > +			     ATMEL_TC_REG(priv->channel[1], CCR),
+> > +			     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int atmel_tc_count_signal_read(struct counter_device *counter,
+> > +				      struct counter_signal *signal,
+> > +				      enum counter_signal_value *val)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +	bool sigstatus;
+> > +	u32 sr;
+> > +
+> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], SR), &sr);
+> > +
+> > +	if (priv->trig_inverted)
+> > +		sigstatus = (sr & ATMEL_TC_MTIOB);
+> > +	else
+> > +		sigstatus = (sr & ATMEL_TC_MTIOA);
+> > +
+> > +	*val = sigstatus ? COUNTER_SIGNAL_HIGH : COUNTER_SIGNAL_LOW;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int atmel_tc_count_action_get(struct counter_device *counter,
+> > +				     struct counter_count *count,
+> > +				     struct counter_synapse *synapse,
+> > +				     size_t *action)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +	u32 cmr;
+> > +
+> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
+> > +
+> > +	*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
+> > +
+> > +	if (cmr & ATMEL_TC_ETRGEDG_NONE)
+> > +		*action = ATMEL_TC_SYNAPSE_ACTION_NONE;
+> > +	else if (cmr & ATMEL_TC_ETRGEDG_RISING)
+> > +		*action = ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE;
+> > +	else if (cmr & ATMEL_TC_ETRGEDG_FALLING)
+> > +		*action = ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE;
+> > +	else if (cmr & ATMEL_TC_ETRGEDG_BOTH)
+> > +		*action = ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int atmel_tc_count_action_set(struct counter_device *counter,
+> > +				     struct counter_count *count,
+> > +				     struct counter_synapse *synapse,
+> > +				     size_t action)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +	u32 edge = ATMEL_TC_ETRGEDG_NONE;
+> > +
+> > +	/* QDEC mode is rising edge only */
+> > +	if (priv->qdec_mode)
+> > +		return -EINVAL;
+> > +
+> > +	switch (action) {
+> > +	case ATMEL_TC_SYNAPSE_ACTION_NONE:
+> > +		edge = ATMEL_TC_ETRGEDG_NONE;
+> > +		break;
+> > +	case ATMEL_TC_SYNAPSE_ACTION_RISING_EDGE:
+> > +		edge = ATMEL_TC_ETRGEDG_RISING;
+> > +		break;
+> > +	case ATMEL_TC_SYNAPSE_ACTION_FALLING_EDGE:
+> > +		edge = ATMEL_TC_ETRGEDG_FALLING;
+> > +		break;
+> > +	case ATMEL_TC_SYNAPSE_ACTION_BOTH_EDGE:
+> > +		edge = ATMEL_TC_ETRGEDG_BOTH;
+> > +		break;
+> > +	}
+> > +
+> > +	return regmap_write_bits(priv->regmap,
+> > +				ATMEL_TC_REG(priv->channel[0], CMR),
+> > +				ATMEL_TC_ETRGEDG, edge);
+> > +}
+> > +
+> > +static int atmel_tc_count_read(struct counter_device *counter,
+> > +			       struct counter_count *count,
+> > +			       unsigned long *val)
+> > +{
+> > +	struct atmel_tc_data *const priv = counter->priv;
+> > +	u32 cnt;
+> > +
+> > +	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CV), &cnt);
+> > +	*val = cnt;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static struct counter_count atmel_tc_counts[] = {
+> > +	{
+> > +		.id = 0,
+> > +		.name = "Timer Counter",
+> > +		.functions_list = atmel_tc_count_functions,
+> > +		.num_functions = ARRAY_SIZE(atmel_tc_count_functions),
+> > +		.synapses = atmel_tc_count_synapses,
+> > +		.num_synapses = ARRAY_SIZE(atmel_tc_count_synapses),
+> > +	},
+> > +};
+> > +
+> > +static struct counter_ops atmel_tc_ops = {
+> > +	.signal_read  = atmel_tc_count_signal_read,
+> > +	.count_read   = atmel_tc_count_read,
+> > +	.function_get = atmel_tc_count_function_get,
+> > +	.function_set = atmel_tc_count_function_set,
+> > +	.action_get   = atmel_tc_count_action_get,
+> > +	.action_set   = atmel_tc_count_action_set
+> > +};
+> > +
+> > +static const struct atmel_tcb_config tcb_rm9200_config = {
+> > +		.counter_width = 16,
+> > +};
+> > +
+> > +static const struct atmel_tcb_config tcb_sam9x5_config = {
+> > +		.counter_width = 32,
+> > +};
+> > +
+> > +static const struct atmel_tcb_config tcb_sama5d2_config = {
+> > +		.counter_width = 32,
+> > +		.has_gclk = true,
+> > +		.has_qdec = true,
+> > +};
+> > +
+> > +static const struct atmel_tcb_config tcb_sama5d3_config = {
+> > +		.counter_width = 32,
+> > +		.has_qdec = true,
+> > +};
+> > +
+> > +static const struct of_device_id atmel_tc_of_match[] = {
+> > +	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
+> > +	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
+> > +	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
+> > +	{ .compatible = "atmel,sama5d3-tcb", .data = &tcb_sama5d3_config, },
+> > +	{ /* sentinel */ }
+> > +};
+> > +
+> > +static int atmel_tc_probe(struct platform_device *pdev)
+> > +{
+> > +	struct device_node *np = pdev->dev.of_node;
+> > +	const struct atmel_tcb_config *tcb_config;
+> > +	const struct of_device_id *match;
+> > +	struct atmel_tc_data *priv;
+> > +	char clk_name[7];
+> > +	struct regmap *regmap;
+> > +	struct clk *clk[3];
+> > +	int channel;
+> > +	int ret, i;
+> > +
+> > +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> > +	if (!priv)
+> > +		return -ENOMEM;
+> > +
+> > +	platform_set_drvdata(pdev, priv);
+> > +
+> > +	match = of_match_node(atmel_tc_of_match, np->parent);
+> > +	tcb_config = match->data;
+> > +	if (!tcb_config) {
+> > +		dev_err(&pdev->dev, "No matching parent node found\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	regmap = syscon_node_to_regmap(np->parent);
+> > +	if (IS_ERR(priv->regmap))
+> > +		return PTR_ERR(priv->regmap);
+> > +
+> > +	/* max. channels number is 2 when in QDEC mode */
+> > +	priv->num_channels = of_property_count_u32_elems(np, "reg");
+> > +	if (priv->num_channels < 0) {
+> > +		dev_err(&pdev->dev, "Invalid or missing channel\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	/* Register channels and initialize clocks */
+> > +	for (i = 0; i < priv->num_channels; i++) {
+> > +		ret = of_property_read_u32_index(np, "reg", i, &channel);
+> > +		if (ret < 0 || channel > 2)
+> > +			return -ENODEV;
+> > +
+> > +		priv->channel[i] = channel;
+> > +
+> > +		snprintf(clk_name, sizeof(clk_name), "t%d_clk", channel);
+> > +
+> > +		clk[i] = of_clk_get_by_name(np->parent, clk_name);
+> > +		if (IS_ERR(clk[i])) {
+> > +			/* Fallback to t0_clk */
+> > +			clk[i] = of_clk_get_by_name(np->parent, "t0_clk");
+> > +			if (IS_ERR(clk[i]))
+> > +				return PTR_ERR(clk[i]);
+> > +		}
+> > +
+> > +		ret = clk_prepare_enable(clk[i]);
+> > +		if (ret)
+> > +			return ret;
+> If you see the below, you'll note I mention this not being cleaned up on
+> remove.
+>
+> I would suggest using devm_add_action_or_reset to automate the cleanup
+> (and let you get rid of the error path below).
+>
 
---=20
-Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
-w: www.monstr.eu p: +42-0-721842854
-Maintainer of Linux kernel - Xilinx Microblaze
-Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
-U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
+Alright, thanks for the tip.
 
+> > +
+> > +		dev_info(&pdev->dev,
+> > +			 "Initialized capture mode on channel %d\n",
+> > +			 channel);
+>
+> Isn't this apparent from the resulting counter being created?  I'd argue
+> that it is therefore noise in the kernel log and demote it to dev_dbg
+>
 
+Yes it is, thanks.
 
---h2oqIBgbjxjxvvrpHQfFPOMWLsTp5ZpTk--
+> > +	}
+> > +
+> > +	priv->tc_cfg = tcb_config;
+> > +	priv->regmap = regmap;
+> > +	priv->counter.name = dev_name(&pdev->dev);
+> > +	priv->counter.parent = &pdev->dev;
+> > +	priv->counter.ops = &atmel_tc_ops;
+> > +	priv->counter.num_counts = ARRAY_SIZE(atmel_tc_counts);
+> > +	priv->counter.counts = atmel_tc_counts;
+> > +	priv->counter.num_signals = ARRAY_SIZE(atmel_tc_count_signals);
+> > +	priv->counter.signals = atmel_tc_count_signals;
+> > +	priv->counter.priv = priv;
+> > +
+> > +	ret = devm_counter_register(&pdev->dev, &priv->counter);
+>
+> > +	if (ret < 0) {
+> > +		for (i = 0; i < priv->num_channels; i++)
+> > +			clk_disable_unprepare(clk[i]);
+>
+> What does this in the remove path?
+>
+> I initially thought you'll have a race here because of mixing managed
+> and unmanaged cleanup (which will be an issue if you do add this to remove
+> path) but then noticed there was no remove.
+>
 
---8qCppseVFnBYesUMXQf2YqqxPjyp7Gte2
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
+Fixed.
 
------BEGIN PGP SIGNATURE-----
+>
+> > +		return ret;
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct of_device_id atmel_tc_dt_ids[] = {
+> > +	{ .compatible = "atmel,tcb-capture", },
+> > +	{ /* sentinel */ },
+> > +};
+> > +MODULE_DEVICE_TABLE(of, atmel_tc_dt_ids);
+> > +
+> > +static struct platform_driver atmel_tc_driver = {
+> > +	.probe = atmel_tc_probe,
+> > +	.driver = {
+> > +		.name = "atmel-tcb-capture",
+> > +		.of_match_table = atmel_tc_dt_ids,
+> > +	},
+> > +};
+> > +module_platform_driver(atmel_tc_driver);
+> > +
+> > +MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
+> > +MODULE_DESCRIPTION("Atmel TCB Capture driver");
+> > +MODULE_LICENSE("GPL v2");
+> > --
+> > 2.25.0
+> >
+>
 
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXpbIWAAKCRDKSWXLKUoM
-IcayAJ9i7JMNA/SZA/EidydkgHNtboFuUQCffXbVgvIAnJMaani0OuBFqEZ/M4s=
-=0Pe7
------END PGP SIGNATURE-----
-
---8qCppseVFnBYesUMXQf2YqqxPjyp7Gte2--
-
-
---===============5685441384528062156==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Kamel Bouhara, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5685441384528062156==--
-
