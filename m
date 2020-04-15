@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A44FC1A9CD8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:39:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B58ED1A9CF2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:42:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fiI0p06aGvqEzMYDBaVwGI6t6QiJsr7yT/nO6syZrj4=; b=RnAlJRcBNSRtM6
-	LTji2+70t9TgdfWmGr+giBsRsQ2vHPVlY2efXlLKgozCabcud48x9L2avggVrglTedfD2suIwVwpN
-	qckNFFlPC0u+t1GkxfxOow1S1vKutbJalZOC3UZZ8D+9ZpNJ5anrSgFZV0hglqODVlnEFbB4sVPbq
-	ym+hwFYioj1/UdxqemBeS/h8eZkF43EA2rM4Izt7aoPGSQZJE3K82dFQiqUc0/ToWBPimslgj+KHJ
-	vRy9tOZfvmlqf8Euk3bpqqO94gccstSbIYo8yXZX5/doPzpd6Zx/Cc6H7Z5+x6yrXF//IyrzVaI/g
-	Z1tjFuBOyzAkeg04FZ+w==;
+	List-Owner; bh=9/ddKixM4RwMLQgAND/fbqqzH+rbarC7iR45PloKjTg=; b=a7gE3IyE0ZwRTX
+	hUbl3c6PfLNSndggYrWtM2RRfpdwFjuv54EUkhxQezkCY8cwq8I0UyFsvCvDRmWuQDUfMWV8hrEam
+	BG8wU/kXUrecqlkhwA+Hs8iBp1RopAjamgE0T8QKe3pwqH8svM+1Kmu1mxjBdkCFpQKMa5O1ihmE0
+	wbAoCRtm+5e3v7pXbPM7nGXG/6p/V26tisWxhHHcafA0o/xClMfinpjj5yU5IQEOEGl2mdhDgAzPW
+	b/HpXuVxxEy8V1NNhIHKjXqo3WY1A3dzBf0N+MXgXr+5JUmLnqpTUmA+TuiO/El6d7lbE4zIx7Wub
+	pHTTy2AwcvJGWzMf+8Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgOT-000499-1O; Wed, 15 Apr 2020 11:39:49 +0000
+	id 1jOgRK-0007qJ-4Z; Wed, 15 Apr 2020 11:42:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgNL-00035O-GT
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:38:41 +0000
-Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com
- [209.85.167.53])
+ id 1jOgR6-0007pB-71
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:33 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 13E3820768
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 11:38:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2A4C4214D8;
+ Wed, 15 Apr 2020 11:42:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950718;
- bh=R43hO9Q3If9QrtnZ5K9TcR/a0ZvrCDhZjgGwgzT0xFE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=E5odArf/RDc2lUAWXYieDSICfp9q8nBXEpH8oGXMbl511ftW6vzpHvHktcBE2iKiC
- CKixYDKgMb9QlA1aORiC5Eu+aRqxfTt+PKHC5/btAAOBgUVlxZbVPCpfvrqokmXOdZ
- CbKDC6mtkLWOW1EL3z3pC7fdPh/RNVXyWZm30v4k=
-Received: by mail-lf1-f53.google.com with SMTP id x23so2381444lfq.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 04:38:37 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZ1RsWdx3t0pAT/Co0qwT7dLhTIqsNeZmsGid+nz86Nn4YpLpPy
- lWSuSq/58MA3yasQ8qeFld0lsD8+Xw/Gpprwk6s=
-X-Google-Smtp-Source: APiQypI+VI3dpF2YbI7yVr/aHwnSBVAysHwaY+SScdUs4Jyyh+GbDgIy/bRBbEhJiawYLq4RWaZKVJOwvX1RTOgkOWY=
-X-Received: by 2002:a19:ae16:: with SMTP id f22mr2914229lfc.2.1586950716265;
- Wed, 15 Apr 2020 04:38:36 -0700 (PDT)
+ s=default; t=1586950951;
+ bh=cBk92c6nBULUxUTVafmDFD/ihP1iNDRokzEmXGn7xkk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=AaGBAvTlX+qhoBDx+8hDQBJCQH2z95hGEJGiQpDcS1aRQfjWK4rgJAkuD5v/etAv+
+ TER0iFRAvrQJBs0Zbzh7o10V3t1jJMV8B54ekZRpJQmxwIBFfkALuO4Gw8Bmpgu27D
+ NTV1dC0XP7wXNv1g7lX7RAtXFHWZvlteO0fZUsSE=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.5 004/106] clk: at91: usb: continue if
+ clk_hw_round_rate() return zero
+Date: Wed, 15 Apr 2020 07:40:44 -0400
+Message-Id: <20200415114226.13103-4-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
+References: <20200415114226.13103-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <cover.1586939718.git.hns@goldelico.com>
- <004611c9660943759b635a87484932869927cf74.1586939718.git.hns@goldelico.com>
-In-Reply-To: <004611c9660943759b635a87484932869927cf74.1586939718.git.hns@goldelico.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 15 Apr 2020 13:38:25 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPdEkWniffmGZmf=S6E5UxWTdVGXnycqTFftXwo_45rz3w@mail.gmail.com>
-Message-ID: <CAJKOXPdEkWniffmGZmf=S6E5UxWTdVGXnycqTFftXwo_45rz3w@mail.gmail.com>
-Subject: Re: [PATCH v6 07/12] ARM: DTS: omap5: add sgx gpu child node
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_043839_644386_FF0258B3 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20200415_044232_286907_09F19DA6 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,37 +80,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-omap@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- letux-kernel@openphoenux.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
- kernel@pyra-handheld.com
+Cc: Stephen Boyd <sboyd@kernel.org>, Sasha Levin <sashal@kernel.org>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 at 10:36, H. Nikolaus Schaller <hns@goldelico.com> wrote:
->
-> and add interrupt.
->
-> Tested-by: H. Nikolaus Schaller <hns@goldelico.com> # Pyra-Handheld.
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Don't add your own Tested-by tags. These are implied by authorship,
-otherwise all patches people make should have such tag.
+[ Upstream commit b0ecf1c6c6e82da4847900fad0272abfd014666d ]
 
-Best regards,
-Krzysztof
+clk_hw_round_rate() may call round rate function of its parents. In case
+of SAM9X60 two of USB parrents are PLLA and UPLL. These clocks are
+controlled by clk-sam9x60-pll.c driver. The round rate function for this
+driver is sam9x60_pll_round_rate() which call in turn
+sam9x60_pll_get_best_div_mul(). In case the requested rate is not in the
+proper range (rate < characteristics->output[0].min &&
+rate > characteristics->output[0].max) the sam9x60_pll_round_rate() will
+return a negative number to its caller (called by
+clk_core_round_rate_nolock()). clk_hw_round_rate() will return zero in
+case a negative number is returned by clk_core_round_rate_nolock(). With
+this, the USB clock will continue its rate computation even caller of
+clk_hw_round_rate() returned an error. With this, the USB clock on SAM9X60
+may not chose the best parent. I detected this after a suspend/resume
+cycle on SAM9X60.
+
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+Link: https://lkml.kernel.org/r/1579261009-4573-2-git-send-email-claudiu.beznea@microchip.com
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clk/at91/clk-usb.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/clk/at91/clk-usb.c b/drivers/clk/at91/clk-usb.c
+index 22aede42a3362..3c0bd7e51b09d 100644
+--- a/drivers/clk/at91/clk-usb.c
++++ b/drivers/clk/at91/clk-usb.c
+@@ -75,6 +75,9 @@ static int at91sam9x5_clk_usb_determine_rate(struct clk_hw *hw,
+ 			tmp_parent_rate = req->rate * div;
+ 			tmp_parent_rate = clk_hw_round_rate(parent,
+ 							   tmp_parent_rate);
++			if (!tmp_parent_rate)
++				continue;
++
+ 			tmp_rate = DIV_ROUND_CLOSEST(tmp_parent_rate, div);
+ 			if (tmp_rate < req->rate)
+ 				tmp_diff = req->rate - tmp_rate;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
