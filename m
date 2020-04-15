@@ -2,51 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B9A61AA33E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A61E1AA3AA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:16:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=14RLhG0thDd9FTrSWlVk+hzyOzhDVxOdN2OCypmphbQ=; b=rM89NoHaLu8q+L99F8vXkAc9d
-	eojUYsn1McIeAIU+1bmGfl9uawLXblWnwVycLHdcJ2Kgu0lOI1t5uYMzbqPNdK9cV4I9iv4CvUAht
-	9vrhDSIT8427oYFvVrV6CKaRRWLMmPWEIaNcNvlsRiI/q10pP/WftF9kjOfWESCRHbMK/c2LxRViN
-	YRfkep/1zHoIL52O+rzW7DoWuShOj+yHefqVLLIqZfGH9w+NvyPvhx4dQAGP2Wp68yDc8j41dolvl
-	cn7uOr0aj4dRJVdITdFW7uRJLJLfCZbvP6BMEb7PRFKcqNSJd/DLfzSk1uGhGYH3uLrZ2OoL43i4i
-	ahdM79vMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dxe0lmkgveTxd0hD8f896fZgjT9QShcc2etx71elkPU=; b=j/UUlM1W5UIZgq
+	Hv+zbJIrjTfAyHYzbNh5gcKQa6lA57XlFCZx1W7KGZyJN0dc+C3/qL1kaiNLdOwZuxycoyR+l8x1G
+	L7JQe9Arn7JdJ7d58ZHEgvHWB+WvTzl67k/hZSn6qXugxROPSN/Yoj8nb84TTo0zQGXFUiXgse7QY
+	RtLcBvPWuCLsRK4PHHJ6lr41OF0AgsK36MrGpiaBoDzdektlOQNzBFBFSR84EwyWS6D5GVphmKA0O
+	qiaZqK00NVt4iVJ6O6bGkhWrFVJQTj/rAodnt4pqdKQBMTD7/cfxKT+Cog7L8ihVpmJZxgnmgc+Bs
+	CKTn7e+wqiU3fnJpVAFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhoz-00007j-Qg; Wed, 15 Apr 2020 13:11:17 +0000
+	id 1jOhu9-0006nk-J0; Wed, 15 Apr 2020 13:16:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhon-0008PV-8U
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:11:06 +0000
+ id 1jOhts-0006lt-Cv
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:16:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CA731063;
- Wed, 15 Apr 2020 06:11:04 -0700 (PDT)
-Received: from [10.37.12.1] (unknown [10.37.12.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 21F3B3F6C4;
- Wed, 15 Apr 2020 06:11:01 -0700 (PDT)
-Subject: Re: [PATCH 3/8] arm64: cpufeature: Add CPU capability for AArch32 EL1
- support
-To: will@kernel.org
-References: <20200414213114.2378-1-will@kernel.org>
- <20200414213114.2378-4-will@kernel.org>
- <a83a19eb-9051-0a43-0bac-353f67d93d79@arm.com>
- <20200415101444.GC12621@willie-the-truck>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <7978a5a9-463e-5e96-7ea9-d8472b7b051c@arm.com>
-Date: Wed, 15 Apr 2020 14:15:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 016531063;
+ Wed, 15 Apr 2020 06:16:18 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D75C3F6C4;
+ Wed, 15 Apr 2020 06:16:15 -0700 (PDT)
+Date: Wed, 15 Apr 2020 14:16:12 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Etienne Carriere <etienne.carriere@linaro.org>
+Subject: Re: [PATCH V5 2/2] firmware: arm_scmi: add smc/hvc transport
+Message-ID: <20200415131612.GC31928@bogus>
+References: <1583673879-20714-3-git-send-email-peng.fan@nxp.com>
+ <5e96e916.1c69fb81.14365.050b@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <20200415101444.GC12621@willie-the-truck>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <5e96e916.1c69fb81.14365.050b@mx.google.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_061105_351887_D0819347 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20200415_061620_490880_78B41CC2 
+X-CRM114-Status: GOOD (  20.16  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,36 +63,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, saiprakash.ranjan@codeaurora.org,
- anshuman.khandual@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
- dianders@chromium.org, catalin.marinas@arm.com, kernel-team@android.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, peng.fan@nxp.com, f.fainelli@gmail.com,
+ viresh.kumar@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-imx@nxp.com, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/15/2020 11:14 AM, Will Deacon wrote:
-> On Wed, Apr 15, 2020 at 11:13:54AM +0100, Suzuki K Poulose wrote:
->> On 04/14/2020 10:31 PM, Will Deacon wrote:
->>> Although we emit a "SANITY CHECK" warning and taint the kernel if we
->>> detect a CPU mismatch for AArch32 support at EL1, we still online the
->>> CPU with disastrous consequences for any running 32-bit VMs.
->>>
->>> Introduce a capability for AArch32 support at EL1 so that late onlining
->>> of incompatible CPUs is forbidden.
->>>
->>> Signed-off-by: Will Deacon <will@kernel.org>
->>
->> One of the other important missing sanity check for KVM is the VMID width
->> check. I will code something up.
-> 
-> Cheers! Do we handle things like the IPA size already?
+On Wed, Apr 15, 2020 at 12:58:58PM +0200, Etienne Carriere wrote:
+> Hello Peng,
+>
+> I  have 2 comments on this change. The main is about using
+> arm_smccc_1_1_invoke(). Below some details and I added comments
+> inside you patch. The second of on SMC return value, see my
+> comment in your patch below.
+>
+> About arm_smccc_1_1_invoke(), this functon currently relies on PSCI
+> driver to define a conduit method but SCMI agent driver does not
+> mandate CONFIG_PSCI to be enable.
+>
 
-Good point. No, we don't. I will include this too.
+Yes this was discussed and it is done so deliberately. I have added the
+build dependency when I merged the patch. There's no dependency on
+CONFIG_PSCI.
 
-Cheers
-Suzuki
+> Could you add an optional "method" property for "arm,scmi-smc" for platforms
+> willing to not rely on PSCI Linux driver? If no property "method" is
+> defined in the FDT, invocation relies on arm_smccc_1_1_invoke().
+>
+
+Nope, we don't want mixture here. Why is the system not using PSCI/SMCCC ?
+
+> "method" naming mimics what is done in the OP-TEE driver (drivers/tee/optee/).
+> Here is a proposal for the documenting property "method" in
+> Documentation/arm,scmi.txt:
+>
+> - method : "smc" or "hvc"
+>             Optional property defining the conduit method for to be used
+> 	    for invoking the SCMI server in secure world.
+> 	    "smc" states instruction SMC #0 is used whereas "hvc" states
+> 	    instruction HVC #0 is used.
+>
+>
+
+It was rejected, you can try your luck with OPTEE :)
+We will just use the system conduit here with SCMI for SMC/HVC transport.
+Details in previous version of the patch.
+
+[...]
+
+> > +struct scmi_smc {
+> > +	struct scmi_chan_info *cinfo;
+> > +	struct scmi_shared_mem __iomem *shmem;
+> > +	u32 func_id;
+> > +};
+>
+> Add here a field for the secure world invocation function handler:
+>
+> 	scmi_arm_smccc_invoke_fn *invoke_fn;
+>
+
+As stated not needed if we use  arm_smccc_1_1_invoke()
+
+[...]
+
+>
+> The SCMI server is likely not to return a errno compliant value.
+>
+> SMCCC specification states that unsupported function IDs should return signed
+> extended -1. I suggest to change the return above with:
+>
+> 	return res.a0 == ~0 ? -EINVAL : 0;
+>
+
+I need to check that.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
