@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 216E51AB193
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 21:27:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D80F1AB21A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 21:55:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yd+0IepDLUB/jV/uZ3mLuiKfHm3CuZJgNgBBvzuV7Fw=; b=J8lbVoBpsgrs6Y
-	MHEMh/PhRga8CRcAwBHZziw72agqWzCmszwvaQVyfD/BdZsYiB1c/9HOMpFZqunsXeRk0uTQPxJbU
-	ZtgbGj7qNvHX+XW/Qh8gR1kTJTVs2MCgfn2+fjkpq9wFzFFJI+xyac0aI4o5nx/iDio/uDMAt+Vf9
-	NGD8RLJWNkXwpYT4P8npNN2kOeE2/3s/KYHf3C9qp5J362GMgCUs2ACwfHmwAIKF9tDxDWnW8ya9D
-	W7q6vMX6CCcp94Ocq5H4rmAncw6UZPWfb9TAv0+Br2iCPsb8bd1x7E4f/+dJkaqrZvdhha8yAs70c
-	iWSit50IoJ6JotGev/AA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6kyrGQcxpgOxv8VPrEvzgyAiLhSBzyNH1wE9qQzSj+4=; b=jfXbiL3qw0qfLs
+	JiVriJ4DvD+L4rd573dBwmn6GvC7NGNxdsExsdo6zZ872dhRUsRAUbMiUBIP0ytg5P+q2wV8aH+X6
+	n91GMHfZRa793DD3y+lo700rR7VKt+HMl4fyum1w34LLY8FaAHtNIGPoNebVTVUUIuWf0BDMHRSth
+	Rf/qFT0+Sr4R7MilHi0eJgPq8aB7ihauSRYPeBDD7WkIN7d66jSUT2ZJu8+A2tfeLsPqXOWbRpTl4
+	n9D85l3KtIk5AVsyH65o8eBPRemv+aaps1YLXy329nEowoGzO69/nFupfDJ6YuODPR5chVW095rcx
+	b6pDf0s8GWFpAJ5OpGHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOnhB-0006mp-R3; Wed, 15 Apr 2020 19:27:37 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jOo87-0001gq-Ix; Wed, 15 Apr 2020 19:55:27 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOnh4-0006lx-Ef
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 19:27:31 +0000
-Received: by mail-lj1-x241.google.com with SMTP id u15so5035144ljd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 12:27:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=47rQ3+FA2D3LJs/1g842b1siYUlXkXN6VqdcwjogJq4=;
- b=Wo1kcmGuq3Ni6b11dpMKa6BWqZWI7iFPQlOO6XuZ3kg2OCLqLnmtNfu/sPcqyQWleQ
- 4kwKK+VMgYzFYdxJ4QOKV1lSoP5aiyMIxTt1Z4+BHUQSigz2EvLFOQ236TFdusZts2ds
- q5Lvj/WIu4fTVBFN9XqTbFE7NFuT0ZH8UFj+g2N4AqQpg7WE2r2PubGJJgFxnTUFSmID
- WXmSW3k0PfGfoHcO8D2QISDIfsCoPmKaCbNaWwQf4vfqmqkPHofAM85BoL8eQcsSqdAc
- npOQPuniuxgTHrChKAuUdhvgl3qrCt1b6ukw5j2mIEa3myXxAd7/+N7aeHKUn7xr2pI3
- 1BvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=47rQ3+FA2D3LJs/1g842b1siYUlXkXN6VqdcwjogJq4=;
- b=X6naQNPbtdG9BSLxLbUEdqRgQjMR1PSan7bRduvn8Vuy/rhxjFqEf14Vs16VyT6JqU
- f/aNlPIfJVfASrkjYeS3Hu8ztaipxyRNu1ObI3FmnpL3kMir6DNlefNskiwzoQ7rBEX1
- RDPNgxDqGQRpr+2gYNwUyqiac8h+7GkCWKEmEQy+g+Osu0OCIA60pPRU3Od0KyCjFgoC
- m1ZUdkGQ+xDQ0TFB1ztGPIo/n/LuMyAcZpXbzsN+4YPU6uEcx6sPvKPncaf6grbLsLzo
- MUpuiYzbLUpdE63T67mbAk72YZVs6lIhKic4in/Wf4bya3PRL6MzZAQOH+d8Yd+aqj/N
- H3QA==
-X-Gm-Message-State: AGi0PuYQ3AP7Tm1BK5QQzSjqo3msH2Dj0GZfCtR70WcUlJdJRvhDo8jf
- bGjEhdCPWmSuYsqWHn+Oh3kDHCQ+z5u5oWEpiq4=
-X-Google-Smtp-Source: APiQypJfKLCHWzDvZAs+sC93xTgAqt8ibneXwnMKrWfuDDNeT8PGQvOG6N7qZNWFRwp0sNft7o5NTBLjkEGHEpe+nNI=
-X-Received: by 2002:a2e:9b4a:: with SMTP id o10mr4114274ljj.117.1586978848666; 
- Wed, 15 Apr 2020 12:27:28 -0700 (PDT)
+ id 1jOo7Q-0007Vq-MZ; Wed, 15 Apr 2020 19:54:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1586980484; x=1618516484;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=Hhsd5JtwPM12DYmkDLyIy4E1RXRHsLoMVadetZOBWkA=;
+ b=Nl/y7uxvnn8XS1GrCA/41rfx2xVT3q1EBKGGPw7263MMQtwBy/Ly7hFo
+ VUX6clCduLVzl6Ucr6WWi+filqVgx24FyzRYCKhnio/1hWHMIztYb5Bsx
+ ky27czk+YD1Ln/SDNoUkr3xJe+otVKAUWxM4WbjKGfNh4avUk0Rau40Q3
+ B7Kcpp5A5kF+/ncWlpAdrgLXKRr1Bz2H3R0RXWWGjAa7J4lkuzfQU1eWP
+ BvHB8sV7q7N7OD6cc2H/64nYK/XybHnrWg1jZdj4q0QQCkQ1Ll92Mts/u
+ SM2LmWVlpYC4jocPlt72mkDoeRc2Q4HTqGbMhHdp9zbXzxbpv52yAAPX/ g==;
+IronPort-SDR: rh/w5uV9supeSNP+ZAiZLV1Vvjr3FmuRF2Rc4e78V1Ug4Jip0f0j6Yln+cKECayt6DDkYpdS9h
+ taGxa+WKnViMPY2TwfAfcdDFTQqLydz2G/8Ht9x8j883HSUeEG3okizzG7SwTxeiBsV5hafA1i
+ H4T1L5Egbnl+VwAYV4vuylBRblHqls7+eAtT69u2XEFQNNz9qsBvmwcgmJxadQR5szRNO/8bq1
+ Ta6U9xP+n9uaurVT7XQNB+VMS69WUhxxv+7GytWnEyevYprVB9B3UOa79wdm31ZMTJwelcOd6+
+ abc=
+X-IronPort-AV: E=Sophos;i="5.72,388,1580745600"; d="scan'208";a="136848620"
+Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 16 Apr 2020 03:54:40 +0800
+IronPort-SDR: yksVemu/B0yyyX+oCK7qjAC8Gptgdfi8lAG2r0BnoAzBw/uN1WgnJQQgi4IMphCNQb7Arqf4N1
+ I7LUQTiFIWZKtpaCvxAiQ3tRyFykhrJC+rTe1bd5t7MDel2Ut8a9HddpmmwNLhH6fklkBLWKFE
+ NQezd4wy0O9GV+6G9Jvqj0J7jshwR0dVWhuQjb9Y19VMvYgJE7pStPt6ma519FKPfsjgFF5bUc
+ uN6xY12YBPGeGQgA8LW3CW6+xONMmkYMITmd1pvainowZgkFBW0rSx6gOG5XHUTipAmvG0UPMH
+ Fdme/7CjFAG3gcVoe4B1Kdy1
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+ by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Apr 2020 12:45:08 -0700
+IronPort-SDR: 4zlsxO4RkiT45OqVEJZYxpJPZzqj8CHvYmVLBNY/LOdQ/H1G/eqCmGl6vWjLtcH/tZit8rvf9J
+ 3aFsTlvTIsX7uIXQdsIdo/fQ9/h1tfKL0xL/VLUA3vNjnRRrMxDZaBvmtRYEhOr+bcfj6+MCCz
+ vsLlTP/3jLqHirySbTVKexPEbPGYOsyPp/IxkyeNtxS4lYDy8Q2cZ04nxyld0tycqO98l7YVMa
+ 13g6swKV44qzSYs9xfv8RAswec9tgjPOMdSiHURxJubnXqxlvi0eVTjp9IaQ/mYo3U4DBwhFV/
+ Dt8=
+WDCIronportException: Internal
+Received: from 6hj08h2.ad.shared (HELO jedi-01.hgst.com) ([10.86.55.244])
+ by uls-op-cesaip02.wdc.com with ESMTP; 15 Apr 2020 12:54:40 -0700
+From: Atish Patra <atish.patra@wdc.com>
+To: linux-kernel@vger.kernel.org
+Subject: [v3 PATCH 0/5] Add UEFI support for RISC-V 
+Date: Wed, 15 Apr 2020 12:54:17 -0700
+Message-Id: <20200415195422.19866-1-atish.patra@wdc.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <20200415185941.13956-1-mporter@konsulko.com>
-In-Reply-To: <20200415185941.13956-1-mporter@konsulko.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 15 Apr 2020 16:27:52 -0300
-Message-ID: <CAOMZO5Ct+cpdvfTEvk1PtQpScJM4iyoMFyChbtGromvuAV291w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8mm: specify #sound-dai-cells for SAI nodes
-To: Matt Porter <mporter@konsulko.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_122730_515124_075840D1 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_125444_834207_AA335593 
+X-CRM114-Status: GOOD (  16.40  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -93,28 +96,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Anson Huang <Anson.Huang@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-efi@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Atish Patra <atish.patra@wdc.com>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Matt,
+This series adds UEFI support for RISC-V. Currently, only boot time
+services have been added. Runtime services will be added in a separate
+series. This series depends on some core EFI patches
+present in current in efi-next and following other patches.
 
-On Wed, Apr 15, 2020 at 4:00 PM Matt Porter <mporter@konsulko.com> wrote:
->
-> Add #sound-dai-cells properties to SAI nodes.
->
-> Signed-off-by: Matt Porter <mporter@konsulko.com>
+U-Boot: Adds the boot hartid under chosen node.
+https://lists.denx.de/pipermail/u-boot/2020-April/405726.html
 
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Linux kernel: 5.7-rc1
+
+OpenSBI: master
+
+Patch 1 just moves arm-stub code to a generic code so that it can be used
+across different architecture.
+
+Patch 3 adds fixmap bindings so that CONFIG_EFI can be compiled and we do not
+have create separate config to enable boot time services. 
+As runtime services are not enabled at this time, full generic early ioremap
+support is also not added in this series.
+
+Patch 4 and 5 adds the PE/COFF header and EFI stub code support for RISC-V
+respectively.
+
+The patches can also be found in following git repo.
+
+https://github.com/atishp04/linux/tree/wip_uefi_riscv_v3
+
+The patches have been verified on Qemu using bootefi command in U-Boot.
+
+Changes from v2->v3:
+1. Rebased on top of latest efi patches.
+2. Improved handle_kernel_image().
+
+Changes from v1->v2:
+1. Rebased on 5.7-rc1.
+2. Fixed minor typos and removed redundant macros/comments.
+
+Changes from previous version:
+1. Renamed to the generic efi stub macro.
+2. Address all redundant comments.
+3. Supported EFI kernel image with normal booti command.
+4. Removed runtime service related macro defines.
+
+Atish Patra (5):
+efi: Move arm-stub to a common file
+include: pe.h: Add RISC-V related PE definition
+RISC-V: Define fixmap bindings for generic early ioremap support
+RISC-V: Add PE/COFF header for EFI stub
+RISC-V: Add EFI stub support.
+
+arch/arm/Kconfig                              |   2 +-
+arch/arm64/Kconfig                            |   2 +-
+arch/riscv/Kconfig                            |  21 ++++
+arch/riscv/Makefile                           |   1 +
+arch/riscv/configs/defconfig                  |   1 +
+arch/riscv/include/asm/Kbuild                 |   1 +
+arch/riscv/include/asm/efi.h                  |  44 +++++++
+arch/riscv/include/asm/fixmap.h               |  18 +++
+arch/riscv/include/asm/io.h                   |   1 +
+arch/riscv/include/asm/sections.h             |  13 ++
+arch/riscv/kernel/Makefile                    |   4 +
+arch/riscv/kernel/efi-header.S                |  99 ++++++++++++++++
+arch/riscv/kernel/head.S                      |  16 +++
+arch/riscv/kernel/image-vars.h                |  53 +++++++++
+arch/riscv/kernel/vmlinux.lds.S               |  20 +++-
+drivers/firmware/efi/Kconfig                  |   4 +-
+drivers/firmware/efi/libstub/Makefile         |  19 ++-
+.../efi/libstub/{arm-stub.c => efi-stub.c}    |   0
+drivers/firmware/efi/libstub/riscv-stub.c     | 111 ++++++++++++++++++
+include/linux/pe.h                            |   3 +
+20 files changed, 421 insertions(+), 12 deletions(-)
+create mode 100644 arch/riscv/include/asm/efi.h
+create mode 100644 arch/riscv/include/asm/sections.h
+create mode 100644 arch/riscv/kernel/efi-header.S
+create mode 100644 arch/riscv/kernel/image-vars.h
+rename drivers/firmware/efi/libstub/{arm-stub.c => efi-stub.c} (100%)
+create mode 100644 drivers/firmware/efi/libstub/riscv-stub.c
+
+--
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
