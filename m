@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25C2F1A949C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:41:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDE1B1A94C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:42:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=slEXI/s9j4NZmrccoHIRgwWCo06OzgAeeLLS0Vh+hxc=; b=YhZ0jOJMXZbXSh
-	EE4MqIVWP/em656ri4mLGBke/R+87efRHmBqgorpC8TdqC5xgNd2L4I2duzEozepvW86CCTfZC0LF
-	buLZ5k+eJtpM4Jh7krhrpdQgSjlf9F856UgaQ13RXZnQIv58DiKXzrrRGbr9n7DLs+5qRtv0YzhyB
-	SjzcJtbZgJiY9cpHVm0KFBi+BPDLRD76OAhs7yyBUeJmvVkjhDUDAynuqXHBFjAgThNnjjgdBAGPl
-	nQrT887TfIrdL9hevjpWov/B2RzLRrzgzq8NaW/h4KdPZ7eP+2W9LBRm6q0y/36szVSto4LUPm8di
-	LCSabEhRAIqW45tlyjWA==;
+	List-Owner; bh=SXTXoQrOZWnDud/KhB66ByQY+NCEIXPUx6bFChJ914g=; b=o66Ttqg6fWigYf
+	CYmVTbBOVROUra3Aw7ff5PV4uCqv0yhE6kI16jeYVEluRhkXeq0C2Q6pQg7tnXSnnskZPKDdT0/Tg
+	83C6lCw95lG3vxWKhj6ino1y4BKBx7vsGhehJgdA+QCFXkQ3kdrAQqUpMSBMwQVLgA0GrMpamwl+8
+	3VcWzV1W2ZJ7dWOyO2xp2oSIlm87KxYCt9cxk5em+N+tFEy8tRy48ziTP2w+3ANc/PLmHxUH8krBr
+	SIHOYJ31+QiOhel2pGG6PLOJ0Zo3KziAYjbgYfa5QJRxAgvKVNQ4LPpwcO0wEH94CAJEbAyLjI3v1
+	/mzMRFAzasUHr5W1kinA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOcgC-0007sz-1Z; Wed, 15 Apr 2020 07:41:52 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jOcgj-0008KJ-NE; Wed, 15 Apr 2020 07:42:25 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOcfz-0007r8-FT
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:41:40 +0000
-Received: by mail-wr1-x442.google.com with SMTP id u13so17383461wrp.3
+ id 1jOcfz-0007rC-Pe
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:41:42 +0000
+Received: by mail-wr1-x441.google.com with SMTP id h9so17868495wrc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 00:41:36 -0700 (PDT)
+ Wed, 15 Apr 2020 00:41:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=m8LdowvRj6y5F/lzc0z+wTLajfnWKM9lBo0QaQxdrxw=;
- b=dDWOltVkXSOBk1IiL8MGDd4W/Djoa1TmmKBWN/ACzBJhTGB6DVnNb+bdfp7yXv+ILx
- bPVlegHUcpx/jn37fxJlmy6MggQXsKXqt1jbmKh2owgqv35hUekH2fvR07MARNAxxDcZ
- sKHEmL/k4jUdpxWPK3HUwx3VS8Y1uye7JNtWY=
+ bh=gRatY+F67aXqhaX4hT+qBcw2kGGTk2t0/Bm3puPQZCA=;
+ b=kOJrWw/4js1cp1aXjXSVPq3jgc+DbH4EXbhaff5AgL+jJGpOa0STmRLuvLn2TK6H0u
+ tsw6nsBDQxqgGIki/S29PP83YlrJ8FluNeFuVCIXb8Lmc5Y02dh312JTxILtNkuHTjEa
+ XJ9oxyUQ2oMRFO0TxvdZVWizykYiSOhcF8jbE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=m8LdowvRj6y5F/lzc0z+wTLajfnWKM9lBo0QaQxdrxw=;
- b=JLbLfBsYW6HeeuVb97K33Dq+bfCiqppsq2+k+6BDptvfWV+ygrddYtptU3CXrT+I8H
- yu6WQsjRan27zQmn4uy7tVcBgLEFmzHiOFEQQdX7XU6+3X2w6Q5ZcVj8vAskxjy2wE03
- qbE2BStSbqFt8zWP2Pj8PbrRuLMWGSnCsfV9Bu91lBX4MDlwtzuKqojuBNED+yKtJCgq
- jOT3at7BS1DOt9IDwLeogcfHE20WI6p0wIwpOtz9mhE/4aVM744Esj1uf++WOKPAbzU7
- phd5yCklPoxLU+6MgkLvHgI/6Rb0xvE/KjzyhbNcVi8tMbAuVOn7dikAYlSKm67akxcu
- rgdg==
-X-Gm-Message-State: AGi0PuafnXBTXQbSs20M4/H7F5iZBrIrq9eOMfXccH7UH+n9VIj+kBV7
- Xqe4pXamsc2Rgkf08UzzdbN0lg==
-X-Google-Smtp-Source: APiQypIr7FTFgGbKeiSR3G8G8hKb8rSC1ydf5oz/DSRkwR5KNFKQJDnHsecYRWgMt0sIJI+cp5eSjA==
-X-Received: by 2002:adf:fa41:: with SMTP id y1mr26643336wrr.131.1586936495555; 
- Wed, 15 Apr 2020 00:41:35 -0700 (PDT)
+ bh=gRatY+F67aXqhaX4hT+qBcw2kGGTk2t0/Bm3puPQZCA=;
+ b=ESlaFu4Y1PVQVtV4U10gynRb8f+XKOVaTSeSdcVsU+613ho/0DZPmcyax8jGFxkHrU
+ OQPzIV48WggQZTGegz/myUkVoZMjNeVbPSjh4E/UJrafWKOr+Y3l7s9ynMqsV7VVKCFj
+ zx2s/dChDRkMQ5Kzl22UgMlHTk0TOKkxqRp23Uc85sCu+sDBhdJ0+okXHcwDS9tZeZ7A
+ mLTp+Cug/mC6B0SuMXmRuUttSYAAO8jXcPrTAELhOsUvxoYO9ZIDur7kDG/if7JyHVmd
+ FHo/5osEs9DjH7BKzrcsB8y6n9zKRGLt+YUxg4n4Ei90/4mhCnNMgz/mlTL8m3J/hEKL
+ M0aQ==
+X-Gm-Message-State: AGi0PuZdBC5+c5JnmdU99XpxtvSfcJgH5MeIJcGNa2pxQrlu3pFeKTVm
+ QErZxvAbVj8caCYCqUkkEwQWXQ==
+X-Google-Smtp-Source: APiQypKbcmyrepnoF8CDc2wkeZUMxmBWJgmUdz65RQKSdQwaEZ9GASFGOe6TNrSvJnxSk/VexO+Zgw==
+X-Received: by 2002:adf:b344:: with SMTP id k4mr17735067wrd.76.1586936496578; 
+ Wed, 15 Apr 2020 00:41:36 -0700 (PDT)
 Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id u30sm1878552wru.13.2020.04.15.00.41.34
+ by smtp.gmail.com with ESMTPSA id u30sm1878552wru.13.2020.04.15.00.41.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 00:41:35 -0700 (PDT)
+ Wed, 15 Apr 2020 00:41:36 -0700 (PDT)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: Intel Graphics Development <intel-gfx@lists.freedesktop.org>
-Subject: [PATCH 54/59] drm/aspeed: Drop aspeed_gfx->fbdev
-Date: Wed, 15 Apr 2020 09:40:29 +0200
-Message-Id: <20200415074034.175360-55-daniel.vetter@ffwll.ch>
+Subject: [PATCH 55/59] drm/aspeed: Use devm_drm_dev_alloc
+Date: Wed, 15 Apr 2020 09:40:30 +0200
+Message-Id: <20200415074034.175360-56-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200415074034.175360-1-daniel.vetter@ffwll.ch>
 References: <20200415074034.175360-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_004139_512914_18A14B08 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200415_004139_831880_E8D4A6C3 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -104,7 +103,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-No longer used since the conversion to generic fbdev.
+As usual, we can drop the drm_dev_put() and need to embed the
+drm_device. Since it's so few, also go right ahead and leave
+drm_device->dev_private set to NULL, so that we always use the
+container_of() upcast, which is faster anyway.
 
 Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
 Cc: Joel Stanley <joel@jms.id.au>
@@ -112,21 +114,142 @@ Cc: Andrew Jeffery <andrew@aj.id.au>
 Cc: linux-aspeed@lists.ozlabs.org
 Cc: linux-arm-kernel@lists.infradead.org
 ---
- drivers/gpu/drm/aspeed/aspeed_gfx.h | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/gpu/drm/aspeed/aspeed_gfx.h      |  2 ++
+ drivers/gpu/drm/aspeed/aspeed_gfx_crtc.c |  2 +-
+ drivers/gpu/drm/aspeed/aspeed_gfx_drv.c  | 31 +++++++++---------------
+ drivers/gpu/drm/aspeed/aspeed_gfx_out.c  |  2 +-
+ 4 files changed, 15 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx.h b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-index a10358bb61ec..adc02940de6f 100644
+index adc02940de6f..e7ca95827ae8 100644
 --- a/drivers/gpu/drm/aspeed/aspeed_gfx.h
 +++ b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-@@ -12,7 +12,6 @@ struct aspeed_gfx {
+@@ -5,6 +5,7 @@
+ #include <drm/drm_simple_kms_helper.h>
  
+ struct aspeed_gfx {
++	struct drm_device		drm;
+ 	void __iomem			*base;
+ 	struct clk			*clk;
+ 	struct reset_control		*rst;
+@@ -13,6 +14,7 @@ struct aspeed_gfx {
  	struct drm_simple_display_pipe	pipe;
  	struct drm_connector		connector;
--	struct drm_fbdev_cma		*fbdev;
  };
++#define to_aspeed_gfx(x) container_of(x, struct aspeed_gfx, drm)
  
  int aspeed_gfx_create_pipe(struct drm_device *drm);
+ int aspeed_gfx_create_output(struct drm_device *drm);
+diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx_crtc.c b/drivers/gpu/drm/aspeed/aspeed_gfx_crtc.c
+index 2184b8be6fd4..e54686c31a90 100644
+--- a/drivers/gpu/drm/aspeed/aspeed_gfx_crtc.c
++++ b/drivers/gpu/drm/aspeed/aspeed_gfx_crtc.c
+@@ -231,7 +231,7 @@ static const uint32_t aspeed_gfx_formats[] = {
+ 
+ int aspeed_gfx_create_pipe(struct drm_device *drm)
+ {
+-	struct aspeed_gfx *priv = drm->dev_private;
++	struct aspeed_gfx *priv = to_aspeed_gfx(drm);
+ 
+ 	return drm_simple_display_pipe_init(drm, &priv->pipe, &aspeed_gfx_funcs,
+ 					    aspeed_gfx_formats,
+diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c b/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
+index ada2f6aca906..6b27242b9ee3 100644
+--- a/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
++++ b/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
+@@ -77,7 +77,7 @@ static void aspeed_gfx_setup_mode_config(struct drm_device *drm)
+ static irqreturn_t aspeed_gfx_irq_handler(int irq, void *data)
+ {
+ 	struct drm_device *drm = data;
+-	struct aspeed_gfx *priv = drm->dev_private;
++	struct aspeed_gfx *priv = to_aspeed_gfx(drm);
+ 	u32 reg;
+ 
+ 	reg = readl(priv->base + CRT_CTRL1);
+@@ -96,15 +96,10 @@ static irqreturn_t aspeed_gfx_irq_handler(int irq, void *data)
+ static int aspeed_gfx_load(struct drm_device *drm)
+ {
+ 	struct platform_device *pdev = to_platform_device(drm->dev);
+-	struct aspeed_gfx *priv;
++	struct aspeed_gfx *priv = to_aspeed_gfx(drm);
+ 	struct resource *res;
+ 	int ret;
+ 
+-	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+-	if (!priv)
+-		return -ENOMEM;
+-	drm->dev_private = priv;
+-
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	priv->base = devm_ioremap_resource(drm->dev, res);
+ 	if (IS_ERR(priv->base))
+@@ -187,8 +182,6 @@ static void aspeed_gfx_unload(struct drm_device *drm)
+ {
+ 	drm_kms_helper_poll_fini(drm);
+ 	drm_mode_config_cleanup(drm);
+-
+-	drm->dev_private = NULL;
+ }
+ 
+ DEFINE_DRM_GEM_CMA_FOPS(fops);
+@@ -216,27 +209,26 @@ static const struct of_device_id aspeed_gfx_match[] = {
+ 
+ static int aspeed_gfx_probe(struct platform_device *pdev)
+ {
+-	struct drm_device *drm;
++	struct aspeed_gfx *priv;
+ 	int ret;
+ 
+-	drm = drm_dev_alloc(&aspeed_gfx_driver, &pdev->dev);
+-	if (IS_ERR(drm))
+-		return PTR_ERR(drm);
++	priv = devm_drm_dev_alloc(&pdev->dev, &aspeed_gfx_driver,
++				  struct aspeed_gfx, drm);
++	if (IS_ERR(priv))
++		return PTR_ERR(priv);
+ 
+-	ret = aspeed_gfx_load(drm);
++	ret = aspeed_gfx_load(&priv->drm);
+ 	if (ret)
+-		goto err_free;
++		return ret;
+ 
+-	ret = drm_dev_register(drm, 0);
++	ret = drm_dev_register(&priv->drm, 0);
+ 	if (ret)
+ 		goto err_unload;
+ 
+ 	return 0;
+ 
+ err_unload:
+-	aspeed_gfx_unload(drm);
+-err_free:
+-	drm_dev_put(drm);
++	aspeed_gfx_unload(&priv->drm);
+ 
+ 	return ret;
+ }
+@@ -247,7 +239,6 @@ static int aspeed_gfx_remove(struct platform_device *pdev)
+ 
+ 	drm_dev_unregister(drm);
+ 	aspeed_gfx_unload(drm);
+-	drm_dev_put(drm);
+ 
+ 	return 0;
+ }
+diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx_out.c b/drivers/gpu/drm/aspeed/aspeed_gfx_out.c
+index 67ee5fa10055..6759cb88415a 100644
+--- a/drivers/gpu/drm/aspeed/aspeed_gfx_out.c
++++ b/drivers/gpu/drm/aspeed/aspeed_gfx_out.c
+@@ -28,7 +28,7 @@ static const struct drm_connector_funcs aspeed_gfx_connector_funcs = {
+ 
+ int aspeed_gfx_create_output(struct drm_device *drm)
+ {
+-	struct aspeed_gfx *priv = drm->dev_private;
++	struct aspeed_gfx *priv = to_aspeed_gfx(drm);
+ 	int ret;
+ 
+ 	priv->connector.dpms = DRM_MODE_DPMS_OFF;
 -- 
 2.25.1
 
