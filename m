@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B141A9252
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 07:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20EDD1A9254
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 07:18:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fl0oy7lyi8UbXtCfDI0SGZubUk6xb0tyCq+hIidwNyc=; b=e+QcsTLCPOPA8j
-	20rfJmGKin2WAozJpMg8nsB1Ill1Qh+q5LNcXgrrDSXTNkHsetOW47VgiqCzj86P+5NE6wRBpWAYI
-	Ivyf5gEcnzDDm2EjyqEjuftyCQyXeY/G6mBAWgS1s3G3c82yZ0smwy8Lq4Zpsmdi5DelqKYNSvJ0A
-	5umeRaN/mChsb/JMO7P3di+XGsnJqfU7buq/seVMVnE1ZAbIni1qWhJbeONfvfgiwKTMoij4XBhur
-	lkmbzXlsbwqedeRwWRrLcBbY8JhsaEl/6515S9V3nXcPvPXMwbG/8efSbfsx47QMcpPXC9UPkNoHx
-	Bpa3/FjrANT6kyIG2IGw==;
+	List-Owner; bh=fA4xIe4KY99YNME5js28UdWmDHQdeGsYgOn3bvqRgJE=; b=YId7kTNtZpvlnd
+	2K5VMZ5NgRgT2D5J2V+Wm5gzK2mfzvaz2vaD0zAtnUXiASIEauPKl1wQZx9x2B42rGxLPskbyTAzf
+	f0jT6QQXJNcHSemA4Q5N5Mj780kNvjrfvlfJ1XHMDeOVKGbF27mvod9U7gdh2oR9Ugx7079gU/h8m
+	DMe+Ryf/3/zScBitI/27x/3eup2tNCQMr6x1ozCzgOlNfSVDzTK1XiSxwAGH7AaJuRX4X0S6OlRA7
+	qZ7bAmsR0ON0ht3Uo2KsFCqJsnRANWU8zLVTwNSKgteuFCJWm7q9L8r25qaJkqV32uZfRIgXHc9TF
+	E5vCDqW3EKLIWaJKGlpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOaQf-0007Q0-9E; Wed, 15 Apr 2020 05:17:41 +0000
-Received: from mail-lj1-f193.google.com ([209.85.208.193])
+	id 1jOaR0-0007pQ-Fa; Wed, 15 Apr 2020 05:18:02 +0000
+Received: from mail-lf1-f68.google.com ([209.85.167.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOaQT-0007NE-7O; Wed, 15 Apr 2020 05:17:31 +0000
-Received: by mail-lj1-f193.google.com with SMTP id m8so2301400lji.1;
- Tue, 14 Apr 2020 22:17:28 -0700 (PDT)
+ id 1jOaQr-0007oG-1K; Wed, 15 Apr 2020 05:17:55 +0000
+Received: by mail-lf1-f68.google.com with SMTP id t11so1620835lfe.4;
+ Tue, 14 Apr 2020 22:17:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7OF8Jqroi8SEKwU+6NdbITJv7+zIFGlSSzopGeFoceA=;
- b=btrkgheB9UdT9cCrlSqdfnVzEf6Lt77IPNz3t+rVCC8mtjCXjPivw19yXTkvSVRMeU
- amDfQmgUyHzkGpTZMhXLNGOkxu4Z8b7ftxOs6dQJg90J72MlEcOGar2d6P2fT2Wo3TYB
- uPPZQSfPv11jRXKK45VZRvGTrFIWlYbjjoQGJW5mDu1trbNmyT3KX7sGPnywT5zEyMpN
- V95t8NJK0A/WpLfacMSu2+Y6xXpsNgQ6SicInk6Pu9apmaBYd2kDl2FMe6oCBf25Apg8
- pqfRkHhVjbq+M6V68DkZbMoS7gb3z98mQiqda8kGwhoSBwmeeIydbUKvdrhFi7HieGg9
- M7Aw==
-X-Gm-Message-State: AGi0PuYMM26jwjRdccndzDKsQmr9ES6UF8LENbyV9ZHMfshgOmX57tj0
- 7LvLqgaExyCwxG3SdrFdLaA=
-X-Google-Smtp-Source: APiQypLwLZ+uVRYG1T0HP9OtghGILQO96CE4Nae2CKjlQjhBGjBr9VGEZRBQujL6yYvaAFtet2D/1A==
-X-Received: by 2002:a2e:9556:: with SMTP id t22mr2130356ljh.105.1586927847312; 
- Tue, 14 Apr 2020 22:17:27 -0700 (PDT)
+ bh=76AwQED9Us2wlfnledgM2REzlhCh0kvNjSLqoUFIJcA=;
+ b=Rls5jWwiAN9/hBxs563rqZYUf/YAV1GUC6AAHvnU57V5j4uT2OFa2oD8E0BWuvOHW0
+ uZmP+s/7teAy1mqZCz5yIM1M81gLhwc1NxZrkKYXTnnAaCE747GxYBvIQHL10LIm48mi
+ wUqG8MKdEyVniZ3GAh0WcUGjfz2jdt1uuKYjzgK7hbz67M/QSd8EJ6QZ39PyA9UmXr4y
+ 59PE2eBVamoJ/PIlSektpiEKfGMVfe+D9aWfTlGUNuH8JNjM7/+V3GgBqICMvcXTl6cd
+ nzK54XVLwU5nJq2JkS5R01tV4DtaGiwRmJxlb1yqg3Ej0aPcskgEgWixVE6FbS5Ob5Vt
+ U8Ww==
+X-Gm-Message-State: AGi0Puak/EGnsQ+QiWP7kQqTlXPG9sNqczBSdklguja59wTeqzDS4nSs
+ c/ma9IZl06va4EMoRUXGRO8=
+X-Google-Smtp-Source: APiQypL5rzP0ZU80YIcFqj7zFssn3OWzUI8SnlClsOXZWrr0315FTqTX8vB3St10rfmesLNDaN+Tpw==
+X-Received: by 2002:ac2:5684:: with SMTP id 4mr1896676lfr.88.1586927871069;
+ Tue, 14 Apr 2020 22:17:51 -0700 (PDT)
 Received: from localhost.localdomain
  (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
- by smtp.gmail.com with ESMTPSA id o25sm11323020lfg.41.2020.04.14.22.17.24
+ by smtp.gmail.com with ESMTPSA id b1sm12048899lfb.22.2020.04.14.22.17.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 22:17:26 -0700 (PDT)
-Date: Wed, 15 Apr 2020 08:17:18 +0300
+ Tue, 14 Apr 2020 22:17:50 -0700 (PDT)
+Date: Wed, 15 Apr 2020 08:17:42 +0300
 From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v10 01/11] lib: add linear ranges helpers
-Message-ID: <aadd70ad382276e8ccbf6c6b91a596d9898a5afd.1586925868.git.matti.vaittinen@fi.rohmeurope.com>
+Subject: [PATCH v10 02/11] lib/test_linear_ranges: add a test for the
+ 'linear_ranges'
+Message-ID: <8290db0984a1c64f478d8b00f7e9ae2bffde8fb7.1586925868.git.matti.vaittinen@fi.rohmeurope.com>
 References: <cover.1586925868.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <cover.1586925868.git.matti.vaittinen@fi.rohmeurope.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_221729_291304_E88CF915 
-X-CRM114-Status: GOOD (  26.82  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20200414_221753_088291_2AFD3BD3 
+X-CRM114-Status: GOOD (  25.67  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.193 listed in list.dnswl.org]
+ no trust [209.85.167.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.68 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mazziesaccount[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.193 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
+ 1.0 TO_NO_BRKTS_PCNT       To: lacks brackets + percentage
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,374 +125,285 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Many devices have control registers which control some measurable
-property. Often a register contains control field so that change in
-this field causes linear change in the controlled property. It is not
-a rare case that user wants to give 'meaningful' control values and
-driver needs to convert them to register field values. Even more
-often user wants to 'see' the currently set value - again in
-meaningful units - and driver needs to convert the values it reads
-from register to these meaningful units. Examples of this include:
-
-- regulators, voltage/current configurations
-- power, voltage/current configurations
-- clk(?) NCOs
-
-and maybe others I can't think of right now.
-
-Provide a linear_range helper which can do conversion from user value
-to register value 'selector'.
-
-The idea here is stolen from regulator framework and patches refactoring
-the regulator helpers to use this are following.
-
-Current implementation does not support inversely proportional ranges
-but it might be useful if we could support also inversely proportional
-ranges?
+    Add a KUnit test for the linear_ranges helper.
 
 Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Reviewed-by: Mark Brown <broonie@kernel.org>
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
 ---
 
 No changes since v9
 
- include/linux/linear_range.h |  48 +++++++
- lib/Kconfig                  |   3 +
- lib/Makefile                 |   1 +
- lib/linear_ranges.c          | 241 +++++++++++++++++++++++++++++++++++
- 4 files changed, 293 insertions(+)
- create mode 100644 include/linux/linear_range.h
- create mode 100644 lib/linear_ranges.c
+ lib/Kconfig.debug        |  11 ++
+ lib/Makefile             |   1 +
+ lib/test_linear_ranges.c | 228 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 240 insertions(+)
+ create mode 100644 lib/test_linear_ranges.c
 
-diff --git a/include/linux/linear_range.h b/include/linux/linear_range.h
-new file mode 100644
-index 000000000000..17b5943727d5
---- /dev/null
-+++ b/include/linux/linear_range.h
-@@ -0,0 +1,48 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/* Copyright (C) 2020 ROHM Semiconductors */
-+
-+#ifndef LINEAR_RANGE_H
-+#define LINEAR_RANGE_H
-+
-+#include <linux/types.h>
-+
-+/**
-+ * struct linear_range - table of selector - value pairs
-+ *
-+ * Define a lookup-table for range of values. Intended to help when looking
-+ * for a register value matching certaing physical measure (like voltage).
-+ * Usable when increment of one in register always results a constant increment
-+ * of the physical measure (like voltage).
-+ *
-+ * @min:  Lowest value in range
-+ * @min_sel: Lowest selector for range
-+ * @max_sel: Highest selector for range
-+ * @step: Value step size
-+ */
-+struct linear_range {
-+	unsigned int min;
-+	unsigned int min_sel;
-+	unsigned int max_sel;
-+	unsigned int step;
-+};
-+
-+unsigned int linear_range_values_in_range(const struct linear_range *r);
-+unsigned int linear_range_values_in_range_array(const struct linear_range *r,
-+						int ranges);
-+unsigned int linear_range_get_max_value(const struct linear_range *r);
-+
-+int linear_range_get_value(const struct linear_range *r, unsigned int selector,
-+			   unsigned int *val);
-+int linear_range_get_value_array(const struct linear_range *r, int ranges,
-+				 unsigned int selector, unsigned int *val);
-+int linear_range_get_selector_low(const struct linear_range *r,
-+				  unsigned int val, unsigned int *selector,
-+				  bool *found);
-+int linear_range_get_selector_high(const struct linear_range *r,
-+				   unsigned int val, unsigned int *selector,
-+				   bool *found);
-+int linear_range_get_selector_low_array(const struct linear_range *r,
-+					int ranges, unsigned int val,
-+					unsigned int *selector, bool *found);
-+
-+#endif
-diff --git a/lib/Kconfig b/lib/Kconfig
-index 5d53f9609c25..8ec05335426c 100644
---- a/lib/Kconfig
-+++ b/lib/Kconfig
-@@ -19,6 +19,9 @@ config RAID6_PQ_BENCHMARK
- 	  Benchmark all available RAID6 PQ functions on init and choose the
- 	  fastest one.
+diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+index 50c1f5f08e6f..a4bfa80dc8a3 100644
+--- a/lib/Kconfig.debug
++++ b/lib/Kconfig.debug
+@@ -2090,6 +2090,17 @@ config LIST_KUNIT_TEST
  
-+config LINEAR_RANGES
-+	tristate
+ 	  If unsure, say N.
+ 
++config LINEAR_RANGES_TEST
++	tristate "KUnit test for linear_ranges"
++	depends on KUNIT
++	help
++	  This builds the linear_ranges unit test, which runs on boot.
++	  Tests the linear_ranges logic correctness.
++	  For more information on KUnit and unit tests in general please refer
++	  to the KUnit documentation in Documentation/dev-tools/kunit/.
 +
- config PACKING
- 	bool "Generic bitfield packing and unpacking"
- 	default n
++	  If unsure, say N.
++
+ config TEST_UDELAY
+ 	tristate "udelay test driver"
+ 	help
 diff --git a/lib/Makefile b/lib/Makefile
-index 685aee60de1d..20b9cfdcad69 100644
+index 20b9cfdcad69..cd548bfa8df9 100644
 --- a/lib/Makefile
 +++ b/lib/Makefile
-@@ -125,6 +125,7 @@ obj-$(CONFIG_DEBUG_LIST) += list_debug.o
- obj-$(CONFIG_DEBUG_OBJECTS) += debugobjects.o
+@@ -310,3 +310,4 @@ obj-$(CONFIG_OBJAGG) += objagg.o
  
- obj-$(CONFIG_BITREVERSE) += bitrev.o
-+obj-$(CONFIG_LINEAR_RANGES) += linear_ranges.o
- obj-$(CONFIG_PACKING)	+= packing.o
- obj-$(CONFIG_CRC_CCITT)	+= crc-ccitt.o
- obj-$(CONFIG_CRC16)	+= crc16.o
-diff --git a/lib/linear_ranges.c b/lib/linear_ranges.c
+ # KUnit tests
+ obj-$(CONFIG_LIST_KUNIT_TEST) += list-test.o
++obj-$(CONFIG_LINEAR_RANGES_TEST) += test_linear_ranges.o
+diff --git a/lib/test_linear_ranges.c b/lib/test_linear_ranges.c
 new file mode 100644
-index 000000000000..d1336c75ccd7
+index 000000000000..676e0b8abcdd
 --- /dev/null
-+++ b/lib/linear_ranges.c
-@@ -0,0 +1,241 @@
++++ b/lib/test_linear_ranges.c
+@@ -0,0 +1,228 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
-+ * helpers to map values in a linear range to range index
++ * KUnit test for the linear_ranges helper.
 + *
-+ * Original idea borrowed from regulator framework
-+ *
-+ * It might be useful if we could support also inversely proportional ranges?
-+ * Copyright 2020 ROHM Semiconductors
++ * Copyright (C) 2020, ROHM Semiconductors.
++ * Author: Matti Vaittinen <matti.vaittien@fi.rohmeurope.com>
 + */
++#include <kunit/test.h>
 +
-+#include <linux/errno.h>
-+#include <linux/export.h>
-+#include <linux/kernel.h>
 +#include <linux/linear_range.h>
 +
-+/**
-+ * linear_range_values_in_range - return the amount of values in a range
-+ * @r:		pointer to linear range where values are counted
++/* First things first. I deeply dislike unit-tests. I have seen all the hell
++ * breaking loose when people who think the unit tests are "the silver bullet"
++ * to kill bugs get to decide how a company should implement testing strategy...
 + *
-+ * Compute the amount of values in range pointed by @r. Note, values can
-+ * be all equal - range with selectors 0,...,2 with step 0 still contains
-+ * 3 values even though they are all equal.
++ * Believe me, it may get _really_ ridiculous. It is tempting to think that
++ * walking through all the possible execution branches will nail down 100% of
++ * bugs. This may lead to ideas about demands to get certain % of "test
++ * coverage" - measured as line coverage. And that is one of the worst things
++ * you can do.
 + *
-+ * Return: the amount of values in range pointed by @r
++ * Ask people to provide line coverage and they do. I've seen clever tools
++ * which generate test cases to test the existing functions - and by default
++ * these tools expect code to be correct and just generate checks which are
++ * passing when ran against current code-base. Run this generator and you'll get
++ * tests that do not test code is correct but just verify nothing changes.
++ * Problem is that testing working code is pointless. And if it is not
++ * working, your test must not assume it is working. You won't catch any bugs
++ * by such tests. What you can do is to generate a huge amount of tests.
++ * Especially if you were are asked to proivde 100% line-coverage x_x. So what
++ * does these tests - which are not finding any bugs now - do?
++ *
++ * They add inertia to every future development. I think it was Terry Pratchet
++ * who wrote someone having same impact as thick syrup has to chronometre.
++ * Excessive amount of unit-tests have this effect to development. If you do
++ * actually find _any_ bug from code in such environment and try fixing it...
++ * ...chances are you also need to fix the test cases. In sunny day you fix one
++ * test. But I've done refactoring which resulted 500+ broken tests (which had
++ * really zero value other than proving to managers that we do do "quality")...
++ *
++ * After this being said - there are situations where UTs can be handy. If you
++ * have algorithms which take some input and should produce output - then you
++ * can implement few, carefully selected simple UT-cases which test this. I've
++ * previously used this for example for netlink and device-tree data parsing
++ * functions. Feed some data examples to functions and verify the output is as
++ * expected. I am not covering all the cases but I will see the logic should be
++ * working.
++ *
++ * Here we also do some minor testing. I don't want to go through all branches
++ * or test more or less obvious things - but I want to see the main logic is
++ * working. And I definitely don't want to add 500+ test cases that break when
++ * some simple fix is done x_x. So - let's only add few, well selected tests
++ * which ensure as much logic is good as possible.
 + */
-+unsigned int linear_range_values_in_range(const struct linear_range *r)
-+{
-+	if (!r)
-+		return 0;
-+	return r->max_sel - r->min_sel + 1;
-+}
-+EXPORT_SYMBOL_GPL(linear_range_values_in_range);
 +
-+/**
-+ * linear_range_values_in_range_array - return the amount of values in ranges
-+ * @r:		pointer to array of linear ranges where values are counted
-+ * @ranges:	amount of ranges we include in computation.
++/*
++ * Test Range 1:
++ * selectors:	2	3	4	5	6
++ * values (5):	10	20	30	40	50
 + *
-+ * Compute the amount of values in ranges pointed by @r. Note, values can
-+ * be all equal - range with selectors 0,...,2 with step 0 still contains
-+ * 3 values even though they are all equal.
-+ *
-+ * Return: the amount of values in first @ranges ranges pointed by @r
++ * Test Range 2:
++ * selectors:	7	8	9	10
++ * values (4):	100	150	200	250
 + */
-+unsigned int linear_range_values_in_range_array(const struct linear_range *r,
-+						int ranges)
++
++#define RANGE1_MIN 10
++#define RANGE1_MIN_SEL 2
++#define RANGE1_STEP 10
++
++/* 2, 3, 4, 5, 6 */
++static const unsigned int range1_sels[] = { RANGE1_MIN_SEL, RANGE1_MIN_SEL + 1,
++					    RANGE1_MIN_SEL + 2,
++					    RANGE1_MIN_SEL + 3,
++					    RANGE1_MIN_SEL + 4 };
++/* 10, 20, 30, 40, 50 */
++static const unsigned int range1_vals[] = { RANGE1_MIN, RANGE1_MIN +
++					    RANGE1_STEP,
++					    RANGE1_MIN + RANGE1_STEP * 2,
++					    RANGE1_MIN + RANGE1_STEP * 3,
++					    RANGE1_MIN + RANGE1_STEP * 4 };
++
++#define RANGE2_MIN 100
++#define RANGE2_MIN_SEL 7
++#define RANGE2_STEP 50
++
++/*  7, 8, 9, 10 */
++static const unsigned int range2_sels[] = { RANGE2_MIN_SEL, RANGE2_MIN_SEL + 1,
++					    RANGE2_MIN_SEL + 2,
++					    RANGE2_MIN_SEL + 3 };
++/* 100, 150, 200, 250 */
++static const unsigned int range2_vals[] = { RANGE2_MIN, RANGE2_MIN +
++					    RANGE2_STEP,
++					    RANGE2_MIN + RANGE2_STEP * 2,
++					    RANGE2_MIN + RANGE2_STEP * 3 };
++
++#define RANGE1_NUM_VALS (ARRAY_SIZE(range1_vals))
++#define RANGE2_NUM_VALS (ARRAY_SIZE(range2_vals))
++#define RANGE_NUM_VALS (RANGE1_NUM_VALS + RANGE2_NUM_VALS)
++
++#define RANGE1_MAX_SEL (RANGE1_MIN_SEL + RANGE1_NUM_VALS - 1)
++#define RANGE1_MAX_VAL (range1_vals[RANGE1_NUM_VALS - 1])
++
++#define RANGE2_MAX_SEL (RANGE2_MIN_SEL + RANGE2_NUM_VALS - 1)
++#define RANGE2_MAX_VAL (range2_vals[RANGE2_NUM_VALS - 1])
++
++#define SMALLEST_SEL RANGE1_MIN_SEL
++#define SMALLEST_VAL RANGE1_MIN
++
++static struct linear_range testr[] = {
++	{
++		.min = RANGE1_MIN,
++		.min_sel = RANGE1_MIN_SEL,
++		.max_sel = RANGE1_MAX_SEL,
++		.step = RANGE1_STEP,
++	}, {
++		.min = RANGE2_MIN,
++		.min_sel = RANGE2_MIN_SEL,
++		.max_sel = RANGE2_MAX_SEL,
++		.step = RANGE2_STEP
++	},
++};
++
++static void range_test_get_value(struct kunit *test)
 +{
-+	int i, values_in_range = 0;
++	int ret, i;
++	unsigned int sel, val;
 +
-+	for (i = 0; i < ranges; i++) {
-+		int values;
-+
-+		values = linear_range_values_in_range(&r[i]);
-+		if (!values)
-+			return values;
-+
-+		values_in_range += values;
++	for (i = 0; i < RANGE1_NUM_VALS; i++) {
++		sel = range1_sels[i];
++		ret = linear_range_get_value_array(&testr[0], 2, sel, &val);
++		KUNIT_EXPECT_EQ(test, 0, ret);
++		KUNIT_EXPECT_EQ(test, val, range1_vals[i]);
 +	}
-+	return values_in_range;
-+}
-+EXPORT_SYMBOL_GPL(linear_range_values_in_range_array);
-+
-+/**
-+ * linear_range_get_max_value - return the largest value in a range
-+ * @r:		pointer to linear range where value is looked from
-+ *
-+ * Return: the largest value in the given range
-+ */
-+unsigned int linear_range_get_max_value(const struct linear_range *r)
-+{
-+	return r->min + (r->max_sel - r->min_sel) * r->step;
-+}
-+EXPORT_SYMBOL_GPL(linear_range_get_max_value);
-+
-+/**
-+ * linear_range_get_value - fetch a value from given range
-+ * @r:		pointer to linear range where value is looked from
-+ * @selector:	selector for which the value is searched
-+ * @val:	address where found value is updated
-+ *
-+ * Search given ranges for value which matches given selector.
-+ *
-+ * Return: 0 on success, -EINVAL given selector is not found from any of the
-+ * ranges.
-+ */
-+int linear_range_get_value(const struct linear_range *r, unsigned int selector,
-+			   unsigned int *val)
-+{
-+	if (r->min_sel > selector || r->max_sel < selector)
-+		return -EINVAL;
-+
-+	*val = r->min + (selector - r->min_sel) * r->step;
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(linear_range_get_value);
-+
-+/**
-+ * linear_range_get_value_array - fetch a value from array of ranges
-+ * @r:		pointer to array of linear ranges where value is looked from
-+ * @ranges:	amount of ranges in an array
-+ * @selector:	selector for which the value is searched
-+ * @val:	address where found value is updated
-+ *
-+ * Search through an array of ranges for value which matches given selector.
-+ *
-+ * Return: 0 on success, -EINVAL given selector is not found from any of the
-+ * ranges.
-+ */
-+int linear_range_get_value_array(const struct linear_range *r, int ranges,
-+				 unsigned int selector, unsigned int *val)
-+{
-+	int i;
-+
-+	for (i = 0; i < ranges; i++)
-+		if (r[i].min_sel <= selector && r[i].max_sel >= selector)
-+			return linear_range_get_value(&r[i], selector, val);
-+
-+	return -EINVAL;
-+}
-+EXPORT_SYMBOL_GPL(linear_range_get_value_array);
-+
-+/**
-+ * linear_range_get_selector_low - return linear range selector for value
-+ * @r:		pointer to linear range where selector is looked from
-+ * @val:	value for which the selector is searched
-+ * @selector:	address where found selector value is updated
-+ * @found:	flag to indicate that given value was in the range
-+ *
-+ * Return selector which which range value is closest match for given
-+ * input value. Value is matching if it is equal or smaller than given
-+ * value. If given value is in the range, then @found is set true.
-+ *
-+ * Return: 0 on success, -EINVAL if range is invalid or does not contain
-+ * value smaller or equal to given value
-+ */
-+int linear_range_get_selector_low(const struct linear_range *r,
-+				  unsigned int val, unsigned int *selector,
-+				  bool *found)
-+{
-+	*found = false;
-+
-+	if (r->min > val)
-+		return -EINVAL;
-+
-+	if (linear_range_get_max_value(r) < val) {
-+		*selector = r->max_sel;
-+		return 0;
++	for (i = 0; i < RANGE2_NUM_VALS; i++) {
++		sel = range2_sels[i];
++		ret = linear_range_get_value_array(&testr[0], 2, sel, &val);
++		KUNIT_EXPECT_EQ(test, 0, ret);
++		KUNIT_EXPECT_EQ(test, val, range2_vals[i]);
 +	}
-+
-+	*found = true;
-+
-+	if (r->step == 0)
-+		*selector = r->min_sel;
-+	else
-+		*selector = (val - r->min) / r->step + r->min_sel;
-+
-+	return 0;
++	ret = linear_range_get_value_array(&testr[0], 2, sel + 1, &val);
++	KUNIT_EXPECT_NE(test, 0, ret);
 +}
-+EXPORT_SYMBOL_GPL(linear_range_get_selector_low);
 +
-+/**
-+ * linear_range_get_selector_low_array - return linear range selector for value
-+ * @r:		pointer to array of linear ranges where selector is looked from
-+ * @ranges:	amount of ranges to scan from array
-+ * @val:	value for which the selector is searched
-+ * @selector:	address where found selector value is updated
-+ * @found:	flag to indicate that given value was in the range
-+ *
-+ * Scan array of ranges for selector which which range value matches given
-+ * input value. Value is matching if it is equal or smaller than given
-+ * value. If given value is found to be in a range scanning is stopped and
-+ * @found is set true. If a range with values smaller than given value is found
-+ * but the range max is being smaller than given value, then the ranges
-+ * biggest selector is updated to @selector but scanning ranges is continued
-+ * and @found is set to false.
-+ *
-+ * Return: 0 on success, -EINVAL if range array is invalid or does not contain
-+ * range with a value smaller or equal to given value
-+ */
-+int linear_range_get_selector_low_array(const struct linear_range *r,
-+					int ranges, unsigned int val,
-+					unsigned int *selector, bool *found)
++static void range_test_get_selector_high(struct kunit *test)
 +{
-+	int i;
-+	int ret = -EINVAL;
++	int ret, i;
++	unsigned int sel;
++	bool found;
 +
-+	for (i = 0; i < ranges; i++) {
-+		int tmpret;
-+
-+		tmpret = linear_range_get_selector_low(&r[i], val, selector,
-+						       found);
-+		if (!tmpret)
-+			ret = 0;
-+
-+		if (*found)
-+			break;
++	for (i = 0; i < RANGE1_NUM_VALS; i++) {
++		ret = linear_range_get_selector_high(&testr[0], range1_vals[i],
++						     &sel, &found);
++		KUNIT_EXPECT_EQ(test, 0, ret);
++		KUNIT_EXPECT_EQ(test, sel, range1_sels[i]);
++		KUNIT_EXPECT_TRUE(test, found);
 +	}
 +
-+	return ret;
++	ret = linear_range_get_selector_high(&testr[0], RANGE1_MAX_VAL + 1,
++					     &sel, &found);
++	KUNIT_EXPECT_LE(test, ret, 0);
++
++	ret = linear_range_get_selector_high(&testr[0], RANGE1_MIN - 1,
++					     &sel, &found);
++	KUNIT_EXPECT_EQ(test, 0, ret);
++	KUNIT_EXPECT_FALSE(test, found);
++	KUNIT_EXPECT_EQ(test, sel, range1_sels[0]);
 +}
-+EXPORT_SYMBOL_GPL(linear_range_get_selector_low_array);
 +
-+/**
-+ * linear_range_get_selector_high - return linear range selector for value
-+ * @r:		pointer to linear range where selector is looked from
-+ * @val:	value for which the selector is searched
-+ * @selector:	address where found selector value is updated
-+ * @found:	flag to indicate that given value was in the range
-+ *
-+ * Return selector which which range value is closest match for given
-+ * input value. Value is matching if it is equal or higher than given
-+ * value. If given value is in the range, then @found is set true.
-+ *
-+ * Return: 0 on success, -EINVAL if range is invalid or does not contain
-+ * value greater or equal to given value
-+ */
-+int linear_range_get_selector_high(const struct linear_range *r,
-+				   unsigned int val, unsigned int *selector,
-+				   bool *found)
++static void range_test_get_value_amount(struct kunit *test)
 +{
-+	*found = false;
++	int ret;
 +
-+	if (linear_range_get_max_value(r) < val)
-+		return -EINVAL;
++	ret = linear_range_values_in_range_array(&testr[0], 2);
++	KUNIT_EXPECT_EQ(test, (int)RANGE_NUM_VALS, ret);
++}
 +
-+	if (r->min > val) {
-+		*selector = r->min_sel;
-+		return 0;
++static void range_test_get_selector_low(struct kunit *test)
++{
++	int i, ret;
++	unsigned int sel;
++	bool found;
++
++	for (i = 0; i < RANGE1_NUM_VALS; i++) {
++		ret = linear_range_get_selector_low_array(&testr[0], 2,
++							  range1_vals[i], &sel,
++							  &found);
++		KUNIT_EXPECT_EQ(test, 0, ret);
++		KUNIT_EXPECT_EQ(test, sel, range1_sels[i]);
++		KUNIT_EXPECT_TRUE(test, found);
++	}
++	for (i = 0; i < RANGE2_NUM_VALS; i++) {
++		ret = linear_range_get_selector_low_array(&testr[0], 2,
++							  range2_vals[i], &sel,
++							  &found);
++		KUNIT_EXPECT_EQ(test, 0, ret);
++		KUNIT_EXPECT_EQ(test, sel, range2_sels[i]);
++		KUNIT_EXPECT_TRUE(test, found);
 +	}
 +
-+	*found = true;
++	/*
++	 * Seek value greater than range max => get_selector_*_low should
++	 * return Ok - but set found to false as value is not in range
++	 */
++	ret = linear_range_get_selector_low_array(&testr[0], 2,
++					range2_vals[RANGE2_NUM_VALS - 1] + 1,
++					&sel, &found);
 +
-+	if (r->step == 0)
-+		*selector = r->max_sel;
-+	else
-+		*selector = DIV_ROUND_UP(val - r->min, r->step) + r->min_sel;
-+
-+	return 0;
++	KUNIT_EXPECT_EQ(test, 0, ret);
++	KUNIT_EXPECT_EQ(test, sel, range2_sels[RANGE2_NUM_VALS - 1]);
++	KUNIT_EXPECT_FALSE(test, found);
 +}
-+EXPORT_SYMBOL_GPL(linear_range_get_selector_high);
++
++static struct kunit_case range_test_cases[] = {
++	KUNIT_CASE(range_test_get_value_amount),
++	KUNIT_CASE(range_test_get_selector_high),
++	KUNIT_CASE(range_test_get_selector_low),
++	KUNIT_CASE(range_test_get_value),
++	{},
++};
++
++static struct kunit_suite range_test_module = {
++	.name = "linear-ranges-test",
++	.test_cases = range_test_cases,
++};
++
++kunit_test_suites(&range_test_module);
++
++MODULE_LICENSE("GPL");
 -- 
 2.21.0
 
