@@ -2,89 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A2141A9C26
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:25:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E3F31A9C28
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:26:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yih77NEZUwl6i44ge9O+wuDVVllJYKsolHL5d6M+8Sc=; b=rjnZHOLT8bwdpf
-	Qy+VYyI0YvmHnEwXkBSqzMvryj927/jBROY7tSlsqzAyNK5j16vS60Rg9UBMOYAQEfnsF0Nu/zngF
-	hKDNGddhp6hYJc0IFZAm10R9GhkbAqq1o4DhgPPueSmSw+qQg0EklvkLNJ4R8nUdcM088iNb9OJak
-	uQjEuWICX1CXAK1gXuAsljpc9HTdRgE5vcw1ARo6BjZYNBPUGDX7J2EG2UkMqhhzte6OtdVYh3A7i
-	y4aCJUgjmWtWYxJ9PHDbPHx3ZjR1A5jgRSCPFFOuyWc+im+PtVx189hhTTi5oLfOnigTv4xP2z+vf
-	79QJp4Vnu1W3KnvlE4gw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uhuAEpJc042P48s+a3i0vNsA5UgVDM7jBT7gXZ/HKrs=; b=BvrnDjZTLDRLcSqueatYC0hVv
+	0WQIdAyYONrBQfTAPYLw34OZT9hskxuII6UwIofgjHpk834+LeUlv4J/mJDALMfduxW1qDyHHnTwP
+	aClw+ZK4IMtcKoIzvz27F8fKma6CQBiQMsBCsLMTPwTCU0WmCNHaU7XQvnTX2xxXpKNR81tascLW6
+	p1rMALxiwdfzNtk0Bds7Oe8fLnnDltxZMM2oo4eCdxyjsa5pH0EpT5WPogLP+nl2SIPnxR/TpWLlK
+	w09km2g+YgkqUZ/0CU1bKSnB2veMRv4Gn2jLk4e9fShVbxfQgDu0cp0VMot+ttUngWvEQU89v63nb
+	5eP9sEe5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgAn-0007p8-AE; Wed, 15 Apr 2020 11:25:41 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jOgB4-0008CF-0o; Wed, 15 Apr 2020 11:25:58 +0000
+Received: from hqnvemgate26.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgAZ-0007ny-RQ
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:25:30 +0000
-Received: by mail-wm1-x342.google.com with SMTP id o81so11373288wmo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 04:25:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to;
- bh=apXLkj8/Y6/Je/J3pw9VYIeGtZznbEDSTaodMw9SIP8=;
- b=CtHkHYlCnlsa+tUc8/F7g7a0/P6u8ejT1ayfSACtu0kpWhs3EFaqXHsG66HdK2TqVO
- 1YepPve4g/tteoWGzn/BId3gVqa0gSrcAXKoX7yewG/1H0vQN4Qe2Pn7YxQ/IdDn6tw3
- UgUpHRyZ0gelkfNm/V6/st91NhPu8ozpGjQpo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=apXLkj8/Y6/Je/J3pw9VYIeGtZznbEDSTaodMw9SIP8=;
- b=CSIwxHpz383vyIQwH3dFGfzQ/oNtL/pWMt4QRQI/YbdcO7r1IppGL6eomQz4jvpd3M
- YTRTb8Wpp1zTUbah9EXMdJHKRN15uF/aHoNbfzstGkEhmbuI2fHvnNI0pRcZNf9jxpcV
- /VwR53KYfCSzWx2Z+tNEXPW4cGeDESJjrmFul5gzaVQHblF5myrGIcJUP4Olp8J8b9rT
- 0ZS0Xolj+gUjkSHBYo09SSPfxlYp4mEyOWJHWeTv/qYSjsYIt6X5Lo5uGCDDQvYQnrac
- R3dkSGCUvc8ciYqpQgBVUdfrzuX9SzzzVR0q9cmchbc58LZE+a8Gz5RjcIKZX2pqO2FB
- zCIA==
-X-Gm-Message-State: AGi0PuY27ooTDtUXSyjUTwFLjrwGegBhB9oQjr8rnfanENUNSWTtyouR
- g122LcryqfYrYHvgvXtQwTEC2w==
-X-Google-Smtp-Source: APiQypLPhakDBiE4HRC90MnW5/bRC2vpIu2AQD3Xvb6Y3wPK7412N1qq31ytrTaUWKirLB1NJ1AesQ==
-X-Received: by 2002:a1c:7c13:: with SMTP id x19mr4706062wmc.124.1586949925687; 
- Wed, 15 Apr 2020 04:25:25 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id w3sm4358429wrc.18.2020.04.15.04.25.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 04:25:25 -0700 (PDT)
-Date: Wed, 15 Apr 2020 13:25:23 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH][next] drm/rockchip: fix spelling mistake "modifer" ->
- "modifier"
-Message-ID: <20200415112523.GA3456981@phenom.ffwll.local>
-Mail-Followup-To: Colin King <colin.king@canonical.com>,
- Sandy Huang <hjc@rock-chips.com>,
- Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20200415083420.366279-1-colin.king@canonical.com>
+ id 1jOgAd-0007og-DQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:25:32 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate26.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e96ef1c0000>; Wed, 15 Apr 2020 04:25:16 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Wed, 15 Apr 2020 04:25:29 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Wed, 15 Apr 2020 04:25:29 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL109.nvidia.com
+ (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 15 Apr
+ 2020 11:25:28 +0000
+Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 15 Apr
+ 2020 11:25:17 +0000
+Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
+To: Viresh Kumar <viresh.kumar@linaro.org>
+References: <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
+ <d233b26b-6b50-7d41-9f33-a5dc151e0e7d@nvidia.com>
+ <20200406025549.qfwzlk3745y3r274@vireshk-i7>
+ <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
+ <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
+ <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
+ <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
+ <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
+ <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
+ <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
+ <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
+From: Sumit Gupta <sumitg@nvidia.com>
+Message-ID: <d6e0eed6-4267-fca9-59e1-02d16e17ff34@nvidia.com>
+Date: Wed, 15 Apr 2020 16:55:53 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415083420.366279-1-colin.king@canonical.com>
-X-Operating-System: Linux phenom 5.3.0-3-amd64 
+In-Reply-To: <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1586949916; bh=eXKsl5AwjUrhoGQdcNjptVpYoo1UjOgc5wmqJgrcC5Q=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=BufMhBhRaHC5kGcUpG2IkNn/Bfg4VQWvgSaQNbxoHn0VvAvRLQsl7xjWkgBtNJ7Kh
+ t2ipKJv2gpkrMXWf0a8+Ok30Adzu+bjmHntEskmxM78ojT6yDs3Va1eAN41kin2EQB
+ W+EPOcwvBy5bflyNRl0ZUZerXfolh7aB+8mr7Vx+u3MtYcKh9Es5gkcD8UvlpU2LkP
+ 5m2FgGLBadbB6U4ySZHwUGPeFcU3Dfd6MhmIDTxqDa51lUqqbxBSRxwc1cFSXF+Ool
+ VPAofppZofnYUY//2D9agcpOmHfefVFjPxzlCoajeCWLbuFHF8tPKE3VTuS9GST+Lw
+ 3w3Q2+kkG0IeA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_042529_430082_88E6B3B2 
-X-CRM114-Status: GOOD (  16.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_042531_458401_5BD5EEC3 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,6 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,51 +105,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, kernel-janitors@vger.kernel.org,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
+ talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
+ mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 09:34:20AM +0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> There is a spelling mistake in a DRM_DEBUG_KMS debug message. Fix it.
-> 
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
-Queued for 5.8, thanks for your patch.
--Daniel
 
-> ---
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+On 14/04/20 11:15 AM, Viresh Kumar wrote:
+> External email: Use caution opening links or attachments
 > 
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index b87d22eb6ae1..33463b79a37b 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -769,7 +769,7 @@ static bool rockchip_mod_supported(struct drm_plane *plane,
->  		return true;
->  
->  	if (!rockchip_afbc(modifier)) {
-> -		DRM_DEBUG_KMS("Unsupported format modifer 0x%llx\n", modifier);
-> +		DRM_DEBUG_KMS("Unsupported format modifier 0x%llx\n", modifier);
->  
->  		return false;
->  	}
-> -- 
-> 2.25.1
 > 
+> On 13-04-20, 17:50, Sumit Gupta wrote:
+>> This was done considering long delay value as explained previously.
+>> Do you think that smp_call_function_single() would be better than work queue
+>> here?
+> 
+> Don't work with assumptions, you should test both and see which one
+> works better. Workqueue should never be faster than
+> smp_call_function_single() with my understanding.
+Checked the time taken and its almost same in both cases.
+Earlier we used smp_call_function_single(), but delay time period was 
+small in that SOC. In T194, the time period was more. So, this is an 
+optimization done because using work queue has advantage as interrupts 
+will not be disabled for that period.
+If you think work queue is not required, then can remove it. The 
+functionality works fine in both cases.
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+> 
+> --
+> viresh
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
