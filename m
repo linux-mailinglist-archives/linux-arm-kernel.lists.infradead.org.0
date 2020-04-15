@@ -2,79 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87B061A90F1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 04:35:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81BDA1A90F4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 04:35:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RWUlZfpXhdjhxDnzsGSl3Of4FQ9jCaKFiiQpF0CqeBA=; b=CCQ2THGVlew1ZX
-	7o1aeAJ07czUk6y0IP5tG6todnOOG4xc6qmsLhkBl12hEZY2jbgMNY9vG04Gk/BMZVinvugsY9CQv
-	LGjAxxB5IXFXk6Z0idbxjX374R5soisdVd3Tw/wGGfn1oKA4kYzK+aQURkUuGPgHSzXdG7aBOnf8w
-	myiCfRCZEgm5Lt7Ssy1mkVjGbT3pdgTYKUgq9MBKw+jWBzCTTzW6byIWIUp+3DGCmn3ojDVc67K3H
-	DjBjUK/+K6Yr0c2+6TPQ0ncA+GwGV2SIve7GGeVY/U0BGXeKNYI4Iwet/HfvSae4cxsHyPd5fw4BN
-	a6mCRs0a1QW8fUqYw94Q==;
+	List-Owner; bh=uDCTHgVAhGGhp3nYtJnU3rsGPPkU1MpXif8UHDI6Aoc=; b=IPEUhFpqfzyEGG
+	IElK51Y4Z9S12QRnBmA/tkGa36epFVBx9hDPgClEZF4m0urjUrCxPG4mwZduPVRpa0fMVN2gKsTEl
+	RG7AKjJsjp4SDFr+UaL89+e31nzgPn4NSYqkRata4fLs+p7UVuEu41Ej5KyOi1ZLuN4M0gYrY9g+O
+	d1bm7TzjyAQuVJ5JudFos3W3S1QA9i8NmG89L7NjOa/f5Muz7fcMc71R+gyvUTBqeq+JfwRLG0iDA
+	CsXNYoj1HLV60f93E0mUAz33eLLP3+q+bBvuUQducZobf6GL7AfpgtdyxYLR+SCPZaxG845c2NHDU
+	HNYr+dIKhvwKXPTMGoHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOXtV-0001u5-Ow; Wed, 15 Apr 2020 02:35:17 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jOXu0-0004Xl-PV; Wed, 15 Apr 2020 02:35:48 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOXtA-0001qu-V4
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 02:34:58 +0000
-Received: by mail-ot1-x344.google.com with SMTP id l21so1914410otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 Apr 2020 19:34:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+7NCTHkFb8srify26v+d/R/erV2NDO4/9sUz1z6PAqU=;
- b=gAq7bZEIZ/9CjRjLVjZoGerHRKHZ5lZD0UEPr3W5K6dHWKgFI0RUI2EGS0/qA0kTUw
- lsxmNRQE35tSfFFbaJYBC/+Mf78NKu499iUJXp8nmBgTmwNkIKhJwSTsy7olXWffEkyH
- p3EnyCncUWbwSj0vLUjKrSMah4fbzpL2nGSLqXvcZ2Ytfs7lOQuKHf1axLukTwlTMnFX
- RAulLoEZoX8m19MLkVtCurokhxsqI7ujG0mNlTuRgsDJhBnTno7tQvWBZXOTKngydWPd
- 1ppY11u+tUfIosA4oVkDF5jq3dSqKxoC2vbxF9iyMg1VrTpeLo4mZfwdx1mGjr4Get5v
- P7nQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+7NCTHkFb8srify26v+d/R/erV2NDO4/9sUz1z6PAqU=;
- b=SOsdcTKo9fkSCiifSY9+GHqFpWwcdymZgnQljXR3W9DkBPULRGDapfR0rS1tt6Lvce
- RDZ82K1MIiudV5+D8CcU/P211WWSd/Y5mfM5HPbbn2OEkX+cnf8QtD4EJkDUmfGvEBmk
- s0S0bBxp723l7FQo/gfa/IuLVUct9T3Kd+p/iCd9BrDgPhoJpS0MtSDVyV9WWLBNi5Rk
- G+ky35eefMJe7s2rRG72tNE7qoqmW+icu4Yo+xD2oKl1fn0sGKHz3ol5aISH4n0Dn8PF
- G63tzPUcDT5lIVSkmjwJDlu/sIQlT9nFG9HDDDEnNbZ7saE48wY88mF1hLA7WbOPkyrG
- VrKw==
-X-Gm-Message-State: AGi0PuZv60xjtMqsuicRCK3ibnoEdmmGMIGHz+QvjJvt57C6luwgIXaC
- ujBZNMPzRmGXPkp9iRNW8z1+cY3Pnl36pvI1RUg=
-X-Google-Smtp-Source: APiQypJXSb94OJlaJ/kPpGtEtQyGeMuhJGrfLugpQAzrMNJoVNcMo2W2aS8RScemfMl7aWlnWzMfDFAcbAv28eMCOAM=
-X-Received: by 2002:a9d:de2:: with SMTP id 89mr1153142ots.95.1586918093505;
- Tue, 14 Apr 2020 19:34:53 -0700 (PDT)
+ id 1jOXto-0004Wv-UO
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 02:35:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586918135;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=3o4+0HgEBD0h2Go+GpB2trM6HPRj5m5yAn/gvrKMuxQ=;
+ b=APFa9xqEU7VJnr5z77+7garh9xZJicWbh8t09e0TJZFnTGntQzcGi4Th+/DAUx5vGA4RkQ
+ NQbqq9RHjfyYw70vVPhL18FLZayMSnEyEFAFNYBU6hUHP7HKqcFNwd9AApluUdfl5rGICQ
+ 6dPv0Btuetb95sqrC+JZ3xtdNH9Sv1A=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-321-WOza4ysLPQyg0KcN4VE8gg-1; Tue, 14 Apr 2020 22:35:33 -0400
+X-MC-Unique: WOza4ysLPQyg0KcN4VE8gg-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 890218017F3;
+ Wed, 15 Apr 2020 02:35:30 +0000 (UTC)
+Received: from localhost (ovpn-12-27.pek2.redhat.com [10.72.12.27])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 7B9A899DEE;
+ Wed, 15 Apr 2020 02:35:26 +0000 (UTC)
+Date: Wed, 15 Apr 2020 10:35:24 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+Message-ID: <20200415023524.GG4247@MiWiFi-R3L-srv>
+References: <20200412080836.GM25745@shell.armlinux.org.uk>
+ <87wo6klbw0.fsf@x220.int.ebiederm.org>
+ <20200413023701.GA20265@MiWiFi-R3L-srv>
+ <871rorjzmc.fsf@x220.int.ebiederm.org>
+ <20200414064031.GB4247@MiWiFi-R3L-srv>
+ <86e96214-7053-340b-5c1a-ff97fb94d8e0@redhat.com>
+ <20200414092201.GD4247@MiWiFi-R3L-srv>
+ <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
+ <20200414143912.GE4247@MiWiFi-R3L-srv>
+ <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
 MIME-Version: 1.0
-References: <20200225073731.465270-1-avagin@gmail.com>
- <20200225073731.465270-4-avagin@gmail.com>
- <20200414172014.GA6705@C02TD0UTHF1T.local>
-In-Reply-To: <20200414172014.GA6705@C02TD0UTHF1T.local>
-From: Andrei Vagin <avagin@gmail.com>
-Date: Tue, 14 Apr 2020 19:34:41 -0700
-Message-ID: <CANaxB-yBeSmYdZL6gbe-agDAaEVcYHrxUCojQ4xaWpsWinQsyA@mail.gmail.com>
-Subject: Re: [PATCH v2 3/6] arm64/vdso: Add time napespace page
-To: Mark Rutland <mark.rutland@arm.com>
+In-Reply-To: <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_193457_026110_144B996C 
-X-CRM114-Status: GOOD (  25.85  )
+X-CRM114-CacheID: sfid-20200414_193537_059027_DED6AFD6 
+X-CRM114-Status: GOOD (  27.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [avagin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,90 +101,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, linux-arm-kernel@lists.infradead.org,
- Dmitry Safonov <dima@arista.com>
+Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
+ kexec@lists.infradead.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 10:20 AM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Mon, Feb 24, 2020 at 11:37:28PM -0800, Andrei Vagin wrote:
-> > Allocate the time namespace page among VVAR pages.  Provide
-> > __arch_get_timens_vdso_data() helper for VDSO code to get the
-> > code-relative position of VVARs on that special page.
-> >
-> > If a task belongs to a time namespace then the VVAR page which contains
-> > the system wide VDSO data is replaced with a namespace specific page
-> > which has the same layout as the VVAR page. That page has vdso_data->seq
-> > set to 1 to enforce the slow path and vdso_data->clock_mode set to
-> > VCLOCK_TIMENS to enforce the time namespace handling path.
-> >
-> > The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
-> > update of the VDSO data is in progress, is not really affecting regular
-> > tasks which are not part of a time namespace as the task is spin waiting
-> > for the update to finish and vdso_data->seq to become even again.
-> >
-> > If a time namespace task hits that code path, it invokes the corresponding
-> > time getter function which retrieves the real VVAR page, reads host time
-> > and then adds the offset for the requested clock which is stored in the
-> > special VVAR page.
-> >
-> > Signed-off-by: Andrei Vagin <avagin@gmail.com>
-> > ---
-> >  arch/arm64/include/asm/vdso.h                 |  6 ++++++
-> >  .../include/asm/vdso/compat_gettimeofday.h    | 11 ++++++++++
-> >  arch/arm64/include/asm/vdso/gettimeofday.h    |  8 ++++++++
-> >  arch/arm64/kernel/vdso.c                      | 20 ++++++++++++++++---
-> >  arch/arm64/kernel/vdso/vdso.lds.S             |  5 ++++-
-> >  arch/arm64/kernel/vdso32/vdso.lds.S           |  5 ++++-
-> >  include/vdso/datapage.h                       |  1 +
-> >  7 files changed, 51 insertions(+), 5 deletions(-)
->
-> > +#ifdef CONFIG_TIME_NS
-> > +static __always_inline const struct vdso_data *__arch_get_timens_vdso_data(void)
-> > +{
-> > +     const struct vdso_data *ret;
-> > +
-> > +     asm volatile("mov %0, %1" : "=r"(ret) : "r"(_timens_data));
-> > +
-> > +     return ret;
-> > +}
-> > +#endif
->
-> What is this inline assembly for? The commit message doesn't mention it,
-> there's no explanation here, and the native version doesn't do likewise
-> so it seems rather surprising.
+On 04/14/20 at 04:49pm, David Hildenbrand wrote:
+> >>>>> The root cause is kexec-ed kernel is targeted at hotpluggable memory
+> >>>>> region. Just avoiding the movable area can fix it. In kexec_file_load(),
+> >>>>> just checking or picking those unmovable region to put kernel/initrd in
+> >>>>> function locate_mem_hole_callback() can fix it. The page or pageblock's
+> >>>>> zone is movable or not, it's easy to know. This fix doesn't need to
+> >>>>> bother other component.
+> >>>>
+> >>>> I don't fully agree. E.g., just because memory is onlined to ZONE_NORMAL
+> >>>> does not imply that it cannot get offlined and removed e.g., this is
+> >>>> heavily used on ppc64, with 16MB sections.
+> >>>
+> >>> Really? I just know there are two kinds of mem hoplug in ppc, but don't
+> >>> know the details. So in this case, is there any flag or a way to know
+> >>> those memory block are hotpluggable? I am curious how those kernel data
+> >>> is avoided to be put in this area. Or ppc just freely uses it for kernel
+> >>> data or user space data, then try to migrate when hot remove?
+> >>
+> >> See
+> >> arch/powerpc/platforms/pseries/hotplug-memory.c:dlpar_memory_remove_by_count()
+> >>
+> >> Under DLAPR, it can remove memory in LMB granularity, which is usually
+> >> 16MB (== single section on ppc64). DLPAR will directly online all
+> >> hotplugged memory (LMBs) from the kernel using device_online(), which
+> >> will go to ZONE_NORMAL.
+> >>
+> >> When trying to remove memory, it simply scans for offlineable 16MB
+> >> memory blocks (==section == LMB), offlines and removes them. No need for
+> >> the movable zone and all the involved issues.
+> > 
+> > Yes, this is a different one, thanks for pointing it out. It sounds like
+> > balloon driver in virt platform, doesn't it?
+> 
+> With DLPAR there is a hypervisor involved (which manages the actual HW
+> DIMMs), so yes.
+> 
+> > 
+> > Avoiding to put kexec kernel into movable zone can't solve this DLPAR
+> > case as you said.
+> > 
+> >>
+> >> Now, the interesting question is, can we have LMBs added during boot
+> >> (not via add_memory()), that will later be removed via remove_memory().
+> >> IIRC, we had BUGs related to that, so I think yes. If a section contains
+> >> no unmovable allocations (after boot), it can get removed.
+> > 
+> > I do want to ask this question. If we can add LMB into system RAM, then
+> > reload kexec can solve it. 
+> > 
+> > Another better way is adding a common function to filter out the
+> > movable zone when search position for kexec kernel, use a arch specific
+> > funciton to filter out DLPAR memory blocks for ppc only. Over there,
+> > we can simply use for_each_drmem_lmb() to do that.
+> 
+> I was thinking about something similar. Maybe something like a notifier
+> that can be used to test if selected memory can be used for kexec
 
-__arch_get_vdso_data is  right before this function and there is a
-comment which explains this:
-https://github.com/torvalds/linux/blob/master/arch/arm64/include/asm/vdso/compat_gettimeofday.h#L137
+Not sure if I get the notifier idea clearly. If you mean 
 
-"""
-/*
-* This simply puts &_vdso_data into ret. The reason why we don't use
-* `ret = _vdso_data` is that the compiler tends to optimize this in a
-* very suboptimal way: instead of keeping &_vdso_data in a register,
-* it goes through a relocation almost every time _vdso_data must be
-* accessed (even in subfunctions). This is both time and space
-* consuming: each relocation uses a word in the code section, and it
-* has to be loaded at runtime.
-*
-* This trick hides the assignment from the compiler. Since it cannot
-* track where the pointer comes from, it will only use one relocation
-* where __arch_get_vdso_data() is called, and then keep the result in
-* a register.
-*/
-"""
+1) Add a common function to pick memory in unmovable zone;
+2) Let DLPAR, balloon register with notifier;
+3) In the common function, ask notified part to check if the picked
+   unmovable memory is available for locating kexec kernel;
 
-I decided to not duplicate the comment because these two functions are
-very similar and close to each other.
+Sounds doable to me, and not complicated.
 
-Thanks,
-Andrei
+> images. It would apply to
+> 
+> - arm64 and filter out all hotadded memory (IIRC, only boot memory can
+>   be used).
+
+Do you mean hot added memory after boot can't be recognized and added
+into system RAM on arm64?
+
+
+> - powerpc to filter out all LMBs that can be removed (assuming not all
+>   memory corresponds to LMBs that can be removed, otherwise we're in
+>   trouble ... :) )
+> - virtio-mem to filter out all memory it added.
+> - hyper-v to filter out partially backed memory blocks (esp. the last
+>   memory block it added and only partially backed it by memory).
+> 
+> This would make it work for kexec_file_load(), however, I do wonder how
+> we would want to approach that from userspace kexec-tools when handling
+> it from kexec_load().
+
+Let's make kexec_file_load work firstly. Since this work is only first
+step to make kexec-ed kernel not break memory hotplug. After kexec
+rebooting, the KASLR may locate kernel into hotpluggable area too.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
