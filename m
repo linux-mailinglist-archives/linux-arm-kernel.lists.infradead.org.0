@@ -2,134 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DA4E1A9A55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:25:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1C71A9A49
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 12:21:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LOVwNkdJzJEaixnlRCoNsgig9G23tPeNi0iP2zp/T8A=; b=nS4lA5NeJNY5Is
-	Z9G2ZX9T2dPMGpzI1dtz03mJDY73Au/O3FnTx4ZrWZvTSJb/pIKmUJHM5Lf8QQOo+WuSwvyClLG5a
-	uN33A0GS1enUQorz2FJowzpBgLDYIqzGrxhDK3kk+Hh8NbRLwuIbusrFkDPHl+rqQB6NU69zwRGXX
-	C5HJKB40R0Utyw6U0kdM64MR/vWw4rJbOe0Rh8sGn8y3zU4ngSCerIIzCU/VAF+FFDuChhOCmVGer
-	dH205uEjQI40aurlBhRIMRUt98+q43mzsSd5Ej91LfiuDXRFdSFTTcmviF4xDD+2U854jgGwEXSov
-	6RH7ICByIh0knKJie9yw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=C5OuL2Osb46yTiW0swDmBC4NaKU4IoL5pxZPNFRFxw8=; b=Ma+E4Pm8/9jPV5Hk/KPgp1T2W
+	YlK/TSDqxWTi5gmU4LYET6znASOf1t9DjqEtVQ6DIAC9cLnAZzSi6XAOqoeYhI5l6280dvzS5JEkP
+	MQgLigch10M+apiM11DSpqTIPlc0kY81yj+//qBvV0dX14OTedGUUUrUw7CJCH2jwPOBYD8aKhXrz
+	JW4IXePxgNFIE6+XlJYVGb1+PYs3IQBJSsgsQP9VxZV/gJgv1o3EewulQ040Bme18e1Xa6ksK/z3W
+	weUQ/H1Ea6bcU4AMyKzdahAKQKIyyThAxjvgScsmmkbJJCUHv8QMs1Wo208AeAOAy4iit9Ly3bTeG
+	HLIoSWzJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOfEi-0005pm-Nr; Wed, 15 Apr 2020 10:25:40 +0000
-Received: from mail-mw2nam10on2045.outbound.protection.outlook.com
- ([40.107.94.45] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOfED-0003nz-HX
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 10:25:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Krd1CZzv2Kd7/yscMhz5bcjV5HDCPsONa9c7hvDHAHpozJqyovrVUFbglvpZ4NvI3vhbq4uOHLFDf5ES7uYhT6LONcwGp4oqpOzIO9RgESR3tGX3cUZs2RZN77ZyTS79JOb1hE6EluyMM3VOWBLfRG5zXlfPjRbeT0UZi39fqN55eiIFeCucFdBQNjTscsuWcLEwIzCyOrTQSYOjXqof608Y2OKl6hRugvY5HMvRYCaWLd0Tm48ul3rxRKcGrxmEJLLY204tQ/fAZMaNWxQ4k6bn0wnoTsUrY7KVE86PI1k/c9koB/GThFKFcKvtb5TBJVvhJhH1CChCGDzeGawrYA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ixkfw4DV3l9ZzMixhU2bxIK8xqCuA2/DGCS5yAeFeYo=;
- b=SzMIW7hgeSpEhYdvPWWfW8TK1fO1W5Zdkaqlr1nu/99eNFKdv2GTvvEJ9Ecvddnno+IOy97bTrBlhINDwYiWULy0rW/OPiyNHfyIkeCbsrU3oJrw5m1oBo24fv8X3ouGy85KXOYkwXRsZx6/qxTi/yraZ30RVqkK7NNHHKbt+eM1HP0Ai24enn4inUVoGqmHkpiEEq7YZtHj59qUzf0jIazDhKQCO7CovjS/rK5LQou3CCEgpUc8iDYNXDwbKGGkcp9T2X4K9F9HiIprZdi6Dl4VNvY+08fR/dgtlMkEJXy/bAam0eWnc9cqg6lUNwm2gcOjc5UtHV6PkmdZSLP80g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=gmail.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ixkfw4DV3l9ZzMixhU2bxIK8xqCuA2/DGCS5yAeFeYo=;
- b=prSZA1vIyCBUwr5Hu8YjJ3lmazRjK8RYkFl/kc5eDWcbL9GQ7n1uNwK5/zklKDkVQm7TdedirjeHp88Vtvx4KZ/Sy24sF0tMZHa108UXtH5oPEPPBYKY15NTiz5dkquMbcnL3Nvs9zn2kxo19D9m3II1DEN4QeQcHj6pWF9DQS8=
-Received: from CY4PR01CA0019.prod.exchangelabs.com (2603:10b6:903:1f::29) by
- SN6PR02MB4702.namprd02.prod.outlook.com (2603:10b6:805:9c::18) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2900.26; Wed, 15 Apr 2020 10:25:03 +0000
-Received: from CY1NAM02FT064.eop-nam02.prod.protection.outlook.com
- (2603:10b6:903:1f:cafe::40) by CY4PR01CA0019.outlook.office365.com
- (2603:10b6:903:1f::29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.25 via Frontend
- Transport; Wed, 15 Apr 2020 10:25:03 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT064.mail.protection.outlook.com (10.152.74.64) with Microsoft SMTP
- Server id 15.20.2900.15 via Frontend Transport; Wed, 15 Apr 2020 10:25:02
- +0000
-Received: from [149.199.38.66] (port=57913 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <nava.manne@xilinx.com>)
- id 1jOfDP-0002oq-Or; Wed, 15 Apr 2020 03:24:19 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <nava.manne@xilinx.com>)
- id 1jOfE6-0000Qx-Hq; Wed, 15 Apr 2020 03:25:02 -0700
-Received: from xsj-pvapsmtp01 (smtp-fallback.xilinx.com [149.199.38.66] (may
- be forged))
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 03FAP0s6018322; 
- Wed, 15 Apr 2020 03:25:00 -0700
-Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <nava.manne@xilinx.com>)
- id 1jOfE3-0000Kb-Sa; Wed, 15 Apr 2020 03:25:00 -0700
-From: Nava kishore Manne <nava.manne@xilinx.com>
-To: mdf@kernel.org, michal.simek@xilinx.com, linux-fpga@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- chinnikishore369@gmail.com
-Subject: [PATCH 2/2] fpga: zynq: Add AFI config driver
-Date: Wed, 15 Apr 2020 15:54:50 +0530
-Message-Id: <1586946290-7280-2-git-send-email-nava.manne@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1586946290-7280-1-git-send-email-nava.manne@xilinx.com>
-References: <1586946290-7280-1-git-send-email-nava.manne@xilinx.com>
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(376002)(136003)(346002)(39860400002)(396003)(46966005)(7696005)(2906002)(356005)(70586007)(8936002)(26005)(6666004)(186003)(107886003)(81166007)(336012)(70206006)(47076004)(426003)(9786002)(82740400003)(478600001)(36756003)(5660300002)(4326008)(316002)(8676002)(81156014)(2616005)(42866002);
- DIR:OUT; SFP:1101; 
+	id 1jOfAC-00022W-B7; Wed, 15 Apr 2020 10:21:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOfA2-0001yQ-FE
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 10:20:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B1B21063;
+ Wed, 15 Apr 2020 03:20:49 -0700 (PDT)
+Received: from [10.37.12.1] (unknown [10.37.12.1])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2BE9B3F68F;
+ Wed, 15 Apr 2020 03:20:47 -0700 (PDT)
+Subject: Re: [PATCH 4/8] arm64: cpufeature: Remove redundant call to
+ id_aa64pfr0_32bit_el0()
+To: will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
+References: <20200414213114.2378-1-will@kernel.org>
+ <20200414213114.2378-5-will@kernel.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <8f911640-8b7d-bb6f-2b76-67dd0d259b75@arm.com>
+Date: Wed, 15 Apr 2020 11:25:35 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: c34a721e-d94d-4095-5f79-08d7e1274251
-X-MS-TrafficTypeDiagnostic: SN6PR02MB4702:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB470263D84D7A1519E5B239E3C2DB0@SN6PR02MB4702.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:93;
-X-Forefront-PRVS: 0374433C81
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: BqvbgxK7Kmv9pqzFPSaeTF76/DkgZfXCI8t9QkmynRHlPVXK4e8Fa2/wOBtogfbS6OmKpNpc8u7/8bBC0p3va7Aq1JPCQij0pWsDZVbBAqoOSkrGl7sWiV5rD3he8t+TAJDwRKcXmHKrvkmevZcBdlKg4each3u0BGVtT38Tc5Wz1CDbaxz4l+yVKRdkQL2zl/VpADxafB8CqR8xfKfQ0vEDLQTL95FBmcnY/vAtbk3mcXCkyiOTMufqkqgVqTIZ95RDTKF89ySiVCgJmb9gMYfaWosC1u4fQq6SalDyetk6c19AB3RNr3lBlcAHuEu+KPSMqR//YkwCqzlQW0OnHu8nyaQJ9zAT66wh4lGwn7/QWHzbHjMhU++Vd0rcVdjJDHoMaZXGiGfAyTzPtDQ0/mVjS1gUbYj6dX+772gbzmm0r2iQoZVZq+uKdY1mv4Lh+K0MT7dZ2N86LORh4VbqDhP4MfuTQ/vejAzYmPyE5FQUAK4uqQnDKFV9w0a7+1mXJudGkzEMAVlmZbxuGmQmLrjbXXYmmjDp0Zt35iuc4Vs=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Apr 2020 10:25:02.8717 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c34a721e-d94d-4095-5f79-08d7e1274251
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB4702
+In-Reply-To: <20200414213114.2378-5-will@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_032509_596387_52EBE66C 
-X-CRM114-Status: GOOD (  14.35  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200415_032050_714669_4212DB9E 
+X-CRM114-Status: GOOD (  18.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.94.45 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,142 +66,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nava kishore Manne <nava.manne@xilinx.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, saiprakash.ranjan@codeaurora.org,
+ anshuman.khandual@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ dianders@chromium.org, catalin.marinas@arm.com, kernel-team@android.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch Adds AFI config driver. This is useful for
-the PS to PL configuration for the fpga manager On zynq
-platform.
+On 04/14/2020 10:31 PM, Will Deacon wrote:
+> There's no need to call id_aa64pfr0_32bit_el0() twice because the
+> sanitised value of ID_AA64PFR0_EL1 has already been updated for the CPU
+> being onlined.
+> 
+> Remove the redundant function call.
+> 
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
----
- drivers/fpga/Kconfig    |  8 +++++
- drivers/fpga/Makefile   |  1 +
- drivers/fpga/zynq-afi.c | 81 +++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 90 insertions(+)
- create mode 100644 drivers/fpga/zynq-afi.c
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-diff --git a/drivers/fpga/Kconfig b/drivers/fpga/Kconfig
-index 474f304e..60982a0 100644
---- a/drivers/fpga/Kconfig
-+++ b/drivers/fpga/Kconfig
-@@ -214,4 +214,12 @@ config FPGA_MGR_ZYNQMP_FPGA
- 	  to configure the programmable logic(PL) through PS
- 	  on ZynqMP SoC.
- 
-+config FPGA_MGR_ZYNQ_AFI_FPGA
-+	bool "Xilinx AFI FPGA"
-+	depends on FPGA_MGR_ZYNQ_FPGA
-+	help
-+	  Zynq AFI driver support for writing to the AFI registers
-+	  for configuring the PS_PL interface. For some of the bitstream
-+	  or designs to work the PS to PL interfaces need to be configured
-+	  like the data bus-width etc.
- endif # FPGA
-diff --git a/drivers/fpga/Makefile b/drivers/fpga/Makefile
-index 312b937..d115e29 100644
---- a/drivers/fpga/Makefile
-+++ b/drivers/fpga/Makefile
-@@ -26,6 +26,7 @@ obj-$(CONFIG_FPGA_BRIDGE)		+= fpga-bridge.o
- obj-$(CONFIG_SOCFPGA_FPGA_BRIDGE)	+= altera-hps2fpga.o altera-fpga2sdram.o
- obj-$(CONFIG_ALTERA_FREEZE_BRIDGE)	+= altera-freeze-bridge.o
- obj-$(CONFIG_XILINX_PR_DECOUPLER)	+= xilinx-pr-decoupler.o
-+obj-$(CONFIG_FPGA_MGR_ZYNQ_AFI_FPGA)	+= zynq-afi.o
- 
- # High Level Interfaces
- obj-$(CONFIG_FPGA_REGION)		+= fpga-region.o
-diff --git a/drivers/fpga/zynq-afi.c b/drivers/fpga/zynq-afi.c
-new file mode 100644
-index 0000000..7ce0d08
---- /dev/null
-+++ b/drivers/fpga/zynq-afi.c
-@@ -0,0 +1,81 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Xilinx FPGA AFI driver.
-+ * Copyright (c) 2018 Xilinx Inc.
-+ */
-+
-+#include <linux/err.h>
-+#include <linux/io.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+
-+/* Registers and special values for doing register-based operations */
-+#define AFI_RDCHAN_CTRL_OFFSET	0x00
-+#define AFI_WRCHAN_CTRL_OFFSET	0x14
-+
-+#define AFI_BUSWIDTH_MASK	0x01
-+
-+/**
-+ * struct afi_fpga - AFI register description
-+ * @membase:	pointer to register struct
-+ * @afi_width:	AFI bus width to be written
-+ */
-+struct zynq_afi_fpga {
-+	void __iomem	*membase;
-+	u32		afi_width;
-+};
-+
-+static int zynq_afi_fpga_probe(struct platform_device *pdev)
-+{
-+	struct zynq_afi_fpga *afi_fpga;
-+	struct resource *res;
-+	u32 reg_val;
-+	u32 val;
-+
-+	afi_fpga = devm_kzalloc(&pdev->dev, sizeof(*afi_fpga), GFP_KERNEL);
-+	if (!afi_fpga)
-+		return -ENOMEM;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	afi_fpga->membase = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(afi_fpga->membase))
-+		return PTR_ERR(afi_fpga->membase);
-+
-+	val = device_property_read_u32(&pdev->dev, "xlnx,afi-width",
-+				       &afi_fpga->afi_width);
-+	if (val) {
-+		dev_err(&pdev->dev, "Fail to get the afi bus width\n");
-+		return -EINVAL;
-+	}
-+
-+	reg_val = readl(afi_fpga->membase + AFI_RDCHAN_CTRL_OFFSET);
-+	reg_val &= ~AFI_BUSWIDTH_MASK;
-+	writel(reg_val | afi_fpga->afi_width,
-+	       afi_fpga->membase + AFI_RDCHAN_CTRL_OFFSET);
-+	reg_val = readl(afi_fpga->membase + AFI_WRCHAN_CTRL_OFFSET);
-+	reg_val &= ~AFI_BUSWIDTH_MASK;
-+	writel(reg_val | afi_fpga->afi_width,
-+	       afi_fpga->membase + AFI_WRCHAN_CTRL_OFFSET);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id zynq_afi_fpga_ids[] = {
-+	{ .compatible = "xlnx,zynq-afi-fpga" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, zynq_afi_fpga_ids);
-+
-+static struct platform_driver zynq_afi_fpga_driver = {
-+	.driver = {
-+		.name = "zynq-afi-fpga",
-+		.of_match_table = zynq_afi_fpga_ids,
-+	},
-+	.probe = zynq_afi_fpga_probe,
-+};
-+module_platform_driver(zynq_afi_fpga_driver);
-+
-+MODULE_DESCRIPTION("ZYNQ FPGA AFI module");
-+MODULE_AUTHOR("Nava kishore Manne <nava.manne@xilinx.com>");
-+MODULE_LICENSE("GPL v2");
--- 
-2.7.4
+> ---
+>   arch/arm64/kernel/cpufeature.c | 4 +---
+>   1 file changed, 1 insertion(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 838fe5cc8d7e..7dfcdd9e75c1 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -792,9 +792,7 @@ void update_cpu_features(int cpu,
+>   	 * If we have AArch32, we care about 32-bit features for compat.
+>   	 * If the system doesn't support AArch32, don't update them.
+>   	 */
+> -	if (id_aa64pfr0_32bit_el0(read_sanitised_ftr_reg(SYS_ID_AA64PFR0_EL1)) &&
+> -		id_aa64pfr0_32bit_el0(info->reg_id_aa64pfr0)) {
+> -
+> +	if (id_aa64pfr0_32bit_el0(read_sanitised_ftr_reg(SYS_ID_AA64PFR0_EL1))) {
+>   		taint |= check_update_ftr_reg(SYS_ID_DFR0_EL1, cpu,
+>   					info->reg_id_dfr0, boot->reg_id_dfr0);
+>   		taint |= check_update_ftr_reg(SYS_ID_ISAR0_EL1, cpu,
+> 
 
 
 _______________________________________________
