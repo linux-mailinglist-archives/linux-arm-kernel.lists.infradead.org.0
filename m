@@ -2,59 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 930551A9CEB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:41:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 493051A9D9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:46:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w44esJmVfOO+3W3Iam+ZjJF1hC7sQ3O72R34e6bKXAs=; b=feEw5DQyLRN2LlGfKc1qPBYdk
-	VPoxGNG7bJ+TvwklbfS1rW2fhhN2989mbJfDBfBU4vT14iQCAHG8YK88bBLm7sAtcm41FPsd8NA5J
-	1+j2Mo/f/DQs8dpEAwtaRj3aam4wvpppNiY+d3nbgLwBd0lgFEbLFt0o7OB68OA1vjgXWuDPdcp8A
-	WPrFCkZTlHlLetdHHT1msy52waDQIUYQEXw9fShJdDAshYPE7uWYRydXc1W/cwmJCMARr6V1hapO7
-	ObKU16cm3D/7ZVn1L89YHJf2Ip+oHUc2sWUaHcdmruFsLTbqqxHCjl69k2JMv4bR5k6LEq7Ov7QYl
-	f0iv0uPrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rpiAPyZe43LZjzb0T+4jqIOvRYfhnjysbj8d7vaZEP0=; b=EfL8c/m57ANhDx
+	kTu7sXqyn1bZUO/19wCTHNqiqEn+opCGjwrYnalrRvYL7o9jmElnF2dOxigMVXBXalJg18ADk/XEw
+	mBDO8rLXB000nq7usmNcbUnbOqotomoZSZynHiuvLyD/EFPR/61SoFsjTeAN7cusoSvSvRjgFdu2K
+	aUd1IpoAJoAsmt8tGOvTx9R2bdbbE4BwjVpwcy1vI4Nx3nK7SOd9AH9ijrfYXJ46S24L21UmVQaW7
+	ZbLMuoEoNct1YPNrFqiZZSnSB1RzHgmt1kbhO1PJfFIp6eHxv22aaHVsBhsiBR/QTdL/L8vmmItOw
+	q+trYq9/IS4Cfnt+vaBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgQ2-0007FQ-Uj; Wed, 15 Apr 2020 11:41:26 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jOgVB-00053o-Sb; Wed, 15 Apr 2020 11:46:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgPv-0007Es-6E; Wed, 15 Apr 2020 11:41:21 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id E7CA0AEE7;
- Wed, 15 Apr 2020 11:41:15 +0000 (UTC)
-Subject: Re: [PATCH v3 2/2] arm64: dts: realtek: Add RTD1319 SoC and Realtek
- PymParticle EVB
-To: James Tai <james.tai@realtek.com>
-References: <20200204145207.28622-1-james.tai@realtek.com>
- <20200204145207.28622-3-james.tai@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <842e8a9d-cdd6-cb85-ce85-17f20ff7b626@suse.de>
-Date: Wed, 15 Apr 2020 13:41:15 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jOgSB-0000Gd-Ta
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:43:42 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 625A520737;
+ Wed, 15 Apr 2020 11:43:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586951019;
+ bh=evbnZiIFrAsIYXcCSJ9OBMYr3dZ/O+8OKQb8KFPAPjI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=r17acMCGaANieS7CM0ePZPJFuuCkG17zsLrjjYDr3cO1XVayLC+FQ5ZwZgEPK5TYx
+ Y2qBoEjAqI4dRfZgV5DqF0CIHaBvcRFfQ8kB1MMY76I39fwvQ4w4xs+mFXW3p3Logb
+ myAq2MAIrmctM5BAQ4R7HEs1Z8KKN/iLcTSvFTnE=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.5 060/106] net: stmmac: dwmac1000: fix out-of-bounds
+ mac address reg setting
+Date: Wed, 15 Apr 2020 07:41:40 -0400
+Message-Id: <20200415114226.13103-60-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
+References: <20200415114226.13103-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200204145207.28622-3-james.tai@realtek.com>
-Content-Language: en-US
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044119_533710_51A2B783 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_044340_241090_C7D96035 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,87 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSmFtZXMsCgpBIGNvdXBsZSBtb3JlIG5pdHMgdG8gY29uc2lkZXIgZm9yIHY0OgoKQW0gMDQu
-MDIuMjAgdW0gMTU6NTIgc2NocmllYiBKYW1lcyBUYWk6Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
-NjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMzE5LXB5bXBhcnRpY2xlLmR0cyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcmVhbHRlay9ydGQxMzE5LXB5bXBhcnRpY2xlLmR0cwo+IG5ldyBmaWxlIG1vZGUg
-MTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi4yYTM2ZDIyMGZlZjYKPiAtLS0gL2Rldi9udWxs
-Cj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEzMTktcHltcGFydGljbGUu
-ZHRzCj4gQEAgLTAsMCArMSw0MyBAQAo+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQ
-TC0yLjAtb3ItbGF0ZXIgT1IgQlNELTItQ2xhdXNlKQo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgKGMp
-IDIwMTkgUmVhbHRlayBTZW1pY29uZHVjdG9yIENvcnAuCgoyMDE5LTIwMjA/IChhbHNvIGVsc2V3
-aGVyZSkKCj4gKyAqLwo+ICsKPiArL2R0cy12MS87Cj4gKwo+ICsjaW5jbHVkZSAicnRkMTMxOS5k
-dHNpIgo+ICsKPiArLyB7Cj4gKwljb21wYXRpYmxlID0gInJlYWx0ZWsscHltcGFydGljbGUiLCAi
-cmVhbHRlayxydGQxMzE5IjsKPiArCW1vZGVsID0gIlJlYWx0ZWsgUHltUGFydGljbGUgRVZCIjsK
-PiArCj4gKwltZW1vcnlAMmUwMDAgewo+ICsJCWRldmljZV90eXBlID0gIm1lbW9yeSI7Cj4gKwkJ
-cmVnID0gPDB4MmUwMDAgMHgzZmZkMjAwMD47IC8qIGJvb3QgUk9NIHRvIDEgR2lCIG9yIDIgR2lC
-ICovCj4gKwl9Owo+ICsKPiArCWNob3NlbiB7Cj4gKwkJc3Rkb3V0LXBhdGggPSAic2VyaWFsMDo0
-NjA4MDBuOCI7Cj4gKwl9Owo+ICsKPiArCWFsaWFzZXMgewo+ICsJCXNlcmlhbDAgPSAmdWFydDA7
-Cj4gKwkJc2VyaWFsMSA9ICZ1YXJ0MTsKPiArCQlzZXJpYWwyID0gJnVhcnQyOwo+ICsJfTsKPiAr
-fTsKPiArCj4gKy8qIGRlYnVnIGNvbnNvbGUgKEoxKSAqLwo+ICsmdWFydDAgewo+ICsJc3RhdHVz
-ID0gIm9rYXkiOwo+ICt9Owo+ICsKPiArLyogTS4yIHNsb3QgKENPTjgpICovCgpBbHNvIEoxNCBh
-bmQgQ09OMiAodW5sZXNzIHRoZSBib2FyZCBpcyBtaXNsYWJlbGVkPykuCgovKiBKMTQgYW5kIE0u
-MiBzbG90cyAoQ09OMiwgQ09OOCkgKi8gPwoKPiArJnVhcnQxIHsKPiArCXN0YXR1cyA9ICJkaXNh
-YmxlZCI7Cj4gK307Cj4gKwo+ICsvKiBHUElPIGNvbm5lY3RvciAoVDEpICovCj4gKyZ1YXJ0MiB7
-Cj4gKwlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICt9Owo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0
-L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTMxOS5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFs
-dGVrL3J0ZDEzMTkuZHRzaQo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAw
-MDAwLi4xZGNlZTAwMDA5Y2QKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9yZWFsdGVrL3J0ZDEzMTkuZHRzaQo+IEBAIC0wLDAgKzEsMTIgQEAKPiArLy8gU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9yLWxhdGVyIE9SIEJTRC0yLUNsYXVzZSkKPiAr
-LyoKPiArICogUmVhbHRlayBSVEQxMzE5IFNvQwo+ICsgKgo+ICsgKiBDb3B5cmlnaHQgKGMpIDIw
-MTkgUmVhbHRlayBTZW1pY29uZHVjdG9yIENvcnAuCj4gKyAqLwo+ICsKPiArI2luY2x1ZGUgInJ0
-ZDEzeHguZHRzaSIKPiArCj4gKy8gewo+ICsJY29tcGF0aWJsZSA9ICJyZWFsdGVrLHJ0ZDEzMTki
-Owo+ICt9Owo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTN4
-eC5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEzeHguZHRzaQo+IG5ldyBm
-aWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi5mNmQ3M2YxODM0NWQKPiAtLS0g
-L2Rldi9udWxsCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEzeHguZHRz
-aQo+IEBAIC0wLDAgKzEsMjEzIEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BM
-LTIuMC1vci1sYXRlciBPUiBCU0QtMi1DbGF1c2UpCj4gKy8qCj4gKyAqIFJlYWx0ZWsgUlREMTN4
-eCBTb0MgZmFtaWx5Cj4gKyAqCj4gKyAqIENvcHlyaWdodCAoYykgMjAxOSBSZWFsdGVrIFNlbWlj
-b25kdWN0b3IgQ29ycC4KPiArICovCj4gKwo+ICsvbWVtcmVzZXJ2ZS8JMHgwMDAwMDAwMDAwMDAw
-MDAwIDB4MDAwMDAwMDAwMDAyZTAwMDsgLyogQm9vdCBST00gKi8KCkNhbiB5b3UgY2hlY2sgd2hl
-dGhlciB5b3VyIFUtQm9vdCBhbmQgTEsgcmVzcGVjdGl2ZWx5IG5lZWQgdGhpcyAKbWVtcmVzZXJ2
-ZSBlbnRyeSwgaGVyZSBhbmQgZm9yIHByZXZpb3VzIFNvQ3M/IEJlY2F1c2UgZm9yIFJURDE2eHgg
-d2UgCmRvbid0IHNlZW0gdG8gaGF2ZSBhbnkgbWVtcmVzZXJ2ZSBlbnRyaWVzIGF0IGFsbC4gV2Ug
-ZG8gaGF2ZSBpdCBpbiAKcnRkMTM5eC5kdHNpLCBydGQxMjl4LmR0c2kgYW5kIHJ0ZDExOTUuZHRz
-aS4KClVucmVsYXRlZDogU2luY2Ugd2UncmUgY2FydmluZyBvdXQgdGhlIDJlMDAwIG9yIHNvIGZy
-b20gL21lbW9yeSBub2RlIGFuZCAKbWFwcGluZyByYW5nZXMgZm9yIC9zb2MsIEkndmUgYmVlbiB3
-b25kZXJpbmcgd2hldGhlciB3ZSBzaG91bGQgcmVwcmVzZW50IAp0aGUgQm9vdCBST00gYXMgbm9k
-ZSBzb21laG93LiBCdXQgc2luY2UgaXQncyBhIFJPTSB3aXRoIChJIGFzc3VtZSkgCmJpbmFyeSBj
-b2RlIG9ubHksIEkgZGlkbid0IHNlZSBhbnkgbmVlZCB0byBoYXZlIGl0IGFjY2Vzc2libGUgYXMg
-bXRkLXJvbSAKZGV2aWNlLCBzbyBpdCdzIHdheSBkb3duIG15IHRvLWRvIGxpc3QgdG8gcmVzZWFy
-Y2ggaG93IG90aGVyIG1haW5saW5lIApwbGF0Zm9ybXMgbWlnaHQgbW9kZWwgdGhlaXIgYm9vdCBS
-T01zLi4uIChtYXliZSB5b3VyIHRlYW0gaGFzIHRpbWUsIG9yIApzb21lb25lIHJlYWRpbmcgaGFw
-cGVucyB0byBrbm93PykKCmh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJu
-ZWwvZ2l0L25leHQvbGludXgtbmV4dC5naXQvdHJlZS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvbXRkL210ZC1waHlzbWFwLnR4dAoKPiArL21lbXJlc2VydmUvCTB4MDAwMDAwMDAw
-MDAyZTAwMCAweDAwMDAwMDAwMDAxMDAwMDA7IC8qIEJvb3QgbG9hZGVyICovCgpJcyB0aGlzIGEp
-IGNvcnJlY3RseSBzaXplZCAobm90IDB4ZDIwMDA/KSBhbmQgYikgc3RpbGwgbmVlZGVkPyBJIHRo
-b3VnaHQgCnRoZSBkb2N1bWVudGVkIHN1Yi0weDEwMDAwMCBtZW1vcnkgY29ycnVwdGlvbiB3ZXJl
-IGZpeGVkIGluIG5ld2VyIEJTUHM/Cgo+ICsvbWVtcmVzZXJ2ZS8JMHgwMDAwMDAwMDBmNDAwMDAw
-IDB4MDAwMDAwMDAwMDUwMDAwMDsgLyogVmlkZW8gRlcgKi8KPiArL21lbXJlc2VydmUvCTB4MDAw
-MDAwMDAwZjkwMDAwMCAweDAwMDAwMDAwMDA1MDAwMDA7IC8qIEF1ZGlvIEZXICovCj4gKy9tZW1y
-ZXNlcnZlLwkweDAwMDAwMDAwMTAwMDAwMDAgMHgwMDAwMDAwMDAwMDE0MDAwOyAvKiBBdWRpbyBG
-VyBSQU0gKi8KW3NuaXBdCgpBcmUgdGhlc2UgbmVlZGVkIGZvciB0aGUgYm9vdGxvYWRlciBub3Qg
-dG8gb3ZlcndyaXRlIHByZWxvYWRlZCBmaXJtd2FyZSwgCm9yIGNvdWxkIHRoZXNlIGJlY29tZSAv
-bWVtLXJlc2VydmUgc3ViLW5vZGVzIGluc3RlYWQ/CgpMb25nLXRlcm0gSSdtIGFzc3VtaW5nIHdl
-IHdvdWxkIG1vdmUgdGhlIHJlc3BvbnNpYmlsaXR5IGZvciBsb2FkaW5nIAp0aGVzZSB0byB0aGUg
-bmV3IGtlcm5lbCBkcml2ZXJzIChzbyB0aGF0IHRoZSBib290bG9hZGVyIGRvZXNuJ3QgbmVlZCB0
-byAKdGFrZSBjYXJlIGFueW1vcmUpIGFuZCBzaGlwIHRoZSBuZWVkZWQgYmxvYnMgaW4gbGludXgt
-ZmlybXdhcmUuZ2l0PwoKT3IgaXMgdGhlIHZpZGVvIEZXIG5lZWRlZCBieSB0aGUgYm9vdGxvYWRl
-ciBpdHNlbGYgZm9yIEhETUkvRFAgb3V0cHV0PwoKVGhhbmtzLApBbmRyZWFzCgotLSAKU1VTRSBT
-b2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJu
-YmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5i
-ZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+
+[ Upstream commit 3e1221acf6a8f8595b5ce354bab4327a69d54d18 ]
+
+Commit 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address
+entries") cleared the unused mac address entries, but introduced an
+out-of bounds mac address register programming bug -- After setting
+the secondary unicast mac addresses, the "reg" value has reached
+netdev_uc_count() + 1, thus we should only clear address entries
+if (addr < perfect_addr_number)
+
+Fixes: 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address entries")
+Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
+index 542784300620f..efc6ec1b8027c 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
+@@ -207,7 +207,7 @@ static void dwmac1000_set_filter(struct mac_device_info *hw,
+ 			reg++;
+ 		}
+ 
+-		while (reg <= perfect_addr_number) {
++		while (reg < perfect_addr_number) {
+ 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
+ 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
+ 			reg++;
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
