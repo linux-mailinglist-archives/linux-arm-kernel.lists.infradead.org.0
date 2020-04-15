@@ -2,85 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA1CB1AA989
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 16:15:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A2431AA9BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 16:21:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mFVET9m24X1MjIwfM5DRkcoO6zU2AqZPt3I9O82OYLg=; b=Mdxf6YYj5NpeWI
-	KXuo3P8by+rvJl+2W6GZPYpvQALXWdCD2xz6TZoUId6Re5hf2+rr9JM79wgogjyAJ0NnO4FAiYt96
-	kRga78W1+p/K9ijWQQuTlVcmABQVeyLKVGPvWjNQCnyehp9cPZprqbmE8FpJ4rkJTpY8zmO7SL4ev
-	qUoMrq2LMLrVWkTa4sTGJnY7bdunZrKWJlL+cH/hruv/nFHOWdbOA1JQqGDGZL7u2iZWsDrd56jvN
-	KDPcytqJcoUmYwhrTaoQ2oIbq2G7yu6ic/8HLErDSY7q53txbMGW2czn3iXce71I2IISoOqpqP+vV
-	f7sRr6KIa8I7TSgEMbwQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XRpVnGOict2h79tWEZsEROCXmq9gnDfl7IrZmVSxf98=; b=YtZRhvxmzrX58A
+	LwtaLk3dFwRnbyShZsWsKNHSm1696L3pWZL2dk35JJtyTbsMrHuTa1yNS8OvLxI+2RaY3rxoANLzL
+	To+oMOdv4FfcecPj5mXcZNoxJVTGIZaq5e1KKPvTOdD0/mCKvEcaxuvp7JwduXVdneoLota8COGQM
+	gVcr7M7Aa6Imghh2AypL1WQ+3Lx+U4tDEur5EHus3HbDlbXUm7YACuT83gPola/81idF1MHYq6SkG
+	BCwuMPLs2I3fCpd3yV40itgaqEEjyC6V5PRKQOoVVSLNtaJhlCtlDPzwFZJE0Zo5zV5wr3cVzGQe2
+	IPFTofNn/sm9Kt+cFGTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOipN-0006j6-JP; Wed, 15 Apr 2020 14:15:45 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jOiuQ-0001mT-2p; Wed, 15 Apr 2020 14:20:58 +0000
+Received: from mail-eopbgr750054.outbound.protection.outlook.com
+ ([40.107.75.54] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOipF-0006ie-Bb
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 14:15:39 +0000
-Received: by mail-lj1-x242.google.com with SMTP id u15so3867972ljd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 07:15:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iD9DiJbsjFvR0l8VWA77X1IH3xwznCsLM8hKGPl+PRU=;
- b=TCBII8GdGPliEdTt5zYPCbSfN/GirM3CNA1L+hF8wVCUcb+iXhsn7f4YnEpddGWFHV
- lndjOYl1+Ns7/wuISMz2Dd0D+/VawofNWW5V73ksyTbJB5ra4IO6JKqx91XgSn1JhF40
- nZuZv+M+5bEI1JnwoyBiAEOkCtd4T1RpAF7rCY5QFU0LCjN0ubdhmg+9YC3+sTOeGY7K
- ZHKAFY9iv12Ap88OB7TIzT3ncKuekNYZTwCBD7GgsLT79eRn//B2ibp8bMrWjLZp8QEs
- 1BvhUkRp9v2avwM7XwqJKPmnl/Zj3hF+0DaW4/KdN90Q+6RKfJWxkK/aCb1XpBHgtM+S
- Lifw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iD9DiJbsjFvR0l8VWA77X1IH3xwznCsLM8hKGPl+PRU=;
- b=J0Pne8jucTSvP8N+9F3V/N4zpzgxkhrasYlk4CgQVbSfnGoUIOTde0O7T0ebEuJmIk
- FPnTGUKggRQ2L7ZwtzMgzAmncy5XlREDTjFXd40XbhbFgUF5PQM+3saYYTJqEnbwHhdA
- xJPV7hqY4p1600K1jvRJjtACxvWtgx1MhWa8CnQwmhRP1YZM1ieULxLZXwzalcmAKlD7
- sNSiRTtw/NlggJxdLuSDi9bX0Y4tQc2PdEwoJRSnXwFZMG93tJErj7XuhDNCJORarSMr
- zs5KBPLctNeXcnioFBUiiOAelezMKWxyjXaI80gDL2TIBeWBMf2Bumegj33rqz3ZX26E
- bFvA==
-X-Gm-Message-State: AGi0PubFd6gfKkOfhd3YG+1oVa5lIyfSQPLl6EFkQOagfYwl20M5L25q
- hhhr/wdj48yEURlne37Nv7Gcwf5mcUm8MawMA0hFVA==
-X-Google-Smtp-Source: APiQypIcyGvGInNcx/iI+quCACUkFCbt3D6BOE2RxrRaAY7YSDkYMPEja+ESZ2QVxtJaLPp2pbfh6o6G0FQktdlPVf0=
-X-Received: by 2002:a05:651c:20a:: with SMTP id
- y10mr3324332ljn.69.1586960134977; 
- Wed, 15 Apr 2020 07:15:34 -0700 (PDT)
+ id 1jOiuJ-0001lN-CO
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 14:20:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=m/aDA3TNUudg7b1hiIgupytxTV1iDjIaBHZEV72SWeq+9V0DL/aB/W/ggMgwkKTNWQ93scf3cY2uVskSGlkwd8sAKPq7jHBRpKc4e9JgKnKe/ovl8pi1X7TPbWXAzBS9Vx4gtzEC9T1vl6Ziw7ES+VovWpUb/aW+GyON3ZETb4WHCRuWL4ROMuY8z91afH6jqYyE8PN1LTI1NKm/BCgvy2V/Tq/CdHo9zV5WzabgbnOL9y6vTcsAMa0fch8yYsVYCR9YCnHn954RnmcoWKIzqL99me3cOqDYiZwBmKHwB04i0GDFIr22Neyvd3pmOkB4gEjdpg6aEikTh4jsejk/JA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FL+jzdl8rTh5LL7dq+s4TeX25tRK+uLwfWGt38KkSJg=;
+ b=L+RH63z7bbQh2d66Zu1PTXD129HFOFn8z4VeubigzeNzrfbiaDVg6lBgG5Hs1hJGBUpR5gEhBMV2+DJVdd4j+eZ5dnE3ffW8SueOis8N1if1fTFZARd8WQYUDwMSzOnjpWtvf0/QWNnwBDFzTSc+y6CXigFve8TEy9L3CtZkMZsqMLpILLtwi/oxFgmPvBYIwGhYPNinkDYG8TgOn0z1DQnpvemtsP1fU1BaUULMRpqjrr4nFpBT+Opc06JduU90Q29YCu+boa1qwvrpjgaQLodHKbSPMTo0NNrV1NaoMlb2qMU5SM/BqTfho1TTwfA6w1FQv+frTd17MUdXbDUf/w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=gmail.com smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FL+jzdl8rTh5LL7dq+s4TeX25tRK+uLwfWGt38KkSJg=;
+ b=T/IbR7gKiQW0qVZEPUX+Z/4nXvI1hwZRVuQ9lmj91Ov7tBCWRXxDa4ghxQgWqZwOhsmsc8FaFidr+vWmAeik7erldPvaWFMSFEDBKwRs+s0xAricDLakDlBkG/1LYxMvyy3NARt3vGPKE7E/2lHBXvnkuKUMgWc96BFYUrMtPRk=
+Received: from CY4PR1201CA0023.namprd12.prod.outlook.com
+ (2603:10b6:910:16::33) by BL0PR02MB4804.namprd02.prod.outlook.com
+ (2603:10b6:208:5f::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.28; Wed, 15 Apr
+ 2020 14:20:49 +0000
+Received: from CY1NAM02FT009.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:910:16:cafe::2a) by CY4PR1201CA0023.outlook.office365.com
+ (2603:10b6:910:16::33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.25 via Frontend
+ Transport; Wed, 15 Apr 2020 14:20:49 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT009.mail.protection.outlook.com (10.152.75.12) with Microsoft SMTP
+ Server id 15.20.2921.25 via Frontend Transport; Wed, 15 Apr 2020 14:20:48
+ +0000
+Received: from [149.199.38.66] (port=51885 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jOitZ-0007H5-7J; Wed, 15 Apr 2020 07:20:05 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jOiuG-0004bP-Fr; Wed, 15 Apr 2020 07:20:48 -0700
+Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1jOiuB-0004ZC-3K; Wed, 15 Apr 2020 07:20:43 -0700
+Subject: Re: [PATCH v2] i2c: cadence: Added slave support
+To: Wolfram Sang <wsa@the-dreams.de>, Radu Pirea <radu_nicolae.pirea@upb.ro>
+References: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
+ <20200415125850.GD910@ninjato>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
+Date: Wed, 15 Apr 2020 16:20:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <1583673879-20714-3-git-send-email-peng.fan@nxp.com>
- <5e96e916.1c69fb81.14365.050b@mx.google.com> <20200415131612.GC31928@bogus>
-In-Reply-To: <20200415131612.GC31928@bogus>
-From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Wed, 15 Apr 2020 16:15:23 +0200
-Message-ID: <CAN5uoS9CSspCeMWX8JWVDdLtjX81F-15GL0QqrqzNgnnRiMpxQ@mail.gmail.com>
-Subject: Re: [PATCH V5 2/2] firmware: arm_scmi: add smc/hvc transport
-To: Sudeep Holla <sudeep.holla@arm.com>
+In-Reply-To: <20200415125850.GD910@ninjato>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(136003)(346002)(39860400002)(376002)(396003)(46966005)(2616005)(44832011)(356005)(47076004)(81156014)(336012)(31696002)(426003)(8936002)(81166007)(8676002)(4744005)(70206006)(478600001)(186003)(9786002)(82740400003)(70586007)(36756003)(316002)(26005)(5660300002)(107886003)(110136005)(31686004)(4326008)(2906002);
+ DIR:OUT; SFP:1101; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: e3ecc3fe-ddc2-4294-8560-08d7e14831ee
+X-MS-TrafficTypeDiagnostic: BL0PR02MB4804:
+X-Microsoft-Antispam-PRVS: <BL0PR02MB48046042AC69EBE82D6DC979C6DB0@BL0PR02MB4804.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:4125;
+X-Forefront-PRVS: 0374433C81
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: slt19jyWq6lm1eKpxfml/o371VMS1QpJgRxOsceFAyPFROwkbRoCs/HY9snkPNO3BG+veoEGFXrJlhqUT0JJYpwL1CJ+mKsdKZ+BNz85bivUSxh0nmnUD2zQ/x3hzzcY3dnHivbUlmrICwdpSyquD9saP41bElwZuJOQsb3bsJPecbwI87WwX7Q0fsEJRG8MAnPA2Gr3EazTFUEJHjL7qAlaHOsXF+Ibo9z4MbPq2Tb5zHo+6H0BbNdyZb+vwdIr034XwQg4q9TwSKQts4MbilTY9jNuK/rcjDjWL38ovZrTAvNIJukwoSFqfkpziCe/BxJXTcfZ5tTq/oU9Eq8Ka0ZXHLgTgPGubjuQIuch8kEBUmWhVJJV79yURV1s6RgCZlEmA7R8M4/bVDUT+YiMkfVpz3seSYuSXqrSdMAVRcErnOMXmU/+RT2biCkTCXNKO5JPEUNnkD21fkVFNDnsMEC6wIqOoI+jkZFYkgkyVrWh7nqBDt2EzPzfJW/lOttxmXRO3OkufG/J+j1Tkq2+4g==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Apr 2020 14:20:48.7724 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e3ecc3fe-ddc2-4294-8560-08d7e14831ee
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4804
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_071537_918440_1C38AE3D 
-X-CRM114-Status: GOOD (  24.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_072051_422533_51FFE4B0 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.75.54 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ valid -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.75.54 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,104 +139,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
- f.fainelli@gmail.com, Viresh Kumar <viresh.kumar@linaro.org>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Chirag Parekh <chirag.parekh@xilinx.com>, shubhrajyoti.datta@gmail.com,
+ michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Sudeep,
+On 15. 04. 20 14:58, Wolfram Sang wrote:
+> On Mon, Jan 06, 2020 at 12:43:36PM +0200, Radu Pirea wrote:
+>> Added support for I2C slave functionality
+>>
+>> Signed-off-by: Chirag Parekh <chirag.parekh@xilinx.com>
+>> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+>> Signed-off-by: Radu Pirea <radu_nicolae.pirea@upb.ro>
+> 
+> Michal, do you want a second look or is your SoB good as-is?
 
-On Wed, 15 Apr 2020 at 15:16, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Wed, Apr 15, 2020 at 12:58:58PM +0200, Etienne Carriere wrote:
-> > Hello Peng,
-> >
-> > I  have 2 comments on this change. The main is about using
-> > arm_smccc_1_1_invoke(). Below some details and I added comments
-> > inside you patch. The second of on SMC return value, see my
-> > comment in your patch below.
-> >
-> > About arm_smccc_1_1_invoke(), this functon currently relies on PSCI
-> > driver to define a conduit method but SCMI agent driver does not
-> > mandate CONFIG_PSCI to be enable.
-> >
->
-> Yes this was discussed and it is done so deliberately. I have added the
-> build dependency when I merged the patch. There's no dependency on
-> CONFIG_PSCI.
+It should be good to go.
 
-Ok, I understand your point.
-Yet it seems to me there is still a dependency on CONFIG_ARM_PSCI_FW
-and also a dependency on a PSCI node in the DT.
-
-However, I must admit I don't know yet a platform that enables
-CONFIG_ARM_SCMI_PROTOCOL but not CONFIG_ARM_PSCI_FW, hence
-so far, so good.
-
-
-About dependencies, it think the dependency on MAILBOX in
-firmware/Kconfig should be updated:
-
- config ARM_SCMI_PROTOCOL
-         bool "ARM System Control and Management Interface (SCMI)
-Message Protocol"
-         depends on ARM || ARM64 || COMPILE_TEST
--        depends on MAILBOX
-+        depends on MAILBOX | HAVE_ARM_SMCCC
-         help
-
->
-> > Could you add an optional "method" property for "arm,scmi-smc" for platforms
-> > willing to not rely on PSCI Linux driver? If no property "method" is
-> > defined in the FDT, invocation relies on arm_smccc_1_1_invoke().
-> >
->
-> Nope, we don't want mixture here. Why is the system not using PSCI/SMCCC ?
-
-Ok, as I staed above, I don't know any platform that enables
-CONFIG_ARM_SCMI_PROTOCOL but not CONFIG_ARM_PSCI_FW.
-
->
-> > "method" naming mimics what is done in the OP-TEE driver (drivers/tee/optee/).
-> > Here is a proposal for the documenting property "method" in
-> > Documentation/arm,scmi.txt:
-> >
-> > - method : "smc" or "hvc"
-> >             Optional property defining the conduit method for to be used
-> >           for invoking the SCMI server in secure world.
-> >           "smc" states instruction SMC #0 is used whereas "hvc" states
-> >           instruction HVC #0 is used.
-> >
-> >
->
-> It was rejected, you can try your luck with OPTEE :)
-> We will just use the system conduit here with SCMI for SMC/HVC transport.
-> Details in previous version of the patch.
->
-> [...]
->
-> > > +struct scmi_smc {
-> > > +   struct scmi_chan_info *cinfo;
-> > > +   struct scmi_shared_mem __iomem *shmem;
-> > > +   u32 func_id;
-> > > +};
-> >
-> > Add here a field for the secure world invocation function handler:
-> >
-> >       scmi_arm_smccc_invoke_fn *invoke_fn;
-> >
->
-> As stated not needed if we use  arm_smccc_1_1_invoke()
->
-> [...]
->
-
-Regards,
-Etienne
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
