@@ -2,70 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5702E1AAC67
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 17:56:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F15B1AAC69
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 17:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=erz4FhHBT/ggMocM2M2C8oRHfUwjIvxLsqxNevwVmV4=; b=XIKIBVbPD6zYxt
-	FiRKlJX+X+0NsQrRN+AoPZbqcPMsP9dOX+xa02m6vjY2K9Rcjv/dh/yGuMd/yqQ+G9ICPWPr24UtA
-	a0HR1gdG6afGQ15URdYh+B16wVt8unFUr1kw7n7U+s8Y0QZWz18xyA2ieuJCvSrAtQQgZN3g//I7b
-	LuuoR9VnfE9/Npjxo6m/od4BUBWEWRVArK1AbH1dXIEwWV6KAi/a0hSSdaUwaJnrY0g821rZ5mqC2
-	BUEVjgqBf2q7DfVNcXqmXpwitbsTnMQbuJbC2DgQSW3/XpQE60LK4dQUFmR2zJ6HvwUTICqiANSGX
-	bjoQQnyqB2QYi0wu2u6A==;
+	List-Owner; bh=jm45JINUC1rL7coeWX9nqUBhnxOF7rfwXkkSe8+juX8=; b=ZzlvCXmvhoXh7Z
+	9Rq/TeWLOthXK4nDabCBlAursxCNR6mPwK7+/VSybB0MOyB7TVtJRbmHu9CNAruAVnlfvf6NKKYRf
+	O0K8ImjdCKe1mh8bs/CXGBdR4opvdVu1SkMQXPFBGJDMtToj1mS/upYQrFXcYTnEfnX/6YGJ2afXf
+	t+1hBcC8SxElF7BbuKNsCjmelbmcZw2c0HRdDQhGKITScFw17lNcQJiuo9rUih7l5dscCMQ9YzGO+
+	du71AhHfdMMY/IeClNun+hqsnUEFQdLRojOg/uQk8lXxyTNyGG/gUZSmR7RgCyFwBg8ZsoMvlPS4y
+	NqwXUrjpymw3nWp8eTRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOkOZ-00025h-OD; Wed, 15 Apr 2020 15:56:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOkPG-0002WB-BG; Wed, 15 Apr 2020 15:56:54 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOkOS-00025O-8j
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 15:56:05 +0000
-Received: from mail-il1-f181.google.com (mail-il1-f181.google.com
- [209.85.166.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D02122063A
+ id 1jOkP6-0002Vn-0b
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 15:56:47 +0000
+Received: by mail-il1-x144.google.com with SMTP id d2so3836003ilc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 15:56:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586966163;
- bh=n4WL1T858zal6SWux0kcghyeb03YcdCK83LPyQqpmOU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=yychbi2M7PdL4U/sur0ERyt44GK4CFegqPUkaZ1u5iy/BuUdzfAp14ANUWaR8RxPY
- bwqjQ64EQpRgDtmlgXu9BiUK0xgrFqQTt18ZLPPLIvp0DI+7bea4NZZSwk2qL2/iIK
- 8cJC/FT8JDPZpcoYDkmf2w2RhK7MSepi/7zMldDI=
-Received: by mail-il1-f181.google.com with SMTP id b18so3811458ilf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 08:56:03 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYUmNcPsLChXLD/6evPdZXU4nbVNb0/RBOGOf5fqoWoS4XHqMi7
- J0Wgwgz8G7j29MYj4jvvz4i8Ly2M0tg4w1zTIGY=
-X-Google-Smtp-Source: APiQypJO2rcsOAPOZwNgYyBGwSD18Rro24rIIN5xJo2IrgJIuBFWlXuwcbqq2VlhdS3Pf3dN91LZUXXkZ6WIB4fz4EM=
-X-Received: by 2002:a92:5a4c:: with SMTP id o73mr5693957ilb.218.1586966163228; 
- Wed, 15 Apr 2020 08:56:03 -0700 (PDT)
+ Wed, 15 Apr 2020 08:56:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=B9MXhYCYetRAbTwmXzTq/cHtzrXsP07P1r9YbCMxRJ0=;
+ b=RHXjl4nb/Oy28ie0zxV0vpLR6hc/Jq5ukBL/OcMix0dK3AqfaHCMr7TrVeSh2Ax14w
+ bwM9eSAn98iU6hfOOjgyjHxAGs5atXlzY3xr9INwhtogNgLo0DPaPaeKFIZ9zrPBABpH
+ au8zhHmONlmXyZf0MP6OblRKfls0mlkIY8oASo9BToM/Fja5/mLKmlY4YJ0b8dbeS6W2
+ 4FEb+/IZhvRRYARXtF1R0/MTMHdrlPKsL5UslgnKVPzhaHiDq0R1ZbfLOsOg7U38h15a
+ aZza/MZHr329GSPMMY1HLeDxOdn66J8qUtE0DAmmkWATGa/TS7WfwfR/IRU0ZwAKz/Vh
+ o7zw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=B9MXhYCYetRAbTwmXzTq/cHtzrXsP07P1r9YbCMxRJ0=;
+ b=H7P32QjktZaeXId5yMlm4yhrSne8EvZULIS3eyUGOgjfOaQO3pLnR90DxgwPgPtV+F
+ kB8VZmtARML7swAZXGZYbQVRvnS7H31NGNQfaFSuxAhaexWkzBav+QGIAY/bxWLDqULh
+ A10UMhlvvaOE+q/XMjT7DNBKvEBJ/xD26+FYAx0z6ZzxnmNbIQpPRSwXAXsB/lKLsBOL
+ QjIVKkyYIL1kQybQNmviFYec7+ue+Z3PjGoZVicmsvsgHZ4/fz42Lois+L/gqrkfSwxo
+ yPqJ1EnhKa5GzKlEt9CNrHzp/Op8sNWiT3jRyki790yEGOvUBNbQ9EN+F6iCvKurlKtG
+ DnQg==
+X-Gm-Message-State: AGi0PuYG6Yx5SL9EN9O9z2DiTpPTUSZwsRh1+tP2WlzMoJdtb5YKsD6L
+ kVqc7pNhbTevMLOy4A8tvqwKItJ2Pyle7v/eWX386g==
+X-Google-Smtp-Source: APiQypKVzyuJcbicWAEIxRgg1A+gem0GWiCs2bZOAaL/EVmkJ0g+4v6HC8k/rcGL2d2Zuq9Nzb/jrRrpvcn69U+xglY=
+X-Received: by 2002:a92:158c:: with SMTP id 12mr5984810ilv.58.1586966202755;
+ Wed, 15 Apr 2020 08:56:42 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200221165532.90618-1-andre.przywara@arm.com>
- <2d3bad43-10a5-3ee1-72e7-e1da1d6c65dd@arm.com>
- <CAMj1kXGUiCLvmJUwrxCc8aHdE30WWfa95ou-tEM8Kv0nj2GdDA@mail.gmail.com>
-In-Reply-To: <CAMj1kXGUiCLvmJUwrxCc8aHdE30WWfa95ou-tEM8Kv0nj2GdDA@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 15 Apr 2020 17:55:51 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXF6iw47MM_tg5izB9KC-N2zrnQbhwT2TVPOuKdpOBX=ow@mail.gmail.com>
-Message-ID: <CAMj1kXF6iw47MM_tg5izB9KC-N2zrnQbhwT2TVPOuKdpOBX=ow@mail.gmail.com>
-Subject: Re: [PATCH kvmtool v3] Add emulation for CFI compatible flash memory
-To: Alexandru Elisei <alexandru.elisei@arm.com>, sami.mujawar@arm.com
+References: <20200409113538.5008-1-saiprakash.ranjan@codeaurora.org>
+ <9a792e3e-5a17-156d-4b59-4a3ec8f9993e@arm.com>
+ <1751aeabd22bee18d2eef0f643883265@codeaurora.org>
+ <20200413171418.GB28804@xps15>
+ <75ef334a7e2cc6d87deecadd12c74f59@codeaurora.org>
+In-Reply-To: <75ef334a7e2cc6d87deecadd12c74f59@codeaurora.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 15 Apr 2020 09:56:31 -0600
+Message-ID: <CANLsYkxVFMrAOtZhNgQ+uPE5mgt1z8RNa_yAxX2ju7DYrbvBZw@mail.gmail.com>
+Subject: Re: [PATCH] coresight: tmc: Read TMC mode only when TMC hw is enabled
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_085604_347309_826982FC 
-X-CRM114-Status: GOOD (  26.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_085644_572466_2F5C63A3 
+X-CRM114-Status: GOOD (  28.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,76 +94,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- Raphael Gault <raphael.gault@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm <kvmarm@lists.cs.columbia.edu>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-msm-owner@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 at 17:43, Ard Biesheuvel <ardb@kernel.org> wrote:
+On Tue, 14 Apr 2020 at 09:47, Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
 >
-> On Tue, 7 Apr 2020 at 17:15, Alexandru Elisei <alexandru.elisei@arm.com> wrote:
-> >
-> > Hi,
-> >
-> > I've tested this patch by running badblocks and fio on a flash device inside a
-> > guest, everything worked as expected.
-> >
-> > I've also looked at the flowcharts for device operation from Intel Application
-> > Note 646, pages 12-21, and they seem implemented correctly.
-> >
-> > A few minor issues below.
-> >
-> > On 2/21/20 4:55 PM, Andre Przywara wrote:
-> > > From: Raphael Gault <raphael.gault@arm.com>
-> > >
-> > > The EDK II UEFI firmware implementation requires some storage for the EFI
-> > > variables, which is typically some flash storage.
-> > > Since this is already supported on the EDK II side, we add a CFI flash
-> > > emulation to kvmtool.
-> > > This is backed by a file, specified via the --flash or -F command line
-> > > option. Any flash writes done by the guest will immediately be reflected
-> > > into this file (kvmtool mmap's the file).
-> > > The flash will be limited to the nearest power-of-2 size, so only the
-> > > first 2 MB of a 3 MB file will be used.
-> > >
-> > > This implements a CFI flash using the "Intel/Sharp extended command
-> > > set", as specified in:
-> > > - JEDEC JESD68.01
-> > > - JEDEC JEP137B
-> > > - Intel Application Note 646
-> > > Some gaps in those specs have been filled by looking at real devices and
-> > > other implementations (QEMU, Linux kernel driver).
-> > >
-> > > At the moment this relies on DT to advertise the base address of the
-> > > flash memory (mapped into the MMIO address space) and is only enabled
-> > > for ARM/ARM64. The emulation itself is architecture agnostic, though.
-> > >
-> > > This is one missing piece toward a working UEFI boot with kvmtool on
-> > > ARM guests, the other is to provide writable PCI BARs, which is WIP.
-> > >
+> Hi Mathieu,
 >
-> I have given this a spin with UEFI built for kvmtool, and it appears
-> to be working correctly. However, I noticed that it is intolerably
-> slow, which seems to be caused by the fact that both array mode and
-> command mode (or whatever it is called in the CFI spec) are fully
-> emulated, whereas in the QEMU implementation (for instance), the
-> region is actually exposed to the guest using a read-only KVM memslot
-> in array mode, and so the read accesses are made natively.
+> On 2020-04-13 22:44, Mathieu Poirier wrote:
+> > On Mon, Apr 13, 2020 at 01:55:30PM +0530, Sai Prakash Ranjan wrote:
+> >> Hi Suzuki,
+> >>
+> >> On 2020-04-13 04:47, Suzuki K Poulose wrote:
+> >> > Hi Sai,
+> >> >
+> >> > On 04/09/2020 12:35 PM, Sai Prakash Ranjan wrote:
+> >> > > Reading TMC mode register in tmc_read_prepare_etb without
+> >> > > enabling the TMC hardware leads to async exceptions like
+> >> > > the one in the call trace below. This can happen if the
+> >> > > user tries to read the TMC etf data via device node without
+> >> > > setting up source and the sink first which enables the TMC
+> >> > > hardware in the path. So make sure that the TMC is enabled
+> >> > > before we try to read TMC data.
+> >> >
+> >> > So, one can trigger the same SError by simply :
+> >> >
+> >> > $ cat /sys/bus/coresight/device/tmc_etb0/mgmt/mode
+> >> >
+> >>
+> >> I do not see any SError when I run the above command.
+> >>
+> >> localhost ~ # cat /sys/bus/coresight/devices/tmc_etf0/mgmt/mode
+> >> 0x0
+> >>
+> >> And this is most likely due to
+> >>
+> >> commit cd9e3474bb793dc ("coresight: add PM runtime calls to
+> >> coresight_simple_func()")
+> >
+> > Ok, so this is related to power management (you can ignore my question
+> > in the
+> > previous email).
+> >
+> > Regarding function tmc_read_prepare_etb(), the best way to deal with
+> > this is
+> > probably make sure drvdata->mode != CS_MODE_DISABLED before reading
+> > TMC_MODE.
+> > If there is a buffer to read it will have been copied when the ETB was
+> > disabled
+> > and there won't be a need to access the HW.
+> >
 >
-> It is also causing problems in the UEFI implementation, as we can no
-> longer use unaligned accesses to read from the region, which is
-> something the code currently relies on (and which works fine on actual
-> hardware as long as you use normal non-cacheable mappings)
+> This works as well, thanks.
 >
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> index d0cc3985b72a..7ffe05930984 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> @@ -596,6 +596,11 @@ int tmc_read_prepare_etb(struct tmc_drvdata
+> *drvdata)
+>                  goto out;
+>          }
+>
+> +       if (drvdata->mode == CS_MODE_DISABLED) {
+> +               ret = -EINVAL;
+> +               goto out;
+> +       }
+> +
 
-Actually, the issue is not alignment. The issue is with instructions
-with multiple outputs, which means you cannot do an ordinary memcpy()
-from the NOR region using ldp instructions, aligned or not.
+We are back to your original solution where the ETB buffer can't be
+read if the ETB itself is not enabled.  It _is_ possible to read the
+buffer of an ETB that has been disabled.
+
+To fix this consider the following [1].  Take the block at line 607
+and move it to line 598.  As part of the if() condition at line 619,
+read the value of the TMC_MODE register and exit if not in circular
+mode.  If it is in circular mode continue with disabling the hardware.
+
+[1]. https://elixir.bootlin.com/linux/v5.7-rc1/source/drivers/hwtracing/coresight/coresight-tmc-etf.c
+
+>          /* There is no point in reading a TMC in HW FIFO mode */
+>          mode = readl_relaxed(drvdata->base + TMC_MODE);
+>          if (mode != TMC_MODE_CIRCULAR_BUFFER) {
+>
+>
+> Thanks,
+> Sai
+>
+> --
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
+> member
+> of Code Aurora Forum, hosted by The Linux Foundation
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
