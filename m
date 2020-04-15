@@ -2,62 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7388A1AAF40
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 19:13:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB78A1AAF49
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 19:16:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rNjnAxOTmpP/rUKJ+klvtwf0VGTYVoB1Hdmp4tj7NoM=; b=LxNS5OcQM6+IGU
-	THNxyNWQfb2k1EkRnlQ2myCwpH7yJiq/RniNkA4XIMNj6PZWy3GEMhrpooxB+11jFjjtfkLP58rtH
-	uu0LPp6WZ/cFDSJ74K0SB3tNg9Dv9EfZJbo0N9+6pO/C+4rKFzQzV3cJ4o8rGheRHAcbynU/8pear
-	8Up1vDJTAUu8GnzXbEAR+I4+CWjwTKDQcCtmaU0gtw+0pJ1nNoBy5v2f+35fJdAclcQ+87DA+vEHx
-	xLuypY2BZmprklrQ76DiWv6CpGnidEmYV3SAV3EuyX3ULYjD30ubmdAdx9fnJZ3eROYbHtohSnf56
-	k0Qxk+g3K+k+h4gZPzfw==;
+	List-Owner; bh=AA0RhoxgA/Jml5SnMTV7XRHGEAcZPA7P6mpPd1f3eAA=; b=FqqcDXm+LdUPUy
+	jS36mmdy7NFw1GeipTFt5p6VxXCELOrr+04DICc8MUylQ2RMEG0DD4FQCc6KTmULP+l+znfTqSbXI
+	l34QSHDzpG8psCpZtx+ofUxrhBN6QUjD8Unc1AyxtS7iXhLDn0EWagkVN9vw5y/R8U57IFNBG4oyz
+	+IPADwdLIYvywug9vXeC9QuKNO+xwQOeWJb56EeR33HtnC/EnMls8eKwbmAxRdSFZcxbvCaaWroti
+	7uJPv0pvix3C11cOL94j86kvnlRQHNENI3x04A5B/BsxkxAacnry6cVU87fApDETH61Q29Cp3+AmL
+	TFCCxZcwe7uU/tmIXHuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOlbL-00058M-9f; Wed, 15 Apr 2020 17:13:27 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOlbD-00057I-US
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 17:13:21 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 54633810E;
- Wed, 15 Apr 2020 17:13:52 +0000 (UTC)
-Date: Wed, 15 Apr 2020 10:13:00 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH v6 01/12] dt-bindings: add img, pvrsgx.yaml for
- Imagination GPUs
-Message-ID: <20200415171300.GG37466@atomide.com>
-References: <cover.1586939718.git.hns@goldelico.com>
- <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
- <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
- <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
- <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
- <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
- <20200415142124.yzfh6mtqq7cdq22e@gilmour.lan>
- <DC0A2DE2-3D77-46F8-8DE1-55050FDACC9B@goldelico.com>
- <20200415162151.rwym4ioqz27migfn@gilmour.lan>
- <45F411C0-150B-4FBA-A0E1-B863B3F36DF6@goldelico.com>
+	id 1jOleM-0000jz-Bu; Wed, 15 Apr 2020 17:16:34 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOleC-0000jC-Bj
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 17:16:26 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 2so199563pgp.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 10:16:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Izg8ue8YhxY7H2kruJlEEdGPr0daRyfDG5yf987D9nU=;
+ b=vTyEIRCFkbm/7cTNcpVWop+cR+0/QClCSDkUDVPtYAu7XEXkE2QPRNxHxymFQZR2Nj
+ EKtN6f2MwtzpKVWkII8qfFECUdlvef4AtBgQbIx+cw1AFwa0hxhBN/Ckhipus8m1r0y0
+ PaDtt5Ep1oV8ZTtV9liF/XKuf+IuBz9xw/1OaShQJUJgYNcgZmpkRQ9z3MfzdKp8pUFA
+ CzIul5KZNqOShlWKg7nCWkAaK0nzehFlLHH4ZJ2j+3kjaeBKqiOryjcuyOIPTR5WuaAH
+ +G1FYIft7HFjwx1EHCPl+YG7c+MqiVSo6sIKmtckJSVtzNh/8LRxxcj9nLSpNQIjWBfs
+ PLgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Izg8ue8YhxY7H2kruJlEEdGPr0daRyfDG5yf987D9nU=;
+ b=eo8vcgt7MBE1shIuFyHQZLQmN3U9968UeRSoS5GDqOKPLbzQeIgXnq6cu+Fo+aVd8I
+ ohFXJF2awT5R70tQC9LjEUsjGBqxj3OUNZQAu8UsYAp+Hs0vT7HPzHrIQDAnhnL8dwwd
+ sENHiFKSBYjbBArs5FAk3jpmYIawyyo/SQR8AjOuFFhM7q7AXVIxf72RVRKTp9ijfzwc
+ AujxXJEBYimMQxNDoUHvB9J3pNtA0FlqM/IgTYaTxYzBC7xEMtm/Njl4D7QM7fNftB5d
+ 9I/m9LjgRopvrVIupvKwMZWhqL4tKUpUXjrz5cKmlPKbSZKQXZO7rr4rj3eEaA2tQB82
+ V3TA==
+X-Gm-Message-State: AGi0PuYpKtXqOmd03vjjUv2fUqu+I25bS2XAyVgXz8bfZl+GcdnR6gim
+ IEaeA4axfDcQDupJSj8Rk4MG+Q==
+X-Google-Smtp-Source: APiQypIp+tAuF/KpVGiXjJ/mXx6QMkfcSDg3akdI4diIPizZMvKY5qs0xrcxJMuI9kMP22k4IMHCKA==
+X-Received: by 2002:a63:2057:: with SMTP id r23mr28157163pgm.232.1586970983425; 
+ Wed, 15 Apr 2020 10:16:23 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id x27sm14559225pfj.74.2020.04.15.10.16.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Apr 2020 10:16:22 -0700 (PDT)
+Date: Wed, 15 Apr 2020 11:16:20 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Siddharth Gupta <sidgup@codeaurora.org>
+Subject: Re: [PATCH v2 3/6] remoteproc: sysmon: Inform current rproc about
+ all active rprocs
+Message-ID: <20200415171620.GC16583@xps15>
+References: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
+ <1586389003-26675-4-git-send-email-sidgup@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <45F411C0-150B-4FBA-A0E1-B863B3F36DF6@goldelico.com>
+In-Reply-To: <1586389003-26675-4-git-send-email-sidgup@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_101320_024866_A22F0561 
-X-CRM114-Status: UNSURE (   6.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200415_101624_918446_F8F1D04F 
+X-CRM114-Status: GOOD (  20.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,37 +99,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <maxime@cerno.tech>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, letux-kernel@openphoenux.org
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, agross@kernel.org, rishabhb@codeaurora.org,
+ psodagud@codeaurora.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* H. Nikolaus Schaller <hns@goldelico.com> [200415 16:43]:
-> If you agree I can add the clocks/clock-names property as an
-> optional property. This should solve omap and all others.
+On Wed, Apr 08, 2020 at 04:36:40PM -0700, Siddharth Gupta wrote:
+> Clients/services running on a remoteproc that booted up might need to be
+> aware of the state of already running remoteprocs. When a remoteproc boots
+> up (fresh or after recovery) it is not aware of the remoteprocs that booted
+> before it, i.e., the system state is incomplete. So to keep track of it we
+> send sysmon on behalf of all 'ONLINE' remoteprocs.
+> 
+> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+> ---
+>  drivers/remoteproc/qcom_sysmon.c | 25 +++++++++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+> 
+> diff --git a/drivers/remoteproc/qcom_sysmon.c b/drivers/remoteproc/qcom_sysmon.c
+> index 851664e..8d8996d 100644
+> --- a/drivers/remoteproc/qcom_sysmon.c
+> +++ b/drivers/remoteproc/qcom_sysmon.c
+> @@ -453,10 +453,20 @@ static int sysmon_prepare(struct rproc_subdev *subdev)
+>  	return 0;
+>  }
+>  
+> +/**
+> + * sysmon_start() - start callback for the sysmon remoteproc subdevice
+> + * @subdev:	instance of the sysmon subdevice
+> + *
+> + * Inform all the listners of sysmon notifications that the rproc associated
+> + * to @subdev has booted up. The rproc that booted up also needs to know
+> + * which rprocs are already up and running, so send start notifications
+> + * on behalf of all the online rprocs.
+> + */
+>  static int sysmon_start(struct rproc_subdev *subdev)
+>  {
+>  	struct qcom_sysmon *sysmon = container_of(subdev, struct qcom_sysmon,
+>  						  subdev);
+> +	struct qcom_sysmon *target;
+>  	struct sysmon_event event = {
+>  		.subsys_name = sysmon->name,
+>  		.ssr_event = SSCTL_SSR_EVENT_AFTER_POWERUP
+> @@ -464,6 +474,21 @@ static int sysmon_start(struct rproc_subdev *subdev)
+>  
+>  	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)&event);
+>  
+> +	mutex_lock(&sysmon_lock);
+> +	list_for_each_entry(target, &sysmon_list, node) {
+> +		if (target == sysmon ||
+> +		    target->rproc->state != RPROC_RUNNING)
+> +			continue;
+> +
+> +		event.subsys_name = target->name;
+> +
+> +		if (sysmon->ssctl_version == 2)
+> +			ssctl_send_event(sysmon, &event);
+> +		else if (sysmon->ept)
+> +			sysmon_send_event(sysmon, &event);
+> +	}
+> +	mutex_unlock(&sysmon_lock);
+> +
 
-Yes the clock can be optional property no problem. If we have
-a clock, we just enable/disable it from the pvr_runtime_suspend()
-and pvr_runtime_resume() we alaready have in pvr-drv.c.
+Acked-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Regards,
-
-Tony
+>  	return 0;
+>  }
+>  
+> -- 
+> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
