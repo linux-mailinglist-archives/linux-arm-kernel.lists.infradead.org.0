@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 553FA1AA1D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 14:58:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70F411AA223
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 14:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zQO8uwfXN5XsMUf+Qd5euBlorweOi8c950Z+lp4aP6M=; b=A6D5Q3/c2POB1q
-	YplaIifxSrx7d7C7oHxrO/8ixKuKqpvZAs5Wq5tpz3/EjfickEbJr18eACJg8b9g8lSk07qcsDgZn
-	eZsshca42XzZp9+HHoWKsBSx/xGn3WXN6oVp0RgBILOCVwvIiwwTz1ubyUYVYrcYHYMTdgCDX5aa/
-	YWo/euS3Y09O5FllFMp39084iD2pJyruXluGnON9ZKtsODe6lvlW3TnzWEoNn4z385I+jN4O10EVT
-	vmD9+jclVhn9cm49uTF3TLhY6keSqqVlKlojj0NsfHG5sq6ejBzPQe3+9908MgDI5uG9rPaj1POXR
-	EtG27LCxjHMTzT3CTVwQ==;
+	List-Owner; bh=kLt6tohz4Xs+iUJ65LiV2RhwvPiQc4/bUngmV6tvvDg=; b=luSpFjyHLRDSEn
+	Q+ynA9IqLVvkjo89OcxhlJ6JDDseJldhJzGuYjZsE2JK2fwGkHPx+lJ87xwFqgUcwjzKgMV7Zw8CQ
+	reMKzWl7c29gtsKB/1U9m3QrI8jpy112pLApGYOvQAXbie+tGaDgoeLdzTfuI1ToYCiAZ3VAwR+vz
+	frWFITOGsiUAc91dI5WN8Mx8VA/5CSkN1HQIsxyRdqSvEisE52oXAr6sHvWXA4lrW9I5yzkadI1X0
+	F8GA8P3Ykw+pRM8LHUpzDpMIUYtNjVWbHuqVSk0S1MZa+4QiwqcmL9uxR4gX6XFmIfq2DHKUvTtbw
+	6bebQ0GBbOMullUMMRjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhc1-0003sm-S4; Wed, 15 Apr 2020 12:57:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOhcn-0004Uf-9k; Wed, 15 Apr 2020 12:58:41 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhbs-0003s9-Or
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 12:57:46 +0000
-Received: from mail-io1-f52.google.com (mail-io1-f52.google.com
- [209.85.166.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4C0B4208FE
+ id 1jOhcY-0004TX-2u
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 12:58:27 +0000
+Received: from mail-qt1-f176.google.com ([209.85.160.176]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MhlCa-1ilG8d1xi4-00dlM1 for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 15 Apr 2020 14:58:23 +0200
+Received: by mail-qt1-f176.google.com with SMTP id z90so13019506qtd.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 12:57:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586955464;
- bh=prirf2k0vEOldQV3Q6B6roXSXcORQ3srsnX0/zX+nmU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=xIVxp/0HdsSClWD829oZovBMKHB4jC9NIrvCKjhinIZfV4+zl4Ky1yvRDnmveOkQW
- uHxJWo8VZxLo1Fpib47qKhwEmenqWN5cnErr4yxGVIMsoOEetuKr4lhgNzdStXjQqq
- Cn4NYvll+9Er7f+m3kktS9ilyXz9Sp4AJ5ijcnws=
-Received: by mail-io1-f52.google.com with SMTP id o127so17025826iof.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 05:57:44 -0700 (PDT)
-X-Gm-Message-State: AGi0PuazUy81G6nPnojJ6yh7HEFLKWw0H4b/IJ2/612WAlwk2EwDV5+0
- HOIKz7LJYgjl7AXiA0rB3vCX01BwHnVXwh4RXq8=
-X-Google-Smtp-Source: APiQypKy73qFjUlK2hkG7VDPPS2tn6u2GeHdjM9WffZnjcJ3WlNJ5Lbm/19dLEq4AuxLtvPzf6NnZMZ7X/nStea6z5k=
-X-Received: by 2002:a92:aa0f:: with SMTP id j15mr5222510ili.211.1586955461321; 
- Wed, 15 Apr 2020 05:57:41 -0700 (PDT)
+ Wed, 15 Apr 2020 05:58:23 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYPsJ5c7R+ax78eAEIAl+yKjyVpP4e1DR67RoBjm1EqFcfi4fNw
+ rH52zLFxw1Lmdz+rKW6l/RO0AGd6+/hwAwLK1XY=
+X-Google-Smtp-Source: APiQypLmb1bYsqGBxxmmhAYIpYg+E9AqYkcfzIMIIhGI/UjPoCq3S810wOoySTAVykqPSkerK29SOUSk3ZdF6ygThUU=
+X-Received: by 2002:ac8:6757:: with SMTP id n23mr8081126qtp.304.1586955502081; 
+ Wed, 15 Apr 2020 05:58:22 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200320144348.12865-1-geert+renesas@glider.be>
- <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
- <CAMj1kXFAEOWGgmMT4SMP=QafcT54mzMekLjm3wMTN8M4psNSKw@mail.gmail.com>
- <CAMuHMdUkrF9qBaZre0EJ-cuzPcL7A1j2ANmQNYV7FAngybb1bA@mail.gmail.com>
-In-Reply-To: <CAMuHMdUkrF9qBaZre0EJ-cuzPcL7A1j2ANmQNYV7FAngybb1bA@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 15 Apr 2020 14:57:30 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEgXuizeQzBrt6aC-QODRGinoU5sjFrx0a1LRMg7zD85w@mail.gmail.com>
-Message-ID: <CAMj1kXEgXuizeQzBrt6aC-QODRGinoU5sjFrx0a1LRMg7zD85w@mail.gmail.com>
-Subject: Re: [PATCH v4] ARM: boot: Obtain start of physical memory from DTB
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20200409232728.231527-1-caij2003@gmail.com>
+ <CAK8P3a3uj7AHbAo4sNzr6KQx5Fk6v99k4ZixCgKo1tUuGoat9Q@mail.gmail.com>
+ <CAMj1kXGXNxXGiC4dmNXHkZ6n=J0Fhim3oSwNx4Bz5m9fEphJvQ@mail.gmail.com>
+ <20200410123301.GX25745@shell.armlinux.org.uk>
+ <CAMj1kXFpknCfwb6JMdk_SHopnGqMswgSqaQUeAUEh5yaV10vJg@mail.gmail.com>
+ <CAKwvOdk-xwuppJzxd1+5sfsC8jYiP3t8D=aTNaYxnFCRDiEUmQ@mail.gmail.com>
+ <CAMj1kXFHb8th0rv1yjrsr=c1o-g9_ERPUy4itnrVN13fcQcXag@mail.gmail.com>
+ <CAKwvOdm5aawsa2-=atB8z6W8zo8YVgdDEVbU3i4evDcpo1_AxQ@mail.gmail.com>
+ <202004141258.6D9CB92507@keescook>
+ <CAMj1kXG6_CO6pzeJCSeWiCDyLfWw+ZMuvkv_DLxe-si00fLd1Q@mail.gmail.com>
+In-Reply-To: <CAMj1kXG6_CO6pzeJCSeWiCDyLfWw+ZMuvkv_DLxe-si00fLd1Q@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 15 Apr 2020 14:58:05 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3Ko0XTLUGwBxVM=nNebGr6ww66+cCKbYBrd9A4ME0__w@mail.gmail.com>
+Message-ID: <CAK8P3a3Ko0XTLUGwBxVM=nNebGr6ww66+cCKbYBrd9A4ME0__w@mail.gmail.com>
+Subject: Re: [PATCH] ARM: do not assemble iwmmxt.S with LLVM toolchain
+To: Ard Biesheuvel <ardb@kernel.org>
+X-Provags-ID: V03:K1:W3oN9q2KWD6fFyBUP3XCC+OZDNQTsmFU1I0hk+HuKfynGsaib3M
+ J20tyBFJuKRB3V7bVUxoAZV6n7czkSwx97XIAONgcsaOocPIj/AJKj97lvYfojfE+D16Zm3
+ xPipuz2sbj/0MjTn8Ensy0KZU0Ilp+8rfNfGpi2xbLrZnQOMtpZ0G9FKO41QtfmKRbJe8CV
+ VZyNSxJC1GuFtEjO1c7Ig==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:zha+RO2cHIk=:yPB/FQn87Bnq4a50kQufo9
+ slBZPK8+TX+pAyC9EkAclXqMqJETNddlbq+skEJYx+fGsB+THGG3m0s6nVTS6/fwPE6YaXwwB
+ pDuoyWsr6hZG7kEcvO5YLuKULQhfQLxpSHWtpjb/UFvA0Rmlk3hDN88do7muD7UBePsP5Dttm
+ OQRA9fe7IIsUunuHfsVWpf9+OZdgTL0GT+NgkH1ZHVY/doWC4tJocKeDoLhq4LzzfUIh1tj6H
+ 7x7d1aGXwNfLnPDPhY+9AJxGKX4HyQDYjGQd5WJ344o6it9W2GU76OCE0vWk/ycjG52fm0QEZ
+ PHykYNUjymAEYuNgYCilSabP01rfd1hlDEumE3P7Qp67H1ZdV6N1zVjL7w8tPYv2itWOpO/n4
+ Tt2sE+rsdqpjovN4B7puZmh3+FzkuEYG9RSDiWmlg8g/fqk+M6QUw9bpmYCSXV9TUiz1Hf/Mv
+ z2AP10l1QkiUbry7ilKh74j8V0RwI2nyT/RLvf7BNXVnALz2SdO0xqFEuVpBO/l8LZYwEkpcZ
+ OXFzMXXj+dLxG9vUyY+wM4vw2YPA8KDLfshSBF+Qk8MuYrPNrE+whoSUr5wiYBHaK8/rg1jyp
+ 0lXhkDJ6R140bqbZgJACGUHcgCiPLLukA5WHpjxK02pOBmCKfe9h+M+fx8IbXAdXu5furyrFk
+ 3TPI8wMkvirI5tzbnFYiWV4YEJsCE7hb2mSYnn8yBqzY8+Y5ExxEqIvqq7viQ1enKGCOJrxiQ
+ +W3gSy4l+K8C5fhHUjAbDhVGWpYomRSt+apY+ayBKKoWOYwkEtMLxdH7EPNLLt1lQavsDm/cv
+ p+A92rr9bOikIu59p+/K7uxSHK2r2CYpvGIJVhLlD+YHHzM9tU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_055744_851661_735F6D54 
-X-CRM114-Status: GOOD (  24.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_055826_413274_A0CB13FF 
+X-CRM114-Status: GOOD (  24.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,85 +94,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>, Peter Smith <Peter.Smith@arm.com>,
+ Stefan Agner <stefan@agner.ch>, David Howells <dhowells@redhat.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Manoj Gupta <manojgupta@google.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "Joel Fernandes \(Google\)" <joel@joelfernandes.org>,
+ Kristof Beyls <Kristof.Beyls@arm.com>, Jian Cai <caij2003@gmail.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ilie Halip <ilie.halip@gmail.com>, Masahiro Yamada <masahiroy@kernel.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Sami Tolvanen <samitolvanen@google.com>, Luis Lozano <llozano@google.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Kees Cook <keescook@chromium.org>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Jian Cai <jiancai@google.com>, Stephen Hines <srhines@google.com>,
+ Doug Anderson <armlinux@m.disordat.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Patrick Bellasi <patrick.bellasi@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Tejun Heo <tj@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 at 14:45, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+On Wed, Apr 15, 2020 at 12:32 PM Ard Biesheuvel <ardb@kernel.org> wrote:
 >
-> Hi Ard,
->
-> On Tue, Apr 14, 2020 at 10:07 AM Ard Biesheuvel <ardb@kernel.org> wrote:
-> > On Wed, 25 Mar 2020 at 17:40, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > On Fri, 20 Mar 2020 at 15:43, Geert Uytterhoeven
-> > > <geert+renesas@glider.be> wrote:
-> > > > Currently, the start address of physical memory is obtained by masking
-> > > > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > > > was chosen as a balance between the requirements of different platforms.
-> > > > However, this does require that the start address of physical memory is
-> > > > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > > > requirement is not fulfilled.
-> > > >
-> > > > Fix this limitation by obtaining the start address from the DTB instead,
-> > > > if available (either explicitly passed, or appended to the kernel).
-> > > > Fall back to the traditional method when needed.
-> > > >
-> > > > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > > > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > > > i.e. not at a multiple of 128 MiB.
-> > > >
-> > > > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> > > > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > > > ---
-> > > > v4:
-> > > >   - Fix stack location after commit 184bf653a7a452c1 ("ARM:
-> > > >     decompressor: factor out routine to obtain the inflated image
-> > > >     size"),
-> > > >
-> > >
-> > > Apologies for the breakage. I was aware of the existence of this
-> > > patch, but I didn't realize it was accessing LC0 early on to find the
-> > > stack pointer value.
-> > >
-> > > Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+> On Tue, 14 Apr 2020 at 22:53, Kees Cook <keescook@chromium.org> wrote:
 > >
-> > OK, so one thing I did notice when playing with this code is that the
-> > phys/virt patching code requires that 'PHYS_OFFSET - PAGE_OFFSET' is a
-> > multiple of 16 MB, and so this needs to be taken into account by this
-> > change as well, given that PHYS_OFFSET is based on the placement of
-> > the uncompressed kernel in the physical address space.
+> > I don't know if this will help, but I feel like folks might be talking
+> > past each other a little here. I see two primary issues that are
+> > colliding, and I just want to call them out specifically...
 >
-> You mean fdt_get_mem_start() should round up the address to make sure
-> it is a multiple of 16 MiB (assumed PAGE_OFFSET is a multiple of 16 MiB,
-> too)?
+> To reiterate my point: I strongly prefer minor asm surgery over
+> elaborate Kconfig plumbing if it means we can retain the functionality
+> even when using LLVM tools. In particular, the use of macros to
+> implement missing ISA support should be considered before any other
+> solution, as these are already being used widely across architectures
+> to fill in such gaps.
 
-Yes.
++1
 
-> Can PAGE_OFFSET actually be not a multiple of 16 MiB?
+> > What's a good middle ground here? For VLAs, I ended up getting akpm's
+> > help by having him add -Wvla to his local builds and send nag emails
+> > to people when they added VLAs. That's not really a thing here, but it
+> > seems like there should be a way to avoid losing ground (in this case,
+> > it's the erosion of attention: repeated known-issue warnings means the
+> > CI gets ignored for the warnings on newly added issues). It does seem
+> > to me like adding the negative depends is a reasonable first step: it
+> > marks what hard things need fixing later without losing coverage for
+> > things that can be more easily fixed now with available resources.
+> >
+> > For the specific iwmmxt.S case, perhaps the solution is the suggested
+> > changes? I imagine it should be possible to do a binary diff to see zero
+> > changes before/after.
+>
+> This code has been around since 2004. It has never been possible to
+> assemble it with Clang's assembler. So the only thing this patch gives
+> you is the ability to switch from a .config where IWMMXT was disabled
+> by hand to one where it gets disabled automatically by Kconfig.
+>
+> So what hard-won ground are we losing here? Did IWMMXT recently get
+> enabled in a defconfig that you care about?
 
-ARM's Kconfig has
+I mainly care about the build testing aspect here, it seems we are getting
+close to having the clang integrated assembler working with all .S files
+in the kernel (it used to work for none), and I'd like to do randconfig and
+allmodconfig tests that include these as well. Disabling the option works
+for me, but your suggestion with the added macros is clearly better.
 
-config PAGE_OFFSET
-        hex
-        default PHYS_OFFSET if !MMU
-        default 0x40000000 if VMSPLIT_1G
-        default 0x80000000 if VMSPLIT_2G
-        default 0xB0000000 if VMSPLIT_3G_OPT
-        default 0xC0000000
-
-which means that PHYS_OFFSET - PAGE_OFFSET is guaranteed to be 16 MB
-aligned if PHYS_OFFSET is 16 MB aligned.
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
