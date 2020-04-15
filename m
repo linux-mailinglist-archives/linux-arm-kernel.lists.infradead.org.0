@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06D8E1AB30B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 23:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B2C31AB33F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 23:25:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oDSrEIIwJ81fnSq8bszU0KkZ+Jds82BUEJl7NbMQekQ=; b=dfZ1lpawwJoIch
-	Pym/q+DE67KWJekRhiz+Yy4zWwf32UvpZV6sSNIdPrTllDNtlGxmKLKcL5WL+nN6PsU5FYVN+pnGv
-	R1L4JWVDN34cmKrZvlmiyjebBqVd4bGGyqoWSEQAwYTQppLSHIVULYsT6tTnkWol6dOnEkIxhYVAA
-	fhaMP406Xj7/BinQI2D838ERJZfJCvUU6VBjCYvJwX2bjGzTW57HFARjB22uKRm1gmFX0NCxstSJI
-	w2Vl5KQLHJ66ox2MhOJURPXHhnEm4Lou3bTtphEpUAXA0x2tUkzN3sOdlAklEtAnTfHMhnC/2p+dO
-	RltSeoGkeOdFz3Ck8sig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HrZOBG2qYF6bw/M18weTaBA8KHceuB0rRFXCQGyieQs=; b=rsP/W5fYuE2oruN7O0EgpRlpM
+	g+ELFz5IF/GZOkzYaJAADk6yzU1a49KMXvOTRb33Qx1rUpOIlAYi0m7yQc/+VMIcsGVWWzhCv6ab8
+	oLmYlb8yKKQ0X10Kdwrdi4whXwOxBD4gRBMvmXg9osCuA1ENMauoO92eRXQ35G3PbYNCES3LPTN4W
+	6JhMLpKhc/ix8TRoWImdxl9dehojiQtU2v/CCz24lnRZ9khCMbK0bDiTypjehBvRmPUuNd4eykXlE
+	ipu/DX0h5Fn+Ath2VPqfRrcWsTJoXHJgxqa+SXdaerVGI8u5tT5wUujBFQ9DhZoOokZCGhk/x1QGr
+	ScUYbLpFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOpKR-0006md-31; Wed, 15 Apr 2020 21:12:15 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jOpX4-0005bb-2p; Wed, 15 Apr 2020 21:25:18 +0000
+Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOpKI-0006ll-99; Wed, 15 Apr 2020 21:12:08 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g12so1662740wmh.3;
- Wed, 15 Apr 2020 14:12:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=2ITZy7GBSnPnTn/d5uBu6xq8Y93aT2PYpjAoG4+4rWc=;
- b=J9gPRWadel2dL70jWIPEtqi/yJoJc66C1Zj4cptKEwwSBYw8I/mlUBXw7or3ZTtU88
- Czz59hxGHWpOnaPCxDRpBoMUc34VF2OPxGgnnWTSxppticOjNouUIDESjixEQBjhnMiE
- i9Z5G9saQjp8dWM8VWvqsUwqe3QT5hPtaaHUAitRx30Y28g21qAq5pr6SQAppKCcYyHc
- /zMC9X/pYsahSsxTJwtvFOiVBj2q3/sDLV41q6/OBktHzB9atk5KWJ4T60e8RYdtrsd0
- S6/ucvI1QZ1mJ0xZDI5GKkRK9AVz6FrktRFC9G2xdTyyQ0LZb2CzlYMGQCotEDDrsK0p
- cv4w==
+ id 1jOpWe-0005a0-QI; Wed, 15 Apr 2020 21:24:54 +0000
+Received: by mail-ed1-x52d.google.com with SMTP id s10so6839316edy.9;
+ Wed, 15 Apr 2020 14:24:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7NGB6xVMHQDOON+H9gf0r3Gd97N/RnN5O+ebQ30vZow=;
+ b=EteKHKLLS3SRrJ48QmuFqrmul5MzylSVVPGI7JNjNaUgyI/YI1u79fN3xFpPiilgdu
+ oPDtg2L+g5yGLeewJa7sT1dcX/Q8s+F6xRIR1TLHOC2PXRpHDnqUOmJL6VQ/TSHgmaQ7
+ bo4Kv1ygDIiEvHXB4TLDZdoWlz4r1Uhuf4KKX3ZnsWBx35GMi5B/umrIsoNM2SAUKFZo
+ rbaJXHFGfU79RiAeaiuamCSXL+aguiijJJCroJb1y/hAocrYF+qaltsFDRZoHRoANStT
+ uDBcUyt3zP+EqOc+JX7EO016C344R27gsEZAC4lZyeTp+nghXm/17rY0wnxqgkWL49YM
+ sTmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=2ITZy7GBSnPnTn/d5uBu6xq8Y93aT2PYpjAoG4+4rWc=;
- b=jVDcpqDP2JKf2oZ+fL1C5IGZbs0yT5DCwIhpbznLWgdK6UtYrowm8Wudg35JxE+uAN
- +//lDMLs0mh8RLXnTo6gtT7BFS7yDOsFmuNdbh3n0sZByIzCqDaEPPuEa3O6Z+Sf7Bz6
- lEus4jMBSbd30WFynraqwgK4qY5ECuPbdsq6lPFu3DWPVs4TJ13QSyzzEbU0ZeHKZU08
- 4BTc0LAC7HPf8N7Y0uRY0BKrcujAs0IE7evABwQ6d7Zu/yCbvSdtuT7FDPQVQrgZaGG8
- wNOJrcFLx7+bybXrHXsWux/2w3ci9yuVHAATfi6x4HtaZtcDHxBimcevLUw7VZVlDT1M
- HTvA==
-X-Gm-Message-State: AGi0PubFHlmsFtVJ24Om8sGce4doNA8bYcyS74DaAnsqUcZyoTSlJvZX
- 9tLATJPjYT20u/c0eFZdb8obG+m2BknUEw==
-X-Google-Smtp-Source: APiQypKUlVmLgUucmKp2BrBcPTmwCTm5Na8BV7zK3LGSGlmt2FnkiqwyqyVfZIgAaZeSZaPO4OyhEA==
-X-Received: by 2002:a1c:bb08:: with SMTP id l8mr1332414wmf.168.1586985123722; 
- Wed, 15 Apr 2020 14:12:03 -0700 (PDT)
-Received: from Ettosoft-T55 ([91.252.39.209])
- by smtp.gmail.com with ESMTPSA id q17sm875515wmj.45.2020.04.15.14.11.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 14:12:02 -0700 (PDT)
-Date: Wed, 15 Apr 2020 23:11:57 +0200
-From: Ettore Chimenti <ek5.chimenti@gmail.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH v2 3/6] media: move CEC platform drivers to a separate
- directory
-Message-ID: <20200415211157.GA454671@Ettosoft-T55>
-References: <cover.1586946605.git.mchehab+huawei@kernel.org>
- <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7NGB6xVMHQDOON+H9gf0r3Gd97N/RnN5O+ebQ30vZow=;
+ b=SI9Ca7Vjjh0/64v/xrFPge26TU9SG6HqUKilzgzWn19S6DEqL4DZl26gqN7eUKveWu
+ q94SXSSLWko3aQREHGbti8WW8DKXUHHHxyX2Rs6cRbnS6vk+tHvh/xDDUSMEdFdAugRZ
+ EgIZCYtARMQ9bW5ymezm7X5btd5vnHKGeEEyNjd2uRPA2ytyAAZEGreCxuvdsvzgl8h9
+ MTzzBbnRpswbnuCeLbXJ1haFDbvYKazk5rUM+3T0xl+RayH1+9O/Yr5BppZIhgi+yhZN
+ 7zsPtx45udWc8StNaIKzkR2w1WgZeUWx402VILB7pqIwHFCskQaNqSlFPOdHQ4XVN2UA
+ 7auQ==
+X-Gm-Message-State: AGi0PuZmvuYGzDzDjmMJcMmxyP9LROWllxOYHN+X+uqQAo6E+7ywcpxW
+ HK06PNPEJxEMk7OVvqkX0IWoyW/dNcEXHmiejIc0WP0wvHQ=
+X-Google-Smtp-Source: APiQypLQyfDac5FG+9t31I5aw+wcG5wk/So8h0WoQ2dg7NIaPHPXRHW6tYyWd/UIF9y2xXI5nkTinN1gjegUb2JDj5A=
+X-Received: by 2002:a50:c004:: with SMTP id r4mr25590470edb.110.1586985890193; 
+ Wed, 15 Apr 2020 14:24:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
+References: <20200410213043.1091851-1-martin.blumenstingl@googlemail.com>
+ <CAPDyKFpsTTUaTLy--DvOr0oAB71cTBdH1pfTV63LtcKOKOsnDw@mail.gmail.com>
+In-Reply-To: <CAPDyKFpsTTUaTLy--DvOr0oAB71cTBdH1pfTV63LtcKOKOsnDw@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 15 Apr 2020 23:24:39 +0200
+Message-ID: <CAFBinCAhfgEdT383x61mh9E0y3-3MLA-fUmZj-4C-_VUdGWtGQ@mail.gmail.com>
+Subject: Re: [PATCH 1/1] mmc: meson-mx-sdio: Set MMC_CAP_WAIT_WHILE_BUSY
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Content-Type: multipart/mixed; boundary="0000000000003fd07b05a35af2bf"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_141206_330061_95754FBB 
-X-CRM114-Status: GOOD (  22.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_142452_884619_8B6F2E9A 
+X-CRM114-Status: GOOD (  20.72  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:52d listed in]
  [list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ek5.chimenti[at]gmail.com]
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,563 +94,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-samsung-soc@vger.kernel.org, linux-tegra@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Kukjin Kim <kgene@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-amlogic@lists.infradead.org,
- Guenter Roeck <groeck@chromium.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Benson Leung <bleung@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 12:31:34PM +0200, Mauro Carvalho Chehab wrote:
-> As CEC support doesn't depend on MEDIA_SUPPORT, let's
-> place the platform drivers outside the media menu.
-> 
-> As a side effect, instead of depends on PCI, seco driver
-> can select it (and DMI).
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
->  drivers/media/cec/Kconfig                     |   6 +-
->  drivers/media/cec/Makefile                    |   2 +-
->  drivers/media/cec/platform/Kconfig            | 121 +++++++++++++++++
->  drivers/media/cec/platform/Makefile           |  14 ++
->  .../{ => cec}/platform/cec-gpio/Makefile      |   0
->  .../{ => cec}/platform/cec-gpio/cec-gpio.c    |   0
->  .../platform/cros-ec}/Makefile                |   0
->  .../platform/cros-ec}/cros-ec-cec.c           |   0
->  .../media/{ => cec}/platform/meson/Makefile   |   0
->  .../{ => cec}/platform/meson/ao-cec-g12a.c    |   0
->  .../media/{ => cec}/platform/meson/ao-cec.c   |   0
->  .../s5p-cec => cec/platform/s5p}/Makefile     |   0
->  .../platform/s5p}/exynos_hdmi_cec.h           |   0
->  .../platform/s5p}/exynos_hdmi_cecctrl.c       |   0
->  .../s5p-cec => cec/platform/s5p}/regs-cec.h   |   0
->  .../s5p-cec => cec/platform/s5p}/s5p_cec.c    |   0
->  .../s5p-cec => cec/platform/s5p}/s5p_cec.h    |   0
->  .../seco-cec => cec/platform/seco}/Makefile   |   0
->  .../seco-cec => cec/platform/seco}/seco-cec.c |   0
->  .../seco-cec => cec/platform/seco}/seco-cec.h |   0
->  .../sti/cec => cec/platform/sti}/Makefile     |   0
->  .../sti/cec => cec/platform/sti}/stih-cec.c   |   0
->  drivers/media/cec/platform/stm32/Makefile     |   2 +
->  .../{ => cec}/platform/stm32/stm32-cec.c      |   0
->  .../tegra-cec => cec/platform/tegra}/Makefile |   0
->  .../platform/tegra}/tegra_cec.c               |   0
->  .../platform/tegra}/tegra_cec.h               |   0
->  drivers/media/platform/Kconfig                | 125 ------------------
->  drivers/media/platform/Makefile               |  12 --
->  drivers/media/platform/stm32/Makefile         |   1 -
->  30 files changed, 143 insertions(+), 140 deletions(-)
->  create mode 100644 drivers/media/cec/platform/Kconfig
->  create mode 100644 drivers/media/cec/platform/Makefile
->  rename drivers/media/{ => cec}/platform/cec-gpio/Makefile (100%)
->  rename drivers/media/{ => cec}/platform/cec-gpio/cec-gpio.c (100%)
->  rename drivers/media/{platform/cros-ec-cec => cec/platform/cros-ec}/Makefile (100%)
->  rename drivers/media/{platform/cros-ec-cec => cec/platform/cros-ec}/cros-ec-cec.c (100%)
->  rename drivers/media/{ => cec}/platform/meson/Makefile (100%)
->  rename drivers/media/{ => cec}/platform/meson/ao-cec-g12a.c (100%)
->  rename drivers/media/{ => cec}/platform/meson/ao-cec.c (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/Makefile (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cec.h (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cecctrl.c (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/regs-cec.h (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.c (100%)
->  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.h (100%)
->  rename drivers/media/{platform/seco-cec => cec/platform/seco}/Makefile (100%)
->  rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.c (100%)
->  rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.h (100%)
->  rename drivers/media/{platform/sti/cec => cec/platform/sti}/Makefile (100%)
->  rename drivers/media/{platform/sti/cec => cec/platform/sti}/stih-cec.c (100%)
->  create mode 100644 drivers/media/cec/platform/stm32/Makefile
->  rename drivers/media/{ => cec}/platform/stm32/stm32-cec.c (100%)
->  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/Makefile (100%)
->  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.c (100%)
->  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.h (100%)
-> 
-> diff --git a/drivers/media/cec/Kconfig b/drivers/media/cec/Kconfig
-> index 1586dd899302..7b1fb70066bd 100644
-> --- a/drivers/media/cec/Kconfig
-> +++ b/drivers/media/cec/Kconfig
-> @@ -21,7 +21,7 @@ config CEC_PIN_ERROR_INJ
->  	help
->  	  This option enables CEC error injection using debugfs.
->  
-> -config MEDIA_CEC_SUPPORT
-> +menuconfig MEDIA_CEC_SUPPORT
->  	bool
->  	prompt "HDMI CEC drivers"
->  	default y if !MEDIA_SUPPORT_FILTER
-> @@ -31,3 +31,7 @@ config MEDIA_CEC_SUPPORT
->  
->  	  Say Y when you have an HDMI receiver, transmitter or a USB CEC
->  	  adapter that supports HDMI CEC.
-> +
-> +if MEDIA_CEC_SUPPORT
-> +source "drivers/media/cec/platform/Kconfig"
-> +endif
-> diff --git a/drivers/media/cec/Makefile b/drivers/media/cec/Makefile
-> index 3fdbc22b1530..8c6448bee386 100644
-> --- a/drivers/media/cec/Makefile
-> +++ b/drivers/media/cec/Makefile
-> @@ -1,2 +1,2 @@
->  # SPDX-License-Identifier: GPL-2.0
-> -obj-y += core/
-> +obj-y += core/ platform/
-> diff --git a/drivers/media/cec/platform/Kconfig b/drivers/media/cec/platform/Kconfig
-> new file mode 100644
-> index 000000000000..6a8bb8b68344
-> --- /dev/null
-> +++ b/drivers/media/cec/platform/Kconfig
-> @@ -0,0 +1,121 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Platform drivers
-> +
-> +config VIDEO_CROS_EC_CEC
-> +	tristate "ChromeOS EC CEC driver"
-> +	depends on CROS_EC
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	select CROS_EC_PROTO
-> +	help
-> +	  If you say yes here you will get support for the
-> +	  ChromeOS Embedded Controller's CEC.
-> +	  The CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_MESON_AO_CEC
-> +	tristate "Amlogic Meson AO CEC driver"
-> +	depends on ARCH_MESON || COMPILE_TEST
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	help
-> +	  This is a driver for Amlogic Meson SoCs AO CEC interface. It uses the
-> +	  generic CEC framework interface.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +
-> +config VIDEO_MESON_G12A_AO_CEC
-> +	tristate "Amlogic Meson G12A AO CEC driver"
-> +	depends on ARCH_MESON || COMPILE_TEST
-> +	depends on COMMON_CLK && OF
-> +	select REGMAP
-> +	select REGMAP_MMIO
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	---help---
-> +	  This is a driver for Amlogic Meson G12A SoCs AO CEC interface.
-> +	  This driver if for the new AO-CEC module found in G12A SoCs,
-> +	  usually named AO_CEC_B in documentation.
-> +	  It uses the generic CEC framework interface.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config CEC_GPIO
-> +	tristate "Generic GPIO-based CEC driver"
-> +	depends on PREEMPTION || COMPILE_TEST
-> +	select CEC_CORE
-> +	select CEC_PIN
-> +	select CEC_NOTIFIER
-> +	select GPIOLIB
-> +	help
-> +	  This is a generic GPIO-based CEC driver.
-> +	  The CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_SAMSUNG_S5P_CEC
-> +	tristate "Samsung S5P CEC driver"
-> +	depends on ARCH_EXYNOS || COMPILE_TEST
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	help
-> +	  This is a driver for Samsung S5P HDMI CEC interface. It uses the
-> +	  generic CEC framework interface.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_STI_HDMI_CEC
-> +	tristate "STMicroelectronics STiH4xx HDMI CEC driver"
-> +	depends on ARCH_STI || COMPILE_TEST
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	help
-> +	  This is a driver for STIH4xx HDMI CEC interface. It uses the
-> +	  generic CEC framework interface.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_STM32_HDMI_CEC
-> +	tristate "STMicroelectronics STM32 HDMI CEC driver"
-> +	depends on ARCH_STM32 || COMPILE_TEST
-> +	select REGMAP
-> +	select REGMAP_MMIO
-> +	select CEC_CORE
-> +	help
-> +	  This is a driver for STM32 interface. It uses the
-> +	  generic CEC framework interface.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_TEGRA_HDMI_CEC
-> +	tristate "Tegra HDMI CEC driver"
-> +	depends on ARCH_TEGRA || COMPILE_TEST
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	help
-> +	  This is a driver for the Tegra HDMI CEC interface. It uses the
-> +	  generic CEC framework interface.
-> +	  The CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_SECO_CEC
-> +	tristate "SECO Boards HDMI CEC driver"
-> +	depends on (X86 || IA64) || COMPILE_TEST
-> +	select PCI
-> +	select DMI
-> +	select CEC_CORE
-> +	select CEC_NOTIFIER
-> +	help
-> +	  This is a driver for SECO Boards integrated CEC interface.
-> +	  Selecting it will enable support for this device.
-> +	  CEC bus is present in the HDMI connector and enables communication
-> +	  between compatible devices.
-> +
-> +config VIDEO_SECO_RC
-> +	bool "SECO Boards IR RC5 support"
-> +	depends on VIDEO_SECO_CEC
-> +	depends on RC_CORE=y || RC_CORE = VIDEO_SECO_CEC
-> +	help
-> +	  If you say yes here you will get support for the
-> +	  SECO Boards Consumer-IR in seco-cec driver.
-> +	  The embedded controller supports RC5 protocol only, default mapping
-> +	  is set to rc-hauppauge.
-> diff --git a/drivers/media/cec/platform/Makefile b/drivers/media/cec/platform/Makefile
-> new file mode 100644
-> index 000000000000..e5fb5d383e5c
-> --- /dev/null
-> +++ b/drivers/media/cec/platform/Makefile
-> @@ -0,0 +1,14 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +#
-> +# Makefile for the CEC platform device drivers.
-> +#
-> +
-> +obj-$(CONFIG_CEC_GPIO)			+= cec-gpio/
-> +
-> +obj-$(CONFIG_VIDEO_CROS_EC_CEC)		+= cros-ec/
-> +obj-$(CONFIG_VIDEO_MESON_AO_CEC)	+= meson/
-> +obj-$(CONFIG_VIDEO_SAMSUNG_S5P_CEC)	+= s5p/
-> +obj-$(CONFIG_VIDEO_SECO_CEC)		+= seco/
-> +obj-$(CONFIG_VIDEO_STI_HDMI_CEC)	+= sti/
-> +obj-$(CONFIG_VIDEO_TEGRA_HDMI_CEC)	+= tegra/
-> +
-> diff --git a/drivers/media/platform/cec-gpio/Makefile b/drivers/media/cec/platform/cec-gpio/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/cec-gpio/Makefile
-> rename to drivers/media/cec/platform/cec-gpio/Makefile
-> diff --git a/drivers/media/platform/cec-gpio/cec-gpio.c b/drivers/media/cec/platform/cec-gpio/cec-gpio.c
-> similarity index 100%
-> rename from drivers/media/platform/cec-gpio/cec-gpio.c
-> rename to drivers/media/cec/platform/cec-gpio/cec-gpio.c
-> diff --git a/drivers/media/platform/cros-ec-cec/Makefile b/drivers/media/cec/platform/cros-ec/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/cros-ec-cec/Makefile
-> rename to drivers/media/cec/platform/cros-ec/Makefile
-> diff --git a/drivers/media/platform/cros-ec-cec/cros-ec-cec.c b/drivers/media/cec/platform/cros-ec/cros-ec-cec.c
-> similarity index 100%
-> rename from drivers/media/platform/cros-ec-cec/cros-ec-cec.c
-> rename to drivers/media/cec/platform/cros-ec/cros-ec-cec.c
-> diff --git a/drivers/media/platform/meson/Makefile b/drivers/media/cec/platform/meson/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/meson/Makefile
-> rename to drivers/media/cec/platform/meson/Makefile
-> diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/cec/platform/meson/ao-cec-g12a.c
-> similarity index 100%
-> rename from drivers/media/platform/meson/ao-cec-g12a.c
-> rename to drivers/media/cec/platform/meson/ao-cec-g12a.c
-> diff --git a/drivers/media/platform/meson/ao-cec.c b/drivers/media/cec/platform/meson/ao-cec.c
-> similarity index 100%
-> rename from drivers/media/platform/meson/ao-cec.c
-> rename to drivers/media/cec/platform/meson/ao-cec.c
-> diff --git a/drivers/media/platform/s5p-cec/Makefile b/drivers/media/cec/platform/s5p/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/Makefile
-> rename to drivers/media/cec/platform/s5p/Makefile
-> diff --git a/drivers/media/platform/s5p-cec/exynos_hdmi_cec.h b/drivers/media/cec/platform/s5p/exynos_hdmi_cec.h
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/exynos_hdmi_cec.h
-> rename to drivers/media/cec/platform/s5p/exynos_hdmi_cec.h
-> diff --git a/drivers/media/platform/s5p-cec/exynos_hdmi_cecctrl.c b/drivers/media/cec/platform/s5p/exynos_hdmi_cecctrl.c
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/exynos_hdmi_cecctrl.c
-> rename to drivers/media/cec/platform/s5p/exynos_hdmi_cecctrl.c
-> diff --git a/drivers/media/platform/s5p-cec/regs-cec.h b/drivers/media/cec/platform/s5p/regs-cec.h
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/regs-cec.h
-> rename to drivers/media/cec/platform/s5p/regs-cec.h
-> diff --git a/drivers/media/platform/s5p-cec/s5p_cec.c b/drivers/media/cec/platform/s5p/s5p_cec.c
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/s5p_cec.c
-> rename to drivers/media/cec/platform/s5p/s5p_cec.c
-> diff --git a/drivers/media/platform/s5p-cec/s5p_cec.h b/drivers/media/cec/platform/s5p/s5p_cec.h
-> similarity index 100%
-> rename from drivers/media/platform/s5p-cec/s5p_cec.h
-> rename to drivers/media/cec/platform/s5p/s5p_cec.h
-> diff --git a/drivers/media/platform/seco-cec/Makefile b/drivers/media/cec/platform/seco/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/seco-cec/Makefile
-> rename to drivers/media/cec/platform/seco/Makefile
-> diff --git a/drivers/media/platform/seco-cec/seco-cec.c b/drivers/media/cec/platform/seco/seco-cec.c
-> similarity index 100%
-> rename from drivers/media/platform/seco-cec/seco-cec.c
-> rename to drivers/media/cec/platform/seco/seco-cec.c
-> diff --git a/drivers/media/platform/seco-cec/seco-cec.h b/drivers/media/cec/platform/seco/seco-cec.h
-> similarity index 100%
-> rename from drivers/media/platform/seco-cec/seco-cec.h
-> rename to drivers/media/cec/platform/seco/seco-cec.h
-> diff --git a/drivers/media/platform/sti/cec/Makefile b/drivers/media/cec/platform/sti/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/sti/cec/Makefile
-> rename to drivers/media/cec/platform/sti/Makefile
-> diff --git a/drivers/media/platform/sti/cec/stih-cec.c b/drivers/media/cec/platform/sti/stih-cec.c
-> similarity index 100%
-> rename from drivers/media/platform/sti/cec/stih-cec.c
-> rename to drivers/media/cec/platform/sti/stih-cec.c
-> diff --git a/drivers/media/cec/platform/stm32/Makefile b/drivers/media/cec/platform/stm32/Makefile
-> new file mode 100644
-> index 000000000000..5c89dbce0f67
-> --- /dev/null
-> +++ b/drivers/media/cec/platform/stm32/Makefile
-> @@ -0,0 +1,2 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +obj-$(CONFIG_VIDEO_STM32_HDMI_CEC) += stm32-cec.o
-> diff --git a/drivers/media/platform/stm32/stm32-cec.c b/drivers/media/cec/platform/stm32/stm32-cec.c
-> similarity index 100%
-> rename from drivers/media/platform/stm32/stm32-cec.c
-> rename to drivers/media/cec/platform/stm32/stm32-cec.c
-> diff --git a/drivers/media/platform/tegra-cec/Makefile b/drivers/media/cec/platform/tegra/Makefile
-> similarity index 100%
-> rename from drivers/media/platform/tegra-cec/Makefile
-> rename to drivers/media/cec/platform/tegra/Makefile
-> diff --git a/drivers/media/platform/tegra-cec/tegra_cec.c b/drivers/media/cec/platform/tegra/tegra_cec.c
-> similarity index 100%
-> rename from drivers/media/platform/tegra-cec/tegra_cec.c
-> rename to drivers/media/cec/platform/tegra/tegra_cec.c
-> diff --git a/drivers/media/platform/tegra-cec/tegra_cec.h b/drivers/media/cec/platform/tegra/tegra_cec.h
-> similarity index 100%
-> rename from drivers/media/platform/tegra-cec/tegra_cec.h
-> rename to drivers/media/cec/platform/tegra/tegra_cec.h
-> diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
-> index 3df0d789d452..b1ac9c6c9cdb 100644
-> --- a/drivers/media/platform/Kconfig
-> +++ b/drivers/media/platform/Kconfig
-> @@ -552,131 +552,6 @@ if DVB_PLATFORM_DRIVERS
->  source "drivers/media/platform/sti/c8sectpfe/Kconfig"
->  endif #DVB_PLATFORM_DRIVERS
->  
-> -menuconfig CEC_PLATFORM_DRIVERS
-> -	bool "CEC platform devices"
-> -	depends on MEDIA_CEC_SUPPORT
-> -
-> -if CEC_PLATFORM_DRIVERS
-> -
-> -config VIDEO_CROS_EC_CEC
-> -	tristate "ChromeOS EC CEC driver"
-> -	depends on CROS_EC
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	select CROS_EC_PROTO
-> -	help
-> -	  If you say yes here you will get support for the
-> -	  ChromeOS Embedded Controller's CEC.
-> -	  The CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_MESON_AO_CEC
-> -	tristate "Amlogic Meson AO CEC driver"
-> -	depends on ARCH_MESON || COMPILE_TEST
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	help
-> -	  This is a driver for Amlogic Meson SoCs AO CEC interface. It uses the
-> -	  generic CEC framework interface.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -
-> -config VIDEO_MESON_G12A_AO_CEC
-> -	tristate "Amlogic Meson G12A AO CEC driver"
-> -	depends on ARCH_MESON || COMPILE_TEST
-> -	depends on COMMON_CLK && OF
-> -	select REGMAP
-> -	select REGMAP_MMIO
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	---help---
-> -	  This is a driver for Amlogic Meson G12A SoCs AO CEC interface.
-> -	  This driver if for the new AO-CEC module found in G12A SoCs,
-> -	  usually named AO_CEC_B in documentation.
-> -	  It uses the generic CEC framework interface.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config CEC_GPIO
-> -	tristate "Generic GPIO-based CEC driver"
-> -	depends on PREEMPTION || COMPILE_TEST
-> -	select CEC_CORE
-> -	select CEC_PIN
-> -	select CEC_NOTIFIER
-> -	select GPIOLIB
-> -	help
-> -	  This is a generic GPIO-based CEC driver.
-> -	  The CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_SAMSUNG_S5P_CEC
-> -	tristate "Samsung S5P CEC driver"
-> -	depends on ARCH_EXYNOS || COMPILE_TEST
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	help
-> -	  This is a driver for Samsung S5P HDMI CEC interface. It uses the
-> -	  generic CEC framework interface.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_STI_HDMI_CEC
-> -	tristate "STMicroelectronics STiH4xx HDMI CEC driver"
-> -	depends on ARCH_STI || COMPILE_TEST
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	help
-> -	  This is a driver for STIH4xx HDMI CEC interface. It uses the
-> -	  generic CEC framework interface.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_STM32_HDMI_CEC
-> -	tristate "STMicroelectronics STM32 HDMI CEC driver"
-> -	depends on ARCH_STM32 || COMPILE_TEST
-> -	select REGMAP
-> -	select REGMAP_MMIO
-> -	select CEC_CORE
-> -	help
-> -	  This is a driver for STM32 interface. It uses the
-> -	  generic CEC framework interface.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_TEGRA_HDMI_CEC
-> -	tristate "Tegra HDMI CEC driver"
-> -	depends on ARCH_TEGRA || COMPILE_TEST
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	help
-> -	  This is a driver for the Tegra HDMI CEC interface. It uses the
-> -	  generic CEC framework interface.
-> -	  The CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_SECO_CEC
-> -	tristate "SECO Boards HDMI CEC driver"
-> -	depends on (X86 || IA64) || COMPILE_TEST
-> -	depends on PCI && DMI
-> -	select CEC_CORE
-> -	select CEC_NOTIFIER
-> -	help
-> -	  This is a driver for SECO Boards integrated CEC interface.
-> -	  Selecting it will enable support for this device.
-> -	  CEC bus is present in the HDMI connector and enables communication
-> -	  between compatible devices.
-> -
-> -config VIDEO_SECO_RC
-> -	bool "SECO Boards IR RC5 support"
-> -	depends on VIDEO_SECO_CEC
-> -	depends on RC_CORE=y || RC_CORE = VIDEO_SECO_CEC
-> -	help
-> -	  If you say yes here you will get support for the
-> -	  SECO Boards Consumer-IR in seco-cec driver.
-> -	  The embedded controller supports RC5 protocol only, default mapping
-> -	  is set to rc-hauppauge.
-> -
-> -endif #CEC_PLATFORM_DRIVERS
-> -
->  menuconfig SDR_PLATFORM_DRIVERS
->  	bool "SDR platform devices"
->  	depends on MEDIA_SDR_SUPPORT
-> diff --git a/drivers/media/platform/Makefile b/drivers/media/platform/Makefile
-> index a0194ef1211f..ac31d4748869 100644
-> --- a/drivers/media/platform/Makefile
-> +++ b/drivers/media/platform/Makefile
-> @@ -23,8 +23,6 @@ obj-$(CONFIG_VIDEO_IMX_PXP)		+= imx-pxp.o
->  
->  obj-$(CONFIG_VIDEO_SH_VEU)		+= sh_veu.o
->  
-> -obj-$(CONFIG_CEC_GPIO)			+= cec-gpio/
-> -
->  obj-$(CONFIG_VIDEO_MEM2MEM_DEINTERLACE)	+= m2m-deinterlace.o
->  
->  obj-$(CONFIG_VIDEO_MUX)			+= video-mux.o
-> @@ -35,22 +33,16 @@ obj-$(CONFIG_VIDEO_SAMSUNG_S5P_JPEG)	+= s5p-jpeg/
->  obj-$(CONFIG_VIDEO_SAMSUNG_S5P_MFC)	+= s5p-mfc/
->  
->  obj-$(CONFIG_VIDEO_SAMSUNG_S5P_G2D)	+= s5p-g2d/
-> -obj-$(CONFIG_VIDEO_SAMSUNG_S5P_CEC)	+= s5p-cec/
->  obj-$(CONFIG_VIDEO_SAMSUNG_EXYNOS_GSC)	+= exynos-gsc/
->  
->  obj-$(CONFIG_VIDEO_STI_BDISP)		+= sti/bdisp/
->  obj-$(CONFIG_VIDEO_STI_HVA)		+= sti/hva/
->  obj-$(CONFIG_DVB_C8SECTPFE)		+= sti/c8sectpfe/
-> -obj-$(CONFIG_VIDEO_STI_HDMI_CEC)	+= sti/cec/
->  
->  obj-$(CONFIG_VIDEO_STI_DELTA)		+= sti/delta/
->  
-> -obj-$(CONFIG_VIDEO_TEGRA_HDMI_CEC)	+= tegra-cec/
-> -
->  obj-y					+= stm32/
->  
-> -obj-$(CONFIG_VIDEO_SECO_CEC)		+= seco-cec/
-> -
->  obj-y					+= davinci/
->  
->  obj-$(CONFIG_VIDEO_SH_VOU)		+= sh_vou.o
-> @@ -89,8 +81,4 @@ obj-$(CONFIG_VIDEO_QCOM_CAMSS)		+= qcom/camss/
->  
->  obj-$(CONFIG_VIDEO_QCOM_VENUS)		+= qcom/venus/
->  
-> -obj-y					+= meson/
-> -
-> -obj-y					+= cros-ec-cec/
-> -
->  obj-y					+= sunxi/
-> diff --git a/drivers/media/platform/stm32/Makefile b/drivers/media/platform/stm32/Makefile
-> index 5ed73599ca44..48b36db2c2e2 100644
-> --- a/drivers/media/platform/stm32/Makefile
-> +++ b/drivers/media/platform/stm32/Makefile
-> @@ -1,3 +1,2 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  obj-$(CONFIG_VIDEO_STM32_DCMI) += stm32-dcmi.o
-> -obj-$(CONFIG_VIDEO_STM32_HDMI_CEC) += stm32-cec.o
-> -- 
-> 2.25.2
-> 
+--0000000000003fd07b05a35af2bf
+Content-Type: text/plain; charset="UTF-8"
 
-For the seco-cec driver:
-Acked-by: Ettore Chimenti <ek5.chimenti@gmail.com>
+Hi Ulf,
 
-Thanks!
-Ettore
+thank you very much for taking the time to look into this!
+
+On Wed, Apr 15, 2020 at 2:57 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+[...]
+> Thanks for sending this! I assume it's a regression and caused by one
+> of my patches that went in for 5.7. Probably this one:
+> 0d84c3e6a5b2 mmc: core: Convert to mmc_poll_for_busy() for erase/trim/discard
+indeed, I only observed this with 5.7-rc1-ish, before everything was
+working fine
+
+> Now, even if enabling MMC_CAP_WAIT_WHILE_BUSY seems like the correct
+> thing to do, I suggest we really try understand why it works, so we
+> don't overlook some other issue that needs to be fixed.
+great, that's why I'm seeking for help!
+
+> Would you be willing to try a few debug patches, according to the below?
+sure
+while reading your suggestions I went back to the vendor driver and
+observed that they don't implement card_busy for this controller
+Thus I added the following line to meson_mx_mmc_card_busy for all of
+your tests to see what the controller sees in terms of our card busy
+implementation:
+  dev_info(mmc_dev(host->mmc), "%s read IRQC = 0x%08x\n",
+                 __func__, irqc);
+
+> First, can you double check so the original polling with CMD13 is
+> still okay, by trying the below minor change. The intent is to force
+> polling with CMD13 for the erase/discard operation.
+I have tried this one and it seems to work around the problem (before
+I reverted my change and dropped MMC_CAP_WAIT_WHILE_BUSY from
+mmc->caps)
+also I did not see meson_mx_mmc_card_busy being invoked (not even
+once, but I don't know if that's expected)
+
+[...]
+> Second, if the above works, it looks like the polling with
+> ->card_busy() isn't really working for meson-mx-sdio.c, together with
+> erase/discard. To narrow down that problem, I suggest to try with a
+> longer erase/discard timeout in a retry fashion, while using
+> ->card_busy(). Along the lines of the below:
+I have tried this one as well (before I reverted the earlier CMD13
+patch) and with MMC_CAP_WAIT_WHILE_BUSY unset in mmc->caps
+This doesn't seem to work around the issue - kernel log extract attached.
+Also I'm seeing that the the current meson_mx_mmc_card_busy
+implementation returns that the card is busy.
+example: 0x1f001f10 & 0x3c00 = 0x1c00. the busy logic in the driver
+is: !!0x1c00 = 1
+
+My conclusion is:
+- meson_mx_mmc_card_busy is not working and should be removed (because
+I don't know how to make it work). it probably never worked but we
+didn't notice until a recent change
+- set MMC_CAP_WAIT_WHILE_BUSY as per my initial patch
+- use Fixes: ed80a13bb4c4c9 ("mmc: meson-mx-sdio: Add a driver for the
+Amlogic Meson8 and Meson8b SoCs")
+
+Does this make sense?
+Also please let me know if you want me to try something else
+
+
+Martin
+
+--0000000000003fd07b05a35af2bf
+Content-Type: text/plain; charset="US-ASCII"; name="erase-poll-retry.txt"
+Content-Disposition: attachment; filename="erase-poll-retry.txt"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k91u1h6j0>
+X-Attachment-Id: f_k91u1h6j0
+
+WyAgMTM2LjY4ODY4NF0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1j
+X2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzNi43MzQyODZdIHBsYXRmb3Jt
+IGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0g
+MHgxZjAwM2YxMApbICAxMzYuNzg4Njc0XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBt
+ZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM2LjgyODg5
+NV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSBy
+ZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzNi44OTY4NzVdIHBsYXRmb3JtIGMxMTA4YzIwLm1t
+YzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApb
+ICAxMzYuOTY0OTY3XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNf
+Y2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM3LjAwMDY1Nl0gcGxhdGZvcm0g
+YzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAw
+eDFmMDAxZjEwClsgIDEzNy4wNjg2NzhdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1l
+c29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzcuMTA0Njgy
+XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJl
+YWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM3LjE1MDI4OV0gcGxhdGZvcm0gYzExMDhjMjAubW1j
+OnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAzZjEwClsg
+IDEzNy4xOTY2NzldIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19j
+YXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAxMzcuMjY0NzY2XSBwbGF0Zm9ybSBj
+MTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4
+MWYwMDFmMTAKWyAgMTM3LjMxMjg3OV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVz
+b25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzNy4zNDg5OThd
+IHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVh
+ZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzcuNDAwODQzXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6
+c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAg
+MTM3LjQ2ODk3N10gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2Nh
+cmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzNy41MjA4NzJdIHBsYXRmb3JtIGMx
+MTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgx
+ZjAwM2YxMApbICAxMzcuNTYyMjQ3XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNv
+bl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM3LjYwNDY4MF0g
+cGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFk
+IElSUUMgPSAweDFmMDAxZjEwClsgIDEzNy42NzI3NjhdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpz
+bG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAx
+MzcuNzI4NjQyXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2Fy
+ZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM3Ljc3NDE0OF0gcGxhdGZvcm0gYzEx
+MDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFm
+MDAzZjEwClsgIDEzNy44MzI2ODVdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29u
+X214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzcuODc4NjMwXSBw
+bGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQg
+SVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM3Ljg4MTIzMl0gbW1jMTogQ2FyZCBzdHVjayBiZWluZyBi
+dXN5ISBfX21tY19wb2xsX2Zvcl9idXN5ClsgIDEzNy44ODY4NDVdIGJsa191cGRhdGVfcmVxdWVz
+dDogSS9PIGVycm9yLCBkZXYgbW1jYmxrMSwgc2VjdG9yIDQxMjA3NDQgb3AgMHgzOihESVNDQVJE
+KSBmbGFncyAweDgwMCBwaHlzX3NlZyAxIHByaW8gY2xhc3MgMApbICAxMzcuODk4MTkwXSBFWFQ0
+LWZzIChtbWNibGsxcDEpOiBkaXNjYXJkIHJlcXVlc3QgaW4gZ3JvdXA6MTUgYmxvY2s6MjI1NDkg
+Y291bnQ6MTIyIGZhaWxlZCB3aXRoIC01ClsgIDEzOC4xNzIxMTFdIHBsYXRmb3JtIGMxMTA4YzIw
+Lm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYx
+MApbICAxMzguMTgxMjc1XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9t
+bWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM4LjE4NzgzOV0gcGxhdGZv
+cm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMg
+PSAweDFmMDAzZjEwClsgIDEzOC4xOTY3NDddIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6
+IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzguMjAz
+MjIyXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5
+IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM4LjIxNDQ5MF0gcGxhdGZvcm0gYzExMDhjMjAu
+bW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEw
+ClsgIDEzOC4yMjAzNjFdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21t
+Y19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzguMjI5MzE4XSBwbGF0Zm9y
+bSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9
+IDB4MWYwMDNmMTAKWyAgMTM4LjI0MTM5M10gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTog
+bWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOC4yNjAy
+OTddIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kg
+cmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAxMzguMjk1NTA1XSBwbGF0Zm9ybSBjMTEwOGMyMC5t
+bWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAK
+WyAgMTM4LjM1OTgyMl0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1j
+X2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOC40MDg2MjldIHBsYXRmb3Jt
+IGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0g
+MHgxZjAwM2YxMApbICAxMzguNDc2NzEyXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBt
+ZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM4LjUxMjg3
+MV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSBy
+ZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOC41ODEwMTFdIHBsYXRmb3JtIGMxMTA4YzIwLm1t
+YzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApb
+ICAxMzguNjE2ODQzXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNf
+Y2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM4LjY4NDk4Ml0gcGxhdGZvcm0g
+YzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAw
+eDFmMDAxZjEwClsgIDEzOC43MjA4NTldIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1l
+c29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAxMzguNzg2NTEx
+XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJl
+YWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM4LjgyNDc0MV0gcGxhdGZvcm0gYzExMDhjMjAubW1j
+OnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsg
+IDEzOC44NzY3MjNdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19j
+YXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzguOTEyNzMxXSBwbGF0Zm9ybSBj
+MTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4
+MWYwMDNmMTAKWyAgMTM4Ljk4MDc5NV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVz
+b25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS4wMzI3MzVd
+IHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVh
+ZCBJUlFDID0gMHgxZjAwMWYxMApbICAxMzkuMTAwODI2XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6
+c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAg
+MTM5LjEzNjg2OF0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2Nh
+cmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS4yMDQ5NjZdIHBsYXRmb3JtIGMx
+MTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgx
+ZjAwMWYxMApbICAxMzkuMjQwODcxXSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNv
+bl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM5LjMwOTAwOF0g
+cGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFk
+IElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS4zMTE0MDhdIG1tYzE6IENhcmQgc3R1Y2sgYmVpbmcg
+YnVzeSEgX19tbWNfcG9sbF9mb3JfYnVzeQpbICAxMzkuMzE3MTY4XSBtbWMxOiBFcmFzZSBwb2xs
+IGZhaWxlZCBlcnI9LTExMCB0aW1lb3V0X21zPTEwNjYgLSByZXRyeSEKWyAgMTM5LjMyMzU3OF0g
+cGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFk
+IElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS4zMzE2ODFdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpz
+bG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAx
+MzkuMzM5NzQ5XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2Fy
+ZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM5LjM0Nzg5NV0gcGxhdGZvcm0gYzEx
+MDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFm
+MDAxZjEwClsgIDEzOS4zNTc1NDBdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29u
+X214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAxMzkuMzY2NDYwXSBw
+bGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQg
+SVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM5LjM3MjUyOV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNs
+b3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEz
+OS4zODM1MjhdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJk
+X2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzkuMzk1NjMxXSBwbGF0Zm9ybSBjMTEw
+OGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYw
+MDNmMTAKWyAgMTM5LjQxNDQ4MF0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25f
+bXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS40NDg3MzhdIHBs
+YXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJ
+UlFDID0gMHgxZjAwMWYxMApbICAxMzkuNTE2ODI4XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xv
+dEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNmMTAKWyAgMTM5
+LjU4NDg4MV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRf
+YnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDEzOS42MzQ1NTVdIHBsYXRmb3JtIGMxMTA4
+YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAw
+M2YxMApbICAxMzkuNzAyNzc1XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9t
+eF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM5Ljc2MDc0NF0gcGxh
+dGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElS
+UUMgPSAweDFmMDAzZjEwClsgIDEzOS44Mjg4MzNdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90
+QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxMzku
+ODY0ODk1XSBwbGF0Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9i
+dXN5IHJlYWQgSVJRQyA9IDB4MWYwMDFmMTAKWyAgMTM5LjkwMDcxOF0gcGxhdGZvcm0gYzExMDhj
+MjAubW1jOnNsb3RAMTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAz
+ZjEwClsgIDEzOS45Njg4ODNdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214
+X21tY19jYXJkX2J1c3kgcmVhZCBJUlFDID0gMHgxZjAwMWYxMApbICAxNDAuMDA0Njg4XSBwbGF0
+Zm9ybSBjMTEwOGMyMC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJR
+QyA9IDB4MWYwMDFmMTAKWyAgMTQwLjA3MjY0OV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RA
+MTogbWVzb25fbXhfbW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAxZjEwClsgIDE0MC4x
+MzY3NTBdIHBsYXRmb3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1
+c3kgcmVhZCBJUlFDID0gMHgxZjAwM2YxMApbICAxNDAuMTc2ODYwXSBwbGF0Zm9ybSBjMTEwOGMy
+MC5tbWM6c2xvdEAxOiBtZXNvbl9teF9tbWNfY2FyZF9idXN5IHJlYWQgSVJRQyA9IDB4MWYwMDNm
+MTAKWyAgMTQwLjIzNjI1MV0gcGxhdGZvcm0gYzExMDhjMjAubW1jOnNsb3RAMTogbWVzb25fbXhf
+bW1jX2NhcmRfYnVzeSByZWFkIElSUUMgPSAweDFmMDAzZjEwClsgIDE0MC4yODA2OTVdIHBsYXRm
+b3JtIGMxMTA4YzIwLm1tYzpzbG90QDE6IG1lc29uX214X21tY19jYXJkX2J1c3kgcmVhZCBJUlFD
+ID0gMHgxZjAwMWYxMAo=
+--0000000000003fd07b05a35af2bf
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--0000000000003fd07b05a35af2bf--
+
