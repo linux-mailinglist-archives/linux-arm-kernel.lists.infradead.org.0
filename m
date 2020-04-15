@@ -2,54 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4565C1AAD45
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4876C1AAD47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 18:23:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w+WJ3m15KQJBkQ9Y/yipog1IVBm15p58YacMy9uMkkU=; b=D6WUpjQNdmq1PO61q0l9VDmrX
-	xNVMgtrDDmzQegXG3YDKI7r+JjWbU6JEepi/y8Sm5hiLflOGqvMb44dq+d30bGgd6SooWdmMTOvvx
-	y3U3XyBhPmqRYHq3xmjjQeVLlRaTvIjc+dMj1Mylt7E0Z3FH0SJN8KAo2WGMT8UmLu2u5ZlKx1VBb
-	xRfZLFuicfuokWmJBWY9eBxkMG2VcqJUOrjNad0gO8g0hJT0gnn+/YZNLxSSsEDXFUzIkapouFZa6
-	F7RjxXKbak/jEBj2lTKoV6K/t2DEGdl3zqJDPQMydCnE7KYkui/ifxQizvR9Fhz6CLfst1Bvcewj3
-	Aj6tcd4zQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OdNvGAlI2KITrq47s/8bVzhvfhhjAB3who1H0yNp/HM=; b=n8UyuFA3J0EMfa
+	pvaceNTpsBUTtJiq66Ntgy0kiADMVoJRRGzEijo3eT3lAvUc7ZcoOBob3ffsrZJrxI+1bR8HQ0/bj
+	8thO4wkml601tiHWSZQ0R3TmOtoB8Y+PtLLp043uT5M8T6TQX9xeVhNJ7iAbmHhnO6vjAF5z5YDv2
+	Y8JMndz9qoDK/22AU2UoPhJ1FcIeB5SqF7dyfRTzOa2fAALqV+F2ty9d9gqj67/blAjAwnC53QzRa
+	lc5FJmaLFxEnRGdEMrOXCzwh5l8E838UHfAB8OIdzw8j4a0YjOe6vVm1PqSma+XyvPJ/vVNInVrqM
+	8CamxYGD7+tcrrG4GMTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOkoI-0000Py-7K; Wed, 15 Apr 2020 16:22:46 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOkoA-0000PN-Hv
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:22:39 +0000
-Received: from localhost (p54B33507.dip0.t-ipconnect.de [84.179.53.7])
- by pokefinder.org (Postfix) with ESMTPSA id 38B962C1FF1;
- Wed, 15 Apr 2020 18:22:37 +0200 (CEST)
-Date: Wed, 15 Apr 2020 18:22:36 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Michal Simek <michal.simek@xilinx.com>
-Subject: Re: [PATCH v2] i2c: cadence: Added slave support
-Message-ID: <20200415162236.GA2830@ninjato>
-References: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
- <20200415125850.GD910@ninjato>
- <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
+	id 1jOkpL-000112-Mg; Wed, 15 Apr 2020 16:23:51 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOkp5-0000wg-2S
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 16:23:36 +0000
+Received: by mail-ot1-f66.google.com with SMTP id i27so474231ota.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 09:23:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=dqCaYkT8OVNprkSigyoCp2ZPVsKvgzd87cPbi/J2G4k=;
+ b=R+oPEsAqEXDYdkngsD6XlvgFLdP0vorLG+/zbkDskj5Dhl3+31acToblZyCtJkKh3j
+ wtLXvFUJ2qxKuc8J/8cGwMMiYd2bXAtxxvsgy84HdZTWEjplyxdguM7zc7lttLVhcRie
+ W++z1lapwasHOjsy8q3/vflLD8iPuoRRHi7ueaIrxIqY1eay1wbP/HOKbK4z1W2Y89fy
+ I85SY5nc7N2L/I5p2u3y0oj9kCgS8uvKunrGZ6WBK+QL8pYaAH8yMN81HvY9pZwpAmGQ
+ Yy1Q/BLpbaOKHWVbDqyz6/nZZbO1TTsm+ho+EleAIFhMpUlwtoWU2ZIIr8oPzMB6enH5
+ GekQ==
+X-Gm-Message-State: AGi0PuZGzvc2eXsbAeILiPK2CqkZLgSaHV2l/my2poZuUKvw2yxeuAuX
+ kJb/maJbs3C/GGK93eAbOA==
+X-Google-Smtp-Source: APiQypKR1UuoH9e32fZQ9cndTzQaO9IUxQZvKDBEkzyNV7mi2Ii3pK0yWsxcv3mWaq3m8wipHNp1MQ==
+X-Received: by 2002:a9d:1b4b:: with SMTP id l69mr13808068otl.179.1586967813963; 
+ Wed, 15 Apr 2020 09:23:33 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 186sm6865669ooi.30.2020.04.15.09.23.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Apr 2020 09:23:33 -0700 (PDT)
+Received: (nullmailer pid 32365 invoked by uid 1000);
+ Wed, 15 Apr 2020 16:23:32 -0000
+Date: Wed, 15 Apr 2020 11:23:32 -0500
+From: Rob Herring <robh@kernel.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH v6 01/14] dt-bindings: reserved-memory: Introduce
+ memory-region-names
+Message-ID: <20200415162332.GA32297@bogus>
+References: <20200409175238.3586487-1-thierry.reding@gmail.com>
+ <20200409175238.3586487-2-thierry.reding@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
+Content-Disposition: inline
+In-Reply-To: <20200409175238.3586487-2-thierry.reding@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_092238_735781_311B8B51 
-X-CRM114-Status: UNSURE (   6.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200415_092335_108086_15CAF6CA 
+X-CRM114-Status: GOOD (  11.82  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,65 +95,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chirag Parekh <chirag.parekh@xilinx.com>, shubhrajyoti.datta@gmail.com,
- Radu Pirea <radu_nicolae.pirea@upb.ro>, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7508033154439189719=="
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Joseph Lo <josephl@nvidia.com>,
+ linux-tegra@vger.kernel.org, Dmitry Osipenko <digetx@gmail.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu,  9 Apr 2020 19:52:25 +0200, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
+> 
+> In order to make the reserved-memory bindings more consistent with other
+> existing bindings, add a memory-region-names property that contains an
+> array of strings that name the entries of the memory-region property and
+> allows these regions to be looked up by name.
+> 
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+> Changes in v6:
+> - drop addition of memory-regions alias
+> 
+>  .../devicetree/bindings/reserved-memory/reserved-memory.txt     | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
---===============7508033154439189719==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="TB36FDmn/VVEgNH/"
-Content-Disposition: inline
+Applied, thanks.
 
-
---TB36FDmn/VVEgNH/
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-> > Michal, do you want a second look or is your SoB good as-is?
->=20
-> It should be good to go.
-
-Thanks, Michal!
-
-
---TB36FDmn/VVEgNH/
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6XNMgACgkQFA3kzBSg
-KbbAiw//RBrtmb0bH65DgAGQFsaUex9274i1aOt2WRAxBxxsU9KYpjYXZTJtJIPM
-H+rQ2NZORdTz4Vbk7zWzL5cPWVgTgayyAEgTUWmggvji1mahB9ATMMhRV+YT8IT8
-lfyLZ8jr8pkanVFa6FE0aC5fwY/O8mCLesPbIwV3UhFv4CkTgh9HZcBOs0zzyqFd
-gkSBkmn5y8A9YnovysL+Rq7HAfd05UUGdkGPca6zW5RzwdELizUC+Nh7ZREhyUUr
-w7IjyE61kxdxSs10+IEyKzv9YLdsBfWcDbjYwLCeyadeSwjPyW+quD37TdGxHjPM
-xdBKCnOffArucQz8PhghU52AUkjEWMhEdNE2ri9PlfsaodT7LweoqIRtpyinWH4D
-uPdsX071f/GA6I9nGtvbJRh/ogVYySTAZgRfxeMMexWptKcOp60Ta7q1Pkbh2Ryl
-E7b1eYm9wNriBi5vHpRyvSpLstfcJUL55fxlfdwlH+zGOuHP9ayDn5i+5T4b7HIu
-6QdGkeYQRoVCEbeTk1vlkAhE9q0dgeAWldtDrxrCWHx5VAJi0+PeR80avDwLXfyM
-78dA+74416jx2MEXu1LhAbQU1ep5P+qhtcQ5HHctU2hVdC0tMKMs6E9gT9sqdZaR
-/14imMDRUa6Qqu0gVJQBvAh7PsxoYPTd7tMBuyvJEuwfJ8SX41A=
-=orf9
------END PGP SIGNATURE-----
-
---TB36FDmn/VVEgNH/--
-
-
---===============7508033154439189719==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7508033154439189719==--
-
