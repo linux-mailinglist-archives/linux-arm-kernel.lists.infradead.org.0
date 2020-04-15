@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E05C61A9D4D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:45:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F0EA1A9D59
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:46:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WbtdYMR2vjZFRMXfRBUiiB5xdMyzkvTeahuKYzeAKEI=; b=PcGCZyYDzxFVZS
-	hLO71QK/nYp/Nneyf49oE8nQEjDI4dgeOlSiqaEi6UD9DgAVQI6fJKrKLy0/vx4pSldfVX4NqpFjv
-	SO8V2GStV5mkHhO4Qc69Nm4YHg697TFyzgHR3ZIqAvGhc7qbTFM8AbZNKrYrdVqaka787dpGKJYBY
-	gULlZIU7shfrdad4jm3H+7Yd9iSNm2JJ4S+bvSoG8CfZR6Lq95EmTOQ9b9dp84/kX0j7uXAoEnceW
-	3OApvW7ynU18lPUyxqxYviqBxsAeme9t+OwJzXCioImiwip0XyS/kGMw+cT7OzzfVJNlHvJGGSBX5
-	fSw/E9d7pIWBVhN0cXhw==;
+	List-Owner; bh=GKxhzdVGgjrJaSPfGVCXZA9oN2pHtO5BPqxzQOhGBrM=; b=Dnf1eIY0VhAImC
+	2ESyhFE126HhZEDkpd7JxgnEwAkIefYKJrAvrQD0+QkkvKEbbbAbXqMgk32D9EF2iPB92OZekLIIo
+	vJdctivrAjUA8vmDk5W+ZLUD8lIpus2WxV4S6STXiX7uZ+Xg6Qq+727a5TjpnRtXTunbF4wjYdf91
+	SN509dymk54iwXQmRmuBWwu2DyzvCIGchWaqEmF7AsEtPd4fjxB50Uv0JCxJUv0WhxwkwPysH7ldv
+	el4h2kALiUUs9GfiOSSd2ZTLlN24XqqN6azQOzbAY0axD8bc6D0DMMCaBLs/1iMRtuBAwuAWXTAYK
+	W8YKeyVDW770jyjolmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgTt-0001WD-B6; Wed, 15 Apr 2020 11:45:25 +0000
+	id 1jOgUL-0004DU-SD; Wed, 15 Apr 2020 11:45:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgRS-00087J-Bi
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:56 +0000
+ id 1jOgRT-00088S-Sb
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:58 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1795F20737;
- Wed, 15 Apr 2020 11:42:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 41964206A2;
+ Wed, 15 Apr 2020 11:42:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950973;
- bh=2OzrXsnZI6VeFmjEUumNOJf3tK1Ls686mWfBeZijVvc=;
+ s=default; t=1586950974;
+ bh=cV2r83eP8e/jucUSXYvFnWLjmbcZKhtPCDO2eIQor/o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IQ9xDvyuS1GP5fq7hVmKzMxReRi0rrmImiwzGBI//XZu1simA2aS4V5AC/j9g82fQ
- 9eMc28J2wOTr+Yw0qHvZRVODA9NkgBDaM541W2LvdxH4faPeNvXiU7m6HcQyhGsW/u
- 2sVGQHkAo0V4uQ+Kl6ZOA9vp1rDOHSKW6vX7HYg0=
+ b=Cpy9uLAE2pqP90ZVVtwIBnLWp1Ge/X59UKgazrYPINV9qf2aF6JH4GhrLu6fjxRO4
+ GbWfMx0OU76VqbllZBy934fLDe6fKxI7sIAFsjTTon4IomwZf5y+Oa9EcUIJaQwLzd
+ R+Vk5eFR5NajFqdG2941HdQss/AHTEvVilSqvwb4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 022/106] arm64: dts: marvell: Fix cpu compatible
- for AP807-quad
-Date: Wed, 15 Apr 2020 07:41:02 -0400
-Message-Id: <20200415114226.13103-22-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 023/106] soc: imx: gpc: fix power up sequencing
+Date: Wed, 15 Apr 2020 07:41:03 -0400
+Message-Id: <20200415114226.13103-23-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
 References: <20200415114226.13103-1-sashal@kernel.org>
@@ -50,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044254_464127_11C3918A 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200415_044256_034524_0127BED6 
+X-CRM114-Status: GOOD (  13.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,132 +79,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org, Amit Kucheria <amit.kucheria@linaro.org>
+Cc: Sasha Levin <sashal@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Amit Kucheria <amit.kucheria@linaro.org>
+From: Lucas Stach <l.stach@pengutronix.de>
 
-[ Upstream commit d136d2588b21b1a07515632ed61120c9f262909b ]
+[ Upstream commit e0ea2d11f8a08ba7066ff897e16c5217215d1e68 ]
 
-make -k ARCH=arm64 dtbs_check shows the following errors. Fix them by
-removing the "arm,armv8" compatible.
+Currently we wait only until the PGC inverts the isolation setting
+before disabling the peripheral clocks. This doesn't ensure that the
+reset is properly propagated through the peripheral devices in the
+power domain.
 
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long CHECK
-arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dt.yaml
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
-cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+Wait until the PGC signals that the power up request is done and
+wait a bit for resets to propagate before disabling the clocks.
 
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
-cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
-unexpected)
-/home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
-cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
-
-Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/soc/imx/gpc.c | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi b/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
-index 840466e143b47..68782f161f122 100644
---- a/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
-+++ b/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
-@@ -17,7 +17,7 @@
+diff --git a/drivers/soc/imx/gpc.c b/drivers/soc/imx/gpc.c
+index 98b9d9a902ae3..90a8b2c0676ff 100644
+--- a/drivers/soc/imx/gpc.c
++++ b/drivers/soc/imx/gpc.c
+@@ -87,8 +87,8 @@ static int imx6_pm_domain_power_off(struct generic_pm_domain *genpd)
+ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
+ {
+ 	struct imx_pm_domain *pd = to_imx_pm_domain(genpd);
+-	int i, ret, sw, sw2iso;
+-	u32 val;
++	int i, ret;
++	u32 val, req;
  
- 		cpu0: cpu@0 {
- 			device_type = "cpu";
--			compatible = "arm,cortex-a72", "arm,armv8";
-+			compatible = "arm,cortex-a72";
- 			reg = <0x000>;
- 			enable-method = "psci";
- 			#cooling-cells = <2>;
-@@ -32,7 +32,7 @@
- 		};
- 		cpu1: cpu@1 {
- 			device_type = "cpu";
--			compatible = "arm,cortex-a72", "arm,armv8";
-+			compatible = "arm,cortex-a72";
- 			reg = <0x001>;
- 			enable-method = "psci";
- 			#cooling-cells = <2>;
-@@ -47,7 +47,7 @@
- 		};
- 		cpu2: cpu@100 {
- 			device_type = "cpu";
--			compatible = "arm,cortex-a72", "arm,armv8";
-+			compatible = "arm,cortex-a72";
- 			reg = <0x100>;
- 			enable-method = "psci";
- 			#cooling-cells = <2>;
-@@ -62,7 +62,7 @@
- 		};
- 		cpu3: cpu@101 {
- 			device_type = "cpu";
--			compatible = "arm,cortex-a72", "arm,armv8";
-+			compatible = "arm,cortex-a72";
- 			reg = <0x101>;
- 			enable-method = "psci";
- 			#cooling-cells = <2>;
+ 	if (pd->supply) {
+ 		ret = regulator_enable(pd->supply);
+@@ -107,17 +107,18 @@ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
+ 	regmap_update_bits(pd->regmap, pd->reg_offs + GPC_PGC_CTRL_OFFS,
+ 			   0x1, 0x1);
+ 
+-	/* Read ISO and ISO2SW power up delays */
+-	regmap_read(pd->regmap, pd->reg_offs + GPC_PGC_PUPSCR_OFFS, &val);
+-	sw = val & 0x3f;
+-	sw2iso = (val >> 8) & 0x3f;
+-
+ 	/* Request GPC to power up domain */
+-	val = BIT(pd->cntr_pdn_bit + 1);
+-	regmap_update_bits(pd->regmap, GPC_CNTR, val, val);
++	req = BIT(pd->cntr_pdn_bit + 1);
++	regmap_update_bits(pd->regmap, GPC_CNTR, req, req);
+ 
+-	/* Wait ISO + ISO2SW IPG clock cycles */
+-	udelay(DIV_ROUND_UP(sw + sw2iso, pd->ipg_rate_mhz));
++	/* Wait for the PGC to handle the request */
++	ret = regmap_read_poll_timeout(pd->regmap, GPC_CNTR, val, !(val & req),
++				       1, 50);
++	if (ret)
++		pr_err("powerup request on domain %s timed out\n", genpd->name);
++
++	/* Wait for reset to propagate through peripherals */
++	usleep_range(5, 10);
+ 
+ 	/* Disable reset clocks for all devices in the domain */
+ 	for (i = 0; i < pd->num_clks; i++)
+@@ -343,6 +344,7 @@ static const struct regmap_config imx_gpc_regmap_config = {
+ 	.rd_table = &access_table,
+ 	.wr_table = &access_table,
+ 	.max_register = 0x2ac,
++	.fast_io = true,
+ };
+ 
+ static struct generic_pm_domain *imx_gpc_onecell_domains[] = {
 -- 
 2.20.1
 
