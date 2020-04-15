@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C40F11A952F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:53:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A82C1A954D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:57:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3uN8thxQF0PO3FdugF381hHTm3+ZFGpZMR6H/Z/4bGg=; b=JhQOEWvr37i6zP
-	M7vSxNJFDpwhR32o3LxfE0YLGl2sKhRJtHEBe6EDYBoQvNuAU6FbmVtvXGz6iLfaiyf97OO0F66VC
-	zlYSFHW780PQUzq/WLgDTCwl6lhFGg3I447JvnED1dRxmSxa/oEj55yoO/UqrZ60pTiVk2elZJss0
-	bd5HkgWf3Hk4KCgkdwSvxaA/Z5dl0tmIMw1i6yagpDo7jNEXUSmaqWv9Touqt2ZmNBUrMfE81naQT
-	wJGsNE/AN3N4lR+IMDHvOJeLZOB00HVMAmp0hbXaj01u0zfJRrv2NqpFJY/58NKtNq1xTiXEg6GAY
-	aT625F8hmyIhDyxjcoOQ==;
+	List-Owner; bh=aN/rOjmXDa6fMt4YDxRq93NAphbXafsEUkONw7INGvw=; b=m3CvULXNLId6uC
+	IyFTV1OVt0wJTf3MczR54dbduSdEZIaB+w5VOahSEKQlO6unIKcRBTAr8X7LU2dxmVVdw2gRI8Ttz
+	s9JqtCxqmBj6fRFbZ5dzbMZI5Fnb8rwS6d4T9s4wOBKFynajZnw4e3S+kb6DDSl7c8qdlG00Q+Wbd
+	/orA32NsvYzLzTt/J/F50m++UYjPLXLUaA2P6+D14YCB68zlUDqgNFHaUwbDMwpEOCqhdhzbsM6BZ
+	xF27D3pRbHIOOlM/IZDir32y+3P8liEuqJLeOz5pqoIwMPn+XO7mt3vNFk3yuEU6Np8RXzR0IDD9A
+	dK5OKYLeweCIcdokTMEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOcrb-0007f0-To; Wed, 15 Apr 2020 07:53:39 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jOcuk-0002AU-85; Wed, 15 Apr 2020 07:56:54 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOcrR-0007cI-Kd
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:53:31 +0000
-Received: by mail-wr1-x444.google.com with SMTP id h9so17905438wrc.8
+ id 1jOcuZ-00028r-Vn
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:56:45 +0000
+Received: by mail-wm1-x344.google.com with SMTP id r26so17770330wmh.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 00:53:29 -0700 (PDT)
+ Wed, 15 Apr 2020 00:56:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:autocrypt:organization:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=kBML5p9FTR/cSP2nmZwVa8/pgzdTVSXOXZP4sLP4ogs=;
- b=Wjkf2zcCTUG0Ok/lmmvQx1NU3ss3JLnGjq1ip3x7xuG8mX6QkhkJYKhkW/3x+4YhXC
- sc/hWNKOOyzsx5aNjSF9L5KaC1VFrGC12XwZYVNIVN0TS+Hp1RIDRjuSCiSjtC/i6NXm
- FL1Sd//FQu62V9kfT/pxFHSB0ZjyXw8ZPfIC/ptx00qwBmN2QakxTpwkRNslE0N/LQrB
- IXouroTWaS9U4k4Ju07aEhV2EZiYw/aQmnRao6LG1hQIwDW8LZ1eoz82EMRRv6n358SP
- AUuZcAlwEQ064jgSriufkm35olJYkn2D29G3HEO+lGgKD5mmFrRgiOYImNA0ZouIs6Bx
- Ft3g==
+ bh=pSd8qbiYbAtfmst7OijulRMd3WJ5z01ypkQKLIZqZok=;
+ b=yK6dX17+cvwnbEKilDfvRJgPysqPQaOhqOcDFnUWTwNTUcNlmft+jOZNDi292ntJ2l
+ kj8MhwLARdLFZQKHh3vGVp8pk4X5eSRG7mpvhl9Gb1ncGcdh5wPScau0bBXWJRcizTkW
+ YioEbcc+FfUtG7ehev32FVJAwfe17MnWO6TJgD4LRwjj0ThJPgtxI9iHU5CcXmobSssd
+ j71TTX//G1saATx+Znj6E1Q5og5FR/Y6P6VELlqA1x8O4FO9kJlnZefTggiQsrpsNs6J
+ ZMoViK/0WPcIZDWIQLZRE+70NvkJdbfBxXS+4zXAvJu+2FUMgCrIeRK28CnH0BoFyirJ
+ kEjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=kBML5p9FTR/cSP2nmZwVa8/pgzdTVSXOXZP4sLP4ogs=;
- b=Rbo7AG+BlcCLF57+h44qg3wrLJnoLx7H5FXA9oTOuPD/nLak+ZBDo6FVBEZbyjVcLt
- jgtWLj6RPgHEjZgYKhyFgRvmX53QeqLFdoQSpVCGF/P31mG+cyp8Tpe5AMQJPpNGM9bd
- ReXNeVJJwvtdifkIhWS4fPiNya8nhu2xqLqKAOK9Qf+Tq0pwa62SUl1WBb66GDIZL22P
- oOw8QkJ5bXxuZsChNENCkuAcFe8/rl8+eT4OjoDnZLT0Kpt7eP2VEO19TqZA/XPCrHLP
- sQy5UjzEgIeLsGVyKS0Rw5yWu8KD+Cd8WGh+pSpgma0BP5QA4+WCMBYi3kLtqhto9cBG
- 2BfA==
-X-Gm-Message-State: AGi0PuYPBqx455unpGRo2arHLAxShpa4UOySPoURqe2XrUvJmIcZl5iY
- EkAIrPpf1NHD1xFkHaORkpCW/Q==
-X-Google-Smtp-Source: APiQypKy1+Tc3Y0hGUfB49///1SHeOTBpfPZpDWXkJypIieHtRzn2n8uDhg2Uo4QBcdWnBEmeE/s1g==
-X-Received: by 2002:adf:e944:: with SMTP id m4mr14535852wrn.366.1586937208116; 
- Wed, 15 Apr 2020 00:53:28 -0700 (PDT)
+ bh=pSd8qbiYbAtfmst7OijulRMd3WJ5z01ypkQKLIZqZok=;
+ b=Va4PMgJS9tkKJZlUt/63Fm2yA4Ta5XeHWbnSGYFT5lXe6nnpZ0dqiLkzVpREkt4YDd
+ QG57NnzI0/OeU6VpkjuzZXCIuXH3nHhDdjDjzhFER+Q/3cpRHrlclNemdfTb3xerOJx9
+ gi4T/0Y0KCXjpBwgSLKWInZAugrHM2ckna/XsPfHQJb3dsHkVEH1Xzsbsqk7a1BwXz0c
+ NDo9PgglYwf97njDaXW5QrzrG2IX1u5tTURBjxNBTiM7wN0thuDYEW4Z/EC1Zsb3Hboq
+ AzApb/R6DmHIskHoJCaw0ew459ccpcJPRno1ZOtOG0X+tEPzx7Bls1hXFI6Lq+K+OZQC
+ RFxQ==
+X-Gm-Message-State: AGi0PuZWvNHfX393obVZd0pY33sP7xyin4l+nJkev1exlqGUXYc3LNny
+ 1F9LnECsyWhe1vHwkrRLC85PWQ==
+X-Google-Smtp-Source: APiQypJKOCIwnWh8GtFBc++8oLUPehct2YypJMuYQcUh6XPplOHdyOE52LPU3ioZ9kxnxcghDzsaVg==
+X-Received: by 2002:a7b:cb17:: with SMTP id u23mr1910534wmj.130.1586937401352; 
+ Wed, 15 Apr 2020 00:56:41 -0700 (PDT)
 Received: from ?IPv6:2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56?
  ([2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56])
- by smtp.gmail.com with ESMTPSA id b4sm17408679wrv.42.2020.04.15.00.53.25
+ by smtp.gmail.com with ESMTPSA id k14sm22764484wrp.53.2020.04.15.00.56.39
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Apr 2020 00:53:27 -0700 (PDT)
-Subject: Re: [PATCH v2 0/2] clk: meson: prepare GX and G12 for GPU DVFS
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org
-References: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
+ Wed, 15 Apr 2020 00:56:40 -0700 (PDT)
+Subject: Re: [PATCH] drm/meson: Delete an error message in meson_dw_hdmi_bind()
+To: Markus Elfring <Markus.Elfring@web.de>, dri-devel@lists.freedesktop.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ Kevin Hilman <khilman@baylibre.com>
+References: <76f24122-4d3f-7670-9f06-edb4731a0661@web.de>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <fda0f007-4377-c78a-e2d7-aecb12779287@baylibre.com>
-Date: Wed, 15 Apr 2020 09:53:25 +0200
+Message-ID: <54e0b6e4-4a39-c567-7355-2b2330a95294@baylibre.com>
+Date: Wed, 15 Apr 2020 09:56:38 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <76f24122-4d3f-7670-9f06-edb4731a0661@web.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_005329_680932_DCB2DFBE 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20200415_005644_020734_9D2FBB66 
+X-CRM114-Status: GOOD (  20.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -150,41 +151,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Tang Bin <tangbin@cmss.chinamobile.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/04/2020 21:50, Martin Blumenstingl wrote:
-> This contains only the clock driver updates from my other series titled
-> "GPU DVFS for Meson GXBB/GXL/GXM/G12A/G12B/SM1" from [0]
-> 
-> 
-> Changes since v1 at [0]:
-> - update the patch descriptions to indicate that we explicitly don't
->   want CLK_SET_RATE_PARENT on the muxes
-> - split into clock driver (this series) and .dts changes (future
->   series, waiting for testing feedback on v1 from [0])
-> 
-> 
-> [0] https://patchwork.kernel.org/cover/11466399/
-> 
-> 
-> Martin Blumenstingl (2):
->   clk: meson: gxbb: Prepare the GPU clock tree to change at runtime
->   clk: meson: g12a: Prepare the GPU clock tree to change at runtime
-> 
->  drivers/clk/meson/g12a.c | 30 ++++++++++++++++++++++--------
->  drivers/clk/meson/gxbb.c | 40 ++++++++++++++++++++++------------------
->  2 files changed, 44 insertions(+), 26 deletions(-)
-> 
-
-
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAwNS8wNC8yMDIwIDEzOjIzLCBNYXJrdXMgRWxmcmluZyB3cm90ZToKPiBGcm9tOiBN
+YXJrdXMgRWxmcmluZyA8ZWxmcmluZ0B1c2Vycy5zb3VyY2Vmb3JnZS5uZXQ+Cj4gRGF0ZTogU3Vu
+LCA1IEFwciAyMDIwIDEzOjEzOjAzICswMjAwCj4gCj4gVGhlIGZ1bmN0aW9uIOKAnHBsYXRmb3Jt
+X2dldF9pcnHigJ0gY2FuIGxvZyBhbiBlcnJvciBhbHJlYWR5Lgo+IFRodXMgb21pdCBhIHJlZHVu
+ZGFudCBtZXNzYWdlIGZvciB0aGUgZXhjZXB0aW9uIGhhbmRsaW5nIGluIHRoZQo+IGNhbGxpbmcg
+ZnVuY3Rpb24uCj4gCj4gVGhpcyBpc3N1ZSB3YXMgZGV0ZWN0ZWQgYnkgdXNpbmcgdGhlIENvY2Np
+bmVsbGUgc29mdHdhcmUuCj4gCj4gU2lnbmVkLW9mZi1ieTogTWFya3VzIEVsZnJpbmcgPGVsZnJp
+bmdAdXNlcnMuc291cmNlZm9yZ2UubmV0Pgo+IC0tLQo+ICBkcml2ZXJzL2dwdS9kcm0vbWVzb24v
+bWVzb25fZHdfaGRtaS5jIHwgNCArLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigr
+KSwgMyBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL21lc29u
+L21lc29uX2R3X2hkbWkuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZXNvbi9tZXNvbl9kd19oZG1pLmMK
+PiBpbmRleCBlOGM5NDkxNWE0ZmMuLjY0Y2I2YmE0YmM0MiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
+L2dwdS9kcm0vbWVzb24vbWVzb25fZHdfaGRtaS5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL21l
+c29uL21lc29uX2R3X2hkbWkuYwo+IEBAIC0xMDM0LDEwICsxMDM0LDggQEAgc3RhdGljIGludCBt
+ZXNvbl9kd19oZG1pX2JpbmQoc3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgZGV2aWNlICptYXN0
+ZXIsCj4gIAkJcmV0dXJuIFBUUl9FUlIoZHdfcGxhdF9kYXRhLT5yZWdtKTsKPiAKPiAgCWlycSA9
+IHBsYXRmb3JtX2dldF9pcnEocGRldiwgMCk7Cj4gLQlpZiAoaXJxIDwgMCkgewo+IC0JCWRldl9l
+cnIoZGV2LCAiRmFpbGVkIHRvIGdldCBoZG1pIHRvcCBpcnFcbiIpOwo+ICsJaWYgKGlycSA8IDAp
+Cj4gIAkJcmV0dXJuIGlycTsKPiAtCX0KPiAKPiAgCXJldCA9IGRldm1fcmVxdWVzdF90aHJlYWRl
+ZF9pcnEoZGV2LCBpcnEsIGR3X2hkbWlfdG9wX2lycSwKPiAgCQkJCQlkd19oZG1pX3RvcF90aHJl
+YWRfaXJxLCBJUlFGX1NIQVJFRCwKPiAtLQo+IDIuMjYuMAo+IAoKTWlzc2luZyBGaXhlcyB0YWcs
+IGJ1dCBJJ2xsIGFwcGx5IG5ldmVydGhlbGVzczoKRml4ZXM6IDNmNjhiZTdkOGU5NiAoImRybS9t
+ZXNvbjogQWRkIHN1cHBvcnQgZm9yIEhETUkgZW5jb2RlciBhbmQgRFctSERNSSBicmlkZ2UgKyBQ
+SFkiKQoKTmVpbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
