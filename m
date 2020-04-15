@@ -2,91 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCEC81A97F7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:08:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09B0B1A9812
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:12:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lxdon5cdGYr5EfkI37V9qmdr0hinO4AlMC/gX2RUm/Q=; b=I2ZiYuDNK7FbzI
-	YNMT5Po2v/TEIaKIrZU/ZrDtoJ6540C0Xs4Gl1qOpHnXLk3Hxf6fbWZK6zzIfZdJm+jaR4z6AYHqx
-	vpAZqLzywh4unGG8NEvbGnZeVbUjs+MmoOwbd/FgGhSsfizgOXGeIm+nuD1tZe9Rimsv0bJ04I/j5
-	3xOaOxIewU5pkF1oWL//YDmrPwO5tLTO5RrAY6EielLAmskwjXlkhuk6Icg4MaV4XdBkacT+mEajO
-	BPWYjhsAHDI+ig0TZDFXPLXekn+cOlj0glTJgZIDISabbYq4+La26jZDZROQKZO9ls4DyPkv5uRGX
-	BX735EE/911uJ/TtPfiA==;
+	List-Owner; bh=FWIj8htlh07d2b6Zbism7O1/yLmN7K9pePBcx7ppL7Y=; b=t0anLq7fLsIubk
+	wxBg/MufCGX113XBEyXDOGUMUhi8q6/Q1C5EOXvRas3ySohEbn5CpKMLJGoBLgEuttfyDgh3Q7v3H
+	ijcXDQscC7ns9IYXIMNCDtIgUEjFuwwA30uidQkmiBGPXCqhTOMyaA/uuULz5gG/37FBZlkc6laT7
+	zHjZ2Q85BqzkLXIKJ0wNucCOpm+qBxrOR5GMk/JEtiergBTANIcU27CVzhpzrz3+DqV57Xkc84nuq
+	Nr8rYWS5kzy/lckVDSk2xIUg1LOaj+yzNy2ONCMBmgfglUD8jkjBpPk+ssaCtBwAdf8ZWhmTR8ddn
+	cz5iENDf0pUSlKAJbUIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOe1j-0001vr-8w; Wed, 15 Apr 2020 09:08:11 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jOe5m-0004tW-NL; Wed, 15 Apr 2020 09:12:22 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOe1b-0001v8-Hw
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:08:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586941681;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=/EXNpOGZswAeAZPkceeFE/XM7sXAwUaoIFU9vZ0wVCE=;
- b=VW7jjurxPbyHCG/FNL75ia3WUyupsknBjqgN4zcWwBQhK+aizFby2zYvoa3V0U/7JGLwOP
- yNb6V8PKYlMsdJedxapOvy+BafR+8haBgueSZ8yX063UuOgbUcBnJGuVPkHjbheKkU8oAO
- 66cruLVHMn//rsRIBynU495tFFZGluA=
-Received: from mail-wm1-f72.google.com (mail-wm1-f72.google.com
- [209.85.128.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-354-i-emuO9kNNq9y6abaLYvEA-1; Wed, 15 Apr 2020 05:07:57 -0400
-X-MC-Unique: i-emuO9kNNq9y6abaLYvEA-1
-Received: by mail-wm1-f72.google.com with SMTP id t62so5492778wma.0
+ id 1jOe5X-0004sa-O6
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:12:11 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200415091205euoutp02267220b6f11c4b147fd3a077249e329e~F80XlffSa2508125081euoutp02f
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 02:07:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=lisOMIPYzGEOUKW/w9q538cTmyUuHd07/Sojgyr8MlQ=;
- b=AqZOwrFfmCVpWF+Ps1mjhV4rmhlLFm4TOxsNEu0F899TjRf22bTTmVVxBBaKuGB5L9
- Epl4wRG6JbyH7kL0YmDVlaaXsTtXensuhCtnAQiztJNLunrOg6XpeUNRdRBDIkInN+xg
- PcTtdkQ0Kwq9TWbtZjaPLUtSglMd9w4MybL58U4lfM2H6KvaKhP0FOCkacjMjZlOWBWZ
- 70rGCUAP91xvOMHV4T3eQxfGE5naDyW7vduz8vsOcks9cfbWd5q5PEmdHX2vnwtT4k9L
- b1PF2k1P13fHrkC9IcJj6f0Ywtu/R0Fuu+ZgltcFymw9T+oja8bjU35dNF67JS1+WAd2
- UY7A==
-X-Gm-Message-State: AGi0Pub/Uz4LXT+xaPRjU5Wu+DSwkdDiuRLRhWgPPQhyGVhCa/+nc5qq
- m1S9s5DjOI4ZzHzmKoSvsEsmb5V15HX37hyMhmqHBYGdPsFIUXFfUKggPJn+jexutMWquAk0cAw
- 76xVMZd+WfbILsff1UcUys5WO/R2dBq2vBb4=
-X-Received: by 2002:a5d:6841:: with SMTP id o1mr27977391wrw.412.1586941676336; 
- Wed, 15 Apr 2020 02:07:56 -0700 (PDT)
-X-Google-Smtp-Source: APiQypIXD/p9LNlXg20pn+U/yQCcvvORh177d5YZbgu7SsoqIprQYNJ2FhjSis/HsfEJeQMW+4tCHg==
-X-Received: by 2002:a5d:6841:: with SMTP id o1mr27977353wrw.412.1586941676047; 
- Wed, 15 Apr 2020 02:07:56 -0700 (PDT)
-Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
- by smtp.gmail.com with ESMTPSA id e5sm23214697wru.92.2020.04.15.02.07.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 02:07:55 -0700 (PDT)
-From: Vitaly Kuznetsov <vkuznets@redhat.com>
-To: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Subject: Re: [PATCH] KVM: Optimize kvm_arch_vcpu_ioctl_run function
-In-Reply-To: <cc29ce22-4c70-87d1-d7aa-9d38438ba8a5@linux.alibaba.com>
-References: <20200413034523.110548-1-tianjia.zhang@linux.alibaba.com>
- <875ze2ywhy.fsf@vitty.brq.redhat.com>
- <cc29ce22-4c70-87d1-d7aa-9d38438ba8a5@linux.alibaba.com>
-Date: Wed, 15 Apr 2020 11:07:53 +0200
-Message-ID: <87a73dxgk6.fsf@vitty.brq.redhat.com>
+ Wed, 15 Apr 2020 09:12:05 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200415091205euoutp02267220b6f11c4b147fd3a077249e329e~F80XlffSa2508125081euoutp02f
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586941925;
+ bh=ihC2jkfz1d7lvDLRTfZk+C5FM292xjkHp1pNgRwCkcY=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=esKjF/iFoYWKAgEHe7Agp4FuHbibu7GBVaPX7atm5N1bacwBbegvAqr5OhAXoPWQG
+ ozxqkohTHab4LJX9cntPUxaHeDtExHqEWU2su5KXIFcOQv46C+vEalSGI2/FOBOZLl
+ Gl3gXIr2OxQ8//uhU9wDoBEQj7MqdY/U359JG7Tk=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200415091204eucas1p101f6b173912d41a0557c373fb423fc9e~F80XR6yBY0356803568eucas1p1R;
+ Wed, 15 Apr 2020 09:12:04 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id B4.96.61286.4EFC69E5; Wed, 15
+ Apr 2020 10:12:04 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200415091204eucas1p1983548c2db52d8d0c2a5367034ec80dd~F80W6gWnA0526905269eucas1p1y;
+ Wed, 15 Apr 2020 09:12:04 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200415091204eusmtrp266a5b0be9173f136d2c886655562da92~F80W5dOuM1005510055eusmtrp2J;
+ Wed, 15 Apr 2020 09:12:04 +0000 (GMT)
+X-AuditID: cbfec7f2-ef1ff7000001ef66-ac-5e96cfe488aa
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 35.26.07950.4EFC69E5; Wed, 15
+ Apr 2020 10:12:04 +0100 (BST)
+Received: from [106.120.51.71] (unknown [106.120.51.71]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200415091203eusmtip2d83bf0ed2ff415a4aa3b9e24afb549e3~F80VuLINp1653416534eusmtip2o;
+ Wed, 15 Apr 2020 09:12:03 +0000 (GMT)
+Subject: Re: [RFC 1/8] thermal: int3400_thermal: Statically initialize
+ .get_mode()/.set_mode() ops
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Message-ID: <7cbddc1c-0049-6b50-7bca-204bd9df2c30@samsung.com>
+Date: Wed, 15 Apr 2020 11:12:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+In-Reply-To: <20200407174926.23971-2-andrzej.p@collabora.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0wUVxj1zp2dHdCl18XK57PtVms0kUcweqVibNqYadJGf9ikYqXdygRM
+ WdjsCIiPiA9QtlpBi8KGWmypPKQCCwXWgq6oPKLu+kQQfGzc6KIssYsVIQJlHEj5d77znXPP
+ d5LLY62dm8lvTtgimhL08TrOn61pGnAudjuPRYdWOpfQkpZhlvY7Bhh66vEDlh7JHcH0RN8c
+ mu/cx1LzyVDqurOGZvTlstRl/5R27P6bofmeZFrlOKiipTk2ltpcXo4WnTuMqPVxm4qaB0sw
+ 7Tt0CdGmgun0+vVv6Ol6D6ZXr9xUUbfrJ44O1VpZ6qkOog3pNzCtsubgVbOFuvuFSKgu6WCE
+ Yl+IYLPcVwtVxYuE3+u7GcFamskJXW31nNDrcIzyhbuEf3rcauHJ8YuMkPXCywmVvXWMcHgo
+ VHh9q0e1NjDKf0WMGL85WTSFrPzOP85dUKcyZmu29j5MR2kob7IZ+fFAloC7+TkyI39eS4oR
+ NFV0cMrwEkHnHw2sMvQhON/Szo5bzH8NqWWsJUUI3lRqFJEXwUhZFjYjng8kMeA6w8uaaSQc
+ Bmq8almDySs1NN7uxvKCIxGQvb8UyVhDVsK1P4dVMmbJfMjOtDMyfpd8Db5HF1WKZiq05rnf
+ HuFHIuFY3oO372ASBPfcvzIKfg9qvflYDgPyox9YujLUytWfQZe3jVNwIDxrrh7jZ8OITTbL
+ hjMIhg54xty1CIqODo85PoYuxyAnV8NkIZSfDVHoT+DlhT2MTAMJgHbvVOWIADhScxwrtAYO
+ ZGgV9UdQcaqCG48120pwFtJZJlSzTKhjmVDH8n9uAWJLUZCYJBliRSksQUwJlvQGKSkhNnhT
+ osGKRv/1leFmXx369+b3jYjwSDdF01KWE61V6ZOlVEMjAh7rpmnKDaOUJkafuk00JX5rSooX
+ pUY0i2d1QZrw37o3akmsfov4gygaRdP4luH9ZqahDw8FzIh4//O4ve3rEyN9X6zVp2HjpA05
+ upbC/Pj6gubw1obdL1KiitAH6xY401s9P3c+DIxKcc/r3zkwh4+OsT+Zsn3hqq+MbHTn4NKn
+ 5ZEbJkdow27ZI3zmu8FPpS8hd8Xqdw6eGPkldfGa/svLlvekXDWW1c5I3fHmZOfc9c5rmev2
+ 6VgpTh+2CJsk/X+BrTzB0wMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHe885m0drcJqab2IlgwiDpnOaj2aj24fzISr0S+SlpjuotEvt
+ TKk+lGVWjspLaDqsVlnp7ELTbJaKWszCWmokJGatRtnFdRHL5aU2LfDbj+f5/x544E+T4l5B
+ KJ2jNXB6rVItEQZQ3dNdQ6tczyrSo47Yw6Du0TQFvxweAq6+G6KgrPIPCedHl0D1s6MUGC9G
+ gfPFVjg2WkmBs30jvDx8n4Dq4TxocJwUgKW8mYJm54gQrrUVI7C+6xeA8XcdCaOnHiKwmxdB
+ T08q1LcMk/Cku08ALudpIUzdtVIw3BgCrYW9JDRYy8l1YaztVQ1iG+teEmztj0i22fTKj22o
+ XclebvlIsFZLkZAd7G8Rsm6HwzuvOcR+/+LyY9+ffUCwJd9GhOxtt41gi6ei2PHnXwTbAndI
+ E/W6XAMXnq3jDWslKTKIlsriQRodEy+VyePSEqJjJZGKRBWnzsnj9JGKXdJsl9km2FMq2ud+
+ XYjyUdV8I/KnMRODjXem/IwogBYzVxA+9b4LGRHtXYThrlt5s5lAPNlvFM5mPiPsKjhD+TKB
+ jAo7b9K+TBAjx56mkZk7JDPuh8cGaknfQszo8M+v15CPhUwCLj1umWERo8BPb0wLfEwxy3Fp
+ UTvh42BmO35gM/3LLMSPq1yUj/2ZtbiiamjmJsmswJPn+/5xCB5wXSBmeRm+O1JNliCxaY5u
+ mqOY5iimOYoZURYUxOXymiwNHy3llRo+V5slzdRprMhbpya7p9GGjO7kTsTQSLJA9Oh6ebpY
+ oMzj92s6EaZJSZDolsY7EqmU+w9wet1Ofa6a4ztRrPe5UjI0OFPnLafWsFMWK4uDeFmcPE6+
+ GiQhohNMR6qYyVIauN0ct4fT//cI2j80H/WkTzhWz9tQNhm7iqxfs6wg7ZImKaJgX/BY5edD
+ 5vlb1h8QJSnf5ttVSwY7anJibkjaeovC88PV6gDnaEnh0Yw/Hd+SVJuTP0UVbmr6cC9zwDMl
+ 3t634U1EiqU2CD+8MyCf6F/MlZ2DZo8ieW/3waXFE4rsjNbB5/b1mVp3RdrN0xKKz1bKVpJ6
+ XvkXsOWk2GQDAAA=
+X-CMS-MailID: 20200415091204eucas1p1983548c2db52d8d0c2a5367034ec80dd
+X-Msg-Generator: CA
+X-RootMTR: 20200415091204eucas1p1983548c2db52d8d0c2a5367034ec80dd
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200415091204eucas1p1983548c2db52d8d0c2a5367034ec80dd
+References: <20200407174926.23971-1-andrzej.p@collabora.com>
+ <20200407174926.23971-2-andrzej.p@collabora.com>
+ <CGME20200415091204eucas1p1983548c2db52d8d0c2a5367034ec80dd@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_020803_668894_FDF7F1F5 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_021207_982937_FACF80FE 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,6 +134,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -107,61 +147,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, james.morse@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, maz@kernel.org, joro@8bytes.org, x86@kernel.org,
- linux-kernel@vger.kernel.org, sean.j.christopherson@intel.com,
- mingo@redhat.com, bp@alien8.de, julien.thierry.kdev@gmail.com, hpa@zytor.com,
- pbonzini@redhat.com, tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, jmattson@google.com
+Cc: "Rafael J .
+ Wysocki" <rjw@rjwysocki.net>, platform-driver-x86@vger.kernel.org,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tianjia Zhang <tianjia.zhang@linux.alibaba.com> writes:
 
-> On 2020/4/14 22:26, Vitaly Kuznetsov wrote:
->> Tianjia Zhang <tianjia.zhang@linux.alibaba.com> writes:
->> 
->>> kvm_arch_vcpu_ioctl_run() is only called in the file kvm_main.c,
->>> where vcpu->run is the kvm_run parameter, so it has been replaced.
->>>
->>> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
->>> ---
->>>   arch/x86/kvm/x86.c | 8 ++++----
->>>   virt/kvm/arm/arm.c | 2 +-
->>>   2 files changed, 5 insertions(+), 5 deletions(-)
->>>
->>> diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
->>> index 3bf2ecafd027..70e3f4abbd4d 100644
->>> --- a/arch/x86/kvm/x86.c
->>> +++ b/arch/x86/kvm/x86.c
->>> @@ -8726,18 +8726,18 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>>   		r = -EAGAIN;
->>>   		if (signal_pending(current)) {
->>>   			r = -EINTR;
->>> -			vcpu->run->exit_reason = KVM_EXIT_INTR;
->>> +			kvm_run->exit_reason = KVM_EXIT_INTR;
->> 
->> I have a more generic question: why do we need to pass 'kvm_run' to
->> kvm_arch_vcpu_ioctl_run() if it can be extracted from 'struct kvm_vcpu'?
->> The only call site looks like
->> 
->> virt/kvm/kvm_main.c:            r = kvm_arch_vcpu_ioctl_run(vcpu, vcpu->run);
->> 
->
-> In the earlier version, kvm_run is used to pass parameters with user 
-> mode and is not included in the vcpu structure, so it has been retained 
-> until now.
->
+On 4/7/20 7:49 PM, Andrzej Pietrasiewicz wrote:
+> int3400_thermal_ops is used inside int3400_thermal_probe() only after
+> the assignments, which can just as well be made statically at struct's
+> initizer.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 
-In case this is no longer needed I'd suggest we drop 'kvm_run' parameter
-and extract it from 'struct kvm_vcpu' when needed. This looks like a
-natural add-on to your cleanup patch.
+Reviewed-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
 
--- 
-Vitaly
+Best regards,
+--
+Bartlomiej Zolnierkiewicz
+Samsung R&D Institute Poland
+Samsung Electronics
 
+> ---
+>  drivers/thermal/intel/int340x_thermal/int3400_thermal.c | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
+> index efae0c02d898..634b943e9e3d 100644
+> --- a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
+> +++ b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
+> @@ -271,6 +271,8 @@ static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
+>  
+>  static struct thermal_zone_device_ops int3400_thermal_ops = {
+>  	.get_temp = int3400_thermal_get_temp,
+> +	.get_mode = int3400_thermal_get_mode,
+> +	.set_mode = int3400_thermal_set_mode,
+>  };
+>  
+>  static struct thermal_zone_params int3400_thermal_params = {
+> @@ -309,9 +311,6 @@ static int int3400_thermal_probe(struct platform_device *pdev)
+>  
+>  	platform_set_drvdata(pdev, priv);
+>  
+> -	int3400_thermal_ops.get_mode = int3400_thermal_get_mode;
+> -	int3400_thermal_ops.set_mode = int3400_thermal_set_mode;
+> -
+>  	priv->thermal = thermal_zone_device_register("INT3400 Thermal", 0, 0,
+>  						priv, &int3400_thermal_ops,
+>  						&int3400_thermal_params, 0, 0);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
