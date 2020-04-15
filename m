@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F0EA1A9D59
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:46:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8E4D1A9D62
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:46:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GKxhzdVGgjrJaSPfGVCXZA9oN2pHtO5BPqxzQOhGBrM=; b=Dnf1eIY0VhAImC
-	2ESyhFE126HhZEDkpd7JxgnEwAkIefYKJrAvrQD0+QkkvKEbbbAbXqMgk32D9EF2iPB92OZekLIIo
-	vJdctivrAjUA8vmDk5W+ZLUD8lIpus2WxV4S6STXiX7uZ+Xg6Qq+727a5TjpnRtXTunbF4wjYdf91
-	SN509dymk54iwXQmRmuBWwu2DyzvCIGchWaqEmF7AsEtPd4fjxB50Uv0JCxJUv0WhxwkwPysH7ldv
-	el4h2kALiUUs9GfiOSSd2ZTLlN24XqqN6azQOzbAY0axD8bc6D0DMMCaBLs/1iMRtuBAwuAWXTAYK
-	W8YKeyVDW770jyjolmvA==;
+	List-Owner; bh=olJ2NSq03fYe4ng7W44/duXFVhipuU3onyVtw2OaCoc=; b=dhBsbhILr2XF1g
+	9bCcv0fLBNXcITS9OZbJrjTKOLeweTB1EA+LkVjMKI/QOGibcw1OgkuTmZ10kpYTgVdI8Cms8FEar
+	SGRz1MGfQz/5oU5OH0SuHgRd7ilpeMNCdAo+0BE+dKGQWpPqmRQy81D2CG7blmVW21UmCx3OBQ2vr
+	9mOBM7KHqUDTdeZhg8F21tHDG3PMck3ew3JSp3CQQTx5ZaeqNMJJyg3ottv5ZgL+JRMNrjUqNkkQE
+	uw3XsZJhs0Fl5EzZmV4li9Qtzkec/mhvAsmiIvXKQ4yLI8Hq8aNQD6It512J2/7zApHNTYkppdOaX
+	CrBwK5d6HVHstDRhd9mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgUL-0004DU-SD; Wed, 15 Apr 2020 11:45:53 +0000
+	id 1jOgUf-0004VP-51; Wed, 15 Apr 2020 11:46:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgRT-00088S-Sb
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:42:58 +0000
+ id 1jOgRa-0008D7-7v; Wed, 15 Apr 2020 11:43:04 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 41964206A2;
- Wed, 15 Apr 2020 11:42:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7193C206A2;
+ Wed, 15 Apr 2020 11:43:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950974;
- bh=cV2r83eP8e/jucUSXYvFnWLjmbcZKhtPCDO2eIQor/o=;
+ s=default; t=1586950981;
+ bh=yZRJLnU4ErUB6W+jl5bb662sTl3GJZbnFAsMghgK1O4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Cpy9uLAE2pqP90ZVVtwIBnLWp1Ge/X59UKgazrYPINV9qf2aF6JH4GhrLu6fjxRO4
- GbWfMx0OU76VqbllZBy934fLDe6fKxI7sIAFsjTTon4IomwZf5y+Oa9EcUIJaQwLzd
- R+Vk5eFR5NajFqdG2941HdQss/AHTEvVilSqvwb4=
+ b=oPMxqEFSN6W8/xv/LoymzbM2FBBS7DI767JB0/3NdORgkdGbM32CSFi1gkYi4N187
+ EAA1h01VfElfDRbd0Ptw7P/xhSnuoJoO6HhMCrk4QZAeGAs9lHO9D2Tsh9A8EjksMw
+ E8+7uzdY7sQyVHqQHAyrNdqHhkp0fm0egTh3K5RM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 023/106] soc: imx: gpc: fix power up sequencing
-Date: Wed, 15 Apr 2020 07:41:03 -0400
-Message-Id: <20200415114226.13103-23-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 029/106] ARM: dts: rockchip: fix lvds-encoder
+ ports subnode for rk3188-bqedison2qc
+Date: Wed, 15 Apr 2020 07:41:09 -0400
+Message-Id: <20200415114226.13103-29-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
 References: <20200415114226.13103-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044256_034524_0127BED6 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20200415_044302_365368_92FF1DF6 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,83 +79,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lucas Stach <l.stach@pengutronix.de>
+From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit e0ea2d11f8a08ba7066ff897e16c5217215d1e68 ]
+[ Upstream commit 1a7e99599dffd836fcb720cdc0eaf3cd43d7af4a ]
 
-Currently we wait only until the PGC inverts the isolation setting
-before disabling the peripheral clocks. This doesn't ensure that the
-reset is properly propagated through the peripheral devices in the
-power domain.
+A test with the command below gives this error:
 
-Wait until the PGC signals that the power up request is done and
-wait a bit for resets to propagate before disabling the clocks.
+arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: lvds-encoder:
+'ports' is a required property
 
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+Fix error by adding a ports wrapper for port@0 and port@1
+inside the 'lvds-encoder' node for rk3188-bqedison2qc.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/
+bridge/lvds-codec.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Link: https://lore.kernel.org/r/20200316174647.5598-1-jbx6244@gmail.com
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/imx/gpc.c | 24 +++++++++++++-----------
- 1 file changed, 13 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/rk3188-bqedison2qc.dts | 27 ++++++++++++++----------
+ 1 file changed, 16 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/soc/imx/gpc.c b/drivers/soc/imx/gpc.c
-index 98b9d9a902ae3..90a8b2c0676ff 100644
---- a/drivers/soc/imx/gpc.c
-+++ b/drivers/soc/imx/gpc.c
-@@ -87,8 +87,8 @@ static int imx6_pm_domain_power_off(struct generic_pm_domain *genpd)
- static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
- {
- 	struct imx_pm_domain *pd = to_imx_pm_domain(genpd);
--	int i, ret, sw, sw2iso;
--	u32 val;
-+	int i, ret;
-+	u32 val, req;
+diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
+index 8afb2fd5d9f1b..66a0ff196eb1f 100644
+--- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
++++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
+@@ -58,20 +58,25 @@
  
- 	if (pd->supply) {
- 		ret = regulator_enable(pd->supply);
-@@ -107,17 +107,18 @@ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
- 	regmap_update_bits(pd->regmap, pd->reg_offs + GPC_PGC_CTRL_OFFS,
- 			   0x1, 0x1);
+ 	lvds-encoder {
+ 		compatible = "ti,sn75lvds83", "lvds-encoder";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
  
--	/* Read ISO and ISO2SW power up delays */
--	regmap_read(pd->regmap, pd->reg_offs + GPC_PGC_PUPSCR_OFFS, &val);
--	sw = val & 0x3f;
--	sw2iso = (val >> 8) & 0x3f;
--
- 	/* Request GPC to power up domain */
--	val = BIT(pd->cntr_pdn_bit + 1);
--	regmap_update_bits(pd->regmap, GPC_CNTR, val, val);
-+	req = BIT(pd->cntr_pdn_bit + 1);
-+	regmap_update_bits(pd->regmap, GPC_CNTR, req, req);
- 
--	/* Wait ISO + ISO2SW IPG clock cycles */
--	udelay(DIV_ROUND_UP(sw + sw2iso, pd->ipg_rate_mhz));
-+	/* Wait for the PGC to handle the request */
-+	ret = regmap_read_poll_timeout(pd->regmap, GPC_CNTR, val, !(val & req),
-+				       1, 50);
-+	if (ret)
-+		pr_err("powerup request on domain %s timed out\n", genpd->name);
+-		port@0 {
+-			reg = <0>;
+-			lvds_in_vop0: endpoint {
+-				remote-endpoint = <&vop0_out_lvds>;
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
-+	/* Wait for reset to propagate through peripherals */
-+	usleep_range(5, 10);
++			port@0 {
++				reg = <0>;
++
++				lvds_in_vop0: endpoint {
++					remote-endpoint = <&vop0_out_lvds>;
++				};
+ 			};
+-		};
  
- 	/* Disable reset clocks for all devices in the domain */
- 	for (i = 0; i < pd->num_clks; i++)
-@@ -343,6 +344,7 @@ static const struct regmap_config imx_gpc_regmap_config = {
- 	.rd_table = &access_table,
- 	.wr_table = &access_table,
- 	.max_register = 0x2ac,
-+	.fast_io = true,
- };
- 
- static struct generic_pm_domain *imx_gpc_onecell_domains[] = {
+-		port@1 {
+-			reg = <1>;
+-			lvds_out_panel: endpoint {
+-				remote-endpoint = <&panel_in_lvds>;
++			port@1 {
++				reg = <1>;
++
++				lvds_out_panel: endpoint {
++					remote-endpoint = <&panel_in_lvds>;
++				};
+ 			};
+ 		};
+ 	};
 -- 
 2.20.1
 
