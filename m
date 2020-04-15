@@ -2,70 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 235961A9858
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:19:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 302B31A9859
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:20:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZEG0rfq0RTqiqZSUCg8A059RYdKJeARZ7/BwmOPCykY=; b=NkxijYkYV9jZLQL4UWibJDwPn
-	uSSlakaUbn150yPEZnDiYOjODL4X/FhYRFEHIMA5840iep10JzPVTWcE5emBjkFCVcGV7y/oEiSBV
-	8e16V2TyVBZfoO16T0YTjd0QsB3XjxNvf4MXKExYSVcOjOXrB3DgAGR7u8orm8OgrypaIJZsTQjkf
-	j1/LLG0X+gFQdULJY2WYbxLEq9+VyuUt5VubqZdWAMQcgSS3ZYMQHnLhepGmkQ9ynZulsl7+O4IIi
-	sdU0IcNUMAsVjPqkUEq3Sgucqh26eZKbWsnY2sMCGPMTIaptP8e2qqGkj7+GkYK/pGzWlf1YH+3G4
-	6aGwwLPSw==;
+	 bh=edxq8mwkmRVEWEDfrzf+UmeV/ezRwB7hI7tBAwG8fpw=; b=QSVMiqwU19arXSc1hTdXqxrjd
+	M4Y4TXLMqE3SkOUv125XlVb0oT90QXt4ZodmwKkqfaogUyiMaOchrxKpjaK21YMKWTIZY1xiV2GDz
+	y1RPnFviR1N3L+iy42tprbBq92nEs6AlM5dMLtXujcY74ehVQ+qw3w1PVZoYtC0BkaKIyyZG4eIEi
+	mWONuGfC5vOe4WjbMqunlNI5/Ucu+WuDfEogbzBTBn+/X8gCdjZ24hH9n3xfteSIxMlEuEGdJuU87
+	xR8Vr7Ju+M6HAgAFbjbQvf3IdIWUer5iSchdiyZFh9r8peDVUaraq0bkObBuVv9/nmdLdXQJTGFk+
+	N6aI9w1ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOeCs-0001UI-O8; Wed, 15 Apr 2020 09:19:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOeDA-0001g5-48; Wed, 15 Apr 2020 09:20:00 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOeCj-0001TX-TI
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:19:35 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1BC4D206A2;
- Wed, 15 Apr 2020 09:19:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586942373;
- bh=okUruJDPJKacfzZ0/FQ2AYhcvGKcB0ud1pJhEHMTmco=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BDYTulwRtubO/StyzvoxSGb4Z86eU025StVoxdQmaKKQdMWZuQ6VM4J01YUyn2odB
- guw1G6SfYFsGjxMWQ8oT6Nqc1trs/EnoFvRMkLU5kwx9t6UBowe5OQK4I7IPadnP4P
- wusKq93W4BME6BmLB0JXCok9AbgT0+cFAuA4en0U=
-Date: Wed, 15 Apr 2020 10:19:31 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v7 00/13] add ecspi ERR009165 for i.mx6/7 soc family
-Message-ID: <20200415091931.GA5265@sirena.org.uk>
-References: <1583944596-23410-1-git-send-email-yibin.gong@nxp.com>
- <VE1PR04MB6638AE84CD338AE1CF26FDFD89DB0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ id 1jOeCu-0001Ws-Ho; Wed, 15 Apr 2020 09:19:46 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 19217ADCC;
+ Wed, 15 Apr 2020 09:19:38 +0000 (UTC)
+Subject: Re: [PATCH v3 1/2] dt-bindings: arm: realtek: Document RTD1319 and
+ Realtek PymParticle EVB
+To: =?UTF-8?B?SmFtZXMgVGFpIFvmiLTlv5fls7Bd?= <james.tai@realtek.com>
+References: <20200204145207.28622-1-james.tai@realtek.com>
+ <20200204145207.28622-2-james.tai@realtek.com>
+ <bf55ccbe-cbdf-7ba7-d701-aa84c20204e3@suse.de>
+ <a9685d4560a6445d81c4919b2a323f68@realtek.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <cb724434-bebf-2a23-fd90-8cd82078459d@suse.de>
+Date: Wed, 15 Apr 2020 11:19:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <VE1PR04MB6638AE84CD338AE1CF26FDFD89DB0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-X-Cookie: Hire the morally handicapped.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <a9685d4560a6445d81c4919b2a323f68@realtek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_021933_986830_C92B145B 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_021944_755352_515F3661 
+X-CRM114-Status: GOOD (  15.20  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,87 +68,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: multipart/mixed; boundary="===============1105986559231021095=="
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============1105986559231021095==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gKMricLos+KVdGMg"
-Content-Disposition: inline
-
-
---gKMricLos+KVdGMg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Apr 15, 2020 at 08:41:17AM +0000, Robin Gong wrote:
-> Ping....
-> On 2020/03/11 16:35 Robin Gong <yibin.gong@nxp.com> wrote:
-> > There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO transf=
-er to
-
-Please don't send content free pings and please allow a reasonable time
-for review.  People get busy, go on holiday, attend conferences and so=20
-on so unless there is some reason for urgency (like critical bug fixes)
-please allow at least a couple of weeks for review.  If there have been
-review comments then people may be waiting for those to be addressed.
-
-Sending content free pings adds to the mail volume (if they are seen at
-all) which is often the problem and since they can't be reviewed
-directly if something has gone wrong you'll have to resend the patches
-anyway, so sending again is generally a better approach though there are
-some other maintainers who like them - if in doubt look at how patches
-for the subsystem are normally handled.
-
---gKMricLos+KVdGMg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6W0Z8ACgkQJNaLcl1U
-h9Cl5Af/RsVCkwJ2F2y85wo6iV4ieGbzZRxbI7skDohZNDOFRyf1i8kEXUex8Pyb
-OHjSzFguwzTlhgg6PMkp8R929OiFE3Bu8vupFdNdaw2fKZTFNoHInLjcqOtuDwSW
-N4+v2rbYrlGybSYpMvl8tDz3tu/eQl1cOmdSg/UWDUpStyCrzsAMcaKJA5kEJavD
-NoAHcE2LKjVeo34XmpGWOI8xiAgGqDLm27zQ2JGt6nmZxR33BS3HDfz0Fc5kCnut
-XVx7ggmvMMXvERR4naP/m/c9EkZ470SjZnwYtO71L9ncM62YJdHDogRS8t0ZWn3B
-sNTl4T+hhMymPnKqvdtRch+txbGv0A==
-=lwLW
------END PGP SIGNATURE-----
-
---gKMricLos+KVdGMg--
-
-
---===============1105986559231021095==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1105986559231021095==--
-
+SGkgSmFtZXMsCgpBbSAxNS4wNC4yMCB1bSAxMDo1OCBzY2hyaWViIEphbWVzIFRhaSBb5oi05b+X
+5bOwXToKPj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+YXJtL3JlYWx0ZWsueWFtbAo+Pj4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+YXJtL3JlYWx0ZWsueWFtbAo+Pj4gaW5kZXggODQ1ZjljNzZkNmY3Li4zYjQ4YWU3MWZkZDggMTAw
+NjQ0Cj4+PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3JlYWx0
+ZWsueWFtbAo+Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9y
+ZWFsdGVrLnlhbWwKPj4+IEBAIC00Miw2ICs0MiwxMiBAQCBwcm9wZXJ0aWVzOgo+Pj4gICAgICAg
+ICAgICAgICAgICAtIHN5bm9sb2d5LGRzNDE4ICMgU3lub2xvZ3kgRGlza1N0YXRpb24gRFM0MTgK
+Pj4+ICAgICAgICAgICAgICAtIGNvbnN0OiByZWFsdGVrLHJ0ZDEyOTYKPj4+Cj4+PiArICAgICAg
+IyBSVEQxMzE5IFNvQyBiYXNlZCBib2FyZHMKPj4+ICsgICAgICAtIGl0ZW1zOgo+Pj4gKyAgICAg
+ICAgICAtIGVudW06Cj4+PiArICAgICAgICAgICAgICAtIHJlYWx0ZWsscHltcGFydGljbGUgIyBS
+ZWFsdGVrIFB5bVBhcnRpY2xlIEVWQgo+Pgo+PiBUaGUgYm9hcmQgc2VlbXMgbGFiZWxsZWQgIlBZ
+TV9QQVJUSUNMRVMiLgo+Pgo+PiBXaGlsZSBXaWtpcGVkaWEgaGFzIG5vdGhpbmcgb24gdGhhdCwg
+SSBmb3VuZCB0aGlzIGV4cGxhbmF0aW9uOgo+PiBodHRwczovL21hcnZlbC5mYW5kb20uY29tL3dp
+a2kvUHltX1BhcnRpY2xlcwo+Pgo+PiBTbywgYXJlIHlvdSBzdXJlIGl0J3MgUHltUGFydGljbGUg
+YW5kIG5vdCAiUHltIFBhcnRpY2xlIiB3aXRoIHNwYWNlIG9yICJQeW0KPj4gUGFydGljbGVzIiB3
+aXRoIHNwYWNlIGFuZCBwbHVyYWwgUz8gVGhlIFMgd291bGQgYWZmZWN0IGFsc28gdGhlIC5kdHMg
+ZmlsZW5hbWUuCj4+Cj4gSSBzaG91bGQgY2hhbmdlIHRoZSBzdHJpbmcgdG8gIlB5bSBQYXJ0aWNs
+ZXMiLgoKT2theSwgaW4gdGhhdCBjYXNlIEkgc3VnZ2VzdCBydGQxMzE5LXB5bXBhcnRpY2xlcy5k
+dHMgZm9yIGNvbnNpc3RlbmN5LiAKVW5sZXNzIHlvdSB3YW50IHRvIGNoYW5nZSBydGQxMzk1LWxp
+b25za2luLmR0cyB0byBydGQxMzk1LWxpb24tc2tpbi5kdHMuCgo+PiBGb3IgdGhlIGNvbXBhdGli
+bGUgc3RyaW5nIHRoZSBxdWVzdGlvbiBpcyBweW1wYXJ0aWNsZSBvciBweW0tcGFydGljbGUuCj4+
+Cj4gVGhlIGNvbXBhdGlibGUgc3RyaW5nIGlzICJweW0tcGFydGljbGVzIi4KCldvcmtzIGZvciBt
+ZS4gKGFsd2F5cyBhc3N1bWluZyB3ZSBib3RoIGltcGx5IHRoZSAicmVhbHRlaywiIHByZWZpeCkK
+CklmIHlvdSBzZW5kIGEgdjQsIHBsZWFzZSBkb3VibGUtY2hlY2sgdGhlIGNvbW1lbnRzIGluIHBh
+dGNoIDIvMi4KCj4+IEJ5IGNvbXBhcmlzb24sIExJT04tU0tJTiB3YXMgbmFtZWQgbGlvbi1za2lu
+IGluIHRoZSBjb21wYXRpYmxlIGFuZCBzcGVsbGVkCj4+IExpb24gU2tpbiBpbiB0ZXh0dWFsIGZv
+cm0uIElmIHlvdSBiZWxpZXZlIHRoYXQgc2hvdWxkIGJlIGZpeGVkLCBub3cgd291bGQgYmUgdGhl
+Cj4+IHRpbWUgdG8gcmV2aXNpdCB0aG9zZSBwYXRjaGVzIHRoYXQgZGlkbid0IG1ha2UgdjUuNy4K
+Pj4KPiBJJ2xsIGNoZWNrIHRob3NlIHJlbGV2YW50IHBhdGNoZXMuCgpUaGFua3MsCkFuZHJlYXMK
+Ci0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdtYkgKTWF4ZmVsZHN0ci4gNSwg
+OTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVuZMO2cmZmZXIKSFJCIDM2ODA5
+IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
