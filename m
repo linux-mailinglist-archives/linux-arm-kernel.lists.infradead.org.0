@@ -2,98 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E39A91AB29D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 22:40:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06D8E1AB30B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 23:12:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PMY4DtLtoLcVjFxwajiMUOVrT1/nXUcX2k4VeLO4nVM=; b=fu84+hzV3JVzWg
-	JXOslTJMUihUk0J5wkijM2WwZXKSRhnhnvLlxdcOzen7YbjQQdoN5aDgsj20kcQtg0lOkdNiquJGo
-	aL84viSkDKgCKZ6brTQjXSgl/weFhJw+XID2rbQID5X9dFtyoWzlumXTS3UgJSHL/V39CHovMiaH3
-	8Lse5l8Wki2eJ7MP8B208So3HGH51FqusrRhUzx6N4OZP50NcOq48VEaiTwqCrzoRUZRyid363j7i
-	kjxS+jt6nK1n/SDp48ATe6Wdszm038QVmwz5bmwEvQa/dkGh32kAjLMFmCet3EILQR4Db12W7XFc7
-	4UqeVjoK4yPw0FL++3NA==;
+	List-Owner; bh=oDSrEIIwJ81fnSq8bszU0KkZ+Jds82BUEJl7NbMQekQ=; b=dfZ1lpawwJoIch
+	Pym/q+DE67KWJekRhiz+Yy4zWwf32UvpZV6sSNIdPrTllDNtlGxmKLKcL5WL+nN6PsU5FYVN+pnGv
+	R1L4JWVDN34cmKrZvlmiyjebBqVd4bGGyqoWSEQAwYTQppLSHIVULYsT6tTnkWol6dOnEkIxhYVAA
+	fhaMP406Xj7/BinQI2D838ERJZfJCvUU6VBjCYvJwX2bjGzTW57HFARjB22uKRm1gmFX0NCxstSJI
+	w2Vl5KQLHJ66ox2MhOJURPXHhnEm4Lou3bTtphEpUAXA0x2tUkzN3sOdlAklEtAnTfHMhnC/2p+dO
+	RltSeoGkeOdFz3Ck8sig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOopv-0003dt-GD; Wed, 15 Apr 2020 20:40:43 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jOpKR-0006md-31; Wed, 15 Apr 2020 21:12:15 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOopm-0003dM-8M; Wed, 15 Apr 2020 20:40:35 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOopk-0004Y6-1W; Wed, 15 Apr 2020 14:40:32 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOopj-00044t-6u; Wed, 15 Apr 2020 14:40:31 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: James Morse <james.morse@arm.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-4-james.morse@arm.com>
-Date: Wed, 15 Apr 2020 15:37:32 -0500
-In-Reply-To: <20200326180730.4754-4-james.morse@arm.com> (James Morse's
- message of "Thu, 26 Mar 2020 18:07:30 +0000")
-Message-ID: <87v9m0fptf.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jOpKI-0006ll-99; Wed, 15 Apr 2020 21:12:08 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g12so1662740wmh.3;
+ Wed, 15 Apr 2020 14:12:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=2ITZy7GBSnPnTn/d5uBu6xq8Y93aT2PYpjAoG4+4rWc=;
+ b=J9gPRWadel2dL70jWIPEtqi/yJoJc66C1Zj4cptKEwwSBYw8I/mlUBXw7or3ZTtU88
+ Czz59hxGHWpOnaPCxDRpBoMUc34VF2OPxGgnnWTSxppticOjNouUIDESjixEQBjhnMiE
+ i9Z5G9saQjp8dWM8VWvqsUwqe3QT5hPtaaHUAitRx30Y28g21qAq5pr6SQAppKCcYyHc
+ /zMC9X/pYsahSsxTJwtvFOiVBj2q3/sDLV41q6/OBktHzB9atk5KWJ4T60e8RYdtrsd0
+ S6/ucvI1QZ1mJ0xZDI5GKkRK9AVz6FrktRFC9G2xdTyyQ0LZb2CzlYMGQCotEDDrsK0p
+ cv4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=2ITZy7GBSnPnTn/d5uBu6xq8Y93aT2PYpjAoG4+4rWc=;
+ b=jVDcpqDP2JKf2oZ+fL1C5IGZbs0yT5DCwIhpbznLWgdK6UtYrowm8Wudg35JxE+uAN
+ +//lDMLs0mh8RLXnTo6gtT7BFS7yDOsFmuNdbh3n0sZByIzCqDaEPPuEa3O6Z+Sf7Bz6
+ lEus4jMBSbd30WFynraqwgK4qY5ECuPbdsq6lPFu3DWPVs4TJ13QSyzzEbU0ZeHKZU08
+ 4BTc0LAC7HPf8N7Y0uRY0BKrcujAs0IE7evABwQ6d7Zu/yCbvSdtuT7FDPQVQrgZaGG8
+ wNOJrcFLx7+bybXrHXsWux/2w3ci9yuVHAATfi6x4HtaZtcDHxBimcevLUw7VZVlDT1M
+ HTvA==
+X-Gm-Message-State: AGi0PubFHlmsFtVJ24Om8sGce4doNA8bYcyS74DaAnsqUcZyoTSlJvZX
+ 9tLATJPjYT20u/c0eFZdb8obG+m2BknUEw==
+X-Google-Smtp-Source: APiQypKUlVmLgUucmKp2BrBcPTmwCTm5Na8BV7zK3LGSGlmt2FnkiqwyqyVfZIgAaZeSZaPO4OyhEA==
+X-Received: by 2002:a1c:bb08:: with SMTP id l8mr1332414wmf.168.1586985123722; 
+ Wed, 15 Apr 2020 14:12:03 -0700 (PDT)
+Received: from Ettosoft-T55 ([91.252.39.209])
+ by smtp.gmail.com with ESMTPSA id q17sm875515wmj.45.2020.04.15.14.11.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 15 Apr 2020 14:12:02 -0700 (PDT)
+Date: Wed, 15 Apr 2020 23:11:57 +0200
+From: Ettore Chimenti <ek5.chimenti@gmail.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH v2 3/6] media: move CEC platform drivers to a separate
+ directory
+Message-ID: <20200415211157.GA454671@Ettosoft-T55>
+References: <cover.1586946605.git.mchehab+huawei@kernel.org>
+ <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-X-XM-SPF: eid=1jOopj-00044t-6u; ; ; mid=<87v9m0fptf.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1+JJqbotLvSUq0NShDOKTNwYRyLEmWn4Co=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
-X-Spam-Level: *
-X-Spam-Status: No, score=1.2 required=8.0 tests=ALL_TRUSTED,BAYES_40,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels,XMSubLong
- autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- * -0.0 BAYES_40 BODY: Bayes spam probability is 20 to 40%
- *      [score: 0.3110] *  0.7 XMSubLong Long Subject
- *  1.5 XMNoVowels Alpha-numberic number with no vowels
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa07 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa07 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: *;James Morse <james.morse@arm.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 455 ms - load_scoreonly_sql: 0.24 (0.1%),
- signal_user_changed: 10 (2.2%), b_tie_ro: 8 (1.7%), parse: 0.97 (0.2%),
- extract_message_metadata: 12 (2.6%), get_uri_detail_list: 0.72 (0.2%),
- tests_pri_-1000: 11 (2.4%), tests_pri_-950: 1.51 (0.3%),
- tests_pri_-900: 1.25 (0.3%), tests_pri_-90: 271 (59.5%), check_bayes:
- 269 (59.1%), b_tokenize: 5.0 (1.1%), b_tok_get_all: 3.8 (0.8%),
- b_comp_prob: 1.69 (0.4%), b_tok_touch_all: 53 (11.7%), b_finish: 1.10
- (0.2%), tests_pri_0: 134 (29.4%), check_dkim_signature: 0.89 (0.2%),
- check_dkim_adsp: 2.4 (0.5%), poll_dns_idle: 0.61 (0.1%), tests_pri_10:
- 2.1 (0.5%), tests_pri_500: 8 (1.7%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH 3/3] arm64: memory: Give hotplug memory a different
- resource name
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+Content-Disposition: inline
+In-Reply-To: <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_134034_296024_EA78A007 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200415_141206_330061_95754FBB 
+X-CRM114-Status: GOOD (  22.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [ek5.chimenti[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,29 +98,561 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, linux-tegra@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Kukjin Kim <kgene@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-amlogic@lists.infradead.org,
+ Guenter Roeck <groeck@chromium.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Benson Leung <bleung@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-James Morse <james.morse@arm.com> writes:
+On Wed, Apr 15, 2020 at 12:31:34PM +0200, Mauro Carvalho Chehab wrote:
+> As CEC support doesn't depend on MEDIA_SUPPORT, let's
+> place the platform drivers outside the media menu.
+> 
+> As a side effect, instead of depends on PCI, seco driver
+> can select it (and DMI).
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  drivers/media/cec/Kconfig                     |   6 +-
+>  drivers/media/cec/Makefile                    |   2 +-
+>  drivers/media/cec/platform/Kconfig            | 121 +++++++++++++++++
+>  drivers/media/cec/platform/Makefile           |  14 ++
+>  .../{ => cec}/platform/cec-gpio/Makefile      |   0
+>  .../{ => cec}/platform/cec-gpio/cec-gpio.c    |   0
+>  .../platform/cros-ec}/Makefile                |   0
+>  .../platform/cros-ec}/cros-ec-cec.c           |   0
+>  .../media/{ => cec}/platform/meson/Makefile   |   0
+>  .../{ => cec}/platform/meson/ao-cec-g12a.c    |   0
+>  .../media/{ => cec}/platform/meson/ao-cec.c   |   0
+>  .../s5p-cec => cec/platform/s5p}/Makefile     |   0
+>  .../platform/s5p}/exynos_hdmi_cec.h           |   0
+>  .../platform/s5p}/exynos_hdmi_cecctrl.c       |   0
+>  .../s5p-cec => cec/platform/s5p}/regs-cec.h   |   0
+>  .../s5p-cec => cec/platform/s5p}/s5p_cec.c    |   0
+>  .../s5p-cec => cec/platform/s5p}/s5p_cec.h    |   0
+>  .../seco-cec => cec/platform/seco}/Makefile   |   0
+>  .../seco-cec => cec/platform/seco}/seco-cec.c |   0
+>  .../seco-cec => cec/platform/seco}/seco-cec.h |   0
+>  .../sti/cec => cec/platform/sti}/Makefile     |   0
+>  .../sti/cec => cec/platform/sti}/stih-cec.c   |   0
+>  drivers/media/cec/platform/stm32/Makefile     |   2 +
+>  .../{ => cec}/platform/stm32/stm32-cec.c      |   0
+>  .../tegra-cec => cec/platform/tegra}/Makefile |   0
+>  .../platform/tegra}/tegra_cec.c               |   0
+>  .../platform/tegra}/tegra_cec.h               |   0
+>  drivers/media/platform/Kconfig                | 125 ------------------
+>  drivers/media/platform/Makefile               |  12 --
+>  drivers/media/platform/stm32/Makefile         |   1 -
+>  30 files changed, 143 insertions(+), 140 deletions(-)
+>  create mode 100644 drivers/media/cec/platform/Kconfig
+>  create mode 100644 drivers/media/cec/platform/Makefile
+>  rename drivers/media/{ => cec}/platform/cec-gpio/Makefile (100%)
+>  rename drivers/media/{ => cec}/platform/cec-gpio/cec-gpio.c (100%)
+>  rename drivers/media/{platform/cros-ec-cec => cec/platform/cros-ec}/Makefile (100%)
+>  rename drivers/media/{platform/cros-ec-cec => cec/platform/cros-ec}/cros-ec-cec.c (100%)
+>  rename drivers/media/{ => cec}/platform/meson/Makefile (100%)
+>  rename drivers/media/{ => cec}/platform/meson/ao-cec-g12a.c (100%)
+>  rename drivers/media/{ => cec}/platform/meson/ao-cec.c (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/Makefile (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cec.h (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/exynos_hdmi_cecctrl.c (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/regs-cec.h (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.c (100%)
+>  rename drivers/media/{platform/s5p-cec => cec/platform/s5p}/s5p_cec.h (100%)
+>  rename drivers/media/{platform/seco-cec => cec/platform/seco}/Makefile (100%)
+>  rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.c (100%)
+>  rename drivers/media/{platform/seco-cec => cec/platform/seco}/seco-cec.h (100%)
+>  rename drivers/media/{platform/sti/cec => cec/platform/sti}/Makefile (100%)
+>  rename drivers/media/{platform/sti/cec => cec/platform/sti}/stih-cec.c (100%)
+>  create mode 100644 drivers/media/cec/platform/stm32/Makefile
+>  rename drivers/media/{ => cec}/platform/stm32/stm32-cec.c (100%)
+>  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/Makefile (100%)
+>  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.c (100%)
+>  rename drivers/media/{platform/tegra-cec => cec/platform/tegra}/tegra_cec.h (100%)
+> 
+> diff --git a/drivers/media/cec/Kconfig b/drivers/media/cec/Kconfig
+> index 1586dd899302..7b1fb70066bd 100644
+> --- a/drivers/media/cec/Kconfig
+> +++ b/drivers/media/cec/Kconfig
+> @@ -21,7 +21,7 @@ config CEC_PIN_ERROR_INJ
+>  	help
+>  	  This option enables CEC error injection using debugfs.
+>  
+> -config MEDIA_CEC_SUPPORT
+> +menuconfig MEDIA_CEC_SUPPORT
+>  	bool
+>  	prompt "HDMI CEC drivers"
+>  	default y if !MEDIA_SUPPORT_FILTER
+> @@ -31,3 +31,7 @@ config MEDIA_CEC_SUPPORT
+>  
+>  	  Say Y when you have an HDMI receiver, transmitter or a USB CEC
+>  	  adapter that supports HDMI CEC.
+> +
+> +if MEDIA_CEC_SUPPORT
+> +source "drivers/media/cec/platform/Kconfig"
+> +endif
+> diff --git a/drivers/media/cec/Makefile b/drivers/media/cec/Makefile
+> index 3fdbc22b1530..8c6448bee386 100644
+> --- a/drivers/media/cec/Makefile
+> +++ b/drivers/media/cec/Makefile
+> @@ -1,2 +1,2 @@
+>  # SPDX-License-Identifier: GPL-2.0
+> -obj-y += core/
+> +obj-y += core/ platform/
+> diff --git a/drivers/media/cec/platform/Kconfig b/drivers/media/cec/platform/Kconfig
+> new file mode 100644
+> index 000000000000..6a8bb8b68344
+> --- /dev/null
+> +++ b/drivers/media/cec/platform/Kconfig
+> @@ -0,0 +1,121 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +#
+> +# Platform drivers
+> +
+> +config VIDEO_CROS_EC_CEC
+> +	tristate "ChromeOS EC CEC driver"
+> +	depends on CROS_EC
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	select CROS_EC_PROTO
+> +	help
+> +	  If you say yes here you will get support for the
+> +	  ChromeOS Embedded Controller's CEC.
+> +	  The CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_MESON_AO_CEC
+> +	tristate "Amlogic Meson AO CEC driver"
+> +	depends on ARCH_MESON || COMPILE_TEST
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	help
+> +	  This is a driver for Amlogic Meson SoCs AO CEC interface. It uses the
+> +	  generic CEC framework interface.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +
+> +config VIDEO_MESON_G12A_AO_CEC
+> +	tristate "Amlogic Meson G12A AO CEC driver"
+> +	depends on ARCH_MESON || COMPILE_TEST
+> +	depends on COMMON_CLK && OF
+> +	select REGMAP
+> +	select REGMAP_MMIO
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	---help---
+> +	  This is a driver for Amlogic Meson G12A SoCs AO CEC interface.
+> +	  This driver if for the new AO-CEC module found in G12A SoCs,
+> +	  usually named AO_CEC_B in documentation.
+> +	  It uses the generic CEC framework interface.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config CEC_GPIO
+> +	tristate "Generic GPIO-based CEC driver"
+> +	depends on PREEMPTION || COMPILE_TEST
+> +	select CEC_CORE
+> +	select CEC_PIN
+> +	select CEC_NOTIFIER
+> +	select GPIOLIB
+> +	help
+> +	  This is a generic GPIO-based CEC driver.
+> +	  The CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_SAMSUNG_S5P_CEC
+> +	tristate "Samsung S5P CEC driver"
+> +	depends on ARCH_EXYNOS || COMPILE_TEST
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	help
+> +	  This is a driver for Samsung S5P HDMI CEC interface. It uses the
+> +	  generic CEC framework interface.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_STI_HDMI_CEC
+> +	tristate "STMicroelectronics STiH4xx HDMI CEC driver"
+> +	depends on ARCH_STI || COMPILE_TEST
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	help
+> +	  This is a driver for STIH4xx HDMI CEC interface. It uses the
+> +	  generic CEC framework interface.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_STM32_HDMI_CEC
+> +	tristate "STMicroelectronics STM32 HDMI CEC driver"
+> +	depends on ARCH_STM32 || COMPILE_TEST
+> +	select REGMAP
+> +	select REGMAP_MMIO
+> +	select CEC_CORE
+> +	help
+> +	  This is a driver for STM32 interface. It uses the
+> +	  generic CEC framework interface.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_TEGRA_HDMI_CEC
+> +	tristate "Tegra HDMI CEC driver"
+> +	depends on ARCH_TEGRA || COMPILE_TEST
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	help
+> +	  This is a driver for the Tegra HDMI CEC interface. It uses the
+> +	  generic CEC framework interface.
+> +	  The CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_SECO_CEC
+> +	tristate "SECO Boards HDMI CEC driver"
+> +	depends on (X86 || IA64) || COMPILE_TEST
+> +	select PCI
+> +	select DMI
+> +	select CEC_CORE
+> +	select CEC_NOTIFIER
+> +	help
+> +	  This is a driver for SECO Boards integrated CEC interface.
+> +	  Selecting it will enable support for this device.
+> +	  CEC bus is present in the HDMI connector and enables communication
+> +	  between compatible devices.
+> +
+> +config VIDEO_SECO_RC
+> +	bool "SECO Boards IR RC5 support"
+> +	depends on VIDEO_SECO_CEC
+> +	depends on RC_CORE=y || RC_CORE = VIDEO_SECO_CEC
+> +	help
+> +	  If you say yes here you will get support for the
+> +	  SECO Boards Consumer-IR in seco-cec driver.
+> +	  The embedded controller supports RC5 protocol only, default mapping
+> +	  is set to rc-hauppauge.
+> diff --git a/drivers/media/cec/platform/Makefile b/drivers/media/cec/platform/Makefile
+> new file mode 100644
+> index 000000000000..e5fb5d383e5c
+> --- /dev/null
+> +++ b/drivers/media/cec/platform/Makefile
+> @@ -0,0 +1,14 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +#
+> +# Makefile for the CEC platform device drivers.
+> +#
+> +
+> +obj-$(CONFIG_CEC_GPIO)			+= cec-gpio/
+> +
+> +obj-$(CONFIG_VIDEO_CROS_EC_CEC)		+= cros-ec/
+> +obj-$(CONFIG_VIDEO_MESON_AO_CEC)	+= meson/
+> +obj-$(CONFIG_VIDEO_SAMSUNG_S5P_CEC)	+= s5p/
+> +obj-$(CONFIG_VIDEO_SECO_CEC)		+= seco/
+> +obj-$(CONFIG_VIDEO_STI_HDMI_CEC)	+= sti/
+> +obj-$(CONFIG_VIDEO_TEGRA_HDMI_CEC)	+= tegra/
+> +
+> diff --git a/drivers/media/platform/cec-gpio/Makefile b/drivers/media/cec/platform/cec-gpio/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/cec-gpio/Makefile
+> rename to drivers/media/cec/platform/cec-gpio/Makefile
+> diff --git a/drivers/media/platform/cec-gpio/cec-gpio.c b/drivers/media/cec/platform/cec-gpio/cec-gpio.c
+> similarity index 100%
+> rename from drivers/media/platform/cec-gpio/cec-gpio.c
+> rename to drivers/media/cec/platform/cec-gpio/cec-gpio.c
+> diff --git a/drivers/media/platform/cros-ec-cec/Makefile b/drivers/media/cec/platform/cros-ec/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/cros-ec-cec/Makefile
+> rename to drivers/media/cec/platform/cros-ec/Makefile
+> diff --git a/drivers/media/platform/cros-ec-cec/cros-ec-cec.c b/drivers/media/cec/platform/cros-ec/cros-ec-cec.c
+> similarity index 100%
+> rename from drivers/media/platform/cros-ec-cec/cros-ec-cec.c
+> rename to drivers/media/cec/platform/cros-ec/cros-ec-cec.c
+> diff --git a/drivers/media/platform/meson/Makefile b/drivers/media/cec/platform/meson/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/meson/Makefile
+> rename to drivers/media/cec/platform/meson/Makefile
+> diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/cec/platform/meson/ao-cec-g12a.c
+> similarity index 100%
+> rename from drivers/media/platform/meson/ao-cec-g12a.c
+> rename to drivers/media/cec/platform/meson/ao-cec-g12a.c
+> diff --git a/drivers/media/platform/meson/ao-cec.c b/drivers/media/cec/platform/meson/ao-cec.c
+> similarity index 100%
+> rename from drivers/media/platform/meson/ao-cec.c
+> rename to drivers/media/cec/platform/meson/ao-cec.c
+> diff --git a/drivers/media/platform/s5p-cec/Makefile b/drivers/media/cec/platform/s5p/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/Makefile
+> rename to drivers/media/cec/platform/s5p/Makefile
+> diff --git a/drivers/media/platform/s5p-cec/exynos_hdmi_cec.h b/drivers/media/cec/platform/s5p/exynos_hdmi_cec.h
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/exynos_hdmi_cec.h
+> rename to drivers/media/cec/platform/s5p/exynos_hdmi_cec.h
+> diff --git a/drivers/media/platform/s5p-cec/exynos_hdmi_cecctrl.c b/drivers/media/cec/platform/s5p/exynos_hdmi_cecctrl.c
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/exynos_hdmi_cecctrl.c
+> rename to drivers/media/cec/platform/s5p/exynos_hdmi_cecctrl.c
+> diff --git a/drivers/media/platform/s5p-cec/regs-cec.h b/drivers/media/cec/platform/s5p/regs-cec.h
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/regs-cec.h
+> rename to drivers/media/cec/platform/s5p/regs-cec.h
+> diff --git a/drivers/media/platform/s5p-cec/s5p_cec.c b/drivers/media/cec/platform/s5p/s5p_cec.c
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/s5p_cec.c
+> rename to drivers/media/cec/platform/s5p/s5p_cec.c
+> diff --git a/drivers/media/platform/s5p-cec/s5p_cec.h b/drivers/media/cec/platform/s5p/s5p_cec.h
+> similarity index 100%
+> rename from drivers/media/platform/s5p-cec/s5p_cec.h
+> rename to drivers/media/cec/platform/s5p/s5p_cec.h
+> diff --git a/drivers/media/platform/seco-cec/Makefile b/drivers/media/cec/platform/seco/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/seco-cec/Makefile
+> rename to drivers/media/cec/platform/seco/Makefile
+> diff --git a/drivers/media/platform/seco-cec/seco-cec.c b/drivers/media/cec/platform/seco/seco-cec.c
+> similarity index 100%
+> rename from drivers/media/platform/seco-cec/seco-cec.c
+> rename to drivers/media/cec/platform/seco/seco-cec.c
+> diff --git a/drivers/media/platform/seco-cec/seco-cec.h b/drivers/media/cec/platform/seco/seco-cec.h
+> similarity index 100%
+> rename from drivers/media/platform/seco-cec/seco-cec.h
+> rename to drivers/media/cec/platform/seco/seco-cec.h
+> diff --git a/drivers/media/platform/sti/cec/Makefile b/drivers/media/cec/platform/sti/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/sti/cec/Makefile
+> rename to drivers/media/cec/platform/sti/Makefile
+> diff --git a/drivers/media/platform/sti/cec/stih-cec.c b/drivers/media/cec/platform/sti/stih-cec.c
+> similarity index 100%
+> rename from drivers/media/platform/sti/cec/stih-cec.c
+> rename to drivers/media/cec/platform/sti/stih-cec.c
+> diff --git a/drivers/media/cec/platform/stm32/Makefile b/drivers/media/cec/platform/stm32/Makefile
+> new file mode 100644
+> index 000000000000..5c89dbce0f67
+> --- /dev/null
+> +++ b/drivers/media/cec/platform/stm32/Makefile
+> @@ -0,0 +1,2 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +obj-$(CONFIG_VIDEO_STM32_HDMI_CEC) += stm32-cec.o
+> diff --git a/drivers/media/platform/stm32/stm32-cec.c b/drivers/media/cec/platform/stm32/stm32-cec.c
+> similarity index 100%
+> rename from drivers/media/platform/stm32/stm32-cec.c
+> rename to drivers/media/cec/platform/stm32/stm32-cec.c
+> diff --git a/drivers/media/platform/tegra-cec/Makefile b/drivers/media/cec/platform/tegra/Makefile
+> similarity index 100%
+> rename from drivers/media/platform/tegra-cec/Makefile
+> rename to drivers/media/cec/platform/tegra/Makefile
+> diff --git a/drivers/media/platform/tegra-cec/tegra_cec.c b/drivers/media/cec/platform/tegra/tegra_cec.c
+> similarity index 100%
+> rename from drivers/media/platform/tegra-cec/tegra_cec.c
+> rename to drivers/media/cec/platform/tegra/tegra_cec.c
+> diff --git a/drivers/media/platform/tegra-cec/tegra_cec.h b/drivers/media/cec/platform/tegra/tegra_cec.h
+> similarity index 100%
+> rename from drivers/media/platform/tegra-cec/tegra_cec.h
+> rename to drivers/media/cec/platform/tegra/tegra_cec.h
+> diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
+> index 3df0d789d452..b1ac9c6c9cdb 100644
+> --- a/drivers/media/platform/Kconfig
+> +++ b/drivers/media/platform/Kconfig
+> @@ -552,131 +552,6 @@ if DVB_PLATFORM_DRIVERS
+>  source "drivers/media/platform/sti/c8sectpfe/Kconfig"
+>  endif #DVB_PLATFORM_DRIVERS
+>  
+> -menuconfig CEC_PLATFORM_DRIVERS
+> -	bool "CEC platform devices"
+> -	depends on MEDIA_CEC_SUPPORT
+> -
+> -if CEC_PLATFORM_DRIVERS
+> -
+> -config VIDEO_CROS_EC_CEC
+> -	tristate "ChromeOS EC CEC driver"
+> -	depends on CROS_EC
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	select CROS_EC_PROTO
+> -	help
+> -	  If you say yes here you will get support for the
+> -	  ChromeOS Embedded Controller's CEC.
+> -	  The CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_MESON_AO_CEC
+> -	tristate "Amlogic Meson AO CEC driver"
+> -	depends on ARCH_MESON || COMPILE_TEST
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	help
+> -	  This is a driver for Amlogic Meson SoCs AO CEC interface. It uses the
+> -	  generic CEC framework interface.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -
+> -config VIDEO_MESON_G12A_AO_CEC
+> -	tristate "Amlogic Meson G12A AO CEC driver"
+> -	depends on ARCH_MESON || COMPILE_TEST
+> -	depends on COMMON_CLK && OF
+> -	select REGMAP
+> -	select REGMAP_MMIO
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	---help---
+> -	  This is a driver for Amlogic Meson G12A SoCs AO CEC interface.
+> -	  This driver if for the new AO-CEC module found in G12A SoCs,
+> -	  usually named AO_CEC_B in documentation.
+> -	  It uses the generic CEC framework interface.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config CEC_GPIO
+> -	tristate "Generic GPIO-based CEC driver"
+> -	depends on PREEMPTION || COMPILE_TEST
+> -	select CEC_CORE
+> -	select CEC_PIN
+> -	select CEC_NOTIFIER
+> -	select GPIOLIB
+> -	help
+> -	  This is a generic GPIO-based CEC driver.
+> -	  The CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_SAMSUNG_S5P_CEC
+> -	tristate "Samsung S5P CEC driver"
+> -	depends on ARCH_EXYNOS || COMPILE_TEST
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	help
+> -	  This is a driver for Samsung S5P HDMI CEC interface. It uses the
+> -	  generic CEC framework interface.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_STI_HDMI_CEC
+> -	tristate "STMicroelectronics STiH4xx HDMI CEC driver"
+> -	depends on ARCH_STI || COMPILE_TEST
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	help
+> -	  This is a driver for STIH4xx HDMI CEC interface. It uses the
+> -	  generic CEC framework interface.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_STM32_HDMI_CEC
+> -	tristate "STMicroelectronics STM32 HDMI CEC driver"
+> -	depends on ARCH_STM32 || COMPILE_TEST
+> -	select REGMAP
+> -	select REGMAP_MMIO
+> -	select CEC_CORE
+> -	help
+> -	  This is a driver for STM32 interface. It uses the
+> -	  generic CEC framework interface.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_TEGRA_HDMI_CEC
+> -	tristate "Tegra HDMI CEC driver"
+> -	depends on ARCH_TEGRA || COMPILE_TEST
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	help
+> -	  This is a driver for the Tegra HDMI CEC interface. It uses the
+> -	  generic CEC framework interface.
+> -	  The CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_SECO_CEC
+> -	tristate "SECO Boards HDMI CEC driver"
+> -	depends on (X86 || IA64) || COMPILE_TEST
+> -	depends on PCI && DMI
+> -	select CEC_CORE
+> -	select CEC_NOTIFIER
+> -	help
+> -	  This is a driver for SECO Boards integrated CEC interface.
+> -	  Selecting it will enable support for this device.
+> -	  CEC bus is present in the HDMI connector and enables communication
+> -	  between compatible devices.
+> -
+> -config VIDEO_SECO_RC
+> -	bool "SECO Boards IR RC5 support"
+> -	depends on VIDEO_SECO_CEC
+> -	depends on RC_CORE=y || RC_CORE = VIDEO_SECO_CEC
+> -	help
+> -	  If you say yes here you will get support for the
+> -	  SECO Boards Consumer-IR in seco-cec driver.
+> -	  The embedded controller supports RC5 protocol only, default mapping
+> -	  is set to rc-hauppauge.
+> -
+> -endif #CEC_PLATFORM_DRIVERS
+> -
+>  menuconfig SDR_PLATFORM_DRIVERS
+>  	bool "SDR platform devices"
+>  	depends on MEDIA_SDR_SUPPORT
+> diff --git a/drivers/media/platform/Makefile b/drivers/media/platform/Makefile
+> index a0194ef1211f..ac31d4748869 100644
+> --- a/drivers/media/platform/Makefile
+> +++ b/drivers/media/platform/Makefile
+> @@ -23,8 +23,6 @@ obj-$(CONFIG_VIDEO_IMX_PXP)		+= imx-pxp.o
+>  
+>  obj-$(CONFIG_VIDEO_SH_VEU)		+= sh_veu.o
+>  
+> -obj-$(CONFIG_CEC_GPIO)			+= cec-gpio/
+> -
+>  obj-$(CONFIG_VIDEO_MEM2MEM_DEINTERLACE)	+= m2m-deinterlace.o
+>  
+>  obj-$(CONFIG_VIDEO_MUX)			+= video-mux.o
+> @@ -35,22 +33,16 @@ obj-$(CONFIG_VIDEO_SAMSUNG_S5P_JPEG)	+= s5p-jpeg/
+>  obj-$(CONFIG_VIDEO_SAMSUNG_S5P_MFC)	+= s5p-mfc/
+>  
+>  obj-$(CONFIG_VIDEO_SAMSUNG_S5P_G2D)	+= s5p-g2d/
+> -obj-$(CONFIG_VIDEO_SAMSUNG_S5P_CEC)	+= s5p-cec/
+>  obj-$(CONFIG_VIDEO_SAMSUNG_EXYNOS_GSC)	+= exynos-gsc/
+>  
+>  obj-$(CONFIG_VIDEO_STI_BDISP)		+= sti/bdisp/
+>  obj-$(CONFIG_VIDEO_STI_HVA)		+= sti/hva/
+>  obj-$(CONFIG_DVB_C8SECTPFE)		+= sti/c8sectpfe/
+> -obj-$(CONFIG_VIDEO_STI_HDMI_CEC)	+= sti/cec/
+>  
+>  obj-$(CONFIG_VIDEO_STI_DELTA)		+= sti/delta/
+>  
+> -obj-$(CONFIG_VIDEO_TEGRA_HDMI_CEC)	+= tegra-cec/
+> -
+>  obj-y					+= stm32/
+>  
+> -obj-$(CONFIG_VIDEO_SECO_CEC)		+= seco-cec/
+> -
+>  obj-y					+= davinci/
+>  
+>  obj-$(CONFIG_VIDEO_SH_VOU)		+= sh_vou.o
+> @@ -89,8 +81,4 @@ obj-$(CONFIG_VIDEO_QCOM_CAMSS)		+= qcom/camss/
+>  
+>  obj-$(CONFIG_VIDEO_QCOM_VENUS)		+= qcom/venus/
+>  
+> -obj-y					+= meson/
+> -
+> -obj-y					+= cros-ec-cec/
+> -
+>  obj-y					+= sunxi/
+> diff --git a/drivers/media/platform/stm32/Makefile b/drivers/media/platform/stm32/Makefile
+> index 5ed73599ca44..48b36db2c2e2 100644
+> --- a/drivers/media/platform/stm32/Makefile
+> +++ b/drivers/media/platform/stm32/Makefile
+> @@ -1,3 +1,2 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+>  obj-$(CONFIG_VIDEO_STM32_DCMI) += stm32-dcmi.o
+> -obj-$(CONFIG_VIDEO_STM32_HDMI_CEC) += stm32-cec.o
+> -- 
+> 2.25.2
+> 
 
-> If kexec chooses to place the kernel in a memory region that was
-> added after boot, we fail to boot as the kernel is running from a
-> location that is not described as memory by the UEFI memory map or
-> the original DT.
->
-> To prevent unaware user-space kexec from doing this accidentally,
-> give these regions a different name.
+For the seco-cec driver:
+Acked-by: Ettore Chimenti <ek5.chimenti@gmail.com>
 
-Please fix the problem and don't hack around it.
-
-Eric
+Thanks!
+Ettore
 
 _______________________________________________
 linux-arm-kernel mailing list
