@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD041A92B1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 07:49:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D86701A92B4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 07:50:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vssrcjR+k6V33fRYhtbS1bcRP2SFmribjw5pIjQswDA=; b=geydnVCb8jx256NvA0gYBVoOY
-	9j/pODrhMxdAcy0T0yQjJMnDkRFB7t/10L6n7s+5Etd+Zn81+z2Gb8yeDVSW2Z0ExD0FLO2aMI/Oy
-	Ho0JT4UT65uCnVB9Thgsb51YgkEZy9vqwCdyjo+5QXkfgmzpQ4nx979QHdz6JbnRrbhkSMjoq2+BP
-	QmcKUK4ITen5AhL1Yg/QZdoHxXkqkSvE2queX+2iWDN0bxfGinNyBbGIkxCWFR9HPor/EkWXKY318
-	OLH/2T4h8GG7k6WT5ohAIakPkUq9lG08cEF+UPC3bS+wZJN0vx0/QTzxKrItI6+9SVuWE7nfGySAs
-	JiEfeUDIQ==;
+	 bh=qhzWhvgECF7dhpDCU1m/NM2O2+PWNDvY2ajvzEU8VK8=; b=X+iElRKXZMG3c+vPb4sxjOpz+
+	WKwq+8rFTXMXpymnqHvhkHYTOqRy9V/JuMrTu0N+W//M29JpyldWYqgjJrobdu4FnCwUxW6AKvKFh
+	VjNkUYgXoPGYdvyEglyVboVRFM2+WAWIjflXRWy30IAqJsmmJGw7Ky44+g76HLxy3NKJwFi+060rc
+	OctHlpTypF0X55xise2tfWhlbr8DKrQ4GqyzE4qMyFrNAGpoQ0G0UZUvsLTqNlXuzstaebZsbqzRp
+	8JkNcfysDWHEjhbY/H49Gm4vUMlJcSQymHKtrPlYqyN+IDSSeU03/v7CkFR9P61OofxAJuV4HCg0e
+	p5nt6oQoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOavS-0005mg-03; Wed, 15 Apr 2020 05:49:30 +0000
+	id 1jOawO-0001N6-Pr; Wed, 15 Apr 2020 05:50:28 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOavJ-0005lY-Ei
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 05:49:24 +0000
+ id 1jOawD-0001Mm-3T
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 05:50:18 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ore@pengutronix.de>)
- id 1jOav3-0006jl-3p; Wed, 15 Apr 2020 07:49:05 +0200
+ id 1jOaw6-0006zO-9o; Wed, 15 Apr 2020 07:50:10 +0200
 Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <ore@pengutronix.de>)
- id 1jOav1-0004nR-Dw; Wed, 15 Apr 2020 07:49:03 +0200
-Date: Wed, 15 Apr 2020 07:49:03 +0200
+ id 1jOaw5-0004qL-Sh; Wed, 15 Apr 2020 07:50:09 +0200
+Date: Wed, 15 Apr 2020 07:50:09 +0200
 From: Oleksij Rempel <o.rempel@pengutronix.de>
 To: peng.fan@nxp.com
-Subject: Re: [PATCH 1/2] dt-bindings: mailbox: imx-mu: correct example
-Message-ID: <20200415054903.uywcv5fzuq4fs26l@pengutronix.de>
+Subject: Re: [PATCH 2/2] arm64: dts: imx8qxp: support scu mailbox channel
+Message-ID: <20200415055009.uxkzy4j3l24dvvyv@pengutronix.de>
 References: <1586870668-32630-1-git-send-email-peng.fan@nxp.com>
+ <1586870668-32630-2-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <1586870668-32630-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1586870668-32630-2-git-send-email-peng.fan@nxp.com>
 X-Sent-From: Pengutronix Hildesheim
 X-URL: http://www.pengutronix.de/
 X-IRC: #ptxdist @freenode
 X-Accept-Language: de,en
 X-Accept-Content-Type: text/plain
-X-Uptime: 07:45:17 up 151 days, 21:03, 164 users,  load average: 0.10, 0.04,
- 0.00
+X-Uptime: 07:49:46 up 151 days, 21:08, 164 users,  load average: 0.08, 0.03,
+ 0.01
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
 X-SA-Exim-Mail-From: ore@pengutronix.de
@@ -53,8 +54,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_224921_490529_836490C1 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20200414_225017_159235_6B61D694 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,50 +79,103 @@ Cc: devicetree@vger.kernel.org, Anson.Huang@nxp.com, festevam@gmail.com,
  jaswinder.singh@linaro.org, robh+dt@kernel.org, linux-imx@nxp.com,
  kernel@pengutronix.de, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3846058224322727137=="
+Content-Type: multipart/mixed; boundary="===============1186957660312613643=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3846058224322727137==
+--===============1186957660312613643==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4bzghxigj66j6f6n"
+	protocol="application/pgp-signature"; boundary="hrp2dftdgxv3jd5n"
 Content-Disposition: inline
 
 
---4bzghxigj66j6f6n
+--hrp2dftdgxv3jd5n
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Apr 14, 2020 at 09:24:27PM +0800, peng.fan@nxp.com wrote:
+On Tue, Apr 14, 2020 at 09:24:28PM +0800, peng.fan@nxp.com wrote:
 > From: Peng Fan <peng.fan@nxp.com>
 >=20
-> The example use i.MX8QXP MU, but actually the MU is compatible with
-> i.MX6SX, so add the compatible.
+> With mailbox driver support i.MX8 SCU MU channel, we could
+> use it to avoid trigger interrupts for each TR/RR registers
+> in one MU, instead, only one RX interrupt for a recv and
+> one TX interrupt for a send.
 >=20
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Acked-by: Oleksij Rempel <o.rempel@pengutronix.de>
+Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
 
 > ---
->  Documentation/devicetree/bindings/mailbox/fsl,mu.txt | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
 >=20
-> diff --git a/Documentation/devicetree/bindings/mailbox/fsl,mu.txt b/Docum=
-entation/devicetree/bindings/mailbox/fsl,mu.txt
-> index 31486c9f6443..26b7a88c2fea 100644
-> --- a/Documentation/devicetree/bindings/mailbox/fsl,mu.txt
-> +++ b/Documentation/devicetree/bindings/mailbox/fsl,mu.txt
-> @@ -51,7 +51,7 @@ Optional properties:
->  Examples:
->  --------
->  lsio_mu0: mailbox@5d1b0000 {
-> -	compatible =3D "fsl,imx8qxp-mu";
-> +	compatible =3D "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
->  	reg =3D <0x0 0x5d1b0000 0x0 0x10000>;
->  	interrupts =3D <GIC_SPI 176 IRQ_TYPE_LEVEL_HIGH>;
->  	#mbox-cells =3D <2>;
+> Note:
+>  This patch needs https://patchwork.kernel.org/patch/11446659/
+>  The other three patches in the patchset has been in linux-next
+>=20
+>  arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 18 ++++++------------
+>  1 file changed, 6 insertions(+), 12 deletions(-)
+>=20
+> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot=
+/dts/freescale/imx8qxp.dtsi
+> index e8ffb7590656..d1c3c98e4b39 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> @@ -141,17 +141,11 @@
+> =20
+>  	scu {
+>  		compatible =3D "fsl,imx-scu";
+> -		mbox-names =3D "tx0", "tx1", "tx2", "tx3",
+> -			     "rx0", "rx1", "rx2", "rx3",
+> +		mbox-names =3D "tx0",
+> +			     "rx0",
+>  			     "gip3";
+>  		mboxes =3D <&lsio_mu1 0 0
+> -			  &lsio_mu1 0 1
+> -			  &lsio_mu1 0 2
+> -			  &lsio_mu1 0 3
+>  			  &lsio_mu1 1 0
+> -			  &lsio_mu1 1 1
+> -			  &lsio_mu1 1 2
+> -			  &lsio_mu1 1 3
+>  			  &lsio_mu1 3 3>;
+> =20
+>  		clk: clock-controller {
+> @@ -548,14 +542,14 @@
+>  		};
+> =20
+>  		lsio_mu1: mailbox@5d1c0000 {
+> -			compatible =3D "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+> +			compatible =3D "fsl,imx8-mu-scu", "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+>  			reg =3D <0x5d1c0000 0x10000>;
+>  			interrupts =3D <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH>;
+>  			#mbox-cells =3D <2>;
+>  		};
+> =20
+>  		lsio_mu2: mailbox@5d1d0000 {
+> -			compatible =3D "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+> +			compatible =3D "fsl,imx8-mu-scu", "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+>  			reg =3D <0x5d1d0000 0x10000>;
+>  			interrupts =3D <GIC_SPI 178 IRQ_TYPE_LEVEL_HIGH>;
+>  			#mbox-cells =3D <2>;
+> @@ -563,7 +557,7 @@
+>  		};
+> =20
+>  		lsio_mu3: mailbox@5d1e0000 {
+> -			compatible =3D "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+> +			compatible =3D "fsl,imx8-mu-scu", "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+>  			reg =3D <0x5d1e0000 0x10000>;
+>  			interrupts =3D <GIC_SPI 179 IRQ_TYPE_LEVEL_HIGH>;
+>  			#mbox-cells =3D <2>;
+> @@ -571,7 +565,7 @@
+>  		};
+> =20
+>  		lsio_mu4: mailbox@5d1f0000 {
+> -			compatible =3D "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+> +			compatible =3D "fsl,imx8-mu-scu", "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
+>  			reg =3D <0x5d1f0000 0x10000>;
+>  			interrupts =3D <GIC_SPI 180 IRQ_TYPE_LEVEL_HIGH>;
+>  			#mbox-cells =3D <2>;
 > --=20
 > 2.16.4
 >=20
@@ -134,30 +188,30 @@ Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
 31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
 Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
---4bzghxigj66j6f6n
+--hrp2dftdgxv3jd5n
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl6WoEMACgkQ4omh9DUa
-UbMn5g//alHPJwdl+12HdDu5J7K5lGVY2ASoGoXkEd1qRc+qAKC+kXjb2JBL+dCF
-AOjKPpxxpvby8yd0r41D0Fks9eS63COq/YlWpOHo2HwVmGDqa+bgiXozgQM/JJ1B
-K5nxMZaMFmFmC1/zFmD3Wr2mZLlH1AEnqWTBrLwQpDBO8hjnieA8Br0bFLNqZWGu
-0Xry1XW9+26Aa7WwlltfOnwfKjSfyDfg2r/zxoPusSXnBZzxcZt3jjDZ+Gr9DQ1C
-Ivo1L5fjU8soOZ12SyLMGQTTwKBQQdt8ek4d88lao+Zoj64sho+evm/ux668Nd/7
-q/Pp/1LYjphQYydzoqfRYeN+vKFbZtu9foEJbCbliOiMd7eFrit3yV4XrjeKx8F8
-cCHeh5lZB2uKe60rrfwOP5+ynm8rJHGLKEFkGiTuZbR7KtK1ZqVAsdFiJYvjxC+K
-m8sHuZfp9/7Eo8Y0oO8m+eJCw7fXPxduBH+28UTqcvzQ1e7Bke6iVAraNMJ5eIPc
-qWcrznDmGZtTZp+48HxkmomsCPf0D/VWtzRA+29/ebumJyLU8ub7zrQxtIJ8o0l7
-sx3Pi97n6745dNNBczhQc12dpdRAmjp6mpfexl8rR4sgOuuHJE1u7e/R/N3UmIHZ
-NPUaoxI7DbQ6cX3nQoNAAyYtD9VliU6v4u8KJy8iKNYjJsMQXE8=
-=5pgf
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl6WoJEACgkQ4omh9DUa
+UbMo2Q//VYhP/UGwmjOZJrG++dp/xo/uq550cWXhFlBWJ6DU4JoFl7Hxynr+YtPW
+BvTr8huLL8PchbLwHUFtUF92vPbIBrtW0t6wzCkn0oAlfuV03b9+jB7rX2DFfAIc
+4nm/+kk5ez6PCUNT0JMjgUFHKeeRtfVcy6qvIGTCYSj+Tvg2//2oukcWtUmLE9CN
+XKLEfEPtDi63ihkhVkzYsWgzA7X5aLQPxrKc9+CopxOltx3dsrm4AoMR2XIZM8Vp
+x1obhnTSbU1en/Jga1woTaNbks1nhLRnHgi328D0DbpBh10r4tYQKj/eBnEfpacu
+fI3teKrvU8Qjr0XinVsdW5+asXEdOePM6Ufonje/8VdJ01G8rG4npORlqxaTb4mU
+9wGHk0R4wERpuZhRShwhpui3h5WyeHuWz1+8b0B02+Vhw1RuSUv9WNt4B+xe7NbQ
+oD831atJNNVSbjOWqW41SnPMQPJZRhwdvFwVhK/ib5TGvLSGqnMMtZ0AQhnpdLqD
+u1CBQWVtCSMs0yU9W1b2b+8pWp+O6h/Nlg2XgL51xe19wP2s7xDgHAmJLmHo+c+7
+n9P4xka4BV9n44bmBNq6P3EoJegv7cW1VWmYWhfCWfHdTAxedvX/iZgq2AINPo1X
+wSp+DdgtYvFL/NlzH+kCR5FopdZj5hU869wcdL+n3MNS6zzcKMg=
+=56Tk
 -----END PGP SIGNATURE-----
 
---4bzghxigj66j6f6n--
+--hrp2dftdgxv3jd5n--
 
 
---===============3846058224322727137==
+--===============1186957660312613643==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -168,5 +222,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3846058224322727137==--
+--===============1186957660312613643==--
 
