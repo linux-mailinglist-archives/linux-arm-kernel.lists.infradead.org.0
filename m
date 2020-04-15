@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADD7B1A982E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:16:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 235961A9858
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:19:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ol+QPtoOvvSCOyLXcxcPlkGpR7jUHuw0PhJNKT2IjiE=; b=UaWeTNkqQMq7ay
-	PAZGrIMfguZQOAvSzmJFkoe5pwV32H5NLVNJIZu8R8bczxwotpmYRe6n3EqiETdrhXb9SoruZ/A4Y
-	I4+hsESzmqWhwmB6/IGhDnPDRCqywvG6Jsgu3CF+td3W9prPlpm9uErnOP/vhN3JOQfHFeqtj83hW
-	RUlV7txdrfGCZkiqDevNIR60RU1W+MLWWGMZgBAlAswLcfbeZNS0NZarpv9MRlAQPxH6RqvIdrhhR
-	bYUBS2q+h5OvYg7sRG/UlUhX8AmwJMMw9TF5VjG9jjrCTkyCjmcCI3XIYekUjAskqL7zzz/vgbTmQ
-	K6IE4n3ns7AZ9ViYFYug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZEG0rfq0RTqiqZSUCg8A059RYdKJeARZ7/BwmOPCykY=; b=NkxijYkYV9jZLQL4UWibJDwPn
+	uSSlakaUbn150yPEZnDiYOjODL4X/FhYRFEHIMA5840iep10JzPVTWcE5emBjkFCVcGV7y/oEiSBV
+	8e16V2TyVBZfoO16T0YTjd0QsB3XjxNvf4MXKExYSVcOjOXrB3DgAGR7u8orm8OgrypaIJZsTQjkf
+	j1/LLG0X+gFQdULJY2WYbxLEq9+VyuUt5VubqZdWAMQcgSS3ZYMQHnLhepGmkQ9ynZulsl7+O4IIi
+	sdU0IcNUMAsVjPqkUEq3Sgucqh26eZKbWsnY2sMCGPMTIaptP8e2qqGkj7+GkYK/pGzWlf1YH+3G4
+	6aGwwLPSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOe9N-0000c0-Do; Wed, 15 Apr 2020 09:16:05 +0000
+	id 1jOeCs-0001UI-O8; Wed, 15 Apr 2020 09:19:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOe9B-0000aP-Hp
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:15:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBF8B20771;
- Wed, 15 Apr 2020 09:15:51 +0000 (UTC)
+ id 1jOeCj-0001TX-TI
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:19:35 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1BC4D206A2;
+ Wed, 15 Apr 2020 09:19:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586942153;
- bh=UDOmrv/xVGDeCfY9x/nxp4HO6Q2bKuGMmOWtb1pKHmA=;
+ s=default; t=1586942373;
+ bh=okUruJDPJKacfzZ0/FQ2AYhcvGKcB0ud1pJhEHMTmco=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QCHwqKjmqcFE1m2BYOHGlirdCBSF5ztXxlTIrd42YDVipfH+omR1ehVp4Ra8KZD+m
- IorD8lw/MOuaV3k/NNU1lpbFpylw89rIpuGMAn4EvT8xfn1enRStg4f1zK6SV77y9G
- WQs5wVVnHFZaOgp86QoW3gWuAEuq7XdfWo0XBZDc=
-Date: Wed, 15 Apr 2020 10:15:48 +0100
-From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for
- removing it entirely
-Message-ID: <20200415091548.GB12621@willie-the-truck>
-References: <20200415082922.32709-1-ardb@kernel.org>
- <20200415083900.GA12621@willie-the-truck>
- <CAMj1kXFLte7R2zXRLRBxetS1WTYaGTonOC0nvyzK+be8EsfDrA@mail.gmail.com>
+ b=BDYTulwRtubO/StyzvoxSGb4Z86eU025StVoxdQmaKKQdMWZuQ6VM4J01YUyn2odB
+ guw1G6SfYFsGjxMWQ8oT6Nqc1trs/EnoFvRMkLU5kwx9t6UBowe5OQK4I7IPadnP4P
+ wusKq93W4BME6BmLB0JXCok9AbgT0+cFAuA4en0U=
+Date: Wed, 15 Apr 2020 10:19:31 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v7 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Message-ID: <20200415091931.GA5265@sirena.org.uk>
+References: <1583944596-23410-1-git-send-email-yibin.gong@nxp.com>
+ <VE1PR04MB6638AE84CD338AE1CF26FDFD89DB0@VE1PR04MB6638.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMj1kXFLte7R2zXRLRBxetS1WTYaGTonOC0nvyzK+be8EsfDrA@mail.gmail.com>
+In-Reply-To: <VE1PR04MB6638AE84CD338AE1CF26FDFD89DB0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+X-Cookie: Hire the morally handicapped.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_021553_651249_A2C39DA6 
-X-CRM114-Status: GOOD (  25.71  )
+X-CRM114-CacheID: sfid-20200415_021933_986830_C92B145B 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,77 +77,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, james.morse@arm.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, suzuki.poulose@arm.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Content-Type: multipart/mixed; boundary="===============1105986559231021095=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 10:48:55AM +0200, Ard Biesheuvel wrote:
-> On Wed, 15 Apr 2020 at 10:39, Will Deacon <will@kernel.org> wrote:
-> >
-> > On Wed, Apr 15, 2020 at 10:29:22AM +0200, Ard Biesheuvel wrote:
-> > > TEXT_OFFSET on arm64 is a historical artifact from the early days of
-> > > the arm64 port where the boot protocol was basically 'copy this image
-> > > to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
-> > > to put the swapper page tables. When the arm64 port was merged for
-> > > v3.10, the Image header already carried the actual value of TEXT_OFFSET,
-> > > to allow the bootloader to discover it dynamically rather than hardcode
-> > > it to 512 KB.
-> >
-> > Hey, we're older than that! (3.7)
-> >
-> 
-> Ah right. But the header field was added in v3.10 - I'll fix that in
-> v2. All way before my time anyway :-)
 
-Hopefully nobody's running a 3.{7,8,9} kernel... (I wonder if it even
-boots?)
+--===============1105986559231021095==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="gKMricLos+KVdGMg"
+Content-Disposition: inline
 
-> > > Today, this memory window is not used for any particular purpose, and
-> > > it is simply handed to the page allocator at boot. The only reason it
-> > > still exists is because of the 512k misalignment it causes with respect
-> > > to the 2 MB aligned virtual base address of the kernel, which affects
-> > > the virtual addresses of all statically allocated objects in the kernel
-> > > image.
-> > >
-> > > However, with the introduction of KASLR in v4.6, we added the concept of
-> > > relocatable kernels, which rewrite all absolute symbol references at
-> > > boot anyway, and so the placement of such kernels in the physical address
-> > > space is irrelevant, provided that the minimum segment alignment is
-> > > honoured (64 KB in most cases, 128 KB for 64k pages kernels with vmap'ed
-> > > stacks enabled). This makes 0x0 and 512 KB equally suitable values for
-> > > TEXT_OFFSET on the off chance that we are dealing with boot loaders that
-> > > ignore the value passed via the header entirely.
-> > >
-> > > Considering that the distros as well as Android ship KASLR-capable
-> > > kernels today, and the fact that TEXT_OFFSET was discoverable from the
-> > > Image header from the very beginning, let's change this value to 0x0, in
-> > > preparation for removing it entirely at a later date.
-> >
-> > Can we kill CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET at the same time please?
-> > It seems less useful now than ever and it would move us closer to removing
-> > the TEXT_OFFSET definition entirely (but maybe we should wait a couple of
-> > cycles before doing that... what do you reckon?).
-> >
-> 
-> The idea was to start with this patch, which can be reverted very
-> easily if it causes any issues. Then, once we're confident that it is
-> safe, we just rip it all out in one go.
 
-Okey doke.
+--gKMricLos+KVdGMg
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> In the mean time, if we do find issues with other projects,
-> CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET may be useful for validation, and
-> it is off by default anyway.
+On Wed, Apr 15, 2020 at 08:41:17AM +0000, Robin Gong wrote:
+> Ping....
+> On 2020/03/11 16:35 Robin Gong <yibin.gong@nxp.com> wrote:
+> > There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO transf=
+er to
 
-Works for me. Fingers crossed for no issues.
+Please don't send content free pings and please allow a reasonable time
+for review.  People get busy, go on holiday, attend conferences and so=20
+on so unless there is some reason for urgency (like critical bug fixes)
+please allow at least a couple of weeks for review.  If there have been
+review comments then people may be waiting for those to be addressed.
 
-Will
+Sending content free pings adds to the mail volume (if they are seen at
+all) which is often the problem and since they can't be reviewed
+directly if something has gone wrong you'll have to resend the patches
+anyway, so sending again is generally a better approach though there are
+some other maintainers who like them - if in doubt look at how patches
+for the subsystem are normally handled.
+
+--gKMricLos+KVdGMg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6W0Z8ACgkQJNaLcl1U
+h9Cl5Af/RsVCkwJ2F2y85wo6iV4ieGbzZRxbI7skDohZNDOFRyf1i8kEXUex8Pyb
+OHjSzFguwzTlhgg6PMkp8R929OiFE3Bu8vupFdNdaw2fKZTFNoHInLjcqOtuDwSW
+N4+v2rbYrlGybSYpMvl8tDz3tu/eQl1cOmdSg/UWDUpStyCrzsAMcaKJA5kEJavD
+NoAHcE2LKjVeo34XmpGWOI8xiAgGqDLm27zQ2JGt6nmZxR33BS3HDfz0Fc5kCnut
+XVx7ggmvMMXvERR4naP/m/c9EkZ470SjZnwYtO71L9ncM62YJdHDogRS8t0ZWn3B
+sNTl4T+hhMymPnKqvdtRch+txbGv0A==
+=lwLW
+-----END PGP SIGNATURE-----
+
+--gKMricLos+KVdGMg--
+
+
+--===============1105986559231021095==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1105986559231021095==--
+
