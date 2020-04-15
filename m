@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 168AE1AAF91
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 19:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAE1E1AB017
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 19:53:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U1V1FVXFUKt7KRk3dUyyJ4h5WGd9VuaA2nYL7va8jJo=; b=NwAhKM+Qv7+gGOFtzkQbK9RRp
-	6gzGyPxkM5Da/JAfpJI+wa9gfJXYPjpI4HDJCqwuLzqJdO9OPT16ubmyJpam/cmIftZGucB6NUXxv
-	s+iCqwpzZ8A5tp0gOOJR69/ZAyfigOKFZI3QwomPL/MBB+467bTNX3X1hPxJC05A282hsoyYql+QU
-	D53hgeQDfnIY0r6NlWxrxGBQKsVPk94GQJQALMVWnL2/CXLyb4Of1/oHfzGXvARRQBIARU/d3cbj+
-	b7psvtJslNLrFx2CIrXRHo77e7OqRVbcw8h6b5bBMrfiBSgUWMVEimaAFZW6HtKQZsIWHNtwYXOF3
-	926pADOXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GBkpwd+aUC2DRpiibX9b8OY8uJVk4yfUVpqdOryGP1Q=; b=RkLwjUSi2pscRM
+	UX0oF1U3s55iU+JyQ0YSwlk9QzrDXw+WoNOLUU+K2gk3CjZIJa7SagP1BTwZgOfREWHpXk2xxjQFQ
+	JMkVA2rD7sw1II+j3q9io8DbfRbbyr8KO3ZgAm0zN1f6Qxzc6CktfGFIdfCfKSnqDY2cJrmXX2UoS
+	yxWbCkr4VedWBEzfLjHEqeVqQPadF7+pV+T8kQKeyzhvIAxNuqNPxEJllIJgtXQhj2QacEI63qEGi
+	M7PuPS/ge7sfgB9UmZ2B9igKl7NaEbsdhoa1fAj0Gcdq+7qsIBrYgdWDMFRH8J0b4eFPMru5AKU2K
+	T8fb/70oAXfkuyX9jpfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOltN-00036v-4V; Wed, 15 Apr 2020 17:32:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOltD-00035Y-4E
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 17:31:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 753D41FB;
- Wed, 15 Apr 2020 10:31:52 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6D6613F68F;
- Wed, 15 Apr 2020 10:31:46 -0700 (PDT)
-Subject: Re: [RFC PATCH 1/4] bus: fsl-mc: add custom .dma_configure
- implementation
-To: Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200227100542.13819-1-laurentiu.tudor@nxp.com>
- <20200325125109.GA5430@red-moon.cambridge.arm.com>
- <499fbf9a-416f-d7c7-0655-881d92138a6c@nxp.com>
- <20200414143211.GA14905@red-moon.cambridge.arm.com>
- <d37ca4e3-58cb-9d6f-3a98-5e4a21ca948b@nxp.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <78086898-d54f-63d0-f1f4-301ef2a8ea83@arm.com>
-Date: Wed, 15 Apr 2020 18:31:40 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jOmDV-00024I-NY; Wed, 15 Apr 2020 17:52:53 +0000
+Received: from mailoutvs35.siol.net ([185.57.226.226] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOmDN-00023G-HB
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 17:52:47 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 7DA5B523E2D;
+ Wed, 15 Apr 2020 19:52:38 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id Mn71HVJwTzMB; Wed, 15 Apr 2020 19:52:38 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 1B19B52389F;
+ Wed, 15 Apr 2020 19:52:38 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 832A5523E96;
+ Wed, 15 Apr 2020 19:52:34 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH] drm/sun4i: hdmi ddc clk: Fix size of m divider
+Date: Wed, 15 Apr 2020 19:52:28 +0200
+Message-ID: <1785843.taCxCBeP46@jernej-laptop>
+In-Reply-To: <20200415104214.ndkkxfnufkxgu53r@gilmour.lan>
+References: <20200413095457.1176754-1-jernej.skrabec@siol.net>
+ <1742537.tdWV9SEqCh@jernej-laptop>
+ <20200415104214.ndkkxfnufkxgu53r@gilmour.lan>
 MIME-Version: 1.0
-In-Reply-To: <d37ca4e3-58cb-9d6f-3a98-5e4a21ca948b@nxp.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_103155_274763_2E3C3516 
-X-CRM114-Status: GOOD (  34.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_105245_729753_86D99326 
+X-CRM114-Status: GOOD (  21.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.226 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,177 +71,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: calvin.johnson@nxp.com, ard.biesheuvel@linaro.org, maz@kernel.org,
- pankaj.bansal@nxp.com, diana.craciun@oss.nxp.com, jon@solid-run.com,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- cristian.sovaiala@nxp.com, jason@lakedaemon.net, V.Sethi@nxp.com,
- ioana.ciornei@nxp.com, tglx@linutronix.de, makarand.pawagi@nxp.com,
- joro@8bytes.org, linux-arm-kernel@lists.infradead.org, Stuart.Yoder@arm.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-15 4:44 pm, Laurentiu Tudor wrote:
-> 
-> 
-> On 4/14/2020 5:32 PM, Lorenzo Pieralisi wrote:
->> On Wed, Mar 25, 2020 at 06:48:55PM +0200, Laurentiu Tudor wrote:
->>> Hi Lorenzo,
->>>
->>> On 3/25/2020 2:51 PM, Lorenzo Pieralisi wrote:
->>>> On Thu, Feb 27, 2020 at 12:05:39PM +0200, laurentiu.tudor@nxp.com wrote:
->>>>> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
->>>>>
->>>>> The devices on this bus are not discovered by way of device tree
->>>>> but by queries to the firmware. It makes little sense to trick the
->>>>> generic of layer into thinking that these devices are of related so
->>>>> that we can get our dma configuration. Instead of doing that, add
->>>>> our custom dma configuration implementation.
->>>>>
->>>>> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
->>>>> ---
->>>>>   drivers/bus/fsl-mc/fsl-mc-bus.c | 31 ++++++++++++++++++++++++++++++-
->>>>>   1 file changed, 30 insertions(+), 1 deletion(-)
->>>>>
->>>>> diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
->>>>> index 36eb25f82c8e..eafaa0e0b906 100644
->>>>> --- a/drivers/bus/fsl-mc/fsl-mc-bus.c
->>>>> +++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
->>>>> @@ -132,11 +132,40 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
->>>>>   static int fsl_mc_dma_configure(struct device *dev)
->>>>>   {
->>>>>   	struct device *dma_dev = dev;
->>>>> +	struct iommu_fwspec *fwspec;
->>>>> +	const struct iommu_ops *iommu_ops;
->>>>> +	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
->>>>> +	int ret;
->>>>> +	u32 icid;
->>>>>   
->>>>>   	while (dev_is_fsl_mc(dma_dev))
->>>>>   		dma_dev = dma_dev->parent;
->>>>>   
->>>>> -	return of_dma_configure(dev, dma_dev->of_node, 0);
->>>>> +	fwspec = dev_iommu_fwspec_get(dma_dev);
->>>>> +	if (!fwspec)
->>>>> +		return -ENODEV;
->>>>> +	iommu_ops = iommu_ops_from_fwnode(fwspec->iommu_fwnode);
->>>>> +	if (!iommu_ops)
->>>>> +		return -ENODEV;
->>>>> +
->>>>> +	ret = iommu_fwspec_init(dev, fwspec->iommu_fwnode, iommu_ops);
->>>>> +	if (ret)
->>>>> +		return ret;
->>>>> +
->>>>> +	icid = mc_dev->icid;
->>>>> +	ret = iommu_fwspec_add_ids(dev, &icid, 1);
->>>>
->>>> I see. So with this patch we would use the MC named component only to
->>>> retrieve the iommu_ops
->>>
->>> Right. I'd also add that the implementation tries to follow the existing
->>> standard .dma_configure implementations, e.g. of_dma_configure +
->>> of_iommu_configure. I'd also note that similarly to the ACPI case, this
->>> MC FW device is probed as a platform device in the DT scenario, binding
->>> here [1].
->>> A similar approach is used for the retrieval of the msi irq domain, see
->>> following patch.
->>>
->>>> - the streamid are injected directly here bypassing OF/IORT bindings translations altogether.
->>>
->>> Actually I've submitted a v2 [2] that calls into .of_xlate() to allow
->>> the smmu driver to do some processing on the raw streamid coming from
->>> the firmware. I have not yet tested this with ACPI but expect it to
->>> work, however, it's debatable how valid is this approach in the context
->>> of ACPI.
->>
->> Actually, what I think you need is of_map_rid() (and an IORT
->> equivalent, that I am going to write - generalizing iort_msi_map_rid()).
->>
->> Would that be enough to enable IORT "normal" mappings in the MC bus
->> named components ?
->>
-> 
-> At a first glance, looks like this could very well fix the ACPI
-> scenario, but I have some unclarities on the approach:
->   * are we going to rely in DT and ACPI generic layers even if these
-> devices are not published / enumerated through DT or ACPI tables?
-
-Assuming you mean the DPRC devices rather than the MC itself, then yes; 
-in that sense it's exactly the same as how we treat 
-dynamically-discovered PCI devices.
-
->   * the firmware manages and provides discrete streamids for the devices
-> it exposes so there's no translation involved. There's no
->     requestor_id / input_id involved but it seems that we would still do
-> some kind of translation relying for this on the DT/ACPI functions.
-
-Wrong - last time I looked, what that firmware actually manages are 
-*ICIDs* for the devices, not SMMU Stream IDs or GIC Device IDs; what 
-DT/ACPI specifies is a translation from ICID to Stream ID/Device ID. The 
-ICID is very much the requester/input ID for that translation. Yes, in 
-practice the "translation" is effectively always a trivial identity 
-mapping, but conceptually it most definitely exists. Yes, the subtlety 
-is incredibly easy to overlook because it's basically drawing a 
-distinction between one end of some wires vs. the other end, but it matters.
-
-(and of course "trivial 1:1 translation" isn't even true in the case of 
-SMMU Stream ID values, since IIRC they are really composed of 5 
-different inputs, only one of which is (part of) the incoming ICID)
-
->   * MC firmware has its own stream_id (e.g. on some chips 0x4000, others
-> 0xf00, so outside the range of stream_ids used for the mc devices)
->     while for the devices on this bus, MC allocates stream_ids from a
-> range (e.g. 0x17 - 0x3f). Is it possible to describe this in the IORT table?
-
-If it represents a unique ICID allocated to the MC itself, then sure, it 
-simply goes through the mapping like anything else. Just like a PCI host 
-bridge owns requester ID 0:0.0 and thus whatever Stream ID/Device ID 
-that might map to.
-
-If (for the sake of argument, because AIUI everything is an ICID in this 
-particular case) it's some hard-wired thing that exists in Stream 
-ID/Device ID space only, then it's a little trickier, but still in 
-scope. In DT we have a lovely distinction between between "originating 
-from the node" and "translated through the node", e.g. "msi-parent" vs. 
-"msi-map"; IORT is not quite as clear-cut, but there are at least a few 
-options. If the valid input ID space is smaller than 32 bits, then the 
-"Named Component as bridge" binding could simply define special 
-out-of-range values to represent IDs originating from the bridge itself, 
-such that the NC driver knows what to do and from IORT's point of view 
-everything is just a normal mapping. Alternatively there's already the 
-example of SMMUv3 where we can have a mix of the normal mappings from 
-Stream ID to Device ID for the upstream masters plus a single mapping 
-for the SMMU's own Device ID - admittedly that depends on the additional 
-SMMUv3-specific Device ID Mapping Index property, but if necessary it 
-might be workable to have a de-facto interface for NCs that only 
-considers single mappings when configuring the NC itself, and only 
-considers normal mappings when configuring its children. Or maybe define 
-a new mapping flag or NC property if there's a real need to specify such 
-a situation unambiguously at the IORT level.
-
->   * Regarding the of_map_rid() use you mentioned, I was planning to
-> decouple the mc bus from the DT layer by dropping the use of
-> of_map_rid(), see patch 4.
-> I briefly glanced over the iort code and spotted this static function:
-> iort_iommu_xlate(). Wouldn't it also help, of course after making it public?
-
-I won't speak for Lorenzo or claim we've agreed on an approach at all 
-(not least because in all honesty we haven't really discussed it beyond 
-these various email threads), but FWIW my vision is that ultimately the 
-DT/ACPI code would expose a *_dma_configure() interface that takes an 
-optional input ID, or (perhaps more likely) an explicit pair of 
-interfaces for "configure this regular device" and "configure this 
-device based on this 'host' device and this ID", and it becomes the bus 
-code's responsibility to pass the right device(s) and deal with multiple 
-IDs (i.e. for starters all the PCI alias stuff goes back to the PCI code 
-where it really should be, rather than having multiple copies of magic 
-PCI awareness deep down in DT/ACPI code).
-
-Robin.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG5lIHNyZWRhLCAxNS4gYXByaWwgMjAyMCBvYiAxMjo0MjoxNCBDRVNUIGplIE1heGltZSBSaXBh
+cmQgbmFwaXNhbChhKToKPiBPbiBNb24sIEFwciAxMywgMjAyMCBhdCAwNjowOTowOFBNICswMjAw
+LCBKZXJuZWogxaBrcmFiZWMgd3JvdGU6Cj4gPiBEbmUgcG9uZWRlbGplaywgMTMuIGFwcmlsIDIw
+MjAgb2IgMTY6MTI6MzkgQ0VTVCBqZSBDaGVuLVl1IFRzYWkgCm5hcGlzYWwoYSk6Cj4gPiA+IE9u
+IE1vbiwgQXByIDEzLCAyMDIwIGF0IDY6MTEgUE0gQ2hlbi1ZdSBUc2FpIDx3ZW5zQGNzaWUub3Jn
+PiB3cm90ZToKPiA+ID4gPiBPbiBNb24sIEFwciAxMywgMjAyMCBhdCA1OjU1IFBNIEplcm5laiBT
+a3JhYmVjCj4gPiA+ID4gPGplcm5lai5za3JhYmVjQHNpb2wubmV0Pgo+ID4gCj4gPiB3cm90ZToK
+PiA+ID4gPiA+IG0gZGl2aWRlciBpbiBEREMgY2xvY2sgcmVnaXN0ZXIgaXMgNCBiaXRzIHdpZGUu
+IEZpeCB0aGF0Lgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBGaXhlczogOWM1NjgxMDExYTBjICgiZHJt
+L3N1bjRpOiBBZGQgSERNSSBzdXBwb3J0IikKPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEplcm5l
+aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiA+ID4gPiAKPiA+ID4gPiBSZXZp
+ZXdlZC1ieTogQ2hlbi1ZdSBUc2FpIDx3ZW5zQGNzaWUub3JnPgo+ID4gPiAKPiA+ID4gQ2Mgc3Rh
+YmxlPwo+ID4gCj4gPiBJIGRvbid0IHRoaW5rIGl0J3MgbmVjZXNzYXJ5Ogo+ID4gMS4gSXQgZG9l
+c24ndCBjaGFuZ2UgbXVjaCAoYW55dGhpbmc/KSBmb3IgbWUgd2hlbiByZWFkaW5nIEVESUQuIEkg
+ZG9uJ3QKPiA+IHRoaW5rIGl0J3Mgc3VwZXIgaW1wb3J0YW50IHRvIGhhdmUgcHJlY2lzZSBEREMg
+Y2xvY2sgaW4gb3JkZXIgdG8gcHJvcGVybHkKPiA+IHJlYWQgRURJRC4gMi4gTm8gbWF0dGVyIGlm
+IGl0IGhhcyAiQ2Mgc3RhYmxlIiB0YWcgb3Igbm90LCBpdCB3aWxsIGJlCj4gPiBldmVudHVhbGx5
+IHBpY2tlZCBmb3Igc3RhYmxlIGR1ZSB0byBmaXhlcyB0YWcuCj4gPiAKPiA+IFRoaXMgd2FzIG9u
+bHkgc21hbGwgb2JzZXJ2YXRpb24gd2hlbiBJIHdhcyByZXNlYXJjaGluZyBFRElEIHJlYWRvdXQg
+aXNzdWUKPiA+IG9uIEEyMCBib2FyZCwgYnV0IHNhZGx5LCBJIHdhc24ndCBhYmxlIHRvIGZpZ3Vy
+ZSBvdXQgd2h5IHJlYWRpbmcgaXQKPiA+IHNvbWV0aW1lcyBmYWlscy4gSSBub3RpY2VkIHNpbWls
+YXIgaXNzdWUgb24gU29DcyB3aXRoIERFMiAobW9zdAo+ID4gcHJvbWluZW50bHkgb24gT3Jhbmdl
+UGkgUEMyIC0gSDUpLCBidXQgdGhlcmUgd2FzIGVhc3kgd29ya2Fyb3VuZCAtIEkganVzdAo+ID4g
+ZGlzYWJsZWQgdmlkZW8gZHJpdmVyIGluIFUtIEJvb3QuIEhvd2V2ZXIsIGlmIEEyMCBkaXNwbGF5
+IGRyaXZlciBnZXRzCj4gPiBkaXNhYmxlZCBpbiBVLUJvb3QsIGl0IHRvdGFsbHkgYnJlYWtzIHZp
+ZGVvIG91dHB1dCBvbiBteSBUViB3aGVuIExpbnV4Cj4gPiBib290cyAobm8gb3V0cHV0KS4gSSBn
+dWVzcyB0aGVyZSBpcyBtb3JlIGZ1bmRhbWVudGFsIHByb2JsZW0gd2l0aCBjbG9ja3MKPiA+IHRo
+YW4ganVzdCBmaWVsZCBzaXplLiBJIHRoaW5rIHdlIHNob3VsZCBhZGQgbW9yZSBjb25zdHJhaW50
+cyBpbiBjbG9jawo+ID4gZHJpdmVyLCBsaWtlIHByZXNldCBzb21lIGNsb2NrIHBhcmVudHMgYW5k
+IG5vdCBhbGxvdyB0byBjaGFuZ2UgcGFyZW50cwo+ID4gd2hlbiBzZXR0aW5nIHJhdGUsIGJ1dCBj
+YXJlZnVsbHksIHNvIHNpbXBsZWZiIGRvZXNuJ3QgYnJlYWsuIFN1Y2gKPiA+IGNvbnN0cmFpbnRz
+IHNob3VsZCBhbHNvIHNvbHZlIHByb2JsZW1zIHdpdGggZHVhbCBoZWFkIHNldHVwcy4KPiBJIGRp
+c2FncmVlIGhlcmUuIERvaW5nIGFsbCBzb3J0cyBvZiBzcGVjaWFsIGNhc2UganVzdCBkb2Vzbid0
+IHNjYWxlLAo+IGFuZCB3ZSdsbCBuZXZlciBoYXZlIHRoZSBzcGVjaWFsIGNhc2VzIHNvcnRlZCBv
+dXQgb24gYWxsIHRoZSBib2FyZHMKPiAoYW5kIGl0J3MgYSBuaWdodG1hcmUgdG8gbWFpbnRhaW4p
+Lgo+IAo+IEVzcGVjaWFsbHkgc2luY2UgaXQncyBiYXNpY2FsbHkgcHV0dGluZyBhIGJsYW5rZXQg
+b3ZlciB0aGUgYWN0dWFsCj4gaXNzdWUgYW5kIGxvb2tpbmcgdGhlIG90aGVyIHdheS4gSWYgdGhl
+cmUncyBzb21ldGhpbmcgd3Jvbmcgd2l0aCBob3cKPiB3ZSBkZWFsIHdpdGggKHJlKXBhcmVudGlu
+Zywgd2Ugc2hvdWxkIGZpeCB0aGF0LiBJdCBpbXBhY3RzIG1vcmUgdGhhbgo+IGp1c3QgRFJNLCBh
+bmQgYWxsIHRoZSBTb0NzLgoKSSBhZ3JlZSB3aXRoIHlvdSB0aGF0IGF1dG9tYXRpYyBzb2x1dGlv
+biB3b3VsZCBiZSBiZXN0LCBidXQgSSBqdXN0IGRvbid0IHNlZSAKaXQgaG93IGl0IHdvdWxkIGJl
+IGRvbmUuIER1YWwgaGVhZCBkaXNwbGF5IHBpcGVsaW5lIGlzIHByZXR0eSBjb21wbGV4IGZvciAK
+Y2xvY2sgZHJpdmVyIHRvIGdldCBpdCByaWdodCBvbiBpdCdzIG93bi4gVGhlcmUgYXJlIGRpZmZl
+cmVudCBwb3NzaWJsZSBzZXR1cHMgCmFuZCBzb21lIG9mIHRoZW0gYXJlIGhvdCBwbHVnZ2FibGUs
+IGxpa2UgSERNSS4gQW5kIHRoZXJlIGFyZSBhbHNvIFNvQyBzcGVjaWZpYyAKcXVpcmtzLCBsaWtl
+IEE2NCwgd2hlcmUgZm9yIHNvbWUgcmVhc29uLCBNSVBJIERQSFkgYW5kIEhETUkgUEhZIHNoYXJl
+IHNhbWUgCmNsb2NrIHBhcmVudCAtIFBMTF9WSURFTzAuIFRlY2huaWNhbGx5LCBNSVBJIERQSFkg
+Y2FuIGJlIGNsb2NrZWQgZnJvbSAKUExMX1BFUklQSDAgKGZpeGVkIHRvIDYwMCBNSHopLCBidXQg
+dGhhdCdzIG5vdCByZWFsbHkgaGVscGZ1bC4gSSdtIG5vdCBldmVuIApzdXJlIGlmIHRoZXJlIGlz
+IGFueSBnb29kIHNvbHV0aW9uIHRvIHRoaXMgLSBjZXJ0YWlubHkgSERNSSBhbmQgTUlQSSBjYW4n
+dCAKY2xhaW0gZXhjbHVzaXZpdHkgYW5kIHNvbWVob3cgYmVzdCBjb21tb24gcmF0ZSBtdXN0IGJl
+IGZvdW5kIGZvciBQTExfVklERU8wLCAKaWYgdGhhdCdzIGV2ZW4gcG9zc2libGUuIEkgd2FzIHN1
+cmUgdGhhdCBIRE1JIFBIWSBvbiBBNjQgY2FuIGJlIGNsb2NrZWQgZnJvbSAKUExMX1ZJREVPMSwg
+d2hpY2ggd291bGQgc29sdmUgbWFpbiBpc3N1ZSwgYnV0IHRvIGRhdGUsIEkgZGlkbid0IGZpbmQg
+YW55IHdheSB0byAKZG8gdGhhdC4KClRoYXQncyBwcmV0dHkgb2ZmIHRvcGljLCBzbyBJIGhvcGUg
+b3JpZ2luYWwgcGF0Y2ggY2FuIGJlIG1lcmdlZCBhcy1pcy4KCkJlc3QgcmVnYXJkcywKSmVybmVq
+CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
