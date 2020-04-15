@@ -2,81 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A64EF1A94DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:43:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C40F11A952F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:53:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yl7ufiB2k0PNgqycWlI3pBlBmEipwsmmOj13UPVdvHE=; b=nKTdhoFuVfTlCW
-	y7RGv7XTon5iOB5gfBiT1jBVdumhyNlayOBmv3wUXVlO9LmjHR8rTkiFHwW0WiViP5H3nGeuw1qEf
-	zDBMNXG4SxpjuQ65XSfLMbMKBMSYFqpfVzFoEchUU4NOZVlYvJx+75e/68sX0Qmhf6/YDujs4LZfl
-	zcy0fopgZ61MKLwQ75nXAjD5qk1SkZh5VY08SqFXsa/U1DO17pEP9soLhIijPa/HqXblSag7AANGp
-	X3sVfOrJlMYwTn+cIIRrTGhCM6zlVVqS0dCj3T3B3qtDeBo8uTqJTBnb6/YSvauvxCOdbSXO8Ljhj
-	NzuvIIp03ly4G4D4X63w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3uN8thxQF0PO3FdugF381hHTm3+ZFGpZMR6H/Z/4bGg=; b=JhQOEWvr37i6zP
+	M7vSxNJFDpwhR32o3LxfE0YLGl2sKhRJtHEBe6EDYBoQvNuAU6FbmVtvXGz6iLfaiyf97OO0F66VC
+	zlYSFHW780PQUzq/WLgDTCwl6lhFGg3I447JvnED1dRxmSxa/oEj55yoO/UqrZ60pTiVk2elZJss0
+	bd5HkgWf3Hk4KCgkdwSvxaA/Z5dl0tmIMw1i6yagpDo7jNEXUSmaqWv9Touqt2ZmNBUrMfE81naQT
+	wJGsNE/AN3N4lR+IMDHvOJeLZOB00HVMAmp0hbXaj01u0zfJRrv2NqpFJY/58NKtNq1xTiXEg6GAY
+	aT625F8hmyIhDyxjcoOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOchF-0000Mu-4j; Wed, 15 Apr 2020 07:42:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOcrb-0007f0-To; Wed, 15 Apr 2020 07:53:39 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOcgx-0000JQ-GO
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:42:43 +0000
-Received: from mail-il1-f181.google.com (mail-il1-f181.google.com
- [209.85.166.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E123E20857
+ id 1jOcrR-0007cI-Kd
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:53:31 +0000
+Received: by mail-wr1-x444.google.com with SMTP id h9so17905438wrc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 07:42:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586936559;
- bh=vJhX5g2av0T2HIfHzFvTFzoI8v+3p2tqdjexFxG6oKE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=e8P2VjXfJZiKUwfEHo/ao8gW9Rat6cJXVFrTI4FgG8rlAYBAD7EH7wzJYWkQRrsnO
- R9ZfsPT5559/xRV23O/fEShi477M1J3rs7Mo/Ja2yHWSaXvg3LqrBMMHRMZ3mS/YLy
- FJRCIfwTUp78NxRhgB+VSxxHqqzCChsip18jJz4M=
-Received: by mail-il1-f181.google.com with SMTP id i2so2372214ils.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 00:42:38 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYytwoxPLC5VMNq0Q46tvf5lLT5OOvoebaXqjj+y2yPkUt0ZXJm
- YcPTuw0tgn39Qa3EHQtZK0y22YjmkGWZkDBJovc=
-X-Google-Smtp-Source: APiQypKMsBty8LI9gZcVGM/hyOUdxKtL9kpWuZb9odms/mJhPRDKhjRtEfDhjRHATbDveiVIcFo0WZPV839r1ntd1Cs=
-X-Received: by 2002:a92:c788:: with SMTP id c8mr4089517ilk.279.1586936558243; 
- Wed, 15 Apr 2020 00:42:38 -0700 (PDT)
+ Wed, 15 Apr 2020 00:53:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=kBML5p9FTR/cSP2nmZwVa8/pgzdTVSXOXZP4sLP4ogs=;
+ b=Wjkf2zcCTUG0Ok/lmmvQx1NU3ss3JLnGjq1ip3x7xuG8mX6QkhkJYKhkW/3x+4YhXC
+ sc/hWNKOOyzsx5aNjSF9L5KaC1VFrGC12XwZYVNIVN0TS+Hp1RIDRjuSCiSjtC/i6NXm
+ FL1Sd//FQu62V9kfT/pxFHSB0ZjyXw8ZPfIC/ptx00qwBmN2QakxTpwkRNslE0N/LQrB
+ IXouroTWaS9U4k4Ju07aEhV2EZiYw/aQmnRao6LG1hQIwDW8LZ1eoz82EMRRv6n358SP
+ AUuZcAlwEQ064jgSriufkm35olJYkn2D29G3HEO+lGgKD5mmFrRgiOYImNA0ZouIs6Bx
+ Ft3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=kBML5p9FTR/cSP2nmZwVa8/pgzdTVSXOXZP4sLP4ogs=;
+ b=Rbo7AG+BlcCLF57+h44qg3wrLJnoLx7H5FXA9oTOuPD/nLak+ZBDo6FVBEZbyjVcLt
+ jgtWLj6RPgHEjZgYKhyFgRvmX53QeqLFdoQSpVCGF/P31mG+cyp8Tpe5AMQJPpNGM9bd
+ ReXNeVJJwvtdifkIhWS4fPiNya8nhu2xqLqKAOK9Qf+Tq0pwa62SUl1WBb66GDIZL22P
+ oOw8QkJ5bXxuZsChNENCkuAcFe8/rl8+eT4OjoDnZLT0Kpt7eP2VEO19TqZA/XPCrHLP
+ sQy5UjzEgIeLsGVyKS0Rw5yWu8KD+Cd8WGh+pSpgma0BP5QA4+WCMBYi3kLtqhto9cBG
+ 2BfA==
+X-Gm-Message-State: AGi0PuYPBqx455unpGRo2arHLAxShpa4UOySPoURqe2XrUvJmIcZl5iY
+ EkAIrPpf1NHD1xFkHaORkpCW/Q==
+X-Google-Smtp-Source: APiQypKy1+Tc3Y0hGUfB49///1SHeOTBpfPZpDWXkJypIieHtRzn2n8uDhg2Uo4QBcdWnBEmeE/s1g==
+X-Received: by 2002:adf:e944:: with SMTP id m4mr14535852wrn.366.1586937208116; 
+ Wed, 15 Apr 2020 00:53:28 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56?
+ ([2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56])
+ by smtp.gmail.com with ESMTPSA id b4sm17408679wrv.42.2020.04.15.00.53.25
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 15 Apr 2020 00:53:27 -0700 (PDT)
+Subject: Re: [PATCH v2 0/2] clk: meson: prepare GX and G12 for GPU DVFS
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <fda0f007-4377-c78a-e2d7-aecb12779287@baylibre.com>
+Date: Wed, 15 Apr 2020 09:53:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200413155521.24698-1-ardb@kernel.org>
- <20200413155521.24698-4-ardb@kernel.org>
- <CAOnJCUJa=XPdJnZX3QzZ7S79sa-=Njei-4g+NP3saR3NCk08Mg@mail.gmail.com>
-In-Reply-To: <CAOnJCUJa=XPdJnZX3QzZ7S79sa-=Njei-4g+NP3saR3NCk08Mg@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 15 Apr 2020 09:42:27 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXE0sRaEqGxL_dQE8-xGqQeC+1_5FRogNPesUim4Z1NN7g@mail.gmail.com>
-Message-ID: <CAMj1kXE0sRaEqGxL_dQE8-xGqQeC+1_5FRogNPesUim4Z1NN7g@mail.gmail.com>
-Subject: Re: [PATCH v2 3/8] efi/libstub/arm64: replace 'preferred' offset with
- alignment check
-To: Atish Patra <atishp@atishpatra.org>
+In-Reply-To: <20200414195031.224021-1-martin.blumenstingl@googlemail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_004239_576679_B6A51523 
-X-CRM114-Status: GOOD (  35.48  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_005329_680932_DCB2DFBE 
+X-CRM114-Status: GOOD (  13.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,178 +150,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- linux-efi <linux-efi@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Arvind Sankar <nivedita@alum.mit.edu>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 at 01:21, Atish Patra <atishp@atishpatra.org> wrote:
->
-> On Mon, Apr 13, 2020 at 8:55 AM Ard Biesheuvel <ardb@kernel.org> wrote:
-> >
-> > The notion of a 'preferred' load offset for the kernel dates back to the
-> > times when the kernel's primary mapping overlapped with the linear region,
-> > and memory below it could not be used at all.
-> >
-> > Today, the arm64 kernel does not really care where it is loaded in physical
-> > memory, as long as the alignment requirements are met, and so there is no
->
-> Just for my understanding, why do we need a TEXT_OFFSET in that case ?
-> Is it just to provide an option for SoC vendors ?
->
-
-TEXT_OFFSET has become an unfortunate historical artifact, and we
-would remove it if we could. The only reason we are keeping it is for
-compatibility with very old bootloaders that assume TEXT_OFFSET=512k
-without looking at the header.
-
-In fact, we could simply set it to 0x0 on relocatable builds. I'll
-send out a patch for that.
-
-> > point in unconditionally moving the kernel to a new location in memory at
-> > boot. Instead, we can
-> > - check for a KASLR seed, and randomly reallocate the kernel if one is
-> >   provided
-> > - otherwise, check whether the alignment requirements are met for the
-> >   current placement of the kernel, and just run it in place if they are
-> > - finally, do an ordinary page allocation and reallocate the kernel to a
-> >   suitably aligned buffer anywhere in memory.
-> >
-> > By the same reasoning, there is no need to take TEXT_OFFSET into account
-> > if it is a round multiple of the minimum alignment, which is the usual
-> > case for relocatable kernels with TEXT_OFFSET randomization disabled.
-> > Otherwise, it suffices to use the relative misaligment of TEXT_OFFSET
-> > when reallocating the kernel.
-> >
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > ---
-> >  drivers/firmware/efi/libstub/arm64-stub.c | 62 ++++++++------------
-> >  1 file changed, 25 insertions(+), 37 deletions(-)
-> >
-> > diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-> > index fc9f8ab533a7..cfd535c13242 100644
-> > --- a/drivers/firmware/efi/libstub/arm64-stub.c
-> > +++ b/drivers/firmware/efi/libstub/arm64-stub.c
-> > @@ -34,6 +34,15 @@ efi_status_t check_platform_features(void)
-> >         return EFI_SUCCESS;
-> >  }
-> >
-> > +/*
-> > + * Relocatable kernels can fix up the misalignment with respect to
-> > + * MIN_KIMG_ALIGN, so they only require a minimum alignment of EFI_KIMG_ALIGN
-> > + * (which accounts for the alignment of statically allocated objects such as
-> > + * the swapper stack.)
-> > + */
-> > +static const u64 min_kimg_align = IS_ENABLED(CONFIG_RELOCATABLE) ? EFI_KIMG_ALIGN
-> > +                                                                : MIN_KIMG_ALIGN;
-> > +
-> >  efi_status_t handle_kernel_image(unsigned long *image_addr,
-> >                                  unsigned long *image_size,
-> >                                  unsigned long *reserve_addr,
-> > @@ -43,7 +52,6 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
-> >  {
-> >         efi_status_t status;
-> >         unsigned long kernel_size, kernel_memsize = 0;
-> > -       unsigned long preferred_offset;
-> >         u64 phys_seed = 0;
-> >
-> >         if (IS_ENABLED(CONFIG_RANDOMIZE_BASE)) {
-> > @@ -61,14 +69,8 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
-> >                 }
-> >         }
-> >
-> > -       /*
-> > -        * The preferred offset of the kernel Image is TEXT_OFFSET bytes beyond
-> > -        * a 2 MB aligned base, which itself may be lower than dram_base, as
-> > -        * long as the resulting offset equals or exceeds it.
-> > -        */
-> > -       preferred_offset = round_down(dram_base, MIN_KIMG_ALIGN) + TEXT_OFFSET;
-> > -       if (preferred_offset < dram_base)
-> > -               preferred_offset += MIN_KIMG_ALIGN;
-> > +       if (image->image_base != _text)
-> > +               pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
-> >
-> >         kernel_size = _edata - _text;
-> >         kernel_memsize = kernel_size + (_end - _edata);
-> > @@ -103,46 +105,32 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
-> >
-> >                 *image_addr = *reserve_addr + offset;
-> >         } else {
-> > -               /*
-> > -                * Else, try a straight allocation at the preferred offset.
-> > -                * This will work around the issue where, if dram_base == 0x0,
-> > -                * efi_low_alloc() refuses to allocate at 0x0 (to prevent the
-> > -                * address of the allocation to be mistaken for a FAIL return
-> > -                * value or a NULL pointer). It will also ensure that, on
-> > -                * platforms where the [dram_base, dram_base + TEXT_OFFSET)
-> > -                * interval is partially occupied by the firmware (like on APM
-> > -                * Mustang), we can still place the kernel at the address
-> > -                * 'dram_base + TEXT_OFFSET'.
-> > -                */
-> > -               *image_addr = (unsigned long)_text;
-> > -               if (*image_addr == preferred_offset)
-> > -                       return EFI_SUCCESS;
-> > -
-> > -               *image_addr = *reserve_addr = preferred_offset;
-> > -               *reserve_size = round_up(kernel_memsize, EFI_ALLOC_ALIGN);
-> > -
-> > -               status = efi_bs_call(allocate_pages, EFI_ALLOCATE_ADDRESS,
-> > -                                    EFI_LOADER_DATA,
-> > -                                    *reserve_size / EFI_PAGE_SIZE,
-> > -                                    (efi_physical_addr_t *)reserve_addr);
-> > +               status = EFI_OUT_OF_RESOURCES;
-> >         }
-> >
-> >         if (status != EFI_SUCCESS) {
-> > -               *reserve_size = kernel_memsize + TEXT_OFFSET;
-> > +               if (IS_ALIGNED((u64)_text - TEXT_OFFSET, min_kimg_align)) {
-> > +                       /*
-> > +                        * Just execute from wherever we were loaded by the
-> > +                        * UEFI PE/COFF loader if the alignment is suitable.
-> > +                        */
-> > +                       *image_addr = (u64)_text;
-> > +                       *reserve_size = 0;
-> > +                       return EFI_SUCCESS;
-> > +               }
-> > +
-> > +               *reserve_size = kernel_memsize + TEXT_OFFSET % min_kimg_align;
-> >                 status = efi_low_alloc(*reserve_size,
-> > -                                      MIN_KIMG_ALIGN, reserve_addr);
-> > +                                      min_kimg_align, reserve_addr);
-> >
-> >                 if (status != EFI_SUCCESS) {
-> >                         pr_efi_err("Failed to relocate kernel\n");
-> >                         *reserve_size = 0;
-> >                         return status;
-> >                 }
-> > -               *image_addr = *reserve_addr + TEXT_OFFSET;
-> > +               *image_addr = *reserve_addr + TEXT_OFFSET % min_kimg_align;
-> >         }
-> >
-> > -       if (image->image_base != _text)
-> > -               pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
-> > -
-> >         memcpy((void *)*image_addr, _text, kernel_size);
-> >
-> >         return EFI_SUCCESS;
-> > --
-> > 2.17.1
-> >
->
-> Looks good to me. FWIW,
->
-> Reviewed-by: Atish Patra <atish.patra@wdc.com>
->
+On 14/04/2020 21:50, Martin Blumenstingl wrote:
+> This contains only the clock driver updates from my other series titled
+> "GPU DVFS for Meson GXBB/GXL/GXM/G12A/G12B/SM1" from [0]
+> 
+> 
+> Changes since v1 at [0]:
+> - update the patch descriptions to indicate that we explicitly don't
+>   want CLK_SET_RATE_PARENT on the muxes
+> - split into clock driver (this series) and .dts changes (future
+>   series, waiting for testing feedback on v1 from [0])
+> 
+> 
+> [0] https://patchwork.kernel.org/cover/11466399/
+> 
+> 
+> Martin Blumenstingl (2):
+>   clk: meson: gxbb: Prepare the GPU clock tree to change at runtime
+>   clk: meson: g12a: Prepare the GPU clock tree to change at runtime
+> 
+>  drivers/clk/meson/g12a.c | 30 ++++++++++++++++++++++--------
+>  drivers/clk/meson/gxbb.c | 40 ++++++++++++++++++++++------------------
+>  2 files changed, 44 insertions(+), 26 deletions(-)
+> 
 
 
-Thanks.
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
