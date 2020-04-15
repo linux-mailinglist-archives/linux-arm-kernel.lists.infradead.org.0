@@ -2,85 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81BDA1A90F4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 04:35:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F0531A9108
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 04:42:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uDCTHgVAhGGhp3nYtJnU3rsGPPkU1MpXif8UHDI6Aoc=; b=IPEUhFpqfzyEGG
-	IElK51Y4Z9S12QRnBmA/tkGa36epFVBx9hDPgClEZF4m0urjUrCxPG4mwZduPVRpa0fMVN2gKsTEl
-	RG7AKjJsjp4SDFr+UaL89+e31nzgPn4NSYqkRata4fLs+p7UVuEu41Ej5KyOi1ZLuN4M0gYrY9g+O
-	d1bm7TzjyAQuVJ5JudFos3W3S1QA9i8NmG89L7NjOa/f5Muz7fcMc71R+gyvUTBqeq+JfwRLG0iDA
-	CsXNYoj1HLV60f93E0mUAz33eLLP3+q+bBvuUQducZobf6GL7AfpgtdyxYLR+SCPZaxG845c2NHDU
-	HNYr+dIKhvwKXPTMGoHw==;
+	List-Owner; bh=NgPCc/avU2WSjFFgNcPK+rbgNYBRcz2pJ7s6+x+YT4o=; b=uXvs5AB8pK+UCo
+	wvmgYXCmpgXjTfT8DqxiPYZkO4TaXWoyeL8Aah1RfaJfPNbfbiDaF7aV7+K2KIKsMGRfuapGssKuL
+	j7DIkgQJhnAGPZe6fRL1lXG9dxdhE/SKeyMQwKLVlw69NIJ9pm5bKsCaCgiux3UhZTePkFzt5S6Ch
+	9S14+i+uifOzwkAHe1v22dM/grqzlwDnZeqkBn/5R/XOtq1nETGfAs9AWNhzhvEpRfczeb79uxd/6
+	LhzwPzB2Dn+pPJCFjA6dLzD9FaUpvda2TZxb+ocM5gAFkeGtwf53nT0kCYuF+NQogFUw6icc0RoPD
+	SsnxpVe4ucSFIt7g59/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOXu0-0004Xl-PV; Wed, 15 Apr 2020 02:35:48 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jOY0i-0008Dq-Li; Wed, 15 Apr 2020 02:42:44 +0000
+Received: from mail-db8eur05on2076.outbound.protection.outlook.com
+ ([40.107.20.76] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOXto-0004Wv-UO
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 02:35:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586918135;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=3o4+0HgEBD0h2Go+GpB2trM6HPRj5m5yAn/gvrKMuxQ=;
- b=APFa9xqEU7VJnr5z77+7garh9xZJicWbh8t09e0TJZFnTGntQzcGi4Th+/DAUx5vGA4RkQ
- NQbqq9RHjfyYw70vVPhL18FLZayMSnEyEFAFNYBU6hUHP7HKqcFNwd9AApluUdfl5rGICQ
- 6dPv0Btuetb95sqrC+JZ3xtdNH9Sv1A=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-321-WOza4ysLPQyg0KcN4VE8gg-1; Tue, 14 Apr 2020 22:35:33 -0400
-X-MC-Unique: WOza4ysLPQyg0KcN4VE8gg-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 890218017F3;
- Wed, 15 Apr 2020 02:35:30 +0000 (UTC)
-Received: from localhost (ovpn-12-27.pek2.redhat.com [10.72.12.27])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 7B9A899DEE;
- Wed, 15 Apr 2020 02:35:26 +0000 (UTC)
-Date: Wed, 15 Apr 2020 10:35:24 +0800
-From: Baoquan He <bhe@redhat.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-Message-ID: <20200415023524.GG4247@MiWiFi-R3L-srv>
-References: <20200412080836.GM25745@shell.armlinux.org.uk>
- <87wo6klbw0.fsf@x220.int.ebiederm.org>
- <20200413023701.GA20265@MiWiFi-R3L-srv>
- <871rorjzmc.fsf@x220.int.ebiederm.org>
- <20200414064031.GB4247@MiWiFi-R3L-srv>
- <86e96214-7053-340b-5c1a-ff97fb94d8e0@redhat.com>
- <20200414092201.GD4247@MiWiFi-R3L-srv>
- <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
- <20200414143912.GE4247@MiWiFi-R3L-srv>
- <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
+ id 1jOY0Z-0008DJ-G8
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 02:42:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BjAl34XhCuiLTgbHZP+Y1m0HZL7a4wv+C45i11B49sZCrBSk8i3CtTvAAqvGHBx2y/1/ySTzgI1rlSEx3jFSXCaYKpY1zvFhSvhkW1vRxWJtJe5AgLF2arc6NIJifLiK2sZE9JBqXh2t/KWzNk4erYFdkg98xKRMoeGe2tnEeAiXC0weeKPyFiyHso9BOvD8cB+HxDYplUV/Oam41IA8XeEnJ5CTqu7Uh64ArJFXwfiWGwwYzzy8JVmar74eQOtWCFwQkz9a2+HRo8bpHB/TesChyl9tkAVnHQs8WJy1TbP1z1cLHFZZcLBQ0n5d3O9J9xXzp4b7O3nYMMObNmgcAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gtFjWj1YucLUeoKjFAhlC/kjmEtosOXKWzmGv9cI8CE=;
+ b=hwxVATyNwO7gnf0vBLjZiTj+x0lkDfIFTpbAhTIzFsrnIbXwnde+vOPT/69T+CKxgkBBu/CW0EAH2o21s5lQfYvoCTJFMDg8xili8EC9BP6cWnatTcCATfFrcY7Q0uAbhWpWaLJFBhwD6UMZU7pwEvWomQRJjuo5aUvzKUv/YZ+oNj1BcWtJzn3oUWDV3/04QaZT4UROUvvVzVj06TUkbz9LzPhqBYsz+6m2WunDE2qgdcMUAzCoaav+svuuuQgtLxTi6s/tJKRd1o1zifbecYFY8NLIyDS+KfPMon/nJUtY0IP/ClXiSivHPoHGMmWSUV5X/Qv6WaDBjtCqWXdbSQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gtFjWj1YucLUeoKjFAhlC/kjmEtosOXKWzmGv9cI8CE=;
+ b=iuHVvLQJ7SJmaxRRlon4KtALNpSARcW86sVHzHbWkbcgXa2Lt8FpEKALBfiyvwc7NsR5CCjhdMC8x87WCbkBbZyOLOAQGBx+8og6obhbFPy0APIPsf/HmGX5vdIhXfQ1nc9rT03FJazbycKnvd8sq4RYOAZkSu1IqKpulNIEg8E=
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2695.eurprd04.prod.outlook.com (2603:10a6:4:95::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.26; Wed, 15 Apr
+ 2020 02:42:32 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2900.028; Wed, 15 Apr 2020
+ 02:42:32 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "nikita.shubin@maquefel.me" <nikita.shubin@maquefel.me>
+Subject: RE: [PATCH v2 0/3] remoteproc: imx_rproc: add virtio support
+Thread-Topic: [PATCH v2 0/3] remoteproc: imx_rproc: add virtio support
+Thread-Index: AQHWDAb+JdgObafwAkG5FGKUl9Xnrah5hqFQ
+Date: Wed, 15 Apr 2020 02:42:32 +0000
+Message-ID: <DB6PR0402MB27603D39E31D30AA28D6893A88DB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+References: <20200304142628.8471-1-NShubin@topcon.com>
+ <20200406113310.3041-1-nikita.shubin@maquefel.me>
+In-Reply-To: <20200406113310.3041-1-nikita.shubin@maquefel.me>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: de760fa7-0c26-4bf9-0fc8-08d7e0e6a5e7
+x-ms-traffictypediagnostic: DB6PR0402MB2695:|DB6PR0402MB2695:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB6PR0402MB269562743D7977329228622F88DB0@DB6PR0402MB2695.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0374433C81
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(346002)(366004)(39860400002)(376002)(396003)(136003)(8676002)(6916009)(76116006)(66556008)(966005)(8936002)(316002)(7416002)(66446008)(64756008)(5660300002)(66946007)(55016002)(9686003)(66476007)(44832011)(81156014)(478600001)(54906003)(186003)(7696005)(6506007)(4326008)(52536014)(71200400001)(33656002)(26005)(2906002)(86362001)(505234006);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Uv8CnEOS8qMeLmlJKtDH0WjIKiXocqebxmyKKRYXPd4P2qLN4G4xLzGvWHqwy37INwXnX+HH7hyDAELqG6YiqAA48nBRFvYIKOq1ihTssT9RZ70jsoWJ31CTuRyvCh7cHIcS6CVmnTXGQm2URAyamoPIqNWWJo6sWodfMNFJNOYji2N9NGnzvLnRzRDc5DfLgknQMhChqW66uiwtMuBOZbmoxoKWp9QXtXj2uzCBl0WJ2A9Y1CIJLddN9sjKF6kHD5E5+oItIj1ApspjdLPVQmMu/cdjSk0FugYN6862DbktEykIlww9AlDEylSeEG8gv6oPyrAUaNIW4V0lv2WzCi1csdIuVHlcN5vH4XufJ0DonlDxM+F0uvWUkivsj9jJ8X8ytK7slYgKZo04vZ3LTyvmEtBQhUKZaBWtu4mrnPJErtJpRq6yYOCEInQBpfNRVDiT9hcWADZHUxBctLri3USza0hY6UkWX0YIPGsnX7edyMQkYug1l8BiA9cLG3Ds4y9qRV4AJk7Y9RwX0Xxm2ZUWDJk7R2eGc6ofeL9KwkMWSbfRsWkk+fZngf/09p7PBxeG8woJTAYnqs7x1s5pGg==
+x-ms-exchange-antispam-messagedata: Iu/bQsl1Rr4KTCWbz59s/ZknJXYLKMLgyG9pJz6lg5a7o5Avo13SIs1cJxEbxrH6QCrEcfw7zE0uqAAgsCIGDjau/QjkrKvvMxw2Eaw8uBBTpjMOP/XfHOHMrGyeOk74xH1XwyWVr9FruzO/DBdqGg==
 MIME-Version: 1.0
-In-Reply-To: <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: de760fa7-0c26-4bf9-0fc8-08d7e0e6a5e7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Apr 2020 02:42:32.5388 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 6TAbGj87zyHa1h9LU/mv8Te/18qIxLbo0fapHSR8Y2kRA570hwmzmU+AhhEaCaEg+POyLl2kU7g5nRKiPIQtGQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2695
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_193537_059027_DED6AFD6 
-X-CRM114-Status: GOOD (  27.24  )
+X-CRM114-CacheID: sfid-20200414_194235_608194_83645BF5 
+X-CRM114-Status: GOOD (  15.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.20.76 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,7 +111,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,109 +122,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
- kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/14/20 at 04:49pm, David Hildenbrand wrote:
-> >>>>> The root cause is kexec-ed kernel is targeted at hotpluggable memory
-> >>>>> region. Just avoiding the movable area can fix it. In kexec_file_load(),
-> >>>>> just checking or picking those unmovable region to put kernel/initrd in
-> >>>>> function locate_mem_hole_callback() can fix it. The page or pageblock's
-> >>>>> zone is movable or not, it's easy to know. This fix doesn't need to
-> >>>>> bother other component.
-> >>>>
-> >>>> I don't fully agree. E.g., just because memory is onlined to ZONE_NORMAL
-> >>>> does not imply that it cannot get offlined and removed e.g., this is
-> >>>> heavily used on ppc64, with 16MB sections.
-> >>>
-> >>> Really? I just know there are two kinds of mem hoplug in ppc, but don't
-> >>> know the details. So in this case, is there any flag or a way to know
-> >>> those memory block are hotpluggable? I am curious how those kernel data
-> >>> is avoided to be put in this area. Or ppc just freely uses it for kernel
-> >>> data or user space data, then try to migrate when hot remove?
-> >>
-> >> See
-> >> arch/powerpc/platforms/pseries/hotplug-memory.c:dlpar_memory_remove_by_count()
-> >>
-> >> Under DLAPR, it can remove memory in LMB granularity, which is usually
-> >> 16MB (== single section on ppc64). DLPAR will directly online all
-> >> hotplugged memory (LMBs) from the kernel using device_online(), which
-> >> will go to ZONE_NORMAL.
-> >>
-> >> When trying to remove memory, it simply scans for offlineable 16MB
-> >> memory blocks (==section == LMB), offlines and removes them. No need for
-> >> the movable zone and all the involved issues.
-> > 
-> > Yes, this is a different one, thanks for pointing it out. It sounds like
-> > balloon driver in virt platform, doesn't it?
+> Subject: [PATCH v2 0/3] remoteproc: imx_rproc: add virtio support
+
+Have you ever see https://patchwork.kernel.org/cover/11390477/?
+
+I have been waiting for Mathieu's rproc sync state patch, then
+rebase.
+
+Thanks,
+Peng.
+
 > 
-> With DLPAR there is a hypervisor involved (which manages the actual HW
-> DIMMs), so yes.
+> This patch set introduces virtio support for imx7d-m4 communication:
 > 
-> > 
-> > Avoiding to put kexec kernel into movable zone can't solve this DLPAR
-> > case as you said.
-> > 
-> >>
-> >> Now, the interesting question is, can we have LMBs added during boot
-> >> (not via add_memory()), that will later be removed via remove_memory().
-> >> IIRC, we had BUGs related to that, so I think yes. If a section contains
-> >> no unmovable allocations (after boot), it can get removed.
-> > 
-> > I do want to ask this question. If we can add LMB into system RAM, then
-> > reload kexec can solve it. 
-> > 
-> > Another better way is adding a common function to filter out the
-> > movable zone when search position for kexec kernel, use a arch specific
-> > funciton to filter out DLPAR memory blocks for ppc only. Over there,
-> > we can simply use for_each_drmem_lmb() to do that.
+> - support booting loaded vim imx-rproc firmware
+> - implement .kick method support using mailbox in imx-processor
+> - parse vdev0vring0, vdev0vring1, vdev0buffer memory regions required for
+> virtio_rpmsg_bus initialization
 > 
-> I was thinking about something similar. Maybe something like a notifier
-> that can be used to test if selected memory can be used for kexec
-
-Not sure if I get the notifier idea clearly. If you mean 
-
-1) Add a common function to pick memory in unmovable zone;
-2) Let DLPAR, balloon register with notifier;
-3) In the common function, ask notified part to check if the picked
-   unmovable memory is available for locating kexec kernel;
-
-Sounds doable to me, and not complicated.
-
-> images. It would apply to
+> Regarding imx7d-m4 boot proccess
 > 
-> - arm64 and filter out all hotadded memory (IIRC, only boot memory can
->   be used).
-
-Do you mean hot added memory after boot can't be recognized and added
-into system RAM on arm64?
-
-
-> - powerpc to filter out all LMBs that can be removed (assuming not all
->   memory corresponds to LMBs that can be removed, otherwise we're in
->   trouble ... :) )
-> - virtio-mem to filter out all memory it added.
-> - hyper-v to filter out partially backed memory blocks (esp. the last
->   memory block it added and only partially backed it by memory).
+> Citing ARM documentation:
 > 
-> This would make it work for kexec_file_load(), however, I do wonder how
-> we would want to approach that from userspace kexec-tools when handling
-> it from kexec_load().
-
-Let's make kexec_file_load work firstly. Since this work is only first
-step to make kexec-ed kernel not break memory hotplug. After kexec
-rebooting, the KASLR may locate kernel into hotpluggable area too.
-
+> At Reset, Cortex-M3 and Cortex-M4 processors always boot from a vector
+> table at address zero.
+> 
+> "With uninitialized memory at address zero (for example, unprogrammed
+> Flash or uninitialized RAM), the processor will read a spurious initial Main
+> Stack Pointer value from address zero and a spurious code entry point (Reset
+> vector) from address 0x4, possibly containing an illegal instruction set state
+> specifier (ESPR.T bit) in bit[0]."
+> 
+> So to successfully boot m4 coproc we need to write Stack Pointer and
+> Program counter, i see no obvious to get Stack Pointer value, so two ways
+> exist ethier form a special elf section:
+> 
+> "
+> .loader :
+>   {
+>     LONG(__StackTop);
+>     LONG(Reset_Handler + 1);
+>   } > m_start
+> "
+> 
+> and put it at 0x0 address:
+> 
+> "
+> m_start               (RX)  : ORIGIN = 0x00000000, LENGTH =
+> 0x00008000
+> "
+> 
+> Or (the way i've chosen) only put Entry Point at 0x04 and set stack as first
+> instruction:
+> 
+> "
+> Reset_Handler:
+> 	ldr   sp, =__stack      /* set stack pointer */
+> "
+> 
+> Regarding mailboxes and memory regions :
+> 
+> This code is heavily derived from stm32-rproc (i.e. copy pasted) and this fact
+> needs to reflected in commits, please tell me how to emphasize this fact.
+> 
+> Attaching succesful trace booting m4 (with Add rpmsg tty driver applied) :
+> 
+> [  143.240616] remoteproc remoteproc0: powering up imx-rproc
+> [  143.251768] remoteproc remoteproc0: Booting fw image huginn.elf, size
+> 466876 [  143.251786] imx-rproc imx7d-cm4: iommu not present
+> [  143.251825] remoteproc remoteproc0: rsc: type 3 [  143.251837]
+> remoteproc remoteproc0: vdev rsc: id 7, dfeatures 0x1, cfg len 0, 2 vrings
+> [  143.251924] remoteproc remoteproc0: vdev rsc: vring0: da 0xffffffff, qsz
+> 16, align 16 [  143.251935] remoteproc remoteproc0: vdev rsc: vring1: da
+> 0xffffffff, qsz 16, align 16 [  143.251955] imx-rproc imx7d-cm4: map memory:
+> 0x00900000+20000 [  143.251987] imx-rproc imx7d-cm4: map memory:
+> 0x00920000+2000 [  143.252003] imx-rproc imx7d-cm4: map memory:
+> 0x00922000+2000 [  143.252020] remoteproc remoteproc0: phdr: type 1 da
+> 0x20200000 memsz 0x240 filesz 0x240 [  143.252032] remoteproc
+> remoteproc0: da = 0x20200000 len = 0x240 va = 0x(ptrval) [  143.252043]
+> remoteproc remoteproc0: phdr: type 1 da 0x20200240 memsz 0x5b38 filesz
+> 0x5b38 [  143.252053] remoteproc remoteproc0: da = 0x20200240 len =
+> 0x5b38 va = 0x(ptrval) [  143.252105] remoteproc remoteproc0: phdr: type
+> 1 da 0x20205d78 memsz 0x4b58 filesz 0x758 [  143.252115] remoteproc
+> remoteproc0: da = 0x20205d78 len = 0x4b58 va = 0x(ptrval) [  143.252159]
+> remoteproc remoteproc0: da = 0x200006cc len = 0x8c va = 0x(ptrval)
+> [  143.252176] remoteproc remoteproc0: Started from 0x202002f5
+> [  143.252211]  imx7d-cm4#vdev0buffer: assigned reserved memory node
+> vdev0buffer@00924000 [  143.252232] virtio virtio0: reset !
+> [  143.252241] virtio virtio0: status: 1 [  143.260567] virtio_rpmsg_bus
+> virtio0: status: 3 [  143.260598] remoteproc remoteproc0: vring0: va
+> c083c000 qsz 16 notifyid 0 [  143.260614] remoteproc remoteproc0: vring1:
+> va c0872000 qsz 16 notifyid 1 [  143.260651] virtio_rpmsg_bus virtio0:
+> buffers: va c0894000, dma 0x00924000 [  143.260666] Added buffer head 0
+> to (ptrval) [  143.260674] Added buffer head 1 to (ptrval) [  143.260680]
+> Added buffer head 2 to (ptrval) [  143.260686] Added buffer head 3 to (ptrval)
+> [  143.260692] Added buffer head 4 to (ptrval) [  143.260697] Added buffer
+> head 5 to (ptrval) [  143.260703] Added buffer head 6 to (ptrval)
+> [  143.260709] Added buffer head 7 to (ptrval) [  143.260715] Added buffer
+> head 8 to (ptrval) [  143.260721] Added buffer head 9 to (ptrval)
+> [  143.260727] Added buffer head 10 to (ptrval) [  143.260733] Added
+> buffer head 11 to (ptrval) [  143.260738] Added buffer head 12 to (ptrval)
+> [  143.260744] Added buffer head 13 to (ptrval) [  143.260750] Added
+> buffer head 14 to (ptrval) [  143.260756] Added buffer head 15 to (ptrval)
+> [  143.260771] virtio_rpmsg_bus virtio0: status: 7 [  143.260779]
+> remoteproc remoteproc0: kicking vq index: 0 [  143.260788] remoteproc
+> remoteproc0: sending message : vqid = 0 [  143.260802] imx_mu
+> 30aa0000.mailbox: Send data on wrong channel type: 1 [  143.260810]
+> virtio_rpmsg_bus virtio0: rpmsg host is online [  143.261680]
+> imx7d-cm4#vdev0buffer: registered virtio0 (type 7) [  143.261694]
+> remoteproc remoteproc0: remote processor imx-rproc is now up
+> [  143.354880] remoteproc remoteproc0: vq index 0 is interrupted
+> [  143.354895] virtqueue callback for (ptrval) ((ptrval)) [  143.354912]
+> virtio_rpmsg_bus virtio0: From: 0x0, To: 0x35, Len: 40, Flags: 0, Reserved: 0
+> [  143.354924] rpmsg_virtio RX: 00 00 00 00 35 00 00 00 00 00 00 00 28 00
+> 00 00  ....5.......(...
+> [  143.354932] rpmsg_virtio RX: 72 70 6d 73 67 2d 74 74 79 2d 72 61 77 00
+> 00 00  rpmsg-tty-raw...
+> [  143.354939] rpmsg_virtio RX: 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+> 00 00  ................
+> [  143.354945] rpmsg_virtio RX: 00 00 00 00 00 00 00
+> 00                          ........
+> [  143.354956] NS announcement: 72 70 6d 73 67 2d 74 74 79 2d 72 61 77
+> 00 00 00  rpmsg-tty-raw...
+> [  143.354963] NS announcement: 00 00 00 00 00 00 00 00 00 00 00 00 00
+> 00 00 00  ................
+> [  143.354969] NS announcement: 00 00 00 00 00 00 00
+> 00                          ........
+> [  143.354980] virtio_rpmsg_bus virtio0: creating channel rpmsg-tty-raw
+> addr 0x0 [  143.356584] rpmsg_tty virtio0.rpmsg-tty-raw.-1.0: new channel:
+> 0x400 -> 0x0 : ttyRPMSG0 [  143.356651] Added buffer head 0 to (ptrval)
+> [  143.356658] No more buffers in queue [  143.356667] virtio_rpmsg_bus
+> virtio0: Received 1 messages [  143.404302] remoteproc remoteproc0: vq
+> index 0 is interrupted [  143.404319] virtqueue callback for (ptrval) ((ptrval))
+> [  143.404337] virtio_rpmsg_bus virtio0: From: 0x1, To: 0x35, Len: 40, Flags:
+> 0, Reserved: 0 [  143.404350] rpmsg_virtio RX: 01 00 00 00 35 00 00 00 00
+> 00 00 00 28 00 00 00  ....5.......(...
+> [  143.404391] rpmsg_virtio RX: 72 70 6d 73 67 2d 74 74 79 2d 72 61 77 00
+> 00 00  rpmsg-tty-raw...
+> [  143.404399] rpmsg_virtio RX: 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+> 00 00  ................
+> [  143.404405] rpmsg_virtio RX: 01 00 00 00 00 00 00
+> 00                          ........
+> [  143.404417] NS announcement: 72 70 6d 73 67 2d 74 74 79 2d 72 61 77
+> 00 00 00  rpmsg-tty-raw...
+> [  143.404424] NS announcement: 00 00 00 00 00 00 00 00 00 00 00 00 00
+> 00 00 00  ................
+> [  143.404430] NS announcement: 01 00 00 00 00 00 00
+> 00                          ........
+> [  143.404441] virtio_rpmsg_bus virtio0: creating channel rpmsg-tty-raw
+> addr 0x1 [  143.411114] rpmsg_tty virtio0.rpmsg-tty-raw.-1.1: new channel:
+> 0x401 -> 0x1 : ttyRPMSG1
 
 _______________________________________________
 linux-arm-kernel mailing list
