@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 976461A9367
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 08:41:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 855641A93D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 09:07:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=LrqB2QNmsT7Y3hIdlQddmym8j2napAEtleOTC06dtYk=; b=QLC9j+y4QLIBHve8bH3XRtBc78
-	bdPw40EtzHTRyug1vqjyevwKcYE/GX6J05DWznMazSD2FAHuxtUwcNfXwH0qFsRHHAHLD4UT7cvoW
-	nifduOMbnFnpHau8zw9Hx3zNbXiX6iHQrsUIAwfSODbaFtZXxfzgn8f8W+FGJ6ZLcKDd3Mxk8XRHm
-	R+nvUQZTO0zwSkU+Ss7hU7cFez6MpplNC/94X5QAU/9Dut+wGIZ01BxteYf7S3Xm40RSM5lOdBe5N
-	qiqa3hRHYXODaAM/4t+HvkNnd4dM0vGwRVaLtvccgWgAnL4xgzK/oMEEhNqpNXIJT4Rc2ZkEkLaMf
-	q81S7RkQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DwduXdlZZ3jainwVv+aVR234VSKDL8moKKjQT0Za8G4=; b=igYLtyK6Jt29mp
+	bTpITN+EUgwkknU/PTMsARzkrS87Mu90bgX76z4PBY7rQDGGZ9pZOO+fbf/dxrEJwrYFp+vNyoyBK
+	FI91qVef5zkCJwG+K09zw+t/h4hJcYRoqkorZ/9pPeGd1ujkAFTtrExPxrhCnDi31Yu/dAV6s3FD+
+	hf+0cAL/74Ua++fKmRc9LofLzPzAUQ8lFUZpjOlsNeYyl84omIKsPnPf47erSylcim0xBkN+oehsi
+	mjE+kTMnRKBxWdJSONcYByY8vg6Q4BqWXiSceh1qNat1W7bBNz5xWcixrxJCs+eRiCoTMX/aSBSI6
+	O9zvOW1sV5Yc1OOyASuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jObjQ-0000eA-1G; Wed, 15 Apr 2020 06:41:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jObiq-0000R2-Ll
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 06:40:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1FC971042;
- Tue, 14 Apr 2020 23:40:31 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 14A233F73D;
- Tue, 14 Apr 2020 23:44:37 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] arm64/hotplug: Process MEM_OFFLINE and MEM_CANCEL_OFFLINE
-Date: Wed, 15 Apr 2020 12:09:44 +0530
-Message-Id: <1586932784-16315-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1586932784-16315-1-git-send-email-anshuman.khandual@arm.com>
-References: <1586932784-16315-1-git-send-email-anshuman.khandual@arm.com>
+	id 1jOc8q-0000Lh-UX; Wed, 15 Apr 2020 07:07:24 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOc8k-0000JR-0t
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 07:07:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1586934438; x=1618470438;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=S2+uH86s+bRjLfFJ3yBCLL1egwy14L/rjPzDHoi6Fho=;
+ b=Hhx2h0jstTacjx5S39SbLSRUFqM315JtXLmTNbq7lZhMY7vLjmSmT/7G
+ J0OwJOEwLBWh37O+YLnF0NlH0a1PMWlnsOTqu3Z7m9oMhPoW7TtnGCVCY
+ DClgX8pbASd33b6q8lzdc7H8LyzRWb4W0CzIm7vxap1fsKp8laFlit2/Y
+ IzKKxZ2WNp151pyRCRURa6kWxBK9XiZcsz79nUyNJ6xSZhjKub40QCCK+
+ LQWtQcpYQ+JYA8MGYKEnEqXPtZIAwyBxt412VVbpDWgTNMmGP2ceuLReb
+ gY+t0xKxh+TbC+lB+1MReetQkP3k4DOQh5BhcBsrTlAZIQZKe4iuGFPCJ w==;
+IronPort-SDR: ghEsHiT3JE71rp0I25+n2BPG4MrpZKm6DBUQalg0bwdmRbJhZ1wfgzdmbZhVK6sQpdf9AV1v8z
+ 6SUjddGq5NXIzCvyuoSm5CNfwuEU9p8UhDeMXtDcxTrbadQ8XuFpHX151/4iLl1616LEuUZo0y
+ U2F1A5QBohghEn9h6pqKZQBedK1LwOw9LqiAYiGLySHS/zO5PWRuaMjYgM/mtKTslgtONC1b7S
+ 1qHzMKXJDQ7+Y306sPA+Jd5hgYYep9UuUEaA6D8SLhDabGb5bG44k7zLcb0Vi8754sWwnYsfUF
+ GN8=
+X-IronPort-AV: E=Sophos;i="5.72,386,1580799600"; d="scan'208";a="70388098"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Apr 2020 00:07:08 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 15 Apr 2020 00:06:52 -0700
+Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 15 Apr 2020 00:06:58 -0700
+From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+To: <linux-gpio@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [RFC PATCH] i2c: at91: Fix pinmux after devm_gpiod_get() for bus
+ recovery
+Date: Wed, 15 Apr 2020 10:06:43 +0300
+Message-ID: <20200415070643.23663-1-codrin.ciubotariu@microchip.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_234032_829000_ED87D5CB 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_000718_283967_0F258C39 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,106 +91,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, will@kernel.com, Steve Capper <steve.capper@arm.com>,
- catalin.marinas@arm.com, Anshuman Khandual <anshuman.khandual@arm.com>,
- David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
- Hsin-Yi Wang <hsinyi@chromium.org>, akpm@linux-foundation.org,
- Thomas Gleixner <tglx@linutronix.de>, Yu Zhao <yuzhao@google.com>
-MIME-Version: 1.0
+Cc: alan@softiron.com, kamel.bouhara@bootlin.com, alexandre.belloni@bootlin.com,
+ wsa@the-dreams.de, linus.walleij@linaro.org, linux@armlinux.org.uk,
+ ludovic.desroches@microchip.com,
+ Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Process MEM_OFFLINE and MEM_CANCEL_OFFLINE memory events to intercept any
-possible error conditions during memory offline operation. This includes if
-boot memory still got offlined even after an expilicit notifier failure or
-if non-boot memory got declined for an offline request. This help improve
-memory notifier robustness while also enhancing debug capabilities during
-various potential memory offlining error conditions.
+devm_gpiod_get() usually calls gpio_request_enable() for non-strict pinmux
+drivers. These puts the pins in GPIO mode, whithout notifying the pinctrl
+driver. At this point, the I2C bus no longer owns the pins. To mux the
+pins back to the I2C bus, we use the pinctrl driver to change the state
+of the pins to GPIO, before using devm_gpiod_get(). After the pins are
+received as GPIOs, we switch theer pinctrl state back to the default
+one,
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.com>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: David Hildenbrand <david@redhat.com>
-Cc: Yu Zhao <yuzhao@google.com>
-Cc: Hsin-Yi Wang <hsinyi@chromium.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-mm@kvack.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+Fixes: d3d3fdcc4c90 ("i2c: at91: implement i2c bus recovery")
+Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 ---
- arch/arm64/mm/mmu.c | 52 ++++++++++++++++++++++++++++++++++++++++-----
- 1 file changed, 47 insertions(+), 5 deletions(-)
+ drivers/i2c/busses/i2c-at91-master.c | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index a374e4f51a62..48c71d8a29b2 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -1422,13 +1422,55 @@ static int prevent_bootmem_remove_notifier(struct notifier_block *nb,
- 	unsigned long end_pfn = arg->start_pfn + arg->nr_pages;
- 	unsigned long pfn = arg->start_pfn;
+diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
+index 0aba51a7df32..43d85845c897 100644
+--- a/drivers/i2c/busses/i2c-at91-master.c
++++ b/drivers/i2c/busses/i2c-at91-master.c
+@@ -845,6 +845,18 @@ static int at91_init_twi_recovery_info(struct platform_device *pdev,
+ 							 PINCTRL_STATE_DEFAULT);
+ 	dev->pinctrl_pins_gpio = pinctrl_lookup_state(dev->pinctrl,
+ 						      "gpio");
++	if (IS_ERR(dev->pinctrl_pins_default) ||
++	    IS_ERR(dev->pinctrl_pins_gpio)) {
++		dev_info(&pdev->dev, "pinctrl states incomplete for recovery\n");
++		return -EINVAL;
++	}
++
++	/*
++	 * pins will be taken as GPIO, so we might as well inform pinctrl about
++	 * this and move the state to GPIO
++	 */
++	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_gpio);
++
+ 	rinfo->sda_gpiod = devm_gpiod_get(&pdev->dev, "sda", GPIOD_IN);
+ 	if (PTR_ERR(rinfo->sda_gpiod) == -EPROBE_DEFER)
+ 		return -EPROBE_DEFER;
+@@ -855,9 +867,7 @@ static int at91_init_twi_recovery_info(struct platform_device *pdev,
+ 		return -EPROBE_DEFER;
  
--	if (action != MEM_GOING_OFFLINE)
-+	if ((action != MEM_GOING_OFFLINE) && (action != MEM_OFFLINE) &&
-+		(action != MEM_CANCEL_OFFLINE))
- 		return NOTIFY_OK;
- 
--	for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
--		ms = __pfn_to_section(pfn);
--		if (early_section(ms))
--			return NOTIFY_BAD;
-+	if (action == MEM_GOING_OFFLINE) {
-+		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
-+			ms = __pfn_to_section(pfn);
-+			if (early_section(ms)) {
-+				pr_warn("Boot memory offlining attempted\n");
-+				return NOTIFY_BAD;
-+			}
-+		}
-+	} else if (action == MEM_OFFLINE) {
-+		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
-+			ms = __pfn_to_section(pfn);
-+			if (early_section(ms)) {
-+
-+				/*
-+				 * This should have never happened. Boot memory
-+				 * offlining should have been prevented by this
-+				 * very notifier. Probably some memory removal
-+				 * procedure might have changed which would then
-+				 * require further debug.
-+				 */
-+				pr_err("Boot memory offlined\n");
-+				return NOTIFY_BAD;
-+			}
-+		}
-+	} else if (action == MEM_CANCEL_OFFLINE) {
-+		enum offline_failure_reason reason = *(int *)arg->data;
-+
-+		if (reason != OFFLINE_FAILURE_NOTIFIER)
-+			return NOTIFY_OK;
-+
-+		for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
-+			ms = __pfn_to_section(pfn);
-+			if (early_section(ms))
-+				return NOTIFY_OK;
-+		}
-+
-+		/*
-+		 * This should have never happened. Non boot memory
-+		 * offlining should never have been prevented from
-+		 * this notifier. Probably some memory hot removal
-+		 * procedure might have changed which would then
-+		 * require further debug.
-+		 */
-+		pr_err("Notifier declined non boot memory offlining\n");
-+		return NOTIFY_BAD;
+ 	if (IS_ERR(rinfo->sda_gpiod) ||
+-	    IS_ERR(rinfo->scl_gpiod) ||
+-	    IS_ERR(dev->pinctrl_pins_default) ||
+-	    IS_ERR(dev->pinctrl_pins_gpio)) {
++	    IS_ERR(rinfo->scl_gpiod)) {
+ 		dev_info(&pdev->dev, "recovery information incomplete\n");
+ 		if (!IS_ERR(rinfo->sda_gpiod)) {
+ 			gpiod_put(rinfo->sda_gpiod);
+@@ -870,6 +880,9 @@ static int at91_init_twi_recovery_info(struct platform_device *pdev,
+ 		return -EINVAL;
  	}
- 	return NOTIFY_OK;
- }
+ 
++	/* change the state of the pins back to their default state */
++	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
++
+ 	dev_info(&pdev->dev, "using scl, sda for recovery\n");
+ 
+ 	rinfo->prepare_recovery = at91_prepare_twi_recovery;
 -- 
 2.20.1
 
