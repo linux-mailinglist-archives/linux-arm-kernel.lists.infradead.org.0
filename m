@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1801C1AA45F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:27:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 317491AA8E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 15:44:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xWXeqL0ubSeF4LAnGiFPlI/fF0TdidsDhR55Gpn1CKo=; b=dk1eE7VVgo5AbAvLCS3tUfikv
-	OWRpJoUxRsJXHOS7aqc47FSqZ3vNSeNkEKTgmvYSMDmjdZ14x/PlD/yawdcdds+VG6r9ySJjNeIBT
-	nPUNWnA+l6caTGJ5Rv2/tnW+ohKz27KqA2OyB4TNz8jqTb6brylUQxpryE4CiFpVXeIfUpJ+AEaAW
-	1WNKKeQ3CqZSLDn55Xf+0otr7QywA6h8bwzwwsTYVuMc/q/Gx8TfqTjoOFpXlOlCSK55BjCxd0bQk
-	mpFG3x3JNj0WK0xj5xb2s26iWGueSzaN+qBwLzuwbd55eu8rY2NuGS/bB8Gldf/Zd/UtNA0yRrSxF
-	174EkX68A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GuvKj5eEr8/gkqfnh811vvasNlXifsEy0NzcOVONYe8=; b=YBEFYIn+I+WUTJ
+	tYutxFuO2Ptcs8cLHB8EYa8CPnhjcJkrE+RMAB8H5M4jQW9AvUuLB2iHP59Yp5NKPAEYaO/hfsNNp
+	Ifx0rGB6MO8sS1KLxASZdgtgXq6rxXlS6SWgUtLX+vux1lcFe/SL4JmsGx3OHAZ+6mO9x2hXWxk6T
+	a3v4VSwqzqfh4HzyT0N2oSEz/anibgCldcck9wB8PRscqOKVB3s8AK8QGcJ2gJOUGONBQ3GQZJc5G
+	zhmlzQtsdkjui8h+QoUWGB0B5OMkrPvfjNPDkA0OE5p7QvpPF84KhIWYDUokmPCrzz4FECl2dW77Q
+	TP/ms4ccefdMgHCYW8nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOi4j-0006DO-Bh; Wed, 15 Apr 2020 13:27:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOiL8-0008MQ-Si; Wed, 15 Apr 2020 13:44:30 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOi4Z-0006D3-Lx
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:27:25 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4123120575;
- Wed, 15 Apr 2020 13:27:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586957243;
- bh=nu0zhwK3O3WL827GPYiUQRD9DU9/FqJbgDVCwstEBdU=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=yOPu9FhTgupWBGSfd2gsYbyj9oQOwVK/uGMgIR/2NuiD7gmneRJUM5ZEkmRkpYzQX
- 58Bc1zMC1IBIwLacgGc2H2bX4DsrLS1m7y1j7Fljz5gjn888++E7BJdpqvqicjkQBL
- cCJaqrwtTO5b1pzjPB5atE1SomNqDS1y4f9E/X20=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jOi4X-003Xfd-JJ; Wed, 15 Apr 2020 14:27:21 +0100
+ id 1jOiL1-0008LU-Jf
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 13:44:24 +0000
+Received: by mail-ed1-f66.google.com with SMTP id c7so4898885edl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 06:44:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Ue1uYbSCM3f3qpA8DP0y7k1ImrV8BLgfQdpHr8wCsNY=;
+ b=YPnGjBwhJQsN7l6/9Zru4midwcv4zmPJbFJ0Ay4qZbaXxSl9+eRsC1m1JVsWMN5ArJ
+ 3objc1CbdmkLjpCcxyMs6KqZfFp80lSOW7EScplIXPdy+cIZfTaqYYMSWHcFi5xZ5lSu
+ IHCppyORiKAGY2kegZ1EI7Ifrx65HYcuOftRD+aiVvAnsD/jJIYvCxD2GEQJY2Q9dPfr
+ rik1/qeHMthYME3xbVUi+4iv6YybmAW39WwFtvqqdcrbwvEfOc+yhjbi3SfhoIwjLYwl
+ HK8LZMyOMmc3E94lHF0Vsxt+r4/UmgcQm+xScd8W5MlHNV6FhapND7NNAPUdqbw1u2FY
+ L2cQ==
+X-Gm-Message-State: AGi0PubA5wgZgsDD04xFGFRceWgjCmBb3fNgwhOEY82hi2zRx1gn7kDE
+ b6G8GHZvLm1AD1H0FwJvHzM=
+X-Google-Smtp-Source: APiQypKNYzTDTcjJXJkyJ1tW3CmeNRTTMuezBm45FxKlxDAUOBaCIldgd2OqLmdaCh5e2z6JTgFDtA==
+X-Received: by 2002:a17:907:118b:: with SMTP id
+ uz11mr4894575ejb.89.1586958259236; 
+ Wed, 15 Apr 2020 06:44:19 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id bs8sm2626297ejb.92.2020.04.15.06.44.16
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 15 Apr 2020 06:44:18 -0700 (PDT)
+Date: Wed, 15 Apr 2020 15:44:15 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH v6 08/12] arm: dts: s5pv210: Add G3D node
+Message-ID: <20200415134415.GA21120@kozik-lap>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <b6733f80546bf3e6b3799f716b9c8e0f407de03d.1586939718.git.hns@goldelico.com>
+ <CAJKOXPcb9KWNAem-CAx_zCS+sZoEHYc0J8x0nk1xjY9hD4-M4w@mail.gmail.com>
+ <AB9B8741-CFF7-414D-9489-D381B539538D@goldelico.com>
 MIME-Version: 1.0
-Date: Wed, 15 Apr 2020 14:27:21 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH 1/3] KVM: arm: vgic: Synchronize the whole guest on
- GIC{D,R}_I{S,C}ACTIVER read
-In-Reply-To: <190b57e6-0ac5-63bb-57d8-5bab2aea0b2c@huawei.com>
-References: <20200414103517.2824071-1-maz@kernel.org>
- <20200414103517.2824071-2-maz@kernel.org>
- <190b57e6-0ac5-63bb-57d8-5bab2aea0b2c@huawei.com>
-Message-ID: <de0b9e06fe77238f18ffd8f1bf2f870e@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, eric.auger@redhat.com,
- Andre.Przywara@arm.com, julien@xen.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <AB9B8741-CFF7-414D-9489-D381B539538D@goldelico.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_062723_754818_00F77336 
-X-CRM114-Status: GOOD (  12.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_064423_644638_C63B4E40 
+X-CRM114-Status: GOOD (  22.14  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,89 +91,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Grall <julien@xen.org>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-omap@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ letux-kernel@openphoenux.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
-
-On 2020-04-15 14:15, Zenghui Yu wrote:
-> Hi Marc,
+On Wed, Apr 15, 2020 at 02:50:31PM +0200, H. Nikolaus Schaller wrote:
 > 
-> On 2020/4/14 18:35, Marc Zyngier wrote:
->> When a guest tries to read the active state of its interrupts,
->> we currently just return whatever state we have in memory. This
->> means that if such an interrupt lives in a List Register on another
->> CPU, we fail to obsertve the latest active state for this interrupt.
->> 
->> In order to remedy this, stop all the other vcpus so that they exit
->> and we can observe the most recent value for the state.
->> 
->> Reported-by: Julien Grall <julien@xen.org>
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>   virt/kvm/arm/vgic/vgic-mmio-v2.c |   4 +-
->>   virt/kvm/arm/vgic/vgic-mmio-v3.c |   4 +-
->>   virt/kvm/arm/vgic/vgic-mmio.c    | 100 
->> ++++++++++++++++++++-----------
->>   virt/kvm/arm/vgic/vgic-mmio.h    |   3 +
->>   4 files changed, 71 insertions(+), 40 deletions(-)
->> 
->> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c 
->> b/virt/kvm/arm/vgic/vgic-mmio-v2.c
->> index 5945f062d749..d63881f60e1a 100644
->> --- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
->> +++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
->> @@ -422,11 +422,11 @@ static const struct vgic_register_region 
->> vgic_v2_dist_registers[] = {
->>   		VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ACTIVE_SET,
->>   		vgic_mmio_read_active, vgic_mmio_write_sactive,
->> -		NULL, vgic_mmio_uaccess_write_sactive, 1,
->> +		vgic_uaccess_read_active, vgic_mmio_uaccess_write_sactive, 1,
->>   		VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_ACTIVE_CLEAR,
->>   		vgic_mmio_read_active, vgic_mmio_write_cactive,
->> -		NULL, vgic_mmio_uaccess_write_cactive, 1,
->> +		vgic_uaccess_read_active, vgic_mmio_uaccess_write_cactive, 1,
->>   		VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_PRI,
->>   		vgic_mmio_read_priority, vgic_mmio_write_priority, NULL, NULL,
->> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c 
->> b/virt/kvm/arm/vgic/vgic-mmio-v3.c
->> index e72dcc454247..77c8ba1a2535 100644
->> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
->> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
->> @@ -553,11 +553,11 @@ static const struct vgic_register_region 
->> vgic_v3_dist_registers[] = {
->>   		VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ISACTIVER,
->>   		vgic_mmio_read_active, vgic_mmio_write_sactive,
->> -		NULL, vgic_mmio_uaccess_write_sactive, 1,
->> +		vgic_uaccess_read_active, vgic_mmio_uaccess_write_sactive, 1,
->>   		VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_ICACTIVER,
->>   		vgic_mmio_read_active, vgic_mmio_write_cactive,
->> -		NULL, vgic_mmio_uaccess_write_cactive,
->> +		vgic_uaccess_read_active, vgic_mmio_uaccess_write_cactive,
->>   		1, VGIC_ACCESS_32bit),
->>   	REGISTER_DESC_WITH_BITS_PER_IRQ_SHARED(GICD_IPRIORITYR,
->>   		vgic_mmio_read_priority, vgic_mmio_write_priority, NULL, NULL,
+> > Am 15.04.2020 um 13:49 schrieb Krzysztof Kozlowski <krzk@kernel.org>:
+> > 
+> > On Wed, 15 Apr 2020 at 10:36, H. Nikolaus Schaller <hns@goldelico.com> wrote:
+> >> 
+> >> From: Jonathan Bakker <xc-racer2@live.ca>
+> >> 
+> >> to add support for SGX540 GPU.
+> > 
+> > Do not continue the subject in commit msg like it is one sentence.
+> > These are two separate sentences, so commit msg starts with capital
+> > letter and it is sentence by itself.
+> > 
+> >> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+> >> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> >> ---
+> >> arch/arm/boot/dts/s5pv210.dtsi | 15 +++++++++++++++
+> >> 1 file changed, 15 insertions(+)
+> >> 
+> >> diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
+> >> index 2ad642f51fd9..e7fc709c0cca 100644
+> >> --- a/arch/arm/boot/dts/s5pv210.dtsi
+> >> +++ b/arch/arm/boot/dts/s5pv210.dtsi
+> >> @@ -512,6 +512,21 @@ vic3: interrupt-controller@f2300000 {
+> >>                        #interrupt-cells = <1>;
+> >>                };
+> >> 
+> >> +               g3d: g3d@f3000000 {
+> >> +                       compatible = "samsung,s5pv210-sgx540-120";
+> >> +                       reg = <0xf3000000 0x10000>;
+> >> +                       interrupt-parent = <&vic2>;
+> >> +                       interrupts = <10>;
+> >> +                       clock-names = "sclk";
+> >> +                       clocks = <&clocks CLK_G3D>;
+> > 
+> > Not part of bindings, please remove or add to the bindings.
 > 
-> Shouldn't we also set this uaccess_read cb for GICR_I{S,C}ACTIVER0?
+> Well, the bindings should describe what is common for all SoC
+> and they are quite different in what they need in addition.
+> 
+> Thererfore we have no "additionalProperties: false" in the
+> bindings [PATCH v6 01/12].
 
-Duh. Yes, of course...
+If these properties are needed for Exynos-specific implementation, they
+should be in the bindings. If they are not needed, they should not be
+here.
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Take a look at midgard bindings for example. This is a nice starting
+point for these here.
+
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
