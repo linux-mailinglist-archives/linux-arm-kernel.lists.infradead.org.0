@@ -2,79 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E45B1AB0E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 21:00:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D84B61AB17F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 21:26:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=69450aWpVV+Hfa5+J0XbCRbUtGo5W0W4ZIAOYsi+oIg=; b=uQ96Z0YcnyPfZo
-	UBmbPvGlNCh2LxEUgKW7VtjKHW89zTYGqr+EsUOvZoFk1o5EjseCWTjIiBgZcJTp9mDk+k/r0J6cf
-	+gWD6BDOs5uvQgcS94J1HOBrDOQkug0G1A2ZUzRqiNk9Rri6vtWnvjp7RZlUL0Xc1P71M7n5KxMjE
-	vDMX+wmdNZJKUtS6ZfN0+VP5b9TrZzdow5G230bC48a2M6lLHJXH3lGnEFLFdCD4aNkcHEJYh2rYn
-	LnQvSO8a3qMqILR2uAhX1qxt6EjqhUJ2X9LwydcQccUI1iZ4krLHerlu8c3da+at8B2jqzstRK73h
-	6PwyNkYiMW40fgX9okZg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xmQ2k/VOJefVsSYsUyGswZKpM0A9Tezx2bVWrms62b8=; b=h/N1Xt0YpRvgRG
+	/rrVyujZ3t+G14alXxouEa+G7jF5FLgPlguGv0mvVEL5D9U8R/DRtMXUjwhxTYDVK/HZxUKP9rtE6
+	YOChlXj5BS/Wi53XLtEPdgNVNPftFhR5yrZFIvEtIyL2kZM9G6Y4vST37yMwbFuwjhchziNg2rcVH
+	c+BW8Sg6T6XJBZXET7A+crNdRjvFMCZF0g6MSzY2MwdhA7HIqRep7NvbmNTdSSvqTtdUR0ywcyhLc
+	UxfKWXMC4F5cryixNTkzY52FO6xMWT6rx/szkmbqVOrJHQW8EbJq5Rx0lFme/YcC7heKxd1SSX00T
+	PbvnDQi3VvkAnUzHIoGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOnGi-0004xV-Pz; Wed, 15 Apr 2020 19:00:16 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jOnfs-0006Tb-6n; Wed, 15 Apr 2020 19:26:16 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOnGO-0004x7-DA
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 18:59:57 +0000
-Received: by mail-qt1-x844.google.com with SMTP id 71so14238868qtc.12
+ id 1jOnfl-0006T2-Q5
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 19:26:10 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q22so5055577ljg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 11:59:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RyFFovUkxx1rRXT+frGOD7qB7e/9xE+euu5Cd6lJq4c=;
- b=kdnLIyt9To6zO7rsfPXTcuWddDq/l+SqTQGPb6OJO7UzXiHLCejvNEG29BX7U1kCHC
- 9BcCz4W/NyEsWUK5RAmbyD0HlwRBF2KHqqUGz/LR2D66x7Z8CKaZXNHkGxk7KJHrrmtY
- rhgFC6uJL6nCFTg620RyEmK48mczHX+JeM3m8=
+ Wed, 15 Apr 2020 12:26:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yEerOtnVW9ReUwhRZoIaZrpuT6uVSPq8/qTkpaJjzuA=;
+ b=la6Ifd5mctiojkxzlf3AZj7V6OkRYDgq28hif+VciJJN1wUH96THFJ23JXYosHaMWx
+ NjR3wB8DgAL53DLVyDdlCePvXfn7oyccyILjV2iwRbWrR9YM2dVp3JANlsgJ/dhm4dQw
+ DfrAKi2Hz7xaSg4SMlt1+qcrsIiSpg8EcxaUaF0kqGGyQbm/Bkty91BuMJ+ynyFHjx7g
+ r0yaWYI8a4fEdvxBrKi4vuBwkxg6jWC4dDEW5oy7LlQAwaXPrI7YcevVmUGAWy04/m9g
+ /FFzls0Tky61cMNOO2WNKdD9FkTrHvnLEDVyGlutqk+bw2eckX+vhwHQXPqxWBAnRgQ4
+ Da7g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RyFFovUkxx1rRXT+frGOD7qB7e/9xE+euu5Cd6lJq4c=;
- b=HnZAhI7ZXez5kJKiCKyReLwlzzBOvrEWnXtLa08NleQU8HpruMa5H+ftVlHDrglK1A
- HPlCTREbBL/hNaxjYRJI6tatXmZdBEUE5sp7KbGtg4m+N6aiftHYAlu09BhMRhyIoRPg
- Z5O8QimH/QgkxLws8/GBiEvThax/8itWUC3W2YU1/jyk4FkSN9vEZfFZBZl7raxY8loq
- Yg/UORJoEXWr+ZtxkYqMOOypt0VDRZ/HE+pNGN5Fg3FmnVr2OZsUl/R8mshoEWYM4nha
- vW5KzPNQBY9Ejrth/AO9G9dEbvq4g1mrFkBIuKP50Yy5xcyK4pIHVMZURYsXDZigUWP2
- /p8A==
-X-Gm-Message-State: AGi0PuYE4k9QQ8FTRa60FmThgV68Nu+PM1v+K0ozmCFWNvE2yrJOUpiK
- Fsk397bCqtWNDdItICRms8iCnw==
-X-Google-Smtp-Source: APiQypIaMkbmxh/Zsj/TW3PrwAt99zbsgCP4222dba10JjDcBv89JvF63UyYrU5GKpKM/SdIfPV8cA==
-X-Received: by 2002:ac8:4ccc:: with SMTP id l12mr22717549qtv.129.1586977195010; 
- Wed, 15 Apr 2020 11:59:55 -0700 (PDT)
-Received: from bacon.ohporter.com ([2605:a000:1234:47c6:a553:c33f:1562:b0b1])
- by smtp.gmail.com with ESMTPSA id
- z187sm313355qka.69.2020.04.15.11.59.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 11:59:54 -0700 (PDT)
-From: Matt Porter <mporter@konsulko.com>
-To: Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH] arm64: dts: imx8mm: specify #sound-dai-cells for SAI nodes
-Date: Wed, 15 Apr 2020 14:59:41 -0400
-Message-Id: <20200415185941.13956-1-mporter@konsulko.com>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yEerOtnVW9ReUwhRZoIaZrpuT6uVSPq8/qTkpaJjzuA=;
+ b=LPdeSaiWx169B9Qjz0p6/U0ZS2UEB5wrqscL97oLrPOSCegXPNuytdQpVUtz+6YXZC
+ Qbo47aG2B5faVsUbZt8V1KRoeGDdoMx9VMd1Wms3gb6/uIZg3mBr2QJEFX5RcXNSaZSa
+ t3rg4l0sUdXg443a7rp92sK/9QLUIdytAVGFUM7SZOYiSXiEKPWIKXRv4iS6rHKWwHuj
+ eX/6A9YYqu8fVgHXWJLlLj+9q4UAE6CijrXeeas63W0SSJCuyO+9OaMy1bIK2O6WCzOb
+ fQC73SoJ9gXbU3f3e5Ru9xTKUzBdcLVbcSDbjvKpm5s0f+L1tl9eay7GrSiMWSwkFTm5
+ 8SAw==
+X-Gm-Message-State: AGi0PubuRnwFnkQVbut8OeB0RTxJeafOAOsxv8Fjs82GDkZ0qxF3L4gX
+ 24XFAAp7y2skNvZNC7iwWCyfONEh/HnYCs5oCdI=
+X-Google-Smtp-Source: APiQypJXYy+GeInxhHxdIoYEC7BRlvmB+2gusgqFCjO+/tFRcwuY8FsLZ2/VepirEG/UjnrzbEuus26C3gedMNa7o0g=
+X-Received: by 2002:a2e:7006:: with SMTP id l6mr4088422ljc.269.1586978765639; 
+ Wed, 15 Apr 2020 12:26:05 -0700 (PDT)
 MIME-Version: 1.0
+References: <E1jOkD3-00067R-RZ@rmk-PC.armlinux.org.uk>
+In-Reply-To: <E1jOkD3-00067R-RZ@rmk-PC.armlinux.org.uk>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 15 Apr 2020 16:26:35 -0300
+Message-ID: <CAOMZO5Ahj9XRk-hG8ZxVzQP1424qPCkNX4BuWDJs-NW5f-jvAg@mail.gmail.com>
+Subject: Re: [PATCH] arm: dts: imx6-sr-som: add ethernet PHY configuration
+To: Russell King <rmk+kernel@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_115956_442380_0B0C2C4D 
-X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-CacheID: sfid-20200415_122609_845064_810C6AAB 
+X-CRM114-Status: UNSURE (   8.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -83,6 +79,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,63 +94,31 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Anson Huang <Anson.Huang@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add #sound-dai-cells properties to SAI nodes.
+Hi Russell,
 
-Signed-off-by: Matt Porter <mporter@konsulko.com>
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+On Wed, Apr 15, 2020 at 12:44 PM Russell King
+<rmk+kernel@armlinux.org.uk> wrote:
+>
+> Add ethernet PHY configuration ahead of removing the quirk that
+> configures the clocking mode for the PHY.  The RGMII delay is
+> already set correctly.
+>
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index cc7152ecedd9..8453a657cb5e 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -270,6 +270,7 @@
- 			ranges = <0x30000000 0x30000000 0x400000>;
- 
- 			sai1: sai@30010000 {
-+				#sound-dai-cells = <0>;
- 				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
- 				reg = <0x30010000 0x10000>;
- 				interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
-@@ -283,6 +284,7 @@
- 			};
- 
- 			sai2: sai@30020000 {
-+				#sound-dai-cells = <0>;
- 				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
- 				reg = <0x30020000 0x10000>;
- 				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
-@@ -310,6 +312,7 @@
- 			};
- 
- 			sai5: sai@30050000 {
-+				#sound-dai-cells = <0>;
- 				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
- 				reg = <0x30050000 0x10000>;
- 				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-@@ -323,6 +326,7 @@
- 			};
- 
- 			sai6: sai@30060000 {
-+				#sound-dai-cells = <0>;
- 				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
- 				reg = <0x30060000 0x10000>;
- 				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
--- 
-2.20.1
-
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
