@@ -2,75 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0DE81A96BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:37:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2BE21A9707
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:41:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CIzoUi84RfY3h3R/pU+MB5OfGbF3tPfGQF8Abt7Xbvg=; b=ZwhOzk0oJ4iWNz
-	biFRzFKG1XI3E95ihbIWVKxpT3pQCdoyFj0hzNLybAuTFYZZ2kgaP8vcmEExiYyU0GtPpI9B3TfFO
-	taNskiYgGo0Dh4foGEAPPvCclgXiu/A3FMms9MC9yJl5D6K7+eu+rQTD9cOBYOyHadjUPdJizM2V1
-	bBEBP/t0cnyyw1IwU80Fn8PbvllBsHkd3uvQEkbmWzinJtkEYyZMsnvt7FwDxUziBe9qWi/XkGVq3
-	sTq8QddtCBPjr8UaPyx5FNwj5bRQXj+WIAd3dfmuqpbtD2fesnoooaaPF1y1Cz8MdmklqqK4n96c6
-	jT1BkSMGCwyNi16jbGVQ==;
+	List-Owner; bh=KSLYe1p1GfML6ubqhYfIEYLQODqe3tSoKPDIjTG7Axw=; b=DCWmmaixaYARF6
+	5NAQHABu8t2A8pYdM2fOXmrRiS6xIYrM9q0FhOz406sTISlr28LL9V73NfxSWjvLqxTpYHyCxpKOv
+	gWHkcOO/CFRtjS3UyTQfxKOIAehemyhbchnNgErVLXLI2iZCqaw8KEQ0oqY744SY65nEJawQh6+m8
+	ijOJvuY15Hlo7jdi04ofzHmVVk57iS+rMz6uhsMAAHwfXlcl3hQ6tLVz7rT+wFQTpusPPeA7hS8MR
+	/MB1tk0y0XG4vqnyfm58M4YA001s+KdJhjCGKWqVRRBCZWyWQRUPwgeDOcgKiEiyonbYCn8hQHdzm
+	DRzJGjEJ2HDbwddFGm6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdYA-0000s8-Ai; Wed, 15 Apr 2020 08:37:38 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::6])
+	id 1jOdc5-00077X-9s; Wed, 15 Apr 2020 08:41:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdWK-0007tV-QY
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:35:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586939740;
- s=strato-dkim-0002; d=goldelico.com;
- h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=1Ik0W52h1P3DqsEKervnuYBLHYDwAO17lsngt7yWHqw=;
- b=Amxq3B73A3709dID7uZOkOWdOUlGXA3pk7mDSWGOEzes9TMVi/NQNMar1bav08ZdeV
- R7NtcONdZlIelmJab2wXt2WToGyCNAZXjFojpRmI5HjPvsd1HKypg/x/3sV8ocBqkC/9
- KvLvVTW7TnRQru+vTLrdGoVe1QgUcDHJwTP+Mr6iDosnmLjwQ8NZrRJpE0ShpR4viXjZ
- 68dki/zGsxFke+wNZGp42SWCC5mVFLzYGvBA7xyGwg7EBrN5NZpAHYNDJfrBlOES6q4r
- djXxSDLI3oyTVZ1WEu5g2uAIsd+bFlaye0ixcwtYpH0w5JPk1eOvZhhpjAlmbSKej1gk
- KVBw==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7O2CKN9ej"
-X-RZG-CLASS-ID: mo00
-Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
- with ESMTPSA id 6028a2w3F8ZU0Iy
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Wed, 15 Apr 2020 10:35:30 +0200 (CEST)
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
- Tony Lindgren <tony@atomide.com>, Paul Cercueil <paul@crapouillou.net>,
- Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paulburton@kernel.org>,
- James Hogan <jhogan@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v6 12/12] MIPS: DTS: jz4780: add sgx gpu node
-Date: Wed, 15 Apr 2020 10:35:19 +0200
-Message-Id: <2ee64babb11f79fe4a03b7bad6c94fbbe0ce4b64.1586939718.git.hns@goldelico.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <cover.1586939718.git.hns@goldelico.com>
-References: <cover.1586939718.git.hns@goldelico.com>
+ id 1jOdZa-0002RT-KM
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:39:08 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 53C5F20784;
+ Wed, 15 Apr 2020 08:39:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586939945;
+ bh=vgNL0nmxrNPZ77iSc+eqLDS1hNmohky3P8MkxPGmAFA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=U/2uDTJR7FC0k32qoEiGioaWSwb1ZZWOJ9hs8ZtYeWAFOHNFWRXjQDsw3r2cccbU/
+ 27jZ6EIUfis7cAXG/AcJfLg0x2+lpN49155UspngL+DW+aLwR03YQx8JA6TDSWT8r5
+ F5a3WwG1lahUmy6ccF0Susi1Ab+JbcBQ6rQGbUuI=
+Date: Wed, 15 Apr 2020 09:39:00 +0100
+From: Will Deacon <will@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for
+ removing it entirely
+Message-ID: <20200415083900.GA12621@willie-the-truck>
+References: <20200415082922.32709-1-ardb@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200415082922.32709-1-ardb@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_013545_002421_9C267744 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_013906_705237_E2C0FE04 
+X-CRM114-Status: GOOD (  16.75  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,56 +77,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
- Philipp Rossak <embed3d@gmail.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
- openpvrsgx-devgroup@letux.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- Paul Boddie <paul@boddie.org.uk>, linux-samsung-soc@vger.kernel.org,
- kernel@pyra-handheld.com, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-and add interrupt and clocks.
+On Wed, Apr 15, 2020 at 10:29:22AM +0200, Ard Biesheuvel wrote:
+> TEXT_OFFSET on arm64 is a historical artifact from the early days of
+> the arm64 port where the boot protocol was basically 'copy this image
+> to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
+> to put the swapper page tables. When the arm64 port was merged for
+> v3.10, the Image header already carried the actual value of TEXT_OFFSET,
+> to allow the bootloader to discover it dynamically rather than hardcode
+> it to 512 KB.
 
-Tested to build for CI20 board and load a driver.
-Setup can not yet be fully tested since there is no working
-HDMI driver for jz4780.
+Hey, we're older than that! (3.7)
 
-Suggested-by: Paul Boddie <paul@boddie.org.uk>
-Tested-by: H. Nikolaus Schaller <hns@goldelico.com> # CI20.
-Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
----
- arch/mips/boot/dts/ingenic/jz4780.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+> Today, this memory window is not used for any particular purpose, and
+> it is simply handed to the page allocator at boot. The only reason it
+> still exists is because of the 512k misalignment it causes with respect
+> to the 2 MB aligned virtual base address of the kernel, which affects
+> the virtual addresses of all statically allocated objects in the kernel
+> image.
+> 
+> However, with the introduction of KASLR in v4.6, we added the concept of
+> relocatable kernels, which rewrite all absolute symbol references at
+> boot anyway, and so the placement of such kernels in the physical address
+> space is irrelevant, provided that the minimum segment alignment is
+> honoured (64 KB in most cases, 128 KB for 64k pages kernels with vmap'ed
+> stacks enabled). This makes 0x0 and 512 KB equally suitable values for
+> TEXT_OFFSET on the off chance that we are dealing with boot loaders that
+> ignore the value passed via the header entirely.
+> 
+> Considering that the distros as well as Android ship KASLR-capable
+> kernels today, and the fact that TEXT_OFFSET was discoverable from the
+> Image header from the very beginning, let's change this value to 0x0, in
+> preparation for removing it entirely at a later date.
 
-diff --git a/arch/mips/boot/dts/ingenic/jz4780.dtsi b/arch/mips/boot/dts/ingenic/jz4780.dtsi
-index bb89653d16a3..883fe2c4c9e1 100644
---- a/arch/mips/boot/dts/ingenic/jz4780.dtsi
-+++ b/arch/mips/boot/dts/ingenic/jz4780.dtsi
-@@ -357,6 +357,17 @@ i2c4: i2c@10054000 {
- 		status = "disabled";
- 	};
- 
-+	gpu: gpu@13040000 {
-+		compatible = "ingenic,jz4780-sgx540-130", "img,sgx540-130", "img,sgx540";
-+		reg = <0x13040000 0x4000>;
-+
-+		clocks = <&cgu JZ4780_CLK_GPU>;
-+		clock-names = "gpu";
-+
-+		interrupt-parent = <&intc>;
-+		interrupts = <63>;
-+	};
-+
- 	nemc: nemc@13410000 {
- 		compatible = "ingenic,jz4780-nemc";
- 		reg = <0x13410000 0x10000>;
--- 
-2.25.1
+Can we kill CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET at the same time please?
+It seems less useful now than ever and it would move us closer to removing
+the TEXT_OFFSET definition entirely (but maybe we should wait a couple of
+cycles before doing that... what do you reckon?).
 
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
