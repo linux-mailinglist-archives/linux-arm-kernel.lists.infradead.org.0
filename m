@@ -2,80 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AA8D1AB23B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 22:02:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1C4C1AB244
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 22:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=m86C0RGZJmSjLfyT4/Pvonhwwcy9TySSKz1BfjU0mZE=; b=Ilp
-	pPaxqHtoybtOE3mTfxhKEqOSNmQ+Jt3YQTIBrWM64iiwtiN6gCffbLTnaDqzPVr85kNa4qnmf1aDE
-	hDsHmEd/gGh10q93bBqc92kmM1fKTeyxlcchw7NtTH8wVY0Lk/tBVVzmGyBb1kyv+S9Vc/fPTez3N
-	CoIO9RZYJsCODtYaUmsPrgbsmzlNlBH7yvu0LT4Vu28kcY/9XoNWWLi/jzRZz1BhGiunUDKewWwEX
-	RYQSvqOjsapfw9V2qM5I5cPYYQ1iid7IChvTHuA7y0d85ylq0fAWIWsxi2YInLrEpVVzabPQRteVl
-	4P+9RSnJUnFJIGE1j2MZEPujuU0Z+YQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4EbwTKHcRY+XSWwj82GFgK+BsVwinyUa/WLKmKXZ1qw=; b=P94yJxd0NlavuC
+	5GFRXR4LEtqro0cU4IobpeBT2Oa+9gcKFSdzhJ21D3pdtB9K21EtxOg0FITE9Kx4hzvtFQkAUNirh
+	N9bAlLtZAq0YY7dcBdAzbBVCw07IgddPfEolf2WZ01hl8Ixp6Eq/E43XFelf7hRyxuOlpZtZtV6Et
+	jbR9wcAxdp5jkQcHbZ5nZuq0CnkxQr3JFRHtoGMr5pLRPOam+nopkjUeJvn21yKYiuwgNWSLLyS1+
+	KpV2hjepO2uELrNauqXmJYOPWPvjmWBWz3adnK00v3r3gMtpLJg6rGEQiPWMwXo9113mouWVsZBAW
+	svALJNd5vt5VhVXHtbDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOoEZ-0007GY-8A; Wed, 15 Apr 2020 20:02:07 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jOoJ0-0002I6-NL; Wed, 15 Apr 2020 20:06:42 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOoES-0007Fu-Q4; Wed, 15 Apr 2020 20:02:02 +0000
-Received: by mail-wm1-x344.google.com with SMTP id d77so1186996wmd.3;
- Wed, 15 Apr 2020 13:01:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=iCP6LoyFxExRJqxqIqO0ZCtpb3X9pIKnl0AtHQmrXjs=;
- b=d7QuDTSV3oT/GjNp4OI65qjAjBfFkEo24nuK8zFcOZnpgc4WHnAIJ8SmZNfPyM+nEw
- f1TGgcn+brikUxKXefZQn5XLEFe0rK7FFcAVWUjox8ZkUarOdcilxFfrVUWuE9dEyMvJ
- Mm/TnZZnifu8z6mOSWxAgjq2gtcWOhmZkGm1szp7nXtwAvD9T4f8gHAEv0QSxAVp9rx3
- HlJMAxZCU4uBPzH5GfScEBZNvTjWjkqjcK+DmgRK19x5a6P7AeVaSjRwcQezDFj+rSci
- xgxzBLKCXrHAGxCEebROVLDuC/030ioyihdjtlwmIY+/HRsocdtcI6JET7qhdqXOynsk
- oKcQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=iCP6LoyFxExRJqxqIqO0ZCtpb3X9pIKnl0AtHQmrXjs=;
- b=JUT7gzn58+3ue914g51GuejXUYvnO7xIn8k/EE6M4ShUbCNgPCtgdZy+Pg6JEhtkuV
- PqZX3LrMoveTYO3/N0jXHIP7ql/WZ9qpkbyoBAVAArzu2M/vDsvOdICqLNmUFsFdprBu
- EWpsqnohWxkShUUXGX0/2hKmw26suKjqauIf6Jw7WHWaKT3k5iF42VpRPXZJ1Euro77W
- I/XAmMyhTf/GLx4yW1EHPkHguKpqLccWPD/VfvPG/UN9zR0RmVQyfH8zZOq0xw5JpARt
- XlgmyL3rtTGsVCTkXi+Hf1549s0qw9JpEXp730n1GyAjGzJ7dz/8WosK1Fgfc84y9GQZ
- zPJQ==
-X-Gm-Message-State: AGi0PuYkQC23OGjBltDDq3cBh7qIojQ4VAuG1751iKWBWcwuXPhRKiCL
- zYyHE4yqyRETSs7mMSUIaWM=
-X-Google-Smtp-Source: APiQypIZiSysEEnEGOfY5fZpJcuccPWd4eDhfIDnRcThA/tstm0tS7BGJk0WDy4K33IfCgeGWrNurQ==
-X-Received: by 2002:a1c:1b58:: with SMTP id b85mr896338wmb.112.1586980916609; 
- Wed, 15 Apr 2020 13:01:56 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id s6sm736184wmh.17.2020.04.15.13.01.55
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 Apr 2020 13:01:56 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] dt-bindings: net: ethernet-phy: add desciption for
- ethernet-phy-id1234.d400
-Date: Wed, 15 Apr 2020 22:01:49 +0200
-Message-Id: <20200415200149.16986-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jOoIs-0002Gm-S7
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 20:06:37 +0000
+Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id A3EE95C07A7;
+ Wed, 15 Apr 2020 22:06:27 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1586981187;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=18e6r5y/jgXADhhgiX3R6vif1YdVTFwaHH058p3heBc=;
+ b=kzCXjBTXYRcKiwbTlcwjtNog8tdHIMY90JOBql07rNRqIMwQCIZoGNCieVInoqLmPhYZwm
+ 4k8P+IzP+CWSyghxueLPF6FHo9o0Wq/NYnUnX48Qv68wgwdblpR+IsAkpJeT0Xz2uQE46I
+ lghJiyJ2GG3Sm5jm1slWnNgNuLwtqOg=
+MIME-Version: 1.0
+Date: Wed, 15 Apr 2020 22:06:27 +0200
+From: Stefan Agner <stefan@agner.ch>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH] ARM: replace the sole use of a symbol with its definition
+In-Reply-To: <CAKwvOdk3YG5TFD71E-9vPqssFZW1U3umCR+AWLLp8RZK2zHGsw@mail.gmail.com>
+References: <20200407190558.196865-1-caij2003@gmail.com>
+ <CAKwvOdk3YG5TFD71E-9vPqssFZW1U3umCR+AWLLp8RZK2zHGsw@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.4.1
+Message-ID: <a6964b6f784266838070f434110661f3@agner.ch>
+X-Sender: stefan@agner.ch
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_130200_866667_6F06B933 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200415_130635_351856_233BE6F1 
+X-CRM114-Status: GOOD (  21.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,45 +75,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, f.fainelli@gmail.com, devicetree@vger.kernel.org,
- netdev@vger.kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
-MIME-Version: 1.0
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Russell King <linux@armlinux.org.uk>, LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Manoj Gupta <manojgupta@google.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Enrico Weigelt <info@metux.net>, Jian Cai <caij2003@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The description below is already in use in
-'rk3228-evb.dts', 'rk3229-xms6.dts' and 'rk3328.dtsi'
-but somehow never added to a document, so add
-"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
-for ethernet-phy nodes on Rockchip platforms to
-'ethernet-phy.yaml'.
+On 2020-04-13 20:29, Nick Desaulniers wrote:
+> On Tue, Apr 7, 2020 at 12:09 PM Jian Cai <caij2003@gmail.com> wrote:
+>>
+>> ALT_UP_B macro sets symbol up_b_offset via .equ to an expression
+>> involving another symbol. The macro gets expanded twice when
+>> arch/arm/kernel/sleep.S is assembled, creating a scenario where
+>> up_b_offset is set to another expression involving symbols while its
+>> current value is based on symbols. LLVM integrated assembler does not
+>> allow such cases, and based on the documentation of binutils, "Values
+>> that are based on expressions involving other symbols are allowed, but
+>> some targets may restrict this to only being done once per assembly", so
+>> it may be better to avoid such cases as it is not clearly stated which
+>> targets should support or disallow them. The fix in this case is simple,
+>> as up_b_offset has only one use, so we can replace the use with the
+>> definition and get rid of up_b_offset.
+>>
+>> Signed-off-by: Jian Cai <caij2003@gmail.com>
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/net/ethernet-phy.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+Thanks for tackling this!
 
-diff --git a/Documentation/devicetree/bindings/net/ethernet-phy.yaml b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-index 8927941c7..5aa141ccc 100644
---- a/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-+++ b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-@@ -45,6 +45,9 @@ properties:
-           bits of a vendor specific ID.
-       - items:
-           - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
-+          - const: ethernet-phy-ieee802.3-c22
-+      - items:
-+          - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
-           - const: ethernet-phy-ieee802.3-c45
- 
-   reg:
--- 
-2.11.0
+> 
+> Probably didn't need the extra parens, but it's fine (unless another
+> reviewer would like a v2).  Maybe Stefan has some thoughts?
 
+Since this is a processor macro I actually prefer to have parentheses
+here. All use sites of ALT_UP_B pass just a label, but still, just to be
+on the safe side.
+
+I was wondering why equ has been used in first place. I don't see an
+advantage other than having a symbol which can be checked. But given
+that this code is stable and don't really need debugging at this point,
+I am fine replacing this to make it work for clang.
+
+
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+> 
+> Please add Link tags if these correspond to issues in our link
+> tracker, they help us track when and where patches land.
+> Link: https://github.com/ClangBuiltLinux/linux/issues/920
+
+Agreed, please add the link. You can add this when submitting.
+
+With that:
+Reviewed-by: Stefan Agner <stefan@agner.ch>
+
+--
+Stefan
+
+> 
+>> ---
+>>  arch/arm/include/asm/assembler.h | 3 +--
+>>  1 file changed, 1 insertion(+), 2 deletions(-)
+>>
+>> diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+>> index 99929122dad7..adee13126c62 100644
+>> --- a/arch/arm/include/asm/assembler.h
+>> +++ b/arch/arm/include/asm/assembler.h
+>> @@ -269,10 +269,9 @@
+>>         .endif                                                  ;\
+>>         .popsection
+>>  #define ALT_UP_B(label)                                        \
+>> -       .equ    up_b_offset, label - 9998b                      ;\
+>>         .pushsection ".alt.smp.init", "a"                       ;\
+>>         .long   9998b                                           ;\
+>> -       W(b)    . + up_b_offset                                 ;\
+>> +       W(b)    . + (label - 9998b)                                     ;\
+>>         .popsection
+>>  #else
+>>  #define ALT_SMP(instr...)
+>> --
+>> 2.26.0.292.g33ef6b2f38-goog
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
