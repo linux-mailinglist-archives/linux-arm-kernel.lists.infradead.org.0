@@ -2,78 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 630D01A98CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:26:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BF3F1A98E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 11:29:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=awn3dNizUwOER9hCvRCBh6JOfL4H4KMXJOoi/kYBnPs=; b=u67XaV4Rb2JcQY
-	sDHc67HSHe1ApuY2lK4EJ+UU+dlrErNtJzNQoJv/1wsF/6EbUeH6ukqICnk5ZRk4wlGgYXLKgy9X9
-	eJbtGBBdwixjpe5gmNkVDgNq3TYxfvSSmXBMZ3HtF+vyuuLqG7vwYamZKJtlq/vdGRjxs5IdYXWx1
-	mr6vY7RpI+tuQdSjphr5ZO8eHClNqnaBXosQi3/NDZ+zHgBWVI0zRJQmhequapTVfQd6VJJEogx+z
-	yGEKRuLztc96mzpWnprHbR6NRyA6OmjOo/NfbVBrhYXLgNLSTiTuRCRCMXhQfAtE/PPNF5LcViv+I
-	aYMsUIC+f4uRVhXnhUsA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iiSQrFXrU4fKa/jD3am4v3nxStElWc/8St9JGb1URL4=; b=n6kkYsX94EqB3bHUqFq5zNAhz
+	CEHIUBKnC+qG1dbDzGry6c2XVh+b9ii+YOH6PBJSb40pwWNJOIKrqCjKFda0WCDk3+9PwvqwHw4EI
+	RncP5fByDGapezxuXXR32+rmGw63/vlydwhUYIbNIzLlkMAODVtIozPiY9K+UH7nQrwwGLAgwwg5P
+	Yhs1QIbPCR2qlPUAdRf7LqTdNhAx8VwtODT99bPY7K8pqnF2KnQptgR99nHTpUI6EmOXKJM6JvPWp
+	AHtEc9mjcWbXwQZ1WrsD2Tpd0onnCrPU3b0NGJxmKdpJe9juZqL9gBvJcUwOnmkdDY/OEqz9IZyZ7
+	j63NhiNDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOeJl-0008TN-UG; Wed, 15 Apr 2020 09:26:49 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::12])
+	id 1jOeMK-0000VY-Rd; Wed, 15 Apr 2020 09:29:28 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOeJe-0008SV-Af
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:26:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586942800;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=QSUY1yUiWe9X6ZGNIO1eH3insGRwBB0CwHRK6fHg7uQ=;
- b=ew2hkkIGaSqWtejAQY4GJ8tm93/sg6sqSqehzzs4+zx4pKfBt9SnIxt/R8dXSP7WB8
- NhzFigd69oGHErabgTT05z8p71Eum2xDHvVGi2lRiu8YVz18ouIpwnSG/tyIe6F4y2fv
- dxCzOAH+k3DttU7669WC9hmJNs4PFM95x6uwtQk+3EqazO7mxHyP1GmmWdG2cDqPmrvH
- DZ1aKJelLLfYF333LVi+FzEd32U/8ypWo7Zq78OvNQbTO6kkOPZLh/QuJTc+xez1/wBL
- ScGnzy8FeZdMmZiJ2Z3I3LtpWe2y8k9uhrzkPWlwkD4b+pTWDjC81i5Ogo2PODDjkqwe
- s1Kw==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/PtwDConyM="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
- with ESMTPSA id 6028a2w3F9Qa0oW
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Wed, 15 Apr 2020 11:26:36 +0200 (CEST)
-Subject: Re: [PATCH v6 08/12] arm: dts: s5pv210: Add G3D node
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <b6ffa74a-acef-f329-0d9e-981483499e16@cogentembedded.com>
-Date: Wed, 15 Apr 2020 11:26:35 +0200
-Message-Id: <B1E898A7-73BB-4C20-98D2-2D32F0DC170F@goldelico.com>
-References: <cover.1586939718.git.hns@goldelico.com>
- <b6733f80546bf3e6b3799f716b9c8e0f407de03d.1586939718.git.hns@goldelico.com>
- <b6ffa74a-acef-f329-0d9e-981483499e16@cogentembedded.com>
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
- Jonathan Bakker <xc-racer2@live.ca>
-X-Mailer: Apple Mail (2.3124)
+ id 1jOeM2-0000Sk-Hp
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 09:29:12 +0000
+Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 592458CC5CBB1DAE4D56;
+ Wed, 15 Apr 2020 10:28:52 +0100 (IST)
+Received: from [127.0.0.1] (10.47.0.131) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Wed, 15 Apr
+ 2020 10:28:51 +0100
+Subject: Re: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
+To: Joakim Zhang <qiangqing.zhang@nxp.com>
+References: <20200222104621.2258-1-qiangqing.zhang@nxp.com>
+ <6dbeabcf-c15a-0bbd-cef4-b25d0133854f@huawei.com>
+ <DB7PR04MB4618D2E1892120EB659B8695E6EC0@DB7PR04MB4618.eurprd04.prod.outlook.com>
+ <2f81eb7a-a6e4-1cc6-cd0a-ca3d749bd552@huawei.com>
+ <DB7PR04MB4618C0A8DD9BAB2A529CDCECE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
+ <a2cc0772-4f5d-aba3-1f5c-7d4eef7a3f72@huawei.com>
+ <DB7PR04MB461803AD15E47AA880F0915DE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
+ <55836919-41b5-0834-f7a7-1a2a34535677@huawei.com>
+ <bd67910e-1522-39cd-5527-b9b18f3da96d@huawei.com>
+ <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
+ <ccab39b0-c84f-e529-4067-07466b5433a1@huawei.com>
+ <VI1PR04MB68000808CEE4BC23403C35A0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
+ <ca2db002-975a-ffe0-2dfc-c85f4e6205bb@huawei.com>
+ <VI1PR04MB6800F2A5949F0AFAF2E82CE0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <0b3999b8-c307-6b4a-1a1b-e90b45f50b61@huawei.com>
+Date: Wed, 15 Apr 2020 10:28:16 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
+MIME-Version: 1.0
+In-Reply-To: <VI1PR04MB6800F2A5949F0AFAF2E82CE0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
+Content-Language: en-US
+X-Originating-IP: [10.47.0.131]
+X-ClientProxiedBy: lhreml735-chm.china.huawei.com (10.201.108.86) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_022642_955537_F1639167 
-X-CRM114-Status: GOOD (  10.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_022910_734213_3C9AAB93 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:12 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,64 +81,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- Paul Cercueil <paul@crapouillou.net>, linux-samsung-soc@vger.kernel.org,
- letux-kernel@openphoenux.org, Paul Burton <paulburton@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- devicetree@vger.kernel.org,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Zhangshaokun <zhangshaokun@hisilicon.com>, "will@kernel.org" <will@kernel.org>,
+ Linuxarm <linuxarm@huawei.com>, "acme@kernel.org" <acme@kernel.org>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Jiri Olsa <jolsa@redhat.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sergei and Jonathan,
+On 08/04/2020 12:41, Joakim Zhang wrote:
+>> That code should be effectively the same.
+>>
+>> What does perf list show for the metrics now?
+> root@imx8mmevk:~# ./perf list ddrc
+> 
+> List of pre-defined events (to be used in -e):
+> 
+> 
+> ddrc:
+>    imx8_ddr.cycles
+>         [ddr cycles event. Unit: imx8_ddr]
+>    imx8_ddr.read
+>         [ddr read event. Unit: imx8_ddr]
+>    imx8_ddr.read_cycles
+>         [ddr read-cycles event. Unit: imx8_ddr]
+>    imx8_ddr.write
+>         [ddr write event. Unit: imx8_ddr]
+>    imx8_ddr.write_cycles
+>         [ddr write-cycles event. Unit: imx8_ddr]
+> 
+> root@imx8mmevk:~# ./perf list metric
+> 
+> List of pre-defined events (to be used in -e):
+> 
+> 
+> Metrics:
+> 
+>    imx8mm_ddr_read.all
+>         [bytes all masters read from ddr based on read-cycles event. Unit: imx8_d
+> dr ]
+>    imx8mm_ddr_write.all
+>         [bytes all masters write to ddr based on read-cycles event. Unit: imx8_dd
+> r ]
+> 
+> root@imx8mmevk:~# ./perf stat -a -I 1000 -v -M imx8mm_ddr_read.all
+> Using CPUID 0x00000000410fd040
+> adding
+> event syntax error: ''
+>                        \___ parser error
+> 
+>   Usage: perf stat [<options>] [<command>]
+> 
+>      -M, --metrics <metric/metric group list>
+>                            monitor specified metrics or metric groups (separated by ,)
+> 
+> It seems that metricgroup fails to parse the metric expression.
+> metric.json:
+> [
+>     {
+> 	    "BriefDescription": "bytes all masters read from ddr based on read-cycles event",
+> 	    "MetricName": "imx8mm_ddr_read.all",
+> 	    "MetricExpr": "imx8_ddr.read_cycles * 4 * 4",
+> 	    "ScaleUnit": "9.765625e-4MB",
+> 	    "Unit": "imx8_ddr",
 
-> Am 15.04.2020 um 11:15 schrieb Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>:
-> 
-> Hello!
-> 
-> On 15.04.2020 11:35, H. Nikolaus Schaller wrote:
-> 
->> From: Jonathan Bakker <xc-racer2@live.ca>
->> to add support for SGX540 GPU.
->> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
->> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
->> ---
->>  arch/arm/boot/dts/s5pv210.dtsi | 15 +++++++++++++++
->>  1 file changed, 15 insertions(+)
->> diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
->> index 2ad642f51fd9..e7fc709c0cca 100644
->> --- a/arch/arm/boot/dts/s5pv210.dtsi
->> +++ b/arch/arm/boot/dts/s5pv210.dtsi
->> @@ -512,6 +512,21 @@ vic3: interrupt-controller@f2300000 {
->>  			#interrupt-cells = <1>;
->>  		};
->>  +		g3d: g3d@f3000000 {
-> 
->   Should be named generically, "gpu@f3000000", according to the DT spec 0.2, section 2.2.2. It's either "gpu" or "display" TTBOMK...
+I noticed that previously we used imx8,ddr, which I think was wrong, so 
+can you try to remove this here?
 
-Yes, you are right and we have named it such for all other
-devices in this series. I just missed that.
+If that doesn't work, then I'll try this myself.
 
-Jonathan, if you are ok, I'll fix that.
+Thanks,
+John
 
+> 	    "Compat": "i.mx8mm"
+>      },
+>     {
+> 	    "BriefDescription": "bytes all masters write to ddr based on write-cycles event",
+> 	    "MetricName": "imx8mm_ddr_write.all",
+> 	    "MetricExpr": "imx8_ddr.write_cycles * 4 * 4",
+> 	    "ScaleUnit": "9.765625e-4MB",
+> 	    "Unit": "imx8_ddr",
+> 	    "Compat": "i.mx8mm"
+>      }
+> ]
 > 
-> [...]
-> 
-> MBR, Sergei
-
-BR and thanks,
-Nikolaus
+>>>>> root@imx8mmevk:~# ./perf stat
 
 
 _______________________________________________
