@@ -2,132 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A2431AA9BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 16:21:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 827C81AA9BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 16:21:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XRpVnGOict2h79tWEZsEROCXmq9gnDfl7IrZmVSxf98=; b=YtZRhvxmzrX58A
-	LwtaLk3dFwRnbyShZsWsKNHSm1696L3pWZL2dk35JJtyTbsMrHuTa1yNS8OvLxI+2RaY3rxoANLzL
-	To+oMOdv4FfcecPj5mXcZNoxJVTGIZaq5e1KKPvTOdD0/mCKvEcaxuvp7JwduXVdneoLota8COGQM
-	gVcr7M7Aa6Imghh2AypL1WQ+3Lx+U4tDEur5EHus3HbDlbXUm7YACuT83gPola/81idF1MHYq6SkG
-	BCwuMPLs2I3fCpd3yV40itgaqEEjyC6V5PRKQOoVVSLNtaJhlCtlDPzwFZJE0Zo5zV5wr3cVzGQe2
-	IPFTofNn/sm9Kt+cFGTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FC9OfMdIG8g/PGEsVeaVsVry6Dh6/AOaF+qOdfuls2Y=; b=ueQUaMufUF516i5Pxdkaiw0XV
+	4yecoOcX/yVwGF0UJHlKsc6Iozz8jbdu7ArfJ3zlDRVHnVv7cC3GFT0UPtA6zmJFJeQs2qCEh3Pge
+	0Vc23ylrQuty8Jup6+RKD1EXdosALdLErLM1A7LG1H162UADb61cFLIqy/YCSBqz6L6H2xcGEo0b7
+	u5pvuS2NTl61PEKC/R6yp/jG3WDvvYlTpONQduP4D3TgIShmz4gw01bPbUqrsQiLV9e4p4x5Vm08l
+	cQVVTnbksNVl/3N2QVdtJPrIEzxNncuTfaO18pq51XxvhENydGgmolKZnNN2YE8NlslPqzDQzOMK+
+	rYooEuI+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOiuQ-0001mT-2p; Wed, 15 Apr 2020 14:20:58 +0000
-Received: from mail-eopbgr750054.outbound.protection.outlook.com
- ([40.107.75.54] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1jOiv6-00022Z-7G; Wed, 15 Apr 2020 14:21:40 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOiuJ-0001lN-CO
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 14:20:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=m/aDA3TNUudg7b1hiIgupytxTV1iDjIaBHZEV72SWeq+9V0DL/aB/W/ggMgwkKTNWQ93scf3cY2uVskSGlkwd8sAKPq7jHBRpKc4e9JgKnKe/ovl8pi1X7TPbWXAzBS9Vx4gtzEC9T1vl6Ziw7ES+VovWpUb/aW+GyON3ZETb4WHCRuWL4ROMuY8z91afH6jqYyE8PN1LTI1NKm/BCgvy2V/Tq/CdHo9zV5WzabgbnOL9y6vTcsAMa0fch8yYsVYCR9YCnHn954RnmcoWKIzqL99me3cOqDYiZwBmKHwB04i0GDFIr22Neyvd3pmOkB4gEjdpg6aEikTh4jsejk/JA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FL+jzdl8rTh5LL7dq+s4TeX25tRK+uLwfWGt38KkSJg=;
- b=L+RH63z7bbQh2d66Zu1PTXD129HFOFn8z4VeubigzeNzrfbiaDVg6lBgG5Hs1hJGBUpR5gEhBMV2+DJVdd4j+eZ5dnE3ffW8SueOis8N1if1fTFZARd8WQYUDwMSzOnjpWtvf0/QWNnwBDFzTSc+y6CXigFve8TEy9L3CtZkMZsqMLpILLtwi/oxFgmPvBYIwGhYPNinkDYG8TgOn0z1DQnpvemtsP1fU1BaUULMRpqjrr4nFpBT+Opc06JduU90Q29YCu+boa1qwvrpjgaQLodHKbSPMTo0NNrV1NaoMlb2qMU5SM/BqTfho1TTwfA6w1FQv+frTd17MUdXbDUf/w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=gmail.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FL+jzdl8rTh5LL7dq+s4TeX25tRK+uLwfWGt38KkSJg=;
- b=T/IbR7gKiQW0qVZEPUX+Z/4nXvI1hwZRVuQ9lmj91Ov7tBCWRXxDa4ghxQgWqZwOhsmsc8FaFidr+vWmAeik7erldPvaWFMSFEDBKwRs+s0xAricDLakDlBkG/1LYxMvyy3NARt3vGPKE7E/2lHBXvnkuKUMgWc96BFYUrMtPRk=
-Received: from CY4PR1201CA0023.namprd12.prod.outlook.com
- (2603:10b6:910:16::33) by BL0PR02MB4804.namprd02.prod.outlook.com
- (2603:10b6:208:5f::10) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.28; Wed, 15 Apr
- 2020 14:20:49 +0000
-Received: from CY1NAM02FT009.eop-nam02.prod.protection.outlook.com
- (2603:10b6:910:16:cafe::2a) by CY4PR1201CA0023.outlook.office365.com
- (2603:10b6:910:16::33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.25 via Frontend
- Transport; Wed, 15 Apr 2020 14:20:49 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT009.mail.protection.outlook.com (10.152.75.12) with Microsoft SMTP
- Server id 15.20.2921.25 via Frontend Transport; Wed, 15 Apr 2020 14:20:48
- +0000
-Received: from [149.199.38.66] (port=51885 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jOitZ-0007H5-7J; Wed, 15 Apr 2020 07:20:05 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jOiuG-0004bP-Fr; Wed, 15 Apr 2020 07:20:48 -0700
-Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1jOiuB-0004ZC-3K; Wed, 15 Apr 2020 07:20:43 -0700
-Subject: Re: [PATCH v2] i2c: cadence: Added slave support
-To: Wolfram Sang <wsa@the-dreams.de>, Radu Pirea <radu_nicolae.pirea@upb.ro>
-References: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
- <20200415125850.GD910@ninjato>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <d7bbb013-aba1-6623-f656-46b3f5689834@xilinx.com>
-Date: Wed, 15 Apr 2020 16:20:40 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jOiuy-00021f-9F
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 14:21:34 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 5D5B5580480;
+ Wed, 15 Apr 2020 10:21:28 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 15 Apr 2020 10:21:28 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=w57xZePTsGqsUDOlfC/90iLeGpy
+ 1FlxyNG+H0a7Xz8A=; b=waLFJKVzJ1gz4Hh3SifRoYfFdJNEt2qRDGZPEgQiRVv
+ 6jkzESd3CY6Oc3i2ZpPdobWyw0ab8WfQvnFKUO56Sbm6//6u+mKmbexyjoJ0cnOw
+ RF93kgS+2GuBfrdB0KUCXmBg0YpKtxYRvgMIwGCyomGynx+2KCN7Em0XOYCnFkgw
+ J1mWDeIQOgD9hZisI227UvtFdsCvTBD+nzUGW7lALcRLymCqmau213LfjSVNHmv+
+ 59dc1QnftSXXZQOuRHjvVKnCK1b8Vl+tyMf+cu9KYr9EA/oYnetVcCSLLiMhiKJg
+ 9owal3XtjQVIIYpYooAWJa48xaWPZrUjg/pnuC0Chqg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=w57xZe
+ PTsGqsUDOlfC/90iLeGpy1FlxyNG+H0a7Xz8A=; b=ZiCvEuIistCq+I4LcQwEfW
+ Qyg/X1liF2iY4Y79UN8i/5imy6gN2PUlGkr+jvw+PLzd5hDoC1DhIB2+Rqr6UCTI
+ o0bm44HtOGdwnZ4+w2oevQESQ+PpjeSubBsQxEE633xb56bf/Ou1Go+xV4y+XL61
+ eqCtbaaUaUnxCNBHFOyo4KdeTlAMIH2CBW7WJ8eXnppGRAR6HFGK4pzcoz9Ohoe5
+ MUxrYnCV6uzhOrFjysQdB68Qf8n5Af/nhXTCLK5LoAUCdha/qTawAHb2hjHJUpPY
+ lizQ3xv4NnOPWVGq6lc4q2/vA93sP8RVeBn9PT3F9hOjzKVIBJUSO8dWAywaBOMw
+ ==
+X-ME-Sender: <xms:ZhiXXnmhOKw4K1AOTYHdnTUQEbMU7bg_a5FoSDsaU2t4-IMnTxxvpg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrfeefgdeihecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:ZhiXXpmUnYfgmUXjZWNNqgX47hkEI1-ZFNVCI7wWEZYYnRfYegrX1Q>
+ <xmx:ZhiXXtNDAwIfZe76drexh9IE-OGHGS2aS5UFo-B-yEis7tg0VAEMNg>
+ <xmx:ZhiXXp64DuzBVqKn0BtAgkhnuT1ce2TcjxPp_Qx9I7HZtoreOUfJRA>
+ <xmx:aBiXXvtNHYQJhIMBsiVAXeZCa6iOafIjCoTJluOekGcBbk5EM_-hGQ>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 08B123280064;
+ Wed, 15 Apr 2020 10:21:26 -0400 (EDT)
+Date: Wed, 15 Apr 2020 16:21:24 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH v6 01/12] dt-bindings: add img, pvrsgx.yaml for
+ Imagination GPUs
+Message-ID: <20200415142124.yzfh6mtqq7cdq22e@gilmour.lan>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
+ <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
+ <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
+ <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
+ <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
 MIME-Version: 1.0
-In-Reply-To: <20200415125850.GD910@ninjato>
-Content-Language: en-US
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(136003)(346002)(39860400002)(376002)(396003)(46966005)(2616005)(44832011)(356005)(47076004)(81156014)(336012)(31696002)(426003)(8936002)(81166007)(8676002)(4744005)(70206006)(478600001)(186003)(9786002)(82740400003)(70586007)(36756003)(316002)(26005)(5660300002)(107886003)(110136005)(31686004)(4326008)(2906002);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: e3ecc3fe-ddc2-4294-8560-08d7e14831ee
-X-MS-TrafficTypeDiagnostic: BL0PR02MB4804:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB48046042AC69EBE82D6DC979C6DB0@BL0PR02MB4804.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:4125;
-X-Forefront-PRVS: 0374433C81
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: slt19jyWq6lm1eKpxfml/o371VMS1QpJgRxOsceFAyPFROwkbRoCs/HY9snkPNO3BG+veoEGFXrJlhqUT0JJYpwL1CJ+mKsdKZ+BNz85bivUSxh0nmnUD2zQ/x3hzzcY3dnHivbUlmrICwdpSyquD9saP41bElwZuJOQsb3bsJPecbwI87WwX7Q0fsEJRG8MAnPA2Gr3EazTFUEJHjL7qAlaHOsXF+Ibo9z4MbPq2Tb5zHo+6H0BbNdyZb+vwdIr034XwQg4q9TwSKQts4MbilTY9jNuK/rcjDjWL38ovZrTAvNIJukwoSFqfkpziCe/BxJXTcfZ5tTq/oU9Eq8Ka0ZXHLgTgPGubjuQIuch8kEBUmWhVJJV79yURV1s6RgCZlEmA7R8M4/bVDUT+YiMkfVpz3seSYuSXqrSdMAVRcErnOMXmU/+RT2biCkTCXNKO5JPEUNnkD21fkVFNDnsMEC6wIqOoI+jkZFYkgkyVrWh7nqBDt2EzPzfJW/lOttxmXRO3OkufG/J+j1Tkq2+4g==
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Apr 2020 14:20:48.7724 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e3ecc3fe-ddc2-4294-8560-08d7e14831ee
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4804
+In-Reply-To: <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_072051_422533_51FFE4B0 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20200415_072132_725402_92422434 
+X-CRM114-Status: GOOD (  22.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.75.54 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.75.54 listed in wl.mailspike.net]
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,30 +111,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chirag Parekh <chirag.parekh@xilinx.com>, shubhrajyoti.datta@gmail.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, letux-kernel@openphoenux.org
+Content-Type: multipart/mixed; boundary="===============5220385550486146817=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15. 04. 20 14:58, Wolfram Sang wrote:
-> On Mon, Jan 06, 2020 at 12:43:36PM +0200, Radu Pirea wrote:
->> Added support for I2C slave functionality
->>
->> Signed-off-by: Chirag Parekh <chirag.parekh@xilinx.com>
->> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
->> Signed-off-by: Radu Pirea <radu_nicolae.pirea@upb.ro>
-> 
-> Michal, do you want a second look or is your SoB good as-is?
 
-It should be good to go.
+--===============5220385550486146817==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="oowgclrabb5rh4qg"
+Content-Disposition: inline
 
-Thanks,
-Michal
+
+--oowgclrabb5rh4qg
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Wed, Apr 15, 2020 at 03:17:25PM +0200, H. Nikolaus Schaller wrote:
+> Hi Neil,
+>
+> > Am 15.04.2020 um 14:54 schrieb Neil Armstrong <narmstrong@baylibre.com>:
+> >
+> > Hi,
+> >
+> > On 15/04/2020 14:43, H. Nikolaus Schaller wrote:
+> >>
+> >>> Am 15.04.2020 um 12:12 schrieb Maxime Ripard <maxime@cerno.tech>:
+> >>>
+> >>> Hi,
+> >>>
+> >>> On Wed, Apr 15, 2020 at 10:35:08AM +0200, H. Nikolaus Schaller wrote:
+> >>>> The Imagination PVR/SGX GPU is part of several SoC from
+> >>>> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
+> >>>> Allwinner A83 and others.
+> >>>>
+> >>>> With this binding, we describe how the SGX processor is
+> >>>> interfaced to the SoC (registers, interrupt etc.).
+> >>>>
+> >>>> In most cases, Clock, Reset and power management is handled
+> >>>> by a parent node or elsewhere (e.g. code in the driver).
+> >>>
+> >>> Wouldn't the "code in the driver" still require the clock / reset /
+> >>> power domain to be set in the DT?
+> >>
+> >> Well, some SoC seem to use existing clocks and have no reset.
+> >> Or, although not recommended, they may have the io-address range
+> >> hard-coded.
+> >
+> > The possible clocks and resets should be added, even if optional.
+> >
+> > Please look at the arm utgard, midgard and bifrost bindings.
+>
+> Interesting to compare to. Maybe we should also add the
+> $nodename: pattern: '^gpu@[a-f0-9]+$'
+>
+> But the sgx binding is difficult to grasp here. Some SoC like the
+> omap series have their own ti,sysc based target modules and the
+> gpu nodes is a child of it lacking any clock and reset references
+> for purpose.
+>
+> The jz4780 and some other need a clocks definition, but no reset.
+> Having a reset seems to be an option for the SoC designer and
+> not mandated by img. So is it part of the pvrsgx bindings or the
+> SoC?
+>
+> Well we could add clocks and resets as optional but that would
+> allow to wrongly define omap.
+>
+> Or delegate them to a parent "simple-pm-bus" node.
+>
+> I have to study that material more to understand what you seem
+> to expect.
+
+The thing is, once that binding is in, it has to be backward
+compatible. So every thing that you leave out is something that you'll
+need to support in the driver eventually.
+
+If you don't want it to be a complete nightmare, you'll want to figure
+out as much as possible on how the GPU is integrated and make a
+binding out of that. If OMAP is too much of a pain, you can also make
+a separate binding for it, and a generic one for the rest of us.
+
+I'd say that it's pretty unlikely that the clocks, interrupts (and
+even regulators) are optional. It might be fixed on some SoCs, but
+that's up to the DT to express that using fixed clocks / regulators,
+not the GPU binding itself.
+
+Maxime
+
+--oowgclrabb5rh4qg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXpcYZAAKCRDj7w1vZxhR
+xT0JAQCiWOePc99saTFkub5XKNoxg+0OWfORXzWEdHfaNN9pAQD6ApKRwjY9uv1z
+NzDdNQ4q1aRrmR/SI1oU48l8V/B3kg0=
+=Apgq
+-----END PGP SIGNATURE-----
+
+--oowgclrabb5rh4qg--
+
+
+--===============5220385550486146817==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5220385550486146817==--
+
