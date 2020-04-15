@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D580F1A9CB0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1D191A9CB5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 13:38:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=olJ2NSq03fYe4ng7W44/duXFVhipuU3onyVtw2OaCoc=; b=SRjVuW2kxpXz1A
-	LAbjrMUMDOVGjX5Fe+ApszY8ognADEVAFxtZ03wKLUH0XlsS+4eSB9tQOmTn13E+Bf/P/i8ibCC/R
-	L8XiMFf2J108UFbhYu5ml7c0/v0a0FxpR5hQU2THIukdvPbYm3uGC+fW4OB7giQW/AfUrFmoNPKlP
-	g+fvn/xVBKfwDn8ziwbo2YLQ+hC9hpedHKydCa8TX5tH+W30rPR7VR/omcgyQS2oy1s0NQMkJz6Qs
-	z1guD44UIyJSIF+fxn/lc5+SW+tiEQJIQ5EgTRqM+h9Cc7EjC02WIPbgO+f3+C0Hecv2/7tmkPAFY
-	pZs8+8o4zpB0uF8Cq3Lg==;
+	List-Owner; bh=BH5UT0JVnT0VaBQAhHfLk2qkIcNkBjPcdJPZjDSKG1E=; b=gxutHIJokDF2mJ
+	DkNDLhpsR82XeqnK4ROJ20sKUATvhJeUBIMwGB1sYuDVz2KZHcVVQ21IfN7GhiWxwjNpA2nxm2vpn
+	l97qMnz5315RDdJHhmgbrjYUi+cHcQbd3OEemUSnj3LCZL2AmAQrMLv5op6Z7aaXx2fjCrnDw/9Gc
+	bVpR5xTgDuxpGzVdF4FRjKEBbO5D0q4mXsv0mrFXTh38TSndL6FMf5XblZI60POzP32+4DUz/Fv5+
+	LIsYdqkl7zuXxesNOtr4mc9xclPdq5CZ3rp1dVXFHv5P8BNwbJHLFO3QZRAqMJx4fA0A08JIrKhRA
+	sfE+Dp9fCfdA1S9DsgxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgMb-000284-Ou; Wed, 15 Apr 2020 11:37:53 +0000
+	id 1jOgN5-0002dp-RG; Wed, 15 Apr 2020 11:38:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgKH-00005t-38; Wed, 15 Apr 2020 11:35:30 +0000
+ id 1jOgKM-0000Bt-Qt
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 11:35:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0A0120936;
- Wed, 15 Apr 2020 11:35:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEDFC20775;
+ Wed, 15 Apr 2020 11:35:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950528;
- bh=yZRJLnU4ErUB6W+jl5bb662sTl3GJZbnFAsMghgK1O4=;
+ s=default; t=1586950534;
+ bh=R/EkibC1xiHR1BW+LamJK6V0IuMDFME4qS/zquvUOgI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=llISxg66j8GDmIUQcbVn2sL5Lm7FpGnV8tq0jdiWUnW8hFu0ZbRoOV43yMbHvkgAS
- 267bGfB9JPwHswlviTpYHN5r2qKJS5uAKyGE0GvulP7GQ9HIhuUegw7e+gy77j4lLq
- HBeDJkrzX0z1AFNVs5qovBo3iSPqIF9tQiJOFyUo=
+ b=qYwoxsAHkb69a0PT/kv312TueRh0dObaBNhZamzZvOpMKksqlAtrN4e9TpCp68YbR
+ IC+p1u4JbHHFVigk89gWlyp0nO4By+W+x3ZHKpBQVtjHu8oAEgXT47YbDUzlzaduzh
+ srXGXc9FfoL9dgXigSAfW7ZeCYfuqG8QCCI6FT7g=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 037/129] ARM: dts: rockchip: fix lvds-encoder
- ports subnode for rk3188-bqedison2qc
-Date: Wed, 15 Apr 2020 07:33:12 -0400
-Message-Id: <20200415113445.11881-37-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 042/129] phy: uniphier-usb3ss: Add Pro5 support
+Date: Wed, 15 Apr 2020 07:33:17 -0400
+Message-Id: <20200415113445.11881-42-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
 References: <20200415113445.11881-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_043529_236021_0BCDC8CE 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200415_043534_914969_8E4ADEDE 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,79 +80,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Johan Jonker <jbx6244@gmail.com>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 
-[ Upstream commit 1a7e99599dffd836fcb720cdc0eaf3cd43d7af4a ]
+[ Upstream commit 9376fa634afc207a3ce99e0957e04948c34d6510 ]
 
-A test with the command below gives this error:
+Pro5 SoC has same scheme of USB3 ss-phy as Pro4, so the data for Pro5 is
+equivalent to Pro4.
 
-arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: lvds-encoder:
-'ports' is a required property
-
-Fix error by adding a ports wrapper for port@0 and port@1
-inside the 'lvds-encoder' node for rk3188-bqedison2qc.
-
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/
-bridge/lvds-codec.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200316174647.5598-1-jbx6244@gmail.com
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 27 ++++++++++++++----------
- 1 file changed, 16 insertions(+), 11 deletions(-)
+ drivers/phy/socionext/phy-uniphier-usb3ss.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index 8afb2fd5d9f1b..66a0ff196eb1f 100644
---- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-+++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -58,20 +58,25 @@
- 
- 	lvds-encoder {
- 		compatible = "ti,sn75lvds83", "lvds-encoder";
--		#address-cells = <1>;
--		#size-cells = <0>;
- 
--		port@0 {
--			reg = <0>;
--			lvds_in_vop0: endpoint {
--				remote-endpoint = <&vop0_out_lvds>;
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+
-+				lvds_in_vop0: endpoint {
-+					remote-endpoint = <&vop0_out_lvds>;
-+				};
- 			};
--		};
- 
--		port@1 {
--			reg = <1>;
--			lvds_out_panel: endpoint {
--				remote-endpoint = <&panel_in_lvds>;
-+			port@1 {
-+				reg = <1>;
-+
-+				lvds_out_panel: endpoint {
-+					remote-endpoint = <&panel_in_lvds>;
-+				};
- 			};
- 		};
- 	};
+diff --git a/drivers/phy/socionext/phy-uniphier-usb3ss.c b/drivers/phy/socionext/phy-uniphier-usb3ss.c
+index ec231e40ef2ac..a7577e316baf5 100644
+--- a/drivers/phy/socionext/phy-uniphier-usb3ss.c
++++ b/drivers/phy/socionext/phy-uniphier-usb3ss.c
+@@ -314,6 +314,10 @@ static const struct of_device_id uniphier_u3ssphy_match[] = {
+ 		.compatible = "socionext,uniphier-pro4-usb3-ssphy",
+ 		.data = &uniphier_pro4_data,
+ 	},
++	{
++		.compatible = "socionext,uniphier-pro5-usb3-ssphy",
++		.data = &uniphier_pro4_data,
++	},
+ 	{
+ 		.compatible = "socionext,uniphier-pxs2-usb3-ssphy",
+ 		.data = &uniphier_pxs2_data,
 -- 
 2.20.1
 
