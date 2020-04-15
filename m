@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C04231A96B9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:37:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAE761A96B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 Apr 2020 10:36:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ks8r/6ZvpY+V15mT7vK+qV6toHRvEOZzSfvvi63cl+c=; b=GFG/XCWd5jBNXs
-	hNmygDNINVqYcb5Mzm7iqQekPdKjp/s45evPJbBuDczoRHGblap2uEvbZK33WQkk063BJkGfZW2s8
-	ak2mWx7r/TAG2z9GsdMIQIsv5uiLYrzEZqZfqHZdW+OX90w/6qrvlXcIq/huIXJkR3o0R2l6nmku3
-	R146UKD6kWOJNqSarQ53LZ+MeITVblIx/EXh/mSUqmNOqmGr9eHDDX+uHMmi/ISYDAH+uX6Z1rNrc
-	K0M3ot6ZCxCFofAcxYojyg2EMdwvs3mB76DIu3N3IQ3ibrRqA3fZWj9HOSu04QobsTFGuQ5Y6KOs9
-	XnCzC20dfgIbJhETevGw==;
+	List-Owner; bh=9961qnKzJg4OtJ7zgUyK5TJEm13EbJ8j02nLoNvJeSA=; b=lhjgLzSS3QwdnD
+	JS7QTeMeOPJZWEQQ4IHP7NHjzjSqNNKLs6juTVAv4iFupKhGg7w0a9yroFytipieNlw31OrO6FmRx
+	6U+0fiw144JaArPYhaM9VzoAqVvKF6A/bY+e/5DPz2dNoecaXoBxx5kWO9Sk3C75X8XdgKfdhNs0k
+	E+AQbcTKmbaYvyomvfnDe0u8oXnPnovYVv9DUGZti3xHeI6oWBUMJrQThpuXFHa5WsQaEB7Seom+X
+	5lnrkzTcISJS2n3ZCgXrK+z4xfP73uSl4xeUFA7MH9zx4wjvC3cedu8cb0aRnyCFuSsnw/x9oCCoa
+	O/j0Fhsi8YOW23sO53ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdXR-0000AY-JP; Wed, 15 Apr 2020 08:36:53 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::12])
+	id 1jOdXE-0008Nh-27; Wed, 15 Apr 2020 08:36:40 +0000
+Received: from mo6-p03-ob.smtp.rzone.de ([2a01:238:20a:202:5303::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdWJ-0007sn-5E
+ id 1jOdWJ-0007sp-3y
  for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 08:35:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586939730;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1586939731;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=kx2ITlPV23EEzM+XlbM4QyUR8AdpKuXysa3RAUlC5io=;
- b=CUopvzHWN1+blhqw3TNoE2u3KMrcXJSNbxAZ3ZJbEG4DVc0CWBr3srhkgwvl8VdtlP
- adLPMPBcn4QoCVjsbThe+X6q2p/er3qyDc1kzrLrWOtpogO0HDXqxW7wOWLKVjaV6udI
- FTW5MzpkTXT3x5wjYvSvMgFyEy7GgTh1e4gzAXEtlfOhnRGhY9GWTNynMw7ZEATUElU6
- Cvdq/EAymFo+pA6GFSRkpljTLFC3DD55WiXDXilGz+IgJXvxUwMTf6l1rvwooNqUJC27
- WWH5qsiXlqIAmgzwgiMXHbxnAc5fMuTj40NCVwctcaK9JzTNVdhVVG7VveaPgN9ZEx/y
- uq/Q==
+ bh=rqANm04pE1KQf5F40TrJl3kMNAdz2dL493kE5AqgxPc=;
+ b=EX2KYRHlKTyki0uV8K6aizbofAaFvOKjCPHPz5dtRoWrF0GaXoDmT9vdWqxYfIGP85
+ E2oiFGOulMqUU6rUo9ixtTRzhZeV7FPDDauNQoEuLmSU5XUocr+VNOVUCLXAnSDo6c+q
+ 69Ln6Hz+52PqVWYqPZYCtWf7aeNo3h2rXdFdWWV2FUj0MXgNWIcjFs8PhczFUl5S6w0a
+ TsYgSr2D+ExFw59uc2Bvr2ijfuevQiH7zWPLYA9lRg4bBQGGpjTtq9iXqJtZW+OHWAip
+ cZh/T4eGgWBwedSnut10Q41oia03kfVakorB2IO/I83RoUuXI9uHVIcKnvTOnd8cIpl9
+ sZFA==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7O2CKN9ej"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.4.0 DYNA|AUTH)
- with ESMTPSA id 6028a2w3F8ZM0Ij
+ with ESMTPSA id 6028a2w3F8ZN0Il
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Wed, 15 Apr 2020 10:35:22 +0200 (CEST)
+ Wed, 15 Apr 2020 10:35:23 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -51,23 +51,23 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v6 02/12] ARM: DTS: am33xx: add sgx gpu child node
-Date: Wed, 15 Apr 2020 10:35:09 +0200
-Message-Id: <0d1fea5a12cd59e1ebbbd7522a5dd0c7b74821cf.1586939718.git.hns@goldelico.com>
+Subject: [PATCH v6 03/12] ARM: DTS: am3517: add sgx gpu child node
+Date: Wed, 15 Apr 2020 10:35:10 +0200
+Message-Id: <7b18551db053800f8148ecce879f0d3d7fa8d305.1586939718.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <cover.1586939718.git.hns@goldelico.com>
 References: <cover.1586939718.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_013543_790038_DAC9F67C 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200415_013543_807796_C11E2D71 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:12 listed in]
+ no trust [2a01:238:20a:202:5303:0:0:3 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -102,37 +102,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 and add interrupt.
 
-Tested-by: H. Nikolaus Schaller <hns@goldelico.com> # BeagleBone Black
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- arch/arm/boot/dts/am33xx.dtsi | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ arch/arm/boot/dts/am3517.dtsi | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/am33xx.dtsi b/arch/arm/boot/dts/am33xx.dtsi
-index a35f5052d76f..155424d87156 100644
---- a/arch/arm/boot/dts/am33xx.dtsi
-+++ b/arch/arm/boot/dts/am33xx.dtsi
-@@ -564,7 +564,7 @@ aes: aes@0 {
- 			};
- 		};
- 
--		target-module@56000000 {
-+		sgx_module: target-module@56000000 {
- 			compatible = "ti,sysc-omap4", "ti,sysc";
- 			reg = <0x5600fe00 0x4>,
- 			      <0x5600fe10 0x4>;
-@@ -583,10 +583,11 @@ target-module@56000000 {
+diff --git a/arch/arm/boot/dts/am3517.dtsi b/arch/arm/boot/dts/am3517.dtsi
+index e0b5a00e2078..3fce56a646d1 100644
+--- a/arch/arm/boot/dts/am3517.dtsi
++++ b/arch/arm/boot/dts/am3517.dtsi
+@@ -138,10 +138,11 @@ sgx_module: target-module@50000000 {
  			#size-cells = <1>;
- 			ranges = <0 0x56000000 0x1000000>;
+ 			ranges = <0 0x50000000 0x4000>;
  
 -			/*
 -			 * Closed source PowerVR driver, no child device
 -			 * binding or driver in mainline
 -			 */
 +			gpu: gpu@0 {
-+				compatible = "ti,am3352-sgx530-125", "img,sgx530-125", "img,sgx530";
-+				reg = <0x00 0x1000000>;	/* 16 MB */
-+				interrupts = <37>;
++				compatible = "ti,am3517-sgx530-125", "img,sgx530-125", "img,sgx530";
++				reg = <0x0 0x4000>;
++				interrupts = <21>;
 +			};
  		};
  	};
