@@ -2,79 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF8C61ACD73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:19:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17A911ACD74
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:20:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HRct3sXwc/EIWSM4vviWuZHSRPgmCBoqkOED+cFrv2U=; b=hehqXZhnUzz3sq
-	vrTm1gij5O0htGuk3aliwuY7aB2vmANosXTZUg8PLKd9G4vd3rRaPht+NoAh46njCHEq97bckbx7U
-	izbO+6ZxCasMHt6dqmURWtT1gjJjNOhuHmzkjA7PxgBZdLGon6PBXfjtF2fe/02xwX2jlni1hS68b
-	4ofuhGEVr1NBnH2Bz1x9j1WWtsXTH6EnNdMtRlhRaJscL6ts8G6E+UWxbgXF6erKgW9gZDO1QUIUS
-	x4RcmFKAH3r/j/co61x+y61pJvra1xuKOvFzEY66HG9fsOnxDnD5PUzNhtdd/02mruKPbhf01/QFx
-	dM1Ed2aN3shREGrobfeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hA7tIkrAEG43z0WEfsrww8+Lkq+7OsGMa6aRCZXBPSk=; b=NgooDej0flRVtH+tb4asp0LAD
+	7tHwoeHYPb4cmxDs6Hy7Va86l/mX9VM1sGopG857WDjCIQk5A66/v3vWVVkIF3OMASSWooOeMUOu0
+	v8gkCWGCzXj7+7e6zpMjuWH1pbJ3gHmvvwJkDOAeU1zv65bM1OFVPYpnKakYvTr7dv2bmESek+7pF
+	SUNcq5rbHtjVCWaJBMWWjHou+YSoEe9l8ESFwZaKvdS29kF4gLZjwOXKdzz6SQRQtGz7yxdo2Ikq1
+	XV2tgPWgiI9U8L6ItEKmpvRSIUm5iq9qupc2TueztSnhPOG2B9MVizeRy1bNRmVP1tvbxJcMnld/V
+	nD3Eep2GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP7EJ-0002ej-G8; Thu, 16 Apr 2020 16:19:07 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP7E7-0002do-Sa
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:18:57 +0000
-Received: by mail-oi1-f195.google.com with SMTP id x10so7608183oie.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 09:18:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Y4HfSPhfYRgg7hXjXhAC7Y1EeYCA1tKGpq/7RYwzqLQ=;
- b=jing1Gb4bxszKFQ56se+VxSzqSGrmN4Wx7LXd3uj1oRgSHZFcp+w6G8NY72cCRXZh9
- rRHM5cdIjNg1+6SvHLq33vV3WppRef7NjpQrjvfCPFSDKaZC8Wp5mx0Co6uHMjXNbQ6Z
- NZrjKVUvhPHJNH28w5fCYvoQXbniNbbU1vBAF4ZQR+TdGQfo4l595hELEa0m+Oi3Q0Uz
- mdl/+QWSdlzBRbcTJe5tNHwnXa69dD5c4GJBvbZhhSeBB2nIg8+jafAOroFSICgpU0Mg
- CNRxCghX8wNa4xOPhi0BeTXJYEghuRehlLxRj12aqy44eMDuXlN38hajhZi2qKxUBV4G
- fHfg==
-X-Gm-Message-State: AGi0PuZxOsoclvp79+9eF0KBzfInEsr6orWfgvrSSh1qrM8gIsd3N9Lx
- OX6JPLuvt/dUtY6/KYR+YTQMM35HazvxFIgq0T0=
-X-Google-Smtp-Source: APiQypJ9S7cnz9hITqdHHVyamXCWYRrJVGPFnD+VZ/1EEx7X1+UtJPbyFBYx3JtLlZlLYcDWxZ5vL+tvZA1NAMOzy+c=
-X-Received: by 2002:aca:f541:: with SMTP id t62mr3288764oih.148.1587053934205; 
- Thu, 16 Apr 2020 09:18:54 -0700 (PDT)
+	id 1jP7FW-00056T-EH; Thu, 16 Apr 2020 16:20:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jP7FK-0004GI-RI
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:20:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C47F530E;
+ Thu, 16 Apr 2020 09:20:09 -0700 (PDT)
+Received: from [10.57.59.184] (unknown [10.57.59.184])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 508263F237;
+ Thu, 16 Apr 2020 09:20:07 -0700 (PDT)
+Subject: Re: [PATCH RFC 0/6] PWM fan support on Clearfog gt8k
+To: Andrew Lunn <andrew@lunn.ch>
+References: <20200329104549.GX25745@shell.armlinux.org.uk>
+ <CACRpkdaL4-Z36aKOVW4o2MtCG9fbqm4gxZN3QjejVRPBZrzxxA@mail.gmail.com>
+ <20200416135039.GL657811@lunn.ch>
+ <5c7cb0ff-bf49-640a-3c4a-ef71495af7b7@arm.com>
+ <20200416144231.GP657811@lunn.ch>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <628cde2b-0e1b-4c07-4321-8b23d0b34384@arm.com>
+Date: Thu, 16 Apr 2020 17:20:05 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200416115658.20406-1-geert+renesas@glider.be>
- <20200416115658.20406-3-geert+renesas@glider.be>
- <20200416125630.GF4987@lakrids.cambridge.arm.com>
- <CAMuHMdWRW4+YLR8fz0hUTAPupRkM4Y5c82XHuOWSvNYOh-BZ0A@mail.gmail.com>
- <20200416155655.GA7155@lakrids.cambridge.arm.com>
-In-Reply-To: <20200416155655.GA7155@lakrids.cambridge.arm.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 16 Apr 2020 18:18:42 +0200
-Message-ID: <CAMuHMdXO5Qv1XezGW+yELOaTkoFUA4B8SvBpBH=r4mLtbnkBhg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] [RFC] arm64: Add dependencies to vendor-specific
- errata
-To: Mark Rutland <mark.rutland@arm.com>
+In-Reply-To: <20200416144231.GP657811@lunn.ch>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_091855_923956_3695C247 
-X-CRM114-Status: GOOD (  14.70  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20200416_092010_952956_E10C9D96 
+X-CRM114-Status: GOOD (  20.42  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,58 +67,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Wei Xu <xuwei5@hisilicon.com>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andy Gross <agross@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+On 2020-04-16 3:42 pm, Andrew Lunn wrote:
+> On Thu, Apr 16, 2020 at 03:37:40PM +0100, Robin Murphy wrote:
+>> On 2020-04-16 2:50 pm, Andrew Lunn wrote:
+>> [...]
+>>> Clocking with Marvell devices has always been interesting. Core IP
+>>> like this gets reused between different generations of SoCs. The
+>>> original Orion5x had no clock control at all. Latter SoCs have had
+>>> more and more complex clock trees. So care has to be taken to not
+>>> change old behaviour when adding support for new clocks.
+>>
+>> FWIW, that sounds like a good argument for encoding the clock requirements
+>> of each variant in the of_match_data, so the driver doesn't have to simply
+>> trust the DT and hope.
+> 
+> Hi Robin
+> 
+> It is not really hope. It is very obvious when it is wrong, the whole
+> machine stops dead when you are missing a clock. Very simple to test.
 
-On Thu, Apr 16, 2020 at 5:57 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> On Thu, Apr 16, 2020 at 05:38:07PM +0200, Geert Uytterhoeven wrote:
-> > And perhaps you do want to enable some platform-specific drivers for
-> > VFIO pass-through?  Hence having ARCH_* dependencies on those drivers
-> > means they cannot be enabled :-( Hmm...
->
-> IIRC platform device passthrough requires an corresponding VFIO platform
-> driver in the host to handle reset and so on, but it does seem a shame
+Heh, that's still what I meant - the driver hopes that carrying on will 
+be OK, and the end user is left to pick up the pieces when it isn't ;)
 
-If your SoC has a reset controller, that problem has been solved in a generic
-way, cfr. "[PATCH v5] vfio: platform: Add generic reset controller support"
-(https://lore.kernel.org/lkml/20181113131508.18246-1-geert+renesas@glider.be/).
-Unfortunately not yet upstream.
+Obviously that's less of an issue when said end-user is a kernel 
+developer making a controlled change during SoC bringup, but perhaps 
+more so for an eager inexperienced hacker cobbling together DTS 
+fragments to convince a distro kernel to boot on some embedded device 
+(even as the former I know I've had enough frustration from unclocked 
+registers showing up in unexpected places - the best is when connecting 
+an external debugger to see where it's stuck happens to enable the 
+offending clock and let the CPU progress to somewhere else by the time 
+it actually halts...). If it's possible to make a driver robust enough 
+to fail cleanly, isn't that always nicer to debug?
 
-Combine with "hw/arm/sysbus-fdt: Add support for instantiating generic devices"
-(https://github.com/geertu/qemu/commit/180318003c08594e8e852b2285a98184f905bfa9)
-and you're set ;-)
-
-> to not allow the user to select a driver if they really want it.
-
-I forgot you can add "|| VIRTIO_MMIO" to the dependencies of drivers for
-devices that can be used with VFIO pass-through.
-
-> I guess there might be platform-specific PCIe drivers too, which might
-> work with VFIO regardless.
-
-Indeed. PCI is business as usual.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
