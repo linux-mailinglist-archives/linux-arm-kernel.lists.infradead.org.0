@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6733C1AB951
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD2CC1AB966
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:10:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EMA/2nAmyi5gRaMtfxNFH0fAteAvRSKdIysanMdeNso=; b=q5r2ZcRw3AQ+GHzL5UD99fx9m
-	CH35ZxWRt6H6xlFxzXk7fxY9rSpwpYeDtoyzHoZxFlSJyYWq1LTk/BOSFyBXfkJXk95wv5eAuO9qK
-	xLwX3mbTruvpG3y8eWdXLKMsYLQJs5RYrGzLisUselnIGarptWymSJyWlD+GcyyW7kBvhvyLRj9EX
-	73lQkIjyzQHHVvOP958orARJbK2Vs3KXrxQcpCjdpJbUeVKqpCO2KMr57WZHepHSH/OxKf6KO1LUg
-	R/7OtpbAs/lNj1K1pqLzV0sjw6p5ueu8FzvB7oVLBdcE5hQKUWMaLpxlsj4O30EouH/9lXkyNLiNg
-	T8y/7Ag0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nileJ5hx43ZH7qwXvK+YtIJcDiVPiViWsH4GDGJ3A6o=; b=W697xK4UThU0O8
+	knKox3YC149s8ENStdP7GeiFqgweYaeWkSuVc1UmuUnh2e2ZEDYYYOjnyR6nkLvcnce6Lrfn2itOk
+	FuZkBOV5BbKoM/y3LVe9EvFD84tnS/YN75xFkn+Hgxphaw4TJkeclBl/P+9TW+2blFKSOxQiTD28k
+	/4qydFJGiTJrpxW3S9DMyl1t/ESWv/Ko6yQlftjEQzgouI3+Ge70vRIakEDUq+Nzs1wxbA9Jhsvhf
+	aPHcWgT6mTsx6Hv77m7hMbq4I0hyI2sQ43JRA6b5RvVG/N/Hys9IORn+Igfq3oBIxggfrtc2vCaWO
+	PgmFGTzhVi7wM5WmcktQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOybZ-0003fk-5I; Thu, 16 Apr 2020 07:06:33 +0000
-Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
+	id 1jOyfX-0007wV-8E; Thu, 16 Apr 2020 07:10:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOybN-0003f3-HS
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:06:22 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e9803af0000>; Thu, 16 Apr 2020 00:05:19 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Thu, 16 Apr 2020 00:06:18 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Thu, 16 Apr 2020 00:06:18 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL105.nvidia.com
- (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 16 Apr
- 2020 07:06:18 +0000
-Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 16 Apr
- 2020 07:06:14 +0000
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-To: Viresh Kumar <viresh.kumar@linaro.org>
-References: <20200406025549.qfwzlk3745y3r274@vireshk-i7>
- <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
- <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
- <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
- <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
- <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
- <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
- <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
- <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
- <d6e0eed6-4267-fca9-59e1-02d16e17ff34@nvidia.com>
- <20200416033715.hscztwkxie2o5i3r@vireshk-i7>
-From: Sumit Gupta <sumitg@nvidia.com>
-Message-ID: <8ea80551-b47c-3dd5-4efa-6befecc279e1@nvidia.com>
-Date: Thu, 16 Apr 2020 12:36:30 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jOyfN-0007vY-GX
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:10:30 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 257FB20771;
+ Thu, 16 Apr 2020 07:10:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587021029;
+ bh=ryc6wxWPw9o1JBywIVfmLfQfPLw/yNBffMQNg8SEEvY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dt7W3di72wz2z2ARB0niotEho/ZirUa6JoEZ7XeG02dWm9SXiDH05NrrrxyPbQUjx
+ WFG4WMY/l+XMZwptWODKf3D6CfxcAz3LWkDk9W30P/Iz6CVAu4FlTaoDD3lttWLDKC
+ jhV6CPm++eT0Xm3S4MG6sU04fMvY24BAx6CCJsjE=
+Date: Thu, 16 Apr 2020 08:10:24 +0100
+From: Will Deacon <will@kernel.org>
+To: Jiping Ma <jiping.ma2@windriver.com>
+Subject: Re: [PATCH] Perf: support to unwind userspace application stacks
+ generated with thumb.
+Message-ID: <20200416071023.GB29742@willie-the-truck>
+References: <20200416053829.130395-1-jiping.ma2@windriver.com>
 MIME-Version: 1.0
-In-Reply-To: <20200416033715.hscztwkxie2o5i3r@vireshk-i7>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1587020719; bh=MEcFP8G3VxgwBAt3A1oRVQWL07CnwPJfWLc3Wywyjpg=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=Ym1Zof5kV4ZzNBXuhXOY6pCMuNXLHXbISr+b04QIKvNWYzdvddezwVuXMpid2BF5/
- dPfkdQNOTOxwvEjv0+wd7hCnNKkb8FlFD8nTuS66Zsv/E+tYrpbTFQtsnTyCM0IHed
- QJxsYrwBMxHjeNsU7m177c0g4VNPYU5YLdeyBsjHvmbkdksZ0xTbWVzZeIvZXdJgj7
- qnnuPfvuQoOA+S/MvnDcKQZN5bkim4KueK5S7THIGk9WB1KWKuJPst/htuBdxTdd78
- SsokaJxGXH+ZdN77GNGGGQ9I3cwDBWGmBrY6dMiePRVUIu9mpDj4o3swCIo5ZHNWFH
- nsLq+/ogcmUUg==
+Content-Disposition: inline
+In-Reply-To: <20200416053829.130395-1-jiping.ma2@windriver.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_000621_583635_5E1E9E05 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_001029_574104_DAD5F6E3 
+X-CRM114-Status: GOOD (  17.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -105,53 +77,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- Sumit Gupta <sumitg@nvidia.com>, mperttunen@nvidia.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, alexander.shishkin@linux.intel.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ acme@kernel.org, peterz@infradead.org, mingo@redhat.com, namhyung@kernel.org,
+ jolsa@redhat.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Apr 16, 2020 at 01:38:29PM +0800, Jiping Ma wrote:
+> Only push sp and lr in the stack for thumb mode. it will go
+> through the stack find sp and lr.
+> 
+> Change this to the more detailed description of the patch
+> 
+> Signed-off-by: Jiping Ma <jiping.ma2@windriver.com>
+> ---
+>  arch/arm64/kernel/perf_callchain.c | 36 +++++++++++++++++++++++++++---
+>  1 file changed, 33 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/perf_callchain.c b/arch/arm64/kernel/perf_callchain.c
+> index bcafd7dcfe8b..97dde271c121 100644
+> --- a/arch/arm64/kernel/perf_callchain.c
+> +++ b/arch/arm64/kernel/perf_callchain.c
+> @@ -104,6 +104,30 @@ compat_user_backtrace(struct compat_frame_tail __user *tail,
+>  
+>  	return (struct compat_frame_tail __user *)compat_ptr(buftail.fp) - 1;
+>  }
+> +
+> +void
+> +user_backtrace_thumb(struct perf_callchain_entry_ctx *entry,
+> +		     struct pt_regs *regs)
+> +{
+> +	u32 sp;
+> +	u32 *sp_t;
+> +	/*
+> +	 * Only push sp, lr to stack.
+> +	 */
+> +	for (sp = regs->compat_sp; (sp < current->mm->start_stack) &&
+> +		(entry->nr < entry->max_stack); sp += 4) {
+> +		sp_t = (u32 *)(unsigned long)sp;
+> +		if ((*sp_t > regs->compat_sp) &&
+> +			(*sp_t < current->mm->start_stack)) {
+> +			if (*(sp_t + 1) < current->mm->end_code &&
+> +				*(sp_t + 1) > current->mm->start_code) {
+> +				perf_callchain_store(entry,  *(sp_t + 1)-1);
+> +				sp += 4;
+> +			}
+> +		}
+> +	}
+> +}
 
+This looks like a pile of fragile heuristics to me. Why don't you just use
+libunwind in userspace, the same way you'd have to if you compiled without
+framepointers?
 
-On 16/04/20 9:07 AM, Viresh Kumar wrote:
-> External email: Use caution opening links or attachments
-> 
-> 
-> On 15-04-20, 16:55, Sumit Gupta wrote:
->>
->>
->> On 14/04/20 11:15 AM, Viresh Kumar wrote:
->>> External email: Use caution opening links or attachments
->>>
->>>
->>> On 13-04-20, 17:50, Sumit Gupta wrote:
->>>> This was done considering long delay value as explained previously.
->>>> Do you think that smp_call_function_single() would be better than work queue
->>>> here?
->>>
->>> Don't work with assumptions, you should test both and see which one
->>> works better. Workqueue should never be faster than
->>> smp_call_function_single() with my understanding.
->> Checked the time taken and its almost same in both cases.
->> Earlier we used smp_call_function_single(), but delay time period was small
->> in that SOC. In T194, the time period was more. So, this is an optimization
->> done because using work queue has advantage as interrupts will not be
->> disabled for that period.
-> 
-> Hmm, okay, keep the workqueue and mention the required details in a
-> comment for everyone to understand why the implementation is done that
-> way.
-> 
-
-sure, thank you!
-
-> --
-> viresh
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
