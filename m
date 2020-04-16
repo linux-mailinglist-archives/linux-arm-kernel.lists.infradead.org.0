@@ -2,90 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36BBA1ABE10
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 12:38:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CF611ABE3A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 12:41:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=y+zyBbVy3sp6rK2n4777d3f7xx41INfX4f8WDOVCFYw=; b=OolWgpBj2DRV/wrIGp4a6zzLNQ
-	z6psggDACAf1ZxiomFOBniAFmIMZ26TJ/ZHBNX6yhzkhzrwXv5m2eLFe6D3epiHoA5Fyjdafl7Yx9
-	ipMeMoL5fM2G/1OmrndPhdpgM9+U4MElGDhFxa56SFGy62FCxxLDaigA8+Y7HiZkVd5OALOBQIYCX
-	LfJjDUvlQX8DpB2BkrNIJPRBgnID9GF/3jGdF+TtDbGCg3WwuUVaQLYvKWdCmnzq3cEaIAiC7z+c8
-	jp3gYW1HmogmNXij3Z91vbwNLe5Y+1ULe4TJvN92XvxPM1gg0xZkhexv76FVkipyD541n2iLzfdB/
-	kFk7pmZg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4Qe00qkK3es9CH4j+73uM3zLFKNLJb6HOqlK1TTk69A=; b=CbWR0GF/kJsGIK
+	6lglGA2jBAA5aftZ89LvziMMXg5pnatBHz86hcjHkotaZuCVJdxX7G/U5U0xR9TpFYDOKrAeMU76S
+	vuiUG3/kA9MWSAnM/dmCBTFXcg0cwrZul28e88uFmrgijpQE+YYgAvISA+hF2238PriCPNZR1Ishm
+	1xtSqhV4ctQL0ndYdLr/715Pn/OfelszuilZpCE3mzODfxCAEeJJ60/U3crsdlk+ADC60yWGNbZ20
+	PXZ5BrlIikv+t1IltG8nLPe6cfZYK48YVIIefUZz6Bz+JWl8yfgwJWxbkc5VHUwbxiogiwWpeYwWi
+	tjJpHucztE/SzAcmcFKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP1uw-0000YX-Ix; Thu, 16 Apr 2020 10:38:46 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jP1xo-0004D2-3J; Thu, 16 Apr 2020 10:41:44 +0000
+Received: from mail-eopbgr30049.outbound.protection.outlook.com ([40.107.3.49]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP1un-0000X3-EX
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 10:38:39 +0000
-Received: by mail-wr1-x442.google.com with SMTP id f13so4169813wrm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 03:38:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=pSjSCo+R3nw6Mi3WgTdlVGEQK1cZ5sHURhNm1msjdTw=;
- b=i9oZ+y2GOFfxTK1a5ceBZ6AFtsRyWZturgwWSIzu0ubbthr/zDvbQIlhqpL9KQ+Akf
- iRHamma5/OBwrFLC7wFH2TGQpQI8Uqr/mK2ZlnGswi7y4iSeL3PAbHFVttOAeb2yJMg6
- wbjEn2oAT+H4FpDaBQYfOSlS3HVjxO0y4fG8sFsSMFyrDBdlJZklr/Uv8NL7uZ6ZVrGB
- QcBEqdQMhigJmJRKosP/nueTsLOcT0Lp9ckPDHZip8stn+yTKyQKeINIQjPOcLac54ES
- ewZXUEaNNSEHp4rS5VebyWCJRGnhEerGVxVMh0oKL2fmEAwsEkSpD3nethOrJj97Gbd4
- dqAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=pSjSCo+R3nw6Mi3WgTdlVGEQK1cZ5sHURhNm1msjdTw=;
- b=FLLH9xwYAi5FSxIr/QxqDYJfb9xWuStSgKJiWClWpleQmav85J9/GrxMMG/Mf+T+ox
- K0u2AXElSJ801p2jgaLaTJzLpMxQ+EM4SSrCnb1zve4utqVkGIoY2qsGDFOhdj5LdfkX
- 3Urmy9ttiZa2+WNCJdpDEAa+gY2MmEcCfPjriCg3iWU6YFipvvSs+fFfAcxHpM66oUS6
- fDBNzfBVY7kGtP2VNmJ+VU6JgmKS6NoOdkNUPNbpSmHdZrfC+mmoOXl9i7OJ2BAKfrrO
- /eEXG+tcgr90CUspBAShVjbhpR8kVjYkGCRfVuGZerS+NOCqd5Z5MSWVfo57Na7vhj7J
- t8ow==
-X-Gm-Message-State: AGi0PuYlzp7fzaAQpHGNvN8KX1cuGSpwkZZ8IQpCn0p6ob2GDjyYVsGx
- tea6MQX61uYuz0oW6lKda1uF2A==
-X-Google-Smtp-Source: APiQypJRkCtqhGOi3dzTBuCbBVYy1aeVZ14BVM0pG6hWY3E79FseizYNTA5LM6TJWETKq3a/bTDp4A==
-X-Received: by 2002:adf:e591:: with SMTP id l17mr5282824wrm.268.1587033516109; 
- Thu, 16 Apr 2020 03:38:36 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id y16sm26567044wrp.78.2020.04.16.03.38.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Apr 2020 03:38:35 -0700 (PDT)
-References: <20200414200017.226136-1-martin.blumenstingl@googlemail.com>
- <20200414200017.226136-3-martin.blumenstingl@googlemail.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH 2/4] clk: meson: meson8b: Fix the polarity of the RESET_N
- lines
-In-reply-to: <20200414200017.226136-3-martin.blumenstingl@googlemail.com>
-Date: Thu, 16 Apr 2020 12:38:34 +0200
-Message-ID: <1ja73bbtqt.fsf@starbuckisacylon.baylibre.com>
+ id 1jP1xJ-0003tP-Lj
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 10:41:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XvoDWYg4XxEueYcVKvrcCgmI6Z6O3+cP1l6AsWuHtjqg4S2TTsfMw11HhfB8IvG+0g22tL5y2SbnBUa4BrFquw6eKIyvYxQlZAVGArt/wCntc6rBaH7HQBZbuHoezdfI+pwYwD4OAuFTuEtsWobvRaHk95h+90pJsmdI/szkchW3BzzMoCp5VjAhd3YM3Q4Yv5xKnZs8s0l/0HRbWUUc0dwdylM2Yyz7gdhe3L+rKCHpED0iO92z30+ajHS8GCG/zdu+0aiy1imKriAkvsXbbWlTA62c4cyXYMHB/s+jy2bl7/DXvph/PLQsPNytkEsKMqkoUWReYJzNY1zK+DbaUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DvZ3UqyB84w50xqC6DmjHMedefp1hAc+hk2HOry1Lj4=;
+ b=Lc4uQv4yUpSDhATE4TdUwpibtIQH98yISnssHs+2sBYwpN+K4cd+193J/7W26FQ/UMsq+rlJt50E+XwFmzTN+LTyaz0UOpYLwJKIhHGxSuL6+3G/x4a2/bif7DoZdegn9hLUBAdyt2tLHRHl6neaYY+ScbrjAliMKy41p/Lq18to67TkAa4N4DJYngacv9gU53TfGpVttI71USSptmTlCrEXVMxyDaucXifZDlOvNkykKbbTGEeCtsio73vetxcj8VGetWT22IuB1FzpOAu1xvrqdddTEdiZrmPaXZjecPQ6wJBohbXaF52Y6N6j19wQBXXoLrVPnuQBnS2sWfGdqQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DvZ3UqyB84w50xqC6DmjHMedefp1hAc+hk2HOry1Lj4=;
+ b=MblH+6m/R8ImZpZOKmx0lRznK7ngROCG9vs1J7zn7WamE+Ujn1TTEvRt7ERQmFobMqeH4SpyQoglqNzbFjMhE60P46c9rVW1wbBwdTUvbHzNNZdCTjkxK9xOu42LgNDjsxNX51wsawXpK8xkvbcs4Xbyu20V9SaBuhU56j2WEWQ=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3785.eurprd04.prod.outlook.com (2603:10a6:8:f::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15; Thu, 16 Apr
+ 2020 10:41:10 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2900.028; Thu, 16 Apr 2020
+ 10:41:10 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: RE: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Topic: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Index: AQHWE7rnIXhaMxmp60Ko8ImmCqNkpah7fmcAgAABvHCAAA6dgIAAAKhA
+Date: Thu, 16 Apr 2020 10:41:10 +0000
+Message-ID: <DB3PR0402MB391655808CDD7AF9250671F7F5D80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1587019158-12143-1-git-send-email-Anson.Huang@nxp.com>
+ <20200416093932.2mkcyv4rs6v6a24a@pengutronix.de>
+ <DB3PR0402MB391613C2B53CEE067E1C7EC7F5D80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20200416103803.eifgth77wi44pejc@pengutronix.de>
+In-Reply-To: <20200416103803.eifgth77wi44pejc@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 98f7f9fe-e233-4e91-4945-08d7e1f2ad51
+x-ms-traffictypediagnostic: DB3PR0402MB3785:|DB3PR0402MB3785:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3785019C6A777219185E7E23F5D80@DB3PR0402MB3785.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0375972289
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(39860400002)(346002)(376002)(136003)(366004)(396003)(966005)(7696005)(316002)(44832011)(478600001)(83080400001)(53546011)(26005)(6506007)(2906002)(71200400001)(7416002)(86362001)(33656002)(186003)(81156014)(8936002)(8676002)(54906003)(9686003)(64756008)(52536014)(76116006)(66556008)(66476007)(6916009)(66946007)(55016002)(4326008)(5660300002)(66446008)(45080400002);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: WyRlFdgpdl+Mjbh4h7wm/t20x+DQmyRlm08bII2E8/BkVrS0amSlRyZ/gkoiFo8bAxcOgms0XqZeJYS1zX6oA03CRXIbe8/y6YFkyYDGRRD8AJ+u8R1cRT7qFvZBPJqIUlgwfIjccITdwX2NdD3hYoCzj+n9xD+QgTtnipVy/jOwRg/EFA2PMxbjdcc6FVlZLjvFlzzqmOPzQkmPX6J7jv8jtYAlBzorCTVWJ0aWVqQUkya0hY76QMiDCnnU0m7ewus2quez/7bM1njE+SXxDj3YeJs5rG9WgKvXvVn0AQpskVvh0p23nQH0N353DG+/IVBUb/weNvlwK1mO5TjNpx7UktFZf9WFLtvY1aXEe3ShIAWVgfqG5fBolz76LTMqRShSkgQ52ynswI0BjipgF4qPna4oORjwNOf/C1LKIenPxrfzMhim2sJCRdrOhDWOqi/BMCz+0zWgl4UWFwjqergoKFv05AAipeJjR3mNC+XELNgTnAuYeVBVeFareeLavOci0UrFWt2mxSBOfSjblA==
+x-ms-exchange-antispam-messagedata: /MBGvdcXpNWPkTllpIMPLWTmknw1v/8+l7O84lE+TYP7DTypBOocnT/1zfHQiDl6Q/3WyaxINNFArqzZ/TggaAnZgOr9O8n8rw6EswB0jxwQWA46mKFyMuVSMjwAiKFxZliN1LvomTQflJ+9x5V4GA==
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 98f7f9fe-e233-4e91-4945-08d7e1f2ad51
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2020 10:41:10.1715 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: UN+NDisR/hkdZHwsyaO26j/u0sM0NhuJeodsrxj6suHIzgWYwHRmzlmi8Hy53d6DRPFP34jo2HEtCbLOwWEwnA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3785
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_033837_489680_D9218F44 
-X-CRM114-Status: GOOD (  14.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200416_034113_749023_3A34D2F4 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.3.49 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,181 +126,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On Tue 14 Apr 2020 at 22:00, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-> CLKC_RESET_VID_DIVIDER_CNTL_RESET_N_POST and
-> CLKC_RESET_VID_DIVIDER_CNTL_RESET_N_PRE are active low. This means:
-> - asserting them requires setting the register value to 0
-> - de-asserting them requires setting the register value to 1
->
-> Set the register value accordingly for these two reset lines by setting
-> the inverted the register value compared to all other reset lines.
->
-> Fixes: 189621726bc2f6 ("clk: meson: meson8b: register the built-in reset controller")
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  drivers/clk/meson/meson8b.c | 81 ++++++++++++++++++++++++++-----------
->  1 file changed, 58 insertions(+), 23 deletions(-)
->
-> diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-> index 90d284ffc780..fa251e45e208 100644
-> --- a/drivers/clk/meson/meson8b.c
-> +++ b/drivers/clk/meson/meson8b.c
-> @@ -3506,54 +3506,87 @@ static struct clk_regmap *const meson8b_clk_regmaps[] = {
->  static const struct meson8b_clk_reset_line {
->  	u32 reg;
->  	u8 bit_idx;
-> +	bool active_low;
->  } meson8b_clk_reset_bits[] = {
->  	[CLKC_RESET_L2_CACHE_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 30
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 30,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_AXI_64_TO_128_BRIDGE_A5_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 29
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 29,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_SCU_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 28
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 28,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_CPU3_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 27
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 27,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_CPU2_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 26
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 26,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_CPU1_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 25
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 25,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_CPU0_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 24
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 24,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_A5_GLOBAL_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 18
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 18,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_A5_AXI_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 17
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 17,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_A5_ABP_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL0, .bit_idx = 16
-> +		.reg = HHI_SYS_CPU_CLK_CNTL0,
-> +		.bit_idx = 16,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_AXI_64_TO_128_BRIDGE_MMC_SOFT_RESET] = {
-> -		.reg = HHI_SYS_CPU_CLK_CNTL1, .bit_idx = 30
-> +		.reg = HHI_SYS_CPU_CLK_CNTL1,
-> +		.bit_idx = 30,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_VID_CLK_CNTL_SOFT_RESET] = {
-> -		.reg = HHI_VID_CLK_CNTL, .bit_idx = 15
-> +		.reg = HHI_VID_CLK_CNTL,
-> +		.bit_idx = 15,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_VID_DIVIDER_CNTL_SOFT_RESET_POST] = {
-> -		.reg = HHI_VID_DIVIDER_CNTL, .bit_idx = 7
-> +		.reg = HHI_VID_DIVIDER_CNTL,
-> +		.bit_idx = 7,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_VID_DIVIDER_CNTL_SOFT_RESET_PRE] = {
-> -		.reg = HHI_VID_DIVIDER_CNTL, .bit_idx = 3
-> +		.reg = HHI_VID_DIVIDER_CNTL,
-> +		.bit_idx = 3,
-> +		.active_low = false,
->  	},
->  	[CLKC_RESET_VID_DIVIDER_CNTL_RESET_N_POST] = {
-> -		.reg = HHI_VID_DIVIDER_CNTL, .bit_idx = 1
-> +		.reg = HHI_VID_DIVIDER_CNTL,
-> +		.bit_idx = 1,
-> +		.active_low = true,
->  	},
->  	[CLKC_RESET_VID_DIVIDER_CNTL_RESET_N_PRE] = {
-> -		.reg = HHI_VID_DIVIDER_CNTL, .bit_idx = 0
-> +		.reg = HHI_VID_DIVIDER_CNTL,
-> +		.bit_idx = 0,
-> +		.active_low = true,
->  	},
->  };
->  
-> @@ -3562,22 +3595,24 @@ static int meson8b_clk_reset_update(struct reset_controller_dev *rcdev,
->  {
->  	struct meson8b_clk_reset *meson8b_clk_reset =
->  		container_of(rcdev, struct meson8b_clk_reset, reset);
-> -	unsigned long flags;
->  	const struct meson8b_clk_reset_line *reset;
-> +	unsigned long flags;
-> +	unsigned int value;
+> Subject: Re: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+> json-schema
+> 
+> On 20-04-16 09:48, Anson Huang wrote:
+> > Hi, Marco
+> >
+> > > Subject: Re: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock
+> > > to json-schema
+> > >
+> > > Hi Anson,
+> > >
+> > > On 20-04-16 14:39, Anson Huang wrote:
+> > >
+> > > ...
+> > >
+> > > > diff --git
+> > > > a/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> > > b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> > > > new file mode 100644
+> > > > index 0000000..1c6e600
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> > > > @@ -0,0 +1,66 @@
+> > > > +# SPDX-License-Identifier: GPL-2.0 %YAML 1.2
+> > > > +---
+> > > > +$id:
+> > > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdev
+> > > icetr
+> > >
+> ee.org%2Fschemas%2Fclock%2Fimx6q-clock.yaml%23&amp;data=02%7C01%
+> > >
+> 7Canson.huang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C6
+> > >
+> 86ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&
+> > >
+> amp;sdata=Iw1CkVBMqw3m6sox6C3khcMy0BHNCQ9v2k72q3CM6Xs%3D&a
+> > > mp;reserved=0
+> > > > +$schema:
+> > > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdev
+> > > icetr
+> > >
+> ee.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Canson.hu
+> > >
+> ang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C686ea1d3bc2
+> > >
+> b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&amp;sdata=P
+> > >
+> Be2CEoDdMo9I1m3DHbITCyYxB4GF%2FigP%2FNd7YCopCQ%3D&amp;reserve
+> > > d=0
+> > > > +
+> > > > +title: Clock bindings for Freescale i.MX6 Quad
+> > > > +
+> > > > +maintainers:
+> > > > +  - Anson Huang <Anson.Huang@nxp.com>
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    const: fsl,imx6q-ccm
+> > > > +
+> > > > +  reg:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  interrupts:
+> > > > +    maxItems: 2
+> > >
+> > > IMHO I would force them to have exactly two so we need
+> > > minItems: 2 too here.
+> >
+> > Actually, those 2 interrupts are NOT necessary for some platforms,
+> > such as i.MX platforms do NOT enable them at all, so is it OK to force them
+> to be '2' here?
+> 
+> Why do we list them as required if they are not required? Currently all
+> 5 platforms adding both irqs so this won't break anything here.
 
-suggestion:
+OK, I will make the minItem/maxItem to 2 in next version.
 
-unsigned int value = 0;
-
->  
->  	if (id >= ARRAY_SIZE(meson8b_clk_reset_bits))
->  		return -EINVAL;
->  
->  	reset = &meson8b_clk_reset_bits[id];
->  
-> +	if (assert == reset->active_low)
-> +		value = 0;
-> +	else
-> +		value = BIT(reset->bit_idx);
-
-if (assert ^ reset->active_low)
-	value = BIT(reset->bit_idx);
-
-?
-
-> +
->  	spin_lock_irqsave(&meson_clk_lock, flags);
->  
-> -	if (assert)
-> -		regmap_update_bits(meson8b_clk_reset->regmap, reset->reg,
-> -				   BIT(reset->bit_idx), BIT(reset->bit_idx));
-> -	else
-> -		regmap_update_bits(meson8b_clk_reset->regmap, reset->reg,
-> -				   BIT(reset->bit_idx), 0);
-> +	regmap_update_bits(meson8b_clk_reset->regmap, reset->reg,
-> +			   BIT(reset->bit_idx), value);
->  
->  	spin_unlock_irqrestore(&meson_clk_lock, flags);
-
+Thanks,
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
