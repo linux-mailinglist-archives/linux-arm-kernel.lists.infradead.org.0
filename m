@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 050A61ABB52
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:34:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 541171ABB79
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:40:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QGlsg3s9BJneEx/wUY1NOIdWSk6J5l73Ab35YLsX/fU=; b=fVQEw6U9ZncBdO
-	FHWaM/V9SL3EZKm1wnM573rsKVJG/03L0t8djBxUSonIfSKg4wH6mZzoSdi9ruWvCcmc39f5iFvRs
-	XgkLgNz9l/FYt7E3u5yna76Ob5eEeAXemiY5g/Z2N6Sl8DqaAhHATEqFKFyhtENbrsIiAxhOLMenl
-	dBcpDc0oQA/16bM8Ox3RS/EYTwVaLUW52yz8ZK7uk1jEDC37yTouAnI4zyYbZL5ZIkyOKs7AFxZBd
-	ue+2NNAY7hc88s3b0TOc7D/VYR3ksk8GwT4J2s0VOCbpRFL2i4OMD3YEBf98AQ7TEjL3+Y4peQUxg
-	8GbwDn/EDu0NddVRSLJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RY8j7gAYkJBG67vm+8kHrL8p8F5ET8obDBL1XkUm7FE=; b=dH8RtKUmYvKQD7SjqfnN8n/BH
+	VCHrfrTXzsnrqHDgpm1ojQJmY8y5j02AW0A81EhDfZKeWG2U3krzgS7mbk5zxwrNzDeubG8yjCVQC
+	w3gI/z6NNhpfBvhecxJVsD6IKthpy7an/YCDvb5m5hJAI0xkOeqn3YL3TEhNA9pqyfsNK1uh9rRB7
+	uGlIcdW8yryg8y2HILx9TTzN+CCobRcNX7+tGo4RK1T3oYlYz4PZgJOvPS3xgHIBNTk9/pBC+Dn7A
+	BxbhWTT2VLF3KPsWHI+l+cSFzb77ezXWgZ7PqF2Zto51U/pWfq1I9wF96J2yrUpNxh4jo2yxHP8z2
+	g4JVTfLvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOzyy-0004TA-3k; Thu, 16 Apr 2020 08:34:48 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jP03s-0008Lp-JE; Thu, 16 Apr 2020 08:39:52 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOzym-0004Sk-Eb
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:34:37 +0000
-Received: by mail-lj1-x243.google.com with SMTP id j3so6424667ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 01:34:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MyKtvenZZySMWZjgRLJbDJOPHGIrfVrSPfr0WfI/VtA=;
- b=fYkiVyjy7eOsJYWlAiTayzWjGkE+e1mUldI0Bx/CxoO/uRzO5h5zkKeWvLWyT4wIVq
- y4Um/zqK1i/EUxtP/cB7m2yiCfOAVbucsbSvm9uAIBdUy5w/NyEgZas2SerPH26kjihk
- NJ5qrlR6KCeUheLOqsfKpP2vrUVQYBdC/lh6Iy4lvDXzlo9F10OICHSA8GRZxV9vIwgG
- g+fgaQUuLBOTvaOt4crwBP5OOZe7ophOecfwpbiaskT4jEC1w1TFXKcnvnYX+N2JBeWE
- dUyc5WtmVr5a+KeD8IdGTWSudzyYEY/vdzcMmFi1Gbr8mYPVC1ncjFXy4g01wQx0gT9E
- vWBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MyKtvenZZySMWZjgRLJbDJOPHGIrfVrSPfr0WfI/VtA=;
- b=i3zP8oK2MJiFk+eAakDeqpjsoEvUcKphKmFaoxgKCtE5dVi7wEJp00XjEOFE1XM3WF
- JvN8dnIx0tcpYc7I1reKQ/PmI0v6rcmT1qkiOkQGtEuzK6b5hjf0rrPl4O/6MZUUAYbK
- fojXuZp8gVGl0qgHCcJ6w2UeRcwnLRwGH/94Ixg99n9gjXlzDg0NwuViYIhqBurmFLrJ
- AzPrEEbW/Zx+m7yMgi6+arkwAnQ7tDWo6IyCJm/SzEzc87UdMUnkvWP/iQLqdKWImUXM
- kIXJjLk5MXgD6VO/Jm1nDHilDyAEzN/8pKTrbs+fvjPHLRJHfRxO8JTf/AWnl5aq3zrQ
- gojA==
-X-Gm-Message-State: AGi0PubYpR0XZZQA12iCMALl7yvRKgv7rgm7pzzANac+8y4+45cNx4tS
- JESosjQN6pBRb/v8TMpZX92HtQYahPOcul/HrjeA1g==
-X-Google-Smtp-Source: APiQypKpg4Qo0k4IoZG1lD0aQ14OtbNSt7M01nnNL2FnfHvo9Iw7EPQxYDZAVptV9fOJpu5zJ470WV5Vz4uxzy+rmRs=
-X-Received: by 2002:a2e:8805:: with SMTP id x5mr2229929ljh.223.1587026074289; 
- Thu, 16 Apr 2020 01:34:34 -0700 (PDT)
+ id 1jP03k-0008L6-6F
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:39:46 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587026385; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=uYTomwNJ7JVKnSJj43lc2hrUMA3IdsRKM3uaYsQJc+A=;
+ b=NVzHH5QZoPKcUJdbVhOOgcAGXZ4pf0oVl3ptv6LkxaCxjXFFNJjau739kCLaXRysx99dXci4
+ 1Vl5JsleXYNxoW5guKKxQwJ5an84OeEl0u4jwemtmYw9Ay14zyXYWauH8SwaDaLq8sywsbrS
+ Ue6zNA5DBzvdWGUtKfPy1xWR5GA=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e9819c3.7f02262a8928-smtp-out-n03;
+ Thu, 16 Apr 2020 08:39:31 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 39981C44788; Thu, 16 Apr 2020 08:39:31 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 94779C433F2;
+ Thu, 16 Apr 2020 08:39:30 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200402203656.27047-1-michael@walle.cc>
- <20200402203656.27047-12-michael@walle.cc>
-In-Reply-To: <20200402203656.27047-12-michael@walle.cc>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 10:34:23 +0200
-Message-ID: <CACRpkdbANL_W3gcTwue5VUCWT95boMXjFSqTeFDZvJ6iSeNpJg@mail.gmail.com>
-Subject: Re: [PATCH v2 11/16] gpio: add support for the sl28cpld GPIO
- controller
-To: Michael Walle <michael@walle.cc>
+Date: Thu, 16 Apr 2020 14:09:30 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 0/8] Relax sanity checking for mismatched AArch32 EL1
+In-Reply-To: <20200414213114.2378-1-will@kernel.org>
+References: <20200414213114.2378-1-will@kernel.org>
+Message-ID: <a86108a91975cacf94adc2a2101fba1b@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_013436_500200_D44CAD3C 
-X-CRM114-Status: GOOD (  13.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_013945_607744_8CF7B2DC 
+X-CRM114-Status: GOOD (  13.87  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -92,52 +86,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Lee Jones <lee.jones@linaro.org>, Jason Cooper <jason@lakedaemon.net>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Doug Anderson <dianders@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, kernel-team@android.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michael,
+On 2020-04-15 03:01, Will Deacon wrote:
+> Hi all,
+> 
+> For better or worse, there are SoCs in production where some, but not
+> all of the CPUs, support AArch32 at EL1 and above. Right now, that
+> results in "SANITY CHECK" warnings during boot and an unconditional
+> kernel taint.
+> 
+> This patch series tries to do a bit better: the only time we care about
+> AArch32 at EL1 is for KVM, so rather than throw our toys out of the
+> pram, we can instead just disable support for 32-bit guests on these
+> systems. In the unlikely scenario of a late CPU hotplug being the first
+> time we notice that AArch32 is not available, then we fail the hotplug
+> (right now we let the thing come online, which leads to hilarious
+> results for any pre-existing 32-bit guests).
+> 
+> Feedback welcome,
+> 
+> Will
+> 
 
-this is looking good provided we can get the generic GPIO regmap
-helper reviewed and merged. Thanks!
+Thanks Will, tested this series on QCOM SC7180 and SM8150 SoCs.
 
-On Thu, Apr 2, 2020 at 10:37 PM Michael Walle <michael@walle.cc> wrote:
+For the entire series,
 
-> This adds support for the GPIO controller of the sl28 board management
-> controller. This driver is part of a multi-function device.
->
-> Signed-off-by: Michael Walle <michael@walle.cc>
+Tested-by: saiprakash.ranjan@codeaurora.org
 
-> +       depends on MFD_SL28CPLD
+-Sai
 
-Apart from this depends it seems the patch is compile-time
-independent of the other patches so I'd suggest we just merge
-the generic regmap driver and this driver to the GPIO tree once
-we feel finished with them, optimistically assuming that the MFD
-driver will land and that we will not need any fundamental
-changes in the GPIO driver.
-
-Worst case we have to revert the driver and that is no disaster.
-
-Yours,
-Linus Walleij
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
