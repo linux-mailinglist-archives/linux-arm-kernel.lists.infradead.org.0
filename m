@@ -2,47 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C298C1AB8AA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 08:52:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97D8F1AB945
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:04:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fCBX2xkSSR+yYmJalsMQHtHw4tXt8u/EuVdxzjx+2Ng=; b=d1kX7NpOY0qMF1
-	QsIn9sD7UyGk2Qcw8hNqWgVQ54nvhyB7cbMBSbWnESPIqW/Xg+BF4/0/B5u9tZPmvdj2ymfUW/mNC
-	Tr6B+hBSSNi1K9NzC4CG/UyA/8sRW/T+/UUWQqwVtTjwCj3wnjFTJNaX8UfZjm8I0OOgHZyQCFNR/
-	79PulWQJGsD3cmYUZEQIp8s42h1Gc6zKe18whv2wzQRaSVuwLjleI33Th6lABt3/yxAO4l4G5POSu
-	yj4TxzV7bAG51If6Y+ge82+S9i4ZNx7jRnSzjfHipReUMs8IefM/e/U7M4jHP7wsRxMB9Bk58n3lA
-	X9XFqW7pAMSpulNyfJPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ppvBhQQn916IAYWvafvR7ayqIblPX0iQg14ywbHcj8k=; b=SjDGCphCIS+DxM
+	RTv1/OBP+QL3C3XiNiUeGh+XVisLQrSvIQZeT5fsZ8cZxVT7CbKVRniWXqbi1MWG8v0k6fWNvR6Sm
+	ozYrlba9h2vYZxowv78/ZUFal04xH0OsN0HppHiO4+r1/Fpv17/K7WIc5NunlAQYXH1zFg7GtKoTr
+	lGxYItAcgbkmxHeZ2klFbWVIviHPHjZr6rY1bip4xSX+hbDrnXlJ4tSvvpCn4gm6rcvLIZa5i6vpK
+	b+P0es6fD/5fMhC3McQnDx9nIXijlE7LLWzrStPiQ/o+LLJUV3qxDHQxvuMo0k/9tUdYRul0BTbVz
+	Hd2ZewhO+S36TP7ElUJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOyNv-0000H3-Nk; Thu, 16 Apr 2020 06:52:27 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
+	id 1jOyZE-0008IJ-Gq; Thu, 16 Apr 2020 07:04:08 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOyNX-0008SO-UO
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 06:52:05 +0000
-Received: from gwarestrin.me.apana.org.au ([192.168.0.7]
- helo=gwarestrin.arnor.me.apana.org.au)
- by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
- id 1jOyNU-0005Ks-25; Thu, 16 Apr 2020 16:52:01 +1000
-Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
- Thu, 16 Apr 2020 16:51:59 +1000
-Date: Thu, 16 Apr 2020 16:51:59 +1000
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] crypto: sun8i-ss - Delete an error message in
- sun8i_ss_probe()
-Message-ID: <20200416065159.GI7901@gondor.apana.org.au>
-References: <c7e1193f-7d8b-7da3-a2a8-e92ca0fd83b2@web.de>
+ id 1jOyXk-00075E-Is
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:02:37 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jOyXY-0005qT-Tq; Thu, 16 Apr 2020 09:02:24 +0200
+Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jOyXX-0003M3-SP; Thu, 16 Apr 2020 09:02:23 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH v5 0/4] mainline Protonic boards
+Date: Thu, 16 Apr 2020 09:02:18 +0200
+Message-Id: <20200416070222.12181-1-o.rempel@pengutronix.de>
+X-Mailer: git-send-email 2.26.0.rc2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c7e1193f-7d8b-7da3-a2a8-e92ca0fd83b2@web.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_235204_265368_C2AB96E4 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200416_000236_654388_8B8A219D 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,30 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tang Bin <tangbin@cmss.chinamobile.com>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, Colin Ian King <colin.king@canonical.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCBBcHIgMDQsIDIwMjAgYXQgMDU6NDU6MjZQTSArMDIwMCwgTWFya3VzIEVsZnJpbmcg
-d3JvdGU6Cj4gRnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2Uu
-bmV0Pgo+IERhdGU6IFNhdCwgNCBBcHIgMjAyMCAxNzozNDo1MyArMDIwMAo+IAo+IFRoZSBmdW5j
-dGlvbiDigJxwbGF0Zm9ybV9nZXRfaXJx4oCdIGNhbiBsb2cgYW4gZXJyb3IgYWxyZWFkeS4KPiBU
-aHVzIG9taXQgYSByZWR1bmRhbnQgbWVzc2FnZSBmb3IgdGhlIGV4Y2VwdGlvbiBoYW5kbGluZyBp
-biB0aGUKPiBjYWxsaW5nIGZ1bmN0aW9uLgo+IAo+IFRoaXMgaXNzdWUgd2FzIGRldGVjdGVkIGJ5
-IHVzaW5nIHRoZSBDb2NjaW5lbGxlIHNvZnR3YXJlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1hcmt1
-cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNvdXJjZWZvcmdlLm5ldD4KPiAtLS0KPiAgZHJpdmVy
-cy9jcnlwdG8vYWxsd2lubmVyL3N1bjhpLXNzL3N1bjhpLXNzLWNvcmUuYyB8IDQgKy0tLQo+ICAx
-IGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDMgZGVsZXRpb25zKC0pCgpQYXRjaCBhcHBs
-aWVkLiAgVGhhbmtzLgotLSAKRW1haWw6IEhlcmJlcnQgWHUgPGhlcmJlcnRAZ29uZG9yLmFwYW5h
-Lm9yZy5hdT4KSG9tZSBQYWdlOiBodHRwOi8vZ29uZG9yLmFwYW5hLm9yZy5hdS9+aGVyYmVydC8K
-UEdQIEtleTogaHR0cDovL2dvbmRvci5hcGFuYS5vcmcuYXUvfmhlcmJlcnQvcHVia2V5LnR4dAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+changes v5:
+- PRTI6Q: remove status from the pwm-backlight node
+- drop the vendor-prefixes patch, it is already taken by Rob
+- add Reviewed-by: Rob Herring <robh@kernel.org>
+
+changes v4:
+- VT7: fix typo
+
+changes v3:
+- move compatible to the start of node
+- move status to the end
+- use generic names in compatible
+- refactor dts/dtsi
+- use alphabet order for pinctrl and phandels
+- remove unused or currently not supported nodes
+
+changes v2:
+- squash PRTI6Q patches
+
+Oleksij Rempel (4):
+  ARM: dts: add Protonic PRTI6Q board
+  ARM: dts: add Protonic WD2 board
+  ARM: dts: add Protonic VT7 board
+  ARM: dts: add Protonic RVT board
+
+ .../devicetree/bindings/arm/fsl.yaml          |   4 +
+ arch/arm/boot/dts/Makefile                    |   4 +
+ arch/arm/boot/dts/imx6dl-prtrvt.dts           | 203 +++++++
+ arch/arm/boot/dts/imx6dl-prtvt7.dts           | 473 +++++++++++++++
+ arch/arm/boot/dts/imx6q-prti6q.dts            | 550 ++++++++++++++++++
+ arch/arm/boot/dts/imx6q-prtwd2.dts            | 188 ++++++
+ arch/arm/boot/dts/imx6qdl-prti6q.dtsi         | 185 ++++++
+ 7 files changed, 1607 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtrvt.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtvt7.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prti6q.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prtwd2.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-prti6q.dtsi
+
+-- 
+2.26.0.rc2
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
