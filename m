@@ -2,87 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B03A31AC884
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 660291AC8A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:12:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8DrKMTAqgMSaAJMZVtb5ffQ+tgH1S5rtJQ8y7B9gGP0=; b=s02XPhAEAPkDst
-	hr+9Dg0CrT2qYSl+zbkkhOmlNSvZMQYXOaMn6vLLWpU/A8QZaqytFArTqu7PlzNQp0B4dAWNv4iXh
-	rcKf+7ZIIbCExmEzNle3NO82Iwrk1U8ty3pdsBNFFslt+Co+YfOXyyVB1ZwLv4hRS9WwSkaNL1Uun
-	19Ne2iv09qZLvD6rxXyAVWO1u3IjYYTOJTRKg/L08ibb8AJgvgQV3bdcKavJkI6/nsrWNUvXlMeAz
-	KSPSlgL4JNuz/epiSt70bUp5Pj/F4gvzvprv1SY+fWlevEIHp1huIxTLaGNpJrydCVAteTFXQ9Mbs
-	VEWO4arAxs5mblip7Y9Q==;
+	List-Owner; bh=jH1iS2P17FD9KcgiX6PjVDJ5qBiPwmk4UpfbOKZaa0Q=; b=CJ9KsgQLJl+Q2d
+	C3n2mN/Vge5gP6qmI7Uf9CkE8Y05FaP5WoL0bxBOyfH3DpCVPEihdQg6uRLyP2T3gckI/AxIoEMBE
+	FFI9oOhuqXOs4hLDaqAIFWpYxBKixeP4j7G1OYvvRdg7yPxWlww3mxQcED0bmfQfD49u1/Yn+PqJP
+	oYpntYWDdaNtkrBNxy6qg+1xW13nK8vI18h0S8vFM0hcqx1zH5Q2jGGF1sPH2J1ABP06zbI00eYI0
+	iNOAhKNE3xvtm3ICuOTm1SXOLtBN3WXfJo0CaF+pNJ1YYLhdp4YSIQJrYZJTwnW3jjAe8bzp/lvcV
+	7WD2pyzlwJoIH6ih8XKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP69J-0000hl-Oz; Thu, 16 Apr 2020 15:09:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jP6C1-0003cR-34; Thu, 16 Apr 2020 15:12:41 +0000
+Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP699-0000gv-Gg
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:09:44 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1A6402222D;
- Thu, 16 Apr 2020 15:09:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587049783;
- bh=d+jYBOjHEQ4IMdmHevIiKoXNQP6Ha/WDzfGTquft15M=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=bFE2oQgRFyl5eaViJHVH9ihqsKwAXnffRCx/4FIv9b/eQpX0cXb0JtebE9VyGHY8F
- 2qqE0D4ZFAaox2vHfmelWtQU26dZNF2xSH9tDN2NT4lS/ZjTMW3LLDfNEfcXFtgt3Z
- q1NupWDClMckGzO1vqmx6W0goEQlzp9XBYBQt93o=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jP697-003tq8-E7; Thu, 16 Apr 2020 16:09:41 +0100
-Date: Thu, 16 Apr 2020 16:09:39 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: Re: [PATCH v2] KVM/arm64: Support enabling dirty log gradually in
- small chunks
-Message-ID: <20200416160939.7e9c1621@why>
-In-Reply-To: <be45ec89-2bdb-454b-d20a-c08898e26024@redhat.com>
-References: <20200413122023.52583-1-zhukeqian1@huawei.com>
- <be45ec89-2bdb-454b-d20a-c08898e26024@redhat.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jP6Bq-0003as-CO
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:12:31 +0000
+Received: by mail-qk1-f195.google.com with SMTP id s63so17453283qke.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 08:12:30 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=z50ZsQ8IUFKM+b5Biw9UtKMzIva0+uiY3DIJESbMIYI=;
+ b=TfIAMjlzvH9Fs9Xk2gyg75+LN1I7GaIlJtwgi/LqaFziqkVFsUKbl2CSkzavGI1qZa
+ u82f1h2x8vBpy4vlhy72/8XU5Uu+a57SBO3X7zS1Wfzj34DrhKYDhNqiNPASiApmClut
+ Pv5H0tFFMwJebS7ElgUoinEIu6zMOVHQ16W2amY7E6XqfAGpyxV0Jy1yEgX8MxQwyiWJ
+ YjcsaP5UThzcUvqZEm33OXsOit1r+Y1ze1FatfgYKwTVkX9ZNiiBMQ4wGuos7z4MOH1w
+ 0TgRGmShwgWgwvvo/D55w1WOd7ZADp1WgO0r0W+sL0Z61EyxGNMnh4hBmUS7VCYE01LV
+ PVHA==
+X-Gm-Message-State: AGi0Pub7ITk2/HkwU/TEWW6U+fLcvUbauLa2re0GodE/GcJwSKo88X1h
+ ViyCr7JY59KIdwsEQgScUpk=
+X-Google-Smtp-Source: APiQypL6nC7+eoW1r8jlGp0Pbr9X6TqFhXKgLwxJWfl9Gn6UCRZwndkSTjZyZCGBOb2DmniWXBxoFQ==
+X-Received: by 2002:a37:7242:: with SMTP id n63mr30880327qkc.111.1587049949214; 
+ Thu, 16 Apr 2020 08:12:29 -0700 (PDT)
+Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
+ by smtp.gmail.com with ESMTPSA id c207sm15252197qkb.7.2020.04.16.08.12.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Apr 2020 08:12:28 -0700 (PDT)
+From: Arvind Sankar <nivedita@alum.mit.edu>
+To: Arvind Sankar <nivedita@alum.mit.edu>
+Subject: [PATCH v2 0/3] efi: Remove __efistub_global annotation
+Date: Thu, 16 Apr 2020 11:12:24 -0400
+Message-Id: <20200416151227.3360778-1-nivedita@alum.mit.edu>
+X-Mailer: git-send-email 2.25.3
+In-Reply-To: <20200415221520.2692512-1-nivedita@alum.mit.edu>
+References: <20200415221520.2692512-1-nivedita@alum.mit.edu>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: pbonzini@redhat.com, zhukeqian1@huawei.com,
- kvm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, will@kernel.org,
- suzuki.poulose@arm.com, sean.j.christopherson@intel.com,
- jianjay.zhou@huawei.com, wanghaibin.wang@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_080943_596783_77FA50DA 
-X-CRM114-Status: GOOD (  26.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200416_081230_420929_9D34E540 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.195 listed in list.dnswl.org]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [niveditas98[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [niveditas98[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,113 +88,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jay Zhou <jianjay.zhou@huawei.com>, wanghaibin.wang@huawei.com,
- Keqian Zhu <zhukeqian1@huawei.com>, kvmarm@lists.cs.columbia.edu,
+Cc: linux-efi@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Ard Biesheuvel <ardb@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 18:13:56 +0200
-Paolo Bonzini <pbonzini@redhat.com> wrote:
+This patch series removes the need for annotating global data in the EFI
+stub with __efistub_global for ARM32 and X86.
 
-> On 13/04/20 14:20, Keqian Zhu wrote:
-> > There is already support of enabling dirty log graually in small chunks
-> > for x86 in commit 3c9bd4006bfc ("KVM: x86: enable dirty log gradually in
-> > small chunks"). This adds support for arm64.
-> > 
-> > x86 still writes protect all huge pages when DIRTY_LOG_INITIALLY_ALL_SET
-> > is eanbled. However, for arm64, both huge pages and normal pages can be
-> > write protected gradually by userspace.
-> > 
-> > Under the Huawei Kunpeng 920 2.6GHz platform, I did some tests on 128G
-> > Linux VMs with different page size. The memory pressure is 127G in each
-> > case. The time taken of memory_global_dirty_log_start in QEMU is listed
-> > below:
-> > 
-> > Page Size      Before    After Optimization
-> >   4K            650ms         1.8ms
-> >   2M             4ms          1.8ms
-> >   1G             2ms          1.8ms
-> > 
-> > Besides the time reduction, the biggest income is that we will minimize
-> > the performance side effect (because of dissloving huge pages and marking
-> > memslots dirty) on guest after enabling dirty log.
-> > 
-> > Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
-> > ---
-> >  Documentation/virt/kvm/api.rst    |  2 +-
-> >  arch/arm64/include/asm/kvm_host.h |  3 +++
-> >  virt/kvm/arm/mmu.c                | 12 ++++++++++--
-> >  3 files changed, 14 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/Documentation/virt/kvm/api.rst b/Documentation/virt/kvm/api.rst
-> > index efbbe570aa9b..0017f63fa44f 100644
-> > --- a/Documentation/virt/kvm/api.rst
-> > +++ b/Documentation/virt/kvm/api.rst
-> > @@ -5777,7 +5777,7 @@ will be initialized to 1 when created.  This also improves performance because
-> >  dirty logging can be enabled gradually in small chunks on the first call
-> >  to KVM_CLEAR_DIRTY_LOG.  KVM_DIRTY_LOG_INITIALLY_SET depends on
-> >  KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (it is also only available on
-> > -x86 for now).
-> > +x86 and arm64 for now).
-> >  
-> >  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 was previously available under the name
-> >  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT, but the implementation had bugs that make
-> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> > index 32c8a675e5a4..a723f84fab83 100644
-> > --- a/arch/arm64/include/asm/kvm_host.h
-> > +++ b/arch/arm64/include/asm/kvm_host.h
-> > @@ -46,6 +46,9 @@
-> >  #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
-> >  #define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
-> >  
-> > +#define KVM_DIRTY_LOG_MANUAL_CAPS   (KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE | \
-> > +				     KVM_DIRTY_LOG_INITIALLY_SET)
-> > +
-> >  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
-> >  
-> >  extern unsigned int kvm_sve_max_vl;
-> > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-> > index e3b9ee268823..1077f653a611 100644
-> > --- a/virt/kvm/arm/mmu.c
-> > +++ b/virt/kvm/arm/mmu.c
-> > @@ -2265,8 +2265,16 @@ void kvm_arch_commit_memory_region(struct kvm *kvm,
-> >  	 * allocated dirty_bitmap[], dirty pages will be be tracked while the
-> >  	 * memory slot is write protected.
-> >  	 */
-> > -	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES)
-> > -		kvm_mmu_wp_memory_region(kvm, mem->slot);
-> > +	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES) {
-> > +		/*
-> > +		 * If we're with initial-all-set, we don't need to write
-> > +		 * protect any pages because they're all reported as dirty.
-> > +		 * Huge pages and normal pages will be write protect gradually.
-> > +		 */
-> > +		if (!kvm_dirty_log_manual_protect_and_init_set(kvm)) {
-> > +			kvm_mmu_wp_memory_region(kvm, mem->slot);
-> > +		}
-> > +	}
-> >  }
-> >  
-> >  int kvm_arch_prepare_memory_region(struct kvm *kvm,
-> >   
-> 
-> Marc, what is the status of this patch?
+This is done by renaming the .data and .bss sections in the object files
+linked into the EFI stub to .data.efistub and .bss.efistub respectively,
+and including those sections into the compressed kernel's .data section
+using its linker script.
 
-I just had a look at it. Is there any urgency for merging it?
+Changes from v1:
+- drop patch 2 and squash patches 3 and 5 for x86
+- fix R_X86 -> R_386
+- only check native relocation size (32-bit for R386 and 64-bit for
+  RX86_64)
 
-Thanks,
+The series is based on efi/next, rebased onto v5.7-rc1, plus two earlier
+fixes for x86 EFI that are queued for v5.7.
 
-	M.
+Patches on top of v5.7-rc1:
+In efi/next:
+
+Ard Biesheuvel (2):
+      efi: clean up config table description arrays
+      efi: move arch_tables check to caller
+
+Arvind Sankar (19):
+      efi/gop: Remove redundant current_fb_base
+      efi/gop: Move check for framebuffer before con_out
+      efi/gop: Get mode information outside the loop
+      efi/gop: Factor out locating the gop into a function
+      efi/gop: Slightly re-arrange logic of find_gop
+      efi/gop: Move variable declarations into loop block
+      efi/gop: Use helper macros for populating lfb_base
+      efi/gop: Use helper macros for find_bits
+      efi/gop: Remove unreachable code from setup_pixel_info
+      efi/gop: Add prototypes for query_mode and set_mode
+      efi/gop: Allow specifying mode number on command line
+      efi/gop: Allow specifying mode by <xres>x<yres>
+      efi/gop: Allow specifying depth as well as resolution
+      efi/gop: Allow automatically choosing the best mode
+
+Additional:
+Arvind Sankar (2):
+      efi/x86: Move efi stub globals from .bss to .data
+      efi/x86: Always relocate the kernel for EFI handover entry
+
+Arvind Sankar (3):
+  efi/arm: Remove __efistub_global annotation
+  efi/x86: Remove __efistub_global and add relocation check
+  efi: Kill __efistub_global
+
+ arch/arm/boot/compressed/vmlinux.lds.S        |  2 +-
+ arch/x86/boot/compressed/vmlinux.lds.S        |  1 +
+ drivers/firmware/efi/libstub/Makefile         | 31 +++++++++++++------
+ drivers/firmware/efi/libstub/arm-stub.c       |  4 +--
+ .../firmware/efi/libstub/efi-stub-helper.c    | 15 +++++----
+ drivers/firmware/efi/libstub/efistub.h        |  6 ----
+ drivers/firmware/efi/libstub/gop.c            |  2 +-
+ drivers/firmware/efi/libstub/x86-stub.c       |  2 +-
+ 8 files changed, 34 insertions(+), 29 deletions(-)
+
 -- 
-Jazz is not dead. It just smells funny...
+2.25.3
+
 
 _______________________________________________
 linux-arm-kernel mailing list
