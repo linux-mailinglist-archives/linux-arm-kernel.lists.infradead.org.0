@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F04281ABA48
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:51:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35D6F1ABA4C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:52:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rgi2n1yBH7tOZmj1QqhxW04pK5bzyOwSEj1oPv6iDeo=; b=MQnWSNA2KtSSuj
-	kD3znyE67peJygiIatuEu1l7cPM6ANZUDL0LyxUAj0ZA2YjkqoaJdkYNXepAJ5c+W2LS8aD8JPaDU
-	vQl2boKF0qioO+7phJ7lVmYdYSPPR+Gg513WquENnCOUkzWDHsPMYK1ZY8tLWXJi7aKU9Ziu7F2fu
-	wsypUcSQjO44HoWZIRI1DQFqTN3mnCwjENmvH84zr+LKGwIKrrGjaD/fnvgjowTp3Nsz2tY/v89Gd
-	MszwK6oEA3C0ueouiUWbswhwNabSm4amkBO1O0oGtCpqjxJrd5OwxFtYzUe47eivFspVMStIfoZsx
-	Cimuk/9t/3L1rZ90axSQ==;
+	List-Owner; bh=gMe9TZgDylA5bpv9IKB/0fIoCr4VUd7SfCG38Dz9sZM=; b=d0H80JERhzxOEQ
+	pG3hC/cugcFAzUmEfL/GIaJ8g8KWr/Uz5BvkcEB87OGS5l0yrZhzyBrUJxXZpBQoLbuqajFZfIKRi
+	LjUdKsfV8GDPm+TNkkHOd6XGVJpQWySy9a8jXALRCx5xFU41Cz1l9WNRZPzBTywhAZHSMwfqBNIeV
+	amoTLgVYq83qO38A0nTlxWqGRuW2q/JxHNIpu77XGGOiRfsp+RFo1L3TcqWT0hYPC2LlPbTvPa0Lg
+	aZTy5N6jB0BU+qB8r4rhOX+VvVqveL1ZZJrqftOVFh3fNpRDsd061AIbnt9ws1yfxSOB7urb/FFz0
+	Gpth7DxNibwgfJkauxOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOzIX-0005Yp-7Z; Thu, 16 Apr 2020 07:50:57 +0000
+	id 1jOzJP-0005tZ-9r; Thu, 16 Apr 2020 07:51:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOzIP-0005YJ-J8
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:50:50 +0000
-Received: from mail-il1-f171.google.com (mail-il1-f171.google.com
- [209.85.166.171])
+ id 1jOzJH-0005t8-4V
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:51:44 +0000
+Received: from mail-il1-f173.google.com (mail-il1-f173.google.com
+ [209.85.166.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 221B021569
+ by mail.kernel.org (Postfix) with ESMTPSA id BC7C121582
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 07:50:49 +0000 (UTC)
+ Thu, 16 Apr 2020 07:51:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587023449;
- bh=OFHqz9GYYZNwc+I9swBEm5dzUhRk5QACD1V1CxcDFlo=;
+ s=default; t=1587023502;
+ bh=Rhq0sXe0rapQY1I4b51ZXWHI+oTRXpSADqJAZ1zCJDY=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KZcD59NIBi3fSTJa9R3dm9SUE41lbsKpYBdDP7DYKp2lCFhz+WVORehUZFIWPY6cj
- 0vgcsAVA8xIEXgiwx8uUO3ae0nXXWMHi0nDPOF8S5JPQCg391UW8ZSfOp4iYiysmLv
- Xl/X7Mvexhs6KXq+jLXS8bmun/3zNDOV3gU6qZec=
-Received: by mail-il1-f171.google.com with SMTP id u5so6030961ilb.5
+ b=PHzPYlOaVusKITn6qyAoRQQkdFx6kW8qZfzbLk0ZHMG1WiWWVE73R5MoAES9aeiCU
+ zuDi8WbleFKlLzeHTdGwWk/OoSXwbzD30WsdWyWspjHMgBbIu2xKDZ2o9wBmUqXlsL
+ nOE8KqzXKNVRoPt2ItVX6EkO0m26ccYNBBA5CZZs=
+Received: by mail-il1-f173.google.com with SMTP id t8so6050759ilj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 00:50:49 -0700 (PDT)
-X-Gm-Message-State: AGi0Puacylc/udti2uMp+5h+ItZia/skHfVuwxyJR1JwxwieT4xta6So
- 9GBWR4H8RkDmGRCkhypxCpLKPscHdRWrwV28IyU=
-X-Google-Smtp-Source: APiQypI5ojUj0Vjwe5ylB1JFpUhtyPIygOqNmKrjZ41jxKYyJbInoum3YZtcRuho0AfeBevcdVTm443eRLyhFE/uFFQ=
-X-Received: by 2002:a92:aa0f:: with SMTP id j15mr9438871ili.211.1587023448452; 
- Thu, 16 Apr 2020 00:50:48 -0700 (PDT)
+ Thu, 16 Apr 2020 00:51:42 -0700 (PDT)
+X-Gm-Message-State: AGi0PubteK0sHSTec10aDhz3NXeKlYaPBUVQaf6mcAGVZtGCkuuygC7s
+ gZyKfw6EbpmPnLaraxHfKYi2W6ovwL3hakmzDro=
+X-Google-Smtp-Source: APiQypKlHXExqQH/4hwdLFRRNK2M1tNb1TH7BKiSbrxgh5AJxC3pKBem/1iU8ycNKPWLjCHi/u/a08YKoKSHNQmisp0=
+X-Received: by 2002:a92:5a4c:: with SMTP id o73mr8748153ilb.218.1587023502144; 
+ Thu, 16 Apr 2020 00:51:42 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200415221520.2692512-1-nivedita@alum.mit.edu>
- <20200415221520.2692512-2-nivedita@alum.mit.edu>
-In-Reply-To: <20200415221520.2692512-2-nivedita@alum.mit.edu>
+ <20200415221520.2692512-4-nivedita@alum.mit.edu>
+In-Reply-To: <20200415221520.2692512-4-nivedita@alum.mit.edu>
 From: Ard Biesheuvel <ardb@kernel.org>
-Date: Thu, 16 Apr 2020 09:50:36 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXE7aNm5XWrB2PkEedXA02gGmpcPW7rjziAXeTSPL_786A@mail.gmail.com>
-Message-ID: <CAMj1kXE7aNm5XWrB2PkEedXA02gGmpcPW7rjziAXeTSPL_786A@mail.gmail.com>
-Subject: Re: [PATCH 1/5] efi/arm: Remove __efistub_global annotation
+Date: Thu, 16 Apr 2020 09:51:30 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFMgrj8POtc0UQ6D-dbDKU+RmuHjUH-bAkMBAqjL_p+mg@mail.gmail.com>
+Message-ID: <CAMj1kXFMgrj8POtc0UQ6D-dbDKU+RmuHjUH-bAkMBAqjL_p+mg@mail.gmail.com>
+Subject: Re: [PATCH 3/5] efi/x86: Remove __efistub_global annotation
 To: Arvind Sankar <nivedita@alum.mit.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_005049_673954_A3089352 
+X-CRM114-CacheID: sfid-20200416_005143_226184_D988F342 
 X-CRM114-Status: GOOD (  18.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -104,57 +104,74 @@ On Thu, 16 Apr 2020 at 00:15, Arvind Sankar <nivedita@alum.mit.edu> wrote:
 >
 > Signed-off-by: Arvind Sankar <nivedita@alum.mit.edu>
 
+With the R_386_32/R_X86_64_64 check folded in:
+
 Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
 
 > ---
->  arch/arm/boot/compressed/vmlinux.lds.S | 2 +-
->  drivers/firmware/efi/libstub/Makefile  | 7 ++++---
->  drivers/firmware/efi/libstub/efistub.h | 2 +-
->  3 files changed, 6 insertions(+), 5 deletions(-)
+>  arch/x86/boot/compressed/vmlinux.lds.S |  1 +
+>  drivers/firmware/efi/libstub/Makefile  | 12 ++++++++++--
+>  drivers/firmware/efi/libstub/efistub.h |  4 ----
+>  3 files changed, 11 insertions(+), 6 deletions(-)
 >
-> diff --git a/arch/arm/boot/compressed/vmlinux.lds.S b/arch/arm/boot/compressed/vmlinux.lds.S
-> index b247f399de71..b6793c7932a9 100644
-> --- a/arch/arm/boot/compressed/vmlinux.lds.S
-> +++ b/arch/arm/boot/compressed/vmlinux.lds.S
-> @@ -78,7 +78,7 @@ SECTIONS
->       * The EFI stub always executes from RAM, and runs strictly before the
->       * decompressor, so we can make an exception for its r/w data, and keep it
->       */
-> -    *(.data.efistub)
-> +    *(.data.efistub .bss.efistub)
->      __pecoff_data_end = .;
->
->      /*
+> diff --git a/arch/x86/boot/compressed/vmlinux.lds.S b/arch/x86/boot/compressed/vmlinux.lds.S
+> index 508cfa6828c5..0dc5c2b9614b 100644
+> --- a/arch/x86/boot/compressed/vmlinux.lds.S
+> +++ b/arch/x86/boot/compressed/vmlinux.lds.S
+> @@ -52,6 +52,7 @@ SECTIONS
+>                 _data = . ;
+>                 *(.data)
+>                 *(.data.*)
+> +               *(.bss.efistub)
+>                 _edata = . ;
+>         }
+>         . = ALIGN(L1_CACHE_BYTES);
 > diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-> index 094eabdecfe6..45ffe0822df1 100644
+> index e5e76677f2da..0bb2916eb12b 100644
 > --- a/drivers/firmware/efi/libstub/Makefile
 > +++ b/drivers/firmware/efi/libstub/Makefile
-> @@ -100,8 +100,9 @@ quiet_cmd_stubcopy = STUBCPY $@
+> @@ -73,8 +73,8 @@ CFLAGS_arm64-stub.o           := -DTEXT_OFFSET=$(TEXT_OFFSET)
+>  # a verification pass to see if any absolute relocations exist in any of the
+>  # object files.
+>  #
+> -extra-$(CONFIG_EFI_ARMSTUB)    := $(lib-y)
+> -lib-$(CONFIG_EFI_ARMSTUB)      := $(patsubst %.o,%.stub.o,$(lib-y))
+> +extra-y        := $(lib-y)
+> +lib-y  := $(patsubst %.o,%.stub.o,$(lib-y))
 >
->  #
->  # ARM discards the .data section because it disallows r/w data in the
-> -# decompressor. So move our .data to .data.efistub, which is preserved
-> -# explicitly by the decompressor linker script.
-> +# decompressor. So move our .data to .data.efistub and .bss to .bss.efistub,
-> +# which are preserved explicitly by the decompressor linker script.
->  #
-> -STUBCOPY_FLAGS-$(CONFIG_ARM)   += --rename-section .data=.data.efistub
-> +STUBCOPY_FLAGS-$(CONFIG_ARM)   += --rename-section .data=.data.efistub \
-> +                                  --rename-section .bss=.bss.efistub,load,alloc
+>  STUBCOPY_FLAGS-$(CONFIG_ARM64) += --prefix-alloc-sections=.init \
+>                                    --prefix-symbols=__efistub_
+> @@ -89,6 +89,14 @@ STUBCOPY_FLAGS-$(CONFIG_ARM) += --rename-section .data=.data.efistub \
+>                                    --rename-section .bss=.bss.efistub,load,alloc
 >  STUBCOPY_RELOC-$(CONFIG_ARM)   := R_ARM_ABS
+>
+> +#
+> +# For x86, bootloaders like systemd-boot or grub-efi do not zero-initialize the
+> +# .bss section, so the .bss section of the EFI stub needs to be included in the
+> +# .data section of the compressed kernel to ensure initialization. Rename the
+> +# .bss section here so it's easy to pick out in the linker script.
+> +#
+> +STUBCOPY_FLAGS-$(CONFIG_X86)   += --rename-section .bss=.bss.efistub,load,alloc
+> +
+>  $(obj)/%.stub.o: $(obj)/%.o FORCE
+>         $(call if_changed,stubcopy)
+>
 > diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
-> index bd0b86b63936..a92d42ffd9f7 100644
+> index a92d42ffd9f7..49651e20bb9f 100644
 > --- a/drivers/firmware/efi/libstub/efistub.h
 > +++ b/drivers/firmware/efi/libstub/efistub.h
-> @@ -25,7 +25,7 @@
+> @@ -25,11 +25,7 @@
 >  #define EFI_ALLOC_ALIGN                EFI_PAGE_SIZE
 >  #endif
 >
-> -#if defined(CONFIG_ARM) || defined(CONFIG_X86)
-> +#if defined(CONFIG_X86)
->  #define __efistub_global       __section(.data)
->  #else
+> -#if defined(CONFIG_X86)
+> -#define __efistub_global       __section(.data)
+> -#else
 >  #define __efistub_global
+> -#endif
+>
+>  extern bool __pure nochunk(void);
+>  extern bool __pure nokaslr(void);
 > --
 > 2.24.1
 >
