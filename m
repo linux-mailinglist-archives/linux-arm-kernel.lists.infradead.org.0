@@ -2,75 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C5511ABD30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:47:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF94B1ABD37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:48:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=veVPqRBQgH9b8/nUVsbvwFoMe7vc8foFJWGu2bSmIns=; b=Wh1YUQ9/v9txa5
-	T1te/M8l+pmqC1enD8LsFEZ+T3j7Q7dLGM5nRrRiiN912lIRRCiYNfpVpSNwfepbjYlOvzfs6+qr7
-	0VCA/a1GkP9aDCSPWJOuncC4ZcgDpKdWbNQ1f+FFJ2fc8fZNkbTiH+PG9O98nROJFlulmLjRgaq+H
-	MikmHXnOb0+fw55O8rpMQPsChXckXNP+hM11oyAtvuQN0g0+CHrQYNvYv0I1bnUY8TdLzZeDYCrVB
-	bQJ0msIDAD9mx3aCYVfOEosiG+wFrLjheFYo9hc/u0z0ya6Sh+dYSlqEr9i2XzyrhnxYmaY2lCTe2
-	drELyykPhTZudPToSKNw==;
+	List-Owner; bh=JBq4t7Ay7It7nWEmayy1H+bctglrLUHjoKRqBci0Vyk=; b=Ua9NGFFXp8Gicx
+	6D8Q88KlsUgxDlGJvFX2hx7/Ropoi3wypy30rnt37nDphsHOsaviwA/qHLjXP/0pYRSwl+BQv6j8a
+	Ybv8saDO52/sJtV2AT99zAFGlKrg7DFXuDymK+Rvxl0oeG4Psp9hiegFcCND7M5kLfR3DyimDD5d/
+	KG5e/Hqh1Fy9oYU1/FxHSoQcXDEbuUjF/mhr+yZFJjOB3v5wL9PGaPNmhYyzv2cx5PKr1ZsoRe4Yf
+	/aSkxCtMQ2cK199FGpkavolklaxI3K2Qa0ubN5j5sZj4cr6W4G5n0sTs+mpLefFqKIYw6PKDVb7TX
+	CqjKtNPL5Lo2guY5FcDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP16q-0004Zu-3P; Thu, 16 Apr 2020 09:47:00 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jP187-00052S-3c; Thu, 16 Apr 2020 09:48:19 +0000
+Received: from mail-db8eur05on2048.outbound.protection.outlook.com
+ ([40.107.20.48] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP16f-0004YP-Ks; Thu, 16 Apr 2020 09:46:51 +0000
-Received: by mail-ot1-f65.google.com with SMTP id i27so2545912ota.7;
- Thu, 16 Apr 2020 02:46:49 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RM/nTDzMiJT/jjtvKRl0rtdDn36SiM29khhvLS3Fy9U=;
- b=fzL7OoYxg1tvmULaxZ6iZzZSThbnfvbaYNiRSS9Ow5jqShiIIy6G8rAkQSZoW/X+kx
- 7XdiSTgIPMPR1zoBP/T5GnNPZ8Tm27RPyImnt2XWOtCJW8L+ESSVd0+o1sKl0+x3wV//
- XnFJdg3sOC4F0v3n/ciuT1J0XDlXxyta8xzkchBgmKE9xCJ4KJcfJ8Hs9w8f3/6xWOuy
- Dhr1ZqgMURM4fkukgcbF+KxKyyp1ASJxbxTj7bofRyqQyVhsiaczyaG7SHwbDZxY8dNV
- K96Oqga0z8yJKhQ8Dgr5qNM2KM90MgVAdgAMSKahu2lsNZuiGDCdLlwdKF4J9lJrqSJG
- E+JQ==
-X-Gm-Message-State: AGi0PuZ9MEjrfzn0/UblETfuZNkG6OHQhB9IDhwnGAj+gbSTHuKwr2JE
- Vb02DaaIXnJsFLLb1GQTktZ1CObQ3SOtwtTd1pc=
-X-Google-Smtp-Source: APiQypIl3DcyhF0BNQx8p7xql+qmz/EnqLfrFLnv69mUOw78OJnDaQgEns2mc5nF+ZGDxENyc+UKCUv1ihzy5/CmGB4=
-X-Received: by 2002:a9d:6299:: with SMTP id x25mr20179548otk.107.1587030408635; 
- Thu, 16 Apr 2020 02:46:48 -0700 (PDT)
+ id 1jP17z-00051P-9L
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 09:48:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KQeeI7eZBkfa1ZQuJX+L59uLVHRriYug/9Mzb8/euEUxSHw2jOzaaWjeSZGj2LRTtjsymEQ5hmiQnUNMsPkv7CD1LlIdbbFLFi9X8OVqV5OD+qYHu/gImS3EW+W1263EoA+l99m2GLUBFn9RFw/O3Q6S7XriGLvx5hm6DI2vLWpToJ6gO4HIbkLsnz2eC1XMpHvYAPhxMzJZnjhi+ckE+ZsnvvawJTZ5StIvxvt244BykbMwmLOPgVN6+o8GFgW37ftFB/o+lxEgy9co5ipDoTcSiVQFuckc7nDOSlWobgaIDVyNP0Faf4NPkp1FQfuRljkXEitWKqum0PD4MXvBvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iFfEtUxSBPOydsEfgtacQJUVTWrwXzNvpGFy+kBIHQ0=;
+ b=l1bjRyJpie2TWgiVJdpSpmD5spgBEK+rYY4mdTBfqmhvQOiGylMy7DCpzZsZitFsloDXr22R5ON8yWM8SkgK5tUtFq/yC4bONbdHYLH++n6WixqSPke9Ni3Dcj5ELkvuzA0FgfGbeNoqXYnW2da05qXtlztkNKWnLg7zlks8DYwvwFu0ExNAH+85xKg5PXj4Hur+QMbSYdF98wI4zVXnb+DkdyqvlHdHcpjiezUVetN3yEgdAvnCMafNPkrkW2Icm8I6FqbWIdFMVIN9KH8csEgKBTPjWMBZlZI41m2HwYsGd9KVv9Ym3PbrA7WnhpYQMYs/WZ8eC5BY/nrfVZeV5Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iFfEtUxSBPOydsEfgtacQJUVTWrwXzNvpGFy+kBIHQ0=;
+ b=gcd8ZiDnW05jnUctg55DlQUbddOGz2aFyI97X+nNTYl3l/nnnVHSGyBfVAwEg7QJEoI2F4V/S4lAFHt5Y67qgnHDGJ0tgBdE3SGZIsJb83ZduLLRm9hlpxf4ZD+n12fp5N4nG4rWV1/O1tFbeokrV8pUJeUEqtfQI87LAaMr5Hw=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3835.eurprd04.prod.outlook.com (2603:10a6:8:3::30) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.26; Thu, 16 Apr
+ 2020 09:48:08 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2900.028; Thu, 16 Apr 2020
+ 09:48:08 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: RE: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Topic: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Index: AQHWE7rnIXhaMxmp60Ko8ImmCqNkpah7fmcAgAABvHA=
+Date: Thu, 16 Apr 2020 09:48:08 +0000
+Message-ID: <DB3PR0402MB391613C2B53CEE067E1C7EC7F5D80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1587019158-12143-1-git-send-email-Anson.Huang@nxp.com>
+ <20200416093932.2mkcyv4rs6v6a24a@pengutronix.de>
+In-Reply-To: <20200416093932.2mkcyv4rs6v6a24a@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 0ffe423e-96f6-4af8-9fa4-08d7e1eb44c2
+x-ms-traffictypediagnostic: DB3PR0402MB3835:|DB3PR0402MB3835:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB38359FDD559D28C5B83269C8F5D80@DB3PR0402MB3835.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0375972289
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(346002)(376002)(366004)(136003)(39860400002)(396003)(66946007)(55016002)(478600001)(8676002)(6506007)(81156014)(52536014)(44832011)(2906002)(316002)(966005)(66476007)(64756008)(71200400001)(6916009)(76116006)(9686003)(33656002)(7696005)(86362001)(66446008)(66556008)(4326008)(26005)(8936002)(7416002)(53546011)(54906003)(5660300002)(186003)(45080400002);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: hFC3t3xPdJIqatY5bWbHkmeUhvJr2J91SIX2/q+iF3DtpBpe2jdJyW4IQzglHJv234f4D0OSaCJ1Lu3Bd/TIg0Vfk7YgTeb5BsZRauGu5ihRUrE0MzcMA3ivvqlii3+lpeDXx+fAMlcfflYYfH8O1xaLXYy7hElA0aw0MnY8e4XIDaDwJ3j4g6UO1A+kVntW/0lOGCFSnFtRhg+yL/XSSF5GI/CdQV2/eSKRB6j7qkjqsHmN208sVo7VECCTDi+we27HcrWN6rUwTCStyTm6RI9a4A0bR6MKln16VZZzV9DgvLSJbAB9M19+IZxefapKzgPzPKfaZMvVjl237Up8LRNQfAa/fRj8Ulbtjup1nqriEix3qn6eUHL3WVz51bxtuQzZB0ePjEsQFwQ6EpltndvslHLF7eg04NVADVV9nXRuCQq6pK4/P4N5JU0ncxAt+j5uHM3WFHXECEFjBKDpm2cO93ShfXNFO9SRbxuje84=
+x-ms-exchange-antispam-messagedata: DREShWuCI91PlTnjNctWATwdxgbeRRN9F4iTcFNVkNfFsPPAVVCO1A2qUszjsGFDAbHDqugZ6Fzbv/e4zRe9AytnbqDpeBJj5Ej3bqqddS0B+FqsDwZbKp2nigvFSQxSONMtAA0o2ejPb9kyMrvXkA==
 MIME-Version: 1.0
-References: <cover.1586946605.git.mchehab+huawei@kernel.org>
- <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
-In-Reply-To: <221ac8f88034bb55c7029c162c0273eccd6b6480.1586946605.git.mchehab+huawei@kernel.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 16 Apr 2020 11:46:37 +0200
-Message-ID: <CAMuHMdXuq0SVUUE3gN5sF2pPaHfhQXX8JsXaR6+qXdnBXVikHg@mail.gmail.com>
-Subject: Re: [PATCH v2 3/6] media: move CEC platform drivers to a separate
- directory
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0ffe423e-96f6-4af8-9fa4-08d7e1eb44c2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2020 09:48:08.2774 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: x/ajJoEvi6ABGG05EKfLaGqksNVnPoeySRdFyf5nkZERwQIzEWcAOuj9pgKtoaSmrCsUhihatert3OUU9jHmBA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3835
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_024649_679223_1A7903E2 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200416_024811_326752_86F500CC 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
+ no trust [40.107.20.48 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,62 +124,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Ettore Chimenti <ek5.chimenti@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Guenter Roeck <groeck@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Benson Leung <bleung@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mauro,
+Hi, Marco
 
-On Wed, Apr 15, 2020 at 12:32 PM Mauro Carvalho Chehab
-<mchehab+huawei@kernel.org> wrote:
-> As CEC support doesn't depend on MEDIA_SUPPORT, let's
-> place the platform drivers outside the media menu.
+> Subject: Re: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+> json-schema
+> 
+> Hi Anson,
+> 
+> On 20-04-16 14:39, Anson Huang wrote:
+> 
+> ...
+> 
+> > diff --git a/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> > new file mode 100644
+> > index 0000000..1c6e600
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> > @@ -0,0 +1,66 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id:
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetr
+> ee.org%2Fschemas%2Fclock%2Fimx6q-clock.yaml%23&amp;data=02%7C01%
+> 7Canson.huang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C6
+> 86ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&
+> amp;sdata=Iw1CkVBMqw3m6sox6C3khcMy0BHNCQ9v2k72q3CM6Xs%3D&a
+> mp;reserved=0
+> > +$schema:
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetr
+> ee.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Canson.hu
+> ang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C686ea1d3bc2
+> b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&amp;sdata=P
+> Be2CEoDdMo9I1m3DHbITCyYxB4GF%2FigP%2FNd7YCopCQ%3D&amp;reserve
+> d=0
+> > +
+> > +title: Clock bindings for Freescale i.MX6 Quad
+> > +
+> > +maintainers:
+> > +  - Anson Huang <Anson.Huang@nxp.com>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: fsl,imx6q-ccm
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 2
+> 
+> IMHO I would force them to have exactly two so we need
+> minItems: 2 too here.
 
-Thanks for your patch!
+Actually, those 2 interrupts are NOT necessary for some platforms, such as i.MX platforms
+do NOT enable them at all, so is it OK to force them to be '2' here?
 
-> As a side effect, instead of depends on PCI, seco driver
-> can select it (and DMI).
-
-I don't think that's a good idea, as it suddenly enables selecting all PCI
-drivers on platforms that do not have PCI.
-
-    WARNING: unmet direct dependencies detected for PCI
-      Depends on [n]: HAVE_PCI [=n]
-      Selected by [m]:
-      - CEC_SECO [=m] && MEDIA_CEC_SUPPORT [=y] && (X86 || IA64 ||
-COMPILE_TEST [=y])
-
-However, it already exposed some bugs that were hidden by PCI=n ;-)
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Thanks,
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
