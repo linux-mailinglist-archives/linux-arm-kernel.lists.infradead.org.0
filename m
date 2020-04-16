@@ -2,75 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12E2E1ABA4D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:52:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 706A31ABA4E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:52:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i7uw5UkzMLry8pql7jR7raFShsHK9wuXb3uUqN7LtgE=; b=TdyZzogZmtSYa5
-	W8h3BnUBC4DlanxzVWgvU6suxJNOboBZBR3z5/BJBM5SFJmRLu30t/2cgQsiOcqmFOyrXhSsYIwpb
-	2nOiEJ78Uk2Gu4cxSCFWuNIeJNTz1zw/goLtqUD7sHwGHkFWVU+Q3K9UELkAgRp9CdxMTyb0Urp0j
-	lCA/VASv4Zj4/p6R46naIvy/V7PhIKIQBeZDPhFrK0qvmOqhMUr3BELVYcIOdc0uXzmlWMYMP8JeI
-	9RNPwViU4r/flWIFfY1Q0ptkC+d402LxXkyXyOmgepl8NLnf1LcwHT9gANGGcJaz1OGRopSqYW0jY
-	GX3ZlQISqokp22HyL9wg==;
+	List-Owner; bh=P69cVDOSLNZk9IQY59rvtTev5J11fryJfJ+OPDvPEIQ=; b=l1vSKTfjX6x0Tn
+	oRiz0EvFRie2LCdYaCqsuFOkOxBsPSHgqvE/JAsd+VqqPzMn7spB2sfiRzK2bAJGZbM1bGL65qiKB
+	kUFwjBY8LyYzG8Zt5xOLu01UC1Ko/p8KIVnrYk5aw0xfB9ruen1Hs4WZSeXXyUnTCHde/ZSxW6eKp
+	s9nVfnI/GqhnR6qAvxS16yEuchdG+DSppDLjtMdw12G3tsUDJ4EMR9hw1Yqe2AV2WYfjv09ABjZT7
+	OLKyst8VeghbggQhc+UET2/JWRTZLV0fRmolTMkKiEnT9leeij538cIBokWejFwAyUV556IrVKWoh
+	UJTINNOGERvJXexQJYgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOzJd-00063V-E4; Thu, 16 Apr 2020 07:52:05 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jOzJv-0006Jm-6G; Thu, 16 Apr 2020 07:52:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOzJO-0005x5-ER
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:51:52 +0000
-Received: by mail-lj1-x241.google.com with SMTP id e25so247622ljg.5
+ id 1jOzJZ-0006Cv-PP
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:52:03 +0000
+Received: from mail-il1-f174.google.com (mail-il1-f174.google.com
+ [209.85.166.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0F74C215A4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 00:51:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=loMCxNASFvkfTDCyeUmtP2u+gte7x5OtiG/cQmRKcuQ=;
- b=xMUW3PGeSrw4ARkL9VDfzWDbSGxC6xcX4Ki7j9FBIb94zY/nyX3c8swn8+2K2eXQWf
- u5I0kwTaOMKF60tm8Ybb4RI83J/5chP+BKkJGzpCt4Njp+d5eKgO+RHGsvNhseRCUr0A
- kxzkYeOwrVdKr3ln53f3UvwS5CL7sp7ao9UeUyT58VwwdOmE7hQ8XnRCvvbD0t3FKapJ
- oJRfgQsGirpJkwaZ7IV8kGn4+8QNBvxXn8FYrLA5QKLO3da7dEJHYdfloWOUGYngvefF
- kPv4d618uycUv1TdFu4hKJ4ZeXV264Nmr2hjONIdx1CDO9GlIQy4qphT6PWNZXnRrTaf
- KZjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=loMCxNASFvkfTDCyeUmtP2u+gte7x5OtiG/cQmRKcuQ=;
- b=sBSu43Wa5mUX1smH+PGeMolkv/dIzBNo2XL890H7riNoutoNkLhiqw8rzzUusZb8mS
- LYpBzoTZ+4kecHjbZjOxwYGOJ4s4EzKoN/Fh2ct0dd9IiiSrqAKH6ol1L+5TXHXh9nq4
- gSY1wBw14Qyxf6lOAzVTxf5AGISz4I5A++RQA9SBLDxs4xMMlEhoACHlfF5YVyPMI17R
- 5vKkmH17JsR0INpkNBj8Tio9zJf3xuS3N7cRwreHtfJEkbNbcUncwO/1fuTT2xahH0Hy
- cdIUy0Um4phSH9ROzA23trajBzkYzAeyL3CpZgPaAUiuN9xcY6ElhjeFMVmjUJFOqF3Q
- BVfQ==
-X-Gm-Message-State: AGi0Pub/fjIFK0OKgtnq5nyW1RWFH7AgNGE4T7xOp/s1LLvJ8E9RleBa
- ucTfgkcn+e91QdFP7an69wEKLKjEuRykvPJ8Oy1fwg==
-X-Google-Smtp-Source: APiQypJ3hmhHjH4xlCLoz3/xbW/q0EWD5I/m1MGIq4yanefRacOTieYBUa0MrvrxoWyMyTHM8e3D7N8MbRBPt6Mds40=
-X-Received: by 2002:a05:651c:32e:: with SMTP id
- b14mr731003ljp.277.1587023508445; 
- Thu, 16 Apr 2020 00:51:48 -0700 (PDT)
+ Thu, 16 Apr 2020 07:52:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587023521;
+ bh=NzufprrHci2GBeQE1qpA00pu7UAi24+J7DgAw5oPGZ0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=oRSdIqNWm9ATCg8yqzgmrw8l8CYbf65jBu9uZKgq+iwZxJIcwTSulmjsHzpf8OUHL
+ nyhyNAGv/MNGwIn5osMdBAXk5EkSuESUkiCS0DihTRypaMsvMSEBXbMB5q6R0voiaT
+ jbRchVAXmycHMWvCrDmXbbZhmfXFzORo9QrvaRis=
+Received: by mail-il1-f174.google.com with SMTP id z13so5984828ilp.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 00:52:01 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYWRM9jNnxt01MyGeC5kKb2YdydeBpefaMxoEF7j9htBg8mOAbx
+ E7vQebXVFqVr2Mt46HWvT00moVDUu5sC+53Wn1g=
+X-Google-Smtp-Source: APiQypL8wZ1+/gPrARSHoOw22uYvZMX8vTjJfW+r7Ld7iynuANQPH2+X6T4B9lPgKHbp8eTj+URL23FOS6APKKT7dXY=
+X-Received: by 2002:a92:991c:: with SMTP id p28mr4998325ili.258.1587023520423; 
+ Thu, 16 Apr 2020 00:52:00 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200329104549.GX25745@shell.armlinux.org.uk>
-In-Reply-To: <20200329104549.GX25745@shell.armlinux.org.uk>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 09:51:37 +0200
-Message-ID: <CACRpkdaL4-Z36aKOVW4o2MtCG9fbqm4gxZN3QjejVRPBZrzxxA@mail.gmail.com>
-Subject: Re: [PATCH RFC 0/6] PWM fan support on Clearfog gt8k
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20200415221520.2692512-1-nivedita@alum.mit.edu>
+ <20200415221520.2692512-5-nivedita@alum.mit.edu>
+In-Reply-To: <20200415221520.2692512-5-nivedita@alum.mit.edu>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Thu, 16 Apr 2020 09:51:49 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXERKP2x6=wgdgyRtr5Rh-116bwwvVy4zgHAH=Hy9QsOew@mail.gmail.com>
+Message-ID: <CAMj1kXERKP2x6=wgdgyRtr5Rh-116bwwvVy4zgHAH=Hy9QsOew@mail.gmail.com>
+Subject: Re: [PATCH 4/5] efi: Kill __efistub_global
+To: Arvind Sankar <nivedita@alum.mit.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_005150_559781_6A89B68A 
-X-CRM114-Status: GOOD (  10.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_005201_950570_4895C36C 
+X-CRM114-Status: GOOD (  15.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,36 +86,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Gregory Clement <gregory.clement@bootlin.com>,
- linux-pwm@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: linux-efi <linux-efi@vger.kernel.org>, X86 ML <x86@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 29, 2020 at 12:46 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
+On Thu, 16 Apr 2020 at 00:15, Arvind Sankar <nivedita@alum.mit.edu> wrote:
+>
+> Now that both arm and x86 are using the linker script to place the EFI
+> stub's global variables in the correct section, remove __efistub_global.
+>
+> Signed-off-by: Arvind Sankar <nivedita@alum.mit.edu>
 
-> This series adds support for the fan PWM output on the Clearfog GT8K
-> platform, and can potentially be extended to the Macchiatobin.
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
 
-The gpio changes all look fine to me +/- fixes for review comments.
-
-Could the MVEBU maintainers provide some feedback?
-Curiously the file is only listed as a PWM driver in MAINTAINERS
-so formally Thierry & Uwe review it (and Uwe did), but surely
-the MVEBU platform maintainers should take a look too.
-
-Yours,
-Linus Walleij
+> ---
+>  drivers/firmware/efi/libstub/arm-stub.c        |  4 ++--
+>  drivers/firmware/efi/libstub/efi-stub-helper.c | 15 +++++++--------
+>  drivers/firmware/efi/libstub/efistub.h         |  2 --
+>  drivers/firmware/efi/libstub/gop.c             |  2 +-
+>  drivers/firmware/efi/libstub/x86-stub.c        |  2 +-
+>  5 files changed, 11 insertions(+), 14 deletions(-)
+>
+> diff --git a/drivers/firmware/efi/libstub/arm-stub.c b/drivers/firmware/efi/libstub/arm-stub.c
+> index 99a5cde7c2d8..bf42d6c742a8 100644
+> --- a/drivers/firmware/efi/libstub/arm-stub.c
+> +++ b/drivers/firmware/efi/libstub/arm-stub.c
+> @@ -36,9 +36,9 @@
+>  #endif
+>
+>  static u64 virtmap_base = EFI_RT_VIRTUAL_BASE;
+> -static bool __efistub_global flat_va_mapping;
+> +static bool flat_va_mapping;
+>
+> -static efi_system_table_t *__efistub_global sys_table;
+> +static efi_system_table_t *sys_table;
+>
+>  __pure efi_system_table_t *efi_system_table(void)
+>  {
+> diff --git a/drivers/firmware/efi/libstub/efi-stub-helper.c b/drivers/firmware/efi/libstub/efi-stub-helper.c
+> index c6092b6038cf..14e56a64f208 100644
+> --- a/drivers/firmware/efi/libstub/efi-stub-helper.c
+> +++ b/drivers/firmware/efi/libstub/efi-stub-helper.c
+> @@ -12,14 +12,13 @@
+>
+>  #include "efistub.h"
+>
+> -static bool __efistub_global efi_nochunk;
+> -static bool __efistub_global efi_nokaslr;
+> -static bool __efistub_global efi_noinitrd;
+> -static bool __efistub_global efi_quiet;
+> -static bool __efistub_global efi_novamap;
+> -static bool __efistub_global efi_nosoftreserve;
+> -static bool __efistub_global efi_disable_pci_dma =
+> -                                       IS_ENABLED(CONFIG_EFI_DISABLE_PCI_DMA);
+> +static bool efi_nochunk;
+> +static bool efi_nokaslr;
+> +static bool efi_noinitrd;
+> +static bool efi_quiet;
+> +static bool efi_novamap;
+> +static bool efi_nosoftreserve;
+> +static bool efi_disable_pci_dma = IS_ENABLED(CONFIG_EFI_DISABLE_PCI_DMA);
+>
+>  bool __pure nochunk(void)
+>  {
+> diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
+> index 49651e20bb9f..f96c56596034 100644
+> --- a/drivers/firmware/efi/libstub/efistub.h
+> +++ b/drivers/firmware/efi/libstub/efistub.h
+> @@ -25,8 +25,6 @@
+>  #define EFI_ALLOC_ALIGN                EFI_PAGE_SIZE
+>  #endif
+>
+> -#define __efistub_global
+> -
+>  extern bool __pure nochunk(void);
+>  extern bool __pure nokaslr(void);
+>  extern bool __pure noinitrd(void);
+> diff --git a/drivers/firmware/efi/libstub/gop.c b/drivers/firmware/efi/libstub/gop.c
+> index fa05a0b0adfd..216327d0b034 100644
+> --- a/drivers/firmware/efi/libstub/gop.c
+> +++ b/drivers/firmware/efi/libstub/gop.c
+> @@ -32,7 +32,7 @@ static struct {
+>                         u8 depth;
+>                 } res;
+>         };
+> -} cmdline __efistub_global = { .option = EFI_CMDLINE_NONE };
+> +} cmdline = { .option = EFI_CMDLINE_NONE };
+>
+>  static bool parse_modenum(char *option, char **next)
+>  {
+> diff --git a/drivers/firmware/efi/libstub/x86-stub.c b/drivers/firmware/efi/libstub/x86-stub.c
+> index 7583e908852f..aedac3af4b5c 100644
+> --- a/drivers/firmware/efi/libstub/x86-stub.c
+> +++ b/drivers/firmware/efi/libstub/x86-stub.c
+> @@ -20,7 +20,7 @@
+>  /* Maximum physical address for 64-bit kernel with 4-level paging */
+>  #define MAXMEM_X86_64_4LEVEL (1ull << 46)
+>
+> -static efi_system_table_t *sys_table __efistub_global;
+> +static efi_system_table_t *sys_table;
+>  extern const bool efi_is64;
+>  extern u32 image_offset;
+>
+> --
+> 2.24.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
