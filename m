@@ -2,57 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFE831AC75A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 16:55:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CA9C1AC801
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:02:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XdfyeU/QytU/CwJUJfSHUmaMmKIjZo9ZgUsT1p+QFoY=; b=ZolqpUGk9aVMNBt4cQO5/HqlV
-	5rClVhyC9A7GaDuAgryzIaQ8RgCWEbd2vXkwodhWY34am/y3na/4aMDrtgDtviJh8LAN5p131Jbcx
-	ug2iPSm5yl2NRay6ursoGCHQxgyhyXD+IQ2pAFAV8oiaKFdEFA9mPw8IlPFSQn1RDI1+7o00pGL0u
-	Euo7cY89P2KkDX5KkEH3dM+AhjrjOk6pBZwtoOL8gqlhFnUBA31ZhejmsN7ErLt4wH9fmE2TE9ziM
-	rubqR0AehChNTUhVIFK+bZRihWl8xjOUgv4pijMBNsfWzZ2Arp4M9y5HWp90zSEHe4/ewhVQdGi+B
-	pUh4Eky8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rBg8InICRiE2wnwlsgfWhDpnJ3ioKHQJtqL/xw1/Z1s=; b=QGYXyxJDVEQwgN
+	yS8IGBpNa2PWbW8cbD/CbgkrQHtS0zODT6sRXcsJBQJEHedG1biaJTn54PwCe39hRwJ96ei+itRdh
+	Y6EzLc4x2RwC90HLHG8MbTCjJF73WAab9e2XN1bOIqAvgEsoMi2ueV8ifN2IWKMtB0ADiVFFZHyi/
+	k0xuoFiwa+up70jRuDoQWxs3J9FKjJiVDZMVGeJ7E6cgQ60Wxr/20msHj1F7SImy5LBuOtDv6fpk9
+	Ze4IDHhyaX0omVvuAL8L+kF77zeJcOJ2FfnNw1CvWqfeoEtZKyESpGa3duVHhQkBRbbON1wSzdq5s
+	zkRWOl5yyYIjw/FPw32g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP5v3-0005tP-9H; Thu, 16 Apr 2020 14:55:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP5un-0005sQ-VW
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 14:54:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DF521FB;
- Thu, 16 Apr 2020 07:54:51 -0700 (PDT)
-Received: from [10.37.12.32] (unknown [10.37.12.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E0AEE3F237;
- Thu, 16 Apr 2020 07:54:48 -0700 (PDT)
-Subject: Re: [PATCH 8/8] arm64: cpufeature: Add an overview comment for the
- cpufeature framework
-To: will@kernel.org, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu
-References: <20200414213114.2378-1-will@kernel.org>
- <20200414213114.2378-9-will@kernel.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <96dd797d-ccfe-c867-0a70-65eccacde3cd@arm.com>
-Date: Thu, 16 Apr 2020 15:59:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1jP62S-0005Ph-To; Thu, 16 Apr 2020 15:02:48 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jP60M-0003jx-Sn; Thu, 16 Apr 2020 15:00:40 +0000
+Authenticated-By: 
+X-SpamFilter-By: ArmorX SpamTrap 5.69 with qID 03GF0KAp8000998,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (rtexmb06.realtek.com.tw[172.21.6.99])
+ by rtits2.realtek.com.tw (8.15.2/2.66/5.86) with ESMTPS id 03GF0KAp8000998
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
+ Thu, 16 Apr 2020 23:00:20 +0800
+Received: from RTEXMB01.realtek.com.tw (172.21.6.94) by
+ RTEXMB06.realtek.com.tw (172.21.6.99) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Thu, 16 Apr 2020 23:00:20 +0800
+Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
+ RTEXMB01.realtek.com.tw (172.21.6.94) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Thu, 16 Apr 2020 23:00:20 +0800
+Received: from RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d]) by
+ RTEXMB03.realtek.com.tw ([fe80::71dc:5fb1:bef0:757d%8]) with mapi id
+ 15.01.1779.005; Thu, 16 Apr 2020 23:00:20 +0800
+From: =?utf-8?B?SmFtZXMgVGFpIFvmiLTlv5fls7Bd?= <james.tai@realtek.com>
+To: Robin Murphy <robin.murphy@arm.com>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
+Subject: RE: [PATCH v3 2/2] arm64: dts: realtek: Add RTD1319 SoC and Realtek
+ PymParticle EVB
+Thread-Topic: [PATCH v3 2/2] arm64: dts: realtek: Add RTD1319 SoC and Realtek
+ PymParticle EVB
+Thread-Index: AQHV22rI+NjHXMOCKE2GotJYQnIOL6h7anOAgADaMIA=
+Date: Thu, 16 Apr 2020 15:00:19 +0000
+Message-ID: <635ba17aaf444d0c8f8f44af3e905c8e@realtek.com>
+References: <20200204145207.28622-1-james.tai@realtek.com>
+ <20200204145207.28622-3-james.tai@realtek.com>
+ <05b02ba8-2959-48d8-be3f-c4a1a0bc88a4@arm.com>
+In-Reply-To: <05b02ba8-2959-48d8-be3f-c4a1a0bc88a4@arm.com>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [114.37.175.2]
 MIME-Version: 1.0
-In-Reply-To: <20200414213114.2378-9-will@kernel.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_075454_101007_5BE08CAC 
-X-CRM114-Status: GOOD (  28.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200416_080039_191543_5E886DC5 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.75.126.72 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,100 +85,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, saiprakash.ranjan@codeaurora.org,
- anshuman.khandual@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
- dianders@chromium.org, catalin.marinas@arm.com, kernel-team@android.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
+Hi Robin,
 
-On 04/14/2020 10:31 PM, Will Deacon wrote:
-> Now that Suzuki isn't within throwing distance, I thought I'd better add
-> a rough overview comment to cpufeature.c so that it doesn't take me days
-> to remember how it works next time.
+> On 2020-02-04 2:52 pm, James Tai wrote:
+> [...]
+> > +	arm_pmu: pmu {
+> > +		compatible = "arm,armv8-pmuv3";
 > 
-> Signed-off-by: Will Deacon <will@kernel.org>
-> ---
->   arch/arm64/kernel/cpufeature.c | 43 ++++++++++++++++++++++++++++++++++
->   1 file changed, 43 insertions(+)
+> The binding updates have landed now, so you can use "arm,cortex-a55-pmu"
+> here.
 > 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 680a453ca8c4..421ca99dc8fc 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -3,6 +3,49 @@
->    * Contains CPU feature definitions
->    *
->    * Copyright (C) 2015 ARM Ltd.
-> + *
-> + * A note for the weary kernel hacker: the code here is confusing and hard to
-> + * follow! That's partly because it's solving a nasty problem, but also because
-> + * there's a little bit of over-abstraction that tends to obscure what's going
-> + * on behind a maze of helper functions and macros.
+Okay. I'll modify it in v4.
 
-Thanks for writing this up !
+Thank you.
 
-> + *
-> + * The basic problem is that hardware folks have started gluing together CPUs
-> + * with distinct architectural features; in some cases even creating SoCs where
-> + * user-visible instructions are available only on a subset of the available
-> + * cores. We try to address this by snapshotting the feature registers of the
-> + * boot CPU and comparing these with the feature registers of each secondary
-> + * CPU when bringing them up. If there is a mismatch, then we update the
-> + * snapshot state to indicate the lowest-common denominator of the feature,
-> + * known as the "safe" value. This snapshot state can be queried to view the
+Regards,
+James
 
-I am not sure if the following is implied above.
-
-   1) Against the "snapshot" state, where mismatches triggers updating
-      the "snapshot" state to reflect the "safe" value.
-
-   2) Compared against the CPU feature registers of *the boot CPU* for
-     "FTR_STRICT" fields and any mismatch triggers TAINT_CPU_OUT_OF_SPEC.
-      This makes sure that warning is generated for each OUT_OF_SPEC
-      secondary CPU.
-
-> + * "sanitised" value of a feature register.
-> + *
-> + * The sanitised register values are used to decide which capabilities we
-> + * have in the system. These may be in the form of traditional "hwcaps"
-> + * advertised to userspace or internal "cpucaps" which are used to configure
-> + * things like alternative patching and static keys. While a feature mismatch
-> + * may result in a TAINT_CPU_OUT_OF_SPEC kernel taint, a capability mismatch
-> + * may prevent a CPU from being onlined at all.
-> + *
-> + * Some implementation details worth remembering:
-> + *
-> + * - Mismatched features are *always* sanitised to a "safe" value, which
-> + *   usually indicates that the feature is not supported.
-> + *
-> + * - A mismatched feature marked with FTR_STRICT will cause a "SANITY CHECK"
-> + *   warning when onlining an offending CPU and the kernel will be tainted
-> + *   with TAINT_CPU_OUT_OF_SPEC.
-
-As mentioned above, this check is against that of the "boot CPU"
-register state, which may not be implicit from the statement.
-
-> + *
-> + * - Features marked as FTR_VISIBLE have their sanitised value visible to
-> + *   userspace. FTR_VISIBLE features in registers that are only visible
-> + *   to EL0 by trapping *must* have a corresponding HWCAP so that late
-> + *   onlining of CPUs cannot lead to features disappearing at runtime.
-> + *
-
-As you mentioned in the other response we could add information about
-the guest view, something like :
-
-       - KVM exposes the sanitised value of the feature registers to the
-	guests and is not affected by the FTR_VISIBLE. However,
-	depending on the individual feature support in the hypervisor,
-	some of the fields may be capped/limited.
-
-Cheers
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
