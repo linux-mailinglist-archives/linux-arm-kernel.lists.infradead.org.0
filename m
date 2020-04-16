@@ -2,53 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03EB81AC095
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 14:00:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95E1C1AC0C0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 14:08:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=f0zjZxPLm38OA/kkl524KnUGOHRJCF+kyOicHkvxjQU=; b=Av3Uf5d+VGnknHBGLGQ1c+KDK
-	TOM1QSWhExZ3fIcy5GeAxQAEeKJPW3AMHFwcFK8Mi7xfKI57wvioYSLrE/lSBgQB4+U9xJ+4gJIcp
-	H66XdnPBV9rmAUpOgStszWA+4ZZqn9lbD4kFyhYSmfaj1AKjhVlZ3LQ0NKJ2fb3h/eDg88xPBZtwg
-	wLbAFVhANwfnaVM6NMEnHB2w87A78/eY5MakbC6ML+0ei2C/tpv8kDlon/Yl8cMndXZAumGEXONfk
-	pzlKbSCFifhuGIskxIqnSI2b7x8w1sbvw3UCRrRl37uRbddOOBLqdytiR0r3SAMhi0svkSOPsYyxV
-	xwtJ8jTOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/vfKf2GsPyUQYOs7JYNMnS7fbCA33Lu5kF8cPKvv+7w=; b=XFlRrSnONso5Rf
+	Yg8RdDAxSyuxO+BPTUIdL7Q01lW7wJ3m+MKdBxVAUGfLeT33C23Nhp+BYBRO9D8kwnw1uVCyFSab3
+	s4OD0KrgJ6kRiviBS7cIGrEgfd4yt30IPUJ57syV463JUcpfQz9jbXPxh+0Wxw3TbZIFR0KReA5CO
+	dCkVM85dlNv5VSwsOXfVxhMth+nBdYx+bZt8Vxa9O1bNE0eeII2DCH7I/Y6EYGOanKtD3/aeZDeG5
+	2ab1bMCXqt5Pj/RNtZwns5/XHWzZrgiqgwf3GHrMWi25r5jXQt3zU2dngH8RN7d8vneeHfbR+VJq+
+	jgkIBQPPfYyNHB0SMD3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP3CD-0004Y4-TF; Thu, 16 Apr 2020 12:00:41 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1jP3Jq-00084s-I8; Thu, 16 Apr 2020 12:08:34 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP3C6-0004Xf-Fj; Thu, 16 Apr 2020 12:00:36 +0000
-X-Originating-IP: 93.29.109.196
-Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 254D41C001F;
- Thu, 16 Apr 2020 12:00:26 +0000 (UTC)
-Date: Thu, 16 Apr 2020 14:00:25 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>
-Subject: Re: [PATCH 3/4] media: rockchip: rga: Add support for the PX30
- compatible
-Message-ID: <20200416120025.GF125838@aptenodytes>
-References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
- <20200416115047.233720-4-paul.kocialkowski@bootlin.com>
- <cd224bf8-5b0a-46e5-1657-4b40c6d3915e@xs4all.nl>
+ id 1jP3Jh-00083T-BM
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 12:08:27 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 0B70046E24AE8485149C;
+ Thu, 16 Apr 2020 20:08:06 +0800 (CST)
+Received: from [127.0.0.1] (10.142.68.147) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0; Thu, 16 Apr 2020
+ 20:07:55 +0800
+Subject: Re: [PATCH] KVM: handle the right RAS SEA(Synchronous External Abort)
+ type
+To: James Morse <james.morse@arm.com>
+References: <20200411121740.37615-1-gengdongjiu@huawei.com>
+ <0fa259ab-0e2f-a8b3-783d-24a725b4cc5d@arm.com>
+From: gengdongjiu <gengdongjiu@huawei.com>
+Message-ID: <65414dc5-1cd7-003d-7c6a-5da62c6a4a1d@huawei.com>
+Date: Thu, 16 Apr 2020 20:07:52 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.3.0
 MIME-Version: 1.0
-In-Reply-To: <cd224bf8-5b0a-46e5-1657-4b40c6d3915e@xs4all.nl>
+In-Reply-To: <0fa259ab-0e2f-a8b3-783d-24a725b4cc5d@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.142.68.147]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_050034_662747_7E414484 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200416_050825_723061_B6419F4D 
+X-CRM114-Status: GOOD (  27.20  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,114 +67,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
- linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5209363408471075138=="
+Cc: suzuki.poulose@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, zhengxiang9@huawei.com, tanxiaofei@huawei.com,
+ julien.thierry.kdev@gmail.com, catalin.marinas@arm.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi James
 
---===============5209363408471075138==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yRA+Bmk8aPhU85Qt"
-Content-Disposition: inline
+On 2020/4/14 20:18, James Morse wrote:
+> Hi Geng,
+> 
+> On 11/04/2020 13:17, Dongjiu Geng wrote:
+>> When the RAS Extension is implemented, b0b011000, 0b011100,
+>> 0b011101, 0b011110, and 0b011111, are not used and reserved
+>> to the DFSC[5:0] of ESR_ELx, but the code still checks these
+>> unused bits, so remove them.
+> 
+> They aren't unused: CPUs without the RAS extensions may still generate these.
+> 
+> kvm_handle_guest_abort() wants to know if this is an external abort.
+> KVM doesn't really care if the CPU has the RAS extensions or not, its the arch code's job
+> to sort all that out.
 
+No, handle_guest_sea() ---> ghes_notify_sea  ---> apei driver
 
---yRA+Bmk8aPhU85Qt
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+If it is an  external abort, it will call apei driver to handle it, but it should be only SEA will call the apei driver.
+other type of external abort should not call apei driver.
+I am not see arch code sort all that out.
 
-Hi,
+        /* Synchronous External Abort? */
+        if (kvm_vcpu_dabt_isextabt(vcpu)) {
+                /*
+                 * For RAS the host kernel may handle this abort.
+                 * There is no need to pass the error into the guest.
+                 */
+                if (!handle_guest_sea(fault_ipa, kvm_vcpu_get_hsr(vcpu)))
+                        return 1;
+         }
 
-On Thu 16 Apr 20, 13:58, Hans Verkuil wrote:
-> On 16/04/2020 13:50, Paul Kocialkowski wrote:
-> > The PX30 SoC has a RGA block, so add the associated compatible to
-> > support it.
-> >=20
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > ---
-> >  drivers/media/platform/rockchip/rga/rga.c | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
-> >=20
-> > diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/=
-platform/rockchip/rga/rga.c
-> > index e9ff12b6b5bb..0ebeb9b4c14a 100644
-> > --- a/drivers/media/platform/rockchip/rga/rga.c
-> > +++ b/drivers/media/platform/rockchip/rga/rga.c
-> > @@ -880,7 +880,6 @@ static int rga_probe(struct platform_device *pdev)
-> >  	rga->cmdbuf_virt =3D dma_alloc_attrs(rga->dev, RGA_CMDBUF_SIZE,
-> >  					   &rga->cmdbuf_phy, GFP_KERNEL,
-> >  					   DMA_ATTR_WRITE_COMBINE);
-> > -
->=20
-> Spurious change?
+> 
+> 
+>> If the handling of guest ras data error fails, it should
+>> inject data instead of SError to let the guest recover as
+>> much as possible.
 
-Ah sorry about that. Will fix in v2.
+In some hardware platform, it supports RAS, but the RAS error address will be not recorded, so it is better to inject a data abort instead of SError for thtat platform.
+because guest will try to do recovery for the Synchronous data abort, such as kill the error application. But for SError, guest will be panic.
 
-Cheers,
+> 
+> (I don't quite follow your point here).
+> 
+> If KVM injected a synchronous external abort due to a RAS error here, then you wouldn't be
+> able to support firmware-first RAS with Qemu. I don't think this is what you want.
+> 
+> 
+> The handling is (and should be) decoupled.
+> 
+> KVM guests aren't special. Whatever happens for a normal user-space process is what should
+> happen here. KVM is just doing the plumbing:
+> 
+> When the hypervisor takes an external abort due to the guest, it should plumb the error
+> into the arch code to be handled. This is what would happen for a normal EL0 process.
+> This is what do_sea() and kvm_handle_guest_sea() do with apei_claim_sea().
+> 
+> If the RAS code says it handled this error, then we can continue. For user-space, we
+> return to user-space. For a guest, we return to the guest. (for user-space this piece is
+> not quite complete in mainline, see:
+> https://lore.kernel.org/linux-acpi/20200228174817.74278-4-james.morse@arm.com/ )
+> 
+> This first part happens even if the errors are notified by IRQs, or found in a polled buffer.
+> 
+> The RAS code may have 'handled' the memory by unmapping it, and marking the corresponding
+> page as HWPOISONed. If user-space tries to access this, it will be give an
+> SIGBUS:MCEERR_AR. If a guest tries to do this, the same things happens. (The signal goes
+> to Qemu).
+> (See do_page_fault()s use of the MCEERR si_code's, and kvm_send_hwpoison_signal)
+> 
+> This second part is the same regardless of how the kernel discovered the RAS error in the
+> first place.
+> 
+> 
+> If the RAS code says it did not handle this error, it means it wasn't a RAS error, or your
+> platform doesn't support RAS. For an external-abort there is very little the hypervisor
+> can do in this situation. It does what KVM has always done: inject an asynchronous
+> external abort.
+> This should only happen if the host has failed to handle the error. KVM's use of
+> asynchronous abort is the simplest one size fits all.
+> 
+> Are you seeing this happen? If so, what are the circumstances. Did the host handle the
+> error? (if not: why not!)
 
-Paul
+Yes, some platform supports RAS but will not record the error address, so the host has failed to handle the error.
 
-> Regards,
->=20
-> 	Hans
->=20
-> >  	rga->src_mmu_pages =3D
-> >  		(unsigned int *)__get_free_pages(GFP_KERNEL | __GFP_ZERO, 3);
-> >  	rga->dst_mmu_pages =3D
-> > @@ -955,6 +954,9 @@ static const struct dev_pm_ops rga_pm =3D {
-> >  };
-> > =20
-> >  static const struct of_device_id rockchip_rga_match[] =3D {
-> > +	{
-> > +		.compatible =3D "rockchip,px30-rga",
-> > +	},
-> >  	{
-> >  		.compatible =3D "rockchip,rk3288-rga",
-> >  	},
-> >=20
->=20
+> 
+> 
+> Thanks,
+> 
+> James
+> .
+> 
 
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---yRA+Bmk8aPhU85Qt
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6YSNkACgkQ3cLmz3+f
-v9HcIwf/SaOTWWzEOe0dZG4yxmCG1gZdhPpc/T2J0x3X4fh6wY1AQ5SojDHUl0Qg
-eUMyWPA+vb5dxmGDgY8W9uIE0/yEI/mvPhhvYDw3kcn7O7KyeqrL0Jet3K15/iJ4
-AzZUCb8tBJ+CYVeevmlklRwlYsjjxEwqhfxFDud4aI0hP3spuP8rQebtgyTTAEYI
-6r36v0557kcmjUyFy2oKsF1iJ2ifCOVIFhBvTYMhgYBZILoHb8NBIJUq9Ys2XwvL
-BVCMZHMWYKysP7pjoL3ulQp3AoM3K951fL/YYu4gNZaXNIJC02DYboIm1xpIF1iy
-0fFdRNBEynGwtsc2yLefFg2d1YeXow==
-=JROB
------END PGP SIGNATURE-----
-
---yRA+Bmk8aPhU85Qt--
-
-
---===============5209363408471075138==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5209363408471075138==--
-
