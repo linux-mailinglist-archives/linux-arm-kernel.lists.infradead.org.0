@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C2A1AC9A3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:26:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 628D61AC9A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:26:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HOwbSnXVX5dgWDZUBLFiv2dYHvEbCJjAXq6Pbm3/1Gg=; b=LBHZ5WsC+4BR6y
-	aC4AiJ9JAZm/LCdBROaNTo5P9A9QQJFl5ui+zTEjOPD4ANJX2LuP0lnzG5Q21J3O08Ov0RV99aaUk
-	kpPSpA/RI7ca9aIBPmaJyJ5qoQupbbjBhRWpS3DiGk6ppYvXaQgmRUUGD/qfKdewY4Nd4mYP3K3HE
-	cGASD9cMK17WTL2O/KWTwZAtGF+S8liyP63JrgpruRFUpqW1Mf+5bEucMe6gsPdqoDRJyWm1iVvyz
-	tQ+Ya8bEbfnI239NQFsvFoZ1YjzSnfaHR5xsDe0VgR/jRUcOCEYA3yeAYRTdx/11idBBm4Evw38Nm
-	sjKHQR49GZK8CHpkb7vg==;
+	List-Owner; bh=lcKyTlgjpMfjBQw7YVD0XPe0Ot8H5PsXDBKCivgW3Y8=; b=sE7d3Qs4yGorqH
+	BUDSi1hY0Eyi+5ghApv4IOpAh/pdd8SlskVS1Cm2biEWDiSTwsLk0YaL/InvBZANVYUCWxpXC+1mD
+	AgyMgrD7VG4KuTlPoAZrY5ySHyUvomdF5YN28PWJS2I4nKB8pXdGNJxyueJePi6GrTAKndTTpEfSx
+	V4cP8M9j7J5GnxUAQZeRCijJTgcTPbc+yOdHSTAHFjPYV3nf8MnTL7GThK6PHM+j2SPIn5rnmEvO6
+	DTa6tdZBSnpxiPWubqS333h3Jn60AcZrNLY2eo/44IwfSFqsv4BHCCe0uUO6rufq9DSiAzwPATwdp
+	dkRJ3ZvLvkpocJe+wQKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP6On-00079L-A1; Thu, 16 Apr 2020 15:25:53 +0000
+	id 1jP6P3-0007Xm-HT; Thu, 16 Apr 2020 15:26:09 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP6O4-0005Rt-0k
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:25:11 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d27so5374046wra.1
+ id 1jP6O6-00060C-Dn
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:25:12 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x18so5366649wrq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 08:25:07 -0700 (PDT)
+ Thu, 16 Apr 2020 08:25:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hlAyBA8CcMUXp85BDwBKC42D/qldDHdyj7qKWzB2WdM=;
- b=LWOSh6J4oHdRqocw6T+gupl4SfkmDILSRdedkw9pNCBnbVeVMJ3p1vQ1jCXYGKSc9P
- G0TA75egWRpZcSgxW5QXjT5T6mgsnueYjjSx9mGvHqaYdLtSaspzusSO94UPUN+DouSZ
- YL8ZnEfEjC2DLNwASGkAg6MFSdsEZDekgema+Db2EoTTBZcR/Nkbp/j9cVxdKpaNpBAA
- ygQy9iRIzRrLeevaU+aGRWNGMt9BbEtSSS7diKjj3kezmFZRztjSvWPX+/rpsxr2B+Ck
- xSWSrg8bO2kyHv7vtQ7cLw8FXu+gjR3cfceCa7AzvF08UuE+wX+dbOjizaaXH6DNugSE
- 4rqg==
+ bh=wEt0VLaSvhUT7nyu4RhagnuYQaTu9Oo49aJG5CKXEWA=;
+ b=JzDdlkCUORk0NTBv/Ifo99sTDlc02xLmzvAPAvLG0Y9cDe+z3AACvUXdYN12WYXH7N
+ hiOKj+DketE2u/1eYscKKwgSbzVKk8EsSCMVY/p9MkIx78kMYeUobsVee1XGW+HR2YNH
+ cOoUJdlyC4SurTfBiegCTB7F9vfoJWlStxhfSI3VFoRJLQIcORy8GhylK6F0ysBcbVNu
+ zi/N83Xrkju/SGKclJO2/rK39z1Dw1dTBncn1SbFA9630l8OWIKZhiBmdedopclv1c0j
+ m46jVJ89+UXLMugbDFl3rmuHntzPAvhQ7h4dLyP0nlxKKj1CBg9rhXn2VhldY+z/PNxU
+ pzGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hlAyBA8CcMUXp85BDwBKC42D/qldDHdyj7qKWzB2WdM=;
- b=LxWEnF+h7m3zuZ611SndWdWDlIObu0/7Xns/QPv583BUUDwX0wutDIz9kvbZUbNMGl
- UE/4meVsDOQLhSuNM5loK69tL1S9y+3QaEG3r1rlNRsUJpDIhUzISx98ooM4tLq4YrAb
- EFcPma/zA/8Yn8PUIUBbkUezsCj33fgrOMT37uCAGfwHY3VHiDVdXBMIAJ4Jk2nasYHr
- x44S+rjd1r3tjW10j4DyPVjKnz93UHN9/omYxdJJUlJZ0NFlUyOLEHBEkCzfWrw039V0
- 8XkCd/XaFQjld6qSh+fLGFbIkGQwTpZxjCv1qppSddaJhDmGqZi0I/bjYRs16W9RZaJG
- zT8Q==
-X-Gm-Message-State: AGi0PubX6zt54Px1jDanh1uc0QYtTVwAC9fBgLTLAbV8Mhr9dYiU1FLB
- 4aGfjl3o99jcaLigs5ayguC/xg==
-X-Google-Smtp-Source: APiQypLqBg7kl4HJjT8KQzhJlt3fJAI3Rp5CAv4vKPEYnCZ6J+g5WvsII7utk6pPSMtnCGw9RSueSA==
-X-Received: by 2002:adf:cd84:: with SMTP id q4mr20565789wrj.320.1587050706682; 
- Thu, 16 Apr 2020 08:25:06 -0700 (PDT)
+ bh=wEt0VLaSvhUT7nyu4RhagnuYQaTu9Oo49aJG5CKXEWA=;
+ b=RfpUpcgSKwYVvf4GfdnPWkfjpMa9CcOXfjulHRkPvy28MmqqW0sX5nrz2fN47weZ2b
+ kLkLzY1rIQeHVh9sY073OEtB1KQZfIcINJAlHXAythrDJlabwFtV4Z8PneVx8DKCVJbo
+ EqCjl9oQg+ryBC6f1Pp0Bkf0l4pLZJPR2w24EKWF00AU0eLPioOBzJ0O7O3kHC3YrZCu
+ DL+sV8HxITdNWXHYQ9wz+mXpTpnu6YcqrDBNTsWEJTiwM+Tf8Wcx6xL8gRIe9rgo+FB8
+ btYgOU57iKw6TfQQyW2JkFevZWs9YZLfZNZ9IVP3+CstGi+Xfm9FPslapq7hXl1byKPq
+ upYw==
+X-Gm-Message-State: AGi0PuZ4ZldeVA4yLU4rirABn+HCQtQTHotFy5LE3tgTPeJH6S+j1ALG
+ leXEWQ8V1/OLxCmMgaYa2A1NbA==
+X-Google-Smtp-Source: APiQypJlK1v57zmfKD4PI/fLEMpUftVKbJ4Xl19Jv7+M7lzOArMjv6GqbpxLYoSVG3ru0ycAnNYbkw==
+X-Received: by 2002:adf:f8c7:: with SMTP id f7mr12113934wrq.125.1587050708927; 
+ Thu, 16 Apr 2020 08:25:08 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56])
  by smtp.gmail.com with ESMTPSA id
- i17sm18019489wru.39.2020.04.16.08.25.04
+ i17sm18019489wru.39.2020.04.16.08.25.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Apr 2020 08:25:05 -0700 (PDT)
+ Thu, 16 Apr 2020 08:25:07 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: daniel@ffwll.ch,
 	dri-devel@lists.freedesktop.org
-Subject: [PATCH v5 1/8] drm/fourcc: Add modifier definitions for describing
- Amlogic Video Framebuffer Compression
-Date: Thu, 16 Apr 2020 17:24:53 +0200
-Message-Id: <20200416152500.29429-2-narmstrong@baylibre.com>
+Subject: [PATCH v5 2/8] drm/meson: add Amlogic Video FBC registers
+Date: Thu, 16 Apr 2020 17:24:54 +0200
+Message-Id: <20200416152500.29429-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200416152500.29429-1-narmstrong@baylibre.com>
 References: <20200416152500.29429-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_082508_099234_BE79BE09 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20200416_082510_468587_9776410B 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -104,91 +104,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Amlogic uses a proprietary lossless image compression protocol and format
-for their hardware video codec accelerators, either video decoders or
-video input encoders.
-
-It considerably reduces memory bandwidth while writing and reading
-frames in memory.
-
-The underlying storage is considered to be 3 components, 8bit or 10-bit
-per component, YCbCr 420, single plane :
-- DRM_FORMAT_YUV420_8BIT
-- DRM_FORMAT_YUV420_10BIT
-
-This modifier will be notably added to DMA-BUF frames imported from the V4L2
-Amlogic VDEC decoder.
-
-This introduces the basic layout composed of:
-- a body content organized in 64x32 superblocks with 4096 bytes per
-  superblock in default mode.
-- a 32 bytes per 128x64 header block
-
-This layout is tranferrable between Amlogic SoCs supporting this modifier.
+Add the registers of the VPU VD1 Amlogic FBC decoder module, and routing
+register.
 
 Tested-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- include/uapi/drm/drm_fourcc.h | 39 +++++++++++++++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+ drivers/gpu/drm/meson/meson_registers.h | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
-index 8bc0b31597d8..a1b163a5641f 100644
---- a/include/uapi/drm/drm_fourcc.h
-+++ b/include/uapi/drm/drm_fourcc.h
-@@ -309,6 +309,7 @@ extern "C" {
- #define DRM_FORMAT_MOD_VENDOR_BROADCOM 0x07
- #define DRM_FORMAT_MOD_VENDOR_ARM     0x08
- #define DRM_FORMAT_MOD_VENDOR_ALLWINNER 0x09
-+#define DRM_FORMAT_MOD_VENDOR_AMLOGIC 0x0a
+diff --git a/drivers/gpu/drm/meson/meson_registers.h b/drivers/gpu/drm/meson/meson_registers.h
+index 8ea00546cd4e..08631fdfe4b9 100644
+--- a/drivers/gpu/drm/meson/meson_registers.h
++++ b/drivers/gpu/drm/meson/meson_registers.h
+@@ -144,10 +144,15 @@
+ #define		VIU_SW_RESET_OSD1               BIT(0)
+ #define VIU_MISC_CTRL0 0x1a06
+ #define		VIU_CTRL0_VD1_AFBC_MASK         0x170000
++#define		VIU_CTRL0_AFBC_TO_VD1		BIT(20)
+ #define VIU_MISC_CTRL1 0x1a07
+ #define		MALI_AFBC_MISC			GENMASK(15, 8)
+ #define D2D3_INTF_LENGTH 0x1a08
+ #define D2D3_INTF_CTRL0 0x1a09
++#define VD1_AFBCD0_MISC_CTRL 0x1a0a
++#define		VD1_AXI_SEL_AFBC		(1 << 12)
++#define		AFBC_VD1_SEL			(1 << 10)
++#define VD2_AFBCD1_MISC_CTRL 0x1a0b
+ #define VIU_OSD1_CTRL_STAT 0x1a10
+ #define		VIU_OSD1_OSD_BLK_ENABLE         BIT(0)
+ #define		VIU_OSD1_OSD_MEM_MODE_LINEAR	BIT(2)
+@@ -365,6 +370,23 @@
+ #define VIU_OSD1_OETF_LUT_ADDR_PORT 0x1add
+ #define VIU_OSD1_OETF_LUT_DATA_PORT 0x1ade
+ #define AFBC_ENABLE 0x1ae0
++#define AFBC_MODE 0x1ae1
++#define AFBC_SIZE_IN 0x1ae2
++#define AFBC_DEC_DEF_COLOR 0x1ae3
++#define AFBC_CONV_CTRL 0x1ae4
++#define AFBC_LBUF_DEPTH 0x1ae5
++#define AFBC_HEAD_BADDR 0x1ae6
++#define AFBC_BODY_BADDR 0x1ae7
++#define AFBC_SIZE_OUT 0x1ae8
++#define AFBC_OUT_YSCOPE 0x1ae9
++#define AFBC_STAT 0x1aea
++#define AFBC_VD_CFMT_CTRL 0x1aeb
++#define AFBC_VD_CFMT_W 0x1aec
++#define AFBC_MIF_HOR_SCOPE 0x1aed
++#define AFBC_MIF_VER_SCOPE 0x1aee
++#define AFBC_PIXEL_HOR_SCOPE 0x1aef
++#define AFBC_PIXEL_VER_SCOPE 0x1af0
++#define AFBC_VD_CFMT_H 0x1af1
  
- /* add more to the end as needed */
- 
-@@ -804,6 +805,44 @@ extern "C" {
-  */
- #define DRM_FORMAT_MOD_ALLWINNER_TILED fourcc_mod_code(ALLWINNER, 1)
- 
-+/*
-+ * Amlogic Video Framebuffer Compression modifiers
-+ *
-+ * Amlogic uses a proprietary lossless image compression protocol and format
-+ * for their hardware video codec accelerators, either video decoders or
-+ * video input encoders.
-+ *
-+ * It considerably reduces memory bandwidth while writing and reading
-+ * frames in memory.
-+ *
-+ * The underlying storage is considered to be 3 components, 8bit or 10-bit
-+ * per component YCbCr 420, single plane :
-+ * - DRM_FORMAT_YUV420_8BIT
-+ * - DRM_FORMAT_YUV420_10BIT
-+ *
-+ * The first 8 bits of the mode defines the layout, then the following 8 bits
-+ * defines the options changing the layout.
-+ *
-+ * Not all combinations are valid, and different SoCs may support different
-+ * combinations of layout and options.
-+ */
-+#define DRM_FORMAT_MOD_AMLOGIC_FBC(__modes) fourcc_mod_code(AMLOGIC, __modes)
-+
-+/* Amlogic FBC Layouts */
-+#define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_MASK		(0xf << 0)
-+
-+/*
-+ * Amlogic FBC Basic Layout
-+ *
-+ * The basic layout is composed of:
-+ * - a body content organized in 64x32 superblocks with 4096 bytes per
-+ *   superblock in default mode.
-+ * - a 32 bytes per 128x64 header block
-+ *
-+ * This layout is transferrable between Amlogic SoCs supporting this modifier.
-+ */
-+#define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC		(1ULL << 0)
-+
- #if defined(__cplusplus)
- }
- #endif
+ /* vpp */
+ #define VPP_DUMMY_DATA 0x1d00
 -- 
 2.22.0
 
