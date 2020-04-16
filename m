@@ -2,67 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7220C1AB71A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:11:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089441AB721
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:12:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=I79z2kwRf1sOgEI2wmXLEXrdZnYj2rowwDufH9Z9xes=; b=QIR
-	S+B9a8V4zU6x1Jw/QG2YKkdXU27eEObTgoJzBGyAzxX9oSwSvohx1+EfbJlCkXG8vBhtmXfFN2dv0
-	nZSnhMqgUiE8QuxwA6QMqjxjPd00zUcus7KylPm5zQyBVSle33i3ig4NH/joaNLPS00WwRu0ygl6c
-	CsQWd5CQLchZWWpXH59KlS/3IKk/TVP/MmMtnsLXqDbp8NJoUpps7oy8d8No8DTI05j6WJdebIw7P
-	+WZ7LI3DPhDXcduR0T5XkL6FjsGWA9GdHNFSlN82PoiXcSad96GlRoDUeEvK4pdAcf7F3/CBfl+ro
-	wOZpdtjn+IsW7ktC4jhoCoiVm4Ib7yA==;
+	References:List-Owner; bh=FZ/XEoa7QRHa0RRm3wfZlTQiFN8WQj8tgh/AvGhK6IY=; b=jmZ
+	h0rWU31UnyfsfER43SPbRiGj6Gy37m1tYMe2kTkMgbW/OkwDaG2quf+iHVrxo1HiMrEgMVQsATKMF
+	5nPYhT+oJEadwzfmOeBazbvshxGsUOMCu95ZcPM0hLRLhWoz7XvcCDaX/A6jzBLSkonIqK6LiOfqo
+	JPYA5DV7KrTXY9kT1bnOd+mifpTAG3lPfUZoIlKPGe2JkNeymVSI8xmysRbJpFLDBdSCR0z3b7NQG
+	Mn/PL0O9dzgBvGzbvx7Qze3MeMg9noQ5wIGoGDf34a3ScPErDK/0pyCkK3LUrAmgJq5eo97QPwYNk
+	/2+9t6UdJCzxj397cmrA3bKhMfv7Lig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOwny-0004eQ-WA; Thu, 16 Apr 2020 05:11:15 +0000
-Received: from out30-44.freemail.mail.aliyun.com ([115.124.30.44])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOwnr-0004d4-Mr
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:11:09 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R141e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04428;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=37; SR=0;
- TI=SMTPD_---0Tvg4OPB_1587013858; 
-Received: from localhost(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0Tvg4OPB_1587013858) by smtp.aliyun-inc.com(127.0.0.1);
- Thu, 16 Apr 2020 13:10:58 +0800
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-To: pbonzini@redhat.com, tsbogend@alpha.franken.de, paulus@ozlabs.org,
- mpe@ellerman.id.au, benh@kernel.crashing.org, borntraeger@de.ibm.com,
- frankja@linux.ibm.com, david@redhat.com, cohuck@redhat.com,
- heiko.carstens@de.ibm.com, gor@linux.ibm.com,
- sean.j.christopherson@intel.com, vkuznets@redhat.com,
- wanpengli@tencent.com, jmattson@google.com, joro@8bytes.org,
- tglx@linutronix.de, mingo@redhat.com, bp@alien8.de, x86@kernel.org,
- hpa@zytor.com, maz@kernel.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com
-Subject: [PATCH v2] KVM: Optimize kvm_arch_vcpu_ioctl_run function
-Date: Thu, 16 Apr 2020 13:10:57 +0800
-Message-Id: <20200416051057.26526-1-tianjia.zhang@linux.alibaba.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jOwpL-0004wy-3d; Thu, 16 Apr 2020 05:12:39 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOwpC-0004w0-Fv
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:12:32 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 16 Apr 2020 14:12:27 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id A338960057;
+ Thu, 16 Apr 2020 14:12:27 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Thu, 16 Apr 2020 14:12:27 +0900
+Received: from plum.e01.socionext.com (unknown [10.213.132.32])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id EA77F1A12AD;
+ Thu, 16 Apr 2020 14:12:26 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: [PATCH] dt-bindings: thermal: Convert UniPhier thermal monitor to
+ json-schema
+Date: Thu, 16 Apr 2020 14:12:15 +0900
+Message-Id: <1587013935-21760-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_221107_885170_14927E7C 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20200415_221230_881937_D41455FD 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.44 listed in list.dnswl.org]
+ no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,191 +67,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, tianjia.zhang@linux.alibaba.com,
- kvm@vger.kernel.org, linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In earlier versions of kvm, 'kvm_run' is an independent structure
-and is not included in the vcpu structure. At present, 'kvm_run'
-is already included in the vcpu structure, so the parameter
-'kvm_run' is redundant.
+Convert the UniPhier thermal monitor binding to DT schema format.
 
-This patch simplify the function definition, removes the extra
-'kvm_run' parameter, and extract it from the 'kvm_vcpu' structure
-if necessary.
-
-Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
+ .../thermal/socionext,uniphier-thermal.yaml        | 57 +++++++++++++++++++
+ .../bindings/thermal/uniphier-thermal.txt          | 65 ----------------------
+ 2 files changed, 57 insertions(+), 65 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+ delete mode 100644 Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
 
-v2 change:
-  remove 'kvm_run' parameter and extract it from 'kvm_vcpu'
-
- arch/mips/kvm/mips.c       |  3 ++-
- arch/powerpc/kvm/powerpc.c |  3 ++-
- arch/s390/kvm/kvm-s390.c   |  3 ++-
- arch/x86/kvm/x86.c         | 11 ++++++-----
- include/linux/kvm_host.h   |  2 +-
- virt/kvm/arm/arm.c         |  6 +++---
- virt/kvm/kvm_main.c        |  2 +-
- 7 files changed, 17 insertions(+), 13 deletions(-)
-
-diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
-index 8f05dd0a0f4e..ec24adf4857e 100644
---- a/arch/mips/kvm/mips.c
-+++ b/arch/mips/kvm/mips.c
-@@ -439,8 +439,9 @@ int kvm_arch_vcpu_ioctl_set_guest_debug(struct kvm_vcpu *vcpu,
- 	return -ENOIOCTLCMD;
- }
- 
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *run = vcpu->run;
- 	int r = -EINTR;
- 
- 	vcpu_load(vcpu);
-diff --git a/arch/powerpc/kvm/powerpc.c b/arch/powerpc/kvm/powerpc.c
-index e15166b0a16d..7e24691e138a 100644
---- a/arch/powerpc/kvm/powerpc.c
-+++ b/arch/powerpc/kvm/powerpc.c
-@@ -1764,8 +1764,9 @@ int kvm_vcpu_ioctl_set_one_reg(struct kvm_vcpu *vcpu, struct kvm_one_reg *reg)
- 	return r;
- }
- 
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *run = vcpu->run;
- 	int r;
- 
- 	vcpu_load(vcpu);
-diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
-index 19a81024fe16..443af3ead739 100644
---- a/arch/s390/kvm/kvm-s390.c
-+++ b/arch/s390/kvm/kvm-s390.c
-@@ -4333,8 +4333,9 @@ static void store_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
- 		store_regs_fmt2(vcpu, kvm_run);
- }
- 
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *kvm_run = vcpu->run;
- 	int rc;
- 
- 	if (kvm_run->immediate_exit)
-diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-index 3bf2ecafd027..a0338e86c90f 100644
---- a/arch/x86/kvm/x86.c
-+++ b/arch/x86/kvm/x86.c
-@@ -8707,8 +8707,9 @@ static void kvm_put_guest_fpu(struct kvm_vcpu *vcpu)
- 	trace_kvm_fpu(0);
- }
- 
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *kvm_run = vcpu->run;
- 	int r;
- 
- 	vcpu_load(vcpu);
-@@ -8726,18 +8727,18 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
- 		r = -EAGAIN;
- 		if (signal_pending(current)) {
- 			r = -EINTR;
--			vcpu->run->exit_reason = KVM_EXIT_INTR;
-+			kvm_run->exit_reason = KVM_EXIT_INTR;
- 			++vcpu->stat.signal_exits;
- 		}
- 		goto out;
- 	}
- 
--	if (vcpu->run->kvm_valid_regs & ~KVM_SYNC_X86_VALID_FIELDS) {
-+	if (kvm_run->kvm_valid_regs & ~KVM_SYNC_X86_VALID_FIELDS) {
- 		r = -EINVAL;
- 		goto out;
- 	}
- 
--	if (vcpu->run->kvm_dirty_regs) {
-+	if (kvm_run->kvm_dirty_regs) {
- 		r = sync_regs(vcpu);
- 		if (r != 0)
- 			goto out;
-@@ -8767,7 +8768,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
- 
- out:
- 	kvm_put_guest_fpu(vcpu);
--	if (vcpu->run->kvm_valid_regs)
-+	if (kvm_run->kvm_valid_regs)
- 		store_regs(vcpu);
- 	post_kvm_run_save(vcpu);
- 	kvm_sigset_deactivate(vcpu);
-diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-index 6d58beb65454..1e17ef719595 100644
---- a/include/linux/kvm_host.h
-+++ b/include/linux/kvm_host.h
-@@ -866,7 +866,7 @@ int kvm_arch_vcpu_ioctl_set_mpstate(struct kvm_vcpu *vcpu,
- 				    struct kvm_mp_state *mp_state);
- int kvm_arch_vcpu_ioctl_set_guest_debug(struct kvm_vcpu *vcpu,
- 					struct kvm_guest_debug *dbg);
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run);
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu);
- 
- int kvm_arch_init(void *opaque);
- void kvm_arch_exit(void);
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 48d0ec44ad77..f5390ac2165b 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -639,7 +639,6 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
- /**
-  * kvm_arch_vcpu_ioctl_run - the main VCPU run function to execute guest code
-  * @vcpu:	The VCPU pointer
-- * @run:	The kvm_run structure pointer used for userspace state exchange
-  *
-  * This function is called through the VCPU_RUN ioctl called from user space. It
-  * will execute VM code in a loop until the time slice for the process is used
-@@ -647,8 +646,9 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
-  * return with return value 0 and with the kvm_run structure filled in with the
-  * required data for the requested emulation.
-  */
--int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
-+int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *run = vcpu->run;
- 	int ret;
- 
- 	if (unlikely(!kvm_vcpu_initialized(vcpu)))
-@@ -659,7 +659,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 		return ret;
- 
- 	if (run->exit_reason == KVM_EXIT_MMIO) {
--		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
-+		ret = kvm_handle_mmio_return(vcpu, run);
- 		if (ret)
- 			return ret;
- 	}
-diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-index 74bdb7bf3295..e18faea89146 100644
---- a/virt/kvm/kvm_main.c
-+++ b/virt/kvm/kvm_main.c
-@@ -3135,7 +3135,7 @@ static long kvm_vcpu_ioctl(struct file *filp,
- 				synchronize_rcu();
- 			put_pid(oldpid);
- 		}
--		r = kvm_arch_vcpu_ioctl_run(vcpu, vcpu->run);
-+		r = kvm_arch_vcpu_ioctl_run(vcpu);
- 		trace_kvm_userspace_exit(vcpu->run->exit_reason, r);
- 		break;
- 	}
+diff --git a/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+new file mode 100644
+index 0000000..bdddc5b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+@@ -0,0 +1,57 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/thermal/socionext,uniphier-thermal.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Socionext UniPhier thermal monitor
++
++description: |
++  This describes the devicetree bindings for thermal monitor supported by
++  PVT(Process, Voltage and Temperature) monitoring unit implemented on
++  Socionext UniPhier SoCs.
++
++maintainers:
++  - Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
++
++properties:
++  compatible:
++    enum:
++      - socionext,uniphier-pxs2-thermal
++      - socionext,uniphier-ld20-thermal
++      - socionext,uniphier-pxs3-thermal
++
++  interrupts:
++    maxItems: 1
++
++  "#thermal-sensor-cells":
++    const: 0
++
++  socionext,tmod-calibration:
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    description:
++      A pair of calibrated values referred from PVT, in case that the values
++      aren't set on SoC, like a reference board.
++
++required:
++  - compatible
++  - interrupts
++  - "#thermal-sensor-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    // The UniPhier thermal should be a subnode of a "syscon" compatible node.
++
++    sysctrl@61840000 {
++        compatible = "socionext,uniphier-ld20-sysctrl",
++                     "simple-mfd", "syscon";
++        reg = <0x61840000 0x10000>;
++
++        pvtctl: thermal {
++                compatible = "socionext,uniphier-ld20-thermal";
++                interrupts = <0 3 1>;
++                #thermal-sensor-cells = <0>;
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt b/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
+deleted file mode 100644
+index ceb92a9..0000000
+--- a/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
++++ /dev/null
+@@ -1,65 +0,0 @@
+-* UniPhier Thermal bindings
+-
+-This describes the devicetree bindings for thermal monitor supported by
+-PVT(Process, Voltage and Temperature) monitoring unit implemented on Socionext
+-UniPhier SoCs.
+-
+-Required properties:
+-- compatible :
+-  - "socionext,uniphier-pxs2-thermal" : For UniPhier PXs2 SoC
+-  - "socionext,uniphier-ld20-thermal" : For UniPhier LD20 SoC
+-  - "socionext,uniphier-pxs3-thermal" : For UniPhier PXs3 SoC
+-- interrupts : IRQ for the temperature alarm
+-- #thermal-sensor-cells : Should be 0. See ./thermal.txt for details.
+-
+-Optional properties:
+-- socionext,tmod-calibration: A pair of calibrated values referred from PVT,
+-                              in case that the values aren't set on SoC,
+-                              like a reference board.
+-
+-Example:
+-
+-	sysctrl@61840000 {
+-		compatible = "socionext,uniphier-ld20-sysctrl",
+-			     "simple-mfd", "syscon";
+-		reg = <0x61840000 0x10000>;
+-		...
+-		pvtctl: pvtctl {
+-			compatible = "socionext,uniphier-ld20-thermal";
+-			interrupts = <0 3 1>;
+-			#thermal-sensor-cells = <0>;
+-		};
+-		...
+-	};
+-
+-	thermal-zones {
+-		cpu_thermal {
+-			polling-delay-passive = <250>;	/* 250ms */
+-			polling-delay = <1000>;		/* 1000ms */
+-			thermal-sensors = <&pvtctl>;
+-
+-			trips {
+-				cpu_crit: cpu_crit {
+-					temperature = <110000>;	/* 110C */
+-					hysteresis = <2000>;
+-					type = "critical";
+-				};
+-				cpu_alert: cpu_alert {
+-					temperature = <100000>;	/* 100C */
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-			};
+-
+-			cooling-maps {
+-				map0 {
+-					trip = <&cpu_alert>;
+-					cooling-device = <&cpu0 (-1) (-1)>;
+-				};
+-				map1 {
+-					trip = <&cpu_alert>;
+-					cooling-device = <&cpu2 (-1) (-1)>;
+-				};
+-			};
+-		};
+-	};
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
