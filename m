@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D92451ACA8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:36:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAD121ACAB3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 17:38:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tyVEV/ggVEEW2T6XWupD47BEJ8P1P9l0kajNbHcWeRU=; b=J3iOOD3E4d93nO
-	5fZalxRJndDfF1aqZEwQyLf1bbFaceTC+972kCmOXPcjPNAny6wfPdCYm9Nu8+zPkFtGhEHm2QTAr
-	IaSYskYpp5ehGa7RywXSye1ri1MTgXCxcTk7eYzOWHAjYryhfCh9qsZjIDhpeIp2Ml7STdyd5LMRl
-	9HoN/Fj0abS7ZiDl3cnArJgK74hMZSAHZ1eHODtqFe3RHM24CP+QGhOo5qs+y/cUlbC/xeq06xT6/
-	ZhAPaFF3z+Dg5+Sc0RbysLI19burcFd4u+jxfM01adNmn8x2aevI60NziPsnoTr7TSJK73mf0ztF5
-	XMnE+3HqDMN8UJEtz0BQ==;
+	List-Owner; bh=RnK8v1b+rraca+SfU1I//xdN0YSVwmcVCTlioUlZHPI=; b=Tf+KjFZdQAiXIn
+	F9s811qD9Qr3nYUuw89qFEiao6VLV5PimmDR/f0/ewWfGSE8cwvkl1lm2a2wd/2ADeNNdItN/vJH3
+	zvSdnnZ/dGvveIy9ia2MQBOdENjXFhbv/2XD1PARHMQp7JlVFqnWGpKQczNVAb7dcSIfx4X7QVVBd
+	2SHX6JxqiSNFlGYyKvjwestnkY54PKBh17wvTcuITjfLK0Pqhu9CzcQl7nixe6wsnfKJzl8WV5XOp
+	ltFkMzOlN3ij2iR5E38RQo4IKlbhcLo/an3MxLfgq7a4P3LF7DRAZeXgSvz1RKaHrYMMVMLcXet/U
+	YPkiuvN4RLw/taWT/NPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP6Ys-0000wE-Da; Thu, 16 Apr 2020 15:36:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jP6ax-0001MB-DN; Thu, 16 Apr 2020 15:38:27 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP6Yk-0000va-FF
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:36:11 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 96ED822242;
- Thu, 16 Apr 2020 15:36:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587051368;
- bh=qBOX0iZTskqyG9+OVlBWyVCjnXKcHvEcHViiJIZo0uM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hieNu+iGSZzJ3N6YlbIBvYAhnyx8PcCzroMmKoBq+Grm18Cj7SkbOIFvR1Xil2LaB
- 9AyomDD0uJ/Xbf2bqVdCQl8LOalDvNbi49WHX9dN2C4CXqYMuYWgaJ0XVEuZZY//Bc
- PbhihFe9vTPCGQ/tdzNJq+FNiuc4UffvGnJwLJiA=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jP6Yg-003utE-Rp; Thu, 16 Apr 2020 16:36:07 +0100
-Date: Thu, 16 Apr 2020 16:36:05 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH] KVM: arm64: Drop PTE_S2_MEMATTR_MASK
-Message-ID: <20200416163605.091fa6eb@why>
-In-Reply-To: <20200415105746.314-1-yuzenghui@huawei.com>
-References: <20200415105746.314-1-yuzenghui@huawei.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jP6aq-0001Lj-Cd
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 15:38:21 +0000
+Received: by mail-ot1-f66.google.com with SMTP id w12so3362740otm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 08:38:19 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lw132FJ1IkHMDhBaUz9OoWvHN6gIUc3nGCLM6oGU1MU=;
+ b=cgpC0u7awMcjwHY3rBWK1gFDYCl/NpVOcwIoPsMefTZVDHN23viPM64rOLvebaijv0
+ vLA8Pw3jIcJyQk2uneidKAkgdF/4Y8ZS00MXRuIaUfBlVR99NaeLxRJyDOuc3znYsWcN
+ Ma1ZcHecFg3xNnKNWP37ADtK1L2MrCWfSDBzsXqfSEjzLe1biwKSvAlTZInSl31r1V/q
+ tzloxWNOjQBA4rwt+ACo1ey8k+sQ//EOOdqfUGNj4A+D3Rukb/69Bucnew+94omYtWGr
+ Fm+J1UjGHjhohLN18K0rL0dVhyVuzIAD1yh/XV3iqo0L7AyZkzGdUlBQTdtYDOKth6TM
+ JiVA==
+X-Gm-Message-State: AGi0PuaEWv4p2ewnj4b9Z4Thx+Za5IhxzuvV2BnP19q/sUhN8CTrQZyI
+ usMcBy2Rxt7SnXS7i+Feubz0xUDOKt4ydQEs1Mo=
+X-Google-Smtp-Source: APiQypI12iXIrm8mtmSb+XKSEPYhA1HFJq3oTSPTAEFz3A7lZAnTnLkLIG43fWAGSkgC9em1kdGMDMbBxLJi/Z6CDKA=
+X-Received: by 2002:a9d:76c7:: with SMTP id p7mr26140182otl.145.1587051498619; 
+ Thu, 16 Apr 2020 08:38:18 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- catalin.marinas@arm.com, will@kernel.org, wanghaibin.wang@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+References: <20200416115658.20406-1-geert+renesas@glider.be>
+ <20200416115658.20406-3-geert+renesas@glider.be>
+ <20200416125630.GF4987@lakrids.cambridge.arm.com>
+In-Reply-To: <20200416125630.GF4987@lakrids.cambridge.arm.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 16 Apr 2020 17:38:07 +0200
+Message-ID: <CAMuHMdWRW4+YLR8fz0hUTAPupRkM4Y5c82XHuOWSvNYOh-BZ0A@mail.gmail.com>
+Subject: Re: [PATCH 2/2] [RFC] arm64: Add dependencies to vendor-specific
+ errata
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_083610_531342_4DFBCF11 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200416_083820_428023_2E41E41B 
+X-CRM114-Status: GOOD (  21.40  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,53 +85,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- wanghaibin.wang@huawei.com, will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Wei Xu <xuwei5@hisilicon.com>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andy Gross <agross@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 18:57:46 +0800
-Zenghui Yu <yuzenghui@huawei.com> wrote:
+Hi Mark,
 
-> The only user of PTE_S2_MEMATTR_MASK macro had been removed since
-> commit a501e32430d4 ("arm64: Clean up the default pgprot setting").
-> It has been about six years and no one has used it again.
-> 
-> Let's drop it.
-> 
-> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
-> ---
->  arch/arm64/include/asm/pgtable-hwdef.h | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
-> index 6bf5e650da78..99315bdca0e6 100644
-> --- a/arch/arm64/include/asm/pgtable-hwdef.h
-> +++ b/arch/arm64/include/asm/pgtable-hwdef.h
-> @@ -190,7 +190,6 @@
->   * Memory Attribute override for Stage-2 (MemAttr[3:0])
->   */
->  #define PTE_S2_MEMATTR(t)	(_AT(pteval_t, (t)) << 2)
-> -#define PTE_S2_MEMATTR_MASK	(_AT(pteval_t, 0xf) << 2)
->  
->  /*
->   * EL2/HYP PTE/PMD definitions
+On Thu, Apr 16, 2020 at 2:56 PM Mark Rutland <mark.rutland@arm.com> wrote:
+> On Thu, Apr 16, 2020 at 01:56:58PM +0200, Geert Uytterhoeven wrote:
+> > Currently the user is asked about enabling support for each and every
+> > vendor-specific erratum, even when support for the specific platform is
+> > not enabled.
+> >
+> > Fix this by adding platform dependencies to the config options
+> > controlling support for vendor-specific errata.
+> >
+> > Note that FUJITSU_ERRATUM_010001 is left untouched, as no config symbol
+> > exists for the Fujitsu A64FX platform.
+> >
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+>
+> I'm not su1re that it makes sense to do this in general, becaose the
+> ARCH_* platform symbols are about plactform/SoC support (e.g. pinctrl
+> drivers), and these are (mostly) CPU-local and/or VM-visible.
+>
+> I think that it makes sense for those to be independent because:
+>
+> * future SoCs in the same family might not need the same CPU errata
+>   workarounds, and it's arguably just as confusing to have the option
+>   there.
 
-Looks good to me. Catalin, Will: do you want to take this directly? If
-so please add my:
+True.  But at least the dependency restricts the confusion to a smaller
+audience.
 
-Acked-by: Marc Zyngier <maz@kernel.org>
+> * It prevents building a minimal VM image with all (non-virtualized)
+>   platform support disabled, but all possible (VM-visible) errata
+>   options enabled. I do that occassionally for testing/analysis, and I
+>   can imagine this is useful for those building images that are only
+>   intended to be used in VMs.
 
-Otherwise, I'll route it via the KVM tree.
+Oh, you also want to build a "generic" guest kernel, with all ARCH_*
+symbols disabled. Let's hope a maleficent user cannot disable errata
+mitigations in the guest kernel and break the host ;-)
+And perhaps you do want to enable some platform-specific drivers for
+VFIO pass-through?  Hence having ARCH_* dependencies on those drivers
+means they cannot be enabled :-( Hmm...
 
-Thanks,
+> I think the change to SOCIONEXT_SYNQUACER_PREITS makes sense given
+> that's a platform-level detail. Arguably that should be moved into
+> drivers/irqchip/Kconfig.
 
-	M.
+OK, makes sense.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-Jazz is not dead. It just smells funny...
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
