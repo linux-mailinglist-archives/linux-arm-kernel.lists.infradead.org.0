@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8D5C1ABA33
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:45:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F04281ABA48
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:51:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M1k7FxvkPl30C/VRZIX/Kse7Yd2fpGatd/XZb+FgrRo=; b=CHq3JVkIS6UURX
-	sHGv86LqmPs3fcTXsNWghb0g6pVFSQU5bR6fscufsPn7YbBtlbWkGCzGBt/6JdbupMzcN7bKmPr8w
-	N1famcGumAEiwwu+FAeZ/PhfYc8NXkl/Psz1YeCdZ3M/rz2D4ZNZz3X/e0H75jqyYVhOIf9Rrmpmt
-	iO53EhPj/z5YEBUnO2p/4on7n/a22ipvA9RUrNBhkcAvdLfEIf1pAtKp84o0JYHyNO6+EDoVMjVUQ
-	e+0uC5l3pHyqo5hjgBKeJjP35gNWQtP1tGlkx9qUlmWwq1YHm56u+uuKKQtupS9SNH5+ywuBTs/iM
-	ygkU+D4oEuusjlSMGlOQ==;
+	List-Owner; bh=rgi2n1yBH7tOZmj1QqhxW04pK5bzyOwSEj1oPv6iDeo=; b=MQnWSNA2KtSSuj
+	kD3znyE67peJygiIatuEu1l7cPM6ANZUDL0LyxUAj0ZA2YjkqoaJdkYNXepAJ5c+W2LS8aD8JPaDU
+	vQl2boKF0qioO+7phJ7lVmYdYSPPR+Gg513WquENnCOUkzWDHsPMYK1ZY8tLWXJi7aKU9Ziu7F2fu
+	wsypUcSQjO44HoWZIRI1DQFqTN3mnCwjENmvH84zr+LKGwIKrrGjaD/fnvgjowTp3Nsz2tY/v89Gd
+	MszwK6oEA3C0ueouiUWbswhwNabSm4amkBO1O0oGtCpqjxJrd5OwxFtYzUe47eivFspVMStIfoZsx
+	Cimuk/9t/3L1rZ90axSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOzD5-0008KX-VQ; Thu, 16 Apr 2020 07:45:19 +0000
+	id 1jOzIX-0005Yp-7Z; Thu, 16 Apr 2020 07:50:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOzCm-0007qa-KF; Thu, 16 Apr 2020 07:45:02 +0000
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com
- [209.85.166.49])
+ id 1jOzIP-0005YJ-J8
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:50:50 +0000
+Received: from mail-il1-f171.google.com (mail-il1-f171.google.com
+ [209.85.166.171])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 426F320771;
- Thu, 16 Apr 2020 07:45:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 221B021569
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 07:50:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587023100;
- bh=hE1B/GqPyAwbhU6GurhlP98Cp3yFkzngF+v28Ae6CuY=;
+ s=default; t=1587023449;
+ bh=OFHqz9GYYZNwc+I9swBEm5dzUhRk5QACD1V1CxcDFlo=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=SefdfvWwUvkpCeZp632BCeHzCD1E+eBxMDa0onCAH2Tli/pzkNVZABj0lO3n08pjY
- VmCQN2x6QO95MKY5BUqMKZ4c1AH4K5buh1gDeCK6qDQM8rcrHaQo2cDaCTUluNRYae
- GB4jKKXt3Dw279ToHWFpWHh8k1UkuKegrxexBgm4=
-Received: by mail-io1-f49.google.com with SMTP id i3so19997339ioo.13;
- Thu, 16 Apr 2020 00:45:00 -0700 (PDT)
-X-Gm-Message-State: AGi0Puaff2cecEVUQQh8W/TOxXDcMgZFlbsEzkh03oSeNFo6XdNXhIj1
- Yo5uy0nku4mE2jKKQwRmRQ2f9v+zUQIYBx7HNqA=
-X-Google-Smtp-Source: APiQypLeNbjPF2bsg5mHsKG6G7YQ+2nbEUjMovAnSywp2+B1+QAFYCPiz1sV8RVxrQ6TQUjDzT1dDy7DHtl2X6Sr8S8=
-X-Received: by 2002:a02:3341:: with SMTP id k1mr20976288jak.74.1587023099650; 
- Thu, 16 Apr 2020 00:44:59 -0700 (PDT)
+ b=KZcD59NIBi3fSTJa9R3dm9SUE41lbsKpYBdDP7DYKp2lCFhz+WVORehUZFIWPY6cj
+ 0vgcsAVA8xIEXgiwx8uUO3ae0nXXWMHi0nDPOF8S5JPQCg391UW8ZSfOp4iYiysmLv
+ Xl/X7Mvexhs6KXq+jLXS8bmun/3zNDOV3gU6qZec=
+Received: by mail-il1-f171.google.com with SMTP id u5so6030961ilb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 00:50:49 -0700 (PDT)
+X-Gm-Message-State: AGi0Puacylc/udti2uMp+5h+ItZia/skHfVuwxyJR1JwxwieT4xta6So
+ 9GBWR4H8RkDmGRCkhypxCpLKPscHdRWrwV28IyU=
+X-Google-Smtp-Source: APiQypI5ojUj0Vjwe5ylB1JFpUhtyPIygOqNmKrjZ41jxKYyJbInoum3YZtcRuho0AfeBevcdVTm443eRLyhFE/uFFQ=
+X-Received: by 2002:a92:aa0f:: with SMTP id j15mr9438871ili.211.1587023448452; 
+ Thu, 16 Apr 2020 00:50:48 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200415195422.19866-1-atish.patra@wdc.com>
-In-Reply-To: <20200415195422.19866-1-atish.patra@wdc.com>
+References: <20200415221520.2692512-1-nivedita@alum.mit.edu>
+ <20200415221520.2692512-2-nivedita@alum.mit.edu>
+In-Reply-To: <20200415221520.2692512-2-nivedita@alum.mit.edu>
 From: Ard Biesheuvel <ardb@kernel.org>
-Date: Thu, 16 Apr 2020 09:44:48 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEJGED_uumBR3V-cVjmCpJZu9mwW42gc9hptw+YS-004w@mail.gmail.com>
-Message-ID: <CAMj1kXEJGED_uumBR3V-cVjmCpJZu9mwW42gc9hptw+YS-004w@mail.gmail.com>
-Subject: Re: [v3 PATCH 0/5] Add UEFI support for RISC-V
-To: Atish Patra <atish.patra@wdc.com>
+Date: Thu, 16 Apr 2020 09:50:36 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXE7aNm5XWrB2PkEedXA02gGmpcPW7rjziAXeTSPL_786A@mail.gmail.com>
+Message-ID: <CAMj1kXE7aNm5XWrB2PkEedXA02gGmpcPW7rjziAXeTSPL_786A@mail.gmail.com>
+Subject: Re: [PATCH 1/5] efi/arm: Remove __efistub_global annotation
+To: Arvind Sankar <nivedita@alum.mit.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_004500_705663_9C01EEDE 
-X-CRM114-Status: GOOD (  21.72  )
+X-CRM114-CacheID: sfid-20200416_005049_673954_A3089352 
+X-CRM114-Status: GOOD (  18.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,114 +86,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>,
+Cc: linux-efi <linux-efi@vger.kernel.org>, X86 ML <x86@kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Palmer Dabbelt <palmer@dabbelt.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(+ Arvind)
+On Thu, 16 Apr 2020 at 00:15, Arvind Sankar <nivedita@alum.mit.edu> wrote:
+>
+> Instead of using __efistub_global to force variables into the .data
+> section, leave them in the .bss but pull the EFI stub's .bss section
+> into .data in the linker script for the compressed kernel.
+>
+> Signed-off-by: Arvind Sankar <nivedita@alum.mit.edu>
 
-On Wed, 15 Apr 2020 at 21:54, Atish Patra <atish.patra@wdc.com> wrote:
->
-> This series adds UEFI support for RISC-V. Currently, only boot time
-> services have been added. Runtime services will be added in a separate
-> series. This series depends on some core EFI patches
-> present in current in efi-next and following other patches.
->
-> U-Boot: Adds the boot hartid under chosen node.
-> https://lists.denx.de/pipermail/u-boot/2020-April/405726.html
->
-> Linux kernel: 5.7-rc1
->
-> OpenSBI: master
->
-> Patch 1 just moves arm-stub code to a generic code so that it can be used
-> across different architecture.
->
-> Patch 3 adds fixmap bindings so that CONFIG_EFI can be compiled and we do not
-> have create separate config to enable boot time services.
-> As runtime services are not enabled at this time, full generic early ioremap
-> support is also not added in this series.
->
-> Patch 4 and 5 adds the PE/COFF header and EFI stub code support for RISC-V
-> respectively.
->
-> The patches can also be found in following git repo.
->
-> https://github.com/atishp04/linux/tree/wip_uefi_riscv_v3
->
-> The patches have been verified on Qemu using bootefi command in U-Boot.
->
-> Changes from v2->v3:
-> 1. Rebased on top of latest efi patches.
-> 2. Improved handle_kernel_image().
->
-> Changes from v1->v2:
-> 1. Rebased on 5.7-rc1.
-> 2. Fixed minor typos and removed redundant macros/comments.
->
-> Changes from previous version:
-> 1. Renamed to the generic efi stub macro.
-> 2. Address all redundant comments.
-> 3. Supported EFI kernel image with normal booti command.
-> 4. Removed runtime service related macro defines.
->
-> Atish Patra (5):
-> efi: Move arm-stub to a common file
-> include: pe.h: Add RISC-V related PE definition
-> RISC-V: Define fixmap bindings for generic early ioremap support
-> RISC-V: Add PE/COFF header for EFI stub
-> RISC-V: Add EFI stub support.
->
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
 
-I had some comments regarding patch #5, but the other ones look fine.
-
-Given that there are two series in flight now that touch the same
-code, I am going to merge the patches #1 and #2 of this series into
-efi/next.
-
-Once the remaining changes are good to go, I can take them as well,
-but I'll need one of the RISC-V maintainers to ack them first.
-
-
-> arch/arm/Kconfig                              |   2 +-
-> arch/arm64/Kconfig                            |   2 +-
-> arch/riscv/Kconfig                            |  21 ++++
-> arch/riscv/Makefile                           |   1 +
-> arch/riscv/configs/defconfig                  |   1 +
-> arch/riscv/include/asm/Kbuild                 |   1 +
-> arch/riscv/include/asm/efi.h                  |  44 +++++++
-> arch/riscv/include/asm/fixmap.h               |  18 +++
-> arch/riscv/include/asm/io.h                   |   1 +
-> arch/riscv/include/asm/sections.h             |  13 ++
-> arch/riscv/kernel/Makefile                    |   4 +
-> arch/riscv/kernel/efi-header.S                |  99 ++++++++++++++++
-> arch/riscv/kernel/head.S                      |  16 +++
-> arch/riscv/kernel/image-vars.h                |  53 +++++++++
-> arch/riscv/kernel/vmlinux.lds.S               |  20 +++-
-> drivers/firmware/efi/Kconfig                  |   4 +-
-> drivers/firmware/efi/libstub/Makefile         |  19 ++-
-> .../efi/libstub/{arm-stub.c => efi-stub.c}    |   0
-> drivers/firmware/efi/libstub/riscv-stub.c     | 111 ++++++++++++++++++
-> include/linux/pe.h                            |   3 +
-> 20 files changed, 421 insertions(+), 12 deletions(-)
-> create mode 100644 arch/riscv/include/asm/efi.h
-> create mode 100644 arch/riscv/include/asm/sections.h
-> create mode 100644 arch/riscv/kernel/efi-header.S
-> create mode 100644 arch/riscv/kernel/image-vars.h
-> rename drivers/firmware/efi/libstub/{arm-stub.c => efi-stub.c} (100%)
-> create mode 100644 drivers/firmware/efi/libstub/riscv-stub.c
+> ---
+>  arch/arm/boot/compressed/vmlinux.lds.S | 2 +-
+>  drivers/firmware/efi/libstub/Makefile  | 7 ++++---
+>  drivers/firmware/efi/libstub/efistub.h | 2 +-
+>  3 files changed, 6 insertions(+), 5 deletions(-)
 >
+> diff --git a/arch/arm/boot/compressed/vmlinux.lds.S b/arch/arm/boot/compressed/vmlinux.lds.S
+> index b247f399de71..b6793c7932a9 100644
+> --- a/arch/arm/boot/compressed/vmlinux.lds.S
+> +++ b/arch/arm/boot/compressed/vmlinux.lds.S
+> @@ -78,7 +78,7 @@ SECTIONS
+>       * The EFI stub always executes from RAM, and runs strictly before the
+>       * decompressor, so we can make an exception for its r/w data, and keep it
+>       */
+> -    *(.data.efistub)
+> +    *(.data.efistub .bss.efistub)
+>      __pecoff_data_end = .;
+>
+>      /*
+> diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
+> index 094eabdecfe6..45ffe0822df1 100644
+> --- a/drivers/firmware/efi/libstub/Makefile
+> +++ b/drivers/firmware/efi/libstub/Makefile
+> @@ -100,8 +100,9 @@ quiet_cmd_stubcopy = STUBCPY $@
+>
+>  #
+>  # ARM discards the .data section because it disallows r/w data in the
+> -# decompressor. So move our .data to .data.efistub, which is preserved
+> -# explicitly by the decompressor linker script.
+> +# decompressor. So move our .data to .data.efistub and .bss to .bss.efistub,
+> +# which are preserved explicitly by the decompressor linker script.
+>  #
+> -STUBCOPY_FLAGS-$(CONFIG_ARM)   += --rename-section .data=.data.efistub
+> +STUBCOPY_FLAGS-$(CONFIG_ARM)   += --rename-section .data=.data.efistub \
+> +                                  --rename-section .bss=.bss.efistub,load,alloc
+>  STUBCOPY_RELOC-$(CONFIG_ARM)   := R_ARM_ABS
+> diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
+> index bd0b86b63936..a92d42ffd9f7 100644
+> --- a/drivers/firmware/efi/libstub/efistub.h
+> +++ b/drivers/firmware/efi/libstub/efistub.h
+> @@ -25,7 +25,7 @@
+>  #define EFI_ALLOC_ALIGN                EFI_PAGE_SIZE
+>  #endif
+>
+> -#if defined(CONFIG_ARM) || defined(CONFIG_X86)
+> +#if defined(CONFIG_X86)
+>  #define __efistub_global       __section(.data)
+>  #else
+>  #define __efistub_global
 > --
-> 2.24.0
+> 2.24.1
 >
 
 _______________________________________________
