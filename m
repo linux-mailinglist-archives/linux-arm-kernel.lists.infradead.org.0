@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68C111ABBB0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:51:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1004B1ABBB3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:51:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ahEeSxV1luFGjDlgTMDtG+CfD7qGO68T/NkXj6C163I=; b=YwTTn8kuJpq8XY
-	tVdBIx3MMA8U+oy7ACupaUn64D4yzMU9iWCJF31Vs3PFGHmvvRttHDhfTYq3EBF1dk9O+P7DFePt4
-	gz1wfSy2ndIy+gfoQ9EMtW2rHi1tziExTnaw9yBWQGJtj772KIjcefY6UaH1oQQhchnW/BMC9vJC3
-	HJ1Gp93Mf5vAYSQTtNrnqlI+v8oGTUkoOCeFSAtMGTd50JFu17wiEfHsnhR/Z/lC3k9Oo/8GCz9Qs
-	LRlai2YLuN3NDjPR9zxDhj1xnldjxj2mClyWwftESAXUi9Ugtq6ANH53Opw6hQe+/tRg/rpRFYd9c
-	VWYOno8wYW8E6LXycMLg==;
+	List-Owner; bh=rQn6yVgF3j2fKKtLLB3RJ9ZYOEQAe1y3S/M0/xfHq+c=; b=P4p9b9eptEFUAC
+	RbKOA4nhrwJx4pg6TXhWEweLC94rwkW0ab17tv3B5AfsZt0lBTExUGbi/VYDtTNYp1KXzSs8RHII+
+	s/T8LgpbJPevwHUoAX+D5mQdQEu2BEnt0hSOJxHPHOTv7gAtLIubZuRM767fASRNDSAqR9taMGmJG
+	wQX7PFKZt53JoZmb9U6ffxrllXVINTM0urfHHJOV5NCJV9YnYTP8j6TPojlJBgklXL+UZvzsjtDlK
+	IaBxk4GwPhUej5ivBrtmUeWZj8nyDEZB/wiCBe7opfifgyzw5toDVqIxg5EhnWl9GpiioD4+8h4Cn
+	uL844C5rO+6xz36iMIdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP0Ec-0002hV-Bl; Thu, 16 Apr 2020 08:50:58 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jP0Eu-0003Ap-8g; Thu, 16 Apr 2020 08:51:16 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP0EU-0002Zu-9H
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:50:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587027048;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=HBOSp8KoaqgQUXlL6khiQxh82SbQfD3UXPaPxlc3NpI=;
- b=SAZOXk8e3bOfIiblT3KEanC34Cr2ERHz2OAj1z5udHAIYoMzy7FEBAiLU3tOkG3vjFBXLU
- RJ1+UhYcNWRmanl/jDRIR+NLsaMtjBZk/1GV7FNoFaE1tJlNcojdz6CEPLZ0gyeSPCoaxI
- vu2BVvUEOncDoo6OHYGGljUZxbKLZSQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-270-MuypNbuHM0uD0I3hVYYtuw-1; Thu, 16 Apr 2020 04:50:46 -0400
-X-MC-Unique: MuypNbuHM0uD0I3hVYYtuw-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 994A818C35A6;
- Thu, 16 Apr 2020 08:50:42 +0000 (UTC)
-Received: from gondolin (ovpn-112-234.ams2.redhat.com [10.36.112.234])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 330E27E7C4;
- Thu, 16 Apr 2020 08:50:22 +0000 (UTC)
-Date: Thu, 16 Apr 2020 10:50:19 +0200
-From: Cornelia Huck <cohuck@redhat.com>
-To: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Subject: Re: [PATCH v2] KVM: Optimize kvm_arch_vcpu_ioctl_run function
-Message-ID: <20200416105019.51191d79.cohuck@redhat.com>
-In-Reply-To: <8b92fb5b-5138-0695-fb90-6c36b8dfad00@linux.alibaba.com>
-References: <20200416051057.26526-1-tianjia.zhang@linux.alibaba.com>
- <878sivx67g.fsf@vitty.brq.redhat.com>
- <1000159f971a6fa3b5bd9e5871ce4d82@kernel.org>
- <8b92fb5b-5138-0695-fb90-6c36b8dfad00@linux.alibaba.com>
-Organization: Red Hat GmbH
+ id 1jP0Ef-0002yo-Q7
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:51:06 +0000
+Received: by mail-ed1-f65.google.com with SMTP id f12so4240736edn.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 01:51:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=612iSfEdCExrydRb4c/BtgR5OtI+RlzyNcwVt1HFejQ=;
+ b=FKTVJYSIq+L+FcIILXKICBC2Z1sfRMGwUVPrcWh4+5ED1QYemGg++l8TUGm5pVUQWT
+ esVptbKuOeE0mqC7qUOzs6SLH/bYA9sZ/RpO+Yd66tXHt3i9HEVUUIjcr4aSVC5zuVld
+ SaRcw2wDlrsp8deG6dqP3ySLw1qtfwNnPzesUotb2VftKzteVqtmdvHRFWqR/v/PKItq
+ T9pIKggdvZqBe4TSGXSC4Xci33O306cOx/43kbN/6GCAHFlB/DpLVQS402mR06GlXhII
+ mXswliL3N6UFkUlL4qsUDpnSo99VuxiDe5TsAIZLuE6rz5mpmdBLE34Au87BL/VHpptq
+ DJZg==
+X-Gm-Message-State: AGi0PuYGMClVRKCR+SMta8uYUBNu5MXhsJF20Fo/zDDMF8nqElNoVLHX
+ jizUtu53Wn5i8KpCzf0Tf48=
+X-Google-Smtp-Source: APiQypLBJohNWBf8al3U6Nm7wdqmu7TVhKtwUuNuYqABpoxhkFpKFPfFew2b9nU4yPhd8D2/wycwag==
+X-Received: by 2002:aa7:d1d6:: with SMTP id g22mr7466242edp.36.1587027059468; 
+ Thu, 16 Apr 2020 01:50:59 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id b15sm2495600edn.69.2020.04.16.01.50.54
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 Apr 2020 01:50:58 -0700 (PDT)
+Date: Thu, 16 Apr 2020 10:50:49 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jonathan Bakker <xc-racer2@live.ca>
+Subject: Re: [PATCH v6 08/12] arm: dts: s5pv210: Add G3D node
+Message-ID: <20200416085049.GA7193@kozik-lap>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <b6733f80546bf3e6b3799f716b9c8e0f407de03d.1586939718.git.hns@goldelico.com>
+ <CAJKOXPcb9KWNAem-CAx_zCS+sZoEHYc0J8x0nk1xjY9hD4-M4w@mail.gmail.com>
+ <AB9B8741-CFF7-414D-9489-D381B539538D@goldelico.com>
+ <BN6PR04MB0660640B15550F75C8CCD4DEA3DB0@BN6PR04MB0660.namprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+Content-Disposition: inline
+In-Reply-To: <BN6PR04MB0660640B15550F75C8CCD4DEA3DB0@BN6PR04MB0660.namprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_015050_404596_2F1D30C4 
-X-CRM114-Status: GOOD (  14.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_015101_874867_8CF1FEE9 
+X-CRM114-Status: GOOD (  14.28  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,55 +91,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: christoffer.dall@arm.com, wanpengli@tencent.com, kvm@vger.kernel.org,
- david@redhat.com, benh@kernel.crashing.org, heiko.carstens@de.ibm.com,
- peterx@redhat.com, linux-kernel@vger.kernel.org, paulus@ozlabs.org,
- hpa@zytor.com, kvmarm@lists.cs.columbia.edu, linux-s390@vger.kernel.org,
- frankja@linux.ibm.com, Marc Zyngier <maz@kernel.org>, joro@8bytes.org,
- x86@kernel.org, borntraeger@de.ibm.com, mingo@redhat.com,
- julien.thierry.kdev@gmail.com, thuth@redhat.com, gor@linux.ibm.com,
- suzuki.poulose@arm.com, kvm-ppc@vger.kernel.org, bp@alien8.de,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, jmattson@google.com,
- tsbogend@alpha.franken.de, linux-mips@vger.kernel.org,
- sean.j.christopherson@intel.com, james.morse@arm.com, mpe@ellerman.id.au,
- pbonzini@redhat.com, Vitaly Kuznetsov <vkuznets@redhat.com>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-omap@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, James Hogan <jhogan@kernel.org>,
+ devicetree@vger.kernel.org,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ letux-kernel@openphoenux.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAxNiBBcHIgMjAyMCAxNjo0NTozMyArMDgwMApUaWFuamlhIFpoYW5nIDx0aWFuamlh
-LnpoYW5nQGxpbnV4LmFsaWJhYmEuY29tPiB3cm90ZToKCj4gT24gMjAyMC80LzE2IDE2OjI4LCBN
-YXJjIFp5bmdpZXIgd3JvdGU6Cj4gPiBPbiAyMDIwLTA0LTE2IDA4OjAzLCBWaXRhbHkgS3V6bmV0
-c292IHdyb3RlOiAgCj4gPj4gVGlhbmppYSBaaGFuZyA8dGlhbmppYS56aGFuZ0BsaW51eC5hbGli
-YWJhLmNvbT4gd3JpdGVzOgo+ID4+ICAKPiA+Pj4gSW4gZWFybGllciB2ZXJzaW9ucyBvZiBrdm0s
-ICdrdm1fcnVuJyBpcyBhbiBpbmRlcGVuZGVudCBzdHJ1Y3R1cmUKPiA+Pj4gYW5kIGlzIG5vdCBp
-bmNsdWRlZCBpbiB0aGUgdmNwdSBzdHJ1Y3R1cmUuIEF0IHByZXNlbnQsICdrdm1fcnVuJwo+ID4+
-PiBpcyBhbHJlYWR5IGluY2x1ZGVkIGluIHRoZSB2Y3B1IHN0cnVjdHVyZSwgc28gdGhlIHBhcmFt
-ZXRlcgo+ID4+PiAna3ZtX3J1bicgaXMgcmVkdW5kYW50Lgo+ID4+Pgo+ID4+PiBUaGlzIHBhdGNo
-IHNpbXBsaWZ5IHRoZSBmdW5jdGlvbiBkZWZpbml0aW9uLCByZW1vdmVzIHRoZSBleHRyYQo+ID4+
-PiAna3ZtX3J1bicgcGFyYW1ldGVyLCBhbmQgZXh0cmFjdCBpdCBmcm9tIHRoZSAna3ZtX3ZjcHUn
-IHN0cnVjdHVyZQo+ID4+PiBpZiBuZWNlc3NhcnkuCj4gPj4+Cj4gPj4+IFNpZ25lZC1vZmYtYnk6
-IFRpYW5qaWEgWmhhbmcgPHRpYW5qaWEuemhhbmdAbGludXguYWxpYmFiYS5jb20+Cj4gPj4+IC0t
-LQo+ID4+Pgo+ID4+PiB2MiBjaGFuZ2U6Cj4gPj4+IMKgIHJlbW92ZSAna3ZtX3J1bicgcGFyYW1l
-dGVyIGFuZCBleHRyYWN0IGl0IGZyb20gJ2t2bV92Y3B1Jwo+ID4+Pgo+ID4+PiDCoGFyY2gvbWlw
-cy9rdm0vbWlwcy5jwqDCoMKgwqDCoMKgIHzCoCAzICsrLQo+ID4+PiDCoGFyY2gvcG93ZXJwYy9r
-dm0vcG93ZXJwYy5jIHzCoCAzICsrLQo+ID4+PiDCoGFyY2gvczM5MC9rdm0va3ZtLXMzOTAuY8Kg
-wqAgfMKgIDMgKystCj4gPj4+IMKgYXJjaC94ODYva3ZtL3g4Ni5jwqDCoMKgwqDCoMKgwqDCoCB8
-IDExICsrKysrKy0tLS0tCj4gPj4+IMKgaW5jbHVkZS9saW51eC9rdm1faG9zdC5owqDCoCB8wqAg
-MiArLQo+ID4+PiDCoHZpcnQva3ZtL2FybS9hcm0uY8KgwqDCoMKgwqDCoMKgwqAgfMKgIDYgKysr
-LS0tCj4gPj4+IMKgdmlydC9rdm0va3ZtX21haW4uY8KgwqDCoMKgwqDCoMKgIHzCoCAyICstCj4g
-Pj4+IMKgNyBmaWxlcyBjaGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspLCAxMyBkZWxldGlvbnMoLSkK
-Cj4gPiBPdmVyYWxsLCB0aGVyZSBpcyBhIGxhcmdlIHNldCBvZiBjbGVhbnVwcyB0byBiZSBkb25l
-IHdoZW4gYm90aCB0aGUgdmNwdSAKPiA+IGFuZCB0aGUgcnVuCj4gPiBzdHJ1Y3R1cmVzIGFyZSBw
-YXNzZWQgYXMgcGFyYW1ldGVycyBhdCB0aGUgc2FtZSB0aW1lLiBKdXN0IGdyZXBwaW5nIHRoZSAK
-PiA+IHRyZWUgZm9yCj4gPiBrdm1fcnVuIGlzIHByZXR0eSBpbnN0cnVjdGl2ZS4KPiA+IAo+ID4g
-IMKgwqDCoMKgwqDCoMKgIE0uICAKPiAKPiBTb3JyeSwgaXQncyBteSBtaXN0YWtlLCBJIG9ubHkg
-Y29tcGlsZWQgdGhlIHg4NiBwbGF0Zm9ybSwgSSB3aWxsIHN1Ym1pdCAKPiBwYXRjaCBhZ2Fpbi4K
-CkkgdGhpbmsgaXQncyBjb21wbGV0ZWx5IGZpbmUgKGFuZCBldmVuIHByZWZlcmFibGUpIHRvIGRv
-IGNsZWFudXBzIGxpa2UKdGhhdCBvbiB0b3AuCgpbRldJVywgSSBjb21waWxlZCBzMzkwIGhlcmUu
-XQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On Wed, Apr 15, 2020 at 11:17:16AM -0700, Jonathan Bakker wrote:
+ 
+> >>
+> >>> +
+> >>> +                       assigned-clocks = <&clocks MOUT_G3D>, <&clocks DOUT_G3D>;
+> >>> +                       assigned-clock-rates = <0>, <66700000>;
+> >>> +                       assigned-clock-parents = <&clocks MOUT_MPLL>;
+> >>
+> >> Probably this should have status disabled because you do not set
+> >> regulator supply.
+> 
+> I don't believe there is a regulator on s5pv210, if there is, then it is a
+> fixed regulator with no control on both s5pv210 devices that I have.
+> 
+> The vendor driver did use the regulator framework for its power domain
+> implementation, but that definitely shouldn't be upstreamed.
+
+Starting with Exynos4210 usually they have separate regulator from PMIC
+but maybe S5Pv210 indeed is different.  Leave it then without it.
+
+Best regards,
+Krzysztof
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
