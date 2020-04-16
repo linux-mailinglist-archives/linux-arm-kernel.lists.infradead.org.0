@@ -2,60 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBF461AC257
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:27:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F21A1AC261
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:28:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sdIktKQU27vDJVx/4FMMa4RM1M9wQ8DFPZ6Mbp665Gs=; b=hb66kLNgkk3IjS
-	aBghHHUwSlPrFyyXBqDZBTJsJe12VhIXGZbE/JqXR/Ih1FTzB1s2xRbD2RpLO4W2I/XmkURtcRN0M
-	nVXf7HLxtWQv0KwucW9IDZG2GdAO43F9QfxoA5u6U4b0mz//bKB5gaHvHNeb5fSYlmzgY0S052bei
-	YDkdq97u/xXxq6HGd+rdXYIqUhQnu0aeSnjvavlcaMxlvgA4P8PuXSn+Y5NLWaL5OfWkZR7sOzccY
-	t1BIcHai1OTPgV+z5WIYhgXKvp6n/7qFccAvk4md9tYTXic+CIZbeck7Advo03szFS7u7C65LZlNv
-	NwNoqkgkmxTkNij7AwSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=t/wRWabKJE3iaEXvfkv4tnz6dVFrgIshZmQvqHJRD5A=; b=KgT
+	DdW/NeQAJvCwgo5FLvtexR2XCiyvn7rt8MAibqtgbYHURf6ZiHMTFZ1CPviPwzziuI8ZhGgBiJN5+
+	qBkeobvz6IrRD5ctxWaCgefTnJ8KeWyQT5bcycII0k12xOPiUE//t+RGEaAPvR+aK82A09DzZgtaf
+	tXZSn4h/VOeeTsdKQknVjDsq68hPpDt94dDyO4lZYqPmA3eWtgkHrYTJ8N3GC7zXO/NDIohvNjGDU
+	65ZZPE01GfhVZBNAxgPjTsLU4H39BMjysgpXrWNkAcrIGdy89moYG6Zqdyeadg2wyTb2oES8AUMHz
+	9dOWHrbz+kFO2tZFC/Bovj4kT9hfuog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4YE-000833-T6; Thu, 16 Apr 2020 13:27:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4Y3-00082g-Lz
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:27:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EBB421FB;
- Thu, 16 Apr 2020 06:27:18 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC5E53F68F;
- Thu, 16 Apr 2020 06:27:17 -0700 (PDT)
-Subject: Re: Question about SEA handling process happened in user space
-To: Xiaofei Tan <tanxiaofei@huawei.com>
-References: <5E81EFCD.6020605@huawei.com>
- <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E83104A.7020803@huawei.com>
- <f9732852-046c-347c-21e1-7690e6b84a50@arm.com> <5E840F3B.6040803@huawei.com>
- <7d6668d6-ec4a-e362-94a3-c31950651c02@arm.com> <5E8EDFF6.4050903@huawei.com>
- <d3a56afc-ce1a-1561-a6bb-70399bb97c50@arm.com> <5E8FE021.1050900@huawei.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <5d00a4d4-9633-74a1-25f2-cf195e939290@arm.com>
-Date: Thu, 16 Apr 2020 14:27:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <5E8FE021.1050900@huawei.com>
-Content-Language: en-GB
+	id 1jP4Yj-0008It-Gf; Thu, 16 Apr 2020 13:28:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jP4YZ-0008IO-3Z
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:27:52 +0000
+Received: from e123331-lin.home
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9914E217D8;
+ Thu, 16 Apr 2020 13:27:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587043668;
+ bh=qHQLbK1KT0MgDv8iH2Tw2FNmP/fsrQpBK7sdwgMtLZ4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=iax3vUTpec/czv7y9KKXls2JWoSO9q9XxQTxiQLEXOtN7EZUPJJXWri6pMSvccEvl
+ 8vVqL62sl++XGpFMze27kHxfWMM/6sTH9msWfIQpv2FYpyQHA0dntgLh7d9izYeOnR
+ Y2nlZbrhJYkV2JnfuEaX+HBaJBJITmvkezLzX00I=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64/kernel: vmlinux.lds: drop redundant discard/keep macros
+Date: Thu, 16 Apr 2020 15:27:30 +0200
+Message-Id: <20200416132730.25290-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_062719_806275_C893B6EF 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200416_062751_163984_C9265C30 
+X-CRM114-Status: GOOD (  10.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,94 +73,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ james.morse@arm.com, will@kernel.org, Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xiaofei,
+ARM_EXIT_KEEP and ARM_EXIT_DISCARD are always defined in the same way,
+so we don't really need them in the first place.
 
-On 10/04/2020 03:55, Xiaofei Tan wrote:
-> On 2020/4/9 22:28, James Morse wrote:
->> On 09/04/2020 09:42, Xiaofei Tan wrote:
->>> James Morse wrote:
->>>> Do you have patches to get linux to do something useful with the processor error nodes?
->>>>
->>>> We'd need it to handle uncorrected cache errors with a physical address, as if they were
->>>> memory errors...
->>
->>> Yes, we have some patches to do this thing inside. Then memory_failure() will be called for
->>> arm processor error section when physical address is available.
->>
->> I look forward to reading them!
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm64/kernel/vmlinux.lds.S | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
 
-> https://lkml.org/lkml/2018/1/26/197
-> 
-> Our guy tried to upstream it, but not accepted. :(
+diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+index 1d399db0644f..04ea6160d444 100644
+--- a/arch/arm64/kernel/vmlinux.lds.S
++++ b/arch/arm64/kernel/vmlinux.lds.S
+@@ -17,10 +17,6 @@
+ 
+ #include "image.h"
+ 
+-/* .exit.text needed in case of alternative patching */
+-#define ARM_EXIT_KEEP(x)	x
+-#define ARM_EXIT_DISCARD(x)
+-
+ OUTPUT_ARCH(aarch64)
+ ENTRY(_text)
+ 
+@@ -95,8 +91,6 @@ SECTIONS
+ 	 * order of matching.
+ 	 */
+ 	/DISCARD/ : {
+-		ARM_EXIT_DISCARD(EXIT_TEXT)
+-		ARM_EXIT_DISCARD(EXIT_DATA)
+ 		EXIT_CALL
+ 		*(.discard)
+ 		*(.discard.*)
+@@ -161,7 +155,7 @@ SECTIONS
+ 
+ 	__exittext_begin = .;
+ 	.exit.text : {
+-		ARM_EXIT_KEEP(EXIT_TEXT)
++		EXIT_TEXT
+ 	}
+ 	__exittext_end = .;
+ 
+@@ -188,7 +182,7 @@ SECTIONS
+ 		*(.init.rodata.* .init.bss)	/* from the EFI stub */
+ 	}
+ 	.exit.data : {
+-		ARM_EXIT_KEEP(EXIT_DATA)
++		EXIT_DATA
+ 	}
+ 
+ 	PERCPU_SECTION(L1_CACHE_BYTES)
+-- 
+2.17.1
 
-Wrong series?
-
-https://lkml.org/lkml/2018/1/26/194 is not creating any handing for processor error nodes.
-
-That series tried to to suck all the pending errors out of the core code, into an arch
-specific queue:
-| arch/arm64/kernel/ras.c              | 173 +++++++++++++++++++++++++++++++++++
-
-As far as I understand it, that was to ensure the memory_failure() work was done before we
-return to user-space.
-
-My attempt to fix that got rolled up in the SDEI series. It was posted again here:
-https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
-
-
-If you need processor errors handling, there should be code added to the
-CPER_SEC_PROC_ARM else-if in ghes_do_proc() to do the handling.
-
-You may end up duplicating bits of ghes_handle_memory_failure(), to report the memory
-errors that happened in the cache.
-If you want to count corrected errors, a device in ghes_edac is probably the way to do that.
-
-
->> [...]
->>
->>> I think this part is worth improving.
->>
->>> BTW, should ARM processor record physical address when consumed an memory poison error for SEA?
->>> It is helpful to do error recovery. Is this mandatory for arm spec?
->>
->> ERR<n>ADDR? Its not mandatory to be filled for any error. It can be some imp-def bus
->> address or a virtual address. 
-> 
-> virtual address ? but arm spec called it physical address.
-
-That was my recollection too! But I checked again before writing this:
-
-"4.4.5 ERR<n>ADDR, Error Record Address Register" in
-https://static.docs.arm.com/ddi0587/cb/2019_07_05_DD_0587_C_b.pdf
-
-has a VA bit for a virtual-address, and 'AI' for this imp-def bus address, more properly
-described as on that "might not match the programmers' view of the physical address for
-the recorded location."
-
-
-[...]
-
->> Does your implementation always give a physical-address for a synchronous external abort?
-
-> We hope so. But hardware guys say it is hard to record physical address for every situation.
-
-Yeah ...
-
-Hopefully the situations where its too-hard are also the rarest, we can class these as
-fatal (because we can't handle them).
-
-
-Thanks,
-
-James
 
 _______________________________________________
 linux-arm-kernel mailing list
