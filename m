@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97A3F1AB73E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:27:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7654F1AB740
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:27:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=I9yb+rZUPjSayKNHDd/ntAuTLZjbMwtCQJRlaBfbpl8=; b=I/BCZdYuB5N/abp3SwJ9W1WquF
-	menLeHgIB3sjMplBqxsCOq1BylqfKLCmoKA93Opz/UP+Dw5udzdCWs6aHu/yB7dmC9/WFLURxlyKx
-	Q3v4XFuv4sVZk1mUb6hCY6AFnaBu6LK8tx6FOa2wxqBsrFmvhi5Yqz1MJDYfgOeqC9o1hc9Xb4IOb
-	02MZ0XRLodbYcJvsMdi3KM1Mh9uK5gHMYYAPOY/gdTLVF8hphM6zQCDeh+8/J2EoAOQhDa1YOfTg4
-	uVgdXEpAB5farwu462VnOWxB4tIS9oIoJvP0Mwv/ImzWGBKP1rDPLBLwSy3BO3pJl/cz0YgwzBNIO
-	U9oM40gw==;
+	bh=1umFAaieuWkWxx4C0o1h/E/mED4NLiQnm0Ex8BcsyY8=; b=dLJVCQkDlyQfigV14W6YsfPx/n
+	TLkvvaBEDsqfnr9Dr83yydhA2f+AhBl43lRjYfrvOEx5/smi/jgYlxccIsGo5B+RNDlwe8CDfcgBp
+	j38LFjU6tcEIvBg8uE5JDpnCR9ePX6ZA1rVxt7U2+fEfkZZ85S5NL5pGna7Py7lZu7U0STyQ8H4eo
+	8vAM1ng6R463tdljk5lHV6Y6h04opwkUrz1reoYOBn1oyIrKbgewpjEc7B0qUGBfsMyTXaV+Zr/D+
+	6SrkflRB6v2gELVszicTIJbOT0xm1z2vH1VrqMaIc0h/GdNxoEYjLptE3ePodOZ8w8zNx9qb+3YZL
+	3GZD9C5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOx3T-0006ts-1a; Thu, 16 Apr 2020 05:27:15 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jOx3j-0007D8-4d; Thu, 16 Apr 2020 05:27:31 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOx2y-0006fm-Lf
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:26:45 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w3so951834plz.5
+ id 1jOx2z-0006g9-Rv
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:26:47 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id cl8so869877pjb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 22:26:44 -0700 (PDT)
+ Wed, 15 Apr 2020 22:26:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=oYx3rFG6KM20BdDmNDmRew1PF1Kw/jTeIMBMcMn6Uag=;
- b=HUErtq3UvZ5uwOow+WJX2AdXLUZNH3EYTmjk1UnWAicVd/8Oq4rS+5iZT/pPWIgopr
- 9vtmrNOLGfSrNontxw2/IvOKbuFu7qJJfOp4VFegTfW17BiCSbbuFDoxOZhIezEuq7ft
- w1VYv0JrqmzhoTrE4ru74gTH76FFMWJCCXRPIenWlCbIVXKKjC9m82YAZ2Xd1g0aVlSw
- LcpbVAKIdnCq23MpjjQGF3uHQqJDX1ebFQC6m06JL7NDw1aXI34fUprRI4+mhYHq6H+D
- GzDf7ykQ9EKJ7NkvyTfird2NPNLRVH6h6KmXbhygnHQ669kjabD1gkP7f/5QmNMgnrP5
- zWzw==
+ bh=Qrvi9cfOMWugmztCzSRhVUwuOgDWuroc1zUU7Jui6fE=;
+ b=nEFR40jzawzbAo86Fn7AlbI47j6RcYuIHU57HJodL+mJEh/+ODMMd0houcnmMRTDQm
+ CmNFos10maNtWktoQ/xvzPG0knqvXQR5Lj9P5NaI9lto16D140T3cud32vm4qRGYF7aN
+ bEkIpF0d16foHYOPyDCbUIK3CCmetinOblwsamt90Rqtvta2GkhCPmXmU5J1HVybRdOS
+ kYRb/4ivlnxk16x/UPxjYKNWtKjCOjYObTVuJbBg5kpbuaOmNH2E4JA4HXkXE7nemtEG
+ BOZsq2UU0iOk8vh8GdP0OUNqkZjolusbFMks/2NAmsEHRaHca+9q2Ya9SzKX/Xd+A5FO
+ fBLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=oYx3rFG6KM20BdDmNDmRew1PF1Kw/jTeIMBMcMn6Uag=;
- b=bIM6yjFj38dyP2N10w3M5yFSHHiyVJ2rtYNpSzSow7LOd0PWRjRP8rrax1QEkDDtVK
- gxbus9V6024DfY/SImIlXAhSiKNs/siW6TpQt5ZVVqOQnuLD5l/5ywJZydTgK+4mu6tK
- YcfZ4uzklW7ly6VzB2o9wZSmtoof2++vzrCa4DcLSqah6lcvLjWOB7JPg/bs5LNZh7Mt
- J25HDd90cT6P6ot5JLNZEwmPdE++KDrAUwiN6L/2HLNad4DMV/5K5hMY37Uy5ojH+qPH
- Plz8W8cnUu0rBNJrk//1PoLCWl75Hn6pw4todzrTP2cGW9g9sGvAYMUVDQ6M/q4lbJ1v
- MoKQ==
-X-Gm-Message-State: AGi0PuYxl+fzlT4agAfVkH8TCs8yJkYrUlyNaGifJV8iUsgnhg5VB+Lp
- f7UXQ2kLLyEbtsr0sQsNm5Q=
-X-Google-Smtp-Source: APiQypK/2FwQOgHFn/PlAUl6famODzCE4lTGQ6yxpTUvumbVbDZFXkExYLzU004YRAurasnvaR75mg==
-X-Received: by 2002:a17:90a:cc2:: with SMTP id 2mr3160651pjt.33.1587014803490; 
- Wed, 15 Apr 2020 22:26:43 -0700 (PDT)
+ bh=Qrvi9cfOMWugmztCzSRhVUwuOgDWuroc1zUU7Jui6fE=;
+ b=nYCK/7fPH+KLPA+QZlTEuGB2BU2WRbo2U8BodX/cAC6noq8DzUJDacn87MLluS6mjr
+ TcbY5xrq8iEk+K7njbhq4PgQTYt7acj9C47vLiss0FklZNPBsd9WAVEpmA6xx7iNB6E0
+ jgRkDgbrH8I0EhXzbUUC5UjQFR25ajtfdOwIbUDjRECmcYYRoAKrVNySuUK4ip0SEUc3
+ aOw/pyLF8MOzlrqYYScuXebBl6EJb0xQ2T2ICuG0qz/wtMAHaiZ4jeytCaybpcmLI4KA
+ 5Vsushs5/GHKzMkuTzRvDXy+uOM9gDhh1ITJIpRBoZ0rf9ZhwN7JwBOCi25ShAUtzISJ
+ xLRQ==
+X-Gm-Message-State: AGi0PuZ2t6jJ97dV08Be5KYXnHwwF5j5GxkU6r1g227+XLxWQxdVBBwA
+ 2DdvtmMxpW/12OAV98SlbXU=
+X-Google-Smtp-Source: APiQypKao4SzdhZEtr7vlpmK90LbMhqJidYVNIjSwySwr3ySDyw4BnlPpNR50T9Hw+R9x2EN5QA2EA==
+X-Received: by 2002:a17:90a:3726:: with SMTP id
+ u35mr3113764pjb.162.1587014804922; 
+ Wed, 15 Apr 2020 22:26:44 -0700 (PDT)
 Received: from laptop.hsd1.wa.comcast.net
  ([2601:600:817f:a132:df3e:521d:99d5:710d])
- by smtp.gmail.com with ESMTPSA id c21sm53699pjr.2.2020.04.15.22.26.42
+ by smtp.gmail.com with ESMTPSA id c21sm53699pjr.2.2020.04.15.22.26.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 22:26:43 -0700 (PDT)
+ Wed, 15 Apr 2020 22:26:44 -0700 (PDT)
 From: Andrei Vagin <avagin@gmail.com>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH 1/6] arm64/vdso: use the fault callback to map vvar pages
-Date: Wed, 15 Apr 2020 22:26:13 -0700
-Message-Id: <20200416052618.804515-2-avagin@gmail.com>
+Subject: [PATCH 2/6] arm64/vdso: Zap vvar pages when switching to a time
+ namespace
+Date: Wed, 15 Apr 2020 22:26:14 -0700
+Message-Id: <20200416052618.804515-3-avagin@gmail.com>
 X-Mailer: git-send-email 2.17.2
 In-Reply-To: <20200416052618.804515-1-avagin@gmail.com>
 References: <20200416052618.804515-1-avagin@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_222644_704974_1C06F251 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20200415_222645_900429_CDD4E9AB 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,85 +110,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is required to support time namespaces where a time namespace data
-page is different for each namespace.
+The VVAR page layout depends on whether a task belongs to the root or
+non-root time namespace. Whenever a task changes its namespace, the VVAR
+page tables are cleared and then they will be re-faulted with a
+corresponding layout.
 
 Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Signed-off-by: Andrei Vagin <avagin@gmail.com>
 ---
- arch/arm64/kernel/vdso.c | 24 +++++++++++++++---------
- 1 file changed, 15 insertions(+), 9 deletions(-)
+ arch/arm64/kernel/vdso.c | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
 diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index 354b11e27c07..290c36d74e03 100644
+index 290c36d74e03..6ac9cdeac5be 100644
 --- a/arch/arm64/kernel/vdso.c
 +++ b/arch/arm64/kernel/vdso.c
-@@ -114,28 +114,32 @@ static int __vdso_init(enum arch_vdso_type arch_index)
- 			PAGE_SHIFT;
- 
- 	/* Allocate the vDSO pagelist, plus a page for the data. */
--	vdso_pagelist = kcalloc(vdso_lookup[arch_index].vdso_pages + 1,
-+	vdso_pagelist = kcalloc(vdso_lookup[arch_index].vdso_pages,
- 				sizeof(struct page *),
- 				GFP_KERNEL);
- 	if (vdso_pagelist == NULL)
- 		return -ENOMEM;
- 
--	/* Grab the vDSO data page. */
--	vdso_pagelist[0] = phys_to_page(__pa_symbol(vdso_data));
--
--
- 	/* Grab the vDSO code pages. */
- 	pfn = sym_to_pfn(vdso_lookup[arch_index].vdso_code_start);
- 
- 	for (i = 0; i < vdso_lookup[arch_index].vdso_pages; i++)
--		vdso_pagelist[i + 1] = pfn_to_page(pfn + i);
-+		vdso_pagelist[i] = pfn_to_page(pfn + i);
- 
--	vdso_lookup[arch_index].dm->pages = &vdso_pagelist[0];
--	vdso_lookup[arch_index].cm->pages = &vdso_pagelist[1];
-+	vdso_lookup[arch_index].cm->pages = vdso_pagelist;
- 
+@@ -131,6 +131,38 @@ static int __vdso_init(enum arch_vdso_type arch_index)
  	return 0;
  }
  
-+static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
-+			     struct vm_area_struct *vma, struct vm_fault *vmf)
++#ifdef CONFIG_TIME_NS
++/*
++ * The vvar page layout depends on whether a task belongs to the root or
++ * non-root time namespace. Whenever a task changes its namespace, the VVAR
++ * page tables are cleared and then they will re-faulted with a
++ * corresponding layout.
++ * See also the comment near timens_setup_vdso_data() for details.
++ */
++int vdso_join_timens(struct task_struct *task, struct time_namespace *ns)
 +{
-+	if (vmf->pgoff == 0)
-+		return vmf_insert_pfn(vma, vmf->address,
-+				sym_to_pfn(vdso_data));
-+	return VM_FAULT_SIGBUS;
-+}
++	struct mm_struct *mm = task->mm;
++	struct vm_area_struct *vma;
 +
- static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 				    struct mm_struct *mm,
- 				    struct linux_binprm *bprm,
-@@ -155,7 +159,7 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 	}
- 
- 	ret = _install_special_mapping(mm, vdso_base, PAGE_SIZE,
--				       VM_READ|VM_MAYREAD,
-+				       VM_READ|VM_MAYREAD|VM_PFNMAP,
- 				       vdso_lookup[arch_index].dm);
- 	if (IS_ERR(ret))
- 		goto up_fail;
-@@ -215,6 +219,7 @@ static struct vm_special_mapping aarch32_vdso_spec[C_PAGES] = {
- #ifdef CONFIG_COMPAT_VDSO
- 	{
- 		.name = "[vvar]",
-+		.fault = vvar_fault,
- 	},
- 	{
- 		.name = "[vdso]",
-@@ -396,6 +401,7 @@ static int vdso_mremap(const struct vm_special_mapping *sm,
- static struct vm_special_mapping vdso_spec[A_PAGES] __ro_after_init = {
- 	{
- 		.name	= "[vvar]",
-+		.fault = vvar_fault,
- 	},
- 	{
- 		.name	= "[vdso]",
++	if (down_write_killable(&mm->mmap_sem))
++		return -EINTR;
++
++	for (vma = mm->mmap; vma; vma = vma->vm_next) {
++		unsigned long size = vma->vm_end - vma->vm_start;
++
++		if (vma_is_special_mapping(vma, vdso_lookup[ARM64_VDSO].dm))
++			zap_page_range(vma, vma->vm_start, size);
++#ifdef CONFIG_COMPAT_VDSO
++		if (vma_is_special_mapping(vma, vdso_lookup[ARM64_VDSO32].dm))
++			zap_page_range(vma, vma->vm_start, size);
++#endif
++	}
++
++	up_write(&mm->mmap_sem);
++	return 0;
++}
++#endif
++
+ static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
+ 			     struct vm_area_struct *vma, struct vm_fault *vmf)
+ {
 -- 
 2.24.1
 
