@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59F691AB930
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:03:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1611B1AB93C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:03:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AelOD4LH8SN3PlxtwOVDiqISQ+KdT4UcNwEsJqWIDbs=; b=JryeRmlIZDP75v
-	EZRghszJTgJHeAbfDcCePwqGhTLGDVMFNEp+HNDuZVRliTpI+pmWrZ2VOCKYyrhJFKYNvYUGBPPSd
-	pNetyjfjw+myZ5YO7CGc3e6mdOH3YexVjR/7+Vqs1jDj7PQxfFrVGd9d7CNUU3TUIw3GqVGx4l4rl
-	aB4RGvaD91BqNr5LK7uOn3LJRRo7Lcbw2byrZvGJ4Jgia9RTnoPJOZFu7Jp8s1m42r0tktWTj4hcg
-	BidU6hEGHlLXVFq66fU93uuj+0Q9QNsT8UIvF7wTAOkUqHbxO2ySdz79dG1U2EojCSKVDIIE3yz2m
-	Q6W5uJkvPQJhPrSOwPvA==;
+	List-Owner; bh=GHIz4gDbmM+383uNZZfLQqKBcYX0F3D8Hoy1JE1KBYY=; b=XAztj/KFE2N7b+
+	7NYTVL22LsLCLKGjpxMPs8EXUJRj1aGmJGmCau+NRT0Corqob8/GDSUA/13jKK1ZnC0qmMXFf0ND0
+	0cWLPBhFgG3+n6vbqubAfcPsTWZ+FAveZAGmf154DWIPEhnb5X+7K7axv6vjLwuFVf5SAp/HX3ytT
+	mJl6KcDJo6O5GLcj+ZggAzjU7tWYKpl2NeAtGcbtrNZC/P8SKNpSjlZNVDhlkZuUCatC5AuTavZ+G
+	Ctqz10mXCE0HRDojywATNyInal53oGnrQeJtOr6Eypez7Px/O4cBVKCWCU7dAgqZ0f6nx8enaJqbw
+	eA4kO0MsGWxSIUVigb1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOyXs-00075D-0W; Thu, 16 Apr 2020 07:02:44 +0000
+	id 1jOyYT-0007Zx-KY; Thu, 16 Apr 2020 07:03:21 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOyXg-00073m-Eo
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:02:33 +0000
+ id 1jOyXh-00073r-NU
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:02:35 +0000
 Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ore@pengutronix.de>)
- id 1jOyXY-0005qV-U2; Thu, 16 Apr 2020 09:02:24 +0200
+ id 1jOyXY-0005qW-Uv; Thu, 16 Apr 2020 09:02:24 +0200
 Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
  (envelope-from <ore@pengutronix.de>)
- id 1jOyXY-0003Sn-6i; Thu, 16 Apr 2020 09:02:24 +0200
+ id 1jOyXY-0003XK-Hr; Thu, 16 Apr 2020 09:02:24 +0200
 From: Oleksij Rempel <o.rempel@pengutronix.de>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v5 2/4] ARM: dts: add Protonic WD2 board
-Date: Thu, 16 Apr 2020 09:02:20 +0200
-Message-Id: <20200416070222.12181-3-o.rempel@pengutronix.de>
+Subject: [PATCH v5 3/4] ARM: dts: add Protonic VT7 board
+Date: Thu, 16 Apr 2020 09:02:21 +0200
+Message-Id: <20200416070222.12181-4-o.rempel@pengutronix.de>
 X-Mailer: git-send-email 2.26.0.rc2
 In-Reply-To: <20200416070222.12181-1-o.rempel@pengutronix.de>
 References: <20200416070222.12181-1-o.rempel@pengutronix.de>
@@ -47,8 +47,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_000232_492833_11B24CE1 
-X-CRM114-Status: GOOD (  16.25  )
+X-CRM114-CacheID: sfid-20200416_000234_100826_7440432E 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,8 +68,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
+ Robin van der Gracht <robin@protonic.nl>, linux-kernel@vger.kernel.org,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  David Jander <david@protonic.nl>, Fabio Estevam <festevam@gmail.com>,
  linux-arm-kernel@lists.infradead.org
@@ -78,93 +78,335 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the Protonic WD2 board, which is an internal development
-platform for low-cost agricultural Virtual Terminals based on COTS tablets
-and web applications.
-It inherits from the PRTI6Q base class.
+The Protonic VT7 is a mid-class ISObus Virtual Terminal with a 7 inch
+touchscreen display.
 
 Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Robin van der Gracht <robin@protonic.nl>
 Signed-off-by: David Jander <david@protonic.nl>
 Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
 ---
  .../devicetree/bindings/arm/fsl.yaml          |   1 +
  arch/arm/boot/dts/Makefile                    |   1 +
- arch/arm/boot/dts/imx6q-prtwd2.dts            | 188 ++++++++++++++++++
- 3 files changed, 190 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6q-prtwd2.dts
+ arch/arm/boot/dts/imx6dl-prtvt7.dts           | 473 ++++++++++++++++++
+ 3 files changed, 475 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtvt7.dts
 
 diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 3b52b582efdf0..5bdf8d38b2f0b 100644
+index 5bdf8d38b2f0b..424be1edf005a 100644
 --- a/Documentation/devicetree/bindings/arm/fsl.yaml
 +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -120,6 +120,7 @@ properties:
-               - fsl,imx6q-sabrelite
-               - fsl,imx6q-sabresd
-               - prt,prti6q                      # Protonic PRTI6Q board
-+              - prt,prtwd2                      # Protonic WD2 board
-               - technologic,imx6q-ts4900
-               - technologic,imx6q-ts7970
-               - toradex,apalis_imx6q            # Apalis iMX6 Module
+@@ -168,6 +168,7 @@ properties:
+               - emtrion,emcon-mx6-avari   # emCON-MX6S or emCON-MX6DL SoM on Avari Base
+               - fsl,imx6dl-sabreauto      # i.MX6 DualLite/Solo SABRE Automotive Board
+               - fsl,imx6dl-sabresd        # i.MX6 DualLite SABRE Smart Device Board
++              - prt,prtvt7                # Protonic VT7 board
+               - technologic,imx6dl-ts4900
+               - technologic,imx6dl-ts7970
+               - toradex,colibri_imx6dl          # Colibri iMX6 Module
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 3f500a9e88a91..b6fc2b375a616 100644
+index b6fc2b375a616..e53abe1de259c 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -531,6 +531,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
- 	imx6q-phytec-pbab01.dtb \
- 	imx6q-pistachio.dtb \
- 	imx6q-prti6q.dtb \
-+	imx6q-prtwd2.dtb \
- 	imx6q-rex-pro.dtb \
- 	imx6q-sabreauto.dtb \
- 	imx6q-sabrelite.dtb \
-diff --git a/arch/arm/boot/dts/imx6q-prtwd2.dts b/arch/arm/boot/dts/imx6q-prtwd2.dts
+@@ -446,6 +446,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6dl-nitrogen6x.dtb \
+ 	imx6dl-phytec-mira-rdk-nand.dtb \
+ 	imx6dl-phytec-pbab01.dtb \
++	imx6dl-prtvt7.dtb \
+ 	imx6dl-rex-basic.dtb \
+ 	imx6dl-riotboard.dtb \
+ 	imx6dl-sabreauto.dtb \
+diff --git a/arch/arm/boot/dts/imx6dl-prtvt7.dts b/arch/arm/boot/dts/imx6dl-prtvt7.dts
 new file mode 100644
-index 0000000000000..57d2a595d8d14
+index 0000000000000..c90c0e197b64a
 --- /dev/null
-+++ b/arch/arm/boot/dts/imx6q-prtwd2.dts
-@@ -0,0 +1,188 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
++++ b/arch/arm/boot/dts/imx6dl-prtvt7.dts
+@@ -0,0 +1,473 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 +/*
-+ * Copyright (c) 2018 Protonic Holland
++ * Copyright (c) 2016 Protonic Holland
 + */
 +
 +/dts-v1/;
-+#include "imx6q.dtsi"
++#include "imx6dl.dtsi"
 +#include "imx6qdl-prti6q.dtsi"
++#include <dt-bindings/input/input.h>
 +#include <dt-bindings/leds/common.h>
++#include <dt-bindings/sound/fsl-imx-audmux.h>
 +
 +/ {
-+	model = "Protonic WD2 board";
-+	compatible = "prt,prtwd2", "fsl,imx6q";
++	model = "Protonic VT7";
++	compatible = "prt,prtvt7", "fsl,imx6dl";
 +
 +	memory@10000000 {
 +		device_type = "memory";
 +		reg = <0x10000000 0x20000000>;
 +	};
 +
-+	memory@80000000 {
-+		device_type = "memory";
-+		reg = <0x80000000 0x20000000>;
++	backlight_lcd: backlight-lcd {
++		compatible = "pwm-backlight";
++		pwms = <&pwm1 0 500000>;
++		brightness-levels = <0 20 81 248 1000>;
++		default-brightness-level = <20>;
++		num-interpolated-steps = <21>;
++		power-supply = <&reg_12v_bl>;
++		enable-gpios = <&gpio4 28 GPIO_ACTIVE_HIGH>;
++		status = "okay";
 +	};
 +
-+	usdhc2_wifi_pwrseq: usdhc2_wifi_pwrseq {
-+		compatible = "mmc-pwrseq-simple";
++	display {
++		compatible = "fsl,imx-parallel-display";
 +		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_wifi_npd>;
-+		reset-gpios = <&gpio6 10 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	/* PRTWD2 rev 1 bitbang I2C for Ethernet Switch */
-+	i2c@4 {
-+		compatible = "i2c-gpio";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_i2c4>;
-+		sda-gpios = <&gpio1 22 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-+		scl-gpios = <&gpio1 31 GPIO_ACTIVE_HIGH>;
-+		i2c-gpio,delay-us = <20>;	/* ~10 kHz */
-+		i2c-gpio,scl-output-only;
++		pinctrl-0 = <&pinctrl_ipu1_disp>;
 +		#address-cells = <1>;
 +		#size-cells = <0>;
++		interface-pix-fmt = "rgb24";
++		status = "okay";
++
++		port@0 {
++			reg = <0>;
++
++			display_in: endpoint {
++				remote-endpoint = <&ipu1_di0_disp0>;
++			};
++		};
++
++		port@1 {
++			reg = <1>;
++
++			display_out: endpoint {
++				remote-endpoint = <&panel_in>;
++			};
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++		autorepeat;
++
++		esc {
++			label = "GPIO Key ESC";
++			linux,code = <KEY_ESC>;
++			gpios = <&gpio_pca 0 GPIO_ACTIVE_LOW>;
++		};
++
++		up {
++			label = "GPIO Key UP";
++			linux,code = <KEY_UP>;
++			gpios = <&gpio_pca 1 GPIO_ACTIVE_LOW>;
++		};
++
++		down {
++			label = "GPIO Key DOWN";
++			linux,code = <KEY_DOWN>;
++			gpios = <&gpio_pca 4 GPIO_ACTIVE_LOW>;
++		};
++
++		enter {
++			label = "GPIO Key Enter";
++			linux,code = <KEY_ENTER>;
++			gpios = <&gpio_pca 3 GPIO_ACTIVE_LOW>;
++		};
++
++		cycle {
++			label = "GPIO Key CYCLE";
++			linux,code = <KEY_CYCLEWINDOWS>;
++			gpios = <&gpio_pca 2 GPIO_ACTIVE_LOW>;
++		};
++
++		f1 {
++			label = "GPIO Key F1";
++			linux,code = <KEY_F1>;
++			gpios = <&gpio_pca 14 GPIO_ACTIVE_LOW>;
++		};
++
++		f2 {
++			label = "GPIO Key F2";
++			linux,code = <KEY_F2>;
++			gpios = <&gpio_pca 13 GPIO_ACTIVE_LOW>;
++		};
++
++		f3 {
++			label = "GPIO Key F3";
++			linux,code = <KEY_F3>;
++			gpios = <&gpio_pca 12 GPIO_ACTIVE_LOW>;
++		};
++
++		f4 {
++			label = "GPIO Key F4";
++			linux,code = <KEY_F4>;
++			gpios = <&gpio_pca 11 GPIO_ACTIVE_LOW>;
++		};
++
++		f5 {
++			label = "GPIO Key F5";
++			linux,code = <KEY_F5>;
++			gpios = <&gpio_pca 10 GPIO_ACTIVE_LOW>;
++		};
++
++		f6 {
++			label = "GPIO Key F6";
++			linux,code = <KEY_F6>;
++			gpios = <&gpio_pca 5 GPIO_ACTIVE_LOW>;
++		};
++
++		f7 {
++			label = "GPIO Key F7";
++			linux,code = <KEY_F7>;
++			gpios = <&gpio_pca 6 GPIO_ACTIVE_LOW>;
++		};
++
++		f8 {
++			label = "GPIO Key F8";
++			linux,code = <KEY_F8>;
++			gpios = <&gpio_pca 7 GPIO_ACTIVE_LOW>;
++		};
++
++		f9 {
++			label = "GPIO Key F9";
++			linux,code = <KEY_F9>;
++			gpios = <&gpio_pca 8 GPIO_ACTIVE_LOW>;
++		};
++
++		f10 {
++			label = "GPIO Key F10";
++			linux,code = <KEY_F10>;
++			gpios = <&gpio_pca 9 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_leds>;
++
++		led-debug0 {
++			function = LED_FUNCTION_STATUS;
++			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "heartbeat";
++		};
++	};
++
++	panel {
++		compatible = "innolux,g070y2t0ec";
++		backlight = <&backlight_lcd>;
++
++		port {
++			panel_in: endpoint {
++				remote-endpoint = <&display_out>;
++			};
++		};
++	};
++
++	reg_12v_bl: regulator-bl-12v {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_reg_12v_bl>;
++		regulator-name = "12v-bl";
++		regulator-min-microvolt = <12000000>;
++		regulator-max-microvolt = <12000000>;
++		gpio = <&gpio1 7 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
++	reg_1v8: regulator-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "1v8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-always-on;
++	};
++
++	sound {
++		compatible = "simple-audio-card";
++		simple-audio-card,name = "prti6q-sgtl5000";
++		simple-audio-card,format = "i2s";
++		simple-audio-card,widgets =
++			"Microphone", "Microphone Jack",
++			"Line", "Line In Jack",
++			"Headphone", "Headphone Jack",
++			"Speaker", "External Speaker";
++		simple-audio-card,routing =
++			"MIC_IN", "Microphone Jack",
++			"LINE_IN", "Line In Jack",
++			"Headphone Jack", "HP_OUT",
++			"External Speaker", "LINE_OUT";
++
++		simple-audio-card,cpu {
++			sound-dai = <&ssi1>;
++			system-clock-frequency = <0>;
++		};
++
++		simple-audio-card,codec {
++			sound-dai = <&sgtl5000>;
++			bitclock-master;
++			frame-master;
++		};
++	};
++};
++
++&clks {
++	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>;
++	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>;
++};
++
++&ecspi2 {
++	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_ecspi2>;
++	status = "okay";
++
++	tsc@0 {
++		compatible = "ti,tsc2046";
++		reg = <0>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_tsc>;
++		spi-max-frequency = <100000>;
++		interrupts-extended = <&gpio3 20 IRQ_TYPE_EDGE_FALLING>;
++		pendown-gpio = <&gpio3 20 GPIO_ACTIVE_HIGH>;
++		vcc-supply = <&reg_3v3>;
++
++		ti,vref-delay-usecs = /bits/ 16 <100>;
++
++		ti,x-min = /bits/ 16 <0>;
++		ti,x-max = /bits/ 16 <8000>;
++		ti,y-min = /bits/ 16 <0>;
++		ti,y-max = /bits/ 16 <4800>;
++		ti,x-plate-ohms = /bits/ 16 <800>;
++		ti,y-plate-ohms = /bits/ 16 <300>;
++		ti,pressure-max = /bits/ 16 <4095>;
++
++		ti,skip-samples = <2>;
++		ti,sample-period-msecs = <10>;
++		ti,report-period-msecs = <30>;
++
++		ti,filter-tolerance = <80>;
++		ti,touch-resistance-threshold = <3500>;
++	};
++};
++
++&audmux {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_audmux>;
++	status = "okay";
++
++	mux_ssi1 {
++		fsl,audmux-port = <0>;
++		fsl,port-config = <
++			IMX_AUDMUX_V2_PTCR_SYN 		0
++			IMX_AUDMUX_V2_PTCR_TFSEL(2) 	0
++			IMX_AUDMUX_V2_PTCR_TCSEL(2) 	0
++			IMX_AUDMUX_V2_PTCR_TFSDIR 	0
++			IMX_AUDMUX_V2_PTCR_TCLKDIR IMX_AUDMUX_V2_PDCR_RXDSEL(2)
++		>;
++	};
++
++	mux_pins3 {
++		fsl,audmux-port = <2>;
++		fsl,port-config = <
++			IMX_AUDMUX_V2_PTCR_SYN IMX_AUDMUX_V2_PDCR_RXDSEL(0)
++			0		       IMX_AUDMUX_V2_PDCR_TXRXEN
++		>;
 +	};
 +};
 +
@@ -172,142 +414,184 @@ index 0000000000000..57d2a595d8d14
 +	pinctrl-0 = <&pinctrl_can1 &pinctrl_can1phy>;
 +};
 +
-+&fec {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet>;
-+	phy-mode = "rmii";
-+	clocks = <&clks IMX6QDL_CLK_ENET>,
-+		 <&clks IMX6QDL_CLK_ENET>;
-+	clock-names = "ipg", "ahb";
-+	status = "okay";
-+
-+	fixed-link {
-+		speed = <100>;
-+		pause;
-+		full-duplex;
++&i2c1 {
++	sgtl5000: codec@a {
++		compatible = "fsl,sgtl5000";
++		reg = <0xa>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_codec>;
++		#sound-dai-cells = <0>;
++		clocks = <&clks 201>;
++		VDDA-supply = <&reg_3v3>;
++		VDDIO-supply = <&reg_3v3>;
++		VDDD-supply = <&reg_1v8>;
 +	};
 +};
 +
 +&i2c3 {
-+	adc@49 {
-+		compatible = "ti,ads1015";
-+		reg = <0x49>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
++	rtc@51 {
++		compatible = "nxp,pcf8563";
++		reg = <0x51>;
++	};
 +
-+		/* V in */
-+		channel@4 {
-+			reg = <4>;
-+			ti,gain = <1>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* I charge */
-+		channel@5 {
-+			reg = <5>;
-+			ti,gain = <1>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* V bus  */
-+		channel@6 {
-+			reg = <6>;
-+			ti,gain = <1>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* nc */
-+		channel@7 {
-+			reg = <7>;
-+			ti,gain = <1>;
-+			ti,datarate = <3>;
-+		};
++	gpio_pca: gpio@74 {
++		compatible = "nxp,pca9539";
++		reg = <0x74>;
++		interrupts-extended = <&gpio4 5 IRQ_TYPE_LEVEL_LOW>;
++		#gpio-cells = <2>;
++		gpio-controller;
 +	};
 +};
 +
-+&usdhc2 {
++&ipu1 {
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usdhc2>;
-+	non-removable;
-+	no-1-8-v;
-+	non-removable;
-+	mmc-pwrseq = <&usdhc2_wifi_pwrseq>;
-+	pm-ignore-notify;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
++	pinctrl-0 = <&pinctrl_ipu1_csi0>;
 +	status = "okay";
++};
 +
-+	wifi@1 {
-+		compatible = "brcm,bcm4329-fmac";
-+		reg = <1>;
-+	};
++&ipu1_di0_disp0 {
++	remote-endpoint = <&display_in>;
++};
++
++&pwm1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm1>;
++	status = "okay";
++};
++
++&snvs_poweroff {
++	status = "okay";
++};
++
++&snvs_pwrkey {
++	status = "okay";
++};
++
++&ssi1 {
++	#sound-dai-cells = <0>;
++	fsl,mode = "i2s-slave";
++	status = "okay";
++};
++
++&usbh1 {
++	status = "disabled";
++};
++
++&vpu {
++	status = "disabled";
 +};
 +
 +&iomuxc {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usb_eth_chg>;
++	pinctrl_audmux: audmuxgrp {
++		fsl,pins = <
++			MX6QDL_PAD_CSI0_MCLK__CCM_CLKO1		0x030b0
++			MX6QDL_PAD_CSI0_DAT7__AUD3_RXD		0x130b0
++			MX6QDL_PAD_CSI0_DAT4__AUD3_TXC		0x130b0
++			MX6QDL_PAD_CSI0_DAT5__AUD3_TXD		0x110b0
++			MX6QDL_PAD_CSI0_DAT6__AUD3_TXFS		0x130b0
++		>;
++	};
 +
 +	pinctrl_can1phy: can1phy {
 +		fsl,pins = <
 +			/* CAN1_SR */
-+			MX6QDL_PAD_KEY_COL3__GPIO4_IO12	0x13070
++			MX6QDL_PAD_KEY_COL3__GPIO4_IO12		0x13070
++			/* CAN1_TERM */
++			MX6QDL_PAD_GPIO_0__GPIO1_IO00		0x1b0b0
 +		>;
 +	};
 +
-+	pinctrl_enet: enetgrp {
++	pinctrl_codec: codecgrp {
 +		fsl,pins = <
-+			/* MX6QDL_ENET_PINGRP4 */
-+			MX6QDL_PAD_ENET_RXD0__ENET_RX_DATA0     0x1b0b0
-+			MX6QDL_PAD_ENET_RXD1__ENET_RX_DATA1     0x1b0b0
-+			MX6QDL_PAD_ENET_RX_ER__ENET_RX_ER       0x130b0
-+			MX6QDL_PAD_ENET_TX_EN__ENET_TX_EN       0x1b0b0
-+			MX6QDL_PAD_ENET_TXD0__ENET_TX_DATA0     0x1b0b0
-+			MX6QDL_PAD_ENET_TXD1__ENET_TX_DATA1     0x1b0b0
-+			MX6QDL_PAD_ENET_CRS_DV__ENET_RX_EN      0x1b0b0
-+
-+			MX6QDL_PAD_GPIO_16__ENET_REF_CLK   0x1b0b0
-+			/* Phy reset */
-+			MX6QDL_PAD_CSI0_DAT4__GPIO5_IO22   0x1b0b0
-+			/* nINTRP */
-+			MX6QDL_PAD_CSI0_DAT5__GPIO5_IO23   0x1b0b0
-+
-+			MX6QDL_PAD_ENET_MDIO__ENET_MDIO		0x10030
-+			MX6QDL_PAD_ENET_MDC__ENET_MDC		0x10030
++			/* AUDIO_nRESET */
++			MX6QDL_PAD_CSI0_VSYNC__GPIO5_IO21	0x1f0b0
 +		>;
 +	};
 +
-+	pinctrl_i2c4: i2c4grp {
++	pinctrl_ecspi2: ecspi2grp {
 +		fsl,pins = <
-+			MX6QDL_PAD_ENET_MDIO__GPIO1_IO22	0x1f8b0
-+			MX6QDL_PAD_ENET_MDC__GPIO1_IO31		0x1f8b0
++			MX6QDL_PAD_EIM_OE__ECSPI2_MISO		0x100b1
++			MX6QDL_PAD_EIM_CS0__ECSPI2_SCLK		0x100b1
++			MX6QDL_PAD_EIM_CS1__ECSPI2_MOSI		0x100b1
++			MX6QDL_PAD_EIM_RW__GPIO2_IO26		0x000b1
 +		>;
 +	};
 +
-+	pinctrl_usb_eth_chg: usbethchggrp {
++	pinctrl_ipu1_csi0: ipu1csi0grp {
 +		fsl,pins = <
-+			/* USB charging control */
-+			MX6QDL_PAD_NANDF_CS0__GPIO6_IO11	0x130b0
-+			MX6QDL_PAD_NANDF_CS1__GPIO6_IO14	0x130b0
-+			MX6QDL_PAD_NANDF_CS2__GPIO6_IO15	0x130b0
-+			MX6QDL_PAD_NANDF_CS3__GPIO6_IO16	0x130b0
-+			>;
-+	};
-+
-+	pinctrl_usdhc2: usdhc2grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD2_CMD__SD2_CMD		0x170b9
-+			MX6QDL_PAD_SD2_CLK__SD2_CLK		0x100b9
-+			MX6QDL_PAD_SD2_DAT0__SD2_DATA0		0x170b9
-+			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x170b9
-+			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x170b9
-+			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x170b9
++			MX6QDL_PAD_CSI0_DAT12__IPU1_CSI0_DATA12	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT13__IPU1_CSI0_DATA13	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT14__IPU1_CSI0_DATA14	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT15__IPU1_CSI0_DATA15	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT16__IPU1_CSI0_DATA16	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT17__IPU1_CSI0_DATA17	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT18__IPU1_CSI0_DATA18	0x1b0b0
++			MX6QDL_PAD_CSI0_DAT19__IPU1_CSI0_DATA19	0x1b0b0
++			MX6QDL_PAD_CSI0_PIXCLK__IPU1_CSI0_PIXCLK 0x1b0b0
++			/* ITU656_nRESET */
++			MX6QDL_PAD_GPIO_2__GPIO1_IO02		0x1b0b0
++			/* ITU656_nPDN */
++			MX6QDL_PAD_CSI0_DATA_EN__GPIO5_IO20	0x1b0b0
 +		>;
 +	};
 +
-+	pinctrl_wifi_npd: wifinpd {
++	pinctrl_ipu1_disp: ipudisp1grp {
 +		fsl,pins = <
-+			/* WL_REG_ON */
-+			MX6QDL_PAD_NANDF_RB0__GPIO6_IO10	0x13069
++			MX6QDL_PAD_DI0_DISP_CLK__IPU1_DI0_DISP_CLK 0xb0
++			MX6QDL_PAD_DI0_PIN15__IPU1_DI0_PIN15	   0xb0
++
++			MX6QDL_PAD_DISP0_DAT0__IPU1_DISP0_DATA00 0xb0
++			MX6QDL_PAD_DISP0_DAT1__IPU1_DISP0_DATA01 0xb0
++			MX6QDL_PAD_DISP0_DAT2__IPU1_DISP0_DATA02 0xb0
++			MX6QDL_PAD_DISP0_DAT3__IPU1_DISP0_DATA03 0xb0
++			MX6QDL_PAD_DISP0_DAT4__IPU1_DISP0_DATA04 0xb0
++			MX6QDL_PAD_DISP0_DAT5__IPU1_DISP0_DATA05 0xb0
++			MX6QDL_PAD_DISP0_DAT6__IPU1_DISP0_DATA06 0xb0
++			MX6QDL_PAD_DISP0_DAT7__IPU1_DISP0_DATA07 0xb0
++
++			MX6QDL_PAD_DISP0_DAT8__IPU1_DISP0_DATA08 0xb0
++			MX6QDL_PAD_DISP0_DAT9__IPU1_DISP0_DATA09 0xb0
++			MX6QDL_PAD_DISP0_DAT10__IPU1_DISP0_DATA10 0xb0
++			MX6QDL_PAD_DISP0_DAT11__IPU1_DISP0_DATA11 0xb0
++			MX6QDL_PAD_DISP0_DAT12__IPU1_DISP0_DATA12 0xb0
++			MX6QDL_PAD_DISP0_DAT13__IPU1_DISP0_DATA13 0xb0
++			MX6QDL_PAD_DISP0_DAT14__IPU1_DISP0_DATA14 0xb0
++			MX6QDL_PAD_DISP0_DAT15__IPU1_DISP0_DATA15 0xb0
++
++			MX6QDL_PAD_DISP0_DAT16__IPU1_DISP0_DATA16 0xb0
++			MX6QDL_PAD_DISP0_DAT17__IPU1_DISP0_DATA17 0xb0
++			MX6QDL_PAD_DISP0_DAT18__IPU1_DISP0_DATA18 0xb0
++			MX6QDL_PAD_DISP0_DAT19__IPU1_DISP0_DATA19 0xb0
++			MX6QDL_PAD_DISP0_DAT20__IPU1_DISP0_DATA20 0xb0
++			MX6QDL_PAD_DISP0_DAT21__IPU1_DISP0_DATA21 0xb0
++			MX6QDL_PAD_DISP0_DAT22__IPU1_DISP0_DATA22 0xb0
++			MX6QDL_PAD_DISP0_DAT23__IPU1_DISP0_DATA23 0xb0
++		>;
++	};
++
++	pinctrl_leds: ledsgrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_8__GPIO1_IO08		0x1b0b0
++		>;
++	};
++
++	pinctrl_pwm1: pwm1grp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_9__PWM1_OUT		0x1b0b0
++		>;
++	};
++
++	pinctrl_reg_12v_bl: 12blgrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_7__GPIO1_IO07		0x1b0b0
++		>;
++	};
++
++	pinctrl_tsc: tscgrp {
++
++		fsl,pins = <
++			MX6QDL_PAD_EIM_D20__GPIO3_IO20		0x1b0b0
++			MX6QDL_PAD_EIM_EB2__GPIO2_IO30		0x1b0b0
 +		>;
 +	};
 +};
