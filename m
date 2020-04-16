@@ -2,80 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5921A1ABBCD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:56:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73D9E1ABBE2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:59:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Z0ks7iysYDXButAHboNjhQdpZhA3YNgluZ2m8GKLQ0A=; b=ItnRqFJnuPLsoNJyNk+lXFKdJ
-	i74mjfhspizwam56uZ3vZ/zHz8Yh4UFknENPtlLpSkqv1HmfJVIZRn5KpRzdSX3x4w/QKSr2K117v
-	j3Yp3v9dj21lLnB9TcQpIK5lTnTs2ORseE5tp0i+/jAm8wSPFjgmoGz82WA2ZWKAbirtQ0ZXTvY7L
-	yFwj8g/s4EQdPMsrdld8LUmjUB/Qoi2SgdDA/OAofq6d+4psFY+QH3HD/rYNeO5bMk69tAPFIO8Nt
-	BLhtIn/x1GdzQJsV4ef2m0eRsCR9Lq4xrOkIf0F4AjfKWURBl8sSPJ5eujuPFpOUilPtqKV4zQapn
-	UKHn1kN1A==;
+	 bh=wY/NvTFwiHmIXUFkU5llU6faHfZoayHiEI4+vPyw6ms=; b=JaCF2QuUJP/x1dVIbNrICN1y5
+	ovuBPC1McYfeUBcILBHC5xf/J2GhG8pgzC5CdKVEaFvooHqdlv13YTc50WAIql1NHJPtyaF0KmVzr
+	IYjpMbzkS8+YyzNSs4IDTR/1b0zvUUZrgEzj+sQ9cc79GDuIKxKRqRxpjQEtevU95LTAoA9jiM6aw
+	qvUinIQF2QQanheeS768r8IjVTjhkoTv+zmql1LJ1IflvGTgt/F/YcbjrPKWXF4a+QPtnr4EHeikK
+	PcEvWjZYyV7VEIxNdegRZUMrog4GRYJn1A6Fdw5ek3FUeU3Pe3mzIJ65Da/fZkeTGlQ8vbYl5pLT7
+	xqOWdIuzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP0Jl-0007aU-Sj; Thu, 16 Apr 2020 08:56:17 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jP0MJ-0008Fk-DN; Thu, 16 Apr 2020 08:58:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP0JV-0007ZY-Om
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:56:03 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ id 1jP0MC-0008FJ-Dx
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:58:49 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id E19F222F53;
- Thu, 16 Apr 2020 10:55:46 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1587027354;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=6knnTYd0SD0a2gjJU3xQbFJUgo1WzPpSFmhjfIQyUcY=;
- b=M9q2RMUFDQVW4SbouNkFNdJPzvQSvOQC+FhQtrDgr+5/mkydRI7TAhGXO0tbJzmPNNyyHX
- L7gLiTb5PDKWNrrSnrCdEZyt6jYVPk3HsLMtzmSAX0AXDADeVgSzEhGLRf7b5MFNZM8a6g
- TAZ0ODC6jxTAJEZd8Mh17RprqqBe0Lw=
+ by mail.kernel.org (Postfix) with ESMTPSA id 84BF220784;
+ Thu, 16 Apr 2020 08:58:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587027527;
+ bh=dVAp91Tj6hWWtUY7tL+aLgKkZ276mvf5MWRT7goV5sk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=NAw/DPQ2vN2rzJzmUreAA38rnfxIXX3BUID+0uehW0Z9v4f/Ntd1a7JWQHTF+uDMv
+ 4tUi3XdV3gd/0EuPpoon9MJXibqbgTfuDttD3xyfrTBNZAOlFyJ4cRJ6Z+sHqArQUT
+ PeqbbpCCaPZTxxeljv/xMr+adoczGliqtOh0MmEk=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jP0M9-003lwb-Tr; Thu, 16 Apr 2020 09:58:46 +0100
 MIME-Version: 1.0
-Date: Thu, 16 Apr 2020 10:55:46 +0200
-From: Michael Walle <michael@walle.cc>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 11/16] gpio: add support for the sl28cpld GPIO
- controller
-In-Reply-To: <CACRpkdbANL_W3gcTwue5VUCWT95boMXjFSqTeFDZvJ6iSeNpJg@mail.gmail.com>
-References: <20200402203656.27047-1-michael@walle.cc>
- <20200402203656.27047-12-michael@walle.cc>
- <CACRpkdbANL_W3gcTwue5VUCWT95boMXjFSqTeFDZvJ6iSeNpJg@mail.gmail.com>
-Message-ID: <46eb76699a76b3feedccc70f1d1da1de@walle.cc>
-X-Sender: michael@walle.cc
+Date: Thu, 16 Apr 2020 09:58:45 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+Subject: Re: [PATCH v2] KVM: Optimize kvm_arch_vcpu_ioctl_run function
+In-Reply-To: <8b92fb5b-5138-0695-fb90-6c36b8dfad00@linux.alibaba.com>
+References: <20200416051057.26526-1-tianjia.zhang@linux.alibaba.com>
+ <878sivx67g.fsf@vitty.brq.redhat.com>
+ <1000159f971a6fa3b5bd9e5871ce4d82@kernel.org>
+ <8b92fb5b-5138-0695-fb90-6c36b8dfad00@linux.alibaba.com>
+Message-ID: <b700f9bde1218b217ca4e571b1d29c1e@kernel.org>
+X-Sender: maz@kernel.org
 User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: E19F222F53
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[23]; NEURAL_HAM(-0.00)[-0.402];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,baylibre.com,kernel.org,suse.com,roeck-us.net,linaro.org,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: tianjia.zhang@linux.alibaba.com, vkuznets@redhat.com,
+ kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-s390@vger.kernel.org, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ tsbogend@alpha.franken.de, paulus@ozlabs.org, mpe@ellerman.id.au,
+ benh@kernel.crashing.org, borntraeger@de.ibm.com, frankja@linux.ibm.com,
+ david@redhat.com, cohuck@redhat.com, heiko.carstens@de.ibm.com,
+ gor@linux.ibm.com, sean.j.christopherson@intel.com, wanpengli@tencent.com,
+ jmattson@google.com, joro@8bytes.org, tglx@linutronix.de, mingo@redhat.com,
+ bp@alien8.de, x86@kernel.org, hpa@zytor.com, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_015602_001014_3A288C21 
-X-CRM114-Status: GOOD (  15.56  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200416_015848_511824_443EF347 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,66 +103,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN
- FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: christoffer.dall@arm.com, wanpengli@tencent.com, kvm@vger.kernel.org,
+ david@redhat.com, benh@kernel.crashing.org, heiko.carstens@de.ibm.com,
+ peterx@redhat.com, linux-kernel@vger.kernel.org, paulus@ozlabs.org,
+ hpa@zytor.com, kvmarm@lists.cs.columbia.edu, linux-s390@vger.kernel.org,
+ frankja@linux.ibm.com, mpe@ellerman.id.au, joro@8bytes.org, x86@kernel.org,
+ borntraeger@de.ibm.com, mingo@redhat.com, julien.thierry.kdev@gmail.com,
+ thuth@redhat.com, gor@linux.ibm.com, suzuki.poulose@arm.com,
+ kvm-ppc@vger.kernel.org, bp@alien8.de, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, jmattson@google.com,
+ tsbogend@alpha.franken.de, cohuck@redhat.com, linux-mips@vger.kernel.org,
+ sean.j.christopherson@intel.com, james.morse@arm.com, pbonzini@redhat.com,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, linuxppc-dev@lists.ozlabs.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-Hi Linus,
-
-Am 2020-04-16 10:34, schrieb Linus Walleij:
-> Hi Michael,
-> 
-> this is looking good provided we can get the generic GPIO regmap
-> helper reviewed and merged. Thanks!
-> 
-> On Thu, Apr 2, 2020 at 10:37 PM Michael Walle <michael@walle.cc> wrote:
-> 
->> This adds support for the GPIO controller of the sl28 board management
->> controller. This driver is part of a multi-function device.
->> 
->> Signed-off-by: Michael Walle <michael@walle.cc>
-> 
->> +       depends on MFD_SL28CPLD
-> 
-> Apart from this depends it seems the patch is compile-time
-> independent of the other patches
-
-correct. There are no common mfd headers or something like that.
-
-> so I'd suggest we just merge
-> the generic regmap driver and this driver to the GPIO tree once
-> we feel finished with them, optimistically assuming that the MFD
-> driver will land and that we will not need any fundamental
-> changes in the GPIO driver.
-> 
-> Worst case we have to revert the driver and that is no disaster.
-
-Sure. One major thing I'm waiting for is the decision/new ideas on
-how to handle the "register is not set or zero" problem, see the
-other thread on the generic regmap gpio. Then I'd respin an update
-of this whole series.
-
--michael
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wNC0xNiAwOTo0NSwgVGlhbmppYSBaaGFuZyB3cm90ZToKPiBPbiAyMDIwLzQvMTYg
+MTY6MjgsIE1hcmMgWnluZ2llciB3cm90ZToKClsuLi5dCgo+PiBPdmVyYWxsLCB0aGVyZSBpcyBh
+IGxhcmdlIHNldCBvZiBjbGVhbnVwcyB0byBiZSBkb25lIHdoZW4gYm90aCB0aGUgCj4+IHZjcHUg
+YW5kIHRoZSBydW4KPj4gc3RydWN0dXJlcyBhcmUgcGFzc2VkIGFzIHBhcmFtZXRlcnMgYXQgdGhl
+IHNhbWUgdGltZS4gSnVzdCBncmVwcGluZyAKPj4gdGhlIHRyZWUgZm9yCj4+IGt2bV9ydW4gaXMg
+cHJldHR5IGluc3RydWN0aXZlLgo+PiAKPj4gIMKgwqDCoMKgwqDCoMKgIE0uCj4gCj4gU29ycnks
+IGl0J3MgbXkgbWlzdGFrZSwgSSBvbmx5IGNvbXBpbGVkIHRoZSB4ODYgcGxhdGZvcm0sIEkgd2ls
+bAo+IHN1Ym1pdCBwYXRjaCBhZ2Fpbi4KCk5vdCBhIG1pc3Rha2UuIEFsbCBJJ20gc2F5aW5nIGlz
+IHRoYXQgdGhlcmUgaXMgYW4gb3Bwb3J0dW5pdHkgZm9yIGEgCmxhcmdlcgpzZXJpZXMgdGhhdCBj
+bGVhbnMgdXAgdGhlIGNvZGUgYmFzZSwgcmF0aGVyIHRoYW4ganVzdCBkb2luZyBhIGNvdXBsZSBv
+Zgpsb2NhbGl6ZWQgY2hhbmdlcy4KClRoYW5rcywKCiAgICAgICAgIE0uCi0tIApKYXp6IGlzIG5v
+dCBkZWFkLiBJdCBqdXN0IHNtZWxscyBmdW5ueS4uLgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
