@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6208B1AC052
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 13:54:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E3011AC05F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 13:55:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lp6T5vp4sdHPXLOu5DtuOyhyCXG3s3CxFEWPu5rzAVA=; b=SvIwaacCL6l3qs
-	nLucEl4disV5OUKKMOWdeyeM5/cvlp2WtatpcKef4JHd5l0yvW9LTBh9lqQczeytOBRp/0/fjCPdg
-	8r1xJIaj1+9405/XZ2aWQpvGEHskE6vLXAiGtDxLmcF2GRB2PHUKuP6uovaL8qsZeiLv4E19hl4yt
-	097RX7dqdtvmse0G9ZTEim8cvSlIyBZ3Om5SzdJkgp43BLL8U9cVkDEhvERfgHUUIi52CFtknhsze
-	AD5DvuOmMHVifrWkqzcy90xv4b0r15b0CFd8t7YQN7Zi4XibiEIiwgshKoxPjorh6i138RckmaHCP
-	3uaiUNxQFbkROxR3cIkg==;
+	List-Owner; bh=E7H5WLYz2Ij6SwxPIrL/uKKfrR79ONkORqn8RRSmu3g=; b=Lt51y3lB3GhRVn
+	W7m94wqlfOk42oMlbDFcZuYsmNw0uX/YyqiUnbbCBiSYOPkitGJ1V7RF44ZnZdzzZENAqAGiTlvxo
+	qKd3T3lLOJvSuGNPs4J0ofEtTWCVA1Nipwmj8JkF4UCIeQgzusWC64KMIs8l4F64goPsoMAWg797l
+	UsA+NSTnzAPn2zWLox/+DclNJ9AgFs3WIjVQvaWJuE3NpQ5NodGJHqF2WmJ1OX0PFUgXUKZmjGQk+
+	axVUbat+3m2++BZC5SVw/K3HJdKb4xRwHQQSk5KoaQV63134D3bU+a5hBlxsWQtSto83f56YApVzI
+	AGDgdw8hZ+k8gtem8fvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP366-0005L4-Up; Thu, 16 Apr 2020 11:54:22 +0000
+	id 1jP37B-0008F2-JC; Thu, 16 Apr 2020 11:55:29 +0000
 Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP35w-0005JP-V7; Thu, 16 Apr 2020 11:54:14 +0000
+ id 1jP36z-0008Ee-Lz; Thu, 16 Apr 2020 11:55:19 +0000
 X-Originating-IP: 93.29.109.196
 Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
  [93.29.109.196])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 5C51860015;
- Thu, 16 Apr 2020 11:53:02 +0000 (UTC)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 539EA60019;
+ Thu, 16 Apr 2020 11:54:11 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-Date: Thu, 16 Apr 2020 13:50:45 +0200
-Message-Id: <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
+Subject: [PATCH 3/4] media: rockchip: rga: Add support for the PX30 compatible
+Date: Thu, 16 Apr 2020 13:50:46 +0200
+Message-Id: <20200416115047.233720-4-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
 References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_045413_135019_514EBF9E 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200416_045517_863036_0C80F766 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,35 +77,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PX30 features a RGA block: add the necessary node to support it.
+The PX30 SoC has a RGA block, so add the associated compatible to
+support it.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/media/platform/rockchip/rga/rga.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 75908c587511..4bfbee9d4123 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
- 		status = "disabled";
- 	};
+diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+index e9ff12b6b5bb..0ebeb9b4c14a 100644
+--- a/drivers/media/platform/rockchip/rga/rga.c
++++ b/drivers/media/platform/rockchip/rga/rga.c
+@@ -880,7 +880,6 @@ static int rga_probe(struct platform_device *pdev)
+ 	rga->cmdbuf_virt = dma_alloc_attrs(rga->dev, RGA_CMDBUF_SIZE,
+ 					   &rga->cmdbuf_phy, GFP_KERNEL,
+ 					   DMA_ATTR_WRITE_COMBINE);
+-
+ 	rga->src_mmu_pages =
+ 		(unsigned int *)__get_free_pages(GFP_KERNEL | __GFP_ZERO, 3);
+ 	rga->dst_mmu_pages =
+@@ -955,6 +954,9 @@ static const struct dev_pm_ops rga_pm = {
+ };
  
-+	rga: rga@ff480000 {
-+		compatible = "rockchip,px30-rga";
-+		reg = <0x0 0xff480000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
-+		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
-+		clock-names = "aclk", "hclk", "sclk";
-+		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-+		reset-names = "core", "axi", "ahb";
-+		power-domains = <&power PX30_PD_VO>;
-+	};
-+
- 	qos_gmac: qos@ff518000 {
- 		compatible = "syscon";
- 		reg = <0x0 0xff518000 0x0 0x20>;
+ static const struct of_device_id rockchip_rga_match[] = {
++	{
++		.compatible = "rockchip,px30-rga",
++	},
+ 	{
+ 		.compatible = "rockchip,rk3288-rga",
+ 	},
 -- 
 2.26.0
 
