@@ -2,97 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CEF71AC37C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:45:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13C2B1AC3DA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:50:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vUWlQCSFZsBqrSK1Fj5m9AVakUyCMb/yX981oFku3Ro=; b=ZJTrg/FtBwmC14
-	iB3dHKgUPluDW9qUJHhq4Vy4VslMrsewUwTxfro7qqARBccgSj763dlhNIEeOcmVCaMKKSoxxLtiH
-	5f0OUQYFeSvExWjtPPMqfXmZKTsmlwSO2Mlu4/ZvLqX2+nfObWYusPlhrX10uY+GpzGphZigkdTXL
-	AGviwonoBhJ4OLRvE/NL75ImON5pvwkkPSFlrpxXxBaE1sjoIUE0QuTUcI/v7aBnchNhBwblzgIWi
-	rcrI74RBfRyeCYssg8L5nnpzAutmw5FdlJ+1g4jM6404doMpiTnVRTDYHpKIqYh6P3vHCx2JIajKx
-	+SCQ2W2Iak5IYsIdXZIw==;
+	List-Owner; bh=xZ5dUMh9PaXyTATRhnnkXMKlXxMAQ1eLmYDaMhJM/S4=; b=JME1efuxgFybD9
+	VGCCyZUJBuRKhVCgyb0cfbqfDkZzJN/HaRJ4IwK5Y32+9Y1x9fa1lDiXDltHD9bpFiFDRvnMonB2Z
+	qJKqplBsS1nHF0w+vhLDzcGQ79BGCrZj4JmEPdTf7U8FNVUFAhsIP4Azxpwu6OWzrwYb4HCm8YLA3
+	blzEJDtkaJy/TBzS1SbLEg5VkltrXEtwB84jZiZnE7B/Y4WB9nvdnlwseMW4HezkRhaxKybdtW3Dw
+	7vB4PNhLnZv4dWgegMDIUdvTBLbEBbOYqhiExV4b8CsZSg5b/ZDBlBui1phHUhVGW8/3NfnkTBgt9
+	QcvX2dcNblAclvstGgWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4os-0002UB-9N; Thu, 16 Apr 2020 13:44:42 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4oi-0002CY-2F; Thu, 16 Apr 2020 13:44:33 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c195so2577804wme.1;
- Thu, 16 Apr 2020 06:44:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
- b=NKaFl00peRLsJRd1TCpOYzHetW8sbRA+/HJn6nXHcphRgYoHcE2As4Skpd/c5OOtl3
- aAJP6GhSIoz0w4NCFbSZJ6HKcTBmEX7IXKjNWRGHscVFHFO40s7l2Oij2g2owDoID0a5
- 7/75cQ6pZ1aQ52kQoT65AaH1sagq0kwsSQQsKV6iAsy2BwSQXEQu+AZUDJEATTyjsEvW
- /dQmoQ710BctBOzQRsQWEq7qIyYJgrGIrl24rfwI89EL6oev6W3DzRYRUHoGWtgMTglM
- 5DlQjWI5n+jybhbO+jO01+JAbMYihB8YdAnzppfOgx7wop42LLUkMnTRf0PV4zxzyq5i
- zrVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
- b=O8V0tadVyb36mrMUnRQSXFC28KBbj5zNDxqxV7vUxwr7xBu/46HRhmj6KHPnstRr2P
- ikQcmLIc064d35CWHk7MQiui2Qnj6HBPEuQqVvyYJneoaFDX9ezYFpaLOtTFUBqYIZYx
- N+xSUVBji3IouEdtiwUqtduUc2LwmJSYbLtDMN82TYGjBbgyA3q0nkNjHAaC0WiTSr8v
- 4R02AQVFtJSrlskvnPJAIjrsAX+ycihwXlniKau3slCVS8RSza8Pn+7EJlIsCb23A8Ey
- I4K8DND/yWoo0GXMW9cXzO+KuwECHQl5agOpILHfATeOjYBOqz9ha0oi7P90+IIxtA8T
- FnGA==
-X-Gm-Message-State: AGi0PubQLMJNdoagiVpA1MziDzMxSyc0C0Q/44nJA2ZHHKnk7snCOQez
- FDlTKDbJJjFFqDDEmC8EsGg=
-X-Google-Smtp-Source: APiQypKHstkks+d7QKXlK1Kx2K4FOqpUNOov9QzJnGobXCUEc76Hs0tyB7U8aK6EB9CSGnwIDUH4vw==
-X-Received: by 2002:a7b:cd10:: with SMTP id f16mr5171636wmj.21.1587044668689; 
- Thu, 16 Apr 2020 06:44:28 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id z18sm21457242wrw.41.2020.04.16.06.44.27
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 06:44:27 -0700 (PDT)
-Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
- <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
- <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
- <20200416132442.GI125838@aptenodytes>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
-Date: Thu, 16 Apr 2020 15:44:25 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jP4uT-00009S-Hk; Thu, 16 Apr 2020 13:50:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jP4uK-00008r-0o
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:50:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A6471FB;
+ Thu, 16 Apr 2020 06:50:19 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 21E553F237;
+ Thu, 16 Apr 2020 06:50:18 -0700 (PDT)
+Subject: Re: Question about SEA handling process happened in user space
+To: Xiaofei Tan <tanxiaofei@huawei.com>
+References: <5E81EFCD.6020605@huawei.com>
+ <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E8587A3.6030101@huawei.com>
+ <558ffd42-74d7-e364-2b79-93ab0998ab6e@arm.com> <5E8EE845.8090406@huawei.com>
+ <66db5a6a-e68b-00b7-6a78-2c8cd9e63aab@arm.com> <5E903FDD.4080106@huawei.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <bddb100a-7353-1aac-9877-9c5df5bd2c92@arm.com>
+Date: Thu, 16 Apr 2020 14:50:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200416132442.GI125838@aptenodytes>
-Content-Language: en-US
+In-Reply-To: <5E903FDD.4080106@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_064432_111336_D041916C 
-X-CRM114-Status: GOOD (  20.84  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200416_065020_104890_25BADE2D 
+X-CRM114-Status: GOOD (  10.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,103 +66,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
- linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
-> Hi,
-> 
-> On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
->> Hi Paul,
->>
->> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
->> has been approved by robh.
-> 
-> Huh, I looked around for ongoing related work but missed it.
-> I'll definitely rebase on top of your series and use the yaml description
-> instead. Thanks!
-> 
->> Maybe place dts patches at the end of a patch serie.
->> Could you include a &rga patch if your device is supported in mainline,
->> so we can test with:
->> make ARCH=arm64 dtbs_check
->> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> 
-> I tested with the PX30 EVB so I can surely add a node there if that turns
-> out necessary (see below).
-> 
->> Johan
->>
->> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
->>> The PX30 features a RGA block: add the necessary node to support it.
+On 10/04/2020 10:43, Xiaofei Tan wrote:
+> On 2020/4/9 22:28, James Morse wrote:
+>> On 09/04/2020 10:17, Xiaofei Tan wrote:
+>>> On 2020/4/8 0:37, James Morse wrote:
+>>>> With that series, it runs in process-context as task-work. memory_failure() needs to
+>>>> sleep, so it has to run in process-context. 
+
+>>>> Doing it as task-work means it runs before the thread returns to user-space.
 >>>
->>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
->>> ---
->>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
->>>  1 file changed, 11 insertions(+)
->>>
->>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> index 75908c587511..4bfbee9d4123 100644
->>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
->>>  		status = "disabled";
->>>  	};
->>>  
->>> +	rga: rga@ff480000 {
->>> +		compatible = "rockchip,px30-rga";
->>> +		reg = <0x0 0xff480000 0x0 0x10000>;
->>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
->>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
->>> +		clock-names = "aclk", "hclk", "sclk";
->>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
->>> +		reset-names = "core", "axi", "ahb";
->>> +		power-domains = <&power PX30_PD_VO>;
+>>> Sorry, i don't understand this. i thought the task-work need to reschedule, and current thread should
+>>> have returned to user-space before it.
 >>
->> 		status = "disabled";
-> 
-> As of 5.6, the rk3399 has the node enabled by default. Did that change?
-
-'status' disappeared during review for rk3399 between v2 and v3, but
-doesn't mention the reason. If someone can give more info here?
-
-https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen@iotwrt.com/
-
-https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen@iotwrt.com/
-
-> 
-> Since it's a standalone block that has no I/O dependency, I don't really see
-> the point of disabling it by default.
-
-Vop, hdmi and other video devices are also disabled.
-Follow the rest I think...
-
-> 
-> What do you think?
-> 
-> Cheers,
-> 
-> Paul
-> 
->>> +	};
->>> +
->>>  	qos_gmac: qos@ff518000 {
->>>  		compatible = "syscon";
->>>  		reg = <0x0 0xff518000 0x0 0x20>;
->>>
+>> ret_to_user has a loop around do_notify_resume(), if the _TIF_NOTIFY_RESUME flag is set
+>> and we call tracehook_notify_resume() which ends up in task_work_run()...
 >>
-> 
+>> That TIF flag effectively prevents this thread returning to user-space until that task
+>> work has run.
 
+> Got it. This function is great.
+
+I think PeterZ pointed me at it,
+
+
+> BTW, i have not found the place of setting the flag _TIF_NOTIFY_RESUME. Is it set by default for each thread?
+
+With that series, APEI calls task_work_add(), which calls set_notify_resume() from
+include/linux/tracehook.h
+|	if (!test_and_set_tsk_thread_flag(task, TIF_NOTIFY_RESUME))
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
