@@ -2,86 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B9FF1AB445
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 01:35:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A12FD1AB4E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 02:54:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MvaHMiqjPMESi/KaKAvbktZzJDvEa/WpA5C783SG5jQ=; b=MoZKFB6b7XlReuBFNZouWd+sb
-	4yjUDgqNrQpu+RFOFbEXtM+3R2nEQvBfg4pM/6s5wlgur2q1ZyKYGm3bJFQ5LaN8niKc0IaKknJjF
-	YcjUD91ljhh4esMPfdcvR6VhfuxLMYB99uo4pZ7ezRBw1u853lPWuL0f0A3i9Zy95XxffZlAwyjvC
-	dqxXZ3S+VskrcVKltqzm5PhWGLdEIz3Gr6sRYr0hBqJKOtY8Z0RVDFHxyWWi4uQxfblITkYscCzY8
-	d9L6KI8a7jS+epVhanwWbhw5MbaOWPA++HJakiyiS9fiF5t61Hz+M9R6fcTqmk5/Vp6ZSHaAWR6ey
-	3JYFOUXaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=D2aEzNGWxKFBrgROuptxUtvNA1khYJh4vpGMZcNuaKs=; b=btVVcg6AGMmv/i
+	Z9ct442dzUiDd8uQQKINToDaSfUkxrGc4ZDBmDfFL4t24WpZ/kHl9Pqcdbj99XtNiUOat1844b6qn
+	+QDVe9D6bQw5ZOhdu5uBfDP232sEse10cfZ1hxhlmmBKr219a7Mj916hWbxt9e2N2xt9tAAzcWH0X
+	DsTVSumit7QXcBy/Mm2ZRvi3rGp7zOu4+wbN4VrvBNVZXuB4RqVDsUC954JEPJS3gA6dNsa+tCJmH
+	QBjeFDM91gpm4WbWLiTLeLHsfdNou6RSrzbLNaMzCDIV8C/kYm+CEw8738I0BaIBugFwuydUgIqZO
+	QPfaZmWPs0FG+jpmCStA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOrZJ-00014f-16; Wed, 15 Apr 2020 23:35:45 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jOsmv-0005oM-J0; Thu, 16 Apr 2020 00:53:53 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOrZB-00013z-5i
- for linux-arm-kernel@lists.infradead.org; Wed, 15 Apr 2020 23:35:38 +0000
-Received: by mail-wm1-x342.google.com with SMTP id y24so2450384wma.4
+ id 1jOsmj-0005nw-Um
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 00:53:43 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id z1so1314415vsn.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 16:35:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3yhHiCLFkHALyeh9n0R+g91ZtL3ZmiOJYx7G3Acd2uE=;
- b=gbs07HG4V/IKn6V8g2AD2wilrTRYsbSeFe271v80vZurPTgdqencH8ctUgGfERhv1t
- qBnPynXX9mLJAfQ8TfIneuxPl9mB4Cvy3KQuiddCPqwz2v6sEUDgs8/0z0Y/2WHxPhAr
- 5OcsNAJNh9xx4D+tuSIBF+UC5oxU2OUQx7LjddiaGs2WzxdZKAxoyHRQ7trRu25Ii+mo
- 3ksN1xJZrXtUKjTXUvoFORg8kp5rA1MdTexsa5SxRE//IPnXhQcwtkl8pXNizXhDTX9O
- QsrIrbtuq34wy6gEtrYqTQFHLgx36DuppZZnnsZ6q+ejaemRsLypJKUWhNT9zmM4CunD
- 1lUg==
+ Wed, 15 Apr 2020 17:53:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=oymDymDSGwWgVl7PdrWgMeH1mdt9MH+svEJHIh9ofYo=;
+ b=a2XbOiwlAAQzxczt4QF4WPs7900EFsrLVOxWmAfWFDrYlbOxFqFleRRIhOr+uI8M5f
+ M2cwVJ40d4uDtjkefb7KmLLsMXHjL/sGzNwIx0DMzOlXnR5mb/1snHQ+m68Q4OvzwI+F
+ RFsl2ztnRLmbC/I9LzD4UKpcjD3O1jAdNfCXg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3yhHiCLFkHALyeh9n0R+g91ZtL3ZmiOJYx7G3Acd2uE=;
- b=jJALIjiIi9BSHDlyzImMmjnetPDjkdJcYS6VvBAbIDBBWBt7X9ReczFU5iYZOSJWsm
- v5Gh+FOkMSty7QQYjTCYoAaUOrJh1YM1XIVikUgyiVyN6YSOmC2FpkdCPIjGriAhPpUz
- Mw5iyQDOkEcPYjNWvfrZAfGUTBHz3fcC9ae/PKHdKO7PTerdQp0vHo3zgupsVDm54O0s
- rSbxUmyZvJXESUk1SlpS7WlYHLgnLg5+QT769LT+DvvvQhN/6Z0soyLsbFdj3PWtMtS7
- VfHjtxietBSWPL7ceDSvSsi2yljxch5m35s+JQNIwb4v4J7cu9hRiobjybbxtabDR4fX
- 0BRA==
-X-Gm-Message-State: AGi0PuY9k7j4yknq1W/7s3DZXfIaEsEnb44oTaNGHJ9yH2yFKwpyNY1O
- Tj6Hzgd+NwLSGWqZOUGrGk4=
-X-Google-Smtp-Source: APiQypIiHqj2LxiVZTz3NAfRabiq9kyGk4NLhgDJx+t58Jb/8In6qOQg2YwYZUe6S3Y9vrypStN4nQ==
-X-Received: by 2002:a7b:c399:: with SMTP id s25mr1613933wmj.169.1586993734863; 
- Wed, 15 Apr 2020 16:35:34 -0700 (PDT)
-Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id h6sm1368044wmf.31.2020.04.15.16.35.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 16:35:32 -0700 (PDT)
-Date: Thu, 16 Apr 2020 01:35:32 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v6 02/14] of: reserved-memory: Support lookup of regions
- by name
-Message-ID: <20200415233532.GA211822@ulmo>
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-3-thierry.reding@gmail.com>
- <20200415162449.GA1842@bogus>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=oymDymDSGwWgVl7PdrWgMeH1mdt9MH+svEJHIh9ofYo=;
+ b=bz8en3qIWZoyKoH0yogBml4t/fXgJwOyQtAJWto6CH9XuSiZLKrG6Aj91oJxKz2fPJ
+ R6nxmyX4G05VfBFcsSmjU8L0G9367lAtRwI2lo3y0hVDYltiIOwivSayj3PZn6ylijMV
+ jfuaHhOn/VgHKz3hzl9z3bGX99CUlX9g4Vlog1tEuSK+tAC8TDinBsUpDdXslg2NMKQX
+ RG1LH4Aku7D+TkaLCpxp6UoOO1Rg8Tqt2WCYEK/O5oprx0Yi1ORLXlEc4P29CkQdsnZ2
+ at8HONBhzy3A75lELM4NB4ZX1lswxt3Ji3mnSf+U3eYfHN3QlkuHSvAAgcW09SvmEtsp
+ h54Q==
+X-Gm-Message-State: AGi0PuYt4lNQqQaxCpQLh5Hmg4txG6AiOsD7u9QAgAj9VVjJFbWDeloM
+ BHPmtvTnERNchqjT6MbcSVc7wpT9GkE=
+X-Google-Smtp-Source: APiQypKGh/Tkz8sgqJ69VFxoLa52/RZy0TevhCKb75My9nikS4etgI0cjAtsqpooZm7lD36/iqHyVw==
+X-Received: by 2002:a67:6a46:: with SMTP id f67mr5366197vsc.186.1586998419412; 
+ Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
+Received: from mail-ua1-f53.google.com (mail-ua1-f53.google.com.
+ [209.85.222.53])
+ by smtp.gmail.com with ESMTPSA id s23sm4830523vsp.1.2020.04.15.17.53.39
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
+Received: by mail-ua1-f53.google.com with SMTP id t8so2193609uap.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
+X-Received: by 2002:ab0:592c:: with SMTP id n41mr1543975uad.73.1586998027359; 
+ Wed, 15 Apr 2020 17:47:07 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200415162449.GA1842@bogus>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+References: <20200403052900.258855-1-evanbenn@chromium.org>
+ <CAKz_xw0gV+w_gMkLfB4qUBdULLfFoiv1TBWp9_PHy33wP_XWyA@mail.gmail.com>
+ <890948ef-7276-fdae-d270-eb30eff3eab2@amlogic.com>
+ <243e107c-35c1-2d14-5285-c9e13744963c@amlogic.com>
+ <CAODwPW9RSB37+4EJ2QXAwz=ShFB23L1GKC2mLYE5L5JuQR2tPw@mail.gmail.com>
+ <20200415231215.GA182398@roeck-us.net>
+In-Reply-To: <20200415231215.GA182398@roeck-us.net>
+From: Evan Benn <evanbenn@chromium.org>
+Date: Thu, 16 Apr 2020 10:46:39 +1000
+X-Gmail-Original-Message-ID: <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+Message-ID: <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] Add a watchdog driver that uses ARM Secure Monitor
+ Calls.
+To: Guenter Roeck <linux@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_163537_239440_80865CDD 
-X-CRM114-Status: GOOD (  14.19  )
+X-CRM114-CacheID: sfid-20200415_175342_016403_DEFC92AF 
+X-CRM114-Status: GOOD (  24.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -90,6 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,87 +106,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- Dmitry Osipenko <digetx@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7093004101106947435=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Yonghui Yu <yonghui.yu@amlogic.com>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Rob Herring <robh@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Valentin Schneider <valentin.schneider@arm.com>, devicetree@vger.kernel.org,
+ LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Olof Johansson <olof@lixom.net>, Julius Werner <jwerner@chromium.org>,
+ Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Thanks Xingyu,
 
---===============7093004101106947435==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="7AUc2qLy4jB3hD7Z"
-Content-Disposition: inline
+Can anyone provide advice about making SMCWD_FUNC_ID a device tree
+param directly, vs using the compatible to select from a table.
 
+Please note get_timeleft erroneously returns res.a0 instead of res.a1
+in this version.
 
---7AUc2qLy4jB3hD7Z
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Evan
 
-On Wed, Apr 15, 2020 at 11:24:49AM -0500, Rob Herring wrote:
-> On Thu,  9 Apr 2020 19:52:26 +0200, Thierry Reding wrote:
-> > From: Thierry Reding <treding@nvidia.com>
-> >=20
-> > Add support for looking up memory regions by name. This looks up the
-> > given name in the newly introduced memory-region-names property and
-> > returns the memory region at the corresponding index in the memory-
-> > region(s) property.
-> >=20
-> > Signed-off-by: Thierry Reding <treding@nvidia.com>
-> > ---
-> >  drivers/of/of_reserved_mem.c    | 19 +++++++++++++++++++
-> >  include/linux/of_reserved_mem.h | 11 +++++++++++
-> >  2 files changed, 30 insertions(+)
-> >=20
->=20
-> Reviewed-by: Rob Herring <robh@kernel.org>
-
-Hi Rob,
-
-thanks for the review. Do you want me to apply this and patch 3/14 to a
-stable branch and send to you as a pull request? That way I could use
-that same branch to resolve the dependency in the Tegra tree for the
-memory controller driver patches.
-
-Thierry
-
---7AUc2qLy4jB3hD7Z
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6XmkEACgkQ3SOs138+
-s6Ez0hAAhoJ+N1kIOrfHX3YiD1o4HnSvBdA5fzev2mOBfWSzcbDQtQuO7PYw6yCq
-IeyEbUuehKpQL/OQASwHkJ4m3iRr8tH5PddGl1DF36Vu3bqAxr8opKZIi1S2hXHE
-2iXFY48PzN9aDvLIilAylO12RtZoTD0yI30BpucJYhATovmkzvzNuhaJ8CDYjf07
-4OJ0HoH7hOn9rhjHNQVq755OESyUTtRIqHxEw0150PJG33O1cjruRc9WgI5GVjO7
-4MQSqFHmyOcfNWZZTins29E9Cnd/zy2nkj+YXsp7eBRG2QFjrlN+y7evCduhOdbP
-moJzOF+e4dqEOZDwlVeqPni6UVFu4Zr5HWJw790osuG1oOCwB4NVpNRz34VjM7kD
-nYoZaqIm9X5Foeus0Rl94cBreI0Bg1lCsM8CCoANE42t2NOlumnMsJoLWt4T+cBb
-F5JoiSCC4JKIbuYedHI00W/9U6LcPqBcd/NZ2ZxYSVAibApDfG/APsy8a5gRLRgZ
-460CNbf4e7p7lyN5c4l58DLJvEsT/jYd/ap09KZnUZmQgcfxAHmCVQUMFq+VIb2k
-1gePNObVfuvOC6Q1KwGEcbgYlNKd/e6uGwn2FP5jzWYQr9Co8R8L+kRvIaHkuVl5
-o7TOw5dujpA6zalLJnecmj8XrL5uGRTvE6AwpGujw1UgN4QTGVs=
-=W/7i
------END PGP SIGNATURE-----
-
---7AUc2qLy4jB3hD7Z--
-
-
---===============7093004101106947435==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+On Thu, Apr 16, 2020 at 9:12 AM Guenter Roeck <linux@roeck-us.net> wrote:
+>
+> On Wed, Apr 15, 2020 at 03:29:29PM -0700, Julius Werner wrote:
+> > > In addition, It looks more reasonable to use the "msec" as the unit of
+> > > timeout parameter for the ATF fw interface with SMCWD_SET_TIMEOUT:
+> > >
+> > > - The fw interface will compatible with the uboot generic watchdog
+> > > interface at [0], and there is no need to convert timeout from msec
+> > > to sec.
+> >
+> > I think we're trying hard to keep this compatible to a Trusted
+> > Firmware counterpart that we have already shipped, so we would prefer
+> > to keep it at seconds if possible. That's what the Linux watchdog core
+> > uses as well after all, so it just seems natural. I don't really see
+> > how what U-Boot does would have anything to do with this.
+> >
+> > > - Some vendor's watchdog may be not support the "wdt_trigger_reset"
+> > > reset operation, but they can use the method below to reset the system
+> > > by the watchdog right now.
+> > >
+> > > watchdog_set_time(1);  //1ms
+> > > watchdog_enable();
+> >
+> > They can still do that but they should do that on the Trusted Firmware
+> > side. Emulating a missing reset functionality should be handled by the
+> > hardware abstraction layer (in this case Trusted Firmware), not at the
+> > Linux API level. So Linux would still send a PSCI_SYSTEM_RESET SMC,
+> > but then Trusted Firmware can choose to implement that by setting the
+> > watchdog to the smallest possible timeout (which it can because it's
+> > accessing it directly, not through this SMC interface) and letting it
+> > expire.
+>
+> I agree. Using a watchdog to implement reset functionality is always a
+> means of last resort and should be avoided if possible.
+>
+> Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7093004101106947435==--
-
