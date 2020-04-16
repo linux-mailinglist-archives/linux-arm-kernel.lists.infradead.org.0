@@ -2,92 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A6211AB642
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 05:37:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E56461AB657
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 05:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E3VMyCvm0WBMI9X/4W8VsNt6qIBBvX9wV0W7u6tFpiA=; b=tdzTpbfe8QUR9P
-	89qI+9aUeUMuI5nndgzXyItX4knAdn7WTBOv+lHCBcFzyVDsQKb5l1hThcQJIH2X2TWoik7ovDeGI
-	VYKc2PqEly0SpcPISr+x/OUebzV1UzjOnpBg1PXW1bDLUAU0P86UTakrdt4BTBWd0aIczkvn4dmdV
-	Szh0tc0tIL0yzlx6JIX5kki6hkDpeh9cX1eodWOo9y5lFoqFzGBhuvQQcXQM9aeQGluICQHYm9Ex+
-	y3aGpH28cklExp1VBskwKdvjDE0U7AvIlKAU+0NmdOPOW4KE5eZ51pbGDyrSdKlWqI0Zd4qXUa3TA
-	mVmDuCiSX0P/kGFFnLLw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nlqQGMBCpIX4XajHTQPqsPx5j27s8ypdnQ9gl3ZdzFE=; b=gVziA7qq/+Sl5piNnxtu431u2
+	VcEofjn2Cd/XkCH+PQuBq5arSnWV6tuERRzwLn4p0MrLW67IjeWZcZm5mFHqqEfjljENCW+3yrAX9
+	ZZ5eNHZXDU1y3Bpb1gs3k3Tmid4ZEoMKqALh0cvS2mLr70I2uc/q1OqTlDUHTIrxy3KWqLPDyWnDO
+	f5rJR1jPQZLOO6pIaqVYe0VTrtBokdWLOi/MF0Zvi7w93aW/Mye/mIz++oQLeR8oAVY9AyVoig38m
+	a3ahbhrajQpHWyVOq1gwvdChUiLz7ubEuwCchfGYfCCKX3ZXcPJmtAhd0s7ZinsJ+8/HRFTf/TKPr
+	Ume3uYYwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOvLG-0005MY-K0; Thu, 16 Apr 2020 03:37:30 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jOvVp-0002Xy-1n; Thu, 16 Apr 2020 03:48:25 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOvL6-0005M0-5J
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 03:37:22 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id ng8so771609pjb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 20:37:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=LcBjNCK+rf+2YEVvZPZcsG/AeuTYN98gz3c92chJ7YI=;
- b=N62pR58MzOQlhuf1VXzQKfNlkAe28ps2Bt8L5EhPFsX8/ErCuUSI5IhuhLZ9lPMZmd
- 4fv7zApE3he/1DhHZan7KuMcZEMWwp+IYjVqAyT3oeHcIKD+PcmeejcO/8sKarT86ert
- QVi6jh6siT+NHR8Jl67jjHMlF8qduOugqkYjke78fFCESRf64rRWcC/EpNPn4lABmjiZ
- I8uMM3aDZK+rsVSzFl+vX0OPtCPq34gp37JaiW/fs+cxMxplqBiELQX6A0xmEi59cq2I
- tlTKyVcR5aGR1O8fMAoQvlaF9ogOD8KHOruF2CG8CAaGbXxdCDiTn4cl4SHg8QUJytwv
- TKeA==
+ id 1jOvVg-0002XP-B1; Thu, 16 Apr 2020 03:48:17 +0000
+Received: by mail-ed1-x543.google.com with SMTP id ca21so7519510edb.7;
+ Wed, 15 Apr 2020 20:48:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=DYpMfqz1zq603rQOEBVoeHDA0i7zRzLf7WtuMas81V0=;
+ b=nbS0fnm2kL0TuWyAi2j92YFqSqLz+HfnG3IgHQj8GPxpp7u741zE35wyocrJn4HY23
+ 5s8tEPOfysRWq3EzaQGDouDfSnyxAsPKmrQEEI3MRTMQQrG9bq0y0vrGY0Bd5UIm+kSu
+ JeLdRoIrFWsyy5b6u7P2CzFdIZ2mdZXZAMbfnLgPvpsM8UNabPf1+Tro+yD3q0xB8dWO
+ 4R8fAhNA4k85vPrN9Emcab0Zdd2Pu9jLhYjk/iXCUNuRLa0a2VNacLy67AVmCjPwUmAW
+ XrjeuFqb3QzgAX3eJiFh0wwdx599gVN+qHfrF7nI9m4Y0Fk6eeAOLwAIuABj0puwFZCE
+ LjsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LcBjNCK+rf+2YEVvZPZcsG/AeuTYN98gz3c92chJ7YI=;
- b=VVjfbYObwy5qgW78OTmomIBcYFBg7vXqemEJfSPjqfXYC0VyW9zASRYzskvdkvzoAU
- gJ1+3q1+B7lvOCk/X03sWTDvu4i6kekGxL1F7rqaTyWsGThLWuiUljyLSQjwWydgJH0b
- ARhjJ0Y2C2MkZ9qnyBG2dIWx4diCOHev7fAY3nK/C6ZlS9yieYbKn0wfSGTvS8PR/ujq
- GYyVi3EROHwYz15fnHkfS5wyjOnLKfSQxKBp0KCRGb/6jcJ3MQuEjNMLutd0pUERzujD
- yGe2nTXUxKGzugzuETDceuQyanYYJDw2tmTzvD8wMqNfZc0qijDjU1g9zerTsSAkPw0N
- 2tGQ==
-X-Gm-Message-State: AGi0PuZDMWlvVCPF24GtCvH2vD1gxTfshzzqjnCH5PgoXxMTqSlUcQax
- XubZi2QnlOB8E4ITjA1X5Ve51Q==
-X-Google-Smtp-Source: APiQypJxmJr4qhcuXMSJJIMqhW62prSNyh3AQwxU2EaTI1aAzDTg8sr0oneUv2CRNeHAM+Dhf3qzxA==
-X-Received: by 2002:a17:902:8497:: with SMTP id
- c23mr8207091plo.335.1587008238452; 
- Wed, 15 Apr 2020 20:37:18 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id u8sm14019683pgl.19.2020.04.15.20.37.17
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 Apr 2020 20:37:17 -0700 (PDT)
-Date: Thu, 16 Apr 2020 09:07:15 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sumit Gupta <sumitg@nvidia.com>
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-Message-ID: <20200416033715.hscztwkxie2o5i3r@vireshk-i7>
-References: <20200406025549.qfwzlk3745y3r274@vireshk-i7>
- <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
- <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
- <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
- <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
- <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
- <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
- <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
- <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
- <d6e0eed6-4267-fca9-59e1-02d16e17ff34@nvidia.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=DYpMfqz1zq603rQOEBVoeHDA0i7zRzLf7WtuMas81V0=;
+ b=ou9YuUMyhqn370xOkoMcQXTr4p16qjKwjNT2MRMbLQO3Gi+2IZEZ01q5q1OrA+ybde
+ G2es/7q9plLS4x44PUtJPiAxe4ggdF4hsp0tRKhjCLjHNSWm/yjRIucZERtq3Y0Eh9ka
+ H9CNal5FHGSHDttDFv7ltn+RJpfJF8onBq++v3aiZYwCOaZNa0g+pkqPID3crE0w72cL
+ Ygyo6i4QCRmCmaUhB88JHkosoY46GvpGbCOFZQB7F8CoxwDH5xrFQmD6/NwfHFTcYXLC
+ KlZiGeQ1UZLEknu9IE+MaYha0MbzvZTR8Zqs4Z/MWJqzSBHjiQPmJ/rNnMR6jZa1O6t2
+ TUaA==
+X-Gm-Message-State: AGi0PuZEOISEko0t/cjh4NPBz9cteXBor/ts3CDutaxXfrjzxv1phEVI
+ 2AiEIQd2Si1eivTP7qtUbIM=
+X-Google-Smtp-Source: APiQypIt7jQVi3Abg6f3mCTFeiI/2xzq/WIEpbJIuP2F9eKdtVCa6kXtTpUFZhSg0TzcsalgQy7FRg==
+X-Received: by 2002:a05:6402:2208:: with SMTP id
+ cq8mr4833460edb.293.1587008893775; 
+ Wed, 15 Apr 2020 20:48:13 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ c14sm2477020eds.79.2020.04.15.20.48.06
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 15 Apr 2020 20:48:12 -0700 (PDT)
+Subject: Re: [PATCH v2 0/2] Add a watchdog driver that uses ARM Secure Monitor
+ Calls.
+To: Julius Werner <jwerner@chromium.org>, Evan Benn <evanbenn@chromium.org>
+References: <20200403052900.258855-1-evanbenn@chromium.org>
+ <CAKz_xw0gV+w_gMkLfB4qUBdULLfFoiv1TBWp9_PHy33wP_XWyA@mail.gmail.com>
+ <890948ef-7276-fdae-d270-eb30eff3eab2@amlogic.com>
+ <243e107c-35c1-2d14-5285-c9e13744963c@amlogic.com>
+ <CAODwPW9RSB37+4EJ2QXAwz=ShFB23L1GKC2mLYE5L5JuQR2tPw@mail.gmail.com>
+ <20200415231215.GA182398@roeck-us.net>
+ <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+ <CAODwPW9Vt7TcWfKYDmRgLndb2-+5HoNvA6XMJJznXCudQDngqw@mail.gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <9d029a04-2a37-cbbe-1932-be34d34f6b69@gmail.com>
+Date: Wed, 15 Apr 2020 20:48:04 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d6e0eed6-4267-fca9-59e1-02d16e17ff34@nvidia.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <CAODwPW9Vt7TcWfKYDmRgLndb2-+5HoNvA6XMJJznXCudQDngqw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_203720_720946_C1CCC29D 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20200415_204816_406815_A7C20B2A 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -107,42 +109,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Yonghui Yu <yonghui.yu@amlogic.com>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Rob Herring <robh@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15-04-20, 16:55, Sumit Gupta wrote:
-> 
-> 
-> On 14/04/20 11:15 AM, Viresh Kumar wrote:
-> > External email: Use caution opening links or attachments
-> > 
-> > 
-> > On 13-04-20, 17:50, Sumit Gupta wrote:
-> > > This was done considering long delay value as explained previously.
-> > > Do you think that smp_call_function_single() would be better than work queue
-> > > here?
-> > 
-> > Don't work with assumptions, you should test both and see which one
-> > works better. Workqueue should never be faster than
-> > smp_call_function_single() with my understanding.
-> Checked the time taken and its almost same in both cases.
-> Earlier we used smp_call_function_single(), but delay time period was small
-> in that SOC. In T194, the time period was more. So, this is an optimization
-> done because using work queue has advantage as interrupts will not be
-> disabled for that period.
 
-Hmm, okay, keep the workqueue and mention the required details in a
-comment for everyone to understand why the implementation is done that
-way.
 
+On 4/15/2020 5:56 PM, Julius Werner wrote:
+>> Can anyone provide advice about making SMCWD_FUNC_ID a device tree
+>> param directly, vs using the compatible to select from a table.
+> 
+> Sounds like most people prefer the way with using different compatible
+> strings? (Personally I don't really care either way.)
+
+The PSCI binding itself has provision for specifying function IDs for 
+different functions, and this seems to be followed by other subsystems 
+as well like SCMI:
+
+https://www.spinics.net/lists/arm-kernel/msg791270.html
+
+I could easily imagine that a firmware would provide two functions IDs 
+(one for AArch32, one for AArch64) and that it could change those over 
+time while not changing the compatible string at all.
 -- 
-viresh
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
