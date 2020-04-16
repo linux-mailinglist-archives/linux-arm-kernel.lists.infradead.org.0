@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B68F81AD04C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 21:25:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 312071AD04F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 21:26:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/Ou6lxxv+XUQxw7IjqCyj07jJS7mtMXRV87xyFWtFr0=; b=QdQSHMMUK5C8cjJyiN7C7Worh
-	8GgN8dfg/rkTfgLMugatN2Rbo3neqbRwmVoRrlMNHC7uoJjiEcIusb0hUq3DxjojAfFrUsXhi6ovc
-	PqQETfqbyXo3BKt+yYK/uOYXejIttWgyXZ3s6eniqGKXC65TJuTxRnFZsN7OHT34yQP02PPjAUlkv
-	jj0K2C6z4mjJPaJjRxe8ktPVJmw7oDIvo9Lrn/1qFh4EwHy3CtnOswa3Unkpi799ormkczt9mYZuu
-	W4mJM9rga6xlOfSwVOuHFBZN8LiCXSbd6ZzhnhUc+Z19FOLfD+BWL3+nJmY8fvPkMoCS2/xPxJ6G9
-	2wTe0ketQ==;
+	 bh=a5ZfWhkj/nc/fwePVvmjZSIv5pEb0IW+0n9A3xu5HyY=; b=Z2MAZQSeGUqre0Zc6a4W91mkT
+	QwMZfeCzn86wZMV23+vQK6sG9E97lQk/jMCu6tI+yVrzoAwSJBE2kxUA/A82WcrvzeQDPge0vdB5G
+	sGY9KUseQpUM5WecJKQJ8UGnTwwMg1/9VFTTWKXm7QykKPPfkOMtZQx2eFv5rywoR1uj93mmXrPnM
+	2VXHfYk6kl7mSbVd42G8esw2P7zyHx8jBP+8zPAvGRbzhYos04L8pBOkOSX4AXY+HD405uR5JL4vj
+	/WcTXpW0XnbUGi8z9QoP49j+/1YIPnpBNllq+Gv6b5GreFXqD3NuPbCUHm9Fbh7RkYGpYaHLTMisl
+	1IW7uD1fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPA8n-00065p-0h; Thu, 16 Apr 2020 19:25:37 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jPA9k-0006Nn-Jw; Thu, 16 Apr 2020 19:26:36 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPA8d-00065H-L9
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 19:25:28 +0000
-Received: by mail-pf1-x443.google.com with SMTP id w65so2095979pfc.12
+ id 1jPA9a-0006NU-NR
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 19:26:27 +0000
+Received: by mail-pg1-x543.google.com with SMTP id e12so735484pgj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 12:25:27 -0700 (PDT)
+ Thu, 16 Apr 2020 12:26:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=gNOpmFkdJM5lK0kvLGKRDTe65pEdwYduioppFrEiEAE=;
- b=Gp8FtEBFGrZFmDlA8bU7KYFpceLvV6VY7Z3+9oFxYQMJuFCYGqUiMQQzsElPI5ijCf
- 1q97+ASefxiE+RlVnh1NO7VZF+5/Yf4vRG+yvVqHToSGL4H3bHHDrG3sU3mjOyvczHTm
- /MhZcmRov8Rr5jvIwHcrD9y+g1fOv0gNId+UBOJBacZzDQGTv4Od0iGLfV83B/jZz1yT
- iKGMgiSnRvY+jeuQEYAvqS9wNFPj/ZiPyBaJZxh9Wyv9jegzrF1CpwebVg/pb0vsOCor
- 9HlU0lEXk3mqgMOXnZYNWxMhZpxtJBds5A1AJP5yrO7KrITFmZpQsX02Gs0MdLTD8rML
- p1dg==
+ bh=gEIm/a/amIudYpXaFTgOzFwljTFoVGowEhKLDfwtbSc=;
+ b=rIgtAFJKoGra7EIe4/jhtS16/eFGryhXNIzTdUfJ/CFm6RydeSs+8NknPM6H4V+fz7
+ j8oO5iCHl+jWZS0z0iX+pN7tKvbheyjJmbzJJx33Y1JQHxmz6Rj3TwhomyfuwbVpB/+k
+ +63hryw7687z+duoE8UYV5JeTLyr1P/z+gDNs9JqaqosrwpkFUk7fRhhquyUWF44HpAI
+ shkxjKR4luUFqeApTMO2DhvUwrKeENDAn5jIs6EcqBU38d8kjf4TRSZbDTzWTk8lnrDV
+ VfNss3zurWUZR45GEMaVaNm8dHsVtTT+fprCaf4d1oX9J8cRNp+6xHKT9dBYqBPPXcF2
+ X9Pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=gNOpmFkdJM5lK0kvLGKRDTe65pEdwYduioppFrEiEAE=;
- b=ho8HHlwywma7ajYgz+TAYfH7bE8JP9jb1F5ZyT43IGAHvn38QX/Ibis7Nk2wEdC5ut
- D6NvwggMmK5w+MW0CCIMsDpBaviuCaS+XHv+hZPcEPWC6sM9TnyziK049zIs9y0OceIA
- gDKbZmtH83f3cdlcLZe0C10sVCavURtoInQaB8ydwnekepPSPBUHkdSqo9htM7B6rhyl
- Nd52KPWNlI3Y5ZyiYWKwNaYp6LR54Rl8zYR937ADeh11GhX91mijRSAbiP2uoYeYl7IE
- FHUHSPseoNY9s7Woi5wKmtr+uB0kOXpNa9v1lK311q7j07xW6Ie1rtpBIkGfijNdCW48
- ZKCg==
-X-Gm-Message-State: AGi0PuZe21ogF8LbrNvjFBfY2dMEL0WpGtWOok7Ota7AIw3VuhDuNIuV
- B4DpGJQtJ+pcSHKuJNq/oyE=
-X-Google-Smtp-Source: APiQypLUAIx8sl4AiWezY2GN+IdXUA5NuQf47pUCuULAbjSQvR0MlWJupKfeqmv3Ibm7RHkOd3eztQ==
-X-Received: by 2002:a63:6f45:: with SMTP id k66mr34179713pgc.246.1587065126838; 
- Thu, 16 Apr 2020 12:25:26 -0700 (PDT)
+ bh=gEIm/a/amIudYpXaFTgOzFwljTFoVGowEhKLDfwtbSc=;
+ b=VqS1BFGlGBJZKEfXouCq/v4Eirz+5M/Ol7BovP6l1DC/KpRW7lQqu1yQmRAqzwo3+0
+ 81UeFQtreV+2qEMoXS4Mqf94BMkfilxhwmFDteW9M34tEPAZCxrVaQOcSROQlq4vKOtV
+ zz5bAhgGnG5WVltiCTJCbQaKt7Sd7O4OU3POzDvCYaWpD3cnLhxqiAZPOJUyIWPI6EEo
+ 4gULF4x/Et5C4+HM8y0Lxse0ORcJITvMI2pxJwLlSaH21/H9rXCT+BCyVyhFu6PcdLQv
+ HHqjPKOAt7jSgF9ikUBCZpJdN9UJ4bodairw3fBBBreANAGLq92b2xvqfql09xFkeki9
+ uSdw==
+X-Gm-Message-State: AGi0PuZdE2SoevkMw4xrYQl7RO+8doy/eRbD3xZWIXZ9sGFIPtyZ0zPA
+ iDM5GiZZSb6u+Gu5uFFOO4A=
+X-Google-Smtp-Source: APiQypKzMYTBGunhXRk8Oqqf4CGoHLjWjRE3fS4slXzpGdswHwt+JibGD0bT8b1zaDclGtFyzLbi1g==
+X-Received: by 2002:aa7:9297:: with SMTP id j23mr5696294pfa.15.1587065186090; 
+ Thu, 16 Apr 2020 12:26:26 -0700 (PDT)
 Received: from [10.230.188.26] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id o125sm15959886pgo.74.2020.04.16.12.25.25
+ by smtp.gmail.com with ESMTPSA id h66sm16613044pgc.42.2020.04.16.12.26.24
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 12:25:26 -0700 (PDT)
-Subject: Re: [PATCH 4/5] net: macb: WoL support for GEM type of Ethernet
- controller
+ Thu, 16 Apr 2020 12:26:25 -0700 (PDT)
+Subject: Re: [PATCH 5/5] net: macb: Add WoL interrupt support for MACB type of
+ Ethernet controller
 To: nicolas.ferre@microchip.com, linux-arm-kernel@lists.infradead.org,
  netdev@vger.kernel.org, Claudiu Beznea <claudiu.beznea@microchip.com>,
  harini.katakam@xilinx.com
 References: <cover.1587058078.git.nicolas.ferre@microchip.com>
- <56bb7a742093cec160c4465c808778a14b2607e7.1587058078.git.nicolas.ferre@microchip.com>
+ <3c9db82da283abd7faf248985d21155a48554bdf.1587058078.git.nicolas.ferre@microchip.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <6fc99e01-6d64-4248-3627-aa14a914df72@gmail.com>
-Date: Thu, 16 Apr 2020 12:25:24 -0700
+Message-ID: <c3abc339-ccfa-6ca1-a27c-af2808d89d98@gmail.com>
+Date: Thu, 16 Apr 2020 12:26:23 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <56bb7a742093cec160c4465c808778a14b2607e7.1587058078.git.nicolas.ferre@microchip.com>
+In-Reply-To: <3c9db82da283abd7faf248985d21155a48554bdf.1587058078.git.nicolas.ferre@microchip.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_122527_719439_46A76964 
-X-CRM114-Status: GOOD (  16.36  )
+X-CRM114-CacheID: sfid-20200416_122626_766487_2AE812F1 
+X-CRM114-Status: GOOD (  19.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -119,28 +119,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 4/16/2020 10:44 AM, nicolas.ferre@microchip.com wrote:
 > From: Nicolas Ferre <nicolas.ferre@microchip.com>
 > 
-> Adapt the Wake-on-Lan feature to the Cadence GEM Ethernet controller.
-> This controller has different register layout and cannot be handled by
-> previous code.
-> We disable completely interrupts on all the queues but the queue 0.
-> Handling of WoL interrupt is done in another interrupt handler
-> positioned depending on the controller version used, just between
-> suspend() and resume() calls.
-> It allows to lower pressure on the generic interrupt hot path by
-> removing the need to handle 2 tests for each IRQ: the first figuring out
-> the controller revision, the second for actually knowing if the WoL bit
-> is set.
-> 
-> Queue management in suspend()/resume() functions inspired from RFC patch
-> by Harini Katakam <harinik@xilinx.com>, thanks!
+> Handle the Wake-on-Lan interrupt for the Cadence MACB Ethernet
+> controller.
+> As we do for the GEM version, we handle of WoL interrupt in a
+> specialized interrupt handler for MACB version that is positionned
+> just between suspend() and resume() calls.
 > 
 > Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
 > ---
-
-[snip]
-
+>   drivers/net/ethernet/cadence/macb_main.c | 38 +++++++++++++++++++++++-
+>   1 file changed, 37 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+> index 71e6afbdfb47..6d535e3e803c 100644
+> --- a/drivers/net/ethernet/cadence/macb_main.c
+> +++ b/drivers/net/ethernet/cadence/macb_main.c
+> @@ -1513,6 +1513,34 @@ static void macb_tx_restart(struct macb_queue *queue)
+>   	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(TSTART));
+>   }
 >   
-> +static irqreturn_t gem_wol_interrupt(int irq, void *dev_id)
+> +static irqreturn_t macb_wol_interrupt(int irq, void *dev_id)
 > +{
 > +	struct macb_queue *queue = dev_id;
 > +	struct macb *bp = queue->bp;
@@ -153,17 +151,18 @@ On 4/16/2020 10:44 AM, nicolas.ferre@microchip.com wrote:
 > +
 > +	spin_lock(&bp->lock);
 > +
-> +	if (status & GEM_BIT(WOL)) {
-> +		queue_writel(queue, IDR, GEM_BIT(WOL));
-> +		gem_writel(bp, WOL, 0);
-> +		netdev_vdbg(bp->dev, "GEM WoL: queue = %u, isr = 0x%08lx\n",
+> +	if (status & MACB_BIT(WOL)) {
+> +		queue_writel(queue, IDR, MACB_BIT(WOL));
+> +		macb_writel(bp, WOL, 0);
+> +		netdev_vdbg(bp->dev, "MACB WoL: queue = %u, isr = 0x%08lx\n",
 > +			    (unsigned int)(queue - bp->queues),
 > +			    (unsigned long)status);
 > +		if (bp->caps & MACB_CAPS_ISR_CLEAR_ON_WRITE)
-> +			queue_writel(queue, ISR, GEM_BIT(WOL));
+> +			queue_writel(queue, ISR, MACB_BIT(WOL));
+> +	}
 
-You would also need a pm_wakeup_event() call here to record that this 
-device did wake-up the system.
+Likewise, this would need a call to pm_wakeup_event() to record the 
+wake-up event associated with this device.
 -- 
 Florian
 
