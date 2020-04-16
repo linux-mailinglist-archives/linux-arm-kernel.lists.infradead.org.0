@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC5931AB86E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 08:48:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E9151AB872
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 08:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=znY40+yxSy1obxVaRG4abauS82kIgRHM3QnX3RP3NGA=; b=JZ3zQKedR17FbQeU7g1qRZ3uYE
-	+tKNEbkPwIENbxJSNmIPsgFioDCzVpcUUmdly5Aez2FksyE+OQrj5rJCuRH1YUF9w3J6iTzTtgX3A
-	GqCLAtstuhGY+/OZcZPLZ7h79NEgI8IWNUwFNDF7rc04Q87b+xpckmneI/mZmTwsN5BO+TFBPEzr3
-	nA4lfhC/Qm2b5hFzVjeLGOjoeBZjbcS32FtaXbd65gpRdVohzQ1KoQdATX20bX1s+AWEueNi0I0PO
-	0LO0NKrClVdgMnXPg7tT1v6Gyv+lUP+Zcjpe1ygFFh20JY+Ni6pM6BwcDbBlzDrW9ZGLdcEdcY6at
-	xEmcyT/g==;
+	bh=u+hUTl1hgSiiRxOwxxPKusZEDwZb/VE9jhi4reOacXY=; b=Ax7pJL2pEZiG4rvLiK+8OV0GVD
+	U3lTLPojRL+mfJMrTVNfMFfz2OqqcGqyDS23MNrrV3DouVotag6gELYUGfq7MkL7Yq/IaflxPVI2x
+	Ih4p1V0OgWuA3ZcTHaOI8orQkWMidN22dmd8ZEIw3PFwRRt/d22nM+1Agr+apY2KCmsleCJ8Nrmwg
+	nFG12W4LZ3shV2WVZCdGo2JeE7H1gArmCPj/AGosM3jzqJwvpuG2LndINE9+CsTysGNDo/1IZVpoI
+	UOrI3T2aLeZIe+GHkkpfOVfBOS/T7B5q028lactRy+pgTkXGh9065YwifOFFmVWpWsMAmcyodR3bk
+	t713vhEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOyJv-0004Vj-Pr; Thu, 16 Apr 2020 06:48:19 +0000
+	id 1jOyKD-0004kR-O3; Thu, 16 Apr 2020 06:48:37 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOyJC-00042T-RT
+ id 1jOyJD-00042u-QS
  for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 06:47:37 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A5BDC1A0C19;
- Thu, 16 Apr 2020 08:47:33 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9A0461A0C16;
+ Thu, 16 Apr 2020 08:47:34 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BA2331A0C21;
- Thu, 16 Apr 2020 08:47:28 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7849E1A0C10;
+ Thu, 16 Apr 2020 08:47:29 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8A9F3402FC;
- Thu, 16 Apr 2020 14:47:21 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8EFBC40307;
+ Thu, 16 Apr 2020 14:47:22 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2 3/5] dt-bindings: clock: Convert i.MX6SL clock to
+Subject: [PATCH V2 4/5] dt-bindings: clock: Convert i.MX6SLL clock to
  json-schema
-Date: Thu, 16 Apr 2020 14:39:16 +0800
-Message-Id: <1587019158-12143-3-git-send-email-Anson.Huang@nxp.com>
+Date: Thu, 16 Apr 2020 14:39:17 +0800
+Message-Id: <1587019158-12143-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1587019158-12143-1-git-send-email-Anson.Huang@nxp.com>
 References: <1587019158-12143-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_234735_023310_52558183 
-X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-CacheID: sfid-20200415_234736_132494_A50C4DC7 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,7 +79,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX6SL clock binding to DT schema format using json-schema.
+Convert the i.MX6SLL clock binding to DT schema format using json-schema.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
@@ -87,48 +87,74 @@ Changes since V1:
 	- remove minItem of interrupts;
 	- remove '...' at the end of file
 ---
- .../devicetree/bindings/clock/imx6sl-clock.txt     | 10 ------
- .../devicetree/bindings/clock/imx6sl-clock.yaml    | 42 ++++++++++++++++++++++
- 2 files changed, 42 insertions(+), 10 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/clock/imx6sl-clock.txt
- create mode 100644 Documentation/devicetree/bindings/clock/imx6sl-clock.yaml
+ .../devicetree/bindings/clock/imx6sll-clock.txt    | 36 -------------
+ .../devicetree/bindings/clock/imx6sll-clock.yaml   | 60 ++++++++++++++++++++++
+ 2 files changed, 60 insertions(+), 36 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/clock/imx6sll-clock.txt
+ create mode 100644 Documentation/devicetree/bindings/clock/imx6sll-clock.yaml
 
-diff --git a/Documentation/devicetree/bindings/clock/imx6sl-clock.txt b/Documentation/devicetree/bindings/clock/imx6sl-clock.txt
+diff --git a/Documentation/devicetree/bindings/clock/imx6sll-clock.txt b/Documentation/devicetree/bindings/clock/imx6sll-clock.txt
 deleted file mode 100644
-index 15e40bd..0000000
---- a/Documentation/devicetree/bindings/clock/imx6sl-clock.txt
+index fee849d..0000000
+--- a/Documentation/devicetree/bindings/clock/imx6sll-clock.txt
 +++ /dev/null
-@@ -1,10 +0,0 @@
--* Clock bindings for Freescale i.MX6 SoloLite
+@@ -1,36 +0,0 @@
+-* Clock bindings for Freescale i.MX6 SLL
 -
 -Required properties:
--- compatible: Should be "fsl,imx6sl-ccm"
+-- compatible: Should be "fsl,imx6sll-ccm"
 -- reg: Address and length of the register set
 -- #clock-cells: Should be <1>
+-- clocks: list of clock specifiers, must contain an entry for each required
+-  entry in clock-names
+-- clock-names: should include entries "ckil", "osc", "ipp_di0" and "ipp_di1"
 -
 -The clock consumer should specify the desired clock by having the clock
--ID in its "clocks" phandle cell.  See include/dt-bindings/clock/imx6sl-clock.h
--for the full list of i.MX6 SoloLite clock IDs.
-diff --git a/Documentation/devicetree/bindings/clock/imx6sl-clock.yaml b/Documentation/devicetree/bindings/clock/imx6sl-clock.yaml
+-ID in its "clocks" phandle cell.  See include/dt-bindings/clock/imx6sll-clock.h
+-for the full list of i.MX6 SLL clock IDs.
+-
+-Examples:
+-
+-#include <dt-bindings/clock/imx6sll-clock.h>
+-
+-clks: clock-controller@20c4000 {
+-		compatible = "fsl,imx6sll-ccm";
+-		reg = <0x020c4000 0x4000>;
+-		interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
+-			     <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
+-		#clock-cells = <1>;
+-		clocks = <&ckil>, <&osc>, <&ipp_di0>, <&ipp_di1>;
+-		clock-names = "ckil", "osc", "ipp_di0", "ipp_di1";
+-};
+-
+-uart1: serial@2020000 {
+-		compatible = "fsl,imx6sl-uart", "fsl,imx6q-uart", "fsl,imx21-uart";
+-		reg = <0x02020000 0x4000>;
+-		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&clks IMX6SLL_CLK_UART1_IPG>,
+-			 <&clks IMX6SLL_CLK_UART1_SERIAL>;
+-		clock-names = "ipg", "per";
+-};
+diff --git a/Documentation/devicetree/bindings/clock/imx6sll-clock.yaml b/Documentation/devicetree/bindings/clock/imx6sll-clock.yaml
 new file mode 100644
-index 0000000..7550f13
+index 0000000..569b3c2
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/imx6sl-clock.yaml
-@@ -0,0 +1,42 @@
++++ b/Documentation/devicetree/bindings/clock/imx6sll-clock.yaml
+@@ -0,0 +1,60 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/clock/imx6sl-clock.yaml#
++$id: http://devicetree.org/schemas/clock/imx6sll-clock.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Clock bindings for Freescale i.MX6 SoloLite
++title: Clock bindings for Freescale i.MX6 SLL
 +
 +maintainers:
 +  - Anson Huang <Anson.Huang@nxp.com>
 +
 +properties:
 +  compatible:
-+    const: fsl,imx6sl-ccm
++    const: fsl,imx6sll-ccm
 +
 +  reg:
 +    maxItems: 1
@@ -139,11 +165,27 @@ index 0000000..7550f13
 +  '#clock-cells':
 +    const: 1
 +
++  clocks:
++    items:
++      - description: 32k osc
++      - description: 24m osc
++      - description: ipp_di0 clock input
++      - description: ipp_di1 clock input
++
++  clock-names:
++    items:
++      - const: ckil
++      - const: osc
++      - const: ipp_di0
++      - const: ipp_di1
++
 +required:
 +  - compatible
 +  - reg
 +  - interrupts
 +  - '#clock-cells'
++  - clocks
++  - clock-names
 +
 +examples:
 +  # Clock Control Module node:
@@ -151,11 +193,13 @@ index 0000000..7550f13
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +
 +    clks: clock-controller@20c4000 {
-+        compatible = "fsl,imx6sl-ccm";
++        compatible = "fsl,imx6sll-ccm";
 +        reg = <0x020c4000 0x4000>;
-+        interrupts = <0 87 IRQ_TYPE_LEVEL_HIGH>,
-+                     <0 88 IRQ_TYPE_LEVEL_HIGH>;
++        interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
 +        #clock-cells = <1>;
++        clocks = <&ckil>, <&osc>, <&ipp_di0>, <&ipp_di1>;
++        clock-names = "ckil", "osc", "ipp_di0", "ipp_di1";
 +    };
 -- 
 2.7.4
