@@ -2,56 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 319C51AC240
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:25:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBF461AC257
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:27:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Dzi1KdRQ4jx7xY5pdELrmKTOdWdxiJj+PlCjOjRZpPs=; b=QGkR8nUDRhQ4++YBxrYWcrOro
-	u2pljW4KfZSi9Os6cftGkqf5Mgc0rTSwXs4F2eHdohaOL+9KWS0vtUkwUjdVGEx8T8vHx0OEhoKAX
-	J9C6sLg7mnwi66wN+wq7OO0U20aTTTwljS/mJPKAS+9PaWrG1sRb04u7wVdSfHIe6LFDvxh8Hg3Oa
-	qjVDE+8ir6qtSR4rtm17jTb7mC7Xqk5xiGl7Z8ZGwKHOC0RRzbFdDHzLRVuORsQhOBPwMnE4TP0Dq
-	kYwQ+DJaiAq0Abkg8QTqTh0fFGxg53wDvSPLR4cPYjaP91soukAhPHe+PqD9SQkwPcyek1UfosvUN
-	Nu+ioB9jQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sdIktKQU27vDJVx/4FMMa4RM1M9wQ8DFPZ6Mbp665Gs=; b=hb66kLNgkk3IjS
+	aBghHHUwSlPrFyyXBqDZBTJsJe12VhIXGZbE/JqXR/Ih1FTzB1s2xRbD2RpLO4W2I/XmkURtcRN0M
+	nVXf7HLxtWQv0KwucW9IDZG2GdAO43F9QfxoA5u6U4b0mz//bKB5gaHvHNeb5fSYlmzgY0S052bei
+	YDkdq97u/xXxq6HGd+rdXYIqUhQnu0aeSnjvavlcaMxlvgA4P8PuXSn+Y5NLWaL5OfWkZR7sOzccY
+	t1BIcHai1OTPgV+z5WIYhgXKvp6n/7qFccAvk4md9tYTXic+CIZbeck7Advo03szFS7u7C65LZlNv
+	NwNoqkgkmxTkNij7AwSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4Vl-0004oc-MP; Thu, 16 Apr 2020 13:24:57 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4Vd-0004ni-Bv; Thu, 16 Apr 2020 13:24:51 +0000
-X-Originating-IP: 93.29.109.196
-Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AF69AE0003;
- Thu, 16 Apr 2020 13:24:42 +0000 (UTC)
-Date: Thu, 16 Apr 2020 15:24:42 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-Message-ID: <20200416132442.GI125838@aptenodytes>
-References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
- <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
- <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
+	id 1jP4YE-000833-T6; Thu, 16 Apr 2020 13:27:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jP4Y3-00082g-Lz
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:27:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EBB421FB;
+ Thu, 16 Apr 2020 06:27:18 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC5E53F68F;
+ Thu, 16 Apr 2020 06:27:17 -0700 (PDT)
+Subject: Re: Question about SEA handling process happened in user space
+To: Xiaofei Tan <tanxiaofei@huawei.com>
+References: <5E81EFCD.6020605@huawei.com>
+ <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E83104A.7020803@huawei.com>
+ <f9732852-046c-347c-21e1-7690e6b84a50@arm.com> <5E840F3B.6040803@huawei.com>
+ <7d6668d6-ec4a-e362-94a3-c31950651c02@arm.com> <5E8EDFF6.4050903@huawei.com>
+ <d3a56afc-ce1a-1561-a6bb-70399bb97c50@arm.com> <5E8FE021.1050900@huawei.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <5d00a4d4-9633-74a1-25f2-cf195e939290@arm.com>
+Date: Thu, 16 Apr 2020 14:27:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
+In-Reply-To: <5E8FE021.1050900@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_062449_676094_5F659605 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200416_062719_806275_C893B6EF 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,135 +67,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
- linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============8794346680711234054=="
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Xiaofei,
 
---===============8794346680711234054==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="+PbGPm1eXpwOoWkI"
-Content-Disposition: inline
+On 10/04/2020 03:55, Xiaofei Tan wrote:
+> On 2020/4/9 22:28, James Morse wrote:
+>> On 09/04/2020 09:42, Xiaofei Tan wrote:
+>>> James Morse wrote:
+>>>> Do you have patches to get linux to do something useful with the processor error nodes?
+>>>>
+>>>> We'd need it to handle uncorrected cache errors with a physical address, as if they were
+>>>> memory errors...
+>>
+>>> Yes, we have some patches to do this thing inside. Then memory_failure() will be called for
+>>> arm processor error section when physical address is available.
+>>
+>> I look forward to reading them!
 
+> https://lkml.org/lkml/2018/1/26/197
+> 
+> Our guy tried to upstream it, but not accepted. :(
 
---+PbGPm1eXpwOoWkI
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Wrong series?
 
-Hi,
+https://lkml.org/lkml/2018/1/26/194 is not creating any handing for processor error nodes.
 
-On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
-> Hi Paul,
->=20
-> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
-> has been approved by robh.
+That series tried to to suck all the pending errors out of the core code, into an arch
+specific queue:
+| arch/arm64/kernel/ras.c              | 173 +++++++++++++++++++++++++++++++++++
 
-Huh, I looked around for ongoing related work but missed it.
-I'll definitely rebase on top of your series and use the yaml description
-instead. Thanks!
+As far as I understand it, that was to ensure the memory_failure() work was done before we
+return to user-space.
 
-> Maybe place dts patches at the end of a patch serie.
-> Could you include a &rga patch if your device is supported in mainline,
-> so we can test with:
-> make ARCH=3Darm64 dtbs_check
-> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/media/rockchip-rga.ya=
-ml
-
-I tested with the PX30 EVB so I can surely add a node there if that turns
-out necessary (see below).
-
-> Johan
->=20
-> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
-> > The PX30 features a RGA block: add the necessary node to support it.
-> >=20
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > ---
-> >  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
-> >  1 file changed, 11 insertions(+)
-> >=20
-> > diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/d=
-ts/rockchip/px30.dtsi
-> > index 75908c587511..4bfbee9d4123 100644
-> > --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> > +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> > @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
-> >  		status =3D "disabled";
-> >  	};
-> > =20
-> > +	rga: rga@ff480000 {
-> > +		compatible =3D "rockchip,px30-rga";
-> > +		reg =3D <0x0 0xff480000 0x0 0x10000>;
-> > +		interrupts =3D <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
-> > +		clocks =3D <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
-> > +		clock-names =3D "aclk", "hclk", "sclk";
-> > +		resets =3D <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-> > +		reset-names =3D "core", "axi", "ahb";
-> > +		power-domains =3D <&power PX30_PD_VO>;
->=20
-> 		status =3D "disabled";
-
-As of 5.6, the rk3399 has the node enabled by default. Did that change?
-
-Since it's a standalone block that has no I/O dependency, I don't really see
-the point of disabling it by default.
-
-What do you think?
-
-Cheers,
-
-Paul
-
-> > +	};
-> > +
-> >  	qos_gmac: qos@ff518000 {
-> >  		compatible =3D "syscon";
-> >  		reg =3D <0x0 0xff518000 0x0 0x20>;
-> >=20
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---+PbGPm1eXpwOoWkI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6YXJoACgkQ3cLmz3+f
-v9Ho3wf/d9zxV64Bwt9TC0ABSimMOz4E7MQphqkXg/XbCpShScAkCWfzSQ71WxB4
-T0+gL2hGnJEua+rGBrWyXst54nDhfUvqmiKw2VDC+ukjpVgGwNNP1UFFWGf5rTqM
-TNY4QMIqmVhU1hvIGLYIT3iFZl66I1jlzBlywy1tM5SqC6B2N7Xy7P1FgtfVt7Wr
-iz3jUXj1tqFrSB4sFdr2HFkOV48LLhtzjfSEPJI5ZtIsgM+jh/fGYu/v38kPlDW5
-2bjcC2ZLiwHQyUpV8/+vEHFo8Ged/qocFyPrKtI1mCZd+Yd/VYRP85f551sbc0uz
-uuYKH6JbkP37Fdz/ONOdyMbAqj+dNg==
-=RgMQ
------END PGP SIGNATURE-----
-
---+PbGPm1eXpwOoWkI--
+My attempt to fix that got rolled up in the SDEI series. It was posted again here:
+https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
 
 
---===============8794346680711234054==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+If you need processor errors handling, there should be code added to the
+CPER_SEC_PROC_ARM else-if in ghes_do_proc() to do the handling.
+
+You may end up duplicating bits of ghes_handle_memory_failure(), to report the memory
+errors that happened in the cache.
+If you want to count corrected errors, a device in ghes_edac is probably the way to do that.
+
+
+>> [...]
+>>
+>>> I think this part is worth improving.
+>>
+>>> BTW, should ARM processor record physical address when consumed an memory poison error for SEA?
+>>> It is helpful to do error recovery. Is this mandatory for arm spec?
+>>
+>> ERR<n>ADDR? Its not mandatory to be filled for any error. It can be some imp-def bus
+>> address or a virtual address. 
+> 
+> virtual address ? but arm spec called it physical address.
+
+That was my recollection too! But I checked again before writing this:
+
+"4.4.5 ERR<n>ADDR, Error Record Address Register" in
+https://static.docs.arm.com/ddi0587/cb/2019_07_05_DD_0587_C_b.pdf
+
+has a VA bit for a virtual-address, and 'AI' for this imp-def bus address, more properly
+described as on that "might not match the programmers' view of the physical address for
+the recorded location."
+
+
+[...]
+
+>> Does your implementation always give a physical-address for a synchronous external abort?
+
+> We hope so. But hardware guys say it is hard to record physical address for every situation.
+
+Yeah ...
+
+Hopefully the situations where its too-hard are also the rarest, we can class these as
+fatal (because we can't handle them).
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8794346680711234054==--
-
