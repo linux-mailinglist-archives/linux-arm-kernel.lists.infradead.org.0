@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D5A41AB743
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:28:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A885A1AB744
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:28:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0E2VdaAgrETpYPgcXfGXHP7GKRDKppbAVxDAsBpB3bk=; b=jInp2fQafY0YMH+HHKjPrLSOn3
-	D/+WRtqwo8vtNisIuerup6VgBh+bs4O+za06yfLtj+o7KQVjdDXiDhtu456t2Sy9VGjopm5k+taXw
-	NGqOIlkOr7tMgfNVyhF+byfwEfS1NeIiC3mb1oLsUufTDd5vU2+PvaSefscdHwXwU/OY3RbaC8dkK
-	V3A9SsTDiZnfMx4h8x3i83SSnjLguLmZ2vQS0mIr3kYxe4oiRIUDUoZHLn9DbqXeMWvpkXK7QROF8
-	7xtoI8xCFpfZ9lzonM7OUyk+c0mhkbQ9eqgVDsl+ltjs8e74XQzCl9VuhIqXJ65RdLAZ5sCzcVkC5
-	6bdshDzA==;
+	bh=DEmnd1OPAA0sLcYjyU/gIjs+XHTY1fnunmvA50kX3l0=; b=l8btfhLPpRDNIBzNNQjk30Pe2B
+	mUpDOIC2ao5UsznGLcG0k8KmzdzaKDkXkwojP3fl/q1Kzn9eRK26UaNQ5ZxeBaatX1D6157DiH2OY
+	PV3zDvt+tPFni55TNGEaleraf7OCqqIWnbe5oI6z06tdo5Dswg2bKMhCYuDU3cosamb+yZD1T67Ls
+	KvicBR0GxUeUYAqXbwZP7H8oHBtuVC2fAOqkIcydzjOFT6sqYR7C6vMH2M4gUxzSZs5/rLCqMuJTE
+	FOM+IjEJ4pw/F/mFpfbWHLGNkEi3okJMDSPJbi5dMNBgbdSP3pm+X1iVUjMBlv1KBnw9j4kYMs30a
+	QUMEZgLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOx4U-0007zg-Ow; Thu, 16 Apr 2020 05:28:18 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jOx4i-0008Et-Sg; Thu, 16 Apr 2020 05:28:32 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOx33-0006iG-Gd
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:26:51 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id a22so874532pjk.5
+ id 1jOx34-0006jf-PD
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:26:52 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id b7so879555pju.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 22:26:48 -0700 (PDT)
+ Wed, 15 Apr 2020 22:26:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=AEQhnnrMzAKTzUbyWrr7Pn4129iWSFF1XGDPYTPl2Oo=;
- b=sWvjSCgNi/pGxJ8po/5HgKguAxlQRy+wCBCGw8arJtEyunm27lNPBjARK9WhHOxtuN
- PCDJQbLfnmWLVk1MnPOlWVYUs97/Wy2E8cJHx8x/J01Ub27iy/U2s/wFJUeZQRgmeG6v
- nv6a2yjc5r19eVoqvfywnonahteeHbS/nJzY6SiJKvzAhSQXJxZaHeUUHOzp4rvfXg3o
- PhvP8YF87YuawnruPOYOd55HhIJc6LsLXSgAe3BY+WNbTr2TY+NJAmMfjbXZj3G8Fn3G
- u8lJSQ928A4dYFDNmfcwgxQJf16qA6B0PT+kT6jmI2cbwspu1P46Q26TJ6FqsuI8L+cW
- HfbA==
+ bh=+clC7a2/1FEkxH5L412Da4FtFwUsVwwlBRiREeEjlLw=;
+ b=V5pdJaOvRn+DHbnxN6QoJiCMe7RWYYKUXbeReCoVSsHWYcF7ML2ovCf36gqPglEB9T
+ X2kXrmroM/bHXrc6F+99r+yIBpvSN6LNCnCCcDE9JhkfhYH6VP4fouEiOyHGKPj9sK9w
+ SVvNje5mZ1JA3oz7WM7MST0a7UMZSg3EwpWthfJ5TjTF5mcpsQA7QvDDAo62sb3WcjxL
+ PJ6/cbRib1prgDgG5P/7bLl/IFbnTGC6bRIy+zrBmQ8TvdCOxiiAnsGZg26r5KXeq75M
+ byXsvMAXEPvE4lNzgUEX0DA6kD9HCEg6xVHwwVjjpAKwScHqYa6Gar6yoSmNkjEX3t3B
+ ObFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=AEQhnnrMzAKTzUbyWrr7Pn4129iWSFF1XGDPYTPl2Oo=;
- b=i0q6Z0voIGIKgd8Nou+KI6DM2JLzUxBdOs3aHM5BiOQ+4nZuorTzvKGyS3KQM5cJvU
- mLDBcqOoVOp7pOOnD2OKH50qXy/+UCU/hexwRD+5mle88/VY1t/Js+HxxuoGB7dWP8W4
- zHOdTFOpApIfv4F2lsx0DDqUMFUKtESt2oxZm6DGMkAz2TH/c+IJFbY1i91yfGT2VaL1
- LxyeBW/rX0xlRiV/1vtEq+I2ANO78qSjYh7BEGj/QxyYg4YOQ7pok5Tl66L+Nkws6W7t
- Sl/EYww4x9QUASWJ8HjnRuKYnQ7nDP4EfGBhn6cm9sHrU940oxnLZV3Qpolf/jjEBg/G
- WM+w==
-X-Gm-Message-State: AGi0PuYs+eLbtsyOtr3fSSDqNkxAmkbjr6b2M4Yv99/FOt7nu4lOtEPH
- aEMFspNBsHX/R9StL/9YS2SrDEMUMtM=
-X-Google-Smtp-Source: APiQypIgTAWtfPtyJjPPgrd+7oA27QM8CD3i2vxGeg9P6ikV7cBNyesXqbfzDxy45o2NIKtFDcNuEQ==
-X-Received: by 2002:a17:90a:a402:: with SMTP id
- y2mr3199895pjp.55.1587014807867; 
- Wed, 15 Apr 2020 22:26:47 -0700 (PDT)
+ bh=+clC7a2/1FEkxH5L412Da4FtFwUsVwwlBRiREeEjlLw=;
+ b=LihgNXf2k8xr23Ja46xWdysQyw2ODR9wZffdHeQNwSg15J6jP/j1ATkK/wewxPgADg
+ 4BWOC2rg3pdm2Scsy6TxFG6z3P7ee5lDdw5tTmkfcXi+o2yl0w4iegH2Gff8LPUkye6I
+ BHm9QdHZeAQJcalvwIGCI9RRIGFaw1lxiMgDj33jwYzrWZMKPYhhXIBobLB/C7Klb8zK
+ qCoOzYtNy9k3XteIok/ef5cqyH7W358LKRTsx+RfHxWboFhwimfHDZy0Cy/0TN3S5uUr
+ uVedABjLj4vdJf2yxz6HaJ47qfq+GDNKm025TuLWfqklcd8/HRmafVOqBsPeivJsvG/8
+ pXHQ==
+X-Gm-Message-State: AGi0PuYfW4YBXj3U4TYJRhn4w0cPDAFdWPTtpmOD6TdJ6GdC0qLRHpIO
+ XkrkGKp+83y/KllxLJiP82Q=
+X-Google-Smtp-Source: APiQypJYSDvwlGCvr5dvbD0A+DHSbieYwKyY0491/Fvf4ywv0PRbK0VmBw+hCLL1KjNWod/U2Q8B/A==
+X-Received: by 2002:a17:90a:1910:: with SMTP id
+ 16mr3074324pjg.119.1587014809274; 
+ Wed, 15 Apr 2020 22:26:49 -0700 (PDT)
 Received: from laptop.hsd1.wa.comcast.net
  ([2601:600:817f:a132:df3e:521d:99d5:710d])
- by smtp.gmail.com with ESMTPSA id c21sm53699pjr.2.2020.04.15.22.26.47
+ by smtp.gmail.com with ESMTPSA id c21sm53699pjr.2.2020.04.15.22.26.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 22:26:47 -0700 (PDT)
+ Wed, 15 Apr 2020 22:26:48 -0700 (PDT)
 From: Andrei Vagin <avagin@gmail.com>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH 5/6] arm64/vdso: Restrict splitting VVAR VMA
-Date: Wed, 15 Apr 2020 22:26:17 -0700
-Message-Id: <20200416052618.804515-6-avagin@gmail.com>
+Subject: [PATCH 6/6] arm64: enable time namespace support
+Date: Wed, 15 Apr 2020 22:26:18 -0700
+Message-Id: <20200416052618.804515-7-avagin@gmail.com>
 X-Mailer: git-send-email 2.17.2
 In-Reply-To: <20200416052618.804515-1-avagin@gmail.com>
 References: <20200416052618.804515-1-avagin@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_222649_639746_C595DE98 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20200415_222650_921307_684DD1DA 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,57 +109,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Forbid splitting VVAR VMA resulting in a stricter ABI and reducing the
-amount of corner-cases to consider while working further on VDSO time
-namespace support.
-
-As the offset from timens to VVAR page is computed compile-time, the pages
-in VVAR should stay together and not being partically mremap()'ed.
+CONFIG_TIME_NS is dependes on GENERIC_VDSO_TIME_NS.
 
 Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Signed-off-by: Andrei Vagin <avagin@gmail.com>
 ---
- arch/arm64/kernel/vdso.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ arch/arm64/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index fb32c6f76078..c003f7ee383a 100644
---- a/arch/arm64/kernel/vdso.c
-+++ b/arch/arm64/kernel/vdso.c
-@@ -235,6 +235,17 @@ static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
- 	return vmf_insert_pfn(vma, vmf->address, pfn);
- }
- 
-+static int vvar_mremap(const struct vm_special_mapping *sm,
-+		       struct vm_area_struct *new_vma)
-+{
-+	unsigned long new_size = new_vma->vm_end - new_vma->vm_start;
-+
-+	if (new_size != VVAR_NR_PAGES * PAGE_SIZE)
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
- static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 				    struct mm_struct *mm,
- 				    struct linux_binprm *bprm,
-@@ -315,6 +326,7 @@ static struct vm_special_mapping aarch32_vdso_spec[C_PAGES] = {
- 	{
- 		.name = "[vvar]",
- 		.fault = vvar_fault,
-+		.mremap = vvar_mremap,
- 	},
- 	{
- 		.name = "[vdso]",
-@@ -497,6 +509,7 @@ static struct vm_special_mapping vdso_spec[A_PAGES] __ro_after_init = {
- 	{
- 		.name	= "[vvar]",
- 		.fault = vvar_fault,
-+		.mremap = vvar_mremap,
- 	},
- 	{
- 		.name	= "[vdso]",
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 40fb05d96c60..68619faf0838 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -110,6 +110,7 @@ config ARM64
+ 	select GENERIC_STRNLEN_USER
+ 	select GENERIC_TIME_VSYSCALL
+ 	select GENERIC_GETTIMEOFDAY
++	select GENERIC_VDSO_TIME_NS
+ 	select HANDLE_DOMAIN_IRQ
+ 	select HARDIRQS_SW_RESEND
+ 	select HAVE_PCI
 -- 
 2.24.1
 
