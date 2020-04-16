@@ -2,81 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 403031AB949
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:04:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6733C1AB951
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 09:06:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jM8Y3BjV3mM7+Aaf+ccgGBAnnTjrSlPpTJwvK0sgbTo=; b=dLisB6xPv6Sc6+
-	20k9BLuKGH0F5jTU5LAwGDpEXTV7VoWsYkQat+33xspqvw8ka6/B4upjcNBzglLM/zwj2DfB1nc/g
-	VYue5eMFGfcpC9NhU/Bwxt3zwQCDrBhgeLnDnuq8CO2KKWxaex2zt6Q5S0HqrvVx/VXnflib1R/y9
-	4nnIVUvJ9JsHtQSE72Z3+T4z9zAatrMJxpz9wh/BG3lQasI8nTTnTslzeNFD6udb4zo7BwdgatUJn
-	rKRQSH4GZebblc67iRTwX5bmNkC26i6IKF8mOHaBLo4mAWjyAV7LLbojV0EtRRBNo9Fb0N27OfR1E
-	RL9a9CL2wdQIAraj8TCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EMA/2nAmyi5gRaMtfxNFH0fAteAvRSKdIysanMdeNso=; b=q5r2ZcRw3AQ+GHzL5UD99fx9m
+	CH35ZxWRt6H6xlFxzXk7fxY9rSpwpYeDtoyzHoZxFlSJyYWq1LTk/BOSFyBXfkJXk95wv5eAuO9qK
+	xLwX3mbTruvpG3y8eWdXLKMsYLQJs5RYrGzLisUselnIGarptWymSJyWlD+GcyyW7kBvhvyLRj9EX
+	73lQkIjyzQHHVvOP958orARJbK2Vs3KXrxQcpCjdpJbUeVKqpCO2KMr57WZHepHSH/OxKf6KO1LUg
+	R/7OtpbAs/lNj1K1pqLzV0sjw6p5ueu8FzvB7oVLBdcE5hQKUWMaLpxlsj4O30EouH/9lXkyNLiNg
+	T8y/7Ag0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOyZa-0000EY-7K; Thu, 16 Apr 2020 07:04:30 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jOybZ-0003fk-5I; Thu, 16 Apr 2020 07:06:33 +0000
+Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOyYy-0008Ii-5C
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:03:54 +0000
-Received: by mail-wm1-x343.google.com with SMTP id x4so3389739wmj.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 00:03:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=AruXxjr9GHlZ2Z9Tv42XPGLrf7MP2PtB4f9OTEBH4MM=;
- b=VAFOtuQzGjjh1BpnjdwrBb8ATOf9hLIQMepMrNF2THjStFG8m/qucMONexKM/Ibh0E
- XnkPy+lPDXG4ZLFC0CUaOGOAsEj1n4I0cqOGjjq2UtVhoTGbcvAy14ISFMKTzA6o7JZB
- erM05v8TzGUWzuAZDgeE6K0dy3boHLEmcgO8mqrTXpiSO+J/eJ2v4+FPMkRt4eAvIUvn
- wEL/CDEmrhNzU/AhUYaUhPQK+gwDwngk88DYkCqM+/uO8cyxAE/LzNoRMnuA9Pr5u5KL
- r5cFfhRBHKjkgpMV9vagPW6RZY70RwX0WgU2wxq3vBZPk9De1qT0f9Og4VBs/JWNT5hu
- rmWQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=AruXxjr9GHlZ2Z9Tv42XPGLrf7MP2PtB4f9OTEBH4MM=;
- b=HLg4BkzTnCnWR6FjLV1s/2t7U1rTETVHpSFXUIhnmlMR4Y31FuQTw+t8XXhTKWUFVL
- wjsCe46Gbt5k6PJm+RthvcAx31F63oh161Oay5NBCxX4RCOHh+q7yCdLCrd+IywrpPsn
- EJDbPhcOzHjn3sX+i0ne11TRefC1h/dnV12nyynN090QcXXJ9ApfL3dYNmIS1C8FIo7j
- F6FxVnccPVgrp1UbxA+LBXSHB31l8YL3vIHMJpen7vbERnYl+DKMg9G7CRAE564Rl3Cc
- r2IZ4rA50w5xqYLVWmhgjL3rfhdHtNtYhuX929yi1y1pEHCkZ292xf7H84fLJGavzxQp
- kbPg==
-X-Gm-Message-State: AGi0PuZ6gnyTqkvdB51J34J2QBuzpPZML7DKUitv8gLl7L0IQSQ3Z4+G
- Kr1CG8Y8ltXlvP0bl6RB4ZtqNg==
-X-Google-Smtp-Source: APiQypK1dMnBZLZOHx8PctsABj5RlziysLlkiXO8f0byNomGW94UpABYhu4MUL2N+fcrhwskc4rKnw==
-X-Received: by 2002:a1c:9a96:: with SMTP id c144mr3289606wme.84.1587020630466; 
- Thu, 16 Apr 2020 00:03:50 -0700 (PDT)
-Received: from dell ([95.149.164.124])
- by smtp.gmail.com with ESMTPSA id w18sm25908396wrn.55.2020.04.16.00.03.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Apr 2020 00:03:49 -0700 (PDT)
-Date: Thu, 16 Apr 2020 08:04:41 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH v6 0/6] clockevent: add low power STM32 timer
-Message-ID: <20200416070441.GP2167633@dell>
-References: <20200401083909.18886-1-benjamin.gaignard@st.com>
+ id 1jOybN-0003f3-HS
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 07:06:22 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e9803af0000>; Thu, 16 Apr 2020 00:05:19 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Thu, 16 Apr 2020 00:06:18 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Thu, 16 Apr 2020 00:06:18 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL105.nvidia.com
+ (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 16 Apr
+ 2020 07:06:18 +0000
+Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 16 Apr
+ 2020 07:06:14 +0000
+Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
+To: Viresh Kumar <viresh.kumar@linaro.org>
+References: <20200406025549.qfwzlk3745y3r274@vireshk-i7>
+ <3ab4136c-8cca-c2f9-d286-b82dac23e720@nvidia.com>
+ <20200408055301.jhvu5bc2luu3b5qr@vireshk-i7>
+ <08307e54-0e14-14a3-7d6a-d59e1e04a683@nvidia.com>
+ <20200409074415.twpzu2n4frqlde7b@vireshk-i7>
+ <00390070-38a1-19aa-ca59-42c4658bee7e@nvidia.com>
+ <20200413062141.a6hmwipexhv3sctq@vireshk-i7>
+ <64b609f1-efb1-425f-a91a-27a492bd3ec4@nvidia.com>
+ <20200414054504.e3qn2cnxqur4sclw@vireshk-i7>
+ <d6e0eed6-4267-fca9-59e1-02d16e17ff34@nvidia.com>
+ <20200416033715.hscztwkxie2o5i3r@vireshk-i7>
+From: Sumit Gupta <sumitg@nvidia.com>
+Message-ID: <8ea80551-b47c-3dd5-4efa-6befecc279e1@nvidia.com>
+Date: Thu, 16 Apr 2020 12:36:30 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200401083909.18886-1-benjamin.gaignard@st.com>
+In-Reply-To: <20200416033715.hscztwkxie2o5i3r@vireshk-i7>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1587020719; bh=MEcFP8G3VxgwBAt3A1oRVQWL07CnwPJfWLc3Wywyjpg=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=Ym1Zof5kV4ZzNBXuhXOY6pCMuNXLHXbISr+b04QIKvNWYzdvddezwVuXMpid2BF5/
+ dPfkdQNOTOxwvEjv0+wd7hCnNKkb8FlFD8nTuS66Zsv/E+tYrpbTFQtsnTyCM0IHed
+ QJxsYrwBMxHjeNsU7m177c0g4VNPYU5YLdeyBsjHvmbkdksZ0xTbWVzZeIvZXdJgj7
+ qnnuPfvuQoOA+S/MvnDcKQZN5bkim4KueK5S7THIGk9WB1KWKuJPst/htuBdxTdd78
+ SsokaJxGXH+ZdN77GNGGGQ9I3cwDBWGmBrY6dMiePRVUIu9mpDj4o3swCIo5ZHNWFH
+ nsLq+/ogcmUUg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_000352_368980_567027BA 
-X-CRM114-Status: GOOD (  17.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_000621_583635_5E1E9E05 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,61 +105,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- mcoquelin.stm32@gmail.com, tglx@linutronix.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
+ talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
+ Sumit Gupta <sumitg@nvidia.com>, mperttunen@nvidia.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAwMSBBcHIgMjAyMCwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6Cgo+IFRoaXMgc2Vy
-aWVzIGFkZCBsb3cgcG93ZXIgdGltZXIgYXMgYm9hZGNhc3QgY2xvY2tldmVudCBkZXZpY2UuCj4g
-TG93IHBvd2VyIHRpbWVyIGNvdWxkIHJ1bnMgZXZlbiB3aGVuIENQVXMgYXJlIGluIGlkbGUgbW9k
-ZSBhbmQgCj4gY291bGQgd2FrZXVwIHRoZW0uCj4gCj4gdmVyc2lvbiA2Ogo+IC0gc2ltcGxpZnkg
-YmluZGluZywgRFQgYW5kIGNvZGUgdG8gdXNlIG9ubHkgb25lIGludGVycnVwdAo+IAo+IHZlcnNp
-b24gNToKPiAtIGRvY3VtZW50IGludGVycnVwdHMgYW5kIGludGVycnVwdC1uYW1lcyBiaW5kaW5n
-cwo+IC0gdXNlIGEgZGlmZmVyZW50IHdha2UgdXAgaW50ZXJydXB0Cj4gLSBhZGQgZGV2aWNlLXRy
-ZWUgcGF0Y2gKPiAtIG1ha2UgU1RNMzJNUDE1NyBzZWxlY3QgbG93IHBvd2VyIHRpbWVyIGNvbmZp
-Z3VyYXRpb24gZmxhZwo+IC0gZW5hYmxlIGZhc3RfaW8gaW4gcmVnbWFwIGNvbmZpZ3VyYXRpb24K
-PiAKPiB2ZXJzaW9uIDQ6Cj4gLSBtb3ZlIGRlZmluZXMgaW4gbWZkL3N0bTMyLWxwdGltZXIuaAo+
-IC0gY2hhbmdlIGNvbXBhdGlibGUgYW5kIHN1Ym5vZGUgbmFtZXMKPiAtIGRvY3VtZW50IHdha2V1
-cC1zb3VyY2UgcHJvcGVydHkKPiAtIHJld29yZCBjb21taXQgbWVzc2FnZQo+IC0gbWFrZSBkcml2
-ZXIgS2NvbmZpZyBkZXBlbmRzIG9mIE1GRF9TVE0zMl9MUFRJTUVSCj4gLSByZW1vdmUgdXNlbGVz
-cyBpbmNsdWRlCj4gLSByZW1vdmUgcmF0ZSBhbmQgY2xrIGZpZWxkcyBmcm9tIHRoZSBwcml2YXRl
-IHN0cnVjdHVyZQo+IC0gdG8gYWRkIGNvbW1lbnRzIGFib3V0IHRoZSByZWdpc3RlcnMgc2VxdWVu
-Y2UgaW4gc3RtMzJfY2xrZXZlbnRfbHBfc2V0X3RpbWVyCj4gLSByZXdvcmsgcHJvYmUgZnVuY3Rp
-b24gYW5kIHVzZSBkZXZtX3JlcXVlc3RfaXJxKCkKPiAtIGRvIG5vdCBhbGxvdyBtb2R1bGUgdG8g
-YmUgcmVtb3ZlZAo+IAo+IHZlcnNpb24gMzoKPiAtIGZpeCB0aW1lciBzZXQgc2VxdWVuY2UKPiAt
-IGRvbid0IGZvcmdldCB0byBmcmVlIGlycSBvbiByZW1vdmUgZnVuY3Rpb24KPiAtIHVzZSBkZXZt
-X2t6YWxsb2MgdG8gc2ltcGxpZnkgZXJyb3JzIGhhbmRsaW5nIGluIHByb2JlIGZ1bmN0aW9uCj4g
-Cj4gdmVyc2lvbiAyOgo+IC0gc3RtMzIgY2xrZXZlbnQgZHJpdmVyIGlzIG5vdyBhIGNoaWxkIG9m
-IHRoZSBzdG0zMiBscCB0aW1lciBub2RlCj4gLSBhZGQgYSBwcm9iZSBmdW5jdGlvbiBhbmQgYWRw
-YXQgdGhlIGRyaXZlciB0byB1c2UgcmVnbWFwIHByb3ZpZGUKPiAgIGJ5IGl0IHBhcmVudAo+IC0g
-c3RvcCB1c2luZyB0aW1lcl9vZiBoZWxwZXJzCj4gCj4gCj4gQmVuamFtaW4gR2FpZ25hcmQgKDYp
-Ogo+ICAgZHQtYmluZGluZ3M6IG1mZDogRG9jdW1lbnQgU1RNMzIgbG93IHBvd2VyIHRpbWVyIGJp
-bmRpbmdzCj4gICBBUk06IGR0czogc3RtMzI6IEFkZCB0aW1lciBzdWJub2RlcyBvbiBzdG0zMm1w
-MTUgU29Dcwo+ICAgbWZkOiBzdG0zMjogQWRkIGRlZmluZXMgdG8gYmUgdXNlZCBmb3IgY2xrZXZl
-bnQgcHVycG9zZQo+ICAgbWZkOiBzdG0zMjogZW5hYmxlIHJlZ21hcCBmYXN0X2lvIGZvciBzdG0z
-Mi1scHRpbWVyCj4gICBjbG9ja3NvdXJjZTogQWRkIExvdyBQb3dlciBTVE0zMiB0aW1lcnMgZHJp
-dmVyCj4gICBBUk06IG1hY2gtc3RtMzI6IHNlbGVjdCBsb3cgcG93ZXIgdGltZXIgZm9yIFNUTTMy
-TVAxNTcKPiAKPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvbWZkL3N0LHN0bTMyLWxwdGltZXIu
-eWFtbCAgfCAgMjEgKysKPiAgYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1MS5kdHNpICAgICAg
-ICAgICAgICAgICAgfCAgMzUgKysrKwo+ICBhcmNoL2FybS9tYWNoLXN0bTMyL0tjb25maWcgICAg
-ICAgICAgICAgICAgICAgICAgICB8ICAgMSArCj4gIGRyaXZlcnMvY2xvY2tzb3VyY2UvS2NvbmZp
-ZyAgICAgICAgICAgICAgICAgICAgICAgIHwgICA0ICsKPiAgZHJpdmVycy9jbG9ja3NvdXJjZS9N
-YWtlZmlsZSAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwo+ICBkcml2ZXJzL2Nsb2Nrc291
-cmNlL3RpbWVyLXN0bTMyLWxwLmMgICAgICAgICAgICAgICB8IDIyMSArKysrKysrKysrKysrKysr
-KysrKysKPiAgZHJpdmVycy9tZmQvc3RtMzItbHB0aW1lci5jICAgICAgICAgICAgICAgICAgICAg
-ICAgfCAgIDEgKwo+ICBpbmNsdWRlL2xpbnV4L21mZC9zdG0zMi1scHRpbWVyLmggICAgICAgICAg
-ICAgICAgICB8ICAgNSArCgpJJ2QgYmUgaGFwcHkgdG8gdGFrZSB0aGlzIHNldCwgYnV0IHlvdSBu
-ZWVkIEFja3MgZnJvbSB0aGUgb3RoZXIKc3Vic3lzdGVtIE1haW50YWluZXJzIGJlZm9yZSBJIGNh
-biBkbyBzby4KCj4gIDggZmlsZXMgY2hhbmdlZCwgMjg5IGluc2VydGlvbnMoKykKPiAgY3JlYXRl
-IG1vZGUgMTAwNjQ0IGRyaXZlcnMvY2xvY2tzb3VyY2UvdGltZXItc3RtMzItbHAuYwo+IAoKLS0g
-CkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGlu
-YXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5h
-cm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+
+On 16/04/20 9:07 AM, Viresh Kumar wrote:
+> External email: Use caution opening links or attachments
+> 
+> 
+> On 15-04-20, 16:55, Sumit Gupta wrote:
+>>
+>>
+>> On 14/04/20 11:15 AM, Viresh Kumar wrote:
+>>> External email: Use caution opening links or attachments
+>>>
+>>>
+>>> On 13-04-20, 17:50, Sumit Gupta wrote:
+>>>> This was done considering long delay value as explained previously.
+>>>> Do you think that smp_call_function_single() would be better than work queue
+>>>> here?
+>>>
+>>> Don't work with assumptions, you should test both and see which one
+>>> works better. Workqueue should never be faster than
+>>> smp_call_function_single() with my understanding.
+>> Checked the time taken and its almost same in both cases.
+>> Earlier we used smp_call_function_single(), but delay time period was small
+>> in that SOC. In T194, the time period was more. So, this is an optimization
+>> done because using work queue has advantage as interrupts will not be
+>> disabled for that period.
+> 
+> Hmm, okay, keep the workqueue and mention the required details in a
+> comment for everyone to understand why the implementation is done that
+> way.
+> 
+
+sure, thank you!
+
+> --
+> viresh
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
