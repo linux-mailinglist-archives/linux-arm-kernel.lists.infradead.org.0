@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF5021ACD98
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:24:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E291ACDDB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:38:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WTUkdmgOvh9zfNDQ1Vz8o4ou2BdFssbkxVXSfMHlGOs=; b=AN969IySfHwqQeRSF17Fsu2XC
-	6H65fEMUS6kkkRM9mZYjCRji6jzbHmt7C8++h0hBtheoSL682CKkn1D4XTYvPPc+S+iMuzosdKm58
-	vitc4FjRweNIstX4qaEEw1v2MltSdpvKsFq3Fpo1hikdBE/LS5hFrR+p1JZJ24kQpyAp/4CURVmeP
-	bWGhvbzOdorkVlc4ffoqZvCFzOspFzzj42Xx3KQmHcckewFeQOw94ZE3IPZ8x9Q8dsnvuptEanhFE
-	3rILWysKq7edc2I13HqO0QMdpryWnPNDOhfVuF5cGygkUbLdm2GU0JVJ1cdZ3NmrirYk76cYE8YZx
-	2PewzJtHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CTBue8HcMVWEdmU5rw6n/gQt0OzZYNO7M86DEoyAQ50=; b=p5RXU7rky36YwE
+	NwZ+s5IVpOabJ0YCJsCuwgDWVqGY1amKui0PsGtLXeEK94plbwYwqAplK75+szMJ/hvJ5PoykYK5w
+	NLZ7dUctAwnEM68FMxLQXdES76qT+rgaadHmkQFZdMap5fSoxTmRbhqZVEpGZo4lT5rF/0LFeCkYU
+	RDmrnZ3a6A4GVwOHV9CtjKCTRMsKwMVjQurOxowGo+QOifDQyCeWjt0FKbthJod4RTTS9YjNHXRoq
+	jHlI1H21dL06kh4SkDbIOuoVZuF8uzoUGt8M3G7gk07jRjavk98bi4srcbwxs+ka9w1hm3zeto5SC
+	WPkPuGsS30LOc5WAK0hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP7JC-00067S-Fi; Thu, 16 Apr 2020 16:24:10 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jP7X1-0007cv-JR; Thu, 16 Apr 2020 16:38:27 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP7J3-000679-9u
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:24:02 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1587054241; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=bwde/P04Uj3GTzNnCbAcH3UyrPWOeOqsIWQwb1Jxqqc=;
- b=IKu6V5IuuazSR9BpaMw46eUu60cXGw7jQA/t0KpkP2X7qUKugLQZZA6Tr/+DqM4bGdW73y4O
- BzvSTEHW/ACMQ4O65Z/TZ27UiM2SOpYdaWZcO+53uy4sjg3NgpHjSSRNO28ZmYimy2Y/Q2vB
- YgZn8C9KlaX6Pw5ned5bQEEHlDw=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e9886a0.7ff1f3a07ab0-smtp-out-n05;
- Thu, 16 Apr 2020 16:24:00 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 95FBAC4478F; Thu, 16 Apr 2020 16:23:59 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 8065AC433BA;
- Thu, 16 Apr 2020 16:23:58 +0000 (UTC)
-MIME-Version: 1.0
-Date: Thu, 16 Apr 2020 21:53:58 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+ id 1jP7Wt-0007c6-9n
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:38:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=c7EKIziO2LGfaFlRmTCfb2Sj+sRd/y/yZ4AR3gH5/YU=; b=a0FFXBLTAzcdGuplfONhR7yH5
+ qRwE7+TAkFXqPhFd59G4XpRmvw7y9SIixBFIRkyMzCsERthWhph59Pd0MHRwr7qC8dE4iAjq/dehF
+ zoduhsoGtH0ezKCosx8NaHDplop5RJHc7oIqwpFtPnFOY+IJEignKR5Gt/mwW/H5mW6+ybNy34YI5
+ MtqJZ68Bpi7Y4hrrmAQ3XRkyIMIlWmjd1lK0ICJAJZhpx4QwNNwG0YCPbElDyOc6qfA3G8pSEVj3B
+ YZaYydhSUpLlEKtYRy0Cny3/9FRjWfxZ8EBwk/JtsToP1RmpoF2VWAX4l2X+22527pf8Kl2Fmp+ff
+ 6d/WIlAgQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:50924)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jP7WS-0005GP-L7; Thu, 16 Apr 2020 17:37:57 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jP7WO-00021r-Hf; Thu, 16 Apr 2020 17:37:48 +0100
+Date: Thu, 16 Apr 2020 17:37:48 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/2] iommu/arm-smmu: Allow client devices to select direct
- mapping
-In-Reply-To: <3f12cefb-3887-859c-ddf5-c7a0fc755152@arm.com>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <813cc5b2da10c27db982254b274bf26008a9e6da.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <3f12cefb-3887-859c-ddf5-c7a0fc755152@arm.com>
-Message-ID: <540fc55811d0a60a929ff1f694d6d271@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Subject: Re: [PATCH RFC 0/6] PWM fan support on Clearfog gt8k
+Message-ID: <20200416163748.GL25745@shell.armlinux.org.uk>
+References: <20200329104549.GX25745@shell.armlinux.org.uk>
+ <CACRpkdaL4-Z36aKOVW4o2MtCG9fbqm4gxZN3QjejVRPBZrzxxA@mail.gmail.com>
+ <20200416135039.GL657811@lunn.ch>
+ <5c7cb0ff-bf49-640a-3c4a-ef71495af7b7@arm.com>
+ <20200416145517.GK25745@shell.armlinux.org.uk>
+ <010ccb32-42f1-cc32-0527-e608fc91a879@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <010ccb32-42f1-cc32-0527-e608fc91a879@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_092401_401065_76E539A0 
-X-CRM114-Status: GOOD (  22.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200416_093819_343008_7567C364 
+X-CRM114-Status: GOOD (  23.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -89,161 +91,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>,
- iommu@lists.linux-foundation.org, Tomasz Figa <tfiga@chromium.org>,
- Rob Clark <robdclark@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Jason Cooper <jason@lakedaemon.net>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-pwm@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
-
-On 2020-04-16 19:28, Robin Murphy wrote:
-> On 2020-01-22 11:48 am, Sai Prakash Ranjan wrote:
->> From: Jordan Crouse <jcrouse@codeaurora.org>
->> 
->> Some client devices want to directly map the IOMMU themselves instead
->> of using the DMA domain. Allow those devices to opt in to direct
->> mapping by way of a list of compatible strings.
->> 
->> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
->> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> ---
->>   drivers/iommu/arm-smmu-qcom.c | 39 
->> +++++++++++++++++++++++++++++++++++
->>   drivers/iommu/arm-smmu.c      |  3 +++
->>   drivers/iommu/arm-smmu.h      |  5 +++++
->>   3 files changed, 47 insertions(+)
->> 
->> diff --git a/drivers/iommu/arm-smmu-qcom.c 
->> b/drivers/iommu/arm-smmu-qcom.c
->> index 64a4ab270ab7..ff746acd1c81 100644
->> --- a/drivers/iommu/arm-smmu-qcom.c
->> +++ b/drivers/iommu/arm-smmu-qcom.c
->> @@ -3,6 +3,7 @@
->>    * Copyright (c) 2019, The Linux Foundation. All rights reserved.
->>    */
->>   +#include <linux/of_device.h>
->>   #include <linux/qcom_scm.h>
->>     #include "arm-smmu.h"
->> @@ -11,6 +12,43 @@ struct qcom_smmu {
->>   	struct arm_smmu_device smmu;
->>   };
->>   +static const struct arm_smmu_client_match_data qcom_adreno = {
->> +	.direct_mapping = true,
->> +};
->> +
->> +static const struct arm_smmu_client_match_data qcom_mdss = {
->> +	.direct_mapping = true,
->> +};
+On Thu, Apr 16, 2020 at 04:55:44PM +0100, Robin Murphy wrote:
+> On 2020-04-16 3:55 pm, Russell King - ARM Linux admin wrote:
+> > On Thu, Apr 16, 2020 at 03:37:40PM +0100, Robin Murphy wrote:
+> > > On 2020-04-16 2:50 pm, Andrew Lunn wrote:
+> > > [...]
+> > > > Clocking with Marvell devices has always been interesting. Core IP
+> > > > like this gets reused between different generations of SoCs. The
+> > > > original Orion5x had no clock control at all. Latter SoCs have had
+> > > > more and more complex clock trees. So care has to be taken to not
+> > > > change old behaviour when adding support for new clocks.
+> > > 
+> > > FWIW, that sounds like a good argument for encoding the clock requirements
+> > > of each variant in the of_match_data, so the driver doesn't have to simply
+> > > trust the DT and hope.
+> > 
+> > Please read my patches.  This is exactly what I'm doing.  I'm preserving
+> > as closely as possible the current driver behaviour while adding support
+> > for the Armada 8040 PWM while keeping compatibility with older DT.
+> > 
+> > And I'm doing that by keying off the match data, exactly as you're
+> > suggesting above.
 > 
-> Might it make sense to group these by the desired SMMU behaviour
-> rather than (apparently) what kind of device the client happens to be,
-> which seems like a completely arbitrary distinction from the SMMU
-> driver's PoV?
+> AFAICS you're encoding the *PWM capability* in the match data and using that
+> to extend the existing behaviour, which comprises using soc_variant to maybe
+> treat the stashed error code as fatal somewhere else much later if
+> CONFIG_PWM happens to be enabled, and is subtle enough that at least two
+> reviewers overlooked or failed to make sense of it.
 > 
-
-Sorry, I did not get the "grouping by the desired SMMU behaviour" thing.
-Could you please give some more details?
-
->> +
->> +static const struct of_device_id qcom_smmu_client_of_match[] = {
->> +	{ .compatible = "qcom,adreno", .data = &qcom_adreno },
->> +	{ .compatible = "qcom,mdp4", .data = &qcom_mdss },
->> +	{ .compatible = "qcom,mdss", .data = &qcom_mdss },
->> +	{ .compatible = "qcom,sc7180-mdss", .data = &qcom_mdss },
->> +	{ .compatible = "qcom,sdm845-mdss", .data = &qcom_mdss },
->> +	{},
->> +};
->> +
->> +static const struct arm_smmu_client_match_data *
->> +qcom_smmu_client_data(struct device *dev)
->> +{
->> +	const struct of_device_id *match =
->> +		of_match_device(qcom_smmu_client_of_match, dev);
->> +
->> +	return match ? match->data : NULL;
+> Compare and contrast with how self-contained and obvious this is:
 > 
-> of_device_get_match_data() is your friend.
+> -	mvchip->clk = devm_clk_get(&pdev->dev, NULL);
+> -	/* Not all SoCs require a clock.*/
+> -	if (!IS_ERR(mvchip->clk))
+> -		clk_prepare_enable(mvchip->clk);
 > 
-
-Ok will use it.
-
->> +}
->> +
->> +static int qcom_smmu_request_domain(struct device *dev)
->> +{
->> +	const struct arm_smmu_client_match_data *client;
->> +
->> +	client = qcom_smmu_client_data(dev);
->> +	if (client)
->> +		iommu_request_dm_for_dev(dev);
->> +
->> +	return 0;
->> +}
->> +
->>   static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->>   {
->>   	int ret;
->> @@ -41,6 +79,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device 
->> *smmu)
->>   }
->>     static const struct arm_smmu_impl qcom_smmu_impl = {
->> +	.req_domain = qcom_smmu_request_domain,
->>   	.reset = qcom_smmu500_reset,
->>   };
->>   diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
->> index 16c4b87af42b..67dd9326247a 100644
->> --- a/drivers/iommu/arm-smmu.c
->> +++ b/drivers/iommu/arm-smmu.c
->> @@ -1448,6 +1448,9 @@ static int arm_smmu_add_device(struct device 
->> *dev)
->>   	device_link_add(dev, smmu->dev,
->>   			DL_FLAG_PM_RUNTIME | DL_FLAG_AUTOREMOVE_SUPPLIER);
->>   +	if (smmu->impl && smmu->impl->req_domain)
->> +		return smmu->impl->req_domain(dev);
->> +
+> +	/* Not all SoCs require a clock.*/
+> +	if (data->needs_clock)
+> +		mvchip->clk = devm_clk_get(&pdev->dev, NULL);
+> +		if (IS_ERR(mvchip->clk))
+> +			return PTR_ERR(mvchip_clk);
+> +		clk_prepare_enable(mvchip->clk);
+> +	}
 > 
-> There are about 5 different patchsets flying around at the moment that
-> all touch default domain allocation, so this is a fast-moving target,
-> but I think where the dust should settle is with arm_smmu_ops
-> forwarding .def_domain_type (or whatever it ends up as) calls to
-> arm_smmu_impl as appropriate.
-> 
+> If achieving the same end result by very different and roundabout means
+> constitutes "exactly the same thing", does me having written this email mean
+> that my house is exactly the same as the Arm office and someone else will be
+> along to clean the kitchen shortly? Here's hoping... :D
 
-I'll wait till the dust settles down and then post the next version.
+What if we have a platform where DT mentions the clock, and relies
+on it being enabled as per how the driver is coded today?  I don't
+know if that's true or not, I don't have the hardware to test.
 
->>   	return 0;
->>     out_cfg_free:
->> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
->> index 8d1cd54d82a6..059dc9c39f64 100644
->> --- a/drivers/iommu/arm-smmu.h
->> +++ b/drivers/iommu/arm-smmu.h
->> @@ -244,6 +244,10 @@ enum arm_smmu_arch_version {
->>   	ARM_SMMU_V2,
->>   };
->>   +struct arm_smmu_client_match_data {
->> +	bool direct_mapping;
->> +};
-> 
-> Does this need to be public? I don't see the other users...
-> 
+So, while we can make improvements as you describe above, it's
+dangerous to do so because we don't have the information to know
+whether what's being proposed is correct or not.  Hence, it's safer
+to do the minimum amount of changes, and not do gratuitous potential
+regression causing cleanups as you're suggesting.
 
-Will move this out.
-
-Thanks,
-Sai
+If we want to clean up the driver in potentially regression causing
+ways, that can be done at a later date.
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
