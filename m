@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 676031AB596
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 03:39:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0779A1AB5B4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 04:01:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2YE1QNlrlRPFo619WD0uqmy/sRqme+pSIIkSu6ZUO8U=; b=n/zrcIxun/0OLw
-	QRP0/Zk1ReHtCiVWinb6kVu35KAnfLwwOrOSVcDhpoeKSuP4GuesQruUBX2PlwY8+++aOWpQ+kctS
-	PeYfsITrO3SIdDs+Xaqelha4Ln6GfD7mch+ly8z3/Ya+b6cqHF1VzOuXvJlrBCPMLovMtg3WO8/lM
-	652EdzwwjEnaSSMQroc2qGzfiEhk3kqCROG66zu3YOEXO8pLWK9yApioUzg/TyR1oGbGeXO4MxCn2
-	tk6kshpVfgqyviXqSp17xIjoCg9kFrvY4tQUSFOCXxit1u45YQSXR7InRrzutuoYMO36L0tGNAabq
-	iUHQoFKsMNXOZV/qvEsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qCNkzdWOGQfqnPU6UOCNu54VZ8hfYx7dRQtQGQea7aY=; b=CrbSDYVqT+cuDZgsQeCxDYJWN
+	ClmXb8s/LJIQC4dWYydqAeuspiIZPkDpuxuweq2bEeGeYjictpEaFDn/FpL5OzfTE5JsZI0JRviTF
+	QYDvtnyyPxOhwCNX9Ss7VySDw4KQPBRUtdu74x+2v/ixLnySGErBatIk2/jlZf/8cdfEjbsSKROLI
+	CQhFbclkwNgBXNmT16k5nmIUJzydrlShLvwK4rW/c7nL3+3dquNEDcM2BWj78WeOMf4SzHJpxAJDF
+	jICN7cOwa2ba/XuylsQjAV5FNH7frg1D2ojoVtHH5Yjb7DLzk8/e2bExNTSi490QJKcHu4tT7dGWL
+	//0uZhsVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOtUq-0003WS-Hl; Thu, 16 Apr 2020 01:39:16 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
+	id 1jOtpz-0001IC-3t; Thu, 16 Apr 2020 02:01:07 +0000
+Received: from out30-54.freemail.mail.aliyun.com ([115.124.30.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOtUb-0003Vb-2F
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 01:39:03 +0000
-Received: from DGGEMM406-HUB.china.huawei.com (unknown [172.30.72.54])
- by Forcepoint Email with ESMTP id 079307B60A37B2BB8BEE;
- Thu, 16 Apr 2020 09:38:48 +0800 (CST)
-Received: from DGGEMM421-HUB.china.huawei.com (10.1.198.38) by
- DGGEMM406-HUB.china.huawei.com (10.3.20.214) with Microsoft SMTP Server (TLS)
- id 14.3.487.0; Thu, 16 Apr 2020 09:38:47 +0800
-Received: from DGGEMM506-MBX.china.huawei.com ([169.254.3.76]) by
- dggemm421-hub.china.huawei.com ([10.1.198.38]) with mapi id 14.03.0487.000;
- Thu, 16 Apr 2020 09:38:46 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: RE: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Topic: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Index: AdYJhvrCKEKaxySRQua1lfr4U9NN2v//iESA//MqKcCAGX9aAP/4ImVg
-Date: Thu, 16 Apr 2020 01:38:45 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED3A535FCF@DGGEMM506-MBX.china.huawei.com>
-References: <MN2PR18MB26869A6CA4E67558324F655CC5C70@MN2PR18MB2686.namprd18.prod.outlook.com>
- <06d08f904f003160a48eac3c5ab3c7ff@kernel.org>
- <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
- <86r1wus7df.wl-maz@kernel.org>
-In-Reply-To: <86r1wus7df.wl-maz@kernel.org>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.74.221.187]
+ id 1jOtpr-0001H6-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 02:01:01 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R851e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07488;
+ MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=19; SR=0;
+ TI=SMTPD_---0Tveg8zr_1587002446; 
+Received: from 30.27.118.45(mailfrom:tianjia.zhang@linux.alibaba.com
+ fp:SMTPD_---0Tveg8zr_1587002446) by smtp.aliyun-inc.com(127.0.0.1);
+ Thu, 16 Apr 2020 10:00:47 +0800
+Subject: Re: [PATCH] KVM: Optimize kvm_arch_vcpu_ioctl_run function
+To: Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>
+References: <20200413034523.110548-1-tianjia.zhang@linux.alibaba.com>
+ <875ze2ywhy.fsf@vitty.brq.redhat.com>
+ <cc29ce22-4c70-87d1-d7aa-9d38438ba8a5@linux.alibaba.com>
+ <87a73dxgk6.fsf@vitty.brq.redhat.com>
+ <9e122372-249d-3d93-99ed-a670fff33936@redhat.com>
+From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+Message-ID: <4843f690-7071-aa4f-cc9d-d9cc2321e669@linux.alibaba.com>
+Date: Thu, 16 Apr 2020 10:00:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+In-Reply-To: <9e122372-249d-3d93-99ed-a670fff33936@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_183901_285669_8591FAAB 
-X-CRM114-Status: GOOD (  15.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_190059_937959_CE6AC529 
+X-CRM114-Status: UNSURE (   7.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [115.124.30.54 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,79 +74,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
- "jintack@cs.columbia.edu" <jintack@cs.columbia.edu>,
- George Cherian <gcherian@marvell.com>,
- "james.morse@arm.com" <james.morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Anil Kumar Reddy H <areddy3@marvell.com>,
- "alexandru.elisei@arm.com" <alexandru.elisei@arm.com>,
- "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: wanpengli@tencent.com, kvm@vger.kernel.org, suzuki.poulose@arm.com,
+ maz@kernel.org, joro@8bytes.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ sean.j.christopherson@intel.com, mingo@redhat.com, bp@alien8.de,
+ julien.thierry.kdev@gmail.com, hpa@zytor.com, james.morse@arm.com,
+ tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, jmattson@google.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc:
 
-Got it.
-Really a bit patch set :)
 
-BTW, I have done a basic kvm unit test
-git://git.kernel.org/pub/scm/virt/kvm/kvm-unit-tests.git
-And I find that after apply the patch KVM: arm64: VNCR-ize ELR_EL1,
-The psci test failed for some reason, I can't understand why, this
-is only the test result.(find the patch by git bisect + kvm test)
+On 2020/4/15 22:53, Paolo Bonzini wrote:
+> On 15/04/20 11:07, Vitaly Kuznetsov wrote:
+>> In case this is no longer needed I'd suggest we drop 'kvm_run' parameter
+>> and extract it from 'struct kvm_vcpu' when needed. This looks like a
+>> natural add-on to your cleanup patch.
+> 
+> I agree, though I think it should be _instead_ of Tianjia's patch rather
+> than on top.
+> 
+> Paolo
+> 
 
-My platform: Hisilicon D06 board.
-Linux kernel: Linux 5.6-rc6 + nv patches(some rebases)
-Could you help to take a look?
+Thank you very much for the comments of Vitaly and Paolo, I will make a 
+v2 patch.
 
-Thanks 
-Zengtao 
-
-> -----Original Message-----
-> From: Marc Zyngier [mailto:maz@kernel.org]
-> Sent: Saturday, April 11, 2020 5:24 PM
-> To: Zengtao (B)
-> Cc: George Cherian; Dave.Martin@arm.com; alexandru.elisei@arm.com;
-> andre.przywara@arm.com; christoffer.dall@arm.com;
-> james.morse@arm.com; jintack@cs.columbia.edu;
-> julien.thierry.kdev@gmail.com; kvm@vger.kernel.org;
-> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org;
-> suzuki.poulose@arm.com; Anil Kumar Reddy H; Ganapatrao Kulkarni
-> Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested
-> Virtualization support
-> 
-> Hi Zengtao,
-> 
-> On Sat, 11 Apr 2020 05:10:05 +0100,
-> "Zengtao (B)" <prime.zeng@hisilicon.com> wrote:
-> >
-> > Hi Marc:
-> >
-> > Since it's a very large patch series, I want to test it on my platform
-> >  which don't support nv, and want to make sure if this patch series
-> > affects the existed virtualization functions or not.
-> >
-> > Any suggestion about the test focus?
-> 
-> Not really. Given that the NV patches affect absolutely every
-> architectural parts of KVM/arm64, everything needs careful
-> testing. But more than testing, it needs reviewing.
-> 
-> Thanks,
-> 
-> 	M.
-> 
-> --
-> Jazz is not dead, it just smells funny.
+Thanks and best,
+Tianjia
 
 _______________________________________________
 linux-arm-kernel mailing list
