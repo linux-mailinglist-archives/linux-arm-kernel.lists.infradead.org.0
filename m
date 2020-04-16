@@ -2,81 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52B751AC2EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:37:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CEF71AC37C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:45:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RN6qnKT11VQSRhKVzAn/3Ny32L8REHtLgYoPztjHOPs=; b=csxoJiqspXNBj0
-	YNUn6l3mUxgiBCdm/4I5/ettu31+hcuxHsEEcXRu2rgFct64gtQf+7c9NbOnJeFl/NJRcMW1pabeh
-	mxAyFxEtH8VL/z5omGfyctpfPL7RjrnDiqXt3liKMquuzIgdCphfdgmlOgc/Q/juTIOPLC2Ff7ggi
-	qrJJsePPTWw7KhsBLj4CUIzB+PpvdBVvuQFDs4VeNKM4maz7PFFhBWlFZDeVnTOPbeRREoXVYL2nl
-	Q12wzNxqsKjuhJWDoFGqqAGX8ZfDBvdkmODD4iVdgeWLYwDwr0DlDyyBvxhLRf67rQFNqu/XIaURg
-	c+FL4MXrYvCVFgcqfdxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vUWlQCSFZsBqrSK1Fj5m9AVakUyCMb/yX981oFku3Ro=; b=ZJTrg/FtBwmC14
+	iB3dHKgUPluDW9qUJHhq4Vy4VslMrsewUwTxfro7qqARBccgSj763dlhNIEeOcmVCaMKKSoxxLtiH
+	5f0OUQYFeSvExWjtPPMqfXmZKTsmlwSO2Mlu4/ZvLqX2+nfObWYusPlhrX10uY+GpzGphZigkdTXL
+	AGviwonoBhJ4OLRvE/NL75ImON5pvwkkPSFlrpxXxBaE1sjoIUE0QuTUcI/v7aBnchNhBwblzgIWi
+	rcrI74RBfRyeCYssg8L5nnpzAutmw5FdlJ+1g4jM6404doMpiTnVRTDYHpKIqYh6P3vHCx2JIajKx
+	+SCQ2W2Iak5IYsIdXZIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4hX-0007NX-QM; Thu, 16 Apr 2020 13:37:07 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jP4os-0002UB-9N; Thu, 16 Apr 2020 13:44:42 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4hP-0007Ma-LD
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:37:01 +0000
-Received: from mail-qk1-f178.google.com ([209.85.222.178]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MCbZL-1jYjKk0S2t-009k7u for <linux-arm-kernel@lists.infradead.org>; Thu,
- 16 Apr 2020 15:36:57 +0200
-Received: by mail-qk1-f178.google.com with SMTP id l25so21255955qkk.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 06:36:56 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZU3PleJ/usfXDMTPbrtQZSx/m8FfsSNoqT4IlTYlrGdHaNb1B3
- bC//gkX2VeQ0MTLpmG4K8Pz9aQaxI3yt5Resd70=
-X-Google-Smtp-Source: APiQypLVyFmoRVlk38JL3t/KgQwGOgf5vTbZbwYZ8CAepAFC6fF8Q7UEBWUdcp5NmdoSyWhbML+tvWJCMo127crkfFc=
-X-Received: by 2002:a37:851:: with SMTP id 78mr31807202qki.352.1587044215844; 
- Thu, 16 Apr 2020 06:36:55 -0700 (PDT)
+ id 1jP4oi-0002CY-2F; Thu, 16 Apr 2020 13:44:33 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c195so2577804wme.1;
+ Thu, 16 Apr 2020 06:44:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
+ b=NKaFl00peRLsJRd1TCpOYzHetW8sbRA+/HJn6nXHcphRgYoHcE2As4Skpd/c5OOtl3
+ aAJP6GhSIoz0w4NCFbSZJ6HKcTBmEX7IXKjNWRGHscVFHFO40s7l2Oij2g2owDoID0a5
+ 7/75cQ6pZ1aQ52kQoT65AaH1sagq0kwsSQQsKV6iAsy2BwSQXEQu+AZUDJEATTyjsEvW
+ /dQmoQ710BctBOzQRsQWEq7qIyYJgrGIrl24rfwI89EL6oev6W3DzRYRUHoGWtgMTglM
+ 5DlQjWI5n+jybhbO+jO01+JAbMYihB8YdAnzppfOgx7wop42LLUkMnTRf0PV4zxzyq5i
+ zrVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
+ b=O8V0tadVyb36mrMUnRQSXFC28KBbj5zNDxqxV7vUxwr7xBu/46HRhmj6KHPnstRr2P
+ ikQcmLIc064d35CWHk7MQiui2Qnj6HBPEuQqVvyYJneoaFDX9ezYFpaLOtTFUBqYIZYx
+ N+xSUVBji3IouEdtiwUqtduUc2LwmJSYbLtDMN82TYGjBbgyA3q0nkNjHAaC0WiTSr8v
+ 4R02AQVFtJSrlskvnPJAIjrsAX+ycihwXlniKau3slCVS8RSza8Pn+7EJlIsCb23A8Ey
+ I4K8DND/yWoo0GXMW9cXzO+KuwECHQl5agOpILHfATeOjYBOqz9ha0oi7P90+IIxtA8T
+ FnGA==
+X-Gm-Message-State: AGi0PubQLMJNdoagiVpA1MziDzMxSyc0C0Q/44nJA2ZHHKnk7snCOQez
+ FDlTKDbJJjFFqDDEmC8EsGg=
+X-Google-Smtp-Source: APiQypKHstkks+d7QKXlK1Kx2K4FOqpUNOov9QzJnGobXCUEc76Hs0tyB7U8aK6EB9CSGnwIDUH4vw==
+X-Received: by 2002:a7b:cd10:: with SMTP id f16mr5171636wmj.21.1587044668689; 
+ Thu, 16 Apr 2020 06:44:28 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id z18sm21457242wrw.41.2020.04.16.06.44.27
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 16 Apr 2020 06:44:27 -0700 (PDT)
+Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
+ <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
+ <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
+ <20200416132442.GI125838@aptenodytes>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
+Date: Thu, 16 Apr 2020 15:44:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <20200416115658.20406-1-geert+renesas@glider.be>
- <20200416115658.20406-3-geert+renesas@glider.be>
- <20200416125630.GF4987@lakrids.cambridge.arm.com>
-In-Reply-To: <20200416125630.GF4987@lakrids.cambridge.arm.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 16 Apr 2020 15:36:39 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3HkXotBFVfbL3iaqUAM2ENpBKh7gy+hXH8TXsZHPfwTQ@mail.gmail.com>
-Message-ID: <CAK8P3a3HkXotBFVfbL3iaqUAM2ENpBKh7gy+hXH8TXsZHPfwTQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] [RFC] arm64: Add dependencies to vendor-specific
- errata
-To: Mark Rutland <mark.rutland@arm.com>
-X-Provags-ID: V03:K1:VZ9FUWMKRQQ+SedYAxQrlv7Rav/RqorZJspWLFP9N2EIelniu3q
- cP9s1Y19LGcdn5WvbbX2/3eHskNLUytyNCT93gShUa/74ct2w/jdszd5rEg50xThDzQtMsS
- 2ASZhDasd6NmzbyaSIz3xTjIH0xsxYWbVJQxevn90l8yczNhVdgwljw53OVGYRX/TTtD02z
- vwQECw3mBfrjlrjt0nzoQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:/zcxbV1T49E=:KnruEN7B0mcEunJKiS2TJK
- 1FH6hL4JXzLgCNdRkEJ2691xr7Kz95R4ARw7HdGATg7k16TUKt+uodYvQpOkX7NNI0Aeft5LM
- EbgOpqMJfl7jHSkHRA++8mMLjaM8b1b3HvDmcjOeveoF6ADTH2gTTSOb2bvqARf6hQP2mP0V/
- szvtUSSq9l3giypr2BK8GjmueunTvfoqmkw5WyZyhmumyEpsAbaVVY1Wj8qpcRAd3eylqxq58
- Sloft8e/6QjnoojzpPvQEEIpMES9MOI+0lGSnhAxlobDUgoJdyls422PTwOJeN35eTkfTO2mM
- kepzOZXzHSLIt21BjJFUqtOfI2dEm68lFrJak8BOt1FWZ+vkimsWDSQ/puzjekzeuDWA5Vl/s
- QY03w01WzJYYnfrnp9DQjZp43VChJ2T3pGa7m+Rqw1h82ZWVuZyEajNMueLJ1ntm6wmM3MK+/
- Av0rToOonwaSQAeQ7ntez2CB2Gm7uz/+78YfAzgxoAEuoHGRpvOXGkf2j9cDHewxhTErko2Ji
- Kxnl0Mib0Bd57wM1I6njAukMU7S0HXQ1slCImSEfcV5yRAyGmAU75lLkBTYQ0XzmaumtWCEvP
- 3fFVK7REm2vmfZz/vuXEirGcsMRwgxI7WBwtvTV/yoQ3NL99lAzzOqLztpvjseq0jNTqASEFi
- 7wEWk7qS+gHpDZp2G8KEqIi8K7Pqgds9IQch+dYIysgK3Z4tGwXlLgSVKiBScxBurDGwVrGaK
- rR0EVNmfIDnMZeppkpFtnEGq1QgxmbIqsni1xTCxgQTrDxleKV4Ua8x85mjutw/1h5UrBxAEC
- jmZHtN/ueNYpXaZscQ12H/EFqJtdv2X+Nxpb2gJzAEA/DsbOjg=
+In-Reply-To: <20200416132442.GI125838@aptenodytes>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_063659_994646_205A8280 
-X-CRM114-Status: GOOD (  22.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200416_064432_111336_D041916C 
+X-CRM114-Status: GOOD (  20.84  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,67 +104,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Wei Xu <xuwei5@hisilicon.com>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andy Gross <agross@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
+ linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 2:56 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> On Thu, Apr 16, 2020 at 01:56:58PM +0200, Geert Uytterhoeven wrote:
-> > Currently the user is asked about enabling support for each and every
-> > vendor-specific erratum, even when support for the specific platform is
-> > not enabled.
-> >
-> > Fix this by adding platform dependencies to the config options
-> > controlling support for vendor-specific errata.
-> >
-> > Note that FUJITSU_ERRATUM_010001 is left untouched, as no config symbol
-> > exists for the Fujitsu A64FX platform.
-> >
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
->
-> I'm not su1re that it makes sense to do this in general, becaose the
-> ARCH_* platform symbols are about plactform/SoC support (e.g. pinctrl
-> drivers), and these are (mostly) CPU-local and/or VM-visible.
->
-> I think that it makes sense for those to be independent because:
->
-> * future SoCs in the same family might not need the same CPU errata
->   workarounds, and it's arguably just as confusing to have the option
->   there.
->
-> * It prevents building a minimal VM image with all (non-virtualized)
->   platform support disabled, but all possible (VM-visible) errata
->   options enabled. I do that occassionally for testing/analysis, and I
->   can imagine this is useful for those building images that are only
->   intended to be used in VMs.
+On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
+> Hi,
+> 
+> On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
+>> Hi Paul,
+>>
+>> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
+>> has been approved by robh.
+> 
+> Huh, I looked around for ongoing related work but missed it.
+> I'll definitely rebase on top of your series and use the yaml description
+> instead. Thanks!
+> 
+>> Maybe place dts patches at the end of a patch serie.
+>> Could you include a &rga patch if your device is supported in mainline,
+>> so we can test with:
+>> make ARCH=arm64 dtbs_check
+>> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> 
+> I tested with the PX30 EVB so I can surely add a node there if that turns
+> out necessary (see below).
+> 
+>> Johan
+>>
+>> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
+>>> The PX30 features a RGA block: add the necessary node to support it.
+>>>
+>>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+>>> ---
+>>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
+>>>  1 file changed, 11 insertions(+)
+>>>
+>>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> index 75908c587511..4bfbee9d4123 100644
+>>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
+>>>  		status = "disabled";
+>>>  	};
+>>>  
+>>> +	rga: rga@ff480000 {
+>>> +		compatible = "rockchip,px30-rga";
+>>> +		reg = <0x0 0xff480000 0x0 0x10000>;
+>>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
+>>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
+>>> +		clock-names = "aclk", "hclk", "sclk";
+>>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+>>> +		reset-names = "core", "axi", "ahb";
+>>> +		power-domains = <&power PX30_PD_VO>;
+>>
+>> 		status = "disabled";
+> 
+> As of 5.6, the rk3399 has the node enabled by default. Did that change?
 
-Most architectures over time grow a CPU selection option that is
-at least somewhat orthogonal to the platform selection. I think so far
-arm64 has intentionally resisted this based on the idea that the CPUs
-are mostly equal and differences are better handled at runtime.
+'status' disappeared during review for rk3399 between v2 and v3, but
+doesn't mention the reason. If someone can give more info here?
 
-If we decide to revisit this in the future that might help both the
-errata selection and give a way to e.g. build for an ARMv8.2
-baseline.
-This does seem pretty far out at the moment of course, given
-that most SoCs we work on are still based on Cortex-A53 or A72 ;-)
+https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen@iotwrt.com/
 
-> I think the change to SOCIONEXT_SYNQUACER_PREITS makes sense given
-> that's a platform-level detail. Arguably that should be moved into
-> drivers/irqchip/Kconfig.
+https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen@iotwrt.com/
 
-Agreed
+> 
+> Since it's a standalone block that has no I/O dependency, I don't really see
+> the point of disabling it by default.
 
-       Arnd
+Vop, hdmi and other video devices are also disabled.
+Follow the rest I think...
+
+> 
+> What do you think?
+> 
+> Cheers,
+> 
+> Paul
+> 
+>>> +	};
+>>> +
+>>>  	qos_gmac: qos@ff518000 {
+>>>  		compatible = "syscon";
+>>>  		reg = <0x0 0xff518000 0x0 0x20>;
+>>>
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
