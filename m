@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B73FB1ACF37
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 19:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 888A01ACF66
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 20:12:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mWr5PIdRaF6WBYPdpgxuXQf70qT220Ok9Oi/6PXB4s0=; b=aasFTJpdvE9EL8LPPB37+2In94
-	Kxj+ygtIWMfNe/RgXdBt+2pueGQkbaVEpnhMLaTtD4VWivjLSZmY2MpwLqvHy+3xq4eByienoH2bN
-	oJ7Hu4h53S+TDWCOzAdWP1Dyxk2o69miDqu2H6accRkVvL1L6e/OAWSRVufGqMwU5is1ny8wNZtr+
-	8cOM1CuJeDo7xM5mKJcgPk8dDLTwzlnDJWZvXWeP6NOF96u5QGzUMVa5YHO7mJv0Z1AJfGW5aC1IC
-	tyFijQMZNdtcA20HR1CJpuHWkXeQ+BpP8PmsXdCr81mlrkBi80ywGSxFpFDWyL+ea7fak2byngBcL
-	wT20CJVw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=011pyjJGmbADVFstSAz1VI5F6rWfoBUnPerRW+t3qDs=; b=GdJxfj3W52Zr3P
+	HdC/O1DHJnZQuarRuwn0EdQbPNeh719jUKwqcNeZeb9QlKbQwm57H37CwL9Hs82cFrnaY6Cr10WEn
+	tqtwF8aDl2tIqdqj2OgS2k1Qq8AezPdRNS3Q5bT5TjJyzW40P8fYt1QrjUXCsLLHVhjgbfLVo2/K0
+	gRnWWTzyk1wGoY6O09BuIRTMK61ynK8qnW6uQpTSRPZJEieQmgnBuuPkB8DZlKqSW8cM9eWVeU/gA
+	hiFpyxNiIUXEanZtl9O3SzKG2HoCX45gN7pmwoAeNHlq0UVSB4dtqoeqgHdLSojyNJ6kSmI3vBUMh
+	Ar94HZ9Q59mrPvUYB6Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP8n2-00081X-Vq; Thu, 16 Apr 2020 17:59:04 +0000
+	id 1jP8zp-0000un-Gt; Thu, 16 Apr 2020 18:12:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP8mX-0007lM-S0
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 17:58:35 +0000
-Received: from localhost.localdomain (unknown [157.50.106.138])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4A4C2214D8;
- Thu, 16 Apr 2020 17:58:27 +0000 (UTC)
+ id 1jP8zh-0000uM-L3
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 18:12:11 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3ABA21924;
+ Thu, 16 Apr 2020 18:12:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587059913;
- bh=WpEz49SfyHEbNX8XVWDnw0lssfu54pD/0ZJsvLWyqQQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WCpJo544f+JxU3eTKt7gZCYP3aQRE+XUCBj8l0oLUDB/Kagzuh8YBWD+Jos/skOt2
- mgOIaRYi4a+dutgnrRcAqykYqMLGH8E3mL9AL8jDfg/PMR8WgNPYCX3ra0NLM2fMbP
- uAkQrZJvEvthLwQgYou4ZCG8e/l0lxFjQyf01acY=
-From: mani@kernel.org
-To: gregkh@linuxfoundation.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- alexandre.torgue@st.com
-Subject: [PATCH v2 2/2] dt-bindings: serial: Document CTS/RTS gpios in STM32
- UART
-Date: Thu, 16 Apr 2020 23:27:29 +0530
-Message-Id: <20200416175729.5550-3-mani@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200416175729.5550-1-mani@kernel.org>
-References: <20200416175729.5550-1-mani@kernel.org>
+ s=default; t=1587060728;
+ bh=dKS+MG0CSg/HtNkZGsr/L3wWaajOLzH1Y3yCvJSHGCc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=xUUF9lrCWR6yVbI1xTXNYLK0+Ii7L54BmGYZLumlSKYcxHZYf8JpjLlMCQHNwZ+OU
+ eOq0PU0fnjPkw6ZxU2hk5HoIZ05Ascu5Ju5BuZ66j+6k4NXJy1ScW1Xj0I2R0mun8p
+ wOEXfVb0pm+hDIVscbNID/It1oZgbhjKIOWY6vxQ=
+Date: Thu, 16 Apr 2020 19:12:03 +0100
+From: Will Deacon <will@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH 8/8] arm64: cpufeature: Add an overview comment for the
+ cpufeature framework
+Message-ID: <20200416181202.GA3739@willie-the-truck>
+References: <20200414213114.2378-1-will@kernel.org>
+ <20200414213114.2378-9-will@kernel.org>
+ <96dd797d-ccfe-c867-0a70-65eccacde3cd@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <96dd797d-ccfe-c867-0a70-65eccacde3cd@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_105833_937178_CA5EF066 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_111209_731467_2052ECEC 
+X-CRM114-Status: GOOD (  32.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,64 +79,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>,
- linux-kernel@vger.kernel.org, andy.shevchenko@gmail.com,
- linux-serial@vger.kernel.org, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, saiprakash.ranjan@codeaurora.org,
+ anshuman.khandual@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ dianders@chromium.org, catalin.marinas@arm.com, kernel-team@android.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Manivannan Sadhasivam <mani@kernel.org>
+On Thu, Apr 16, 2020 at 03:59:39PM +0100, Suzuki K Poulose wrote:
+> On 04/14/2020 10:31 PM, Will Deacon wrote:
+> > Now that Suzuki isn't within throwing distance, I thought I'd better add
+> > a rough overview comment to cpufeature.c so that it doesn't take me days
+> > to remember how it works next time.
+> > 
+> > Signed-off-by: Will Deacon <will@kernel.org>
+> > ---
+> >   arch/arm64/kernel/cpufeature.c | 43 ++++++++++++++++++++++++++++++++++
+> >   1 file changed, 43 insertions(+)
+> > 
+> > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> > index 680a453ca8c4..421ca99dc8fc 100644
+> > --- a/arch/arm64/kernel/cpufeature.c
+> > +++ b/arch/arm64/kernel/cpufeature.c
+> > @@ -3,6 +3,49 @@
+> >    * Contains CPU feature definitions
+> >    *
+> >    * Copyright (C) 2015 ARM Ltd.
+> > + *
+> > + * A note for the weary kernel hacker: the code here is confusing and hard to
+> > + * follow! That's partly because it's solving a nasty problem, but also because
+> > + * there's a little bit of over-abstraction that tends to obscure what's going
+> > + * on behind a maze of helper functions and macros.
+> 
+> Thanks for writing this up !
 
-Document the use of CTS/RTS gpios for flow control in STM32 UART
-controller. These properties can be used instead of 'st,hw-flow-ctrl'
-for making use of any gpio pins for flow control instead of dedicated
-pins. It should be noted that both CTS/RTS and 'st,hw-flow-ctrl'
-properties cannot co-exist in a design.
+It's purely a selfish thing ;)
 
-Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
----
- .../devicetree/bindings/serial/st,stm32-uart.yaml  | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+> > + * The basic problem is that hardware folks have started gluing together CPUs
+> > + * with distinct architectural features; in some cases even creating SoCs where
+> > + * user-visible instructions are available only on a subset of the available
+> > + * cores. We try to address this by snapshotting the feature registers of the
+> > + * boot CPU and comparing these with the feature registers of each secondary
+> > + * CPU when bringing them up. If there is a mismatch, then we update the
+> > + * snapshot state to indicate the lowest-common denominator of the feature,
+> > + * known as the "safe" value. This snapshot state can be queried to view the
+> 
+> I am not sure if the following is implied above.
+> 
+>   1) Against the "snapshot" state, where mismatches triggers updating
+>      the "snapshot" state to reflect the "safe" value.
+> 
+>   2) Compared against the CPU feature registers of *the boot CPU* for
+>     "FTR_STRICT" fields and any mismatch triggers TAINT_CPU_OUT_OF_SPEC.
+>      This makes sure that warning is generated for each OUT_OF_SPEC
+>      secondary CPU.
 
-diff --git a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
-index 238c44192d31..75b8521eb7cb 100644
---- a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
-+++ b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
-@@ -48,6 +48,12 @@ properties:
-     minItems: 1
-     maxItems: 2
- 
-+  cts-gpios:
-+    maxItems: 1
-+
-+  rts-gpios:
-+    maxItems: 1
-+
-   wakeup-source: true
- 
-   rs485-rts-delay: true
-@@ -55,6 +61,14 @@ properties:
-   linux,rs485-enabled-at-boot-time: true
-   rs485-rx-during-tx: true
- 
-+if:
-+  required:
-+    - st,hw-flow-ctrl
-+then:
-+  properties:
-+    cts-gpios: false
-+    rts-gpios: false
-+
- required:
-   - compatible
-   - reg
--- 
-2.17.1
+I was trying to avoid talking about the consequences of a mismatch in that
+paragraph, and instead cover them below:
 
+> > + * The sanitised register values are used to decide which capabilities we
+> > + * have in the system. These may be in the form of traditional "hwcaps"
+> > + * advertised to userspace or internal "cpucaps" which are used to configure
+> > + * things like alternative patching and static keys. While a feature mismatch
+> > + * may result in a TAINT_CPU_OUT_OF_SPEC kernel taint, a capability mismatch
+> > + * may prevent a CPU from being onlined at all.
+
+Do you think something is missing here?
+
+> > + *
+> > + * Some implementation details worth remembering:
+> > + *
+> > + * - Mismatched features are *always* sanitised to a "safe" value, which
+> > + *   usually indicates that the feature is not supported.
+> > + *
+> > + * - A mismatched feature marked with FTR_STRICT will cause a "SANITY CHECK"
+> > + *   warning when onlining an offending CPU and the kernel will be tainted
+> > + *   with TAINT_CPU_OUT_OF_SPEC.
+> 
+> As mentioned above, this check is against that of the "boot CPU"
+> register state, which may not be implicit from the statement.
+
+Hmm, I'm trying to figure out if this matters. I suppose this means you
+get a SANITY CHECK warning for every mismatching secondary CPU, but that's
+implied by the above. Is there something else I'm missing?
+
+> > + *
+> > + * - Features marked as FTR_VISIBLE have their sanitised value visible to
+> > + *   userspace. FTR_VISIBLE features in registers that are only visible
+> > + *   to EL0 by trapping *must* have a corresponding HWCAP so that late
+> > + *   onlining of CPUs cannot lead to features disappearing at runtime.
+> > + *
+> 
+> As you mentioned in the other response we could add information about
+> the guest view, something like :
+> 
+>       - KVM exposes the sanitised value of the feature registers to the
+> 	guests and is not affected by the FTR_VISIBLE. However,
+> 	depending on the individual feature support in the hypervisor,
+> 	some of the fields may be capped/limited.
+
+In light of Marc's comment, I'll add something here along the lines of:
+
+  "KVM exposes its own view of the feature registers to guest operating
+   systems regardless of FTR_VISIBLE. This is typically driven from the
+   sanitised register values to allow virtual CPUs to be migrated between
+   arbitrary physical CPUs, but some features not present on the host are
+   also advertised and emulated. Look at sys_reg_descs[] for the gory
+   details."
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
