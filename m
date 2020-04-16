@@ -2,92 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34F591AC4A2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 16:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 459F41AC4BA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 16:03:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bMtO5kBzgYsussnKrheaKvBXGsJUoxPZFL8CGDqeJKI=; b=cZWpOGtVGZAIDX
-	GK5IADUA2xeT+NquPPrA1Af75RM6O12OdPQuSb8LciFd9hsuuM1ClGfYlPPN+kZHrOtuuzqXnpohg
-	kncS4Z2OueZ60pOwrbr8TFUYd7t/+fynasqES9/RCzpk3mlW2Lms2a/TstbP4lP/uJP9lLzawUi5c
-	QSRQ+K0D74kLg2pDKnU9j/2GwGPl/QlDcili4s4celYdpzhT1nHfUNRzWSCbxuAg9xEl8FiNl319w
-	mpS3D16OKS8u8HKTCvrH6fRcI5eUsltWZGAROMP7gU11iiR7EskgD7HCrWrePnN63h8A+jayA5Jkv
-	chDyD7Q4YPJJInfO84cg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZBYZvPaVPbx3Al8Jfx0JA/0aLqLtsrVAAA3vubRvBi8=; b=XfSpEiDbM9BUkj
+	ce5Ipub3vhxS+l/INxSPGHWBy+62srWCmfqIoAIfmLyvs5A8Dr0+K0HZdYjxQ/snZqbarCchEKtOT
+	0SAnHEtdFmPeSX3/bFPGaxq5q3u7T06gp3L/r3/5i+KsvAjhgbQ65BYpSZKURbNDKtyiSgEt082vT
+	A0yzps8NTdqiCU2k8K0AtJWSCzOYQ3INo7v0jIQ6QH7yRfCVVPoHe5XemXO3ncQiWTUXfFiQEEAxB
+	Sd+IZ+aALvP1g8lvMR61/oOUp/Sjf6Z4bmRj4EIcTQ9lm59M3PFwq4NCGrwsIFy+DM09LZB7X3gso
+	VI+1UWuQ7do2nq+OVpbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP56Y-0000ZO-AD; Thu, 16 Apr 2020 14:02:58 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jP575-0001DT-NI; Thu, 16 Apr 2020 14:03:31 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP56K-0000Xl-Lc; Thu, 16 Apr 2020 14:02:46 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v8so2612788wma.0;
- Thu, 16 Apr 2020 07:02:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NHqfdeNveULnM7vQAbJglacV+XZ4nJdoryqrPGPSWH0=;
- b=joAdCPp1vLkSbqtIwf3+wLlZtkPXrnifqtZ7/pDNKHE5OT01834YQYcWRvCorRphmA
- 310gNbj+A8S3oahU7wcGkJiCOoBzmwTlZTl7uT+gehWEXbQHl3HJ/QnWzYMrKU1qjg3e
- zxGQD6Lc4IdSrNdSiAyKW4NKk3A/glK+jt3xv5gClHrFMfhDrmGOYSOzEmzxki3SWVpA
- MubOA85JiEnSOZBdfdWDSsudvebrjpXqzDY0fSvczrFXBRH6Y5aM5kZyO9zURhRH408N
- W7ZkmLOTf5gcVncU6pvW7GEFIETnpmo2r/utHGnjS4flkxmwX4hruSPYDXbuRADMQua5
- UTgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NHqfdeNveULnM7vQAbJglacV+XZ4nJdoryqrPGPSWH0=;
- b=ES/bsQdMdotj8So1upfoWRC5WJmkZlj+6BJD7DLrU4jvVQ2OYdCDPHB46Q3U5+IcCx
- Y1XtdDuOtpkPWci+zb7IQY8+VTtbUe2E1tbysOJHntZ4hoYjIcexlzqW81KMt7agIMca
- 9L80590xUqtwNZq32EXnATBJ4Kc5UiBtCd/T0lAVV4xzLQQ5Na/9DU66QS66smGsjF8w
- BAz5tIF8hwwgvgAzpV1rRmLrGPI5AQjLPffitnv78EFUaAKIrlGGcgdkUbHjtVAhCzPu
- +jjtLjRtNHOJu/ll8fUjivdbNAF3Yvr2mgT5MKAAJ6u62hloo3ci43JTD8pFavhx8u5k
- lC+w==
-X-Gm-Message-State: AGi0PuYFv7z68BFry7g/lVrEFMwdPhyXqqCcKgiO/JiJeFZUFLzqpgB7
- VaEeBOdhKzogu2avoLx3e90=
-X-Google-Smtp-Source: APiQypJV2H42TwzOHO9PsPVCAA/RA8bXt0qbCwFdMXRNN2D2+xQOY5NEhSB4Y23QQTB8V/rxI3S6Yg==
-X-Received: by 2002:a05:600c:2194:: with SMTP id
- e20mr5049382wme.22.1587045761652; 
- Thu, 16 Apr 2020 07:02:41 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id p10sm26933094wrm.6.2020.04.16.07.02.40
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 07:02:40 -0700 (PDT)
-Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
- <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
- <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
- <20200416132442.GI125838@aptenodytes>
- <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
- <20200416135519.GJ125838@aptenodytes>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <f97d7661-834d-3fbf-2cd9-0b37c487e8f7@gmail.com>
-Date: Thu, 16 Apr 2020 16:02:38 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jP56m-0000wW-G1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 14:03:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587045787;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=mTCnzd2XlgbcxruM8XtC2INeIkYrefeETcNQ6xKyTQc=;
+ b=BtqLPa9aoVdgLnkvUmm1kcG23hKzKAyDZAfZ5rV7apEkJ08l7eG2PPoPy0sWxNUWqI6rDk
+ xgo6hAWMnbD3MMDpy5PEmvDoPy33fw4hpP4V4TgKjs+WB0WIuV4aLENpOjIXKmQ5ZymwS8
+ zxLmIq6sjJ8GeCFiHqryGsmADMOd2P0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-330-PC3eu-rJOkazl1fOhLt66A-1; Thu, 16 Apr 2020 10:02:55 -0400
+X-MC-Unique: PC3eu-rJOkazl1fOhLt66A-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 83520190B2A9;
+ Thu, 16 Apr 2020 14:02:53 +0000 (UTC)
+Received: from localhost (ovpn-12-36.pek2.redhat.com [10.72.12.36])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id ACF605C1C5;
+ Thu, 16 Apr 2020 14:02:49 +0000 (UTC)
+Date: Thu, 16 Apr 2020 22:02:47 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+Message-ID: <20200416140247.GA12723@MiWiFi-R3L-srv>
+References: <20200413023701.GA20265@MiWiFi-R3L-srv>
+ <871rorjzmc.fsf@x220.int.ebiederm.org>
+ <20200414064031.GB4247@MiWiFi-R3L-srv>
+ <86e96214-7053-340b-5c1a-ff97fb94d8e0@redhat.com>
+ <20200414092201.GD4247@MiWiFi-R3L-srv>
+ <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
+ <20200414143912.GE4247@MiWiFi-R3L-srv>
+ <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
+ <20200415023524.GG4247@MiWiFi-R3L-srv>
+ <18cf6afd-c651-25c7-aca3-3ca3c0e07547@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200416135519.GJ125838@aptenodytes>
-Content-Language: en-US
+In-Reply-To: <18cf6afd-c651-25c7-aca3-3ca3c0e07547@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_070244_730483_35625B4B 
-X-CRM114-Status: GOOD (  23.79  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200416_070312_639553_5C1A64A6 
+X-CRM114-Status: GOOD (  22.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,6 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,133 +101,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
- linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
+ kexec@lists.infradead.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/16/20 3:55 PM, Paul Kocialkowski wrote:
-> Hi,
+On 04/16/20 at 03:31pm, David Hildenbrand wrote:
+> > Not sure if I get the notifier idea clearly. If you mean 
+> > 
+> > 1) Add a common function to pick memory in unmovable zone;
 > 
-> On Thu 16 Apr 20, 15:44, Johan Jonker wrote:
->> On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
->>> Hi,
->>>
->>> On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
->>>> Hi Paul,
->>>>
->>>> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
->>>> has been approved by robh.
->>>
->>> Huh, I looked around for ongoing related work but missed it.
->>> I'll definitely rebase on top of your series and use the yaml description
->>> instead. Thanks!
->>>
->>>> Maybe place dts patches at the end of a patch serie.
->>>> Could you include a &rga patch if your device is supported in mainline,
->>>> so we can test with:
->>>> make ARCH=arm64 dtbs_check
->>>> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
->>>
->>> I tested with the PX30 EVB so I can surely add a node there if that turns
->>> out necessary (see below).
->>>
->>>> Johan
->>>>
->>>> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
->>>>> The PX30 features a RGA block: add the necessary node to support it.
->>>>>
->>>>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
->>>>> ---
->>>>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
->>>>>  1 file changed, 11 insertions(+)
->>>>>
->>>>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> index 75908c587511..4bfbee9d4123 100644
->>>>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
->>>>>  		status = "disabled";
->>>>>  	};
->>>>>  
->>>>> +	rga: rga@ff480000 {
->>>>> +		compatible = "rockchip,px30-rga";
->>>>> +		reg = <0x0 0xff480000 0x0 0x10000>;
->>>>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
->>>>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
->>>>> +		clock-names = "aclk", "hclk", "sclk";
->>>>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
->>>>> +		reset-names = "core", "axi", "ahb";
->>>>> +		power-domains = <&power PX30_PD_VO>;
->>>>
->>>> 		status = "disabled";
->>>
->>> As of 5.6, the rk3399 has the node enabled by default. Did that change?
->>
->> 'status' disappeared during review for rk3399 between v2 and v3, but
->> doesn't mention the reason. If someone can give more info here?
->>
->> https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen@iotwrt.com/
->>
->> https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen@iotwrt.com/
->>
->>>
->>> Since it's a standalone block that has no I/O dependency, I don't really see
->>> the point of disabling it by default.
->>
->> Vop, hdmi and other video devices are also disabled.
->> Follow the rest I think...
+> Not strictly required IMHO. But, minor detail.
 > 
-> Well, these blocks do have related I/O ports so it makes sense not to enable
-> them by default because of pinmux, or because there might be no connector
-> populated/routed.
+> > 2) Let DLPAR, balloon register with notifier;
 > 
-> For a memory to memory internal block, I don't see any reason why.
-> It's definitely not board-specific and having to add these nodes for every board
-> that has them is kind of a pain and might be overlooked. This will easily result
-> in the feature not being available for end users without having to change the
-> dt.
+> Yeah, or virtio-mem, or any other technology that adds/removes memory
+> dynamically.
 > 
-> Also, the vpu node is always enabled on rockchip (and sunxi) platforms.
-> I think these are better examples to follow.
+> > 3) In the common function, ask notified part to check if the picked
+> >    unmovable memory is available for locating kexec kernel;
+> 
+> Yeah.
 
-From PX30 TRM-Part1:
-
-Power domain is shared by vop and dsi.
-It's up to the user what blocks he/she enables and what power it uses.
-
-PD_VO: VOP_M, VOP_S, RGA and DSI
+These may not be needed, please see below comment.
 
 > 
-> Cheers,
+> > 
+> > Sounds doable to me, and not complicated.
+> > 
+> >> images. It would apply to
+> >>
+> >> - arm64 and filter out all hotadded memory (IIRC, only boot memory can
+> >>   be used).
+> > 
+> > Do you mean hot added memory after boot can't be recognized and added
+> > into system RAM on arm64?
 > 
-> Paul
+> See patch #3 of this patch set, which wants to avoid placing kexec
+> binaries on hotplugged memory. But I have no idea what the current plan
+> regarding arm64 is (this thread exploded :) ).
 > 
->>>
->>> What do you think?
->>>
->>> Cheers,
->>>
->>> Paul
->>>
->>>>> +	};
->>>>> +
->>>>>  	qos_gmac: qos@ff518000 {
->>>>>  		compatible = "syscon";
->>>>>  		reg = <0x0 0xff518000 0x0 0x20>;
->>>>>
->>>>
->>>
->>
+> I would assume that we don't want to place kexec images on any
+> hotplugged (or rather: hot(un)pluggable) memory - on any architecture.
+
+Yes, noticed that and James replied to DaveY.
+
+Later, when I was considering to make a draft patch to do the picking of
+memory from normal zone, and add a notifier, as we discussed at above, I
+suddenly realized that kexec_file_load doesn't have this issue. It
+traverse system RAM bottom up to get an available region to put
+kernel/initrd/boot_param, etc. I can't think of a system where its
+low memory could be unavailable.
 > 
+> > 
+> > 
+> >> - powerpc to filter out all LMBs that can be removed (assuming not all
+> >>   memory corresponds to LMBs that can be removed, otherwise we're in
+> >>   trouble ... :) )
+> >> - virtio-mem to filter out all memory it added.
+> >> - hyper-v to filter out partially backed memory blocks (esp. the last
+> >>   memory block it added and only partially backed it by memory).
+> >>
+> >> This would make it work for kexec_file_load(), however, I do wonder how
+> >> we would want to approach that from userspace kexec-tools when handling
+> >> it from kexec_load().
+> > 
+> > Let's make kexec_file_load work firstly. Since this work is only first
+> > step to make kexec-ed kernel not break memory hotplug. After kexec
+> > rebooting, the KASLR may locate kernel into hotpluggable area too.
+> 
+> Can you elaborate how that would work?
+
+Well, boot memory can be hotplugged or not after boot, they are marked
+in uefi tables, the current kexec doesn't save and pass them into 2nd
+kenrel, when kexec kernel bootup, it need read them and avoid them to
+randomize kernel into.
 
 
 _______________________________________________
