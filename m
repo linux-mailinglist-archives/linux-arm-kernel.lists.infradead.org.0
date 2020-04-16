@@ -2,75 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E31D51ACCD2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:11:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 024081ACCFC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:13:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UmJYENNmFV12e5gcMXPa8RqXRjIoBUIWhIzOgXaPXK8=; b=mxi2Q8i8Er2VBL0iB2LNpt4iH
-	preBxML0a3dNLfq0FRB7NcFxbdcs/1ms6p5NGA2c6zjFDPYpKpZFH8rq8tbUCUGTSC3bQK2MvKgxG
-	J71ZixymG8osR/wPrpt2WrDDiDMSSSNzhsZV2U3A+HzpPdoVF/QcGhFbusD9X5CQQZ1dV+/euwFAE
-	MzTvgAT6eUfVVN0YBYS+ROJ5ypNLtj4Gn5FZMXuBrnyFarF6PtylP0zI3WO0d/0pqRAaeYWK9pO9m
-	nRXWnOm0OAFTkaP1NuoN3aJF/9fedkL5A4Wyh1cZaV2xWhWY8jX2xwy141Nj7uqYpXua8sPZ6mfhu
-	Bt6xqBslg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3olG2jEUA+SookiybX/blQzVs5HIKlrcN0W9jDQu/rY=; b=ZtVQyuX48i1Ej7
+	ctA0j7ezgJVPW63yxVfSDBUgYiAr35sMnKj9vByhz7LEJJCCXZiY2URpeEIWH5TVo9MgN+buqQl85
+	W1Zw9Gfuealt44Q8NbOOk4xAD9GHWnt0fMbLkqdhPQSEmXCravQrxcYygg2N/1C/4uMjgg5nmTXsf
+	SbZ1SLfccbUzIJysRV+YEJ0PbOuFYwIQTu/hNGfgnwa+R4ohz81VhrdrPyNUdsEJg1gS0XL/IAfQR
+	2s4bGlVddogAGL+cftoAi5bgQLNx7jlq8AmSF9mOwcmU9Yx1LXu6RDHxKzhj4YyDpZr+g6+HKupnL
+	v4PsyazN9ePitTw9lhIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP76j-00033P-D2; Thu, 16 Apr 2020 16:11:17 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jP78S-0003Ya-Aq; Thu, 16 Apr 2020 16:13:04 +0000
+Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP76c-00031j-7k
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:11:12 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 3749EBF174D47BC31CD5;
- Thu, 16 Apr 2020 17:10:52 +0100 (IST)
-Received: from [127.0.0.1] (10.210.169.188) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Thu, 16 Apr
- 2020 17:10:51 +0100
-Subject: Re: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
-To: Joakim Zhang <qiangqing.zhang@nxp.com>, <irogers@google.com>
-References: <20200222104621.2258-1-qiangqing.zhang@nxp.com>
- <DB7PR04MB4618D2E1892120EB659B8695E6EC0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <2f81eb7a-a6e4-1cc6-cd0a-ca3d749bd552@huawei.com>
- <DB7PR04MB4618C0A8DD9BAB2A529CDCECE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <a2cc0772-4f5d-aba3-1f5c-7d4eef7a3f72@huawei.com>
- <DB7PR04MB461803AD15E47AA880F0915DE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <55836919-41b5-0834-f7a7-1a2a34535677@huawei.com>
- <bd67910e-1522-39cd-5527-b9b18f3da96d@huawei.com>
- <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
- <ccab39b0-c84f-e529-4067-07466b5433a1@huawei.com>
- <VI1PR04MB68000808CEE4BC23403C35A0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
- <ca2db002-975a-ffe0-2dfc-c85f4e6205bb@huawei.com>
- <VI1PR04MB6800F2A5949F0AFAF2E82CE0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
- <0b3999b8-c307-6b4a-1a1b-e90b45f50b61@huawei.com>
- <DB8PR04MB67957F63165ACC0483F6AE39E6D80@DB8PR04MB6795.eurprd04.prod.outlook.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <8341b035-2fac-52dd-45d1-2bf6f5ea4ba4@huawei.com>
-Date: Thu, 16 Apr 2020 17:10:20 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
-MIME-Version: 1.0
-In-Reply-To: <DB8PR04MB67957F63165ACC0483F6AE39E6D80@DB8PR04MB6795.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.169.188]
-X-ClientProxiedBy: lhreml701-chm.china.huawei.com (10.201.108.50) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+ id 1jP78G-0003Xq-7Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:12:54 +0000
+Received: by mail-vs1-xe49.google.com with SMTP id j19so1356413vsm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 09:12:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=0kkAHIxDjdEuIMyQzc7N1rVk9JLIqCObiTf23aNDlDc=;
+ b=ASpRbtOQLF5/AHH8Wdzken7RQxK4f4ve/RdNrALBss1MUEfbfV98IQO6AkET6PSweR
+ lA9vKq1yI2C0mojjk77HpTzZp/cFQLNwrS54ZSt5D/fl69OzIDOFNjNSv8fHfHHapQ+z
+ 8R9a5WID60HAuoi2p/3bB8LtlrX7xlxi1G+uJ6CrOwFhlFKLbULaMr0f2RfWSijbN/xm
+ 0YBsK5mlM1TRThoukYUHM2gcI1rP2pc/o86n+EiCVIhDvzAMWtE/2aQCBX16/r2Hrhuj
+ +Ip81PR/RCs9X7K/OEpYNERszj07js6qWAkLXNEO3j2q+gBzpU1CZiri3qnhrW3d6Ng5
+ cXCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=0kkAHIxDjdEuIMyQzc7N1rVk9JLIqCObiTf23aNDlDc=;
+ b=fUyR7i4TZ/FZLmbnLYWpAYEXatkwiq7qgLzCrcTZ6Jp7x1Ro3w8Ev48Hig/6QPVeil
+ NoYFPGDEweI9uqw+qguJVftlVF4eIkFou5mJ3k6doNDYsUlmlgx6Js0/h+5Kr65nRxV0
+ TcJW72+CDIZL16Gqj39sPWjC6Vxu351qfz3dur77AkIwfEbjhnk/K1VNHh4T/pP+fDr2
+ YAib1/opQs+pi/mzXIH0vCIMfvLnyhtwl8DviD2MkEB+4rvz/J01FWYcVHkbvaMozVWe
+ pfVnJcWTV2Tga1atrGmhutcGQRr4NRKu8rWjFrThT97T23+9X7+ka1c3Xxx41fe/dF4k
+ YboQ==
+X-Gm-Message-State: AGi0PubsOHc5QnuEbnZ1EQwa+13rbz2J1Basg0XMT+fCuVZxuEvnECV8
+ XjpUWMuoL8D9PdIc/DpMpALZHZNH6dU675xlFnM=
+X-Google-Smtp-Source: APiQypKMmS3633Bs3YPEBR1yjLd+VaU3icOochkwEzNF2p9tc++6m0CyLaZfnbd7erP2zEfob2m284nZEiHp0gnSSgc=
+X-Received: by 2002:a1f:b64a:: with SMTP id g71mr22582515vkf.27.1587053569730; 
+ Thu, 16 Apr 2020 09:12:49 -0700 (PDT)
+Date: Thu, 16 Apr 2020 09:12:33 -0700
+In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
+Message-Id: <20200416161245.148813-1-samitolvanen@google.com>
+Mime-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+X-Mailer: git-send-email 2.26.1.301.g55bc3eb7cb9-goog
+Subject: [PATCH v11 00/12] add support for Clang's Shadow Call Stack
+From: Sami Tolvanen <samitolvanen@google.com>
+To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
+ James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>, 
+ Masahiro Yamada <masahiroy@kernel.org>, Michal Marek <michal.lkml@markovi.net>,
+ Ingo Molnar <mingo@redhat.com>, Peter Zijlstra <peterz@infradead.org>, 
+ Juri Lelli <juri.lelli@redhat.com>,
+ Vincent Guittot <vincent.guittot@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_091110_425034_561DF439 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200416_091252_297636_909DE983 
+X-CRM114-Status: GOOD (  22.78  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,106 +101,206 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>, "will@kernel.org" <will@kernel.org>,
- Linuxarm <linuxarm@huawei.com>, "acme@kernel.org" <acme@kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Jiri Olsa <jolsa@redhat.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Sami Tolvanen <samitolvanen@google.com>, clang-built-linux@googlegroups.com,
+ Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ Ian (please check the patch at the bottom, thanks)
+This patch series adds support for Clang's Shadow Call Stack
+(SCS) mitigation, which uses a separately allocated shadow stack
+to protect against return address overwrites. More information
+can be found here:
 
-On 16/04/2020 08:15, Joakim Zhang wrote:
->> ?
->>
->> If that doesn't work, then I'll try this myself.
-> Hi John,
-> 
-> It still cannot work with this code change.
-> 
+  https://clang.llvm.org/docs/ShadowCallStack.html
 
-So I got a SMMUv3 PMCG test metric working here:
+SCS provides better protection against traditional buffer
+overflows than CONFIG_STACKPROTECTOR_*, but it should be noted
+that SCS security guarantees in the kernel differ from the ones
+documented for user space. The kernel must store addresses of
+shadow stacks used by inactive tasks and interrupt handlers in
+memory, which means an attacker capable of reading and writing
+arbitrary memory may be able to locate them and hijack control
+flow by modifying shadow stacks that are not currently in use.
 
-https://github.com/hisilicon/kernel-dev/commits/private-topic-perf-5.7-sys-pmu-events-v1-debug
+SCS is currently supported only on arm64, where the compiler
+requires the x18 register to be reserved for holding the current
+task's shadow stack pointer.
 
-as follows:
+With -fsanitize=shadow-call-stack, the compiler injects
+instructions to all non-leaf C functions to store the return
+address to the shadow stack, and unconditionally load it again
+before returning. As a result, SCS is incompatible with features
+that rely on modifying function return addresses in the kernel
+stack to alter control flow. A copy of the return address is
+still kept in the kernel stack for compatibility with stack
+unwinding, for example.
 
-john@ubuntu:~/perf list metric
+SCS has a minimal performance overhead, but allocating
+shadow stacks increases kernel memory usage. The feature is
+therefore mostly useful on hardware that lacks support for PAC
+instructions.
 
-List of pre-defined events (to be used in -e):
+Changes in v11:
+ - Rebased, added maintainers for kernel/ changes.
 
-Metrics:
+Changes in v10:
+ - Removed an unnecessary <asm/scs.h> include from head.S.
 
-   smmuv3_pmcg.fake
-        [SMMUv3 PMCG fake metric]
+Changes in v9:
+ - Fixed grammar in the Kconfig help text.
+ - Changed Kconfig to allow SCS to be selected with the patchable-
+   function-entry graph tracer.
+ - Changed the EFI stub patch to not filter out -ffixed-x18, only
+   SCS flags.
 
-john@ubuntu:~/sudo ./perf stat -a -M smmuv3_pmcg.fake sleep 1
+Changes in v8:
+ - Added __noscs to __hyp_text instead of filtering SCS flags from
+   the entire arch/arm64/kvm/hyp directory.
+ - Added a patch to filter out -ffixed-x18 and SCS flags from the
+   EFI stub.
 
-  Performance counter stats for 'system wide':
+Changes in v7:
+ - Changed irq_stack_entry/exit to store the shadow stack pointer
+   in x24 instead of x20 as kernel_entry uses x20-x23 to store
+   data that can be used later. Updated the comment as well.
+ - Changed the Makefile in arch/arm64/kvm/hyp to also filter out
+   -ffixed-x18.
+ - Changed SHADOW_CALL_STACK to depend on !FUNCTION_GRAPH_TRACER
+   instead of not selecting HAVE_FUNCTION_GRAPH_TRACER with SCS.
+ - Removed ifdefs from the EFI wrapper and updated the comment to
+   explain why we are restoring x18.
+ - Rebased as Ard's x18 patches that were part of this series have
+   already been merged.
 
-    531510      smmuv3_pmcg.transaction  (49.90%)
-124914193      smmuv3_pmcg.cycles       (49.90%)
-    531331      smmuv3_pmcg.transaction  (50.29%)
-124879887      smmuv3_pmcg.cycles       (50.29%)
-    531269      smmuv3_pmcg.transaction  (50.45%)
-124867388      smmuv3_pmcg.cycles       (50.45%)
-    531372      smmuv3_pmcg.transaction  (50.45%)
-124896723      smmuv3_pmcg.cycles       (50.45%)
-    531431      smmuv3_pmcg.transaction  (50.12%)
-124901700      smmuv3_pmcg.cycles       (50.12%)
-    531574      smmuv3_pmcg.transaction  (49.72%)
-124924231      smmuv3_pmcg.cycles       (49.72%)
-    531598      smmuv3_pmcg.transaction  (49.56%)
-124916914      smmuv3_pmcg.cycles       (49.56%)
-    531440      smmuv3_pmcg.transaction  (49.56%)
-124902473      smmuv3_pmcg.cycles       (49.56%)
+Changes in v6:
+ - Updated comment in the EFI RT wrapper to include the
+   explanation from the commit message.
+ - Fixed the SHADOW_CALL_STACK_VMAP config option and the
+   compilation errors in scs_init_irq()
+ - Updated the comment in entry.S to Mark's suggestion
+ - Fixed the WARN_ON in scs_init() to trip only when the return
+   value for cpuhp_setup_state() is < 0.
+ - Removed ifdefs from the code in arch/arm64/kernel/scs.c and
+   added separate shadow stacks for the SDEI handler
 
-        1.001167246 seconds time elapsed
+Changes in v5:
+ - Updated the comment in __scs_base() to Mark's suggestion
+ - Changed all instances of uintptr_t to unsigned long
+ - Added allocation poisoning for KASAN to catch unintentional
+   shadow stack accesses; moved set_set_magic before poisoning
+   and switched scs_used() and scs_corrupted() to access the
+   buffer using READ_ONCE_NOCHECK() instead
+ - Changed scs_free() to check for NULL instead of zero
+ - Renamed SCS_CACHE_SIZE to NR_CACHED_SCS
+ - Added a warning if cpuhp_setup_state fails in scs_init()
+ - Dropped patches disabling kretprobes after confirming there's
+   no functional conflict with SCS instrumentation
+ - Added an explanation to the commit message why function graph
+   tracing and SCS are incompatible
+ - Removed the ifdefs from arch/arm64/mm/proc.S and added
+   comments explaining why we are saving and restoring x18
+ - Updated scs_check_usage format to include process information
 
-So you can compare this to yours.
+Changes in v4:
+ - Fixed authorship for Ard's patches
+ - Added missing commit messages
+ - Commented code that clears SCS from thread_info
+ - Added a comment about SCS_END_MAGIC being non-canonical
 
-I did have to fix what looks like a bug in mainline on that branch:
+Changes in v3:
+ - Switched to filter-out for removing SCS flags in Makefiles
+ - Changed the __noscs attribute to use __no_sanitize__("...")
+   instead of no_sanitize("...")
+ - Cleaned up inline function definitions and moved task_scs()
+   into a macro
+ - Cleaned up scs_free() and scs_magic()
+ - Moved SCS initialization into dup_task_struct() and removed
+   the now unused scs_task_init()
+ - Added comments to __scs_base() and scs_task_reset() to better
+   document design choices
+ - Changed copy_page to make the offset and bias explicit
 
---->8-----
-
-perf parse-events: Fix comparison of evsel and leader pmu name
-
-Since we now strdup() the pmu name for the event selector, use strcmp()
-instead of pointer equality for comparison.
-
-Fixes: d4953f7 ("perf parse-events: Fix 3 use after frees found with 
-clang ASANutil/parse-events.c")
-Signed-off-by: John Garry <john.garry@huawei.com>
----
-tools/perf/util/parse-events.c
-@@ -1629,7 +1629,7 @@ parse_events__set_leader_for_uncore_aliase(char 
-*name, struct list_head *list,
-		 * event. That can be used to distinguish the leader from
-		 * other members, even they have the same event name.
-		 */
-		if ((leader != evsel) && (leader->pmu_name == evsel->pmu_name)) {
-		if ((leader != evsel) && !strcmp(leader->pmu_name, evsel->pmu_name)) {
-			is_leader = false;
-			continue;
-		}
+Changes in v2:
+ - Changed Ard's KVM patch to use x29 instead of x18 for the
+   guest context, which makes restore_callee_saved_regs cleaner
+ - Updated help text (and commit messages) to point out
+   differences in security properties compared to user space SCS
+ - Cleaned up config options: removed the ROP protection choice,
+   replaced the CC_IS_CLANG dependency with an arch-specific
+   cc-option test, and moved disabling of incompatible config
+   options to an arch-specific Kconfig
+ - Added CC_FLAGS_SCS, which are filtered out where needed
+   instead of using DISABLE_SCS
+ - Added a __has_feature guard around __noscs for older clang
+   versions
 
 
----8<
+Sami Tolvanen (12):
+  add support for Clang's Shadow Call Stack (SCS)
+  scs: add accounting
+  scs: add support for stack usage debugging
+  scs: disable when function graph tracing is enabled
+  arm64: reserve x18 from general allocation with SCS
+  arm64: preserve x18 when CPU is suspended
+  arm64: efi: restore x18 if it was corrupted
+  arm64: vdso: disable Shadow Call Stack
+  arm64: disable SCS for hypervisor code
+  arm64: implement Shadow Call Stack
+  arm64: scs: add shadow stacks for SDEI
+  efi/libstub: disable SCS
 
-Without it, I would get a spew of these:
+ Makefile                              |   6 +
+ arch/Kconfig                          |  35 ++++
+ arch/arm64/Kconfig                    |   5 +
+ arch/arm64/Makefile                   |   4 +
+ arch/arm64/include/asm/kvm_hyp.h      |   2 +-
+ arch/arm64/include/asm/scs.h          |  39 ++++
+ arch/arm64/include/asm/suspend.h      |   2 +-
+ arch/arm64/include/asm/thread_info.h  |   3 +
+ arch/arm64/kernel/Makefile            |   1 +
+ arch/arm64/kernel/asm-offsets.c       |   3 +
+ arch/arm64/kernel/efi-rt-wrapper.S    |  11 +-
+ arch/arm64/kernel/entry.S             |  47 ++++-
+ arch/arm64/kernel/head.S              |   8 +
+ arch/arm64/kernel/irq.c               |   2 +
+ arch/arm64/kernel/process.c           |   2 +
+ arch/arm64/kernel/scs.c               | 114 ++++++++++++
+ arch/arm64/kernel/sdei.c              |   7 +
+ arch/arm64/kernel/smp.c               |   4 +
+ arch/arm64/kernel/vdso/Makefile       |   2 +-
+ arch/arm64/mm/proc.S                  |  14 ++
+ drivers/base/node.c                   |   6 +
+ drivers/firmware/efi/libstub/Makefile |   3 +
+ fs/proc/meminfo.c                     |   4 +
+ include/linux/compiler-clang.h        |   6 +
+ include/linux/compiler_types.h        |   4 +
+ include/linux/mmzone.h                |   3 +
+ include/linux/scs.h                   |  57 ++++++
+ init/init_task.c                      |   8 +
+ kernel/Makefile                       |   1 +
+ kernel/fork.c                         |   9 +
+ kernel/sched/core.c                   |   2 +
+ kernel/scs.c                          | 246 ++++++++++++++++++++++++++
+ mm/page_alloc.c                       |   6 +
+ mm/vmstat.c                           |   3 +
+ 34 files changed, 662 insertions(+), 7 deletions(-)
+ create mode 100644 arch/arm64/include/asm/scs.h
+ create mode 100644 arch/arm64/kernel/scs.c
+ create mode 100644 include/linux/scs.h
+ create mode 100644 kernel/scs.c
 
-assertion failed at util/parse-events.c:1637
 
-@Ian, does this change look right? I am not intimately familiar with 
-that code.
-
-Thanks,
-John
-
+base-commit: 00086336a8d96a04aa960f912287692a258f6cf5
+-- 
+2.26.1.301.g55bc3eb7cb9-goog
 
 
 _______________________________________________
