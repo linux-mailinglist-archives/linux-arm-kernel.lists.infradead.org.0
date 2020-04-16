@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C256C1ACD7E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:23:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF5021ACD98
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 18:24:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K4YiuJrf3vnORliV3saqe//AuQ3WxLXIFOexbiqb3wI=; b=mjwa5w3EteHy2/
-	+klz6W5wM/fEaOaEQhFXJJHlIyLiEXsBL8TSMBVNbNxB4rIsu9Md8TinVj6075ElRPIkkYmLV6s13
-	P5w7Uc2z5AxFNZQDqcpxKyX2vIguM5RxrF+8j5OK2t4E8vve+qdR3Hz+wioQS5fArOOp/goyXQ/aW
-	OAbOihj3T0C5FNriNLjv92QGOn8ANFlS82nIRZbIjqjR6mZpiDfJupxuEbjzXObzF4OFqq1GLMTJL
-	Z1DcYtJJlQtOjB8u7OwRsPuVQc7OGm38iNTW/yrzcbHESx23YbvQvfv4tWbNuRwHvWYebaSe1pdhp
-	QDDR7sMEbC+CFcWEYSYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WTUkdmgOvh9zfNDQ1Vz8o4ou2BdFssbkxVXSfMHlGOs=; b=AN969IySfHwqQeRSF17Fsu2XC
+	6H65fEMUS6kkkRM9mZYjCRji6jzbHmt7C8++h0hBtheoSL682CKkn1D4XTYvPPc+S+iMuzosdKm58
+	vitc4FjRweNIstX4qaEEw1v2MltSdpvKsFq3Fpo1hikdBE/LS5hFrR+p1JZJ24kQpyAp/4CURVmeP
+	bWGhvbzOdorkVlc4ffoqZvCFzOspFzzj42Xx3KQmHcckewFeQOw94ZE3IPZ8x9Q8dsnvuptEanhFE
+	3rILWysKq7edc2I13HqO0QMdpryWnPNDOhfVuF5cGygkUbLdm2GU0JVJ1cdZ3NmrirYk76cYE8YZx
+	2PewzJtHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP7IH-0005m1-7m; Thu, 16 Apr 2020 16:23:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jP7JC-00067S-Fi; Thu, 16 Apr 2020 16:24:10 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP7IA-0005lE-LM; Thu, 16 Apr 2020 16:23:08 +0000
-Received: from mail-ej1-f50.google.com (mail-ej1-f50.google.com
- [209.85.218.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jP7J3-000679-9u
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 16:24:02 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587054241; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=bwde/P04Uj3GTzNnCbAcH3UyrPWOeOqsIWQwb1Jxqqc=;
+ b=IKu6V5IuuazSR9BpaMw46eUu60cXGw7jQA/t0KpkP2X7qUKugLQZZA6Tr/+DqM4bGdW73y4O
+ BzvSTEHW/ACMQ4O65Z/TZ27UiM2SOpYdaWZcO+53uy4sjg3NgpHjSSRNO28ZmYimy2Y/Q2vB
+ YgZn8C9KlaX6Pw5ned5bQEEHlDw=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e9886a0.7ff1f3a07ab0-smtp-out-n05;
+ Thu, 16 Apr 2020 16:24:00 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 95FBAC4478F; Thu, 16 Apr 2020 16:23:59 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B07A022253;
- Thu, 16 Apr 2020 16:23:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587054186;
- bh=dYe0L8knPjq4V+e3C0CynMr68uvk2h/61C1ujyYiF70=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=V7MEdxx39YfP2AZW0LEXomuLOzYhPDadjG1M1p7YwOqsORcQXVVHXqavfTvWDpr3Y
- V0GXNVV7w9U9mLckuLo1G5UOleiYYbm0f0waGgvIz8XD716xxxFe8xxthHC9utiK9J
- V7soWb53dKIFjDhjqfA3Y52gqMKkkEL6j8qy0tXg=
-Received: by mail-ej1-f50.google.com with SMTP id n4so1711462ejs.11;
- Thu, 16 Apr 2020 09:23:05 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaIXZm5E4UB9+1mHbFGzOKRhVdcLKW5XOfYfcW0Sk/C3D2EeIq2
- NaZcjmfdXyR3pqR6UN9hQ+kP6w90/+6l7/mtlg==
-X-Google-Smtp-Source: APiQypJY17+s5/o0+wlz0famZC0WrI5UI7Klts8JPoOZRnB9zgY8QO2uzy/FBMWzeg9CvxriYGO6Q1j1IF4pKi5aPZw=
-X-Received: by 2002:a17:906:2ad4:: with SMTP id
- m20mr10975923eje.324.1587054183934; 
- Thu, 16 Apr 2020 09:23:03 -0700 (PDT)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 8065AC433BA;
+ Thu, 16 Apr 2020 16:23:58 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200311165322.1594233-1-enric.balletbo@collabora.com>
- <20200311165322.1594233-5-enric.balletbo@collabora.com>
- <02290a21-7392-a2cf-576c-215091ec05e8@suse.com>
- <1585177534.26117.4.camel@mtksdaap41>
- <f3c2926a-ef92-b004-9786-5be1645af497@suse.com>
- <1585234277.12089.3.camel@mtksdaap41>
- <73ef0b8e-2802-a047-2a56-936b63d264cb@suse.com>
-In-Reply-To: <73ef0b8e-2802-a047-2a56-936b63d264cb@suse.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Fri, 17 Apr 2020 00:22:52 +0800
-X-Gmail-Original-Message-ID: <CAAOTY__EV8PHau9CzSiA8up1QAmZxfK2QnaTid0WrNOsn2Xcag@mail.gmail.com>
-Message-ID: <CAAOTY__EV8PHau9CzSiA8up1QAmZxfK2QnaTid0WrNOsn2Xcag@mail.gmail.com>
-Subject: Re: [PATCH v12 4/5] soc / drm: mediatek: Move routing control to
- mmsys device
-To: Matthias Brugger <mbrugger@suse.com>
+Date: Thu, 16 Apr 2020 21:53:58 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 2/2] iommu/arm-smmu: Allow client devices to select direct
+ mapping
+In-Reply-To: <3f12cefb-3887-859c-ddf5-c7a0fc755152@arm.com>
+References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
+ <813cc5b2da10c27db982254b274bf26008a9e6da.1579692800.git.saiprakash.ranjan@codeaurora.org>
+ <3f12cefb-3887-859c-ddf5-c7a0fc755152@arm.com>
+Message-ID: <540fc55811d0a60a929ff1f694d6d271@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_092306_739041_9DAD5578 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200416_092401_401065_76E539A0 
+X-CRM114-Status: GOOD (  22.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,84 +89,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>, David Airlie <airlied@linux.ie>,
- Michael Turquette <mturquette@baylibre.com>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Richard Fontana <rfontana@redhat.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
- linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, CK Hu <ck.hu@mediatek.com>,
- mtk01761 <wendell.lin@mediatek.com>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Frank Wunderlich <frank-w@public-files.de>,
- Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
- Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Allison Randal <allison@lohutok.net>, Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, matthias.bgg@kernel.org,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>,
+ iommu@lists.linux-foundation.org, Tomasz Figa <tfiga@chromium.org>,
+ Rob Clark <robdclark@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Stephen Boyd <swboyd@chromium.org>,
+ Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIE1hdHRoaWFzOgoKTWF0dGhpYXMgQnJ1Z2dlciA8bWJydWdnZXJAc3VzZS5jb20+IOaWvCAy
-MDIw5bm0M+aciDI25pelIOmAseWbmyDkuIvljYgxMTo0NeWvq+mBk++8mgo+Cj4KPgo+IE9uIDI2
-LzAzLzIwMjAgMTU6NTEsIENLIEh1IHdyb3RlOgo+ID4gSGksIE1hdHRoaWFzOgo+ID4KPiA+IE9u
-IFRodSwgMjAyMC0wMy0yNiBhdCAxMjo1NCArMDEwMCwgTWF0dGhpYXMgQnJ1Z2dlciB3cm90ZToK
-PiA+PiBIaSBDSywKPiA+Pgo+ID4+IE9uIDI2LzAzLzIwMjAgMDA6MDUsIENLIEh1IHdyb3RlOgo+
-ID4+PiBIaSwgTWF0dGhpYXM6Cj4gPj4+Cj4gPj4+IE9uIFdlZCwgMjAyMC0wMy0yNSBhdCAxNzox
-NiArMDEwMCwgTWF0dGhpYXMgQnJ1Z2dlciB3cm90ZToKPiA+Pj4+Cj4gPj4+PiBPbiAxMS8wMy8y
-MDIwIDE3OjUzLCBFbnJpYyBCYWxsZXRibyBpIFNlcnJhIHdyb3RlOgo+ID4+Pj4+IFByb3ZpZGUg
-YSBtdGtfbW1zeXNfZGRwX2Nvbm5lY3QoKSBhbmQgbXRrX21tc3lzX2Rpc2Nvbm5lY3QoKSBmdW5j
-dGlvbnMgdG8KPiA+Pj4+PiByZXBsYWNlIG10a19kZHBfYWRkX2NvbXBfdG9fcGF0aCgpIGFuZCBt
-dGtfZGRwX3JlbW92ZV9jb21wX2Zyb21fcGF0aCgpLgo+ID4+Pj4+IFRob3NlIGZ1bmN0aW9ucyB3
-aWxsIGFsbG93IERSTSBkcml2ZXIgYW5kIG90aGVycyB0byBjb250cm9sIHRoZSBkYXRhCj4gPj4+
-Pj4gcGF0aCByb3V0aW5nLgo+ID4+Pj4+Cj4gPj4+Pj4gU2lnbmVkLW9mZi1ieTogRW5yaWMgQmFs
-bGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFib3JhLmNvbT4KPiA+Pj4+PiBSZXZp
-ZXdlZC1ieTogTWF0dGhpYXMgQnJ1Z2dlciA8bWF0dGhpYXMuYmdnQGdtYWlsLmNvbT4KPiA+Pj4+
-PiBSZXZpZXdlZC1ieTogQ0sgSHUgPGNrLmh1QG1lZGlhdGVrLmNvbT4KPiA+Pj4+PiBBY2tlZC1i
-eTogQ0sgSHUgPGNrLmh1QG1lZGlhdGVrLmNvbT4KPiA+Pj4+Cj4gPj4+PiBUaGlzIHBhdGNoIGRv
-ZXMgbm90IGFwcGx5IGFnYWluc3QgdjUuNi1yYzEuCj4gPj4+PiBQbGVhc2UgcmViYXNlIGFzIHRo
-aXMgaXMgYSBxdWl0ZSBiaWcgcGF0Y2ggYW5kIGl0IHdvbid0IGJlIGVhc3kgdG8gZG8gdGhhdCBi
-eSBoYW5kLgo+ID4+Pgo+ID4+PiBJIHRoaW5rIHRoaXMgcGF0Y2ggZGVwZW5kcyBvbiBbMV0gd2hp
-Y2ggaGFzIGJlZW4gYWNrZWQgYnkgbWUgYW5kIEkgaGF2ZQo+ID4+PiBub3QgcGlja2VkIGl0LiBU
-aGUgc2ltcGxlIHdheSBpcyB0aGF0IHlvdSBwaWNrIFsxXSBmaXJzdCBhbmQgdGhlbiBwaWNrCj4g
-Pj4+IHRoaXMgc2VyaWVzLgo+ID4+Pgo+ID4+PiBbMV0KPiA+Pj4gaHR0cHM6Ly9wYXRjaHdvcmsu
-a2VybmVsLm9yZy9wYXRjaC8xMTQwNjIyNy8KPiA+Pj4KPiA+Pgo+ID4+IFlvdSB3b3VsZCBuZWVk
-IHRvIHByb3ZpZGUgYSBzdGFibGUgdGFnIGZvciBtZSB0aGF0IEkgY2FuIG1lcmdlIGludG8gbXkg
-dHJlZS4gWW91Cj4gPj4gY2FuIGFsc28gdHJ5IHRvIG1lcmdlIG15IGZvci1uZXh0IFsxXSB3aGlj
-aCBoYXMgdGhlIG5ld2VzdCB2ZXJzaW9uIGZyb20gRW5yaWMuCj4gPj4gSWYgeW91IHNlZSBhbnkg
-bWVyZ2UgY29uZmxpY3QsIHRoZW4gd2UgaGF2ZSB0byBkbyBzb21ldGhpbmcgYWJvdXQgaXQgOikK
-PiA+Pgo+ID4+IFJlZ2FyZHMsCj4gPj4gTWF0dGhpYXMKPiA+Pgo+ID4+IFsxXQo+ID4+IGh0dHBz
-Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L21hdHRoaWFzLmJnZy9s
-aW51eC5naXQvbG9nLz9oPWZvci1uZXh0Cj4gPj4KPiA+Cj4gPiBZb3UgaGF2ZSBhcHBsaWVkIHRo
-aXMgc2VyaWVzLCBzbyBJIHdvdWxkIG5vdCBhcHBseSBvdGhlciBwYXRjaGVzIHdoaWNoCj4gPiB3
-b3VsZCBjb25mbGljdCB3aXRoIHRoaXMgc2VyaWVzLiBBZnRlciB0aGlzIHNlcmllcyBsYW5kIG9u
-IG1haW4gc3RyZWFtCj4gPiAod2lzaCBpdCBoYXBwZW4gaW4gdGhpcyBtZXJnZSB3aW5kb3cpLCBJ
-IHdvdWxkIHJlYmFzZSBvdGhlciBwYXRjaCBvbgo+ID4gbWFpbiBzdHJlYW0uCj4gPgo+Cj4gSSBo
-YXZlbid0ICh5ZXQpIHNlbmQgdGhlIHB1bGwgcmVxdWVzdC4gSWYgeW91IHdhbnQgdG8gYnJpbmcg
-aW4geW91ciBwYXRjaGVzIGluCj4gdjUuNyBhcyB3ZWxsIHdlIGNhbiBmaW5kIGEgc29sdXRpb24g
-dG8gdGhhdC4gU2hhbGwgSSBwcm92aWRlIHlvdSB3aXRoIGEgc3RhYmxlCj4gYnJhbmNoIHdoaWNo
-IHlvdSBjYW4gbWVyZ2U/IFRoaXMgd2F5IHlvdSBjYW4gYWRkIGFsbCB5b3VyIHBhdGNoZXMgaW4g
-dGhlIHB1bGwKPiByZXF1ZXN0IGFzIHdlbGwgYW5kIHdlIGRvbid0IGhhdmUgdG8gd2FpdCBmb3Ig
-djUuOCB0byBnZXQgdGhpbmdzIGludG8gbWFpbmxpbmUuCj4KPiBMZXQgbWUga25vdyBhbmQgSSds
-bCBwcm92aWRlIHlvdSB3aXRoIGEgc3RhYmxlIGJyYW5jaC4KClRoaXMgc2VyaWVzIGlzIGluIGxp
-bnV4LW5leHQgYnV0IGRvZXMgbm90IGluIG1haW4gc3RyZWFtLiBTbyB3b3VsZCB5b3UKcGxlYXNl
-IHByb3ZpZGUgYSBzdGFibGUgYnJhbmNoIHNvIEkgY291bGQgcHVsbCB0aGlzIHNlcmllcz8KClJl
-Z2FyZHMsCkNodW4tS3VhbmcuCgo+Cj4gUmVnYXJkcywKPiBNYXR0aGlhcwo+Cj4gPiBSZWdhcmRz
-LAo+ID4gQ0sKPiA+Cj4gPj4+IFJlZ2FyZHMsCj4gPj4+IENLCj4gPj4+Cj4gPj4+Pgo+ID4+Pj4g
-UmVnYXJkcywKPiA+Pj4+IE1hdHRoaWFzCj4gPj4+Pgo+ID4+Pj4+IC0tLQo+ID4+Pj4+CgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+Hi Robin,
+
+On 2020-04-16 19:28, Robin Murphy wrote:
+> On 2020-01-22 11:48 am, Sai Prakash Ranjan wrote:
+>> From: Jordan Crouse <jcrouse@codeaurora.org>
+>> 
+>> Some client devices want to directly map the IOMMU themselves instead
+>> of using the DMA domain. Allow those devices to opt in to direct
+>> mapping by way of a list of compatible strings.
+>> 
+>> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+>> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>> ---
+>>   drivers/iommu/arm-smmu-qcom.c | 39 
+>> +++++++++++++++++++++++++++++++++++
+>>   drivers/iommu/arm-smmu.c      |  3 +++
+>>   drivers/iommu/arm-smmu.h      |  5 +++++
+>>   3 files changed, 47 insertions(+)
+>> 
+>> diff --git a/drivers/iommu/arm-smmu-qcom.c 
+>> b/drivers/iommu/arm-smmu-qcom.c
+>> index 64a4ab270ab7..ff746acd1c81 100644
+>> --- a/drivers/iommu/arm-smmu-qcom.c
+>> +++ b/drivers/iommu/arm-smmu-qcom.c
+>> @@ -3,6 +3,7 @@
+>>    * Copyright (c) 2019, The Linux Foundation. All rights reserved.
+>>    */
+>>   +#include <linux/of_device.h>
+>>   #include <linux/qcom_scm.h>
+>>     #include "arm-smmu.h"
+>> @@ -11,6 +12,43 @@ struct qcom_smmu {
+>>   	struct arm_smmu_device smmu;
+>>   };
+>>   +static const struct arm_smmu_client_match_data qcom_adreno = {
+>> +	.direct_mapping = true,
+>> +};
+>> +
+>> +static const struct arm_smmu_client_match_data qcom_mdss = {
+>> +	.direct_mapping = true,
+>> +};
+> 
+> Might it make sense to group these by the desired SMMU behaviour
+> rather than (apparently) what kind of device the client happens to be,
+> which seems like a completely arbitrary distinction from the SMMU
+> driver's PoV?
+> 
+
+Sorry, I did not get the "grouping by the desired SMMU behaviour" thing.
+Could you please give some more details?
+
+>> +
+>> +static const struct of_device_id qcom_smmu_client_of_match[] = {
+>> +	{ .compatible = "qcom,adreno", .data = &qcom_adreno },
+>> +	{ .compatible = "qcom,mdp4", .data = &qcom_mdss },
+>> +	{ .compatible = "qcom,mdss", .data = &qcom_mdss },
+>> +	{ .compatible = "qcom,sc7180-mdss", .data = &qcom_mdss },
+>> +	{ .compatible = "qcom,sdm845-mdss", .data = &qcom_mdss },
+>> +	{},
+>> +};
+>> +
+>> +static const struct arm_smmu_client_match_data *
+>> +qcom_smmu_client_data(struct device *dev)
+>> +{
+>> +	const struct of_device_id *match =
+>> +		of_match_device(qcom_smmu_client_of_match, dev);
+>> +
+>> +	return match ? match->data : NULL;
+> 
+> of_device_get_match_data() is your friend.
+> 
+
+Ok will use it.
+
+>> +}
+>> +
+>> +static int qcom_smmu_request_domain(struct device *dev)
+>> +{
+>> +	const struct arm_smmu_client_match_data *client;
+>> +
+>> +	client = qcom_smmu_client_data(dev);
+>> +	if (client)
+>> +		iommu_request_dm_for_dev(dev);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>>   static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
+>>   {
+>>   	int ret;
+>> @@ -41,6 +79,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device 
+>> *smmu)
+>>   }
+>>     static const struct arm_smmu_impl qcom_smmu_impl = {
+>> +	.req_domain = qcom_smmu_request_domain,
+>>   	.reset = qcom_smmu500_reset,
+>>   };
+>>   diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+>> index 16c4b87af42b..67dd9326247a 100644
+>> --- a/drivers/iommu/arm-smmu.c
+>> +++ b/drivers/iommu/arm-smmu.c
+>> @@ -1448,6 +1448,9 @@ static int arm_smmu_add_device(struct device 
+>> *dev)
+>>   	device_link_add(dev, smmu->dev,
+>>   			DL_FLAG_PM_RUNTIME | DL_FLAG_AUTOREMOVE_SUPPLIER);
+>>   +	if (smmu->impl && smmu->impl->req_domain)
+>> +		return smmu->impl->req_domain(dev);
+>> +
+> 
+> There are about 5 different patchsets flying around at the moment that
+> all touch default domain allocation, so this is a fast-moving target,
+> but I think where the dust should settle is with arm_smmu_ops
+> forwarding .def_domain_type (or whatever it ends up as) calls to
+> arm_smmu_impl as appropriate.
+> 
+
+I'll wait till the dust settles down and then post the next version.
+
+>>   	return 0;
+>>     out_cfg_free:
+>> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+>> index 8d1cd54d82a6..059dc9c39f64 100644
+>> --- a/drivers/iommu/arm-smmu.h
+>> +++ b/drivers/iommu/arm-smmu.h
+>> @@ -244,6 +244,10 @@ enum arm_smmu_arch_version {
+>>   	ARM_SMMU_V2,
+>>   };
+>>   +struct arm_smmu_client_match_data {
+>> +	bool direct_mapping;
+>> +};
+> 
+> Does this need to be public? I don't see the other users...
+> 
+
+Will move this out.
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
