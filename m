@@ -2,81 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A1D41AB522
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 02:59:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B1FF1AB53E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 03:11:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rcLtnoJMfu/en6bYQ9rA8kWfyjA5P7up2vEgKDgVL68=; b=svgaFkhV4vQMZO
-	+DeQU3w8qfe2L3h/uEEWdm/h6WibTHxTT09c4DWJ8zku8X5K3wBTBYngDgG9ZKNaKaZoc67R+fJsg
-	ocv57KbYsZpakSnqVvLOFlMfmuzm8nNaPj4xzJzJzK1cTDmNgKnMDs+Mi9GNs641ZNSmpbSiTNr2G
-	vye4Q5W6DoLmXNf8A9ZcW518Vv0+QhcQdhXyezLiZph7imJM2P4wwNAAObsYkuxmmJ0XWiZtvRLmA
-	283zc0WNSQAW98oE9rwfVNbz05LKAaxtXwY8R46RZh2tzcs8pBAD55cBUWcn4uhwQyosSSObwcTv6
-	bwNvRFdNDFmgOZitnNSA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=glZ3nnXrDS9FnMnEB/kmMbbg/81j8bRPVqvbJzCJswY=; b=H9rRdXyBGBPQd39+h7JbOJz5D
+	qCNIzaBuJgsP33zHh9K/HLzX6CukuuKQ093Wwp2G04sohVay0AFjIhGk9AMjoXC+ktjsvZfQIVUiV
+	74arbsEb2iE+XIGKcMeTK+Wyb7mz0m8QNW0z17i9ojda2CwDL6gVzNPL6BQ3mVmPCh5WGOBuuizTg
+	DTZC8leRK+Ei1gCHECOf7Xd5Qb9UXb81l47OZUNyye0/73XRzfo/W5M1pgjqjKdn8jHrdlmzX/pEQ
+	Cw8oGcRS919ZeCXO0xSdPo8ZMdKqIucyM3596ouX/LWMFSBrx6Hs0xLmjAheJbUsXVSOvlsTFM3nh
+	xGWYw4EYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOsro-0001lX-Sf; Thu, 16 Apr 2020 00:58:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOsrf-0001l1-Oh
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 00:58:49 +0000
-Received: from mail-qt1-f172.google.com (mail-qt1-f172.google.com
- [209.85.160.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C795120936
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 00:58:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586998726;
- bh=NjTvNrxjlHFScy4ebnKzSnM4jSIs1SlF2paT+ZaYBeI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tdrhhcUfkIKCM0s18mbeSn5SP9h0vWFC+0x6fkNf029GOJlZMaz2gbXoDORxN6UGT
- Xk64ZR1+eHjz/HTPl+uZpf4Fq6rSk56xrWIJTvM4SVpKHaWp4yR/YfgpHAKb1prJeW
- RTN8+ZqrEHL1ytzFowd4LpDpB9ps6wXa3Y8MCfHE=
-Received: by mail-qt1-f172.google.com with SMTP id x2so15173639qtr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 17:58:46 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaxsYziunRCd53/xqpN65xpX1VbUPBbODFfp6uPRIYapRWSiASC
- 3UqAWfj5fTm/p2c7OKCARj5qx0fWga6xZoIF8w==
-X-Google-Smtp-Source: APiQypIb8Qh+U7+DzcXL5pISte9uAUnyZWYerl12Hfw9dl6hFAs7Ug63drp+s8XNKQa3pH3auFFQ0DRFz+hVTsEascg=
-X-Received: by 2002:ac8:39e5:: with SMTP id v92mr24067936qte.224.1586998725925; 
- Wed, 15 Apr 2020 17:58:45 -0700 (PDT)
+	id 1jOt3Z-0002JF-0O; Thu, 16 Apr 2020 01:11:05 +0000
+Received: from cmccmta1.chinamobile.com ([221.176.66.79])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOt3Q-0002IS-Pc
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 01:10:59 +0000
+Received: from spf.mail.chinamobile.com (unknown[172.16.121.11]) by
+ rmmx-syy-dmz-app04-12004 (RichMail) with SMTP id 2ee45e97b0824dd-737b4;
+ Thu, 16 Apr 2020 09:10:26 +0800 (CST)
+X-RM-TRANSID: 2ee45e97b0824dd-737b4
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG: 00000000
+Received: from [172.20.146.139] (unknown[112.25.154.146])
+ by rmsmtp-syy-appsvr06-12006 (RichMail) with SMTP id 2ee65e97b08104b-9e65a;
+ Thu, 16 Apr 2020 09:10:26 +0800 (CST)
+X-RM-TRANSID: 2ee65e97b08104b-9e65a
+Subject: Re: [PATCH] i2c: drivers: Omit superfluous error message
+ inefm32_i2c_probe()
+To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
+References: <20200415135734.14660-1-tangbin@cmss.chinamobile.com>
+ <20200415142225.pxstqwyqvj7ayd6m@pengutronix.de>
+From: Tang Bin <tangbin@cmss.chinamobile.com>
+Message-ID: <9948c5c2-fbdd-4782-8fae-1eccb03e5c85@cmss.chinamobile.com>
+Date: Thu, 16 Apr 2020 09:12:21 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200409175238.3586487-1-thierry.reding@gmail.com>
- <20200409175238.3586487-3-thierry.reding@gmail.com>
- <20200415162449.GA1842@bogus> <20200415233532.GA211822@ulmo>
-In-Reply-To: <20200415233532.GA211822@ulmo>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 15 Apr 2020 19:58:33 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqK6Ku3woyc+9kxzjN_fih_ygWWnt3EFdVRi6UBd7=2iFw@mail.gmail.com>
-Message-ID: <CAL_JsqK6Ku3woyc+9kxzjN_fih_ygWWnt3EFdVRi6UBd7=2iFw@mail.gmail.com>
-Subject: Re: [PATCH v6 02/14] of: reserved-memory: Support lookup of regions
- by name
-To: Thierry Reding <thierry.reding@gmail.com>
+In-Reply-To: <20200415142225.pxstqwyqvj7ayd6m@pengutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_175847_830589_557A27EF 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200415_181057_318185_47886726 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [221.176.66.79 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,49 +70,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Jon Hunter <jonathanh@nvidia.com>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra <linux-tegra@vger.kernel.org>,
- Dmitry Osipenko <digetx@gmail.com>, linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: wsa@the-dreams.de, linux-kernel@vger.kernel.org, o.rempel@pengutronix.de,
+ linux-i2c@vger.kernel.org, ardb@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 6:35 PM Thierry Reding <thierry.reding@gmail.com> wrote:
->
-> On Wed, Apr 15, 2020 at 11:24:49AM -0500, Rob Herring wrote:
-> > On Thu,  9 Apr 2020 19:52:26 +0200, Thierry Reding wrote:
-> > > From: Thierry Reding <treding@nvidia.com>
-> > >
-> > > Add support for looking up memory regions by name. This looks up the
-> > > given name in the newly introduced memory-region-names property and
-> > > returns the memory region at the corresponding index in the memory-
-> > > region(s) property.
-> > >
-> > > Signed-off-by: Thierry Reding <treding@nvidia.com>
-> > > ---
-> > >  drivers/of/of_reserved_mem.c    | 19 +++++++++++++++++++
-> > >  include/linux/of_reserved_mem.h | 11 +++++++++++
-> > >  2 files changed, 30 insertions(+)
-> > >
-> >
-> > Reviewed-by: Rob Herring <robh@kernel.org>
->
-> Hi Rob,
->
-> thanks for the review. Do you want me to apply this and patch 3/14 to a
-> stable branch and send to you as a pull request? That way I could use
-> that same branch to resolve the dependency in the Tegra tree for the
-> memory controller driver patches.
-
-I think it is fine for you to just take the patches.
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVXdlOgoKT24gMjAyMC80LzE1IDIyOjIyLCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToKPiBI
+ZWxsbywKPgo+IE9uIFdlZCwgQXByIDE1LCAyMDIwIGF0IDA5OjU3OjM0UE0gKzA4MDAsIFRhbmcg
+QmluIHdyb3RlOgo+PiBJbiB0aGUgZnVuY3Rpb24gZWZtMzJfaTJjX3Byb2JlKCksd2hlbiBnZXQg
+aXJxIGZhaWxlZCx0aGUgZnVuY3Rpb24KPj4gcGxhdGZvcm1fZ2V0X2lycSgpIGxvZ3MgYW4gZXJy
+b3IgbWVzc2FnZSxzbyByZW1vdmUgcmVkdW5kYW50IG1lc3NhZ2UKPj4gaGVyZS4KPiBhZGRpbmcg
+YSBzcGFjZSBhZnRlciBlYWNoIGNvbW1hIHNlZW1zIHVzdWFsIHN0eWxlLgpHb3QgaXQsIEkgd2ls
+bCBub3RpY2UuIFdoZXRoZXIgc2hvdWxkIEkgc3VibWl0IHYyIGZvciB0aGlzIHByb2JsZW1zPyBU
+aGFua3MuCj4KPj4gU2lnbmVkLW9mZi1ieTogVGFuZyBCaW4gPHRhbmdiaW5AY21zcy5jaGluYW1v
+YmlsZS5jb20+Cj4+IFNpZ25lZC1vZmYtYnk6IFNoZW5nanUgWmhhbmcgPHpoYW5nc2hlbmdqdUBj
+bXNzLmNoaW5hbW9iaWxlLmNvbT4KPiBVc3VhbGx5IHRoZSBTaWduLW9mZiBvZiB0aGUgc2VuZGVy
+IGNvbWVzIGxhc3QuIEhvdyBpcyBTaGVuZ2p1IFpoYW5nCj4gaW52b2x2ZWQgd2l0aCB0aGlzIHBh
+dGNoPwpHb3QgaXQsIEkgd2lsbCBub3RpY2UgbmV4dCB0aW1lLiBUaGFua3MuCj4+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL2kyYy9idXNzZXMvaTJjLWVmbTMyLmMgYi9kcml2ZXJzL2kyYy9idXNzZXMv
+aTJjLWVmbTMyLmMKPj4gaW5kZXggYThjNjMyM2U3Li40ZGUzMWZhZTcgMTAwNjQ0Cj4+IC0tLSBh
+L2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtZWZtMzIuYwo+PiArKysgYi9kcml2ZXJzL2kyYy9idXNz
+ZXMvaTJjLWVmbTMyLmMKPj4gQEAgLTM1Miw3ICszNTIsNiBAQCBzdGF0aWMgaW50IGVmbTMyX2ky
+Y19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+PiAgIAo+PiAgIAlyZXQgPSBw
+bGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDApOwo+PiAgIAlpZiAocmV0IDw9IDApIHsKPj4gLQkJZGV2
+X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGdldCBpcnEgKCVkKVxuIiwgcmV0KTsKPiBUaGUg
+Y2hhbmdlIGxvb2tzIGZpbmUuCgpUaGFua3MsCgpUYW5nIEJpbgoKPgoKCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
