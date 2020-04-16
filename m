@@ -2,110 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CF611ABE3A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 12:41:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 586E81ABE40
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 12:42:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Qe00qkK3es9CH4j+73uM3zLFKNLJb6HOqlK1TTk69A=; b=CbWR0GF/kJsGIK
-	6lglGA2jBAA5aftZ89LvziMMXg5pnatBHz86hcjHkotaZuCVJdxX7G/U5U0xR9TpFYDOKrAeMU76S
-	vuiUG3/kA9MWSAnM/dmCBTFXcg0cwrZul28e88uFmrgijpQE+YYgAvISA+hF2238PriCPNZR1Ishm
-	1xtSqhV4ctQL0ndYdLr/715Pn/OfelszuilZpCE3mzODfxCAEeJJ60/U3crsdlk+ADC60yWGNbZ20
-	PXZ5BrlIikv+t1IltG8nLPe6cfZYK48YVIIefUZz6Bz+JWl8yfgwJWxbkc5VHUwbxiogiwWpeYwWi
-	tjJpHucztE/SzAcmcFKw==;
+	List-Owner; bh=dNETbCfmXAZKgx73XK44nDF/sHB7O79/vJwaC34fy38=; b=qOkfPJJij5TTdK
+	gCQjmeiPzKUp2ECwd5Pt6KC8UywG5xx/EIwIPeZg9pUjuz64218mSHaUZGqJDMm7VrwFxtHJNKn5i
+	jbbNaIQdZEeEj9FP0MqeGGfGgQSzCfKbtteW6NZ74OTUq2zoFPnJ3+XG3hRYBDa5NhIiJNEAfyjrk
+	t4gV9UF/i9YFvx68ZmEZlWymjNoMdPeW6RhBVJaeB95y+JRG3KzMS34sa+cGlfKTu7O9WFWmRUiAv
+	jslhvAwNRCjJ8bl9a9DKJJD8JlSXQ/TVztwiUyv6ad+TeRIhxezPvtraBmLATH+pknQVymsOUvhyk
+	Es6geu2nCG+wokYfyzvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP1xo-0004D2-3J; Thu, 16 Apr 2020 10:41:44 +0000
-Received: from mail-eopbgr30049.outbound.protection.outlook.com ([40.107.3.49]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1jP1yL-0004bz-Hx; Thu, 16 Apr 2020 10:42:17 +0000
+Received: from mail-eopbgr60072.outbound.protection.outlook.com ([40.107.6.72]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP1xJ-0003tP-Lj
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 10:41:15 +0000
+ id 1jP1yA-0004au-Rf
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 10:42:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XvoDWYg4XxEueYcVKvrcCgmI6Z6O3+cP1l6AsWuHtjqg4S2TTsfMw11HhfB8IvG+0g22tL5y2SbnBUa4BrFquw6eKIyvYxQlZAVGArt/wCntc6rBaH7HQBZbuHoezdfI+pwYwD4OAuFTuEtsWobvRaHk95h+90pJsmdI/szkchW3BzzMoCp5VjAhd3YM3Q4Yv5xKnZs8s0l/0HRbWUUc0dwdylM2Yyz7gdhe3L+rKCHpED0iO92z30+ajHS8GCG/zdu+0aiy1imKriAkvsXbbWlTA62c4cyXYMHB/s+jy2bl7/DXvph/PLQsPNytkEsKMqkoUWReYJzNY1zK+DbaUQ==
+ b=cnEwid3Qog2oTAQsJXjysCWv8qWbuzIFp+JlgvLZB+GWhsbtIZJj7BTVqKa3tGWJ6tbQ8XbZq6nvg9L7sH9kM/AvvcoYewZCRquFp8wH+nMtWITtN1DhaPwjW/5BoNyw4fnM7XgJMPAcYffgib1ChpAXF+v+YXW1Sl6KzIlOFBkGlfhxLXIvW3/B4XG7OXk3LLt7eIVAYn0pczN5+EBuRMx+1J70ZXzWQ1M6Ign/sYLOby9sxlOrZuGACDztWSbYmNK0Zs6wtzTlfqPm03DvIweqmYwTRPh0iLb9AHqBUV/9OWK0kdbPxiau79Ci8Me8FFP2jZpcpKW2FDQ/LCx4Ag==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DvZ3UqyB84w50xqC6DmjHMedefp1hAc+hk2HOry1Lj4=;
- b=Lc4uQv4yUpSDhATE4TdUwpibtIQH98yISnssHs+2sBYwpN+K4cd+193J/7W26FQ/UMsq+rlJt50E+XwFmzTN+LTyaz0UOpYLwJKIhHGxSuL6+3G/x4a2/bif7DoZdegn9hLUBAdyt2tLHRHl6neaYY+ScbrjAliMKy41p/Lq18to67TkAa4N4DJYngacv9gU53TfGpVttI71USSptmTlCrEXVMxyDaucXifZDlOvNkykKbbTGEeCtsio73vetxcj8VGetWT22IuB1FzpOAu1xvrqdddTEdiZrmPaXZjecPQ6wJBohbXaF52Y6N6j19wQBXXoLrVPnuQBnS2sWfGdqQ==
+ bh=1UCHZxiywBcI2vc+aPSE1LvwxbfguLXQQwVJmGbFubA=;
+ b=abTJ8ErtxgE5BfEEJuiG9HRXgejeBfWOwPDk9YjYqpnQMiNRkFuhbsQ9kdFz6zba2Yxv89NIuj2Qb0iBIWd9wxlx9KgtzZgZCxXSOOjx0xMEBRUNvBxgOmxXCdNBNckNkFY0cetfNwNoyR8NqxJ4GB1ZmcJO9LcIoVWMxLMxHf7jWUtsk2w8twDABxD1Man6DIy5nACH4m9MWwbxfY4HMAjQ//pI4JTGn19HU5QCJ6yVsw6Em49invziXYow+7+pvPcfv0l6kYiirzJlXqSOIoq9zUvOh4xKRmGwocSqSlPFidocD1yaMAHkEPlgH/dhJTYUWcwD5R+QC8KwCyNdmw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ smtp.mailfrom=vaisala.com; dmarc=pass action=none header.from=vaisala.com;
+ dkim=pass header.d=vaisala.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vaisala.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DvZ3UqyB84w50xqC6DmjHMedefp1hAc+hk2HOry1Lj4=;
- b=MblH+6m/R8ImZpZOKmx0lRznK7ngROCG9vs1J7zn7WamE+Ujn1TTEvRt7ERQmFobMqeH4SpyQoglqNzbFjMhE60P46c9rVW1wbBwdTUvbHzNNZdCTjkxK9xOu42LgNDjsxNX51wsawXpK8xkvbcs4Xbyu20V9SaBuhU56j2WEWQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3785.eurprd04.prod.outlook.com (2603:10a6:8:f::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.15; Thu, 16 Apr
- 2020 10:41:10 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2900.028; Thu, 16 Apr 2020
- 10:41:10 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: RE: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
- json-schema
-Thread-Topic: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
- json-schema
-Thread-Index: AQHWE7rnIXhaMxmp60Ko8ImmCqNkpah7fmcAgAABvHCAAA6dgIAAAKhA
-Date: Thu, 16 Apr 2020 10:41:10 +0000
-Message-ID: <DB3PR0402MB391655808CDD7AF9250671F7F5D80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1587019158-12143-1-git-send-email-Anson.Huang@nxp.com>
- <20200416093932.2mkcyv4rs6v6a24a@pengutronix.de>
- <DB3PR0402MB391613C2B53CEE067E1C7EC7F5D80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20200416103803.eifgth77wi44pejc@pengutronix.de>
-In-Reply-To: <20200416103803.eifgth77wi44pejc@pengutronix.de>
+ bh=1UCHZxiywBcI2vc+aPSE1LvwxbfguLXQQwVJmGbFubA=;
+ b=Kr+C2UvVHp9V/V+zr2eWwMIo88hnE4+KhefDS3T9MhOFnX7FWu59ASGX0vkH+QJuI4mO4oegInKBt1UKJSLCdy2fBpv9vVknoQr1Eh+QRUpk6EbXXGG2qX8ZOpwjl9ZV82iZdz0O/bpsggGRyploc8A8MHHLus3nWFHjH+Qzejc=
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com (2603:10a6:208:107::25)
+ by AM0PR06MB4145.eurprd06.prod.outlook.com (2603:10a6:208:71::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.17; Thu, 16 Apr
+ 2020 10:42:02 +0000
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd]) by AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd%5]) with mapi id 15.20.2900.028; Thu, 16 Apr 2020
+ 10:42:02 +0000
+From: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+To: Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>
+Subject: RE: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Topic: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Index: AQHV5mNyTIn2+pYf+Eu7yiopaV9KGKhOcmGAgAAnv5CAATwtgIAAAa2ggCwKeCA=
+Date: Thu, 16 Apr 2020 10:42:02 +0000
+Message-ID: <AM0PR06MB51859B579FED9A4CA9761C79D4D80@AM0PR06MB5185.eurprd06.prod.outlook.com>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+ <AM0PR06MB5185E501349E06428093B62FD4F70@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <CAKfKVtGSq5rJ0EvZgyg1Rw3=d5Q4ReJUYM7hTSTPP4sXaJyJTw@mail.gmail.com>
+ <AM0PR06MB51854C1BD04607231214750ED4F40@AM0PR06MB5185.eurprd06.prod.outlook.com>
+In-Reply-To: <AM0PR06MB51854C1BD04607231214750ED4F40@AM0PR06MB5185.eurprd06.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Enabled=True;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SetDate=2020-03-19T10:25:58.2071358Z;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Name=Restricted;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_ActionId=0a9cfefb-3854-4650-a383-5328eaf57882;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Extended_MSFT_Method=Automatic;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Enabled=True;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SetDate=2020-03-19T10:25:58.2080956Z;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Name=No Label;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_ActionId=0a9cfefb-3854-4650-a383-5328eaf57882;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Parent=d5842b46-9b7a-431a-b662-8cc44ff92a4e;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Extended_MSFT_Method=Automatic
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [183.192.13.100]
+ smtp.mailfrom=ext-jaakko.laine@vaisala.com; 
+x-originating-ip: [2001:14ba:21e9:fc00:a497:c71c:e5a:cb27]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 98f7f9fe-e233-4e91-4945-08d7e1f2ad51
-x-ms-traffictypediagnostic: DB3PR0402MB3785:|DB3PR0402MB3785:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3785019C6A777219185E7E23F5D80@DB3PR0402MB3785.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-ms-office365-filtering-correlation-id: c3e0ee4f-ec5a-4351-a4be-08d7e1f2cc46
+x-ms-traffictypediagnostic: AM0PR06MB4145:
+x-microsoft-antispam-prvs: <AM0PR06MB4145F6F0DD0CBF5AB9E71470D4D80@AM0PR06MB4145.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0375972289
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:AM0PR06MB5185.eurprd06.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(39860400002)(346002)(376002)(136003)(366004)(396003)(966005)(7696005)(316002)(44832011)(478600001)(83080400001)(53546011)(26005)(6506007)(2906002)(71200400001)(7416002)(86362001)(33656002)(186003)(81156014)(8936002)(8676002)(54906003)(9686003)(64756008)(52536014)(76116006)(66556008)(66476007)(6916009)(66946007)(55016002)(4326008)(5660300002)(66446008)(45080400002);
+ SFS:(10009020)(4636009)(376002)(366004)(136003)(346002)(396003)(39850400004)(86362001)(5660300002)(6506007)(52536014)(186003)(4326008)(54906003)(316002)(9686003)(7696005)(55016002)(64756008)(8676002)(66946007)(478600001)(66476007)(33656002)(71200400001)(2906002)(8936002)(81156014)(66446008)(6916009)(66556008)(76116006);
  DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
+received-spf: None (protection.outlook.com: vaisala.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: WyRlFdgpdl+Mjbh4h7wm/t20x+DQmyRlm08bII2E8/BkVrS0amSlRyZ/gkoiFo8bAxcOgms0XqZeJYS1zX6oA03CRXIbe8/y6YFkyYDGRRD8AJ+u8R1cRT7qFvZBPJqIUlgwfIjccITdwX2NdD3hYoCzj+n9xD+QgTtnipVy/jOwRg/EFA2PMxbjdcc6FVlZLjvFlzzqmOPzQkmPX6J7jv8jtYAlBzorCTVWJ0aWVqQUkya0hY76QMiDCnnU0m7ewus2quez/7bM1njE+SXxDj3YeJs5rG9WgKvXvVn0AQpskVvh0p23nQH0N353DG+/IVBUb/weNvlwK1mO5TjNpx7UktFZf9WFLtvY1aXEe3ShIAWVgfqG5fBolz76LTMqRShSkgQ52ynswI0BjipgF4qPna4oORjwNOf/C1LKIenPxrfzMhim2sJCRdrOhDWOqi/BMCz+0zWgl4UWFwjqergoKFv05AAipeJjR3mNC+XELNgTnAuYeVBVeFareeLavOci0UrFWt2mxSBOfSjblA==
-x-ms-exchange-antispam-messagedata: /MBGvdcXpNWPkTllpIMPLWTmknw1v/8+l7O84lE+TYP7DTypBOocnT/1zfHQiDl6Q/3WyaxINNFArqzZ/TggaAnZgOr9O8n8rw6EswB0jxwQWA46mKFyMuVSMjwAiKFxZliN1LvomTQflJ+9x5V4GA==
+x-microsoft-antispam-message-info: FOMfdd08/12EwimCHrNzlBUrJ9IzJgC60+V+DkurI0KdyqmD1VkAT9qcZ/W0BuhN0pyBo7ynOU+xlCDwkmPwtp4fjdu+L7yoJehyAnvKyIdxp+eHad5akHb08mA+n4czJ0gV4tlfZT7U/XNSo52QZvdMte/24Q8VoQjuKoL6LL0OnQAZadIihRY1GEZTJxa21vnmmSwN4LV8h11bf/XGs5CCg2kqFoe1ZdQUbfvcx/jffBXNmJRIeGweqAAjB6kptJnc7RSlm8R6pL3nqcSxNAj9A3Tz2XlvArv7h0XEhmjMqD8q6XcBfy95ICgH6cD4lxI3HMf/PR11i/qcrbJV5+WzSqSVcnuYVlmv+D6AAohe/omE5/MDcy6GOkKULyYFv0xXEDLSSh5ixHCh0veqyt/t38nRPzHwrAKrrsyNbS9jXsPWZmddQmRJ39AZEuOI
+x-ms-exchange-antispam-messagedata: J2DB8Pn1bj56sBFeevmZDu+xG9dfrFtf8BhJVCVbFazTj3mz7WKtNm3rDYBxsWxGauQnSvMeAouc0GROCsmpFzF6wxG5Ccv9vEQIQGN4B1hZ9sxqTvAwjFK1tVj3GIo3a8/mmwM1jw3QK04M5RClB7N0HRpd9L2tN6JSHiqcjs/lw/dLSbpNJh1k4C/EFau2iCLfZnGrAO/x12Zn7bSTbQ==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 98f7f9fe-e233-4e91-4945-08d7e1f2ad51
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2020 10:41:10.1715 (UTC)
+X-OriginatorOrg: vaisala.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c3e0ee4f-ec5a-4351-a4be-08d7e1f2cc46
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2020 10:42:02.0592 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-id: 6d7393e0-41f5-4c2e-9b12-4c2be5da5c57
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: UN+NDisR/hkdZHwsyaO26j/u0sM0NhuJeodsrxj6suHIzgWYwHRmzlmi8Hy53d6DRPFP34jo2HEtCbLOwWEwnA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3785
+X-MS-Exchange-CrossTenant-userprincipalname: YYRJPpObfmpuOSSiBPhejoqzvkp3Tusm+IvMJPte5qMhI/A/b/ZXmCxPqanBNiTuhGgfUQFqUYpMFxSmvbYBqyrv0no2010rF5KlkjLOaU0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB4145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_034113_749023_3A34D2F4 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20200416_034206_965802_5D09CA61 
+X-CRM114-Status: GOOD (  19.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.49 listed in list.dnswl.org]
+ no trust [40.107.6.72 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -126,104 +144,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> Subject: Re: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock to
-> json-schema
-> 
-> On 20-04-16 09:48, Anson Huang wrote:
-> > Hi, Marco
+> > > >
+> > > >the other thing i was thinking how will multithreading .
+> > > >Should we have a lock here.
+> > > >
+> > > >> -       err = xiic_bus_busy(i2c);
+> > > >> -       while (err && tries--) {
+> > > >> -               msleep(1);
+> > > >> +       if (i2c->multimaster) {
+> > > >> +               /* for instance if previous transfer was terminated due to TX
+> > > >> +                * error it might be that the bus is on it's way to become
+> > > >> +                * available give it at most 3 ms to wake
+> > > >> +                */
+> > > >>                 err = xiic_bus_busy(i2c);
+> > > >> +               while (err && tries--) {
+> > > >> +                       msleep(1);
+> > > >> +                       err = xiic_bus_busy(i2c);
+> > > >> +               }
+> > > >>         }
+> > > >>
+> > > >>         return err;
+> > >
+> > > Which resource specifically are you worried about needing locking here?
+> > >
+> > Earlier multiple threads on the same processor will wait for bus busy.
 > >
-> > > Subject: Re: [PATCH V2 1/5] dt-bindings: clock: Convert i.MX6Q clock
-> > > to json-schema
-> > >
-> > > Hi Anson,
-> > >
-> > > On 20-04-16 14:39, Anson Huang wrote:
-> > >
-> > > ...
-> > >
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
-> > > b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
-> > > > new file mode 100644
-> > > > index 0000000..1c6e600
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
-> > > > @@ -0,0 +1,66 @@
-> > > > +# SPDX-License-Identifier: GPL-2.0 %YAML 1.2
-> > > > +---
-> > > > +$id:
-> > > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdev
-> > > icetr
-> > >
-> ee.org%2Fschemas%2Fclock%2Fimx6q-clock.yaml%23&amp;data=02%7C01%
-> > >
-> 7Canson.huang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C6
-> > >
-> 86ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&
-> > >
-> amp;sdata=Iw1CkVBMqw3m6sox6C3khcMy0BHNCQ9v2k72q3CM6Xs%3D&a
-> > > mp;reserved=0
-> > > > +$schema:
-> > > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdev
-> > > icetr
-> > >
-> ee.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Canson.hu
-> > >
-> ang%40nxp.com%7Ca840fd5be8c94d4d950608d7e1ea16a2%7C686ea1d3bc2
-> > >
-> b4c6fa92cd99c5c301635%7C0%7C1%7C637226267845578228&amp;sdata=P
-> > >
-> Be2CEoDdMo9I1m3DHbITCyYxB4GF%2FigP%2FNd7YCopCQ%3D&amp;reserve
-> > > d=0
-> > > > +
-> > > > +title: Clock bindings for Freescale i.MX6 Quad
-> > > > +
-> > > > +maintainers:
-> > > > +  - Anson Huang <Anson.Huang@nxp.com>
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: fsl,imx6q-ccm
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  interrupts:
-> > > > +    maxItems: 2
-> > >
-> > > IMHO I would force them to have exactly two so we need
-> > > minItems: 2 too here.
+> > Now my concern was
 > >
-> > Actually, those 2 interrupts are NOT necessary for some platforms,
-> > such as i.MX platforms do NOT enable them at all, so is it OK to force them
-> to be '2' here?
-> 
-> Why do we list them as required if they are not required? Currently all
-> 5 platforms adding both irqs so this won't break anything here.
+> > thread1 -> makes a transaction
+> >
+> > thread2  -> this will not wait for bus busy and access.
 
-OK, I will make the minItem/maxItem to 2 in next version.
+> Since i2c->tx_msg is set before anything is sent to FPGA and only returned to NULL after transaction has finished,
+> I think thread2 would already exit with -EBUSY before xiic_bus_busy(i2c) is called because off:
+> if (i2c->tx_msg)
+>	return -EBUSY;
+> in same function.
+>
+> This is why my understanding is that xiic_bus_busy(i2c) only practically guards against other masters operating on bus.
+> In my understanding xiic_bus_busy(i2c) reads the register on FPGA, which can't change state before thread1 is already so far into transmitting its data that FPGA has received something to send and > has reserved the bus. This would leave an interval of time between checking xiic_bus_busy and its register value changing during which thread2 could also check xiic_bus_busy and proceed to transmit at the same time with thread1. (Until hitting a transaction lock later, but only after it has already overwritten the pointer to transmit buffer i2c->tx_msg, and possibly messed up the transmissions for thread1).
+>
+> Now it seems to me that even with i2c->tx_msg being checked, thread2 could get past it before thread1 has set it to not NULL, since thread performs no locking between checking it and setting it, like I mentioned in previous reply. This issue has apparently already existed for some time though and is probably quite unlikely, since it has been there for some time.
 
-Thanks,
-Anson
+> -Jaakko
 
+Just to update you about the previously mentioned possible multithreading issue, I took some time to try and force the race condition to happen by adding some delay between checking and setting "i2c->tx_msg".
+I was planning to fix it in separate patch since the possible issue would have existed already.
+I discovered that I am unable to reproduce the threading issue, since the bus is already protected by a mutex in "i2c_transfer()" implemented in "i2c-core-base.c".
+I suppose this may have been obvious for someone who has worked longer than me with the kernel i2c -drivers, but it seems that the driver implementations don't have to worry about access from multiple threads, since they are already protected in a more general level.
+
+-Jaakko
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
