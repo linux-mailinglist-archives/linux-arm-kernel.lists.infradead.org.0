@@ -2,85 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A8991ABEDD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 13:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19D981ABEDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 13:12:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LlGjcFJ8dNAPpecI8fWGfTVGgFUxnn95xncj5u+UKKk=; b=fE/CLGkLQi+gPf
-	upbVFlxCyr+QHHKZthRojztNCYfkJyIT9/w2+rlzaa3bLq3Ty0uGBGK6dppgVIYh5dArprkJl3uOm
-	fz3IjgBsdfdxLGyt46bJT68eZlLhJFcip5uCZXr33B9esunDJCbWoh8WC/znRZbDzANw1/i5Of1YP
-	UE5xyGIGXaFWq1QH3Id3Uy8KXBuovI4QjPJstv/b+rSDlUnNB59efqUq0RNWP02ScqinuQYFOF79Z
-	0aT7We4nhxyYKjjJOJGkSlskAEONiQbO+4GyGaFZlzMeSV4Xr0kgJ/JGutuHweK67zk9MNj1SjNsC
-	6szzkaJU6qrp0LtJNRtw==;
+	List-Owner; bh=23kdoOyiGrGc5cSAIv7cxqjHpzLgWUl3cmnyGZSEZoo=; b=FZmHHrGy1ocFeL
+	3tYsbfmJ4/YsNjQPvqmuvXLm4oVdwukL/184+/gI8fLOEUwj1akr9jQuTPwgiauK8CZYa0cDJgbcL
+	7HDNGcir7L6m/7aIHbOW3ClN9Iau6SYY40g6taphfzBGZYfj2sIlzJDPC2yFAyFnqmMDgI/h7jvJo
+	Qe7cH50vJ+1EO13xht2Ztxkv4wzkmJep+9iX/hwE1OFCgGhR0kNu310xgQpwCQ8w7udLZTxOTV23W
+	myUCUN8NU0WJ/U5m0t74A/GiTMVOV1Rqw/EYJdTHDTaa6siQPJ2XbXUbQdsEwkHfSKRX3AnuftvMx
+	h+2jPw6Qb9PVQObkktMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP2QS-0000we-Tp; Thu, 16 Apr 2020 11:11:20 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jP2RK-0001RF-JV; Thu, 16 Apr 2020 11:12:14 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP2QJ-0000vs-Vi
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 11:11:13 +0000
-Received: by mail-lj1-x243.google.com with SMTP id y4so7346459ljn.7
+ id 1jP2RA-0001QV-6W
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 11:12:08 +0000
+Received: from mail-qv1-f46.google.com ([209.85.219.46]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MVMJ7-1jrOQo2R0B-00SPrM for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 16 Apr 2020 13:12:01 +0200
+Received: by mail-qv1-f46.google.com with SMTP id d6so286341qvy.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 04:11:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DagzPuCV35qt33fGvPGLDoiS08sYzbb9yy87y7EAnZ0=;
- b=yet1Q0fX4nxzU8FeSJeMbsR/4M4ZR8bSZgTYXnm3b33HHgDAoFiGGbEVV4TxE3vhsD
- /c2AJ4eKsLOLbAMS8meVpOJBnXQX4HaYBk/E4mO/kE7Qx15xwDrn79DqsnaQKBdPX72/
- 9AC/Nlvz6XGq4HUe2sfq8jP1MF1spNg/BW1C10iPp8ZwR/qYFHcIp6w8D37lenRxH3+d
- QMT/GjndGpsyFcpVXgKMwHXurfH4Ri52ptjqKfjhQDs6tHzXng01V2kKubCYftC5vUbE
- CodkmrdPVAcWtHmXRqehK2nzSMW+0LQSwyvkE09yxCKcEZThbjK0bRaMhUhgJU4enXbO
- pl5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DagzPuCV35qt33fGvPGLDoiS08sYzbb9yy87y7EAnZ0=;
- b=b6fD/W6rIlE5OkGSFOWkm0vWiY0jBkv01/aLcIHFPHwNyCp1pyF8741kuLQlk/Uq2t
- wCZWUUlc9R05tb2QqIoNEPEStDD8ERJBLmmAaPrhtHxggvvTxkCHBrICf8G5zg4l4ELb
- imiW4MON1Tb92fQa4yjTf9OELPB7CxuyB7/8uPDNSmXIv4E7ISuUO40OQjmj4ouKEsUC
- 7n363oEBL9kpYGt+JCH6MC/cRC1WTNO7u4J8ikSim3C0IzcUKIvEwvaggppaPoYUevV1
- ZOnLMC9Beg9JIAcGsa4eXbv1arWU6lwpr6xdpoKceR1z//znJJ+tpduhzRlfIclWPLwK
- nFaw==
-X-Gm-Message-State: AGi0PuYh49tGr8+lA9RhcPspOekZVG4E7yV4/cnlQzNG9ZcrbIsWRcQ1
- S3E38oiNtIA0J78XYySG+I0gYL5rXWHBwB/FRILJtQ79
-X-Google-Smtp-Source: APiQypIe+xRjUiPUhs+Ll7NpUdbW/Z87i6LFhQq3LlYlzagCdixZd6a64fsv5yfIf2axg5JsvTgNsUrB0uS0JAF3Xd4=
-X-Received: by 2002:a2e:9605:: with SMTP id v5mr5942226ljh.258.1587035469976; 
- Thu, 16 Apr 2020 04:11:09 -0700 (PDT)
+ Thu, 16 Apr 2020 04:12:01 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZtH/EJqaIpU/ZrA5my0YmACTZy55bhM7jlvD2VXUWZTE3xZ7af
+ 22OJllTjNZdnS1CTqralguoamh+0eWIqBssmJ44=
+X-Google-Smtp-Source: APiQypKUBOB6XQd2d+M75WuZ0DqJUTG/HnuwXa8550Av2Y6bO9ZONTvLBnhPRU7U+ROebImWwMBgxhHTnpmmhVTBibs=
+X-Received: by 2002:a0c:a602:: with SMTP id s2mr9756889qva.222.1587035520523; 
+ Thu, 16 Apr 2020 04:12:00 -0700 (PDT)
 MIME-Version: 1.0
-References: <1586757913-5438-1-git-send-email-amittomer25@gmail.com>
-In-Reply-To: <1586757913-5438-1-git-send-email-amittomer25@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 13:10:59 +0200
-Message-ID: <CACRpkda8bZQnQhNbwXPrf-8mZh2NhsPx3u1Gcpmi8KjUEd-17w@mail.gmail.com>
-Subject: Re: [PATCH v1] pinctrl: actions: fix function group name for
- i2c0_group
-To: Amit Singh Tomar <amittomer25@gmail.com>
+References: <1586937773-5836-1-git-send-email-abel.vesa@nxp.com>
+ <1586937773-5836-3-git-send-email-abel.vesa@nxp.com>
+In-Reply-To: <1586937773-5836-3-git-send-email-abel.vesa@nxp.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 16 Apr 2020 13:11:44 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1Zd8Pctn9ra9dH7bTUSSMoTOwmDNOc6JwmKQA4fgdpWw@mail.gmail.com>
+Message-ID: <CAK8P3a1Zd8Pctn9ra9dH7bTUSSMoTOwmDNOc6JwmKQA4fgdpWw@mail.gmail.com>
+Subject: Re: [PATCH v3 02/13] Documentation: mfd: Add DT bindings for i.MX Mix
+To: Abel Vesa <abel.vesa@nxp.com>
+X-Provags-ID: V03:K1:RmZuv5uzFH+kOUtKnJl7PY7ZQ5SJRW2Wn/rgA0p0GN6NWhlZfc6
+ TXph8/XMHQ3vfvPa2e5qgYEQetm1FeYt3xGZx0/3PH6lJScZwzlrT1IYgNOObvRuCEZI6Bc
+ aus7GEcqlNGDz/H2WcND3yizY6obzqyr++ao+gYpZsmOqXddE2V/nvNEeGCn96K6k7J1/7W
+ vDf3h8UyCz6zx7Pf0kCpw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:olT7XPis/mU=:n1+fCS/SdVkJe/88CO6MSP
+ kY1/K+4F6RciHHFFV/YzGO67PGUjdJX+a3vo+thrG7H5CeCC7OgUrpCdvuQEWER78VNiEMXRy
+ koaJ9bgtnP4DxRbDVM2O0Vnrzbxzu0ZqYYr6cn+oY9wCPj12nDyEMjMKNteisNLFAgJWU5S6N
+ jlSM9MrOq57jSsD7ke355ka3AZIcdY56tgcAVByC0/WiMT39YoaH93wc5qOLo2GA3Ylx6gicX
+ wzwEetWQ4NnlxaWu/hmG3PpxcDudSOLCUhwZ5vl3c/bVzLPu+u7P9DISz/OPLM0UcCppzQ1SH
+ PvH4BrRMYUGWrjg1mIEYr4kPt8IW1Y/TdFHD17/D+Dy9irDCBs2Df2EAJgsaX6oIA4gAZ14H2
+ 92Qtvma0otwW6a9fajCpKdAHCVLn2/OkST+FYZoPLOrSdSJkqxT4CiaLU7GndVVJ2VjEimlFK
+ ErJqknXkMUcPY5xCaRqR3sxOuMewiCi4QiJ0ea9MLA3dyQu4k8XNw58PQlBK7UwkqZhhuPv33
+ Gmcton6Q9ScfMG5gdfRbkUpjqysIrjlBP8M2yWqLPBEYO2vye5vLn/x7dq8EKAuB9k13Ndt7D
+ HiWCJXkKRq5ys9l/KynnQ8sWcsoz3etj4zTcmMJa895sFi0O0nUU1kChsTka9mjAyVCmodn4n
+ 1g/FhPL/MnOcpLslBsZ+Pa1l9GL3wthGK4jJITDB6Qgd3G13ldkIq+0qVrrx6rUOtWsPOxRcP
+ PM1Oz8GQzV2apbI/hzaZMJcK9++nnhXa+9oPauAUpaFLGmK6FN9ik52AHzL89rFb1wLuTwRIp
+ jiwIy3L3o/zHwPlXCTz1R/4B9Pm5SF4yqtvEpbuHfpgiWxK2eM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_041112_014018_220DB8AE 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_041204_543735_C75B61B4 
+X-CRM114-Status: GOOD (  15.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,34 +86,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matheus Castello <matheus@castello.eng.br>,
- Andre Przywara <andre.przywara@arm.com>, linux-actions@lists.infradead.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: DTML <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Anson Huang <anson.huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 8:05 AM Amit Singh Tomar <amittomer25@gmail.com> wrote:
-
-> After commit 6f87359e8bca ("pinctrl: actions: Fix functions groups names
-> for S700 SoC") following error has been observed while booting Linux on
-> Cubieboard7-lite(based on S700 SoC).
+On Wed, Apr 15, 2020 at 10:05 AM Abel Vesa <abel.vesa@nxp.com> wrote:
 >
-> [    1.206245] pinctrl-s700 e01b0000.pinctrl: invalid group "i2c0_mfp" for function "i2c0"
+> Documnent the i.MX Mix with its devicetree properties.
 >
-> This commit fixes it by using correct name for i2c0_group.
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> ---
+>  .../devicetree/bindings/mfd/fsl,imx-mix.yaml       | 34 ++++++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mfd/fsl,imx-mix.yaml
 >
-> Fixes: 6f87359e8bca ("pinctrl: actions: Fix functions groups names for S700 SoC")
-> Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
+> diff --git a/Documentation/devicetree/bindings/mfd/fsl,imx-mix.yaml b/Documentation/devicetree/bindings/mfd/fsl,imx-mix.yaml
+> new file mode 100644
+> index 00000000..8b1870e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mfd/fsl,imx-mix.yaml
+> @@ -0,0 +1,34 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mfd/fsl,imx-mix.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX mix
+> +
+> +description: |
+> +  i.MX mix is a conglomerate of different GPRs that are
+> +  usually dedicated to one subsystem. These GPRs can be
+> +  further split between different types of drivers, once
+> +  the MFD populates all the devices based on its devicetree
+> +  subnodes.
 
-Patch applied with Mani's ACK.
+This does not describe the hardware but the implementation in Linux.
+Please rephrase it to not independent of the software that interprets
+the DT nodes.
 
-Yours,
-Linus Walleij
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
