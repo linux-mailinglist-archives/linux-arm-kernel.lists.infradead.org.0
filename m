@@ -2,91 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A56D1AD03F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 21:22:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0181AD041
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 21:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jP3D4ej46MOG3SyrhXAzlcvqGO/pejqKydi1EZHPYug=; b=m/MkYkSjqhV75M09M5e8zgVH+
-	RBIx4JR8OGgMCgNPuzb0++44yjUCY3XwftgIET+Q5q7BKqjbeisXtHcHYYZtn1p+m6KOztlVd0XmX
-	jYWT24YkXttUjMpuQ0vX1sWRNDEpis8z5lzT2GOYoKz0j6h6cZEYatdZOCQ+YSqO0FzmvmxhuEv1t
-	6Ai9x7v10QdnC87kzYH5vVhR95z85hkOT9VQcNaT1JKscj+KOH5nl3eCcaEQ58SQ4dgKOHLoS1s7U
-	QJMr7Vvv2gORIJ0Oe/hNkCOv5Koi2C6TS7yqLDqktRGHvFzo1MKttNwpemy8HXp1iKZyyN1Ro0paA
-	cJuWwKdOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CAA0VYczZ6dDu3kvpZ2L/k5BFy99SH3BS2j7dPVtcsw=; b=kfksXL8tM8/MiB
+	5+gcb5eDYxRuAkGvzZe8boE9CK3zpUHp8fZx6LhUTIH2CSpcI96XcOIFwS21NjipJINSh1HMhoIFf
+	8SJ4GaweTZtiH+71ZrQvjQerg6SjoMWWopvOe833NN4ECtgD5bd2MjuoR9obzbmV4wjzdRxvIRkqN
+	DxYJeXlAvJP+6I+PnH7K89Msy5QCWFiaTLKh4puL5/njVI1ww1Bm/GihCX8pP5PGP5vf/u1Re/Qmo
+	nhYAFJlCtxp2u0bgC4RPZ/Zo5Ji+danMcPKT+vfSQ1SThJRt78rE82+upQoD5Y1O9mO2VQNVF82t9
+	B7XfXt0URdFtYtv3KE0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPA5t-00030s-D9; Thu, 16 Apr 2020 19:22:37 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jPA7J-0003Is-Ax; Thu, 16 Apr 2020 19:24:05 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPA5k-00030X-5Q
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 19:22:29 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id cl8so1826858pjb.3
+ id 1jPA78-0003IK-HW
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 19:23:56 +0000
+Received: by mail-pl1-x644.google.com with SMTP id n24so1685139plp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 12:22:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=u735V9HHFXqgUnn+jYHUVF/KBe71XKmd0C1DJzJ/jm0=;
- b=W2ktpi/SDTw8TMDFSJZ/zDu6AgJz/o/lQDlgBHyxfpS6M0kdrnOV9HhMIsB33D4oxz
- WkkoBzxmVABXTyb1MNK33/9L0RGn71GLlgiOAn98NGKGoSliEfX2EsjDVyA8aS+HyAnq
- bsbUFICd3O/TtkeHgElSKP4rOjWd43cz6xGuAJELa0pGOUPg9WDyf2L+naAU3wqqNzfn
- fB87FeiUJFP776rRtewpUaPf/2Z9AGBAKP237bD5B1BPTg1owzPB8TNycnu9DGf+NcJV
- +qlFAgnYgcP/yLOYkSIZGmUIy3+h3i+CEzIsSkv8qgOxHbk1pCg64Uz/XITUG0DsBIrf
- LtYg==
+ Thu, 16 Apr 2020 12:23:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=aKFYVYQ9OYxfkj6UtWE/c0zee6GGkl7hN2RiXbrSsVQ=;
+ b=wOOCNhaQsoosxHRpdTHfDHxWt+3yGUwtdVHwF/2+AdpJ85PsC8MarhgRu+8jev/fUw
+ guZPcEBfiQibYkIVoTbLyaM6Sn0VMko49d/uKZC4KFoRxdN0drDm372VeGsWO4MMzNbH
+ IBIx/jZz+pr/4Cwst1GDcrnoY+ozXV3t+DzKHxanKWTIp51IsQSu4wvgiLJJlokx4nQH
+ 0Acdma8hyGFfKiB55qOrNPYc42ho6XiVtd+wmAkwGZp0UA9JevcXfDYt2Qi4c1jRtYnG
+ MONrmuHqYbLHEaHlcRMW9p065LGFFAkDU/brduXXVkgSUPt9l1yml2c5mpbucPCRPhtU
+ CuGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=u735V9HHFXqgUnn+jYHUVF/KBe71XKmd0C1DJzJ/jm0=;
- b=lLz+INyRDLcCcCI1dhiVek9rJk6TbWq4ddul+YAASJeNoYlEccjjAvQa9e7VTK2KsO
- Ow0tM1eeBKep594oQLyolNEwkfr4u7bi68vmT8yT9kThfS+Ov8AS7Lj9QteSSfCfASWV
- RmICJBNwwWHvNtKuktC344LIR/cRtphJ4uk53BHIvr0VAyQvMPzF6FeVs3fJrkRk7Gdp
- d8XZ25S9yctyJwsB3NbYT1LhoPguhxiVEBx6Ahbqe0QqHkvUkiAROUMTyrvltW02PhUx
- Q+FVrS3LzXXnItN8QzUOu7fKzpcJwXOlEMZEOvpObPs21W5xi44NaBsJLOsSgIFft2P0
- dqCw==
-X-Gm-Message-State: AGi0PuZQ1kJcQhWc6smv5tPLG+Gk6udKt1ljpf8SLBI4JNrkyIgZwVT5
- sUNBZ2KGa3xHp3rSYmA5jDA=
-X-Google-Smtp-Source: APiQypJ8niiaX2gOmgAlrlT9yIzDtccBKMj5GL23IXsnka0sPYbvBAkpvNhvyp9Myo+aHy4zdMm0dQ==
-X-Received: by 2002:a17:902:868d:: with SMTP id
- g13mr10853361plo.317.1587064947693; 
- Thu, 16 Apr 2020 12:22:27 -0700 (PDT)
-Received: from [10.230.188.26] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id o40sm3544636pjb.18.2020.04.16.12.22.25
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 12:22:26 -0700 (PDT)
-Subject: Re: [PATCH 3/5] net: macb: fix macb_get/set_wol() when moving to
- phylink
-To: nicolas.ferre@microchip.com, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, Claudiu Beznea <claudiu.beznea@microchip.com>,
- harini.katakam@xilinx.com
-References: <cover.1587058078.git.nicolas.ferre@microchip.com>
- <897ab8f112d0b82f807e83c6f9e7425d1321fa09.1587058078.git.nicolas.ferre@microchip.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <8d51c4af-1e00-f33c-0f88-10afc837e46b@gmail.com>
-Date: Thu, 16 Apr 2020 12:22:24 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.7.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=aKFYVYQ9OYxfkj6UtWE/c0zee6GGkl7hN2RiXbrSsVQ=;
+ b=B74h58A4srdGuRBTutRGfdWTuWtQLtsHW5rIbeZMGIQtQgkSePZjmzgsrVZvBiSwkq
+ FqLZG+PDSY1vtdI+X6sM6shz8j3/1TzZTSCSTDEMWLZWpg4YIgQIOLPGQFf5uT8lhoNl
+ /amI6PBQwNEyaGaWyuU7by3cznK3mJWAwUJHAG3xnLvwrT6nN34FFBcj62uC+tvRW2Ee
+ w9yuI9K/LHAaopsdkS5DubxR7XF5rLcu6oqwCufYxGGaa5jAKpS09otiEONe7AnwX9Of
+ /WE4N0Ka/gPQKfMeB/nEqLrRmAmNrAaG7UdW0RwABf1UYsR1J9/M7wOO9d2QcqvzHLWM
+ rY2w==
+X-Gm-Message-State: AGi0PubUw7r8HH7buQ9mn6Hy+gCwLpHRciycwnV2GP4jneyzljtOLRrI
+ pID0k2weltLVMlQ5AGSku5zhFA==
+X-Google-Smtp-Source: APiQypK0eaYot0thKROCDeMzMTdcPgMIkES3AeLNRv813IJwsbnRKl5Rw9PycXGl/pCuoTqlxZH3aw==
+X-Received: by 2002:a17:90b:3691:: with SMTP id
+ mj17mr6924777pjb.114.1587065032831; 
+ Thu, 16 Apr 2020 12:23:52 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id p8sm3465938pjd.10.2020.04.16.12.23.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Apr 2020 12:23:52 -0700 (PDT)
+Date: Thu, 16 Apr 2020 13:23:50 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Siddharth Gupta <sidgup@codeaurora.org>
+Subject: Re: [PATCH v2 1/2] remoteproc: core: Add an API for changing
+ firmware name
+Message-ID: <20200416192350.GA29577@xps15>
+References: <1586384305-7825-1-git-send-email-sidgup@codeaurora.org>
+ <1586384305-7825-2-git-send-email-sidgup@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <897ab8f112d0b82f807e83c6f9e7425d1321fa09.1587058078.git.nicolas.ferre@microchip.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1586384305-7825-2-git-send-email-sidgup@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_122228_208425_5275B0B7 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20200416_122355_096249_FEAF05C4 
+X-CRM114-Status: GOOD (  20.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -106,42 +100,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- sergio.prado@e-labworks.com, pthombar@cadence.com, antoine.tenart@bootlin.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- Rafal Ozieblo <rafalo@cadence.com>, "David S. Miller" <davem@davemloft.net>
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Siddharth,
 
+On Wed, Apr 08, 2020 at 03:18:24PM -0700, Siddharth Gupta wrote:
+> Add an API which allows to change the name of the firmware to be booted on
+> the specified rproc. This change gives us the flixibility to change the
+> firmware at run-time depending on the usecase. Some remoteprocs might use
+> a different firmware for testing, production and development purposes,
+> which may be selected based on the fuse settings during bootup.
+> 
+> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+> ---
+>  drivers/remoteproc/remoteproc_core.c | 43 ++++++++++++++++++++++++++++++++++++
+>  include/linux/remoteproc.h           |  1 +
+>  2 files changed, 44 insertions(+)
+> 
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index fb9c813..9f99fe2 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -1796,6 +1796,49 @@ int rproc_boot(struct rproc *rproc)
+>  EXPORT_SYMBOL(rproc_boot);
+>  
+>  /**
+> + * rproc_set_firmware_name() - change the firmware name for specified remoteproc
+> + * @rproc: handle of a remote processor
+> + * @firmware: name of the firmware to boot with
+> + *
+> + * Change the name of the firmware to be loaded to @firmware in the rproc
+> + * structure. We should ensure that the remoteproc is not running.
+> + *
+> + * Returns 0 on success, and an appropriate error value otherwise.
+> + */
+> +int rproc_set_firmware_name(struct rproc *rproc, const char *firmware)
+> +{
+> +	int len, ret = 0;
+> +	char *p;
+> +
+> +	if (!rproc || !firmware)
+> +		return -EINVAL;
+> +
+> +	len = strcspn(firmware, "\n");
+> +	if (!len)
+> +		return -EINVAL;
+> +
+> +	mutex_lock(&rproc->lock);
+> +
+> +	if (rproc->state != RPROC_OFFLINE) {
+> +		ret = -EBUSY;
+> +		goto out;
+> +	}
+> +
+> +	p = kstrndup(firmware, len, GFP_KERNEL);
+> +	if (!p) {
+> +		ret = -ENOMEM;
+> +		goto out;
+> +	}
+> +
+> +	kfree(rproc->firmware);
+> +	rproc->firmware = p;
+> +out:
+> +	mutex_unlock(&rproc->lock);
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL(rproc_set_firmware_name);
+> +
 
-On 4/16/2020 10:44 AM, nicolas.ferre@microchip.com wrote:
-> From: Nicolas Ferre <nicolas.ferre@microchip.com>
-> 
-> Keep previous function goals and integrate phylink actions to them.
-> 
-> phylink_ethtool_get_wol() is not enough to figure out if Ethernet driver
-> supports Wake-on-Lan.
-> Initialization of "supported" and "wolopts" members is done in phylink
-> function, no need to keep them in calling function.
-> 
-> phylink_ethtool_set_wol() return value is not enough to determine
-> if WoL is enabled for the calling Ethernet driver. Call if first
-> but don't rely on its return value as most of simple PHY drivers
-> don't implement a set_wol() function.
-> 
-> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
-> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
-> Cc: Harini Katakam <harini.katakam@xilinx.com>
-> Cc: Rafal Ozieblo <rafalo@cadence.com>
-> Cc: Antoine Tenart <antoine.tenart@bootlin.com>
-> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+This is much better, thanks for cleaning things up. Keep in mind that when you
+do resend this rproc->firmware will likely have become a "const char *",
+requiring the use of kstrndup_const()...  But that is for a later time.  
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
--- 
-Florian
+Mathieu
+
+> +/**
+>   * rproc_shutdown() - power off the remote processor
+>   * @rproc: the remote processor
+>   *
+> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> index 9c07d79..c5d36e6 100644
+> --- a/include/linux/remoteproc.h
+> +++ b/include/linux/remoteproc.h
+> @@ -613,6 +613,7 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
+>  			     u32 da, const char *name, ...);
+>  
+>  int rproc_boot(struct rproc *rproc);
+> +int rproc_set_firmware_name(struct rproc *rproc, const char *firmware);
+>  void rproc_shutdown(struct rproc *rproc);
+>  void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type);
+>  int rproc_coredump_add_segment(struct rproc *rproc, dma_addr_t da, size_t size);
+> -- 
+> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
