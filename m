@@ -2,51 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70FD31AC2CA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:33:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 303BB1AC2EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 15:36:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=910sKcRUi9xnhdSRFh5n0dQniW635agQpfzJFQ+QfvU=; b=Feo/WJMc6A2GC4w+WFway3uED
-	+dw9klEQM9cB7sFVeG1iuDp30SwSWpF4QuYnF/OB9XWv/9EdCcnN9fVB25cPfGLfYnwtAZ9kNN5IX
-	9ltAiGXnhQxLC9wwWTdsIYkhUP1OtfkmswWvrSoVmrlO/8gITpq8rtqWPUzUb7RXgbf/OEGhuXGC9
-	oRJ63/lY6r2clKu3G/jUjf0NJrm96xj3OPYL31CnOoE/GNyciz7v1igDd+jHMyvf43L88uzGLEGge
-	n+BtseVdZZeaaiUUE9c2HWfsumpF+zpEwXouBHjfptM2936cYihIqXkpS871Zpx1rEanq9wz9WNn7
-	o7ADyEsEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HCNu2VkUv2zGqY2QDOrDpR8HC9HspfiXSPRG1T8Uy10=; b=c/LBe10GmDaRJu
+	4EIDGtnDXRzfg+b9jTRNQOJfZAmz+AIalT/QllxR3LrhbGYKt08vKn/LqYfFwQ0jei1XLTjM9KLzT
+	/Fev3RAMzOEDNZC3Zn/yj1yA4tdmH0tVdxiNIviXHLmHoORyGk/SMniILy/iDVX4PMZFS7DZ3QC7p
+	wJYqzNS77UBdmOBCdwU0HTZfwqaCjGMss6FhMjKWb4CsXTo7ELxvQAA9XOtq73BAYB5XPjR/IV+tA
+	OLGtVxexajOSACo91y2HwQMX6sp3fEOkePBRelOrMZ4iZSCAB9ng7DBABCKcnjCgbC3U0d5iIlRvz
+	xMtoIUxFG9GiLrKyBbMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4eO-00049L-SU; Thu, 16 Apr 2020 13:33:52 +0000
+	id 1jP4gv-00073Q-NS; Thu, 16 Apr 2020 13:36:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4eF-000490-2Y
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:33:44 +0000
+ id 1jP4go-00071l-Lg
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 13:36:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 544F11FB;
- Thu, 16 Apr 2020 06:33:42 -0700 (PDT)
-Received: from [10.57.59.184] (unknown [10.57.59.184])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 243AF3F68F;
- Thu, 16 Apr 2020 06:33:40 -0700 (PDT)
-Subject: Re: [PATCH 1/2] iommu: arm-smmu-impl: Convert to a generic reset
- implementation
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <e7ba4dbd8e9c8aedd6f5db1b3453d9782b7943cd.1579692800.git.saiprakash.ranjan@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <cc3e3ed5-b187-c4a1-8229-974821a9e1ad@arm.com>
-Date: Thu, 16 Apr 2020 14:33:38 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 139F21FB;
+ Thu, 16 Apr 2020 06:36:22 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C0EF3F68F;
+ Thu, 16 Apr 2020 06:36:21 -0700 (PDT)
+Date: Thu, 16 Apr 2020 14:36:19 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64/kernel: vmlinux.lds: drop redundant discard/keep
+ macros
+Message-ID: <20200416133618.GI4987@lakrids.cambridge.arm.com>
+References: <20200416132730.25290-1-ardb@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <e7ba4dbd8e9c8aedd6f5db1b3453d9782b7943cd.1579692800.git.saiprakash.ranjan@codeaurora.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200416132730.25290-1-ardb@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_063343_203189_5EDC36AC 
-X-CRM114-Status: GOOD (  22.42  )
+X-CRM114-CacheID: sfid-20200416_063622_754633_D3DD8E8F 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,105 +64,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Rajendra Nayak <rnayak@codeaurora.org>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: catalin.marinas@arm.com, will@kernel.org, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-22 11:48 am, Sai Prakash Ranjan wrote:
-> Currently the QCOM specific smmu reset implementation is very
-> specific to SDM845 SoC and has a wait-for-safe logic which
-> may not be required for other SoCs. So move the SDM845 specific
-> logic to its specific reset function. Also add SC7180 SMMU
-> compatible for calling into QCOM specific implementation.
+On Thu, Apr 16, 2020 at 03:27:30PM +0200, Ard Biesheuvel wrote:
+> ARM_EXIT_KEEP and ARM_EXIT_DISCARD are always defined in the same way,
+> so we don't really need them in the first place.
 > 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+
+Looks like they've always been redundant for arm64, as they've been this
+way from the commit that introduced this file.
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
 > ---
->   drivers/iommu/arm-smmu-impl.c |  8 +++++---
->   drivers/iommu/arm-smmu-qcom.c | 16 +++++++++++++---
->   2 files changed, 18 insertions(+), 6 deletions(-)
+>  arch/arm64/kernel/vmlinux.lds.S | 10 ++--------
+>  1 file changed, 2 insertions(+), 8 deletions(-)
 > 
-> diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-> index 74d97a886e93..c75b9d957b70 100644
-> --- a/drivers/iommu/arm-smmu-impl.c
-> +++ b/drivers/iommu/arm-smmu-impl.c
-> @@ -150,6 +150,8 @@ static const struct arm_smmu_impl arm_mmu500_impl = {
->   
->   struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->   {
-> +	const struct device_node *np = smmu->dev->of_node;
-> +
->   	/*
->   	 * We will inevitably have to combine model-specific implementation
->   	 * quirks with platform-specific integration quirks, but everything
-> @@ -166,11 +168,11 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->   		break;
->   	}
->   
-> -	if (of_property_read_bool(smmu->dev->of_node,
-> -				  "calxeda,smmu-secure-config-access"))
-> +	if (of_property_read_bool(np, "calxeda,smmu-secure-config-access"))
->   		smmu->impl = &calxeda_impl;
->   
-> -	if (of_device_is_compatible(smmu->dev->of_node, "qcom,sdm845-smmu-500"))
-> +	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500") ||
-> +	    of_device_is_compatible(np, "qcom,sc7180-smmu-500"))
->   		return qcom_smmu_impl_init(smmu);
->   
->   	return smmu;
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 24c071c1d8b0..64a4ab270ab7 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -15,8 +15,6 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->   {
->   	int ret;
->   
-> -	arm_mmu500_reset(smmu);
+> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+> index 1d399db0644f..04ea6160d444 100644
+> --- a/arch/arm64/kernel/vmlinux.lds.S
+> +++ b/arch/arm64/kernel/vmlinux.lds.S
+> @@ -17,10 +17,6 @@
+>  
+>  #include "image.h"
+>  
+> -/* .exit.text needed in case of alternative patching */
+> -#define ARM_EXIT_KEEP(x)	x
+> -#define ARM_EXIT_DISCARD(x)
 > -
->   	/*
->   	 * To address performance degradation in non-real time clients,
->   	 * such as USB and UFS, turn off wait-for-safe on sdm845 based boards,
-> @@ -30,8 +28,20 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->   	return ret;
->   }
->   
-> +static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
-> +{
-> +	const struct device_node *np = smmu->dev->of_node;
-> +
-> +	arm_mmu500_reset(smmu);
-> +
-> +	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500"))
-> +		return qcom_sdm845_smmu500_reset(smmu);
-> +
-> +	return 0;
-> +}
-> +
->   static const struct arm_smmu_impl qcom_smmu_impl = {
-> -	.reset = qcom_sdm845_smmu500_reset,
-> +	.reset = qcom_smmu500_reset,
->   };
-
-It might be logical to have a separate SDM845 impl rather than 
-indirecting within the callback itself, but I'm not too concerned either 
-way. For the arm-smmu-impl.c changes,
-
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
-
-Thanks,
-Robin.
-
->   
->   struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device *smmu)
+>  OUTPUT_ARCH(aarch64)
+>  ENTRY(_text)
+>  
+> @@ -95,8 +91,6 @@ SECTIONS
+>  	 * order of matching.
+>  	 */
+>  	/DISCARD/ : {
+> -		ARM_EXIT_DISCARD(EXIT_TEXT)
+> -		ARM_EXIT_DISCARD(EXIT_DATA)
+>  		EXIT_CALL
+>  		*(.discard)
+>  		*(.discard.*)
+> @@ -161,7 +155,7 @@ SECTIONS
+>  
+>  	__exittext_begin = .;
+>  	.exit.text : {
+> -		ARM_EXIT_KEEP(EXIT_TEXT)
+> +		EXIT_TEXT
+>  	}
+>  	__exittext_end = .;
+>  
+> @@ -188,7 +182,7 @@ SECTIONS
+>  		*(.init.rodata.* .init.bss)	/* from the EFI stub */
+>  	}
+>  	.exit.data : {
+> -		ARM_EXIT_KEEP(EXIT_DATA)
+> +		EXIT_DATA
+>  	}
+>  
+>  	PERCPU_SECTION(L1_CACHE_BYTES)
+> -- 
+> 2.17.1
 > 
 
 _______________________________________________
