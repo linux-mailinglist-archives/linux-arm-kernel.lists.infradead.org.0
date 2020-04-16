@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31F6E1ACF36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 19:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B73FB1ACF37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 19:59:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zJnaCmpUrs5UsygsI2QSsRFGmSQgoJfwcImA/9JbatI=; b=gTYcaMZziJM6BmOWU9DeVmusZg
-	sGp8dSKjPQ79MBLLFfSypBhM4/kc36wKwDCT0OhgOt99cLQTzWU1Pe5QE1GY7lplRi9s7IpZ6ftrn
-	/s9PzT/ipQjdPPfAA/Y+DLmPrYrmfCjOo67MYCVruTsabbm/iWgU66ImWKqwmKv6be4ATTNpwHtev
-	XvnHuPnfI+onACj1MP7+baI8lPEVRqxMaTBaBxD5lx/95ja73LF/MVAxkOGnbHIEF8qndW2tZQE2R
-	oTzPp+trVj+MOGqWPVG6J+f7I4cbuMxTx9PIQUREUvSk2L4j6C4tzScB1xjNKCElWcCX3GjJZefON
-	F+91AxAg==;
+	bh=mWr5PIdRaF6WBYPdpgxuXQf70qT220Ok9Oi/6PXB4s0=; b=aasFTJpdvE9EL8LPPB37+2In94
+	Kxj+ygtIWMfNe/RgXdBt+2pueGQkbaVEpnhMLaTtD4VWivjLSZmY2MpwLqvHy+3xq4eByienoH2bN
+	oJ7Hu4h53S+TDWCOzAdWP1Dyxk2o69miDqu2H6accRkVvL1L6e/OAWSRVufGqMwU5is1ny8wNZtr+
+	8cOM1CuJeDo7xM5mKJcgPk8dDLTwzlnDJWZvXWeP6NOF96u5QGzUMVa5YHO7mJv0Z1AJfGW5aC1IC
+	tyFijQMZNdtcA20HR1CJpuHWkXeQ+BpP8PmsXdCr81mlrkBi80ywGSxFpFDWyL+ea7fak2byngBcL
+	wT20CJVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP8mi-0007gR-6i; Thu, 16 Apr 2020 17:58:44 +0000
+	id 1jP8n2-00081X-Vq; Thu, 16 Apr 2020 17:59:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP8mQ-0007ZW-VM
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 17:58:28 +0000
+ id 1jP8mX-0007lM-S0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 17:58:35 +0000
 Received: from localhost.localdomain (unknown [157.50.106.138])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0AC7D221EB;
- Thu, 16 Apr 2020 17:58:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4A4C2214D8;
+ Thu, 16 Apr 2020 17:58:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587059906;
- bh=1RrAUoUNggxa9GfCCTH+HfaKDyL/+0j2ab5DCtyFe+A=;
+ s=default; t=1587059913;
+ bh=WpEz49SfyHEbNX8XVWDnw0lssfu54pD/0ZJsvLWyqQQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QfrIJdmjWHjFODLKeI9+YaknavJzKrn9muaHwW4JGvVW1mcruZrwZPnzAAqmOBtld
- hJvlNz3kQRjS2UldMkVlrWfcTjHwGPdpAHnSoR+yg9gDyVuFDSzYquuY5BqDds0Xz5
- JDWp39XK3g0myUet9HF7kkVbm/iejns806TWqdgI=
+ b=WCpJo544f+JxU3eTKt7gZCYP3aQRE+XUCBj8l0oLUDB/Kagzuh8YBWD+Jos/skOt2
+ mgOIaRYi4a+dutgnrRcAqykYqMLGH8E3mL9AL8jDfg/PMR8WgNPYCX3ra0NLM2fMbP
+ uAkQrZJvEvthLwQgYou4ZCG8e/l0lxFjQyf01acY=
 From: mani@kernel.org
 To: gregkh@linuxfoundation.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com
-Subject: [PATCH v2 1/2] tty: serial: Add modem control gpio support for STM32
+Subject: [PATCH v2 2/2] dt-bindings: serial: Document CTS/RTS gpios in STM32
  UART
-Date: Thu, 16 Apr 2020 23:27:28 +0530
-Message-Id: <20200416175729.5550-2-mani@kernel.org>
+Date: Thu, 16 Apr 2020 23:27:29 +0530
+Message-Id: <20200416175729.5550-3-mani@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200416175729.5550-1-mani@kernel.org>
 References: <20200416175729.5550-1-mani@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_105827_063453_404238C3 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20200416_105833_937178_CA5EF066 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,139 +90,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Manivannan Sadhasivam <mani@kernel.org>
 
-STM32 UART controllers have the built in modem control support using
-dedicated gpios which can be enabled using 'st,hw-flow-ctrl' flag in DT.
-But there might be cases where the board design need to use different
-gpios for modem control.
-
-For supporting such cases, this commit adds modem control gpio support
-to STM32 UART controller using mctrl_gpio driver.
+Document the use of CTS/RTS gpios for flow control in STM32 UART
+controller. These properties can be used instead of 'st,hw-flow-ctrl'
+for making use of any gpio pins for flow control instead of dedicated
+pins. It should be noted that both CTS/RTS and 'st,hw-flow-ctrl'
+properties cannot co-exist in a design.
 
 Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
 ---
- drivers/tty/serial/Kconfig       |  1 +
- drivers/tty/serial/stm32-usart.c | 43 +++++++++++++++++++++++++++++++-
- drivers/tty/serial/stm32-usart.h |  1 +
- 3 files changed, 44 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/serial/st,stm32-uart.yaml  | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index 0aea76cd67ff..e7a6f2130684 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -1462,6 +1462,7 @@ config SERIAL_STM32
- 	tristate "STMicroelectronics STM32 serial port support"
- 	select SERIAL_CORE
- 	depends on ARCH_STM32 || COMPILE_TEST
-+	select SERIAL_MCTRL_GPIO if GPIOLIB
- 	help
- 	  This driver is for the on-chip Serial Controller on
- 	  STMicroelectronics STM32 MCUs.
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 5e93e8d40f59..026982259714 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -31,6 +31,7 @@
- #include <linux/tty_flip.h>
- #include <linux/tty.h>
+diff --git a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
+index 238c44192d31..75b8521eb7cb 100644
+--- a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
++++ b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
+@@ -48,6 +48,12 @@ properties:
+     minItems: 1
+     maxItems: 2
  
-+#include "serial_mctrl_gpio.h"
- #include "stm32-usart.h"
- 
- static void stm32_stop_tx(struct uart_port *port);
-@@ -510,12 +511,29 @@ static void stm32_set_mctrl(struct uart_port *port, unsigned int mctrl)
- 		stm32_set_bits(port, ofs->cr3, USART_CR3_RTSE);
- 	else
- 		stm32_clr_bits(port, ofs->cr3, USART_CR3_RTSE);
++  cts-gpios:
++    maxItems: 1
 +
-+	mctrl_gpio_set(stm32_port->gpios, mctrl);
- }
- 
- static unsigned int stm32_get_mctrl(struct uart_port *port)
- {
-+	struct stm32_port *stm32_port = to_stm32_port(port);
-+	int ret;
++  rts-gpios:
++    maxItems: 1
 +
- 	/* This routine is used to get signals of: DCD, DSR, RI, and CTS */
--	return TIOCM_CAR | TIOCM_DSR | TIOCM_CTS;
-+	ret = TIOCM_CAR | TIOCM_DSR | TIOCM_CTS;
-+
-+	return mctrl_gpio_get(stm32_port->gpios, &ret);
-+}
-+
-+static void stm32_enable_ms(struct uart_port *port)
-+{
-+	mctrl_gpio_enable_ms(to_stm32_port(port)->gpios);
-+}
-+
-+static void stm32_disable_ms(struct uart_port *port)
-+{
-+	mctrl_gpio_disable_ms(to_stm32_port(port)->gpios);
- }
+   wakeup-source: true
  
- /* Transmit stop */
-@@ -626,6 +644,9 @@ static void stm32_shutdown(struct uart_port *port)
- 	u32 val, isr;
- 	int ret;
+   rs485-rts-delay: true
+@@ -55,6 +61,14 @@ properties:
+   linux,rs485-enabled-at-boot-time: true
+   rs485-rx-during-tx: true
  
-+	/* Disable modem control interrupts */
-+	stm32_disable_ms(port);
++if:
++  required:
++    - st,hw-flow-ctrl
++then:
++  properties:
++    cts-gpios: false
++    rts-gpios: false
 +
- 	val = USART_CR1_TXEIE | USART_CR1_TE;
- 	val |= stm32_port->cr1_irq | USART_CR1_RE;
- 	val |= BIT(cfg->uart_enable_bit);
-@@ -764,6 +785,12 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
- 		cr3 |= USART_CR3_CTSE | USART_CR3_RTSE;
- 	}
- 
-+	/* Handle modem control interrupts */
-+	if (UART_ENABLE_MS(port, termios->c_cflag))
-+		stm32_enable_ms(port);
-+	else
-+		stm32_disable_ms(port);
-+
- 	usartdiv = DIV_ROUND_CLOSEST(port->uartclk, baud);
- 
- 	/*
-@@ -898,6 +925,7 @@ static const struct uart_ops stm32_uart_ops = {
- 	.throttle	= stm32_throttle,
- 	.unthrottle	= stm32_unthrottle,
- 	.stop_rx	= stm32_stop_rx,
-+	.enable_ms	= stm32_enable_ms,
- 	.break_ctl	= stm32_break_ctl,
- 	.startup	= stm32_startup,
- 	.shutdown	= stm32_shutdown,
-@@ -964,6 +992,19 @@ static int stm32_init_port(struct stm32_port *stm32port,
- 		ret = -EINVAL;
- 	}
- 
-+	stm32port->gpios = mctrl_gpio_init(&stm32port->port, 0);
-+	if (IS_ERR(stm32port->gpios))
-+		return PTR_ERR(stm32port->gpios);
-+
-+	/* Both CTS/RTS gpios and "st,hw-flow-ctrl" should not be specified */
-+	if (stm32port->hw_flow_control) {
-+		if (mctrl_gpio_to_gpiod(stm32port->gpios, UART_GPIO_CTS) ||
-+		    mctrl_gpio_to_gpiod(stm32port->gpios, UART_GPIO_RTS)) {
-+			dev_err(&pdev->dev, "Conflicting RTS/CTS config\n");
-+			return -EINVAL;
-+		}
-+	}
-+
- 	return ret;
- }
- 
-diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
-index db8bf0d4982d..d4c916e78d40 100644
---- a/drivers/tty/serial/stm32-usart.h
-+++ b/drivers/tty/serial/stm32-usart.h
-@@ -274,6 +274,7 @@ struct stm32_port {
- 	bool fifoen;
- 	int wakeirq;
- 	int rdr_mask;		/* receive data register mask */
-+	struct mctrl_gpios *gpios; /* modem control gpios */
- };
- 
- static struct stm32_port stm32_ports[STM32_MAX_PORTS];
+ required:
+   - compatible
+   - reg
 -- 
 2.17.1
 
