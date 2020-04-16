@@ -2,63 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A12FD1AB4E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 02:54:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53B571AB506
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 02:57:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D2aEzNGWxKFBrgROuptxUtvNA1khYJh4vpGMZcNuaKs=; b=btVVcg6AGMmv/i
-	Z9ct442dzUiDd8uQQKINToDaSfUkxrGc4ZDBmDfFL4t24WpZ/kHl9Pqcdbj99XtNiUOat1844b6qn
-	+QDVe9D6bQw5ZOhdu5uBfDP232sEse10cfZ1hxhlmmBKr219a7Mj916hWbxt9e2N2xt9tAAzcWH0X
-	DsTVSumit7QXcBy/Mm2ZRvi3rGp7zOu4+wbN4VrvBNVZXuB4RqVDsUC954JEPJS3gA6dNsa+tCJmH
-	QBjeFDM91gpm4WbWLiTLeLHsfdNou6RSrzbLNaMzCDIV8C/kYm+CEw8738I0BaIBugFwuydUgIqZO
-	QPfaZmWPs0FG+jpmCStA==;
+	List-Owner; bh=HCT9hVEYz5BKiRp/GMRyfVipL96GVLbMgcVMq30oEco=; b=IqSOwlWoCXw5lA
+	fhFxQP0SKTxCZKiWyOjlQ/jen903WkOrIg3JLkUBzlJRBzAx75j+O/nFRRXKfy+WXewKkvp1ICejD
+	XeQrDtIHXmmNH22l8d3gw/VJIflr19kKaPppzDkv15ON6cFiD/f0WXE/OSfMlzXVg/vsbeSbjSfqS
+	LkjsNcUiZnhAMGmhzKZx/FHyPqrVsaC0TFIiehLwYi5w597SBr232BH/uf/Ph5fB3zjWEA8oIDesh
+	p6rFYaWxlolp1jEx0kEAzMntkqfJMNasSRDZa2fD/vsZ/Vwr7cd2Dxl97ilhqb2oTQsb7j+ve/2e/
+	fmVP3QLI7giJ1eizG9Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOsmv-0005oM-J0; Thu, 16 Apr 2020 00:53:53 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1jOsqB-0001GT-MY; Thu, 16 Apr 2020 00:57:15 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOsmj-0005nw-Um
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 00:53:43 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id z1so1314415vsn.11
+ id 1jOspo-0001Cm-P1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 00:56:55 +0000
+Received: by mail-io1-xd44.google.com with SMTP id f19so19273980iog.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 17:53:40 -0700 (PDT)
+ Wed, 15 Apr 2020 17:56:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oymDymDSGwWgVl7PdrWgMeH1mdt9MH+svEJHIh9ofYo=;
- b=a2XbOiwlAAQzxczt4QF4WPs7900EFsrLVOxWmAfWFDrYlbOxFqFleRRIhOr+uI8M5f
- M2cwVJ40d4uDtjkefb7KmLLsMXHjL/sGzNwIx0DMzOlXnR5mb/1snHQ+m68Q4OvzwI+F
- RFsl2ztnRLmbC/I9LzD4UKpcjD3O1jAdNfCXg=
+ :cc; bh=0pi57Yw1CcnU/t5xDRYzAtYW33asqFUBaWgZbJ3tOfE=;
+ b=Zxz39exVNPQUoC5oC7KxutI6O9HlznMuRYa653fUmfYsyaTRiTIZKuc9pujiaQLdn/
+ 6CTSitD7ypenyMARA3xWa1qvKF/8ZZRmHFyZAj3U7hHkFWoLTv1Vjvem8/AWPxPWGYRd
+ 9YsDvAZ0l32UROX6xPE8XcQ0FNYxiVvtWNDvI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=oymDymDSGwWgVl7PdrWgMeH1mdt9MH+svEJHIh9ofYo=;
- b=bz8en3qIWZoyKoH0yogBml4t/fXgJwOyQtAJWto6CH9XuSiZLKrG6Aj91oJxKz2fPJ
- R6nxmyX4G05VfBFcsSmjU8L0G9367lAtRwI2lo3y0hVDYltiIOwivSayj3PZn6ylijMV
- jfuaHhOn/VgHKz3hzl9z3bGX99CUlX9g4Vlog1tEuSK+tAC8TDinBsUpDdXslg2NMKQX
- RG1LH4Aku7D+TkaLCpxp6UoOO1Rg8Tqt2WCYEK/O5oprx0Yi1ORLXlEc4P29CkQdsnZ2
- at8HONBhzy3A75lELM4NB4ZX1lswxt3Ji3mnSf+U3eYfHN3QlkuHSvAAgcW09SvmEtsp
- h54Q==
-X-Gm-Message-State: AGi0PuYt4lNQqQaxCpQLh5Hmg4txG6AiOsD7u9QAgAj9VVjJFbWDeloM
- BHPmtvTnERNchqjT6MbcSVc7wpT9GkE=
-X-Google-Smtp-Source: APiQypKGh/Tkz8sgqJ69VFxoLa52/RZy0TevhCKb75My9nikS4etgI0cjAtsqpooZm7lD36/iqHyVw==
-X-Received: by 2002:a67:6a46:: with SMTP id f67mr5366197vsc.186.1586998419412; 
- Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
-Received: from mail-ua1-f53.google.com (mail-ua1-f53.google.com.
- [209.85.222.53])
- by smtp.gmail.com with ESMTPSA id s23sm4830523vsp.1.2020.04.15.17.53.39
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
-Received: by mail-ua1-f53.google.com with SMTP id t8so2193609uap.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 Apr 2020 17:53:39 -0700 (PDT)
-X-Received: by 2002:ab0:592c:: with SMTP id n41mr1543975uad.73.1586998027359; 
- Wed, 15 Apr 2020 17:47:07 -0700 (PDT)
+ bh=0pi57Yw1CcnU/t5xDRYzAtYW33asqFUBaWgZbJ3tOfE=;
+ b=IcPYodp3Ig9D+t0qsElpeeoqKatkZSYAhh1vtRUx6xfrtNEZGkqnny5fV640ZFCgyE
+ 5JowPZ2ViCxFQZsySOa+KRA9A3vw26vb/j090Ccpu6NVBB1d2hs6a1gx4H9LmTJOny7d
+ 1BLAkRO64U+aPRrCRCVesaa5tmMdaTOD+ugUMEYh2YGYi2ZVTN7TsjTiDHHVR64VI8oL
+ kFZItwKgaHw0Wkryjby7aD/JJfv4QKS2W3WBAjSgA2ozluTgHbNtIP2ELCDoHUNwqMtd
+ D+R45abgzEXnl9RQXy30G8SpfnJUIG79XReLK1fpMPyndXkSPQrdoJxuLxfJZlGDaWzn
+ bFtA==
+X-Gm-Message-State: AGi0PubPkBHzvKVFoXpK/H8W1ZmjOsVN7AZmCGmSooxAJLCzPh3qX7jN
+ ABUrDSiYB9UBMFi1wyKOQia+cmN/zu4kjUbVwMRXbg==
+X-Google-Smtp-Source: APiQypLaV14jW6zqGw/DJyeFplem0IPQuVzPs6SMj5UQP5j6yl5Y9t8lEAsFhz+mS6nRLGgdHeSVWyjl3NF1UNgldr0=
+X-Received: by 2002:a6b:491a:: with SMTP id u26mr28900283iob.30.1586998611518; 
+ Wed, 15 Apr 2020 17:56:51 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200403052900.258855-1-evanbenn@chromium.org>
  <CAKz_xw0gV+w_gMkLfB4qUBdULLfFoiv1TBWp9_PHy33wP_XWyA@mail.gmail.com>
@@ -66,29 +55,32 @@ References: <20200403052900.258855-1-evanbenn@chromium.org>
  <243e107c-35c1-2d14-5285-c9e13744963c@amlogic.com>
  <CAODwPW9RSB37+4EJ2QXAwz=ShFB23L1GKC2mLYE5L5JuQR2tPw@mail.gmail.com>
  <20200415231215.GA182398@roeck-us.net>
-In-Reply-To: <20200415231215.GA182398@roeck-us.net>
-From: Evan Benn <evanbenn@chromium.org>
-Date: Thu, 16 Apr 2020 10:46:39 +1000
-X-Gmail-Original-Message-ID: <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
-Message-ID: <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+ <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+In-Reply-To: <CAKz_xw0+gKBM1jp-Avnd+4j9vSxUix67RZBX-NNbStb0+ri4+Q@mail.gmail.com>
+From: Julius Werner <jwerner@chromium.org>
+Date: Wed, 15 Apr 2020 17:56:39 -0700
+Message-ID: <CAODwPW9Vt7TcWfKYDmRgLndb2-+5HoNvA6XMJJznXCudQDngqw@mail.gmail.com>
 Subject: Re: [PATCH v2 0/2] Add a watchdog driver that uses ARM Secure Monitor
  Calls.
-To: Guenter Roeck <linux@roeck-us.net>
+To: Evan Benn <evanbenn@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_175342_016403_DEFC92AF 
-X-CRM114-Status: GOOD (  24.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_175652_849866_BA686310 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -116,7 +108,8 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Anson Huang <Anson.Huang@nxp.com>,
  Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
  Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Valentin Schneider <valentin.schneider@arm.com>, devicetree@vger.kernel.org,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
  LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
@@ -135,52 +128,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks Xingyu,
+> Can anyone provide advice about making SMCWD_FUNC_ID a device tree
+> param directly, vs using the compatible to select from a table.
 
-Can anyone provide advice about making SMCWD_FUNC_ID a device tree
-param directly, vs using the compatible to select from a table.
-
-Please note get_timeleft erroneously returns res.a0 instead of res.a1
-in this version.
-
-Evan
-
-On Thu, Apr 16, 2020 at 9:12 AM Guenter Roeck <linux@roeck-us.net> wrote:
->
-> On Wed, Apr 15, 2020 at 03:29:29PM -0700, Julius Werner wrote:
-> > > In addition, It looks more reasonable to use the "msec" as the unit of
-> > > timeout parameter for the ATF fw interface with SMCWD_SET_TIMEOUT:
-> > >
-> > > - The fw interface will compatible with the uboot generic watchdog
-> > > interface at [0], and there is no need to convert timeout from msec
-> > > to sec.
-> >
-> > I think we're trying hard to keep this compatible to a Trusted
-> > Firmware counterpart that we have already shipped, so we would prefer
-> > to keep it at seconds if possible. That's what the Linux watchdog core
-> > uses as well after all, so it just seems natural. I don't really see
-> > how what U-Boot does would have anything to do with this.
-> >
-> > > - Some vendor's watchdog may be not support the "wdt_trigger_reset"
-> > > reset operation, but they can use the method below to reset the system
-> > > by the watchdog right now.
-> > >
-> > > watchdog_set_time(1);  //1ms
-> > > watchdog_enable();
-> >
-> > They can still do that but they should do that on the Trusted Firmware
-> > side. Emulating a missing reset functionality should be handled by the
-> > hardware abstraction layer (in this case Trusted Firmware), not at the
-> > Linux API level. So Linux would still send a PSCI_SYSTEM_RESET SMC,
-> > but then Trusted Firmware can choose to implement that by setting the
-> > watchdog to the smallest possible timeout (which it can because it's
-> > accessing it directly, not through this SMC interface) and letting it
-> > expire.
->
-> I agree. Using a watchdog to implement reset functionality is always a
-> means of last resort and should be avoided if possible.
->
-> Guenter
+Sounds like most people prefer the way with using different compatible
+strings? (Personally I don't really care either way.)
 
 _______________________________________________
 linux-arm-kernel mailing list
