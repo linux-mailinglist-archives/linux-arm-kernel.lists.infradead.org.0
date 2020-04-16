@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78D571ABAB3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:00:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03DEF1ABAB8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:01:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nMnzDE7RV7egnES8V/PwsepUexe3UC5nZCldiHOZoOU=; b=iHeICu0BzMeMwB
-	UBFtdGo0CbKO8NQ4XIsGM0qHfDiQo1E59kLUS4R3xjtm7ZJoRoeyphkApkjfSKQaMR3NHf5LZ7XF4
-	c1niV6fKLaXmJxxfSQGJqBIvljKugFQ0WziVQJ6Mbp8cEeyxMn9WrkQe1NUzJkCQxqAwK78OzHcH8
-	6/hkLfxYvM1b/fDzFmejsy0zMf6/qHbS8iCGCymNAjJEoyleh0QadUNkhDQYCuVeqMtkGd67Vtk7O
-	GoMNiz03rfzTmSN7bUW2iZijpl3KCqoUq68hK3oLpMOGOm3JpUU+A/bZittzj+X3VrkO6knPo4cog
-	oi7Q4amgFNHHGMx6o5iw==;
+	List-Owner; bh=7WdJpYP6vCG8ZQaKNCoxYVxSZ2H7XXAlHgt/qKHi4co=; b=YROXzMDRwnWtxD
+	/3uTU1h1XnyruA+dznBPOq8TfRrEWzOJ1kSdf1bOqF7NhOiPk6trRPGkjG7T1s88scnulgP9C10ks
+	cx+qYc8hUQN1kVFto7ZVGth2+US9IpkwL6F6mdyXOYv/2rd6NOE89I9+rchzEU60f4ElmhGkVOgCu
+	/KVAnAuS2Mu02G68pxxkVX0fh/lMgFny/liwHUP6ko4JlhLreX8IQrGmRtS4T9kUvBtyxs9uF5mhY
+	CUKh8dQZDYE/06W5Ek+ZzcEKR0KITmK94OnbL4FfaItUmRIzA6Vb3Wm37NDpJkDc58T8CfBwEepl8
+	Nq3FFmwYAJu7FNZbr5Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOzRv-0004NW-9E; Thu, 16 Apr 2020 08:00:39 +0000
+	id 1jOzSB-0004kz-RJ; Thu, 16 Apr 2020 08:00:55 +0000
 Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOzRU-00035t-5B
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:00:14 +0000
-Received: by mail-lf1-x144.google.com with SMTP id h6so4904781lfc.0
+ id 1jOzRq-0004aa-Rw
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:00:38 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j14so4855815lfg.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 01:00:11 -0700 (PDT)
+ Thu, 16 Apr 2020 01:00:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sSf8uFnlnhLwj095+FU8Hbn9FbYIuI6qLS2jyiMbwJQ=;
- b=HTAxsHI4NFhxBaCaDB1DX0kXLNVIdVACrlSB7snYNia/S5Dxaduy0HAuEa14nLUnwh
- NjZ4+XYPjdEbGPlQtY7xdMJfc4wJ/ln5C9TgyMxTXtHwoH/3GbMtvLTxpiYS9aqcmyYW
- mbmmqyhMSBrFgMNqsZX+qMFEZjAGKsUeyE7JBzpLP+9Up/4SXYnUWGousajsyQ4e/gG/
- tp7ZiTkE0B16NNSEFY2ltXz8lNF4pGmLiLTfLBUnAHZV/4xyXmd7/wSkdV3an3765q5j
- BOERqjZVvDAeOKg/YdyD/hrlM9y2S5+Lf1xyea9woIZQAmW4/C6KW/yyDMkY+8oW3KCN
- +2zw==
+ :cc; bh=tjVFjiLUKq2dceYjR/sUZuoN+VaM2KkSpDEryVFjJAM=;
+ b=bUozIsQsOLIKrmIe04JjO05g7JBKyqXq8AdHzoY9+98g1GkgDs3t0ZDClZymhjwkrp
+ MByC50ZFFHYsMPZGUI3oyH1zekRuiC/DmTVL+6fK2pnd31mlDaqeXshW2PrfW6TKGkh5
+ dBeBVQy2o/c8U3eusS+I18vX7fIsdLrap/MTuqke74f8h1sfJsA/vNI7QewuTkLGLfiX
+ LZDVWtncz77CnlPHYu7z1PwxOXGCgThpfqHN2sydIRa9pH9054gcPx/FnQbBWcbrFCu/
+ B2wJoM2zJjIqKJYQ4ZUYjeTBW3+l3o13HlulzKtS/fh5gGg9WHIISWPjKIz6H5cx0w9h
+ Nn6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=sSf8uFnlnhLwj095+FU8Hbn9FbYIuI6qLS2jyiMbwJQ=;
- b=eZsBE7gsvysfelZ7CiIFcnhf8WYZAVahf1MCodkSWxr1O1SsZhompRZxHDrpiuFoDZ
- kRNNpqcLhYPh6ZfRhqCNg3lnkKASLLt342/TDBWgAUIFZ1fW4hZDjmx0Tjnr7hXsregK
- LbyFfzr+NdCSLcEEbzcZKAqjQnoupBg+KutM/KC+XenjNd24Pg+jPg04FlgK5mM72zcm
- ko6526UQvChN6OeHLm6JMsfAP7ePI+d6OjdggBQabMi8nup+lVsbwT7ZfBAYdTWBOF7c
- +ZTEqlJVXWNXDXNtxIn9iiQ4yWUVlrRLwUVNKJ0gnMWMQjYtanoXncPtSr1w9LTSrEMQ
- ZaXA==
-X-Gm-Message-State: AGi0PuZFo01BD1QHipOCYa2FwdVabIWfCMXXO3EFl6Y+l7fich144t5n
- 4wQTpLMmUsGaa1A58UhMvx5l+pSUtlbNCf70hp8tUA==
-X-Google-Smtp-Source: APiQypKLGba57Vds1+EwidDyrePfi8s/BtJ+tvZbYfVRkMJ5bQ1HEXGS3YVge49dJY0iO94c5gudWNVEvYyk1g0PZ68=
-X-Received: by 2002:ac2:4a9d:: with SMTP id l29mr5028454lfp.4.1587024009374;
- Thu, 16 Apr 2020 01:00:09 -0700 (PDT)
+ bh=tjVFjiLUKq2dceYjR/sUZuoN+VaM2KkSpDEryVFjJAM=;
+ b=W0FsrJLlGf2+SGS3mEGndGRq1LXVJ7nUXLMmP3lxE23Ajyi5sTX8Qj+jPioITAqsgp
+ AZ3VWpiFI88pKuofCxg4untG+ydYdpX2tLnnlraXd86CfpxhhSVRzzjZEihYP6Ri4DYD
+ OF501wXbedOQRBF4SCHHkGOEm43KJiIaF12ngZl8EXdCPR4WawN3OTtZXzw6N/N3lhzv
+ YhtGRqMOigDO7bCusHvd/yDbWLuLtzgS5SN1iOkr3MgF+BWa6o1Zj+uFzrsE/RT2GaBu
+ c8Fiq8TbttnzmRUGsFBBzjmbHST9RfQGwMIaOmcjReiMVmzwbb//XzfOc99WyLh/zfQN
+ 6iTQ==
+X-Gm-Message-State: AGi0PuYRJUn0iV/R+Wy4kW9bkMD/w4jXwQ/tZJFFDkIBvE3Cv8JzKM44
+ DS8mK0oBuNG5vbCFwINUEoI0uNhvF4tVvSb1ObXRcEoK
+X-Google-Smtp-Source: APiQypLJmZ97wdSRNvt5K0Vot48JkDgvMOmnFHGu2O4iKZQqqK02fJBxbBO5EYfsbjVxASLotokCg8oMB6V5oELv+9k=
+X-Received: by 2002:a05:6512:685:: with SMTP id
+ t5mr5198837lfe.47.1587024032955; 
+ Thu, 16 Apr 2020 01:00:32 -0700 (PDT)
 MIME-Version: 1.0
 References: <9feeb04805e5a406fe22a92e3f280abda39ddda4.1586289920.git.sean.wang@mediatek.com>
-In-Reply-To: <9feeb04805e5a406fe22a92e3f280abda39ddda4.1586289920.git.sean.wang@mediatek.com>
+ <42100afe6f97d28447c153bea6b54ea556cf95ca.1586289920.git.sean.wang@mediatek.com>
+In-Reply-To: <42100afe6f97d28447c153bea6b54ea556cf95ca.1586289920.git.sean.wang@mediatek.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 09:59:58 +0200
-Message-ID: <CACRpkdbUzwwcJqqPb=HVcDptMb1OqmRnYNzPuTMLz75LOsmSrQ@mail.gmail.com>
-Subject: Re: [PATCH v7 1/2] pinctrl: mediatek: make MediaTek pinctrl v2 driver
- ready for buidling loadable module
+Date: Thu, 16 Apr 2020 10:00:22 +0200
+Message-ID: <CACRpkdbszsyw550SZHBx73SHhUeDsKYC7od4pQRvpH+OdorCHQ@mail.gmail.com>
+Subject: Re: [PATCH v7 2/2] pinctrl: mediatek: make MediaTek MT6765 pinctrl
+ ready for buiding loadable module
 To: Sean Wang <sean.wang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_010012_374124_999718F4 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20200416_010035_288686_7ABC2768 
+X-CRM114-Status: UNSURE (   8.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (2.3 points)
@@ -107,19 +110,14 @@ On Tue, Apr 7, 2020 at 10:08 PM <sean.wang@mediatek.com> wrote:
 
 > From: Light Hsieh <light.hsieh@mediatek.com>
 >
-> In the future we want to be able to build the MediaTek pinctrl driver,
-> based on paris, as kernel module. This patch allows pinctrl-paris.c, the
-> external interrupt controller mtk-eint.c, and pinctrl-mtk-common-v2.c to
-> be loadable as module.
+> This patch make pinctrl-mt6765 ready for building as loadable module.
 >
 > Signed-off-by: Sean Wang <sean.wang@mediatek.com>
 > Signed-off-by: Light Hsieh <light.hsieh@mediatek.com>
-> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 > ---
-> v6->v7: no change
+> v6->v7: remove change-id
 
-Managed to extract and apply the v7 version using the b4 tool,
-thanks!
+Patch applied.
 
 Yours,
 Linus Walleij
