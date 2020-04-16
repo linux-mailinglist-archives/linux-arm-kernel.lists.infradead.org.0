@@ -2,58 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 089441AB721
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9672A1AB731
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 07:22:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FZ/XEoa7QRHa0RRm3wfZlTQiFN8WQj8tgh/AvGhK6IY=; b=jmZ
-	h0rWU31UnyfsfER43SPbRiGj6Gy37m1tYMe2kTkMgbW/OkwDaG2quf+iHVrxo1HiMrEgMVQsATKMF
-	5nPYhT+oJEadwzfmOeBazbvshxGsUOMCu95ZcPM0hLRLhWoz7XvcCDaX/A6jzBLSkonIqK6LiOfqo
-	JPYA5DV7KrTXY9kT1bnOd+mifpTAG3lPfUZoIlKPGe2JkNeymVSI8xmysRbJpFLDBdSCR0z3b7NQG
-	Mn/PL0O9dzgBvGzbvx7Qze3MeMg9noQ5wIGoGDf34a3ScPErDK/0pyCkK3LUrAmgJq5eo97QPwYNk
-	/2+9t6UdJCzxj397cmrA3bKhMfv7Lig==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FdExOcfml1oNzYSS7cjyl4HxW1u3duQtef3DOIefSn4=; b=ZT70NpQt1lwbJ8
+	FMsMpZ0JdRqy1AlY9L1STTFd2rS59ajNvWSagT2QJTc/spLdZSohmxijBrCgAf/yJUe0A9fHGlst1
+	6XjINanK69KjK4POByuPUQWQSyxqcEJVB/B5MEeFTEJHv1NQiDiTAwIqvHBoHsjV7aRZXnngWJusv
+	ANyogew99/5TbQqCijbHRZrpa/fHsDVz6GvsQtQtZf6E2Kso1iAJVY0jPz7MnpI+nNz2Cq8EKlWTc
+	9YMvZglOrJxfGRXPQCN6wFYadYMGyFM6bhXIhVXicJchLc5aUzFH/DhdI04y4ohSo+lE1zfP55ieT
+	afzB1tYg9j9yztP45E2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOwpL-0004wy-3d; Thu, 16 Apr 2020 05:12:39 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOwpC-0004w0-Fv
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:12:32 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 16 Apr 2020 14:12:27 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id A338960057;
- Thu, 16 Apr 2020 14:12:27 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 16 Apr 2020 14:12:27 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id EA77F1A12AD;
- Thu, 16 Apr 2020 14:12:26 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Rob Herring <robh+dt@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: [PATCH] dt-bindings: thermal: Convert UniPhier thermal monitor to
+	id 1jOwzE-0003Y2-Cj; Thu, 16 Apr 2020 05:22:52 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOwz5-0003Wk-Op
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 05:22:45 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jOwyv-0003eK-7t; Thu, 16 Apr 2020 07:22:33 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jOwyr-0007W6-OK; Thu, 16 Apr 2020 07:22:29 +0200
+Date: Thu, 16 Apr 2020 07:22:29 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/5] dt-bindings: clock: Convert i.MX6Q clock to
  json-schema
-Date: Thu, 16 Apr 2020 14:12:15 +0900
-Message-Id: <1587013935-21760-1-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
+Message-ID: <20200416052229.m6ur2coyfg6ef7vz@pengutronix.de>
+References: <1587011171-24532-1-git-send-email-Anson.Huang@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1587011171-24532-1-git-send-email-Anson.Huang@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 07:12:42 up 152 days, 20:31, 155 users,  load average: 0.08, 0.14,
+ 0.08
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_221230_881937_D41455FD 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20200415_222243_806614_56072A65 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,163 +75,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, sboyd@kernel.org, festevam@gmail.com,
+ mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the UniPhier thermal monitor binding to DT schema format.
+Hi Anson,
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- .../thermal/socionext,uniphier-thermal.yaml        | 57 +++++++++++++++++++
- .../bindings/thermal/uniphier-thermal.txt          | 65 ----------------------
- 2 files changed, 57 insertions(+), 65 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
- delete mode 100644 Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
+thanks for the patch. I have two questions please see inline which
+applies to all patches.
 
-diff --git a/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
-new file mode 100644
-index 0000000..bdddc5b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
-@@ -0,0 +1,57 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/thermal/socionext,uniphier-thermal.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Socionext UniPhier thermal monitor
-+
-+description: |
-+  This describes the devicetree bindings for thermal monitor supported by
-+  PVT(Process, Voltage and Temperature) monitoring unit implemented on
-+  Socionext UniPhier SoCs.
-+
-+maintainers:
-+  - Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - socionext,uniphier-pxs2-thermal
-+      - socionext,uniphier-ld20-thermal
-+      - socionext,uniphier-pxs3-thermal
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  "#thermal-sensor-cells":
-+    const: 0
-+
-+  socionext,tmod-calibration:
-+    $ref: /schemas/types.yaml#/definitions/uint32-array
-+    description:
-+      A pair of calibrated values referred from PVT, in case that the values
-+      aren't set on SoC, like a reference board.
-+
-+required:
-+  - compatible
-+  - interrupts
-+  - "#thermal-sensor-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    // The UniPhier thermal should be a subnode of a "syscon" compatible node.
-+
-+    sysctrl@61840000 {
-+        compatible = "socionext,uniphier-ld20-sysctrl",
-+                     "simple-mfd", "syscon";
-+        reg = <0x61840000 0x10000>;
-+
-+        pvtctl: thermal {
-+                compatible = "socionext,uniphier-ld20-thermal";
-+                interrupts = <0 3 1>;
-+                #thermal-sensor-cells = <0>;
-+        };
-+    };
-diff --git a/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt b/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
-deleted file mode 100644
-index ceb92a9..0000000
---- a/Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
-+++ /dev/null
-@@ -1,65 +0,0 @@
--* UniPhier Thermal bindings
--
--This describes the devicetree bindings for thermal monitor supported by
--PVT(Process, Voltage and Temperature) monitoring unit implemented on Socionext
--UniPhier SoCs.
--
--Required properties:
--- compatible :
--  - "socionext,uniphier-pxs2-thermal" : For UniPhier PXs2 SoC
--  - "socionext,uniphier-ld20-thermal" : For UniPhier LD20 SoC
--  - "socionext,uniphier-pxs3-thermal" : For UniPhier PXs3 SoC
--- interrupts : IRQ for the temperature alarm
--- #thermal-sensor-cells : Should be 0. See ./thermal.txt for details.
--
--Optional properties:
--- socionext,tmod-calibration: A pair of calibrated values referred from PVT,
--                              in case that the values aren't set on SoC,
--                              like a reference board.
--
--Example:
--
--	sysctrl@61840000 {
--		compatible = "socionext,uniphier-ld20-sysctrl",
--			     "simple-mfd", "syscon";
--		reg = <0x61840000 0x10000>;
--		...
--		pvtctl: pvtctl {
--			compatible = "socionext,uniphier-ld20-thermal";
--			interrupts = <0 3 1>;
--			#thermal-sensor-cells = <0>;
--		};
--		...
--	};
--
--	thermal-zones {
--		cpu_thermal {
--			polling-delay-passive = <250>;	/* 250ms */
--			polling-delay = <1000>;		/* 1000ms */
--			thermal-sensors = <&pvtctl>;
--
--			trips {
--				cpu_crit: cpu_crit {
--					temperature = <110000>;	/* 110C */
--					hysteresis = <2000>;
--					type = "critical";
--				};
--				cpu_alert: cpu_alert {
--					temperature = <100000>;	/* 100C */
--					hysteresis = <2000>;
--					type = "passive";
--				};
--			};
--
--			cooling-maps {
--				map0 {
--					trip = <&cpu_alert>;
--					cooling-device = <&cpu0 (-1) (-1)>;
--				};
--				map1 {
--					trip = <&cpu_alert>;
--					cooling-device = <&cpu2 (-1) (-1)>;
--				};
--			};
--		};
--	};
--- 
-2.7.4
+On 20-04-16 12:26, Anson Huang wrote:
 
+...
+
+> diff --git a/Documentation/devicetree/bindings/clock/imx6q-clock.yaml b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> new file mode 100644
+> index 0000000..084d4f0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> @@ -0,0 +1,69 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/clock/imx6q-clock.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Clock bindings for Freescale i.MX6 Quad
+> +
+> +maintainers:
+> +  - Anson Huang <Anson.Huang@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: fsl,imx6q-ccm
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    minItems: 1
+
+Why 1 and not 2? The RM describes that the ccm has 2 interrupts.
+
+> +    maxItems: 2
+> +
+> +  '#clock-cells':
+> +    const: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: 24m osc
+> +      - description: 32k osc
+> +      - description: ckih1 clock input
+> +      - description: anaclk1 clock input
+> +      - description: anaclk2 clock input
+> +
+> +  clock-names:
+> +    items:
+> +      - const: osc
+> +      - const: ckil
+> +      - const: ckih1
+> +      - const: anaclk1
+> +      - const: anaclk2
+> +
+> +  fsl,pmic-stby-poweroff:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description: |
+> +      Use this property if the SoC should be powered off by external power
+> +      management IC (PMIC) triggered via PMIC_STBY_REQ signal.
+> +      Boards that are designed to initiate poweroff on PMIC_ON_REQ signal should
+> +      be using "syscon-poweroff" driver instead.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - '#clock-cells'
+> +
+> +examples:
+> +  # Clock Control Module node:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    clks: clock-controller@20c4000 {
+> +        compatible = "fsl,imx6q-ccm";
+> +        reg = <0x020c4000 0x4000>;
+> +        interrupts = <0 87 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <0 88 IRQ_TYPE_LEVEL_HIGH>;
+> +        #clock-cells = <1>;
+> +    };
+> +
+> +...
+
+Why these '...' here?
+
+Regards,
+  Marco
+
+> -- 
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
