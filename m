@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 541171ABB79
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:40:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25CD51ABB81
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 10:42:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RY8j7gAYkJBG67vm+8kHrL8p8F5ET8obDBL1XkUm7FE=; b=dH8RtKUmYvKQD7SjqfnN8n/BH
-	VCHrfrTXzsnrqHDgpm1ojQJmY8y5j02AW0A81EhDfZKeWG2U3krzgS7mbk5zxwrNzDeubG8yjCVQC
-	w3gI/z6NNhpfBvhecxJVsD6IKthpy7an/YCDvb5m5hJAI0xkOeqn3YL3TEhNA9pqyfsNK1uh9rRB7
-	uGlIcdW8yryg8y2HILx9TTzN+CCobRcNX7+tGo4RK1T3oYlYz4PZgJOvPS3xgHIBNTk9/pBC+Dn7A
-	BxbhWTT2VLF3KPsWHI+l+cSFzb77ezXWgZ7PqF2Zto51U/pWfq1I9wF96J2yrUpNxh4jo2yxHP8z2
-	g4JVTfLvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tVOQ+7NbhCOSbW8CDLvNzdx4dr31BhuHqJH+f6E4LHE=; b=gymh44vp02JqOc
+	3X5shJPiyNXiswR6UFBIJgH9XA7vboemcnvicBPBvvNp+uf2Gha51+oB8wBD2lmJIs0FLwgTL4FwN
+	a0W4hF4DNpZbOHtSS36wwbwEMM/6eL8IYi5YM8X2GM7PgZ5IvRPJ3X3BOHZ/zka786uiHbkz9m2ZZ
+	EjhPrN3ftqfyBCRS9qHl4W8dTM1odO412cg2mdjcIEvPKeggNbp0D2lnkNvURytAXPxwmMWjY9SWr
+	/Kx+LxvgjmgDjgWKYBCE3n9khHWm78mTsDCPNjZBK6xJTWe/tTqcat3HUKtOPGp49SGSNVaaS0XyC
+	qMtM4qXtN9j8Y2DiwwPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP03s-0008Lp-JE; Thu, 16 Apr 2020 08:39:52 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jP06B-0002zh-OD; Thu, 16 Apr 2020 08:42:15 +0000
+Received: from lb2-smtp-cloud8.xs4all.net ([194.109.24.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP03k-0008L6-6F
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 08:39:46 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1587026385; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=uYTomwNJ7JVKnSJj43lc2hrUMA3IdsRKM3uaYsQJc+A=;
- b=NVzHH5QZoPKcUJdbVhOOgcAGXZ4pf0oVl3ptv6LkxaCxjXFFNJjau739kCLaXRysx99dXci4
- 1Vl5JsleXYNxoW5guKKxQwJ5an84OeEl0u4jwemtmYw9Ay14zyXYWauH8SwaDaLq8sywsbrS
- Ue6zNA5DBzvdWGUtKfPy1xWR5GA=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e9819c3.7f02262a8928-smtp-out-n03;
- Thu, 16 Apr 2020 08:39:31 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 39981C44788; Thu, 16 Apr 2020 08:39:31 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 94779C433F2;
- Thu, 16 Apr 2020 08:39:30 +0000 (UTC)
+ id 1jP060-0002yI-QE; Thu, 16 Apr 2020 08:42:07 +0000
+Received: from cust-b5b5937f ([IPv6:fc0c:c16d:66b8:757f:c639:739b:9d66:799d])
+ by smtp-cloud8.xs4all.net with ESMTPA
+ id P05fjxrLMlKa1P05ijR4UE; Thu, 16 Apr 2020 10:41:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1587026514; bh=nDiiDq5VxoANMFzKvaHDm5u5hBfjVUKYxuJ4Vl53I9E=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=DVK1/Z0UttgiZCFRsZ3bMTL/5GO0v6WyWPweVBM3xhNdgn7WUS+HvaQJIyfNoxg9U
+ nNMA8ToP6CIp+RnJG6vuaXWnYGzu+4NZuC049wgxmMcFTJ6H61SiS+GOG8hNSfOkx6
+ xmSi8LHOxShK0bj4hZPSQ1po5fP+AQxsladHKTrI4EkQEQdwY8BKsCTvQaspqDQn91
+ CoRtJJ1qmc9pgfQ+ptbFkflqY+rTeiV+nwm0DXh/aOR4p+0N2vR6d8QOuaM9Sh0Trb
+ g/4WO/y+nAfVLi5pNRzWWnVqQJAVIgbAOqLLJqQHnsqz4mSQqpmaw2aV22auz3T9GZ
+ JFfiyYkQ2rJmw==
+Subject: Re: [PATCH 1/2] arm64: dts: mt8173: fix mdp aliases property name
+To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org
+References: <20200414030815.192104-1-hsinyi@chromium.org>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <4e335bc7-a45d-4688-a578-1e9793a61229@xs4all.nl>
+Date: Thu, 16 Apr 2020 10:41:43 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Date: Thu, 16 Apr 2020 14:09:30 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 0/8] Relax sanity checking for mismatched AArch32 EL1
-In-Reply-To: <20200414213114.2378-1-will@kernel.org>
-References: <20200414213114.2378-1-will@kernel.org>
-Message-ID: <a86108a91975cacf94adc2a2101fba1b@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <20200414030815.192104-1-hsinyi@chromium.org>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfMRXhIiwag2O6pLuQ2S1/m/UzBg8JrrSZagIUAA4xYEUDBHly1PbuCwb4LDhizYpEfFs3dPdy9Dod0YG8uUWitCPx80aF9uzvLyby9dTr2yyBl9eApiU
+ knu5VuVPUdx0VdZXYeZxUbWth/4x8GzHPCpbEJzaPjFfu5skGd+DYtgTCFmZ4f81p3BoDxc8zZyVUA0liIVCkfyRRoOutPpY2JRTvGu9ZSDr5KFwI+Ipp+qK
+ nn+itAIR5S/QaxpBjCv/Lh7OS7WDBzxQXCVv+lt/cfWaSXCk2W1VOEVdAIpUKW5cWCNH/QtxgFDsJvJEovCcrr0pnVR5gXahpCWXmXXMJXhD0N7BbIarJB/v
+ JcZ8XNAaMvoddbwLF601Bh41gLzgoKdUBBPdu/25m4Ytk/Y0wRakVq4TAfLixO/jJP3g1d5xP9QU7xFs4FE3W0sbvReAP0RLIILVohO6j0oTJSeqLsN3t0IY
+ HpBdwLonp7Vg7QIIxigMTh7YxYrvcWTU+KcgXWwRlh/EPv3dfBclZ/rX3x366N5BG2PUEP5mog2ms28P2nkpY2uueEIzsAFCNhA+tdcLbpmt/vqVNusF/xkk
+ wu/db57jEKXRh48AoAgObV4V
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_013945_607744_8CF7B2DC 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200416_014205_654463_7CD5DA10 
+X-CRM114-Status: GOOD (  12.66  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.25 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [194.109.24.25 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,50 +86,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, Marc Zyngier <maz@kernel.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Doug Anderson <dianders@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, kernel-team@android.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-15 03:01, Will Deacon wrote:
-> Hi all,
+On 14/04/2020 05:08, Hsin-Yi Wang wrote:
+> Fix warning:
+> Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
 > 
-> For better or worse, there are SoCs in production where some, but not
-> all of the CPUs, support AArch32 at EL1 and above. Right now, that
-> results in "SANITY CHECK" warnings during boot and an unconditional
-> kernel taint.
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> ---
+>  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 16 ++++++++--------
+>  1 file changed, 8 insertions(+), 8 deletions(-)
+
+I'll merge patch 2/2 for 5.8. I assume that this dtsi patch is merged through
+a mediatek subsystem?
+
+Regards,
+
+	Hans
+
 > 
-> This patch series tries to do a bit better: the only time we care about
-> AArch32 at EL1 is for KVM, so rather than throw our toys out of the
-> pram, we can instead just disable support for 32-bit guests on these
-> systems. In the unlikely scenario of a late CPU hotplug being the first
-> time we notice that AArch32 is not available, then we fail the hotplug
-> (right now we let the thing come online, which leads to hilarious
-> results for any pre-existing 32-bit guests).
-> 
-> Feedback welcome,
-> 
-> Will
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> index a212bf124e81..d1e9c41004b4 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> @@ -42,14 +42,14 @@ aliases {
+>  		dpi0 = &dpi0;
+>  		dsi0 = &dsi0;
+>  		dsi1 = &dsi1;
+> -		mdp_rdma0 = &mdp_rdma0;
+> -		mdp_rdma1 = &mdp_rdma1;
+> -		mdp_rsz0 = &mdp_rsz0;
+> -		mdp_rsz1 = &mdp_rsz1;
+> -		mdp_rsz2 = &mdp_rsz2;
+> -		mdp_wdma0 = &mdp_wdma0;
+> -		mdp_wrot0 = &mdp_wrot0;
+> -		mdp_wrot1 = &mdp_wrot1;
+> +		mdp-rdma0 = &mdp_rdma0;
+> +		mdp-rdma1 = &mdp_rdma1;
+> +		mdp-rsz0 = &mdp_rsz0;
+> +		mdp-rsz1 = &mdp_rsz1;
+> +		mdp-rsz2 = &mdp_rsz2;
+> +		mdp-wdma0 = &mdp_wdma0;
+> +		mdp-wrot0 = &mdp_wrot0;
+> +		mdp-wrot1 = &mdp_wrot1;
+>  		serial0 = &uart0;
+>  		serial1 = &uart1;
+>  		serial2 = &uart2;
 > 
 
-Thanks Will, tested this series on QCOM SC7180 and SM8150 SoCs.
-
-For the entire series,
-
-Tested-by: saiprakash.ranjan@codeaurora.org
-
--Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
