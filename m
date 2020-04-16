@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9F681ABD02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:41:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09B1D1ABD04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:41:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0znelx8Llbq+vGJb+YYDM9yvZ0pk1oh2J17Y3mMmzLk=; b=PTxRN22vZIzlkj
-	YepIuu5E4PvRVND8URO2eO6JVAphk6eEHUjgPv651TKHF71iBlVpVlB/E0r6ftBvf11RvgeMhPBrZ
-	nwOirYTbATAUTYbCzWRwCpbyBcu6l+pwu/KFOThma+W4JqvE94O56m8zX0dPQ30Y+gr67EkXDSjWm
-	UvbG/sCiJQCCutI3beN7faZGke8w2YaSxDz9EVRwH7MDuN32nfBWM5Uqhyvu/K98GB+Amp7BwEjhl
-	GLWFLY6+wgynKmnQzr71zFiGgBSecBL6Va7Qb6WcE+5aYu9EdcdzcR6mFWLF9sa4/wf4kk3pD5nhB
-	C5CDCEsGxca4wlkaMIsA==;
+	List-Owner; bh=750JEr5dhmiUi0lQjmUdWZVaZd1d9HdFF3b6SSONH6g=; b=EM1LS73XoW4zBA
+	Lb95pt+o6pPaw4D7DUGrAzlL1yZOZTIxE8IqKY5EHB/3un0NDU2/tR4hnuf1LIDCUQYO+7wzuxCKt
+	r31mNqLWsU3eyMoCxqD1EN8SkfSobTDPPsV/wyCixZrC++JGVw8NrxG1DexMvpyf2oqD7pKTLBOzE
+	Uu3PMDj/Snkm4ZJH7i6cfA/rspp66TzLDPNQA5wReZtNyalzWV13+40XeAytXKrhttG9SX7vQ6uzc
+	UySPYY8Cz/Fn+OhH7Rop7msL/3n94rOwjFtQ3B4MTyssjgKvyIKeK2O8Pv3MulHt6jdcWF2uTsMQD
+	wfHKU4gbp4aCJ7K22nxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP11K-00082Y-EU; Thu, 16 Apr 2020 09:41:18 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jP11h-0008J2-OU; Thu, 16 Apr 2020 09:41:41 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP118-00081t-5E
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 09:41:07 +0000
-Received: by mail-lj1-x241.google.com with SMTP id z26so7027099ljz.11
+ id 1jP11Y-0008IC-8Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 09:41:34 +0000
+Received: by mail-lj1-x242.google.com with SMTP id j3so6633434ljg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 02:41:05 -0700 (PDT)
+ Thu, 16 Apr 2020 02:41:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8dAk70I1p4hnhRGOefpbJT7ms2GQjkjqrJGg81hx6OQ=;
- b=ObziAsNZFmML/a7d7NyFT7NUp0TNcEQoe/JcKNJRXlvCU3WayEVxd+oN3RnNbY2YK9
- fdwRkA2KoGhzenGHSQwzhrnXNIAvYHWxmiS/2E0x/Ti3lsohU1KAS/vGFGhbV/JKJGru
- IZakD4MQ73Hb+ddeolKSS/3O/BATf1tH82knHsUXb4ZnWDnSnn/Uo1r2Z8bgJaBg/oSQ
- jvDe9T3HDh61oUWZvHkDZrlF7Fpj4VNr3ji1FKygGOrcPWMqXpluT5PKq6TaE2BdX5WZ
- A2bUMW2Ip9GH5STT7BwaS4KvoAbcvYu2Eq5P+JT8ilaLA2T+PcZqATJAP1T/UlQMOTMC
- sRcQ==
+ :cc; bh=5cXqd/FYXB0lbGufBrqDJUqh9/OZeedfUjtBKEKKPBY=;
+ b=QREs/SmDJvEf1zq17GMjwgTqEIyMlkJEjg5f3v/HeaLYKjVC8QYC1tgHS9NiE8NKcc
+ TGpmQwdmfUl79CLFpobpVIg7Y71DLmUEMoO4SybCkM0m/qJTWd8TH7fD8AW6GTjZh5E2
+ 3xB3Gmop1M/FTGW91HEFmJs0231flS44BMs2mjhSI3HDKbtBPY4kMr+le/vVy6MecdtM
+ 36GNDW5Lz27hb9BKmDCXci7WaRgb054h8OPccGeiMoEExPEgMfHxCK1ZBv+Rux+HEuDy
+ gMC87Sq8XSDg34xBrMmEcMt62x/S+my0Xke4M9RSm63NB88ahjLVCRWh9rFJMdVUhp5/
+ d7RQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=8dAk70I1p4hnhRGOefpbJT7ms2GQjkjqrJGg81hx6OQ=;
- b=CNEh9CniwNaS/xBwfU3B5H7Ax2Di0mq57E9qBGx0EvP9tCu734Foy8ghy8WLNKY6pf
- emlGnSbLt1VUWCS+Zj7gfqb26etpWgI7vaEYERAHUsQEwjKWZafMXmrSQJ0cHNV7tIa7
- unIOEiTNN1AIL5AV9/Inhl6ALkHG3LQSKPvDi/q38WEspTie5NfGWKfnMtoj2A7ZKckJ
- QpoePohKWnc48QzjH6LlJEjnlKjI6TIgQC9ZaRQwCV7uC/tjUOJ0OZao/QXTVkh1QaGq
- NFtpGc+294zrP8AQL7/z+EVjKc86KcRDihXEmL0rPiL05MYCGZqZ27N6hmyiHLQBpgY5
- jGTw==
-X-Gm-Message-State: AGi0PubKjH13j6Jp/hZZaP4Q87i8vkT00tAB5p356hca+Qm+HvvyibTC
- wfxpxmifWlgBJv1K+rggf/yoGe/DWIO9YDU0hrgoPA==
-X-Google-Smtp-Source: APiQypK8qx4sDjdMlKaIAgsSnv1jrL4D1nl6jj30y6f4zJEOB93Qgx1Jwe4YMT5gUNKLU95XB+kIvZo1wtO6/Q3eFao=
-X-Received: by 2002:a2e:8805:: with SMTP id x5mr2401076ljh.223.1587030064671; 
- Thu, 16 Apr 2020 02:41:04 -0700 (PDT)
+ bh=5cXqd/FYXB0lbGufBrqDJUqh9/OZeedfUjtBKEKKPBY=;
+ b=c/aRsMdmK+fVzjnuKPzY8nOZnqfOA6nZjw8tw/C7tiJiAZ4IHEOY3qo9cJxeZSIxgA
+ gV9PcagP/QUTQrK3ooXsZAxkSEtb5aD0YZH9aG+Hwypd/pfm9n3Tr9N/7mlRghjO+x4E
+ 9po9AvdaCOysJEZDoS3oBuiG++bxa322zt43LcE0tfcCbY4UGBZncwdLbwiSaFsJn3tc
+ pXW3YKb4aVF21eDaR+UqPq6U074NkdKy1EixmPVH5a1Bw5Ai9byEzsGVqFRtv7UZ0QLu
+ iS1hijEk6wyIvSdtUQDHPN2VPUmKNGqa/AeGrlWn8857HwLBZuwwT26JbTdri15DAPkF
+ hZTg==
+X-Gm-Message-State: AGi0PuZzDBakfvmFn5w6p/YB5d0b/QZTp83/vISSB80zptgN4phjD6n8
+ CGefZXZq/jo6BqLwtA9WsqeDKdqq4pT3e8x4NEM0zg==
+X-Google-Smtp-Source: APiQypJnieW207MTrrcDCpD/6xCHVrwXn13tNVmDwtrOVmdK3UPhTDARFtiYg95ApfvlUAdHmjKJ2IVQP/pmqh19PEI=
+X-Received: by 2002:a2e:5048:: with SMTP id v8mr5437034ljd.99.1587030090524;
+ Thu, 16 Apr 2020 02:41:30 -0700 (PDT)
 MIME-Version: 1.0
 References: <1585306559-13973-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1585306559-13973-1-git-send-email-Anson.Huang@nxp.com>
+ <1585306559-13973-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1585306559-13973-2-git-send-email-Anson.Huang@nxp.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 11:40:53 +0200
-Message-ID: <CACRpkda7U5M0OU+dQ9CKNqqmZ0XU=LsWqZAOy6faDqknaDCaQw@mail.gmail.com>
-Subject: Re: [PATCH 1/3] dt-bindings: arm: fsl-scu: Add imx8dxl pinctrl support
+Date: Thu, 16 Apr 2020 11:41:19 +0200
+Message-ID: <CACRpkdajgsshQ25eCsx8FS5qZ10AMcG9_PC5bwQfqGTXSprSvg@mail.gmail.com>
+Subject: Re: [PATCH 2/3] pinctrl: imx: Add imx8dxl driver
 To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_024106_207518_CC20F7AC 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_024132_296771_B9E53F79 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -116,7 +116,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Mar 27, 2020 at 12:03 PM Anson Huang <Anson.Huang@nxp.com> wrote:
 
-> Update binding doc to support i.MX8DXL pinctrl.
+> i.MX8DXL contains a system controller that is responsible for controlling
+> the pad setting of the IPs that are present. Communication between the
+> host processor running an OS and the system controller happens through
+> a SCU protocol, add support for the SCU based i.MX8DXL pinctrl driver.
 >
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
