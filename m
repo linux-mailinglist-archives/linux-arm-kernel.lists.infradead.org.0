@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 248741AD0E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 22:13:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C6E21AD0F0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 22:15:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=TB3K6+lArGsLYL6F+wrooDYeuPsedgy1KsznTNJxqU0=; b=oJP
-	rrztzHteZ8uvtWbJ+Kyoy9xDktlINwDyCaXzNSsI423CoT+36o4sAolE4bmEobYn3Y9bhOk+mtgcy
-	ty5NEoRRotu8sGVAcSWGEE6rCj7wjFPBbxYRonUJXiqlyKIoP4HKusOKXc4IVhjo6Gp5zG1eHBV24
-	P0vfk5SiX569FcieCiAwSEabzouZTl1VwwFcCDhPhTNVuLaOM6HzpcWZ+AyMybMTrXabp5CKy/Y0G
-	L8aEtfTHMPKIUVYmU8VmKMrp2c5Nvt2zLFfS06sDTEVs2C5OP+GwnApOd/X9T4NBXhEk92HwDzIJb
-	NoYWM2ZNFamTvmHeyGqz2GdWjBuAoZg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a9kGN5bC1XNU3RfIAex4eKf5VJghBMyRT1k2s65jQWY=; b=frzcK5RiL4dtqI
+	LS0trF7lWDFLb6QXD8ltddFyIH8P06NlbW324WvH1yoZ8y002qV5aPBAIpOLqvTwUIq//qMJPvWWC
+	k6DV4tlWtqxiiTGO8TUrM3l5S6o74OSjp+MT8jqdSggaWZjdjTt67Jr/UusM91HmA7zlQjSZ1Rfk4
+	e/36FOaxvJwua0XFdklJ03O8ldScvzSIz5glzKRi9OVZcSuRSSMczVdqFe6RhSfAcItsN/EZzN6sv
+	scM94zz19uXoCnyyIiJ/ti/1lZ9Aolfgk1g5TqE5fMH60Ezxqe/meea3RoVSgB6mhN5PQS0cH+x/c
+	Kx5BeXAenLUfg5aF38UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPAsf-0002sj-2i; Thu, 16 Apr 2020 20:13:01 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jPAvG-0005eE-F2; Thu, 16 Apr 2020 20:15:42 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPAsR-0002rn-OG; Thu, 16 Apr 2020 20:12:51 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id kb16so35046pjb.1;
- Thu, 16 Apr 2020 13:12:47 -0700 (PDT)
+ id 1jPAv5-0005dr-Rw; Thu, 16 Apr 2020 20:15:33 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id fb4so2737585qvb.7;
+ Thu, 16 Apr 2020 13:15:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Mdld2TSwrjCL8Or77q1eiGOrXbCr1Q7AW1LhQ3P05Rc=;
- b=piToHmqFYmxGYFI6kkctoj0yPB6CmVdJ7fphEavw333j7ESiN53+qiLpXnZvicXJkQ
- 85ToigFFDTr1nIYIg7h1VlWK13kGdzU5MHn/Oh/LBvKJ2JKtxnb+oPLuMa4sSV+nZBH9
- ld73fRG/aX01WjHlN3jyavvVA1NNnJrfXnGiPxMSGSG5TvDWlQKpibcmqBiEJh4Hmq6y
- YGcJOh2q2YfLRLRXheZ2Uwqh0BRo1cLTUqBwGlpHSgWSrtOUwShiKz/tm3rVr2RTYU5Z
- DNdRpDw2blipRU2ty/T1ycIm602EY3ftk2CrfuIFxynfmHtn8Hn8yUpV0pcc45FLixtN
- v0xg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RrhoCocMui3bsFc5qkdYNErfeCVARryDRP7TYadbG5M=;
+ b=QfKW6F7xCXl6+vxdlzAiOL5ivPMy1SHP4U5CM8CVeegJchb5+KDPwsbTufj449g+u4
+ SD8E5bdY6BjaDM0KbK7iKkgwtLkedOn6so4ibg1BTWRdPCngH3jq4GS1rAXU0x3tqAW+
+ +Z+52kZuoEnBLuNVBNWfPaISsumvknew1jf03TvmuKfwG9QZs3ABAS2cvd1he0XhnLDQ
+ aeKzpcLxXOlZl4GkR6FTBIMSIghnearpfUmTipNkoasRCwGXVJ76zE+VYDzzcJFVV3tu
+ IXG/BpW9slI84n6+qwgUnA2Ga9rgXPyqvF4yPDwBPGswDWoEGlWhip+xHunJQ8F1C6C2
+ YMLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Mdld2TSwrjCL8Or77q1eiGOrXbCr1Q7AW1LhQ3P05Rc=;
- b=d4pwpKJQiYh3L4UoSc87NYwePm4WLpeqDisWF5Qrw9FPnwlF6TRd5K9DeJFBxWEWkb
- OiRMQjvJ+ch8U3m6/TXFwiFijqoda4BaQtoJMbpd+6VoGdsFZ4gJQ5lVuf1yQGqPz84B
- 7cNKoZoJIsbOokrlPsRSklNQ9WYIDRnby5/e3R0WlGb/GHxrA2+ZEiRpO2iXk+YRSoKi
- xgM3sGGiOhGcixi7RrDXPUN9KQlhab4JKWZ3Ixd5ig/MUVl+GtjFUJsZlpVB0z5F28Zm
- fl0Qq8fWTSbE08UF147KJ4RvmTpGiucJBd+fwT8jwlpP3Hhzrnhfz/PyWgooQctOKblb
- tjsA==
-X-Gm-Message-State: AGi0PubyWqyuyboMUkDUOkIhGTZDVpdefZYuxUJ9AwP/jjQ9k8Idr8WV
- AVXa9AiJtwmkHkdHz8sSJkU=
-X-Google-Smtp-Source: APiQypKEttWXOit8+KDLINXPhywlevr4IIeRhvp5hmcCHiBvLxo8mCagomH4UYOK4EBYVpv6BXP0Dg==
-X-Received: by 2002:a17:90b:97:: with SMTP id bb23mr39362pjb.59.1587067966438; 
- Thu, 16 Apr 2020 13:12:46 -0700 (PDT)
-Received: from localhost.localdomain ([223.235.106.208])
- by smtp.gmail.com with ESMTPSA id m14sm3490316pje.19.2020.04.16.13.12.43
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 Apr 2020 13:12:45 -0700 (PDT)
-From: Amit Singh Tomar <amittomer25@gmail.com>
-To: andre.przywara@arm.com, gregkh@linuxfoundation.org,
- manivannan.sadhasivam@linaro.org, afaerber@suse.de
-Subject: [PATCH] tty: serial: owl: add "much needed" clk_prepare_enable()
-Date: Fri, 17 Apr 2020 01:41:57 +0530
-Message-Id: <1587067917-1400-1-git-send-email-amittomer25@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RrhoCocMui3bsFc5qkdYNErfeCVARryDRP7TYadbG5M=;
+ b=BTZsW3JODTiM0ZdzfvJMZkb+0e0S9ep/Hfpa/Hbphiwd7Iaan+J5OOpFdZkrHvldLs
+ 0jmHCz+mloofFAIN+Y1ybvcmTsUGVsk9tX9pxhoGcUyJpPeHfJz8RTpzne7rJ+jdugp/
+ 1OKNRCrZ7O8dIY6M0a0yTKYpm4P/7CPPPawGIW7wtL1dKU4JIdwv2sNs76miZPaIu3nj
+ bI6ntE/CWoVmQrIwKlH90YlWYKJ/RIhUMmFeejO+DLVu40IYyVbBmJW3eEHfkgJnsHW6
+ ftM0P5ujZlmfPF1kmRJ+y1FfoW85svyr245xmaZLGV7HBD/DM6a1rTvwFFCWWmfxkJEc
+ fYJg==
+X-Gm-Message-State: AGi0Puab0mt6orxsrI/yi+LFNMr6Yln1Z/c36cNxX21Wsg4ukTAtlsQc
+ FkQlfR8cpF3XLZWdsX5DsYvD+FscNkdB67MU8jc=
+X-Google-Smtp-Source: APiQypLEw9l7W2hSliB15jHFogvAHufSRGn0ZYH76LQ8VoeRoID9myxCgGr4Pn9PvD87gHrPUOj8sgZxasNifp8qNh4=
+X-Received: by 2002:a0c:f748:: with SMTP id e8mr11834286qvo.237.1587068130311; 
+ Thu, 16 Apr 2020 13:15:30 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
+ <20200414151955.311949-2-adrian.ratiu@collabora.com>
+ <CAFqH_52eKB4jtmn5e4HQubv8ijOPqDqncp1dRGahhU3NOorJMQ@mail.gmail.com>
+ <87lfmvjmt5.fsf@collabora.com>
+In-Reply-To: <87lfmvjmt5.fsf@collabora.com>
+From: Enric Balletbo Serra <eballetbo@gmail.com>
+Date: Thu, 16 Apr 2020 22:15:19 +0200
+Message-ID: <CAFqH_513KB+En_xbpXSBG6Q38kYxWCgw0KO3NVxCb6fqHDaKBA@mail.gmail.com>
+Subject: Re: [PATCH v6 1/8] drm: bridge: dw_mipi_dsi: add initial regmap
+ infrastructure
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_131247_788683_640E91BF 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200416_131531_932090_BA61220C 
+X-CRM114-Status: GOOD (  14.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [amittomer25[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [amittomer25[at]gmail.com]
+ provider [eballetbo[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -95,58 +94,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, Amit Singh Tomar <amittomer25@gmail.com>
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Adrian Pop <pop.adrian61@gmail.com>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-commit 8ba92cf59335 ("arm64: dts: actions: s700: Add Clock Management Unit")
-breaks the UART on Cubieboard7-lite (based on S700 SoC), This is due to the
-fact that generic clk routine clk_disable_unused() disables the gate clks,
-and that in turns disables OWL UART (but UART driver never enables it). To
-prove this theory, Andre suggested to use "clk_ignore_unused" in kernel
-commnd line and it worked (Kernel happily lands into RAMFS world :)).
+Hi Adrian,
 
-This commit fix this up by adding clk_prepare_enable().
+[snip]
 
-Fixes: 8ba92cf59335 ("arm64: dts: actions: s700: Add Clock Management Unit")
+> >>
+> >> +static void dw_mipi_dsi_get_hw_version(struct dw_mipi_dsi
+> >> *dsi) +{ +       regmap_read(dsi->regs, DSI_VERSION,
+> >> &dsi->hw_version); +       dsi->hw_version &= VERSION; +
+> >> if (!dsi->hw_version) +               dev_err(dsi->dev, "Failed
+> >> to read DSI hw version register\n");
+> >
+> > Is this an error that should be ignored? If you can't get the HW
+> > version, probably, there is something wrong with your hardware
+> > so, don't you need to return an error?
+> >
+>
+> After thinking a bit more about it, that error should be a
+> warning.
+>
+> I added it because in some cases (for eg. if the peripheral clock
+> is disabled) the reads can return 0 which is obviously an invalid
+> version and the bridge will error in the next step when not
+> finding a layout.
+>
 
-Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
----
- drivers/tty/serial/owl-uart.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+If you'll error anyway, why wait? IIUC at this point the clock *must*
+be enabled, and if not, something is wrong with the driver, I don't
+see any advantage on delay the error. do you have a use case where
+this is called and peripheral clock disabled?
 
-diff --git a/drivers/tty/serial/owl-uart.c b/drivers/tty/serial/owl-uart.c
-index 42c8cc9..c149f8c3 100644
---- a/drivers/tty/serial/owl-uart.c
-+++ b/drivers/tty/serial/owl-uart.c
-@@ -680,6 +680,12 @@ static int owl_uart_probe(struct platform_device *pdev)
- 		return PTR_ERR(owl_port->clk);
- 	}
- 
-+	ret = clk_prepare_enable(owl_port->clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "could not enable clk\n");
-+		return ret;
-+	}
-+
- 	owl_port->port.dev = &pdev->dev;
- 	owl_port->port.line = pdev->id;
- 	owl_port->port.type = PORT_OWL;
-@@ -712,6 +718,7 @@ static int owl_uart_remove(struct platform_device *pdev)
- 
- 	uart_remove_one_port(&owl_uart_driver, &owl_port->port);
- 	owl_uart_ports[pdev->id] = NULL;
-+	clk_disable_unprepare(owl_port->clk);
- 
- 	return 0;
- }
--- 
-2.7.4
+> So I'll make this a warning in v7 and explicitely mention that
+> reads version == 0 can be caused by a disabled pclk.
+>
 
+-- Enric
 
 _______________________________________________
 linux-arm-kernel mailing list
