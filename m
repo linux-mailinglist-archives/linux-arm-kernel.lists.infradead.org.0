@@ -2,66 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D71251ABCB6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F32C1ABCC1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 Apr 2020 11:28:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lg9wxuWNK1IX10xQDRFXOyrdyB5oV+ssuRSYaMe50g=; b=bigMdwW2F4ICnW
-	ZQgKAOezgkcwCTdzSwOFE0KSpQ6Q0jZetBTU4dSOkDKc19qdPLD3luAraKTz+LNtiDCIlQ2qUCxbE
-	eP+35G+I7qawghmpMZ39+ODi6x4zIbnSUBizjcti8bh2xyDwV67SHau4qLYC1s9eG0hHclbnxOmZN
-	welIua7oOYX/57FqtZku8BruTC4o7Tl6AFwmy7froyUFPjSLzKDFP7w7tjhBPVgNL/KSrN+QoUtsI
-	Rz7sC1qcR/ES1qM+7H2kAcBhCUA2Nm7bbESrfCA0ns4T5C6LfAjl/GS7GvTje2hKpLYHsSyFH6vaR
-	ABpWNEywYxh9Ruv16n/g==;
+	List-Owner; bh=o1nTKxc/kMQBfmHpnqDJ3t/D4z2kmUgpCU+69PnGVQM=; b=im6yiSkkYXEP4Y
+	Z5dUW7587uZhHCQQS6TlyEauJA5ogCG6Q16G59I86OHAZ4V5YlDSWJkGXlF3m69R7dCUUUeVm0n8x
+	JZo34Ij80RBrgDJguZ5b9OpqYIsomff4YCpPRZfI6Ky7hpWUtQB7TNulfUSEJScQibtx9XgGkSX44
+	kz2xAr0Uv/PbHil9MAxyuNNL2ge1mTjwRle1+EXu+s6X0S/Qu1QIVG9le/rH401PiRKqzFhBijcNL
+	s164+PpZVG0P1DIQwDF8WXHvDV3NUEi0oD3VdKOClNE1Md6yXIZPbcGbCLcTksfEbajYYfpcOliZ+
+	+WqDgsWI3Cz6ba6Zy6ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP0ie-0001Iq-Ca; Thu, 16 Apr 2020 09:22:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jP0od-0004vX-Fa; Thu, 16 Apr 2020 09:28:11 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP0iS-0001II-1F
- for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 09:21:50 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6E136206D6;
- Thu, 16 Apr 2020 09:21:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587028907;
- bh=I43NbjtBbDTS3CdmNbDTSnB2YBA20hxQfVK2qJSV0pA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=g83L9WrWpa7zZKiaiS6luhTWDkfuZ17XTZCP8NRcLRn254JtYa0uGXGudhneZ6pu1
- hyUYQMDC7TNT3NgJXB7B4ek8JM8jfM3LBM11aQ5+nVfs+bRt+caLIyjf8xulpwec3U
- pzEjCIO75dimEISJcPBelM60n/dMQdalKjee+8yE=
-Date: Thu, 16 Apr 2020 10:21:41 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH RFCv1 0/7] Support Async Page Fault
-Message-ID: <20200416092141.GA30816@willie-the-truck>
-References: <20200410085820.758686-1-gshan@redhat.com>
- <d2882e806ad2f9793437160093c8d3fa@kernel.org>
- <6a1d7e8b-da10-409f-16d0-354004566a1a@redhat.com>
- <20200414110554.GB2486@C02TD0UTHF1T.local>
- <5bc62c4f-e19d-82f2-072e-dfa4498dccf3@redhat.com>
- <20200416091621.GA4987@lakrids.cambridge.arm.com>
+ id 1jP0oV-0004oK-5u
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 Apr 2020 09:28:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m8so7088052lji.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 Apr 2020 02:28:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WsPjodFLa29jgz8fN9Fb4AffGRX4R/S0PAGXHFxg8uc=;
+ b=Mcjo0LRYVYxyzbtjbCWQVN/NoJRsDH8jFlsbuCOBONMT1lR2ImkQ/9Gyi6g9ECLGD9
+ W6+NvffZF/UBCbB65JSgSA15hb1DBUMVmSago9O5LFo/FlxiOs0HJ9MMXrD/bobgK0Wt
+ mMVuq5ylGm8TZD27kCZcpU+ZZGgxXnxAhUmazdaIRigybhADJAXlhqCpHAnwaqebmn77
+ 48UsyHV+4cY856JG138S9HEb9o2gew/a6x80Z8PggjjeFafkcMesJftx8HReUBysV/gx
+ GRB7jVLJBDkBbXax2F7N8etArkTLVsDT3ukSGd2g9bhBAQlzlqv6iTs7iWBiPoiBSWfj
+ bFzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WsPjodFLa29jgz8fN9Fb4AffGRX4R/S0PAGXHFxg8uc=;
+ b=Dc7G4f8qCvdiMMaVOW7hUtZcFnjunaw3G7jXyWFO2ceLnCNEfhXDSCu/PFR+Amp8BT
+ Wmz3v2iIz9UR28Sgwj3cdobTVDgUlZ2ICFVEFtlwG9e7jRgYbiH8c4qS8B5z4X4RNe7d
+ ExQQtFrEAy7wZZKr+jIkDCumppKDRuM5FKpbz45Xz5D3TYDKLc/mSq2+QI+Eg3mY75Iq
+ r40NHupthNdPhdRi9S1FIOf/AkvXIdXqyFSuEcuCcvbjDNqhCnqHm+RA019ErAfjP/0I
+ GCsiwTSLWAlkEgFQLsvZuHSWdV8JZkHBi4tfYNlk4ojgtPGuhBnCpwPZFa39oLQH7YwB
+ 49dA==
+X-Gm-Message-State: AGi0PuZDdckn1h/8e/D67U7vvy547x8ksfkSD2kidcyliI6jOsd8vsHI
+ apgfXM+dCtoO8fSXgTEPBwraEk5wTPTXVGXVsGGfgg==
+X-Google-Smtp-Source: APiQypJMQjT4pZ+GIg1c79TG3Woa9BTCPwC3Eg2zQlaa/+IMFOuGyPsLA6Z0cx46mmNNDk/3KbeDkx0QsaVz8N768ms=
+X-Received: by 2002:a2e:9ad9:: with SMTP id p25mr6015137ljj.39.1587029281103; 
+ Thu, 16 Apr 2020 02:28:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200416091621.GA4987@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200402203656.27047-1-michael@walle.cc>
+ <20200402203656.27047-11-michael@walle.cc>
+In-Reply-To: <20200402203656.27047-11-michael@walle.cc>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 16 Apr 2020 11:27:49 +0200
+Message-ID: <CACRpkdaqgHhPwdKdUai4zvi21qR-cSQUKyzZ3SyfWBLPN9us3w@mail.gmail.com>
+Subject: Re: [PATCH v2 10/16] gpio: add a reusable generic gpio_chip using
+ regmap
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_022149_505632_6B5B8E9C 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200416_022803_257298_B0D03797 
+X-CRM114-Status: GOOD (  19.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -69,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,44 +92,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drjones@redhat.com, Gavin Shan <gshan@redhat.com>, suzuki.poulose@arm.com,
- catalin.marinas@arm.com, sudeep.holla@arm.com, eric.auger@redhat.com,
- james.morse@arm.com, shan.gavin@gmail.com, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 10:16:22AM +0100, Mark Rutland wrote:
-> On Thu, Apr 16, 2020 at 05:59:33PM +1000, Gavin Shan wrote:
-> > However, the hypercall number and behaviors are guarded by
-> > specification. For example, the hypercalls used by para-virtualized
-> > stolen time, which are defined in include/linux/arm-smccc.h, are
-> > specified by ARM DEN0057A [1]. So I need a specification to be
-> > created, where the hypercalls used by this feature are defined? If
-> > it's not needed, can I pick hypercalls that aren't used and define
-> > their behaviors by myself?
-> > 
-> > [1] http://infocenter.arm.com/help/topic/com.arm.doc.den0057a/DEN0057A_Paravirtualized_Time_for_Arm_based_Systems_v1_0.pdf
-> 
-> Take a look at the SMCCC / SMC Calling Convention:
-> 
->  https://developer.arm.com/docs/den0028/c
-> 
-> ... that defines ranges set aside for hypervisor-specific usage, and
-> despite its name it also applies to HVC calls.
-> 
-> There's been intermittent work to add a probing story for that, so that
-> part is subject to change, but for prototyping you can just choose an
-> arbitray number in that range -- just be suere to mention in the commit
-> and cover letter that this part isn't complete.
+On Thu, Apr 2, 2020 at 10:37 PM Michael Walle <michael@walle.cc> wrote:
 
-Right, might be simplest to start off with:
+> There are quite a lot simple GPIO controller which are using regmap to
+> access the hardware. This driver tries to be a base to unify existing
+> code into one place. This won't cover everything but it should be a good
+> starting point.
+>
+> It does not implement its own irq_chip because there is already a
+> generic one for regmap based devices. Instead, the irq_chip will be
+> instanciated in the parent driver and its irq domain will be associate
+> to this driver.
+>
+> For now it consists of the usual registers, like set (and an optional
+> clear) data register, an input register and direction registers.
+> Out-of-the-box, it supports consecutive register mappings and mappings
+> where the registers have gaps between them with a linear mapping between
+> GPIO offset and bit position. For weirder mappings the user can register
+> its own .xlate().
+>
+> Signed-off-by: Michael Walle <michael@walle.cc>
 
-https://android-kvm.googlesource.com/linux/+/refs/heads/willdeacon/hvc
+Overall I really like this driver and I think we should merge is as soon
+as it is in reasonable shape and then improve on top so we can start
+migrating drivers to it.
 
-Will
+> +static int gpio_regmap_to_irq(struct gpio_chip *chip, unsigned int offset)
+> +{
+> +       struct gpio_regmap_data *data = gpiochip_get_data(chip);
+> +       struct gpio_regmap *gpio = data->gpio;
+> +
+> +       /* the user might have its own .to_irq callback */
+> +       if (gpio->to_irq)
+> +               return gpio->to_irq(gpio, offset);
+> +
+> +       return irq_create_mapping(gpio->irq_domain, offset);
+
+I think that should at least be irq_find_mapping(), the mapping should
+definately not be created by the .to_irq() callback since that is just
+a convenience function.
+
+> +       if (gpio->irq_domain)
+> +               chip->to_irq = gpio_regmap_to_irq;
+
+I don't know about this.
+(...)
+> + * @irq_domain:                (Optional) IRQ domain if the controller is
+> + *                     interrupt-capable
+(...)
+> +       struct irq_domain *irq_domain;
+
+I don't think this is a good storage place for the irqdomain, we already have
+gpio_irq_chip inside gpio_chip and that has an irqdomain, we should
+strive to reuse that infrastructure also for regmap GPIO I think, for now
+I would just leave .to_irq() out of this and let the driver deal with any
+irqs.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
