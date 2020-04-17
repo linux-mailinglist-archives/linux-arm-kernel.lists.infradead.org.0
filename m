@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3191F1ADBA2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:55:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 683711ADBB6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3acH0HanzqhF99Bx+JH4pvSTzWixdBpx17A0A1QU2kg=; b=N4uF8gjkA3NtCz
-	ZZGd394xzxJhiJbYwRNeO+ffh8aS+C2kcQxCh6te9kD4gK0W4sgvv3bY/WN3wspwBQRiMnImf100v
-	aYxJI3VWHQg0BJmLdNUCmOf87opa/uoxKe2awXSie6ekLNwLHlRdFtMRC1Ux8Yc6zih1y14ggpLsR
-	owoGFms+SEKtLVFsF+IdSeZ9dAn+tQQmeAB6dKg0ruE2ZckYrlTKtKdeDhLYKUqwIMr14IYySbWRk
-	tz6YZf65BzMYrUuqVWI4QuHCbtI/xiif2hvOqm5tYE0sR6d0gohlnmZ/qo3hKB/WrRrURZDfN0b3z
-	JfoJHAAwGCuQuxb96N1w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=lr09Q4IqaHi7+yz30L/iPFa3vpPi/4BHmXtYGIFBsgM=; b=qo3
+	AmsFr9RuoRbeEuqJ6VvB7YFWsTf+btsDwvEX3NraozIco6mfCyB71IbD/VzJv0YtIw/Ul6gp5PlIg
+	c7zzOsTw9JPvODycd4eBEuz0GM46BgeLwP+PVlECPAnJ0vZTgDE8JjMjiucYYS0ODTmzbKw/vIZL/
+	JFzq40puKhArntkI9Xl9pYGizKpyZBEwDffTOy6B01B+XWAkpRaYM/NQ660L2vY0wclJlpM0v/C59
+	D2CgPmWyIGDR727C77yegPVJOY64mk+kjpdU2JFUq5+NdhQ4g1gcg9QBfCUgjfv3eIyTXJ8XPxrLs
+	GjPhJes3+UujznS4D8XTTpJgS0/jNkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOeD-0001oz-3N; Fri, 17 Apr 2020 10:55:01 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jPOh2-0004w3-9T; Fri, 17 Apr 2020 10:57:56 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOe3-0001o7-Qk
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:54:53 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 8087CD7DBF35CF8B1E2F;
- Fri, 17 Apr 2020 18:54:50 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
- 14.3.487.0; Fri, 17 Apr 2020 18:54:41 +0800
-From: John Garry <john.garry@huawei.com>
-To: <will@kernel.org>, <mark.rutland@arm.com>
-Subject: [RFC PATCH] perf/smmuv3: Support sysfs identifier file
-Date: Fri, 17 Apr 2020 18:50:34 +0800
-Message-ID: <1587120634-19666-1-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
+ id 1jPOgu-0004ve-Ah; Fri, 17 Apr 2020 10:57:49 +0000
+Received: by mail-wr1-x442.google.com with SMTP id d17so2509405wrg.11;
+ Fri, 17 Apr 2020 03:57:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=sd4wlffcDUJn6Is+ybIxeg/rBrW/CCyK3C6+QSMdYME=;
+ b=gjdna/g3IzY/pyWOBItBCeNMdcUr+uO10O8QuvDpW60z5OqqNmORxi+TYBa/LRV414
+ zmusD26KSyJVJnoErCLG/iKn0m/dTxT2/wtYXzyOFUk7o50ahvsYTvTut2zXF5U3CbAO
+ HEV8ACDi0DY34sWlmqPb1KjNFsBOMLdBiLSsGz1DSvRyxZuU+L8Y1/HPLcZO6TMrchp6
+ OqSa1uuhtnqCqQUw7TruoP92l4Cq69kJskAi73jbwbazujr7rP2mdou5e99rW2r8+tL3
+ 4dANdKV2bCsU23nbZDQk81Of0lMoNT/GJTWEXiEAcdKj1aaEdpRaLPN5gvgpg7rbLIuq
+ yc5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=sd4wlffcDUJn6Is+ybIxeg/rBrW/CCyK3C6+QSMdYME=;
+ b=S0VpweZ0sNiGjKkLuVqinDZwZPVxDcccc42PXL0y/MRopKvRE4XQ5KyU57a8ottP0s
+ +0hvd1vVpHHqrwV6oZWt2Qi0n7Zv2ua8FJ1EeLGvgVDflvsY3EnFijjGo5GuILnalbDd
+ T9QuMr/P4h2jzgDc+/3iUQdjt5Oog9yW0M+s/DDGNDHnlIygF2wUIILPGePieAu0B5nt
+ 8zPLqwkr2wWqvc9NAOkgcnQtCqJx5W8Mg+dgcioFpKhsDPzej6FCVbTcOmGCOP/wR3bE
+ kY/BE1FMjj6l187epaWDVbLCvTD0TFRs8T+SJSQPlKM1oAB9w7i5ZEVCc9jVbdlzjdlB
+ RIVA==
+X-Gm-Message-State: AGi0PuYZnUDB3o8gshLPwMDRyjTSRO2x6hRgubgU3L+fz3cpWztZbKX9
+ jTS58Gja838clqhxJyGTE1U=
+X-Google-Smtp-Source: APiQypIg8WTXvGq3JpweHchn60zYamjb/Or2vqhi0jfvt7lqZWVeLMjnHZZ/4dWF9Mv3SS3R3JAZhg==
+X-Received: by 2002:adf:f3cc:: with SMTP id g12mr3230178wrp.82.1587121066885; 
+ Fri, 17 Apr 2020 03:57:46 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i17sm21410274wru.39.2020.04.17.03.57.45
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 17 Apr 2020 03:57:46 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [RFC PATCH] arm64: dts: rockchip: add core devicetree for rk3318
+Date: Fri, 17 Apr 2020 12:57:39 +0200
+Message-Id: <20200417105739.3718-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_035452_020561_46926712 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_035748_368774_5D6F0EEA 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,86 +93,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jolsa@redhat.com, John Garry <john.garry@huawei.com>,
- linux-kernel@vger.kernel.org, shameerali.kolothum.thodi@huawei.com,
- qiangqing.zhang@nxp.com, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the perf tool to know the specific HW implementation, expose a HW
-identifier file for the PMU device.
+The rk3318 is basically a rk3328 with improved gpu,
+so add a dtsi based on that.
 
-For now, we just support HiSilicon "hip08" through pre-existing ACPI
-options quirk framework. A minimalistic approach is used, based on the
-hope that a proper identification method will be available in a future
-SMMUv3 spec.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3318.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3318.dtsi
 
-Signed-off-by: John Garry <john.garry@huawei.com>
-
-diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-index f01a57e5a5f3..0ed358cff4a7 100644
---- a/drivers/perf/arm_smmuv3_pmu.c
-+++ b/drivers/perf/arm_smmuv3_pmu.c
-@@ -113,6 +113,7 @@ struct smmu_pmu {
- 	u64 counter_mask;
- 	u32 options;
- 	bool global_filter;
-+	const char *identifier;
- };
- 
- #define to_smmu_pmu(p) (container_of(p, struct smmu_pmu, pmu))
-@@ -552,6 +553,27 @@ static struct attribute_group smmu_pmu_events_group = {
- 	.is_visible = smmu_pmu_event_is_visible,
- };
- 
-+static ssize_t smmu_pmu_identifier_attr_show(struct device *dev,
-+					struct device_attribute *attr,
-+					char *page)
-+{
-+	struct smmu_pmu *smmu_pmu = to_smmu_pmu(dev_get_drvdata(dev));
+diff --git a/arch/arm64/boot/dts/rockchip/rk3318.dtsi b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
+new file mode 100644
+index 000000000..a32f771bc
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
+@@ -0,0 +1,3 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 +
-+	return sprintf(page, "%s\n", smmu_pmu->identifier);
-+}
-+
-+static struct device_attribute smmu_pmu_identifier_attr =
-+	__ATTR(identifier, 0444, smmu_pmu_identifier_attr_show, NULL);
-+
-+static struct attribute *smmu_pmu_identifier_attrs[] = {
-+	&smmu_pmu_identifier_attr.attr,
-+	NULL
-+};
-+
-+static struct attribute_group smmu_pmu_identifier_group = {
-+	.attrs = smmu_pmu_identifier_attrs,
-+};
-+
- /* Formats */
- PMU_FORMAT_ATTR(event,		   "config:0-15");
- PMU_FORMAT_ATTR(filter_stream_id,  "config1:0-31");
-@@ -575,6 +597,7 @@ static const struct attribute_group *smmu_pmu_attr_grps[] = {
- 	&smmu_pmu_cpumask_group,
- 	&smmu_pmu_events_group,
- 	&smmu_pmu_format_group,
-+	&smmu_pmu_identifier_group,
- 	NULL
- };
- 
-@@ -718,7 +741,10 @@ static void smmu_pmu_get_acpi_options(struct smmu_pmu *smmu_pmu)
- 	case IORT_SMMU_V3_PMCG_HISI_HIP08:
- 		/* HiSilicon Erratum 162001800 */
- 		smmu_pmu->options |= SMMU_PMCG_EVCNTR_RDONLY;
-+		smmu_pmu->identifier = "hip08";
- 		break;
-+	default:
-+		smmu_pmu->identifier = "none";
- 	}
- 
- 	dev_notice(smmu_pmu->dev, "option mask 0x%x\n", smmu_pmu->options);
++#include "rk3328.dtsi"
 -- 
-2.16.4
+2.11.0
 
 
 _______________________________________________
