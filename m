@@ -2,63 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59C1B1AE3ED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:43:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55C811AE3F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=clducIsOnkWd+BIRNUU6YytGIj1yO1WDvbj33t2ylV8=; b=jNeFBvX35SyEY0
-	aXeHetR7t7BWzoK0TrLZjkypGiHv2wjUasGKO++RRnUtWiJadfqLZW6LdTRrwe29QU/pWmT0BYNVs
-	gjSGFZBUlfqnA6Q4NWlM16zNnJnrEKpe1umx4NgH6xYyrhS0SWE7ohRY+8NdqgC21kxEzKnk/DG+R
-	/G1rHAmsg4ntr8j/FGF0SPnEG07ZpdpU8rNx5ul7ZBRiCEF17/5Qx2lrbDGHTb6K4ksAuHlz+ehlS
-	GECY2WjhMY8YsNtI2294OkbsCvXOKl2HIB8lltE1T2X6V0ABn7kn3sakv0RCCwZSS3I6OW8IYZUWO
-	k0KpzQZmUBc1HtPJDXxQ==;
+	List-Owner; bh=1tlxig9g2kdwErajnlHZiHKxUz9bvxBjUKxqkOjPIvA=; b=rpgksaeQnP09dn
+	b/XxBMWwPMprUKfFgdIOBz/riK9XZKLbCyFJb1kYQjProOF3Aan8B2fUA27cDkxhhFxX5yzHf5fhl
+	hpQ6xQs5CymvZA+fu2WcdamcuKSDGA+FfX0rYqQdf6la6bkRzlFD+dii1Z+zm5etdkBnn55XlDrH5
+	5FmgiCmG/6MGS/qBMqW2BjSqqw5oAsGk3x6q2vrFzOoozrzCsN8Sz8UCToxvyhGPwIv4W0PgabrGD
+	l3zI50jSvDKQhU90x0Q5ChSp/tri1lvwQORpVm6W0HCxswpIs1SMEwywsip7Qs6CIWYuWKaeVv2au
+	uplnHhCyvlmKNcFkgR5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPV1j-0005Zi-Qx; Fri, 17 Apr 2020 17:43:43 +0000
+	id 1jPV3X-0000B4-3S; Fri, 17 Apr 2020 17:45:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPV1Z-0005ZG-24
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:43:34 +0000
-Received: from mail-qk1-f176.google.com (mail-qk1-f176.google.com
- [209.85.222.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 49CE62063A
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 17:43:31 +0000 (UTC)
+ id 1jPV3O-0000A7-DH
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:45:27 +0000
+Subject: Re: [GIT PULL] arm64 fixes for 5.7-rc2
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587145411;
- bh=IWA91rnd7DCpei0UmWDuuHsPYJS5PswBsXNqf1I/niM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Pt6wA/969eDisaL2JzYfgBP6eOp0melahjfTfCi9H8EnLElbCxdvrIpAP5QQSevBM
- QXKkHqle4SxaXu46mg+7MIVWhvyOK+bANS8DDykJGLWDi9AJiRCZKix5mRwXs+cLd2
- 1RtwKes8OaezhnY7F0va/WgCzhFc+ZG9M3mNaieE=
-Received: by mail-qk1-f176.google.com with SMTP id j4so3258197qkc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 10:43:31 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZzWfGaJ3WhfQs3cfi2p0DxC9sM54VAFWqVK73aOmmpAQGoqvv8
- aWiIu86vKfH8LqGjY0UJTGfcwH6NME3oAgS9eQ==
-X-Google-Smtp-Source: APiQypKOFSzSrXp6TtG4ec8JhJUSBFuVeKwbSs75yAmLse130PcTkwzUaoj4aHrENTDYOHXuApeoXqGddN79f1x41JE=
-X-Received: by 2002:a37:cc1:: with SMTP id 184mr4446305qkm.254.1587145410403; 
- Fri, 17 Apr 2020 10:43:30 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200409013947.12667-1-robh@kernel.org>
- <20200409013947.12667-3-robh@kernel.org>
- <20200409141603.GB4673@ravnborg.org>
-In-Reply-To: <20200409141603.GB4673@ravnborg.org>
-From: Rob Herring <robh@kernel.org>
-Date: Fri, 17 Apr 2020 12:43:17 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJGZ5jX+-xkVmK5-uJU5hJg3tEa52RanYjY_sF_n+7PsA@mail.gmail.com>
-Message-ID: <CAL_JsqJGZ5jX+-xkVmK5-uJU5hJg3tEa52RanYjY_sF_n+7PsA@mail.gmail.com>
-Subject: Re: [PATCH 2/3] drm: pl111: Simplify vexpress init
-To: Sam Ravnborg <sam@ravnborg.org>
+ s=default; t=1587145525;
+ bh=qQZ4VmgPb13B1MumQjGBjJ+Nq7/wGRSP2jRWCGe7/W8=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=gVVbOLKPUkNvT1wBw3uHK1AeJUe3BEXF9mgmfRuiNvHnI8ZTs+cM8nRRTnzvEV47f
+ Vr3L591BPOSTypIvxYLW3AR6nJlE3gBO9JT1wMh5uzpyRX2jCXH3u4P3/Y81MY3YgB
+ N2yNkM6eJgXLEk29Xt5TXEBKpyhrpmIOvDMbk6Vg=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20200417170403.GA15479@gaia>
+References: <20200417170403.GA15479@gaia>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20200417170403.GA15479@gaia>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
+X-PR-Tracked-Commit-Id: c9a4ef66450145a356a626c833d3d7b1668b3ded
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 95988fbc7c314ef6b1e174dbb9b87a34283208da
+Message-Id: <158714552563.1625.16210298337980327660.pr-tracker-bot@kernel.org>
+Date: Fri, 17 Apr 2020 17:45:25 +0000
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_104333_145894_742CEA11 
-X-CRM114-Status: GOOD (  23.40  )
+X-CRM114-CacheID: sfid-20200417_104526_469955_DC8C3C9D 
+X-CRM114-Status: UNSURE (   1.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,103 +76,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Anholt <eric@anholt.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- dri-devel <dri-devel@lists.freedesktop.org>
+Cc: Will Deacon <will@kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 9, 2020 at 9:16 AM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Rob.
->
-> On Wed, Apr 08, 2020 at 07:39:46PM -0600, Rob Herring wrote:
-> > The init VExpress variants currently instantiates a 'muxfpga' driver for
-> > the sole purpose of getting a regmap for it. There's no reason to
-> > instantiate a driver and doing so just complicates things. The muxfpga
-> > driver also isn't unregistered properly on module unload. Let's
-> > just simplify all this this by just calling
-> > devm_regmap_init_vexpress_config() directly.
-> >
-> > Cc: Eric Anholt <eric@anholt.net>
-> > Cc: dri-devel@lists.freedesktop.org
-> > Signed-off-by: Rob Herring <robh@kernel.org>
->
-> Procastinating, so I took a look at this.
-> Nice simplification - on nit below.
-> Acked-by: Sam Ravnborg <sam@ravnborg.org>
-> > ---
-> >  drivers/gpu/drm/pl111/pl111_versatile.c | 21 +++----------
-> >  drivers/gpu/drm/pl111/pl111_vexpress.c  | 42 -------------------------
-> >  drivers/gpu/drm/pl111/pl111_vexpress.h  |  7 -----
-> >  3 files changed, 4 insertions(+), 66 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/pl111/pl111_versatile.c b/drivers/gpu/drm/pl111/pl111_versatile.c
-> > index 09aeaffb7660..8c2551088f26 100644
-> > --- a/drivers/gpu/drm/pl111/pl111_versatile.c
-> > +++ b/drivers/gpu/drm/pl111/pl111_versatile.c
-> > @@ -8,6 +8,7 @@
-> >  #include <linux/of.h>
-> >  #include <linux/of_platform.h>
-> >  #include <linux/regmap.h>
-> > +#include <linux/vexpress.h>
-> >
-> >  #include "pl111_versatile.h"
-> >  #include "pl111_vexpress.h"
-> > @@ -325,17 +326,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
-> >       versatile_clcd_type = (enum versatile_clcd)clcd_id->data;
-> >
-> >       /* Versatile Express special handling */
-> > -     if (versatile_clcd_type == VEXPRESS_CLCD_V2M) {
-> > +     if (IS_ENABLED(CONFIG_VEXPRESS_CONFIG) && versatile_clcd_type == VEXPRESS_CLCD_V2M) {
-> >               struct platform_device *pdev;
-> > -
-> > -             /* Registers a driver for the muxfpga */
-> > -             ret = vexpress_muxfpga_init();
-> > -             if (ret) {
-> > -                     dev_err(dev, "unable to initialize muxfpga driver\n");
-> > -                     of_node_put(np);
-> > -                     return ret;
-> > -             }
-> > -
-> >               /* Call into deep Vexpress configuration API */
-> >               pdev = of_find_device_by_node(np);
-> >               if (!pdev) {
-> > @@ -343,13 +335,8 @@ int pl111_versatile_init(struct device *dev, struct pl111_drm_dev_private *priv)
-> >                       of_node_put(np);
-> >                       return -EPROBE_DEFER;
-> >               }
-> > -             map = dev_get_drvdata(&pdev->dev);
-> > -             if (!map) {
-> > -                     dev_err(dev, "sysreg has not yet probed\n");
-> > -                     platform_device_put(pdev);
-> > -                     of_node_put(np);
-> > -                     return -EPROBE_DEFER;
-> > -             }
-> > +             map = devm_regmap_init_vexpress_config(&pdev->dev);
-> > +             platform_device_put(pdev);
-> >       } else {
-> >               map = syscon_node_to_regmap(np);
-> >       }
->
-> On the following line there is:
->         if (IS_ERR(map)) {
->                 dev_err(dev, "no Versatile syscon regmap\n");
->                 return PTR_ERR(map);
->         }
->
-> The error message no longer tell if this was
-> devm_regmap_init_vexpress_config() or syscon_node_to_regmap() that
-> caused the error.
+The pull request you sent on Fri, 17 Apr 2020 18:04:05 +0100:
 
-Hopefully you'd know what platform you are on.
+> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
 
-In any case, it's changed after patch 3.
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/95988fbc7c314ef6b1e174dbb9b87a34283208da
 
-Rob
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
