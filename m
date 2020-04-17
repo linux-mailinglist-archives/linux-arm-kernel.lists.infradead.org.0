@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB8181ADB9E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:52:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80FCE1ADB9B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CsPHfX8LJC2TKzzQEgrRVB5v0p5sZEuml7umv9CHWnU=; b=bsqHFQJTvMPz60
-	f65YmLPc7cVzualStwN/B/6hrk0Ssz19VgRdOpwa4qyVv17chuvAbABY4LOe+k0MDVzcpC/ddl5Ma
-	fOL5rYgMNqnxkPh3xFzC+t5KyjMq3yNr5HjGfFjHfCPkmXI46LwaS7XKoCC63qKheY2DvqBZmJsC1
-	5HOmppbIZPuKFUysH9P69WgrhoduikbJO7ZtIt6JNtgFI4vUerC0s33Y5F7C82pVoQLDfX5gcvGb3
-	TZQjCZpjyOdNgY7omUeXUSk1K7O5w5gP3021QK4GEuW5Lon/Ic/ukR/7F7mHe+E92rsAGPfiMqTAz
-	SJTwKs77qtCJh0LCoJHw==;
+	List-Owner; bh=P47o/qTFzqogXcsJU5iQ/tcn5s3qqHO4Cq9Q3+TMFCg=; b=DA1U2fBnA5m9he
+	zq1+wgVnktPuXTGLcL4Bn1u5AITtSmsc9biw+75arnckC/WYpXg4cRVLJWxaYX/0lI0HLL/qNunl6
+	YzM/aYjPenT81qRj4dU8sBtGxcRNhXVfIiiOIRczXzC4SXeDjUhBpjrrZEFO2X4p/vfU3DyM5P47P
+	AxyT+OcxS90xZO5oxL0sYoLM6QggbbbtdllEfQZo0EeY+7kXCHESnrykJJas82chnqA+/IzLvu9v1
+	YzsuAosIxi84twdWd2uKX/PY9pckgpK94otrNNvJjfqKzW92vAXuV2h3a9DsoRa5auSanAKB8yJQ6
+	cJtDzXajWBcfPgBCotLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOZZ-0005ys-Es; Fri, 17 Apr 2020 10:50:13 +0000
+	id 1jPOZe-00061G-5Z; Fri, 17 Apr 2020 10:50:18 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOY0-0003l5-89
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:48:39 +0000
-Received: by mail-pg1-x542.google.com with SMTP id q8so91777pgq.6
+ id 1jPOY8-00042o-AQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:48:48 +0000
+Received: by mail-pg1-x542.google.com with SMTP id x26so919293pgc.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 03:48:35 -0700 (PDT)
+ Fri, 17 Apr 2020 03:48:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OiYeCJDllSXh/csfqHOEAwyzX1Erb7SYSMIFRdyE9io=;
- b=Z4udcHNE0Y3Ijzz7PtyUJeL/RMI/ufEZFDEwrXz3EL00jGYu/ubeWa4zSPLhwopDYv
- W86bK/xMZlegTjV0kIoF1QadhKiP0zYfuIqsr0og86DrARHBMTgzCIPQ4dzgDJZrqL1e
- XXMOTrm9xF8dLUbsNkrq1eFikOKLk89j2abhelqCeIV6hTS64/yu3EbDVxX4Ac804SYK
- wc7qjEJKlzQW9pJWiAOtARrAELh6OyFQYFI6TOLQJkxBC0kLd+kJsJPCWM65HSHGlem9
- JeHcBtYhUVgWou+0JeIf+rfDsg+jUDUDiMiQTTOdSl68bTiwN8PXiRvF394QIFAKed/A
- 0rmg==
+ bh=G9h9kEpvlzFLkvsbxtnwRqDwI4ujSWcEPHlKhK/io98=;
+ b=F3v8ThthwcNaLkfTWx88JfouZLvwNA7G5ErOstEZwTqe+NVExiHMhyN8IfAKwSmjRy
+ F28mY7QdoNLuiSwq9z35LZhpqxPKf83xHzew4fdmrc4f45+F2gjv836iNhzPqdvdsHvx
+ miS0tFD1srg+pXoJ8xNNcLKX0K0hm3T62CpNZoHYONy2h7hiOw1K17PCmt2QcK46sZV4
+ 1clsqe6eGjwxx7LsHzObNW3Tdj2VbhBySOMGje/f/kCce2og5+L2FvxFsrxvzPeIQfH0
+ wa/cNCMIf9RXaLnbYu5Yup9kftJcXmN/Jdj10yHvvrjBcDQhK/snMU1uJtuomfBznNL8
+ 74oQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OiYeCJDllSXh/csfqHOEAwyzX1Erb7SYSMIFRdyE9io=;
- b=tFsBPTFfjXtcreh0DDIQcrcnPGv/9SyuSFpNxn3CyDCwuHsD5HG0/R28ySIL4Lhf70
- +2rAvDv3l3Y31Y4oAKrkH8+htmnRpmdjWkTSnkD1lfNkARnHcEWShGzU66Q5jPGF4Qh+
- /KFiTx5H9VZPRmBdvVgyW5CNLEpnVJrX4yGgV+nFK3sY4COay+PEDKsSkwR87scqtU/l
- kITlhCvJYJ5WUbDAeDL/dkuyy+vkc9gto8HQ+8phKxFeeBA3ZBSs8dAk5z9vO1AWlcsB
- Q4FR++nt7yVi5ceHCrpWuz4mT5Ar4d9XWx19xjoaa+iiNLmLPPEoNGKlZxZoEP45GO3+
- xZnQ==
-X-Gm-Message-State: AGi0PuZSQavQdFOqKvTEx1U/UxzJt87FfxT7HsTGZTWoXLPEIflitCRX
- 7Hpju8727yTD1D0AeSC31ryN7Z4I/Nc=
-X-Google-Smtp-Source: APiQypIAbf9kat6u7y+gU3Uao1uccK7T4gn72NvHMpDUlRjFNLjPJ3/fmX/iUkr4bbv3vHTzBt0mIA==
-X-Received: by 2002:a63:721a:: with SMTP id n26mr2486016pgc.386.1587120514516; 
- Fri, 17 Apr 2020 03:48:34 -0700 (PDT)
+ bh=G9h9kEpvlzFLkvsbxtnwRqDwI4ujSWcEPHlKhK/io98=;
+ b=LUEqa6aLXRFz2HCjtJ2E7LfVcG9Xe8jru91u10a1TZNA0f2S5BHmfKpGt4HCSXtWuw
+ q1fbhGTiE8mnHw9uyCLUj9wXYS6a7FJF2YPeHJixIY9Jrx/1CVVpXMFpKuH/GTTJta9Y
+ 9raM8F34kQg/UdkAVlWtQtaq8JepNdsI3FxaoZjVv8o4IFvwlI5jv601xD0w0x2KddLr
+ WXA/jyn56NNPxfyD/Qzr/r9rZZWqzcqZFVsrdtLCwlPQp8EEN9XB4H8z+dBAtMzMvr1s
+ R7JpEv25cJrCATDwN2C3F3EwnCXHydQ0q5NVN20xOmNqE0/FS7zAp4m0AvAMSXcbgKs6
+ HBsA==
+X-Gm-Message-State: AGi0PubvJ/BKs2QwbU53GmHrifnwSoEtVbBXHTRejxxvHBmy8ZmdhPcK
+ uulnuWPB5B+AKcJdRyodWza7FoQo5Tc=
+X-Google-Smtp-Source: APiQypJXkshMoFbYwRBxbki26BaUfh2j0WQASujhGkyXHavBVSW1nIxz1Qw0dFO/d3/8aGGl0J25ww==
+X-Received: by 2002:a63:eb15:: with SMTP id t21mr2377721pgh.279.1587120522950; 
+ Fri, 17 Apr 2020 03:48:42 -0700 (PDT)
 Received: from pek-lpggp6.wrs.com (unknown-105-123.windriver.com.
  [147.11.105.123])
- by smtp.gmail.com with ESMTPSA id a12sm12771844pfr.28.2020.04.17.03.48.30
+ by smtp.gmail.com with ESMTPSA id a12sm12771844pfr.28.2020.04.17.03.48.38
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 17 Apr 2020 03:48:34 -0700 (PDT)
+ Fri, 17 Apr 2020 03:48:42 -0700 (PDT)
 From: Kevin Hao <haokexin@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] arm64: entry: Fix the typo in the comment of el1_dbg()
-Date: Fri, 17 Apr 2020 18:32:11 +0800
-Message-Id: <20200417103212.45812-2-haokexin@gmail.com>
+Subject: [PATCH 2/2] arm64: debug: Always update the IRQ tracing in
+ debug_exception_enter()
+Date: Fri, 17 Apr 2020 18:32:12 +0800
+Message-Id: <20200417103212.45812-3-haokexin@gmail.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200417103212.45812-1-haokexin@gmail.com>
 References: <20200417103212.45812-1-haokexin@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_034836_326604_1F3147C4 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20200417_034844_474193_E96C402F 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,26 +107,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The function name should be local_daif_mask().
+When running the kgdb test suite, we get the following call trace:
+  # echo kgdbts=V1 > /sys/module/kgdbts/parameters/kgdbts
+
+  DEBUG_LOCKS_WARN_ON(current->hardirqs_enabled)
+  WARNING: CPU: 10 PID: 697 at kernel/locking/lockdep.c:4793 check_flags.part.0+0x15c/0x180
+  Modules linked in:
+  CPU: 10 PID: 697 Comm: sh Not tainted 5.6.0-next-20200331-yoctodev-standard+ #341
+  Hardware name: Marvell OcteonTX CN96XX board (DT)
+  pstate: 604003c9 (nZCv DAIF +PAN -UAO)
+  pc : check_flags.part.0+0x15c/0x180
+  lr : check_flags.part.0+0x15c/0x180
+  sp : ffff800017d0f830
+  x29: ffff800017d0f830 x28: ffff000b936c0000
+  x27: 00000000c28f5c29 x26: 00000000ffffffff
+  x25: 00000000000003c0 x24: ffff800011af8dd0
+  x23: 0000000000000000 x22: ffff8000119afdc0
+  x21: ffff80001198bbe8 x20: ffff800011400018
+  x19: ffff800012655000 x18: 0000000000000001
+  x17: 0000000000000000 x16: 0000000000000000
+  x15: ffff000b936c0470 x14: ffffffffffffffff
+  x13: 0000000000000000 x12: ffff800012655000
+  x11: ffff800017d0f830 x10: ffff800017d0f830
+  x9 : 00000000000003c0 x8 : 6e655f7371726964
+  x7 : 7261683e2d746e65 x6 : ffff8000126552fe
+  x5 : 0000000000000000 x4 : 0000000000000000
+  x3 : 00000000ffffffff x2 : 0000000000000000
+  x1 : bbf8ef1cf7dda200 x0 : 0000000000000000
+  Call trace:
+   check_flags.part.0+0x15c/0x180
+   lock_is_held_type+0xf0/0x120
+   rcu_read_lock_sched_held+0x74/0x98
+   trace_rcu_dyntick+0x1b8/0x1e0
+   rcu_nmi_enter+0x7c/0xb8
+   debug_exception_enter+0x68/0xe8
+   do_debug_exception+0x60/0x150
+   el1_sync_handler+0xd8/0xf8
+   el1_sync+0x7c/0x100
+   el1_irq+0x78/0x180
+   kgdbts_break_test+0x0/0x40
+   param_set_kgdbts_var+0x68/0xe8
+   param_attr_store+0xb8/0x120
+   module_attr_store+0x2c/0x48
+   sysfs_kf_write+0x54/0x80
+   kernfs_fop_write+0x154/0x248
+   __vfs_write+0x24/0x50
+   vfs_write+0xec/0x1d8
+   ksys_write+0x74/0x100
+   __arm64_sys_write+0x24/0x30
+   do_el0_svc+0x8c/0x1e8
+   el0_sync_handler+0x11c/0x198
+   el0_sync+0x158/0x180
+  irq event stamp: 76505
+  hardirqs last  enabled at (76505): [<ffff80001009f9ec>] debug_exception_exit+0x54/0x68
+  hardirqs last disabled at (76504): [<ffff80001009fb04>] debug_exception_enter+0xac/0xe8
+  softirqs last  enabled at (76498): [<ffff8000100817b4>] __do_softirq+0x5a4/0x5ec
+  softirqs last disabled at (76439): [<ffff8000100b6ff4>] irq_exit+0x13c/0x150
+
+The reason is that an IRQ is emitted when doing the single step debug,
+but in the IRQ handler we would enable the debug exception before
+updating the IRQ tracing flags. This will cause the debug exception
+running in an context which the IRQ state and IRQ tracing flags are
+mismatched. And the debug exception handler only update the IRQ tracing
+flag to off when it thinks that the debug emit in a IRQ enabled context.
+Then we would get the above call trace if any code like check_flags()
+is called in the debug exception handler's path. We can't fix this issue
+by just shuffling the enable_da_f in el1_irq. As indicated by
+Mark Rutland, we also can run into the same issue when we set a
+breakpoint in the middle of local_irq_disable(). So we should invoke the
+trace_hardirqs_off() unconditionally in debug_exception_enter().
+Also the reason why we conditionally invoke trace_hardirqs_off() seems
+invalid since the redundant invoking of trace_hardirqs_off() would not
+overwrite the last IRQ disabled address tracked by IRQ tracing.
 
 Signed-off-by: Kevin Hao <haokexin@gmail.com>
 ---
- arch/arm64/kernel/entry-common.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/mm/fault.c | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index c839b5bf1904..420cd8e1534b 100644
---- a/arch/arm64/kernel/entry-common.c
-+++ b/arch/arm64/kernel/entry-common.c
-@@ -57,7 +57,7 @@ static void notrace el1_dbg(struct pt_regs *regs, unsigned long esr)
- 	/*
- 	 * The CPU masked interrupts, and we are leaving them masked during
- 	 * do_debug_exception(). Update PMR as if we had called
--	 * local_mask_daif().
-+	 * local_daif_mask().
- 	 */
- 	if (system_uses_irq_prio_masking())
- 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index c9cedc0432d2..b3c6a2e9232e 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -789,12 +789,8 @@ void __init hook_debug_fault_code(int nr,
+  */
+ static void debug_exception_enter(struct pt_regs *regs)
+ {
+-	/*
+-	 * Tell lockdep we disabled irqs in entry.S. Do nothing if they were
+-	 * already disabled to preserve the last enabled/disabled addresses.
+-	 */
+-	if (interrupts_enabled(regs))
+-		trace_hardirqs_off();
++	/* Tell lockdep we disabled irqs in entry.S. */
++	trace_hardirqs_off();
+ 
+ 	if (user_mode(regs)) {
+ 		RCU_LOCKDEP_WARN(!rcu_is_watching(), "entry code didn't wake RCU");
 -- 
 2.26.0
 
