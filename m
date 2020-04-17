@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE2411ADD0A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 14:17:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA4C91ADD5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 14:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hzfDOVWiowIue/4AUOE+NM4EYMMoQH5ECYsqzK0gohA=; b=ON90TyaBD4GSr5RjMlbLKllwI
-	84vO8gsAzyvxafuLGpD/BR9FmA6bWPThkla0V9p0YUcQ/JW8Ol3La5bTbwr/JMP4I6e09yGjrDi5w
-	X+8t5+4l+N7gF66o7sZKdnCzBAKVH1CBz59D5hzQDlgJe+m9c/9LX2HwKmhUQy5wTavusZsoQAQyW
-	uVrxkwCN5YivJFFA4xYiZERlPNqPmj++YC9HvVsdR0ObCmFHMLkogKI5TJR1SpZxSO6seLRdIpME+
-	3js7A/m33GbhG88P7c21AQCRvsU1/dhqo1BE5M5jgg0gJPXDvk6L7DBzgeGl5S5xZLWUOVwnfoxsk
-	EWvLF/5+w==;
+	 bh=AO+dtlFzSL30sZyOB1tRahMDP+/IkgbBcgdKBgdlFFI=; b=OlScfyQ4L/ynbUINcfjSuHewV
+	W3Zfrg8VOsoVLi9ar//zR7wrW7WCNBxoMUIt6cYOnVPO16CuVegUGROE1XHTRZ6mSIyP7wrGNgcru
+	1CM0GWEpV6XyPtcDMZ/OTx8MQQuHnI6t4p2trqmfPuHweOA5TbNbhEdOlxNwtz6pV/vgUm77xLLdr
+	meREFJU402YRve9eyMlOPx+Sz4H1uP2ehE61f6DWep4Cckm2hg+crlq/+9BIgRO89saxsXQnQWKi4
+	rQ6sczZYnHh3hRkWPoQwM9v6gzoJhLWk825Lm7OvLGmErqxRATwgQTzpGhs6wN1vLto60gbbDq7sC
+	XhipQFDHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPPwF-0007Eo-IS; Fri, 17 Apr 2020 12:17:43 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jPQBQ-0002ew-Cw; Fri, 17 Apr 2020 12:33:24 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPPw7-0007Dd-UY
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 12:17:37 +0000
-Received: by mail-wm1-x343.google.com with SMTP id o81so2706783wmo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 05:17:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Nj0KcmTNBEnCeGICVn8Q9U3854Hf8PCp4ALTufY7lqQ=;
- b=A26EpKW11XDtjvoa9KoX6PSI3LIarHh0IZddp9CCaFZzzrXUp2Krsgv0owsMCnj6ZI
- Z/LaR5MMhguYrG/wkAbGTlOxgLpbpxHBw3DrdTazmSdgKNhsRZCgnrETjbu2Rc/wZKD4
- LlLEBgA52DFYnhooJGjXMP8OiZKTjcURsVZB17/cR89j+vgQ/b0ZBGgWgg2u1Qb/UTZC
- L5t7VPqgWn4c4RR2j3AuKz+suEnGIbK42PcnG4dVe2A59UxX11WuULez5HqHTH/OlcYl
- 3oj3AAXXk9BmcCA66v8XHhhykvdrp+ilS1OLEj86C8ym5og9m39LoWjmitMp9zabes1q
- ZLtQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Nj0KcmTNBEnCeGICVn8Q9U3854Hf8PCp4ALTufY7lqQ=;
- b=Lzkl/S2A98eGelLtoTgW9VhafX3EjY/Dg9mvb4rW/KUBUcO37VfSKTiOWH4pRAIqAe
- Abtg5v6J/szDorrUokRB/wWzsleIvGV6zj2AaNSGHRUeUV6Mj8EDEZIbveh5o6sPASX6
- ENL7galhVlUkUn0dybOuGOX6nfXT/iYDEb1q7pSFb3Ch+ubtzaJhDVPOI2yTbt5i9v/q
- Q/P7eCIzenLfJToSJxJ7D2Ejh41f8TTvYSDaDP9iup/c5tgws7xtEvxvVSTY//vwEudy
- 5LhnYxebqJjd/489yIuDPhX3vsT1SiDv/s9CvU5whiJOcBuV15UgZUk6CC7Mt+llaeW+
- 65uA==
-X-Gm-Message-State: AGi0PuYU7JYzLRJQ9MA5wqCoq3Rc/ttGjbnhOKcXnX5H74N5+PSISpCO
- HEGccfV0tKGrwPGKXuCv+LEYAQ==
-X-Google-Smtp-Source: APiQypL39Wua+Wbmh6BMhWPY+2/P7Aev5UeBmGQVLI2broFdDiYHt270V8upcsc6wwxwPDFwlILjJQ==
-X-Received: by 2002:a1c:ba09:: with SMTP id k9mr3064222wmf.176.1587125853280; 
- Fri, 17 Apr 2020 05:17:33 -0700 (PDT)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id 60sm1647331wrr.7.2020.04.17.05.17.32
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 17 Apr 2020 05:17:32 -0700 (PDT)
-Subject: Re: [PATCH] nvmem: imx-ocotp: Improve logic to save many code lines
-To: Anson Huang <Anson.Huang@nxp.com>, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <1584604540-10097-1-git-send-email-Anson.Huang@nxp.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <9794030e-a3f9-079a-02a0-8cee3e3c13b9@linaro.org>
-Date: Fri, 17 Apr 2020 13:17:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1jPQBI-0002do-D6
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 12:33:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1587126796; x=1618662796;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=KoXqWzqYq/w2d+HZn8byhgpTiDLf6r5C2Ybuny75IaM=;
+ b=G6iYSlNCotc/Dq/ZBVQlGXcBUbk6jMc+KuhvG3u1Ot6RIRuy6TUY3Omp
+ A1OpnHoFCZwGPcoAOQb41oJEAUsOdjo6vbGVuU3WJvoh1Mflb76l+rzri
+ thrAtJhGKXwuj2TsJZDcI3jDtkFtCWVyAfiXVm36ttsp6evN9R4T7RIEo
+ hp44RrVF5ld+eDig+phqE8N2rDq2nFHWuOEnMweZMK0Z96wtMdxaDe4gl
+ 02iYiUkxI4Es7TPA+lDY8QZvK+C6Z2eWnXltQV88Ba0Ph05+vq/gFl6Le
+ UcabkIweePMFiXHbe3+arDqs7BPrnPL4PmWxV/HFk4fz0FY3GebIfpUHj A==;
+IronPort-SDR: gWqIczFLyA96iDGpH5JnlYbjBaosq3zeGhSGMYW1MpmLw6wBaKd/m5lzsnC5A5lxqflsMkBCcl
+ iK3RqGgR+ZruiKh3p0qZfV+wvJTGOrxpeOi9iag8qESRYzg2gs/CxlvksC7ml19M6F1iGRXOpa
+ nd+76P8dKowiZQG9+x5WTbDs5pggHwxnCKqxAVlqgnhIbOPr3JYqNOI0fYG9beh4qv/8dkYCkD
+ COoII3vOvnVHdONyprH1PlugE6r8DyEwdj1OSQ1yPjbWyp62/+406rTyTtTNE1tsmvbEtnvmp8
+ eNc=
+X-IronPort-AV: E=Sophos;i="5.72,395,1580799600"; 
+   d="scan'208";a="9534003"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 17 Apr 2020 05:33:10 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 17 Apr 2020 05:33:10 -0700
+Received: from [10.205.29.56] (10.10.115.15) by chn-vm-ex02.mchp-main.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Fri, 17 Apr 2020 05:32:45 -0700
+Subject: Re: [PATCH 1/5] net: macb: fix wakeup test in runtime suspend/resume
+ routines
+To: Harini Katakam <harinik@xilinx.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "netdev@vger.kernel.org"
+ <netdev@vger.kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
+References: <cover.1587058078.git.nicolas.ferre@microchip.com>
+ <eba7f3605d6dcad37f875b2584d519cd6cae9fd1.1587058078.git.nicolas.ferre@microchip.com>
+ <MW2PR02MB37706E6E182F19F278B35707C9D80@MW2PR02MB3770.namprd02.prod.outlook.com>
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+Organization: microchip
+Message-ID: <ba239f44-b3e4-723e-ad3d-3fbb90e8bfc1@microchip.com>
+Date: Fri, 17 Apr 2020 14:33:04 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1584604540-10097-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <MW2PR02MB37706E6E182F19F278B35707C9D80@MW2PR02MB3770.namprd02.prod.outlook.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_051735_990637_195C7FC6 
-X-CRM114-Status: GOOD (  18.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200417_053316_529006_AE2C06DF 
+X-CRM114-Status: GOOD (  11.92  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -102,62 +100,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "sergio.prado@e-labworks.com" <sergio.prado@e-labworks.com>,
+ "pthombar@cadence.com" <pthombar@cadence.com>,
+ "antoine.tenart@bootlin.com" <antoine.tenart@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ Michal Simek <michals@xilinx.com>, Rafal Ozieblo <rafalo@cadence.com>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 16/04/2020 at 20:26, Harini Katakam wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+> 
+> Hi Nicolas,
+> 
+>> -----Original Message-----
+>> From: nicolas.ferre@microchip.com [mailto:nicolas.ferre@microchip.com]
+>> Sent: Thursday, April 16, 2020 11:14 PM
+>> To: linux-arm-kernel@lists.infradead.org; netdev@vger.kernel.org; Claudiu
+>> Beznea <claudiu.beznea@microchip.com>; Harini Katakam
+>> <harinik@xilinx.com>
+>> Cc: linux-kernel@vger.kernel.org; David S. Miller <davem@davemloft.net>;
+>> Alexandre Belloni <alexandre.belloni@bootlin.com>; pthombar@cadence.com;
+>> sergio.prado@e-labworks.com; antoine.tenart@bootlin.com;
+>> f.fainelli@gmail.com; linux@armlinux.org.uk; andrew@lunn.ch; Michal Simek
+>> <michals@xilinx.com>; Nicolas Ferre <nicolas.ferre@microchip.com>; Rafal
+>> Ozieblo <rafalo@cadence.com>
+>> Subject: [PATCH 1/5] net: macb: fix wakeup test in runtime suspend/resume
+>> routines
+>>
+>> From: Nicolas Ferre <nicolas.ferre@microchip.com>
+>>
+>> Use the proper struct device pointer to check if the wakeup flag and wakeup
+>> source are positioned.
+>> Use the one passed by function call which is equivalent to &bp->dev-
+>>> dev.parent.
+>>
+>> It's preventing the trigger of a spurious interrupt in case the Wake-on-Lan
+>> feature is used.
+> 
+> Sorry I have some mail issues; meant to reply earlier.
+> Tested patches 1, 2, 3 in this set and they work for me.
+
+Brilliant! Thanks for the feedback.
+
+> I'll try patch 4; it looks similar to what I'm using locally but I'll add whatever
+> tie-off queue handling is required on top of your series, thanks.
+
+Alright, I'll hold my v2 for a few days then. Thanks. Best regards,
+   Nicolas
 
 
-On 19/03/2020 07:55, Anson Huang wrote:
-> Several logic improvements to save many code lines:
-> 
->   - no need to use goto;
->   - no need to assign return value;
->   - combine different conditions of return value into one line.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Applied thanks,
---srini
-> ---
->   drivers/nvmem/imx-ocotp.c | 9 ++-------
->   1 file changed, 2 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
-> index 50bea2a..7a1ebd6 100644
-> --- a/drivers/nvmem/imx-ocotp.c
-> +++ b/drivers/nvmem/imx-ocotp.c
-> @@ -196,7 +196,6 @@ static int imx_ocotp_read(void *context, unsigned int offset,
->   		if (*(buf - 1) == IMX_OCOTP_READ_LOCKED_VAL)
->   			imx_ocotp_clr_err_if_set(priv);
->   	}
-> -	ret = 0;
->   
->   read_end:
->   	clk_disable_unprepare(priv->clk);
-> @@ -435,17 +434,13 @@ static int imx_ocotp_write(void *context, unsigned int offset, void *val,
->   	       priv->base + IMX_OCOTP_ADDR_CTRL_SET);
->   	ret = imx_ocotp_wait_for_busy(priv,
->   				      priv->params->ctrl.bm_rel_shadows);
-> -	if (ret < 0) {
-> +	if (ret < 0)
->   		dev_err(priv->dev, "timeout during shadow register reload\n");
-> -		goto write_end;
-> -	}
->   
->   write_end:
->   	clk_disable_unprepare(priv->clk);
->   	mutex_unlock(&ocotp_mutex);
-> -	if (ret < 0)
-> -		return ret;
-> -	return bytes;
-> +	return ret < 0 ? ret : bytes;
->   }
->   
->   static struct nvmem_config imx_ocotp_nvmem_config = {
-> 
+-- 
+Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
