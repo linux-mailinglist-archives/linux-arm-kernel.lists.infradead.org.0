@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66E0E1AD85F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 10:15:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211521AD892
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 10:30:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MHP/Fv2vznDfZcMK/bufwiHelK4MH+DXLaX9gAtc84A=; b=Aq6Uc0Hu3rXscE1ybrWEQ+64P
-	cbF4FMD1YilzFNYJTwBX99884+sfgTIwR6c+BGhJchnZoa4B2eRWuvHihyJU3EOngNqDfE7b0KUSd
-	/45axoFTzu+63u/XFTIX8P7bLdBEVYWGjhaKhFGEX0Tty7pr/qeBav7KItx6fblkpZpM5hHdvw+Bb
-	tj4es2IFLeIkeY+ctGk9ktWJrZ83C9s4KvZAPFzT5F44NFgJL27TZhQUrXDK6UPTUkBLHXW+4yC4o
-	4Pf/zQ58ezzVJn69o4qMiLAocuc4DFt08xS24X8FDW/4OdSo0nYLTHGTRH+tgB+vpMlT9ISP2JRPd
-	Lk4Yvzy2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DJKJ7gR52JKphoV46dtpQ7H/VN0SqAeCZVf/wYuqZ10=; b=aQt6PWo71/ITMn
+	nzI1GXyXhWCW6PvDI8Tz5RoNCVQCGTiQPFGLHmY2pJ3AgQP4fTBhYV5czWw9UONqSe8PLV3mrnkMe
+	OfxsPCzuAjYGug2HKZ8tnmAktiPJjk+Uvzgg1QgMTIxne7UzbgnAmX3yU8g3P3cI9vyxUcdXR4Vdb
+	T2fpRnkeJzZy+dqrTVC9iZzMbuJhFGs5mAMfEXFOBDRaBn2yI2V3qDcmncyfBSDUv7zhdcveyWKNL
+	z5ilZ9mk1fTgW7+DrvxwsLuPMVA6EG+5qRusFySZD1Z62jWnBlULDwtwBcN1gx0o+oURuksNksfLy
+	koIFeV+3fAkhiBFRsR3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPM9k-0007ry-PI; Fri, 17 Apr 2020 08:15:24 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jPMOd-00013s-H3; Fri, 17 Apr 2020 08:30:47 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPM9d-0007qE-5G
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 08:15:18 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 47869857102CEB4F8FD8;
- Fri, 17 Apr 2020 09:15:11 +0100 (IST)
-Received: from [127.0.0.1] (10.210.166.166) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Fri, 17 Apr
- 2020 09:15:09 +0100
-Subject: Re: [PATCH 0/6] perf/imx_ddr: Add namespace for i.MX8 DDR Perf
-To: Joakim Zhang <qiangqing.zhang@nxp.com>, "irogers@google.com"
- <irogers@google.com>
-References: <20200222104621.2258-1-qiangqing.zhang@nxp.com>
- <DB7PR04MB4618C0A8DD9BAB2A529CDCECE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <a2cc0772-4f5d-aba3-1f5c-7d4eef7a3f72@huawei.com>
- <DB7PR04MB461803AD15E47AA880F0915DE6EA0@DB7PR04MB4618.eurprd04.prod.outlook.com>
- <55836919-41b5-0834-f7a7-1a2a34535677@huawei.com>
- <bd67910e-1522-39cd-5527-b9b18f3da96d@huawei.com>
- <DB8PR04MB6795996085AD2167E2358907E6C30@DB8PR04MB6795.eurprd04.prod.outlook.com>
- <ccab39b0-c84f-e529-4067-07466b5433a1@huawei.com>
- <VI1PR04MB68000808CEE4BC23403C35A0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
- <ca2db002-975a-ffe0-2dfc-c85f4e6205bb@huawei.com>
- <VI1PR04MB6800F2A5949F0AFAF2E82CE0E6C00@VI1PR04MB6800.eurprd04.prod.outlook.com>
- <0b3999b8-c307-6b4a-1a1b-e90b45f50b61@huawei.com>
- <DB8PR04MB67957F63165ACC0483F6AE39E6D80@DB8PR04MB6795.eurprd04.prod.outlook.com>
- <8341b035-2fac-52dd-45d1-2bf6f5ea4ba4@huawei.com>
- <DB8PR04MB67952380E7240167C7E81178E6D90@DB8PR04MB6795.eurprd04.prod.outlook.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <1952b369-f3fd-845f-650b-3c0464e37016@huawei.com>
-Date: Fri, 17 Apr 2020 09:14:39 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jPMNy-0007K2-Qx; Fri, 17 Apr 2020 08:30:08 +0000
+X-UUID: 57ff5ea3c91f47b2aeb60cca1685d7ed-20200417
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=I69XZhCGCT6PHGSQl+2FE2AZcxuaF8LTOGfpLh230qU=; 
+ b=jqxe+4/bHncovWXXVhvU0o0AsCAmL08SKhpRxzft9v+YWGHN/hqpG3sa/ED5QB1DEXD8Fa0Ohs2H8CN1vFBRvAsDyLaVWgjTsP9ICb8I4SgTDZ79Id48q79qrOsA7x7tXpdY4KXhg1Oa+5xAkUI8ugCyReHEstiSE66a9v2a/7k=;
+X-UUID: 57ff5ea3c91f47b2aeb60cca1685d7ed-20200417
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ran.bi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1016742161; Fri, 17 Apr 2020 00:29:54 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 17 Apr 2020 01:29:59 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs01n1.mediatek.inc
+ (172.21.101.68) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 17 Apr 2020 16:29:57 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 17 Apr 2020 16:29:54 +0800
+Message-ID: <1587112169.12875.2.camel@mhfsdcap03>
+Subject: Re: [PATCH v12 5/6] rtc: mt6397: Add support for the MediaTek
+ MT6358 RTC
+From: Ran Bi <ran.bi@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>
+Date: Fri, 17 Apr 2020 16:29:29 +0800
+In-Reply-To: <20200416091438.GA2167633@dell>
+References: <1586333531-21641-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1586333531-21641-6-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <20200416091438.GA2167633@dell>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <DB8PR04MB67952380E7240167C7E81178E6D90@DB8PR04MB6795.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.166.166]
-X-ClientProxiedBy: lhreml719-chm.china.huawei.com (10.201.108.70) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_011517_348647_383BBC48 
-X-CRM114-Status: GOOD (  10.78  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_013006_990913_8481B110 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,44 +87,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>, "will@kernel.org" <will@kernel.org>,
- Linuxarm <linuxarm@huawei.com>, "acme@kernel.org" <acme@kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Jiri Olsa <jolsa@redhat.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kate
+ Stewart <kstewart@linuxfoundation.org>, Alexandre
+ Belloni <alexandre.belloni@bootlin.com>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, linux-pm@vger.kernel.org,
+ devicetree@vger.kernel.org, Frank Wunderlich <frank-w@public-files.de>,
+ Sean Wang <sean.wang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Josef Friedl <josef.friedl@speed.at>, srv_heupstream@mediatek.com,
+ Sebastian Reichel <sre@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/04/2020 06:49, Joakim Zhang wrote:
->>   smmuv3_pmcg.transaction  (49.56%)
->> 124902473      smmuv3_pmcg.cycles       (49.56%)
->>
->>          1.001167246 seconds time elapsed
->>
->> So you can compare this to yours.
->>
->> I did have to fix what looks like a bug in mainline on that branch:
-> Tested on private-topic-perf-5.7-sys-pmu-events-v1-debug branch, DDR Perf can work now, thanks.
-> Please remember to update JSON files which notified before.
+On Thu, 2020-04-16 at 10:14 +0100, Lee Jones wrote:
+> On Wed, 08 Apr 2020, Hsin-Hsiung Wang wrote:
 > 
-> Best Regards,
-> Joakim Zhang
->> --->8-----
+> > From: Ran Bi <ran.bi@mediatek.com>
+> > 
+> > This add support for the MediaTek MT6358 RTC. Driver using
+> > compatible data to store different RTC_WRTGR address offset.
+> > This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
+> > driver which only needed by armv7 CPU without ATF.
+> > 
+> > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+> > Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> > Acked-by: Sebastian Reichel <sre@kernel.org>
+> > Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> 
+> Please place these in chronological order.  They should provide some
+> history, rather than a unordered slab list of random sign-offs.
+> 
 
+I suppose that you mean the order should be like below, right?
+Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+Acked-by: Sebastian Reichel <sre@kernel.org>
+Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Signed-off-by: Ran Bi <ran.bi@mediatek.com>
 
-ok, good. So without this fix I supplied, it did still look to work for 
-me, but will lots of complaining from perf.
+> > ---
+> >  drivers/power/reset/mt6323-poweroff.c |  2 +-
+> >  drivers/rtc/rtc-mt6397.c              | 18 +++++++++++++++---
+> >  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
+> >  3 files changed, 24 insertions(+), 5 deletions(-)
+> 
+> [...]
+> 
+> > diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
+> > index 7dfb63b..6200f3b 100644
+> > --- a/include/linux/mfd/mt6397/rtc.h
+> > +++ b/include/linux/mfd/mt6397/rtc.h
+> > @@ -18,7 +18,9 @@
+> >  #define RTC_BBPU_CBUSY         BIT(6)
+> >  #define RTC_BBPU_KEY            (0x43 << 8)
+> >  
+> > -#define RTC_WRTGR              0x003c
+> > +#define RTC_WRTGR_MT6358       0x3a
+> > +#define RTC_WRTGR_MT6397       0x3c
+> 
+> Why remove the leading 00's?
+> 
+> These are now different to the other regs defined in this header.
+> 
 
-Anyway, I'll look to send this series soon, and I'll update the imx 
-JSONs as requested. You will need to then add a fresh signed-off-by to 
-what I send.
+I will fix this at next patch.
 
-thanks,
-john
-
+> > +#define RTC_WRTGR_MT6323       RTC_WRTGR_MT6397
+> >  
+> >  #define RTC_IRQ_STA            0x0002
+> 
+> Like here for instance  --^
+> 
+> >  #define RTC_IRQ_STA_AL         BIT(0)
+> > @@ -65,6 +67,10 @@
+> >  #define MTK_RTC_POLL_DELAY_US  10
+> >  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> >  
+> > +struct mtk_rtc_data {
+> > +	u32                     wrtgr;
+> > +};
+> > +
+> >  struct mt6397_rtc {
+> >  	struct device           *dev;
+> >  	struct rtc_device       *rtc_dev;
+> > @@ -74,6 +80,7 @@ struct mt6397_rtc {
+> >  	struct regmap           *regmap;
+> >  	int                     irq;
+> >  	u32                     addr_base;
+> > +	const struct mtk_rtc_data *data;
+> >  };
+> >  
+> >  #endif /* _LINUX_MFD_MT6397_RTC_H_ */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
