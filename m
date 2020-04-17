@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE1701ADB66
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:46:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1663B1ADB91
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:49:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jjjLO1fZRZt3oLzE3ADfqx3I6XQ+Epf8VwMF/IzJXGs=; b=kNj+SrfR6Q1w3v
-	ab6d0m7+vk0fcNntA+wVETiOFJpM8TTSUzh2KywVemfBTo6k23Bfz9xRhJl3yMMLoaat2RqUlACBb
-	z/9yCoS9LqUXJVRNEjmxx/7TK7XvbRQ0i6HhcD4gSjquwBj7B4wXAuLYw+UdaneefqVt8TjWFPjDL
-	OWCQeji7IvLItMERUFTSlAHkiPjqN8MLGpW8hF+jTIsriFNUuqqUkWZBQ2OADdUkop71pqIOXAGyK
-	6v5hB0U/nxJPXU5GXDD6uOOeh7NKOO/LbZ2bRG1HuqpdaY++pcMWSArq9oZ36o58+CE9HYDjpulSX
-	C+ATk1XseHFbnR+0h9Hw==;
+	List-Owner; bh=dxgPzsTZO7b0cFXtk1I8gArCB4NozLnqZAE0c3kNzmo=; b=vDeX0bbTaNyG+k
+	Fbt4YzfdFqVFCxk4uxQ/ehqNk9CWHvD+gIyxpRAZuF7LiMJs+X9tUa2VFQo8vGT8aO/mk7/BMRbPv
+	6xa8LoYMsHXSLMC9quODj1WNp/gFNFMUiSzcj81vB2hDUGBsUL9yo3QJG1GHLgDxAmtLvUlWW0uEV
+	po1hXyOUvG6YbvURMZfA3/ETI848pcH7z5Pr8u22jK9xS18YERgonu31pa8Hut1ai+8qYX6pVnINx
+	HkbF+lN5W/+H/uvOnuQxplZKKac6QIxAvocV9hGzcn9MCdNgqtED8xHpYk+9wf4G7VMjV5foSdsJw
+	yU9bpYr1KKIX1DZJKJBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOW9-0001Wj-Kd; Fri, 17 Apr 2020 10:46:41 +0000
+	id 1jPOZ6-00059C-3D; Fri, 17 Apr 2020 10:49:44 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOV0-0000gl-HL
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:45:32 +0000
+ id 1jPOV3-0000n5-UZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:45:36 +0000
 Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id A5516EDDB903E51E6C70;
+ by Forcepoint Email with ESMTP id DCF8FAE0DC5FB7C399EA;
  Fri, 17 Apr 2020 18:45:26 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
@@ -33,10 +33,10 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>, <will@kernel.org>
-Subject: [RFC PATCH v2 01/13] perf parse-events: Fix comparison of evsel and
- leader pmu name
-Date: Fri, 17 Apr 2020 18:41:12 +0800
-Message-ID: <1587120084-18990-2-git-send-email-john.garry@huawei.com>
+Subject: [RFC PATCH v2 02/13] perf jevents: Add support for an extra directory
+ level
+Date: Fri, 17 Apr 2020 18:41:13 +0800
+Message-ID: <1587120084-18990-3-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1587120084-18990-1-git-send-email-john.garry@huawei.com>
 References: <1587120084-18990-1-git-send-email-john.garry@huawei.com>
@@ -44,8 +44,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_034531_151853_344C7D3B 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20200417_034534_198693_3FFF0E08 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,31 +75,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we now strdup() the pmu name for the event selector, use strcmp()
-instead of pointer equality for comparison.
+Currently we support upto a level 2 directory, and level 2 would be in the
+form vendor/platform.
 
-Fixes: d4953f7ef1a2 ("perf parse-events: Fix 3 use after frees found with clang ASANutil/parse-events.c")
+Add support for a further level, to hold specific categories of events for
+when we want to segregate them for matching purposes.
+
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
+ tools/perf/pmu-events/jevents.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-I am not 100% sure that this is the right fix....
-
- tools/perf/util/parse-events.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/tools/perf/util/parse-events.c b/tools/perf/util/parse-events.c
-index 10107747b361..90ddade1ba23 100644
---- a/tools/perf/util/parse-events.c
-+++ b/tools/perf/util/parse-events.c
-@@ -1629,7 +1629,7 @@ parse_events__set_leader_for_uncore_aliase(char *name, struct list_head *list,
- 		 * event. That can be used to distinguish the leader from
- 		 * other members, even they have the same event name.
+diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
+index fa86c5f997cc..c7868d0a7a6b 100644
+--- a/tools/perf/pmu-events/jevents.c
++++ b/tools/perf/pmu-events/jevents.c
+@@ -981,15 +981,20 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+ 	int level   = ftwbuf->level;
+ 	int err = 0;
+ 
+-	if (level == 2 && is_dir) {
++	if (level >= 2 && is_dir) {
++		int count = 0;
+ 		/*
+ 		 * For level 2 directory, bname will include parent name,
+ 		 * like vendor/platform. So search back from platform dir
+ 		 * to find this.
++		 * Something similar for level 3 directory, but we're a PMU
++		 * category folder, like vendor/platform/cpu.
  		 */
--		if ((leader != evsel) && (leader->pmu_name == evsel->pmu_name)) {
-+		if ((leader != evsel) && !strcmp(leader->pmu_name, evsel->pmu_name)) {
- 			is_leader = false;
- 			continue;
+ 		bname = (char *) fpath + ftwbuf->base - 2;
+ 		for (;;) {
+ 			if (*bname == '/')
++				count++;
++			if (count == level - 1)
+ 				break;
+ 			bname--;
  		}
+@@ -1002,13 +1007,13 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+ 		 level, sb->st_size, bname, fpath);
+ 
+ 	/* base dir or too deep */
+-	if (level == 0 || level > 3)
++	if (level == 0 || level > 4)
+ 		return 0;
+ 
+ 
+ 	/* model directory, reset topic */
+ 	if ((level == 1 && is_dir && is_leaf_dir(fpath)) ||
+-	    (level == 2 && is_dir)) {
++	    (level >= 2 && is_dir && is_leaf_dir(fpath))) {
+ 		if (close_table)
+ 			print_events_table_suffix(eventsfp);
+ 
 -- 
 2.16.4
 
