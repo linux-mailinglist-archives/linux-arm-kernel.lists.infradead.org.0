@@ -2,85 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 361111AD45A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 04:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F4AD1AD514
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 06:12:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oBKy2B81Lb6RrVa7ksLO0cKi8dce70ZkRbks1NNcVK8=; b=oJ/gczZo/+fizY
-	MwT61WFjbqV4pep7VdPbmUMbuGJ7NpN+fTYbKLfIeZV+X83aKXe4VQb7RbtzS0o+5K4G93pQ/bWkl
-	cUqI8S6ZSgrTr0R1Fg8xOLdhFj5z7MJLaX9CNVc+z83dQ+eNzmb4yd5IgXLAxaab/aEdUbHS3zvWW
-	gm39ltSF6h/eCtGj6GZVsMwOROVjGLVpO3yZ32DidBwmrzOp2wbNZJ8SazRxt2EWNiWJ44O54G/7M
-	4qcfsqgWwLitHRGhjXmwsuQ/m5vBGCbwOmrVFcJUnccKhGPMzQ+Rn32FAuFpj3vkJlbZOGJTNa63X
-	F7urX7BnHvEv9JBzWH8A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=C+saeug63ulHOhqcfwjPdXR3OCd1JeipLvhXxZKkHCk=; b=KiCMMKh32U3dTLYxmCmI+B2vMW
+	6hFwPHojuoeoKHxXqH3r5NMoXSk0zRCg1hJTZ8utr0oyWMqJUejMI6YvQDCmjC6PNQdoGLkrijDvt
+	Tt9stz70/8qBBQsQh6mGPl1v4syufaNCmuu2GWzzslb+allojS21qBEpdrRJ4T8MGh3XHIoXz1Yh9
+	vXExr6uK5/+ImVVckU1REjKeRo2mAw0ikRy9vbDS1bAlVYTYYALnHlEjOeqk+epLffP21Dt83Suis
+	1aPMUIgdv757tTxLtX5SsVPQmzAT4izOREYgMZqvIPFIOznbJ90tU0eHb8wXlLsN4e3/1tnkG+yxW
+	Jb+9EHfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPGTg-0006ID-Og; Fri, 17 Apr 2020 02:11:36 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jPIMS-0001J9-B1; Fri, 17 Apr 2020 04:12:16 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPGTS-0006HK-4P
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 02:11:25 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t4so373882plq.12
+ id 1jPIML-0001Ic-30
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 04:12:10 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id ng8so539796pjb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 19:11:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Ef3EavB2w1X9h4uH+JNa4JPXZ9W1ja0BOge+XoHtx1k=;
- b=fQNvpU+DK7jSBwnFkiBNvYsSVV0LjRinwCANVNVip3ffSFN24tXtxMka/lwY3x/iyN
- 7JoKEIHLj4t/o93KSn1emvRI7BwJEWPcCeUeNfarJLDI25f3n5OrA8QJ0GAGn5DbquvV
- CF8ddu95yQxl5jN8EPdwo97trGQSfaPVNvbyW70f5iiCiXXbehcAwsjNbqIegL91H6Xk
- IjJ+uUSaqfb+3epWAfAB5Ig/q96YTgrSD/7CtnGvvqZxVv5jC2Y+LioSf/+pSXA30Z2l
- djjJucy3kMKwrSVWOilbQECm+hAUEW8aQxY4VX5+4K3hLLhjcldGa9TUydmgkOFgVchh
- EmuQ==
+ Thu, 16 Apr 2020 21:12:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=iDgpXw2pau2bp9y/jowd5/O+abig4JAmmak0uCJZggI=;
+ b=bFkCTtG3AeZmwKZh1khXjfryuVQpG7hAZsVGMw2m8a6dz9B60jPJb7oAADpOY3nszw
+ 2OzmJ95ZEF7fiy94V62Aba2MkvTPYmXqUTzuQQ3GYjrw6cCV6I3ZEG1M1Jhxex531PKG
+ 6Lbw8Lu/OcYjs2jGlYrjiuoFxn9ItuIYObUM9Zqdkrp0x5Xii7k1FHRHKn12obzj4gte
+ 63SRjYBG97rEAHvM/IRkP3ns0SZIIcwDaQlVy3QFloW0FvAi1QansIdOmhfEbZUu4usZ
+ jVA0xZfdNR3V5N5ex6QlZDhamHOBCthOYFn15pDDZzYXel8ZFoRBskMbU7cxIv2FeDgJ
+ +mnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Ef3EavB2w1X9h4uH+JNa4JPXZ9W1ja0BOge+XoHtx1k=;
- b=ejl/g4SsSaDmzV3P2yMpYpFleAd/UwPdiDUIWizn4E7FaD/ZlmjBi7cn9wiJFNMD+3
- wuBlJdmieVFtCihsyktEPhMs1Ukz0UBFarHmAWSPWUGSCHmDK5GtE4hQeAVhSeLxUrYy
- 7nYWGHed8VzD9Iht8omiwvBECw+SqYtHLe8Sa+10iWHcvIjJHcHPFkNf0ifrN6vr9pJx
- osvlxs8gtFH2z0RrWr4ONFjFcztODda1PR+74hffeFQ/tekIntkYzu4SLF7/BmDQl+r/
- gV90KSuTEEc7f1hV7OAzGXtYMWiq6z4XRn+ZuiZhHGOV+CfrEjuYl89RruERuutNoWjN
- i+4Q==
-X-Gm-Message-State: AGi0PuYXxXkBfZpCSG09hD6T4qBbZ04cbiL5rFyQIWNwoVz2lOy8eEBm
- bBu6ikWCUobIr3qYqUXKF5me3g==
-X-Google-Smtp-Source: APiQypL8edZmGhJK8e7akmSp+lgiuiz3PlPcpzL0viCqes6neNZv3QlnG7Qkh3/8sPy0T8R9GicalQ==
-X-Received: by 2002:a17:902:ab8b:: with SMTP id
- f11mr1256914plr.320.1587089480960; 
- Thu, 16 Apr 2020 19:11:20 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s ([2600:3c01::f03c:91ff:fe8a:bb03])
- by smtp.gmail.com with ESMTPSA id i9sm18256862pfd.148.2020.04.16.19.11.17
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 16 Apr 2020 19:11:20 -0700 (PDT)
-Date: Fri, 17 Apr 2020 10:11:13 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH] perf: cs-etm: Update to build with latest opencsd version.
-Message-ID: <20200417021113.GB5426@leoy-ThinkPad-X240s>
-References: <20200415201420.15958-1-mike.leach@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415201420.15958-1-mike.leach@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=iDgpXw2pau2bp9y/jowd5/O+abig4JAmmak0uCJZggI=;
+ b=Gn1U+1fuYB/hAG+7WTQ95oMAg393uRM+qvt7bSzjuZuzLI6QcwD3OMcuagWzhX2QnT
+ AC1ENF2Dvy3va9CqQzq21pPylnVmwRrM/MD7iVYyMFHdaFixO5XR/OKxdulAQ15Aipw2
+ j7bx7DPTk4ZSONo6//5yDKM1YHsk75wfr45P9fbvDeHHdiWOnaDOybEL2IhCjIlIBf0O
+ wJtFHGnp+nzhzGmBG5PYdflKd+fnWpYPbZxVVVfvrAkYyWPYZC/cPmu8WBwW/lPo9/RO
+ QBOY5vM4Ynj4ya+rUXLG+VDGtLEsv/7YIllA//a2IdGBb4wRSSkrR8/7ZEJhcJHdbk0t
+ 9skg==
+X-Gm-Message-State: AGi0Pua4JO9oZyjFYlgxqIfsvTlCS8KjibTDqXmBdIuIwPilVFaZ95fG
+ dX62e+XneNh93ttHP9rD/Sk=
+X-Google-Smtp-Source: APiQypISYUyta1ae7nLNlolIwhC0BirbCpm9GtWpnHNzu7kS+jlrUzYr/969lKLOhWBVcWrEq4S+yA==
+X-Received: by 2002:a17:902:aa48:: with SMTP id
+ c8mr1597948plr.95.1587096725759; 
+ Thu, 16 Apr 2020 21:12:05 -0700 (PDT)
+Received: from laptop.hsd1.wa.comcast.net
+ ([2601:600:817f:a132:df3e:521d:99d5:710d])
+ by smtp.gmail.com with ESMTPSA id 189sm18000468pfg.170.2020.04.16.21.12.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Apr 2020 21:12:05 -0700 (PDT)
+From: Andrei Vagin <avagin@gmail.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 3/6 v2] arm64/vdso: Add time namespace page
+Date: Thu, 16 Apr 2020 21:11:55 -0700
+Message-Id: <20200417041155.863027-1-avagin@gmail.com>
+X-Mailer: git-send-email 2.17.2
+In-Reply-To: <20200416052618.804515-4-avagin@gmail.com>
+References: <20200416052618.804515-4-avagin@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_191123_954154_04A6FEA8 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200416_211209_131755_128E2B39 
+X-CRM114-Status: GOOD (  19.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [2600:3c01:0:0:f03c:91ff:fe8a:bb03 listed in] [zen.spamhaus.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [avagin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -100,71 +101,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, peterz@infradead.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org, acme@kernel.org,
- mingo@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: Thomas Gleixner <tglx@linutronix.de>, Andrei Vagin <avagin@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Dmitry Safonov <dima@arista.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
+Allocate the time namespace page among VVAR pages.  Provide
+__arch_get_timens_vdso_data() helper for VDSO code to get the
+code-relative position of VVARs on that special page.
 
-On Wed, Apr 15, 2020 at 09:14:20PM +0100, Mike Leach wrote:
-> OpenCSD version v0.14.0 adds in a new output element. This is represented
-> by a new value in the generic element type enum, which must be added to
-> the handling code in perf cs-etm-decoder to prevent build errors due to
-> build options on the perf project.
-> 
-> This element is not currently used by the perf decoder.
-> 
-> Tested on Linux 5.7-rc1.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  tools/perf/util/cs-etm-decoder/cs-etm-decoder.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-> index cd92a99eb89d..da4737cbc2ab 100644
-> --- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-> +++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-> @@ -564,6 +564,10 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
->  		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
->  					       elem, trace_chan_id);
->  		break;
-> +	/* Unused packet types */
-> +#if OCSD_VER_NUM >= 0x0E00
-> +	case OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH:
-> +#endif
+If a task belongs to a time namespace then the VVAR page which contains
+the system wide VDSO data is replaced with a namespace specific page
+which has the same layout as the VVAR page. That page has vdso_data->seq
+set to 1 to enforce the slow path and vdso_data->clock_mode set to
+VCLOCK_TIMENS to enforce the time namespace handling path.
 
-I don't think use macros to distinguish OpenCSD version number is a
-good idea, this will get more and more code to checking version number
-if later have more these kinds improvement and finally it's hard to
-maintain.
+The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
+update of the VDSO data is in progress, is not really affecting regular
+tasks which are not part of a time namespace as the task is spin waiting
+for the update to finish and vdso_data->seq to become even again.
 
-Sugget just simply add the new case for
-OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH, considering if user uses an old version
-OpenCSD and doesn't output this new element, the new added case doesn't
-introduce issue for old OpenCSD lib.
+If a time namespace task hits that code path, it invokes the corresponding
+time getter function which retrieves the real VVAR page, reads host time
+and then adds the offset for the requested clock which is stored in the
+special VVAR page.
 
-Futhermore, suggest to change the code in
-tools/build/feature/test-libopencsd.c, so can reflect the kernel 5.7
-to require OpenCSD v0.14.0 or later version when build perf.
+Cc: Mark Rutland <mark.rutland@arm.com>
+Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Signed-off-by: Andrei Vagin <avagin@gmail.com>
+---
 
-Thanks,
-Leo
+v2: cleaups suggested by Mark.
 
->  	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
->  	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
->  	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
-> -- 
-> 2.17.1
-> 
-> _______________________________________________
-> CoreSight mailing list
-> CoreSight@lists.linaro.org
-> https://lists.linaro.org/mailman/listinfo/coresight
+ arch/arm64/include/asm/vdso.h                 |  6 +++++
+ .../include/asm/vdso/compat_gettimeofday.h    | 12 ++++++++++
+ arch/arm64/include/asm/vdso/gettimeofday.h    |  8 +++++++
+ arch/arm64/kernel/vdso.c                      | 22 ++++++++++++++++---
+ arch/arm64/kernel/vdso/vdso.lds.S             |  5 ++++-
+ arch/arm64/kernel/vdso32/vdso.lds.S           |  5 ++++-
+ include/vdso/datapage.h                       |  1 +
+ 7 files changed, 54 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm64/include/asm/vdso.h b/arch/arm64/include/asm/vdso.h
+index 07468428fd29..351c145d3808 100644
+--- a/arch/arm64/include/asm/vdso.h
++++ b/arch/arm64/include/asm/vdso.h
+@@ -12,6 +12,12 @@
+  */
+ #define VDSO_LBASE	0x0
+ 
++#ifdef CONFIG_TIME_NS
++#define __VVAR_PAGES    2
++#else
++#define __VVAR_PAGES    1
++#endif
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <generated/vdso-offsets.h>
+diff --git a/arch/arm64/include/asm/vdso/compat_gettimeofday.h b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+index b6907ae78e53..b7c549d46d18 100644
+--- a/arch/arm64/include/asm/vdso/compat_gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+@@ -152,6 +152,18 @@ static __always_inline const struct vdso_data *__arch_get_vdso_data(void)
+ 	return ret;
+ }
+ 
++#ifdef CONFIG_TIME_NS
++static __always_inline const struct vdso_data *__arch_get_timens_vdso_data(void)
++{
++	const struct vdso_data *ret;
++
++	/* See __arch_get_vdso_data(). */
++	asm volatile("mov %0, %1" : "=r"(ret) : "r"(_timens_data));
++
++	return ret;
++}
++#endif
++
+ #endif /* !__ASSEMBLY__ */
+ 
+ #endif /* __ASM_VDSO_GETTIMEOFDAY_H */
+diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
+index afba6ba332f8..cf39eae5eaaf 100644
+--- a/arch/arm64/include/asm/vdso/gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/gettimeofday.h
+@@ -96,6 +96,14 @@ const struct vdso_data *__arch_get_vdso_data(void)
+ 	return _vdso_data;
+ }
+ 
++#ifdef CONFIG_TIME_NS
++static __always_inline
++const struct vdso_data *__arch_get_timens_vdso_data(void)
++{
++	return _timens_data;
++}
++#endif
++
+ #endif /* !__ASSEMBLY__ */
+ 
+ #endif /* __ASM_VDSO_GETTIMEOFDAY_H */
+diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
+index 6ac9cdeac5be..ccac00919d89 100644
+--- a/arch/arm64/kernel/vdso.c
++++ b/arch/arm64/kernel/vdso.c
+@@ -46,6 +46,14 @@ enum arch_vdso_type {
+ #define VDSO_TYPES		(ARM64_VDSO + 1)
+ #endif /* CONFIG_COMPAT_VDSO */
+ 
++enum vvar_pages {
++	VVAR_DATA_PAGE_OFFSET,
++#ifdef CONFIG_TIME_NS
++	VVAR_TIMENS_PAGE_OFFSET,
++#endif /* CONFIG_TIME_NS */
++	VVAR_NR_PAGES,
++};
++
+ struct __vdso_abi {
+ 	const char *name;
+ 	const char *vdso_code_start;
+@@ -81,6 +89,12 @@ static union {
+ } vdso_data_store __page_aligned_data;
+ struct vdso_data *vdso_data = vdso_data_store.data;
+ 
++
++struct vdso_data *arch_get_vdso_data(void *vvar_page)
++{
++	return (struct vdso_data *)(vvar_page);
++}
++
+ static int __vdso_remap(enum arch_vdso_type arch_index,
+ 			const struct vm_special_mapping *sm,
+ 			struct vm_area_struct *new_vma)
+@@ -180,9 +194,11 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
+ 	unsigned long vdso_base, vdso_text_len, vdso_mapping_len;
+ 	void *ret;
+ 
++	BUILD_BUG_ON(VVAR_NR_PAGES != __VVAR_PAGES);
++
+ 	vdso_text_len = vdso_lookup[arch_index].vdso_pages << PAGE_SHIFT;
+ 	/* Be sure to map the data page */
+-	vdso_mapping_len = vdso_text_len + PAGE_SIZE;
++	vdso_mapping_len = vdso_text_len + VVAR_NR_PAGES * PAGE_SIZE;
+ 
+ 	vdso_base = get_unmapped_area(NULL, 0, vdso_mapping_len, 0, 0);
+ 	if (IS_ERR_VALUE(vdso_base)) {
+@@ -190,13 +206,13 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
+ 		goto up_fail;
+ 	}
+ 
+-	ret = _install_special_mapping(mm, vdso_base, PAGE_SIZE,
++	ret = _install_special_mapping(mm, vdso_base, VVAR_NR_PAGES * PAGE_SIZE,
+ 				       VM_READ|VM_MAYREAD|VM_PFNMAP,
+ 				       vdso_lookup[arch_index].dm);
+ 	if (IS_ERR(ret))
+ 		goto up_fail;
+ 
+-	vdso_base += PAGE_SIZE;
++	vdso_base += VVAR_NR_PAGES * PAGE_SIZE;
+ 	mm->context.vdso = (void *)vdso_base;
+ 	ret = _install_special_mapping(mm, vdso_base, vdso_text_len,
+ 				       VM_READ|VM_EXEC|
+diff --git a/arch/arm64/kernel/vdso/vdso.lds.S b/arch/arm64/kernel/vdso/vdso.lds.S
+index 7ad2d3a0cd48..d808ad31e01f 100644
+--- a/arch/arm64/kernel/vdso/vdso.lds.S
++++ b/arch/arm64/kernel/vdso/vdso.lds.S
+@@ -17,7 +17,10 @@ OUTPUT_ARCH(aarch64)
+ 
+ SECTIONS
+ {
+-	PROVIDE(_vdso_data = . - PAGE_SIZE);
++	PROVIDE(_vdso_data = . - __VVAR_PAGES * PAGE_SIZE);
++#ifdef CONFIG_TIME_NS
++	PROVIDE(_timens_data = _vdso_data + PAGE_SIZE);
++#endif
+ 	. = VDSO_LBASE + SIZEOF_HEADERS;
+ 
+ 	.hash		: { *(.hash) }			:text
+diff --git a/arch/arm64/kernel/vdso32/vdso.lds.S b/arch/arm64/kernel/vdso32/vdso.lds.S
+index a3944927eaeb..06cc60a9630f 100644
+--- a/arch/arm64/kernel/vdso32/vdso.lds.S
++++ b/arch/arm64/kernel/vdso32/vdso.lds.S
+@@ -17,7 +17,10 @@ OUTPUT_ARCH(arm)
+ 
+ SECTIONS
+ {
+-	PROVIDE_HIDDEN(_vdso_data = . - PAGE_SIZE);
++	PROVIDE_HIDDEN(_vdso_data = . - __VVAR_PAGES * PAGE_SIZE);
++#ifdef CONFIG_TIME_NS
++	PROVIDE_HIDDEN(_timens_data = _vdso_data + PAGE_SIZE);
++#endif
+ 	. = VDSO_LBASE + SIZEOF_HEADERS;
+ 
+ 	.hash		: { *(.hash) }			:text
+diff --git a/include/vdso/datapage.h b/include/vdso/datapage.h
+index 5cbc9fcbfd45..2022e8c653c1 100644
+--- a/include/vdso/datapage.h
++++ b/include/vdso/datapage.h
+@@ -109,6 +109,7 @@ struct vdso_data {
+  * relocation, and this is what we need.
+  */
+ extern struct vdso_data _vdso_data[CS_BASES] __attribute__((visibility("hidden")));
++extern struct vdso_data _timens_data[CS_BASES] __attribute__((visibility("hidden")));
+ 
+ /*
+  * The generic vDSO implementation requires that gettimeofday.h
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
