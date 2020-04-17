@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA2C31AE82A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 00:24:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D5D81AE828
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 00:24:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HGzb24zNHzrJCYURuviss5qj399Nv3KaIg+XNZl6uRI=; b=n0e7Yg6rsAINKp
-	XMvOwV1eEWTu/Rq6ew8TnG3TQB4INJctlLDwmgOMuQT6p8FwqG81cw+73dHfgHsauSsAXxnKNnCji
-	zqdk8HdGrA85DNvmRMXvREY+RC5BGxGq14aWO6xjBSwlnwF2BdW9qhUsgo5RYqJdeC06vylMFsmiF
-	wyPXTUbO7+deHwfEuW70AunmA2l2SYrCeFasigkEgqSZHyH4iUiF1V77LeD5KyfBy7rLq3CbE5iLL
-	dQFIWNHk0UT+8kcgi4zgX3gQIa0RUwJKYlLl7TiV2RBooROEKI3E6UvNhGER9Bzy+rq8pfIpRSFIP
-	KfbsTaVPBhSk4Q/MKJrA==;
+	List-Owner; bh=wK+ruWfnzfGD+3SVjKoMnmAmpQz5znwx4KiiJtY9Idc=; b=tfZI/mCCxpBgwF
+	v3VX1wSbpoGfWUUkYUhzrzaLYdDfvRg0rVMBz7SEZq3oSCoeh4p6B9fAFxfZyLUNyPoEMnZfgvhro
+	916Q84yvTD9ZDAsC9VRCYiU7suAkedY+sgKQLmy+ftBiqj0uctKAx3aZEydCb70Zuhs31THoWrjTX
+	2m5ktE2i1m6SEpLvVUGPffYVA1Nh1kqMtUddcO4PkSBj9007Db9XgI8m3GQUFhCyNPYUONBtXsP/g
+	O5xMLJWitkbpIKgGqSP5ym8EJj+fHWLThtRtWgZcBLWXpb2YTzat/qRA7wV8GSiIujuYkPL5uN86O
+	7IdLZe9N/JSiJIAuvdBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPZPK-00029j-Kn; Fri, 17 Apr 2020 22:24:22 +0000
+	id 1jPZOy-0001qH-Hg; Fri, 17 Apr 2020 22:24:00 +0000
 Received: from plaes.org ([188.166.43.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPZOp-0001qC-J8
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 22:23:53 +0000
+ id 1jPZOl-0001pU-Dg
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 22:23:49 +0000
 Received: from localhost (unknown [IPv6:2001:1530:1000:9d4d:940e:6b9e:3deb:4])
- by plaes.org (Postfix) with ESMTPSA id 14F6940E29;
- Fri, 17 Apr 2020 22:17:52 +0000 (UTC)
+ by plaes.org (Postfix) with ESMTPSA id A7D8840F77;
+ Fri, 17 Apr 2020 22:17:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=plaes.org; s=mail;
- t=1587161873; bh=9OnaF3dHK/bJkvPCqojRkILBF7al9aw6MaMXsXHyyK0=;
+ t=1587161875; bh=R/e4AeS+hYtR1SV4lPnHnWWGgqogYvwGJXb2bJni8Gs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=itM0c/NFnkFtDpdiCJTYKu1kSOTX7JKDdQ5nuJrtCDtTfhG+NDleV88SjKY1u+9Va
- lh9zFOm+dMDnbb61MSngQ2qIa4XygmAAUBwF7l0pUeEDEOqybmbOWwwHWyXKiQA4K7
- sqRJcNG9DkpX6x712sQ9AGSOVUUhQgfdUGvR7ofuimj55CiaDGW5LhZkCfz3QGTQRv
- cZjGOMj9N5M03wHFqJ+wUTko95OohNbtP7tfGJ1gsHXkmA/xShDWsgOTx97qRpuE0A
- 2Mf/s/+KEeIO2Cq/tcXF+4TjGq5I2riavpZQinnLCE7xstM4cbl2x/kGDNXF/tp+mw
- 1Ec/xeamHMIqg==
+ b=TZclkybauT9AxtT/TF3Gf+6lkIYgIDJ33SAAPA7Z1QS2G+JfTqiHhragEBFO3DhFS
+ OfUoqA4fOMbc5KFs9+r3FpQLDgaFVWdr3dMj5h+Gl8u1njA4Rw8oUzRVddcgTdUJGi
+ yCKykq9IOyV7KLmIszFsL69mqkL3vTNhmE7zydscV2AlVepJgGL9832h8TD2dUaofB
+ onfU46E8V+TyUsQg6k8UN7Qk+nlmqSNNA/RCPybFbkTu0am88SnX18QAJN4m3UqLgQ
+ BgiZ7wwuHfUJ019K34mfd9zZDYNqF3ALiyU+aKhyAKARtd5Gvnzt2X+voW8qTld69L
+ RNhCre324KBBg==
 From: Priit Laes <plaes@plaes.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-sunxi@googlegroups.com
-Subject: [PATCH 1/4] clk: sunxi-ng: a10/a20: rewrite init code to a platform
- driver
-Date: Sat, 18 Apr 2020 01:17:27 +0300
-Message-Id: <20200417221730.555954-2-plaes@plaes.org>
+Subject: [PATCH 2/4] clk: sunxi-ng: a20: export a regmap to access the GMAC
+ register
+Date: Sat, 18 Apr 2020 01:17:28 +0300
+Message-Id: <20200417221730.555954-3-plaes@plaes.org>
 X-Mailer: git-send-email 2.25.2
 In-Reply-To: <20200417221730.555954-1-plaes@plaes.org>
 References: <20200417221730.555954-1-plaes@plaes.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_152351_795443_98E54F6B 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20200417_152347_675914_B8744CF7 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,126 +82,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to register regmap for sun7i CCU, there needs to be
-a device structure already bound to the CCU device node.
+Only GMAC register is allowed to be written, read access to registers
+is not restricted.
 
-Convert the sun4i/sun7i CCU setup to platform driver to use
-it later as platform device.
+Export a regmap of the CCU.
 
 Signed-off-by: Priit Laes <plaes@plaes.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun4i-a10.c | 77 ++++++++++++++++++++--------
- 1 file changed, 56 insertions(+), 21 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun4i-a10.c | 31 ++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
-index f32366d9336e..839e9d5a1cff 100644
+index 839e9d5a1cff..cba51c2c7eba 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
-@@ -7,7 +7,8 @@
- 
- #include <linux/clk-provider.h>
- #include <linux/io.h>
--#include <linux/of_address.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
- 
- #include "ccu_common.h"
- #include "ccu_reset.h"
-@@ -1425,19 +1426,10 @@ static const struct sunxi_ccu_desc sun7i_a20_ccu_desc = {
+@@ -1426,6 +1426,30 @@ static const struct sunxi_ccu_desc sun7i_a20_ccu_desc = {
  	.num_resets	= ARRAY_SIZE(sunxi_a10_a20_ccu_resets),
  };
  
--static void __init sun4i_ccu_init(struct device_node *node,
--				  const struct sunxi_ccu_desc *desc)
-+static void bootstrap_clocks(void __iomem *reg)
++/*
++ * Add regmap for the GMAC driver (dwmac-sun8i) to allow access to
++ * GMAC configuration register.
++ */
++
++#define SUN7I_A20_GMAC_CFG_REG 0x164
++static bool sun7i_a20_ccu_regmap_accessible_reg(struct device *dev,
++						unsigned int reg)
++{
++	if (reg == SUN7I_A20_GMAC_CFG_REG)
++		return true;
++	return false;
++}
++
++static struct regmap_config sun7i_a20_ccu_regmap_config = {
++	.reg_bits	= 32,
++	.val_bits	= 32,
++	.reg_stride	= 4,
++	.max_register	= 0x1f4, /* clk_out_b */
++
++	.readable_reg	= sun7i_a20_ccu_regmap_accessible_reg,
++	.writeable_reg	= sun7i_a20_ccu_regmap_accessible_reg,
++};
++
+ static void bootstrap_clocks(void __iomem *reg)
  {
--	void __iomem *reg;
  	u32 val;
+@@ -1474,6 +1498,7 @@ static int sun4i_a10_ccu_probe(struct platform_device *pdev)
  
--	reg = of_io_request_and_map(node, 0, of_node_full_name(node));
--	if (IS_ERR(reg)) {
--		pr_err("%s: Could not map the clock registers\n",
--		       of_node_full_name(node));
--		return;
--	}
--
- 	val = readl(reg + SUN4I_PLL_AUDIO_REG);
- 
- 	/*
-@@ -1463,20 +1455,63 @@ static void __init sun4i_ccu_init(struct device_node *node,
- 	val = readl(reg + SUN4I_AHB_REG);
- 	val &= ~GENMASK(7, 6);
- 	writel(val | (2 << 6), reg + SUN4I_AHB_REG);
--
--	sunxi_ccu_probe(node, reg, desc);
- }
- 
--static void __init sun4i_a10_ccu_setup(struct device_node *node)
-+static int sun4i_a10_ccu_probe(struct platform_device *pdev)
+ static int sun7i_a20_ccu_probe(struct platform_device *pdev)
  {
--	sun4i_ccu_init(node, &sun4i_a10_ccu_desc);
-+	struct resource *res;
-+	void __iomem *reg;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	reg = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(reg))
-+		return PTR_ERR(reg);
-+
-+	bootstrap_clocks(reg);
-+
-+	return sunxi_ccu_probe(pdev->dev.of_node, reg, &sun4i_a10_ccu_desc);
- }
--CLK_OF_DECLARE(sun4i_a10_ccu, "allwinner,sun4i-a10-ccu",
--	       sun4i_a10_ccu_setup);
++	struct regmap *regmap;
+ 	struct resource *res;
+ 	void __iomem *reg;
  
--static void __init sun7i_a20_ccu_setup(struct device_node *node)
-+static int sun7i_a20_ccu_probe(struct platform_device *pdev)
- {
--	sun4i_ccu_init(node, &sun7i_a20_ccu_desc);
-+	struct resource *res;
-+	void __iomem *reg;
+@@ -1484,6 +1509,12 @@ static int sun7i_a20_ccu_probe(struct platform_device *pdev)
+ 
+ 	bootstrap_clocks(reg);
+ 
++	regmap = devm_regmap_init_mmio(&pdev->dev, reg,
++				       &sun7i_a20_ccu_regmap_config);
++	if (IS_ERR(regmap))
++		return PTR_ERR(regmap);
 +
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	reg = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(reg))
-+		return PTR_ERR(reg);
 +
-+	bootstrap_clocks(reg);
-+
-+	return sunxi_ccu_probe(pdev->dev.of_node, reg, &sun7i_a20_ccu_desc);
+ 	return sunxi_ccu_probe(pdev->dev.of_node, reg, &sun7i_a20_ccu_desc);
  }
--CLK_OF_DECLARE(sun7i_a20_ccu, "allwinner,sun7i-a20-ccu",
--	       sun7i_a20_ccu_setup);
-+
-+
-+static const struct of_device_id sun4i_a10_ccu_ids[] = {
-+	{ .compatible = "allwinner,sun4i-a10-ccu"},
-+	{ }
-+};
-+
-+static struct platform_driver sun4i_a10_ccu_driver = {
-+	.probe = sun4i_a10_ccu_probe,
-+	.driver = {
-+		.name = "sun4i-a10-ccu",
-+		.of_match_table = sun4i_a10_ccu_ids,
-+	},
-+};
-+builtin_platform_driver(sun4i_a10_ccu_driver);
-+
-+static const struct of_device_id sun7i_a20_ccu_ids[] = {
-+	{ .compatible = "allwinner,sun7i-a20-ccu"},
-+	{ }
-+};
-+
-+static struct platform_driver sun7i_a20_ccu_driver = {
-+	.probe = sun7i_a20_ccu_probe,
-+	.driver = {
-+		.name = "sun7i-a20-ccu",
-+		.of_match_table = sun7i_a20_ccu_ids,
-+	},
-+};
-+builtin_platform_driver(sun7i_a20_ccu_driver);
+ 
 -- 
 2.25.2
 
