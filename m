@@ -2,82 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F59E1AE78D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 23:28:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 377471AE793
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 23:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0ETXTv20hXKlmexERXLv8dyG9XSN+IgRPYf6es4mz6g=; b=p9+/sJiEJliasl
-	7p2VCNk126CHjZHI0vGzC+pxN6+9jDgf1pKuRSdX9Ja2F2CvUmCS8s5kcChOzj9r68L8Qzz2ikzk1
-	RNbfILWN10nHLuBO3Vu8Px2WtAdN/bJxSpkFrfZ2inlVkD+iEJ6H7OZXbOWYz7QccdU9BjhXMLWhU
-	FwXrcE/V4ksAqBSkB16br7rFIyj6e+BIHizQtpc8Au2fXFUnh5oOC78NW/YGT6BjSLzU1xPh/mefR
-	DedHkEXdaJGzyZpxokmQXvD2qjoYuACqb5Tg1bl3I9NIvPNxX7GduTMvNSXBe1MmkAUbs7u/SLt0h
-	f9TInUDgFaxsG070ScSw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lmfTIBcjutv1JwY7mNoY4k2URxbrpev1nZsbsAIoMcs=; b=muICoY4aAu6YLf
+	o64L3hv5TFqft2VRFnJrVXTY4jLh679FCnlM1tIDnjc5ltXdH8HLsP+cUihceSzc2cqI68DVNJ6Dg
+	Nv3Yp6LaAMvqtrpj7gtn9klmQaQvkUylql1mtSfEJdW9oRSdfe9NYYl4vvPHnYDdCmpcmFZan52KI
+	trnUAfj9eDMLhVW/OxdtTCIm2FZGYaMb5oY7T3KbdIEgk5kcIXji2Xy1hT4cxF1EXX1obCY8fj4zm
+	HPSp9naGENYeOXLe2pQjrsYKTpCD5Or7XY9PcfrKs+aiEwzkyZ3Y1P6PAPGErUcIwJnL9jM0LZZeu
+	1PFbpUvp08BWLoll8nrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPYWv-0007xG-5x; Fri, 17 Apr 2020 21:28:09 +0000
-Received: from mail-yb1-f194.google.com ([209.85.219.194])
+	id 1jPYXs-0008Fi-VS; Fri, 17 Apr 2020 21:29:08 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPYWm-0007wt-Oc
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 21:28:02 +0000
-Received: by mail-yb1-f194.google.com with SMTP id e17so1799536ybq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 14:27:59 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=OQ8VvxT9+3crfVwlWJJzfFn2WYEKasdv8UrQD4Rcn8E=;
- b=fXYl4kNExCGBOi5BqfhPDB8nMzffdvRKH+vg0KxiLE13Gj1PwP1mjwSSI8pXNbg2Vv
- ZMD1u3P0+TQ9qe/viLvV1108cQRQvlAJQur7BDQtwoOoi8HHQs9iNzteb3MTtLP4aMKO
- K0KPg9tu8g8srs3Or8YItTL1QcgjiE+RUOPA/Q+cBHsiOTv2VxzN7vyeQuhnygrjYNTY
- fpJgOfrNMUtGXHxs+vokXbDCcqFEA/X0PrwMHBxAYKE+VYxgnq8vYdjPakGUt8Tv1etF
- pzp7bXMcJaALyOfaB3g4nSqKwz/1cU2c0NR1K2nNssQtEkN5+rdz9sFULOjfo6BVOcf1
- cGZw==
-X-Gm-Message-State: AGi0PuZXaO+/8SIcOTjpDzVWG+T5QymH1SVP5mJPGvljK5tkfgS+EqRW
- j4V/f+nMkmR2Y/GnDXH/h1jnr6U=
-X-Google-Smtp-Source: APiQypL6rSQWWm4O/O5NIKoI2/iuASc9VsPq/xS33QzFkpBAH2PsJauehqGS19xsRxbxU0NhZf8WBA==
-X-Received: by 2002:a4a:2c8c:: with SMTP id o134mr4247569ooo.77.1587158446862; 
- Fri, 17 Apr 2020 14:20:46 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id s25sm3651476ooh.22.2020.04.17.14.20.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 14:20:46 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH] clocksource: versatile: Allow CONFIG_CLKSRC_VERSATILE to be
- disabled
-Date: Fri, 17 Apr 2020 16:20:45 -0500
-Message-Id: <20200417212045.16917-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1jPYXg-0008ED-9i; Fri, 17 Apr 2020 21:28:57 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03HLIKgx016831;
+ Fri, 17 Apr 2020 21:28:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2020-01-29;
+ bh=ioRkr8UA3rZ8RZNxmbnIqzvkarX1kRih80H9E5siYQU=;
+ b=iTI07E8SKS/cBHsKrg5tZlQLT9iHVI+NR5dxIsbDtQCck1/9gnMODqglqUNpzBEsDVm9
+ I1FVDOieQodR6VHpWQEEGEK2250hSV75EOMAzz0dikSQ+WCXYBkfEPGFsf7ADHCKHpS4
+ cXn11G0+Q9kH/IpCohMpxatnZD6zsJS9o2e68FDp6m3l/fbzzFgj7Zqt1/Qg6ocqLD4z
+ Ged0iMLBzfMP0OwbQuHE1bSZF2nxV/mb7qmHKk7uYaQ9VhM9vP7tKRXte6O7Yi6IUxxs
+ KyEqaOJSJzZQ3J9U5vWxhRvGg3qxSFv6M1cH8Rmhx9/qBiZ2/5RTZ5UQisUzJubp8Qlj oQ== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2120.oracle.com with ESMTP id 30dn961bvg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 17 Apr 2020 21:28:45 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03HLDKOp100481;
+ Fri, 17 Apr 2020 21:26:44 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3030.oracle.com with ESMTP id 30dn92860j-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 17 Apr 2020 21:26:44 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03HLQftr025383;
+ Fri, 17 Apr 2020 21:26:41 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 17 Apr 2020 14:26:41 -0700
+To: Can Guo <cang@codeaurora.org>
+Subject: Re: [PATCH v2 1/1] scsi: ufs: full reinit upon resume if link was off
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <1586844892-22720-1-git-send-email-cang@codeaurora.org>
+Date: Fri, 17 Apr 2020 17:26:37 -0400
+In-Reply-To: <1586844892-22720-1-git-send-email-cang@codeaurora.org> (Can
+ Guo's message of "Mon, 13 Apr 2020 23:14:48 -0700")
+Message-ID: <yq1d085olbm.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9594
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ mlxlogscore=999
+ suspectscore=0 malwarescore=0 spamscore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004170155
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9594
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ clxscore=1015
+ malwarescore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0
+ mlxscore=0 phishscore=0 spamscore=0 impostorscore=0 suspectscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004170155
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_142800_799755_AC66D548 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: 2.4 (++)
+X-CRM114-CacheID: sfid-20200417_142856_421282_CC557915 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.219.194 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,60 +111,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Linus Walleij <linus.walleij@linaro.org>
+Cc: "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, Bean Huo <beanhuo@micron.com>,
+ rnayak@codeaurora.org, saravanak@google.com, linux-scsi@vger.kernel.org,
+ Venkat Gopalakrishnan <venkatg@codeaurora.org>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>, nguyenb@codeaurora.org,
+ open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ salyzyn@google.com, Alim Akhtar <alim.akhtar@samsung.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Tomas Winkler <tomas.winkler@intel.com>,
+ Stanley Chu <stanley.chu@mediatek.com>, kernel-team@android.com,
+ Bart Van Assche <bvanassche@acm.org>, hongwus@codeaurora.org,
+ asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The timer-versatile driver provides a sched_clock for certain Arm Ltd.
-reference platforms. Specifically, it is used on Versatile and 32-bit
-VExpress. It is not needed for those platforms with an arch timer (all
-the 64-bit ones) yet CONFIG_MFD_VEXPRESS_SYSREG does still need to be
-enabled. In that case, the timer-versatile can only be disabled when
-COMPILE_TEST is enabled which is not desirable. Let's use the sub-arch
-kconfig symbols instead.
 
-Realview platforms don't have the sysregs that this driver uses so
-correct the help text.
+Can,
 
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Signed-off-by: Rob Herring <robh@kernel.org>
----
-This is part of a larger effort to modularize Versatile Express support, 
-but this change doesn't have any dependency, so it can be applied 
-independently.
+> During suspend, if the link is put to off, it would require a full
+> initialization during resume. This patch resets and restores both the
+> host and the card during initialization, otherwise, host only reset
+> and restore may fail occasionally.
 
-Rob
+Applied to 5.8/scsi-queue, thanks!
 
- drivers/clocksource/Kconfig | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+> Signed-off-by: Asutosh Das <asutoshd@codeaurora.org>
+> Signed-off-by: Can Guo <cang@codeaurora.org>
+> Reviewed-by: Bean Huo <beanhuo@micron.com>
+> Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+> Acked-by: Stanley Chu <stanley.chu@mediatek.com>
+>
+> Change since v1:
+> - Incorporated Alim's comments.
+>
+> ---
+>  drivers/scsi/ufs/ufshcd.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
-index f2142e6bbea3..679b35fc07a8 100644
---- a/drivers/clocksource/Kconfig
-+++ b/drivers/clocksource/Kconfig
-@@ -562,12 +562,11 @@ config CLKSRC_VERSATILE
- 	bool "ARM Versatile (Express) reference platforms clock source" if COMPILE_TEST
- 	depends on GENERIC_SCHED_CLOCK && !ARCH_USES_GETTIMEOFFSET
- 	select TIMER_OF
--	default y if MFD_VEXPRESS_SYSREG
-+	default y if (ARCH_VEXPRESS || ARCH_VERSATILE) && ARM
- 	help
- 	  This option enables clock source based on free running
- 	  counter available in the "System Registers" block of
--	  ARM Versatile, RealView and Versatile Express reference
--	  platforms.
-+	  ARM Versatile and Versatile Express reference platforms.
- 
- config CLKSRC_MIPS_GIC
- 	bool
+Don't forget to put the changelog after the "---" separator.
+
 -- 
-2.20.1
-
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
