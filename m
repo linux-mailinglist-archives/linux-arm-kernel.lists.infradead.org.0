@@ -2,78 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 683711ADBB6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:58:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1761ADBC1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:59:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lr09Q4IqaHi7+yz30L/iPFa3vpPi/4BHmXtYGIFBsgM=; b=qo3
-	AmsFr9RuoRbeEuqJ6VvB7YFWsTf+btsDwvEX3NraozIco6mfCyB71IbD/VzJv0YtIw/Ul6gp5PlIg
-	c7zzOsTw9JPvODycd4eBEuz0GM46BgeLwP+PVlECPAnJ0vZTgDE8JjMjiucYYS0ODTmzbKw/vIZL/
-	JFzq40puKhArntkI9Xl9pYGizKpyZBEwDffTOy6B01B+XWAkpRaYM/NQ660L2vY0wclJlpM0v/C59
-	D2CgPmWyIGDR727C77yegPVJOY64mk+kjpdU2JFUq5+NdhQ4g1gcg9QBfCUgjfv3eIyTXJ8XPxrLs
-	GjPhJes3+UujznS4D8XTTpJgS0/jNkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zh+uJmBWmdLWsAC5rU9TGFBBPX+ZjQeMw83eJsO2C/Q=; b=to0lpaSNl65ERZ
+	YinE9WvorKeS9UfDSsag8M82EeSOjBaBAYTT1TF3eGPsp3THIw8q/Z/IUReDmaEC8Hhp/Z4+2gZKj
+	a+beeXkhYPQpudg/pcOHtJrVXkED25d+u6iFYYnNzVskceIk1NOzAYIXHPwFabGiQ7ZPFY89ssCLe
+	6+vgSGadEhqVUtKMsGaYOQrqnm3veQ1rFxA+NRDXJngoLnU51MIMXnEMKAwrqSrwtNOJe5mSAUkU+
+	ME6PBPdeagcVIgb+kzWRhdXBW2z9Ac57aDclynbiPYTbzyn6YcbO33ZRHLNIA7TclWQ5rdq9VAcJV
+	EMLTZkpgTTWkL/PRqPig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOh2-0004w3-9T; Fri, 17 Apr 2020 10:57:56 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jPOid-0005Sx-Bk; Fri, 17 Apr 2020 10:59:35 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOgu-0004ve-Ah; Fri, 17 Apr 2020 10:57:49 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d17so2509405wrg.11;
- Fri, 17 Apr 2020 03:57:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=sd4wlffcDUJn6Is+ybIxeg/rBrW/CCyK3C6+QSMdYME=;
- b=gjdna/g3IzY/pyWOBItBCeNMdcUr+uO10O8QuvDpW60z5OqqNmORxi+TYBa/LRV414
- zmusD26KSyJVJnoErCLG/iKn0m/dTxT2/wtYXzyOFUk7o50ahvsYTvTut2zXF5U3CbAO
- HEV8ACDi0DY34sWlmqPb1KjNFsBOMLdBiLSsGz1DSvRyxZuU+L8Y1/HPLcZO6TMrchp6
- OqSa1uuhtnqCqQUw7TruoP92l4Cq69kJskAi73jbwbazujr7rP2mdou5e99rW2r8+tL3
- 4dANdKV2bCsU23nbZDQk81Of0lMoNT/GJTWEXiEAcdKj1aaEdpRaLPN5gvgpg7rbLIuq
- yc5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=sd4wlffcDUJn6Is+ybIxeg/rBrW/CCyK3C6+QSMdYME=;
- b=S0VpweZ0sNiGjKkLuVqinDZwZPVxDcccc42PXL0y/MRopKvRE4XQ5KyU57a8ottP0s
- +0hvd1vVpHHqrwV6oZWt2Qi0n7Zv2ua8FJ1EeLGvgVDflvsY3EnFijjGo5GuILnalbDd
- T9QuMr/P4h2jzgDc+/3iUQdjt5Oog9yW0M+s/DDGNDHnlIygF2wUIILPGePieAu0B5nt
- 8zPLqwkr2wWqvc9NAOkgcnQtCqJx5W8Mg+dgcioFpKhsDPzej6FCVbTcOmGCOP/wR3bE
- kY/BE1FMjj6l187epaWDVbLCvTD0TFRs8T+SJSQPlKM1oAB9w7i5ZEVCc9jVbdlzjdlB
- RIVA==
-X-Gm-Message-State: AGi0PuYZnUDB3o8gshLPwMDRyjTSRO2x6hRgubgU3L+fz3cpWztZbKX9
- jTS58Gja838clqhxJyGTE1U=
-X-Google-Smtp-Source: APiQypIg8WTXvGq3JpweHchn60zYamjb/Or2vqhi0jfvt7lqZWVeLMjnHZZ/4dWF9Mv3SS3R3JAZhg==
-X-Received: by 2002:adf:f3cc:: with SMTP id g12mr3230178wrp.82.1587121066885; 
- Fri, 17 Apr 2020 03:57:46 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i17sm21410274wru.39.2020.04.17.03.57.45
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 17 Apr 2020 03:57:46 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [RFC PATCH] arm64: dts: rockchip: add core devicetree for rk3318
-Date: Fri, 17 Apr 2020 12:57:39 +0200
-Message-Id: <20200417105739.3718-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jPOiU-0005SD-OR
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:59:28 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03HAvcTt020241; Fri, 17 Apr 2020 12:59:20 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=1UoqmxcN2xm7+o3/rLjZ3PjuAvs4O6us+ArwhYCH4fo=;
+ b=Ev4Oxbrk9KN78BIc4eXAhl/XXjLBk63APBtijsi6k01vO90Q4GblggozNpXJHwcyoL5N
+ 8HexTdpeE0AEQdulRfoaWbCEkcv5JQ1tapVNYIp9OdhYwnc7s+L014B5XvVJ2TpxYKUe
+ FC/lwbQdqjoKjzbowUFRTrR8aY5kEstLiUGIpEQqNPWXVuM8T2GTaozPGnPSQMeea3L4
+ tAZeSvSfJX6JRm1wGo4SdPEUGZ2sEjRtqou4N1m1m3WKY0diiXgS3jeIiW98F/Ga3xVP
+ p9nUjh5+X5UDq+CtTSaaX32rnydz/6YWwtFPaaCYUWJF4vEbZK/S3qk8p7L67gS4l81Q pA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30dn8s8yw2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 17 Apr 2020 12:59:20 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2CC0D10002A;
+ Fri, 17 Apr 2020 12:59:20 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1D05C2AC2CA;
+ Fri, 17 Apr 2020 12:59:20 +0200 (CEST)
+Received: from SFHDAG6NODE2.st.com (10.75.127.17) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 17 Apr
+ 2020 12:59:19 +0200
+Received: from SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6]) by
+ SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6%20]) with mapi id
+ 15.00.1347.000; Fri, 17 Apr 2020 12:59:19 +0200
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Arnd Bergmann <arnd@arndb.de>, "khilman@baylibre.com"
+ <khilman@baylibre.com>, Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL] STi DT update for v5.8 round 1
+Thread-Topic: [GIT PULL] STi DT update for v5.8 round 1
+Thread-Index: AQHWFKXGRE1MaIpH7Eq9IiX+E6fFPah9A6mA
+Date: Fri, 17 Apr 2020 10:59:19 +0000
+Message-ID: <546fb50c-3b71-f77d-f499-5c26e0b40d9c@st.com>
+References: <6fd7974d-a5f2-f7cd-fa7a-d761fac75b3c@st.com>
+In-Reply-To: <6fd7974d-a5f2-f7cd-fa7a-d761fac75b3c@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.44]
+Content-ID: <7651BD43D6D92D4095BBBFC96510A12C@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-17_03:2020-04-17,
+ 2020-04-17 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_035748_368774_5D6F0EEA 
-X-CRM114-Status: GOOD (  10.85  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200417_035927_079385_5941F5EC 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,37 +107,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Alain VOLMAT <alain.volmat@st.com>, "arm@kernel.org" <arm@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The rk3318 is basically a rk3328 with improved gpu,
-so add a dtsi based on that.
+Sorry
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3318.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3318.dtsi
+I have forgotten to add soc@kernel.org, i will resend this pull request
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3318.dtsi b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
-new file mode 100644
-index 000000000..a32f771bc
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
-@@ -0,0 +1,3 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+
-+#include "rk3328.dtsi"
--- 
-2.11.0
+Patrice
 
-
+On 4/17/20 12:48 PM, Patrice CHOTARD wrote:
+> Hi Arnd, Olof, Kevin
+>
+> Please find STi dt update for v5.8 round 1:
+>
+>
+> The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+>
+>   Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/pchotard/sti.git sti-dt-for-v5.8-round1
+>
+> for you to fetch changes up to 7f21a85085b7211ec1d1583d10912ad272ab76bc:
+>
+>   dts: arm: stih407-family: remove duplicated rng nodes (2020-04-17 10:17:54 +0200)
+>
+> ----------------------------------------------------------------
+> STi DT fixes:
+> - Remove duplicated rng node in stih407-family.dtsi
+> - Fix complain about IRQ_TYPE_NONE usage in stih418.dtsi
+>
+> ----------------------------------------------------------------
+> Alain Volmat (2):
+>       dts: arm: stih418: Fix complain about IRQ_TYPE_NONE usage
+>       dts: arm: stih407-family: remove duplicated rng nodes
+>
+>  arch/arm/boot/dts/stih407-family.dtsi | 14 --------------
+>  arch/arm/boot/dts/stih418.dtsi        |  8 ++++----
+>  2 files changed, 4 insertions(+), 18 deletions(-)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
