@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 490901ADC77
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:52:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 736D31ADC76
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:51:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=01ZH5OcCV1/gXUezn5bYiWccFnuLTHfZ1knNevTIhs8=; b=ajuT3FHiAUMVtJ
-	sI265dXTzE0QwmCfdAhAGrs6umpLRQeorvxr8tiiHDnJwVRnwtX/mR9DOY9pKi1mZ/fyae4R7U+tn
-	yjCkqH5iq3BkfJjbNVbCS1XlgCvUVY0RtHo/QxBaX2aYUXfj41dsNXPThxYGA+dDL3JmnvwP+5mux
-	OZoLu64wBDzEXaLZBaUWoF60YGZTHI3DAfaTALxhZWtrr01f0y2qNVnUQshRqabgJIgjbX7J62q22
-	WpszVbuIB3fd0ENLjHazPpREYBTVHYrg7wKRn0ORdOtkR8okx5jjpWM7GD2SHe/xJWzrNBisLASOW
-	OWr2GTJcbxT6nSx2xVQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fenPTdJHciU7/r6L6SRpV1QhdMx2Ju8RbKTTxOvje+c=; b=eNNO/lEGVmCxxSqLIvqjtSXag
+	Q5RFPQk6P1qzrrc7OCPmCQqhdENhxUXN2M7zKZHJPa4iAZU8anBnb8w5QIc7ce0lD5cPLpcKOyVwN
+	14udda/PrSnDiN8gIfb15JRimgkpdIArr+xlpOOZyPqk48Z/6pkBxTjn2WVhFtSrLjb3aMACmeG0W
+	ocUYIyt5Zn/S0DIbJk/ZyOItcH25S8a8M96g8GCDEZZgP2k/8A4v9cs3XlReVf8tJIVVU8qQOmVY2
+	NWuKMgClVYJQpCLQPbWuY/kRrWMJDeMYVEAx7PxpgMRU3C91LbyaU08Ms/Oc7pJrCrvW7bXu4WxtE
+	OeoYj4/QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPPXI-0006Ll-SR; Fri, 17 Apr 2020 11:51:56 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPPX5-0006K8-Ho
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 11:51:47 +0000
-Received: by mail-ua1-x944.google.com with SMTP id c17so528236uae.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 04:51:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fOHFM9elPBqZ53StmEbbuJGOBdc8SihR2GSmdzRs9uY=;
- b=fMBCf9rOwilC1Z6Zixv2jAkeDoBbxoQeuGNlsPNTLbDswvHwzz7iLxOphekUuKVqeF
- Qn0ggF1zoOm+Or2djEeeJGzuDDFRF7v1IClvr+VYsYw0IMCAkP04EfKMZRjblTi3rOJ7
- wYWU51MpN6ZElokLiqRmQN7mHlbC890Dl+mpo8TLTrcZzqyDcx4wjqHcSd2SApybyb8Q
- 7Bewaw/qrHUFuEXg5kdULw5Dfr6ub2RuVOD6TU8NZyzuo02/mjevhpdMd53w6KaIvMFE
- MOXrJDBF6/Es0NfS4DM1SdeFWa+bj4mz/t//QzlwvAiUPZiGZkQlwsDIpD4Yc5vwJllI
- CzMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fOHFM9elPBqZ53StmEbbuJGOBdc8SihR2GSmdzRs9uY=;
- b=AzbLkbGbVYsyUSV2jviYEfIa7iAWcAQmYXwVTcPLwGEF6/Cv/p/3dkobUP5txNTiey
- r7iXiazxP8HWZ7Pk5+CI+3TjIseLYBYenKcww56kvItx79cXGoN8b++eyqXvycbkO2gp
- 8atC7mA1kQi3Ertp1QBFzWnuV6hLHTajPCayKqDsRNamwIQPvDI1lGTKukx0dNgR7Wjz
- AOfclGk41h1X7miowQhkKMOuacZ6XsRgQg7UiNMTo7rYVsZ4s+vDiNcgpIvCb4lCRAxi
- TN3JgpXuOxiO5fE2w2MHrrCsyCygLRz3LYjlO7YjyIW8b9RaUZHezC7Uee2pBaLBQeiS
- Tcig==
-X-Gm-Message-State: AGi0Pub3nduCSxZ9Vnuge+tX1PK1niAQ5T5BcuPGj+1Ql1hyjO/i15jG
- EGB+OefuP6ytIV0hTlIY/l7G/SqTcpfLwf3ysKpBLg==
-X-Google-Smtp-Source: APiQypJptyO3Q188LiC+lVglCDgxEqyyiuLnTQxJkuIYhQNrcbVh5T9dEoPww3VYf1pU7et5uyG7m7wgsnLScU++FZU=
-X-Received: by 2002:ab0:6449:: with SMTP id j9mr2012699uap.19.1587124302013;
- Fri, 17 Apr 2020 04:51:42 -0700 (PDT)
+	id 1jPPWt-00064v-Uw; Fri, 17 Apr 2020 11:51:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPPWm-000649-25; Fri, 17 Apr 2020 11:51:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6E1530E;
+ Fri, 17 Apr 2020 04:51:18 -0700 (PDT)
+Received: from [10.57.59.184] (unknown [10.57.59.184])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 984933F6C4;
+ Fri, 17 Apr 2020 04:51:17 -0700 (PDT)
+Subject: Re: [RFC PATCH] arm64: dts: rockchip: add core devicetree for rk3318
+To: Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>
+References: <20200417105739.3718-1-jbx6244@gmail.com> <2141402.AJMLQ3pQEO@phil>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <6d5a1d27-8d32-eca2-007c-aa0bed81af46@arm.com>
+Date: Fri, 17 Apr 2020 12:51:15 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200331183844.30488-1-ulf.hansson@linaro.org>
-In-Reply-To: <20200331183844.30488-1-ulf.hansson@linaro.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 17 Apr 2020 13:51:06 +0200
-Message-ID: <CAPDyKFoVMBFTRJbEi-bjzeeMgi+z5xsBpBYteF=duCMb0Zxdhw@mail.gmail.com>
-Subject: Re: [PATCH v2 0/2] amba/platform: Initialize dma_parms at the bus
- level
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>
+In-Reply-To: <2141402.AJMLQ3pQEO@phil>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_045144_100783_48D156EA 
-X-CRM114-Status: GOOD (  17.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200417_045124_146519_6947B3B9 
+X-CRM114-Status: GOOD (  19.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,63 +62,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rafael@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Haibo Chen <haibo.chen@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, dmaengine@vger.kernel.org,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- Ludovic Barre <ludovic.barre@st.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- - Greg, Arnd, Linus, etc,
+On 2020-04-17 12:05 pm, Heiko Stuebner wrote:
+> Hi Johan,
+> 
+> Am Freitag, 17. April 2020, 12:57:39 CEST schrieb Johan Jonker:
+>> The rk3318 is basically a rk3328 with improved gpu,
+>> so add a dtsi based on that.
+>>
+>> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> 
+> Please don't add dangling dtsi files.
+> I'd expect at least a board dts to actually use that and
+> also the updated gpu node.
+> 
+>  From a cursory glance it looks like it gets upgraded from
+> 450-MP2 to 450MP3 or so, so that would at least mean
+> another set of interrupts.
 
-On Tue, 31 Mar 2020 at 20:38, Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> It's currently the amba/platform driver's responsibility to initialize the
-> pointer, dma_parms, for its corresponding struct device. The benefit with this
-> approach allows us to avoid the initialization and to not waste memory for the
-> struct device_dma_parameters, as this can be decided on a case by case basis.
->
-> However, it has turned out that this approach is not very practical. Not only
-> does it lead to open coding, but also to real errors. In principle callers of
-> dma_set_max_seg_size() doesn't check the error code, but just assumes it
-> succeeds.
->
-> For these reasons, this series initializes the dma_parms from the amba/platform
-> bus at the device registration point. This also follows the way the PCI devices
-> are being managed, see pci_device_add().
->
-> If it turns out that this is an acceptable solution, we probably also want the
-> changes for stable, but I am not sure if it applies without conflicts.
->
-> The series is based on v5.6.
->
-> Kind regards
-> Ulf Hansson
->
->
-> Ulf Hansson (2):
->   driver core: platform: Initialize dma_parms for platform devices
->   amba: Initialize dma_parms for amba devices
->
->  drivers/amba/bus.c              | 1 +
->  drivers/base/platform.c         | 2 ++
->  include/linux/amba/bus.h        | 1 +
->  include/linux/platform_device.h | 1 +
->  4 files changed, 5 insertions(+)
->
-> --
-> 2.20.1
->
+I'm not sure anything's "improved" - as far as the internet can tell 
+it's a special low-cost variant of RK3328 for low-end TV box vendors 
+that Rockchip don't want to talk about. The DTB for my H96 Max 3318 
+shows no appreciable difference from the BSP DT for RK3328, although I 
+wouldn't be surprised if some of the unused stuff like the external GMAC 
+was actually missing or broken. The board itself is the exact same one 
+used in a lot of other cheap RK3328 boxes (and I mean literally, it's 
+silkscreened "RK3328_8D4_V1.2").
 
-Does this look okay or is there anything you would like me to change?
+Thanks to one unexpectedly honest Aliexpress listing I stumbled across, 
+the "penta-core GPU" apparently translates from TV-box-marketing-speak 
+to mean Mali-450 MP2 (1GP + 2PP) plus the RGA plus the VOP ;)
 
-Kind regards
-Uffe
+Robin.
+
+> 
+> Heiko
+> 
+>> ---
+>>   arch/arm64/boot/dts/rockchip/rk3318.dtsi | 3 +++
+>>   1 file changed, 3 insertions(+)
+>>   create mode 100644 arch/arm64/boot/dts/rockchip/rk3318.dtsi
+>>
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3318.dtsi b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
+>> new file mode 100644
+>> index 000000000..a32f771bc
+>> --- /dev/null
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
+>> @@ -0,0 +1,3 @@
+>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +
+>> +#include "rk3328.dtsi"
+>>
+> 
+> 
+> 
+> 
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
