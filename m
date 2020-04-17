@@ -2,79 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFF4B1AE399
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:17:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 222511AE3A1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:18:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qoG7NT8tKIFn6pN0rzuH707dOVJhoclh0ERUrPcvDy0=; b=oBd
-	r96it/39bM6rAmx9X1nE/bIS9K2JTZsY/Ks0cyA71MaqsDkfBQuzdyQzdqSkTLErJjwrMwdkpvo+U
-	RQCauSQmACBuKyTth3vBRJdxy9IpJeSNy8VXBdTQZBTWyNd4Jt5TGs9SaN1zrDJD2yFdpp96ClRTY
-	bh/BrYFpysw0THWy37rLM5duXZ6mBfGITrKrOZMWqLfVzhqo/wdcdOw2hGETsmcjTVJUuZMQPwmAW
-	GoIaUdGXP7Xh89FFtf1XQNrcVfHqOKP4ySiXXfJvV+jxtd+7JqTFHYwJ24bsa/yl8kY1CQO/EKEAd
-	ih2/zEOHSo7JXIzFdo2yVY8UabgXN4Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YRTeajD9cHL4XC4Kjw4Tj8NCo5TqStLKX5aE4qLPdMU=; b=Pp2kiWURY6JjTmhoEzmIItQIy
+	e6iDZD4s/HJFCAPnvvwthr08kY5nr9lhJ7+QhhYuK437AMdTrM07frnwm9NnCD/4RYPphW9FyhhW5
+	T/5/D9PIcdd21YI3Z2a6AwDfoxR2Op2Gtb4j8iJ6kWwAsHSzWBLMsPADvTZrJBEh4nDUKiPt29zdm
+	kCtj/WeClMILAIh0+CrGOyUtJpvbE3WTQ1Y6UDhPF7cfGJRJYwd147D8arANK3PAne7NzHwAu5ipo
+	Lj+7uxydO+tZj3mdDB/ajCKWeeK/joAQS/EonPKNDJXKZ1QVq0kYm9lfwTrPyz5RD9ZOd8ZbCFKZe
+	Qg3L1fxJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPUcW-0005wU-Gf; Fri, 17 Apr 2020 17:17:40 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jPUd5-0006IH-91; Fri, 17 Apr 2020 17:18:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPUcM-0005um-0n
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:17:34 +0000
-Received: by mail-pl1-x641.google.com with SMTP id w3so1200887plz.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 10:17:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=R7E0aNk/LfcTiLOreMSD++a1mD66h+1oL48uOEuzPdM=;
- b=j3hUtGLtl1Q+nEdhomlImHNCXIlnMyQ5QdKRJpfBFOQeFzXrRe3UZry82NcDwArCPp
- ye6zWGsI4yDFWJuMBP0pACAR4YSKaJzaUezccAd+24kcr24GagWpoFJt4Jpxz1JqvgDs
- gUnm+NS7VvS9QyhXxFQgbk5nHA9/OlCefqlgKys4RL/dec7P/57A3n3mexXAKFni9q92
- RrZgwyR4vUEInfVh6Yhws3HnLuRCXM6te5BNzBlbnNmdR6tgXZXu3pQVrJeNyNBxdGei
- pvvCu72Lq24MCxnwDkS2hgGgeDsGqMNVNd+rY9JkXXyTkVMUrC+d/Wyvx11qoIgNamLu
- qEKA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=R7E0aNk/LfcTiLOreMSD++a1mD66h+1oL48uOEuzPdM=;
- b=lXOlRjmFlcXA+gP3uPRZDCHOZoU90vCpSTXM1VEqD5cHFYOWjYYcCkXir8oSgyrv1z
- juVKvfL/1t4yuZsomuJQlXexbet2pTw7KKvjQA6vNSCTeW7GUv7Gmc46tY178Wdt/l08
- zP/Ot0CP+qTE0g/mWe73xRObuWyBqK96K81XdTnRKXw9J6Pv4d02mgdZty1iHHJ58Ezp
- t8xkR8Biw8UFJE8Dehr5d4MZV5dxL81NvUhfoHsGFonZkLbZrYVEhhOOYeTyRM7UxAeY
- 6lpRQUaD4wNje9vrENMsq7UevOnTKojTlufnuvrf9hD4e1V1DUf/MiNXJL+6VRwM1F4t
- 9nTA==
-X-Gm-Message-State: AGi0PuaFDEnggw0bmhWzGoOL1UhXFMQwAzUwhBhLQJkTYB+dn6hh60/j
- +Kvp+X3PwYwI2f6Ano+DjdA=
-X-Google-Smtp-Source: APiQypKrrTekn1sRLMFlMbYDLm1aW3dD/mTGVQLrxHYgMfPbYvDouT2c7LxHWO9gXRb+4JZ61BnJzQ==
-X-Received: by 2002:a17:90a:2365:: with SMTP id
- f92mr5640329pje.117.1587143848729; 
- Fri, 17 Apr 2020 10:17:28 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id mq18sm6762545pjb.6.2020.04.17.10.17.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 10:17:27 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: soc@kernel.org
-Subject: [GIT PULL 1/1] Broadcom devicetree fixes for 5.7
-Date: Fri, 17 Apr 2020 10:17:25 -0700
-Message-Id: <20200417171725.1084-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jPUcu-0006Hi-TH
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:18:06 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CF28E2078E;
+ Fri, 17 Apr 2020 17:18:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587143884;
+ bh=VCLkhpZJoywZlpzhEBTJApIPKcECQYX7x276NlVZDFA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FsGs/zvgF2wpjZPqw2JjueIJwPsTS669phOeZa3g2G7oUW7m24hEsCUKZIqpQW7p1
+ HMDAgXmY5CqbA6VqKhXAMZvErC87iS5sQxO+iJxou6sn7f6iPx0lDTd5XUiWVgrxQM
+ PYkGWJmT0LtYJyUrPzMv/Cz1YFzNKrc1fWE4G1Jk=
+Date: Fri, 17 Apr 2020 13:18:02 -0400
+From: Sasha Levin <sashal@kernel.org>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH AUTOSEL 5.4 095/108] ARM: shmobile: Enable
+ ARM_GLOBAL_TIMER on Cortex-A9 MPCore SoCs
+Message-ID: <20200417171802.GV1068@sasha-vm>
+References: <20200411230943.24951-1-sashal@kernel.org>
+ <20200411230943.24951-95-sashal@kernel.org>
+ <CAMuHMdVrp25m_SDKSC=ntNWxsumcw4JKvHNDeFZT_JnpfQmCxg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdVrp25m_SDKSC=ntNWxsumcw4JKvHNDeFZT_JnpfQmCxg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_101730_068337_1CE76A6F 
-X-CRM114-Status: GOOD (  10.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200417_101804_959540_D59B0E32 
+X-CRM114-Status: GOOD (  10.97  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,48 +79,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, olof@lixom.net,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ stable <stable@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+On Sun, Apr 12, 2020 at 10:44:01AM +0200, Geert Uytterhoeven wrote:
+>Hi Sasha,
+>
+>On Sun, Apr 12, 2020 at 1:11 AM Sasha Levin <sashal@kernel.org> wrote:
+>> From: Geert Uytterhoeven <geert+renesas@glider.be>
+>>
+>> [ Upstream commit 408324a3c5383716939eea8096a0f999a0665f7e ]
+>>
+>> SH-Mobile AG5 and R-Car H1 SoCs are based on the Cortex-A9 MPCore, which
+>> includes a global timer.
+>>
+>> Enable the ARM global timer on these SoCs, which will be used for:
+>>   - the scheduler clock, improving scheduler accuracy from 10 ms to 3 or
+>>     4 ns,
+>>   - delay loops, allowing removal of calls to shmobile_init_delay() from
+>>     the corresponding machine vectors.
+>>
+>> Note that when using an old DTB lacking the global timer, the kernel
+>> will still work.  However, loops-per-jiffies will no longer be preset,
+>> and the delay loop will need to be calibrated during boot.
+>
+>I.e. to avoid this delay, this patch is best backported after backporting
+>8443ffd1bbd5be74 ("ARM: dts: r8a7779: Add device node for ARM global timer"),
+>df1a0aac0a533e6f ("ARM: dts: sh73a0: Add device node for ARM global timer").
+>
+>While the former has been backported to v5.[45]-stable, the latter hasn't,
+>probably because it depends on
+>61b58e3f6e518c51 ("ARM: dts: sh73a0: Rename twd clock to periph clock")
+>
+>So please backport the last two commits first.
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+Done, thanks!
 
-are available in the Git repository at:
-
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.7/devicetree-fixes
-
-for you to fetch changes up to 90444b958461a5f8fc299ece0fe17eab15cba1e1:
-
-  ARM: dts: bcm283x: Disable dsi0 node (2020-04-16 13:58:02 -0700)
-
-----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoCs Device Tree fixes for
-5.7, please pull the following:
-
-- Nicolas provides a fix for 55c7c0621078 ("ARM: dts: bcm283x: Fix vc4's
-  firmware bus DMA limitations") which missed adding proper
-  #address-cells and #size-cells properties and he also disables the DSI
-  node which should have been disabled by default but was not.
-
-----------------------------------------------------------------
-Florian Fainelli (1):
-      Merge tag 'tags/bcm2835-dt-fixes-2020-03-27' into devicetree/fixes
-
-Nicolas Saenz Julienne (2):
-      ARM: dts: bcm283x: Add cells encoding format to firmware bus
-      ARM: dts: bcm283x: Disable dsi0 node
-
- arch/arm/boot/dts/bcm2835-rpi.dtsi | 3 +++
- arch/arm/boot/dts/bcm283x.dtsi     | 1 +
- 2 files changed, 4 insertions(+)
+-- 
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
