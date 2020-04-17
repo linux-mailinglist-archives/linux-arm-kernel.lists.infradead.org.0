@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE76D1AE08E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 17:08:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7536E1AE0A7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 17:11:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jZNi4xeNssbofHOTrXnl/GUfmys/KaOCYA52flHv7kI=; b=qV8/Wga1lDOTvh
-	RDVSG/eLFlvMg1+JxFrf2DF5cIcPMpjMYXZNCXbopb6su0PU4rvtnBigg8J50vxUHqG1vuXn9fec1
-	LUHPAqYczrbXQOaw5VxKsBEURML03qThJyvOW4QKSG+Kd1kbGY9Jqo6jmSubiOHWEK27jhZ0CNu0W
-	Od/1N8wWup9PWzhK2BXV9n1h4mK1UP4okgtj6XNrFuO6FV4RE36FXebQ6bPdTl98gklkV/mX0AjRk
-	jOPdUpQxdIvpGSlfFfnDmWfOypbRCXlUSRNM0vwtVHyZqvxwJUMWQeLZle+G4e87WGvqfgsdwaJQS
-	bBDLkvpWSsfMooHfQ+Gg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5TxU2tK1WkgVvOaQ3FtiUwKg/vZdEVfe44d2YsM/Hr4=; b=EsatZmeDv2dwEu
+	hPM9UMvomyKBFXayqewtgqQjNdLAD0lljTAwDahIoIRxdRcU/xaxiWV+20ZlBS3ISWppPYrQQa3cO
+	JJBmeNw5cl3Q/pQqYUumWeMlzhVZ9JlXonlVzjN799ZBoNh65T9tLh+GekpcdO9DIcuQOUNHOTUSw
+	mC4TGkH6Lfl/xWzW+A6TXoX4WpccKJuRswG2jxSgNZ8H0REp4hXS/6q2iAi4K+AIBkNjEGXF7zX28
+	uFO37rB+8wE/lH+QOTuwwkrTpz9V7MUasee/d+TXm1BJUP3d0wkGD1WJ+mKyuIwI8PknY10WXoIcW
+	hTju64M3QWJ3GaPFJJHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPSbk-00026y-VJ; Fri, 17 Apr 2020 15:08:44 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPSab-00017y-Vz
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 15:07:37 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a81so3338099wmf.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 08:07:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to;
- bh=rUsEOWcAvFI1LhmxsMY2a1aelPmLjYCMdOuX/AykuqQ=;
- b=W8XbGSMaun0zeoA8+/rTue3oyunGjJ8y8t1sqAjRYfl2ZjbJu7x1v8CbcoQ2PXclqN
- jHizuTlK37ShCu5D3pAd9a2PZ6tX7bUa7Sm/9v5VHQKGkMpfm/wFbGc0IUPQdVXgEus7
- 6L0SjeWPa0EFheYB0mTYZ9OWzgz479sg+VgK4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=rUsEOWcAvFI1LhmxsMY2a1aelPmLjYCMdOuX/AykuqQ=;
- b=jm8bEpbtGGP1uxs1Hs85bmidPo7ubKBUVnXCK2rCHZf+IV6qOtDvyWg2gD6XacPngD
- a5Aj35wA7Ekp/EgUhHDA36IJCsi7anl/zMqRG4vxZiMJqF0f/EoVkyP+/TsWlWk9dEqc
- 3X9MDXTAD6jUqcsFqGXFBG14DtJq9/lnBE4JlaxQ3QGa0f4Lp+5PWIj5TyZTTKE284aA
- CCg29ne0Lrn2u9VxQ9EXB1OmWofKvN0LLf/PgUHFfYg25BHJTKBHfD8cdXDqBW6qnHLz
- Kix8tt4OiHIC7KOEZBG027DCYEL7rfeQo+A8PpEJbXnbMughKjzLpMoHSTJt2pDqP3XN
- 2q9A==
-X-Gm-Message-State: AGi0PubLYwFnxEM/WWpA7YiWNmKHbAH/7QmFZ60KtezzBXytDuedC6f7
- TIjGNtJ5X86JtUyDwIkaiPpN/Q==
-X-Google-Smtp-Source: APiQypItQkdmBtoPoPH/+hxfLHTGNVt03vOKK3QD/jt5bfi7N0gV8HkoQH1eX+9YKTT2bj2qlCwvYg==
-X-Received: by 2002:a7b:c959:: with SMTP id i25mr3795237wml.20.1587136052084; 
- Fri, 17 Apr 2020 08:07:32 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id y18sm8934564wmc.45.2020.04.17.08.07.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 08:07:31 -0700 (PDT)
-Date: Fri, 17 Apr 2020 17:07:29 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v5 1/8] drm/fourcc: Add modifier definitions for
- describing Amlogic Video Framebuffer Compression
-Message-ID: <20200417150729.GP3456981@phenom.ffwll.local>
-Mail-Followup-To: Neil Armstrong <narmstrong@baylibre.com>,
- dri-devel@lists.freedesktop.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>
-References: <20200416152500.29429-1-narmstrong@baylibre.com>
- <20200416152500.29429-2-narmstrong@baylibre.com>
+	id 1jPSei-0005PU-PF; Fri, 17 Apr 2020 15:11:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPSeT-0005O5-A1
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 15:11:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A3C230E;
+ Fri, 17 Apr 2020 08:11:29 -0700 (PDT)
+Received: from [192.168.0.110] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 935F53F73D;
+ Fri, 17 Apr 2020 08:11:27 -0700 (PDT)
+Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
+ support
+To: "Zengtao (B)" <prime.zeng@hisilicon.com>, Marc Zyngier <maz@kernel.org>
+References: <MN2PR18MB26869A6CA4E67558324F655CC5C70@MN2PR18MB2686.namprd18.prod.outlook.com>
+ <06d08f904f003160a48eac3c5ab3c7ff@kernel.org>
+ <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
+ <86r1wus7df.wl-maz@kernel.org>
+ <678F3D1BB717D949B966B68EAEB446ED3A535FCF@DGGEMM506-MBX.china.huawei.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <f55386a9-8eaa-944f-453d-9c3c4abee5fb@arm.com>
+Date: Fri, 17 Apr 2020 16:11:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200416152500.29429-2-narmstrong@baylibre.com>
-X-Operating-System: Linux phenom 5.3.0-3-amd64 
+In-Reply-To: <678F3D1BB717D949B966B68EAEB446ED3A535FCF@DGGEMM506-MBX.china.huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_080734_510556_6BD318BD 
-X-CRM114-Status: GOOD (  22.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200417_081133_435393_F8EF361C 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,123 +68,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, daniel@ffwll.ch,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
+ "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
+ George Cherian <gcherian@marvell.com>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Anil Kumar Reddy H <areddy3@marvell.com>,
+ "jintack@cs.columbia.edu" <jintack@cs.columbia.edu>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 05:24:53PM +0200, Neil Armstrong wrote:
-> Amlogic uses a proprietary lossless image compression protocol and format
-> for their hardware video codec accelerators, either video decoders or
-> video input encoders.
-> 
-> It considerably reduces memory bandwidth while writing and reading
-> frames in memory.
-> 
-> The underlying storage is considered to be 3 components, 8bit or 10-bit
-> per component, YCbCr 420, single plane :
-> - DRM_FORMAT_YUV420_8BIT
-> - DRM_FORMAT_YUV420_10BIT
-> 
-> This modifier will be notably added to DMA-BUF frames imported from the V4L2
-> Amlogic VDEC decoder.
-> 
-> This introduces the basic layout composed of:
-> - a body content organized in 64x32 superblocks with 4096 bytes per
->   superblock in default mode.
-> - a 32 bytes per 128x64 header block
-> 
-> This layout is tranferrable between Amlogic SoCs supporting this modifier.
-> 
-> Tested-by: Kevin Hilman <khilman@baylibre.com>
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  include/uapi/drm/drm_fourcc.h | 39 +++++++++++++++++++++++++++++++++++
->  1 file changed, 39 insertions(+)
-> 
-> diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
-> index 8bc0b31597d8..a1b163a5641f 100644
-> --- a/include/uapi/drm/drm_fourcc.h
-> +++ b/include/uapi/drm/drm_fourcc.h
-> @@ -309,6 +309,7 @@ extern "C" {
->  #define DRM_FORMAT_MOD_VENDOR_BROADCOM 0x07
->  #define DRM_FORMAT_MOD_VENDOR_ARM     0x08
->  #define DRM_FORMAT_MOD_VENDOR_ALLWINNER 0x09
-> +#define DRM_FORMAT_MOD_VENDOR_AMLOGIC 0x0a
->  
->  /* add more to the end as needed */
->  
-> @@ -804,6 +805,44 @@ extern "C" {
->   */
->  #define DRM_FORMAT_MOD_ALLWINNER_TILED fourcc_mod_code(ALLWINNER, 1)
->  
-> +/*
-> + * Amlogic Video Framebuffer Compression modifiers
-> + *
-> + * Amlogic uses a proprietary lossless image compression protocol and format
-> + * for their hardware video codec accelerators, either video decoders or
-> + * video input encoders.
-> + *
-> + * It considerably reduces memory bandwidth while writing and reading
-> + * frames in memory.
-> + *
-> + * The underlying storage is considered to be 3 components, 8bit or 10-bit
-> + * per component YCbCr 420, single plane :
-> + * - DRM_FORMAT_YUV420_8BIT
-> + * - DRM_FORMAT_YUV420_10BIT
-> + *
-> + * The first 8 bits of the mode defines the layout, then the following 8 bits
-> + * defines the options changing the layout.
+Hi,
 
-None of the modifiers you're doing seem to have these other 8 bits
-defined anywhere. And it's not encoded in your modifiers. Can't we just
-enumerate the ones we have/need and done?
+On 4/16/20 2:38 AM, Zengtao (B) wrote:
+> Hi Marc:
+>
+> Got it.
+> Really a bit patch set :)
+>
+> BTW, I have done a basic kvm unit test
+> git://git.kernel.org/pub/scm/virt/kvm/kvm-unit-tests.git
+> And I find that after apply the patch KVM: arm64: VNCR-ize ELR_EL1,
+> The psci test failed for some reason, I can't understand why, this
+> is only the test result.(find the patch by git bisect + kvm test)
 
-> + *
-> + * Not all combinations are valid, and different SoCs may support different
-> + * combinations of layout and options.
-> + */
-> +#define DRM_FORMAT_MOD_AMLOGIC_FBC(__modes) fourcc_mod_code(AMLOGIC, __modes)
-> +
-> +/* Amlogic FBC Layouts */
-> +#define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_MASK		(0xf << 0)
-> +
-> +/*
-> + * Amlogic FBC Basic Layout
-> + *
-> + * The basic layout is composed of:
-> + * - a body content organized in 64x32 superblocks with 4096 bytes per
-> + *   superblock in default mode.
-> + * - a 32 bytes per 128x64 header block
-> + *
-> + * This layout is transferrable between Amlogic SoCs supporting this modifier.
-> + */
-> +#define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC		(1ULL << 0)
+Just a heads-up, a couple of fixes to kvm-unit-tests were merged last week, and
+among them was one touching the psci code, e14e6ba56f6e ("arm/arm64: psci: Don't
+run C code without stack or vectors"). It might be worth checking that you have
+it, and if you don't, if applying it fixes the issue.
 
-This is kinda confusing, since this isn't actually the modifier, but the
-mode of the modifer. Generally what we do is only define the former, with
-maybe some macros to extract stuff.
-
-To make this more mistake-proof I'd only define the full modifier code.
-Definitely don't add a #define with the DRM_FORMAT_MOD_ prefix which isn't
-actually a full modifier code.
--Daniel
-
-> +
->  #if defined(__cplusplus)
->  }
->  #endif
-> -- 
-> 2.22.0
-> 
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+Thanks,
+Alex
+>
+> My platform: Hisilicon D06 board.
+> Linux kernel: Linux 5.6-rc6 + nv patches(some rebases)
+> Could you help to take a look?
+>
+> Thanks 
+> Zengtao 
+>
+>> -----Original Message-----
+>> From: Marc Zyngier [mailto:maz@kernel.org]
+>> Sent: Saturday, April 11, 2020 5:24 PM
+>> To: Zengtao (B)
+>> Cc: George Cherian; Dave.Martin@arm.com; alexandru.elisei@arm.com;
+>> andre.przywara@arm.com; christoffer.dall@arm.com;
+>> james.morse@arm.com; jintack@cs.columbia.edu;
+>> julien.thierry.kdev@gmail.com; kvm@vger.kernel.org;
+>> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org;
+>> suzuki.poulose@arm.com; Anil Kumar Reddy H; Ganapatrao Kulkarni
+>> Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested
+>> Virtualization support
+>>
+>> Hi Zengtao,
+>>
+>> On Sat, 11 Apr 2020 05:10:05 +0100,
+>> "Zengtao (B)" <prime.zeng@hisilicon.com> wrote:
+>>> Hi Marc:
+>>>
+>>> Since it's a very large patch series, I want to test it on my platform
+>>>  which don't support nv, and want to make sure if this patch series
+>>> affects the existed virtualization functions or not.
+>>>
+>>> Any suggestion about the test focus?
+>> Not really. Given that the NV patches affect absolutely every
+>> architectural parts of KVM/arm64, everything needs careful
+>> testing. But more than testing, it needs reviewing.
+>>
+>> Thanks,
+>>
+>> 	M.
+>>
+>> --
+>> Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
