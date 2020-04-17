@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 770D61AE455
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:11:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63B641AE471
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:11:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,106 +11,108 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zQ3SnbtpjeDh8WWPOvehzbWFrU1ejvpy0EJ+SVJ8TfY=; b=b6NACgAbMd1Wzad7RiP8hgfUCv
-	3wlhwaV91ZMUDqNTWqUi9NqcAaL14Nb5DLPRDYA2bRafA4+YsW+7Xxl3bAfY85OfQ6Ey8CGelAuMd
-	xQCnHs8weNJ9xaWRQ1bt7APdgWllhdhqvbWxmPDL7GC1SIIG0mW7cahwYYK8K+p7pSobfV7nyDmUE
-	+NKkfXs39CCNbmnZNT/2gsXi83lbiJcGXrWLk8zgHbDASJSP13ooRhcBXtvq5Vo6QG/7g66j4rN6/
-	zNF95tlP6gI43f05tuQzQ3mCJ5V80qJ1O/afpULqJCegDZ3o8f+grk2yCPtdeGfxMvdzvW/h/w1Sv
-	pMLuyTdg==;
+	bh=kFNMI1EVZN3TrQ69bSklmwNlYiXss+8zBM8nPEZvKS4=; b=plBWrTaSh11H4PLMIpLVNbdc6L
+	+sXR5n7zvgddG5+1TlG1pX32YGbSYGjjrb3wHg2x46pnBSdVBMMnYyZK1LTkbSLVPDumNLZX5rGt8
+	jq0eLrfXWnoW4MgDo9ome06zD5oih88CgGeNaItO54EAyr533GcJMEGS/uGurAQRuBDSMsH+rhPu3
+	d9OP7VplOOW7UVXuuk0KXi6pFPFzVEp8HTELJ7bPgY6YaaWSOBDImtyxScf/xF6IRV3vW8JYfs4AG
+	M5Ou1lYTCUOtVGmL3Y1bhP0kb8s6X5WHak7xHklsGxOYvuUeLJ9M/7cSCc74mixDdrZGne1tGqLgX
+	pv+VsULw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPVSH-0001SD-G7; Fri, 17 Apr 2020 18:11:09 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1jPVSR-0001gO-6e; Fri, 17 Apr 2020 18:11:19 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPVRN-0000uW-Er
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 18:10:15 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20200417181010epoutp02e2f680f5bc048fe89ecaeba999108d4f~GrcwZodeS0378603786epoutp02X
+ id 1jPVRQ-0000vX-Ao
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 18:10:18 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+ by mailout1.samsung.com (KnoxPortal) with ESMTP id
+ 20200417181013epoutp01716ecddada8922c9584375e564547193~GrczL-i470233302333epoutp01s
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 18:10:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20200417181010epoutp02e2f680f5bc048fe89ecaeba999108d4f~GrcwZodeS0378603786epoutp02X
+ Fri, 17 Apr 2020 18:10:13 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
+ 20200417181013epoutp01716ecddada8922c9584375e564547193~GrczL-i470233302333epoutp01s
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1587147010;
- bh=RGpDjOip8NxrtFUkwIRsldggJ3prXwHbaBTjKYt8Ygc=;
+ s=mail20170921; t=1587147013;
+ bh=DqSF9x36JnCrwXNXLN1VtdVDDQpr3y9q4CeEzRJrh/A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mZWaLeHfmFwAbw/ClLCsYNXLEFWAlnnWc5Qx4rzUA8GXKJf8LAdjkZ9m4yx/Xwc4M
- fM4SbzgAnTNGfoHBPFaXQ/n4YVJZlyaKur4/iISXCAWweAqXWrpAsKSkw/6xZd1NOB
- TW5Ie6D/BTkrwhWKDknNT89OvZpwqnF5zUbrTMVM=
+ b=VDwOoFYeh4zeELijWwhBipwqFiX+EvFSP+Fg3wRsWypvxlfAvQWLJABhw+jpmOfAf
+ 2CWRhOm/SA7gkczRaXrxfb6QBnD95KJf4BNJpp4d1kMh6hbbhZTZwRL/eIDOJ0h06m
+ lCcGSoq3PaZY2FfvAW+H1CeEKHoayNRAxN0nb41Y=
 Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTP id
- 20200417181010epcas5p4a10985d225b7584ed00c2145a64271f2~GrcwHwD7Q1060310603epcas5p4p;
- Fri, 17 Apr 2020 18:10:10 +0000 (GMT)
-Received: from epcas5p1.samsung.com ( [182.195.41.39]) by
+ epcas5p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200417181013epcas5p277e44d8eb071fd712e328470cc00592c~Grcy5mis22908329083epcas5p25;
+ Fri, 17 Apr 2020 18:10:13 +0000 (GMT)
+Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
  epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- CE.16.04778.201F99E5; Sat, 18 Apr 2020 03:10:10 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ CF.16.04778.501F99E5; Sat, 18 Apr 2020 03:10:13 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
  epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200417181010epcas5p23cb018eee5b7ae0eba87d81dbaaec3ce~Grcv0msIw2908329083epcas5p20;
- Fri, 17 Apr 2020 18:10:10 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200417181010epsmtrp24978e105a8b2faae4cb769500324dd65~Grcvz1gql1697716977epsmtrp2j;
- Fri, 17 Apr 2020 18:10:10 +0000 (GMT)
-X-AuditID: b6c32a4a-33bff700000012aa-17-5e99f102e28d
+ 20200417181012epcas5p2004ac8f0d793abd4d58c096ff490da68~GrcxwJ7U30105401054epcas5p21;
+ Fri, 17 Apr 2020 18:10:12 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200417181012epsmtrp1c3af0db4e3a01abba4b71324b43a8ae1~GrcxvTh0U0669906699epsmtrp1H;
+ Fri, 17 Apr 2020 18:10:12 +0000 (GMT)
+X-AuditID: b6c32a4a-33bff700000012aa-1b-5e99f1051ed0
 Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 53.DE.04158.101F99E5; Sat, 18 Apr 2020 03:10:10 +0900 (KST)
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 2E.D0.04024.401F99E5; Sat, 18 Apr 2020 03:10:12 +0900 (KST)
 Received: from Jaguar.sa.corp.samsungelectronics.net (unknown
  [107.108.73.139]) by epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200417181008epsmtip115c231bb619ac7f04509b08173b6dbf4~Grct9rDqd2094920949epsmtip1F;
- Fri, 17 Apr 2020 18:10:08 +0000 (GMT)
+ 20200417181010epsmtip1f8adc674424ac2d5a079d95e71b81f79~Grcv4frBm2251122511epsmtip1l;
+ Fri, 17 Apr 2020 18:10:10 +0000 (GMT)
 From: Alim Akhtar <alim.akhtar@samsung.com>
 To: robh@kernel.org
-Subject: [PATCH v6 02/10] scsi: ufs: add quirk to disallow reset of
- interrupt aggregation
-Date: Fri, 17 Apr 2020 23:29:36 +0530
-Message-Id: <20200417175944.47189-3-alim.akhtar@samsung.com>
+Subject: [PATCH v6 03/10] scsi: ufs: add quirk to enable host controller
+ without hce
+Date: Fri, 17 Apr 2020 23:29:37 +0530
+Message-Id: <20200417175944.47189-4-alim.akhtar@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200417175944.47189-1-alim.akhtar@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupnleLIzCtJLcpLzFFi42LZdlhTXZfp48w4g9c7pC0ezNvGZvHy51U2
- i0/rl7FazD9yjtXi/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
- sXTrTUYHXo/Lfb1MHptWdbJ5bF5S79Fycj+Lx8ent1g8+rasYvT4vEnOo/1AN1MARxSXTUpq
- TmZZapG+XQJXxq6+1ywFq3gqzh27ytbAuIKri5GTQ0LARGLO3r9sXYxcHEICuxkl2idfYIZw
- PjFK3F54nQWkSkjgG5AzJR6mY/LhaSwQRXsZJeb1PWKEcFqYJM4+OMQKUsUmoC1xd/oWJhBb
- REBY4si3NkYQm1ngBpPEg5UuILawQLTErj+bwDawCKhKvJ61E6yGV8BGYt/PY8wQ2+QlVm84
- AGZzCthKtLUsZQJZJiFwm01i/nyIoRICLhJbls1gg7CFJV4d38IOYUtJfH63FyjOAWRnS/Ts
- MoYI10gsnXeMBcK2lzhwZQ4LSAmzgKbE+l36EGfySfT+fsIE0ckr0dEmBFGtKtH87ipUp7TE
- xO5uVogSD4mv8/MgoTCBUeLis0+sExhlZyEMXcDIuIpRMrWgODc9tdi0wCgvtVyvODG3uDQv
- XS85P3cTIziZaHntYFx2zucQowAHoxIPb0ffzDgh1sSy4srcQ4wSHMxKIrwH3YBCvCmJlVWp
- RfnxRaU5qcWHGKU5WJTEeSexXo0REkhPLEnNTk0tSC2CyTJxcEo1MNq1Mt73+uuq+mPW+q5D
- xx9Yr2G5P9VG1/P647/OHW1n2UQYO1p/G+3+uvhjdoqk8bbkLhPFBLV7qxfqHO+bEHGEuZ+p
- OdR6VeZT3U2PJTbszjnCzSD4ni1t542NTbabT07+8+mhwFfBDWmT/xxYcGNdkd37ffOTHZdv
- l6y+I1Y+L6gzPuTk521KLMUZiYZazEXFiQAhvbKPIgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrPLMWRmVeSWpSXmKPExsWy7bCSnC7Tx5lxBv9fMVk8mLeNzeLlz6ts
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprIKsWRmVeSWpSXmKPExsWy7bCmhi7rx5lxBhOnS1g8mLeNzeLlz6ts
  Fp/WL2O1mH/kHKvF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
  YunWm4wOvB6X+3qZPDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1ZxejxeZOcR/uBbqYAjigum5TU
- nMyy1CJ9uwSujF19r1kKVvFUnDt2la2BcQVXFyMnh4SAicTkw9NYuhi5OIQEdjNKrDj7kQ0i
- IS1xfeMEdghbWGLlv+fsEEVNTBJv7mxmBEmwCWhL3J2+hQnEFgEqOvKtDSzOLPCMSeLUw1IQ
- W1ggUqL59gJmEJtFQFXi9aydYDW8AjYS+34eY4ZYIC+xesMBMJtTwFairWUp0EwOoGU2Ehue
- xExg5FvAyLCKUTK1oDg3PbfYsMAoL7Vcrzgxt7g0L10vOT93EyM4mLW0djCeOBF/iFGAg1GJ
- h7ejb2acEGtiWXFl7iFGCQ5mJRHeg25AId6UxMqq1KL8+KLSnNTiQ4zSHCxK4rzy+ccihQTS
- E0tSs1NTC1KLYLJMHJxSDYzcc3W1klVY2navfr7L9uJctu6fzV+i/3M7S8k7zOZveVg20fDO
- oRKhD0smlk34Jdh2cdKuOW5vFjgm8UheF/qavvZXn1nRf1Pl9XkqnX6dVfxvNGOKdMVjfXN2
- nnPhZZ8ayF/Ps5M7auEMW6agwrZkxbcLcxJO/N4crVcRPDsieGZXgtMMGyWW4oxEQy3mouJE
- AFIhEJtiAgAA
-X-CMS-MailID: 20200417181010epcas5p23cb018eee5b7ae0eba87d81dbaaec3ce
+ nMyy1CJ9uwSujHP/rrIVXJGtWNiygaWB8Yd4FyMnh4SAicTP/bPZuxi5OIQEdjNKHJv5F8r5
+ xCgx9Ws7G4TzjVFi4bWLrDAt7z/PZYJI7GWU6L56nxnCaWGSeLpoFQtIFZuAtsTd6VuYQGwR
+ AWGJI9/aGEFsZoEbTBIPVrqA2MICYRK/p2xlB7FZBFQlDs86BGbzCthINPR9ZYLYJi+xesMB
+ ZhCbU8BWoq1lKdhmCYHbbBJr+s+xQBS5SCxpeswOYQtLvDq+BcqWknjZ3wZkcwDZ2RI9u4wh
+ wjUSS+cdg2q1lzhwZQ4LSAmzgKbE+l36EGfySfT+fsIE0ckr0dEmBFGtKtH87ipUp7TExO5u
+ aJh4SOyYAhIHBcMERontu66zT2CUnYUwdQEj4ypGydSC4tz01GLTAqO81HK94sTc4tK8dL3k
+ /NxNjOCEouW1g3HZOZ9DjAIcjEo8vB19M+OEWBPLiitzDzFKcDArifAedAMK8aYkVlalFuXH
+ F5XmpBYfYpTmYFES553EejVGSCA9sSQ1OzW1ILUIJsvEwSnVwLhH0ENLfF5S7LplGtt2rPl7
+ ks9m4t2rU8LiPGpVFebd2CoobHT7z9IjgiuKbSylbX2+GT2pXOKS/rN7lpnEgcmKzQvzvXIV
+ GXweMGfpy8cHfOJNunR7Mbd+4Oxe411zdzF+MK+Ld9/m9O3//mcv+opLmmUEbK5tv3wkSdTi
+ Rs75/FZH25T9O5RYijMSDbWYi4oTATfuvXskAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrPLMWRmVeSWpSXmKPExsWy7bCSnC7Lx5lxBj8fslk8mLeNzeLlz6ts
+ Fp/WL2O1mH/kHKvF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
+ YunWm4wOvB6X+3qZPDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1ZxejxeZOcR/uBbqYAjigum5TU
+ nMyy1CJ9uwSujHP/rrIVXJGtWNiygaWB8Yd4FyMnh4SAicT7z3OZuhi5OIQEdjNKLP7UwwSR
+ kJa4vnECO4QtLLHy33N2iKImJonH7ZuZQRJsAtoSd6dvAWsQASo68q2NEcRmFnjGJHHqYSmI
+ LSwQInHgZScLiM0ioCpxeNYhsKG8AjYSDX1foZbJS6zecABsJqeArURby1KgOAfQMhuJDU9i
+ JjDyLWBkWMUomVpQnJueW2xYYJiXWq5XnJhbXJqXrpecn7uJERzMWpo7GC8viT/EKMDBqMTD
+ a9AzM06INbGsuDL3EKMEB7OSCO9BN6AQb0piZVVqUX58UWlOavEhRmkOFiVx3qd5xyKFBNIT
+ S1KzU1MLUotgskwcnFINjGZtDS/jajb2l+p3fvUV1/cTc5e22XL3bUWm0z57mae95UyeVZf2
+ CDN8iVo5o4jdxbIu5FeWzMmrB2ZxL/GueK20+gLP37v7tL5c+qZo6T0l6nT24Ygc55x+i3WH
+ 5Auqzvzs3v3G9ehSTfGlgRXbUtssqpO74ivPPplelvaSb/6xuap1XR83KbEUZyQaajEXFScC
+ ADNExlNiAgAA
+X-CMS-MailID: 20200417181012epcas5p2004ac8f0d793abd4d58c096ff490da68
 X-Msg-Generator: CA
 CMS-TYPE: 105P
-X-CMS-RootMailID: 20200417181010epcas5p23cb018eee5b7ae0eba87d81dbaaec3ce
+X-CMS-RootMailID: 20200417181012epcas5p2004ac8f0d793abd4d58c096ff490da68
 References: <20200417175944.47189-1-alim.akhtar@samsung.com>
- <CGME20200417181010epcas5p23cb018eee5b7ae0eba87d81dbaaec3ce@epcas5p2.samsung.com>
+ <CGME20200417181012epcas5p2004ac8f0d793abd4d58c096ff490da68@epcas5p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_111013_673993_657A3882 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20200417_111016_559631_B8DD5C2C 
+X-CRM114-Status: GOOD (  18.34  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
+ high trust [203.254.224.24 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.24 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -120,6 +122,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -144,44 +147,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some host controllers support interrupt aggregation but don't allow
-resetting counter and timer in software.
+Some host controllers don't support host controller enable via HCE.
 
 Signed-off-by: Seungwon Jeon <essuuj@gmail.com>
 Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 3 ++-
- drivers/scsi/ufs/ufshcd.h | 6 ++++++
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ drivers/scsi/ufs/ufshcd.c | 76 +++++++++++++++++++++++++++++++++++++--
+ drivers/scsi/ufs/ufshcd.h |  6 ++++
+ 2 files changed, 80 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 3655b88fc862..0e9704da58bd 100644
+index 0e9704da58bd..ee30ed6cc805 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -4884,7 +4884,8 @@ static irqreturn_t ufshcd_transfer_req_compl(struct ufs_hba *hba)
- 	 * false interrupt if device completes another request after resetting
- 	 * aggregation and before reading the DB.
- 	 */
--	if (ufshcd_is_intr_aggr_allowed(hba))
-+	if (ufshcd_is_intr_aggr_allowed(hba) &&
-+	    !(hba->quirks & UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR))
- 		ufshcd_reset_intr_aggr(hba);
+@@ -3534,6 +3534,52 @@ static int ufshcd_dme_link_startup(struct ufs_hba *hba)
+ 			"dme-link-startup: error code %d\n", ret);
+ 	return ret;
+ }
++/**
++ * ufshcd_dme_reset - UIC command for DME_RESET
++ * @hba: per adapter instance
++ *
++ * DME_RESET command is issued in order to reset UniPro stack.
++ * This function now deal with cold reset.
++ *
++ * Returns 0 on success, non-zero value on failure
++ */
++static int ufshcd_dme_reset(struct ufs_hba *hba)
++{
++	struct uic_command uic_cmd = {0};
++	int ret;
++
++	uic_cmd.command = UIC_CMD_DME_RESET;
++
++	ret = ufshcd_send_uic_cmd(hba, &uic_cmd);
++	if (ret)
++		dev_err(hba->dev,
++			"dme-reset: error code %d\n", ret);
++
++	return ret;
++}
++
++/**
++ * ufshcd_dme_enable - UIC command for DME_ENABLE
++ * @hba: per adapter instance
++ *
++ * DME_ENABLE command is issued in order to enable UniPro stack.
++ *
++ * Returns 0 on success, non-zero value on failure
++ */
++static int ufshcd_dme_enable(struct ufs_hba *hba)
++{
++	struct uic_command uic_cmd = {0};
++	int ret;
++
++	uic_cmd.command = UIC_CMD_DME_ENABLE;
++
++	ret = ufshcd_send_uic_cmd(hba, &uic_cmd);
++	if (ret)
++		dev_err(hba->dev,
++			"dme-reset: error code %d\n", ret);
++
++	return ret;
++}
  
- 	tr_doorbell = ufshcd_readl(hba, REG_UTP_TRANSFER_REQ_DOOR_BELL);
+ static inline void ufshcd_add_delay_before_dme_cmd(struct ufs_hba *hba)
+ {
+@@ -4251,7 +4297,7 @@ static inline void ufshcd_hba_stop(struct ufs_hba *hba, bool can_sleep)
+ }
+ 
+ /**
+- * ufshcd_hba_enable - initialize the controller
++ * ufshcd_hba_execute_hce - initialize the controller
+  * @hba: per adapter instance
+  *
+  * The controller resets itself and controller firmware initialization
+@@ -4260,7 +4306,7 @@ static inline void ufshcd_hba_stop(struct ufs_hba *hba, bool can_sleep)
+  *
+  * Returns 0 on success, non-zero value on failure
+  */
+-int ufshcd_hba_enable(struct ufs_hba *hba)
++static int ufshcd_hba_execute_hce(struct ufs_hba *hba)
+ {
+ 	int retry;
+ 
+@@ -4308,6 +4354,32 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
+ 
+ 	return 0;
+ }
++
++int ufshcd_hba_enable(struct ufs_hba *hba)
++{
++	int ret;
++
++	if (hba->quirks & UFSHCI_QUIRK_BROKEN_HCE) {
++		ufshcd_set_link_off(hba);
++		ufshcd_vops_hce_enable_notify(hba, PRE_CHANGE);
++
++		/* enable UIC related interrupts */
++		ufshcd_enable_intr(hba, UFSHCD_UIC_MASK);
++		ret = ufshcd_dme_reset(hba);
++		if (!ret) {
++			ret = ufshcd_dme_enable(hba);
++			if (!ret)
++				ufshcd_vops_hce_enable_notify(hba, POST_CHANGE);
++			if (ret)
++				dev_err(hba->dev,
++					"Host controller enable failed with non-hce\n");
++		}
++	} else {
++		ret = ufshcd_hba_execute_hce(hba);
++	}
++
++	return ret;
++}
+ EXPORT_SYMBOL_GPL(ufshcd_hba_enable);
+ 
+ static int ufshcd_disable_tx_lcc(struct ufs_hba *hba, bool peer)
 diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 071f0edf3f64..53096642f9a8 100644
+index 53096642f9a8..f8d08cb9caf7 100644
 --- a/drivers/scsi/ufs/ufshcd.h
 +++ b/drivers/scsi/ufs/ufshcd.h
-@@ -523,6 +523,12 @@ enum ufshcd_quirks {
- 	 * Clear handling for transfer/task request list is just opposite.
+@@ -529,6 +529,12 @@ enum ufshcd_quirks {
+ 	 * that the interrupt aggregation timer and counter are reset by s/w.
  	 */
- 	UFSHCI_QUIRK_BROKEN_REQ_LIST_CLR		= 1 << 6,
+ 	UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR		= 1 << 7,
 +
 +	/*
-+	 * This quirk needs to be enabled if host controller doesn't allow
-+	 * that the interrupt aggregation timer and counter are reset by s/w.
++	 * This quirks needs to be enabled if host controller cannot be
++	 * enabled via HCE register.
 +	 */
-+	UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR		= 1 << 7,
++	UFSHCI_QUIRK_BROKEN_HCE				= 1 << 8,
  };
  
  enum ufshcd_caps {
