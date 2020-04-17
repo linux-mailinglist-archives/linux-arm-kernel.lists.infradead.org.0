@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74E0F1AE557
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:58:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5788D1AE563
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 21:02:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5V7zJKymRON4xzGwp2j4dE9W3VO32PwsilI3xTaBVm4=; b=DcU9g3fwU4cEZK
-	oWABQG20c0OgdqITWoX/Z5LOsHf4JExjDNWrOtq2Soxqz+08VvGci4rddiq1Qz7aknSDQXcfaY12Z
-	ILoTQQG7seCa7h5AphiiGnN07bu98GWsx6vl9uxBD/eUZwkyQT5MUlnobR2bsa9g9EmCehNyPEwrq
-	g+1yoHClZX7kmwc22N+D0V6TJEWCcbFcWncz2ZqGIXWBlMkJvXNyIHzhbWcQmJ5bEK4vR0F4zh7N8
-	pzEuKBLpcs4lHBU5+ePcQ/Fg8+aALsM6PjzJBRhkISyP2+SOJujkhOc7mmPtaQk9Y7h83b+ls3yDs
-	ZTR9CqHtAM6wUZmkfjDQ==;
+	List-Owner; bh=H/2LYuShfWC8kUk+Jr/RjPUzljCO8JL4kRiC/VACMBs=; b=H7PrEtZcNLEuDL
+	ErnuQD2A61xV1XSwkvDpz7sR74/NNemQ4yh/MSaaQFIx3feSF/MeXJ2NE2eokBgamunn/SJv2esF3
+	Bmf41CbaV7npecNQgyJwTt6MpKZiBB2le+4ezxkPxJ9zCe0QBUnszKIGRDtlTeG5QyBhS5KSsz+Aj
+	CqL84K7z7FXQq8SODbSQcJ8wyNpawY2ziAdEK13S65XVAw6or89+3c5uOruoxTfCK2vBLZNgxw7eh
+	s9VvEFCpj0xqJ3d/Ia8yiN0DVYMWmCQONbY85fy6bOz4QjU0tc6SrquLSyLKBOs6FVJ77t702UjhP
+	anUIYzpsS+Ij0LWehvVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPWC4-000397-QY; Fri, 17 Apr 2020 18:58:28 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
+	id 1jPWFc-0006gZ-Jh; Fri, 17 Apr 2020 19:02:08 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPWBs-000374-Rm; Fri, 17 Apr 2020 18:58:18 +0000
-Received: by mail-ej1-x644.google.com with SMTP id nv1so2345750ejb.0;
- Fri, 17 Apr 2020 11:58:16 -0700 (PDT)
+ id 1jPWFQ-0006eg-PF; Fri, 17 Apr 2020 19:01:57 +0000
+Received: by mail-ed1-x544.google.com with SMTP id e5so2268011edq.5;
+ Fri, 17 Apr 2020 12:01:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nlMFBx94GCBfheLIsuK5jE2jfZjb/ff2QESeWVLDTaA=;
- b=fo9jdYtU3T1u7shVeHbNWBxaUnvCMAs51p7ITTnBk0XK8aZFdpqwimCEkoVfVdHnX+
- eRId7zN/unfZUtKp6jDQ3FZ9fokbx6h5lUxmOw9/lr69K4+EobBDQUq9Zlu/AWzommVO
- i/b6Dd5ugZi29Y9v+q6rBQ+t0RVhn4RK02KBZnkgad3jJTc7X4TBZ/AQBwwQNtTon9rH
- 0tL3tUAXoIIVvkjz6Hdj6ERZCugZet/uwre/IkgFV32UXzCVmhjF0v1hQMoDGsUB8+SC
- YV5lJYrq9j8rQCxT0faPnqY4mBz38lt7LNyPO+Gq70AhqrDKJXnyKYe8LU2mjkwTjfY+
- L7zw==
+ :cc; bh=Ws0lGObjtWkfbXmBqtfEqFJnV5cJRhTx4fqD0Q8cnBs=;
+ b=nhSCvAIn9SOUp/QSQE0a0stljfg8bCGxS/WVOKNAq32tSji2T/MlLN6N5hKSkGs8Q1
+ 1Hj1P4OBFNbPEuexW2ofGFBJfn2JCZo/h/oBQtj3R+49YApA8xLc9FcENfylm4uZsihr
+ PrN3wtI2fyzkxaICZKRlp0Q6qiVeoAMwvDPPmqTmKJpPBpHL9Wlb8FAhu4tTuWNXihox
+ i6BZIRxCvdlNTKi6P6++kC1qTTbz2pJsm8GwDRMi3IFnC6psIAObSJOyRv8SOy/9LDea
+ kVO0ulyl92+e3ra0I4rZpAXxTtOE5sSFn94sL9qAMs9BHRmLpMgIGprNpDuBiIo2aWcr
+ GtsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=nlMFBx94GCBfheLIsuK5jE2jfZjb/ff2QESeWVLDTaA=;
- b=i5lrWSBA95eayz4YGJPJeisj3usclSq61VrBt3H3O8A4y5O6/7IJmb5+XUrMI0jjuo
- hf3fSgqaWZhLIn8s02o+CwomVRIN26oswNBJ9+pdESbT7IdB9oqdGjHKurqOGkBo/yyT
- vvdSGS5s4hJ+uxV01dczcKIkTcgIQtZgCWDSBu3R3UOcjitW73bp1exAIk9T/AHSgExB
- +ri/3NTEtLcSF2z9QgTcuNlXRHacs+Sihz1J1sp+B2orhoShs7LD4QrHiHOWvz+kXQ7O
- kfUY3iFUU2+XYzPWqrUyC7tBm7mpJJwER4EoB7xusTyBps7sCU/5xeT8HptDEep+9kOj
- /N1A==
-X-Gm-Message-State: AGi0PualKiBnBRP5bmXVXzOLGgnrniUL/le+aRAjOWv9Ct6KOE2cK5uM
- J8tmzl51fZ2FXow2Gm1e+ZMfKlh6CfQaGtxqMZQ=
-X-Google-Smtp-Source: APiQypJDTAOAKuxrm7soIeXoSsvXePAMrOLicPlcfUvzaZAHE61vBhTuJxahrdb1K9VgXzzNto7Uz3Fvb31Q2ubZeVk=
-X-Received: by 2002:a17:906:4048:: with SMTP id
- y8mr4465506ejj.258.1587149895198; 
- Fri, 17 Apr 2020 11:58:15 -0700 (PDT)
+ bh=Ws0lGObjtWkfbXmBqtfEqFJnV5cJRhTx4fqD0Q8cnBs=;
+ b=RJNuqqgfx6PJho8l++VtfOB7mgc4B5Zi0wRSCEmBFeMsHxp6eDip0xiRJn5gp2H410
+ zFLzj+OUVRR9mhy3yvvtQiRinFKhUdxyPa0RUtN8gxx5RnHs1UV+65kJGSRFZfxcLqb5
+ /hwikGIjeyD8Jisir50/BUoVRlsRJ3PAERDtnHULFqPczbDLRvh88VHftsQ+fczoeMp7
+ mqiLIhUddQGNLZofLfaqTn9lMFTK0u71iw0RkmUK1Vkx9YWVvqccmqOU+4UL1e0keK1N
+ 3VW5ixhq4ANnK5mzzQQI1WJzmPaWTdzhj5Rt8Lu6QscIgHFhmWWjNfVwenk/WXTMD8U3
+ ZyTw==
+X-Gm-Message-State: AGi0PuaEVRpW/lKS6Obx0NIR3sMyS8AXu3pHwG5SrWlaKAYtWUvFI0Vg
+ atdff03EXtbZZm2Gg6uy4m+quQ1lL2xvN2CGgP4=
+X-Google-Smtp-Source: APiQypKxFRcocN12xEBF5koGWzrxYBcKMvJXbVGzd+MQqeyCeALK+IsccNlNdyjEYO6sxS47F8FsDBlkB2FlBJzQWwM=
+X-Received: by 2002:a05:6402:1496:: with SMTP id
+ e22mr4449267edv.301.1587150114192; 
+ Fri, 17 Apr 2020 12:01:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200416121910.12723-1-narmstrong@baylibre.com>
- <20200416121910.12723-3-narmstrong@baylibre.com>
-In-Reply-To: <20200416121910.12723-3-narmstrong@baylibre.com>
+ <20200416121910.12723-4-narmstrong@baylibre.com>
+In-Reply-To: <20200416121910.12723-4-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 17 Apr 2020 20:58:04 +0200
-Message-ID: <CAFBinCCUM1Ht1_yRcbG=exJBign=YBX1+xUr8kz=3pJy2PxsnQ@mail.gmail.com>
-Subject: Re: [PATCH v3 2/8] usb: dwc3: meson-g12a: support the GXL/GXM DWC3
- host phy disconnect
+Date: Fri, 17 Apr 2020 21:01:43 +0200
+Message-ID: <CAFBinCCPZCNsj=dA3_fzrPqGCrpRzeJ7OPGErFvUeKW=iW-r9g@mail.gmail.com>
+Subject: Re: [PATCH v3 3/8] usb: dwc3: meson-g12a: add support for GXL and GXM
+ SoCs
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_115816_921155_CF9F843B 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20200417_120156_824839_B94FA35D 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [martin.blumenstingl[at]googlemail.com]
@@ -101,49 +105,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Apr 16, 2020 at 2:19 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> On the Amlogic GXL/GXM SoCs, the OTG PHY status signals are always
-> connected to the DWC3 controller, thus crashing the controller when
-> switching to OTG mode when port is not populated with a device/cable to
-> Host.
->
-> Amlogic added a bit to disconnect the OTG PHY status signals from the DWC3
-> to be used when switching the OTG PHY as Device to the DWC2 controller.
->
-> The drawback is that it makes the DWC3 port state machine stall and needs
-> a full reset of the DWC3 controller to get connect status to the port
-> connected to the OTG PHY, but not the other one.
+> In order to add support for the Amlogic GXL/GXM USB Glue, this adds
+> the corresponding :
+super nit-pick: if you have to re-send this for whatever reason, then
+please add "new compatible strings with" before "the corresponding"
+
+> - PHY names
+> - clock names
+> - USB2 PHY init and mode set
+> - regmap setup
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-one nit-pick below. apart from that:
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
-[...]
->         if (mode == PHY_MODE_USB_DEVICE) {
-> +               if (priv->otg_mode != USB_DR_MODE_OTG &&
-> +                   priv->drvdata->otg_phy_host_port_disable)
-> +                       /* Isolate the OTG PHY port from the Host Controller */
-> +                       regmap_update_bits(priv->usb_glue_regmap, USB_R1,
-> +                               USB_R1_U3H_HOST_U2_PORT_DISABLE_MASK,
-> +                               FIELD_PREP(USB_R1_U3H_HOST_U2_PORT_DISABLE_MASK,
-> +                                          BIT(USB2_OTG_PHY)));
-if you have to re-send for whatever reason then I would like an empty
-line here to make the code easier to read
-
->                 regmap_update_bits(priv->usb_glue_regmap, USB_R0,
->                                 USB_R0_U2D_ACT, USB_R0_U2D_ACT);
->                 regmap_update_bits(priv->usb_glue_regmap, USB_R0,
-> @@ -297,6 +318,12 @@ static void dwc3_meson_g12a_usb_otg_apply_mode(struct dwc3_meson_g12a *priv,
->                 regmap_update_bits(priv->usb_glue_regmap, USB_R4,
->                                 USB_R4_P21_SLEEP_M0, USB_R4_P21_SLEEP_M0);
->         } else {
-> +               if (priv->otg_mode != USB_DR_MODE_OTG &&
-> +                   priv->drvdata->otg_phy_host_port_disable) {
-> +                       regmap_update_bits(priv->usb_glue_regmap, USB_R1,
-> +                               USB_R1_U3H_HOST_U2_PORT_DISABLE_MASK, 0);
-> +                       msleep(500);
-> +               }
-same as above - if you have to re-send for whatever reason then please
-add an empty line here
 
 _______________________________________________
 linux-arm-kernel mailing list
