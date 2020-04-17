@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4499A1ADC06
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:17:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A67B31ADC14
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:22:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DuX0H6zF0gBhj5ra/xZFfZBSiejXvxIlmZAeQ2GEu+Q=; b=merj8/0CUQ6eDE
-	AkOT8jLn4sUzIcjun86z2erJKryuJRAqdN6X3bE+ofIBsM6jrxGiTUD2FHcSEkkh80rwEuDQK9+7j
-	RqftPGw8w94W+ySjp/I2a9VZWTvRcZdjIGcvBBO8C+W4zHPKnc/dKGff7bnpJUlucj+sqh2vTT72p
-	km1/0c/KmCmwEXwrt3E2bVlLYfS3b0gB7IJ0QY9y1ZbaY9tXC6sHInwtrMU3zdfJz3SMVLyXdcQIM
-	5eRiTlcSX2vXGbIvM3p0sU/FvGNTTcUcHRXCkWDAcQxuGa3rGWuA1+j73UtOuorYaIauYOSJQGVGl
-	THyCWXNGWVnsDZuyt00g==;
+	List-Owner; bh=tNcE4MnB/5vAS5mnEqEA1NckjM8OcUKpT1uPRoOaZtA=; b=gYz3hUl63m81BP
+	uEu5uUlGAMdqIeuoqv0EUNUDMzpU5ryY62xgnWCebjGqtOZBGbbgYD8Y3cJrIViK4mAsRFWIF/H+i
+	qgxwnkDD+0E8UXs+kjqTYr/l/hadyigdfwnQiG+iQCvqdM8D3cGerPrRpuF0WxV6CglensUqLccJM
+	q+2FvkKGPXrI2M2QWmqLZPTqXASj78rpwVa5WWaSy8yTuHxqGqoaTGfYE25rK1en84uzifmKVZuFU
+	ROoZDoLgzIVnIhtIuqj1SABxGKtXazxaYiqMCSAm3T4qJ9yScviAzzr1JxzhdATHEpOwzLddZwSVV
+	9VCT5L/+m6bZ9kv34raw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPP02-0001fz-HQ; Fri, 17 Apr 2020 11:17:34 +0000
+	id 1jPP4i-0004j9-N3; Fri, 17 Apr 2020 11:22:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOzv-0001eE-9q
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 11:17:28 +0000
+ id 1jPP4X-0004hx-VR
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 11:22:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 72186C14;
- Fri, 17 Apr 2020 04:17:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A059C14;
+ Fri, 17 Apr 2020 04:22:13 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 004173F6C4;
- Fri, 17 Apr 2020 04:17:23 -0700 (PDT)
-Subject: Re: [PATCH v2 3/6] KVM: arm: vgic: Only use the virtual state when
- userspace accesses enable bits
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA5BB3F6C4;
+ Fri, 17 Apr 2020 04:22:11 -0700 (PDT)
+Subject: Re: [PATCH v2 4/6] KVM: arm: vgic-v2: Only use the virtual state when
+ userspace accesses pending bits
 To: Marc Zyngier <maz@kernel.org>
 References: <20200417083319.3066217-1-maz@kernel.org>
- <20200417083319.3066217-4-maz@kernel.org>
+ <20200417083319.3066217-5-maz@kernel.org>
 From: James Morse <james.morse@arm.com>
-Message-ID: <040579d5-151f-5263-9f5f-69f86965dfc6@arm.com>
-Date: Fri, 17 Apr 2020 12:17:17 +0100
+Message-ID: <4133d5f2-ed0e-9c4a-8a66-953fb6bf6e70@arm.com>
+Date: Fri, 17 Apr 2020 12:22:10 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200417083319.3066217-4-maz@kernel.org>
+In-Reply-To: <20200417083319.3066217-5-maz@kernel.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_041727_384600_80DE6FCD 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200417_042214_100267_D22FF51B 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,19 +80,89 @@ Hi Marc,
 
 On 17/04/2020 09:33, Marc Zyngier wrote:
 > There is no point in accessing the HW when writing to any of the
-> ISENABLER/ICENABLER registers from userspace, as only the guest
-> should be allowed to change the HW state.
+> ISPENDR/ICPENDR registers from userspace, as only the guest should
+> be allowed to change the HW state.
 > 
 > Introduce new userspace-specific accessors that deal solely with
-> the virtual state.
-> 
-> Reported-by: James Morse <james.morse@arm.com>
+> the virtual state. Note that the API differs from that of GICv3,
+> where userspace exclusively uses ISPENDR to set the state. Too
+> bad we can't reuse it.
 
-Tested on both machines I've hit this on:
-Tested-by: James Morse <james.morse@arm.com>
+> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+> index f51c6e939c76..a016f07adc28 100644
+> --- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
+> +++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+> @@ -417,10 +417,12 @@ static const struct vgic_register_region vgic_v2_dist_registers[] = {
+>  		NULL, vgic_uaccess_write_cenable, 1,
+>  		VGIC_ACCESS_32bit),
+>  	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_PENDING_SET,
+> -		vgic_mmio_read_pending, vgic_mmio_write_spending, NULL, NULL, 1,
+> +		vgic_mmio_read_pending, vgic_mmio_write_spending,
+> +		NULL, vgic_uaccess_write_spending, 1,
+>  		VGIC_ACCESS_32bit),
 
-and perhaps more useful:
-Reviewed-by: James Morse <james.morse@arm.com>
+vgic_mmio_write_spending() has some homebrew detection for is_uaccess, which causes
+vgic_hw_irq_spending() to do nothing. Isn't that now dead-code with this change?
+
+
+> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
+> index 6e30034d1464..f1927ae02d2e 100644
+> --- a/virt/kvm/arm/vgic/vgic-mmio.c
+> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
+> @@ -321,6 +321,27 @@ void vgic_mmio_write_spending(struct kvm_vcpu *vcpu,
+
+> +int vgic_uaccess_write_spending(struct kvm_vcpu *vcpu,
+> +				gpa_t addr, unsigned int len,
+> +				unsigned long val)
+> +{
+> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
+> +	int i;
+> +	unsigned long flags;
+> +
+> +	for_each_set_bit(i, &val, len * 8) {
+> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
+
+vgic_mmio_write_spending() has:
+|	/* GICD_ISPENDR0 SGI bits are WI *
+
+and bales out early. Is GIC_DIST_PENDING_SET the same register?
+(If so, shouldn't that be true for PPI too?)
+
+
+> +		raw_spin_lock_irqsave(&irq->irq_lock, flags);
+> +		irq->pending_latch = true;
+> +		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
+> +
+> +		vgic_put_irq(vcpu->kvm, irq);
+> +	}
+> +
+> +	return 0;
+> +}
+
+> @@ -390,6 +411,26 @@ void vgic_mmio_write_cpending(struct kvm_vcpu *vcpu,
+
+> +int vgic_uaccess_write_cpending(struct kvm_vcpu *vcpu,
+> +				gpa_t addr, unsigned int len,
+> +				unsigned long val)
+> +{
+> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
+> +	int i;
+> +	unsigned long flags;
+> +
+> +	for_each_set_bit(i, &val, len * 8) {
+> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
+
+Same dumb question about GICD_ICPENDR0!?
+
+> +		raw_spin_lock_irqsave(&irq->irq_lock, flags);
+> +		irq->pending_latch = false;
+> +		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
+> +
+> +		vgic_put_irq(vcpu->kvm, irq);
+> +	}
+> +
+> +	return 0;
+> +}
 
 
 Thanks,
