@@ -2,59 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C01DE1AE27E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:49:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 128D61AE2A8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:55:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fI8ghUciNdNRRJjOVCZv9GAW6Gb7KUfwp4mrESjNQVA=; b=TvX4gF7Co2Gs6R
-	8UhDjsSM28alSAGNDN77kOnvVLXUIrqZXg1J2E/Qb1KW0Q2lEJ83BNekF7SHkMO8Akw921Pqn63t5
-	zz2fvgd5TgjkYhzBAUaLwIC+vwI/AogHQnIY3lFrMNzmyDuLTCBgjIVT+rwkc83lQoQLy4N4RNzv9
-	pqQT65EeXf2wy6veGj2XdWTn867fSFml+fruMW0lbVG+zRsBLN3c3WslNlWXGHUqalxvMrK2Zs8K5
-	F7edNGMus3KnXkgsHxOSVzykAEy9Rr4ckPXMKhH5SybYQUzZ6gkZkV7PaOPGA27W4QIy/nbkpUJ34
-	vw7j1m1/XOYlkELbHkKw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p3zXpM6WDL7rZx5m0Nrlm+NPJE2coyCRoLHlWcWhbV0=; b=ZcijwXQOAxPzBH
+	EzqDgZ0UoiT+NGSy2zTeWujguGrMlxFc0zhWv+VAfN4tuajhZ6nmDW6eZR71iWNOTVwKrrT+CnX9u
+	lpS0rhUhF4hfI9EI8cKpnfbVpLz+LgceZWZfd2E1U51LJ/X+0FC0P4spqC+dpkfn/qKg0ei9i55mN
+	sEF75O41VLtvMdzyC9g3Miwby8K7HZ5bi2dEeOqjg0AYGBP3zWIWAje9lj7eV3ZZw/ubWfW+ehFFr
+	MYS2bDk5AOFVcJE9iphNgzZKrfDEqaIc9rCaDDK5a9x2b4rWtsgdaX39iizViGkxPiW1CuzM2rII1
+	pTCEcJyeXL6EnxaplwEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPUAb-0006bH-RI; Fri, 17 Apr 2020 16:48:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jPUHK-00045I-FM; Fri, 17 Apr 2020 16:55:46 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPUAS-0006aa-8D
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:48:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64671C14;
- Fri, 17 Apr 2020 09:48:37 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A5553F6C4;
- Fri, 17 Apr 2020 09:48:35 -0700 (PDT)
-Subject: Re: [PATCH v2 4/6] KVM: arm: vgic-v2: Only use the virtual state when
- userspace accesses pending bits
-To: Marc Zyngier <maz@kernel.org>
-References: <20200417083319.3066217-1-maz@kernel.org>
- <20200417083319.3066217-5-maz@kernel.org>
- <4133d5f2-ed0e-9c4a-8a66-953fb6bf6e70@arm.com> <20200417134140.0a901749@why>
-From: James Morse <james.morse@arm.com>
-Message-ID: <7b001ee4-0a8e-d79c-1be4-563dab4ca452@arm.com>
-Date: Fri, 17 Apr 2020 17:48:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jPUH9-000446-7d
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:55:36 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 3D9B48047;
+ Fri, 17 Apr 2020 16:56:17 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH 00/14] Update omaps to use drivers/clocksource timers
+Date: Fri, 17 Apr 2020 09:55:05 -0700
+Message-Id: <20200417165519.4979-1-tony@atomide.com>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-In-Reply-To: <20200417134140.0a901749@why>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_094840_378927_1A224A92 
-X-CRM114-Status: GOOD (  29.09  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_095535_320058_56B603AF 
+X-CRM114-Status: GOOD (  13.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,176 +56,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Grall <julien@xen.org>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Lokesh Vutla <lokeshvutla@ti.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>, Stephen Boyd <sboyd@kernel.org>,
+ Andreas Kemnade <andreas@kemnade.info>, Keerthy <j-keerthy@ti.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Adam Ford <aford173@gmail.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi all,
 
-On 17/04/2020 13:41, Marc Zyngier wrote:
-> On Fri, 17 Apr 2020 12:22:10 +0100 James Morse <james.morse@arm.com> wrote:
->> On 17/04/2020 09:33, Marc Zyngier wrote:
->>> There is no point in accessing the HW when writing to any of the
->>> ISPENDR/ICPENDR registers from userspace, as only the guest should
->>> be allowed to change the HW state.
->>>
->>> Introduce new userspace-specific accessors that deal solely with
->>> the virtual state. Note that the API differs from that of GICv3,
->>> where userspace exclusively uses ISPENDR to set the state. Too
->>> bad we can't reuse it.  
+Here's a series of changes to udpate omaps to use drivers/clocksource
+timers for the 32k counter and dmtimer and to remove the old legacy
+platform code. Please review and test.
 
->>> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
->>> index 6e30034d1464..f1927ae02d2e 100644
->>> --- a/virt/kvm/arm/vgic/vgic-mmio.c
->>> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
->>> @@ -321,6 +321,27 @@ void vgic_mmio_write_spending(struct kvm_vcpu *vcpu,  
->>
->>> +int vgic_uaccess_write_spending(struct kvm_vcpu *vcpu,
->>> +				gpa_t addr, unsigned int len,
->>> +				unsigned long val)
->>> +{
->>> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
->>> +	int i;
->>> +	unsigned long flags;
->>> +
->>> +	for_each_set_bit(i, &val, len * 8) {
->>> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);  
->>
->> vgic_mmio_write_spending() has:
->> |	/* GICD_ISPENDR0 SGI bits are WI *
->>
->> and bales out early. Is GIC_DIST_PENDING_SET the same register?
->> (If so, shouldn't that be true for PPI too?)
-> 
-> Hmmm. It's a bit more complicated (surprisingly).
-> 
-> Yes, the SGI pending bits are WI from the guest perspective (as
-> required by the spec).
+Daniel, if the the first two patches look OK after review, maybe you
+can again set up an immutable branch for the first two patches against
+v5.7-rc1 that I can merge in?
 
-> But we still need to be able to restore them
-> from userspace, and I bet 82e40f558de56 ("KVM: arm/arm64: vgic-v2:
-> Handle SGI bits in GICD_I{S,C}PENDR0 as WI") has broken migration with
-> GICv2 (if you migrated with a pending SGI, you cannot restore it...).
+Regards,
 
-Fun! It looks like the ioctl() would succeed, but nothing happened. Once you restart the
-guest one CPU may wait forever for the victim to respond.
+Tony
 
 
-> Now, there is still a bug here, in the sense that we need to indicate
-> which vcpu is the source of the SGI (this is a GICv2-special).
-> Unfortunately, we don't have a way to communicate this architecturally.
-> The only option we have is to make it up (as a self-SGI, for example).
-> But this is pretty broken at the architectural level TBH.
-> On the other hand, PPIs are just fine.
+Tony Lindgren (14):
+  clocksource/drivers/timer-ti-32k: Add support for initializing
+    directly
+  clocksource/drivers/timer-ti-dm: Add clockevent and clocksource
+    support
+  clk: ti: dm816: enable sysclk6_ck on init
+  bus: ti-sysc: Ignore timer12 on secure omap3
+  ARM: OMAP2+: Add omap_init_time_of()
+  ARM: dts: Configure system timers for am335x
+  ARM: dts: Configure system timers for am437x
+  ARM: dts: Configure system timers for omap4
+  ARM: dts: Configure system timers for omap5 and dra7
+  ARM: dts: Configure system timers for omap3
+  ARM: dts: Configure system timers for ti81xx
+  ARM: dts: Configure system timers for omap2
+  ARM: OMAP2+: Drop old timer code for dmtimer and 32k counter
+  bus: ti-sysc: Timers no longer need legacy quirk handling
 
-Yup, wrong spec, I was looking at the same register in GICv3! It looks like the GICv3 text
-is there because those registers live in the redistributor instead... duh!
+ .../devicetree/bindings/timer/ti,timer.txt    |   2 +
+ arch/arm/boot/dts/am33xx-l4.dtsi              |   2 -
+ arch/arm/boot/dts/am33xx.dtsi                 |  12 +
+ arch/arm/boot/dts/am3517.dtsi                 |  16 +-
+ arch/arm/boot/dts/am4372.dtsi                 |  12 +
+ arch/arm/boot/dts/am437x-l4.dtsi              |   3 -
+ arch/arm/boot/dts/dm814x.dtsi                 |  66 +-
+ arch/arm/boot/dts/dm816x.dtsi                 |  70 ++-
+ arch/arm/boot/dts/dra7-l4.dtsi                |   5 -
+ arch/arm/boot/dts/dra7.dtsi                   |   6 +
+ arch/arm/boot/dts/omap2.dtsi                  |  38 +-
+ arch/arm/boot/dts/omap2420.dtsi               |  65 +-
+ arch/arm/boot/dts/omap2430.dtsi               |  65 +-
+ arch/arm/boot/dts/omap3-beagle.dts            |  16 +
+ arch/arm/boot/dts/omap3-devkit8000.dts        |  16 +
+ arch/arm/boot/dts/omap3.dtsi                  | 130 +++-
+ arch/arm/boot/dts/omap4-l4.dtsi               |   2 -
+ arch/arm/boot/dts/omap4.dtsi                  |   6 +
+ arch/arm/boot/dts/omap5-l4.dtsi               |   2 -
+ arch/arm/boot/dts/omap5.dtsi                  |   6 +
+ arch/arm/mach-omap2/Makefile                  |   4 +-
+ arch/arm/mach-omap2/board-generic.c           |  32 +-
+ arch/arm/mach-omap2/common.h                  |   7 +
+ arch/arm/mach-omap2/omap_hwmod_2420_data.c    |  20 -
+ arch/arm/mach-omap2/omap_hwmod_2430_data.c    |  19 -
+ .../omap_hwmod_2xxx_interconnect_data.c       |   8 -
+ .../mach-omap2/omap_hwmod_2xxx_ipblock_data.c |  47 --
+ .../omap_hwmod_33xx_43xx_common_data.h        |   2 -
+ .../omap_hwmod_33xx_43xx_interconnect_data.c  |   8 -
+ .../omap_hwmod_33xx_43xx_ipblock_data.c       |  62 --
+ arch/arm/mach-omap2/omap_hwmod_33xx_data.c    |  10 -
+ arch/arm/mach-omap2/omap_hwmod_3xxx_data.c    | 146 +----
+ arch/arm/mach-omap2/omap_hwmod_43xx_data.c    |  45 --
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c    |  90 ---
+ arch/arm/mach-omap2/omap_hwmod_54xx_data.c    |  89 ---
+ arch/arm/mach-omap2/omap_hwmod_7xx_data.c     | 176 ------
+ arch/arm/mach-omap2/omap_hwmod_81xx_data.c    |  74 ---
+ arch/arm/mach-omap2/omap_hwmod_common_data.h  |   3 -
+ arch/arm/mach-omap2/timer.c                   | 568 +-----------------
+ drivers/bus/ti-sysc.c                         |  25 +-
+ drivers/clk/ti/clk-816x.c                     |   1 +
+ drivers/clocksource/Makefile                  |   1 +
+ drivers/clocksource/timer-ti-32k.c            |  48 +-
+ drivers/clocksource/timer-ti-dm-systimer.c    | 468 +++++++++++++++
+ include/clocksource/timer-ti-dm.h             |   1 +
+ 45 files changed, 1016 insertions(+), 1478 deletions(-)
+ create mode 100644 drivers/clocksource/timer-ti-dm-systimer.c
 
-
->>> @@ -390,6 +411,26 @@ void vgic_mmio_write_cpending(struct kvm_vcpu *vcpu,  
->>
->>> +int vgic_uaccess_write_cpending(struct kvm_vcpu *vcpu,
->>> +				gpa_t addr, unsigned int len,
->>> +				unsigned long val)
->>> +{
->>> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
->>> +	int i;
->>> +	unsigned long flags;
->>> +
->>> +	for_each_set_bit(i, &val, len * 8) {
->>> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);  
->>
->> Same dumb question about GICD_ICPENDR0!?
-> 
-> Not dumb at all! Given that we previously allowed this to be accessed
-> from userspace (well, before we broke it again), it should be able to
-> clear *something*. If we adopt the self-SGI behaviour as above, we will
-> get away with it.
-> 
-> Here's what I'm proposing to add to this patch, together with a
-> Fixes: 82e40f558de56 ("KVM: arm/arm64: vgic-v2: Handle SGI bits in GICD_I{S,C}PENDR0 as WI")
-> 
-> Nobody is using GICv2, obviously... :-/
-
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-> index f1927ae02d2e..974cdcf2f232 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
-
-> @@ -334,6 +322,15 @@ int vgic_uaccess_write_spending(struct kvm_vcpu *vcpu,
->  
->  		raw_spin_lock_irqsave(&irq->irq_lock, flags);
->  		irq->pending_latch = true;
-> +
-> +		/*
-> +		 * GICv2 SGIs are terribly broken. We can't restore
-> +		 * the source of the interrupt, so just pick the vcpu
-> +		 * itself as the source...
-
-Makes sense, this way you can't have an SGI coming from an offline CPU!
-
-
-> +		 */
-> +		if (is_vgic_v2_sgi(vcpu, irq))
-> +			irq->source |= BIT(vcpu->vcpu_id);
-> +
->  		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
->  
->  		vgic_put_irq(vcpu->kvm, irq);
-
-> @@ -423,7 +415,22 @@ int vgic_uaccess_write_cpending(struct kvm_vcpu *vcpu,
->  		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
->  
->  		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> -		irq->pending_latch = false;
-> +		/*
-> +		 * More fun with GICv2 SGIs! If we're clearing one of them
-> +		 * from userspace, which source vcpu to clear?  Let's pick
-> +		 * the target vcpu itself (consistent whith the way we
-> +		 * populate them on the ISPENDR side), and only clear the
-> +		 * pending state if no sources are left (insert expletive
-> +		 * here).
-
-But I'm not so sure about this. Doesn't this mean that user-space can't clear pending-SGI?
-Only if its pending due to self-SGI. I'm not sure when user-space would want to do this,
-so it may not matter.
-
-Using ffs() you could clear the lowest pending source, I assume if its pending, there is
-likely only one source. If not, user-space can eventually clear pending SGI with at most
-nr-vcpu calls ... and ffs() could double up as the missing expletive!
-
-(but if user-space never actually does this, then we should do the simplest thing)
-
-
-> +		 */
-> +		if (is_vgic_v2_sgi(vcpu, irq)) {
-> +			irq->source &= ~BIT(vcpu->vcpu_id);
-> +			if (!irq->source)
-> +				irq->pending_latch = false;
-> +		} else {
-> +			irq->pending_latch = false;
-> +		}
-> +
->  		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
->  
->  		vgic_put_irq(vcpu->kvm, irq);
-
-Otherwise looks good to me,
-
-
-Thanks,
-
-James
-
-[0]
-https://static.docs.arm.com/ihi0069/f/IHI0069F_gic_architecture_specification_v3_and_v4.1.pdf
+-- 
+2.26.1
 
 _______________________________________________
 linux-arm-kernel mailing list
