@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27BC71AE344
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A62141AE345
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:11:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TXj5vrSDwgjLznRG8VlF8NU0ZXPdYf5WBWIjMFDs0Io=; b=WMSt0lb3QEVEfs
-	eDafHT09sizOd52IhWcnt60ENMhanib+G6ZOGxOMhJC5maFOjrtcLxSDjYHnVl1IKAFYX+jQkR6RP
-	wvPqQeI1F0bc2o6SkVfgb3dlHY0N5J6rNB2hdDgW72M3ixkqlAXZNH7lUnEt4YAJ0jYCyi5Bzs3V0
-	+nk0WBWmdENckm+jSGz7x4qqeuAJnanSEW7DU2NvgURxwSiXfBBH3maK9nDT0xIoigDtCqOC/STlZ
-	n7zSj5bT3ukdneO1QgA1aNmMh/VHWW91JVO7LiWOumB5ARA+UxFE10Xcj4Sepkj3Vym2eiffGxIa5
-	ESmg0GH57ebmjL/K8xjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M/bjeoRwDq6lilg78Trtrn9UdgyYUg5KJe+wSc9hwZU=; b=tkZRUywRiOSGJQ
+	YztR/10MJnXeb06vufJ+3Zf8uEn8HFA+i/H5J0gNRl5lB5AG8BZhbKuPbhRqnkTwX/Xa7f0UdytUf
+	7OeHgQFem3juBbvjOekf9dhtlz04/YTaODIFVcFVhkkmoD2Gocj5v+MoDNNiTFv2K85Rz5fdd5qoO
+	OQPjnq2Wi9JCXuYtTVTfxePT9XnTkC4wOcaABnDwJHun4bohKKOenD5tr6ilcQAvOauq/qcooAafW
+	+qLJeX9Pfv+JXSDvMAYisJPm8BcoofhxnuQPiMD9vJOnuQMCqUNXjDcKHHT4VxkLLedMgt0P1vKj/
+	rXfra5OHbULLKFOdlK8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPUWZ-0001ke-Vh; Fri, 17 Apr 2020 17:11:32 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jPUWo-0001rt-60; Fri, 17 Apr 2020 17:11:46 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPUWS-0001j1-V4
+ id 1jPUWT-0001jI-GL
  for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:11:26 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g12so3786427wmh.3
+Received: by mail-wr1-x442.google.com with SMTP id b11so3905900wrs.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 10:11:21 -0700 (PDT)
+ Fri, 17 Apr 2020 10:11:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Zdfa1xOmdel4jBPWZeqHqUOsoKXZ4glfFICzCZosfuA=;
- b=ia2Xc2B6HPiwKuijA0cUwEutT5CzATIY4b92exQI+/IV3xQrNRCveD3dFjOVD3tFIk
- zO+JWP2ohdDhICvmi3MFx8mTKMdrUYpZDSusv17g9H4iMzhxq/MoUo5AwdFOc6uHTGg6
- nl9yGNq18XxfGY68vhEZ94AonZzhyoc/6cbzBupLsy5T7KUPkn6fpx3mmrVbdmRBXq6S
- AR6YHflknf5stPWp6AyDkFXfkBmXxYQhdGdW4UOhBgGLm2EvwAtCmlZnOf5drh/h68xe
- o5coBzL388CfiHEQuVO5sXtOK9V/8zDOW/deRDHSTbSU6ssRttxJK2t5KGvl+p8R5w2C
- ndww==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=djzvG6XaGhdYeLytN4z7/I2dAr4mdJr3iEf2jKXsxZI=;
+ b=oAB38V466n9u/hH5DZQ+vkvHG7UZW4JmOaoSj+6gJTlpKc2JzmmNd6Y4AW/me6g9EK
+ JMoaUMHdIuFVnkRdICPbPzIC8/71ix6u9MuNsZsmuRcPLYZZ8kTQin1mmNS/4P5UyPtL
+ 7nZnmQNBLMiw0McBwUt509NilnZ4wWAgvZQOigs7TjBQtZGptsaAjojSTSVNDF9v2xIl
+ s68GQQzwhxPn4e87DaWiAi2K5BSJidJzkQPOXewQBSy7lSO7A+YjXqj9HR5plwhiqXAE
+ NfLPR1hjsiGlV5wkR6morj/8X1/dco3zcQ4nwU2JZa/leuW6L3rcGaHf3w9d4NmMcJpd
+ HXfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Zdfa1xOmdel4jBPWZeqHqUOsoKXZ4glfFICzCZosfuA=;
- b=Q6NTxzeO7PoqGEldATB/xDoXdyUuPlKeXIekM8fPswWife6gRqt1xjVBY7DA03bvNa
- K7jmnI/W/H/oPz93onbfDctI5YIWPrSZddbzRcyYQCbJ0ufDZYc7oZkbB5vqEtiy+5aT
- 43q2c54SBMDBYXLsKlOtYUhrxX7W+GbtfQ7kk47u0SApH2i4erhyacn6bgtQEn6uIdFJ
- C1C5+WnXn6Y9sY/Nsuj3RlRqJsD5xEyBv+XbT9ps5dInBfCO6z1TbUAUlF2QOukmSK+l
- nbDaau2yR4jgYTAfO4foZEHFVREzdAwCm3d4cxmXwOLxHtkEQcitwfFdpjsyouFjksBp
- EEyQ==
-X-Gm-Message-State: AGi0PuY3DJ6mpOozFvK5TPrhj3FJJyp9QsrEIvpB1Q2GqVg81WTdnN0J
- O0udVvcfw/Aqy4wQ+WiPEfE=
-X-Google-Smtp-Source: APiQypL8AX2/jEQn8JgErVjQS0ITupKFNQxZfb2am1F+WlTTJfyXr5AhZ7RCXRfTDRFz63emStIyiw==
-X-Received: by 2002:a05:600c:4096:: with SMTP id
- k22mr4041195wmh.99.1587143479718; 
- Fri, 17 Apr 2020 10:11:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=djzvG6XaGhdYeLytN4z7/I2dAr4mdJr3iEf2jKXsxZI=;
+ b=hGXrFm4xdweQCmov6AtlkhYZ78+BEyrBQ79l57nqxDAQw6chKbhsJNJKm4FhPxyheG
+ cZR43sarRBZtFJP49z9+jZr/Swh/QacqIxMvkx6TNAacKSrMOn6OyWHuFWNZS14JNqLo
+ jxWkTveHvdQW3EOoC2HHkgMpfBA/iEnLsEciw0F7pIIMh2ubrkX6e0801wXkCW6dqL+P
+ TTyLE+pmW90/78DSc5QBZwlqvQH1fanTxpXeLniM5Kp9HrWLMET5Dq3N332VjvO0JQE5
+ X09v+28A0awluam9HyiYOG9UINbHpQNSxvncgpXK97BdTf1SWDzOTB+pZsPl1GHEl6uP
+ cELQ==
+X-Gm-Message-State: AGi0PuYxrHjPuN85XHUkp5ysnf/+Kg6UKdfcg23zlVpCvCLCHHktu8L3
+ ZgufbV9EldXl8Y0LNxtiF6g=
+X-Google-Smtp-Source: APiQypJ1hzIsBxZXdPGvU2K3Qy/KAiMo3ErE/EvNDI89dOBXBA7eUV3bLRT0sp4Ki0DRJSz8uxO+uQ==
+X-Received: by 2002:adf:f986:: with SMTP id f6mr4875873wrr.221.1587143482005; 
+ Fri, 17 Apr 2020 10:11:22 -0700 (PDT)
 Received: from localhost (pD9E51D62.dip0.t-ipconnect.de. [217.229.29.98])
- by smtp.gmail.com with ESMTPSA id h26sm8361095wmb.19.2020.04.17.10.11.18
+ by smtp.gmail.com with ESMTPSA id w6sm29487997wrm.86.2020.04.17.10.11.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 10:11:18 -0700 (PDT)
+ Fri, 17 Apr 2020 10:11:20 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 1/2] soc/tegra: pmc: Enable PMIC wake event on Tegra186
-Date: Fri, 17 Apr 2020 19:11:16 +0200
-Message-Id: <20200417171117.2556374-1-thierry.reding@gmail.com>
+Subject: [PATCH 2/2] arm64: tegra: Make the RTC a wakeup source on Jetson TX2
+Date: Fri, 17 Apr 2020 19:11:17 +0200
+Message-Id: <20200417171117.2556374-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200417171117.2556374-1-thierry.reding@gmail.com>
+References: <20200417171117.2556374-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_101125_024448_71501DFD 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200417_101125_537381_58B3F0A1 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,26 +107,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The PMIC wake event can be used to bring the system out of suspend based
-on certain events happening on the PMIC (such as an RTC alarm).
+The RTC found on the MAX77620 PMIC can be used as a wakeup source on
+Jetson TX2, which is useful to wake the system from suspend at a given
+time.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/soc/tegra/pmc.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index 1c533a969f54..72cfda7305d5 100644
---- a/drivers/soc/tegra/pmc.c
-+++ b/drivers/soc/tegra/pmc.c
-@@ -3193,6 +3193,7 @@ static void tegra186_pmc_setup_irq_polarity(struct tegra_pmc *pmc,
- }
+diff --git a/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi b/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
+index da96de04d003..7a0fa157f48c 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
+@@ -221,7 +221,8 @@ pmic: pmic@3c {
+ 				compatible = "maxim,max77620";
+ 				reg = <0x3c>;
  
- static const struct tegra_wake_event tegra186_wake_events[] = {
-+	TEGRA_WAKE_IRQ("pmu", 24, 209),
- 	TEGRA_WAKE_GPIO("power", 29, 1, TEGRA186_AON_GPIO(FF, 0)),
- 	TEGRA_WAKE_IRQ("rtc", 73, 10),
- };
+-				interrupts = <GIC_SPI 209 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-parent = <&pmc>;
++				interrupts = <24 IRQ_TYPE_LEVEL_LOW>;
+ 				#interrupt-cells = <2>;
+ 				interrupt-controller;
+ 
+@@ -379,6 +380,10 @@ vdd_pex: ldo8 {
+ 						regulator-max-microvolt = <1050000>;
+ 					};
+ 				};
++
++				rtc {
++					wakeup-source;
++				};
+ 			};
+ 		};
+ 	};
 -- 
 2.24.1
 
