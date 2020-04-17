@@ -2,40 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D171AE4AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:21:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A3E51AE4CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9BHElIAZEJIrZ5knpWXh7WS72VSn/jZwz/rRQpu7H8=; b=I+9y+AjQwQ1TUz
-	r4GvhUTAAd36373O1xTPs1H9YaUQ3/LbkvWJqoacd/Kmv8i28snWB4/LF6lilQHbQL4k2BQ0dTSSY
-	dLSV2UmLyGF9WBczAQrZtj5vCubobdfaeRbeQfNIrNXmp+8rFyrFn89t9IfoFd+P/hVW6S0SmoRiM
-	GvJjLA3p0wFuhCN+OGjQ2lpFaXjEsfqU0c4K9Jo4g3p7NUvHjHpghp5rymRr06Oo3mZm4Wrzh/1yf
-	y8DiSuy+fzdDNgUlz/W3hr2vuDRKWR99JlOhjADWL6kfas9Cj4UgbqicgJ1cvQRJwVNJpp2VTnTgK
-	ycV5EErF6aNe3f8xhOtQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=faf7oJQetWdjLr5aglse4aRzDUIccgglEez08p9P/YQ=; b=iGzPY8zaODVYCE
+	M8jX3rVLrYztqG2ei/HkVGI3ymcwcXyJiGeythrCXQuEX0DpuHpEXW+C11azOVYe8e2W45gUG2Vbk
+	MPvbWaB8EoVwocvy70NteSdTPy0IxWcLffCXnHIwasnFDl/Ve/FcIf6UtkgmlfeoWSGGkBWqeErdU
+	H9q5Vv959yLzNyoFkSZ7LiHIlDxkW9PtYD/J7Knb2jargnRsCgIU4hnq+sg7V3cP9zlDKJAN/uwMS
+	bg9IE6sjZ8PdbwooTo9tqDQiL4tzjNy+dWRGBqjQlbU5EUTvuznhhf+I/ObKscue2cyRQ8owzXnnn
+	/l/meqvL8XzQB70lxbJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPVbc-0001m6-FD; Fri, 17 Apr 2020 18:20:48 +0000
-Received: from [2601:1c0:6280:3f0::19c2]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPVbT-0001kx-2U; Fri, 17 Apr 2020 18:20:39 +0000
-Subject: Re: [PATCH v6 09/10] scsi: ufs-exynos: add UFS host support for
- Exynos SoCs
-To: Alim Akhtar <alim.akhtar@samsung.com>, robh@kernel.org
-References: <20200417175944.47189-1-alim.akhtar@samsung.com>
- <CGME20200417181024epcas5p4231ae3dd2598155854e9b7ee52438bcb@epcas5p4.samsung.com>
- <20200417175944.47189-10-alim.akhtar@samsung.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <c0760af4-6867-87f6-4abb-cb4079a7c982@infradead.org>
-Date: Fri, 17 Apr 2020 11:20:35 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jPVok-0008Iz-3b; Fri, 17 Apr 2020 18:34:22 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPVoU-0008Gp-4k; Fri, 17 Apr 2020 18:34:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id k13so2958472wrw.7;
+ Fri, 17 Apr 2020 11:34:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HscwK37cFKMub3BOfrP9Hc3SiCJrLqjZW3xZhk6qI2w=;
+ b=bojG319NgtlkmTI7fGKzyA3aVCpaJ72KnmzPfwmdX98DNtqGu52+YZO0jEYJx14DUV
+ 0UdRwgovBE4uF3rYGkGa0veuWdTk0KtjapL6E/KH+XF45W2hOuuB/ZDdQyyoFUDpLmER
+ rXUHhb7xW8cXpDW1mL6eng/NpL66M8c/0lNO3f69ju6HCLcVCOuKKQmXyNQeuMZ4WA63
+ enPL2hlKsmIjp7gPiEdE1cCmttEnIkij5Z+v7gioM65U8o2hDS9BVzda80BZVAeRRGih
+ gplpdez6CT5dyOG8KIBuMSYxst7NDLKViV4FewZrh4qA63JRfeezF0+BYto7AE8dGNBq
+ CZKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HscwK37cFKMub3BOfrP9Hc3SiCJrLqjZW3xZhk6qI2w=;
+ b=dBusPbxbiTlVPEltWfvxOpYPz5H/rTjBWeLZsgdhAUfBrLBGosPDksNDloJkjoPhLs
+ IU3vzAYOqXR2rQoNdy+839iDMQGF0Zk87zSvptFJvzs0ZJkWQX4/saOJ7qYb824A1dNo
+ fGjVlruU/XwtgDDq6oey407GCqzDG3SMk0/l2nrcosoML0R0s8dpY8p5el/upaSyKjYW
+ ayhuzzldfuU/xx2xV/wiWBDZJ/p3IFgB126B3/ns2FAMrzJNJmldoZvSkpm35VwwgFJk
+ H/SyZiVK3u8lbuTyBSIoiowIJNC2QgYWdegot+OLHW4ZuFYOtoumg/NcrwOEyDqJrtVr
+ lpyQ==
+X-Gm-Message-State: AGi0PubFi/4OIfjxVnBqodwhF4rB5g9Zpm6e+cAuMUqliYpT4buF03dz
+ F0cScwtVLxWGxJ0B2Ty6VfI=
+X-Google-Smtp-Source: APiQypLijZgFjxv4x89tuM/h2XT9WSLRN+Fy5h09T4tZQq+JQ6uZXZRDgovMQuFHwHCvNlKO23KWTQ==
+X-Received: by 2002:a5d:42c7:: with SMTP id t7mr3138328wrr.336.1587148443929; 
+ Fri, 17 Apr 2020 11:34:03 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:3714:2e00:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id o7sm3074994wmh.46.2020.04.17.11.34.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 17 Apr 2020 11:34:03 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: linus.walleij@linaro.org, linux-gpio@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH RESEND v2 0/2] pinctrl-meson: two small improvements
+Date: Fri, 17 Apr 2020 20:33:47 +0200
+Message-Id: <20200417183349.1283092-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-In-Reply-To: <20200417175944.47189-10-alim.akhtar@samsung.com>
-Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200417_113406_210271_667E64CB 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,46 +99,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/17/20 10:59 AM, Alim Akhtar wrote:
-> diff --git a/drivers/scsi/ufs/Kconfig b/drivers/scsi/ufs/Kconfig
-> index e2005aeddc2d..cc7e29c8c24f 100644
-> --- a/drivers/scsi/ufs/Kconfig
-> +++ b/drivers/scsi/ufs/Kconfig
-> @@ -160,3 +160,15 @@ config SCSI_UFS_BSG
->  
->  	  Select this if you need a bsg device node for your UFS controller.
->  	  If unsure, say N.
-> +
-> +config SCSI_UFS_EXYNOS
-> +	bool "EXYNOS specific hooks to UFS controller platform driver"
-> +	depends on SCSI_UFSHCD_PLATFORM && ARCH_EXYNOS || COMPILE_TEST
+While playing with audio output on Meson8b I found out that the
+vendor kernel uses a custom version of the GPIO_PULL_UP flag. I
+suspect that we will need this for audio support on Meson8b and/or
+Meson8m2 but I don't see it hurt other platforms.
 
-"&&" has higher precedence than "||", so I'm thinking that line should be
+Also while comparing the register bits with the GPIO direction (of
+GPIOs exported to sysfs) I sometimes had a mismatch. This also wires
+up gpio_chip.get_direction to have sysfs and the actual registers in
+sync.
 
-+	depends on SCSI_UFSHCD_PLATFORM && (ARCH_EXYNOS || COMPILE_TEST)
 
-> +	select PHY_SAMSUNG_UFS
-> +	help
-> +	  This selects the EXYNOS specific additions to UFSHCD platform driver.
-> +	  UFS host on EXYNOS includes HCI and UNIPRO layer, and associates with
-> +	  UFS-PHY driver.
-> +
-> +	  Select this if you have UFS host controller on EXYNOS chipset.
-> +	  If unsure, say N.
+Changes since v1 from [0]:
+- re-send as non-"RFC" because I only got one comment in the past week
+  for patch #2. Jerome pointed out an alternative way to GPIO_PULL_UP
+  and GPIO_PULL_DOWN. However, this doesn't invalidate the patch, it
+  just means that there are two ways to achieve the same goal.
 
+
+[0] https://patchwork.kernel.org/cover/11484185/
+
+
+Martin Blumenstingl (2):
+  pinctrl: meson: implement the gpio_chip get_direction callback
+  pinctrl: meson: wire up the gpio_chip's set_config callback
+
+ drivers/pinctrl/meson/pinctrl-meson.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 -- 
-~Randy
+2.26.1
 
 
 _______________________________________________
