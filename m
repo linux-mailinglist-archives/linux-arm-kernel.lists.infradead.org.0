@@ -2,89 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E21AE1AD631
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 08:34:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A31391AD63E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 08:41:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=O1UdHzgrXhMISgH36do18iw/P0TrTT0JM9l/fX4uOO0=; b=okjUZ6Y9eP0epwWT5kOQwPcxp
-	FntaGSQMkl2CAXoHyAOEqxiseyfLNaJHrMytD32iUxeiLYiYDNIDfK/qWa+zIUeEpuK9lhWmQgAIX
-	1ydGceRBWck2GmWw08sIWqmZ8lkXqK1YY6VTjK6ZjdhHwg7/4pWKPAhbgnYhEJ2NXUPKkI0mClfvF
-	QQ0DNO4pr53jz67H3uZuvyBmmY9PLUtVipsgGyGjLGpCx4V5tKiHZ6xr339XfvtU1Sxn4BBwvFwGE
-	PmteHj1y++ne5AYF/na0PPN//5kwCte+5sDO1+sEbQlrWdKf8y3pRgmTNSLow6vBdwua8zeL6Mrrp
-	PGgcekgng==;
+	 bh=kBn0VySzgC6q3cVsSHkrF2Dob+thzQBsgZJsTGbKE8M=; b=DaqreFcXAEnLq2DawqhdCKUYf
+	5iviPu/krM8eLMzRpTQEke7lSwLSnGiuBfDooAlm5kr2Sk2LiQHQr8lIAoFxyX+zlhpEop8kK0dlM
+	9QKSM9r5Fv08PfRGPBJD04kQO6CNWOnkWqTD5fte3NDBrkJmxcTv/+Ff0hIoE4NrPEydWXmjshM52
+	EjVrhb5YVHq9smlQ5H5c4b/CEe/esNTTlVx+BFJDacOCLxU7SzeFGPZYCQab43AoIRhGDUAg4jLWy
+	AR/tF8zvnDxGQGTPzwRuUVMfV/kyhuKDKvQ5e9gxZMBZrjeMbakeq3JrupAXKr9Tybk5DBvXj2Rsv
+	Osjz6Wppg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPKa2-0004lH-DG; Fri, 17 Apr 2020 06:34:26 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jPKgW-0002RE-HH; Fri, 17 Apr 2020 06:41:08 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPKZt-0004kl-He
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 06:34:20 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 062C222EEB;
- Fri, 17 Apr 2020 08:34:09 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1587105252;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=yRofvrT7uJxuqc53iK0glkaODL7zqW5wwpHXjFjKcgw=;
- b=QJWl4WcToI73JqjXrubzRp0qLIcPIjk2ilLyWMLcnLKpiGqrfWON6uL1z8JhJq7r5UUkyF
- TKqmBRGjCEejYmQaC3M7NJhp8Ji3md43YmGOp9YWBADR/RoIApO6RHynSWNUvMQUz3QA90
- FlDbwzSR3GqZVaXjssTh33Iz8CDafW4=
+ id 1jPKgM-0002NH-C1
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 06:41:00 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id CB58F782E7D097BE4BA6;
+ Fri, 17 Apr 2020 14:40:42 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.487.0; Fri, 17 Apr 2020
+ 14:40:32 +0800
+Subject: Re: [PATCH 2/2] KVM: arm64: vgic-its: Fix memory leak on the error
+ path of vgic_add_lpi()
+To: Marc Zyngier <maz@kernel.org>
+References: <20200414030349.625-1-yuzenghui@huawei.com>
+ <20200414030349.625-3-yuzenghui@huawei.com>
+ <610f2195-f85d-4beb-b711-47d63bb393d0@huawei.com>
+ <2173e13527cc9578838f0364ad29f6cc@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <de03883a-179f-fbe5-e5f4-6138e5684660@huawei.com>
+Date: Fri, 17 Apr 2020 14:40:31 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Date: Fri, 17 Apr 2020 08:34:09 +0200
-From: Michael Walle <michael@walle.cc>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 10/16] gpio: add a reusable generic gpio_chip using
- regmap
-In-Reply-To: <CACRpkdaqgHhPwdKdUai4zvi21qR-cSQUKyzZ3SyfWBLPN9us3w@mail.gmail.com>
-References: <20200402203656.27047-1-michael@walle.cc>
- <20200402203656.27047-11-michael@walle.cc>
- <CACRpkdaqgHhPwdKdUai4zvi21qR-cSQUKyzZ3SyfWBLPN9us3w@mail.gmail.com>
-Message-ID: <f82706a8596436d13642c49e26233133@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 062C222EEB
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[23]; NEURAL_HAM(-0.00)[-0.393];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,baylibre.com,kernel.org,suse.com,roeck-us.net,linaro.org,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+In-Reply-To: <2173e13527cc9578838f0364ad29f6cc@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_233417_878407_80A22E9B 
-X-CRM114-Status: GOOD (  21.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200416_234058_578765_E0E886F3 
+X-CRM114-Status: GOOD (  22.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,109 +69,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN
- FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, yezengruan@huawei.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
+ julien.thierry.kdev@gmail.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
-
-Am 2020-04-16 11:27, schrieb Linus Walleij:
-> On Thu, Apr 2, 2020 at 10:37 PM Michael Walle <michael@walle.cc> wrote:
-> 
->> There are quite a lot simple GPIO controller which are using regmap to
->> access the hardware. This driver tries to be a base to unify existing
->> code into one place. This won't cover everything but it should be a 
->> good
->> starting point.
->> 
->> It does not implement its own irq_chip because there is already a
->> generic one for regmap based devices. Instead, the irq_chip will be
->> instanciated in the parent driver and its irq domain will be associate
->> to this driver.
->> 
->> For now it consists of the usual registers, like set (and an optional
->> clear) data register, an input register and direction registers.
->> Out-of-the-box, it supports consecutive register mappings and mappings
->> where the registers have gaps between them with a linear mapping 
->> between
->> GPIO offset and bit position. For weirder mappings the user can 
->> register
->> its own .xlate().
->> 
->> Signed-off-by: Michael Walle <michael@walle.cc>
-> 
-> Overall I really like this driver and I think we should merge is as 
-> soon
-> as it is in reasonable shape and then improve on top so we can start
-> migrating drivers to it.
-> 
->> +static int gpio_regmap_to_irq(struct gpio_chip *chip, unsigned int 
->> offset)
->> +{
->> +       struct gpio_regmap_data *data = gpiochip_get_data(chip);
->> +       struct gpio_regmap *gpio = data->gpio;
->> +
->> +       /* the user might have its own .to_irq callback */
->> +       if (gpio->to_irq)
->> +               return gpio->to_irq(gpio, offset);
->> +
->> +       return irq_create_mapping(gpio->irq_domain, offset);
-> 
-> I think that should at least be irq_find_mapping(), the mapping should
-> definately not be created by the .to_irq() callback since that is just
-> a convenience function.
-
-what do you mean by conenience function? are there other ways? if you 
-use
-irq_find_mapping() who will create the mappings? most gpio drivers use a
-similar function like gpio_regmap_to_irq().
-
-> 
->> +       if (gpio->irq_domain)
->> +               chip->to_irq = gpio_regmap_to_irq;
-> 
-> I don't know about this.
-> (...)
->> + * @irq_domain:                (Optional) IRQ domain if the 
->> controller is
->> + *                     interrupt-capable
-> (...)
->> +       struct irq_domain *irq_domain;
-> 
-> I don't think this is a good storage place for the irqdomain, we 
-> already have
-> gpio_irq_chip inside gpio_chip and that has an irqdomain, we should
-> strive to reuse that infrastructure also for regmap GPIO I think, for 
-> now
-> I would just leave .to_irq() out of this and let the driver deal with 
-> any
-> irqs.
-
-How would a driver attach the to_irq callback then? At the moment, the
-gpio_regmap doesn't expose the gpio_chip. So either we have to do that 
-or
-the config still have to have a .to_irq property.
-
--michael
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC80LzE3IDE6MjMsIE1hcmMgWnluZ2llciB3cm90ZToKPiBPbiAyMDIwLTA0LTE2IDAy
+OjE3LCBaZW5naHVpIFl1IHdyb3RlOgo+PiBPbiAyMDIwLzQvMTQgMTE6MDMsIFplbmdodWkgWXUg
+d3JvdGU6Cj4+PiBJZiB3ZSdyZSBnb2luZyB0byBmYWlsIG91dCB0aGUgdmdpY19hZGRfbHBpKCks
+IGxldCdzIG1ha2Ugc3VyZSB0aGUKPj4+IGFsbG9jYXRlZCB2Z2ljX2lycSBtZW1vcnkgaXMgYWxz
+byBmcmVlZC4gVGhvdWdoIGl0IHNlZW1zIHRoYXQgYm90aAo+Pj4gY2FzZXMgYXJlIHVubGlrZWx5
+IHRvIGZhaWwuCj4+Pgo+Pj4gQ2M6IFplbmdydWFuIFllIDx5ZXplbmdydWFuQGh1YXdlaS5jb20+
+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBaZW5naHVpIFl1IDx5dXplbmdodWlAaHVhd2VpLmNvbT4KPj4+
+IC0tLQo+Pj4gwqAgdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy1pdHMuYyB8IDggKysrKysrLS0KPj4+
+IMKgIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4+Pgo+
+Pj4gZGlmZiAtLWdpdCBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaXRzLmMgYi92aXJ0L2t2bS9h
+cm0vdmdpYy92Z2ljLWl0cy5jCj4+PiBpbmRleCBkNTNkMzRhMzNlMzUuLjNjM2I2YTBmMmRjZSAx
+MDA2NDQKPj4+IC0tLSBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaXRzLmMKPj4+ICsrKyBiL3Zp
+cnQva3ZtL2FybS92Z2ljL3ZnaWMtaXRzLmMKPj4+IEBAIC05OCwxMiArOTgsMTYgQEAgc3RhdGlj
+IHN0cnVjdCB2Z2ljX2lycSAqdmdpY19hZGRfbHBpKHN0cnVjdCBrdm0gCj4+PiAqa3ZtLCB1MzIg
+aW50aWQsCj4+PiDCoMKgwqDCoMKgwqAgKiB0aGUgcmVzcGVjdGl2ZSBjb25maWcgZGF0YSBmcm9t
+IG1lbW9yeSBoZXJlIHVwb24gbWFwcGluZyB0aGUgCj4+PiBMUEkuCj4+PiDCoMKgwqDCoMKgwqAg
+Ki8KPj4+IMKgwqDCoMKgwqAgcmV0ID0gdXBkYXRlX2xwaV9jb25maWcoa3ZtLCBpcnEsIE5VTEws
+IGZhbHNlKTsKPj4+IC3CoMKgwqAgaWYgKHJldCkKPj4+ICvCoMKgwqAgaWYgKHJldCkgewo+Pj4g
+K8KgwqDCoMKgwqDCoMKgIGtmcmVlKGlycSk7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJu
+IEVSUl9QVFIocmV0KTsKPj4+ICvCoMKgwqAgfQo+Pj4gwqDCoMKgwqDCoMKgwqAgcmV0ID0gdmdp
+Y192M19scGlfc3luY19wZW5kaW5nX3N0YXR1cyhrdm0sIGlycSk7Cj4+PiAtwqDCoMKgIGlmIChy
+ZXQpCj4+PiArwqDCoMKgIGlmIChyZXQpIHsKPj4+ICvCoMKgwqDCoMKgwqDCoCBrZnJlZShpcnEp
+Owo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiBFUlJfUFRSKHJldCk7Cj4+PiArwqDCoMKg
+IH0KPj4KPj4gTG9va2luZyBhdCBpdCBhZ2FpbiwgSSByZWFsaXplZCB0aGF0IHRoaXMgZXJyb3Ig
+aGFuZGxpbmcgaXMgc3RpbGwgbm90Cj4+IGNvbXBsZXRlLiBNYXliZSB3ZSBzaG91bGQgdXNlIGEg
+dmdpY19wdXRfaXJxKCkgaW5zdGVhZCBzbyB0aGF0IHdlIGNhbgo+PiBhbHNvIHByb3Blcmx5IGRl
+bGV0ZSB0aGUgdmdpY19pcnEgZnJvbSBscGlfbGlzdC4KPiAKPiBZZXMsIHRoaXMgaXMgYSBtb3Jl
+IGNvcnJlY3QgZml4IGluZGVlZC4gVGhlcmUgaXMgc3RpbGwgYSBiaXQgb2YgYSBiaXphcnJlCj4g
+YmVoYXZpb3VyIGlmIHlvdSBoYXZlIHR3byB2Z2ljX2FkZF9scGkoKSByYWNpbmcgdG8gY3JlYXRl
+IHRoZSBzYW1lIAo+IGludGVycnVwdCwKPiB3aGljaCBpcyBwcmV0dHkgZG9kZ3kgYW55d2F5IChp
+dCBtZWFucyB3ZSBoYXZlIHR3byBNQVBJIGF0IHRoZSBzYW1lIAo+IHRpbWUuLi4pLgo+IFlvdSBl
+bmQtdXAgd2l0aCByZS1yZWFkaW5nIHRoZSBzdGF0ZSBmcm9tIG1lbW9yeS4uLiBPaCB3ZWxsLgo+
+IAo+PiBNYXJjLCB3aGF0IGRvIHlvdSB0aGluaz8gQ291bGQgeW91IHBsZWFzZSBoZWxwIHRvIGZp
+eCBpdCwgb3IgSSBjYW4KPj4gcmVzZW5kIGl0Lgo+IAo+IEkndmUgZml4ZWQgaXQgYXMgc3VjaCAo
+d2l0aCBhIGNvbW1lbnQgZm9yIGEgZ29vZCBtZWFzdXJlKToKPiAKPiBkaWZmIC0tZ2l0IGEvdmly
+dC9rdm0vYXJtL3ZnaWMvdmdpYy1pdHMuYyBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaXRzLmMK
+PiBpbmRleCAzYzNiNmEwZjJkY2UuLmMwMTJhNTJiMTlmNSAxMDA2NDQKPiAtLS0gYS92aXJ0L2t2
+bS9hcm0vdmdpYy92Z2ljLWl0cy5jCj4gKysrIGIvdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy1pdHMu
+Ywo+IEBAIC05NiwxNiArOTYsMTkgQEAgc3RhdGljIHN0cnVjdCB2Z2ljX2lycSAqdmdpY19hZGRf
+bHBpKHN0cnVjdCBrdm0gCj4gKmt2bSwgdTMyIGludGlkLAo+ICDCoMKgwqDCoMKgICogV2UgImNh
+Y2hlIiB0aGUgY29uZmlndXJhdGlvbiB0YWJsZSBlbnRyaWVzIGluIG91ciBzdHJ1Y3QgCj4gdmdp
+Y19pcnEncy4KPiAgwqDCoMKgwqDCoCAqIEhvd2V2ZXIgd2Ugb25seSBoYXZlIHRob3NlIHN0cnVj
+dHMgZm9yIG1hcHBlZCBJUlFzLCBzbyB3ZSByZWFkIGluCj4gIMKgwqDCoMKgwqAgKiB0aGUgcmVz
+cGVjdGl2ZSBjb25maWcgZGF0YSBmcm9tIG1lbW9yeSBoZXJlIHVwb24gbWFwcGluZyB0aGUgTFBJ
+Lgo+ICvCoMKgwqDCoCAqCj4gK8KgwqDCoMKgICogU2hvdWxkIGFueSBvZiB0aGVzZSBmYWlsLCBi
+ZWhhdmUgYXMgaWYgd2UgY291bGRuJ3QgY3JlYXRlIHRoZSBMUEkKPiArwqDCoMKgwqAgKiBieSBk
+cm9wcGluZyB0aGUgcmVmY291bnQgYW5kIHJldHVybmluZyB0aGUgZXJyb3IuCj4gIMKgwqDCoMKg
+wqAgKi8KPiAgwqDCoMKgwqAgcmV0ID0gdXBkYXRlX2xwaV9jb25maWcoa3ZtLCBpcnEsIE5VTEws
+IGZhbHNlKTsKPiAgwqDCoMKgwqAgaWYgKHJldCkgewo+IC3CoMKgwqDCoMKgwqDCoCBrZnJlZShp
+cnEpOwo+ICvCoMKgwqDCoMKgwqDCoCB2Z2ljX3B1dF9pcnEoa3ZtLCBpcnEpOwo+ICDCoMKgwqDC
+oMKgwqDCoMKgIHJldHVybiBFUlJfUFRSKHJldCk7Cj4gIMKgwqDCoMKgIH0KPiAKPiAgwqDCoMKg
+wqAgcmV0ID0gdmdpY192M19scGlfc3luY19wZW5kaW5nX3N0YXR1cyhrdm0sIGlycSk7Cj4gIMKg
+wqDCoMKgIGlmIChyZXQpIHsKPiAtwqDCoMKgwqDCoMKgwqAga2ZyZWUoaXJxKTsKPiArwqDCoMKg
+wqDCoMKgwqAgdmdpY19wdXRfaXJxKGt2bSwgaXJxKTsKPiAgwqDCoMKgwqDCoMKgwqDCoCByZXR1
+cm4gRVJSX1BUUihyZXQpOwo+ICDCoMKgwqDCoCB9Cj4gCj4gCj4gTGV0IG1lIGtub3cgaWYgeW91
+IGFncmVlIHdpdGggdGhhdC4KCkFncmVlZC4gVGhhbmtzIGZvciB0aGUgZml4IQoKClplbmdodWkK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
