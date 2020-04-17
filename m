@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D47511ADB9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:52:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB8181ADB9E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:52:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=49dHdX1OcRIxUdOPDG13sq0Lj8nqmVmao7OkoxHqmNE=; b=Byc2tsaabXLGIi
-	fKcktAC9HhwiutX20K4oB/ybwJlAKEk1mAT2hMh1Q0aVO0JCU+LHSzJybZuZedSap96dyxsCZ2Q/0
-	437nKr8/+pVG4cPIgVJ5aFhiMxIOZi7NzQu4H+PvGNhSB/BDun+EwF3v2m4/b1IKQaUI2AnlFEeoL
-	OnVSIW0F43zoq2NMJ8hzpEfmnGK3jKQ6/ZDzcMQXFU2UOvM7CJis9PFE5SKt4aSDYOtWfm2CWSdle
-	n2qbI4uHLeSRDVSlb4ybLuowZl9zIyH7gr/uXeyT6DQIqQ9iKTka4582bl0vEUVlIYYsEdfUpIF5d
-	TJrU1GcuAXo5MV3dNMAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CsPHfX8LJC2TKzzQEgrRVB5v0p5sZEuml7umv9CHWnU=; b=bsqHFQJTvMPz60
+	f65YmLPc7cVzualStwN/B/6hrk0Ssz19VgRdOpwa4qyVv17chuvAbABY4LOe+k0MDVzcpC/ddl5Ma
+	fOL5rYgMNqnxkPh3xFzC+t5KyjMq3yNr5HjGfFjHfCPkmXI46LwaS7XKoCC63qKheY2DvqBZmJsC1
+	5HOmppbIZPuKFUysH9P69WgrhoduikbJO7ZtIt6JNtgFI4vUerC0s33Y5F7C82pVoQLDfX5gcvGb3
+	TZQjCZpjyOdNgY7omUeXUSk1K7O5w5gP3021QK4GEuW5Lon/Ic/ukR/7F7mHe+E92rsAGPfiMqTAz
+	SJTwKs77qtCJh0LCoJHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOZX-0005wa-F7; Fri, 17 Apr 2020 10:50:11 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jPOZZ-0005ys-Es; Fri, 17 Apr 2020 10:50:13 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOXr-0003Rg-GB
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:48:34 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id t40so921587pjb.3
+ id 1jPOY0-0003l5-89
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:48:39 +0000
+Received: by mail-pg1-x542.google.com with SMTP id q8so91777pgq.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 03:48:27 -0700 (PDT)
+ Fri, 17 Apr 2020 03:48:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6tJkEnovKiyDlmv8OCPoZSMp3hCgfVK38VbbvSk3vu8=;
- b=HaU1a535RXRPCyyRJ+BmFyRLC2vxL3Yy9Cas+iZjxURX8UAqvLJl/6dh6bWQIrwX/A
- gxZO9g/OLjihxK0sLbozikFgy4gCywol6Ig0DcsOhfqRwuEzdnQUSmLgsBxsqutqQ6di
- w2b/Q2bC7RbTBuH1xAunF9TopXXIsaUh4WG4JsJMK+rfcqcikyVY3zQCp+lLE3CMTU/q
- /PndkdaULSeWF+5QfH8exA1VZlbS3GjsVPzMuPWIPqLsaSB7HrbNSW0R+YZ9qrh5hx7p
- jkaXvrYPjUsBXvV0UP5/LUVy+es80aGrxPEfkqeZzohPWndKq2P9MG8cS1oLSvqsXp7p
- S5wA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=OiYeCJDllSXh/csfqHOEAwyzX1Erb7SYSMIFRdyE9io=;
+ b=Z4udcHNE0Y3Ijzz7PtyUJeL/RMI/ufEZFDEwrXz3EL00jGYu/ubeWa4zSPLhwopDYv
+ W86bK/xMZlegTjV0kIoF1QadhKiP0zYfuIqsr0og86DrARHBMTgzCIPQ4dzgDJZrqL1e
+ XXMOTrm9xF8dLUbsNkrq1eFikOKLk89j2abhelqCeIV6hTS64/yu3EbDVxX4Ac804SYK
+ wc7qjEJKlzQW9pJWiAOtARrAELh6OyFQYFI6TOLQJkxBC0kLd+kJsJPCWM65HSHGlem9
+ JeHcBtYhUVgWou+0JeIf+rfDsg+jUDUDiMiQTTOdSl68bTiwN8PXiRvF394QIFAKed/A
+ 0rmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6tJkEnovKiyDlmv8OCPoZSMp3hCgfVK38VbbvSk3vu8=;
- b=QSLxF/dCgESZJ7bG1TFyCz96QLXEzjYLuKn7dMcF1NA4vLHLc2ybhuuic3MMI2eZCb
- 2UPl9OubSIGHZNW7Iy1V4OTL8yKsZLVSX7TqhoaFNClkYhmgnuL2KUr6+tFimzk0Khk7
- GqscELwmmInSvEOitmsYXahubWXgGNs21ACc6AQ6C+p4Z5gIrQobzAt/ThoP8pql6LnR
- WENcOF7bSbrt7knNs16hTqM13Z0w8ribrQojAkKoG66d9B899mkiwo6dHuNa3FZH/GyP
- 6nMuQS5QNC9bmjBwROPdO4/fyu8zvTTjfzT6mrp+0k4tehHY9To/tyP7HOFb8vocDtpC
- ESpQ==
-X-Gm-Message-State: AGi0Pua2K0khCXpLiQaaQ8JSBIPO9y8FY6quymboAnXVQZt8aJE1LsGB
- XknY/aNaf8a20JhP3ow68H5GPkp/l4o=
-X-Google-Smtp-Source: APiQypIRebQbp1RrDDLbjumCMDF2OKClwQKFxAdjNsm+cOdMWvAsk+4uUpO0dtVQIpq9q5XODReZ5g==
-X-Received: by 2002:a17:90b:300a:: with SMTP id
- hg10mr3671648pjb.42.1587120506741; 
- Fri, 17 Apr 2020 03:48:26 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=OiYeCJDllSXh/csfqHOEAwyzX1Erb7SYSMIFRdyE9io=;
+ b=tFsBPTFfjXtcreh0DDIQcrcnPGv/9SyuSFpNxn3CyDCwuHsD5HG0/R28ySIL4Lhf70
+ +2rAvDv3l3Y31Y4oAKrkH8+htmnRpmdjWkTSnkD1lfNkARnHcEWShGzU66Q5jPGF4Qh+
+ /KFiTx5H9VZPRmBdvVgyW5CNLEpnVJrX4yGgV+nFK3sY4COay+PEDKsSkwR87scqtU/l
+ kITlhCvJYJ5WUbDAeDL/dkuyy+vkc9gto8HQ+8phKxFeeBA3ZBSs8dAk5z9vO1AWlcsB
+ Q4FR++nt7yVi5ceHCrpWuz4mT5Ar4d9XWx19xjoaa+iiNLmLPPEoNGKlZxZoEP45GO3+
+ xZnQ==
+X-Gm-Message-State: AGi0PuZSQavQdFOqKvTEx1U/UxzJt87FfxT7HsTGZTWoXLPEIflitCRX
+ 7Hpju8727yTD1D0AeSC31ryN7Z4I/Nc=
+X-Google-Smtp-Source: APiQypIAbf9kat6u7y+gU3Uao1uccK7T4gn72NvHMpDUlRjFNLjPJ3/fmX/iUkr4bbv3vHTzBt0mIA==
+X-Received: by 2002:a63:721a:: with SMTP id n26mr2486016pgc.386.1587120514516; 
+ Fri, 17 Apr 2020 03:48:34 -0700 (PDT)
 Received: from pek-lpggp6.wrs.com (unknown-105-123.windriver.com.
  [147.11.105.123])
- by smtp.gmail.com with ESMTPSA id a12sm12771844pfr.28.2020.04.17.03.48.22
+ by smtp.gmail.com with ESMTPSA id a12sm12771844pfr.28.2020.04.17.03.48.30
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 17 Apr 2020 03:48:26 -0700 (PDT)
+ Fri, 17 Apr 2020 03:48:34 -0700 (PDT)
 From: Kevin Hao <haokexin@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/2] arm64: Fix the call trace when running kgdb test suite
-Date: Fri, 17 Apr 2020 18:32:10 +0800
-Message-Id: <20200417103212.45812-1-haokexin@gmail.com>
+Subject: [PATCH 1/2] arm64: entry: Fix the typo in the comment of el1_dbg()
+Date: Fri, 17 Apr 2020 18:32:11 +0800
+Message-Id: <20200417103212.45812-2-haokexin@gmail.com>
 X-Mailer: git-send-email 2.26.0
+In-Reply-To: <20200417103212.45812-1-haokexin@gmail.com>
+References: <20200417103212.45812-1-haokexin@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_034827_737613_5B469C72 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200417_034836_326604_1F3147C4 
+X-CRM114-Status: GOOD (  11.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,27 +106,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys,
+The function name should be local_daif_mask().
 
-This fixes a call trace when running the kgdb test suite:
-    # echo kgdbts=V1 > /sys/module/kgdbts/parameters/kgdbts
-
-v2:
-  - Add a patch to fix a typo in el1_dbg()
-  - Use the method as suggested by Mark.
-
-v1:
-  https://lore.kernel.org/r/20200401052107.36076-1-haokexin@gmail.com
-
-
-Kevin Hao (2):
-  arm64: entry: Fix the typo in the comment of el1_dbg()
-  arm64: debug: Always update the IRQ tracing in debug_exception_enter()
-
+Signed-off-by: Kevin Hao <haokexin@gmail.com>
+---
  arch/arm64/kernel/entry-common.c | 2 +-
- arch/arm64/mm/fault.c            | 8 ++------
- 2 files changed, 3 insertions(+), 7 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+index c839b5bf1904..420cd8e1534b 100644
+--- a/arch/arm64/kernel/entry-common.c
++++ b/arch/arm64/kernel/entry-common.c
+@@ -57,7 +57,7 @@ static void notrace el1_dbg(struct pt_regs *regs, unsigned long esr)
+ 	/*
+ 	 * The CPU masked interrupts, and we are leaving them masked during
+ 	 * do_debug_exception(). Update PMR as if we had called
+-	 * local_mask_daif().
++	 * local_daif_mask().
+ 	 */
+ 	if (system_uses_irq_prio_masking())
+ 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
 -- 
 2.26.0
 
