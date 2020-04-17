@@ -2,76 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D8071AD5B0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 07:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BB0F1AD5B4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 07:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=my2oklsvo+XJ1UMhrSEXqNXS1APG58ogiXUHHob619g=; b=pX62+k9W30Yat2
-	Xn3vcRY0L3WR9xRCC0PerBwKWQfLFUYyt3y+858ERru5NVqTY87vmO5C7QybwIN92DLpKxs8jUinO
-	N36ESXWUIiSK35vlAFuwJziUey+IGpfCl2YxRkeE7ytCMi0oNw98oADWFFc2w61JtxhvepMhwtjcA
-	UvuUBf6V4/BCsat4x6NW0b/1O7MpG4855XLDHcErUzxAE19mvR3+jrHBgXbEAOqcF+jIEV3UQfbFc
-	X8j7912G1fPxbKBJHK9B3UoFbtkbeczmOKssnrjxXT0Ok/a//KDlm7L7R1ZttLAJ8B1BlI0vE9xnD
-	8SAKqXTlBCtM9m+DfIOg==;
+	List-Owner; bh=fUoF5Va1h0LhsD5OEXIjdnGcrFpnTk4GzeWmUXPCUtM=; b=G3OSX/7xmntSrv
+	9BaOx0ixM4ZH5cm+6J2lmi91wcLVK+1HPKvy91wDxqN+3lQwLu7wyHpj/dXMCz4+FJWi/Z0VbWp+0
+	aOJnQ16bpKtseu0PcG8Eh1AyiYchq4vF1JfRvI5vvsEPd0WwIw/JpZN0qhJI+xMxJp1A/DN0FJ9Tf
+	GQ30ThuLD0dlnZRu0KM4UicvK0jgQjBw7xkxzyxlHicomNg7S791LSmUENEgI8LcZaPseSXtYvMul
+	GiCCZpCLa1+GRsnG4KMJCfOFRGLX3ZIiUMsqYAM98HNeyJFnRWFLDJ9ZJMy4oM8tIEDOIjIxrfYnD
+	G1eOZ8GPYYSKqarg76Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPJbU-0000TV-HI; Fri, 17 Apr 2020 05:31:52 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1jPJel-0000so-9r; Fri, 17 Apr 2020 05:35:15 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPJbM-0000T3-KD
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 05:31:46 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id i16so423729ybq.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 Apr 2020 22:31:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=0c8CU6UtpIsumixgH+9DRIIViSBvNa3IxwwnOZGcCmw=;
- b=AQ/GVbGNHAYyBWRynOxtQpPmnLcJ4m7oVq7VKtLqWIHzQhRk9K9VNNGYZgR6y7hmjT
- M45dhSwYIeSdCAO2w3tgdgdH2LqrFH08AcNpXtwLp7uJxCg8vV5i5qjd/PvsHjwFFA82
- umsF8jdUh5v77q5OpLgbRlHuHY98q4v0T28O6e+HWV8b1imx5N0Vi5t/49HR3gQOrYWS
- 334IZvkq9V5k8SxtDD1kH2+47g2GNk1yBgXc9nV5bziL7mVTIzfQi/m7d1WUvmucltNM
- EMjLdS1IIL1XYUZZ7MHrDKGMh/Pws0NMYwBk+tIepzcf1BG5wOoW9SGSnV+deD5T05dS
- 0/BQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=0c8CU6UtpIsumixgH+9DRIIViSBvNa3IxwwnOZGcCmw=;
- b=i32JlNJ0ErvTqEtXSwT9b8ckP3LUhiv9SS918vBgOwTxyoBdQJ5LiO3n4iTCXeedng
- iPpGFRm0ypCcKg37nVQI+jGiWvXhvrvAiQUEEFl9GfRr/jJ3QT9h3QC5S0CFsNkg73H+
- 38G/btHBldqj5lML3PBecBNu5TqWY02wzUq8SXTNibJmiEw9kmb3D2IDa+vYLqwC4+xg
- 8jX5rnVAi3iqPArp6N5nF9D11EBMRKLWn3Dj5AU65bNgPP9pJY6gIPOX1g2LLYwz1AgS
- 4yr7iwu3PRocehonQgqPVX684shc0Ly0WMiafETwjLdri3F1aL3mjom6RjeQc0AOv/DE
- 1Ckg==
-X-Gm-Message-State: AGi0PuZqrS5f5wqFqTSQCpBO6knVMASXCg76Sd7ru/uKXjv0eyQ4FsT/
- 0gAhPGpewCwbHqiV+p5IRkzdWy3MK5Z4WhCZDa/b8Q==
-X-Google-Smtp-Source: APiQypKVUFJl3i6hUC9fHF/BYwWjbOVWRL+Iwke1m9Z28VscxwNwjqfki0hg8NR7UST1ZPct2R+6OMV4z7i4usyW4X8=
-X-Received: by 2002:a25:9cc3:: with SMTP id z3mr3266192ybo.234.1587101502803; 
- Thu, 16 Apr 2020 22:31:42 -0700 (PDT)
+ id 1jPJeU-0000qs-5V; Fri, 17 Apr 2020 05:34:59 +0000
+X-UUID: 78cd0454403c4b22b5356deedeaedd5b-20200416
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=bUFVZsbh1IFtMkOupYY4so6J8bYhLyH6LTR/8vJHYYg=; 
+ b=gkrEUm3w60ugcgkguxL1Bn4Ig9RN61y4MGn+YRCsokMcs7qvTVlq3kX7a/xDRXhTNHsjwBRUEdHF+MEBne7QFcHBmkHFwV8vy8YxzJmdE7ztFugu25oToBT8eOYpqtyxqOqa0kdf3gFut8wpPbu89oZK76igo1/XU1Zt2zMPZ0A=;
+X-UUID: 78cd0454403c4b22b5356deedeaedd5b-20200416
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1805863052; Thu, 16 Apr 2020 21:34:49 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 16 Apr 2020 22:34:52 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 17 Apr 2020 13:34:47 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 17 Apr 2020 13:34:47 +0800
+Message-ID: <1587101661.28772.40.camel@mhfsdcap03>
+Subject: Re: [PATCH 2/2] phy: phy-mtk-tphy: introduce force_vbus for u2 phy
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Macpaul Lin <macpaul.lin@mediatek.com>
+Date: Fri, 17 Apr 2020 13:34:21 +0800
+In-Reply-To: <1587100986-3104-2-git-send-email-macpaul.lin@mediatek.com>
+References: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
+ <1587100986-3104-2-git-send-email-macpaul.lin@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <158614147708.29424.2884940487411120526.stgit@localhost>
-In-Reply-To: <158614147708.29424.2884940487411120526.stgit@localhost>
-From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
-Date: Fri, 17 Apr 2020 14:31:31 +0900
-Message-ID: <CAA93ih2ineuFYzA_uhGwmzsznDKacEG=7rK1beWsCkrnR0opuA@mail.gmail.com>
-Subject: Re: [PATCH 0/2] dts: uniphier: Add Akebi96 Board support
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>
+X-TM-SNTS-SMTP: BF05952D618A127CD5818E03CF14DCD593C923CD996704F9E83F26F467CE44782000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_223145_184949_C62F0063 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20200416_223458_209567_20945751 
+X-CRM114-Status: GOOD (  16.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,41 +86,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jassi Brar <jaswinder.singh@linaro.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Mediatek WSD
+ Upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.Guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Macpaul Lin <macpaul.lin@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gWWFtYWRhLXNhbiwKCkNvdWxkIHlvdSByZXZpZXcgdGhpcyBzZXJpZXM/CgpUaGFuayB5
-b3UsCgoyMDIw5bm0NOaciDbml6Uo5pyIKSAxMTo1MiBNYXNhbWkgSGlyYW1hdHN1IDxtYXNhbWku
-aGlyYW1hdHN1QGxpbmFyby5vcmc+Ogo+Cj4gSGVsbG8sCj4KPiBIZXJlIGlzIGEgY291cGxlIG9m
-IHBhdGNoZXMgdG8gYWRkIGEgZGV2aWNldHJlZSBmb3IgQWtlYmk5NiBib2FyZC4KPiBUaGUgQWtl
-Ymk5NiBpcyBhIGNlcnRpZmllZCA5NmJvYXJkcyB3aGljaCBpcyBiYXNlZCBvbiBTb2Npb25leHQK
-PiBVbmlQaGllciBMRDIwIFNvQy4gTW9zdCBvZiB0aGUgcGFydCBpcyBzaW1pbGFyIHRvIExEMjAg
-cmVmZXJlbmNlCj4gYm9hcmQsIGJ1dCB0aGVyZSBhcmUgc29tZSBjaGFuZ2VzLgo+Cj4gICAtIE1B
-WDM0MjEgVVNCLVNQSSBjaGlwIG9uIFNQSSBwb3J0MyAoZm9yIFVTQiBnYWRnZXQgcG9ydC4pCj4g
-ICAtIFNpbXBsZSBmcmFtZSBidWZmZXIgd2l0aCAxMDgwcCBmaXhlZCByZXNvbHV0aW9uLgo+ICAg
-LSBJMlMgcG9ydCB3aGljaCBpcyBjb25uZWN0ZWQgdG8gYW91dDFiIGluc3RlYWQgb2YgYW91dDEu
-Cj4gICAtIDMgc2VyaWFsIHBvcnRzLCBvbmx5IHNlcmlhbDMgaGFzIENUUy9SVFMuCj4gICAtIE5v
-IE5BTkQsIG9ubHkgZU1NQyBvbiB0aGUgYm9hcmQuCj4gICAtIE9QLVRFRSBzdXBwb3J0Lgo+Cj4g
-U2VlIGh0dHBzOi8vd3d3Ljk2Ym9hcmRzLm9yZy9wcm9kdWN0L2FrZWJpOTYvIGZvciBkZXRhaWxz
-Lgo+Cj4gVGhhbmsgeW91LAo+Cj4gLS0tCj4KPiBNYXNhbWkgSGlyYW1hdHN1ICgyKToKPiAgICAg
-ICBkdC1iaW5kaW5nczogYXJtOiBBZGQgQWtlYmk5NiBib2FyZCBzdXBwb3J0Cj4gICAgICAgYXJt
-NjQ6IGR0czogdW5pcGhpZXI6IEFkZCBzdXBwb3J0IGZvciBBa2ViaTk2Cj4KPgo+ICAuLi4vYmlu
-ZGluZ3MvYXJtL3NvY2lvbmV4dC91bmlwaGllci55YW1sICAgICAgICAgICB8ICAgIDEKPiAgYXJj
-aC9hcm02NC9ib290L2R0cy9zb2Npb25leHQvTWFrZWZpbGUgICAgICAgICAgICAgfCAgICAxCj4g
-IC4uLi9ib290L2R0cy9zb2Npb25leHQvdW5pcGhpZXItbGQyMC1ha2ViaTk2LmR0cyAgIHwgIDIw
-MCArKysrKysrKysrKysrKysrKysrKwo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3NvY2lvbmV4dC91
-bmlwaGllci1sZDIwLmR0c2kgICB8ICAgIDIKPiAgNCBmaWxlcyBjaGFuZ2VkLCAyMDMgaW5zZXJ0
-aW9ucygrKSwgMSBkZWxldGlvbigtKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm02NC9i
-b290L2R0cy9zb2Npb25leHQvdW5pcGhpZXItbGQyMC1ha2ViaTk2LmR0cwo+Cj4gLS0KPiBNYXNh
-bWkgSGlyYW1hdHN1IDxtYXNhbWkuaGlyYW1hdHN1QGxpbmFyby5vcmc+Cj4KCgotLSAKTWFzYW1p
-IEhpcmFtYXRzdQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+Hi Macpaul,
+
+On Fri, 2020-04-17 at 13:23 +0800, Macpaul Lin wrote:
+> For some platforms, they don't have vbus pin connection between usb phy and
+> mac. Hence we need to control force_vbus related registers to keep hardware
+> works normal.
+> This patch add corresponding behavior of force vbus in u2 phy related
+> functions.
+> 
+> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+NACK, I tried to support it early, but found this will cause some issue
+for SS/SSP device only mode, so please abandon this patch, thanks
+
+
+> ---
+>  drivers/phy/mediatek/phy-mtk-tphy.c | 16 +++++++++++++++-
+>  1 file changed, 15 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+> index cdbcc49f7115..46f0fea175e5 100644
+> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> @@ -99,6 +99,7 @@
+>  
+>  #define U3P_U2PHYDTM1		0x06C
+>  #define P2C_RG_UART_EN			BIT(16)
+> +#define P2C_FORCE_VBUSVALID		BIT(13)
+>  #define P2C_FORCE_IDDIG		BIT(9)
+>  #define P2C_RG_VBUSVALID		BIT(5)
+>  #define P2C_RG_SESSEND			BIT(4)
+> @@ -318,6 +319,7 @@ struct mtk_tphy {
+>  	int nphys;
+>  	int src_ref_clk; /* MHZ, reference clock for slew rate calibrate */
+>  	int src_coef; /* coefficient for slew rate calibrate */
+> +	bool force_vbus;
+>  };
+>  
+>  static void hs_slew_rate_calibrate(struct mtk_tphy *tphy,
+> @@ -611,13 +613,20 @@ static void u2_phy_instance_set_mode(struct mtk_tphy *tphy,
+>  	switch (mode) {
+>  	case PHY_MODE_USB_DEVICE:
+>  		tmp |= P2C_FORCE_IDDIG | P2C_RG_IDDIG;
+> +		if (tphy->force_vbus)
+> +			tmp |= P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID;
+>  		break;
+>  	case PHY_MODE_USB_HOST:
+>  		tmp |= P2C_FORCE_IDDIG;
+> -		tmp &= ~P2C_RG_IDDIG;
+> +		if (tphy->force_vbus)
+> +			tmp &= ~(P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID);
+> +		else
+> +			tmp &= ~P2C_RG_IDDIG;
+>  		break;
+>  	case PHY_MODE_USB_OTG:
+>  		tmp &= ~(P2C_FORCE_IDDIG | P2C_RG_IDDIG);
+> +		if (tphy->force_vbus)
+> +			tmp &= ~(P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID);
+>  		break;
+>  	default:
+>  		return;
+> @@ -1187,6 +1196,11 @@ static int mtk_tphy_probe(struct platform_device *pdev)
+>  			retval = PTR_ERR(instance->da_ref_clk);
+>  			goto put_child;
+>  		}
+> +
+> +		/*
+> +		 * On some platform, vbus is dis-connected between PHY and MAC.
+> +		 */
+> +		tphy->force_vbus = device_property_read_bool(dev, "force_vbus");
+>  	}
+>  
+>  	provider = devm_of_phy_provider_register(dev, mtk_phy_xlate);
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
