@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 288C91AE1F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:15:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9734C1AE1F4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:15:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S4XFzeaxeatZx85Uskv310eC0eKrCSJgqevAVdx0D+w=; b=P0TM9BP01E4BV5Jtw2VI/9dpG
-	yNQ2rm3sgV8cxaQd1VTgCcirCNzK3rNeSCcBEvq3Sdtp6T6M9A5iegLu4OtyH4Jlkl54RqTVcND47
-	O06cR4zYNZWl+q69wo1z0ie/dO0IUGJHq10VtRoBCULzjzXL84x3Co3U2XRNq/mxp2rj3ytYNuCUC
-	UciWhDXYayA56lF07N2MVVz7UhiSgOeO+BtHzmi8et0vkcsP0qsk74gnv59wguFnVbHs78Bvy7/EU
-	dyTkPeWjzC2rbJeAvwg8JKj5DWc/RVv1M4cVcFBci0WhhRPmPjOdTEd7u+pBa6nVCqXK7lIf03CRY
-	ybOGB8hDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cO+3NQtiDlw47iJbH9ZEZSZkTUuL8/R//LA/BfB/sVI=; b=eqRkPDalNib+Sn
+	+8N6DWyqCL0KCyePCIZX/petxtZ+beQnXoze9JceB1T+szhkcw6LyGUpUadIbsBSZpyNXR8PQ3jz8
+	YPru67DqVMtYtflhMEBjBFSP5+LdB96ryAQib+xJQmru0SmyAZvkvI4IzkyXMzm7nDuBuUjj3zn4q
+	bRVikVkTXXfQ2KqCGcz3y/iYfUs44AoFWS/6YgevZ641Asz+Kxm7K52KjJF81AGlVTgXUqqBjQj2r
+	NT0rODFM3l6zB1dNHHI+gnb4KZ5i84MAAUHOsHL0oOQ+qxXMxhY2cEbWjq5SKNuA8MaLCrvjMM+lz
+	O8gvqk28ndl/GzBfnSWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPTdm-0007px-1S; Fri, 17 Apr 2020 16:14:54 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jPTeN-00025I-Hw; Fri, 17 Apr 2020 16:15:31 +0000
+Received: from mailoutvs57.siol.net ([185.57.226.248] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPTdf-0007og-JV
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:14:49 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 770A64AD4C372DC997F5;
- Fri, 17 Apr 2020 17:14:38 +0100 (IST)
-Received: from [127.0.0.1] (10.210.172.89) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Fri, 17 Apr
- 2020 17:14:36 +0100
-Subject: Re: [RFC PATCH v2 05/13] perf vendor events arm64: Add Architected
- events smmuv3-pmcg.json
-To: Ian Rogers <irogers@google.com>
-References: <1587120084-18990-1-git-send-email-john.garry@huawei.com>
- <1587120084-18990-6-git-send-email-john.garry@huawei.com>
- <CAP-5=fX0yt73ASQm-XD0Nqj8yNn=UhiaBr9T808ot=66SjSg6w@mail.gmail.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <9f5cafde-5aed-b626-5397-2ebed357dd8b@huawei.com>
-Date: Fri, 17 Apr 2020 17:14:05 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jPTeE-00024V-HS
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:15:24 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 7E3B3524BB0;
+ Fri, 17 Apr 2020 18:15:19 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id 8zL-mRWm0sXI; Fri, 17 Apr 2020 18:15:19 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 1358A524C5F;
+ Fri, 17 Apr 2020 18:15:19 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 03505524C64;
+ Fri, 17 Apr 2020 18:15:17 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Subject: Re: [RFC PATCH 2/4] net: phy: Add support for AC200 EPHY
+Date: Fri, 17 Apr 2020 18:15:17 +0200
+Message-ID: <6176364.4vTCxPXJkl@jernej-laptop>
+In-Reply-To: <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
+References: <20200416185758.1388148-1-jernej.skrabec@siol.net>
+ <20200416185758.1388148-3-jernej.skrabec@siol.net>
+ <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAP-5=fX0yt73ASQm-XD0Nqj8yNn=UhiaBr9T808ot=66SjSg6w@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.172.89]
-X-ClientProxiedBy: lhreml735-chm.china.huawei.com (10.201.108.86) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_091447_789158_12CB92BC 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_091522_741585_544839BA 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.248 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -72,42 +72,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andi Kleen <ak@linux.intel.com>,
- qiangqing.zhang@nxp.com, Peter Zijlstra <peterz@infradead.org>,
- will@kernel.org, linuxarm@huawei.com,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, zhangshaokun@hisilicon.com,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Jiri Olsa <jolsa@redhat.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- robin.murphy@arm.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org, linux@armlinux.org.uk,
+ mripard@kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
+ lee.jones@linaro.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/04/2020 16:13, Ian Rogers wrote:
->> +        "PublicDescription": "TLB miss caused by incomingtransaction or (ATS or non-ATS) translation request",
-> It looks like a space was missed in "incomingtransaction".
-> 
->> +        "EventCode": "0x02",
->> +        "EventName": "smmuv3_pmcg.TLB_MISS",
->> +        "BriefDescription": "TLB miss caused by incomingtransaction or (ATS or non-ATS) translation request"
-> And here.
-
-Right, a copy-and-paste formatting error.
-
-Cheers,
-john
-
-> 
-> Thanks,
-> Ian
-> 
->> +
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG5lIMSNZXRydGVrLCAxNi4gYXByaWwgMjAyMCBvYiAyMjoxODo1MiBDRVNUIGplIEhlaW5lciBL
+YWxsd2VpdCBuYXBpc2FsKGEpOgo+IE9uIDE2LjA0LjIwMjAgMjA6NTcsIEplcm5laiBTa3JhYmVj
+IHdyb3RlOgo+ID4gQUMyMDAgTUZEIElDIHN1cHBvcnRzIEZhc3QgRXRoZXJuZXQgUEhZLiBBZGQg
+YSBkcml2ZXIgZm9yIGl0Lgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBKZXJuZWogU2tyYWJlYyA8
+amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gPiAtLS0KPiA+IAo+ID4gIGRyaXZlcnMvbmV0L3Bo
+eS9LY29uZmlnICB8ICAgNyArKwo+ID4gIGRyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZSB8ICAgMSAr
+Cj4gPiAgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgIHwgMjA2ICsrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKwo+ID4gIDMgZmlsZXMgY2hhbmdlZCwgMjE0IGluc2VydGlvbnMo
+KykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMKPiA+IAo+
+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3BoeS9LY29uZmlnIGIvZHJpdmVycy9uZXQvcGh5
+L0tjb25maWcKPiA+IGluZGV4IDNmYTMzZDI3ZWViYS4uMTZhZjY5ZjY5ZWFmIDEwMDY0NAo+ID4g
+LS0tIGEvZHJpdmVycy9uZXQvcGh5L0tjb25maWcKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9L
+Y29uZmlnCj4gPiBAQCAtMjg4LDYgKzI4OCwxMyBAQCBjb25maWcgQURJTl9QSFkKPiA+IAo+ID4g
+IAkgIC0gQURJTjEzMDAgLSBSb2J1c3QsSW5kdXN0cmlhbCwgTG93IExhdGVuY3kgMTAvMTAwLzEw
+MDAgR2lnYWJpdAo+ID4gIAkgIAo+ID4gIAkgICAgRXRoZXJuZXQgUEhZCj4gPiAKPiA+ICtjb25m
+aWcgQUMyMDBfUEhZCj4gPiArCXRyaXN0YXRlICJBQzIwMCBFUEhZIgo+ID4gKwlkZXBlbmRzIG9u
+IE5WTUVNCj4gPiArCWRlcGVuZHMgb24gT0YKPiA+ICsJaGVscAo+ID4gKwkgIEZhc3QgZXRoZXJu
+ZXQgUEhZIGFzIGZvdW5kIGluIFgtUG93ZXJzIEFDMjAwIG11bHRpLWZ1bmN0aW9uIApkZXZpY2Uu
+Cj4gPiArCj4gPiAKPiA+ICBjb25maWcgQU1EX1BIWQo+ID4gIAo+ID4gIAl0cmlzdGF0ZSAiQU1E
+IFBIWXMiCj4gPiAgCS0tLWhlbHAtLS0KPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0
+L3BoeS9NYWtlZmlsZSBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gaW5kZXggMmY1Yzcw
+OTNhNjViLi5iMGM1YjkxOTAwZmEgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL25ldC9waHkvTWFr
+ZWZpbGUKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gQEAgLTUzLDYgKzUz
+LDcgQEAgb2JqLSQoQ09ORklHX1NGUCkJCSs9IHNmcC5vCj4gPiAKPiA+ICBzZnAtb2JqLSQoQ09O
+RklHX1NGUCkJCSs9IHNmcC1idXMubwo+ID4gIG9iai15CQkJCSs9ICQoc2ZwLW9iai15KSAkKHNm
+cC1vYmotbSkKPiA+IAo+ID4gK29iai0kKENPTkZJR19BQzIwMF9QSFkpCQkrPSBhYzIwMC5vCj4g
+PiAKPiA+ICBvYmotJChDT05GSUdfQURJTl9QSFkpCQkrPSBhZGluLm8KPiA+ICBvYmotJChDT05G
+SUdfQU1EX1BIWSkJCSs9IGFtZC5vCj4gPiAgYXF1YW50aWEtb2JqcwkJCSs9IGFxdWFudGlhX21h
+aW4ubwo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgYi9kcml2
+ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAw
+MDAwMDAwMDAwMC4uM2Q3ODU2ZmY4ZjkxCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9kcml2
+ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gQEAgLTAsMCArMSwyMDYgQEAKPiA+ICsvLyBTUERYLUxp
+Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMCsKPiA+ICsvKioKPiA+ICsgKiBEcml2ZXIgZm9yIEFD
+MjAwIEV0aGVybmV0IFBIWQo+ID4gKyAqCj4gPiArICogQ29weXJpZ2h0IChjKSAyMDIwIEplcm5l
+aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiA+ICsgKi8KPiA+ICsKPiA+ICsj
+aW5jbHVkZSA8bGludXgva2VybmVsLmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+
+ID4gKyNpbmNsdWRlIDxsaW51eC9tZmQvYWMyMDAuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvbnZt
+ZW0tY29uc3VtZXIuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvb2YuaD4KPiA+ICsjaW5jbHVkZSA8
+bGludXgvcGh5Lmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4g
+Kwo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9JRAkJCTB4MDA0NDE0MDAKPiA+ICsjZGVmaW5lIEFD
+MjAwX0VQSFlfSURfTUFTSwkJMHgwZmZmZmZmMAo+ID4gKwo+IAo+IFlvdSBjb3VsZCB1c2UgUEhZ
+X0lEX01BVENIX01PREVMKCkgaGVyZS4KCkhtLi4uIFRoaXMgZG9lc24ndCB3b3JrIHdpdGggZHlu
+YW1pY2FsbHkgYWxsb2NhdGVkIG1lbW9yeSwgcmlnaHQ/CgpCZXN0IHJlZ2FyZHMsCkplcm5lagoK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
