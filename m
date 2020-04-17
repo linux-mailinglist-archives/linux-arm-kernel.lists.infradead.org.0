@@ -2,102 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A97561AE242
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:29:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94E191AE205
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:20:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CyCQ4lEUdUuRBj7//ITt8X4oNDLXDBRWUJG/6yMxcL4=; b=lfqGxbqQ/+M2EC
-	DTBZZj3uW4BsYA4dxseTXM3tKZa6utkdjtqzetlOCEwtEibg2Q5DXduyJi9A+ta1DnFE5REAUjr+k
-	pKKWbJ4EEAz9QKTo1Cynjy36aM3eTOaxqCAJT9c018nnwRePwCh1xcpV+5qNxe9ELzp/lplzejHdM
-	hF4AuwwZ14aZUAC3JKEvRlQTnIIU0cOKj7lyjHnNVLSYifvVCuBPO6vf03ZP0pLYF6/h3W+41fq/s
-	sCPdTA7qZqpsUiXp9SzulKpBdDK1GAKOkOeZ4kZvphYvHy6yBoR5cVV1CU8bqhyTA61+VWpzPxfLm
-	0S8yfwYBi5vmZr8HVOUQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=cv73myxE1FOlz9Ox134rNrgkE1hvNd2Rjxdg6xi73ys=; b=B3V+tdtYniDWhVvpK9R+HYkHpA
+	kMoKHB220r74xL+mU6XrbFRwpFbX8XwNDn2yJKO9GtG2l7RmaRq2pI00Z4uFYNWXnutmkJK4768Vu
+	faetdxROD+fdHX8iHVeDDkjJLOonp91SzmXUeNf+mpm9GNm8XHl+NhSImEQMHxkh3FZTtFOmoDeyW
+	YRkv/kuGoez8MZ2IdxSG5VUTQIkeTRLXYBlB/Sr3z6my95TSzPkJlLkjre5DuCOFHzQBQP0FCJf0z
+	77AyR5BlPDgw/MI9MXn4xa0b6MF7JCrDN7t/Qx6YIq88C8FC0jZZTAkbOI1msZ8wHJQZMcbt4tldp
+	+B2/fUaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPTrl-0001vQ-NG; Fri, 17 Apr 2020 16:29:21 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jPTjT-0005I0-4W; Fri, 17 Apr 2020 16:20:47 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPTrd-0001uM-9D
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:29:14 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f13so3711298wrm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 09:29:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NofTrmVDYyLBbejpdgwinjWSh4mIkTyrqtoNVevMhns=;
- b=b6VVxgJvRatmHpf5Q7+LxH5xFXkKequl3/2X2cT9330vCyrosv3/sdyjJp37+49EoK
- sFfJeFrPLIFw1j1sDY7LDT3mfK25BZNOndqhj5Qc3nh24Z8UWmoZtM/L9DjN91TChI52
- 3lzjvEmYYByE0KktCbphxTXfB5oEe+i0YHz8UHn0wb9AdpAeNMRQ21OcV7mnVZpDvfef
- Yc9F5Jw06dZNV8wKw3kyW5TJj0Cmpp1kP107I71hkCqAWv3gMLTvwPf5rXIhJG9+e/OM
- 6dznA8huU48ssmubIHcxa6XYpDjAluuiOQ5nvmbGbKazyv0rmrxqcwnCaYBbDZr1T6/Q
- R0Mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NofTrmVDYyLBbejpdgwinjWSh4mIkTyrqtoNVevMhns=;
- b=kCER1BBuNucFACrYpDuXhfTmOZxCRuV5PZAdx1oqgqnRaXtfKAGPbbGFxOBiqVrL90
- 7R0h0RzSXgeKxtJX7UGQFmiSPVDqhnVrxBBcbq/yCl7uvudvTF06OeuuZqwZSdN4iLdR
- hDUk9uhWO70zhMZhqaJ4Fx10XGGL0uwEicKXhxqVhO2cRVHeE+nR8HsJ7j2rTjTRBwHB
- ALYZSCQMQDXYFgr+GlJs2Um2cVvICxq/+GxJJi7T1Y0MfHtUaZtawwPdfl4nicSpaEuG
- IMOoOynqoUPg4jT9MoeqfrMNtkFTKPQ6dvqwNbPnk7Gbwe43LOwhzHjEHzCUrMZVig3T
- gHdQ==
-X-Gm-Message-State: AGi0PubYSt+mvM20jEscLGgpn8iOWjjEUGEkAwnzGyLI3exxrtea9nHY
- sjhL/sMPo7iTj5Ax1s0T8Wk=
-X-Google-Smtp-Source: APiQypLeEfN9cpMNCmZ6kg4klLh3J3SVkr36MK55uJQmQFnORgs+ZYaMzjuzg7y3BYm/b+jovcIrkw==
-X-Received: by 2002:adf:ee4c:: with SMTP id w12mr5273583wro.347.1587140951993; 
- Fri, 17 Apr 2020 09:29:11 -0700 (PDT)
-Received: from ?IPv6:2003:ea:8f29:6000:adc2:161e:aba7:d360?
- (p200300EA8F296000ADC2161EABA7D360.dip0.t-ipconnect.de.
- [2003:ea:8f29:6000:adc2:161e:aba7:d360])
- by smtp.googlemail.com with ESMTPSA id k133sm8953987wma.0.2020.04.17.09.29.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 17 Apr 2020 09:29:11 -0700 (PDT)
-Subject: Re: [RFC PATCH 2/4] net: phy: Add support for AC200 EPHY
-To: =?UTF-8?Q?Jernej_=c5=a0krabec?= <jernej.skrabec@siol.net>,
- robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com
-References: <20200416185758.1388148-1-jernej.skrabec@siol.net>
- <20200416185758.1388148-3-jernej.skrabec@siol.net>
- <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
- <6176364.4vTCxPXJkl@jernej-laptop>
-From: Heiner Kallweit <hkallweit1@gmail.com>
-Message-ID: <74ab97a9-adbc-6a50-d710-eb50017aa47b@gmail.com>
-Date: Fri, 17 Apr 2020 18:16:20 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <6176364.4vTCxPXJkl@jernej-laptop>
-Content-Language: en-US
+ id 1jPTjE-0005GB-SF
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:20:34 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 1A17C2A2AE9
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org
+Subject: [RFC v3 0/2] Stop monitoring disabled devices
+Date: Fri, 17 Apr 2020 18:20:18 +0200
+Message-Id: <20200417162020.19980-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
+References: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_092913_352061_F2333476 
-X-CRM114-Status: GOOD (  15.28  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200417_092033_041368_75CA308E 
+X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [hkallweit1[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hkallweit1[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,60 +58,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org, linux@armlinux.org.uk,
- mripard@kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
- lee.jones@linaro.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>,
+ Barlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTcuMDQuMjAyMCAxODoxNSwgSmVybmVqIMWga3JhYmVjIHdyb3RlOgo+IERuZSDEjWV0cnRl
-aywgMTYuIGFwcmlsIDIwMjAgb2IgMjI6MTg6NTIgQ0VTVCBqZSBIZWluZXIgS2FsbHdlaXQgbmFw
-aXNhbChhKToKPj4gT24gMTYuMDQuMjAyMCAyMDo1NywgSmVybmVqIFNrcmFiZWMgd3JvdGU6Cj4+
-PiBBQzIwMCBNRkQgSUMgc3VwcG9ydHMgRmFzdCBFdGhlcm5ldCBQSFkuIEFkZCBhIGRyaXZlciBm
-b3IgaXQuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogSmVybmVqIFNrcmFiZWMgPGplcm5lai5za3Jh
-YmVjQHNpb2wubmV0Pgo+Pj4gLS0tCj4+Pgo+Pj4gIGRyaXZlcnMvbmV0L3BoeS9LY29uZmlnICB8
-ICAgNyArKwo+Pj4gIGRyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZSB8ICAgMSArCj4+PiAgZHJpdmVy
-cy9uZXQvcGh5L2FjMjAwLmMgIHwgMjA2ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKwo+Pj4gIDMgZmlsZXMgY2hhbmdlZCwgMjE0IGluc2VydGlvbnMoKykKPj4+ICBjcmVh
-dGUgbW9kZSAxMDA2NDQgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMKPj4+Cj4+PiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9uZXQvcGh5L0tjb25maWcgYi9kcml2ZXJzL25ldC9waHkvS2NvbmZpZwo+Pj4g
-aW5kZXggM2ZhMzNkMjdlZWJhLi4xNmFmNjlmNjllYWYgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJz
-L25ldC9waHkvS2NvbmZpZwo+Pj4gKysrIGIvZHJpdmVycy9uZXQvcGh5L0tjb25maWcKPj4+IEBA
-IC0yODgsNiArMjg4LDEzIEBAIGNvbmZpZyBBRElOX1BIWQo+Pj4KPj4+ICAJICAtIEFESU4xMzAw
-IC0gUm9idXN0LEluZHVzdHJpYWwsIExvdyBMYXRlbmN5IDEwLzEwMC8xMDAwIEdpZ2FiaXQKPj4+
-ICAJICAKPj4+ICAJICAgIEV0aGVybmV0IFBIWQo+Pj4KPj4+ICtjb25maWcgQUMyMDBfUEhZCj4+
-PiArCXRyaXN0YXRlICJBQzIwMCBFUEhZIgo+Pj4gKwlkZXBlbmRzIG9uIE5WTUVNCj4+PiArCWRl
-cGVuZHMgb24gT0YKPj4+ICsJaGVscAo+Pj4gKwkgIEZhc3QgZXRoZXJuZXQgUEhZIGFzIGZvdW5k
-IGluIFgtUG93ZXJzIEFDMjAwIG11bHRpLWZ1bmN0aW9uIAo+IGRldmljZS4KPj4+ICsKPj4+Cj4+
-PiAgY29uZmlnIEFNRF9QSFkKPj4+ICAKPj4+ICAJdHJpc3RhdGUgIkFNRCBQSFlzIgo+Pj4gIAkt
-LS1oZWxwLS0tCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZSBi
-L2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+Pj4gaW5kZXggMmY1YzcwOTNhNjViLi5iMGM1Yjkx
-OTAwZmEgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL25ldC9waHkvTWFrZWZpbGUKPj4+ICsrKyBi
-L2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+Pj4gQEAgLTUzLDYgKzUzLDcgQEAgb2JqLSQoQ09O
-RklHX1NGUCkJCSs9IHNmcC5vCj4+Pgo+Pj4gIHNmcC1vYmotJChDT05GSUdfU0ZQKQkJKz0gc2Zw
-LWJ1cy5vCj4+PiAgb2JqLXkJCQkJKz0gJChzZnAtb2JqLXkpICQoc2ZwLW9iai1tKQo+Pj4KPj4+
-ICtvYmotJChDT05GSUdfQUMyMDBfUEhZKQkJKz0gYWMyMDAubwo+Pj4KPj4+ICBvYmotJChDT05G
-SUdfQURJTl9QSFkpCQkrPSBhZGluLm8KPj4+ICBvYmotJChDT05GSUdfQU1EX1BIWSkJCSs9IGFt
-ZC5vCj4+PiAgYXF1YW50aWEtb2JqcwkJCSs9IGFxdWFudGlhX21haW4ubwo+Pj4KPj4+IGRpZmYg
-LS1naXQgYS9kcml2ZXJzL25ldC9waHkvYWMyMDAuYyBiL2RyaXZlcnMvbmV0L3BoeS9hYzIwMC5j
-Cj4+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+Pj4gaW5kZXggMDAwMDAwMDAwMDAwLi4zZDc4NTZm
-ZjhmOTEKPj4+IC0tLSAvZGV2L251bGwKPj4+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9hYzIwMC5j
-Cj4+PiBAQCAtMCwwICsxLDIwNiBAQAo+Pj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBH
-UEwtMi4wKwo+Pj4gKy8qKgo+Pj4gKyAqIERyaXZlciBmb3IgQUMyMDAgRXRoZXJuZXQgUEhZCj4+
-PiArICoKPj4+ICsgKiBDb3B5cmlnaHQgKGMpIDIwMjAgSmVybmVqIFNrcmFiZWMgPGplcm5lai5z
-a3JhYmVjQHNpb2wubmV0Pgo+Pj4gKyAqLwo+Pj4gKwo+Pj4gKyNpbmNsdWRlIDxsaW51eC9rZXJu
-ZWwuaD4KPj4+ICsjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4+PiArI2luY2x1ZGUgPGxpbnV4
-L21mZC9hYzIwMC5oPgo+Pj4gKyNpbmNsdWRlIDxsaW51eC9udm1lbS1jb25zdW1lci5oPgo+Pj4g
-KyNpbmNsdWRlIDxsaW51eC9vZi5oPgo+Pj4gKyNpbmNsdWRlIDxsaW51eC9waHkuaD4KPj4+ICsj
-aW5jbHVkZSA8bGludXgvcGxhdGZvcm1fZGV2aWNlLmg+Cj4+PiArCj4+PiArI2RlZmluZSBBQzIw
-MF9FUEhZX0lECQkJMHgwMDQ0MTQwMAo+Pj4gKyNkZWZpbmUgQUMyMDBfRVBIWV9JRF9NQVNLCQkw
-eDBmZmZmZmYwCj4+PiArCj4+Cj4+IFlvdSBjb3VsZCB1c2UgUEhZX0lEX01BVENIX01PREVMKCkg
-aGVyZS4KPiAKPiBIbS4uLiBUaGlzIGRvZXNuJ3Qgd29yayB3aXRoIGR5bmFtaWNhbGx5IGFsbG9j
-YXRlZCBtZW1vcnksIHJpZ2h0Pwo+IApSaWdodCAuLgoKPiBCZXN0IHJlZ2FyZHMsCj4gSmVybmVq
-Cj4gCj4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+This is the third iteration of this RFC. It has been substantially
+rewritten compared to v2.
+
+The first patch makes all the drivers store their mode in struct
+thermal_zone_device. Such a move has consequences: driver-specific
+variables for storing mode are not necessary. Consequently get_mode()
+methods become obsolete. Then sysfs "mode" attribute stops depending
+on get_mode() being provided, because it is always provided from now on.
+
+The first patch also introduces the initial mode to be optionally passed
+to thermal_zone_device_register().
+
+Given all the groundwork done in patch 1/2 patch 2/2 becomes very simple.
+
+This series addresses comments from Daniel and Bartlomiej - thank you guys!
+
+Andrzej Pietrasiewicz (2):
+  thermal: core: Let thermal zone device's mode be stored in its struct
+  thermal: core: Stop polling DISABLED thermal devices
+
+ drivers/acpi/thermal.c                        | 46 +++++---------
+ .../ethernet/mellanox/mlxsw/core_thermal.c    | 57 ++++--------------
+ drivers/platform/x86/acerhdf.c                | 17 +-----
+ drivers/thermal/da9062-thermal.c              | 16 ++---
+ drivers/thermal/imx_thermal.c                 | 29 +++------
+ .../intel/int340x_thermal/int3400_thermal.c   | 30 ++--------
+ .../thermal/intel/intel_quark_dts_thermal.c   | 22 ++-----
+ drivers/thermal/of-thermal.c                  | 30 +++-------
+ drivers/thermal/thermal_core.c                | 60 +++++++++++++++++--
+ drivers/thermal/thermal_core.h                | 16 +++++
+ drivers/thermal/thermal_sysfs.c               | 29 +--------
+ include/linux/thermal.h                       |  7 ++-
+ 12 files changed, 139 insertions(+), 220 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
