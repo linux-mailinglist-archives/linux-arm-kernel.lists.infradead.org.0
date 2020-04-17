@@ -2,63 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9525E1AE1C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:03:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E736D1AE1C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:05:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkGXPLEvDKg/YKaVrt6cyFU6m9qC8BTpWbh4dA+hOkI=; b=HY9qSwVUFw8t4J
-	zEZfipUOcfelhMud1sIVAVcGYyA4djh7+VrVUhkZS18nElM3Orkys5ULGjL9S/lIylOC1/7nKD9ET
-	TLb3WJEvqIBZ/yTp1yJ4RNR938UXQY0daZu57NrIVn7OYMvTHyTQow/SLBLuOQXo0pGAgUIEh+GQP
-	75Rwe0boTpnbtnN/+WLJbjlr3ZJczKxPgzwSxPtTZ0luovtOmMocEqetDnjfdcikfoY7vhZfyJH9o
-	OhPWtDmqNZCrUll3zASQbLAtY4c0tGepcVYWqrPw0IMU13mt7w0VOblmb4Zm5dtnQGvYKwfO7VMc7
-	YUjgcOjbQLahTaRImWSw==;
+	List-Owner; bh=qp90aITm+kiRWT5jPQcnnGuWnpurLpaOFGOnfxknaGE=; b=StX2R9G0UQEbb2
+	Xf/9HXoTFBB8lfNsXbI1AG9UWsfmGIAzcadyf53XyuhLQ0thCqg4z+XdES2omj6ELkCJOQIXKCd5R
+	5hv6kOLKomBPF40Q2XtyNwIOhWbpN3+8E+6/cu6mDtYRuSCFwQVtBZoRta+p3zJ8W926Ib2YWOv0c
+	DfK8NoTM4JUgAG9nEB+tgxNfVpdnMP/TYn4QHpNy5yH1rvYinQPusFNStc/FTWbayjk+uizKRq/rr
+	sB2nnwxg2+eWCtcuJDaZR3sS8OgqRFrmN5m0qfurJwojCYkKsykp+NNodcgZix+AUWhyiIcVcN/jR
+	+vHzMV/6bs+2iis2i5Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPTT3-000862-Jn; Fri, 17 Apr 2020 16:03:49 +0000
-Received: from mailoutvs8.siol.net ([185.57.226.199] helo=mail.siol.net)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPTSt-00083z-BN
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:03:42 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 85DC1524BF5;
- Fri, 17 Apr 2020 18:03:30 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id viEKrc35exMc; Fri, 17 Apr 2020 18:03:29 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id B7CED524BF2;
- Fri, 17 Apr 2020 18:03:29 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Zimbra) with ESMTPA id ECF8E524BF5;
- Fri, 17 Apr 2020 18:03:28 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
- Heiner Kallweit <hkallweit1@gmail.com>
-Subject: Re: [RFC PATCH 2/4] net: phy: Add support for AC200 EPHY
-Date: Fri, 17 Apr 2020 18:03:28 +0200
-Message-ID: <3035405.oiGErgHkdL@jernej-laptop>
-In-Reply-To: <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
-References: <20200416185758.1388148-1-jernej.skrabec@siol.net>
- <20200416185758.1388148-3-jernej.skrabec@siol.net>
- <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
+	id 1jPTUQ-00007k-TN; Fri, 17 Apr 2020 16:05:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPTU3-00006p-Tv
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:04:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDD38C14;
+ Fri, 17 Apr 2020 09:04:50 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F24263F73D;
+ Fri, 17 Apr 2020 09:04:48 -0700 (PDT)
+Date: Fri, 17 Apr 2020 17:04:46 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH RESEND] arm64: Map page table of linear map readonly
+Message-ID: <20200417160446.GC9529@lakrids.cambridge.arm.com>
+References: <20200417152619.41680-1-steven.price@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200417152619.41680-1-steven.price@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_090339_698607_4A81CC44 
-X-CRM114-Status: GOOD (  30.61  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200417_090452_052780_7D404188 
+X-CRM114-Status: GOOD (  31.25  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.199 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,208 +63,276 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org, linux@armlinux.org.uk,
- mripard@kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
- lee.jones@linaro.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Hsin-Yi Wang <hsinyi@chromium.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
+ Ard Biesheuvel <ardb@kernel.org>, Alexios Zavras <alexios.zavras@intel.com>,
+ Logan Gunthorpe <logang@deltatee.com>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Pan Zhang <zhangpan26@huawei.com>,
+ Steve Capper <steve.capper@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RG5lIMSNZXRydGVrLCAxNi4gYXByaWwgMjAyMCBvYiAyMjoxODo1MiBDRVNUIGplIEhlaW5lciBL
-YWxsd2VpdCBuYXBpc2FsKGEpOgo+IE9uIDE2LjA0LjIwMjAgMjA6NTcsIEplcm5laiBTa3JhYmVj
-IHdyb3RlOgo+ID4gQUMyMDAgTUZEIElDIHN1cHBvcnRzIEZhc3QgRXRoZXJuZXQgUEhZLiBBZGQg
-YSBkcml2ZXIgZm9yIGl0Lgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBKZXJuZWogU2tyYWJlYyA8
-amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gPiAtLS0KPiA+IAo+ID4gIGRyaXZlcnMvbmV0L3Bo
-eS9LY29uZmlnICB8ICAgNyArKwo+ID4gIGRyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZSB8ICAgMSAr
-Cj4gPiAgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgIHwgMjA2ICsrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKwo+ID4gIDMgZmlsZXMgY2hhbmdlZCwgMjE0IGluc2VydGlvbnMo
-KykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMKPiA+IAo+
-ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3BoeS9LY29uZmlnIGIvZHJpdmVycy9uZXQvcGh5
-L0tjb25maWcKPiA+IGluZGV4IDNmYTMzZDI3ZWViYS4uMTZhZjY5ZjY5ZWFmIDEwMDY0NAo+ID4g
-LS0tIGEvZHJpdmVycy9uZXQvcGh5L0tjb25maWcKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9L
-Y29uZmlnCj4gPiBAQCAtMjg4LDYgKzI4OCwxMyBAQCBjb25maWcgQURJTl9QSFkKPiA+IAo+ID4g
-IAkgIC0gQURJTjEzMDAgLSBSb2J1c3QsSW5kdXN0cmlhbCwgTG93IExhdGVuY3kgMTAvMTAwLzEw
-MDAgR2lnYWJpdAo+ID4gIAkgIAo+ID4gIAkgICAgRXRoZXJuZXQgUEhZCj4gPiAKPiA+ICtjb25m
-aWcgQUMyMDBfUEhZCj4gPiArCXRyaXN0YXRlICJBQzIwMCBFUEhZIgo+ID4gKwlkZXBlbmRzIG9u
-IE5WTUVNCj4gPiArCWRlcGVuZHMgb24gT0YKPiA+ICsJaGVscAo+ID4gKwkgIEZhc3QgZXRoZXJu
-ZXQgUEhZIGFzIGZvdW5kIGluIFgtUG93ZXJzIEFDMjAwIG11bHRpLWZ1bmN0aW9uIApkZXZpY2Uu
-Cj4gPiArCj4gPiAKPiA+ICBjb25maWcgQU1EX1BIWQo+ID4gIAo+ID4gIAl0cmlzdGF0ZSAiQU1E
-IFBIWXMiCj4gPiAgCS0tLWhlbHAtLS0KPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0
-L3BoeS9NYWtlZmlsZSBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gaW5kZXggMmY1Yzcw
-OTNhNjViLi5iMGM1YjkxOTAwZmEgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL25ldC9waHkvTWFr
-ZWZpbGUKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gQEAgLTUzLDYgKzUz
-LDcgQEAgb2JqLSQoQ09ORklHX1NGUCkJCSs9IHNmcC5vCj4gPiAKPiA+ICBzZnAtb2JqLSQoQ09O
-RklHX1NGUCkJCSs9IHNmcC1idXMubwo+ID4gIG9iai15CQkJCSs9ICQoc2ZwLW9iai15KSAkKHNm
-cC1vYmotbSkKPiA+IAo+ID4gK29iai0kKENPTkZJR19BQzIwMF9QSFkpCQkrPSBhYzIwMC5vCj4g
-PiAKPiA+ICBvYmotJChDT05GSUdfQURJTl9QSFkpCQkrPSBhZGluLm8KPiA+ICBvYmotJChDT05G
-SUdfQU1EX1BIWSkJCSs9IGFtZC5vCj4gPiAgYXF1YW50aWEtb2JqcwkJCSs9IGFxdWFudGlhX21h
-aW4ubwo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgYi9kcml2
-ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAw
-MDAwMDAwMDAwMC4uM2Q3ODU2ZmY4ZjkxCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9kcml2
-ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gQEAgLTAsMCArMSwyMDYgQEAKPiA+ICsvLyBTUERYLUxp
-Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMCsKPiA+ICsvKioKPiA+ICsgKiBEcml2ZXIgZm9yIEFD
-MjAwIEV0aGVybmV0IFBIWQo+ID4gKyAqCj4gPiArICogQ29weXJpZ2h0IChjKSAyMDIwIEplcm5l
-aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiA+ICsgKi8KPiA+ICsKPiA+ICsj
-aW5jbHVkZSA8bGludXgva2VybmVsLmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+
-ID4gKyNpbmNsdWRlIDxsaW51eC9tZmQvYWMyMDAuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvbnZt
-ZW0tY29uc3VtZXIuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvb2YuaD4KPiA+ICsjaW5jbHVkZSA8
-bGludXgvcGh5Lmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4g
-Kwo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9JRAkJCTB4MDA0NDE0MDAKPiA+ICsjZGVmaW5lIEFD
-MjAwX0VQSFlfSURfTUFTSwkJMHgwZmZmZmZmMAo+ID4gKwo+IAo+IFlvdSBjb3VsZCB1c2UgUEhZ
-X0lEX01BVENIX01PREVMKCkgaGVyZS4KCk9rLgoKPiAKPiA+ICsvKiBtYWNyb3MgZm9yIHN5c3Rl
-bSBlcGh5IGNvbnRyb2wgMCByZWdpc3RlciAqLwo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9SRVNF
-VF9JTlZBTElECUJJVCgwKQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9TWVNDTEtfR0FUSU5HCUJJ
-VCgxKQo+ID4gKwo+ID4gKy8qIG1hY3JvcyBmb3Igc3lzdGVtIGVwaHkgY29udHJvbCAxIHJlZ2lz
-dGVyICovCj4gPiArI2RlZmluZSBBQzIwMF9FUEhZX0VfRVBIWV9NSUlfSU9fRU4JQklUKDApCj4g
-PiArI2RlZmluZSBBQzIwMF9FUEhZX0VfTE5LX0xFRF9JT19FTglCSVQoMSkKPiA+ICsjZGVmaW5l
-IEFDMjAwX0VQSFlfRV9TUERfTEVEX0lPX0VOCUJJVCgyKQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBI
-WV9FX0RQWF9MRURfSU9fRU4JQklUKDMpCj4gPiArCj4gPiArLyogbWFjcm9zIGZvciBlcGh5IGNv
-bnRyb2wgcmVnaXN0ZXIgKi8KPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfU0hVVERPV04JCUJJVCgw
-KQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9MRURfUE9MCQlCSVQoMSkKPiA+ICsjZGVmaW5lIEFD
-MjAwX0VQSFlfQ0xLX1NFTAkJQklUKDIpCj4gPiArI2RlZmluZSBBQzIwMF9FUEhZX0FERFIoeCkJ
-CSgoKHgpICYgMHgxRikgPDwgNCkKPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfWE1JSV9TRUwJCUJJ
-VCgxMSkKPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfQ0FMSUIoeCkJCSgoKHgpICYgMHhGKSA8PCAx
-MikKPiA+ICsKPiA+ICtzdHJ1Y3QgYWMyMDBfZXBoeV9kZXYgewo+ID4gKwlzdHJ1Y3QgcGh5X2Ry
-aXZlcgkqZXBoeTsKPiAKPiBXaHkgZW1iZWRkaW5nIGEgcG9pbnRlciBhbmQgbm90IGEgc3RydWN0
-IHBoeV9kcml2ZXIgZGlyZWN0bHk/Cj4gVGhlbiB5b3UgY291bGQgb21pdCB0aGUgc2VwYXJhdGUg
-YWxsb2NhdGlvbi4KClJpZ2h0LgoKPiAKPiBlcGh5IGlzIG5vdCB0aGUgYmVzdCBuYW1pbmcuIEl0
-IG1heSBiZSByZWFkIGFzIGEgcGh5X2RldmljZS4KPiBCZXR0ZXIgdXNlIHBoeWRydi4KCk9rLgoK
-PiAKPiA+ICsJc3RydWN0IHJlZ21hcAkJKnJlZ21hcDsKPiA+ICt9Owo+ID4gKwo+ID4gK3N0YXRp
-YyBjaGFyICphYzIwMF9waHlfbmFtZSA9ICJBQzIwMCBFUEhZIjsKPiA+ICsKPiAKPiBXaHkgbm90
-IHVzaW5nIHRoZSBuYW1lIGRpcmVjdGx5IGluIHRoZSBhc3NpZ25tZW50PwoKcGh5X2RyaXZlci0+
-bmFtZSBpcyBwb2ludGVyLiBXb3VsZG4ndCB0aGF0IG1lYW4gdGhhdCBzdHJpbmcgaXMgYWxsb2Nh
-dGVkIG9uIApzdGFjayBhbmQgbmV4dCB0aW1lIHBvaW50ZXIgaXMgdXNlZCwgaXQgd2lsbCByZXR1
-cm4gZ2FyYmFnZT8KCj4gQW5kIGJldHRlciBuYW1pbmc6ICJBQzIwMCBGYXN0IEV0aGVybmV0IgoK
-T2suCgo+IAo+ID4gK3N0YXRpYyBpbnQgYWMyMDBfZXBoeV9jb25maWdfaW5pdChzdHJ1Y3QgcGh5
-X2RldmljZSAqcGh5ZGV2KQo+ID4gK3sKPiA+ICsJY29uc3Qgc3RydWN0IGFjMjAwX2VwaHlfZGV2
-ICpwcml2ID0gcGh5ZGV2LT5kcnYtPmRyaXZlcl9kYXRhOwo+ID4gKwl1bnNpZ25lZCBpbnQgdmFs
-dWU7Cj4gPiArCWludCByZXQ7Cj4gPiArCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MWYsIDB4
-MDEwMCk7CS8qIFN3aXRjaCB0byBQYWdlIDEgKi8KPiA+ICsJcGh5X3dyaXRlKHBoeWRldiwgMHgx
-MiwgMHg0ODI0KTsJLyogRGlzYWJsZSBBUFMgKi8KPiA+ICsKPiA+ICsJcGh5X3dyaXRlKHBoeWRl
-diwgMHgxZiwgMHgwMjAwKTsJLyogU3dpdGNoIHRvIFBhZ2UgMiAqLwo+ID4gKwlwaHlfd3JpdGUo
-cGh5ZGV2LCAweDE4LCAweDAwMDApOwkvKiBQSFlBRkUgVFJYIG9wdGltaXphdGlvbiAqLwo+ID4g
-Kwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDA2MDApOwkvKiBTd2l0Y2ggdG8gUGFn
-ZSA2ICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTQsIDB4NzA4Zik7CS8qIFBIWUFGRSBU
-WCBvcHRpbWl6YXRpb24gKi8KPiA+ICsJcGh5X3dyaXRlKHBoeWRldiwgMHgxMywgMHhGMDAwKTsJ
-LyogUEhZQUZFIFJYIG9wdGltaXphdGlvbiAqLwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDE1
-LCAweDE1MzApOwo+ID4gKwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDA4MDApOwkv
-KiBTd2l0Y2ggdG8gUGFnZSA2ICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTgsIDB4MDBi
-Yyk7CS8qIFBIWUFGRSBUUlggb3B0aW1pemF0aW9uICovCj4gPiArCj4gPiArCXBoeV93cml0ZShw
-aHlkZXYsIDB4MWYsIDB4MDEwMCk7CS8qIHN3aXRjaCB0byBwYWdlIDEgKi8KPiA+ICsJcGh5X2Ns
-ZWFyX2JpdHMocGh5ZGV2LCAweDE3LCBCSVQoMykpOwkvKiBkaXNhYmxlIGludGVsbGlnZW50IApJ
-RUVFICovCj4gPiArCj4gPiArCS8qIG5leHQgdHdvIGJsb2NrcyBkaXNhYmxlIDgwMi4zYXogSUVF
-RSAqLwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDAyMDApOwkvKiBzd2l0Y2ggdG8g
-cGFnZSAyICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTgsIDB4MDAwMCk7Cj4gPiArCj4g
-PiArCXBoeV93cml0ZShwaHlkZXYsIDB4MWYsIDB4MDAwMCk7CS8qIHN3aXRjaCB0byBwYWdlIDAg
-Ki8KPiA+ICsJcGh5X2NsZWFyX2JpdHNfbW1kKHBoeWRldiwgMHg3LCAweDNjLCBCSVQoMSkpOwo+
-IAo+IEJldHRlciB1c2UgdGhlIGZvbGxvd2luZzoKPiBwaHlfd3JpdGVfbW1kKHBoeWRldiwgTURJ
-T19NTURfQU4sIE1ESU9fQU5fRUVFX0FEViwgMHgwMDAwKTsKPiBJdCBtYWtlcyBjbGVhciB0aGF0
-IHlvdSBkaXNhYmxlIGFkdmVydGlzaW5nIEVFRSBjb21wbGV0ZWx5LgoKT2suCgo+IAo+ID4gKwo+
-ID4gKwlpZiAocGh5ZGV2LT5pbnRlcmZhY2UgPT0gUEhZX0lOVEVSRkFDRV9NT0RFX1JNSUkpCj4g
-PiArCQl2YWx1ZSA9IEFDMjAwX0VQSFlfWE1JSV9TRUw7Cj4gPiArCWVsc2UKPiA+ICsJCXZhbHVl
-ID0gMDsKPiA+ICsKPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKHByaXYtPnJlZ21hcCwg
-QUMyMDBfRVBIWV9DVEwsCj4gPiArCQkJCSBBQzIwMF9FUEhZX1hNSUlfU0VMLCB2YWx1ZSk7Cj4g
-PiArCWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+IAo+IEkgaGFkIGEgYnJpZWYg
-bG9vayBhdCB0aGUgc3BlYywgYW5kIGl0J3Mgbm90IGZ1bGx5IGNsZWFyCj4gdG8gbWUgd2hhdCB0
-aGlzIHJlZ2lzdGVyIHNldHRpbmcgZG9lcy4gRG9lcyBpdCBhZmZlY3QgdGhlCj4gTUFDIHNpZGUg
-YW5kL29yIHRoZSBQSFkgc2lkZT8KCkl0J3MgbXkgdW5kZXJzdGFuZGluZyB0aGF0IGl0IHNlbGVj
-dHMgaW50ZXJmYWNlIG1vZGUgb24gUEhZLiBCZXNpZGVzIGRhdGFzaGVldCAKbWVudGlvbmVkIGlu
-IGNvdmVyIGxldHRlciwgQlNQIGRyaXZlcnMgKG9uZSBmb3IgTUZEIGFuZCBvbmUgZm9yIFBIWSkg
-YXJlIHRoZSAKb25seSBvdGhlciBzb3VyY2Ugb2YgaW5mb3JtYXRpb24uIEJTUCBQSFkgZHJpdmVy
-IGlzIGxvY2F0ZWQgaGVyZToKaHR0cHM6Ly9naXRodWIuY29tL0FsbHdpbm5lci1Ib21sZXQvSDYt
-QlNQNC45LWxpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvbmV0LwpwaHkvc3VueGktZXBoeS5jCgo+
-IElmIGl0IGFmZmVjdHMgdGhlIFBIWSBzaWRlLCB0aGVuIEknZCBleHBlY3QgdGhhdCB0aGUgY2hp
-cAo+IGhhcyB0byB0YWxrIHRvIHRoZSBQSFkgdmlhIHRoZSBNRElPIGJ1cy4gTWVhbnMgdGhlcmUg
-c2hvdWxkCj4gYmUgYSBQSFkgcmVnaXN0ZXIgZm9yIHNldHRpbmcgTUlJIHZzLiBSTUlJLgo+IElu
-IHRoaXMgY2FzZSB0aGUgc2V0dXAgY291bGQgYmUgdmVyeSBtdWNoIHNpbXBsaWZpZWQuCj4gVGhl
-biB0aGUgUEhZIGRyaXZlciB3b3VsZG4ndCBoYXZlIHRvIGJlIGVtYmVkZGVkIGluIHRoZQo+IHBs
-YXRmb3JtIGRyaXZlci4KCkFjdHVhbGx5LCBQSFkgaGFzIHRvIGJlIGNvbmZpZ3VyZWQgZmlyc3Qg
-dGhyb3VnaCBJMkMgYW5kIHRoZW4gdGhyb3VnaCBNRElPLiBJMkMgCmlzIHVzZWQgdG8gZW5hYmxl
-IGl0IChwb3dlciBpdCB1cCksIGNvbmZpZ3VyZSBMRUQgcG9sYXJpdHksIHNldCBQSFkgYWRkcmVz
-cywgCndyaXRlIGNhbGlicmF0aW9uIHZhbHVlIHN0b3JlZCBlbHNld2hlcmUuCgpCYXNlZCBvbiBh
-bGwgYXZhaWxhYmxlIGRvY3VtZW50YXRpb24gSSBoYXZlIChjb2RlIGFuZCBkYXRhc2hlZXQpLCB0
-aGlzIEkyQyAKcmVnaXN0ZXIgaXMgdGhlIG9ubHkgd2F5IHRvIHNlbGVjdCBNSUkgb3IgUk1JSSBt
-b2RlLgoKPiAKPiA+ICsJLyogRklYTUU6IFRoaXMgaXMgSDYgc3BlY2lmaWMgKi8KPiA+ICsJcGh5
-X3NldF9iaXRzKHBoeWRldiwgMHgxMywgQklUKDEyKSk7Cj4gPiArCj4gCj4gVGhpcyBzZWVtcyB0
-byBpbmRpY2F0ZSB0aGF0IHRoZSBzYW1lIFBIWSBpcyB1c2VkIGluIGEgc2xpZ2h0bHkKPiBkaWZm
-ZXJlbnQgdmVyc2lvbiB3aXRoIG90aGVyIEh4IG1vZGVscy4gRG8gdGhleSB1c2UgZGlmZmVyZW50
-Cj4gUEhZIElEJ3M/CgpTaXR1YXRpb24gaXMgYSBiaXQgY29tcGxpY2F0ZWQuIFNhbWUgUEhZLCBh
-dCBsZWFzdCB3aXRoIHNhbWUgUEhZIElELCBpcyB1c2VkIAppbiBkaWZmZXJlbnQgd2F5cy4KMS4g
-YXMgcGFydCBvZiBzdGFuZGFsb25lIEFDMjAwIE1GRCBJQwoyLiBhcyBwYXJ0IG9mIEFDMjAwIHdh
-ZmVyIGNvcGFja2FnZWQgd2l0aCBINiBTb0Mgd2FmZXIgaW4gc2FtZSBwYWNrYWdlLiBUaGlzIApp
-biB0aGVvcnkgc2hvdWxkbid0IGJlIGFueSBkaWZmZXJlbnQgdGhhbiBzdGFuZGFsb25lIElDLCBi
-dXQgaXQgYXBwYXJlbnRseSBpcywgCmJhc2VkIG9uIHRoZSBCU1AgZHJpdmVyIGNvZGUuCjMuIGlu
-dGVncmF0ZWQgZGlyZWN0bHkgaW4gU29DcyBsaWtlIEgzLCBINSBhbmQgVjNzLiBUaGVyZSBpcyBu
-byBJMkMgYWNjZXNzIHRvIApjb25maWd1cmF0aW9uIHJlZ2lzdGVyLiBJbnN0ZWFkLCBpdCdzIG1l
-bW9yeSBtYXBwZWQgYW5kIHNsaWdodGx5IGRpZmZlcmVudC4KCkluIGFsbCBjYXNlcyBQSFkgSUQg
-aXMgc2FtZSwganVzdCBnbHVlIGxvZ2ljIGlzIGRpZmZlcmVudC4KCkkgYXNrZWQgQWxsd2lubmVy
-IGlmIGFib3ZlIHNldHRpbmcgaXMgcmVhbGx5IG5lY2Vzc2FyeSBmb3IgSDYgYW5kIHdoYXQgaXQg
-CmRvZXMsIGJ1dCBJIGRpZG4ndCBnZXQgYW55IHVzZWZ1bCBhbnN3ZXIgYmFjay4KClNvIG1heWJl
-IGFub3RoZXIgY29tcGF0aWJsZSBpcyBuZWVkZWQgZm9yIEg2LgoKQmVzdCByZWdhcmRzLApKZXJu
-ZWoKCj4gCj4gPiArCXJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgaW50IGFjMjAw
-X2VwaHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ICt7Cj4gPiArCXN0
-cnVjdCBhYzIwMF9kZXYgKmFjMjAwID0gZGV2X2dldF9kcnZkYXRhKHBkZXYtPmRldi5wYXJlbnQp
-Owo+ID4gKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2Owo+ID4gKwlzdHJ1Y3QgYWMy
-MDBfZXBoeV9kZXYgKnByaXY7Cj4gPiArCXN0cnVjdCBudm1lbV9jZWxsICpjYWxjZWxsOwo+ID4g
-KwlzdHJ1Y3QgcGh5X2RyaXZlciAqZXBoeTsKPiA+ICsJdTE2ICpjYWxkYXRhLCBjYWxpYjsKPiA+
-ICsJc2l6ZV90IGNhbGxlbjsKPiA+ICsJaW50IHJldDsKPiA+ICsKPiA+ICsJcHJpdiA9IGRldm1f
-a3phbGxvYyhkZXYsIHNpemVvZigqcHJpdiksIEdGUF9LRVJORUwpOwo+ID4gKwlpZiAoIXByaXYp
-Cj4gPiArCQlyZXR1cm4gLUVOT01FTTsKPiA+ICsKPiA+ICsJZXBoeSA9IGRldm1fa3phbGxvYyhk
-ZXYsIHNpemVvZigqZXBoeSksIEdGUF9LRVJORUwpOwo+ID4gKwlpZiAoIWVwaHkpCj4gPiArCQly
-ZXR1cm4gLUVOT01FTTsKPiA+ICsKPiA+ICsJY2FsY2VsbCA9IGRldm1fbnZtZW1fY2VsbF9nZXQo
-ZGV2LCAiY2FsaWJyYXRpb24iKTsKPiA+ICsJaWYgKElTX0VSUihjYWxjZWxsKSkgewo+ID4gKwkJ
-ZGV2X2VycihkZXYsICJVbmFibGUgdG8gZmluZCBjYWxpYnJhdGlvbiBkYXRhIVxuIik7Cj4gPiAr
-CQlyZXR1cm4gUFRSX0VSUihjYWxjZWxsKTsKPiA+ICsJfQo+ID4gKwo+ID4gKwljYWxkYXRhID0g
-bnZtZW1fY2VsbF9yZWFkKGNhbGNlbGwsICZjYWxsZW4pOwo+ID4gKwlpZiAoSVNfRVJSKGNhbGRh
-dGEpKSB7Cj4gPiArCQlkZXZfZXJyKGRldiwgIlVuYWJsZSB0byByZWFkIGNhbGlicmF0aW9uIGRh
-dGEhXG4iKTsKPiA+ICsJCXJldHVybiBQVFJfRVJSKGNhbGRhdGEpOwo+ID4gKwl9Cj4gPiArCj4g
-PiArCWlmIChjYWxsZW4gIT0gMikgewo+ID4gKwkJZGV2X2VycihkZXYsICJDYWxpYnJhdGlvbiBk
-YXRhIGhhcyB3cm9uZyBsZW5ndGg6IDIgIT0gCiV6dVxuIiwKPiA+ICsJCQljYWxsZW4pOwo+ID4g
-KwkJa2ZyZWUoY2FsZGF0YSk7Cj4gPiArCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+
-ID4gKwljYWxpYiA9ICpjYWxkYXRhICsgMzsKPiA+ICsJa2ZyZWUoY2FsZGF0YSk7Cj4gPiArCj4g
-PiArCWVwaHktPnBoeV9pZCA9IEFDMjAwX0VQSFlfSUQ7Cj4gPiArCWVwaHktPnBoeV9pZF9tYXNr
-ID0gQUMyMDBfRVBIWV9JRF9NQVNLOwo+ID4gKwllcGh5LT5uYW1lID0gYWMyMDBfcGh5X25hbWU7
-Cj4gPiArCWVwaHktPmRyaXZlcl9kYXRhID0gcHJpdjsKPiA+ICsJZXBoeS0+c29mdF9yZXNldCA9
-IGdlbnBoeV9zb2Z0X3Jlc2V0Owo+ID4gKwllcGh5LT5jb25maWdfaW5pdCA9IGFjMjAwX2VwaHlf
-Y29uZmlnX2luaXQ7Cj4gPiArCWVwaHktPnN1c3BlbmQgPSBnZW5waHlfc3VzcGVuZDsKPiA+ICsJ
-ZXBoeS0+cmVzdW1lID0gZ2VucGh5X3Jlc3VtZTsKPiA+ICsKPiA+ICsJcHJpdi0+ZXBoeSA9IGVw
-aHk7Cj4gPiArCXByaXYtPnJlZ21hcCA9IGFjMjAwLT5yZWdtYXA7Cj4gPiArCXBsYXRmb3JtX3Nl
-dF9kcnZkYXRhKHBkZXYsIHByaXYpOwo+ID4gKwo+ID4gKwlyZXQgPSByZWdtYXBfd3JpdGUoYWMy
-MDAtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMCwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX1JF
-U0VUX0lOVkFMSUQgfAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfU1lTQ0xLX0dBVElORyk7Cj4gPiAr
-CWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+ID4gKwlyZXQgPSByZWdtYXBfd3Jp
-dGUoYWMyMDAtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMSwKPiA+ICsJCQkgICBBQzIwMF9F
-UEhZX0VfRVBIWV9NSUlfSU9fRU4gfAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfRV9MTktfTEVEX0lP
-X0VOIHwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX0VfU1BEX0xFRF9JT19FTiB8Cj4gPiArCQkJICAg
-QUMyMDBfRVBIWV9FX0RQWF9MRURfSU9fRU4pOwo+ID4gKwlpZiAocmV0KQo+ID4gKwkJcmV0dXJu
-IHJldDsKPiA+ICsKPiA+ICsJcmV0ID0gcmVnbWFwX3dyaXRlKGFjMjAwLT5yZWdtYXAsIEFDMjAw
-X0VQSFlfQ1RMLAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfTEVEX1BPTCB8Cj4gPiArCQkJICAgQUMy
-MDBfRVBIWV9DTEtfU0VMIHwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX0FERFIoMSkgfAo+ID4gKwkJ
-CSAgIEFDMjAwX0VQSFlfQ0FMSUIoY2FsaWIpKTsKPiA+ICsJaWYgKHJldCkKPiA+ICsJCXJldHVy
-biByZXQ7Cj4gPiArCj4gPiArCXJldCA9IHBoeV9kcml2ZXJfcmVnaXN0ZXIocHJpdi0+ZXBoeSwg
-VEhJU19NT0RVTEUpOwo+ID4gKwlpZiAocmV0KSB7Cj4gPiArCQlkZXZfZXJyKGRldiwgIlVuYWJs
-ZSB0byByZWdpc3RlciBwaHlcbiIpOwo+ID4gKwkJcmV0dXJuIHJldDsKPiA+ICsJfQo+ID4gKwo+
-ID4gKwlyZXR1cm4gMDsKPiA+ICt9Cj4gPiArCj4gPiArc3RhdGljIGludCBhYzIwMF9lcGh5X3Jl
-bW92ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gK3sKPiA+ICsJc3RydWN0IGFj
-MjAwX2VwaHlfZGV2ICpwcml2ID0gcGxhdGZvcm1fZ2V0X2RydmRhdGEocGRldik7Cj4gPiArCj4g
-PiArCXBoeV9kcml2ZXJfdW5yZWdpc3Rlcihwcml2LT5lcGh5KTsKPiA+ICsKPiA+ICsJcmVnbWFw
-X3dyaXRlKHByaXYtPnJlZ21hcCwgQUMyMDBfRVBIWV9DVEwsIEFDMjAwX0VQSFlfU0hVVERPV04p
-Owo+ID4gKwlyZWdtYXBfd3JpdGUocHJpdi0+cmVnbWFwLCBBQzIwMF9TWVNfRVBIWV9DVEwxLCAw
-KTsKPiA+ICsJcmVnbWFwX3dyaXRlKHByaXYtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMCwg
-MCk7Cj4gPiArCj4gPiArCXJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgY29uc3Qg
-c3RydWN0IG9mX2RldmljZV9pZCBhYzIwMF9lcGh5X21hdGNoW10gPSB7Cj4gPiArCXsgLmNvbXBh
-dGlibGUgPSAieC1wb3dlcnMsYWMyMDAtZXBoeSIgfSwKPiA+ICsJeyAvKiBzZW50aW5lbCAqLyB9
-Cj4gPiArfTsKPiA+ICtNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBhYzIwMF9lcGh5X21hdGNoKTsK
-PiA+ICsKPiA+ICtzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBhYzIwMF9lcGh5X2RyaXZl
-ciA9IHsKPiA+ICsJLnByb2JlCQk9IGFjMjAwX2VwaHlfcHJvYmUsCj4gPiArCS5yZW1vdmUJCT0g
-YWMyMDBfZXBoeV9yZW1vdmUsCj4gPiArCS5kcml2ZXIJCT0gewo+ID4gKwkJLm5hbWUJCT0gImFj
-MjAwLWVwaHkiLAo+ID4gKwkJLm9mX21hdGNoX3RhYmxlCT0gYWMyMDBfZXBoeV9tYXRjaCwKPiA+
-ICsJfSwKPiA+ICt9Owo+ID4gK21vZHVsZV9wbGF0Zm9ybV9kcml2ZXIoYWMyMDBfZXBoeV9kcml2
-ZXIpOwo+ID4gKwo+ID4gK01PRFVMRV9BVVRIT1IoIkplcm5laiBTa3JhYmVjIDxqZXJuZWouc2ty
-YWJlY0BzaW9sLm5ldD4iKTsKPiA+ICtNT0RVTEVfREVTQ1JJUFRJT04oIkFDMjAwIEV0aGVybmV0
-IFBIWSBkcml2ZXIiKTsKPiA+ICtNT0RVTEVfTElDRU5TRSgiR1BMIik7CgoKCgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Steven,
+
+On Fri, Apr 17, 2020 at 04:26:19PM +0100, Steven Price wrote:
+> It's fairly rare that linear mappings need to be updated, so to improve
+> security we can map the leaf page table entries as read-only, this makes
+> it harder for an attacker to modify the permissions of the linear
+> mappings, while the overhead is low because the linear mappings don't
+> need to be changed frequently. When they do need to be updated we can
+> use fixmaps to create a temporary alternative mapping to do the update.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+> Resending as I didn't receive any comments on my first posting[1].
+> Anyone have any views as to whether this is a good idea or not?
+
+TBH, I'm not too keen on this as the direction of travel seems to be
+that we're going to be messing with the linear map more often for things
+like non-coherent DMA (and potentially for carving out VMs etc), and
+this doesn't have a specific threat in mind.
+
+I do agree that minimizing the necessary permissions seems nice in
+abstract, but I'm not sure that the complexity it adds is worthwhile.
+I'm similarly not all that keen on the stuff we did for KSMA with the
+root of the page tables, but the bulk of that was nice cleanup
+regardless, and it was unconditional so we only had one behaviour to
+maintain.
+
+Thanks,
+Mark.
+
+> 
+> [1] https://lore.kernel.org/linux-arm-kernel/20200306173217.44372-1-steven.price@arm.com/
+> 
+>  arch/arm64/Kconfig              |  9 ++++++++
+>  arch/arm64/include/asm/fixmap.h | 20 ++++++++++++++++-
+>  arch/arm64/mm/mmu.c             | 38 +++++++++++++++++++++++++++++++--
+>  arch/arm64/mm/pageattr.c        | 36 ++++++++++++++++++++++++++++++-
+>  4 files changed, 99 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 40fb05d96c60..138d8b50d894 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1213,6 +1213,15 @@ config RODATA_FULL_DEFAULT_ENABLED
+>  	  This requires the linear region to be mapped down to pages,
+>  	  which may adversely affect performance in some cases.
+>  
+> +config LINEAR_PGTABLE_RO
+> +	bool "Apply r/o permissions to page tables of linear mapping"
+> +	help
+> +	  Apply read-only attributes to the page tables that make up the
+> +	  the linear mapping. This prevents the linear page tables from being
+> +	  inadvertently modified.
+> +
+> +	  This requires rodata=on (or RODATA_FULL_DEFAULT_ENABLED).
+> +
+>  config ARM64_SW_TTBR0_PAN
+>  	bool "Emulate Privileged Access Never using TTBR0_EL1 switching"
+>  	help
+> diff --git a/arch/arm64/include/asm/fixmap.h b/arch/arm64/include/asm/fixmap.h
+> index f987b8a8f325..55bf08151d73 100644
+> --- a/arch/arm64/include/asm/fixmap.h
+> +++ b/arch/arm64/include/asm/fixmap.h
+> @@ -67,6 +67,12 @@ enum fixed_addresses {
+>  	FIX_ENTRY_TRAMP_TEXT,
+>  #define TRAMP_VALIAS		(__fix_to_virt(FIX_ENTRY_TRAMP_TEXT))
+>  #endif /* CONFIG_UNMAP_KERNEL_AT_EL0 */
+> +
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +	FIX_LINEAR_RO_BEGIN,
+> +	FIX_LINEAR_RO_END = FIX_LINEAR_RO_BEGIN + NR_CPUS - 1,
+> +#endif
+> +
+>  	__end_of_permanent_fixed_addresses,
+>  
+>  	/*
+> @@ -77,7 +83,15 @@ enum fixed_addresses {
+>  #define FIX_BTMAPS_SLOTS	7
+>  #define TOTAL_FIX_BTMAPS	(NR_FIX_BTMAPS * FIX_BTMAPS_SLOTS)
+>  
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +	/*
+> +	 * Share the space with the LINEAR_RO area as during early boot, the
+> +	 * LINEAR_RO area isn't needed
+> +	 */
+> +	FIX_BTMAP_END = FIX_LINEAR_RO_BEGIN,
+> +#else
+>  	FIX_BTMAP_END = __end_of_permanent_fixed_addresses,
+> +#endif
+>  	FIX_BTMAP_BEGIN = FIX_BTMAP_END + TOTAL_FIX_BTMAPS - 1,
+>  
+>  	/*
+> @@ -89,9 +103,13 @@ enum fixed_addresses {
+>  	FIX_PUD,
+>  	FIX_PGD,
+>  
+> -	__end_of_fixed_addresses
+> +	___end_of_fixed_addresses
+>  };
+>  
+> +static const enum fixed_addresses __end_of_fixed_addresses =
+> +	___end_of_fixed_addresses > __end_of_permanent_fixed_addresses ?
+> +	___end_of_fixed_addresses : __end_of_permanent_fixed_addresses;
+> +
+>  #define FIXADDR_SIZE	(__end_of_permanent_fixed_addresses << PAGE_SHIFT)
+>  #define FIXADDR_START	(FIXADDR_TOP - FIXADDR_SIZE)
+>  
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index a374e4f51a62..4f9d14b584a5 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -21,6 +21,7 @@
+>  #include <linux/fs.h>
+>  #include <linux/io.h>
+>  #include <linux/mm.h>
+> +#include <linux/pagewalk.h>
+>  #include <linux/vmalloc.h>
+>  
+>  #include <asm/barrier.h>
+> @@ -456,6 +457,34 @@ void __init mark_linear_text_alias_ro(void)
+>  			    PAGE_KERNEL_RO);
+>  }
+>  
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +static int __init mark_linear_pmd_ro(pmd_t *pmd, unsigned long addr,
+> +				     unsigned long next, struct mm_walk *walk)
+> +{
+> +	phys_addr_t pmd_phys = pte_offset_phys(pmd, 0);
+> +
+> +	__map_memblock(walk->mm->pgd, pmd_phys, pmd_phys + PAGE_SIZE,
+> +		       PAGE_KERNEL_RO, NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct mm_walk_ops mark_linear_pg_ro_ops __initconst = {
+> +	.pmd_entry = mark_linear_pmd_ro,
+> +};
+> +
+> +/*
+> + * Remove the write permission from the leaf page tables of the linear map
+> + */
+> +void __init mark_linear_pg_ro(void)
+> +{
+> +	down_read(&init_mm.mmap_sem);
+> +	walk_page_range_novma(&init_mm, PAGE_OFFSET, PAGE_END,
+> +			      &mark_linear_pg_ro_ops, init_mm.pgd, NULL);
+> +	up_read(&init_mm.mmap_sem);
+> +}
+> +#endif
+> +
+>  static void __init map_mem(pgd_t *pgdp)
+>  {
+>  	phys_addr_t kernel_start = __pa_symbol(_text);
+> @@ -503,7 +532,7 @@ static void __init map_mem(pgd_t *pgdp)
+>  	 * so we should avoid them here.
+>  	 */
+>  	__map_memblock(pgdp, kernel_start, kernel_end,
+> -		       PAGE_KERNEL, NO_CONT_MAPPINGS);
+> +		       PAGE_KERNEL, flags | NO_CONT_MAPPINGS);
+>  	memblock_clear_nomap(kernel_start, kernel_end - kernel_start);
+>  
+>  #ifdef CONFIG_KEXEC_CORE
+> @@ -679,6 +708,11 @@ void __init paging_init(void)
+>  	cpu_replace_ttbr1(lm_alias(swapper_pg_dir));
+>  	init_mm.pgd = swapper_pg_dir;
+>  
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +	if (rodata_full)
+> +		mark_linear_pg_ro();
+> +#endif
+> +
+>  	memblock_free(__pa_symbol(init_pg_dir),
+>  		      __pa_symbol(init_pg_end) - __pa_symbol(init_pg_dir));
+>  
+> @@ -1187,8 +1221,8 @@ void __set_fixmap(enum fixed_addresses idx,
+>  		set_pte(ptep, pfn_pte(phys >> PAGE_SHIFT, flags));
+>  	} else {
+>  		pte_clear(&init_mm, addr, ptep);
+> -		flush_tlb_kernel_range(addr, addr+PAGE_SIZE);
+>  	}
+> +	flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+>  }
+>  
+>  void *__init fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
+> diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
+> index 250c49008d73..52d34c06656c 100644
+> --- a/arch/arm64/mm/pageattr.c
+> +++ b/arch/arm64/mm/pageattr.c
+> @@ -7,6 +7,7 @@
+>  #include <linux/module.h>
+>  #include <linux/sched.h>
+>  #include <linux/vmalloc.h>
+> +#include <linux/uaccess.h>
+>  
+>  #include <asm/pgtable.h>
+>  #include <asm/set_memory.h>
+> @@ -19,6 +20,33 @@ struct page_change_data {
+>  
+>  bool rodata_full __ro_after_init = IS_ENABLED(CONFIG_RODATA_FULL_DEFAULT_ENABLED);
+>  
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +static void set_linear_pte_range(pte_t *ptep, pte_t pte)
+> +{
+> +	unsigned long flags;
+> +	unsigned int idx;
+> +	unsigned long addr;
+> +
+> +	local_irq_save(flags);
+> +	preempt_disable();
+> +
+> +	/* During early boot we use FIX_PTE as we don't need a per-CPU slot */
+> +	if (system_state < SYSTEM_SCHEDULING)
+> +		idx = FIX_PTE;
+> +	else
+> +		idx = FIX_LINEAR_RO_BEGIN + smp_processor_id();
+> +
+> +	addr = virt_to_phys(ptep);
+> +	set_fixmap(idx, addr);
+> +	ptep = (pte_t *)(__fix_to_virt(idx) + (addr & ~PAGE_MASK));
+> +	set_pte(ptep, pte);
+> +	clear_fixmap(idx);
+> +
+> +	preempt_enable();
+> +	local_irq_restore(flags);
+> +}
+> +#endif
+> +
+>  static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
+>  {
+>  	struct page_change_data *cdata = data;
+> @@ -27,7 +55,13 @@ static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
+>  	pte = clear_pte_bit(pte, cdata->clear_mask);
+>  	pte = set_pte_bit(pte, cdata->set_mask);
+>  
+> -	set_pte(ptep, pte);
+> +#ifdef CONFIG_LINEAR_PGTABLE_RO
+> +	if (addr >= PAGE_OFFSET)
+> +		set_linear_pte_range(ptep, pte);
+> +	else
+> +#endif
+> +		set_pte(ptep, pte);
+> +
+>  	return 0;
+>  }
+>  
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
