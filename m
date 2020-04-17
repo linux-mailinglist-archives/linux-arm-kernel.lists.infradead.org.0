@@ -2,88 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76C581AE1BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:02:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9525E1AE1C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:03:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9VS1K/6mfaXTt1r/xNJdg4gIeRFtuJecISEm7MSrwTE=; b=Te9F1wmstiVzNh
-	IuuG1WltNlCJBPLL/HF7WS+mdiq5ZrPMxgu3s1Xcrpy0ExY0t5/f9ZwHB3stmdv5XwbCKCtcomoBq
-	kO6zzSGLH9aTEbhYtfziHgPEFLx6/R8TNF91Lpjt0yMIvO2xSul8SL9Xe0ZVPbezPebhqu88YpV08
-	nxYARxAx4JV5bAEAqp953D865Pk7mSr1YxSZsUgg8N+hzuFBoJvxTBSburRS7oUSlsHW4v/4tqRTF
-	3LCZBC73guIxoysv8NkzsGf6JiioKbIGG+KRWG9jEF5t6d83YPUbq+v6BZJp5r2+IVhdgLhrTYqT3
-	3LJqGkdjD9E1eiHpsDHQ==;
+	List-Owner; bh=fkGXPLEvDKg/YKaVrt6cyFU6m9qC8BTpWbh4dA+hOkI=; b=HY9qSwVUFw8t4J
+	zEZfipUOcfelhMud1sIVAVcGYyA4djh7+VrVUhkZS18nElM3Orkys5ULGjL9S/lIylOC1/7nKD9ET
+	TLb3WJEvqIBZ/yTp1yJ4RNR938UXQY0daZu57NrIVn7OYMvTHyTQow/SLBLuOQXo0pGAgUIEh+GQP
+	75Rwe0boTpnbtnN/+WLJbjlr3ZJczKxPgzwSxPtTZ0luovtOmMocEqetDnjfdcikfoY7vhZfyJH9o
+	OhPWtDmqNZCrUll3zASQbLAtY4c0tGepcVYWqrPw0IMU13mt7w0VOblmb4Zm5dtnQGvYKwfO7VMc7
+	YUjgcOjbQLahTaRImWSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPTRe-0007VT-1j; Fri, 17 Apr 2020 16:02:22 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1jPTT3-000862-Jn; Fri, 17 Apr 2020 16:03:49 +0000
+Received: from mailoutvs8.siol.net ([185.57.226.199] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPTRV-0007Uc-QO
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:02:15 +0000
-Received: by mail-il1-x141.google.com with SMTP id t8so2624884ilj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 09:02:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ow0Kc3IM7l1Pl3ygzeT9L0fTTZ4DxTMoAT1E2719uQ0=;
- b=MjL6mhUFmzxZPCPPwZHrpqBTfExrGPFMKXuLWJNZjiqPGw1TaITDyuMVu5NYeW/byO
- eSUdppSk7qLuYr9tTvaPYCbzyrUyG8fhffyDMvgC1x/BTSw9nYtXJTKyXWZ4/MOqkYmC
- gApC+IhrUCpaD+sdi8wZObjkXi8wVbvWCV3cmPLqUsmhF82aG/30NdeirrRx88Rsrq4A
- BFP3D0gZh9R83MKlnVnsFDH7vSQcohUfo7v4JI0u1139FxH1HxG+n/bBRaF4TsLw06P/
- 39dPOqtdZsy/sJQBQ/FbqgD+eCthGBz4KY+CmF3vgGTU7QJydz+BXB8DdZDHFVteWh8D
- cjfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Ow0Kc3IM7l1Pl3ygzeT9L0fTTZ4DxTMoAT1E2719uQ0=;
- b=Yrmex30OQV1SDlC6jHC4X5NipjVDMuz9CoY6sMVh2wUxK6QdsImWq7Jibgx6t65H56
- Mu+LbrILzENaLyQAY7o0uSXWZp17DdgaPk48sGlxb5KXKpyUlio9qis1YAupdm8ST0Eu
- yPXOJpVmokIguUWpdMxOONN7BI1pwyvfS8BkgJt3eyWZe7aeeA+J/C8a2crUcaBGBJmd
- ZkmfyHDu9Z+sJDAM8JSVqyixsnGiO6dcFFE8ChmhgwkPe5KXxhcbWOasrhxGRYKIUCei
- YKy5JYoVtMYc/17QGpfNy2LxqME963bRYVoinWoi/EYoUGGkJdIun3e7dejZWswlqKRq
- dJeQ==
-X-Gm-Message-State: AGi0PuYL3s+gmc8pRyhw+u/Bf1boSAbhgjI6F36FXPo1HzdUgd1+OTfT
- B04nL8LCkfvekGTjJsWYAb+uJGvXIQzDUbZzykJ1fg==
-X-Google-Smtp-Source: APiQypLLN6hpNPrciosxVWRfxqtxblYXJhb0mAZ+3XY79TIlLCuwTRGnOJcQga3hcnrDuAiwihy0ALVG1vK6DqTNjkE=
-X-Received: by 2002:a05:6e02:68a:: with SMTP id
- o10mr3808041ils.72.1587139332463; 
- Fri, 17 Apr 2020 09:02:12 -0700 (PDT)
+ id 1jPTSt-00083z-BN
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:03:42 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTP id 85DC1524BF5;
+ Fri, 17 Apr 2020 18:03:30 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id viEKrc35exMc; Fri, 17 Apr 2020 18:03:29 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTPS id B7CED524BF2;
+ Fri, 17 Apr 2020 18:03:29 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Zimbra) with ESMTPA id ECF8E524BF5;
+ Fri, 17 Apr 2020 18:03:28 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Subject: Re: [RFC PATCH 2/4] net: phy: Add support for AC200 EPHY
+Date: Fri, 17 Apr 2020 18:03:28 +0200
+Message-ID: <3035405.oiGErgHkdL@jernej-laptop>
+In-Reply-To: <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
+References: <20200416185758.1388148-1-jernej.skrabec@siol.net>
+ <20200416185758.1388148-3-jernej.skrabec@siol.net>
+ <0340f85c-987f-900b-53c8-d29b4672a8fa@gmail.com>
 MIME-Version: 1.0
-References: <20200304142628.8471-1-NShubin@topcon.com>
- <20200406113310.3041-1-nikita.shubin@maquefel.me>
- <20200406113310.3041-3-nikita.shubin@maquefel.me>
- <20200414172004.GB24061@xps15>
- <20200417113747.00007cfb@maquefel.me>
-In-Reply-To: <20200417113747.00007cfb@maquefel.me>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 17 Apr 2020 10:02:01 -0600
-Message-ID: <CANLsYkwun87oVw5ZG_g0niq7Yns5+xWJEVb72FwP=d3PruXCcQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] remoteproc: imx_rproc: mailbox support
-To: Nikita Shubin <nikita.shubin@maquefel.me>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_090213_868123_B2C46A26 
-X-CRM114-Status: GOOD (  31.87  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200417_090339_698607_4A81CC44 
+X-CRM114-Status: GOOD (  30.61  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,312 +72,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
- Nikita Shubin <NShubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org, linux@armlinux.org.uk,
+ mripard@kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
+ lee.jones@linaro.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 Apr 2020 at 02:38, Nikita Shubin <nikita.shubin@maquefel.me> wrote:
->
-> On Tue, 14 Apr 2020 11:20:05 -0600
-> Mathieu Poirier <mathieu.poirier@linaro.org> wrote:
->
-> > On Mon, Apr 06, 2020 at 02:33:09PM +0300, nikita.shubin@maquefel.me
-> > wrote:
-> > > Add support for mailboxes to imx_rproc
-> > >
-> > > Signed-off-by: Nikita Shubin <NShubin@topcon.com>
-> > > ---
-> > >  drivers/remoteproc/Kconfig     |   2 +
-> > >  drivers/remoteproc/imx_rproc.c | 142
-> > > ++++++++++++++++++++++++++++++++- 2 files changed, 143
-> > > insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
-> > > index 94afdde4bc9f..02d23a54c9cf 100644
-> > > --- a/drivers/remoteproc/Kconfig
-> > > +++ b/drivers/remoteproc/Kconfig
-> > > @@ -17,6 +17,8 @@ if REMOTEPROC
-> > >  config IMX_REMOTEPROC
-> > >     tristate "IMX6/7 remoteproc support"
-> > >     depends on ARCH_MXC
-> > > +   select MAILBOX
-> > > +   select IMX_MBOX
-> > >     help
-> > >       Say y here to support iMX's remote processors (Cortex M4
-> > >       on iMX7D) via the remote processor framework.
-> > > diff --git a/drivers/remoteproc/imx_rproc.c
-> > > b/drivers/remoteproc/imx_rproc.c index bebc58d0f711..d2bede4ccb70
-> > > 100644 --- a/drivers/remoteproc/imx_rproc.c
-> > > +++ b/drivers/remoteproc/imx_rproc.c
-> > > @@ -14,6 +14,9 @@
-> > >  #include <linux/platform_device.h>
-> > >  #include <linux/regmap.h>
-> > >  #include <linux/remoteproc.h>
-> > > +#include <linux/mailbox_client.h>
-> > > +
-> > > +#include "remoteproc_internal.h"
-> > >
-> > >  #define IMX7D_SRC_SCR                      0x0C
-> > >  #define IMX7D_ENABLE_M4                    BIT(3)
-> > > @@ -47,6 +50,12 @@
-> > >
-> > >  #define IMX_BOOT_PC                        0x4
-> > >
-> > > +#define IMX_MBOX_NB_VQ                     2
-> > > +#define IMX_MBOX_NB_MBX            2
-> >
-> > Please align this.
-> >
-> > > +
-> > > +#define IMX_MBX_VQ0                "vq0"
-> > > +#define IMX_MBX_VQ1                "vq1"
-> > > +
-> > >  /**
-> > >   * struct imx_rproc_mem - slim internal memory structure
-> > >   * @cpu_addr: MPU virtual address of the memory region
-> > > @@ -80,6 +89,14 @@ struct imx_rproc_dcfg {
-> > >     size_t                          att_size;
-> > >  };
-> > >
-> > > +struct imx_mbox {
-> > > +   const unsigned char name[10];
-> > > +   struct mbox_chan *chan;
-> > > +   struct mbox_client client;
-> > > +   struct work_struct vq_work;
-> > > +   int vq_id;
-> > > +};
-> > > +
-> > >  struct imx_rproc {
-> > >     struct device                   *dev;
-> > >     struct regmap                   *regmap;
-> > > @@ -88,6 +105,8 @@ struct imx_rproc {
-> > >     struct imx_rproc_mem
-> > > mem[IMX7D_RPROC_MEM_MAX]; struct clk                        *clk;
-> > >     void __iomem                    *bootreg;
-> > > +   struct imx_mbox mb[IMX_MBOX_NB_MBX];
-> > > +   struct workqueue_struct *workqueue;
-> > >  };
-> > >
-> > >  static const struct imx_rproc_att imx_rproc_att_imx7d[] = {
-> > > @@ -251,10 +270,118 @@ static void *imx_rproc_da_to_va(struct rproc
-> > > *rproc, u64 da, int len) return va;
-> > >  }
-> > >
-> > > +static void imx_rproc_mb_vq_work(struct work_struct *work)
-> > > +{
-> > > +   struct imx_mbox *mb = container_of(work, struct imx_mbox,
-> > > vq_work);
-> > > +   struct rproc *rproc = dev_get_drvdata(mb->client.dev);
-> > > +
-> > > +   if (rproc_vq_interrupt(rproc, mb->vq_id) == IRQ_NONE)
-> > > +           dev_dbg(&rproc->dev, "no message found in vq%d\n",
-> > > mb->vq_id); +}
-> > > +
-> > > +static void imx_rproc_mb_callback(struct mbox_client *cl, void
-> > > *data) +{
-> > > +   struct rproc *rproc = dev_get_drvdata(cl->dev);
-> > > +   struct imx_mbox *mb = container_of(cl, struct imx_mbox,
-> > > client);
-> > > +   struct imx_rproc *ddata = rproc->priv;
-> > > +
-> > > +   queue_work(ddata->workqueue, &mb->vq_work);
-> > > +}
-> > > +
-> > > +static const struct imx_mbox imx_rproc_mbox[IMX_MBOX_NB_MBX] = {
-> > > +   {
-> > > +           .name = IMX_MBX_VQ0,
-> > > +           .vq_id = 0,
-> > > +           .client = {
-> > > +                   .rx_callback = imx_rproc_mb_callback,
-> > > +                   .tx_block = false,
-> > > +           },
-> > > +   },
-> > > +   {
-> > > +           .name = IMX_MBX_VQ1,
-> > > +           .vq_id = 1,
-> > > +           .client = {
-> > > +                   .rx_callback = imx_rproc_mb_callback,
-> > > +                   .tx_block = false,
-> > > +           },
-> > > +   },
-> > > +};
-> > > +
-> > > +static void imx_rproc_request_mbox(struct rproc *rproc)
-> > > +{
-> > > +   struct imx_rproc *ddata = rproc->priv;
-> > > +   struct device *dev = &rproc->dev;
-> > > +   unsigned int i;
-> > > +   const unsigned char *name;
-> > > +   struct mbox_client *cl;
-> > > +
-> > > +   /* Initialise mailbox structure table */
-> > > +   memcpy(ddata->mb, imx_rproc_mbox, sizeof(imx_rproc_mbox));
-> > > +
-> > > +   for (i = 0; i < IMX_MBOX_NB_MBX; i++) {
-> > > +           name = ddata->mb[i].name;
-> > > +
-> > > +           cl = &ddata->mb[i].client;
-> > > +           cl->dev = dev->parent;
-> > > +
-> > > +           ddata->mb[i].chan =
-> > > mbox_request_channel_byname(cl, name); +
-> > > +           dev_dbg(dev, "%s: name=%s, idx=%u\n",
-> > > +                   __func__, name, ddata->mb[i].vq_id);
-> > > +
-> > > +           if (IS_ERR(ddata->mb[i].chan)) {
-> > > +                   dev_warn(dev, "cannot get %s mbox\n",
-> > > name);
-> > > +                   ddata->mb[i].chan = NULL;
-> >
-> > If the mailbox isn't ready this driver will fail without a chance of
-> > recovery. Since most of the code in this patch is a carbon copy of
-> > the implementation found in stm32_proc.c, I suggest you do the same
-> > as they did in stm32_rproc_request_mbox() and privision for cases
-> > where requesting a channel returns -EPROBE_DEFER.
-> >
->
-> Noted, will be fixed.
->
-> > > +           }
-> > > +
-> > > +           if (ddata->mb[i].vq_id >= 0)
-> > > +                   INIT_WORK(&ddata->mb[i].vq_work,
-> > > imx_rproc_mb_vq_work);
-> > > +   }
-> > > +}
-> > > +
-> > > +static void imx_rproc_free_mbox(struct rproc *rproc)
-> > > +{
-> > > +   struct imx_rproc *ddata = rproc->priv;
-> > > +   unsigned int i;
-> > > +
-> > > +   dev_dbg(&rproc->dev, "%s: %d boxes\n",
-> > > +           __func__, ARRAY_SIZE(ddata->mb));
-> > > +
-> > > +   for (i = 0; i < ARRAY_SIZE(ddata->mb); i++) {
-> > > +           if (ddata->mb[i].chan)
-> > > +                   mbox_free_channel(ddata->mb[i].chan);
-> > > +           ddata->mb[i].chan = NULL;
-> > > +   }
-> > > +}
-> > > +
-> > > +static void imx_rproc_kick(struct rproc *rproc, int vqid)
-> > > +{
-> > > +   struct imx_rproc *ddata = rproc->priv;
-> > > +   unsigned int i;
-> > > +   int err;
-> > > +
-> > > +   if (WARN_ON(vqid >= IMX_MBOX_NB_VQ))
-> > > +           return;
-> > > +
-> > > +   for (i = 0; i < IMX_MBOX_NB_MBX; i++) {
-> > > +           if (vqid != ddata->mb[i].vq_id)
-> > > +                   continue;
-> > > +           if (!ddata->mb[i].chan)
-> > > +                   return;
-> > > +           dev_dbg(&rproc->dev, "sending message : vqid =
-> > > %d\n", vqid);
-> > > +           err = mbox_send_message(ddata->mb[i].chan, &vqid);
-> > > +           if (err < 0)
-> > > +                   dev_err(&rproc->dev, "%s: failed (%s,
-> > > err:%d)\n",
-> > > +                                   __func__,
-> > > ddata->mb[i].name, err);
-> > > +                   return;
-> > > +   }
-> > > +}
-> > > +
-> > >  static const struct rproc_ops imx_rproc_ops = {
-> > >     .start          = imx_rproc_start,
-> > >     .stop           = imx_rproc_stop,
-> > >     .da_to_va       = imx_rproc_da_to_va,
-> > > +   .kick           = imx_rproc_kick,
-> > >     .get_boot_addr  = rproc_elf_get_boot_addr,
-> > >  };
-> > >
-> > > @@ -384,14 +511,26 @@ static int imx_rproc_probe(struct
-> > > platform_device *pdev) goto err_put_rproc;
-> > >     }
-> > >
-> > > +   priv->workqueue = create_workqueue(dev_name(dev));
-> > > +   if (!priv->workqueue) {
-> > > +           dev_err(dev, "cannot create workqueue\n");
-> > > +           ret = -ENOMEM;
-> > > +           goto err_put_clk;
-> > > +   }
-> > > +
-> > > +   imx_rproc_request_mbox(rproc);
-> > > +
-> > >     ret = rproc_add(rproc);
-> > >     if (ret) {
-> > >             dev_err(dev, "rproc_add failed\n");
-> > > -           goto err_put_clk;
-> > > +           goto err_free_mb;
-> > >     }
-> > >
-> > >     return 0;
-> > >
-> > > +err_free_mb:
-> > > +   imx_rproc_free_mbox(rproc);
-> > > +   destroy_workqueue(priv->workqueue);
-> > >  err_put_clk:
-> > >     clk_disable_unprepare(priv->clk);
-> > >  err_put_rproc:
-> > > @@ -407,6 +546,7 @@ static int imx_rproc_remove(struct
-> > > platform_device *pdev)
-> > >     clk_disable_unprepare(priv->clk);
-> > >     rproc_del(rproc);
-> > > +   imx_rproc_free_mbox(rproc);
-> >
-> > I have no issues with people reusing code already found in the kernel
-> > - in fact I encourage it because it makes reviewing patches much
-> > easier.  On the flip side you have to give credit where it is due.
-> > Here adding a line in the changelog that mentions where you took your
-> > inspiration from will be much appreciated.
->
-> Please don't blame on things i never did citing my own self from 0/0:
-
-I am not blaming you at all.
-
->
-> | Regarding mailboxes and memory regions :
->
-> | This code is heavily derived from stm32-rproc (i.e. copy pasted) and
-> | this fact needs to reflected in commits, please tell me how to
-> | emphasize this fact.
->
-> I am eager to give credits.
-
-I didn't notice that in the original cover letter.  In the changelog,
-between the description of the work and the signed-off-by and on a
-line on its own, simply write that "the work is inspired from the
-STM32 platform driver (drivers/remoteproc/stm32_rproc.c)".
-
->
->
-> >
-> > Thanks,
-> > Mathieu
-> >
-> > >     rproc_free(rproc);
-> > >
-> > >     return 0;
-> > > --
-> > > 2.25.1
-> > >
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG5lIMSNZXRydGVrLCAxNi4gYXByaWwgMjAyMCBvYiAyMjoxODo1MiBDRVNUIGplIEhlaW5lciBL
+YWxsd2VpdCBuYXBpc2FsKGEpOgo+IE9uIDE2LjA0LjIwMjAgMjA6NTcsIEplcm5laiBTa3JhYmVj
+IHdyb3RlOgo+ID4gQUMyMDAgTUZEIElDIHN1cHBvcnRzIEZhc3QgRXRoZXJuZXQgUEhZLiBBZGQg
+YSBkcml2ZXIgZm9yIGl0Lgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBKZXJuZWogU2tyYWJlYyA8
+amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gPiAtLS0KPiA+IAo+ID4gIGRyaXZlcnMvbmV0L3Bo
+eS9LY29uZmlnICB8ICAgNyArKwo+ID4gIGRyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZSB8ICAgMSAr
+Cj4gPiAgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgIHwgMjA2ICsrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKwo+ID4gIDMgZmlsZXMgY2hhbmdlZCwgMjE0IGluc2VydGlvbnMo
+KykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMKPiA+IAo+
+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3BoeS9LY29uZmlnIGIvZHJpdmVycy9uZXQvcGh5
+L0tjb25maWcKPiA+IGluZGV4IDNmYTMzZDI3ZWViYS4uMTZhZjY5ZjY5ZWFmIDEwMDY0NAo+ID4g
+LS0tIGEvZHJpdmVycy9uZXQvcGh5L0tjb25maWcKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9L
+Y29uZmlnCj4gPiBAQCAtMjg4LDYgKzI4OCwxMyBAQCBjb25maWcgQURJTl9QSFkKPiA+IAo+ID4g
+IAkgIC0gQURJTjEzMDAgLSBSb2J1c3QsSW5kdXN0cmlhbCwgTG93IExhdGVuY3kgMTAvMTAwLzEw
+MDAgR2lnYWJpdAo+ID4gIAkgIAo+ID4gIAkgICAgRXRoZXJuZXQgUEhZCj4gPiAKPiA+ICtjb25m
+aWcgQUMyMDBfUEhZCj4gPiArCXRyaXN0YXRlICJBQzIwMCBFUEhZIgo+ID4gKwlkZXBlbmRzIG9u
+IE5WTUVNCj4gPiArCWRlcGVuZHMgb24gT0YKPiA+ICsJaGVscAo+ID4gKwkgIEZhc3QgZXRoZXJu
+ZXQgUEhZIGFzIGZvdW5kIGluIFgtUG93ZXJzIEFDMjAwIG11bHRpLWZ1bmN0aW9uIApkZXZpY2Uu
+Cj4gPiArCj4gPiAKPiA+ICBjb25maWcgQU1EX1BIWQo+ID4gIAo+ID4gIAl0cmlzdGF0ZSAiQU1E
+IFBIWXMiCj4gPiAgCS0tLWhlbHAtLS0KPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0
+L3BoeS9NYWtlZmlsZSBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gaW5kZXggMmY1Yzcw
+OTNhNjViLi5iMGM1YjkxOTAwZmEgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL25ldC9waHkvTWFr
+ZWZpbGUKPiA+ICsrKyBiL2RyaXZlcnMvbmV0L3BoeS9NYWtlZmlsZQo+ID4gQEAgLTUzLDYgKzUz
+LDcgQEAgb2JqLSQoQ09ORklHX1NGUCkJCSs9IHNmcC5vCj4gPiAKPiA+ICBzZnAtb2JqLSQoQ09O
+RklHX1NGUCkJCSs9IHNmcC1idXMubwo+ID4gIG9iai15CQkJCSs9ICQoc2ZwLW9iai15KSAkKHNm
+cC1vYmotbSkKPiA+IAo+ID4gK29iai0kKENPTkZJR19BQzIwMF9QSFkpCQkrPSBhYzIwMC5vCj4g
+PiAKPiA+ICBvYmotJChDT05GSUdfQURJTl9QSFkpCQkrPSBhZGluLm8KPiA+ICBvYmotJChDT05G
+SUdfQU1EX1BIWSkJCSs9IGFtZC5vCj4gPiAgYXF1YW50aWEtb2JqcwkJCSs9IGFxdWFudGlhX21h
+aW4ubwo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvcGh5L2FjMjAwLmMgYi9kcml2
+ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAw
+MDAwMDAwMDAwMC4uM2Q3ODU2ZmY4ZjkxCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9kcml2
+ZXJzL25ldC9waHkvYWMyMDAuYwo+ID4gQEAgLTAsMCArMSwyMDYgQEAKPiA+ICsvLyBTUERYLUxp
+Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMCsKPiA+ICsvKioKPiA+ICsgKiBEcml2ZXIgZm9yIEFD
+MjAwIEV0aGVybmV0IFBIWQo+ID4gKyAqCj4gPiArICogQ29weXJpZ2h0IChjKSAyMDIwIEplcm5l
+aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiA+ICsgKi8KPiA+ICsKPiA+ICsj
+aW5jbHVkZSA8bGludXgva2VybmVsLmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+
+ID4gKyNpbmNsdWRlIDxsaW51eC9tZmQvYWMyMDAuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvbnZt
+ZW0tY29uc3VtZXIuaD4KPiA+ICsjaW5jbHVkZSA8bGludXgvb2YuaD4KPiA+ICsjaW5jbHVkZSA8
+bGludXgvcGh5Lmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4g
+Kwo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9JRAkJCTB4MDA0NDE0MDAKPiA+ICsjZGVmaW5lIEFD
+MjAwX0VQSFlfSURfTUFTSwkJMHgwZmZmZmZmMAo+ID4gKwo+IAo+IFlvdSBjb3VsZCB1c2UgUEhZ
+X0lEX01BVENIX01PREVMKCkgaGVyZS4KCk9rLgoKPiAKPiA+ICsvKiBtYWNyb3MgZm9yIHN5c3Rl
+bSBlcGh5IGNvbnRyb2wgMCByZWdpc3RlciAqLwo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9SRVNF
+VF9JTlZBTElECUJJVCgwKQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9TWVNDTEtfR0FUSU5HCUJJ
+VCgxKQo+ID4gKwo+ID4gKy8qIG1hY3JvcyBmb3Igc3lzdGVtIGVwaHkgY29udHJvbCAxIHJlZ2lz
+dGVyICovCj4gPiArI2RlZmluZSBBQzIwMF9FUEhZX0VfRVBIWV9NSUlfSU9fRU4JQklUKDApCj4g
+PiArI2RlZmluZSBBQzIwMF9FUEhZX0VfTE5LX0xFRF9JT19FTglCSVQoMSkKPiA+ICsjZGVmaW5l
+IEFDMjAwX0VQSFlfRV9TUERfTEVEX0lPX0VOCUJJVCgyKQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBI
+WV9FX0RQWF9MRURfSU9fRU4JQklUKDMpCj4gPiArCj4gPiArLyogbWFjcm9zIGZvciBlcGh5IGNv
+bnRyb2wgcmVnaXN0ZXIgKi8KPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfU0hVVERPV04JCUJJVCgw
+KQo+ID4gKyNkZWZpbmUgQUMyMDBfRVBIWV9MRURfUE9MCQlCSVQoMSkKPiA+ICsjZGVmaW5lIEFD
+MjAwX0VQSFlfQ0xLX1NFTAkJQklUKDIpCj4gPiArI2RlZmluZSBBQzIwMF9FUEhZX0FERFIoeCkJ
+CSgoKHgpICYgMHgxRikgPDwgNCkKPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfWE1JSV9TRUwJCUJJ
+VCgxMSkKPiA+ICsjZGVmaW5lIEFDMjAwX0VQSFlfQ0FMSUIoeCkJCSgoKHgpICYgMHhGKSA8PCAx
+MikKPiA+ICsKPiA+ICtzdHJ1Y3QgYWMyMDBfZXBoeV9kZXYgewo+ID4gKwlzdHJ1Y3QgcGh5X2Ry
+aXZlcgkqZXBoeTsKPiAKPiBXaHkgZW1iZWRkaW5nIGEgcG9pbnRlciBhbmQgbm90IGEgc3RydWN0
+IHBoeV9kcml2ZXIgZGlyZWN0bHk/Cj4gVGhlbiB5b3UgY291bGQgb21pdCB0aGUgc2VwYXJhdGUg
+YWxsb2NhdGlvbi4KClJpZ2h0LgoKPiAKPiBlcGh5IGlzIG5vdCB0aGUgYmVzdCBuYW1pbmcuIEl0
+IG1heSBiZSByZWFkIGFzIGEgcGh5X2RldmljZS4KPiBCZXR0ZXIgdXNlIHBoeWRydi4KCk9rLgoK
+PiAKPiA+ICsJc3RydWN0IHJlZ21hcAkJKnJlZ21hcDsKPiA+ICt9Owo+ID4gKwo+ID4gK3N0YXRp
+YyBjaGFyICphYzIwMF9waHlfbmFtZSA9ICJBQzIwMCBFUEhZIjsKPiA+ICsKPiAKPiBXaHkgbm90
+IHVzaW5nIHRoZSBuYW1lIGRpcmVjdGx5IGluIHRoZSBhc3NpZ25tZW50PwoKcGh5X2RyaXZlci0+
+bmFtZSBpcyBwb2ludGVyLiBXb3VsZG4ndCB0aGF0IG1lYW4gdGhhdCBzdHJpbmcgaXMgYWxsb2Nh
+dGVkIG9uIApzdGFjayBhbmQgbmV4dCB0aW1lIHBvaW50ZXIgaXMgdXNlZCwgaXQgd2lsbCByZXR1
+cm4gZ2FyYmFnZT8KCj4gQW5kIGJldHRlciBuYW1pbmc6ICJBQzIwMCBGYXN0IEV0aGVybmV0IgoK
+T2suCgo+IAo+ID4gK3N0YXRpYyBpbnQgYWMyMDBfZXBoeV9jb25maWdfaW5pdChzdHJ1Y3QgcGh5
+X2RldmljZSAqcGh5ZGV2KQo+ID4gK3sKPiA+ICsJY29uc3Qgc3RydWN0IGFjMjAwX2VwaHlfZGV2
+ICpwcml2ID0gcGh5ZGV2LT5kcnYtPmRyaXZlcl9kYXRhOwo+ID4gKwl1bnNpZ25lZCBpbnQgdmFs
+dWU7Cj4gPiArCWludCByZXQ7Cj4gPiArCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MWYsIDB4
+MDEwMCk7CS8qIFN3aXRjaCB0byBQYWdlIDEgKi8KPiA+ICsJcGh5X3dyaXRlKHBoeWRldiwgMHgx
+MiwgMHg0ODI0KTsJLyogRGlzYWJsZSBBUFMgKi8KPiA+ICsKPiA+ICsJcGh5X3dyaXRlKHBoeWRl
+diwgMHgxZiwgMHgwMjAwKTsJLyogU3dpdGNoIHRvIFBhZ2UgMiAqLwo+ID4gKwlwaHlfd3JpdGUo
+cGh5ZGV2LCAweDE4LCAweDAwMDApOwkvKiBQSFlBRkUgVFJYIG9wdGltaXphdGlvbiAqLwo+ID4g
+Kwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDA2MDApOwkvKiBTd2l0Y2ggdG8gUGFn
+ZSA2ICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTQsIDB4NzA4Zik7CS8qIFBIWUFGRSBU
+WCBvcHRpbWl6YXRpb24gKi8KPiA+ICsJcGh5X3dyaXRlKHBoeWRldiwgMHgxMywgMHhGMDAwKTsJ
+LyogUEhZQUZFIFJYIG9wdGltaXphdGlvbiAqLwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDE1
+LCAweDE1MzApOwo+ID4gKwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDA4MDApOwkv
+KiBTd2l0Y2ggdG8gUGFnZSA2ICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTgsIDB4MDBi
+Yyk7CS8qIFBIWUFGRSBUUlggb3B0aW1pemF0aW9uICovCj4gPiArCj4gPiArCXBoeV93cml0ZShw
+aHlkZXYsIDB4MWYsIDB4MDEwMCk7CS8qIHN3aXRjaCB0byBwYWdlIDEgKi8KPiA+ICsJcGh5X2Ns
+ZWFyX2JpdHMocGh5ZGV2LCAweDE3LCBCSVQoMykpOwkvKiBkaXNhYmxlIGludGVsbGlnZW50IApJ
+RUVFICovCj4gPiArCj4gPiArCS8qIG5leHQgdHdvIGJsb2NrcyBkaXNhYmxlIDgwMi4zYXogSUVF
+RSAqLwo+ID4gKwlwaHlfd3JpdGUocGh5ZGV2LCAweDFmLCAweDAyMDApOwkvKiBzd2l0Y2ggdG8g
+cGFnZSAyICovCj4gPiArCXBoeV93cml0ZShwaHlkZXYsIDB4MTgsIDB4MDAwMCk7Cj4gPiArCj4g
+PiArCXBoeV93cml0ZShwaHlkZXYsIDB4MWYsIDB4MDAwMCk7CS8qIHN3aXRjaCB0byBwYWdlIDAg
+Ki8KPiA+ICsJcGh5X2NsZWFyX2JpdHNfbW1kKHBoeWRldiwgMHg3LCAweDNjLCBCSVQoMSkpOwo+
+IAo+IEJldHRlciB1c2UgdGhlIGZvbGxvd2luZzoKPiBwaHlfd3JpdGVfbW1kKHBoeWRldiwgTURJ
+T19NTURfQU4sIE1ESU9fQU5fRUVFX0FEViwgMHgwMDAwKTsKPiBJdCBtYWtlcyBjbGVhciB0aGF0
+IHlvdSBkaXNhYmxlIGFkdmVydGlzaW5nIEVFRSBjb21wbGV0ZWx5LgoKT2suCgo+IAo+ID4gKwo+
+ID4gKwlpZiAocGh5ZGV2LT5pbnRlcmZhY2UgPT0gUEhZX0lOVEVSRkFDRV9NT0RFX1JNSUkpCj4g
+PiArCQl2YWx1ZSA9IEFDMjAwX0VQSFlfWE1JSV9TRUw7Cj4gPiArCWVsc2UKPiA+ICsJCXZhbHVl
+ID0gMDsKPiA+ICsKPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKHByaXYtPnJlZ21hcCwg
+QUMyMDBfRVBIWV9DVEwsCj4gPiArCQkJCSBBQzIwMF9FUEhZX1hNSUlfU0VMLCB2YWx1ZSk7Cj4g
+PiArCWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+IAo+IEkgaGFkIGEgYnJpZWYg
+bG9vayBhdCB0aGUgc3BlYywgYW5kIGl0J3Mgbm90IGZ1bGx5IGNsZWFyCj4gdG8gbWUgd2hhdCB0
+aGlzIHJlZ2lzdGVyIHNldHRpbmcgZG9lcy4gRG9lcyBpdCBhZmZlY3QgdGhlCj4gTUFDIHNpZGUg
+YW5kL29yIHRoZSBQSFkgc2lkZT8KCkl0J3MgbXkgdW5kZXJzdGFuZGluZyB0aGF0IGl0IHNlbGVj
+dHMgaW50ZXJmYWNlIG1vZGUgb24gUEhZLiBCZXNpZGVzIGRhdGFzaGVldCAKbWVudGlvbmVkIGlu
+IGNvdmVyIGxldHRlciwgQlNQIGRyaXZlcnMgKG9uZSBmb3IgTUZEIGFuZCBvbmUgZm9yIFBIWSkg
+YXJlIHRoZSAKb25seSBvdGhlciBzb3VyY2Ugb2YgaW5mb3JtYXRpb24uIEJTUCBQSFkgZHJpdmVy
+IGlzIGxvY2F0ZWQgaGVyZToKaHR0cHM6Ly9naXRodWIuY29tL0FsbHdpbm5lci1Ib21sZXQvSDYt
+QlNQNC45LWxpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvbmV0LwpwaHkvc3VueGktZXBoeS5jCgo+
+IElmIGl0IGFmZmVjdHMgdGhlIFBIWSBzaWRlLCB0aGVuIEknZCBleHBlY3QgdGhhdCB0aGUgY2hp
+cAo+IGhhcyB0byB0YWxrIHRvIHRoZSBQSFkgdmlhIHRoZSBNRElPIGJ1cy4gTWVhbnMgdGhlcmUg
+c2hvdWxkCj4gYmUgYSBQSFkgcmVnaXN0ZXIgZm9yIHNldHRpbmcgTUlJIHZzLiBSTUlJLgo+IElu
+IHRoaXMgY2FzZSB0aGUgc2V0dXAgY291bGQgYmUgdmVyeSBtdWNoIHNpbXBsaWZpZWQuCj4gVGhl
+biB0aGUgUEhZIGRyaXZlciB3b3VsZG4ndCBoYXZlIHRvIGJlIGVtYmVkZGVkIGluIHRoZQo+IHBs
+YXRmb3JtIGRyaXZlci4KCkFjdHVhbGx5LCBQSFkgaGFzIHRvIGJlIGNvbmZpZ3VyZWQgZmlyc3Qg
+dGhyb3VnaCBJMkMgYW5kIHRoZW4gdGhyb3VnaCBNRElPLiBJMkMgCmlzIHVzZWQgdG8gZW5hYmxl
+IGl0IChwb3dlciBpdCB1cCksIGNvbmZpZ3VyZSBMRUQgcG9sYXJpdHksIHNldCBQSFkgYWRkcmVz
+cywgCndyaXRlIGNhbGlicmF0aW9uIHZhbHVlIHN0b3JlZCBlbHNld2hlcmUuCgpCYXNlZCBvbiBh
+bGwgYXZhaWxhYmxlIGRvY3VtZW50YXRpb24gSSBoYXZlIChjb2RlIGFuZCBkYXRhc2hlZXQpLCB0
+aGlzIEkyQyAKcmVnaXN0ZXIgaXMgdGhlIG9ubHkgd2F5IHRvIHNlbGVjdCBNSUkgb3IgUk1JSSBt
+b2RlLgoKPiAKPiA+ICsJLyogRklYTUU6IFRoaXMgaXMgSDYgc3BlY2lmaWMgKi8KPiA+ICsJcGh5
+X3NldF9iaXRzKHBoeWRldiwgMHgxMywgQklUKDEyKSk7Cj4gPiArCj4gCj4gVGhpcyBzZWVtcyB0
+byBpbmRpY2F0ZSB0aGF0IHRoZSBzYW1lIFBIWSBpcyB1c2VkIGluIGEgc2xpZ2h0bHkKPiBkaWZm
+ZXJlbnQgdmVyc2lvbiB3aXRoIG90aGVyIEh4IG1vZGVscy4gRG8gdGhleSB1c2UgZGlmZmVyZW50
+Cj4gUEhZIElEJ3M/CgpTaXR1YXRpb24gaXMgYSBiaXQgY29tcGxpY2F0ZWQuIFNhbWUgUEhZLCBh
+dCBsZWFzdCB3aXRoIHNhbWUgUEhZIElELCBpcyB1c2VkIAppbiBkaWZmZXJlbnQgd2F5cy4KMS4g
+YXMgcGFydCBvZiBzdGFuZGFsb25lIEFDMjAwIE1GRCBJQwoyLiBhcyBwYXJ0IG9mIEFDMjAwIHdh
+ZmVyIGNvcGFja2FnZWQgd2l0aCBINiBTb0Mgd2FmZXIgaW4gc2FtZSBwYWNrYWdlLiBUaGlzIApp
+biB0aGVvcnkgc2hvdWxkbid0IGJlIGFueSBkaWZmZXJlbnQgdGhhbiBzdGFuZGFsb25lIElDLCBi
+dXQgaXQgYXBwYXJlbnRseSBpcywgCmJhc2VkIG9uIHRoZSBCU1AgZHJpdmVyIGNvZGUuCjMuIGlu
+dGVncmF0ZWQgZGlyZWN0bHkgaW4gU29DcyBsaWtlIEgzLCBINSBhbmQgVjNzLiBUaGVyZSBpcyBu
+byBJMkMgYWNjZXNzIHRvIApjb25maWd1cmF0aW9uIHJlZ2lzdGVyLiBJbnN0ZWFkLCBpdCdzIG1l
+bW9yeSBtYXBwZWQgYW5kIHNsaWdodGx5IGRpZmZlcmVudC4KCkluIGFsbCBjYXNlcyBQSFkgSUQg
+aXMgc2FtZSwganVzdCBnbHVlIGxvZ2ljIGlzIGRpZmZlcmVudC4KCkkgYXNrZWQgQWxsd2lubmVy
+IGlmIGFib3ZlIHNldHRpbmcgaXMgcmVhbGx5IG5lY2Vzc2FyeSBmb3IgSDYgYW5kIHdoYXQgaXQg
+CmRvZXMsIGJ1dCBJIGRpZG4ndCBnZXQgYW55IHVzZWZ1bCBhbnN3ZXIgYmFjay4KClNvIG1heWJl
+IGFub3RoZXIgY29tcGF0aWJsZSBpcyBuZWVkZWQgZm9yIEg2LgoKQmVzdCByZWdhcmRzLApKZXJu
+ZWoKCj4gCj4gPiArCXJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgaW50IGFjMjAw
+X2VwaHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ICt7Cj4gPiArCXN0
+cnVjdCBhYzIwMF9kZXYgKmFjMjAwID0gZGV2X2dldF9kcnZkYXRhKHBkZXYtPmRldi5wYXJlbnQp
+Owo+ID4gKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2Owo+ID4gKwlzdHJ1Y3QgYWMy
+MDBfZXBoeV9kZXYgKnByaXY7Cj4gPiArCXN0cnVjdCBudm1lbV9jZWxsICpjYWxjZWxsOwo+ID4g
+KwlzdHJ1Y3QgcGh5X2RyaXZlciAqZXBoeTsKPiA+ICsJdTE2ICpjYWxkYXRhLCBjYWxpYjsKPiA+
+ICsJc2l6ZV90IGNhbGxlbjsKPiA+ICsJaW50IHJldDsKPiA+ICsKPiA+ICsJcHJpdiA9IGRldm1f
+a3phbGxvYyhkZXYsIHNpemVvZigqcHJpdiksIEdGUF9LRVJORUwpOwo+ID4gKwlpZiAoIXByaXYp
+Cj4gPiArCQlyZXR1cm4gLUVOT01FTTsKPiA+ICsKPiA+ICsJZXBoeSA9IGRldm1fa3phbGxvYyhk
+ZXYsIHNpemVvZigqZXBoeSksIEdGUF9LRVJORUwpOwo+ID4gKwlpZiAoIWVwaHkpCj4gPiArCQly
+ZXR1cm4gLUVOT01FTTsKPiA+ICsKPiA+ICsJY2FsY2VsbCA9IGRldm1fbnZtZW1fY2VsbF9nZXQo
+ZGV2LCAiY2FsaWJyYXRpb24iKTsKPiA+ICsJaWYgKElTX0VSUihjYWxjZWxsKSkgewo+ID4gKwkJ
+ZGV2X2VycihkZXYsICJVbmFibGUgdG8gZmluZCBjYWxpYnJhdGlvbiBkYXRhIVxuIik7Cj4gPiAr
+CQlyZXR1cm4gUFRSX0VSUihjYWxjZWxsKTsKPiA+ICsJfQo+ID4gKwo+ID4gKwljYWxkYXRhID0g
+bnZtZW1fY2VsbF9yZWFkKGNhbGNlbGwsICZjYWxsZW4pOwo+ID4gKwlpZiAoSVNfRVJSKGNhbGRh
+dGEpKSB7Cj4gPiArCQlkZXZfZXJyKGRldiwgIlVuYWJsZSB0byByZWFkIGNhbGlicmF0aW9uIGRh
+dGEhXG4iKTsKPiA+ICsJCXJldHVybiBQVFJfRVJSKGNhbGRhdGEpOwo+ID4gKwl9Cj4gPiArCj4g
+PiArCWlmIChjYWxsZW4gIT0gMikgewo+ID4gKwkJZGV2X2VycihkZXYsICJDYWxpYnJhdGlvbiBk
+YXRhIGhhcyB3cm9uZyBsZW5ndGg6IDIgIT0gCiV6dVxuIiwKPiA+ICsJCQljYWxsZW4pOwo+ID4g
+KwkJa2ZyZWUoY2FsZGF0YSk7Cj4gPiArCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+
+ID4gKwljYWxpYiA9ICpjYWxkYXRhICsgMzsKPiA+ICsJa2ZyZWUoY2FsZGF0YSk7Cj4gPiArCj4g
+PiArCWVwaHktPnBoeV9pZCA9IEFDMjAwX0VQSFlfSUQ7Cj4gPiArCWVwaHktPnBoeV9pZF9tYXNr
+ID0gQUMyMDBfRVBIWV9JRF9NQVNLOwo+ID4gKwllcGh5LT5uYW1lID0gYWMyMDBfcGh5X25hbWU7
+Cj4gPiArCWVwaHktPmRyaXZlcl9kYXRhID0gcHJpdjsKPiA+ICsJZXBoeS0+c29mdF9yZXNldCA9
+IGdlbnBoeV9zb2Z0X3Jlc2V0Owo+ID4gKwllcGh5LT5jb25maWdfaW5pdCA9IGFjMjAwX2VwaHlf
+Y29uZmlnX2luaXQ7Cj4gPiArCWVwaHktPnN1c3BlbmQgPSBnZW5waHlfc3VzcGVuZDsKPiA+ICsJ
+ZXBoeS0+cmVzdW1lID0gZ2VucGh5X3Jlc3VtZTsKPiA+ICsKPiA+ICsJcHJpdi0+ZXBoeSA9IGVw
+aHk7Cj4gPiArCXByaXYtPnJlZ21hcCA9IGFjMjAwLT5yZWdtYXA7Cj4gPiArCXBsYXRmb3JtX3Nl
+dF9kcnZkYXRhKHBkZXYsIHByaXYpOwo+ID4gKwo+ID4gKwlyZXQgPSByZWdtYXBfd3JpdGUoYWMy
+MDAtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMCwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX1JF
+U0VUX0lOVkFMSUQgfAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfU1lTQ0xLX0dBVElORyk7Cj4gPiAr
+CWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+ID4gKwlyZXQgPSByZWdtYXBfd3Jp
+dGUoYWMyMDAtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMSwKPiA+ICsJCQkgICBBQzIwMF9F
+UEhZX0VfRVBIWV9NSUlfSU9fRU4gfAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfRV9MTktfTEVEX0lP
+X0VOIHwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX0VfU1BEX0xFRF9JT19FTiB8Cj4gPiArCQkJICAg
+QUMyMDBfRVBIWV9FX0RQWF9MRURfSU9fRU4pOwo+ID4gKwlpZiAocmV0KQo+ID4gKwkJcmV0dXJu
+IHJldDsKPiA+ICsKPiA+ICsJcmV0ID0gcmVnbWFwX3dyaXRlKGFjMjAwLT5yZWdtYXAsIEFDMjAw
+X0VQSFlfQ1RMLAo+ID4gKwkJCSAgIEFDMjAwX0VQSFlfTEVEX1BPTCB8Cj4gPiArCQkJICAgQUMy
+MDBfRVBIWV9DTEtfU0VMIHwKPiA+ICsJCQkgICBBQzIwMF9FUEhZX0FERFIoMSkgfAo+ID4gKwkJ
+CSAgIEFDMjAwX0VQSFlfQ0FMSUIoY2FsaWIpKTsKPiA+ICsJaWYgKHJldCkKPiA+ICsJCXJldHVy
+biByZXQ7Cj4gPiArCj4gPiArCXJldCA9IHBoeV9kcml2ZXJfcmVnaXN0ZXIocHJpdi0+ZXBoeSwg
+VEhJU19NT0RVTEUpOwo+ID4gKwlpZiAocmV0KSB7Cj4gPiArCQlkZXZfZXJyKGRldiwgIlVuYWJs
+ZSB0byByZWdpc3RlciBwaHlcbiIpOwo+ID4gKwkJcmV0dXJuIHJldDsKPiA+ICsJfQo+ID4gKwo+
+ID4gKwlyZXR1cm4gMDsKPiA+ICt9Cj4gPiArCj4gPiArc3RhdGljIGludCBhYzIwMF9lcGh5X3Jl
+bW92ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gK3sKPiA+ICsJc3RydWN0IGFj
+MjAwX2VwaHlfZGV2ICpwcml2ID0gcGxhdGZvcm1fZ2V0X2RydmRhdGEocGRldik7Cj4gPiArCj4g
+PiArCXBoeV9kcml2ZXJfdW5yZWdpc3Rlcihwcml2LT5lcGh5KTsKPiA+ICsKPiA+ICsJcmVnbWFw
+X3dyaXRlKHByaXYtPnJlZ21hcCwgQUMyMDBfRVBIWV9DVEwsIEFDMjAwX0VQSFlfU0hVVERPV04p
+Owo+ID4gKwlyZWdtYXBfd3JpdGUocHJpdi0+cmVnbWFwLCBBQzIwMF9TWVNfRVBIWV9DVEwxLCAw
+KTsKPiA+ICsJcmVnbWFwX3dyaXRlKHByaXYtPnJlZ21hcCwgQUMyMDBfU1lTX0VQSFlfQ1RMMCwg
+MCk7Cj4gPiArCj4gPiArCXJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgY29uc3Qg
+c3RydWN0IG9mX2RldmljZV9pZCBhYzIwMF9lcGh5X21hdGNoW10gPSB7Cj4gPiArCXsgLmNvbXBh
+dGlibGUgPSAieC1wb3dlcnMsYWMyMDAtZXBoeSIgfSwKPiA+ICsJeyAvKiBzZW50aW5lbCAqLyB9
+Cj4gPiArfTsKPiA+ICtNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBhYzIwMF9lcGh5X21hdGNoKTsK
+PiA+ICsKPiA+ICtzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBhYzIwMF9lcGh5X2RyaXZl
+ciA9IHsKPiA+ICsJLnByb2JlCQk9IGFjMjAwX2VwaHlfcHJvYmUsCj4gPiArCS5yZW1vdmUJCT0g
+YWMyMDBfZXBoeV9yZW1vdmUsCj4gPiArCS5kcml2ZXIJCT0gewo+ID4gKwkJLm5hbWUJCT0gImFj
+MjAwLWVwaHkiLAo+ID4gKwkJLm9mX21hdGNoX3RhYmxlCT0gYWMyMDBfZXBoeV9tYXRjaCwKPiA+
+ICsJfSwKPiA+ICt9Owo+ID4gK21vZHVsZV9wbGF0Zm9ybV9kcml2ZXIoYWMyMDBfZXBoeV9kcml2
+ZXIpOwo+ID4gKwo+ID4gK01PRFVMRV9BVVRIT1IoIkplcm5laiBTa3JhYmVjIDxqZXJuZWouc2ty
+YWJlY0BzaW9sLm5ldD4iKTsKPiA+ICtNT0RVTEVfREVTQ1JJUFRJT04oIkFDMjAwIEV0aGVybmV0
+IFBIWSBkcml2ZXIiKTsKPiA+ICtNT0RVTEVfTElDRU5TRSgiR1BMIik7CgoKCgoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
