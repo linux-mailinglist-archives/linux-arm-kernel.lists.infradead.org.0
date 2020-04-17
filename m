@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A8201AE6BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 22:23:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 797DC1AE6BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 22:27:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jslytir2WKUNlfprvuElKUzZUsOE75srHd9h6RrYXLs=; b=s9Xlp/dugoN9u2
-	LBeuUbQ9RKHVe/YvRRDpR3873NbFTTgnClBzFtiex0gMqopsE0vqT+90rouJ5P0G0lkfbFpVdcpfk
-	xYKO4Y8DmQ0IyYdOHWfBRhlgOt5PzATv4jwrqfpNbe3qiUYwcAUNCKEu8ebYI9NEl85B5hAArL1un
-	yvk7XygKOFK6vgj2iNZO4ZuQ2O6z+Vt0DPt8GAIQcKmzZzARdOSlhyDyEh0/UYo6K+qF/6lz+MbOa
-	wSPzBtICGrlII0oMnZkrlJiVgk1F8+WDTaEBlHJ86dY4Fk3vJ1huBVswmkrMS1u0hE7EIvnDiaoV9
-	QwdwvjupPMDTEByVwxkQ==;
+	List-Owner; bh=aSZGzWqBui2a3AUnp+eQPAeDAXPsZ4Uphy4Lti0N5eo=; b=NVvknB+b7e2cTX
+	qQ8NVkiekCLxOWHjUp/eXjZ6tA7ytPd4CSXgSX8QKx69fQhmNhEXvVNpRk3idtkEYdHaV/xMZRnLz
+	gU10Mv7ow8vSUORFyZ0ozGC0zw96efIhAtwOSxpTfhLxOuk9KT5eYjNAJeOuDdvT0f7fazwvQ0f1f
+	wsus5byayVznnOW4orwbnpjE6UW29kXurZe3oxGPu+Ql/yI5MsORGgYsvjQYKVeby8GvdkmgUjcvm
+	3uiAtd75BCOwrLJ3F27Zy7N3wH+rh3fXxBBmR4ht66e0Hn2cr2zq4z4y2TjGH3gj6f3iHpzyWewW0
+	Gcya+ksdSJAy27mWVH6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPXWj-0000TZ-4T; Fri, 17 Apr 2020 20:23:53 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jPXaJ-0003Tc-Ml; Fri, 17 Apr 2020 20:27:35 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPXWW-0000Sn-Gz
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 20:23:41 +0000
-Received: by mail-lf1-x144.google.com with SMTP id r17so2856681lff.2
+ id 1jPXa5-0003SQ-Jo
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 20:27:23 +0000
+Received: by mail-lf1-x141.google.com with SMTP id u10so2844881lfo.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 13:23:38 -0700 (PDT)
+ Fri, 17 Apr 2020 13:27:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=t7jDGAFTNBi+XjMSBhubcEwzn24cikxPJ+UJooGzTKo=;
- b=I6kWS6gjv4eTLRFLt+Q5HaMTN8cpgPrWfzLGfiKcjv10a/3iUwhTUGv/iC1g2+rIzn
- YIAxVvIpZWnW67zzjUz8V5s+vS/hrm4vQVPqTKUrHJ6dPrNT0V4B1W2DDd/niy/mcoV/
- ltnMemnRjiHuQlPvnGUzCZTO2FOTP/NQlbh94TcI0trkPJ6TUBSqLU9Rp5e5snxBEHiu
- /n5C9bZ2+3A/PlXU4ZAqSk6PFPJ8QrfUmxwbvhCCPIOq/Iz+jkOrB2GDUrG7q7JHD0Ym
- H2LSUBUM10gR+bvlNApQk9suHIEfKP3WuitwqA67D5eyfSAO51TDVgcoEvhW9358qpa3
- B03A==
+ :cc; bh=sFVeP60ycMsUVn8rAG+W7sV8htYi61dn7Bz9V8tHbJY=;
+ b=GF/O9I9YEBFtOzdDBV7vdlfDMNLjhMF3VMZcgQoGj3iSlXijVXvPwhS8hZoL2iZlIt
+ nWKNoLXNftYapV6G943ffgnn7ikiBhUxuUPMWwlSrD6psFHTM1IscvNzMOKc6I4xbuF2
+ Ie5q4F7s2pJQE7HTgy7zl457yksbjjXUxyfbUijIxRr0MEJwY1q/yk37G+CGNcPNOsfB
+ tPzCvWq9GitY00yuSE66BE8jW3qSIyfAhHcMiaBEFyXs34oOeebixWQ/HwN/KUCDimUd
+ iW0448Il0Qt5dSdL7E5V2sj0KK8YnAqAmNeMAkA9+U6CvYyGNYf/Ze2MBi4Ji7KKOXP2
+ D+4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=t7jDGAFTNBi+XjMSBhubcEwzn24cikxPJ+UJooGzTKo=;
- b=U66X1eqoV8/0aCNZAyWk7O2pw0pru8xkStCyO4Tv8y5kuutDXuBeZe7nOeNl+r8UF+
- Q6TXSlzffUeUaVS1uMTPmdt6VjpEdj8hO1DWyms8NdI0uEHLG78qxgj9xVzOgE6GcfVR
- iQout14dYfUX73nhZBn2LljCa5iP7iSrlJtm5Ug/CMFJ2jgZpo2FambTfiKF20mN4A8y
- 3BznwEuLcvw1agU0MsjKY3kNoTt9W9NZG7nlf2UcGJycN3+mt6/eP2MifpsD1WgC2i0x
- 46625wM5BAB6+tOtnyx9OIfwlL3bntOghgi1ZpeEvsVKr+8XMEAgxCpBo4/7q1ztMFGG
- 7nBA==
-X-Gm-Message-State: AGi0PubikWYOzpp04KKt8JspZxywwMGaK+ZqAN1nzPL9N4dcVvWdI6jh
- y6x56C+iNmYV7zdmeET935x3T9FJ0LCdkPg6J0NGxA==
-X-Google-Smtp-Source: APiQypIOpsBb9Nvks6MpXKBJzURwDYZ9iwlmGzKQ+jEn7+oaciaM+RlGdAfEFl6NaN3A9RPaqL6UVJp80f/QOhijaBw=
+ bh=sFVeP60ycMsUVn8rAG+W7sV8htYi61dn7Bz9V8tHbJY=;
+ b=BBRAhPTyzE2TOgXVNUmLYpYKckrTzI+i1xPyDl6jCqD86kuc2IsIkBKdyEg+vKj3B/
+ dIZ5eaoXGOzMMZs8/R7jh4mKb6cblGD5l4tmPYvHche+F2UHozit0E3V/h3taBsSb7Cv
+ KzDJEp67RNF9Jumx3LQo8m9poUZJriZtQSIub6ESVjm5Kr34T3LflY65zyWxWvwfGJTX
+ R8fGl8TwpHxxO+9hVO9ux1cbDeuNk4q9t8atLxAvwzUseZ8TYbgUlprWBOAKTCbtPb1/
+ J9EjLpcZ7xogjpA+4fzYZ2Th701zqVsCend81rgUZ2jhvS395/qCQeeOeHI/GBU5O2XU
+ VmGQ==
+X-Gm-Message-State: AGi0PubgxfdCco8DUooCH6x4dehAZz7JMqFJMDBRFftvDvznv47V+OP/
+ CEMmnI3s523B4YcpBaD+3ZCFOGQ9rSvFMSgJ4ya8FN+G
+X-Google-Smtp-Source: APiQypIwXsxqULDsgITbS/cOPiGXDq1WRUsu9PtBlGV978qY3TXn8oQz2KBm4oUwDN+6veOIq1QkFziCf4uLCuZoQ68=
 X-Received: by 2002:a05:6512:685:: with SMTP id
- t5mr3081701lfe.47.1587155016742; 
- Fri, 17 Apr 2020 13:23:36 -0700 (PDT)
+ t5mr3088797lfe.47.1587155239924; 
+ Fri, 17 Apr 2020 13:27:19 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200409013947.12667-1-robh@kernel.org>
- <20200409013947.12667-3-robh@kernel.org>
-In-Reply-To: <20200409013947.12667-3-robh@kernel.org>
+ <20200409013947.12667-4-robh@kernel.org>
+In-Reply-To: <20200409013947.12667-4-robh@kernel.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 17 Apr 2020 22:23:25 +0200
-Message-ID: <CACRpkdZ8U_EbmdpT-BnXWtz_MksCnf+0W3bKD3CMxq=R2d5oXA@mail.gmail.com>
-Subject: Re: [PATCH 2/3] drm: pl111: Simplify vexpress init
+Date: Fri, 17 Apr 2020 22:27:08 +0200
+Message-ID: <CACRpkdZaxKxF9QuAH8D78C8L0f-01a0V+w5tSGYLvGajYh6nPA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] drm: pl111: Move VExpress setup into versatile init
 To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_132340_576146_11E68F29 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20200417_132721_658333_357B0431 
+X-CRM114-Status: GOOD (  10.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,42 +102,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Apr 9, 2020 at 3:39 AM Rob Herring <robh@kernel.org> wrote:
 
-> The init VExpress variants currently instantiates a 'muxfpga' driver for
-> the sole purpose of getting a regmap for it. There's no reason to
-> instantiate a driver and doing so just complicates things. The muxfpga
-> driver also isn't unregistered properly on module unload. Let's
-> just simplify all this this by just calling
-> devm_regmap_init_vexpress_config() directly.
+> Since the VExpress setup in pl111_vexpress.c is now just a single
+> function call, let's move it into pl111_versatile.c and we can further
+> simplify pl111_versatile_init() by moving the other pieces for VExpress
+> into pl111_vexpress_clcd_init().
 >
 > Cc: Eric Anholt <eric@anholt.net>
 > Cc: dri-devel@lists.freedesktop.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
 
-OK... looking at this.
-
-> +       if (IS_ENABLED(CONFIG_VEXPRESS_CONFIG) && versatile_clcd_type == VEXPRESS_CLCD_V2M) {
->                 struct platform_device *pdev;
-> -
-> -               /* Registers a driver for the muxfpga */
-> -               ret = vexpress_muxfpga_init();
-> -               if (ret) {
-> -                       dev_err(dev, "unable to initialize muxfpga driver\n");
-> -                       of_node_put(np);
-> -                       return ret;
-> -               }
-> -
->                 /* Call into deep Vexpress configuration API */
->                 pdev = of_find_device_by_node(np);
-
-So this finds the platform device for compatible  "arm,vexpress-muxfpga",
-ha!
-
-> +               map = devm_regmap_init_vexpress_config(&pdev->dev);
-> +               platform_device_put(pdev);
-
-So then you can just do it like that.
-
-Clever! Hats off for digging through my (unnecessary complex) code.
+Yeah that's much nicer, the other boards get a copy of the
+Vexpress code but it's so little so it doesn't matter and besides
+the Vexpress already had copies of the other boards init code.
 
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
