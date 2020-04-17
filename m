@@ -2,97 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C2F11ADAF5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:25:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A91CF1ADAF8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:26:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W/47Yfzkr4r4Go+q6tHfoeDdM0Gdc7pCsYRWCENvU4I=; b=sIq6TGQSZ1YfaaEUitHBiOa57
-	CdAoAxOprRavzW1wfPKOYnIih1ZLbmXJS/8EV00HRcbbJpOk/F8Hnw69W7L1Ep/eg1oSRfeEw9HNH
-	+/T36Ija8/ZHEBCTcOJJLrmegOUg979OFZNCDld9XkprLiYoux8s2OnlG/3xz/GPu/WFgl66fGc+b
-	RqsXUVgxYUYQyrqKn4xkvkG7Jptv9GBuiqN6PGGKmxYKfompkIjJ8+//ZI+7zJ6dH7fHWRX6Pc6BE
-	A2gRd+elme0K9x2XqDykiYqQADmhlRywlG325zhDFjei+lWrCT7rKr8YD9+hpd/WD6v+oVXGa7Tzf
-	Grp6LUbOA==;
+	 bh=IGEN91YNnoGeiOQaGvcW4XQnmFkCkzHo25PF0+GUDX0=; b=bsokweiUCOSzvTVr6x1jBhMWT
+	No1rZHwqnZl1nJlmqaPhSO5s5fuX6sn4psdYcpDGQF9zmZ78VJA3mO5G0qH3fm5KWPq9LbmWQgvV+
+	eG5illdDFCgoQpNalNTyU5DU/gTDyVgKwIEZRdjZ2RZ88T2mPjXKHsk7XJfErX9PNpy1n36tHKU56
+	6TlIGIe1cDek/zisutgB6h7hsoFZzM78WviKeAv4EL7ekOLOtKP7vk1yw7hAd8/lL1wKTggYIpdhI
+	qPu4Prg6UWBfovQwS6d78Ug4lF9huxj5/XDZrN2H0Fgbq29AY0A0XcxERdJy+fTN8/wEGLdGzRmcV
+	tmhvHD+OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOBY-0003MN-CJ; Fri, 17 Apr 2020 10:25:24 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1jPOCn-0003hM-O9; Fri, 17 Apr 2020 10:26:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOBP-0003Ek-AB
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:25:17 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 745C958044A;
- Fri, 17 Apr 2020 06:25:09 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Fri, 17 Apr 2020 06:25:09 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=6Fjyjvm8YMRLuu1BmCR24WjceIi
- +YAIylzDdqTQnb3g=; b=wFPCXDM9IltWfPw0iWL5vGXhLWQwfrvIxIJ5jtqH5LP
- iNYeF3dY1CbSLg8g63cxYe7g7OJrsLBzRTEV+CM7JGa0yjbulxBtPRDSQ7dvGn4K
- Y20sHZhdRUBJXsE5BnNBRASZtt8Lt2js0NSTOCFn/TCPG9VYO+c3kj4ykbR2HxV5
- FhPGRUT4sRAXTH5D/OtzTvAgS/rl8rGzjv5TMcdTR2+SZ2brDNijvCrJ/BMY6TXN
- 5A4D+0eIeQKvvPQ42e9SSDm78Pytcy3PFCuJUYsrkFjTgeTaD863wMI+ZBy4ezeB
- +SG/SdXTccNJcWgTsLGSNRcmJIN0CRbG/fM5Xl7AsMg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=6Fjyjv
- m8YMRLuu1BmCR24WjceIi+YAIylzDdqTQnb3g=; b=AhWcqSBkWGz1YpKq4MYJZo
- a8nVeBhj8xS8Buguy6hDjd6IBa78G/FiJgIAbZIgu5KDP7HiVEJi2TidZxs+5gLF
- Y6BnyqZ1NuYsU22cO5nD8JhddlpqDW97r7w7/Adw+THs+MkqCOXtezggmHoa2awd
- vDWtHFMlTEXbzz8uaU0xPOXmnd4a/lieArch2a+dUpKV4uWJHD8+aZkrKFscMGhX
- 45iIyT/IS3zXi12CGaaCxtCDmmmGnp7DUXhmW+AF7XEwBCk/0k6gixXN+eR+W0/C
- 9h69MyD3jfgO9mdKsK6eUWr+HmMMGPxPtTuqVYUkFJqh+PwAMd/VMpbPFAY/8/7w
- ==
-X-ME-Sender: <xms:_4OZXosKlW7Ziqa003eVVSDn-106QkPYgwtuzwnZBYp4KK8ICSRULg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrfeejgddvkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:_4OZXsmQMbKzP6LsNMhzeUAWwm3Cj8oobZnq-LaWcg3Uk5z4DvDVkQ>
- <xmx:_4OZXmK4VR4Xxb523QGjyKeiCfxgYgl0IPU2KNe2NVn5i5Y1QLo2tg>
- <xmx:_4OZXk5436EodZEHPNEmPz7zqYFElXz76kJkCO0Qf2PbPpL6S_dq7A>
- <xmx:BYSZXntJ4j6vhjl9_WHrQ3dw04z48QodLpsvUEblcIDFocYkKxBhLg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 48A393280066;
- Fri, 17 Apr 2020 06:25:03 -0400 (EDT)
-Date: Fri, 17 Apr 2020 12:25:00 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH v6 01/12] dt-bindings: add img, pvrsgx.yaml for
- Imagination GPUs
-Message-ID: <20200417102500.erayf6quenp3cvn3@gilmour.lan>
-References: <cover.1586939718.git.hns@goldelico.com>
- <06fb6569259bb9183d0a0d0fe70ec4f3033b8aab.1586939718.git.hns@goldelico.com>
- <20200415101251.o3wi5t6xvf56xmhq@gilmour.lan>
- <72919514-0657-4B71-902F-3E775E528F64@goldelico.com>
- <f4fdca8a-d18c-a8d2-7f51-d1ebbbab3647@baylibre.com>
- <535CAEBE-F43E-4BFC-B989-612C81F0D7EF@goldelico.com>
- <20200415142124.yzfh6mtqq7cdq22e@gilmour.lan>
- <DC0A2DE2-3D77-46F8-8DE1-55050FDACC9B@goldelico.com>
- <20200415162151.rwym4ioqz27migfn@gilmour.lan>
- <45F411C0-150B-4FBA-A0E1-B863B3F36DF6@goldelico.com>
+ id 1jPOCZ-0003gz-Hk
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:26:29 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6961721D95;
+ Fri, 17 Apr 2020 10:26:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587119186;
+ bh=oW28VIx5XmqwFX5wQzbrLvIwt9N3aKct2/dyVLRXO8Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=KhY03ZlMX29C4p1+Z4vrGH2tV89xCZeDPT21ASW7dZ+xTIY51CNUSLCNvmPxMpul1
+ xRcQl5Ju1wrNXoErNfm340O7lam+pLTEPVrsWqIbd1/k+8HZVAeAhWbqtmTEFUMkOm
+ BpfF/zWkzSqI79moc1XKO1smVODANyBgYLxay8Fw=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jPOCW-0048tL-G6; Fri, 17 Apr 2020 11:26:24 +0100
 MIME-Version: 1.0
-In-Reply-To: <45F411C0-150B-4FBA-A0E1-B863B3F36DF6@goldelico.com>
+Date: Fri, 17 Apr 2020 11:26:24 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: zhukeqian <zhukeqian1@huawei.com>
+Subject: Re: [PATCH v2] KVM/arm64: Support enabling dirty log gradually in
+ small chunks
+In-Reply-To: <44ce4553-5215-2290-5956-2e6c577d030b@huawei.com>
+References: <20200413122023.52583-1-zhukeqian1@huawei.com>
+ <20200416160833.728017e9@why>
+ <44ce4553-5215-2290-5956-2e6c577d030b@huawei.com>
+Message-ID: <f3d4c6963f98b10f78640f0c99f867b6@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: zhukeqian1@huawei.com, kvm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, pbonzini@redhat.com, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, will@kernel.org, suzuki.poulose@arm.com,
+ sean.j.christopherson@intel.com, jianjay.zhou@huawei.com,
+ wanghaibin.wang@huawei.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_032515_698045_0F9F3F6A 
-X-CRM114-Status: GOOD (  30.07  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200417_032627_626461_0D7856AF 
+X-CRM114-Status: GOOD (  22.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,235 +95,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, letux-kernel@openphoenux.org
-Content-Type: multipart/mixed; boundary="===============4946474883013335689=="
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ wanghaibin.wang@huawei.com, linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jay Zhou <jianjay.zhou@huawei.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020-04-17 10:46, zhukeqian wrote:
+> Hi Marc,
+> 
+> On 2020/4/16 23:08, Marc Zyngier wrote:
+>> On Mon, 13 Apr 2020 20:20:23 +0800
+>> Keqian Zhu <zhukeqian1@huawei.com> wrote:
+>> 
+>>> There is already support of enabling dirty log graually in small 
+>>> chunks
+>> 
+>> gradually
+>> 
+>>> for x86 in commit 3c9bd4006bfc ("KVM: x86: enable dirty log gradually 
+>>> in
+>>> small chunks"). This adds support for arm64.
+>>> 
+>>> x86 still writes protect all huge pages when 
+>>> DIRTY_LOG_INITIALLY_ALL_SET
+>>> is eanbled. However, for arm64, both huge pages and normal pages can 
+>>> be
+>> 
+>> enabled
+>> 
+>>> write protected gradually by userspace.
+>>> 
+>>> Under the Huawei Kunpeng 920 2.6GHz platform, I did some tests on 
+>>> 128G
+>>> Linux VMs with different page size. The memory pressure is 127G in 
+>>> each
+>>> case. The time taken of memory_global_dirty_log_start in QEMU is 
+>>> listed
+>>> below:
+>>> 
+>>> Page Size      Before    After Optimization
+>>>   4K            650ms         1.8ms
+>>>   2M             4ms          1.8ms
+>>>   1G             2ms          1.8ms
+>> 
+>> These numbers are different from what you have advertised before. What
+>> changed?
+> In patch RFC, the numbers is got when memory pressure is 100G, so the 
+> number
+> is bigger here.
 
---===============4946474883013335689==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2cdcxbvig57yd3pf"
-Content-Disposition: inline
+OK.
 
+>> 
+>>> 
+>>> Besides the time reduction, the biggest income is that we will 
+>>> minimize
+>> 
+>> s/income/improvement/
+>> 
+>>> the performance side effect (because of dissloving huge pages and 
+>>> marking
+>> 
+>> dissolving
+> embarrassed for these misspell :(
 
---2cdcxbvig57yd3pf
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+No need to be embarrassed. I do a lot worse, at all times. That is why 
+you
+and I need other people to review our patches and fix things! ;-)
 
-Hi,
+>> 
+>>> memslots dirty) on guest after enabling dirty log.
+>>> 
+>>> Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
+>>> ---
+>>>  Documentation/virt/kvm/api.rst    |  2 +-
+>>>  arch/arm64/include/asm/kvm_host.h |  3 +++
+>>>  virt/kvm/arm/mmu.c                | 12 ++++++++++--
+>>>  3 files changed, 14 insertions(+), 3 deletions(-)
+>>> 
+>>> diff --git a/Documentation/virt/kvm/api.rst 
+>>> b/Documentation/virt/kvm/api.rst
+>>> index efbbe570aa9b..0017f63fa44f 100644
+>>> --- a/Documentation/virt/kvm/api.rst
+>>> +++ b/Documentation/virt/kvm/api.rst
+>>> @@ -5777,7 +5777,7 @@ will be initialized to 1 when created.  This 
+>>> also improves performance because
+>>>  dirty logging can be enabled gradually in small chunks on the first 
+>>> call
+>>>  to KVM_CLEAR_DIRTY_LOG.  KVM_DIRTY_LOG_INITIALLY_SET depends on
+>>>  KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (it is also only available on
+>>> -x86 for now).
+>>> +x86 and arm64 for now).
+>>> 
+>>>  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 was previously available under the 
+>>> name
+>>>  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT, but the implementation had bugs 
+>>> that make
+>>> diff --git a/arch/arm64/include/asm/kvm_host.h 
+>>> b/arch/arm64/include/asm/kvm_host.h
+>>> index 32c8a675e5a4..a723f84fab83 100644
+>>> --- a/arch/arm64/include/asm/kvm_host.h
+>>> +++ b/arch/arm64/include/asm/kvm_host.h
+>>> @@ -46,6 +46,9 @@
+>>>  #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+>>>  #define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
+>>> 
+>>> +#define KVM_DIRTY_LOG_MANUAL_CAPS   
+>>> (KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE | \
+>>> +				     KVM_DIRTY_LOG_INITIALLY_SET)
+>>> +
+>>>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>>> 
+>>>  extern unsigned int kvm_sve_max_vl;
+>>> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+>>> index e3b9ee268823..1077f653a611 100644
+>>> --- a/virt/kvm/arm/mmu.c
+>>> +++ b/virt/kvm/arm/mmu.c
+>>> @@ -2265,8 +2265,16 @@ void kvm_arch_commit_memory_region(struct kvm 
+>>> *kvm,
+>>>  	 * allocated dirty_bitmap[], dirty pages will be be tracked while 
+>>> the
+>>>  	 * memory slot is write protected.
+>>>  	 */
+>>> -	if (change != KVM_MR_DELETE && mem->flags & 
+>>> KVM_MEM_LOG_DIRTY_PAGES)
+>>> -		kvm_mmu_wp_memory_region(kvm, mem->slot);
+>>> +	if (change != KVM_MR_DELETE && mem->flags & 
+>>> KVM_MEM_LOG_DIRTY_PAGES) {
+>>> +		/*
+>>> +		 * If we're with initial-all-set, we don't need to write
+>>> +		 * protect any pages because they're all reported as dirty.
+>>> +		 * Huge pages and normal pages will be write protect gradually.
+>>> +		 */
+>>> +		if (!kvm_dirty_log_manual_protect_and_init_set(kvm)) {
+>>> +			kvm_mmu_wp_memory_region(kvm, mem->slot);
+>>> +		}
+>>> +	}
+>>>  }
+>>> 
+>>>  int kvm_arch_prepare_memory_region(struct kvm *kvm,
+>> 
+>> As it is, it is pretty good. The one thing that isn't clear to me is
+>> why we have a difference in behaviour between x86 and arm64. What
+>> prevents x86 from having the same behaviour as arm64?
+> I am also not very clear about the difference. Maybe there is historic 
+> reason.
+> 
+> Before introducing DIRTY_LOG_INITIALLY_ALL_SET, all pages will be write
+> protected when starting dirty log, but only normal pages are needed
+> to be write protected again during dirty log sync, because huge pages 
+> will
+> be dissolved to normal pages.
+> 
+> For that x86 uses different routine to write protect huge pages and
+> normal pages,
+> and arm64 uses same routine to do this, so arm64 still write protect 
+> all
+> pages again during dirty log sync, but x86 didn't.
+> 
+> So I think that x86 can write protect huge pages gradually too, just 
+> need to add
+> some code legs in dirty log sync.
 
-On Wed, Apr 15, 2020 at 06:42:18PM +0200, H. Nikolaus Schaller wrote:
-> > Am 15.04.2020 um 18:21 schrieb Maxime Ripard <maxime@cerno.tech>:
-> >=20
-> > On Wed, Apr 15, 2020 at 05:09:45PM +0200, H. Nikolaus Schaller wrote:
-> >> Hi Maxime,
-> >>=20
-> >> Hm. Yes. We know that there likely are clocks and maybe reset
-> >> but for some SoC this seems to be undocumented and the reset
-> >> line the VHDL of the sgx gpu provides may be permanently tied
-> >> to "inactive".
-> >>=20
-> >> So if clocks are optional and not provided, a driver simply can assume
-> >> they are enabled somewhere else and does not have to care about. If
-> >> they are specified, the driver can enable/disable them.
-> >=20
-> > Except that at the hardware level, the clock is always going to be
-> > there. You can't control it, but it's there.
->=20
-> Sure, we can deduce that from general hardware design knowledge.
-> But not every detail must be described in DT. Only the important
-> ones.
->=20
-> >>> If OMAP is too much of a pain, you can also make
-> >>> a separate binding for it, and a generic one for the rest of us.
-> >>=20
-> >> No, omap isn't any pain at all.
-> >>=20
-> >> The pain is that some other SoC are most easily defined by clocks in
-> >> the gpu node which the omap doesn't need to explicitly specify.
-> >>=20
-> >> I would expect a much bigger nightmare if we split this into two
-> >> bindings variants.
-> >>=20
-> >>> I'd say that it's pretty unlikely that the clocks, interrupts (and
-> >>> even regulators) are optional. It might be fixed on some SoCs, but
-> >>> that's up to the DT to express that using fixed clocks / regulators,
-> >>> not the GPU binding itself.
-> >>=20
-> >> omap already has these defined them not to be part of the GPU binding.
-> >> The reason seems to be that this needs special clock gating control
-> >> especially for idle states which is beyond simple clock-enable.
-> >>=20
-> >> This sysc target-module@56000000 node is already merged and therefore
-> >> we are only adding the gpu child node. Without defining clocks.
-> >>=20
-> >> For example:
-> >>=20
-> >> 		sgx_module: target-module@56000000 {
-> >> 			compatible =3D "ti,sysc-omap4", "ti,sysc";
-> >> 			reg =3D <0x5600fe00 0x4>,
-> >> 			      <0x5600fe10 0x4>;
-> >> 			reg-names =3D "rev", "sysc";
-> >> 			ti,sysc-midle =3D <SYSC_IDLE_FORCE>,
-> >> 					<SYSC_IDLE_NO>,
-> >> 					<SYSC_IDLE_SMART>;
-> >> 			ti,sysc-sidle =3D <SYSC_IDLE_FORCE>,
-> >> 					<SYSC_IDLE_NO>,
-> >> 					<SYSC_IDLE_SMART>;
-> >> 			clocks =3D <&gpu_clkctrl OMAP5_GPU_CLKCTRL 0>;
-> >> 			clock-names =3D "fck";
-> >> 			#address-cells =3D <1>;
-> >> 			#size-cells =3D <1>;
-> >> 			ranges =3D <0 0x56000000 0x2000000>;
-> >>=20
-> >> 			gpu: gpu@0 {
-> >> 				compatible =3D "ti,omap5-sgx544-116", "img,sgx544-116", "img,sgx54=
-4";
-> >> 				reg =3D <0x0 0x10000>;
-> >> 				interrupts =3D <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-> >> 			};
-> >> 		};
-> >>=20
-> >> The jz4780 example will like this:
-> >>=20
-> >> 	gpu: gpu@13040000 {
-> >> 		compatible =3D "ingenic,jz4780-sgx540-130", "img,sgx540-130", "img,s=
-gx540";
-> >> 		reg =3D <0x13040000 0x4000>;
-> >>=20
-> >> 		clocks =3D <&cgu JZ4780_CLK_GPU>;
-> >> 		clock-names =3D "gpu";
-> >>=20
-> >> 		interrupt-parent =3D <&intc>;
-> >> 		interrupts =3D <63>;
-> >> 	};
-> >>=20
-> >> So the question is which one is "generic for the rest of us"?
-> >=20
-> > I'd say the latter.
->=20
-> Why?
->=20
-> TI SoC seem to be the broadest number of available users
-> of sgx5xx in the past and nowadays. Others are more the exception.
+Fair enough. It'd be good if you could investigate this as well. In the 
+meantime,
+I'll queue this patch for a spin in -next.
 
-And maybe TI has some complicated stuff around the GPU that others don't ha=
-ve?
-If I look quickly at the Allwinner stuff, I see nothing looking alike in the
-SoC, so making the binding like that for everyone just because TI did somet=
-hing
-doesn't really make much sense.
+Thanks,
 
-> > If your clock is optional, then you define it but don't mandate
-> > it. Not documenting it will only result in a mess where everyone will
-> > put some clock into it, possibly with different semantics each and
-> > every time.
->=20
-> So you mean that we should require a dummy clock for the omap gpu node
-> or did I misunderstand that?
->
-> Well, yes there is of course a clock connection between the
-> omap target-module and the sgx but it is IMHO pointless to
-> describe it because it can't and does not need to be controlled
-> separately.
->=20
-> As said the target-module is already accepted and upstream and my
-> proposal is to get the gpu node described there. There is simply
-> no need for a clocks node for the omap.
-
-There is no need for a clocks property *currently* *on the OMAP*.
-
-> What I also assume is that developers of DTS know what they do.
-> So the risk that there is different semantics is IMHO very low.
-
-Well, they know what they do if you document the binding. Let's say I have =
-two
-clocks now on my SoC, and you just document that you want a clocks property,
-with a generic name in clock-names like "gpu".
-
-> If you agree I can add the clocks/clock-names property as an
-> optional property. This should solve omap and all others.
-
-With the above example, what clock should I put in there? In which order? T=
-his
-isn't some random example pulled out of nowhere. The Allwinner A31 has (at
-least) 4 clocks for the GPU, 1 reset line and 1 regulator, so I can only as=
-sume
-that the GPU actually needs at least that amount to be properly integrated =
-into
-an SoC.
-
-This has nothing to do with being dumb or smart.
-
-> > This has nothing to do with the binding being complete. And if you use
-> > a binding like this one, you'll be severely limited when you'll want
-> > to implement things like DVFS.
->=20
-> Now you have unhooked me... Nobody seems to know if and how DVFS can be
-> applied to SGX. IMHO we should bake small bread first and get initial
-> support into mainline.
-
-On the software side, yes, of course. But the discussion here doesn't have =
-much
-to do with software support, this is about the hardware. No matter if you e=
-nable
-DVFS or not, you'll have those resources connected to the GPU.
-
-And if you want to enable the strict minimum in DT for now and expand it la=
-ter
-as the software gains support for more stuff, then you'll have to deal with=
- the
-minimal stuff in software later-on to keep the backward compatibility.
-
-But given that the current state on the Allwinner SoCs (at least) is that y=
-ou
-can't even read a register, it might be a good idea to delay the introducti=
-on of
-that binding until you have something that works to avoid drowning under the
-number of special cases to deal with backward compatibility.
-
-Maxime
-
---2cdcxbvig57yd3pf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXpmD/AAKCRDj7w1vZxhR
-xS+DAQD1ud+4u/Gtzw+YK29b+79bwdplPbylCn4JhitPCi+ezgEAgOxiTpYRh+GB
-1bgxLBKhqARErScbQPmvn22AzLAomAY=
-=Hsz5
------END PGP SIGNATURE-----
-
---2cdcxbvig57yd3pf--
-
-
---===============4946474883013335689==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4946474883013335689==--
-
