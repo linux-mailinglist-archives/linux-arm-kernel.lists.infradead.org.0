@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E9531AD5A6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 07:23:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36A251AD5A8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 07:24:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=y7/njUZE4Is85mozh3lBLke3Q1nTpXqk2OG2MO6YWbY=; b=VK01UpeD17DagV
-	ziCI5wTMH7nqHCNtGt/ASXQlUCJEWBfVbSWHz/ra59mOtYvhvnNO8jAukRPr2/dfcXLYiGSwutjMG
-	wKh+aNn++vg89r+kA3aAuNpWSzqno8vRTdnZzOLhejr1ERwoL+IeL5rhGhDN1jFRswCcMVVU0OtzE
-	2NlF0gAvZLbb5tpWykUmYuN5+UfNd5TFDhoUqHkhx6NOSNwY40QM7BXAPmFdhPJiRUxOs3P2dSQkT
-	vG2DaaiomPn7HmTXzAyf/fw9f+zIjFmwtydlQIVXXSw9yAcQbcFBI+yCqz91u4shS/phI2Bo9tdK3
-	LKCALOuP7gh+MBPQlPLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u9g9MPQYsLhgdh662hFMKyXWbpL2shUHi8oFBZNZ9Q8=; b=S0g+y5LXo8HwdG
+	gmiVmODfnmmeXs9gsEVaTTYlHyt2la0LAPNOq63NLI2zwmOqHAvh91rPx5z2V9XLaZnnI/clMEkXw
+	8jFteuyrrhA0xXmBf9F62UIYQ4ds8RDxfpHZmzKK1K3svP5aUeYRkGswoNnKBcbgCaUoHLNOp7VNi
+	VKOHIEriKuKZV9iXeUZM9LQ5tikeeaZzPljTwFVOt+4xSII69uoqHKNJqRTFi7i1x4t9SxryGxDbe
+	M4kYv0ZqlNUaj+9f7FLXKF3VgljOmKMh1nO5dq0OQuWudHdelZon1cSKHzcTd0fk84rMz3Zg6C14Q
+	fN8gyrw8iX0PbPgIQ+0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPJTW-0002LH-6h; Fri, 17 Apr 2020 05:23:38 +0000
+	id 1jPJTj-0002YD-JH; Fri, 17 Apr 2020 05:23:51 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPJTI-0002JJ-F5; Fri, 17 Apr 2020 05:23:26 +0000
-X-UUID: f20e43d97d1c4780bdcb39f36986cbaa-20200416
+ id 1jPJTM-0002Jc-A3; Fri, 17 Apr 2020 05:23:29 +0000
+X-UUID: f127d1de36b64854827075a95f7e5d87-20200416
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=GC70dnpItBpOUTcj3PL92Hyrly0wCDW2Ddw/cKCswvo=; 
- b=h2CPCe9sCtqwEezN0e9irmL2n0J1thkAVwI8YOMcwT6FHN2JTBuq7lj9Mqt+HYA2tyS/7/zIE5iriou4SZWr1Zl6Eg8t53aHp6bbao4e7fCcdr5cmcukixJTfED4FPYxSxBKvWyJ73o5CjiUx80ItT2n8m56nLJbeu7mE0VbnnA=;
-X-UUID: f20e43d97d1c4780bdcb39f36986cbaa-20200416
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=+zpT5B2IshhZ214mCSGdW/SvpDv7hKMz1rnXfEoTBUc=; 
+ b=MiljsmvesNAjTzcryn9BOY90EuXWSeTKVZOhLQHv7FCngg8UuCptbyLct3iyvUjQHsqjcgpWRhvQ7ZVVyvIiOt+Merq6p1BTp4CRTecvj1MfPUc1KF5Qbc/GxzTWtJV2dViDX0pLO7hRup40IQzF1hJUtVNaeymY3tKxv0bB9x8=;
+X-UUID: f127d1de36b64854827075a95f7e5d87-20200416
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <macpaul.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 247857354; Thu, 16 Apr 2020 21:23:11 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ with ESMTP id 1143253080; Thu, 16 Apr 2020 21:23:11 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 16 Apr 2020 22:23:13 -0700
+ 15.0.1497.2; Thu, 16 Apr 2020 22:23:14 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Fri, 17 Apr 2020 13:23:11 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -48,17 +48,18 @@ To: Min Guo <min.Guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
  <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
-Subject: [PATCH 1/2] dt-bindings: phy-mtk-tphy: add the property about
- force_vbus
-Date: Fri, 17 Apr 2020 13:23:05 +0800
-Message-ID: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
+Subject: [PATCH 2/2] phy: phy-mtk-tphy: introduce force_vbus for u2 phy
+Date: Fri, 17 Apr 2020 13:23:06 +0800
+Message-ID: <1587100986-3104-2-git-send-email-macpaul.lin@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: E815C42225B82684929207EFF6F91564BF86715E507A584A4955B6A5F960DCE12000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_222324_521335_994180CF 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_222328_363387_70E06105 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,30 +98,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For some platforms, they don't have vbus pin connection between usb's phy
-and mac. Hence we need to control force_vbus related registers to keep
-hardware works normal.
-This patch add the required bool property force_vbus.
+For some platforms, they don't have vbus pin connection between usb phy and
+mac. Hence we need to control force_vbus related registers to keep hardware
+works normal.
+This patch add corresponding behavior of force vbus in u2 phy related
+functions.
 
 Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 ---
- Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/mediatek/phy-mtk-tphy.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-index dd75b676b71d..6b49b651becc 100644
---- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-+++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-@@ -37,6 +37,9 @@ Optional properties (controller (parent) node):
- 		  calibrate
-  - mediatek,src-coef	: coefficient for slew rate calibrate, depends on
- 		  SoC process
-+ - force_vbus	: if the platform has no vbus connection between phy and mac,
-+		  (force_vbus mode), then this property should be exist.
-+		  Otherwise not to add this property.
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index cdbcc49f7115..46f0fea175e5 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -99,6 +99,7 @@
  
- Required properties (port (child) node):
- - reg		: address and length of the register set for the port.
+ #define U3P_U2PHYDTM1		0x06C
+ #define P2C_RG_UART_EN			BIT(16)
++#define P2C_FORCE_VBUSVALID		BIT(13)
+ #define P2C_FORCE_IDDIG		BIT(9)
+ #define P2C_RG_VBUSVALID		BIT(5)
+ #define P2C_RG_SESSEND			BIT(4)
+@@ -318,6 +319,7 @@ struct mtk_tphy {
+ 	int nphys;
+ 	int src_ref_clk; /* MHZ, reference clock for slew rate calibrate */
+ 	int src_coef; /* coefficient for slew rate calibrate */
++	bool force_vbus;
+ };
+ 
+ static void hs_slew_rate_calibrate(struct mtk_tphy *tphy,
+@@ -611,13 +613,20 @@ static void u2_phy_instance_set_mode(struct mtk_tphy *tphy,
+ 	switch (mode) {
+ 	case PHY_MODE_USB_DEVICE:
+ 		tmp |= P2C_FORCE_IDDIG | P2C_RG_IDDIG;
++		if (tphy->force_vbus)
++			tmp |= P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID;
+ 		break;
+ 	case PHY_MODE_USB_HOST:
+ 		tmp |= P2C_FORCE_IDDIG;
+-		tmp &= ~P2C_RG_IDDIG;
++		if (tphy->force_vbus)
++			tmp &= ~(P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID);
++		else
++			tmp &= ~P2C_RG_IDDIG;
+ 		break;
+ 	case PHY_MODE_USB_OTG:
+ 		tmp &= ~(P2C_FORCE_IDDIG | P2C_RG_IDDIG);
++		if (tphy->force_vbus)
++			tmp &= ~(P2C_RG_VBUSVALID | P2C_FORCE_VBUSVALID);
+ 		break;
+ 	default:
+ 		return;
+@@ -1187,6 +1196,11 @@ static int mtk_tphy_probe(struct platform_device *pdev)
+ 			retval = PTR_ERR(instance->da_ref_clk);
+ 			goto put_child;
+ 		}
++
++		/*
++		 * On some platform, vbus is dis-connected between PHY and MAC.
++		 */
++		tphy->force_vbus = device_property_read_bool(dev, "force_vbus");
+ 	}
+ 
+ 	provider = devm_of_phy_provider_register(dev, mtk_phy_xlate);
 -- 
 2.18.0
 _______________________________________________
