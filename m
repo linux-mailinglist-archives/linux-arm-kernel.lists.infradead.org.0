@@ -2,79 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A91CF1ADAF8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:26:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D47511ADB9A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 12:52:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IGEN91YNnoGeiOQaGvcW4XQnmFkCkzHo25PF0+GUDX0=; b=bsokweiUCOSzvTVr6x1jBhMWT
-	No1rZHwqnZl1nJlmqaPhSO5s5fuX6sn4psdYcpDGQF9zmZ78VJA3mO5G0qH3fm5KWPq9LbmWQgvV+
-	eG5illdDFCgoQpNalNTyU5DU/gTDyVgKwIEZRdjZ2RZ88T2mPjXKHsk7XJfErX9PNpy1n36tHKU56
-	6TlIGIe1cDek/zisutgB6h7hsoFZzM78WviKeAv4EL7ekOLOtKP7vk1yw7hAd8/lL1wKTggYIpdhI
-	qPu4Prg6UWBfovQwS6d78Ug4lF9huxj5/XDZrN2H0Fgbq29AY0A0XcxERdJy+fTN8/wEGLdGzRmcV
-	tmhvHD+OA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=49dHdX1OcRIxUdOPDG13sq0Lj8nqmVmao7OkoxHqmNE=; b=Byc2tsaabXLGIi
+	fKcktAC9HhwiutX20K4oB/ybwJlAKEk1mAT2hMh1Q0aVO0JCU+LHSzJybZuZedSap96dyxsCZ2Q/0
+	437nKr8/+pVG4cPIgVJ5aFhiMxIOZi7NzQu4H+PvGNhSB/BDun+EwF3v2m4/b1IKQaUI2AnlFEeoL
+	OnVSIW0F43zoq2NMJ8hzpEfmnGK3jKQ6/ZDzcMQXFU2UOvM7CJis9PFE5SKt4aSDYOtWfm2CWSdle
+	n2qbI4uHLeSRDVSlb4ybLuowZl9zIyH7gr/uXeyT6DQIqQ9iKTka4582bl0vEUVlIYYsEdfUpIF5d
+	TJrU1GcuAXo5MV3dNMAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPOCn-0003hM-O9; Fri, 17 Apr 2020 10:26:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jPOZX-0005wa-F7; Fri, 17 Apr 2020 10:50:11 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPOCZ-0003gz-Hk
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:26:29 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6961721D95;
- Fri, 17 Apr 2020 10:26:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587119186;
- bh=oW28VIx5XmqwFX5wQzbrLvIwt9N3aKct2/dyVLRXO8Q=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=KhY03ZlMX29C4p1+Z4vrGH2tV89xCZeDPT21ASW7dZ+xTIY51CNUSLCNvmPxMpul1
- xRcQl5Ju1wrNXoErNfm340O7lam+pLTEPVrsWqIbd1/k+8HZVAeAhWbqtmTEFUMkOm
- BpfF/zWkzSqI79moc1XKO1smVODANyBgYLxay8Fw=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jPOCW-0048tL-G6; Fri, 17 Apr 2020 11:26:24 +0100
+ id 1jPOXr-0003Rg-GB
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 10:48:34 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id t40so921587pjb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Apr 2020 03:48:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6tJkEnovKiyDlmv8OCPoZSMp3hCgfVK38VbbvSk3vu8=;
+ b=HaU1a535RXRPCyyRJ+BmFyRLC2vxL3Yy9Cas+iZjxURX8UAqvLJl/6dh6bWQIrwX/A
+ gxZO9g/OLjihxK0sLbozikFgy4gCywol6Ig0DcsOhfqRwuEzdnQUSmLgsBxsqutqQ6di
+ w2b/Q2bC7RbTBuH1xAunF9TopXXIsaUh4WG4JsJMK+rfcqcikyVY3zQCp+lLE3CMTU/q
+ /PndkdaULSeWF+5QfH8exA1VZlbS3GjsVPzMuPWIPqLsaSB7HrbNSW0R+YZ9qrh5hx7p
+ jkaXvrYPjUsBXvV0UP5/LUVy+es80aGrxPEfkqeZzohPWndKq2P9MG8cS1oLSvqsXp7p
+ S5wA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6tJkEnovKiyDlmv8OCPoZSMp3hCgfVK38VbbvSk3vu8=;
+ b=QSLxF/dCgESZJ7bG1TFyCz96QLXEzjYLuKn7dMcF1NA4vLHLc2ybhuuic3MMI2eZCb
+ 2UPl9OubSIGHZNW7Iy1V4OTL8yKsZLVSX7TqhoaFNClkYhmgnuL2KUr6+tFimzk0Khk7
+ GqscELwmmInSvEOitmsYXahubWXgGNs21ACc6AQ6C+p4Z5gIrQobzAt/ThoP8pql6LnR
+ WENcOF7bSbrt7knNs16hTqM13Z0w8ribrQojAkKoG66d9B899mkiwo6dHuNa3FZH/GyP
+ 6nMuQS5QNC9bmjBwROPdO4/fyu8zvTTjfzT6mrp+0k4tehHY9To/tyP7HOFb8vocDtpC
+ ESpQ==
+X-Gm-Message-State: AGi0Pua2K0khCXpLiQaaQ8JSBIPO9y8FY6quymboAnXVQZt8aJE1LsGB
+ XknY/aNaf8a20JhP3ow68H5GPkp/l4o=
+X-Google-Smtp-Source: APiQypIRebQbp1RrDDLbjumCMDF2OKClwQKFxAdjNsm+cOdMWvAsk+4uUpO0dtVQIpq9q5XODReZ5g==
+X-Received: by 2002:a17:90b:300a:: with SMTP id
+ hg10mr3671648pjb.42.1587120506741; 
+ Fri, 17 Apr 2020 03:48:26 -0700 (PDT)
+Received: from pek-lpggp6.wrs.com (unknown-105-123.windriver.com.
+ [147.11.105.123])
+ by smtp.gmail.com with ESMTPSA id a12sm12771844pfr.28.2020.04.17.03.48.22
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 17 Apr 2020 03:48:26 -0700 (PDT)
+From: Kevin Hao <haokexin@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/2] arm64: Fix the call trace when running kgdb test suite
+Date: Fri, 17 Apr 2020 18:32:10 +0800
+Message-Id: <20200417103212.45812-1-haokexin@gmail.com>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-Date: Fri, 17 Apr 2020 11:26:24 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: zhukeqian <zhukeqian1@huawei.com>
-Subject: Re: [PATCH v2] KVM/arm64: Support enabling dirty log gradually in
- small chunks
-In-Reply-To: <44ce4553-5215-2290-5956-2e6c577d030b@huawei.com>
-References: <20200413122023.52583-1-zhukeqian1@huawei.com>
- <20200416160833.728017e9@why>
- <44ce4553-5215-2290-5956-2e6c577d030b@huawei.com>
-Message-ID: <f3d4c6963f98b10f78640f0c99f867b6@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: zhukeqian1@huawei.com, kvm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, pbonzini@redhat.com, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, will@kernel.org, suzuki.poulose@arm.com,
- sean.j.christopherson@intel.com, jianjay.zhou@huawei.com,
- wanghaibin.wang@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_032627_626461_0D7856AF 
-X-CRM114-Status: GOOD (  22.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200417_034827_737613_5B469C72 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [haokexin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,185 +99,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- wanghaibin.wang@huawei.com, linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jay Zhou <jianjay.zhou@huawei.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-17 10:46, zhukeqian wrote:
-> Hi Marc,
-> 
-> On 2020/4/16 23:08, Marc Zyngier wrote:
->> On Mon, 13 Apr 2020 20:20:23 +0800
->> Keqian Zhu <zhukeqian1@huawei.com> wrote:
->> 
->>> There is already support of enabling dirty log graually in small 
->>> chunks
->> 
->> gradually
->> 
->>> for x86 in commit 3c9bd4006bfc ("KVM: x86: enable dirty log gradually 
->>> in
->>> small chunks"). This adds support for arm64.
->>> 
->>> x86 still writes protect all huge pages when 
->>> DIRTY_LOG_INITIALLY_ALL_SET
->>> is eanbled. However, for arm64, both huge pages and normal pages can 
->>> be
->> 
->> enabled
->> 
->>> write protected gradually by userspace.
->>> 
->>> Under the Huawei Kunpeng 920 2.6GHz platform, I did some tests on 
->>> 128G
->>> Linux VMs with different page size. The memory pressure is 127G in 
->>> each
->>> case. The time taken of memory_global_dirty_log_start in QEMU is 
->>> listed
->>> below:
->>> 
->>> Page Size      Before    After Optimization
->>>   4K            650ms         1.8ms
->>>   2M             4ms          1.8ms
->>>   1G             2ms          1.8ms
->> 
->> These numbers are different from what you have advertised before. What
->> changed?
-> In patch RFC, the numbers is got when memory pressure is 100G, so the 
-> number
-> is bigger here.
+Hi guys,
 
-OK.
+This fixes a call trace when running the kgdb test suite:
+    # echo kgdbts=V1 > /sys/module/kgdbts/parameters/kgdbts
 
->> 
->>> 
->>> Besides the time reduction, the biggest income is that we will 
->>> minimize
->> 
->> s/income/improvement/
->> 
->>> the performance side effect (because of dissloving huge pages and 
->>> marking
->> 
->> dissolving
-> embarrassed for these misspell :(
+v2:
+  - Add a patch to fix a typo in el1_dbg()
+  - Use the method as suggested by Mark.
 
-No need to be embarrassed. I do a lot worse, at all times. That is why 
-you
-and I need other people to review our patches and fix things! ;-)
+v1:
+  https://lore.kernel.org/r/20200401052107.36076-1-haokexin@gmail.com
 
->> 
->>> memslots dirty) on guest after enabling dirty log.
->>> 
->>> Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
->>> ---
->>>  Documentation/virt/kvm/api.rst    |  2 +-
->>>  arch/arm64/include/asm/kvm_host.h |  3 +++
->>>  virt/kvm/arm/mmu.c                | 12 ++++++++++--
->>>  3 files changed, 14 insertions(+), 3 deletions(-)
->>> 
->>> diff --git a/Documentation/virt/kvm/api.rst 
->>> b/Documentation/virt/kvm/api.rst
->>> index efbbe570aa9b..0017f63fa44f 100644
->>> --- a/Documentation/virt/kvm/api.rst
->>> +++ b/Documentation/virt/kvm/api.rst
->>> @@ -5777,7 +5777,7 @@ will be initialized to 1 when created.  This 
->>> also improves performance because
->>>  dirty logging can be enabled gradually in small chunks on the first 
->>> call
->>>  to KVM_CLEAR_DIRTY_LOG.  KVM_DIRTY_LOG_INITIALLY_SET depends on
->>>  KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (it is also only available on
->>> -x86 for now).
->>> +x86 and arm64 for now).
->>> 
->>>  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 was previously available under the 
->>> name
->>>  KVM_CAP_MANUAL_DIRTY_LOG_PROTECT, but the implementation had bugs 
->>> that make
->>> diff --git a/arch/arm64/include/asm/kvm_host.h 
->>> b/arch/arm64/include/asm/kvm_host.h
->>> index 32c8a675e5a4..a723f84fab83 100644
->>> --- a/arch/arm64/include/asm/kvm_host.h
->>> +++ b/arch/arm64/include/asm/kvm_host.h
->>> @@ -46,6 +46,9 @@
->>>  #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
->>>  #define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
->>> 
->>> +#define KVM_DIRTY_LOG_MANUAL_CAPS   
->>> (KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE | \
->>> +				     KVM_DIRTY_LOG_INITIALLY_SET)
->>> +
->>>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
->>> 
->>>  extern unsigned int kvm_sve_max_vl;
->>> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
->>> index e3b9ee268823..1077f653a611 100644
->>> --- a/virt/kvm/arm/mmu.c
->>> +++ b/virt/kvm/arm/mmu.c
->>> @@ -2265,8 +2265,16 @@ void kvm_arch_commit_memory_region(struct kvm 
->>> *kvm,
->>>  	 * allocated dirty_bitmap[], dirty pages will be be tracked while 
->>> the
->>>  	 * memory slot is write protected.
->>>  	 */
->>> -	if (change != KVM_MR_DELETE && mem->flags & 
->>> KVM_MEM_LOG_DIRTY_PAGES)
->>> -		kvm_mmu_wp_memory_region(kvm, mem->slot);
->>> +	if (change != KVM_MR_DELETE && mem->flags & 
->>> KVM_MEM_LOG_DIRTY_PAGES) {
->>> +		/*
->>> +		 * If we're with initial-all-set, we don't need to write
->>> +		 * protect any pages because they're all reported as dirty.
->>> +		 * Huge pages and normal pages will be write protect gradually.
->>> +		 */
->>> +		if (!kvm_dirty_log_manual_protect_and_init_set(kvm)) {
->>> +			kvm_mmu_wp_memory_region(kvm, mem->slot);
->>> +		}
->>> +	}
->>>  }
->>> 
->>>  int kvm_arch_prepare_memory_region(struct kvm *kvm,
->> 
->> As it is, it is pretty good. The one thing that isn't clear to me is
->> why we have a difference in behaviour between x86 and arm64. What
->> prevents x86 from having the same behaviour as arm64?
-> I am also not very clear about the difference. Maybe there is historic 
-> reason.
-> 
-> Before introducing DIRTY_LOG_INITIALLY_ALL_SET, all pages will be write
-> protected when starting dirty log, but only normal pages are needed
-> to be write protected again during dirty log sync, because huge pages 
-> will
-> be dissolved to normal pages.
-> 
-> For that x86 uses different routine to write protect huge pages and
-> normal pages,
-> and arm64 uses same routine to do this, so arm64 still write protect 
-> all
-> pages again during dirty log sync, but x86 didn't.
-> 
-> So I think that x86 can write protect huge pages gradually too, just 
-> need to add
-> some code legs in dirty log sync.
 
-Fair enough. It'd be good if you could investigate this as well. In the 
-meantime,
-I'll queue this patch for a spin in -next.
+Kevin Hao (2):
+  arm64: entry: Fix the typo in the comment of el1_dbg()
+  arm64: debug: Always update the IRQ tracing in debug_exception_enter()
 
-Thanks,
+ arch/arm64/kernel/entry-common.c | 2 +-
+ arch/arm64/mm/fault.c            | 8 ++------
+ 2 files changed, 3 insertions(+), 7 deletions(-)
 
-         M.
 -- 
-Jazz is not dead. It just smells funny...
+2.26.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
