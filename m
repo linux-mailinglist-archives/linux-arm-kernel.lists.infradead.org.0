@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E29701AE4FD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:43:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 484751AE4FE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 20:43:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e38dQrLph6Sbu4YSP0F/1cQOI+C/v8hlzAbks4zkmv4=; b=IPu0+ugj/2QN8Z
-	ynuJIdMwum/2OiRm6FyQWRe+NcjuyozuINrHdrAsOuodRwKYZbmvPtWARRpWR8dQ2YI/VUdLpXzuS
-	FmA+x6IlgysKzep6JXUiRXC4V+2lZXojMUYp1HoSCK94TOcXSDYasHMJVTZYr6HZHa0E4OoOUnwE1
-	O3ORe+M0RqDZMMDLqrbTnv7cEC3xjK9vmmW3sEQEUQGGjJhj8getmv5rLzTrmvGgGWSHTpZpkXE7F
-	0nizRHNagPzEP0m3DG05XKYxuH4U4nQHcoZjl9xz1fGEq8NOBxE5OHkF7vtjfcAJzSickKGWT3hiA
-	4nJ8XhLRlhlxppMtwr3Q==;
+	List-Owner; bh=FyiMK+f1bj0Df49Ajej1Ihff+NeCeeCIlGQQPuC8TzA=; b=qPgPFlQS+OiWut
+	IRHtjjeoW9/yIP6jkTI0Bm06pRuwKfVu9ZJ32fHaZDaEyJiwgBuUgHUok5YTbGMtSG1RAKc+mGG/i
+	mOu6LxeDosYP03h+/YDLJHok8Z7mWTU2JcsIv8AzDCXljImCazmqQItU8B/HfFZbqRjRoMBMJhSW3
+	1Ks7NQ97bTLJfQsTufe9a49m3reJO8wTizFezMaCeaejv7URUPLksJH1jGeFLy0MAZXly3Ofgl6Ig
+	39Pzv4lpDRhdvfA0RDnGnpiv/2LJh+Dd/N5Kh5zs1TQk+dZJWYAUYGupjh1dxtZmTQrVQmsZNYP9x
+	pfeWIvNUpCAAkl/JZSDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPVx0-0007zM-BD; Fri, 17 Apr 2020 18:42:54 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jPVxI-0008AP-J0; Fri, 17 Apr 2020 18:43:12 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPVvs-0006vc-Fl; Fri, 17 Apr 2020 18:41:46 +0000
-Received: by mail-wm1-x342.google.com with SMTP id e26so3905032wmk.5;
- Fri, 17 Apr 2020 11:41:43 -0700 (PDT)
+ id 1jPVvs-0006w0-GQ; Fri, 17 Apr 2020 18:41:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g13so2160350wrb.8;
+ Fri, 17 Apr 2020 11:41:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oIYf6yLD6cGcNKPjnKZPwHWTMLSS0PgTGD6+kLZWz24=;
- b=qn2RXZm7CQEK2b7CVa5xl9uSvLy65ZGWZ0dZZyISbrsJb0LQXt9eCD5+2BKd5jWT68
- VCDk+2Q/hdoCN14v015Es9d2FxTKYVxbwNVCpE/Qq+Gi/PdgvV+E2s4jGLDOLZFZvmD6
- Y86H7Ly/R5lc8w1vv95JqOXTMV0Z68GhtE14x2IL9owKM9Fbki6GTH3M/aS69WUB9in7
- Yl/Elgwq0qrwv+nOpwN9fZIB3ZQJ6+egCW1+yuD+qCod6igLfPrTHd8OR2aRCiFZGzgU
- lXuZDJCZ5/VBQMHUj2vxUKZLeXkEdTPvjLR3L3gTzks39bsVsBlhOVZzvhH6vPVoWT+s
- uh+Q==
+ bh=p4RArEPtRb6yXEdgtQ3ovyy6FMchkA9pg/LkRnSfJR8=;
+ b=LB3xbvk8qJejz7tCjtEyfb58WU6LIalruJuOoQB1Cneg3/jqPgHlbv12NNDaHlpzmV
+ o4uu9ADrf4vAphiHiJGYnZeemkZ8JE8PszXtVht45LbV0jh+JbkeLCUgh+NQv3ew0EET
+ 5OiBadJ8IJ60jWXZcJ9Mh/m0VvlOUHi4cRATM4vw8O+eKPsyatKhe+icKhBA2UTl0dad
+ OLrmY/o1wUQK/j6xSJ9Pka6ITAWn4HHjRddCbGUV2CsNveMOBp6rZIwhb03JPd0/FdGw
+ erl8L7qmaKONyIRCGNvpUFl9zUFYxMecqk3JJryPWqoARSS8D+vPJJSMwceyE8a2smeE
+ sQgQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oIYf6yLD6cGcNKPjnKZPwHWTMLSS0PgTGD6+kLZWz24=;
- b=mOBQkbtbzGxGZB3AbFH6L1P4XRHEh2YVGMjTH7rc/ZFmA9DE3QLlagnAl2yyGEqHU+
- ywhG3g1zvpdkhwzNRg5q2s3zc31gb3XPX0yfdMsdKHbualzVVp76aUfBF9fKVMMYbrW1
- WjgzZXzx1Erd/0mmjO5iIloqtwbG64gdBXXqtt81Q0W3f043VG30h5I5A0fEci7KJRv/
- kGxpwwWvn6DN+mphFIS6frptLVCUvsvWuqYGKbW5YiEUrIbtU7NWdhTig2ktcKoEh/Uc
- WFJiXMGvnL7d2pTn4xZnstgDhAlFtffIl5qmmGkT38FJvjxF1479P0p/3FXRVMCPbIhp
- ttHQ==
-X-Gm-Message-State: AGi0PuZ+bq3ArY96gUNxb4JhtNs7BwyirgKroPweFAMf+jHys0MMJufx
- MLXW850SO9EOepfCbNuS/k4=
-X-Google-Smtp-Source: APiQypJiOSadIsSFqxeGifhueVFxB5KQwrbt+IM4+8elJn17pL0qORQex4+o6XKw8z/L7S4uNIk+Cw==
-X-Received: by 2002:a1c:98c2:: with SMTP id a185mr4892260wme.85.1587148902117; 
- Fri, 17 Apr 2020 11:41:42 -0700 (PDT)
+ bh=p4RArEPtRb6yXEdgtQ3ovyy6FMchkA9pg/LkRnSfJR8=;
+ b=F08Xhn4Mv81QPwWAQCgS9SL1Jj08Awek1PrRAPEt8EM8HQxPg69BMwcsDFsoyoIpgG
+ awzIdFTk6XPWSvSxgmmHA4Jn72TBkoK4EkbOI0r9WVEulLidscLokgX76Gi9nkts6lM9
+ zNpWNBOh3xv36rDsn5XWqqNrsUpDPzOgkDKU7uc03XJrb8TCNESkGu1mQ69FcoyHEidb
+ cF9b8MIqiWnrRTMQJll7ElWFjHAQKK2iCWRJCPfoKdcuHHdzDDK250sGk09jjtMF9ExK
+ ZuzYUm8PaTgUE4VHGp2vYQGSE7oLoVec+O7LVfLHbfrPTNM+XQN2kG5FPYp8JLJq7L1m
+ qtbg==
+X-Gm-Message-State: AGi0PubrO+VVt529R1yKvgP1Jz5H3ZBCTDE/zA5gOLgjQiWaKF2Mhca+
+ r6YDZdRz6tQDEfgvoFJqX/U=
+X-Google-Smtp-Source: APiQypLp5qHymcuJPKjzUtOnmkQmLSVUjfmU7kNQvo46lL7qlgyByinKLdOTrFJU3TOKc0KrRY21yw==
+X-Received: by 2002:adf:f884:: with SMTP id u4mr5203954wrp.171.1587148903269; 
+ Fri, 17 Apr 2020 11:41:43 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3714:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id c17sm33237391wrp.28.2020.04.17.11.41.41
+ by smtp.googlemail.com with ESMTPSA id c17sm33237391wrp.28.2020.04.17.11.41.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 11:41:41 -0700 (PDT)
+ Fri, 17 Apr 2020 11:41:42 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH v2 3/4] clk: meson: meson8b: Fix the vclk_div{1, 2, 4, 6,
- 12}_en gate bits
-Date: Fri, 17 Apr 2020 20:41:26 +0200
-Message-Id: <20200417184127.1319871-4-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 4/4] clk: meson: meson8b: Make the CCF use the glitch-free
+ VPU mux
+Date: Fri, 17 Apr 2020 20:41:27 +0200
+Message-Id: <20200417184127.1319871-5-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200417184127.1319871-1-martin.blumenstingl@googlemail.com>
 References: <20200417184127.1319871-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_114144_547334_4F3857B2 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20200417_114144_553639_15639FC1 
+X-CRM114-Status: GOOD (  14.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,72 +110,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DIV{1,2,4,6,12}_EN bits are actually located in HHI_VID_CLK_CNTL
-register:
-- HHI_VID_CLK_CNTL[0] = DIV1_EN
-- HHI_VID_CLK_CNTL[1] = DIV2_EN
-- HHI_VID_CLK_CNTL[2] = DIV4_EN
-- HHI_VID_CLK_CNTL[3] = DIV6_EN
-- HHI_VID_CLK_CNTL[4] = DIV12_EN
+The "vpu_0" or "vpu_1" clock trees should not be updated while the
+clock is running. Enforce this by setting CLK_SET_RATE_GATE on the
+"vpu_0" and "vpu_1" gates. This makes the CCF switch to the "vpu_1"
+tree when "vpu_0" is currently active and vice versa, which is exactly
+what the vendor driver does when updating the frequency of the VPU
+clock.
 
-Update the bits accordingly so we will enable the bits in the correct
-register once we switch these clocks to be mutable.
-
-Fixes: 6cb57c678bb70e ("clk: meson: meson8b: add the read-only video clock trees")
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/clk/meson/meson8b.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/clk/meson/meson8b.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index 1dec8d5404a1..6d1727e62b55 100644
+index 6d1727e62b55..811af1c11456 100644
 --- a/drivers/clk/meson/meson8b.c
 +++ b/drivers/clk/meson/meson8b.c
-@@ -1213,7 +1213,7 @@ static struct clk_regmap meson8b_vclk_in_en = {
- 
- static struct clk_regmap meson8b_vclk_div1_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 0,
+@@ -2063,7 +2063,7 @@ static struct clk_regmap meson8b_vpu_0 = {
+ 			&meson8b_vpu_0_div.hw
+ 		},
+ 		.num_parents = 1,
+-		.flags = CLK_SET_RATE_PARENT,
++		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
  	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1243,7 +1243,7 @@ static struct clk_fixed_factor meson8b_vclk_div2_div = {
+ };
  
- static struct clk_regmap meson8b_vclk_div2_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 1,
+@@ -2134,10 +2134,18 @@ static struct clk_regmap meson8b_vpu_1 = {
+ 			&meson8b_vpu_1_div.hw
+ 		},
+ 		.num_parents = 1,
+-		.flags = CLK_SET_RATE_PARENT,
++		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
  	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1273,7 +1273,7 @@ static struct clk_fixed_factor meson8b_vclk_div4_div = {
+ };
  
- static struct clk_regmap meson8b_vclk_div4_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 2,
++/*
++ * The VPU clock has two two identical clock trees (vpu_0 and vpu_1)
++ * muxed by a glitch-free switch on Meson8b and Meson8m2. The CCF can
++ * actually manage this glitch-free mux because it does top-to-bottom
++ * updates the each clock tree and switches to the "inactive" one when
++ * CLK_SET_RATE_GATE is set.
++ * Meson8 only has vpu_0 and no glitch-free mux.
++ */
+ static struct clk_regmap meson8b_vpu = {
+ 	.data = &(struct clk_regmap_mux_data){
+ 		.offset = HHI_VPU_CLK_CNTL,
+@@ -2152,7 +2160,7 @@ static struct clk_regmap meson8b_vpu = {
+ 			&meson8b_vpu_1.hw,
+ 		},
+ 		.num_parents = 2,
+-		.flags = CLK_SET_RATE_NO_REPARENT,
++		.flags = CLK_SET_RATE_PARENT,
  	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1303,7 +1303,7 @@ static struct clk_fixed_factor meson8b_vclk_div6_div = {
+ };
  
- static struct clk_regmap meson8b_vclk_div6_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 3,
- 	},
- 	.hw.init = &(struct clk_init_data){
-@@ -1333,7 +1333,7 @@ static struct clk_fixed_factor meson8b_vclk_div12_div = {
- 
- static struct clk_regmap meson8b_vclk_div12_div_gate = {
- 	.data = &(struct clk_regmap_gate_data){
--		.offset = HHI_VID_CLK_DIV,
-+		.offset = HHI_VID_CLK_CNTL,
- 		.bit_idx = 4,
- 	},
- 	.hw.init = &(struct clk_init_data){
 -- 
 2.26.1
 
