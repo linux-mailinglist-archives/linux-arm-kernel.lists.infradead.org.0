@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 994C91AD92C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 10:55:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C744F1AD9F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 11:31:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QoTK6yQaGBVd3pOYkyYBUS5wX5bY/3LsmE4k7+92hO4=; b=Z2LfVgNMwQHK+s
-	nI8D+R90tNwHExbip2rqPuK9KZrJAfty7KqciO2HLGhSKDpgMEFo7y63jv9IQRQGB7mjVpQopwPrS
-	pp/UcMcJT/lIIp9lcbaaH57ohg53/f8NWNSEjq/kddxC54azd+OGYvvru0R4BmEt8zhqIkig/QGmA
-	S25Y7QhtZnpV6uEurClyHJ/EGd8R90JNBLFpwpRu8/tI+UtmQbX0HynVgOq4tQ7MsIx6eYwGf5MrA
-	qnUiPpKJnk90HVLIi1GPA1L7K0E6SixRouoW5wGtXO6feraVSLYMgzPditTmUttHorCvt+98tMuuj
-	+VrMMK2dRdj9Kxf0qAxg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NSaopiI8oPRKZ3fdq/cuik4nu6SskLDTNWB+JR9V31Q=; b=cLAaRrrL5qpVLg
+	di+3TKcrPEnSaJ1qqIlu8pV1v0jp8piTFRQ6d7icIl/lBzmeN78uR1kmRP5rF8xN8OVv7VSCIWIgl
+	HsGiqIU/EWwDb6rCjr8numrUJTrQiL5T2iR/t3brdZVvJNkon5y9NzoHUyue3eyNwKXQ2rUBKUhxZ
+	uSIe/EuOm7923DLe5GeY2wYVDiCDWTsNtE1th/c4+doOAoKOckHfbV41/LNe8szoSsrxfQWIJr9Id
+	ZuIRwaA5iawSJro7qPTP+yDv/e0lDc4QPia6OTEgLvMFXpEBCo7KmaKNtJTVWKOHoW799z+4usjFJ
+	ckJVsrz/N6BZqYEj7Dgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPMmM-0001XB-DW; Fri, 17 Apr 2020 08:55:18 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jPNLX-0000j7-Vi; Fri, 17 Apr 2020 09:31:39 +0000
+Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPMm8-0000XD-S4
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 08:55:06 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 858E4286A544F9606FBB;
- Fri, 17 Apr 2020 16:54:57 +0800 (CST)
-Received: from huawei.com (10.175.124.28) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.487.0; Fri, 17 Apr 2020
- 16:54:46 +0800
-From: Jason Yan <yanaijie@huawei.com>
-To: <manivannan.sadhasivam@linaro.org>, <linus.walleij@linaro.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] pinctrl: remove unused 'pwm37_pins'
-Date: Fri, 17 Apr 2020 17:21:12 +0800
-Message-ID: <20200417092112.12303-1-yanaijie@huawei.com>
-X-Mailer: git-send-email 2.21.1
+ id 1jPNLK-0000hH-PY
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 09:31:28 +0000
+Received: by mail-vk1-xa44.google.com with SMTP id u203so116785vkb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Apr 2020 02:31:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wiAjeMfcURelxBHuZUMdahz3hslfuep2aSIiGdvB4+U=;
+ b=MjESJIAGjhwM+OrbAF9iPGpZJ/vkK1eikxiMgw0yxaSOcuysZ9JVFY/FVkUul49Yb+
+ ovf+VnarnjcO59QYSQd3TdLtK3EwPQLBRvbZrzEppGkSwL/E2vjW0Zi5wxDFNTnhFhjq
+ Dw0Z7KvjigjoPpQ1Oi+ppIM/XAF+Q9U7X850eljiesC/vYF/04hRrI3MXW2XIiCKwnPW
+ 2OFZTk0iC/A+Ph+H6IANq/DNHJPd6d9W0yvIPsQ+f6mrvDJ3sqydF5DKb/Tuc50PdYso
+ ZYFrcO4wneJmMqPZGqcZ64OwN1shzuLS7/LRqsHjnYoec4cZEAuRv8fEmOvMRhRwCyhd
+ Atjw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wiAjeMfcURelxBHuZUMdahz3hslfuep2aSIiGdvB4+U=;
+ b=rH8aTdNY2sVcqBwyCl42DWrFJdLWaNs2EJMKg/MaN/07lXUsS8VkAXhjAnfVHnMzaK
+ JXb0OtkXpJ/gJt8XiJ8rcR9KR3zi6KeHSaZT9IOFHlQ3CpskDuu0c0JUPJTTDHhi5qO6
+ V2/EBDZ5Jyh3WS9i1/h65AzaZuOAngKNp5MRY3jSG6kXzZjo3Mm9Kjb0LXQScWFjoacs
+ 5Zp1msU1UspBP0UkS3nB8fONFHbXg9eqz7sG4QZUorSxkFONBbdtD7gff/i/3D+0+KuI
+ ISh6LGbwlQHUoyyzkpYWI/2InnX4KxYz/6v6FbY4M37wIUJZ+/OdFUI2+k2ufiMEjfcn
+ fzYQ==
+X-Gm-Message-State: AGi0PuYdbirClhKwASgT3STcU0ICeWrmU9apuXAdK6nsk/UsFh60om5J
+ UgXQKDeKeHOHWYUJ4CBrkmySnmgtkEyr87sdWjJpwQ==
+X-Google-Smtp-Source: APiQypIhgrTQ9F4wV2XftulBfc+nuqItiJK/bLZiDLrTiNf3ydl2NH2qIiRMIU9GYujl8QU/p2GD5YgyX4Hb2jNJNZg=
+X-Received: by 2002:a1f:5003:: with SMTP id e3mr1648075vkb.59.1587115883938;
+ Fri, 17 Apr 2020 02:31:23 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.175.124.28]
-X-CFilter-Loop: Reflected
+References: <20200416183513.993763-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200416183513.993763-1-martin.blumenstingl@googlemail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 17 Apr 2020 11:30:48 +0200
+Message-ID: <CAPDyKFrKs-NAYH7aCbEUCBw9wkwQEg-HmDun_cVw+L-EPSyZ_g@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] meson-mx-sdhc card busy detection fixes
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_015505_088846_72DEEDEB 
-X-CRM114-Status: UNSURE (   6.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_023126_823840_5CF4F30F 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,31 +90,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hulk Robot <hulkci@huawei.com>, Jason Yan <yanaijie@huawei.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rml4IHRoZSBmb2xsb3dpbmcgZ2NjIHdhcm5pbmc6Cgpkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1i
-bTE4ODAuYzoyNjM6Mjc6IHdhcm5pbmc6IOKAmHB3bTM3X3BpbnPigJkgZGVmaW5lZApidXQgbm90
-IHVzZWQgWy1XdW51c2VkLWNvbnN0LXZhcmlhYmxlPV0KIHN0YXRpYyBjb25zdCB1bnNpZ25lZCBp
-bnQgcHdtMzdfcGluc1tdID0geyAxMTAgfTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+
-fn5+fn5+fgoKUmVwb3J0ZWQtYnk6IEh1bGsgUm9ib3QgPGh1bGtjaUBodWF3ZWkuY29tPgpTaWdu
-ZWQtb2ZmLWJ5OiBKYXNvbiBZYW4gPHlhbmFpamllQGh1YXdlaS5jb20+Ci0tLQogZHJpdmVycy9w
-aW5jdHJsL3BpbmN0cmwtYm0xODgwLmMgfCAxIC0KIDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0aW9u
-KC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtYm0xODgwLmMgYi9kcml2
-ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAuYwppbmRleCBmN2RmZjRmMTQxMDEuLjgwYmMwNGY0
-MDk2NCAxMDA2NDQKLS0tIGEvZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtYm0xODgwLmMKKysrIGIv
-ZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtYm0xODgwLmMKQEAgLTI2MCw3ICsyNjAsNiBAQCBzdGF0
-aWMgY29uc3QgdW5zaWduZWQgaW50IHB3bTMzX3BpbnNbXSA9IHsgMTA2IH07CiBzdGF0aWMgY29u
-c3QgdW5zaWduZWQgaW50IHB3bTM0X3BpbnNbXSA9IHsgMTA3IH07CiBzdGF0aWMgY29uc3QgdW5z
-aWduZWQgaW50IHB3bTM1X3BpbnNbXSA9IHsgMTA4IH07CiBzdGF0aWMgY29uc3QgdW5zaWduZWQg
-aW50IHB3bTM2X3BpbnNbXSA9IHsgMTA5IH07Ci1zdGF0aWMgY29uc3QgdW5zaWduZWQgaW50IHB3
-bTM3X3BpbnNbXSA9IHsgMTEwIH07CiBzdGF0aWMgY29uc3QgdW5zaWduZWQgaW50IGkyYzBfcGlu
-c1tdID0geyA2MywgNjQgfTsKIHN0YXRpYyBjb25zdCB1bnNpZ25lZCBpbnQgaTJjMV9waW5zW10g
-PSB7IDY1LCA2NiB9Owogc3RhdGljIGNvbnN0IHVuc2lnbmVkIGludCBpMmMyX3BpbnNbXSA9IHsg
-NjcsIDY4IH07Ci0tIAoyLjIxLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Thu, 16 Apr 2020 at 20:37, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> The following errors were observed with Linux 5.7-rc1 and an SD card
+> hooked up to the meson-mx-sdio controller:
+>   mmc1: Card stuck being busy! __mmc_poll_for_busy
+>   blk_update_request: I/O error, dev mmcblk1, sector 17111080 op
+>    0x3:(DISCARD) flags 0x0 phys_seg 1 prio class 0
+>
+>
+> At least patch #1 should go to a -fixes branch so it can make it
+> into v5.7.
+
+Applied for both patches for fixes, and adding stable tags, thanks!
+
+Kind regards
+Uffe
+
+
+>
+>
+> Changes since v1 at [0]:
+> - added correct Fixes tag for patch #1
+> - added a patch which drops the ->card_busy() implementation from
+>   the meson-mx-sdio driver because this is not working
+> - special thanks to Ulf for taking the time to provide debug
+>   patches, explaining things and answering my questions!
+>
+>
+> [0] https://patchwork.kernel.org/patch/11483621/
+>
+>
+> Martin Blumenstingl (2):
+>   mmc: meson-mx-sdio: Set MMC_CAP_WAIT_WHILE_BUSY
+>   mmc: meson-mx-sdio: remove the broken ->card_busy() op
+>
+>  drivers/mmc/host/meson-mx-sdio.c | 11 +----------
+>  1 file changed, 1 insertion(+), 10 deletions(-)
+>
+> --
+> 2.26.1
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
