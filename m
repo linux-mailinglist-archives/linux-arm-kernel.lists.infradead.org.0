@@ -2,42 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ECA01AE207
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:21:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76A211AE233
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:24:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JBYV5cMbKM+33cwuNyT3glrdT0XEhJpHF4B8r0odeLA=; b=FcQjyOU6Z/y88mAi9+036lInmx
-	NYBsMwX+tbBzFHNDCfu1fEbi8KRANy4D4x+c/Gg7yL+pQKtdGQUvRVVJXaoiYwtSXvVtUSKqD5Hu/
-	oVRNsSwu+iu6V6fj4g65c3OhITYC7V2d7RFSJaGOiwIzA+ZZz8+ww6yDOFDuLudWpzSG9LTjsXgxR
-	k16qgxBID/DCfxZDDjtQOJS3ljUpvueK1x43PTEYe1NHbX8M4+W0ym+Gk3979zHVdkugpGrQWPPJh
-	xpehEeVx9vhZ4tKFxrgB9zrx1gQwPnNGgN3i5Z9BrwJ2hQfJT8xQPpOHRN4FFd/39DVPVZ4STe+Xs
-	PDtirEug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+dSFgjuKkrL18zZp5M0zKhOAzucXm7re7l0Du7skP/Y=; b=Zshe+hyCPE6PXf1XREZEMOJhG
+	jxJoNQHoJKyrFzh7H7DethKYXhg0GnoyI/rmvE+DP6x2XgViuBOQrzKMm9sbemerZTJdKj8mlmhhm
+	zGQCfsqeyPg2vFfByMHZgNzxjltW9XQWgWb/82Qafg6Oi2twJf15RzsvDJ3d1qrGXOIBi+nbopuWO
+	cHccCMBTBhEg9NAMsuZ2mSFWOXQnFHfNlktCJmaphtsVXkuUyQbYmboW98/Jr+283gXbmraLzxtUp
+	Bu/YZ9u2w+0sQ19gmTDGVPFA0EXdSVfNH8/vurF+rjOLaHNUPNZYXlEL9ix8ZkljM2wseoXH+xK5i
+	ZCbux3+jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPTkA-0005lR-UG; Fri, 17 Apr 2020 16:21:30 +0000
+	id 1jPTmc-0006mA-Eo; Fri, 17 Apr 2020 16:24:02 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPTjH-0005HB-DL
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:20:37 +0000
+ id 1jPTmT-0006lE-25
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:23:54 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id D1DB52A2AEB
+ (Authenticated sender: andrzej.p) with ESMTPSA id E51352A2AEB
+Subject: Re: [RFC 0/8] Stop monitoring disabled devices
+To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+References: <20200407174926.23971-1-andrzej.p@collabora.com>
+ <2bc5a902-acde-526a-11a5-2357d899916c@linaro.org>
+ <aeec2ce8-8fb9-9353-f3dd-36a476ceeb3b@collabora.com>
+ <CGME20200415104010eucas1p101278e53e34a2e56dfc7c82b533a9122@eucas1p1.samsung.com>
+ <dc999149-d168-0b86-0559-7660e0fdec77@samsung.com>
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: linux-pm@vger.kernel.org
-Subject: [RFC v3 2/2] thermal: core: Stop polling DISABLED thermal devices
-Date: Fri, 17 Apr 2020 18:20:20 +0200
-Message-Id: <20200417162020.19980-3-andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200417162020.19980-1-andrzej.p@collabora.com>
-References: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
- <20200417162020.19980-1-andrzej.p@collabora.com>
+Message-ID: <fc166e0f-91ec-67d5-28b0-428f556643a4@collabora.com>
+Date: Fri, 17 Apr 2020 18:23:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <dc999149-d168-0b86-0559-7660e0fdec77@samsung.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_092035_600422_62A0BFDC 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20200417_092353_231268_0E447BF8 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -67,74 +73,40 @@ Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
  Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
  NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
  Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- Len Brown <lenb@kernel.org>,
- Barlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
  Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
  Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
  Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
  Support Opensource <support.opensource@diasemi.com>,
  Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
  Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
  Andy Shevchenko <andy@infradead.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Polling DISABLED devices is not desired, as all such "disabled" devices
-are meant to be handled by userspace. This patch introduces and uses
-should_stop_polling() to decide whether the device should be polled or not.
+Hi Barlomiej,
 
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
----
- drivers/thermal/thermal_core.c | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
+>> Thanks for feedback.
+>>
+>> Anyone else?
+> 
+> Yes. :)
+> 
+> Please take a look at the following patchset (which I'm reviving currently):
+> 
+> 	https://lkml.org/lkml/2018/10/17/926
+> 
+> It overlaps partially with your work so we need to coordinate our efforts.
+> 
 
-diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
-index 5ff98fcc0f6a..36abdc9ce1bb 100644
---- a/drivers/thermal/thermal_core.c
-+++ b/drivers/thermal/thermal_core.c
-@@ -305,13 +305,22 @@ static void thermal_zone_device_set_polling(struct thermal_zone_device *tz,
- 		cancel_delayed_work(&tz->poll_queue);
- }
- 
-+static inline bool should_stop_polling(struct thermal_zone_device *tz)
-+{
-+	return thermal_zone_device_get_mode(tz) == THERMAL_DEVICE_DISABLED;
-+}
-+
- static void monitor_thermal_zone(struct thermal_zone_device *tz)
- {
-+	bool stop;
-+
-+	stop = should_stop_polling(tz);
-+
- 	mutex_lock(&tz->lock);
- 
--	if (tz->passive)
-+	if (!stop && tz->passive)
- 		thermal_zone_device_set_polling(tz, tz->passive_delay);
--	else if (tz->polling_delay)
-+	else if (!stop && tz->polling_delay)
- 		thermal_zone_device_set_polling(tz, tz->polling_delay);
- 	else
- 		thermal_zone_device_set_polling(tz, 0);
-@@ -505,6 +514,9 @@ void thermal_zone_device_update(struct thermal_zone_device *tz,
- {
- 	int count;
- 
-+	if (should_stop_polling(tz))
-+		return;
-+
- 	if (atomic_read(&in_suspend))
- 		return;
- 
--- 
-2.17.1
+I've just sent a v3. After addressing your and Daniel's comments my series
+now looks pretty compact. Let's see if there's more feedback. Is your work on
+reviving the above mentioned 2018 series ready?
 
+Andrzej
 
 _______________________________________________
 linux-arm-kernel mailing list
