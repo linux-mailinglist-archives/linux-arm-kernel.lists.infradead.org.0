@@ -2,40 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 128D61AE2A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:55:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99D821AE2AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 18:56:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p3zXpM6WDL7rZx5m0Nrlm+NPJE2coyCRoLHlWcWhbV0=; b=ZcijwXQOAxPzBH
-	EzqDgZ0UoiT+NGSy2zTeWujguGrMlxFc0zhWv+VAfN4tuajhZ6nmDW6eZR71iWNOTVwKrrT+CnX9u
-	lpS0rhUhF4hfI9EI8cKpnfbVpLz+LgceZWZfd2E1U51LJ/X+0FC0P4spqC+dpkfn/qKg0ei9i55mN
-	sEF75O41VLtvMdzyC9g3Miwby8K7HZ5bi2dEeOqjg0AYGBP3zWIWAje9lj7eV3ZZw/ubWfW+ehFFr
-	MYS2bDk5AOFVcJE9iphNgzZKrfDEqaIc9rCaDDK5a9x2b4rWtsgdaX39iizViGkxPiW1CuzM2rII1
-	pTCEcJyeXL6EnxaplwEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I1sP9xkvtn/8zS8FjRHINPseXAFjxKswh0iEcbbvKm0=; b=l9tZTEZYzZEo+T
+	JWK4lWoeYlyzENbQfzpWfCyFt7VujfTXz+eSt5CJg9Di2y42JLobCZGQvSvW6RHIAMh5Ao/r9CXZx
+	J5GAiHqsKSpvV75wYFaSkeAEocnffElgFQD7zw5XekAvnXKvJCeqgecYq4QKIVYVu6NOupyZTPdb9
+	BnB16pTR3EwFS3PztO5PBRCoJvyUAb1fvu9tH4QFRrCY1y9ut3UrwzoH7hig37q7LwakA7DtNJAPz
+	56epKCgHu3hgyTa81OrunUnxf6L1leIkcKi/eCjsRN6frKIo3IEkZBtz1FHTN3C1xeudh8OAt6qwm
+	tvRF/hJ1+1jEX6aDXvhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPUHK-00045I-FM; Fri, 17 Apr 2020 16:55:46 +0000
+	id 1jPUHj-0004Fu-3a; Fri, 17 Apr 2020 16:56:11 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPUH9-000446-7d
+ id 1jPUH9-00044K-7e
  for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 16:55:36 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 3D9B48047;
- Fri, 17 Apr 2020 16:56:17 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 2FF5A8160;
+ Fri, 17 Apr 2020 16:56:20 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 00/14] Update omaps to use drivers/clocksource timers
-Date: Fri, 17 Apr 2020 09:55:05 -0700
-Message-Id: <20200417165519.4979-1-tony@atomide.com>
+Subject: [PATCH 01/14] clocksource/drivers/timer-ti-32k: Add support for
+ initializing directly
+Date: Fri, 17 Apr 2020 09:55:06 -0700
+Message-Id: <20200417165519.4979-2-tony@atomide.com>
 X-Mailer: git-send-email 2.26.1
+In-Reply-To: <20200417165519.4979-1-tony@atomide.com>
+References: <20200417165519.4979-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_095535_320058_56B603AF 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20200417_095535_317875_4F88BB1A 
+X-CRM114-Status: GOOD (  14.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,11 +60,12 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
- Lokesh Vutla <lokeshvutla@ti.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
  Tero Kristo <t-kristo@ti.com>, Stephen Boyd <sboyd@kernel.org>,
- Andreas Kemnade <andreas@kemnade.info>, Keerthy <j-keerthy@ti.com>,
+ Andreas Kemnade <andreas@kemnade.info>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
  Thomas Gleixner <tglx@linutronix.de>, Adam Ford <aford173@gmail.com>,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -69,87 +73,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Let's allow probing the 32k counter directly based on devicetree data to
+prepare for dropping the related legacy platform code. Let's only do this
+if the parent node is compatible with ti-sysc to make sure we have the
+related devicetree data available.
 
-Here's a series of changes to udpate omaps to use drivers/clocksource
-timers for the 32k counter and dmtimer and to remove the old legacy
-platform code. Please review and test.
+Let's also show the 32k counter information before registering the
+clocksource, now we see it after the clocksource information which is a
+bit confusing.
 
-Daniel, if the the first two patches look OK after review, maybe you
-can again set up an immutable branch for the first two patches against
-v5.7-rc1 that I can merge in?
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-omap@vger.kernel.org
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+Cc: Keerthy <j-keerthy@ti.com>
+Cc: Lokesh Vutla <lokeshvutla@ti.com>
+Cc: Tero Kristo <t-kristo@ti.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/clocksource/timer-ti-32k.c | 48 +++++++++++++++++++++++++++++-
+ 1 file changed, 47 insertions(+), 1 deletion(-)
 
-Regards,
-
-Tony
-
-
-Tony Lindgren (14):
-  clocksource/drivers/timer-ti-32k: Add support for initializing
-    directly
-  clocksource/drivers/timer-ti-dm: Add clockevent and clocksource
-    support
-  clk: ti: dm816: enable sysclk6_ck on init
-  bus: ti-sysc: Ignore timer12 on secure omap3
-  ARM: OMAP2+: Add omap_init_time_of()
-  ARM: dts: Configure system timers for am335x
-  ARM: dts: Configure system timers for am437x
-  ARM: dts: Configure system timers for omap4
-  ARM: dts: Configure system timers for omap5 and dra7
-  ARM: dts: Configure system timers for omap3
-  ARM: dts: Configure system timers for ti81xx
-  ARM: dts: Configure system timers for omap2
-  ARM: OMAP2+: Drop old timer code for dmtimer and 32k counter
-  bus: ti-sysc: Timers no longer need legacy quirk handling
-
- .../devicetree/bindings/timer/ti,timer.txt    |   2 +
- arch/arm/boot/dts/am33xx-l4.dtsi              |   2 -
- arch/arm/boot/dts/am33xx.dtsi                 |  12 +
- arch/arm/boot/dts/am3517.dtsi                 |  16 +-
- arch/arm/boot/dts/am4372.dtsi                 |  12 +
- arch/arm/boot/dts/am437x-l4.dtsi              |   3 -
- arch/arm/boot/dts/dm814x.dtsi                 |  66 +-
- arch/arm/boot/dts/dm816x.dtsi                 |  70 ++-
- arch/arm/boot/dts/dra7-l4.dtsi                |   5 -
- arch/arm/boot/dts/dra7.dtsi                   |   6 +
- arch/arm/boot/dts/omap2.dtsi                  |  38 +-
- arch/arm/boot/dts/omap2420.dtsi               |  65 +-
- arch/arm/boot/dts/omap2430.dtsi               |  65 +-
- arch/arm/boot/dts/omap3-beagle.dts            |  16 +
- arch/arm/boot/dts/omap3-devkit8000.dts        |  16 +
- arch/arm/boot/dts/omap3.dtsi                  | 130 +++-
- arch/arm/boot/dts/omap4-l4.dtsi               |   2 -
- arch/arm/boot/dts/omap4.dtsi                  |   6 +
- arch/arm/boot/dts/omap5-l4.dtsi               |   2 -
- arch/arm/boot/dts/omap5.dtsi                  |   6 +
- arch/arm/mach-omap2/Makefile                  |   4 +-
- arch/arm/mach-omap2/board-generic.c           |  32 +-
- arch/arm/mach-omap2/common.h                  |   7 +
- arch/arm/mach-omap2/omap_hwmod_2420_data.c    |  20 -
- arch/arm/mach-omap2/omap_hwmod_2430_data.c    |  19 -
- .../omap_hwmod_2xxx_interconnect_data.c       |   8 -
- .../mach-omap2/omap_hwmod_2xxx_ipblock_data.c |  47 --
- .../omap_hwmod_33xx_43xx_common_data.h        |   2 -
- .../omap_hwmod_33xx_43xx_interconnect_data.c  |   8 -
- .../omap_hwmod_33xx_43xx_ipblock_data.c       |  62 --
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c    |  10 -
- arch/arm/mach-omap2/omap_hwmod_3xxx_data.c    | 146 +----
- arch/arm/mach-omap2/omap_hwmod_43xx_data.c    |  45 --
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c    |  90 ---
- arch/arm/mach-omap2/omap_hwmod_54xx_data.c    |  89 ---
- arch/arm/mach-omap2/omap_hwmod_7xx_data.c     | 176 ------
- arch/arm/mach-omap2/omap_hwmod_81xx_data.c    |  74 ---
- arch/arm/mach-omap2/omap_hwmod_common_data.h  |   3 -
- arch/arm/mach-omap2/timer.c                   | 568 +-----------------
- drivers/bus/ti-sysc.c                         |  25 +-
- drivers/clk/ti/clk-816x.c                     |   1 +
- drivers/clocksource/Makefile                  |   1 +
- drivers/clocksource/timer-ti-32k.c            |  48 +-
- drivers/clocksource/timer-ti-dm-systimer.c    | 468 +++++++++++++++
- include/clocksource/timer-ti-dm.h             |   1 +
- 45 files changed, 1016 insertions(+), 1478 deletions(-)
- create mode 100644 drivers/clocksource/timer-ti-dm-systimer.c
-
+diff --git a/drivers/clocksource/timer-ti-32k.c b/drivers/clocksource/timer-ti-32k.c
+--- a/drivers/clocksource/timer-ti-32k.c
++++ b/drivers/clocksource/timer-ti-32k.c
+@@ -24,6 +24,7 @@
+  * Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com
+  */
+ 
++#include <linux/clk.h>
+ #include <linux/init.h>
+ #include <linux/time.h>
+ #include <linux/sched_clock.h>
+@@ -76,6 +77,49 @@ static u64 notrace omap_32k_read_sched_clock(void)
+ 	return ti_32k_read_cycles(&ti_32k_timer.cs);
+ }
+ 
++static void __init ti_32k_timer_enable_clock(struct device_node *np,
++					     const char *name)
++{
++	struct clk *clock;
++	int error;
++
++	clock = of_clk_get_by_name(np->parent, name);
++	if (IS_ERR(clock)) {
++		/* Only some SoCs have a separate interface clock */
++		if (PTR_ERR(clock) == -EINVAL && !strncmp("ick", name, 3))
++			return;
++
++		pr_warn("%s: could not get clock %s %li\n",
++			__func__, name, PTR_ERR(clock));
++		return;
++	}
++
++	error = clk_prepare_enable(clock);
++	if (error) {
++		pr_warn("%s: could not enable %s: %i\n",
++			__func__, name, error);
++		return;
++	}
++}
++
++static void __init ti_32k_timer_module_init(struct device_node *np,
++					    void __iomem *base)
++{
++	void __iomem *sysc = base + 4;
++
++	if (!of_device_is_compatible(np->parent, "ti,sysc"))
++		return;
++
++	ti_32k_timer_enable_clock(np, "fck");
++	ti_32k_timer_enable_clock(np, "ick");
++
++	/*
++	 * Force idle module as wkup domain is active with MPU.
++	 * No need to tag the module disabled for ti-sysc probe.
++	 */
++	writel_relaxed(0, sysc);
++}
++
+ static int __init ti_32k_timer_init(struct device_node *np)
+ {
+ 	int ret;
+@@ -90,6 +134,7 @@ static int __init ti_32k_timer_init(struct device_node *np)
+ 		ti_32k_timer.cs.flags |= CLOCK_SOURCE_SUSPEND_NONSTOP;
+ 
+ 	ti_32k_timer.counter = ti_32k_timer.base;
++	ti_32k_timer_module_init(np, ti_32k_timer.base);
+ 
+ 	/*
+ 	 * 32k sync Counter IP register offsets vary between the highlander
+@@ -104,6 +149,8 @@ static int __init ti_32k_timer_init(struct device_node *np)
+ 	else
+ 		ti_32k_timer.counter += OMAP2_32KSYNCNT_CR_OFF_LOW;
+ 
++	pr_info("OMAP clocksource: 32k_counter at 32768 Hz\n");
++
+ 	ret = clocksource_register_hz(&ti_32k_timer.cs, 32768);
+ 	if (ret) {
+ 		pr_err("32k_counter: can't register clocksource\n");
+@@ -111,7 +158,6 @@ static int __init ti_32k_timer_init(struct device_node *np)
+ 	}
+ 
+ 	sched_clock_register(omap_32k_read_sched_clock, 32, 32768);
+-	pr_info("OMAP clocksource: 32k_counter at 32768 Hz\n");
+ 
+ 	return 0;
+ }
 -- 
 2.26.1
 
