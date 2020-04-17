@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C744F1AD9F0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 11:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0F6F1AD9F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 11:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NSaopiI8oPRKZ3fdq/cuik4nu6SskLDTNWB+JR9V31Q=; b=cLAaRrrL5qpVLg
-	di+3TKcrPEnSaJ1qqIlu8pV1v0jp8piTFRQ6d7icIl/lBzmeN78uR1kmRP5rF8xN8OVv7VSCIWIgl
-	HsGiqIU/EWwDb6rCjr8numrUJTrQiL5T2iR/t3brdZVvJNkon5y9NzoHUyue3eyNwKXQ2rUBKUhxZ
-	uSIe/EuOm7923DLe5GeY2wYVDiCDWTsNtE1th/c4+doOAoKOckHfbV41/LNe8szoSsrxfQWIJr9Id
-	ZuIRwaA5iawSJro7qPTP+yDv/e0lDc4QPia6OTEgLvMFXpEBCo7KmaKNtJTVWKOHoW799z+4usjFJ
-	ckJVsrz/N6BZqYEj7Dgg==;
+	List-Owner; bh=oXmQehkAsPGJLb3XwKbg8znZaci8ePAxn4OyDLg9kks=; b=JDVrNoLKyJV6bD
+	6Hq5KeotYk34IwRHXrQsHzbaKa0/+mIniC4K6d7zbDyco/ZwIe0V5sTWqeXPhlj+GIga+U4XBHezS
+	aYnBMyYrWViuTQLAHcCbtI48pTwZIP0PfWFkvK5GRyA2Z2Zpnj1MYxBSn1tYUUCtAVnduZ2uIkkj9
+	URX8mLVQAvZ9os+TWG8ES/kwwT7agibJvoXn8bsxdFTdMMMl/uc7c5Y2Nq437cz5EY0iO/YaY8wxS
+	bnW+QGEL+c91E+izJUGGGw/KkDighUXbrsJc/5Nlj+oV3KcfGHVD1y7r6vmYqZzs2H5eiJO2S1F5d
+	kXf/JDmIJozkGLIUSgvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPNLX-0000j7-Vi; Fri, 17 Apr 2020 09:31:39 +0000
-Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
+	id 1jPNLo-0000vE-2N; Fri, 17 Apr 2020 09:31:56 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPNLK-0000hH-PY
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 09:31:28 +0000
-Received: by mail-vk1-xa44.google.com with SMTP id u203so116785vkb.11
+ id 1jPNLP-0000j2-F4
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 09:31:33 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id y185so755215vsy.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 02:31:26 -0700 (PDT)
+ Fri, 17 Apr 2020 02:31:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wiAjeMfcURelxBHuZUMdahz3hslfuep2aSIiGdvB4+U=;
- b=MjESJIAGjhwM+OrbAF9iPGpZJ/vkK1eikxiMgw0yxaSOcuysZ9JVFY/FVkUul49Yb+
- ovf+VnarnjcO59QYSQd3TdLtK3EwPQLBRvbZrzEppGkSwL/E2vjW0Zi5wxDFNTnhFhjq
- Dw0Z7KvjigjoPpQ1Oi+ppIM/XAF+Q9U7X850eljiesC/vYF/04hRrI3MXW2XIiCKwnPW
- 2OFZTk0iC/A+Ph+H6IANq/DNHJPd6d9W0yvIPsQ+f6mrvDJ3sqydF5DKb/Tuc50PdYso
- ZYFrcO4wneJmMqPZGqcZ64OwN1shzuLS7/LRqsHjnYoec4cZEAuRv8fEmOvMRhRwCyhd
- Atjw==
+ :cc; bh=p64gz4wBBzrCn9693S5Yg9rZbwKOwkix1v4fg68Kaak=;
+ b=By0UkC0UOpKSJshUVUxtFt+AsHtAS3exQ/0f8C0eZVdh7ZlgbbEO/V4/W6S2CLvsEQ
+ la185+DwqLva/ga3ddjQJsHoOckWFGSG/bOGp4zRs8MW9lL1WDRMAoIIAPXCqAOLSeEL
+ F2zkDGqaH4/qUcByFpf7pU7/zVEfcs1IyMNpp8VCxDQqTMzYeTdlbiAaaG/RsazOJGmg
+ s6v79X0qRbhRxMcibMTRHPqhIzkzJW25rgkNY64JpOyVu2eiuCj83apSm9arX5dkAGFI
+ 2kax/j+06Gb0y6o6BDMxUD2cbc/bXyuJqpu00MNatNuaDblJnHKjhPxUrsR/+cV5PDm8
+ VGug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=wiAjeMfcURelxBHuZUMdahz3hslfuep2aSIiGdvB4+U=;
- b=rH8aTdNY2sVcqBwyCl42DWrFJdLWaNs2EJMKg/MaN/07lXUsS8VkAXhjAnfVHnMzaK
- JXb0OtkXpJ/gJt8XiJ8rcR9KR3zi6KeHSaZT9IOFHlQ3CpskDuu0c0JUPJTTDHhi5qO6
- V2/EBDZ5Jyh3WS9i1/h65AzaZuOAngKNp5MRY3jSG6kXzZjo3Mm9Kjb0LXQScWFjoacs
- 5Zp1msU1UspBP0UkS3nB8fONFHbXg9eqz7sG4QZUorSxkFONBbdtD7gff/i/3D+0+KuI
- ISh6LGbwlQHUoyyzkpYWI/2InnX4KxYz/6v6FbY4M37wIUJZ+/OdFUI2+k2ufiMEjfcn
- fzYQ==
-X-Gm-Message-State: AGi0PuYdbirClhKwASgT3STcU0ICeWrmU9apuXAdK6nsk/UsFh60om5J
- UgXQKDeKeHOHWYUJ4CBrkmySnmgtkEyr87sdWjJpwQ==
-X-Google-Smtp-Source: APiQypIhgrTQ9F4wV2XftulBfc+nuqItiJK/bLZiDLrTiNf3ydl2NH2qIiRMIU9GYujl8QU/p2GD5YgyX4Hb2jNJNZg=
-X-Received: by 2002:a1f:5003:: with SMTP id e3mr1648075vkb.59.1587115883938;
- Fri, 17 Apr 2020 02:31:23 -0700 (PDT)
+ bh=p64gz4wBBzrCn9693S5Yg9rZbwKOwkix1v4fg68Kaak=;
+ b=lnEfz3WpCbbpXhzyh2OR/GjqxwvvpR4zEXuXV6guV1VKEVICMHxKDnwzPrsUDLbiMI
+ 4w0gsCpHROrEMDiLknB9OUb9gE/5FbQVqgS8SCHGLzX79X8G0DFQaPjjoIqfVMveuUK7
+ U5Iz2Y8zV3uZ/sBECUCIu1GzGRMoFFm+ZGSuvhOd7DIc7s1y4e7sbUTscRoh3Y/jyI7l
+ ILKkKAH8qBN/7JY3H+dkYcGX2Y5vbNtOlcf1Om4Gq4aPtAfRnc8ZQkzOwzohXuuXy7Y5
+ c6f6VqB6gfvqDXgA0hyPsRhTDBRH4GIf6LRqLedJ7V2JzumSAWtHtZMl/sslfUmLV00x
+ en8w==
+X-Gm-Message-State: AGi0PuYipgiPnppdSY8EZOV1oS/rFkDWB3c3Ln/f5gyj9clx3spH5HP5
+ 666vuYOEN8T8F4BAz6hH1qkXcztk8ior3W954dLCNQ==
+X-Google-Smtp-Source: APiQypKTNkTpvRdq+a9PAoyBZV9h6xbL3cicvsKIs4XdjEhAkHKBJJUZuuhk8/gcK1ihy/h/WXevsS5Uvr1S19jnvHg=
+X-Received: by 2002:a05:6102:72d:: with SMTP id
+ u13mr1392649vsg.35.1587115890241; 
+ Fri, 17 Apr 2020 02:31:30 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200416183513.993763-1-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20200416183513.993763-1-martin.blumenstingl@googlemail.com>
+References: <20200416182402.16858-1-natechancellor@gmail.com>
+In-Reply-To: <20200416182402.16858-1-natechancellor@gmail.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 17 Apr 2020 11:30:48 +0200
-Message-ID: <CAPDyKFrKs-NAYH7aCbEUCBw9wkwQEg-HmDun_cVw+L-EPSyZ_g@mail.gmail.com>
-Subject: Re: [PATCH v2 0/2] meson-mx-sdhc card busy detection fixes
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Fri, 17 Apr 2020 11:30:54 +0200
+Message-ID: <CAPDyKFr4VX-3Z=iboMbDmhJvwh+GL5wg_50aPw+_j5jMLBWctg@mail.gmail.com>
+Subject: Re: [PATCH] mmc: sdhci-of-arasan: Remove uninitialized ret variables
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_023126_823840_5CF4F30F 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20200417_023131_544751_13884F21 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,54 +91,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+Cc: "kernelci . org bot" <bot@kernelci.org>,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, clang-built-linux@googlegroups.com,
+ Manish Narani <manish.narani@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 16 Apr 2020 at 20:37, Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
+On Thu, 16 Apr 2020 at 20:24, Nathan Chancellor
+<natechancellor@gmail.com> wrote:
 >
-> The following errors were observed with Linux 5.7-rc1 and an SD card
-> hooked up to the meson-mx-sdio controller:
->   mmc1: Card stuck being busy! __mmc_poll_for_busy
->   blk_update_request: I/O error, dev mmcblk1, sector 17111080 op
->    0x3:(DISCARD) flags 0x0 phys_seg 1 prio class 0
+> Clang warns:
 >
+> drivers/mmc/host/sdhci-of-arasan.c:784:9: warning: variable 'ret' is
+> uninitialized when used here [-Wuninitialized]
+>         return ret;
+>                ^~~
+> drivers/mmc/host/sdhci-of-arasan.c:738:9: note: initialize the variable
+> 'ret' to silence this warning
+>         int ret;
+>                ^
+>                 = 0
+> drivers/mmc/host/sdhci-of-arasan.c:860:9: warning: variable 'ret' is
+> uninitialized when used here [-Wuninitialized]
+>         return ret;
+>                ^~~
+> drivers/mmc/host/sdhci-of-arasan.c:810:9: note: initialize the variable
+> 'ret' to silence this warning
+>         int ret;
+>                ^
+>                 = 0
+> 2 warnings generated.
 >
-> At least patch #1 should go to a -fixes branch so it can make it
-> into v5.7.
+> This looks like a copy paste error. Neither function has handling that
+> needs ret so just remove it and return 0 directly.
+>
+> Fixes: f73e66a36772 ("sdhci: arasan: Add support for Versal Tap Delays")
+> Link: https://github.com/ClangBuiltLinux/linux/issues/996
+> Reported-by: kernelci.org bot <bot@kernelci.org>
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
 
-Applied for both patches for fixes, and adding stable tags, thanks!
+Applied for next, thanks!
 
 Kind regards
 Uffe
 
 
+> ---
+>  drivers/mmc/host/sdhci-of-arasan.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
 >
+> diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
+> index 16e26c217a77..18bf0e76b1eb 100644
+> --- a/drivers/mmc/host/sdhci-of-arasan.c
+> +++ b/drivers/mmc/host/sdhci-of-arasan.c
+> @@ -735,7 +735,6 @@ static int sdhci_versal_sdcardclk_set_phase(struct clk_hw *hw, int degrees)
+>                 container_of(clk_data, struct sdhci_arasan_data, clk_data);
+>         struct sdhci_host *host = sdhci_arasan->host;
+>         u8 tap_delay, tap_max = 0;
+> -       int ret;
 >
-> Changes since v1 at [0]:
-> - added correct Fixes tag for patch #1
-> - added a patch which drops the ->card_busy() implementation from
->   the meson-mx-sdio driver because this is not working
-> - special thanks to Ulf for taking the time to provide debug
->   patches, explaining things and answering my questions!
+>         /*
+>          * This is applicable for SDHCI_SPEC_300 and above
+> @@ -781,7 +780,7 @@ static int sdhci_versal_sdcardclk_set_phase(struct clk_hw *hw, int degrees)
+>                 sdhci_writel(host, regval, SDHCI_ARASAN_OTAPDLY_REGISTER);
+>         }
 >
+> -       return ret;
+> +       return 0;
+>  }
 >
-> [0] https://patchwork.kernel.org/patch/11483621/
+>  static const struct clk_ops versal_sdcardclk_ops = {
+> @@ -807,7 +806,6 @@ static int sdhci_versal_sampleclk_set_phase(struct clk_hw *hw, int degrees)
+>                 container_of(clk_data, struct sdhci_arasan_data, clk_data);
+>         struct sdhci_host *host = sdhci_arasan->host;
+>         u8 tap_delay, tap_max = 0;
+> -       int ret;
 >
+>         /*
+>          * This is applicable for SDHCI_SPEC_300 and above
+> @@ -857,7 +855,7 @@ static int sdhci_versal_sampleclk_set_phase(struct clk_hw *hw, int degrees)
+>                 sdhci_writel(host, regval, SDHCI_ARASAN_ITAPDLY_REGISTER);
+>         }
 >
-> Martin Blumenstingl (2):
->   mmc: meson-mx-sdio: Set MMC_CAP_WAIT_WHILE_BUSY
->   mmc: meson-mx-sdio: remove the broken ->card_busy() op
+> -       return ret;
+> +       return 0;
+>  }
 >
->  drivers/mmc/host/meson-mx-sdio.c | 11 +----------
->  1 file changed, 1 insertion(+), 10 deletions(-)
+>  static const struct clk_ops versal_sampleclk_ops = {
 >
+> base-commit: a3ca59b9af21e68069555ffff1ad89bd2a7c40fc
 > --
 > 2.26.1
 >
