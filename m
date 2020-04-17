@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 222511AE3A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:18:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 666F51AE3C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 19:28:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YRTeajD9cHL4XC4Kjw4Tj8NCo5TqStLKX5aE4qLPdMU=; b=Pp2kiWURY6JjTmhoEzmIItQIy
-	e6iDZD4s/HJFCAPnvvwthr08kY5nr9lhJ7+QhhYuK437AMdTrM07frnwm9NnCD/4RYPphW9FyhhW5
-	T/5/D9PIcdd21YI3Z2a6AwDfoxR2Op2Gtb4j8iJ6kWwAsHSzWBLMsPADvTZrJBEh4nDUKiPt29zdm
-	kCtj/WeClMILAIh0+CrGOyUtJpvbE3WTQ1Y6UDhPF7cfGJRJYwd147D8arANK3PAne7NzHwAu5ipo
-	Lj+7uxydO+tZj3mdDB/ajCKWeeK/joAQS/EonPKNDJXKZ1QVq0kYm9lfwTrPyz5RD9ZOd8ZbCFKZe
-	Qg3L1fxJg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x5UqKYq/NVlqOeP2NiA2QJBQ7jIId+5mO6RJ1gmZ2B8=; b=AzhYX6Rubaf0dd
+	K1+k4ucE/eOwg//X/iENEhj9XLgf8MzgkCJF65eAkhBQHUfGgkoQVU5SyboyxzfITumRK/nB9xkVx
+	mWcSaebfXI+Hr9jUlVvp/nRKKB4Dus48sJmVkZxucOm27OnbL7qF/JZCp6lsB5JVeymI+aMpgV8eG
+	k1yHpkoTXiO2ntT4yq0PzO1bCSHk4GJu0+uwris97k3LjxidNOvWkHJsTOTMa1X7P70c6cLSJ/Q8l
+	fZX+N6dWTyLnvg6wPdTfdtTCVpvTOhPDT8zXTE+DiPPcgdyzmMxjAAgIo7VU5KJmaytmn3u2WZrG8
+	wS1pVWQ9WYHknlOtdmpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPUd5-0006IH-91; Fri, 17 Apr 2020 17:18:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPUcu-0006Hi-TH
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:18:06 +0000
-Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CF28E2078E;
- Fri, 17 Apr 2020 17:18:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587143884;
- bh=VCLkhpZJoywZlpzhEBTJApIPKcECQYX7x276NlVZDFA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FsGs/zvgF2wpjZPqw2JjueIJwPsTS669phOeZa3g2G7oUW7m24hEsCUKZIqpQW7p1
- HMDAgXmY5CqbA6VqKhXAMZvErC87iS5sQxO+iJxou6sn7f6iPx0lDTd5XUiWVgrxQM
- PYkGWJmT0LtYJyUrPzMv/Cz1YFzNKrc1fWE4G1Jk=
-Date: Fri, 17 Apr 2020 13:18:02 -0400
-From: Sasha Levin <sashal@kernel.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH AUTOSEL 5.4 095/108] ARM: shmobile: Enable
- ARM_GLOBAL_TIMER on Cortex-A9 MPCore SoCs
-Message-ID: <20200417171802.GV1068@sasha-vm>
-References: <20200411230943.24951-1-sashal@kernel.org>
- <20200411230943.24951-95-sashal@kernel.org>
- <CAMuHMdVrp25m_SDKSC=ntNWxsumcw4JKvHNDeFZT_JnpfQmCxg@mail.gmail.com>
+	id 1jPUmY-0004JN-JJ; Fri, 17 Apr 2020 17:28:02 +0000
+Received: from forward103p.mail.yandex.net ([2a02:6b8:0:1472:2741:0:8b7:106])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jPUmI-0004Hz-2H
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 17:27:49 +0000
+Received: from mxback24g.mail.yandex.net (mxback24g.mail.yandex.net
+ [IPv6:2a02:6b8:0:1472:2741:0:8b7:324])
+ by forward103p.mail.yandex.net (Yandex) with ESMTP id AC7B318C1A51;
+ Fri, 17 Apr 2020 20:27:37 +0300 (MSK)
+Received: from myt5-95c1fb78270f.qloud-c.yandex.net
+ (myt5-95c1fb78270f.qloud-c.yandex.net [2a02:6b8:c12:1725:0:640:95c1:fb78])
+ by mxback24g.mail.yandex.net (mxback/Yandex) with ESMTP id EKcukuagzZ-Ra70qsfR;
+ Fri, 17 Apr 2020 20:27:37 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maquefel.me; s=mail;
+ t=1587144457; bh=bEQYQySpw3bm91XQ79ljUoQm7kSTivm9dk+9MeI0Tm0=;
+ h=In-Reply-To:Subject:Cc:To:From:References:Date:Message-ID;
+ b=pE4GLC7eZoOPzErAOndCGb+cA+eIPvlmHojLUkyEn7cDItw8m/LvyD7KhE6Ryo3DU
+ n6hXKla0b9kxUBt9Mc2F53kmjz2kZRFspjbIvsIlxoHMan7s9eFPj46tGzjgGQk8He
+ 7JBLYZRk2bgUBxIxRVN/8csSvl0UDgISBnIUU55U=
+Authentication-Results: mxback24g.mail.yandex.net;
+ dkim=pass header.i=@maquefel.me
+Received: by myt5-95c1fb78270f.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
+ id g0wCxkGACe-RZ2iFG8N; Fri, 17 Apr 2020 20:27:35 +0300
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (Client certificate not present)
+Date: Fri, 17 Apr 2020 20:26:53 +0300
+From: Nikita Shubin <nikita.shubin@maquefel.me>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v2 1/3] remoteproc: imx_rproc: set pc on start
+Message-ID: <20200417202653.00002500@maquefel.me>
+In-Reply-To: <CANLsYkxvuwFdG3YnE7tTxQaD7uF0d_XnPjt1KS++FFe0W3fbdw@mail.gmail.com>
+References: <20200304142628.8471-1-NShubin@topcon.com>
+ <20200406113310.3041-1-nikita.shubin@maquefel.me>
+ <20200406113310.3041-2-nikita.shubin@maquefel.me>
+ <20200414164519.GA24061@xps15> <45761587100993@mail.yandex.ru>
+ <CANLsYkxvuwFdG3YnE7tTxQaD7uF0d_XnPjt1KS++FFe0W3fbdw@mail.gmail.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdVrp25m_SDKSC=ntNWxsumcw4JKvHNDeFZT_JnpfQmCxg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_101804_959540_D59B0E32 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200417_102746_465516_B1429FE2 
+X-CRM114-Status: GOOD (  30.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a02:6b8:0:1472:2741:0:8b7:106 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -67,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,51 +87,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- stable <stable@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
+ Nikita Shubin <nshubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 12, 2020 at 10:44:01AM +0200, Geert Uytterhoeven wrote:
->Hi Sasha,
->
->On Sun, Apr 12, 2020 at 1:11 AM Sasha Levin <sashal@kernel.org> wrote:
->> From: Geert Uytterhoeven <geert+renesas@glider.be>
->>
->> [ Upstream commit 408324a3c5383716939eea8096a0f999a0665f7e ]
->>
->> SH-Mobile AG5 and R-Car H1 SoCs are based on the Cortex-A9 MPCore, which
->> includes a global timer.
->>
->> Enable the ARM global timer on these SoCs, which will be used for:
->>   - the scheduler clock, improving scheduler accuracy from 10 ms to 3 or
->>     4 ns,
->>   - delay loops, allowing removal of calls to shmobile_init_delay() from
->>     the corresponding machine vectors.
->>
->> Note that when using an old DTB lacking the global timer, the kernel
->> will still work.  However, loops-per-jiffies will no longer be preset,
->> and the delay loop will need to be calibrated during boot.
->
->I.e. to avoid this delay, this patch is best backported after backporting
->8443ffd1bbd5be74 ("ARM: dts: r8a7779: Add device node for ARM global timer"),
->df1a0aac0a533e6f ("ARM: dts: sh73a0: Add device node for ARM global timer").
->
->While the former has been backported to v5.[45]-stable, the latter hasn't,
->probably because it depends on
->61b58e3f6e518c51 ("ARM: dts: sh73a0: Rename twd clock to periph clock")
->
->So please backport the last two commits first.
+On Fri, 17 Apr 2020 11:01:22 -0600
+Mathieu Poirier <mathieu.poirier@linaro.org> wrote:
 
-Done, thanks!
+> On Thu, 16 Apr 2020 at 23:40, <nikita.shubin@maquefel.me> wrote:
+> >
+> > Hi Mathieue,
+> >
+> > Hi Nikita,
+> >
+> > On Mon, Apr 06, 2020 at 02:33:08PM +0300, nikita.shubin@maquefel.me
+> > wrote:
+> >
+> >  In case elf file interrupt vector is not supposed to be at OCRAM_S,
+> >  it is needed to write elf entry point to OCRAM_S + 0x4, to boot M4
+> >  firmware.
+> >
+> >  Otherwise firmware located anywhere besides OCRAM_S won't boot.
+> >
+> >  The firmware must set stack poiner as first instruction:
+> >
+> >  Reset_Handler:
+> >      ldr sp, = __stack /* set stack pointer */
+> >
+> >  Signed-off-by: Nikita Shubin <NShubin@topcon.com>
+> >
+> >
+> > The address in the SoB has to match what is found in the "From:"
+> > field of the email header. Checkpatch is complaining about that,
+> > something I would have expected to be fixed before sending this set
+> > out.
+> >
+> > Noted and will be fixed.
+> >
+> >  ---
+> >   drivers/remoteproc/imx_rproc.c | 16 +++++++++++++++-
+> >   1 file changed, 15 insertions(+), 1 deletion(-)
+> >
+> >  diff --git a/drivers/remoteproc/imx_rproc.c
+> > b/drivers/remoteproc/imx_rproc.c index 3e72b6f38d4b..bebc58d0f711
+> > 100644 --- a/drivers/remoteproc/imx_rproc.c
+> >  +++ b/drivers/remoteproc/imx_rproc.c
+> >  @@ -45,6 +45,8 @@
+> >
+> >   #define IMX7D_RPROC_MEM_MAX 8
+> >
+> >  +#define IMX_BOOT_PC 0x4
+> >  +
+> >   /**
+> >    * struct imx_rproc_mem - slim internal memory structure
+> >    * @cpu_addr: MPU virtual address of the memory region
+> >  @@ -85,6 +87,7 @@ struct imx_rproc {
+> >           const struct imx_rproc_dcfg *dcfg;
+> >           struct imx_rproc_mem mem[IMX7D_RPROC_MEM_MAX];
+> >           struct clk *clk;
+> >  + void __iomem *bootreg;
+> >   };
+> >
+> >   static const struct imx_rproc_att imx_rproc_att_imx7d[] = {
+> >  @@ -162,11 +165,16 @@ static int imx_rproc_start(struct rproc
+> > *rproc) struct device *dev = priv->dev;
+> >           int ret;
+> >
+> >  + /* write entry point to program counter */
+> >  + writel(rproc->bootaddr, priv->bootreg);
+> >
+> >
+> > What happens on all the other IMX systems where this fix is not
+> > needed? Will they continue to work properly?
+> >
+> > Yes, my bad, it is also needed for IMX6 (but even so i need to
+> > study this topic more carefully), this should be applied
+> > exclusively for imx7d for now, and if will be needed someone with
+> > imx6 hardware to test on can extend this on imx6 also.
+> >
+> >
+> >
+> >
+> >  +
+> >           ret = regmap_update_bits(priv->regmap, dcfg->src_reg,
+> >                                    dcfg->src_mask, dcfg->src_start);
+> >           if (ret)
+> >                   dev_err(dev, "Failed to enable M4!\n");
+> >
+> >  + dev_info(&rproc->dev, "Started from 0x%x\n", rproc->bootaddr);
+> >  +
+> >           return ret;
+> >   }
+> >
+> >  @@ -182,6 +190,9 @@ static int imx_rproc_stop(struct rproc *rproc)
+> >           if (ret)
+> >                   dev_err(dev, "Failed to stop M4!\n");
+> >
+> >  + /* clear entry points */
+> >  + writel(0, priv->bootreg);
+> >  +
+> >           return ret;
+> >   }
+> >
+> >  @@ -243,7 +254,8 @@ static void *imx_rproc_da_to_va(struct rproc
+> > *rproc, u64 da, int len) static const struct rproc_ops
+> > imx_rproc_ops = { .start = imx_rproc_start,
+> >           .stop = imx_rproc_stop,
+> >  - .da_to_va = imx_rproc_da_to_va,
+> >  + .da_to_va = imx_rproc_da_to_va,
+> >  + .get_boot_addr = rproc_elf_get_boot_addr,
+> >
+> >
+> > How is this useful? Sure it will set rproc->bootaddr in
+> > rproc_fw_boot() but what good does that do when it is invariably
+> > set again in imx_rproc_start() ?
+> >
+> > The priv->bootreg is the address where we are writing Entry Point
+> > and it is fixed, 0x04 address is translated to 0x00180004, so don't
+> > quite understand you we are writing rproc->bootaddr into
+> > priv->bootreg, not wiseversa.
+> >
+> 
+> What is your reason to set ops->get_boot_addr ?  How does that help
+> the work done in this patch?
 
--- 
-Thanks,
-Sasha
+The reason is the following :
+
+remoteproc_core.c:
+| rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
+| rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
+
+remoteproc_internal.h
+| static inline
+| u32 rproc_get_boot_addr(struct rproc *rproc, const struct firmware
+*fw) | {
+| 	if (rproc->ops->get_boot_addr)
+| 		return rproc->ops->get_boot_addr(rproc, fw);
+|
+|	return 0;
+| }
+
+> 
+> >
+> >   };
+> >
+> >   static int imx_rproc_addr_init(struct imx_rproc *priv,
+> >  @@ -360,6 +372,8 @@ static int imx_rproc_probe(struct
+> > platform_device *pdev) goto err_put_rproc;
+> >           }
+> >
+> >  + priv->bootreg = imx_rproc_da_to_va(rproc, IMX_BOOT_PC,
+> > sizeof(u32)); +
+> >           /*
+> >            * clk for M4 block including memory. Should be
+> >            * enabled before .start for FW transfer.
+> >  --
+> >  2.25.1
+> >
+
 
 _______________________________________________
 linux-arm-kernel mailing list
