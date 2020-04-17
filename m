@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A67B31ADC14
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:22:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 490901ADC77
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 13:52:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tNcE4MnB/5vAS5mnEqEA1NckjM8OcUKpT1uPRoOaZtA=; b=gYz3hUl63m81BP
-	uEu5uUlGAMdqIeuoqv0EUNUDMzpU5ryY62xgnWCebjGqtOZBGbbgYD8Y3cJrIViK4mAsRFWIF/H+i
-	qgxwnkDD+0E8UXs+kjqTYr/l/hadyigdfwnQiG+iQCvqdM8D3cGerPrRpuF0WxV6CglensUqLccJM
-	q+2FvkKGPXrI2M2QWmqLZPTqXASj78rpwVa5WWaSy8yTuHxqGqoaTGfYE25rK1en84uzifmKVZuFU
-	ROoZDoLgzIVnIhtIuqj1SABxGKtXazxaYiqMCSAm3T4qJ9yScviAzzr1JxzhdATHEpOwzLddZwSVV
-	9VCT5L/+m6bZ9kv34raw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=01ZH5OcCV1/gXUezn5bYiWccFnuLTHfZ1knNevTIhs8=; b=ajuT3FHiAUMVtJ
+	sI265dXTzE0QwmCfdAhAGrs6umpLRQeorvxr8tiiHDnJwVRnwtX/mR9DOY9pKi1mZ/fyae4R7U+tn
+	yjCkqH5iq3BkfJjbNVbCS1XlgCvUVY0RtHo/QxBaX2aYUXfj41dsNXPThxYGA+dDL3JmnvwP+5mux
+	OZoLu64wBDzEXaLZBaUWoF60YGZTHI3DAfaTALxhZWtrr01f0y2qNVnUQshRqabgJIgjbX7J62q22
+	WpszVbuIB3fd0ENLjHazPpREYBTVHYrg7wKRn0ORdOtkR8okx5jjpWM7GD2SHe/xJWzrNBisLASOW
+	OWr2GTJcbxT6nSx2xVQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPP4i-0004j9-N3; Fri, 17 Apr 2020 11:22:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPP4X-0004hx-VR
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 11:22:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A059C14;
- Fri, 17 Apr 2020 04:22:13 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA5BB3F6C4;
- Fri, 17 Apr 2020 04:22:11 -0700 (PDT)
-Subject: Re: [PATCH v2 4/6] KVM: arm: vgic-v2: Only use the virtual state when
- userspace accesses pending bits
-To: Marc Zyngier <maz@kernel.org>
-References: <20200417083319.3066217-1-maz@kernel.org>
- <20200417083319.3066217-5-maz@kernel.org>
-From: James Morse <james.morse@arm.com>
-Message-ID: <4133d5f2-ed0e-9c4a-8a66-953fb6bf6e70@arm.com>
-Date: Fri, 17 Apr 2020 12:22:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jPPXI-0006Ll-SR; Fri, 17 Apr 2020 11:51:56 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPPX5-0006K8-Ho
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 11:51:47 +0000
+Received: by mail-ua1-x944.google.com with SMTP id c17so528236uae.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Apr 2020 04:51:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fOHFM9elPBqZ53StmEbbuJGOBdc8SihR2GSmdzRs9uY=;
+ b=fMBCf9rOwilC1Z6Zixv2jAkeDoBbxoQeuGNlsPNTLbDswvHwzz7iLxOphekUuKVqeF
+ Qn0ggF1zoOm+Or2djEeeJGzuDDFRF7v1IClvr+VYsYw0IMCAkP04EfKMZRjblTi3rOJ7
+ wYWU51MpN6ZElokLiqRmQN7mHlbC890Dl+mpo8TLTrcZzqyDcx4wjqHcSd2SApybyb8Q
+ 7Bewaw/qrHUFuEXg5kdULw5Dfr6ub2RuVOD6TU8NZyzuo02/mjevhpdMd53w6KaIvMFE
+ MOXrJDBF6/Es0NfS4DM1SdeFWa+bj4mz/t//QzlwvAiUPZiGZkQlwsDIpD4Yc5vwJllI
+ CzMg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fOHFM9elPBqZ53StmEbbuJGOBdc8SihR2GSmdzRs9uY=;
+ b=AzbLkbGbVYsyUSV2jviYEfIa7iAWcAQmYXwVTcPLwGEF6/Cv/p/3dkobUP5txNTiey
+ r7iXiazxP8HWZ7Pk5+CI+3TjIseLYBYenKcww56kvItx79cXGoN8b++eyqXvycbkO2gp
+ 8atC7mA1kQi3Ertp1QBFzWnuV6hLHTajPCayKqDsRNamwIQPvDI1lGTKukx0dNgR7Wjz
+ AOfclGk41h1X7miowQhkKMOuacZ6XsRgQg7UiNMTo7rYVsZ4s+vDiNcgpIvCb4lCRAxi
+ TN3JgpXuOxiO5fE2w2MHrrCsyCygLRz3LYjlO7YjyIW8b9RaUZHezC7Uee2pBaLBQeiS
+ Tcig==
+X-Gm-Message-State: AGi0Pub3nduCSxZ9Vnuge+tX1PK1niAQ5T5BcuPGj+1Ql1hyjO/i15jG
+ EGB+OefuP6ytIV0hTlIY/l7G/SqTcpfLwf3ysKpBLg==
+X-Google-Smtp-Source: APiQypJptyO3Q188LiC+lVglCDgxEqyyiuLnTQxJkuIYhQNrcbVh5T9dEoPww3VYf1pU7et5uyG7m7wgsnLScU++FZU=
+X-Received: by 2002:ab0:6449:: with SMTP id j9mr2012699uap.19.1587124302013;
+ Fri, 17 Apr 2020 04:51:42 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200417083319.3066217-5-maz@kernel.org>
-Content-Language: en-GB
+References: <20200331183844.30488-1-ulf.hansson@linaro.org>
+In-Reply-To: <20200331183844.30488-1-ulf.hansson@linaro.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 17 Apr 2020 13:51:06 +0200
+Message-ID: <CAPDyKFoVMBFTRJbEi-bjzeeMgi+z5xsBpBYteF=duCMb0Zxdhw@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] amba/platform: Initialize dma_parms at the bus
+ level
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_042214_100267_D22FF51B 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_045144_100783_48D156EA 
+X-CRM114-Status: GOOD (  17.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,109 +92,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Grall <julien@xen.org>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: "Rafael J . Wysocki" <rafael@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Haibo Chen <haibo.chen@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, dmaengine@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Ludovic Barre <ludovic.barre@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+ - Greg, Arnd, Linus, etc,
 
-On 17/04/2020 09:33, Marc Zyngier wrote:
-> There is no point in accessing the HW when writing to any of the
-> ISPENDR/ICPENDR registers from userspace, as only the guest should
-> be allowed to change the HW state.
-> 
-> Introduce new userspace-specific accessors that deal solely with
-> the virtual state. Note that the API differs from that of GICv3,
-> where userspace exclusively uses ISPENDR to set the state. Too
-> bad we can't reuse it.
+On Tue, 31 Mar 2020 at 20:38, Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> It's currently the amba/platform driver's responsibility to initialize the
+> pointer, dma_parms, for its corresponding struct device. The benefit with this
+> approach allows us to avoid the initialization and to not waste memory for the
+> struct device_dma_parameters, as this can be decided on a case by case basis.
+>
+> However, it has turned out that this approach is not very practical. Not only
+> does it lead to open coding, but also to real errors. In principle callers of
+> dma_set_max_seg_size() doesn't check the error code, but just assumes it
+> succeeds.
+>
+> For these reasons, this series initializes the dma_parms from the amba/platform
+> bus at the device registration point. This also follows the way the PCI devices
+> are being managed, see pci_device_add().
+>
+> If it turns out that this is an acceptable solution, we probably also want the
+> changes for stable, but I am not sure if it applies without conflicts.
+>
+> The series is based on v5.6.
+>
+> Kind regards
+> Ulf Hansson
+>
+>
+> Ulf Hansson (2):
+>   driver core: platform: Initialize dma_parms for platform devices
+>   amba: Initialize dma_parms for amba devices
+>
+>  drivers/amba/bus.c              | 1 +
+>  drivers/base/platform.c         | 2 ++
+>  include/linux/amba/bus.h        | 1 +
+>  include/linux/platform_device.h | 1 +
+>  4 files changed, 5 insertions(+)
+>
+> --
+> 2.20.1
+>
 
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c b/virt/kvm/arm/vgic/vgic-mmio-v2.c
-> index f51c6e939c76..a016f07adc28 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
-> @@ -417,10 +417,12 @@ static const struct vgic_register_region vgic_v2_dist_registers[] = {
->  		NULL, vgic_uaccess_write_cenable, 1,
->  		VGIC_ACCESS_32bit),
->  	REGISTER_DESC_WITH_BITS_PER_IRQ(GIC_DIST_PENDING_SET,
-> -		vgic_mmio_read_pending, vgic_mmio_write_spending, NULL, NULL, 1,
-> +		vgic_mmio_read_pending, vgic_mmio_write_spending,
-> +		NULL, vgic_uaccess_write_spending, 1,
->  		VGIC_ACCESS_32bit),
+Does this look okay or is there anything you would like me to change?
 
-vgic_mmio_write_spending() has some homebrew detection for is_uaccess, which causes
-vgic_hw_irq_spending() to do nothing. Isn't that now dead-code with this change?
-
-
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-> index 6e30034d1464..f1927ae02d2e 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
-> @@ -321,6 +321,27 @@ void vgic_mmio_write_spending(struct kvm_vcpu *vcpu,
-
-> +int vgic_uaccess_write_spending(struct kvm_vcpu *vcpu,
-> +				gpa_t addr, unsigned int len,
-> +				unsigned long val)
-> +{
-> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
-> +	int i;
-> +	unsigned long flags;
-> +
-> +	for_each_set_bit(i, &val, len * 8) {
-> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
-
-vgic_mmio_write_spending() has:
-|	/* GICD_ISPENDR0 SGI bits are WI *
-
-and bales out early. Is GIC_DIST_PENDING_SET the same register?
-(If so, shouldn't that be true for PPI too?)
-
-
-> +		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> +		irq->pending_latch = true;
-> +		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-> +
-> +		vgic_put_irq(vcpu->kvm, irq);
-> +	}
-> +
-> +	return 0;
-> +}
-
-> @@ -390,6 +411,26 @@ void vgic_mmio_write_cpending(struct kvm_vcpu *vcpu,
-
-> +int vgic_uaccess_write_cpending(struct kvm_vcpu *vcpu,
-> +				gpa_t addr, unsigned int len,
-> +				unsigned long val)
-> +{
-> +	u32 intid = VGIC_ADDR_TO_INTID(addr, 1);
-> +	int i;
-> +	unsigned long flags;
-> +
-> +	for_each_set_bit(i, &val, len * 8) {
-> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
-
-Same dumb question about GICD_ICPENDR0!?
-
-> +		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> +		irq->pending_latch = false;
-> +		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +
-> +		vgic_put_irq(vcpu->kvm, irq);
-> +	}
-> +
-> +	return 0;
-> +}
-
-
-Thanks,
-
-James
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
