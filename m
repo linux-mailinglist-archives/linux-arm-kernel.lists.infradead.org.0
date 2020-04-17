@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E23E31AD7A6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 09:44:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BD951AD7D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 Apr 2020 09:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bRSpjysDwERZ/HVv5WnZz3lGFNIt4KQWHyS099wTwgc=; b=n0u1aADjcuFBkiIVm8F8Piwq/9
-	w9McZAnMxTVFHBIFI+Svxy7nMwOggS//sBQkOOuUtWh9+LK9wlnWnl/A38zYZiDBqzvMxQbtCzHWC
-	UQmegvZLCyj029MczJPSZqnwf2OPOhNzS2GSh4S+4+e0D/TIqPdg/jWZSvo5+p/AXnJlb7VJML++T
-	si9KPwlvkqtH2onp9p1u98+B5qbVs+RGdR+kJDW84jF1NqfFsHosp2qAm+oac3iyFk9vf2BYDRQnE
-	7u7DE0LxAJyYErHpDJmMFMtXXfA2Gs/16QsyS6oNuP9PuwoblWxIhWcl/JrtmzSQUGlYWMmTI55kn
-	3qB+zFIg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=maI9ICTTVQUjS+a89IC7vGPGLpd4Q4PfBipt4bp+zLY=; b=fGpS8S53tNHh06
+	S7LuXp6FpzNCGQDezWXdajixVxcbvd3qWh8upKntPZqPXOjF1EdAGx4nxoOFb1KUYoOtDpYBOFVdi
+	YwcMzYdsnBuNWQ5buRdgkuMPJ6vF3t76fPWS3UND3G/Pi60hbLVTRBLAGaMNmuZ6o9E58/MnhYCDO
+	gyTzqwIl0YGf+0mY395s0a/cx+6r80pTVJyGsSv9LMF0DQXm7FWa6GUHjSLOYoDRwdtH1HJk4cFMR
+	NanmNMV8HOH9IXh5STJBLbIgfVjSbcb1DJnFxHPXGTPd5dCr3WdGx2Mv+TDAHHNJfPRJnn/XMSpA5
+	7c5FUCMwkhZdRXMeD0+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPLfJ-0001P6-0o; Fri, 17 Apr 2020 07:43:57 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jPLjC-0004fZ-G6; Fri, 17 Apr 2020 07:47:58 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPLf8-0001Nj-9h
- for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 07:43:48 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x4so1905074wmj.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 Apr 2020 00:43:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=7VxUyCozUFRQ3HWyk/FR84Y855XH8vC8ACtL+uxdHOg=;
- b=eepHxWx0UCQ3bBjYPAxbl27Om6GC70uRgirDesMlw0GcwtwctP16SCiHB+9lipG9Q0
- MgNdJoEZVSmbzmwNbFctN8vwR/E4WL5PrBitcvaR4Mv5RZyqao5nKchsF6SAoVjQw6q8
- 1sBR/TQ8qY8RmucdLYRWbxuvwjwkdplwZck/fYRcvy1zb+UVhxu540CJET3ACX9t6WuQ
- IAlO3q/oQ0fiIwt/0iD1Y5oFpSq3BcdbdHfOVxTsU7YR4v7fa0aOShrllZ4IZQDEdY1z
- wcrFjOJJqsSYcm+HvrKBxOn3cHvgNXvN8UbAciWfiS7exv4J4Q6YoZlD4nsCuLB51+ze
- HL6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=7VxUyCozUFRQ3HWyk/FR84Y855XH8vC8ACtL+uxdHOg=;
- b=t+qDhsEmoH4YiOJR3SRWCvWzuNB6MNutGNVLHeQBdjak9C+Nx36dS+kmKtW3TNLeCl
- hOu31vZNqGRAE84nOV1flEh18u2WLDEcRNSz5pc3tCj3jlusaI6hRxd7ZbT9ORlqtMWQ
- Bd5anI1x7nzgwi9hZA8Llqn9JROxGHTrytPmr+I3qaNGnEjy7uYoGP5mzkMifP6LMMNa
- 5aPO4HDQRYhkwVODsWk9PtgOD5OyRgREXlyYkE9BcfO2pr0xA+ZtawddFyndYmOVU7Cs
- bMznIq3dZwxHytbeQeJjGW9fFxrZUhdHmkCHa2UF3lJUTZWrXzkWqJDRObwdpqDxKg3J
- OIEA==
-X-Gm-Message-State: AGi0PuZLglP4F/z4k9GOA7C8unvFXs6+w9iDISYfJXPgzOWY7KZbxt43
- Pd72HyFb+lj+RV4qLRAXj8NY7w==
-X-Google-Smtp-Source: APiQypKB/8+cZvXsHO1NRHGVVpm+LapGF68siOZwDYjt2dTxd7u+tUAFWwcTxeJ3csNYW5kgsVQ09w==
-X-Received: by 2002:a05:600c:2214:: with SMTP id
- z20mr2124159wml.189.1587109423806; 
- Fri, 17 Apr 2020 00:43:43 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id l185sm6779244wml.44.2020.04.17.00.43.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 00:43:43 -0700 (PDT)
-References: <20200414200017.226136-1-martin.blumenstingl@googlemail.com>
- <20200414200017.226136-3-martin.blumenstingl@googlemail.com>
- <1ja73bbtqt.fsf@starbuckisacylon.baylibre.com>
- <CAFBinCAtSPTHfbr5KGNFFg3eo_d2p2q59fQfMXu+XkOb8WVrDQ@mail.gmail.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH 2/4] clk: meson: meson8b: Fix the polarity of the RESET_N
- lines
-In-reply-to: <CAFBinCAtSPTHfbr5KGNFFg3eo_d2p2q59fQfMXu+XkOb8WVrDQ@mail.gmail.com>
-Date: Fri, 17 Apr 2020 09:43:42 +0200
-Message-ID: <1j8siublqp.fsf@starbuckisacylon.baylibre.com>
+ id 1jPLj4-0004dE-MA
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 Apr 2020 07:47:51 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jPLix-0005Px-FU; Fri, 17 Apr 2020 09:47:43 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jPLiw-0003a0-F9; Fri, 17 Apr 2020 09:47:42 +0200
+Date: Fri, 17 Apr 2020 09:47:42 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V3 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Message-ID: <20200417074742.geo3hvvencztb3xv@pengutronix.de>
+References: <1587084091-5941-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1587084091-5941-1-git-send-email-Anson.Huang@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:40:05 up 153 days, 22:58, 158 users,  load average: 0.10, 0.18,
+ 0.09
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_004346_401053_1F5E08E8 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20200417_004750_721967_5621D9BA 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,46 +76,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, sboyd@kernel.org,
+Cc: devicetree@vger.kernel.org, sboyd@kernel.org, festevam@gmail.com,
  mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-clk@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org, s.hauer@pengutronix.de,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Anson,
 
-On Thu 16 Apr 2020 at 20:12, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+thanks for the patches :) one last nitpick.
 
-> Hi Jerome,
->
-> On Thu, Apr 16, 2020 at 12:38 PM Jerome Brunet <jbrunet@baylibre.com> wrote:
-> [...]
->> >
->> >       if (id >= ARRAY_SIZE(meson8b_clk_reset_bits))
->> >               return -EINVAL;
->> >
->> >       reset = &meson8b_clk_reset_bits[id];
->> >
->> > +     if (assert == reset->active_low)
->> > +             value = 0;
->> > +     else
->> > +             value = BIT(reset->bit_idx);
->>
->> if (assert ^ reset->active_low)
->>         value = BIT(reset->bit_idx);
-> I can do that, but I prefer "!=" over "^" because the result is
-> expected to be a bool (and because I'm not used to reading "^" for
-> logical comparisons)
-> will this work for you as well?
+On 20-04-17 08:41, Anson Huang wrote:
 
-yes
+...
 
->
->
-> Martin
+> +examples:
+> +  # Clock Control Module node:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    clks: clock-controller@20c4000 {
+> +        compatible = "fsl,imx6q-ccm";
+> +        reg = <0x020c4000 0x4000>;
+> +        interrupts = <0 87 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <0 88 IRQ_TYPE_LEVEL_HIGH>;
 
+The imx6ull and others start using the GIC_SPI define within the
+example. We should take the chance to uniform that. Apart of this feel
+free to add my:
+
+Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+
+Regards,
+  Marco
+
+> +        #clock-cells = <1>;
+> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
