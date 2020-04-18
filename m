@@ -2,68 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 605BF1AE96A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 04:50:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BE281AE96F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 05:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=69DEMrwbp2DQbyGix4QkZZZtI6iAALc+BmCGmbRMGrw=; b=GywM1MSdp/20za
-	AtPAtw2IQwsduMxzlq3+E6hiJb+855flLZVuWL0tKIh7+ov8ZB6UQDBpwuGTr/uzJsY/Nji60klko
-	K9UNGydVdUknydVjCqiWrOwXbypKepPJxDfI0TUB+IcS6+qW2qXnodSKiW9o59IpfQJTxhV9g0jTU
-	14GtLcgo2dB9WdwU4aciOidc8vQF6QKiyqjnfFZ4xWNkMEfGId/ZadT7r8owGBAdhT+HJs15V3AQG
-	gE7FI8B+MQlGdIyLorMsa9QbYMr9t6yzT1DhOb+bnvGhXhIGmLPh5aU4YPXq8VaGJjlJkk57mE8RA
-	H05pVsOy7bXQkivRfTOw==;
+	List-Owner; bh=LTfJNEhVUUuoAAgiQ9uf3pOvZdmfKFx443/fUyB+xlE=; b=YNpA7kuEGYxjJE
+	EP6aFabilNftZkuwu3Gx7g81lANhcJPA1Rd6I55gRl6HACLTSs8EzM0j/JUyF1VwJA6Y5bnQntq/H
+	g+624KLAw2jAb/LS2w589TKAnoiJB/6Yc9ZATEtrthhDc2NRmgJK2Zf5erNXV7fvKbismgysXlHc8
+	t4D0NS1Xy3FaJd555Oji4gegrGboWzZ710KOKDrP5T+AYNnvz8xybNUQjVvfBFmy8+WRPJEVrM2Sz
+	q79mD0PXmktbufajJ6pFPhAG8hZxf42w+gFSQkXUvLcZiTULRedjetQ8cI8AQBFFb51eQKRxrjqA7
+	i5Vw9xibU7ihGHWFcXHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPdYI-000263-35; Sat, 18 Apr 2020 02:49:54 +0000
-Received: from szxga02-in.huawei.com ([45.249.212.188] helo=huawei.com)
+	id 1jPdlX-0002IU-If; Sat, 18 Apr 2020 03:03:35 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPdY5-00024S-Ph
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 02:49:43 +0000
-Received: from DGGEMM406-HUB.china.huawei.com (unknown [172.30.72.56])
- by Forcepoint Email with ESMTP id 97116A319AD7B1B2AC2E;
- Sat, 18 Apr 2020 10:49:25 +0800 (CST)
-Received: from DGGEMM526-MBX.china.huawei.com ([169.254.8.234]) by
- DGGEMM406-HUB.china.huawei.com ([10.3.20.214]) with mapi id 14.03.0487.000;
- Sat, 18 Apr 2020 10:49:24 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: RE: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Topic: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Index: AdYJhvrCKEKaxySRQua1lfr4U9NN2v//iESA//MqKcCAGX9aAP/4ImVggBBPsoCAAVt7AP/+wAyA
-Date: Sat, 18 Apr 2020 02:49:23 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED3A545C71@dggemm526-mbx.china.huawei.com>
-References: <MN2PR18MB26869A6CA4E67558324F655CC5C70@MN2PR18MB2686.namprd18.prod.outlook.com>
- <06d08f904f003160a48eac3c5ab3c7ff@kernel.org>
- <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
- <86r1wus7df.wl-maz@kernel.org>
- <678F3D1BB717D949B966B68EAEB446ED3A535FCF@DGGEMM506-MBX.china.huawei.com>
- <3e84aaf8b757bc5a7685a291e54c232b@kernel.org> <20200417160602.26706917@why>
-In-Reply-To: <20200417160602.26706917@why>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.74.221.187]
+ id 1jPdlJ-0002Gg-19
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 03:03:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d27so5222049wra.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 Apr 2020 20:03:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=atishpatra.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Cc6dPOKfGjGc1r9wBtzxlndIE5Gtel5BHaiZJdDMh8g=;
+ b=DI07qc34JrRYUwx2/j2KyDRxGbbePX0i1nFSPDAdGeo71Jt9xhZ2CaOiP2WHLVsGF/
+ +xmjoStayS0rRQsaaox8u/KqlT30vqjRqoizdl+DUh8LY2sjIlPdQNxTrzU+tCkZJtq0
+ j0kMwJ6lJMm9o1ukf57g9igbXo1h86OHMOdSUzyi1plPFbp0udZuwTVvLBV6bwbYsgSY
+ vPakwFyL1OERa2mSSJOTuUDl+OOCom8WrPWtIdcMbuI2F4p5tgJbaQLM8wm5UAeVeuHD
+ ucNjjJNXdffZtlMChSRzWyE2b8wtgue07ODEltZIGFG1Rx8XrSIOzBiDW1arHRG4UMYQ
+ 50hA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Cc6dPOKfGjGc1r9wBtzxlndIE5Gtel5BHaiZJdDMh8g=;
+ b=txu810J6cS0zbLniTfWRpiHkIV737q+qxYCG0/RkB8geeWDnDB5dlCqn3SQKowWnM2
+ k7cP56RFtNjnBWTYJvt4RaotTBR8He1PA9AN/TYdxxmF8O2+0cxzYcLQgitTccGm8Shq
+ iCll0fc2cjNGqWmKTs4jgMTryDskDMHZGfCLMuLyAWRUUphrBkyTTvQOYv5oqJ6d8CzF
+ cqHGguGitWUagW5+kPSqftOb12qyKnq4OsTYeRNm+1sxVcO6e7v4ZFfaEa84PGJ6E+/J
+ 6zaHTaVttAB7czWekmLkY3R4aARd4KjtVPrSCgjjbifnTqzXFN9hmGCO78a6RaNzd79/
+ jlhg==
+X-Gm-Message-State: AGi0PuZH4uPBLYn9sxAhn67JBYRrpOtbpSxLGr0AegtMFv1sKMsOascW
+ AW5bZSJkoxeBpSfqVM+Ixcvg/Nqb2habdn/ZDXxj
+X-Google-Smtp-Source: APiQypJZpGIcTdTcAmCbMwWA43uDwlzkxXnjBBuBETiNA9FKcB4sB2Bl1ulIkKpGgWUROepnqSaCp7kT6UF4kiN02jQ=
+X-Received: by 2002:a5d:4443:: with SMTP id x3mr6757506wrr.162.1587178994550; 
+ Fri, 17 Apr 2020 20:03:14 -0700 (PDT)
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+References: <20200415195422.19866-1-atish.patra@wdc.com>
+ <20200415195422.19866-6-atish.patra@wdc.com>
+ <CAMj1kXFRqTYr7_M_j6oN1-xnQ6V4uCYK49yAbjvrf1BB823Cng@mail.gmail.com>
+In-Reply-To: <CAMj1kXFRqTYr7_M_j6oN1-xnQ6V4uCYK49yAbjvrf1BB823Cng@mail.gmail.com>
+From: Atish Patra <atishp@atishpatra.org>
+Date: Fri, 17 Apr 2020 20:03:03 -0700
+Message-ID: <CAOnJCUK3fqsR93ewYMUkanh+x1EJN_3QwkFjSDDZZr2MjzpnUQ@mail.gmail.com>
+Subject: Re: [v3 PATCH 5/5] RISC-V: Add EFI stub support.
+To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_194941_998870_5FBD8AF1 
-X-CRM114-Status: GOOD (  20.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200417_200321_274658_BBF23AB0 
+X-CRM114-Status: GOOD (  37.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.188 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,104 +93,378 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
- "jintack@cs.columbia.edu" <jintack@cs.columbia.edu>,
- George Cherian <gcherian@marvell.com>,
- "james.morse@arm.com" <james.morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Anil Kumar Reddy H <areddy3@marvell.com>,
- "alexandru.elisei@arm.com" <alexandru.elisei@arm.com>,
- "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Atish Patra <atish.patra@wdc.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-riscv <linux-riscv@lists.infradead.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- -----Original Message-----
-> From: Marc Zyngier [mailto:maz@kernel.org]
-> Sent: Friday, April 17, 2020 11:06 PM
-> To: Zengtao (B)
-> Cc: George Cherian; Dave.Martin@arm.com; alexandru.elisei@arm.com;
-> andre.przywara@arm.com; christoffer.dall@arm.com;
-> james.morse@arm.com; jintack@cs.columbia.edu;
-> julien.thierry.kdev@gmail.com; kvm@vger.kernel.org;
-> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org;
-> suzuki.poulose@arm.com; Anil Kumar Reddy H; Ganapatrao Kulkarni
-> Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested
-> Virtualization support
-> 
-> On Thu, 16 Apr 2020 19:22:21 +0100
-> Marc Zyngier <maz@kernel.org> wrote:
-> 
-> > Hi Zengtao,
+On Thu, Apr 16, 2020 at 12:41 AM Ard Biesheuvel <ardb@kernel.org> wrote:
+>
+> On Wed, 15 Apr 2020 at 21:54, Atish Patra <atish.patra@wdc.com> wrote:
 > >
-> > On 2020-04-16 02:38, Zengtao (B) wrote:
-> > > Hi Marc:
-> > >
-> > > Got it.
-> > > Really a bit patch set :)
+> > Add a RISC-V architecture specific stub code that actually copies the
+> > actual kernel image to a valid address and jump to it after boot services
+> > are terminated. Enable UEFI related kernel configs as well for RISC-V.
 > >
-> > Well, yeah... ;-)
+> > Signed-off-by: Atish Patra <atish.patra@wdc.com>
+> > ---
+> >  arch/riscv/Kconfig                        |  20 ++++
+> >  arch/riscv/Makefile                       |   1 +
+> >  arch/riscv/configs/defconfig              |   1 +
+> >  arch/riscv/include/asm/efi.h              |  44 +++++++++
+> >  drivers/firmware/efi/Kconfig              |   2 +-
+> >  drivers/firmware/efi/libstub/Makefile     |   7 ++
+> >  drivers/firmware/efi/libstub/riscv-stub.c | 111 ++++++++++++++++++++++
+> >  7 files changed, 185 insertions(+), 1 deletion(-)
+> >  create mode 100644 arch/riscv/include/asm/efi.h
+> >  create mode 100644 drivers/firmware/efi/libstub/riscv-stub.c
 > >
-> > >
-> > > BTW, I have done a basic kvm unit test
-> > > git://git.kernel.org/pub/scm/virt/kvm/kvm-unit-tests.git
-> > > And I find that after apply the patch KVM: arm64: VNCR-ize ELR_EL1,
-> > > The psci test failed for some reason, I can't understand why, this
-> > > is only the test result.(find the patch by git bisect + kvm test)
+> > diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+> > index f39e326a7a42..eb4f41c8f3ce 100644
+> > --- a/arch/riscv/Kconfig
+> > +++ b/arch/riscv/Kconfig
+> > @@ -379,10 +379,30 @@ config CMDLINE_FORCE
 > >
-> > That it is that mechanical, we should be able to quickly nail that one.
+> >  endchoice
 > >
-> > > My platform: Hisilicon D06 board.
-> > > Linux kernel: Linux 5.6-rc6 + nv patches(some rebases)
-> > > Could you help to take a look?
+> > +config EFI_STUB
+> > +       bool
+> > +
+> > +config EFI
+> > +       bool "UEFI runtime support"
+> > +       depends on OF
+> > +       select LIBFDT
+> > +       select UCS2_STRING
+> > +       select EFI_PARAMS_FROM_FDT
+> > +       select EFI_STUB
+> > +       select EFI_GENERIC_STUB
+> > +       default y
+> > +       help
+> > +         This option provides support for runtime services provided
+> > +         by UEFI firmware (such as non-volatile variables, realtime
+> > +          clock, and platform reset). A UEFI stub is also provided to
+> > +         allow the kernel to be booted as an EFI application. This
+> > +         is only useful on systems that have UEFI firmware.
+> > +
+> >  endmenu
 > >
-> > I'll have a look tomorrow. I'm in the middle of refactoring the series
-> > for 5.7, and things have changed quite a bit. Hopefully this isn't a VHE
-> > vs non-VHE issue.
-> 
-> So I've repeatedly tried with the current state of the NV patches[1],
-> on both an ARMv8.0 system (Seattle) and an ARMv8.2 pile of putrid junk
-> (vim3l). PSCI is pretty happy, although I can only test with at most 8
-> vcpus (GICv2 gets in the way).
-> 
-> Can you please:
-> 
-> - post the detailed error by running the PSCI unit test on its own
-I tried to trace the error, and I found in kernel function kvm_mpidr_to_vcpu,
-casually, mpidr returns zero and we can't get the expected vcpu, and psci
- test failed due to this.
-And as I mentioned in my last before, the psci error is introduced by the
- patch KVM: arm64: VNCR-ize ELR_EL1.(Only test result)
-Maybe you have to try tens of times to reproduce. :)
-Deep into the patch itself, I don't find any connection between the patch
-and the issue.
+> >  menu "Power management options"
+> >
+> >  source "kernel/power/Kconfig"
+> > +source "drivers/firmware/Kconfig"
+> >
+> >  endmenu
+> > diff --git a/arch/riscv/Makefile b/arch/riscv/Makefile
+> > index fb6e37db836d..079435804d6d 100644
+> > --- a/arch/riscv/Makefile
+> > +++ b/arch/riscv/Makefile
+> > @@ -80,6 +80,7 @@ head-y := arch/riscv/kernel/head.o
+> >  core-y += arch/riscv/
+> >
+> >  libs-y += arch/riscv/lib/
+> > +core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
+> >
+> >  PHONY += vdso_install
+> >  vdso_install:
+> > diff --git a/arch/riscv/configs/defconfig b/arch/riscv/configs/defconfig
+> > index 4da4886246a4..ae69e12d306a 100644
+> > --- a/arch/riscv/configs/defconfig
+> > +++ b/arch/riscv/configs/defconfig
+> > @@ -129,3 +129,4 @@ CONFIG_DEBUG_BLOCK_EXT_DEVT=y
+> >  # CONFIG_RUNTIME_TESTING_MENU is not set
+> >  CONFIG_MEMTEST=y
+> >  # CONFIG_SYSFS_SYSCALL is not set
+> > +CONFIG_EFI=y
+> > diff --git a/arch/riscv/include/asm/efi.h b/arch/riscv/include/asm/efi.h
+> > new file mode 100644
+> > index 000000000000..62d7d5eafed8
+> > --- /dev/null
+> > +++ b/arch/riscv/include/asm/efi.h
+> > @@ -0,0 +1,44 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
+> > + * Based on arch/arm64/include/asm/efi.h
+> > + */
+> > +#ifndef _ASM_EFI_H
+> > +#define _ASM_EFI_H
+> > +
+> > +#include <asm/io.h>
+> > +#include <asm/mmu_context.h>
+> > +#include <asm/ptrace.h>
+> > +#include <asm/tlbflush.h>
+> > +
+> > +#define VA_BITS_MIN 39
+> > +
+> > +/* on RISC-V, the FDT may be located anywhere in system RAM */
+> > +static inline unsigned long efi_get_max_fdt_addr(unsigned long dram_base)
+> > +{
+> > +       return ULONG_MAX;
+> > +}
+> > +
+> > +/* Load initrd at enough distance from DRAM start */
+> > +static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
+> > +                                                   unsigned long image_addr)
+> > +{
+> > +       return dram_base + SZ_256M;
+> > +}
+> > +
+> > +#define efi_bs_call(func, ...) efi_system_table()->boottime->func(__VA_ARGS__)
+> > +#define efi_rt_call(func, ...) efi_system_table()->runtime->func(__VA_ARGS__)
+> > +#define efi_is_native()                (true)
+> > +
+> > +#define efi_table_attr(inst, attr)     (inst->attr)
+> > +
+> > +#define efi_call_proto(inst, func, ...) inst->func(inst, ##__VA_ARGS__)
+> > +
+> > +#define alloc_screen_info(x...)                (&screen_info)
+> > +extern char stext_offset[];
+> > +
+> > +static inline void free_screen_info(struct screen_info *si)
+> > +{
+> > +}
+> > +
+> > +#endif /* _ASM_EFI_H */
+> > diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
+> > index 2a2b2b96a1dc..fcdc789d3f87 100644
+> > --- a/drivers/firmware/efi/Kconfig
+> > +++ b/drivers/firmware/efi/Kconfig
+> > @@ -111,7 +111,7 @@ config EFI_GENERIC_STUB
+> >
+> >  config EFI_ARMSTUB_DTB_LOADER
+> >         bool "Enable the DTB loader"
+> > -       depends on EFI_GENERIC_STUB
+> > +       depends on EFI_GENERIC_STUB && !RISCV
+> >         default y
+> >         help
+> >           Select this config option to add support for the dtb= command
+> > diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
+> > index 2b4e09bf987c..7d46b70b51f2 100644
+> > --- a/drivers/firmware/efi/libstub/Makefile
+> > +++ b/drivers/firmware/efi/libstub/Makefile
+> > @@ -22,6 +22,8 @@ cflags-$(CONFIG_ARM64)                := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> >  cflags-$(CONFIG_ARM)           := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> >                                    -fno-builtin -fpic \
+> >                                    $(call cc-option,-mno-single-pic-base)
+> > +cflags-$(CONFIG_RISCV)         := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> > +                                  -fpic
+> >
+> >  cflags-$(CONFIG_EFI_GENERIC_STUB)      += -I$(srctree)/scripts/dtc/libfdt
+> >
+> > @@ -57,6 +59,7 @@ lib-$(CONFIG_EFI_GENERIC_STUB)                += efi-stub.o fdt.o string.o \
+> >  lib-$(CONFIG_ARM)              += arm32-stub.o
+> >  lib-$(CONFIG_ARM64)            += arm64-stub.o
+> >  lib-$(CONFIG_X86)              += x86-stub.o
+> > +lib-$(CONFIG_RISCV)            += riscv-stub.o
+> >  CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+> >  CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+> >
+> > @@ -81,6 +84,10 @@ STUBCOPY_FLAGS-$(CONFIG_ARM64)       += --prefix-alloc-sections=.init \
+> >                                    --prefix-symbols=__efistub_
+> >  STUBCOPY_RELOC-$(CONFIG_ARM64) := R_AARCH64_ABS
+> >
+> > +STUBCOPY_FLAGS-$(CONFIG_RISCV) += --prefix-alloc-sections=.init \
+> > +                                  --prefix-symbols=__efistub_
+> > +STUBCOPY_RELOC-$(CONFIG_RISCV) := R_RISCV_HI20
+> > +
+> >  $(obj)/%.stub.o: $(obj)/%.o FORCE
+> >         $(call if_changed,stubcopy)
+> >
+> > diff --git a/drivers/firmware/efi/libstub/riscv-stub.c b/drivers/firmware/efi/libstub/riscv-stub.c
+> > new file mode 100644
+> > index 000000000000..69d13e0ebaea
+> > --- /dev/null
+> > +++ b/drivers/firmware/efi/libstub/riscv-stub.c
+> > @@ -0,0 +1,111 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (C) 2013, 2014 Linaro Ltd;  <roy.franz@linaro.org>
+> > + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
+> > + *
+> > + * This file implements the EFI boot stub for the RISC-V kernel.
+> > + * Adapted from ARM64 version at drivers/firmware/efi/libstub/arm64-stub.c.
+> > + */
+> > +
+> > +#include <linux/efi.h>
+> > +#include <linux/libfdt.h>
+> > +#include <linux/libfdt_env.h>
+> > +#include <asm/efi.h>
+> > +#include <asm/sections.h>
+> > +
+> > +#include "efistub.h"
+> > +/*
+> > + * RISCV requires the kernel image to placed TEXT_OFFSET bytes beyond a 2 MB
+> > + * aligned base for 64 bit and 4MB for 32 bit.
+> > + */
 
-> - test with the current state of the patches
-I test with your nv-5.7-rc1-WIP branch and latest kvm_unit_test, the 
-error still exist.
+Fixed the comment.
 
-Thanks.
-zengtao
+> > +#ifdef CONFIG_64BIT
+> > +#define MIN_KIMG_ALIGN SZ_2M
+> > +#else
+> > +#define MIN_KIMG_ALIGN SZ_4M
+> > +#endif
+> > +
+> > +typedef __attribute__((noreturn)) void (*jump_kernel_func)(unsigned int,
+> > +                                                          unsigned long);
+> > +efi_status_t check_platform_features(void)
+> > +{
+> > +       return EFI_SUCCESS;
+> > +}
+> > +
+> > +static u32 get_boot_hartid_from_fdt(unsigned long fdt)
+> > +{
+> > +       int chosen_node, len;
+> > +       const fdt32_t *prop;
+> > +
+> > +       chosen_node = fdt_path_offset((void *)fdt, "/chosen");
+> > +       if (chosen_node < 0)
+> > +               return U32_MAX;
+> > +       prop = fdt_getprop((void *)fdt, chosen_node, "boot-hartid", &len);
+> > +       if (!prop || len != sizeof(u32))
+> > +               return U32_MAX;
+> > +
+> > +       return fdt32_to_cpu(*prop);
+> > +}
+> > +
+> > +/*
+> > + * Jump to real kernel here with following constraints.
+> > + * 1. MMU should be disabled.
+> > + * 2. a0 should contain hartid
+> > + * 3. a1 should DT address
+> > + */
+> > +void __noreturn efi_enter_kernel(unsigned long entrypoint, unsigned long fdt,
+> > +                                unsigned long fdt_size)
+> > +{
+> > +       unsigned long kernel_entry = entrypoint + (unsigned long)stext_offset;
+> > +       jump_kernel_func jump_kernel = (jump_kernel_func) kernel_entry;
+> > +       u32 hartid = get_boot_hartid_from_fdt(fdt);
+> > +
+> > +       if (hartid == U32_MAX)
+> > +               /* We can not use panic or BUG at this point */
+> > +               __asm__ __volatile__ ("ebreak");
+> > +       /* Disable MMU */
+> > +       csr_write(CSR_SATP, 0);
+> > +       jump_kernel(hartid, fdt);
+> > +}
+> > +
+> > +efi_status_t handle_kernel_image(unsigned long *image_addr,
+> > +                                unsigned long *image_size,
+> > +                                unsigned long *reserve_addr,
+> > +                                unsigned long *reserve_size,
+> > +                                unsigned long dram_base,
+> > +                                efi_loaded_image_t *image)
+> > +{
+> > +       efi_status_t status;
+> > +       unsigned long kernel_size, kernel_memsize = 0;
+> > +       unsigned long max_alloc_address;
+> > +
+> > +       if (image->image_base != _start)
+> > +               pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
+> > +
+>
+> I don't think you need this.
+>
 
-> 
+Sure. I will remove it. I guess ARM64 code has the error print for
+legacy loader code ?
+
+> > +       kernel_size = _edata - _start;
+> > +       kernel_memsize = kernel_size + (_end - _edata);
+> > +       max_alloc_address = round_up(dram_base, MIN_KIMG_ALIGN) +
+> > +                           kernel_memsize;
+> > +
+>
+> You said the kernel could be anywhere in memory, as long as it is
+> aligned correctly, right?
+
+Sorry I was wrong about this. RISC-V kernel maps PAGE_OFFSET virtual
+address to the
+physical address <xyz> where it is booted. That means memory between
+dram start and and <xyz> address
+will be unusable.
+
+I also realized that the above computing max_address as above also
+won't work for the following reason.
+efi_allocate_pages_aligned actually ALIGN_DOWN the max_address. Thus,
+efi won't find enough
+free memory in this case if the max_address is computed from the dram_base.
+
+Is there an implicit requirement for efi_allocate_pages_aligned or
+efi_low_alloc_above should be tried in case of failure?
+
+> In that case, you don't need this, you can simply pass ULONG_MAX as
+> the max address.
+>
+As RISC-V should allocate memory as low as possible to avoid memory
+wastage, I think the following should work.
+
+efi_low_alloc_above(*reserve_size, MIN_KIMG_ALIGN, reserve_addr, dram_base);
+
+If this looks okay to you, efi_low_alloc_above should be moved back to
+mem.c from relocate.c.
+Should I do it in a separate patch or the original patch should be
+modified so that efi_low_alloc_above was never moved to relocate.c
+
+> > +       if (IS_ALIGNED((u64)_start, MIN_KIMG_ALIGN)) {
+> > +               /*
+> > +                * Just execute from wherever we were loaded by the
+> > +                * UEFI PE/COFF loader if the alignment is suitable.
+> > +                */
+> > +               *image_addr = (u64)_start;
+>
+> Change these casts to (unsigned long), as reported by the robot.
+>
+Done.
+
+> So you no longer need the placement to be TEXT_OFFSET bytes past a
+> MIN_KIMG_ALIGN aligned boundary, right?
+>
+
+Nope. EFI memory marked the firmware area as reserved. So EFI memory
+allocator will make sure that
+it never allocates memory from that region.
+
+> > +               *reserve_size = 0;
+> > +               return EFI_SUCCESS;
+> > +       }
+> > +       status = efi_allocate_pages_aligned(*reserve_size, reserve_addr,
+> > +                                           max_alloc_address, MIN_KIMG_ALIGN);
+> > +
+> > +       if (status != EFI_SUCCESS) {
+> > +               pr_efi_err("Failed to relocate kernel\n");
+> > +               *reserve_size = 0;
+> > +               return status;
+> > +       }
+> > +       *image_addr = *reserve_addr;
+> > +
+> > +       memcpy((void *)*image_addr, _start, kernel_size);
+> > +
+> > +       return EFI_SUCCESS;
+> > +}
+> > --
+> > 2.24.0
+> >
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 
-> Thanks,
-> 
-> 	M.
-> 
-> [1]
-> https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git/l
-> og/?h=kvm-arm64/nv-5.7-rc1-WIP
-> --
-> Jazz is not dead. It just smells funny...
+
+--
+Regards,
+Atish
 
 _______________________________________________
 linux-arm-kernel mailing list
