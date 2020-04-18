@@ -2,52 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3F001AF52A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 23:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65B171AF534
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 23:42:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QrjTOMOrls4wO3e3qv7trghv0x3Qy2vS0yZF60eDt08=; b=HlAtlLYnzZO/jEyhGGCJCDwOK
-	V05DPr+6eiZFQi35OP611PULaQ3XPa+ECu5OEbCwDM9cAAuQVOzYMSkS7Jiu/+VgeYzUrvDHs3te0
-	i4nwk6stYHGt9aoOAGI4b8rJF6XJyDNQKwiaUZT6VmdTy4rgCD1+W3QLz6uqqNeo1KbYXTnSJeCZU
-	9PUFQjc6PU+SZZ4nNHjLfmolfP/pgM7+RW7nToktmRz203PDrtfLX1GLNFivgJSZiH5DXRQ/M6ODQ
-	zjsC5PPmgG/gz8xxe6mLyJ/jJC1vuxI22iyae5FSOKnZH7NShxuH8apVNe3MSGgSvLLBC0agnhx7O
-	A+riQLaxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XIfxKmWjIp1bWHy7ehuGtyQ8KDb9osVgnCcw29PWLI8=; b=S/O50E4gTYNhFc
+	2/7hnXnpzBhbHe3uj3gVSyc2TKMR8JVXXEpSPvpLoSYPSkl5Fo9/oFongrBBulh7QVIpY8f9961pB
+	YoOKPV2HqaRm6C4+1k+5oLBTrgpHm0+g58NDnj8nxFrRglJH1hYQ88iI8YSZgjqtQIyGVcGEeve7u
+	945/wv+gq5P5GfMbM5Fs11s5j0GUEu5rmrSh2txbLPgOGKIldagSzZ42hDCMJkYrrVUgoSoKcclZI
+	x7uHvUODREXYVHGQ2zUhqBrLgYDGycmwe3jwXIFPYzjQfZTbZd/3Q+cmbdozaoxkyPM3XlfIlWGMo
+	tl2JIPSWFp9u72A/DT9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPv8X-0000wr-Lm; Sat, 18 Apr 2020 21:36:29 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPv8P-0000vr-3t
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 21:36:23 +0000
-Received: from localhost (p5486CFBC.dip0.t-ipconnect.de [84.134.207.188])
- by pokefinder.org (Postfix) with ESMTPSA id 8C6832C1FB0;
- Sat, 18 Apr 2020 23:36:17 +0200 (CEST)
-Date: Sat, 18 Apr 2020 23:36:14 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Radu Pirea <radu_nicolae.pirea@upb.ro>
-Subject: Re: [PATCH v2] i2c: cadence: Added slave support
-Message-ID: <20200418213614.GA1293@ninjato>
-References: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
+	id 1jPvEW-0004IE-E5; Sat, 18 Apr 2020 21:42:40 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jPvEK-0004H4-78; Sat, 18 Apr 2020 21:42:29 +0000
+Received: by mail-qt1-x842.google.com with SMTP id o10so5318632qtr.6;
+ Sat, 18 Apr 2020 14:42:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=w/47EmjUE3OUhd2M0nQ4aXQ8hyh3Kb7PGgRqxtZ7DE0=;
+ b=ZVUggX0x5rhoXJFUBIldk0DtR/0RR5CPGISHzpnQ+TQnYKrfeMt/KhQQ6q8bIhavOj
+ zS5q0fnSx2Qee65hTc8gbTJ22xqcr+E296piNk9oudT07Nb82xX0hBs724JULPmy2x4q
+ GJJwWJcNpbmjPbYl1I3v7RhZl331/lkk1TY7969iA0lNpVOYq6SKDsqasccvZ9MjMB4i
+ 0kUKFWtdXOtUj+1L/TOQnaMqL4x10dyz57zTQnjSaLraneT0/j3K6BnGGG1Pq/Avekeu
+ NGM/J24mt5TYyVDDqTHVsWWj/2lHkGdr1t9WzV7e2IJ+pq+90XlqbWTaYHg99pIxSELt
+ 5wwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=w/47EmjUE3OUhd2M0nQ4aXQ8hyh3Kb7PGgRqxtZ7DE0=;
+ b=LzUnFkFEjTC4XOXF1Fvgjsb5sAXHM8DBcbYqPzsF87I6VOykEU60j7JQlUZ93V9WdN
+ +9QYt+0mktVzPdI0hGeHfE/Y73JB7+Mb32/fZEgIlN/xJCED4GOlJ+t/141nQqP51nGY
+ TcFi3/5tziQlYEv/N7GNpogxoaySd/Qy26c+D/osIiR9h3f5TS0tLQLfI9PU+8B7ctrd
+ 285omaopFuKWC/AwIMnYpex3q7qdrmR4XjIq6Io7vBX+ya3KWfIhe2JYTHyJ/C/JD39X
+ ZS1n11pyEJwbj0KRWgCmMj+h4ZlC6v10E/Ep4MG1yq98wdZOS7idCYOc+/RTqgKkWV3S
+ uPhA==
+X-Gm-Message-State: AGi0Pua5FO3wC3fob/hFE/9HzbDbEi+umaoXsjPIWpze5I0fDFz+MMK9
+ arzf5vV9KdFKXx8s4MT27pg=
+X-Google-Smtp-Source: APiQypK/ZNb28CwxyoAZvAhkzL57dtO3+k9ZptxS3i9hczv3oFx6wdSujk2rkeT1CVCQDJTCIa6JzA==
+X-Received: by 2002:ac8:1904:: with SMTP id t4mr9678039qtj.367.1587246146742; 
+ Sat, 18 Apr 2020 14:42:26 -0700 (PDT)
+Received: from imac (dhcp-108-168-12-59.cable.user.start.ca. [108.168.12.59])
+ by smtp.gmail.com with ESMTPSA id
+ p31sm18381085qtf.11.2020.04.18.14.42.25
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 18 Apr 2020 14:42:26 -0700 (PDT)
+Date: Sat, 18 Apr 2020 17:42:23 -0400
+From: Tim Lewis <elatllat@gmail.com>
+To: elatllat@gmail.com
+Subject: [v2] arm64: dts: meson: odroid-n2: extend cpu opp-points
+Message-ID: <20200418214223.GA4484@imac>
 MIME-Version: 1.0
-In-Reply-To: <20200106104336.101987-1-radu_nicolae.pirea@upb.ro>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_143621_306727_948CE487 
-X-CRM114-Status: UNSURE (   5.89  )
+X-CRM114-CacheID: sfid-20200418_144228_286880_02DB0965 
+X-CRM114-Status: UNSURE (   7.63  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [elatllat[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,68 +96,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chirag Parekh <chirag.parekh@xilinx.com>, shubhrajyoti.datta@gmail.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8451852350474983824=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, joy.cho@hardkernel.com,
+ narmstrong@baylibre.com, khilman@baylibre.com, christianshewitt@gmail.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, tobetter@gmail.com,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Odroid N2 has a large heatsink and HardKernel supports overclock
+through the addition to extra opp points in their official kernel
+sources [1]. Add these to the N2 dts only, as other S922X devices
+may not have suitable heatsinks.
 
---===============8451852350474983824==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="a8Wt8u1KmwUX3Y2C"
-Content-Disposition: inline
+[1] https://github.com/hardkernel/linux/commit/f86cd9487c7483b2a05f448b9ebacf6bd5a2ad2f
+Signed-off-by: Tim Lewis <elatllat@gmail.com>
 
+---
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
---a8Wt8u1KmwUX3Y2C
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+index 42f154057..6f32ac83f 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+@@ -260,6 +260,25 @@
+ 			};
+ 		};
+ 	};
++
++	cpu_opp_table_0: opp-table-0 {
++		opp-1992000000 {
++			opp-hz = /bits/ 64 <1992000000>;
++			opp-microvolt = <1001000>;
++		};
++	};
++
++	cpub_opp_table_1: opp-table-1 {
++		opp-1800000000 {
++			opp-hz = /bits/ 64 <1800000000>;
++			opp-microvolt = <981000>;
++		};
++
++		opp-1908000000 {
++			opp-hz = /bits/ 64 <1908000000>;
++			opp-microvolt = <1022000>;
++		};
++	};
+ };
+ 
+ &arb {
+-- 
+2.17.1
 
-On Mon, Jan 06, 2020 at 12:43:36PM +0200, Radu Pirea wrote:
-> Added support for I2C slave functionality
->=20
-> Signed-off-by: Chirag Parekh <chirag.parekh@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> Signed-off-by: Radu Pirea <radu_nicolae.pirea@upb.ro>
-
-Applied to for-next, thanks!
-
-
---a8Wt8u1KmwUX3Y2C
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6bcsoACgkQFA3kzBSg
-KbbR8hAAtaGcFgQXAQIHqfZDfIoYRabM6fCfgLBRpm2udJBALyUMSmMVZvmam86o
-WUTF1Qg029CXr9deJnGqQPTkCoeAVNn8WtkBqNi8RY/dWH+WTfDetQraQCKr9vRK
-k4BU5EYT8i8o64q2lSnVwqsSTipf3sNozqmcAUr31gqlC/R0rFzQM+LsFFUIcPiP
-pT4ucQGOgvlWTkCeTcHolM2agk+rNLi8b3bz4LIkAfgYxzcL7tRp5CN78XWiwsmB
-9ZxiCacwYOHbLYhnFLzir7Lbuz6QXEJ6tdVRHGxWO6VjZ2tM6GUT75b1/zURsSvJ
-Dbpr+XA3jfgVhyCoKd2P1tVpq8tuBHQv6aDAcuX2NxaddYBSVRIW/HGaPPAeUHrs
-k/FmXmsuM/uv0fjOtmJpdeYqHWcAqplcljouEBTTFDhVNjL9y9tjknyAM8jnDWNW
-+edQn3VJo5edWkC9QniP/HMJq4BNhrNaYjX1j3IkOqTdk6IzsS3eCs5et7TqnZLA
-UEOOIqjXS0XzM9yApkImbv7eLuzXTEbS1nQCfUxlMqZuNY8nmbz+upf1f3wNFRiX
-iwEjO23gYRC7EV5epnwyxOM5MqCqgMDXVy9IpKi0PdpNDvaFUh3rsMo584lrcOA1
-5Ci1OGKNQckkU9fCo8+ZvJn5JNjgQwm0nSxGz3KsKw4MfPcsHWc=
-=t45a
------END PGP SIGNATURE-----
-
---a8Wt8u1KmwUX3Y2C--
-
-
---===============8451852350474983824==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8451852350474983824==--
-
