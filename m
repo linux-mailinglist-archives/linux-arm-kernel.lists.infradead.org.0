@@ -2,65 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 527F51AF31C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 20:15:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F289C1AF329
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 20:23:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6YjCA35QZ92YomE88oSZ/pLV8sjKULllmdqk39oEQ0Y=; b=Ia/ipYp7QJBUCl
-	U8TSH6GI/9RxAvIIsKsOl+MqDpGwrbw8lcPOWk1dZj9r8RkhmzbTVX/KQSMA51CZ9RxIh0L1dhdnA
-	RHoGkEXf77Mh0mln1h+juUqFdKtYt9pf5YhCE8H3uMB8QN6v9rsWgcn9p4aoggegNOBW2JGk3Cjh4
-	TC/xYjKg1rRIBbR2XF7hV8A0efXqMezMRzTVwoB+m5IAHVvggICJa//85tj138irIStxHPPbunoL2
-	p3ZUOs97g3kfYPyTUTPxaZPOShlLSc8LudSlCCA3aVZIJbjEtwtBE5HW38T4iw/V6cGfwjoVjFgce
-	mKOs7hM2+sNq7D665/4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cAqGf7wSoIfgqVYMcOOGAoph1QkKfafWUlsTF1WYCIU=; b=k0HjWtynADtOie
+	tc6OE5xrq+JcVaQEGv/rwFUggoUgDbrZkGYdoT6U/r452ZvRFKfurg65gedrK9nIetC6FBJ0ZPeo3
+	aQxaVo5EAPjKwk9vtPS8960nk927N8kopp2ChBHVJ1u3/93naPpIPoT/rYaJNxThqpC00kJbO++4R
+	ykCLcuwRkYFbUOxLVKg4hUggVaIBZ8asOfBzwggYijRnQp3VaHHExnAMZHNX88wY+x3ntMLdDE+Wm
+	vPMojh/4vHT+2JzWwX/VsdJMPk59YMdVThunP6y2k5PRa92dtsLFHLzhVGsqRWN3IRLm4AH4t/rhQ
+	0sYurJcUSpA5IypSgmog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPrzu-0000Kw-3c; Sat, 18 Apr 2020 18:15:22 +0000
+	id 1jPs80-0003vk-Kl; Sat, 18 Apr 2020 18:23:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPrzg-00085U-JM; Sat, 18 Apr 2020 18:15:10 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jPs7p-0003uG-AE
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 18:23:36 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1B9D20724;
- Sat, 18 Apr 2020 18:15:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BBE5B21BE5;
+ Sat, 18 Apr 2020 18:23:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587233707;
- bh=KtXXKvkVx6nmTgkrhaXXeJdQ0VBttc8MSA5biUMFsqQ=;
- h=From:To:Cc:Subject:Date:From;
- b=mZK6C8xriOzlOLhzPA+VSzfm+EUGTXGNXDO3l4P7tiVGYEO0qcojJR+8PoWnon19w
- HKquJE5GZkfoFHYjP4RqBurmxQ13BamYSZ/BgnfV0yeGlrRbqFb7QN/PBtlsR6idfq
- EuGG1cqIJM9CjoBroVtm35bewlJOddyyGLl14yfM=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jPrzd-004UT4-4q; Sat, 18 Apr 2020 19:15:05 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
-Subject: [PATCH] net: stmmac: dwmac-meson8b: Add missing boundary to RGMII TX
- clock array
-Date: Sat, 18 Apr 2020 19:14:57 +0100
-Message-Id: <20200418181457.3193175-1-maz@kernel.org>
-X-Mailer: git-send-email 2.26.1
+ s=default; t=1587234212;
+ bh=D0YLD1CWlKpcWEMow+Kk2q0B0UJPZE3Wdv2YBGnWJic=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=TM/WaVc93+TEUGTvUQx0MkFqN55VwlhtsfB622iwbLuaBBILnE8kj6UFczbdPbjJF
+ O4Nvkaq252hnpXVhWbA5IhWr3I2jb/+gdTq/JKgt+9ZjLMQopRkh/LFVUKT57sxySM
+ /kULNFwY5oaCSk/HSbTpWuca+8F1rkhnHrnpeKxY=
+Date: Sat, 18 Apr 2020 19:23:27 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH v3 1/3] ARM: at91: add atmel tcb capabilities
+Message-ID: <20200418192327.151e3155@archlinux>
+In-Reply-To: <20200417135635.GA94725@icarus>
+References: <20200415130455.2222019-1-kamel.bouhara@bootlin.com>
+ <20200415130455.2222019-2-kamel.bouhara@bootlin.com>
+ <20200417135635.GA94725@icarus>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, peppe.cavallaro@st.com,
- alexandre.torgue@st.com, joabreu@synopsys.com, davem@davemloft.net,
- khilman@baylibre.com, martin.blumenstingl@googlemail.com,
- stable@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_111508_688667_B0487BA5 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20200418_112333_374684_994502BA 
+X-CRM114-Status: GOOD (  17.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,107 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, stable@vger.kernel.org,
- Jose Abreu <joabreu@synopsys.com>, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kamel Bouhara <kamel.bouhara@bootlin.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Running with KASAN on a VIM3L systems leads to the following splat
-when probing the Ethernet device:
+On Fri, 17 Apr 2020 09:56:35 -0400
+William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
 
-==================================================================
-BUG: KASAN: global-out-of-bounds in _get_maxdiv+0x74/0xd8
-Read of size 4 at addr ffffa000090615f4 by task systemd-udevd/139
-CPU: 1 PID: 139 Comm: systemd-udevd Tainted: G            E     5.7.0-rc1-00101-g8624b7577b9c #781
-Hardware name: amlogic w400/w400, BIOS 2020.01-rc5 03/12/2020
-Call trace:
- dump_backtrace+0x0/0x2a0
- show_stack+0x20/0x30
- dump_stack+0xec/0x148
- print_address_description.isra.12+0x70/0x35c
- __kasan_report+0xfc/0x1d4
- kasan_report+0x4c/0x68
- __asan_load4+0x9c/0xd8
- _get_maxdiv+0x74/0xd8
- clk_divider_bestdiv+0x74/0x5e0
- clk_divider_round_rate+0x80/0x1a8
- clk_core_determine_round_nolock.part.9+0x9c/0xd0
- clk_core_round_rate_nolock+0xf0/0x108
- clk_hw_round_rate+0xac/0xf0
- clk_factor_round_rate+0xb8/0xd0
- clk_core_determine_round_nolock.part.9+0x9c/0xd0
- clk_core_round_rate_nolock+0xf0/0x108
- clk_core_round_rate_nolock+0xbc/0x108
- clk_core_set_rate_nolock+0xc4/0x2e8
- clk_set_rate+0x58/0xe0
- meson8b_dwmac_probe+0x588/0x72c [dwmac_meson8b]
- platform_drv_probe+0x78/0xd8
- really_probe+0x158/0x610
- driver_probe_device+0x140/0x1b0
- device_driver_attach+0xa4/0xb0
- __driver_attach+0xcc/0x1c8
- bus_for_each_dev+0xf4/0x168
- driver_attach+0x3c/0x50
- bus_add_driver+0x238/0x2e8
- driver_register+0xc8/0x1e8
- __platform_driver_register+0x88/0x98
- meson8b_dwmac_driver_init+0x28/0x1000 [dwmac_meson8b]
- do_one_initcall+0xa8/0x328
- do_init_module+0xe8/0x368
- load_module+0x3300/0x36b0
- __do_sys_finit_module+0x120/0x1a8
- __arm64_sys_finit_module+0x4c/0x60
- el0_svc_common.constprop.2+0xe4/0x268
- do_el0_svc+0x98/0xa8
- el0_svc+0x24/0x68
- el0_sync_handler+0x12c/0x318
- el0_sync+0x158/0x180
+> On Wed, Apr 15, 2020 at 03:04:53PM +0200, Kamel Bouhara wrote:
+> > Some atmel socs have extra tcb capabilities that allow using a generic
+> > clock source or enabling a quadrature decoder.
+> > 
+> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>  
+> 
+> Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> 
+I'll need an appropriate ack from at91 maintainers for this bit
 
-The buggy address belongs to the variable:
- div_table.63646+0x34/0xfffffffffffffa40 [dwmac_meson8b]
+Thanks,
 
-Memory state around the buggy address:
- ffffa00009061480: fa fa fa fa 00 00 00 01 fa fa fa fa 00 00 00 00
- ffffa00009061500: 05 fa fa fa fa fa fa fa 00 04 fa fa fa fa fa fa
->ffffa00009061580: 00 03 fa fa fa fa fa fa 00 00 00 00 00 00 fa fa
-                                                             ^
- ffffa00009061600: fa fa fa fa 00 01 fa fa fa fa fa fa 01 fa fa fa
- ffffa00009061680: fa fa fa fa 00 01 fa fa fa fa fa fa 04 fa fa fa
-==================================================================
+Jonathan
 
-Digging into this indeed shows that the clock divider array is
-lacking a final fence, and that the clock subsystems goes in the
-weeds. Oh well.
-
-Let's add the empty structure that indicates the end of the array.
-
-Fixes: bd6f48546b9c ("net: stmmac: dwmac-meson8b: Fix the RGMII TX delay on Meson8b/8m2 SoCs")
-Signed-off-by: Marc Zyngier <maz@kernel.org>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: stable@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-index 0e2fa14f14237..a3934ca6a043b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-@@ -119,6 +119,7 @@ static int meson8b_init_rgmii_tx_clk(struct meson8b_dwmac *dwmac)
- 		{ .div = 5, .val = 5, },
- 		{ .div = 6, .val = 6, },
- 		{ .div = 7, .val = 7, },
-+		{ /* end of array */ }
- 	};
- 
- 	clk_configs = devm_kzalloc(dev, sizeof(*clk_configs), GFP_KERNEL);
--- 
-2.26.1
+> > ---
+> > Changes from v3:
+> >  - Added missing kernel doc for new elements introduced in structure
+> >    atmel_tcb_config.
+> > 
+> > Changes from v2:
+> >  - Fixed first patch not applying on mainline
+> > 
+> >  include/soc/at91/atmel_tcb.h | 5 +++++
+> >  1 file changed, 5 insertions(+)
+> > 
+> > diff --git a/include/soc/at91/atmel_tcb.h b/include/soc/at91/atmel_tcb.h
+> > index c3c7200ce151..1d7071dc0bca 100644
+> > --- a/include/soc/at91/atmel_tcb.h
+> > +++ b/include/soc/at91/atmel_tcb.h
+> > @@ -36,9 +36,14 @@ struct clk;
+> >  /**
+> >   * struct atmel_tcb_config - SoC data for a Timer/Counter Block
+> >   * @counter_width: size in bits of a timer counter register
+> > + * @has_gclk: boolean indicating if a timer counter has a generic clock
+> > + * @has_qdec: boolean indicating if a timer counter has a quadrature
+> > + * decoder.
+> >   */
+> >  struct atmel_tcb_config {
+> >  	size_t	counter_width;
+> > +	bool    has_gclk;
+> > +	bool    has_qdec;
+> >  };
+> >  
+> >  /**
+> > -- 
+> > 2.25.0
+> >   
 
 
 _______________________________________________
