@@ -2,62 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 842B91AEEC6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 16:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD7031AEECC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 16:39:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFhULm22CYPk/tcsGrdmQbAfNKzpgveCOcWruRH8wyY=; b=NUehTbk9kz7c15
-	FiY9HThQSQ96Os1nYGHIk1WG22wRgVz7XXeqM4s4OIL4MdzFzDay2gKi8H6KRLdmKoIjUnF84apa2
-	0cnxmXfH79uLBJspkIJFNQEQuFZCPHMxwS1vC8hykZiB/UyBsZ0/4kdwo95syfcwnDKD3v1PwZXIX
-	JmPDCqsq87+Uvk2FBTPs9uT/1ZEsju3PgAZ6mC2o+kcBXPto3/xj9zXZgSEBkC6OCQ3XBQB6y68lS
-	V6hUmeO87IsxSEXVf0HajMdpjRPjQeJ6CK6OXlAakK6p4pzdNMI2ddbW28B0rKQifdudbu70XMSeT
-	PGX7eugtcsfp6NZ5/GfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v+9vM/9tuyjm6APjk1gB1yMl9DNZgcNHXs++DRGrCjo=; b=C3vU3kROx9chK+
+	72jEcUg3q9Z/yom0SW4FqEMSMWqYOMOEciGKKngkvdnek6fQwnP9OzCpM4hHUf6E1XSjXPd+FLzvX
+	oJSPAmQcB3jdlmBLWGVixgW4H5mA9ICfMPAk2T5ht6jKVs+2rKjcKlpOpvdwy64wDEnidVmWDB2UM
+	ZAZm5D5JV4ZBVYI8c1PsaETJPkm2BO2gmV+df0ZEFyxDiEyNu2z1AGgfYcbmYT1/n+PS8d/sR39f9
+	634ThMWWOJFtBjlr4h3mpJdsSxxw7CieAZGuKYg/ZuQnZVhLXMc6sEY2QbNZPD5xaG0GiW/yfMM5O
+	YHxujYoVa0I/W1Hxh2hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPoco-0003FB-Jz; Sat, 18 Apr 2020 14:39:18 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jPodD-0003V3-UE; Sat, 18 Apr 2020 14:39:43 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPocf-00033o-K6
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 14:39:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=1LsCjVacgDNgCyib7rEtoSFJWVTL9FJKR4yzQpOfwYg=; b=UrQgm4vL1ovuJYFTO+d+97W3Qs
- TCvDjd0CNLvezkYbzOVdaG5akr/ykupJjk7WO1yvDFwqYS16vyIEWFeY87wFH3ZtWJHL6Cr1zdiuO
- Y0WiLKT375DuF8uGMnfREUff7WFSnp9EB7x6V+XcdicIyOPEwXy2PcZ+sWZo/hA2l26k=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jPocZ-003TEL-8P; Sat, 18 Apr 2020 16:39:03 +0200
-Date: Sat, 18 Apr 2020 16:39:03 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [RFC net-next PATCH v2 1/2] net/fsl: add ACPI support for mdio bus
-Message-ID: <20200418143903.GF804711@lunn.ch>
-References: <20200418105432.11233-1-calvin.johnson@oss.nxp.com>
- <20200418105432.11233-2-calvin.johnson@oss.nxp.com>
- <20200418114116.GU25745@shell.armlinux.org.uk>
+ id 1jPocz-0003Sl-As
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 14:39:30 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v4so910136wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 18 Apr 2020 07:39:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=stLQlVuh4P5IJ5M0lj4/6uAQgTyw/bQBI8ltWxyZDXo=;
+ b=E9cA2LGcfpwjWkWL0LUCKY8rmu73mUw4/VIbbjYfLKPQwuWP9GEU6t7ShXY0UXKUmt
+ Z8fXWZurPul5Q9s9FOLmzG8iSW+h9wQGvfq/Vay0WY8Wa7Tz8vb4B2JnsAmuQHQQIOzr
+ jW2PHrACksVjQkQZd1h+cahQd+HTFKynZObqNlHA6BRUDaM/67kufXqd5vmEIFB3F5D+
+ T9p3+9Gkb010F2QJ0jY8Z9vjeEEAtCmOftABQtUOWhaWfAQdnBRi/2pOiSBw4FqLeuFj
+ Pr9VnRQ1cMPsoNr7KfX6BwqUkMOg1kFog4UDIjA0Qum20JgQHo2GbTunOfUK9YQa+HjZ
+ yB+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=stLQlVuh4P5IJ5M0lj4/6uAQgTyw/bQBI8ltWxyZDXo=;
+ b=jrd5DhRPakoDbmW1c6CVp8PWkvkcfZ1d52tYqDd4H60q4HUjCP2K990GJJ5P/eoVsP
+ hBQNHAhJBAXGFGchTEltTjj/4jg+2sawD5uiRiWCjf5rHWJAo2VT19OYJ3fZJ7AIQWEC
+ lFgRJV2l0ljk2fZV9DtMgRgTgD1JDuqh1ATJuwo1S3jwZ9TOdDS1sTprW+inqysN/0sf
+ rh9Vc0suhkbTYB1rFnO/PITRsBLgBf+xGxg+rhvgBrdTQD5fQb3RUHo7ROCXyGPzuUSh
+ 2puUJqp9P4T5u+VVGsM/l7oDDPkoJQ6A10dntQFwSOTbeggriEIVLmDv9KX8qijKkmOO
+ iH7g==
+X-Gm-Message-State: AGi0Pub0s0104/52VBpk2Z70SyCMvlHOv0z8qSBFVvZEW/8WzFf2kmgW
+ gIDLmGl25uyIoVSrpxsoXS4=
+X-Google-Smtp-Source: APiQypJgp3beoqLe7KxcrcgO1iEb5Zi5/JPSvihpkv2bGufse5QTbKlcUIFXicuNuiKrgQXX+QJ18g==
+X-Received: by 2002:a05:600c:2255:: with SMTP id
+ a21mr8551841wmm.150.1587220767261; 
+ Sat, 18 Apr 2020 07:39:27 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0:4e7:1fdd:b7c2:b3ab])
+ by smtp.gmail.com with ESMTPSA id
+ s9sm25375322wrg.27.2020.04.18.07.39.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 18 Apr 2020 07:39:26 -0700 (PDT)
+From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
+To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>
+Subject: [PATCH 0/7] Add H6 I2S support
+Date: Sat, 18 Apr 2020 16:39:16 +0200
+Message-Id: <20200418143923.19608-1-peron.clem@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200418114116.GU25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_073909_663939_F875A854 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20200418_073929_394551_D072EA73 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [peron.clem[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,73 +102,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Varun Sethi <V.Sethi@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>, netdev@vger.kernel.org,
- Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
- Calvin Johnson <calvin.johnson@oss.nxp.com>, Marcin Wojtas <mw@semihalf.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > +static int xgmac_mdiobus_register_phy(struct mii_bus *bus,
-> > +				      struct fwnode_handle *child, u32 addr)
-> > +{
-> > +	struct phy_device *phy;
-> > +	bool is_c45 = false;
-> > +	int rc;
-> > +	const char *cp;
-> > +	u32 phy_id;
-> > +
-> > +	fwnode_property_read_string(child, "compatible", &cp);
-> > +	if (!strcmp(cp, "ethernet-phy-ieee802.3-c45"))
-> > +		is_c45 = true;
-> > +
-> > +	if (!is_c45 && !xgmac_get_phy_id(child, &phy_id))
-> > +		phy = phy_device_create(bus, addr, phy_id, 0, NULL);
-> > +	else
-> > +		phy = get_phy_device(bus, addr, is_c45);
-> > +	if (IS_ERR(phy))
-> > +		return PTR_ERR(phy);
-> > +
-> > +	phy->irq = bus->irq[addr];
-> > +
-> > +	/* Associate the fwnode with the device structure so it
-> > +	 * can be looked up later.
-> > +	 */
-> > +	phy->mdio.dev.fwnode = child;
-> > +
-> > +	/* All data is now stored in the phy struct, so register it */
-> > +	rc = phy_device_register(phy);
-> > +	if (rc) {
-> > +		phy_device_free(phy);
-> > +		fwnode_handle_put(child);
-> > +		return rc;
-> > +	}
-> > +
-> > +	dev_dbg(&bus->dev, "registered phy at address %i\n", addr);
-> > +
-> > +	return 0;
-> 
-> You seem to be duplicating the OF implementation in a private driver,
-> converting it to fwnode.  This is not how we develop the Linux kernel.
-> We fix subsystem problems by fixing the subsystems, not by throwing
-> what should be subsystem code into private drivers.
+Hi,
 
-And i think a similar comment was given for v1, but i could be
-remembering wrongly.
+This is a sequel of Marcus Cooper serie[0], where remarks made by Maxime
+have been fixed.
 
-	    Andrew
+I have tested it on my Beelink GS1 board.
+
+Thanks,
+Clement
+
+0: https://lore.kernel.org/patchwork/cover/1139949/
+
+Jernej Skrabec (3):
+  dt-bindings: ASoC: sun4i-i2s: Add H6 compatible
+  ASoC: sun4i-i2s: Add support for H6 I2S
+  arm64: dts: sun50i-h6: Add HDMI audio to H6 DTSI
+
+Marcus Cooper (4):
+  ASoC: sun4i-i2s: Adjust LRCLK width
+  ASoC: sun4i-i2s: Set sign extend sample
+  ASoc: sun4i-i2s: Add 20 and 24 bit support
+  ASoC: sun4i-i2s: Adjust regmap settings
+
+ .../sound/allwinner,sun4i-a10-i2s.yaml        |   2 +
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  31 ++
+ sound/soc/sunxi/sun4i-i2s.c                   | 286 ++++++++++++++++--
+ 3 files changed, 295 insertions(+), 24 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
