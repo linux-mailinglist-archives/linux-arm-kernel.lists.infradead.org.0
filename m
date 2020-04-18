@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E3561AEBE3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 12:50:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72D511AEBE6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 12:51:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M7g9KvKtA5yraiC+/5C11CI0oU357Hincw0XCiSbIS8=; b=Ac1bpqTUok1ohP
-	f6/fjL9lYGlWK06BCfrQoFhgnPkMLs+fohNayQf0Ncgmo0qA/kDDu0WhURMr0ITzyEA6oHp5VUu+k
-	7dWXVlnvOF2Lyrycf32PtRqXcaFga3i5oGeyxQ/vPHtxkut4ZUB0UT8OeplOsV8gCBcXoA+GjqjW5
-	/WEkN6rgmeg8lmaB9Eh0NkQJiai+xnPq18ntfLftALzHL+2Hi8IYY0m2kjjvsIxcermH7PRIIPw0k
-	xhosQPPLtrD9udV4G+9hJRI6s2mdnaj4XUOB/k3j4jxL4vaMKSxeIfHdkaUrO3bcUAKCZ4jRq5kSE
-	VUVtBdNDkd1r5UOelMaA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ewzI2J6RkfGBLz4GbZYBMwGL/W/vFA90rSN/nVjS3RI=; b=NXvGT3OB3a4cji
+	SIZ9lAY8tIzSsMW28Hp0VX77a+pgJFvtwwXbWZR+1dIP4OcbnmuYHWT+p8mGk6tKjTSD5R3ot1yzd
+	BmManJAR1PtO6PjXcqfv9kgpRuGwReHA+RuWg1oubkt7obgNsAzKEqhtJYF6VF0rNlK8XlwUwQp3m
+	w84A6ff6mrRKGetLlMaNOnSvCg7LielmfaGC4hQnrwqcZpfAZ3O1h5i6dF4+c6PE+P0YZ32JvfqQu
+	AIGm+zEt8/nrlZF6b2SEWGKIk/Ul3Bd2RQQxfx4KLoSBJNs/naAa8rps6hBDyRDQH8V3+Be+uib0N
+	Zc5BcGCn+cXwvEHfGRFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPl2u-0007gU-Ux; Sat, 18 Apr 2020 10:50:00 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jPl4R-00028B-Vw; Sat, 18 Apr 2020 10:51:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPl2i-0007ap-CY
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 10:49:50 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 49FBAE01BA5B93032116;
- Sat, 18 Apr 2020 18:49:30 +0800 (CST)
-Received: from [127.0.0.1] (10.74.184.86) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0; Sat, 18 Apr 2020
- 18:49:20 +0800
-Subject: Re: Question about SEA handling process happened in user space
-To: James Morse <james.morse@arm.com>
-References: <5E81EFCD.6020605@huawei.com>
- <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E83104A.7020803@huawei.com>
- <f9732852-046c-347c-21e1-7690e6b84a50@arm.com> <5E840F3B.6040803@huawei.com>
- <7d6668d6-ec4a-e362-94a3-c31950651c02@arm.com> <5E8EDFF6.4050903@huawei.com>
- <d3a56afc-ce1a-1561-a6bb-70399bb97c50@arm.com> <5E8FE021.1050900@huawei.com>
- <5d00a4d4-9633-74a1-25f2-cf195e939290@arm.com>
-From: Xiaofei Tan <tanxiaofei@huawei.com>
-Message-ID: <5E9ADB2F.1020004@huawei.com>
-Date: Sat, 18 Apr 2020 18:49:19 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.5.1
+ id 1jPl4H-00027B-DD; Sat, 18 Apr 2020 10:51:27 +0000
+Received: from mail-il1-f172.google.com (mail-il1-f172.google.com
+ [209.85.166.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 77B96221F4;
+ Sat, 18 Apr 2020 10:51:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587207084;
+ bh=6t8vUBk5/k/pgZZc/ZhGj8f9kmNVrQJyH+NY8W8F+sI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ttOoscs+1bQIpSL24FRDsoIQWWloSs5TYFx7cPwPZ0tzYZmCESCZXywhF4OxOlUPU
+ RMYieP47uHPGeXHthbVm6+dMLnlMrcPYjKZZ7MhecKP9Wm0vBGaepvnDe3VfWlyVkF
+ wGTUNJm5F3tqOjEoGV5GxIAkAJ/o1sPq0Vryih7M=
+Received: by mail-il1-f172.google.com with SMTP id u5so4832063ilb.5;
+ Sat, 18 Apr 2020 03:51:24 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZojnVqEZ5BmkSvrq0bSSm3pnAjkQ549K93d5Dl17x/Qb+PIFC2
+ rBpGi+DwhYs6lQSr7PUIY4gSANVLjXutKwpS4qA=
+X-Google-Smtp-Source: APiQypIwWvSvJNgPZmqFG/jfZAw3v6D7UUEwsC6tNYtQa2O+6r2R1l361TQAXXi/K2P4KOrS75Xs56jkjExt9UwqFq0=
+X-Received: by 2002:a92:c788:: with SMTP id c8mr2760291ilk.279.1587207083739; 
+ Sat, 18 Apr 2020 03:51:23 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5d00a4d4-9633-74a1-25f2-cf195e939290@arm.com>
-X-Originating-IP: [10.74.184.86]
-X-CFilter-Loop: Reflected
+References: <20200415195422.19866-1-atish.patra@wdc.com>
+ <20200415195422.19866-6-atish.patra@wdc.com>
+ <CAMj1kXFRqTYr7_M_j6oN1-xnQ6V4uCYK49yAbjvrf1BB823Cng@mail.gmail.com>
+ <CAOnJCUK3fqsR93ewYMUkanh+x1EJN_3QwkFjSDDZZr2MjzpnUQ@mail.gmail.com>
+In-Reply-To: <CAOnJCUK3fqsR93ewYMUkanh+x1EJN_3QwkFjSDDZZr2MjzpnUQ@mail.gmail.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Sat, 18 Apr 2020 12:51:11 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFOkARJ9k81pu-LuHEd7H7AZRRrquzVN-WQ3J239JUZTw@mail.gmail.com>
+Message-ID: <CAMj1kXFOkARJ9k81pu-LuHEd7H7AZRRrquzVN-WQ3J239JUZTw@mail.gmail.com>
+Subject: Re: [v3 PATCH 5/5] RISC-V: Add EFI stub support.
+To: Atish Patra <atishp@atishpatra.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_034948_593682_9E231D4D 
-X-CRM114-Status: GOOD (  20.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200418_035125_489367_F93807F7 
+X-CRM114-Status: GOOD (  43.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,120 +85,397 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Atish Patra <atish.patra@wdc.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-riscv <linux-riscv@lists.infradead.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+On Sat, 18 Apr 2020 at 05:03, Atish Patra <atishp@atishpatra.org> wrote:
+>
+> On Thu, Apr 16, 2020 at 12:41 AM Ard Biesheuvel <ardb@kernel.org> wrote:
+> >
+> > On Wed, 15 Apr 2020 at 21:54, Atish Patra <atish.patra@wdc.com> wrote:
+> > >
+> > > Add a RISC-V architecture specific stub code that actually copies the
+> > > actual kernel image to a valid address and jump to it after boot services
+> > > are terminated. Enable UEFI related kernel configs as well for RISC-V.
+> > >
+> > > Signed-off-by: Atish Patra <atish.patra@wdc.com>
+> > > ---
+> > >  arch/riscv/Kconfig                        |  20 ++++
+> > >  arch/riscv/Makefile                       |   1 +
+> > >  arch/riscv/configs/defconfig              |   1 +
+> > >  arch/riscv/include/asm/efi.h              |  44 +++++++++
+> > >  drivers/firmware/efi/Kconfig              |   2 +-
+> > >  drivers/firmware/efi/libstub/Makefile     |   7 ++
+> > >  drivers/firmware/efi/libstub/riscv-stub.c | 111 ++++++++++++++++++++++
+> > >  7 files changed, 185 insertions(+), 1 deletion(-)
+> > >  create mode 100644 arch/riscv/include/asm/efi.h
+> > >  create mode 100644 drivers/firmware/efi/libstub/riscv-stub.c
+> > >
+> > > diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+> > > index f39e326a7a42..eb4f41c8f3ce 100644
+> > > --- a/arch/riscv/Kconfig
+> > > +++ b/arch/riscv/Kconfig
+> > > @@ -379,10 +379,30 @@ config CMDLINE_FORCE
+> > >
+> > >  endchoice
+> > >
+> > > +config EFI_STUB
+> > > +       bool
+> > > +
+> > > +config EFI
+> > > +       bool "UEFI runtime support"
+> > > +       depends on OF
+> > > +       select LIBFDT
+> > > +       select UCS2_STRING
+> > > +       select EFI_PARAMS_FROM_FDT
+> > > +       select EFI_STUB
+> > > +       select EFI_GENERIC_STUB
+> > > +       default y
+> > > +       help
+> > > +         This option provides support for runtime services provided
+> > > +         by UEFI firmware (such as non-volatile variables, realtime
+> > > +          clock, and platform reset). A UEFI stub is also provided to
+> > > +         allow the kernel to be booted as an EFI application. This
+> > > +         is only useful on systems that have UEFI firmware.
+> > > +
+> > >  endmenu
+> > >
+> > >  menu "Power management options"
+> > >
+> > >  source "kernel/power/Kconfig"
+> > > +source "drivers/firmware/Kconfig"
+> > >
+> > >  endmenu
+> > > diff --git a/arch/riscv/Makefile b/arch/riscv/Makefile
+> > > index fb6e37db836d..079435804d6d 100644
+> > > --- a/arch/riscv/Makefile
+> > > +++ b/arch/riscv/Makefile
+> > > @@ -80,6 +80,7 @@ head-y := arch/riscv/kernel/head.o
+> > >  core-y += arch/riscv/
+> > >
+> > >  libs-y += arch/riscv/lib/
+> > > +core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
+> > >
+> > >  PHONY += vdso_install
+> > >  vdso_install:
+> > > diff --git a/arch/riscv/configs/defconfig b/arch/riscv/configs/defconfig
+> > > index 4da4886246a4..ae69e12d306a 100644
+> > > --- a/arch/riscv/configs/defconfig
+> > > +++ b/arch/riscv/configs/defconfig
+> > > @@ -129,3 +129,4 @@ CONFIG_DEBUG_BLOCK_EXT_DEVT=y
+> > >  # CONFIG_RUNTIME_TESTING_MENU is not set
+> > >  CONFIG_MEMTEST=y
+> > >  # CONFIG_SYSFS_SYSCALL is not set
+> > > +CONFIG_EFI=y
+> > > diff --git a/arch/riscv/include/asm/efi.h b/arch/riscv/include/asm/efi.h
+> > > new file mode 100644
+> > > index 000000000000..62d7d5eafed8
+> > > --- /dev/null
+> > > +++ b/arch/riscv/include/asm/efi.h
+> > > @@ -0,0 +1,44 @@
+> > > +/* SPDX-License-Identifier: GPL-2.0 */
+> > > +/*
+> > > + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
+> > > + * Based on arch/arm64/include/asm/efi.h
+> > > + */
+> > > +#ifndef _ASM_EFI_H
+> > > +#define _ASM_EFI_H
+> > > +
+> > > +#include <asm/io.h>
+> > > +#include <asm/mmu_context.h>
+> > > +#include <asm/ptrace.h>
+> > > +#include <asm/tlbflush.h>
+> > > +
+> > > +#define VA_BITS_MIN 39
+> > > +
+> > > +/* on RISC-V, the FDT may be located anywhere in system RAM */
+> > > +static inline unsigned long efi_get_max_fdt_addr(unsigned long dram_base)
+> > > +{
+> > > +       return ULONG_MAX;
+> > > +}
+> > > +
+> > > +/* Load initrd at enough distance from DRAM start */
+> > > +static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
+> > > +                                                   unsigned long image_addr)
+> > > +{
+> > > +       return dram_base + SZ_256M;
+> > > +}
+> > > +
+> > > +#define efi_bs_call(func, ...) efi_system_table()->boottime->func(__VA_ARGS__)
+> > > +#define efi_rt_call(func, ...) efi_system_table()->runtime->func(__VA_ARGS__)
+> > > +#define efi_is_native()                (true)
+> > > +
+> > > +#define efi_table_attr(inst, attr)     (inst->attr)
+> > > +
+> > > +#define efi_call_proto(inst, func, ...) inst->func(inst, ##__VA_ARGS__)
+> > > +
+> > > +#define alloc_screen_info(x...)                (&screen_info)
+> > > +extern char stext_offset[];
+> > > +
+> > > +static inline void free_screen_info(struct screen_info *si)
+> > > +{
+> > > +}
+> > > +
+> > > +#endif /* _ASM_EFI_H */
+> > > diff --git a/drivers/firmware/efi/Kconfig b/drivers/firmware/efi/Kconfig
+> > > index 2a2b2b96a1dc..fcdc789d3f87 100644
+> > > --- a/drivers/firmware/efi/Kconfig
+> > > +++ b/drivers/firmware/efi/Kconfig
+> > > @@ -111,7 +111,7 @@ config EFI_GENERIC_STUB
+> > >
+> > >  config EFI_ARMSTUB_DTB_LOADER
+> > >         bool "Enable the DTB loader"
+> > > -       depends on EFI_GENERIC_STUB
+> > > +       depends on EFI_GENERIC_STUB && !RISCV
+> > >         default y
+> > >         help
+> > >           Select this config option to add support for the dtb= command
+> > > diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
+> > > index 2b4e09bf987c..7d46b70b51f2 100644
+> > > --- a/drivers/firmware/efi/libstub/Makefile
+> > > +++ b/drivers/firmware/efi/libstub/Makefile
+> > > @@ -22,6 +22,8 @@ cflags-$(CONFIG_ARM64)                := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> > >  cflags-$(CONFIG_ARM)           := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> > >                                    -fno-builtin -fpic \
+> > >                                    $(call cc-option,-mno-single-pic-base)
+> > > +cflags-$(CONFIG_RISCV)         := $(subst $(CC_FLAGS_FTRACE),,$(KBUILD_CFLAGS)) \
+> > > +                                  -fpic
+> > >
+> > >  cflags-$(CONFIG_EFI_GENERIC_STUB)      += -I$(srctree)/scripts/dtc/libfdt
+> > >
+> > > @@ -57,6 +59,7 @@ lib-$(CONFIG_EFI_GENERIC_STUB)                += efi-stub.o fdt.o string.o \
+> > >  lib-$(CONFIG_ARM)              += arm32-stub.o
+> > >  lib-$(CONFIG_ARM64)            += arm64-stub.o
+> > >  lib-$(CONFIG_X86)              += x86-stub.o
+> > > +lib-$(CONFIG_RISCV)            += riscv-stub.o
+> > >  CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+> > >  CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+> > >
+> > > @@ -81,6 +84,10 @@ STUBCOPY_FLAGS-$(CONFIG_ARM64)       += --prefix-alloc-sections=.init \
+> > >                                    --prefix-symbols=__efistub_
+> > >  STUBCOPY_RELOC-$(CONFIG_ARM64) := R_AARCH64_ABS
+> > >
+> > > +STUBCOPY_FLAGS-$(CONFIG_RISCV) += --prefix-alloc-sections=.init \
+> > > +                                  --prefix-symbols=__efistub_
+> > > +STUBCOPY_RELOC-$(CONFIG_RISCV) := R_RISCV_HI20
+> > > +
+> > >  $(obj)/%.stub.o: $(obj)/%.o FORCE
+> > >         $(call if_changed,stubcopy)
+> > >
+> > > diff --git a/drivers/firmware/efi/libstub/riscv-stub.c b/drivers/firmware/efi/libstub/riscv-stub.c
+> > > new file mode 100644
+> > > index 000000000000..69d13e0ebaea
+> > > --- /dev/null
+> > > +++ b/drivers/firmware/efi/libstub/riscv-stub.c
+> > > @@ -0,0 +1,111 @@
+> > > +// SPDX-License-Identifier: GPL-2.0
+> > > +/*
+> > > + * Copyright (C) 2013, 2014 Linaro Ltd;  <roy.franz@linaro.org>
+> > > + * Copyright (C) 2020 Western Digital Corporation or its affiliates.
+> > > + *
+> > > + * This file implements the EFI boot stub for the RISC-V kernel.
+> > > + * Adapted from ARM64 version at drivers/firmware/efi/libstub/arm64-stub.c.
+> > > + */
+> > > +
+> > > +#include <linux/efi.h>
+> > > +#include <linux/libfdt.h>
+> > > +#include <linux/libfdt_env.h>
+> > > +#include <asm/efi.h>
+> > > +#include <asm/sections.h>
+> > > +
+> > > +#include "efistub.h"
+> > > +/*
+> > > + * RISCV requires the kernel image to placed TEXT_OFFSET bytes beyond a 2 MB
+> > > + * aligned base for 64 bit and 4MB for 32 bit.
+> > > + */
+>
+> Fixed the comment.
+>
+> > > +#ifdef CONFIG_64BIT
+> > > +#define MIN_KIMG_ALIGN SZ_2M
+> > > +#else
+> > > +#define MIN_KIMG_ALIGN SZ_4M
+> > > +#endif
+> > > +
+> > > +typedef __attribute__((noreturn)) void (*jump_kernel_func)(unsigned int,
+> > > +                                                          unsigned long);
+> > > +efi_status_t check_platform_features(void)
+> > > +{
+> > > +       return EFI_SUCCESS;
+> > > +}
+> > > +
+> > > +static u32 get_boot_hartid_from_fdt(unsigned long fdt)
+> > > +{
+> > > +       int chosen_node, len;
+> > > +       const fdt32_t *prop;
+> > > +
+> > > +       chosen_node = fdt_path_offset((void *)fdt, "/chosen");
+> > > +       if (chosen_node < 0)
+> > > +               return U32_MAX;
+> > > +       prop = fdt_getprop((void *)fdt, chosen_node, "boot-hartid", &len);
+> > > +       if (!prop || len != sizeof(u32))
+> > > +               return U32_MAX;
+> > > +
+> > > +       return fdt32_to_cpu(*prop);
+> > > +}
+> > > +
+> > > +/*
+> > > + * Jump to real kernel here with following constraints.
+> > > + * 1. MMU should be disabled.
+> > > + * 2. a0 should contain hartid
+> > > + * 3. a1 should DT address
+> > > + */
+> > > +void __noreturn efi_enter_kernel(unsigned long entrypoint, unsigned long fdt,
+> > > +                                unsigned long fdt_size)
+> > > +{
+> > > +       unsigned long kernel_entry = entrypoint + (unsigned long)stext_offset;
+> > > +       jump_kernel_func jump_kernel = (jump_kernel_func) kernel_entry;
+> > > +       u32 hartid = get_boot_hartid_from_fdt(fdt);
+> > > +
+> > > +       if (hartid == U32_MAX)
+> > > +               /* We can not use panic or BUG at this point */
+> > > +               __asm__ __volatile__ ("ebreak");
+> > > +       /* Disable MMU */
+> > > +       csr_write(CSR_SATP, 0);
+> > > +       jump_kernel(hartid, fdt);
+> > > +}
+> > > +
+> > > +efi_status_t handle_kernel_image(unsigned long *image_addr,
+> > > +                                unsigned long *image_size,
+> > > +                                unsigned long *reserve_addr,
+> > > +                                unsigned long *reserve_size,
+> > > +                                unsigned long dram_base,
+> > > +                                efi_loaded_image_t *image)
+> > > +{
+> > > +       efi_status_t status;
+> > > +       unsigned long kernel_size, kernel_memsize = 0;
+> > > +       unsigned long max_alloc_address;
+> > > +
+> > > +       if (image->image_base != _start)
+> > > +               pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
+> > > +
+> >
+> > I don't think you need this.
+> >
+>
+> Sure. I will remove it. I guess ARM64 code has the error print for
+> legacy loader code ?
+>
 
-On 2020/4/16 21:27, James Morse wrote:
-> On 10/04/2020 03:55, Xiaofei Tan wrote:
->> On 2020/4/9 22:28, James Morse wrote:
->>> On 09/04/2020 09:42, Xiaofei Tan wrote:
->>>> James Morse wrote:
->>>>> Do you have patches to get linux to do something useful with the processor error nodes?
->>>>>
->>>>> We'd need it to handle uncorrected cache errors with a physical address, as if they were
->>>>> memory errors...
->>>
->>>> Yes, we have some patches to do this thing inside. Then memory_failure() will be called for
->>>> arm processor error section when physical address is available.
->>>
->>> I look forward to reading them!
-> 
->> https://lkml.org/lkml/2018/1/26/197
->>
->> Our guy tried to upstream it, but not accepted. :(
-> 
-> Wrong series?
+No, for broken distro versions of GRUB
 
-No
+> > > +       kernel_size = _edata - _start;
+> > > +       kernel_memsize = kernel_size + (_end - _edata);
+> > > +       max_alloc_address = round_up(dram_base, MIN_KIMG_ALIGN) +
+> > > +                           kernel_memsize;
+> > > +
+> >
+> > You said the kernel could be anywhere in memory, as long as it is
+> > aligned correctly, right?
+>
+> Sorry I was wrong about this. RISC-V kernel maps PAGE_OFFSET virtual
+> address to the
+> physical address <xyz> where it is booted. That means memory between
+> dram start and and <xyz> address
+> will be unusable.
+>
 
-> 
-> https://lkml.org/lkml/2018/1/26/194 is not creating any handing for processor error nodes.
-> 
+OK
 
-The main patch is this. It just re-write the function ghes_arm_process_error().
-https://lkml.org/lkml/2018/1/26/198.
+> I also realized that the above computing max_address as above also
+> won't work for the following reason.
+> efi_allocate_pages_aligned actually ALIGN_DOWN the max_address. Thus,
+> efi won't find enough
+> free memory in this case if the max_address is computed from the dram_base.
+>
+> Is there an implicit requirement for efi_allocate_pages_aligned or
+> efi_low_alloc_above should be tried in case of failure?
+>
+
+No not really. What ever works for your particular use case is acceptable to me.
+
+> > In that case, you don't need this, you can simply pass ULONG_MAX as
+> > the max address.
+> >
+> As RISC-V should allocate memory as low as possible to avoid memory
+> wastage, I think the following should work.
+>
+> efi_low_alloc_above(*reserve_size, MIN_KIMG_ALIGN, reserve_addr, dram_base);
+>
+> If this looks okay to you, efi_low_alloc_above should be moved back to
+> mem.c from relocate.c.
+> Should I do it in a separate patch or the original patch should be
+> modified so that efi_low_alloc_above was never moved to relocate.c
+>
+
+No, please keep efi_low_alloc_above() where it is, but drop the
+static, and put back the declaration in efistub.h
+
+> > > +       if (IS_ALIGNED((u64)_start, MIN_KIMG_ALIGN)) {
+> > > +               /*
+> > > +                * Just execute from wherever we were loaded by the
+> > > +                * UEFI PE/COFF loader if the alignment is suitable.
+> > > +                */
+> > > +               *image_addr = (u64)_start;
+> >
+> > Change these casts to (unsigned long), as reported by the robot.
+> >
+> Done.
+>
+> > So you no longer need the placement to be TEXT_OFFSET bytes past a
+> > MIN_KIMG_ALIGN aligned boundary, right?
+> >
+>
+> Nope. EFI memory marked the firmware area as reserved. So EFI memory
+> allocator will make sure that
+> it never allocates memory from that region.
+>
+
+OK, good.
 
 
-> That series tried to to suck all the pending errors out of the core code, into an arch
-> specific queue:
-> | arch/arm64/kernel/ras.c              | 173 +++++++++++++++++++++++++++++++++++
-> 
-> As far as I understand it, that was to ensure the memory_failure() work was done before we
-> return to user-space.
-> 
-> My attempt to fix that got rolled up in the SDEI series. It was posted again here:
-> https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
-> 
-> 
-> If you need processor errors handling, there should be code added to the
-> CPER_SEC_PROC_ARM else-if in ghes_do_proc() to do the handling.
-> 
-> You may end up duplicating bits of ghes_handle_memory_failure(), to report the memory
-> errors that happened in the cache.
-> If you want to count corrected errors, a device in ghes_edac is probably the way to do that.
-> 
-
-OK. I will do some research for this. thanks.
-
-> 
->>> [...]
->>>
->>>> I think this part is worth improving.
->>>
->>>> BTW, should ARM processor record physical address when consumed an memory poison error for SEA?
->>>> It is helpful to do error recovery. Is this mandatory for arm spec?
->>>
->>> ERR<n>ADDR? Its not mandatory to be filled for any error. It can be some imp-def bus
->>> address or a virtual address. 
->>
->> virtual address ? but arm spec called it physical address.
-> 
-> That was my recollection too! But I checked again before writing this:
-> 
-> "4.4.5 ERR<n>ADDR, Error Record Address Register" in
-> https://static.docs.arm.com/ddi0587/cb/2019_07_05_DD_0587_C_b.pdf
-> 
-> has a VA bit for a virtual-address, and 'AI' for this imp-def bus address, more properly
-> described as on that "might not match the programmers' view of the physical address for
-> the recorded location."
-> 
-
-OK.The spec also support hw to record virtual address.
-
-> 
-> [...]
-> 
->>> Does your implementation always give a physical-address for a synchronous external abort?
-> 
->> We hope so. But hardware guys say it is hard to record physical address for every situation.
-> 
-> Yeah ...
-> 
-> Hopefully the situations where its too-hard are also the rarest, we can class these as
-> fatal (because we can't handle them).
-> 
-
-Agree.
-
-> 
-> Thanks,
-> 
-> James
-> 
-> .
-> 
-
--- 
- thanks
-tanxiaofei
-
+> > > +               *reserve_size = 0;
+> > > +               return EFI_SUCCESS;
+> > > +       }
+> > > +       status = efi_allocate_pages_aligned(*reserve_size, reserve_addr,
+> > > +                                           max_alloc_address, MIN_KIMG_ALIGN);
+> > > +
+> > > +       if (status != EFI_SUCCESS) {
+> > > +               pr_efi_err("Failed to relocate kernel\n");
+> > > +               *reserve_size = 0;
+> > > +               return status;
+> > > +       }
+> > > +       *image_addr = *reserve_addr;
+> > > +
+> > > +       memcpy((void *)*image_addr, _start, kernel_size);
+> > > +
+> > > +       return EFI_SUCCESS;
+> > > +}
+> > > --
+> > > 2.24.0
+> > >
+> >
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>
+>
+>
+> --
+> Regards,
+> Atish
 
 _______________________________________________
 linux-arm-kernel mailing list
