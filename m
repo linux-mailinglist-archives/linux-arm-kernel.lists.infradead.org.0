@@ -2,125 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 243FB1AEC00
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 12:56:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C49B1AEC09
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 13:15:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKVWDTBUSpAJfbuy+22YDxJNqnhMYs4292gp+1WcG2A=; b=orhgOa9tfYzSS5
-	YojqjrFBODJ1hV/rKrHw7mA6lLtBFFtVVdfgvX9bo1HfADpfKy/lGQLI6p6m95rSpokisb/AJYwrX
-	GCGIOMXcy4yCOp582Eh7AI8/KtsGjMYuLJq6/x6gc0ZDvXxoPDR6p6IJADuXEasZ8kS9QY2+IOuun
-	Uj2nD8qnrf110SOD3lytYaybY2PfY+d1knW6yG1bqa6cHO3YjlP6I8ovCIhFR2KNStR2baeIH4Bbt
-	8o3yGuhqp4jhSSLl2rzMHVfe/k5g46Is0o6UPsCZBPY8GHgCLPJlTP79bDsJvfcMNTHX6STT723Qg
-	M3MkBeg+h7yOBL0XPE8A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YrHwJmVavkcgZIroVpcgYpZDLfLR5xim2V4zUBKu8q8=; b=UHp
+	F9uD1iSakA6tS8i4/sRRaKkPzSy6sRYGsBmXSGLDU9c4owSdYxnUKTANc5JEwIfF/InJ6kTIqzQB0
+	fQqpdR5aQA6fcUqXg9nygkaVzZ9ffkXWK0G/H+5516DPAvnaAnmFxB9Qm7KUntYvDDkpDcv25o/jO
+	o4tulGefP2b71O8hhqXbfpu+VQvbg1NPjouvKeivTP75PdnWwD6d1QABwJ3CIExevWDCZyaM900Yg
+	1prYqLeDax2p+4NfjrZiTTYRSt6DnHGMjkGpAt98MFaXl4I98rj7uBg6jS/OMufs489vzn3h3on73
+	wfpXpxxoisWpeAogrDMQ/Gks6eLYJxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPl8z-0006EM-2U; Sat, 18 Apr 2020 10:56:17 +0000
-Received: from mail-am6eur05on2076.outbound.protection.outlook.com
- ([40.107.22.76] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1jPlR2-0008JA-VL; Sat, 18 Apr 2020 11:14:56 +0000
+Received: from m176115.mail.qiye.163.com ([59.111.176.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPl8R-0005yl-TB
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 10:55:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cPlJoMUay0neJ2YFBMHG5XsqVOL+dMcq4WUoyd7gbd/j6yevoHFBy27LYkH6ohVMnhHZpWmgwSLH8/7FOwStOYy4GgyfAi2l+UkUMXf3mpd4sc+GChymXXXIpwDNXx/H4Nb6Pyly6ej96QdSttYmqLNcrJtAxNwi4MnaVAuweP2EI/qk5A/hQ/LmWgv8idxJRrdZ+czRaHfxPPPTDFuJfyEnA3oySaBmaEjCH09PmzKe2gZYDr0U/YywAH8b+388Pzht+rp9GZqHyVgoeYJCvFh9/0saFSLob6dn9f+XZPhx4QK1G0RbGNNfSMMzPtLOu51GVBRRZboQUeJBVYGpyA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0l56irLD1C8aWBRjDKWr+jrOD801c2V+/NafQPp0oyM=;
- b=BBv5Y2hgXv1qpUg+wMg8Zun+Zyy2pZOBy6J7cMlivpd137Q6/99iraVLQ0IZV+UOE70UFfVh4leMGYDzEQOzoesmY4UKGLzpSSePWjWIIMYHtbb4BkrQIBy7zHNFUXV9ZiRecPFytqDIWU7unX4ot5JWWmG8LeLDUjYtn/XW8NZK182vEgm4AVc+14VobQ9trW8lDNSeUzpIZsE19yJhA9483h09SKH+PJj1FNAumbFHv6BAx5zjtMxJr5NSdFu824AeHgPlryvOMTmOrVYqM7vKFDMql9DGUUkbD2k4rnLebnL9uya43pwYthVCUx4hnK5ELRqSRYrsWTqgweR6Yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0l56irLD1C8aWBRjDKWr+jrOD801c2V+/NafQPp0oyM=;
- b=Gk35Q4397vR6z+eippu3i4S79NuUM8QRWcv4DNBEvqyjvelHu9nj99edMj8zRO4ZJfvCtB9EuAzkCj7GmisgveE/MrZXC5p2R0qToXIsMDzL+c9uS9CDjQ0DcrMGNx0ka3N9rMn10pHut3Xsprq/GkQs27mwlDKGSEMUX3gS0rA=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=calvin.johnson@oss.nxp.com; 
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
- by AM0PR04MB6899.eurprd04.prod.outlook.com (2603:10a6:208:183::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Sat, 18 Apr
- 2020 10:55:40 +0000
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2921.027; Sat, 18 Apr 2020
- 10:55:40 +0000
-From: Calvin Johnson <calvin.johnson@oss.nxp.com>
-To: linux.cj@gmail.com, Jeremy Linton <jeremy.linton@arm.com>,
- Andrew Lunn <andrew@lunn.ch>, Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>
-Subject: [RFC net-next PATCH v2 2/2] net: dpaa2-mac: Add ACPI support for
- DPAA2 MAC driver
-Date: Sat, 18 Apr 2020 16:24:32 +0530
-Message-Id: <20200418105432.11233-3-calvin.johnson@oss.nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200418105432.11233-1-calvin.johnson@oss.nxp.com>
-References: <20200418105432.11233-1-calvin.johnson@oss.nxp.com>
-X-ClientProxiedBy: SG2PR03CA0099.apcprd03.prod.outlook.com
- (2603:1096:4:7c::27) To AM0PR04MB5636.eurprd04.prod.outlook.com
- (2603:10a6:208:130::22)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
- SG2PR03CA0099.apcprd03.prod.outlook.com (2603:1096:4:7c::27) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.6 via Frontend Transport; Sat, 18 Apr 2020 10:55:35 +0000
-X-Mailer: git-send-email 2.17.1
-X-Originating-IP: [14.142.151.118]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: aaa37b56-c8e5-4716-8e7c-08d7e38708df
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6899:|AM0PR04MB6899:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB68993E7CB3C4B47FA2086D06D2D60@AM0PR04MB6899.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:901;
-X-Forefront-PRVS: 0377802854
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(346002)(376002)(39860400002)(366004)(136003)(396003)(478600001)(1076003)(86362001)(81156014)(26005)(4326008)(8676002)(8936002)(1006002)(6666004)(6512007)(316002)(6636002)(7416002)(186003)(16526019)(54906003)(110136005)(44832011)(2616005)(2906002)(956004)(52116002)(66476007)(55236004)(66556008)(6506007)(5660300002)(6486002)(66946007)(110426005)(921003);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: brPSHiWwotiIHQDrLbwCqFzUYDGR58NfIQUaUYALiKFHckn1Q3crXt/3I3FdeDi5gRujM/S+saBGOwtSEO77CuSP1CxQt4BKMz9ncLVIn9oRBti0+U9fXzcOKgcho8eYaWHRxF8AVlINJRYxOmMt3eb2B+kT628CkuDorNcQgkeNND+5b7yuDehK2psdaXwBTQYS4KuUrxKRl1L5230gsBZjQYrfyXte0caphtM8KZh/IdYSRJkBYonJGZ6+pu73uPJKZ2jYJqDtd8hDQm3hCkT6xCVW/SX6hyqAYZtor4fE39vSLKYlTD4xAfM5Y32p+mDGsaozeWbTXi2Lg/hJy6N0AR0O3GHcPD7/gjsYpZUg1vWoY2yGhJ88rCCohj2X8JNu4UiZ2bIqUg+5ckwUi3B+UTeN/29w3lFMfjsnhCqgmwRDybVzSINgUsvVyKbNWzvj2mTkdqp2uwBDMD7nbd0uA8Gz3+AkrL8B36q6nlM8A5sPy4wC6cuUZ92JKurrfPv4IE1jYQ6v4Uw2vAhyTQ==
-X-MS-Exchange-AntiSpam-MessageData: Skux+se3JHrbCP+Z4P/s0gh/swcBHFVO591IqMvMU+rBpuSdUTAx4PJ0XdyHO5FL7K7G3Gh1o9tt31y7/S7Tusx0bWE/ucup3iU/A1wk53aWGUY4sE+5d9snfEhuNY16hCyZiac0TyFtnbls/y7yHA==
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aaa37b56-c8e5-4716-8e7c-08d7e38708df
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Apr 2020 10:55:40.7002 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: wNbqPS09TEesK751nNCYMabUcQQ2rV9mwtLiIJhLeBatf99BjHGMBXS0iDvrKRtcfW+hRNauXpiXVFwzaLsxGQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6899
+ id 1jPlQu-0008Fp-My
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 11:14:50 +0000
+Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
+ by m176115.mail.qiye.163.com (Hmail) with ESMTPA id BC58A66463C;
+ Sat, 18 Apr 2020 19:14:33 +0800 (CST)
+From: Wang Qing <wangqing@vivo.com>
+To: Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Enrico Weigelt <info@metux.net>, Allison Randal <allison@lohutok.net>,
+ Wang Qing <wangqing@vivo.com>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] arm: fixed backtrace when task running on another cpu
+Date: Sat, 18 Apr 2020 19:14:18 +0800
+Message-Id: <1587208459-5470-1-git-send-email-wangqing@vivo.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVDT0NCQkJCTExKSkpDSVlXWShZQU
+ hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PC46Cww4FTgzFg0xKgIQCR42
+ H04wChJVSlVKTkNMSUtDT0xPS0pLVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
+ VUtVSEpVSklJWVdZCAFZQUlLTU03Bg++
+X-HM-Tid: 0a718cff4d429373kuwsbc58a66463c
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_035543_973318_1D59DB80 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200418_041448_878326_E21764E3 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.76 listed in list.dnswl.org]
+ no trust [59.111.176.115 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,245 +67,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ioana Radulescu <ruxandra.radulescu@nxp.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>, netdev@vger.kernel.org,
- Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
- Calvin Johnson <calvin.johnson@oss.nxp.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: opensource.kernel@vivo.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Modify dpaa2_mac_connect() to support ACPI along with DT.
-Modify dpaa2_mac_get_node() to get the dpmac fwnode from either
-DT or ACPI.
-Replace of_get_phy_mode with fwnode_get_phy_mode to get
-phy-mode for a dpmac_node.
-Define and use helper functions fwnode_phy_match() and
-fwnode_phy_find_device() to find phy_dev that is later
-connected to mac->phylink.
+We cannot get FP when the task is currently running on another CPU,
+in this case, current stack is printed instead of the task.
+Also, thread_saved_fp() is the last time the task was switched out,
+we should not use too.
 
-Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
+Signed-off-by: Wang Qing <wangqing@vivo.com>
 ---
+ arch/arm/kernel/traps.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Changes in v2:
-- Major change following other network drivers supporting ACPI
-- dropped v1 patches 1, 2, 4, 5 and 6 as they are no longer valid
-- incorporated other v1 review comments
-
- .../net/ethernet/freescale/dpaa2/dpaa2-mac.c  | 122 ++++++++++++++----
- 1 file changed, 94 insertions(+), 28 deletions(-)
-
-diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-index 3ee236c5fc37..5a03da54a67f 100644
---- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-+++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-@@ -3,6 +3,9 @@
- 
- #include "dpaa2-eth.h"
- #include "dpaa2-mac.h"
-+#include <linux/acpi.h>
-+#include <linux/phy.h>
-+#include <linux/phylink.h>
- 
- #define phylink_to_dpaa2_mac(config) \
- 	container_of((config), struct dpaa2_mac, phylink_config)
-@@ -23,38 +26,56 @@ static int phy_mode(enum dpmac_eth_if eth_if, phy_interface_t *if_mode)
- }
- 
- /* Caller must call of_node_put on the returned value */
--static struct device_node *dpaa2_mac_get_node(u16 dpmac_id)
-+static struct fwnode_handle *dpaa2_mac_get_node(struct device *dev,
-+						u16 dpmac_id)
- {
--	struct device_node *dpmacs, *dpmac = NULL;
--	u32 id;
-+	struct acpi_buffer buffer = { ACPI_ALLOCATE_BUFFER, NULL };
-+	struct fwnode_handle *dpmacs, *dpmac = NULL;
-+	unsigned long long adr;
-+	acpi_status status;
- 	int err;
-+	u32 id;
- 
--	dpmacs = of_find_node_by_name(NULL, "dpmacs");
--	if (!dpmacs)
--		return NULL;
-+	if (is_of_node(dev->parent->fwnode)) {
-+		dpmacs = device_get_named_child_node(dev->parent, "dpmacs");
-+		if (!dpmacs)
-+			return NULL;
-+
-+		while ((dpmac = fwnode_get_next_child_node(dpmacs, dpmac))) {
-+			err = fwnode_property_read_u32(dpmac, "reg", &id);
-+			if (err)
-+				continue;
-+			if (id == dpmac_id)
-+				return dpmac;
-+		}
- 
--	while ((dpmac = of_get_next_child(dpmacs, dpmac)) != NULL) {
--		err = of_property_read_u32(dpmac, "reg", &id);
--		if (err)
--			continue;
--		if (id == dpmac_id)
--			break;
-+	} else if (is_acpi_node(dev->parent->fwnode)) {
-+		device_for_each_child_node(dev->parent, dpmac) {
-+			status = acpi_evaluate_integer(ACPI_HANDLE_FWNODE(dpmac),
-+						       "_ADR", NULL, &adr);
-+			if (ACPI_FAILURE(status)) {
-+				pr_debug("_ADR returned %d on %s\n",
-+					 status, (char *)buffer.pointer);
-+				continue;
-+			} else {
-+				id = (u32)adr;
-+				if (id == dpmac_id)
-+					return dpmac;
-+			}
-+		}
- 	}
--
--	of_node_put(dpmacs);
--
--	return dpmac;
-+	return NULL;
- }
- 
--static int dpaa2_mac_get_if_mode(struct device_node *node,
-+static int dpaa2_mac_get_if_mode(struct fwnode_handle *dpmac_node,
- 				 struct dpmac_attr attr)
- {
- 	phy_interface_t if_mode;
- 	int err;
- 
--	err = of_get_phy_mode(node, &if_mode);
--	if (!err)
--		return if_mode;
-+	err = fwnode_get_phy_mode(dpmac_node);
-+	if (err > 0)
-+		return err;
- 
- 	err = phy_mode(attr.eth_if, &if_mode);
- 	if (!err)
-@@ -227,13 +248,40 @@ bool dpaa2_mac_is_type_fixed(struct fsl_mc_device *dpmac_dev,
- 	return fixed;
- }
- 
-+static int fwnode_phy_match(struct device *dev, const void *phy_fwnode)
-+{
-+	return dev->fwnode == phy_fwnode;
-+}
-+
-+static struct phy_device *fwnode_phy_find_device(struct fwnode_handle *phy_fwnode)
-+{
-+	struct device *d;
-+	struct mdio_device *mdiodev;
-+
-+	if (!phy_fwnode)
-+		return NULL;
-+
-+	d = bus_find_device(&mdio_bus_type, NULL, phy_fwnode, fwnode_phy_match);
-+	if (d) {
-+		mdiodev = to_mdio_device(d);
-+		if (mdiodev->flags & MDIO_DEVICE_FLAG_PHY)
-+			return to_phy_device(d);
-+		put_device(d);
-+	}
-+
-+	return NULL;
-+}
-+
- int dpaa2_mac_connect(struct dpaa2_mac *mac)
- {
- 	struct fsl_mc_device *dpmac_dev = mac->mc_dev;
- 	struct net_device *net_dev = mac->net_dev;
--	struct device_node *dpmac_node;
-+	struct fwnode_handle *dpmac_node = NULL;
-+	struct fwnode_reference_args args;
-+	struct phy_device *phy_dev;
- 	struct phylink *phylink;
- 	struct dpmac_attr attr;
-+	int status;
- 	int err;
- 
- 	err = dpmac_open(mac->mc_io, 0, dpmac_dev->obj_desc.id,
-@@ -251,7 +299,7 @@ int dpaa2_mac_connect(struct dpaa2_mac *mac)
- 
- 	mac->if_link_type = attr.link_type;
- 
--	dpmac_node = dpaa2_mac_get_node(attr.id);
-+	dpmac_node = dpaa2_mac_get_node(&mac->mc_dev->dev, attr.id);
- 	if (!dpmac_node) {
- 		netdev_err(net_dev, "No dpmac@%d node found.\n", attr.id);
- 		err = -ENODEV;
-@@ -269,7 +317,7 @@ int dpaa2_mac_connect(struct dpaa2_mac *mac)
- 	 * error out if the interface mode requests them and there is no PHY
- 	 * to act upon them
- 	 */
--	if (of_phy_is_fixed_link(dpmac_node) &&
-+	if (of_phy_is_fixed_link(to_of_node(dpmac_node)) &&
- 	    (mac->if_mode == PHY_INTERFACE_MODE_RGMII_ID ||
- 	     mac->if_mode == PHY_INTERFACE_MODE_RGMII_RXID ||
- 	     mac->if_mode == PHY_INTERFACE_MODE_RGMII_TXID)) {
-@@ -282,7 +330,7 @@ int dpaa2_mac_connect(struct dpaa2_mac *mac)
- 	mac->phylink_config.type = PHYLINK_NETDEV;
- 
- 	phylink = phylink_create(&mac->phylink_config,
--				 of_fwnode_handle(dpmac_node), mac->if_mode,
-+				 dpmac_node, mac->if_mode,
- 				 &dpaa2_mac_phylink_ops);
- 	if (IS_ERR(phylink)) {
- 		err = PTR_ERR(phylink);
-@@ -290,20 +338,38 @@ int dpaa2_mac_connect(struct dpaa2_mac *mac)
- 	}
- 	mac->phylink = phylink;
- 
--	err = phylink_of_phy_connect(mac->phylink, dpmac_node, 0);
-+	if (is_of_node(dpmac_node))
-+		err = phylink_of_phy_connect(mac->phylink,
-+					     to_of_node(dpmac_node), 0);
-+	else if (is_acpi_node(dpmac_node)) {
-+		status = acpi_node_get_property_reference(dpmac_node,
-+							  "phy-handle",
-+							  0, &args);
-+		if (ACPI_FAILURE(status))
-+			goto err_phylink_destroy;
-+		phy_dev = fwnode_phy_find_device(args.fwnode);
-+		if (!phy_dev)
-+			goto err_phylink_destroy;
-+
-+		err = phylink_connect_phy(mac->phylink, phy_dev);
-+		if (err)
-+			phy_detach(phy_dev);
-+	}
- 	if (err) {
--		netdev_err(net_dev, "phylink_of_phy_connect() = %d\n", err);
-+		netdev_err(net_dev, "phylink_fwnode_phy_connect() = %d\n", err);
- 		goto err_phylink_destroy;
- 	}
- 
--	of_node_put(dpmac_node);
-+	if (is_of_node(dpmac_node))
-+		of_node_put(to_of_node(dpmac_node));
- 
- 	return 0;
- 
- err_phylink_destroy:
- 	phylink_destroy(mac->phylink);
- err_put_node:
--	of_node_put(dpmac_node);
-+	if (is_of_node(dpmac_node))
-+		of_node_put(to_of_node(dpmac_node));
- err_close_dpmac:
- 	dpmac_close(mac->mc_io, 0, dpmac_dev->mc_handle);
- 	return err;
+diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
+index 1e70e72..24e860a 100644
+--- a/arch/arm/kernel/traps.c
++++ b/arch/arm/kernel/traps.c
+@@ -222,6 +222,9 @@ static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+ 	} else if (tsk != current) {
+ 		fp = thread_saved_fp(tsk);
+ 		mode = 0x10;
++	} else if (task_curr(tsk))
++		pr_info("tsk is running on another CPU, not trace!\n");
++		fp = 0;
+ 	} else {
+ 		asm("mov %0, fp" : "=r" (fp) : : "cc");
+ 		mode = 0x10;
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
