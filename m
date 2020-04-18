@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E9BE1AEDE1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 16:10:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 842B91AEEC6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 16:39:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=alsuFECR2QfUHdomoTm/pZnQenQB7eavQtaEZ3cawR4=; b=Q9dbzHzbnz7BJl
-	lT2q+b48Nyb8d1cwGWIwnSiPC5ZHc8d7ipOczc1/xAY1KWXtNZEb5/IMfwL+HaEnlBAzP31KjDxdo
-	sN1r+fbnKXs/6H0pBMaP4BosmCDQ4VI9nlBVHOyR3gzyk/a9jrdrOUD11850lX4tG9/PYB0Eo7M2U
-	Wq0KfeeyQqhTXOB7YjdV/Arpw7safZw/ZxZE7Sz9NpsPPmxHoIo+YZpY04HBl3STg3e/t8C6Oq26B
-	KteGbiHwrocpUnekjlWEryAk/2c8fUmzSCe32MnFWYGU2Y8Zfz3qvoooaAhwCvy/gRIzSuO2L9sb/
-	VLKiCMycItmVlGqiZelw==;
+	List-Owner; bh=MFhULm22CYPk/tcsGrdmQbAfNKzpgveCOcWruRH8wyY=; b=NUehTbk9kz7c15
+	FiY9HThQSQ96Os1nYGHIk1WG22wRgVz7XXeqM4s4OIL4MdzFzDay2gKi8H6KRLdmKoIjUnF84apa2
+	0cnxmXfH79uLBJspkIJFNQEQuFZCPHMxwS1vC8hykZiB/UyBsZ0/4kdwo95syfcwnDKD3v1PwZXIX
+	JmPDCqsq87+Uvk2FBTPs9uT/1ZEsju3PgAZ6mC2o+kcBXPto3/xj9zXZgSEBkC6OCQ3XBQB6y68lS
+	V6hUmeO87IsxSEXVf0HajMdpjRPjQeJ6CK6OXlAakK6p4pzdNMI2ddbW28B0rKQifdudbu70XMSeT
+	PGX7eugtcsfp6NZ5/GfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPoBF-0004Ei-Hc; Sat, 18 Apr 2020 14:10:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jPoco-0003FB-Jz; Sat, 18 Apr 2020 14:39:18 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPoAW-0001wT-94; Sat, 18 Apr 2020 14:10:24 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A845322276;
- Sat, 18 Apr 2020 14:10:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587219003;
- bh=uRKGWEHffTzz+HeEoRdC6kD4Fwtd9WIkFuzd8NRpf9I=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rw/o7oph/BqzpL/MokrZLniO+CMYr5bQIhy0iE7ly1jdAnQffBbDAwT/oXP29/kD1
- yO4+rfB7reMJcfVELjB2xnxTv3Vt6Ci5eu+ksh9stjknkXA8iFGca8wttdC0bfNC4B
- 97GGbDMVQA7vMuPluPeqRNUjDYSpsUjs5gZcsP9c=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 42/75] pwm: bcm2835: Dynamically allocate base
-Date: Sat, 18 Apr 2020 10:08:37 -0400
-Message-Id: <20200418140910.8280-42-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200418140910.8280-1-sashal@kernel.org>
-References: <20200418140910.8280-1-sashal@kernel.org>
+ id 1jPocf-00033o-K6
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 14:39:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=1LsCjVacgDNgCyib7rEtoSFJWVTL9FJKR4yzQpOfwYg=; b=UrQgm4vL1ovuJYFTO+d+97W3Qs
+ TCvDjd0CNLvezkYbzOVdaG5akr/ykupJjk7WO1yvDFwqYS16vyIEWFeY87wFH3ZtWJHL6Cr1zdiuO
+ Y0WiLKT375DuF8uGMnfREUff7WFSnp9EB7x6V+XcdicIyOPEwXy2PcZ+sWZo/hA2l26k=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jPocZ-003TEL-8P; Sat, 18 Apr 2020 16:39:03 +0200
+Date: Sat, 18 Apr 2020 16:39:03 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [RFC net-next PATCH v2 1/2] net/fsl: add ACPI support for mdio bus
+Message-ID: <20200418143903.GF804711@lunn.ch>
+References: <20200418105432.11233-1-calvin.johnson@oss.nxp.com>
+ <20200418105432.11233-2-calvin.johnson@oss.nxp.com>
+ <20200418114116.GU25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20200418114116.GU25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_071004_356453_EC022001 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200418_073909_663939_F875A854 
+X-CRM114-Status: GOOD (  13.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +65,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,39 +76,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Varun Sethi <V.Sethi@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>, netdev@vger.kernel.org,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
+ Calvin Johnson <calvin.johnson@oss.nxp.com>, Marcin Wojtas <mw@semihalf.com>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+CgpbIFVwc3RyZWFt
-IGNvbW1pdCAyYzI1YjA3ZTVlYzExOWNhYjYwOWU0MTQwN2ExZmIzZmE2MTQ0MmY1IF0KClRoZSBu
-ZXdlciAyNzExIGFuZCA3MjExIGNoaXBzIGhhdmUgdHdvIFBXTSBjb250cm9sbGVycyBhbmQgZmFp
-bHVyZSB0bwpkeW5hbWljYWxseSBhbGxvY2F0ZSB0aGUgUFdNIGJhc2Ugd291bGQgcHJldmVudCB0
-aGUgc2Vjb25kIFBXTQpjb250cm9sbGVyIGluc3RhbmNlIGJlaW5nIHByb2JlZCBmb3Igc3VjY2Vl
-ZGluZyB3aXRoIGFuIC1FRVhJU1QgZXJyb3IKZnJvbSBhbGxvY19wd21zKCkuCgpGaXhlczogZTVh
-MDZkYzVhYzFmICgicHdtOiBBZGQgQkNNMjgzNSBQV00gZHJpdmVyIikKU2lnbmVkLW9mZi1ieTog
-RmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+CkFja2VkLWJ5OiBVd2UgS2xl
-aW5lLUvDtm5pZyA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPgpSZXZpZXdlZC1ieTog
-Tmljb2xhcyBTYWVueiBKdWxpZW5uZSA8bnNhZW56anVsaWVubmVAc3VzZS5kZT4KU2lnbmVkLW9m
-Zi1ieTogVGhpZXJyeSBSZWRpbmcgPHRoaWVycnkucmVkaW5nQGdtYWlsLmNvbT4KU2lnbmVkLW9m
-Zi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIGRyaXZlcnMvcHdtL3B3
-bS1iY20yODM1LmMgfCAxICsKIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvcHdtL3B3bS1iY20yODM1LmMgYi9kcml2ZXJzL3B3bS9wd20tYmNtMjgz
-NS5jCmluZGV4IDkxZTI0ZjAxYjU0ZWQuLmQ3OGY4NmY4ZTQ2MjEgMTAwNjQ0Ci0tLSBhL2RyaXZl
-cnMvcHdtL3B3bS1iY20yODM1LmMKKysrIGIvZHJpdmVycy9wd20vcHdtLWJjbTI4MzUuYwpAQCAt
-MTY2LDYgKzE2Niw3IEBAIHN0YXRpYyBpbnQgYmNtMjgzNV9wd21fcHJvYmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKIAogCXBjLT5jaGlwLmRldiA9ICZwZGV2LT5kZXY7CiAJcGMtPmNo
-aXAub3BzID0gJmJjbTI4MzVfcHdtX29wczsKKwlwYy0+Y2hpcC5iYXNlID0gLTE7CiAJcGMtPmNo
-aXAubnB3bSA9IDI7CiAJcGMtPmNoaXAub2ZfeGxhdGUgPSBvZl9wd21feGxhdGVfd2l0aF9mbGFn
-czsKIAlwYy0+Y2hpcC5vZl9wd21fbl9jZWxscyA9IDM7Ci0tIAoyLjIwLjEKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+> > +static int xgmac_mdiobus_register_phy(struct mii_bus *bus,
+> > +				      struct fwnode_handle *child, u32 addr)
+> > +{
+> > +	struct phy_device *phy;
+> > +	bool is_c45 = false;
+> > +	int rc;
+> > +	const char *cp;
+> > +	u32 phy_id;
+> > +
+> > +	fwnode_property_read_string(child, "compatible", &cp);
+> > +	if (!strcmp(cp, "ethernet-phy-ieee802.3-c45"))
+> > +		is_c45 = true;
+> > +
+> > +	if (!is_c45 && !xgmac_get_phy_id(child, &phy_id))
+> > +		phy = phy_device_create(bus, addr, phy_id, 0, NULL);
+> > +	else
+> > +		phy = get_phy_device(bus, addr, is_c45);
+> > +	if (IS_ERR(phy))
+> > +		return PTR_ERR(phy);
+> > +
+> > +	phy->irq = bus->irq[addr];
+> > +
+> > +	/* Associate the fwnode with the device structure so it
+> > +	 * can be looked up later.
+> > +	 */
+> > +	phy->mdio.dev.fwnode = child;
+> > +
+> > +	/* All data is now stored in the phy struct, so register it */
+> > +	rc = phy_device_register(phy);
+> > +	if (rc) {
+> > +		phy_device_free(phy);
+> > +		fwnode_handle_put(child);
+> > +		return rc;
+> > +	}
+> > +
+> > +	dev_dbg(&bus->dev, "registered phy at address %i\n", addr);
+> > +
+> > +	return 0;
+> 
+> You seem to be duplicating the OF implementation in a private driver,
+> converting it to fwnode.  This is not how we develop the Linux kernel.
+> We fix subsystem problems by fixing the subsystems, not by throwing
+> what should be subsystem code into private drivers.
+
+And i think a similar comment was given for v1, but i could be
+remembering wrongly.
+
+	    Andrew
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
