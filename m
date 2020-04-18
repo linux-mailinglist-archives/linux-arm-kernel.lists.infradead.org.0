@@ -2,83 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D6861AEB22
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 11:15:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F8001AEB67
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 11:37:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=debL+oivC4l+8TLeRdvniLgY58jc54tkUX8j3Wo1QwY=; b=R2aJHueabATVsE
-	EgsURcO8siEqziB+FiyRV/e0OwwAykc2qD1535fDOSYPoG9i5e9z9aQWQG3BRth9GqmooIdSmB4Zk
-	PFbfpGZg9NzzMKIyDKwu7jC3boRauBtWtomwTXYitzjehOGKVBmyGaALd6rqUOXa8zkz3TGJrdK2t
-	BknbsLwoeYx3t6p90hN1a7+yOXo1EY/K5E9BClg7flWcD5JMVFO+Nv1of4r4srlyzbDfkcADJz9M+
-	uP5wZJLHD50Nm0xo8w9FXFqx2Sf8TxH2eBG7Ko5BeQB629qtBm+wNk9pK98MBRQVsCU4uh/fHBuIG
-	80tp3TDVzEzMaQEnkQSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=GTZH9JBhRBiET9UgV6wL7urZT350lSEB4SiI7RNk5eM=; b=ZwC
+	pbSdPQYW/D64PWet/uZ5jCfRMPICxpvXtd/XgukRpAjiNsxY7p/vS47CecZ2LvQjGY1Fvud3OIpM9
+	6J2qx/8s0VIj1KDhMUMnvTphwQEJtDR9mDaLnssgg6eSpXmPz9L4a8fGkt7shv8pWbmQFDOOC33Pq
+	WHg4wwmKolRphJVRSyWOggblg6zIFV+doVAel4VOtAZdpKNCV3c+LK++KUq1pVGIRU5QYDfED3gT/
+	fkdQdg7dsbRPJpcShOWRrus41yXh0BBoLAvuF5QKV5+txc8N8zOA1tpnVBjhTF/07SDOd71nSoucL
+	SO8z52NV0rxwjl7xqHP2sMzsDTjpC4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPjZd-0004sO-Lu; Sat, 18 Apr 2020 09:15:41 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jPju9-0002GZ-Er; Sat, 18 Apr 2020 09:36:53 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPjZT-0004qD-8c; Sat, 18 Apr 2020 09:15:32 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g12so5410236wmh.3;
- Sat, 18 Apr 2020 02:15:30 -0700 (PDT)
+ id 1jPjty-0002Ew-0y; Sat, 18 Apr 2020 09:36:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id u13so5768438wrp.3;
+ Sat, 18 Apr 2020 02:36:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=bhjKQUnbVfHMUqcN6C3pNEvI0BmRCXrqJn+ILoBLgNE=;
- b=XkmM8GrtAWmq88n7v4WYH6fYf+5ZAxXJw/ew3C3zLCtrrrXnrsQmkd2jAdRGBp/7Cx
- RRm80J2pNErUhL/gsnwUPiJDq8a+qN0wz/LCvzM92JjQcz0KXmYeXfxgQB5h8e/rxenA
- MifVfVQ6wmYplReoa9RCT08vHBEu3tcbcwRcx9iB9vMpig8K/N/iEvSshglaqwYnLDmg
- +0ttbfmHuizmX3+MIDngAm2pkHvLDxq37KTK6Ft/HHzoQs4Y+Kpj2z6wGkpKjMzgqxLZ
- V7Y8Is0oukpKZ+2JXZjYMrdtnOHzqtt18HvvGxb1fc0FvqMoaSPMbJniEDfqge1fV9YS
- xI5Q==
+ h=from:to:cc:subject:date:message-id;
+ bh=wgfu39vG9R4ll9eCVwJav8n2HM7rx8PAeBSHmbcNkjA=;
+ b=Tb+VfyjCYOWDy0PsTMFPIeg6WnHIszFF59D9PjMUUN0svKLTjpF3sZyl8H3Co1dk1l
+ D1IMe2542AOhP/cWtXp06jpZhMqZJ2BJoQRz9spW1Xg1zAObvwCgMXOwepeCGJGWeNGW
+ N0P4haKVg4K0BRpas6bIX1+Bnr4FVIv8OeoorUMBA4fRnsia+1lhZ7HudEYL56Mbcwhe
+ 5qNE1ifOcKOUjKeJZossp3FYEzCrN/tzL6xjWouAJFs7pg9xpGak6nN4yMiaZeQgKYXs
+ XENhLmqeK43ZT7BrVNpnfFHYAB/vIKiHYiSVJzfWrnw+xAabKU8ccD3mra38zKJ4fY04
+ kWpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=bhjKQUnbVfHMUqcN6C3pNEvI0BmRCXrqJn+ILoBLgNE=;
- b=B2Wgn/oqlLQ4CB04iwSFau6JDT3LXCaMf59yxvP5Z6b6vYQ9MD6tOzzvmriNKOkt3R
- /Dz0xcoiEkAVaRuedGnYIeYtMDzCwUEMFFLgyXRayq2sFKbTCFunT4hB21laZN/ElsFJ
- DgxhEL22fA9PQNt8QR/7ulJFpeH6i3V/NWIyiZUkP3LOiW2uiwVVRbe1TujoF+korkqe
- M18VJgNkEy6EF9Gb1+mvBMwliQ55ut+dEJXJEQLt90Rr6ObUBT8NpelBAIMA2uVh8UKm
- dw+QKLBqbmmW4OdugdlxyDo2mkNMMhwrNtVcwWI2HtpRQm2onRz88RUhAOoFKJdNnYa2
- RSEA==
-X-Gm-Message-State: AGi0PuYkH63dF8PfIdTHnLj2DdUuAH1XsSBekPxIQyt+g4wfxPIshu8+
- 3Bgf/R/E5ftgLWeKXf4VUNU=
-X-Google-Smtp-Source: APiQypL+lEVsy+IjxBz7XNE27DJExvB6yoFZDOdt3iHp4l3KsnmgBJLkmn7TarbBva1+K29KE7xiVQ==
-X-Received: by 2002:a1c:ac44:: with SMTP id v65mr7447837wme.33.1587201329312; 
- Sat, 18 Apr 2020 02:15:29 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id k23sm11359188wmi.46.2020.04.18.02.15.28
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 18 Apr 2020 02:15:28 -0700 (PDT)
-To: justin.swartz@risingedge.co.za
-References: <be4f2c802a64562cbab629abc82dd7d228a1a747.1580768038.git.justin.swartz@risingedge.co.za>
-Subject: Re: [PATCH v4 2/3] ARM: dts: rockchip: add rga node for rk322x
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <bf3a2b97-4a24-e9f0-599b-4731cc94a067@gmail.com>
-Date: Sat, 18 Apr 2020 11:15:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <be4f2c802a64562cbab629abc82dd7d228a1a747.1580768038.git.justin.swartz@risingedge.co.za>
-Content-Language: en-US
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=wgfu39vG9R4ll9eCVwJav8n2HM7rx8PAeBSHmbcNkjA=;
+ b=dT0kU9os0VeTquRGKo/RJJvlYr1tn2nMX4LvjdRgEITeNalZRbwEkPv8icxCMtueII
+ uZbDG8Y3wBmOf9S4b/y1is3KFg1LvaamqiCVkroFz1SCWuxx2cG/x6dDDFmEJCuq9rEn
+ DqPdNQmCrk18IRecDjLwGsDWWZm0o37kbZ/grr9xfSxDNaufpM0QNSZR77NscpNav0nD
+ ZKBz0B6O7PyrChBHYS8zXEzlU9clvcOlFmGLH82/sn9xs2sp2QIUfgE898YVXhT7a0s+
+ L8LWGE1+4o3Ce4J0Stc0gk8zaLsaYNGseeCfWrLhulI2Fb+HMqc/RT1xGTqzi1IIby+Z
+ QQLQ==
+X-Gm-Message-State: AGi0PuaUBddbn3Sj8QQ0H4GftL/oAnpUheWOHobE5aj2oAYG1+sVXIZ7
+ EnELlxEZe+xt1Za+zSEDmk4=
+X-Google-Smtp-Source: APiQypIcLoxJQNQyMnGc2ZI2HXyHFpNGpG/umKJLNyhN05r5WvOL5tqpbb3JhDDJb77z7YfCVPUx1g==
+X-Received: by 2002:adf:e8c2:: with SMTP id k2mr3726868wrn.396.1587202600229; 
+ Sat, 18 Apr 2020 02:36:40 -0700 (PDT)
+Received: from felia.fritz.box ([2001:16b8:2d7a:4700:391d:588b:ee8c:e294])
+ by smtp.gmail.com with ESMTPSA id d133sm11782497wmc.27.2020.04.18.02.36.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 18 Apr 2020 02:36:39 -0700 (PDT)
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Subject: [PATCH] MAINTAINERS: adjust entries to moving CEC platform drivers
+Date: Sat, 18 Apr 2020 11:36:30 +0200
+Message-Id: <20200418093630.6149-1-lukas.bulwahn@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_021531_329285_82BA7B7A 
-X-CRM114-Status: GOOD (  15.28  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200418_023642_094547_8B09C882 
+X-CRM114-Status: GOOD (  10.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ provider [lukas.bulwahn[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,9 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,64 +92,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>, kernel-janitors@vger.kernel.org,
+ Ettore Chimenti <ek5.chimenti@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Guenter Roeck <groeck@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-samsung-soc@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ Lukas Bulwahn <lukas.bulwahn@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Joe Perches <joe@perches.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Justin, Heiko,
+Commit 4be5e8648b0c ("media: move CEC platform drivers to a separate
+directory") moved various files into a new directory structure, but did
+not adjust the entries in MAINTAINERS.
 
-In the discussion about "rockchip,px30-rga" it was mentioned that:
-"no status for soc internal components without any board-specifics".
-The binding is in mainline, but the dts node is missing I think.
-Should this also be changed?
+Since then, ./scripts/get_maintainer.pl --self-test=patterns complains:
 
-Johan
+  warning: no file matches F: drivers/media/platform/s5p-cec/
+  warning: no file matches F: drivers/media/platform/tegra-cec/
+  warning: no file matches F: drivers/media/platform/cec-gpio/
+  warning: no file matches F: drivers/media/platform/meson/ao-cec-g12a.c
+  warning: no file matches F: drivers/media/platform/meson/ao-cec.c
+  warning: no file matches F: drivers/media/platform/seco-cec/seco-cec.c
+  warning: no file matches F: drivers/media/platform/seco-cec/seco-cec.h
+  warning: no file matches F: drivers/media/platform/sti/cec/
 
-+&rga {
-+	status = "okay";
-+};
-+
+Update the MAINTAINERS entries to the new file locations.
 
-> Add a node to define the presence of RGA, a 2D raster
-> graphic acceleration unit.
-> 
-> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
-> ---
->  arch/arm/boot/dts/rk322x.dtsi | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-> index 340ed6ccb..29d50bebc 100644
-> --- a/arch/arm/boot/dts/rk322x.dtsi
-> +++ b/arch/arm/boot/dts/rk322x.dtsi
-> @@ -621,6 +621,17 @@
->  		status = "disabled";
->  	};
->  
-> +	rga: rga@20060000 {
-> +		compatible = "rockchip,rk3228-rga", "rockchip,rk3288-rga";
-> +		reg = <0x20060000 0x1000>;
-> +		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
-> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA>;
-> +		clock-names = "aclk", "hclk", "sclk";
-> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-> +		reset-names = "core", "axi", "ahb";
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+---
+Mauro, please pick this non-urgent minor clean-up patch on top of the
+CEC platform driver moves.
 
-> +		status = "disabled";
+applies cleanly on next-20200417
 
-remove?
+ MAINTAINERS | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
 
-> +	};
-> +
->  	iep_mmu: iommu@20070800 {
->  		compatible = "rockchip,iommu";
->  		reg = <0x20070800 0x100>;
-> -- 
-> 2.11.0
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3083282134de..a708773e1af7 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2373,7 +2373,7 @@ L:	linux-samsung-soc@vger.kernel.org (moderated for non-subscribers)
+ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/s5p-cec.txt
+-F:	drivers/media/platform/s5p-cec/
++F:	drivers/media/cec/platform/s5p/
+ 
+ ARM/SAMSUNG S5P SERIES JPEG CODEC SUPPORT
+ M:	Andrzej Pietrasiewicz <andrzejtp2010@gmail.com>
+@@ -2518,7 +2518,7 @@ L:	linux-tegra@vger.kernel.org
+ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/tegra-cec.txt
+-F:	drivers/media/platform/tegra-cec/
++F:	drivers/media/cec/platform/tegra/
+ 
+ ARM/TETON BGA MACHINE SUPPORT
+ M:	"Mark F. Brown" <mark.brown314@gmail.com>
+@@ -3932,7 +3932,7 @@ S:	Supported
+ W:	http://linuxtv.org
+ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/cec-gpio.txt
+-F:	drivers/media/platform/cec-gpio/
++F:	drivers/media/cec/platform/cec-gpio/
+ 
+ CELL BROADBAND ENGINE ARCHITECTURE
+ M:	Arnd Bergmann <arnd@arndb.de>
+@@ -11027,8 +11027,7 @@ S:	Supported
+ W:	http://linux-meson.com/
+ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+-F:	drivers/media/platform/meson/ao-cec-g12a.c
+-F:	drivers/media/platform/meson/ao-cec.c
++F:	drivers/media/cec/platform/meson/
+ 
+ MESON NAND CONTROLLER DRIVER FOR AMLOGIC SOCS
+ M:	Liang Yang <liang.yang@amlogic.com>
+@@ -15063,8 +15062,7 @@ F:	drivers/mmc/host/sdricoh_cs.c
+ SECO BOARDS CEC DRIVER
+ M:	Ettore Chimenti <ek5.chimenti@gmail.com>
+ S:	Maintained
+-F:	drivers/media/platform/seco-cec/seco-cec.c
+-F:	drivers/media/platform/seco-cec/seco-cec.h
++F:	drivers/media/cec/platform/seco/
+ 
+ SECURE COMPUTING
+ M:	Kees Cook <keescook@chromium.org>
+@@ -16089,7 +16087,7 @@ STI CEC DRIVER
+ M:	Benjamin Gaignard <benjamin.gaignard@linaro.org>
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/stih-cec.txt
+-F:	drivers/media/platform/sti/cec/
++F:	drivers/media/cec/platform/sti/
+ 
+ STK1160 USB VIDEO CAPTURE DRIVER
+ M:	Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+-- 
+2.17.1
 
 
 _______________________________________________
