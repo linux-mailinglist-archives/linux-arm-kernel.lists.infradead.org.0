@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1AA91AF4C0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 22:21:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 527661AF4B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 22:21:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ccz0Kpdjl+2gr7yQly1oSt7LdRMrVjmIf7cnaEavv28=; b=XmkFq6+HfsuHKW
-	6JXOSsZKv48yVpMZKWChHeb6qpXfFjqHBdJl7vLW4JculgtpUb7Q+kUdakLoi/TwmkKlzNMAgB9hE
-	djyhY7KNdAH8LHcMt+8yUNez/AEkt+ynsjfECa8YnsAkkf8O4QC/WbzqTsqNXvvj7Rf1+fdi2QuD8
-	H4LKHtAUlyV9vJF3ejLEQBgCxHtWjFJgduXdVbXLVRtsVX1TLuG84HlvKzbmbnt5Eyp2JYlY9+avd
-	ikxBe0RZk77PJVT+waoNBXpXDPJX7+NBykNWkvlAiwFU1WN1uiXOd27xt2KNDSvjxbKBKy0PD1Exm
-	oEHRKAcZ7PHLV7L3MZ+A==;
+	List-Owner; bh=dIgU17GWJ3lARE/f7/qjf+7BnJ1wNzvX7O6mV7QUDsE=; b=Qhgh0uiO9IP8k+
+	C6t02GSjNCnOrYrY+LqJjMw3LoZYsJjdhp+7TUvKDvPKFopbq2nhyG1PgE2X6M/bA7cUxSeF3UQh3
+	3krTSy5UZLcy4kS0mk236BTmGYY5KNVaDLE14ya2FcK11M1qEfPqt4CJiUqLE4QGp7QLo2/o36Uvt
+	xdQh4QCwUwZGt0KQgNQlTNvUJIvKDTLD1LAwWJvNVh0u/WyY11mxHF4W9KefT4Sjf+EGviClKMDHl
+	Vw8OcivdSzdy3Sb34PrrB6+fYBRGNko08q9ICxrBIsTFgH+L7HO9whNzwwVLUc7rT39zUWQlhDg8n
+	G+ox3J2WIhMYi69FHCug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPtyG-0005Cf-Mp; Sat, 18 Apr 2020 20:21:48 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jPtxu-0004qB-1Z; Sat, 18 Apr 2020 20:21:26 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPtwX-0001Y9-QD
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 20:20:04 +0000
-Received: by mail-wr1-x442.google.com with SMTP id f13so7132598wrm.13
+ id 1jPtwb-0001Zi-0B
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 20:20:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id x18so7197952wrq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 18 Apr 2020 13:20:01 -0700 (PDT)
+ Sat, 18 Apr 2020 13:20:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+30pBdntWlJcgkbolNjxFd/p/YpKCMUbtsGUF0cke54=;
- b=CpqLi0TdivFtBdUYdlu0IK8kq03+7R/ZENpjm1PxBJ1oGUqdzIOIhyS2Nj/X0utCfc
- B9p4j4Bjv5hZQE223ADJSzI59HTZY11SjvI0dZYnlsJhRrXkOOnZTavGsOlQ42ztSVjd
- 3LzEeCTHznGhIeo4WEPCNICxozCgHV2ha13BrAZrDyo5NWJXUZVIIfW/PL/3TDPT3NoI
- kGdavhK1plQAUPwRv2CaCKve3TSC5HoGM0e2ZIaozI5J7cMdVFhuimrY2wdMRkikD0Or
- aaW3MDikWIs6/9JOkt2Vrml99ykHIKRaseOpn8sc2Q6MPE9OApzYwVmKBL6B9o8ooxOU
- egLg==
+ bh=Z+YS35j1pthADYOggJksZ21+AYvy9Q5Svl8xq7/1/0E=;
+ b=Nn/+89+nvtJcrb7DBbO2QVeuqrrEAsfyt8w3dgJayKBBa48cP9wU+J/JHNKkkhWcZ9
+ 3c1FWeoaX9CRuZ2udzCWwNPqp+c1Vu3b8YX7z+YwUKwd0bBcNVnK5Tm5zvBX5CmNP2R/
+ OimT+kEn+UBfklPCBzqtZkhoZraW1G/57/Thrj0BMB8D1FHsGXkgJeHGCMwV4hPy1Te7
+ 9Rn0VwctIieJF37geg3dxzn8wxqWSbalM/ps5C2DcoDKs87qrBgZ4LsXaHI79fkXpbzl
+ k2kKban/YP7QixnAgSGf+yyKRxSSlgQyBZyJn+dj0bztNz0rShgW9OCTShudtJiOg97x
+ QB/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+30pBdntWlJcgkbolNjxFd/p/YpKCMUbtsGUF0cke54=;
- b=VTmvbi43QBbIcz2FfQYz4At2ELUYORjvpZOZtNL/mjjRkbfEVQCIFNxU4uF03O/u5Q
- TwIwbVCB0bq7sjBK0WfTN+KQ9J3Od7fY/o0fY/rG60nQq91iGTBEyQmLrGvdtlj40dxi
- tFjlbuN9xE/1ONTK1govWirmx/7b5IpFcBnwNBEvXtd3sjVXJoJwctynoytelut9Yura
- 8TXe8tM97P8bE9Gf2YAdcl+/WHNnc1wrAZgTLon5/QBi2IV6wQDZVCHs4YZ7fQ3txEH+
- NIwD0N9ayEN8Wi0aR8FXeWC0egDcKgqOfOMeI38YnJasBCiSwBt6bV1erF/CLO4w6lNs
- 4MpQ==
-X-Gm-Message-State: AGi0PubjwcaoF8q1gS+d1Hi5hZnMYcQHfZnFs5YMKaKtOG5gypRaBuyl
- iE6WMTJm9NvXx/M470AvHhWujg==
-X-Google-Smtp-Source: APiQypLcXaHBnW9H0cOYu3yQzZUFMfmWLaUmw0+I88uE591C25vfvZ8CZwoW82VotrQ1EUmOsFrsIA==
-X-Received: by 2002:adf:dfc2:: with SMTP id q2mr11297074wrn.390.1587241200532; 
- Sat, 18 Apr 2020 13:20:00 -0700 (PDT)
+ bh=Z+YS35j1pthADYOggJksZ21+AYvy9Q5Svl8xq7/1/0E=;
+ b=NlYXWP9FOphj9XKZmMr4jphHQySrYNTnPfsCoSD+KRgcDKt4KlZPwG2My8ST/pCpZA
+ uaArtqAalW08rjFct5UsH8iBH5Fr9F8PORf9Dnun6WAYcp+iFXNbHJbNBPwgH42o3idH
+ PzTd6qpSYfTtJgLr6Wn0IyP5PHTQNyICLPyBZMlK8j0ogpMw+6/oBTSahGODA8YVPFR2
+ lqX1QmXeLvF02/5oUxHDNckU18mRwO1vmcwBAfZxt+iAxrM0SQnOeZoS5u0CD0euH3CZ
+ qv3odVEzlec3e6O1MmlUX/rczQDMFrh9BYeeN2XP4RVs608+wX7n2PBArPiPtEpnY9vk
+ /75Q==
+X-Gm-Message-State: AGi0Puaarmc/7c0t8ZfJAeRG5Zc3XkhRF2LU9X01JfUZzNMcnOD9/n1F
+ 6ZLHFp0y/uKTQCwnH77YoLnQ5w==
+X-Google-Smtp-Source: APiQypIYLF+ATds0aKxggIYh9U9zg3NGkQVvBb/u4rvxkjM65KuNTWBa954InfurDolr1GHhBYSjxA==
+X-Received: by 2002:adf:e98a:: with SMTP id h10mr10648536wrm.370.1587241201776; 
+ Sat, 18 Apr 2020 13:20:01 -0700 (PDT)
 Received: from localhost.localdomain ([2a02:8084:e84:2480:228:f8ff:fe6f:83a8])
  by smtp.gmail.com with ESMTPSA id
- m1sm31735255wro.64.2020.04.18.13.19.59
+ m1sm31735255wro.64.2020.04.18.13.20.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 18 Apr 2020 13:19:59 -0700 (PDT)
+ Sat, 18 Apr 2020 13:20:01 -0700 (PDT)
 From: Dmitry Safonov <dima@arista.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCHv3 07/50] arm: Wire up dump_backtrace_{entry,stm}
-Date: Sat, 18 Apr 2020 21:19:01 +0100
-Message-Id: <20200418201944.482088-8-dima@arista.com>
+Subject: [PATCHv3 08/50] arm: Add show_stack_loglvl()
+Date: Sat, 18 Apr 2020 21:19:02 +0100
+Message-Id: <20200418201944.482088-9-dima@arista.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200418201944.482088-1-dima@arista.com>
 References: <20200418201944.482088-1-dima@arista.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_132002_027073_95B5ABBB 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20200418_132005_390577_8AE7352F 
+X-CRM114-Status: GOOD (  12.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -129,7 +129,8 @@ Introducing log-level parameter and KERN_UNSUPPRESSED [1] seems
 an easier approach than introducing more printk buffers.
 Also, it will consolidate printings with headers.
 
-Now that c_backtrace() always emits correct loglvl, use it for printing.
+Introduce show_stack_loglvl(), that eventually will substitute
+show_stack().
 
 Cc: Russell King <linux@armlinux.org.uk>
 Cc: Will Deacon <will@kernel.org>
@@ -138,47 +139,34 @@ Cc: clang-built-linux@googlegroups.com
 [1]: https://lore.kernel.org/lkml/20190528002412.1625-1-dima@arista.com/T/#u
 Signed-off-by: Dmitry Safonov <dima@arista.com>
 ---
- arch/arm/kernel/traps.c | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
+ arch/arm/kernel/traps.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
-index 0f09ace18e6c..e1be6c85327c 100644
+index e1be6c85327c..00455b5bbf8a 100644
 --- a/arch/arm/kernel/traps.c
 +++ b/arch/arm/kernel/traps.c
-@@ -68,13 +68,15 @@ void dump_backtrace_entry(unsigned long where, unsigned long from,
- 	unsigned long end = frame + 4 + sizeof(struct pt_regs);
- 
- #ifdef CONFIG_KALLSYMS
--	printk("[<%08lx>] (%ps) from [<%08lx>] (%pS)\n", where, (void *)where, from, (void *)from);
-+	printk("%s[<%08lx>] (%ps) from [<%08lx>] (%pS)\n",
-+		loglvl, where, (void *)where, from, (void *)from);
- #else
--	printk("Function entered at [<%08lx>] from [<%08lx>]\n", where, from);
-+	printk("%sFunction entered at [<%08lx>] from [<%08lx>]\n",
-+		loglvl, where, from);
+@@ -247,12 +247,18 @@ static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
+ }
  #endif
  
- 	if (in_entry_text(from) && end <= ALIGN(frame, THREAD_SIZE))
--		dump_mem("", "Exception stack", frame + 4, end);
-+		dump_mem(loglvl, "Exception stack", frame + 4, end);
+-void show_stack(struct task_struct *tsk, unsigned long *sp)
++void show_stack_loglvl(struct task_struct *tsk, unsigned long *sp,
++		       const char *loglvl)
+ {
+-	dump_backtrace(NULL, tsk, KERN_DEFAULT);
++	dump_backtrace(NULL, tsk, loglvl);
+ 	barrier();
  }
  
- void dump_backtrace_stm(u32 *stack, u32 instruction, const char *loglvl)
-@@ -89,12 +91,12 @@ void dump_backtrace_stm(u32 *stack, u32 instruction, const char *loglvl)
- 			if (++x == 6) {
- 				x = 0;
- 				p = str;
--				printk("%s\n", str);
-+				printk("%s%s\n", loglvl, str);
- 			}
- 		}
- 	}
- 	if (p != str)
--		printk("%s\n", str);
-+		printk("%s%s\n", loglvl, str);
- }
- 
- #ifndef CONFIG_ARM_UNWIND
++void show_stack(struct task_struct *tsk, unsigned long *sp)
++{
++	show_stack_loglvl(tsk, sp, KERN_DEFAULT);
++}
++
+ #ifdef CONFIG_PREEMPT
+ #define S_PREEMPT " PREEMPT"
+ #elif defined(CONFIG_PREEMPT_RT)
 -- 
 2.26.0
 
