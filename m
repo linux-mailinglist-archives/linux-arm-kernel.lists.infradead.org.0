@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F289C1AF329
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 20:23:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DEB51AF32D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 20:25:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAqGf7wSoIfgqVYMcOOGAoph1QkKfafWUlsTF1WYCIU=; b=k0HjWtynADtOie
-	tc6OE5xrq+JcVaQEGv/rwFUggoUgDbrZkGYdoT6U/r452ZvRFKfurg65gedrK9nIetC6FBJ0ZPeo3
-	aQxaVo5EAPjKwk9vtPS8960nk927N8kopp2ChBHVJ1u3/93naPpIPoT/rYaJNxThqpC00kJbO++4R
-	ykCLcuwRkYFbUOxLVKg4hUggVaIBZ8asOfBzwggYijRnQp3VaHHExnAMZHNX88wY+x3ntMLdDE+Wm
-	vPMojh/4vHT+2JzWwX/VsdJMPk59YMdVThunP6y2k5PRa92dtsLFHLzhVGsqRWN3IRLm4AH4t/rhQ
-	0sYurJcUSpA5IypSgmog==;
+	List-Owner; bh=w2qB8LNriIrpbkvU/4LxTcOEq5Rf2vF3eywqU+XWIxA=; b=ecMB9SmRgCedML
+	lPKKG8At0GYlO3PuO9lBVGPRduAirU5p66t6Ng9hUxM2A8wrlBSp6DmxdpvwXwLHZlXSq9HxpHGIl
+	5EaqKTBs3h6L3KSpZjQwyjCiYSBImuxRDYAdiJ5ciHUnMLaF5oNwnMbYGS0XYTcJEd5JiMzWQJKan
+	yKkLKZRt5ge0NR84rZ1rKtBhDKYRoS42rKNrN0e/lWUMd2tVX/Jt/lu9o//uzVZKbz2SVtNXYQOlP
+	dih08jC2mbKm/ie2Ig2p0qRDNk9o9ffIG1Ko3adxQ6UvyYBplp/zSemK4EfNMzxSdkR7A/7HegYiJ
+	n3hQLFOy1XlK0YHVnXag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPs80-0003vk-Kl; Sat, 18 Apr 2020 18:23:44 +0000
+	id 1jPs9C-0004HR-74; Sat, 18 Apr 2020 18:24:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPs7p-0003uG-AE
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 18:23:36 +0000
+ id 1jPs92-0004H6-WE
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 18:24:50 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BBE5B21BE5;
- Sat, 18 Apr 2020 18:23:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD51221BE5;
+ Sat, 18 Apr 2020 18:24:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587234212;
- bh=D0YLD1CWlKpcWEMow+Kk2q0B0UJPZE3Wdv2YBGnWJic=;
+ s=default; t=1587234288;
+ bh=Eiw2FcEguTRJkOBXYe2RiFR5T2mMDxr5J0RGwGhG6fc=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=TM/WaVc93+TEUGTvUQx0MkFqN55VwlhtsfB622iwbLuaBBILnE8kj6UFczbdPbjJF
- O4Nvkaq252hnpXVhWbA5IhWr3I2jb/+gdTq/JKgt+9ZjLMQopRkh/LFVUKT57sxySM
- /kULNFwY5oaCSk/HSbTpWuca+8F1rkhnHrnpeKxY=
-Date: Sat, 18 Apr 2020 19:23:27 +0100
+ b=oIG38DGXDITaJxY5mhXfozPYjDp5qVgzxBz2FaEUDhDUIDtJ8/LXkYtm0DCH2A5hi
+ oAqP0Lp7VtDQ92aeu9gmRxu7OyTQ6xhEWpeP1bBkthsCRnau6P7qayITlHJtAYNSF4
+ IVvwF00aGUuThd3pXs7B1gION9uSlHW8WhJ9oBAk=
+Date: Sat, 18 Apr 2020 19:24:43 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: William Breathitt Gray <vilhelm.gray@gmail.com>
-Subject: Re: [PATCH v3 1/3] ARM: at91: add atmel tcb capabilities
-Message-ID: <20200418192327.151e3155@archlinux>
-In-Reply-To: <20200417135635.GA94725@icarus>
+Subject: Re: [PATCH v3 2/3] dt-bindings: counter: microchip-tcb-capture counter
+Message-ID: <20200418192443.47322236@archlinux>
+In-Reply-To: <20200417135820.GB94725@icarus>
 References: <20200415130455.2222019-1-kamel.bouhara@bootlin.com>
- <20200415130455.2222019-2-kamel.bouhara@bootlin.com>
- <20200417135635.GA94725@icarus>
+ <20200415130455.2222019-3-kamel.bouhara@bootlin.com>
+ <20200417135820.GB94725@icarus>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_112333_374684_994502BA 
-X-CRM114-Status: GOOD (  17.84  )
+X-CRM114-CacheID: sfid-20200418_112449_082063_83BABB5F 
+X-CRM114-Status: GOOD (  20.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,53 +90,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 Apr 2020 09:56:35 -0400
+On Fri, 17 Apr 2020 09:58:20 -0400
 William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
 
-> On Wed, Apr 15, 2020 at 03:04:53PM +0200, Kamel Bouhara wrote:
-> > Some atmel socs have extra tcb capabilities that allow using a generic
-> > clock source or enabling a quadrature decoder.
+> On Wed, Apr 15, 2020 at 03:04:54PM +0200, Kamel Bouhara wrote:
+> > Describe the devicetree binding for the Microchip TCB module.
+> > Each counter blocks exposes three independent counters.
+> > 
+> > However, when configured in quadrature decoder, both channel <0> and <1>
+> > are required for speed/position and rotation capture (yet only the
+> > position is captured).
 > > 
 > > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>  
 > 
 > Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
-> 
-I'll need an appropriate ack from at91 maintainers for this bit
+Will let this sit a bit longer to let the DT maintainers have an opportunity
+to take a look.
 
 Thanks,
 
 Jonathan
 
+> 
 > > ---
 > > Changes from v3:
-> >  - Added missing kernel doc for new elements introduced in structure
-> >    atmel_tcb_config.
+> >  - Updated the brand name: s/atmel/microchip/.
 > > 
 > > Changes from v2:
-> >  - Fixed first patch not applying on mainline
+> >  - Fixed errors reported by dt_binding_check
 > > 
-> >  include/soc/at91/atmel_tcb.h | 5 +++++
-> >  1 file changed, 5 insertions(+)
+> >  .../counter/microchip-tcb-capture.yaml        | 33 +++++++++++++++++++
+> >  1 file changed, 33 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/counter/microchip-tcb-capture.yaml
 > > 
-> > diff --git a/include/soc/at91/atmel_tcb.h b/include/soc/at91/atmel_tcb.h
-> > index c3c7200ce151..1d7071dc0bca 100644
-> > --- a/include/soc/at91/atmel_tcb.h
-> > +++ b/include/soc/at91/atmel_tcb.h
-> > @@ -36,9 +36,14 @@ struct clk;
-> >  /**
-> >   * struct atmel_tcb_config - SoC data for a Timer/Counter Block
-> >   * @counter_width: size in bits of a timer counter register
-> > + * @has_gclk: boolean indicating if a timer counter has a generic clock
-> > + * @has_qdec: boolean indicating if a timer counter has a quadrature
-> > + * decoder.
-> >   */
-> >  struct atmel_tcb_config {
-> >  	size_t	counter_width;
-> > +	bool    has_gclk;
-> > +	bool    has_qdec;
-> >  };
-> >  
-> >  /**
+> > diff --git a/Documentation/devicetree/bindings/counter/microchip-tcb-capture.yaml b/Documentation/devicetree/bindings/counter/microchip-tcb-capture.yaml
+> > new file mode 100644
+> > index 000000000000..183e9ee4c049
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/counter/microchip-tcb-capture.yaml
+> > @@ -0,0 +1,33 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/counter/microchip-tcb-capture.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Microchip TCB Counter
+> > +
+> > +maintainers:
+> > +  - Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: "microchip,tcb-capture"
+> > +
+> > +  reg:
+> > +    description: TCB capture channel to register as counter device.
+> > +      Each channel is independent therefore only one channel is
+> > +      registered by default execpt for the QDEC mode where both TCB0's
+> > +      channels <0> and  <1> are required.
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    tcb0: timer@f800c000 {
+> > +        compatible = "microchip,tcb-capture";
+> > +        reg = <0>, <1>;
+> > +    };
 > > -- 
 > > 2.25.0
 > >   
