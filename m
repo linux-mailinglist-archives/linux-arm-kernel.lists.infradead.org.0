@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C49B1AEC09
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 13:15:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DDD51AEC12
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 Apr 2020 13:26:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YrHwJmVavkcgZIroVpcgYpZDLfLR5xim2V4zUBKu8q8=; b=UHp
-	F9uD1iSakA6tS8i4/sRRaKkPzSy6sRYGsBmXSGLDU9c4owSdYxnUKTANc5JEwIfF/InJ6kTIqzQB0
-	fQqpdR5aQA6fcUqXg9nygkaVzZ9ffkXWK0G/H+5516DPAvnaAnmFxB9Qm7KUntYvDDkpDcv25o/jO
-	o4tulGefP2b71O8hhqXbfpu+VQvbg1NPjouvKeivTP75PdnWwD6d1QABwJ3CIExevWDCZyaM900Yg
-	1prYqLeDax2p+4NfjrZiTTYRSt6DnHGMjkGpAt98MFaXl4I98rj7uBg6jS/OMufs489vzn3h3on73
-	wfpXpxxoisWpeAogrDMQ/Gks6eLYJxA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=psJJtiu/k5fhVTmjhwzswITnXWOOBoC8RkIz+9vbeMI=; b=Q2PsPEwbbBAESW
+	c+8W9NTlzbLgTGgL1OFAigZDveLUm2n737piNAe0+e5pF8Z9mOvAM8qDe+3WzVs/DsfHE8h35B3il
+	Zul2PlY8vlIFNPdZjVBV50XOtSfL3SRrxuClu0d3jtl5I9hmGHHuLQYENK0mNfg2eQjEKcqSPk0+a
+	ApnvCA3kOCqSSu9j96s2X/PU3fp1okYSC5NgiQKXvY3kiQqMZvlqEhrmilfHLMsB95WluzE0UpqZi
+	VN1Mp2UTvigNXEuG32+BRn0XCnfLCBdQ2taJ5VFCOuDlyV34ht/U/+dBOljBVCubz7dGbYjvSwBo7
+	OrLtPltyEDP4/0grek8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPlR2-0008JA-VL; Sat, 18 Apr 2020 11:14:56 +0000
-Received: from m176115.mail.qiye.163.com ([59.111.176.115])
+	id 1jPlbg-0000vs-T7; Sat, 18 Apr 2020 11:25:56 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPlQu-0008Fp-My
- for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 11:14:50 +0000
-Received: from wangqing-virtual-machine.localdomain (unknown [157.0.31.122])
- by m176115.mail.qiye.163.com (Hmail) with ESMTPA id BC58A66463C;
- Sat, 18 Apr 2020 19:14:33 +0800 (CST)
-From: Wang Qing <wangqing@vivo.com>
-To: Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Enrico Weigelt <info@metux.net>, Allison Randal <allison@lohutok.net>,
- Wang Qing <wangqing@vivo.com>,
- Vincent Whitchurch <vincent.whitchurch@axis.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] arm: fixed backtrace when task running on another cpu
-Date: Sat, 18 Apr 2020 19:14:18 +0800
-Message-Id: <1587208459-5470-1-git-send-email-wangqing@vivo.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVDT0NCQkJCTExKSkpDSVlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PC46Cww4FTgzFg0xKgIQCR42
- H04wChJVSlVKTkNMSUtDT0xPS0pLVTMWGhIXVQwaFRwKEhUcOw0SDRRVGBQWRVlXWRILWUFZSk5M
- VUtVSEpVSklJWVdZCAFZQUlLTU03Bg++
-X-HM-Tid: 0a718cff4d429373kuwsbc58a66463c
+ id 1jPlbY-0000ug-HJ
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 Apr 2020 11:25:50 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 9934FD8AB4B7ECB6709C;
+ Sat, 18 Apr 2020 19:25:35 +0800 (CST)
+Received: from [127.0.0.1] (10.74.184.86) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.487.0; Sat, 18 Apr 2020
+ 19:25:29 +0800
+Subject: Re: Question about SEA handling process happened in user space
+To: James Morse <james.morse@arm.com>
+References: <5E81EFCD.6020605@huawei.com>
+ <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E8587A3.6030101@huawei.com>
+ <558ffd42-74d7-e364-2b79-93ab0998ab6e@arm.com> <5E8EE845.8090406@huawei.com>
+ <66db5a6a-e68b-00b7-6a78-2c8cd9e63aab@arm.com> <5E903FDD.4080106@huawei.com>
+ <bddb100a-7353-1aac-9877-9c5df5bd2c92@arm.com>
+From: Xiaofei Tan <tanxiaofei@huawei.com>
+Message-ID: <5E9AE3A9.5020904@huawei.com>
+Date: Sat, 18 Apr 2020 19:25:29 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.5.1
+MIME-Version: 1.0
+In-Reply-To: <bddb100a-7353-1aac-9877-9c5df5bd2c92@arm.com>
+X-Originating-IP: [10.74.184.86]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_041448_878326_E21764E3 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20200418_042549_143300_ECC79C22 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.115 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,39 +69,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We cannot get FP when the task is currently running on another CPU,
-in this case, current stack is printed instead of the task.
-Also, thread_saved_fp() is the last time the task was switched out,
-we should not use too.
+Hi James
 
-Signed-off-by: Wang Qing <wangqing@vivo.com>
----
- arch/arm/kernel/traps.c | 3 +++
- 1 file changed, 3 insertions(+)
+On 2020/4/16 21:50, James Morse wrote:
+> On 10/04/2020 10:43, Xiaofei Tan wrote:
+>> On 2020/4/9 22:28, James Morse wrote:
+>>> On 09/04/2020 10:17, Xiaofei Tan wrote:
+>>>> On 2020/4/8 0:37, James Morse wrote:
+>>>>> With that series, it runs in process-context as task-work. memory_failure() needs to
+>>>>> sleep, so it has to run in process-context. 
+> 
+>>>>> Doing it as task-work means it runs before the thread returns to user-space.
+>>>>
+>>>> Sorry, i don't understand this. i thought the task-work need to reschedule, and current thread should
+>>>> have returned to user-space before it.
+>>>
+>>> ret_to_user has a loop around do_notify_resume(), if the _TIF_NOTIFY_RESUME flag is set
+>>> and we call tracehook_notify_resume() which ends up in task_work_run()...
+>>>
+>>> That TIF flag effectively prevents this thread returning to user-space until that task
+>>> work has run.
+> 
+>> Got it. This function is great.
+> 
+> I think PeterZ pointed me at it,
+> 
 
-diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
-index 1e70e72..24e860a 100644
---- a/arch/arm/kernel/traps.c
-+++ b/arch/arm/kernel/traps.c
-@@ -222,6 +222,9 @@ static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
- 	} else if (tsk != current) {
- 		fp = thread_saved_fp(tsk);
- 		mode = 0x10;
-+	} else if (task_curr(tsk))
-+		pr_info("tsk is running on another CPU, not trace!\n");
-+		fp = 0;
- 	} else {
- 		asm("mov %0, fp" : "=r" (fp) : : "cc");
- 		mode = 0x10;
+Great.
+
+> 
+>> BTW, i have not found the place of setting the flag _TIF_NOTIFY_RESUME. Is it set by default for each thread?
+> 
+> With that series, APEI calls task_work_add(), which calls set_notify_resume() from
+> include/linux/tracehook.h
+> |	if (!test_and_set_tsk_thread_flag(task, TIF_NOTIFY_RESUME))
+> 
+
+Got it. thanks.
+
+> 
+> Thanks,
+> 
+> James
+> 
+> .
+> 
+
 -- 
-2.7.4
+ thanks
+tanxiaofei
 
 
 _______________________________________________
