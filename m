@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1E991AFC9E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 19:13:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42CC21AFCA0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 19:14:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=udhetA+yoCn1cT1fg/xTfoxfICRDEtDZeMP7ItsVYxM=; b=IFeVobrQYR/DyZ
-	y+QPi3i6okKDJVjh2SohJWWJ72DObY9d1tJLGbF2x8VlgcUithytzwdaTTwAwd1HmAI3gd1v6dbEz
-	DzM0K7CpdcUrF29Q9j+IktuuML5fi08DKLgYsELv/LvMsnz6XbOmAJaaIhe/V01RFsxh4o9keMn5R
-	4si+zK7lck4tJs/Sb5/cgLRDjKQWXS+/+IlxvZC3tLq7uHqCAeA8m3GXELqmcAXjBd9B+59uzdCcT
-	Zc7XxAQLC7EZlm6PjvFuCuZr4wotcDmp2j9utEqVdgtjB9GskqI8pQlazH4/sew7OybadBiV8ih7R
-	fZRAuXKztGiqoE0Sg3gw==;
+	List-Owner; bh=rQSsx79CbwpaT01PF/xQchk5mS02UUx9wc+YUA+Hcgk=; b=ebST+TZobUxKhD
+	hxv7PRLLZB5ub1J9Pa7rPA4ciQZtGJMK+7lDFpbPXOBaV99orVS3pnAL4L9gl+zM4jGA59KHB+a91
+	5Day3IsYnIm4bjOZH9sMkLqQrkYHlbcDSrUeXv9lHaeuBW7LzD1/p6DY4I6bXvWidarw/Fx0kD8dd
+	GjbXZsiNCdGDcB045LE2sw5NdFvR8C0BlntA1dE62QC1EfBe3Yonv1T4VKy/TSrjVSsgPSNpEm1iL
+	Alxm1rDn4E7oQ5F52CECQgsP/bZfeC1y8PzCUJo5oXfNxN0K1jSaZ2LbBY5rQ51T9CCvOGSe4HFCE
+	5EMcQ//pUGuqVk2Y/2Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQDVN-0007xV-CM; Sun, 19 Apr 2020 17:13:17 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jQDVv-0008S3-D1; Sun, 19 Apr 2020 17:13:51 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQDQp-0001x8-II
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 17:08:37 +0000
-Received: by mail-ot1-f67.google.com with SMTP id c3so5953809otp.8
+ id 1jQDQr-0001z1-A6
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 17:08:38 +0000
+Received: by mail-ot1-f66.google.com with SMTP id h11so519298ots.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Apr 2020 10:08:35 -0700 (PDT)
+ Sun, 19 Apr 2020 10:08:37 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=EBjrivoY+dBlZy5hXEimly9aG7ilu27sG29Xt5twimM=;
- b=MVRAM8CVEIj3KCWQhq/xJw/+JX7qflO/zv4K1LVii9gaKWgGlOAI/yXTVixsaEGcb4
- O5a/nhmjLk2mFgowCphiAZbTwH1N638K4oe2rdkQO0X0Xk6RNYLmaJUAbBcT6gVrCQQF
- sQHNbYnmlleha6uqrxybBYiGDa3dMkNwlVs6gZqKzfFpnCJTByDAWFgCepocdA5VfmOk
- qIwYs9i7fUAAOiB8xt/OHf33uZ8PwkDtl081hMQ8e7Z3qGE2ITYE/oT7OGDBzfwrR8FQ
- 3nw3p31ZwWLvuzLmZGQvWqqGQ1JDAJpvscnLBXa/9L4CNM1KvIOF0nIGLLl4D+OXeWiS
- pJpw==
-X-Gm-Message-State: AGi0PubJ8S7muwgy8/MAyb3GnmCZ6WHTWLnH5gbGfPTSYYcXu6bJd77y
- 95jdxoG/G9nli7f3ohywBA==
-X-Google-Smtp-Source: APiQypL94dbwiZMtLp3Y9iPspqjTiyd4nMHmIxz5FPIZ7BgIvaacRyIdkubSgHJoGyF7liSeKobz+Q==
-X-Received: by 2002:a05:6830:160c:: with SMTP id
- g12mr6519994otr.335.1587316114376; 
- Sun, 19 Apr 2020 10:08:34 -0700 (PDT)
+ bh=217EOOrFw1JguCx9/rRQyxEPzTa4GJD9mwcwW7ZPvKs=;
+ b=GrEXYlXlBzj6N6ArocMcxr/Pw+Vpa2JqI/dApNYnj3FtozE2JAUYAGxVsBa2/qgNdd
+ 9WR/NtPA7KUv3p5BcN2Pyh8vG1IA/gpEgrCrAZwKMydyYZuyU5GCT5CLSKRfOFqJKQ/5
+ ma7KWJpnmOj0xAoe4pX7/cHUN+zwPeLarkB4d+q/eLI78MsnW4RTOcndcP6a+2R5FBnk
+ qjNLmfF5nBjvGOQp2qHu2n99q1nR7uVVudNDyC92qbyATFp+6gigshIcsCPnrbfY30qf
+ UlH2+vE11Sio4btvmdJu/tKtgbYSTeSwqSyOxXCubHKNUpAD7YHY4QqW+op9IsdoDuoX
+ ER+w==
+X-Gm-Message-State: AGi0PuazUt3+1Csn0fgMKvHu9X4upYyN/0CQX+twOiFRql68BHTlloAd
+ 5SSuXUNr72UL/eOSUXtX8g==
+X-Google-Smtp-Source: APiQypLTklldq06zQ7DWUiIK2HKqDOCjCs+VI4+8LpUA7eim5gCSTJk6qg/zaDS+25wQx2aPTMUM0g==
+X-Received: by 2002:a05:6830:3104:: with SMTP id
+ b4mr3045929ots.250.1587316115620; 
+ Sun, 19 Apr 2020 10:08:35 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id u205sm9661938oia.37.2020.04.19.10.08.33
+ by smtp.googlemail.com with ESMTPSA id u205sm9661938oia.37.2020.04.19.10.08.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 19 Apr 2020 10:08:33 -0700 (PDT)
+ Sun, 19 Apr 2020 10:08:35 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Liviu Dudau <liviu.dudau@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>
-Subject: [PATCH 16/17] bus: vexpress-config: Support building as module
-Date: Sun, 19 Apr 2020 12:08:09 -0500
-Message-Id: <20200419170810.5738-17-robh@kernel.org>
+Subject: [PATCH 17/17] ARM: vexpress: Don't select VEXPRESS_CONFIG
+Date: Sun, 19 Apr 2020 12:08:10 -0500
+Message-Id: <20200419170810.5738-18-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200419170810.5738-1-robh@kernel.org>
 References: <20200419170810.5738-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_100835_687079_FBEE5D09 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20200419_100837_417353_0BE48208 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
+ [209.85.210.66 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -105,63 +105,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable building vexpress-config driver as a module.
+CONFIG_VEXPRESS_CONFIG has 'default y if ARCH_VEXPRESS', so selecting is
+unnecessary. Selecting it also prevents setting CONFIG_VEXPRESS_CONFIG
+to a module.
 
 Cc: Liviu Dudau <liviu.dudau@arm.com>
 Cc: Sudeep Holla <sudeep.holla@arm.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/bus/Kconfig           |  2 +-
- drivers/bus/vexpress-config.c | 10 ++++------
- 2 files changed, 5 insertions(+), 7 deletions(-)
+ arch/arm/mach-vexpress/Kconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/bus/Kconfig b/drivers/bus/Kconfig
-index 6d4e4497b59b..c16268c53831 100644
---- a/drivers/bus/Kconfig
-+++ b/drivers/bus/Kconfig
-@@ -183,7 +183,7 @@ config UNIPHIER_SYSTEM_BUS
- 	  needed to use on-board devices connected to UniPhier SoCs.
- 
- config VEXPRESS_CONFIG
--	bool "Versatile Express configuration bus"
-+	tristate "Versatile Express configuration bus"
- 	default y if ARCH_VEXPRESS
- 	depends on ARM || ARM64
- 	depends on OF
-diff --git a/drivers/bus/vexpress-config.c b/drivers/bus/vexpress-config.c
-index caa35a4cb34d..a58ac0c8e282 100644
---- a/drivers/bus/vexpress-config.c
-+++ b/drivers/bus/vexpress-config.c
-@@ -7,6 +7,7 @@
- #include <linux/err.h>
- #include <linux/init.h>
- #include <linux/io.h>
-+#include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
- #include <linux/of_device.h>
-@@ -407,15 +408,12 @@ static const struct platform_device_id vexpress_syscfg_id_table[] = {
- 	{ "vexpress-syscfg", },
- 	{},
- };
-+MODULE_DEVICE_TABLE(platform, vexpress_syscfg_id_table);
- 
- static struct platform_driver vexpress_syscfg_driver = {
- 	.driver.name = "vexpress-syscfg",
- 	.id_table = vexpress_syscfg_id_table,
- 	.probe = vexpress_syscfg_probe,
- };
--
--static int __init vexpress_syscfg_init(void)
--{
--	return platform_driver_register(&vexpress_syscfg_driver);
--}
--core_initcall(vexpress_syscfg_init);
-+module_platform_driver(vexpress_syscfg_driver);
-+MODULE_LICENSE("GPL v2");
+diff --git a/arch/arm/mach-vexpress/Kconfig b/arch/arm/mach-vexpress/Kconfig
+index 065e12991663..8391a5b3cd78 100644
+--- a/arch/arm/mach-vexpress/Kconfig
++++ b/arch/arm/mach-vexpress/Kconfig
+@@ -19,7 +19,6 @@ menuconfig ARCH_VEXPRESS
+ 	select POWER_SUPPLY
+ 	select REGULATOR if MMC_ARMMMCI
+ 	select REGULATOR_FIXED_VOLTAGE if REGULATOR
+-	select VEXPRESS_CONFIG
+ 	help
+ 	  This option enables support for systems using Cortex processor based
+ 	  ARM core and logic (FPGA) tiles on the Versatile Express motherboard,
 -- 
 2.20.1
 
