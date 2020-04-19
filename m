@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FE4A1AF743
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 07:40:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E14E1AF748
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 07:40:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,63 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=16tYkYXPzIm6L0ZsNGNtNF7FpO/dK5WEYyxhb6lufOk=; b=nGqq9y95lBbP78csNzmFPVSdiE
-	M63OlO1lNtJ39bSJ1ziLC7+SCNYGYCkXtLSvOWEs/CIoIjwwbome9nurEsU8GsgMhao71lKYLj2NT
-	HOrzVEOxhi/0rGL8sgpfpPJbEEIIjv2rDvWitXjJ17VWKlwQzwvORt0Z+xCVWEsygaXL/poxDZyIj
-	6n1HBtT74ESk62n+bfl+kRfRKLkaHQ/QFHLNdLHIMun0NOeALKdpys5TE0CDt9hQARdY6pl8eNnh0
-	DycPyRQUsr2Vj0W24fVB12N2iNiQMC2ke/dE/heslxaoN+DsuPYQAHHpDtXyrW5d8yZfdlb0F/D+6
-	eIh1W0iw==;
+	bh=xxV/DKHujhONPrlrGp+F3e6JT4UEWi2uvRajv5E2G8c=; b=Up92SXM649bDERQfBaleNjlwuy
+	Cfo1S+2yYy0yZhLKrtv1unyggorJ551tUu+TdmDPqFzUJE7KE2/qFmSoBhqXUs4b8vagoqh1w3lbD
+	I5KYMXTSbGwj7biiWBKyI5aDEJR45j4LvGNGm6zT+BJ6DsT9+5zlNc4L46Hd6d14hzvle9sVw2SD7
+	Ky2rC8ydqWiGWQDDwhRfCV4AiYS7Ej+pYTpCiokfw5ZlTrYMQzQbRuK/WsBJsgYQSpmePWDpT2czd
+	D+8djPLYlBT1INimHz7XdlOvgUyyOcSU9eFbVVAV+de1dd4s9nCpryfOtDQHhfYfi1AvEWuuef5N9
+	3BuJ0y4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ2gj-00064s-8L; Sun, 19 Apr 2020 05:40:17 +0000
+	id 1jQ2h3-0000WZ-7p; Sun, 19 Apr 2020 05:40:37 +0000
 Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ2f3-0004pA-Lg; Sun, 19 Apr 2020 05:38:35 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 131so5178808lfh.11;
- Sat, 18 Apr 2020 22:38:33 -0700 (PDT)
+ id 1jQ2f6-0004rJ-Ax; Sun, 19 Apr 2020 05:38:38 +0000
+Received: by mail-lf1-x141.google.com with SMTP id 198so5205894lfo.7;
+ Sat, 18 Apr 2020 22:38:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Ddvzpi4v1DdjM1yLeMifMRyxfGTNb5nDe0FeVHixmDk=;
- b=HP7fb0V1bSnUs5kIp9q6xiNucjBoE8Im5ICE9u7dFzt9M4jyybrjjZ1JGqj8MnMDgQ
- ZRHWwD7+FSJ3lvatjsRqhtjLJU8h27O86ZHUvumPMY0ewcl8o3Sl831O0mF3Cr0ryHBO
- nhhpi0Q2TA8XMR05xSRk49IlG3pX+azwQG0qQlmIuXlbljOY9RUCpZ4RqVhH9uHludra
- FFIldxa27QjIVJnFHWUj5PPpFKgSFkKVBGeA8dj+K7aGFCuZ5w87UUjPkZWr+vxhkNZP
- T4lXEqDAs0ugbnh7w1dYj1LW/tdaK6AfePlnyl8rYerkvSSoa7m8+x9EbCPgpue9qcEi
- L1lw==
+ bh=yYC0sRuA/TYJuw5oAwEPc/sM406ZLPi+JH8RytrM9Xo=;
+ b=NzhDfIBcxQ9+BGr6tDprN7zGw5HKY4gX+mcL3G3z7uYLtCZtNHXP9yA348ho+833z1
+ MwScwF7kHs438Yxx5LMQFkFMaMqDMIHYCJdee1HhclVCseFjPvmnH7InR2iC/jEjMOVf
+ /sL8xEkdFho9mrF86Dl6WVxT0u7EqRtwgzSfkQkZt4xkscKomcn4B07b2N7XdDKsX2YJ
+ 20Ge+29mpe2DuFU5KchFkLsduui0eQ7upSinWBV3Y7tmvq+J0sgq32uDj8/RMxXxakmi
+ xUp8ebHfDdp0hbBByacSwl2DWAdu5OZODSANMi1z9tquYKMTI3MZCUh0C+dmPC3Kg7ll
+ JRbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Ddvzpi4v1DdjM1yLeMifMRyxfGTNb5nDe0FeVHixmDk=;
- b=kiTo0ehrxT1XZgizMqRkQ1uJRlpHN4OcVckxe4XNpnXSDS+w/Opq/AAQLOuKR3RydZ
- cw50l4NnQiujaWBM5iwNmPA1h/ZgAqYhIjW23PtcyxnCU1z+OFzAQOx/dvUA9kBSZh+C
- so/Aehsil9qKQTWTFODFyOLrPxTAiFPvFHJNzDrsJhSvrGtxiU8T673AFeVoHYOyl4V5
- EQYZl9OEmzP/UNOHOsyImVDuLJEAzKWh/8nqLp30PopGSROj2QOJi7ns6D/HYxtkuDGL
- xhia6XZ3nVlf9OAnM7FL4cL0u5YChtbFpf+ck99sEmQ4wUowrpGLPER/3bEM15NMM8rX
- VzWg==
-X-Gm-Message-State: AGi0PuYBUwNB5ikVxPr213t/xujQRQKEHNrv24nYN7zXrxrHq7nBqtRp
- qNIdA2se2uyWy/dySr0sFqM=
-X-Google-Smtp-Source: APiQypIU/6kHBkTd4NaOXbY/SsYZR7ZJTnlT6naanXGEPx3mwI7OvyzNyv9MKwhQ3ygKQRu/VkZV7Q==
-X-Received: by 2002:ac2:50ce:: with SMTP id h14mr6666282lfm.76.1587274712224; 
- Sat, 18 Apr 2020 22:38:32 -0700 (PDT)
+ bh=yYC0sRuA/TYJuw5oAwEPc/sM406ZLPi+JH8RytrM9Xo=;
+ b=CYzR6iLI+CaNdx5n3mXYo6tPbR9iRkTTJsJ6+Zvu4M0v0CYpqeQLd+/MmY0cbndwxE
+ py4FJ0K80rYnuleCBMgrUzwA0AzIx3PmXUNk4Oal90WbjWSCp1qfAWj2aOlLic+hzYUI
+ h66CDz5se1i+AMg8Kz+RtRPlSx/tBaaYvV3xFw8yGSFe8Yoq0U43EvzI9SuaDjLy4f+3
+ zg8FSdKzVIALAuBe6NZoLXHq5NrEjidCiwI9AoyPZ19QS6/p4zQuImrjzFS4DOkhbbB2
+ geXFeEjis5ONifOPHx+kgkrmH9fO9QN9U03Fp6DyXEPH1BVl2wyhIw9C3SZDv0kzo0uv
+ Vt+A==
+X-Gm-Message-State: AGi0PublhIdVLio1DnG70p0bespxkVgKVWd+95BZA49P/vioQmrhwEau
+ WC6hZC5401QXh9trUFj9xjw=
+X-Google-Smtp-Source: APiQypJbGGSWUEbOeScJQPCu106dBdxhVhIfm+Fd+KW3uFwOL76qntlb4xO1N90B/fl+AQPJErEfbg==
+X-Received: by 2002:a19:d3:: with SMTP id 202mr6530212lfa.24.1587274714755;
+ Sat, 18 Apr 2020 22:38:34 -0700 (PDT)
 Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id r23sm20416619ljh.34.2020.04.18.22.38.29
+ by smtp.gmail.com with ESMTPSA id r23sm20416619ljh.34.2020.04.18.22.38.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 18 Apr 2020 22:38:31 -0700 (PDT)
+ Sat, 18 Apr 2020 22:38:34 -0700 (PDT)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 4/5] arm64: dts: meson: convert khadas-vim3/vim3l to hdmi dtsi
-Date: Sun, 19 Apr 2020 05:38:14 +0000
-Message-Id: <20200419053815.15731-5-christianshewitt@gmail.com>
+Subject: [PATCH 5/5] arm64: dts: meson: convert x96max to hdmi dtsi
+Date: Sun, 19 Apr 2020 05:38:15 +0000
+Message-Id: <20200419053815.15731-6-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200419053815.15731-1-christianshewitt@gmail.com>
 References: <20200419053815.15731-1-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_223833_752097_CA8036C4 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20200418_223836_472340_FC3DDB03 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,48 +105,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Include  meson-g12-audio-hdmi.dtsi in the common Khadas 3* dtsi. This
-simplifies the VIM3 dtsi and adds audio support to the VIM3L.
-
-This supercedes previous submissions: [1], [2], [3] for future kernels
-but [3] should still be applied as a fix to Linux 5.4.
-
-[1] https://patchwork.kernel.org/patch/11490837/
-[2] https://patchwork.kernel.org/patch/11490889/
-[3] https://patchwork.kernel.org/patch/11198535/
+Simplify the X96-max dts by using meson-g12-audio-hdmi.dtsi
 
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- .../dts/amlogic/meson-g12b-khadas-vim3.dtsi   | 85 -------------------
- .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |  1 +
- 2 files changed, 1 insertion(+), 85 deletions(-)
+ .../boot/dts/amlogic/meson-g12a-x96-max.dts   | 131 +-----------------
+ 1 file changed, 1 insertion(+), 130 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-index c33e85fbdaba..b8d69d99bc91 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-@@ -5,8 +5,6 @@
-  * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
-  */
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
+index 1b07c8c06eac..3ede72fc8f53 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
+@@ -6,9 +6,9 @@
+ /dts-v1/;
  
+ #include "meson-g12a.dtsi"
++#include "meson-g12-audio-hdmi-spdif.dtsi"
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/gpio/meson-g12a-gpio.h>
 -#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
--
- / {
- 	model = "Khadas VIM3";
  
-@@ -47,69 +45,6 @@
- 		regulator-boot-on;
+ / {
+ 	compatible = "amediatech,x96-max", "amlogic,g12a";
+@@ -19,13 +19,6 @@
+ 		ethernet0 = &ethmac;
+ 	};
+ 
+-	spdif_dit: audio-codec-1 {
+-		#sound-dai-cells = <0>;
+-		compatible = "linux,spdif-dit";
+-		status = "okay";
+-		sound-name-prefix = "DIT";
+-	};
+-
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
+@@ -148,86 +141,6 @@
  		regulator-always-on;
  	};
--
+ 
 -	sound {
 -		compatible = "amlogic,axg-sound-card";
--		model = "G12B-KHADAS-VIM3";
+-		model = "G12A-X96-MAX";
 -		audio-aux-devs = <&tdmout_b>;
 -		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
 -				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
 -				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
--				"TDM_B Playback", "TDMOUT_B OUT";
+-				"TDM_B Playback", "TDMOUT_B OUT",
+-				"SPDIFOUT IN 0", "FRDDR_A OUT 3",
+-				"SPDIFOUT IN 1", "FRDDR_B OUT 3",
+-				"SPDIFOUT IN 2", "FRDDR_C OUT 3";
 -
 -		assigned-clocks = <&clkc CLKID_MPLL2>,
 -				  <&clkc CLKID_MPLL0>,
@@ -184,8 +193,30 @@ index c33e85fbdaba..b8d69d99bc91 100644
 -			};
 -		};
 -
--		/* hdmi glue */
+-		/* spdif hdmi or toslink interface */
 -		dai-link-4 {
+-			sound-dai = <&spdifout>;
+-
+-			codec-0 {
+-				sound-dai = <&spdif_dit>;
+-			};
+-
+-			codec-1 {
+-				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_A>;
+-			};
+-		};
+-
+-		/* spdif hdmi interface */
+-		dai-link-5 {
+-			sound-dai = <&spdifout_b>;
+-
+-			codec {
+-				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_B>;
+-			};
+-		};
+-
+-		/* hdmi glue */
+-		dai-link-6 {
 -			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
 -
 -			codec {
@@ -193,21 +224,40 @@ index c33e85fbdaba..b8d69d99bc91 100644
 -			};
 -		};
 -	};
--};
 -
+ 	wifi32k: wifi32k {
+ 		compatible = "pwm-clock";
+ 		#clock-cells = <0>;
+@@ -236,10 +149,6 @@
+ 	};
+ };
+ 
 -&arb {
 -	status = "okay";
 -};
 -
+ &cec_AO {
+ 	pinctrl-0 = <&cec_ao_a_h_pins>;
+ 	pinctrl-names = "default";
+@@ -254,10 +163,6 @@
+ 	hdmi-phandle = <&hdmi_tx>;
+ };
+ 
 -&clkc_audio {
 -	status = "okay";
- };
- 
+-};
+-
  &cpu0 {
-@@ -154,14 +89,6 @@
- 	clock-latency = <50000>;
+ 	cpu-supply = <&vddcpu>;
+ 	operating-points-v2 = <&cpu_opp_table>;
+@@ -292,18 +197,6 @@
+ 	};
  };
  
+-&frddr_a {
+-	status = "okay";
+-};
+-
 -&frddr_b {
 -	status = "okay";
 -};
@@ -216,13 +266,23 @@ index c33e85fbdaba..b8d69d99bc91 100644
 -	status = "okay";
 -};
 -
- &pwm_ab {
- 	pinctrl-0 = <&pwm_a_e_pins>;
- 	pinctrl-names = "default";
-@@ -177,15 +104,3 @@
- 	clock-names = "clkin1";
+ &hdmi_tx {
  	status = "okay";
+ 	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
+@@ -457,25 +350,3 @@
+ 	vmmc-supply = <&vcc_3v3>;
+ 	vqmmc-supply = <&flash_1v8>;
  };
+-
+-&spdifout {
+-	pinctrl-0 = <&spdif_out_h_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&spdifout_b {
+-	status = "okay";
+-};
 -
 -&tdmif_b {
 -	status = "okay";
@@ -235,18 +295,6 @@ index c33e85fbdaba..b8d69d99bc91 100644
 -&tohdmitx {
 -	status = "okay";
 -};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index 094ecf2222bb..9c7841c627d0 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -5,6 +5,7 @@
-  * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
-  */
- 
-+#include "meson-g12-audio-hdmi.dtsi"
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/gpio/meson-g12a-gpio.h>
- 
 -- 
 2.17.1
 
