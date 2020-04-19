@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A101AFC99
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 19:13:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 268931AFC9F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 19:13:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rK206v6whcos5i8jOkN5hDFYJvCpb1CcKto2Nx5nFJw=; b=I/S2MwyzI+p2yn
-	iaKbM/zwL1K8wnEAsfBjGhhUDFTTUlWvQb9BAcBTCfk21tnSD1+dFVukOLBnPynkAPCDUYphUltoH
-	SBRgvseuwFrPl04MQW5p+RyRxjTioqOIKzJbBHG36UTos2fa3wPMjoGbsJgVglvPi1dA1ssg78Y3t
-	oyhr1M8bNN4/v4OSs6X/FgBV0rj776GdPoxxH2rYh06A6Pgu6ul1nPx68rpe1U6w8G2KE33M2if4V
-	agEOlSx6uReOV9JMRyb7Zs3dquE/QjnL6UlSo7QELsZV7EDAk79OnTFOgztUIkGBqCnQ9MR3Clr0+
-	B0s+aHR14DrjyhA/a4pQ==;
+	List-Owner; bh=MlXVMFDw3EfC/AhIpkle0N7NLGGnDLxmeN1GZntnoYY=; b=j51O0p3Qn/ctbw
+	FZe0INV/kniePKpWd1XXNtR73kSM7U5pZGTxcD6vhKyxJ3QJzbFE1FAnQB7zztorAYKyL2pPn3cah
+	uswe89FS+6SUwIh2EH6ZNlDJnb088ELqy3qFisRDWQi3YcqwBg4l8kJpe3k9zN/cmoi1eSLTqTAPJ
+	QXuUzgPuqGrUjCpeuwle0G2MSC3fdH6VuRXmt3rwM8v4mWEV94r5xxj1NyLhEX8x1X1+4/Oss5agp
+	+Y7cWyza3mVFXUk188AaYwyaRC7s+Ka93qAkv0EiEVPD62lQDFvBLplwCmidjoRDb2Pj/8Aj48qAi
+	HBvg5dEvbZkIHAzSISrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQDV5-0007he-6v; Sun, 19 Apr 2020 17:12:59 +0000
-Received: from mail-oo1-f67.google.com ([209.85.161.67])
+	id 1jQDVf-0008EL-2N; Sun, 19 Apr 2020 17:13:35 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQDQn-0001vR-OF
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 17:08:35 +0000
-Received: by mail-oo1-f67.google.com with SMTP id p67so1578802ooa.11
+ id 1jQDQo-0001wD-7y
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 17:08:36 +0000
+Received: by mail-ot1-f68.google.com with SMTP id m13so5960908otf.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Apr 2020 10:08:33 -0700 (PDT)
+ Sun, 19 Apr 2020 10:08:34 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=/wB2U6U0ewgKGp4KSPn+vSVDTtuFAzErpi8wcYMw6Fo=;
- b=ohqXxJO2x//sPzSTakzKx/uE9E0XYcGOKOKbKpdNH2WenWae9nAK8T7u/nncA4+OuN
- c02PSHLNKQ7FtlZ7498Haim112FF0qBj9buueX0Az4yh99hi5rncKc7zzT6fGK225LSR
- NFD1WT8SvZnuhUVgsxOjDjr25uvejiqWtEpgj7n+P/Mjxt/hxxhJoulAlwXILI2SVkgV
- j6t34a96tXE58m80Q5nj98+grMmq9uKwPZIYn14DRjpl4+JxhkF8vECc5loBsxyFw2Ro
- WKHcn+7s4zv+PTtUtqrFWwGYJtLkfZTSH6UMBWSFmmsGxFeCpL1JL4UN5E9uoinMBUis
- yafA==
-X-Gm-Message-State: AGi0PuZ1yrV3fHXlBGWSW96ptPtUsrbPdbNAXg7t9587nKPXr0uoklaB
- t+rIsjbdkcDTMTnOg1/IlQ==
-X-Google-Smtp-Source: APiQypImHT/KiAE2mwj4qy0evl0L7k4NWcklyJuzb3ysWeesGWHDLxv/Jj7+ufFs8HRp8SjUd7oBZw==
-X-Received: by 2002:a4a:7011:: with SMTP id r17mr9863390ooc.17.1587316112203; 
- Sun, 19 Apr 2020 10:08:32 -0700 (PDT)
+ bh=+cM/b65rtjeKyTmogfwhiHXUftLjv62lN3bT8OJ3Ce0=;
+ b=NgDYbqgbrrgVd2LxidYre+++ArtguZRK9/7LdYoy0XeN9oF+4bExAF4vmMv/sLgZLi
+ 30A+S0sEhPsyhOSBLgdD9Fm3FnPgcb2+Bbu7uiL3XUhJY2vgmWH1VDQI+vJs5dEkU5/S
+ 4KmD/hlCsxY9P4HBHR0y+a4i4AJ4bRfb+1ZcalkL/EtiQdIEN0A1VrdASZjtW19v8WKd
+ qtPeNCv5V5gcH0WdZXXfwcqYW/nYFA0dWfsCKxAnihMfkLYSBBZ7HaKVkBSObeE5ksON
+ Q0n7nAeIn3ofF8ty+vhlPpfhXDEFBfhvjox0ncdfLYFlMq2HzRB9Sk4/uEa5i1sYTIlB
+ KVjg==
+X-Gm-Message-State: AGi0PuaUy4i+VWiEPAStSlGYYawyZHHjWL3vcMFK26ZymHc0vXaxSO2d
+ 4l4/vgT0uYc1az66MZE4CA==
+X-Google-Smtp-Source: APiQypJ/DjvcatWrwEm/6IPNwh+ISFDJPdeQJhuYT6YbJyt335a7TOpxUQKLngc/mptPSkp4wzuW+A==
+X-Received: by 2002:a9d:7e92:: with SMTP id m18mr6258749otp.269.1587316113317; 
+ Sun, 19 Apr 2020 10:08:33 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id u205sm9661938oia.37.2020.04.19.10.08.30
+ by smtp.googlemail.com with ESMTPSA id u205sm9661938oia.37.2020.04.19.10.08.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 19 Apr 2020 10:08:31 -0700 (PDT)
+ Sun, 19 Apr 2020 10:08:32 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Liviu Dudau <liviu.dudau@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>
-Subject: [PATCH 14/17] bus: vexpress-config: simplify config bus probing
-Date: Sun, 19 Apr 2020 12:08:07 -0500
-Message-Id: <20200419170810.5738-15-robh@kernel.org>
+Subject: [PATCH 15/17] vexpress: Move site master init to vexpress-config bus
+Date: Sun, 19 Apr 2020 12:08:08 -0500
+Message-Id: <20200419170810.5738-16-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200419170810.5738-1-robh@kernel.org>
 References: <20200419170810.5738-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_100833_800708_2F9A5914 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20200419_100834_483322_AD75E2CE 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.67 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.67 listed in wl.mailspike.net]
+ [209.85.210.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -104,184 +104,189 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The vexpress-config initialization is dependent on the vexpress-syscfg
-driver probing. As vexpress-config was not a driver, deferred probe
-could not be used and instead initcall ordering was relied upon. This is
-fragile and doesn't work for modules.
-
-Let's move the config bus init into the vexpress-syscfg probe. This
-eliminates the initcall ordering requirement and the need to create a
-struct device and the "vexpress-config" class.
+There's only a single caller of vexpress_config_set_master() from
+vexpress-sysreg.c. Let's just make the registers needed available to
+vexpress-config and move all the code there. The registers needed aren't
+used anywhere else either. With this, we can get rid of the private API
+between these 2 drivers.
 
 Cc: Liviu Dudau <liviu.dudau@arm.com>
 Cc: Sudeep Holla <sudeep.holla@arm.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Lee Jones <lee.jones@linaro.org>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/bus/vexpress-config.c | 118 ++++++----------------------------
- 1 file changed, 21 insertions(+), 97 deletions(-)
+ drivers/bus/vexpress-config.c | 37 +++++++++++++++++++++++++++++++----
+ drivers/mfd/vexpress-sysreg.c | 25 +----------------------
+ include/linux/vexpress.h      |  9 ---------
+ 3 files changed, 34 insertions(+), 37 deletions(-)
 
 diff --git a/drivers/bus/vexpress-config.c b/drivers/bus/vexpress-config.c
-index 43f5beac9811..43deb4df140b 100644
+index 43deb4df140b..caa35a4cb34d 100644
 --- a/drivers/bus/vexpress-config.c
 +++ b/drivers/bus/vexpress-config.c
-@@ -56,7 +56,6 @@ struct vexpress_config_bridge {
+@@ -14,9 +14,17 @@
+ #include <linux/slab.h>
+ #include <linux/vexpress.h>
  
+-#define SYS_CFGDATA		0x0
++#define SYS_MISC		0x0
++#define SYS_MISC_MASTERSITE	(1 << 14)
  
- static DEFINE_MUTEX(vexpress_config_mutex);
--static struct class *vexpress_config_class;
+-#define SYS_CFGCTRL		0x4
++#define SYS_PROCID0		0x24
++#define SYS_PROCID1		0x28
++#define SYS_HBI_MASK		0xfff
++#define SYS_PROCIDx_HBI_SHIFT	0
++
++#define SYS_CFGDATA		0x40
++
++#define SYS_CFGCTRL		0x44
+ #define SYS_CFGCTRL_START	(1 << 31)
+ #define SYS_CFGCTRL_WRITE	(1 << 30)
+ #define SYS_CFGCTRL_DCC(n)	(((n) & 0xf) << 26)
+@@ -25,10 +33,14 @@
+ #define SYS_CFGCTRL_POSITION(n)	(((n) & 0xf) << 12)
+ #define SYS_CFGCTRL_DEVICE(n)	(((n) & 0xfff) << 0)
+ 
+-#define SYS_CFGSTAT		0x8
++#define SYS_CFGSTAT		0x48
+ #define SYS_CFGSTAT_ERR		(1 << 1)
+ #define SYS_CFGSTAT_COMPLETE	(1 << 0)
+ 
++#define VEXPRESS_SITE_MB		0
++#define VEXPRESS_SITE_DB1		1
++#define VEXPRESS_SITE_DB2		2
++#define VEXPRESS_SITE_MASTER		0xf
+ 
+ struct vexpress_syscfg {
+ 	struct device *dev;
+@@ -59,7 +71,7 @@ static DEFINE_MUTEX(vexpress_config_mutex);
  static u32 vexpress_config_site_master = VEXPRESS_SITE_MASTER;
  
  
-@@ -121,9 +120,6 @@ struct regmap *devm_regmap_init_vexpress_config(struct device *dev)
- 	struct regmap *regmap;
- 	struct regmap **res;
- 
--	if (WARN_ON(dev->parent->class != vexpress_config_class))
--		return ERR_PTR(-ENODEV);
--
- 	bridge = dev_get_drvdata(dev->parent);
- 	if (WARN_ON(!bridge))
- 		return ERR_PTR(-EINVAL);
-@@ -146,94 +142,6 @@ struct regmap *devm_regmap_init_vexpress_config(struct device *dev)
+-void vexpress_config_set_master(u32 site)
++static void vexpress_config_set_master(u32 site)
+ {
+ 	vexpress_config_site_master = site;
  }
- EXPORT_SYMBOL_GPL(devm_regmap_init_vexpress_config);
- 
--static struct device *vexpress_config_bridge_register(struct device *parent,
--		struct vexpress_config_bridge_ops *ops, void *context)
--{
--	struct device *dev;
--	struct vexpress_config_bridge *bridge;
--
--	if (!vexpress_config_class) {
--		vexpress_config_class = class_create(THIS_MODULE,
--				"vexpress-config");
--		if (IS_ERR(vexpress_config_class))
--			return (void *)vexpress_config_class;
--	}
--
--	dev = device_create(vexpress_config_class, parent, 0,
--			NULL, "%s.bridge", dev_name(parent));
--
--	if (IS_ERR(dev))
--		return dev;
--
--	bridge = devm_kmalloc(dev, sizeof(*bridge), GFP_KERNEL);
--	if (!bridge) {
--		put_device(dev);
--		device_unregister(dev);
--		return ERR_PTR(-ENOMEM);
--	}
--	bridge->ops = ops;
--	bridge->context = context;
--
--	dev_set_drvdata(dev, bridge);
--
--	dev_dbg(parent, "Registered bridge '%s', parent node %p\n",
--			dev_name(dev), parent->of_node);
--
--	return dev;
--}
--
--
--static int vexpress_config_node_match(struct device *dev, const void *data)
--{
--	const struct device_node *node = data;
--
--	dev_dbg(dev, "Parent node %p, looking for %p\n",
--			dev->parent->of_node, node);
--
--	return dev->parent->of_node == node;
--}
--
--static int vexpress_config_populate(struct device_node *node)
--{
--	struct device_node *bridge;
--	struct device *parent;
--	int ret;
--
--	bridge = of_parse_phandle(node, "arm,vexpress,config-bridge", 0);
--	if (!bridge)
--		return -EINVAL;
--
--	parent = class_find_device(vexpress_config_class, NULL, bridge,
--			vexpress_config_node_match);
--	of_node_put(bridge);
--	if (WARN_ON(!parent))
--		return -ENODEV;
--
--	ret = of_platform_populate(node, NULL, NULL, parent);
--
--	put_device(parent);
--
--	return ret;
--}
--
--static int __init vexpress_config_init(void)
--{
--	int err = 0;
--	struct device_node *node;
--
--	/* Need the config devices early, before the "normal" devices... */
--	for_each_compatible_node(node, NULL, "arm,vexpress,config-bus") {
--		err = vexpress_config_populate(node);
--		if (err) {
--			of_node_put(node);
--			break;
--		}
--	}
--
--	return err;
--}
--postcore_initcall(vexpress_config_init);
--
- static int vexpress_syscfg_exec(struct vexpress_syscfg_func *func,
- 		int index, bool write, u32 *data)
- {
-@@ -430,7 +338,8 @@ static int vexpress_syscfg_probe(struct platform_device *pdev)
- {
- 	struct vexpress_syscfg *syscfg;
+@@ -340,6 +352,8 @@ static int vexpress_syscfg_probe(struct platform_device *pdev)
  	struct resource *res;
--	struct device *bridge;
-+	struct vexpress_config_bridge *bridge;
-+	struct device_node *node;
+ 	struct vexpress_config_bridge *bridge;
+ 	struct device_node *node;
++	int master;
++	u32 dt_hbi;
  
  	syscfg = devm_kzalloc(&pdev->dev, sizeof(*syscfg), GFP_KERNEL);
  	if (!syscfg)
-@@ -443,11 +352,26 @@ static int vexpress_syscfg_probe(struct platform_device *pdev)
- 	if (IS_ERR(syscfg->base))
- 		return PTR_ERR(syscfg->base);
+@@ -361,6 +375,21 @@ static int vexpress_syscfg_probe(struct platform_device *pdev)
  
--	/* Must use dev.parent (MFD), as that's where DT phandle points at... */
--	bridge = vexpress_config_bridge_register(pdev->dev.parent,
--			&vexpress_syscfg_bridge_ops, syscfg);
-+	bridge = devm_kmalloc(&pdev->dev, sizeof(*bridge), GFP_KERNEL);
-+	if (!bridge)
-+		return -ENOMEM;
-+
-+	bridge->ops = &vexpress_syscfg_bridge_ops;
-+	bridge->context = syscfg;
-+
-+	dev_set_drvdata(&pdev->dev, bridge);
+ 	dev_set_drvdata(&pdev->dev, bridge);
  
--	return PTR_ERR_OR_ZERO(bridge);
-+	for_each_compatible_node(node, NULL, "arm,vexpress,config-bus") {
-+		struct device_node *bridge_np;
++	master = readl(syscfg->base + SYS_MISC) & SYS_MISC_MASTERSITE ?
++			VEXPRESS_SITE_DB2 : VEXPRESS_SITE_DB1;
++	vexpress_config_set_master(master);
 +
-+		bridge_np = of_parse_phandle(node, "arm,vexpress,config-bridge", 0);
-+		if (bridge_np != pdev->dev.parent->of_node)
-+			continue;
++	/* Confirm board type against DT property, if available */
++	if (of_property_read_u32(of_root, "arm,hbi", &dt_hbi) == 0) {
++		u32 id = readl(syscfg->base + (master == VEXPRESS_SITE_DB1 ?
++				 SYS_PROCID0 : SYS_PROCID1));
++		u32 hbi = (id >> SYS_PROCIDx_HBI_SHIFT) & SYS_HBI_MASK;
 +
-+		of_platform_populate(node, NULL, NULL, &pdev->dev);
++		if (WARN_ON(dt_hbi != hbi))
++			dev_warn(&pdev->dev, "DT HBI (%x) is not matching hardware (%x)!\n",
++					dt_hbi, hbi);
 +	}
 +
-+	return 0;
- }
+ 	for_each_compatible_node(node, NULL, "arm,vexpress,config-bus") {
+ 		struct device_node *bridge_np;
  
- static const struct platform_device_id vexpress_syscfg_id_table[] = {
+diff --git a/drivers/mfd/vexpress-sysreg.c b/drivers/mfd/vexpress-sysreg.c
+index eeeeb1d26d5d..aaf24af287dd 100644
+--- a/drivers/mfd/vexpress-sysreg.c
++++ b/drivers/mfd/vexpress-sysreg.c
+@@ -14,7 +14,6 @@
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ #include <linux/stat.h>
+-#include <linux/vexpress.h>
+ 
+ #define SYS_ID			0x000
+ #define SYS_SW			0x004
+@@ -37,11 +36,6 @@
+ #define SYS_CFGCTRL		0x0a4
+ #define SYS_CFGSTAT		0x0a8
+ 
+-#define SYS_HBI_MASK		0xfff
+-#define SYS_PROCIDx_HBI_SHIFT	0
+-
+-#define SYS_MISC_MASTERSITE	(1 << 14)
+-
+ /* The sysreg block is just a random collection of various functions... */
+ 
+ static struct bgpio_pdata vexpress_sysreg_sys_led_pdata = {
+@@ -94,7 +88,7 @@ static struct mfd_cell vexpress_sysreg_cells[] = {
+ 		.name = "vexpress-syscfg",
+ 		.num_resources = 1,
+ 		.resources = (struct resource []) {
+-			DEFINE_RES_MEM(SYS_CFGDATA, 0xc),
++			DEFINE_RES_MEM(SYS_MISC, 0x4c),
+ 		},
+ 	}
+ };
+@@ -104,8 +98,6 @@ static int vexpress_sysreg_probe(struct platform_device *pdev)
+ 	struct resource *mem;
+ 	void __iomem *base;
+ 	struct gpio_chip *mmc_gpio_chip;
+-	int master;
+-	u32 dt_hbi;
+ 
+ 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	if (!mem)
+@@ -115,21 +107,6 @@ static int vexpress_sysreg_probe(struct platform_device *pdev)
+ 	if (!base)
+ 		return -ENOMEM;
+ 
+-	master = readl(base + SYS_MISC) & SYS_MISC_MASTERSITE ?
+-			VEXPRESS_SITE_DB2 : VEXPRESS_SITE_DB1;
+-	vexpress_config_set_master(master);
+-
+-	/* Confirm board type against DT property, if available */
+-	if (of_property_read_u32(of_root, "arm,hbi", &dt_hbi) == 0) {
+-		u32 id = readl(base + (master == VEXPRESS_SITE_DB1 ?
+-				 SYS_PROCID0 : SYS_PROCID1));
+-		u32 hbi = (id >> SYS_PROCIDx_HBI_SHIFT) & SYS_HBI_MASK;
+-
+-		if (WARN_ON(dt_hbi != hbi))
+-			dev_warn(&pdev->dev, "DT HBI (%x) is not matching hardware (%x)!\n",
+-					dt_hbi, hbi);
+-	}
+-
+ 	/*
+ 	 * Duplicated SYS_MCI pseudo-GPIO controller for compatibility with
+ 	 * older trees using sysreg node for MMC control lines.
+diff --git a/include/linux/vexpress.h b/include/linux/vexpress.h
+index 65096c792d57..2f9dd072f11f 100644
+--- a/include/linux/vexpress.h
++++ b/include/linux/vexpress.h
+@@ -10,15 +10,6 @@
+ #include <linux/device.h>
+ #include <linux/regmap.h>
+ 
+-#define VEXPRESS_SITE_MB		0
+-#define VEXPRESS_SITE_DB1		1
+-#define VEXPRESS_SITE_DB2		2
+-#define VEXPRESS_SITE_MASTER		0xf
+-
+-/* Config infrastructure */
+-
+-void vexpress_config_set_master(u32 site);
+-
+ /* Config regmap API */
+ 
+ struct regmap *devm_regmap_init_vexpress_config(struct device *dev);
 -- 
 2.20.1
 
