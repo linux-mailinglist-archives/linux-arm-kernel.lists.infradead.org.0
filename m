@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8957E1AFBCD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 17:52:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 485311AFBF8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 18:38:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fM3cFYUEGu88kH6MJVmLur5up/SfR+3itRDX/sg2Tb4=; b=ks9OsWhiXItKTB
-	b2GACuZwO20Pl5pVvWF61kkXhyckiwfdTXp6rcL61Bh7ZThYo9pVCFnDx3EmBo7xpaup90wUsvgnW
-	u2uGWkVmxjy2vyyRvvavF1GWE/Zil2ubZl0Bcb3jBHcGhPSmFXJ5zUXqP/TZfS/OeTabxqnxqDdDu
-	2g49xkOtMGtow9qMBW15unffzfYeAiWd31+W/I1KEvhEfYCEvCzYI0grtUSBRfVgTReDa0MqFH1tf
-	qV5L9sjFsYyJ37yNwIK+SqJ2ib/PSwBp6ba07Na763YcvbV0rLKzxlBwN7G4i5tanGOBwPtIygW+u
-	Yvz3pntdB2O+qJ2eJvEg==;
+	List-Owner; bh=hAGM4ZMqGOvznPt4qTUNhnZ2CmxHqmq4dVzkh5pLbVI=; b=L7/Xyo9V6lqsi3
+	fmm+7k6kgAqHXk/Jr3+PKN6Acbo6lN37w8nMPVqNiMrqb7aVPZdzTju+llSSznKoawEwUt0kwX5WZ
+	917JBuMs3l6UjqXZpnW+hni4AwhCZ/2ThzJ5XqURjTwLIH5DuOsxJjcw/p1S6kRBUewl7nC6+HYRC
+	wgqGkHUKn2crz/csG72xNnvDxdaZz49rtxhfCoxol3ScdodFPwtIneIkd7HzSgiWhP2rjOcDFBb9Y
+	IFNf0chvm8Y4in7PLxKLfYbFeLaAfkPT1dBzeHrgtRVCxCqLuATQTOMnECOC2JPyyVkh5RGC84yPp
+	OpPTNlyxnKH89Egw2ZPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQCF1-000538-6e; Sun, 19 Apr 2020 15:52:19 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1jQCxw-0008Oe-JB; Sun, 19 Apr 2020 16:38:44 +0000
+Received: from smtprelay0133.hostedemail.com ([216.40.44.133]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQCEr-000525-LC
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 15:52:12 +0000
-Received: by mail-lf1-x142.google.com with SMTP id w145so5813933lff.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Apr 2020 08:52:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=puq4LGaJLu91tsP0EOV/aht8/LoEw9dhNvgkrrgI0M0=;
- b=kmEUSvyMZy3pWlmfBj6ph9+yTJxIicCoTZ2oHWv22uPHShhrD6dXB3nFdSVSQ9UKIH
- X01wDHoO0o3SD9U8nkBwKk6WZIDmluNtrFFPXTkmLLyEe0f+4uK8ugdiQSG9t2xSurz6
- EXZw5KnLHhgHjIVub6meTCWW44m+827f4GjD4iHMj07dOmVdf7BkblrI5b8Eshm0qOr7
- hZYZ3RK3rdu0rTi3+E/4xotGRwYv6RmXJCNx3AXwKU04DNuHgUoQHVowT99KEA1om/xC
- 993dUnXPWRO5bdVcMJNqG+DFM6AjpM51c6yfVVcV5Ef7oe1ujo0nIyFMz/T3Uwz9Q1Hi
- 0L9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=puq4LGaJLu91tsP0EOV/aht8/LoEw9dhNvgkrrgI0M0=;
- b=bQ1Iu1M5uByRkCXg/motFJaRWwc6bSHBZOH3Ukp+sI5zTRgdmJt4aKJ8tzFD/fjUA1
- tguxfK1xzqOGfX2PLUerNxQpfDu3cX54BwbyiasbcFxS5oaIxD6I3tVyZwS415QnRk9J
- kzss9xlQVq8sVw+/Bxe50j3ORZska5lRmDxl58Lc5LCIwMZCVnk6Amh38rBOhFmmCyXc
- TNPwog/AdPpWNNrUXEZnnUb1Zv3znVmQ2eEinli+zEqp6b9vcFy64617/1U5w22+lbxg
- QOCUbUNSKC6pnhkrLoQDwHVyNJwqKKwdYfreO/WfFAAoqrn2THXwhwyPc68/sV6elKiO
- gQnw==
-X-Gm-Message-State: AGi0PuY/2g4jJ7bEnlA90SkGlu/A4f+PP5kZ/evHXHP8GzkiIfwk3SEo
- AOOGGOjdlUwyX3p5o0ZoIpEP5fy0ytJATfuleG/W6w==
-X-Google-Smtp-Source: APiQypIxAPipFGPF2SN+XT1jDXJXTJdHsgQn2AhHXb63BfvDD9HsotRIaefG6KlobjMHGAGZARFRi1m53SGunpj7bv4=
-X-Received: by 2002:a05:6512:405:: with SMTP id
- u5mr7642643lfk.192.1587311525570; 
- Sun, 19 Apr 2020 08:52:05 -0700 (PDT)
+ id 1jQCxq-0008NO-EI; Sun, 19 Apr 2020 16:38:39 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay02.hostedemail.com (Postfix) with ESMTP id E2A595836;
+ Sun, 19 Apr 2020 16:38:29 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1539:1568:1593:1594:1711:1714:1730:1747:1777:1792:2198:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3867:3874:4250:4321:5007:6737:10004:10400:10848:11232:11658:11914:12043:12048:12297:12555:12740:12760:12895:13069:13255:13311:13357:13439:14181:14659:14721:21080:21451:21627:30054:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:1, LUA_SUMMARY:none
+X-HE-Tag: bone84_2ca91b5f55455
+X-Filterd-Recvd-Size: 2304
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf18.hostedemail.com (Postfix) with ESMTPA;
+ Sun, 19 Apr 2020 16:38:26 +0000 (UTC)
+Message-ID: <975f3a73bb272b8276687af609cd7e592d6ba9ac.camel@perches.com>
+Subject: Re: [PATCH v8 8/8] MAINTAINERS: Add file patterns for rcar PCI
+ device tree bindings
+From: Joe Perches <joe@perches.com>
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, Yoshihiro
+ Shimoda <yoshihiro.shimoda.uh@renesas.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Bjorn Helgaas <bhelgaas@google.com>, Rob Herring
+ <robh+dt@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Andrew
+ Murray <amurray@thegoodpenguin.co.uk>,  Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel
+ <gustavo.pimentel@synopsys.com>, Marek Vasut
+ <marek.vasut+renesas@gmail.com>,  Shawn Lin <shawn.lin@rock-chips.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Date: Sun, 19 Apr 2020 09:36:11 -0700
+In-Reply-To: <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+User-Agent: Evolution 3.34.1-2 
 MIME-Version: 1.0
-References: <20200419150530.20508-1-etienne.carriere@linaro.org>
- <20200419150530.20508-2-etienne.carriere@linaro.org>
-In-Reply-To: <20200419150530.20508-2-etienne.carriere@linaro.org>
-From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Sun, 19 Apr 2020 17:51:54 +0200
-Message-ID: <CAN5uoS_h1T4hw7zpmqzLjTBN8_16JRgXnWGzVmaZ7ohhV6DfdQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/6] firmware: helper functions for SMCCC v1.0
- invocation conduit
-To: linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_085210_664133_FFFC9DF2 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20200419_093838_539332_221A5CC3 
+X-CRM114-Status: UNSURE (   7.33  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ no trust [216.40.44.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.133 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,50 +85,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, lorenzo.pieralisi@arm.com,
- michal.simek@xilinx.com, tee-dev@lists.linaro.org, james.morse@arm.com,
- Sudeep Holla <sudeep.holla@arm.com>, richard.gong@linux.intel.com,
- Jens Wiklander <jens.wiklander@linaro.org>,
+Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 19 Apr 2020 at 17:05, Etienne Carriere
-<etienne.carriere@linaro.org> wrote:
->
-> +#define arm_smccc_1_0_invoke(...) ({                                   \
-> +               enum arm_smccc_conduit conduit = arm_smccc_1_0_get_conduit(); \
-> +               switch (conduit) {                                      \
-> +               case SMCCC_CONDUIT_HVC:                                 \
-> +                       arm_smccc_hvc(__VA_ARGS__);                     \
-> +                       break;                                          \
-> +               case SMCCC_CONDUIT_SMC:                                 \
-> +                       arm_smccc_smc(__VA_ARGS__);                     \
-> +                       break;                                          \
-> +               default:                                                \
-> +                       __fail_smccc_1_0(__VA_ARGS__);                  \
-> +                       conduit = SMCCC_CONDUIT_NONE;                   \
-> +               }                                                       \
-> +               conduit;                                                \
-> +       })
+On Sun, 2020-04-19 at 14:27 +0100, Lad Prabhakar wrote:
+> Add file pattern entry for rcar PCI devicetree binding, so that when
+> people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
+> be listed.
+[]
+> diff --git a/MAINTAINERS b/MAINTAINERS
+[]
+> @@ -12933,6 +12933,7 @@ L:	linux-pci@vger.kernel.org
+>  L:	linux-renesas-soc@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/pci/controller/*rcar*
+> +F:	Documentation/devicetree/bindings/pci/*rcar*
 
-Checkpatch complains here (traces below) but I think this is a false positive
-due to the line breaks in the macro definition.
+MAINTAINERS was recently sorted for consistency.
 
-WARNING: Possible switch case/default not preceded by break or
-fallthrough comment
-#231: FILE: include/linux/arm-smccc.h:415:
-+ case SMCCC_CONDUIT_SMC: \
+Please move this new line above drivers/ to keep alphabetic ordering.
 
-WARNING: Possible switch case/default not preceded by break or
-fallthrough comment
-#234: FILE: include/linux/arm-smccc.h:418:
-+ default: \
 
-Regards,
-Etienne
 
 _______________________________________________
 linux-arm-kernel mailing list
