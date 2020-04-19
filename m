@@ -2,33 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B939D1AFA8D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 15:27:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D440B1AFAA3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 15:28:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=P/JLdeY/uZXDaG04s7xngTXk3UOSzhblLLhS0mbvNZk=; b=oRH
-	ceG9Di0NWBb7ejAJJsh8gaoptl3C5OxtfRJgkaAaOdLmQrsfnWWZmkIAHYORYcND2bm8qmWvjhqlC
-	fDUMu/q9z+4eMzDXFJgxGkYJ7ggNGAs8TG0yL0242jzeVheHLKaU0fLiw3An7amxYbiGNUMdvLqzS
-	wpp9ZwwG2tSwOlOF5Tnw54390b5X7Hw6JLr7u8OC+yN1d2UdGmSiht1eT0yAIUYIU4gh88jEBMgoD
-	EhmNHY906e/UMQsLcle9GJnk9WHH5qzAPQpxI6+a11ECjEvjUIIULuzQZqvzdVRXzR5sMTDxN7pJe
-	lc9D91wMC41GelQorBfF5dZ9E6x8ZUA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4rsi/UfryzDFenGJAxtBwYAQuDvxAAWwPMTsAu/E/lE=; b=lOk3wDMKHriPkcGw4Q67tlLMaY
+	B6SP2wbb7y5kw0xZDy3s+lgwhuj66BBmMAxPWsBvKZhw/8bHIqExbiwomgzpLfd/hiw0uPwJ9i5go
+	aHVQGoGRmsUhjofjdfKLxUlJsLn78N52fAoL3Tbh3MDhSWqZnWdxkOsuMf7KJKzKdbWw2gb+wHa6S
+	Dc131ASYHFqdugh09unS0Dfu4mVVqSyo1kKyveDFvrH0T65R1VMtJD7m/QfL/cCkT0AKCS+U8mSQi
+	yyQywbOP7Zn5f6etfQJuj0fnZBtp3xOtsocbxFU4d2IKhrOhDMTk09u8Pbm9lLhg4kpY7VgpJX1s4
+	zOhRzQ/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ9yu-00078t-Lm; Sun, 19 Apr 2020 13:27:32 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172]
- helo=relmlie6.idc.renesas.com)
+	id 1jQ9zM-0007Nm-EE; Sun, 19 Apr 2020 13:28:00 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171]
+ helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ9yi-00077K-8D; Sun, 19 Apr 2020 13:27:22 +0000
-X-IronPort-AV: E=Sophos;i="5.72,403,1580742000"; d="scan'208";a="44894763"
+ id 1jQ9yk-000780-BB; Sun, 19 Apr 2020 13:27:23 +0000
+X-IronPort-AV: E=Sophos;i="5.72,403,1580742000"; d="scan'208";a="45108817"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie6.idc.renesas.com with ESMTP; 19 Apr 2020 22:27:15 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 19 Apr 2020 22:27:20 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id B93BD422C025;
- Sun, 19 Apr 2020 22:27:10 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id F05DC422C025;
+ Sun, 19 Apr 2020 22:27:15 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  Kishon Vijay Abraham I <kishon@ti.com>,
@@ -39,21 +40,23 @@ To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
  Marek Vasut <marek.vasut+renesas@gmail.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v8 0/8] Add support for PCIe controller to work in endpoint
- mode on R-Car/RZ/G2x SoCs
-Date: Sun, 19 Apr 2020 14:26:55 +0100
-Message-Id: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v8 1/8] PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+Date: Sun, 19 Apr 2020 14:26:56 +0100
+Message-Id: <1587302823-4435-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_062720_621438_CB00406A 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20200419_062722_490257_2B313862 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.172 listed in list.dnswl.org]
+ no trust [210.160.252.171 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,107 +82,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+This commit renames pcie-rcar.c to pcie-rcar-host.c in preparation for
+adding support for endpoint mode. CONFIG_PCIE_RCAR is kept so that arm64
+defconfig change can be a separate patch.
 
-This patch series adds support for PCIe controller on R-Car/RZ-G2x to work in
-endpoint mode, this also extends the epf framework to handle base region
-for mapping PCI address locally.
+With this patch both config options PCIE_RCAR and PCIE_RCAR_HOST will be
+available but PCIE_RCAR internally selects PCIE_RCAR_HOST so that bisect
+builds wont be affected.
 
-Note:
-The cadence/rockchip/designware endpoint drivers are build tested only.
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+---
+ drivers/pci/controller/Kconfig                         | 10 ++++++++++
+ drivers/pci/controller/Makefile                        |  2 +-
+ .../pci/controller/{pcie-rcar.c => pcie-rcar-host.c}   |  0
+ 3 files changed, 11 insertions(+), 1 deletion(-)
+ rename drivers/pci/controller/{pcie-rcar.c => pcie-rcar-host.c} (100%)
 
-Changes for v8:
-* Dropped adding R8A774C0 (0x002d) pci-id in pci_ids.h
-* Fixed typo in commit message for patch 2/8
-* Reworded commit message for patch 5/8 as suggested by Bjorn
-* Split up patch to add pci_epc_mem_init() interface to add page_size argument
-  as suggested by Bjorn.
-
-Changes for v7:
-* Fixed review comments pointed by Shimoda-san
-  1] Made DT bindings dual licensed, added Shimoda-san as maintainer and fixed
-     the example as its built with #{address,size}-cells = <1>. I have still
-     restored the Ack from Rob and Shimoda-san with these changes.
-  2] Split up the patches so that they can be picked up by respective subsystem
-     patches 1/4-9/11 are now part of this series.
-  3] Dropped altering a comment in pci-epc.h
-  4] Used a local variable align_size in pci_epc_mem_alloc_addr() so that size
-     variable doesn't get overwritten in the loop.
-  5] Replaced i-=1 with i--
-  6] Replaced rcar with R-Car in patch subject and description.
-  7] Set MACCTLR in init() callback
-
-Changes for v6:
-1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
-   scm/linux/kernel/git/lpieralisi/pci.git/
-2] Fixed review comments from Shimoda-san
-   a] Made sure defconfig changes were in separate patch
-   b] Created rcar_pcie_host/rcar_pcie_ep structures
-   c] Added pci-id for R8A774C0
-   d] Added entry in MAINTAINERS for dt-binding
-   e] Dropped unnecessary braces
-3] Added support for msi.
-
-Changes for v5:
-1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
-   linux/kernel/git/helgaas/pci.git
-2] Fixed review comments reported by Kishon while fetching the matching
-   window in function pci_epc_get_matching_window()
-3] Fixed review comments reported by Bjorn
-   a] Split patch up first patch so that its easier to review and incremental
-   b] Fixed typos
-4] Included Reviewed tag from Rob for the dt-binding patch
-5] Fixed issue reported by Nathan for assigning variable to itself
-
-Changes for v4:
-1] Fixed dtb_check error reported by Rob
-2] Fixed review comments reported by Kishon
-   a] Dropped pci_epc_find_best_fit_window()
-   b] Fixed initializing mem ptr in __pci_epc_mem_init()
-   c] Dropped map_size from pci_epc_mem_window structure
-
-Changes for v3:
-1] Fixed review comments from Bjorn and Kishon.
-3] Converted to DT schema
-
-Changes for v2:
-1] Fixed review comments from Biju for dt-bindings to include an example
-   for a tested platform.
-2] Fixed review comments from Kishon to extend the features of outbound
-   regions in epf framework.
-3] Added support to parse outbound-ranges in OF.
-
-Lad Prabhakar (8):
-  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
-  PCI: rcar: Move shareable code to a common file
-  PCI: rcar: Fix calculating mask for PCIEPAMR register
-  PCI: endpoint: Pass page size as argument to pci_epc_mem_init()
-  PCI: endpoint: Add support to handle multiple base for mapping
-    outbound memory
-  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
-    controller
-  PCI: rcar: Add endpoint mode support
-  MAINTAINERS: Add file patterns for rcar PCI device tree bindings
-
- .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   77 ++
- MAINTAINERS                                   |    1 +
- drivers/pci/controller/Kconfig                |   18 +
- drivers/pci/controller/Makefile               |    3 +-
- .../pci/controller/cadence/pcie-cadence-ep.c  |    2 +-
- .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
- drivers/pci/controller/pcie-rcar-ep.c         |  555 ++++++++
- drivers/pci/controller/pcie-rcar-host.c       | 1065 +++++++++++++++
- drivers/pci/controller/pcie-rcar.c            | 1206 +----------------
- drivers/pci/controller/pcie-rcar.h            |  140 ++
- drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
- drivers/pci/endpoint/pci-epc-mem.c            |  201 ++-
- include/linux/pci-epc.h                       |   38 +-
- 13 files changed, 2073 insertions(+), 1251 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
- create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
- create mode 100644 drivers/pci/controller/pcie-rcar-host.c
- create mode 100644 drivers/pci/controller/pcie-rcar.h
-
+diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+index af0f0bc11917..cfdc898450d0 100644
+--- a/drivers/pci/controller/Kconfig
++++ b/drivers/pci/controller/Kconfig
+@@ -58,8 +58,18 @@ config PCIE_RCAR
+ 	bool "Renesas R-Car PCIe controller"
+ 	depends on ARCH_RENESAS || COMPILE_TEST
+ 	depends on PCI_MSI_IRQ_DOMAIN
++	select PCIE_RCAR_HOST
+ 	help
+ 	  Say Y here if you want PCIe controller support on R-Car SoCs.
++	  This option will be removed after arm64 defconfig is updated.
++
++config PCIE_RCAR_HOST
++	bool "Renesas R-Car PCIe host controller"
++	depends on ARCH_RENESAS || COMPILE_TEST
++	depends on PCI_MSI_IRQ_DOMAIN
++	help
++	  Say Y here if you want PCIe controller support on R-Car SoCs in host
++	  mode.
+ 
+ config PCI_HOST_COMMON
+ 	bool
+diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+index 158c59771824..9dbccb5b24e1 100644
+--- a/drivers/pci/controller/Makefile
++++ b/drivers/pci/controller/Makefile
+@@ -7,7 +7,7 @@ obj-$(CONFIG_PCI_MVEBU) += pci-mvebu.o
+ obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
+ obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
+ obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
+-obj-$(CONFIG_PCIE_RCAR) += pcie-rcar.o
++obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar-host.o
+ obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
+ obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
+ obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o
+diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar-host.c
+similarity index 100%
+rename from drivers/pci/controller/pcie-rcar.c
+rename to drivers/pci/controller/pcie-rcar-host.c
 -- 
 2.17.1
 
