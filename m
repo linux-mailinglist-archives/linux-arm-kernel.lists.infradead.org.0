@@ -2,116 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA5361AF8E3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 11:06:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A3401AF935
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 12:05:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6tHhXw194jlwHgQmVSzrxFC2orjacZlv+KW9K2NugfA=; b=NrQZQuC0ZB9FuE
-	pArd2gKmkZtCfnJb24aVi3OtB71Xwi08E7Z9Dtv07V3R55kX+O9l3c/budQ/v30u7zE+cAD518hTf
-	mB5F6AmX8DwPIfopu8KMhJcnXUgSm8TdITVDTWYnOPib2E93FY9G7NG2LRFCciIGYv4RQn+0IZ6s/
-	0I6vh28fGRpk3P4h9kVZltLy9DPf83ZGNw4LFDUk5PW0zVZhrNm2hN5Y28IGOW8090q/nwdsC8kd1
-	mc3ClIVQhhEBeI6eTsZEtbopNwbCnmkWhL8zEZiAV/6wlSEvyQddmep7zv7KYMlIrVb2HznVCHeS+
-	kmv81OgILGVVQjOGhLtw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TbNb5p45V9CYwUsaFwo0j9N1W3tgxjx+3NP/5Et7n5c=; b=HwKTP8Gx52JQzv
+	eRY5rIel5LSN2kIXCuIXgk6IfxZkUfIkKtPcGIKchdM/FOBwZNaEO2ctHw7/SHtlY9DghVAb0EMs0
+	1/9R7h1IWMp0AYi6ifJjIedOWdJNYWMuYzuiDkBCv0VzYX75uRrEfOPnuiviYrBWk453v8PqPZfTk
+	onaQS7jrYHwrabbl3mEdUxxbFXy3VsTMMl95Dfw13aXoZTbxcnq/A97YLFmk9CxtNTf4LEMs1vLmB
+	4+QjUXeN2BQEPLTKg/OT+lZWwYUZObmq6qpV1oDh8uIsQlUjgvpN4KakL5UcylU2RI/PWHieoKOic
+	xDF7dLlGzxUridWx80vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ5ua-0005U5-Pd; Sun, 19 Apr 2020 09:06:48 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jQ6ol-0007bG-Tc; Sun, 19 Apr 2020 10:04:51 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ5uS-0005Ss-Ph; Sun, 19 Apr 2020 09:06:43 +0000
-Received: from [192.168.1.183] ([37.4.249.228]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MidPj-1imLAj1UD1-00fj9V; Sun, 19 Apr 2020 11:06:34 +0200
-Subject: Re: [PATCH] ARM: dts: bcm2835-rpi-zero-w: Fix led polarity
-To: =?UTF-8?Q?Vincent_Stehl=c3=a9?= <vincent.stehle@laposte.net>,
- devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com
-References: <20200418123522.6390-1-vincent.stehle@laposte.net>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <063a86f2-fb84-c75d-1be3-9d3fcd1b7e56@i2se.com>
-Date: Sun, 19 Apr 2020 11:06:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jQ6ob-0007a3-Jg
+ for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 10:04:44 +0000
+Received: by mail-lj1-x243.google.com with SMTP id l19so4132352lje.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 19 Apr 2020 03:04:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Mn8Jy9OU+/ODYHMM533ScviapxYAJChTEy00gYjYFX4=;
+ b=a9WZbHk5RzEBex7dd652HoTFjjdnCjIVayXCWuekivqrga0QBbBg7kMsBuJPeBkwgD
+ NzkqyBX6lJ2I9ixUYeJCycAjSDJcfQExDCMF6gIblXdWNi/4ykzInWmmmolFWbwa0MVF
+ z/OPG+JffSYIvoPkx2b+IsOJ5w6gTQykw2S+AeA+E/hDd3S4EQtm6mWADybgti0BrP1x
+ xN8CQ8sBPz++9NXeAtUS1xFC32P8CGStcezsrq5RxKrlJZVGyzIkdUTp/O243RHJw+hi
+ bzeuHQwjNNy4j5I+rrkCl83mbxfAFKYu7oJSgnqlzhTzkNvh75q6nU+EKTKKKY+cMIY1
+ bxjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Mn8Jy9OU+/ODYHMM533ScviapxYAJChTEy00gYjYFX4=;
+ b=ALbyqlo1465oALD7SJqbWpZLvxfRtQ3UsF/GItqmtfab7Ync3ndx418GMJSrU30MFk
+ qLdTD7eWwtLajtzcMs6yS2FLwvzpWg9yRJCXxuPUm+mxoePGjRfhVKkqu6qeDtzF4ox7
+ CkUF0QdG3OW7I7Wv0Q7Ct7gjVwBLOMaZ4Ifnz0jGF+GQGllZOh1N2Tvg9bE6dp75Gr3t
+ vUoaXOKoxr6HlMx+EHXgo9hCFNmUW3gKNlEg5FNEuWj4eWLytdp+v/orl/TPf1BXQbLD
+ pIE3JKXHi5h73Ipi3Ff/VZ7uDEA0P2f8i90fp+uw/ew5rmeJHcqXfUXc3rUb+Nw4jPkK
+ 3fIw==
+X-Gm-Message-State: AGi0PuZc1QifzGyitg0FFBwRlILmBOIZpq641BNriw5IdIUEsZfZjFio
+ drJoEplYy0EGsG20yTksHAr+ecXqMubpE4Rmb3CWFw==
+X-Google-Smtp-Source: APiQypIzAd77FCnROu0bVmZaX4JXkStB+/ueD8Y9e5fFHRcGeXniZ/4z4uwE+8/cyakm6MKkFt83kKov2oxk3Lyv06A=
+X-Received: by 2002:a2e:7215:: with SMTP id n21mr807335ljc.199.1587290678009; 
+ Sun, 19 Apr 2020 03:04:38 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200418123522.6390-1-vincent.stehle@laposte.net>
-Content-Language: en-US
-X-Provags-ID: V03:K1:nYqWlMjSftu94OxjjBHe+dVbzr6OvuVVl268DET7J0WqTa1tXCK
- 8/yPjNnLZct5ZNvA3sp6qGDD3yMuFXgek/bqSO7O6s1ptNB6ISbQqxPWKlvkV0qwHMzj3wp
- 4txjU6Cl0wZnBzFObcbhZGtx1ZIx7QYPeWQIhaB3UIzEVdyCunp58HbdPCGnL4BTZ51siWR
- A4Pz5cm8rdWRsotLWULLg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:0Kp6Ixa+6BE=:qi2YKC4JSGfQXM+7x32zdc
- QBmLZzuPIoFrDUZ9tgOqioMC0KpFuyUoE7KDk0T3c2RERDc7w6JmNrHlMf2Ns7G5SrOKqwjzD
- WzEMk3h36pEiyUHruVLQOm38FwptUd4PfY5lU0kDe8NKBAtlxBIJ5bOpiJh1m6jKcLDCoUjxt
- VGvo1LTt+gFkmzKi/1UMnSYv1c9EsAZz2vIv0NO/VnJ6VVGZ7GigbbEmuohLwRRdknP8aCLGp
- HkfTdvk3ZfmH/5lzHaziHwAK7jNQwAcOEJKvEKVb/MH0LkOyz77U0COjJ+KiY3oXf5AMsJzAg
- ZnMLpb1+/ly3rvr9Ycb3b27TfZdOQC9G8ovueOoNPHi0KD5BdxG8JOVkzHGC2DXyeyCg8wWDU
- eWQ8h7su+JTK38tKBmY/Bzj+sFybfMG5AWEYpaMpoOSIg3tlD58yINGE55OVkPpCh4KsY2wjb
- 2PO4MfdTmJhdWzXG8rkohgErFrTsAqXmfz3BbEEV8m+uht4Gb5BOegPHLBIjVneVQxxWD0Csn
- MY/Kl2tb6Kmip2f+/NtYL87b42fxB0Nd0eGRMvAy/hk2f7EiJ5foXhWUI23sAFUxIPRpahhLy
- 681nURt+3xfFbUAC33rDDUdTHgysZSOZzfp/vvxPWoBAAMt/FZYY0NgSO9pm9guEX7tQ2M4UH
- XpMC4fSRmE0qO5BpfDEuyby3yvMaIJr+AztLComVAoDOY8ht+5mjM0vcx0aVGIqAF3rKhXUny
- SHtrAJMftWHL5rhodyOKOU1yhMdJhXUZfoEl7dftASiUOdG2Lu0nOXe97s7NuMOlzm+g2gikm
- rD9EcUV78+RXlvJni+0Y/ad8Iq83A6lWmtIXPnNPgHRdOOtOwX6Ze9Iy3M5kZK0qFdxUw2e
+References: <20200417103232.6896-1-sudeep.holla@arm.com>
+In-Reply-To: <20200417103232.6896-1-sudeep.holla@arm.com>
+From: Etienne Carriere <etienne.carriere@linaro.org>
+Date: Sun, 19 Apr 2020 12:04:27 +0200
+Message-ID: <CAN5uoS8vGCABXvscR160=Dy_iZytinB2y+E2wbp6_KyQMFW5Tg@mail.gmail.com>
+Subject: Re: [PATCH] firmware: arm_scmi: Fix return error code in
+ smc_send_message
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_020641_124544_0EE48E4C 
-X-CRM114-Status: GOOD (  12.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200419_030442_169135_99FAD262 
+X-CRM114-Status: GOOD (  16.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,27 +91,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Rob Herring <robh+dt@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Scott Branden <sbranden@broadcom.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Peng Fan <peng.fan@nxp.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMTguMDQuMjAgdW0gMTQ6MzUgc2NocmllYiBWaW5jZW50IFN0ZWhsw6k6Cj4gVGhlIHN0YXR1
-cyAiQUNUIiBsZWQgb24gdGhlIFJhc3BiZXJyeSBQaSBaZXJvIFcgaXMgb24gd2hlbiBHUElPIDQ3
-IGlzIGxvdy4KPgo+IFRoaXMgaGFzIGJlZW4gdmVyaWZpZWQgb24gYSBib2FyZCBhbmQgc29tZXdo
-YXQgY29uZmlybWVkIGJ5IGJvdGggdGhlIEdQSU8KPiBuYW1lICgiU1RBVFVTX0xFRF9OIikgYW5k
-IHRoZSByZWR1Y2VkIHNjaGVtYXRpY3MgWzFdLgo+Cj4gWzFdOiBodHRwczovL3d3dy5yYXNwYmVy
-cnlwaS5vcmcvZG9jdW1lbnRhdGlvbi9oYXJkd2FyZS9yYXNwYmVycnlwaS9zY2hlbWF0aWNzL3Jw
-aV9TQ0hfWmVyb1dfMXAxX3JlZHVjZWQucGRmCj4KPiBGaXhlczogMmM3YzA0MGM3M2U5ICgiQVJN
-OiBkdHM6IGJjbTI4MzU6IEFkZCBSYXNwYmVycnkgUGkgWmVybyBXIikKPiBTaWduZWQtb2ZmLWJ5
-OiBWaW5jZW50IFN0ZWhsw6kgPHZpbmNlbnQuc3RlaGxlQGxhcG9zdGUubmV0Pgo+IENjOiBTdGVm
-YW4gV2FocmVuIDxzdGVmYW4ud2FocmVuQGkyc2UuY29tPgo+IENjOiBGbG9yaWFuIEZhaW5lbGxp
-IDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KPiAtLS0KClRlc3RlZC1ieTogU3RlZmFuIFdhaHJlbiA8
-c3RlZmFuLndhaHJlbkBpMnNlLmNvbT4KClRoYW5rcwoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hello Sudeep,
+
+On Fri, 17 Apr 2020 at 12:32, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> SMCCC can return one of the 2 return error code here: NOT_SUPPORTED(-1)
+> and INVALID_PARAMETER(-3). Map them to appropriate Linux error codes
+> namely -EOPNOTSUPP and -EINVAL respectively. -EINVAL is also returned
+> for any other return values.
+
+Reading back the SMCCC spec, I see that INVALID_PARAMETER(-3) and
+SUCCESS(0) are Arm Architecture Calls specific return values.
+The only generic return value that applies to any SMCCC call is
+NOT_SUPPORTED(-1).
+
+As for an SCMI SMCCC transport layer, any other value than -1 means
+the call is supported and one should rely on the statuses provided in
+the shared memory buffer related to the function ID.
+
+>
+> Cc: Peng Fan <peng.fan@nxp.com>
+> Reported-by: Etienne Carriere <etienne.carriere@linaro.org>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  drivers/firmware/arm_scmi/smc.c | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
+> index 833e793b5391..a8b5ecb8927a 100644
+> --- a/drivers/firmware/arm_scmi/smc.c
+> +++ b/drivers/firmware/arm_scmi/smc.c
+> @@ -114,7 +114,11 @@ static int smc_send_message(struct scmi_chan_info *cinfo,
+>
+>         mutex_unlock(&scmi_info->shmem_lock);
+>
+> -       return res.a0;
+> +       if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
+> +               return -EOPNOTSUPP;
+> +       else if (res.a0)
+> +               return -EINVAL;
+
+Related to my comment above:
+I have no strong opinion on that as I guess SCMI SMCCC transport layer
+in secure world firmware could ensure output argument a0 is set not 0.
+That said, I might be nitpicking but I still think th 2 lines could be removed.
+
+Is there any strong reason for testing finer return status from res.a0?
+
+Regards,
+Etienne
+
+> +       return 0;
+>  }
+>
+>  static void smc_fetch_response(struct scmi_chan_info *cinfo,
+> --
+> 2.17.1
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
