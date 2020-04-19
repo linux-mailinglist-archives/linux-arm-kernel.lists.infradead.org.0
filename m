@@ -2,138 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F4891AF727
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 07:08:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17C011AF73B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 Apr 2020 07:38:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PAuTBeg7sH5leJ94AEXyAP5Nm9tlQNKWndztEjHQMgc=; b=vBbadi7+8lfuHo
-	16C1ILwQmi0iTSReVO1Noov8N75JRZMpVQyN9fM0/2l0dbTrAIGw6ImaFGyK7FbUg4mfU6mZlJQiu
-	ySUITvXvFlgw/7Aa9BpgIF+YSDS1wxA1QwHItXGXwXquKsRIgUMyRl6yAR+MS2q4k+WqcGGlmGP6K
-	VAso/+2HSVKkWugnXGkp92rpXp0jBih614C2nzgBbJmrLpzM5PytPYzNUolPkj6LdPD+cE3S2C1pp
-	XBGGBsXj1K7hwJ5LqU5b268oeIE9YOBBFLKwtgs3EXqkMzGOc1D2xKOpTmGGCYxC8HMqzwhegqdd2
-	eMWJmtccTJ+vkD5YWXrQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7HAGrF+smdDgNJ2x9X9eB9TuwHQbB2qQcorcCyZ5p4M=; b=DYN
+	mHVCTxw5rDaYWaJ8NQU4vbHNBk6wA8BzY2lnDCFd52jGfVdrfbBMuR6KVon0G0pv0nnl5x6Kk0EN5
+	rDsPbqgPLKYloGQzxQJ3cjjGFwccnak6FfJvN92RukQRdju94NWWDJa+toGD5peDSXYhllqc/TNZL
+	GcszyZkfMvUPALcOV3BIrlOV3J8DIL3XGt8+X8B5n5B8srXcZaHovEUogC82fsusSIFQR8oQCktf6
+	KUFEYsrlMDT6/1eFa3TmcscvcLCQPnPNZh1l7ZQ+cjqTh7z1mGjeYtsBFszf60hX98HCKthf51+tT
+	eOhAzFUZjgInGFpGtUNQFKzzqG4qzYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ2C7-0003uO-0X; Sun, 19 Apr 2020 05:08:39 +0000
-Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
- helo=mx0b-0016f401.pphosted.com)
+	id 1jQ2fA-0004kZ-9Q; Sun, 19 Apr 2020 05:38:40 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ2Bu-0003tU-R2
- for linux-arm-kernel@lists.infradead.org; Sun, 19 Apr 2020 05:08:29 +0000
-Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
- by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03J57iuO019262; Sat, 18 Apr 2020 22:07:44 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=Hze6eJcQaBvBwRk4Uu8GpnnohOomUk3J0gv4mNvf8vM=;
- b=Pt3bl+9ZC2iQrHb9khdTf2HZWKmdlnxT5TmxEFV7BH/b22Te91Jm5AMv0zlOKtW+wPpn
- 6rEZbYMpgmMES8N940N52JTCbx/NaKV1fwVD4FnY2Lm0XTUjLP3wQazwZKImUhxY6Shp
- 7No21rKp6zi3NuVBvn+4SSVrpeYpESyTzmJoY7eYrq/GdJ21wbHLbvcEVAAVuHP9X/AV
- oMP5svtc1+5wqRS/Ffp7Z3rRix4RsgFgAxEQjFLo8bMi0Wl655pPAwM2nYPZ4MKwZWbS
- PAQDcmADR/leLT+2xQVj7kxXHVtbgC6Dps2r0h/2ocUi2Kk3v58RsD/JxxyqZiB9FXpc CQ== 
-Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0a-0016f401.pphosted.com with ESMTP id 30fxwp2s25-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Sat, 18 Apr 2020 22:07:44 -0700
-Received: from SC-EXCH01.marvell.com (10.93.176.81) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Sat, 18 Apr
- 2020 22:07:43 -0700
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (104.47.55.108)
- by SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2 via Frontend Transport; Sat, 18 Apr 2020 22:07:43 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=P0dWnN/FsBNHNEvt7xRdKmLbrpUcLZ4nwi5iR3y+tpZSaOhofebAOVwgK0xY8sw6pvam/kqNk2NLfgj/wK2qO68RXjwLqnolbxKqwbAMRIPmpbwKsXvw73gHUw4r9y4oVzW0WBMCOAY6dIQucrb3e8XDSeHutubAyRDmrQBcmPSLGMloCHAx89TxcjLgcPNW0PlyNmNxJqY+XA4hF22NiOHcZ97YucjstF+6I5pVsTffzrJ2gXp/tb/9ZAy/vO9RXzqOE+W4/KTTdyUxg6H0+ra3ESxuXNbWR4sANHG8NH6Jz4WH/i9xeM6jPtpJMFGwwTOZsvbHDGHomAwnMwBoXw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Hze6eJcQaBvBwRk4Uu8GpnnohOomUk3J0gv4mNvf8vM=;
- b=jzzZmnbcjtmybp3lm5PY45QcULi+lzPjQ2QFK1IKxnykuAYivZkupn2l8IDj/K1kmaUH1UD1Z+bFmjfgxdDOa/lKb+r0qnA9rUoKQCE82pnWXBEKiBlXBNm9wSOqqVnrAHh+Nd1ITLcWn+lAL92Vx2RX7+alk57g3x+LKR6sEyiTI8jAfKIpUxKJ4lcIOPZEQb2Ngfu9R4UFvs7Ct7fNsgz838rPP7yJ7JGk3JWEdb6S6Kx+7jZe75+r7ZU6EGBg5Kpjw4GpRxxgFR6GcNeVgxu6zkBWjd1Zb4bvj0zX28oxmvNb1Q5QVYMDuMKilzaVeds7Tk9v9HHzv30fiD3tnA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
- dkim=pass header.d=marvell.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Hze6eJcQaBvBwRk4Uu8GpnnohOomUk3J0gv4mNvf8vM=;
- b=hNqDcqvETGN66slKJ8iKPL2V9YAWQq/7Pbh7AP8bVmzNuCtiHxn7JlVsiAmQE5zqYMTb98cn4Pl2TCYyWntqoJN64SD4CDKQMEo40Ku+fraG+vp01ka+xadBCdetO39KNZxoMcz5uvCqloBiZuUsp0EEmXqNDsVCjgXj7WTlhZM=
-Received: from BYAPR18MB2535.namprd18.prod.outlook.com (2603:10b6:a03:137::17)
- by BYAPR18MB2933.namprd18.prod.outlook.com (2603:10b6:a03:10e::33)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Sun, 19 Apr
- 2020 05:07:42 +0000
-Received: from BYAPR18MB2535.namprd18.prod.outlook.com
- ([fe80::65f8:9bfe:5fa5:1280]) by BYAPR18MB2535.namprd18.prod.outlook.com
- ([fe80::65f8:9bfe:5fa5:1280%3]) with mapi id 15.20.2921.027; Sun, 19 Apr 2020
- 05:07:41 +0000
-From: Alex Belits <abelits@marvell.com>
-To: "luto@amacapital.net" <luto@amacapital.net>
-Subject: Re: [PATCH v3 04/13] task_isolation: userspace hard isolation from
- kernel
-Thread-Topic: [PATCH v3 04/13] task_isolation: userspace hard isolation from
- kernel
-Thread-Index: AQHWFgh0Cq6Sp1qrB0WB/pY8n1YWIQ==
-Date: Sun, 19 Apr 2020 05:07:41 +0000
-Message-ID: <bdea1b5d70460386303e59fdc7438d9013293147.camel@marvell.com>
-References: <58995f108f1af4d59aa8ccd412cdff92711a9990.camel@marvell.com>
- <915489BC-B2C9-4D47-A205-FC597FC68B98@amacapital.net>
-In-Reply-To: <915489BC-B2C9-4D47-A205-FC597FC68B98@amacapital.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [173.228.7.197]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a76721a9-0958-463b-db22-08d7e41f96b0
-x-ms-traffictypediagnostic: BYAPR18MB2933:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR18MB2933646E962406E3700A9CB5BCD70@BYAPR18MB2933.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0378F1E47A
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BYAPR18MB2535.namprd18.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(366004)(136003)(396003)(346002)(39850400004)(376002)(316002)(66476007)(26005)(66446008)(64756008)(76116006)(66556008)(66946007)(186003)(478600001)(2616005)(6916009)(7416002)(966005)(54906003)(6506007)(5660300002)(8676002)(6486002)(8936002)(81156014)(71200400001)(6512007)(2906002)(4744005)(4326008)(36756003)(86362001);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jIOsfThepBKKZbqgekvEPqCT6xjC7BhjUDrDTxtujcZiFrXCaTwsOMGTwfZUmtN/AfLmMN9eW5wLT3ceWTcHR3+p6vSdwUJRg/iFXciapok0YPgnQjjZ0mkbVmB15IFPfS3wWQnqkcCYaSwA6IPqLp0u4iC5CHPmcUx12qAaCd9fekI8I9LwsbN/U8aWqH9bcMO9IzexUwyDt+NpITlTS6vr7XLUWzaK/ermrZOoidvpcdInSpoM8Fdu/2bWchYWMGNVuK+SGgmx1FNIae2+ew3wWlmObWCsTCOfgzA4NadZ/zB/jZdR7Pt0MHQaT+xxew5OppMwy1yyssOplggBycz9qXyOXZTb0gA6ebssYLcItTBpSb6d18bnpkU42GWItLtYeQribprVhA+yabheZrDOE2RwhqXGzL3K0bpIpcqDq08es3Q34YaaZV+O/suqlhWted9FKlL6ergj/v4srQ1/03DDFKuleHL16bID6p+a1zak+YljFFU4rsBmVhIu8yox0kNaT8GfhXwL/j/TyQ==
-x-ms-exchange-antispam-messagedata: HfwMLOOr/4m5fZ3OxVU9q/ib++cpJxWwoprn88tLImVBvEZCgqtyaRoyamrE+HnLqJQO4T1IWmiMeSAfP3P8I0uSuTndoVVUaTHh+kI1GwuxlDbpsaUeNelWDHP3RexB7zIwhIx4tK1gkC4NLNlwYHUeJbX5njTzTsqX5Q2jn/zZ+np5fQW8xpbMcgTonhNwzoyTtnaTTUL3tlLMJpr7ZkhSC0BmTSJsqBWKc6bBXLgOho3y+5uo8AM3bAjOOInZoxhDx9u0AvZS98bLGhX3YpzSQJxSVOCVaPeNpWxInFx+TSZFDG/Jyp6MxD5uI8WpWDNd7hufWzG9ACFjTcByuzb3uWddyIUKYvGJ02huHgUy/2UTxRh27Lvx1q3TwU57KxJsQtTldkXcHiS64veof9+sAXMo9edZU24bsPbE6dHWCvLjcel40gV84XPD0t5s9GTTYt+hI+RWwkyLPu2AZ4/r+Rfj2y2bhZvEabzS0E0A8OGE0YII+fNgfUD2ziGf0y59+dWgyS8kX8avYhp5UVT4iJDoGTEVOBllUSyrSGACF+TNHjMaCaGf4lalL0evpKZ/dRIhXFR5zEyuQ7itQ7//WavHCyKtjLUuy9rJbJyw7FqcjoYJojH9rBX66zL6IhcUwrvQAQ5TL9ZHg9pnvy5MuNnDR6ZC36ycaOBf42mJHCVvcZmpTEiVFkG8vfwx/jGLS5E4g/TF3Koo9HKFUx7QprHQXSQVsRXtPJ7xP0EJ63mhHNyXhp8oVxgSqYFUGHFfD5JhgiyQCEUB8vqwml0zk4y7d4eFHc6yArt687Q=
-Content-ID: <C53B81AD43CDF74E93D23C0D24037623@namprd18.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a76721a9-0958-463b-db22-08d7e41f96b0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Apr 2020 05:07:41.8407 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: MfbkLB4IQWWoIfrbGP9p9M9GYlXjMGkWZ7tLbQ7fl75JGvjUefZs/cOaR+R6jyReTTyF2iaoDZpHIB7GfDqIzA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2933
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-18_10:2020-04-17,
- 2020-04-18 signatures=0
+ id 1jQ2ev-0004jT-JA; Sun, 19 Apr 2020 05:38:27 +0000
+Received: by mail-lf1-x141.google.com with SMTP id 198so5205676lfo.7;
+ Sat, 18 Apr 2020 22:38:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=OBR4WRUFWczbdU3xVNyI9eSmEplhWFtGL1aInpJgtYg=;
+ b=BOg3j33lf0c1vwAylrk6BloplwvTcJVopaTfJJW8VS7+c3Ci6b7inILZAdbYc5mnk8
+ XGtvrM8lmm015naWOdVjMwegO0if7vKhGNYz3whOG600DGl4oWQtBrvIHm+mE2jA8ZE2
+ BgHKc+R5aOvXVJj0t63RUZxtkwPAB48izeY3NBFjxJZhL7nkbwc5KUU/1TsaZf40symU
+ BEgu6/OEFpF+O38KEuhUNNCSoIreE0SS0KDsrRt1+q6WxbEND4qahP6oyDBTvbuFmxG4
+ ACTq34ic/Am83XYTRQG23VNELMQJvHTEQrSP2LH51A9+st+NPGy9MuO0uyxJxIorGZz8
+ LjgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=OBR4WRUFWczbdU3xVNyI9eSmEplhWFtGL1aInpJgtYg=;
+ b=OJqqZ/5hCET00KC6gBIh6ZeHwBQ7Hdgn9ejNQ8353+SPTVC67XbK08L3D628mulbx7
+ ysAkUO2T0ovkCbC1SkXnKNsGZoQAkwp1Q9v2YH1hB+Y6KSwe0m7we/D3M7A4+TBaVJdI
+ nDvu6SmGBqf9wxTGyv5j9kCOsKohUHOrxN+jgPPRFD6DYg8cmrf+2nh3reqo6xOb7wbp
+ oI8DJ9xbWHpXcCcug/ofsmQtFHCIopiOX4ctEgskG0n5yZC2y6a2VkvH4nyo9ZMGtDZ3
+ 3VadHwkU5d5dVWneHPmh50DuKGK7BmuqjTiyL1qmaEsjsFfG4l93qBlRzQqpxicpTzQk
+ H5Aw==
+X-Gm-Message-State: AGi0PuYpUaQGYdaPucltun10bp+gP1tgeKSe23YyKh/memyDagQlYhfq
+ /jP5cMrLX/b9BlpEgAliV/Y=
+X-Google-Smtp-Source: APiQypLzklkGqk/+BSxL5MA3tlAC2LLW/5YlG90c6OQMMnWUKLZmZTC7oeElzqGG73Y6/Zw9AmOLtw==
+X-Received: by 2002:a05:6512:242:: with SMTP id
+ b2mr6816508lfo.92.1587274701603; 
+ Sat, 18 Apr 2020 22:38:21 -0700 (PDT)
+Received: from localhost.localdomain ([87.200.95.144])
+ by smtp.gmail.com with ESMTPSA id r23sm20416619ljh.34.2020.04.18.22.38.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 18 Apr 2020 22:38:21 -0700 (PDT)
+From: Christian Hewitt <christianshewitt@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH 0/5] arm64: dts: meson: Simplify G12/SM1 Audio Configs
+Date: Sun, 19 Apr 2020 05:38:10 +0000
+Message-Id: <20200419053815.15731-1-christianshewitt@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_220826_881563_F6ADEE3E 
-X-CRM114-Status: GOOD (  14.84  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200418_223825_656514_228493A6 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.148.174 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [christianshewitt[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,43 +95,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
- "frederic@kernel.org" <frederic@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "rostedt@goodmis.org" <rostedt@goodmis.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Prasun Kapoor <pkapoor@marvell.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
- "will@kernel.org" <will@kernel.org>, "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Christian Hewitt <christianshewitt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This series creates two new dtsi with the HDMI and HDMI+S/PDIF audio configs
+used in most G12/SM1 Android box devices and some SBC's and switches most dts
+to use them. I have not touched the SEI510/610 which have extra hardware
+in their dts, and the U200 which does not currently have audio support, but
+will likely receive an 'all possible routings' master config when Jerome
+sends his next set of changes (looking at his WIP branch) so I leave U200
+for him to address later.
 
-On Thu, 2020-04-09 at 11:00 -0700, Andy Lutomirski wrote:
-> 
-> > 
-> > Once the task has returned to userspace after issuing the prctl(),
-> > if it enters the kernel again via system call, page fault, or any
-> > other exception or irq, the kernel will kill it with SIGKILL.
-> 
-> I could easily imagine myself using task isolation, but not with the
-> SIGKILL semantics. SIGKILL causes data loss. Please at least let
-> users choose what signal to send.
+One advantaage of common configs is that distros that need to embed alsa
+conf files as part of their userspace support now only need to include two
+confs that will automatically support more boards and boxes as they are
+added, instead of needing to track and add confs or card aliases for every
+new device.
 
-This is already done, even though the documentation is not updated.
-There is even a userspace library that deals with this while
-compensating for possible race conditions on isolation entry and
-automatic re-entry after isolation is broken: 
-https://github.com/abelits/libtmc
+Christian Hewitt (5):
+  arm64: dts: meson: create common hdmi/hdmi-spdif audio dtsi
+  arm64: dts: meson: convert ugoos-am6 to common w400 dtsi
+  arm64: dts: meson: convert odroid-n2 to hdmi dtsi
+  arm64: dts: meson: convert khadas-vim3/vim3l to hdmi dtsi
+  arm64: dts: meson: convert x96max to hdmi dtsi
+
+ .../amlogic/meson-g12-audio-hdmi-spdif.dtsi   | 139 +++++
+ .../dts/amlogic/meson-g12-audio-hdmi.dtsi     |  96 ++++
+ .../boot/dts/amlogic/meson-g12a-x96-max.dts   | 131 +----
+ .../dts/amlogic/meson-g12b-khadas-vim3.dtsi   |  85 ---
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts |  89 +--
+ .../boot/dts/amlogic/meson-g12b-ugoos-am6.dts | 541 +-----------------
+ .../boot/dts/amlogic/meson-g12b-w400.dtsi     | 423 ++++++++++++++
+ .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |   1 +
+ 8 files changed, 663 insertions(+), 842 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12-audio-hdmi-spdif.dtsi
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12-audio-hdmi.dtsi
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-w400.dtsi
 
 -- 
-Alex
+2.17.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
