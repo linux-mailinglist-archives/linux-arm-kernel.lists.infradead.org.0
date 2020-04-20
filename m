@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C7F71B12CA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:18:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD5E41B12D2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:18:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Yga4t8JftcNcbcV4Q6T3fsIjniHQldPIqvxqL1yHk8=; b=kdpAS1vLruSb/3
-	ojlGYHNTMs6Usb3Lh34xXkvKPiKAKwWS+d+pZNa20WvvfIiTvXr73rEHSeORFNtd+YoljrfY0VymS
-	mCnhnwCsaCiRupZj1emkgF93o1rSBgyqavvXEpXeTTRNQ/YidH8zYRaJA5y5uGcLk9XjUQF1p7B0D
-	taFU9OJ15E1jly280URf7dehIp3QGupnPT+dFmi2COcBPlVielTUxqgp+oqg/NjiEvhaJh8Z6RGFC
-	idg8fN/WNI/Kvi3wJ7ujGB+6dB28KiO4whnVcZUObXJI3f/5tLUVYVEkd54jOR4IglhPAWax0i3tK
-	xSRYfBuzsFU66ODaYgtw==;
+	List-Owner; bh=n7BeN5Y08/Py9ennHsN1A0hWoUUZ+5vQlz5sZBzph7E=; b=sPnWfDE613PeFv
+	MtSqkcR2cn4M84b6qZFgltSR+QKJMRJ2SFEFC4I5XeJNfvMoUZjTkreTfqjLTKDP+BVcEgxn7BvI+
+	Oh6+0i2o5hA1Fj21EFDL2q4gvXYv8MDmWMVD02oC3F5CENCa0jG71oNQi+TWudyi6KN0xs6GxBfIF
+	AiCao0CFCsMhPyZSv3OQsHLKm/kn/YWa1l0JAl1M/ataqvmo0Y3w6lOIzYECD/ZmsK61gn3QvMsZf
+	eBgxAVB6YHA8LVEKEaoLCVupFbw/LWIJoS6A7YkwTlEdnxGDfO7mGqzZg6JoINQ7mJhmB9ZKP4ebP
+	1JbFzM041psI7wlYBhcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQa3f-000216-ID; Mon, 20 Apr 2020 17:18:11 +0000
+	id 1jQa40-0002Of-1y; Mon, 20 Apr 2020 17:18:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQa3J-0001ve-Qu
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:17:51 +0000
+ id 1jQa3W-000296-SI
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:18:05 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 54EF720B1F;
- Mon, 20 Apr 2020 17:17:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EEDC02145D;
+ Mon, 20 Apr 2020 17:17:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587403069;
- bh=wXEAfThnDs14N1G/spAtmfJQE33jZSGAx1cIEKIIuc0=;
+ s=default; t=1587403081;
+ bh=8Cti+W7qcMTc3i7ivCfS06mEpTJP5zYv2iWrbD/RTtg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ph/dGiaW6TygCcuAfJaNmpuzQDZkB3Fcj9NIV3BJO6mMxd7giMQgjXFhuJSUDQYFR
- gZ3RV//pTvooHvX3I1ePN4Q//oI89A9oXCSzfPmLTT3Eh9DIizNl4CnAJKoR6P7BEw
- Y5eQXMPJpUVmD5phFHnzKLJXCdESnzk7IjbYWxfk=
-Date: Mon, 20 Apr 2020 18:17:42 +0100
+ b=n8kgySIFfBQIcj6Ia2jB/kXabMFi8z3ZnfxRD6sXtUSU5WkP7GyhdFFnNX9oGyhnV
+ mhWjwdOQ+04RDru0OIhK+bLIVHdU0fkAMOot1o2sNYiPhmoqv95P7YoCTgT0+QheZR
+ P5uQTK0OZzAOJTiqi4PCUeQwAx7St1L9HyeIHsPI=
+Date: Mon, 20 Apr 2020 18:17:55 +0100
 From: Will Deacon <will@kernel.org>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v11 03/12] scs: add support for stack usage debugging
-Message-ID: <20200420171741.GC24386@willie-the-truck>
+Subject: Re: [PATCH v11 02/12] scs: add accounting
+Message-ID: <20200420171753.GD24386@willie-the-truck>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200416161245.148813-1-samitolvanen@google.com>
- <20200416161245.148813-4-samitolvanen@google.com>
+ <20200416161245.148813-3-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200416161245.148813-4-samitolvanen@google.com>
+In-Reply-To: <20200416161245.148813-3-samitolvanen@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_101750_018519_8BD5A830 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20200420_101802_946531_52B3792F 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,65 +95,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 09:12:36AM -0700, Sami Tolvanen wrote:
-> Implements CONFIG_DEBUG_STACK_USAGE for shadow stacks. When enabled,
-> also prints out the highest shadow stack usage per process.
+On Thu, Apr 16, 2020 at 09:12:35AM -0700, Sami Tolvanen wrote:
+> This change adds accounting for the memory allocated for shadow stacks.
 > 
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 > Reviewed-by: Kees Cook <keescook@chromium.org>
 > ---
->  kernel/scs.c | 39 +++++++++++++++++++++++++++++++++++++++
->  1 file changed, 39 insertions(+)
+>  drivers/base/node.c    |  6 ++++++
+>  fs/proc/meminfo.c      |  4 ++++
+>  include/linux/mmzone.h |  3 +++
+>  kernel/scs.c           | 20 ++++++++++++++++++++
+>  mm/page_alloc.c        |  6 ++++++
+>  mm/vmstat.c            |  3 +++
+>  6 files changed, 42 insertions(+)
 > 
-> diff --git a/kernel/scs.c b/kernel/scs.c
-> index 5245e992c692..ad74d13f2c0f 100644
-> --- a/kernel/scs.c
-> +++ b/kernel/scs.c
-> @@ -184,6 +184,44 @@ int scs_prepare(struct task_struct *tsk, int node)
->  	return 0;
->  }
->  
-> +#ifdef CONFIG_DEBUG_STACK_USAGE
-> +static inline unsigned long scs_used(struct task_struct *tsk)
-> +{
-> +	unsigned long *p = __scs_base(tsk);
-> +	unsigned long *end = scs_magic(p);
-> +	unsigned long s = (unsigned long)p;
-> +
-> +	while (p < end && READ_ONCE_NOCHECK(*p))
-> +		p++;
+> diff --git a/drivers/base/node.c b/drivers/base/node.c
+> index 10d7e818e118..502ab5447c8d 100644
+> --- a/drivers/base/node.c
+> +++ b/drivers/base/node.c
+> @@ -415,6 +415,9 @@ static ssize_t node_read_meminfo(struct device *dev,
+>  		       "Node %d AnonPages:      %8lu kB\n"
+>  		       "Node %d Shmem:          %8lu kB\n"
+>  		       "Node %d KernelStack:    %8lu kB\n"
+> +#ifdef CONFIG_SHADOW_CALL_STACK
+> +		       "Node %d ShadowCallStack:%8lu kB\n"
+> +#endif
+>  		       "Node %d PageTables:     %8lu kB\n"
+>  		       "Node %d NFS_Unstable:   %8lu kB\n"
+>  		       "Node %d Bounce:         %8lu kB\n"
+> @@ -438,6 +441,9 @@ static ssize_t node_read_meminfo(struct device *dev,
+>  		       nid, K(node_page_state(pgdat, NR_ANON_MAPPED)),
+>  		       nid, K(i.sharedram),
+>  		       nid, sum_zone_node_page_state(nid, NR_KERNEL_STACK_KB),
+> +#ifdef CONFIG_SHADOW_CALL_STACK
+> +		       nid, sum_zone_node_page_state(nid, NR_KERNEL_SCS_BYTES) / 1024,
+> +#endif
 
-I think the expectation is that the caller has already checked that the
-stack is not corrupted, so I'd probably throw a couple of underscores
-in front of the function name, along with a comment.
-
-Also, is tsk ever != current?
-
-> +
-> +	return (unsigned long)p - s;
-> +}
-> +
-> +static void scs_check_usage(struct task_struct *tsk)
-> +{
-> +	static DEFINE_SPINLOCK(lock);
-> +	static unsigned long highest;
-> +	unsigned long used = scs_used(tsk);
-> +
-> +	if (used <= highest)
-> +		return;
-> +
-> +	spin_lock(&lock);
-> +
-> +	if (used > highest) {
-> +		pr_info("%s (%d): highest shadow stack usage: %lu bytes\n",
-> +			tsk->comm, task_pid_nr(tsk), used);
-> +		highest = used;
-> +	}
-> +
-> +	spin_unlock(&lock);
-
-Do you really need this lock? I'd have thought you could cmpxchg()
-highest instead.
+Why not just use KB everywhere instead of repeated division by 1024?
 
 Will
 
