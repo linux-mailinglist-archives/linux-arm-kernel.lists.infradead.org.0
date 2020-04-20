@@ -2,90 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D77D1B0F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:06:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB4521B0F5B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:10:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hBVfdDUel5NryseuymzxJqW75U5rPCbj4cM12nMnr/Q=; b=r6JUN17hOAMsxe
-	jNpNqFRd1dRO8PB9Ohxw5FJLX7nKs3oA6gUrFYYS5aJXfiADnurY3n9gXrR2nnJNOVuxdxxMtE2Zp
-	gP1uEFUv+HMddUinTMkxpyjvMUf480RmB/SQNFqcS6ZLSLqroHe2QVudgeF5jIuyD5hm61IbeU+a3
-	yNHHKoNSl8tBQWxYWsOPXSCQ4pWYjcJAV4hpPcrq9ksRVFXoLEmZ54KOIlAv69NII5wLIiOS5BVwQ
-	HmYgXV9+4TpBPhJN2cslD7weCeaYJNS9oEAz34l+ekIugTKagcZyQWgaNTxx2HVrDF3Apr/WKh2ti
-	I0f3nisKbXho+bT5HpqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ah/iZrrnw5YOEXtOSh0iotOObfUOG0PbifgpKGxPsKA=; b=KqC3mJF3oslmR9UOZ3mpQRIP+
+	z/BW2iDmS9BjWDjwdbM7T9Vp3EbFCPE6ngn/3yKCeTnECXN+Fss0L2VWXO/CbLtPgkbTUGv8HlB+G
+	A403ecqMLgkQFqXo04VWJ8nRw53LFfhJ0nJP9WrA7RNpcVsrrXd+mX/MePTreKHldTFHXA5jaRETw
+	0QJjSp8dI5v2jVqvdpkqUfWuPRFjv2vGswkrpgNg57xUI/mrm/dEtsIu+DQuBHSR/QnNCd7FDDSEO
+	uEpV4VhUx54DbD9XlTqiaVD1Rtc65Z6VKcMD9RbOSSJ7rMi8CE3St8o0zPZYG6xmFd8n2KHA6q3za
+	rzwqCuxeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXzg-0002ta-2w; Mon, 20 Apr 2020 15:05:56 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jQY48-0006c6-0Q; Mon, 20 Apr 2020 15:10:32 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXyq-0000ET-Qy
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:05:07 +0000
-Received: by mail-pg1-x541.google.com with SMTP id t11so5187732pgg.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 08:05:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=LMnKaZx/Y4koGVtX6lrY44zwvgTZJQV9zcGvfUwUPVM=;
- b=GBAFLUXs3JeoWgCBSyHZYWT/7Vuz8qBA0yHfPcYASyIkwUQk5COevNsyA4cezgQNQ+
- 2cjB6jf+8ik+B9hd5CJqcmlJPZBLJnYA1ZyhVjLv0G7Ul/NhGQTC9S68ynSDAjSxd6mE
- 2JGT8G2JDgb6nHYwr7+Fv0X0mCdx8RktEShLB4uJ9OGQSDnr9U2rRdWb97uLLJKvywcx
- j3cRL+t2Gicc9RLaSZpsF8ea/IQFoUtYfKyieETfIrY+SLAuIMn8Q/eKZv8IUPPVM38Z
- qkGWXZFLgOjf4Nz/luw0v1F+HGDfFWEJKboB/6oSeuL1c0ev2ZEYDCI73X9HSghZ2WnS
- SsvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=LMnKaZx/Y4koGVtX6lrY44zwvgTZJQV9zcGvfUwUPVM=;
- b=honOu3355Ye7HyKBIojEqS3sxj6No5DBsDLoxY6RE5vBUnQv659bbyuV5h9nFQ8OGp
- CCbIjP+hX1erUJGYkMg2xyh0aqGv/pEiJtrf4IMvMTZiFZpWioQLV6R4b+8ow2Z3Wuw5
- UQgsyrZSDbmp0E2vuiVx/glGV2Gn2grYkGUQy+KuL2l8s0qqt3+WmTVJgxTEQi8iAX1w
- q/GD254xEQZA1DNvFhJc1sBeu9PVVk94YGjhKG15n8C845MpXjAnwLm5PF2YDT1DWiim
- cLA6+MO9haxcst+ePG66Ww66GA80f7BqBWl/jaweZnIImcpctduurXqn1zJZRuFHUo3f
- pOpA==
-X-Gm-Message-State: AGi0PubNTxPD1ESi9Y698eK/5Bnp+yapJu0at1HZbNnyoRrGSl5Oh/50
- pS5RSWuL5F8/thFkbSzvplKGug==
-X-Google-Smtp-Source: APiQypIeLbRZNzyqantDUYXxirR0uHcYT+yjylhOej+JY7qtu2PKBuKnehBUz5ZM6dzRwLbRNBS8uA==
-X-Received: by 2002:a62:8749:: with SMTP id i70mr16623663pfe.185.1587395103977; 
- Mon, 20 Apr 2020 08:05:03 -0700 (PDT)
-Received: from devnote (NE2965lan1.rev.em-net.ne.jp. [210.141.244.193])
- by smtp.gmail.com with ESMTPSA id 62sm1281116pfu.181.2020.04.20.08.05.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 08:05:03 -0700 (PDT)
-Date: Tue, 21 Apr 2020 00:04:46 +0900
-From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>, Rob Herring
- <robh@kernel.org>
-Subject: [PATCH v3 2/2] arm64: dts: uniphier: Add support for Akebi96
-Message-Id: <20200421000446.35e5a0cff7b06d911f6dfbe7@linaro.org>
-In-Reply-To: <158739384071.13351.3677427677984201111.stgit@localhost>
-References: <158739384071.13351.3677427677984201111.stgit@localhost>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1jQY3x-0006Zt-Su
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:10:23 +0000
+X-Originating-IP: 93.29.109.196
+Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 94D031C0006;
+ Mon, 20 Apr 2020 15:10:10 +0000 (UTC)
+Date: Mon, 20 Apr 2020 17:10:10 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [linux-sunxi] [PATCH] media: cedrus: Implement runtime PM
+Message-ID: <20200420151010.GL125838@aptenodytes>
+References: <20200408010232.48432-1-samuel@sholland.org>
+ <9673642.nUPlyArG6x@jernej-laptop>
+ <244922ec-ed3a-eca7-6640-49de7ad9c605@sholland.org>
+MIME-Version: 1.0
+In-Reply-To: <244922ec-ed3a-eca7-6640-49de7ad9c605@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_080504_979862_0161F5E1 
-X-CRM114-Status: GOOD (  17.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_081022_202844_E96498D1 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,251 +61,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============1737575372088993688=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the device tree for Akebi96. Akebi96 is a 96boards certified
-development board based on UniPhir LD20.
-( https://www.96boards.org/product/akebi96/ )
 
-This board has;
-- MAX3421 USB-SPI chip on SPI port3 (for USB gadget port)
-- Simple frame buffer with 1080p fixed resolution.
-- I2S port which is connected to aout1b instead of aout1.
-- 3 serial ports, only serial3 has CTS/RTS.
-- No NAND, only eMMC on the board.
-- OP-TEE installed firmware.
+--===============1737575372088993688==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="1hKfHPzOXWu1rh0v"
+Content-Disposition: inline
 
-Signed-off-by: Masami Hiramatsu <masami.hiramatsu@linaro.org>
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- Changes in v3:
-  - Simplify the pinctrl nodes according to Masahiro's comment.
-  - Fix OP-TEE description.
----
- arch/arm64/boot/dts/socionext/Makefile             |    1 
- .../boot/dts/socionext/uniphier-ld20-akebi96.dts   |  190 ++++++++++++++++++++
- 2 files changed, 191 insertions(+)
- create mode 100644 arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
 
-diff --git a/arch/arm64/boot/dts/socionext/Makefile b/arch/arm64/boot/dts/socionext/Makefile
-index d45441249cb5..dda3da33614b 100644
---- a/arch/arm64/boot/dts/socionext/Makefile
-+++ b/arch/arm64/boot/dts/socionext/Makefile
-@@ -2,6 +2,7 @@
- dtb-$(CONFIG_ARCH_UNIPHIER) += \
- 	uniphier-ld11-global.dtb \
- 	uniphier-ld11-ref.dtb \
-+	uniphier-ld20-akebi96.dtb \
- 	uniphier-ld20-global.dtb \
- 	uniphier-ld20-ref.dtb \
- 	uniphier-pxs3-ref.dtb
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts b/arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
-new file mode 100644
-index 000000000000..aaf86162da84
---- /dev/null
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
-@@ -0,0 +1,190 @@
-+// SPDX-License-Identifier: GPL-2.0+ OR MIT
-+//
-+// Device Tree Source for Akebi96 Development Board
-+//
-+// Derived from uniphier-ld20-global.dts.
-+//
-+// Copyright (C) 2015-2017 Socionext Inc.
-+// Copyright (C) 2019-2020 Linaro Ltd.
-+
-+/dts-v1/;
-+#include <dt-bindings/gpio/uniphier-gpio.h>
-+#include "uniphier-ld20.dtsi"
-+
-+/ {
-+	model = "Akebi96";
-+	compatible = "socionext,uniphier-ld20-akebi96",
-+		     "socionext,uniphier-ld20";
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	aliases {
-+		serial0 = &serial0;
-+		serial1 = &serial1;
-+		serial2 = &serial2;
-+		serial3 = &serial3;
-+		i2c0 = &i2c0;
-+		i2c1 = &i2c1;
-+		i2c2 = &i2c2;
-+		i2c3 = &i2c3;
-+		i2c4 = &i2c4;
-+		i2c5 = &i2c5;
-+		spi0 = &spi0;
-+		spi1 = &spi1;
-+		spi2 = &spi2;
-+		spi3 = &spi3;
-+		ethernet0 = &eth;
-+	};
-+
-+	memory@80000000 {
-+		device_type = "memory";
-+		reg = <0 0x80000000 0 0xc0000000>;
-+	};
-+
-+	framebuffer {
-+		compatible = "simple-framebuffer";
-+		reg = <0 0xc0000000 0 0x02000000>;
-+		width = <1920>;
-+		height = <1080>;
-+		stride = <7680>;
-+		format = "a8r8g8b8";
-+	};
-+
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		memory@c0000000 {
-+			reg = <0 0xc0000000 0 0x02000000>;
-+			no-map;
-+		};
-+	};
-+
-+	sound {
-+		compatible = "audio-graph-card";
-+		label = "UniPhier LD20";
-+		dais = <&spdif_port0
-+			&comp_spdif_port0>;
-+	};
-+
-+	spdif-out {
-+		compatible = "linux,spdif-dit";
-+		#sound-dai-cells = <0>;
-+
-+		port@0 {
-+			spdif_tx: endpoint {
-+				remote-endpoint = <&spdif_hiecout1>;
-+			};
-+		};
-+	};
-+
-+	comp-spdif-out {
-+		compatible = "linux,spdif-dit";
-+		#sound-dai-cells = <0>;
-+
-+		port@0 {
-+			comp_spdif_tx: endpoint {
-+				remote-endpoint = <&comp_spdif_hiecout1>;
-+			};
-+		};
-+	};
-+
-+	firmware {
-+		optee {
-+			compatible = "linaro,optee-tz";
-+			method = "smc";
-+		};
-+	};
-+};
-+
-+&serial0 {
-+	/* Onboard USB-UART */
-+	status = "okay";
-+};
-+
-+&serial2 {
-+	/* LS connector UART1 */
-+	status = "okay";
-+};
-+
-+&serial3 {
-+	/* LS connector UART0 */
-+	status = "okay";
-+};
-+
-+&spdif_hiecout1 {
-+	remote-endpoint = <&spdif_tx>;
-+};
-+
-+&comp_spdif_hiecout1 {
-+	remote-endpoint = <&comp_spdif_tx>;
-+};
-+
-+&eth {
-+	status = "okay";
-+	phy-mode = "rgmii";
-+	pinctrl-0 = <&pinctrl_ether_rgmii>;
-+	phy-handle = <&ethphy>;
-+};
-+
-+&mdio {
-+	ethphy: ethphy@0 {
-+		reg = <0>;
-+	};
-+};
-+
-+&usb {
-+	status = "okay";
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&i2c0 {
-+	/* LS connector I2C0 */
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	/* LS connector I2C1 */
-+	status = "okay";
-+};
-+
-+&spi3 {
-+	status = "okay";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	usb-over-spi@0 {
-+		compatible = "maxim,max3421-udc";
-+		reg = <0>;
-+		spi-max-frequency = <12500000>;
-+		interrupt-parent = <&gpio>;
-+		interrupts = <0 2>, <10 3>;
-+	};
-+};
-+
-+&gpio {
-+	/* IRQs for Max3421 */
-+	xirq0 {
-+		gpio-hog;
-+		gpios = <UNIPHIER_GPIO_IRQ(0) 1>;
-+		input;
-+	};
-+	xirq10 {
-+		gpio-hog;
-+		gpios = <UNIPHIER_GPIO_IRQ(10) 1>;
-+		input;
-+	};
-+};
-+
-+&pinctrl_aout1 {
-+	groups = "aout1", "aout1b";
-+};
-+
-+&pinctrl_uart3 {
-+	groups = "uart3", "uart3_ctsrts";
-+};
+--1hKfHPzOXWu1rh0v
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi,
+
+On Sun 19 Apr 20, 15:28, Samuel Holland wrote:
+> On 4/8/20 11:01 AM, Jernej =C5=A0krabec wrote:
+> > Hi Samuel!
+> >=20
+> > Dne sreda, 08. april 2020 ob 03:02:32 CEST je Samuel Holland napisal(a):
+> >> This allows the VE clocks and PLL_VE to be disabled most of the time.
+> >>
+> >> Since the device is stateless, each frame gets a separate runtime PM
+> >> reference. Enable autosuspend so the PM callbacks are not run before a=
+nd
+> >> after every frame.
+> >>
+> >> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> >> ---
+> >>
+> >> I tested this with v4l2-request-test. I don't have the setup to do
+> >> anything more complicated at the moment.
+> >>
+> >> ---
+> >>  drivers/staging/media/sunxi/cedrus/cedrus.c   |   7 ++
+> >>  .../staging/media/sunxi/cedrus/cedrus_hw.c    | 115 ++++++++++++------
+> >>  .../staging/media/sunxi/cedrus/cedrus_hw.h    |   3 +
+> >>  3 files changed, 88 insertions(+), 37 deletions(-)
+>=20
+> [snip]
+>=20
+> > Reset above causes problem. When format is set in cedrus_s_fmt_vid_cap(=
+) a=20
+> > function is called, which sets few registers in HW. Of course, there is=
+ no=20
+> > guarantee that someone will start decoding immediately after capture fo=
+rmat is=20
+> > set. So, if the driver puts VPU to sleep in the mean time, reset will c=
+lear=20
+> > those registers and decoded video will be in different format than expe=
+cted. It=20
+> > could be even argued that registers should not be set in that function =
+and=20
+> > that this is design issue or bug in driver.
+>=20
+> You're right. I didn't see that cedrus_dst_format_set() was called outside
+> cedrus_engine_enable/disable().
+
+This might indeed be an issue with multiple decoding contexts in parallel, =
+with
+potentially different formats. For that reason, it looks like the right thi=
+ng to
+do would be to set the format at each decoding run based on the format set =
+in
+the context by s_fmt.
+
+> > Anyway, I made a runtime PM support long time ago, but never do anythin=
+g=20
+> > besides running few tests:
+> > https://github.com/jernejsk/linux-1/commit/
+> > d245b7fa2a26e519ff675a255c45230575a4a848
+> >=20
+> > It takes a bit different approach. Power is enabled in start streaming =
+and=20
+> > disabled in stop streaming. This is simpler approach and doesn't need=
+=20
+> > autosuspend functionality. I also moved call to a function which sets f=
+ormat=20
+> > in HW registers to start streaming handler, so it's guaranteed to be se=
+t at=20
+> > the beginning.
+>=20
+> Assuming cedrus_device_run() only gets called between streamon and stream=
+off
+> (which appears to be the case), this looks like a better design.
+
+Yes, this is defintiely ensured by the V4L2 framework. I agree that streamo=
+n/off
+are the correct sync points.
+
+> > Note that some registers are only set in start streaming handler. With =
+your=20
+> > approach, if first frame is submitted too late, asserting and de-assert=
+ing=20
+> > reset line could reset those registers.
+>=20
+> I only see registers being set in cedrus_start_streaming() after your pat=
+ch,
+> where you add a call to cedrus_dst_format_set(). I can't find any registe=
+rs
+> being written in any of the ->start() callbacks.
+>=20
+> I'll send a v2 which combines the two patches: yours which handles the ru=
+ntime
+> part better, and mine which handles the probe/remove part better with !CO=
+NFIG_PM.
+
+Thanks, that should do it!
+
+Cheers,
+
+Paul
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--1hKfHPzOXWu1rh0v
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6du1IACgkQ3cLmz3+f
+v9FYIAf/RIkE0bJg+MZKJgy+uiwj7BSER1drSDwD9c70d1EXUoq1TFT0eBqtU81H
+wwM8uhND1u3KDdcNFcGy6OG7Q6CYPR9ne2E0ETFdyP0sJDsxjsTixZ3mLPtImLam
+tTC4jsUz2fTIH/LXI9tPR2XAEB6CFPX9KL2R+pC7T03g2Hje0WygVxRh+dPy2V/y
+w7rpGym9y8A9hZtaGMOREuuqkqsBHd3SpuB6xs/7yTIL9eXtcw4cpffi8GiQQ0s/
+SB/QdcOp3MeT87yg5QpbkpykqwrRkM9/dbP8aU0yRbqvVyvjKMbM+qKxb8CdH3b2
+H1+DLey3Po/R46r4AHmGMA2flB7c9Q==
+=VY9i
+-----END PGP SIGNATURE-----
+
+--1hKfHPzOXWu1rh0v--
+
+
+--===============1737575372088993688==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1737575372088993688==--
+
