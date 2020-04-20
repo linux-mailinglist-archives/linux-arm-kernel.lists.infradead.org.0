@@ -2,68 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67A551B16A0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:04:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D3261B16AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:07:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h8QsbVeytMwdsKsjlNaQEhRu6OFVPH0JJuFUcY/mr2U=; b=pWX0UMg1LUInUk
-	Sy0pNKZnzl6/ak9E83RZYRp1moRgtZn56q+qtQOBQFHiiM+QRGS9EQ7MHvrOlg/G7oXZBfQAX0J+4
-	N7aCzNSzei6VExOk2NH7HXlzyUBFEslNvs3eTiayHca5BqKLxNJHFPM5Nq+T16o7IZKQzbpqpeNWg
-	qnzrNe35Qzxx+NO1ykCw/hwqF7GGJvsZ1Fg6o/yaX3FjpwTFMNyXqHcBoAji2EltdSYh2PKviZdxF
-	18lNyuJQ5D/ELm+V2VGCGZ2GPueByBwz3u11SznQ0iDhIudkbN2W7esbKNV9Slo9MdI2Zvz24g8yz
-	WGGQdxZ39pPM78uGhxkA==;
+	List-Owner; bh=237r7vvACcDfM5GZfiM5XKAELSzFFy2V5rLY/6jB2iQ=; b=Zgj8gQcPD+oyC4
+	sW578ji4EHZA02109d9w608ADhBMycEVTcWXM5ydOyETWSTCzjL7DgymyMDgWaEhHdC8naxDZsVuK
+	y6/fJXwBPxtWtO8IuAT7hzdhrcLDtcGYhhn63GFpysVP3FwKtxM96TDPHIvHZhWLnvAGdZvg1MIG7
+	w97udtP5P/tQD17+OSw5lQiYN+YQlKapmHdefboOUcoGUFcxScIoaCGxZAir1JujXSMskAxT7uYhp
+	pWayOwEMkKe2W83NUngKHqYLaHxQhrODwcVtjkzE7ovKL9hzQR2i3KbRD+lFJ4RWh4uNINCBUvYLQ
+	RnqUYZOXrkqD4q3kqC9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQceP-0007dQ-LP; Mon, 20 Apr 2020 20:04:17 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jQchU-000320-5d; Mon, 20 Apr 2020 20:07:28 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQceG-0007bf-BA
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 20:04:09 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 8327897D;
- Mon, 20 Apr 2020 21:57:27 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1587412647;
- bh=VyAYxn5QYg/qgAZ3QLAxeHFXObmm2KTLy1cekrs4/Co=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IKhnGhruHCVyCfW+bc7TXpXtGwConChaObWLBzXYbiqByrVChPlQLVGl/G4FdUPMl
- dLXsraIQVsxotRt3uqKwfPrz5ktBfU2tb7IgP5PW9Mdok0h1m4pjy/h0NdzdJNuSqI
- VkYK0qyxESSpoQaAtbkSWR96MVTLFEOhi89k09oE=
-Date: Mon, 20 Apr 2020 22:57:14 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Luca Ceresoli <luca@lucaceresoli.net>
-Subject: Re: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
- Subsystem driver
-Message-ID: <20200420195714.GB8195@pendragon.ideasonboard.com>
-References: <20200409194424.45555-1-vishal.sagar@xilinx.com>
- <20200409194424.45555-3-vishal.sagar@xilinx.com>
- <20200419180222.GB8117@pendragon.ideasonboard.com>
- <860c27da-eba0-ddcb-719b-52b2725bd9bf@lucaceresoli.net>
+ id 1jQchL-00030F-J3
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 20:07:21 +0000
+Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MZCSt-1jn19g2kaH-00V99c for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 20 Apr 2020 22:07:17 +0200
+Received: by mail-qk1-f174.google.com with SMTP id x66so12135236qkd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 13:07:17 -0700 (PDT)
+X-Gm-Message-State: AGi0PuapE2NqejNZBSVMpfRlNh/SDs29RYnhsn60g4Ufgpj1PEMsCOoV
+ rayLF7otZaliULyOwS3hpaOYiddrQxnPW5lS8Oc=
+X-Google-Smtp-Source: APiQypIAhB8mGz6XM0SD8ArnZJY6aRKd7XU6MxbJm3d0s6y853Y/+oeV+mBwceNCaK3NIlM89N1GSdGstRKXiXTq2KM=
+X-Received: by 2002:a37:a046:: with SMTP id j67mr18240249qke.286.1587413236560; 
+ Mon, 20 Apr 2020 13:07:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <860c27da-eba0-ddcb-719b-52b2725bd9bf@lucaceresoli.net>
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-7-robh@kernel.org>
+ <CAK8P3a2cxU3UYSj19Rt6pcUAtA1uTiQx46MF=92q_asmMOXMnA@mail.gmail.com>
+ <CAL_JsqJS5o7_Ep50vfhNBOQ2sczgD+dNuiF8+GwjHUu7tN9j7Q@mail.gmail.com>
+In-Reply-To: <CAL_JsqJS5o7_Ep50vfhNBOQ2sczgD+dNuiF8+GwjHUu7tN9j7Q@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 20 Apr 2020 22:07:00 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3YQaQESsb61rZKopddmiKdm2qK_mS+yiBY5th0xSHOjw@mail.gmail.com>
+Message-ID: <CAK8P3a3YQaQESsb61rZKopddmiKdm2qK_mS+yiBY5th0xSHOjw@mail.gmail.com>
+Subject: Re: [PATCH 06/17] clk: versatile: Only enable SP810 on 32-bit by
+ default
+To: Rob Herring <robh@kernel.org>
+X-Provags-ID: V03:K1:KYk4U3Q7kBFjeHc3Ec3L20ciFKq1JDv5PEVhn/EohfJ0cJJ6rzW
+ Z/6Rc/lxlUIYbQ/on3p6Fza0owpLDf4yAufOvdaWKrZ4Mwht6s/N81GrQ14cxwfI56Je80x
+ Ryfqz2xYyo+5WOiV2d4XiJ5QLV1iljfeRrLZm4J4Qj0ml+9k4UnLrdX7qgtd+UNthIakUQP
+ d4KKsdv+W0jZ75FbtPZxg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:C6+ZHoMPcgY=:VONbaj7NzLOUG28YtE4XVe
+ uQN6MhM1xE+c4y+1kWhBsoc6yKI/eVlp4aq5OJflj0bE5efUTC7oMjwGL8fpk3lzOivSldJGc
+ OGdyfx5Eb99heRY5+w/6FhqTbsQAtyKbFS7F57tlnP8nQy4U7Fv3d3VGh+FWjBrG+VlrkP/Lf
+ oVw7+xeqZsBWpwn9vIB53NV9BbWZNoA/G8fDm/LmpArl3C134K6XkOTWpP+kimvBsSOqCjHeM
+ x+kP/onvTVB3kYOLkp2jHWvkU+vZU9qFv68jaCHDACjymTG7eReXTZOaE4Oi6YEM26qN91mk0
+ DC80U+3lheYtly6fwSx/mC/HuHekR8fXpzW8lsvwQqwiylPhS3NEdg0SexceFmGtSEpm/mjRz
+ kYVnxJU/9IYguupTa5MNEIwjgiAldNgko8PDVYTXqAfq6ib7EAy6FFiQkl/UKGgPwLodIeT/q
+ kpKz1LLEzy1966lQ/eHk7G5Oy8gCdgz7qM5J82I6+3JGJUSNdEJoWe1wsTDtPJMtYP3SMEUWF
+ Y77JpPS3NWBbYLsfWK52N0nd5gN19E6oDP7/nPdF/Xb+LyMNVuIjmc70JgXCY5g6CZTdrR19J
+ +/m0J6I+YNzMqtDfjULiJRrzcmOx5+5mPNFoyu6u8a/wyGhlAUPWOc+MW6vD3TCx8iUglac3X
+ fBE6NKglNMIrR/kh5P/F2b/JQIc+mFosiLNqaZI7KP4wRDpGxkiKP+HhzeeFoexS6WvsKZNJS
+ 5mPQ4abw4B4Q8TtsiSiHDzw+udC0RO7836HQy5xH03noMXnK2XTA4bqBvFlHvA0rwKT9qPnD7
+ tGtohSm9stFNeSiLDlEWuvodjYqSIGh7u9ywMEVj09p4NBsh5s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_130408_529564_B55A9FAA 
-X-CRM114-Status: GOOD (  22.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_130719_923860_3D852B6D 
+X-CRM114-Status: GOOD (  12.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.73 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,100 +89,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
- Hyun Kwon <hyun.kwon@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
- Sandip Kothari <sandipk@xilinx.com>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Michal Simek <michals@xilinx.com>,
- Vishal Sagar <vishal.sagar@xilinx.com>, hans.verkuil@cisco.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Will Deacon <will@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Luca,
+On Mon, Apr 20, 2020 at 7:48 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Mon, Apr 20, 2020 at 10:26 AM Arnd Bergmann <arnd@arndb.de> wrote:
+> >
+> > On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
+> > >
+> > > While 64-bit Arm reference platforms have SP810 for clocks for SP804
+> > > timers, they are not needed since the arch timers are used instead.
+> > >
+> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > Cc: Will Deacon <will@kernel.org>
+> > > Cc: Liviu Dudau <liviu.dudau@arm.com>
+> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
+> > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > Cc: Linus Walleij <linus.walleij@linaro.org>
+> > > Cc: Stephen Boyd <sboyd@kernel.org>
+> > > Cc: linux-clk@vger.kernel.org
+> > > Signed-off-by: Rob Herring <robh@kernel.org>
+> >
+> > Acked-by: Arnd Bergmann <arnd@arndb.de>
+> >
+> > >
+> > >  config CLK_SP810
+> > >         bool "Clock driver for ARM SP810 System Controller"
+> > > -       default y if ARCH_VEXPRESS
+> > > +       default y if (ARCH_VEXPRESS && ARM)
+> >
+> > But maybe add "|| (COMPILE_TEST && OF)" for extra points.
+>
+> On a 'default y'? Not necessary.
 
-On Mon, Apr 20, 2020 at 09:24:25PM +0200, Luca Ceresoli wrote:
-> On 19/04/20 20:02, Laurent Pinchart wrote:
-> [...]
-> >> +static irqreturn_t xcsi2rxss_irq_handler(int irq, void *dev_id)
-> >> +{
-> >> +	struct xcsi2rxss_state *state = (struct xcsi2rxss_state *)dev_id;
-> >> +	struct xcsi2rxss_core *core = &state->core;
-> >> +	u32 status;
-> >> +
-> >> +	status = xcsi2rxss_read(core, XCSI_ISR_OFFSET) & XCSI_ISR_ALLINTR_MASK;
-> >> +	dev_dbg_ratelimited(core->dev, "interrupt status = 0x%08x\n", status);
-> > 
-> > As this is expected to occur for every frame, I would drop the message,
-> > even if rate-limited.
-> > 
-> >> +
-> >> +	if (!status)
-> >> +		return IRQ_NONE;
-> >> +
-> >> +	/* Received a short packet */
-> >> +	if (status & XCSI_ISR_SPFIFONE) {
-> >> +		dev_dbg_ratelimited(core->dev, "Short packet = 0x%08x\n",
-> >> +				    xcsi2rxss_read(core, XCSI_SPKTR_OFFSET));
-> >> +	}
-> > 
-> > Same here, this will occur all the time, I'd remove this message. You
-> > need to read XCSI_SPKTR_OFFSET though, and you should do so in a loop
-> > until the XCSI_CSR_SPFIFONE in XCSI_CSR_OFFSET is cleared in case
-> > multiple short packets are received before the interrupt handler
-> > executes.
-> > 
-> > I also wonder if it would make sense to extract the frame number from
-> > the FS short packet, and make it available through the subdev API. I
-> > think it should be reported through a V4L2_EVENT_FRAME_SYNC event. This
-> > can be implemented later.
-> > 
-> >> +
-> >> +	/* Short packet FIFO overflow */
-> >> +	if (status & XCSI_ISR_SPFIFOF)
-> >> +		dev_dbg_ratelimited(core->dev, "Short packet FIFO overflowed\n");
-> >> +
-> >> +	/*
-> >> +	 * Stream line buffer full
-> >> +	 * This means there is a backpressure from downstream IP
-> >> +	 */
-> >> +	if (status & XCSI_ISR_SLBF) {
-> >> +		dev_alert_ratelimited(core->dev, "Stream Line Buffer Full!\n");
-> >> +		xcsi2rxss_stop_stream(state);
-> >> +		if (core->rst_gpio) {
-> >> +			gpiod_set_value(core->rst_gpio, 1);
-> >> +			/* minimum 40 dphy_clk_200M cycles */
-> >> +			ndelay(250);
-> >> +			gpiod_set_value(core->rst_gpio, 0);
-> >> +		}
-> > 
-> > I don't think you should stop the core here. xcsi2rxss_stop_stream()
-> > calls the source .s_stream(0) operation, which usually involves I2C
-> > writes that will sleep.
-> > 
-> > You should instead report an event to userspace (it looks like we have
-> > no error event defined in V4L2, one should be added), and rely on the
-> > normal stop procedure.
-> 
-> FWIW, since a long time I've been using a modified version of this
-> routine, where after a Stream Line Buffer Full condition I just stop and
-> restart the csi2rx core and the stream continues after a minimal glitch.
-> Other subdev are unaware that anything has happened and keep on streaming.
-> 
-> Not sure this is the correct thing to do, but it's working for me. Also
-> I proposed this topic in one of the previous iterations of this patch,
-> but the situation was different because the stream on/off was not
-> propagated back at that time.
+Ah right, that would indeed result in negative points.
 
-Thanks for the feedback. How often does this occur in practice ?
-
--- 
-Regards,
-
-Laurent Pinchart
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
