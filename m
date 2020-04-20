@@ -2,60 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D39C21B144C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:20:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA4591B1462
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:22:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DpT1J0VwE0Pf1dmFjHq6xuXvoaxonfwDlaJC3/1u9nc=; b=A2ti/ITLqNKxYjLWjocqEPMdG
-	EvJZQGLRTZklJ0q9cXK/E7abnXriWO/QaNAFwTGZ0b1IdFJpkwZSznxa7bssMnnEGPg7zdHgaselA
-	EAH7KkdZKtD1xLyNYRiVL0u97UG657m6o5WHiXZZpH3JutdnwFWWOEDaZ0ShlPD94fhyn52eDnLzP
-	ofBFHQH7eZ7iaLujbaaCO9QQxrQE1lk7sNyc+iwTH2i9A3B1+tKLwRmbYNEXHkppuAHa5NlJgP5jn
-	EoAYA1yUJfUV9Ms5Pu9FevTxU07FVOMJI8jJJur1nysBkEF3L34nLsPt/38WkQ+2yQd8EgK/NhoLq
-	/RUNW3W8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JjNHz/OxIbRN53MK9C3bwtYv2k+I98Fba+EGSRPqQaw=; b=oWVq7yz806cAN2
+	gGdTNXY08OptUuiscnH5t9KUWJ8KSs1gw09LXSwcSFDm1is/r3QJlqtyXZhOMg+cuFK2KEeBHi7MB
+	AofpoUJkxcIPThx0DniV1LDNhQrqmO/joIMUKTdxjuxfguGbbyDmfp0qsITl8C5WSAzd/n3cWkL4n
+	iFSYSFWHyV0c8OMWhVyOcEALBwQDKKhZRnmqacZRJ0Dl3z1dvFD+a6pnE2KEJc34QxwkfV0BnXTRp
+	fyNmHwVcYmtJDMThHp0xoFvPigjRiEXzcEphzbi3C0f8tjl/J6ZW2OC2JUN+ReyJgYqA7qqRsSUtK
+	ffeBKFLnFjrQ7ghf7kow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQb1i-0002nC-H3; Mon, 20 Apr 2020 18:20:14 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jQb4C-0005oH-Pz; Mon, 20 Apr 2020 18:22:48 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQb1K-0002l1-W5
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:19:53 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 313602A0FEB
-Subject: Re: [RFC v3 1/2] thermal: core: Let thermal zone device's mode be
- stored in its struct
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-References: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
- <20200417162020.19980-1-andrzej.p@collabora.com>
- <CGME20200417162037eucas1p11663f116fd9844d38c0b5d4d7ebe9f1c@eucas1p1.samsung.com>
- <20200417162020.19980-2-andrzej.p@collabora.com>
- <4b97e46a-e7ef-ee22-227e-d35ebef458b0@samsung.com>
- <4cda3e11-7bea-8445-cd51-4b25dcafc741@collabora.com>
-Message-ID: <920f8285-1b49-d088-64b4-98bce8d23e39@collabora.com>
-Date: Mon, 20 Apr 2020 20:19:43 +0200
+ id 1jQb40-0005mO-S1; Mon, 20 Apr 2020 18:22:38 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KIIac3092955;
+ Mon, 20 Apr 2020 18:20:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=6b/iIEwamf7pHkazXYyFGaUjD4rBlltoOoTUlAlxESY=;
+ b=gsrW0Xy8imYbMgUhIwDTctqPrjznB6WPriWKwtM8tA/ViqR5LJ7nXrRo6zKPnOn6au/F
+ XsvRr1X2TitSM9LY8T/2kzWejhj67bMNDWhUiZqrX5UOcyFbZ9SktX9AVm4tGKaKxtsS
+ GOZ/M1AoL7AgJRrO+hD23+N3dyEAipkUUaYWDlGyObSHDJDQUCK5UDdvD/hJdYPtDtGA
+ rF7cJnLKk4a2TQSzHij+K3EQC6K5pkbsF+ARKXcRYPencr3rEYSZpGa5oaV2k4g86ofi
+ IqYHqXDYKKmd4aEimc1Bn/UrVfz9eCqjPauGpqXrd5PZtLQUpmq6TOgp57USW/Y8Ttgc Lg== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 30fsgkrxjn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 18:20:41 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KICA4L007534;
+ Mon, 20 Apr 2020 18:20:40 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3030.oracle.com with ESMTP id 30gb1dtw7b-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 18:20:40 +0000
+Received: from abhmp0020.oracle.com (abhmp0020.oracle.com [141.146.116.26])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03KIKRfO021197;
+ Mon, 20 Apr 2020 18:20:27 GMT
+Received: from [192.168.2.157] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 20 Apr 2020 11:20:26 -0700
+Subject: Re: [PATCH v3 0/4] Clean up hugetlb boot command line processing
+To: Qian Cai <cai@lca.pw>
+References: <20200417185049.275845-1-mike.kravetz@oracle.com>
+ <5E312000-05D8-4C5D-A7C0-DDDE1842CB0E@lca.pw>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <4c36c6ce-3774-78fa-abc4-b7346bf24348@oracle.com>
+Date: Mon, 20 Apr 2020 11:20:23 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <4cda3e11-7bea-8445-cd51-4b25dcafc741@collabora.com>
+In-Reply-To: <5E312000-05D8-4C5D-A7C0-DDDE1842CB0E@lca.pw>
 Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ suspectscore=2 spamscore=0
+ mlxlogscore=999 mlxscore=0 malwarescore=0 bulkscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2004200147
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ priorityscore=1501
+ lowpriorityscore=0 mlxlogscore=999 malwarescore=0 clxscore=1015
+ spamscore=0 bulkscore=0 phishscore=0 suspectscore=2 impostorscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004200147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_111951_158590_DAF0997A 
-X-CRM114-Status: GOOD (  16.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200420_112236_999703_A872FCEC 
+X-CRM114-Status: GOOD (  25.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,65 +110,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- platform-driver-x86@vger.kernel.org, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
- Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>,
- Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
- Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ Linux-MM <linux-mm@kvack.org>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ "David S.Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QERhbmllbAoKcGxlYXNlIHNlZSBiZWxvdwoKVyBkbml1IDIwLjA0LjIwMjAgb8KgMTM6MDMsIEFu
-ZHJ6ZWogUGlldHJhc2lld2ljeiBwaXN6ZToKPiBIaSBCYXJsb21pZWosCj4gCj4gVGhhbmtzIGZv
-ciBsb29raW5nIGludG8gdGhlIHNlcmllcy4KPiAKPiBARGFuaWVsIGNhbiB5b3Ugc2VlIGJlbG93
-Pwo+IAo+IFcgZG5pdSAxOS4wNC4yMDIwIG/CoDEzOjM4LCBCYXJ0bG9taWVqIFpvbG5pZXJraWV3
-aWN6IHBpc3plOgo+Pgo+PiBIaSBBbmRyemVqLAo+Pgo+PiBPbiA0LzE3LzIwIDY6MjAgUE0sIEFu
-ZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToKPj4+IFRoZXJtYWwgem9uZSBkZXZpY2VzJyBtb2Rl
-IGlzIHN0b3JlZCBpbiBpbmRpdmlkdWFsIGRyaXZlcnMuIFRoaXMgcGF0Y2gKPj4+IGNoYW5nZXMg
-aXQgc28gdGhhdCBtb2RlIGlzIHN0b3JlZCBpbiBzdHJ1Y3QgdGhlcm1hbF96b25lX2RldmljZSBp
-bnN0ZWFkLgo+Pj4KPj4+IEFzIGEgcmVzdWx0IGFsbCBkcml2ZXItc3BlY2lmaWMgdmFyaWFibGVz
-IHN0b3JpbmcgdGhlIG1vZGUgYXJlIG5vdCBuZWVkZWQKPj4+IGFuZCBhcmUgcmVtb3ZlZC4gQ29u
-c2VxdWVudGx5LCB0aGUgZ2V0X21vZGUoKSBpbXBsZW1lbnRhdGlvbnMgaGF2ZSBub3RoaW5nCj4+
-PiB0byBvcGVyYXRlIG9uIGFuZCBuZWVkIHRvIGJlIHJlbW92ZWQsIHRvby4KPj4+Cj4+PiBTb21l
-IHRoZXJtYWwgZnJhbWV3b3JrIHNwZWNpZmljIGZ1bmN0aW9ucyBhcmUgaW50cm9kdWNlZDoKPj4+
-Cj4+PiB0aGVybWFsX3pvbmVfZGV2aWNlX2dldF9tb2RlKCkKPj4+IHRoZXJtYWxfem9uZV9kZXZp
-Y2Vfc2V0X21vZGUoKQo+Pj4gdGhlcm1hbF96b25lX2RldmljZV9lbmFibGUoKQo+Pj4gdGhlcm1h
-bF96b25lX2RldmljZV9kaXNhYmxlKCkKPj4+Cj4+PiB0aGVybWFsX3pvbmVfZGV2aWNlX2dldF9t
-b2RlKCkgYW5kIGl0cyAic2V0IiBjb3VudGVycGFydCB0YWtlIHR6ZCdzIGxvY2sKPj4+IGFuZCB0
-aGUgInNldCIgY2FsbHMgZHJpdmVyJ3Mgc2V0X21vZGUoKSBpZiBwcm92aWRlZCwgc28gdGhlIGxh
-dHRlciBtdXN0Cj4+PiBub3QgdGFrZSB0aGlzIGxvY2sgYWdhaW4uIEF0IHRoZSBlbmQgb2YgdGhl
-ICJzZXQiCj4+PiB0aGVybWFsX3pvbmVfZGV2aWNlX3VwZGF0ZSgpIGlzIGNhbGxlZCBzbyBkcml2
-ZXJzIGRvbid0IG5lZWQgdG8gcmVwZWF0IHRoaXMKPj4+IGludm9jYXRpb24gaW4gdGhlaXIgc3Bl
-Y2lmaWMgc2V0X21vZGUoKSBpbXBsZW1lbnRhdGlvbnMuCj4+Pgo+Pj4gVGhlIHNjb3BlIG9mIHRo
-ZSBhYm92ZSA0IGZ1bmN0aW9ucyBpcyBwdXJwb3NlZGx5IGxpbWl0ZWQgdG8gdGhlIHRoZXJtYWwK
-Pj4+IGZyYW1ld29yayBhbmQgZHJpdmVycyBhcmUgbm90IHN1cHBvc2VkIHRvIGNhbGwgdGhlbS4g
-VGhpcyBlbmNhcHN1bGF0aW9uCj4+Cj4+IFRoaXMgc2hvdWxkIGJlIHRydWUgb25seSBmb3IgdGhl
-cm1hbF96b25lX2RldmljZV97Z2V0LHNldH1fbW9kZSgpLgo+Pgo+PiB0aGVybWFsX3pvbmVfZGV2
-aWNlX3tlbixkaXN9YWJsZSgpIHNob3VsZCBiZSBhdmFpbGFibGUgZm9yIGRldmljZSBkcml2ZXJz
-Ogo+Pgo+PiAqIG9mL3RoZXJtYWwgZGV2aWNlIGRyaXZlcnMgbmVlZCB0byBlbmFibGUgdGhlcm1h
-bCBkZXZpY2UgaXRzZWxmCj4+IMKgwqAgKHBsZWFzZSByZWZlciB0byBteSBwYXRjaHNldCBmb3Ig
-ZGV0YWlscykKPj4KPj4gKiBkZXZpY2UgZHJpdmVycyBuZWVkIHRvIGNhbGwgdGhlbSBvbiAtPnN1
-c3BlbmQgYW5kIC0+cmVzdW1lIG9wZXJhdGlvbnMKPj4KPiAKPiBARGFuaWVsOgo+IAo+IEhvdyBk
-b2VzIHRoaXMgY29tcGFyZSB0bwo+IAo+ICJKdXN0Ogo+IAo+IHRoZXJtYWxfem9uZV9kZXZpY2Vf
-Z2V0X21vZGUoKQo+IHRoZXJtYWxfem9uZV9kZXZpY2Vfc2V0X21vZGUoKQo+IHRoZXJtYWxfem9u
-ZV9kZXZpY2VfZGlzYWJsZSgpCj4gdGhlcm1hbF96b25lX2RldmljZV9lbmFibGUoKQo+IAo+IEFu
-ZCBhbGwgb2YgdGhlbSBpbiBkcml2ZXJzL3RoZXJtYWwvdGhlcm1hbF9jb3JlLmgiLiBEaWQgSSB1
-bmRlcnN0YW5kCj4geW91IGNvcnJlY3RseT8KPiAKCkkgc2VudCBhIFBBVENIIHNlcmllcyAocmF0
-aGVyIHRoYW4gbmV4dCBpdGVyYXRpb24gb2YgUkZDKSBhZGRyZXNzaW5nCkJhcnRsb21pZWoncyBj
-b21tZW50cy4gVGhleSBtYWtlIHNlbnNlIHRvIG1lLgoKUmVnYXJkcywKCkFuZHJ6ZWoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 4/20/20 8:34 AM, Qian Cai wrote:
+> 
+> 
+>> On Apr 17, 2020, at 2:50 PM, Mike Kravetz <mike.kravetz@oracle.com> wrote:
+>>
+>> Longpeng(Mike) reported a weird message from hugetlb command line processing
+>> and proposed a solution [1].  While the proposed patch does address the
+>> specific issue, there are other related issues in command line processing.
+>> As hugetlbfs evolved, updates to command line processing have been made to
+>> meet immediate needs and not necessarily in a coordinated manner.  The result
+>> is that some processing is done in arch specific code, some is done in arch
+>> independent code and coordination is problematic.  Semantics can vary between
+>> architectures.
+>>
+>> The patch series does the following:
+>> - Define arch specific arch_hugetlb_valid_size routine used to validate
+>>  passed huge page sizes.
+>> - Move hugepagesz= command line parsing out of arch specific code and into
+>>  an arch independent routine.
+>> - Clean up command line processing to follow desired semantics and
+>>  document those semantics.
+>>
+>> [1] https://lore.kernel.org/linux-mm/20200305033014.1152-1-longpeng2@huawei.com
+>>
+>> Mike Kravetz (4):
+>>  hugetlbfs: add arch_hugetlb_valid_size
+>>  hugetlbfs: move hugepagesz= parsing to arch independent code
+>>  hugetlbfs: remove hugetlb_add_hstate() warning for existing hstate
+>>  hugetlbfs: clean up command line processing
+> 
+> Reverted this series fixed many undefined behaviors on arm64 with the config,
+> 
+> https://raw.githubusercontent.com/cailca/linux-mm/master/arm64.config
+> 
+> [   54.172683][    T1] UBSAN: shift-out-of-bounds in ./include/linux/hugetlb.h:555:34
+> [   54.180411][    T1] shift exponent 4294967285 is too large for 64-bit type 'unsigned long'
+> [   54.188885][    T1] CPU: 130 PID: 1 Comm: swapper/0 Not tainted 5.7.0-rc2-next-20200420 #1
+> [   54.197284][    T1] Hardware name: HPE Apollo 70             /C01_APACHE_MB         , BIOS L50_5.13_1.11 06/18/2019
+> [   54.207888][    T1] Call trace:
+> [   54.211100][    T1]  dump_backtrace+0x0/0x224
+> [   54.215565][    T1]  show_stack+0x20/0x2c
+> [   54.219651][    T1]  dump_stack+0xfc/0x184
+> [   54.223829][    T1]  __ubsan_handle_shift_out_of_bounds+0x304/0x344
+> [   54.230204][    T1]  hugetlb_add_hstate+0x3ec/0x414
+> huge_page_size at include/linux/hugetlb.h:555
+> (inlined by) hugetlb_add_hstate at mm/hugetlb.c:3301
+> [   54.235191][    T1]  hugetlbpage_init+0x14/0x30
+> [   54.239824][    T1]  do_one_initcall+0x6c/0x144
+> [   54.244446][    T1]  do_initcall_level+0x158/0x1c4
+> [   54.249336][    T1]  do_initcalls+0x68/0xb0
+> [   54.253597][    T1]  do_basic_setup+0x28/0x30
+> [   54.258049][    T1]  kernel_init_freeable+0x19c/0x228
+> [   54.263188][    T1]  kernel_init+0x14/0x208
+> [   54.267473][    T1]  ret_from_fork+0x10/0x18
+
+While rearranging the code (patch 3 in series), I made the incorrect
+assumption that CONT_XXX_SIZE == (1UL << CONT_XXX_SHIFT).  However,
+this is not the case.  Does the following patch fix these issues?
+
+From b75cb4a0852e208bee8c4eb347dc076fcaa88859 Mon Sep 17 00:00:00 2001
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Date: Mon, 20 Apr 2020 10:41:18 -0700
+Subject: [PATCH] arm64/hugetlb: fix hugetlb initialization
+
+When calling hugetlb_add_hstate() to initialize a new hugetlb size,
+be sure to use correct huge pages size order.
+
+Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+---
+ arch/arm64/mm/hugetlbpage.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+index 9ca840527296..a02411a1f19a 100644
+--- a/arch/arm64/mm/hugetlbpage.c
++++ b/arch/arm64/mm/hugetlbpage.c
+@@ -453,11 +453,11 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
+ static int __init hugetlbpage_init(void)
+ {
+ #ifdef CONFIG_ARM64_4K_PAGES
+-	hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate(ilog2(PUD_SIZE) - PAGE_SHIFT);
+ #endif
+-	hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
+-	hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
+-	hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate(ilog2(CONT_PMD_SIZE) - PAGE_SHIFT);
++	hugetlb_add_hstate(ilog2(PMD_SIZE) - PAGE_SHIFT);
++	hugetlb_add_hstate(ilog2(CONT_PTE_SIZE) - PAGE_SHIFT);
+ 
+ 	return 0;
+ }
+-- 
+2.25.2
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
