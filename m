@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9955F1B1182
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:26:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE1731B1190
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:28:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KRK57YADd1po0SyIma483g9rzrF1E0Z9P1AC/KH8xiY=; b=Qytq0w+1dHU1H2
-	pG0XXYBOaVqQY/ryDyZo5j5T/emTuBlgZm5RRmP/8jMiwEOGuV66FLbHGqSFWIYpzixVkjVlpBN33
-	WNatuwsKznyxqibrPmxSRv//wKkmsE8xhHiDZoT7nbJxwcVu56k0KNOZXDstlyHirBy1/Hv0AjtjK
-	kho+FWjhXwhuLET5DFaCDK2uWp0RhEnaUAmtVlFN4reYralXfsweRbTycYFuPWm5G/Xx1pJEijCMY
-	UQr6VsPtkMcndM0tgHXnF8CqlTBSPXiNpFpkuN3w5oqVyWjlo3YhUs7PXsf/F4gSNVKegMyz29oPM
-	M2vIcGizXWRQsRSYq1Fg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mabm7tzX+n5dblSz4/4WuUfr7Nsd85sBydNnsdd/cio=; b=uTnz3foU1ijZO2sD1ztaqp3fX
+	38fiaq6tRCb83M3Mst8SMdITc5iIfXdNumSY1emCk6/CiRoWyRl7WXnpoG3YOpmPygiCw9zXEbmhD
+	HDXfuB+4yscKJ2C50pJvlj0QnBoNSsLTkjuWo8nZ6JIvGCJqUUL/A5nmfbypoL6PsceqjDm3RnpJj
+	sruloqkdQzsrjdMFVFULHffg4Ho2kWOnmnpLQSv9ItqN/ub//O9p4C+T5tmaUM9lxUaCkwdZZCtE8
+	4ybfKRKIKdL2zGaXWSQmrInRh1ibuDxM2P0Iy72GvrOmjz1t+3O0QAnhnbBMEHXd9tnDsMq0etvfu
+	ltpZ3kikA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQZFE-0007Wd-Oy; Mon, 20 Apr 2020 16:26:04 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jQZH7-0008Oe-96; Mon, 20 Apr 2020 16:28:01 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQZEy-0007Rt-Mp
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:25:50 +0000
-Received: by mail-lj1-x242.google.com with SMTP id q19so10643548ljp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 09:25:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=I0v3xLrp79PXZrzlOv1LUbwRJO7GLXI413EH8rUtBcM=;
- b=gBw5HtURfzPQpn5revaajTUwOnm2ALHUdEl8tn8OEcVzdwKtIxhwWxVIsvhYmrHuEr
- XiChK91ZMcBuis25DaX+gwQ7HW23mWaMlnoN5Li9sMxsExzzLeN9LzVgd9X1rmOCcLXs
- VlMlSCYETye5uZHNW6K4Y+xeUe9rBowrgZWgAi3wkZRajhxivyaGseLWkdXTWCJ1DmY7
- wyNC6kNgiAvvJDzRm4dW1Q6+XYDCV4Ap+GnM6sn/3otcDaCQE7veGIxK7J4f/sUh64dh
- Z/yzpdyoPOPa7umwrvTd8zPSV5jhNtNL04M2v3azFVZFnRGCiaOO5/ieyL4B+nvbaFbh
- wHCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=I0v3xLrp79PXZrzlOv1LUbwRJO7GLXI413EH8rUtBcM=;
- b=XNWucwk853S6vIMONnGFNksf4bHtrP9tnKqaDB2sQTWMkaBb/LkSy/3BoJ5Rb8wY2A
- kJmjwEyyOItR0UtjNISEgcW44weMWCjvCDwRybBGUVXStmEAA/YbOYnSC22jDsNV31zr
- ow526bLXaaQihBvX429N3ob0oRAmP72XAUF5rhkCUjPbYeavfriK6hNMhUw2GX5PGmOy
- WL9stOuG1LxV/1ivaJWQI1Yi0WSMOi4TIrLBSKj3X2Nf1Ln60OxNZgqTFqtoynhv9MrH
- U4pX4pUeG8wxbVVZeBeSHPQE8VDnFf5VsyJa4J8a00bXEf0ISnm2nFNUbSR4031knwEu
- fmMQ==
-X-Gm-Message-State: AGi0PubcmBMNUik6mfRorxi5RVRNYmSLxeEE12HvDnIVIXbKbz/9RbC6
- dbsAMjk+MtnwP7V/ZmVQk8cB2ktKbbcAU6BdnwyP2w==
-X-Google-Smtp-Source: APiQypLTxd+Bc4GLYJLdA6XxlFaDKqQZSeP/c2xWLWSrdwpyO/4Pm/CYJJRfWwRHkWxUkl6lefGFGweYxYKk1eOAqrI=
-X-Received: by 2002:a2e:7215:: with SMTP id n21mr4301352ljc.199.1587399942333; 
- Mon, 20 Apr 2020 09:25:42 -0700 (PDT)
+ id 1jQZGw-0008N1-VX
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:27:52 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587400069; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=JmEUkT/HF+RFoziT0BX0UCsQ/PoZeQDMFSY5vkJTons=;
+ b=ZtdkXgGUs9YiCzeAD/P4w/1/PabkApNwtgjTkKn+2s1u9uSkecVvrcZ5XzVBYOV1m3PEJDj2
+ XoAoN9SJ0xUGnGznIR4vGdExhk7fZkyhiYOeVq6hbDeSfB7IHQ7Kof+kPTac0hbkp8suPpwc
+ 4dJYsIynLa864ld54pZclLyGm9E=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e9dcd84.7f51efac60a0-smtp-out-n02;
+ Mon, 20 Apr 2020 16:27:48 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 222A4C4478C; Mon, 20 Apr 2020 16:27:47 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 50479C433CB;
+ Mon, 20 Apr 2020 16:27:46 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200417103232.6896-1-sudeep.holla@arm.com>
- <CAN5uoS8vGCABXvscR160=Dy_iZytinB2y+E2wbp6_KyQMFW5Tg@mail.gmail.com>
- <20200420145712.GA307@bogus>
-In-Reply-To: <20200420145712.GA307@bogus>
-From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Mon, 20 Apr 2020 18:25:31 +0200
-Message-ID: <CAN5uoS_C7QxhjhqtMq5s9ZP22Lh-yqwTO4FUmF_-FhXB5NQf8g@mail.gmail.com>
-Subject: Re: [PATCH] firmware: arm_scmi: Fix return error code in
- smc_send_message
-To: Sudeep Holla <sudeep.holla@arm.com>
+Date: Mon, 20 Apr 2020 21:57:46 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCHv2 3/6] iommu/arm-smmu: Implement
+ iommu_ops->def_domain_type call-back
+In-Reply-To: <6dd26176-448a-985c-90fc-7c47088015ff@arm.com>
+References: <cover.1587392905.git.saiprakash.ranjan@codeaurora.org>
+ <558b1aee4c699a0a5b14b325178d22a79958488f.1587392905.git.saiprakash.ranjan@codeaurora.org>
+ <6dd26176-448a-985c-90fc-7c47088015ff@arm.com>
+Message-ID: <10cac2a08ae90afc88cbadff53a41ec5@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_092548_774673_97BE9634 
-X-CRM114-Status: GOOD (  24.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_092751_080811_655825F8 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,81 +89,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>,
+ Evan Green <evgreen@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Clark <robdclark@gmail.com>,
+ iommu@lists.linux-foundation.org, Sibi Sankar <sibis@codeaurora.org>,
+ Stephen Boyd <swboyd@chromium.org>, Will Deacon <will@kernel.org>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 20 Apr 2020 at 17:35, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Sun, Apr 19, 2020 at 12:04:27PM +0200, Etienne Carriere wrote:
-> > Hello Sudeep,
-> >
-> > On Fri, 17 Apr 2020 at 12:32, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > >
-> > > SMCCC can return one of the 2 return error code here: NOT_SUPPORTED(-1)
-> > > and INVALID_PARAMETER(-3). Map them to appropriate Linux error codes
-> > > namely -EOPNOTSUPP and -EINVAL respectively. -EINVAL is also returned
-> > > for any other return values.
-> >
-> > Reading back the SMCCC spec, I see that INVALID_PARAMETER(-3) and
-> > SUCCESS(0) are Arm Architecture Calls specific return values.
-> > The only generic return value that applies to any SMCCC call is
-> > NOT_SUPPORTED(-1).
-> >
-> > As for an SCMI SMCCC transport layer, any other value than -1 means
-> > the call is supported and one should rely on the statuses provided in
-> > the shared memory buffer related to the function ID.
-> >
->
-> Yes I agree, I had the change to reflect above initially and for some reason
-> I decided to extend.
->
-> > >
-> > > Cc: Peng Fan <peng.fan@nxp.com>
-> > > Reported-by: Etienne Carriere <etienne.carriere@linaro.org>
-> > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > ---
-> > >  drivers/firmware/arm_scmi/smc.c | 6 +++++-
-> > >  1 file changed, 5 insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
-> > > index 833e793b5391..a8b5ecb8927a 100644
-> > > --- a/drivers/firmware/arm_scmi/smc.c
-> > > +++ b/drivers/firmware/arm_scmi/smc.c
-> > > @@ -114,7 +114,11 @@ static int smc_send_message(struct scmi_chan_info *cinfo,
-> > >
-> > >         mutex_unlock(&scmi_info->shmem_lock);
-> > >
-> > > -       return res.a0;
-> > > +       if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
-> > > +               return -EOPNOTSUPP;
-> > > +       else if (res.a0)
-> > > +               return -EINVAL;
-> >
-> > Related to my comment above:
-> > I have no strong opinion on that as I guess SCMI SMCCC transport layer
-> > in secure world firmware could ensure output argument a0 is set not 0.
-> > That said, I might be nitpicking but I still think th 2 lines could be removed.
-> >
-> > Is there any strong reason for testing finer return status from res.a0?
-> >
->
-> No, I will drop. With that can I have you Ack/Reviewed-by ?
+Hi Robin,
 
-Ok.
-Sure you can add my Reviewed-by as well as my Tested-by, assuming I
-tested this change over the right version.
-I used your branch for-next/scmi, from commit a2fe6324.
+On 2020-04-20 20:56, Robin Murphy wrote:
+> On 2020-04-20 3:37 pm, Sai Prakash Ranjan wrote:
+>> Implement the new def_domain_type call-back for the ARM
+>> SMMU driver. We need this to support requesting the domain
+>> type by the client devices.
+>> 
+>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>> ---
+>>   drivers/iommu/arm-smmu.c | 20 ++++++++++++++++++++
+>>   1 file changed, 20 insertions(+)
+>> 
+>> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+>> index e622f4e33379..b5d1d52dfbb8 100644
+>> --- a/drivers/iommu/arm-smmu.c
+>> +++ b/drivers/iommu/arm-smmu.c
+>> @@ -1609,6 +1609,25 @@ static void arm_smmu_get_resv_regions(struct 
+>> device *dev,
+>>   	iommu_dma_get_resv_regions(dev, head);
+>>   }
+>>   +static int arm_smmu_def_domain_type(struct device *dev)
+>> +{
+>> +	struct iommu_fwspec *fwspec;
+>> +	struct arm_smmu_device *smmu;
+>> +
+>> +	fwspec = dev_iommu_fwspec_get(dev);
+>> +	if (!fwspec || fwspec->ops != &arm_smmu_ops)
+>> +		return -ENODEV;
+>> +
+>> +	smmu = arm_smmu_get_by_fwnode(fwspec->iommu_fwnode);
+>> +	if (!smmu)
+>> +		return -ENODEV;
+>> +
+> 
+> AFAICS this should only ever be called for a device in a group, which
+> means an initial ->probe_device has succeeded and rather than
+> defensively going the long way round, we can safely assume this:
+> 
+> 	struct arm_smmu_master_cfg = dev_iommu_priv_get(dev);
+> 	struct arm_smmu_impl *impl = cfg->smmu->impl;
+> 
+> 	if (impl && impl->req_domain)
+> 		return impl->req_domain(dev);
+> 
 
-Regards,
-Etienne
+Yes you are right, will use this.
 
->
-> --
-> Regards,
-> Sudeep
+Thanks,
+Sai
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
