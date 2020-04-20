@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B19C1B0FF0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:24:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EF661B0FEC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dB+JNF42n9NvoDfZg4MikQ8Y9BACOyGC1xNw3647HQY=; b=c2cLhAUDkE0VdM0YxUJr6EE9BB
-	SLCCgFOIIEQBHsDzp5o/s1lruUCKkjBjs9NoNwoBPaJFZc4bfAhM18e7dqoiMniqyvY5d7zE5yUbE
-	SgoGcIfkbhlnrE8ULy03TPlUfEqL751+zeVghiRddf3BT50bMXGuWGD7ZhXWbxr/8vVnBjNo8A8+6
-	9y1Jh+8PKbSwgnEWKe/uSwo/roc0nCF0xFn1Tjl8ZiBVyHnOPAKpSVhAr+2q0vBWNNyj6/8c3Gwgp
-	Y7fl+9Q2Q2l/rZExTylbBQnnoN+AGFEzq8O169vtMyQ2VZdbhtMecJKUyS8W34P+gNhmCh5Kihvf5
-	xSNy+A0w==;
+	bh=n9lBHwp9dH0ey1goN1QBjdGErVbt8fQi8VyzEuOMGF0=; b=AWZMK+jnLpokVLFQHfbASaA1Kz
+	2UUgSysNPR8Ip0GguGVF7NRA6XbHT/MmodTyGzo4CxHb76ktq3KtX5ebcr7NCKPuW40ZjjWN7c+qE
+	zYVI7SM8JiEw2nVGBfx58fWmeceV4bQfnhDICiy9o9jmO1/ntZ/ekwWGttTLL8PATMzg3lVQRnKf+
+	nZOt0NreaO1+WjyQYX2yXVqOHuLOPUVFAm5ZY7ypkppTzPZYhhdgxeSJR0pfxFJKiYYpyDPAld1e2
+	b3KCAQOFzpthtpKAjm28NgHfPAY3SHhlVP+5nB7htRxLfp8RKAWj/x7I2UKwrodDDLv7wKCPYt2qD
+	GXZ/olyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQYHZ-0008NS-PE; Mon, 20 Apr 2020 15:24:25 +0000
+	id 1jQYHB-0007uR-6V; Mon, 20 Apr 2020 15:24:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQYGi-0007jG-U5
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:23:35 +0000
+ id 1jQYGi-0007jT-FB
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:23:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C173101E;
- Mon, 20 Apr 2020 08:23:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACA8B11B3;
+ Mon, 20 Apr 2020 08:23:31 -0700 (PDT)
 Received: from e120937-lin.home (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E35B73F73D;
- Mon, 20 Apr 2020 08:23:29 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D21493F73D;
+ Mon, 20 Apr 2020 08:23:30 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/4] firmware: arm_scmi: Clear channel on reception of
- unexpected responses
-Date: Mon, 20 Apr 2020 16:23:13 +0100
-Message-Id: <20200420152315.21008-3-cristian.marussi@arm.com>
+Subject: [PATCH 3/4] firmware: arm_scmi: Clear channel for delayed responses
+Date: Mon, 20 Apr 2020 16:23:14 +0100
+Message-Id: <20200420152315.21008-4-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200420152315.21008-1-cristian.marussi@arm.com>
 References: <20200420152315.21008-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_082333_009569_7453F148 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200420_082332_551763_75C3D856 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,27 +69,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When an unexpected response message is received we currently warn the user
-and bail-out: ensure to also free the channel by invoking the transport
-independent operation .clear_channel()
+Clear channel properly when done processing a delayed response.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/firmware/arm_scmi/driver.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 90c7a0bb62ef..31c6a89a6edd 100644
+index 31c6a89a6edd..07de196f15aa 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -242,6 +242,7 @@ static void scmi_handle_response(struct scmi_chan_info *cinfo,
- 	/* Are we even expecting this? */
- 	if (!test_bit(xfer_id, minfo->xfer_alloc_table)) {
- 		dev_err(dev, "message for %d is not expected!\n", xfer_id);
-+		info->desc->ops->clear_channel(cinfo);
- 		return;
- 	}
+@@ -256,10 +256,12 @@ static void scmi_handle_response(struct scmi_chan_info *cinfo,
+ 			   xfer->hdr.protocol_id, xfer->hdr.seq,
+ 			   msg_type);
  
+-	if (msg_type == MSG_TYPE_DELAYED_RESP)
++	if (msg_type == MSG_TYPE_DELAYED_RESP) {
++		info->desc->ops->clear_channel(cinfo);
+ 		complete(xfer->async_done);
+-	else
++	} else {
+ 		complete(&xfer->done);
++	}
+ }
+ 
+ /**
 -- 
 2.17.1
 
