@@ -2,76 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CCF21B02CD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:23:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A7981B02C6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:22:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QNIJuiBs3HewZkY1guOPQNqkFfHvd5a+Pe/VU5KaQJI=; b=q/0kpjE9SloVB5
-	334MWgFvTpRDgHaoBVFf7Q/W7flwhcp+zr0Gp5ImbW4I7sNXDS5FAJyp5UG/TcjS3dlb0qPG3a09N
-	2KRGhyMv73e+U0dwz0of51cYtHW7HH945JHS9SRvHOpZWQUJjM+poX8URR4rPN9lSZfCASyeI9wLY
-	4NyOIUcvzheu+sGBVQsBQ4CuCU8Qx60yY5L5yEkhxqDm+HLTJSUwiSY/6prUtgBMxR2OQfb4KyTTI
-	CT7u0QLMoK/h+vNYmGBBAQdvWcfgbTgPXR6hyD4pwSnbirurb7+6wMAKHK+izUZWV//Epz/mW4F30
-	7XwD8M3pa3pj0Sbo+yow==;
+	List-Owner; bh=AJM800THhvBXV/bMuZ+CrQmXaS85xIbafxjbCvik/VQ=; b=Y8dXDIuQdC6yGW
+	RwG2mNqc8PqBJC5faMdUZ2HXH/p+p1X3XEfCugFXW9TDJ7ZqAUuh+mw8wBrE76tPTTuZeUcXeTh4D
+	m6fw5B+SC73XEVWb3dKCkVGZcvbiTGfF1fYvUQaqc8H9NCmJIhFLDZETUZeRs453DpmV8o0u3/dt8
+	9N2DLImlkHNMI2PQjMJUF4wdBPUzm0L+5hqtXSZOGRWfMTC5ggtNA3ekSSZ8uCbt3GkUgwd7K9F6K
+	2dflAjYNIxnxnRlWMEuIhKVvBoMMcpskC+PLMnYImoOsmTxpOa1Cc7xfFB34X7g7Vhmf6GJtBQs/o
+	n3Sg0Kcd4E7oiqN12l8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQla-0004wx-7i; Mon, 20 Apr 2020 07:22:54 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jQQkw-0004Zk-AF; Mon, 20 Apr 2020 07:22:14 +0000
+Received: from mail-am6eur05on2065.outbound.protection.outlook.com
+ ([40.107.22.65] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQlP-0004th-Og; Mon, 20 Apr 2020 07:22:45 +0000
-X-UUID: cbe0a0a29bdc453e91cfadc9662cdfc9-20200419
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=3LD7CNX1tT1TEHE4Zt32/D1W/JkKnJcoEIJqaN8Kp34=; 
- b=m3gNRm3TzTwCDsjftZfHiFv2wd1mKutwR7adD8Q9iHOxVAUNmgAkZrf5K9EzfAnSTm+BQqwhTdsa+um1wUF1NeLy1uC3qKFdfZE0XLcrxt26v3PLpU5pVgKji0z8M9akS6Z9RRsu+cbWbZQ5SGM6bE9sm/sTI7lQLRIiMBHA8qs=;
-X-UUID: cbe0a0a29bdc453e91cfadc9662cdfc9-20200419
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 798499019; Sun, 19 Apr 2020 23:22:28 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 20 Apr 2020 00:22:34 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Mon, 20 Apr 2020 15:22:26 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 20 Apr 2020 15:22:26 +0800
-Message-ID: <1587367314.8804.77.camel@mhfsdcap03>
-Subject: Re: [V6, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Rob Herring <robh@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Sakari Ailus
- <sakari.ailus@linux.intel.com>
-Date: Mon, 20 Apr 2020 15:21:54 +0800
-In-Reply-To: <20200415161451.GB4438@bogus>
-References: <20191211112849.16705-1-dongchun.zhu@mediatek.com>
- <20191211112849.16705-2-dongchun.zhu@mediatek.com>
- <CAAFQd5AnWZqjQEVvw8gv7JzOBHxJvsOWaGrbY8CXQ_87ap-ahA@mail.gmail.com>
- <CAAFQd5DHL3mXZGHW+XWMXTVfekamEvaEv3bLZt4Bg2UpKPohmA@mail.gmail.com>
- <1586437408.8804.62.camel@mhfsdcap03> <20200415161451.GB4438@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jQQkn-0004XW-DE
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:22:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QwvUktWqKd81HhDD+vhUx6/IUW75RxvzpFZ3zFP4sSdRLK/Z0cEUN8NVyXQI2QFadHsJ3e4MMrW5Ye81pVzIdJiH766fCMvC9J52+1yL62nFqYFDI3OxRfEAOVVWcNCpXcvigCRP+9YnZ3KjRtCRpBxvxsNOtX3RpEWAAo4tqCmFNrLUpPJfy/1WZb2qmIeffQ3K35MCg07lhgEx5BazhSPoKf7tzU+ytUezje4MyKqHTkBcO6SHlMXfYGHbpQRgdPnYo3bni01zIo4SXgIYlqnpOHgTkPRE+nzCApRaxA+IP98Q9+xZYY7XcVPfM5Rk8zI0VjO3HZW07AXBErMngA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ODlyhL240c9hnu5xz+DAZLU24pNg9lJSwQz4v8fhUGw=;
+ b=fUkVVM/WxeeUx0DvdK16/SGdXtD/KJa9gkrw+v3/wKWpYztnSDAMt3ERNfeL9IyptQ46AvIirmWPy4Cx9h4sAOKC6pFIjVVs3Sq18Ei9jzOEARyN5Q5mzNBgJF1auV0TejKGbCQsDtMFXeWLDxUYYBSKKqCnBQHKRyPTcVABhO8AD4k943IITIbiZ1NvQOO27A19neW6QcxbcEfFk6wHO7IY8KDODbMj9WYTXajyWqBqte/y4/AsarmKD5zeovsXwxKRJ93sB7ZMuVPmoT+DaOUDChuvpB8hrB1tTZFzgsP3XMpC0eY7aPg0qT1gBHAsWa1XJXibauzvBCe4NYzNIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ODlyhL240c9hnu5xz+DAZLU24pNg9lJSwQz4v8fhUGw=;
+ b=NFVt7p3r2HuT0VwUTE/Hri2Cb3Ftz+SbDbr8uZMPIzenIQMpNKjEpnLtAUnVJAVLGTBob/OK4rIr4x4W7FphLQJ+k7KiDcyGfzPfRu4TsS1nNwHV0OYpNbjSWeKEqiRZYzQTv/4xrOcZ7EsQvm7i7ZdQ7zWm7xWV/f57T1Govj4=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6701.eurprd04.prod.outlook.com (2603:10a6:803:124::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.26; Mon, 20 Apr
+ 2020 07:21:59 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
+ 07:21:59 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Matt Porter <mporter@konsulko.com>, Daniel Baluta <daniel.baluta@gmail.com>
+Subject: RE: [PATCH] arm64: dts: imx8mm: fix dma peripheral type for SAI nodes
+Thread-Topic: [PATCH] arm64: dts: imx8mm: fix dma peripheral type for SAI nodes
+Thread-Index: AQHWE1BeKLvAnwSi/kudm5PLyQ0/Nqh6hYcAgAcaXPA=
+Date: Mon, 20 Apr 2020 07:21:59 +0000
+Message-ID: <VE1PR04MB6638755B389159519ADC51A289D40@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <20200331203551.20914-1-mporter@konsulko.com>
+ <CAEnQRZCqeJkRPEUYL3k8seuNusLZ6QpT-X-A7E20AMHSYcmaUA@mail.gmail.com>
+ <20200415184548.GA29919@bacon.ohporter.com>
+In-Reply-To: <20200415184548.GA29919@bacon.ohporter.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [183.192.239.221]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 13b5ec9e-d5c0-4dca-60d0-08d7e4fb83e7
+x-ms-traffictypediagnostic: VE1PR04MB6701:|VE1PR04MB6701:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6701A9C06B1D11DD31201C3789D40@VE1PR04MB6701.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 03793408BA
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(366004)(346002)(39860400002)(136003)(396003)(376002)(71200400001)(5660300002)(64756008)(4326008)(66476007)(2906002)(66446008)(66556008)(76116006)(66946007)(7696005)(86362001)(33656002)(8936002)(9686003)(186003)(26005)(316002)(8676002)(6506007)(53546011)(52536014)(55016002)(478600001)(110136005)(54906003)(81156014)(32563001);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: U2w/hYvFK2pZG7NPb9MAp/yEOwbstgQvToa9EtQzstzoWBpUaw95nKp58hLnHFKLUrw+mQj3i6bSwLPJ5TO4hV/WomrAks9LvYcKogJ0e4+l0nv/AN0ceh4OxoSaBZ6bHGb8k1NBdrnb/p38jXwcUu87Ry+T46ajRSwm950Kfsk7H4tglzVHF6QcyscxUEn8uoY/aWHlyy3iOh5fLL73xMGi3q8wpfQP31bGkvXZMjIJ2ZJ3taANkNEDwucCeKXUNzz5R15DcZW3w4R2+IpCLkjzsEm/jBt1xZ8Isq2TgpdoSbedObVnb5cwctpRiuN75apJbhsJcTQOcthPCsxO1w78Nil4YifCycs7rPJhChrqtsgR59xgY4NCSsQNPUf99SE4sN83eKz6V8OEHEzMmvkkQbXEQVll+AoibRnImaxuLzOeGJpTBau3Nq3g4bkq3fnytjZCzRiDZXwmUfNqRZVUI93QfUXZTQtxFIYrht0=
+x-ms-exchange-antispam-messagedata: s1CTl+jytKsEkMhJRjm0HJidBdPukMAXjS0UiR4Fjdp/vSKcz7cJ8TvyihOjrPNKhweV8rsdgT2aWOPePsRgzmBz3MbmCvC0ilFDOdf/6R/K3D4Q2wf69EcOC7s20kLkRVk7i7pfquqawaWTs6FYtw==
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 568BDCBF247068F3C452B6639D2840568C06ADB8A8E66CAEBE6BBCECE9347C4B2000:8
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 13b5ec9e-d5c0-4dca-60d0-08d7e4fb83e7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Apr 2020 07:21:59.5548 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: QwcKwr2VFEDPPtYcW9Tc+dfG5tcoa30zfR02EVnofr0wXqnEuUSl2HCYi5b3vOG0ESOpDpgPKpzZxMNzbDDmgQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6701
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_002243_811939_09A28E5B 
-X-CRM114-Status: GOOD (  32.36  )
+X-CRM114-CacheID: sfid-20200420_002205_497358_9332AC44 
+X-CRM114-Status: GOOD (  15.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.22.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,8 +112,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,192 +124,44 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Shengnan
- Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, broonie@kernel.org,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, linux-gpio@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+ Devicetree List <devicetree@vger.kernel.org>,
+ Anson Huang <anson.huang@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Rob,
-
-Thanks for the review.
-
-On Wed, 2020-04-15 at 11:14 -0500, Rob Herring wrote:
-> On Thu, Apr 09, 2020 at 09:03:28PM +0800, Dongchun Zhu wrote:
-> > Hi Mauro, Sakari, Rob,
-> > 
-> > On Wed, 2020-04-08 at 14:49 +0200, Tomasz Figa wrote:
-> > > On Tue, Dec 17, 2019 at 4:15 AM Tomasz Figa <tfiga@chromium.org> wrote:
-> > > >
-> > > > Hi Rob, Dongchun,
-> > > >
-> > > > On Wed, Dec 11, 2019 at 8:29 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> > > > >
-> > > > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
-> > > > >
-> > > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > ---
-> > > > >  .../devicetree/bindings/media/i2c/ov02a10.txt      | 54 ++++++++++++++++++++++
-> > > > >  MAINTAINERS                                        |  7 +++
-> > > > >  2 files changed, 61 insertions(+)
-> > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov02a10.txt b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > > > > new file mode 100644
-> > > > > index 0000000..18acc4f
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > > > > @@ -0,0 +1,54 @@
-> > > > > +* Omnivision OV02A10 MIPI CSI-2 sensor
-> > > > > +
-> > > > > +Required Properties:
-> > > > > +- compatible: shall be "ovti,ov02a10"
-> > > > > +- clocks: reference to the eclk input clock
-> > > > > +- clock-names: shall be "eclk"
-> > > > > +- dovdd-supply: Digital I/O voltage supply, 1.8 volts
-> > > > > +- avdd-supply: Analog voltage supply, 2.8 volts
-> > > > > +- dvdd-supply: Digital core voltage supply, 1.8 volts
-> > > > > +- powerdown-gpios: reference to the GPIO connected to the powerdown pin,
-> > > > > +                  if any. This is an active low signal to the OV02A10.
-> > > >
-> > > > On the hardware level this pin is active high, i.e. the device is
-> > > > powered down when the signal is high.
-> > > >
-> > > > > +- reset-gpios: reference to the GPIO connected to the reset pin, if any.
-> > > > > +              This is an active high signal to the OV02A10.
-> > > >
-> > > > On the hardware level this pin is active low, i.e. the device is held
-> > > > in reset when the signal is low.
-> > > >
-> > > > However, there is some confusion around how the polarity flag in the
-> > > > GPIO specifier is supposed to be used.
-> > > >
-> > > > As per [1],
-> > > >
-> > > > "The gpio-specifier's polarity flag should represent the physical
-> > > > level at the GPIO controller that achieves (or represents, for inputs)
-> > > > a logically asserted value at the device. The exact definition of
-> > > > logically asserted should be defined by the binding for the device."
-> > > >
-> > > > In this case it sounds like "logically asserted" means the device is
-> > > > powered down or held in reset, respectively, which would suggest that
-> > > > the specifiers should have GPIO_ACTIVE_HIGH and GPIO_ACTIVE_LOW
-> > > > respectively. The latter would cause the GPIO subsystem to invert the
-> > > > values set by the consumers, which would then be confusing from the
-> > > > driver implementation point of view.
-> > > >
-> > > > Should the pin be renamed to "nreset"? It would change the meaning of
-> > > > "logically asserted" to "device is not held in reset" and so
-> > > > GPIO_ACTIVE_HIGH (or 0) would be the right value to use.
-> > > >
-> > > > [1] https://elixir.bootlin.com/linux/latest/source/Documentation/devicetree/bindings/gpio/gpio.txt#L83
-> > > 
-> > > + Bartosz, Linus, Sakari and the linux-gpio ML for a broader audience.
-> > > 
-> > > Would appreciate some feedback on what's the proper way of defining
-> > > GPIO polarity. Thanks!
-> > > 
-> > > Best regards,
-> > > Tomasz
-> > > 
-> > 
-> > I have another question about OV02A10 CMOS sensor dt-binding.
-> > As its text documentation was already reviewed by Rob on earlier
-> > version:
-> > https://patchwork.linuxtv.org/patch/59787/
-> > I wonder whether we need to convert it to DT in YAML.
+On 2020/04/16 Matt Porter <mporter@konsulko.com> wrote:d
+> On Wed, Apr 15, 2020 at 09:04:43PM +0300, Daniel Baluta wrote:
+> > On Tue, Mar 31, 2020 at 11:36 PM Matt Porter <mporter@konsulko.com>
+> wrote:
+> > >
+> > > The peripheral type specified in the dma phandle for each SAI node
+> > > is incorrect. Change it to specify the SAI peripheral.
+> > >
+> > > Signed-off-by: Matt Porter <mporter@konsulko.com>
+> >
+> > Hi Matt,
+> >
+> > Why do you think this is incorrect?  AFAIK script number 2 works fine
+> > for SAI. Can you add more details on what bug are you encountering?
+> >
+> > Adding Robin the owner of SDMA.
 > 
-> Yes.
+> Hi Daniel,
 > 
-
-Okay.
-Let's focus on the new DT binding in YAML for OV02A10.
-
-> > In fact, I just submitted one conversion version.
-> > https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2143922
-> > 
-> > Unluckily make dt_binding_check still report errors temporarily.
-> > It seems there is something wrong with the port property in DT.
-> > Could anyone help provide some tips?
-> > $make dt_binding_check
-> > DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> >   SCHEMA  Documentation/devicetree/bindings/processed-schema.yaml
-> > Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: ignoring,
-> > error in schema: properties: port: patternProperties: endpoint
-> > warning: no schema found in file:
-> > Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > make[2]: *** [Documentation/devicetree/bindings/processed-schema.yaml]
-> > Error 255
-> > make[1]: *** [dt_binding_check] Error 2
-> > make: *** [sub-make] Error 2
-> 
->     patternProperties:
->       endpoint:
->       type: object
->       additionalProperties: false
-> 
-> You need more indentation under 'endpoint'. Also, 'endpoint' is a fixed 
-> string, so it should be under 'properties' rather than 'patternProperties'.
-> 
-> 
-
-Thanks for the reminder.
-Now we could run dt_binding_check pass for the required
-property:endpoint.
-
-> > 
-> > In addition, as OV02A10 use one private property to distinguish
-> > different projects that adopting different register settings,
-> > I would appreciate the feedback on how to add private property to DT in
-> > YAML.
-> 
-> Like any other property. Submit something for review.
-> 
-
-Could you have the permission to see the change:
-https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2143922/3
-
-This change is improved relative to earlier patchset.
-But there are still some errors if we running dt_binding_check on the
-change.
-$make dt_binding_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-  CHKDT   Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: Additional properties are not allowed ('optional' was unexpected)
-/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: Additional properties are not allowed ('optional' was unexpected)
-/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: properties:ovti,mipi-tx-speed: {'description': 'Indication of MIPI transmission speed select.'} is not valid under any of the given schemas (Possible causes of the failure):
-        /proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: properties:ovti,mipi-tx-speed: 'not' is a required property
-
-make[2]: ***
-[Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.example.dts]
-Error 1
-make[1]: *** [dt_binding_check] Error 2
-make: *** [sub-make] Error 2
-
-It seems that we shall not use "optional" to describe private properties
-for DT bindings in YAML.
-Rob, could you help provide one example to tell us how to define new
-properties?
-Thanks a lot.
-
-> Rob
+> Thanks for the response. I was experiencing timeouts that were traced back to
+> dma incompletions. Changing the script at the time fixed that issue. Now, given
+> your response I went back and checked this again and verified that script 2
+> does work for me now. I did change firmware to the latest v4.4 from something
+> quite old so now I'm suspecting I had bad firmware loaded up. Does that sound
+> plausible? In any case, I can confirm this is not needed.
+No, that's not related with firmware version since both scripts are all ROM scripts instead of RAM scripts which's in sdma firmware.
 
 _______________________________________________
 linux-arm-kernel mailing list
