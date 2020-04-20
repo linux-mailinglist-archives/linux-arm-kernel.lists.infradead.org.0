@@ -2,53 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32BF1B10D4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:58:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E22721B112C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:10:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QPhZI9RSdWmwpsVGH2squU4ZHovqRSlVUp3/5MNuoFg=; b=mWOu+XGABOqja+1+uML6CNhYm
-	DTwfhItE8Aq66JbjWuO7YwbS5XhNJauLkh+ZVrrzcJgXePvPu8bVwMpJfvMWWzbpzJXmvrvytOAHJ
-	R9KtecFUHkC8Kpn3WPszb0kykWQtEukLugUyzeakSDjp7g6s7RWRGXZOUAmP9SOUtcojZWC0JHiA3
-	5WpcdCdnmHgN2/GAucwaQRcXF7m8gQkn7DKAR/Nucgaa6xk+WEIJ0qDis0vSgGCbfsyCCiWCsoy78
-	Fwr1MfEPOU5bLfInOccF/tPLdLj59QQzYblACe8K2uD846GaYN/VvEzJa6T6dvJTc1OBlEogGZ1YX
-	prf7Q7KHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/YAVAHHXPMHTVJp0SVx7gcDHvRru+NOIUK1iZbK9CCs=; b=OmOIoq6+GrC7OE
+	w9D9fwNM9SgHdkhKkVfVSzs8pllqX5XYQwWarwoBMiS++PCuI1eKJ3EUwml7053sDbYefhtIWi0c5
+	uOMsIz+ai5T5+4EZQ/ATUJg2KItgjCPGoinNrY+tMe9sAmURalTuV+RPiT5l5/Wy5V34lGTgH5MN4
+	tI+k8c6sD0h9ZZ1YUR0sLL3XCy+r178UCCUMsv6wS0qo3HuGnu95x66LvpmYJWlQVq64Pl0BZBDPr
+	rIBR+/iJD1NhE8A+3hRmGE/fEKU2RrGaT2J0Je7hNnARb94xWevQdeDnCWlZTn6WHtbbht0fmeP/Y
+	40VGS3kUvHOUoabBak0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQYoD-0002zc-JU; Mon, 20 Apr 2020 15:58:09 +0000
+	id 1jQZ0P-0005Sn-VQ; Mon, 20 Apr 2020 16:10:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQYo6-0002yG-3M
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:58:03 +0000
+ id 1jQZ0G-0005QK-Mi
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:10:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B36BD31B;
- Mon, 20 Apr 2020 08:58:00 -0700 (PDT)
-Received: from [10.57.33.63] (unknown [10.57.33.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6403E3F73D;
- Mon, 20 Apr 2020 08:57:58 -0700 (PDT)
-Subject: Re: [PATCHv2 2/6] iommu/arm-smmu: Allow client devices to select
- direct mapping
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Sibi Sankar <sibis@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-References: <cover.1587392905.git.saiprakash.ranjan@codeaurora.org>
- <14539e787e6d8b7bd0a6d8f8a001baae6f691988.1587392905.git.saiprakash.ranjan@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e35b10dc-8e58-f201-8485-9543dafbadfe@arm.com>
-Date: Mon, 20 Apr 2020 16:57:55 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61D1531B;
+ Mon, 20 Apr 2020 09:10:33 -0700 (PDT)
+Received: from [192.168.0.110] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A6BFC3F73D;
+ Mon, 20 Apr 2020 09:10:32 -0700 (PDT)
+Subject: Re: [PATCH RFC] KVM: arm64: Sidestep stage2_unmap_vm() on vcpu reset
+ when S2FWB is supported
+To: Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20200415072835.1164-1-yuzenghui@huawei.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <e99bc07d-0dd4-055c-808f-fd9cde88d2fc@arm.com>
+Date: Mon, 20 Apr 2020 17:10:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <14539e787e6d8b7bd0a6d8f8a001baae6f691988.1587392905.git.saiprakash.ranjan@codeaurora.org>
-Content-Language: en-GB
+In-Reply-To: <20200415072835.1164-1-yuzenghui@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_085802_229470_FC941E9B 
-X-CRM114-Status: GOOD (  19.64  )
+X-CRM114-CacheID: sfid-20200420_091036_829404_36DFF444 
+X-CRM114-Status: GOOD (  25.39  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,93 +65,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
- iommu@lists.linux-foundation.org, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-20 3:37 pm, Sai Prakash Ranjan wrote:
-> From: Jordan Crouse <jcrouse@codeaurora.org>
-> 
-> Some client devices want to directly map the IOMMU themselves instead
-> of using the DMA domain. Allow those devices to opt in to direct
-> mapping by way of a list of compatible strings.
-> 
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Hi,
+
+On 4/15/20 8:28 AM, Zenghui Yu wrote:
+> stage2_unmap_vm() was introduced to unmap user RAM region in the stage2
+> page table to make the caches coherent. E.g., a guest reboot with stage1
+> MMU disabled will access memory using non-cacheable attributes. If the
+> RAM and caches are not coherent at this stage, some evicted dirty cache
+> line may go and corrupt guest data in RAM.
+>
+> Since ARMv8.4, S2FWB feature is mandatory and KVM will take advantage
+> of it to configure the stage2 page table and the attributes of memory
+> access. So we ensure that guests always access memory using cacheable
+> attributes and thus, the caches always be coherent.
+>
+> So on CPUs that support S2FWB, we can safely reset the vcpu without a
+> heavy stage2 unmapping.
+>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: Christoffer Dall <christoffer.dall@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 > ---
->   drivers/iommu/arm-smmu-qcom.c | 19 +++++++++++++++++++
->   drivers/iommu/arm-smmu.h      |  1 +
->   2 files changed, 20 insertions(+)
-> 
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 64a4ab270ab7..0b3f159065aa 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -3,6 +3,7 @@
->    * Copyright (c) 2019, The Linux Foundation. All rights reserved.
->    */
->   
-> +#include <linux/of_device.h>
->   #include <linux/qcom_scm.h>
->   
->   #include "arm-smmu.h"
-> @@ -11,6 +12,23 @@ struct qcom_smmu {
->   	struct arm_smmu_device smmu;
->   };
->   
-> +static const struct of_device_id qcom_smmu_client_of_match[] = {
-> +	{ .compatible = "qcom,adreno" },
-> +	{ .compatible = "qcom,mdp4" },
-> +	{ .compatible = "qcom,mdss" },
-> +	{ .compatible = "qcom,sc7180-mdss" },
-> +	{ .compatible = "qcom,sdm845-mdss" },
-> +	{ }
-> +};
-> +
-> +static int qcom_smmu_request_domain(struct device *dev)
-> +{
-> +	const struct of_device_id *match =
-> +		of_match_device(qcom_smmu_client_of_match, dev);
-> +
-> +	return match ? IOMMU_DOMAIN_IDENTITY : 0;
-> +}
-> +
->   static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->   {
->   	int ret;
-> @@ -41,6 +59,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
->   }
->   
->   static const struct arm_smmu_impl qcom_smmu_impl = {
-> +	.req_domain = qcom_smmu_request_domain,
->   	.reset = qcom_smmu500_reset,
->   };
->   
-> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> index 8d1cd54d82a6..662fdb4dccd2 100644
-> --- a/drivers/iommu/arm-smmu.h
-> +++ b/drivers/iommu/arm-smmu.h
-> @@ -386,6 +386,7 @@ struct arm_smmu_impl {
->   	int (*init_context)(struct arm_smmu_domain *smmu_domain);
->   	void (*tlb_sync)(struct arm_smmu_device *smmu, int page, int sync,
->   			 int status);
-> +	int (*req_domain)(struct device *dev);
+>
+> If this is correct, there should be a great performance improvement on
+> a guest reboot (or reset) on systems support S2FWB. But I'm afraid that
+> I've missed some points here, so please comment!
+>
+> The commit 957db105c997 ("arm/arm64: KVM: Introduce stage2_unmap_vm")
+> was merged about six years ago and I failed to track its histroy and
+> intention. Instead of a whole stage2 unmapping, something like
+> stage2_flush_vm() looks enough to me. But again, I'm unsure...
+>
+> Thanks for having a look!
 
-Nit: since the point is to implement the full iommu_ops::def_domain_type 
-interface, can we call it def_domain_type please?
+I had a chat with Christoffer about stage2_unmap_vm, and as I understood it, the
+purpose was to make sure that any changes made by userspace were seen by the guest
+while the MMU is off. When a stage 2 fault happens, we do clean+inval on the
+dcache, or inval on the icache if it was an exec fault. This means that whatever
+the host userspace writes while the guest is shut down and is still in the cache,
+the guest will be able to read/execute.
 
-Robin.
+This can be relevant if the guest relocates the kernel and overwrites the original
+image location, and userspace copies the original kernel image back in before
+restarting the vm.
 
->   };
->   
->   static inline void __iomem *arm_smmu_page(struct arm_smmu_device *smmu, int n)
-> 
+>
+>  virt/kvm/arm/arm.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+>
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index 48d0ec44ad77..e6378162cdef 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -983,8 +983,11 @@ static int kvm_arch_vcpu_ioctl_vcpu_init(struct kvm_vcpu *vcpu,
+>  	/*
+>  	 * Ensure a rebooted VM will fault in RAM pages and detect if the
+>  	 * guest MMU is turned off and flush the caches as needed.
+> +	 *
+> +	 * S2FWB enforces all memory accesses to RAM being cacheable, we
+> +	 * ensure that the cache is always coherent.
+>  	 */
+> -	if (vcpu->arch.has_run_once)
+> +	if (vcpu->arch.has_run_once && !cpus_have_const_cap(ARM64_HAS_STAGE2_FWB))
+
+I think userspace does not invalidate the icache when loading a new kernel image,
+and if the guest patched instructions, they could potentially still be in the
+icache. Should the icache be invalidated if FWB is present?
+
+Thanks,
+Alex
+>  		stage2_unmap_vm(vcpu->kvm);
+>  
+>  	vcpu_reset_hcr(vcpu);
 
 _______________________________________________
 linux-arm-kernel mailing list
