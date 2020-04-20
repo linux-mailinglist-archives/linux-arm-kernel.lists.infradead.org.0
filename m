@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 687DA1B0972
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65A3E1B097E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YjjgOnc+XUCwZlnq8uIr78xk1BN358/ziJeIO2rNW3M=; b=f9coxZoRYPRwvoCZfj38BlA3l
-	NSIn9D/1A0H2ZlWqhAMgzszbhTk5aQ93AvTcMQNXi/0B2JscS0r5y1OKgmbIA1V7l99OeskKdoi5e
-	wzqDzlG8L3XKlUe8dsOu/DyR1hH046IpCI9aWubjtaPctTjIGqSJdV95N9JQdSiEV+8j1QIg9DAni
-	r77zxUaOeMjwmXOjXoXndXzcDzqE+b4j2nOhSCUbp2he91a4RQb28hKujFPyV+1XJCFvqWJe2BC4v
-	nsFg8HxbEmu3xUtub1pBPhxI+zxTs+A0dd+FL3Ue9lVQbzZT4iMu6zcgF4VRtojmQbo4tNj/jD9OE
-	IUEosLU/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Lv+TPU51dO1E8JR+o/xyyZlWyUiFIGDbTjCaN6XwK30=; b=KM7PsxqHrvGaCt
+	KrCZi/KcInTF6+Z8sd7YQkpPE9eWctc7V7WL3ayMX5CqeQXFSuX6oKdQXcnFWpgNwaFrasSEiAddj
+	6eE9OMrBX2rtHlt9sSVj4kn/g5b6V5yXUNZpKCpyEFQ+6q4IRWQ1GUKbnNyNTfNy0sFECIz2CUBA4
+	d4RugUNpVdSV5tEqEMQ0KUFM3e+IdK5VpcV/ZvhkmAkjZnuH3aYLTFlCziq6WtRnMX2Wqnt67M5ck
+	n9aZL9Lnz8moNcZPuKwk3D5JNp1d4vxchNeiCFudgVsUx3s/h0sxJD4L2S8ZB2nwj+QyoceFN5GZ5
+	LiMs1MO99rpiziwM+New==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQVe6-0002r1-JR; Mon, 20 Apr 2020 12:35:30 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQVdf-0001kc-MX; Mon, 20 Apr 2020 12:35:05 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 42114F8280CD990CF8CC;
- Mon, 20 Apr 2020 20:35:01 +0800 (CST)
-Received: from [127.0.0.1] (10.166.213.7) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.487.0; Mon, 20 Apr 2020
- 20:34:59 +0800
-Subject: Re: [PATCH] staging: mt7621-pinctrl: Use correct pointer type
- argument for sizeof
-To: Dan Carpenter <dan.carpenter@oracle.com>
-References: <20200420123755.4353-1-yanaijie@huawei.com>
- <20200420121900.GD2659@kadam>
-From: Jason Yan <yanaijie@huawei.com>
-Message-ID: <c6b155a6-28ae-e0f9-b866-4d17e8a45706@huawei.com>
-Date: Mon, 20 Apr 2020 20:34:59 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+	id 1jQVfN-00054e-LJ; Mon, 20 Apr 2020 12:36:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQVfB-00052R-Co
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 12:36:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAF211FB;
+ Mon, 20 Apr 2020 05:36:34 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.30.55])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F1423F237;
+ Mon, 20 Apr 2020 05:36:31 -0700 (PDT)
+Date: Mon, 20 Apr 2020 13:36:28 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [EXT] Re: [PATCH v3 03/13] task_isolation: add instruction
+ synchronization memory barrier
+Message-ID: <20200420123628.GB69441@C02TD0UTHF1T.local>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+ <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
+ <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
+ <d995795c731d6ecceb36bdf1c1df3d72fefd023d.camel@marvell.com>
+ <20200415124427.GB28304@C02TD0UTHF1T.local>
+ <e4d2cda6f011e80a0d8e482b85bca1c57665fcfd.camel@marvell.com>
+ <20200420122350.GB12889@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200420121900.GD2659@kadam>
-X-Originating-IP: [10.166.213.7]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200420122350.GB12889@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_053503_940758_14D4BDB2 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20200420_053637_530733_495B8278 
+X-CRM114-Status: GOOD (  29.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,37 +68,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- nishkadg.linux@gmail.com, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="gbk"; Format="flowed"
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Alex Belits <abelits@marvell.com>, "frederic@kernel.org" <frederic@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ Prasun Kapoor <pkapoor@marvell.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgrU2iAyMDIwLzQvMjAgMjA6MTksIERhbiBDYXJwZW50ZXIg0LS1wDoKPiBPbiBNb24sIEFwciAy
-MCwgMjAyMCBhdCAwODozNzo1NVBNICswODAwLCBKYXNvbiBZYW4gd3JvdGU6Cj4+IEZpeCB0aGUg
-Zm9sbG93aW5nIGNvY2NpY2hlY2sgd2FybmluZzoKPj4KPj4gZHJpdmVycy9zdGFnaW5nL210NzYy
-MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmM6MjIzOjE0LTM2OiBXQVJOSU5HOiBVc2UKPj4gY29y
-cmVjdCBwb2ludGVyIHR5cGUgYXJndW1lbnQgZm9yIHNpemVvZgo+Pgo+PiBTaWduZWQtb2ZmLWJ5
-OiBKYXNvbiBZYW4gPHlhbmFpamllQGh1YXdlaS5jb20+Cj4+IC0tLQo+PiAgIGRyaXZlcnMvc3Rh
-Z2luZy9tdDc2MjEtcGluY3RybC9waW5jdHJsLXJ0Mjg4MC5jIHwgMiArLQo+PiAgIDEgZmlsZSBj
-aGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9zdGFnaW5nL210NzYyMS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMgYi9kcml2ZXJz
-L3N0YWdpbmcvbXQ3NjIxLXBpbmN0cmwvcGluY3RybC1ydDI4ODAuYwo+PiBpbmRleCBkMGYwNjc5
-MGQzOGYuLjg4ODNmMmE4ZWE1NyAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL210NzYy
-MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMKPj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL210NzYy
-MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMKPj4gQEAgLTIyMCw3ICsyMjAsNyBAQCBzdGF0aWMg
-aW50IHJ0Mjg4MF9waW5tdXhfaW5kZXgoc3RydWN0IHJ0Mjg4MF9wcml2ICpwKQo+PiAgIAkvKiBh
-bGxvY2F0ZSBvdXIgZnVuY3Rpb24gYW5kIGdyb3VwIG1hcHBpbmcgaW5kZXggYnVmZmVycyAqLwo+
-PiAgIAlmID0gcC0+ZnVuYyA9IGRldm1fa2NhbGxvYyhwLT5kZXYsCj4+ICAgCQkJCSAgIHAtPmZ1
-bmNfY291bnQsCj4+IC0JCQkJICAgc2l6ZW9mKHN0cnVjdCBydDI4ODBfcG14X2Z1bmMpLAo+PiAr
-CQkJCSAgIHNpemVvZihzdHJ1Y3QgcnQyODgwX3BteF9mdW5jICopLAo+IAo+IFllcy4gIFRoaXMg
-Zml4ZXMgYSBidWcuICBXZSB3ZXJlIGFsbG9jYXRpbmcgdG9vIG11Y2ggZGF0YS4gIEJ1dCB0aGUK
-PiBwcmVmZXJlZCBzdHlsZSBpczoKPiAKPiAJCQkJc2l6ZW9mKCpwLT5mdW5jKSwKPiAKPiBQbGVh
-c2UgY291bGQgeW91IHJlc2VuZD8KPiAKClN1cmUsIEkgd2lsbCBjb29rIGEgbmV3IG9uZS4KCj4g
-cmVnYXJkcywKPiBkYW4gY2FycGVudGVyCj4gCj4gCj4gLgo+IAoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, Apr 20, 2020 at 01:23:51PM +0100, Will Deacon wrote:
+> On Sun, Apr 19, 2020 at 05:02:01AM +0000, Alex Belits wrote:
+> > On Wed, 2020-04-15 at 13:44 +0100, Mark Rutland wrote:
+> > > On Thu, Apr 09, 2020 at 03:17:40PM +0000, Alex Belits wrote:
+> > > > Some architectures implement memory synchronization instructions
+> > > > for
+> > > > instruction cache. Make a separate kind of barrier that calls them.
+> > > 
+> > > Modifying the instruction caches requries more than an ISB, and the
+> > > 'IMB' naming implies you're trying to order against memory accesses,
+> > > which isn't what ISB (generally) does.
+> > > 
+> > > What exactly do you want to use this for?
+> > 
+> > I guess, there should be different explanation and naming.
+> > 
+> > The intention is to have a separate barrier that causes cache
+> > synchronization event, for use in architecture-independent code. I am
+> > not sure, what exactly it should do to be implemented in architecture-
+> > independent manner, so it probably only makes sense along with a
+> > regular memory barrier.
+> > 
+> > The particular place where I had to use is the code that has to run
+> > after isolated task returns to the kernel. In the model that I propose
+> > for task isolation, remote context synchronization is skipped while
+> > task is in isolated in userspace (it doesn't run kernel, and kernel
+> > does not modify its userspace code, so it's harmless until entering the
+> > kernel).
+> 
+> > So it will skip the results of kick_all_cpus_sync() that was
+> > that was called from flush_icache_range() and other similar places.
+> > This means that once it's out of userspace, it should only run
+> > some "safe" kernel entry code, and then synchronize in some manner that
+> > avoids race conditions with possible IPIs intended for context
+> > synchronization that may happen at the same time. My next patch in the
+> > series uses it in that one place.
+> > 
+> > Synchronization will have to be implemented without a mandatory
+> > interrupt because it may be triggered locally, on the same CPU. On ARM,
+> > ISB is definitely necessary there, however I am not sure, how this
+> > should look like on x86 and other architectures. On ARM this probably
+> > still should be combined with a real memory barrier and cache
+> > synchronization, however I am not entirely sure about details. Would
+> > it make more sense to run DMB, IC and ISB? 
+> 
+> IIUC, we don't need to do anything on arm64 because taking an exception acts
+> as a context synchronization event, so I don't think you should try to
+> expose this as a new barrier macro. Instead, just make it a pre-requisite
+> that architectures need to ensure this behaviour when entering the kernel
+> from userspace if they are to select HAVE_ARCH_TASK_ISOLATION.
+
+The CSE from the exception isn't sufficient here, because it needs to
+occur after the CPU has re-registered to receive IPIs for
+kick_all_cpus_sync(). Otherwise there's a window between taking the
+exception and re-registering where a necessary context synchronization
+event can be missed. e.g.
+
+CPU A				CPU B
+[ Modifies some code ]		
+				[ enters exception ]
+[ D cache maintenance ]
+[ I cache maintenance ]
+[ IPI ]				// IPI not taken
+  ...				[ register for IPI ] 
+[ IPI completes ] 
+				[ execute stale code here ]
+
+However, I think 'IMB' is far too generic, and we should have an arch
+hook specific to task isolation, as it's far less likely to be abused as
+IMB will.
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
