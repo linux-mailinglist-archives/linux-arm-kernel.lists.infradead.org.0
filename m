@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D16F21B1140
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:17:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4869F1B1158
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:19:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gE8NmbquJ248Tjv6u8PhpPLKgMujte9bhlutGW5CWyA=; b=LAf/Lh+HPUzuzOLn7GGBOPzbB
-	665HQpI3ObS+UzfjrWGI3pcghnOPgYcJCv2fOnHq+VUGRAY7oPjxHUESExZdKRJX6uXZ9WLVmQcTV
-	2m8LPk5KHFECSYhxUAqYH1qttfUNCIVaob4LaNuypKzMmwdE9Ewet1+Yq7W6RNzymNA6dodszoMsP
-	RwWc1A06yc6dE9o+T8sAbr74vu227dlSQVnoiSS49fKkrRDTFF/wptHKgfZ79J51E7DR0hBaQXsOR
-	DjLk9Fv9gikKarqf5PqbjRWxFpIqmdAP1UiAPuLWEc/RDyxn3awZng108FZ6ASr3kUnDx3RzP1HcL
-	oyA/DJUkg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8CJDRh8NvO5jgU3jJUVa5yr41C2BWyJzR5t41A8sSzc=; b=E5mJ0JnqNiQoK3
+	OLODPCXB7hupt2CSWYvMRerynim8LACdwhl2hHm8POZtr7T8IRD/tp+F6eto//TMrFKVD3BTwrLsU
+	1GsB/0C0nJ40FY6hWSj68LMQZk6vvhCjURN+GPktAHUnUgxRi2uCpcZfpCXmZn81iHtzO9ocdj8K0
+	ciGC3dDhBJYH4e2nAMUjq+4dQXFRnHQDvWrWHEySQjK9ZrhlTGDCb6Qq84KT+Di2rZjW3OGm9U3x6
+	kU0sFK8wArNCPuXXVa6rOwNLQadzsjEcWrQLUFsQQHo0ffcYOe2PAoxdWaeMySwLAsqiIEr+XgIFm
+	Z8GmAXCnMevc+SNGllrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQZ6F-0000W8-Pd; Mon, 20 Apr 2020 16:16:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQZ67-0000Ro-BI
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:16:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6440C31B;
- Mon, 20 Apr 2020 09:16:38 -0700 (PDT)
-Received: from [10.57.33.63] (unknown [10.57.33.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C420E3F73D;
- Mon, 20 Apr 2020 09:16:36 -0700 (PDT)
-Subject: Re: [PATCH v2 2/4] iommu: Add Allwinner H6 IOMMU driver
-To: Maxime Ripard <maxime@cerno.tech>, Joerg Roedel <joro@8bytes.org>
-References: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
- <6864f0f28825bb7a2ec1c0d811a4aacdecf5f945.1582222496.git-series.maxime@cerno.tech>
- <20200302153606.GB6540@8bytes.org>
- <20200401114710.doioefzmjhte7jwu@gilmour.lan>
- <20200408140649.GI3103@8bytes.org>
- <20200420143958.rdn3j27tu3umtkrh@gilmour.lan>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <af745738-9e0f-40b6-9a20-19c233a7e52a@arm.com>
-Date: Mon, 20 Apr 2020 17:16:34 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jQZ8W-0000xq-AD; Mon, 20 Apr 2020 16:19:08 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQZ8K-0000wN-NN
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:18:58 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03KGCBKL029130; Mon, 20 Apr 2020 18:18:46 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=GQbTc6KNDxMl8YSg798Cux50zZhwrXkX/dFcXXvNJ6Q=;
+ b=TqeR1ZUjHaQNCqR1KQDULMvtxVFF85RXV2MogrDVDAHrZD/et2D7nz6qTKcwwppMIrw7
+ abk6DWiG+BS0lKq7o0OPec7V2NOfU/VHcwNxTT8P3uv7qQeRMx07cNgFeJ0lKEPZF7kA
+ UZpHJcK0MhKaooEDP3R2uOn2pfDsiA97RxUBKuFJU/Yd4V1uFn56MFqmlhUq7NEfBRAQ
+ /Wdw9iDFC70tBL3wAny8mfmBI/JlXz7ohVCfWTMcyGhEkr3Cu0bNlRdxZ9evLWtkAG+I
+ s77Y6vRMJRum/CJmcokfdHvet2o2P8Xvsaiu4k7D6fRMiGkwanqoziqxjMLXtUzZqLIT Gw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30fregb2ee-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 20 Apr 2020 18:18:46 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 80A9F100034;
+ Mon, 20 Apr 2020 18:18:45 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6C9062AA2A3;
+ Mon, 20 Apr 2020 18:18:45 +0200 (CEST)
+Received: from localhost (10.75.127.50) by SFHDAG6NODE1.st.com (10.75.127.16)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Mon, 20 Apr 2020 18:18:44 +0200
+From: Ludovic Barre <ludovic.barre@st.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH] mmc: mmci_sdmmc: fix power on issue due to pwr_reg
+ initialization
+Date: Mon, 20 Apr 2020 18:18:31 +0200
+Message-ID: <20200420161831.5043-1-ludovic.barre@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20200420143958.rdn3j27tu3umtkrh@gilmour.lan>
-Content-Language: en-GB
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-20_05:2020-04-20,
+ 2020-04-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_091639_432908_AEE5EC64 
-X-CRM114-Status: GOOD (  18.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200420_091857_115298_8104EEBB 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,46 +93,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-20 3:39 pm, Maxime Ripard wrote:
-> Hi,
-> 
-> On Wed, Apr 08, 2020 at 04:06:49PM +0200, Joerg Roedel wrote:
->> On Wed, Apr 01, 2020 at 01:47:10PM +0200, Maxime Ripard wrote:
->>> As far as I understand it, the page table can be accessed concurrently
->>> since the framework doesn't seem to provide any serialization /
->>> locking, shouldn't we have some locks to prevent concurrent access?
->>
->> The dma-iommu code makes sure that there are no concurrent accesses to
->> the same address-range of the page-table, but there can (and will) be
->> concurrent accesses to the same page-table, just for different parts of
->> the address space.
->>
->> Making this lock-less usually involves updating non-leaf page-table
->> entries using atomic compare-exchange instructions.
-> 
-> That makes sense, thanks!
-> 
-> I'm not sure what I should compare with though, do you want to compare with 0 to
-> check if there's already a page table assigned to that DTE? If so, then we
-> should also allocate the possible page table before the fact so that we have
-> something to swap with, and deallocate it if we already had one?
+This patch fix a power-on issue, and avoid to retry the power sequence.
 
-Indeed, for an example see arm_v7s_install_table() and how 
-__arm_v7s_map() calls it. The LPAE version in io-pgtable-arm.c does the 
-same too, but with some extra software-bit handshaking to track the 
-cache maintenance state as an optimisation, which you can probably do 
-without trying to make sense of ;)
+In power off sequence: sdmmc must set pwr_reg in "power-cycle" state
+(value 0x2), to prevent the card from being supplied through the signal
+lines (all the lines are driven low).
 
-Robin.
+In power on sequence: when the power is stable, sdmmc must set pwr_reg
+in "power-off" state (value 0x0) to drive all signal to high before to
+set "power-on".
+
+To avoid writing the same value to the power register several times, this
+register is cached by the pwr_reg variable. At probe pwr_reg is initialized
+to 0 by kzalloc of mmc_alloc_host.
+
+Like pwr_reg value is 0 at probing, the power on sequence fail because
+the "power-off" state is not writes (value 0x0) and the lines
+remain drive to low.
+
+This patch initializes "pwr_reg" variable with power register value.
+This it done in sdmmc variant init to not disturb default mmci behavior.
+
+Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+---
+
+This patch is the proposal from:
+https://patchwork.kernel.org/patch/11457987/
+
+---
+ drivers/mmc/host/mmci_stm32_sdmmc.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
+index d33e62bd6153..14f99d8aa3f0 100644
+--- a/drivers/mmc/host/mmci_stm32_sdmmc.c
++++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
+@@ -519,6 +519,7 @@ void sdmmc_variant_init(struct mmci_host *host)
+ 	struct sdmmc_dlyb *dlyb;
+ 
+ 	host->ops = &sdmmc_variant_ops;
++	host->pwr_reg = readl_relaxed(host->base + MMCIPOWER);
+ 
+ 	base_dlyb = devm_of_iomap(mmc_dev(host->mmc), np, 1, NULL);
+ 	if (IS_ERR(base_dlyb))
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
