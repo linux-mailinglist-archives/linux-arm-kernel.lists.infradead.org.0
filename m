@@ -2,78 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B6391B06F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 13:02:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF4691B06FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 13:03:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JkJZxUcFaVkvApp+AeBGy6wnZGN+LmgOcUSi/da/IUk=; b=E9DunsKC3Rl1MJ
-	g2miRSjY5k74CawibWv42jqSEz3nhJG9m0GQJAOwPQgRx+uOnRCHB5rn54Q3r5aY3iKaHXaxNVsEk
-	q/i0YsCmAp80yz2T58Sz8dTm/6ePC5Hqz0vnHi1ystXGrDyZuUPpvs6bcD+vuofLfHdJ0imsejr8g
-	p17FWACnyCBbpuTSEcTQUqLtBgfYWzsR23+Wsyvubvuqi9DhLL0nTeS4/+C0WHDd0hH3aitAZdfF5
-	kAJSUxjzE22qlo1P46Jzj3ykjFMI0U2HssYHbib6okiqnmvM6Jx4YKYci9EGxRqXpyrg4yvDaI4IY
-	zMm0wdw/v4htzZnIDzSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VeaS0AsVXkO+ZTxxNMcHnh+4n0iEwvoOv0fiboZWDXQ=; b=mkPHWUXDRhYATThE/jPvuV6f8
+	z8PKoLha4wUF8/n97T03SqlG1Lr7zSdpbqUdhk34CkELQ0Mhi6aOFClikMApA+J5FecN7WqEuHLSF
+	1qs9lq34XZEFevTApTRg16eFcAz9XIKCZPf/zi7JIOQTtfln/wYfxKakmAgtPr/Y/x9y15ZUiHhB4
+	pG8Ups5dTXCxVcCqK4qUSIS4sjgq7K3Z01crnUIaKFjV/YXILuSyDUELMSfqzPwB1zwZiZ/H2VnCR
+	CKXTUvrvmR084EQU/eHuQV0uTbnzTMtsFEegF9fWN6OJ3j8DaznNvhHhjFiYDaFK0vczd/hRIIMU1
+	zghy70+kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQUC9-0007oJ-2S; Mon, 20 Apr 2020 11:02:33 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jQUCw-0008Di-NS; Mon, 20 Apr 2020 11:03:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQUBx-0007iJ-Q5; Mon, 20 Apr 2020 11:02:23 +0000
-X-UUID: 33b32213cdfb4cadbb69609a3528dfb4-20200420
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=5ZSYvBnifQattuM6WwNJ4dWYpkcL8v4PWiqKlXsfHC4=; 
- b=Lb/JZR/eWuDKE3nJtNwTqNxoX3q95MJ5c16AIklc5G6MtbkfSHR+P7TbvxOtohT2olVNdApWhGGr1R2J66PWZNB24AUdl2xGyoFtteQg4uReAsTqHWlDEttJ6m3Gb+MRS8hx/5j8PG32hRIqzuEWu9ixxFo5bxVha2r6txYgaoc=;
-X-UUID: 33b32213cdfb4cadbb69609a3528dfb4-20200420
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <hsin-hsiung.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1332806410; Mon, 20 Apr 2020 03:02:10 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 20 Apr 2020 03:52:48 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 20 Apr 2020 18:52:38 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 20 Apr 2020 18:52:37 +0800
-Message-ID: <1587379959.6297.2.camel@mtksdaap41>
-Subject: Re: [PATCH v12 1/6] mfd: mt6397: Modify suspend/resume behavior
-From: Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>
-To: Lee Jones <lee.jones@linaro.org>
-Date: Mon, 20 Apr 2020 18:52:39 +0800
-In-Reply-To: <20200416084910.GX2167633@dell>
-References: <1586333531-21641-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1586333531-21641-2-git-send-email-hsin-hsiung.wang@mediatek.com>
- <20200416084910.GX2167633@dell>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jQUCk-0008Br-A6
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 11:03:11 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 185D62A0C63
+Subject: Re: [RFC v3 1/2] thermal: core: Let thermal zone device's mode be
+ stored in its struct
+To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+References: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
+ <20200417162020.19980-1-andrzej.p@collabora.com>
+ <CGME20200417162037eucas1p11663f116fd9844d38c0b5d4d7ebe9f1c@eucas1p1.samsung.com>
+ <20200417162020.19980-2-andrzej.p@collabora.com>
+ <4b97e46a-e7ef-ee22-227e-d35ebef458b0@samsung.com>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <4cda3e11-7bea-8445-cd51-4b25dcafc741@collabora.com>
+Date: Mon, 20 Apr 2020 13:03:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 665BB53A9B209DF474DE368E25DAC4D6E7703353C21B189088EF792896EB3DFD2000:8
-X-MTK: N
+In-Reply-To: <4b97e46a-e7ef-ee22-227e-d35ebef458b0@samsung.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_040221_851816_5428B220 
-X-CRM114-Status: GOOD (  17.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_040310_475622_F0AC646E 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,127 +64,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Sebastian Reichel <sre@kernel.org>, Richard
- Fontana <rfontana@redhat.com>, linux-rtc@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>,
- Frank Wunderlich <frank-w@public-files.de>, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias
- Brugger <matthias.bgg@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Eddie Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, 2020-04-16 at 09:49 +0100, Lee Jones wrote:
-> On Wed, 08 Apr 2020, Hsin-Hsiung Wang wrote:
-> 
-> > Some pmics don't need backup interrupt settings, so we change to use
-> > pm notifier for the pmics which are necessary to store settings.
-> > 
-> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-> > ---
-> >  drivers/mfd/mt6397-core.c       | 30 ------------------------------
-> >  drivers/mfd/mt6397-irq.c        | 35 ++++++++++++++++++++++++++++++++++-
-> >  include/linux/mfd/mt6397/core.h |  2 ++
-> >  3 files changed, 36 insertions(+), 31 deletions(-)
-> > 
-> > diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-> > index 0437c85..d2e70d8 100644
-> > --- a/drivers/mfd/mt6397-core.c
-> > +++ b/drivers/mfd/mt6397-core.c
-> > @@ -100,35 +100,6 @@ static const struct mfd_cell mt6397_devs[] = {
-> >  	}
-> >  };
-> >  
-> > -#ifdef CONFIG_PM_SLEEP
-> > -static int mt6397_irq_suspend(struct device *dev)
-> > -{
-> > -	struct mt6397_chip *chip = dev_get_drvdata(dev);
-> > -
-> > -	regmap_write(chip->regmap, chip->int_con[0], chip->wake_mask[0]);
-> > -	regmap_write(chip->regmap, chip->int_con[1], chip->wake_mask[1]);
-> > -
-> > -	enable_irq_wake(chip->irq);
-> > -
-> > -	return 0;
-> > -}
-> > -
-> > -static int mt6397_irq_resume(struct device *dev)
-> > -{
-> > -	struct mt6397_chip *chip = dev_get_drvdata(dev);
-> > -
-> > -	regmap_write(chip->regmap, chip->int_con[0], chip->irq_masks_cur[0]);
-> > -	regmap_write(chip->regmap, chip->int_con[1], chip->irq_masks_cur[1]);
-> > -
-> > -	disable_irq_wake(chip->irq);
-> > -
-> > -	return 0;
-> > -}
-> > -#endif
-> > -
-> > -static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_irq_suspend,
-> > -			mt6397_irq_resume);
-> > -
-> >  struct chip_data {
-> >  	u32 cid_addr;
-> >  	u32 cid_shift;
-> > @@ -238,7 +209,6 @@ static struct platform_driver mt6397_driver = {
-> >  	.driver = {
-> >  		.name = "mt6397",
-> >  		.of_match_table = of_match_ptr(mt6397_of_match),
-> > -		.pm = &mt6397_pm_ops,
-> >  	},
-> >  	.id_table = mt6397_id,
-> >  };
-> > diff --git a/drivers/mfd/mt6397-irq.c b/drivers/mfd/mt6397-irq.c
-> > index b2d3ce1..2924919 100644
-> > --- a/drivers/mfd/mt6397-irq.c
-> > +++ b/drivers/mfd/mt6397-irq.c
-> > @@ -9,6 +9,7 @@
-> >  #include <linux/of_irq.h>
-> >  #include <linux/platform_device.h>
-> >  #include <linux/regmap.h>
-> > +#include <linux/suspend.h>
-> >  #include <linux/mfd/mt6323/core.h>
-> >  #include <linux/mfd/mt6323/registers.h>
-> >  #include <linux/mfd/mt6397/core.h>
-> > @@ -81,7 +82,7 @@ static struct irq_chip mt6397_irq_chip = {
-> >  static void mt6397_irq_handle_reg(struct mt6397_chip *mt6397, int reg,
-> >  				  int irqbase)
-> >  {
-> > -	unsigned int status;
-> > +	unsigned int status = 0;
-> 
-> This looks like an unrelated change, no?
-> 
-
-It is to fix the coverity defect.
-
-> >  	int i, irq, ret;
-> >  
-> >  	ret = regmap_read(mt6397->regmap, reg, &status);
-> > @@ -128,6 +129,36 @@ static const struct irq_domain_ops mt6397_irq_domain_ops = {
-> >  	.map = mt6397_irq_domain_map,
-> >  };
-> 
-> Other than that.
-> 
-> For my own reference:
->   Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
-> 
-Thanks for your review. I will add it in the next version.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQmFybG9taWVqLAoKVGhhbmtzIGZvciBsb29raW5nIGludG8gdGhlIHNlcmllcy4KCkBEYW5p
+ZWwgY2FuIHlvdSBzZWUgYmVsb3c/CgpXIGRuaXUgMTkuMDQuMjAyMCBvwqAxMzozOCwgQmFydGxv
+bWllaiBab2xuaWVya2lld2ljeiBwaXN6ZToKPiAKPiBIaSBBbmRyemVqLAo+IAo+IE9uIDQvMTcv
+MjAgNjoyMCBQTSwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+PiBUaGVybWFsIHpvbmUg
+ZGV2aWNlcycgbW9kZSBpcyBzdG9yZWQgaW4gaW5kaXZpZHVhbCBkcml2ZXJzLiBUaGlzIHBhdGNo
+Cj4+IGNoYW5nZXMgaXQgc28gdGhhdCBtb2RlIGlzIHN0b3JlZCBpbiBzdHJ1Y3QgdGhlcm1hbF96
+b25lX2RldmljZSBpbnN0ZWFkLgo+Pgo+PiBBcyBhIHJlc3VsdCBhbGwgZHJpdmVyLXNwZWNpZmlj
+IHZhcmlhYmxlcyBzdG9yaW5nIHRoZSBtb2RlIGFyZSBub3QgbmVlZGVkCj4+IGFuZCBhcmUgcmVt
+b3ZlZC4gQ29uc2VxdWVudGx5LCB0aGUgZ2V0X21vZGUoKSBpbXBsZW1lbnRhdGlvbnMgaGF2ZSBu
+b3RoaW5nCj4+IHRvIG9wZXJhdGUgb24gYW5kIG5lZWQgdG8gYmUgcmVtb3ZlZCwgdG9vLgo+Pgo+
+PiBTb21lIHRoZXJtYWwgZnJhbWV3b3JrIHNwZWNpZmljIGZ1bmN0aW9ucyBhcmUgaW50cm9kdWNl
+ZDoKPj4KPj4gdGhlcm1hbF96b25lX2RldmljZV9nZXRfbW9kZSgpCj4+IHRoZXJtYWxfem9uZV9k
+ZXZpY2Vfc2V0X21vZGUoKQo+PiB0aGVybWFsX3pvbmVfZGV2aWNlX2VuYWJsZSgpCj4+IHRoZXJt
+YWxfem9uZV9kZXZpY2VfZGlzYWJsZSgpCj4+Cj4+IHRoZXJtYWxfem9uZV9kZXZpY2VfZ2V0X21v
+ZGUoKSBhbmQgaXRzICJzZXQiIGNvdW50ZXJwYXJ0IHRha2UgdHpkJ3MgbG9jawo+PiBhbmQgdGhl
+ICJzZXQiIGNhbGxzIGRyaXZlcidzIHNldF9tb2RlKCkgaWYgcHJvdmlkZWQsIHNvIHRoZSBsYXR0
+ZXIgbXVzdAo+PiBub3QgdGFrZSB0aGlzIGxvY2sgYWdhaW4uIEF0IHRoZSBlbmQgb2YgdGhlICJz
+ZXQiCj4+IHRoZXJtYWxfem9uZV9kZXZpY2VfdXBkYXRlKCkgaXMgY2FsbGVkIHNvIGRyaXZlcnMg
+ZG9uJ3QgbmVlZCB0byByZXBlYXQgdGhpcwo+PiBpbnZvY2F0aW9uIGluIHRoZWlyIHNwZWNpZmlj
+IHNldF9tb2RlKCkgaW1wbGVtZW50YXRpb25zLgo+Pgo+PiBUaGUgc2NvcGUgb2YgdGhlIGFib3Zl
+IDQgZnVuY3Rpb25zIGlzIHB1cnBvc2VkbHkgbGltaXRlZCB0byB0aGUgdGhlcm1hbAo+PiBmcmFt
+ZXdvcmsgYW5kIGRyaXZlcnMgYXJlIG5vdCBzdXBwb3NlZCB0byBjYWxsIHRoZW0uIFRoaXMgZW5j
+YXBzdWxhdGlvbgo+IAo+IFRoaXMgc2hvdWxkIGJlIHRydWUgb25seSBmb3IgdGhlcm1hbF96b25l
+X2RldmljZV97Z2V0LHNldH1fbW9kZSgpLgo+IAo+IHRoZXJtYWxfem9uZV9kZXZpY2Vfe2VuLGRp
+c31hYmxlKCkgc2hvdWxkIGJlIGF2YWlsYWJsZSBmb3IgZGV2aWNlIGRyaXZlcnM6Cj4gCj4gKiBv
+Zi90aGVybWFsIGRldmljZSBkcml2ZXJzIG5lZWQgdG8gZW5hYmxlIHRoZXJtYWwgZGV2aWNlIGl0
+c2VsZgo+ICAgIChwbGVhc2UgcmVmZXIgdG8gbXkgcGF0Y2hzZXQgZm9yIGRldGFpbHMpCj4gCj4g
+KiBkZXZpY2UgZHJpdmVycyBuZWVkIHRvIGNhbGwgdGhlbSBvbiAtPnN1c3BlbmQgYW5kIC0+cmVz
+dW1lIG9wZXJhdGlvbnMKPiAKCkBEYW5pZWw6CgpIb3cgZG9lcyB0aGlzIGNvbXBhcmUgdG8KCiJK
+dXN0OgoKdGhlcm1hbF96b25lX2RldmljZV9nZXRfbW9kZSgpCnRoZXJtYWxfem9uZV9kZXZpY2Vf
+c2V0X21vZGUoKQp0aGVybWFsX3pvbmVfZGV2aWNlX2Rpc2FibGUoKQp0aGVybWFsX3pvbmVfZGV2
+aWNlX2VuYWJsZSgpCgpBbmQgYWxsIG9mIHRoZW0gaW4gZHJpdmVycy90aGVybWFsL3RoZXJtYWxf
+Y29yZS5oIi4gRGlkIEkgdW5kZXJzdGFuZAp5b3UgY29ycmVjdGx5PwoKQW5kcnplagoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
