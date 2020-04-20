@@ -2,69 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 140B21B0961
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:33:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 687DA1B0972
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gR0hiuLo9gXAtUFpSRpfFEHLNYe5poC1AjgRwiwJGYE=; b=IpBjf4qsOzv1CM
-	tlnZKZ6sNQXtoWK9WWtmVShrtClk6dAHtthfyClE2WCc0+enGPHcFAD3HOgrAPH9wmKj1zlotWH/B
-	OThIamHqQD+486nfwiIcrkFIYH1hvOVoZzP7MUq3ZnzDi79ZXMPbPdF+MnjqGIU4bZ+PU0QWQvmzK
-	jkDF6V6osLNEzCuR/e0M9U5+1t9V+B7rPe8/d7zGbqvSwJnWedymC3w9Z7wXRrkKcuKKrujfHx38J
-	xidJBVJhb4gkZW4vvvwZ80omx0Tbq6/AEI6WhfazvQe/w6xdmGXf18+DDYp0h+CzmWhuH48tY49Qw
-	J0NVyNm8i1O9bHtHdVgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YjjgOnc+XUCwZlnq8uIr78xk1BN358/ziJeIO2rNW3M=; b=f9coxZoRYPRwvoCZfj38BlA3l
+	NSIn9D/1A0H2ZlWqhAMgzszbhTk5aQ93AvTcMQNXi/0B2JscS0r5y1OKgmbIA1V7l99OeskKdoi5e
+	wzqDzlG8L3XKlUe8dsOu/DyR1hH046IpCI9aWubjtaPctTjIGqSJdV95N9JQdSiEV+8j1QIg9DAni
+	r77zxUaOeMjwmXOjXoXndXzcDzqE+b4j2nOhSCUbp2he91a4RQb28hKujFPyV+1XJCFvqWJe2BC4v
+	nsFg8HxbEmu3xUtub1pBPhxI+zxTs+A0dd+FL3Ue9lVQbzZT4iMu6zcgF4VRtojmQbo4tNj/jD9OE
+	IUEosLU/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQVcN-0000wU-P9; Mon, 20 Apr 2020 12:33:43 +0000
-Received: from plaes.org ([188.166.43.21])
+	id 1jQVe6-0002r1-JR; Mon, 20 Apr 2020 12:35:30 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQVcC-0000ss-KQ
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 12:33:34 +0000
-Received: from plaes.org (localhost [127.0.0.1])
- by plaes.org (Postfix) with ESMTPSA id CCE9A40A95;
- Mon, 20 Apr 2020 12:32:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=plaes.org; s=mail;
- t=1587385978; bh=dD6UJxueO7iBXUJ0MYPcRp2vcNvPimi5NJR2GD1gM1U=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=pHC4uN65eK9FrZlif52Y7dJqnVpm/59WYaZQDMSv2CworsbmtUgWCLLJw63uW7CCa
- NRaKKkAAT30qxnEYe2S44AL0KbginlGKs6+yg/JSgw3RUUmSb6n30S7J9AHpYYP/JW
- XSfFlEORgxc42MBi9xx1ud5zA1c1FwBCIkh/PLXG62ZIN8UYfuF08m9yJ47cD/iVCm
- SjoYpBF/EY3FeRvMYE7AjvKCcG0vjoIFLfeXBlhuU30eo9IM5obdRQXXOmzBOfAL/j
- QEKlBuWLji8Vj3e6k7jWE0QNmAIhrvYllmH/RV9plJhx3kThbDA4ckR10tHEfDM4hf
- tZ+IfhX2kx/iQ==
-Date: Mon, 20 Apr 2020 12:32:57 +0000
-From: Priit Laes <plaes@plaes.org>
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-sunxi@googlegroups.com
-Subject: Re: [PATCH 0/4] ARM: sun7i: Convert A20 GMAC driver to CCU
-Message-ID: <20200420123257.GA18522@plaes.org>
-References: <20200417221730.555954-1-plaes@plaes.org>
+ id 1jQVdf-0001kc-MX; Mon, 20 Apr 2020 12:35:05 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 42114F8280CD990CF8CC;
+ Mon, 20 Apr 2020 20:35:01 +0800 (CST)
+Received: from [127.0.0.1] (10.166.213.7) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.487.0; Mon, 20 Apr 2020
+ 20:34:59 +0800
+Subject: Re: [PATCH] staging: mt7621-pinctrl: Use correct pointer type
+ argument for sizeof
+To: Dan Carpenter <dan.carpenter@oracle.com>
+References: <20200420123755.4353-1-yanaijie@huawei.com>
+ <20200420121900.GD2659@kadam>
+From: Jason Yan <yanaijie@huawei.com>
+Message-ID: <c6b155a6-28ae-e0f9-b866-4d17e8a45706@huawei.com>
+Date: Mon, 20 Apr 2020 20:34:59 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200417221730.555954-1-plaes@plaes.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200420121900.GD2659@kadam>
+X-Originating-IP: [10.166.213.7]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_053332_892141_C5A0646A 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_053503_940758_14D4BDB2 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,52 +65,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ nishkadg.linux@gmail.com, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="gbk"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 18, 2020 at 01:17:26AM +0300, Priit Laes wrote:
-> This serie converts Allwinner A20 (sun7i) GMAC driver to CCU
-> while still retaining compatibility with existing devicetrees.
-> 
-> First two patches contain preliminary work which convert
-> sun4i/sun7i clock drivers to platform devices and creates regmap
-> to access gmac register from the sun7i gmac driver.
-> 
-> Third patch implements syscon-based regmap to allow driver manage
-> its own clock source.
-> 
-> Fourth patch updates the devicetree and drops the unused clocks.
-> 
-> While testing the driver I noticed following bugs with the existing
-> sun7i gmac driver:
-> - driver relies on u-boot for initialization (fixed in this
->   implementation)
-
-Scratch that.. this is actually due to unhandled rx and tx delays,
-which I "accidentally" fixed by copying the value BIT(12) from the
-u-boot..
-
-> - `systemctl restart networking` fails to bring the link up again.
-> 
-> 
-> Priit Laes (4):
->   clk: sunxi-ng: a10/a20: rewrite init code to a platform driver
->   clk: sunxi-ng: a20: export a regmap to access the GMAC register
->   net: stmmac: dwmac-sunxi: Implement syscon-based clock handling
->   ARM: dts: sun7i: Use syscon-based implementation for gmac
-> 
->  arch/arm/boot/dts/sun7i-a20.dtsi              |  36 +----
->  drivers/clk/sunxi-ng/ccu-sun4i-a10.c          | 108 ++++++++++++---
->  .../net/ethernet/stmicro/stmmac/dwmac-sunxi.c | 124 ++++++++++++++++--
->  3 files changed, 206 insertions(+), 62 deletions(-)
-> 
-> -- 
-> 2.25.2
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgrU2iAyMDIwLzQvMjAgMjA6MTksIERhbiBDYXJwZW50ZXIg0LS1wDoKPiBPbiBNb24sIEFwciAy
+MCwgMjAyMCBhdCAwODozNzo1NVBNICswODAwLCBKYXNvbiBZYW4gd3JvdGU6Cj4+IEZpeCB0aGUg
+Zm9sbG93aW5nIGNvY2NpY2hlY2sgd2FybmluZzoKPj4KPj4gZHJpdmVycy9zdGFnaW5nL210NzYy
+MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmM6MjIzOjE0LTM2OiBXQVJOSU5HOiBVc2UKPj4gY29y
+cmVjdCBwb2ludGVyIHR5cGUgYXJndW1lbnQgZm9yIHNpemVvZgo+Pgo+PiBTaWduZWQtb2ZmLWJ5
+OiBKYXNvbiBZYW4gPHlhbmFpamllQGh1YXdlaS5jb20+Cj4+IC0tLQo+PiAgIGRyaXZlcnMvc3Rh
+Z2luZy9tdDc2MjEtcGluY3RybC9waW5jdHJsLXJ0Mjg4MC5jIHwgMiArLQo+PiAgIDEgZmlsZSBj
+aGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9zdGFnaW5nL210NzYyMS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMgYi9kcml2ZXJz
+L3N0YWdpbmcvbXQ3NjIxLXBpbmN0cmwvcGluY3RybC1ydDI4ODAuYwo+PiBpbmRleCBkMGYwNjc5
+MGQzOGYuLjg4ODNmMmE4ZWE1NyAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL210NzYy
+MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMKPj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL210NzYy
+MS1waW5jdHJsL3BpbmN0cmwtcnQyODgwLmMKPj4gQEAgLTIyMCw3ICsyMjAsNyBAQCBzdGF0aWMg
+aW50IHJ0Mjg4MF9waW5tdXhfaW5kZXgoc3RydWN0IHJ0Mjg4MF9wcml2ICpwKQo+PiAgIAkvKiBh
+bGxvY2F0ZSBvdXIgZnVuY3Rpb24gYW5kIGdyb3VwIG1hcHBpbmcgaW5kZXggYnVmZmVycyAqLwo+
+PiAgIAlmID0gcC0+ZnVuYyA9IGRldm1fa2NhbGxvYyhwLT5kZXYsCj4+ICAgCQkJCSAgIHAtPmZ1
+bmNfY291bnQsCj4+IC0JCQkJICAgc2l6ZW9mKHN0cnVjdCBydDI4ODBfcG14X2Z1bmMpLAo+PiAr
+CQkJCSAgIHNpemVvZihzdHJ1Y3QgcnQyODgwX3BteF9mdW5jICopLAo+IAo+IFllcy4gIFRoaXMg
+Zml4ZXMgYSBidWcuICBXZSB3ZXJlIGFsbG9jYXRpbmcgdG9vIG11Y2ggZGF0YS4gIEJ1dCB0aGUK
+PiBwcmVmZXJlZCBzdHlsZSBpczoKPiAKPiAJCQkJc2l6ZW9mKCpwLT5mdW5jKSwKPiAKPiBQbGVh
+c2UgY291bGQgeW91IHJlc2VuZD8KPiAKClN1cmUsIEkgd2lsbCBjb29rIGEgbmV3IG9uZS4KCj4g
+cmVnYXJkcywKPiBkYW4gY2FycGVudGVyCj4gCj4gCj4gLgo+IAoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
