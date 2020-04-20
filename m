@@ -2,101 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8B541B0EB6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:40:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92FD61B0EC5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:43:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0RMa6TioxNf19HT5gIUsxC8aX/KF3c04wjQ+0O63pnk=; b=BcoRBXSQcsbunsqAsOQ3udC/L
-	v0+tw/8QMfpOjDt8FcxSFO8vCiXHws6ZqmlRRPOH7akDDAmKLlaXajhVNsfv7RIoTRGP6dhYyYz/z
-	bCJ9HhSrT3aOPEA3VtgEOCP0TeBo/MG+RTxpJBsSKPYfEXOfaAlmPBYJO1nP9+a6icalKGtMF2g6p
-	rGnCjl8IORWNQQMhwRRAhFxkYW7gioxSMzc8T6AjOF1QPZVLZNCUxJ481Xlf3dSO6KYEFzmpGvcrj
-	xX8+4xfnqxkvURwo82WC5B7CTBxaKiJEqB8Bt+IDU4FaRQWbfOvic1kXU1Bk7Rvu/RGCcV1cYKf9z
-	X/daYfxOg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q5VaUFdOwDHoBHNNigIgfFEKJKkhOTBevMFISL4wHuU=; b=IGAtIej467rtGq
+	ASbePtUFfIeoCrBBYbT/jourR1ffi0ML/mGmTnKGrDFTCcLmy/6nsRsPvypDAy+nquEeaP//qirs9
+	4pSccCz5SrSkvDbo2ASMLHsIhQS56HHv0mBsSxrT5PLmQPy6TvRUKKzgT1zvQVhqaz1PD2mYkW5Hr
+	dW9+ScEoSUESQlddBixuX4FWuE6ul+f78dIsFUsIdpOBqlYYHVONsBpGG0eBVq/8Cp0v2ibqfdQ8U
+	gXTqkbQ3llHSy2bYqwYjKBySvRQhktp+vsS2VD87N22f6WvfkBtv47A10JhoP7Z2QMYjSevSEXfyI
+	yXzxnp33mVz7DAoRtcDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXbL-0006PA-B6; Mon, 20 Apr 2020 14:40:47 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1jQXeL-0007Rl-Hl; Mon, 20 Apr 2020 14:43:53 +0000
+Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXaf-0003hr-Be
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:40:07 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 5ACC05C0126;
- Mon, 20 Apr 2020 10:40:01 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 20 Apr 2020 10:40:01 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=PXh+J0spjajpstfYlJVLBegen5x
- 1vPub81+/OQ14NPk=; b=ufZchA3YEU0q4bx7XGMFYwzGcFkO8xEWRqczsztkArr
- 2R4KhCDcb1JNYLhMzEWZ63VsagHJCtPfO5uykwcIQRmjF228SxRdG4dzR4zKZIm1
- 5UCRpfehIv6fx1J4nPCWAAFWo2UvUL7QI216ogujlDTOgEtDEwrn6BeehD3qFOHS
- 8QxEIFELywYiOBeEdR5TfZH1H9yctlVeYQ5ho2H0kKZODfcEhpUN2+Sg9z0C8y4D
- Gnca1ZDdvYM/eiTJZ9DXaE8TPp8sQlbm28ieKM9q6raQt49zrE7UybaxkF0tY5Le
- H0IOgwMJstAbhzuJ+IFtGaasz8cUt7yoiRqhKUabiOA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=PXh+J0
- spjajpstfYlJVLBegen5x1vPub81+/OQ14NPk=; b=4mBxVLpwXKEj7dteX1kJU9
- 3Y5UhFhWhaWgIhLhglKQP4/9Dz1p8EzZXT1I2NcA+kBk7qMrcgRIOiy5qLFX5LIu
- LPxgs1CqMj7+N10okQKfd9lUh9pmWbVWL8Z6fNV0IMOsp2usM8jRmlkmG9hr9oES
- s0p8sl2CjoUlpH/wNBhwxSSRm+QF+fwMKmAfuecIFjwjSE/a+PV9otFwcbI/MDbA
- LrAq4f00WMolcCYkFl+l3sbumpLuo9oDc+94SQyUZkcvE/DN6oARDENEtwN4rgRR
- e5K6F0Z3YxZTXWH1IKtDmcJH30nf961j+dbvkCDaOBHErZo9Of2cZLp6y1C/foCg
- ==
-X-ME-Sender: <xms:QLSdXjOctWb3R9tY3CVXYn6RD_VPwVFAnu9kynGrVrwuGBfZ-htojg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeefgdejlecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:QLSdXlDqCN_99v6KG6VwbYnyn3C290e6umaoo7BRsBUNWTSdeEwf-g>
- <xmx:QLSdXp_F2WTv8Nkp_tvAREiqEdrFZNPa-kM6GUwzRMWcq1wY6nJCjw>
- <xmx:QLSdXuGy6HLiH4EBVng6Ix-cpFfPe6eOT6QV70LrxVctW0VHllszFA>
- <xmx:QbSdXjDuuIV9lQaFtTUYtQw3soUWX_jrhBMLqSOyTb1TqQi8cGhYQQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 553F03280060;
- Mon, 20 Apr 2020 10:40:00 -0400 (EDT)
-Date: Mon, 20 Apr 2020 16:39:58 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v2 2/4] iommu: Add Allwinner H6 IOMMU driver
-Message-ID: <20200420143958.rdn3j27tu3umtkrh@gilmour.lan>
-References: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
- <6864f0f28825bb7a2ec1c0d811a4aacdecf5f945.1582222496.git-series.maxime@cerno.tech>
- <20200302153606.GB6540@8bytes.org>
- <20200401114710.doioefzmjhte7jwu@gilmour.lan>
- <20200408140649.GI3103@8bytes.org>
+ id 1jQXeC-0007Qp-B7
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:43:45 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e9db4ac0000>; Mon, 20 Apr 2020 07:41:48 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Mon, 20 Apr 2020 07:43:42 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Mon, 20 Apr 2020 07:43:42 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 20 Apr
+ 2020 14:43:42 +0000
+Received: from [10.26.73.5] (172.20.13.39) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 20 Apr
+ 2020 14:43:41 +0000
+Subject: Re: [PATCH 1/2] soc/tegra: pmc: Enable PMIC wake event on Tegra186
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20200417171117.2556374-1-thierry.reding@gmail.com>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <ad9192c3-9835-0fb4-e4c5-9d719ba92d84@nvidia.com>
+Date: Mon, 20 Apr 2020 15:43:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200408140649.GI3103@8bytes.org>
+In-Reply-To: <20200417171117.2556374-1-thierry.reding@gmail.com>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1587393708; bh=GDcM0WjtKn4CMjkOnt2tPavdqktD1Z7rMLK1tu/JR0A=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=mGU/x2zkEg8aeIUk9eMSpFR/iIhKdZtSG+eNzkd4HZ6fAAPEKgWxKqefHZY78+BJQ
+ mu6fLtWI6U1e/r4BxBaFK9jDJYmXtEzKtGxJCejCiUphAlqFiTtf4017GzufMyVBj9
+ xRJ827Yh01KDVsmeeEP8D2RhiiZBZnHTm+d3X5eWqnqg+vGtvfdcDlmDb2OHBIc1vi
+ FdmwLAhZTXRH9sSHgiwigvYXjcx05G16R5YbuwaSNnG/M1gsk5CsZq72I3Gx5IMeaG
+ tYJegRNbGYOyvcYwKJnFjt5T80MZHgo5as54cMfY9VkFOZXfIrTjdYgNUIcC97hnDS
+ 5dRz4ocaSJ9GA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_074005_742261_AC14A5CC 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200420_074344_385536_C4FFD805 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,76 +94,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- iommu@lists.linux-foundation.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9194114926159794010=="
+Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============9194114926159794010==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ru45p6lp7fq34z3p"
-Content-Disposition: inline
+On 17/04/2020 18:11, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
+> 
+> The PMIC wake event can be used to bring the system out of suspend based
+> on certain events happening on the PMIC (such as an RTC alarm).
+> 
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+>  drivers/soc/tegra/pmc.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
+> index 1c533a969f54..72cfda7305d5 100644
+> --- a/drivers/soc/tegra/pmc.c
+> +++ b/drivers/soc/tegra/pmc.c
+> @@ -3193,6 +3193,7 @@ static void tegra186_pmc_setup_irq_polarity(struct tegra_pmc *pmc,
+>  }
+>  
+>  static const struct tegra_wake_event tegra186_wake_events[] = {
+> +	TEGRA_WAKE_IRQ("pmu", 24, 209),
+>  	TEGRA_WAKE_GPIO("power", 29, 1, TEGRA186_AON_GPIO(FF, 0)),
+>  	TEGRA_WAKE_IRQ("rtc", 73, 10),
+>  };
+> 
 
+Acked-by: Jon Hunter <jonathanh@nvidia.com>
+Tested-by: Jon Hunter <jonathanh@nvidia.com>
 
---ru45p6lp7fq34z3p
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Cheers
+Jon
 
-Hi,
-
-On Wed, Apr 08, 2020 at 04:06:49PM +0200, Joerg Roedel wrote:
-> On Wed, Apr 01, 2020 at 01:47:10PM +0200, Maxime Ripard wrote:
-> > As far as I understand it, the page table can be accessed concurrently
-> > since the framework doesn't seem to provide any serialization /
-> > locking, shouldn't we have some locks to prevent concurrent access?
->=20
-> The dma-iommu code makes sure that there are no concurrent accesses to
-> the same address-range of the page-table, but there can (and will) be
-> concurrent accesses to the same page-table, just for different parts of
-> the address space.
->=20
-> Making this lock-less usually involves updating non-leaf page-table
-> entries using atomic compare-exchange instructions.
-
-That makes sense, thanks!
-
-I'm not sure what I should compare with though, do you want to compare with=
- 0 to
-check if there's already a page table assigned to that DTE? If so, then we
-should also allocate the possible page table before the fact so that we have
-something to swap with, and deallocate it if we already had one?
-
-Maxime
-
---ru45p6lp7fq34z3p
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp20PgAKCRDj7w1vZxhR
-xdskAQD8uW/heD6sz1jtgnc/STqZgTUkb5RbyrBeNlR9JoXflQD8Dyylg9C7Aacl
-NQgNnyYDy8bej8v1c5S34GeYWpSv6ws=
-=ieXK
------END PGP SIGNATURE-----
-
---ru45p6lp7fq34z3p--
-
-
---===============9194114926159794010==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+nvpublic
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9194114926159794010==--
-
