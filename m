@@ -2,119 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E218E1B03CF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 10:05:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E5A71B0397
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 10:00:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eWotZRfEF8RQAx9V/k76XHM1d8n8exP2Y3b/9ftoXKI=; b=GAsG9gkWpRNIAS
-	Xi0EH8wzeF74hhejcyXvMPr+wD9hBH0sbddsnGPWjLH5RL/vyhnVf9jzwTSEBSkFp9vZfc4V4ECT1
-	ZiFFFVudX6UtNeZ3ckPKbXYDIDWvPIr5xTjlLTlmTDKtBryoqsZB5SuxPO+ya93weTcW3lYSVPPr6
-	b7AoyaGV4HV3EDuAo+/JZ4eeX6jc+Zy0WJhMXRSFvdh8OlM1b/YbhmFGz9AOIPwVBO9oMVHFAyQFQ
-	4EFaGUeCKiQtnMJ7liCm0BfnqsGPwzjb7SsPCEIVJeojcm6rDhVtDv84aer/HpqwSBSkyhFKCSWxT
-	xm6MBpEXSr8YsGdM99BA==;
+	List-Owner; bh=BETsqORXZLBlRe/4/I3J7QNF1LJZVkY6crzQI7IlvV8=; b=kTFleqTfPapTNb
+	JSyPdEIbLxlJBYRIcZsRwMvhP2IRCFggeVk9uJLma4350NNuq5aU4//J+Q7YcY+2egY9JihK33bxm
+	iqLEkwVhqTG0/bbwYqTl5TD6B+3B5EQrIlsyaOruvJqEX0tnRwzMMhilmD4cO811AJ1UUc3+Vye/l
+	rqhP59aDrH/C4uLAVBWwx9Qsdot0rLkfJMhgq9UaqS+HLZ1rHNKBDcbe2xHabZfQnRmTsnH20ml1k
+	hi/GbTRPPlQn+29OpnlDOH+oPCyuL8KMV2bzbN24wGKgEeIvNSMr6G6WpE0cHvl7cVbdhmuBjIsbj
+	POlb7priyIxASBdtC6fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQRPr-000116-G0; Mon, 20 Apr 2020 08:04:31 +0000
-Received: from mail-vi1eur05on2084.outbound.protection.outlook.com
- ([40.107.21.84] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jQRLq-0007uI-Gv; Mon, 20 Apr 2020 08:00:22 +0000
+Received: from mail-oo1-f67.google.com ([209.85.161.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQRPM-0000bx-NP
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 08:04:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jq+Rs7gHWNGWMVh8pUA/TkbMm0hQEl8Zy6S45XOYoKCOWQFAvl88UGi2kjLHzEoJee6WHB/U9PilkB+QYJ4WGEBG9/REpOuBrlL+EXtpid9NQqhszu/MxI9BPy0ZajA1tB4mscClZAYefj9GhnmBd70tQy3uR4rPT+Kac5BlvUd34zvcP/hBzmNxaOstRxgcfCpNx+9G6ISsrtoi6e+KqWg3yjHjUvjp60VoYBI4kzSJetCbhMOpJaMxlzE4lVL3NJBbwr6NOJLeUZ88mnTW4TNyyZ4+Pc8gX9Zo50rBw9aunndsRiviRFqqPvpePCFrCmh6guIV26e69vMbUcBlkQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=K153R9bE61aSHkhMp7YFarvDCOF93LtDU0X2NK3WEtQ=;
- b=N6qNRPd3TKu0Lw76v1jOEI7wy9//zkiSGJpuaY2r96UtCWJfxO79l0fn0mTvHYPhE4ANEzNweF2k2w2DMxLmOrsJeZb2ZwO03ZtGG+hT8FKZLI5A/Pcg2Vibn2JV2fWKXHaOyJKENdNrvnxs8yZWG8HbGsG78EKmnMGmdnGCDD2okeyDomk44sxR+suJhUE3wjsJR3k0Fmg1XH+l3Q64EkoYQDRgL8W+JDvroWRu2s7qdqjO4v26+3md3CLCXKO89nZSTBkSmuN0T8kW/t+F5wy2OZThfeXoxZKwnTbUWHXEymrQdZnKP4oBR3LmhIVc52VNYhzy0gRfVWRmBv6BWw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=K153R9bE61aSHkhMp7YFarvDCOF93LtDU0X2NK3WEtQ=;
- b=gFEVKjEYIW+kFgGOKPfJ305+rKFHD8CXHkd5fCk7caKucLPFqoE/15/dSZrj0nyyuNBDufBIhgp+EEbadoHho/5A+i/NAdN0nwPj3OiWu3ybxOsSJLTydl3J2pGdqfyELMtONUgNjesE1eIHTixYNCADN8O8djDOAh+bjcwlwyQ=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
- by DB6PR0402MB2709.eurprd04.prod.outlook.com (2603:10a6:4:97::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Mon, 20 Apr
- 2020 08:03:58 +0000
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
- 08:03:58 +0000
-From: peng.fan@nxp.com
-To: viresh.kumar@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- rjw@rjwysocki.net
-Subject: [PATCH 2/2] cpufreq: imx-cpufreq-dt: support i.MX7ULP
-Date: Mon, 20 Apr 2020 15:55:14 +0800
-Message-Id: <1587369314-23452-3-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1587369314-23452-1-git-send-email-peng.fan@nxp.com>
-References: <1587369314-23452-1-git-send-email-peng.fan@nxp.com>
-X-ClientProxiedBy: SG2PR0601CA0010.apcprd06.prod.outlook.com (2603:1096:3::20)
- To DB6PR0402MB2760.eurprd04.prod.outlook.com
- (2603:10a6:4:a1::14)
+ id 1jQRLh-0007tf-Nv
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 08:00:15 +0000
+Received: by mail-oo1-f67.google.com with SMTP id q204so1934322ooq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 01:00:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=L9g4AhkR3JwqVlvWzeZ5xr0LO3a2RpWbbv6vUZyv4P8=;
+ b=gccYG3NWKKVJKpLPW4dpvm4IpW1evHYRxSYxk1MXGY4XoevJsFSu6r/6BuFQshcDTF
+ 9ffWesU7bcfhVHoBquQefcH+IeAlcFNI81ZH9cX2xGx9Ek2RdEQOwDylBAieatlcDzN+
+ EMvloJfTBbmtuhZy66OgZu3/cnFHPIPrTg08PiEdc+5GqEpIS/eJ1ECxSJKTVNr+Pyls
+ sMA+wC5qNdp+GaB5xfY9ik2asXun2zOp7bvEadrls76gwvsVtzmEaEBWDFz2T3gsCx0p
+ O8IaM537JY/Hz49W5TEgvHKgjAJoQraAeWHzJ+yS0zKOf0EPDMJT1XHAPcaPrgjXVgCk
+ Fcew==
+X-Gm-Message-State: AGi0PuYuukhyzBkALuY3pXTx8ZLLKovOVraJXY3SZnqJqPZN/x6RhMRV
+ /NBJdjViHCKB04io13FbB59mBJkLequGRQYG35c=
+X-Google-Smtp-Source: APiQypJ7ZmuO7XxEHm2YprX8BbvP5Mh+b0yixyzgiEjnieh/jH/MF3PTui1Uv25flfuAKmypj7f5vO+ha+5Lon7wJ3g=
+X-Received: by 2002:a4a:e8db:: with SMTP id h27mr3930938ooe.40.1587369612407; 
+ Mon, 20 Apr 2020 01:00:12 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.67) by
- SG2PR0601CA0010.apcprd06.prod.outlook.com (2603:1096:3::20) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2921.25 via Frontend Transport; Mon, 20 Apr 2020 08:03:55 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.67]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: aa764f64-e488-4bec-15fb-08d7e501612e
-X-MS-TrafficTypeDiagnostic: DB6PR0402MB2709:|DB6PR0402MB2709:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0402MB27092C142D0F6804F623E42888D40@DB6PR0402MB2709.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:826;
-X-Forefront-PRVS: 03793408BA
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(39860400002)(366004)(376002)(136003)(346002)(396003)(956004)(2616005)(36756003)(316002)(186003)(86362001)(16526019)(81156014)(8676002)(8936002)(6506007)(26005)(69590400007)(52116002)(6512007)(478600001)(6486002)(5660300002)(66476007)(4326008)(66946007)(66556008)(2906002)(9686003)(6666004);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: L4IzXwoEZngwua3yxcRj5WVuXjFPOPeDvX8TTeNNI81tQTnuw8Md1Oi1ybVt0TlbI2cnSEWWU0hBZ98v9ZtgsqDlXp8aK9bSomiWaoXx7pniuGgj/SJAr4C2mP+4vNz/EFW5W+JP5F2LDdIB03MC7iQeTnwn8YVYgFSh2SscEiJb2REVPQ6WC1zQASto1pQ6otK/4ni3JZXYw091xExDKGuWykL6SpK6wRsFqWOryoBMrt/DZ3Ozf1ZMRtl954kFhgIPe850YImeZHQ1GAesQ/hWC6lqYJ1hGFddpvY/VXgxidNryk4R+D077irBauNDAjJSoI+D+cS3yL+nPxzrXL9hkr1fmolI7jxMgvM5us4ZkH6i29titwUmdEZHjte3UV2TmqPOBV3vmAZY0tvwDvgpQcs+ZprqWz/+z5vn22HlHYVyUENWWWAGV7LJNYIQv4TWWiHQDTlgHmj8Ui1KUL4VeR9tar5jEgcam3Reycy6LyOgWVm0zL9j+as3ytid
-X-MS-Exchange-AntiSpam-MessageData: c/wD1wQ3U5R6suQfIoQ+fF195FPzwQQ19UXvlxOMT8VdFoSOBbASD1BEh2eAZmDmHi6NA+p0q2yNdRbPtPNvt26nVwbHOlYhix36D7xCTQWlJA/9F9Q+rMFbOTy4zAIDx/KJy7XzLVNEJ78eqCwHzA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aa764f64-e488-4bec-15fb-08d7e501612e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Apr 2020 08:03:58.6761 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: PvdxxxvFQdl6dgUivwrrOZiVKURUOE4uqpYZw8DwJWUzwg3uXfdQqG4qOGPMTEFTVZLZl+zOh0XBbBNNO/QgzQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2709
+References: <20200415124923.2510-1-geert+renesas@glider.be>
+In-Reply-To: <20200415124923.2510-1-geert+renesas@glider.be>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 20 Apr 2020 10:00:00 +0200
+Message-ID: <CAMuHMdXLu2C1qM7kkhc20jhKF3RZaj2YA9mh4H4jRRjp6vWe=A@mail.gmail.com>
+Subject: Re: [PATCH] ARM: shmobile: defconfig: Refresh for v5.7-rc1
+To: Magnus Damm <magnus.damm@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_010400_801292_89465CD3 
-X-CRM114-Status: GOOD (  14.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_010013_779197_A36ECFEF 
+X-CRM114-Status: GOOD (  14.61  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.84 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.161.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,172 +82,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Anson.Huang@nxp.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+On Wed, Apr 15, 2020 at 2:49 PM Geert Uytterhoeven
+<geert+renesas@glider.be> wrote:
+> Update the defconfig for Renesas ARM boards:
+>   - Enable CONFIG_DRM_DISPLAY_CONNECTOR (for HDMI, VGA, and composite
+>     display connectors on various R-Car H1, Gen2, and RZ/G1 boards,
+>     since commit 0c275c30176b2e78 ("drm/bridge: Add bridge driver for
+>     display connectors")),
+>   - Disable CONFIG_VIRTIO_MENU and CONFIG_VHOST_MENU (should not default
+>     to yes).
+>
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+> To be queued in renesas-devel for v5.8.
 
-i.MX7ULP's ARM core clock design is totally different compared
-with i.MX7D/8M SoCs which supported by imx-cpufreq-dt. It needs
-get_intermediate and target_intermedate to configure clk MUX ready,
-before let OPP configure ARM core clk.
-                                          |---FIRC
-     |------RUN---...---SCS(MUX2) --------|
-ARM --(MUX1)                              |---SPLL_PFD0(CLK_SET_RATE_GATE)
-     |------HSRUN--...--HSRUN_SCS(MUX3)---|
-                                          |---SRIC
+> --- a/arch/arm/configs/shmobile_defconfig
+> +++ b/arch/arm/configs/shmobile_defconfig
 
-FIRC is step clk, SPLL_PFD0 is the normal clk driving ARM core.
-MUX2 and MUX3 share same inputs. So if MUX2/MUX3 both sources from
-SPLL_PFD0, both MUXes will lose input when configure SPLL_PFD0.
-So the target_intermediate will configure MUX2/MUX3 to FIRC, to avoid
-ARM core lose clk when configure SPLL_PFD0.
+> @@ -170,6 +171,8 @@ CONFIG_RTC_DRV_DA9063=y
+>  CONFIG_DMADEVICES=y
+>  CONFIG_RCAR_DMAC=y
+>  CONFIG_RENESAS_USB_DMAC=y
+> +# CONFIG_VIRTIO_MENU is not set
+> +# CONFIG_VHOST_MENU is not set
+>  CONFIG_STAGING=y
+>  CONFIG_STAGING_BOARD=y
+>  # CONFIG_IOMMU_SUPPORT is not set
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/cpufreq/imx-cpufreq-dt.c | 84 +++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 82 insertions(+), 2 deletions(-)
+I'm dropping this hunk, as it does not affect code generation.
 
-diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-index de206d2745fe..b019b05940e8 100644
---- a/drivers/cpufreq/imx-cpufreq-dt.c
-+++ b/drivers/cpufreq/imx-cpufreq-dt.c
-@@ -3,7 +3,9 @@
-  * Copyright 2019 NXP
-  */
- 
-+#include <linux/clk.h>
- #include <linux/cpu.h>
-+#include <linux/cpufreq.h>
- #include <linux/err.h>
- #include <linux/init.h>
- #include <linux/kernel.h>
-@@ -12,8 +14,11 @@
- #include <linux/of.h>
- #include <linux/platform_device.h>
- #include <linux/pm_opp.h>
-+#include <linux/regulator/consumer.h>
- #include <linux/slab.h>
- 
-+#include "cpufreq-dt.h"
-+
- #define OCOTP_CFG3_SPEED_GRADE_SHIFT	8
- #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
- #define IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK	(0xf << 8)
-@@ -22,13 +27,62 @@
- #define IMX8MP_OCOTP_CFG3_MKT_SEGMENT_SHIFT    5
- #define IMX8MP_OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 5)
- 
-+#define IMX7ULP_MAX_RUN_FREQ	528000
-+
- /* cpufreq-dt device registered by imx-cpufreq-dt */
- static struct platform_device *cpufreq_dt_pdev;
- static struct opp_table *cpufreq_opp_table;
-+static struct device *cpu_dev;
-+
-+enum IMX7ULP_CPUFREQ_CLKS {
-+	ARM,
-+	CORE,
-+	SCS_SEL,
-+	HSRUN_CORE,
-+	HSRUN_SCS_SEL,
-+	FIRC,
-+};
-+
-+static struct clk_bulk_data imx7ulp_clks[] = {
-+	{ .id = "arm" },
-+	{ .id = "core" },
-+	{ .id = "scs_sel" },
-+	{ .id = "hsrun_core" },
-+	{ .id = "hsrun_scs_sel" },
-+	{ .id = "firc" },
-+};
-+
-+static unsigned int imx7ulp_get_intermediate(struct cpufreq_policy *policy,
-+					     unsigned int index)
-+{
-+	return clk_get_rate(imx7ulp_clks[FIRC].clk);
-+}
-+
-+static int imx7ulp_target_intermediate(struct cpufreq_policy *policy,
-+					unsigned int index)
-+{
-+	unsigned int newfreq = policy->freq_table[index].frequency;
-+
-+	clk_set_parent(imx7ulp_clks[SCS_SEL].clk, imx7ulp_clks[FIRC].clk);
-+	clk_set_parent(imx7ulp_clks[HSRUN_SCS_SEL].clk, imx7ulp_clks[FIRC].clk);
-+
-+	if (newfreq > IMX7ULP_MAX_RUN_FREQ)
-+		clk_set_parent(imx7ulp_clks[ARM].clk,
-+			       imx7ulp_clks[HSRUN_CORE].clk);
-+	else
-+		clk_set_parent(imx7ulp_clks[ARM].clk, imx7ulp_clks[CORE].clk);
-+
-+	return 0;
-+}
-+
-+static struct cpufreq_dt_platform_data imx7ulp_data = {
-+	.target_intermediate = imx7ulp_target_intermediate,
-+	.get_intermediate = imx7ulp_get_intermediate,
-+};
- 
- static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- {
--	struct device *cpu_dev = get_cpu_device(0);
-+	struct platform_device *dt_pdev;
- 	u32 cell_value, supported_hw[2];
- 	int speed_grade, mkt_segment;
- 	int ret;
-@@ -36,6 +90,29 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- 	if (!of_find_property(cpu_dev->of_node, "cpu-supply", NULL))
- 		return -ENODEV;
- 
-+	cpu_dev = get_cpu_device(0);
-+
-+	if (of_machine_is_compatible("fsl,imx7ulp")) {
-+		ret = clk_bulk_get(cpu_dev, ARRAY_SIZE(imx7ulp_clks),
-+				   imx7ulp_clks);
-+		if (ret)
-+			return ret;
-+
-+		dt_pdev = platform_device_register_data(NULL, "cpufreq-dt",
-+							-1, &imx7ulp_data,
-+							sizeof(imx7ulp_data));
-+		if (IS_ERR(dt_pdev)) {
-+			clk_bulk_put(ARRAY_SIZE(imx7ulp_clks), imx7ulp_clks);
-+			ret = PTR_ERR(dt_pdev);
-+			dev_err(&pdev->dev, "Failed to register cpufreq-dt: %d\n", ret);
-+			return ret;
-+		}
-+
-+		cpufreq_dt_pdev = dt_pdev;
-+
-+		return 0;
-+	}
-+
- 	ret = nvmem_cell_read_u32(cpu_dev, "speed_grade", &cell_value);
- 	if (ret)
- 		return ret;
-@@ -98,7 +175,10 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- static int imx_cpufreq_dt_remove(struct platform_device *pdev)
- {
- 	platform_device_unregister(cpufreq_dt_pdev);
--	dev_pm_opp_put_supported_hw(cpufreq_opp_table);
-+	if (!of_machine_is_compatible("fsl,imx7ulp"))
-+		dev_pm_opp_put_supported_hw(cpufreq_opp_table);
-+	else
-+		clk_bulk_put(ARRAY_SIZE(imx7ulp_clks), imx7ulp_clks);
- 
- 	return 0;
- }
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.16.4
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
