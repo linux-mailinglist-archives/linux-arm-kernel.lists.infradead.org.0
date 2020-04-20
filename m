@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C49501B102A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:30:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CC6E1B1034
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8/O95uL/O2mVRGDb74Sm/A0sNCajqcbFjZyl5gSvY0E=; b=qQ8J2BaO80EwCo
-	ZMFb3XNOUGluWR/g7aq4G+NSPPd0aKfxnpBolBq27aXPD9yiWYR7Hxd18YTHGFF/MPZ8KJKeuxTHH
-	ZpLJdAhcNsKIGLYiBRsoYxdLazDX9K6XrYjJs8FYsnVzjln2Fknx66fhktE23NU/VFnZdVhEmt94K
-	d/YJgK5ebW+8YutSjDs6rKkbP3aVW6QOe/8OpgMjOGXkE65A/hASIYXXZyxFL3RCRERNGd6u2x8g9
-	hbYJoKE8sg26ti3b9ogwLKTOC2Clk2JM8VdwnPx55hlz75YHm7Sajxo6R7U7JpYYM2NLDqS+HBZQt
-	jha3wbpyzTx7tFmO1B/w==;
+	List-Owner; bh=0qSqnNswAFajzbFp2QrbA+JvlaTcYCBvwD08kv/J5xk=; b=FY6jAp+nu6zii5
+	PrrXZWPuypheTJhKLKEtZH+9FY7fgnd7uwY0maSd95290LmHW9SQ1mb9UsCMjPGfPLizBjxqJf05A
+	C6c4tq93kIHSRpuiBSsQkYp48qDxH+FtsMRSMPxqag3oRsO9UnBhL6GsLo+e/0j0aiEXx+HVaQ8JU
+	af8zb9L8l6Ej9PyYJDSOdaQOGbpsuwt544O7wXcUQX4rtCgqQCpCBiSDWUiviAH69g+JH6Yp08K7t
+	F6z0X38CGZxAMNU704FgnYAZtSm6OEQdBT+uTDxezlbidCklWBmxTghpAWMUYnnz24yEFwQUr9KNr
+	SVN1rh63U9BHTbsGiV3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQYNe-00085a-MN; Mon, 20 Apr 2020 15:30:42 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1jQYPB-0000Jo-FC; Mon, 20 Apr 2020 15:32:17 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQYNT-00083d-Sv
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:30:33 +0000
-Received: from mail-qt1-f180.google.com ([209.85.160.180]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MUokB-1jqdz23vZR-00QlPq for <linux-arm-kernel@lists.infradead.org>; Mon,
- 20 Apr 2020 17:30:30 +0200
-Received: by mail-qt1-f180.google.com with SMTP id l13so8774697qtr.7
+ id 1jQYOx-0000IH-VC
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:32:05 +0000
+Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1Mz9IT-1j4e1p0JdL-00wCWR for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 20 Apr 2020 17:32:02 +0200
+Received: by mail-qk1-f182.google.com with SMTP id l78so11008708qke.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 08:30:29 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaeaAhYxLtGaYbpycwZ53A6PA0nt1T8JU1kKwhrH0AM+IELOmK2
- aJ5ScdWfN4jwM6mxDh149vy8wetf0tqUMtH3adM=
-X-Google-Smtp-Source: APiQypLhLzIsRYWGfF98DBq4uKZzSzPJN8MMOTvy5MVhjl3hGP85aC/0o1FORjrYoWyWldZp7YYnG/7IW5g/n71Fn60=
-X-Received: by 2002:ac8:12c2:: with SMTP id b2mr16681150qtj.7.1587396628774;
- Mon, 20 Apr 2020 08:30:28 -0700 (PDT)
+ Mon, 20 Apr 2020 08:32:01 -0700 (PDT)
+X-Gm-Message-State: AGi0PubFkWWvTPwGqcOiGK3wfStybNQsC2eSkp0JBBJBVe9Uvk041+LL
+ Dvet1u/Xp6MhA9YU0uyIhmF0+B62+xbRYuP49R0=
+X-Google-Smtp-Source: APiQypKss06g58JOx2CAuoSVyQnWDrXkNWtjIKGx96inYGqheqlBCcxiPw404obxJ+1ETrjvTEtREO95m0t3bnuLKQE=
+X-Received: by 2002:a37:63d0:: with SMTP id x199mr16115619qkb.3.1587396720972; 
+ Mon, 20 Apr 2020 08:32:00 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-11-robh@kernel.org>
-In-Reply-To: <20200419170810.5738-11-robh@kernel.org>
+ <20200419170810.5738-12-robh@kernel.org>
+In-Reply-To: <20200419170810.5738-12-robh@kernel.org>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 20 Apr 2020 17:30:11 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1yPiSEBA_bjy2EAcRygp0MqtTgt8Tu-JNJrx6Bb_Ff0A@mail.gmail.com>
-Message-ID: <CAK8P3a1yPiSEBA_bjy2EAcRygp0MqtTgt8Tu-JNJrx6Bb_Ff0A@mail.gmail.com>
-Subject: Re: [PATCH 10/17] mfd: vexpress-sysreg: Drop unused syscon child
- devices
+Date: Mon, 20 Apr 2020 17:31:44 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0VeKhe7J_p+UaYPcpVsYA3Wv3KyGnPWBf2mgbtAHHuZw@mail.gmail.com>
+Message-ID: <CAK8P3a0VeKhe7J_p+UaYPcpVsYA3Wv3KyGnPWBf2mgbtAHHuZw@mail.gmail.com>
+Subject: Re: [PATCH 11/17] mfd: vexpress-sysreg: Use devres API variants
 To: Rob Herring <robh@kernel.org>
-X-Provags-ID: V03:K1:dU+lHbOmw5GfikMmk8IZVufXOjqqyzc6UYpy86YG6QCbHu/y7Xn
- +bZruAi93qGBh0K11C9a8xYXwOLsLZKREotiNX4F9/qO9P/hcCFuTAsoyMkDjmc3ciQwHNw
- DWFxCF29QnM5+FFxaMlurMlnft/gqp4HrRVIMqebT5BwSLQtWYAsoHYAvDSodk83Eufa0Dj
- UOLztdW/F3OBh/jeOGoLA==
+X-Provags-ID: V03:K1:N5wFBQf26Z0ztxqIYrt4hSiQE/YI+w1+C39/VnSuM8LvJhS4xry
+ fWj5Ny7MzV7xndgxlj0ditY/hEeENcGEbpe/3U/dj9/qaEcxinBMZA6YtoIQ06vYBx+ul7f
+ /a3xrfCJHNrACXz9VWVz2EEuDSB+zrIxUxK9uU6Y4sUcA61bgwScpg07YSpUOcHHkaWv1fG
+ hVld0Z/zgGMRjiezLrB2g==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bYZhJ0GM238=:MTVw+TxBSZKa3v5jUdzeVK
- xlC9sufp/YQdwZIGj56/zUMeVBr7omfJfsNJsQoiZqQdPsVbPfMvrp84vKpYPBpJWS9r7vKvD
- 3Q7TJgCM9hyng3kuWXjvqctPdumfRBRkiZQPPyZmuPfLQrnrFOIjSagyKS9HwWO/c+IVUqDad
- k5YWq+8w+SV7nYeYzvmlPob4H6hxztbfhJOQYLuWZbKN7isbEEGilN3HFNrqwsyh3c73GCJfO
- clb+Ea+aUh+7HAJ37S5l9kdbZ9CUZ/NrejlweUGm36bQjeFZr+Zkk+6CLKQTIeaeeESNS/6Xk
- 7/cR7LyjGPVF207KqmTnf1I2iI54gL1YcbFRsQD43C6y+C+Y9MoiJgIOAJUAMqLTq1OasFe9W
- 2TGSkpIfm6NgiHKEnA4wUQYbiXPzyyI1eDqz9w13ZGycfkwriZX3yiSo5f+xN8zxR/z7d4+gb
- 7+QIPJ+/LuG0DyWp5L9SZi0SEK3FClftHgcfoA3COv0GY2OIH8yT3MoIpfu831AVIernsnYOD
- ZqBMsogMLuSE+t8cNxR4RArp0Voup5cSs+hmu6TXolBzYukviPZNyBtLAfyEViD8y0LmwbSQE
- e0WHXRGpodGKpfLTUMNN6SsyRYOHbgDYoMSMAgoUu+a34/XdKfA31vHw0nBp1clS7/sh4XzRe
- 9aSHOQ6r9B7KmF/u4bgQhHP9u1ynIto7tuwm4beglAX9wQm0FbebxHDKRqqySYzKvuYvT/kDY
- P5NiXLWvz5Uz3iYvmlu+NngDxcW9qiTzVmRUq4TmRbpAZJZJl+B834EkMMkWaWzBvrfzeMS+k
- maQZATmuCZnuDS3B4/5ls0yjCxqhUTRb7gu+HZ7rJ9fvX0pPxM=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:j3bSt7eDAlU=:oYHjvNrmZFkGpioHiAgRP1
+ FmD8i8ogTzHvs88nDEU1JXEZ9Gb5kHwKyGtSMr/9HlUQimmaZ9p4GvFTm38mGftlw9YApkvjE
+ m4otJ4uE1Lo1o7/+2PcCA+kU1f38OhU+Kq1DSKsaqSbiCrqHLpDcbh1yyVVT8BuJeH5eWRbFZ
+ EXp6TgtYT06MMDkt6Mij06gg5i01LQhd466Oj4DDCu+5fU1IyrbJUe8yF+YmkvoiN6n9biZDu
+ ujE1TG1qLaNAqUdwOw/c19/dilXXAQ7u/gsDjYTF9Ajc5NAPcSZfjjDju7zL2jELvEo2vWG/a
+ EUIss1LMBLjr/4JVeKTuwu1aPSW889kqN0cK6da3+2kS6WEMTsycQzd+d7bKJ4t312b3kSg+H
+ ve0N5DTuwcRQjDDpEf5X6ySuzHy/cFzeW0MRr40Uh4j6XSTXRDnGZ5kWy2jKrrXEQydHNN3eB
+ P0JvaiVOl74AaoIVQ2bEySjGT+Adh7KrqVUgNvfsXLbZgmTr86NCcBVO2W3Pz/b+ehMawYLj0
+ +x6nta8t7NvwbeOQq7plQdC6DXHqax4aUeJiwRgm2hilLx7V3ARM5GYn4pcg8mqf1vS7JsXqq
+ q3MJAMuVXy8YuFDGEFmVcSgjzcZSzt3jY9lMdgfRDrVR6pmDa1E+j/T3yxCIP02asrTvd69g9
+ ZdbAUVQBrbDj/DdLv0s6CsHrvz9JusMIdKuPs5ZHV7nbOCqyBit+MaQQmZFXPSESKzQfbIoOW
+ a6H6X3Rfpyf6JLebm10/E/3T9WecZmU21g0KezNoNT0MkBpaF/9E0VZVRzn19sdKoXUl8N5Of
+ XfE9cHrjuxDaNfxSPxwu9RZDjLJLCGrSTk40FBWQ4n437pmPXA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_083032_236533_D66885D3 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20200420_083204_295282_D0BA1309 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,6 +105,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
 >
+> Use the managed devm_gpiochip_add_data() and devm_mfd_add_devices()
+> instead of their unmanaged counterparts. With this, no .remove() hook is
+> needed for driver unbind.
+>
 > Cc: Liviu Dudau <liviu.dudau@arm.com>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
@@ -110,10 +116,7 @@ On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
 > Cc: Lee Jones <lee.jones@linaro.org>
 > Signed-off-by: Rob Herring <robh@kernel.org>
 
-No description? It would be nice to know why it was added in the first place,
-or at least that you were unsuccessful in finding out why.
-
-       Arnd
+Acked-by: Arnd Bergmann <arnd@arndb.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
