@@ -2,60 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E657B1B1331
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:33:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 846E51B133D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:37:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9hSOmTcKjUa69INDpC3L9357WxRavNLryMsxec3dWP8=; b=T61SFb7RKQXTXtPb+pwZX0+DTm
-	D9NHDiALqFNYywdVEnha1HIWHjbheLBJ0BQaxl511AgOSSaNc5hDPD4J5E52h9oucjQjI/dtNBRTx
-	nco4TzlR8JcPgBKDZdM37QACjEz3bBaybd/IowqA3jRDZi29eNgSgJ5L846ji0sRXnni0AhuVnbKt
-	jh39ghKdx+HgLEY+FdvcIN75900SJLhHiFyOjBKnaqkCZobgCZaengt+gSCNszGgguH4gZ6cElnIe
-	EpOk5rJrCLfjXx/7Pg0rvvyIx6JoXYO9+daTUiX4qPBwjdycwo1F4gEspJJ8gcQULFOYJ3uodPCPc
-	XPCPL7Mg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e/+XPyzaCV3Xeezp4cZr3bB2/nXWl+Qko0E/9kV/Hog=; b=R+SkpqPNZFvGf3
+	6IISIpog//AwI6uzqoa93BEBCNP6Zb0AbuaVGe062EZmXu+uLFamgvmMtz3LoxkZ2CTX2c5cC/COW
+	NIaNT7KxJdP6TcbfZ7v77MhfwzxUIZYGkC6rlGdRpq9Jsv8SCCdS/WdLCFwAqSPRtVZd6V+jpfELQ
+	Y785oUChkaN5hs5uKDFNUlrnfAK7XR7RxwhduqmqWUfubMJwI2jXBp53DDQ+984ZZui2CVr+Tse0H
+	ooCrorfuc/ukT6ZeC5CBcj5BZ69ltphdztCp3KO0jdaiJZI6CRHDH/WwbhL3gEzUVUtRqmOsnqiYL
+	lOCI/u5YKjvxmTR7GyoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQaIW-0006F9-Fw; Mon, 20 Apr 2020 17:33:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jQaMB-0000tC-2I; Mon, 20 Apr 2020 17:37:19 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQaHH-0004tA-6y
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:32:17 +0000
-Received: from localhost.localdomain (unknown [157.46.94.248])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6547320782;
- Mon, 20 Apr 2020 17:32:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587403934;
- bh=ELExJDrsHxAW1f5Po7cKx9b1yYQLw/eUqCrMgMTSams=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eeDtm9R7Vj2lgcVJLc0IDHvZwr8k9g7zw9MiZhYvATtfV6QoUOtbuuWCBUBvYnCb4
- iEZjdvAnAdcMq6lvZHJB29A89CJURyVTJtDgoRwMd0GNGy35aLlaprosVgkEOLT5bc
- K7y+xUqPw+dIZh4Q43ISBDFrFWVA7+wo9zud7N2o=
-From: mani@kernel.org
-To: robh+dt@kernel.org,
-	mcoquelin.stm32@gmail.com,
-	alexandre.torgue@st.com
-Subject: [PATCH 6/6] ARM: dts: stm32mp1: Add IoT Box board support
-Date: Mon, 20 Apr 2020 23:01:24 +0530
-Message-Id: <20200420173124.27416-7-mani@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200420173124.27416-1-mani@kernel.org>
-References: <20200420173124.27416-1-mani@kernel.org>
+ id 1jQaM0-0000sA-5a
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:37:10 +0000
+Received: by mail-pf1-x441.google.com with SMTP id g30so5288050pfr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 10:37:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wp8Xrp59QlTq458T5KjDUO1tXKy+Khd8hcR7eA6qRkQ=;
+ b=KHg1vdpcCjXP5/p5qTGrllYsV+lzuJriI2RLw+S4S3xki9OB0wEpeAVLdEce/vnvpd
+ 4Qj6qZY0OyB9S7P/fnTkWiPaLK2/IznodQKVslWtLWtqgVAYK5tvJ3ygHrcAETIAWCoA
+ Ar0DzMHJ+Pcx1+Ztf0WF25JcRGXnJn2Cc419R8/tYnCMw3sjphihMiP39h92kuvvgv7F
+ 3upXSFD1DQPO8WG8vG+04fku98v0LbVxnBm0SNbeycDqzB71S/afMQamSfxE/MHjnUZD
+ ux5z/woSc8UPoNeLMZVeBHX/E3+YcUJVVw7pnNoDjxiMJUaDbRGu8hUVHsD/eobbc1NY
+ qN/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wp8Xrp59QlTq458T5KjDUO1tXKy+Khd8hcR7eA6qRkQ=;
+ b=dsoElPGC3TAXi4MLm/sqvL0EJdUQsEpuOP54cIyXebiY7BdYJhCJxdqhz+LRozjusb
+ 00fVCVrsWci2y8+8WhSYoaRZ5cAvCOWYDkgtAgX4D+Ltky43xrE972Sy8vLG4VgxgEnv
+ 06aHvDhiXPX/1+jn/aZ+mYp2SzIvirMJOXQyg5F/12jlQ7zsBYvu8SLl+jfC1R5qMvUe
+ QAkfY/h64xZNraxI9benjWVVfsPHomeogxlz+OGZelmuYluPdSx0jkBA2M4rt85+ViiN
+ KeKBHbCo9pINYAtR+o9MA7US6BUuyBZGalNJwYz67eDodTgBHIUciVOxJFWzdr+FKyfH
+ U99Q==
+X-Gm-Message-State: AGi0PuZSH+Uir0cxrw/yKVtbyO+dRV+E27OovtOykTSMcVV3uhSygOtm
+ ERTKcnB3SM1f/2CSHI8twMh1cg==
+X-Google-Smtp-Source: APiQypI+fpzS9tvyIqAt1Qokh+WJel+RnWJGf1A4F99fII+mmjgwfsHSOcutEHEXBR/XlFLHD+fUGA==
+X-Received: by 2002:a62:cf81:: with SMTP id b123mr17223856pfg.84.1587404225615; 
+ Mon, 20 Apr 2020 10:37:05 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id d2sm103669pfc.7.2020.04.20.10.37.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 10:37:04 -0700 (PDT)
+Date: Mon, 20 Apr 2020 11:37:03 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCHv2] coresight: tmc: Fix TMC mode read in
+ tmc_read_prepare_etb()
+Message-ID: <20200420173703.GA25885@xps15>
+References: <20200416161459.29855-1-saiprakash.ranjan@codeaurora.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200416161459.29855-1-saiprakash.ranjan@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_103215_328357_A83CBEA5 
-X-CRM114-Status: GOOD (  14.69  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200420_103708_728475_3A90B07D 
+X-CRM114-Status: GOOD (  19.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,158 +98,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Manivannan Sadhasivam <mani@kernel.org>
+On Thu, Apr 16, 2020 at 09:44:59PM +0530, Sai Prakash Ranjan wrote:
+> On some QCOM platforms like SC7180, SDM845 and SM8150,
+> reading TMC mode register without proper coresight power
+> management can lead to async exceptions like the one in
+> the call trace below in tmc_read_prepare_etb(). This can
+> happen if the user tries to read the TMC etf data via
+> device node without setting up source and the sink first.
+> Fix this by having a check for coresight sysfs mode
+> before reading TMC mode management register.
+> 
+>  Kernel panic - not syncing: Asynchronous SError Interrupt
+>  CPU: 7 PID: 2605 Comm: hexdump Tainted: G S                5.4.30 #122
+>  Call trace:
+>   dump_backtrace+0x0/0x188
+>   show_stack+0x20/0x2c
+>   dump_stack+0xdc/0x144
+>   panic+0x168/0x36c
+>   panic+0x0/0x36c
+>   arm64_serror_panic+0x78/0x84
+>   do_serror+0x130/0x138
+>   el1_error+0x84/0xf8
+>   tmc_read_prepare_etb+0x88/0xb8
+>   tmc_open+0x40/0xd8
+>   misc_open+0x120/0x158
+>   chrdev_open+0xb8/0x1a4
+>   do_dentry_open+0x268/0x3a0
+>   vfs_open+0x34/0x40
+>   path_openat+0x39c/0xdf4
+>   do_filp_open+0x90/0x10c
+>   do_sys_open+0x150/0x3e8
+>   __arm64_compat_sys_openat+0x28/0x34
+>   el0_svc_common+0xa8/0x160
+>   el0_svc_compat_handler+0x2c/0x38
+>   el0_svc_compat+0x8/0x10
+> 
+> Fixes: 4525412a5046 ("coresight: tmc: making prepare/unprepare functions generic")
+> Reported-by: Stephen Boyd <swboyd@chromium.org>
+> Suggested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 
-IoT Box is an IoT gateway device based on Stinger96 board powered by
-STM32MP1 SoC, designed and manufactured by Shiratech Solutions. This
-device makes use of Stinger96 board by having it as a base board with
-one additional mezzanine on top.
+Applied - thanks,
+Mathieu
 
-Following are the features exposed by this device in addition to the
-Stinger96 board:
-
-* WiFi/BT
-* CCS811 VOC sensor
-* 2x Digital microphones IM69D130
-* 12x WS2812B LEDs
-
-Following peripherals are tested and known to work:
-
-* WiFi/BT
-* CCS811
-
-More information about this device can be found in Shiratech website:
-https://www.shiratech-solutions.com/products/iot-box/
-
-Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
----
- arch/arm/boot/dts/Makefile                |  1 +
- arch/arm/boot/dts/stm32mp157a-iot-box.dts | 92 +++++++++++++++++++++++
- 2 files changed, 93 insertions(+)
- create mode 100644 arch/arm/boot/dts/stm32mp157a-iot-box.dts
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 966b81dfffd6..455ec6eb6303 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1030,6 +1030,7 @@ dtb-$(CONFIG_ARCH_STM32) += \
- 	stm32h743i-disco.dtb \
- 	stm32mp157a-avenger96.dtb \
- 	stm32mp157a-dk1.dtb \
-+	stm32mp157a-iot-box.dtb \
- 	stm32mp157a-stinger96.dtb \
- 	stm32mp157c-dhcom-pdk2.dtb \
- 	stm32mp157c-dk2.dtb \
-diff --git a/arch/arm/boot/dts/stm32mp157a-iot-box.dts b/arch/arm/boot/dts/stm32mp157a-iot-box.dts
-new file mode 100644
-index 000000000000..fa1c006ce531
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp157a-iot-box.dts
-@@ -0,0 +1,92 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2020 Manivannan Sadhasivam
-+ */
-+
-+/dts-v1/;
-+#include "stm32mp157a-stinger96.dtsi"
-+
-+/ {
-+	model = "Shiratech STM32MP157A IoT Box";
-+	compatible = "shiratech,stm32mp157a-iot-box", "st,stm32mp157";
-+
-+	wlan_pwr: regulator-wlan {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "wl-reg";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		gpios = <&gpiog 3 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+};
-+
-+&i2c2 {
-+	ccs811@5b {
-+		compatible = "ams,ccs811";
-+		reg = <0x5b>;
-+		wakeup-gpios = <&gpioa 12 GPIO_ACTIVE_LOW>;
-+		reset-gpios = <&gpioa 11 GPIO_ACTIVE_LOW>;
-+	};
-+};
-+
-+&pinctrl {
-+	/*
-+	 * Note: The SDMMC2 pins lack external pullups on data lines. Hence,
-+	 * we need to enable it in the SoC.
-+	 */
-+	sdmmc2_b4_pins_pull: sdmmc2-b4-pull {
-+		pins1 {
-+			pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
-+				 <STM32_PINMUX('B', 15, AF9)>, /* SDMMC2_D1 */
-+				 <STM32_PINMUX('B', 3, AF9)>, /* SDMMC2_D2 */
-+				 <STM32_PINMUX('B', 4, AF9)>, /* SDMMC2_D3 */
-+				 <STM32_PINMUX('G', 6, AF10)>; /* SDMMC2_CMD */
-+			slew-rate = <1>;
-+			bias-pull-up;
-+		};
-+		pins2 {
-+			pinmux = <STM32_PINMUX('E', 3, AF9)>; /* SDMMC2_CK */
-+			slew-rate = <2>;
-+			drive-push-pull;
-+			bias-disable;
-+		};
-+	};
-+};
-+
-+/* WiFi */
-+&sdmmc2 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc2_b4_pins_pull>;
-+	pinctrl-1 = <&sdmmc2_b4_od_pins_b>;
-+	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a>;
-+	broken-cd;
-+	non-removable;
-+	st,neg-edge;
-+	bus-width = <1>;
-+	vmmc-supply = <&wlan_pwr>;
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	brcmf: bcrmf@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+	};
-+};
-+
-+/* Bluetooth */
-+&uart4 {
-+	/* Note: HW flow control is broken, hence using custom CTS/RTS gpios */
-+	/delete-property/st,hw-flow-ctrl;
-+	cts-gpios = <&gpioa 15 GPIO_ACTIVE_LOW>;
-+	rts-gpios = <&gpiob 0 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+
-+	bluetooth {
-+		shutdown-gpios = <&gpiog 2 GPIO_ACTIVE_HIGH>;
-+		compatible = "brcm,bcm43438-bt";
-+		max-speed = <115200>;
-+	};
-+};
--- 
-2.17.1
-
+> ---
+> v2:
+>  * Move the TMC mode read under CS_MODE_SYSFS as per Mathieu
+> ---
+>  drivers/hwtracing/coresight/coresight-tmc-etf.c | 16 ++++++++--------
+>  1 file changed, 8 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> index d0cc3985b72a..36cce2bfb744 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+> @@ -596,13 +596,6 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
+>  		goto out;
+>  	}
+>  
+> -	/* There is no point in reading a TMC in HW FIFO mode */
+> -	mode = readl_relaxed(drvdata->base + TMC_MODE);
+> -	if (mode != TMC_MODE_CIRCULAR_BUFFER) {
+> -		ret = -EINVAL;
+> -		goto out;
+> -	}
+> -
+>  	/* Don't interfere if operated from Perf */
+>  	if (drvdata->mode == CS_MODE_PERF) {
+>  		ret = -EINVAL;
+> @@ -616,8 +609,15 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
+>  	}
+>  
+>  	/* Disable the TMC if need be */
+> -	if (drvdata->mode == CS_MODE_SYSFS)
+> +	if (drvdata->mode == CS_MODE_SYSFS) {
+> +		/* There is no point in reading a TMC in HW FIFO mode */
+> +		mode = readl_relaxed(drvdata->base + TMC_MODE);
+> +		if (mode != TMC_MODE_CIRCULAR_BUFFER) {
+> +			ret = -EINVAL;
+> +			goto out;
+> +		}
+>  		__tmc_etb_disable_hw(drvdata);
+> +	}
+>  
+>  	drvdata->reading = true;
+>  out:
+> -- 
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
