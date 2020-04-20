@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D82F81B0E92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:38:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC5D51B0EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:38:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C94Il8qVUsHxmpcpxT6O9NdE+aLnuNbPaIH687TAQ64=; b=ZKhgh5sWaSp68V
-	vqcdbqzvND7PPLoahXd/XllnkiCveK1QxFGGJWEGcoNKyf+DaFdX8aM4emtjaJOW5YiiAgk8Irrkh
-	lnituP67A2W8LTncJe9qP4qg5c2qcEp97JfxZevWqLcZir/+HHuu9vS4MSSYYzr4UJ6mPbdezS4QY
-	CwyLDVeafzINoiRYP5geCBld5S5+ecEeHa6fsxuaWeXzIM0tTEDLgeXuf59Ru49VxXg3avUJPtt6h
-	GdWA4/dMmVuRA9M2MF/y7nDrARnSeX09fXfZTlW1YZCxNu85aDN7Vz5/5YgOsV/mJEu7sk8scRDYM
-	+HtbqGHfSQn1Ksvc093w==;
+	List-Owner; bh=Ej9+nGTVyGXk9Gn3cKaX37rmwypkNZwB/XLwsdphH/c=; b=PyJ57U16gMUdTR
+	6Aq62I5xVQf7+FVtDOpd6/xjbR6N+9ep/3ajdVtqCwtfuIa/r8eycT/Cu70iNpyMmMtofDaI4+0Pt
+	EoZezcT9a67U2a632MTyqNbE+Fw2WirDAvNEVev9xJP6CstfBuphU2+YA2uO/LU6RrQEK1zdo0NWP
+	OxCcFmQ49yAw4J/wT84LrQDtFzYp+H04tPgD0F7oAysQzKuqNDu9+qdckqdzZrcIzhsZh3BownExE
+	4Ac0J9PXtZo5WFx3u2pFcbMHJJXi7RhuUQ+1oTjzOJ2Cl/Uz3KFTCpxDv6j3rdlL/zMdG3Nxeh4cv
+	jHbYC4VM8fpg6TlI8G5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXYq-0001eg-VG; Mon, 20 Apr 2020 14:38:12 +0000
+	id 1jQXZE-0001pP-T2; Mon, 20 Apr 2020 14:38:36 +0000
 Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXYX-0001af-94
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:38:00 +0000
+ id 1jQXYg-0001af-G1
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:38:09 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1587393478; h=Content-Transfer-Encoding: MIME-Version:
+ s=smtp; t=1587393487; h=Content-Transfer-Encoding: MIME-Version:
  References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=Ix/MdnxLfjPN0cVkJkI+uYStoKyur9aJ+Sj4mNFkPFE=;
- b=g25PqLE8gFhFCS8VHWhamWIKJ69GlOedmnt8YRiQUABwB3cWaxo3Tr9ij8ny/RO+LmGA+11K
- 7oNEojPcJbwsdrcLpO16p16gr92Vanj8YTrCZhm45rPi+NqLyiZ6XFQfSr5E+QTx1J/Vb82f
- X94jWRani0v+Wb8BxdotANr+thU=
+ Sender; bh=+ZlR9TDsV3DbjsSUxisIIBPtiqQCJ/1Fs4UkR/fr5B0=;
+ b=IYMAIbMKOkHyORBn+KmcJgYJmIXrA4m+2K1To2SwVk2oyAhdLlB4/tUqm21euCwfa1OOzFhv
+ X4URKakvj633FwNwmh7DIAu7b3NBHMYifmemqeObFMhxVxBB8MQgMKc/fKcQpD5YF2BHafEB
+ k+Dd1DFaE0RGN8gLTz7muQAnjMM=
 X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e9db3ad.7f441b0ac110-smtp-out-n05;
- Mon, 20 Apr 2020 14:37:33 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e9db3b2.7f78045c78f0-smtp-out-n01;
+ Mon, 20 Apr 2020 14:37:38 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 2D113C433F2; Mon, 20 Apr 2020 14:37:33 +0000 (UTC)
+ id 8FA7FC44799; Mon, 20 Apr 2020 14:37:38 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B5461C433CB;
- Mon, 20 Apr 2020 14:37:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B5461C433CB
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DC508C433BA;
+ Mon, 20 Apr 2020 14:37:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DC508C433BA
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -61,17 +61,17 @@ To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
  Joerg Roedel <joro@8bytes.org>, Sibi Sankar <sibis@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-Subject: [PATCHv2 1/6] iommu: arm-smmu-impl: Convert to a generic reset
- implementation
-Date: Mon, 20 Apr 2020 20:07:05 +0530
-Message-Id: <d24a0278021bc0b2732636c5728efe55e7318a8b.1587392905.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv2 2/6] iommu/arm-smmu: Allow client devices to select direct
+ mapping
+Date: Mon, 20 Apr 2020 20:07:06 +0530
+Message-Id: <14539e787e6d8b7bd0a6d8f8a001baae6f691988.1587392905.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <cover.1587392905.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1587392905.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_073758_678350_C2960FF6 
-X-CRM114-Status: GOOD (  16.02  )
+X-CRM114-CacheID: sfid-20200420_073807_264223_97656E48 
+X-CRM114-Status: GOOD (  14.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -105,84 +105,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the QCOM specific smmu reset implementation is very
-specific to SDM845 SoC and has a wait-for-safe logic which
-may not be required for other SoCs. So move the SDM845 specific
-logic to its specific reset function. Also add SC7180 SMMU
-compatible for calling into QCOM specific implementation.
+From: Jordan Crouse <jcrouse@codeaurora.org>
 
+Some client devices want to directly map the IOMMU themselves instead
+of using the DMA domain. Allow those devices to opt in to direct
+mapping by way of a list of compatible strings.
+
+Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu-impl.c |  8 +++++---
- drivers/iommu/arm-smmu-qcom.c | 16 +++++++++++++---
- 2 files changed, 18 insertions(+), 6 deletions(-)
+ drivers/iommu/arm-smmu-qcom.c | 19 +++++++++++++++++++
+ drivers/iommu/arm-smmu.h      |  1 +
+ 2 files changed, 20 insertions(+)
 
-diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-index 74d97a886e93..c75b9d957b70 100644
---- a/drivers/iommu/arm-smmu-impl.c
-+++ b/drivers/iommu/arm-smmu-impl.c
-@@ -150,6 +150,8 @@ static const struct arm_smmu_impl arm_mmu500_impl = {
- 
- struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
- {
-+	const struct device_node *np = smmu->dev->of_node;
-+
- 	/*
- 	 * We will inevitably have to combine model-specific implementation
- 	 * quirks with platform-specific integration quirks, but everything
-@@ -166,11 +168,11 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
- 		break;
- 	}
- 
--	if (of_property_read_bool(smmu->dev->of_node,
--				  "calxeda,smmu-secure-config-access"))
-+	if (of_property_read_bool(np, "calxeda,smmu-secure-config-access"))
- 		smmu->impl = &calxeda_impl;
- 
--	if (of_device_is_compatible(smmu->dev->of_node, "qcom,sdm845-smmu-500"))
-+	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500") ||
-+	    of_device_is_compatible(np, "qcom,sc7180-smmu-500"))
- 		return qcom_smmu_impl_init(smmu);
- 
- 	return smmu;
 diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-index 24c071c1d8b0..64a4ab270ab7 100644
+index 64a4ab270ab7..0b3f159065aa 100644
 --- a/drivers/iommu/arm-smmu-qcom.c
 +++ b/drivers/iommu/arm-smmu-qcom.c
-@@ -15,8 +15,6 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
- {
- 	int ret;
+@@ -3,6 +3,7 @@
+  * Copyright (c) 2019, The Linux Foundation. All rights reserved.
+  */
  
--	arm_mmu500_reset(smmu);
--
- 	/*
- 	 * To address performance degradation in non-real time clients,
- 	 * such as USB and UFS, turn off wait-for-safe on sdm845 based boards,
-@@ -30,8 +28,20 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
- 	return ret;
- }
++#include <linux/of_device.h>
+ #include <linux/qcom_scm.h>
  
-+static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
-+{
-+	const struct device_node *np = smmu->dev->of_node;
-+
-+	arm_mmu500_reset(smmu);
-+
-+	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500"))
-+		return qcom_sdm845_smmu500_reset(smmu);
-+
-+	return 0;
-+}
-+
- static const struct arm_smmu_impl qcom_smmu_impl = {
--	.reset = qcom_sdm845_smmu500_reset,
-+	.reset = qcom_smmu500_reset,
+ #include "arm-smmu.h"
+@@ -11,6 +12,23 @@ struct qcom_smmu {
+ 	struct arm_smmu_device smmu;
  };
  
- struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device *smmu)
++static const struct of_device_id qcom_smmu_client_of_match[] = {
++	{ .compatible = "qcom,adreno" },
++	{ .compatible = "qcom,mdp4" },
++	{ .compatible = "qcom,mdss" },
++	{ .compatible = "qcom,sc7180-mdss" },
++	{ .compatible = "qcom,sdm845-mdss" },
++	{ }
++};
++
++static int qcom_smmu_request_domain(struct device *dev)
++{
++	const struct of_device_id *match =
++		of_match_device(qcom_smmu_client_of_match, dev);
++
++	return match ? IOMMU_DOMAIN_IDENTITY : 0;
++}
++
+ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
+ {
+ 	int ret;
+@@ -41,6 +59,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
+ }
+ 
+ static const struct arm_smmu_impl qcom_smmu_impl = {
++	.req_domain = qcom_smmu_request_domain,
+ 	.reset = qcom_smmu500_reset,
+ };
+ 
+diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+index 8d1cd54d82a6..662fdb4dccd2 100644
+--- a/drivers/iommu/arm-smmu.h
++++ b/drivers/iommu/arm-smmu.h
+@@ -386,6 +386,7 @@ struct arm_smmu_impl {
+ 	int (*init_context)(struct arm_smmu_domain *smmu_domain);
+ 	void (*tlb_sync)(struct arm_smmu_device *smmu, int page, int sync,
+ 			 int status);
++	int (*req_domain)(struct device *dev);
+ };
+ 
+ static inline void __iomem *arm_smmu_page(struct arm_smmu_device *smmu, int n)
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
