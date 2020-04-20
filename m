@@ -2,79 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF3B1B0EC8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:44:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEF2E1B0ED4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:47:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YEbJBJAFtNhF0koJvZMDMfmOFxnXWTyExq2MSMtqlGQ=; b=cOiqQGBHxiHoRw
-	CP+zJzYnWNHDtAzrUvY5QEUKEcX1dsINjJ7l88cT5chN9I2I8rmTSraB7mK5EyYmE+BHCsHCZKPYj
-	cxonPn3fw8pewydco5PjszqJA+F9UzJLwQXw93ut6dlwK4U8X1jQKf3s7htLBeziOILUwraiN5dux
-	XaCbvg7UVdGFISPh7MJyl971YIJ0ocXBEaGrgvN9AK3lD6Iw4kc4zTSGaaUsdkNahdIy4y1ACxjZf
-	SjEXCto7cmDOEe+qJ6IqDirF86DxjffWDq7RarQdt+eZdjLtO/s3h6foPYdVe2C4zONt4kmRF7CAH
-	uztQyXICZRonpV56I5uw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HeQazrV5XOylhHww/L5t895lrIy7+QJXSsm3TlcF2bs=; b=Uf3j1ysetjTQuu
+	4LBKp7Qur/GfQgVQIlcz3wBpJsMNalOiDodx8ihft5cM+sl8n3FmbViYNn2lbopa8QNGF0UJ63+Z+
+	cGh/uCwX3mtlIatRXCDybfTuVAmvqo/bO2+uWPWNoFDT5B4zYG2YKMMRI2Xk4wvZy9GGrLXFsbApJ
+	Y4BWUQGvktnzxJLtNG1JXAWpquLPsmkWfRmQqCJtXubX37nRTS68h4ZQuXWuaTBLDrGoHke1baD4p
+	w/kioTlHBgmPUYd4qUVfbVdT36knIc5SkscbgwD3mMAqj3OlwojJI2HZKAoeqOmketxDo4+5IPu1m
+	ONZX2ZEUvMRyKwofusSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXeg-0007er-Te; Mon, 20 Apr 2020 14:44:14 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1jQXhL-0002Dp-SJ; Mon, 20 Apr 2020 14:46:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXeN-0007az-Bv
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:43:57 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e9db4b80000>; Mon, 20 Apr 2020 07:42:00 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 20 Apr 2020 07:43:54 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 20 Apr 2020 07:43:54 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 20 Apr
- 2020 14:43:54 +0000
-Received: from [10.26.73.5] (172.20.13.39) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 20 Apr
- 2020 14:43:53 +0000
-Subject: Re: [PATCH 2/2] arm64: tegra: Make the RTC a wakeup source on Jetson
- TX2
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200417171117.2556374-1-thierry.reding@gmail.com>
- <20200417171117.2556374-2-thierry.reding@gmail.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <07d3ac3a-cfa1-16f3-0401-df478c8e9831@nvidia.com>
-Date: Mon, 20 Apr 2020 15:43:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQXhD-0002D6-Al
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:46:52 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B6C9206D5;
+ Mon, 20 Apr 2020 14:46:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587394011;
+ bh=/IPyAGYnCw1gtPtCf3Qro0SLyqMiQcu4OSyyNBu1dSU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RWlOb5rLlNT5NcnsBjC1VII2xSKyaQFU2hwCWHuX6z8/o4g67upM16l0x1kovzmsk
+ zVVzxuVIRMaiEVWU2bHcVsGxXt/A03OOLlY/q4volpIQeK4e/f+0pwAf+NibrBOnY4
+ HhNjhnXFrleNSewnZPS+xa3D3pNv9/TO+FnxNf+w=
+Date: Mon, 20 Apr 2020 22:46:43 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH V7 4/4] firmware: imx-scu: Support one TX and one RX
+Message-ID: <20200420144630.GD32419@dragon>
+References: <1584604193-2945-1-git-send-email-peng.fan@nxp.com>
+ <1584604193-2945-5-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20200417171117.2556374-2-thierry.reding@gmail.com>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1587393720; bh=fJb/HqacmO/rgtSuw6cejOcM6XXVC4/j8qZ6OGkhHYA=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=YQjjVli+wkx4+/tN0Mc2CEavS4pgQ4+lfFBFdP2iTzdzl4P0Jpt7IuFk9NPs6q+r0
- pX6kFiQRoE6hx6s4FYucPC6CpyxM7CktOnuxoqOHKdkS5c9fcxrHzBNdhobEF1wwQD
- esmi0gWWor3VdhtF7OElBUzAszQK83MS2DgH1eRRd9ZqlJOkObut76nAw2Ye9uKY3W
- SZCRtomoOHglbagk2cyw6/F1mJu20qU3LCQWmWhopcT44uMx+yQYV0HJnC11EG9tNu
- qWeobI2gkrrYMVZ80oicMXGTzR0zirXvnjFaCSYo3df1U6QPwbG9S+H0vtF7T5rxY+
- y95BShjwsFWJw==
+Content-Disposition: inline
+In-Reply-To: <1584604193-2945-5-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_074355_459729_5E416FF5 
-X-CRM114-Status: GOOD (  15.37  )
+X-CRM114-CacheID: sfid-20200420_074651_389474_4D606EDA 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,61 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, s.hauer@pengutronix.de,
+ jassisinghbrar@gmail.com, linux-kernel@vger.kernel.org,
+ o.rempel@pengutronix.de, linux-imx@nxp.com, kernel@pengutronix.de,
+ leonard.crestez@nxp.com, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 17/04/2020 18:11, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
+On Thu, Mar 19, 2020 at 03:49:53PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> The RTC found on the MAX77620 PMIC can be used as a wakeup source on
-> Jetson TX2, which is useful to wake the system from suspend at a given
-> time.
+> Current imx-scu requires four TX and four RX to communicate with
+> SCU. This is low efficient and causes lots of mailbox interrupts.
 > 
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
-> ---
->  arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
+> With imx-mailbox driver could support one TX to use all four transmit
+> registers and one RX to use all four receive registers, imx-scu
+> could use one TX and one RX.
 > 
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi b/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
-> index da96de04d003..7a0fa157f48c 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
-> +++ b/arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi
-> @@ -221,7 +221,8 @@ pmic: pmic@3c {
->  				compatible = "maxim,max77620";
->  				reg = <0x3c>;
->  
-> -				interrupts = <GIC_SPI 209 IRQ_TYPE_LEVEL_HIGH>;
-> +				interrupt-parent = <&pmc>;
-> +				interrupts = <24 IRQ_TYPE_LEVEL_LOW>;
->  				#interrupt-cells = <2>;
->  				interrupt-controller;
->  
-> @@ -379,6 +380,10 @@ vdd_pex: ldo8 {
->  						regulator-max-microvolt = <1050000>;
->  					};
->  				};
-> +
-> +				rtc {
-> +					wakeup-source;
-> +				};
->  			};
->  		};
->  	};
-> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-
-Acked-by: Jon Hunter <jonathanh@nvidia.com>
-Tested-by: Jon Hunter <jonathanh@nvidia.com>
-
-Cheers
-Jon
-
--- 
-nvpublic
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
