@@ -2,85 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A3A51B14B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05A441B14C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:37:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OdhsST2dH3oZSp88SdoKmzyw0wn6G1Zt80UKDDt8djs=; b=jiVTEMwgHJa6KE
-	jzegw2AvTDwwBEnMKJUy2dkek4285RQ3tB4zpYo1UuH1kOyUgNiBVagwOZxEj/W+I2U6/emJ99j4u
-	1qpSEj4oi+F6MLAanFSzGHAcVlp+K/hgXq74gqDYAB5ZjPBU5qloQxYzAhJqVm7OEixFPyiMBuus5
-	mIK/Vdstn03b1Ovwy2U5hdxFMJWVidFuZBwBofns/Cc/ZnxoVjxKlOrw3L5vwwUceLnWWXwQrfRjE
-	f25XXr5fUpGpda9Yu6x6VIU0qo4fbGlXh1wJqMMaN0XGJajSMOXVhjeDfSwtwl3kyo4mrHsC8ESNx
-	uneDwkTy+Ske5PM56glA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/dUuaimjHmczomYIkSFh6qgNNRueKjwA7126nMdemZ4=; b=uXYhW8pfzwoutFXpVUQoGSmcz
+	CJm4gZPAZYkfzzCWzq8cpZhVyOkarplQ51XJlZeXK2DHW57FgWvNkuzVt8qYiXBgWd3hFjGfC88/2
+	6NHK9IyItRPD5B05tYMl0YnXvuK2pxejDt6wLxQw7dzwof0l4+tnF0bsXdI5X8uLopsUa1+SD1iiC
+	DJNxbiUsxBtE6c+AdQoB2NGAa2vHKoMo6VL9IBayu6CiPZb5hii/EvPHtTliDG6JcQerBTT6K+2A3
+	uA+9MnBatLVwd2yp1ND/gCrXkD8ZGUbHnoXiDFZw9F/QaPHtnr5WpfNOZE8fvFLRt3RKoBEYy085h
+	c+N1yPreA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQbHW-0001nx-VY; Mon, 20 Apr 2020 18:36:34 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1jQbHy-0002GX-JO; Mon, 20 Apr 2020 18:37:02 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQbGK-0000lw-FC
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:35:23 +0000
-Received: by mail-oi1-f193.google.com with SMTP id m14so9753270oic.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 11:35:20 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=R4OQ//22u2MPOmZHKyicGJvmvsIaQtYSXsu+wdZNuM4=;
- b=JX+veK95L5hFLwlJe/jXlzjJAElL6gpgNPFoVtpVFSaQjFWdyGdOCv03IyoWxLyOBD
- 2lgogXj5xL16P+UEClrCRFRdQ8RTi439C7/RLrDS8QWuyCo12lS3dDpCeIIWfWCF85kn
- FiWFaI7ZeB3Jl++jrpakaHy4un5iBvjggrqVVutMRN+dYgzfASK5dzcP4TNonVA4LpOZ
- akE6NgBBuP0oKs3/m2WTq8W1p3pNN3ZMdqh7s+3y5UNuCRMFPDq3LX+cMC20tjffZzmO
- 5ZxmPONZsLjnabrpOjIVKiGRlYvFJ13JNSfh4p8piKwFYqlLcjtR/br+GAyOSs9/jvEY
- jHNw==
-X-Gm-Message-State: AGi0PuZ2uRcQKR0yxQ59gRDIx187suHPdaW3ICgVzMbPiKdAUugAAQ4e
- gAxayM2jP9koY6CuHPN84g==
-X-Google-Smtp-Source: APiQypI5iWrU/MsQnhldGps2oxwvsnjbS3ZoaH/XAT2+pSAztESGSzhH48A1n6XI4AszMbeiLRaqlg==
-X-Received: by 2002:aca:dc08:: with SMTP id t8mr521470oig.135.1587407719248;
- Mon, 20 Apr 2020 11:35:19 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id q18sm100760otl.65.2020.04.20.11.35.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 11:35:18 -0700 (PDT)
-Received: (nullmailer pid 10765 invoked by uid 1000);
- Mon, 20 Apr 2020 18:35:12 -0000
-Date: Mon, 20 Apr 2020 13:35:12 -0500
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
-Message-ID: <20200420183512.GA5483@bogus>
-References: <1586480844-19227-1-git-send-email-Anson.Huang@nxp.com>
+ id 1jQbHf-0006fG-7s
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:36:48 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587407804; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=7e3eo1fJ3V4W47xQX8u/gUmo/iNTfiSlIlfQaS2lzFU=;
+ b=cNZFzpp7ZekkwGMpoFTmVUS2VuEy8ZSLZVrMT5eEDVH7DFr64mib5rjZ3Avy4E+QEvn3TB6i
+ tlBpR+CKxBYVpTp/H4sNFVxsIm/OPhkbhGMyDearnX55z7OE5N4UB01d7TArN6sYBPfYLm7t
+ YYBdSFENYeTuRBJJwSk41PJ0yXk=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e9debb9.7f0d0f93e5e0-smtp-out-n02;
+ Mon, 20 Apr 2020 18:36:41 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id EECBDC433BA; Mon, 20 Apr 2020 18:36:40 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DF97EC433F2;
+ Mon, 20 Apr 2020 18:36:39 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586480844-19227-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Tue, 21 Apr 2020 00:06:39 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCHv3 2/6] iommu/arm-smmu: Allow client devices to select
+ direct mapping
+In-Reply-To: <b69fc30c-e6fb-70bf-4d6e-0d9b39404bdd@arm.com>
+References: <cover.1587400573.git.saiprakash.ranjan@codeaurora.org>
+ <d36f9c9ef3ef8dc84da02dfb160cd6846d2869fc.1587400573.git.saiprakash.ranjan@codeaurora.org>
+ <b69fc30c-e6fb-70bf-4d6e-0d9b39404bdd@arm.com>
+Message-ID: <0702f3186327b419ee38e4775c040052@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_113520_572077_BB9D23EF 
-X-CRM114-Status: GOOD (  24.12  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200420_113644_836550_25E59B98 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,209 +89,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, amit.kucheria@verdurent.com,
- linux-pm@vger.kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, rui.zhang@intel.com, shawnguo@kernel.org,
+Cc: Evan Green <evgreen@chromium.org>, linux-kernel@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>,
+ iommu@lists.linux-foundation.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Clark <robdclark@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Sibi Sankar <sibis@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 09:07:24AM +0800, Anson Huang wrote:
-> Convert the i.MX thermal binding to DT schema format using json-schema
+On 2020-04-20 22:27, Robin Murphy wrote:
+> On 2020-04-20 5:42 pm, Sai Prakash Ranjan wrote:
+>> From: Jordan Crouse <jcrouse@codeaurora.org>
+>> 
+>> Some client devices want to directly map the IOMMU themselves instead
+>> of using the DMA domain. Allow those devices to opt in to direct
+>> mapping by way of a list of compatible strings.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V1:
-> 	- make clock property optional.
-> ---
->  .../devicetree/bindings/thermal/imx-thermal.txt    | 61 --------------
->  .../devicetree/bindings/thermal/imx-thermal.yaml   | 96 ++++++++++++++++++++++
->  2 files changed, 96 insertions(+), 61 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.txt
->  create mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> Neat and tidy :)
 > 
-> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.txt b/Documentation/devicetree/bindings/thermal/imx-thermal.txt
-> deleted file mode 100644
-> index 823e417..0000000
-> --- a/Documentation/devicetree/bindings/thermal/imx-thermal.txt
-> +++ /dev/null
-> @@ -1,61 +0,0 @@
-> -* Temperature Monitor (TEMPMON) on Freescale i.MX SoCs
-> -
-> -Required properties:
-> -- compatible : must be one of following:
-> -  - "fsl,imx6q-tempmon" for i.MX6Q,
-> -  - "fsl,imx6sx-tempmon" for i.MX6SX,
-> -  - "fsl,imx7d-tempmon" for i.MX7S/D.
-> -- interrupts : the interrupt output of the controller:
-> -  i.MX6Q has one IRQ which will be triggered when temperature is higher than high threshold,
-> -  i.MX6SX and i.MX7S/D have two more IRQs than i.MX6Q, one is IRQ_LOW and the other is IRQ_PANIC,
-> -  when temperature is below than low threshold, IRQ_LOW will be triggered, when temperature
-> -  is higher than panic threshold, system will auto reboot by SRC module.
-> -- fsl,tempmon : phandle pointer to system controller that contains TEMPMON
-> -  control registers, e.g. ANATOP on imx6q.
-> -- nvmem-cells: A phandle to the calibration cells provided by ocotp.
-> -- nvmem-cell-names: Should be "calib", "temp_grade".
-> -
-> -Deprecated properties:
-> -- fsl,tempmon-data : phandle pointer to fuse controller that contains TEMPMON
-> -  calibration data, e.g. OCOTP on imx6q.  The details about calibration data
-> -  can be found in SoC Reference Manual.
-> -
-> -Direct access to OCOTP via fsl,tempmon-data is incorrect on some newer chips
-> -because it does not handle OCOTP clock requirements.
-> -
-> -Optional properties:
-> -- clocks : thermal sensor's clock source.
-> -
-> -Example:
-> -ocotp: ocotp@21bc000 {
-> -	#address-cells = <1>;
-> -	#size-cells = <1>;
-> -	compatible = "fsl,imx6sx-ocotp", "syscon";
-> -	reg = <0x021bc000 0x4000>;
-> -	clocks = <&clks IMX6SX_CLK_OCOTP>;
-> -
-> -	tempmon_calib: calib@38 {
-> -		reg = <0x38 4>;
-> -	};
-> -
-> -	tempmon_temp_grade: temp-grade@20 {
-> -		reg = <0x20 4>;
-> -	};
-> -};
-> -
-> -tempmon: tempmon {
-> -	compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
-> -	interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-> -	fsl,tempmon = <&anatop>;
-> -	nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-> -	nvmem-cell-names = "calib", "temp_grade";
-> -	clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
-> -};
-> -
-> -Legacy method (Deprecated):
-> -tempmon {
-> -	compatible = "fsl,imx6q-tempmon";
-> -	fsl,tempmon = <&anatop>;
-> -	fsl,tempmon-data = <&ocotp>;
-> -	clocks = <&clks 172>;
-> -};
-> diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
-> new file mode 100644
-> index 0000000..193c7e5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
-> @@ -0,0 +1,96 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/thermal/imx-thermal.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP i.MX Thermal Binding
-> +
-> +maintainers:
-> +  - Anson Huang <Anson.Huang@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +              - fsl,imx6q-tempmon
-> +              - fsl,imx6sx-tempmon
-> +              - fsl,imx7d-tempmon
-> +
-> +  interrupts:
-> +    description: |
-> +      The interrupt output of the controller, the IRQ will be triggered
-> +      when temperature is higher than high threshold.
-> +    maxItems: 1
-> +
-> +  nvmem-cells:
-> +    description: |
-> +      Phandle to the calibration cells provided by ocotp for calibration
-> +      data and temperature grade.
-> +    maxItems: 2
-> +
-> +  nvmem-cell-names:
-> +    maxItems: 2
-> +    items:
-> +      - const: calib
-> +      - const: temp_grade
-> +
-> +  fsl,tempmon:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle'
-> +    description: |
-> +      Phandle pointer to system controller that contains TEMPMON control
-> +      registers, e.g. ANATOP on imx6q.
-
-Really, this should have been a child of the system controller. Not too 
-late to do that, but you'd need to keep this for compatibility.
-
-> +
-> +  fsl,tempmon-data:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle'
-> +    description: |
-> +      Deprecated property, phandle pointer to fuse controller that contains
-> +      TEMPMON calibration data, e.g. OCOTP on imx6q. The details about
-> +      calibration data can be found in SoC Reference Manual.
-
-Use 'deprecated: true' for deprecated properties.
-
-> +
-> +  clocks:
-> +    description: |
-> +      Thermal sensor's clock source, it is optional.
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - interrupts
-> +  - fsl,tempmon
-> +  - nvmem-cells
-> +  - nvmem-cell-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx6sx-clock.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    ocotp: ocotp@21bc000 {
-> +         #address-cells = <1>;
-> +         #size-cells = <1>;
-> +         compatible = "fsl,imx6sx-ocotp", "syscon";
-> +         reg = <0x021bc000 0x4000>;
-> +         clocks = <&clks IMX6SX_CLK_OCOTP>;
-> +
-> +         tempmon_calib: calib@38 {
-> +             reg = <0x38 4>;
-> +         };
-> +
-> +         tempmon_temp_grade: temp-grade@20 {
-> +             reg = <0x20 4>;
-> +         };
-> +    };
-> +
-> +    tempmon: tempmon {
-> +         compatible = "fsl,imx6sx-tempmon";
-> +         interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-> +         fsl,tempmon = <&anatop>;
-> +         nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-> +         nvmem-cell-names = "calib", "temp_grade";
-> +         clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
-> +    };
-> +
-> +...
-> -- 
-> 2.7.4
+> Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 > 
+> Strictly, I think patch #3/6 should really have come before this one
+> (with the header change moved accordingly), but don't bother resending
+> just for that.
+> 
+
+Thanks, I have sent the updated version with this change as well
+in addition to the commit msg update for modem requesting direct
+mapping.
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
