@@ -2,93 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 572891B093D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:21:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B1B21B0947
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:24:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TiQwVvWll6FPw5Bk6elxld7nqGuhTvhsmG9Epv9IMUU=; b=XhzeVAqfG2w+Ot
-	T7cE9UbNlgNNPumn73p8qQOEE2pZbRyjSFPXYnGWd0+AGxERy8YMRjP0KhdAkG9N0jzyIpz0fg7qZ
-	gqoOi5PxDbY0950OmfUPSOXYOOuwu2UEjB7nt7Xrnhj8IOASrEbKqxzZyOWzVSHoBTBHzjUy8SHlZ
-	5DKl6uZ0BiSs89WldyKoGicOSwNF/oa+V79M6C9CAXv/s+m+NuMuh/Bv7mqbPDp6gbn3xAE4Hda4u
-	hDhFbQwot7N+THZQa+PiyT+mUT63wDBwWKfUNZ3iloKBqK4m+jIvjDzpORc1fZPU8TBFDbObA4DQh
-	RJVMuQ9EmqYaLF1lnQFw==;
+	List-Owner; bh=IWsknLQvWEjhLneat7V9YlED2AGFq6wS9PYzGu5uXOY=; b=q1sQ3EgnzkRbpA
+	BAhG7q0C2r9waWnOtC3SnDXuG1lSTGu/MWuZc2vhYmonj15Yb94VV1CsDb6/mAKnXfTTED1jU+4x5
+	Dt5sTdhYezUYX10THU3KMS9PB472BmFHACBroBuBqkzQIAQa4rCITCM7A0OmOLUULyrOhoYQ/2M76
+	/UyT4WRWFQiLIuI0UWsSMGn/HuTkEGaPWM92S/wUhwgnRrkvLlkMCtOSke5NgGonuhxKBr4D94cGN
+	v+NMVlKtCADVGJuOR5m8cVerBEJqyy9w1YhXtBG8Af8MC1xmWI4WGLe/s0YAropBi9t/DlSSd6MLJ
+	cxKpWwKtRZiDs+sHXTtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQVQj-00012m-Sg; Mon, 20 Apr 2020 12:21:41 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jQVT7-0001ch-3F; Mon, 20 Apr 2020 12:24:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQVQX-00011W-Mi; Mon, 20 Apr 2020 12:21:31 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KCIXSG038800;
- Mon, 20 Apr 2020 12:21:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=aD9qpxg5CHZYZYk+gzIw6K6GXAhalYWjG3cWxhGETdA=;
- b=ODWT+u1CrywSLEvva6onNWjNe+MVU4zFVNEqawZ0opl1BgvuePjLbHGxIQlnqYcJfIAg
- ZjQDB7mMyvRJ/FaoiSUiMCowzTpF4s4Qdnb28RQlOBD6vBWR+ICofcpXfF2m8OzVQ92E
- pcM39t7RtQlzhGrTmB3vFryHXvXvomN+angy0g9nWC0HsFQ7GWVAt54bAakNollIYIBf
- 0YYTKbO/xFJRGqx3o5cIiBAttHFFmk8ePAhb2vJ9QGeA3UYmB235OuTi/k1JNf0thhE9
- wzIcrrHDVYQJLNb3febbpifMaAynkTJkkSiFpqUqhfw2QaB2SWwsCJtJCGLhR9coHcLk vg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 30ft6mxt7v-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 20 Apr 2020 12:21:13 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KCDhGo108375;
- Mon, 20 Apr 2020 12:19:12 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 30gb3qbnay-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 20 Apr 2020 12:19:12 +0000
-Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03KCJAdh032644;
- Mon, 20 Apr 2020 12:19:10 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 20 Apr 2020 05:19:09 -0700
-Date: Mon, 20 Apr 2020 15:19:00 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Jason Yan <yanaijie@huawei.com>
-Subject: Re: [PATCH] staging: mt7621-pinctrl: Use correct pointer type
- argument for sizeof
-Message-ID: <20200420121900.GD2659@kadam>
-References: <20200420123755.4353-1-yanaijie@huawei.com>
+ id 1jQVSv-0001bf-HQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 12:23:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 782D1206D9;
+ Mon, 20 Apr 2020 12:23:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587385436;
+ bh=K0zF/6nWgKkJ9hIQ4iSVP9ZRM8xUkP5IdaMj7W1UFrI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HPQmN/+YKH1/wEe3gwWA7rpA+Y+IvG3pqAtV5ovFIioQl/PCiUQGoUBOWufyvRjQv
+ TVS6z6yxpmQby3PWmCB7mVyUjeVNCWHfpulmfJbAvceidSEFWLj8288ZMT+i7Tr+A6
+ oZ/IH5PpYiWKPNePjRsrpyDhLSbTA6B2yvybyNPs=
+Date: Mon, 20 Apr 2020 13:23:51 +0100
+From: Will Deacon <will@kernel.org>
+To: Alex Belits <abelits@marvell.com>
+Subject: Re: [EXT] Re: [PATCH v3 03/13] task_isolation: add instruction
+ synchronization memory barrier
+Message-ID: <20200420122350.GB12889@willie-the-truck>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+ <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
+ <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
+ <d995795c731d6ecceb36bdf1c1df3d72fefd023d.camel@marvell.com>
+ <20200415124427.GB28304@C02TD0UTHF1T.local>
+ <e4d2cda6f011e80a0d8e482b85bca1c57665fcfd.camel@marvell.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200420123755.4353-1-yanaijie@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9596
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- spamscore=0 adultscore=0
- mlxlogscore=999 phishscore=0 suspectscore=0 bulkscore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004200108
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9596
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- bulkscore=0
- priorityscore=1501 impostorscore=0 adultscore=0 phishscore=0
- lowpriorityscore=0 malwarescore=0 clxscore=1011 mlxlogscore=999 mlxscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004200108
+In-Reply-To: <e4d2cda6f011e80a0d8e482b85bca1c57665fcfd.camel@marvell.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_052129_826052_1FE3582E 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200420_052357_614725_5823D8B5 
+X-CRM114-Status: GOOD (  25.88  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,8 +70,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -110,47 +82,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- nishkadg.linux@gmail.com, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ "frederic@kernel.org" <frederic@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Prasun Kapoor <pkapoor@marvell.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 08:37:55PM +0800, Jason Yan wrote:
-> Fix the following coccicheck warning:
+On Sun, Apr 19, 2020 at 05:02:01AM +0000, Alex Belits wrote:
+> On Wed, 2020-04-15 at 13:44 +0100, Mark Rutland wrote:
+> > On Thu, Apr 09, 2020 at 03:17:40PM +0000, Alex Belits wrote:
+> > > Some architectures implement memory synchronization instructions
+> > > for
+> > > instruction cache. Make a separate kind of barrier that calls them.
+> > 
+> > Modifying the instruction caches requries more than an ISB, and the
+> > 'IMB' naming implies you're trying to order against memory accesses,
+> > which isn't what ISB (generally) does.
+> > 
+> > What exactly do you want to use this for?
 > 
-> drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c:223:14-36: WARNING: Use
-> correct pointer type argument for sizeof
+> I guess, there should be different explanation and naming.
 > 
-> Signed-off-by: Jason Yan <yanaijie@huawei.com>
-> ---
->  drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> The intention is to have a separate barrier that causes cache
+> synchronization event, for use in architecture-independent code. I am
+> not sure, what exactly it should do to be implemented in architecture-
+> independent manner, so it probably only makes sense along with a
+> regular memory barrier.
 > 
-> diff --git a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
-> index d0f06790d38f..8883f2a8ea57 100644
-> --- a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
-> +++ b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
-> @@ -220,7 +220,7 @@ static int rt2880_pinmux_index(struct rt2880_priv *p)
->  	/* allocate our function and group mapping index buffers */
->  	f = p->func = devm_kcalloc(p->dev,
->  				   p->func_count,
-> -				   sizeof(struct rt2880_pmx_func),
-> +				   sizeof(struct rt2880_pmx_func *),
+> The particular place where I had to use is the code that has to run
+> after isolated task returns to the kernel. In the model that I propose
+> for task isolation, remote context synchronization is skipped while
+> task is in isolated in userspace (it doesn't run kernel, and kernel
+> does not modify its userspace code, so it's harmless until entering the
+> kernel).
 
-Yes.  This fixes a bug.  We were allocating too much data.  But the
-prefered style is:
+> So it will skip the results of kick_all_cpus_sync() that was
+> that was called from flush_icache_range() and other similar places.
+> This means that once it's out of userspace, it should only run
+> some "safe" kernel entry code, and then synchronize in some manner that
+> avoids race conditions with possible IPIs intended for context
+> synchronization that may happen at the same time. My next patch in the
+> series uses it in that one place.
+> 
+> Synchronization will have to be implemented without a mandatory
+> interrupt because it may be triggered locally, on the same CPU. On ARM,
+> ISB is definitely necessary there, however I am not sure, how this
+> should look like on x86 and other architectures. On ARM this probably
+> still should be combined with a real memory barrier and cache
+> synchronization, however I am not entirely sure about details. Would
+> it make more sense to run DMB, IC and ISB? 
 
-				sizeof(*p->func),
+IIUC, we don't need to do anything on arm64 because taking an exception acts
+as a context synchronization event, so I don't think you should try to
+expose this as a new barrier macro. Instead, just make it a pre-requisite
+that architectures need to ensure this behaviour when entering the kernel
+from userspace if they are to select HAVE_ARCH_TASK_ISOLATION.
 
-Please could you resend?
+That way, it's /very/ similar to what we do for MEMBARRIER_SYNC_CORE, the
+only real different being that that is concerned with return-to-user rather
+than entry-from-user.
 
-regards,
-dan carpenter
+See Documentation/features/sched/membarrier-sync-core/arch-support.txt
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
