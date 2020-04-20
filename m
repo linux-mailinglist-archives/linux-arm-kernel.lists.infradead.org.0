@@ -2,82 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D3261B16AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:07:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F2B61B16E2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:26:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=237r7vvACcDfM5GZfiM5XKAELSzFFy2V5rLY/6jB2iQ=; b=Zgj8gQcPD+oyC4
-	sW578ji4EHZA02109d9w608ADhBMycEVTcWXM5ydOyETWSTCzjL7DgymyMDgWaEhHdC8naxDZsVuK
-	y6/fJXwBPxtWtO8IuAT7hzdhrcLDtcGYhhn63GFpysVP3FwKtxM96TDPHIvHZhWLnvAGdZvg1MIG7
-	w97udtP5P/tQD17+OSw5lQiYN+YQlKapmHdefboOUcoGUFcxScIoaCGxZAir1JujXSMskAxT7uYhp
-	pWayOwEMkKe2W83NUngKHqYLaHxQhrODwcVtjkzE7ovKL9hzQR2i3KbRD+lFJ4RWh4uNINCBUvYLQ
-	RnqUYZOXrkqD4q3kqC9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J0u9j3warKAoJ8V0Zr49PosC8YpFCuq0kcF1fsSlMPE=; b=szZxf1kfaQeQKG
+	1Bhr7ceUYqXiUq3yp9N0a5daVct3IjLdN7g1R02BKxk+or/koPOObmBpaujeUrzycowokBTaMhgFS
+	MjwHIRC6rqma+6120O1KWY1TZA+JPVG59/+U3W9tEKu1qK2LmNdHM0M6WU6+7I5s8AxxTto92aZ3Z
+	1fo31KSZMnNjCLpqC/bgQMW6D4ILy2PGkIJ4BQ4YDCBl1/63uH/uE6ZEtQkvop7+QKHfYNoMcMoYT
+	oBwV6u4DjIL013E0VLSS3HLdJI/Lv4G5U38AiNRtx02MTj/dBVT/pkTGHynwQRBUF0OGYimIidwKP
+	r6V6Bw8P6KYjRwxUsXQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQchU-000320-5d; Mon, 20 Apr 2020 20:07:28 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jQd06-0000oI-St; Mon, 20 Apr 2020 20:26:42 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQchL-00030F-J3
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 20:07:21 +0000
-Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MZCSt-1jn19g2kaH-00V99c for <linux-arm-kernel@lists.infradead.org>; Mon,
- 20 Apr 2020 22:07:17 +0200
-Received: by mail-qk1-f174.google.com with SMTP id x66so12135236qkd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 13:07:17 -0700 (PDT)
-X-Gm-Message-State: AGi0PuapE2NqejNZBSVMpfRlNh/SDs29RYnhsn60g4Ufgpj1PEMsCOoV
- rayLF7otZaliULyOwS3hpaOYiddrQxnPW5lS8Oc=
-X-Google-Smtp-Source: APiQypIAhB8mGz6XM0SD8ArnZJY6aRKd7XU6MxbJm3d0s6y853Y/+oeV+mBwceNCaK3NIlM89N1GSdGstRKXiXTq2KM=
-X-Received: by 2002:a37:a046:: with SMTP id j67mr18240249qke.286.1587413236560; 
- Mon, 20 Apr 2020 13:07:16 -0700 (PDT)
+ id 1jQczp-0000j3-76; Mon, 20 Apr 2020 20:26:27 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b11so13828579wrs.6;
+ Mon, 20 Apr 2020 13:26:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=m86kfkguQyuXw4Padwd/5nB4RFgQInyY94SnHr1Z+AI=;
+ b=MNaaf1hFhkSNGsG0/WejBweFAMVqbFBOqTAhKWVbiIqSizUOwh+IXdBtBdMQOCBokB
+ vv+yP9h2nNbyp6aTAwifzxnJbGPVJqTGq4LRcyJUWDGhz9jUEuWFbBWpcaXRNRmd/YMf
+ RCs6t56EELxuk4xEKs+aqdw0M8QA2xnRRU28HKvQf1dqgCP3rcnFbrALfZGdQjgadPMw
+ Uq6PKbW3wtfYIzF3QHPHCuvePPApbnd0V+z2ZGc4HpJ2tCq3EA0oAn/deiaC8+9KEanT
+ iVDYBcvbxNT142KA+Mrwyo2m3kkBUAJ8vdFRnEFZlHAcHmM1Yfs1FE53iFsveq6S5GyB
+ my8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=m86kfkguQyuXw4Padwd/5nB4RFgQInyY94SnHr1Z+AI=;
+ b=Rlyqm7jx88xmdWWmSyhIcBudWpG9Zlq2jf6N8P4MIlQfJRyOWQYrsnB82Sm3+zhWsy
+ Fo22ody7JZmxUvXQo2e8impMmU7KbyweFqBImHRDSUmUBmfQRSv64mlQBt86Ja+nCJ9h
+ Lg6dE848lx5NijPDUMLjQnAD8VXIUYK+WSLBf5zX1CcC2p+bfAgvnOipFiBdZD47C9OH
+ V7cQSowCpGRqlg7SEyhXO0iIkgNrvDCgMDZJBRLdRI0bPRafn20UacDKmL1gcwb7d6qW
+ T2VONzPIuL4pACVFP3S3Y4Jk4M5pVofXKG0mkhzxXJXQBAL+8F/3krqlmIqsiCVdkdl+
+ TqAw==
+X-Gm-Message-State: AGi0PuazBJKbl177s6Nzzs5zrsSjIqOivmFWwyAha8uhw+8QnjbF3xFK
+ hTjNUvnpuiBjFWtVv5J9jOw=
+X-Google-Smtp-Source: APiQypKTMMF9oO9FvAFJ4xYhaXCar71+2ejW0w10+TOcqLClxYzLCLiWyqCAI3/BWVAKJrMuDVhxew==
+X-Received: by 2002:adf:ea44:: with SMTP id j4mr22176574wrn.38.1587414383380; 
+ Mon, 20 Apr 2020 13:26:23 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:3714:2e00:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id l19sm657846wmj.14.2020.04.20.13.26.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 13:26:22 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: robh+dt@kernel.org, khilman@baylibre.com, narmstrong@baylibre.com,
+ linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
+Subject: [PATCH v3 0/4] meson-ee-pwrc: support for Meson8/8b/8m2 and GX
+Date: Mon, 20 Apr 2020 22:26:08 +0200
+Message-Id: <20200420202612.369370-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-7-robh@kernel.org>
- <CAK8P3a2cxU3UYSj19Rt6pcUAtA1uTiQx46MF=92q_asmMOXMnA@mail.gmail.com>
- <CAL_JsqJS5o7_Ep50vfhNBOQ2sczgD+dNuiF8+GwjHUu7tN9j7Q@mail.gmail.com>
-In-Reply-To: <CAL_JsqJS5o7_Ep50vfhNBOQ2sczgD+dNuiF8+GwjHUu7tN9j7Q@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 20 Apr 2020 22:07:00 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3YQaQESsb61rZKopddmiKdm2qK_mS+yiBY5th0xSHOjw@mail.gmail.com>
-Message-ID: <CAK8P3a3YQaQESsb61rZKopddmiKdm2qK_mS+yiBY5th0xSHOjw@mail.gmail.com>
-Subject: Re: [PATCH 06/17] clk: versatile: Only enable SP810 on 32-bit by
- default
-To: Rob Herring <robh@kernel.org>
-X-Provags-ID: V03:K1:KYk4U3Q7kBFjeHc3Ec3L20ciFKq1JDv5PEVhn/EohfJ0cJJ6rzW
- Z/6Rc/lxlUIYbQ/on3p6Fza0owpLDf4yAufOvdaWKrZ4Mwht6s/N81GrQ14cxwfI56Je80x
- Ryfqz2xYyo+5WOiV2d4XiJ5QLV1iljfeRrLZm4J4Qj0ml+9k4UnLrdX7qgtd+UNthIakUQP
- d4KKsdv+W0jZ75FbtPZxg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:C6+ZHoMPcgY=:VONbaj7NzLOUG28YtE4XVe
- uQN6MhM1xE+c4y+1kWhBsoc6yKI/eVlp4aq5OJflj0bE5efUTC7oMjwGL8fpk3lzOivSldJGc
- OGdyfx5Eb99heRY5+w/6FhqTbsQAtyKbFS7F57tlnP8nQy4U7Fv3d3VGh+FWjBrG+VlrkP/Lf
- oVw7+xeqZsBWpwn9vIB53NV9BbWZNoA/G8fDm/LmpArl3C134K6XkOTWpP+kimvBsSOqCjHeM
- x+kP/onvTVB3kYOLkp2jHWvkU+vZU9qFv68jaCHDACjymTG7eReXTZOaE4Oi6YEM26qN91mk0
- DC80U+3lheYtly6fwSx/mC/HuHekR8fXpzW8lsvwQqwiylPhS3NEdg0SexceFmGtSEpm/mjRz
- kYVnxJU/9IYguupTa5MNEIwjgiAldNgko8PDVYTXqAfq6ib7EAy6FFiQkl/UKGgPwLodIeT/q
- kpKz1LLEzy1966lQ/eHk7G5Oy8gCdgz7qM5J82I6+3JGJUSNdEJoWe1wsTDtPJMtYP3SMEUWF
- Y77JpPS3NWBbYLsfWK52N0nd5gN19E6oDP7/nPdF/Xb+LyMNVuIjmc70JgXCY5g6CZTdrR19J
- +/m0J6I+YNzMqtDfjULiJRrzcmOx5+5mPNFoyu6u8a/wyGhlAUPWOc+MW6vD3TCx8iUglac3X
- fBE6NKglNMIrR/kh5P/F2b/JQIc+mFosiLNqaZI7KP4wRDpGxkiKP+HhzeeFoexS6WvsKZNJS
- 5mPQ4abw4B4Q8TtsiSiHDzw+udC0RO7836HQy5xH03noMXnK2XTA4bqBvFlHvA0rwKT9qPnD7
- tGtohSm9stFNeSiLDlEWuvodjYqSIGh7u9ywMEVj09p4NBsh5s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_130719_923860_3D852B6D 
-X-CRM114-Status: GOOD (  12.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_132625_262491_D31EA518 
+X-CRM114-Status: GOOD (  11.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,54 +98,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Will Deacon <will@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
- Kevin Brodsky <Kevin.Brodsky@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lee Jones <lee.jones@linaro.org>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 7:48 PM Rob Herring <robh@kernel.org> wrote:
->
-> On Mon, Apr 20, 2020 at 10:26 AM Arnd Bergmann <arnd@arndb.de> wrote:
-> >
-> > On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
-> > >
-> > > While 64-bit Arm reference platforms have SP810 for clocks for SP804
-> > > timers, they are not needed since the arch timers are used instead.
-> > >
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Liviu Dudau <liviu.dudau@arm.com>
-> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
-> > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > Cc: Linus Walleij <linus.walleij@linaro.org>
-> > > Cc: Stephen Boyd <sboyd@kernel.org>
-> > > Cc: linux-clk@vger.kernel.org
-> > > Signed-off-by: Rob Herring <robh@kernel.org>
-> >
-> > Acked-by: Arnd Bergmann <arnd@arndb.de>
-> >
-> > >
-> > >  config CLK_SP810
-> > >         bool "Clock driver for ARM SP810 System Controller"
-> > > -       default y if ARCH_VEXPRESS
-> > > +       default y if (ARCH_VEXPRESS && ARM)
-> >
-> > But maybe add "|| (COMPILE_TEST && OF)" for extra points.
->
-> On a 'default y'? Not necessary.
+This series adds support for all "older" SoCs to the meson-ee-pwrc
+driver. I wanted to compare as much as I could between my Meson8b EC-100
+(Endless Mini) and the Le Potato board so I added support for GXBB, GXL
+and GXM as well as for the SoCs that I'm actually working on. I will
+send the ARM64 dts patches once all of this is reviewed and merged.
 
-Ah right, that would indeed result in negative points.
+I successfully tested the Meson8b part on EC-100 where u-boot does not
+initialize the VPU controller. So this the board where I have been
+struggling most.
 
-      Arnd
+
+Changes since v2 at [1]:
+- don't remove the "reset-names" property from the main description
+  (only make it optional and switch from items to minItems) to fix
+  a dt_binding_check found by Rob (or his bot) - thanks and sorry!
+
+Changes since v1 at [0]:
+- rename PWRC_GXBB_ETH_ID to PWRC_GXBB_ETHERNET_MEM_ID. Spotted by
+  Neil, thanks!
+- update cover-letter since Neil confirmed (thanks!) that the "dvin"
+  reset really belongs to the VPU on GXBB, GXL and GXM
+- removed RFC status
+
+
+[0] https://patchwork.kernel.org/cover/11489163/
+[1] https://patchwork.kernel.org/cover/11496013/
+
+
+Martin Blumenstingl (4):
+  dt-bindings: power: meson-ee-pwrc: add support for Meson8/8b/8m2
+  dt-bindings: power: meson-ee-pwrc: add support for the Meson GX SoCs
+  soc: amlogic: meson-ee-pwrc: add support for Meson8/Meson8b/Meson8m2
+  soc: amlogic: meson-ee-pwrc: add support for the Meson GX SoCs
+
+ .../bindings/power/amlogic,meson-ee-pwrc.yaml | 102 +++++++++++++++---
+ drivers/soc/amlogic/meson-ee-pwrc.c           |  98 ++++++++++++++++-
+ include/dt-bindings/power/meson-gxbb-power.h  |  13 +++
+ include/dt-bindings/power/meson8-power.h      |  13 +++
+ 4 files changed, 206 insertions(+), 20 deletions(-)
+ create mode 100644 include/dt-bindings/power/meson-gxbb-power.h
+ create mode 100644 include/dt-bindings/power/meson8-power.h
+
+-- 
+2.26.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
