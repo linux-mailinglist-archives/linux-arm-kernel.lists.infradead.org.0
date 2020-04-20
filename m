@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDD571B14A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 307061B14AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vKZPInNWQqCmqJUGhm0Wgj4N8npj9utcbwviuH5OUOw=; b=DmzXiWJE/FoG45
-	kyl1aElZvJmFxnm3XiGxkTt0AtcO4kZQcIQE4NHxXgXl0XxdZyd3a5B3lyCcIJIJBQEPXhqnCK+Jd
-	ZangvRdNYA9C6kspau/13z+UR6taQ00WmJcBDP/3cf+WiHr7DZ8ueLuVfcMSnw+3KIIdIYaoOLZjr
-	PF8Oe21xgQuDeTlaLjA5tXgPJJzPOZKnN5pxgpP+ZWhZHhDc+KEntpnQrkNYwrryzc7eu0kGkdy2C
-	+6ZY0EmBncEGQSKmcLg+RxFVZN9IssPhN2UoGw6CSKGCJFojx8Od+hymu6DgssJs+ADW/odRaHy4j
-	DcSC4a35lKk2DH+Vv9LQ==;
+	List-Owner; bh=DrFQbdTJwToZ2lLEn9xeux4n00YuLQ+LgmbNjmn9SIo=; b=ocek867pGBSsbi
+	kkFPVwBTSflhivhw9LzThKU1QM25qCV7HUEcbd/2k/eQH4drh80XQIfwKbQTgfJmnK6ggYlKlkbks
+	m9ynCTyVXvyULqT5MiVW39gm2DKg/g+VIGkOgUC/MdYgjYuGNqv0/nmXVFTGaKk0cj8ZYKHcno0KI
+	mMwCNQ7zSZfbwAYRM9Snxm0Og4nU0XYioierOhKksyGzCM/+Iv/uPfGvLXyadsKOKPYXrEvup+qsI
+	HFsKnRvbIjeM+kG0FXPlrQz0a9cOxa1z3XRwEzsHjUzFuspuQYwXrom/6UWfUYTx4ltlyDO+M8KBG
+	gym5tH9jE7AuS3dXADjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQbGP-0006gs-39; Mon, 20 Apr 2020 18:35:25 +0000
+	id 1jQbGd-0000sf-Sx; Mon, 20 Apr 2020 18:35:39 +0000
 Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQbFe-0005qi-Vh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:34:47 +0000
+ id 1jQbFo-0006UV-8S
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:34:54 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1587407686; h=Content-Transfer-Encoding: MIME-Version:
+ s=smtp; t=1587407690; h=Content-Transfer-Encoding: MIME-Version:
  References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=ax3N22sYBdeUbaN4NLYRPXOyfXR6puUCVOonkas/6+M=;
- b=jFpYXEbR+YEy9pPYRRu9g9Hp1xQQlpBcYuHYWlT50sWI21d4XY0wt6e2U+q7farlFJ8UStAR
- G/nOpHVWY5I+r1hQknezAMqfeeoxfBCDpRWzfqFzCshEj1eiTOMOtWA/QyvBN7gaR9yq3+yQ
- FqMdjfcgQZNLvtAjEpkdmkQtOoo=
+ Sender; bh=jjhc591RUF5aDtsQhs7qWciFmxjnTGnRz3g5gRbb3Os=;
+ b=ZIHVedyvDC1k9SXUylQ5r1mX3Jz2g9Sl7GKRW4OFYwg99xXOXtew1giW+L9e7ih5qoM9xQnF
+ 7Kf501xyyUr9xlrwMJ+kQ14JUBnr/ffrSSmxr6lcUiQBSbTfFQGr3T1SEo+YeSqpywYAhjlb
+ F0ddBCaeQiiw8pq3r7IsJiwTEOM=
 X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e9deb32.7f231fcfbe68-smtp-out-n04;
- Mon, 20 Apr 2020 18:34:26 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e9deb3a.7f79d2ce86f8-smtp-out-n03;
+ Mon, 20 Apr 2020 18:34:34 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 84FF3C58A02; Mon, 20 Apr 2020 18:34:25 +0000 (UTC)
+ id 97AB1C43637; Mon, 20 Apr 2020 18:34:33 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 7065CC00448;
- Mon, 20 Apr 2020 18:34:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7065CC00448
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 72196C44799;
+ Mon, 20 Apr 2020 18:34:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 72196C44799
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -61,17 +61,17 @@ To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
  Joerg Roedel <joro@8bytes.org>, Sibi Sankar <sibis@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-Subject: [PATCHv4 3/6] iommu/arm-smmu: Allow client devices to select direct
- mapping
-Date: Tue, 21 Apr 2020 00:03:51 +0530
-Message-Id: <7cf1f64167b5545b7f42275395be1f1e2ea3a6ac.1587407458.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv4 4/6] iommu/arm-smmu-qcom: Request direct mapping for modem
+ device
+Date: Tue, 21 Apr 2020 00:03:52 +0530
+Message-Id: <8ef5d93c74f5cd9e4a6edab86d1d46efbf3aa038.1587407458.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_113446_225785_E5D534B6 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20200420_113450_146674_1460F6E0 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -105,62 +105,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jordan Crouse <jcrouse@codeaurora.org>
+From: Sibi Sankar <sibis@codeaurora.org>
 
-Some client devices want to directly map the IOMMU themselves instead
-of using the DMA domain. Allow those devices to opt in to direct
-mapping by way of a list of compatible strings.
+The Q6 modem sub-system has direct access to DDR through memnoc.
+Also SMMU is not expected to provide access control/translation
+for these SIDs (sandboxing of the modem is achieved through XPUs
+engaged using SMC calls). So request direct mapping for modem on
+platforms which don't have TrustZone.
 
-Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Signed-off-by: Sibi Sankar <sibis@codeaurora.org>
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu-qcom.c | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ drivers/iommu/arm-smmu-qcom.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-index 64a4ab270ab7..5bedf21587a5 100644
+index 5bedf21587a5..cf01d0215a39 100644
 --- a/drivers/iommu/arm-smmu-qcom.c
 +++ b/drivers/iommu/arm-smmu-qcom.c
-@@ -3,6 +3,7 @@
-  * Copyright (c) 2019, The Linux Foundation. All rights reserved.
-  */
- 
-+#include <linux/of_device.h>
- #include <linux/qcom_scm.h>
- 
- #include "arm-smmu.h"
-@@ -11,6 +12,23 @@ struct qcom_smmu {
- 	struct arm_smmu_device smmu;
- };
- 
-+static const struct of_device_id qcom_smmu_client_of_match[] = {
-+	{ .compatible = "qcom,adreno" },
-+	{ .compatible = "qcom,mdp4" },
-+	{ .compatible = "qcom,mdss" },
-+	{ .compatible = "qcom,sc7180-mdss" },
-+	{ .compatible = "qcom,sdm845-mdss" },
-+	{ }
-+};
-+
-+static int qcom_smmu_def_domain_type(struct device *dev)
-+{
-+	const struct of_device_id *match =
-+		of_match_device(qcom_smmu_client_of_match, dev);
-+
-+	return match ? IOMMU_DOMAIN_IDENTITY : 0;
-+}
-+
- static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
- {
- 	int ret;
-@@ -41,6 +59,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
- }
- 
- static const struct arm_smmu_impl qcom_smmu_impl = {
-+	.def_domain_type = qcom_smmu_def_domain_type,
- 	.reset = qcom_smmu500_reset,
+@@ -17,7 +17,9 @@ static const struct of_device_id qcom_smmu_client_of_match[] = {
+ 	{ .compatible = "qcom,mdp4" },
+ 	{ .compatible = "qcom,mdss" },
+ 	{ .compatible = "qcom,sc7180-mdss" },
++	{ .compatible = "qcom,sc7180-mss-pil" },
+ 	{ .compatible = "qcom,sdm845-mdss" },
++	{ .compatible = "qcom,sdm845-mss-pil" },
+ 	{ }
  };
  
 -- 
