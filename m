@@ -2,62 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62CF41B1268
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:00:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CA581B1276
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:02:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Uvw8PYGR89ktQ1Noz69J2DP1H80lgSPEnaLE726k3Sw=; b=Q9EsTny7e2/lUP+J6dl+O7Y0i
-	qQwi5fhW35MO8SMthoV78TuUv5lbmCDFzTeRhBz1bvOvFqPLCUCrN008mapExS0h+Z8mawNzaqhnl
-	YxbsBBhKxJiTKp29pBux/r3DGW48Fc3GyhnT/gD1ziN84L2pPo2Ip/xvOkgnMOQpKpe8qTXwI3idM
-	CUQ/RzVo+1tuaOOBp7W5DocvqvS7gjv2Dkda80OyGx8LE4DHeCePmeikf3aKK0jxUDRPgTI+5CAhy
-	j7HBlGiFL0H5d7lARFXFtzM4mC7UCrb2USL/hGmUHIo7Srka2iHU2FW5WI6WHtFQ8JkgMaD3KnDdb
-	IIy4tQ7Xw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=99FWkZPU4zi2W9P7VXkc+Vy4MzCGEr0MLYvsflkxkCw=; b=aI7
+	gdzbbDN0I3optpTM6QUu7kic3Dx9Br6x0yjfXLuAVoeOwqx3CU8CQ1JdrXxqimfyEdCCZ05IMGr/l
+	Z0i0RRky4fYL0BHMVYU2ZlagU6c0N+ESEpCxgGiXyIIS0Da4goq7eGkp8wbFsa9s5daqJOmVZ3tpW
+	9PfCTZ4LfvdVxfyXT9Mad9zFvrIQw/tlU3XJetI0mxF05q8Q8xPC1SyfXUXQ3NZYetVNGAVaUi50Y
+	XRN4THk+XGpKXRABjx13p5w0rkLneUoej+UmjZK27U42Stuq7R9ClyrAgmhsl13JsAitjyvF2yy8i
+	y56nbhTF4XVJ9kBQ19GHRFNo6Ih26Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQZmG-00044F-SX; Mon, 20 Apr 2020 17:00:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQZlv-00043a-LM
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:59:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21D5831B;
- Mon, 20 Apr 2020 09:59:51 -0700 (PDT)
-Received: from [10.57.33.63] (unknown [10.57.33.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EC623F73D;
- Mon, 20 Apr 2020 09:59:47 -0700 (PDT)
-Subject: Re: [PATCHv3 3/6] iommu/arm-smmu: Implement
- iommu_ops->def_domain_type call-back
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Sibi Sankar <sibis@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-References: <cover.1587400573.git.saiprakash.ranjan@codeaurora.org>
- <d6be59d4f90d997e24dc4c496c0247626e46415f.1587400573.git.saiprakash.ranjan@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e68ad59e-d132-dd06-1ceb-30e37f95a19b@arm.com>
-Date: Mon, 20 Apr 2020 17:59:45 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <d6be59d4f90d997e24dc4c496c0247626e46415f.1587400573.git.saiprakash.ranjan@codeaurora.org>
-Content-Language: en-GB
+	id 1jQZoQ-000723-Qa; Mon, 20 Apr 2020 17:02:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQZoI-00071Q-Lb
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:02:19 +0000
+Received: from localhost.localdomain (unknown [157.46.94.248])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2FB820CC7;
+ Mon, 20 Apr 2020 17:02:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587402137;
+ bh=aksiYpWTvag3k42u0M1b1NrjxY8yKocMPEw91TQYxEU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=bM5TEFM6C5MJE7Kcy6aNRoG0fjnGHLSHqXpkrnuuYUVe4H9Ivr7WigZ0IzlLMZ5R6
+ ggHj/GRUmCAAiaBJmz95FdNW6UpXR1wn4Io//QLjuSabgrWzfYKpzwBhnFUWkdRS0S
+ 7PcmuXjFHlv/Vt6tf5kpQEzocBySnhWsaLV7oqtE=
+From: mani@kernel.org
+To: gregkh@linuxfoundation.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com
+Subject: [PATCH v3 0/2] Add CTS/RTS gpio support to STM32 UART
+Date: Mon, 20 Apr 2020 22:32:02 +0530
+Message-Id: <20200420170204.24541-1-mani@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_095951_743490_1CA8EED7 
-X-CRM114-Status: GOOD (  17.51  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200420_100218_726611_8EE7E3B1 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,60 +73,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
- iommu@lists.linux-foundation.org, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>,
+ linux-kernel@vger.kernel.org, andy.shevchenko@gmail.com,
+ linux-serial@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-20 5:42 pm, Sai Prakash Ranjan wrote:
-> Implement the new def_domain_type call-back for the ARM
-> SMMU driver. We need this to support requesting the domain
-> type by the client devices.
+From: Manivannan Sadhasivam <mani@kernel.org>
 
-Modulo any further changes to the default domain rework,
+Hello,
 
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+This patchset adds CTS/RTS gpio support to STM32 UART controller.
+Eventhough the UART controller supports using dedicated CTS/RTS gpios,
+sometimes we need to use different set of gpios for flow control.
 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> ---
->   drivers/iommu/arm-smmu.c | 12 ++++++++++++
->   1 file changed, 12 insertions(+)
-> 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index e622f4e33379..b345a86085ce 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -1609,6 +1609,17 @@ static void arm_smmu_get_resv_regions(struct device *dev,
->   	iommu_dma_get_resv_regions(dev, head);
->   }
->   
-> +static int arm_smmu_def_domain_type(struct device *dev)
-> +{
-> +	struct arm_smmu_master_cfg *cfg = dev_iommu_priv_get(dev);
-> +	const struct arm_smmu_impl *impl = cfg->smmu->impl;
-> +
-> +	if (impl && impl->def_domain_type)
-> +		return impl->def_domain_type(dev);
-> +
-> +	return 0;
-> +}
-> +
->   static struct iommu_ops arm_smmu_ops = {
->   	.capable		= arm_smmu_capable,
->   	.domain_alloc		= arm_smmu_domain_alloc,
-> @@ -1627,6 +1638,7 @@ static struct iommu_ops arm_smmu_ops = {
->   	.of_xlate		= arm_smmu_of_xlate,
->   	.get_resv_regions	= arm_smmu_get_resv_regions,
->   	.put_resv_regions	= generic_iommu_put_resv_regions,
-> +	.def_domain_type	= arm_smmu_def_domain_type,
->   	.pgsize_bitmap		= -1UL, /* Restricted during device attach */
->   };
->   
-> 
+This is necessary for the upcoming STM32MP1 based board called Stinger96
+IoT-Box. On that board, a bluetooth chip is connected to one of the UART
+controller but the CTS/RTS lines got swapped mistakenly. So this patchset
+serves as a workaround for that hardware bug and also supports the
+usecase of using any gpio for CTS/RTS functionality. As per the sugggestion
+provided by Andy for v1, I've now switched to mctrl_gpio driver.
+
+This patchset has been validated with Stinger96 IoT-Box connected to Murata
+WiFi-BT combo chip.
+
+Thanks,
+Mani
+
+Changes in v3:
+
+* Added Andy's reviewed-by tag
+* Fixed minor issues spotted by Fabrice
+
+Changes in v2:
+
+As per the review by Andy:
+
+* Switched to mctrl_gpio driver instead of using custom CTS/RTS
+  implementation
+* Removed the use of software flow control terminology.
+
+Manivannan Sadhasivam (2):
+  dt-bindings: serial: Document CTS/RTS gpios in STM32 UART
+  tty: serial: Add modem control gpio support for STM32 UART
+
+ .../bindings/serial/st,stm32-uart.yaml        | 14 +++++
+ drivers/tty/serial/Kconfig                    |  1 +
+ drivers/tty/serial/stm32-usart.c              | 53 ++++++++++++++++++-
+ drivers/tty/serial/stm32-usart.h              |  1 +
+ 4 files changed, 67 insertions(+), 2 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
