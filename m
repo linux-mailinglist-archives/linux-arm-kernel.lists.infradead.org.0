@@ -2,98 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C08F61B0F2A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA98A1B0F39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rKrapKAm2MBgwmbGeR12uTibuXwf5YIYbqRHPRrcQm0=; b=dN9UR6KTjvMQTTjyQb/rTdHfT
-	83om1YazLCmOu/KgAL/R7i+ZW6GM3Z/qjy2jWh/mc24WtiqM7xf8RkuOShO/OR2AOd06RsdxA1LMt
-	KirR5x1XRwwfXKpKoaAorhvYRosjAmn7DpF7pa0aTgN1c819KS5FNqylp30hxaIrhSfziT/5/xt3P
-	v4QCklpgKmyeZzyha0iQa9fK+rsji+dXCOWcC4recZlaQ8vwH8MJluhGeoRL65JLAdDwKumYyQGZm
-	buL6ZXqEeJI0M3GEPORq13gnufn05HyIThCU7NDMC9+TzJVxdmheQVM20EbOzSDlNd5QUlOkAxeN2
-	U/E7mlEDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Message-Id:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0l47I1sYnpcsNH3NzQg7sZSV3sp4WMo7Weanj8JYujs=; b=BAEuJ/+2nx7twn
+	NP9CZ37TBKbNMkvzEoePGzvS6FLI2uKGPar79+lgq+TWAN9P9qGF92pcI9uFNv75RqG6IahpUMe2q
+	7MgBy2rESExGLbIjVGqP7CEbaCYcY1gZ4NCgC6/HjRtsDc9130W78USKQ1q30pxZNcl71KzMfF/kQ
+	TJk7Ep/6yjAicla1t5cD6qN2oonxGnhTbF40TDhaHj0UNP6x0X30FAEDprACLVQRrE6n8YliW1yHp
+	KKHS3ZujIXw7PZKJZW4LZZfLIOVldQKXIwucNXVXH02qLFjwoKK2rgmJqmHagRBf9I612xvKi3bUV
+	A4BwNScGUY/I6lx98AyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXwv-0007YZ-RU; Mon, 20 Apr 2020 15:03:05 +0000
-Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
+	id 1jQXzE-0008Mq-Bn; Mon, 20 Apr 2020 15:05:28 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXwl-0007WU-Uh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:02:59 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id DEA10638;
- Mon, 20 Apr 2020 11:02:52 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 20 Apr 2020 11:02:53 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=L27MuuYz1SixnmfaHirukiQJrxC
- Tv8fLDqVFJXmGlc0=; b=XLnEVb1swtAk8zZ4/ZrbJwk5Zszm9kxeZodYA8FcZ/c
- ziI0Co7Zf6z9PuFfj+8vwErIVzcsdG+nhI3S6Uz3Ju758ug/XlAWFhNhNcPP1sCB
- bUxHz1/6DqU0Cp6fhlBBh1xjQWcpU8bUdnCcWzIBFooa6xYYZtOYYRz0FanoXs+d
- jXLKI1csogzJYT0VyfAqw0nXSLtwb7MH9z644G4tyn+69K5Of0tyvR9Q/e/iIqwf
- rDoPsBrf9B+2de0tQ6PuDOFCrgcF+2CCtfZ7qYfG25DcCzOaxDThGs/UFcOOiY0M
- Dr55kkJNX5zCuwCed8lrf14Tp8/IFKzRKdGqF6LkrsQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=L27Muu
- Yz1SixnmfaHirukiQJrxCTv8fLDqVFJXmGlc0=; b=JWHhtcUxZK8up4VTR7dxtb
- nWq61WKCtiBxnDvUHML3ErQCOBVwaflUDfO5VPn7RSrJUDhjjZ/1ZSYOMWQw6Tfv
- ORB4LDzilF1z7Ed5UHu3AHriiK55GO5YPF5LvuQkj+aZEC/tFdhqf1bIyLsYQktx
- SD77eTCUfL+FRPfueRKkZB/ZNm3vGOhdW8M07p99qmxQ+gVcSuU8kMVGKwkkA65q
- rqOy4H52KfgsD+vvg23lTkRhTx3cRaRKyUb/zllXxqfqzVYwpTLGrqge7jjRNoRz
- 8/LWZT3lztUFH8jJsrHqe4CkjLSKfjyWiZ3qV7fH9YUnyC9+/4WN7zl1jkUvbSNw
- ==
-X-ME-Sender: <xms:mrmdXpW0a6b7oEDyfoMqd29TrNQhYzqlGCs_kwWuVm0UHqg9hrre0g>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeefgdekfecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
- epkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
- rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
- hordhtvggthh
-X-ME-Proxy: <xmx:m7mdXuu11GnamYeDFtYtOHIR89FZXPkjxvEMzq77_RnQJKgusIGyIg>
- <xmx:m7mdXoVueCausVfPcqaubNEo1d3D0A5_HwjEyh3Exbq9FXD9MydQLA>
- <xmx:m7mdXiXVegDsXmhTrxlc0iuHdh4vgXc8q7pxdNOP7qyPvQih1kC2tQ>
- <xmx:nLmdXrGlRTtnVvm8gflpw646ZArS7sCb-znIOBFrD4mFqBlT-BYDgYc5E-g>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id A483C328006F;
- Mon, 20 Apr 2020 11:02:50 -0400 (EDT)
-Date: Mon, 20 Apr 2020 17:02:48 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200420150248.mqqcxgsaxj5oxfgk@gilmour.lan>
-References: <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
- <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
- <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
- <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
- <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
- <20200408134315.a7cemmto6bi26arg@gilmour.lan>
- <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
- <20200408153051.GP6127@valkosipuli.retiisi.org.uk>
- <20200415101827.owf5babnigev2vit@gilmour.lan>
- <20200415161616.GA934@valkosipuli.retiisi.org.uk>
-MIME-Version: 1.0
-In-Reply-To: <20200415161616.GA934@valkosipuli.retiisi.org.uk>
+ id 1jQXyj-0008Kx-4U
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:04:59 +0000
+Received: by mail-pl1-x644.google.com with SMTP id a23so4053961plm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 08:04:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ksYDvDMifJSDzaLe8ppl9fPQsaUEh1BKmaFRsUu0FRM=;
+ b=dP/sa21AeYjRWh1TVvNJkTvzmFhd54MB5zWkbXU4Ne62xEiz68w1XgIJMNEdq6YlCy
+ xGSqNK7lUNgWAY+LHRdie8zraBNtFqfCK0EuW6KWJw2QHezbZzuG0VJ+Dy4Dxj8A7mos
+ xwZ4PpPVMVPmM/zFmy1BIRyxBgA1HBp/r+N9RqnX92Z6nFIOcR5e51E9DQy39RXR32Um
+ X8TN8WRJXSUJ5I0/O/qy+ubc2y5ADDKjVHqA3/tdfRAwLo894nBIr/Tik0Qx/kldiA4e
+ pp2N69oN169709NunCURUKgaCsTzKrVslDj3VCCU+6IXj8CoTjjSDVM4QYa5hbfT79xG
+ Kefw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ksYDvDMifJSDzaLe8ppl9fPQsaUEh1BKmaFRsUu0FRM=;
+ b=pbPx9Ng5VDKU47f7YG9eUs7rLZFtkMBenaYWraXP4xrWiYHI1a07+WzqDMSNDHDjD4
+ 9oCBEwfToy+g8JB3uAnMsuhxkTYEACiE49IYmkKZ1wBrf9mEYNOhySAJHjUmmcrKXQs4
+ XXOPUrHQjq39yPoxKBeRtIZJ9SRPYlALQ47OxeUCxqntwpeyKT9kbk/DkgxzCWmwTFgr
+ 0JIVXOcBoLz0drQ7sYzVoNd/QnIMihtZGX2K7lcJoNL5ct2+FEka52rzuiSWciWkbVIS
+ SeBypUo1xzsZ260fa/0F47O/VEwZsbd6q0PZUZPgwIa2ZeEeUhb3cqmFqcjEjZmFuldl
+ KSMA==
+X-Gm-Message-State: AGi0Puad2MdVotkxHWe/kH3Ji27dLYLcIxxrliBYftWNT5yLw7Ya6Hzy
+ v0qhjf1Vnu+Dnfh7tq+/CABMnw==
+X-Google-Smtp-Source: APiQypIk1Du+aGj95qRFJMvPft4RvKQ+RUnkIms4lRS+8pbRyvlYkpkqC8LQsyngAi4hAvzbX7aOwA==
+X-Received: by 2002:a17:90a:8d02:: with SMTP id
+ c2mr19342929pjo.113.1587395095926; 
+ Mon, 20 Apr 2020 08:04:55 -0700 (PDT)
+Received: from devnote (NE2965lan1.rev.em-net.ne.jp. [210.141.244.193])
+ by smtp.gmail.com with ESMTPSA id n16sm806835pfq.61.2020.04.20.08.04.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 08:04:55 -0700 (PDT)
+Date: Tue, 21 Apr 2020 00:04:22 +0900
+From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>, Rob Herring
+ <robh@kernel.org>
+Subject: [PATCH v3 0/2] dts: uniphier: Add Akebi96 Board support
+Message-Id: <20200421000422.6823a1a023161a987aad0d05@linaro.org>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_080256_939099_77415444 
-X-CRM114-Status: GOOD (  39.46  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200420_080457_708436_B81A2BC0 
+X-CRM114-Status: GOOD (  12.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.17 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -112,273 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Robert Foss <robert.foss@linaro.org>, Tomasz Figa <tfiga@chromium.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============4605019968059420543=="
+Cc: devicetree@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello,
 
---===============4605019968059420543==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="z2dri642qwse5u2s"
-Content-Disposition: inline
+Here is the 3rd version of the patches to add a devicetree for 
+Akebi96 board.
 
+This version simplifies the devicetree according to Masahiro's
+comment and update patch description. (Thanks!)
 
---z2dri642qwse5u2s
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The Akebi96 is a certified 96boards which is based on Socionext
+UniPhier LD20 SoC. Most of the part is similar to LD20 reference
+board, but there are some changes.
 
-On Wed, Apr 15, 2020 at 07:16:16PM +0300, Sakari Ailus wrote:
-> On Wed, Apr 15, 2020 at 12:18:27PM +0200, Maxime Ripard wrote:
-> > On Wed, Apr 08, 2020 at 06:30:51PM +0300, Sakari Ailus wrote:
-> > > Cc'ing Laurent as well.
-> > >
-> > > On Wed, Apr 08, 2020 at 06:28:57PM +0300, Sakari Ailus wrote:
-> > > > Hi Maxime,
-> > > >
-> > > > On Wed, Apr 08, 2020 at 03:43:15PM +0200, Maxime Ripard wrote:
-> > > > > On Wed, Apr 08, 2020 at 02:35:28PM +0200, Tomasz Figa wrote:
-> > > > > > On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech=
-> wrote:
-> > > > > > > On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
-> > > > > > > > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
-> > > > > > > > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus=
-@iki.fi> wrote:
-> > > > > > > > > >
-> > > > > > > > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss w=
-rote:
-> > > > > > > > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@ce=
-rno.tech> wrote:
-> > > > > > > > > > > >
-> > > > > > > > > > > > Hi Robert,
-> > > > > > > > > > > >
-> > > > > > > > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Fo=
-ss wrote:
-> > > > > > > > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxim=
-e@cerno.tech> wrote:
-> > > > > > > > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakar=
-i Ailus wrote:
-> > > > > > > > > > > > > > > > But that 19.2MHz is not a limitation of the=
- device itself, it's a
-> > > > > > > > > > > > > > > > limitation of our implementation, so we can=
- instead implement
-> > > > > > > > > > > > > > > > something equivalent in Linux using a clk_s=
-et_rate to 19.2MHz (to make
-> > > > > > > > > > > > > > > > sure that our parent clock is configured at=
- the right rate) and the
-> > > > > > > > > > > > > > > > clk_get_rate and compare that to 19.2MHz (t=
-o make sure that it's not
-> > > > > > > > > > > > > > > > been rounded too far apart from the frequen=
-cy we expect).
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > This is doing exactly the same thing, excep=
-t that we don't encode our
-> > > > > > > > > > > > > > > > implementation limitations in the DT, but i=
-n the driver instead.
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > What I really wanted to say that a driver tha=
-t doesn't get the clock
-> > > > > > > > > > > > > > > frequency from DT but still sets that frequen=
-cy is broken.
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > This frequency is highly system specific, and=
- in many cases only a certain
-> > > > > > > > > > > > > > > frequency is usable, for a few reasons: On ma=
-ny SoCs, not all common
-> > > > > > > > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 M=
-Hz and 24 MHz; while others
-> > > > > > > > > > > > > > > are being used as well), and then that freque=
-ncy affects the usable CSI-2
-> > > > > > > > > > > > > > > bus frequencies directly --- and of those, on=
-ly safe, known-good ones
-> > > > > > > > > > > > > > > should be used. IOW, getting the external clo=
-ck frequency wrong typically
-> > > > > > > > > > > > > > > has an effect that that none of the known-goo=
-d CSI-2 bus clock frequencies
-> > > > > > > > > > > > > > > are available.
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > So clock-frequency is not about the "Frequency =
-of the xvclk clock in
-> > > > > > > > > > > > > > Hertz", but the frequency at which that clock m=
-ust run on this
-> > > > > > > > > > > > > > particular SoC / board to be functional?
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > If so, then yeah, we should definitely keep it,=
- but the documentation
-> > > > > > > > > > > > > > of the binding should be made clearer as well.
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > Alright so, let me summarise the desired approach=
- then.
-> > > > > > > > > > > >
-> > > > > > > > > > > > There's a separate discussion on the same topic her=
-e:
-> > > > > > > > > > > > https://lore.kernel.org/linux-media/20200407122106.=
-GD4751@pendragon.ideasonboard.com/
-> > > > > > > > > > >
-> > > > > > > > > > > Thanks for the link.
-> > > > > > > > > > >
-> > > > > > > > > > > >
-> > > > > > > > > > > > > ACPI:
-> > > > > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > DT:
-> > > > > > > > > > > > >   - Fetch the "clock-frequency" property
-> > > > > > > > > > > > >   - Verify it to be 19.2Mhz
-> > > > > > > > > > > > >   - Get xvclk clock
-> > > > > > > > > > > > >   - Get xvclk clock rate
-> > > > > > > > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
-> > > > > > > > > > > >
-> > > > > > > > > > > > The current status is that you should
-> > > > > > > > > > > > 's/clock-frequency/link-frequencies/', and in order=
- to replace
-> > > > > > > > > > > > assigned-clock-rates, you'll want to have a clk_set=
-_rate to 19.2MHz
-> > > > > > > > > > > > between steps 3 and 4
-> > > > > > > > > > >
-> > > > > > > > > > > Would we want to 's/clock-frequency/link-frequencies/=
-' for ACPI too?
-> > > > > > > > > > > I imagine that would cause some breakage.
-> > > > > > > > > >
-> > > > > > > > > > It would, yes, and it would be no more correct on DT ei=
-ther.
-> > > > > > > > > >
-> > > > > > > > > > There are basically two possibilities here; either use =
-the clock-frequency
-> > > > > > > > > > property and set the frequency, or rely on assigned-clo=
-ck-rates, and get
-> > > > > > > > > > the frequency instead.
-> > > > > > > > > >
-> > > > > > > > > > The latter, while I understand it is generally preferre=
-d, comes with having
-> > > > > > > > > > to figure out the register list set that closest matche=
-s the frequency
-> > > > > > > > > > obtained. The former generally gets around this silentl=
-y by the clock
-> > > > > > > > > > driver setting the closest frequency it can support.
-> > > > > > > > >
-> > > > > > > > > Wouldn't the former actually cause problems, because the =
-closest
-> > > > > > > > > frequency the clock driver can support could be pretty fa=
-r from the
-> > > > > > > > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs=
- to check the
-> > > > > > > > > resulting frequency anyway.
-> > > > > > > >
-> > > > > > > > That's possible, yes; in this case there wouldn't be a guar=
-antee the
-> > > > > > > > frequency wouldn't be far off.
-> > > > > > >
-> > > > > > > assigned-clock-rates is really fragile... There's zero guaran=
-tee on
-> > > > > > > how far the actual rate is going to be from the asked one, bu=
-t more
-> > > > > > > importantly you have zero guarantee on the time frame that ra=
-te is
-> > > > > > > going to be enforced for.
-> > > > > >
-> > > > > > Is there such a guarantee if clk_set_rate() is called?
-> > > > >
-> > > > > with clk_set_rate itself, no, but...
-> > > > >
-> > > > > > > It's simply going to change the rate as a one-off thing, and =
-if
-> > > > > > > there's the next millisecond someone else is going to change =
-its rate
-> > > > > > > one way or another, it's going to do so and you won't have any
-> > > > > > > notification.
-> > > > >
-> > > > > You can get notified, and you can use clk_set_rate_exclusive if y=
-ou
-> > > > > *really* want to enforce it.
-> > > >
-> > > > Is the conclusion then we should go back to relying on the clock-fr=
-equency
-> > > > property?
-> >=20
-> > clock-frequency or link-frequencies. link-frequencies seems to be a
-> > better fit here, but we don't really have the choice for older
-> > bindings.
->=20
-> You can't replace one with the other as the two are different things. The
-> clock-frequency refers to the external clock frequency whereas the
-> link-frequencies refers to the frequencies allowed on the CSI-2 bus.
+  - MAX3421 USB-SPI chip on SPI port3 (for USB gadget port.)
+  - Simple frame buffer with 1080p fixed resolution.
+  - I2S port which is connected to aout1b instead of aout1.
+  - 3 serial ports, only serial3 has CTS/RTS.
+  - No NAND, only eMMC on the board.
+  - OP-TEE installed firmware.
 
-Ack.
+See https://www.96boards.org/product/akebi96/ for details.
 
-> > > > This has been discussed multiple times over the years, and I don't =
-really
-> > > > disagree with the above. The frequency is typically indeed hand-pic=
-ked for
-> > > > the hardware, and no other frequency should be used in any circumst=
-ances.
-> > > >
-> > > > No sensor driver I've seen has used clk_set_rate_exclusive() but I =
-guess
-> > > > they should. The absence of practical problems has been probably be=
-cause of
-> > > > two factors; firstly, these are typically clocks dedicated to the s=
-ensors
-> > > > and secondly, good luck.
-> >=20
-> > My point was that at least with handling the clock rate within the
-> > driver (as opposed to assigned-clock-rates) you have multiple options
-> > in dealing with changing colck rates / parents (Modelling the sensor
-> > clock as a clock itself, using clk_set_rate_exclusive, using a
-> > notifier, etc).. Some are more intrusive to the rest of the system
-> > than others (especially clk_set_rate_exclusive), so I'm not really
-> > advocating for any here, but we should make sure we have them in the
-> > first place.
->=20
-> Using a different frequency really should not be allowed. It may be
-> possible on a development system, hobbyist platform, but never in
-> production. Therefore the exclusive variant sounds like the right one to
-> me.
+Thank you,
 
-In all of those cases you would not allow a different frequency. The only
-difference is whether you react to a rate change in your parent clock, or
-prevent it from happening in the first place.
+---
 
-The latter is easier to do, but has a wider impact on the rest of the system
-than the former.
-
-Maxime
-
---z2dri642qwse5u2s
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp25mAAKCRDj7w1vZxhR
-xdLFAQDgS/6l5DqkSNLXkzh07fGnuajNVakM1El0NxhwAQ+8IwD9Hcj0jWFI9Qpx
-MPtiduaoOqotTnb0HwYz4QmM+teMNw0=
-=jp6m
------END PGP SIGNATURE-----
-
---z2dri642qwse5u2s--
+Masami Hiramatsu (2):
+      dt-bindings: arm: Add Akebi96 board support
+      arm64: dts: uniphier: Add support for Akebi96
 
 
---===============4605019968059420543==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ .../bindings/arm/socionext/uniphier.yaml           |    1 
+ arch/arm64/boot/dts/socionext/Makefile             |    1 
+ .../boot/dts/socionext/uniphier-ld20-akebi96.dts   |  190 ++++++++++++++++++++
+ 3 files changed, 192 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
+
+--
+Masami Hiramatsu <masami.hiramatsu@linaro.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4605019968059420543==--
-
