@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AAA11B1491
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:34:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C6F81B1497
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:34:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4wH5n5wI9F04gn6CH7aX0qkBtMjgPIE2nLfcOvKEDdU=; b=kcbxBHtbsQUUiG
-	45bMCpGeTt0P80kvwXAbaoPYHa3FE+VirtRpJrYiX4Vr7dYIbkpfeILXc21uiB7p1NwoZB0lm3dAR
-	UzVkgQyHlde5uM8l8m1EQuLYJboyK/eFr/DnmuZOv7/wRKERsKYD0yo+ZNnDB27Zn/ahEcaT7H2zN
-	Illh6PpFCDeKqNj6KVTOz2st8PTRV6I39AMzsahMjdI1A2OPwyQQhTayRTYWuZRn+SsI+uOP2j0ht
-	7lvcook9TGKnF7niCcoPPLpo+WFJ/1Lo970U4zG3HhkRuzJw9xQwvJ61aCWwCK3sxF+yRgOD3/yaa
-	k/ltsa70eUd8zpRj1rsw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C94Il8qVUsHxmpcpxT6O9NdE+aLnuNbPaIH687TAQ64=; b=m3sz8Ckye0BRSA
+	H1q1YYaEG8oAIqfaJS4jIfxPaD6XxN33byanv/6JiomhhvegNnkgFyAINqM2dBE/YkxvJ52f+s+dR
+	gKaLxA1tpwrKe3GyNlcn76KdQsH9vbck6k1HalYxCiNRwKWMFMq/Qje3esQpkISSY2IoQ40MtJwvD
+	YJLSxj87v2W2Z5v0/65MeqVo5wlRVm/Qds4WLpunxDB3KUDnzajBfgXBP2M/P1rPwtk8ZKnBxroBP
+	IIpY5Q3kqB17uQ5KiVUEWj/2yYgwas7Z6269n3M279QihvWevPp6fd7vqLhR4YbrTwtF3YYEbyvqO
+	nz6EY1s/gNmOFvo37CNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQbFJ-0005o7-ET; Mon, 20 Apr 2020 18:34:17 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jQbFX-0005xl-4e; Mon, 20 Apr 2020 18:34:31 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQbF9-0005m5-4e
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:34:09 +0000
+ id 1jQbFG-0005qi-UD
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:34:16 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1587407648; h=Content-Transfer-Encoding: MIME-Version:
- Message-Id: Date: Subject: Cc: To: From: Sender;
- bh=lDdMNhQybqsQtbAqEgBb/XrE+d1a0X3/rjZ+QCjMTco=;
- b=dYr1Vp/q49/lLoyY0w7vGtEBc6/x3NvL6XIuLkXX36sXHeoHCsHy9JU6fC9Cj5Gha1fQ3MuK
- BUneJ0z3p24NkE39ddlGojal0+Z+b1SoPuLzHlUJLhb2ZgnYZEP5xC5VbgYnJXG36nkubhg1
- GZAw1zVGoBKyscg7IfDsFbCVTVM=
-X-Mailgun-Sending-Ip: 104.130.122.27
+ s=smtp; t=1587407654; h=Content-Transfer-Encoding: MIME-Version:
+ References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=Ix/MdnxLfjPN0cVkJkI+uYStoKyur9aJ+Sj4mNFkPFE=;
+ b=vrn7Q0X10BsiNYE+28b/EKP3bLeWNthsRyu+XbVwlm6OZw6aKx+BuH3iL2qqNq5iByBTsppn
+ x7Del2CgDbSkyHJInrUJTVBRTCIP6dFFxEmaTq+MIfExNKeeON0JOxJfTD6NUq4JJu4rZcp6
+ PsekNrwDkVedzC6Xfrof7ZZ8HTU=
+X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e9deb1d.7fae45ba2810-smtp-out-n03;
- Mon, 20 Apr 2020 18:34:05 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e9deb25.7f104287bc38-smtp-out-n04;
+ Mon, 20 Apr 2020 18:34:13 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 51690C432C2; Mon, 20 Apr 2020 18:34:05 +0000 (UTC)
+ id 506A6C433D2; Mon, 20 Apr 2020 18:34:12 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 77763C433CB;
- Mon, 20 Apr 2020 18:34:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 77763C433CB
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id EDAD6C433CB;
+ Mon, 20 Apr 2020 18:34:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org EDAD6C433CB
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -61,22 +61,24 @@ To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
  Joerg Roedel <joro@8bytes.org>, Sibi Sankar <sibis@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
-Subject: [PATCHv4 0/6] iommu/arm-smmu: Allow client devices to select identity
- mapping
-Date: Tue, 21 Apr 2020 00:03:48 +0530
-Message-Id: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv4 1/6] iommu: arm-smmu-impl: Convert to a generic reset
+ implementation
+Date: Tue, 21 Apr 2020 00:03:49 +0530
+Message-Id: <d24a0278021bc0b2732636c5728efe55e7318a8b.1587407458.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
+References: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_113408_332383_CAAE5FA6 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20200420_113415_074893_D42E8FED 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,46 +105,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series allows DRM, Modem devices to set a default
-identity mapping in qcom smmu implementation.
+Currently the QCOM specific smmu reset implementation is very
+specific to SDM845 SoC and has a wait-for-safe logic which
+may not be required for other SoCs. So move the SDM845 specific
+logic to its specific reset function. Also add SC7180 SMMU
+compatible for calling into QCOM specific implementation.
 
-Patch 1 is cleanup to support other SoCs to call into
-QCOM specific  implementation.
-Patch 2 sets the default identity domain for DRM devices.
-Patch 3 implements def_domain_type callback for arm-smmu.
-Patch 4 sets the default identity domain for modem device.
-Patch 5-6 adds the iommus property for mss pil.
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+---
+ drivers/iommu/arm-smmu-impl.c |  8 +++++---
+ drivers/iommu/arm-smmu-qcom.c | 16 +++++++++++++---
+ 2 files changed, 18 insertions(+), 6 deletions(-)
 
-This is based on Joerg's tree:
- - https://git.kernel.org/pub/scm/linux/kernel/git/joro/linux.git/log/?h=iommu-probe-device-v2
-
-v4:
- * Updated commit msg for mss pil requesting direct mapping
-
-v3:
- * Use arm_smmu_master_cfg to get impl instead of long way as per Robin.
- * Use def_domain_type name for the callback in arm_smmu_imp as per Robin
-
-Jordan Crouse (1):
-  iommu/arm-smmu: Allow client devices to select direct mapping
-
-Sai Prakash Ranjan (2):
-  iommu: arm-smmu-impl: Convert to a generic reset implementation
-  iommu/arm-smmu: Implement iommu_ops->def_domain_type call-back
-
-Sibi Sankar (3):
-  iommu/arm-smmu-qcom: Request direct mapping for modem device
-  dt-bindings: remoteproc: qcom: Add iommus property
-  arm64: dts: qcom: sdm845-cheza: Add iommus property
-
- .../bindings/remoteproc/qcom,q6v5.txt         |  3 ++
- arch/arm64/boot/dts/qcom/sdm845-cheza.dtsi    |  5 +++
- drivers/iommu/arm-smmu-impl.c                 |  8 ++--
- drivers/iommu/arm-smmu-qcom.c                 | 37 +++++++++++++++++--
- drivers/iommu/arm-smmu.c                      | 12 ++++++
- drivers/iommu/arm-smmu.h                      |  1 +
- 6 files changed, 60 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
+index 74d97a886e93..c75b9d957b70 100644
+--- a/drivers/iommu/arm-smmu-impl.c
++++ b/drivers/iommu/arm-smmu-impl.c
+@@ -150,6 +150,8 @@ static const struct arm_smmu_impl arm_mmu500_impl = {
+ 
+ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
+ {
++	const struct device_node *np = smmu->dev->of_node;
++
+ 	/*
+ 	 * We will inevitably have to combine model-specific implementation
+ 	 * quirks with platform-specific integration quirks, but everything
+@@ -166,11 +168,11 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
+ 		break;
+ 	}
+ 
+-	if (of_property_read_bool(smmu->dev->of_node,
+-				  "calxeda,smmu-secure-config-access"))
++	if (of_property_read_bool(np, "calxeda,smmu-secure-config-access"))
+ 		smmu->impl = &calxeda_impl;
+ 
+-	if (of_device_is_compatible(smmu->dev->of_node, "qcom,sdm845-smmu-500"))
++	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500") ||
++	    of_device_is_compatible(np, "qcom,sc7180-smmu-500"))
+ 		return qcom_smmu_impl_init(smmu);
+ 
+ 	return smmu;
+diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
+index 24c071c1d8b0..64a4ab270ab7 100644
+--- a/drivers/iommu/arm-smmu-qcom.c
++++ b/drivers/iommu/arm-smmu-qcom.c
+@@ -15,8 +15,6 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
+ {
+ 	int ret;
+ 
+-	arm_mmu500_reset(smmu);
+-
+ 	/*
+ 	 * To address performance degradation in non-real time clients,
+ 	 * such as USB and UFS, turn off wait-for-safe on sdm845 based boards,
+@@ -30,8 +28,20 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
+ 	return ret;
+ }
+ 
++static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
++{
++	const struct device_node *np = smmu->dev->of_node;
++
++	arm_mmu500_reset(smmu);
++
++	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500"))
++		return qcom_sdm845_smmu500_reset(smmu);
++
++	return 0;
++}
++
+ static const struct arm_smmu_impl qcom_smmu_impl = {
+-	.reset = qcom_sdm845_smmu500_reset,
++	.reset = qcom_smmu500_reset,
+ };
+ 
+ struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device *smmu)
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
