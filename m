@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEF2E1B0ED4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:47:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9DD51B0EF8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 16:56:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HeQazrV5XOylhHww/L5t895lrIy7+QJXSsm3TlcF2bs=; b=Uf3j1ysetjTQuu
-	4LBKp7Qur/GfQgVQIlcz3wBpJsMNalOiDodx8ihft5cM+sl8n3FmbViYNn2lbopa8QNGF0UJ63+Z+
-	cGh/uCwX3mtlIatRXCDybfTuVAmvqo/bO2+uWPWNoFDT5B4zYG2YKMMRI2Xk4wvZy9GGrLXFsbApJ
-	Y4BWUQGvktnzxJLtNG1JXAWpquLPsmkWfRmQqCJtXubX37nRTS68h4ZQuXWuaTBLDrGoHke1baD4p
-	w/kioTlHBgmPUYd4qUVfbVdT36knIc5SkscbgwD3mMAqj3OlwojJI2HZKAoeqOmketxDo4+5IPu1m
-	ONZX2ZEUvMRyKwofusSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Xikt9oIj4f+VakK8LlKHLmk/bRy5lUcVuLETXeT2Hro=; b=MZL
+	wI4BKmNl8Yn5FoVCuVGh4ibo8CRC3omKyMdh7/XFqEu6l8qSFio5hkj6Tzvchd+v5/T+JLoqTbfwN
+	d1k2o+Jmf7Q8vDA1e2z4EKdUzWuPWMEWtx7ONzMlxBCB10VT06N3pHuIpVdomrqil4dJ7XFqVw+Za
+	oUi+NEWqV3uRiaq378BRNSR9MtpIm/FVFECCNPNYpzZIdML9fQe1tyfFZVPHIyzu3mI0/KEC+VOCB
+	/8o/Ty/Nv85+I1in8WCe4yNELrjmfeA8NwdCvD9Ir8rO4mCgo6pJPzphydAQIercg24TQCsDpBv2l
+	mRUDmwN6ddsP7ktiy0xTLUeU8hnLcnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXhL-0002Dp-SJ; Mon, 20 Apr 2020 14:46:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jQXpy-00020L-3f; Mon, 20 Apr 2020 14:55:54 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXhD-0002D6-Al
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:46:52 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B6C9206D5;
- Mon, 20 Apr 2020 14:46:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587394011;
- bh=/IPyAGYnCw1gtPtCf3Qro0SLyqMiQcu4OSyyNBu1dSU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RWlOb5rLlNT5NcnsBjC1VII2xSKyaQFU2hwCWHuX6z8/o4g67upM16l0x1kovzmsk
- zVVzxuVIRMaiEVWU2bHcVsGxXt/A03OOLlY/q4volpIQeK4e/f+0pwAf+NibrBOnY4
- HhNjhnXFrleNSewnZPS+xa3D3pNv9/TO+FnxNf+w=
-Date: Mon, 20 Apr 2020 22:46:43 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: peng.fan@nxp.com
-Subject: Re: [PATCH V7 4/4] firmware: imx-scu: Support one TX and one RX
-Message-ID: <20200420144630.GD32419@dragon>
-References: <1584604193-2945-1-git-send-email-peng.fan@nxp.com>
- <1584604193-2945-5-git-send-email-peng.fan@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1584604193-2945-5-git-send-email-peng.fan@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1jQXpp-0001zu-Al
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 14:55:47 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587394545; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=7MhmolhOBg+potQk9sjLeyxXiHqBAvP6Cxd5Xrm2ty4=;
+ b=UiazicVdND6AW2K3WHT/1oefOmNN6+iEWyhTTmYv0WXWlpYswA/8LeMj0v1HU+ZvHmoZiJFO
+ koSJubzgGYLvQaPbdEM47MCbGXmmgUvJl0Xq5l7PjSkoSmI45yACk77+jEuvtHybWvTpP2Uc
+ ExqhLmdSZFncQ2AG/90Wdvy/2+E=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e9db7ef.7f06d128a570-smtp-out-n01;
+ Mon, 20 Apr 2020 14:55:43 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id A2C02C433BA; Mon, 20 Apr 2020 14:55:42 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from congzhan-gv.qualcomm.com (unknown [180.166.53.21])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: congzhan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id CE7D4C433D2;
+ Mon, 20 Apr 2020 14:55:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org CE7D4C433D2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=congzhan@codeaurora.org
+From: Cong Zhang <congzhan@codeaurora.org>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: align the start and end of v7_setup_stack to cache line
+Date: Mon, 20 Apr 2020 22:50:35 +0800
+Message-Id: <1587394235-24008-1-git-send-email-congzhan@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_074651_389474_4D606EDA 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200420_075545_640403_7733F9C7 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,29 +85,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, s.hauer@pengutronix.de,
- jassisinghbrar@gmail.com, linux-kernel@vger.kernel.org,
- o.rempel@pengutronix.de, linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
+Cc: Cong Zhang <congzhan@codeaurora.org>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 03:49:53PM +0800, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> Current imx-scu requires four TX and four RX to communicate with
-> SCU. This is low efficient and causes lots of mailbox interrupts.
-> 
-> With imx-mailbox driver could support one TX to use all four transmit
-> registers and one RX to use all four receive registers, imx-scu
-> could use one TX and one RX.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+The v7_setup_stack is used when D-cache disabled. When CPU is reading
+something nearby with D-cache enabled. It is possible to read
+v7_setup_stack to cache line. There is a risk that when cache line write
+back the data, v7_setup_stack may already been modified by other CPU with
+D-cache disabled.
+The change make v7_setup_stack align cache line size and use the whole
+cache line to prevent corrupting v7_setup_stack.
 
-Applied, thanks.
+Signed-off-by: Cong Zhang <congzhan@codeaurora.org>
+---
+ arch/arm/mm/proc-v7.S | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/mm/proc-v7.S b/arch/arm/mm/proc-v7.S
+index 339eb17..587e2eb 100644
+--- a/arch/arm/mm/proc-v7.S
++++ b/arch/arm/mm/proc-v7.S
+@@ -18,6 +18,7 @@
+ #include <asm/pgtable-hwdef.h>
+ #include <asm/pgtable.h>
+ #include <asm/memory.h>
++#include <asm/cache.h>
+ 
+ #include "proc-macros.S"
+ 
+@@ -548,10 +549,10 @@ __v7_setup_stack_ptr:
+ ENDPROC(__v7_setup)
+ 
+ 	.bss
+-	.align	2
++	.align	L1_CACHE_SHIFT
+ __v7_setup_stack:
+ 	.space	4 * 7				@ 7 registers
+-
++	.align	L1_CACHE_SHIFT
+ 	__INITDATA
+ 
+ 	.weak cpu_v7_bugs_init
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
