@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A10B61B0D1D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:46:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E05251B0D24
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:46:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZIRYZ68+fRX1KSAxNgp6AZ5URV+qRhk4FJhA9uQ647Y=; b=OL1g8NYJvZIrBR
-	Mnvk+mezIK7VhSXo3RDO081U3rCfqs7YfICoekkVHI4kLVXRlKTk6z1Y3TtHSbvB4orLIZy8N50/K
-	15NjcQdmWRTEX0ZfBejrloa6BJMx7970FFSqDvhIJsd4uVChXkJ8ZgCL6VubmXPhNCj0ee7VfdRCr
-	nr1Qcy9YpyYgvmoK5B95kjlDlgJknwYMoCw4bnEYxeyO1xD9zpUptcGv1L9BVelZqHSBBNzOveZDw
-	WU9jllSIfJW/Cm5BW+V5CMyGfwsLMYbPTlY+ghmIjDl8OwJ4ClBFlRmLeHBlgvCcDh1MaOSuPaowE
-	EldajJqWLtXUSpG2EeLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kQf8zcZm6Hn8vYr/CQyICOMsx8Gkp7CM/kgvas49Lfo=; b=uQxzTGlBjvimgHC9Pi8BdaKzM
+	yVTkZeYMHAYmBcWXotA9V5uDD9P96GiERzRtKWEWQ8qsXf3kq2NWEzs/pod0zVqyM+cIduqhRvfHd
+	xKbZXbKvBoDD5HZvAU63HWZ30D32fVbsBtQ2BDcxfY07GuQStalqwEQ1261IqOk7ZFNx6a8XD74z+
+	xWduOehUszJNzXVavqgFytvxdZaFhDWl2KoEahKTEi0/OWwue7F8jBuRDVibcjXT5Qj/D7gq/JIZV
+	M2r94D0LB/I2p7FPdYZhEEroM0iCjJiT77VBWRKp7X6dOr37dYzxEGNx851bQNFa/dpzBdiSJ40x6
+	QryBNwGYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQWkd-00036o-Vc; Mon, 20 Apr 2020 13:46:19 +0000
-Received: from vps.xff.cz ([195.181.215.36])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQWkV-00034P-78
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:46:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1587390364; bh=lXFLLXv67CfUewvpws4scaGtSsPitz7siYHsuT7MR54=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=VcwCEC+Pfk0c/2AlQG1Fl8KKx5I7xrpdLVyQih6u2kxXdRe0i6NvuWdkX5cmjkT2y
- 6jWeLwUS+6eoVpXnlt2omWpLTfAOLJ+P7WQoOP6D+mAKELXW6IUjImlyGYGo+kJMoy
- 5YPHVmuBQuWv+0p4MoSqIjXB6sUFTf5RjvWI/akc=
-Date: Mon, 20 Apr 2020 15:46:04 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v5 2/9] arm64: dts: allwinner: h6: Add thermal trip
- points/cooling map
-Message-ID: <20200420134604.bkjp66fjiggses7a@core.my.home>
-Mail-Followup-To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- linux-sunxi <linux-sunxi@googlegroups.com>
-References: <20200420130021.3841-1-peron.clem@gmail.com>
- <20200420130021.3841-3-peron.clem@gmail.com>
+	id 1jQWkx-0003Dx-Uv; Mon, 20 Apr 2020 13:46:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQWkb-00039g-Aj
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:46:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5A2F1FB;
+ Mon, 20 Apr 2020 06:46:16 -0700 (PDT)
+Received: from [192.168.1.84] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BFD8B3F68F;
+ Mon, 20 Apr 2020 06:46:13 -0700 (PDT)
+Subject: Re: [RFC PATCH] arm64: unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
+To: Will Deacon <will@kernel.org>, Andrew Scull <ascull@google.com>
+References: <20200327143941.195626-1-ascull@google.com>
+ <1705907b-234c-6f56-1360-f598c8047d1d@arm.com>
+ <20200403125726.GA33049@google.com> <20200417164103.GA12362@willie-the-truck>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <40f6b8bc-3ff4-2053-f8ae-e6b5fb811573@arm.com>
+Date: Mon, 20 Apr 2020 14:46:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200420130021.3841-3-peron.clem@gmail.com>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+In-Reply-To: <20200417164103.GA12362@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_064611_429449_9155EC48 
-X-CRM114-Status: GOOD (  11.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_064617_426334_C6373AC3 
+X-CRM114-Status: GOOD (  19.33  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,78 +65,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "qwandor@google.com" <qwandor@google.com>,
+ "qperret@google.com" <qperret@google.com>, Marc Zyngier <maz@kernel.org>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "wedsonaf@google.com" <wedsonaf@google.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ James Morse <James.Morse@arm.com>, "dbrazdil@google.com" <dbrazdil@google.com>,
+ "kernel-team@android.com" <kernel-team@android.com>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "tabba@google.com" <tabba@google.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 17/04/2020 17:41, Will Deacon wrote:
+> On Fri, Apr 03, 2020 at 01:57:26PM +0100, Andrew Scull wrote:
+>> On Fri, Mar 27, 2020 at 02:59:47PM +0000, Steven Price wrote:
+>>> I proposed something similar a while ago[1], but Marc was concerned about
+>>> the microarch detail[2] and hence I split the workaround into VHE/non-VHE.
+>>>
+>>> That said I'm not saying this is necessarily wrong, just that we'd need some
+>>> more information on whether the non-VHE workaround is suitable for the CPUs
+>>> we're currently forcing VHE on.
+>>
+>> We noticed that both the nVHE and VHE workarounds share the same
+>> assumption that the EPDx bits are not being cached in the TLB.
+>>
+>> `__tlb_switch_to_guest_vhe` and `__tlb_switch_to_guest_nvhe` are both
+>> setting EPDx as part of the workaround. However, neither handles the
+>> possibility of a speculative AT being able to make use of a cached EPD=0
+>> value in the TLB in order to allocate bad TLB entries.
+>>
+>> If this is correct, the microarch concern appears to have been solved
+>> already. Otherwise, or if we are unsure, we should go ahead and add the
+>> TLB flushes to keep this safe.
+> 
+> I think Andrew's right here. Can we go ahead with the original approach of
+> combining the workarounds, or is there something we've missed?
 
-On Mon, Apr 20, 2020 at 03:00:14PM +0200, Cl=E9ment P=E9ron wrote:
-> From: Ondrej Jirman <megous@megous.com>
-> =
+As far as I know it is safe to combine the workarounds: I did post my 
+own patch earlier. But I don't have the deep understanding of the 
+microarch - so I accepted Marc's concerns and dropped that, and was 
+simply linking up the discussions.
 
-> This enables passive cooling by down-regulating CPU voltage
-> and frequency.
+The assumption before was that booting a VHE capable system without VHE 
+wasn't useful, so there wasn't a pressing need to unify the workarounds. 
+And therefore the easiest option for me was to keep the workarounds 
+separate. Since there is apparently a desire to do such a thing then 
+unifying the workarounds seems reasonable.
 
-Does this not produce a lot of warnings for you during compilation?
-
-regards,
-	o.
-
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 24 ++++++++++++++++++++
->  1 file changed, 24 insertions(+)
-> =
-
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/bo=
-ot/dts/allwinner/sun50i-h6.dtsi
-> index 370e77b86fe1..60da1627772b 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> @@ -964,6 +964,30 @@
->  			polling-delay-passive =3D <0>;
->  			polling-delay =3D <0>;
->  			thermal-sensors =3D <&ths 0>;
-> +
-> +			trips {
-> +				cpu_alert: cpu-alert {
-> +					temperature =3D <85000>;
-> +					hysteresis =3D <2000>;
-> +					type =3D "passive";
-> +				};
-> +
-> +				cpu-crit {
-> +					temperature =3D <100000>;
-> +					hysteresis =3D <0>;
-> +					type =3D "critical";
-> +				};
-> +			};
-> +
-> +			cooling-maps {
-> +				map0 {
-> +					trip =3D <&cpu_alert>;
-> +					cooling-device =3D <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> +				};
-> +			};
->  		};
->  =
-
->  		gpu-thermal {
-> -- =
-
-> 2.20.1
-> =
-
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
