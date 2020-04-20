@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 767B71B160F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 21:41:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C1A81B1620
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 21:44:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/iJthAGzTfVBP0YnTWZI62z3yB/EdshA+mcpL9IlIe4=; b=YiEyteMNJJfApL
-	a0q3xOJKhX3ioXL54KAVPJXK4JzGz9+KhEyG661ajkJWf/EDK83qLu5Ag5SrMDcMVvFc5I8xpTMlN
-	Jo0V9Q04lgK4J9sZi0jrvcLy46tNdS1GO3ZfVa1rltfHCgA2CgVQPKUpSZslklGjZ6F9ZGOvd2qUj
-	4Spo/YmzHllEbEz9J9xZrkcoEnsKAL4ETPzZaeb3CDaP2T3+zkOaybi313aVb95hXVt3U2u37ZBbr
-	RSivLOrhX137kEhq4kFlwFTodClvA7g11IQDNSsB6rxZASmxjQGqJ1D3ReYNOAthqANpfujU0mhSr
-	THEJywb4XvgXOhav5ZJQ==;
+	List-Owner; bh=0c+JeZXoPcxDclWPL7AyXPCTUjufVGY2uVypw59lbs4=; b=hnghRCWZ6lEWWr
+	enWA26N7AKvbtW+H0b7QLEFGgL8kZ8I7TcvjGKDZRB16NII/1JMTtur+z9If4bUvbDRELmYwf7TMn
+	a19guR55vgaWYUYv04zLAStfn1LjH5PuC4wp83/ffKrPQ3bL4JKCNoCltR8J++fdW5fezJfr13j3M
+	jXorUOH3tM3cGa1LvxBnCHrRBoBN7mIbZDbPSVKpmIr2CdHG+PV/NgDreyej4nWWG1AqIC6cK/HFa
+	M6GrH0tGiF1eHOjb21kJsTkL3p0N2IJ/orUd11qOr5OeurjQ4xJ+lcON2IFNo0GPvAF+r/cZomkas
+	zUHyxj6FrW/36jbuz9Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQcIM-0008Hm-Ga; Mon, 20 Apr 2020 19:41:30 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jQcLV-0001DY-Uq; Mon, 20 Apr 2020 19:44:45 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQcIA-0008FC-JG
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 19:41:21 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j3so11359168ljg.8
+ id 1jQcLN-0001Ao-MF
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 19:44:39 +0000
+Received: from mail-qt1-f174.google.com ([209.85.160.174]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MZk1p-1jlfjJ2HHb-00WnYD for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 20 Apr 2020 21:44:34 +0200
+Received: by mail-qt1-f174.google.com with SMTP id z90so9609519qtd.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 12:41:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2l71BXESRMVZaog60N632QcNtn1RLZhkN10c7KV873A=;
- b=SGUjdIGc0NzdTIccHzsf7n7fl2lCU8m0WmuBQvva6nXnCETcqGsNI8UGF3WQCa5QPP
- 46a6qbi4W2A/3pf+uHmYD+pqX60/53YJwMs5wSkkCjHIHnhUv/OcrOdjYjVwFrqHrsGI
- LbEhEP+vVxT1hxgGbOjfp5sV7UwWSTCSz7CzC7PbgIOdqfZ4D4sjVxIfSBQat6ZUli+a
- qa9REduBLytNHJOTAEcI9W6Zhuy01qusIKY6Vjvv7J2yQyLd4e9iPDoDeGVK/w7/16b/
- 3IE+Rr5FLIPzkimLAJDyV+qSELQgKYryzNsV/kvfdvKCQftVMco0jSQgQ0fnwm0YApnQ
- Qg3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2l71BXESRMVZaog60N632QcNtn1RLZhkN10c7KV873A=;
- b=AW5jyz7rSpdbvxD0Z9AAv4wUg7zT7dsyle03F8nWWNd2h0hRL1EMxbIw1q7peZqhJO
- UnSWukSp7DfubSkGXnUQ1ZVPy9ls5xqmzza6gOW9k93mwpsdq19/EmoVG9uE98XRGrFE
- gWPvraFRW5X+lChbgZbpKdSRqOfMNiaqpiTcZtoIQzNcL0Wq4WoZZLgI2aNlscwP8/dC
- WSNBp1ThnZAJKMkrXtTk8jWhBT/u+i2Ydef4/SU0BF1iSy52EBrOLILIOOEXXWrrGwMF
- RsdYROSZlYvQUGguPpOCkNV6lnGe3SJ7XR/AzMQEI4iK7jwe22avBM7e25TWtHMkIUpk
- k0rA==
-X-Gm-Message-State: AGi0PuY9Ooc8DEcZXEe6c8MEE32tCxQMTta6yRKDkHLyzbcgNsMNKlo6
- MSWdW9ZKPFUWzwK/u7MBC9M3/Isc0mQQ64HmGQDWLg==
-X-Google-Smtp-Source: APiQypI2gK//YEp6YVbgwTm4k+wnVZZ/iGHVGrqFsiNhRq6u3vM+M+1e1iwmrTKmDRc1k1kiyjmzBeruQcOKYL6X1kk=
-X-Received: by 2002:a05:651c:30b:: with SMTP id
- a11mr10981389ljp.164.1587411674963; 
- Mon, 20 Apr 2020 12:41:14 -0700 (PDT)
+ Mon, 20 Apr 2020 12:44:34 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYtxJ45RIG3etaD3LMsIuhHl+7UkjJQ1jpdwDRQBoIUDTwAxps+
+ +Uh8QRFBs8HzJcPxVCkBI6K0xc8gXSzKnwDC/AU=
+X-Google-Smtp-Source: APiQypIQ/d1G7kkipasQ9Xx8TSOfP/G9AkgCeJ084oCa3E5yGJoAUJ8JtONcb4zbeOgvQqIRkO6e4rHHZmSKchIZTzo=
+X-Received: by 2002:ac8:2bce:: with SMTP id n14mr6857624qtn.18.1587411873264; 
+ Mon, 20 Apr 2020 12:44:33 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <20200417185049.275845-4-mike.kravetz@oracle.com>
-In-Reply-To: <20200417185049.275845-4-mike.kravetz@oracle.com>
-From: Anders Roxell <anders.roxell@linaro.org>
-Date: Mon, 20 Apr 2020 21:41:04 +0200
-Message-ID: <CADYN=9Koefrq9H1Y82Q8nMNbeyN4tzhEfvDu5u=sVFjFZCYorA@mail.gmail.com>
-Subject: Re: [PATCH v3 3/4] hugetlbfs: remove hugetlb_add_hstate() warning for
- existing hstate
-To: Mike Kravetz <mike.kravetz@oracle.com>
+References: <20200420081154.597ffa59@canb.auug.org.au>
+ <20200420081323.4fb9889b@canb.auug.org.au>
+ <20200420151843.GS37466@atomide.com>
+In-Reply-To: <20200420151843.GS37466@atomide.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 20 Apr 2020 21:44:17 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1Ln+hkSQnQ8jzYSWvJ=bZ9V5juzDYcJoZvx0y-QpfrtA@mail.gmail.com>
+Message-ID: <CAK8P3a1Ln+hkSQnQ8jzYSWvJ=bZ9V5juzDYcJoZvx0y-QpfrtA@mail.gmail.com>
+Subject: Re: linux-next: Signed-off-by missing for commit in the arm-soc tree
+To: Tony Lindgren <tony@atomide.com>
+X-Provags-ID: V03:K1:HNwWsoz1qczbitjuldMQRh4dg8rgb2rDja+gAwJobqICKsWGGRV
+ TJQXe+dFd9kbmlXJfr0Ea9Oci4AhppN/w3h41r1W5hJf6ZK3FeY5plKU9+6HVFeGVwLznWh
+ wkhDT7Cdv0gk8hYi5Bb+sNkmIa9rXu3GV64eSkcy4NskwWlMv4ThXFuluL6jH4zQOWUDndv
+ KPwwUT9BSdzxrkdjq1k7w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Iw1nIr2pfLg=:f3QL5b7UolMGDhVUVMNwI8
+ SJ/6qPbXma5V110vcMrMRe7PsW9eN9bIkT157IaCKwPH6kARydfKzeZ0n7dkZCPrytlXomAm+
+ edJp2RFJe+Y1C28oWLp/JyVXGIrcJjz97DPvSYFYsZL9WujIADSp7A4QqKdZZoPYiH0XAQ5JW
+ ZS7AYc7EQHJEg4AQY1KI0qJioNGNu39JnPH1Vp9htb9j+IJkFDsLURrxuxVshbjSLL0NZ8Gt0
+ K5ZX15vHntBkHzLVb0Z//AFk5HQPr/gCX9p9fSZHnP3G+Pjd7Tg2Gh0JStRvM3njGQ2thvVFS
+ GN1cpSqZPoAI8mGq25FNpPnAYFCRBCkFsbBT97Yk/E5H8/EUslqg+a6OvAtkUwGRCpD7kkRWJ
+ X7BQF4GHfA7BL/dLEZahgIENUCebu6TGdEqpvNk28rapy/AIrGRmnZQiT9Ss82qj2E84IFGTE
+ uJgJrbl1zqQxzZvoZ0MHf8t0W1dLuc5QQYzK/yiknmF/tZCRox5wuvQr1eL+GMRFoX/dbFbc3
+ x/dkuy8paONG4Po6NTGxUYK4L9+bppkMeXR45qNXqKJCnoZPJKJIDnyfOSPsTYHjszZ9ZERk1
+ R8UEBAGCU2N/YyFRQbyJJTsdspDzZ1zAoKJG6qQxrr3mh8gRuG6hLaKuz2jS/VXi3FU4tMFaC
+ tMNS+G4LwuVMnbtmM3pIdFVd0tehR6rsIaAGxsggyBziL1OtGJPfvz8NLwmpUyvfj6OBpU5h9
+ jUn+T/wSsqOwHEmG5wkJwbxPrUv3UjuIn2qbIUblQVTM9QQoaJlHCPQh43MPbN/oljSLW3YpK
+ 0mQyjnsNtl47TWhqnioHcnsPVCTY9SSYpqF7lhDEfT7RHiSLXc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_124118_667163_64055A6A 
-X-CRM114-Status: GOOD (  26.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_124438_019688_2073FFD7 
+X-CRM114-Status: GOOD (  12.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,291 +87,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+Cc: Olof Johansson <olof@lixom.net>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S . Miller" <davem@davemloft.net>
+ ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 Apr 2020 at 20:52, Mike Kravetz <mike.kravetz@oracle.com> wrote:
+On Mon, Apr 20, 2020 at 5:18 PM Tony Lindgren <tony@atomide.com> wrote:
 >
-> The routine hugetlb_add_hstate prints a warning if the hstate already
-> exists.  This was originally done as part of kernel command line
-> parsing.  If 'hugepagesz=' was specified more than once, the warning
->         pr_warn("hugepagesz= specified twice, ignoring\n");
-> would be printed.
+> * Stephen Rothwell <sfr@canb.auug.org.au> [200419 22:14]:
+> > Hi all,
+> >
+> > On Mon, 20 Apr 2020 08:11:54 +1000 Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+> > >
+> > >
+> > > Commit
+> > >
+> > >   512e8d40f91d ("ARM: dts: OMAP3: disable RNG on N950/N9")
+> > >
+> > > is missing a Signed-off-by from its committer.
+> >
+> > Sorry, that is in the arm-soc-fixes tree.
 >
-> Some architectures want to enable all huge page sizes.  They would
-> call hugetlb_add_hstate for all supported sizes.  However, this was
-> done after command line processing and as a result hstates could have
-> already been created for some sizes.  To make sure no warning were
-> printed, there would often be code like:
->         if (!size_to_hstate(size)
->                 hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT)
+> Hmm so the commit I sent a pull request [0] for does have Signed-off-by
+> for commit 07bdc492cff6 ("ARM: dts: OMAP3: disable RNG on N950/N9").
 >
-> The only time we want to print the warning is as the result of command
-> line processing.  So, remove the warning from hugetlb_add_hstate and
-> add it to the single arch independent routine processing "hugepagesz=".
-> After this, calls to size_to_hstate() in arch specific code can be
-> removed and hugetlb_add_hstate can be called without worrying about
-> warning messages.
->
-> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
-> Acked-by: Mina Almasry <almasrymina@google.com>
+> Seems like some commits in arm-soc-fixes accidentally got rebased?
 
-When I build an arm64 kernel on today's next-20200420 and ran that in
-qemu I got the following output [1]:
+Indeed, I found my mistake now and uploaded a fixed branch.
 
-...
-[  311.326817][    T1] kobject: 'drivers' ((____ptrval____)):
-kobject_add_internal: parent: 'coresight', set: '<NULL>'
-[  311.331513][    T1] kobject: 'drivers' ((____ptrval____)): kobject_uevent_env
-[  311.334514][    T1] kobject: 'drivers' ((____ptrval____)):
-kobject_uevent_env: filter function caused the event to drop!
-[  311.340127][    T1] bus: 'coresight': registered
-[  311.342228][    T1] initcall coresight_init+0x0/0x64 returned 0
-after 27343 usecs
-[  311.349740][    T1] calling  debug_traps_init+0x0/0xa4 @ 1
-[  311.352138][    T1] initcall debug_traps_init+0x0/0xa4 returned 0
-after 0 usecs
-[  311.355550][    T1] calling  reserve_memblock_reserved_regions+0x0/0x374 @ 1
-[  311.364913][    T1] initcall
-reserve_memblock_reserved_regions+0x0/0x374 returned 0 after 7812
-usecs
-[  311.368937][    T1] calling  aarch32_alloc_vdso_pages+0x0/0x1d0 @ 1
-[  311.371819][    T1] initcall aarch32_alloc_vdso_pages+0x0/0x1d0
-returned 0 after 0 usecs
-[  311.375608][    T1] calling  vdso_init+0x0/0x52c @ 1
-[  311.378092][    T1] initcall vdso_init+0x0/0x52c returned 0 after 0 usecs
-[  311.381386][    T1] calling  arch_hw_breakpoint_init+0x0/0x178 @ 1
-[  311.384007][    T1] hw-breakpoint: found 6 breakpoint and 4
-watchpoint registers.
-[  311.388120][    T1] initcall arch_hw_breakpoint_init+0x0/0x178
-returned 0 after 3906 usecs
-[  311.391924][    T1] calling  asids_update_limit+0x0/0x110 @ 1
-[  311.394390][    T1] ASID allocator initialised with 65536 entries
-[  311.397427][    T1] initcall asids_update_limit+0x0/0x110 returned
-0 after 3906 usecs
-[  311.400749][    T1] calling  hugetlbpage_init+0x0/0x7c @ 1
-[  311.403581][    T1] Unexpected kernel BRK exception at EL1
-[  311.405771][    T1] Internal error: ptrace BRK handler: f20003e8
-[#1] PREEMPT SMP
-[  311.408759][    T1] Modules linked in:
-[  311.410514][    T1] CPU: 0 PID: 1 Comm: swapper/0 Tainted: G
-        T 5.7.0-rc2-next-20200420-03722-ge4ba9b47e4ed #1
-[  311.415175][    T1] Hardware name: linux,dummy-virt (DT)
-[  311.417466][    T1] pstate: 80400005 (Nzcv daif +PAN -UAO)
-[  311.419887][    T1] pc : hugetlb_add_hstate+0x68/0x4f0
-[  311.422171][    T1] lr : hugetlb_add_hstate+0x68/0x4f0
-[  311.424354][    T1] sp : ffff000069c07c60
-[  311.426124][    T1] x29: ffff000069c07c60 x28: ffff00006a7f8058
-[  311.428754][    T1] x27: 0000000000000000 x26: ffffa00013f56950
-[  311.431376][    T1] x25: ffffa000141b8000 x24: ffff00006a7f8040
-[  311.433987][    T1] x23: 1fffe0000d380fae x22: 00000000fffffff8
-[  311.436574][    T1] x21: 0000000100000000 x20: ffffa000141b8000
-[  311.439167][    T1] x19: ec632d51be3d2507 x18: 0000000000001a68
-[  311.441763][    T1] x17: 00000000000013e0 x16: 0000000000001a94
-[  311.444386][    T1] x15: 0000000000001a68 x14: 6573752036303933
-[  311.447034][    T1] x13: 2072657466612030 x12: 00000000000025b0
-[  311.449639][    T1] x11: 00000000f1f1f1f1 x10: 0000000041b58ab3
-[  311.452238][    T1] x9 : ffffa000139a833c x8 : 1ffff40002bf2c23
-[  311.454849][    T1] x7 : ffff940002bf2c23 x6 : ffffa00015f9611b
-[  311.457480][    T1] x5 : ffff00006a7f8040 x4 : 0000000000000000
-[  311.460124][    T1] x3 : ffffa000139fd98c x2 : 00000000fffffff8
-[  311.462737][    T1] x1 : ffff00006a7f8040 x0 : 0000000000000000
-[  311.465322][    T1] Call trace:
-[  311.466818][    T1]  hugetlb_add_hstate+0x68/0x4f0
-[  311.468934][    T1]  hugetlbpage_init+0x34/0x7c
-[  311.470934][    T1]  do_one_initcall+0x480/0xa40
-[  311.472996][    T1]  kernel_init_freeable+0x7a0/0x968
-[  311.475224][    T1]  kernel_init+0x20/0x1f8
-[  311.477078][    T1]  ret_from_fork+0x10/0x18
-[  311.479053][    T1] Code: 972762be 7100fedf 54000069 97276197 (d4207d00)
-[  311.482106][    T1] _warn_unseeded_randomness: 18 callbacks suppressed
-[  311.482255][    T1] random: get_random_bytes called from
-print_oops_end_marker+0x48/0x80 with crng_init=0
-[  311.482321][    T1] ---[ end trace 60df362baad50718 ]---
-[  311.491423][    T1] Kernel panic - not syncing: Fatal exception
-[  311.494038][    T1] ---[ end Kernel panic - not syncing: Fatal exception ]---
-
-If I revert this patch I can't see the problem anymore...
-
-Any idea what happens?
-
-This is the kernel.config [1] I'm using, its from an allmodconfig kernel build
-
-Cheers,
-Anders
-[1] https://people.linaro.org/~anders.roxell/output-next-20200420.log
-[2] https://builds.tuxbuild.com/U7ufblLydTsSvle27GSPAA/kernel.config
-
-
-> ---
->  arch/arm64/mm/hugetlbpage.c   | 16 ++++------------
->  arch/powerpc/mm/hugetlbpage.c |  3 +--
->  arch/riscv/mm/hugetlbpage.c   |  2 +-
->  arch/sparc/mm/init_64.c       | 19 ++++---------------
->  arch/x86/mm/hugetlbpage.c     |  2 +-
->  mm/hugetlb.c                  |  9 ++++++---
->  6 files changed, 17 insertions(+), 34 deletions(-)
->
-> diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
-> index f706b821aba6..21fa98b51e00 100644
-> --- a/arch/arm64/mm/hugetlbpage.c
-> +++ b/arch/arm64/mm/hugetlbpage.c
-> @@ -441,22 +441,14 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
->         clear_flush(vma->vm_mm, addr, ptep, pgsize, ncontig);
->  }
->
-> -static void __init add_huge_page_size(unsigned long size)
-> -{
-> -       if (size_to_hstate(size))
-> -               return;
-> -
-> -       hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
-> -}
-> -
->  static int __init hugetlbpage_init(void)
->  {
->  #ifdef CONFIG_ARM64_4K_PAGES
-> -       add_huge_page_size(PUD_SIZE);
-> +       hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
->  #endif
-> -       add_huge_page_size(CONT_PMD_SIZE);
-> -       add_huge_page_size(PMD_SIZE);
-> -       add_huge_page_size(CONT_PTE_SIZE);
-> +       hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
-> +       hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
-> +       hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
->
->         return 0;
->  }
-> diff --git a/arch/powerpc/mm/hugetlbpage.c b/arch/powerpc/mm/hugetlbpage.c
-> index 2c3fa0a7787b..4d5ed1093615 100644
-> --- a/arch/powerpc/mm/hugetlbpage.c
-> +++ b/arch/powerpc/mm/hugetlbpage.c
-> @@ -584,8 +584,7 @@ static int __init add_huge_page_size(unsigned long long size)
->         if (!arch_hugetlb_valid_size((unsigned long)size))
->                 return -EINVAL;
->
-> -       if (!size_to_hstate(size))
-> -               hugetlb_add_hstate(shift - PAGE_SHIFT);
-> +       hugetlb_add_hstate(shift - PAGE_SHIFT);
->         return 0;
->  }
->
-> diff --git a/arch/riscv/mm/hugetlbpage.c b/arch/riscv/mm/hugetlbpage.c
-> index 4e5d7e9f0eef..932dadfdca54 100644
-> --- a/arch/riscv/mm/hugetlbpage.c
-> +++ b/arch/riscv/mm/hugetlbpage.c
-> @@ -26,7 +26,7 @@ bool __init arch_hugetlb_valid_size(unsigned long size)
->  static __init int gigantic_pages_init(void)
->  {
->         /* With CONTIG_ALLOC, we can allocate gigantic pages at runtime */
-> -       if (IS_ENABLED(CONFIG_64BIT) && !size_to_hstate(1UL << PUD_SHIFT))
-> +       if (IS_ENABLED(CONFIG_64BIT))
->                 hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
->         return 0;
->  }
-> diff --git a/arch/sparc/mm/init_64.c b/arch/sparc/mm/init_64.c
-> index 4618f96fd30f..ae819a16d07a 100644
-> --- a/arch/sparc/mm/init_64.c
-> +++ b/arch/sparc/mm/init_64.c
-> @@ -325,23 +325,12 @@ static void __update_mmu_tsb_insert(struct mm_struct *mm, unsigned long tsb_inde
->  }
->
->  #ifdef CONFIG_HUGETLB_PAGE
-> -static void __init add_huge_page_size(unsigned long size)
-> -{
-> -       unsigned int order;
-> -
-> -       if (size_to_hstate(size))
-> -               return;
-> -
-> -       order = ilog2(size) - PAGE_SHIFT;
-> -       hugetlb_add_hstate(order);
-> -}
-> -
->  static int __init hugetlbpage_init(void)
->  {
-> -       add_huge_page_size(1UL << HPAGE_64K_SHIFT);
-> -       add_huge_page_size(1UL << HPAGE_SHIFT);
-> -       add_huge_page_size(1UL << HPAGE_256MB_SHIFT);
-> -       add_huge_page_size(1UL << HPAGE_2GB_SHIFT);
-> +       hugetlb_add_hstate(HPAGE_64K_SHIFT - PAGE_SHIFT);
-> +       hugetlb_add_hstate(HPAGE_SHIFT - PAGE_SHIFT);
-> +       hugetlb_add_hstate(HPAGE_256MB_SHIFT - PAGE_SHIFT);
-> +       hugetlb_add_hstate(HPAGE_2GB_SHIFT - PAGE_SHIFT);
->
->         return 0;
->  }
-> diff --git a/arch/x86/mm/hugetlbpage.c b/arch/x86/mm/hugetlbpage.c
-> index 937d640a89e3..cf5781142716 100644
-> --- a/arch/x86/mm/hugetlbpage.c
-> +++ b/arch/x86/mm/hugetlbpage.c
-> @@ -195,7 +195,7 @@ bool __init arch_hugetlb_valid_size(unsigned long size)
->  static __init int gigantic_pages_init(void)
->  {
->         /* With compaction or CMA we can allocate gigantic pages at runtime */
-> -       if (boot_cpu_has(X86_FEATURE_GBPAGES) && !size_to_hstate(1UL << PUD_SHIFT))
-> +       if (boot_cpu_has(X86_FEATURE_GBPAGES))
->                 hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
->         return 0;
->  }
-> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
-> index b2d276408cec..0e6eb755ae94 100644
-> --- a/mm/hugetlb.c
-> +++ b/mm/hugetlb.c
-> @@ -3222,8 +3222,7 @@ static int __init hugetlb_init(void)
->                 }
->
->                 default_hstate_size = HPAGE_SIZE;
-> -               if (!size_to_hstate(default_hstate_size))
-> -                       hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
-> +               hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
->         }
->         default_hstate_idx = hstate_index(size_to_hstate(default_hstate_size));
->         if (default_hstate_max_huge_pages) {
-> @@ -3268,7 +3267,6 @@ void __init hugetlb_add_hstate(unsigned int order)
->         unsigned long i;
->
->         if (size_to_hstate(PAGE_SIZE << order)) {
-> -               pr_warn("hugepagesz= specified twice, ignoring\n");
->                 return;
->         }
->         BUG_ON(hugetlb_max_hstate >= HUGE_MAX_HSTATE);
-> @@ -3343,6 +3341,11 @@ static int __init hugepagesz_setup(char *s)
->                 return 0;
->         }
->
-> +       if (size_to_hstate(size)) {
-> +               pr_warn("HugeTLB: hugepagesz %s specified twice, ignoring\n", s);
-> +               return 0;
-> +       }
-> +
->         hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
->         return 1;
->  }
-> --
-> 2.25.2
->
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
