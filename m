@@ -2,59 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B9451B068F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 12:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48B5A1B06A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 12:31:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a13Hub1udQuUOV6oV7SzqCF1BuPMMdx/GqN93sW45zg=; b=PiloryGUJLpuLR
-	cQqskRsu9A1Kzg9rCAi83SBqWGiJO4I8ksyRdjpKAuj5HkpmpwY49Xej2fkNEl3phwzLoDVlTxfY/
-	NXTaOeMG3s8fhpWFWKjsPT3ry1k0p9GQc1kGeJZUk4/Nb8t0wxaTJyU7wnAYlhLE7OuRGz85JCHVf
-	6C5ac9tVmOjekTinVnhU9i4/zEvFeUTs/E+tMgGE/NVk7SV27vl127DnaN9dkevrxISg+S8NKGVpA
-	MYDstymWewrb8M52Elg4Dk/ZKGFymjou9FZLMZUUgeYC7fqJ5hL7NIDJI67fxpl6Tjqs0oY4EUJEl
-	aRh2UzJOokHgAECgb2Sw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ruiw9dHoIFKafeGqTJ+rCuuVqxkyoH6+FuLaylw9qyI=; b=U0Kv59Oo6POqh7
+	PhvSCH0H1KaGQo43mi+xMhRM+dpDBllYxfSfdiycLyBXYQMUcGtUBt0faoYy8iOz8hoDjmfWNfJsu
+	GJwiy1i+BBrqjIhXdnO/VmZyJEgnxlK1h22G866jIahRywKYGk7Z2ecF8RUr/wwP0/sWUoE6PBFnD
+	5dSWuqfqheBlBsjGsuv1Hx7lKV/rpgajvOv47d5vmOWi+3y55wuwqmT+bzFXOP2bF7ozpXJsmsOaK
+	Mf2HQshN1JSZMjVtU1DIGIMw//rpJN+YMdh7zs4qnxNkWdsbgolXG64UM3rdFzVheVH/5X0pL0vnS
+	dZFWjz0Hh6Li/PdUTgbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQTe6-0006nA-6z; Mon, 20 Apr 2020 10:27:22 +0000
+	id 1jQTiB-0002EB-98; Mon, 20 Apr 2020 10:31:35 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQTdx-0006mT-Fn
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 10:27:15 +0000
+ id 1jQThu-0002D9-S6
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 10:31:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1587378431; bh=o62eKdBWITau5Cn4J0cykM+HQVejW+cPPQs4pz5s9gE=;
- h=Date:From:To:Subject:References:X-My-GPG-KeyId:From;
- b=Ql7xHYAz0EL8wAdFvHCBeD7yJ1M+OZ3T1Qj8MgauhSeO4oCK/8hHaY7K8xg3d6IvP
- /7lrGbdhKlZW0z4cYThrhr/FAg8MusoUx23eP3pCMTHdE/pO3btP1XOBKzTZh2CLlI
- IBWwdCwX5nru7DaINj9TdP/+gt7pT60xLu1Uvdt8=
-Date: Mon, 20 Apr 2020 12:27:11 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi <linux-sunxi@googlegroups.com>
-Subject: Re: [linux-sunxi] [PATCH v3 0/7] Add support for Allwinner H6 DVFS
-Message-ID: <20200420102711.4ozfiiakvgisukpk@core.my.home>
-Mail-Followup-To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- linux-sunxi <linux-sunxi@googlegroups.com>
-References: <20200419135011.18010-1-peron.clem@gmail.com>
- <20200420094801.ltsittj3gdrbbr3u@core.my.home>
+ t=1587378677; bh=/yBEOQg36NmTB26lwG9esRHwBVVu8AY1wtn2VnP7cZU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=NwqsVU23pOZdrdNtM/TxIjsLxRszSZsNu4I7tPd1CyESi2GXRZ7Vm6ZPODjjvUgB7
+ RRbLUbxzbXyQ393pRruYQbWBecGl/oapIgYDj1OIGfMZUIanelMIPI69Ze1dSYNncU
+ EGnTh2JZncF1SA7sTFOkc/O6pB215RLpFG6ow1dw=
+From: Ondrej Jirman <megous@megous.com>
+To: linux-sunxi@googlegroups.com
+Subject: [PATCH] arm64: dts: allwinner: sun50i-a64: Add missing
+ address/size-cells
+Date: Mon, 20 Apr 2020 12:31:13 +0200
+Message-Id: <20200420103113.577969-1-megous@megous.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200420094801.ltsittj3gdrbbr3u@core.my.home>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_032713_855257_95C7A6F7 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20200420_033119_077568_59C4A7D5 
+X-CRM114-Status: UNSURE (   6.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,47 +65,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Ondrej Jirman <megous@megous.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBBcHIgMjAsIDIwMjAgYXQgMTE6NDg6MDFBTSArMDIwMCwgbWVnb3VzIGhsYXZuaSB3
-cm90ZToKPiBIZWxsbyBDbMOpbWVudCwKPiAKPiBPbiBTdW4sIEFwciAxOSwgMjAyMCBhdCAwMzo1
-MDowNFBNICswMjAwLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gPiBIaSBTdW54aSBtYWludGFp
-bmVycyBhbmQgbWVtYmVycywKPiA+IAo+ID4gTm93IHRoYXQgcmVxdWlyZWQgZHJpdmVycyBhcmUg
-bWVyZ2VkIHdlIGNhbiBjb250aWJ1dGUgb24gRFZGUwo+ID4gc3VwcG9ydCBmb3IgQWxsd2lubmVy
-IEg2Lgo+ID4gCj4gCj4gWyBzbmlwIF0KPiAKPiA+IAo+ID4gQ2hhbmdlcyBzaW5jZSB2MiAodGhh
-bmtzIHRvIE1heGltZSBSaXBhcmQpOgo+ID4gICAtIENoYW5nZSBPcmFuZ2UgUGkgYm9hcmRzIHRv
-IE9yYW5nZSBQaSAzCj4gPiAgIC0gQ2hhbmdlIHNvYyBzcGVlZCBudm1lbSBub2RlIG5hbWUKPiA+
-ICAgLSBGaXggZGV2aWNlIHRyZWUgd2FybmluZ3MKPiA+ICAgLSBEcm9wIEdQVSBvcHAgdGFibGVz
-Cj4gCj4gTG9va3MgbGlrZSB5b3UgbWF5IGhhdmUgYWxzbyBpbmFkdmVyZW50bHkgZHJvcHBlZCB0
-aGUgc2Vjb25kIHBhdGNoIGZyb20gdjIKPiBzZXJpZXMgdGhhdCBpbXBsZW1lbnRlZCBDUFUgdGhl
-cm1hbCB0cmlwIHBvaW50cy4KCkFsc28gaXQgbG9va3MgbGlrZSB0aGUgcGF0Y2ggMSBmcm9tIHYy
-IGltcGxlbWVudGluZyB0aGUgY2xvY2sgcHJvcGVydGllcwppcyBtaXNzaW5nIGZyb20gdjMsIGFu
-ZCBJIGRvbid0IHNlZSBpdCBiZWluZyBhbHJlYWR5IGFwcGxpZWQgYW55d2hlcmUuCldpdGhvdXQg
-dGhhdCBjcHVmcmVxIGRvZXNuJ3Qgd29yay4KCkFsc28sIHRoZXJtYWwgdHJpcCBwb2ludHMgbmVl
-ZCB0byBiZSBpbiB0aGUgb3BwLmR0c2kgdG8gYXZvaWQgZHRjIHdhcm5pbmdzCmR1cmluZyBidWls
-ZC4KCmh0dHBzOi8vbWVnb3VzLmNvbS9naXQvbGludXgvY29tbWl0Lz9oPXRocy01LjcmaWQ9Y2Fj
-ZWZkN2RlY2Y1YWUwY2U0MmFiNGQ0OGExM2E1ODU1MjkyOWViZAoKcmVnYXJkcywKCW8uCgo+ID4g
-Q2hhbmdlcyBzaW5jZSB2MSAodGhhbmtzIHRvIE9uZMWZZWogSmlybWFuKToKPiA+ICAgLSBSZW1v
-dmUgUG9sbGluZyB0aGVybWFsCj4gPiAgIC0gQWRkIE9yYW5nZSBQaSBib2FyZHMKPiA+ICAgLSBS
-ZW1vdmUgbWluaW1hbCB2b2x0YWdlIGNoYW5nZSBmb3IgQmVlbGluayBHUzEKPiA+ICAgLSBBZGQg
-cmFtcC1kZXBsYXkgZm9yIEdQVSBhbmQgQ1BVIHJlZ3VsYXRvcnMKPiA+ICAgLSBQdXNoIHRvIHRo
-ZXJtYWwgcG9pbnQgdG8gODXCsEMgKEFsbHdpbm5lciBzZXQgdGhlbSB0byAxMDDCsEMgYW5kIDEx
-NcKwQykKPiA+ICAgLSBBZGRlZCAxLjZHSHogYW5kIDEuN0dIeiB0byBPUFAgdGFibGUuCj4gPiAK
-PiA+IENsw6ltZW50IFDDqXJvbiAoNik6Cj4gPiAgIGFybTY0OiBjb25maWdzOiBFbmFibGUgc3Vu
-NTBpIGNwdWZyZXEgbnZtZW0KPiA+ICAgYXJtNjQ6IGR0czogYWxsd2lubmVyOiBoNjogRW5hYmxl
-IENQVSBvcHAgdGFibGVzIGZvciBCZWVsaW5rIEdTMQo+ID4gICBhcm02NDogZHRzOiBhbGx3aW5u
-ZXI6IGg2OiBFbmFibGUgQ1BVIG9wcCB0YWJsZXMgZm9yIE9yYW5nZSBQaSAzCj4gPiAgIGFybTY0
-OiBkdHM6IGFsbHdpbm5lcjogaDY6IEVuYWJsZSBDUFUgb3BwIHRhYmxlcyBmb3IgVGFuaXggVFg2
-Cj4gPiAgIGFybTY0OiBkdHM6IGFsbHdpbm5lcjogU29ydCBQaW5lIEg2NCBkZXZpY2UtdHJlZSBu
-b2Rlcwo+ID4gICBhcm02NDogZHRzOiBhbGx3aW5uZXI6IGg2OiBFbmFibGUgQ1BVIGFuZCBHUFUg
-b3BwIHRhYmxlcyBmb3IgUGluZSBINjQKPiAKPiBZb3UgbWF5IGFsc28gd2FudCB0byBmaXggdGl0
-bGUgb2YgdGhpcyBwYXRjaCB0byBkcm9wIHRoZSBHUFUgcmVmZXJlbmNlLgo+IAo+IHRoYW5rIHlv
-dSBhbmQgcmVnYXJkcywKPiAJby4KPiAKPiA+IE9uZHJlaiBKaXJtYW4gKDEpOgo+ID4gICBhcm02
-NDogZHRzOiBhbGx3aW5uZXI6IGg2OiBBZGQgQ1BVIE9wZXJhdGluZyBQZXJmb3JtYW5jZSBQb2lu
-dHMgdGFibGUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+The binding specifies #address-cells and #size-cells should be present.
+Without them present, dtc issues a warning because default for
+#address-cells seems to be <2>:
+
+arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi:1108.4-52:
+  Warning (dma_ranges_format):
+    /soc/dram-controller@1c62000:dma-ranges:
+    "dma-ranges" property has invalid length (12 bytes)
+    (parent #address-cells == 1, child #address-cells == 2,
+    #size-cells == 1)
+
+mbus #address-cells should be 1.
+
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index cca4261089aa..61698094f450 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -1105,6 +1105,8 @@ mbus: dram-controller@1c62000 {
+ 			compatible = "allwinner,sun50i-a64-mbus";
+ 			reg = <0x01c62000 0x1000>;
+ 			clocks = <&ccu 112>;
++			#address-cells = <1>;
++			#size-cells = <1>;
+ 			dma-ranges = <0x00000000 0x40000000 0xc0000000>;
+ 			#interconnect-cells = <1>;
+ 		};
+-- 
+2.26.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
