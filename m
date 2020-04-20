@@ -2,48 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4489A1B0622
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 12:01:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECEE91B0624
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 12:03:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lfRosI4pONzxIlOm0qWBJ6YTcTxA3leffrNOLtRXJUQ=; b=OJhURZTtXWrrXf
-	kq7oA/OSyIvU4c+F1pcv/3suayAXaSpTzoEwKzMKYZqPKZfzl8z7Kqp8Q+X518CM//+HCAx360/GG
-	+g/AV1a2d98SJuiIsqd927I9Ue5W+LaqHDMYNf6N3zu3wmNJXcfRyFIMgrvMXFWPSp/9DyaRcB7j1
-	bSwYKrqHqiUoWZSEAPAsWHm9vN478S+p8SODTtAJcwki1HeB+uHsKf8fwYi+lSDnxzsqwh1najg7E
-	9N7pkRP0vP2sNSqABN5zTV5r/P5uivUsA2YD4VyIUwg8bPaXWVBQCBTr+KOEBayIENdvDqQ3+t7oI
-	l671QUk8No3jFnGMhm8w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E1r5H8Q8KvvsYQ7swP1oSJ57mEkR/UWEvyP3P3hsr0A=; b=SEnSTZ7Xx1HWR8
+	TGmTe6tt1j/Sxiw/Kwsi+WUIwaFvJ1injYljLqitFt6V1GFDlT5JOkfLigj0T2UAQqrHz5mucPrXB
+	skq5TPuHJAWLaKdVIJeatUtL8+QK0XhFsi2XtdWqZ6R65ixRC6200iF4S4yF1wPnFUCN1tfUbleGI
+	Qg1kAHBM2bCDVk/bMJ/t1HIHbLHX2+T/i7Q+Jl+z3D2Uy6fyeflCSd6w1gMmhG23y+x7gAdYTwn6d
+	Gw/oWpUlYcsI4EvyRiD7Um51o20hD52grK2uTNYLYTK0RJCjiwkKtchUEvqMUiaa2fiaB6T+EzG2D
+	QeYjpdRd4BdFzNDxoq5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQTF5-0004Xb-RZ; Mon, 20 Apr 2020 10:01:31 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jQTGk-0005Cd-OB; Mon, 20 Apr 2020 10:03:14 +0000
+Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQTEy-0004X0-55
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 10:01:26 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id E48D82A044A
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH] drm: imx: Unify encoder creation
-Date: Mon, 20 Apr 2020 13:02:22 +0300
-Message-Id: <20200420100222.1308898-1-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.26.0
+ id 1jQTGX-0005BI-Ad
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 10:03:03 +0000
+Received: by mail-yb1-xb41.google.com with SMTP id i2so5078221ybk.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 03:03:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=26qdYNs0ZF2q7UXN0Qkf8uFcKE4I8h/DrN7RiFR7f0Q=;
+ b=LYSctVDkWp0nIyrGia+1VDbE4/E083SUM+o8hXwlsw4oiS5p6YWwSR5msfMMWoXp45
+ VIGGOWMv2+elHSPoc1E2DsKjM/zG/LNT2AwEima6szpsJf9M+fPTj+FL06XW8OP0HU7q
+ usxEbGOdnSYTRO5B4b0Wl7cuAcYVth7eiHVux8kTiHhzDhBnQpDLvhxB0bv1O3X7fC2t
+ +HXw6nZfgzNZ4rjNZHFX52NMSksaKo+HZ2WjGPb59fcGsFEVoYJulQg8RK3Mj37lKEAF
+ 0aYdLW32bxOCpNcXRHq/Djlsz3LZZ33lPrH6wmkGhpByoBFfs7bRI0BARrISRb2dpLxl
+ XI/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=26qdYNs0ZF2q7UXN0Qkf8uFcKE4I8h/DrN7RiFR7f0Q=;
+ b=rTcXQIc23bSXV40BMX5ICcJUzQ5EtSdXJjSy9HE17JFA2AzHNzuENmMtThXvaJxBm3
+ fHkvJ2BRxkOCl0jjz+2SFLQat7+R5hcbx7LqfJIzr2kKhOGQEvVdVS0/DRstKQnDhmG7
+ whS9b+Yujc/aKM2xZXnUvHzCxfEYCq6pENQwUh6xQZLgeug+2dKn2eNXN7eREtbpCQAi
+ UkkyfARULaU/2MQS5c0xtvO6sic1yKZEPRuetau4/ISBm8DZGiOGIlsNfTwizCnk4huD
+ rtcmuekrAKLNVQLs3sTZp42g02qt/pXoMDabcY5iJ6ZcQ7c5VaeB1IiYHU8i4xNnZePW
+ r5tA==
+X-Gm-Message-State: AGi0PubS892UJvZoT98ozBMY9NwxUeYbg1rvKAwvkZhAnQGvQsZ2YBtx
+ cipWRB3yz57yBmGSfGF0OZHgBX+h73JOTw8wWmHsjw==
+X-Google-Smtp-Source: APiQypIdubJBOnT5/KYcmEjQk4EfRpLnI1xif2StvqfQ7T+NDg7Yq5em+mHVX2FSC3ewcJFl2xvG7ubbixLne/FiIFw=
+X-Received: by 2002:a25:bd92:: with SMTP id f18mr7399106ybh.87.1587376980292; 
+ Mon, 20 Apr 2020 03:03:00 -0700 (PDT)
 MIME-Version: 1.0
+References: <158735030084.17831.6159788305648251972.stgit@localhost>
+ <20200420121403.aff9fb209ee0da7f20ed3ae2@linaro.org>
+ <CAK7LNAT9y2A-dX2Z-2pAsbRvKReoypmoP0hdbWiCGR0G8CuK0w@mail.gmail.com>
+ <CAA93ih3X46k7F0Mzv=-H0RRAVMemXmHFDc+trAKn2c1tLOQNHA@mail.gmail.com>
+ <CAK7LNATYy_tpGT5+veqVwsa9x0e4sYZPmzba5vYvvLRtNYpamA@mail.gmail.com>
+In-Reply-To: <CAK7LNATYy_tpGT5+veqVwsa9x0e4sYZPmzba5vYvvLRtNYpamA@mail.gmail.com>
+From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
+Date: Mon, 20 Apr 2020 19:02:49 +0900
+Message-ID: <CAA93ih2OfhjWJz=G6Q05vN5qTJRnEj-+MtvwpT9SmV=9R91cuA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: arm: Add Akebi96 board support
+To: Masahiro Yamada <masahiroy@kernel.org>,
+ Rob Herring <rob.herring@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_030124_454798_7DEC8919 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200420_030301_541870_18C9EC50 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,244 +96,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
- Enric Balletbo Serra <eballetbo@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: DTML <devicetree@vger.kernel.org>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-imx drivers don't require drm encoders and they all had empty/no-op
-implementations which got converted to simple objects to pacify the
-drm core which still requires something to be defined.
-
-The problem now is that each driver duplicates the same encoder
-initialization logic and I'm working on adding yet-another driver
-(for imx6 mipi-dsi), so instead of copy-pasting the initialization
-let's move it from the drivers to a shared function in imx-drm-core.
-
-The imx_drm_encoder_parse_of() logic is made part of the newly added
-imx_drm_create_encoder() which was its only caller after the move to
-imx-drm-core.
-
-Suggested-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Suggested-by: Enric Balletbo Serra <eballetbo@gmail.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
----
- drivers/gpu/drm/imx/dw_hdmi-imx.c      | 18 ++++++------------
- drivers/gpu/drm/imx/imx-drm-core.c     | 13 ++++++++++---
- drivers/gpu/drm/imx/imx-drm.h          |  2 +-
- drivers/gpu/drm/imx/imx-ldb.c          |  8 ++++----
- drivers/gpu/drm/imx/imx-tve.c          |  8 ++++----
- drivers/gpu/drm/imx/parallel-display.c | 11 +++++------
- 6 files changed, 30 insertions(+), 30 deletions(-)
-
-diff --git a/drivers/gpu/drm/imx/dw_hdmi-imx.c b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-index ba4ca17fd4d8..a710e3d576b4 100644
---- a/drivers/gpu/drm/imx/dw_hdmi-imx.c
-+++ b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-@@ -18,7 +18,6 @@
- #include <drm/drm_edid.h>
- #include <drm/drm_encoder.h>
- #include <drm/drm_of.h>
--#include <drm/drm_simple_kms_helper.h>
- 
- #include "imx-drm.h"
- 
-@@ -218,22 +217,17 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
- 	hdmi->dev = &pdev->dev;
- 	encoder = &hdmi->encoder;
- 
--	encoder->possible_crtcs = drm_of_find_possible_crtcs(drm, dev->of_node);
--	/*
--	 * If we failed to find the CRTC(s) which this encoder is
--	 * supposed to be connected to, it's because the CRTC has
--	 * not been registered yet.  Defer probing, and hope that
--	 * the required CRTC is added later.
--	 */
--	if (encoder->possible_crtcs == 0)
--		return -EPROBE_DEFER;
--
- 	ret = dw_hdmi_imx_parse_dt(hdmi);
- 	if (ret < 0)
- 		return ret;
- 
-+	ret = imx_drm_create_encoder(drm, encoder, dev->of_node);
-+	if (ret) {
-+		dev_err(dev, "Failed to create drm encoder\n");
-+		return ret;
-+	}
-+
- 	drm_encoder_helper_add(encoder, &dw_hdmi_imx_encoder_helper_funcs);
--	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_TMDS);
- 
- 	platform_set_drvdata(pdev, hdmi);
- 
-diff --git a/drivers/gpu/drm/imx/imx-drm-core.c b/drivers/gpu/drm/imx/imx-drm-core.c
-index 2e38f1a5cf8d..eaf087ed354f 100644
---- a/drivers/gpu/drm/imx/imx-drm-core.c
-+++ b/drivers/gpu/drm/imx/imx-drm-core.c
-@@ -23,6 +23,7 @@
- #include <drm/drm_of.h>
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_probe_helper.h>
-+#include <drm/drm_simple_kms_helper.h>
- #include <drm/drm_vblank.h>
- 
- #include "imx-drm.h"
-@@ -116,11 +117,11 @@ static const struct drm_mode_config_helper_funcs imx_drm_mode_config_helpers = {
- 	.atomic_commit_tail = imx_drm_atomic_commit_tail,
- };
- 
--
--int imx_drm_encoder_parse_of(struct drm_device *drm,
-+int imx_drm_create_encoder(struct drm_device *drm,
- 	struct drm_encoder *encoder, struct device_node *np)
- {
- 	uint32_t crtc_mask = drm_of_find_possible_crtcs(drm, np);
-+	int ret;
- 
- 	/*
- 	 * If we failed to find the CRTC(s) which this encoder is
-@@ -136,9 +137,15 @@ int imx_drm_encoder_parse_of(struct drm_device *drm,
- 	/* FIXME: cloning support not clear, disable it all for now */
- 	encoder->possible_clones = 0;
- 
-+	ret = drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_NONE);
-+	if (ret) {
-+		DRM_ERROR("Failed to initialize simple drm encoder\n");
-+		return ret;
-+	}
-+
- 	return 0;
- }
--EXPORT_SYMBOL_GPL(imx_drm_encoder_parse_of);
-+EXPORT_SYMBOL_GPL(imx_drm_create_encoder);
- 
- static const struct drm_ioctl_desc imx_drm_ioctls[] = {
- 	/* none so far */
-diff --git a/drivers/gpu/drm/imx/imx-drm.h b/drivers/gpu/drm/imx/imx-drm.h
-index c3e1a3f14d30..8573a668a5f5 100644
---- a/drivers/gpu/drm/imx/imx-drm.h
-+++ b/drivers/gpu/drm/imx/imx-drm.h
-@@ -34,7 +34,7 @@ void imx_drm_mode_config_init(struct drm_device *drm);
- 
- struct drm_gem_cma_object *imx_drm_fb_get_obj(struct drm_framebuffer *fb);
- 
--int imx_drm_encoder_parse_of(struct drm_device *drm,
-+int imx_drm_create_encoder(struct drm_device *drm,
- 	struct drm_encoder *encoder, struct device_node *np);
- 
- void imx_drm_connector_destroy(struct drm_connector *connector);
-diff --git a/drivers/gpu/drm/imx/imx-ldb.c b/drivers/gpu/drm/imx/imx-ldb.c
-index 66ea68e8da87..a37fa325a8c3 100644
---- a/drivers/gpu/drm/imx/imx-ldb.c
-+++ b/drivers/gpu/drm/imx/imx-ldb.c
-@@ -26,7 +26,6 @@
- #include <drm/drm_panel.h>
- #include <drm/drm_print.h>
- #include <drm/drm_probe_helper.h>
--#include <drm/drm_simple_kms_helper.h>
- 
- #include "imx-drm.h"
- 
-@@ -423,9 +422,11 @@ static int imx_ldb_register(struct drm_device *drm,
- 	struct drm_encoder *encoder = &imx_ldb_ch->encoder;
- 	int ret;
- 
--	ret = imx_drm_encoder_parse_of(drm, encoder, imx_ldb_ch->child);
--	if (ret)
-+	ret = imx_drm_create_encoder(drm, encoder, imx_ldb_ch->child);
-+	if (ret) {
-+		dev_err(ldb->dev, "Failed to create drm encoder\n");
- 		return ret;
-+	}
- 
- 	ret = imx_ldb_get_clk(ldb, imx_ldb_ch->chno);
- 	if (ret)
-@@ -438,7 +439,6 @@ static int imx_ldb_register(struct drm_device *drm,
- 	}
- 
- 	drm_encoder_helper_add(encoder, &imx_ldb_encoder_helper_funcs);
--	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_LVDS);
- 
- 	if (imx_ldb_ch->bridge) {
- 		ret = drm_bridge_attach(&imx_ldb_ch->encoder,
-diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-index ee63782c77e9..2d88aca0f7e7 100644
---- a/drivers/gpu/drm/imx/imx-tve.c
-+++ b/drivers/gpu/drm/imx/imx-tve.c
-@@ -21,7 +21,6 @@
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_fb_helper.h>
- #include <drm/drm_probe_helper.h>
--#include <drm/drm_simple_kms_helper.h>
- 
- #include "imx-drm.h"
- 
-@@ -471,12 +470,13 @@ static int imx_tve_register(struct drm_device *drm, struct imx_tve *tve)
- 	encoder_type = tve->mode == TVE_MODE_VGA ?
- 				DRM_MODE_ENCODER_DAC : DRM_MODE_ENCODER_TVDAC;
- 
--	ret = imx_drm_encoder_parse_of(drm, &tve->encoder, tve->dev->of_node);
--	if (ret)
-+	ret = imx_drm_create_encoder(drm, &tve->encoder, tve->dev->of_node);
-+	if (ret) {
-+		dev_err(tve->dev, "failed to create drm encoder\n");
- 		return ret;
-+	}
- 
- 	drm_encoder_helper_add(&tve->encoder, &imx_tve_encoder_helper_funcs);
--	drm_simple_encoder_init(drm, &tve->encoder, encoder_type);
- 
- 	drm_connector_helper_add(&tve->connector,
- 			&imx_tve_connector_helper_funcs);
-diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
-index 4465e9c602f8..321accb4ca7c 100644
---- a/drivers/gpu/drm/imx/parallel-display.c
-+++ b/drivers/gpu/drm/imx/parallel-display.c
-@@ -18,7 +18,6 @@
- #include <drm/drm_of.h>
- #include <drm/drm_panel.h>
- #include <drm/drm_probe_helper.h>
--#include <drm/drm_simple_kms_helper.h>
- 
- #include "imx-drm.h"
- 
-@@ -274,10 +273,6 @@ static int imx_pd_register(struct drm_device *drm,
- 	struct drm_encoder *encoder = &imxpd->encoder;
- 	int ret;
- 
--	ret = imx_drm_encoder_parse_of(drm, encoder, imxpd->dev->of_node);
--	if (ret)
--		return ret;
--
- 	/* set the connector's dpms to OFF so that
- 	 * drm_helper_connector_dpms() won't return
- 	 * immediately since the current state is ON
-@@ -285,7 +280,11 @@ static int imx_pd_register(struct drm_device *drm,
- 	 */
- 	imxpd->connector.dpms = DRM_MODE_DPMS_OFF;
- 
--	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_NONE);
-+	ret = imx_drm_create_encoder(drm, encoder, imxpd->dev->of_node);
-+	if (ret) {
-+		dev_err(imxpd->dev, "failed to create drm encoder\n");
-+		return ret;
-+	}
- 
- 	imxpd->bridge.funcs = &imx_pd_bridge_funcs;
- 	drm_bridge_attach(encoder, &imxpd->bridge, NULL, 0);
--- 
-2.26.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgWWFtYWRhLXNhbiwKCjIwMjDlubQ05pyIMjDml6Uo5pyIKSAxODo0OCBNYXNhaGlybyBZYW1h
+ZGEgPG1hc2FoaXJveUBrZXJuZWwub3JnPjoKPgo+IEhpcmFtYXRzdS1zYW4KPgo+IE9uIE1vbiwg
+QXByIDIwLCAyMDIwIGF0IDY6MzEgUE0gTWFzYW1pIEhpcmFtYXRzdQo+ID4gPiBZb3VyIHBhdGNo
+IHN1Ym1pc3Npb24gaXMgc3RpbGwgc3RyYW5nZS4KPiA+ID4KPiA+ID4gaHR0cHM6Ly9wYXRjaHdv
+cmsua2VybmVsLm9yZy9wYXRjaC8xMTQ5ODAyNS8KPiA+ID4KPiA+ID4gVGhpcyBwYXRjaCBpcyBi
+cm9rZW4uCj4gPiA+Cj4gPiA+IFBsZWFzZSBtYWtlIHN1cmUgaXQgY2FuIGFwcGx5IHRvIHRoZSBt
+YWlubGluZSBjb2RlLgo+ID4KPiA+IEFoLCBzaW5jZSBpdCBpcyBiYXNlZCBvbiB0aGUgbGludXgt
+bmV4Lgo+ID4gT0ssIEknbGwgdXBkYXRlIGl0IHRvIHRoZSBtYWlubGluZSBrZXJuZWwuCj4KPgo+
+IE9oLCBJIGRpZCBub3Qgbm90aWNlIHRoZSBpbnZhc2l2ZSByZWZvcm1hdGluZy4KPgo+IEFub3Ro
+ZXIgd2F5IHRvIG1lcmdlIHRoaXMgY2xlYW5seSBpcyB0byBhc2sgdGhpcyB0byBSb2IgSGVycmlu
+Zy4KPiBFaXRoZXIgaXMgT0sgdG8gbWUuCgpPaCwgbGV0IG1lIHVwZGF0ZSB0aGUgc2VyaWVzIHRv
+IGZpeCB0aGUgc2lsbHkgYXV0aG9yIGxpbmUgOigKQW5kIGFueXdheSwgSSd2ZSBwcmVwYXJlZCB0
+aGUgbWFpbmxpbmUga2VybmVsIHBhdGNoLgpTaW5jZSBpdCBpcyBhIG1pbm9yIG1lcmdlIGNvbmZs
+aWN0LCBJIHdvdWxkIGxpa2UgdG8gc2VuZCB2MiBmb3IgdGhlCm1haW5saW5lIGtlcm5lbC4KUm9i
+LCBpZiB5b3Ugd2FudCBhIG5ldyB2ZXJzaW9uLCBwbGVhc2UgbGV0IG1lIGtub3cuIEkgY2FuIHJl
+cG9zdCBpdCA6KQoKVGhhbmsgeW91LAoKLS0gCk1hc2FtaSBIaXJhbWF0c3UKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
