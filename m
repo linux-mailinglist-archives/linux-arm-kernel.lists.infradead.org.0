@@ -2,85 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C3D11B0FBD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:17:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BFA71B0FC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:18:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sZqfsQgoXPHPNWWo1oNLI28SGe/DT2Rc7pBPS2QfL+Y=; b=ZUPFmC5sgvH23b
-	Q7JumvIHszx52dF062ij8ZrYJfPSYvzhN8eHf6P9/FYYLyRCc5nvyZ3KI5BsbrJHCMaldgFovghcp
-	SDgFtPpQErnYAFUETUWhd7KLt1ezCK/g6sHwR0RJuevQhuq9e0FhgwhQoA/yY3paPjgQwo6aOflNT
-	Zd4B2ro0Mevfe0SQcj+D+CtfNA/p7YImD5IjS1rjdJCZzu4K+8L5rHgmzikXw17tirPw6IiohI7mI
-	/isCOJKUY9KaDYAONcWXSewOnD+GDejv5B+j08D6vuJuRChEKTmelUkAEq8dwb2NIJrU20wX9bcjN
-	fKjDfvhnM2h0ncmqsSiw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zCrz7G/7X5r6cgxYS/XigfYTt8sfUgtNF0JDu7IxnYg=; b=qYim+SEFRvydqw
+	CvmGZPS0cQTxEoZa7XcliDkyW5vwQdnrIWHfW6aVP4mnanEWJudNEqj/anFV/ZPip4u1l1ryR0DD3
+	PsR9odfQxJ07EXZHSdsu40u4/d7whHCa6CAzAFEWgaqXJ7aBOXaveQ36IhZ+gZ6GbxPpJ4y286zrx
+	mDxj2CdxORLI2lbOzw9ZcyfTCIodNHa+Xft9Iy2NSRNP13kHooekj8jrItCI1MweTBFSf91lNQDAW
+	mjaF5YU3sSIrTDS4TwG1U+Xf9XB6AeAAsevdRC9W/9VnLC9mpnWnvfpjOI+xPLU2p/Ace21RvlSix
+	Ep+PKRD7siU0H9ZFnJBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQYAf-0003Kg-Q1; Mon, 20 Apr 2020 15:17:17 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jQYBD-0003fV-8g; Mon, 20 Apr 2020 15:17:51 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQYAX-0003JF-B4
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:17:11 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03KF86eZ009838; Mon, 20 Apr 2020 17:17:07 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=utrDtfDiBp72eoR3DFVmDIYTn4oU6h7X8z50uW0XqAY=;
- b=0bvD2YaXsrK2zDpYtviIlolYHaArCW/O9D63XPC0jTNRAAAn2QAgHHo+ut7x1+bEiAZt
- GC8IQRhFwQ2eVRtioH5m282YqCUI+8E5Q+tRa0OjZ0dXKYeFOIsRIay8Aa7lgRYdY1pp
- f2pXtuH8h0/+3mvLku3x4HtnsSOx45zXQNNgGCsUX6pr+ktglUgX3pTPgK73tGLSsiJx
- YXF+Yx4LtyefGdR7CDBSVzPw/T+GRwnprizeVcpoZGG8h/PrS3AXpv+/pMQOcKhXbvxG
- WmJfFCU/pZxDXHF86kVAd80zDCuSUWCpbY2KzgcR4zJPx4xF3NzqIlD+LEeREBjuFNhl gA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30fpp8k577-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 20 Apr 2020 17:17:07 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C54CA10002A;
- Mon, 20 Apr 2020 17:17:06 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B9EE22B3E39;
- Mon, 20 Apr 2020 17:17:06 +0200 (CEST)
-Received: from localhost (10.75.127.50) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr 2020 17:17:06
- +0200
-From: Alain Volmat <alain.volmat@st.com>
-To: <wsa@the-dreams.de>, <pierre-yves.mordret@st.com>
-Subject: [PATCH v2] i2c: stm32: don't print an error on probe deferral
-Date: Mon, 20 Apr 2020 17:17:06 +0200
-Message-ID: <1587395826-17541-1-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jQYB4-0003ds-ID
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:17:44 +0000
+Received: from mail-qt1-f171.google.com ([209.85.160.171]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1M91Tq-1jLa5s1itS-0066Jz for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 20 Apr 2020 17:17:38 +0200
+Received: by mail-qt1-f171.google.com with SMTP id n20so2488189qtp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 08:17:38 -0700 (PDT)
+X-Gm-Message-State: AGi0Pub9RG2fRfwxxRohhtgFjlru1syrZNBVZnwh4c2ZyWwiHpT6gwWg
+ 534ERMH18A2S44LFJAckZdSf8AW1P9RQAIwr+uQ=
+X-Google-Smtp-Source: APiQypIZpcbpVguGnPVp2wcc994cFV0BoBRFUnMkzk8Awyyhz/lIgecL9i9/JcHFcxSM2GnbEmja+3MHVnQ4/GLwybU=
+X-Received: by 2002:ac8:2bce:: with SMTP id n14mr5661013qtn.18.1587395857124; 
+ Mon, 20 Apr 2020 08:17:37 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-20_05:2020-04-20,
- 2020-04-20 signatures=0
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-2-robh@kernel.org>
+In-Reply-To: <20200419170810.5738-2-robh@kernel.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 20 Apr 2020 17:17:20 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2bjyBDHnOVv2NwFA_wZvtH6O8R9godAg8zE3HpFe75ww@mail.gmail.com>
+Message-ID: <CAK8P3a2bjyBDHnOVv2NwFA_wZvtH6O8R9godAg8zE3HpFe75ww@mail.gmail.com>
+Subject: Re: [PATCH 01/17] ARM: vexpress: Move vexpress_flags_set() into arch
+ code
+To: Rob Herring <robh@kernel.org>
+X-Provags-ID: V03:K1:zU8+kqWxtVz2TPZd0tuC+a4nVkdm9GHJnDysf9bM22gvtcXWPk9
+ eDRg5kO5KYfZFafY/dklublXnrHcGiz7IAmTH+GuJTmJWKrwvNFz7NSKIzVX2lNOsVr1dmZ
+ LY91umxRo6pThSRzTIkLWp8M5HxO7ZcjuKGogmSPZm+SHIVoj6aANmRmJ0ZbmEc6vvLc3vN
+ eclOE1JQ1XVRD8I7+J3bg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:K/HUIwnrMB8=:wdKOGtxnv3GK8/5Pd/uops
+ id7Nnt0hl2ewBYPSXkte2xlLwakMgdGfh1q9pl3cDRmvnV+E60hyXRvS1PlSyCOMGhGUS44mp
+ Zug5lay0LKw41Nu0UOSu+PmZC4KlTokgNQ9TnMJMatY71ChwLg5YviieiUpVwiDzQAUlx4bes
+ zd8Hb1MXeiSRaSzjUum8xxMKtO3Qn3lyscIXaMMtIDGPJrIbrsVcZczDqgcUnwOZb8oObn9F0
+ a8n8DA0NRI6iJ6fsyevr+LotnJvWRdHjLeBg+/ukd8AZiatbtrNvHOpFrG1i4rN3CG5g8Mex2
+ oiHUY4AuP2PDrONaGsitG7s9Py/xj6vd3BmS45TQTV5mDN+qRVZ3d8uJT0OEcXYuhVgAMCfo1
+ aHpO1LhlgBPpNJ2NWdHpHAyEaqBoYSiVTEzoe/I4T6hr5+mGEbfjlC6VuGuF8FJ8TmmtztOPU
+ 00S4t3c+1lxUMzKShHSNRvZDZoVyX9TPWj9FOGAOrwFoxi7Pr5ePr/oICJpm4ZLSiBqIT4WXy
+ 7HvyKRBF4m3Qj818si/2S13qkwS702kEZeIkbywsbQ+jK/0lQxdVVZd5SjXrBV6g7GQXRy2Pl
+ 9NypoMmuZhO1cT5n21XkLcjNyH8qQXBKQA4w8pVKZajl9dzxvnhbdv6zh2eDQVwiDO+L9zPNE
+ Jgv1UhgygCrKunJSFfxefmPJkOrkiLhuZJ4MWPUuTtjNlPwt1Np6+rOgvPlY26zlQHlo8JLR5
+ 2Cv8Kxc8z9d5uL5BAS8H3mKjlVOTiax+UP+jdgaB3batzGZBrZZ/YWoa31g4na+ki5hZ5jU3M
+ SXln4GhDFn2zxieZ7v0aLVwxqKj87KuJEsAfozeOfTliFpQ+gs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_081709_763832_EF985F92 
-X-CRM114-Status: GOOD (  13.73  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200420_081742_890659_E64BC151 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,112 +89,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org, alain.volmat@st.com,
- linux-i2c@vger.kernel.org, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Will Deacon <will@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Etienne Carriere <etienne.carriere@st.com>
+On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
+>
+> vexpress_flags_set() is only used by the platform SMP related code and
+> has nothing to do with the vexpress-sysreg MFD driver other than both
+> access the same h/w block. It's also only needed for 32-bit systems and
+> must be built-in for them. Let's move vexpress_flags_set() closer to
+> where it is being used. This will allow for vexpress-sysreg to be built
+> as a module.
+>
+> Cc: Liviu Dudau <liviu.dudau@arm.com>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
+> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Lee Jones <lee.jones@linaro.org>
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-Do not print an error trace when deferring probe for some resource.
-Fix as well the error message in case of tx dma_request_chan failure.
-
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
-Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
----
-v2: replace dev_dbg with dev_err in case of error with dma_request_chan for tx
-
- drivers/i2c/busses/i2c-stm32.c   | 10 +++++++---
- drivers/i2c/busses/i2c-stm32f4.c |  4 +++-
- drivers/i2c/busses/i2c-stm32f7.c |  7 +++++--
- 3 files changed, 15 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-stm32.c b/drivers/i2c/busses/i2c-stm32.c
-index 1da347e6a358..3f69a3bb6119 100644
---- a/drivers/i2c/busses/i2c-stm32.c
-+++ b/drivers/i2c/busses/i2c-stm32.c
-@@ -25,8 +25,9 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 	/* Request and configure I2C TX dma channel */
- 	dma->chan_tx = dma_request_chan(dev, "tx");
- 	if (IS_ERR(dma->chan_tx)) {
--		dev_dbg(dev, "can't request DMA tx channel\n");
- 		ret = PTR_ERR(dma->chan_tx);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "can't request DMA tx channel\n");
- 		goto fail_al;
- 	}
- 
-@@ -44,8 +45,10 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 	/* Request and configure I2C RX dma channel */
- 	dma->chan_rx = dma_request_chan(dev, "rx");
- 	if (IS_ERR(dma->chan_rx)) {
--		dev_err(dev, "can't request DMA rx channel\n");
- 		ret = PTR_ERR(dma->chan_rx);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "can't request DMA rx channel\n");
-+
- 		goto fail_tx;
- 	}
- 
-@@ -73,7 +76,8 @@ struct stm32_i2c_dma *stm32_i2c_dma_request(struct device *dev,
- 	dma_release_channel(dma->chan_tx);
- fail_al:
- 	devm_kfree(dev, dma);
--	dev_info(dev, "can't use DMA\n");
-+	if (ret != -EPROBE_DEFER)
-+		dev_info(dev, "can't use DMA\n");
- 
- 	return ERR_PTR(ret);
- }
-diff --git a/drivers/i2c/busses/i2c-stm32f4.c b/drivers/i2c/busses/i2c-stm32f4.c
-index d6a69dfcac3f..48e269284369 100644
---- a/drivers/i2c/busses/i2c-stm32f4.c
-+++ b/drivers/i2c/busses/i2c-stm32f4.c
-@@ -797,8 +797,10 @@ static int stm32f4_i2c_probe(struct platform_device *pdev)
- 
- 	rst = devm_reset_control_get_exclusive(&pdev->dev, NULL);
- 	if (IS_ERR(rst)) {
--		dev_err(&pdev->dev, "Error: Missing controller reset\n");
- 		ret = PTR_ERR(rst);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Error: Missing reset ctrl\n");
-+
- 		goto clk_free;
- 	}
- 	reset_control_assert(rst);
-diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index 8102e33a6753..59a0dcd6a475 100644
---- a/drivers/i2c/busses/i2c-stm32f7.c
-+++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -1967,7 +1967,8 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 
- 	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(i2c_dev->clk)) {
--		dev_err(&pdev->dev, "Error: Missing controller clock\n");
-+		if (PTR_ERR(i2c_dev->clk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Failed to get controller clock\n");
- 		return PTR_ERR(i2c_dev->clk);
- 	}
- 
-@@ -1979,8 +1980,10 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 
- 	rst = devm_reset_control_get(&pdev->dev, NULL);
- 	if (IS_ERR(rst)) {
--		dev_err(&pdev->dev, "Error: Missing controller reset\n");
- 		ret = PTR_ERR(rst);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Error: Missing reset ctrl\n");
-+
- 		goto clk_free;
- 	}
- 	reset_control_assert(rst);
--- 
-2.7.4
-
+Acked-by: Arnd Bergmann <arnd@arndb.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
