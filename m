@@ -2,54 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD5E41B12D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:18:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57F0C1B12D4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n7BeN5Y08/Py9ennHsN1A0hWoUUZ+5vQlz5sZBzph7E=; b=sPnWfDE613PeFv
-	MtSqkcR2cn4M84b6qZFgltSR+QKJMRJ2SFEFC4I5XeJNfvMoUZjTkreTfqjLTKDP+BVcEgxn7BvI+
-	Oh6+0i2o5hA1Fj21EFDL2q4gvXYv8MDmWMVD02oC3F5CENCa0jG71oNQi+TWudyi6KN0xs6GxBfIF
-	AiCao0CFCsMhPyZSv3OQsHLKm/kn/YWa1l0JAl1M/ataqvmo0Y3w6lOIzYECD/ZmsK61gn3QvMsZf
-	eBgxAVB6YHA8LVEKEaoLCVupFbw/LWIJoS6A7YkwTlEdnxGDfO7mGqzZg6JoINQ7mJhmB9ZKP4ebP
-	1JbFzM041psI7wlYBhcg==;
+	List-Owner; bh=K6FUVxLW1APCb0VIAIDCjqDqNbXD82Pr2NGDPxlrUdY=; b=nowu6cPVTD5nLa
+	Yy9dBuh4jz9R5hjqDrOLqfO2JnQvjYSWNYe7TDrNXc92yoBh0HCHbABd13st2QTnnZaR+dCxZZfB+
+	S+OB+Mhcuo5R9/hJe1C++dN9NkX4agj8DUGJVSG2alFFptmMb91V9tSdT46Fb3wj+hGFF0UVw2r8a
+	wT4WzmEUNuvkAL8zECM/obQ4B4vHZ+omTE81G9V24RTtovPAl5nZrHp/ZMVMwtBrLiSi3zR2q8Dvd
+	+8z9Aof68nIAScUqkLhxlR+27k2nYqRl+kLTmV1FACZT16njOKB4NEjyb8Flyo2ymZuafdEq/7dLR
+	ef22+6GWproJSKhWFEPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQa40-0002Of-1y; Mon, 20 Apr 2020 17:18:32 +0000
+	id 1jQa4E-0002ff-90; Mon, 20 Apr 2020 17:18:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQa3W-000296-SI
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:18:05 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEDC02145D;
- Mon, 20 Apr 2020 17:17:57 +0000 (UTC)
+ id 1jQa3p-0002Ri-0b
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:18:22 +0000
+Received: from mail-qk1-f180.google.com (mail-qk1-f180.google.com
+ [209.85.222.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B86C8221F4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 17:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587403081;
- bh=8Cti+W7qcMTc3i7ivCfS06mEpTJP5zYv2iWrbD/RTtg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=n8kgySIFfBQIcj6Ia2jB/kXabMFi8z3ZnfxRD6sXtUSU5WkP7GyhdFFnNX9oGyhnV
- mhWjwdOQ+04RDru0OIhK+bLIVHdU0fkAMOot1o2sNYiPhmoqv95P7YoCTgT0+QheZR
- P5uQTK0OZzAOJTiqi4PCUeQwAx7St1L9HyeIHsPI=
-Date: Mon, 20 Apr 2020 18:17:55 +0100
-From: Will Deacon <will@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v11 02/12] scs: add accounting
-Message-ID: <20200420171753.GD24386@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200416161245.148813-1-samitolvanen@google.com>
- <20200416161245.148813-3-samitolvanen@google.com>
+ s=default; t=1587403099;
+ bh=MrAH2VsY+TtODBX+fkAcZq5uw1kTGKG8R7HORSOSQ/0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JApMb1e4vC54i64Ik32l+IgfX1JaXzs+OgggR9IYG6T8OqAzdISMsR3/gqcukApT9
+ Ej5J3hNwvzi8GEfCZKycTuZ3e48jJoxHFMy0KKji32mE2H1mCcKP9EemAHgt5/7/ZF
+ 04AHn/xCJO8E6lre5jdeyufKMEsTNuPdwWLdB/uE=
+Received: by mail-qk1-f180.google.com with SMTP id s63so11487233qke.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 10:18:19 -0700 (PDT)
+X-Gm-Message-State: AGi0PubgxpeJh0uqMW603STtQyqol2TMKDIkDaQJc8EAinnaNxqCo0Z6
+ apzcOYzmfeBy889qEoL8wD+lHQ+xg8fusPz40w==
+X-Google-Smtp-Source: APiQypJNfkN/fMd0KGM+5Vg1LBXgehBt4JTvfg6zC0uiCkKgQlI0eLwWlHUfc/lg4IOOlDLeLOR+fGB8lSNqdL7SWWM=
+X-Received: by 2002:a37:c43:: with SMTP id 64mr15949855qkm.119.1587403098789; 
+ Mon, 20 Apr 2020 10:18:18 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200416161245.148813-3-samitolvanen@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-9-robh@kernel.org>
+ <CAK8P3a0YmD6Ay6t=Wxmugvg=YM0fCtetgnqz1vTYs1rFD-9TFg@mail.gmail.com>
+In-Reply-To: <CAK8P3a0YmD6Ay6t=Wxmugvg=YM0fCtetgnqz1vTYs1rFD-9TFg@mail.gmail.com>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 20 Apr 2020 12:18:06 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLZ4S=no9hPQO+jtwfd7E7HrHm8dAt9jZ3eh96dYCcy-g@mail.gmail.com>
+Message-ID: <CAL_JsqLZ4S=no9hPQO+jtwfd7E7HrHm8dAt9jZ3eh96dYCcy-g@mail.gmail.com>
+Subject: Re: [PATCH 08/17] clk: vexpress-osc: Support building as a module
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_101802_946531_52B3792F 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20200420_101821_122771_0AF27BB9 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,62 +87,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
- kernel-hardening@lists.openwall.com, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
- Masahiro Yamada <masahiroy@kernel.org>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
- linux-arm-kernel@lists.infradead.org, Michal Marek <michal.lkml@markovi.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Will Deacon <will@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 09:12:35AM -0700, Sami Tolvanen wrote:
-> This change adds accounting for the memory allocated for shadow stacks.
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> ---
->  drivers/base/node.c    |  6 ++++++
->  fs/proc/meminfo.c      |  4 ++++
->  include/linux/mmzone.h |  3 +++
->  kernel/scs.c           | 20 ++++++++++++++++++++
->  mm/page_alloc.c        |  6 ++++++
->  mm/vmstat.c            |  3 +++
->  6 files changed, 42 insertions(+)
-> 
-> diff --git a/drivers/base/node.c b/drivers/base/node.c
-> index 10d7e818e118..502ab5447c8d 100644
-> --- a/drivers/base/node.c
-> +++ b/drivers/base/node.c
-> @@ -415,6 +415,9 @@ static ssize_t node_read_meminfo(struct device *dev,
->  		       "Node %d AnonPages:      %8lu kB\n"
->  		       "Node %d Shmem:          %8lu kB\n"
->  		       "Node %d KernelStack:    %8lu kB\n"
-> +#ifdef CONFIG_SHADOW_CALL_STACK
-> +		       "Node %d ShadowCallStack:%8lu kB\n"
-> +#endif
->  		       "Node %d PageTables:     %8lu kB\n"
->  		       "Node %d NFS_Unstable:   %8lu kB\n"
->  		       "Node %d Bounce:         %8lu kB\n"
-> @@ -438,6 +441,9 @@ static ssize_t node_read_meminfo(struct device *dev,
->  		       nid, K(node_page_state(pgdat, NR_ANON_MAPPED)),
->  		       nid, K(i.sharedram),
->  		       nid, sum_zone_node_page_state(nid, NR_KERNEL_STACK_KB),
-> +#ifdef CONFIG_SHADOW_CALL_STACK
-> +		       nid, sum_zone_node_page_state(nid, NR_KERNEL_SCS_BYTES) / 1024,
-> +#endif
+On Mon, Apr 20, 2020 at 10:28 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
+> >
+> > Enable building the vexpress-osc clock driver as a module.
+>
+> >
+> >  config CLK_VEXPRESS_OSC
+> > -       bool "Clock driver for Versatile Express OSC clock generators"
+> > -       depends on VEXPRESS_CONFIG || COMPILE_TEST
+> > +       tristate "Clock driver for Versatile Express OSC clock generators"
+> > +       depends on VEXPRESS_CONFIG
+>
+> Why do you remove the "|| COMPILE_TEST" here?
 
-Why not just use KB everywhere instead of repeated division by 1024?
+Looks like a rebasing error. I only added it in patch 5.
 
-Will
+It has to depend on VEXPRESS_CONFIG because
+devm_regmap_init_vexpress_config doesn't have an empty function.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
