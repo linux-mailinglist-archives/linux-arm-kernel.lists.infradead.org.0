@@ -2,69 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECB7D1B17EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:04:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51BF71B1808
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3LG3H3nR5Jxvk4sXd/MljTXhtmUV7lmi1c2hSW1Ck4c=; b=rd990/ZJk8D78Z
-	MHZYVOh9zrciUsUGzgETANsk1+2XSGb3BnRt4yg3dnFwQBL+kSU16SZ4NDNHbssvdHMZWA6pJr9bE
-	/bSTWhE4m87scdxoOUwBeWNUvSss9CSC6QOQ2qWFYzevyyvYBUlh8ZUe7tmhW2L7YUgkuCrxFvN5w
-	Xz2y5mVGiUzqnAupBLHHRyi20iMSiZlH8PqsT6u8RDk+fO/IEjd/OsMrguwRgY2O2+Tk/zdO7rZio
-	yjPfQ44x4TFYbw3MUieVRbHmDWJdUQDf3eGZETCueGR+rztUutvV66+wuhgH3XZvLsaHM6jGVjS8X
-	K1aN6oJTKQPpVEVJVbjA==;
+	List-Owner; bh=h0VJcVjNevC3jDrUkbGpLHMT1hqB45f0vorz2euKbZY=; b=Y9BGvH0N83Yazc
+	oEw7BLcxGib2lcpFlZaJYU2ONkWeYwhUr7vxh07HruKSRfbQC5VrRteOd5ip4/GAsgLqCjfDuGsHm
+	kHZKhrXG+CCha5UGb7xAKhaCdjfagkxM7rYauNGAm8fJoHxzhIywD+UPS/1iYCNGKRC4rI58wx5vk
+	pnF2bhUEyAeyiTq/HV8nsWbtv4OhsrZBu2IQoC+BHZ5fNoF2inLj78l5RJ7vn7Fr1N2XXITY+anqg
+	DdRcdt24aZgVz3hLQfhEHBBfeTSZCiyVXETFAPgxG5v0Dumwd7ojSvVFXsdI0eelE2pIM1n/S4MRS
+	SnOumLuJB2VCM2Pz3Bqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQdaM-0005tW-N3; Mon, 20 Apr 2020 21:04:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jQddU-0000yh-NJ; Mon, 20 Apr 2020 21:07:24 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQdaD-0005s7-Uh; Mon, 20 Apr 2020 21:04:03 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C73920724;
- Mon, 20 Apr 2020 21:03:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587416641;
- bh=B6tu4PQYxSMIHwT8IIW2BqLBbquTlTHzD+k7VKRWKiY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KLGeSVsaKscXEomFaxLVk4/08pxBFxLmWwvvp/xVS1rq81o2K8P2Bnl1v4kjl/sb2
- XFU86f/Aa7FwnQNCuJpc1uYdan2zLkqza8h9twbemUXWVnnZf6ZvW2IinHp4Lp24AC
- ML8bBjhsBDp85WIi7Pe/U+i6OaK7Z5IAiZJu87jg=
-Date: Mon, 20 Apr 2020 22:03:55 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 2/2] mm/thp: Rename pmd_mknotpresent() as pmd_mknotvalid()
-Message-ID: <20200420210354.GD29998@willie-the-truck>
-References: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
- <1584680057-13753-3-git-send-email-anshuman.khandual@arm.com>
+ id 1jQddL-0000xT-Lj
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 21:07:16 +0000
+Received: by mail-oi1-f193.google.com with SMTP id x10so10169073oie.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 14:07:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=GTuvfZESUSaD2cb5a/OYsH9GmHAeQ64hx5GzbXm64AA=;
+ b=ZSvEmNqBuBLTGB4sVYfo5Abz5Ba9yzwhmiVgxIXhG2nXYJ5B9t5SZleXAK4NX130RZ
+ k+ls2JePofQvFBimcR03Uad9H4oEBQ4dvwIzSQWTdhFP9Z9Q1or3uYNBErHN9weEeWhw
+ +fdNVWqDp+jBNjcaerG4NXe5ptNoM8RYfSqi6MwCpahFHmfcyZWIkFSHRqXqSozVKRoI
+ XVwmK/Vpfv8xraJ/ZZ54McFisHjFB56JVEbqRS//d19/2JVJS2AAX+myxuHxlEgWgBjG
+ htDUW4vf4n+sjvAYMyJYRBPBP5HOBqNUZCR9zkv4SkmtYStIscW5/wDYe2ZZEyuX0Uho
+ ra4Q==
+X-Gm-Message-State: AGi0PuZEFN9YaSB6cAYWNWuNYkeC63W+4R1bvkBxiLN9EJqo6jY/e3Is
+ 0LYQX/N8OuF/gHG3FgTuvg==
+X-Google-Smtp-Source: APiQypKrG3RWQAvo3MmqD+u47KUx3xOLde7ElyFgphXU66gxeWTAst9XMMIpUdQZ6JbzkpLbQ6+fxA==
+X-Received: by 2002:aca:dc44:: with SMTP id t65mr1015715oig.176.1587416834721; 
+ Mon, 20 Apr 2020 14:07:14 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i21sm152725ooe.26.2020.04.20.14.07.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 14:07:13 -0700 (PDT)
+Received: (nullmailer pid 30251 invoked by uid 1000);
+ Mon, 20 Apr 2020 21:07:11 -0000
+Date: Mon, 20 Apr 2020 16:07:11 -0500
+From: Rob Herring <robh@kernel.org>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH 1/2] dt-bindings: mailbox: imx-mu: correct example
+Message-ID: <20200420210711.GA30172@bogus>
+References: <1586870668-32630-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1584680057-13753-3-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1586870668-32630-1-git-send-email-peng.fan@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_140402_009307_4D40F08C 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200420_140715_714678_150A20E0 
+X-CRM114-Status: GOOD (  10.58  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,45 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- linux-kernel@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, "H. Peter Anvin" <hpa@zytor.com>,
- Russell King <linux@armlinux.org.uk>, Steven Rostedt <rostedt@goodmis.org>,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Dave Hansen <dave.hansen@linux.intel.com>,
- Andy Lutomirski <luto@kernel.org>, Vineet Gupta <vgupta@synopsys.com>,
- nouveau@lists.freedesktop.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-snps-arc@lists.infradead.org, Andrew Morton <akpm@linux-foundation.org>,
+Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
+ Anson.Huang@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, linux@rempel-privat.de,
+ jaswinder.singh@linaro.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 10:24:17AM +0530, Anshuman Khandual wrote:
-> pmd_present() is expected to test positive after pmdp_mknotpresent() as the
-> PMD entry still points to a valid huge page in memory. pmdp_mknotpresent()
-> implies that given PMD entry is just invalidated from MMU perspective while
-> still holding on to pmd_page() referred valid huge page thus also clearing
-> pmd_present() test. This creates the following situation which is counter
-> intuitive.
+On Tue, 14 Apr 2020 21:24:27 +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> [pmd_present(pmd_mknotpresent(pmd)) = true]
+> The example use i.MX8QXP MU, but actually the MU is compatible with
+> i.MX6SX, so add the compatible.
 > 
-> This renames pmd_mknotpresent() as pmd_mknotvalid() reflecting the helper's
-> functionality more accurately while changing the above mentioned situation
-> as follows. This does not create any functional change.
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/mailbox/fsl,mu.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> [pmd_present(pmd_mknotvalid(pmd)) = true]
-> 
-> This is not applicable for platforms that define own pmdp_invalidate() via
-> __HAVE_ARCH_PMDP_INVALIDATE. Suggestion for renaming came during a previous
-> discussion here.
 
-Bikeshed alert: maybe pmd_mkinvalid() would be better, given that this is
-a one-trick pony for pmdp_invalidate()?
+Applied, thanks.
 
-Will
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
