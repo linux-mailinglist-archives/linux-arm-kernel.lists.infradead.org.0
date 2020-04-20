@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D391F1B1261
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:57:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62CF41B1268
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:00:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SlKAX99UzsmwHOQCDfOYs93um1J4/BpQBsbDb/GoFSQ=; b=Juy/ycdt4qrfM5JZo34aDqU8D
-	lOqZD0LROf9dT9tRnk2Q5i2KvVY/sNZe5MgFGSRk9DdYVCl4tGPEryDYlL59TXE5tjTnlwSUpH9tl
-	kTEo7OAPDfglYbalVaoWYynn8zN91OYSY0KX6TXrlzgJazDChpSxD7CkSHS1uPPfaorfVB7KLCsWe
-	yYQd4My0xXkjK58gtLrT1AtBnT4O6tT+eOLGQ+7Tm+eAwPzUftWVuID82VsQVHgE4QNtFrVbnMi7O
-	EDAmjpsTJvwJjbOoPgj1BPhPcPuf/omIZrsHhYG9FbvRtApB2l7BeTo1ZmQZkBcXLUEQsU7WqF5Lo
-	r34t1bIug==;
+	 bh=Uvw8PYGR89ktQ1Noz69J2DP1H80lgSPEnaLE726k3Sw=; b=Q9EsTny7e2/lUP+J6dl+O7Y0i
+	qQwi5fhW35MO8SMthoV78TuUv5lbmCDFzTeRhBz1bvOvFqPLCUCrN008mapExS0h+Z8mawNzaqhnl
+	YxbsBBhKxJiTKp29pBux/r3DGW48Fc3GyhnT/gD1ziN84L2pPo2Ip/xvOkgnMOQpKpe8qTXwI3idM
+	CUQ/RzVo+1tuaOOBp7W5DocvqvS7gjv2Dkda80OyGx8LE4DHeCePmeikf3aKK0jxUDRPgTI+5CAhy
+	j7HBlGiFL0H5d7lARFXFtzM4mC7UCrb2USL/hGmUHIo7Srka2iHU2FW5WI6WHtFQ8JkgMaD3KnDdb
+	IIy4tQ7Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQZju-0003Pq-Ap; Mon, 20 Apr 2020 16:57:46 +0000
+	id 1jQZmG-00044F-SX; Mon, 20 Apr 2020 17:00:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQZjZ-0003Oz-RA
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:57:35 +0000
+ id 1jQZlv-00043a-LM
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:59:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0A1C31B;
- Mon, 20 Apr 2020 09:57:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21D5831B;
+ Mon, 20 Apr 2020 09:59:51 -0700 (PDT)
 Received: from [10.57.33.63] (unknown [10.57.33.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 79EF63F73D;
- Mon, 20 Apr 2020 09:57:22 -0700 (PDT)
-Subject: Re: [PATCHv3 2/6] iommu/arm-smmu: Allow client devices to select
- direct mapping
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EC623F73D;
+ Mon, 20 Apr 2020 09:59:47 -0700 (PDT)
+Subject: Re: [PATCHv3 3/6] iommu/arm-smmu: Implement
+ iommu_ops->def_domain_type call-back
 To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
  Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
  Sibi Sankar <sibis@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Jordan Crouse <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>
 References: <cover.1587400573.git.saiprakash.ranjan@codeaurora.org>
- <d36f9c9ef3ef8dc84da02dfb160cd6846d2869fc.1587400573.git.saiprakash.ranjan@codeaurora.org>
+ <d6be59d4f90d997e24dc4c496c0247626e46415f.1587400573.git.saiprakash.ranjan@codeaurora.org>
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <b69fc30c-e6fb-70bf-4d6e-0d9b39404bdd@arm.com>
-Date: Mon, 20 Apr 2020 17:57:19 +0100
+Message-ID: <e68ad59e-d132-dd06-1ceb-30e37f95a19b@arm.com>
+Date: Mon, 20 Apr 2020 17:59:45 +0100
 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <d36f9c9ef3ef8dc84da02dfb160cd6846d2869fc.1587400573.git.saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <d6be59d4f90d997e24dc4c496c0247626e46415f.1587400573.git.saiprakash.ranjan@codeaurora.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_095733_567951_DA801FBD 
-X-CRM114-Status: GOOD (  19.94  )
+X-CRM114-CacheID: sfid-20200420_095951_743490_1CA8EED7 
+X-CRM114-Status: GOOD (  17.51  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,87 +79,49 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 2020-04-20 5:42 pm, Sai Prakash Ranjan wrote:
-> From: Jordan Crouse <jcrouse@codeaurora.org>
-> 
-> Some client devices want to directly map the IOMMU themselves instead
-> of using the DMA domain. Allow those devices to opt in to direct
-> mapping by way of a list of compatible strings.
+> Implement the new def_domain_type call-back for the ARM
+> SMMU driver. We need this to support requesting the domain
+> type by the client devices.
 
-Neat and tidy :)
+Modulo any further changes to the default domain rework,
 
 Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
-Strictly, I think patch #3/6 should really have come before this one 
-(with the header change moved accordingly), but don't bother resending 
-just for that.
-
-Thanks,
-Robin.
-
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 > Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 > ---
->   drivers/iommu/arm-smmu-qcom.c | 19 +++++++++++++++++++
->   drivers/iommu/arm-smmu.h      |  1 +
->   2 files changed, 20 insertions(+)
+>   drivers/iommu/arm-smmu.c | 12 ++++++++++++
+>   1 file changed, 12 insertions(+)
 > 
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 64a4ab270ab7..5bedf21587a5 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -3,6 +3,7 @@
->    * Copyright (c) 2019, The Linux Foundation. All rights reserved.
->    */
->   
-> +#include <linux/of_device.h>
->   #include <linux/qcom_scm.h>
->   
->   #include "arm-smmu.h"
-> @@ -11,6 +12,23 @@ struct qcom_smmu {
->   	struct arm_smmu_device smmu;
->   };
->   
-> +static const struct of_device_id qcom_smmu_client_of_match[] = {
-> +	{ .compatible = "qcom,adreno" },
-> +	{ .compatible = "qcom,mdp4" },
-> +	{ .compatible = "qcom,mdss" },
-> +	{ .compatible = "qcom,sc7180-mdss" },
-> +	{ .compatible = "qcom,sdm845-mdss" },
-> +	{ }
-> +};
-> +
-> +static int qcom_smmu_def_domain_type(struct device *dev)
-> +{
-> +	const struct of_device_id *match =
-> +		of_match_device(qcom_smmu_client_of_match, dev);
-> +
-> +	return match ? IOMMU_DOMAIN_IDENTITY : 0;
-> +}
-> +
->   static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->   {
->   	int ret;
-> @@ -41,6 +59,7 @@ static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index e622f4e33379..b345a86085ce 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -1609,6 +1609,17 @@ static void arm_smmu_get_resv_regions(struct device *dev,
+>   	iommu_dma_get_resv_regions(dev, head);
 >   }
 >   
->   static const struct arm_smmu_impl qcom_smmu_impl = {
-> +	.def_domain_type = qcom_smmu_def_domain_type,
->   	.reset = qcom_smmu500_reset,
+> +static int arm_smmu_def_domain_type(struct device *dev)
+> +{
+> +	struct arm_smmu_master_cfg *cfg = dev_iommu_priv_get(dev);
+> +	const struct arm_smmu_impl *impl = cfg->smmu->impl;
+> +
+> +	if (impl && impl->def_domain_type)
+> +		return impl->def_domain_type(dev);
+> +
+> +	return 0;
+> +}
+> +
+>   static struct iommu_ops arm_smmu_ops = {
+>   	.capable		= arm_smmu_capable,
+>   	.domain_alloc		= arm_smmu_domain_alloc,
+> @@ -1627,6 +1638,7 @@ static struct iommu_ops arm_smmu_ops = {
+>   	.of_xlate		= arm_smmu_of_xlate,
+>   	.get_resv_regions	= arm_smmu_get_resv_regions,
+>   	.put_resv_regions	= generic_iommu_put_resv_regions,
+> +	.def_domain_type	= arm_smmu_def_domain_type,
+>   	.pgsize_bitmap		= -1UL, /* Restricted during device attach */
 >   };
 >   
-> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> index 8d1cd54d82a6..d172c024be61 100644
-> --- a/drivers/iommu/arm-smmu.h
-> +++ b/drivers/iommu/arm-smmu.h
-> @@ -386,6 +386,7 @@ struct arm_smmu_impl {
->   	int (*init_context)(struct arm_smmu_domain *smmu_domain);
->   	void (*tlb_sync)(struct arm_smmu_device *smmu, int page, int sync,
->   			 int status);
-> +	int (*def_domain_type)(struct device *dev);
->   };
->   
->   static inline void __iomem *arm_smmu_page(struct arm_smmu_device *smmu, int n)
 > 
 
 _______________________________________________
