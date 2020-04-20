@@ -2,105 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0052B1B18B6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:44:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22BE1B1894
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:42:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U6Z1Xb5McPrq6TDu+Fj0uLAFrpGal7W3tjszUj6S+l4=; b=Zny78vZDAD0YgP
-	EMOaXrwWVZCVlSwYqiYL6gFIUDcLiZDMubOMm8zpQ9tog6fDmcvIu87o9RdtkeyvNe2HtYgIQmkam
-	8pgrmBtj9I5HqZzSskvtF5z+OEzhM/OLRf2NQIBjQGd8WFpEWUv8lsOcx+CTsNQnTbJ5/msBgz8uS
-	8SUEJCvi8likxuEpQCrOMsGJ2yH9GrT71HPJDwtFaip0g7srPW2OewGWnwz+WCi9vZDW8QGLoLV8w
-	gcTAuENgPbV/7xz4zEfZwArb78lStEqPMWTLXnHoiBAJ7wvo6WPCRJD1LRKSdjRaDZJcIPFgfA4cC
-	YuSsdI7Ssarv2pk+k5bw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Niksc6UqLByolMRPhwRkY/H5duJIjmHXGvw0SKlM34w=; b=GkxPajezjn8uYU
+	ArTL62ngu7bdp6NnFIoQxggqenR/RsfKE9UOimkdGBCmB0w4sVq9KbbRIDoPEsHzwtRITK/Cnaavd
+	AuqA8piFPBi7O+DLWcS3moPt7OrHOLSCJ5Ooz28eYUjnYyqF2WeGko6sOPbrulOYOOv1sdv1Y27Mg
+	njUDAYuUhyauMV4uv8NEhVBi6YQMVgiSueX0nkVjHNNVutR/WU72yrXqkzsrkCnutXOoC5otL+kwe
+	JOZVmQpkk4LRFzCRDZUaqjhQehjbRny9kb4MB2DBqMDkDQcRe3KOy6JwGT3spN60pVz4Fkknaer2w
+	2cg/rOp3I9rVxnVVg6Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQeCu-0000en-Pw; Mon, 20 Apr 2020 21:44:00 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jQeBb-0008Q2-Mw; Mon, 20 Apr 2020 21:42:39 +0000
+Received: from mail-oo1-f65.google.com ([209.85.161.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQeCL-0000L4-CR; Mon, 20 Apr 2020 21:43:26 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KLgUL9050259;
- Mon, 20 Apr 2020 21:42:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=hzoE0Q+18wJs1W+mVb3z7CiUNSgD6tC6T1Mn0/ek+wo=;
- b=uEPs/byWmtoiHC1nzj/OHwsHfQ+pPoDJrbDp3lBBPD0KRbAA6SwAvZ1ud2YwFnb2Mzu+
- w2CK8iPEc1BvfdfVAl5Fcto/JbU4c652GlgOsBhobCaLtohtsTqIGr3+PVqtKslBkoNW
- n+JOBt2k3+46e5Q1gU3tB8q3bmCebFihkB9ixnCVXX3kvxl+TyYWXFE+XKWZiRXHWZAq
- 7Fs4OQLL9/BFQ7CHOVVxXiZBK2ZBMKSV1hJLPbIbNdPX8YOZGHkqGsU6WzpWBzNF7AUU
- f0tSUQ+nvoF8JdFnaqHsGTH5mXUTwYGBPwktzP0qUTamVzUlKbt9rTV1prDiWrL1czwl Ow== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 30ft6n1quc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 20 Apr 2020 21:42:30 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KLbbb8169248;
- Mon, 20 Apr 2020 21:40:27 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 30gb3r4xy6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 20 Apr 2020 21:40:27 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03KLe8UK019244;
- Mon, 20 Apr 2020 21:40:08 GMT
-Received: from [192.168.2.157] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 20 Apr 2020 14:40:08 -0700
-Subject: Re: [PATCH v3 0/4] Clean up hugetlb boot command line processing
-To: Anders Roxell <anders.roxell@linaro.org>, Will Deacon <will@kernel.org>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <5E312000-05D8-4C5D-A7C0-DDDE1842CB0E@lca.pw>
- <4c36c6ce-3774-78fa-abc4-b7346bf24348@oracle.com>
- <CADYN=9+=tCDmddTYGY44onvrzbg7yrbacMDSxd4hhD+=b=Yeiw@mail.gmail.com>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <86333853-0648-393f-db96-d581ee114d2b@oracle.com>
-Date: Mon, 20 Apr 2020 14:40:05 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQeBS-0008PN-4z
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 21:42:31 +0000
+Received: by mail-oo1-f65.google.com with SMTP id x16so2464783oop.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 14:42:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MQYFkBcbkzjp4qKekddjrNm+MWFdaUwiorS/Z/G0gTk=;
+ b=Ku+oCNLNZQyk4EEdr1e7C1nwdABmMuulfMHW2Wnl9ZZlMOcVQpOCblXNzmcz8Gs2PH
+ rUVBa3WY1YZfXiS4sDHhDJ/aXd2SuVflTY4URFCmAvq01PceYx4iDElBCYYziYKcysRq
+ QgP0yN3S4uLPZrIYo40NR1iH5TMeWjCgJNe+ir4j+SKR92XkNdCAz+Egk0OSZ+iy4g+t
+ 1BBWIHjvi5PrhBxodVsRYbYiIBq+bywGIyTYkNxji5SPzsd88VhcOy5YtlrAdONa0vbu
+ 6Zk7Fls5duouPSZLWwEZcmOMws26i1EoJ0YAMDKHY018+OBeKEgDQ1UtxiVQKsz0WzXn
+ sPlQ==
+X-Gm-Message-State: AGi0PuYlaX7URcfUZPK8UA5CkQi2N7pxYeFB+UBJxHAMnG+9xzwkBH/E
+ E4EewfIgryeF+1LFFJmpow==
+X-Google-Smtp-Source: APiQypImh3ff6PfCFGICy2xjqiHsC1DZWwUu2sDJNkQQTuC42XKN8+cjzxR35UswOmFUPMAfei+F0g==
+X-Received: by 2002:a4a:95ee:: with SMTP id p43mr14278036ooi.24.1587418949025; 
+ Mon, 20 Apr 2020 14:42:29 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u13sm170429oor.45.2020.04.20.14.42.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 14:42:28 -0700 (PDT)
+Received: (nullmailer pid 13178 invoked by uid 1000);
+ Mon, 20 Apr 2020 21:42:27 -0000
+Date: Mon, 20 Apr 2020 16:42:27 -0500
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/3] dt-bindings: nvmem: Convert i.MX OCOTP to json-schema
+Message-ID: <20200420214227.GA23817@bogus>
+References: <1586921602-1877-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <CADYN=9+=tCDmddTYGY44onvrzbg7yrbacMDSxd4hhD+=b=Yeiw@mail.gmail.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- spamscore=0 adultscore=0
- mlxlogscore=999 phishscore=0 suspectscore=27 bulkscore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004200171
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=27
- bulkscore=0
- priorityscore=1501 impostorscore=0 adultscore=0 phishscore=0
- lowpriorityscore=0 malwarescore=0 clxscore=1015 mlxlogscore=999 mlxscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004200172
+Content-Disposition: inline
+In-Reply-To: <1586921602-1877-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_144325_506920_3B9CC209 
-X-CRM114-Status: GOOD (  26.41  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200420_144230_189880_3B97F822 
+X-CRM114-Status: GOOD (  18.72  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.161.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,116 +93,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- Linux-MM <linux-mm@kvack.org>, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Mina Almasry <almasrymina@google.com>, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Qian Cai <cai@lca.pw>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "David S.Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, srinivas.kandagatla@linaro.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/20/20 1:29 PM, Anders Roxell wrote:
-> On Mon, 20 Apr 2020 at 20:23, Mike Kravetz <mike.kravetz@oracle.com> wrote:
->> On 4/20/20 8:34 AM, Qian Cai wrote:
->>>
->>> Reverted this series fixed many undefined behaviors on arm64 with the config,
->> While rearranging the code (patch 3 in series), I made the incorrect
->> assumption that CONT_XXX_SIZE == (1UL << CONT_XXX_SHIFT).  However,
->> this is not the case.  Does the following patch fix these issues?
->>
->> From b75cb4a0852e208bee8c4eb347dc076fcaa88859 Mon Sep 17 00:00:00 2001
->> From: Mike Kravetz <mike.kravetz@oracle.com>
->> Date: Mon, 20 Apr 2020 10:41:18 -0700
->> Subject: [PATCH] arm64/hugetlb: fix hugetlb initialization
->>
->> When calling hugetlb_add_hstate() to initialize a new hugetlb size,
->> be sure to use correct huge pages size order.
->>
->> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
->> ---
->>  arch/arm64/mm/hugetlbpage.c | 8 ++++----
->>  1 file changed, 4 insertions(+), 4 deletions(-)
->>
->> diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
->> index 9ca840527296..a02411a1f19a 100644
->> --- a/arch/arm64/mm/hugetlbpage.c
->> +++ b/arch/arm64/mm/hugetlbpage.c
->> @@ -453,11 +453,11 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
->>  static int __init hugetlbpage_init(void)
->>  {
->>  #ifdef CONFIG_ARM64_4K_PAGES
->> -       hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
->> +       hugetlb_add_hstate(ilog2(PUD_SIZE) - PAGE_SHIFT);
->>  #endif
->> -       hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
->> -       hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
->> -       hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
->> +       hugetlb_add_hstate(ilog2(CONT_PMD_SIZE) - PAGE_SHIFT);
->> +       hugetlb_add_hstate(ilog2(PMD_SIZE) - PAGE_SHIFT);
->> +       hugetlb_add_hstate(ilog2(CONT_PTE_SIZE) - PAGE_SHIFT);
->>
->>         return 0;
->>  }
+On Wed, Apr 15, 2020 at 11:33:20AM +0800, Anson Huang wrote:
+> Convert the i.MX OCOTP binding to DT schema format using json-schema.
 > 
-> I build this for an arm64 kernel and ran it in qemu and it worked.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  .../devicetree/bindings/nvmem/imx-ocotp.txt        |  50 ----------
+>  .../devicetree/bindings/nvmem/imx-ocotp.yaml       | 103 +++++++++++++++++++++
+>  2 files changed, 103 insertions(+), 50 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/imx-ocotp.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt b/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
+> deleted file mode 100644
+> index 6e346d5..0000000
+> --- a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
+> +++ /dev/null
+> @@ -1,50 +0,0 @@
+> -Freescale i.MX6 On-Chip OTP Controller (OCOTP) device tree bindings
+> -
+> -This binding represents the on-chip eFuse OTP controller found on
+> -i.MX6Q/D, i.MX6DL/S, i.MX6SL, i.MX6SX, i.MX6UL, i.MX6ULL/ULZ, i.MX6SLL,
+> -i.MX7D/S, i.MX7ULP, i.MX8MQ, i.MX8MM, i.MX8MN and i.MX8MP SoCs.
+> -
+> -Required properties:
+> -- compatible: should be one of
+> -	"fsl,imx6q-ocotp" (i.MX6Q/D/DL/S),
+> -	"fsl,imx6sl-ocotp" (i.MX6SL), or
+> -	"fsl,imx6sx-ocotp" (i.MX6SX),
+> -	"fsl,imx6ul-ocotp" (i.MX6UL),
+> -	"fsl,imx6ull-ocotp" (i.MX6ULL/ULZ),
+> -	"fsl,imx7d-ocotp" (i.MX7D/S),
+> -	"fsl,imx6sll-ocotp" (i.MX6SLL),
+> -	"fsl,imx7ulp-ocotp" (i.MX7ULP),
+> -	"fsl,imx8mq-ocotp" (i.MX8MQ),
+> -	"fsl,imx8mm-ocotp" (i.MX8MM),
+> -	"fsl,imx8mn-ocotp" (i.MX8MN),
+> -	"fsl,imx8mp-ocotp" (i.MX8MP),
+> -	followed by "syscon".
+> -- #address-cells : Should be 1
+> -- #size-cells : Should be 1
+> -- reg: Should contain the register base and length.
+> -- clocks: Should contain a phandle pointing to the gated peripheral clock.
+> -
+> -Optional properties:
+> -- read-only: disable write access
+> -
+> -Optional Child nodes:
+> -
+> -- Data cells of ocotp:
+> -  Detailed bindings are described in bindings/nvmem/nvmem.txt
+> -
+> -Example:
+> -	ocotp: ocotp@21bc000 {
+> -		#address-cells = <1>;
+> -		#size-cells = <1>;
+> -		compatible = "fsl,imx6sx-ocotp", "syscon";
+> -		reg = <0x021bc000 0x4000>;
+> -		clocks = <&clks IMX6SX_CLK_OCOTP>;
+> -
+> -		tempmon_calib: calib@38 {
+> -			reg = <0x38 4>;
+> -		};
+> -
+> -		tempmon_temp_grade: temp-grade@20 {
+> -			reg = <0x20 4>;
+> -		};
+> -	};
+> diff --git a/Documentation/devicetree/bindings/nvmem/imx-ocotp.yaml b/Documentation/devicetree/bindings/nvmem/imx-ocotp.yaml
+> new file mode 100644
+> index 0000000..70aa637
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/nvmem/imx-ocotp.yaml
+> @@ -0,0 +1,103 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/nvmem/imx-ocotp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX6 On-Chip OTP Controller (OCOTP) device tree bindings
+> +
+> +maintainers:
+> +  - Anson Huang <Anson.Huang@nxp.com>
+> +
+> +description: |
+> +  This binding represents the on-chip eFuse OTP controller found on
+> +  i.MX6Q/D, i.MX6DL/S, i.MX6SL, i.MX6SX, i.MX6UL, i.MX6ULL/ULZ, i.MX6SLL,
+> +  i.MX7D/S, i.MX7ULP, i.MX8MQ, i.MX8MM, i.MX8MN and i.MX8MP SoCs.
+> +
+> +allOf:
+> +  - $ref: "nvmem.yaml#"
+> +
+> +properties:
+> +  compatible:
+> +    anyOf:
+> +      - items:
+> +        - enum:
+> +          - fsl,imx6q-ocotp
+> +          - fsl,imx6sl-ocotp
+> +          - fsl,imx6sx-ocotp
+> +          - fsl,imx6ul-ocotp
+> +          - fsl,imx6ull-ocotp
+> +          - fsl,imx7d-ocotp
+> +          - fsl,imx6sll-ocotp
+> +          - fsl,imx7ulp-ocotp
+> +          - fsl,imx8mq-ocotp
+> +          - fsl,imx8mm-ocotp
+> +          - fsl,imx8mn-ocotp
+> +          - fsl,imx8mp-ocotp
+> +
 
-Thanks for testing Anders!
+Drop the blank line here.
 
-Will, here is an updated version of the patch based on your suggestion.
-I added the () for emphasis but that may just be noise for some.  Also,
-the naming differences and values for CONT_PTE may make some people
-look twice.  Not sure if being consistent here helps?
+> +        - const: syscon
+> +
+> +      - contains:
+> +          const: syscon
+> +        additionalItems: true
 
-I have only built this.  No testing.
+You shouldn't need the 2nd clause here. And then can remove the 'anyOf'.
 
-From daf833ab6b806ecc0816d84d45dcbacc052a7eec Mon Sep 17 00:00:00 2001
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Date: Mon, 20 Apr 2020 13:56:15 -0700
-Subject: [PATCH] arm64/hugetlb: fix hugetlb initialization
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  clocks:
+> +    description: |
+> +      OCOTP's clock source.
 
-When calling hugetlb_add_hstate() to initialize a new hugetlb size,
-be sure to use correct huge pages size order.
+Drop
 
-Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
----
- arch/arm64/mm/hugetlbpage.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
-index 9ca840527296..bed6dc7c4276 100644
---- a/arch/arm64/mm/hugetlbpage.c
-+++ b/arch/arm64/mm/hugetlbpage.c
-@@ -455,9 +455,9 @@ static int __init hugetlbpage_init(void)
- #ifdef CONFIG_ARM64_4K_PAGES
- 	hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
- #endif
--	hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
-+	hugetlb_add_hstate((CONT_PMD_SHIFT + PMD_SHIFT) - PAGE_SHIFT);
- 	hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
--	hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
-+	hugetlb_add_hstate((CONT_PTE_SHIFT + PAGE_SHIFT) - PAGE_SHIFT);
- 
- 	return 0;
- }
--- 
-2.25.2
-
+> +    maxItems: 1
+> +
+> +required:
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - compatible
+> +  - reg
+> +
+> +patternProperties:
+> +  "^.*@[0-9a-f]+$":
+> +    type: object
+> +
+> +    properties:
+> +      reg:
+> +        maxItems: 1
+> +        description:
+> +          Offset and size in bytes within the storage device.
+> +
+> +    required:
+> +      - reg
+> +
+> +    additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx6sx-clock.h>
+> +
+> +    ocotp: efuse@21bc000 {
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        compatible = "fsl,imx6sx-ocotp", "syscon";
+> +        reg = <0x021bc000 0x4000>;
+> +        clocks = <&clks IMX6SX_CLK_OCOTP>;
+> +
+> +        cpu_speed_grade: speed-grade@10 {
+> +            reg = <0x10 4>;
+> +        };
+> +
+> +        tempmon_calib: calib@38 {
+> +            reg = <0x38 4>;
+> +        };
+> +
+> +        tempmon_temp_grade: temp-grade@20 {
+> +            reg = <0x20 4>;
+> +        };
+> +    };
+> +
+> +...
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
