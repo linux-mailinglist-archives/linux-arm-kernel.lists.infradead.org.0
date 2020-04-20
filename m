@@ -2,131 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D4C61B0237
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:05:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABC231B022B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:05:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3NBmtlOoY+HNRsBK+JXbW5lfkkrLLQjIl0+/LBFpwEU=; b=qafvcV4hcZmTAo
-	bWqSjKE4o9/CJNiCe+wqOCGDnp5zUVzMf+9KOdJhRzNeZEbeU+uZyVrAZRbbop9sKtoIr37Fxp7uP
-	UXIibhvKU4jRVgctBfZi5aO5GJPNYh6+B4ohFX+oEjoc87DRyzrM8wIbb9WR71/Mbh7tCmiL0FZAq
-	nQE9aQchlFNWGA4hG2mSyG4tdH+PMoWtR3aia7eugvdvaZW+Ik5BfXgvtkEW/9r06RVs3acUQJv9Z
-	EbcPs6lp2FdisaKJRsNT98eGhdgKbuMe4Zr5CA+kXZp+BbXaVEv9tBWE3c/cvVMaWcCigO5c1swGd
-	0tHO9FOAc8ElsUhqmNzQ==;
+	List-Owner; bh=eYTRDLZZPtw5vsTuzwLteuB/W+1EW9qrot50PJ33TRU=; b=aeX0g/rXQ/UHhE
+	4XXHzcli+hrk9PbLB8UU23QzJ+VKHi1toWttKVDgOc1M9LYsa/vixr/LoHaXRrA+amWswMfD7Armm
+	+Mi24icY/jAvo+tpKhcfx77/mreDZwOggT9b2K2AzyKgWcqCMUwHjtATv+EDLvNsQmUIryutyaGjn
+	8vxbz9QqZ1GMC54ibRxx3k5xU/E8Ksu8JgYiTtH9xPPwTwPzKxFgfDM1fbzldQWWov4KBWPGAJ8MT
+	PAzPrteRMZIK6XNymmuR7aZOn8n/BLgpIdnW9keh8k1w5NXGhQ9fj1Kk1u41cErIbUrfrlGPufhV5
+	UEIlflha8rO0Ruk7Slyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQUj-00017l-7w; Mon, 20 Apr 2020 07:05:29 +0000
-Received: from esa6.hgst.iphmx.com ([216.71.154.45])
+	id 1jQQUA-0006pV-4S; Mon, 20 Apr 2020 07:04:54 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQUP-00076b-84
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:05:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1587366309; x=1618902309;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=PdozEzjWpfuNB5nF6LcsNt6jxdbBBUR0Q5y4dibA62A=;
- b=av3VgZ9LRfPeM2s6r2pIXV2iUMHyKsLMfpAQe8KQ9UVT42Lct0BO9zLX
- uj0k3zVKQLNLMyPUh9JU2WNcROEspEiBcLgtb0Bw8L/RwK/Ut5KDVaip4
- Pm1/pPVr4MFhNy/UjjH4Z56DBVy9U8XczAW7DFUee7Lfe9SgbQ+y9EEO8
- m1j1vaUSnzeBQJNF9Ba/ZZPaOgOG7cXyUUxaLc30XMqXYA8sm49ED+jY5
- 7CPzexIllbibzspL0X0wXV6yHx7LA6ShsoJpnmsiRMNBstENmdLA+7YS6
- arLQxsNiDI7Z3A87HYmxuyJhiF4KmnZKYSOMi+BgspxuunrTt0sGJr6Wy w==;
-IronPort-SDR: s00gY0LB4BjGRdqARXFlhIDjo14bnCkU0nAFhVytjZe76HTt6rrFg8i8pPyP2DdGSevFgkV1DH
- IUVs4Z1bRxB9+e36iVcWC7YlY/2wqa3nD/lnRKlI3pnqVRS0uKxDeh0fYvQugqtf6e/mxH+pY1
- 5nzaUraIX93tMRZER8xJ0S9R/IWURSwmn4mldZAB+XuPdw9D0QZMaa97AW8hzfKntxqHNBvgye
- i4ROpabGaFIdUoTwkjsGUsGYpwaui+ir3HUXf9C7xpfiVJTsdxO0uzxDB16uvu2G1yRdBkrtKn
- cUU=
-X-IronPort-AV: E=Sophos;i="5.72,406,1580745600"; d="scan'208";a="137118302"
-Received: from mail-bn8nam11lp2171.outbound.protection.outlook.com (HELO
- NAM11-BN8-obe.outbound.protection.outlook.com) ([104.47.58.171])
- by ob1.hgst.iphmx.com with ESMTP; 20 Apr 2020 15:05:04 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kY7uZrlZMmE8Vq9jUTlcuTdxV+X0GTzfTwl1nFsUeN5GXwO/B6XG4Iq0cNB26BQpawxs+8Yd2rPit1hYlrjY93hOR8q8ZHgrgly7mktaGIoRHn34QG8BSQ28ylgraO9ZDGToDZuPprdCBr4M7YeQLaiWo4ZgrR+MFY7BFfNQXqATVFIZBS+IGLFpICpDzlMQONzbHSWreK0Lhg0AVfCwDSk3bwhsqs7EzlXljsr8hktAX3j52VbTnN5DNwgwn+9dtYgyWgSpB2oJLk3FalIUJzvHuS8oyRC+Q0rlN2XGcpzHc2Xz/jYCaClfw8rkDH1zgRdfEYGO/RLRT5ti0e4HkA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PdozEzjWpfuNB5nF6LcsNt6jxdbBBUR0Q5y4dibA62A=;
- b=V8YQZrP0/d9lqXFr7VM6eYrtEVt60ptLyhhJ2l9hUkUnAhxxpYiTj3KhyJwbm9vYXd7idT/aQJuNrmrlzWXMEk6gpBRcXWiFnOuGyaDQBqw/99kDZ6iRPFTuaDIJOx5Dy6GQWsMT4W8/6skN7qMcKqCYhpQr0OvNYof2W+GVgZqrUx2wK7NjrRa62yEzmCZSrOBRVc68war2JqDQ7JOUBwnnqezsIXe32Vm6jy/GgRAXdscOv1u2NczNW38irarME4XoOVSkp0TWoFcXUvYS677lqoM6XIWaOGhXN4DrR9Z0TIfOALzkbCY08G4rKzmbnkWv/xdhrj4EbVO0/aPzzw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PdozEzjWpfuNB5nF6LcsNt6jxdbBBUR0Q5y4dibA62A=;
- b=Emo7IH+nanzSNWSq7qhDlzsDPcPorPTvje1uzADRhDt9I+YlwvrqzklDg+5UA0fQuyWOTwV4ZJOVUNXjt7hvehlFBBX6pfNILpQ8/+begpLZFMzRzxJ7RPc7aawLEcnaVXbDHYdcPz7HI9aIomgAtY3D0kikCaW1DLIjAJYRvUk=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB4446.namprd04.prod.outlook.com (2603:10b6:805:3c::14)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Mon, 20 Apr
- 2020 07:05:02 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b%5]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
- 07:05:02 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Alim Akhtar <alim.akhtar@samsung.com>, "robh@kernel.org" <robh@kernel.org>
-Subject: RE: [PATCH v6 02/10] scsi: ufs: add quirk to disallow reset of
- interrupt aggregation
-Thread-Topic: [PATCH v6 02/10] scsi: ufs: add quirk to disallow reset of
- interrupt aggregation
-Thread-Index: AQHWFONzXdOgIo5A50O86TEJk9mR2aiBmfhQ
-Date: Mon, 20 Apr 2020 07:05:02 +0000
-Message-ID: <SN6PR04MB4640A97F3BF5F2073878312FFCD40@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200417175944.47189-1-alim.akhtar@samsung.com>
- <CGME20200417181010epcas5p23cb018eee5b7ae0eba87d81dbaaec3ce@epcas5p2.samsung.com>
- <20200417175944.47189-3-alim.akhtar@samsung.com>
-In-Reply-To: <20200417175944.47189-3-alim.akhtar@samsung.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [212.25.79.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c7940835-31ba-4a31-5585-08d7e4f925b3
-x-ms-traffictypediagnostic: SN6PR04MB4446:
-x-microsoft-antispam-prvs: <SN6PR04MB4446F7F3750D2D48FEBD7DA6FCD40@SN6PR04MB4446.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:2399;
-x-forefront-prvs: 03793408BA
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(66946007)(76116006)(66476007)(66556008)(64756008)(66446008)(5660300002)(186003)(81156014)(8676002)(52536014)(33656002)(8936002)(478600001)(26005)(6506007)(86362001)(558084003)(7696005)(9686003)(54906003)(7416002)(316002)(55016002)(2906002)(71200400001)(110136005)(4326008);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: v00E52I/NyrDU5RxMQqDSZjyoEYPyg9E8fWKXnkHfUFTpUFFRLW1CIyrU+aUZ1r6UAL+CT305GPdN07YvcZrnEJ7PWa8LZRSXYc/AyM7Y96y15CjJJ28W8WxiFo1w8ogy8+f02RWGO+IpYarY9xVMXqpix/KH7liy7RRcTQ/7Aac5RUho0Ir8lKlVhIP8Lq5sDy04+7QwpnRg+7a09bTniazR0+WwkiX6AyiI/mZ/AQdLTdT7aZQIaD44JUBd/j64GnKqBR2HeE9UBj6fkpOO8lpH6a7N4QP0++Bb+j/V65KQPH2N6kOgRAzT06306+AN9pf9fkhFta2Zsk1jN2NeeMODEDEDrrHs6l7noVAZTfR7ICL/APYRdDVyYecF++VRCZ7vfeo7qyrbEd55gpW7r1FLh9xkIT6OBKgd858G0cHpVdpJ+Rrr7ulHWgEdRdm
-x-ms-exchange-antispam-messagedata: pYMiUMy5wKhkrFi8gPL0um1NWvQ0SwksVMjAFfE503EwPF3zE9gKLlip2IXtUbFSQMB9W1jZ+tGnYwKB3k9ynmdQKMMpUvN3iMy11YF64sedv+rABrRrvkHDTiUBWHL19DsQ+zI26Th3S/ja4avcfw==
-x-ms-exchange-transport-forked: True
+ id 1jQQU2-0006nn-49
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:04:48 +0000
+Received: by mail-pf1-x441.google.com with SMTP id u9so4499408pfm.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 00:04:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=s11JGkMo64bkJfoSlJ3gamPmjiZWAtO5TwTvV1WpWbE=;
+ b=qPMKe74Axz3iuvAgEm5PUFr0JEzorHbSLpp+t8fsBt4zWIqblwuGPlrPdfbH6ynq+v
+ k6BnEAr7JShE83PlTATp+w5cvsu+xYZ/tiNArEksPm3hswP5df/tqzSxdiOv84S4QsHb
+ f9ytGiOWi2JvmqB9UnEjQJpi122Ewhr+DANygi5JPA2tmijZEM6/c8sIFmxgU4zO4inX
+ 1rnYKlj3GulChVuLX1GF9DOpMB2e3GJ+/LNoGikipve+CdFGffqdFwVlnlR+t2QnaY7B
+ pT01gl9peG3qmgQkMCHHq0Lpa9csFASI87dKS8dfaYkXbX/+RJzg45FBbCGqpYIEm5TU
+ 3gaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=s11JGkMo64bkJfoSlJ3gamPmjiZWAtO5TwTvV1WpWbE=;
+ b=KvulQ2CIIH/ciAKsQ1pk4+y6szeYLobfa8N2RFLHCKML+i2Rsn2QX6aj38ex+UO6mv
+ UxNZPXQyNFE7/b03hQeEro1HlbiZWU6JvDSrLdFW0V6KGP8zN2D2avXxtYFzULyolBUI
+ cCBYfeiUKcwnh+HSS/ZI+RckdBBi/+X5HBRJZVnSUGxgzmSjmLcK3NwPycxZSoOmBVus
+ 6yFtx3lX2EkCss6Hyl865QvgCmvHMGPlmrcoHQKjeDf07CwKcnmfzQzq/LzZsSCFu+Oo
+ 9q6fFek6L0nJ/GskwQM1FQd79iYOsw6fR1d39dNW6IKMEWVWghgCI+jR037XBfVR7PMH
+ E2FA==
+X-Gm-Message-State: AGi0PubYAlD4eUc4Uo7fXWwemH8bnc4qYTDe4QXU99wQRrADkY8z1ses
+ Yfb6W0bpEUgb6dWDQL/JD6fLOQ==
+X-Google-Smtp-Source: APiQypKMKQQMJ6nKIy3wz/SKsVsP3OHHyydE/bozdcBab+k1rAjW8UgKZf3BSB7G8kadD+FVNopaMQ==
+X-Received: by 2002:a05:6a00:2cb:: with SMTP id
+ b11mr15087011pft.42.1587366285066; 
+ Mon, 20 Apr 2020 00:04:45 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id a22sm159630pfg.169.2020.04.20.00.04.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 00:04:44 -0700 (PDT)
+Date: Mon, 20 Apr 2020 00:05:07 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Siddharth Gupta <sidgup@codeaurora.org>
+Subject: Re: [PATCH v2 1/6] remoteproc: sysmon: Add ability to send type of
+ notification
+Message-ID: <20200420070507.GD1868936@builder.lan>
+References: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
+ <1586389003-26675-2-git-send-email-sidgup@codeaurora.org>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c7940835-31ba-4a31-5585-08d7e4f925b3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Apr 2020 07:05:02.5744 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eidFk0tU/s77f1xNRl5QS/nRE0KXTbBJ3zfeZDa7PCbQYNbz9ecuMQi5k5YOov1ltAKY0wpdxhvNEfreyVZBzQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4446
+Content-Disposition: inline
+In-Reply-To: <1586389003-26675-2-git-send-email-sidgup@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_000509_386625_C6ACEE7F 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20200420_000446_199709_ED9FC34E 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [212.25.79.133 listed in zen.spamhaus.org]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.45 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -147,28 +100,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "krzk@kernel.org" <krzk@kernel.org>,
- "kwmad.kim@samsung.com" <kwmad.kim@samsung.com>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "stanley.chu@mediatek.com" <stanley.chu@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ agross@kernel.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed 08 Apr 16:36 PDT 2020, Siddharth Gupta wrote:
+
+> Current implementation of the sysmon driver does not support adding
+> notifications for other remoteproc events - prepare, start, unprepare.
+> Clients on the remoteproc side might be interested in knowing when a
+> remoteproc boots up. This change adds the ability to send the notification
+> type along with the name. For example, audio DSP is interested in knowing
+> when modem has crashed so that it can perform cleanup and wait for modem to
+> boot up before it starts processing data again.
 > 
-> Some host controllers support interrupt aggregation but don't allow
-> resetting counter and timer in software.
+> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Regards,
+Bjorn
+
+> ---
+>  drivers/remoteproc/qcom_sysmon.c | 54 +++++++++++++++++++++++++++-------------
+>  1 file changed, 37 insertions(+), 17 deletions(-)
 > 
-> Signed-off-by: Seungwon Jeon <essuuj@gmail.com>
-> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
+> diff --git a/drivers/remoteproc/qcom_sysmon.c b/drivers/remoteproc/qcom_sysmon.c
+> index faf3822..1366050 100644
+> --- a/drivers/remoteproc/qcom_sysmon.c
+> +++ b/drivers/remoteproc/qcom_sysmon.c
+> @@ -46,6 +46,25 @@ struct qcom_sysmon {
+>  	struct sockaddr_qrtr ssctl;
+>  };
+>  
+> +enum {
+> +	SSCTL_SSR_EVENT_BEFORE_POWERUP,
+> +	SSCTL_SSR_EVENT_AFTER_POWERUP,
+> +	SSCTL_SSR_EVENT_BEFORE_SHUTDOWN,
+> +	SSCTL_SSR_EVENT_AFTER_SHUTDOWN,
+> +};
+> +
+> +static const char * const sysmon_state_string[] = {
+> +	[SSCTL_SSR_EVENT_BEFORE_POWERUP]	= "before_powerup",
+> +	[SSCTL_SSR_EVENT_AFTER_POWERUP]		= "after_powerup",
+> +	[SSCTL_SSR_EVENT_BEFORE_SHUTDOWN]	= "before_shutdown",
+> +	[SSCTL_SSR_EVENT_AFTER_SHUTDOWN]	= "after_shutdown",
+> +};
+> +
+> +struct sysmon_event {
+> +	const char *subsys_name;
+> +	u32 ssr_event;
+> +};
+> +
+>  static DEFINE_MUTEX(sysmon_lock);
+>  static LIST_HEAD(sysmon_list);
+>  
+> @@ -54,13 +73,15 @@ static LIST_HEAD(sysmon_list);
+>   * @sysmon:	sysmon context
+>   * @name:	other remote's name
+>   */
+> -static void sysmon_send_event(struct qcom_sysmon *sysmon, const char *name)
+> +static void sysmon_send_event(struct qcom_sysmon *sysmon,
+> +			      const struct sysmon_event *event)
+>  {
+>  	char req[50];
+>  	int len;
+>  	int ret;
+>  
+> -	len = snprintf(req, sizeof(req), "ssr:%s:before_shutdown", name);
+> +	len = snprintf(req, sizeof(req), "ssr:%s:%s", event->subsys_name,
+> +		       sysmon_state_string[event->ssr_event]);
+>  	if (len >= sizeof(req))
+>  		return;
+>  
+> @@ -149,13 +170,6 @@ static int sysmon_callback(struct rpmsg_device *rpdev, void *data, int count,
+>  #define SSCTL_SUBSYS_NAME_LENGTH	15
+>  
+>  enum {
+> -	SSCTL_SSR_EVENT_BEFORE_POWERUP,
+> -	SSCTL_SSR_EVENT_AFTER_POWERUP,
+> -	SSCTL_SSR_EVENT_BEFORE_SHUTDOWN,
+> -	SSCTL_SSR_EVENT_AFTER_SHUTDOWN,
+> -};
+> -
+> -enum {
+>  	SSCTL_SSR_EVENT_FORCED,
+>  	SSCTL_SSR_EVENT_GRACEFUL,
+>  };
+> @@ -331,7 +345,8 @@ static void ssctl_request_shutdown(struct qcom_sysmon *sysmon)
+>   * @sysmon:	sysmon context
+>   * @name:	other remote's name
+>   */
+> -static void ssctl_send_event(struct qcom_sysmon *sysmon, const char *name)
+> +static void ssctl_send_event(struct qcom_sysmon *sysmon,
+> +			     const struct sysmon_event *event)
+>  {
+>  	struct ssctl_subsys_event_resp resp;
+>  	struct ssctl_subsys_event_req req;
+> @@ -346,9 +361,9 @@ static void ssctl_send_event(struct qcom_sysmon *sysmon, const char *name)
+>  	}
+>  
+>  	memset(&req, 0, sizeof(req));
+> -	strlcpy(req.subsys_name, name, sizeof(req.subsys_name));
+> +	strlcpy(req.subsys_name, event->subsys_name, sizeof(req.subsys_name));
+>  	req.subsys_name_len = strlen(req.subsys_name);
+> -	req.event = SSCTL_SSR_EVENT_BEFORE_SHUTDOWN;
+> +	req.event = event->ssr_event;
+>  	req.evt_driven_valid = true;
+>  	req.evt_driven = SSCTL_SSR_EVENT_FORCED;
+>  
+> @@ -432,8 +447,12 @@ static int sysmon_start(struct rproc_subdev *subdev)
+>  static void sysmon_stop(struct rproc_subdev *subdev, bool crashed)
+>  {
+>  	struct qcom_sysmon *sysmon = container_of(subdev, struct qcom_sysmon, subdev);
+> +	struct sysmon_event event = {
+> +		.subsys_name = sysmon->name,
+> +		.ssr_event = SSCTL_SSR_EVENT_BEFORE_SHUTDOWN
+> +	};
+>  
+> -	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)sysmon->name);
+> +	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)&event);
+>  
+>  	/* Don't request graceful shutdown if we've crashed */
+>  	if (crashed)
+> @@ -456,19 +475,20 @@ static int sysmon_notify(struct notifier_block *nb, unsigned long event,
+>  {
+>  	struct qcom_sysmon *sysmon = container_of(nb, struct qcom_sysmon, nb);
+>  	struct rproc *rproc = sysmon->rproc;
+> -	const char *ssr_name = data;
+> +	struct sysmon_event *sysmon_event = data;
+>  
+>  	/* Skip non-running rprocs and the originating instance */
+> -	if (rproc->state != RPROC_RUNNING || !strcmp(data, sysmon->name)) {
+> +	if (rproc->state != RPROC_RUNNING ||
+> +	    !strcmp(sysmon_event->subsys_name, sysmon->name)) {
+>  		dev_dbg(sysmon->dev, "not notifying %s\n", sysmon->name);
+>  		return NOTIFY_DONE;
+>  	}
+>  
+>  	/* Only SSCTL version 2 supports SSR events */
+>  	if (sysmon->ssctl_version == 2)
+> -		ssctl_send_event(sysmon, ssr_name);
+> +		ssctl_send_event(sysmon, sysmon_event);
+>  	else if (sysmon->ept)
+> -		sysmon_send_event(sysmon, ssr_name);
+> +		sysmon_send_event(sysmon, sysmon_event);
+>  
+>  	return NOTIFY_DONE;
+>  }
+> -- 
+> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
