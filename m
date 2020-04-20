@@ -2,92 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 987921B142A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:16:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 193A71B143C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:18:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6wYKLblAI1y6gdWY6p3s/VwEGmVPaxtzoojKMYAjiGY=; b=AlH1pTSDDCLJoJ
-	usUNwboqkei9MLNjj58ixcMB8sAot/3UZjD+sIBvI8HyyBVObAG+SQ+miS8ehBcR8qRUzUREjNzVM
-	UGgsyvF63sJ3XNn6QYCEQU67P5D1iSpwh/2bjdS0uE6yEoLSECvKH+QCOa75YOLShNd+3oWzXkJ3h
-	Ua0vuhqj5xyULqwEijrk6OBajs0rVyxkRBpg2+jIZXYQui27YaDAVEz6jC5dHW8mjfGT3crQjVDd+
-	XvN2ZmM172VnEYQ95Nn8YnIxKDvn/LNCXnbNDIbV+mJs7ttAlPxIS25vYVoUjSX7V1DAirjRBjBQK
-	ew3M/xmazJ7VPfjq1ILg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=GMIMgufQcIc/+Z4pGkwpK+Fu6JwT0O0ClNUcVJAd3pE=; b=qEOp7QqCGTEwerqbT5soGGKJAO
+	fM4swNypMCQVzpLv+BEPb5Q72q8QjMZGK4EQbUuHXYnlqs3T/dA+sTkODy8PYzzRJBRcUkIIbKYyO
+	EN7/hvmfrXzrv0Jo22s5kWHDxbRQm7hoRNKvg/fhX3nKNd5C+BLfNO/xmDhY3YmXBV8BQg+3c9Ifj
+	dENzHhCRvaEpzW6BmvAfrnJ0YqlcbHtMZLZq++Y95HWLbY74IrhVBToN1XOgjiUuQWfsmR/YS/4Er
+	DcAJCAQj1XwNi2XUv6mvI+MD7saAkrW3vzyexXDBMnDaaMwf+19dPcMseEhlDl7YrBPFoHr2BIm7r
+	aTRtUc1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQay6-0000ru-0G; Mon, 20 Apr 2020 18:16:30 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jQazm-0001Xy-9L; Mon, 20 Apr 2020 18:18:14 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQaxq-0000q9-Mw
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:16:16 +0000
-Received: by mail-pl1-x644.google.com with SMTP id h11so4238668plr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 11:16:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=EiuXHkrk0vsfWG/qt3hSHaym5zGT7h2UROgYXWGq9eo=;
- b=hBTdDntvpVg0IIqGsUj9cxbjK4Qg55shR27nA5vdqHAiSM+74YJQurUEAdatqZ9NLO
- 6jDb9ut2UzyNLrtI6J2Go61vmdxRsPi0wOocRBOP3ATe0pTun1goJQx/elhijFdKB58o
- vr0oAsqTcAB6WCJILZCrrU1SKyVXSGD0KTxUgcSf8HvfbWdCVGloeNXD8nZukYc7F8oD
- otIxKYfUIcw8VfhHy0tSZMc1Kejs+bvfBBwMkwLOH+WHSxRE+KV/aQIGDgKcYJt4930I
- pTl1zBxEysjCwv+/hFvtqEeasXxTfds3gFwIUzEwbXVzBkrC2BrnX/5N9nHYv+ZweTGI
- 6pSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=EiuXHkrk0vsfWG/qt3hSHaym5zGT7h2UROgYXWGq9eo=;
- b=pHMlYmCrI1YIH/BCsfTze/KXAD4qp3IbI2EZj1gJkt+tS9JSgq7gkh+I5RC89nimFm
- NyiParCFbPp+IzM6RUVIXqWYLNQh4RilBQ2dScjVtkrUJuDsyHS5O/X2vtQyYoCxfOHF
- iE7bcdmzZd0eEhETz3lp45ECG5/REsmKtjth0HOuCa5GnadsQ/M/KVi97ZXNBs5wVT2e
- mUJ4eU8Jx1j+N1ANFeTHf2aAhksj52eXc2yuy+pCdsqCchlwX6tJRZ/D3+MdxhJ2utQc
- DNVvDPPcH0XD8v+thlFWlRqnR6MmKkROwb2FdWW2LP/rFvlu/Q0iVMZZa3d54uF6yHXJ
- q23A==
-X-Gm-Message-State: AGi0PuZn6sS/UOOq6JI0i/4N9VeYEAVYWBUuZPyyNXFJJjQJLv/FmBII
- 28Jky8FTjvBqqURwQEKQDSPXxQ==
-X-Google-Smtp-Source: APiQypIUqKTu+RkEQuSP9Va6FrnJzr5Ynm5ut3wNKkFsCTRfBxpNrQwQhHPlD9C2X1sA5hbgqzPxGA==
-X-Received: by 2002:a17:902:8345:: with SMTP id
- z5mr14272589pln.97.1587406574133; 
- Mon, 20 Apr 2020 11:16:14 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id t103sm14709pjb.46.2020.04.20.11.16.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 11:16:13 -0700 (PDT)
-Date: Mon, 20 Apr 2020 12:16:11 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH] coresight: etmv4: Update default filter and
- initialisation.
-Message-ID: <20200420181611.GB25885@xps15>
-References: <20200415201030.15617-1-mike.leach@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415201030.15617-1-mike.leach@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jQazU-0001VE-HD
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:17:58 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 16DD62A0FEB
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org
+Subject: [PATCH 0/2] Stop monitoring disabled devices
+Date: Mon, 20 Apr 2020 20:17:39 +0200
+Message-Id: <20200420181741.13167-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <d7efa7dd-6a07-beff-e3d1-8797dd203105@samsung.com>
+References: <d7efa7dd-6a07-beff-e3d1-8797dd203105@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_111614_779311_C196993C 
-X-CRM114-Status: GOOD (  19.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_111756_710680_74C1B257 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,106 +60,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
- suzuki.poulose@arm.com
+Cc: Heiko Stuebner <heiko@sntech.de>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Zhang Rui <rui.zhang@intel.com>, Len Brown <lenb@kernel.org>,
+ Barlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Darren Hart <dvhart@infradead.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ Peter Kaestle <peter@piie.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Andy Shevchenko <andy@infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 09:10:30PM +0100, Mike Leach wrote:
-> Differing default states set on driver init / perf init and as a result
-> of a sysfs reset.
-> 
-> The ETMv4 can be programmed to trace the entire instruction address range
-> without the need to use address comparator filter resources.
-> (Described in the ETMv4.x technical reference manual)
-> 
-> sysfs reset was using this method, perf and default driver init were setup
-> with an address range comparator for the entire address range.
-> 
-> The perf / driver init has been altered to use the method without needing
-> any comparator address hardware.
-> 
-> Minor adjustment to the vinst_ctrl register initialisation to ensure
-> correct zero initialisation.
-> 
-> Applies to Linux 5.7-rc1, tested on Juno-r1 and DB410c platforms.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+After 3 revisions of an RFC I'm sending this as a PATCH series.
 
-Applied - thanks,
-Mathieu
+The first patch makes all the drivers store their mode in struct
+thermal_zone_device. Such a move has consequences: driver-specific
+variables for storing mode are not necessary. Consequently get_mode()
+methods become obsolete. Then sysfs "mode" attribute stops depending
+on get_mode() being provided, because it is always provided from now on.
 
-> ---
->  .../coresight/coresight-etm4x-sysfs.c         |  2 +-
->  drivers/hwtracing/coresight/coresight-etm4x.c | 23 +++++--------------
->  2 files changed, 7 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> index ce41482431f9..b673e738bc9a 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> @@ -205,7 +205,7 @@ static ssize_t reset_store(struct device *dev,
->  	 * started state. ARM recommends start-stop logic is set before
->  	 * each trace run.
->  	 */
-> -	config->vinst_ctrl |= BIT(0);
-> +	config->vinst_ctrl = BIT(0);
->  	if (drvdata->nr_addr_cmp == true) {
->  		config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
->  		/* SSSTATUS, bit[9] */
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index a90d757f7043..58ae5498ecf1 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -791,7 +791,7 @@ static void etm4_set_default_config(struct etmv4_config *config)
->  	config->ts_ctrl = 0x0;
->  
->  	/* TRCVICTLR::EVENT = 0x01, select the always on logic */
-> -	config->vinst_ctrl |= BIT(0);
-> +	config->vinst_ctrl = BIT(0);
->  }
->  
->  static u64 etm4_get_ns_access_type(struct etmv4_config *config)
-> @@ -894,17 +894,8 @@ static void etm4_set_start_stop_filter(struct etmv4_config *config,
->  
->  static void etm4_set_default_filter(struct etmv4_config *config)
->  {
-> -	u64 start, stop;
-> -
-> -	/*
-> -	 * Configure address range comparator '0' to encompass all
-> -	 * possible addresses.
-> -	 */
-> -	start = 0x0;
-> -	stop = ~0x0;
-> -
-> -	etm4_set_comparator_filter(config, start, stop,
-> -				   ETM_DEFAULT_ADDR_COMP);
-> +	/* Trace everything 'default' filter achieved by no filtering */
-> +	config->viiectlr = 0x0;
->  
->  	/*
->  	 * TRCVICTLR::SSSTATUS == 1, the start-stop logic is
-> @@ -925,11 +916,9 @@ static void etm4_set_default(struct etmv4_config *config)
->  	/*
->  	 * Make default initialisation trace everything
->  	 *
-> -	 * Select the "always true" resource selector on the
-> -	 * "Enablign Event" line and configure address range comparator
-> -	 * '0' to trace all the possible address range.  From there
-> -	 * configure the "include/exclude" engine to include address
-> -	 * range comparator '0'.
-> +	 * This is done by a minimum default config sufficient to enable
-> +	 * full instruction trace - with a default filter for trace all
-> +	 * achieved by having no filtering.
->  	 */
->  	etm4_set_default_config(config);
->  	etm4_set_default_filter(config);
-> -- 
-> 2.17.1
-> 
+The first patch also introduces the initial mode to be optionally passed
+to thermal_zone_device_register().
+
+Given all the groundwork done in patch 1/2 patch 2/2 becomes very simple.
+
+Compared to RFC v3 this series addresses comments from Bartlomiej,
+thank you Bartlomiej for your review!
+
+RFCv3..this PATCH:
+
+- export thermal_zone_device_{enable|disable}() for drivers
+- don't check provided enum values in acpi's thermal_zet_mode()
+and in int3400_thermal_set_mode()
+- use thermal_zone_device_enable() in of_thermal instead of open coding it
+- use thermal_zone_device_{enable|disable}() in hisi_thermal, rockchip_thermal
+and sprd_thermal
+- assume THERMAL_DEVICE_ENABLED is thermal_zone_params not provided at
+tzd's register time
+- eliminated tzp-s which contain only .initial_mode = THERMAL_DEVICE_ENABLED,
+- don't set tz->need_update and don't call thermal_zone_device_update()
+at the end of thermal_zone_device_register()
+- used .initial_mode in int340x_thermal_zone, x86_pkg_temp_thermal and
+int3400_thermal
+
+Andrzej Pietrasiewicz (2):
+  thermal: core: Let thermal zone device's mode be stored in its struct
+  thermal: core: Stop polling DISABLED thermal devices
+
+ drivers/acpi/thermal.c                        | 35 ++--------
+ .../ethernet/mellanox/mlxsw/core_thermal.c    | 42 ------------
+ drivers/platform/x86/acerhdf.c                | 17 +----
+ drivers/thermal/da9062-thermal.c              | 11 ----
+ drivers/thermal/hisi_thermal.c                |  6 +-
+ drivers/thermal/imx_thermal.c                 | 24 ++-----
+ .../intel/int340x_thermal/int3400_thermal.c   | 31 ++-------
+ .../int340x_thermal/int340x_thermal_zone.c    |  1 +
+ .../thermal/intel/intel_quark_dts_thermal.c   | 22 ++-----
+ drivers/thermal/intel/x86_pkg_temp_thermal.c  |  1 +
+ drivers/thermal/of-thermal.c                  | 24 +------
+ drivers/thermal/rockchip_thermal.c            |  6 +-
+ drivers/thermal/sprd_thermal.c                |  6 +-
+ drivers/thermal/thermal_core.c                | 65 ++++++++++++++++---
+ drivers/thermal/thermal_core.h                |  3 +
+ drivers/thermal/thermal_sysfs.c               | 29 +--------
+ include/linux/thermal.h                       | 22 ++++++-
+ 17 files changed, 121 insertions(+), 224 deletions(-)
+
+
+base-commit: 79799562bf087b30d9dd0fddf5bed2d3b038be08
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
