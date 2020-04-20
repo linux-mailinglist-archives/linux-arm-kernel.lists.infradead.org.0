@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57F0C1B12D4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:18:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 165381B12DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 19:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6FUVxLW1APCb0VIAIDCjqDqNbXD82Pr2NGDPxlrUdY=; b=nowu6cPVTD5nLa
-	Yy9dBuh4jz9R5hjqDrOLqfO2JnQvjYSWNYe7TDrNXc92yoBh0HCHbABd13st2QTnnZaR+dCxZZfB+
-	S+OB+Mhcuo5R9/hJe1C++dN9NkX4agj8DUGJVSG2alFFptmMb91V9tSdT46Fb3wj+hGFF0UVw2r8a
-	wT4WzmEUNuvkAL8zECM/obQ4B4vHZ+omTE81G9V24RTtovPAl5nZrHp/ZMVMwtBrLiSi3zR2q8Dvd
-	+8z9Aof68nIAScUqkLhxlR+27k2nYqRl+kLTmV1FACZT16njOKB4NEjyb8Flyo2ymZuafdEq/7dLR
-	ef22+6GWproJSKhWFEPg==;
+	List-Owner; bh=nlQ3wlor36N0I8Xrq2+aj+yKEbg1fWLVi4ZieoQeHqY=; b=Ev8y5TBOmlVBVM
+	1g+tLltC+hufuqbXKL3SGqjiBkdBM+Cjly6qhunmAzyrHvtDFTnqeBNmDaQ7X+Z8teWFT51H6mz4n
+	zacOoID9OoeRJMq5YuVD/WSaddIF66EoN+wEskxBDzWApegsNr/sobVi+5IbKz5I9xQsuPfq0p2/U
+	JWTAlbUmDRXPc+u47TDdKCSoNRncNvfipOtxoLQT28okZIbGYyC3O9KyaQd45jg6ahtXLr9GkIq5k
+	XuymrjHRCvgNKr7Cx7awJMgB5dwqLVORmT+k743xxatXJbVo3JDSzNDgZCVtrZetzVviKnZpsC4cY
+	0X6Van0Pp9WCww4PK6Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQa4E-0002ff-90; Mon, 20 Apr 2020 17:18:46 +0000
+	id 1jQa8x-0006li-Sf; Mon, 20 Apr 2020 17:23:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQa3p-0002Ri-0b
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:18:22 +0000
-Received: from mail-qk1-f180.google.com (mail-qk1-f180.google.com
- [209.85.222.180])
+ id 1jQa8m-0006kl-A6
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 17:23:29 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B86C8221F4
+ by mail.kernel.org (Postfix) with ESMTPSA id D902D22202
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 17:18:19 +0000 (UTC)
+ Mon, 20 Apr 2020 17:23:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587403099;
- bh=MrAH2VsY+TtODBX+fkAcZq5uw1kTGKG8R7HORSOSQ/0=;
+ s=default; t=1587403408;
+ bh=DI88VDkhxPMO6/QoP8n3nDMfyH/KSc6tfIYnzyvZA3s=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=JApMb1e4vC54i64Ik32l+IgfX1JaXzs+OgggR9IYG6T8OqAzdISMsR3/gqcukApT9
- Ej5J3hNwvzi8GEfCZKycTuZ3e48jJoxHFMy0KKji32mE2H1mCcKP9EemAHgt5/7/ZF
- 04AHn/xCJO8E6lre5jdeyufKMEsTNuPdwWLdB/uE=
-Received: by mail-qk1-f180.google.com with SMTP id s63so11487233qke.4
+ b=hyWvtLRgiePoSeeex+Bb0oNGDEr/+GWFjj6GUYtr7BFD2UVirZuigzXyDW9SFaXBx
+ l5vnIZk27By5VsPIhtFfCHr3gk9BPg3TiHit35oCv0L60a4AMN7BSgJDjkmFYloNpd
+ Y2Da5T+cyrqfTEbf9N3O4dmccS5T+3OGdBm5yuWA=
+Received: by mail-qk1-f173.google.com with SMTP id j4so11461520qkc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 10:18:19 -0700 (PDT)
-X-Gm-Message-State: AGi0PubgxpeJh0uqMW603STtQyqol2TMKDIkDaQJc8EAinnaNxqCo0Z6
- apzcOYzmfeBy889qEoL8wD+lHQ+xg8fusPz40w==
-X-Google-Smtp-Source: APiQypJNfkN/fMd0KGM+5Vg1LBXgehBt4JTvfg6zC0uiCkKgQlI0eLwWlHUfc/lg4IOOlDLeLOR+fGB8lSNqdL7SWWM=
-X-Received: by 2002:a37:c43:: with SMTP id 64mr15949855qkm.119.1587403098789; 
- Mon, 20 Apr 2020 10:18:18 -0700 (PDT)
+ Mon, 20 Apr 2020 10:23:27 -0700 (PDT)
+X-Gm-Message-State: AGi0Publjh9uTCu4SgkaseDwDc7nmir7b884SdbZGtfBa/RZa9sLTPGD
+ r1zPHaocY54v42zfJvzuhhGQ3h97v4RLcR9LhQ==
+X-Google-Smtp-Source: APiQypKHdn+KVCIskUEoQxaMBsi+u+k4KDRvBbLImg2XBjqZjn3n0++TU7x+18KzMjSkNRtotrBw2UAfk+eYU9mXBpw=
+X-Received: by 2002:a37:61cd:: with SMTP id
+ v196mr17255124qkb.393.1587403406913; 
+ Mon, 20 Apr 2020 10:23:26 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-9-robh@kernel.org>
- <CAK8P3a0YmD6Ay6t=Wxmugvg=YM0fCtetgnqz1vTYs1rFD-9TFg@mail.gmail.com>
-In-Reply-To: <CAK8P3a0YmD6Ay6t=Wxmugvg=YM0fCtetgnqz1vTYs1rFD-9TFg@mail.gmail.com>
+ <20200419170810.5738-5-robh@kernel.org>
+ <CAK8P3a2BZLti5pLrru8s-45Yz54SA0JZbyjvYEstSDJZfnzEmA@mail.gmail.com>
+In-Reply-To: <CAK8P3a2BZLti5pLrru8s-45Yz54SA0JZbyjvYEstSDJZfnzEmA@mail.gmail.com>
 From: Rob Herring <robh@kernel.org>
-Date: Mon, 20 Apr 2020 12:18:06 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLZ4S=no9hPQO+jtwfd7E7HrHm8dAt9jZ3eh96dYCcy-g@mail.gmail.com>
-Message-ID: <CAL_JsqLZ4S=no9hPQO+jtwfd7E7HrHm8dAt9jZ3eh96dYCcy-g@mail.gmail.com>
-Subject: Re: [PATCH 08/17] clk: vexpress-osc: Support building as a module
+Date: Mon, 20 Apr 2020 12:23:13 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+Hk_WuK=c+eHi1Kz3EPzm=zOw2ctETXEySPH1WgAGjug@mail.gmail.com>
+Message-ID: <CAL_Jsq+Hk_WuK=c+eHi1Kz3EPzm=zOw2ctETXEySPH1WgAGjug@mail.gmail.com>
+Subject: Re: [PATCH 04/17] power/reset: vexpress: Support building as a module
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_101821_122771_0AF27BB9 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20200420_102328_369879_42F0723F 
+X-CRM114-Status: GOOD (  16.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,7 +94,6 @@ Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
  Kevin Brodsky <Kevin.Brodsky@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Lee Jones <lee.jones@linaro.org>, linux-clk <linux-clk@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
@@ -102,25 +102,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 10:28 AM Arnd Bergmann <arnd@arndb.de> wrote:
+On Mon, Apr 20, 2020 at 10:24 AM Arnd Bergmann <arnd@arndb.de> wrote:
 >
 > On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
 > >
-> > Enable building the vexpress-osc clock driver as a module.
+> > Enable building the VExpress power-off/reset driver as a module.
 >
-> >
-> >  config CLK_VEXPRESS_OSC
-> > -       bool "Clock driver for Versatile Express OSC clock generators"
-> > -       depends on VEXPRESS_CONFIG || COMPILE_TEST
-> > +       tristate "Clock driver for Versatile Express OSC clock generators"
-> > +       depends on VEXPRESS_CONFIG
+> Your change allows loading and unloading the driver, but actually
+> unloading is a bug with the current implementation, as there is no
+> 'release' handler to undo the _vexpress_register_restart_handler()
+> function.
+
+And also to save and restore pm_power_off...
+
+> It should not be hard to add a release handler, or you could just
+> mark the function as non-unloadable by only having a module_init()
+> but no module_exit() function.
 >
-> Why do you remove the "|| COMPILE_TEST" here?
+> I suppose if you do the latter, there should also be a suppress_bind_attrs
+> flag in the device_driver. This is a preexisting bug.
 
-Looks like a rebasing error. I only added it in patch 5.
-
-It has to depend on VEXPRESS_CONFIG because
-devm_regmap_init_vexpress_config doesn't have an empty function.
+I may just drop this patch. I wrote it and then realized I don't need
+it as PSCI can be used instead.
 
 Rob
 
