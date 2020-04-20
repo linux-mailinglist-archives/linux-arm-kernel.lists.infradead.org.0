@@ -2,86 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2651E1B187E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:31:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0052B1B18B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 23:44:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Ur+uQ59OrKHeRxys6F1Cld++8JgM8hRh/at8okSmNw=; b=OOZQXN5lCfrAvN
-	O468uaYv7LZgLf5mY6hNp1NilU/z+pRyTRPaVkWhP851Qoz059eUIR4OoRefRfWHe4TsGg3rCLxvE
-	tFHaZ1DFCRmYi/72vq8XMpP6eD3PtdPAlyWY49fZiT/sfe7RyODeqYJKJzSKcl81Ew2TLlRD3wBn1
-	IKudD3OOWfp+K34CHWtrtkaehpAD1kmIrLssoDFmH8PUvMYE8ezBlHg+B7k+aDGL0t2vJA1W6FR+M
-	ThJH2qWkFsWfunvZn69KCY67XjmbtCvGBF87LrpA8RtObG7SKPXz2zEEG6ah5sGf7ccPWeCR9nlMz
-	unb2GVPc1wdl3KMO6fxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U6Z1Xb5McPrq6TDu+Fj0uLAFrpGal7W3tjszUj6S+l4=; b=Zny78vZDAD0YgP
+	EMOaXrwWVZCVlSwYqiYL6gFIUDcLiZDMubOMm8zpQ9tog6fDmcvIu87o9RdtkeyvNe2HtYgIQmkam
+	8pgrmBtj9I5HqZzSskvtF5z+OEzhM/OLRf2NQIBjQGd8WFpEWUv8lsOcx+CTsNQnTbJ5/msBgz8uS
+	8SUEJCvi8likxuEpQCrOMsGJ2yH9GrT71HPJDwtFaip0g7srPW2OewGWnwz+WCi9vZDW8QGLoLV8w
+	gcTAuENgPbV/7xz4zEfZwArb78lStEqPMWTLXnHoiBAJ7wvo6WPCRJD1LRKSdjRaDZJcIPFgfA4cC
+	YuSsdI7Ssarv2pk+k5bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQe16-0000dM-Pw; Mon, 20 Apr 2020 21:31:48 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jQeCu-0000en-Pw; Mon, 20 Apr 2020 21:44:00 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQe0q-0000as-MY; Mon, 20 Apr 2020 21:31:33 +0000
-Received: by mail-oi1-f194.google.com with SMTP id k133so10183540oih.12;
- Mon, 20 Apr 2020 14:31:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xCbMSBWE/K7CMTFoStyxNkJaPmhk/SFie0hTZQJVUuE=;
- b=lvQkZhd4s073R+9rhjCjQE3erWjzhM3KxunZihOUTGWPpiWfYiu8kVZ8oua3nVrrBH
- dN2Sp4SJYnKDBLKLqp7q55/dBPHu+dRSZq+J7Dzzxoau3vELsnnkKxZQ2QNiBrN+zSB2
- OF9whxii53DpZodQGFrzP6/TY6UW4wFL0tGdP5HSEiNgTMsIAsLkx/+vkMjeH6+bR6fu
- t6dV8ON2s9vrE8LS88R/PVsxapl9G+dOKNcq9pk4OhD17WiSBWvqqXZ5LfBsOS4m7DXP
- C6f8+foquWFDZBZesPAEAN/nswLdH8d3q6LylppjRlJ1khIadjISgd3HQg1vwmUoJ/Jk
- HTcA==
-X-Gm-Message-State: AGi0PuZGDH5bVTqZWzafAoGwepPXzOumvxCxu2NS4/vDWNPES21nqZ5D
- JkWX0Wt8LFtE8qVRNwASVA==
-X-Google-Smtp-Source: APiQypKp/aMom3WcZIgx4KD9/tZ1PBp+icqSBiPeREh6uL2GtZ7nUmS6xX3EHcojP7gq2hudxYyZ2A==
-X-Received: by 2002:aca:4155:: with SMTP id o82mr1118364oia.16.1587418291457; 
- Mon, 20 Apr 2020 14:31:31 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s73sm171791oih.14.2020.04.20.14.31.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 14:31:30 -0700 (PDT)
-Received: (nullmailer pid 22338 invoked by uid 1000);
- Mon, 20 Apr 2020 21:31:29 -0000
-Date: Mon, 20 Apr 2020 16:31:29 -0500
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v15 2/3] dt-bindings: display: mediatek: convert the
- document format from txt to yaml
-Message-ID: <20200420213129.GA22262@bogus>
-References: <20200415011319.25559-1-jitao.shi@mediatek.com>
- <20200415011319.25559-3-jitao.shi@mediatek.com>
+ id 1jQeCL-0000L4-CR; Mon, 20 Apr 2020 21:43:26 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KLgUL9050259;
+ Mon, 20 Apr 2020 21:42:30 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=hzoE0Q+18wJs1W+mVb3z7CiUNSgD6tC6T1Mn0/ek+wo=;
+ b=uEPs/byWmtoiHC1nzj/OHwsHfQ+pPoDJrbDp3lBBPD0KRbAA6SwAvZ1ud2YwFnb2Mzu+
+ w2CK8iPEc1BvfdfVAl5Fcto/JbU4c652GlgOsBhobCaLtohtsTqIGr3+PVqtKslBkoNW
+ n+JOBt2k3+46e5Q1gU3tB8q3bmCebFihkB9ixnCVXX3kvxl+TyYWXFE+XKWZiRXHWZAq
+ 7Fs4OQLL9/BFQ7CHOVVxXiZBK2ZBMKSV1hJLPbIbNdPX8YOZGHkqGsU6WzpWBzNF7AUU
+ f0tSUQ+nvoF8JdFnaqHsGTH5mXUTwYGBPwktzP0qUTamVzUlKbt9rTV1prDiWrL1czwl Ow== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2120.oracle.com with ESMTP id 30ft6n1quc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 21:42:30 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03KLbbb8169248;
+ Mon, 20 Apr 2020 21:40:27 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3030.oracle.com with ESMTP id 30gb3r4xy6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 21:40:27 +0000
+Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03KLe8UK019244;
+ Mon, 20 Apr 2020 21:40:08 GMT
+Received: from [192.168.2.157] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 20 Apr 2020 14:40:08 -0700
+Subject: Re: [PATCH v3 0/4] Clean up hugetlb boot command line processing
+To: Anders Roxell <anders.roxell@linaro.org>, Will Deacon <will@kernel.org>
+References: <20200417185049.275845-1-mike.kravetz@oracle.com>
+ <5E312000-05D8-4C5D-A7C0-DDDE1842CB0E@lca.pw>
+ <4c36c6ce-3774-78fa-abc4-b7346bf24348@oracle.com>
+ <CADYN=9+=tCDmddTYGY44onvrzbg7yrbacMDSxd4hhD+=b=Yeiw@mail.gmail.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <86333853-0648-393f-db96-d581ee114d2b@oracle.com>
+Date: Mon, 20 Apr 2020 14:40:05 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415011319.25559-3-jitao.shi@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CADYN=9+=tCDmddTYGY44onvrzbg7yrbacMDSxd4hhD+=b=Yeiw@mail.gmail.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ spamscore=0 adultscore=0
+ mlxlogscore=999 phishscore=0 suspectscore=27 bulkscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2004200171
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9597
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=27
+ bulkscore=0
+ priorityscore=1501 impostorscore=0 adultscore=0 phishscore=0
+ lowpriorityscore=0 malwarescore=0 clxscore=1015 mlxlogscore=999 mlxscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004200172
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_143132_736201_C5A0EA26 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200420_144325_506920_3B9CC209 
+X-CRM114-Status: GOOD (  26.41  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,30 +112,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, bibby.hsieh@mediatek.com,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- huijuan.xie@mediatek.com, stonea168@163.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ Linux-MM <linux-mm@kvack.org>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Mina Almasry <almasrymina@google.com>, linux-s390@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Qian Cai <cai@lca.pw>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 09:13:18 +0800, Jitao Shi wrote:
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../bindings/display/mediatek/mediatek,dpi.txt     | 42 ----------
->  .../bindings/display/mediatek/mediatek,dpi.yaml    | 97 ++++++++++++++++++++++
->  2 files changed, 97 insertions(+), 42 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+On 4/20/20 1:29 PM, Anders Roxell wrote:
+> On Mon, 20 Apr 2020 at 20:23, Mike Kravetz <mike.kravetz@oracle.com> wrote:
+>> On 4/20/20 8:34 AM, Qian Cai wrote:
+>>>
+>>> Reverted this series fixed many undefined behaviors on arm64 with the config,
+>> While rearranging the code (patch 3 in series), I made the incorrect
+>> assumption that CONT_XXX_SIZE == (1UL << CONT_XXX_SHIFT).  However,
+>> this is not the case.  Does the following patch fix these issues?
+>>
+>> From b75cb4a0852e208bee8c4eb347dc076fcaa88859 Mon Sep 17 00:00:00 2001
+>> From: Mike Kravetz <mike.kravetz@oracle.com>
+>> Date: Mon, 20 Apr 2020 10:41:18 -0700
+>> Subject: [PATCH] arm64/hugetlb: fix hugetlb initialization
+>>
+>> When calling hugetlb_add_hstate() to initialize a new hugetlb size,
+>> be sure to use correct huge pages size order.
+>>
+>> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+>> ---
+>>  arch/arm64/mm/hugetlbpage.c | 8 ++++----
+>>  1 file changed, 4 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+>> index 9ca840527296..a02411a1f19a 100644
+>> --- a/arch/arm64/mm/hugetlbpage.c
+>> +++ b/arch/arm64/mm/hugetlbpage.c
+>> @@ -453,11 +453,11 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
+>>  static int __init hugetlbpage_init(void)
+>>  {
+>>  #ifdef CONFIG_ARM64_4K_PAGES
+>> -       hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(PUD_SIZE) - PAGE_SHIFT);
+>>  #endif
+>> -       hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
+>> -       hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
+>> -       hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(CONT_PMD_SIZE) - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(PMD_SIZE) - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(CONT_PTE_SIZE) - PAGE_SHIFT);
+>>
+>>         return 0;
+>>  }
 > 
+> I build this for an arm64 kernel and ran it in qemu and it worked.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Thanks for testing Anders!
+
+Will, here is an updated version of the patch based on your suggestion.
+I added the () for emphasis but that may just be noise for some.  Also,
+the naming differences and values for CONT_PTE may make some people
+look twice.  Not sure if being consistent here helps?
+
+I have only built this.  No testing.
+
+From daf833ab6b806ecc0816d84d45dcbacc052a7eec Mon Sep 17 00:00:00 2001
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Date: Mon, 20 Apr 2020 13:56:15 -0700
+Subject: [PATCH] arm64/hugetlb: fix hugetlb initialization
+
+When calling hugetlb_add_hstate() to initialize a new hugetlb size,
+be sure to use correct huge pages size order.
+
+Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+---
+ arch/arm64/mm/hugetlbpage.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+index 9ca840527296..bed6dc7c4276 100644
+--- a/arch/arm64/mm/hugetlbpage.c
++++ b/arch/arm64/mm/hugetlbpage.c
+@@ -455,9 +455,9 @@ static int __init hugetlbpage_init(void)
+ #ifdef CONFIG_ARM64_4K_PAGES
+ 	hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
+ #endif
+-	hugetlb_add_hstate(CONT_PMD_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate((CONT_PMD_SHIFT + PMD_SHIFT) - PAGE_SHIFT);
+ 	hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
+-	hugetlb_add_hstate(CONT_PTE_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate((CONT_PTE_SHIFT + PAGE_SHIFT) - PAGE_SHIFT);
+ 
+ 	return 0;
+ }
+-- 
+2.25.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
