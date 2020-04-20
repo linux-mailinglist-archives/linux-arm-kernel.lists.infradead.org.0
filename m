@@ -2,90 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52D8D1B0F21
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:01:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C08F61B0F2A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 17:03:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mkfyf8fMK0Fgzv8hTaBqCN2RRXZ9cH7tPTW6ykWaRpw=; b=pTLu5iHTgRwvZC
-	NT+jr825YFqb+SR5rt6f6SKmcK6pEI644HbXtGcWi/Bg65CfkKInQUtrnsXfND0ZjB5Q9G7gqZ3z6
-	9/VcpfWmuUNw9n0bhfKGlU9uRrdxLpvSkPRuWslxvKcrvMLDdc3KOicUyokD8zIcfvSRuUCmOLg/J
-	vH5Z2KfTZ0D+ofJ7lVPME0SBC+9V7YRbVBtiXl3fekG9/H02orvXK+YwQOB7OzdA+vJaPVhnMJPZy
-	OENhj7Ifusrkv1LoP267/STNLfhu2G4FDP/qU5ghEukS136cYbcvjaS02TnZMQRCoudNDUnZJ+S5s
-	KbeDEhHmTPiDQHC5+SQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rKrapKAm2MBgwmbGeR12uTibuXwf5YIYbqRHPRrcQm0=; b=dN9UR6KTjvMQTTjyQb/rTdHfT
+	83om1YazLCmOu/KgAL/R7i+ZW6GM3Z/qjy2jWh/mc24WtiqM7xf8RkuOShO/OR2AOd06RsdxA1LMt
+	KirR5x1XRwwfXKpKoaAorhvYRosjAmn7DpF7pa0aTgN1c819KS5FNqylp30hxaIrhSfziT/5/xt3P
+	v4QCklpgKmyeZzyha0iQa9fK+rsji+dXCOWcC4recZlaQ8vwH8MJluhGeoRL65JLAdDwKumYyQGZm
+	buL6ZXqEeJI0M3GEPORq13gnufn05HyIThCU7NDMC9+TzJVxdmheQVM20EbOzSDlNd5QUlOkAxeN2
+	U/E7mlEDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXur-0006fg-JX; Mon, 20 Apr 2020 15:00:57 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jQXwv-0007YZ-RU; Mon, 20 Apr 2020 15:03:05 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXuc-0006bb-NM
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:00:44 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03KEwrKp027524; Mon, 20 Apr 2020 17:00:35 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=date : from : to : cc :
- subject : message-id : references : mime-version : content-type :
- in-reply-to; s=STMicroelectronics;
- bh=LFbHXDYgAgs4Hcvg9/e01AWVNn3apQsBjy+Cy3nDA1c=;
- b=lQQHFOMVMl7wYS2G9F1hLw0BI8eTx7z/+q3B3DFceEmfVXoYNKCRiGz/g/s7PYkAhuNq
- /Dv+nZY5so2PnL6/7aTWG6oxfcEEE8kPCtRe2SrwAKWkN66hWunDWk/yyI76EkTuQFcw
- Y8sACQw6lSJFXf8BCMP6/ERG57Bo59GOGXrHJZMe7oALD7p7K4CgSRUUa5l6W+G6cdZg
- 3nCe5DZGqLokDoxzaMBIV6QNHgszki0ZtXt65SluBOoaYVzXveUgRfyMTvGm9vM7XaUt
- BJjvn/VjhAoiTPWDK5acwgfEH0HT6B0khFYHu29sxxdWoi3MTmLuVoi41iXH5ThwjcAt gA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30fqaw2vn8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 20 Apr 2020 17:00:35 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C2EB610002A;
- Mon, 20 Apr 2020 17:00:34 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B52292AA282;
- Mon, 20 Apr 2020 17:00:34 +0200 (CEST)
-Received: from gnbcxd0016.gnb.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr
- 2020 17:00:34 +0200
-Date: Mon, 20 Apr 2020 17:00:29 +0200
-From: Alain Volmat <alain.volmat@st.com>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: [PATCH v2 2/2] i2c: i2c-stm32f7: allows for any bus frequency
-Message-ID: <20200420150029.GA6945@gnbcxd0016.gnb.st.com>
-Mail-Followup-To: Wolfram Sang <wsa@the-dreams.de>, robh+dt@kernel.org,
- mark.rutland@arm.com, pierre-yves.mordret@st.com,
- mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
- linux-i2c@vger.kernel.org, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- fabrice.gasnier@st.com
-References: <1585226661-26262-1-git-send-email-alain.volmat@st.com>
- <1585226661-26262-3-git-send-email-alain.volmat@st.com>
- <20200415110916.GO1141@ninjato>
+ id 1jQXwl-0007WU-Uh
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 15:02:59 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.west.internal (Postfix) with ESMTP id DEA10638;
+ Mon, 20 Apr 2020 11:02:52 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 20 Apr 2020 11:02:53 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=L27MuuYz1SixnmfaHirukiQJrxC
+ Tv8fLDqVFJXmGlc0=; b=XLnEVb1swtAk8zZ4/ZrbJwk5Zszm9kxeZodYA8FcZ/c
+ ziI0Co7Zf6z9PuFfj+8vwErIVzcsdG+nhI3S6Uz3Ju758ug/XlAWFhNhNcPP1sCB
+ bUxHz1/6DqU0Cp6fhlBBh1xjQWcpU8bUdnCcWzIBFooa6xYYZtOYYRz0FanoXs+d
+ jXLKI1csogzJYT0VyfAqw0nXSLtwb7MH9z644G4tyn+69K5Of0tyvR9Q/e/iIqwf
+ rDoPsBrf9B+2de0tQ6PuDOFCrgcF+2CCtfZ7qYfG25DcCzOaxDThGs/UFcOOiY0M
+ Dr55kkJNX5zCuwCed8lrf14Tp8/IFKzRKdGqF6LkrsQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=L27Muu
+ Yz1SixnmfaHirukiQJrxCTv8fLDqVFJXmGlc0=; b=JWHhtcUxZK8up4VTR7dxtb
+ nWq61WKCtiBxnDvUHML3ErQCOBVwaflUDfO5VPn7RSrJUDhjjZ/1ZSYOMWQw6Tfv
+ ORB4LDzilF1z7Ed5UHu3AHriiK55GO5YPF5LvuQkj+aZEC/tFdhqf1bIyLsYQktx
+ SD77eTCUfL+FRPfueRKkZB/ZNm3vGOhdW8M07p99qmxQ+gVcSuU8kMVGKwkkA65q
+ rqOy4H52KfgsD+vvg23lTkRhTx3cRaRKyUb/zllXxqfqzVYwpTLGrqge7jjRNoRz
+ 8/LWZT3lztUFH8jJsrHqe4CkjLSKfjyWiZ3qV7fH9YUnyC9+/4WN7zl1jkUvbSNw
+ ==
+X-ME-Sender: <xms:mrmdXpW0a6b7oEDyfoMqd29TrNQhYzqlGCs_kwWuVm0UHqg9hrre0g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeefgdekfecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
+ epkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
+ rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
+ hordhtvggthh
+X-ME-Proxy: <xmx:m7mdXuu11GnamYeDFtYtOHIR89FZXPkjxvEMzq77_RnQJKgusIGyIg>
+ <xmx:m7mdXoVueCausVfPcqaubNEo1d3D0A5_HwjEyh3Exbq9FXD9MydQLA>
+ <xmx:m7mdXiXVegDsXmhTrxlc0iuHdh4vgXc8q7pxdNOP7qyPvQih1kC2tQ>
+ <xmx:nLmdXrGlRTtnVvm8gflpw646ZArS7sCb-znIOBFrD4mFqBlT-BYDgYc5E-g>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A483C328006F;
+ Mon, 20 Apr 2020 11:02:50 -0400 (EDT)
+Date: Mon, 20 Apr 2020 17:02:48 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Sakari Ailus <sakari.ailus@iki.fi>
+Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
+Message-ID: <20200420150248.mqqcxgsaxj5oxfgk@gilmour.lan>
+References: <20200407163916.GL6127@valkosipuli.retiisi.org.uk>
+ <CAAFQd5BGFB5znb9QyyPVL47kc809Ktu33bssvqg5eA-WwvMgOw@mail.gmail.com>
+ <20200407172035.GM6127@valkosipuli.retiisi.org.uk>
+ <20200408122127.i27hrmjh3pbjeulk@gilmour.lan>
+ <CAAFQd5DNyQra-XksVaSfT_FCkOHTzm9mbn+tMd1vACV=pb9_8g@mail.gmail.com>
+ <20200408134315.a7cemmto6bi26arg@gilmour.lan>
+ <20200408152857.GO6127@valkosipuli.retiisi.org.uk>
+ <20200408153051.GP6127@valkosipuli.retiisi.org.uk>
+ <20200415101827.owf5babnigev2vit@gilmour.lan>
+ <20200415161616.GA934@valkosipuli.retiisi.org.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415110916.GO1141@ninjato>
-X-Disclaimer: ce message est personnel / this message is private
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-20_05:2020-04-20,
- 2020-04-20 signatures=0
+In-Reply-To: <20200415161616.GA934@valkosipuli.retiisi.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_080043_304916_B7CB2D90 
-X-CRM114-Status: GOOD (  17.63  )
+X-CRM114-CacheID: sfid-20200420_080256_939099_77415444 
+X-CRM114-Status: GOOD (  39.46  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.17 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,68 +112,273 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, robh+dt@kernel.org,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Robert Foss <robert.foss@linaro.org>, Tomasz Figa <tfiga@chromium.org>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: multipart/mixed; boundary="===============4605019968059420543=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Wolfram,
 
-On Wed, Apr 15, 2020 at 01:09:16PM +0200, Wolfram Sang wrote:
-> Hi Alain,
-> 
-> On Thu, Mar 26, 2020 at 01:44:21PM +0100, Alain Volmat wrote:
-> > Do not limitate to the 3 (100KHz, 400KHz, 1MHz) bus frequency but
-> > instead allows any frequency (if it matches timing requirements).
-> > Depending on the requested frequency, use the spec data from either
-> > Standard, Fast or Fast Plus mode.
-> > 
-> > Hardcoding of min/max bus frequencies is removed and is instead computed.
-> > 
-> > The driver do not use anymore speed identifier but instead handle
-> > directly the frequency and figure out the spec data (necessary
-> > for the computation of the timing register) based on the frequency.
-> 
-> Useful improvement!
-> 
-> > +static struct stm32f7_i2c_spec *get_specs(u32 rate)
-> 
-> This is quite a generic namespace. Can we prefix stm32f7_<sth> here?
-
-Done in v3
-
-> 
-> > +		if (rate <= i2c_specs[i].rate)
-> > +			return &i2c_specs[i];
-> 
-> Same for i2c_specs here?
-
-Done in v3
-
-> 
-> > +static u32 get_lower_rate(u32 rate)
-> 
-> Here, too.
-
-Done in v3
-> 
-> Rest looks good to me.
-> 
-> Regards,
-> 
->    Wolfram
-> 
-
-Regards,
-Alain
+--===============4605019968059420543==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="z2dri642qwse5u2s"
+Content-Disposition: inline
 
 
+--z2dri642qwse5u2s
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Apr 15, 2020 at 07:16:16PM +0300, Sakari Ailus wrote:
+> On Wed, Apr 15, 2020 at 12:18:27PM +0200, Maxime Ripard wrote:
+> > On Wed, Apr 08, 2020 at 06:30:51PM +0300, Sakari Ailus wrote:
+> > > Cc'ing Laurent as well.
+> > >
+> > > On Wed, Apr 08, 2020 at 06:28:57PM +0300, Sakari Ailus wrote:
+> > > > Hi Maxime,
+> > > >
+> > > > On Wed, Apr 08, 2020 at 03:43:15PM +0200, Maxime Ripard wrote:
+> > > > > On Wed, Apr 08, 2020 at 02:35:28PM +0200, Tomasz Figa wrote:
+> > > > > > On Wed, Apr 8, 2020 at 2:21 PM Maxime Ripard <maxime@cerno.tech=
+> wrote:
+> > > > > > > On Tue, Apr 07, 2020 at 08:20:35PM +0300, Sakari Ailus wrote:
+> > > > > > > > On Tue, Apr 07, 2020 at 06:46:06PM +0200, Tomasz Figa wrote:
+> > > > > > > > > On Tue, Apr 7, 2020 at 6:40 PM Sakari Ailus <sakari.ailus=
+@iki.fi> wrote:
+> > > > > > > > > >
+> > > > > > > > > > On Tue, Apr 07, 2020 at 05:47:41PM +0200, Robert Foss w=
+rote:
+> > > > > > > > > > > On Tue, 7 Apr 2020 at 14:32, Maxime Ripard <maxime@ce=
+rno.tech> wrote:
+> > > > > > > > > > > >
+> > > > > > > > > > > > Hi Robert,
+> > > > > > > > > > > >
+> > > > > > > > > > > > On Tue, Apr 07, 2020 at 01:29:05PM +0200, Robert Fo=
+ss wrote:
+> > > > > > > > > > > > > On Tue, 7 Apr 2020 at 10:36, Maxime Ripard <maxim=
+e@cerno.tech> wrote:
+> > > > > > > > > > > > > > On Mon, Apr 06, 2020 at 11:35:07AM +0300, Sakar=
+i Ailus wrote:
+> > > > > > > > > > > > > > > > But that 19.2MHz is not a limitation of the=
+ device itself, it's a
+> > > > > > > > > > > > > > > > limitation of our implementation, so we can=
+ instead implement
+> > > > > > > > > > > > > > > > something equivalent in Linux using a clk_s=
+et_rate to 19.2MHz (to make
+> > > > > > > > > > > > > > > > sure that our parent clock is configured at=
+ the right rate) and the
+> > > > > > > > > > > > > > > > clk_get_rate and compare that to 19.2MHz (t=
+o make sure that it's not
+> > > > > > > > > > > > > > > > been rounded too far apart from the frequen=
+cy we expect).
+> > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > This is doing exactly the same thing, excep=
+t that we don't encode our
+> > > > > > > > > > > > > > > > implementation limitations in the DT, but i=
+n the driver instead.
+> > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > What I really wanted to say that a driver tha=
+t doesn't get the clock
+> > > > > > > > > > > > > > > frequency from DT but still sets that frequen=
+cy is broken.
+> > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > This frequency is highly system specific, and=
+ in many cases only a certain
+> > > > > > > > > > > > > > > frequency is usable, for a few reasons: On ma=
+ny SoCs, not all common
+> > > > > > > > > > > > > > > frequencies can be used (e.g. 9,6 MHz, 19,2 M=
+Hz and 24 MHz; while others
+> > > > > > > > > > > > > > > are being used as well), and then that freque=
+ncy affects the usable CSI-2
+> > > > > > > > > > > > > > > bus frequencies directly --- and of those, on=
+ly safe, known-good ones
+> > > > > > > > > > > > > > > should be used. IOW, getting the external clo=
+ck frequency wrong typically
+> > > > > > > > > > > > > > > has an effect that that none of the known-goo=
+d CSI-2 bus clock frequencies
+> > > > > > > > > > > > > > > are available.
+> > > > > > > > > > > > > >
+> > > > > > > > > > > > > > So clock-frequency is not about the "Frequency =
+of the xvclk clock in
+> > > > > > > > > > > > > > Hertz", but the frequency at which that clock m=
+ust run on this
+> > > > > > > > > > > > > > particular SoC / board to be functional?
+> > > > > > > > > > > > > >
+> > > > > > > > > > > > > > If so, then yeah, we should definitely keep it,=
+ but the documentation
+> > > > > > > > > > > > > > of the binding should be made clearer as well.
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > Alright so, let me summarise the desired approach=
+ then.
+> > > > > > > > > > > >
+> > > > > > > > > > > > There's a separate discussion on the same topic her=
+e:
+> > > > > > > > > > > > https://lore.kernel.org/linux-media/20200407122106.=
+GD4751@pendragon.ideasonboard.com/
+> > > > > > > > > > >
+> > > > > > > > > > > Thanks for the link.
+> > > > > > > > > > >
+> > > > > > > > > > > >
+> > > > > > > > > > > > > ACPI:
+> > > > > > > > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > > > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > DT:
+> > > > > > > > > > > > >   - Fetch the "clock-frequency" property
+> > > > > > > > > > > > >   - Verify it to be 19.2Mhz
+> > > > > > > > > > > > >   - Get xvclk clock
+> > > > > > > > > > > > >   - Get xvclk clock rate
+> > > > > > > > > > > > >   - Verify xvclk clock rate to be 19.2Mhz
+> > > > > > > > > > > >
+> > > > > > > > > > > > The current status is that you should
+> > > > > > > > > > > > 's/clock-frequency/link-frequencies/', and in order=
+ to replace
+> > > > > > > > > > > > assigned-clock-rates, you'll want to have a clk_set=
+_rate to 19.2MHz
+> > > > > > > > > > > > between steps 3 and 4
+> > > > > > > > > > >
+> > > > > > > > > > > Would we want to 's/clock-frequency/link-frequencies/=
+' for ACPI too?
+> > > > > > > > > > > I imagine that would cause some breakage.
+> > > > > > > > > >
+> > > > > > > > > > It would, yes, and it would be no more correct on DT ei=
+ther.
+> > > > > > > > > >
+> > > > > > > > > > There are basically two possibilities here; either use =
+the clock-frequency
+> > > > > > > > > > property and set the frequency, or rely on assigned-clo=
+ck-rates, and get
+> > > > > > > > > > the frequency instead.
+> > > > > > > > > >
+> > > > > > > > > > The latter, while I understand it is generally preferre=
+d, comes with having
+> > > > > > > > > > to figure out the register list set that closest matche=
+s the frequency
+> > > > > > > > > > obtained. The former generally gets around this silentl=
+y by the clock
+> > > > > > > > > > driver setting the closest frequency it can support.
+> > > > > > > > >
+> > > > > > > > > Wouldn't the former actually cause problems, because the =
+closest
+> > > > > > > > > frequency the clock driver can support could be pretty fa=
+r from the
+> > > > > > > > > one requested? (E.g. 19.2 MHz vs 24 MHz) The driver needs=
+ to check the
+> > > > > > > > > resulting frequency anyway.
+> > > > > > > >
+> > > > > > > > That's possible, yes; in this case there wouldn't be a guar=
+antee the
+> > > > > > > > frequency wouldn't be far off.
+> > > > > > >
+> > > > > > > assigned-clock-rates is really fragile... There's zero guaran=
+tee on
+> > > > > > > how far the actual rate is going to be from the asked one, bu=
+t more
+> > > > > > > importantly you have zero guarantee on the time frame that ra=
+te is
+> > > > > > > going to be enforced for.
+> > > > > >
+> > > > > > Is there such a guarantee if clk_set_rate() is called?
+> > > > >
+> > > > > with clk_set_rate itself, no, but...
+> > > > >
+> > > > > > > It's simply going to change the rate as a one-off thing, and =
+if
+> > > > > > > there's the next millisecond someone else is going to change =
+its rate
+> > > > > > > one way or another, it's going to do so and you won't have any
+> > > > > > > notification.
+> > > > >
+> > > > > You can get notified, and you can use clk_set_rate_exclusive if y=
+ou
+> > > > > *really* want to enforce it.
+> > > >
+> > > > Is the conclusion then we should go back to relying on the clock-fr=
+equency
+> > > > property?
+> >=20
+> > clock-frequency or link-frequencies. link-frequencies seems to be a
+> > better fit here, but we don't really have the choice for older
+> > bindings.
+>=20
+> You can't replace one with the other as the two are different things. The
+> clock-frequency refers to the external clock frequency whereas the
+> link-frequencies refers to the frequencies allowed on the CSI-2 bus.
+
+Ack.
+
+> > > > This has been discussed multiple times over the years, and I don't =
+really
+> > > > disagree with the above. The frequency is typically indeed hand-pic=
+ked for
+> > > > the hardware, and no other frequency should be used in any circumst=
+ances.
+> > > >
+> > > > No sensor driver I've seen has used clk_set_rate_exclusive() but I =
+guess
+> > > > they should. The absence of practical problems has been probably be=
+cause of
+> > > > two factors; firstly, these are typically clocks dedicated to the s=
+ensors
+> > > > and secondly, good luck.
+> >=20
+> > My point was that at least with handling the clock rate within the
+> > driver (as opposed to assigned-clock-rates) you have multiple options
+> > in dealing with changing colck rates / parents (Modelling the sensor
+> > clock as a clock itself, using clk_set_rate_exclusive, using a
+> > notifier, etc).. Some are more intrusive to the rest of the system
+> > than others (especially clk_set_rate_exclusive), so I'm not really
+> > advocating for any here, but we should make sure we have them in the
+> > first place.
+>=20
+> Using a different frequency really should not be allowed. It may be
+> possible on a development system, hobbyist platform, but never in
+> production. Therefore the exclusive variant sounds like the right one to
+> me.
+
+In all of those cases you would not allow a different frequency. The only
+difference is whether you react to a rate change in your parent clock, or
+prevent it from happening in the first place.
+
+The latter is easier to do, but has a wider impact on the rest of the system
+than the former.
+
+Maxime
+
+--z2dri642qwse5u2s
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp25mAAKCRDj7w1vZxhR
+xdLFAQDgS/6l5DqkSNLXkzh07fGnuajNVakM1El0NxhwAQ+8IwD9Hcj0jWFI9Qpx
+MPtiduaoOqotTnb0HwYz4QmM+teMNw0=
+=jp6m
+-----END PGP SIGNATURE-----
+
+--z2dri642qwse5u2s--
+
+
+--===============4605019968059420543==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4605019968059420543==--
+
