@@ -2,93 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6EE31B034D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A99011B03BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 10:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=21fhs/pw43FeZVSTzQwvcfPA4ImWJcIGRni0OApBMS4=; b=THA3uZ03Q6ktL4
-	m5ZLsbOdzPGvc32ueFgSFWzOYjRQr9u4qnapTZiQpWXuLaT92+TVp+5qkhmuTN3dxECX5dpM4R9Im
-	ubLUBPG+yBDDkHhpYGCS2AcdcLqUXqkwnHWUh6LYngKvzyVzpphmIaoq9wwyYLWkwIU6K0HVz5kpY
-	Ak8qVLS227/AGLQCiFg9zCNWuQuWv2QDUsfUMUiUP7CMZVJLX7KzX5e9cbSqXF6/kdT1tXfzc3Mws
-	JDVhgMT6gAAo/I1nQiytiqIGMN0CIgLJJ7zhgm7bIAGvlrVMPbV+luqMu4pZ6XhjP15ZtOa8NduoF
-	6XWmg8HRby8BOSnyAnqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=agbvQq5P85XxjXFJ5dkxIJfo1pQyfENA6udoArh3bB0=; b=mXoBTGCxeLvvD7
+	st2NJmjMJuTj17UVFOcntPheQG6pb7azlu6SXppHdA4LMtiEBjlh+Wz2WJT0eftPFmWqSbDUCXSpY
+	CoSampAUupi+ILMGQ7Kp/sDmCBDyIc4jS2eBh492nSxjRjHm66l5dY3zhlYDo07LfPoCOcCk7GDEq
+	JjdSa3aBCvJFm7+9+kRg8MrQKDi6Q38gG6JFF53mDnKluO4mOaSBwxHEwD8I6W8j4FfG92yV5Hp5+
+	X1crr5R2O2Vju9c8Qw60VtvDsB9dqeJ24cT+iAWVbZQE6Vn6UtTeQPMtUTzhKuugC4J6rQDsCfVEN
+	WfYs/6VwbhQEYUhuwzVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQR4b-00033r-KC; Mon, 20 Apr 2020 07:42:33 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jQRPT-0000d0-DO; Mon, 20 Apr 2020 08:04:07 +0000
+Received: from mail-vi1eur05on2084.outbound.protection.outlook.com
+ ([40.107.21.84] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQR4S-00033F-8B
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:42:25 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x18so10862637wrq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 00:42:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=36LtjihBEpeBnaRGeeCm9e2L3d20jrMG7L1AL/HArJs=;
- b=BM8Iccy/hIQbCpSekYbFcZATX4MvhvRHEo8t56sYYDBHLuWrWlNfN2U/Avqh8pAzQ+
- lJSChUqVOtITG+ntElIAo3FofQYlSUeJmVFTj1QctC3aH4uQ5UOifop/IzHxEXYnZ5my
- opGELuSrSZd/x7koJ8jWqGqe0lytTCYPvTb7bSWeBNbpH/ZOHDSjLzxqvp1xpOJsbc7o
- xGsbkEr+LTYIBgtKOpVnk5Pox8r0hmqVt3bRtQ6GUZafBrjVD4r2u3tGSKQbcyjfOLch
- 9Sfd2Iw3VJ/3lDfpUqoBIiiH3MRh0hqtXjIK8Ip29Za7xcLJ1b9QXuz0Pl6RJ3xDyOUI
- iYMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=36LtjihBEpeBnaRGeeCm9e2L3d20jrMG7L1AL/HArJs=;
- b=leKql0UbZyPWoKoxSspY5irqGo75U01ZvTkfQrs5iAtviJVqEr5kB0kDEA5g+zw78b
- p9tPIjb9wrS2U1A6udQvkWCAw7sUhfO+mhy/tOLPeC3dtMBpGfdijmM8sjAOC7tf8dV8
- 7e8lXcxS5YQ5dkerSzL/KeQiTyYiJ8iJgdcMtv69CsZaHjBEVVaacCyi38o3p9tpH+7M
- MEhmzxBAnjCJTRnISmv5N9Q7oNnfnnY7DBSn/BVBPD+pZGx+xvpOMb2AL8+md/hPhbd7
- a0GQEHqaCl8yXzwKgZDtq2uHbGKksOx+PTrK8iUF01eOXK12S2hdXiHUZkGU87CAfDDd
- GY7Q==
-X-Gm-Message-State: AGi0PuYvJMJ5dlypBfWqrIDdyC+4j3ND4hyMDSnmYq/TiHNWQ3hvOpj5
- f8Qn0ocU79la6QcWKUYod1UQ5A==
-X-Google-Smtp-Source: APiQypIBGqen1kzX4d4Wf5UYEkYdzKCnAPaaEvwxdtpe+zlIYgN/+aoVVamwm9Ox3hy3wg9aLlAaUA==
-X-Received: by 2002:a5d:6107:: with SMTP id v7mr16380670wrt.270.1587368542719; 
- Mon, 20 Apr 2020 00:42:22 -0700 (PDT)
-Received: from myrica ([2001:171b:226b:54a0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id i25sm203507wml.43.2020.04.20.00.42.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 00:42:22 -0700 (PDT)
-Date: Mon, 20 Apr 2020 09:42:13 +0200
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Christoph Hellwig <hch@infradead.org>
-Subject: Re: [PATCH v5 02/25] iommu/sva: Manage process address spaces
-Message-ID: <20200420074213.GA3180232@myrica>
-References: <20200414170252.714402-1-jean-philippe@linaro.org>
- <20200414170252.714402-3-jean-philippe@linaro.org>
- <20200416072852.GA32000@infradead.org>
- <20200416085402.GB1286150@myrica>
- <20200416121331.GA18661@infradead.org>
+ id 1jQRPJ-0000bx-4r
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 08:03:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=l7kdJ0i6CTiQRQNAgwPx+yu24JRHDRudsfAS8ZZmdXLidqfyXxyv0nI6yrMa8NDaZlUvbmCR16vaCQBtXd78BWxlGePHqbs3Egwdz25wK68yCi56qsBQXALnpiHcedP+gDqp7S8I1x0LSsogoNADeGcSBtUI1Vwy5Uq+xlF4Wzw1e0/PBiM7JC1JDHohsQammqeCKAayPQ4o5csPeF97ypIBSlKZlaGbBSs9Aa1mv3Vx4nin58lieoUm5BR68UHqL8ACg7otSOE6ujgY3h8rMZq0MAuTJqtMzuB+Kxb+9GhNLtjH1LwZsWkT1oR7lPONjbw5+u5JVdsoWyHHVaxC1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ot4VnWzMeLyBWwFCqFarg5c3goiOWwOCXCT8KT/LHTw=;
+ b=iKYXVSOgV1lCBjTpcBlDKyizVoM50HSmseym+NJR4ig37CKWUAdOjo2odojx9WLOtPBFn3bCYw0qhwCm9iLMxXLWYUYMARp4B1yKNX9gli+0h5W0B7A0NzuRMdtRXNymCPrZAY1ZiW8O4aY2NI8nm0VBgzR2paZipc1Tg67hWhOD+dwNK24wZb7yi1D7mud4fW6SaicLqQ1110xXXVAn28uoGNmGlHRj2mtbbv4OLhVVsN4ZnMYuVMpCZYU5vaLHZazjnhakkbzaj029v9ybXdpzXstyWodqvzRFWKvsWDa3m4fD3/5cs8ErUWdni4cp/tUA7q1kyMV5i8F/FDsROA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ot4VnWzMeLyBWwFCqFarg5c3goiOWwOCXCT8KT/LHTw=;
+ b=D6MM1qNnevCPffvEItqNe5qScZQ3ZF64zn621F/LTPns3jgsUDcBMwY96VWtb0nU/usLRtBUaG94CXGdMIBdY30NGhnOhqL8hrzs1c+uajvtSO28M4i0IBDIZxbvyiIsS49H0Y3ldc6hdMPkhUTl+yGy+jTT7of5nTgAZSXVxso=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2709.eurprd04.prod.outlook.com (2603:10a6:4:97::10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Mon, 20 Apr
+ 2020 08:03:51 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
+ 08:03:50 +0000
+From: peng.fan@nxp.com
+To: viresh.kumar@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ rjw@rjwysocki.net
+Subject: [PATCH 0/2] cpufreq: add i.MX7ULP support
+Date: Mon, 20 Apr 2020 15:55:12 +0800
+Message-Id: <1587369314-23452-1-git-send-email-peng.fan@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR0601CA0010.apcprd06.prod.outlook.com (2603:1096:3::20)
+ To DB6PR0402MB2760.eurprd04.prod.outlook.com
+ (2603:10a6:4:a1::14)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200416121331.GA18661@infradead.org>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.67) by
+ SG2PR0601CA0010.apcprd06.prod.outlook.com (2603:1096:3::20) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2921.25 via Frontend Transport; Mon, 20 Apr 2020 08:03:46 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.67]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: e70952e2-bf20-46f6-f941-08d7e5015c36
+X-MS-TrafficTypeDiagnostic: DB6PR0402MB2709:|DB6PR0402MB2709:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DB6PR0402MB2709435B3FD1CCACA41FE4C888D40@DB6PR0402MB2709.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5797;
+X-Forefront-PRVS: 03793408BA
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(39860400002)(366004)(376002)(136003)(346002)(396003)(956004)(2616005)(36756003)(316002)(186003)(86362001)(4744005)(16526019)(81156014)(8676002)(966005)(8936002)(6506007)(26005)(69590400007)(52116002)(6512007)(478600001)(6486002)(5660300002)(66476007)(4326008)(66946007)(66556008)(2906002)(9686003)(6666004);
+ DIR:OUT; SFP:1101; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: QeiLpvTVECjb9DiaEpAY1/XLtcyVS0rN6Mn/4ZJKXdtcRwGgPFyY8oHbqdyPaNqXliBMhYElnn9YpJlGO3/4hwO3AAnZOiNGdm9NPTPqT8MD8u1ckRksh9nKtPdoQgBVy71uvw3NbjJJ7OyS9d9dYIY7S5SeLGTpJtnc6IMAneaZ/0U31ttcEmyGNYXTpEd0ns+JEpvG1w3rwHtGhgqOJYSeaWaqrwrgsxTwcEH8YO0wKYXVYizePEyDyIbbep16m4TXn9A/exsmXOr6xF+cv79VbKLBrAe3UZWCvtsNcTC43N7XyOy2GFS7kKEY1hFPImRWzc/444DbbTs91E3U5fBqniqUILbwlf9CwJ2nC+xHoXaMPVkD17k3pnaygvpmsxHkm8lNtl1VW/DvHKkdn22yiEQaWgGi5Qkhw/f1rWWCgkZnLVqP2u+vAsQqSNEQTwCXBC2vWbHK43yYR2oM7AeMOSTf0ElvI/Jz+g8Ohxv7DAFvMgjCwWIJIWbYDFrzrSnhk0pCVz3RJ93G3O5FeDr2URjqjW/RKVOS7yBHtYJbtgZ5KM8I5NwvLdCkmWZBS4WJCvf0wOx01+pU1VFTdQ==
+X-MS-Exchange-AntiSpam-MessageData: G4z7cZ6BIcrwnEadSSMp0Dc7ZZANExKG+dCErAUyJ804LVziU2NrW46wLjAcpwln+hresF2YVTpWTX6cILFwwJH/jiy9GfRbG/RRJ9ql3Qjj40g16AlZWaA29Iuc6XK1H/mBn1S1b6x2hnJbhx+0Hw==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e70952e2-bf20-46f6-f941-08d7e5015c36
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Apr 2020 08:03:50.8216 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: BlEYBWWWklKrKdKu0hLy0Kd7t3tfEfpTv1ByI5RXL1vwypK05q6mLONLdw2asmSzLHe971JDXPrnfCexuT9S+A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2709
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_004224_304939_20E8490F 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20200420_010357_188904_ED14DAC0 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.21.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,50 +125,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
- joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, catalin.marinas@arm.com,
- zhangfei.gao@linaro.org, xuzaibo@huawei.com, will@kernel.org,
- christian.koenig@amd.com, linux-arm-kernel@lists.infradead.org,
- baolu.lu@linux.intel.com
+Cc: Peng Fan <peng.fan@nxp.com>, Anson.Huang@nxp.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 16, 2020 at 05:13:31AM -0700, Christoph Hellwig wrote:
-> On Thu, Apr 16, 2020 at 10:54:02AM +0200, Jean-Philippe Brucker wrote:
-> > On Thu, Apr 16, 2020 at 12:28:52AM -0700, Christoph Hellwig wrote:
-> > > > +	rcu_read_lock();
-> > > > +	hlist_for_each_entry_rcu(bond, &io_mm->devices, mm_node)
-> > > > +		io_mm->ops->invalidate(bond->sva.dev, io_mm->pasid, io_mm->ctx,
-> > > > +				       start, end - start);
-> > > > +	rcu_read_unlock();
-> > > > +}
-> > > 
-> > > What is the reason that the devices don't register their own notifiers?
-> > > This kinds of multiplexing is always rather messy, and you do it for
-> > > all the methods.
-> > 
-> > This sends TLB and ATC invalidations through the IOMMU, it doesn't go
-> > through device drivers
-> 
-> I don't think we mean the same thing, probably because of my rather
-> imprecise use of the word device.
-> 
-> What I mean is that the mmu_notifier should not be embedded into the
-> io_mm structure (whch btw, seems to have a way to generic name, just
-> like all other io_* prefixed names), but instead into the
-> iommu_bond structure.  That avoid the whole multiplexing layer.
+From: Peng Fan <peng.fan@nxp.com>
 
-Right, I can see the appeal. I still like having a single mmu notifier per
-mm because it ensures we allocate a single PASID per mm (as required by
-x86). I suppose one alternative is to maintain a hashtable of mm->pasid,
-to avoid iterating over all bonds during allocation.
+This is a splited patchset from https://patchwork.kernel.org/cover/11390589/
+patch 11/14 and patch 12/14 posted 2 months ago.
 
-Thanks,
-Jean
+This is to use cpufreq dt driver target_intermediate to implement
+cpufreq for i.MX7ULP, because i.MX7ULP has some specific requirements
+for core clk changing.
+
+To make cpufreq on i.MX7ULP full function, there still more patches
+required:
+https://patchwork.kernel.org/cover/11491149/
+https://patchwork.kernel.org/patch/11390559/
+
+However with this current patchset applied, it not break anything,
+because the cpufreq device has not been registered, and opp table
+not added.
+
+Peng Fan (2):
+  cpufreq: Add i.MX7ULP to cpufreq-dt-platdev blacklist
+  cpufreq: imx-cpufreq-dt: support i.MX7ULP
+
+ drivers/cpufreq/cpufreq-dt-platdev.c |  1 +
+ drivers/cpufreq/imx-cpufreq-dt.c     | 84 +++++++++++++++++++++++++++++++++++-
+ 2 files changed, 83 insertions(+), 2 deletions(-)
+
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
