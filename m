@@ -2,57 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF4691B06FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 13:03:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3971C1B0701
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 13:03:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VeaS0AsVXkO+ZTxxNMcHnh+4n0iEwvoOv0fiboZWDXQ=; b=mkPHWUXDRhYATThE/jPvuV6f8
-	z8PKoLha4wUF8/n97T03SqlG1Lr7zSdpbqUdhk34CkELQ0Mhi6aOFClikMApA+J5FecN7WqEuHLSF
-	1qs9lq34XZEFevTApTRg16eFcAz9XIKCZPf/zi7JIOQTtfln/wYfxKakmAgtPr/Y/x9y15ZUiHhB4
-	pG8Ups5dTXCxVcCqK4qUSIS4sjgq7K3Z01crnUIaKFjV/YXILuSyDUELMSfqzPwB1zwZiZ/H2VnCR
-	CKXTUvrvmR084EQU/eHuQV0uTbnzTMtsFEegF9fWN6OJ3j8DaznNvhHhjFiYDaFK0vczd/hRIIMU1
-	zghy70+kQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=13gzLJoM3Lgww7w7o+23UwU06n+DipomsOyeE2CHTzY=; b=j8gr6zLXn8Qh9IXiSfTp/zRZQd
+	tDZjDJhkC1uKNJpz2f83XRL26ydlCiKOyykD1+Pnuka/PS50+tVMQvr8HMUE6nDWSP9vqBrpqKw3x
+	w/sipABvCuMucuPh/Ttq7N1WbilmMAcsKJ/FVEDcjEA8fg35RhwQ/q7H2OR4RRQ/fDGPJKG0whRLP
+	ItEyKfzdX2QsTM/PVBqKfJ9rDDURL18zmswe2wvKPtRYSjDL6JCrsvbw0RMXvPeHfJxU1SJ00MBq5
+	Kg9BioGw4Rp818Lp3FtL4vV2jHPTmAjMpva6wbawd7kgXzXnlxtXe5iVhoLp0rMX4Suki3bvX1FBV
+	gD3sp4Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQUCw-0008Di-NS; Mon, 20 Apr 2020 11:03:22 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jQUDF-0008Ql-0e; Mon, 20 Apr 2020 11:03:41 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQUCk-0008Br-A6
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 11:03:11 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 185D62A0C63
-Subject: Re: [RFC v3 1/2] thermal: core: Let thermal zone device's mode be
- stored in its struct
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-References: <9ac3b37a-8746-b8ee-70e1-9c876830ac83@linaro.org>
- <20200417162020.19980-1-andrzej.p@collabora.com>
- <CGME20200417162037eucas1p11663f116fd9844d38c0b5d4d7ebe9f1c@eucas1p1.samsung.com>
- <20200417162020.19980-2-andrzej.p@collabora.com>
- <4b97e46a-e7ef-ee22-227e-d35ebef458b0@samsung.com>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <4cda3e11-7bea-8445-cd51-4b25dcafc741@collabora.com>
-Date: Mon, 20 Apr 2020 13:03:02 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQUCk-0008CY-TN
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 11:03:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t63so9490397wmt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 04:03:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:subject:in-reply-to:date:message-id
+ :mime-version; bh=RrxAUu1aJiYwPMpjnlo5gqgVd7ZtEZg5UXQs37AT2OA=;
+ b=lMFob3fxLkovbZefAL5wA3odVFIm8ECwFR8ONBNSMabgh9EC7cc1FPL9ylGueS3l7N
+ Oao6KqAJmY/5QX0pzOeisTWEPOvDMQG9B+35JR/KSFGBdoV4wZ6OzZWAOvk4hKkMtBWf
+ eB8fnGfr2wuWqVXqAmHaYVPGDgRQhRb36FTMASiRw4Neeyms8nCwIKJXjP39wK+Drgus
+ sj+0AHJc3GRtn9s+3aA/BEhBpM2xdpMJHCK8Cujl5ZRsEF29TNerD8+rCEQ7LjcNp9nL
+ Ddaz7/UXcIR/+wloa0P4zUKSPYl/9Aokn5frOpGbBhU8qUCspjSMMjlUYgNHucJAxPGy
+ Uxyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=RrxAUu1aJiYwPMpjnlo5gqgVd7ZtEZg5UXQs37AT2OA=;
+ b=lME63hkr/xYdApUrCRXlYrd+oWiSmMPymbRjUi3r8qnh8+DcEfqsFcWj2wTMd0Bnbs
+ qzHosYNYw8SScoarzqcv9vL3MDYZ8Jc6rimeeXdSDytTWY/UnP8PI2jJwm4JG7CHuKzp
+ HosvhdG0j38GnwIB1ql2JXXrx8iI6+nP74gZ8MUtHJcm/BjG58gAfuysfSjI1Fmb0m8g
+ 8YlccMb6TbpFCpaSWnUOh4XqojTBT0Zws5tY8C9dazltbR74xbTcNesKoqJje3F+cEZO
+ QzyTXIC/aTIJs3tggj0VVjPRlhSwg1yudvNgymvxMykDEyefl961Lq+GxQy5IuK3VlDl
+ VGiQ==
+X-Gm-Message-State: AGi0Puahvlmk3MB/pp/yUhswTboO2TcouVeSoSvL6PicIg+XO7/Zi4sh
+ dY/iVJyZx8ziIcO2ZE5+RpgpZg==
+X-Google-Smtp-Source: APiQypJtVrmYvXvt0ysu+IAoLgUFCE4HqPBjkqhR5RywtPrJXwK2VKvhMirSaf+WR3eKuCnr5dqesQ==
+X-Received: by 2002:a05:600c:14d4:: with SMTP id
+ i20mr17776614wmh.118.1587380588962; 
+ Mon, 20 Apr 2020 04:03:08 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id m188sm859157wme.47.2020.04.20.04.03.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 04:03:08 -0700 (PDT)
+References: <20200419053815.15731-1-christianshewitt@gmail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Christian Hewitt <christianshewitt@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/5] arm64: dts: meson: Simplify G12/SM1 Audio Configs
+In-reply-to: <20200419053815.15731-1-christianshewitt@gmail.com>
+Date: Mon, 20 Apr 2020 13:03:07 +0200
+Message-ID: <1jk12apggk.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <4b97e46a-e7ef-ee22-227e-d35ebef458b0@samsung.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_040310_475622_F0AC646E 
-X-CRM114-Status: GOOD (  14.74  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200420_040310_950301_6577CEDD 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,60 +99,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- platform-driver-x86@vger.kernel.org, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>, Darren Hart <dvhart@infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- Len Brown <lenb@kernel.org>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
- Jiri Pirko <jiri@mellanox.com>, Thomas Gleixner <tglx@linutronix.de>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>,
- Shawn Guo <shawnguo@kernel.org>, Peter Kaestle <peter@piie.net>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
- Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQmFybG9taWVqLAoKVGhhbmtzIGZvciBsb29raW5nIGludG8gdGhlIHNlcmllcy4KCkBEYW5p
-ZWwgY2FuIHlvdSBzZWUgYmVsb3c/CgpXIGRuaXUgMTkuMDQuMjAyMCBvwqAxMzozOCwgQmFydGxv
-bWllaiBab2xuaWVya2lld2ljeiBwaXN6ZToKPiAKPiBIaSBBbmRyemVqLAo+IAo+IE9uIDQvMTcv
-MjAgNjoyMCBQTSwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+PiBUaGVybWFsIHpvbmUg
-ZGV2aWNlcycgbW9kZSBpcyBzdG9yZWQgaW4gaW5kaXZpZHVhbCBkcml2ZXJzLiBUaGlzIHBhdGNo
-Cj4+IGNoYW5nZXMgaXQgc28gdGhhdCBtb2RlIGlzIHN0b3JlZCBpbiBzdHJ1Y3QgdGhlcm1hbF96
-b25lX2RldmljZSBpbnN0ZWFkLgo+Pgo+PiBBcyBhIHJlc3VsdCBhbGwgZHJpdmVyLXNwZWNpZmlj
-IHZhcmlhYmxlcyBzdG9yaW5nIHRoZSBtb2RlIGFyZSBub3QgbmVlZGVkCj4+IGFuZCBhcmUgcmVt
-b3ZlZC4gQ29uc2VxdWVudGx5LCB0aGUgZ2V0X21vZGUoKSBpbXBsZW1lbnRhdGlvbnMgaGF2ZSBu
-b3RoaW5nCj4+IHRvIG9wZXJhdGUgb24gYW5kIG5lZWQgdG8gYmUgcmVtb3ZlZCwgdG9vLgo+Pgo+
-PiBTb21lIHRoZXJtYWwgZnJhbWV3b3JrIHNwZWNpZmljIGZ1bmN0aW9ucyBhcmUgaW50cm9kdWNl
-ZDoKPj4KPj4gdGhlcm1hbF96b25lX2RldmljZV9nZXRfbW9kZSgpCj4+IHRoZXJtYWxfem9uZV9k
-ZXZpY2Vfc2V0X21vZGUoKQo+PiB0aGVybWFsX3pvbmVfZGV2aWNlX2VuYWJsZSgpCj4+IHRoZXJt
-YWxfem9uZV9kZXZpY2VfZGlzYWJsZSgpCj4+Cj4+IHRoZXJtYWxfem9uZV9kZXZpY2VfZ2V0X21v
-ZGUoKSBhbmQgaXRzICJzZXQiIGNvdW50ZXJwYXJ0IHRha2UgdHpkJ3MgbG9jawo+PiBhbmQgdGhl
-ICJzZXQiIGNhbGxzIGRyaXZlcidzIHNldF9tb2RlKCkgaWYgcHJvdmlkZWQsIHNvIHRoZSBsYXR0
-ZXIgbXVzdAo+PiBub3QgdGFrZSB0aGlzIGxvY2sgYWdhaW4uIEF0IHRoZSBlbmQgb2YgdGhlICJz
-ZXQiCj4+IHRoZXJtYWxfem9uZV9kZXZpY2VfdXBkYXRlKCkgaXMgY2FsbGVkIHNvIGRyaXZlcnMg
-ZG9uJ3QgbmVlZCB0byByZXBlYXQgdGhpcwo+PiBpbnZvY2F0aW9uIGluIHRoZWlyIHNwZWNpZmlj
-IHNldF9tb2RlKCkgaW1wbGVtZW50YXRpb25zLgo+Pgo+PiBUaGUgc2NvcGUgb2YgdGhlIGFib3Zl
-IDQgZnVuY3Rpb25zIGlzIHB1cnBvc2VkbHkgbGltaXRlZCB0byB0aGUgdGhlcm1hbAo+PiBmcmFt
-ZXdvcmsgYW5kIGRyaXZlcnMgYXJlIG5vdCBzdXBwb3NlZCB0byBjYWxsIHRoZW0uIFRoaXMgZW5j
-YXBzdWxhdGlvbgo+IAo+IFRoaXMgc2hvdWxkIGJlIHRydWUgb25seSBmb3IgdGhlcm1hbF96b25l
-X2RldmljZV97Z2V0LHNldH1fbW9kZSgpLgo+IAo+IHRoZXJtYWxfem9uZV9kZXZpY2Vfe2VuLGRp
-c31hYmxlKCkgc2hvdWxkIGJlIGF2YWlsYWJsZSBmb3IgZGV2aWNlIGRyaXZlcnM6Cj4gCj4gKiBv
-Zi90aGVybWFsIGRldmljZSBkcml2ZXJzIG5lZWQgdG8gZW5hYmxlIHRoZXJtYWwgZGV2aWNlIGl0
-c2VsZgo+ICAgIChwbGVhc2UgcmVmZXIgdG8gbXkgcGF0Y2hzZXQgZm9yIGRldGFpbHMpCj4gCj4g
-KiBkZXZpY2UgZHJpdmVycyBuZWVkIHRvIGNhbGwgdGhlbSBvbiAtPnN1c3BlbmQgYW5kIC0+cmVz
-dW1lIG9wZXJhdGlvbnMKPiAKCkBEYW5pZWw6CgpIb3cgZG9lcyB0aGlzIGNvbXBhcmUgdG8KCiJK
-dXN0OgoKdGhlcm1hbF96b25lX2RldmljZV9nZXRfbW9kZSgpCnRoZXJtYWxfem9uZV9kZXZpY2Vf
-c2V0X21vZGUoKQp0aGVybWFsX3pvbmVfZGV2aWNlX2Rpc2FibGUoKQp0aGVybWFsX3pvbmVfZGV2
-aWNlX2VuYWJsZSgpCgpBbmQgYWxsIG9mIHRoZW0gaW4gZHJpdmVycy90aGVybWFsL3RoZXJtYWxf
-Y29yZS5oIi4gRGlkIEkgdW5kZXJzdGFuZAp5b3UgY29ycmVjdGx5PwoKQW5kcnplagoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+On Sun 19 Apr 2020 at 07:38, Christian Hewitt <christianshewitt@gmail.com> wrote:
+
+> This series creates two new dtsi with the HDMI and HDMI+S/PDIF audio configs
+> used in most G12/SM1 Android box devices and some SBC's and switches most dts
+> to use them. I have not touched the SEI510/610 which have extra hardware
+> in their dts, and the U200 which does not currently have audio support, but
+> will likely receive an 'all possible routings' master config when Jerome
+> sends his next set of changes (looking at his WIP branch) so I leave U200
+> for him to address later.
+>
+> One advantaage of common configs is that distros that need to embed alsa
+> conf files as part of their userspace support now only need to include two
+> confs that will automatically support more boards and boxes as they are
+> added, instead of needing to track and add confs or card aliases for every
+> new device.
+>
+> Christian Hewitt (5):
+>   arm64: dts: meson: create common hdmi/hdmi-spdif audio dtsi
+
+I'm really not a fan of this. Yes the configuration appear to be similar
+but there always the same. When they are, it is usually by lack of
+knowledge of the platform and its use cases.
+
+Using the same sound card model is particularily bad.
+
+>   arm64: dts: meson: convert ugoos-am6 to common w400 dtsi
+>   arm64: dts: meson: convert odroid-n2 to hdmi dtsi
+>   arm64: dts: meson: convert khadas-vim3/vim3l to hdmi dtsi
+
+For example on the vim3, copying the sei610 was not the best choice
+possible.
+
+- SEI 610 prepares TDM B for 8 ch HDMI because TDM A is used for the
+ internal speaker
+- VIM3 has the TDM B on the 40 pin header and TDM C on the M2 port.
+  It would be better to use TDM A for HDMI is this case (patch will
+ follow)
+
+This is just an example. Bottom, it designs are really copy/paste of the
+ref design, the dtsi should include all the platform, not just the
+sound.
+
+>   arm64: dts: meson: convert x96max to hdmi dtsi
+>
+>  .../amlogic/meson-g12-audio-hdmi-spdif.dtsi   | 139 +++++
+>  .../dts/amlogic/meson-g12-audio-hdmi.dtsi     |  96 ++++
+>  .../boot/dts/amlogic/meson-g12a-x96-max.dts   | 131 +----
+>  .../dts/amlogic/meson-g12b-khadas-vim3.dtsi   |  85 ---
+>  .../boot/dts/amlogic/meson-g12b-odroid-n2.dts |  89 +--
+>  .../boot/dts/amlogic/meson-g12b-ugoos-am6.dts | 541 +-----------------
+>  .../boot/dts/amlogic/meson-g12b-w400.dtsi     | 423 ++++++++++++++
+>  .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |   1 +
+>  8 files changed, 663 insertions(+), 842 deletions(-)
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12-audio-hdmi-spdif.dtsi
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12-audio-hdmi.dtsi
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-w400.dtsi
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
