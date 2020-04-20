@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBB451B0C8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:23:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E6241B0C8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:25:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oDduAIj1nKezlQIAQJckd33eKBVZuDGDNmvTfTwHoA8=; b=IT9HmFlFOWZLG1
-	05FBejZ5dGP2Fe6a0Qu0MWRO9N806hLpCW0zG4FAaxVaYtJJQodQM2tO6vvsuj92+QfLfVNSoZVg8
-	aIn5CzKUEnq5GBpkTSXR50RGAWGb0JJ/1TOJ808Hk0Esr/iGBbVa4Mp9xiEQwQ9sr28bv/c1FKNaO
-	rPS1ZyaMZtmlKcaNHinS3qtZMk12x/098mbrkQP5KgaEJY0qRAzmOuRtKkxItqdsL9VrJNEHynJ5A
-	dPNN2CtyZdySY0CBe4V//K4YD/V6iFlj9kwisqU64H1PlNCCm5uNz9PcP95ns7qaRn05z79Usaoqo
-	1959Kq1a+yyvNYC0PDrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9IiakuoCpuRv8nolI+fAag7tFRCufTJ99vUo4dFPkMw=; b=Vq3BD9J1Fs8l3b2a77pMAwtIv
+	QeoauKu6EozSA60+7RmyzOuLdmJ/r9eo7OVFWp+lN3r6/IgEpz7PQxBMYva7EwgCs6IhCpwaLC7R0
+	7WpR02xMgYp6P3TaIICDl1u4gSIMzGiqbcDBWj4ue7vsgmXpoxSmJQp6TIftLiVOUfJ2awRzp5Cjj
+	3gcziqutHk58X1dVUSqh8u157l16elZwxmiLmg/PAmXn5r6CP5hfNCziaP1ztKKYzl2YRSItgPxsL
+	3twU9IXm7a9EyElU2V3delXEcF9zL7V/9uuWxaopYCh+E3EvDDCq1k62z6hTePoGf1XKbXt4PELY0
+	Tcml+L5rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQWOo-0006dx-5b; Mon, 20 Apr 2020 13:23:46 +0000
-Received: from plaes.org ([188.166.43.21])
+	id 1jQWQH-0001QI-Uu; Mon, 20 Apr 2020 13:25:17 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQWOc-0006c0-PV
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:23:36 +0000
-Received: from plaes.org (localhost [127.0.0.1])
- by plaes.org (Postfix) with ESMTPSA id CCD8740A7B;
- Mon, 20 Apr 2020 13:23:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=plaes.org; s=mail;
- t=1587389012; bh=C6Dtbg3q0uXybP36NbU5y1NPoiLkrqHskL4a1HmkXWU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XODGn7RM9T0LNlWavtietxGietUiG8szqR/r/Ex8cH53BxJoy/0sxZfiVUiDoNyuC
- hrg3crDPBSZHsnYNejAbkrjpBitLNS7R+huQ80GG4dy8r+h2Nfyw5rhFFtecBZ1Um3
- ZoNMkzvaBlAMYLnGKegF78CMqQtL4ru9+sqmfoCeJTrD7kIGeBPgWNxA+jRzS2MyGX
- kMV+h8IfKk/ua0qqJqxirDZ4WG7gS7AFPt7xX6nSe4fCS6tr/2f8z5Tr0Bqb9ZIZQF
- LCe15byUGKpGdooDQ5b1frNivo2UklScnIyoRZVHCxZljVoBSbbn15V66bxuwEkyKg
- 1XIujwiTlFzFw==
-Date: Mon, 20 Apr 2020 13:23:31 +0000
-From: Priit Laes <plaes@plaes.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 4/4] ARM: dts: sun7i: Use syscon-based implementation for
- gmac
-Message-ID: <20200420132331.GB18522@plaes.org>
-References: <20200417221730.555954-1-plaes@plaes.org>
- <20200417221730.555954-5-plaes@plaes.org>
- <20200420125919.3bqosps7nzwvmasn@gilmour.lan>
+ id 1jQWQ6-0000W9-S7
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:25:08 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id A1E9E52B;
+ Mon, 20 Apr 2020 09:25:05 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 20 Apr 2020 09:25:06 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=yhnengzziE5vWLTBpc6TNXdgy73
+ OT3X2ZS0zw6Wtevw=; b=azA8QLNwW36SCKr3HQis4odPzSWwi4U88WuVeVY14ob
+ NDbQfJICGGzzlUTu3pHWH9zcBwI86JB2UozgMbXKCznSJTP6eVIMhHho0y2usVXg
+ CKbqqo3uUS2YuYTSOU319pS8AOkt63fUqJxTsbLE+MSCYg3BnrAaLL9dhILJZF4d
+ tCxvCv3WNeSXXQOfL//doHnWo2VG3Wqh+X0tPGB5yksUmVB1rXWY9dOMDsu3H6FX
+ a6S3KMSO9+7at32DwO1UBnNqEeVprjoYdwJAwN4kq+zFSjugAsdSpIEfpFMVd5pF
+ 1cB1x/C754snD44ZJtAUUS0RAkgmjzxDLAYA+Qe91BA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=yhneng
+ zziE5vWLTBpc6TNXdgy73OT3X2ZS0zw6Wtevw=; b=LDabqPL769MMweHDyQwOF7
+ 6inA3sLIdEIjZzH8iojdhdDPIHqjRyJC3wlxrgLzqPNezIRE/jbwAe7NgSTxmt9K
+ KFW5XMwaj2XR2Lz57rw7//yvsNcP6J3cfigVpGwOmHtG+GceO5ewTaZEa5QmuRoV
+ aGVSOiniLgHZFTeFxrKV8pU++UHtUxmL+o95/mKYfmYSbbE+iMMcUdxgyufTLepw
+ tqikKuShseCopd4b4Setjm1D84ZHcPL/oqHD/o0nA1IUA3dTGwKyDHxeuQ243BPY
+ o1LlM9fcSmG57NfAbZtSMszxCmutmDW8Oh/5pMaKX6BbRDwMltPSAn2no0dDGC7A
+ ==
+X-ME-Sender: <xms:raKdXihyfHpv81ALfb1YoHtF2BVbmDjGgXLdDuaf3bKPMQzoeaTQKQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeefgdeigecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:raKdXkFCHcowvAEl21ur6EYF_t-bKFth9B6LxGKsnYmBDOijs8ikkw>
+ <xmx:raKdXtBwbwDvYzdmGzKEmi5rD_uVtqgXI6jadnHpmuIUs7w75fLUdQ>
+ <xmx:raKdXo8uaAE9SdE4qPxmQQKDbfcy0gzYoEyOV8Y6L7dJQYwAW2gbAQ>
+ <xmx:saKdXoqdtuHV2nYQJGk0XRqX3LJ53kyxo1-JizyZ12ODFOlARn3enA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 74791328005E;
+ Mon, 20 Apr 2020 09:25:01 -0400 (EDT)
+Date: Mon, 20 Apr 2020 15:25:00 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v5 0/9] Add support for Allwinner H6 DVFS
+Message-ID: <20200420132500.gsnsdv3jaotjup5w@gilmour.lan>
+References: <20200420130021.3841-1-peron.clem@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200420125919.3bqosps7nzwvmasn@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200420130021.3841-1-peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_062334_967482_C3A4F589 
-X-CRM114-Status: GOOD (  18.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_062506_977643_38750AF0 
+X-CRM114-Status: GOOD (  10.58  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,93 +102,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1656589984667199390=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 02:59:19PM +0200, Maxime Ripard wrote:
-> On Sat, Apr 18, 2020 at 01:17:30AM +0300, Priit Laes wrote:
-> > Use syscon-based approach to access gmac clock configuration
-> > register, instead of relying on a custom clock driver.
-> > 
-> > As a bonus, we can now drop the custom clock implementation
-> > and dummy clocks making sun7i fully CCU-compatible.
-> > 
-> > Signed-off-by: Priit Laes <plaes@plaes.org>
-> > ---
-> >  arch/arm/boot/dts/sun7i-a20.dtsi | 36 +++-----------------------------
-> >  1 file changed, 3 insertions(+), 33 deletions(-)
-> > 
-> > diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
-> > index ffe1d10a1a84..750962a94fad 100644
-> > --- a/arch/arm/boot/dts/sun7i-a20.dtsi
-> > +++ b/arch/arm/boot/dts/sun7i-a20.dtsi
-> > @@ -219,37 +219,6 @@ osc32k: clk-32k {
-> >  			clock-frequency = <32768>;
-> >  			clock-output-names = "osc32k";
-> >  		};
-> > -
-> > -		/*
-> > -		 * The following two are dummy clocks, placeholders
-> > -		 * used in the gmac_tx clock. The gmac driver will
-> > -		 * choose one parent depending on the PHY interface
-> > -		 * mode, using clk_set_rate auto-reparenting.
-> > -		 *
-> > -		 * The actual TX clock rate is not controlled by the
-> > -		 * gmac_tx clock.
-> > -		 */
-> > -		mii_phy_tx_clk: clk-mii-phy-tx {
-> > -			#clock-cells = <0>;
-> > -			compatible = "fixed-clock";
-> > -			clock-frequency = <25000000>;
-> > -			clock-output-names = "mii_phy_tx";
-> > -		};
-> > -
-> > -		gmac_int_tx_clk: clk-gmac-int-tx {
-> > -			#clock-cells = <0>;
-> > -			compatible = "fixed-clock";
-> > -			clock-frequency = <125000000>;
-> > -			clock-output-names = "gmac_int_tx";
-> > -		};
-> > -
-> > -		gmac_tx_clk: clk@1c20164 {
-> > -			#clock-cells = <0>;
-> > -			compatible = "allwinner,sun7i-a20-gmac-clk";
-> > -			reg = <0x01c20164 0x4>;
-> > -			clocks = <&mii_phy_tx_clk>, <&gmac_int_tx_clk>;
-> > -			clock-output-names = "gmac_tx";
-> > -		};
-> >  	};
-> >  
-> >  
-> > @@ -1511,11 +1480,12 @@ mali: gpu@1c40000 {
-> >  
-> >  		gmac: ethernet@1c50000 {
-> >  			compatible = "allwinner,sun7i-a20-gmac";
-> > +			syscon = <&ccu>;
-> >  			reg = <0x01c50000 0x10000>;
-> >  			interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
-> >  			interrupt-names = "macirq";
-> > -			clocks = <&ccu CLK_AHB_GMAC>, <&gmac_tx_clk>;
-> > -			clock-names = "stmmaceth", "allwinner_gmac_tx";
-> > +			clocks = <&ccu CLK_AHB_GMAC>;
-> > +			clock-names = "stmmaceth";
-> 
-> I guess you also need to update the binding so that it considers it valid?
 
-Yes, will do it in the next round.
-
-> 
-> Maxime
+--===============1656589984667199390==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fktdxkekevkzu3a3"
+Content-Disposition: inline
 
 
+--fktdxkekevkzu3a3
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Apr 20, 2020 at 03:00:12PM +0200, Cl=E9ment P=E9ron wrote:
+> Hi,
+>=20
+> This is the same as v4 and v3 on top.
+> I have also fix the commit title for Pine H64 as we now only enable CPU D=
+VFS.
+>=20
+> Sorry for the noise,
+> Cl=E9ment
+
+I dropped the previous ones and applied, thanks!
+Maxime
+
+--fktdxkekevkzu3a3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp2irAAKCRDj7w1vZxhR
+xTOIAQDZ6ddkodAU0H7ADOOqC0WuJOktcAKK+MPuKpf6tzBCEgEAxm0lP1QHVwMp
+YYrf4zOjMAPR251l/CaafMgcfxuSRwk=
+=xMW6
+-----END PGP SIGNATURE-----
+
+--fktdxkekevkzu3a3--
+
+
+--===============1656589984667199390==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1656589984667199390==--
+
