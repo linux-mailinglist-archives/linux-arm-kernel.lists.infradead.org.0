@@ -2,72 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6F211B02BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:18:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CCF21B02CD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:23:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RG/KvbkwyzIUOlrDN4LeZH6kTidINOlXoPDPjFx0KR0=; b=cMw7bVTgq5ly+pL4Zi4OP9e+v
-	LoOZaL1v2z0b559QrlrT+MQFpUYL2utaWcNGjDxF5cAF5M2WursiQkqdPzxiBdbiG1rgvaps8D7k/
-	yuMV/a17A4ydbYasGaEwQYSdFz2L6FI7Z5plZGauCHXvxg1dbj0R3kbkaQoQbqep59t+L3ezn1cpq
-	TkcDDxLdNGb6MyhIyRv+WsHOK0upepFEqNHb18/4Z24zqa68h4Mq20tcs0jLGhFnYDWECXdJ19FI9
-	5OmBBwNBvfzh5Er1K5iZSrm2ZyXnXl39i0/lGLo0cl/xCKXhE9Ij560mpi9BRhp/Co7BsGRnrOGGA
-	tJg3+Cv6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QNIJuiBs3HewZkY1guOPQNqkFfHvd5a+Pe/VU5KaQJI=; b=q/0kpjE9SloVB5
+	334MWgFvTpRDgHaoBVFf7Q/W7flwhcp+zr0Gp5ImbW4I7sNXDS5FAJyp5UG/TcjS3dlb0qPG3a09N
+	2KRGhyMv73e+U0dwz0of51cYtHW7HH945JHS9SRvHOpZWQUJjM+poX8URR4rPN9lSZfCASyeI9wLY
+	4NyOIUcvzheu+sGBVQsBQ4CuCU8Qx60yY5L5yEkhxqDm+HLTJSUwiSY/6prUtgBMxR2OQfb4KyTTI
+	CT7u0QLMoK/h+vNYmGBBAQdvWcfgbTgPXR6hyD4pwSnbirurb7+6wMAKHK+izUZWV//Epz/mW4F30
+	7XwD8M3pa3pj0Sbo+yow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQh3-0000tu-Br; Mon, 20 Apr 2020 07:18:13 +0000
-Received: from out30-57.freemail.mail.aliyun.com ([115.124.30.57])
+	id 1jQQla-0004wx-7i; Mon, 20 Apr 2020 07:22:54 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQgu-0000tR-7h
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:18:06 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R171e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04394;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=36; SR=0;
- TI=SMTPD_---0Tw1zGpr_1587367076; 
-Received: from 30.27.118.66(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0Tw1zGpr_1587367076) by smtp.aliyun-inc.com(127.0.0.1);
- Mon, 20 Apr 2020 15:17:58 +0800
-Subject: Re: [PATCH 1/7] KVM: s390: clean up redundant 'kvm_run' parameters
-To: Christian Borntraeger <borntraeger@de.ibm.com>, pbonzini@redhat.com,
- tsbogend@alpha.franken.de, paulus@ozlabs.org, mpe@ellerman.id.au,
- benh@kernel.crashing.org, frankja@linux.ibm.com, david@redhat.com,
- cohuck@redhat.com, heiko.carstens@de.ibm.com, gor@linux.ibm.com,
- sean.j.christopherson@intel.com, vkuznets@redhat.com, wanpengli@tencent.com,
- jmattson@google.com, joro@8bytes.org, tglx@linutronix.de, mingo@redhat.com,
- bp@alien8.de, x86@kernel.org, hpa@zytor.com, maz@kernel.org,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com
-References: <20200419075106.16248-1-tianjia.zhang@linux.alibaba.com>
- <20200419075106.16248-2-tianjia.zhang@linux.alibaba.com>
- <7a783487-2f9b-08a6-0ff6-f57bb90495a1@de.ibm.com>
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Message-ID: <e182050c-c5eb-8c83-df6e-2b46c1f15ca3@linux.alibaba.com>
-Date: Mon, 20 Apr 2020 15:17:56 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQQlP-0004th-Og; Mon, 20 Apr 2020 07:22:45 +0000
+X-UUID: cbe0a0a29bdc453e91cfadc9662cdfc9-20200419
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=3LD7CNX1tT1TEHE4Zt32/D1W/JkKnJcoEIJqaN8Kp34=; 
+ b=m3gNRm3TzTwCDsjftZfHiFv2wd1mKutwR7adD8Q9iHOxVAUNmgAkZrf5K9EzfAnSTm+BQqwhTdsa+um1wUF1NeLy1uC3qKFdfZE0XLcrxt26v3PLpU5pVgKji0z8M9akS6Z9RRsu+cbWbZQ5SGM6bE9sm/sTI7lQLRIiMBHA8qs=;
+X-UUID: cbe0a0a29bdc453e91cfadc9662cdfc9-20200419
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 798499019; Sun, 19 Apr 2020 23:22:28 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 20 Apr 2020 00:22:34 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 20 Apr 2020 15:22:26 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 20 Apr 2020 15:22:26 +0800
+Message-ID: <1587367314.8804.77.camel@mhfsdcap03>
+Subject: Re: [V6, 1/2] media: dt-bindings: media: i2c: Document OV02A10
+ bindings
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Rob Herring <robh@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Sakari Ailus
+ <sakari.ailus@linux.intel.com>
+Date: Mon, 20 Apr 2020 15:21:54 +0800
+In-Reply-To: <20200415161451.GB4438@bogus>
+References: <20191211112849.16705-1-dongchun.zhu@mediatek.com>
+ <20191211112849.16705-2-dongchun.zhu@mediatek.com>
+ <CAAFQd5AnWZqjQEVvw8gv7JzOBHxJvsOWaGrbY8CXQ_87ap-ahA@mail.gmail.com>
+ <CAAFQd5DHL3mXZGHW+XWMXTVfekamEvaEv3bLZt4Bg2UpKPohmA@mail.gmail.com>
+ <1586437408.8804.62.camel@mhfsdcap03> <20200415161451.GB4438@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <7a783487-2f9b-08a6-0ff6-f57bb90495a1@de.ibm.com>
+X-TM-SNTS-SMTP: 568BDCBF247068F3C452B6639D2840568C06ADB8A8E66CAEBE6BBCECE9347C4B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_001804_611781_94A667B5 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20200420_002243_811939_09A28E5B 
+X-CRM114-Status: GOOD (  32.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.57 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,294 +92,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Louis Kuo <louis.kuo@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Shengnan
+ Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
+ <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sj Huang <sj.huang@mediatek.com>, broonie@kernel.org,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, linux-gpio@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Rob,
 
+Thanks for the review.
 
-On 2020/4/20 15:07, Christian Borntraeger wrote:
+On Wed, 2020-04-15 at 11:14 -0500, Rob Herring wrote:
+> On Thu, Apr 09, 2020 at 09:03:28PM +0800, Dongchun Zhu wrote:
+> > Hi Mauro, Sakari, Rob,
+> > 
+> > On Wed, 2020-04-08 at 14:49 +0200, Tomasz Figa wrote:
+> > > On Tue, Dec 17, 2019 at 4:15 AM Tomasz Figa <tfiga@chromium.org> wrote:
+> > > >
+> > > > Hi Rob, Dongchun,
+> > > >
+> > > > On Wed, Dec 11, 2019 at 8:29 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
+> > > > >
+> > > > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
+> > > > >
+> > > > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > > > ---
+> > > > >  .../devicetree/bindings/media/i2c/ov02a10.txt      | 54 ++++++++++++++++++++++
+> > > > >  MAINTAINERS                                        |  7 +++
+> > > > >  2 files changed, 61 insertions(+)
+> > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
+> > > > >
+> > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov02a10.txt b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
+> > > > > new file mode 100644
+> > > > > index 0000000..18acc4f
+> > > > > --- /dev/null
+> > > > > +++ b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
+> > > > > @@ -0,0 +1,54 @@
+> > > > > +* Omnivision OV02A10 MIPI CSI-2 sensor
+> > > > > +
+> > > > > +Required Properties:
+> > > > > +- compatible: shall be "ovti,ov02a10"
+> > > > > +- clocks: reference to the eclk input clock
+> > > > > +- clock-names: shall be "eclk"
+> > > > > +- dovdd-supply: Digital I/O voltage supply, 1.8 volts
+> > > > > +- avdd-supply: Analog voltage supply, 2.8 volts
+> > > > > +- dvdd-supply: Digital core voltage supply, 1.8 volts
+> > > > > +- powerdown-gpios: reference to the GPIO connected to the powerdown pin,
+> > > > > +                  if any. This is an active low signal to the OV02A10.
+> > > >
+> > > > On the hardware level this pin is active high, i.e. the device is
+> > > > powered down when the signal is high.
+> > > >
+> > > > > +- reset-gpios: reference to the GPIO connected to the reset pin, if any.
+> > > > > +              This is an active high signal to the OV02A10.
+> > > >
+> > > > On the hardware level this pin is active low, i.e. the device is held
+> > > > in reset when the signal is low.
+> > > >
+> > > > However, there is some confusion around how the polarity flag in the
+> > > > GPIO specifier is supposed to be used.
+> > > >
+> > > > As per [1],
+> > > >
+> > > > "The gpio-specifier's polarity flag should represent the physical
+> > > > level at the GPIO controller that achieves (or represents, for inputs)
+> > > > a logically asserted value at the device. The exact definition of
+> > > > logically asserted should be defined by the binding for the device."
+> > > >
+> > > > In this case it sounds like "logically asserted" means the device is
+> > > > powered down or held in reset, respectively, which would suggest that
+> > > > the specifiers should have GPIO_ACTIVE_HIGH and GPIO_ACTIVE_LOW
+> > > > respectively. The latter would cause the GPIO subsystem to invert the
+> > > > values set by the consumers, which would then be confusing from the
+> > > > driver implementation point of view.
+> > > >
+> > > > Should the pin be renamed to "nreset"? It would change the meaning of
+> > > > "logically asserted" to "device is not held in reset" and so
+> > > > GPIO_ACTIVE_HIGH (or 0) would be the right value to use.
+> > > >
+> > > > [1] https://elixir.bootlin.com/linux/latest/source/Documentation/devicetree/bindings/gpio/gpio.txt#L83
+> > > 
+> > > + Bartosz, Linus, Sakari and the linux-gpio ML for a broader audience.
+> > > 
+> > > Would appreciate some feedback on what's the proper way of defining
+> > > GPIO polarity. Thanks!
+> > > 
+> > > Best regards,
+> > > Tomasz
+> > > 
+> > 
+> > I have another question about OV02A10 CMOS sensor dt-binding.
+> > As its text documentation was already reviewed by Rob on earlier
+> > version:
+> > https://patchwork.linuxtv.org/patch/59787/
+> > I wonder whether we need to convert it to DT in YAML.
+> 
+> Yes.
+> 
+
+Okay.
+Let's focus on the new DT binding in YAML for OV02A10.
+
+> > In fact, I just submitted one conversion version.
+> > https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2143922
+> > 
+> > Unluckily make dt_binding_check still report errors temporarily.
+> > It seems there is something wrong with the port property in DT.
+> > Could anyone help provide some tips?
+> > $make dt_binding_check
+> > DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> >   SCHEMA  Documentation/devicetree/bindings/processed-schema.yaml
+> > Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: ignoring,
+> > error in schema: properties: port: patternProperties: endpoint
+> > warning: no schema found in file:
+> > Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > make[2]: *** [Documentation/devicetree/bindings/processed-schema.yaml]
+> > Error 255
+> > make[1]: *** [dt_binding_check] Error 2
+> > make: *** [sub-make] Error 2
+> 
+>     patternProperties:
+>       endpoint:
+>       type: object
+>       additionalProperties: false
+> 
+> You need more indentation under 'endpoint'. Also, 'endpoint' is a fixed 
+> string, so it should be under 'properties' rather than 'patternProperties'.
 > 
 > 
-> On 19.04.20 09:51, Tianjia Zhang wrote:
->> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
->> structure. Earlier than historical reasons, many kvm-related function
->> parameters retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time.
->> This patch does a unified cleanup of these remaining redundant parameters.
->>
->> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
->> ---
->>   arch/s390/kvm/kvm-s390.c | 127 +++++++++++++++++++++------------------
->>   1 file changed, 67 insertions(+), 60 deletions(-)
->>
->> diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
->> index 443af3ead739..cf420d013ba3 100644
->> --- a/arch/s390/kvm/kvm-s390.c
->> +++ b/arch/s390/kvm/kvm-s390.c
->> @@ -4173,24 +4173,25 @@ static int __vcpu_run(struct kvm_vcpu *vcpu)
->>   	return rc;
->>   }
->>   
->> -static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->> +static void sync_regs_fmt2(struct kvm_vcpu *vcpu)
->>   {
->> +	struct kvm_run *run = vcpu->run;
+
+Thanks for the reminder.
+Now we could run dt_binding_check pass for the required
+property:endpoint.
+
+> > 
+> > In addition, as OV02A10 use one private property to distinguish
+> > different projects that adopting different register settings,
+> > I would appreciate the feedback on how to add private property to DT in
+> > YAML.
 > 
-> Please use kvm_run as variable name. This makes all of the changes below go away.
+> Like any other property. Submit something for review.
 > 
 
-It's OK, I will fix it in v2 patch.
+Could you have the permission to see the change:
+https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/2143922/3
 
-Thanks,
-Tianjia
+This change is improved relative to earlier patchset.
+But there are still some errors if we running dt_binding_check on the
+change.
+$make dt_binding_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+  CHKDT   Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: Additional properties are not allowed ('optional' was unexpected)
+/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: Additional properties are not allowed ('optional' was unexpected)
+/proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: properties:ovti,mipi-tx-speed: {'description': 'Indication of MIPI transmission speed select.'} is not valid under any of the given schemas (Possible causes of the failure):
+        /proj/mtk15013/new_dt_check/kernel_only_dev/kernel/mediatek/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml: properties:ovti,mipi-tx-speed: 'not' is a required property
 
-> 
->>   	struct runtime_instr_cb *riccb;
->>   	struct gs_cb *gscb;
->>   
->> -	riccb = (struct runtime_instr_cb *) &kvm_run->s.regs.riccb;
->> -	gscb = (struct gs_cb *) &kvm_run->s.regs.gscb;
->> -	vcpu->arch.sie_block->gpsw.mask = kvm_run->psw_mask;
->> -	vcpu->arch.sie_block->gpsw.addr = kvm_run->psw_addr;
->> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
->> -		vcpu->arch.sie_block->todpr = kvm_run->s.regs.todpr;
->> -		vcpu->arch.sie_block->pp = kvm_run->s.regs.pp;
->> -		vcpu->arch.sie_block->gbea = kvm_run->s.regs.gbea;
->> -	}
->> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_PFAULT) {
->> -		vcpu->arch.pfault_token = kvm_run->s.regs.pft;
->> -		vcpu->arch.pfault_select = kvm_run->s.regs.pfs;
->> -		vcpu->arch.pfault_compare = kvm_run->s.regs.pfc;
->> +	riccb = (struct runtime_instr_cb *) &run->s.regs.riccb;
->> +	gscb = (struct gs_cb *) &run->s.regs.gscb;
->> +	vcpu->arch.sie_block->gpsw.mask = run->psw_mask;
->> +	vcpu->arch.sie_block->gpsw.addr = run->psw_addr;
->> +	if (run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
->> +		vcpu->arch.sie_block->todpr = run->s.regs.todpr;
->> +		vcpu->arch.sie_block->pp = run->s.regs.pp;
->> +		vcpu->arch.sie_block->gbea = run->s.regs.gbea;
->> +	}
->> +	if (run->kvm_dirty_regs & KVM_SYNC_PFAULT) {
->> +		vcpu->arch.pfault_token = run->s.regs.pft;
->> +		vcpu->arch.pfault_select = run->s.regs.pfs;
->> +		vcpu->arch.pfault_compare = run->s.regs.pfc;
->>   		if (vcpu->arch.pfault_token == KVM_S390_PFAULT_TOKEN_INVALID)
->>   			kvm_clear_async_pf_completion_queue(vcpu);
->>   	}
->> @@ -4198,7 +4199,7 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   	 * If userspace sets the riccb (e.g. after migration) to a valid state,
->>   	 * we should enable RI here instead of doing the lazy enablement.
->>   	 */
->> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_RICCB) &&
->> +	if ((run->kvm_dirty_regs & KVM_SYNC_RICCB) &&
->>   	    test_kvm_facility(vcpu->kvm, 64) &&
->>   	    riccb->v &&
->>   	    !(vcpu->arch.sie_block->ecb3 & ECB3_RI)) {
->> @@ -4209,7 +4210,7 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   	 * If userspace sets the gscb (e.g. after migration) to non-zero,
->>   	 * we should enable GS here instead of doing the lazy enablement.
->>   	 */
->> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_GSCB) &&
->> +	if ((run->kvm_dirty_regs & KVM_SYNC_GSCB) &&
->>   	    test_kvm_facility(vcpu->kvm, 133) &&
->>   	    gscb->gssm &&
->>   	    !vcpu->arch.gs_enabled) {
->> @@ -4218,10 +4219,10 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   		vcpu->arch.sie_block->ecd |= ECD_HOSTREGMGMT;
->>   		vcpu->arch.gs_enabled = 1;
->>   	}
->> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_BPBC) &&
->> +	if ((run->kvm_dirty_regs & KVM_SYNC_BPBC) &&
->>   	    test_kvm_facility(vcpu->kvm, 82)) {
->>   		vcpu->arch.sie_block->fpf &= ~FPF_BPBC;
->> -		vcpu->arch.sie_block->fpf |= kvm_run->s.regs.bpbc ? FPF_BPBC : 0;
->> +		vcpu->arch.sie_block->fpf |= run->s.regs.bpbc ? FPF_BPBC : 0;
->>   	}
->>   	if (MACHINE_HAS_GS) {
->>   		preempt_disable();
->> @@ -4232,45 +4233,47 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   		}
->>   		if (vcpu->arch.gs_enabled) {
->>   			current->thread.gs_cb = (struct gs_cb *)
->> -						&vcpu->run->s.regs.gscb;
->> +						&run->s.regs.gscb;
->>   			restore_gs_cb(current->thread.gs_cb);
->>   		}
->>   		preempt_enable();
->>   	}
->> -	/* SIE will load etoken directly from SDNX and therefore kvm_run */
->> +	/* SIE will load etoken directly from SDNX and therefore run */
->>   }
->>   
->> -static void sync_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->> +static void sync_regs(struct kvm_vcpu *vcpu)
->>   {
->> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_PREFIX)
->> -		kvm_s390_set_prefix(vcpu, kvm_run->s.regs.prefix);
->> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_CRS) {
->> -		memcpy(&vcpu->arch.sie_block->gcr, &kvm_run->s.regs.crs, 128);
->> +	struct kvm_run *run = vcpu->run;
->> +
->> +	if (run->kvm_dirty_regs & KVM_SYNC_PREFIX)
->> +		kvm_s390_set_prefix(vcpu, run->s.regs.prefix);
->> +	if (run->kvm_dirty_regs & KVM_SYNC_CRS) {
->> +		memcpy(&vcpu->arch.sie_block->gcr, &run->s.regs.crs, 128);
->>   		/* some control register changes require a tlb flush */
->>   		kvm_make_request(KVM_REQ_TLB_FLUSH, vcpu);
->>   	}
->> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
->> -		kvm_s390_set_cpu_timer(vcpu, kvm_run->s.regs.cputm);
->> -		vcpu->arch.sie_block->ckc = kvm_run->s.regs.ckc;
->> +	if (run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
->> +		kvm_s390_set_cpu_timer(vcpu, run->s.regs.cputm);
->> +		vcpu->arch.sie_block->ckc = run->s.regs.ckc;
->>   	}
->>   	save_access_regs(vcpu->arch.host_acrs);
->> -	restore_access_regs(vcpu->run->s.regs.acrs);
->> +	restore_access_regs(run->s.regs.acrs);
->>   	/* save host (userspace) fprs/vrs */
->>   	save_fpu_regs();
->>   	vcpu->arch.host_fpregs.fpc = current->thread.fpu.fpc;
->>   	vcpu->arch.host_fpregs.regs = current->thread.fpu.regs;
->>   	if (MACHINE_HAS_VX)
->> -		current->thread.fpu.regs = vcpu->run->s.regs.vrs;
->> +		current->thread.fpu.regs = run->s.regs.vrs;
->>   	else
->> -		current->thread.fpu.regs = vcpu->run->s.regs.fprs;
->> -	current->thread.fpu.fpc = vcpu->run->s.regs.fpc;
->> +		current->thread.fpu.regs = run->s.regs.fprs;
->> +	current->thread.fpu.fpc = run->s.regs.fpc;
->>   	if (test_fp_ctl(current->thread.fpu.fpc))
->>   		/* User space provided an invalid FPC, let's clear it */
->>   		current->thread.fpu.fpc = 0;
->>   
->>   	/* Sync fmt2 only data */
->>   	if (likely(!kvm_s390_pv_cpu_is_protected(vcpu))) {
->> -		sync_regs_fmt2(vcpu, kvm_run);
->> +		sync_regs_fmt2(vcpu);
->>   	} else {
->>   		/*
->>   		 * In several places we have to modify our internal view to
->> @@ -4282,19 +4285,21 @@ static void sync_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   		 * do only accept the condition code from userspace.
->>   		 */
->>   		vcpu->arch.sie_block->gpsw.mask &= ~PSW_MASK_CC;
->> -		vcpu->arch.sie_block->gpsw.mask |= kvm_run->psw_mask &
->> +		vcpu->arch.sie_block->gpsw.mask |= run->psw_mask &
->>   						   PSW_MASK_CC;
->>   	}
->>   
->> -	kvm_run->kvm_dirty_regs = 0;
->> +	run->kvm_dirty_regs = 0;
->>   }
->>   
->> -static void store_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->> +static void store_regs_fmt2(struct kvm_vcpu *vcpu)
->>   {
->> -	kvm_run->s.regs.todpr = vcpu->arch.sie_block->todpr;
->> -	kvm_run->s.regs.pp = vcpu->arch.sie_block->pp;
->> -	kvm_run->s.regs.gbea = vcpu->arch.sie_block->gbea;
->> -	kvm_run->s.regs.bpbc = (vcpu->arch.sie_block->fpf & FPF_BPBC) == FPF_BPBC;
->> +	struct kvm_run *run = vcpu->run;
->> +
->> +	run->s.regs.todpr = vcpu->arch.sie_block->todpr;
->> +	run->s.regs.pp = vcpu->arch.sie_block->pp;
->> +	run->s.regs.gbea = vcpu->arch.sie_block->gbea;
->> +	run->s.regs.bpbc = (vcpu->arch.sie_block->fpf & FPF_BPBC) == FPF_BPBC;
->>   	if (MACHINE_HAS_GS) {
->>   		__ctl_set_bit(2, 4);
->>   		if (vcpu->arch.gs_enabled)
->> @@ -4310,39 +4315,41 @@ static void store_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->>   	/* SIE will save etoken directly into SDNX and therefore kvm_run */
->>   }
->>   
->> -static void store_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
->> +static void store_regs(struct kvm_vcpu *vcpu)
->>   {
->> -	kvm_run->psw_mask = vcpu->arch.sie_block->gpsw.mask;
->> -	kvm_run->psw_addr = vcpu->arch.sie_block->gpsw.addr;
->> -	kvm_run->s.regs.prefix = kvm_s390_get_prefix(vcpu);
->> -	memcpy(&kvm_run->s.regs.crs, &vcpu->arch.sie_block->gcr, 128);
->> -	kvm_run->s.regs.cputm = kvm_s390_get_cpu_timer(vcpu);
->> -	kvm_run->s.regs.ckc = vcpu->arch.sie_block->ckc;
->> -	kvm_run->s.regs.pft = vcpu->arch.pfault_token;
->> -	kvm_run->s.regs.pfs = vcpu->arch.pfault_select;
->> -	kvm_run->s.regs.pfc = vcpu->arch.pfault_compare;
->> -	save_access_regs(vcpu->run->s.regs.acrs);
->> +	struct kvm_run *run = vcpu->run;
->> +
->> +	run->psw_mask = vcpu->arch.sie_block->gpsw.mask;
->> +	run->psw_addr = vcpu->arch.sie_block->gpsw.addr;
->> +	run->s.regs.prefix = kvm_s390_get_prefix(vcpu);
->> +	memcpy(&run->s.regs.crs, &vcpu->arch.sie_block->gcr, 128);
->> +	run->s.regs.cputm = kvm_s390_get_cpu_timer(vcpu);
->> +	run->s.regs.ckc = vcpu->arch.sie_block->ckc;
->> +	run->s.regs.pft = vcpu->arch.pfault_token;
->> +	run->s.regs.pfs = vcpu->arch.pfault_select;
->> +	run->s.regs.pfc = vcpu->arch.pfault_compare;
->> +	save_access_regs(run->s.regs.acrs);
->>   	restore_access_regs(vcpu->arch.host_acrs);
->>   	/* Save guest register state */
->>   	save_fpu_regs();
->> -	vcpu->run->s.regs.fpc = current->thread.fpu.fpc;
->> +	run->s.regs.fpc = current->thread.fpu.fpc;
->>   	/* Restore will be done lazily at return */
->>   	current->thread.fpu.fpc = vcpu->arch.host_fpregs.fpc;
->>   	current->thread.fpu.regs = vcpu->arch.host_fpregs.regs;
->>   	if (likely(!kvm_s390_pv_cpu_is_protected(vcpu)))
->> -		store_regs_fmt2(vcpu, kvm_run);
->> +		store_regs_fmt2(vcpu);
->>   }
->>   
->>   int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
->>   {
->> -	struct kvm_run *kvm_run = vcpu->run;
->> +	struct kvm_run *run = vcpu->run;
->>   	int rc;
->>   
->> -	if (kvm_run->immediate_exit)
->> +	if (run->immediate_exit)
->>   		return -EINTR;
->>   
->> -	if (kvm_run->kvm_valid_regs & ~KVM_SYNC_S390_VALID_FIELDS ||
->> -	    kvm_run->kvm_dirty_regs & ~KVM_SYNC_S390_VALID_FIELDS)
->> +	if (run->kvm_valid_regs & ~KVM_SYNC_S390_VALID_FIELDS ||
->> +	    run->kvm_dirty_regs & ~KVM_SYNC_S390_VALID_FIELDS)
->>   		return -EINVAL;
->>   
->>   	vcpu_load(vcpu);
->> @@ -4368,14 +4375,14 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
->>   		goto out;
->>   	}
->>   
->> -	sync_regs(vcpu, kvm_run);
->> +	sync_regs(vcpu);
->>   	enable_cpu_timer_accounting(vcpu);
->>   
->>   	might_fault();
->>   	rc = __vcpu_run(vcpu);
->>   
->>   	if (signal_pending(current) && !rc) {
->> -		kvm_run->exit_reason = KVM_EXIT_INTR;
->> +		run->exit_reason = KVM_EXIT_INTR;
->>   		rc = -EINTR;
->>   	}
->>   
->> @@ -4390,7 +4397,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
->>   	}
->>   
->>   	disable_cpu_timer_accounting(vcpu);
->> -	store_regs(vcpu, kvm_run);
->> +	store_regs(vcpu);
->>   
->>   	kvm_sigset_deactivate(vcpu);
->>   
->>
+make[2]: ***
+[Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.example.dts]
+Error 1
+make[1]: *** [dt_binding_check] Error 2
+make: *** [sub-make] Error 2
+
+It seems that we shall not use "optional" to describe private properties
+for DT bindings in YAML.
+Rob, could you help provide one example to tell us how to define new
+properties?
+Thanks a lot.
+
+> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
