@@ -2,68 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 009B11B1424
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:15:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 987921B142A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 20:16:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R2cV4/5TvTmg11+MgNWSPkfJr9gh3zuo/OuMyV8ChQs=; b=WObYFHhwFoLO2E
-	+YQO03vh1gFNoCkzWQDWawsmM1xy7//yQUXPXsQ1jBCnVQZzaJOPriEuPLXgHso9qG7PW9Wl7m3tK
-	oEcixbRy/yk++EPVhJXmRgNy3t25ekO2V5PN7Pe/pPcbWNQmXxW+0xhwiWsM/nnJQoNcd+Vy2VQgN
-	cbaK9rKP5gpCA3lE/mnb3xrt3UpPaVwVU2+JEPPGVO8GBnwWQCvZbxUPpkyAwkT+rkEM/doHZqS74
-	pQz7ctLe59Rxtehhr6sTGcR7AtrU9M3jr0zEeTMQYRiB+K13tcKfWz65OJLBKZQMcazGxxz0On41N
-	vuyFR1SWnyGI4uj9hlLQ==;
+	List-Owner; bh=6wYKLblAI1y6gdWY6p3s/VwEGmVPaxtzoojKMYAjiGY=; b=AlH1pTSDDCLJoJ
+	usUNwboqkei9MLNjj58ixcMB8sAot/3UZjD+sIBvI8HyyBVObAG+SQ+miS8ehBcR8qRUzUREjNzVM
+	UGgsyvF63sJ3XNn6QYCEQU67P5D1iSpwh/2bjdS0uE6yEoLSECvKH+QCOa75YOLShNd+3oWzXkJ3h
+	Ua0vuhqj5xyULqwEijrk6OBajs0rVyxkRBpg2+jIZXYQui27YaDAVEz6jC5dHW8mjfGT3crQjVDd+
+	XvN2ZmM172VnEYQ95Nn8YnIxKDvn/LNCXnbNDIbV+mJs7ttAlPxIS25vYVoUjSX7V1DAirjRBjBQK
+	ew3M/xmazJ7VPfjq1ILg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQaxH-0000I4-JI; Mon, 20 Apr 2020 18:15:39 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1jQay6-0000ru-0G; Mon, 20 Apr 2020 18:16:30 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQax1-0000GJ-Fh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:15:25 +0000
-IronPort-SDR: 83cOqUu3MjiiGIsxNxilspPE9S8N/9c7TXQCa4wIFzngnQkcCax8YnuLldArH0C2Il0GLx5BR1
- lCrgkQWeFxhg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 20 Apr 2020 11:15:21 -0700
-IronPort-SDR: 8fT09weErfTNfN3mfjnYSebk8Nn+HR58tGa0lnQIUlEHvLqz6923WibZ88j62ipIrGurCIktai
- 4d4uQqkvArDA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,407,1580803200"; d="scan'208";a="246960869"
-Received: from romley-ivt3.sc.intel.com ([172.25.110.60])
- by fmsmga008.fm.intel.com with ESMTP; 20 Apr 2020 11:15:21 -0700
-Date: Mon, 20 Apr 2020 11:14:37 -0700
-From: Fenghua Yu <fenghua.yu@intel.com>
-To: Jacob Pan <jacob.jun.pan@linux.intel.com>
-Subject: Re: [PATCH v5 02/25] iommu/sva: Manage process address spaces
-Message-ID: <20200420181437.GA229170@romley-ivt3.sc.intel.com>
-References: <20200414170252.714402-1-jean-philippe@linaro.org>
- <20200414170252.714402-3-jean-philippe@linaro.org>
- <20200416072852.GA32000@infradead.org>
- <20200416085402.GB1286150@myrica>
- <20200416121331.GA18661@infradead.org>
- <20200420074213.GA3180232@myrica> <20200420135727.GO26002@ziepe.ca>
- <20200420104850.60531cb6@jacob-builder>
+ id 1jQaxq-0000q9-Mw
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 18:16:16 +0000
+Received: by mail-pl1-x644.google.com with SMTP id h11so4238668plr.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 Apr 2020 11:16:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=EiuXHkrk0vsfWG/qt3hSHaym5zGT7h2UROgYXWGq9eo=;
+ b=hBTdDntvpVg0IIqGsUj9cxbjK4Qg55shR27nA5vdqHAiSM+74YJQurUEAdatqZ9NLO
+ 6jDb9ut2UzyNLrtI6J2Go61vmdxRsPi0wOocRBOP3ATe0pTun1goJQx/elhijFdKB58o
+ vr0oAsqTcAB6WCJILZCrrU1SKyVXSGD0KTxUgcSf8HvfbWdCVGloeNXD8nZukYc7F8oD
+ otIxKYfUIcw8VfhHy0tSZMc1Kejs+bvfBBwMkwLOH+WHSxRE+KV/aQIGDgKcYJt4930I
+ pTl1zBxEysjCwv+/hFvtqEeasXxTfds3gFwIUzEwbXVzBkrC2BrnX/5N9nHYv+ZweTGI
+ 6pSA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=EiuXHkrk0vsfWG/qt3hSHaym5zGT7h2UROgYXWGq9eo=;
+ b=pHMlYmCrI1YIH/BCsfTze/KXAD4qp3IbI2EZj1gJkt+tS9JSgq7gkh+I5RC89nimFm
+ NyiParCFbPp+IzM6RUVIXqWYLNQh4RilBQ2dScjVtkrUJuDsyHS5O/X2vtQyYoCxfOHF
+ iE7bcdmzZd0eEhETz3lp45ECG5/REsmKtjth0HOuCa5GnadsQ/M/KVi97ZXNBs5wVT2e
+ mUJ4eU8Jx1j+N1ANFeTHf2aAhksj52eXc2yuy+pCdsqCchlwX6tJRZ/D3+MdxhJ2utQc
+ DNVvDPPcH0XD8v+thlFWlRqnR6MmKkROwb2FdWW2LP/rFvlu/Q0iVMZZa3d54uF6yHXJ
+ q23A==
+X-Gm-Message-State: AGi0PuZn6sS/UOOq6JI0i/4N9VeYEAVYWBUuZPyyNXFJJjQJLv/FmBII
+ 28Jky8FTjvBqqURwQEKQDSPXxQ==
+X-Google-Smtp-Source: APiQypIUqKTu+RkEQuSP9Va6FrnJzr5Ynm5ut3wNKkFsCTRfBxpNrQwQhHPlD9C2X1sA5hbgqzPxGA==
+X-Received: by 2002:a17:902:8345:: with SMTP id
+ z5mr14272589pln.97.1587406574133; 
+ Mon, 20 Apr 2020 11:16:14 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id t103sm14709pjb.46.2020.04.20.11.16.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 20 Apr 2020 11:16:13 -0700 (PDT)
+Date: Mon, 20 Apr 2020 12:16:11 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH] coresight: etmv4: Update default filter and
+ initialisation.
+Message-ID: <20200420181611.GB25885@xps15>
+References: <20200415201030.15617-1-mike.leach@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200420104850.60531cb6@jacob-builder>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200415201030.15617-1-mike.leach@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_111523_633256_9438D7DD 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200420_111614_779311_C196993C 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,75 +99,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com, "Raj,
- Ashok" <ashok.raj@intel.com>, Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
- robin.murphy@arm.com, christian.koenig@amd.com,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- iommu@lists.linux-foundation.org, catalin.marinas@arm.com,
- zhangfei.gao@linaro.org, xuzaibo@huawei.com, will@kernel.org,
- linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org,
- baolu.lu@linux.intel.com
+Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 10:48:50AM -0700, Jacob Pan wrote:
-> On Mon, 20 Apr 2020 10:57:27 -0300
-> Jason Gunthorpe <jgg@ziepe.ca> wrote:
+On Wed, Apr 15, 2020 at 09:10:30PM +0100, Mike Leach wrote:
+> Differing default states set on driver init / perf init and as a result
+> of a sysfs reset.
 > 
-> > On Mon, Apr 20, 2020 at 09:42:13AM +0200, Jean-Philippe Brucker wrote:
-> > > On Thu, Apr 16, 2020 at 05:13:31AM -0700, Christoph Hellwig wrote:  
-> > > > On Thu, Apr 16, 2020 at 10:54:02AM +0200, Jean-Philippe Brucker
-> > > > wrote:  
-> > > > > On Thu, Apr 16, 2020 at 12:28:52AM -0700, Christoph Hellwig
-> > > > > wrote:  
-> > > > > > > +	rcu_read_lock();
-> > > > > > > +	hlist_for_each_entry_rcu(bond, &io_mm->devices,
-> > > > > > > mm_node)
-> > > > > > > +		io_mm->ops->invalidate(bond->sva.dev,
-> > > > > > > io_mm->pasid, io_mm->ctx,
-> > > > > > > +				       start, end - start);
-> > > > > > > +	rcu_read_unlock();
-> > > > > > > +}  
-> > > > > > 
-> > > > > > What is the reason that the devices don't register their own
-> > > > > > notifiers? This kinds of multiplexing is always rather messy,
-> > > > > > and you do it for all the methods.  
-> > > > > 
-> > > > > This sends TLB and ATC invalidations through the IOMMU, it
-> > > > > doesn't go through device drivers  
-> > > > 
-> > > > I don't think we mean the same thing, probably because of my
-> > > > rather imprecise use of the word device.
-> > > > 
-> > > > What I mean is that the mmu_notifier should not be embedded into
-> > > > the io_mm structure (whch btw, seems to have a way to generic
-> > > > name, just like all other io_* prefixed names), but instead into
-> > > > the iommu_bond structure.  That avoid the whole multiplexing
-> > > > layer.  
-> > > 
-> > > Right, I can see the appeal. I still like having a single mmu
-> > > notifier per mm because it ensures we allocate a single PASID per
-> > > mm (as required by x86). I suppose one alternative is to maintain a
-> > > hashtable of mm->pasid, to avoid iterating over all bonds during
-> > > allocation.  
-> > 
-> > I've been getting rid of hash tables like this.. Adding it to the
-> > mm_struct does seem reasonable, I think PASID is a pretty broad
-> > concept now.
-> > 
-> Agreed, perhaps Fenghua can consider that in his patchset. It would
-> help align life cycles as well.
-> https://lkml.org/lkml/2020/3/30/910>
+> The ETMv4 can be programmed to trace the entire instruction address range
+> without the need to use address comparator filter resources.
+> (Described in the ETMv4.x technical reference manual)
+> 
+> sysfs reset was using this method, perf and default driver init were setup
+> with an address range comparator for the entire address range.
+> 
+> The perf / driver init has been altered to use the method without needing
+> any comparator address hardware.
+> 
+> Minor adjustment to the vinst_ctrl register initialisation to ensure
+> correct zero initialisation.
+> 
+> Applies to Linux 5.7-rc1, tested on Juno-r1 and DB410c platforms.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 
-Seems we depend on each other: my patch defines pasid in mm_struct.
-I can free PASID in your detach() function.
+Applied - thanks,
+Mathieu
 
-Thanks.
-
--Fenghua
+> ---
+>  .../coresight/coresight-etm4x-sysfs.c         |  2 +-
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 23 +++++--------------
+>  2 files changed, 7 insertions(+), 18 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index ce41482431f9..b673e738bc9a 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -205,7 +205,7 @@ static ssize_t reset_store(struct device *dev,
+>  	 * started state. ARM recommends start-stop logic is set before
+>  	 * each trace run.
+>  	 */
+> -	config->vinst_ctrl |= BIT(0);
+> +	config->vinst_ctrl = BIT(0);
+>  	if (drvdata->nr_addr_cmp == true) {
+>  		config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
+>  		/* SSSTATUS, bit[9] */
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index a90d757f7043..58ae5498ecf1 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -791,7 +791,7 @@ static void etm4_set_default_config(struct etmv4_config *config)
+>  	config->ts_ctrl = 0x0;
+>  
+>  	/* TRCVICTLR::EVENT = 0x01, select the always on logic */
+> -	config->vinst_ctrl |= BIT(0);
+> +	config->vinst_ctrl = BIT(0);
+>  }
+>  
+>  static u64 etm4_get_ns_access_type(struct etmv4_config *config)
+> @@ -894,17 +894,8 @@ static void etm4_set_start_stop_filter(struct etmv4_config *config,
+>  
+>  static void etm4_set_default_filter(struct etmv4_config *config)
+>  {
+> -	u64 start, stop;
+> -
+> -	/*
+> -	 * Configure address range comparator '0' to encompass all
+> -	 * possible addresses.
+> -	 */
+> -	start = 0x0;
+> -	stop = ~0x0;
+> -
+> -	etm4_set_comparator_filter(config, start, stop,
+> -				   ETM_DEFAULT_ADDR_COMP);
+> +	/* Trace everything 'default' filter achieved by no filtering */
+> +	config->viiectlr = 0x0;
+>  
+>  	/*
+>  	 * TRCVICTLR::SSSTATUS == 1, the start-stop logic is
+> @@ -925,11 +916,9 @@ static void etm4_set_default(struct etmv4_config *config)
+>  	/*
+>  	 * Make default initialisation trace everything
+>  	 *
+> -	 * Select the "always true" resource selector on the
+> -	 * "Enablign Event" line and configure address range comparator
+> -	 * '0' to trace all the possible address range.  From there
+> -	 * configure the "include/exclude" engine to include address
+> -	 * range comparator '0'.
+> +	 * This is done by a minimum default config sufficient to enable
+> +	 * full instruction trace - with a default filter for trace all
+> +	 * achieved by having no filtering.
+>  	 */
+>  	etm4_set_default_config(config);
+>  	etm4_set_default_filter(config);
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
