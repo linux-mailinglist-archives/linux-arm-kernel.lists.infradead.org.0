@@ -2,86 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4869F1B1158
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:19:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BFD81B1167
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 18:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8CJDRh8NvO5jgU3jJUVa5yr41C2BWyJzR5t41A8sSzc=; b=E5mJ0JnqNiQoK3
-	OLODPCXB7hupt2CSWYvMRerynim8LACdwhl2hHm8POZtr7T8IRD/tp+F6eto//TMrFKVD3BTwrLsU
-	1GsB/0C0nJ40FY6hWSj68LMQZk6vvhCjURN+GPktAHUnUgxRi2uCpcZfpCXmZn81iHtzO9ocdj8K0
-	ciGC3dDhBJYH4e2nAMUjq+4dQXFRnHQDvWrWHEySQjK9ZrhlTGDCb6Qq84KT+Di2rZjW3OGm9U3x6
-	kU0sFK8wArNCPuXXVa6rOwNLQadzsjEcWrQLUFsQQHo0ffcYOe2PAoxdWaeMySwLAsqiIEr+XgIFm
-	Z8GmAXCnMevc+SNGllrA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QDT7bHnWCsBvsOMqZGwnuLTlAKuXr+OeklaZ3rpHghQ=; b=YVixw9aeNvpCak
+	uwY3F7r+1Tn6Jg/STVJgVFPidR7JgEFbIhdRk8tDE9tbkB7w5omH9vD+K220/E5NRYQiFdtgbd58G
+	Wk2P/57857DNmPvn831OCpN+vJ0+hqCdUEsYK8LVydqEkS2ROp5YP1Po8eP4+WT5JEPJcRgf7kyDI
+	FX6ZRosRDyVmA6PUzhs1fg6oqEksTY+l6vK9MD6uLR35NMoKeCNOqZz2htVmZrOuGSxre+ENyhdLh
+	EoR3dOcMWw4LLEBBsGCeISblmpUCFYSFjlrkANKjgzidckABZAOJ6IJy0LRX8zEGgPujF/dfWAppp
+	AQAPLdUHCwXWWeAupcuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQZ8W-0000xq-AD; Mon, 20 Apr 2020 16:19:08 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jQZA8-0003vt-JC; Mon, 20 Apr 2020 16:20:48 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQZ8K-0000wN-NN
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:18:58 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03KGCBKL029130; Mon, 20 Apr 2020 18:18:46 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=GQbTc6KNDxMl8YSg798Cux50zZhwrXkX/dFcXXvNJ6Q=;
- b=TqeR1ZUjHaQNCqR1KQDULMvtxVFF85RXV2MogrDVDAHrZD/et2D7nz6qTKcwwppMIrw7
- abk6DWiG+BS0lKq7o0OPec7V2NOfU/VHcwNxTT8P3uv7qQeRMx07cNgFeJ0lKEPZF7kA
- UZpHJcK0MhKaooEDP3R2uOn2pfDsiA97RxUBKuFJU/Yd4V1uFn56MFqmlhUq7NEfBRAQ
- /Wdw9iDFC70tBL3wAny8mfmBI/JlXz7ohVCfWTMcyGhEkr3Cu0bNlRdxZ9evLWtkAG+I
- s77Y6vRMJRum/CJmcokfdHvet2o2P8Xvsaiu4k7D6fRMiGkwanqoziqxjMLXtUzZqLIT Gw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30fregb2ee-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 20 Apr 2020 18:18:46 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 80A9F100034;
- Mon, 20 Apr 2020 18:18:45 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6C9062AA2A3;
- Mon, 20 Apr 2020 18:18:45 +0200 (CEST)
-Received: from localhost (10.75.127.50) by SFHDAG6NODE1.st.com (10.75.127.16)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 20 Apr 2020 18:18:44 +0200
-From: Ludovic Barre <ludovic.barre@st.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH] mmc: mmci_sdmmc: fix power on issue due to pwr_reg
- initialization
-Date: Mon, 20 Apr 2020 18:18:31 +0200
-Message-ID: <20200420161831.5043-1-ludovic.barre@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jQZ9v-0003ui-U8
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 16:20:37 +0000
+Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03KG2IYi050588
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 20 Apr 2020 12:20:34 -0400
+Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 30gmu74uc8-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 20 Apr 2020 12:20:34 -0400
+Received: from localhost
+ by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
+ Mon, 20 Apr 2020 17:19:49 +0100
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Mon, 20 Apr 2020 17:19:43 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 03KGKPl455509026
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 16:20:25 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E70A842042;
+ Mon, 20 Apr 2020 16:20:24 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 4D9874203F;
+ Mon, 20 Apr 2020 16:20:24 +0000 (GMT)
+Received: from thinkpad (unknown [9.145.190.22])
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Mon, 20 Apr 2020 16:20:24 +0000 (GMT)
+Date: Mon, 20 Apr 2020 18:20:23 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Christian Borntraeger <borntraeger@de.ibm.com>
+Subject: Re: [RFC][Qusetion] the value of cleared_(ptes|pmds|puds|p4ds) in
+ struct mmu_gather
+In-Reply-To: <68affa6e-44cd-37e3-cdfc-8eec31c4097e@de.ibm.com>
+References: <fbb00ac0-9104-8d25-f225-7b3d1b17a01f@huawei.com>
+ <20200330121654.GL20696@hirez.programming.kicks-ass.net>
+ <68affa6e-44cd-37e3-cdfc-8eec31c4097e@de.ibm.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG6NODE1.st.com
- (10.75.127.16)
+X-TM-AS-GCONF: 00
+x-cbid: 20042016-4275-0000-0000-000003C366E0
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20042016-4276-0000-0000-000038D8E918
+Message-Id: <20200420182023.6b8e143a@thinkpad>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-20_05:2020-04-20,
  2020-04-20 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0
+ priorityscore=1501 spamscore=0 lowpriorityscore=0 adultscore=0
+ impostorscore=0 mlxscore=0 malwarescore=0 suspectscore=2 mlxlogscore=817
+ clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004200131
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_091857_115298_8104EEBB 
-X-CRM114-Status: GOOD (  15.21  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200420_092035_978737_4F2AE62D 
+X-CRM114-Status: GOOD (  23.97  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,61 +103,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-s390 <linux-s390@vger.kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Zhenyu Ye <yezhenyu2@huawei.com>,
+ Peter Zijlstra <peterz@infradead.org>, Marc Zyngier <maz@kernel.org>,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, npiggin@gmail.com,
+ arm@kernel.org, bp@alien8.de, xiexiangyou@huawei.com, luto@kernel.org,
+ akpm@linux-foundation.org, torvalds@linux-foundation.org, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch fix a power-on issue, and avoid to retry the power sequence.
+On Wed, 8 Apr 2020 10:51:59 +0200
+Christian Borntraeger <borntraeger@de.ibm.com> wrote:
 
-In power off sequence: sdmmc must set pwr_reg in "power-cycle" state
-(value 0x2), to prevent the card from being supplied through the signal
-lines (all the lines are driven low).
+[...]
+> 
+> adding Gerald and Vasily. Gerald can you have a look?
+> 
+> >>
+> >>
+> >> In my view, the cleared_(ptes|pmds|puds) and (pte|pmd|pud)_free_tlb
+> >> correspond one-to-one.  So we should set cleared_ptes in pte_free_tlb(),
+> >> then use it when needed.
+> > 
+> > So pte_free_tlb() clears a table of PTE entries, or a PMD level entity,
+> > also see free_pte_range(). So the generic code makes sense to me. The
+> > PTE level invalidations will have happened on tlb_remove_tlb_entry().
+> > 
+> >> I'm very confused about this. Which is wrong? Or is there something
+> >> I understand wrong?
+> > 
+> > I agree the s390 case is puzzling, Martin does s390 need a PTE level
+> > invalidate for removing a PTE table or was this a mistake?
+> > 
 
-In power on sequence: when the power is stable, sdmmc must set pwr_reg
-in "power-off" state (value 0x0) to drive all signal to high before to
-set "power-on".
+Peter is right, the PTE level invalidations will happen before. For
+s390, not exactly at the tlb_remove_tlb_entry() itself, since
+__tlb_remove_tlb_entry() is not defined, but rather directly at the
+preceding ptep_get_and_clear(). I think this also the reason why we
+cannot easily optimize for larger granularity.
 
-To avoid writing the same value to the power register several times, this
-register is cached by the pwr_reg variable. At probe pwr_reg is initialized
-to 0 by kzalloc of mmc_alloc_host.
+Anyway, pte_free_tlb() will then later only take care of freeing
+the page table page, no further PTE level clearing/invalidation
+needed. I see no reason why s390 should behave differently from
+the generic code, wrt to cleared_pxds setting in pxd_free_tlb().
 
-Like pwr_reg value is 0 at probing, the power on sequence fail because
-the "power-off" state is not writes (value 0x0) and the lines
-remain drive to low.
+So I guess this was an "off-by-one" mistake in commit 9de7d833e3708
+("s390/tlb: Convert to generic mmu_gather"), since the other
+pxd_free_tlb() functions also show similar puzzling behavior.
+Not consistently off-by-one though, as pmd_free_tlb() seems
+to behave correctly, setting tlb->cleared_puds = 1, similar to
+generic code.
 
-This patch initializes "pwr_reg" variable with power register value.
-This it done in sdmmc variant init to not disturb default mmci behavior.
+That was a very nice catch, Zhenyu, thanks for reporting!
+We are not yet making use of the tlb->cleared_pxds for s390, but
+we would certainly have stumbled over this if we ever tried.
+Will send a patch to make s390 behave like generic code here.
 
-Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
----
-
-This patch is the proposal from:
-https://patchwork.kernel.org/patch/11457987/
-
----
- drivers/mmc/host/mmci_stm32_sdmmc.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
-index d33e62bd6153..14f99d8aa3f0 100644
---- a/drivers/mmc/host/mmci_stm32_sdmmc.c
-+++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
-@@ -519,6 +519,7 @@ void sdmmc_variant_init(struct mmci_host *host)
- 	struct sdmmc_dlyb *dlyb;
- 
- 	host->ops = &sdmmc_variant_ops;
-+	host->pwr_reg = readl_relaxed(host->base + MMCIPOWER);
- 
- 	base_dlyb = devm_of_iomap(mmc_dev(host->mmc), np, 1, NULL);
- 	if (IS_ERR(base_dlyb))
--- 
-2.17.1
+Regards,
+Gerald
 
 
 _______________________________________________
