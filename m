@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E6241B0C8F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:25:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52CF31B0C98
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 15:28:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9IiakuoCpuRv8nolI+fAag7tFRCufTJ99vUo4dFPkMw=; b=Vq3BD9J1Fs8l3b2a77pMAwtIv
-	QeoauKu6EozSA60+7RmyzOuLdmJ/r9eo7OVFWp+lN3r6/IgEpz7PQxBMYva7EwgCs6IhCpwaLC7R0
-	7WpR02xMgYp6P3TaIICDl1u4gSIMzGiqbcDBWj4ue7vsgmXpoxSmJQp6TIftLiVOUfJ2awRzp5Cjj
-	3gcziqutHk58X1dVUSqh8u157l16elZwxmiLmg/PAmXn5r6CP5hfNCziaP1ztKKYzl2YRSItgPxsL
-	3twU9IXm7a9EyElU2V3delXEcF9zL7V/9uuWxaopYCh+E3EvDDCq1k62z6hTePoGf1XKbXt4PELY0
-	Tcml+L5rQ==;
+	 bh=eNQhlUhfjuQs7BJUna8K0IvWYy25HEU52KCfh5g7OJM=; b=lRXXITY+/YVshbff1IXVL8dMg
+	llZcTDNEpM7oTsZGdrrJAfWmMo8witfXM+vLfHtqDh+hyLpw9FNQe1KxEzWTMSO9FknM7ZZSxwK4E
+	hRIz2WXarES5V0RqHTRMJYU00Zoy7RoknscMR7cRcXwPuaWt6lTA8GGAggCBTAjVJv4cpPvlO7Bcq
+	/KiAxzhxdMQJTnK0wmBKNM0adKcYuZqVn+caXEQwu4WteujttTei2lTMtny0kqhDhVKLhBnl6rhg5
+	YtokoyNpPMJRZkM2Tu2IOP1FV8yiKF/5ALTnFqcejOWeAjXbOH0r3SA/os1xSJ+6xXK0SzNe6URK9
+	wCzF2sZrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQWQH-0001QI-Uu; Mon, 20 Apr 2020 13:25:17 +0000
+	id 1jQWSy-0002XT-L6; Mon, 20 Apr 2020 13:28:04 +0000
 Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQWQ6-0000W9-S7
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:25:08 +0000
+ id 1jQWSr-0002X1-8q
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 13:27:58 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id A1E9E52B;
- Mon, 20 Apr 2020 09:25:05 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 20 Apr 2020 09:25:06 -0400
+ by mailout.west.internal (Postfix) with ESMTP id 4FCB253A;
+ Mon, 20 Apr 2020 09:27:52 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Mon, 20 Apr 2020 09:27:52 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=yhnengzziE5vWLTBpc6TNXdgy73
- OT3X2ZS0zw6Wtevw=; b=azA8QLNwW36SCKr3HQis4odPzSWwi4U88WuVeVY14ob
- NDbQfJICGGzzlUTu3pHWH9zcBwI86JB2UozgMbXKCznSJTP6eVIMhHho0y2usVXg
- CKbqqo3uUS2YuYTSOU319pS8AOkt63fUqJxTsbLE+MSCYg3BnrAaLL9dhILJZF4d
- tCxvCv3WNeSXXQOfL//doHnWo2VG3Wqh+X0tPGB5yksUmVB1rXWY9dOMDsu3H6FX
- a6S3KMSO9+7at32DwO1UBnNqEeVprjoYdwJAwN4kq+zFSjugAsdSpIEfpFMVd5pF
- 1cB1x/C754snD44ZJtAUUS0RAkgmjzxDLAYA+Qe91BA==
+ :content-type:in-reply-to; s=fm2; bh=C1acu8SOYXvfCrT29OikkU8tqdr
+ tQ88j/dfAu0WvkG0=; b=vvkimXxXCrJAXaUZFh9Qb2mhAU8anR4eWyvNHVUjkKv
+ 3ffCHDg1hncrLGuYgwm6/cX6y+RLcBQL8Prwoqgj/UWGvMci1Nb2JrI6vy1Bs6lx
+ jouwojDVTdWMS+CPS6NlcJeJI/TnoxPyXecl76tlAf4B5e6k+WtyqJe2vF0gkruj
+ 7207wqQ02t4nPmOt90NkJ6kTI/vn9D1SjprMi7T/rgjTpRMUomj2bOaFbz0lyJdz
+ IJ69d4CPNjF+J/Gkz5R6GSYJvfjqELm1xxxC/Kgsu/bVXFKAFrLnOIorA2PE/d80
+ pxCTb0/KtBY5WGp4nrpej8qp/dtGxr2nWck8F6Guo7w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=yhneng
- zziE5vWLTBpc6TNXdgy73OT3X2ZS0zw6Wtevw=; b=LDabqPL769MMweHDyQwOF7
- 6inA3sLIdEIjZzH8iojdhdDPIHqjRyJC3wlxrgLzqPNezIRE/jbwAe7NgSTxmt9K
- KFW5XMwaj2XR2Lz57rw7//yvsNcP6J3cfigVpGwOmHtG+GceO5ewTaZEa5QmuRoV
- aGVSOiniLgHZFTeFxrKV8pU++UHtUxmL+o95/mKYfmYSbbE+iMMcUdxgyufTLepw
- tqikKuShseCopd4b4Setjm1D84ZHcPL/oqHD/o0nA1IUA3dTGwKyDHxeuQ243BPY
- o1LlM9fcSmG57NfAbZtSMszxCmutmDW8Oh/5pMaKX6BbRDwMltPSAn2no0dDGC7A
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=C1acu8
+ SOYXvfCrT29OikkU8tqdrtQ88j/dfAu0WvkG0=; b=kBCxFHsqpKac7qMEIGr8Fm
+ y2f+bDdBSXx9PTzgT9s8OZDuCZ853MVb9qP2HKpSb3lkDuWg1KyJJrCpjdfbfKEt
+ xL5GNn0OciaSIEuoXwTAt2D/qWDnSzZ/Lo59AlXZBufnucpK4R0gy1V3aFoHjyE1
+ A7ERK5F9veSaLKtFlmqnm5gsur9p/2SVC6TX/j2+Fntui/d9cFcVIrUF6cr6oIkN
+ CGr1j3nBjhvn7rq8IEUCx2kuOWAwhHKB0S0BbC6KHcn7NfIR3VvIQ63mhKi+iD1a
+ jdolVonx84aakDsW7s43GQPmF2XeY+GuOiw/+z3/wvdFpwd/C10TptLyVrZaglHg
  ==
-X-ME-Sender: <xms:raKdXihyfHpv81ALfb1YoHtF2BVbmDjGgXLdDuaf3bKPMQzoeaTQKQ>
+X-ME-Sender: <xms:UqOdXhtx8HTOSqU3DX4z4eehe4Fw8qON_pPgj_3zXkeM2pOVt9BqRA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeefgdeigecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihimhgv
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:raKdXkFCHcowvAEl21ur6EYF_t-bKFth9B6LxGKsnYmBDOijs8ikkw>
- <xmx:raKdXtBwbwDvYzdmGzKEmi5rD_uVtqgXI6jadnHpmuIUs7w75fLUdQ>
- <xmx:raKdXo8uaAE9SdE4qPxmQQKDbfcy0gzYoEyOV8Y6L7dJQYwAW2gbAQ>
- <xmx:saKdXoqdtuHV2nYQJGk0XRqX3LJ53kyxo1-JizyZ12ODFOlARn3enA>
+X-ME-Proxy: <xmx:UqOdXokU1CLUum6CNOsVRCBwnMltaVCJ6DAU3R_-SX26_g3n4AgjgQ>
+ <xmx:UqOdXvUrA9MtKTCZJ0LlfvgJR9BR07kEVKUb6G-5uJ0yctdLLeZDOA>
+ <xmx:UqOdXsvrVzdoOLrptwf2Vd-YLiAqIRQhdzR4IG56CPqux0EVW44PgQ>
+ <xmx:V6OdXsUhYIqsRhlW-qjcISecj48hamvzoL52E7GJTLe7P8eetin5HQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 74791328005E;
- Mon, 20 Apr 2020 09:25:01 -0400 (EDT)
-Date: Mon, 20 Apr 2020 15:25:00 +0200
+ by mail.messagingengine.com (Postfix) with ESMTPA id 778AE3065C16;
+ Mon, 20 Apr 2020 09:27:46 -0400 (EDT)
+Date: Mon, 20 Apr 2020 15:27:45 +0200
 From: Maxime Ripard <maxime@cerno.tech>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v5 0/9] Add support for Allwinner H6 DVFS
-Message-ID: <20200420132500.gsnsdv3jaotjup5w@gilmour.lan>
-References: <20200420130021.3841-1-peron.clem@gmail.com>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: sun50i-a64: Add missing
+ address/size-cells
+Message-ID: <20200420132745.7sa4zf2c2xp7ffrc@gilmour.lan>
+References: <20200420103113.577969-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <20200420130021.3841-1-peron.clem@gmail.com>
+In-Reply-To: <20200420103113.577969-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_062506_977643_38750AF0 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20200420_062757_349075_CD020B1D 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,53 +104,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1656589984667199390=="
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ open list <linux-kernel@vger.kernel.org>, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============1813097391443160879=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1656589984667199390==
+--===============1813097391443160879==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="fktdxkekevkzu3a3"
+	protocol="application/pgp-signature"; boundary="knpeiqpl5v5uzrh4"
 Content-Disposition: inline
 
 
---fktdxkekevkzu3a3
-Content-Type: text/plain; charset=iso-8859-1
+--knpeiqpl5v5uzrh4
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Apr 20, 2020 at 03:00:12PM +0200, Cl=E9ment P=E9ron wrote:
-> Hi,
+On Mon, Apr 20, 2020 at 12:31:13PM +0200, Ondrej Jirman wrote:
+> The binding specifies #address-cells and #size-cells should be present.
+> Without them present, dtc issues a warning because default for
+> #address-cells seems to be <2>:
 >=20
-> This is the same as v4 and v3 on top.
-> I have also fix the commit title for Pine H64 as we now only enable CPU D=
-VFS.
+> arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi:1108.4-52:
+>   Warning (dma_ranges_format):
+>     /soc/dram-controller@1c62000:dma-ranges:
+>     "dma-ranges" property has invalid length (12 bytes)
+>     (parent #address-cells =3D=3D 1, child #address-cells =3D=3D 2,
+>     #size-cells =3D=3D 1)
 >=20
-> Sorry for the noise,
-> Cl=E9ment
+> mbus #address-cells should be 1.
+>=20
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
 
-I dropped the previous ones and applied, thanks!
+Applied, thanks
+
 Maxime
 
---fktdxkekevkzu3a3
+--knpeiqpl5v5uzrh4
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp2irAAKCRDj7w1vZxhR
-xTOIAQDZ6ddkodAU0H7ADOOqC0WuJOktcAKK+MPuKpf6tzBCEgEAxm0lP1QHVwMp
-YYrf4zOjMAPR251l/CaafMgcfxuSRwk=
-=xMW6
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp2jUQAKCRDj7w1vZxhR
+xTOZAQDH2dxXT4rG7cY/ZynLPx95CqmiIV9TpnSMdmyts6jejgD+L7nEB36P07Yi
+F2c44pcXcdYfUaXsokS1a2/3IdEFHgM=
+=PFLR
 -----END PGP SIGNATURE-----
 
---fktdxkekevkzu3a3--
+--knpeiqpl5v5uzrh4--
 
 
---===============1656589984667199390==
+--===============1813097391443160879==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -159,5 +171,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1656589984667199390==--
+--===============1813097391443160879==--
 
