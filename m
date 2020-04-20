@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8B5E1B175E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:43:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 745511B179D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 22:55:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTYh0OAZ9HGoTW8oI4qWh2AHUVxADXXTL5GQP+TCxoE=; b=qXVzoGevLdoWy9
-	Qv/5cMTBv5TaBko8SocLDDLiSyZTvPC73WLEbtTKyimyx6gerxBteYs1I7uP/PLW+kK1Hz/XO7BBu
-	YCBKTDtxWDZgrgz3qiMOjwlCkpGqAofb0tzVudw3ek7acQiokDaV4o3xhbXsgrDPPnQ3Uum4vrkXd
-	b/xjjwOIWEFfVHHnoxzEcpVHbpxLCA2LgW5W+rbaeUNQ7aSUf9fi5vzl6RakfcN3bJL20u/E0lV8v
-	m2McpTi9r4AHl/juUxafzg8qElQxPVpazEIw99hJHclOfUFpJuxtzzHEaReGT7urIzGfr9t6+tKVS
-	SACaL2nyGFqiWqwDEUFw==;
+	List-Owner; bh=9rBemK8/v8/VdsApy1T2AeOdLX4m9kG6/DrLXqRCbig=; b=bCgsIYamH/sBPJ
+	riXkZ2VpgT8JDtHKRoROlrbKZVSBszP03UddyZ7pz/ybXUGizFRWHVNBgc3SgYJ5qr4DrEJT2OI2f
+	MB9y/o6QdEA8XM8SLYrs9rq0gK/YL5ixQcbBSZHhzJGyvB0faq0g99HvOy7tCU67pQgexRWCPkAIb
+	4KVO/8Xx9Tt4ngXWXbx9WQzkwflmpfbbiF3Ui2k8haKaG1SsBpZrXFa9SFhZjvUdgSQ95YNVvxmMa
+	k14YO2POHiKu+P6eeEp8t/74CZYo0+y4m5J+4feH9iwy8ETvGLX4sEE83mg/OtuBWpvxvzW1ImwyC
+	vNsThbm/5F0xyVxZQk2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQdFr-00079F-A7; Mon, 20 Apr 2020 20:42:59 +0000
+	id 1jQdRt-0007rP-GN; Mon, 20 Apr 2020 20:55:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQdFe-00078E-AT
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 20:42:47 +0000
+ id 1jQdRZ-00076u-4A
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 20:55:06 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50BB9207FC;
- Mon, 20 Apr 2020 20:42:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B098206E9;
+ Mon, 20 Apr 2020 20:55:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587415366;
- bh=/Lm2cTmavSfvPwo3EnY/skppJ5i7CHKipIJNiAMzESE=;
+ s=default; t=1587416104;
+ bh=3Rft6Xo+yUX9yKXCCAXSFprstMdX0LEXPTtKv5UxrqM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vX206r139s9j+s4JKnaMI4JpxtutoxgTKEzqEw3LnEF+8MAWjTABg/8ixx8KpUvhJ
- aBeW060QZCReO+UrYVjtFosA573ZmpGd4EEAhYESWJJ38YU2e8uDaSguoFjd9eEoa2
- GF7apirwkq/9qg8hWCNZ5P1q630+XpFbjnKHsvw4=
-Date: Mon, 20 Apr 2020 21:42:39 +0100
+ b=DCVwMIiUex03OuMbSo1VvNRl1hdp13/WfOl0GKswvu3nBoHT1SxNaGZ63K5poBEwk
+ CFbl2CKaxWkijsFgfx/uGBWozQbk3I0p+2+rK4tOQqAlDXzMS8o2pN72/mp7qypVK0
+ tGiUnz4ZcN/2NHsEiBMou/2dPAI+MKqgJ89DTi4A=
+Date: Mon, 20 Apr 2020 21:54:58 +0100
 From: Will Deacon <will@kernel.org>
-To: George Spelvin <lkml@sdf.org>
-Subject: Re: [RFC PATCH v1 40/50] arch/*/include/asm/stackprotector.h: Use
- get_random_canary() consistently
-Message-ID: <20200420204238.GB29998@willie-the-truck>
-References: <202003281643.02SGhM0T009250@sdf.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
+Message-ID: <20200420205458.GC29998@willie-the-truck>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <20200324203231.64324-6-keescook@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202003281643.02SGhM0T009250@sdf.org>
+In-Reply-To: <20200324203231.64324-6-keescook@chromium.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_134246_406027_0D94E563 
-X-CRM114-Status: GOOD (  17.03  )
+X-CRM114-CacheID: sfid-20200420_135505_208511_8EBE9B65 
+X-CRM114-Status: GOOD (  17.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,82 +77,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mips@vger.kernel.org,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>, Paul Burton <paulburton@kernel.org>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Jann Horn <jannh@google.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
+ Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Elena Reshetova <elena.reshetova@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 12:35:14AM -0500, George Spelvin wrote:
-> ... in boot_init_stack_canary().
+On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
+> Allow for a randomized stack offset on a per-syscall basis, with roughly
+> 5 bits of entropy.
 > 
-> This is the archetypical example of where the extra security of
-> get_random_bytes() is wasted.  The canary is only important as
-> long as it's stored in __stack_chk_guard.
-> 
-> It's also a great example of code that has been copied around
-> a lot and not updated.
-> 
-> Remove the XOR with LINUX_VERSION_CODE as it's pointless; the inclusion
-> of utsname() in init_std_data in the random seeding obviates it.
-> 
-> The XOR with the TSC on x86 and mtfb() on powerPC were left in,
-> as I haven't proved them redundant yet.  For those, we call
-> get_random_long(), xor, and mask manually.
-> 
-> FUNCTIONAL CHANGE: mips and xtensa were changed from 64-bit
-> get_random_long() to 56-bit get_random_canary() to match the
-> others, in accordance with the logic in CANARY_MASK.
-> 
-> (We could do 1 bit better and zero *one* of the two high bytes.)
-> 
-> Signed-off-by: George Spelvin <lkml@sdf.org>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Ralf Baechle <ralf@linux-mips.org>
-> Cc: Paul Burton <paulburton@kernel.org>
-> Cc: James Hogan <jhogan@kernel.org>
-> Cc: linux-mips@vger.kernel.org
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-> Cc: Rich Felker <dalias@libc.org>
-> Cc: linux-sh@vger.kernel.org
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Borislav Petkov <bp@alien8.de>
-> Cc:  "H. Peter Anvin" <hpa@zytor.com>
-> Cc: x86@kernel.org
-> Cc: Chris Zankel <chris@zankel.net>
-> Cc: Max Filippov <jcmvbkbc@gmail.com>
-> Cc: linux-xtensa@linux-xtensa.org
+> Signed-off-by: Kees Cook <keescook@chromium.org>
 > ---
->  arch/arm/include/asm/stackprotector.h     | 9 +++------
->  arch/arm64/include/asm/stackprotector.h   | 8 ++------
->  arch/mips/include/asm/stackprotector.h    | 7 ++-----
->  arch/powerpc/include/asm/stackprotector.h | 6 ++----
->  arch/sh/include/asm/stackprotector.h      | 8 ++------
->  arch/x86/include/asm/stackprotector.h     | 4 ++--
->  arch/xtensa/include/asm/stackprotector.h  | 7 ++-----
->  7 files changed, 15 insertions(+), 34 deletions(-)
+>  arch/arm64/Kconfig          |  1 +
+>  arch/arm64/kernel/syscall.c | 10 ++++++++++
+>  2 files changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 0b30e884e088..4d5aa4959f72 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -127,6 +127,7 @@ config ARM64
+>  	select HAVE_ARCH_MMAP_RND_BITS
+>  	select HAVE_ARCH_MMAP_RND_COMPAT_BITS if COMPAT
+>  	select HAVE_ARCH_PREL32_RELOCATIONS
+> +	select HAVE_ARCH_RANDOMIZE_KSTACK_OFFSET
+>  	select HAVE_ARCH_SECCOMP_FILTER
+>  	select HAVE_ARCH_STACKLEAK
+>  	select HAVE_ARCH_THREAD_STRUCT_WHITELIST
+> diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> index a12c0c88d345..238dbd753b44 100644
+> --- a/arch/arm64/kernel/syscall.c
+> +++ b/arch/arm64/kernel/syscall.c
+> @@ -5,6 +5,7 @@
+>  #include <linux/errno.h>
+>  #include <linux/nospec.h>
+>  #include <linux/ptrace.h>
+> +#include <linux/randomize_kstack.h>
+>  #include <linux/syscalls.h>
+>  
+>  #include <asm/daifflags.h>
+> @@ -42,6 +43,8 @@ static void invoke_syscall(struct pt_regs *regs, unsigned int scno,
+>  {
+>  	long ret;
+>  
+> +	add_random_kstack_offset();
+> +
+>  	if (scno < sc_nr) {
+>  		syscall_fn_t syscall_fn;
+>  		syscall_fn = syscall_table[array_index_nospec(scno, sc_nr)];
+> @@ -51,6 +54,13 @@ static void invoke_syscall(struct pt_regs *regs, unsigned int scno,
+>  	}
+>  
+>  	regs->regs[0] = ret;
+> +
+> +	/*
+> +	 * Since the compiler chooses a 4 bit alignment for the stack,
+> +	 * let's save one additional bit (9 total), which gets us up
+> +	 * near 5 bits of entropy.
+> +	 */
+> +	choose_random_kstack_offset(get_random_int() & 0x1FF);
 
-Just found this kicking around in the depths of my inbox. Is the series
-dead?
+Hmm, this comment doesn't make any sense to me. I mean, I get that 0x1ff
+is 9 bits, and that is 4+5 but so what?
 
 Will
 
