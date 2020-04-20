@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7507B1B092D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:17:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 753651B0931
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 14:18:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GsZ0HEENhOzJSERTbxpNBy3ZqZ5r+Zl/2NteitMZtxk=; b=Ve37CT/U49/bHl
-	yxxRY/whKeVybizhUe5CZV/PCVeQXrY1Yl5DkjWB+foKX3tSntFdgB6nb8FRXb2aDcCXyFIIDM6EQ
-	2CjKWfZ4aEAlL1JSRTzBpuNBVL1sPEr733ouyQTH0rkM8Bc0PNFhBh7eam06YbHEd8bgTL70Ge4Hp
-	Xr9GzSanQPcJDZ3pU0ZpTPLCj/CbXxdLM5RNxRVoWytSj0ByEmsebZchs28C6cjOfWA5Efi6h76eW
-	1R9HIhpXCe9lNAOAvUKTwR7dDcLcw43MZTXdjz22MrA6dGDHWbnEwrRfrfCLD3phUN64024HQGd59
-	qTdFo5NtJLPMhcGGGP7Q==;
+	List-Owner; bh=To3DJazc+SiUFQViorOzh7V+/13pSwVADfwqikMXIeY=; b=Y8QROIQ6klyu1R
+	Ly9cyDiptv4+qmn6UZj4kguY7VmqipRdXAqdPEGuJcoTkntKLhaeXYTX3nSX9AEhyt49/gWgl3yh+
+	mnbriA3SOx7EbB7salVJlOQfN8btOVkg9Sc2m8ADUzi3XnkvWeP0OcUw0m1w6fDcKUDDtFb+tgVpN
+	pTDtLgQiOba3CaojU4Bo+pvC2f3Yho9PzQr2rJh1nArtnSSWFK5X0UJ25w4fPNefrX7h6Uw9CEY0O
+	vaZ9oA3h69LhTUtmlEwPVgy1XUxvU3ycK02htdUJclE/NQe0PPpPgVE5k5+0+o8DcamZV3YvxBDAN
+	4W01BoiESgvT3UZ6u+6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQVMX-0005Y4-PM; Mon, 20 Apr 2020 12:17:21 +0000
+	id 1jQVN2-0005z5-Ag; Mon, 20 Apr 2020 12:17:52 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQVLs-00055G-5t
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 12:16:41 +0000
+ id 1jQVLt-000573-PE
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 12:16:43 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03KBrrCn025529; Mon, 20 Apr 2020 14:16:33 +0200
+ 03KBrrvp025502; Mon, 20 Apr 2020 14:16:34 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=1o0Izbp2L810/aRMfi0HxXPaokBREpCphH53oslSJGg=;
- b=fh9p1vMpZkJl7kpC2g1SwvICm/SQctpEoQ3/h9VAiSdaWMQgB856E3fVUX2en25pCyRR
- BviFh/2DKiDivYTMcqKuVFPW4BoMJXLo0ln3T8Z25G1EIfnKl1FSPe00z2RgTRz7+P7J
- C2TnfcFmZBLuIZvRgx0bR3M3se4LqdU6JbNYoUsqG7OEjChWEH/WIm1PwUTqweNkvwfw
- a1UPWSE+ke6vizne903/d2tpnMhMqZkfOSmnFe6qf8blwoYWPtziRMueTEEYsZvLGzuf
- NlwSr3JhLFXOjTxAg4pKQdrJfPIkzeD1X4ZXj8fF5t5IO+KxIZqYV+FYg/qdc1SN+Ugw hg== 
+ bh=UJmO87qFK0xEY46lSDFeEL2UHjX2gK9xwkAP9IoX/lc=;
+ b=EyI649PwAFgMm13IhbMmuXgBY7KAZq75GiC1uP4KoB9sXMNsDB0R/LMVS2q6DfzRcEOm
+ UfPIClMFMLRWvG4BI0oWgcPIvSQDg4Ji8dTU5NEMRtprAcJKHVAhw/1cM+RUCnIfRXSD
+ +Pz2pNT0Uf6kRK3T4jPFakE2j0Rr1P7HkAJjMLj59ARm9xwKT6ZBwayA4RPYiH2xDr07
+ 6tNgyIVL4GE6qaAZHkuJVjiGc/yLHQfYhK+iI3K7VeKhCDQ11fYECV3oQW7aS/Gkz6x2
+ 5GjNqvO7Ca6u7uR6pF0deb0Yqyyy03NPMNpnTh+Kn4FzSiBJYI931op6j1wEASJuIdsH 7Q== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30fq11a66x-1
+ by mx07-00178001.pphosted.com with ESMTP id 30fq11a66y-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 20 Apr 2020 14:16:33 +0200
+ Mon, 20 Apr 2020 14:16:34 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2408110002A;
- Mon, 20 Apr 2020 14:16:33 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1EBA310002A;
+ Mon, 20 Apr 2020 14:16:34 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4C71820FA78;
- Mon, 20 Apr 2020 14:16:32 +0200 (CEST)
-Received: from localhost (10.75.127.51) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr 2020 14:16:31
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B520520FA76;
+ Mon, 20 Apr 2020 14:16:33 +0200 (CEST)
+Received: from localhost (10.75.127.50) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr 2020 14:16:32
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <daniel.lezcano@linaro.org>,
  <tglx@linutronix.de>
-Subject: [PATCH v7 3/6] mfd: stm32: Add defines to be used for clkevent purpose
-Date: Mon, 20 Apr 2020 14:16:17 +0200
-Message-ID: <20200420121620.2099-4-benjamin.gaignard@st.com>
+Subject: [PATCH v7 4/6] mfd: stm32: enable regmap fast_io for stm32-lptimer
+Date: Mon, 20 Apr 2020 14:16:18 +0200
+Message-ID: <20200420121620.2099-5-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200420121620.2099-1-benjamin.gaignard@st.com>
 References: <20200420121620.2099-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-20_03:2020-04-20,
  2020-04-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_051640_537617_38B69F34 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20200420_051642_126862_ED8EBEDC 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,34 +105,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add defines to be able to enable/clear irq and configure one shot mode.
+Because stm32-lptimer need to write in registers in interrupt context
+enable regmap fast_io to use a spin_lock to protect registers access
+rather than a mutex.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 Acked-by: Lee Jones <lee.jones@linaro.org>
 ---
- include/linux/mfd/stm32-lptimer.h | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/mfd/stm32-lptimer.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/linux/mfd/stm32-lptimer.h b/include/linux/mfd/stm32-lptimer.h
-index 605f62264825..90b20550c1c8 100644
---- a/include/linux/mfd/stm32-lptimer.h
-+++ b/include/linux/mfd/stm32-lptimer.h
-@@ -27,10 +27,15 @@
- #define STM32_LPTIM_CMPOK		BIT(3)
+diff --git a/drivers/mfd/stm32-lptimer.c b/drivers/mfd/stm32-lptimer.c
+index a00f99f36559..746e51a17cc8 100644
+--- a/drivers/mfd/stm32-lptimer.c
++++ b/drivers/mfd/stm32-lptimer.c
+@@ -17,6 +17,7 @@ static const struct regmap_config stm32_lptimer_regmap_cfg = {
+ 	.val_bits = 32,
+ 	.reg_stride = sizeof(u32),
+ 	.max_register = STM32_LPTIM_MAX_REGISTER,
++	.fast_io = true,
+ };
  
- /* STM32_LPTIM_ICR - bit fields */
-+#define STM32_LPTIM_ARRMCF		BIT(1)
- #define STM32_LPTIM_CMPOKCF_ARROKCF	GENMASK(4, 3)
- 
-+/* STM32_LPTIM_IER - bit flieds */
-+#define STM32_LPTIM_ARRMIE	BIT(1)
-+
- /* STM32_LPTIM_CR - bit fields */
- #define STM32_LPTIM_CNTSTRT	BIT(2)
-+#define STM32_LPTIM_SNGSTRT	BIT(1)
- #define STM32_LPTIM_ENABLE	BIT(0)
- 
- /* STM32_LPTIM_CFGR - bit fields */
+ static int stm32_lptimer_detect_encoder(struct stm32_lptimer *ddata)
 -- 
 2.15.0
 
