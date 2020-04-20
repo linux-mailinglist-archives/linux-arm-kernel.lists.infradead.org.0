@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 980661B0520
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 11:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CBA01B0512
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 11:00:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oXzxBXwwUyf60zt24xDJj8NsQiPMP8Tj9YRLA+GfBwU=; b=Su/9dQWWoMkJXl
-	QSnSsSTwPqMTYRFLl9u8I9UmYemZ+1Q7wfsBiW03s3hFdcd+L/lkawmyK4lNXWbq64oLghYFSlYgn
-	RUVIl423n/dcUAXm3K9MY7HbxiAo3xcTy54K7PIfFEHwzlWk/iIN7OFE/3dWvldamDSpevTISKocx
-	1PmJ2fit5UzLfpxh4o6/IPBdkVfhFO4xTZ2/dYxpdPVd0aL5BzlBNdK3RErR2aQop4wmeaNvyOErW
-	XoUF8vTM6PxoDawkc+At81PRVr0YHvaXCaXoCanAwV55JvIO9Sff2UMnGe8qNdCO1kU77ovKD6/uX
-	4N8oqJiuLBwGxfP6nGdw==;
+	List-Owner; bh=jyDZagaFb/ikV2Ib/osy1NvoJ9ENnlxU/eK8btxZNAQ=; b=Cdxs/7p/xKmzSS
+	OEDoeMKWXkzoK9kzGcErX7ptufHyGl2kwwxqvWsg3PHRUaqIYoreyjEe437piqXy+dAPK1n3S8no3
+	NbmVbuflCmgq2rf5nOZDqV9r7U1OFLACfZxlL89AImamvxq9pNzwBTbo7y/KLLwcx54MGbQqvJhul
+	yMFirm3NFAj3rIzed+9A6O+y1OLpIlZy121AS2tWIYvuqI1LjrXUqfqTtJvq/MN1l1M4eJwwrOMrB
+	HqU+A6mOxPC55aaZz107UK3s0iO8dsY+mVYyJnZmukQaIIP7iGwfTzwCaOxw9gcMq20RxePGgBo2u
+	HKXctN446YN4SaQMIVWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQSJ3-0001uJ-Fm; Mon, 20 Apr 2020 09:01:33 +0000
+	id 1jQSHY-0006Zf-Gf; Mon, 20 Apr 2020 09:00:00 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQSHM-0006WC-Ox
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 08:59:52 +0000
+ id 1jQSHM-0006WD-Pl
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 08:59:50 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03K8woNn006295; Mon, 20 Apr 2020 10:59:37 +0200
+ 03K8wpSC006363; Mon, 20 Apr 2020 10:59:37 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=Xdm9Hk9ndXW8z0XFvSbO320SJ8yGV/Y7CcrMhC70rvM=;
- b=P7fx7sEjAqIBzXFnxJTmK1IOCMTNDHrJNX2pWLmfhhlNjaZJIW758hSvc+2xKGTGc93A
- THedOX8sq355QgDpz3Qe9NQ9pZcEF0UyjLbgqXqTrgFGTe7jMHQOLwCmL8PGzY+UBe4a
- fb6HY45hZg3bAYneNpzOYFel8SAPMT7DyQdykX2sonrz8e7nme0zViCAoh8zqOl2rqvQ
- anAIYacfBf4OjvF0ik1k1UBF19lEfnzdw0ZVTJ0n9O0bQuPH6qeRZpOeuh86Ap9tySDb
- F/1ehfX0QyWBtWQvcPVyjj67uvwF2CK6kIMgE8h/ANW8c5g2pzsDPDMWzPX99wiT4NiF 1w== 
+ bh=eBxkQEjV5LwT97ZezRCcYQScn1j4krELuQFmG3AFDoc=;
+ b=UmA/0DcspsogyEGnpBmjMKvbIio5f4taFXIQBV0YNHj4UO5FS9EmK8mK9hVkhYzVnvAA
+ q/gvzcqG0D3cKnDytR9s8lwwymaM9/mAEIaqwf4/J4sBp/cfNdOKliHVhPRH80Ae0OBP
+ S8xrC4QAC53bGR3F4nvwQdG3ghhu01mKVaMJU7DjHCDbhlEKogAuntP7XR8PMKctchLq
+ s353ifKSRZOMfebbWbmhDD5/N7QtqXyXcaPQbxPJgIcaABThyon899Z9Q5I3gdQcZmTT
+ ZPOoI320erdThlNPaGkY/pywRFLVUERQ9QAUz5YIegwH/Idbc1wGOYrLAksROX+yXGpz zQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30fqaw18rr-1
+ by mx07-00178001.pphosted.com with ESMTP id 30fqaw18rs-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Mon, 20 Apr 2020 10:59:37 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B022810003A;
- Mon, 20 Apr 2020 10:59:35 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D4E9D100038;
+ Mon, 20 Apr 2020 10:59:36 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9BBA32BE226;
- Mon, 20 Apr 2020 10:59:35 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr 2020 10:59:34
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BE9902BE226;
+ Mon, 20 Apr 2020 10:59:36 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 20 Apr 2020 10:59:36
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <daniel.lezcano@linaro.org>,
  <tglx@linutronix.de>
-Subject: [RESEND v6 1/6] dt-bindings: mfd: Document STM32 low power timer
- bindings
-Date: Mon, 20 Apr 2020 10:59:25 +0200
-Message-ID: <20200420085930.26989-2-benjamin.gaignard@st.com>
+Subject: [RESEND v6 2/6] ARM: dts: stm32: Add timer subnodes on stm32mp15 SoCs
+Date: Mon, 20 Apr 2020 10:59:26 +0200
+Message-ID: <20200420085930.26989-3-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200420085930.26989-1-benjamin.gaignard@st.com>
 References: <20200420085930.26989-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-20_03:2020-04-17,
  2020-04-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_015949_287961_2645D6CF 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20200420_015949_276822_D8661CEF 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,70 +105,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a subnode to STM low power timer bindings to support timer driver
+Add timer subnode and interrupts to low power timer nodes for
+all stm32mp15x SoCs.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/mfd/st,stm32-lptimer.yaml     | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ arch/arm/boot/dts/stm32mp151.dtsi | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-index ddf190cb800b..64bab1c3bdac 100644
---- a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-+++ b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-@@ -33,6 +33,9 @@ properties:
-     items:
-       - const: mux
+diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
+index 3ea05ba48215..5e881e8d0f58 100644
+--- a/arch/arm/boot/dts/stm32mp151.dtsi
++++ b/arch/arm/boot/dts/stm32mp151.dtsi
+@@ -359,6 +359,8 @@
+ 			reg = <0x40009000 0x400>;
+ 			clocks = <&rcc LPTIM1_K>;
+ 			clock-names = "mux";
++			interrupts-extended = <&exti 47 IRQ_TYPE_LEVEL_HIGH>;
++			wakeup-source;
+ 			status = "disabled";
  
-+  interrupts:
-+    maxItems: 1
+ 			pwm {
+@@ -377,6 +379,11 @@
+ 				compatible = "st,stm32-lptimer-counter";
+ 				status = "disabled";
+ 			};
 +
-   "#address-cells":
-     const: 1
++			timer {
++				compatible = "st,stm32-lptimer-timer";
++				status = "disabled";
++			};
+ 		};
  
-@@ -93,6 +96,16 @@ patternProperties:
-     required:
-       - compatible
+ 		spi2: spi@4000b000 {
+@@ -1144,6 +1151,8 @@
+ 			reg = <0x50021000 0x400>;
+ 			clocks = <&rcc LPTIM2_K>;
+ 			clock-names = "mux";
++			interrupts-extended = <&exti 48 IRQ_TYPE_LEVEL_HIGH>;
++			wakeup-source;
+ 			status = "disabled";
  
-+  timer:
-+    type: object
+ 			pwm {
+@@ -1162,6 +1171,11 @@
+ 				compatible = "st,stm32-lptimer-counter";
+ 				status = "disabled";
+ 			};
 +
-+    properties:
-+      compatible:
-+        const: st,stm32-lptimer-timer
-+
-+    required:
-+      - compatible
-+
- required:
-   - "#address-cells"
-   - "#size-cells"
-@@ -106,11 +119,13 @@ additionalProperties: false
- examples:
-   - |
-     #include <dt-bindings/clock/stm32mp1-clks.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-     timer@40002400 {
-       compatible = "st,stm32-lptimer";
-       reg = <0x40002400 0x400>;
-       clocks = <&timer_clk>;
-       clock-names = "mux";
-+      interrupts-extended = <&exti 47 IRQ_TYPE_LEVEL_HIGH>;
-       #address-cells = <1>;
-       #size-cells = <0>;
++			timer {
++				compatible = "st,stm32-lptimer-timer";
++				status = "disabled";
++			};
+ 		};
  
-@@ -131,6 +146,10 @@ examples:
-       timer {
-         compatible = "st,stm32-lptimer-timer";
-       };
-+
-+      timer {
-+        compatible = "st,stm32-lptimer-timer";
-+      };
-     };
+ 		lptimer3: timer@50022000 {
+@@ -1171,6 +1185,8 @@
+ 			reg = <0x50022000 0x400>;
+ 			clocks = <&rcc LPTIM3_K>;
+ 			clock-names = "mux";
++			interrupts-extended = <&exti 50 IRQ_TYPE_LEVEL_HIGH>;
++			wakeup-source;
+ 			status = "disabled";
  
- ...
+ 			pwm {
+@@ -1184,6 +1200,11 @@
+ 				reg = <2>;
+ 				status = "disabled";
+ 			};
++
++			timer {
++				compatible = "st,stm32-lptimer-timer";
++				status = "disabled";
++			};
+ 		};
+ 
+ 		lptimer4: timer@50023000 {
+@@ -1191,6 +1212,8 @@
+ 			reg = <0x50023000 0x400>;
+ 			clocks = <&rcc LPTIM4_K>;
+ 			clock-names = "mux";
++			interrupts-extended = <&exti 52 IRQ_TYPE_LEVEL_HIGH>;
++			wakeup-source;
+ 			status = "disabled";
+ 
+ 			pwm {
+@@ -1198,6 +1221,11 @@
+ 				#pwm-cells = <3>;
+ 				status = "disabled";
+ 			};
++
++			timer {
++				compatible = "st,stm32-lptimer-timer";
++				status = "disabled";
++			};
+ 		};
+ 
+ 		lptimer5: timer@50024000 {
+@@ -1205,6 +1233,8 @@
+ 			reg = <0x50024000 0x400>;
+ 			clocks = <&rcc LPTIM5_K>;
+ 			clock-names = "mux";
++			interrupts-extended = <&exti 53 IRQ_TYPE_LEVEL_HIGH>;
++			wakeup-source;
+ 			status = "disabled";
+ 
+ 			pwm {
+@@ -1212,6 +1242,11 @@
+ 				#pwm-cells = <3>;
+ 				status = "disabled";
+ 			};
++
++			timer {
++				compatible = "st,stm32-lptimer-timer";
++				status = "disabled";
++			};
+ 		};
+ 
+ 		vrefbuf: vrefbuf@50025000 {
 -- 
 2.15.0
 
