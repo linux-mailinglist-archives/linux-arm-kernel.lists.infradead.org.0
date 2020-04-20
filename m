@@ -2,79 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7BC51B01D0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 08:51:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 159B01B01F0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 08:55:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/Q1y6fDGztJaOTg8uSrS0gvbRiMucoAfoV7Y6MdXcw0=; b=Z1KnBSSFFQj2S0
-	s3eXqDDRmyJEtwmZexz/roshtH8Yq70NlJrX6IZFIU7oX6ro+wi8sNOxc4nYGHRQQ6e+7eoFrURXR
-	VpSYX893ghFlRgD+YSUe2KxPccT1y8HQcXctaV2qISUh8rG5hR15NCAWq2Mrg+k2snMif66IxMuv6
-	MJ/V8cORmqPubmeCYWO8T1z2kURB+SKFZukpgJW9jUTiVF8MshulGqh6BjAXRoUu5rHHjo9/077C6
-	i51hMRL1+a6kq8O+Spctpdga25LCHO30VvFVLdk8kKoYQdLKN+AzPNa1RUxs79mdsm9gpum3CP8Ln
-	EZFX7BDKVO/hETBo86hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W3egfHffc7EeB6b+/i/Rn+FIWrXqRrMyMiVojbpEcgk=; b=jo+xP4Igdpcp7x
+	JQegMnq0ySEdzGPeeNRkcPF64xNVqzi2dk2KqGWcxHk/HsIQ0OrcyBjwaSM6OT2NbbavzE+Yvthmk
+	MCGJTvTo/5nUdgzZFa6T19YEw2gUKdW7A5yiNfL8ERGrxniTG7EhKC/k0UAC3LKSA3sIHSlkEkRBF
+	Q/bUFnvgBXdgecNCa/AxGGp1xLDPUgb2NQb6RTnumOt8agdkeKE3StLf5brPa5fgEkv7RZyHfN5vA
+	6BIHflCwokEBrnP2SCuEKjP97roHNYS7MKCAtvBWu9Sx2+/w5bmCd7aa3p3CD5TaG/6AS4O/wSbtt
+	jdTD7jHdlbJyWf5fLQcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQH8-0007hz-97; Mon, 20 Apr 2020 06:51:26 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jQQL1-0002is-2v; Mon, 20 Apr 2020 06:55:27 +0000
+Received: from esa3.hgst.iphmx.com ([216.71.153.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQH0-0007hI-8a
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 06:51:20 +0000
-Received: by mail-lj1-x241.google.com with SMTP id j3so8628987ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 Apr 2020 23:51:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1+AkEeWkzZf8MVpdQZN5Lnd6yjx7NWXQg9twh4xq3rw=;
- b=mCXH6m2vPU+lUFF266U+3cASMVn+4AU2fXVMWiMDJaCpD81fv2G71654DTtf340pup
- 9/+ZusdtaQJlnNrZKao7GZXjh4pY2voR5bsbfgSseEjPm4bgYj0pRBYPg1UgvUnIWFWR
- JvFsHf6UcIoyBwo+WFzU80rMkufZM4zPQQvGFmu0j7/vF5PIooYJnrpLGpDMq9WQzORO
- uT/CsALIdbFLlNzzk0ibU883vHItyJFkUwo0+4y4tJzF1lSo7Yay//BOoyAXB052ZkO7
- dERgEj1ORDeB7Cbdc9G7r9P4SUZ5X+DkV0QXWolOMrIrekqpjhuZgXxOCYu7Pm6NmMxq
- ULYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1+AkEeWkzZf8MVpdQZN5Lnd6yjx7NWXQg9twh4xq3rw=;
- b=A9F+wL33LMBOXxkiprJQb/hVpIGZ/F9k4MToWXd5hJ3DMsTDFh90Sni/P6xziy7jxH
- uEzLmujT74PyWpsMoyeUm42Hbd6fvLkY1spMnkLEa5EkgTsyfROJcNtGztB0SH/CDOHI
- 7zTtsQfG2U+527sDO8YdDsTKIgxn3VtRRqzVkC6MMsBpBQL3sI9s6yuga0LJehiTPxo9
- ilAe0s5WEqCxzopd6bZdsl0xAZzArkSYQ9VCn/mTtqpWXu2CgwprBh0HRav+OiepzA0e
- Oz31gLVGFr/NZJfqB/DABSas1OC3wPtk0Zk3ecQCP2oK8qJflShB8BRpeUyMpfd0bPdD
- BTUw==
-X-Gm-Message-State: AGi0PuaTB4HgV48gnjmXj4LYxdQy/taLdroGPQwO03xAKNpWjIHUXNhq
- 2Ipu6hMzcgfKHLXbFTNbNdtHKIXUS8E=
-X-Google-Smtp-Source: APiQypLfTdCno0jp1Oue+q7cFzdbCr6gF0rYf4w/PX0NQq+vuVx2Zpb5xuJoWWlpMJMg3Z3zPpuzWA==
-X-Received: by 2002:a2e:9818:: with SMTP id a24mr9218717ljj.126.1587365475971; 
- Sun, 19 Apr 2020 23:51:15 -0700 (PDT)
-Received: from localhost.localdomain
- (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
- by smtp.gmail.com with ESMTPSA id u12sm157628ljo.102.2020.04.19.23.51.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 19 Apr 2020 23:51:15 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: dts: Add devicetree for Integrator/AP with IM-PD1
-Date: Mon, 20 Apr 2020 08:49:13 +0200
-Message-Id: <20200420064913.390332-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.25.2
+ id 1jQQKs-0002hr-KD
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 06:55:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1587365719; x=1618901719;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=8Zt3QVUcyB1nrYZUv4BLWy8FGBq+iMg8ScYQuxJgQyU=;
+ b=hGpjqX9CbG2qJCYHxQoc46D966PYL9zS16YEuMVaOkLUhJr5tP3OZVN0
+ jGG5i7zSXNNFASPQKAdTgl7F81su5EJedkBQo0Zue8TIejtZaD4KgXIK5
+ J0dVd0fALU6Y4FDXiim0j4dmJRqY0LKqgIFa4dPyw9vWvc6GPrNkkEytn
+ TvPToF8X5DV7bzSQEBiJm30uv+I2nZuQuDEqARzk3w/16av+36ngr5CpE
+ acllwBgVyxcqyucKkFGuDPynu3D5glOmRjmumg0gJ2eUz33K+Nej3u0cd
+ bmbE8VwaVV3ezWbOnQugziskyOuh3Oa09A6l2TeERAm2Frr+7aeDyUSDz A==;
+IronPort-SDR: vwQk5ta2F2/V0LIciNJnejKf6mcvdcewU5RvInDKc7mk8uNwSaRAo5PeCLng5rc93xd6KhYHkc
+ 5fYhLUJ7gQ0vLK4zeNBT3yveclD3/y7aJPaJ6ibjAyeXUY+tVVaGQW8mjivQ4W7hlB9e9rInNU
+ Y72sHGqTIvtbkKtvHv79hw/P+FH6825LM2W2+7PuXVuC5N2k0liP8M3CtJJyoSFlhJMUuhgCJ7
+ fTHrqrJl+sidUbL+jDuH8KfUFz02/ue0UHN3yajt0hJNKW7DD40ohrLpGsjzcwcW3YSdym1qba
+ nuo=
+X-IronPort-AV: E=Sophos;i="5.72,406,1580745600"; d="scan'208";a="140042628"
+Received: from mail-co1nam11lp2174.outbound.protection.outlook.com (HELO
+ NAM11-CO1-obe.outbound.protection.outlook.com) ([104.47.56.174])
+ by ob1.hgst.iphmx.com with ESMTP; 20 Apr 2020 14:55:16 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EDgNdKq10Alv7EDXFm9ZRsOdMy2T4DDRSZSvvO7cyI4u07lS/yyrdijPCHAYlHCPYgr4hi5Dcgi3JtRHA6gn47gDmvWa0doQPdEcZXQU9C7gv+zf4eG03rdoSlq7P8WtMj8GFjJwijRERLgFSk04UBi/R04xovDrX+HPOEfZ3xJTnAMjczTRDSkI9neKISnuJiA+j8+Q+4PWRPU3nJGN+n0aH3svtcOYjmneCaBejD4HBikkVPU/lRlWLgljvIfBpccNnYQykVTqlAZ4nmjdEuL7HHHXNTji3mSPqqRHPSrAYhHlIPykm9gQl3Jk8HmwHjU2Mh0Kbq0TL+/nzs6how==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8Zt3QVUcyB1nrYZUv4BLWy8FGBq+iMg8ScYQuxJgQyU=;
+ b=SZ+gpADZB/rfjJv0d0Cn3TKEtb1NGUI7ReeD+8hfwLc+FljhhFsAaqMdvjchgZKwXOcbVdTu/ylpuNzgMnsGcUZpS8jd4XNvCA7geqhD0pXyTeDI4Rkpg5IANI5LAxFDnAdIaLNXsdq+OrCQr45I7JKg2hq6h5fBzfTtws3KjgQLGnv0/3X/GRgQGB7Y7A9NpycFxW7/sbFF46StswjKO1sraA7C6/x/+JmB9MogUxftJS4NI3pNDS4bCiOPNG18KslA7aQCxMK+4KMCf80yTnHiKmOJdG+REkf41yi+JPsrjOPcyDmS9UDqkryAb5H1+NAkLniQQyX1DnkVTZy0xA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8Zt3QVUcyB1nrYZUv4BLWy8FGBq+iMg8ScYQuxJgQyU=;
+ b=s3/Qrro0MHlVyhzP3Rls6kmIAJTkU81zpeUzYji7yt8PVqIDBDpBoILXCBx4Re8BpCPXEyEwKygbG6VOFEVBOYpbgxL4r0xa26KFymtiEXMuT2uAO8/46q02YYyfI9534lN9YCh12l4XFvm5B9IhhZx3gl3f9Es2eMlEF/ok4ZM=
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
+ by SN6PR04MB4926.namprd04.prod.outlook.com (2603:10b6:805:95::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Mon, 20 Apr
+ 2020 06:55:14 +0000
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::3877:5e49:6cdd:c8b]) by SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::3877:5e49:6cdd:c8b%5]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
+ 06:55:14 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Alim Akhtar <alim.akhtar@samsung.com>, "robh@kernel.org" <robh@kernel.org>
+Subject: RE: [PATCH v6 01/10] scsi: ufs: add quirk to fix mishandling
+ utrlclr/utmrlclr
+Thread-Topic: [PATCH v6 01/10] scsi: ufs: add quirk to fix mishandling
+ utrlclr/utmrlclr
+Thread-Index: AQHWFONzkBNCSjfmx0i9of86j86lQqiBlzoQ
+Date: Mon, 20 Apr 2020 06:55:14 +0000
+Message-ID: <SN6PR04MB46405C636408D7676494828BFCD40@SN6PR04MB4640.namprd04.prod.outlook.com>
+References: <20200417175944.47189-1-alim.akhtar@samsung.com>
+ <CGME20200417181008epcas5p460840c01c2c09ce1a69e83005b4bddbe@epcas5p4.samsung.com>
+ <20200417175944.47189-2-alim.akhtar@samsung.com>
+In-Reply-To: <20200417175944.47189-2-alim.akhtar@samsung.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Avri.Altman@wdc.com; 
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: b6b97a8d-acd3-4a9a-0005-08d7e4f7c747
+x-ms-traffictypediagnostic: SN6PR04MB4926:
+x-microsoft-antispam-prvs: <SN6PR04MB492612391B1A7BCB43944BBFFCD40@SN6PR04MB4926.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:2331;
+x-forefront-prvs: 03793408BA
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(346002)(376002)(366004)(396003)(39860400002)(136003)(66946007)(8936002)(8676002)(7696005)(26005)(478600001)(81156014)(66446008)(186003)(76116006)(6506007)(64756008)(66556008)(66476007)(5660300002)(7416002)(52536014)(110136005)(55016002)(33656002)(71200400001)(9686003)(54906003)(2906002)(558084003)(316002)(4326008)(86362001);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: OFWSgXNNPA4/22aPd0rwXtGST5Xm2jutJvP9bCNCtlX0QVKCFuehbSu+d6/kDFfeT/zTFCdQMbs98JhPhkEqDuhou2iktkgbK/GEsVA30GJ10E+af5kKW0N+hwaiHhqyUlhVRjuYn4Dv+M9dmnG03veRh8rr2BooxZLsphgtotbdqzyCYgCy5NSjqOGYTkww4dX0cWpnuFT3CgcBIoNOKWqJp2tIKjg8+p+hoNOG+A8ljROPDd6fygmkYtD4G+y9sYm/oUD5YsMin5COmo2gBrdXfYck4kzhhUugO6WUcB5NURg5dUKiwYnb7ySNwiHk6TrQyfftOMaPNEkhN+yLhp4r9Sbzc3ShoqFPrwlwg+YW9LwdvE3xyfiT5sSzS8ukCjaK5k3VkcQAeauXobwm3dxLyxyXblkkkRlMVlDZZ14F8CUrqci/+hXFw9P4cl8Y
+x-ms-exchange-antispam-messagedata: whGFFmHOH0QhsHq4H4lMzcVlioYlpNWXiTH0DqVuVPqhBLeBu9mo+/Yp2vk4Wg9Ctq2f5jTfhEXanWdtgL4KzAACj5O9Ewg5XaAJMV8YmaHTaAsnjxs+hk6/TKCTh4n+o+8N7IqN4QEzbffLKqs4kg==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b6b97a8d-acd3-4a9a-0005-08d7e4f7c747
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Apr 2020 06:55:14.6109 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FJfnP3GNrC4JYfYK011Rs1KlgfKuWbb1W2OEJMlNHAPnz1d6S+SH1Lxo/LH5YE11B/wZK/N/ruRtT2KFIVPHSQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4926
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_235118_318720_8BD948CA 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200419_235518_753684_FAADA5A5 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [212.25.79.133 listed in zen.spamhaus.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,391 +148,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "krzk@kernel.org" <krzk@kernel.org>,
+ "kwmad.kim@samsung.com" <kwmad.kim@samsung.com>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "stanley.chu@mediatek.com" <stanley.chu@mediatek.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a device tree for the Integrator/AP with the
-IM-PD1 logic module mounted, using the new logic
-module bindings.
-
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- arch/arm/boot/dts/Makefile                |   1 +
- arch/arm/boot/dts/integratorap-im-pd1.dts | 270 ++++++++++++++++++++++
- arch/arm/boot/dts/integratorap.dts        |  53 ++++-
- 3 files changed, 320 insertions(+), 4 deletions(-)
- create mode 100644 arch/arm/boot/dts/integratorap-im-pd1.dts
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index e8dd99201397..22c234e93414 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -237,6 +237,7 @@ dtb-$(CONFIG_ARCH_HIX5HD2) += \
- 	hisi-x5hd2-dkb.dtb
- dtb-$(CONFIG_ARCH_INTEGRATOR) += \
- 	integratorap.dtb \
-+	integratorap-im-pd1.dtb \
- 	integratorcp.dtb
- dtb-$(CONFIG_ARCH_IXP4XX) += \
- 	intel-ixp42x-linksys-nslu2.dtb \
-diff --git a/arch/arm/boot/dts/integratorap-im-pd1.dts b/arch/arm/boot/dts/integratorap-im-pd1.dts
-new file mode 100644
-index 000000000000..1412a1a968fc
---- /dev/null
-+++ b/arch/arm/boot/dts/integratorap-im-pd1.dts
-@@ -0,0 +1,270 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Device Tree for the ARM Integrator/AP platform
-+ * with the IM-PD1 example logical module mounted.
-+ */
-+
-+#include "integratorap.dts"
-+
-+/ {
-+	model = "ARM Integrator/AP with IM-PD1";
-+	compatible = "arm,integrator-ap";
-+
-+	reserved-memory {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges;
-+
-+		impd1_ram: vram@c2000000 {
-+			/* 1 MB of designated video RAM on the IM-PD1 */
-+			compatible = "shared-dma-pool";
-+			reg = <0xc2000000 0x00100000>;
-+			no-map;
-+		};
-+	};
-+};
-+
-+&lm0 {
-+	syscon@0 {
-+		compatible = "arm,im-pd1-syscon", "syscon";
-+		reg = <0x00000000 0x1000>;
-+
-+		vco1: clock@00 {
-+			compatible = "arm,impd1-vco1";
-+			#clock-cells = <0>;
-+			lock-offset = <0x08>;
-+			vco-offset = <0x00>;
-+			clocks = <&sysclk>;
-+			clock-output-names = "IM-PD1-VCO1";
-+		};
-+
-+		vco2: clock@04 {
-+			compatible = "arm,impd1-vco2";
-+			#clock-cells = <0>;
-+			lock-offset = <0x08>;
-+			vco-offset = <0x04>;
-+			clocks = <&sysclk>;
-+			clock-output-names = "IM-PD1-VCO2";
-+		};
-+	};
-+
-+	/* Also used for the Smart Card Interface SCI */
-+	impd1_uartclk: clock@1_4 {
-+		compatible = "fixed-factor-clock";
-+		#clock-cells = <0>;
-+		clock-div = <4>;
-+		clock-mult = <1>;
-+		clocks = <&vco2>;
-+		clock-output-names = "VCO2_DIV4";
-+	};
-+
-+	/* For the SSP the clock is divided by 64 */
-+	impd1_sspclk: clock@1_64 {
-+		compatible = "fixed-factor-clock";
-+		#clock-cells = <0>;
-+		clock-div = <64>;
-+		clock-mult = <1>;
-+		clocks = <&vco2>;
-+		clock-output-names = "VCO2_DIV64";
-+	};
-+
-+	/* Fixed regulator for the MMC */
-+	impd1_3v3: regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+	};
-+
-+	/* Push buttons on the IM-PD1 */
-+	gpio_keys {
-+		compatible = "gpio-keys";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		button@0 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_UP>;
-+			label = "UP";
-+			gpios = <&impd1_gpio1 0 GPIO_ACTIVE_HIGH>;
-+		};
-+		button@1 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_DOWN>;
-+			label = "DOWN";
-+			gpios = <&impd1_gpio1 1 GPIO_ACTIVE_HIGH>;
-+		};
-+		button@2 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_LEFT>;
-+			label = "LEFT";
-+			gpios = <&impd1_gpio1 2 GPIO_ACTIVE_HIGH>;
-+		};
-+		button@3 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_RIGHT>;
-+			label = "UP";
-+			gpios = <&impd1_gpio1 3 GPIO_ACTIVE_HIGH>;
-+		};
-+		button@4 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_ESC>;
-+			label = "ESC";
-+			gpios = <&impd1_gpio1 4 GPIO_ACTIVE_HIGH>;
-+		};
-+		button@5 {
-+			debounce-interval = <50>;
-+			linux,code = <KEY_ENTER>;
-+			label = "ENTER";
-+			gpios = <&impd1_gpio1 5 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
-+
-+
-+	bridge {
-+		compatible = "ti,ths8134b", "ti,ths8134";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			port@0 {
-+				reg = <0>;
-+					vga_bridge_in: endpoint {
-+					remote-endpoint = <&clcd_pads_vga_dac>;
-+				};
-+			};
-+
-+			port@1 {
-+				reg = <1>;
-+
-+				vga_bridge_out: endpoint {
-+					remote-endpoint = <&vga_con_in>;
-+				};
-+			};
-+		};
-+	};
-+
-+	vga {
-+		compatible = "vga-connector";
-+
-+		port {
-+			vga_con_in: endpoint {
-+				remote-endpoint = <&vga_bridge_out>;
-+			};
-+		};
-+	};
-+
-+	uart@100000 {
-+		compatible = "arm,pl011", "arm,primecell";
-+		reg = <0x00100000 0x1000>;
-+		interrupts-extended = <&impd1_vic 1>;
-+		clocks = <&impd1_uartclk>, <&sysclk>;
-+		clock-names = "uartclk", "apb_pclk";
-+	};
-+
-+	uart@200000 {
-+		compatible = "arm,pl011", "arm,primecell";
-+		reg = <0x00200000 0x1000>;
-+		interrupts-extended = <&impd1_vic 2>;
-+		clocks = <&impd1_uartclk>, <&sysclk>;
-+		clock-names = "uartclk", "apb_pclk";
-+	};
-+
-+	ssp@300000 {
-+		compatible = "arm,pl022", "arm,primecell";
-+		reg = <0x00300000 0x1000>;
-+		interrupts-extended = <&impd1_vic 3>;
-+		clocks = <&impd1_sspclk>, <&sysclk>;
-+		clock-names = "spiclk", "apb_pclk";
-+	};
-+
-+	impd1_gpio0: gpio@400000 {
-+		compatible = "arm,pl061", "arm,primecell";
-+		reg = <0x00400000 0x1000>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		interrupts-extended = <&impd1_vic 4>;
-+		clocks = <&sysclk>;
-+		clock-names = "apb_pclk";
-+	};
-+
-+	impd1_gpio1: gpio@500000 {
-+		compatible = "arm,pl061", "arm,primecell";
-+		reg = <0x00500000 0x1000>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		interrupts-extended = <&impd1_vic 5>;
-+		clocks = <&sysclk>;
-+		clock-names = "apb_pclk";
-+	};
-+
-+	rtc@600000 {
-+		compatible = "arm,pl030", "arm,primecell";
-+		reg = <0x00600000 0x1000>;
-+		interrupts-extended = <&impd1_vic 6>;
-+		clocks = <&sysclk>;
-+		clock-names = "apb_pclk";
-+	};
-+
-+	mmc@700000 {
-+		compatible = "arm,pl181", "arm,primecell";
-+		reg = <0x00700000 0x1000>;
-+		interrupts-extended = <&impd1_vic 7>,
-+				    <&impd1_vic 8>;
-+		clocks = <&sysclk>, <&sysclk>;
-+		clock-names = "mclk", "apb_pclk";
-+		bus-width = <1>;
-+		max-frequency = <515633>;
-+		vmmc-supply = <&impd1_3v3>;
-+		wp-gpios = <&impd1_gpio0 3 GPIO_ACTIVE_HIGH>;
-+		cd-gpios = <&impd1_gpio0 4 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	aaci@800000 {
-+		compatible = "arm,pl041", "arm,primecell";
-+		reg = <0x00800000 0x1000>;
-+		interrupts-extended = <&impd1_vic 9>;
-+		clocks = <&sysclk>;
-+		clock-names = "apb_pclk";
-+	};
-+
-+	display@1000000 {
-+		compatible = "arm,pl110", "arm,primecell";
-+		reg = <0x01000000 0x1000>;
-+		interrupts-extended = <&impd1_vic 11>;
-+		clocks = <&vco1>, <&sysclk>;
-+		clock-names = "clcdclk", "apb_pclk";
-+		/* 640x480 16bpp @ 25.175MHz is 36827428 bytes/s */
-+		max-memory-bandwidth = <40000000>;
-+		memory-region = <&impd1_ram>;
-+
-+		port@0 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			clcd_pads_vga_dac: endpoint@0 {
-+				reg = <0>;
-+				remote-endpoint = <&vga_bridge_in>;
-+				arm,pl11x,tft-r0g0b0-pads = <0 8 16>;
-+			};
-+		};
-+	};
-+
-+	impd1_vic: interrupt-controller@3000000 {
-+		compatible = "arm,pl192-vic";
-+		interrupt-controller;
-+		#interrupt-cells = <1>;
-+		reg = <0x03000000 0x1000>;
-+		/* Valid interrupts, 0-9 and 11 */
-+		valid-mask = <0x00000bff>;
-+		/* LM site 0 has IRQ 9 on the PIC */
-+		interrupts-extended = <&pic 9>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/integratorap.dts b/arch/arm/boot/dts/integratorap.dts
-index 198d66181c50..67d1f9b24a52 100644
---- a/arch/arm/boot/dts/integratorap.dts
-+++ b/arch/arm/boot/dts/integratorap.dts
-@@ -4,7 +4,9 @@
-  */
- 
- /dts-v1/;
--/include/ "integrator.dtsi"
-+#include "integrator.dtsi"
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
- 
- / {
- 	model = "ARM Integrator/AP";
-@@ -107,9 +109,6 @@ auxosc: auxosc@24M {
- 	syscon {
- 		compatible = "arm,integrator-ap-syscon", "syscon";
- 		reg = <0x11000000 0x100>;
--		interrupt-parent = <&pic>;
--		/* These are the logical module IRQs */
--		interrupts = <9>, <10>, <11>, <12>;
- 
- 		/*
- 		 * SYSCLK clocks PCIv3 bridge, system controller and the
-@@ -239,4 +238,50 @@ kmi1: kmi@19000000 {
- 			clock-names = "KMIREFCLK", "apb_pclk";
- 		};
- 	};
-+
-+	/*
-+	 * Logic module bus, we support up to 4 logical modules
-+	 * They appear at 0xc0000000, 0xd0000000, 0xe0000000 and 0xf0000000
-+	 * and use interrupts 9, 10, 11 and 12 respectively.
-+	 */
-+	bus@c0000000 {
-+		compatible = "arm,integrator-ap-lm";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0xc0000000 0xc0000000 0x40000000>;
-+		dma-ranges;
-+
-+		lm0: bus@c0000000 {
-+			compatible = "simple-bus";
-+			ranges = <0x00000000 0xc0000000 0x10000000>;
-+			dma-ranges = <0x00000000 0x80000000 0x10000000>;
-+			reg = <0xc0000000 0x10000000>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+		lm1: bus@d0000000 {
-+			compatible = "simple-bus";
-+			ranges = <0x00000000 0xd0000000 0x10000000>;
-+			dma-ranges = <0x00000000 0x80000000 0x10000000>;
-+			reg = <0xd0000000 0x10000000>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+		lm2: bus@e0000000 {
-+			compatible = "simple-bus";
-+			ranges = <0x00000000 0xe0000000 0x10000000>;
-+			dma-ranges = <0x00000000 0x80000000 0x10000000>;
-+			reg = <0xe0000000 0x10000000>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+		lm3: bus@f0000000 {
-+			compatible = "simple-bus";
-+			ranges = <0x00000000 0xf0000000 0x10000000>;
-+			dma-ranges = <0x00000000 0x80000000 0x10000000>;
-+			reg = <0xf0000000 0x10000000>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+	};
- };
--- 
-2.25.2
-
+> 
+> In the right behavior, setting the bit to '0' indicates clear and '1'
+> indicates no change. If host controller handles this the other way,
+> UFSHCI_QUIRK_BROKEN_REQ_LIST_CLR can be used.
+> 
+> Signed-off-by: Seungwon Jeon <essuuj@gmail.com>
+> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
