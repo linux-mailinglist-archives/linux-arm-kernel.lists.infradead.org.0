@@ -2,91 +2,150 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A64B11B0238
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:05:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77AA51B0251
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 Apr 2020 09:08:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	Date:From:References:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t3he4VYuFFVEwk4cbcNs2JOmuvRsVHTPBzPA2oH7XI4=; b=D5dtlFpLiKndSA
-	hacQ/QRlVc8J37I8p/u/eNEspXjGF9J/ExdA/pNATaJkbwbhYVOTUHq1WuqBA5QSOTpJkQq6bthJV
-	gZnxZ+psyj1bL+J3y8Hy2+QZeATtd20eVMue19ZyIWgiloZIsHZvy4gx9zjc9BuBwNgRrm/4KJw0I
-	OwkeiQigCFsbn9YqXmhv7TGsmEVbcqG3AnaVvHy0FA9y/tNC9mOZtsl2bsrwIy+QQXNqePT3ebdYW
-	tBbyBuGxdggKg+5YancLK0Rnv0/CvLgEgE4MbMTekEa75SrqSShKE06pInFXhSdhTrxlqxZyFfZAq
-	CMFrR2LQorRFX6rnAccg==;
+	List-Owner; bh=+gAUtm+JdlvO1RtiCGYM+c5rvpzUpdcDQ+AUDJUpQmY=; b=eTYCidA/15ENnE
+	0dwxvCZD37ZnPbZhAONMpliGsjLSWMEJtZEa6H+WlNzn2mZnkD6dlFjX7+8XljmtHGCI1dbYSYs9X
+	YQDeO7Ld/FXbbP/Qnb4mB+PLuDm6ISg36vwdhu8Es0U7fRJeGgEMdwI0Fp+m+ULUQelejGx5/l/AT
+	3LVk7CbfyYIN0UCkZ+qAvBZvLp5fCLDFdEIYUBZ6aPpaA8J6SSQFijstQOXxGvVQWF5vFzDCeVFbX
+	e7OVQKaUJyGNIcHAYic+zxzL974ttZ3YCF+5Pi47sMTa8KXqcdAL4mowM85qRQbTWa0bUk+koTU3k
+	y0mRLY7L3Yh6UsWZgRPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQV6-0001NB-Jc; Mon, 20 Apr 2020 07:05:52 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jQQXe-0001xL-0V; Mon, 20 Apr 2020 07:08:30 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQUn-0001K2-IG
- for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:05:35 +0000
-Received: by mail-pf1-x443.google.com with SMTP id r20so4500830pfh.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 00:05:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=yfnkSN5f2gaTrJl0GVeCylF5vdCJFRacL3iq4ImD+rk=;
- b=YhWj2yqjYltdCafwN1HzBemr26x7U2lwSkpvnlqo6IJo0NlbzNWOVa0N07A77EWWwn
- d2a91DgOA4DrtHAUYiC1clPD7zxtFe+huZYpKXsIUAJUUEanN3GbJHsHNOF5n5MBgrrL
- LmmvUp4PIBnrB8/LsF0QrAWKyybh3GTDovnmlNTpu1Yg6wQ7+djap5VrV+JIDH79s3+Z
- x6x1zTpH7AM0+tQzYgMdlPXBDXUWkONuEBwWbtR0+Qj9dCl2U3N3ZKKY4atYgK171p/6
- T/6SojVqvnGwmoLFMhQt0EOkBStbxFKcI/VhdzCyb8PgZq+NWX6oktX01NeKbyuOnqGd
- qT8w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=yfnkSN5f2gaTrJl0GVeCylF5vdCJFRacL3iq4ImD+rk=;
- b=I0hUgJINzRCdwOHxqWWm8fsnIIDhwXTIkOrt5LR1c5XtDlYvROEg4Wj4tbyTyZ9xiV
- 8SSbqVSY2lWXK2UZlGi28JtP5S4EzTHry/ZqV2SsfvLkhsYfL46LIrq9GVEvDUceX33R
- FWI4mwSb/RvMV/YZBa9bXCcP+nyeLiAbCI70djZOVu7UI/Wd/nzeBAAL7o4xFc0q6fS2
- 7ZhtA6TS+wqB+afLcCnzAm0yyXjkx7eMOp79vqRlL0r558wb/q3cn83u/M/zx12uVBp1
- DOKLz5S+wO0jH8D6g3MyC7HUdbEF4uUJR7v9aivq1kaGbtCIicajnmdhjd+D7yP4zCfG
- 1hEw==
-X-Gm-Message-State: AGi0Pubp2xtwiC5oo5GraPOubxwca/gMtfBz5dAyGSOnHA0q96di9eiN
- qeVa6t35xsi7CI9fsIeN6C4IHQ==
-X-Google-Smtp-Source: APiQypJioGGBXK8I/SnwK36fUlp2u0SXdz6IJW4yGBOeCoG0BZb46I63vjDyn384qG3lg9DF8qRufg==
-X-Received: by 2002:a63:4c2:: with SMTP id 185mr14296077pge.1.1587366332598;
- Mon, 20 Apr 2020 00:05:32 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id b5sm161749pfb.190.2020.04.20.00.05.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 00:05:31 -0700 (PDT)
-Date: Mon, 20 Apr 2020 00:05:55 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Siddharth Gupta <sidgup@codeaurora.org>
-Subject: Re: [PATCH v2 2/6] remoteproc: sysmon: Add notifications for events
-Message-ID: <20200420070555.GE1868936@builder.lan>
-References: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
- <1586389003-26675-3-git-send-email-sidgup@codeaurora.org>
+ id 1jQQXR-0001vt-So
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 Apr 2020 07:08:20 +0000
+Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03K739ev014093
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 20 Apr 2020 03:08:15 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 30ghu5f2m0-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 20 Apr 2020 03:08:15 -0400
+Received: from localhost
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <borntraeger@de.ibm.com>;
+ Mon, 20 Apr 2020 08:08:07 +0100
+Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Mon, 20 Apr 2020 08:07:58 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (d06av24.portsmouth.uk.ibm.com
+ [9.149.105.60])
+ by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 03K782cq51052714
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 20 Apr 2020 07:08:02 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 4975F42049;
+ Mon, 20 Apr 2020 07:08:02 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 51A954203F;
+ Mon, 20 Apr 2020 07:08:00 +0000 (GMT)
+Received: from oc7455500831.ibm.com (unknown [9.145.158.104])
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Mon, 20 Apr 2020 07:08:00 +0000 (GMT)
+Subject: Re: [PATCH 1/7] KVM: s390: clean up redundant 'kvm_run' parameters
+To: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>, pbonzini@redhat.com,
+ tsbogend@alpha.franken.de, paulus@ozlabs.org, mpe@ellerman.id.au,
+ benh@kernel.crashing.org, frankja@linux.ibm.com, david@redhat.com,
+ cohuck@redhat.com, heiko.carstens@de.ibm.com, gor@linux.ibm.com,
+ sean.j.christopherson@intel.com, vkuznets@redhat.com,
+ wanpengli@tencent.com, jmattson@google.com, joro@8bytes.org,
+ tglx@linutronix.de, mingo@redhat.com, bp@alien8.de, x86@kernel.org,
+ hpa@zytor.com, maz@kernel.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com
+References: <20200419075106.16248-1-tianjia.zhang@linux.alibaba.com>
+ <20200419075106.16248-2-tianjia.zhang@linux.alibaba.com>
+From: Christian Borntraeger <borntraeger@de.ibm.com>
+Autocrypt: addr=borntraeger@de.ibm.com; prefer-encrypt=mutual; keydata=
+ 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
+ nS4h0HDFPrrp1C2EMVYIQrMokWvlFZbCpsdYbBI=
+Date: Mon, 20 Apr 2020 09:07:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586389003-26675-3-git-send-email-sidgup@codeaurora.org>
+In-Reply-To: <20200419075106.16248-2-tianjia.zhang@linux.alibaba.com>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 20042007-0028-0000-0000-000003FB7A62
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20042007-0029-0000-0000-000024C1391B
+Message-Id: <7a783487-2f9b-08a6-0ff6-f57bb90495a1@de.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-20_02:2020-04-17,
+ 2020-04-20 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=856
+ suspectscore=0 bulkscore=0 spamscore=0 phishscore=0 adultscore=0
+ clxscore=1015 malwarescore=0 priorityscore=1501 lowpriorityscore=0
+ mlxscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004200058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_000533_602625_90D9C51C 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_000818_073558_17773532 
+X-CRM114-Status: GOOD (  32.42  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,101 +157,286 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- agross@kernel.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 08 Apr 16:36 PDT 2020, Siddharth Gupta wrote:
 
-> Add notification for other stages of remoteproc boot and shutdown. This
-> includes adding callback functions for the prepare and unprepare events,
-> and fleshing out the callback function for start.
+
+On 19.04.20 09:51, Tianjia Zhang wrote:
+> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
+> structure. Earlier than historical reasons, many kvm-related function
+> parameters retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time.
+> This patch does a unified cleanup of these remaining redundant parameters.
 > 
-> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
-
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-
-Regards,
-Bjorn
-
+> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
 > ---
->  drivers/remoteproc/qcom_sysmon.c | 37 +++++++++++++++++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
+>  arch/s390/kvm/kvm-s390.c | 127 +++++++++++++++++++++------------------
+>  1 file changed, 67 insertions(+), 60 deletions(-)
 > 
-> diff --git a/drivers/remoteproc/qcom_sysmon.c b/drivers/remoteproc/qcom_sysmon.c
-> index 1366050..851664e 100644
-> --- a/drivers/remoteproc/qcom_sysmon.c
-> +++ b/drivers/remoteproc/qcom_sysmon.c
-> @@ -439,8 +439,31 @@ static const struct qmi_ops ssctl_ops = {
->  	.del_server = ssctl_del_server,
->  };
+> diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
+> index 443af3ead739..cf420d013ba3 100644
+> --- a/arch/s390/kvm/kvm-s390.c
+> +++ b/arch/s390/kvm/kvm-s390.c
+> @@ -4173,24 +4173,25 @@ static int __vcpu_run(struct kvm_vcpu *vcpu)
+>  	return rc;
+>  }
 >  
-> +static int sysmon_prepare(struct rproc_subdev *subdev)
-> +{
-> +	struct qcom_sysmon *sysmon = container_of(subdev, struct qcom_sysmon,
-> +						  subdev);
-> +	struct sysmon_event event = {
-> +		.subsys_name = sysmon->name,
-> +		.ssr_event = SSCTL_SSR_EVENT_BEFORE_POWERUP
-> +	};
-> +
-> +	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)&event);
-> +
-> +	return 0;
-> +}
-> +
->  static int sysmon_start(struct rproc_subdev *subdev)
+> -static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+> +static void sync_regs_fmt2(struct kvm_vcpu *vcpu)
 >  {
-> +	struct qcom_sysmon *sysmon = container_of(subdev, struct qcom_sysmon,
-> +						  subdev);
-> +	struct sysmon_event event = {
-> +		.subsys_name = sysmon->name,
-> +		.ssr_event = SSCTL_SSR_EVENT_AFTER_POWERUP
-> +	};
-> +
-> +	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)&event);
-> +
->  	return 0;
+> +	struct kvm_run *run = vcpu->run;
+
+Please use kvm_run as variable name. This makes all of the changes below go away.
+
+
+>  	struct runtime_instr_cb *riccb;
+>  	struct gs_cb *gscb;
+>  
+> -	riccb = (struct runtime_instr_cb *) &kvm_run->s.regs.riccb;
+> -	gscb = (struct gs_cb *) &kvm_run->s.regs.gscb;
+> -	vcpu->arch.sie_block->gpsw.mask = kvm_run->psw_mask;
+> -	vcpu->arch.sie_block->gpsw.addr = kvm_run->psw_addr;
+> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
+> -		vcpu->arch.sie_block->todpr = kvm_run->s.regs.todpr;
+> -		vcpu->arch.sie_block->pp = kvm_run->s.regs.pp;
+> -		vcpu->arch.sie_block->gbea = kvm_run->s.regs.gbea;
+> -	}
+> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_PFAULT) {
+> -		vcpu->arch.pfault_token = kvm_run->s.regs.pft;
+> -		vcpu->arch.pfault_select = kvm_run->s.regs.pfs;
+> -		vcpu->arch.pfault_compare = kvm_run->s.regs.pfc;
+> +	riccb = (struct runtime_instr_cb *) &run->s.regs.riccb;
+> +	gscb = (struct gs_cb *) &run->s.regs.gscb;
+> +	vcpu->arch.sie_block->gpsw.mask = run->psw_mask;
+> +	vcpu->arch.sie_block->gpsw.addr = run->psw_addr;
+> +	if (run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
+> +		vcpu->arch.sie_block->todpr = run->s.regs.todpr;
+> +		vcpu->arch.sie_block->pp = run->s.regs.pp;
+> +		vcpu->arch.sie_block->gbea = run->s.regs.gbea;
+> +	}
+> +	if (run->kvm_dirty_regs & KVM_SYNC_PFAULT) {
+> +		vcpu->arch.pfault_token = run->s.regs.pft;
+> +		vcpu->arch.pfault_select = run->s.regs.pfs;
+> +		vcpu->arch.pfault_compare = run->s.regs.pfc;
+>  		if (vcpu->arch.pfault_token == KVM_S390_PFAULT_TOKEN_INVALID)
+>  			kvm_clear_async_pf_completion_queue(vcpu);
+>  	}
+> @@ -4198,7 +4199,7 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  	 * If userspace sets the riccb (e.g. after migration) to a valid state,
+>  	 * we should enable RI here instead of doing the lazy enablement.
+>  	 */
+> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_RICCB) &&
+> +	if ((run->kvm_dirty_regs & KVM_SYNC_RICCB) &&
+>  	    test_kvm_facility(vcpu->kvm, 64) &&
+>  	    riccb->v &&
+>  	    !(vcpu->arch.sie_block->ecb3 & ECB3_RI)) {
+> @@ -4209,7 +4210,7 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  	 * If userspace sets the gscb (e.g. after migration) to non-zero,
+>  	 * we should enable GS here instead of doing the lazy enablement.
+>  	 */
+> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_GSCB) &&
+> +	if ((run->kvm_dirty_regs & KVM_SYNC_GSCB) &&
+>  	    test_kvm_facility(vcpu->kvm, 133) &&
+>  	    gscb->gssm &&
+>  	    !vcpu->arch.gs_enabled) {
+> @@ -4218,10 +4219,10 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  		vcpu->arch.sie_block->ecd |= ECD_HOSTREGMGMT;
+>  		vcpu->arch.gs_enabled = 1;
+>  	}
+> -	if ((kvm_run->kvm_dirty_regs & KVM_SYNC_BPBC) &&
+> +	if ((run->kvm_dirty_regs & KVM_SYNC_BPBC) &&
+>  	    test_kvm_facility(vcpu->kvm, 82)) {
+>  		vcpu->arch.sie_block->fpf &= ~FPF_BPBC;
+> -		vcpu->arch.sie_block->fpf |= kvm_run->s.regs.bpbc ? FPF_BPBC : 0;
+> +		vcpu->arch.sie_block->fpf |= run->s.regs.bpbc ? FPF_BPBC : 0;
+>  	}
+>  	if (MACHINE_HAS_GS) {
+>  		preempt_disable();
+> @@ -4232,45 +4233,47 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  		}
+>  		if (vcpu->arch.gs_enabled) {
+>  			current->thread.gs_cb = (struct gs_cb *)
+> -						&vcpu->run->s.regs.gscb;
+> +						&run->s.regs.gscb;
+>  			restore_gs_cb(current->thread.gs_cb);
+>  		}
+>  		preempt_enable();
+>  	}
+> -	/* SIE will load etoken directly from SDNX and therefore kvm_run */
+> +	/* SIE will load etoken directly from SDNX and therefore run */
 >  }
 >  
-> @@ -464,6 +487,18 @@ static void sysmon_stop(struct rproc_subdev *subdev, bool crashed)
->  		sysmon_request_shutdown(sysmon);
+> -static void sync_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+> +static void sync_regs(struct kvm_vcpu *vcpu)
+>  {
+> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_PREFIX)
+> -		kvm_s390_set_prefix(vcpu, kvm_run->s.regs.prefix);
+> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_CRS) {
+> -		memcpy(&vcpu->arch.sie_block->gcr, &kvm_run->s.regs.crs, 128);
+> +	struct kvm_run *run = vcpu->run;
+> +
+> +	if (run->kvm_dirty_regs & KVM_SYNC_PREFIX)
+> +		kvm_s390_set_prefix(vcpu, run->s.regs.prefix);
+> +	if (run->kvm_dirty_regs & KVM_SYNC_CRS) {
+> +		memcpy(&vcpu->arch.sie_block->gcr, &run->s.regs.crs, 128);
+>  		/* some control register changes require a tlb flush */
+>  		kvm_make_request(KVM_REQ_TLB_FLUSH, vcpu);
+>  	}
+> -	if (kvm_run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
+> -		kvm_s390_set_cpu_timer(vcpu, kvm_run->s.regs.cputm);
+> -		vcpu->arch.sie_block->ckc = kvm_run->s.regs.ckc;
+> +	if (run->kvm_dirty_regs & KVM_SYNC_ARCH0) {
+> +		kvm_s390_set_cpu_timer(vcpu, run->s.regs.cputm);
+> +		vcpu->arch.sie_block->ckc = run->s.regs.ckc;
+>  	}
+>  	save_access_regs(vcpu->arch.host_acrs);
+> -	restore_access_regs(vcpu->run->s.regs.acrs);
+> +	restore_access_regs(run->s.regs.acrs);
+>  	/* save host (userspace) fprs/vrs */
+>  	save_fpu_regs();
+>  	vcpu->arch.host_fpregs.fpc = current->thread.fpu.fpc;
+>  	vcpu->arch.host_fpregs.regs = current->thread.fpu.regs;
+>  	if (MACHINE_HAS_VX)
+> -		current->thread.fpu.regs = vcpu->run->s.regs.vrs;
+> +		current->thread.fpu.regs = run->s.regs.vrs;
+>  	else
+> -		current->thread.fpu.regs = vcpu->run->s.regs.fprs;
+> -	current->thread.fpu.fpc = vcpu->run->s.regs.fpc;
+> +		current->thread.fpu.regs = run->s.regs.fprs;
+> +	current->thread.fpu.fpc = run->s.regs.fpc;
+>  	if (test_fp_ctl(current->thread.fpu.fpc))
+>  		/* User space provided an invalid FPC, let's clear it */
+>  		current->thread.fpu.fpc = 0;
+>  
+>  	/* Sync fmt2 only data */
+>  	if (likely(!kvm_s390_pv_cpu_is_protected(vcpu))) {
+> -		sync_regs_fmt2(vcpu, kvm_run);
+> +		sync_regs_fmt2(vcpu);
+>  	} else {
+>  		/*
+>  		 * In several places we have to modify our internal view to
+> @@ -4282,19 +4285,21 @@ static void sync_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  		 * do only accept the condition code from userspace.
+>  		 */
+>  		vcpu->arch.sie_block->gpsw.mask &= ~PSW_MASK_CC;
+> -		vcpu->arch.sie_block->gpsw.mask |= kvm_run->psw_mask &
+> +		vcpu->arch.sie_block->gpsw.mask |= run->psw_mask &
+>  						   PSW_MASK_CC;
+>  	}
+>  
+> -	kvm_run->kvm_dirty_regs = 0;
+> +	run->kvm_dirty_regs = 0;
 >  }
 >  
-> +static void sysmon_unprepare(struct rproc_subdev *subdev)
-> +{
-> +	struct qcom_sysmon *sysmon = container_of(subdev, struct qcom_sysmon,
-> +						  subdev);
-> +	struct sysmon_event event = {
-> +		.subsys_name = sysmon->name,
-> +		.ssr_event = SSCTL_SSR_EVENT_AFTER_SHUTDOWN
-> +	};
+> -static void store_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+> +static void store_regs_fmt2(struct kvm_vcpu *vcpu)
+>  {
+> -	kvm_run->s.regs.todpr = vcpu->arch.sie_block->todpr;
+> -	kvm_run->s.regs.pp = vcpu->arch.sie_block->pp;
+> -	kvm_run->s.regs.gbea = vcpu->arch.sie_block->gbea;
+> -	kvm_run->s.regs.bpbc = (vcpu->arch.sie_block->fpf & FPF_BPBC) == FPF_BPBC;
+> +	struct kvm_run *run = vcpu->run;
 > +
-> +	blocking_notifier_call_chain(&sysmon_notifiers, 0, (void *)&event);
-> +}
+> +	run->s.regs.todpr = vcpu->arch.sie_block->todpr;
+> +	run->s.regs.pp = vcpu->arch.sie_block->pp;
+> +	run->s.regs.gbea = vcpu->arch.sie_block->gbea;
+> +	run->s.regs.bpbc = (vcpu->arch.sie_block->fpf & FPF_BPBC) == FPF_BPBC;
+>  	if (MACHINE_HAS_GS) {
+>  		__ctl_set_bit(2, 4);
+>  		if (vcpu->arch.gs_enabled)
+> @@ -4310,39 +4315,41 @@ static void store_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+>  	/* SIE will save etoken directly into SDNX and therefore kvm_run */
+>  }
+>  
+> -static void store_regs(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
+> +static void store_regs(struct kvm_vcpu *vcpu)
+>  {
+> -	kvm_run->psw_mask = vcpu->arch.sie_block->gpsw.mask;
+> -	kvm_run->psw_addr = vcpu->arch.sie_block->gpsw.addr;
+> -	kvm_run->s.regs.prefix = kvm_s390_get_prefix(vcpu);
+> -	memcpy(&kvm_run->s.regs.crs, &vcpu->arch.sie_block->gcr, 128);
+> -	kvm_run->s.regs.cputm = kvm_s390_get_cpu_timer(vcpu);
+> -	kvm_run->s.regs.ckc = vcpu->arch.sie_block->ckc;
+> -	kvm_run->s.regs.pft = vcpu->arch.pfault_token;
+> -	kvm_run->s.regs.pfs = vcpu->arch.pfault_select;
+> -	kvm_run->s.regs.pfc = vcpu->arch.pfault_compare;
+> -	save_access_regs(vcpu->run->s.regs.acrs);
+> +	struct kvm_run *run = vcpu->run;
 > +
->  /**
->   * sysmon_notify() - notify sysmon target of another's SSR
->   * @nb:		notifier_block associated with sysmon instance
-> @@ -563,8 +598,10 @@ struct qcom_sysmon *qcom_add_sysmon_subdev(struct rproc *rproc,
+> +	run->psw_mask = vcpu->arch.sie_block->gpsw.mask;
+> +	run->psw_addr = vcpu->arch.sie_block->gpsw.addr;
+> +	run->s.regs.prefix = kvm_s390_get_prefix(vcpu);
+> +	memcpy(&run->s.regs.crs, &vcpu->arch.sie_block->gcr, 128);
+> +	run->s.regs.cputm = kvm_s390_get_cpu_timer(vcpu);
+> +	run->s.regs.ckc = vcpu->arch.sie_block->ckc;
+> +	run->s.regs.pft = vcpu->arch.pfault_token;
+> +	run->s.regs.pfs = vcpu->arch.pfault_select;
+> +	run->s.regs.pfc = vcpu->arch.pfault_compare;
+> +	save_access_regs(run->s.regs.acrs);
+>  	restore_access_regs(vcpu->arch.host_acrs);
+>  	/* Save guest register state */
+>  	save_fpu_regs();
+> -	vcpu->run->s.regs.fpc = current->thread.fpu.fpc;
+> +	run->s.regs.fpc = current->thread.fpu.fpc;
+>  	/* Restore will be done lazily at return */
+>  	current->thread.fpu.fpc = vcpu->arch.host_fpregs.fpc;
+>  	current->thread.fpu.regs = vcpu->arch.host_fpregs.regs;
+>  	if (likely(!kvm_s390_pv_cpu_is_protected(vcpu)))
+> -		store_regs_fmt2(vcpu, kvm_run);
+> +		store_regs_fmt2(vcpu);
+>  }
 >  
->  	qmi_add_lookup(&sysmon->qmi, 43, 0, 0);
+>  int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm_run *kvm_run = vcpu->run;
+> +	struct kvm_run *run = vcpu->run;
+>  	int rc;
 >  
-> +	sysmon->subdev.prepare = sysmon_prepare;
->  	sysmon->subdev.start = sysmon_start;
->  	sysmon->subdev.stop = sysmon_stop;
-> +	sysmon->subdev.unprepare = sysmon_unprepare;
+> -	if (kvm_run->immediate_exit)
+> +	if (run->immediate_exit)
+>  		return -EINTR;
 >  
->  	rproc_add_subdev(rproc, &sysmon->subdev);
+> -	if (kvm_run->kvm_valid_regs & ~KVM_SYNC_S390_VALID_FIELDS ||
+> -	    kvm_run->kvm_dirty_regs & ~KVM_SYNC_S390_VALID_FIELDS)
+> +	if (run->kvm_valid_regs & ~KVM_SYNC_S390_VALID_FIELDS ||
+> +	    run->kvm_dirty_regs & ~KVM_SYNC_S390_VALID_FIELDS)
+>  		return -EINVAL;
 >  
-> -- 
-> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-> a Linux Foundation Collaborative Project
+>  	vcpu_load(vcpu);
+> @@ -4368,14 +4375,14 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
+>  		goto out;
+>  	}
+>  
+> -	sync_regs(vcpu, kvm_run);
+> +	sync_regs(vcpu);
+>  	enable_cpu_timer_accounting(vcpu);
+>  
+>  	might_fault();
+>  	rc = __vcpu_run(vcpu);
+>  
+>  	if (signal_pending(current) && !rc) {
+> -		kvm_run->exit_reason = KVM_EXIT_INTR;
+> +		run->exit_reason = KVM_EXIT_INTR;
+>  		rc = -EINTR;
+>  	}
+>  
+> @@ -4390,7 +4397,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
+>  	}
+>  
+>  	disable_cpu_timer_accounting(vcpu);
+> -	store_regs(vcpu, kvm_run);
+> +	store_regs(vcpu);
+>  
+>  	kvm_sigset_deactivate(vcpu);
+>  
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
