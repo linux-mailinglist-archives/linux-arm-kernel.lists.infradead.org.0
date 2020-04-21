@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A31B21B2121
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:10:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B94081B2120
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:09:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=B0HShRpmQJSVYRoCNUJglYgsbqRGekAKpETv0FyaleE=; b=uj746r70ESbeyR
-	U94usdJqTDxSkm/FDyRQZ7m+WTMJwRLviB9rmT2U4qvhWb/yTE680jky1klUwn/jRyzEbiqHriVwD
-	ireqdGMABIuhcIarVKPFJXMsZsLFd58lCPaJNdpIxtS/bbk/zuSv+/Wy2v4xXHw8OoGXe0p5SJenB
-	kxIywoF+RytOhAjTfsHm5Unve55czaya8i7QDBHsSD3ix/3oo29Hle0+a6gn+C8STPiarg+MobPhl
-	l6scafu1XdPeh72STFPhmrRU7qMhuIVW1JDlYZByzTF2g1hRcNBM9MJWzFyUAVLo14dsxAxKwmYgN
-	GurVJi8oD0viQcnUVw9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KdRKDSU0OaB2ykmkH+4sUjSjmR2yLIZvjtDJ8TzCvvY=; b=gF6yNWDvmOHzTz
+	TgG/CINxG1P06rWy3dvdUs/JS1Lgmu6Bigw92VtGE6+eFJ5xHf9YzV8S5+tERqDvanYQhMkgdOq8U
+	qD5gdEV4hIZppUdWq9lzhIR/6VbD4HnQqct2ad5wecIgCnblsgfOJbH3kbxbVQxy53UgPPlV94Flz
+	F6Rn2YT5LKwN4y4I4E1uhxfcBQOyT3fFNAjeuVk9n1N3zYjw8gg0kEqdCLXQ7mbLyUdlTj2aklPAE
+	CQRliBXvufZprXKnCzc9TG8cgjYTaklauKNKTLyHZ7yF7LOCKyP7nwkzq2NNpePTNkbCGu04GNe6j
+	I+2GCc+Vb7YLkrKQd7nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQnz0-0008WH-8B; Tue, 21 Apr 2020 08:10:18 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQnya-0008Ff-0O
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:09:53 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 4E462C5A192B1903B93A;
- Tue, 21 Apr 2020 16:09:35 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.56) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 21 Apr 2020 16:09:27 +0800
-From: Tian Tao <tiantao6@hisilicon.com>
-To: <catalin.marinas@arm.com>, <will@kernel.org>,
- <gregkh@linuxfoundation.org>, <info@metux.net>, <allison@lohutok.net>,
- <james.morse@arm.com>, <tglx@linutronix.de>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <jonathan.cameron@huawei.com>
-Subject: [PATCH] arm32: fix flushcache syscall with device address
-Date: Tue, 21 Apr 2020 16:08:34 +0800
-Message-ID: <1587456514-61156-1-git-send-email-tiantao6@hisilicon.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jQnyV-0008Fq-SL; Tue, 21 Apr 2020 08:09:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQnyM-0008Em-FQ; Tue, 21 Apr 2020 08:09:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B5261FB;
+ Tue, 21 Apr 2020 01:09:37 -0700 (PDT)
+Received: from [10.163.1.9] (unknown [10.163.1.9])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 03BAA3F6CF;
+ Tue, 21 Apr 2020 01:09:29 -0700 (PDT)
+Subject: Re: [PATCH 2/2] mm/thp: Rename pmd_mknotpresent() as pmd_mknotvalid()
+To: Will Deacon <will@kernel.org>
+References: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
+ <1584680057-13753-3-git-send-email-anshuman.khandual@arm.com>
+ <20200420210354.GD29998@willie-the-truck>
+ <78fee884-78fc-6102-1a37-12106dc21336@arm.com>
+ <20200421070703.GC14448@willie-the-truck>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <73e2d20a-4009-c2f3-03b7-fcd29d098491@arm.com>
+Date: Tue, 21 Apr 2020 13:39:15 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.56]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200421070703.GC14448@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_010952_217427_5AED8929 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20200421_010938_559117_CA6FE9E0 
+X-CRM114-Status: GOOD (  15.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,121 +66,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxarm@huawei.com
+Cc: x86@kernel.org, Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ linux-kernel@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, "H. Peter Anvin" <hpa@zytor.com>,
+ Russell King <linux@armlinux.org.uk>, Steven Rostedt <rostedt@goodmis.org>,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Dave Hansen <dave.hansen@linux.intel.com>,
+ Andy Lutomirski <luto@kernel.org>, Vineet Gupta <vgupta@synopsys.com>,
+ nouveau@lists.freedesktop.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-snps-arc@lists.infradead.org, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An issue has been observed on our Kungpeng916 systems when using a PCI
-express GPU. This occurs when a 32 bit application running on a 64 bit
-kernel issues a cache flush operation to a memory address that is in
-a PCI BAR of the GPU.The results in an illegal operation and
-subsequent crash.
 
-Signed-off-by: Tian Tao <tiantao6@hisilicon.com>
-Signed-off-by: Lixin Chen <chenlixin1@huawei.com>
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
----
- arch/arm64/kernel/sys_compat.c | 69 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 69 insertions(+)
 
-diff --git a/arch/arm64/kernel/sys_compat.c b/arch/arm64/kernel/sys_compat.c
-index 3c18c24..6c07944 100644
---- a/arch/arm64/kernel/sys_compat.c
-+++ b/arch/arm64/kernel/sys_compat.c
-@@ -15,12 +15,74 @@
- #include <linux/slab.h>
- #include <linux/syscalls.h>
- #include <linux/uaccess.h>
-+#include <linux/hugetlb.h>
- 
- #include <asm/cacheflush.h>
- #include <asm/system_misc.h>
- #include <asm/tlbflush.h>
- #include <asm/unistd.h>
- 
-+static long __check_pt_cacheable(unsigned long vaddr)
-+{
-+	struct mm_struct *mm = current->mm;
-+	pgd_t *pgd;
-+	p4d_t *p4d;
-+	pud_t *pud;
-+	pudval_t pudval;
-+	pmd_t *pmd;
-+	pmdval_t pmdval;
-+	pte_t *pte;
-+	pteval_t pteval;
-+	pgprot_t pgprot;
-+
-+	spin_lock(&mm->page_table_lock);
-+	pgd = pgd_offset(mm, vaddr);
-+	if (pgd_none(*pgd) || unlikely(pgd_bad(*pgd)))
-+		goto no_page;
-+
-+	p4d = p4d_offset(pgd, vaddr);
-+	if (p4d_none(*p4d) || unlikely(p4d_bad(*p4d)))
-+		goto no_page;
-+
-+	pud = pud_offset(p4d, vaddr);
-+	if (pud_none(*pud) || unlikely(pud_bad(*pud)))
-+		goto no_page;
-+	if (pud_huge(*pud)) {
-+		pudval = pud_val(*pud);
-+		pgprot = __pgprot(pudval);
-+		goto out;
-+	}
-+
-+	pmd = pmd_offset(pud, vaddr);
-+	if (pmd_none(*pmd) || unlikely(pmd_bad(*pmd)))
-+		goto no_page;
-+	if (pmd_huge(*pmd)) {
-+		pmdval = pmd_val(*pmd);
-+		pgprot = __pgprot(pmdval);
-+		goto out;
-+	}
-+
-+	pte = pte_offset_map(pmd, vaddr);
-+	if (!pte_present(*pte) || pte_none(*pte))
-+		goto no_page;
-+	pteval = pte_val(*pte);
-+	pgprot = __pgprot(pteval);
-+
-+out:
-+	pgprot.pgprot &= PTE_ATTRINDX_MASK;
-+	if (pgprot.pgprot != PTE_ATTRINDX(MT_NORMAL)) {
-+		pr_debug("non-cache page pgprot value=0x%llx.\n",
-+			pgprot.pgprot);
-+		goto no_page;
-+	}
-+	spin_unlock(&mm->page_table_lock);
-+	return 1;
-+
-+no_page:
-+	spin_unlock(&mm->page_table_lock);
-+	return 0;
-+}
-+
- static long
- __do_compat_cache_op(unsigned long start, unsigned long end)
- {
-@@ -32,6 +94,13 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
- 		if (fatal_signal_pending(current))
- 			return 0;
- 
-+		 /* do not flush page table is non-cacheable */
-+		if (!__check_pt_cacheable(start)) {
-+			cond_resched();
-+			start += chunk;
-+			continue;
-+		}
-+
- 		if (cpus_have_const_cap(ARM64_WORKAROUND_1542419)) {
- 			/*
- 			 * The workaround requires an inner-shareable tlbi.
--- 
-2.7.4
+On 04/21/2020 12:37 PM, Will Deacon wrote:
+> On Tue, Apr 21, 2020 at 04:57:26AM +0530, Anshuman Khandual wrote:
+>>
+>>
+>> On 04/21/2020 02:33 AM, Will Deacon wrote:
+>>> On Fri, Mar 20, 2020 at 10:24:17AM +0530, Anshuman Khandual wrote:
+>>>> pmd_present() is expected to test positive after pmdp_mknotpresent() as the
+>>>> PMD entry still points to a valid huge page in memory. pmdp_mknotpresent()
+>>>> implies that given PMD entry is just invalidated from MMU perspective while
+>>>> still holding on to pmd_page() referred valid huge page thus also clearing
+>>>> pmd_present() test. This creates the following situation which is counter
+>>>> intuitive.
+>>>>
+>>>> [pmd_present(pmd_mknotpresent(pmd)) = true]
+>>>>
+>>>> This renames pmd_mknotpresent() as pmd_mknotvalid() reflecting the helper's
+>>>> functionality more accurately while changing the above mentioned situation
+>>>> as follows. This does not create any functional change.
+>>>>
+>>>> [pmd_present(pmd_mknotvalid(pmd)) = true]
+>>>>
+>>>> This is not applicable for platforms that define own pmdp_invalidate() via
+>>>> __HAVE_ARCH_PMDP_INVALIDATE. Suggestion for renaming came during a previous
+>>>> discussion here.
+>>>
+>>> Bikeshed alert: maybe pmd_mkinvalid() would be better, given that this is
+>>> a one-trick pony for pmdp_invalidate()?
+>>
+>> I had thought about making it pmd_mkinvalid() earlier. But as we were replacing
+>> pmd_mknotpresent(), hence went with similar pattern pmd_mknotvalid() which was
+>> originally suggested by Catalin. There is an existing pte_mknotpresent() in arc
+>> platform as well. I dont have a very strong opinion either way, will be happy
+>> to rename. But then still wondering if we really need to.
+> 
+> I just think that having pmdp_invalidate() call pmd_mkinvalid() makes a lot
+> of sense and, since this is a pure renaming patch, then that's worth taking
+> into consideration.
 
+Sure np, will do.
+
+> 
+> If you go with pmd_mkinvalid(), then:
+> 
+> Acked-by: Will Deacon <will@kernel.org>
+> 
+> Will
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
