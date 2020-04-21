@@ -2,88 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D7631B2D8B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 18:57:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6C961B2E83
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 19:44:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=co2/93dI6j61zlpzT7zuiHSeer4r/lbguPgd91vP3zw=; b=cFyVXpsOjk94o8
-	nUKLe+ydUUyxnX2FlmbLdshZHVfPBSOFkjStoWEUjndhDJLRehnjTfCGW9Hc6Zu6OsI8SL7QWXkWy
-	VGYZCTaTZXzXE3yhe1hNrZcwak2Br2rlARRTbrpVQI+CzTlspRD3xDU62M3W8jzk6QaRKPD3ht4CE
-	eGaYMLxofwTZCiaUL6BfrJ5WIUeyPmL0nQM2WAXHp8gkUVhDrehN5EKUSoPwdkB0DmD6D5t1U9PzI
-	X+YIueM+5/HdA3wg+cxhdesYC8lSkPTpr/Rea/L7ANogkM//7M+vyz+MOvbPCWcsolbaZkvAFKo4e
-	8BBDT2LCCj1SCmM2O6Kg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VBbA9FesWa/821izHBN1oLEhrY3ujNv31r6qv8+iWPA=; b=c0ESdvE3st5DX6
+	TvHB5CIsHLbIKshwUvBwTjJRIZjp+A4z0BqqPml2IRBAKX4Tr59SdS506EibhaTiA0Phq1xtNppbQ
+	No0kcvy+vndiu5BxCFVtw6i25fFz5+tAC3i9hhyHMGPzlwNiZe3t3wnC87Ij/OBLfVUJmYH2aho4S
+	QJmSic6QMnfCu1Qc3ZESuUJY3BRvT59XGYuC1og71SYoawZ7xlEdu2NiwmcjarZzvi8Q7c1m1cEvQ
+	r9lToVA9izRHycMe4jEQMFp+nmRzkJqepfYQwFkzpz9/bPS/EFaJewpCBh/sC4bQr2v1XwOkgBpNq
+	XtpxDQw9SmvbhyPxmGZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQwCq-0007CE-LD; Tue, 21 Apr 2020 16:57:08 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1jQwwc-0001Hr-1K; Tue, 21 Apr 2020 17:44:26 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQwCg-0007Au-Ub
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 16:57:00 +0000
-Received: by mail-ua1-x944.google.com with SMTP id g10so5325504uae.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 09:56:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+roaZY0aQq5IerWYrtAtqtTIyLi3/oukkignYdqQ2gM=;
- b=OoQpa52k6Fd4P7opyBenigG8zgeRF6Am+UbnctENdxTHpjt3uX/wsSqtr+hw2usoNW
- +wzlwcoFKjhAphlxohZZ7wpwF5Qrc9fV8XHooELQipt2XAUOhINX8t+af9K/NAe/1ouI
- 9B5rYdBhepuERj8H1W00szQjqhiZ71Zijh3deNhrAUcIYTzkpt3TrImmmRojGpU7e4I5
- dlqQFXd3nIKJ1xY2u/LfU+WMZ3ldnJh6TD+T0KVTo0n8k6aPAK9y7J8ulWGGHuYr6+/U
- +AeUSSRpOYhzyNyrNpH11Hnjn80OeP68bBoIu46OSmWBeuBfK0PCUDwO6ffn01bzJe6L
- Z6kg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+roaZY0aQq5IerWYrtAtqtTIyLi3/oukkignYdqQ2gM=;
- b=SrCpOgDg2cS7+OZYdZsthhoLAY5sBkXye9nxPMpe5PkKq7Qf4aIQM0OKAO+Est3BUU
- bSrkX9cuiyeTMxdypCnZHyE+/VVgKjMbrSQ5RtzEClHKdDQ7NnxSAkVWCs0Pt+3VGIPJ
- 6ETnopil9XRkqEIlKhkVSvD65hxtoLiuaWonJ/tLrGjFbvXKr+O7FWEEMUYi93YzoXXD
- c6IRb/S14t5KGkX+HSODc/q+4qud5NpKFeyLRq6vg10zMcAt5fOrsxohP/Py1kithVon
- THG193pmQerAQYtPbk1jc9DrGQRiyvyO5B3j1W0RphvtipI0wmU5oyx5Yg+j9hKQC06d
- PD3Q==
-X-Gm-Message-State: AGi0PuZ8b97iQPWKPJQbMCqMHToSxA5ml+yjWzpvL6bIymM+6JuZVuv0
- LlSJFfiOU+oDZ8M0/rGsRqawWUQZAHyw2RseGFw=
-X-Google-Smtp-Source: APiQypIpbVZ62pOPQuT8rk9YlJ0othDRtz8/TGgGxaOQSXcQd4x9m2DNm9aXz3E3Sig+Sy4/vsuBK0ISisEBtxdsnGY=
-X-Received: by 2002:ab0:7298:: with SMTP id w24mr13269756uao.95.1587488217689; 
- Tue, 21 Apr 2020 09:56:57 -0700 (PDT)
+ id 1jQwwS-0001HB-Oo
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 17:44:18 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 4969t608RMz1r0GS;
+ Tue, 21 Apr 2020 19:44:14 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 4969t56WtFz1qtws;
+ Tue, 21 Apr 2020 19:44:13 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id BkkacvUwQ2Im; Tue, 21 Apr 2020 19:44:12 +0200 (CEST)
+X-Auth-Info: R/fVuDdL3sivlt74LKiNIIO6W1M9sFtlbYZNoV/k70U=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Tue, 21 Apr 2020 19:44:12 +0200 (CEST)
+Subject: Re: [PATCH V4 00/22] ARM: dts: stm32: Repair AV96 board
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200401132237.60880-1-marex@denx.de>
+ <971b9046-2d77-fdc6-2916-8b02ffb601d5@denx.de>
+ <b73cb2bf-e50b-ce52-8e53-d8b72fa273f0@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <37cfbbb1-64a2-aca6-8901-5bdff6df71e9@denx.de>
+Date: Tue, 21 Apr 2020 19:07:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <CGME20200417181022epcas5p1f83138da6e76ff0917de88e913ef8e32@epcas5p1.samsung.com>
- <20200417175944.47189-1-alim.akhtar@samsung.com>
- <20200417175944.47189-9-alim.akhtar@samsung.com>
-In-Reply-To: <20200417175944.47189-9-alim.akhtar@samsung.com>
-From: Alim Akhtar <alim.akhtar@gmail.com>
-Date: Tue, 21 Apr 2020 22:26:21 +0530
-Message-ID: <CAGOxZ52mQ=H5DR7nWJY3RMBuJMr9SXERukJs1UK_Wr1XHP9TZg@mail.gmail.com>
-Subject: Re: [PATCH v6 08/10] dt-bindings: ufs: Add DT binding documentation
- for ufs
-To: Alim Akhtar <alim.akhtar@samsung.com>
+In-Reply-To: <b73cb2bf-e50b-ce52-8e53-d8b72fa273f0@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_095658_988130_9CD9053C 
-X-CRM114-Status: GOOD (  16.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_104417_120620_494C44A1 
+X-CRM114-Status: GOOD (  19.19  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alim.akhtar[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,140 +80,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh <robh@kernel.org>, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, "Martin K. Petersen" <martin.petersen@oracle.com>,
- devicetree@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kiwoong Kim <kwmad.kim@samsung.com>,
- Avri Altman <avri.altman@wdc.com>, Can Guo <cang@codeaurora.org>,
- Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob
-Request to comment on this dt-bindings documentation.
-Thanks
-
-On Fri, Apr 17, 2020 at 11:41 PM Alim Akhtar <alim.akhtar@samsung.com> wrote:
->
-> This patch adds DT binding for samsung ufs hci
->
-> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
-> ---
->  .../bindings/ufs/samsung,exynos-ufs.yaml      | 93 +++++++++++++++++++
->  1 file changed, 93 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
->
-> diff --git a/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
-> new file mode 100644
-> index 000000000000..954338b7f37d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
-> @@ -0,0 +1,93 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/ufs/samsung,exynos-ufs.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Samsung SoC series UFS host controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Alim Akhtar <alim.akhtar@samsung.com>
-> +
-> +description: |
-> +  Each Samsung UFS host controller instance should have its own node.
-> +  This binding define Samsung specific binding other then what is used
-> +  in the common ufshcd bindings
-> +  [1] Documentation/devicetree/bindings/ufs/ufshcd-pltfrm.txt
-> +
-> +properties:
-> +
-> +  compatible:
-> +    enum:
-> +      - samsung,exynos7-ufs
-> +
-> +  reg:
-> +    items:
-> +     - description: HCI register
-> +     - description: vendor specific register
-> +     - description: unipro register
-> +     - description: UFS protector register
-> +
-> +  reg-names:
-> +    items:
-> +      - const: hci
-> +      - const: vs_hci
-> +      - const: unipro
-> +      - const: ufsp
-> +
-> +  clocks:
-> +    maxItems: 2
-> +    items:
-> +      - description: ufs link core clock
-> +      - description: unipro main clock
-> +
-> +  clock-names:
-> +    maxItems: 2
-> +    items:
-> +      - const: core_clk
-> +      - const: sclk_unipro_main
-> +
-> +  interrupts:
-> +    items:
-> +      - description: interrupt signal for various ufshc status
-> +
-> +  phys:
-> +    maxItems: 1
-> +    description:
-> +      phandle of the ufs phy node
-> +
-> +  phy-names:
-> +      const: ufs-phy
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - phys
-> +  - phy-names
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/exynos7-clk.h>
-> +
-> +    ufs: ufs@15570000 {
-> +       compatible = "samsung,exynos7-ufs";
-> +       reg = <0x15570000 0x100>,
-> +             <0x15570100 0x100>,
-> +             <0x15571000 0x200>,
-> +             <0x15572000 0x300>;
-> +       reg-names = "hci", "vs_hci", "unipro", "ufsp";
-> +       interrupts = <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>;
-> +       clocks = <&clock_fsys1 ACLK_UFS20_LINK>,
-> +                <&clock_fsys1 SCLK_UFSUNIPRO20_USER>;
-> +       clock-names = "core_clk", "sclk_unipro_main";
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&ufs_rst_n &ufs_refclk_out>;
-> +       pclk-freq-avail-range = <70000000 133000000>;
-> +       phys = <&ufs_phy>;
-> +       phy-names = "ufs-phy";
-> +    };
-> +...
-> --
-> 2.17.1
->
-
-
--- 
-Regards,
-Alim
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNC8yMS8yMCA2OjA0IFBNLCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+IEhpIE1hcmVrCgpI
+aSwKCj4gT24gNC8yMS8yMCAxMjozMCBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+IE9uIDQvMS8y
+MCAzOjIyIFBNLCBNYXJlayBWYXN1dCB3cm90ZToKPj4+IFRoZSBBVjk2IGJvYXJkIGRldmljZSB0
+cmVlIGlzIGNvbXBsZXRlbHkgYnJva2VuIGFuZCBkb2VzIG5vdCBtYXRjaCB0aGUKPj4+IGhhcmR3
+YXJlLiBUaGlzIHNlcmllcyBmaXhlcyBpdCB1cC4KPj4+Cj4+PiBNYXJlayBWYXN1dCAoMjIpOgo+
+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBldGhlcm5l
+dCBSR01JSQo+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IFJlcGFpciBldGhlcm5ldCBvcGVyYXRp
+b24gb24gQVY5Ngo+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBtaXNzaW5nIGV0aGVybmV0
+IFBIWSByZXNldCBvbiBBVjk2Cj4+PiDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIG1pc3Npbmcg
+ZXRoZXJuZXQgUEhZIHNrZXdzIG9uIEFWOTYKPj4+IMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQg
+YWx0ZXJuYXRlIHBpbm11eCBmb3IgU0RNTUMxIGRpcmVjdGlvbiBwaW5zCj4+PiDCoMKgIEFSTTog
+ZHRzOiBzdG0zMjogUmVwYWlyIFNETU1DMSBvcGVyYXRpb24gb24gQVY5Ngo+Pj4gwqDCoCBBUk06
+IGR0czogc3RtMzI6IFJlcGFpciBQTUlDIGNvbmZpZ3VyYXRpb24gb24gQVY5Ngo+Pj4gwqDCoCBB
+Uk06IGR0czogc3RtMzI6IFJlcGFpciBQTUlDIGludGVycnVwdCBvbiBBVjk2Cj4+PiDCoMKgIEFS
+TTogZHRzOiBzdG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIFNETU1DMiBwaW5zIDQtNwo+
+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBlTU1DIGF0dGFjaGVkIHRvIFNETU1DMiBvbiBB
+Vjk2Cj4+PiDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIFFTUEkgTk9SIG9uIEFWOTYKPj4+IMKg
+wqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgY29uZmlndXJhdGlvbiBFRVBST00gb24gQVY5Ngo+Pj4g
+wqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBTRE1NQzMgcGlu
+cwo+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IEVuYWJsZSBXaUZpIG9uIEFWOTYKPj4+IMKgwqAg
+QVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11eCBmb3IgVVNBUlQyIHBpbnMKPj4+
+IMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBFbmFibGUgQmx1ZXRvb3RoIG9uIEFWOTYKPj4+IMKgwqAg
+QVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11eCBmb3IgTFREQyBwaW5zCj4+PiDC
+oMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIGJpbmRpbmdzIGZvciBIRE1JIHZpZGVvIG9uIEFWOTYK
+Pj4+IMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11eCBmb3IgU0FJMiBw
+aW5zCj4+PiDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIGJpbmRpbmdzIGZvciBhdWRpbyBvbiBB
+Vjk2Cj4+PiDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIGJpbmRpbmdzIGZvciBVU0Igb24gQVY5
+Ngo+Pj4gwqDCoCBBUk06IGR0czogc3RtMzI6IFJlbmFtZSBMRURzIHRvIG1hdGNoIHNpbGtzY3Jl
+ZW4gb24gQVY5Ngo+Pj4KPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNS1waW5jdHJs
+LmR0c2nCoMKgwqAgfCAyODAgKysrKysrKysrKysrKysrKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3Qv
+ZHRzL3N0bTMybXAxNTdhLWF2ZW5nZXI5Ni5kdHMgfCAzMjQgKysrKysrKysrKysrKysrKysrLS0K
+Pj4+IMKgIDIgZmlsZXMgY2hhbmdlZCwgNTcxIGluc2VydGlvbnMoKyksIDMzIGRlbGV0aW9ucygt
+KQo+Pgo+PiBBbGV4LCBjYW4geW91IHByb3ZpZGUgc29tZSByZXZpZXcgb2YgdGhpcyBzZXJpZXMg
+PyBJdCdzIGJlZW4gcG9zdGVkIGZvcgo+PiB0aHJlZSB3ZWVrcyBub3cuCj4+Cj4gCj4gWWVzLCBJ
+IHdhcyB3YWl0aW5nIGZvciBNYW5pJ3MgcmV2aWV3IGZpcnN0IChhbmQgSSB3YXMgYSBiaXQgYnVz
+eSBzb3JyeSkuCgpJdCBzZWVtcyBtb3N0IG9mIHRoZSBwYXRjaGVzIGdvdCB0aGF0IHJldmlldy4K
+Cj4gQWxsIHBhdGNoZXMgbG9va3MgZ29vZCBmb3IgbWUuIE1heWJlIEknbGwgc3F1YXNoIHNvbWUg
+cGluY3RybCBwYXRjaGVzIHRvCj4gZGVjcmVhc2UgbnVtYmVyIG9mIHBhdGNoZXMuCgpPbmUgcGF0
+Y2ggc2hvdWxkIGRvIG9uZSB0aGluZyBhbmQgb25lIHRoaW5nIG9ubHksIG5vID8KCj4gT25lIHJl
+bWFpbmluZyBxdWVzdGlvbnMgYWJvdXQgcGF0Y2ggNyAoIlJlcGFpciBQTUlDIGNvbmZpZ3VyYXRp
+b24gb24KPiBBVjk2KS4gSSBzYXcgYSBkaXNjdXNzaW9uIG9uIHUtYm9vdCB0aHJlYWQgd2l0aCBw
+YXNjYWwgUC4sIGV4cGxhaW5pbmcKPiB0aGF0IDgwMG12IGlzIG5vdCB0aGUgbWluaW1hbCB2b2x0
+YWdlIGFjY2VwdGFibGUgZm9yIHZkZGNvcmUuIFdoYXQgaXMKPiB0aGUgc3RhdHVzID8KCkl0IHNo
+b3VsZCBsaWtlbHkgYmUgc2V0IHRvIDFWMiwgc2FtZSBhcyA3OTFiZTk0ZTI4NzggKCJBUk06IGR0
+czogc3RtMzI6CmNoYW5nZSBkZWZhdWx0IG1pbmltYWwgYnVjazEgdmFsdWUgb24gc3RtMzJtcDE1
+NyIpIGRvZXMuIEknbGwgYWRkIGl0CmludG8gdGhlIGxpc3Qgb2YgZml4ZXMgZm9yIFY1LgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
