@@ -2,77 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E85FF1B1F94
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57CFA1B1FF7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:37:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1vYHleJCBnenMGi0LTzVD0XHL4UeBxd7tKoKxVjQ+E=; b=cDqlvuRQrr471a
-	3LmbATICZrGYRL17Yz4B+Uz8o8iVABp6a2rfQezLYZJLCuJNXPexr6R41eugsTCtzzJhtHpfylksq
-	pP2AchizXrc7Ghm4lMmkSLF3ML+Awh6ThuEF9Dyk+2Wn8DlrVJFa8+ulZtfcfPVEiXdjYITlL9Vrm
-	HHp+PGlNCxsN7J6gGURSVe1N2s23dXJmGgDc0mK+F9xl8Nz6hj1WcJM8ve6llDSgvlyM4TRYP429j
-	Ags0xoBelGesSqT7YBZOX1YF+E6hITiLwyWppldu+XTn2Ft2MBqz/iE7hx+79U7NoRz6gThTCdS2H
-	95Ci+cFhanNp4dHCjITA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QQJT8n3fBNbkYNQzbWOHQ/FyTkUj4pvQ/uNkMHzv2NU=; b=JDytLtGwPfV4MfnYdxbFjjySB
+	C2iphvm5IwQD7PfaPogY7oSRujeQWKxKZADCCSi7+M5KmDL4A/HFe+HjnsyRvdQeqs4AGbPaLMUTt
+	1Mr6IxsUCkb54nFhi1ClG6DQG21/fLZnm0k03jc+6C6nOliP828cmVUdWR6qUIZH9bQuSDKubT1Mc
+	o5XUZPT4SXzTvmLgIXL07xMjthjR+FQgmfP3fdDl4ty/N/p5bOfmP685Dm4LhoN/wvFCMWZOpLJm1
+	WdvS4HUvs9Uao4q3J46C5+wOmj71RexG+Gum/Rj5HRRgiQ2K6k5uV4HdOvqRaZXnXrBYIY7gDLzQZ
+	yl9s9NlzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQn3a-0004cC-Ey; Tue, 21 Apr 2020 07:10:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jQnTH-0006Nx-OK; Tue, 21 Apr 2020 07:37:31 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQn3S-0004b9-2Y
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:10:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AF59B2087E;
- Tue, 21 Apr 2020 07:10:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587453049;
- bh=hsizFFgivkzOViOLBSilwEvs359qWyHCxMIKdaeooMY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Q3P88V8Q8zehk0TI8EWqhabS+NsHwdzffavu38u+KSLSabvfM7D6VEK9+iIFyOrf7
- jiWBNCUpGXRNYuXEPzQoOLXUa7hxKKwrlbDCErMb7IklITrKZzu+HJOlYhNHnYJc+R
- BeaQ1L5Thq/CKMlGewDj0ZhX23vSHBDL79SNeYto=
-Date: Tue, 21 Apr 2020 08:10:45 +0100
-From: Will Deacon <will@kernel.org>
-To: tingwei@codeaurora.org
-Subject: Re: [PATCH] arm64: hw_breakpoint: don't clear debug registers in
- halt mode
-Message-ID: <20200421071043.GA14844@willie-the-truck>
-References: <20200328083209.21793-1-tingwei@codeaurora.org>
- <20200330123946.GH1309@C02TD0UTHF1T.local>
- <20200330134218.GB10633@willie-the-truck>
- <2f4d076b2b21de3908f0821126d0c61e@codeaurora.org>
- <20200331074147.GA25612@willie-the-truck>
- <518d9ca9652c23bfc0e1831306144418@codeaurora.org>
- <20200331114502.GA29553@willie-the-truck>
- <20b8c92a16db07978dfcb8cdf3b0e185@codeaurora.org>
+ id 1jQnT9-0006LI-G7
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:37:25 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jQnT0-00017T-JC; Tue, 21 Apr 2020 09:37:14 +0200
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jQnSz-00045M-IL; Tue, 21 Apr 2020 09:37:13 +0200
+Date: Tue, 21 Apr 2020 09:37:13 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v3 2/5] ARM: dts: add Protonic PRTI6Q board
+Message-ID: <20200421073713.hnv3poogl65ln77w@pengutronix.de>
+References: <20200324110432.25062-1-o.rempel@pengutronix.de>
+ <20200324110432.25062-3-o.rempel@pengutronix.de>
+ <20200421040747.GE8571@dragon>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20b8c92a16db07978dfcb8cdf3b0e185@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200421040747.GE8571@dragon>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:23:29 up 157 days, 22:42, 166 users,  load average: 0.07, 0.07,
+ 0.08
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_001050_164534_6D1BF1DC 
-X-CRM114-Status: GOOD (  21.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200421_003723_536795_64CB15DC 
+X-CRM114-Status: GOOD (  16.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,56 +75,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ David Jander <david@protonic.nl>, Fabio Estevam <festevam@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4331082128214140466=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBBcHIgMjEsIDIwMjAgYXQgMTE6NDk6MTFBTSArMDgwMCwgdGluZ3dlaUBjb2RlYXVy
-b3JhLm9yZyB3cm90ZToKPiDlnKggMjAyMC0wMy0zMSAxOTo0Ne+8jFdpbGwgRGVhY29uIOWGmemB
-k++8mgo+ID4gT24gVHVlLCBNYXIgMzEsIDIwMjAgYXQgMDc6MzM6MzhQTSArMDgwMCwgdGluZ3dl
-aUBjb2RlYXVyb3JhLm9yZyB3cm90ZToKPiA+ID4g5ZyoIDIwMjAtMDMtMzEgMTU6NDHvvIxXaWxs
-IERlYWNvbiDlhpnpgZPvvJoKPiA+ID4gPiBPbiBUdWUsIE1hciAzMSwgMjAyMCBhdCAxMDozOTo0
-MkFNICswODAwLCB0aW5nd2VpQGNvZGVhdXJvcmEub3JnIHdyb3RlOgo+ID4gPiA+ID4gRm9yIHJl
-c2V0IHRoZSByZWdpc3RlcnMgYWZ0ZXIgImRlYnVnX2VuYWJsZWQiIGlzIHRvZ2dsZWQsIEknbQo+
-ID4gPiA+ID4gdGhpbmtpbmcgaWYKPiA+ID4gPiA+IHdlIGFyZSBhZGRpbmcgdW5uZWNlc3Nhcnkg
-Y29tcGxleGl0eSBoZXJlLklmIHdlIHRha2UgdGhhdCBhcHByb2FjaCwgd2UKPiA+ID4gPiA+IHdp
-bGwKPiA+ID4gPiA+IGhvb2sgImRlYnVnX2VuYWJsZWQiIGludGVyZmFjZSBhbmQgdXNlIHNtcF9j
-YWxsX2Z1bmN0aW9uX3NpbmdsZSgpIHRvCj4gPiA+ID4gPiBjYWxsCj4gPiA+ID4gPiBod19icmVh
-a3BvaW50X3Jlc2V0KCkgb24gZWFjaCBDUFUuIFdhaXQgZm9yIGFsbCBDUFVzJyBleGVjdXRpb24g
-ZG9uZQo+ID4gPiA+ID4gYW5kCj4gPiA+ID4gPiBjaGFuZ2UgImRlYnVnX2VuYWJsZWQiLiBFeHRl
-cm5hbCBkZWJ1Z2dlciB3b3VsZCBjbGVhciB0aGUKPiA+ID4gPiA+IGJyZWFrcG9pbnRzIHdoZW4K
-PiA+ID4gPiA+IGl0IGRldGFjaGVzIHRoZSBkZXZpY2UgYW5kIHJlc3RvcmVzIGl0cyBicmVha3Bv
-aW50cyB3aGVuIGF0dGFjaGVzIHRoZQo+ID4gPiA+ID4gZGV2aWNlLgo+ID4gPiA+ID4gQXNzdW1l
-IGRlYnVnX2VuYWJsZWQgaXMgY2hhbmdlZCB0byBvbmUgYWZ0ZXIgZXh0ZXJuYWwgZGVidWdnZXIK
-PiA+ID4gPiA+IGRldGFjaGVzCj4gPiA+ID4gPiB0aGUKPiA+ID4gPiA+IGRldmljZS4gRGVidWdn
-ZXIgd291bGQgYWxyZWFkeSBjbGVhciB0aGUgYnJlYWtwb2ludCByZWdpc3RlcnMuIElmCj4gPiA+
-ID4gPiBkZWJnZ2VyCj4gPiA+ID4gPiBpcwo+ID4gPiA+ID4gc3RpbGwgYXR0YWNoZWQsIHRoZXJl
-J3Mgbm90aGluZyBLZXJuZWwgY2FuIGRvIHRvIHN0b3AgaXQKPiA+ID4gPiA+IHJlc3RvcmVzL3By
-b2dyYW1zCj4gPiA+ID4gPiB0aGUgYnJlYWtwb2ludCByZWdpc3RlcnMuCj4gPiA+ID4gPgo+ID4g
-PiA+ID4gV2hhdCBkbyB5b3UgdGhpbmsgb2YgdGhpcz8KPiA+ID4gPgo+ID4gPiA+IEl0J3MgYWxs
-IGEgYml0IG9mIGEgbWVzcy4gTG9va2luZyBhdCBpdCBzb21lIG1vcmUsIHdoeSBjYW4ndCB0aGUK
-PiA+ID4gPiBleHRlcm5hbAo+ID4gPiA+IGRlYnVnZ2VyIHNpbXBseSB0cmFwIGFjY2VzcyB0byB0
-aGUgZGVidWcgcmVnaXN0ZXJzIHVzaW5nIEVEU0NSLlREQT8gVGhhdAo+ID4gPiA+IHdheSwgd2Ug
-ZG9uJ3QgaGF2ZSB0byBjaGFuZ2UgYW55dGhpbmcgaW4gdGhlIGtlcm5lbC4KPiA+ID4gPgo+ID4g
-PiAKPiA+ID4gRXh0ZXJuYWwgZGVidWdnZXIgaGFzIHRoZSBmdW5jdGlvbiB0byB0cmFwIGFjY2Vz
-cyB0byBkZWJ1ZyByZWdpc3RlcnMKPiA+ID4gbm93Lgo+ID4gPiBXaGF0IGRvIHdlIGV4cGVjdCBk
-ZWJ1Z2dlciB0byBkbyBhZnRlciBjb3JlIGlzIHN0b3BwZWQ/IFNraXAgdGhhdCBtc3IKPiA+ID4g
-aW5zdHJ1Y3Rpb24gYW5kIGNvbnRpbnVlIHRvIHJ1bj8KPiA+IAo+ID4gVGhlIG5pY2VzdCB0aGlu
-ZyB0byBkbyB3b3VsZCBwcm9iYWJseSBiZSB0byByZWNvcmQgYWxsIHRoZSBhY2Nlc3NlcyBtYWRl
-Cj4gPiBieSB0aGUgT1Mgc28gdGhhdCBpdCBjYW4gZW11bGF0ZSByZWFkcyBhbmQgcmVwbGF5IHdy
-aXRlcyB3aGVuIGV4dGVybmFsCj4gPiBkZWJ1Z2dpbmcgaXMgb3Zlci4gR2l2ZW4gdGhhdCB5b3Un
-ZCBzdGlsbCBiZSBleHBlY3RpbmcgdG8gcGFzcwo+ID4gIm5vZGVidWdtb24iLAo+ID4gdGhlIGVt
-dWxhdGlvbiBzaG91bGQgYmUgcHJldHR5IHN0cmFpZ2h0Zm9yd2FyZCwgSSB0aGluay4KPiA+IAo+
-IAo+IFRvIHByb3ZpZGUgYW4gdXBkYXRlIG9uIHRoaXMsIEkndmUgd29ya2VkIHdpdGggZXh0ZXJu
-YWwgZGVidWdnZXIgdmVuZG9yIG9uCj4gdGhpcy4KPiBOb3cgZXh0ZXJuYWwgZGVidWdnZXIgY2Fu
-IHRyYXAgdGhlIHdyaXRlIHRvIGRlYnVnIHJlZ2lzdGVycyBhbmQgaWdub3JlIHRoZQo+IHdyaXRl
-Lgo+IFRoaXMgaXMgdGhlIGZpcnN0IHN0ZXAuCgpUaGFua3MgZm9yIHRoZSB1cGRhdGUhIFBsZWFz
-ZSBsZXQgdXMga25vdyBpZiB5b3UgcnVuIGludG8gYW55IHVuZm9yZXNlZW4KcHJvYmxlbXMuCgpX
-aWxsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+
+--===============4331082128214140466==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="4cydpp6pjv3rbmqg"
+Content-Disposition: inline
+
+
+--4cydpp6pjv3rbmqg
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Shawn,
+
+Thank you for the review. You was reviewing v3, the last version is v5.
+Never the less, part of comments still apply. I'll fix them.
+
+
+On Tue, Apr 21, 2020 at 12:07:49PM +0800, Shawn Guo wrote:
+> On Tue, Mar 24, 2020 at 12:04:29PM +0100, Oleksij Rempel wrote:
+> > Protonic PRTI6Q is a development board and a base class for different
+> > specific customer application boards based on the i.MX6 family of SoCs,
+> > developed by Protonic Holland.
+> >=20
+> > Signed-off-by: David Jander <david@protonic.nl>
+> > Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> > ---
+
+> > +&usdhc2 {
+> > +	pinctrl-names =3D "default";
+> > +	pinctrl-0 =3D <&pinctrl_usdhc2>;
+> > +	non-removable;
+> > +	vmmc-supply =3D <&reg_wifi>;
+> > +	cap-power-off-card;
+> > +	keep-power-in-suspend;
+> > +	status =3D "okay";
+> > +
+> > +	wifi {
+> > +		compatible =3D "ti,wl1271";
+> > +		pinctrl-names =3D "default";
+> > +		pinctrl-0 =3D <&pinctrl_wifi>;
+> > +		irq-gpio =3D <&gpio1 30 GPIO_ACTIVE_HIGH>;
+>=20
+> I failed to find this in "ti,wl1271" bindings.
+
+Indeed. But it is required by the code:
+
+drivers/net/wireless/ti/wlcore/sdio.c:
+static int wlcore_probe_of(struct device *dev, int *irq, int *wakeirq,
+			   struct wlcore_platdev_data *pdev_data)
+{
+=2E...
+	*irq =3D irq_of_parse_and_map(np, 0);
+	if (!*irq) {
+		dev_err(dev, "No irq in platform data\n");
+		return -EINVAL;
+	}
+
+I'll send a patch to fix it.
+
+Regards,
+Oleksij
+--=20
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+--4cydpp6pjv3rbmqg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl6eoqMACgkQ4omh9DUa
+UbMcrxAApMsUmQ33pQEOrk9ulSJkkSg8xm+CMZKkas4aamjE0q+LOe97WArayMXB
+db1ttp4L3b12I6qhcnDrgfhw+ZUduM+PU4ZD3MOi+F9Fy6nwkxJW2HQ3z/q1M6JN
+Fy9UJtSTZ5dY74xtlL9mqZ/ifulWCuuxJxXjKkghe8lUcV2Nerf/X0+A72wHVep6
+2bydbKk7Uu8ioBCLuHMOf1jXHNx2GhEmCc66B2VfpLcsitjy3l40+aEBW4JdBY+f
+STmD6DW9VekFJxOnu1Z/IbFuIIIL+mjKUvAwb6sqXjmnr0DVq/XXN/FQ8fgHZRnq
+AHHqhr3jOOqtHc/VHb2jFGgKAmGMYHdUbotlj/0gWy9Uxw0ZGV6tljL8imJ38/CJ
+dbduR7qjQf3W5+XgouJTb2lq3DIzcQ6Fw5U2iIkdtHxNneigP0WVEA1sBL/ksgos
+d2Lx6FRYF5gHbYerSiPGZH8f2tWHtsV6smAjHjXUF8sGxdLsUzmQDefL1iYOQNeJ
+7N6nVssD+AWjJ0TzdEuorvTepcbKYfsjQlOrX9sMr7pwqAKIRgbd6nESrRgLIHbM
+Yumu4MedWmr98zj9eXckVw8Ezedt/fMR3rXNI8OpM1f9G8qFSpU+zDI0cUIMc/He
+5tVW6uxytjLe6//+mBrk1cKqHph4oiaOsPvARZ/NzBjEeqP9MXo=
+=CZn8
+-----END PGP SIGNATURE-----
+
+--4cydpp6pjv3rbmqg--
+
+
+--===============4331082128214140466==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4331082128214140466==--
+
