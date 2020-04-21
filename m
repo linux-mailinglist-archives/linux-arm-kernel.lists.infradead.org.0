@@ -2,80 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FECD1B2B2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 17:30:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DCEB1B2B34
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 17:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5PLPDtsWCAj2vxwgrP09i7euNbqiRCJGtZ6B6j2Mezw=; b=hLBTTn/hFNU4dX3j6xCKivmVs
-	3zp50ZrersPn68kGcPrbDMlzo6J205pdy1fr9kPBDh/kVzk0ndKH/YCTJk/x5vWezypoYxmUEXe5D
-	TrrLQUcIUWWSiGxkbfme7UM51jNLbck6t5286XgttM02COqfaCniYQXOfI9LYObz0q8zFNl7IJLwa
-	I/zxoFuVgRJfadnaX5cTDsoi+F2XzCxbgLFtD21Fj6iCM/iylU/gdFWDSOEnKO3nbVwhQuGX0u9Ga
-	EphDahomJXagXIJzUCR5Ak8n90vTVOZOPZLHEUimPp99TgIb9dtSPAbvWSxj8zMdO9ue5Cd6bbuB3
-	BBglc9EpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eZHjKQ7NYefCb4eDOo5aflwoxg0St7KF053rMlB39K8=; b=oV8tTyeqpiH+2g
+	lQGY0DF0mt8SsbBW8QZ+SXgIBg+wWNXgng8qk2iXAjM33HvJ/VVhLleF6NtL0qdlEmGE+UwK3Oksv
+	Dj5cqoYUX+lT1P/tQbxjLCQsCyWP3gcuP+gJKsbg8H7iyrjf6tegYEeoZqehSA5H2mngdzfh7zVUZ
+	oEIBsQrpC+iN+PMZ7tATq5x/6Wklw+MISzM1Ek6ArmU+i+kWYPghPmRHQfP5le8gbObfU4Y1dUP3z
+	qey3O2baP6f/TfUCRp0I+YfcROieLTl2emEQgtjYOyqqWHtC9L1cvYqEtMVE5oXxQ5hSRTGTrptrZ
+	iMTfm9tW7SWPwkl3R79Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQurE-0007l3-FT; Tue, 21 Apr 2020 15:30:44 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jQus9-0008J5-4H; Tue, 21 Apr 2020 15:31:41 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQur4-0007jt-7z
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 15:30:36 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03LFULav048654;
- Tue, 21 Apr 2020 10:30:21 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587483021;
- bh=SqS4rr3BfxnSzLgPx1JoL8+qkQ9DLPAefk5MFj5dqPM=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=yH6aMjiH+Ot5jJ512oB3wK+NLRKenM5UmRmRAXmjQ6bjskhiprJSZecsDr2KH0rAd
- Ducw0AKThPdP4noyB1/f85TcoybuWFv0gERmlVmZd4+SJVPt5xlDlWjr4nd4OCtI8o
- MMId2FSvS8yvnjYzfdwlzZgiqMIhnbU2eTGjjR3M=
-Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03LFUKLQ071348
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 21 Apr 2020 10:30:20 -0500
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 21
- Apr 2020 10:30:20 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 21 Apr 2020 10:30:20 -0500
-Received: from [10.250.70.56] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03LFUJ6P067959;
- Tue, 21 Apr 2020 10:30:19 -0500
-Subject: Re: [PATCH v2] remoteproc: remove rproc_elf32_sanity_check
-From: Suman Anna <s-anna@ti.com>
-To: Clement Leger <cleger@kalray.eu>, Ohad Ben-Cohen <ohad@wizery.com>, Bjorn
- Andersson <bjorn.andersson@linaro.org>, Patrice Chotard
- <patrice.chotard@st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>
-References: <20200331083336.7459-1-cleger@kalray.eu>
- <0fc07250-c62c-cb10-58e5-04ccdd6ee176@ti.com>
-Message-ID: <a7994631-7a63-5477-df70-e40b995fe14f@ti.com>
-Date: Tue, 21 Apr 2020 10:30:19 -0500
+ id 1jQus0-0008IQ-II
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 15:31:33 +0000
+Received: by mail-lj1-x243.google.com with SMTP id n6so11067834ljg.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Apr 2020 08:31:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=wtUCUiYZffBnrc+hszmiZBVbrcWDpLsAMtA40Limz8k=;
+ b=cnEk74tXOooz70SpqP7DT3KV7T9QZmQbO4RFs8pWicqYrphIYWhuRBA1JeQDVa8iAj
+ tCuG7RzMweHretX84CxyA53xPl0w1WqVpa4zSF67dXQ0IHa8gYb24N/QNkMeIJGm66wG
+ wrWroxjqbaDcpMybh9TJnAzRGaBqj4LaiSK3owx+xke2lDCit/D7XWzy8fLFHnxjVfRh
+ TvWrl9W476OczqA56ben2Zk7X6C7sq/RDZggBAiMWsmbziYUmy8JlYMq/i14gMm5nP29
+ 6W62YGfkY/PGWUQsVLEvm4N+s2xpN02ocYEL/av1G/YIF8pNrJaLaQ8tvpVx0mWrQNCg
+ rm5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=wtUCUiYZffBnrc+hszmiZBVbrcWDpLsAMtA40Limz8k=;
+ b=mwG3Fz5W0+Z/squfu7WbvaEoFsw0bVPnsWya9eNN/ISyIIEJDkoXDWCwbRAD0iMPpM
+ 4SmYTUZHXdYKTUwLECDrjPrPXaP9aCY0KoMXLL1vl+KyVTOQ8og0jfWl2LDRkbMOZ6Wx
+ +8ZhGkq6CS+KX4jh7ui27zAh+0agzI/AcmLu1PJdyK8zov2P4cWzDJMQZM/MUVIrtxNx
+ FYT5Mu3oG2F/upzFKhO/lFbkC+E1DP44JjD6Q/a68g5c2voAR6P7+Md4kpNwJURsKaC6
+ lA4LGIBJQQG/cluzLyqW35z1sxJb+EcjQjo5WL3JdybYsdmt4OR0uLOGiY3feLkRQuTC
+ qzyQ==
+X-Gm-Message-State: AGi0PubjfZYfkMG6H79Xh8N6VNzuKVfywS8WIiCeEIiHVIneICkjKTs8
+ qD0CbFSqJ1O2IkAT33GrjFI=
+X-Google-Smtp-Source: APiQypIv0yCfzacWSwYjpZnJL0NsfUjoXNHzP9kQruZGSH1JvuatBTBYOvzzT7arz2q0DKwR7Uzx0w==
+X-Received: by 2002:a2e:910e:: with SMTP id m14mr5092458ljg.141.1587483090376; 
+ Tue, 21 Apr 2020 08:31:30 -0700 (PDT)
+Received: from [192.168.2.145] (ppp91-78-208-152.pppoe.mtu-net.ru.
+ [91.78.208.152])
+ by smtp.googlemail.com with ESMTPSA id z15sm2342483ljk.99.2020.04.21.08.31.29
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Apr 2020 08:31:29 -0700 (PDT)
+Subject: Re: [PATCH v5] ARM: boot: Obtain start of physical memory from DTB
+To: Ard Biesheuvel <ardb@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+References: <20200415153409.30112-1-geert+renesas@glider.be>
+ <CAMj1kXHm=xA4gafwAaBn8=YcAsQCYDNmZ=4REsfvEUgZShm3Ww@mail.gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <5419f6b6-2d75-763f-abe1-4c6a2c67dc3d@gmail.com>
+Date: Tue, 21 Apr 2020 18:31:28 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <0fc07250-c62c-cb10-58e5-04ccdd6ee176@ti.com>
+In-Reply-To: <CAMj1kXHm=xA4gafwAaBn8=YcAsQCYDNmZ=4REsfvEUgZShm3Ww@mail.gmail.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_083034_633581_E6D92C3B 
-X-CRM114-Status: GOOD (  18.31  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200421_083132_628347_0D16AB83 
+X-CRM114-Status: GOOD (  16.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,151 +104,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Chris Brandt <chris.brandt@renesas.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
+ Eric Miao <eric.miao@nvidia.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Clement,
-
-On 3/31/20 10:13 AM, Suman Anna wrote:
-> On 3/31/20 3:33 AM, Clement Leger wrote:
->> Since checks are present in the remoteproc elf loader before calling
->> da_to_va, loading a elf64 will work on 32bits flavors of kernel.
->> Indeed, if a segment size is larger than what size_t can hold, the
->> loader will return an error so the functionality is equivalent to
->> what exists today.
->>
->> Signed-off-by: Clement Leger <cleger@kalray.eu>
-> 
-> Acked-by: Suman Anna <s-anna@ti.com>
-
-Can you repost this after rebasing on top of the rproc-next branch
-which has the rproc_alloc refactoring changes pushed now?
-
-regards
-Suman
-
-> 
-> regards
-> Suman
-> 
->> ---
->> Changes from v1 -> v2:
->>   - Remove possibity to override sanity_check operation
->>
->>   drivers/remoteproc/remoteproc_core.c       |  3 +--
->>   drivers/remoteproc/remoteproc_elf_loader.c | 21 ---------------------
->>   drivers/remoteproc/remoteproc_internal.h   |  1 -
->>   drivers/remoteproc/st_remoteproc.c         |  2 +-
->>   drivers/remoteproc/st_slim_rproc.c         |  2 +-
->>   drivers/remoteproc/stm32_rproc.c           |  2 +-
->>   6 files changed, 4 insertions(+), 27 deletions(-)
->>
->> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
->> index a9ac1d01e09b..191560048c1a 100644
->> --- a/drivers/remoteproc/remoteproc_core.c
->> +++ b/drivers/remoteproc/remoteproc_core.c
->> @@ -2068,8 +2068,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
->>   		rproc->ops->load = rproc_elf_load_segments;
->>   		rproc->ops->parse_fw = rproc_elf_load_rsc_table;
->>   		rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
->> -		if (!rproc->ops->sanity_check)
->> -			rproc->ops->sanity_check = rproc_elf32_sanity_check;
->> +		rproc->ops->sanity_check = rproc_elf_sanity_check;
->>   		rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
->>   	}
->>   
->> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
->> index 16e2c496fd45..29034f99898d 100644
->> --- a/drivers/remoteproc/remoteproc_elf_loader.c
->> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
->> @@ -112,27 +112,6 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
->>   }
->>   EXPORT_SYMBOL(rproc_elf_sanity_check);
->>   
->> -/**
->> - * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
->> - * @rproc: the remote processor handle
->> - * @fw: the ELF32 firmware image
->> - *
->> - * Make sure this fw image is sane.
->> - */
->> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
->> -{
->> -	int ret = rproc_elf_sanity_check(rproc, fw);
->> -
->> -	if (ret)
->> -		return ret;
->> -
->> -	if (fw_elf_get_class(fw) == ELFCLASS32)
->> -		return 0;
->> -
->> -	return -EINVAL;
->> -}
->> -EXPORT_SYMBOL(rproc_elf32_sanity_check);
->> -
->>   /**
->>    * rproc_elf_get_boot_addr() - Get rproc's boot address.
->>    * @rproc: the remote processor handle
->> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
->> index b389dc79da81..31994715fd43 100644
->> --- a/drivers/remoteproc/remoteproc_internal.h
->> +++ b/drivers/remoteproc/remoteproc_internal.h
->> @@ -54,7 +54,6 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
->>   phys_addr_t rproc_va_to_pa(void *cpu_addr);
->>   int rproc_trigger_recovery(struct rproc *rproc);
->>   
->> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
->>   int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
->>   u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
->>   int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
->> diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
->> index a6cbfa452764..a3268d95a50e 100644
->> --- a/drivers/remoteproc/st_remoteproc.c
->> +++ b/drivers/remoteproc/st_remoteproc.c
->> @@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
->>   	.parse_fw		= st_rproc_parse_fw,
->>   	.load			= rproc_elf_load_segments,
->>   	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
->> -	.sanity_check		= rproc_elf32_sanity_check,
->> +	.sanity_check		= rproc_elf_sanity_check,
->>   	.get_boot_addr		= rproc_elf_get_boot_addr,
->>   };
->>   
->> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
->> index 3cca8b65a8db..09bcb4d8b9e0 100644
->> --- a/drivers/remoteproc/st_slim_rproc.c
->> +++ b/drivers/remoteproc/st_slim_rproc.c
->> @@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
->>   	.da_to_va       = slim_rproc_da_to_va,
->>   	.get_boot_addr	= rproc_elf_get_boot_addr,
->>   	.load		= rproc_elf_load_segments,
->> -	.sanity_check	= rproc_elf32_sanity_check,
->> +	.sanity_check	= rproc_elf_sanity_check,
->>   };
->>   
->>   /**
->> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
->> index 6a66dbf2df40..2e07a95439c8 100644
->> --- a/drivers/remoteproc/stm32_rproc.c
->> +++ b/drivers/remoteproc/stm32_rproc.c
->> @@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
->>   	.load		= rproc_elf_load_segments,
->>   	.parse_fw	= stm32_rproc_parse_fw,
->>   	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
->> -	.sanity_check	= rproc_elf32_sanity_check,
->> +	.sanity_check	= rproc_elf_sanity_check,
->>   	.get_boot_addr	= rproc_elf_get_boot_addr,
->>   };
->>   
->>
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MjEuMDQuMjAyMCAxODoxOSwgQXJkIEJpZXNoZXV2ZWwg0L/QuNGI0LXRgjoKPiBPbiBXZWQsIDE1
+IEFwciAyMDIwIGF0IDE3OjM0LCBHZWVydCBVeXR0ZXJob2V2ZW4KPiA8Z2VlcnQrcmVuZXNhc0Bn
+bGlkZXIuYmU+IHdyb3RlOgo+Pgo+PiBDdXJyZW50bHksIHRoZSBzdGFydCBhZGRyZXNzIG9mIHBo
+eXNpY2FsIG1lbW9yeSBpcyBvYnRhaW5lZCBieSBtYXNraW5nCj4+IHRoZSBwcm9ncmFtIGNvdW50
+ZXIgd2l0aCBhIGZpeGVkIG1hc2sgb2YgMHhmODAwMDAwMC4gIFRoaXMgbWFzayB2YWx1ZQo+PiB3
+YXMgY2hvc2VuIGFzIGEgYmFsYW5jZSBiZXR3ZWVuIHRoZSByZXF1aXJlbWVudHMgb2YgZGlmZmVy
+ZW50IHBsYXRmb3Jtcy4KPj4gSG93ZXZlciwgdGhpcyBkb2VzIHJlcXVpcmUgdGhhdCB0aGUgc3Rh
+cnQgYWRkcmVzcyBvZiBwaHlzaWNhbCBtZW1vcnkgaXMKPj4gYSBtdWx0aXBsZSBvZiAxMjggTWlC
+LCBwcmVjbHVkaW5nIGJvb3RpbmcgTGludXggb24gcGxhdGZvcm1zIHdoZXJlIHRoaXMKPj4gcmVx
+dWlyZW1lbnQgaXMgbm90IGZ1bGZpbGxlZC4KPj4KPj4gRml4IHRoaXMgbGltaXRhdGlvbiBieSBv
+YnRhaW5pbmcgdGhlIHN0YXJ0IGFkZHJlc3MgZnJvbSB0aGUgRFRCIGluc3RlYWQsCj4+IGlmIGF2
+YWlsYWJsZSAoZWl0aGVyIGV4cGxpY2l0bHkgcGFzc2VkLCBvciBhcHBlbmRlZCB0byB0aGUga2Vy
+bmVsKS4KPj4gRmFsbCBiYWNrIHRvIHRoZSB0cmFkaXRpb25hbCBtZXRob2Qgd2hlbiBuZWVkZWQu
+Cj4+Cj4+IFRoaXMgYWxsb3dzIHRvIGJvb3QgTGludXggb24gcjdzOTIxMC9yemEybWV2YiB1c2lu
+ZyB0aGUgNjQgTWlCIG9mIFNEUkFNCj4+IG9uIHRoZSBSWkEyTUVWQiBzdWIgYm9hcmQsIHdoaWNo
+IGlzIGxvY2F0ZWQgYXQgMHgwQzAwMDAwMCAoQ1MzIHNwYWNlKSwKPj4gaS5lLiBub3QgYXQgYSBt
+dWx0aXBsZSBvZiAxMjggTWlCLgo+Pgo+PiBTdWdnZXN0ZWQtYnk6IE5pY29sYXMgUGl0cmUgPG5p
+Y29AZmx1eG5pYy5uZXQ+Cj4+IFNpZ25lZC1vZmYtYnk6IEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2Vl
+cnQrcmVuZXNhc0BnbGlkZXIuYmU+Cj4+IFJldmlld2VkLWJ5OiBOaWNvbGFzIFBpdHJlIDxuaWNv
+QGZsdXhuaWMubmV0Pgo+PiBSZXZpZXdlZC1ieTogQXJkIEJpZXNoZXV2ZWwgPGFyZGJAa2VybmVs
+Lm9yZz4KPj4gVGVzdGVkLWJ5OiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ftc3Vu
+Zy5jb20+Cj4+IFRlc3RlZC1ieTogRG1pdHJ5IE9zaXBlbmtvIDxkaWdldHhAZ21haWwuY29tPgo+
+IAo+IFRoaXMgaXMgcmVhZHkgdG8gZ28gaW50byB0aGUgcGF0Y2ggc3lzdGVtLCBubz8KPiAKPiBU
+aGUgc29vbmVyIFJ1c3NlbGwgcGlja3MgaXQgdXAsIHRoZSBzb29uZXIgSSBjYW4gcmVzcGluIG15
+IHBhdGNoZXMKPiB0aGF0IGdvIG9uIHRvcC4KPiAKPiBUaGFua3MsCgpUaGUgdjUgd29ya3MgZm9y
+IG1lIG9uIE5WSURJQSBUZWdyYSwganVzdCBpbiBjYXNlLgoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
