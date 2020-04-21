@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D16E61B1C2E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 04:52:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74D4B1B1C6E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 05:11:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C7LntLxEML0aGYv91DFK1aJ0luIVi0h42Po6Phnv6Xs=; b=ahjg8iaXWyCZqV
-	8ribCF469CZem5ulgtHoLh/v+ejRZWDLDLM1DCdGEkcgNm0FKVLTzygpXGBkpXB1KRVWHWCUYS8Zt
-	8hYqLuiEat4jiT0ykBDQrJKhRmA/kNIeqyXmShfPiFHd0b20ZweOqOnmdoQP5cFfmy83FzSzh/6xo
-	CSwhyg6PknsWFRlK1H6ccBN/ADqj01c1XrYa2B+QTXXlK+BwjzMEVmyCPpkQQghoHKP94Bsdip4F0
-	0FUrAF8IrZ2KcUxSPPkvUgriXW/ax6SzPsL02+agxj8s0gCMhVYNe08jxJ2T4kbHjJuLQjq0kwEID
-	8HllOS1anO/2nJyu69Aw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=q/1rliDDi5z0FAjKL5gZObKGfa/KH/lQLUZf40abt6o=; b=njqMcwtiFsH8G2
+	JIZqEBFsjYN0Q1s1EYt6aaRn5p4TQplG8WXK1JZO9Wco0ki6tUrmk7pdFDKmqSgF+XpaaV9UKmUT4
+	ssJu0Y0R5HLpPL9LU/ejFOG1nzzxx8XOYlj65Wc3Z2GNMrrXod28N3mor3+XdET0NY78QmWwWiWDE
+	uDe+DzkEXmyXhTg21UF5ESEqqr3m3uYpRbbkR0xhFNoP+U3wZTkfROVBM4Rso5uVZT8LOlvxhlsXU
+	EnyymWVb49k55Cqayg8bdLsI+i/Oro/Q8Ndd6nIhsycGWTNvl5JB0sSrl9GqReU+kkEV3ftZAJ8qR
+	dtiT5L5fv4GGly589pkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQj1e-00065d-V0; Tue, 21 Apr 2020 02:52:42 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jQjJn-00031b-Dy; Tue, 21 Apr 2020 03:11:27 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQj1U-00064k-Ae
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 02:52:34 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id e6so739015pjt.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 19:52:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=eX6YUoAUyU+ald9w0j9y7218CuMrF9AfTefdb4alt7k=;
- b=Ho+pWbohjKTbqwiK7ylfi0+5ra50+e7O/4vhoi7sO6wSGyeQVWHW9pMw3K1ByITxeq
- z0VvDWGxnjNrIHd5LsVqLBwa+BcbghBVjOwGn+dONaY1qVIeFuWkO9US9xfPmPFawzgQ
- 5heqivxlNf5V7lEkyxccC4wEAfuJ4O3QWWAnX3wN7o27anigl1fSE85ambi3Z1CAm4G4
- pBZvpf8kjuSRWxzoXqrLT/G6DxdUFxnztpSVJTkos2ocV7t2YT71m5OneanzpNN2r+Bo
- cFzpE+4/KfDlKV/cuYb/1FIKHJrqQebnIHs9DuaGlRiuDp8KeU3aJGSnpTtiSaiUYmy4
- wDPA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=eX6YUoAUyU+ald9w0j9y7218CuMrF9AfTefdb4alt7k=;
- b=GrTPyi0FaQZkmTznpPiaOO5j4/AwYZmmM2KTkIdhS5tWZ+XtFPoCu7X1mYtGC2sVN1
- afoZ/SXy8rI5U0xd9EDHN05UgFbthM9wmfM13gj8HCfEkFc6EuWfP0MiRdpc8rF5mD4i
- fpbN+eGAUmeUhL4qh14fMh4gY9BZ3SpUENq8eZ03FD6e8fmEfBydtkiHCi+Rbf+bS4SA
- hmwMZ4AJ8CVqxtAKmJ/o+Nc2a4dSM5P40eE8OulH+dWdVLDQuPbwUBdaUJNnubxpNN+K
- fEVqL7BtY4feIrW6cAXEEtzSy7mQ40wOkXFRMMeZ3TOFJvFEUz3SUPVeyMgUrf0qg+oI
- zoOQ==
-X-Gm-Message-State: AGi0Pua182JBLFpz3XHdGO6dwxgelR5+ULrYdAfJiZscc44o0LtO9NsJ
- P0m8v1+GQXQkoO7regcXKLez/w==
-X-Google-Smtp-Source: APiQypL/E8X9y33COIhDNLXm7A3iI42f49fWAH3eN4CyoMfQlo9TcCfOvUS3Lv9YjydPpYGbOaTW3g==
-X-Received: by 2002:a17:90a:8c93:: with SMTP id
- b19mr2947130pjo.141.1587437551079; 
- Mon, 20 Apr 2020 19:52:31 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id c201sm910602pfc.73.2020.04.20.19.52.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Apr 2020 19:52:30 -0700 (PDT)
-Date: Mon, 20 Apr 2020 19:52:54 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/2] remoteproc: Add prepare and unprepare ops
-Message-ID: <20200421025254.GK1868936@builder.lan>
-References: <20200417002036.24359-1-s-anna@ti.com>
- <20200417002036.24359-2-s-anna@ti.com>
+ id 1jQjIl-00029R-Um; Tue, 21 Apr 2020 03:10:25 +0000
+X-UUID: ac08899137834965a313c6bcbd8653e1-20200420
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=ZLGMpeA19u1Wima9wc0S7lbHcEYXik+4JHiV+qyzH4U=; 
+ b=nvnLbAOO6yZQSezBWJkkSM6woLiiZKlWHZ8KNeNUsRnoV7OF0Jdn5Qfdf2OtMywaQ6jXeZsetUEB1IeWsRIJSizrbpijrKL8nv1FBwmaks6ZwtPnacDpRg+sCKf+5AMSdSmdv6mqTkEVPinYdhCGcQhw3jxQZSdHTqPA8aSaav4=;
+X-UUID: ac08899137834965a313c6bcbd8653e1-20200420
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <hsin-hsiung.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 124608712; Mon, 20 Apr 2020 19:10:09 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 20 Apr 2020 20:00:16 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 21 Apr 2020 11:00:13 +0800
+Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Tue, 21 Apr 2020 11:00:12 +0800
+From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>
+Subject: [PATCH v13 0/6] Add Support for MediaTek PMIC MT6358
+Date: Tue, 21 Apr 2020 11:00:06 +0800
+Message-ID: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+X-Mailer: git-send-email 2.6.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200417002036.24359-2-s-anna@ti.com>
+X-TM-SNTS-SMTP: F7DE3C45707E7BC4C1C7A2764009051DD0C524407E750491ADB5A3F3C0033AAC2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_195232_898940_2FABC22D 
-X-CRM114-Status: GOOD (  23.31  )
+X-CRM114-CacheID: sfid-20200420_201024_009753_0997195C 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,147 +86,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Loic Pallardy <loic.pallardy@st.com>, linux-remoteproc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, linux-kernel@vger.kernel.org
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Josef Friedl <josef.friedl@speed.at>, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
+ Ran Bi <ran.bi@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, Sebastian
+ Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Eddie Huang <eddie.huang@mediatek.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 16 Apr 17:20 PDT 2020, Suman Anna wrote:
+This patchset including modifying suspend/resume behavior and trimming probe function add support to MT6358 PMIC.
+MT6358 is the primary PMIC for MT8183 platform.
 
-> From: Loic Pallardy <loic.pallardy@st.com>
-> 
-> On some SoC architecture, it is needed to enable HW like
-> clock, bus, regulator, memory region... before loading
-> co-processor firmware.
-> 
-> This patch introduces prepare and unprepare ops to execute
-> platform specific function before firmware loading and after
-> stop execution.
-> 
-> Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
-> Signed-off-by: Suman Anna <s-anna@ti.com>
-> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+changes since v12:
+- update file date.
+- modify patch sign-offs block according to chronological order.
+- modify register definition in header file.
+- rebase series on 5.7-rc1.
 
-Do we have an inbound user of these new oops?
+Hsin-Hsiung Wang (5):
+  mfd: mt6397: Modify suspend/resume behavior
+  mfd: mt6397: Trim probe function to support different chips more
+    cleanly
+  dt-bindings: mfd: Add compatible for the MediaTek MT6358 PMIC
+  mfd: Add support for the MediaTek MT6358 PMIC
+  arm64: dts: mt6358: add PMIC MT6358 related nodes
 
-Regards,
-Bjorn
+Ran Bi (1):
+  rtc: mt6397: Add support for the MediaTek MT6358 RTC
 
-> ---
-> v1:
->  - Make the direct ops into inline helper functions in line
->    with the comments on the MCU sync series (v1 comments).
->    No change in functionality.
->  - Picked up the Reviewed-by tags
-> v0: https://patchwork.kernel.org/patch/11456383/
-> 
->  drivers/remoteproc/remoteproc_core.c     | 15 ++++++++++++++-
->  drivers/remoteproc/remoteproc_internal.h | 16 ++++++++++++++++
->  include/linux/remoteproc.h               |  4 ++++
->  3 files changed, 34 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index d681eeb962b6..e38f627059ac 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -1394,12 +1394,19 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->  		return ret;
->  	}
->  
-> +	/* Prepare rproc for firmware loading if needed */
-> +	ret = rproc_prepare_device(rproc);
-> +	if (ret) {
-> +		dev_err(dev, "can't prepare rproc %s: %d\n", rproc->name, ret);
-> +		goto disable_iommu;
-> +	}
-> +
->  	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
->  
->  	/* Load resource table, core dump segment list etc from the firmware */
->  	ret = rproc_parse_fw(rproc, fw);
->  	if (ret)
-> -		goto disable_iommu;
-> +		goto unprepare_rproc;
->  
->  	/* reset max_notifyid */
->  	rproc->max_notifyid = -1;
-> @@ -1433,6 +1440,9 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->  	kfree(rproc->cached_table);
->  	rproc->cached_table = NULL;
->  	rproc->table_ptr = NULL;
-> +unprepare_rproc:
-> +	/* release HW resources if needed */
-> +	rproc_unprepare_device(rproc);
->  disable_iommu:
->  	rproc_disable_iommu(rproc);
->  	return ret;
-> @@ -1838,6 +1848,9 @@ void rproc_shutdown(struct rproc *rproc)
->  	/* clean up all acquired resources */
->  	rproc_resource_cleanup(rproc);
->  
-> +	/* release HW resources if needed */
-> +	rproc_unprepare_device(rproc);
-> +
->  	rproc_disable_iommu(rproc);
->  
->  	/* Free the copy of the resource table */
-> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-> index b389dc79da81..101e6be8d240 100644
-> --- a/drivers/remoteproc/remoteproc_internal.h
-> +++ b/drivers/remoteproc/remoteproc_internal.h
-> @@ -64,6 +64,22 @@ struct resource_table *rproc_elf_find_loaded_rsc_table(struct rproc *rproc,
->  struct rproc_mem_entry *
->  rproc_find_carveout_by_name(struct rproc *rproc, const char *name, ...);
->  
-> +static inline int rproc_prepare_device(struct rproc *rproc)
-> +{
-> +	if (rproc->ops->prepare)
-> +		return rproc->ops->prepare(rproc);
-> +
-> +	return 0;
-> +}
-> +
-> +static inline int rproc_unprepare_device(struct rproc *rproc)
-> +{
-> +	if (rproc->ops->unprepare)
-> +		return rproc->ops->unprepare(rproc);
-> +
-> +	return 0;
-> +}
-> +
->  static inline
->  int rproc_fw_sanity_check(struct rproc *rproc, const struct firmware *fw)
->  {
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 38607107b7cb..b8481ac969f1 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -355,6 +355,8 @@ enum rsc_handling_status {
->  
->  /**
->   * struct rproc_ops - platform-specific device handlers
-> + * @prepare:	prepare device for code loading
-> + * @unprepare:	unprepare device after stop
->   * @start:	power on the device and boot it
->   * @stop:	power off the device
->   * @kick:	kick a virtqueue (virtqueue id given as a parameter)
-> @@ -373,6 +375,8 @@ enum rsc_handling_status {
->   *		panic at least the returned number of milliseconds
->   */
->  struct rproc_ops {
-> +	int (*prepare)(struct rproc *rproc);
-> +	int (*unprepare)(struct rproc *rproc);
->  	int (*start)(struct rproc *rproc);
->  	int (*stop)(struct rproc *rproc);
->  	void (*kick)(struct rproc *rproc, int vqid);
-> -- 
-> 2.26.0
-> 
+ Documentation/devicetree/bindings/mfd/mt6397.txt |  14 +-
+ arch/arm64/boot/dts/mediatek/mt6358.dtsi         | 358 +++++++++++++++++++++++
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts      |   1 +
+ drivers/mfd/Makefile                             |   2 +-
+ drivers/mfd/mt6358-irq.c                         | 235 +++++++++++++++
+ drivers/mfd/mt6397-core.c                        | 101 ++++---
+ drivers/mfd/mt6397-irq.c                         |  35 ++-
+ drivers/power/reset/mt6323-poweroff.c            |   2 +-
+ drivers/rtc/rtc-mt6397.c                         |  18 +-
+ include/linux/mfd/mt6358/core.h                  | 158 ++++++++++
+ include/linux/mfd/mt6358/registers.h             | 282 ++++++++++++++++++
+ include/linux/mfd/mt6397/core.h                  |   5 +
+ include/linux/mfd/mt6397/rtc.h                   |   9 +-
+ 13 files changed, 1158 insertions(+), 62 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt6358.dtsi
+ create mode 100644 drivers/mfd/mt6358-irq.c
+ create mode 100644 include/linux/mfd/mt6358/core.h
+ create mode 100644 include/linux/mfd/mt6358/registers.h
 
+-- 
+2.6.4
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
