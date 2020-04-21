@@ -2,69 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A4B41B2004
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BD41B2015
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:41:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gZ1SApti/uqc5ADa2rvM0KZEBIggEdhgxevb4iQLB6o=; b=sMiZIaKmn7N5Cw4hZ1Q+vz0i/
-	WrpgXVwiNTtQxj/kVn1HaUpc8T/GzL3VXSnyqYsTzbVUVWmaGBw7LO1dD8r+n45DvtyxTtxZ4QcWd
-	P7qVl+bxMgAxjWt2FE16hToZKZKY4xN0LmoQMtLbap+InsFkHCiz75wW1d/wiGDKE7QmG8YFC5VAl
-	H0UTTDHemrogeUk3nn6tO2O5ljy1Pt7Mwgffxv8kaDdq7yMo8KJJiyblqVBv7Ft1qCPQDuMUDfqXB
-	dgreZKJ5AFxakB0BsYU1UOTNxVdiSKIjB8RK4auF7hvrdirn5fUncoc8Jg22SzcuNpCINR435joZB
-	k3If5AJFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ci2/0lZZKJgn0xib3Qoj0pn80uQYEkJp9UyhHFnKH2s=; b=NklFy1CJk3womb
+	QlLFLAyuA4F2NV6n55hhmP2uY22pOYQEChjqXPc4y4yOj7AzxdAmGFrJG0ks6xP1MX+2+igAfQOgT
+	c9pWSSxuEUr4gHGEhNnKDxvSzhB1/bo4U2Iy0A6QD5fvXaHMse+BgIH534eudlxMKVD3s6qG7qnvj
+	f6oB61HVAOFG8Ufc5/+Rsbi1oaPkfQ1DW8iFcrOhv4wdeeXCOw1K/UGcv9xvbrzW8a8DRGe0tNGIt
+	SXMaaveO4tvChGA3sW4ILaPac7FxJAyeKcd3iLcVL5FRCqfCWNlOLiageS/AmnFKVqB/6TSsiOjuY
+	gWYkUsm3wXpV5dox2bEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQnVy-0007HI-B1; Tue, 21 Apr 2020 07:40:18 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jQnWx-0001hN-Qt; Tue, 21 Apr 2020 07:41:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQnVe-0007E7-Ti
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:40:00 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jQnVa-0001KH-KN; Tue, 21 Apr 2020 09:39:54 +0200
-Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ore@pengutronix.de>)
- id 1jQnVa-00047T-5r; Tue, 21 Apr 2020 09:39:54 +0200
-Date: Tue, 21 Apr 2020 09:39:54 +0200
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH v3 2/5] ARM: dts: add Protonic PRTI6Q board
-Message-ID: <20200421073954.dh4omcokxap2vh2v@pengutronix.de>
-References: <20200324110432.25062-1-o.rempel@pengutronix.de>
- <20200324110432.25062-3-o.rempel@pengutronix.de>
- <20200421040747.GE8571@dragon>
- <20200421073713.hnv3poogl65ln77w@pengutronix.de>
+ id 1jQnWm-0001gA-7v
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:41:09 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 765932084D;
+ Tue, 21 Apr 2020 07:41:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587454867;
+ bh=Nbpcjvf4OfQ6/2rbNcF4XSAXJpyKzoe6+kQqdiYXyL8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ux6xM77N6e3zjcMhKqKkdPDzL8BNNWgNngXIeQat43yqC0nlQLUhfbDvC0IRskK4a
+ lzXX4ZT/0h9u4DpM21iqQivITIIy8PZvfZnm9XI2slLBPWpJY6DkcnyZ0ZnL+Yq49u
+ drScS8rGC++743FnPenRISkU6YuS2/Gft9+GbSfU=
+Date: Tue, 21 Apr 2020 08:41:02 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [EXT] Re: [PATCH v3 03/13] task_isolation: add instruction
+ synchronization memory barrier
+Message-ID: <20200421074101.GA15021@willie-the-truck>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+ <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
+ <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
+ <d995795c731d6ecceb36bdf1c1df3d72fefd023d.camel@marvell.com>
+ <20200415124427.GB28304@C02TD0UTHF1T.local>
+ <e4d2cda6f011e80a0d8e482b85bca1c57665fcfd.camel@marvell.com>
+ <20200420122350.GB12889@willie-the-truck>
+ <20200420123628.GB69441@C02TD0UTHF1T.local>
+ <20200420135523.GA18711@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200421073713.hnv3poogl65ln77w@pengutronix.de>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 09:38:50 up 157 days, 22:57, 167 users,  load average: 0.13, 0.10,
- 0.09
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200420135523.GA18711@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_003958_962991_B8DBC035 
-X-CRM114-Status: GOOD (  19.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200421_004108_330782_723616D9 
+X-CRM114-Status: GOOD (  21.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,122 +85,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- David Jander <david@protonic.nl>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8362909081481280724=="
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Alex Belits <abelits@marvell.com>, "frederic@kernel.org" <frederic@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ Prasun Kapoor <pkapoor@marvell.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Apr 20, 2020 at 02:55:23PM +0100, Will Deacon wrote:
+> On Mon, Apr 20, 2020 at 01:36:28PM +0100, Mark Rutland wrote:
+> > On Mon, Apr 20, 2020 at 01:23:51PM +0100, Will Deacon wrote:
+> > > IIUC, we don't need to do anything on arm64 because taking an exception acts
+> > > as a context synchronization event, so I don't think you should try to
+> > > expose this as a new barrier macro. Instead, just make it a pre-requisite
+> > > that architectures need to ensure this behaviour when entering the kernel
+> > > from userspace if they are to select HAVE_ARCH_TASK_ISOLATION.
+> > 
+> > The CSE from the exception isn't sufficient here, because it needs to
+> > occur after the CPU has re-registered to receive IPIs for
+> > kick_all_cpus_sync(). Otherwise there's a window between taking the
+> > exception and re-registering where a necessary context synchronization
+> > event can be missed. e.g.
+> > 
+> > CPU A				CPU B
+> > [ Modifies some code ]		
+> > 				[ enters exception ]
+> > [ D cache maintenance ]
+> > [ I cache maintenance ]
+> > [ IPI ]				// IPI not taken
+> >   ...				[ register for IPI ] 
+> > [ IPI completes ] 
+> > 				[ execute stale code here ]
+> 
+> Thanks.
+> 
+> > However, I think 'IMB' is far too generic, and we should have an arch
+> > hook specific to task isolation, as it's far less likely to be abused as
+> > IMB will.
+> 
+> What guarantees we don't run any unsynchronised module code between
+> exception entry and registering for the IPI? It seems like we'd want that
+> code to run as early as possible, e.g. as part of
+> task_isolation_user_exit() but that doesn't seem to be what's happening.
 
---===============8362909081481280724==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yldmmw33f7ntstg3"
-Content-Disposition: inline
+Sorry, I guess that's more a question for Alex.
 
+Alex -- do you think we could move the "register for IPI" step earlier
+so that it's easier to reason about the code that runs in the dead zone
+during exception entry?
 
---yldmmw33f7ntstg3
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Apr 21, 2020 at 09:37:13AM +0200, Oleksij Rempel wrote:
-> Hi Shawn,
->=20
-> Thank you for the review. You was reviewing v3, the last version is v5.
-> Never the less, part of comments still apply. I'll fix them.
->=20
->=20
-> On Tue, Apr 21, 2020 at 12:07:49PM +0800, Shawn Guo wrote:
-> > On Tue, Mar 24, 2020 at 12:04:29PM +0100, Oleksij Rempel wrote:
-> > > Protonic PRTI6Q is a development board and a base class for different
-> > > specific customer application boards based on the i.MX6 family of SoC=
-s,
-> > > developed by Protonic Holland.
-> > >=20
-> > > Signed-off-by: David Jander <david@protonic.nl>
-> > > Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
-> > > ---
->=20
-> > > +&usdhc2 {
-> > > +	pinctrl-names =3D "default";
-> > > +	pinctrl-0 =3D <&pinctrl_usdhc2>;
-> > > +	non-removable;
-> > > +	vmmc-supply =3D <&reg_wifi>;
-> > > +	cap-power-off-card;
-> > > +	keep-power-in-suspend;
-> > > +	status =3D "okay";
-> > > +
-> > > +	wifi {
-> > > +		compatible =3D "ti,wl1271";
-> > > +		pinctrl-names =3D "default";
-> > > +		pinctrl-0 =3D <&pinctrl_wifi>;
-> > > +		irq-gpio =3D <&gpio1 30 GPIO_ACTIVE_HIGH>;
-> >=20
-> > I failed to find this in "ti,wl1271" bindings.
->=20
-> Indeed. But it is required by the code:
->=20
-> drivers/net/wireless/ti/wlcore/sdio.c:
-> static int wlcore_probe_of(struct device *dev, int *irq, int *wakeirq,
-> 			   struct wlcore_platdev_data *pdev_data)
-> {
-> ....
-> 	*irq =3D irq_of_parse_and_map(np, 0);
-> 	if (!*irq) {
-> 		dev_err(dev, "No irq in platform data\n");
-> 		return -EINVAL;
-> 	}
->=20
-> I'll send a patch to fix it.
-
-
-Ah.. forget it, my mistake. It should be interrupts.
-
-Regards,
-Oleksij
---=20
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
---yldmmw33f7ntstg3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl6eo0kACgkQ4omh9DUa
-UbNblw/9HVrRv9NQo100spx7YQPlrOsoOMy3ti3SUlnExUfoTh0HIa6S7tzfE5rh
-DYN8cgfxp/EwAg81w4BK0qBwv1CNu0Z7aCjxD8m0nVRAojoz9E00BwWIrmppY2Gj
-8722PAA/lVwXNwhsw9wnG7I19iBrYaUsFfogff2w6MEUhzim0lDVYQ4j8DQwFs5x
-88FuXM34yJliQ5G6b+GWDRJVJR2m6ULBKSX5tZxFrG8P4t648HrM+gpEP69/0Joy
-MlEkbwzohcc2Y5cJcFlc1twxgapdM+zI0iGs9jZTg9gg+S+WZl9XG9ZfB+JTUujC
-MZ1NMg/bVnaDyTHqwACEgehBLKPVlUy2s2EOxIVOr+JAXeMsfaF6eTlR8HE0BWCX
-tAhH5x54N5493O+lZeVFD3nFizptb5MpEAzDmNHdLEBrX/1ms8+eEnL0cYQqzyRz
-sLqud802H/8tc8RveBBso3lNHGOpPTUimpp7/GoZSGdHvula95ZU49E/fpPE0ggL
-imC17uBNagu9WB/dTyBLavYnIDly34wSJURWQaT1tByDjp2y+/r42/esVF31LajP
-xFW+bRUUDjPpboGlZqNDedkk39U9jLFnJEFN4XH3g5YJIYZBeS64y4LSrlIGcmnC
-FQqGG8+XwX3DwKnJyVM13KKnAR675h+eRheFJaLIhWVy5fZ0/W4=
-=5rx1
------END PGP SIGNATURE-----
-
---yldmmw33f7ntstg3--
-
-
---===============8362909081481280724==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8362909081481280724==--
-
