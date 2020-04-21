@@ -2,61 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 712371B24D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:17:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21EEC1B24F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:22:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jdyv91Ll30SEOBsfZB64ybb6IKxWyWMSDanRPd+5hEI=; b=Ecc9Ge8jD8+tXx
-	Sq8U8xihLkue2/aM8Uf1GJmP0EjeYS6GT/Pai2YhjwdUOjacj/Hq6Vhr03+eIYoBRAoGZK/XK02TQ
-	zLwcFDc41fJhCVGMVGjeTGiXqZLA3pXBl3TYWoJAOPTfSRSmyCwyzIEe6lmqCMyrm95UZ2DdH5SHm
-	LihatdDs7HiR9PrLcRWUnU0aGx15bEUNCQWi333p8qkKzw0RXjwDACBDGFWg2ohFYMdni3mkCUMWd
-	uHwwZSowLcwUZkGxghgV/d8LGkIgPsaX1N4qSMhUGU2vqcExovEFRaHFi0XKPQohZyMMmOfY1O9uo
-	DlCEOWlPpPiGIjJtXd7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1Bvp9PlcFHSMOuJVE+g8grfaTMKXFlfGHV3EZvNSOJg=; b=i5eOsnB1sD1IhW4zQZJCYzqR5
+	lC1xxO27ue5rvZISTeZQjCOO/ARkzpxXFAKc3DvstT+Eo0dyNNkWxAFWSjpplY4H5fp+0lOCZ/El1
+	9kcm+8Na+tWjAK3vwypXEuj89jG/9+wckMLshrRJBKebHvMoFTnM3ZXy1STOUu/8756pqAbwQboLB
+	7yCz36giSyW7SqE0/Bj6sjlmBmhQODd4aTf9Y+73F9dI0I7m5aGTgel1cLDo4zQdA/fzs4zP69LQj
+	ZAaejYDiu6SW5LSm5QETAMn5CGNoxCFXadAuV23tKDCQmVzWOzEGHjjNjARrUZ9VxN5/d2TFlMy2h
+	i8CuBpiow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQquB-0002S9-2r; Tue, 21 Apr 2020 11:17:31 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jQqyM-0006Gx-38; Tue, 21 Apr 2020 11:21:50 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQqtz-0002O8-4F
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:17:20 +0000
-Received: from lhreml710-chm.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id A887EBF23DF29DC07A5F;
- Tue, 21 Apr 2020 12:17:04 +0100 (IST)
-Received: from localhost (10.47.92.218) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Tue, 21 Apr
- 2020 12:17:04 +0100
-Date: Tue, 21 Apr 2020 12:16:51 +0100
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm32: fix flushcache syscall with device address
-Message-ID: <20200421121651.000009f0@Huawei.com>
-In-Reply-To: <20200421081239.GA15439@willie-the-truck>
-References: <1587456514-61156-1-git-send-email-tiantao6@hisilicon.com>
- <20200421081239.GA15439@willie-the-truck>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1jQqyA-0006FS-Su
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:21:40 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id BAF3D58033F;
+ Tue, 21 Apr 2020 07:21:35 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 21 Apr 2020 07:21:35 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=2qvNJ91IEb/AUiTXH8N0o6OegdF
+ zI2xnwcLyFKBhmMg=; b=DNBSndQeBovAjuo60LXetRogX5AaJdhObX1sjwe4xcf
+ CMMKX9QJTfF3+rlM36/XMBdZdLJXp1icf6pZtviVuNalueXOigbtH1QTRtnfsPtZ
+ TVanzwcq2ykxH3BuowaZjElynooJjih7PGmbX1G9kYfeYGWuzIgsbBIHIYNi1+Y0
+ qCjUhMSoau/3xr1yvYpU/Z3L+8mmxso/ek/ZXyer0tJEUcLEfZgonb2zrTShaDHs
+ PhgJ9HkBexWIwEEfTZZ7g4BphUuRegIWwuSoCTIR8nTwkQAo/09Jg9+73e9ykzm0
+ Qke4n693CDezgFuysXUZueqrhHDh2GQWkqp/d3k9GZg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=2qvNJ9
+ 1IEb/AUiTXH8N0o6OegdFzI2xnwcLyFKBhmMg=; b=IJl+L5/geetMjN0XJzV3I6
+ UmgXvOceReTexMcUdkNPZUUBWhzKBS0xqgmTKNzYFV3pD7V2bA+mZ6jggj+yubnE
+ OPexT32D4Ok+h2o3gryATORbu2W667LHIzIK+TkxYZxngRmnL8SOMVgNdWxei0pm
+ ICzB6Cm855XL/C4a+Hg8S2GrgtuPyqwG5b84k/fCS2ulC1U3Vm6nEJ0r/9gqt8r7
+ Ave1Zuu5XyKUaX/4y2mQmePO54LN9NEp8RBRclCmvuzWFMAiEkxl9DFYpE/cqKRW
+ yZaOK/zOseCiM/zs7u7U9pOztzOVoIzVpVsrwjsDcbZat7fL88C1oYrN6GEykR/Q
+ ==
+X-ME-Sender: <xms:PNeeXnX3SmQG_u6OQi__5pBgi3j-koafOIeW1WBPVRoeu6KFqHqblg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeehgdegtdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:PNeeXuEChcO2S-tZ7fJK0z9aQAzoj90uEOW7EOuqdXysmOZ60Ko7HQ>
+ <xmx:PNeeXu6ewiM2DHh0QSD66uXdfHCHIQZfx3bLwEuShb8Ny4Dl5-0Dqg>
+ <xmx:PNeeXscSi97OlRj2s-EX6uC6eUYe1bPw7EVnrbNk7R-Of5rCmeQ6GQ>
+ <xmx:P9eeXuB6eG0fsJ1kExaStSp_hhHi7Bo7rTJCux1YR72gUeDHVqxesw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id EC25B328005D;
+ Tue, 21 Apr 2020 07:21:31 -0400 (EDT)
+Date: Tue, 21 Apr 2020 13:21:29 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Philipp Rossak <embed3d@gmail.com>
+Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
+ PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
+Message-ID: <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <20200415101008.zxzxca2vlfsefpdv@gilmour.lan>
+ <2E3401F1-A106-4396-8FE6-51CAB72926A4@goldelico.com>
+ <20200415130233.rgn7xrtwqicptke2@gilmour.lan>
+ <C589D06E-435E-4316-AD0A-8498325039E3@goldelico.com>
+ <10969e64-fe1f-d692-4984-4ba916bd2161@gmail.com>
+ <20200420073842.nx4xb3zqvu23arkc@gilmour.lan>
+ <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.47.92.218]
-X-ClientProxiedBy: lhreml729-chm.china.huawei.com (10.201.108.80) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
+In-Reply-To: <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_041719_321676_12F83526 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200421_042139_359357_DFE7AE46 
+X-CRM114-Status: GOOD (  31.85  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,84 +110,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linuxarm@huawei.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, allison@lohutok.net, gregkh@linuxfoundation.org,
- Tian Tao <tiantao6@hisilicon.com>, tglx@linutronix.de, info@metux.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ linux-samsung-soc@vger.kernel.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, James Hogan <jhogan@kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-omap <linux-omap@vger.kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
+Content-Type: multipart/mixed; boundary="===============0533973713296008136=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 Apr 2020 09:12:39 +0100
-Will Deacon <will@kernel.org> wrote:
 
-> On Tue, Apr 21, 2020 at 04:08:34PM +0800, Tian Tao wrote:
-> > An issue has been observed on our Kungpeng916 systems when using a PCI
-> > express GPU. This occurs when a 32 bit application running on a 64 bit
-> > kernel issues a cache flush operation to a memory address that is in
-> > a PCI BAR of the GPU.The results in an illegal operation and
-> > subsequent crash.  
-> 
-> A kernel crash? If so, please can you include the log here?
-
-Deploying my finest copy typing from the image Tian Tao sent out
-
-      KERNEL: /root/vmlinux-4.19.36-3patch-00228-debuginfo
-    DUMPFILE: vmcore [PARTIAL DUMP]
-        CPUS: 64
-        DATE: Fri Mar 20 06:59:56 2020
-      UPTIME: 07:01:01
-LOAD AVERAGE: 33.76, 35.45, 35.79
-       TASKS: 59447
-    NODENAME: cpus-new-ondemand-0509
-     RELEASE: 4.19.36-3patch-0228
-     VERSION: #4 SMP Fri Feb 28 15:18:51 UTC 2020
-     MACHINE: aarch64 (unknown MHz)
-      MEMORY: 255.7 GB
-       PANIC: "kernel panic - not syncing: Asynchronous SError Interrupt"
-         PID: 175108
-     COMMAND: "UnityMain"
-        TASK: ffff80a96999dd00 [THREAD_INFO: ffff80a96999dd00]
-         CPU: 62
-       STATE: TASK_RUNNING (PANIC)
-
-crash> bt
-PID: 175108 TASK: ffff80a96999dd00 CPU: 62 COMMAND: "UnityMain"
-  #0 [ffff000194e1b920] machine_kexec at ffff0000080a265c
-  #1 [ffff000194e1b980] __crash_kexec at ffff0000081b3ba8
-  #2 [ffff000194e1bb10] panic at ffff0000080ecc98
-  #3 [ffff000194e1bbf0] nmi_panic at ffff0000080ec7f4
-  #4 [ffff000194e1bc10] arm64_serror_panic at fff00000809019c
-  #5 [ffff000194e1bc30] do_serror at ffff00000809039c
-  #6 [ffff000194e1bd90] el1_error at ffff000008083e50
-  #7 [ffff000194e1bda0] __flush_icache_range at ffff0000080a9ec4
-  #8 [ffff000194e1be60] el0_svc_common at fff0000080977d8
-  #9 [ffff000194e1bea0] el0_svc_compat_handler at ffff0000080979b4
- #10 [ffff000194e1bff0] el0_svc_compat at ffff0000008083874
-
-     PC: c90fe7f8  LR: c90ff09c  SP: d2afa8e0  PSTATE: 800b0010
-    X12: c56e96e4 X11: d2afaa48 X10: d0ff1000  X9: d2afab68
-     x8: 000000d6  X7: 000f0002  X6: d3c61840  X5: d3c61001
-     X4: d3c03000  X3: 0004d54a  x2: 00000000  x1: d3c61040
-     X0: d3c61000
+--===============0533973713296008136==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bsmwn6lsujflbhcr"
+Content-Disposition: inline
 
 
-New advanced test for Mavis Beacon teaches typing.
+--bsmwn6lsujflbhcr
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-In summary this is all we have to hand...
+Hi,
 
-> 
-> Will
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+On Tue, Apr 21, 2020 at 11:57:33AM +0200, Philipp Rossak wrote:
+> On 20.04.20 09:38, Maxime Ripard wrote:
+> > Hi,
+> >=20
+> > On Fri, Apr 17, 2020 at 02:09:06PM +0200, Philipp Rossak wrote:
+> > > > > I'm a bit skeptical on that one since it doesn't even list the
+> > > > > interrupts connected to the GPU that the binding mandates.
+> > > >=20
+> > > > I think he left it out for a future update.
+> > > > But best he comments himself.
+> > >=20
+> > > I'm currently working on those bindings. They are now 90% done, but t=
+hey are
+> > > not finished till now. Currently there is some mainline support missi=
+ng to
+> > > add the full binding. The A83T and also the A31/A31s have a GPU Power=
+ Off
+> > > Gating Register in the R_PRCM module, that is not supported right now=
+ in
+> > > Mainline. The Register need to be written when the GPU is powered on =
+and
+> > > off.
+> > >=20
+> > > @Maxime: I totally agree on your point that a demo needs to be provid=
+ed
+> > > before the related DTS patches should be provided. That's the reason =
+why I
+> > > added the gpu placeholder patches.
+> > > Do you have an idea how a driver for the R_PRCM stuff can look like? =
+I'm not
+> > > that experienced with the clock driver framework.
+> >=20
+> > It looks like a power-domain to me, so you'd rather plug that into the =
+genpd
+> > framework.
+>=20
+> I had a look on genpd and I'm not really sure if that fits.
+>=20
+> It is basically some bit that verify that the clocks should be enabled or
+> disabled.
+
+No, it can do much more than that. It's a framework to control the SoCs pow=
+er
+domains, so clocks might be a part of it, but most of the time it's going t=
+o be
+about powering up a particular device.
+
+> I think this is better placed somewhere in the clocking framework.
+> I see there more similarities to the gating stuff.
+> Do you think it is suitable to implement it like the clock gating?
+
+I'm really not sure what makes you think that this should be modelled as a
+clock?
+
+> > > The big question is right now how to proceed with the A83T and A31s p=
+atches.
+> > > I see there three options, which one do you prefer?:
+> > >=20
+> > > 1. Provide now placeholder patches and send new patches, if everythin=
+g is
+> > > clear and other things are mainlined
+> > > 2. Provide now patches as complete as possible and provide later patc=
+hes to
+> > > complete them when the R_PRCM things are mainlined
+> > > 3. Leave them out, till the related work is mainlined and the binding=
+s are
+> > > final.
+> >=20
+> > Like I said, the DT *has* to be backward-compatible, so for any DT patc=
+h that
+> > you are asking to be merged, you should be prepared to support it indef=
+initely
+> > and be able to run from it, and you won't be able to change the binding=
+s later
+> > on.
+>=20
+> I agree on your points. But is this also suitable to drivers that are
+> currently off tree and might be merged in one or two years?
+
+This is what we done for the Mali. The devicetree binding was first done fo=
+r the
+out-of-tree driver, and then lima/panfrost reused it.
+
+The key thing here is to have enough confidence about how the hardware work=
+s so
+that you can accurately describe it.
+
+Maxime
+
+--bsmwn6lsujflbhcr
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp7XOQAKCRDj7w1vZxhR
+xY2FAP98NEADiujPOYdZcBw58gJhiTHRG5M+7cY4QmY6LLWi6wEAmaVzzE9csrhP
+gszgPuCUwSKxGaUpbu0VHqeb3LVqwQs=
+=LITU
+-----END PGP SIGNATURE-----
+
+--bsmwn6lsujflbhcr--
 
 
+--===============0533973713296008136==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0533973713296008136==--
+
