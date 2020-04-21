@@ -2,103 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21EEC1B24F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:22:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 256141B2540
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:39:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1Bvp9PlcFHSMOuJVE+g8grfaTMKXFlfGHV3EZvNSOJg=; b=i5eOsnB1sD1IhW4zQZJCYzqR5
-	lC1xxO27ue5rvZISTeZQjCOO/ARkzpxXFAKc3DvstT+Eo0dyNNkWxAFWSjpplY4H5fp+0lOCZ/El1
-	9kcm+8Na+tWjAK3vwypXEuj89jG/9+wckMLshrRJBKebHvMoFTnM3ZXy1STOUu/8756pqAbwQboLB
-	7yCz36giSyW7SqE0/Bj6sjlmBmhQODd4aTf9Y+73F9dI0I7m5aGTgel1cLDo4zQdA/fzs4zP69LQj
-	ZAaejYDiu6SW5LSm5QETAMn5CGNoxCFXadAuV23tKDCQmVzWOzEGHjjNjARrUZ9VxN5/d2TFlMy2h
-	i8CuBpiow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H98uZxiq+ff8eT3smIfgTCWUVQ1KOSp1YCrllNE8TrM=; b=XhRrX2ce3TNWUi
+	TV8Goo0Qgp9n572+gyPT5OZ0bvd7UJCjRtNJac3TbUdim2hJcrCXES+PElhIRV2HjNcDx7NGXSQ0m
+	pPcUEUNBfh1H5JYX04X9Hr9NoOT3CZ94jEUVgPCx6llPqohfPu53uLYGgkydMXNxhaKzR3MzTZg0a
+	kLtCuPmA2cly+uZEi3uhvjUdqjGAIa9ht6x6cw1p9u894jiu0EADHTMjFVl+OfiG1k4mW3vBXzXzy
+	QH4QoSuLw7AoC3Kg2DukeaaWuAUid7F7s6s4BNh1Ij6MGGG8WnCgperh16B8i+yO8BJdVuOTjtyp8
+	aNInqamEZZr1OyYZVbLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQqyM-0006Gx-38; Tue, 21 Apr 2020 11:21:50 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1jQrFe-0000oU-PR; Tue, 21 Apr 2020 11:39:42 +0000
+Received: from mail-bn7nam10on2067.outbound.protection.outlook.com
+ ([40.107.92.67] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQqyA-0006FS-Su
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:21:40 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id BAF3D58033F;
- Tue, 21 Apr 2020 07:21:35 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 21 Apr 2020 07:21:35 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=2qvNJ91IEb/AUiTXH8N0o6OegdF
- zI2xnwcLyFKBhmMg=; b=DNBSndQeBovAjuo60LXetRogX5AaJdhObX1sjwe4xcf
- CMMKX9QJTfF3+rlM36/XMBdZdLJXp1icf6pZtviVuNalueXOigbtH1QTRtnfsPtZ
- TVanzwcq2ykxH3BuowaZjElynooJjih7PGmbX1G9kYfeYGWuzIgsbBIHIYNi1+Y0
- qCjUhMSoau/3xr1yvYpU/Z3L+8mmxso/ek/ZXyer0tJEUcLEfZgonb2zrTShaDHs
- PhgJ9HkBexWIwEEfTZZ7g4BphUuRegIWwuSoCTIR8nTwkQAo/09Jg9+73e9ykzm0
- Qke4n693CDezgFuysXUZueqrhHDh2GQWkqp/d3k9GZg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=2qvNJ9
- 1IEb/AUiTXH8N0o6OegdFzI2xnwcLyFKBhmMg=; b=IJl+L5/geetMjN0XJzV3I6
- UmgXvOceReTexMcUdkNPZUUBWhzKBS0xqgmTKNzYFV3pD7V2bA+mZ6jggj+yubnE
- OPexT32D4Ok+h2o3gryATORbu2W667LHIzIK+TkxYZxngRmnL8SOMVgNdWxei0pm
- ICzB6Cm855XL/C4a+Hg8S2GrgtuPyqwG5b84k/fCS2ulC1U3Vm6nEJ0r/9gqt8r7
- Ave1Zuu5XyKUaX/4y2mQmePO54LN9NEp8RBRclCmvuzWFMAiEkxl9DFYpE/cqKRW
- yZaOK/zOseCiM/zs7u7U9pOztzOVoIzVpVsrwjsDcbZat7fL88C1oYrN6GEykR/Q
- ==
-X-ME-Sender: <xms:PNeeXnX3SmQG_u6OQi__5pBgi3j-koafOIeW1WBPVRoeu6KFqHqblg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeehgdegtdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:PNeeXuEChcO2S-tZ7fJK0z9aQAzoj90uEOW7EOuqdXysmOZ60Ko7HQ>
- <xmx:PNeeXu6ewiM2DHh0QSD66uXdfHCHIQZfx3bLwEuShb8Ny4Dl5-0Dqg>
- <xmx:PNeeXscSi97OlRj2s-EX6uC6eUYe1bPw7EVnrbNk7R-Of5rCmeQ6GQ>
- <xmx:P9eeXuB6eG0fsJ1kExaStSp_hhHi7Bo7rTJCux1YR72gUeDHVqxesw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id EC25B328005D;
- Tue, 21 Apr 2020 07:21:31 -0400 (EDT)
-Date: Tue, 21 Apr 2020 13:21:29 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Philipp Rossak <embed3d@gmail.com>
-Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
- PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
-Message-ID: <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
-References: <cover.1586939718.git.hns@goldelico.com>
- <20200415101008.zxzxca2vlfsefpdv@gilmour.lan>
- <2E3401F1-A106-4396-8FE6-51CAB72926A4@goldelico.com>
- <20200415130233.rgn7xrtwqicptke2@gilmour.lan>
- <C589D06E-435E-4316-AD0A-8498325039E3@goldelico.com>
- <10969e64-fe1f-d692-4984-4ba916bd2161@gmail.com>
- <20200420073842.nx4xb3zqvu23arkc@gilmour.lan>
- <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
+ id 1jQrFS-0000nh-UE
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:39:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ddsx8cBYmxVklB2NXklQKgQiNgmc8QsOvrFILprOjBFtKKPKDxQ97RFH8uPZ6D/hJDasIXyokC43ht2i8jwLJwzWiRE4IS1S9opkD3i48uhfNPPuNC3nIimly93PP07miTYAghQoteN0e4ju+H0JYEXO0hDkzsplkPAvkbxqSqJaPWqGWvBPNi3izKnntVL7ksXbQQ2ub9bpXPNwy8M9Vnw72zhOD+8HgFYdBuynjq1B05HnyuPZ80skZBml4an2bmy2+oIPJ564wgM/nzKEyASCYbQVIjmlUxku3nQnysN1sr44Nyph6XTnk5EVuuaeIxXwO1NfQ0PgUYd+GMQgCw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FZhQkh693RD1ITuIVj3+UmgF9ULxuNJReocRdCLXH7s=;
+ b=GSgXMNCqUI2LY3b5WsdcMEEM/+xxQ0k53ia9c3z2qWwvsQOM8ySoq7mIiZCgzjJiD0UHVsVPwQNU5xFVvRd6ZZYBQoNz50JD4s42F5kyegbEOFxvnc3rPmXA4DHUAnGB6wHV1I+1sFq9N/cStB/ghKjKCDY8V49fEcM3ELok8jUtZ9Zg2LlBNd0emZscf7unkx4DZuN99J6sGH/E0BEbvb8I3I+cgg5KSgKwXSxRf6kb0En1VUfi3WwxirJ/6A7rGoTysF12A8BDsiyB1j717x15FF9G0jCuUcYnfioWigH3ltxuM/be6kGGX0eyDhjQrcw02/nXQe7mrg6H6ds/jA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FZhQkh693RD1ITuIVj3+UmgF9ULxuNJReocRdCLXH7s=;
+ b=RH2P/OK02BMEOgrVZiN0DWL2VtWnYCpLmAVOpZTSOfEb9DGQIz6VQD7ScXa1Dvpl1fDIfgB765WrqMX6jmlQOYgHs4l5iiIsqAWvPZfE+BoXRtieFEPcIQhbv1/mXRw7CHhvzT2sS6h8M953KQn87PJp+ctTS1S2jg9da+7xVlc=
+Received: from DM6PR02MB6876.namprd02.prod.outlook.com (2603:10b6:5:22c::11)
+ by DM6PR02MB6682.namprd02.prod.outlook.com (2603:10b6:5:214::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Tue, 21 Apr
+ 2020 11:39:28 +0000
+Received: from DM6PR02MB6876.namprd02.prod.outlook.com
+ ([fe80::ad68:d392:e519:f671]) by DM6PR02MB6876.namprd02.prod.outlook.com
+ ([fe80::ad68:d392:e519:f671%8]) with mapi id 15.20.2921.030; Tue, 21 Apr 2020
+ 11:39:28 +0000
+From: Vishal Sagar <vsagar@xilinx.com>
+To: Luca Ceresoli <luca@lucaceresoli.net>, "laurent.pinchart@ideasonboard.com"
+ <laurent.pinchart@ideasonboard.com>
+Subject: RE: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Thread-Topic: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Thread-Index: AQHWDqdoYfHJZJ7yyEOpsMzdPA1DraiDckYAgAAR72A=
+Date: Tue, 21 Apr 2020 11:39:28 +0000
+Message-ID: <DM6PR02MB687640292EFB844B4BF9DA0DA7D50@DM6PR02MB6876.namprd02.prod.outlook.com>
+References: <20200409194424.45555-1-vishal.sagar@xilinx.com>
+ <20200409194424.45555-3-vishal.sagar@xilinx.com>
+ <4331afd6-3891-2dd5-b5b8-2ffc5d1cbed5@lucaceresoli.net>
+In-Reply-To: <4331afd6-3891-2dd5-b5b8-2ffc5d1cbed5@lucaceresoli.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=vsagar@xilinx.com; 
+x-originating-ip: [149.199.50.130]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 9ef2c99e-03ba-4d63-b078-08d7e5e8a69d
+x-ms-traffictypediagnostic: DM6PR02MB6682:|DM6PR02MB6682:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR02MB6682C92C101C437674579EF0A7D50@DM6PR02MB6682.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 038002787A
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR02MB6876.namprd02.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(346002)(39860400002)(136003)(396003)(376002)(366004)(4326008)(26005)(110136005)(6506007)(53546011)(7696005)(316002)(54906003)(66476007)(5660300002)(7416002)(186003)(66556008)(66446008)(64756008)(33656002)(76116006)(52536014)(66946007)(478600001)(71200400001)(2906002)(8936002)(55016002)(8676002)(81156014)(86362001)(9686003);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: VW6IaMoMrlMthq0FNAn3ZfbA7UzlsSUJXW/8Nbzw4TdNrmfVfjUPGRp/jYm/ukbmGaRxtCGwwVVPEPZzOS4QRnJOMXknZbvGTSSTw+evkOT0qQafF16b+3eLVfWxT/lhAooj4wlQnq3d6WF6cLM+XWc9W6XrtX9pWCN64zQeR/Hck2avsjhHj/Bvx41PWGw3fUdwQvKFwA5b6kCUZQMJN1NF2CuDkJFL18h6Q5LFlG9ufpVNdySYDbUgM4IOHxEs234GFJKtIgOoDkx9gGmxYwSNyn1aSHO7N5+KluEf4MIBJVRSYkG3vprZK0P8FTIJs08jIo86txBURTY1eEDhCjtOFfbC7l/S0yZaJ9Y8yHETH8k38qnttRq4jGg6tRVwhT+MD+mNaENxTe9lJF/sCc0MIapeV41AfmqNwO1z7bMGwz3swudf2tV0LUXNBQAP
+x-ms-exchange-antispam-messagedata: pdl4Q/18hzPetSI2extfW2BoXKW4E49/BjC6Jjvm7cXjIbIjXkOyytABMXyKKP9TxN43BL7ODQTqIC+KVgnhZpANkCI9CzQFhaq0tdUNC2IUXaP99dO2vzbwfS+fUe4Xxg47zfvo8jJcHPEkUazTCw==
 MIME-Version: 1.0
-In-Reply-To: <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9ef2c99e-03ba-4d63-b078-08d7e5e8a69d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Apr 2020 11:39:28.5515 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FTzMrjaCe0QE7l8D3RGwWNX3xJg6dxHQRwxx6EowyldY14p4BqwTYRmi4/gMVi0c4cIAUnqBeG9LLVx7ChHizg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB6682
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_042139_359357_DFE7AE46 
-X-CRM114-Status: GOOD (  31.85  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200421_043931_038069_A42CAA6E 
+X-CRM114-Status: GOOD (  23.24  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.92.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.92.67 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,156 +126,290 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- linux-samsung-soc@vger.kernel.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, James Hogan <jhogan@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, linux-omap <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
- kernel@pyra-handheld.com
-Content-Type: multipart/mixed; boundary="===============0533973713296008136=="
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
+ Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Luca,
 
---===============0533973713296008136==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="bsmwn6lsujflbhcr"
-Content-Disposition: inline
+Thanks for going through the patch and providing your feedback.
 
+> -----Original Message-----
+> From: Luca Ceresoli <luca@lucaceresoli.net>
+> Sent: Tuesday, April 21, 2020 4:00 PM
+> To: Vishal Sagar <vsagar@xilinx.com>; Hyun Kwon <hyunk@xilinx.com>;
+> laurent.pinchart@ideasonboard.com; mchehab@kernel.org;
+> robh+dt@kernel.org; mark.rutland@arm.com; Michal Simek
+> <michals@xilinx.com>; linux-media@vger.kernel.org;
+> devicetree@vger.kernel.org; hans.verkuil@cisco.com; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Dinesh Kumar
+> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>; Jacopo Mondi
+> <jacopo@jmondi.org>
+> Cc: Hyun Kwon <hyunk@xilinx.com>
+> Subject: Re: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+> Subsystem driver
+> 
+> Hi Vishal,
+> 
+> thanks for having resumed this patchset!
+> 
+> On 09/04/20 21:44, Vishal Sagar wrote:
+> [...]
+> > +static int xcsi2rxss_parse_of(struct xcsi2rxss_state *xcsi2rxss) {
+> > +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> > +	struct device_node *node = xcsi2rxss->core.dev->of_node;
+> 
+> Can be simplified as:
+> 
+> 	struct device_node *node = core.dev->of_node;
+> 
 
---bsmwn6lsujflbhcr
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Got it. Will update in next version.
+struct device_node *node = core->dev->of_node
 
-Hi,
+> > +	unsigned int nports, irq;
+> > +	bool en_csi_v20, vfb;
+> > +	int ret;
+> > +
+> > +	en_csi_v20 = of_property_read_bool(node, "xlnx,en-csi-v2-0");
+> > +	if (en_csi_v20)
+> > +		core->en_vcx = of_property_read_bool(node, "xlnx,en-vcx");
+> > +
+> > +	core->enable_active_lanes =
+> > +		of_property_read_bool(node, "xlnx,en-active-lanes");
+> > +
+> > +	ret = of_property_read_u32(node, "xlnx,csi-pxl-format",
+> > +				   &core->datatype);
+> > +	if (ret < 0) {
+> > +		dev_err(core->dev, "missing xlnx,csi-pxl-format property\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	switch (core->datatype) {
+> > +	case XCSI_DT_YUV4228B:
+> > +	case XCSI_DT_RGB444:
+> > +	case XCSI_DT_RGB555:
+> > +	case XCSI_DT_RGB565:
+> > +	case XCSI_DT_RGB666:
+> > +	case XCSI_DT_RGB888:
+> > +	case XCSI_DT_RAW6:
+> > +	case XCSI_DT_RAW7:
+> > +	case XCSI_DT_RAW8:
+> > +	case XCSI_DT_RAW10:
+> > +	case XCSI_DT_RAW12:
+> > +	case XCSI_DT_RAW14:
+> > +		break;
+> > +	case XCSI_DT_YUV42210B:
+> > +	case XCSI_DT_RAW16:
+> > +	case XCSI_DT_RAW20:
+> > +		if (!en_csi_v20) {
+> > +			ret = -EINVAL;
+> > +			dev_dbg(core->dev, "enable csi v2 for this pixel
+> format");
+> > +		}
+> > +		break;
+> > +	default:
+> > +		ret = -EINVAL;
+> > +	}
+> > +	if (ret < 0) {
+> > +		dev_err(core->dev, "invalid csi-pxl-format property!\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	vfb = of_property_read_bool(node, "xlnx,vfb");
+> > +	if (!vfb) {
+> > +		dev_err(core->dev, "failed as VFB is disabled!\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	for (nports = 0; nports < XCSI_MEDIA_PADS; nports++) {
+> > +		struct fwnode_handle *ep;
+> > +		struct v4l2_fwnode_endpoint vep = {
+> > +			.bus_type = V4L2_MBUS_CSI2_DPHY
+> > +		};
+> > +
+> > +		ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(core-
+> >dev),
+> > +						     nports, 0,
+> > +
+> FWNODE_GRAPH_ENDPOINT_NEXT);
+> > +		if (!ep)
+> > +			break;
+> > +		/*
+> > +		 * since first port is sink port and it contains
+> > +		 * all info about data-lanes and cfa-pattern,
+> > +		 * don't parse second port but only check if exists
+> > +		 */
+> > +		if (nports == XVIP_PAD_SOURCE) {
+> > +			dev_dbg(core->dev, "no need to parse source port");
+> > +			fwnode_handle_put(ep);
+> > +			continue;
+> > +		}
+> > +
+> > +		ret = v4l2_fwnode_endpoint_parse(ep, &vep);
+> > +		if (ret) {
+> > +			dev_err(core->dev, "error parsing sink port");
+> > +			fwnode_handle_put(ep);
+> > +			return ret;
+> > +		}
+> > +
+> > +		dev_dbg(core->dev, "port %d bus type = %d\n", nports,
+> > +			vep.bus_type);
+> > +
+> > +		if (vep.bus_type == V4L2_MBUS_CSI2_DPHY) {
+> > +			dev_dbg(core->dev, "base.port = %d base.id = %d\n",
+> > +				vep.base.port, vep.base.id);
+> > +
+> > +			dev_dbg(core->dev, "mipi number lanes = %d\n",
+> > +				vep.bus.mipi_csi2.num_data_lanes);
+> > +
+> > +			core->max_num_lanes =
+> > +				vep.bus.mipi_csi2.num_data_lanes;
+> > +		}
+> > +		fwnode_handle_put(ep);
+> > +	}
+> > +
+> > +	if (nports != XCSI_MEDIA_PADS) {
+> > +		dev_err(core->dev, "invalid number of ports %u\n", nports);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	/* Register interrupt handler */
+> > +	irq = irq_of_parse_and_map(node, 0);
+> > +	ret = devm_request_irq(core->dev, irq, xcsi2rxss_irq_handler,
+> > +			       IRQF_SHARED, "xilinx-csi2rxss", xcsi2rxss);
+> > +	if (ret) {
+> > +		dev_err(core->dev, "Err = %d Interrupt handler reg
+> failed!\n",
+> > +			ret);
+> > +		return ret;
+> > +	}
+> 
+> When using this driver I have changed this to a threaded IRQ, moving most of
+> the management out of interrupt context. The patch is super simple and it
+> works fine, for my use case at least. Do you think a strict IRQ is really needed
+> for some reason?
+> 
 
-On Tue, Apr 21, 2020 at 11:57:33AM +0200, Philipp Rossak wrote:
-> On 20.04.20 09:38, Maxime Ripard wrote:
-> > Hi,
-> >=20
-> > On Fri, Apr 17, 2020 at 02:09:06PM +0200, Philipp Rossak wrote:
-> > > > > I'm a bit skeptical on that one since it doesn't even list the
-> > > > > interrupts connected to the GPU that the binding mandates.
-> > > >=20
-> > > > I think he left it out for a future update.
-> > > > But best he comments himself.
-> > >=20
-> > > I'm currently working on those bindings. They are now 90% done, but t=
-hey are
-> > > not finished till now. Currently there is some mainline support missi=
-ng to
-> > > add the full binding. The A83T and also the A31/A31s have a GPU Power=
- Off
-> > > Gating Register in the R_PRCM module, that is not supported right now=
- in
-> > > Mainline. The Register need to be written when the GPU is powered on =
-and
-> > > off.
-> > >=20
-> > > @Maxime: I totally agree on your point that a demo needs to be provid=
-ed
-> > > before the related DTS patches should be provided. That's the reason =
-why I
-> > > added the gpu placeholder patches.
-> > > Do you have an idea how a driver for the R_PRCM stuff can look like? =
-I'm not
-> > > that experienced with the clock driver framework.
-> >=20
-> > It looks like a power-domain to me, so you'd rather plug that into the =
-genpd
-> > framework.
->=20
-> I had a look on genpd and I'm not really sure if that fits.
->=20
-> It is basically some bit that verify that the clocks should be enabled or
-> disabled.
+Agree I should have moved this to a threaded IRQ. I will update it in next version.
 
-No, it can do much more than that. It's a framework to control the SoCs pow=
-er
-domains, so clocks might be a part of it, but most of the time it's going t=
-o be
-about powering up a particular device.
+> > +	xcsi2rxss_log_ipconfig(xcsi2rxss);
+> > +
+> > +	return 0;
+> 
+> This function references 'core->dev' a lot of times, so I'd rather add at the
+> top of the function:
+> 
+>   struct device * const dev = &pdev->dev;
+> 
+> and then use simply 'dev' everywhere. This would keep lines shorter and
+> more readable. It is also handy when copying/moving a line of code from
+> one function to another if all of them have 'dev' called the same way so I
+> tend to do use this pattern often.
+> 
 
-> I think this is better placed somewhere in the clocking framework.
-> I see there more similarities to the gating stuff.
-> Do you think it is suitable to implement it like the clock gating?
+Agree with  you. It will be updated in next version.
 
-I'm really not sure what makes you think that this should be modelled as a
-clock?
+> > +}
+> > +
+> > +static int xcsi2rxss_probe(struct platform_device *pdev) {
+> > +	struct v4l2_subdev *subdev;
+> > +	struct xcsi2rxss_state *xcsi2rxss;
+> > +	struct xcsi2rxss_core *core;
+> > +	struct resource *res;
+> > +	int num_clks = ARRAY_SIZE(xcsi2rxss_clks);
+> > +	int ret;
+> > +
+> > +	xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss),
+> GFP_KERNEL);
+> > +	if (!xcsi2rxss)
+> > +		return -ENOMEM;
+> > +
+> > +	core = &xcsi2rxss->core;
+> > +	core->dev = &pdev->dev;
+> 
+> This function references 'dev' many times, sometimes as &pdev->dev, thers
+> as 'core->dev', thus as above why not adding at the top of the
+> function:
+> 
+>   struct device * const dev = &pdev->dev;
+> 
+> and simplify code using 'dev' always?
+> 
 
-> > > The big question is right now how to proceed with the A83T and A31s p=
-atches.
-> > > I see there three options, which one do you prefer?:
-> > >=20
-> > > 1. Provide now placeholder patches and send new patches, if everythin=
-g is
-> > > clear and other things are mainlined
-> > > 2. Provide now patches as complete as possible and provide later patc=
-hes to
-> > > complete them when the R_PRCM things are mainlined
-> > > 3. Leave them out, till the related work is mainlined and the binding=
-s are
-> > > final.
-> >=20
-> > Like I said, the DT *has* to be backward-compatible, so for any DT patc=
-h that
-> > you are asking to be merged, you should be prepared to support it indef=
-initely
-> > and be able to run from it, and you won't be able to change the binding=
-s later
-> > on.
->=20
-> I agree on your points. But is this also suitable to drivers that are
-> currently off tree and might be merged in one or two years?
+True. I will do the change in next version.
 
-This is what we done for the Mali. The devicetree binding was first done fo=
-r the
-out-of-tree driver, and then lima/panfrost reused it.
+> > +	core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
+> > +				  sizeof(xcsi2rxss_clks), GFP_KERNEL);
+> > +	if (!core->clks)
+> > +		return -ENOMEM;
+> > +
+> > +	/* Reset GPIO */
+> > +	core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
+> > +						 GPIOD_OUT_HIGH);
+> > +	if (IS_ERR(core->rst_gpio)) {
+> > +		if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
+> > +			dev_err(core->dev, "Video Reset GPIO not setup in
+> DT");
+> > +		return PTR_ERR(core->rst_gpio);
+> > +	}
+> > +
+> > +	mutex_init(&xcsi2rxss->lock);
+> 
+> There are 3 'return' statements after this call, and mutex_destroy() won't be
+> called if they trigger. Ok, probably no real effect as
+> mutex_init() is just initializing data, but for the sake of well-written code you
+> can simply move mutex_init()...
+> 
+> > +	ret = xcsi2rxss_parse_of(xcsi2rxss);
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	core->iomem = devm_ioremap_resource(core->dev, res);
+> > +	if (IS_ERR(core->iomem))
+> > +		return PTR_ERR(core->iomem);
+> > +
+> > +	ret = clk_bulk_get(core->dev, num_clks, core->clks);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	ret = clk_bulk_prepare_enable(num_clks, core->clks);
+> > +	if (ret)
+> > +		goto err_clk_put;
+> 
+> ...here.
+>
 
-The key thing here is to have enough confidence about how the hardware work=
-s so
-that you can accurately describe it.
+Good idea. This will be updated in next version.
+ 
+> > +	if (core->rst_gpio) {
+> > +		gpiod_set_value_cansleep(core->rst_gpio, 1);
+> > +		/* minimum of 40 dphy_clk_200M cycles */
+> > +		usleep_range(1, 2);
+> > +		gpiod_set_value_cansleep(core->rst_gpio, 0);
+> > +	}
+> 
+> 
+> --
+> Luca
 
-Maxime
+Regards
+Vishal Sagar
 
---bsmwn6lsujflbhcr
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXp7XOQAKCRDj7w1vZxhR
-xY2FAP98NEADiujPOYdZcBw58gJhiTHRG5M+7cY4QmY6LLWi6wEAmaVzzE9csrhP
-gszgPuCUwSKxGaUpbu0VHqeb3LVqwQs=
-=LITU
------END PGP SIGNATURE-----
-
---bsmwn6lsujflbhcr--
-
-
---===============0533973713296008136==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0533973713296008136==--
-
