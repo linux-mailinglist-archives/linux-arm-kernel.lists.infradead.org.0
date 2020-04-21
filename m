@@ -2,149 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06F9D1B2050
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:51:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FCBE1B2059
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 09:51:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Tz4lNK/2twLdgDmMXUA7ZID8kAUvmHn4QqnAK/4NLrg=; b=qJlnRYCOloMWDjPtDQiwHhcBo
-	czYKSxzC8OtaZ0RQS97N137CeYtdDvixuPNU9czlmhJklZ1rIVx9YhETOb6W0eZ4RUI1Mi6BD8s+J
-	t2YWEHiSFEXHqxFm3GcmieX8VDMtioSwMqbuAzMnC4I7Nr7263P1qsv/LYhs9paissBPKjraQrSQp
-	81s1JChyIttDbH80IpNDxqz9SSHv0z5+9ngyypay9FUBVSOcqeTuSJ0cYKHjMnBu4tNNq3LR9TwKE
-	/pZn9YkQVn6xMnBwecn9prihNcaHetgny5Ss930EutdrF/yOZ61ft6h3V/RRVbYy52xzu/MnjJ9zK
-	n5wDFr1QA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wX3ybeir7+AfIrk3Kn79Hs5brgzZSl3a1INH4oIYlfs=; b=EgQ1CgZO4mR0bi
+	RRLvCnPzjO/bWzw9gFo1oge7moA7qH/tjgKEwb67wIWBnBci0EexHOs0c8Y+dpkvXIqTU+fOqug78
+	j7jNG8WWjV19RTQr1h9YfNYShsOaRoICXMr//Ipu/I4zCVWCHxWukPHLWd0YJvHwKyaLkDlgkEArw
+	nnDZDZJQ+7E1vqDLvEOoUh0A+T3Ed36ygRMrRXnn+kCMbcWxFgogxTp+8g1AMHSRC4WrPUeJMLSh6
+	Fwn0XQA3HTa/cTKGAwiJzPaG9zioynsL3ksmgH/P+Sir0f0n25w9ryIMhY+9NDxIwKPYvZzXOZNkR
+	MpAdDVujAE2jV/AMXcHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQngS-0000rF-Mh; Tue, 21 Apr 2020 07:51:08 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jQnh7-0001RY-Jr; Tue, 21 Apr 2020 07:51:49 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQngF-0000pv-88
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:50:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 188so2439414wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 00:50:54 -0700 (PDT)
+ id 1jQngj-0001B6-0r
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 07:51:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1587455484; x=1618991484;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=cwPZxPqVyP/4/QIK+M3A1diwefFz+dw60qn0D8/bYp4=;
+ b=Lb24mcwB6XkuUjx8lfsORo4TvojztGywiMbb43hMjN27o8fdAHGT2e+s
+ 4VPx6E6Il1Ne98iGiuclBMAYpybHVEG0wqS47VaBbyqwi0b3HiWbm2orw
+ vLH1Y7YCQWrZiq+h/nzCbGizZnBYc8+Sxn0pm+X2jiVWbOoUXlF9FU1FG
+ KYp2e7BfvmBmOvJLKTlanIc+qCnO/8fr3oJUDLkY8nhzQBJd8lS60r7k0
+ lTAkoKHYLRvxMiD/y5ZECX+JOaf6RBySRuapOiKTbFCHdQGCdYX93hptc
+ nZPH8aUd2+iV+fKEeMi4gezlhgVM8SkI29KHRifePT0LNJzA3Vr8odL9v w==;
+IronPort-SDR: nte4Wy5+hxJqvODic/FHXVtFL8zg+4I6zVhH6vy25FkLDnvUPxgQ7340e3efUVsG0VMYiwapWh
+ dEPaEwz26EcbWcRhpyDUusTn9X0HuPcxnG76xhirYU7GYzf+JnpjFGLc4JeFs+LaHPM/tzC2Qt
+ i9Fhfulq4IR2Uwsp0RICLxnVqXLmYGSDmPibEI13cUwAST/L1W96OEmKD5nw0zaNyRQMzn3G3f
+ tulNX+jrKgya2lNtjj9pGu9Y/U5+AiWcHkyhWuj/2lHRjjaraypfgGtZuFZycBz4j7cjTa2e99
+ kMc=
+X-IronPort-AV: E=Sophos;i="5.72,409,1580799600"; 
+   d="scan'208";a="9874061"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 21 Apr 2020 00:51:16 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 21 Apr 2020 00:50:47 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 21 Apr 2020 00:50:47 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V0YCgSrnm7PQLmi44Uk8fu214+t9phiVFkxqk9/kzDKPch3h8kHd+bSwnnRUUaPnHA9bf5ygh3r4Jaua+3V4AIXvza5Gkqh17317yYajQdRO3YQ3QG0KZBhGfsVc4FkZgAekdNNq/0d0PexSKdxqGpblMIcJnnCov0sFZxV4Bxu42ZvAiDMpClGk9EeOnhRCo3Pe/FXtrA9yvO4ciVUSh/igWNaekpNwnc05Cnq2ewVBffUYMr4SZUWD/hSVsZy9i167ro8LFZkPHnW858PmRjtenItC2y5CjchqkfAaUW4AJ03ZPZwZKS2hewcTC8hkQzXGSLJgIYh+Zr7y6eeMcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cwPZxPqVyP/4/QIK+M3A1diwefFz+dw60qn0D8/bYp4=;
+ b=Hm6XAp7g4Cm/2zTmB34iYUYApH6/kvYVJEAimTTB1ABYH5ou0TNjQneT9++hr3dhx7Ftvsm/0kk9tnKoEYCbwKnocpp/c+MQwzRiF5ihLOUj/Qzx8sM9u/9dww3NGnr6bf9bpRnOfVO/b4mg1iNRXCfwlwQWCWYYuF1W2wTH2BAdA7HZ+JzLPAvtnfAZqVbxhBNVG/b+PxEOR4HA9mo9M1RCTWEPhjSGIZV+IXaiwlLudFMX4GxFG3OWCJu0PN3Cg/nhmH37PQrPdhKUEY4C4fWibAikz5PyyDRX6SRc+jjvr+FN+UGaeOtGAZRI2KUOBE2NxjR14JExHGpfUtKorw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to;
- bh=YiceeYcWfp6dJ/RtflaMzhlWjjOPviw2ytlJMWOClhY=;
- b=O8z8ttwJR6dcJUhc+8LGb4hs/8vpWV5wPFNlwj3hX4sqjBlj9VCozgza7rmlmF0nyg
- sR9jdg0JlkqtNlqSxJN9MMyWEMQTSMQYd+y6HDqehioUuHLxxLvNUmzqAYqZtfYe7Nqo
- U9PVVibPNeDEdyQg8MLqcN4parA0PYSYGL1/vNbQKU+jCrLISFgcnKtUV8JZhuB/jfRn
- iujoqcl7KJCNIj/8ylAATrkXt7jsueUyKvryr8OmiVpc13WKbwslCYa9b/BbW0mexBzb
- gifbsGTI6kg1vPhkVFVdGt2P35dbyUhHFbVMxtQ6kSWlPs6pESfn4nx2MZtmYXlFKm9B
- eMmw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to;
- bh=YiceeYcWfp6dJ/RtflaMzhlWjjOPviw2ytlJMWOClhY=;
- b=FlYcsYr6dAEYuu4OlShbnfQdjJe3Gj67RiD4pwHrcmEozqdZrViOriQb1to/Ajf12w
- 0sTggMf/NyyED1ZhitcF7GulWlPeANeA82l17Al46gYvZdGEaWTAJ+rowKzT6j3oQ+oo
- Sovrx/2B/KFH+JHspSq/6WJAv/sza4A9UTp2RSnVwrSuHaNVdaqMfV8oHhqpd6AifEjg
- pCU0mpFPFR6MK5RGVTq49kEGX/qYy1jBi9emRtsS/C9bwDRfzQ9sozdwZF+nmOXBhceV
- x0OT8XncpTcpiFN+2MFJzFWNGMKglbuNNENvgOI4It0vnst7lgLX/9ruGBzlyrfQv1/L
- xcLQ==
-X-Gm-Message-State: AGi0PuYRz91+HkM+bPQrpLjt6mfHbux3krXr0Qsd1ZgJA7KJOR2WJiRL
- LHLiI+ZIlEJQyGX8F01uPqRA/w==
-X-Google-Smtp-Source: APiQypJntnQXyUB7m8ZlLuci0rbNEL+5xcVIFduLSjrsBtszf6elR7Ic+ICBST6g+lkfywlC4LA+bg==
-X-Received: by 2002:a1c:a4c2:: with SMTP id n185mr3719961wme.104.1587455453826; 
- Tue, 21 Apr 2020 00:50:53 -0700 (PDT)
-Received: from [173.194.76.109] ([149.199.62.131])
- by smtp.gmail.com with ESMTPSA id h10sm2698150wrq.33.2020.04.21.00.50.48
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Apr 2020 00:50:53 -0700 (PDT)
-Subject: Re: [PATCH v2 0/4] drivers: clk: zynqmp: minor bux fixes for zynqmp
- clock driver
-To: Jolly Shah <jolly.shah@xilinx.com>, olof@lixom.net,
- mturquette@baylibre.com, sboyd@kernel.org, michal.simek@xilinx.com,
- arm@kernel.org, linux-clk@vger.kernel.org
-References: <1583185843-20707-1-git-send-email-jolly.shah@xilinx.com>
-From: Michal Simek <monstr@monstr.eu>
-Autocrypt: addr=monstr@monstr.eu; keydata=
- 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
- 0Z1MQlmNcq2bhOMzTxuXX2NDzUZs4aqEyZQ=
-Message-ID: <358c6672-d22c-d892-779e-37ad2e1f3f65@monstr.eu>
-Date: Tue, 21 Apr 2020 09:50:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cwPZxPqVyP/4/QIK+M3A1diwefFz+dw60qn0D8/bYp4=;
+ b=eLh73GHyPJ3iJIOqhuCwk2NS3iiYrpN4oJ3Wl7kQLaRFnIs17scK2Uidt2kJ32Dkm4L8orxuDNUlsMUtUz94ibQIrpK1+TC3icBpA3qHQ8TShLwPgU0o0NQtzA3+d51GiJpVxLBGTuisDRC9qjVMAVGbv2dKENc4nis3ykYvQ2g=
+Received: from CY4PR11MB1688.namprd11.prod.outlook.com (2603:10b6:903:25::23)
+ by CY4PR11MB1942.namprd11.prod.outlook.com (2603:10b6:903:125::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Tue, 21 Apr
+ 2020 07:51:14 +0000
+Received: from CY4PR11MB1688.namprd11.prod.outlook.com
+ ([fe80::c597:bb37:1406:863b]) by CY4PR11MB1688.namprd11.prod.outlook.com
+ ([fe80::c597:bb37:1406:863b%7]) with mapi id 15.20.2921.030; Tue, 21 Apr 2020
+ 07:51:14 +0000
+From: <Codrin.Ciubotariu@microchip.com>
+To: <Ludovic.Desroches@microchip.com>, <linux-i2c@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>
+Subject: Re: [PATCH v4 1/4] i2c: at91: Send bus clear command if SDA is down
+Thread-Topic: [PATCH v4 1/4] i2c: at91: Send bus clear command if SDA is down
+Thread-Index: AQHV6/NV5SaG2cctME26LBySNXrA26hgRdKAgCNFhQA=
+Date: Tue, 21 Apr 2020 07:51:14 +0000
+Message-ID: <6f4fab9e-c400-69c9-f52e-3425d608853b@microchip.com>
+References: <20200225155012.22764-1-codrin.ciubotariu@microchip.com>
+ <3ebaa9a6-73d5-863f-bc40-e38230ab732e@microchip.com>
+In-Reply-To: <3ebaa9a6-73d5-863f-bc40-e38230ab732e@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Codrin.Ciubotariu@microchip.com; 
+x-originating-ip: [86.121.14.3]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7bce4182-d6fa-415f-6924-08d7e5c8c46a
+x-ms-traffictypediagnostic: CY4PR11MB1942:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CY4PR11MB19420DE6A97784E1587D6B91E7D50@CY4PR11MB1942.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 038002787A
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CY4PR11MB1688.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(39860400002)(346002)(396003)(366004)(136003)(376002)(8676002)(478600001)(91956017)(36756003)(2616005)(71200400001)(2906002)(31696002)(8936002)(86362001)(4326008)(186003)(66476007)(5660300002)(81156014)(66556008)(110136005)(76116006)(54906003)(66946007)(6486002)(316002)(64756008)(66446008)(53546011)(31686004)(26005)(6506007)(6512007);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: s3AuWcI/HJ+Rs0iUaKzHokHbkcjV7ayW1TmdB4JD3vfq32tJOxMk1Gq8ggWarfEekXRBLXo5BD34qk+2eOcPwK0Wi3KrOOZNztMJZy4MiI4/9gAgu0PQK/f65E5hUIBPAbwKmlAA00Hw9bkvvRJiX7h9FFWqEn40r1pB3CIl71sF/3GtkZvCHbyFdk6uAkqqI2ahicPzJzOS7VPhmROtfD3p2KnZ0OkNXP0a20opO9vJqMaxvNXhNxYWF1Xo4qJo2Db1MRtCU+NKyh/gN8zKpBa84sktFPvor+PrvZcRwB9Fm6mpAvygLm27sq9iUNyPjm38p1zROM8kBcwGnsdeR9ejzYnsuXLz+/EQi2EZ3btudmAmt3Xs6+5cppbenl4tRSKPnVLp+eYtLcprDuIQmW0qRDVqQTG9w3PiCfKCoZV4H6xjDCIO7Xer05ReGFhJ
+x-ms-exchange-antispam-messagedata: CII05IrQoS04ed2mO0i5kr3YyDHKu6njAnEXcPT/PTs+flUBbKcarguG+srySn+3SYxcLXBK9OQXbyPVcG0L0QeMeMo0SKmcRKB5CIBU7Y1A3Ti/pE+W7IZkIaW5w8LNKVl7t23Xhh+e7bt/LdFyMA==
+Content-ID: <DD929AE3D7F52044A399555D292E4605@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <1583185843-20707-1-git-send-email-jolly.shah@xilinx.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7bce4182-d6fa-415f-6924-08d7e5c8c46a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Apr 2020 07:51:14.5293 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vNh6DEGeRBKP1633LbPgGkEzwb4cvKmL5dnMgcvSCzIjZeC8JuIVvWX1ZRgrPcXec+TpHhKWnrMFq1IGuaJPXwtjo+ywO82osA6nt9Ff+fk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR11MB1942
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_005055_292507_5AAAF968 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200421_005125_154220_F24B161E 
+X-CRM114-Status: GOOD (  22.10  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -159,110 +159,205 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rajanv@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6014196553907533353=="
+Cc: alexandre.belloni@bootlin.com, wsa@the-dreams.de, linux@armlinux.org.uk,
+ robh+dt@kernel.org, peda@axentia.se
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6014196553907533353==
-Content-Type: multipart/signed; micalg=pgp-sha1;
- protocol="application/pgp-signature";
- boundary="56uosgCqsMvUwIcVzBzSJ7DTyA1fGmT6t"
+On 30.03.2020 00:13, Ludovic Desroches - M43218 wrote:
+> On 2/25/2020 4:50 PM, Codrin Ciubotariu wrote:
+>> After a transfer timeout, some faulty I2C slave devices might hold down
+>> the SDA pin. We can generate a bus clear command, hoping that the slave
+>> might release the pins.
+>> If the CLEAR command is not supported, we will use gpio recovery, if
+>> available, to reset the bus.
+>>
+>> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> 
+> Sounds good so
+> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> 
+> Wolfram, you have accepted the v3 of the recovery support and requested
+> these changes. It has been sent as a v4, but, in fact, this patch goes
+> on top on v3. It could, should, have been a new patch.
+> 
+> Regards
+> 
+> Ludovic
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---56uosgCqsMvUwIcVzBzSJ7DTyA1fGmT6t
-Content-Type: multipart/mixed; boundary="uUbcrPOqrtwycs3ZOPy1uZYhM6duFt3P3";
- protected-headers="v1"
-From: Michal Simek <monstr@monstr.eu>
-To: Jolly Shah <jolly.shah@xilinx.com>, olof@lixom.net,
- mturquette@baylibre.com, sboyd@kernel.org, michal.simek@xilinx.com,
- arm@kernel.org, linux-clk@vger.kernel.org
-Cc: rajanv@xilinx.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Message-ID: <358c6672-d22c-d892-779e-37ad2e1f3f65@monstr.eu>
-Subject: Re: [PATCH v2 0/4] drivers: clk: zynqmp: minor bux fixes for zynqmp
- clock driver
-References: <1583185843-20707-1-git-send-email-jolly.shah@xilinx.com>
-In-Reply-To: <1583185843-20707-1-git-send-email-jolly.shah@xilinx.com>
+Hello, any updates on this patch? Do you want me to change anything?
 
---uUbcrPOqrtwycs3ZOPy1uZYhM6duFt3P3
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+Best regards,
+Codrin
 
-Hi Stephen,
-
-On 02. 03. 20 22:50, Jolly Shah wrote:
-> This patchset includes below fixes for clock driver
-> 1> Fix Divider2 calculation
-> 2> Memory leak in clock registration
-> 3> Fix invalid name queries
-> 4> Limit bestdiv with maxdiv
->=20
-> v2:
->  - Updated subject for cover letter and patches=20
->    to add prefix
->=20
-> Quanyang Wang (1):
->   drivers: clk: zynqmp: fix memory leak in zynqmp_register_clocks
->=20
-> Rajan Vaja (2):
->   drivers: clk: zynqmp: Limit bestdiv with maxdiv
->   drivers: clk: zynqmp: Fix invalid clock name queries
->=20
-> Tejas Patel (1):
->   drivers: clk: zynqmp: Fix divider2 calculation
->=20
->  drivers/clk/zynqmp/clkc.c    | 20 ++++++++++++++------
->  drivers/clk/zynqmp/divider.c | 19 ++++++++++++++-----
->  2 files changed, 28 insertions(+), 11 deletions(-)
->=20
-
-Do you see any issue with this patchset? Or do you want me to take it
-via my tree? I can't see any dependency that's why I think it shouldn't
-be a problem to take it via your tree.
-
-Thanks,
-Michal
-
---=20
-Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
-w: www.monstr.eu p: +42-0-721842854
-Maintainer of Linux kernel - Xilinx Microblaze
-Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
-U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
-
-
-
---uUbcrPOqrtwycs3ZOPy1uZYhM6duFt3P3--
-
---56uosgCqsMvUwIcVzBzSJ7DTyA1fGmT6t
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXp6l0wAKCRDKSWXLKUoM
-Ie8pAKCLJ9u1N02dTrwuXevPCS4f/00H9QCgmRblSZlAjRwa9lv60fA1pw1WYH0=
-=35Mk
------END PGP SIGNATURE-----
-
---56uosgCqsMvUwIcVzBzSJ7DTyA1fGmT6t--
-
-
---===============6014196553907533353==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+>> ---
+>>
+>> Changes in v4:
+>>    - moved the HW bus clear command in a recover_bus() function, to be able
+>>      to just call i2c_recover_bus() if a transfer fails;
+>>    - recovery gpios are no longer taken if HW bus clear command is
+>>      supported;
+>>
+>> Changes in v3:
+>>    - removed unnecessary condition from info print;
+>>    - removed unneded declarations;
+>>
+>> Changes in v2:
+>>    - called i2c_recover_bus() after an error occurs, if SDA is down;
+>>    - release gpios if recovery information is incomplete;
+>>
+>>    drivers/i2c/busses/i2c-at91-core.c   |  2 ++
+>>    drivers/i2c/busses/i2c-at91-master.c | 49 ++++++++++++++++++++++++----
+>>    drivers/i2c/busses/i2c-at91.h        |  7 +++-
+>>    3 files changed, 50 insertions(+), 8 deletions(-)
+>>
+>> diff --git a/drivers/i2c/busses/i2c-at91-core.c b/drivers/i2c/busses/i2c-at91-core.c
+>> index 3da1a8acecb5..e14edd236108 100644
+>> --- a/drivers/i2c/busses/i2c-at91-core.c
+>> +++ b/drivers/i2c/busses/i2c-at91-core.c
+>> @@ -131,6 +131,7 @@ static struct at91_twi_pdata sama5d2_config = {
+>>    	.has_dig_filtr = true,
+>>    	.has_adv_dig_filtr = true,
+>>    	.has_ana_filtr = true,
+>> +	.has_clear_cmd = false,	/* due to errata, CLEAR cmd is not working */
+>>    };
+>>    
+>>    static struct at91_twi_pdata sam9x60_config = {
+>> @@ -142,6 +143,7 @@ static struct at91_twi_pdata sam9x60_config = {
+>>    	.has_dig_filtr = true,
+>>    	.has_adv_dig_filtr = true,
+>>    	.has_ana_filtr = true,
+>> +	.has_clear_cmd = true,
+>>    };
+>>    
+>>    static const struct of_device_id atmel_twi_dt_ids[] = {
+>> diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
+>> index 0aba51a7df32..776e95962ab6 100644
+>> --- a/drivers/i2c/busses/i2c-at91-master.c
+>> +++ b/drivers/i2c/busses/i2c-at91-master.c
+>> @@ -480,7 +480,6 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+>>    	unsigned long time_left;
+>>    	bool has_unre_flag = dev->pdata->has_unre_flag;
+>>    	bool has_alt_cmd = dev->pdata->has_alt_cmd;
+>> -	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
+>>    
+>>    	/*
+>>    	 * WARNING: the TXCOMP bit in the Status Register is NOT a clear on
+>> @@ -641,11 +640,12 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+>>    			       AT91_TWI_THRCLR | AT91_TWI_LOCKCLR);
+>>    	}
+>>    
+>> -	if (rinfo->get_sda && !(rinfo->get_sda(&dev->adapter))) {
+>> -		dev_dbg(dev->dev,
+>> -			"SDA is down; clear bus using gpio\n");
+>> -		i2c_recover_bus(&dev->adapter);
+>> -	}
+>> +	/*
+>> +	 * some faulty I2C slave devices might hold SDA down;
+>> +	 * we can send a bus clear command, hoping that the pins will be
+>> +	 * released
+>> +	 */
+>> +	i2c_recover_bus(&dev->adapter);
+>>    
+>>    	return ret;
+>>    }
+>> @@ -830,7 +830,7 @@ static void at91_unprepare_twi_recovery(struct i2c_adapter *adap)
+>>    	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
+>>    }
+>>    
+>> -static int at91_init_twi_recovery_info(struct platform_device *pdev,
+>> +static int at91_init_twi_recovery_gpio(struct platform_device *pdev,
+>>    				       struct at91_twi_dev *dev)
+>>    {
+>>    	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
+>> @@ -880,6 +880,41 @@ static int at91_init_twi_recovery_info(struct platform_device *pdev,
+>>    	return 0;
+>>    }
+>>    
+>> +static int at91_twi_recover_bus_cmd(struct i2c_adapter *adap)
+>> +{
+>> +	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
+>> +
+>> +	dev->transfer_status |= at91_twi_read(dev, AT91_TWI_SR);
+>> +	if (!(dev->transfer_status & AT91_TWI_SDA)) {
+>> +		dev_dbg(dev->dev, "SDA is down; sending bus clear command\n");
+>> +		if (dev->use_alt_cmd) {
+>> +			unsigned int acr;
+>> +
+>> +			acr = at91_twi_read(dev, AT91_TWI_ACR);
+>> +			acr &= ~AT91_TWI_ACR_DATAL_MASK;
+>> +			at91_twi_write(dev, AT91_TWI_ACR, acr);
+>> +		}
+>> +		at91_twi_write(dev, AT91_TWI_CR, AT91_TWI_CLEAR);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int at91_init_twi_recovery_info(struct platform_device *pdev,
+>> +				       struct at91_twi_dev *dev)
+>> +{
+>> +	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
+>> +	bool has_clear_cmd = dev->pdata->has_clear_cmd;
+>> +
+>> +	if (!has_clear_cmd)
+>> +		return at91_init_twi_recovery_gpio(pdev, dev);
+>> +
+>> +	rinfo->recover_bus = at91_twi_recover_bus_cmd;
+>> +	dev->adapter.bus_recovery_info = rinfo;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>>    int at91_twi_probe_master(struct platform_device *pdev,
+>>    			  u32 phy_addr, struct at91_twi_dev *dev)
+>>    {
+>> diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
+>> index f57a6cab96b4..7e7b4955ca7f 100644
+>> --- a/drivers/i2c/busses/i2c-at91.h
+>> +++ b/drivers/i2c/busses/i2c-at91.h
+>> @@ -36,6 +36,7 @@
+>>    #define	AT91_TWI_SVDIS		BIT(5)	/* Slave Transfer Disable */
+>>    #define	AT91_TWI_QUICK		BIT(6)	/* SMBus quick command */
+>>    #define	AT91_TWI_SWRST		BIT(7)	/* Software Reset */
+>> +#define	AT91_TWI_CLEAR		BIT(15) /* Bus clear command */
+>>    #define	AT91_TWI_ACMEN		BIT(16) /* Alternative Command Mode Enable */
+>>    #define	AT91_TWI_ACMDIS		BIT(17) /* Alternative Command Mode Disable */
+>>    #define	AT91_TWI_THRCLR		BIT(24) /* Transmit Holding Register Clear */
+>> @@ -69,6 +70,8 @@
+>>    #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
+>>    #define	AT91_TWI_EOSACC		BIT(11)	/* End Of Slave Access */
+>>    #define	AT91_TWI_LOCK		BIT(23) /* TWI Lock due to Frame Errors */
+>> +#define	AT91_TWI_SCL		BIT(24) /* TWI SCL status */
+>> +#define	AT91_TWI_SDA		BIT(25) /* TWI SDA status */
+>>    
+>>    #define	AT91_TWI_INT_MASK \
+>>    	(AT91_TWI_TXCOMP | AT91_TWI_RXRDY | AT91_TWI_TXRDY | AT91_TWI_NACK \
+>> @@ -81,7 +84,8 @@
+>>    #define	AT91_TWI_THR		0x0034	/* Transmit Holding Register */
+>>    
+>>    #define	AT91_TWI_ACR		0x0040	/* Alternative Command Register */
+>> -#define	AT91_TWI_ACR_DATAL(len)	((len) & 0xff)
+>> +#define	AT91_TWI_ACR_DATAL_MASK	GENMASK(15, 0)
+>> +#define	AT91_TWI_ACR_DATAL(len)	((len) & AT91_TWI_ACR_DATAL_MASK)
+>>    #define	AT91_TWI_ACR_DIR	BIT(8)
+>>    
+>>    #define AT91_TWI_FILTR		0x0044
+>> @@ -118,6 +122,7 @@ struct at91_twi_pdata {
+>>    	bool has_dig_filtr;
+>>    	bool has_adv_dig_filtr;
+>>    	bool has_ana_filtr;
+>> +	bool has_clear_cmd;
+>>    	struct at_dma_slave dma_slave;
+>>    };
+>>    
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6014196553907533353==--
-
