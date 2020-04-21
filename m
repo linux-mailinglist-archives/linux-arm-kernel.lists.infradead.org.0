@@ -2,92 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10BE11B28F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:02:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 466C91B291E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jPAOIbEjGiW3VLg9L4JgP7kW8e51DwSrDJQQ/3u0g+Y=; b=FpN8Gh3ZgUE6u5
-	yOEWmnIjSG+H/M3WuqPhNkSVcpjPYymSqTV+TAO9f8Kzzq13YQQHI5+LeclSkoLpiz1WBfsDuivdT
-	imuhnuC/VPWnzb4oCM1jagRTdsVGtCh0JtA94bOCJ5im7NJMbgwlIwI/f/ZcaNkVg0CBFyNk0gNEg
-	eP5ZDcIskGFmUCebp3+5VIAfCqs2x8dtHd+m9j6NyqHEBavALk1sWoMuo2OfmbIh80cH0t82VJEHV
-	DiCf6nUXUvV6qrZdjh/sOd4WvDU/gBsdqBP7Cbj4OBwAkL6QHxh2s6fPRnNqnog867dteOTS4zteU
-	6aHcHsxlvD8U8NwKtFMg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=AXcjky/rtru+w+8XwwNfht7jV7b1rBYQ4Ai8DqdPJsk=; b=Du4
+	Btmc2GxPOKjDTyrkTjX2HTgsvq37ghDgjktnGKgcAwSrNy0ogkJ4wvNt4TY+J/0SIKlcdaGQp5iT7
+	sEmrwCxe94JTzt7oUHtO+7hs/Ky2f2j+uZDZoiow4CjWF24dP/1tX8BCwMDINKIMkg4uwDlwBoyg5
+	aSzc8C7HzAVxU6sbxSfl9qZV4clrZTQ6yjQS6AUs45ADbfQhJbu7hVNdRSyRFA8udHUHFOFWHiV+X
+	UJU6LJaBRCUrSBD/6W4BeV4gEIV4Ts8HJffXI9+xPR68csUJIMmAOQv5JCCi6YKrDhE7Io1a9WZvO
+	Yh8nZ6ocI/2W2yN5upUX2IAisl4DkSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtTs-0005Ry-G2; Tue, 21 Apr 2020 14:02:32 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jQtdN-0004Tu-JU; Tue, 21 Apr 2020 14:12:21 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtTe-0005QQ-1Y
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:02:20 +0000
-Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03LE222d073765
- for <linux-arm-kernel@lists.infradead.org>; Tue, 21 Apr 2020 10:02:17 -0400
-Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
- by mx0a-001b2d01.pphosted.com with ESMTP id 30gmu859h6-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 21 Apr 2020 10:02:16 -0400
-Received: from localhost
- by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
- Tue, 21 Apr 2020 15:01:30 +0100
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 21 Apr 2020 15:01:21 +0100
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 03LE24dv53608476
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 21 Apr 2020 14:02:04 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 0AFD5A4057;
- Tue, 21 Apr 2020 14:02:04 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 2FEB3A405B;
- Tue, 21 Apr 2020 14:02:03 +0000 (GMT)
-Received: from thinkpad (unknown [9.145.65.41])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Tue, 21 Apr 2020 14:02:03 +0000 (GMT)
-Date: Tue, 21 Apr 2020 16:02:01 +0200
-From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-To: Mike Kravetz <mike.kravetz@oracle.com>
-Subject: Re: [PATCH v3 0/4] Clean up hugetlb boot command line processing
-In-Reply-To: <20200417185049.275845-1-mike.kravetz@oracle.com>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
-MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 20042114-4275-0000-0000-000003C3FB90
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20042114-4276-0000-0000-000038D9805D
-Message-Id: <20200421160201.0ddb9763@thinkpad>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-21_05:2020-04-20,
- 2020-04-21 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0
- priorityscore=1501 spamscore=0 lowpriorityscore=0 adultscore=0
- impostorscore=0 mlxscore=0 malwarescore=0 suspectscore=0 mlxlogscore=999
- clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004210108
+ id 1jQtdF-0004TI-07
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:12:14 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6386B1A0D78;
+ Tue, 21 Apr 2020 16:12:11 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 409661A0D7F;
+ Tue, 21 Apr 2020 16:12:06 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0DAAF402D9;
+ Tue, 21 Apr 2020 22:11:59 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: linus.walleij@linaro.org, bgolaszewski@baylibre.com, robh+dt@kernel.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH V2] dt-bindings: gpio: Convert i.MX to json-schema
+Date: Tue, 21 Apr 2020 22:03:43 +0800
+Message-Id: <1587477823-21036-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_070218_522466_7743E086 
-X-CRM114-Status: GOOD (  29.12  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200421_071213_315294_33541CD6 
+X-CRM114-Status: GOOD (  12.77  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,95 +67,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S . Miller" <davem@davemloft.net>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 Apr 2020 11:50:45 -0700
-Mike Kravetz <mike.kravetz@oracle.com> wrote:
+Convert the i.MX GPIO binding to DT schema format using json-schema.
 
-> v3 -
->    Used weak attribute method of defining arch_hugetlb_valid_size.
->      This eliminates changes to arch specific hugetlb.h files (Peter)
->    Updated documentation (Peter, Randy)
->    Fixed handling of implicitly specified gigantic page preallocation
->      in existing code and removed documentation of such.  There is now
->      no difference between handling of gigantic and non-gigantic pages.
->      (Peter, Nitesh).
->      This requires the most review as there is a small change to
->      undocumented behavior.  See patch 4 commit message for details.
->    Added Acks and Reviews (Mina, Peter)
-> 
-> v2 -
->    Fix build errors with patch 1 (Will)
->    Change arch_hugetlb_valid_size arg to unsigned long and remove
->      irrelevant 'extern' keyword (Christophe)
->    Documentation and other misc changes (Randy, Christophe, Mina)
->    Do not process command line options if !hugepages_supported()
->      (Dave, but it sounds like we may want to additional changes to
->       hugepages_supported() for x86?  If that is needed I would prefer
->       a separate patch.)
-> 
-> Longpeng(Mike) reported a weird message from hugetlb command line processing
-> and proposed a solution [1].  While the proposed patch does address the
-> specific issue, there are other related issues in command line processing.
-> As hugetlbfs evolved, updates to command line processing have been made to
-> meet immediate needs and not necessarily in a coordinated manner.  The result
-> is that some processing is done in arch specific code, some is done in arch
-> independent code and coordination is problematic.  Semantics can vary between
-> architectures.
-> 
-> The patch series does the following:
-> - Define arch specific arch_hugetlb_valid_size routine used to validate
->   passed huge page sizes.
-> - Move hugepagesz= command line parsing out of arch specific code and into
->   an arch independent routine.
-> - Clean up command line processing to follow desired semantics and
->   document those semantics.
-> 
-> [1] https://lore.kernel.org/linux-mm/20200305033014.1152-1-longpeng2@huawei.com
-> 
-> Mike Kravetz (4):
->   hugetlbfs: add arch_hugetlb_valid_size
->   hugetlbfs: move hugepagesz= parsing to arch independent code
->   hugetlbfs: remove hugetlb_add_hstate() warning for existing hstate
->   hugetlbfs: clean up command line processing
-> 
->  .../admin-guide/kernel-parameters.txt         |  40 ++--
->  Documentation/admin-guide/mm/hugetlbpage.rst  |  35 ++++
->  arch/arm64/mm/hugetlbpage.c                   |  30 +--
->  arch/powerpc/mm/hugetlbpage.c                 |  30 +--
->  arch/riscv/mm/hugetlbpage.c                   |  24 +--
->  arch/s390/mm/hugetlbpage.c                    |  24 +--
->  arch/sparc/mm/init_64.c                       |  43 +---
->  arch/x86/mm/hugetlbpage.c                     |  23 +--
->  include/linux/hugetlb.h                       |   2 +-
->  mm/hugetlb.c                                  | 190 +++++++++++++++---
->  10 files changed, 271 insertions(+), 170 deletions(-)
-> 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V1:
+	- improve compatible;
+	- drop clocks description.
+---
+ .../devicetree/bindings/gpio/fsl-imx-gpio.txt      | 35 -----------
+ .../devicetree/bindings/gpio/fsl-imx-gpio.yaml     | 68 ++++++++++++++++++++++
+ 2 files changed, 68 insertions(+), 35 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/gpio/fsl-imx-gpio.txt
+ create mode 100644 Documentation/devicetree/bindings/gpio/fsl-imx-gpio.yaml
 
-Looks good and works fine for s390, thanks for cleaning up!
-
-Acked-by: Gerald Schaefer <gerald.schaefer@de.ibm.com> # s390
+diff --git a/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.txt b/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.txt
+deleted file mode 100644
+index b4cd9f90..0000000
+--- a/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.txt
++++ /dev/null
+@@ -1,35 +0,0 @@
+-* Freescale i.MX/MXC GPIO controller
+-
+-Required properties:
+-- compatible : Should be "fsl,<soc>-gpio"
+-- reg : Address and length of the register set for the device
+-- interrupts : Should be the port interrupt shared by all 32 pins, if
+-  one number.  If two numbers, the first one is the interrupt shared
+-  by low 16 pins and the second one is for high 16 pins.
+-- gpio-controller : Marks the device node as a gpio controller.
+-- #gpio-cells : Should be two.  The first cell is the pin number and
+-  the second cell is used to specify the gpio polarity:
+-      0 = active high
+-      1 = active low
+-- interrupt-controller: Marks the device node as an interrupt controller.
+-- #interrupt-cells : Should be 2.  The first cell is the GPIO number.
+-  The second cell bits[3:0] is used to specify trigger type and level flags:
+-      1 = low-to-high edge triggered.
+-      2 = high-to-low edge triggered.
+-      4 = active high level-sensitive.
+-      8 = active low level-sensitive.
+-
+-Optional properties:
+-- clocks: the clock for clocking the GPIO silicon
+-
+-Example:
+-
+-gpio0: gpio@73f84000 {
+-	compatible = "fsl,imx51-gpio", "fsl,imx35-gpio";
+-	reg = <0x73f84000 0x4000>;
+-	interrupts = <50 51>;
+-	gpio-controller;
+-	#gpio-cells = <2>;
+-	interrupt-controller;
+-	#interrupt-cells = <2>;
+-};
+diff --git a/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.yaml b/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.yaml
+new file mode 100644
+index 0000000..0b223ab
+--- /dev/null
++++ b/Documentation/devicetree/bindings/gpio/fsl-imx-gpio.yaml
+@@ -0,0 +1,68 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/gpio/fsl-imx-gpio.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX/MXC GPIO controller
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++properties:
++  compatible:
++    enum:
++      - fsl,imx1-gpio
++      - fsl,imx21-gpio
++      - fsl,imx31-gpio
++      - fsl,imx35-gpio
++      - fsl,imx7d-gpio
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    description: |
++      Should be the port interrupt shared by all 32 pins, if one number.
++      If two numbers, the first one is the interrupt shared by low 16 pins
++      and the second one is for high 16 pins.
++    minItems: 1
++    maxItems: 2
++
++  interrupt-controller: true
++
++  "#interrupt-cells":
++    const: 2
++
++  clocks:
++    maxItems: 1
++
++  "#gpio-cells":
++    const: 2
++
++  gpio-controller: true
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - interrupt-controller
++  - "#interrupt-cells"
++  - "#gpio-cells"
++  - gpio-controller
++
++additionalProperties: false
++
++examples:
++  - |
++    gpio0: gpio@73f84000 {
++        compatible = "fsl,imx35-gpio";
++        reg = <0x73f84000 0x4000>;
++        interrupts = <50 51>;
++        gpio-controller;
++        #gpio-cells = <2>;
++        interrupt-controller;
++        #interrupt-cells = <2>;
++    };
++
++...
+-- 
+2.7.4
 
 
 _______________________________________________
