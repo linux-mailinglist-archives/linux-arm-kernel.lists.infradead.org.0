@@ -2,72 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F213B1B2BD5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 18:02:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C2871B2BE0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 18:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z5s3Ii9h6TyyIzOH77wpTOE9LipglNNkIYMNcvU4nog=; b=JLmOhFWuRdja44
-	vwPpWUf6zO1biU25NXpoKU5XMsCcZjOECEcovXmjhORYKirCwkAlT2PJPDvyjhW6qvxWmB/VWPizi
-	9+45NcCsJ60/CPko1Bce5jJ6Hqbp5Yo4J8iy4T2kPWvWKSq4U9dvcJmbc7iQ3QerZufohLBBcWTWW
-	4ie13v00FnSAvVRQNIbgZkn2LxKRlK5uSELZPakUDGrtPO6O9Sp76tNtDAjRJdRkoVPYefh+4UMvJ
-	LunLEA9aH6WTZtkVfvzOv2DI+YdBOvUUYcrW9O2UjWD+pByaLFrsWlbm0wH5rP1Gso0CjkmIZzql/
-	9OXFuVYkdawkaAc49DDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TlWvauoRimk6nHeR3xXp/FLrynb1dzGOXUdggrxEHpY=; b=VO7ipqx4DDlUnhhOTlZ+YRQc7
+	KNPM8slA9To7qVy4MD0g5LkGSti0cEhQ+HQWk7sW0SLAF+l72qGt9M0Ht0vCJDou1I3VOI1M9BuBX
+	KjLayq+zhXg+/rfhciOVttqg7UMeZXyMb74RmoahyBiKS0oWTvLbtW8KBAP5ak5I/+lZiqA5qwo5e
+	sMSDpE9BayB+9bEx1GdfCpKeQjoLGn+IGre+9za5epdH9Az0/6kAuRs2r1N7qKVZZpAvTHGQGY1yi
+	ymlpJjLR57BFlMmxvYBYGddsDodkdLqwyfKGzFLqat/saGVZ0SQQ96THPDq6r9dVvoq3z34npKeb0
+	W3rnKuL/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQvLn-0007Il-Pi; Tue, 21 Apr 2020 16:02:19 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jQvOl-0001u6-Br; Tue, 21 Apr 2020 16:05:23 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQvLf-0007HW-Gb
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 16:02:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FMOKi9JN1zmL3ex+upDVJ+JPiBtToBzeS9dSmqwVosg=; b=Wv6j/tRpqNiXWtF1allIjgglQ
- wCkIn+1dSOjzx9s33cJ53XlMgapGXUtnCb87O5un+VMg1aZajWfMzSGd2TLBW8Ha6HdyQFbcmaA+v
- tWr5M4uIJJL8JlK8h+oeULeBZkaTITb/e+qz/iY3KKQusbXCUnh0eQyPlKeifFOAIuLwgz6GrXi+A
- HPLTTUh3Jh80t9DHH3VzrBbmkW8I3f09LA/iFFNnaOrM+wJl3c7CNREETRaIphmZwgMZ87zjSdxEj
- CHV4voJDJ7W4lRx797+SBuXSukrYpeOouAJK0WPecaqpr/j2txC5GXfdYzeLjbT4xNEP9p0Mjkw9j
- i4qtFisaQ==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:41646)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jQvLE-0002XX-Id; Tue, 21 Apr 2020 17:01:44 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jQvL7-00079R-7Q; Tue, 21 Apr 2020 17:01:37 +0100
-Date: Tue, 21 Apr 2020 17:01:37 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH v5] ARM: boot: Obtain start of physical memory from DTB
-Message-ID: <20200421160137.GE25745@shell.armlinux.org.uk>
-References: <20200415153409.30112-1-geert+renesas@glider.be>
- <CAMj1kXHm=xA4gafwAaBn8=YcAsQCYDNmZ=4REsfvEUgZShm3Ww@mail.gmail.com>
+ id 1jQvOT-0000FD-Vf
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 16:05:08 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03LFw0On028047; Tue, 21 Apr 2020 18:05:00 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=UcNZO3xM3HHi7oyXBYoDxOmNpVA61++TVvetEk1ioYo=;
+ b=gpwzmxlAraMrYnBys2wZ1Z8KTScT7XhQJNfhOcWqyR4xrdrFY0QxI3nFNmcX4Dvcg2L1
+ qe0aInvsmFaTebTz8WWgiM8MpMmEU9tud1XvRYH7sfXBIedOePiS4y6XMwqNt4k7Onoy
+ 7gLOYBIKl3JkYG0hEZdI6TkhHxDP8l0NMkEf9R+StcHiKSRnQVoMkYwUANiAIGsZIQ5t
+ 5H4+dJbGpnE2ZzvSG4Qc/L8ZX5cpoQrsp8wniLKPZ9K1TIqRNMn8K4HeN60FTN5wNZfP
+ mOLBCXyMA0WAb1yDL6/8YMbUtoBcISPWEOUdliT4eLeZo8EW073xlJN/+wQEGRxIPNuw AA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30fq11h5xj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 21 Apr 2020 18:05:00 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 823EE10002A;
+ Tue, 21 Apr 2020 18:05:00 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 65877210F9B;
+ Tue, 21 Apr 2020 18:05:00 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 21 Apr
+ 2020 18:04:55 +0200
+Subject: Re: [PATCH V4 00/22] ARM: dts: stm32: Repair AV96 board
+To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
+References: <20200401132237.60880-1-marex@denx.de>
+ <971b9046-2d77-fdc6-2916-8b02ffb601d5@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <b73cb2bf-e50b-ce52-8e53-d8b72fa273f0@st.com>
+Date: Tue, 21 Apr 2020 18:04:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMj1kXHm=xA4gafwAaBn8=YcAsQCYDNmZ=4REsfvEUgZShm3Ww@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <971b9046-2d77-fdc6-2916-8b02ffb601d5@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-21_06:2020-04-20,
+ 2020-04-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_090211_714872_81B99582 
-X-CRM114-Status: GOOD (  22.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_090506_643747_1C84EE36 
+X-CRM114-Status: GOOD (  16.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,68 +97,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- Nicolas Pitre <nico@fluxnic.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 05:19:40PM +0200, Ard Biesheuvel wrote:
-> On Wed, 15 Apr 2020 at 17:34, Geert Uytterhoeven
-> <geert+renesas@glider.be> wrote:
-> >
-> > Currently, the start address of physical memory is obtained by masking
-> > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > was chosen as a balance between the requirements of different platforms.
-> > However, this does require that the start address of physical memory is
-> > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > requirement is not fulfilled.
-> >
-> > Fix this limitation by obtaining the start address from the DTB instead,
-> > if available (either explicitly passed, or appended to the kernel).
-> > Fall back to the traditional method when needed.
-> >
-> > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > i.e. not at a multiple of 128 MiB.
-> >
-> > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> > Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-> > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > Tested-by: Dmitry Osipenko <digetx@gmail.com>
+Hi Marek
+
+On 4/21/20 12:30 PM, Marek Vasut wrote:
+> On 4/1/20 3:22 PM, Marek Vasut wrote:
+>> The AV96 board device tree is completely broken and does not match the
+>> hardware. This series fixes it up.
+>>
+>> Marek Vasut (22):
+>>    ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
+>>    ARM: dts: stm32: Repair ethernet operation on AV96
+>>    ARM: dts: stm32: Add missing ethernet PHY reset on AV96
+>>    ARM: dts: stm32: Add missing ethernet PHY skews on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for SDMMC1 direction pins
+>>    ARM: dts: stm32: Repair SDMMC1 operation on AV96
+>>    ARM: dts: stm32: Repair PMIC configuration on AV96
+>>    ARM: dts: stm32: Repair PMIC interrupt on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for SDMMC2 pins 4-7
+>>    ARM: dts: stm32: Add eMMC attached to SDMMC2 on AV96
+>>    ARM: dts: stm32: Add QSPI NOR on AV96
+>>    ARM: dts: stm32: Add configuration EEPROM on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for SDMMC3 pins
+>>    ARM: dts: stm32: Enable WiFi on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for USART2 pins
+>>    ARM: dts: stm32: Enable Bluetooth on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for LTDC pins
+>>    ARM: dts: stm32: Add bindings for HDMI video on AV96
+>>    ARM: dts: stm32: Add alternate pinmux for SAI2 pins
+>>    ARM: dts: stm32: Add bindings for audio on AV96
+>>    ARM: dts: stm32: Add bindings for USB on AV96
+>>    ARM: dts: stm32: Rename LEDs to match silkscreen on AV96
+>>
+>>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi    | 280 +++++++++++++++++
+>>   arch/arm/boot/dts/stm32mp157a-avenger96.dts | 324 ++++++++++++++++++--
+>>   2 files changed, 571 insertions(+), 33 deletions(-)
 > 
-> This is ready to go into the patch system, no?
+> Alex, can you provide some review of this series ? It's been posted for
+> three weeks now.
 > 
-> The sooner Russell picks it up, the sooner I can respin my patches
-> that go on top.
 
-This seems to be a particularly risky change (it's already been subject
-to various failures for people) so I do not intend to rush to pick it
-up.
+Yes, I was waiting for Mani's review first (and I was a bit busy sorry).
 
-In any case, Masahiro Yamada has resubmitted a patch to sort out the
-libfdt builds that he's been trying to get merged for some time now,
-so I'm going to be giving that priority. Your change conflicts with
-this libfdt build change.
+All patches looks good for me. Maybe I'll squash some pinctrl patches to 
+decrease number of patches.
 
-So, I think all in all, it needs to spend a bit longer being provenly
-tested before I merged it (and eventually fixed up for the libfdt
-change), and I don't think merging it so it appears in linux-next
-will help with that.
+One remaining questions about patch 7 ("Repair PMIC configuration on 
+AV96). I saw a discussion on u-boot thread with pascal P., explaining 
+that 800mv is not the minimal voltage acceptable for vddcore. What is 
+the status ?
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+regards
+alex
 
 _______________________________________________
 linux-arm-kernel mailing list
