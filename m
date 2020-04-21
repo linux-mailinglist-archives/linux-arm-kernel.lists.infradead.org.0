@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 968B11B1C6D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 05:11:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 473781B1C69
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 05:10:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i4ShYW6ilvjWyaPeq5CqDRGSNBThl6MjcWbwJLE3axQ=; b=f8rq4cyuzYF97V
-	/zysEtFpFwhHc2mnpY4odSj80YG8fETj9KqoHU6uQSsUAkUNb0U1k8k9UZUmVhs8jT5KuNhkyOC6t
-	Sj/TqV4CX1LQljGjLjd2vIeDBmCAi7RzWf7qwKTI1Twb09QgBloEnXbr2LMkUlcChkwwDUy+p4EYX
-	vh5Wy8RJJz5LKg++TLLZGPRSpsymOGO90V6JBOPS+KS/fi54z4MrQ2vMDSa2mDGlBY0fApPnK1CUH
-	GN6v7UujuabIslvToia5FxDabm2JO29UC3Y1WIpMLyXuUXX9uNdpFmmChEL1TtcxCE2LfxVNmi82c
-	LaqUTWNDwtWI732oEiWw==;
+	List-Owner; bh=PsVwsKyopixUk5pnSC79u+F8war3RyFGxSJNbzgfjbo=; b=HuxHujcXobJhJO
+	I+GUYWjybsQ7zZbM5Cpfm9bn5CCZsbXPv4y02QoR74KSepikeFZooCZA0h81LVPY3biKm2gXq7QOe
+	mpYgpcV7QAer9tyHyTWoQEc1C4YjR2gc6SQ+j9Y7sD3xdEAOHM/aHI2rghJJBrLJVuNebf5QrVV9e
+	yAicT6agVrTXranLo7JZF8+hG+yq3Lt9Stou2dtPKmXNi2OGHZxT07w/B/wePaayd7qRjpp8/ydE6
+	+P4RKh9SwqePFIl33BgZXw5C8wFzOyuH65Em4qePizNzDnX9uyAlGfjH1tHeNr1saXgNFEePkxumF
+	4AGFVv7occfhQPu/dl8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQjJa-0002kf-Ma; Tue, 21 Apr 2020 03:11:14 +0000
+	id 1jQjIu-0002B0-H0; Tue, 21 Apr 2020 03:10:32 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQjIl-00029O-OV; Tue, 21 Apr 2020 03:10:25 +0000
-X-UUID: bbf2005d08ed4fc58be1b95bf225cd78-20200420
+ id 1jQjIk-00029O-8K; Tue, 21 Apr 2020 03:10:23 +0000
+X-UUID: f85456236c3f464ea602058e13ddb362-20200420
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=99oh6N8mdr4ZmH3MgX6Bmt28F3Ip4r6y2UmH1UwY2G4=; 
- b=T0sGSnFwHhnzDthzBDYtnmL1TYEJc0ULXWkcGww5xalThqYxSVAKW6WUdC5yiKRmGiHzBybhkr3hpMbiEnzlM0FLflEjf/EYsVefstooriZ9zMYXsFlvv7l9p9F4KWM7nWnUrRkGTphZOJEDV4I7/N+c2bmjEk1htRmM4D6pEdw=;
-X-UUID: bbf2005d08ed4fc58be1b95bf225cd78-20200420
+ bh=5mB7sfvd0i91yBHg/4/utOO4PjHFM3FM1/PPiCYZSqc=; 
+ b=Y7abhUtfaWPUwuwbySHXxH6zHB9h2QU9nqlgrtkTq3V1Al7eKimgwd0FZV4t9/9Y6Z7gqT8cK9Q9HvyR7tao/NjtW4r3XR0/RXlkAVIsxqGBUvrVRx1zUPaz41YIox2u+qVt6Vq0ceXesZ1HhndSNLRMP2oWXZNhsb+Q4iUAYDs=;
+X-UUID: f85456236c3f464ea602058e13ddb362-20200420
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <hsin-hsiung.wang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 211401381; Mon, 20 Apr 2020 19:10:09 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ with ESMTP id 1361287211; Mon, 20 Apr 2020 19:10:09 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 20 Apr 2020 20:00:16 -0700
+ 15.0.1497.2; Mon, 20 Apr 2020 20:00:17 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Tue, 21 Apr 2020 11:00:14 +0800
 Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -46,18 +46,20 @@ From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
 To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  Matthias Brugger <matthias.bgg@gmail.com>, Alexandre Belloni
  <alexandre.belloni@bootlin.com>
-Subject: [PATCH v13 2/6] mfd: mt6397: Trim probe function to support different
- chips more cleanly
-Date: Tue, 21 Apr 2020 11:00:08 +0800
-Message-ID: <1587438012-24832-3-git-send-email-hsin-hsiung.wang@mediatek.com>
+Subject: [PATCH v13 3/6] dt-bindings: mfd: Add compatible for the MediaTek
+ MT6358 PMIC
+Date: Tue, 21 Apr 2020 11:00:09 +0800
+Message-ID: <1587438012-24832-4-git-send-email-hsin-hsiung.wang@mediatek.com>
 X-Mailer: git-send-email 2.6.4
 In-Reply-To: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
 References: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 6ED35DFF6DA4653F428FB76853F03DBBB915F01E631990D5E4E3462BE51360CD2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_201023_801380_6CC8B805 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200420_201022_465906_B184710E 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,86 +104,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new struct members for mfd-cells and irq initial function, so we can
-call devm_mfd_add_devices() only once.
+This adds compatible for the MediaTek MT6358 PMIC.
 
 Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
+Acked-for-mfd-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- drivers/mfd/mt6397-core.c | 35 ++++++++++++++---------------------
- 1 file changed, 14 insertions(+), 21 deletions(-)
+ Documentation/devicetree/bindings/mfd/mt6397.txt | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-index d2e70d8..a313a72 100644
---- a/drivers/mfd/mt6397-core.c
-+++ b/drivers/mfd/mt6397-core.c
-@@ -103,22 +103,31 @@ static const struct mfd_cell mt6397_devs[] = {
- struct chip_data {
- 	u32 cid_addr;
- 	u32 cid_shift;
-+	const struct mfd_cell *cells;
-+	int cell_size;
-+	int (*irq_init)(struct mt6397_chip *chip);
- };
+diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
+index a9b105a..0df4382 100644
+--- a/Documentation/devicetree/bindings/mfd/mt6397.txt
++++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
+@@ -18,24 +18,30 @@ See the following for pwarp node definitions:
+ This document describes the binding for MFD device and its sub module.
  
- static const struct chip_data mt6323_core = {
- 	.cid_addr = MT6323_CID,
- 	.cid_shift = 0,
-+	.cells = mt6323_devs,
-+	.cell_size = ARRAY_SIZE(mt6323_devs),
-+	.irq_init = mt6397_irq_init,
- };
+ Required properties:
+-compatible: "mediatek,mt6397" or "mediatek,mt6323"
++compatible:
++	"mediatek,mt6323" for PMIC MT6323
++	"mediatek,mt6358" for PMIC MT6358
++	"mediatek,mt6397" for PMIC MT6397
  
- static const struct chip_data mt6397_core = {
- 	.cid_addr = MT6397_CID,
- 	.cid_shift = 0,
-+	.cells = mt6397_devs,
-+	.cell_size = ARRAY_SIZE(mt6397_devs),
-+	.irq_init = mt6397_irq_init,
- };
+ Optional subnodes:
  
- static int mt6397_probe(struct platform_device *pdev)
- {
- 	int ret;
--	unsigned int id;
-+	unsigned int id = 0;
- 	struct mt6397_chip *pmic;
- 	const struct chip_data *pmic_core;
- 
-@@ -154,29 +163,13 @@ static int mt6397_probe(struct platform_device *pdev)
- 	if (pmic->irq <= 0)
- 		return pmic->irq;
- 
--	ret = mt6397_irq_init(pmic);
-+	ret = pmic_core->irq_init(pmic);
- 	if (ret)
- 		return ret;
- 
--	switch (pmic->chip_id) {
--	case MT6323_CHIP_ID:
--		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
--					   mt6323_devs, ARRAY_SIZE(mt6323_devs),
--					   NULL, 0, pmic->irq_domain);
--		break;
--
--	case MT6391_CHIP_ID:
--	case MT6397_CHIP_ID:
--		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
--					   mt6397_devs, ARRAY_SIZE(mt6397_devs),
--					   NULL, 0, pmic->irq_domain);
--		break;
--
--	default:
--		dev_err(&pdev->dev, "unsupported chip: %d\n", pmic->chip_id);
--		return -ENODEV;
--	}
--
-+	ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-+				   pmic_core->cells, pmic_core->cell_size,
-+				   NULL, 0, pmic->irq_domain);
- 	if (ret) {
- 		irq_domain_remove(pmic->irq_domain);
- 		dev_err(&pdev->dev, "failed to add child devices: %d\n", ret);
+ - rtc
+ 	Required properties: Should be one of follows
+ 		- compatible: "mediatek,mt6323-rtc"
++		- compatible: "mediatek,mt6358-rtc"
+ 		- compatible: "mediatek,mt6397-rtc"
+ 	For details, see ../rtc/rtc-mt6397.txt
+ - regulators
+ 	Required properties:
+-		- compatible: "mediatek,mt6397-regulator"
+-	see ../regulator/mt6397-regulator.txt
+ 		- compatible: "mediatek,mt6323-regulator"
+ 	see ../regulator/mt6323-regulator.txt
++		- compatible: "mediatek,mt6358-regulator"
++	see ../regulator/mt6358-regulator.txt
++		- compatible: "mediatek,mt6397-regulator"
++	see ../regulator/mt6397-regulator.txt
+ - codec
+ 	Required properties:
+-		- compatible: "mediatek,mt6397-codec"
++		- compatible: "mediatek,mt6397-codec" or "mediatek,mt6358-sound"
+ - clk
+ 	Required properties:
+ 		- compatible: "mediatek,mt6397-clk"
 -- 
 2.6.4
 _______________________________________________
