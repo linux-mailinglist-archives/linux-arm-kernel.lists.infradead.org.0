@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 234511B2139
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:16:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D798E1B2158
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:18:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3rkXF5wGdF/oILUQzRAZJTjj0ZjR5i3/3ctECfj7YUs=; b=PEnCbaMkz127ro
-	rfUS735PV2zNaEIGsXHaX08fs7MmbhoOdsusMTOgGVR+2DVMCGfZvlnfGxV5iOmxs7p2cTnksP0Wi
-	vu6Ov7zv/emh9t06IrBbd8J1RvZOVhvchHSpuP4O+3UDwo7PHKsGRKogbPMGIx6jeyfVR54ESgvPy
-	oWHJthv92kXFamP250VKOWQiWHME/24fnUqbIzL+Bu1IK7G6HQ+y3qOseP2UNUfVO4n2dsWJfQM2i
-	w9cGkQlujLR++ju7tUkeZBtdgs6qjqgPLiJSO4Ck/9rLTA5Gk89c7uh0Z49c7a7nHR1oCiOSeeoJM
-	6PtNjYBIzg6QsnAka+CQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rxhDWLq96mcC/8MmWIc2CsXlTMScRR8TN0M2wwOzQTk=; b=PbsFvTX8Ym4/u5
+	CAfHl8tOOnK8LtiScu003E3gm9NfPh7LsOG9znSnJ8SmnFhns+uq5Plgf8Kco+FC2m0FijvyyTGlK
+	E81+zxE/dJT2I3L0eFDn/aadi3nhmQa98rcajn/geC/VwWy07jhPsSzN8UhteeUYhmsQLKz6c+xxs
+	ILwF1Wm7qE/UTm+Ut0R3g7dWZ3iyUMjBpNhKlNgJ1qP2OVeb8mmu04Ips+xKBlJL0pVyG1Grxza3Q
+	dHEF+EJ3YsZ5SPe5iTL6seKn0hnHK44H63d/gqBG527Z6GZPyeFaNBiqL6sMve0y1MftR6KzIt83D
+	A3+oAYDKLs9KvreTD6Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQo4M-0006iC-9j; Tue, 21 Apr 2020 08:15:50 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jQo6S-0007fm-30; Tue, 21 Apr 2020 08:18:00 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQo49-0006gU-NU
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:15:40 +0000
-Received: by mail-wm1-x343.google.com with SMTP id x25so2530330wmc.0
+ id 1jQo5u-0007OU-3g
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:17:28 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id my1so950858pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 01:15:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7xjSknTeR+7dqcaL1YgejpgJ9/KujY8j8UEnyfLmZD4=;
- b=frOKGgAVIjbSzucTY8HiXqzPrWgYdihoiEtz+cb34v3+J49RpTLLTKTwBeXk+DnyE/
- Ma/xI/Oz4r+iM7CFvAgmw0X7Oa1CoDY3pQPLZWCm04SaG+jx1Cg8F8ipUTjca56HpLcP
- sqW3/+7LhmRxDOqO4/j0dRG2dGQhvnU1BAhRMGEYqTQqX/1dnb99c+ctJj7h0fXVuc6f
- B/5XyRppCG6V9Hs8TWKyfwNOYfNldnC2fjsFvYYbASsK8YajbRqqTQl1VOee2YmGjuVN
- DgzLhyyFVbu5ax5j4VzJ+uGJhqdBCMQbAETtVyt1n1J2iqSZmvbUoeKXPnVVc0XZIRHo
- DqrA==
+ Tue, 21 Apr 2020 01:17:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fIbpi7O6WJugTXFmCQCTQurXX9axhW0Esg76IWWTzRM=;
+ b=maGq02KdAVVk27vQzcEjc+9Aj6eXZN5V2r9JEffWU+jLG6K5d3N6SCP/HPXtkbM6AK
+ RhIjAxrGcbKW+dxQcT37HVZbsVXOjfjTQmpLWjKW209TaIKpir/7hJPTkkBmCv3Rfcls
+ Md48rNfmNv79Zp4dZ//dMeuzz0fSSFNgW57QglHqXwr3A1P3Xk0/wcC0wb6mJa4hkW37
+ c05pY5whmZVrBy3NEhbbYVPdXi5F6QCxP3xEheuk3vt5UkgEocij/Srp/xIeqjVJCj5+
+ gS5hzy/yP4GJRnptmpCjpcdIj8LFjzEWpsJv9d+HgnD8+ovaGjhh0AH59EP3jfZtHWP/
+ 6/zw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=7xjSknTeR+7dqcaL1YgejpgJ9/KujY8j8UEnyfLmZD4=;
- b=A5UKYiBSNOFSLMFy/o2eS97M9p7u1l7CJg/YO/rvI6oKPoOke+J8mvTtVi+Lobe4Up
- BK8AAVK86xwO9f1JGIx89AsRiff6mKgGnXPH3tNvedm/ekiC7YdftjlZIewsPoz4thgF
- CUGzKehZmuZ6bjcuWKLKdv5ZlNEq7+ovfSVBqw7GqFfJnVjtGgfldjYWrQLW8BLJitcr
- mV+ndB1ybSrESgAf0/vjJzLlvgQDa+IWwquKXgEzor1FywGefVe0vjonNYOTV/QAJ6g/
- PDWKBXe58QRka7tJ9Cq+R1SodHQNwRLxwZYX/3fIxkJoPDCF0x8strFXZt4vEmSa8/ax
- yuqg==
-X-Gm-Message-State: AGi0Pubcth0iiee/tMlLDOHlluAUPsJVajjdbYPWIhhG4SdymjDyotv6
- 1Bh11Ls1ukiWh+hl2IdnARZViy3RgOg=
-X-Google-Smtp-Source: APiQypLAbrQ/7+vnxMSEVWZPMUZwhWOh+FsfXCIwjmuMJt8X2Ze0PcEBnGHrEyqo46iBVLy1lNevDA==
-X-Received: by 2002:a1c:1d4b:: with SMTP id d72mr3484494wmd.19.1587456935761; 
- Tue, 21 Apr 2020 01:15:35 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:8985:83c2:22f1:8de3?
- ([2a01:e34:ed2f:f020:8985:83c2:22f1:8de3])
- by smtp.googlemail.com with ESMTPSA id k14sm2678325wrp.53.2020.04.21.01.15.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Apr 2020 01:15:35 -0700 (PDT)
-Subject: Re: [PATCH v3 4/4] thermal: cpuidle: Register cpuidle cooling device
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>
-References: <20200414220837.9284-1-daniel.lezcano@linaro.org>
- <20200414220837.9284-4-daniel.lezcano@linaro.org>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <6b58035c-fe48-09ab-f042-729b07bcfec6@linaro.org>
-Date: Tue, 21 Apr 2020 10:15:31 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ bh=fIbpi7O6WJugTXFmCQCTQurXX9axhW0Esg76IWWTzRM=;
+ b=JgYWVJKjRsC3MmubhCUgxEBgn7i31b0Dkr1ML6IgB1CeKCJXjmHWs4Yi0A4aoBsfp8
+ Hfa3EiOUDKqosspUTrhggudjZFI3U3q53fcrdResSP4Lpar8AnzJB1nF9KryQrQMNFhU
+ Zh6rrLRNarH5RV+cM44J3zR0EcCoKP6SvtAwtPNBJ4tx8niwhtQY//G8kyE/tYHlfrhS
+ ld887ssw4zTdZdWHRAxHS+/6rcM3gjcF7f2NCZpraLUHzXDe8zqIidG8MagyD2NXJEyo
+ O2WpmnqgJoQtHHSxCsqh/OxqMg2uSKQ5MJhUAGkuTyZgDyfC3j/2vit+81Uu/+YHYNAY
+ bRbg==
+X-Gm-Message-State: AGi0Pua7dVrBTGw8RvbiIGD0daj84RU5pnBw63HvRBAY++VxvUY7MnCq
+ j/thR2blUxoFBtShXR2FAq0M+w==
+X-Google-Smtp-Source: APiQypLLHyb++yTAlD6wehS7jB/h9oebLCuGheJNM864LJqIFw1n0PbffrUmSWn8iBeylKnoopk9/Q==
+X-Received: by 2002:a17:90a:498a:: with SMTP id
+ d10mr4369781pjh.194.1587457045415; 
+ Tue, 21 Apr 2020 01:17:25 -0700 (PDT)
+Received: from hsinchu02.internal.sifive.com
+ (114-34-229-221.HINET-IP.hinet.net. [114.34.229.221])
+ by smtp.gmail.com with ESMTPSA id v9sm1610067pju.3.2020.04.21.01.17.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Apr 2020 01:17:24 -0700 (PDT)
+From: Zong Li <zong.li@sifive.com>
+To: akpm@linux-foundation.org, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
+ linux-riscv@lists.infradead.org, tglx@linutronix.de, mingo@redhat.com,
+ bp@alien8.de, x86@kernel.org, hpa@zytor.com, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/4] Extract DEBUG_WX to shared use.
+Date: Tue, 21 Apr 2020 16:17:11 +0800
+Message-Id: <cover.1587455584.git.zong.li@sifive.com>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-In-Reply-To: <20200414220837.9284-4-daniel.lezcano@linaro.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_011538_297179_40E69A85 
-X-CRM114-Status: GOOD (  20.60  )
+X-CRM114-CacheID: sfid-20200421_011726_699559_7301C3B2 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,60 +101,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kucheria@verdurent.com,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>, rui.zhang@intel.com,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Zong Li <zong.li@sifive.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhpIExvcmVuem8sIFN1ZGVlcCwKCm90aGVyIHBhdGNoZXMgb2YgdGhlIHNlcmllcyBhcmUgYWNr
-ZWQgLyByZXZpZXdlZC4KCklmIHlvdSBhcmUgb2sgd2l0aCB0aGVzZSBjaGFuZ2VzLCBjb3VsZCB5
-b3UgYWRkIHlvdXIgYWNrZWQtYnkgc28gSSBjYW4KbWVyZ2UgYWxsIHRoZSBzZXJpZXMgdmlhIHRo
-ZSB0aGVybWFsIHRyZWU/CgpUaGFua3MKCiAgLS0gRGFuaWVsCgpPbiAxNS8wNC8yMDIwIDAwOjA4
-LCBEYW5pZWwgTGV6Y2FubyB3cm90ZToKPiBUaGUgY3B1aWRsZSBkcml2ZXIgY2FuIGJlIHVzZWQg
-YXMgYSBjb29saW5nIGRldmljZSBieSBpbmplY3RpbmcgaWRsZQo+IGN5Y2xlcy4gVGhlIERUIGJp
-bmRpbmcgZm9yIHRoZSBpZGxlIHN0YXRlIGFkZGVkIGFuIG9wdGlvbmFsCj4gCj4gV2hlbiB0aGUg
-cHJvcGVydHkgaXMgc2V0LCByZWdpc3RlciB0aGUgY3B1aWRsZSBkcml2ZXIgd2l0aCB0aGUgaWRs
-ZQo+IHN0YXRlIG5vZGUgcG9pbnRlciBhcyBhIGNvb2xpbmcgZGV2aWNlLiBUaGUgdGhlcm1hbCBm
-cmFtZXdvcmsgd2lsbCBkbwo+IHRoZSBhc3NvY2lhdGlvbiBhdXRvbWF0aWNhbGx5IHdpdGggdGhl
-IHRoZXJtYWwgem9uZSB2aWEgdGhlCj4gY29vbGluZy1kZXZpY2UgZGVmaW5lZCBpbiB0aGUgZGV2
-aWNlIHRyZWUgY29vbGluZy1tYXBzIHNlY3Rpb24uCj4gCj4gU2lnbmVkLW9mZi1ieTogRGFuaWVs
-IExlemNhbm8gPGRhbmllbC5sZXpjYW5vQGxpbmFyby5vcmc+Cj4gLS0tCj4gIGRyaXZlcnMvY3B1
-aWRsZS9jcHVpZGxlLWFybS5jICB8IDUgKysrKysKPiAgZHJpdmVycy9jcHVpZGxlL2NwdWlkbGUt
-cHNjaS5jIHwgNSArKysrKwo+ICAyIGZpbGVzIGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKykKPiAK
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcHVpZGxlL2NwdWlkbGUtYXJtLmMgYi9kcml2ZXJzL2Nw
-dWlkbGUvY3B1aWRsZS1hcm0uYwo+IGluZGV4IDllNTE1NmQzOTYyNy4uMjQwNmFjMGFlMTM0IDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvY3B1aWRsZS9jcHVpZGxlLWFybS5jCj4gKysrIGIvZHJpdmVy
-cy9jcHVpZGxlL2NwdWlkbGUtYXJtLmMKPiBAQCAtOCw2ICs4LDcgQEAKPiAgCj4gICNkZWZpbmUg
-cHJfZm10KGZtdCkgIkNQVWlkbGUgYXJtOiAiIGZtdAo+ICAKPiArI2luY2x1ZGUgPGxpbnV4L2Nw
-dV9jb29saW5nLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9jcHVpZGxlLmg+Cj4gICNpbmNsdWRlIDxs
-aW51eC9jcHVtYXNrLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9jcHVfcG0uaD4KPiBAQCAtMTI0LDYg
-KzEyNSwxMCBAQCBzdGF0aWMgaW50IF9faW5pdCBhcm1faWRsZV9pbml0X2NwdShpbnQgY3B1KQo+
-ICAJaWYgKHJldCkKPiAgCQlnb3RvIG91dF9rZnJlZV9kcnY7Cj4gIAo+ICsJcmV0ID0gY3B1aWRs
-ZV9jb29saW5nX3JlZ2lzdGVyKGRydik7Cj4gKwlpZiAocmV0KQo+ICsJCXByX2VycigiRmFpbGVk
-IHRvIHJlZ2lzdGVyIHRoZSBpZGxlIGNvb2xpbmcgZGV2aWNlOiAlZFxuIiwgcmV0KTsKPiArCj4g
-IAlyZXR1cm4gMDsKPiAgCj4gIG91dF9rZnJlZV9kcnY6Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-Y3B1aWRsZS9jcHVpZGxlLXBzY2kuYyBiL2RyaXZlcnMvY3B1aWRsZS9jcHVpZGxlLXBzY2kuYwo+
-IGluZGV4IGVkZDdhNTRlZjBkMy4uOGU4MDViZmY2NDZmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
-Y3B1aWRsZS9jcHVpZGxlLXBzY2kuYwo+ICsrKyBiL2RyaXZlcnMvY3B1aWRsZS9jcHVpZGxlLXBz
-Y2kuYwo+IEBAIC05LDYgKzksNyBAQAo+ICAjZGVmaW5lIHByX2ZtdChmbXQpICJDUFVpZGxlIFBT
-Q0k6ICIgZm10Cj4gIAo+ICAjaW5jbHVkZSA8bGludXgvY3B1aG90cGx1Zy5oPgo+ICsjaW5jbHVk
-ZSA8bGludXgvY3B1X2Nvb2xpbmcuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2NwdWlkbGUuaD4KPiAg
-I2luY2x1ZGUgPGxpbnV4L2NwdW1hc2suaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2NwdV9wbS5oPgo+
-IEBAIC0zMDUsNiArMzA2LDEwIEBAIHN0YXRpYyBpbnQgX19pbml0IHBzY2lfaWRsZV9pbml0X2Nw
-dShpbnQgY3B1KQo+ICAJaWYgKHJldCkKPiAgCQlnb3RvIG91dF9rZnJlZV9kcnY7Cj4gIAo+ICsJ
-cmV0ID0gY3B1aWRsZV9jb29saW5nX3JlZ2lzdGVyKGRydik7Cj4gKwlpZiAocmV0KQo+ICsJCXBy
-X2VycigiRmFpbGVkIHRvIHJlZ2lzdGVyIHRoZSBpZGxlIGNvb2xpbmcgZGV2aWNlOiAlZFxuIiwg
-cmV0KTsKPiArCj4gIAlyZXR1cm4gMDsKPiAgCj4gIG91dF9rZnJlZV9kcnY6Cj4gCgoKLS0gCjxo
-dHRwOi8vd3d3LmxpbmFyby5vcmcvPiBMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2Fy
-ZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBMaW5hcm86ICA8aHR0cDovL3d3dy5mYWNlYm9vay5jb20v
-cGFnZXMvTGluYXJvPiBGYWNlYm9vayB8CjxodHRwOi8vdHdpdHRlci5jb20vIyEvbGluYXJvb3Jn
-PiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cubGluYXJvLm9yZy9saW5hcm8tYmxvZy8+IEJsb2cKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+Some architectures support DEBUG_WX function, it's verbatim from each
+others, so extract to mm/Kconfig.debug for shared use.
+
+PPC and ARM ports don't support generic page dumper yet, so we only
+refine x86 and arm64 port in this patch series.
+
+For RISC-V port, the DEBUG_WX support depends on other patches which
+be merged already:
+  - RISC-V page table dumper
+  - Support strict kernel memory permissions for security
+
+Zong Li (4):
+  mm: add DEBUG_WX support
+  riscv: support DEBUG_WX
+  x86: mm: use ARCH_HAS_DEBUG_WX instead of arch defined
+  arm64: mm: use ARCH_HAS_DEBUG_WX instead of arch defined
+
+ arch/arm64/Kconfig              |  1 +
+ arch/arm64/Kconfig.debug        | 29 -----------------------------
+ arch/riscv/Kconfig              |  1 +
+ arch/riscv/include/asm/ptdump.h |  6 ++++++
+ arch/riscv/mm/init.c            |  3 +++
+ arch/x86/Kconfig                |  1 +
+ arch/x86/Kconfig.debug          | 27 ---------------------------
+ mm/Kconfig.debug                | 33 +++++++++++++++++++++++++++++++++
+ 8 files changed, 45 insertions(+), 56 deletions(-)
+
+-- 
+2.26.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
