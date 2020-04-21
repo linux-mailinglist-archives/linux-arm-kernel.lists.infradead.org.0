@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23FE91B241E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 12:44:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E67331B2460
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 12:51:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0p9/BEzI0HIdZDxHXs6Vh6RsBkxt86jO3e3XGKcGnY8=; b=S7IS/VENYeSB7k
-	QgwBhp2c5z65BWC+U0zDib/69w/tPL2Fgz6gTzRhxgNdN0/7WbWoEg7yvTxQ3uUqSSr/jSbYSZSvl
-	HVJtvZhexAQDBffXs4G3cZe2tcsqtYVAg85fUAHQ2GCwNYdXEK+QK6UbEZ4gg/65/8u9Qcd+qiHZY
-	2HsDNpQtlV6pa233fT0M3CZSL21lt5a/Ic7FDkjhZQwVoIJvWi4xzP9D1fjS28coKfXUZYXDIT7k4
-	yP0eNK0GIwcokwA1mhndbnIobJrocxovp7N6Tn0TNUIEj84RtZS9PKj+wxeeNAttGirQZmT2GcAoR
-	roVfbtgN4eTOiry4EKbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=o9jCxLevSMVVxf2OrbkClOUIYvhChfGsdc/8ONeYPd8=; b=Lx3PMOfEDURnJNTwUUzwk/Hp9
+	16wT2w60WpP0IOLyoba76r+C+GgRqY058jUoDAIEp4zoKSZF1+JPUOnLtUVEiQ59EDkbTZRzM1GPC
+	pwJBGGJ0spri76wob+dupnptahFjK8rprLVur1g5jLs6NgeUcUXaH80eC7MEUwKD57rtSPa/46V/1
+	S9zPQa4m0JldGa2FZQ/elEyUXMXjKKClL3HMMDavGoFkG34LGYzoT4aa4YUy7/K2oryNxCYtAVbwn
+	bkZ+jBbZB3Yq+8R0rAluTLMAu5wAeWBRqCJb8LgeKwLEKTd1/i5SZao8uUAhCH1bFlsQnZSA/aRpE
+	iNEk+aXoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQqNf-0002L1-Uz; Tue, 21 Apr 2020 10:43:55 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1jQqUq-0008J9-7c; Tue, 21 Apr 2020 10:51:20 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQqLr-0000cE-79
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 10:42:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1587465724; x=1619001724;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=T+SHH7oxvWS5aNKMFbJfCt0u557PHi+U5oRX3v2DzvA=;
- b=Z9O2kjSablrS87X8e68dGdvDp6qERJ+5AQTHHoLJGgtQ9zy4LuiMZRCv
- QnZmcq6w1Y7tKPVTouiZeO06n3/iufajtvs/6IX/K/MzEHucEuu+GUZc0
- EKaWSC3TlgRmZyRZq5u6Tscd0uPPZD2QPiQMn1wPZzqSs5DR+I/gJ7+QM
- 8UdTso3Z5NIOvL7CwCypJ9oe3IfdBVy52maJYqiF0b8gTjlW10NIbSuY+
- nNk66eO4/KCVu3RYNdzZJ9gp31E84JH8ep0ZghzTqZv2NUnLGvBdmoDs4
- aVfI+eVfL7w3wGkGZpkmWy9rd89wjBeRFLiy1IUEbTr9E8gfOzwvLuUyf A==;
-IronPort-SDR: c1zZGebHpOG5PEqgnAxaF1BZUCGDMkmuc4r5A+tf/W190ebzTdttTkarIMJuR35W00Eh2Ir+Cd
- DH2xL4wUumpmsdKUN5I/Si+g28adu2E6Uzy8VEH9AUx5UOzYlIwlrt03rFDXPterGaBEwXLJMj
- OrdDKGVRfLW8TaTKeGK2L5rLl+l9DHFCz4B5H8/hlS06KWA2RtNLrjC0bnh+hPx+oZCdBcn5QB
- XD3Up1wD0SZQsFvxVFWn4K3GDeGdL3+xjN+1bsYyBO1iIYnCshGcwXilNR56BpUOoiWZCskXzi
- irA=
-X-IronPort-AV: E=Sophos;i="5.72,410,1580799600"; d="scan'208";a="73257541"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 21 Apr 2020 03:42:03 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 21 Apr 2020 03:42:05 -0700
-Received: from ness.microchip.com (10.10.115.15) by chn-vm-ex01.mchp-main.com
- (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Tue, 21 Apr 2020 03:42:00 -0700
-From: <nicolas.ferre@microchip.com>
-To: <linux-arm-kernel@lists.infradead.org>, <netdev@vger.kernel.org>, "Claudiu
- Beznea" <claudiu.beznea@microchip.com>, <harini.katakam@xilinx.com>
-Subject: [PATCH v2 7/7] net: macb: Add WoL interrupt support for MACB type of
- Ethernet controller
-Date: Tue, 21 Apr 2020 12:41:04 +0200
-Message-ID: <bebb6e87da4be4b000c059351f3a4d82ecffa561.1587463802.git.nicolas.ferre@microchip.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <cover.1587463802.git.nicolas.ferre@microchip.com>
-References: <cover.1587463802.git.nicolas.ferre@microchip.com>
+ id 1jQqUg-0008HP-K1
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 10:51:12 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 3C07E23059;
+ Tue, 21 Apr 2020 12:51:00 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1587466263;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=OSieuTLDTWJZlGZSja3Um3+Gmk1FrxNg3rEeH5FZD9Y=;
+ b=lomhw53NjPGviUGO5c6ReoggM7XHM605itwqG5h1JP3Dpj8r6pXCY28LtwhLVpYpY40Ihd
+ Ku3dGMHKcp68tgLHGsSTqOfceoAzyHJUvzqjunut4xiPDyHEsdpt6Wwkcg8Nu0BdYzkTzj
+ pFap2F6Dl6lKIfJ4b7WMMOlrxShKN0w=
 MIME-Version: 1.0
+Date: Tue, 21 Apr 2020 12:50:59 +0200
+From: Michael Walle <michael@walle.cc>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH v2 10/16] gpio: add a reusable generic gpio_chip using
+ regmap
+In-Reply-To: <f82706a8596436d13642c49e26233133@walle.cc>
+References: <20200402203656.27047-1-michael@walle.cc>
+ <20200402203656.27047-11-michael@walle.cc>
+ <CACRpkdaqgHhPwdKdUai4zvi21qR-cSQUKyzZ3SyfWBLPN9us3w@mail.gmail.com>
+ <f82706a8596436d13642c49e26233133@walle.cc>
+Message-ID: <3ef94b68893e2fb3075bd5236d0fa6ee@walle.cc>
+X-Sender: michael@walle.cc
+User-Agent: Roundcube Webmail/1.3.10
+X-Spamd-Bar: +
+X-Spam-Level: *
+X-Rspamd-Server: web
+X-Spam-Status: No, score=1.40
+X-Spam-Score: 1.40
+X-Rspamd-Queue-Id: 3C07E23059
+X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_TWELVE(0.00)[23]; NEURAL_HAM(-0.00)[-0.743];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,baylibre.com,kernel.org,suse.com,roeck-us.net,linaro.org,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org];
+ MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_034203_293587_0C914B3A 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20200421_035110_955827_EE60F1BF 
+X-CRM114-Status: GOOD (  24.78  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,101 +97,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- f.fainelli@gmail.com, sergio.prado@e-labworks.com, antoine.tenart@bootlin.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:OPEN
+ FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Ferre <nicolas.ferre@microchip.com>
+Hi Linus,
 
-Handle the Wake-on-Lan interrupt for the Cadence MACB Ethernet
-controller.
-As we do for the GEM version, we handle of WoL interrupt in a
-specialized interrupt handler for MACB version that is positionned
-just between suspend() and resume() calls.
+Am 2020-04-17 08:34, schrieb Michael Walle:
+> Hi Linus,
+> 
+> Am 2020-04-16 11:27, schrieb Linus Walleij:
+>> On Thu, Apr 2, 2020 at 10:37 PM Michael Walle <michael@walle.cc> 
+>> wrote:
+>> 
+>>> There are quite a lot simple GPIO controller which are using regmap 
+>>> to
+>>> access the hardware. This driver tries to be a base to unify existing
+>>> code into one place. This won't cover everything but it should be a 
+>>> good
+>>> starting point.
+>>> 
+>>> It does not implement its own irq_chip because there is already a
+>>> generic one for regmap based devices. Instead, the irq_chip will be
+>>> instanciated in the parent driver and its irq domain will be 
+>>> associate
+>>> to this driver.
+>>> 
+>>> For now it consists of the usual registers, like set (and an optional
+>>> clear) data register, an input register and direction registers.
+>>> Out-of-the-box, it supports consecutive register mappings and 
+>>> mappings
+>>> where the registers have gaps between them with a linear mapping 
+>>> between
+>>> GPIO offset and bit position. For weirder mappings the user can 
+>>> register
+>>> its own .xlate().
+>>> 
+>>> Signed-off-by: Michael Walle <michael@walle.cc>
+>> 
+>> Overall I really like this driver and I think we should merge is as 
+>> soon
+>> as it is in reasonable shape and then improve on top so we can start
+>> migrating drivers to it.
+>> 
+>>> +static int gpio_regmap_to_irq(struct gpio_chip *chip, unsigned int 
+>>> offset)
+>>> +{
+>>> +       struct gpio_regmap_data *data = gpiochip_get_data(chip);
+>>> +       struct gpio_regmap *gpio = data->gpio;
+>>> +
+>>> +       /* the user might have its own .to_irq callback */
+>>> +       if (gpio->to_irq)
+>>> +               return gpio->to_irq(gpio, offset);
+>>> +
+>>> +       return irq_create_mapping(gpio->irq_domain, offset);
+>> 
+>> I think that should at least be irq_find_mapping(), the mapping should
+>> definately not be created by the .to_irq() callback since that is just
+>> a convenience function.
+> 
+> what do you mean by conenience function? are there other ways? if you 
+> use
+> irq_find_mapping() who will create the mappings? most gpio drivers use 
+> a
+> similar function like gpio_regmap_to_irq().
+> 
+>> 
+>>> +       if (gpio->irq_domain)
+>>> +               chip->to_irq = gpio_regmap_to_irq;
+>> 
+>> I don't know about this.
+>> (...)
+>>> + * @irq_domain:                (Optional) IRQ domain if the 
+>>> controller is
+>>> + *                     interrupt-capable
+>> (...)
+>>> +       struct irq_domain *irq_domain;
+>> 
+>> I don't think this is a good storage place for the irqdomain, we 
+>> already have
+>> gpio_irq_chip inside gpio_chip and that has an irqdomain, we should
+>> strive to reuse that infrastructure also for regmap GPIO I think, for 
+>> now
+>> I would just leave .to_irq() out of this and let the driver deal with 
+>> any
+>> irqs.
+> 
+> How would a driver attach the to_irq callback then? At the moment, the
+> gpio_regmap doesn't expose the gpio_chip. So either we have to do that 
+> or
+> the config still have to have a .to_irq property.
 
-Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
-Cc: Harini Katakam <harini.katakam@xilinx.com>
-Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
----
-Changes in v2:
-- Addition of pm_wakeup_event() in WoL IRQ
+Also, if I move the interrupt hanling completely out of the gpio-regmap, 
+the
+driver would have to deal with "struct gpio_chip" which I would like to 
+avoid
+if possible and keep it private to gpio-regmap.
 
- drivers/net/ethernet/cadence/macb_main.c | 39 +++++++++++++++++++++++-
- 1 file changed, 38 insertions(+), 1 deletion(-)
+Unfortunately, I don't have much experience how a good API for the 
+interrupt
+handling and the gpio-regmap might look like. And there seems to be some
+overlap between regmap-irq and the interrupt stuff in gpiolib. For 
+example,
+both provide and set the irq_domain_ops. Thus handing the domain over to
+gpio-regmap looked like a good idea to me. I get you point, that there 
+is
+already a irqdomain in gpiolib and also a _to_irq() which is the same as
+the current implementation in gpio-regmap. Maybe it makes sense to just
+have a new function
 
-diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
-index 56ce39dd1cc0..4249be829aaf 100644
---- a/drivers/net/ethernet/cadence/macb_main.c
-+++ b/drivers/net/ethernet/cadence/macb_main.c
-@@ -1513,6 +1513,35 @@ static void macb_tx_restart(struct macb_queue *queue)
- 	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(TSTART));
- }
- 
-+static irqreturn_t macb_wol_interrupt(int irq, void *dev_id)
-+{
-+	struct macb_queue *queue = dev_id;
-+	struct macb *bp = queue->bp;
-+	u32 status;
-+
-+	status = queue_readl(queue, ISR);
-+
-+	if (unlikely(!status))
-+		return IRQ_NONE;
-+
-+	spin_lock(&bp->lock);
-+
-+	if (status & MACB_BIT(WOL)) {
-+		queue_writel(queue, IDR, MACB_BIT(WOL));
-+		macb_writel(bp, WOL, 0);
-+		netdev_vdbg(bp->dev, "MACB WoL: queue = %u, isr = 0x%08lx\n",
-+			    (unsigned int)(queue - bp->queues),
-+			    (unsigned long)status);
-+		if (bp->caps & MACB_CAPS_ISR_CLEAR_ON_WRITE)
-+			queue_writel(queue, ISR, MACB_BIT(WOL));
-+		pm_wakeup_event(&bp->pdev->dev, 0);
-+	}
-+
-+	spin_unlock(&bp->lock);
-+
-+	return IRQ_HANDLED;
-+}
-+
- static irqreturn_t gem_wol_interrupt(int irq, void *dev_id)
- {
- 	struct macb_queue *queue = dev_id;
-@@ -4586,8 +4615,8 @@ static int __maybe_unused macb_suspend(struct device *dev)
- 		/* Change interrupt handler and
- 		 * Enable WoL IRQ on queue 0
- 		 */
-+		devm_free_irq(dev, bp->queues[0].irq, bp->queues);
- 		if (macb_is_gem(bp)) {
--			devm_free_irq(dev, bp->queues[0].irq, bp->queues);
- 			err = devm_request_irq(dev, bp->queues[0].irq, gem_wol_interrupt,
- 					       IRQF_SHARED, netdev->name, bp->queues);
- 			if (err) {
-@@ -4599,6 +4628,14 @@ static int __maybe_unused macb_suspend(struct device *dev)
- 			queue_writel(bp->queues, IER, GEM_BIT(WOL));
- 			gem_writel(bp, WOL, MACB_BIT(MAG));
- 		} else {
-+			err = devm_request_irq(dev, bp->queues[0].irq, macb_wol_interrupt,
-+					       IRQF_SHARED, netdev->name, bp->queues);
-+			if (err) {
-+				dev_err(dev,
-+					"Unable to request IRQ %d (error %d)\n",
-+					bp->queues[0].irq, err);
-+				return err;
-+			}
- 			queue_writel(bp->queues, IER, MACB_BIT(WOL));
- 			macb_writel(bp, WOL, MACB_BIT(MAG));
- 		}
--- 
-2.20.1
+int gpiolib_add_irqdomain(struct gpio_chip *gc, struct irq_domain 
+domain)
+{
+   gc->irq.domain = domain;
+   gc->to_irq = gpiochip_to_irq;
+}
 
+which is called by gpio_regmap_register() if a config->irq_domain is 
+given.
+
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
