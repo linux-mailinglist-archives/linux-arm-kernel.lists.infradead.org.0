@@ -2,57 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C68F1B21AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:31:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6321A1B21AF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:31:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7NNf78um+OVkwEZkIHZD4/ZAEKKvKi/klgdvEE5LkFU=; b=GdmaPOs6eETzBgP3Ap9zpsfPV9
-	S/5yklcZsMx7j6IcuRXcpewLMnZHKIGEV7tQzxQ5atRx/NOGXY39jwE2PrYJhf3Q2S6YpqOu8alZR
-	g8La9uOSzIYTjUMRXYAUXQPNU3+DtypocAwKlGl8yqghdI+iPhT9ScEABHtT3fA2yaANSEuNelcZn
-	uUpty7W/v6A4Id1O55HilsUlXj18BTLE5J/1urjBWH0OPK1Ec41i+NNLDscr5IYYsXz37nbe71B09
-	1NvmmiPERARqgQ12pflYjCIxvka0vZJoqbJscgglCfW6U8LdQBIOGN28gAQg26I0TvmQCAqHqFtr1
-	mQKRE2vQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IcXLkQalUDav6k/V0y4c7z4902rvNjpGA2pYVObxnis=; b=qiwnFLzrQkfwHD
+	xjXb6oqLMmID2fnBm6Y4Ygllh4lY+xrix+hKXPdqRa0NV9KRLwRBaVtDnxCeWPx+yMDQoS9jmNdAH
+	UPTBMII+Pq1q6H4gs9Fs1R1w0k2xBvvHw4h2QbR5w5aHEmkMDpSD7hankEmkyKt3l/uCD9R+vB/Ze
+	keliuYfdDhK7UBStqcsUcFgbJKl9gr3iFAHbAS6F1u13xUQKQ0DJOpYKYXJCZqisS4S4uTtTZajjX
+	hCvLoeHp7c3wIHjeMQpHWoczI6ljhTofTzlG7c+PK1lE7Np1dzag24f8HGnG1ihM4SsYdd48d1vFH
+	L+JnKqrr2bVWm/3L23mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQoJ6-0000Nm-O1; Tue, 21 Apr 2020 08:31:04 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQoId-0000AA-Sf
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:30:37 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id A3046ACAE;
- Tue, 21 Apr 2020 08:30:33 +0000 (UTC)
-From: Mian Yousaf Kaukab <ykaukab@suse.de>
-To: linux-pm@vger.kernel.org, andy.tang@nxp.com, sboyd@kernel.org,
- linux-clk@vger.kernel.org, rjw@rjwysocki.net, shawnguo@kernel.org,
- leoyang.li@nxp.com
-Subject: [PATCH v2 2/2] clk: qoriq: add cpufreq platform device
-Date: Tue, 21 Apr 2020 10:30:00 +0200
-Message-Id: <20200421083000.16740-2-ykaukab@suse.de>
-X-Mailer: git-send-email 2.16.4
-In-Reply-To: <20200421083000.16740-1-ykaukab@suse.de>
-References: <20200421083000.16740-1-ykaukab@suse.de>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_013036_110876_E8CAE299 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+	id 1jQoJD-0000cR-Uc; Tue, 21 Apr 2020 08:31:11 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQoIr-0000KX-6O; Tue, 21 Apr 2020 08:30:51 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 22C7A306108;
+ Tue, 21 Apr 2020 10:30:43 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id E21502B9EA39A; Tue, 21 Apr 2020 10:30:43 +0200 (CEST)
+Date: Tue, 21 Apr 2020 10:30:43 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH v1 6/6] arm64: tlb: Set the TTL field in flush_tlb_range
+Message-ID: <20200421083043.GP20730@hirez.programming.kicks-ass.net>
+References: <20200403090048.938-1-yezhenyu2@huawei.com>
+ <20200403090048.938-7-yezhenyu2@huawei.com>
+ <20200420121055.GF20696@hirez.programming.kicks-ass.net>
+ <20200420200616.44c7c7ea@oasis.local.home>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200420200616.44c7c7ea@oasis.local.home>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,106 +54,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mian Yousaf Kaukab <ykaukab@suse.de>, viresh.kumar@linaro.org,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
+ guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
+ yuzhao@google.com, maz@kernel.org, suzuki.poulose@arm.com,
+ steven.price@arm.com, arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de,
+ Zhenyu Ye <yezhenyu2@huawei.com>, npiggin@gmail.com,
+ zhangshaokun@hisilicon.com, broonie@kernel.org, xiexiangyou@huawei.com,
+ prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ aneesh.kumar@linux.ibm.com, akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a platform device for qoirq-cpufreq driver for the compatible
-clockgen blocks.
+On Mon, Apr 20, 2020 at 08:06:16PM -0400, Steven Rostedt wrote:
+> Peter Zijlstra <peterz@infradead.org> wrote:
+> > On Fri, Apr 03, 2020 at 05:00:48PM +0800, Zhenyu Ye wrote:
 
-Reviewed-by: Yuantian Tang <andy.tang@nxp.com>
-Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
-Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
----
-v2:
- +Rafael, Stephen, linux-clk
- Add Reviewed-by and Acked-by tags
+> > > +static inline int tlb_get_level(struct mmu_gather *tlb)
+> > > +{
+> > > +	int sum = tlb->cleared_ptes + tlb->cleared_pmds +
+> > > +		  tlb->cleared_puds + tlb->cleared_p4ds;
+> > > +
+> > > +	if (sum != 1)
+> > > +		return 0;
+> > > +	else if (tlb->cleared_ptes)
+> > > +		return 3;
+> > > +	else if (tlb->cleared_pmds)
+> > > +		return 2;
+> > > +	else if (tlb->cleared_puds)
+> > > +		return 1;
+> > > +
+> > > +	return 0;
+> > > +}  
+> > 
+> > That's some mighty wonky code. Please look at the generated asm.
+> 
+> Without even looking at the generated asm, if a condition returns,
+> there's no reason to add an else for that condition.
 
- drivers/clk/clk-qoriq.c | 30 +++++++++++++++++++++++++++---
- 1 file changed, 27 insertions(+), 3 deletions(-)
+Not really the point; he wants to guarantee he only returns >0 when
+there's a single bit set. But the thing is, cleared_* is a bitfield, and
+I'm afraid that the above will result in some terrible code-gen.
 
-diff --git a/drivers/clk/clk-qoriq.c b/drivers/clk/clk-qoriq.c
-index d5946f7486d6..374afcab89af 100644
---- a/drivers/clk/clk-qoriq.c
-+++ b/drivers/clk/clk-qoriq.c
-@@ -95,6 +95,7 @@ struct clockgen {
- };
- 
- static struct clockgen clockgen;
-+static bool add_cpufreq_dev __initdata;
- 
- static void cg_out(struct clockgen *cg, u32 val, u32 __iomem *reg)
- {
-@@ -1019,7 +1020,7 @@ static void __init create_muxes(struct clockgen *cg)
- 	}
- }
- 
--static void __init clockgen_init(struct device_node *np);
-+static void __init _clockgen_init(struct device_node *np, bool legacy);
- 
- /*
-  * Legacy nodes may get probed before the parent clockgen node.
-@@ -1030,7 +1031,7 @@ static void __init clockgen_init(struct device_node *np);
- static void __init legacy_init_clockgen(struct device_node *np)
- {
- 	if (!clockgen.node)
--		clockgen_init(of_get_parent(np));
-+		_clockgen_init(of_get_parent(np), true);
- }
- 
- /* Legacy node */
-@@ -1447,7 +1448,7 @@ static bool __init has_erratum_a4510(void)
- }
- #endif
- 
--static void __init clockgen_init(struct device_node *np)
-+static void __init _clockgen_init(struct device_node *np, bool legacy)
- {
- 	int i, ret;
- 	bool is_old_ls1021a = false;
-@@ -1516,12 +1517,35 @@ static void __init clockgen_init(struct device_node *np)
- 		       __func__, np, ret);
- 	}
- 
-+	/* Don't create cpufreq device for legacy clockgen blocks */
-+	add_cpufreq_dev = !legacy;
-+
- 	return;
- err:
- 	iounmap(clockgen.regs);
- 	clockgen.regs = NULL;
- }
- 
-+static void __init clockgen_init(struct device_node *np)
-+{
-+	_clockgen_init(np, false);
-+}
-+
-+static int __init clockgen_cpufreq_init(void)
-+{
-+	struct platform_device *pdev;
-+
-+	if (add_cpufreq_dev) {
-+		pdev = platform_device_register_simple("qoriq-cpufreq", -1,
-+				NULL, 0);
-+		if (IS_ERR(pdev))
-+			pr_err("Couldn't register qoriq-cpufreq err=%ld\n",
-+				PTR_ERR(pdev));
-+	}
-+	return 0;
-+}
-+device_initcall(clockgen_cpufreq_init);
-+
- CLK_OF_DECLARE(qoriq_clockgen_1, "fsl,qoriq-clockgen-1.0", clockgen_init);
- CLK_OF_DECLARE(qoriq_clockgen_2, "fsl,qoriq-clockgen-2.0", clockgen_init);
- CLK_OF_DECLARE(qoriq_clockgen_b4420, "fsl,b4420-clockgen", clockgen_init);
--- 
-2.16.4
+Maybe something like:
+
+	if (tlb->cleared_ptes && !(tlb->cleared_pmds ||
+				   tlb->cleared_puds ||
+				   tlb->cleared_p4ds))
+		return 3;
+
+	if (tlb->cleared_pmds && !(tlb->cleared_ptes ||
+				   tlb->cleared_puds ||
+				   tlb->cleared_p4ds))
+		return 2;
+
+	if (tlb->cleared_puds && !(tlb->cleared_ptes ||
+				   tlb->cleared_pmds ||
+				   tlb->cleared_p4ds))
+		return 1;
+
+	return 0;
+
+Which I admit is far too much typing, but I suspect it generates far
+saner code (just a few masks and branches).
+
+But maybe the compiler surprises us, what do I konw.
+
 
 
 _______________________________________________
