@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C4971B2950
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:19:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B64B71B2A19
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:38:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FYOPXmyBMbtYRb51QOrZfb7ewfa9iWsxuuu8Y/1AO/k=; b=O3GN1jtTrin76h
-	dm7kb40QJB5WytAjMp6sYRww22Q2xaoJo/074sQRi7KQs8TE7QBoZiNFGvujoeUegcrhMSirTnvl/
-	Fgdp1PvKwIB0hVLU9l+udvOgSygF32xgWDVN/cAGN0ouyCqHScBMtCY0J8wzHCtLrJ+pC/5uLLcnL
-	LPnr36nItjaRQADaGJslj96I6YiPS+dDxtYpFJPKfwgv610ih4mwTOdNomp1P3P39zEP4/3rOmax5
-	Y3r0rVRwIMFq30AVwqfh63OCeYTSBg+Se/jcUW2ET2942EGr64pDNdDbII0gv/Xtqe+ACdvAYv6Ju
-	rqZhQjaH6veYrQmAUqZg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YNi8IlpfggzamLgAnN8dd7WTL2b0t6h2Mkk/1e7Br90=; b=Uvh
+	2nA7JE5s95kinWvA7SMkf++RAMdlq+agslnctY11wnpL6NyPWw3j3t44oLmGPOnV6ftKulEav6s6Z
+	Hfurz2cXwh7/F5jdVD1PhwD7VCTvMmPHwdCDvhwHcKywjLn5JphxDq0viw7Y3sn+AN1R1iFz3EUXB
+	SO7Lk5twNzCnNTkerXWSDmGv39E7utTL0vG+D27E87b9izTH88xlLjeg5sIWYR+HyDA3iC4xzpVkl
+	iX2GWLg2WOoZyDkwZGSm7FnYLC7SjqBJ3heRMxRlnEeNJCwQKqybWFpF8bqGUYbRyNzDoKQqBrwQR
+	Zd7jGOqJeB5E5CIUYAJjje83ogU4Smg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtkP-0001XM-02; Tue, 21 Apr 2020 14:19:37 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jQu27-0005lJ-0m; Tue, 21 Apr 2020 14:37:55 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtk4-0001QR-Up
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:19:18 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 37F28F4CD612CA17545A;
- Tue, 21 Apr 2020 22:19:09 +0800 (CST)
-Received: from [127.0.0.1] (10.173.220.25) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.487.0; Tue, 21 Apr 2020
- 22:18:59 +0800
-Subject: Re: [PATCH v1 5/6] mm: tlb: Provide flush_*_tlb_range wrappers
-To: Peter Zijlstra <peterz@infradead.org>
-References: <20200403090048.938-1-yezhenyu2@huawei.com>
- <20200403090048.938-6-yezhenyu2@huawei.com>
- <20200420120916.GE20696@hirez.programming.kicks-ass.net>
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-Message-ID: <8f6e877c-1462-441b-23ec-2a6bd3308099@huawei.com>
-Date: Tue, 21 Apr 2020 22:18:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <20200420120916.GE20696@hirez.programming.kicks-ass.net>
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+ id 1jQtuN-0002uh-IS
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:29:59 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F1D71A0CA7;
+ Tue, 21 Apr 2020 16:29:53 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B26FA1A0C71;
+ Tue, 21 Apr 2020 16:29:48 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D7A45402D9;
+ Tue, 21 Apr 2020 22:29:42 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: wim@linux-watchdog.org, linux@roeck-us.net, robh+dt@kernel.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-watchdog@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V3 1/2] dt-bindings: watchdog: Convert i.MX to json-schema
+Date: Tue, 21 Apr 2020 22:21:25 +0800
+Message-Id: <1587478886-21512-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_071917_184153_E6D4C373 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20200421_072955_916334_5671DF20 
+X-CRM114-Status: GOOD (  10.85  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,161 +68,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
- guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
- yuzhao@google.com, maz@kernel.org, steven.price@arm.com, arm@kernel.org,
- Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com, npiggin@gmail.com,
- zhangshaokun@hisilicon.com, broonie@kernel.org, rostedt@goodmis.org,
- prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, xiexiangyou@huawei.com,
- linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
- akpm@linux-foundation.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
+Convert the i.MX watchdog binding to DT schema format using json-schema.
 
-On 2020/4/20 20:09, Peter Zijlstra wrote:
-> On Fri, Apr 03, 2020 at 05:00:47PM +0800, Zhenyu Ye wrote:
->> This patch provides flush_{pte|pmd|pud|p4d}_tlb_range() in generic
->> code, which are expressed through the mmu_gather APIs.  These
->> interface set tlb->cleared_* and finally call tlb_flush(), so we
->> can do the tlb invalidation according to the information in
->> struct mmu_gather.
->>
->> Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
->> ---
->>  include/asm-generic/pgtable.h | 12 +++++++--
->>  mm/pgtable-generic.c          | 50 +++++++++++++++++++++++++++++++++++
->>  2 files changed, 60 insertions(+), 2 deletions(-)
->>
->> diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
->> index e2e2bef07dd2..2bedeee94131 100644
->> --- a/include/asm-generic/pgtable.h
->> +++ b/include/asm-generic/pgtable.h
->> @@ -1160,11 +1160,19 @@ static inline int pmd_free_pte_page(pmd_t *pmd, unsigned long addr)
->>   * invalidate the entire TLB which is not desitable.
->>   * e.g. see arch/arc: flush_pmd_tlb_range
->>   */
->> -#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
->> -#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
->> +extern void flush_pte_tlb_range(struct vm_area_struct *vma,
->> +				unsigned long addr, unsigned long end);
->> +extern void flush_pmd_tlb_range(struct vm_area_struct *vma,
->> +				unsigned long addr, unsigned long end);
->> +extern void flush_pud_tlb_range(struct vm_area_struct *vma,
->> +				unsigned long addr, unsigned long end);
->> +extern void flush_p4d_tlb_range(struct vm_area_struct *vma,
->> +				unsigned long addr, unsigned long end);
->>  #else
->> +#define flush_pte_tlb_range(vma, addr, end)	BUILD_BUG()
->>  #define flush_pmd_tlb_range(vma, addr, end)	BUILD_BUG()
->>  #define flush_pud_tlb_range(vma, addr, end)	BUILD_BUG()
->> +#define flush_p4d_tlb_range(vma, addr, end)	BUILD_BUG()
->>  #endif
->>  #endif
-> 
-> Ideally you'd make __HAVE_ARCH_FLUSH_PMD_TLB_RANGE go away. Power
-> certainly doesnt need it with the below.
-> 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V2:
+	- drop clocks description;
+	- drop unused label.
+---
+ .../devicetree/bindings/watchdog/fsl-imx-wdt.txt   | 24 ----------
+ .../devicetree/bindings/watchdog/fsl-imx-wdt.yaml  | 54 ++++++++++++++++++++++
+ 2 files changed, 54 insertions(+), 24 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.txt
+ create mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.yaml
 
-However, arch `arc` also uses __HAVE_ARCH_FLUSH_PMD_TLB_RANGE :
-
-grep -nr __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-	mm/pgtable-generic.c:104:#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-	mm/pgtable-generic.c:152:#endif /* __HAVE_ARCH_FLUSH_PMD_TLB_RANGE */
-	include/asm-generic/pgtable.h:1153:#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-	arch/powerpc/include/asm/book3s/64/tlbflush.h:49:#define __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-	arch/arc/include/asm/hugepage.h:69:#define __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-
-So I am not sure if we can remove it.
-
-And if we remove the __HAVE_ARCH_FLUSH_PMD_TLB_RANGE, how to ensure not
-redefine flush_pXX_tlb_range() ?
-
->> diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
->> index 3d7c01e76efc..0f5414a4a2ec 100644
->> --- a/mm/pgtable-generic.c
->> +++ b/mm/pgtable-generic.c
->> @@ -101,6 +101,56 @@ pte_t ptep_clear_flush(struct vm_area_struct *vma, unsigned long address,
->>  
->>  #ifdef CONFIG_TRANSPARENT_HUGEPAGE
->>  
->> +#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
->> +void flush_pte_tlb_range(struct vm_area_struct *vma,
->> +			 unsigned long addr, unsigned long end)
->> +{
->> +	struct mmu_gather tlb;
->> +
->> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
->> +	tlb_start_vma(&tlb, vma);
->> +	tlb_set_pte_range(&tlb, addr, end - addr);
->> +	tlb_end_vma(&tlb, vma);
->> +	tlb_finish_mmu(&tlb, addr, end);
->> +}
->> +
->> +void flush_pmd_tlb_range(struct vm_area_struct *vma,
->> +			 unsigned long addr, unsigned long end)
->> +{
->> +	struct mmu_gather tlb;
->> +
->> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
->> +	tlb_start_vma(&tlb, vma);
->> +	tlb_set_pmd_range(&tlb, addr, end - addr);
->> +	tlb_end_vma(&tlb, vma);
->> +	tlb_finish_mmu(&tlb, addr, end);
->> +}
->> +
->> +void flush_pud_tlb_range(struct vm_area_struct *vma,
->> +			 unsigned long addr, unsigned long end)
->> +{
->> +	struct mmu_gather tlb;
->> +
->> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
->> +	tlb_start_vma(&tlb, vma);
->> +	tlb_set_pud_range(&tlb, addr, end - addr);
->> +	tlb_end_vma(&tlb, vma);
->> +	tlb_finish_mmu(&tlb, addr, end);
->> +}
->> +
->> +void flush_p4d_tlb_range(struct vm_area_struct *vma,
->> +			 unsigned long addr, unsigned long end)
->> +{
->> +	struct mmu_gather tlb;
->> +
->> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
->> +	tlb_start_vma(&tlb, vma);
->> +	tlb_set_p4d_range(&tlb, addr, end - addr);
->> +	tlb_end_vma(&tlb, vma);
->> +	tlb_finish_mmu(&tlb, addr, end);
->> +}
->> +#endif /* __HAVE_ARCH_FLUSH_PMD_TLB_RANGE */
-> 
-> You're nowhere near lazy enough:
-> 
-> #define FLUSH_Pxx_TLB_RANGE(_pxx) \
-> void flush_##_pxx##_tlb_range(struct vm_area_struct *vma, \
-> 			      unsigned long addr, unsigned long end) \
-> { \
-> 	struct mmu_gather tlb; \
-> 	\
-> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end); \
-> 	tlb_start_vma(&tlb, vma); \
-> 	tlb_flush_##_pxx##_range(&tlb, addr, end-addr); \
-> 	tlb_end_vma(&tlb, vma); \
-> 	tlb_finish_mmu(&tlb, addr, end); \
-> }
-> 
-> FLUSH_Pxx_TLB_RANGE(pte)
-> FLUSH_Pxx_TLB_RANGE(pmd)
-> FLUSH_Pxx_TLB_RANGE(pud)
-> FLUSH_Pxx_TLB_RANGE(p4d)
-> 
-> 
-> .
-> 
+diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.txt
+deleted file mode 100644
+index adc6b76..0000000
+--- a/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.txt
++++ /dev/null
+@@ -1,24 +0,0 @@
+-* Freescale i.MX Watchdog Timer (WDT) Controller
+-
+-Required properties:
+-- compatible : Should be "fsl,<soc>-wdt"
+-- reg : Should contain WDT registers location and length
+-- interrupts : Should contain WDT interrupt
+-
+-Optional properties:
+-- big-endian: If present the watchdog device's registers are implemented
+-  in big endian mode, otherwise in native mode(same with CPU), for more
+-  detail please see: Documentation/devicetree/bindings/regmap/regmap.txt.
+-- fsl,ext-reset-output: If present the watchdog device is configured to
+-  assert its external reset (WDOG_B) instead of issuing a software reset.
+-- timeout-sec : Contains the watchdog timeout in seconds
+-
+-Examples:
+-
+-wdt@73f98000 {
+-	compatible = "fsl,imx51-wdt", "fsl,imx21-wdt";
+-	reg = <0x73f98000 0x4000>;
+-	interrupts = <58>;
+-	big-endian;
+-	timeout-sec = <20>;
+-};
+diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.yaml b/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.yaml
+new file mode 100644
+index 0000000..ec77b77
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.yaml
+@@ -0,0 +1,54 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/fsl-imx-wdt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX Watchdog Timer (WDT) Controller
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++allOf:
++  - $ref: "watchdog.yaml#"
++
++properties:
++  compatible:
++    enum:
++      - fsl,imx21-wdt
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  fsl,ext-reset-output:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description: |
++      If present, the watchdog device is configured to assert its
++      external reset (WDOG_B) instead of issuing a software reset.
++
++required:
++  - compatible
++  - interrupts
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/imx6qdl-clock.h>
++
++    watchdog@20bc000 {
++        compatible = "fsl,imx21-wdt";
++        reg = <0x020bc000 0x4000>;
++        interrupts = <0 80 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&clks IMX6QDL_CLK_IPG>;
++    };
++
++...
+-- 
+2.7.4
 
 
 _______________________________________________
