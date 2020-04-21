@@ -2,70 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DF2C1B1BCC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 04:23:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DB911B1BF5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 04:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTaqLK1bT/VkFShHfYY4VAxrrHllUyVnRC1Jp240nW0=; b=J/uoPtyZJrqKyk
-	eibr8Jg2ZqW+V1RSkicvUN29SQNJZBG8XihSeoRuNhpU6hrnOcmMyRDzFc6hi5j1k3D8OMzk50rNB
-	Cgx0hc2/l46DMXrTs4qoISgTr9d1g6BvTQQn1sQOKJsO2vb95NFuop4hcBiNvShCDrjhss6/UvZhz
-	RxXsQZca9VWQe0/EnuBKltS+WIvaOfyszHcsSqK4AwpmlvWlYlDJE6v+z6ekzKYZ+oEwjedQRLo6f
-	vbagCY1AbcWVwI0JgW2OAqKBjE9+mNmzDWXQUmbm35czeFGj5OUvA11pyqWMEt7lusi0gbWUeGEzv
-	Nab0/Q9NZqN+9XAZ6tgQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4EgEqkK/ONCaRPoQzr0YE38pWpkn04Nylw637pCYje4=; b=NLz
+	wZKATeOtzcq+lpkunSpd1l0tdue/qk6Vd3bXqxaidfcsXGroHoXtM1lzxfxhw5cA4S/3BjhLSxVWd
+	rrw8KzO/2mPzerO9GNTl9P2MFHClZi6YBvjao2ONgCkhqwcGqQ9fWx++63x3q1dCmSB9AjTXf1x5c
+	/eb+SQeOXsmN8bTms2Smre1A4LT5GCsElO1wxYoNaXzsYs3HeIRi2gd/pB1fn+RyVEUnvmaz/m5Zz
+	r5IrAf5D+OYVXAEYQLFVYcZsWhQNzWNs/fyIxTHoE9CtSi3ujMtJMV4XBJpHLNkHMsqRj62Qo3aI9
+	7m4ba8FMt7040qxDpqY1OY90j3uRh4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQiYy-0000Cc-GO; Tue, 21 Apr 2020 02:23:04 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQiYl-00005O-FJ
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 02:22:54 +0000
-Received: from DGGEMM401-HUB.china.huawei.com (unknown [172.30.72.55])
- by Forcepoint Email with ESMTP id 31BB7AA1B46B6E864557;
- Tue, 21 Apr 2020 10:22:31 +0800 (CST)
-Received: from DGGEMM526-MBX.china.huawei.com ([169.254.8.234]) by
- DGGEMM401-HUB.china.huawei.com ([10.3.20.209]) with mapi id 14.03.0487.000;
- Tue, 21 Apr 2020 10:22:24 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: RE: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Topic: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested Virtualization
- support
-Thread-Index: AdYJhvrCKEKaxySRQua1lfr4U9NN2v//iESA//MqKcCAGX9aAP/4ImVggBBPsoCAAVt7AP/+wAyAALytmoD//ruGUA==
-Date: Tue, 21 Apr 2020 02:22:24 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED3A550CD0@dggemm526-mbx.china.huawei.com>
-References: <MN2PR18MB26869A6CA4E67558324F655CC5C70@MN2PR18MB2686.namprd18.prod.outlook.com>
- <06d08f904f003160a48eac3c5ab3c7ff@kernel.org>
- <678F3D1BB717D949B966B68EAEB446ED342E29B9@dggemm526-mbx.china.huawei.com>
- <86r1wus7df.wl-maz@kernel.org>
- <678F3D1BB717D949B966B68EAEB446ED3A535FCF@DGGEMM506-MBX.china.huawei.com>
- <3e84aaf8b757bc5a7685a291e54c232b@kernel.org> <20200417160602.26706917@why>
- <678F3D1BB717D949B966B68EAEB446ED3A545C71@dggemm526-mbx.china.huawei.com>
- <dd1283e9b31fd01ac5c9f434aa00d34e@kernel.org>
-In-Reply-To: <dd1283e9b31fd01ac5c9f434aa00d34e@kernel.org>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.74.221.187]
-MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+	id 1jQilB-0002ZO-Uq; Tue, 21 Apr 2020 02:35:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQil0-0002Y9-Nl; Tue, 21 Apr 2020 02:35:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 86EE431B;
+ Mon, 20 Apr 2020 19:35:29 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.1.9])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 705353F73D;
+ Mon, 20 Apr 2020 19:35:21 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH V17 0/2] mm/debug: Add tests validating architecture page
+ table helpers
+Date: Tue, 21 Apr 2020 08:04:53 +0530
+Message-Id: <1587436495-22033-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_192252_311524_46739278 
-X-CRM114-Status: GOOD (  26.67  )
+X-CRM114-CacheID: sfid-20200420_193530_862739_CBDE0393 
+X-CRM114-Status: GOOD (  18.68  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.187 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,306 +58,247 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
- "jintack@cs.columbia.edu" <jintack@cs.columbia.edu>,
- George Cherian <gcherian@marvell.com>,
- "james.morse@arm.com" <james.morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Anil Kumar Reddy H <areddy3@marvell.com>,
- "alexandru.elisei@arm.com" <alexandru.elisei@arm.com>,
- "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
+ Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: kvm-owner@vger.kernel.org [mailto:kvm-owner@vger.kernel.org]
-> On Behalf Of Marc Zyngier
-> Sent: Monday, April 20, 2020 10:03 PM
-> To: Zengtao (B)
-> Cc: George Cherian; Dave.Martin@arm.com; alexandru.elisei@arm.com;
-> andre.przywara@arm.com; christoffer.dall@arm.com;
-> james.morse@arm.com; jintack@cs.columbia.edu;
-> julien.thierry.kdev@gmail.com; kvm@vger.kernel.org;
-> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org;
-> suzuki.poulose@arm.com; Anil Kumar Reddy H; Ganapatrao Kulkarni
-> Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested
-> Virtualization support
-> 
-> On 2020-04-18 03:49, Zengtao (B) wrote:
-> > -----Original Message-----
-> >> From: Marc Zyngier [mailto:maz@kernel.org]
-> >> Sent: Friday, April 17, 2020 11:06 PM
-> >> To: Zengtao (B)
-> >> Cc: George Cherian; Dave.Martin@arm.com;
-> alexandru.elisei@arm.com;
-> >> andre.przywara@arm.com; christoffer.dall@arm.com;
-> >> james.morse@arm.com; jintack@cs.columbia.edu;
-> >> julien.thierry.kdev@gmail.com; kvm@vger.kernel.org;
-> >> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org;
-> >> suzuki.poulose@arm.com; Anil Kumar Reddy H; Ganapatrao Kulkarni
-> >> Subject: Re: [PATCH v2 00/94] KVM: arm64: ARMv8.3/8.4 Nested
-> >> Virtualization support
-> >>
-> >> On Thu, 16 Apr 2020 19:22:21 +0100
-> >> Marc Zyngier <maz@kernel.org> wrote:
-> >>
-> >> > Hi Zengtao,
-> >> >
-> >> > On 2020-04-16 02:38, Zengtao (B) wrote:
-> >> > > Hi Marc:
-> >> > >
-> >> > > Got it.
-> >> > > Really a bit patch set :)
-> >> >
-> >> > Well, yeah... ;-)
-> >> >
-> >> > >
-> >> > > BTW, I have done a basic kvm unit test
-> >> > > git://git.kernel.org/pub/scm/virt/kvm/kvm-unit-tests.git
-> >> > > And I find that after apply the patch KVM: arm64: VNCR-ize
-> ELR_EL1,
-> >> > > The psci test failed for some reason, I can't understand why, this
-> >> > > is only the test result.(find the patch by git bisect + kvm test)
-> >> >
-> >> > That it is that mechanical, we should be able to quickly nail that
-> one.
-> >> >
-> >> > > My platform: Hisilicon D06 board.
-> >> > > Linux kernel: Linux 5.6-rc6 + nv patches(some rebases)
-> >> > > Could you help to take a look?
-> >> >
-> >> > I'll have a look tomorrow. I'm in the middle of refactoring the series
-> >> > for 5.7, and things have changed quite a bit. Hopefully this isn't a
-> VHE
-> >> > vs non-VHE issue.
-> >>
-> >> So I've repeatedly tried with the current state of the NV patches[1],
-> >> on both an ARMv8.0 system (Seattle) and an ARMv8.2 pile of putrid
-> junk
-> >> (vim3l). PSCI is pretty happy, although I can only test with at most 8
-> >> vcpus (GICv2 gets in the way).
-> >>
-> >> Can you please:
-> >>
-> >> - post the detailed error by running the PSCI unit test on its own
-> > I tried to trace the error, and I found in kernel function
-> > kvm_mpidr_to_vcpu,
-> > casually, mpidr returns zero and we can't get the expected vcpu, and
-> > psci
-> >  test failed due to this.
-> 
-> Can you post the exact error message from the unit test?
-> 
-Some debug code added as follow(virt/kvm/arm/arm.c):
+This adds a test validation for architecture exported page table helpers.
+Patch adds basic transformation tests at various levels of the page table.
 
-unsigned long saved_mpidr[256];
+This test was originally suggested by Catalin during arm64 THP migration
+RFC discussion earlier. Going forward it can include more specific tests
+with respect to various generic MM functions like THP, HugeTLB etc and
+platform specific tests.
 
-static void dump_saved_mpidr(struct kvm *kvm, unsigned long mpidr)
-{
-	struct kvm_vcpu *vcpu;
-	int i;
+https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
 
-	printk("target mpidr:%lx\n", mpidr);
-	kvm_for_each_vcpu(i, vcpu, kvm) {
-		printk("saved_mpidr:%lx latest mpidr:%lx\n", saved_mpidr[i], 
-		kvm_vcpu_get_mpidr_aff(vcpu));
-	}
-}
+Needs to be applied on linux V5.7-rc2
 
-struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr)
-{
-	struct kvm_vcpu *vcpu;
-	int i;
+Changes in V17:
 
-	mpidr &= MPIDR_HWID_BITMASK;
-	kvm_for_each_vcpu(i, vcpu, kvm) {
-		saved_mpidr[i] = kvm_vcpu_get_mpidr_aff(vcpu);
-		if (mpidr == saved_mpidr[i])
-			return vcpu;
-	}
+- debug_vm_pgtable() is now called from late_initcall() per Linus
+- Explicitly enable DEBUG_VM_PGTABLE when ARCH_HAS_DEBUG_VM_PGTABLE and DEBUG_VM
+- Added #ifdef documentation per Gerald
+- Dropped page table helper semantics documentation (will be added via later patches)
+- Split the X86 changes defining mm_p4d_folded() into a new prerequisite patch
 
-	dump_saved_mpidr(kvm, mpidr);
+Changes in V16: (https://patchwork.kernel.org/patch/11431277/)
 
-	return NULL;
-}
+- Replaced WRITE_ONCE() with set_pte_at() with a new barrier() in pte_clear_tests() per Qian
+- Enabled all powerpc platforms and updated the feature list
 
-error log:
-[root@localhost test]# ./psci
-BUILD_HEAD=b16df9ee
-timeout -k 1s --foreground 90s /sbin/qemu-system-aarch64 -nodefaults 
--machine virt,gic-version=host,accel=kvm -cpu host -device virtio-serial-device
--device virtconsole,chardev=ctd -chardev testdev,id=ctd -device pci-testdev
--display none -serial stdio -kernel /tmp/tmp.QDQH5cBotg -smp 128
- # -initrd /tmp/tmp.uW5pheTN1jINFO: psci: PSCI version 1.0
-PASS: psci: invalid-function
-PASS: psci: affinity-info-on
-PASS: psci: affinity-info-off
-[  218.891944] target mpidr:1
-[  218.894645] saved_mpidr:0 latest mpidr:0
-[  218.898569] saved_mpidr:0 latest mpidr:1
-[  218.902481] saved_mpidr:2 latest mpidr:2
-[  218.906393] saved_mpidr:3 latest mpidr:3
-[  218.910308] saved_mpidr:4 latest mpidr:4
-[  218.914223] saved_mpidr:5 latest mpidr:5
-[  218.918138] saved_mpidr:6 latest mpidr:6
-[  218.922051] saved_mpidr:7 latest mpidr:7
-[  218.925965] saved_mpidr:8 latest mpidr:8
-[  218.929878] saved_mpidr:9 latest mpidr:9
-[  218.933788] saved_mpidr:a latest mpidr:a
-[  218.937703] saved_mpidr:b latest mpidr:b
-[  218.941618] saved_mpidr:c latest mpidr:c
-[  218.945533] saved_mpidr:d latest mpidr:d
-[  218.949445] saved_mpidr:e latest mpidr:e
-[  218.953359] saved_mpidr:f latest mpidr:f
-[  218.957274] saved_mpidr:100 latest mpidr:100
-[  218.961536] saved_mpidr:101 latest mpidr:101
-[  218.965798] saved_mpidr:102 latest mpidr:102
-[  218.970059] saved_mpidr:103 latest mpidr:103
-[  218.974319] saved_mpidr:104 latest mpidr:104
-[  218.978584] saved_mpidr:105 latest mpidr:105
-[  218.982842] saved_mpidr:106 latest mpidr:106
-[  218.987105] saved_mpidr:107 latest mpidr:107
-[  218.991362] saved_mpidr:108 latest mpidr:108
-[  218.995624] saved_mpidr:109 latest mpidr:109
-[  218.999881] saved_mpidr:10a latest mpidr:10a
-[  219.004133] saved_mpidr:10b latest mpidr:10b
-[  219.008389] saved_mpidr:10c latest mpidr:10c
-[  219.012643] saved_mpidr:10d latest mpidr:10d
-[  219.016898] saved_mpidr:10e latest mpidr:10e
-[  219.021152] saved_mpidr:10f latest mpidr:10f
-[  219.025408] saved_mpidr:200 latest mpidr:200
-[  219.029664] saved_mpidr:201 latest mpidr:201
-[  219.033919] saved_mpidr:202 latest mpidr:202
-[  219.038171] saved_mpidr:203 latest mpidr:203
-[  219.042426] saved_mpidr:204 latest mpidr:204
-[  219.046681] saved_mpidr:205 latest mpidr:205
-[  219.050934] saved_mpidr:206 latest mpidr:206
-[  219.055188] saved_mpidr:207 latest mpidr:207
-[  219.059442] saved_mpidr:208 latest mpidr:208
-[  219.063698] saved_mpidr:209 latest mpidr:209
-[  219.067952] saved_mpidr:20a latest mpidr:20a
-[  219.072206] saved_mpidr:20b latest mpidr:20b
-[  219.076463] saved_mpidr:20c latest mpidr:20c
-[  219.080722] saved_mpidr:20d latest mpidr:20d
-[  219.084976] saved_mpidr:20e latest mpidr:20e
-[  219.089229] saved_mpidr:20f latest mpidr:20f
-[  219.093483] saved_mpidr:300 latest mpidr:300
-[  219.097738] saved_mpidr:301 latest mpidr:301
-[  219.101994] saved_mpidr:302 latest mpidr:302
-[  219.106250] saved_mpidr:303 latest mpidr:303
-[  219.110504] saved_mpidr:304 latest mpidr:304
-[  219.114756] saved_mpidr:305 latest mpidr:305
-[  219.119010] saved_mpidr:306 latest mpidr:306
-[  219.123267] saved_mpidr:307 latest mpidr:307
-[  219.127521] saved_mpidr:308 latest mpidr:308
-[  219.131779] saved_mpidr:309 latest mpidr:309
-[  219.136034] saved_mpidr:30a latest mpidr:30a
-[  219.140289] saved_mpidr:30b latest mpidr:30b
-[  219.144544] saved_mpidr:30c latest mpidr:30c
-[  219.148798] saved_mpidr:30d latest mpidr:30d
-[  219.153054] saved_mpidr:30e latest mpidr:30e
-[  219.157308] saved_mpidr:30f latest mpidr:30f
-[  219.161562] saved_mpidr:400 latest mpidr:400
-[  219.165817] saved_mpidr:401 latest mpidr:401
-[  219.170071] saved_mpidr:402 latest mpidr:402
-[  219.174324] saved_mpidr:403 latest mpidr:403
-[  219.178578] saved_mpidr:404 latest mpidr:404
-[  219.182834] saved_mpidr:405 latest mpidr:405
-[  219.187093] saved_mpidr:406 latest mpidr:406
-[  219.191350] saved_mpidr:407 latest mpidr:407
-[  219.195609] saved_mpidr:408 latest mpidr:408
-[  219.199861] saved_mpidr:409 latest mpidr:409
-[  219.204117] saved_mpidr:40a latest mpidr:40a
-[  219.208371] saved_mpidr:40b latest mpidr:40b
-[  219.212625] saved_mpidr:40c latest mpidr:40c
-[  219.216881] saved_mpidr:40d latest mpidr:40d
-[  219.221133] saved_mpidr:40e latest mpidr:40e
-[  219.225388] saved_mpidr:40f latest mpidr:40f
-[  219.229642] saved_mpidr:500 latest mpidr:500
-[  219.233898] saved_mpidr:501 latest mpidr:501
-[  219.238155] saved_mpidr:502 latest mpidr:502
-[  219.242411] saved_mpidr:503 latest mpidr:503
-[  219.246665] saved_mpidr:504 latest mpidr:504
-[  219.250920] saved_mpidr:505 latest mpidr:505
-[  219.255175] saved_mpidr:506 latest mpidr:506
-[  219.259428] saved_mpidr:507 latest mpidr:507
-[  219.263680] saved_mpidr:508 latest mpidr:508
-[  219.267935] saved_mpidr:509 latest mpidr:509
-[  219.272189] saved_mpidr:50a latest mpidr:50a
-[  219.276444] saved_mpidr:50b latest mpidr:50b
-[  219.280699] saved_mpidr:50c latest mpidr:50c
-[  219.284957] saved_mpidr:50d latest mpidr:50d
-[  219.289212] saved_mpidr:50e latest mpidr:50e
-[  219.293470] saved_mpidr:50f latest mpidr:50f
-[  219.297725] saved_mpidr:600 latest mpidr:600
-[  219.301982] saved_mpidr:601 latest mpidr:601
-[  219.306237] saved_mpidr:602 latest mpidr:602
-[  219.310493] saved_mpidr:603 latest mpidr:603
-[  219.314749] saved_mpidr:604 latest mpidr:604
-[  219.319003] saved_mpidr:605 latest mpidr:605
-[  219.323258] saved_mpidr:606 latest mpidr:606
-[  219.327511] saved_mpidr:607 latest mpidr:607
-[  219.331766] saved_mpidr:608 latest mpidr:608
-[  219.336020] saved_mpidr:609 latest mpidr:609
-[  219.340276] saved_mpidr:60a latest mpidr:60a
-[  219.344532] saved_mpidr:60b latest mpidr:60b
-[  219.348783] saved_mpidr:60c latest mpidr:60c
-[  219.353036] saved_mpidr:60d latest mpidr:60d
-[  219.357290] saved_mpidr:60e latest mpidr:60e
-[  219.361545] saved_mpidr:60f latest mpidr:60f
-[  219.365799] saved_mpidr:700 latest mpidr:700
-[  219.370054] saved_mpidr:701 latest mpidr:701
-[  219.374308] saved_mpidr:702 latest mpidr:702
-[  219.378560] saved_mpidr:703 latest mpidr:703
-[  219.382815] saved_mpidr:704 latest mpidr:704
-[  219.387072] saved_mpidr:705 latest mpidr:705
-[  219.391326] saved_mpidr:706 latest mpidr:706
-[  219.395582] saved_mpidr:707 latest mpidr:707
-[  219.399840] saved_mpidr:708 latest mpidr:708
-[  219.404098] saved_mpidr:709 latest mpidr:709
-[  219.408351] saved_mpidr:70a latest mpidr:70a
-[  219.412605] saved_mpidr:70b latest mpidr:70b
-[  219.416860] saved_mpidr:70c latest mpidr:70c
-[  219.421114] saved_mpidr:70d latest mpidr:70d
-[  219.425370] saved_mpidr:70e latest mpidr:70e
-[  219.429622] saved_mpidr:70f latest mpidr:70f
-INFO: psci: unexpected cpu_on return value: caller=CPU117, ret=-2
-FAIL: psci: cpu-on
-SUMMARY: 4 tests, 1 unexpected failures
-FAIL psci (4 tests, 1 unexpected failures)
+Changes in V15: (https://patchwork.kernel.org/patch/11422803/)
 
-> > And as I mentioned in my last before, the psci error is introduced by
-> > the
-> >  patch KVM: arm64: VNCR-ize ELR_EL1.(Only test result)
-> > Maybe you have to try tens of times to reproduce. :)
-> > Deep into the patch itself, I don't find any connection between the
-> > patch
-> > and the issue.
-> 
-> Me neither, and I haven't managed to reproduce your issue.
-> 
-> >> - test with the current state of the patches
-> > I test with your nv-5.7-rc1-WIP branch and latest kvm_unit_test, the
-> > error still exist.
-> 
-> How many vcpus do you create with this PSCI test?
-> 
+- Replaced __pa() with __pa_symbol() (https://patchwork.kernel.org/patch/11407715/) 
+- Replaced pte_alloc_map() with pte_alloc_map_lock() per Qian
+- Replaced pte_unmap() with pte_unmap_unlock() per Qian
+- Added address to pte_clear_tests() and passed it down till pte_clear() per Qian
 
-128.
+Changes in V14: (https://patchwork.kernel.org/project/linux-mm/list/?series=242305)
 
-> Thanks,
-> 
->          M.
-> --
-> Jazz is not dead. It just smells funny...
+- Disabled DEBUG_VM_PGTABLE for IA64 and ARM (32 Bit) per Andrew and Christophe
+- Updated DEBUG_VM_PGTABLE documentation wrt EXPERT and disabled platforms
+- Updated RANDOM_[OR|NZ]VALUE open encodings with GENMASK() per Catalin
+- Updated s390 constraint bits from 12 to 4 (S390_MASK_BITS) per Gerald
+- Updated in-code documentation for RANDOM_ORVALUE per Gerald
+- Updated pxx_basic_tests() to use invert functions first per Catalin
+- Dropped ARCH_HAS_4LEVEL_HACK check from pud_basic_tests()
+- Replaced __ARCH_HAS_[4|5]LEVEL_HACK with __PAGETABLE_[PUD|P4D]_FOLDED per Catalin
+- Trimmed the CC list on the commit message per Catalin
+
+Changes in V13: (https://patchwork.kernel.org/project/linux-mm/list/?series=237125)
+
+- Subscribed s390 platform and updated debug-vm-pgtable/arch-support.txt per Gerald
+- Dropped keyword 'extern' from debug_vm_pgtable() declaration per Christophe
+- Moved debug_vm_pgtable() declarations to <linux/mmdebug.h> per Christophe
+- Moved debug_vm_pgtable() call site into kernel_init() per Christophe
+- Changed CONFIG_DEBUG_VM_PGTABLE rules per Christophe
+- Updated commit to include new supported platforms and changed config selection
+
+Changes in V12: (https://patchwork.kernel.org/project/linux-mm/list/?series=233905)
+
+- Replaced __mmdrop() with mmdrop()
+- Enable ARCH_HAS_DEBUG_VM_PGTABLE on X86 for non CONFIG_X86_PAE platforms as the
+  test procedure interfere with pre-allocated PMDs attached to the PGD resulting
+  in runtime failures with VM_BUG_ON()
+
+Changes in V11: (https://patchwork.kernel.org/project/linux-mm/list/?series=221135)
+
+- Rebased the patch on V5.4
+
+Changes in V10: (https://patchwork.kernel.org/project/linux-mm/list/?series=205529)
+
+- Always enable DEBUG_VM_PGTABLE when DEBUG_VM is enabled per Ingo
+- Added tags from Ingo
+
+Changes in V9: (https://patchwork.kernel.org/project/linux-mm/list/?series=201429)
+
+- Changed feature support enumeration for powerpc platforms per Christophe
+- Changed config wrapper for basic_[pmd|pud]_tests() to enable ARC platform
+- Enabled the test on ARC platform
+
+Changes in V8: (https://patchwork.kernel.org/project/linux-mm/list/?series=194297)
+
+- Enabled ARCH_HAS_DEBUG_VM_PGTABLE on PPC32 platform per Christophe
+- Updated feature documentation as DEBUG_VM_PGTABLE is now enabled on PPC32 platform
+- Moved ARCH_HAS_DEBUG_VM_PGTABLE earlier to indent it with DEBUG_VM per Christophe
+- Added an information message in debug_vm_pgtable() per Christophe
+- Dropped random_vaddr boundary condition checks per Christophe and Qian
+- Replaced virt_addr_valid() check with pfn_valid() check in debug_vm_pgtable()
+- Slightly changed pr_fmt(fmt) information
+
+Changes in V7: (https://patchwork.kernel.org/project/linux-mm/list/?series=193051)
+
+- Memory allocation and free routines for mapped pages have been droped
+- Mapped pfns are derived from standard kernel text symbol per Matthew
+- Moved debug_vm_pgtaable() after page_alloc_init_late() per Michal and Qian 
+- Updated the commit message per Michal
+- Updated W=1 GCC warning problem on x86 per Qian Cai
+- Addition of new alloc_contig_pages() helper has been submitted separately
+
+Changes in V6: (https://patchwork.kernel.org/project/linux-mm/list/?series=187589)
+
+- Moved alloc_gigantic_page_order() into mm/page_alloc.c per Michal
+- Moved alloc_gigantic_page_order() within CONFIG_CONTIG_ALLOC in the test
+- Folded Andrew's include/asm-generic/pgtable.h fix into the test patch 2/2
+
+Changes in V5: (https://patchwork.kernel.org/project/linux-mm/list/?series=185991)
+
+- Redefined and moved X86 mm_p4d_folded() into a different header per Kirill/Ingo
+- Updated the config option comment per Ingo and dropped 'kernel module' reference
+- Updated the commit message and dropped 'kernel module' reference
+- Changed DEBUG_ARCH_PGTABLE_TEST into DEBUG_VM_PGTABLE per Ingo
+- Moved config option from mm/Kconfig.debug into lib/Kconfig.debug
+- Renamed core test function arch_pgtable_tests() as debug_vm_pgtable()
+- Renamed mm/arch_pgtable_test.c as mm/debug_vm_pgtable.c
+- debug_vm_pgtable() gets called from kernel_init_freeable() after init_mm_internals()
+- Added an entry in Documentation/features/debug/ per Ingo
+- Enabled the test on arm64 and x86 platforms for now
+
+Changes in V4: (https://patchwork.kernel.org/project/linux-mm/list/?series=183465)
+
+- Disable DEBUG_ARCH_PGTABLE_TEST for ARM and IA64 platforms
+
+Changes in V3: (https://lore.kernel.org/patchwork/project/lkml/list/?series=411216)
+
+- Changed test trigger from module format into late_initcall()
+- Marked all functions with __init to be freed after completion
+- Changed all __PGTABLE_PXX_FOLDED checks as mm_pxx_folded()
+- Folded in PPC32 fixes from Christophe
+
+Changes in V2:
+
+https://lore.kernel.org/linux-mm/1568268173-31302-1-git-send-email-anshuman.khandual@arm.com/T/#t
+
+- Fixed small typo error in MODULE_DESCRIPTION()
+- Fixed m64k build problems for lvalue concerns in pmd_xxx_tests()
+- Fixed dynamic page table level folding problems on x86 as per Kirril
+- Fixed second pointers during pxx_populate_tests() per Kirill and Gerald
+- Allocate and free pte table with pte_alloc_one/pte_free per Kirill
+- Modified pxx_clear_tests() to accommodate s390 lower 12 bits situation
+- Changed RANDOM_NZVALUE value from 0xbe to 0xff
+- Changed allocation, usage, free sequence for saved_ptep
+- Renamed VMA_FLAGS as VMFLAGS
+- Implemented a new method for random vaddr generation
+- Implemented some other cleanups
+- Dropped extern reference to mm_alloc()
+- Created and exported new alloc_gigantic_page_order()
+- Dropped the custom allocator and used new alloc_gigantic_page_order()
+
+Changes in V1:
+
+https://lore.kernel.org/linux-mm/1567497706-8649-1-git-send-email-anshuman.khandual@arm.com/
+
+- Added fallback mechanism for PMD aligned memory allocation failure
+
+Changes in RFC V2:
+
+https://lore.kernel.org/linux-mm/1565335998-22553-1-git-send-email-anshuman.khandual@arm.com/T/#u
+
+- Moved test module and it's config from lib/ to mm/
+- Renamed config TEST_ARCH_PGTABLE as DEBUG_ARCH_PGTABLE_TEST
+- Renamed file from test_arch_pgtable.c to arch_pgtable_test.c
+- Added relevant MODULE_DESCRIPTION() and MODULE_AUTHOR() details
+- Dropped loadable module config option
+- Basic tests now use memory blocks with required size and alignment
+- PUD aligned memory block gets allocated with alloc_contig_range()
+- If PUD aligned memory could not be allocated it falls back on PMD aligned
+  memory block from page allocator and pud_* tests are skipped
+- Clear and populate tests now operate on real in memory page table entries
+- Dummy mm_struct gets allocated with mm_alloc()
+- Dummy page table entries get allocated with [pud|pmd|pte]_alloc_[map]()
+- Simplified [p4d|pgd]_basic_tests(), now has random values in the entries
+
+Original RFC V1:
+
+https://lore.kernel.org/linux-mm/1564037723-26676-1-git-send-email-anshuman.khandual@arm.com/
+
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Mike Rapoport <rppt@linux.ibm.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: Vasily Gorbik <gor@linux.ibm.com>
+Cc: Christian Borntraeger <borntraeger@de.ibm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: "H. Peter Anvin" <hpa@zytor.com>
+Cc: Kirill A. Shutemov <kirill@shutemov.name>
+Cc: Paul Walmsley <paul.walmsley@sifive.com>
+Cc: Palmer Dabbelt <palmer@dabbelt.com>
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-riscv@lists.infradead.org
+Cc: x86@kernel.org
+Cc: linux-arch@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (2):
+  x86/mm: Define mm_p4d_folded()
+  mm/debug: Add tests validating architecture page table helpers
+
+ .../debug/debug-vm-pgtable/arch-support.txt   |  34 ++
+ arch/arc/Kconfig                              |   1 +
+ arch/arm64/Kconfig                            |   1 +
+ arch/powerpc/Kconfig                          |   1 +
+ arch/s390/Kconfig                             |   1 +
+ arch/x86/Kconfig                              |   1 +
+ arch/x86/include/asm/pgtable_64.h             |   6 +
+ lib/Kconfig.debug                             |  25 ++
+ mm/Makefile                                   |   1 +
+ mm/debug_vm_pgtable.c                         | 382 ++++++++++++++++++
+ 10 files changed, 453 insertions(+)
+ create mode 100644 Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+ create mode 100644 mm/debug_vm_pgtable.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
