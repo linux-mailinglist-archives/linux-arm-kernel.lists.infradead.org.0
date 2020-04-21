@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5D271B2A16
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:37:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33E201B2A17
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:37:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dtt5CNn0sVPaXSyTZm0jJIeWdOiuWUXO3s2OXAdBBos=; b=DQZH151lJ31QZW
-	RIXA+OvoLFTHxaQgTOCwuHbhhbcvCkF/sPLuTUB3OO7TwFzY8Z9rBj3qwARXdeCNven4fjPKaRhXx
-	d7Noq+xANiI+sBtDcKdjSowpdiHi3Mq84EII8BuK/O+Ux+m/EkiXo7NCpiF2zRX+XhmTbXAVYOtS/
-	EkTWfFObQR26315tOPAjdXlRDpEtY72SnQxgi5nU+1PGYGEkr9o0MdXJ3KMoJVIT2ywy+bmkT94MX
-	bCcqGGk6RLpjvpmKZLn7V3mSy4Q2GfisKhILg6KCWuPEOFhyRbjJCayTEY8AN80uy5tCrBv+PLfVV
-	7GFObzE2JnlmgBy4S1dw==;
+	List-Owner; bh=p6t1Z6Ekf2YkVQJ8Sc2sMTqAqmo7jIN7B8IFbdXDung=; b=BiwDvxR9KOHC2e
+	XkAl/kPXnSLq0RFDuTsC3FjJdXxNY6B4RnhQsTaAvjvlfgJvoHmaL3oa+zqXpghCHz50B6FiAp1Ml
+	gXMsBDjmou/dR5+PXj1nWMqPXV3baCB6Kdk5oikdYQvHLhK91Hr5T88QoRf9K1b5/IYNnqXCZ1JXA
+	5yywyqGcTPT1L+CxwwuSFUA8oGbpYXmmWeWbpzGZwYXc+1jhP0RpBABzw2LEquhsJjCA5Nh3f975B
+	4nvMJv2MpykyIrDhTqeW7pQ+qFDGlF3JAR9jADvqW1KGynfCGLbgiLCgeBWf8vZS0Cy/8BMHD5pqr
+	t6ucM1ZvOVbXoVQC6VAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQu1K-00052l-2K; Tue, 21 Apr 2020 14:37:06 +0000
+	id 1jQu1Y-0005Hl-9W; Tue, 21 Apr 2020 14:37:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtuC-0002lj-Dc
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:29:52 +0000
+ id 1jQtuE-0002nh-Hp
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:29:54 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7DA0F2071C;
- Tue, 21 Apr 2020 14:29:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E1E48206D6;
+ Tue, 21 Apr 2020 14:29:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587479382;
- bh=8Oyrol7qvIM/UF0b+U1DBGmfmyKVdmtIZeJLwupvoTY=;
+ s=default; t=1587479384;
+ bh=3RIIMGAZgHRQJXQkWrbexBrBm99PXQELzCoVWqs5myY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=alIzc6X4cji+C0EuciJTgrC0hul13+KTEuTvXvi6inXEUNSnGg2XYEGop/f/XPdG1
- 47E46CpTHxC/IkFVxReR59fHwf4q6q7gRj4U2l2NbAnla/R4TDJSmSirtbB1S2bG6D
- mmGUetf71DqxW34otwpC39CuLQa2gLPo0nkIpm8I=
+ b=OYU8YEMMHiFGS15SkIRoKtTPj4w22uridp8eoVjYWo3pY+lKXzq/D0XW5mJPWjS9N
+ uO4oQQSHcCUkkj/RE6VqCUGs3Cm5LBqz65Vd/xNZfunlBYAZ0N2AJbSjy5VlLbnyhO
+ TQc1BY7oKgnoZhnZpwLMIrGwkRmQjqC+e3J+cMGo=
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org,
 	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v2 6/8] arm64: cpufeature: Relax AArch32 system checks if EL1
- is 64-bit only
-Date: Tue, 21 Apr 2020 15:29:20 +0100
-Message-Id: <20200421142922.18950-7-will@kernel.org>
+Subject: [PATCH v2 7/8] arm64: cpufeature: Relax checks for AArch32 support at
+ EL[0-2]
+Date: Tue, 21 Apr 2020 15:29:21 +0100
+Message-Id: <20200421142922.18950-8-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200421142922.18950-1-will@kernel.org>
 References: <20200421142922.18950-1-will@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_072944_604181_B25CF787 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20200421_072946_757720_DBC6FDEE 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,103 +89,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If AArch32 is not supported at EL1, the AArch32 feature register fields
-no longer advertise support for some system features:
+We don't need to be quite as strict about mismatched AArch32 support,
+which is good because the friendly hardware folks have been busy
+mismatching this to their hearts' content.
 
-  * ISAR4.SMC
-  * PFR1.{Virt_frac, Sec_frac, Virtualization, Security, ProgMod}
+  * We don't care about EL2 or EL3 (there are silly comments concerning
+    the latter, so remove those)
 
-In which case, we don't need to emit "SANITY CHECK" failures for all of
-them.
+  * EL1 support is gated by the ARM64_HAS_32BIT_EL1 capability and handled
+    gracefully when a mismatch occurs
 
-Add logic to relax the strictness of individual feature register fields
-at runtime and use this for the fields above if 32-bit EL1 is not
-supported.
+  * EL0 support is gated by the ARM64_HAS_32BIT_EL0 capability and handled
+    gracefully when a mismatch occurs
+
+Relax the AArch32 checks to FTR_NONSTRICT.
 
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Tested-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/cpufeature.h |  7 ++++++
- arch/arm64/kernel/cpufeature.c      | 33 ++++++++++++++++++++++++++++-
- 2 files changed, 39 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/cpufeature.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index afe08251ff95..f5c4672e498b 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -551,6 +551,13 @@ static inline bool id_aa64mmfr0_mixed_endian_el0(u64 mmfr0)
- 		cpuid_feature_extract_unsigned_field(mmfr0, ID_AA64MMFR0_BIGENDEL0_SHIFT) == 0x1;
- }
- 
-+static inline bool id_aa64pfr0_32bit_el1(u64 pfr0)
-+{
-+	u32 val = cpuid_feature_extract_unsigned_field(pfr0, ID_AA64PFR0_EL1_SHIFT);
-+
-+	return val == ID_AA64PFR0_EL1_32BIT_64BIT;
-+}
-+
- static inline bool id_aa64pfr0_32bit_el0(u64 pfr0)
- {
- 	u32 val = cpuid_feature_extract_unsigned_field(pfr0, ID_AA64PFR0_EL0_SHIFT);
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 6892b2440676..7e0dbe2a2f2d 100644
+index 7e0dbe2a2f2d..d63653d7c5d0 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -715,6 +715,25 @@ static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
- 	return 1;
- }
+@@ -172,11 +172,10 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_GIC_SHIFT, 4, 0),
+ 	S_ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_ASIMD_SHIFT, 4, ID_AA64PFR0_ASIMD_NI),
+ 	S_ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_FP_SHIFT, 4, ID_AA64PFR0_FP_NI),
+-	/* Linux doesn't care about the EL3 */
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL3_SHIFT, 4, 0),
+-	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL2_SHIFT, 4, 0),
+-	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
+-	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL0_SHIFT, 4, ID_AA64PFR0_EL0_64BIT_ONLY),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL2_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_EL0_SHIFT, 4, ID_AA64PFR0_EL0_64BIT_ONLY),
+ 	ARM64_FTR_END,
+ };
  
-+static void relax_cpu_ftr_reg(u32 sys_id, int field)
-+{
-+	const struct arm64_ftr_bits *ftrp;
-+	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
-+
-+	if (WARN_ON(!regp))
-+		return;
-+
-+	for (ftrp = regp->ftr_bits; ftrp->width; ftrp++) {
-+		if (ftrp->shift == field) {
-+			regp->strict_mask &= ~arm64_ftr_mask(ftrp);
-+			break;
-+		}
-+	}
-+
-+	/* Bogus field? */
-+	WARN_ON(!ftrp->width);
-+}
-+
- static int update_32bit_cpu_features(int cpu, struct cpuinfo_arm64 *info,
- 				     struct cpuinfo_arm64 *boot)
- {
-@@ -729,6 +748,19 @@ static int update_32bit_cpu_features(int cpu, struct cpuinfo_arm64 *info,
- 	if (!id_aa64pfr0_32bit_el0(pfr0))
- 		return taint;
+@@ -867,9 +866,6 @@ void update_cpu_features(int cpu,
+ 	taint |= check_update_ftr_reg(SYS_ID_AA64MMFR2_EL1, cpu,
+ 				      info->reg_id_aa64mmfr2, boot->reg_id_aa64mmfr2);
  
-+	/*
-+	 * If we don't have AArch32 at EL1, then relax the strictness of
-+	 * EL1-dependent register fields to avoid spurious sanity check fails.
-+	 */
-+	if (!id_aa64pfr0_32bit_el1(pfr0)) {
-+		relax_cpu_ftr_reg(SYS_ID_ISAR4_EL1, ID_ISAR4_SMC_SHIFT);
-+		relax_cpu_ftr_reg(SYS_ID_PFR1_EL1, ID_PFR1_VIRT_FRAC_SHIFT);
-+		relax_cpu_ftr_reg(SYS_ID_PFR1_EL1, ID_PFR1_SEC_FRAC_SHIFT);
-+		relax_cpu_ftr_reg(SYS_ID_PFR1_EL1, ID_PFR1_VIRTUALIZATION_SHIFT);
-+		relax_cpu_ftr_reg(SYS_ID_PFR1_EL1, ID_PFR1_SECURITY_SHIFT);
-+		relax_cpu_ftr_reg(SYS_ID_PFR1_EL1, ID_PFR1_PROGMOD_SHIFT);
-+	}
-+
- 	taint |= check_update_ftr_reg(SYS_ID_DFR0_EL1, cpu,
- 				      info->reg_id_dfr0, boot->reg_id_dfr0);
- 	taint |= check_update_ftr_reg(SYS_ID_ISAR0_EL1, cpu,
-@@ -773,7 +805,6 @@ static int update_32bit_cpu_features(int cpu, struct cpuinfo_arm64 *info,
- 	return taint;
- }
- 
--
- /*
-  * Update system wide CPU feature registers with the values from a
-  * non-boot CPU. Also performs SANITY checks to make sure that there
+-	/*
+-	 * EL3 is not our concern.
+-	 */
+ 	taint |= check_update_ftr_reg(SYS_ID_AA64PFR0_EL1, cpu,
+ 				      info->reg_id_aa64pfr0, boot->reg_id_aa64pfr0);
+ 	taint |= check_update_ftr_reg(SYS_ID_AA64PFR1_EL1, cpu,
 -- 
 2.26.1.301.g55bc3eb7cb9-goog
 
