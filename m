@@ -2,119 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 256141B2540
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:39:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 224E51B256A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 13:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H98uZxiq+ff8eT3smIfgTCWUVQ1KOSp1YCrllNE8TrM=; b=XhRrX2ce3TNWUi
-	TV8Goo0Qgp9n572+gyPT5OZ0bvd7UJCjRtNJac3TbUdim2hJcrCXES+PElhIRV2HjNcDx7NGXSQ0m
-	pPcUEUNBfh1H5JYX04X9Hr9NoOT3CZ94jEUVgPCx6llPqohfPu53uLYGgkydMXNxhaKzR3MzTZg0a
-	kLtCuPmA2cly+uZEi3uhvjUdqjGAIa9ht6x6cw1p9u894jiu0EADHTMjFVl+OfiG1k4mW3vBXzXzy
-	QH4QoSuLw7AoC3Kg2DukeaaWuAUid7F7s6s4BNh1Ij6MGGG8WnCgperh16B8i+yO8BJdVuOTjtyp8
-	aNInqamEZZr1OyYZVbLQ==;
+	List-Owner; bh=vWf3qNxluh3Fww0Qj1JGBWoT65lkpLyi09ZHpz56Xj4=; b=AKdrDUp9UtD86y
+	hzzsPwnIU/YB/2iD8TQa+LLcsrxIOpOsM1+dwIy5EgOmY2wXHD4J8Xf/wN7gAycBQ5gvzV3q1Jeuw
+	ueux66U46ZWbeLYAKdWtLaTiOPlKQcfHqdDJeDgjBUv9coSLH/l/TwzUEsORvpvEZPgudHjX7FXKn
+	JRW78+X2b141x8MWF+Y3kLM6LHqvMgmEFluKytLMvuEhuK7s26y5TdxWGdcAG3SO28sA+OSK+DgMW
+	1E63NxGrSjPv1MQpRohW3gUmzsS/rY7bnaNkNm62itstPVy9Y1xDIsuf8en5m67ITjNGl18moDT57
+	RSLP+MZGDMusEfd1lnpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQrFe-0000oU-PR; Tue, 21 Apr 2020 11:39:42 +0000
-Received: from mail-bn7nam10on2067.outbound.protection.outlook.com
- ([40.107.92.67] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
+	id 1jQrWG-0006Sx-Sh; Tue, 21 Apr 2020 11:56:52 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQrFS-0000nh-UE
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:39:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ddsx8cBYmxVklB2NXklQKgQiNgmc8QsOvrFILprOjBFtKKPKDxQ97RFH8uPZ6D/hJDasIXyokC43ht2i8jwLJwzWiRE4IS1S9opkD3i48uhfNPPuNC3nIimly93PP07miTYAghQoteN0e4ju+H0JYEXO0hDkzsplkPAvkbxqSqJaPWqGWvBPNi3izKnntVL7ksXbQQ2ub9bpXPNwy8M9Vnw72zhOD+8HgFYdBuynjq1B05HnyuPZ80skZBml4an2bmy2+oIPJ564wgM/nzKEyASCYbQVIjmlUxku3nQnysN1sr44Nyph6XTnk5EVuuaeIxXwO1NfQ0PgUYd+GMQgCw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FZhQkh693RD1ITuIVj3+UmgF9ULxuNJReocRdCLXH7s=;
- b=GSgXMNCqUI2LY3b5WsdcMEEM/+xxQ0k53ia9c3z2qWwvsQOM8ySoq7mIiZCgzjJiD0UHVsVPwQNU5xFVvRd6ZZYBQoNz50JD4s42F5kyegbEOFxvnc3rPmXA4DHUAnGB6wHV1I+1sFq9N/cStB/ghKjKCDY8V49fEcM3ELok8jUtZ9Zg2LlBNd0emZscf7unkx4DZuN99J6sGH/E0BEbvb8I3I+cgg5KSgKwXSxRf6kb0En1VUfi3WwxirJ/6A7rGoTysF12A8BDsiyB1j717x15FF9G0jCuUcYnfioWigH3ltxuM/be6kGGX0eyDhjQrcw02/nXQe7mrg6H6ds/jA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FZhQkh693RD1ITuIVj3+UmgF9ULxuNJReocRdCLXH7s=;
- b=RH2P/OK02BMEOgrVZiN0DWL2VtWnYCpLmAVOpZTSOfEb9DGQIz6VQD7ScXa1Dvpl1fDIfgB765WrqMX6jmlQOYgHs4l5iiIsqAWvPZfE+BoXRtieFEPcIQhbv1/mXRw7CHhvzT2sS6h8M953KQn87PJp+ctTS1S2jg9da+7xVlc=
-Received: from DM6PR02MB6876.namprd02.prod.outlook.com (2603:10b6:5:22c::11)
- by DM6PR02MB6682.namprd02.prod.outlook.com (2603:10b6:5:214::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Tue, 21 Apr
- 2020 11:39:28 +0000
-Received: from DM6PR02MB6876.namprd02.prod.outlook.com
- ([fe80::ad68:d392:e519:f671]) by DM6PR02MB6876.namprd02.prod.outlook.com
- ([fe80::ad68:d392:e519:f671%8]) with mapi id 15.20.2921.030; Tue, 21 Apr 2020
- 11:39:28 +0000
-From: Vishal Sagar <vsagar@xilinx.com>
-To: Luca Ceresoli <luca@lucaceresoli.net>, "laurent.pinchart@ideasonboard.com"
- <laurent.pinchart@ideasonboard.com>
-Subject: RE: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
- Subsystem driver
-Thread-Topic: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
- Subsystem driver
-Thread-Index: AQHWDqdoYfHJZJ7yyEOpsMzdPA1DraiDckYAgAAR72A=
-Date: Tue, 21 Apr 2020 11:39:28 +0000
-Message-ID: <DM6PR02MB687640292EFB844B4BF9DA0DA7D50@DM6PR02MB6876.namprd02.prod.outlook.com>
-References: <20200409194424.45555-1-vishal.sagar@xilinx.com>
- <20200409194424.45555-3-vishal.sagar@xilinx.com>
- <4331afd6-3891-2dd5-b5b8-2ffc5d1cbed5@lucaceresoli.net>
-In-Reply-To: <4331afd6-3891-2dd5-b5b8-2ffc5d1cbed5@lucaceresoli.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=vsagar@xilinx.com; 
-x-originating-ip: [149.199.50.130]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9ef2c99e-03ba-4d63-b078-08d7e5e8a69d
-x-ms-traffictypediagnostic: DM6PR02MB6682:|DM6PR02MB6682:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR02MB6682C92C101C437674579EF0A7D50@DM6PR02MB6682.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 038002787A
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR02MB6876.namprd02.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(346002)(39860400002)(136003)(396003)(376002)(366004)(4326008)(26005)(110136005)(6506007)(53546011)(7696005)(316002)(54906003)(66476007)(5660300002)(7416002)(186003)(66556008)(66446008)(64756008)(33656002)(76116006)(52536014)(66946007)(478600001)(71200400001)(2906002)(8936002)(55016002)(8676002)(81156014)(86362001)(9686003);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: VW6IaMoMrlMthq0FNAn3ZfbA7UzlsSUJXW/8Nbzw4TdNrmfVfjUPGRp/jYm/ukbmGaRxtCGwwVVPEPZzOS4QRnJOMXknZbvGTSSTw+evkOT0qQafF16b+3eLVfWxT/lhAooj4wlQnq3d6WF6cLM+XWc9W6XrtX9pWCN64zQeR/Hck2avsjhHj/Bvx41PWGw3fUdwQvKFwA5b6kCUZQMJN1NF2CuDkJFL18h6Q5LFlG9ufpVNdySYDbUgM4IOHxEs234GFJKtIgOoDkx9gGmxYwSNyn1aSHO7N5+KluEf4MIBJVRSYkG3vprZK0P8FTIJs08jIo86txBURTY1eEDhCjtOFfbC7l/S0yZaJ9Y8yHETH8k38qnttRq4jGg6tRVwhT+MD+mNaENxTe9lJF/sCc0MIapeV41AfmqNwO1z7bMGwz3swudf2tV0LUXNBQAP
-x-ms-exchange-antispam-messagedata: pdl4Q/18hzPetSI2extfW2BoXKW4E49/BjC6Jjvm7cXjIbIjXkOyytABMXyKKP9TxN43BL7ODQTqIC+KVgnhZpANkCI9CzQFhaq0tdUNC2IUXaP99dO2vzbwfS+fUe4Xxg47zfvo8jJcHPEkUazTCw==
+ id 1jQrVs-0006Lc-KH
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 11:56:31 +0000
+Received: by mail-qk1-x741.google.com with SMTP id o19so14143405qkk.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Apr 2020 04:56:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Gy/qiieN90UJKr/c+cYCi+ub2I5kQwPARkN3XL1JRak=;
+ b=aCc5+8+A8yLcK/QqnugFhTCfuQH8ZptGrOL5KoB4qPjfHfg455c5bxR2ErMEoPapf5
+ uswTC5LyF+tq3Acydm/mOkThdTzi4W6FFRu209tSF2BEofynt+8R7+A4/fZHeT6zhJzm
+ ckM5RBxLwpV7Q3sk4bicpgtLknywP1ick8tWtuQkvzjoON229ZmaaSlmzEBc6wXUJvCo
+ 5SROV55sCPT1NhDKKKVvb9+y64jLWx4R8VRDsSi0+KWkDukc9Z8u3dZhUm6Xmob2XhaT
+ eYr5kOqL+dl22xCD4d68H+iRq1GB4bxtUOqvdo63JvGbIc52n7b78xxmC7J3+1INySvY
+ h7Aw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Gy/qiieN90UJKr/c+cYCi+ub2I5kQwPARkN3XL1JRak=;
+ b=o87nlsYGZy71AiVJ4NqmpT1/FZ52k3DZwm3QNPHLaVOCEZQdjZ1DV5vPia1nJ4egL+
+ u8Vbq5ZnZ9DvgXloTpqsvA7ZBbT3tzGEsP1XQxIZfZNSlX9jVGQW/eCXRXhBk2JEux30
+ XdkQ06jVgF9SVMulbNQ0VUpHFNLSp0A7sEzsKUz+SrWruMeN7MK9lJhHppqb+lJIN3QS
+ LRd6y7ZDR9bDFcLC3R6D5iMvHIHUjHhPcUVf792OprR9ihsa9/48jNILxb3zmCSrj7HD
+ SHmdZqUvWxJ/cHLUafmsl44CiTY5B4icLURrXjin8PRbuE0tsW3ztOOnVt3bGGPzdHF3
+ qfdQ==
+X-Gm-Message-State: AGi0PubAMgIovbUemGjVWKhE06Tnc4pwcSWxsPA65iYOQrwcAwRoPqqm
+ KmTeJvgDWKRRR7BKGvFxztK7Mf8y7uyqBHkBt0ToWA==
+X-Google-Smtp-Source: APiQypKqjymosGnZ/N8Uq74IFcEJwadIEWE1MVkKNbYIrF4e7ou27CEFF7xzARDGcWKlsTpg5CkwsUAkLDtYop4F7a4=
+X-Received: by 2002:a37:bc47:: with SMTP id m68mr21780368qkf.8.1587470184030; 
+ Tue, 21 Apr 2020 04:56:24 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9ef2c99e-03ba-4d63-b078-08d7e5e8a69d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Apr 2020 11:39:28.5515 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: FTzMrjaCe0QE7l8D3RGwWNX3xJg6dxHQRwxx6EowyldY14p4BqwTYRmi4/gMVi0c4cIAUnqBeG9LLVx7ChHizg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB6682
+References: <20200421014007.6012-1-walter-zh.wu@mediatek.com>
+In-Reply-To: <20200421014007.6012-1-walter-zh.wu@mediatek.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 21 Apr 2020 13:56:12 +0200
+Message-ID: <CACT4Y+af5fegnN9XOUSkf_B62J5sf2ZZbUwYk=GxtSmAhF3ryQ@mail.gmail.com>
+Subject: Re: [PATCH] kasan: fix KASAN unit tests for tag-based KASAN
+To: Walter Wu <walter-zh.wu@mediatek.com>, David Gow <davidgow@google.com>, 
+ Brendan Higgins <brendanhiggins@google.com>,
+ Patricia Alfonso <trishalfonso@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_043931_038069_A42CAA6E 
-X-CRM114-Status: GOOD (  23.24  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200421_045628_710484_202DE08A 
+X-CRM114-Status: GOOD (  24.62  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.92.67 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.92.67 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,288 +98,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
- Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ Andrey Konovalov <andreyknvl@google.com>, linux-mediatek@lists.infradead.org,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Linux-MM <linux-mm@kvack.org>, Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Luca,
-
-Thanks for going through the patch and providing your feedback.
-
-> -----Original Message-----
-> From: Luca Ceresoli <luca@lucaceresoli.net>
-> Sent: Tuesday, April 21, 2020 4:00 PM
-> To: Vishal Sagar <vsagar@xilinx.com>; Hyun Kwon <hyunk@xilinx.com>;
-> laurent.pinchart@ideasonboard.com; mchehab@kernel.org;
-> robh+dt@kernel.org; mark.rutland@arm.com; Michal Simek
-> <michals@xilinx.com>; linux-media@vger.kernel.org;
-> devicetree@vger.kernel.org; hans.verkuil@cisco.com; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Dinesh Kumar
-> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>; Jacopo Mondi
-> <jacopo@jmondi.org>
-> Cc: Hyun Kwon <hyunk@xilinx.com>
-> Subject: Re: [PATCH v11 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
-> Subsystem driver
-> 
-> Hi Vishal,
-> 
-> thanks for having resumed this patchset!
-> 
-> On 09/04/20 21:44, Vishal Sagar wrote:
-> [...]
-> > +static int xcsi2rxss_parse_of(struct xcsi2rxss_state *xcsi2rxss) {
-> > +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
-> > +	struct device_node *node = xcsi2rxss->core.dev->of_node;
-> 
-> Can be simplified as:
-> 
-> 	struct device_node *node = core.dev->of_node;
-> 
-
-Got it. Will update in next version.
-struct device_node *node = core->dev->of_node
-
-> > +	unsigned int nports, irq;
-> > +	bool en_csi_v20, vfb;
-> > +	int ret;
-> > +
-> > +	en_csi_v20 = of_property_read_bool(node, "xlnx,en-csi-v2-0");
-> > +	if (en_csi_v20)
-> > +		core->en_vcx = of_property_read_bool(node, "xlnx,en-vcx");
-> > +
-> > +	core->enable_active_lanes =
-> > +		of_property_read_bool(node, "xlnx,en-active-lanes");
-> > +
-> > +	ret = of_property_read_u32(node, "xlnx,csi-pxl-format",
-> > +				   &core->datatype);
-> > +	if (ret < 0) {
-> > +		dev_err(core->dev, "missing xlnx,csi-pxl-format property\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	switch (core->datatype) {
-> > +	case XCSI_DT_YUV4228B:
-> > +	case XCSI_DT_RGB444:
-> > +	case XCSI_DT_RGB555:
-> > +	case XCSI_DT_RGB565:
-> > +	case XCSI_DT_RGB666:
-> > +	case XCSI_DT_RGB888:
-> > +	case XCSI_DT_RAW6:
-> > +	case XCSI_DT_RAW7:
-> > +	case XCSI_DT_RAW8:
-> > +	case XCSI_DT_RAW10:
-> > +	case XCSI_DT_RAW12:
-> > +	case XCSI_DT_RAW14:
-> > +		break;
-> > +	case XCSI_DT_YUV42210B:
-> > +	case XCSI_DT_RAW16:
-> > +	case XCSI_DT_RAW20:
-> > +		if (!en_csi_v20) {
-> > +			ret = -EINVAL;
-> > +			dev_dbg(core->dev, "enable csi v2 for this pixel
-> format");
-> > +		}
-> > +		break;
-> > +	default:
-> > +		ret = -EINVAL;
-> > +	}
-> > +	if (ret < 0) {
-> > +		dev_err(core->dev, "invalid csi-pxl-format property!\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	vfb = of_property_read_bool(node, "xlnx,vfb");
-> > +	if (!vfb) {
-> > +		dev_err(core->dev, "failed as VFB is disabled!\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	for (nports = 0; nports < XCSI_MEDIA_PADS; nports++) {
-> > +		struct fwnode_handle *ep;
-> > +		struct v4l2_fwnode_endpoint vep = {
-> > +			.bus_type = V4L2_MBUS_CSI2_DPHY
-> > +		};
-> > +
-> > +		ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(core-
-> >dev),
-> > +						     nports, 0,
-> > +
-> FWNODE_GRAPH_ENDPOINT_NEXT);
-> > +		if (!ep)
-> > +			break;
-> > +		/*
-> > +		 * since first port is sink port and it contains
-> > +		 * all info about data-lanes and cfa-pattern,
-> > +		 * don't parse second port but only check if exists
-> > +		 */
-> > +		if (nports == XVIP_PAD_SOURCE) {
-> > +			dev_dbg(core->dev, "no need to parse source port");
-> > +			fwnode_handle_put(ep);
-> > +			continue;
-> > +		}
-> > +
-> > +		ret = v4l2_fwnode_endpoint_parse(ep, &vep);
-> > +		if (ret) {
-> > +			dev_err(core->dev, "error parsing sink port");
-> > +			fwnode_handle_put(ep);
-> > +			return ret;
-> > +		}
-> > +
-> > +		dev_dbg(core->dev, "port %d bus type = %d\n", nports,
-> > +			vep.bus_type);
-> > +
-> > +		if (vep.bus_type == V4L2_MBUS_CSI2_DPHY) {
-> > +			dev_dbg(core->dev, "base.port = %d base.id = %d\n",
-> > +				vep.base.port, vep.base.id);
-> > +
-> > +			dev_dbg(core->dev, "mipi number lanes = %d\n",
-> > +				vep.bus.mipi_csi2.num_data_lanes);
-> > +
-> > +			core->max_num_lanes =
-> > +				vep.bus.mipi_csi2.num_data_lanes;
-> > +		}
-> > +		fwnode_handle_put(ep);
-> > +	}
-> > +
-> > +	if (nports != XCSI_MEDIA_PADS) {
-> > +		dev_err(core->dev, "invalid number of ports %u\n", nports);
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	/* Register interrupt handler */
-> > +	irq = irq_of_parse_and_map(node, 0);
-> > +	ret = devm_request_irq(core->dev, irq, xcsi2rxss_irq_handler,
-> > +			       IRQF_SHARED, "xilinx-csi2rxss", xcsi2rxss);
-> > +	if (ret) {
-> > +		dev_err(core->dev, "Err = %d Interrupt handler reg
-> failed!\n",
-> > +			ret);
-> > +		return ret;
-> > +	}
-> 
-> When using this driver I have changed this to a threaded IRQ, moving most of
-> the management out of interrupt context. The patch is super simple and it
-> works fine, for my use case at least. Do you think a strict IRQ is really needed
-> for some reason?
-> 
-
-Agree I should have moved this to a threaded IRQ. I will update it in next version.
-
-> > +	xcsi2rxss_log_ipconfig(xcsi2rxss);
-> > +
-> > +	return 0;
-> 
-> This function references 'core->dev' a lot of times, so I'd rather add at the
-> top of the function:
-> 
->   struct device * const dev = &pdev->dev;
-> 
-> and then use simply 'dev' everywhere. This would keep lines shorter and
-> more readable. It is also handy when copying/moving a line of code from
-> one function to another if all of them have 'dev' called the same way so I
-> tend to do use this pattern often.
-> 
-
-Agree with  you. It will be updated in next version.
-
-> > +}
-> > +
-> > +static int xcsi2rxss_probe(struct platform_device *pdev) {
-> > +	struct v4l2_subdev *subdev;
-> > +	struct xcsi2rxss_state *xcsi2rxss;
-> > +	struct xcsi2rxss_core *core;
-> > +	struct resource *res;
-> > +	int num_clks = ARRAY_SIZE(xcsi2rxss_clks);
-> > +	int ret;
-> > +
-> > +	xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss),
-> GFP_KERNEL);
-> > +	if (!xcsi2rxss)
-> > +		return -ENOMEM;
-> > +
-> > +	core = &xcsi2rxss->core;
-> > +	core->dev = &pdev->dev;
-> 
-> This function references 'dev' many times, sometimes as &pdev->dev, thers
-> as 'core->dev', thus as above why not adding at the top of the
-> function:
-> 
->   struct device * const dev = &pdev->dev;
-> 
-> and simplify code using 'dev' always?
-> 
-
-True. I will do the change in next version.
-
-> > +	core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
-> > +				  sizeof(xcsi2rxss_clks), GFP_KERNEL);
-> > +	if (!core->clks)
-> > +		return -ENOMEM;
-> > +
-> > +	/* Reset GPIO */
-> > +	core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
-> > +						 GPIOD_OUT_HIGH);
-> > +	if (IS_ERR(core->rst_gpio)) {
-> > +		if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
-> > +			dev_err(core->dev, "Video Reset GPIO not setup in
-> DT");
-> > +		return PTR_ERR(core->rst_gpio);
-> > +	}
-> > +
-> > +	mutex_init(&xcsi2rxss->lock);
-> 
-> There are 3 'return' statements after this call, and mutex_destroy() won't be
-> called if they trigger. Ok, probably no real effect as
-> mutex_init() is just initializing data, but for the sake of well-written code you
-> can simply move mutex_init()...
-> 
-> > +	ret = xcsi2rxss_parse_of(xcsi2rxss);
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +	core->iomem = devm_ioremap_resource(core->dev, res);
-> > +	if (IS_ERR(core->iomem))
-> > +		return PTR_ERR(core->iomem);
-> > +
-> > +	ret = clk_bulk_get(core->dev, num_clks, core->clks);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = clk_bulk_prepare_enable(num_clks, core->clks);
-> > +	if (ret)
-> > +		goto err_clk_put;
-> 
-> ...here.
+On Tue, Apr 21, 2020 at 3:40 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
 >
+> When we use tag-based KASAN, then KASAN unit tests don't detect
+> out-of-bounds memory access. Because with tag-based KASAN the state
+> of each 16 aligned bytes of memory is encoded in one shadow byte
+> and the shadow value is tag of pointer, so we need to read next
+> shadow byte, the shadow value is not equal to tag of pointer,
+> then tag-based KASAN will detect out-of-bounds memory access.
+>
+> Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> Cc: Dmitry Vyukov <dvyukov@google.com>
+> Cc: Alexander Potapenko <glider@google.com>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: Andrey Konovalov <andreyknvl@google.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> ---
+>  lib/test_kasan.c | 62 ++++++++++++++++++++++++++++++++++++++++++------
+>  1 file changed, 55 insertions(+), 7 deletions(-)
+>
+> diff --git a/lib/test_kasan.c b/lib/test_kasan.c
+> index e3087d90e00d..a164f6b47fe5 100644
+> --- a/lib/test_kasan.c
+> +++ b/lib/test_kasan.c
+> @@ -40,7 +40,12 @@ static noinline void __init kmalloc_oob_right(void)
+>                 return;
+>         }
 
-Good idea. This will be updated in next version.
- 
-> > +	if (core->rst_gpio) {
-> > +		gpiod_set_value_cansleep(core->rst_gpio, 1);
-> > +		/* minimum of 40 dphy_clk_200M cycles */
-> > +		usleep_range(1, 2);
-> > +		gpiod_set_value_cansleep(core->rst_gpio, 0);
-> > +	}
-> 
-> 
+Hi Walter,
+
+This would be great to have!
+But I am concerned about these series that port KASAN tests to KUNIT:
+https://lkml.org/lkml/2020/4/17/1144
+I suspect it will be one large merge conflict. Not sure what is the
+proper way to resovle this. I've added authors to CC.
+
+
+> +#ifdef CONFIG_KASAN_GENERIC
+>         ptr[size] = 'x';
+> +#else
+> +       ptr[size + 5] = 'x';
+> +#endif
+> +
+
+For this particular snippet I think we can reduce amount of idef'ery
+and amount of non-compiled code in each configuration with something
+like:
+
+  ptr[size + 5] = 'x';
+  if (ENABLED(CONFIG_KASAN_GENERIC))
+      ptr[size] = 'x';
+
+One check runs always (it should pass in both configs, right?). The
+only only in GENERIC, but it's C-level if rather than preprocessor.
+KUNIT should make 2 bugs per test easily expressable (and testable).
+
+
+
+
+>         kfree(ptr);
+>  }
+>
+> @@ -92,7 +97,12 @@ static noinline void __init kmalloc_pagealloc_oob_right(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         ptr[size] = 0;
+> +#else
+> +       ptr[size + 6] = 0;
+> +#endif
+> +
+>         kfree(ptr);
+>  }
+>
+> @@ -162,7 +172,11 @@ static noinline void __init kmalloc_oob_krealloc_more(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         ptr2[size2] = 'x';
+> +#else
+> +       ptr2[size2 + 13] = 'x';
+> +#endif
+>         kfree(ptr2);
+>  }
+>
+> @@ -180,7 +194,12 @@ static noinline void __init kmalloc_oob_krealloc_less(void)
+>                 kfree(ptr1);
+>                 return;
+>         }
+> +
+> +#ifdef CONFIG_KASAN_GENERIC
+>         ptr2[size2] = 'x';
+> +#else
+> +       ptr2[size2 + 2] = 'x';
+> +#endif
+>         kfree(ptr2);
+>  }
+>
+> @@ -216,7 +235,11 @@ static noinline void __init kmalloc_oob_memset_2(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         memset(ptr+7, 0, 2);
+> +#else
+> +       memset(ptr+15, 0, 2);
+> +#endif
+>         kfree(ptr);
+>  }
+>
+> @@ -232,7 +255,11 @@ static noinline void __init kmalloc_oob_memset_4(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         memset(ptr+5, 0, 4);
+> +#else
+> +       memset(ptr+15, 0, 4);
+> +#endif
+>         kfree(ptr);
+>  }
+>
+> @@ -249,7 +276,11 @@ static noinline void __init kmalloc_oob_memset_8(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         memset(ptr+1, 0, 8);
+> +#else
+> +       memset(ptr+15, 0, 8);
+> +#endif
+>         kfree(ptr);
+>  }
+>
+> @@ -265,7 +296,11 @@ static noinline void __init kmalloc_oob_memset_16(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         memset(ptr+1, 0, 16);
+> +#else
+> +       memset(ptr+15, 0, 16);
+> +#endif
+>         kfree(ptr);
+>  }
+>
+> @@ -281,7 +316,11 @@ static noinline void __init kmalloc_oob_in_memset(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         memset(ptr, 0, size+5);
+> +#else
+> +       memset(ptr, 0, size+7);
+> +#endif
+>         kfree(ptr);
+>  }
+>
+> @@ -415,7 +454,11 @@ static noinline void __init kmem_cache_oob(void)
+>                 return;
+>         }
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+>         *p = p[size];
+> +#else
+> +       *p = p[size + 8];
+> +#endif
+>         kmem_cache_free(cache, p);
+>         kmem_cache_destroy(cache);
+>  }
+> @@ -497,6 +540,11 @@ static noinline void __init copy_user_test(void)
+>         char __user *usermem;
+>         size_t size = 10;
+>         int unused;
+> +#ifdef CONFIG_KASAN_GENERIC
+> +       size_t oob_size = 1;
+> +#else
+> +       size_t oob_size = 7;
+> +#endif
+>
+>         kmem = kmalloc(size, GFP_KERNEL);
+>         if (!kmem)
+> @@ -512,25 +560,25 @@ static noinline void __init copy_user_test(void)
+>         }
+>
+>         pr_info("out-of-bounds in copy_from_user()\n");
+> -       unused = copy_from_user(kmem, usermem, size + 1);
+> +       unused = copy_from_user(kmem, usermem, size + oob_size);
+>
+>         pr_info("out-of-bounds in copy_to_user()\n");
+> -       unused = copy_to_user(usermem, kmem, size + 1);
+> +       unused = copy_to_user(usermem, kmem, size + oob_size);
+>
+>         pr_info("out-of-bounds in __copy_from_user()\n");
+> -       unused = __copy_from_user(kmem, usermem, size + 1);
+> +       unused = __copy_from_user(kmem, usermem, size + oob_size);
+>
+>         pr_info("out-of-bounds in __copy_to_user()\n");
+> -       unused = __copy_to_user(usermem, kmem, size + 1);
+> +       unused = __copy_to_user(usermem, kmem, size + oob_size);
+>
+>         pr_info("out-of-bounds in __copy_from_user_inatomic()\n");
+> -       unused = __copy_from_user_inatomic(kmem, usermem, size + 1);
+> +       unused = __copy_from_user_inatomic(kmem, usermem, size + oob_size);
+>
+>         pr_info("out-of-bounds in __copy_to_user_inatomic()\n");
+> -       unused = __copy_to_user_inatomic(usermem, kmem, size + 1);
+> +       unused = __copy_to_user_inatomic(usermem, kmem, size + oob_size);
+>
+>         pr_info("out-of-bounds in strncpy_from_user()\n");
+> -       unused = strncpy_from_user(kmem, usermem, size + 1);
+> +       unused = strncpy_from_user(kmem, usermem, size + oob_size);
+>
+>         vm_munmap((unsigned long)usermem, PAGE_SIZE);
+>         kfree(kmem);
 > --
-> Luca
-
-Regards
-Vishal Sagar
-
+> 2.18.0
+>
+> --
+> You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200421014007.6012-1-walter-zh.wu%40mediatek.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
