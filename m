@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 767C21B294F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:19:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C4971B2950
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:19:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DWvSZ4VUYybrQQlaUuBhr+5aGtY9eSsFjEN0ZUK499U=; b=tAE2dNbhFJFVyj
-	C8g2ws3Psbf/YF94okXCNpmURAaKlfhEkLQiS0+X+VhJbnTcVJjA2LnAwTlzsQocjMd6vzd10nUEG
-	hHPi+yRx4g2KgA6IvS1amJ17qtAMNrFFv61M8GLB0K11IUp/ySCq0RguTs3eyvBbbSRhRqERuQPZl
-	GhTtbmWXavtMulWbXFWTEbAzWaRQr3I2vVQ0Q9MQ2GYgPgOyc/zUd17unAwoIMeJEHK8ynuphu+85
-	0X7UwQaF4LAdKXUPB52yyRIR1tyaE9N7lYPdTjjrHW8VQ0PTMurBUxn521IWRY3DZP3bcoX5rLilf
-	YbXBsHGw8FMpwh6xNjjQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FYOPXmyBMbtYRb51QOrZfb7ewfa9iWsxuuu8Y/1AO/k=; b=O3GN1jtTrin76h
+	dm7kb40QJB5WytAjMp6sYRww22Q2xaoJo/074sQRi7KQs8TE7QBoZiNFGvujoeUegcrhMSirTnvl/
+	Fgdp1PvKwIB0hVLU9l+udvOgSygF32xgWDVN/cAGN0ouyCqHScBMtCY0J8wzHCtLrJ+pC/5uLLcnL
+	LPnr36nItjaRQADaGJslj96I6YiPS+dDxtYpFJPKfwgv610ih4mwTOdNomp1P3P39zEP4/3rOmax5
+	Y3r0rVRwIMFq30AVwqfh63OCeYTSBg+Se/jcUW2ET2942EGr64pDNdDbII0gv/Xtqe+ACdvAYv6Ju
+	rqZhQjaH6veYrQmAUqZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtk2-0001Hu-1y; Tue, 21 Apr 2020 14:19:14 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jQtkP-0001XM-02; Tue, 21 Apr 2020 14:19:37 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtjn-0001FS-Ip
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:19:02 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j1so11237897wrt.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 07:18:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XZzndPnYtYbbEF/KUZVNIJz+EcXy0p75DzfqczwlSe8=;
- b=kgLmPLwxUl5/Ma+EDAS7OwNd58zyhTcO0jxcdmbufGrysR7FvlZ9M7c2Vqs4uYk//I
- NtCsPb+nsu2eUmQfKxg/RNmFIlU8jpRgqkqImtzJnDsA4j1bIJaxTVEnJDJcfRdrNS+b
- QcY172YKngn+A8fR6B4Rw1TUti4r0pKIcRjzANa3rOsg/9O1hNm3hzTsu0mxBGaFAlnu
- HreuzgMaUwKocNly5bo3jhPzAU7Ax2qiBcJh3EoAi3de3PVLgISOxVGSoFvxo9v5giVM
- +9LIeVtljWhNV3LEbQ0Tb06ND/qEGg6kIH3Y0Bp8SeWeHcMs74C30d9mjAZDmxmzAjQd
- KpHg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XZzndPnYtYbbEF/KUZVNIJz+EcXy0p75DzfqczwlSe8=;
- b=RI0b3XF4iKztQneIoZwlxJEOkS02JJ9PxZEW9FF34lkLfti0DXaSLY3XdM+f30V81m
- tng4KD7wfGWAX/jFn4EWrZcDaM5ScR9MZHIlEf7kN65/0E3noPCpp1dBbwKJW4y3lEcT
- 56RljDEV9mXUTEju43RKhlMakQx6fWOD1pTiZdxpYONOHcKSLVFAJUqSNA9ulhaetdGB
- 3wKDdLvZBr7Ad1g/cffCB+zgkYsBLZ8rOirt0xznAuE6M5gEA4aKRglPygaKgWO3cHX0
- nCuer/2OFDGaO/veuyfKnM32Ssp0MIL+ARwJKZ5wSKiG/9/aLm0/XuwekaYByXgxyM8l
- ASLA==
-X-Gm-Message-State: AGi0PuautIST9Vk2uPH9OVU/ILWfFmI12P2sT6UnFnze5vrnWYcOAGEa
- fiaDEjQ4UVE90WDtmJU1ZXHdahVcKwmi/UK26bk=
-X-Google-Smtp-Source: APiQypJ4ai2ZaRvEMbuZeelgSbTJL39HJnQ583AlT1gQuWTbnZsztUo86fQBN9mjsQkbukzDpzbexYNN1zF/4xAZ5dY=
-X-Received: by 2002:a5d:45cf:: with SMTP id b15mr23682887wrs.78.1587478736843; 
- Tue, 21 Apr 2020 07:18:56 -0700 (PDT)
+ id 1jQtk4-0001QR-Up
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:19:18 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 37F28F4CD612CA17545A;
+ Tue, 21 Apr 2020 22:19:09 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.487.0; Tue, 21 Apr 2020
+ 22:18:59 +0800
+Subject: Re: [PATCH v1 5/6] mm: tlb: Provide flush_*_tlb_range wrappers
+To: Peter Zijlstra <peterz@infradead.org>
+References: <20200403090048.938-1-yezhenyu2@huawei.com>
+ <20200403090048.938-6-yezhenyu2@huawei.com>
+ <20200420120916.GE20696@hirez.programming.kicks-ass.net>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <8f6e877c-1462-441b-23ec-2a6bd3308099@huawei.com>
+Date: Tue, 21 Apr 2020 22:18:57 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-References: <20200304121943.28989-1-daniel.baluta@oss.nxp.com>
- <20200304121943.28989-2-daniel.baluta@oss.nxp.com>
- <CAPDyKFp6KLuuuVFcEWGxn5NkuDSkhM-MjRiiYj_zC4mFxhOBag@mail.gmail.com>
-In-Reply-To: <CAPDyKFp6KLuuuVFcEWGxn5NkuDSkhM-MjRiiYj_zC4mFxhOBag@mail.gmail.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Tue, 21 Apr 2020 17:18:45 +0300
-Message-ID: <CAEnQRZDX8PZ7V+c8zfoxK-+oGp2pt8N3oTAC6=Ps1W33LGY7WA@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 1/2] PM / domains: Introduce multi PM domains
- helpers
-To: Ulf Hansson <ulf.hansson@linaro.org>
+In-Reply-To: <20200420120916.GE20696@hirez.programming.kicks-ass.net>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_071859_667703_CC474E48 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_071917_184153_E6D4C373 
+X-CRM114-Status: GOOD (  13.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [daniel.baluta[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,77 +66,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Len Brown <len.brown@intel.com>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Fabio Estevam <festevam@gmail.com>,
- Anson Huang <anson.huang@nxp.com>, Linux PM <linux-pm@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Baluta <daniel.baluta@oss.nxp.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Olaru <paul.olaru@nxp.com>, Kevin Hilman <khilman@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Shawn Guo <shawnguo@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
+ guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
+ yuzhao@google.com, maz@kernel.org, steven.price@arm.com, arm@kernel.org,
+ Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com, npiggin@gmail.com,
+ zhangshaokun@hisilicon.com, broonie@kernel.org, rostedt@goodmis.org,
+ prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, xiexiangyou@huawei.com,
+ linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
+ akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 5:01 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Wed, 4 Mar 2020 at 13:20, Daniel Baluta <daniel.baluta@oss.nxp.com> wrote:
-> >
-> > From: Daniel Baluta <daniel.baluta@nxp.com>
-> >
-> > This patch introduces helpers support for multi PM domains.
-> >
-> > API consists of:
-> >
-> > 1) dev_multi_pm_attach - powers up all PM domains associated with a given
-> > device. Because we can attach one PM domain per device, we create
-> > virtual devices (children of initial device) and associate PM domains
-> > one per virtual device.
-> >
-> > 2) dev_multi_pm_detach - detaches all virtual devices from PM domains
-> > attached with.
-> >
-> > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
->
-> First, apologize for the delay.
->
-> In general I don't mind adding helpers that can be used to decrease
-> open coding. However, in this case, I wonder how useful the helpers
-> would really be.
->
-> More precisely, according to the information I have, a device may not
-> always need all of its PM domains to be turned on together, but
-> perhaps only a subset of them. Depending on the current use case that
-> is running.
->
-> Of course, some cases follow your expectations, but as stated, some
-> others do not.
->
-> Do you have an idea how many users that would be able to switch to
-> these new APIs as of today?
+Hi Peter,
 
-IMX Sound Open Firmware driver will immediately be available
-to use this new API.
+On 2020/4/20 20:09, Peter Zijlstra wrote:
+> On Fri, Apr 03, 2020 at 05:00:47PM +0800, Zhenyu Ye wrote:
+>> This patch provides flush_{pte|pmd|pud|p4d}_tlb_range() in generic
+>> code, which are expressed through the mmu_gather APIs.  These
+>> interface set tlb->cleared_* and finally call tlb_flush(), so we
+>> can do the tlb invalidation according to the information in
+>> struct mmu_gather.
+>>
+>> Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+>> ---
+>>  include/asm-generic/pgtable.h | 12 +++++++--
+>>  mm/pgtable-generic.c          | 50 +++++++++++++++++++++++++++++++++++
+>>  2 files changed, 60 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
+>> index e2e2bef07dd2..2bedeee94131 100644
+>> --- a/include/asm-generic/pgtable.h
+>> +++ b/include/asm-generic/pgtable.h
+>> @@ -1160,11 +1160,19 @@ static inline int pmd_free_pte_page(pmd_t *pmd, unsigned long addr)
+>>   * invalidate the entire TLB which is not desitable.
+>>   * e.g. see arch/arc: flush_pmd_tlb_range
+>>   */
+>> -#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
+>> -#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
+>> +extern void flush_pte_tlb_range(struct vm_area_struct *vma,
+>> +				unsigned long addr, unsigned long end);
+>> +extern void flush_pmd_tlb_range(struct vm_area_struct *vma,
+>> +				unsigned long addr, unsigned long end);
+>> +extern void flush_pud_tlb_range(struct vm_area_struct *vma,
+>> +				unsigned long addr, unsigned long end);
+>> +extern void flush_p4d_tlb_range(struct vm_area_struct *vma,
+>> +				unsigned long addr, unsigned long end);
+>>  #else
+>> +#define flush_pte_tlb_range(vma, addr, end)	BUILD_BUG()
+>>  #define flush_pmd_tlb_range(vma, addr, end)	BUILD_BUG()
+>>  #define flush_pud_tlb_range(vma, addr, end)	BUILD_BUG()
+>> +#define flush_p4d_tlb_range(vma, addr, end)	BUILD_BUG()
+>>  #endif
+>>  #endif
+> 
+> Ideally you'd make __HAVE_ARCH_FLUSH_PMD_TLB_RANGE go away. Power
+> certainly doesnt need it with the below.
+> 
 
-https://elixir.bootlin.com/linux/latest/source/sound/soc/sof/imx/imx8.c#L221
+However, arch `arc` also uses __HAVE_ARCH_FLUSH_PMD_TLB_RANGE :
 
-Aside, from that there are the ACM clock modules for i.MX8QXP / i.MX8QM. Also,
-looking at our internal tree there are XUVI, VPU, DPU drivers that need multi
-power domain support.
+grep -nr __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
+	mm/pgtable-generic.c:104:#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
+	mm/pgtable-generic.c:152:#endif /* __HAVE_ARCH_FLUSH_PMD_TLB_RANGE */
+	include/asm-generic/pgtable.h:1153:#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
+	arch/powerpc/include/asm/book3s/64/tlbflush.h:49:#define __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
+	arch/arc/include/asm/hugepage.h:69:#define __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
 
-Anson, Aisheng do you have a number of users on your side for
-multi power domain?
+So I am not sure if we can remove it.
 
-thanks,
-daniel.
+And if we remove the __HAVE_ARCH_FLUSH_PMD_TLB_RANGE, how to ensure not
+redefine flush_pXX_tlb_range() ?
+
+>> diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
+>> index 3d7c01e76efc..0f5414a4a2ec 100644
+>> --- a/mm/pgtable-generic.c
+>> +++ b/mm/pgtable-generic.c
+>> @@ -101,6 +101,56 @@ pte_t ptep_clear_flush(struct vm_area_struct *vma, unsigned long address,
+>>  
+>>  #ifdef CONFIG_TRANSPARENT_HUGEPAGE
+>>  
+>> +#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
+>> +void flush_pte_tlb_range(struct vm_area_struct *vma,
+>> +			 unsigned long addr, unsigned long end)
+>> +{
+>> +	struct mmu_gather tlb;
+>> +
+>> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+>> +	tlb_start_vma(&tlb, vma);
+>> +	tlb_set_pte_range(&tlb, addr, end - addr);
+>> +	tlb_end_vma(&tlb, vma);
+>> +	tlb_finish_mmu(&tlb, addr, end);
+>> +}
+>> +
+>> +void flush_pmd_tlb_range(struct vm_area_struct *vma,
+>> +			 unsigned long addr, unsigned long end)
+>> +{
+>> +	struct mmu_gather tlb;
+>> +
+>> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+>> +	tlb_start_vma(&tlb, vma);
+>> +	tlb_set_pmd_range(&tlb, addr, end - addr);
+>> +	tlb_end_vma(&tlb, vma);
+>> +	tlb_finish_mmu(&tlb, addr, end);
+>> +}
+>> +
+>> +void flush_pud_tlb_range(struct vm_area_struct *vma,
+>> +			 unsigned long addr, unsigned long end)
+>> +{
+>> +	struct mmu_gather tlb;
+>> +
+>> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+>> +	tlb_start_vma(&tlb, vma);
+>> +	tlb_set_pud_range(&tlb, addr, end - addr);
+>> +	tlb_end_vma(&tlb, vma);
+>> +	tlb_finish_mmu(&tlb, addr, end);
+>> +}
+>> +
+>> +void flush_p4d_tlb_range(struct vm_area_struct *vma,
+>> +			 unsigned long addr, unsigned long end)
+>> +{
+>> +	struct mmu_gather tlb;
+>> +
+>> +	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+>> +	tlb_start_vma(&tlb, vma);
+>> +	tlb_set_p4d_range(&tlb, addr, end - addr);
+>> +	tlb_end_vma(&tlb, vma);
+>> +	tlb_finish_mmu(&tlb, addr, end);
+>> +}
+>> +#endif /* __HAVE_ARCH_FLUSH_PMD_TLB_RANGE */
+> 
+> You're nowhere near lazy enough:
+> 
+> #define FLUSH_Pxx_TLB_RANGE(_pxx) \
+> void flush_##_pxx##_tlb_range(struct vm_area_struct *vma, \
+> 			      unsigned long addr, unsigned long end) \
+> { \
+> 	struct mmu_gather tlb; \
+> 	\
+> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end); \
+> 	tlb_start_vma(&tlb, vma); \
+> 	tlb_flush_##_pxx##_range(&tlb, addr, end-addr); \
+> 	tlb_end_vma(&tlb, vma); \
+> 	tlb_finish_mmu(&tlb, addr, end); \
+> }
+> 
+> FLUSH_Pxx_TLB_RANGE(pte)
+> FLUSH_Pxx_TLB_RANGE(pmd)
+> FLUSH_Pxx_TLB_RANGE(pud)
+> FLUSH_Pxx_TLB_RANGE(p4d)
+> 
+> 
+> .
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
