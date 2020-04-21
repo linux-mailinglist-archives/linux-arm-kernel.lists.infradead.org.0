@@ -2,85 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 975CF1B28E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:01:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10BE11B28F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wORCemnW36ca6VaHUZYhCZ1lmbPsZfbh1tLMuZnOOOU=; b=lg1AP94tU8zFD9
-	ImUn8MItFXNPsoONNrP94otTtsI+o2Kke37ghl961UIX6P7BCUIow+dXFE+W7sBm5vyfL8XuzDOwx
-	y4wgQwEaa33hpgiE12AUMwnNdfKbp3LcsHbaLPpS95BDXYoSfb/s+krEUcVhNwKhKbwwdLD7iQoPW
-	Zad9kVRol/cnrnKtKPIfCpK0/Kqn5rDaBYahmjlK2UZ+kMl+IaXZdk8xIsDHxuqGntgZtVbiVJhYZ
-	VckG1Ua/2ZiSE0E0oqYsdIhrOjrEu2DvEy/Cfn5TEkNrwPnukaHNkHQgXfbWFyC49QSowz5S6YdRz
-	Li26/Uwj7WuRrDhapwkA==;
+	List-Owner; bh=jPAOIbEjGiW3VLg9L4JgP7kW8e51DwSrDJQQ/3u0g+Y=; b=FpN8Gh3ZgUE6u5
+	yOEWmnIjSG+H/M3WuqPhNkSVcpjPYymSqTV+TAO9f8Kzzq13YQQHI5+LeclSkoLpiz1WBfsDuivdT
+	imuhnuC/VPWnzb4oCM1jagRTdsVGtCh0JtA94bOCJ5im7NJMbgwlIwI/f/ZcaNkVg0CBFyNk0gNEg
+	eP5ZDcIskGFmUCebp3+5VIAfCqs2x8dtHd+m9j6NyqHEBavALk1sWoMuo2OfmbIh80cH0t82VJEHV
+	DiCf6nUXUvV6qrZdjh/sOd4WvDU/gBsdqBP7Cbj4OBwAkL6QHxh2s6fPRnNqnog867dteOTS4zteU
+	6aHcHsxlvD8U8NwKtFMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtSK-0004Xu-4M; Tue, 21 Apr 2020 14:00:56 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1jQtTs-0005Ry-G2; Tue, 21 Apr 2020 14:02:32 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtSA-0004Ww-QY
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:00:49 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id z1so8448048vsn.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 07:00:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3ufO0oc55SP4ppmrO49IkerUiLNfh37ywo2Lik40Adk=;
- b=kCcz+VvyC/0IdI5gEKgvRf59mDcFEWTu/D1Ov9OACQKF1YEkdo/czGTGb09gPZe9nz
- CfsRp2cuik7vLYUVXc/zRZIz/M1iAydX8PM+/hsH0pTD5HFXabDTfMSk9eFgJkf3ycO7
- HwuB5lGEuv0muapa9Iicl4fVKvJVOBKTUwZNnrjM1HewRbx4nfgTaatf1/BoG80s61zW
- zUZqNfnUAgdZ4NNjRfNyQ7RzgUiJnjKAU5TERSmQGAsn+H+9jQpQp0sn66wVsw8QKIBy
- 9i+kJngnYZVql2Yc/4MY3Wcxtw20Jw09IHP0gKmV2Uy8DOQ/gPTUZZAHunscQ2NmHS2m
- LbgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3ufO0oc55SP4ppmrO49IkerUiLNfh37ywo2Lik40Adk=;
- b=Iryr+ggbiiBJrFdhpwXY1XwIO5l+UxbsazqDJSgwqFjikXM8POHGyIqbo18LjDudQo
- mgiMwQNelNYJxbhp1lEFcq69gUwymEIsNHk8OtzXeKthMRzSfOYedyA0jQB4i4WDph+0
- L4zreWkygAsSkyHP5sKxCmO8vJNt5fdU4PW9WXW/prqJhSKfQRqtSs1WYeMuDDBeiV0N
- UFTYN22RPZsHOMSwVatO+z0FpMdusLu29e7SoPOJnqMJISp/QWxsUbgpY56WGiV4zc0+
- zBYEiLxNpQPcykSsgRfVrRYbrjqlFApheP3DQSKOrbH3WNvlbLjKJebkEdDCAqjXxrlw
- 8TeQ==
-X-Gm-Message-State: AGi0PualxJx3hYwBbCIgTkvm+6Jd7hgYAdVeTlszCN2TNjmC72voulYD
- vwHyVEvsOdjudRTeFBebPhXCzpKo9cFxE/8DboWAVPXFqMg=
-X-Google-Smtp-Source: APiQypIQv+t4aZS0+jM79vzmZ4/jT5P5I5xj04qZzFmgC4QPVEnzYfRtjHR37+JUUyx2j+WbklBp5MY8qqFQMsGI4Pk=
-X-Received: by 2002:a67:8b09:: with SMTP id n9mr15252066vsd.191.1587477645532; 
- Tue, 21 Apr 2020 07:00:45 -0700 (PDT)
+ id 1jQtTe-0005QQ-1Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:02:20 +0000
+Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03LE222d073765
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 21 Apr 2020 10:02:17 -0400
+Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 30gmu859h6-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 21 Apr 2020 10:02:16 -0400
+Received: from localhost
+ by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
+ Tue, 21 Apr 2020 15:01:30 +0100
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Tue, 21 Apr 2020 15:01:21 +0100
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 03LE24dv53608476
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 21 Apr 2020 14:02:04 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 0AFD5A4057;
+ Tue, 21 Apr 2020 14:02:04 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 2FEB3A405B;
+ Tue, 21 Apr 2020 14:02:03 +0000 (GMT)
+Received: from thinkpad (unknown [9.145.65.41])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Tue, 21 Apr 2020 14:02:03 +0000 (GMT)
+Date: Tue, 21 Apr 2020 16:02:01 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Mike Kravetz <mike.kravetz@oracle.com>
+Subject: Re: [PATCH v3 0/4] Clean up hugetlb boot command line processing
+In-Reply-To: <20200417185049.275845-1-mike.kravetz@oracle.com>
+References: <20200417185049.275845-1-mike.kravetz@oracle.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <20200304121943.28989-1-daniel.baluta@oss.nxp.com>
- <20200304121943.28989-2-daniel.baluta@oss.nxp.com>
-In-Reply-To: <20200304121943.28989-2-daniel.baluta@oss.nxp.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 21 Apr 2020 16:00:09 +0200
-Message-ID: <CAPDyKFp6KLuuuVFcEWGxn5NkuDSkhM-MjRiiYj_zC4mFxhOBag@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 1/2] PM / domains: Introduce multi PM domains
- helpers
-To: Daniel Baluta <daniel.baluta@oss.nxp.com>
+X-TM-AS-GCONF: 00
+x-cbid: 20042114-4275-0000-0000-000003C3FB90
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20042114-4276-0000-0000-000038D9805D
+Message-Id: <20200421160201.0ddb9763@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-21_05:2020-04-20,
+ 2020-04-21 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0
+ priorityscore=1501 spamscore=0 lowpriorityscore=0 adultscore=0
+ impostorscore=0 mlxscore=0 malwarescore=0 suspectscore=0 mlxlogscore=999
+ clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004210108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_070046_899969_5A42DAAE 
-X-CRM114-Status: GOOD (  26.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_070218_522466_7743E086 
+X-CRM114-Status: GOOD (  29.12  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,225 +101,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Len Brown <len.brown@intel.com>,
- alsa-devel@alsa-project.org, Linux PM <linux-pm@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Kevin Hilman <khilman@kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, ranjani.sridharan@linux.intel.com,
- Daniel Baluta <daniel.baluta@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, paul.olaru@nxp.com,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- shengjiu.wang@nxp.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Mar 2020 at 13:20, Daniel Baluta <daniel.baluta@oss.nxp.com> wrote:
->
-> From: Daniel Baluta <daniel.baluta@nxp.com>
->
-> This patch introduces helpers support for multi PM domains.
->
-> API consists of:
->
-> 1) dev_multi_pm_attach - powers up all PM domains associated with a given
-> device. Because we can attach one PM domain per device, we create
-> virtual devices (children of initial device) and associate PM domains
-> one per virtual device.
->
-> 2) dev_multi_pm_detach - detaches all virtual devices from PM domains
-> attached with.
->
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+On Fri, 17 Apr 2020 11:50:45 -0700
+Mike Kravetz <mike.kravetz@oracle.com> wrote:
 
-First, apologize for the delay.
+> v3 -
+>    Used weak attribute method of defining arch_hugetlb_valid_size.
+>      This eliminates changes to arch specific hugetlb.h files (Peter)
+>    Updated documentation (Peter, Randy)
+>    Fixed handling of implicitly specified gigantic page preallocation
+>      in existing code and removed documentation of such.  There is now
+>      no difference between handling of gigantic and non-gigantic pages.
+>      (Peter, Nitesh).
+>      This requires the most review as there is a small change to
+>      undocumented behavior.  See patch 4 commit message for details.
+>    Added Acks and Reviews (Mina, Peter)
+> 
+> v2 -
+>    Fix build errors with patch 1 (Will)
+>    Change arch_hugetlb_valid_size arg to unsigned long and remove
+>      irrelevant 'extern' keyword (Christophe)
+>    Documentation and other misc changes (Randy, Christophe, Mina)
+>    Do not process command line options if !hugepages_supported()
+>      (Dave, but it sounds like we may want to additional changes to
+>       hugepages_supported() for x86?  If that is needed I would prefer
+>       a separate patch.)
+> 
+> Longpeng(Mike) reported a weird message from hugetlb command line processing
+> and proposed a solution [1].  While the proposed patch does address the
+> specific issue, there are other related issues in command line processing.
+> As hugetlbfs evolved, updates to command line processing have been made to
+> meet immediate needs and not necessarily in a coordinated manner.  The result
+> is that some processing is done in arch specific code, some is done in arch
+> independent code and coordination is problematic.  Semantics can vary between
+> architectures.
+> 
+> The patch series does the following:
+> - Define arch specific arch_hugetlb_valid_size routine used to validate
+>   passed huge page sizes.
+> - Move hugepagesz= command line parsing out of arch specific code and into
+>   an arch independent routine.
+> - Clean up command line processing to follow desired semantics and
+>   document those semantics.
+> 
+> [1] https://lore.kernel.org/linux-mm/20200305033014.1152-1-longpeng2@huawei.com
+> 
+> Mike Kravetz (4):
+>   hugetlbfs: add arch_hugetlb_valid_size
+>   hugetlbfs: move hugepagesz= parsing to arch independent code
+>   hugetlbfs: remove hugetlb_add_hstate() warning for existing hstate
+>   hugetlbfs: clean up command line processing
+> 
+>  .../admin-guide/kernel-parameters.txt         |  40 ++--
+>  Documentation/admin-guide/mm/hugetlbpage.rst  |  35 ++++
+>  arch/arm64/mm/hugetlbpage.c                   |  30 +--
+>  arch/powerpc/mm/hugetlbpage.c                 |  30 +--
+>  arch/riscv/mm/hugetlbpage.c                   |  24 +--
+>  arch/s390/mm/hugetlbpage.c                    |  24 +--
+>  arch/sparc/mm/init_64.c                       |  43 +---
+>  arch/x86/mm/hugetlbpage.c                     |  23 +--
+>  include/linux/hugetlb.h                       |   2 +-
+>  mm/hugetlb.c                                  | 190 +++++++++++++++---
+>  10 files changed, 271 insertions(+), 170 deletions(-)
+> 
 
-In general I don't mind adding helpers that can be used to decrease
-open coding. However, in this case, I wonder how useful the helpers
-would really be.
+Looks good and works fine for s390, thanks for cleaning up!
 
-More precisely, according to the information I have, a device may not
-always need all of its PM domains to be turned on together, but
-perhaps only a subset of them. Depending on the current use case that
-is running.
+Acked-by: Gerald Schaefer <gerald.schaefer@de.ibm.com> # s390
 
-Of course, some cases follow your expectations, but as stated, some
-others do not.
-
-Do you have an idea how many users that would be able to switch to
-these new APIs as of today?
-
-Kind regards
-Uffe
-
-> ---
->  drivers/base/power/common.c | 93 +++++++++++++++++++++++++++++++++++++
->  include/linux/pm_domain.h   | 19 ++++++++
->  2 files changed, 112 insertions(+)
->
-> diff --git a/drivers/base/power/common.c b/drivers/base/power/common.c
-> index bbddb267c2e6..6d1f142833b1 100644
-> --- a/drivers/base/power/common.c
-> +++ b/drivers/base/power/common.c
-> @@ -228,3 +228,96 @@ void dev_pm_domain_set(struct device *dev, struct dev_pm_domain *pd)
->         device_pm_check_callbacks(dev);
->  }
->  EXPORT_SYMBOL_GPL(dev_pm_domain_set);
-> +
-> +/**
-> + * dev_multi_pm_attach - power up device associated power domains
-> + * @dev: The device used to lookup the PM domains
-> + *
-> + * Parse device's OF node to find all PM domains specifiers. For each power
-> + * domain found, create a virtual device and associate it with the
-> + * current power domain.
-> + *
-> + * This function should typically be invoked by a driver during the
-> + * probe phase, in the case its device requires power management through
-> + * multiple PM domains.
-> + *
-> + * Returns a pointer to @dev_multi_pm_domain_data if successfully attached PM
-> + * domains, NULL when the device doesn't need a PM domain or when single
-> + * power-domains exists for it, else an ERR_PTR() in case of
-> + * failures.
-> + */
-> +struct dev_multi_pm_domain_data *dev_multi_pm_attach(struct device *dev)
-> +{
-> +       struct dev_multi_pm_domain_data *mpd, *retp;
-> +       int num_domains;
-> +       int i;
-> +
-> +       num_domains = of_count_phandle_with_args(dev->of_node, "power-domains",
-> +                                                "#power-domain-cells");
-> +       if (num_domains < 2)
-> +               return NULL;
-> +
-> +       mpd = devm_kzalloc(dev, GFP_KERNEL, sizeof(*mpd));
-> +       if (!mpd)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       mpd->dev = dev;
-> +       mpd->num_domains = num_domains;
-> +
-> +       mpd->virt_devs = devm_kmalloc_array(dev, mpd->num_domains,
-> +                                           sizeof(*mpd->virt_devs),
-> +                                           GFP_KERNEL);
-> +       if (!mpd->virt_devs)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       mpd->links = devm_kmalloc_array(dev, mpd->num_domains,
-> +                                       sizeof(*mpd->links), GFP_KERNEL);
-> +       if (!mpd->links)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       for (i = 0; i < mpd->num_domains; i++) {
-> +               mpd->virt_devs[i] = dev_pm_domain_attach_by_id(dev, i);
-> +               if (IS_ERR(mpd->virt_devs[i])) {
-> +                       retp = (struct dev_multi_pm_domain_data *)
-> +                               mpd->virt_devs[i];
-> +                       goto exit_unroll_pm;
-> +               }
-> +               mpd->links[i] = device_link_add(dev, mpd->virt_devs[i],
-> +                                               DL_FLAG_STATELESS |
-> +                                               DL_FLAG_PM_RUNTIME |
-> +                                               DL_FLAG_RPM_ACTIVE);
-> +               if (!mpd->links[i]) {
-> +                       retp = ERR_PTR(-ENOMEM);
-> +                       dev_pm_domain_detach(mpd->virt_devs[i], false);
-> +                       goto exit_unroll_pm;
-> +               }
-> +       }
-> +       return mpd;
-> +
-> +exit_unroll_pm:
-> +       while (--i >= 0) {
-> +               device_link_del(mpd->links[i]);
-> +               dev_pm_domain_detach(mpd->virt_devs[i], false);
-> +       }
-> +
-> +       return retp;
-> +}
-> +EXPORT_SYMBOL(dev_multi_pm_attach);
-> +
-> +/**
-> + * dev_multi_pm_detach - Detach a device from its PM domains.
-> + * Each multi power domain is attached to a virtual children device
-> + *
-> + * @mpd: multi power domains data, contains the association between
-> + * virtul device and PM domain
-> + */
-> +void dev_multi_pm_detach(struct dev_multi_pm_domain_data *mpd)
-> +{
-> +       int i;
-> +
-> +       for (i = 0; i < mpd->num_domains; i++) {
-> +               device_link_del(mpd->links[i]);
-> +               dev_pm_domain_detach(mpd->virt_devs[i], false);
-> +       }
-> +}
-> +EXPORT_SYMBOL(dev_multi_pm_detach);
-> diff --git a/include/linux/pm_domain.h b/include/linux/pm_domain.h
-> index 9ec78ee53652..5bcb35150af2 100644
-> --- a/include/linux/pm_domain.h
-> +++ b/include/linux/pm_domain.h
-> @@ -183,6 +183,13 @@ struct generic_pm_domain_data {
->         void *data;
->  };
->
-> +struct dev_multi_pm_domain_data {
-> +       struct device *dev; /* parent device */
-> +       struct device **virt_devs; /* virtual children links */
-> +       struct device_link **links; /*  links parent <-> virtual children */
-> +       int num_domains;
-> +};
-> +
->  #ifdef CONFIG_PM_GENERIC_DOMAINS
->  static inline struct generic_pm_domain_data *to_gpd_data(struct pm_domain_data *pdd)
->  {
-> @@ -369,18 +376,27 @@ struct generic_pm_domain *of_genpd_remove_last(struct device_node *np)
->
->  #ifdef CONFIG_PM
->  int dev_pm_domain_attach(struct device *dev, bool power_on);
-> +struct dev_multi_pm_domain_data *dev_multi_pm_attach(struct device *dev);
->  struct device *dev_pm_domain_attach_by_id(struct device *dev,
->                                           unsigned int index);
->  struct device *dev_pm_domain_attach_by_name(struct device *dev,
->                                             const char *name);
->  void dev_pm_domain_detach(struct device *dev, bool power_off);
->  int dev_pm_domain_start(struct device *dev);
-> +void dev_multi_pm_detach(struct dev_multi_pm_domain_data *mpd);
->  void dev_pm_domain_set(struct device *dev, struct dev_pm_domain *pd);
-> +
->  #else
->  static inline int dev_pm_domain_attach(struct device *dev, bool power_on)
->  {
->         return 0;
->  }
-> +
-> +struct dev_multi_pm_domain_data *dev_multi_pm_attach(struct device *dev)
-> +{
-> +       return NULL;
-> +}
-> +
->  static inline struct device *dev_pm_domain_attach_by_id(struct device *dev,
->                                                         unsigned int index)
->  {
-> @@ -396,6 +412,9 @@ static inline int dev_pm_domain_start(struct device *dev)
->  {
->         return 0;
->  }
-> +
-> +void dev_multi_pm_detach(struct dev_multi_pm_domain_data *mpd) {}
-> +
->  static inline void dev_pm_domain_set(struct device *dev,
->                                      struct dev_pm_domain *pd) {}
->  #endif
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
