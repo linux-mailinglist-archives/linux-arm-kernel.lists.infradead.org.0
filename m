@@ -2,85 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7F5E1B2925
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:13:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF391B292E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZAIinz8CIaybwIwhozcw1D2PDDhAlmkWp/CKBqmbxfc=; b=Nfhvs6Y4MYF1EBRRLI9ps0dP6
-	y+Qt7bUXVmi4ys5jzlUhF/u7pkGMIHvwmaUkNf65mJQP3lYpU3u+G453yQS7Tpwv59kG//AkRDywK
-	3bQSC7pZtp9LeedduH7KOfpANYeSlSckI29+2UPI3RRDb0PKrs9TJDq7hRT5A0JbxOPGKQFugWYNy
-	cxI3CKRqlVmgwF2iFrwzHxvmJsIKdBUYu58BaHCpRlv/CK1UTdkeC/9HZImHxw4se4s4Y63S/o/ue
-	sy7/NLMMoF1AI7R9ongMuT5C4W2G45YOOh5V63m/i6DrFCyZa1vckr+iZB4Axl45foENNS3I5o867
-	nDHa40XFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dsU57LOXrjv3bmLm2lbkNukK01Noanl49x6GX+Q1Zpc=; b=oP7P/MUZ6R5TyX7mjsQxYSUbNE
+	5GZcb2l1TkPzAeDBz/tJI85mhmU+0MHDNy9yhEfL/6RfYFXgkTgtxVlDagUfOAIyCmBgH3xNSpkCV
+	y3L2JgCmldkGBeY2Uu+RdULH5i8gjfFJdt34HlAnevN6DvN/TuB+hkO8ewPMqf1lzvf0XSoiCNHSX
+	f3XW2lP3TOM6NbxlpmY0CsbMSXIlA1lvtzoBwWYBDwChAUiDQYdoTL1bt6O10lIYFwAunhtMtp9B2
+	UnpbsRcAaovNBme7kxioVbOyQ2HF2jzN+26H68htqq65ONRoFxDf00batkGEAGGq++j004qu6q9KQ
+	MqSZUdqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQte5-0004rH-7U; Tue, 21 Apr 2020 14:13:05 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jQtgN-0007sd-QJ; Tue, 21 Apr 2020 14:15:27 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtdv-0004pY-4V
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:12:57 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03LECiI2017761;
- Tue, 21 Apr 2020 09:12:44 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587478364;
- bh=ElGkPbcupAqEe3NPdkjZhWdkXVXqVGDVIz5MNWLMAtU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Ub0lcGhWdSlaf4EXGPuUOmrlnFsfKFp6N/NxwQMMc+BoLNy4qEQmfZ0nWVK2QIC6k
- uMzRoUL/BhPysQUoyaTUUnmYIu8gDalon8mcC4Rq/3l0od2/qVwLFD7o1BjUiOdYpj
- ydFxtOUtLeliKdLOzvZ77cphfyqxCeDt/6cMlIuw=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03LECibO021697
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 21 Apr 2020 09:12:44 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 21
- Apr 2020 09:12:44 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 21 Apr 2020 09:12:44 -0500
-Received: from [10.250.70.56] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03LECh1l124572;
- Tue, 21 Apr 2020 09:12:43 -0500
-Subject: Re: [PATCH 1/2] remoteproc: Add prepare and unprepare ops
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20200417002036.24359-1-s-anna@ti.com>
- <20200417002036.24359-2-s-anna@ti.com> <20200421025254.GK1868936@builder.lan>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <2feee391-9f8e-410e-2a20-5b5bdd949940@ti.com>
-Date: Tue, 21 Apr 2020 09:12:43 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQtgB-0007rU-I3
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:15:17 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g13so14611748wrb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Apr 2020 07:15:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:subject:in-reply-to:date:message-id
+ :mime-version; bh=XMNV+Kczq0nA9dcErNoCOMd6R2vnUVAmmDTt4s05utw=;
+ b=ZV4DwxDzR7niBZe3R/Pmem48lFSMPZpe429hx55ySMuwjJ/ey0sP3KeD00iSoj/tfg
+ sSJLQURqzUNrI6jqva80Qy3uzTmatdC8IXuQC2NMjJKwMEFBAzkwl+hx2nmP5azkJQtW
+ AfEurxmKwaKwQlmFBbMB2D7VnKUkMGKCD86LyaePYqCDGmg9/Vjw2qN/8hS5Jcdp7VM7
+ ZmwwK8J+g4q19oRBd4r2/U9/jCQMirUE9fQiA7o4co/Hf7YS2PP84prIWzn0llzggAo2
+ 2tCdb1rN1UzkxRZwmjKofnbss/oeWv4ECkojnusd1SYCUHRjpcpiBBW+AoB9vueCrd/O
+ E4uA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=XMNV+Kczq0nA9dcErNoCOMd6R2vnUVAmmDTt4s05utw=;
+ b=rSUBsKDgNUUwke289mzSbzmPPOroP7NMwqZTsTxXJMw18SEmfi/dVeDrGau9N00bbN
+ zh6oJ+13YsFdrp5eaWS/8uS1XpGnoIY5S/9QqE2EVCbtDRwpYbIeHD69J1IcyHF1fETR
+ ailF7CgcTG+FIWPV2KYfyseFg56llcd5/K8ZrZILgbhYA14p0pz4MBOKOZ7Xjz5LwXMv
+ KodIszMBvWldke2oL3hxyMTpJrvJqRkn65ChfmDHbNCWr2QxhBagGmRA/xAoQiXO19Qq
+ VGfdLwaa13dlCAy8nxuw43iPjm+N8+mmWv1T502MKGrsg/HBZkX5CZq8j9rc8gPHTL2G
+ jR9Q==
+X-Gm-Message-State: AGi0PuZC09oV8E6DXc/8ul7z9sQPCpynCWOUaCdxAkjw7O0n1IuX5kTx
+ 5ZemGKhtJ03A2NOHbM+UeIIeKA==
+X-Google-Smtp-Source: APiQypKB2/otB/702T2JCDtluRFeUpsSB5O2TeMlFoB2ZJbS1yFix9xgffVtwXjP2pc3SMR7wHpbJA==
+X-Received: by 2002:adf:eecc:: with SMTP id a12mr23824779wrp.112.1587478513735; 
+ Tue, 21 Apr 2020 07:15:13 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id z76sm4221908wmc.9.2020.04.21.07.15.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Apr 2020 07:15:13 -0700 (PDT)
+References: <20200415095927.3780-1-christianshewitt@gmail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: chewitt <christianshewitt@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@baylibre.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] arm64: dts: meson-g12b-khadas-vim3: fix missing frddr_a
+ node
+In-reply-to: <20200415095927.3780-1-christianshewitt@gmail.com>
+Date: Tue, 21 Apr 2020 16:15:12 +0200
+Message-ID: <1jh7xdorgv.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20200421025254.GK1868936@builder.lan>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_071255_380028_FBF0AC96 
-X-CRM114-Status: GOOD (  21.08  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200421_071515_673007_F6B42D42 
+X-CRM114-Status: GOOD (  12.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,154 +98,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Loic Pallardy <loic.pallardy@st.com>, linux-remoteproc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/20/20 9:52 PM, Bjorn Andersson wrote:
-> On Thu 16 Apr 17:20 PDT 2020, Suman Anna wrote:
-> 
->> From: Loic Pallardy <loic.pallardy@st.com>
->>
->> On some SoC architecture, it is needed to enable HW like
->> clock, bus, regulator, memory region... before loading
->> co-processor firmware.
->>
->> This patch introduces prepare and unprepare ops to execute
->> platform specific function before firmware loading and after
->> stop execution.
->>
->> Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
->> Signed-off-by: Suman Anna <s-anna@ti.com>
->> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
->> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> 
-> Do we have an inbound user of these new oops?
 
-Yes, both the TI K3 R5F and DSP remoteproc drivers use these ops, the 
-patches are already on the lists.
+On Wed 15 Apr 2020 at 11:59, chewitt <christianshewitt@gmail.com> wrote:
 
-regards
-Suman
+> From: Christian Hewitt <christianshewitt@gmail.com>
+>
+> The frddr_a node was accidently deleted when creating a common dtsi for the
+> Khadas VIM3/VIM3L boards, preventing audio from working on the VIM3.
+>
+> Fixes: 4f26cc1c96c9 ("arm64: dts: khadas-vim3: move common nodes into meson-khadas-vim3.dtsi")
+> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 
-> 
-> Regards,
-> Bjorn
-> 
->> ---
->> v1:
->>   - Make the direct ops into inline helper functions in line
->>     with the comments on the MCU sync series (v1 comments).
->>     No change in functionality.
->>   - Picked up the Reviewed-by tags
->> v0: https://patchwork.kernel.org/patch/11456383/
->>
->>   drivers/remoteproc/remoteproc_core.c     | 15 ++++++++++++++-
->>   drivers/remoteproc/remoteproc_internal.h | 16 ++++++++++++++++
->>   include/linux/remoteproc.h               |  4 ++++
->>   3 files changed, 34 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
->> index d681eeb962b6..e38f627059ac 100644
->> --- a/drivers/remoteproc/remoteproc_core.c
->> +++ b/drivers/remoteproc/remoteproc_core.c
->> @@ -1394,12 +1394,19 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->>   		return ret;
->>   	}
->>   
->> +	/* Prepare rproc for firmware loading if needed */
->> +	ret = rproc_prepare_device(rproc);
->> +	if (ret) {
->> +		dev_err(dev, "can't prepare rproc %s: %d\n", rproc->name, ret);
->> +		goto disable_iommu;
->> +	}
->> +
->>   	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
->>   
->>   	/* Load resource table, core dump segment list etc from the firmware */
->>   	ret = rproc_parse_fw(rproc, fw);
->>   	if (ret)
->> -		goto disable_iommu;
->> +		goto unprepare_rproc;
->>   
->>   	/* reset max_notifyid */
->>   	rproc->max_notifyid = -1;
->> @@ -1433,6 +1440,9 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
->>   	kfree(rproc->cached_table);
->>   	rproc->cached_table = NULL;
->>   	rproc->table_ptr = NULL;
->> +unprepare_rproc:
->> +	/* release HW resources if needed */
->> +	rproc_unprepare_device(rproc);
->>   disable_iommu:
->>   	rproc_disable_iommu(rproc);
->>   	return ret;
->> @@ -1838,6 +1848,9 @@ void rproc_shutdown(struct rproc *rproc)
->>   	/* clean up all acquired resources */
->>   	rproc_resource_cleanup(rproc);
->>   
->> +	/* release HW resources if needed */
->> +	rproc_unprepare_device(rproc);
->> +
->>   	rproc_disable_iommu(rproc);
->>   
->>   	/* Free the copy of the resource table */
->> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
->> index b389dc79da81..101e6be8d240 100644
->> --- a/drivers/remoteproc/remoteproc_internal.h
->> +++ b/drivers/remoteproc/remoteproc_internal.h
->> @@ -64,6 +64,22 @@ struct resource_table *rproc_elf_find_loaded_rsc_table(struct rproc *rproc,
->>   struct rproc_mem_entry *
->>   rproc_find_carveout_by_name(struct rproc *rproc, const char *name, ...);
->>   
->> +static inline int rproc_prepare_device(struct rproc *rproc)
->> +{
->> +	if (rproc->ops->prepare)
->> +		return rproc->ops->prepare(rproc);
->> +
->> +	return 0;
->> +}
->> +
->> +static inline int rproc_unprepare_device(struct rproc *rproc)
->> +{
->> +	if (rproc->ops->unprepare)
->> +		return rproc->ops->unprepare(rproc);
->> +
->> +	return 0;
->> +}
->> +
->>   static inline
->>   int rproc_fw_sanity_check(struct rproc *rproc, const struct firmware *fw)
->>   {
->> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> index 38607107b7cb..b8481ac969f1 100644
->> --- a/include/linux/remoteproc.h
->> +++ b/include/linux/remoteproc.h
->> @@ -355,6 +355,8 @@ enum rsc_handling_status {
->>   
->>   /**
->>    * struct rproc_ops - platform-specific device handlers
->> + * @prepare:	prepare device for code loading
->> + * @unprepare:	unprepare device after stop
->>    * @start:	power on the device and boot it
->>    * @stop:	power off the device
->>    * @kick:	kick a virtqueue (virtqueue id given as a parameter)
->> @@ -373,6 +375,8 @@ enum rsc_handling_status {
->>    *		panic at least the returned number of milliseconds
->>    */
->>   struct rproc_ops {
->> +	int (*prepare)(struct rproc *rproc);
->> +	int (*unprepare)(struct rproc *rproc);
->>   	int (*start)(struct rproc *rproc);
->>   	int (*stop)(struct rproc *rproc);
->>   	void (*kick)(struct rproc *rproc, int vqid);
->> -- 
->> 2.26.0
->>
+Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
+Tested-by: Jerome Brunet <jbrunet@baylibre.com>
+
+> ---
+>  arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi | 4 ++++
+>  1 file changed, 4 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+> index c33e85fbdaba..c6c8caed8327 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+> @@ -154,6 +154,10 @@
+>  	clock-latency = <50000>;
+>  };
+>  
+> +&frddr_a {
+> +	status = "okay";
+> +};
+> +
+>  &frddr_b {
+>  	status = "okay";
+>  };
 
 
 _______________________________________________
