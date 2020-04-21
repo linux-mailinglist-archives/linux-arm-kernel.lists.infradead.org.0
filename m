@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C303A1B1BC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 04:17:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96E7E1B1BC1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 04:18:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m6TCsK+1j1uXcB39Ra/ToHMdhQBgLoOyyF61hntHH+w=; b=O2yNMfd/G2IKUS
-	IacEJuFVE1qDIoCzyxtirflV9xlPgVzDqBk/bYcGQoHnERXlNYPSYzHjMuWlql5pP91Anv21u7TIa
-	AF1N18eNMuNBxd/4VwWsMWajEi+SaxoSom6Hqbl05eyggnF/bzG67lLElUp0wUu6YDDeUeMDPLRUw
-	zqkhHgOFw2Vn6cZU3qcaRZnSid+JyRyKoASOoZIRU2FlzEQEfwiiyP3TU85e9lB+7PcrwLIFZ1R/8
-	lf1Z6lBrYbuPTlCpp0ofDK5brk/HXpOJaOt2RDotFZKZyoN6GZ5Fhv3cJpa/VrArgN0uskpU9i7sv
-	aZgaltabW1XWNBOtpmAg==;
+	List-Owner; bh=xM5wQbxtIDdm+9eAuB1Im5WBpID1KTeL4qPYGfzIt5k=; b=AynnV6rfyk0Qrl
+	f5fG5KJJy/QY4pZIFUYILLZ1wQON9k6OgVzySKIOSqt8p5E7Pz4LwTzZblrfnpaE6Mc7K58earsrh
+	tovO0ARo34W7Hf43F9DHA50yIefu4YAjulRLIi9kKg+R4YKYawsycFxBU4kk2j+TKMXkuNIIKCk9d
+	cE/59tkljcIcEq9dEU/pMjdfwl/dqEBgQUvFNMalfgPJX9d/2UzYVg8xGv5OqwCj+nzAxYPfGVv+3
+	5pcBqz92cgCltAC81HXFHpGnQeSVitK9alEUHJMW71LZZCPmGTR6RYJRZPuMg5eNQkgAAHSFXFKCE
+	1GXFnPbAgChAG1qiXSDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQiTi-00033Y-OD; Tue, 21 Apr 2020 02:17:38 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1jQiU0-0003IB-2k; Tue, 21 Apr 2020 02:17:56 +0000
+Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQiRS-0000mb-MI
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 02:15:21 +0000
-Received: by mail-pf1-x449.google.com with SMTP id r28so11833531pfl.23
+ id 1jQiRS-0001A6-Cb
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 02:15:20 +0000
+Received: by mail-pf1-x44a.google.com with SMTP id e139so10770482pfh.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 Apr 2020 19:15:15 -0700 (PDT)
+ Mon, 20 Apr 2020 19:15:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=ir6AMcU/LNJfVmH7TAbfuSTmLjnaQbzCZFrLbu9sicg=;
- b=QTHCdrmFKIB/Tam+WFnqNp4+O7lTnQjXDzPLeYJW2nLi3p+F4yQ2Y8DZVDTCwVRq6Q
- eg8pdSDyHTrZJWVleCGpiYE0vBCBADyPgfeKL1jvUz5cl/63rDlPkhYZnLXW5EcGpcVc
- pGcRb8ehfFrcc+H5YuR9BWePyIpoc+Vh39Y0pRIm/lqCuz8hiPmNAnaY/unezPdgbiZP
- aHELlMunluzusfymqfmKV5EfIa6lRfT+Z0m5QxDzworuJTMbhuOj3XfNh6JSDitvM/N4
- JBIil9L4mq7qW2pE/kvzNUPF2wkyIiMJhDxbq4fEsxBUku7c0NKWZZiO2wMtwmErocuJ
- aZCg==
+ :cc; bh=MhRn5bu5/kvUh5QzOzRXssMosuq4vthGJuay/ttgTR4=;
+ b=Lqh/lP7rPh/rNI0pAGGOPOxjyqNhok1UwLr2vLWD0Yf86f7hnanuLjyGwBzWQZ0KWQ
+ adjhQMVagXSOv+hAiNSZhBIWfPo1li8vCHzgaTrsTgbGbcCuhwU8ClDWwy/MAbVy+yHg
+ l8kefkpuvonUyJ59cjRiqXX+Uanx+h2rbnnl9u653BbCn+NR54DJuJFS0NBefuFHtWIT
+ lpym/WosEzlkC/QEIHKuMb0NkSLOPkiUAyZo7D28AGRidwedpIeP5oIpw/ESTH4LCZkT
+ NkLVJcNX/Q4mglETeVx9en79tfKw8n44frdP6yet/Lhi2dlHbLQdxyyqSLgcHBjLnVUO
+ IE8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=ir6AMcU/LNJfVmH7TAbfuSTmLjnaQbzCZFrLbu9sicg=;
- b=r+yDHE/9d5e/mNiKqIFAtVresPcp+X0WvmarAkMUXQhbNj5PztGFe3+TTy0xLhjoNY
- leCqWTyIbBl7lNDUOcRaxp6LMu/rQ62RLjGzkiZCM58NpGEKkp1a+uoSqq9ZYUcROU5b
- FGFu8A2gRzNvkJb4kaDWcqTQs/Z3CUnfSWDflwbVHkr0TraMl+raqvDQMT1bHEzUIGCf
- MzZ1+fgvJKh6DAwGWTRx/GZ9dRsovInAaOJynamNrcx3G2HEHzo3CINAsEsPH/CWcEhP
- UA7qDGOu3wFc1XqqUixneCxklwPb1tyqiHMl8YkuxQufyy4jOqBGAA76XKCLtgGOnA1h
- /t4w==
-X-Gm-Message-State: AGi0PuaMpPUfkMyvJ3g4v5w84S6m8mBJo0+a6nWqDL3bn1vkTD1PG82C
- luUrxeV/QcETOtDX6Ja7NbbtjLB+kUzsHINmCi8=
-X-Google-Smtp-Source: APiQypKMZMqfx/OcrcbDtzjGTijQl3YSQFjckDxyglhj7d6MnhDSddDwRZznsOSEAJZMqEO9LCcVx9cM4EOpbzh+h/U=
-X-Received: by 2002:a65:498f:: with SMTP id r15mr19453163pgs.345.1587435314416; 
- Mon, 20 Apr 2020 19:15:14 -0700 (PDT)
-Date: Mon, 20 Apr 2020 19:14:48 -0700
+ bh=MhRn5bu5/kvUh5QzOzRXssMosuq4vthGJuay/ttgTR4=;
+ b=Dgeu6+ZocqXcxpSc8njxqA75qoGXahzgrA60w/o9U5h3i4hI9ZEyeop2DhErwhKrzE
+ kzkVAeXP/66/OBZpPdDvpP7A/AiG2CZganFvRn3Xom6nmtrAERznohx6HkvI1jzRI8er
+ K0+WMzR18TwW5tbQGK3k88XfHJR72vBYxwmsc7y7pun8RTvdoO3LER4QJxKB30N2OPWQ
+ Ec1lDnQe8/PTVivUr6SA5y9RG7JcURPxEw6O18TAxu5WX1YtysDGAH3/sRG7AMeoF2Zg
+ KB4cULagdqhltmrM7yZja/EBqJcvxZ8jsLMKMSrc1kDKyBrff0E6oH8sPvFFPR5J6jp2
+ Py4A==
+X-Gm-Message-State: AGi0PuYW4i3TlHlVkkp3jKJcTi2ubH7+B8GqJRW5hO4rDYJckUWnyc86
+ 2ALaEdemmN+gkGLu5KbnGPPT8iQiMMqzY0pZiRY=
+X-Google-Smtp-Source: APiQypL9J2bahRQ34+pQ2Eqpk4jSOHei01Ja/PTphpnst//o5YzkDVHUYrIrIHLrDNmaV4j7WDYWllqGZ9rSI32ZS4A=
+X-Received: by 2002:a17:90b:1b05:: with SMTP id
+ nu5mr2791728pjb.110.1587435316700; 
+ Mon, 20 Apr 2020 19:15:16 -0700 (PDT)
+Date: Mon, 20 Apr 2020 19:14:49 -0700
 In-Reply-To: <20200421021453.198187-1-samitolvanen@google.com>
-Message-Id: <20200421021453.198187-8-samitolvanen@google.com>
+Message-Id: <20200421021453.198187-9-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200421021453.198187-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.26.1.301.g55bc3eb7cb9-goog
-Subject: [PATCH v12 07/12] arm64: efi: restore x18 if it was corrupted
+Subject: [PATCH v12 08/12] arm64: vdso: disable Shadow Call Stack
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
@@ -69,15 +70,15 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Juri Lelli <juri.lelli@redhat.com>,
  Vincent Guittot <vincent.guittot@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_191518_766130_9B58CC31 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20200420_191518_477291_CFB35C10 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,38 +115,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If we detect a corrupted x18, restore the register before jumping back
-to potentially SCS instrumented code. This is safe, because the wrapper
-is called with preemption disabled and a separate shadow stack is used
-for interrupt handling.
+Shadow stacks are only available in the kernel, so disable SCS
+instrumentation for the vDSO.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Acked-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/efi-rt-wrapper.S | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/vdso/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
-index 3fc71106cb2b..6ca6c0dc11a1 100644
---- a/arch/arm64/kernel/efi-rt-wrapper.S
-+++ b/arch/arm64/kernel/efi-rt-wrapper.S
-@@ -34,5 +34,14 @@ ENTRY(__efi_rt_asm_wrapper)
- 	ldp	x29, x30, [sp], #32
- 	b.ne	0f
- 	ret
--0:	b	efi_handle_corrupted_x18	// tail call
-+0:
-+	/*
-+	 * With CONFIG_SHADOW_CALL_STACK, the kernel uses x18 to store a
-+	 * shadow stack pointer, which we need to restore before returning to
-+	 * potentially instrumented code. This is safe because the wrapper is
-+	 * called with preemption disabled and a separate shadow stack is used
-+	 * for interrupts.
-+	 */
-+	mov	x18, x2
-+	b	efi_handle_corrupted_x18	// tail call
- ENDPROC(__efi_rt_asm_wrapper)
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index dd2514bb1511..a87a4f11724e 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -25,7 +25,7 @@ ccflags-y += -DDISABLE_BRANCH_PROFILING
+ 
+ VDSO_LDFLAGS := -Bsymbolic
+ 
+-CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
++CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
+ KBUILD_CFLAGS			+= $(DISABLE_LTO)
+ KASAN_SANITIZE			:= n
+ UBSAN_SANITIZE			:= n
 -- 
 2.26.1.301.g55bc3eb7cb9-goog
 
