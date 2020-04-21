@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA6DE1B216A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:19:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B3861B216D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:19:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YNxM0QLpcXylo5ApYafJuvEWoaIJFJt8FOj2KVl7vIM=; b=NGVdCkUy5QjmJV
-	eT/GVo/3mDG0flRvrKa+5z+1VbIBISp3eu0LcK9ndryhj5CSysTFIQfeE8bLMDVp34qTD876qhJkL
-	tFL2SCdmlzPbWzGzJk2kOTMPL+Ls+akgsNRuN4jkWrS0PulGshjAAidLXmSN0Ode9DZhs7qzt2S50
-	tlLWP10i69NRItGfjguJTzqFNjCb9hIE5FFh2iZ7NVYNra5tZJXMUQkYFxRtqGZJtU3jzjrS33bSy
-	lMvA4HZj6twLuUYYSPtez3sbazhxK0V3Mnjbns1n0VN1wJ6l7xPwuj0z4OJAgb1ThFvlN6kR7ffaZ
-	FbG6SZ+zAqggTdUD4lEg==;
+	List-Owner; bh=Hrg6HhtXopYGgdIt5YkmelGpDnd1lHNBwKGBIFFVzBY=; b=jAqwxhgnEXY4fq
+	/W4XyQoDUvPOC1NMJWp5xNxz6K0/y/HVL39/kQFow/QJJXSy1wBieZtniT8C6qFo7T7tdXFUGjE+F
+	CsSoweXKMY27BdCLFw+wmh43HWKbXAl7EztN6PhQK45Y511gMnKcOXy1Z+yqc+seHVAxhbODSyQ/m
+	pAnhz8ZsjJ7Bg3DyoyYpX5TS2IXpgM35UkFpHwZq6gNnoi8BI/W5u9eiTDEO0OQId+buqwauc50SN
+	oEdevDjNzaOHATJXrcYYgRCmDPACXSX77+1kcsD0XJIKUoMzpXWcVbjo57eFKFPQrBKOkpTKkVvOn
+	NZX2KRoMM7CaA8FFx9rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQo7S-0000ET-R3; Tue, 21 Apr 2020 08:19:02 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jQo7o-0000Yg-7k; Tue, 21 Apr 2020 08:19:24 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQo62-0007Xr-WF
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:17:37 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id a5so298023pjh.2
+ id 1jQo66-0007as-0V
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:17:39 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 145so4017624pfw.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 01:17:34 -0700 (PDT)
+ Tue, 21 Apr 2020 01:17:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ESIASWIVcw318N0kQ2X0Oi3Z+uroC+zqbTtsgDKDwxc=;
- b=d1EGEWeHYHIQOJqJjvQeV7F5XbEP5dKBW7WEsc7KqFePlpur3HEhURVt2nLAxU8R+t
- LZja7jNyrv/MqDehV+bIv3O2awu6Vc6wo5ja/99Fg3/zkOA/b8rUd12iwLrEVBqYNlL8
- LTf7evXymEDmOXlZdm6r9x20Y2/6tY/73gMtdIWA1Ts91bYya8o7iZL7Qbyo1a9l5cHq
- Mb2NIZKnrqizgtSPU1Euc0ALQsGOdKx8TVzUdXCIOumRJtoGHAnWec62IkND8QTrmOQM
- nPH12sz33bLqzDbK623zAsgvXfGv/SPO4JkjRvc6iRfRE03SIsd9LDw4+o2qcXqrSP8N
- SPpw==
+ bh=R51EKoGdprYIzq4mz86f7ksK2LhT5dJfZ4/kQMPqWXU=;
+ b=VzMHbZmGtC1cli7/MzDUNjXVYWUl1NxixqtpJm0/9P/EzaLVRa8g8WgYud0Qm6Rchk
+ /0trL5SM2/Zrj2mYcg8pq0A+qXdeLRNhfMiAZsy5X8Q7FkKkUcxE3FT4l8B0EtAmdA+a
+ qWQTbQU8+OIZBMPZCnCgj1bgpLATeorKYHYYWZhPAzfAJg7qSDI1mvGlLkPsXDXc0xmQ
+ nHxUsek7TS8kNEMxedKCaVU/PPk6efmG7yA1N7bxrcxILkRxr4XHk7vAf799he9GgfVg
+ ZXr8nDGGsq+0uBoSEWHxoMPWrO9TNXqLg4+rs5s/lfX6Mf18km5fSJ2iKKhhbu7/Mopp
+ enAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ESIASWIVcw318N0kQ2X0Oi3Z+uroC+zqbTtsgDKDwxc=;
- b=TcxVCXF3j8pPhqljsX48n0JW4pkhjS+CxcMOyEfSilEs4WfkCNvcnnV/esIjK5pylo
- 4w4VLeY1ew0uKSpXjDhdaKYDtWV6qBpOtf+1OEOJc+mFZLrIFc3iBld+bvJdpprCBrdU
- 1wocuuDluB2zWmfA33ovWgavSmeaIamOPDmWy11xGP8/nMpwXBozzAz5KMRq07Kwl0Y2
- ZNkMV/chjIJQQJ4fMlWncWTNBrjz9bgT6rvrRm3fMEXE9FGZcn8FFGsiUh+20tUJzV1l
- zXsOqiaB1lCqPkJK3BNSsTxYHe0E4/dm3QZq+AcS8+fcUZBtjyn0e5yxutAPnOjmvikm
- 66PQ==
-X-Gm-Message-State: AGi0PuY5Uo48Rg92Obk96HpNaaCw84mEXajL2o07zD2e1z30YoW+9D1p
- gyWaAp/Y1TrIsqF7mZ59D9eTTw==
-X-Google-Smtp-Source: APiQypI7y+F6n5TeayUTsoUy+jp+f5r/1IV7aARGN/1mj8/tNHv7iVWTrDqjni/i9mOVUg3YAWeuFQ==
-X-Received: by 2002:a17:90a:7e4:: with SMTP id
- m91mr4322055pjm.155.1587457053972; 
- Tue, 21 Apr 2020 01:17:33 -0700 (PDT)
+ bh=R51EKoGdprYIzq4mz86f7ksK2LhT5dJfZ4/kQMPqWXU=;
+ b=CBCH7PzdIZw7hh1UIhwyVdSpIqHfYJRaaxgVa4hhcBYT7EKVEX/D6Rqa9UQ6hR6pwk
+ WNnIJsvgNFIP5x4B9uRvwMk5gAv6ccCVnkiDT81WKmOtAJ81/LeSwVc8jgcJE5JsObbz
+ 1nYgNf4rmKfv4vjhh0Do44p0MYfLWIGygn7BV1uNmh1Qf+Uu6VjFriB4BX37ejVYnABr
+ KV6RmepQMiT4oGEXm6RPapggbPcpa0ea7/IicXIG+7JP4jjUf5SUsIQw8DDNlpqxzUs6
+ 3979EnVdX9oNk2odLccdHBfK13vfeYZvLpDep9ew4ARNjZqSlLI6kntnV6j4mLD6JfUY
+ sEHQ==
+X-Gm-Message-State: AGi0PuZUk53zpDGBVL4ODpGv/mfvPSSRfNOcLnM3A2nEcKWGrDVyNcqJ
+ 8wziettmo+jJXYvaje3NDizOrA==
+X-Google-Smtp-Source: APiQypJD+fzqoCjmoNF33zw6GUvSp1zVm+GJEMjBcSfH6XjMDUyeBTOm2mgFujSrzxWUd3wuELt89Q==
+X-Received: by 2002:a63:4e21:: with SMTP id c33mr21379911pgb.305.1587457056828; 
+ Tue, 21 Apr 2020 01:17:36 -0700 (PDT)
 Received: from hsinchu02.internal.sifive.com
  (114-34-229-221.HINET-IP.hinet.net. [114.34.229.221])
- by smtp.gmail.com with ESMTPSA id v9sm1610067pju.3.2020.04.21.01.17.31
+ by smtp.gmail.com with ESMTPSA id v9sm1610067pju.3.2020.04.21.01.17.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 21 Apr 2020 01:17:33 -0700 (PDT)
+ Tue, 21 Apr 2020 01:17:36 -0700 (PDT)
 From: Zong Li <zong.li@sifive.com>
 To: akpm@linux-foundation.org, linux-mm@kvack.org,
  linux-kernel@vger.kernel.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
  linux-riscv@lists.infradead.org, tglx@linutronix.de, mingo@redhat.com,
  bp@alien8.de, x86@kernel.org, hpa@zytor.com, catalin.marinas@arm.com,
  will@kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/4] x86: mm: use ARCH_HAS_DEBUG_WX instead of arch defined
-Date: Tue, 21 Apr 2020 16:17:14 +0800
-Message-Id: <430736828d149df3f5b462d291e845ec690e0141.1587455584.git.zong.li@sifive.com>
+Subject: [PATCH 4/4] arm64: mm: use ARCH_HAS_DEBUG_WX instead of arch defined
+Date: Tue, 21 Apr 2020 16:17:15 +0800
+Message-Id: <e19709e7576f65e303245fe520cad5f7bae72763.1587455584.git.zong.li@sifive.com>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <cover.1587455584.git.zong.li@sifive.com>
 References: <cover.1587455584.git.zong.li@sifive.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_011735_069574_FB4D9F94 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20200421_011738_171993_075A7336 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,29 +112,29 @@ ARCH_HAS_DEBUG_WX instead of DEBUG_WX defined by arch port.
 
 Signed-off-by: Zong Li <zong.li@sifive.com>
 ---
- arch/x86/Kconfig       |  1 +
- arch/x86/Kconfig.debug | 27 ---------------------------
- 2 files changed, 1 insertion(+), 27 deletions(-)
+ arch/arm64/Kconfig       |  1 +
+ arch/arm64/Kconfig.debug | 29 -----------------------------
+ 2 files changed, 1 insertion(+), 29 deletions(-)
 
-diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
-index 1d6104ea8af0..310a49ee3c25 100644
---- a/arch/x86/Kconfig
-+++ b/arch/x86/Kconfig
-@@ -80,6 +80,7 @@ config X86
- 	select ARCH_HAS_SYNC_CORE_BEFORE_USERMODE
- 	select ARCH_HAS_SYSCALL_WRAPPER
- 	select ARCH_HAS_UBSAN_SANITIZE_ALL
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 40fb05d96c60..a16e2ce80854 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -9,6 +9,7 @@ config ARM64
+ 	select ACPI_MCFG if (ACPI && PCI)
+ 	select ACPI_SPCR_TABLE if ACPI
+ 	select ACPI_PPTT if ACPI
 +	select ARCH_HAS_DEBUG_WX
- 	select ARCH_HAVE_NMI_SAFE_CMPXCHG
- 	select ARCH_MIGHT_HAVE_ACPI_PDC		if ACPI
- 	select ARCH_MIGHT_HAVE_PC_PARPORT
-diff --git a/arch/x86/Kconfig.debug b/arch/x86/Kconfig.debug
-index 2e74690b028a..de1846ed41b3 100644
---- a/arch/x86/Kconfig.debug
-+++ b/arch/x86/Kconfig.debug
-@@ -72,33 +72,6 @@ config EFI_PGT_DUMP
- 	  issues with the mapping of the EFI runtime regions into that
- 	  table.
+ 	select ARCH_HAS_DEBUG_VIRTUAL
+ 	select ARCH_HAS_DEVMEM_IS_ALLOWED
+ 	select ARCH_HAS_DMA_PREP_COHERENT
+diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
+index a1efa246c9ed..cdf7ec0b975e 100644
+--- a/arch/arm64/Kconfig.debug
++++ b/arch/arm64/Kconfig.debug
+@@ -23,35 +23,6 @@ config ARM64_RANDOMIZE_TEXT_OFFSET
+ 	  of TEXT_OFFSET and platforms must not require a specific
+ 	  value.
  
 -config DEBUG_WX
 -	bool "Warn on W+X mappings at boot"
@@ -145,14 +144,16 @@ index 2e74690b028a..de1846ed41b3 100644
 -
 -	  This is useful for discovering cases where the kernel is leaving
 -	  W+X mappings after applying NX, as such mappings are a security risk.
+-	  This check also includes UXN, which should be set on all kernel
+-	  mappings.
 -
 -	  Look for a message in dmesg output like this:
 -
--	    x86/mm: Checked W+X mappings: passed, no W+X pages found.
+-	    arm64/mm: Checked W+X mappings: passed, no W+X pages found.
 -
 -	  or like this, if the check failed:
 -
--	    x86/mm: Checked W+X mappings: FAILED, <N> W+X pages found.
+-	    arm64/mm: Checked W+X mappings: FAILED, <N> W+X pages found.
 -
 -	  Note that even if the check fails, your kernel is possibly
 -	  still fine, as W+X mappings are not a security hole in
@@ -164,9 +165,9 @@ index 2e74690b028a..de1846ed41b3 100644
 -
 -	  If in doubt, say "Y".
 -
- config DOUBLEFAULT
- 	default y
- 	bool "Enable doublefault exception handler" if EXPERT && X86_32
+ config DEBUG_EFI
+ 	depends on EFI && DEBUG_INFO
+ 	bool "UEFI debugging"
 -- 
 2.26.1
 
