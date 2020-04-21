@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8B0C1B20DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:03:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F3F31B20DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 10:03:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ecoax8HCMzjWr01a9n5QcJmAi5bka+eAzucm/jEVOzc=; b=lNvmAMoSSmf3ST
-	N38AUzqiSzX83nmdaY0Aj2f1aQiXMVgPiy6zL52kmYLeYC93wga0lxshDiG/VUEd6Jq8PIeUEr4T/
-	0b7h4wM7U103mUztdc+Jru1lFEx8v6+Dai2mYpTl2Zv1YaU0Ap9xKMNycXSSJIsX/5UlmI+zbC2M8
-	aWbSMRA4bdOVC5K6FnufZM6sLyAu0EQJagENH9CWN1DcPaLhxh+5IWvxvMX4V20XMkAL7He429lqH
-	+ruiS4USfMM7B6uxWtwYbn7TY7p+/2TspPCB6FWcTxgmgQY+cU6jcmoKtor0hV0dPwD3ov4I/uVdQ
-	BTmFdFTqtnuZoFnG0CCA==;
+	List-Owner; bh=sSjSCe3JfApYdk9z+hoNpr6GfvtCM1PbNxjiN8hCFKU=; b=hytYZARSxgP9Gh
+	AmGFwMPvwgg2k8TuLu2332e1h4WiswRpcr5Di/uAK4hEyoeWXiu2RGHdLTBHWbOwVe4Y03/8ofUd1
+	nobGJbAdgRbWQmdIYNaESXh+XXFdk3giOoB82V+mjC+qyffUzn0E2RlcyQW+kjO/Yf+B8THZmg+x9
+	wMcoAvtjMaUlGsRG6gSg5Gl9+K5C9Thkrrtk0+DshxQOjG5yI9Px76gwttrU4MIkgdDxZf0b4zO5p
+	bf22c4RFtCnDlL+71PBomV/MzwD3/L1qIVujZARvV4bdnUVtwhK6IMBeABoiAiD0JTd9FO4L2uq1c
+	GZraOKanT6Lei4ZxIM9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQnsB-000337-OV; Tue, 21 Apr 2020 08:03:15 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jQnsV-0003Hq-EJ; Tue, 21 Apr 2020 08:03:35 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQnqG-0001Ch-4a
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:01:18 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s10so6190305wrr.0
+ id 1jQnqI-0001E3-2i
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 08:01:19 +0000
+Received: by mail-wr1-x430.google.com with SMTP id s10so6190377wrr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 01:01:15 -0700 (PDT)
+ Tue, 21 Apr 2020 01:01:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=8x2qbrmvJrvzLhSdZyiezkJo4hKvmqVH04B778IZt90=;
- b=dGTNCcnGr7YtPFf7J6XDaRYOU2CiBaCJhYNx09RmlAPeojd7c14ojBOwblaGyqje5J
- WlHC8CdEZ5ZGd2aGNslxywnwSLnzXx66X945Y1gGFesYLDy7pTBXaZVH2xHQ2llnHRJE
- vDYT9lWrKI+Xl6GV5za29OV/+p9Lnm7qhD7moZpHDPwhUYzF301asuOKHkFSC0FrJ5eb
- 8Coh7+dbLi4ywxt7d0Wxl/e2rvqbPOGO+/6LRv7cJrOZkSqXFinuBl0ytSHkNtPqWvOM
- sTPL5jKQ/j4QtCgLNgZYIl92+Xf5k0fU8Bdgrv98mdvjRzX4hbDwRD5PWihG8IOAlhAA
- UdBw==
+ bh=PW/4clGD+cpV/fhovnrun++NoVB5+LjULUtHoJY62Ro=;
+ b=Md9y6ssMrmxnRFOzwDtyc3RnxZm3nSdhd7K9l4xzl4/VWbFceYuflIerAN7he2TWFR
+ oNTsfEn2Q6Xkb3ecjkbJckzrNkaSGdUuulC6mufGJ0jAlNBQOajgMkfnBBYE58ikB4r1
+ ISX+etHAS7QP2Uc9I/db4Odza0EoQwgn5DeeShK/I0SQKdFqU3zsuRnlUXGV2Cj/sSeC
+ ei2xrxhha8RcR2Fu5PDtUnOPbzmaKYNFRcNmSArTvonErYUEP4N0gFApNgUGVf+xoAki
+ c/Wi3kdy5iDqG9ZoiKx3UYAhlH7T0vOITbplT1K4cn1POCpdoRtyeeZFvedC054JqDc/
+ gDQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=8x2qbrmvJrvzLhSdZyiezkJo4hKvmqVH04B778IZt90=;
- b=i8HVDIlr2U2nLcCaAIxUF5wQzIqznqAlVE4fynbhG7pECgqCrfq+dZg9fB7leICZtI
- RBxBEUJfkNd/fk+6QjfazaYsFaZz8fkrghv3xocvNWatXG4gM27EEc6ZrGZgvCiJ79dw
- 12PoUOyA2yynttahhSUoTfU5HOYu1GHo40KqpIB6o0/Z9mDse5eAgbjuOk5+HC00XgeY
- OjB6meN/SX4ryM1ckgEb+n0fhEGdsPnrNRKf0uSeCLpue5TzG9RWTsV1V/wlkd0drqnK
- EpLbmK93Dj5+SKDplKe+ijscCL5YraBuWvncMMJrFGK7giy8cfoBMxYwrIeDyAyGCnvo
- lcFA==
-X-Gm-Message-State: AGi0PuYr4KtKD5ifqLX3XEFLTgmQWSqAEU2wY9TDujc2NxWD1d82RACM
- 7SzL0jiOQp8PWAmbHTIwoi3SLA==
-X-Google-Smtp-Source: APiQypIiWqXPmC/5mQtYcIdPcfFDsrYy87KwONuuyBh3FM0Eo21Qb7uC8L4gifzvCSJ9ml9PyD7LFQ==
-X-Received: by 2002:a5d:4381:: with SMTP id i1mr22202504wrq.194.1587456074451; 
- Tue, 21 Apr 2020 01:01:14 -0700 (PDT)
+ bh=PW/4clGD+cpV/fhovnrun++NoVB5+LjULUtHoJY62Ro=;
+ b=sGKRtlLrtQfi5/U4f4AkCm8dp3d4ABoKLARGqB93ukhyCt47a2eP5hGPaqay5r1mqZ
+ yYn5r0de+PHuZRIjRaRxnqmEYjGznpDdTUinbfXi0c0mZRoSxlTiSlC3sst2MXDXxyTs
+ lnAwgz+zmrumh+kS1NQ2vHFftYGuUW04arCrZDmS7+AKhmFXXhfB6WAx+D9VUTOJiBw8
+ oZQKqjmROpoPW01HmxAlVAGsKe+VydCoHDloOnoj8woiexvJiq2Y7CWOlO4b67509rUZ
+ idmFajebGM3ie74sFnVM1umAzUnT01/9w2UAe3qodXhRb59ZMg0hQaBU3a970NXPFyD+
+ lCOA==
+X-Gm-Message-State: AGi0PuY+iak3teaGlvAuPby1RyrCnfSfKaiA5wt79ddUhIdUUth/IR5R
+ gKC6G5mg8umZF6Maw4KbxuIA3A==
+X-Google-Smtp-Source: APiQypL3utEsf7dB2jih1sknlBtO+Mz3QtokX8dpUitlTh5nRmGcN9zA3N6rmgcof9M+WmyytjSehg==
+X-Received: by 2002:a5d:4a4b:: with SMTP id v11mr21989927wrs.32.1587456075927; 
+ Tue, 21 Apr 2020 01:01:15 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56])
  by smtp.gmail.com with ESMTPSA id
- x132sm2561552wmg.33.2020.04.21.01.01.13
+ x132sm2561552wmg.33.2020.04.21.01.01.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 21 Apr 2020 01:01:13 -0700 (PDT)
+ Tue, 21 Apr 2020 01:01:15 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: lee.jones@linaro.org, jdelvare@suse.com, linux@roeck-us.net,
- srinivas.kandagatla@linaro.org
-Subject: [RFC 5/8] MAINTAINERS: add myself as maintainer for Khadas MCU drivers
-Date: Tue, 21 Apr 2020 10:00:59 +0200
-Message-Id: <20200421080102.22796-6-narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [RFC 6/8] arm64: dts: meson-g12b: move G12B thermal nodes to
+ meson-g12b.dtsi
+Date: Tue, 21 Apr 2020 10:01:00 +0200
+Message-Id: <20200421080102.22796-7-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200421080102.22796-1-narmstrong@baylibre.com>
 References: <20200421080102.22796-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_010116_233963_36305FA4 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200421_010118_196676_26AA3B27 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:430 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,35 +104,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the HWMON and NVMEM drivers along the MFD drivers and header
-as Maintained by myself.
+The G12B thermal nodes should be in the meson-g12b.dtsi file.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- MAINTAINERS | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-g12.dtsi  | 23 ---------------------
+ arch/arm64/boot/dts/amlogic/meson-g12b.dtsi | 22 ++++++++++++++++++++
+ 2 files changed, 22 insertions(+), 23 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index b816a453b10e..4484fa568d42 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9431,6 +9431,17 @@ F:	include/linux/kdb.h
- F:	include/linux/kgdb.h
- F:	kernel/debug/
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
+index 783e5a397f86..e932205badea 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
+@@ -355,29 +355,6 @@
+ 	};
+ };
  
-+KHADAS MCU MFD DRIVER
-+M:	Neil Armstrong <narmstrong@baylibre.com>
-+L:	linux-amlogic@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/mfd/khadas,mcu.yaml
-+F:	drivers/mfd/khadas-mcu.c
-+F:	include/linux/mfd/khadas-mcu.h
-+F:	drivers/hwmon/khadas-mcu-fan.c
-+F:	drivers/nvmem/khadas-mcu-user-mem.c
-+
- KMEMLEAK
- M:	Catalin Marinas <catalin.marinas@arm.com>
- S:	Maintained
+-&cpu_thermal {
+-	cooling-maps {
+-		map0 {
+-			trip = <&cpu_passive>;
+-			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+-		};
+-		map1 {
+-			trip = <&cpu_hot>;
+-			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+-					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+-		};
+-	};
+-};
+-
+ &ethmac {
+ 	power-domains = <&pwrc PWRC_G12A_ETH_ID>;
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
+index 6dbc3968045b..9b8548e5f6e5 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
+@@ -113,3 +113,25 @@
+ 	compatible = "amlogic,g12b-clkc";
+ };
+ 
++&cpu_thermal {
++	cooling-maps {
++		map0 {
++			trip = <&cpu_passive>;
++			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++		};
++		map1 {
++			trip = <&cpu_hot>;
++			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++		};
++	};
++};
 -- 
 2.22.0
 
