@@ -2,77 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5808F1B2C89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 18:22:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEF0C1B2CD9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 18:39:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxZBJf1PZlMN0UNN8RgSwDMXpCjtL3jp3akU1tjZAzU=; b=mp+a7DWSmuoOmb
-	ONtN9zhX9n1vj30t1qSXWSbHbqClc67Jx8tLof0WHZcaJyVTyWVVgKL2Y/Hw4pI+KlgT7JSqePOw4
-	ZfhgcFBzEsp41Z09yt1FtrBqEA5pvTfqFDztLebbmLVt1i1G+IMZDBlmHPYy94fLXpvMHZkLAmqRA
-	4QnD8VScDBqxn86AcS/7k6GR5lZMu+BzANhcNgP74Nrg+qZCI8YpQJ+XWtwlg9ZJKk4eQtbt/cKKO
-	X08ydaXQWoCfWQ4OVw64k+ILPDal81FPS/bRN8ClMoHew1qEYzYCeupS51Cvq42sG5bmhxWy9Pnl2
-	SIE8R/V8fEeVvKi2aHjQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=JWY3alKcIesfvg6i3+eHjXx5RsEoYo/t6/+R15fwZsg=; b=Q7f
+	8pUD9c9qtKV4A2Bdg+62BqyVw9dfz3Z6WWXVlrc4jXbfV65IGQqDuFB7q5HQP3gjTJxNGHK6NxNTj
+	5BnipK0mQ5j0GqeWn5PuSBhbMl3GXXMHWpf8u753g3CvTs3J7C4dFGC76ZpDes6UCKnXQCGkBcysG
+	rf+Qeh49lFJZoUNHRu428FU5MVFG9m8vLoagD+s/rBNxcMsYjGv0jBQvLpOaMXlE2Hn5nAfBxtKdR
+	gnfg3jG5ZjBVEdr98iigJ+Eqiz5u+Jn/PBC+7jKjtubNHnDt0tm7kBF7MA+HzyCsr3Aibqh4DzS4B
+	1Vi39qIqwbu4y8r7uwwKML6Qk7WfFfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQvfH-0000um-W7; Tue, 21 Apr 2020 16:22:27 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jQvvf-0003fr-M0; Tue, 21 Apr 2020 16:39:23 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQvcf-0004ts-Jv
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 16:19:48 +0000
-Received: by mail-ot1-f65.google.com with SMTP id 72so5191716otu.1
+ id 1jQvvU-0003e1-L1
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 16:39:14 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t63so4292372wmt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 09:19:44 -0700 (PDT)
+ Tue, 21 Apr 2020 09:39:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=cpcsJig0GOzBqMohPbuz/pjFci1RE1DIPfHT1dd3q2E=;
+ b=VDVDjM1PKxq8hcUmDwxm3pYN3PdcUBrRnAInUPCwYUa1C3uuW4cd0r3m5tjGfLHW2s
+ REOsGcsned9GKRUYhoxUjNdl1HiXW8DTo98oRFQorITL1ewTUPqmyTQr+4Vb7K1GrFvf
+ ZCkVGbd1tsz31toNZMPSJDaHwXB/IX1qifusC5u+ju+sZ6e1qrwQER7uP6zQD/mQOtWI
+ tpD6rPTv4iHd9xdksU6+X+/czTM59nskYYYYLRuyuhJAAN418VnIMdunjQnFVPjJGHlG
+ +Mvb9dIIiiki0fbF6clxbRE6TAAzOD/KVgqpYWA8iVOpkLbk8RKUQl23mllUyMQOoMp4
+ DS1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rMu3klCIHTko91xLqiY17Crj+p7Y4rNwVMkOgmrRdjc=;
- b=qFC8dvRsk1rzUZqtY6cjvqzkFzgbs4WGvMRpji05wiFa49NSXduIvXR5GB64MwamIj
- +mFxFlVLO3RH2so5WSdg0lkuQQfbxzLb7+zECOIg8KVnL+hTFHX8Qv0KkuC4ZK1uob4k
- Hv2WnHVt754vokF3x/f+dvDyNFokYUQ04PnxWX5YrVC8s6qmByxVKFPeQa79vM4m0/ia
- KKUfaRaYBC2JZznQCbbsqcN2HHAoofEM/uKbQnp0M+drDdVp4EjFCllcKuI3J6BW6kPY
- kmPhF67z0r0mxrVXHcYYymphNib24NJjeGrWGKwluxK6/DCu7XXtzBrkRAgQjZCrvdSh
- fqIg==
-X-Gm-Message-State: AGi0PuZu7rWLzJ1fk6EHxQvGWwTf9oBeTT9l4XqrFn+33bptHCMWPjY+
- rIIEipUx2uVuxd+BYFtoCePJnAJP+8lKhZ+6tBM=
-X-Google-Smtp-Source: APiQypJsqzlVBwBP0EqDIPyCl00zSKE/zjVy6OIFCkatDQTt1ohKrYd6rQIJlptwqNv4riX8sdI+OYsGaKBUVHcWaYo=
-X-Received: by 2002:a9d:76c7:: with SMTP id p7mr13880170otl.145.1587485983529; 
- Tue, 21 Apr 2020 09:19:43 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200415153409.30112-1-geert+renesas@glider.be>
- <CAMj1kXHm=xA4gafwAaBn8=YcAsQCYDNmZ=4REsfvEUgZShm3Ww@mail.gmail.com>
- <20200421160137.GE25745@shell.armlinux.org.uk>
-In-Reply-To: <20200421160137.GE25745@shell.armlinux.org.uk>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 21 Apr 2020 18:19:31 +0200
-Message-ID: <CAMuHMdWt_XkDk+t8tZJcx43kFEGj-POAqwYEu6uGLmg3iUFRxw@mail.gmail.com>
-Subject: Re: [PATCH v5] ARM: boot: Obtain start of physical memory from DTB
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=cpcsJig0GOzBqMohPbuz/pjFci1RE1DIPfHT1dd3q2E=;
+ b=GMz5EA5wM6oa4Tes+qIsGMfvyIPg8a+PvhTOkEcsxTkC042mohQbfPoxr+c6vDmENy
+ 2qox3ruuuEXdL39X8E3WwdHVLJb6aF9cDKvtaqX0CwwYkuHr1fsS2Nafnn/VG/x+9ZsG
+ Ggb1tiww1p0HuZvxEe767DUSYjmCI4ApZXZ2Gx4oq2xlf4qP897JQaIkv0bzAMNU2gzO
+ K/TEShXVVPcKHCBiZO7tuxkBFGEUwUfeIGSvfICO0CF3MCGf6GMx5Md2ryaKujw+dR/C
+ HoFA/P5FsWf7FAjcu9GAM/4BrUl69khN1FKbAUqYAFpGrrMw2uFYjCiaaXuwC1ZNZ1+z
+ SfRw==
+X-Gm-Message-State: AGi0PubVpPjXX/FIMKV05uqFaViGcFjIn/Bl0t9JKxFRdeDsi7IN1MHL
+ 57Wu0XkFMp5OPqec8uX2xMrqwsCV5aQFygzv
+X-Google-Smtp-Source: APiQypLw4tm9UR1P5gxmtUBnKckudtQYp7IIUmpMLn5xxiMjaWWZ1WQX1BhGSbGdYMo6UYXnDfs1pw==
+X-Received: by 2002:a1c:bd8b:: with SMTP id n133mr6086580wmf.175.1587487150085; 
+ Tue, 21 Apr 2020 09:39:10 -0700 (PDT)
+Received: from lmecxl0524.lme.st.com
+ (2a01cb058702ff00947c0d9b78b8fa1e.ipv6.abo.wanadoo.fr.
+ [2a01:cb05:8702:ff00:947c:d9b:78b8:fa1e])
+ by smtp.gmail.com with ESMTPSA id q143sm4389055wme.31.2020.04.21.09.39.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Apr 2020 09:39:09 -0700 (PDT)
+From: Etienne Carriere <etienne.carriere@linaro.org>
+To: linux-kernel@vger.kernel.org
+Subject: [RFC PATCH v2 0/6] firmware: conduit method helpers for SMCCC v1.0
+ calls
+Date: Tue, 21 Apr 2020 18:38:05 +0200
+Message-Id: <20200421163811.22720-1-etienne.carriere@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_091946_059523_ABC0CFCC 
-X-CRM114-Status: GOOD (  28.43  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200421_093912_697590_4507D5F0 
+X-CRM114-Status: GOOD (  12.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,89 +94,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, michal.simek@xilinx.com,
+ tee-dev@lists.linaro.org, Etienne Carriere <etienne.carriere@linaro.org>,
+ james.morse@arm.com, sudeep.holla@arm.com, richard.gong@linux.intel.com,
+ jens.wiklander@linaro.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+V2:
+ Fix several build issues reported by kbuild test robot:
+ - patch 1/6: fix erroneous ';' in inline functions;
+ - patch 5/6: fix bad function label used;
+ - patch 6/6: fix bad function label used.
+ Reported-by: kbuild test robot <lkp@intel.com>
+ Fix function stubs to return -ENXIO not -EINVAL when SMCCC is not supported.
+ Few rephrasing in commit message for all patches of the series.
+ Add an empty line between a trace and a return instruction in patch 1/6.
+ Add argument label in arm_smccc_1_0_set_conduit() prototype in patch 1/6.
+ Fix typo in inline description comments in patch 1/6.
 
-On Tue, Apr 21, 2020 at 6:01 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
-> On Tue, Apr 21, 2020 at 05:19:40PM +0200, Ard Biesheuvel wrote:
-> > On Wed, 15 Apr 2020 at 17:34, Geert Uytterhoeven
-> > <geert+renesas@glider.be> wrote:
-> > > Currently, the start address of physical memory is obtained by masking
-> > > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > > was chosen as a balance between the requirements of different platforms.
-> > > However, this does require that the start address of physical memory is
-> > > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > > requirement is not fulfilled.
-> > >
-> > > Fix this limitation by obtaining the start address from the DTB instead,
-> > > if available (either explicitly passed, or appended to the kernel).
-> > > Fall back to the traditional method when needed.
-> > >
-> > > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > > i.e. not at a multiple of 128 MiB.
-> > >
-> > > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> > > Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-> > > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > > Tested-by: Dmitry Osipenko <digetx@gmail.com>
-> >
-> > This is ready to go into the patch system, no?
-> >
-> > The sooner Russell picks it up, the sooner I can respin my patches
-> > that go on top.
->
-> This seems to be a particularly risky change (it's already been subject
-> to various failures for people) so I do not intend to rush to pick it
-> up.
+These changes propose helper functions and macros to consolidate choice of
+the conduit method among devices communicating with a secure world that
+complies with SMCCC v1.0 but not SMCCC v1.1 or later. The new helper
+functions mimic arm_smccc_1_1_*() function but for SMCCC v1.0 compliant
+firmwares.
 
-Yeah, I'm fully aware head.S is fragile ;-)
+This series of changes updates several firmware drivers that each define a
+conduit method whereas kernel drivers are expected to use the very same
+conduit. This series obviously does not enforce these drivers to apply the
+proposed changes but the interest of the first patch is this series is that
+at least the PSCI driver upgrades as it will allow new drivers to benefit
+from the early initialized PSCI conduit method.
 
-> In any case, Masahiro Yamada has resubmitted a patch to sort out the
-> libfdt builds that he's been trying to get merged for some time now,
-> so I'm going to be giving that priority. Your change conflicts with
-> this libfdt build change.
+Etienne Carriere (6):
+  firmware: helper functions for SMCCC v1.0 invocation conduit
+  firmware: psci: set SMCCC v1.0 conduit and use helpers functions
+  tee: optee: use SMCCC v1.0 helper functions
+  firmware: arm_sdei: use SMCCC v1.0 helper functions
+  firmware: stratix10: use SMCCC v1.0 helper functions
+  firmware: zynqmp: use SMCCC v1.0 helper functions
 
-OK, will resubmit after his changes have landed (in your tree?).
-
-> So, I think all in all, it needs to spend a bit longer being provenly
-> tested before I merged it (and eventually fixed up for the libfdt
-> change), and I don't think merging it so it appears in linux-next
-> will help with that.
-
-Please note that I also have a DTS patch that depends on this.
-Hence if this patch doesn't make it into v5.8, the board support DTS
-patch that depends on this will have to be postponed one more cycle,
-too...
-
-Thanks!
-
-Gr{oetje,eeting}s,
-
-                        Geert
+ drivers/firmware/Makefile            |   1 +
+ drivers/firmware/arm_sdei.c          |  79 +++++---------
+ drivers/firmware/arm_smccc_conduit.c | 148 +++++++++++++++++++++++++++
+ drivers/firmware/psci/psci.c         |  60 ++---------
+ drivers/firmware/stratix10-svc.c     |  97 ++----------------
+ drivers/firmware/xilinx/zynqmp.c     |  87 ++--------------
+ drivers/tee/optee/call.c             |  14 +--
+ drivers/tee/optee/core.c             |  85 ++++-----------
+ drivers/tee/optee/optee_private.h    |   4 +-
+ include/linux/arm-smccc.h            | 106 +++++++++++++++++++
+ include/linux/psci.h                 |   1 -
+ 11 files changed, 338 insertions(+), 344 deletions(-)
+ create mode 100644 drivers/firmware/arm_smccc_conduit.c
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.17.1
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
