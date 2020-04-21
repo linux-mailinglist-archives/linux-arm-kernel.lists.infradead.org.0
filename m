@@ -2,66 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06CA61B22CF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 11:32:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B65D1B22FC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 11:38:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=m9Z1qAP5/42g6pXhqN0OcRQ+fnQ4iOsGuodSsZfPkSI=; b=NHG1slxqL5VaSFlNbd7xVrdjs
-	eWYvN7EIOgyJB0PizLwGks7gVDtJs5n0a8hZ3/GWDpNfj5uCtx6sY1cnf6FmnpJIYMi39txcvg3cy
-	/W1llbGORkg9kuZrbZkdITCqkZ8+eE0CQi8Q3ofGnF/HmvDkkj+lbNNaD5NLxCrhIC+ji0a1reIAy
-	RJKvbraqbfTj/a7YSKwwVQwsXeHjk+KnqdQh8qa0IfXB4qiSi36GUk5QddhKyX6y1HC/7NC+h0jUt
-	3wK1aokMRFTkSLFOVarpGXFT0tXvO2yoLZqmEiEO6ICG9GarqubV5nRuO0S9OWo5GRRFD8FkPSP5l
-	5pfrnkyUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cGDBxDrpusMmHsRNDS3vku9ePU3GAJi7dRHzZIeXhug=; b=q9yzgY1T0ndqHk
+	kbwR41LG+LsoTaTy5ULj/srelAE7qG8J9QiiAytRBzCN3Q4/i8dpk0RwnCGGiCijTbhnUN9oOIXpM
+	QJPfbtP0mJZwxBoszaLcNxO12duDXUlbLu2loS6b+xpQ6IffVLQIYMosUk4NXkxM4UU02PMmx3gis
+	o7XA+zMPI567cX+jp3L8r3igwvZuvDV2jbVqbq2QdW4ey6VWcKP6vWd8gR5mlRXhbMigoT2JSobw5
+	Ey1+eAJKdcJkoHQo/bJZBTbLoiC4efZl7+Y60nZKEo4cy3m94LjtfBF5Ebw2iYGlRg1VYt1KgBZab
+	1hRLDHThUWYXS4z0U2qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQpGD-0007BL-25; Tue, 21 Apr 2020 09:32:09 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jQpLx-0002Q5-AL; Tue, 21 Apr 2020 09:38:05 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQpG1-00079g-FH; Tue, 21 Apr 2020 09:32:00 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id DBF64AE53;
- Tue, 21 Apr 2020 09:31:51 +0000 (UTC)
-Subject: Re: [PATCH v12 4/5] soc / drm: mediatek: Move routing control to
- mmsys device
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-References: <20200311165322.1594233-1-enric.balletbo@collabora.com>
- <20200311165322.1594233-5-enric.balletbo@collabora.com>
- <02290a21-7392-a2cf-576c-215091ec05e8@suse.com>
- <1585177534.26117.4.camel@mtksdaap41>
- <f3c2926a-ef92-b004-9786-5be1645af497@suse.com>
- <1585234277.12089.3.camel@mtksdaap41>
- <73ef0b8e-2802-a047-2a56-936b63d264cb@suse.com>
- <CAAOTY__EV8PHau9CzSiA8up1QAmZxfK2QnaTid0WrNOsn2Xcag@mail.gmail.com>
-From: Matthias Brugger <mbrugger@suse.com>
-X-Pep-Version: 2.0
-Message-ID: <c809233f-6d96-8871-e6a4-b66ed5cc535f@suse.com>
-Date: Tue, 21 Apr 2020 11:31:50 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jQpLn-0002PF-1z
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 09:37:56 +0000
+Received: by mail-ed1-f65.google.com with SMTP id j20so9764724edj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Apr 2020 02:37:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=pUIbDFhJqr/9wTzVT1i+Z8HZyJJH5JjwfcGGQ9Cylwo=;
+ b=jds2SCKab//LhRn7yzJpxheR90UsB/JowcArbQw3UuAUP/zxe/lC6VOPJYh85HtgUk
+ gnMRpbLiWLPSxZt/gmMpeNShtsgYelFJdPGd+DRl8xHmQLwQgCQGj9EgY+RcgDYyJQp0
+ EwJqr3AF39dZB+cb6IPAU+3DuIHsKZ701Qdt7QL8VpNtsYJcPvpRtYnusrFKqvqJ+6Le
+ /LiLj1dTppd310TiblYV7GT6oD4E87bc1cmy5pv7Or5+jieUzHRQmlOUurwF6F8oy0+j
+ aZl4/IAejeBJf7YakMx+YvHvGlMimGEzka/8X3AT0yGOIJYW3U0wpzIVJmX1mVmT9+Pp
+ cJ8A==
+X-Gm-Message-State: AGi0PubnCeuvo+spNI7IrPUiOW8r2DZ1yP3t2MYA6I4JNeZ3P3eKOHcM
+ hzSo6lFgWOyjKGrH8oc5T5A=
+X-Google-Smtp-Source: APiQypLey0EZfhN+xSWm9hifQNy4VwGD3CtpJ8LAoBR+n0J7QuYWrrulY3K53UdHJhYaiDQtDSTYug==
+X-Received: by 2002:a05:6402:b03:: with SMTP id
+ bm3mr17363469edb.299.1587461872371; 
+ Tue, 21 Apr 2020 02:37:52 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id k33sm279519edc.18.2020.04.21.02.37.51
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 21 Apr 2020 02:37:51 -0700 (PDT)
+Date: Tue, 21 Apr 2020 11:37:49 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Tang Bin <tangbin@cmss.chinamobile.com>
+Subject: Re: [PATCH] ARM: samsung: Use devm_platform_ioremap_resource() to
+ simplify code
+Message-ID: <20200421093749.GA30127@kozik-lap>
+References: <20200419070607.15488-1-tangbin@cmss.chinamobile.com>
 MIME-Version: 1.0
-In-Reply-To: <CAAOTY__EV8PHau9CzSiA8up1QAmZxfK2QnaTid0WrNOsn2Xcag@mail.gmail.com>
-Content-Type: multipart/mixed; boundary="------------4BB1865ABCAB0DB18962FA15"
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200419070607.15488-1-tangbin@cmss.chinamobile.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_023157_799727_C5C585F5 
-X-CRM114-Status: GOOD (  21.72  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200421_023755_098726_710BEF68 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,263 +90,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>, matthias.bgg@kernel.org,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- devicetree@vger.kernel.org, Seiya Wang <seiya.wang@mediatek.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>, sean.wang@mediatek.com,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Houlong Wei <houlong.wei@mediatek.com>, Hsin-Yi Wang <hsinyi@chromium.org>,
- CK Hu <ck.hu@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
- Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
+Cc: linux-samsung-soc@vger.kernel.org, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, kgene@kernel.org,
+ Shengju Zhang <zhangshengju@cmss.chinamobile.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
---------------4BB1865ABCAB0DB18962FA15
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+On Sun, Apr 19, 2020 at 03:06:07PM +0800, Tang Bin wrote:
+> Use devm_platform_ioremap_resource() instead of
+> platform_get_resource()+ devm_ioremap_resource().
+> 
+> Signed-off-by: Shengju Zhang <zhangshengju@cmss.chinamobile.com>
+> Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
+> ---
+>  arch/arm/plat-samsung/adc.c | 4 +---
 
+Thanks, applied.
 
+Best regards,
+Krzysztof
 
-On 4/16/20 6:22 PM, Chun-Kuang Hu wrote:
-> Hi, Matthias:
->=20
-> Matthias Brugger <mbrugger@suse.com> =E6=96=BC 2020=E5=B9=B43=E6=9C=882=
-6=E6=97=A5 =E9=80=B1=E5=9B=9B =E4=B8=8B=E5=8D=8811:45=E5=AF=AB=E9=81=93=EF=
-=BC=9A
->>
->>
->>
->> On 26/03/2020 15:51, CK Hu wrote:
->>> Hi, Matthias:
->>>
->>> On Thu, 2020-03-26 at 12:54 +0100, Matthias Brugger wrote:
->>>> Hi CK,
->>>>
->>>> On 26/03/2020 00:05, CK Hu wrote:
->>>>> Hi, Matthias:
->>>>>
->>>>> On Wed, 2020-03-25 at 17:16 +0100, Matthias Brugger wrote:
->>>>>>
->>>>>> On 11/03/2020 17:53, Enric Balletbo i Serra wrote:
->>>>>>> Provide a mtk_mmsys_ddp_connect() and mtk_mmsys_disconnect() func=
-tions to
->>>>>>> replace mtk_ddp_add_comp_to_path() and mtk_ddp_remove_comp_from_p=
-ath().
->>>>>>> Those functions will allow DRM driver and others to control the d=
-ata
->>>>>>> path routing.
->>>>>>>
->>>>>>> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.c=
-om>
->>>>>>> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
->>>>>>> Reviewed-by: CK Hu <ck.hu@mediatek.com>
->>>>>>> Acked-by: CK Hu <ck.hu@mediatek.com>
->>>>>>
->>>>>> This patch does not apply against v5.6-rc1.
->>>>>> Please rebase as this is a quite big patch and it won't be easy to=
- do that by hand.
->>>>>
->>>>> I think this patch depends on [1] which has been acked by me and I =
-have
->>>>> not picked it. The simple way is that you pick [1] first and then p=
-ick
->>>>> this series.
->>>>>
->>>>> [1]
->>>>> https://patchwork.kernel.org/patch/11406227/
->>>>>
->>>>
->>>> You would need to provide a stable tag for me that I can merge into =
-my tree. You
->>>> can also try to merge my for-next [1] which has the newest version f=
-rom Enric.
->>>> If you see any merge conflict, then we have to do something about it=
- :)
->>>>
->>>> Regards,
->>>> Matthias
->>>>
->>>> [1]
->>>> https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.g=
-it/log/?h=3Dfor-next
->>>>
->>>
->>> You have applied this series, so I would not apply other patches whic=
-h
->>> would conflict with this series. After this series land on main strea=
-m
->>> (wish it happen in this merge window), I would rebase other patch on
->>> main stream.
->>>
->>
->> I haven't (yet) send the pull request. If you want to bring in your pa=
-tches in
->> v5.7 as well we can find a solution to that. Shall I provide you with =
-a stable
->> branch which you can merge? This way you can add all your patches in t=
-he pull
->> request as well and we don't have to wait for v5.8 to get things into =
-mainline.
->>
->> Let me know and I'll provide you with a stable branch.
->=20
-> This series is in linux-next but does not in main stream. So would you
-> please provide a stable branch so I could pull this series?
->=20
-
-Please find the pull request below:
-
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f31=
-36:
-
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
-
-are available in the Git repository at:
-
-
-https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-tags/v5.7-next-drm-stable
-
-for you to fetch changes up to 667c769246b01c53ad0925d603d2a2531abd3ef2:
-
-  soc / drm: mediatek: Fix mediatek-drm device probing (2020-04-13
-13:01:16 +0200)
-
-----------------------------------------------------------------
-Enric Balletbo i Serra (3):
-      dt-bindings: mediatek: Update mmsys binding to reflect it is a
-system controller
-      soc / drm: mediatek: Move routing control to mmsys device
-      soc / drm: mediatek: Fix mediatek-drm device probing
-
-Matthias Brugger (2):
-      drm/mediatek: Omit warning on probe defers
-      clk / soc: mediatek: Move mt8173 MMSYS to platform driver
-
- Documentation/devicetree/bindings/arm/mediatek/mediatek,mmsys.txt |   7 =
-+--
- drivers/clk/mediatek/Kconfig                                      |   7 =
-+++
- drivers/clk/mediatek/Makefile                                     |   1 =
-+
- drivers/clk/mediatek/clk-mt8173-mm.c                              | 146
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- drivers/clk/mediatek/clk-mt8173.c                                 | 104
-------------------------------------------
- drivers/gpu/drm/mediatek/Kconfig                                  |   1 =
-+
- drivers/gpu/drm/mediatek/mtk_disp_color.c                         |   5 =
-++-
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c                           |   5 =
-++-
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c                          |   5 =
-++-
- drivers/gpu/drm/mediatek/mtk_dpi.c                                |  12
-+++--
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c                           |  19
-++++----
- drivers/gpu/drm/mediatek/mtk_drm_ddp.c                            | 259
-+------------------------------------------------------------------------=
---------------------------------
- drivers/gpu/drm/mediatek/mtk_drm_ddp.h                            |   7 =
----
- drivers/gpu/drm/mediatek/mtk_drm_drv.c                            |  45
-++++++++++---------
- drivers/gpu/drm/mediatek/mtk_drm_drv.h                            |   2 =
-+-
- drivers/gpu/drm/mediatek/mtk_dsi.c                                |   8
-+++-
- drivers/gpu/drm/mediatek/mtk_hdmi.c                               |   4 =
-+-
- drivers/soc/mediatek/Kconfig                                      |   8
-++++
- drivers/soc/mediatek/Makefile                                     |   1 =
-+
- drivers/soc/mediatek/mtk-mmsys.c                                  | 337
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- include/linux/soc/mediatek/mtk-mmsys.h                            |  20
-+++++++++
- 21 files changed, 592 insertions(+), 411 deletions(-)
- create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
- create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
- create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
-
-
-
-> Regards,
-> Chun-Kuang.
->=20
->>
->> Regards,
->> Matthias
->>
->>> Regards,
->>> CK
->>>
->>>>> Regards,
->>>>> CK
->>>>>
->>>>>>
->>>>>> Regards,
->>>>>> Matthias
->>>>>>
->>>>>>> ---
->>>>>>>
-
---------------4BB1865ABCAB0DB18962FA15
-Content-Type: application/pgp-keys;
- name="pEpkey.asc"
-Content-Transfer-Encoding: quoted-printable
-Content-Disposition: attachment;
- filename="pEpkey.asc"
-
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mQENBFuECLQBCAD66PIehgR5YGIOhLIDfubGmBbktra7Ix4c0uMShRkv05ZfJmPK
-N50OrIm4gaQ25RMDrZd6X3RU35IsoflqTSBGoiMQmC9TklVsAfIObuNkvDMJEDXd
-pvbIuYyj9QcSysHvTW9GrU/hF3uFqoPlaDmQy9TBMDDtJu8CPYVpyVnmXJvyoYa2
-KE77LYXORs+eArKR8dqOK/z3zzHWMq8IieiASRcFfDZBx4fPHRZaOYkFGaLpQPfF
-/bCwWWX6O6bRvx5KOWTQzt2Hp/6ZzHX+A7XY6yLY9bM18/70NICZNF8oaDN6/i/K
-nMoGcugqE2Kk66hLeybFWVmFjppRt7zh6GaVABEBAAG0JE1hdHRoaWFzIEJydWdn
-ZXIgPG1icnVnZ2VyQHN1c2UuY29tPokBVAQTAQgAPgIbAwULCQgHAgYVCgkICwIE
-FgIDAQIeAQIXgBYhBA1mtM782M72qvgLxkP54a369LqrBQJdZ/80BQkDxMzsAAoJ
-EEP54a369LqrBxsH/jOEmKlthbUCWFmvNZyPl8VCqVNRQdVOBlg7JzjYtGPMukdv
-aGMFDTbn9f7RpVdVasnjwta2rAuPxYGT2SajccSqIUnjlyxOXjdWgahfvS1bLfIh
-QW3F3r5P6Sc1hVkSAYB+IKgEHoRl09fcVfxDR4i7xuGP8lvaG5087u7hHiqAXAmL
-gInuY2QA8MkgxLOie6HOavSEG58Car5EBOZOuIzg7lnL0cyYv/nx6kopNuJXAaum
-tsk2xwuNqz8Ny5AYTowyuasaZchEeJpc3su+yoZvOrc/UVgcCmcT7GUnMaTQGc4I
-bVWWK7762RB++hLaDiFVXRJZr6jfIU2X3VrsxOO5AQ0EW4QItQEIAMrwGOUXVhVE
-kl6+IXCnD2TPqdGiuv/aKZ8yIvvD1VPw8j0kRdbsha1sIxE7cKvHcnRqKuLW6w9s
-FCNaXoJBPysVDWhVdT4drpr8WtwZQG4Lqa86t5Ndz14lG3Vr/lFs07BpVbxZj2/k
-RqXNZbAmCmZfZbtR55XyUz20uJxoQ0ckXOUxLA2ye0bF9DOt4SwgNgSdp668YFep
-sTBPR0wRLQQpL/00z+S7fiULzUqzUq4cQPpZt7YALJ2iQoUQ93G3t95DMwdt5/tT
-mnFMt8ruyP45oHO+8X6RDRSR31G34YzLWGinXPMDYZ+kjhFg3yv5m5+V6Lc2+APN
-PbouD/9LEXUAEQEAAYkBPAQYAQgAJgIbDBYhBA1mtM782M72qvgLxkP54a369Lqr
-BQJdZ/80BQkDxMzrAAoJEEP54a369LqrjYAH/iSIrw1ROtd+uPupqwttF9IfG3Na
-O1u/6Sk9nKRa2P0SaxYh7ZF8foUs5m0M9mPrAQwAFMRSuu3KQPKQM6vIJR2dRmET
-G9zkyV6FBfoPaodSo8ovv8qi3XCoJxuaF3/+Fes6DPGjk8zCyCy7h+te06s5H8w1
-HZc7YepyOrgdaVMqG6j4c44epLHQ/xtbHQ6Y4Zbb43RBeyYhcRpBgkB/LWuKCbqm
-3AcVMmhcgns86U8jI1VkYzjuvwt9DNJgFgPpyynqfWKl9N0u7aik7ByYYUeK8tZI
-1rwTZ+CdzOq4YRIVWqoG6eLHd1qf2mCuCqiz9TZnDWXPad5ghdzWiX1Mg44=3D
-=3D3czs
------END PGP PUBLIC KEY BLOCK-----
-
---------------4BB1865ABCAB0DB18962FA15
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---------------4BB1865ABCAB0DB18962FA15--
-
