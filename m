@@ -2,60 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E9C1B1CC3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 05:26:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F84F1B1D16
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 05:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=vz45mS9bDfUGXiy0JVQhT/pI6meA+D//YT64MOtH9I0=; b=JfZI8O3YMieUXp3nGunKhMfYSn
-	MSNU4op54tqBdh334Wos0q1lYsBDWXoV70uCIBQHtlclQV4qC0jjBWDTwrPBA3PXpIBhLdQ+H1O0F
-	qa7jwr5CMnYMuhA7puY95qfRUuVsUks3Rz8nDXFyZ9imQVFHM/3axAAYUrrDr4kExCCvzEFvGafZN
-	ej8hYW5QccAmk3pW/DXecauNrsOZh8cNQPYuJTrpL2dUpqHB0vyCeiNJzCUrPgW0ey2NqpPXFjI6M
-	E2JfwESKbN7LMhL6oH2C49BJKVKXUeKcJunR9rZnbjOM5zsxESV2he2k8PdnA5acdS2RqHneoj9Q1
-	j4Rgq1Yw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ih50w6eZ6fiepUQ1CvIhCk1ip3rb+8hFwuU3aLEC0M8=; b=gSE7b1bEFS1kFL
+	uzGuc+p8imqZW8fGVaEEj68CI3fVxPJIQqicsKXb0j+tVJH/NZ7cliw0dSzJKQxZbCsuR5fp/EzdT
+	tSNK/5ZsWvI4Mk+XgtV/BD+TevgsymxP+vaMbzrC9H7mFb/CzWSeF3/RlyxujPxw2mqGrm8yuOLVr
+	UMjyjf+o203UdCtuI0NKF7LZys14cs7flXVCnLOtQG7uCgysiL+8mpWw7czzGTmwpVwd5p+hLOcuI
+	/SgTu/p20TrQvw7o8kN8OSktssOKw3HHtF7Ps6QgmOs1VfM2OIVfrOsL3saZx3or4Ija1vpl1pSjv
+	d9gNl4xrgPr0ZnA4yBKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQjYN-00009j-Cg; Tue, 21 Apr 2020 03:26:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQjWP-0004gr-5J
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 03:24:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33C3D31B;
- Mon, 20 Apr 2020 20:24:28 -0700 (PDT)
-Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
- [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0D03A3F6CF;
- Mon, 20 Apr 2020 20:24:21 -0700 (PDT)
-From: Jianyong Wu <jianyong.wu@arm.com>
-To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
- tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
- maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
- will@kernel.org, suzuki.poulose@arm.com, steven.price@arm.com
-Subject: [RFC PATCH v11 9/9] arm64: Add kvm capability check extension for
- ptp_kvm
-Date: Tue, 21 Apr 2020 11:23:04 +0800
-Message-Id: <20200421032304.26300-10-jianyong.wu@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200421032304.26300-1-jianyong.wu@arm.com>
-References: <20200421032304.26300-1-jianyong.wu@arm.com>
+	id 1jQjuQ-0008BI-P1; Tue, 21 Apr 2020 03:49:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQjuF-0008Aj-Fc; Tue, 21 Apr 2020 03:49:09 +0000
+Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com
+ [209.85.208.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 88EC52071E;
+ Tue, 21 Apr 2020 03:49:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587440946;
+ bh=0D6hYraBu1DbsgpFZCPm8t6r20cXBzyDrsgU4Z9wbZk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WWyMs0j3tGy9ANeQcxvdnl4D2WfDvXmeTx+v/xAjU3v1syDAcRLuG+jTM8pAN9C8c
+ +ugCB2prYMNqzzfI9yUZDDQU/E3+XpLnEbFc8dmEc5PWVfX6iEZUISBELut7DAYoEn
+ qZ6RAUv8WCZxTJmFNfy78KPXTD5Iybr6mKPjsOrk=
+Received: by mail-lj1-f175.google.com with SMTP id m8so12461647lji.1;
+ Mon, 20 Apr 2020 20:49:06 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYb9x00y2iPVFRytbGNG1LbdaYxnwaPccg4aNibzykwLYjl8DaJ
+ IlO0cQNanArZ6/gvRCIJzKrgsbf5zMIdyehaGDA=
+X-Google-Smtp-Source: APiQypJ1or0lDKF5QqUv6w69NTZ4v7V/G08isP2Oq7HTw+F7ljB+CKK2Gz7J3f4a+MkTFc+nuAlbnVCvdthGDNd2ybs=
+X-Received: by 2002:a2e:9ada:: with SMTP id p26mr8877859ljj.14.1587440944667; 
+ Mon, 20 Apr 2020 20:49:04 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200416181944.5879-1-jbx6244@gmail.com>
+In-Reply-To: <20200416181944.5879-1-jbx6244@gmail.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 21 Apr 2020 11:48:52 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67N6t+C8dVKdjuOv1NzD9=3-n0GZQkshy1Pm6PFPJ87dQ@mail.gmail.com>
+Message-ID: <CAGb2v67N6t+C8dVKdjuOv1NzD9=3-n0GZQkshy1Pm6PFPJ87dQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm64: dts: rockchip: add bus-width properties to mmc
+ nodes for rk3328.dtsi
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_202429_267005_14C784B9 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200420_204907_560823_0F003354 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,53 +83,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
- jianyong.wu@arm.com, linux-kernel@vger.kernel.org, Kaly.Xin@arm.com,
- nd@arm.com, kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree <devicetree@vger.kernel.org>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let userspace check if there is kvm ptp service in host.
-Before VMs migrate to another host, VMM may check if this
-cap is available to determine the next behavior.
+On Fri, Apr 17, 2020 at 2:19 AM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> 'bus-width' and pinctrl containing the bus-pins
+> should be in the same file, so add them to
+> all mmc nodes in 'rk3328.dtsi'.
 
-Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
-Suggested-by: Marc Zyngier <maz@kernel.org>
----
- include/uapi/linux/kvm.h | 1 +
- virt/kvm/arm/arm.c       | 1 +
- 2 files changed, 2 insertions(+)
+Nope. First of all, pinctrl usage is with pinctrl-N properties, not the
+pinctrl device, and there are no defaults set for any of the mmc nodes.
+Second, these are board design specific. For example, boards are free to
+use just 4 bits for the eMMC if they so desire. So this should be in each
+board dts file. If a board is missing this property, fix the board.
 
-diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 428c7dde6b4b..668049ad78e1 100644
---- a/include/uapi/linux/kvm.h
-+++ b/include/uapi/linux/kvm.h
-@@ -1017,6 +1017,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_S390_VCPU_RESETS 179
- #define KVM_CAP_S390_PROTECTED 180
- #define KVM_CAP_PPC_SECURE_GUEST 181
-+#define KVM_CAP_ARM_KVM_PTP 182
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 48d0ec44ad77..4726a88949f5 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -195,6 +195,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 	case KVM_CAP_ARM_IRQ_LINE_LAYOUT_2:
- 	case KVM_CAP_ARM_NISV_TO_USER:
- 	case KVM_CAP_ARM_INJECT_EXT_DABT:
-+	case KVM_CAP_ARM_KVM_PTP:
- 		r = 1;
- 		break;
- 	case KVM_CAP_ARM_SET_DEVICE_ADDR:
--- 
-2.17.1
+This applies to all three patches in the series.
 
+ChenYu
+
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> index 175060695..db2c3085e 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> @@ -861,6 +861,7 @@
+>                 clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+>                          <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <4>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> @@ -873,6 +874,7 @@
+>                 clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+>                          <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <4>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> @@ -885,6 +887,7 @@
+>                 clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+>                          <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <8>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> --
+> 2.11.0
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
