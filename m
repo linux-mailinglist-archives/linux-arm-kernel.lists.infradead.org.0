@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC811B29FE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:34:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C75A1B2A00
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:34:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vIvKfKzCeBwG1wZNgu1qaWpDAVGSKBc30vwWcdrhw78=; b=c72bHiUieRW7Gi
-	zLonu02/ed4jhO4NMsT0870mc6HFQECeW9fYKAypmyIp77QQPbiEomyQEx/bT+qUm1TAQwXuS8rsp
-	hvCSHL+gV8+4rDMUCpp7PzQqi8N747dOBzTzUfP0hrKPBWhaLy2WNIBSjNMcxcAM8uinR8Jr9ol2I
-	eL5V7QI0/aoEkuiMcQYI8hgC5rnuRzwDBiXJsxRyl/ZgtLLYjhJDkNO9Vl5kStLphSZA7+xB1A+sN
-	oI7k4SEGQWYjytBViR/dBeGT6UddkQcJIaGsOVdll435Xqmrdot2rP+ARy6DNqrCEz/CSA9gDIQB/
-	jc47R4cPmb/xhFLVUpuA==;
+	List-Owner; bh=9dKtT+z0Mr+X0rLGoQ6IBv2zd6/LR2aX9/njuMSOvsQ=; b=QCYxm4l95tGkh1
+	kzegNOiYKpbcTL+5BubM8YKid7rdkceZ+RqSFj/a5OFCV0YMHZnFUDdYTIoHxGzrQdyQVCovqsaXp
+	H/HOOu/OqE9xpYM4m+xjDYPWcAwUaKQHk9DYPQg+zQX2vOQYkwCj4AiZ70/KfLl+fCj9MVID6f4Kj
+	N/vBpxzc4zMmvRTNHsym1EmamR7fD9iKQiU5WN2dICgkYA/rh+mhd2PodMUmV/wXqxSHrLHqK8sl1
+	JEWRRu8mg2X7rw8iz0bJ5JxoyEIm/2IsPJBf9/YlI5kOQDRi6NhvEj1qALz4rJ9z9Faq4ETo/w9gZ
+	wZAuiv3q4V92I1+cgQQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtyE-00006s-DQ; Tue, 21 Apr 2020 14:33:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtrT-0000LP-2c
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:26:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4629511D4;
- Tue, 21 Apr 2020 07:26:54 -0700 (PDT)
-Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B80453F68F;
- Tue, 21 Apr 2020 07:26:52 -0700 (PDT)
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
- documentation
-Date: Tue, 21 Apr 2020 15:26:03 +0100
-Message-Id: <20200421142603.3894-24-catalin.marinas@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200421142603.3894-1-catalin.marinas@arm.com>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
+	id 1jQtyb-0000X3-Fr; Tue, 21 Apr 2020 14:34:17 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQts0-0000oy-Jq
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:27:32 +0000
+Received: by mail-io1-xd42.google.com with SMTP id p10so5632183ioh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 Apr 2020 07:27:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OqCscXJ09KLGujJaizajEoMySZNT2/EV15nDsUUtrfU=;
+ b=U7B6Tred9KPR0m5EPynnslmwJ8Vy4gLx5C/E/WZh2A7pnz6TnctIe5rqxhGH+Tvv55
+ RVU0TPIULnX7bOr/ELyqHua4lqqXkz76W/ymNzlGu68PpeP9mKcwtAr4KeOzvHHqpcTd
+ nPfTqtiISJ5stRROhWC4Xsj/VLc6QjQtHgT+6+99evTbMHC/mV09VxkZB1ROhgd59HW5
+ 1MexCgZL2D4kBG7FW4zBADaEAb3JIsvGlSEQXc4hXJvBO1e8qByDzKF4OQzh774TtIDX
+ LWB3tadoE1ICOaK5UG2O+d9+Cd4ZKVYGtG2t9wkLTJii58IPMESFPfqAkaSmB0atqc7N
+ azMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OqCscXJ09KLGujJaizajEoMySZNT2/EV15nDsUUtrfU=;
+ b=Cii2BbHMoU3UkQMpZvjUl1VaWYDK+hmu1pQukSRDEmdGlq8jVgcgx+mAhzSV+l72v4
+ 6ROcq4t4llAVesD+F6a7Zs405vOgMy84jdtHFcGpoiawU3jvnQRxfcOXoBdk3VHmHDnW
+ YBLxhDbSYlRKQL/gOFsdVTBek7PE1zQwlqGid5jB2AXmkT5Oba+KjYBsy0HeWYFcGCod
+ 9MQQjvZBLcr7fMlxDKOM1FPCLNsy6KL/jjvRL8w8gM3jZeI3oIxvr01q7syALr2KzwCV
+ 0Lj16p+TWjpHWuanlEDWm4HzEuKPYH3BZ6lOirrpodyj2lTYxhm+bnt+PCEmKocrEDVz
+ 6drA==
+X-Gm-Message-State: AGi0PuZVRyM/gDDusTMtWuAIfepyfygMfX3PH0kHjaeYAp/kYzOUN5Hb
+ o+X6IrKcSC7EUxBVZqK2ADxIWOrxFmWHSg+tABf82A==
+X-Google-Smtp-Source: APiQypLvTxvZooNRjqXXz0rmjN32b6FyHt8NUNoj+XF+nyCMhAyw96ZeJQV8qf9Zqw+B1M47Z3ltcOiMyjEYU1/PmHM=
+X-Received: by 2002:a02:b88e:: with SMTP id p14mr14967903jam.36.1587479246831; 
+ Tue, 21 Apr 2020 07:27:26 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200415201116.15687-1-mike.leach@linaro.org>
+ <20200420205827.GC25885@xps15>
+ <CAJ9a7VjaxFmfC7K4JJVr-3mZAdDfZrZ4B8iGy64Od7VVw-6kWw@mail.gmail.com>
+In-Reply-To: <CAJ9a7VjaxFmfC7K4JJVr-3mZAdDfZrZ4B8iGy64Od7VVw-6kWw@mail.gmail.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Tue, 21 Apr 2020 08:27:15 -0600
+Message-ID: <CANLsYkyQQSDYZ=VP7BVD_Zjv292WMe7aJbOBcm0VCzbjPm-umw@mail.gmail.com>
+Subject: Re: [PATCH] coresight: cti: Add power management to CTI driver
+To: Mike Leach <mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_072655_221902_C20B5C12 
-X-CRM114-Status: GOOD (  26.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200421_072728_872630_254BE106 
+X-CRM114-Status: GOOD (  36.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,367 +92,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>
+Cc: Coresight ML <coresight@lists.linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+On Tue, 21 Apr 2020 at 04:34, Mike Leach <mike.leach@linaro.org> wrote:
+>
+> Hi Mathieu,
+>
+> On Mon, 20 Apr 2020 at 21:58, Mathieu Poirier
+> <mathieu.poirier@linaro.org> wrote:
+> >
+> > Good day Mike,
+> >
+> > On Wed, Apr 15, 2020 at 09:11:16PM +0100, Mike Leach wrote:
+> > > Add in CPU hotplug and CPU idle power management handling to CTI driver.
+> > >
+> > > Only CPU bound CTIs will register with the PM routines, to enable PM of
+> > > CTI alongside PM of ETM devices.
+> > >
+> > > Need separate HP PM event CPUHP_AP_ARM_CORESIGHT_CTI_STARTING as events
+> > > can only be registered once.
+> > >
+> > > Applies to Linux 5.7-rc1, tested on platforms Juno-r1 and DB410c.
+> > >
+> > > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > > ---
+> > >  drivers/hwtracing/coresight/coresight-cti.c | 163 +++++++++++++++++++-
+> > >  include/linux/cpuhotplug.h                  |   1 +
+> >
+> > Please split this set in half, one for pm_runtime and another one for hotplug.
+> >
+>
+> Will do.
+>
+> > >  2 files changed, 156 insertions(+), 8 deletions(-)
+> > >
+> > > diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> > > index aa6e0249bd70..31996a20ce69 100644
+> > > --- a/drivers/hwtracing/coresight/coresight-cti.c
+> > > +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> > > @@ -5,6 +5,7 @@
+> > >   */
+> > >
+> > >  #include <linux/property.h>
+> > > +#include <linux/cpu_pm.h>
+> > >  #include "coresight-cti.h"
+> > >
+> > >  /**
+> > > @@ -27,6 +28,12 @@ static DEFINE_MUTEX(ect_mutex);
+> > >  #define csdev_to_cti_drvdata(csdev)  \
+> > >       dev_get_drvdata(csdev->dev.parent)
+> > >
+> > > +/* power management handling */
+> > > +static int nr_cti_cpu;
+> > > +
+> > > +/* quick lookup list for CPU bound CTIs when power handling */
+> > > +static struct cti_drvdata *cti_cpu_drvdata[NR_CPUS];
+> > > +
+> > >  /*
+> > >   * CTI naming. CTI bound to cores will have the name cti_cpu<N> where
+> > >   * N is the CPU ID. System CTIs will have the name cti_sys<I> where I
+> > > @@ -36,7 +43,7 @@ static DEFINE_MUTEX(ect_mutex);
+> > >   */
+> > >  DEFINE_CORESIGHT_DEVLIST(cti_sys_devs, "cti_sys");
+> > >
+> > > -/* write set of regs to hardware - call with spinlock claimed */
+> > > +/* write set of regs to hardware - call with spinlock claimed / cpu context */
+> > >  void cti_write_all_hw_regs(struct cti_drvdata *drvdata)
+> > >  {
+> > >       struct cti_config *config = &drvdata->config;
+> > > @@ -73,7 +80,7 @@ static void cti_enable_hw_smp_call(void *info)
+> > >  }
+> > >
+> > >  /* write regs to hardware and enable */
+> > > -static int cti_enable_hw(struct cti_drvdata *drvdata)
+> > > +static int cti_enable_hw(struct cti_drvdata *drvdata, bool hp_re_enable)
+> >
+> > s/hp_re_enable/hp_event
+> >
+> >
+> > >  {
+> > >       struct cti_config *config = &drvdata->config;
+> > >       struct device *dev = &drvdata->csdev->dev;
+> > > @e -82,8 +89,11 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
+> > >       pm_runtime_get_sync(dev->parent);
+> > >       spin_lock(&drvdata->spinlock);
+> > >
+> > > -     /* no need to do anything if enabled or unpowered*/
+> > > -     if (config->hw_enabled || !config->hw_powered)
+> > > +     /* no need to do anything if enabled or unpowered */
+> > > +     if (!hp_re_enable) {
+> > > +             if (config->hw_enabled || !config->hw_powered)
+> > > +                     goto cti_state_unchanged;
+> > > +     } else if (!atomic_read(&drvdata->config.enable_req_count))
+> > >               goto cti_state_unchanged;
+> > >
+> > >       /* claim the device */
+> > > @@ -91,7 +101,7 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
+> > >       if (rc)
+> > >               goto cti_err_not_enabled;
+> > >
+> > > -     if (drvdata->ctidev.cpu >= 0) {
+> > > +     if (drvdata->ctidev.cpu >= 0 && !hp_re_enable) {
+> > >               rc = smp_call_function_single(drvdata->ctidev.cpu,
+> > >                                             cti_enable_hw_smp_call,
+> > >                                             drvdata, 1);
+> > > @@ -102,12 +112,15 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
+> > >       }
+> > >
+> > >       config->hw_enabled = true;
+> > > -     atomic_inc(&drvdata->config.enable_req_count);
+> > > +     if (!hp_re_enable)
+> > > +             atomic_inc(&drvdata->config.enable_req_count);
+> > > +
+> >
+> > We are dealing with 2 different variables, i.e CPU CTI vs global CTI, hotplug
+> > event vs framework event.  I wonder if we have just enough complexity to spin
+> > off two flavours of cti_enable_hw()...
+> >
+>
+> The complexity comes from the re-enable requirement not wanting to
+> update any reference counting rather than the CPU / global CTI.
+> On this basis I agree - perhaps cti_enable_hw() /
+> cti_hp_re_enable_hw() would work - at the cost of some repeated code.
 
-Memory Tagging Extension (part of the ARMv8.5 Extensions) provides
-a mechanism to detect the sources of memory related errors which
-may be vulnerable to exploitation, including bounds violations,
-use-after-free, use-after-return, use-out-of-scope and use before
-initialization errors.
+Right, there will indeed be some redundancy but I think it will be
+well worth it.
 
-Add Memory Tagging Extension documentation for the arm64 linux
-kernel support.
+>
+>
+> > >       spin_unlock(&drvdata->spinlock);
+> > >       return rc;
+> > >
+> > >  cti_state_unchanged:
+> > > -     atomic_inc(&drvdata->config.enable_req_count);
+> > > +     if (!hp_re_enable)
+> > > +             atomic_inc(&drvdata->config.enable_req_count);
+> > >
+> > >       /* cannot enable due to error */
+> > >  cti_err_not_enabled:
+> > > @@ -563,12 +576,127 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
+> > >       }
+> > >  }
+> > >
+> > > +/** cti PM callbacks **/
+> > > +static int cti_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
+> > > +                          void *v)
+> > > +{
+> > > +     struct cti_drvdata *drvdata;
+> > > +     unsigned int cpu = smp_processor_id();
+> > > +
+> > > +     if (!cti_cpu_drvdata[cpu])
+> > > +             return NOTIFY_OK;
+> > > +
+> > > +     drvdata = cti_cpu_drvdata[cpu];
+> > > +
+> > > +     if (WARN_ON_ONCE(drvdata->ctidev.cpu != cpu))
+> > > +             return NOTIFY_BAD;
+> > > +
+> > > +     switch (cmd) {
+> > > +     case CPU_PM_ENTER:
+> > > +             /* CTI regs all static - we have a copy & nothing to save */
+> > > +             drvdata->config.hw_powered = false;
+> > > +             if (drvdata->config.hw_enabled)
+> > > +                     coresight_disclaim_device(drvdata->base);
+> > > +             break;
+> > > +
+> > > +     case CPU_PM_ENTER_FAILED:
+> > > +             drvdata->config.hw_powered = true;
+> > > +             if (drvdata->config.hw_enabled) {
+> > > +                     if (coresight_claim_device(drvdata->base))
+> > > +                             drvdata->config.hw_enabled = false;
+> > > +             }
+> > > +             break;
+> > > +
+> > > +     case CPU_PM_EXIT:
+> > > +             /* write hardware registers to re-enable. */
+> > > +             drvdata->config.hw_powered = true;
+> > > +             drvdata->config.hw_enabled = false;
+> > > +
+> > > +             /* check enable reference count to enable HW */
+> > > +             if (atomic_read(&drvdata->config.enable_req_count)) {
+> > > +                     /* check we can claim the device as we re-power */
+> > > +                     if (coresight_claim_device(drvdata->base))
+> > > +                             return NOTIFY_OK;
+> > > +
+> > > +                     drvdata->config.hw_enabled = true;
+> > > +                     cti_write_all_hw_regs(drvdata);
+> > > +             }
+> > > +             break;
+> > > +     default:
+> > > +             return NOTIFY_DONE;
+> > > +     }
+> >
+> > For all of the above the config's hw_enabled and hw_powered are manipulated
+> > without taking drvdata->spinlock.  Please use spin_trylock() and spin_unlock().
+> >
+>
+> OK - good point.
+>
+> > > +
+> > > +     return NOTIFY_OK;
+> > > +}
+> > > +
+> > > +static struct notifier_block cti_cpu_pm_nb = {
+> > > +     .notifier_call = cti_cpu_pm_notify,
+> > > +};
+> > > +
+> > > +static int cti_cpu_pm_register(void)
+> > > +{
+> > > +     if (IS_ENABLED(CONFIG_CPU_PM))
+> > > +             return cpu_pm_register_notifier(&cti_cpu_pm_nb);
+> > > +
+> > > +     return 0;
+> > > +}
+> > > +
+> > > +static void cti_cpu_pm_unregister(void)
+> > > +{
+> > > +     if (IS_ENABLED(CONFIG_CPU_PM))
+> > > +             cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
+> > > +}
+> > > +
+> > > +/* CPU HP handlers */
+> > > +static int cti_starting_cpu(unsigned int cpu)
+> > > +{
+> > > +     struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
+> > > +
+> > > +     if (!drvdata)
+> > > +             return 0;
+> > > +
+> > > +     spin_lock(&drvdata->spinlock);
+> > > +     drvdata->config.hw_powered = true;
+> > > +     spin_unlock(&drvdata->spinlock);
+> > > +
+> > > +     cti_enable_hw(drvdata, true);
+> > > +     return 0;
+> > > +}
+> > > +
+> > > +static int cti_dying_cpu(unsigned int cpu)
+> > > +{
+> > > +     struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
+> > > +
+> > > +     if (!drvdata)
+> > > +             return 0;
+> > > +
+> > > +     spin_lock(&drvdata->spinlock);
+> > > +     drvdata->config.hw_powered = false;
+> > > +     coresight_disclaim_device(drvdata->base);
+> > > +     spin_unlock(&drvdata->spinlock);
+> > > +     return 0;
+> > > +}
+> > > +
+> > > +/* release PM registrations */
+> > > +static void cti_pm_release(struct cti_drvdata *drvdata)
+> > > +{
+> > > +     if (drvdata->ctidev.cpu >= 0) {
+> > > +             if (--nr_cti_cpu == 0) {
+> > > +                     cti_cpu_pm_unregister();
+> > > +
+> > > +                     cpuhp_remove_state_nocalls(
+> > > +                             CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+> > > +             }
+> > > +             cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
+> > > +     }
+> >
+> >         if (drvdata->ctidev.cpu < 0)
+> >                 return;
+> >
+> >         if (--nr_cti_cpu > 0)
+> >                 return;
+> >
+> >         cti_cpu_pm_unregister();
+> >         cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+> >         cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
+> >
+>
+> Agreed.
+>
+> > > +
+> > >  /** cti ect operations **/
+> > >  int cti_enable(struct coresight_device *csdev)
+> > >  {
+> > >       struct cti_drvdata *drvdata = csdev_to_cti_drvdata(csdev);
+> > >
+> > > -     return cti_enable_hw(drvdata);
+> > > +     return cti_enable_hw(drvdata, false);
+> > >  }
+> > >
+> > >  int cti_disable(struct coresight_device *csdev)
+> > > @@ -598,6 +726,7 @@ static void cti_device_release(struct device *dev)
+> > >
+> > >       mutex_lock(&ect_mutex);
+> > >       cti_remove_conn_xrefs(drvdata);
+> > > +     cti_pm_release(drvdata);
+> > >
+> > >       /* remove from the list */
+> > >       list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
+> > > @@ -673,6 +802,23 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+> > >               goto err_out;
+> > >       }
+> > >
+> > > +     /* setup CPU power management handling for CPU bound CTI devices. */
+> > > +     if (drvdata->ctidev.cpu >= 0) {
+> > > +             cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
+> > > +             if (!nr_cti_cpu++) {
+> > > +                     cpus_read_lock();
+> > > +                     cpuhp_setup_state_nocalls_cpuslocked(
+> > > +                             CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
+> >
+> > Any reasons CPUHP_AP_ARM_CORESIGHT_STARTING couldn't be reused?
+> >
+>
+> Yes - any CPUHP constant can only be registered with the system once -
+> a second attempt is rejected by the API. Last year I proposed moving
+> the HP stuff out of the ETM driver into the generic coresight area,
+> and developed a structure for any driver to use it - this approach was
+> rejected by both you and Suzuki. We discussed @ the last connect and
+> agreed that an additional CPUHP constant was the way to go.
 
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
+What sparked this renewed interest is how CPUHP_AP_ONLINE_DYN is used
+throughout the kernel without issues...  I wonder what is so special
+about that one.
 
-Notes:
-    v3:
-    - Modify the uaccess checking conditions: only when the sync mode is
-      selected by the user. In async mode, the kernel uaccesses are not
-      checked.
-    - Clarify that an include mask of 0 (exclude mask 0xffff) results in
-      always generating tag 0.
-    - Document the ptrace() interface.
-    
-    v2:
-    - Documented the uaccess kernel tag checking mode.
-    - Removed the BTI definitions from cpu-feature-registers.rst.
-    - Removed the paragraph stating that MTE depends on the tagged address
-      ABI (while the Kconfig entry does, there is no requirement for the
-      user to enable both).
-    - Changed the GCR_EL1.Exclude handling description following the change
-      in the prctl() interface (include vs exclude mask).
-    - Updated the example code.
-
- Documentation/arm64/cpu-feature-registers.rst |   2 +
- Documentation/arm64/elf_hwcaps.rst            |   5 +
- Documentation/arm64/index.rst                 |   1 +
- .../arm64/memory-tagging-extension.rst        | 260 ++++++++++++++++++
- 4 files changed, 268 insertions(+)
- create mode 100644 Documentation/arm64/memory-tagging-extension.rst
-
-diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-index 41937a8091aa..b5679fa85ad9 100644
---- a/Documentation/arm64/cpu-feature-registers.rst
-+++ b/Documentation/arm64/cpu-feature-registers.rst
-@@ -174,6 +174,8 @@ infrastructure:
-      +------------------------------+---------+---------+
-      | Name                         |  bits   | visible |
-      +------------------------------+---------+---------+
-+     | MTE                          | [11-8]  |    y    |
-+     +------------------------------+---------+---------+
-      | SSBS                         | [7-4]   |    y    |
-      +------------------------------+---------+---------+
- 
-diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
-index 7dfb97dfe416..ca7f90e99e3a 100644
---- a/Documentation/arm64/elf_hwcaps.rst
-+++ b/Documentation/arm64/elf_hwcaps.rst
-@@ -236,6 +236,11 @@ HWCAP2_RNG
- 
-     Functionality implied by ID_AA64ISAR0_EL1.RNDR == 0b0001.
- 
-+HWCAP2_MTE
-+
-+    Functionality implied by ID_AA64PFR1_EL1.MTE == 0b0010, as described
-+    by Documentation/arm64/memory-tagging-extension.rst.
-+
- 4. Unused AT_HWCAP bits
- -----------------------
- 
-diff --git a/Documentation/arm64/index.rst b/Documentation/arm64/index.rst
-index 09cbb4ed2237..4cd0e696f064 100644
---- a/Documentation/arm64/index.rst
-+++ b/Documentation/arm64/index.rst
-@@ -14,6 +14,7 @@ ARM64 Architecture
-     hugetlbpage
-     legacy_instructions
-     memory
-+    memory-tagging-extension
-     pointer-authentication
-     silicon-errata
-     sve
-diff --git a/Documentation/arm64/memory-tagging-extension.rst b/Documentation/arm64/memory-tagging-extension.rst
-new file mode 100644
-index 000000000000..f82dfbd70061
---- /dev/null
-+++ b/Documentation/arm64/memory-tagging-extension.rst
-@@ -0,0 +1,260 @@
-+===============================================
-+Memory Tagging Extension (MTE) in AArch64 Linux
-+===============================================
-+
-+Authors: Vincenzo Frascino <vincenzo.frascino@arm.com>
-+         Catalin Marinas <catalin.marinas@arm.com>
-+
-+Date: 2020-02-25
-+
-+This document describes the provision of the Memory Tagging Extension
-+functionality in AArch64 Linux.
-+
-+Introduction
-+============
-+
-+ARMv8.5 based processors introduce the Memory Tagging Extension (MTE)
-+feature. MTE is built on top of the ARMv8.0 virtual address tagging TBI
-+(Top Byte Ignore) feature and allows software to access a 4-bit
-+allocation tag for each 16-byte granule in the physical address space.
-+Such memory range must be mapped with the Normal-Tagged memory
-+attribute. A logical tag is derived from bits 59-56 of the virtual
-+address used for the memory access. A CPU with MTE enabled will compare
-+the logical tag against the allocation tag and potentially raise an
-+exception on mismatch, subject to system registers configuration.
-+
-+Userspace Support
-+=================
-+
-+When ``CONFIG_ARM64_MTE`` is selected and Memory Tagging Extension is
-+supported by the hardware, the kernel advertises the feature to
-+userspace via ``HWCAP2_MTE``.
-+
-+PROT_MTE
-+--------
-+
-+To access the allocation tags, a user process must enable the Tagged
-+memory attribute on an address range using a new ``prot`` flag for
-+``mmap()`` and ``mprotect()``:
-+
-+``PROT_MTE`` - Pages allow access to the MTE allocation tags.
-+
-+The allocation tag is set to 0 when such pages are first mapped in the
-+user address space and preserved on copy-on-write. ``MAP_SHARED`` is
-+supported and the allocation tags can be shared between processes.
-+
-+**Note**: ``PROT_MTE`` is only supported on ``MAP_ANONYMOUS`` and
-+RAM-based file mappings (``tmpfs``, ``memfd``). Passing it to other
-+types of mapping will result in ``-EINVAL`` returned by these system
-+calls.
-+
-+**Note**: The ``PROT_MTE`` flag (and corresponding memory type) cannot
-+be cleared by ``mprotect()``.
-+
-+Tag Check Faults
-+----------------
-+
-+When ``PROT_MTE`` is enabled on an address range and a mismatch between
-+the logical and allocation tags occurs on access, there are three
-+configurable behaviours:
-+
-+- *Ignore* - This is the default mode. The CPU (and kernel) ignores the
-+  tag check fault.
-+
-+- *Synchronous* - The kernel raises a ``SIGSEGV`` synchronously, with
-+  ``.si_code = SEGV_MTESERR`` and ``.si_addr = <fault-address>``. The
-+  memory access is not performed.
-+
-+- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
-+  thread, asynchronously following one or multiple tag check faults,
-+  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
-+
-+**Note**: There are no *match-all* logical tags available for user
-+applications.
-+
-+The user can select the above modes, per thread, using the
-+``prctl(PR_SET_TAGGED_ADDR_CTRL, flags, 0, 0, 0)`` system call where
-+``flags`` contain one of the following values in the ``PR_MTE_TCF_MASK``
-+bit-field:
-+
-+- ``PR_MTE_TCF_NONE``  - *Ignore* tag check faults
-+- ``PR_MTE_TCF_SYNC``  - *Synchronous* tag check fault mode
-+- ``PR_MTE_TCF_ASYNC`` - *Asynchronous* tag check fault mode
-+
-+Tag checking can also be disabled for a user thread by setting the
-+``PSTATE.TCO`` bit with ``MSR TCO, #1``.
-+
-+**Note**: Signal handlers are always invoked with ``PSTATE.TCO = 0``,
-+irrespective of the interrupted context.
-+
-+**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
-+are only checked if the current thread tag checking mode is
-+PR_MTE_TCF_SYNC.
-+
-+Excluding Tags in the ``IRG``, ``ADDG`` and ``SUBG`` instructions
-+-----------------------------------------------------------------
-+
-+The architecture allows excluding certain tags to be randomly generated
-+via the ``GCR_EL1.Exclude`` register bit-field. By default, Linux
-+excludes all tags other than 0. A user thread can enable specific tags
-+in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
-+flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
-+in the ``PR_MTE_TAG_MASK`` bit-field.
-+
-+**Note**: The hardware uses an exclude mask but the ``prctl()``
-+interface provides an include mask. An include mask of ``0`` (exclusion
-+mask ``0xffff``) results in the CPU always generating tag ``0``.
-+
-+The ``ptrace()`` interface
-+--------------------------
-+
-+``PTRACE_PEEKMTETAGS`` and ``PTRACE_POKEMTETAGS`` allow a tracer to read
-+the tags from or set the tags to a tracee's address space. The
-+``ptrace()`` syscall is invoked as ``ptrace(request, pid, addr, data)``
-+where:
-+
-+- ``request`` - one of ``PTRACE_PEEKMTETAGS`` or ``PTRACE_PEEKMTETAGS``.
-+- ``pid`` - the tracee's PID.
-+- ``addr`` - address in the tracee's address space.
-+- ``data`` - pointer to a ``struct iovec`` where ``iov_base`` points to
-+  a buffer of ``iov_len`` length in the tracer's address space.
-+
-+The tags in the tracer's ``iov_base`` buffer are represented as one tag
-+per byte and correspond to a 16-byte MTE tag granule in the tracee's
-+address space.
-+
-+``ptrace()`` return value:
-+
-+- 0 - success, the tracer's ``iov_len`` was updated to the number of
-+  tags copied (it may be smaller than the requested ``iov_len`` if the
-+  requested address range in the tracee's or the tracer's space cannot
-+  be fully accessed).
-+- ``-EPERM`` - the specified process cannot be traced.
-+- ``-EIO`` - the tracee's address range cannot be accessed (e.g. invalid
-+  address) and no tags copied. ``iov_len`` not updated.
-+- ``-EFAULT`` - fault on accessing the tracer's memory (``struct iovec``
-+  or ``iov_base`` buffer) and no tags copied. ``iov_len`` not updated.
-+
-+Example of correct usage
-+========================
-+
-+*MTE Example code*
-+
-+.. code-block:: c
-+
-+    /*
-+     * To be compiled with -march=armv8.5-a+memtag
-+     */
-+    #include <errno.h>
-+    #include <stdio.h>
-+    #include <stdlib.h>
-+    #include <unistd.h>
-+    #include <sys/auxv.h>
-+    #include <sys/mman.h>
-+    #include <sys/prctl.h>
-+
-+    /*
-+     * From arch/arm64/include/uapi/asm/hwcap.h
-+     */
-+    #define HWCAP2_MTE              (1 << 18)
-+
-+    /*
-+     * From arch/arm64/include/uapi/asm/mman.h
-+     */
-+    #define PROT_MTE                 0x20
-+
-+    /*
-+     * From include/uapi/linux/prctl.h
-+     */
-+    #define PR_SET_TAGGED_ADDR_CTRL 55
-+    #define PR_GET_TAGGED_ADDR_CTRL 56
-+    # define PR_TAGGED_ADDR_ENABLE  (1UL << 0)
-+    # define PR_MTE_TCF_SHIFT       1
-+    # define PR_MTE_TCF_NONE        (0UL << PR_MTE_TCF_SHIFT)
-+    # define PR_MTE_TCF_SYNC        (1UL << PR_MTE_TCF_SHIFT)
-+    # define PR_MTE_TCF_ASYNC       (2UL << PR_MTE_TCF_SHIFT)
-+    # define PR_MTE_TCF_MASK        (3UL << PR_MTE_TCF_SHIFT)
-+    # define PR_MTE_TAG_SHIFT       3
-+    # define PR_MTE_TAG_MASK        (0xffffUL << PR_MTE_TAG_SHIFT)
-+
-+    /*
-+     * Insert a random logical tag into the given pointer.
-+     */
-+    #define insert_random_tag(ptr) ({                       \
-+            __u64 __val;                                    \
-+            asm("irg %0, %1" : "=r" (__val) : "r" (ptr));   \
-+            __val;                                          \
-+    })
-+
-+    /*
-+     * Set the allocation tag on the destination address.
-+     */
-+    #define set_tag(tagged_addr) do {                                      \
-+            asm volatile("stg %0, [%0]" : : "r" (tagged_addr) : "memory"); \
-+    } while (0)
-+
-+    int main()
-+    {
-+            unsigned long *a;
-+            unsigned long page_sz = getpagesize();
-+            unsigned long hwcap2 = getauxval(AT_HWCAP2);
-+
-+            /* check if MTE is present */
-+            if (!(hwcap2 & HWCAP2_MTE))
-+                    return -1;
-+
-+            /*
-+             * Enable the tagged address ABI, synchronous MTE tag check faults and
-+             * allow all non-zero tags in the randomly generated set.
-+             */
-+            if (prctl(PR_SET_TAGGED_ADDR_CTRL,
-+                      PR_TAGGED_ADDR_ENABLE | PR_MTE_TCF_SYNC | (0xfffe << PR_MTE_TAG_SHIFT),
-+                      0, 0, 0)) {
-+                    perror("prctl() failed");
-+                    return -1;
-+            }
-+
-+            a = mmap(0, page_sz, PROT_READ | PROT_WRITE,
-+                     MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-+            if (a == MAP_FAILED) {
-+                    perror("mmap() failed");
-+                    return -1;
-+            }
-+
-+            /*
-+             * Enable MTE on the above anonymous mmap. The flag could be passed
-+             * directly to mmap() and skip this step.
-+             */
-+            if (mprotect(a, page_sz, PROT_READ | PROT_WRITE | PROT_MTE)) {
-+                    perror("mprotect() failed");
-+                    return -1;
-+            }
-+
-+            /* access with the default tag (0) */
-+            a[0] = 1;
-+            a[1] = 2;
-+
-+            printf("a[0] = %lu a[1] = %lu\n", a[0], a[1]);
-+
-+            /* set the logical and allocation tags */
-+            a = (unsigned long *)insert_random_tag(a);
-+            set_tag(a);
-+
-+            printf("%p\n", a);
-+
-+            /* non-zero tag access */
-+            a[0] = 3;
-+            printf("a[0] = %lu a[1] = %lu\n", a[0], a[1]);
-+
-+            /*
-+             * If MTE is enabled correctly the next instruction will generate an
-+             * exception.
-+             */
-+            printf("Expecting SIGSEGV...\n");
-+            a[2] = 0xdead;
-+
-+            /* this should not be printed in the PR_MTE_TCF_SYNC mode */
-+            printf("...done\n");
-+
-+            return 0;
-+    }
+>
+> Thanks for the feedback.
+>
+> Mike
+>
+> > Thanks,
+> > Mathieu
+> >
+> > > +                             "arm/coresight_cti:starting",
+> > > +                             cti_starting_cpu, cti_dying_cpu);
+> > > +
+> > > +                     ret = cti_cpu_pm_register();
+> > > +                     cpus_read_unlock();
+> > > +                     if (ret)
+> > > +                             goto err_out;
+> > > +             }
+> > > +     }
+> > > +
+> > >       /* create dynamic attributes for connections */
+> > >       ret = cti_create_cons_sysfs(dev, drvdata);
+> > >       if (ret) {
+> > > @@ -711,6 +857,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+> > >       return 0;
+> > >
+> > >  err_out:
+> > > +     cti_pm_release(drvdata);
+> > >       return ret;
+> > >  }
+> > >
+> > > diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
+> > > index 77d70b633531..6dc7332307ca 100644
+> > > --- a/include/linux/cpuhotplug.h
+> > > +++ b/include/linux/cpuhotplug.h
+> > > @@ -142,6 +142,7 @@ enum cpuhp_state {
+> > >       CPUHP_AP_ARM_XEN_STARTING,
+> > >       CPUHP_AP_ARM_KVMPV_STARTING,
+> > >       CPUHP_AP_ARM_CORESIGHT_STARTING,
+> > > +     CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
+> > >       CPUHP_AP_ARM64_ISNDEP_STARTING,
+> > >       CPUHP_AP_SMPCFD_DYING,
+> > >       CPUHP_AP_X86_TBOOT_DYING,
+> > > --
+> > > 2.17.1
+> > >
+>
+>
+>
+> --
+> Mike Leach
+> Principal Engineer, ARM Ltd.
+> Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
