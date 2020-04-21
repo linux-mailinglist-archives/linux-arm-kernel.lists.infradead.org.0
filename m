@@ -2,144 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC7F1B28AD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 15:58:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21D4A1B290A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 Apr 2020 16:07:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oVdp2SIJcQKz1/euwgc3zUF3jo4ztnx8gMjl+agt1jw=; b=fa3jS3sSw+A8w0
-	GTvDr8XCYgbSv2fuA6dDH7ch0SBUOTAN9j69kMySNk4hByIOhneh644RAGoX29LwS9psxajKcAUBT
-	jd6eFiuulzA6FacuKf5onHwPGFqw0VV0oUCSyHGqXfwwt/vbQzo4+9JBWo5Lf3FexD8uM+gXC/4pG
-	Ya3Vw/k056G4rb3PoBtNQtqHSaJS5bdJtrytY2J9WKncI+ol6Lb5SGQ42S16x3yKjj+ydss/66omg
-	MRXPLu9TdAVTf+xlkGp6OLEskDqG044l409qeU1I1Y681YPEyZxvf8l++2wA4jBPO+ht8tR66KGXB
-	eCKsjPb/9LnZv0/KKa8Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=A/151xXDjtapJsua7L7kcbAxUSpv6KQ8V5eWGNuOk48=; b=g8d
+	wMGo/4unNP8TnIq1Q/g+w36YU5Lh3AxOxPsqe+A/EjLgu9VDNkJlDL3s2iEm2EvoxkyqNnaCZhGCE
+	p78mwHIetbbZgPcDyCgrzGhUp351gJdrBSSfPcTq1NPp0z4ubWfwBytiS/pgSVdPRvwU7q6XXG8N5
+	Tm/QP/DBdhx6hr31UMZa1bwwXMX5s17PlLylDdGOb1Gfpm3SQr9W65RVcthgJxN1dmAA5C+WhqH5/
+	cMQhBVdXdq1q60bvOvfVa/eAHJSPHWxmkmWiOz/pZcmL74Fe8LXYcN3aSQOGrG/NRj1l5CKtivUoR
+	LWUgmDl+kFi664Z2ip+Q4Je//tI6OKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQtPL-0000to-HU; Tue, 21 Apr 2020 13:57:51 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jQtYx-00017Q-Eu; Tue, 21 Apr 2020 14:07:47 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQtP7-0000r9-38
- for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 13:57:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587477454;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=Or1DT0xL0r7UOQuiW8jTF8Y1PMHA/8FSiDkvKluh1mQ=;
- b=UlXWU87Uxw6fbu2yPi9gONPJTnnOFMC4Dwx+GA+M+QCe37DIuHkqMiw01fxNCO8BhEkyh3
- NcQ+5yYzTya73XTaWBb4CWeQgz6D1hTI3ubqZI75sFygoWk/9TFfyuP9//ppUSfyE8V9+C
- YU5scOGAfFFZpYRFSnaZru+fpSaqjV8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-443-mXhARXEtMsSZDKqDT-iPuA-1; Tue, 21 Apr 2020 09:57:30 -0400
-X-MC-Unique: mXhARXEtMsSZDKqDT-iPuA-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A02AA8017F3;
- Tue, 21 Apr 2020 13:57:28 +0000 (UTC)
-Received: from [10.36.113.245] (ovpn-113-245.ams2.redhat.com [10.36.113.245])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 98CF876E68;
- Tue, 21 Apr 2020 13:57:25 +0000 (UTC)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-From: David Hildenbrand <david@redhat.com>
-To: Baoquan He <bhe@redhat.com>, Andrew Morton <akpm@linux-foundation.org>
-References: <20200414064031.GB4247@MiWiFi-R3L-srv>
- <86e96214-7053-340b-5c1a-ff97fb94d8e0@redhat.com>
- <20200414092201.GD4247@MiWiFi-R3L-srv>
- <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
- <20200414143912.GE4247@MiWiFi-R3L-srv>
- <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
- <20200415023524.GG4247@MiWiFi-R3L-srv>
- <18cf6afd-c651-25c7-aca3-3ca3c0e07547@redhat.com>
- <20200416140247.GA12723@MiWiFi-R3L-srv>
- <4e1546eb-4416-dc6d-d549-62d1cecccbc8@redhat.com>
- <20200416143634.GH4247@MiWiFi-R3L-srv>
- <2525cc9c-3566-6275-105b-7f4af8f980bc@redhat.com>
- <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <cff3ce7d-df33-83a3-4c6d-4978a981d2ad@redhat.com>
-Date: Tue, 21 Apr 2020 15:57:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+ id 1jQtYm-00015D-Ot
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 Apr 2020 14:07:39 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F29C120019A;
+ Tue, 21 Apr 2020 16:07:32 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id ACAB6200CE3;
+ Tue, 21 Apr 2020 16:07:27 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 12514402E8;
+ Tue, 21 Apr 2020 22:07:21 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
+ amit.kucheria@verdurent.com, robh+dt@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH V3] dt-bindings: thermal: Convert i.MX8MM to json-schema
+Date: Tue, 21 Apr 2020 21:59:04 +0800
+Message-Id: <1587477544-20052-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_065737_288405_8DEC71CA 
-X-CRM114-Status: GOOD (  22.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_070737_086850_8EDE3133 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,75 +68,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
- kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21.04.20 15:29, David Hildenbrand wrote:
->>> ACPI SRAT is embeded into efi, need read out the rsdp pointer. If we don't
->>> pass the efi, it won't get the SRAT table correctly, if I remember
->>> correctly. Yeah, I remeber kvm guest can get memory hotplugged with
->>> ACPI only, this won't happen on bare metal though. Need check carefully. 
->>> I have been using kvm guest with uefi firmwire recently.
->>
->> Yeah, I can imagine that bare metal is different. kvm only uses ACPI.
->>
->> I'm also asking because of virtio-mem. Memory added via virtio-mem is
->> not part of any efi tables or whatsoever. So I assume the kexec kernel
->> will not detect it automatically (good!), instead load the virtio-mem
->> driver and let it add memory back to the system.
->>
->> I should probably play with kexec and virtio-mem once I have some spare
->> cycles ... to find out what's broken and needs to be addressed :)
-> 
-> FWIW, I just gave virtio-mem and kexec/kdump a try.
-> 
-> a) kdump seems to work. Memory added by virtio-mem is getting dumped.
-> The kexec kernel only uses memory in the crash region. The virtio-mem
-> driver properly bails out due to is_kdump_kernel().
-> 
-> b) "kexec -s -l" seems to work fine. For now, the kernel does not seem
-> to get placed on virtio-mem memory (pure luck due to the left-to-right
-> search). Memory added by virtio-mem is not getting added to the e820
-> map. Once the virtio-mem driver comes back up in the kexec kernel, the
-> right memory is readded.
-> 
-> c) "kexec -c -l" does not work properly. All memory added by virtio-mem
-> is added to the e820 map, which is wrong. Memory that should not be
-> touched will be touched by the kexec kernel. I assume kexec-tools just
-> goes ahead and adds anything it can find in /proc/iomem (or
-> /sys/firmware/memmap/) to the e820 map of the new kernel.
-> 
-> Due to c), I assume all hotplugged memory (e.g., ACPI DIMMs) is
-> similarly added to the e820 map and, therefore, won't be able to be
-> onlined MOVABLE easily.
-> 
-> 
-> At least for virtio-mem, I would either have to
-> a) Not support "kexec -c -l". A viable option if we would be planning on
-> not supporting it either way in the long term. I could block this
-> in-kernel somehow eventually.
-> 
-> b) Teach kexec-tools to leave virtio-mem added memory alone. E.g., by
-> indicating it in /proc/iomem in a special way ("System RAM
-> (hotplugged)"/"System RAM (virtio-mem)").
+Convert the i.MX8MM thermal binding to DT schema format using json-schema
 
-I just realized, that *not* creating /sys/firmware/memmap/ entries for
-virtio-mem memory seems to be the right thing to do.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V2:
+	- drop unnecessary description for reg/clocks;
+	- improve compatible;
+	- use thermal-sensor as node name.
+---
+ .../devicetree/bindings/thermal/imx8mm-thermal.txt | 15 ------
+ .../bindings/thermal/imx8mm-thermal.yaml           | 58 ++++++++++++++++++++++
+ 2 files changed, 58 insertions(+), 15 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+ create mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
 
-
+diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
+deleted file mode 100644
+index 3629d3c..0000000
+--- a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
++++ /dev/null
+@@ -1,15 +0,0 @@
+-* Thermal Monitoring Unit (TMU) on Freescale i.MX8MM SoC
+-
+-Required properties:
+-- compatible : Must be "fsl,imx8mm-tmu" or "fsl,imx8mp-tmu".
+-- reg : Address range of TMU registers.
+-- clocks : TMU's clock source.
+-- #thermal-sensor-cells : Should be 0 or 1. See ./thermal.txt for a description.
+-
+-Example:
+-tmu: tmu@30260000 {
+-	compatible = "fsl,imx8mm-tmu";
+-	reg = <0x30260000 0x10000>;
+-	clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
+-	#thermal-sensor-cells = <0>;
+-};
+diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+new file mode 100644
+index 0000000..3885287
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
+@@ -0,0 +1,58 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/thermal/imx8mm-thermal.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NXP i.MX8M Mini Thermal Binding
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++description: |
++  i.MX8MM has TMU IP to allow temperature measurement, there are
++  currently two distinct major versions of the IP that is supported
++  by a single driver. The IP versions are named v1 and v2, v1 is
++  for i.MX8MM which has ONLY 1 sensor, v2 is for i.MX8MP which has
++  2 sensors.
++
++properties:
++  compatible:
++    enum:
++      - fsl,imx8mm-tmu
++      - fsl,imx8mp-tmu
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  "#thermal-sensor-cells":
++    description: |
++      Number of cells required to uniquely identify the thermal
++      sensors, 0 for ONLY one sensor and 1 for multiple sensors.
++    enum:
++      - 0
++      - 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - '#thermal-sensor-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8mm-clock.h>
++
++    thermal-sensor@30260000 {
++         compatible = "fsl,imx8mm-tmu";
++         reg = <0x30260000 0x10000>;
++         clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
++         #thermal-sensor-cells = <0>;
++    };
++
++...
 -- 
-Thanks,
-
-David / dhildenb
+2.7.4
 
 
 _______________________________________________
