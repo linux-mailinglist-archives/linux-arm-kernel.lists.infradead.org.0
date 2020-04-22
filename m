@@ -2,44 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11DFD1B451A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:29:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D356C1B451D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:29:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vBs5WLYPfEZIEo04YNLoQ5AdJ5K/eQOWUIw9nC8GrGo=; b=Kum
-	ttuDZJiwO7unPYHmIO9svg0MKO5J0u2p9ZSbhu/bDkB85qBBon+3qXcZBQpVOzLCECDl8kJZ2epia
-	eVqEd/e1bXSTw8Mn0S/cslWMgohBFlvTmOvG4gyeMa5qZ5AUuQbBq+L8bkJgmGcR8J3aqchfnYWey
-	yKLqQIk/bXEn0IOPI3Nj349umNzre9oZecGMYl//xVpm0Z0l9laj760YPQAUtU1z+RnaQxT9XcK6C
-	vZuB3ouhRSBgaelZYVtaeYM4MSsQBd2O2CRnmVyj+ybItQoU/fJgj0ylolpFIxjhewkyhTF9l/mHr
-	+KYdVHTJ51h159aJuZIfZW6LErq344A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JXMYsQUMNunuphzDm5pJBfrE5JXsSaf+OmO1CrEOtH0=; b=rx7sLSUE+8c2WD
+	tmHHlulihZeI0hL+DqVnp4S6jO8YH26SDGIxD919I+Vt2e3yg75ncNBATdQSqXKkybBc/1nQu5n+K
+	Krpgpa4v1ak0gpTAnkJqdkchpmbXVKCgkA3BvsSTd9U9Aj3EuHD46+A5qBAda28DoSD7HJ2YxFDbK
+	Jb7epDyDXxGmT9YKvA6wYbZE2UFatxpS9US+z52M5+/lI0Q5l0LgopuRMWjRgNbUNJKrZVSJdW9cA
+	ijKQtbZSW/wYAv2uZI4P9vZ/yBFebQkXGpKCuETpVSzHiWAlAQsOfKS51uWp6SAmiH7hknHL6toBU
+	OSim7YfmUbctVUVKCymQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jREUj-0004BF-Js; Wed, 22 Apr 2020 12:28:49 +0000
+	id 1jREVG-0004WR-6C; Wed, 22 Apr 2020 12:29:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jREUY-00048w-T5
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:28:41 +0000
+ id 1jREUv-0004Td-TO; Wed, 22 Apr 2020 12:29:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E2F6431B;
- Wed, 22 Apr 2020 05:28:35 -0700 (PDT)
-Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3FA3D3F6CF;
- Wed, 22 Apr 2020 05:28:35 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	James Morse <james.morse@arm.com>
-Subject: [PATCH] firmware: arm_sdei: Drop check for /firmware/ node and always
- register driver
-Date: Wed, 22 Apr 2020 13:28:23 +0100
-Message-Id: <20200422122823.1390-1-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CBF731B;
+ Wed, 22 Apr 2020 05:29:01 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3BFE33F6CF;
+ Wed, 22 Apr 2020 05:29:00 -0700 (PDT)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-2-james.morse@arm.com>
+ <87d088h4k8.fsf@x220.int.ebiederm.org>
+From: James Morse <james.morse@arm.com>
+Message-ID: <a694cea6-4449-c77a-98f7-bd7a49cf47fc@arm.com>
+Date: Wed, 22 Apr 2020 13:28:59 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <87d088h4k8.fsf@x220.int.ebiederm.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_052839_000240_01C21B1A 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20200422_052902_012312_CD3D6CE0 
+X-CRM114-Status: GOOD (  17.25  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -60,97 +65,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As with most of the drivers, let us register this driver unconditionally
-by dropping the checks for presence of firmware nodes(DT) or entries(ACPI).
+Hi Eric,
 
-Further, as mentioned in the commit acafce48b07b ("firmware: arm_sdei:
-Fix DT platform device creation"), the core takes care of creation of
-platform device when the appropriate device node is found and probe
-is called accordingly.
+On 15/04/2020 21:33, Eric W. Biederman wrote:
+> James Morse <james.morse@arm.com> writes:
+> 
+>> An image loaded for kexec is not stored in place, instead its segments
+>> are scattered through memory, and are re-assembled when needed. In the
+>> meantime, the target memory may have been removed.
+>>
+>> Because mm is not aware that this memory is still in use, it allows it
+>> to be removed.
+>>
+>> Add a memory notifier to prevent the removal of memory regions that
+>> overlap with a loaded kexec image segment. e.g., when triggered from the
+>> Qemu console:
+>> | kexec_core: memory region in use
+>> | memory memory32: Offline failed.
+>>
+>> Signed-off-by: James Morse <james.morse@arm.com>
+> 
+> Given that we are talking about the destination pages for kexec
+> not where the loaded kernel is currently stored the description is
+> confusing.
 
-Let us check only for the presence of ACPI firmware entry before creating
-the platform device and flag warning if we fail.
+I think David has some better wording to cover this. I thought I had it with 'scattered
+and re-assembled'.
 
-Cc: James Morse <james.morse@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- drivers/firmware/arm_sdei.c | 37 ++++++++++++-------------------------
- 1 file changed, 12 insertions(+), 25 deletions(-)
 
-diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index 334c8be0c11f..5afd7409e6fa 100644
---- a/drivers/firmware/arm_sdei.c
-+++ b/drivers/firmware/arm_sdei.c
-@@ -1079,26 +1079,9 @@ static struct platform_driver sdei_driver = {
- 	.probe		= sdei_probe,
- };
- 
--static bool __init sdei_present_dt(void)
--{
--	struct device_node *np, *fw_np;
--
--	fw_np = of_find_node_by_name(NULL, "firmware");
--	if (!fw_np)
--		return false;
--
--	np = of_find_matching_node(fw_np, sdei_of_match);
--	if (!np)
--		return false;
--	of_node_put(np);
--
--	return true;
--}
--
- static bool __init sdei_present_acpi(void)
- {
- 	acpi_status status;
--	struct platform_device *pdev;
- 	struct acpi_table_header *sdei_table_header;
- 
- 	if (acpi_disabled)
-@@ -1113,20 +1096,24 @@ static bool __init sdei_present_acpi(void)
- 	if (ACPI_FAILURE(status))
- 		return false;
- 
--	pdev = platform_device_register_simple(sdei_driver.driver.name, 0, NULL,
--					       0);
--	if (IS_ERR(pdev))
--		return false;
--
- 	return true;
- }
- 
- static int __init sdei_init(void)
- {
--	if (sdei_present_dt() || sdei_present_acpi())
--		platform_driver_register(&sdei_driver);
-+	int ret = platform_driver_register(&sdei_driver);
- 
--	return 0;
-+	if (!ret && sdei_present_acpi()) {
-+		struct platform_device *pdev;
-+
-+		pdev = platform_device_register_simple(sdei_driver.driver.name,
-+						       0, NULL, 0);
-+		if (IS_ERR(pdev))
-+			pr_info("Failed to register ACPI:SDEI platform device %ld\n",
-+				PTR_ERR(pdev));
-+	}
-+
-+	return ret;
- }
- 
- /*
--- 
-2.17.1
+> Beyond that I think it would be better to simply unload the loaded
+> kernel at memory hotunplug time.
 
+Unconditionally, or if it aliases the removed region?
+
+I don't particular like it. User-space has asked for two impossible things, we are
+changing the answer to the first when we see the second. Its a bit spooky. (maybe no one
+will notice)
+
+
+> Usually somewhere in the loaded image
+> is a copy of the memory map at the time the kexec kernel was loaded.
+> That will invalidate the memory map as well.
+
+Ah, unconditionally. Sure, x86 needs this.
+(arm64 re-discovers the memory map from firmware tables after kexec)
+
+If that's an acceptable change in behaviour, sure, lets do that.
+
+
+> All of this should be for a very brief window of a few seconds, as
+> the loaded kexec image is quite short.
+
+It seems I'm the outlier anticipating anything could happen between those syscalls.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
