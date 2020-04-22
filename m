@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAF9A1B4ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 23:08:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A19B31B4EEB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 23:13:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BFV4CVyCB6cme9F17QDy01s3bdxf3JsbjGi1XH1tGNs=; b=WOvRrPGVj1NMJC
-	6TIz9UApFcaNUcP9R5tgJ/Qe7IXXDGi8AqK0sLx+Ar8T2hiZ06rGPj/1rIoq+dEO2ttaoyctI635q
-	8/KORnAcSu20Kx1xpUfqJv5WUKOq3YH1YAM3JgK+1yfneCewYpDbyZ21rIqgmLmbh7f3a4nimiWg5
-	kZLvFch1ykFH5i+ECEPVP0Twnd+YopbeeIkj4qf8o3yind/wDTnxEqghTE2LcYEbzwSLOA1z7ms6J
-	/H5X7mTYIt7OaQKNCCAoH6aeeUiDMcY09dZTEsy0Owh2TB/bCl4mJHsGiRluK5MQscoXJEmBBbEF6
-	iTX/X0aMBD3Xlz7ytr/g==;
+	List-Owner; bh=nsxP6maxrX7Jo12ULE29ch7YD8ZFrIQGNPkNuugXiJc=; b=X2Izy3j16SZBmM
+	1/AVUFznjuj/NlgL4B+joOOjJYYcfmeolGUbjQWnbknDugPSYbM5OtcZafj8BnV8hidxAZNUk5Hhw
+	dn4B11BJOAOBrRwaNik15H5+nSYdZXdeHDVBrQ7Wq9ShrxQyKfNc5asywyMiUVBfDDt7KcX8hT5fp
+	6v5e5WJYHH5NrSmXkrNVwMPv9WyNhKZ6SYSrsAqhOltTuhKSjLatHy/w9rNC4tiyDBLbUILr6FEUt
+	Mzl+Y22S9aIKAiNBbrHoZMpv7KScIKIrrzk09nl5rwTQyILXD1KsQHVpvUzjYns+TZKu1qbnvj3W+
+	2Gnj4ws1Rdn+rxbwegxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRMbS-0001TZ-7u; Wed, 22 Apr 2020 21:08:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRMbL-0001Sc-8O
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 21:08:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA8FC31B;
- Wed, 22 Apr 2020 14:08:09 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.118])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 009BD3F68F;
- Wed, 22 Apr 2020 14:08:05 -0700 (PDT)
-Date: Wed, 22 Apr 2020 22:08:02 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 08/17] clk: vexpress-osc: Support building as a module
-Message-ID: <20200422210802.GH25585@bogus>
-References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-9-robh@kernel.org>
+	id 1jRMgF-0005G0-3y; Wed, 22 Apr 2020 21:13:15 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRMg3-0005CM-2E; Wed, 22 Apr 2020 21:13:04 +0000
+Received: by mail-ej1-x643.google.com with SMTP id nv1so3039452ejb.0;
+ Wed, 22 Apr 2020 14:13:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=X1ihfPfQEm2aQwNzlV21Qu7y5TOw2uGbX6A635/ijcM=;
+ b=a0cqNtVTTV+nhgMWLbfLbZJ1KDdwX/sQv0li7sAMa4YncTjRvmpf42R5qaJyoSk7xZ
+ 4fjblaEI1rkZU5E11tn1LivEd4rKY+iP0xqgwcoj0sWC79s6mY+p/Wvg8DMbuKUojeTk
+ MKvLPlLE6a4MGwQsxRn1mzMVhI0UyQVxYWDBcIZ3BdQSMJNEk4GkWdo7ixo7B+9pTKz8
+ nIvQM2yHiwbKRGcLES7cQFiaBaxGH+dI2un2gH0az0StWT7pBtvNwrPqdLF9J7wspqE2
+ /Yj6lBV3bIcU57XdmeaokjOO+H7H9cVnl7HnZ0rrrD6/ox6h0Oh+VCg+zp2ZPVeBLn8m
+ od5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=X1ihfPfQEm2aQwNzlV21Qu7y5TOw2uGbX6A635/ijcM=;
+ b=Vp9jERUZJfDh4Gqg3ZQulptf5qOZ9WbXWF389AETGrjm8bB26WzGMFQri6Uiwusv4k
+ K1r7pH50pJXz/PiGLmGbtBDoY7DHeJzs+0o5LnqpkJ1kIII9xJeqFxsLA+qEoijpeBuL
+ efJqz9YnPmgKLn11bo65iCOcfnGX+OW796Hqn03YNUEyOTFVB+Q9PKM3d1XwHQmZLehB
+ K/2MK36bGb8zVvtJ9QNIJWco8tWGoupeKXeXnssiibNps258gf7SFV6/N0oDZlUz8vML
+ b0xB5pQCG9k1wcWoy/yOF1REnprKAjDdejeuIX5gs2iOWXq9MBkxHtXWTyaFjASA+2pW
+ VfKQ==
+X-Gm-Message-State: AGi0PuaJ0I3wRs4REfRb8wEvKWv7S4pcytD9qSZWwtgZKHbo0IBH5NXw
+ MYcMyfwHXb+OlYRWv21arlwXlt9Aai6AqKPBTOGJnqlkkyw=
+X-Google-Smtp-Source: APiQypJFSh3bXWuJ7x6+DbhV4xicuxImfcUvi6SvtUeplKK7p+MxUJ6HoV3iLTo8/qjdhHIAUdqX4A3BxnHAJhLGxbQ=
+X-Received: by 2002:a17:906:1199:: with SMTP id
+ n25mr287851eja.30.1587589981187; 
+ Wed, 22 Apr 2020 14:13:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200419170810.5738-9-robh@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200421134410.30603-1-narmstrong@baylibre.com>
+In-Reply-To: <20200421134410.30603-1-narmstrong@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 22 Apr 2020 23:12:50 +0200
+Message-ID: <CAFBinCAGP7ZE-OksaE=6E54r2e0VJk2wMTEwKU65qAoR4dQvxw@mail.gmail.com>
+Subject: Re: [PATCH] drm/meson: add mode selection limits against specific SoC
+ revisions
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_140811_388807_D2FF7347 
-X-CRM114-Status: GOOD (  18.67  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_141303_103473_B7E1D0DF 
+X-CRM114-Status: GOOD (  10.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,98 +90,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Sebastian Reichel <sre@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Will Deacon <will@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 19, 2020 at 12:08:01PM -0500, Rob Herring wrote:
-> Enable building the vexpress-osc clock driver as a module.
->
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: Liviu Dudau <liviu.dudau@arm.com>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  drivers/clk/versatile/Kconfig            |  4 ++--
->  drivers/clk/versatile/clk-vexpress-osc.c | 10 ++++------
->  2 files changed, 6 insertions(+), 8 deletions(-)
->
-> diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
-> index 5bdd5c98990b..9de2396dcf9b 100644
-> --- a/drivers/clk/versatile/Kconfig
-> +++ b/drivers/clk/versatile/Kconfig
-> @@ -15,8 +15,8 @@ config CLK_SP810
->  	  of the ARM SP810 System Controller cell.
->
->  config CLK_VEXPRESS_OSC
-> -	bool "Clock driver for Versatile Express OSC clock generators"
-> -	depends on VEXPRESS_CONFIG || COMPILE_TEST
-> +	tristate "Clock driver for Versatile Express OSC clock generators"
-> +	depends on VEXPRESS_CONFIG
->  	default y if ARCH_VEXPRESS
->  	---help---
->  	  Simple regmap-based driver driving clock generators on Versatile
-> diff --git a/drivers/clk/versatile/clk-vexpress-osc.c b/drivers/clk/versatile/clk-vexpress-osc.c
-> index 5bb1d5a714d0..b2b32fa2d7c3 100644
-> --- a/drivers/clk/versatile/clk-vexpress-osc.c
-> +++ b/drivers/clk/versatile/clk-vexpress-osc.c
-> @@ -7,6 +7,7 @@
->  #include <linux/clkdev.h>
->  #include <linux/clk-provider.h>
->  #include <linux/err.h>
-> +#include <linux/module.h>
->  #include <linux/of.h>
->  #include <linux/platform_device.h>
->  #include <linux/slab.h>
-> @@ -108,6 +109,7 @@ static const struct of_device_id vexpress_osc_of_match[] = {
->  	{ .compatible = "arm,vexpress-osc", },
->  	{}
->  };
-> +MODULE_DEVICE_TABLE(of, vexpress_osc_of_match);
->
->  static struct platform_driver vexpress_osc_driver = {
->  	.driver	= {
-> @@ -116,9 +118,5 @@ static struct platform_driver vexpress_osc_driver = {
->  	},
->  	.probe = vexpress_osc_probe,
->  };
-> -
-> -static int __init vexpress_osc_init(void)
-> -{
-> -	return platform_driver_register(&vexpress_osc_driver);
-> -}
-> -core_initcall(vexpress_osc_init);
-> +module_platform_driver(vexpress_osc_driver);
+Hi Neil,
 
-I am not 100% sure of this. This might break the boot on CA9 and TC2
-at-least. There are loads of MB peripherals that need this. This will
-break the boot. We need to check if all the dependent modules are also
-at module_initcall level and if they deal with deferred probe correctly.
-Lot of them are legacy and may happen to be working by carefully initcall
-level adjustments.
+On Tue, Apr 21, 2020 at 3:44 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+[...]
+> diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+> index e8c94915a4fc..dc3d5122475a 100644
+> --- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
+> +++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+> @@ -695,6 +695,13 @@ dw_hdmi_mode_valid(struct drm_connector *connector,
+>         dev_dbg(connector->dev->dev, "%s: vclk:%d phy=%d venc=%d hdmi=%d\n",
+>                 __func__, phy_freq, vclk_freq, venc_freq, hdmi_freq);
+>
+> +       /* Check against soc revision/package limits */
+> +       if (priv->limits) {
+> +               if (priv->limits->max_hdmi_phy_freq &&
+> +                   phy_freq > priv->limits->max_hdmi_phy_freq)
+> +                       return MODE_CLOCK_HIGH;
+> +       }
+I think that this will also be useful for the 32-bit SoCs as well.
+is there a chance you can move it to meson_vclk_vic_supported_freq
+(called right below), where all the existing frequency limit checks
+are already?
 
-I will take a look at it again. I must be able to run and check on TC2
-though I seem to have removed the network cable on my TC2 or office n/w
-is acting crazy. I will check tomorrow again or run w/o network.
 
---
-Regards,
-Sudeep
+Thank you!
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
