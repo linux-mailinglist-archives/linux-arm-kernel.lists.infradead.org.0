@@ -2,84 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F028F1B4361
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 13:37:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 386CE1B436D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 13:42:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFSekR+omXItdASAwRBZ+HOk/F7bw3QcOBXE9E8aAK8=; b=JjBYgFyHJ9Zq6h
-	26l5s/xqCqwOobeVBktmpscJ+TTZu77Qev+d9gTMzO8ObcHo+RXBpYF8bmLLQhY47G1e/YBIOSGeY
-	h/JzRKVC5zQPLFHNNyp9jSHYqsjLW+PNVg7psjA1s5KSclxli5JaNLcCxU8cdTCPwDXfvkcwEojlQ
-	dLbZy8On5UFRPjg3zEDs1ISde6gYChvG8HdPbf+Sd9O8NFI/Ivfovvvg9jlcKQKeZnoGB9h9rZW8p
-	yURcIen72fYawlt9C2D/Qa/mmBRkH3EdqsFEDPkjP+FM//uIfwa5d5mHzRASbbghXIr8D040NWiU6
-	qHAZpqb+CK1y1L6CgRSQ==;
+	List-Owner; bh=BqbbIs5KxabR+6zdRjAld+5bs/6iB6XcH7irKW2ARj0=; b=h+lJkHR3ZMDq68
+	btvhhV4RPciUPYXKKcvv3ou7C+B/O+pdHL7kbCfLvyAkt+IOH+3S+DSIFk1MFzs3dPHR1ol8JYUeJ
+	efUSuI1tB76/4LginK44INR92cmidPKYVyl34kR6lntugwRqokExP6nAltlPwE9NFECHD/XAPw6GR
+	HnOAZf9zjwHRZ4Lb+VKXYOGOvYCmI8ImtFP7CGlTkqr7efQUeiMYdLOXVZPaOqWpifeWmJ3Bpv4Jr
+	B39NJ/4V2oRyRhOVc6XR06XEmsbQakUwCKWlQ7o5ehkJSSgybM1dYkLTYFd1kqC1FMzw4s3OS2EAm
+	Si8CBTdpbaHnC+mmi94w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRDgh-0002LO-Vv; Wed, 22 Apr 2020 11:37:08 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jRDlt-00067g-95; Wed, 22 Apr 2020 11:42:29 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRDgX-0002GG-Bo
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 11:37:00 +0000
+ id 1jRDll-00067H-Lt
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 22 Apr 2020 11:42:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DChLa/dPBSszzKMIV61f+9s61HKeSO67ObxSI6JlPU8=; b=r3V2XHXqI6RG5O+1BgLr3gSap
- hyx2fsVOKps1Kn2fQjSbmo468UxGjQJ4dawkeVHzd7n7L/8nzG+iCSYFPjFKoV0f63v29Us0zsCjb
- u+BJN0M6ZyRmCMRNyUpvgb/i/xsDx43MWMIhkYljBf+qp2z/QMZsMluPIU3ad/8r5280VCDNCrKTi
- XVLGe7JZ9g7ZsXOqPDdHX+QSahrkWfr2UkXNloROBhvzFgRc4JX5o5WzteVpFqY/atfW/pRhW0JWV
- VILml7ApKHZqKf/Rf6YIthDZRJ+OiBPw6cMzPfDlORcL4HunRPnJF/GdJponAnKmADiJQvTG0nZVK
- vU3uTfqAQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:49576)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jRDgF-0007qA-Ao; Wed, 22 Apr 2020 12:36:39 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jRDg7-00087J-L4; Wed, 22 Apr 2020 12:36:31 +0100
-Date: Wed, 22 Apr 2020 12:36:31 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: alpha_one_x86 <alpha_one_x86@first-world.info>, huziji@marvell.com,
- linux-mmc@vger.kernel.org, ulf.hansson@linaro.org, adrian.hunter@intel.com
-Subject: Re: 2 bug repport
-Message-ID: <20200422113631.GN25745@shell.armlinux.org.uk>
-References: <408ebea1-725d-2f8e-7d26-a2cb4d7754d3@first-world.info>
- <20200422082836.GL25745@shell.armlinux.org.uk>
- <5a67104f-1286-2cb0-d01e-8aa61c9f7e48@first-world.info>
- <20200422111025.GM25745@shell.armlinux.org.uk>
- <50004568-09e5-719b-ec4a-c09882767a6a@first-world.info>
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=an4GqdMcPxXVQzFDku1airXJ7n+SdoQGwHtPe0RDm3k=; b=yBqFuMKnf19dATKhI0LHQhLv1O
+ 3z6lU1QUw6JoF5JKMqVEW9wp4wz9Hq3mbAHC2Rv3fjPpPWKIhFZczKdCodLAR/8ybTTTnOE7dvIFv
+ 7xtCALHYJ8I9R0MKBSQOyF9lj8C4dfwopoemOm35REHYl7ic/ZZKL5TDVvydETYp0/NKkPeD/dqG6
+ YZBY4Y5OvSY9rTEnhFr19XxDmnxGAY/DRAhKXPojZwyXPxMg6H9Gp254Wi1c35tBqDmfI9IkAidBq
+ dXXvopJ65t+UAqZifVo2xdtlPjzpAUqifMYZAek/1WHEKwQHxawQdVbQB58+f65ha9V0i3bDSrHFe
+ ltEfXCSw==;
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRDlj-00077e-3D
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 11:42:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587555696;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=an4GqdMcPxXVQzFDku1airXJ7n+SdoQGwHtPe0RDm3k=;
+ b=hiKywaJKoQ00JimyUuyTYS3bRrslx+WNUDKk5CM4mLSIJYRzfEHw0ZmIHuO2yAJOZ5xUXp
+ PcjJW8zibPs3M8uPcdZU93ZlmVHiiM0Q5XOD7BXmGHXwSE8RxX5/7X8Z63go1OyVV/woOw
+ tNI1MjaE6C+fdb+enY6ZBBRFFBLlvDU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587555715;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=an4GqdMcPxXVQzFDku1airXJ7n+SdoQGwHtPe0RDm3k=;
+ b=O3+O3ehlA4auSvOKCs2BGnpYAFAVLPmfWsbR50ioJVdL/+pihRGqZxul1Toi2YDMDQqh+9
+ kVYZ/Iq5PcJpvNNSnUx1DZPhfTaI3kRIOjPP8rVp/c8O5hiA4+hUSKXfzNlPKSR77XJsAu
+ Z7BZrfs9e2O8/+ahkpJEy8kIsZbUJSk=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587555736;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=an4GqdMcPxXVQzFDku1airXJ7n+SdoQGwHtPe0RDm3k=;
+ b=aQsDPW6N8vNR4+YNLW2E+dN3rYFEydpZG51Isth8rplolFUpLZITqqgAm8XMKkhcwZA2mg
+ 5VNRW8RQpr2ls331Bxvm6Qva+vOSIkDoRx3o5eG4dPHKxfCVdbbM4gbqFKAI2vqPNIu9ML
+ j0W4NukkG/EOqDWxLEX7pDzDw2UqYUU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-351-ISRUNEiqPdS2sQXWa87y5A-1; Wed, 22 Apr 2020 07:41:32 -0400
+X-MC-Unique: ISRUNEiqPdS2sQXWa87y5A-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D8AE0107ACCD;
+ Wed, 22 Apr 2020 11:41:29 +0000 (UTC)
+Received: from krava (unknown [10.40.196.43])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 6BBC528988;
+ Wed, 22 Apr 2020 11:41:25 +0000 (UTC)
+Date: Wed, 22 Apr 2020 13:41:22 +0200
+From: Jiri Olsa <jolsa@redhat.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [RFC PATCH v2 07/13] perf pmu: Add pmu_id()
+Message-ID: <20200422114122.GG962614@krava>
+References: <1587120084-18990-1-git-send-email-john.garry@huawei.com>
+ <1587120084-18990-8-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <50004568-09e5-719b-ec4a-c09882767a6a@first-world.info>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_043657_403998_3076D6DD 
-X-CRM114-Status: GOOD (  27.64  )
+In-Reply-To: <1587120084-18990-8-git-send-email-john.garry@huawei.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,97 +118,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, irogers@google.com, ak@linux.intel.com,
+ qiangqing.zhang@nxp.com, peterz@infradead.org, robin.murphy@arm.com,
+ linuxarm@huawei.com, acme@kernel.org, linux-kernel@vger.kernel.org,
+ zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, namhyung@kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adding back those who *need* to be copied.  Please be more careful
-with your replies.  As I said, those others are for your benefit,
-not for mine, as they are more likely going to be able to help you.
-
-Thanks for confirming that it is indeed a regression with 5.6
-kernels.
-
-Over to the Adrian/Ulf/others now...
-
-On Wed, Apr 22, 2020 at 07:15:18AM -0400, alpha_one_x86 wrote:
-> Hi,
+On Fri, Apr 17, 2020 at 06:41:18PM +0800, John Garry wrote:
+> Add a function to read the PMU id sysfs entry. We only do it for uncore
+> PMUs where this would be relevant.
 > 
-> On multiple hardware I had tested 4.20, 5.6.6, again 4.20, 5.6.6, again
-> 4.20.
+> Signed-off-by: John Garry <john.garry@huawei.com>
+> ---
+>  tools/perf/util/pmu.c | 36 ++++++++++++++++++++++++++++++++++++
+>  tools/perf/util/pmu.h |  1 +
+>  2 files changed, 37 insertions(+)
 > 
-> The problem is only with 5.6.6, never with 4.20
-> 
-> On 2020-04-22 07:10, Russell King - ARM Linux admin wrote:
-> > On Wed, Apr 22, 2020 at 07:00:11AM -0400, alpha_one_x86 wrote:
-> > > Hi,
-> > > 
-> > > It's regression because on the kernel 4.20 all is working.
-> > PLEASE do not drop the Cc list.  The Cc list is for YOUR benefit.
-> > 
-> > You can't say that without going back and checking.
-> > 
-> > SD cards are flash media, and they fail in weird and stupid ways.
-> > Flash media itself only has a limited number of write cycles before
-> > the memory irrevocerably fails.  SD cards have firmware on them to
-> > manage the flash media to perform wear leveling.  Firmware can be
-> > buggy and cause problems.  I've had SD cards become completely
-> > inaccessible because of a firmware failure.
-> > 
-> > So, after finding a problem on a later kernel with SD cards, you
-> > need to confirm the regression by checking whether the previously
-> > working kernel continues to behave correctly (indicating a kernel
-> > regression) or whether it behaves the same (indicating a failure of
-> > the SD card.)
-> > 
-> > If you're not willing to do that, I'm afraid we will have to discount
-> > your bug report since it doesn't contain the information necessary to
-> > make a proper evaluation of what may be going on.
-> > 
-> > > Cheers,
-> > > 
-> > > On 2020-04-22 04:28, Russell King - ARM Linux admin wrote:
-> > > > On Wed, Apr 22, 2020 at 03:03:57AM -0400, alpha_one_x86 wrote:
-> > > > > Hi,
-> > > > > 
-> > > > > On mcbin platform I have uSD problem, repported but no reply on linux kernel
-> > > > > bugzilla, https://bugzilla.kernel.org/show_bug.cgi?id=207083
-> > > > > 
-> > > > > Any idea what patch try?
-> > > > I think that's a question for the MMC people.
-> > > > 
-> > > > If you go back to your working 4.20 kernel, does the problem go away?
-> > > > If so, it sounds like a regression in the MMC subsystem.  If not, I
-> > > > wonder if it could be the uSD card going bad.
-> > > > 
-> > > > However, I suspect the former.  I've seen one instance here where a
-> > > > Clearfog GT8k (Armada 8040 based just like the mcbin) running 5.6 with
-> > > > the rootfs on eMMC completely lost the ability to talk to the eMMC to
-> > > > the point that the machine had to be power cycled to recover it -
-> > > > merely rebooting did not.  I don't know the cause - the initial failure
-> > > > had vanished from the kernel logs, and because the eMMC was no longer
-> > > > accessible, the rsyslog files did not contain the details either.
-> > > > I've since setup remote logging, and I'm currently waiting for it to
-> > > > happen again.  I couldn't say if _that_ is a regression because I
-> > > > haven't been using the GT8k until very recently, and I tend not to use
-> > > > eMMC/uSD on the Macchiatobin that runs 24x7.
-> > > > 
-> > > -- 
-> > > alpha_one_x86/BRULE Herman <alpha_one_x86@first-world.info>
-> > > Main developer of Supercopier/Ultracopier/CatchChallenger, Esourcing and server management
-> > > IT, OS, technologies, research & development, security and business department
-> > > 
-> -- 
-> alpha_one_x86/BRULE Herman <alpha_one_x86@first-world.info>
-> Main developer of Supercopier/Ultracopier/CatchChallenger, Esourcing and server management
-> IT, OS, technologies, research & development, security and business department
-> 
+> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
+> index ef6a63f3d386..6a67c6a28d08 100644
+> --- a/tools/perf/util/pmu.c
+> +++ b/tools/perf/util/pmu.c
+> @@ -594,6 +594,7 @@ static struct perf_cpu_map *__pmu_cpumask(const char *path)
+>   * Uncore PMUs have a "cpumask" file under sysfs. CPU PMUs (e.g. on arm/arm64)
+>   * may have a "cpus" file.
+>   */
+> +#define CPUS_TEMPLATE_ID	"%s/bus/event_source/devices/%s/identifier"
+>  #define CPUS_TEMPLATE_UNCORE	"%s/bus/event_source/devices/%s/cpumask"
+>  #define CPUS_TEMPLATE_CPU	"%s/bus/event_source/devices/%s/cpus"
+>  
+> @@ -632,6 +633,39 @@ static bool pmu_is_uncore(const char *name)
+>  	return file_available(path);
+>  }
+>  
+> +static char *pmu_id(const char *name)
+> +{
+> +	char path[PATH_MAX], *id;
+> +	const char *sysfs;
+> +	FILE *file;
+> +	int n;
+> +
+> +	sysfs = sysfs__mountpoint();
+> +	snprintf(path, PATH_MAX, CPUS_TEMPLATE_ID, sysfs, name);
+> +
+> +	id = malloc(PATH_MAX);
+> +	if (!id)
+> +		return NULL;
+> +
+> +	file = fopen(path, "r");
+> +	if (!file) {
+> +		free(id);
+> +		return NULL;
+> +	}
+> +
+> +	n = fscanf(file, "%s", id);
+> +
+> +	fclose(file);
+> +
+> +	if (!n) {
+> +		free(id);
+> +		return NULL;
+> +	}
+> +
+> +	return id;
+> +}
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+I still need to go through this patchset in more detail,
+but just quick note, that we have sysfs__read_str that you
+could use in here
+
+jirka
+
 
 _______________________________________________
 linux-arm-kernel mailing list
