@@ -2,53 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99C471B490B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:44:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A1B61B4921
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:51:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2QgswC8lqzyfy7DPBZTy+9FTa7e/KemkBZFtlggbm28=; b=E/jIQ1vq2EYer6aWYQj1pRKcU
-	lFMrgJwiXpI3pxnpmQZPDLpKlOBbMa7gSI6AeLg+gt1hN9AjcNhWGtNYwNg9cgPiwyNMasAggtFht
-	qkoaa/cOac9iKqaLYmFvicJrzK97txZ2exhTWZkGQ07+NPHmZSwn/L3uR+FTqHR9H5vEAbeZ6QGly
-	lYmMmk66UizaAmD/PVzrBBRzoJeXTACk2d8DJr7LMwBFYcWPOcf9aypvwhGrX1iBFUXRweJO4OBXG
-	z8S6O1o2Bfp7cRZaIOhnI4a6hshwONGQ7GzulsKSP2c/Q1N4XuwgV+ZBv3qm68jdWNoRdceIK+DYK
-	obQpA0oiw==;
+	 bh=cbMQtSnfnZmY2aPkUenCR6KPDF9IFDuJgUiQMPPMK/k=; b=fUAm0EgXusx18BaeAqian8ia6
+	hcIeS4IVjqffAWReZnhYJJvRz+fPkyKSOj+dgqkEkFl2+8FfXyJHxXJTO1daMRxfrX/p/Caz3LeXM
+	pmFr9uNV5O/DANB//K+kpa0+iS3lKFH74ffR8SDt7LUbh/hQkV6IOrb7wyIVzwmDyGbuxBNDasF1L
+	G7CJhWQPJhOPkjHRVO18EGXUkt4+1I2MsA1eGZNwe/wr4MIEj+hSsZRKFfhE9v0y/eAkJzHi8MZm8
+	Mb5GvN6fWB0uax2VFkLaSb4O8Xxlb3efZf7aCpmV85hjliqg+nY5dQlhdS4CZswByEXXdfV8LdZ3o
+	nLSgaCAbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRHYS-00024Z-CV; Wed, 22 Apr 2020 15:44:52 +0000
+	id 1jRHeT-0000FN-Ti; Wed, 22 Apr 2020 15:51:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRHYG-00023p-1T
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 15:44:41 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ id 1jRHeK-0000ER-Bp
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 15:50:57 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE9092076E;
- Wed, 22 Apr 2020 15:44:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EA32220767;
+ Wed, 22 Apr 2020 15:50:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587570279;
- bh=j6NY4BFiEsKARRJ64QkWadZPG9mu5NACrc/yxCpqHFA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fZz9j/PMKPB+EDM7VJ1dl6F54xCJj27F8j+vV30/KLVPdzLEl4TljSqnjzfPVJYgg
- xBKTUGK/X0OJ6DaWuvmD3NQF0FrzJLO8CebiN0XcA7Z7OR6MA17nTV3JlWSceLSLQ8
- nfnUFNMpzKnf7pAw6/PIX6sx2ipj8OzUmZtOEM+w=
-Date: Wed, 22 Apr 2020 16:44:36 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
-Message-ID: <20200422154436.GJ4898@sirena.org.uk>
-References: <20200316165055.31179-1-broonie@kernel.org>
+ s=default; t=1587570656;
+ bh=16hEh7COz5X6gcSR+cor8Xs6XMhtSt7DiaO+McpA8Xw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=rMHmyc73fzTojqpjdwKu0r3nS1CE3k+rX6IVaJiJbUiZ+TXDsCzHKILep59dff0sg
+ SvWFQdEHeBMdmlppWgVvZ/GyPw4mATcgm+0+MxEBoaZB7sFTnyw+l4zidFrBws1vmV
+ f5iORe/ZCTL9Kpe/+OHiTnCc1xLGdFlO9M+lTXiI=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jRHeI-005YGi-Am; Wed, 22 Apr 2020 16:50:54 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200316165055.31179-1-broonie@kernel.org>
-X-Cookie: A stitch in time saves nine.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 22 Apr 2020 16:50:54 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64/kvm: Fix duplicate tracepoint definitions after KVM
+ consolidation
+In-Reply-To: <20200422152249.GE676@willie-the-truck>
+References: <20200421091707.16743-1-will@kernel.org>
+ <20200422152249.GE676@willie-the-truck>
+Message-ID: <f353b0115e16914b0f91d74246c277d1@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_084440_112385_1E617737 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20200422_085056_421840_E29C9D05 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,71 +90,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Sudakshina Das <sudi.das@arm.com>
-Content-Type: multipart/mixed; boundary="===============1110904434828864416=="
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020-04-22 16:22, Will Deacon wrote:
+> On Tue, Apr 21, 2020 at 10:17:07AM +0100, Will Deacon wrote:
+>> Both kvm/{arm,handle_exit}.c include trace.h and attempt to 
+>> instantiate
+>> the same tracepoints, resulting in failures at link-time:
+>> 
+>>   | aarch64-linux-gnu-ld: 
+>> arch/arm64/kvm/handle_exit.o:(__tracepoints+0x30):
+>>   |   multiple definition of `__tracepoint_kvm_wfx_arm64';
+>>   |   arch/arm64/kvm/arm.o:(__tracepoints+0x510): first defined here
+>>   | ...
+>> 
+>> Split trace.h into two files so that the tracepoints are only created
+>> in the C files that use them.
+>> 
+>> Cc: Marc Zyngier <maz@kernel.org>
+>> Signed-off-by: Will Deacon <will@kernel.org>
+>> ---
+>> 
+>> Applies against kvm-arm64/welcome-home. Probably worth just folding in
+>> to the only commit on that branch.
+> 
+> I also just noticed that you forgot to update MAINTAINERS after the 
+> move,
+> so you can fold in the diff below as well.
 
---===============1110904434828864416==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="I/5syFLg1Ed7r+1G"
-Content-Disposition: inline
+All applied, squashed and pushed out.
 
+Thanks,
 
---I/5syFLg1Ed7r+1G
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Mar 16, 2020 at 04:50:42PM +0000, Mark Brown wrote:
-> This patch series implements support for ARMv8.5-A Branch Target
-> Identification (BTI), which is a control flow integrity protection
-> feature introduced as part of the ARMv8.5-A extensions.
-
-I've not resent this since the branch is still sitting in the arm64 tree
-but it's also not in -next at the minute - is there anything you're
-waiting for from my end here?
-
---I/5syFLg1Ed7r+1G
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6gZmMACgkQJNaLcl1U
-h9AYVQf/ajN/x5F2wiYIKFjzo2+jXBlUnF9FczZVVrXFDW2YeidwJw/eKCefOPQY
-5HHDihIrHZBRdOrdnQ7UE8UIfQZMI8oOguL84O4O6IwCnwTZpEOuNhYHjCS1qMUI
-nAHZjSGlSnKBp4MwttY/LRRomyGW74ukfnOU91v91LR6Aakw31PUIQZ8EDOT84jC
-0hMnIjzmaA9LzLQRrMMQqSLi5FdLg4ps9NEb4zVklz94U/mzf4l+GzZczg6eJI1S
-JUz9EwBdrJIwPCRdBoHCQbrVCuiCbvDjhobVK0tKRycjOFvWXh0nDWRWFwfZiD68
-dpJmkHE2POaVhBEWnwhUJ57489SMCA==
-=z9OW
------END PGP SIGNATURE-----
-
---I/5syFLg1Ed7r+1G--
-
-
---===============1110904434828864416==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1110904434828864416==--
-
