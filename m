@@ -2,54 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3F0E1B3745
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 08:18:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8506B1B3806
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 08:54:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=z6MyFA+VBCcuUqoXbq9LnZ/mKW5kX5+StSR8/GVPEUY=; b=YYNxm4dC4KfB5S9DfkpgYXLr/
-	+negXTlgaGWGzWTN1+6WbqmLlMkiw2tmJbZ1HCUQBdNjnWQkgXtXX6ncvWP+0Jcy+mPh1NSDfyxUT
-	Ff2uE+cKVFK0MpyZuuSMH/grwnPoHqvV3vvCQwioVkTXLVEVElWPRe5EkB/+cxGJDrGS+rujBG0mF
-	4WU8VASsQrylxyvWQQLWwb4OPW37aiP2WstkJt+F6Knjg8YYx+D9613YWB4vf0ez1kqKD1rrKKoe9
-	0auPqXPU+cUEAkYlbubCi8VGHmr9wFXy8zqPmFBOaw6atiZqQq/0ZtS3P12bUGVNb5FtY7RL+FmLc
-	i9wnyoNxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IgX/9A1njTy1SY1Cz4ihmHeqmeeo6AvlkNOJkpIF/dA=; b=YdNYpdm2QHnEhN
+	CEuAGPlLjXWPrVVDdy9HLlRybByFz44eRTz9tdtPk/lMI0NMzuDX870lMUhDSIQuQENKQQlG1qrOc
+	ANTgbw+vMeI3QR7pOZNYPaK7O7eGyR3sAQO0rqVYfrwo+4q7AwTfb+m76QzHP/9+h8JNBEMFyNhY0
+	4bXRzQUBWaEG+6aHDMIE3+vZ8GRf0Z0t8s1kMzchhzkeJpqvMMJLILiBBDnSNd+I5fdI06tme6/td
+	NshinIEtLyn18gcHylzNJK8k7oUULqlWD/xzCPn7KWvm0zu+3wzDtt2tgmbsLcOVF23Q04ZHNWF3I
+	5WNsQsn9+9QSTBjNLHbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR8hg-0002M0-Ph; Wed, 22 Apr 2020 06:17:50 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR8hU-0002Km-LK; Wed, 22 Apr 2020 06:17:38 +0000
-Received: from [10.28.39.241] (10.28.39.241) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Wed, 22 Apr 2020
- 14:02:22 +0800
-Subject: Re: [PATCH v2 2/2] watchdog: Add new arm_smc_wdt watchdog driver
-To: Evan Benn <evanbenn@chromium.org>, Julius Werner <jwerner@chromium.org>
-References: <20200421110520.197930-1-evanbenn@chromium.org>
- <20200421210403.v2.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
- <CAODwPW9MtDLSL_up9W0TO1PcjyA_9cUtNo3No7XXusiwqKBLDw@mail.gmail.com>
- <CAKz_xw3-tvYoCDs07xEUBBMf024aezGMoZ35LsTN+_dXT9nC2Q@mail.gmail.com>
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-Message-ID: <bbd8f97b-8479-c38e-011f-b52e2cf34403@amlogic.com>
-Date: Wed, 22 Apr 2020 14:02:21 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jR9H7-0004QJ-TA; Wed, 22 Apr 2020 06:54:25 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
+ Hat Linux)) id 1jR9Gw-0004PS-1b; Wed, 22 Apr 2020 06:54:14 +0000
+Date: Tue, 21 Apr 2020 23:54:14 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Alim Akhtar <alim.akhtar@samsung.com>
+Subject: Re: [PATCH v6 04/10] scsi: ufs: introduce
+ UFSHCD_QUIRK_PRDT_BYTE_GRAN quirk
+Message-ID: <20200422065414.GK20318@infradead.org>
+References: <20200417175944.47189-1-alim.akhtar@samsung.com>
+ <CGME20200417181014epcas5p1343bc81fb246133cc332d3fc7a394c15@epcas5p1.samsung.com>
+ <20200417175944.47189-5-alim.akhtar@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <CAKz_xw3-tvYoCDs07xEUBBMf024aezGMoZ35LsTN+_dXT9nC2Q@mail.gmail.com>
-Content-Language: en-GB
-X-Originating-IP: [10.28.39.241]
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_231737_192971_8370A5F3 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Content-Disposition: inline
+In-Reply-To: <20200417175944.47189-5-alim.akhtar@samsung.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,110 +44,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Yonghui Yu <yonghui.yu@amlogic.com>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Rob Herring <robh@kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- Guenter Roeck <linux@roeck-us.net>,
- LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: robh@kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, krzk@kernel.org,
+ kwmad.kim@samsung.com, avri.altman@wdc.com, cang@codeaurora.org,
+ stanley.chu@mediatek.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,Evan
+On Fri, Apr 17, 2020 at 11:29:38PM +0530, Alim Akhtar wrote:
+> Some UFS host controllers may think granularities of PRDT length and
+> offset as bytes, not double words.
+> 
+> Signed-off-by: Kiwoong Kim <kwmad.kim@samsung.com>
+> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+> ---
+>  drivers/scsi/ufs/ufshcd.c | 30 +++++++++++++++++++++++-------
+>  drivers/scsi/ufs/ufshcd.h |  6 ++++++
+>  2 files changed, 29 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index ee30ed6cc805..b32fcedcdcb9 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -2151,8 +2151,14 @@ static int ufshcd_map_sg(struct ufs_hba *hba, struct ufshcd_lrb *lrbp)
+>  		return sg_segments;
+>  
+>  	if (sg_segments) {
+> -		lrbp->utr_descriptor_ptr->prd_table_length =
+> -			cpu_to_le16((u16)sg_segments);
+> +
+> +		if (hba->quirks & UFSHCD_QUIRK_PRDT_BYTE_GRAN)
+> +			lrbp->utr_descriptor_ptr->prd_table_length =
+> +				cpu_to_le16((u16)(sg_segments *
+> +					sizeof(struct ufshcd_sg_entry)));
+> +		else
+> +			lrbp->utr_descriptor_ptr->prd_table_length =
+> +				cpu_to_le16((u16) (sg_segments));
 
-On 2020/4/22 9:39, Evan Benn wrote:
-> On Wed, Apr 22, 2020 at 6:31 AM Julius Werner <jwerner@chromium.org> wrote:
->>
->>> +static int smcwd_call(unsigned long smc_func_id, enum smcwd_call call,
->>> +                     unsigned long arg, struct arm_smccc_res *res)
->>
->> I think you should just take a struct watchdog_device* here and do the
->> drvdata unpacking inside the function.
-> 
-> That makes sense, I avoided it because smcwd_call's are made during
-> 'probe', ~while
-> we are 'constructing' the wdd. But this is C, so I think I have
-> permission to do this!
-> 
->>> +static int smcwd_probe(struct platform_device *pdev)
->>> +{
->>> +       struct watchdog_device *wdd;
->>> +       int err;
->>> +       struct arm_smccc_res res;
->>> +       u32 *smc_func_id;
->>> +
->>> +       smc_func_id =
->>> +               devm_kzalloc(&pdev->dev, sizeof(*smc_func_id), GFP_KERNEL);
->>> +       if (!smc_func_id)
->>> +               return -ENOMEM;
->>
->> nit: Could save the allocation by just casting the value itself to a
->> pointer? Or is that considered too hacky?
-> 
-> I am not yet used to what hacks are allowed in the kernel.
-> Where I learned C that would not be allowed.
-> I assumed the kernel allocator has fast paths for tiny sizes though.
-> 
->>> +static const struct of_device_id smcwd_dt_ids[] = {
->>> +       { .compatible = "mediatek,mt8173-smc-wdt" },
->>> +       {}
->>> +};
->>> +MODULE_DEVICE_TABLE(of, smcwd_dt_ids);
->>
->> So I'm a bit confused about this... I thought the plan was to either
->> use arm,smc-id and then there'll be no reason to put platform-specific
->> quirks into the driver, so we can just use a generic "arm,smc-wdt"
->> compatible string on all platforms; or we put individual compatible
->> strings for each platform and use them to hardcode platform-specific
->> differences (like the SMC ID) in the driver. But now you're kinda
->> doing both by making the driver code platform-independent but still
->> using a platform-specific compatible string, that doesn't seem to fit
->> together. (If the driver can be platform independent, I think it's
->> nicer to have a generic compatible string so that future platforms
->> which support the same interface don't have to land code changes in
->> order to just use the driver.)
-> 
-> Yes I think you are correct. I got some reviews about the compatible name,
-> but I think I misinterpreted those, and arm,smc-wdt would work. I did wonder
-> if Xingyu from amlogic needed to modify the driver more, EG with different
-> SMCWD_enum values for the amlogic chip, he could then just add an
-> amlogic compatible
-> and keep our devices running with the other compatible. Although of
-> course it would be nicer if
-> the amlogic firmware could copy the values here.
-Using DTS property(arm,smc-id) or vendor's compatible to specify the 
-Function ID is available for the meson-A1.The generic "arm, smc-wdt" 
-looks nicer for MTK and Amlogic sec wdt, but the driver may not cover 
-the other vendor's platform-specific differences in the future, so the 
-platform-specific compatible string may be introduced eventually.
-
-But again, I can accept the two methods above.
-
-Thanks
-> 
-> Thanks
-> 
-> Evan
-> 
-> .
-> 
+No double words here.  "Normal" UFS uses the actual segment count,
+while Samsumg uses bytes.  Also no need fo the u16 count in
+either the old or new version.
 
 _______________________________________________
 linux-arm-kernel mailing list
