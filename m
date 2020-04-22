@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9516E1B450F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27A841B44ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:22:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I8fZaKyx/ON2dV1riPejsEKgi8A7erCtfmVru93FLNw=; b=gbsHKpaPzcNlG3
-	BG3XX4NNWhy5N9+dCO97BCAWocNPR/gdWT3GJtzam140IOGcSA6d3QCZZmdOGZi/EpFut+QT7MCvv
-	BPPZeV1067rVUgdRvJ4mHBbihggRr0xoIXHQDUlWrDaOUTrQaAzLEDN5FmsAUxrtZcty4P6Z2FFxB
-	qB/esG1i7clgkOMXsmi37eNznRdl2WoR60gULj5QYxB3+gqN2u7hdwPOzuYykp4m8cVtVhRR+mBOa
-	Nbk9SwJH66UEPj7XWTzk32kIlQ7YeeZXve8v3ADc44jmXpnlKgbRM0993Nxh0xVisHDJ0i7XuzUwh
-	i5IKaT44Br5CmPnC6QqA==;
+	List-Owner; bh=ten3EuS2tdj6i9kzZbpTI4trBtboEYBB6re0idTGaVI=; b=QtlmAt4Sa88JhE
+	mIAiVGrfiBdqwxc8aqrz/tzjkNHxdnKL8AA2dRyv7ld6dt6aZRRoIke/F1GpM4dirvw+DVrwaEVXI
+	JX6BbkRFmdOaJZ68ZpG1XbngzKFTJrjzBIQ71/EhwVOpNnR49X3EqA/Kjl2PxU6RJkjqjPDXioifs
+	o7loF9zXd6xTZWLcxsFjOxp5KS5gj0IdzJb7TuA6BrNR4l0olJE5TWXfnRCky3gHvDbYG6tsMsvYe
+	ZJ6fNYZFIeHQsCZEYPGXpTFSycbYl4JOxrYkcf5DJa0Si2t6lRARtksgMjnPczJ0dBqLKk0oiE+Ok
+	A6bWA23r1YNU8sZoCtQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRESP-00035U-0z; Wed, 22 Apr 2020 12:26:25 +0000
+	id 1jREOl-0005op-Ka; Wed, 22 Apr 2020 12:22:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRENk-0005OB-5R
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:39 +0000
+ id 1jRENK-00053G-0H
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:11 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 16A4421D7B;
- Wed, 22 Apr 2020 12:21:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 71C5621582;
+ Wed, 22 Apr 2020 12:21:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587558095;
- bh=Idczft88aog6M8M4O6TVlb0GRSTqov9o2dWVVhNYIEs=;
+ s=default; t=1587558069;
+ bh=7JcK0Rg6TlWwKG97FEPn+5O/0r9729K5HS42mRM3beg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xkzG1l0oYIkP8ND8XsQyB8vOZbeoqon1cG4bW6FXggxGAdfCW6abvqtENI1Z+0Tnz
- cL4ehaBzWJUyTj0jRwjkmRGYAc05wQ4axRQsyD6/UivhYaHkt2Q7AOQiEhp8As504Y
- bz39DrXN82H6HdSwbCwcWKLgTxzc6eU9ruuriMoc=
+ b=sfnHewqVeGeg2SPMVXnGUG0D0dKSfBzSG5AW/Y4S5hXCf5pE15cCOUekQ7Eptu6rM
+ Opmp0XTRxz04c3F2SvuuzAhlPhD3K6zv7Dbsp6RnUB/BRyBeEEiSYpujHftFq1I8dw
+ 69TRA1zhTiHMrsh3D4DcgUzlF8/+NvB1oVDrdEGQ=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jRE3z-005UI7-9h; Wed, 22 Apr 2020 13:01:11 +0100
+ id 1jRE40-005UI7-4c; Wed, 22 Apr 2020 13:01:12 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 17/26] KVM: arm64: debug: Use ctxt_sys_reg() instead of raw
- sys_regs access
-Date: Wed, 22 Apr 2020 13:00:41 +0100
-Message-Id: <20200422120050.3693593-18-maz@kernel.org>
+Subject: [PATCH 18/26] KVM: arm64: Don't use empty structures as CPU reset
+ state
+Date: Wed, 22 Apr 2020 13:00:42 +0100
+Message-Id: <20200422120050.3693593-19-maz@kernel.org>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200422120050.3693593-1-maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
@@ -63,8 +63,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_052136_276375_B44E8150 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20200422_052110_090627_19A5592C 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -108,60 +108,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have a wrapper for the sysreg accesses, let's use that
-consistently.
+Keeping empty structure as the vcpu state initializer is slightly
+wasteful: we only want to set pstate, and zero everything else.
+Just do that.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/debug-sr.c | 14 ++++++--------
- 1 file changed, 6 insertions(+), 8 deletions(-)
+ arch/arm64/kvm/reset.c | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-index 998758f8b5774..421e547ed10f3 100644
---- a/arch/arm64/kvm/hyp/debug-sr.c
-+++ b/arch/arm64/kvm/hyp/debug-sr.c
-@@ -129,8 +129,7 @@ static void __hyp_text __debug_restore_spe_nvhe(u64 pmscr_el1)
- 	write_sysreg_s(pmscr_el1, SYS_PMSCR_EL1);
- }
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index 241db35a7ef4f..895d7d9ad1866 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -37,15 +37,11 @@ static u32 kvm_ipa_limit;
+ /*
+  * ARMv8 Reset Values
+  */
+-static const struct kvm_regs default_regs_reset = {
+-	.regs.pstate = (PSR_MODE_EL1h | PSR_A_BIT | PSR_I_BIT |
+-			PSR_F_BIT | PSR_D_BIT),
+-};
++#define VCPU_RESET_PSTATE_EL1	(PSR_MODE_EL1h | PSR_A_BIT | PSR_I_BIT | \
++				 PSR_F_BIT | PSR_D_BIT)
  
--static void __hyp_text __debug_save_state(struct kvm_vcpu *vcpu,
--					  struct kvm_guest_debug_arch *dbg,
-+static void __hyp_text __debug_save_state(struct kvm_guest_debug_arch *dbg,
- 					  struct kvm_cpu_context *ctxt)
+-static const struct kvm_regs default_regs_reset32 = {
+-	.regs.pstate = (PSR_AA32_MODE_SVC | PSR_AA32_A_BIT |
+-			PSR_AA32_I_BIT | PSR_AA32_F_BIT),
+-};
++#define VCPU_RESET_PSTATE_SVC	(PSR_AA32_MODE_SVC | PSR_AA32_A_BIT | \
++				 PSR_AA32_I_BIT | PSR_AA32_F_BIT)
+ 
+ static bool cpu_has_32bit_el1(void)
  {
- 	u64 aa64dfr0;
-@@ -148,8 +147,7 @@ static void __hyp_text __debug_save_state(struct kvm_vcpu *vcpu,
- 	ctxt_sys_reg(ctxt, MDCCINT_EL1) = read_sysreg(mdccint_el1);
- }
+@@ -261,6 +257,7 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 	const struct kvm_regs *cpu_reset;
+ 	int ret = -EINVAL;
+ 	bool loaded;
++	u32 pstate;
  
--static void __hyp_text __debug_restore_state(struct kvm_vcpu *vcpu,
--					     struct kvm_guest_debug_arch *dbg,
-+static void __hyp_text __debug_restore_state(struct kvm_guest_debug_arch *dbg,
- 					     struct kvm_cpu_context *ctxt)
- {
- 	u64 aa64dfr0;
-@@ -190,8 +188,8 @@ void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
- 	host_dbg = &vcpu->arch.host_debug_state.regs;
- 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+ 	/* Reset PMU outside of the non-preemptible section */
+ 	kvm_pmu_vcpu_reset(vcpu);
+@@ -291,16 +288,17 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
+ 			if (!cpu_has_32bit_el1())
+ 				goto out;
+-			cpu_reset = &default_regs_reset32;
++			pstate = VCPU_RESET_PSTATE_SVC;
+ 		} else {
+-			cpu_reset = &default_regs_reset;
++			pstate = VCPU_RESET_PSTATE_EL1;
+ 		}
  
--	__debug_save_state(vcpu, host_dbg, host_ctxt);
--	__debug_restore_state(vcpu, guest_dbg, guest_ctxt);
-+	__debug_save_state(host_dbg, host_ctxt);
-+	__debug_restore_state(guest_dbg, guest_ctxt);
- }
+ 		break;
+ 	}
  
- void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
-@@ -212,8 +210,8 @@ void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
- 	host_dbg = &vcpu->arch.host_debug_state.regs;
- 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+ 	/* Reset core registers */
+-	memcpy(vcpu_gp_regs(vcpu), cpu_reset, sizeof(*cpu_reset));
++	memset(vcpu_gp_regs(vcpu), 0, sizeof(*cpu_reset));
++	vcpu_gp_regs(vcpu)->regs.pstate = pstate;
  
--	__debug_save_state(vcpu, guest_dbg, guest_ctxt);
--	__debug_restore_state(vcpu, host_dbg, host_ctxt);
-+	__debug_save_state(guest_dbg, guest_ctxt);
-+	__debug_restore_state(host_dbg, host_ctxt);
- 
- 	vcpu->arch.flags &= ~KVM_ARM64_DEBUG_DIRTY;
- }
+ 	/* Reset system registers */
+ 	kvm_reset_sys_regs(vcpu);
 -- 
 2.26.1
 
