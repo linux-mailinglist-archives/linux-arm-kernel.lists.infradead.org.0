@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D751F1B474C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:27:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1F801B474D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LvxLdN8if83wpr6nn9TntW32HItFWw/OLmljc4r7bCY=; b=hENhUXrtDpXonv
-	U8fVLX+RLhZbO6Sqv+VS2QsuNoZXb+n+imm+T5QfA7sbPUmVIELy3QsmgMp577594CFRUtSmdBSW7
-	vXe7tOO6P6tgWPSm7oLcYR+mgn7JjYFdl6i2LJTknamlb7Dqo0Cz/Y8IWF9h1WwvG3Jjv0s4e4HCP
-	hBIVWMKugcPRs/LshNHsVhdjNEyfXx5AC06wrOTCQe8CNr72D5pEoU/movGYublHnraGqNaMBinkp
-	ZzzOfkLYMQoqsoLInAYvxWFLbpDWkXXH3KWXapYGr6X01c5mHbmkFlBF/AJ5MId2txag6R18DnM3m
-	Mq7oQuIy/2Sqr+0+QhPQ==;
+	List-Owner; bh=yVjvs8hCp19dEKgVA0ggvboXZ/E42hlUCrSgsrYAKSQ=; b=fADx4pvH//mOoc
+	VNEWJWv2hSNLy7bRc3xf2LDXPHxLHEhjuagdSz2RPeIKVOI9s3NwqzzPLRjo5MUgwgADlI+PFm/NO
+	2tjNf/8trTYXL5svUnlmzMqizVx7FXDyfbVN2SHlItC7IaIM7+q4oYfyUX2WdN4Nk9+yp0CR7SRHu
+	9dpyptNPatH7vcMPxV7Cnr/0kJHjC8Xqu7jRBVwLsAIXyQGIElXnpM20wfrH2aYgPD6dIxA74gGyr
+	Y6cPJEnJNpsxVoxwryo5JiwatkjprOGso3f03FpT8c9zTYSu/0ehHp3ITOvjibrYpy4DGiOnCkj04
+	FTK/gwhJRULo6LyWw8Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRGL5-0001aU-TZ; Wed, 22 Apr 2020 14:26:59 +0000
+	id 1jRGLP-0001uM-CT; Wed, 22 Apr 2020 14:27:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRGJw-0000fy-Cm
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 14:25:50 +0000
+ id 1jRGK9-0000t6-3F
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 14:26:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 036B91042;
- Wed, 22 Apr 2020 07:25:48 -0700 (PDT)
-Received: from e112269-lin.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8D26A3F68F;
- Wed, 22 Apr 2020 07:25:46 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-mm@kvack.org
-Subject: [PATCH 4/4] arm64: mte: Save tags when hibernating
-Date: Wed, 22 Apr 2020 15:25:30 +0100
-Message-Id: <20200422142530.32619-5-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200422142530.32619-1-steven.price@arm.com>
-References: <20200422142530.32619-1-steven.price@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A84E30E;
+ Wed, 22 Apr 2020 07:26:00 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D0EB3F68F;
+ Wed, 22 Apr 2020 07:25:59 -0700 (PDT)
+Date: Wed, 22 Apr 2020 15:25:53 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
+Message-ID: <20200422142552.GE3585@gaia>
+References: <20200325174001.234803-1-pcc@google.com>
+ <20200327191915.257116-1-pcc@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200327191915.257116-1-pcc@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_072548_562541_C1ED4E1E 
-X-CRM114-Status: GOOD (  14.60  )
+X-CRM114-CacheID: sfid-20200422_072601_218063_B5C4EE90 
+X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,178 +63,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, Hugh Dickins <hughd@google.com>,
- Steven Price <steven.price@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Evgenii Stepanov <eugenis@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When hibernating the contents of all pages in the system are written to
-disk, however the MTE tags are not visible to the generic hibernation
-code. So just before the hibernation image is created copy the tags out
-of the physical tag storage into standard memory so they will be
-included in the hibernation image. After hibernation apply the tags back
-into the physical tag storage.
+On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
+> The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+> address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+> the tag bits may be needed by tools in order to accurately diagnose
+> memory errors, such as HWASan [1] or future tools based on the Memory
+> Tagging Extension (MTE).
+> 
+> We should not stop clearing these bits in the existing fault address
+> fields, because there may be existing userspace applications that are
+> expecting the tag bits to be cleared. Instead, create a far_context in
+> sigcontext (similar to the existing esr_context), and store the original
+> value of FAR_EL1 (including the tag bits) there.
+> 
+> [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+> 
+> Signed-off-by: Peter Collingbourne <pcc@google.com>
 
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/kernel/hibernate.c | 116 ++++++++++++++++++++++++++++++++++
- 1 file changed, 116 insertions(+)
-
-diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 5b73e92c99e3..b89429778b5d 100644
---- a/arch/arm64/kernel/hibernate.c
-+++ b/arch/arm64/kernel/hibernate.c
-@@ -31,6 +31,7 @@
- #include <asm/kexec.h>
- #include <asm/memory.h>
- #include <asm/mmu_context.h>
-+#include <asm/mte.h>
- #include <asm/pgalloc.h>
- #include <asm/pgtable.h>
- #include <asm/pgtable-hwdef.h>
-@@ -277,6 +278,115 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 
- #define dcache_clean_range(start, end)	__flush_dcache_area(start, (end - start))
- 
-+#ifdef CONFIG_ARM64_MTE
-+
-+static DEFINE_XARRAY(mte_pages);
-+
-+static int save_tags(struct page *page, unsigned long pfn)
-+{
-+	void *tag_storage, *ret;
-+
-+	tag_storage = mte_allocate_tag_storage();
-+	if (!tag_storage)
-+		return -ENOMEM;
-+
-+	mte_save_page_tags(page_address(page), tag_storage);
-+
-+	ret = xa_store(&mte_pages, pfn, tag_storage, GFP_KERNEL);
-+	if (WARN(xa_is_err(ret), "Failed to store MTE tags")) {
-+		mte_free_tag_storage(tag_storage);
-+		return xa_err(ret);
-+	} else if (WARN(ret, "swsusp: %s: Duplicate entry", __func__)) {
-+		mte_free_tag_storage(ret);
-+	}
-+
-+	return 0;
-+}
-+
-+static void swsusp_mte_free_storage(void)
-+{
-+	XA_STATE(xa_state, &mte_pages, 0);
-+	void *tags;
-+
-+	xa_lock(&mte_pages);
-+	xas_for_each(&xa_state, tags, ULONG_MAX) {
-+		mte_free_tag_storage(tags);
-+	}
-+	xa_unlock(&mte_pages);
-+
-+	xa_destroy(&mte_pages);
-+}
-+
-+static int swsusp_mte_save_tags(void)
-+{
-+	struct zone *zone;
-+	unsigned long pfn, max_zone_pfn;
-+	int ret = 0;
-+	int n = 0;
-+
-+	if (!system_supports_mte())
-+		return 0;
-+
-+	for_each_populated_zone(zone) {
-+		max_zone_pfn = zone_end_pfn(zone);
-+		for (pfn = zone->zone_start_pfn; pfn < max_zone_pfn; pfn++) {
-+			struct page *page = pfn_to_online_page(pfn);
-+
-+			if (!page)
-+				continue;
-+
-+			if (!test_bit(PG_mte_tagged, &page->flags))
-+				continue;
-+
-+			ret = save_tags(page, pfn);
-+			n++;
-+
-+			if (ret) {
-+				swsusp_mte_free_storage();
-+				goto out;
-+			}
-+		}
-+	}
-+
-+	pr_info("Saved %d MTE pages\n", n);
-+
-+out:
-+	return ret;
-+}
-+
-+static void swsusp_mte_restore_tags(void)
-+{
-+	XA_STATE(xa_state, &mte_pages, 0);
-+	int n = 0;
-+	void *tags;
-+
-+	xa_lock(&mte_pages);
-+	xas_for_each(&xa_state, tags, ULONG_MAX) {
-+		unsigned long pfn = xa_state.xa_index;
-+		struct page *page = pfn_to_online_page(pfn);
-+
-+		mte_restore_page_tags(page_address(page), tags);
-+
-+		mte_free_tag_storage(tags);
-+		n++;
-+	}
-+	xa_unlock(&mte_pages);
-+
-+	pr_info("Restored %d MTE pages\n", n);
-+
-+	xa_destroy(&mte_pages);
-+}
-+#else
-+static int swsusp_mte_save_tags(void)
-+{
-+	return 0;
-+}
-+
-+static void swsusp_mte_restore_tags(void)
-+{
-+}
-+#endif
-+
- int swsusp_arch_suspend(void)
- {
- 	int ret = 0;
-@@ -294,6 +404,10 @@ int swsusp_arch_suspend(void)
- 		/* make the crash dump kernel image visible/saveable */
- 		crash_prepare_suspend();
- 
-+		ret = swsusp_mte_save_tags();
-+		if (ret)
-+			return ret;
-+
- 		sleep_cpu = smp_processor_id();
- 		ret = swsusp_save();
- 	} else {
-@@ -307,6 +421,8 @@ int swsusp_arch_suspend(void)
- 			dcache_clean_range(__hyp_text_start, __hyp_text_end);
- 		}
- 
-+		swsusp_mte_restore_tags();
-+
- 		/* make the crash dump kernel image protected again */
- 		crash_post_resume();
- 
--- 
-2.20.1
-
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
