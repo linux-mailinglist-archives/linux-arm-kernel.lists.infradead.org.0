@@ -2,113 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A51CA1B4CB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81A391B4CBB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:36:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPrjsu2/1BjZzyZ30xVN8K3U4bpdWsm+FV7N9Z7J+GI=; b=UXAtT0A2RGB88/
-	pOL93navXny2YRdK3TZu2fYEgmwmbq+Tr/944FHwNU57XKL/W8XpSY1A7ER0aY1/aXYIWUPIqfG0o
-	fuA00RQ3ApdgBzmw204L3nWo1W0uItV6qEJA1TQ8R8EdeoDBiEampBrYpncMvlKX4h4jArvoMg2UF
-	NTp6Bc4KNL62Q+k8wCFCG8Vnf3Egy8jA24cLQvHaXgLB5/CSL3cGDcaqNqiMX/ZDbrOGAJ91Fw3TY
-	fWL85GIVsiTTQU/NEDREA8NwC+x2XAIiC8PTJVRuiIhni2Kpx1tvw2ckpjC3MoNdcLUhcOEhpg82c
-	wC5mhxEYygbqybjyqHXw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ffOceTDX5sSaWGg+LfaI2SE2u5RQcuQQAf7a7ZY4CvM=; b=WKzVh6Uad0ETJ1
+	YmzNKj56Ey1G5Osyb36oLE0YhmoFW0sonxN2m8/tJZcRI2UrdBQDsH/lybHcwPY+g5UH79ytBLckd
+	jadQOAFsvMkhaKaQCWe9chRsD0QR6R6U2YBFfK8G+mOmnOZfw78/A1GhgCLV10p6hiRFyV7U2+t6Y
+	L6fIL/TxOmIRQjK+0dBQcrW4/wKFZE6C4WBzmogKdsDKgmanzxBARjoSxxW9Z2TB3+6iTMw+OXkhx
+	6QTjAyoCDMmACy8uS0qat3zNGZciSb0R+RwPyBXDmU34CrBrAaLbmx4xqy8cimrc+cWVdJyC/x4kl
+	E3Ge4VioYV34guuWaPfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRKCk-0005CC-7Z; Wed, 22 Apr 2020 18:34:38 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jRKE5-0008E0-PS; Wed, 22 Apr 2020 18:36:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRKCb-0005B3-Hj
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:34:31 +0000
-IronPort-SDR: WIABTBA31c+uEPpnHvJ4+ENTHSphWXJBBRvnn6MU6fOjLWR6FvAw92XRalzajZSI0s9B2WhXjy
- vtuFhxnOqGNA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 22 Apr 2020 11:34:22 -0700
-IronPort-SDR: Uaw9oAX7iOna9W24Ebw7UElOxqgzMM/x/sltDlgLeboc8rB7guAUh6gtjBC2y+SX2hko4XLiq4
- JMpQLRX+vS7Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,304,1583222400"; d="scan'208";a="259165390"
-Received: from ddmurill-mobl.amr.corp.intel.com (HELO [10.255.229.247])
- ([10.255.229.247])
- by orsmga006.jf.intel.com with ESMTP; 22 Apr 2020 11:34:22 -0700
-Subject: Re: [PATCH 3/4] arm64: mte: Enable swap of tagged pages
-To: Steven Price <steven.price@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org
-References: <20200422142530.32619-1-steven.price@arm.com>
- <20200422142530.32619-4-steven.price@arm.com>
-From: Dave Hansen <dave.hansen@intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <6ebff138-a6ad-75c9-bfe5-b7174098e878@intel.com>
-Date: Wed, 22 Apr 2020 11:34:22 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1jRKDo-0008Ce-G7
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:35:45 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F24A62075A;
+ Wed, 22 Apr 2020 18:35:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587580544;
+ bh=T4kdhqCafwM/UbR3FZ9TP5rqIAkCxdB3G9X/CnrP4R8=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=pP4psPYht7hIgvKBMdgBgzqJ1QwCsALKq0LqIzcICVQIq5EFrd2XTLKUQh6VdwckK
+ NFTbf9IuoerGuGX903Jz9eLrqQbjg2J3xGuGaAmt1RG5HJF53lgw/oOG7vuRILanV5
+ qtjuprGc/zDGbrnB5FgTVA0KrPoUlCK3GpHl//DQ=
 MIME-Version: 1.0
-In-Reply-To: <20200422142530.32619-4-steven.price@arm.com>
-Content-Language: en-US
+In-Reply-To: <1586937773-5836-6-git-send-email-abel.vesa@nxp.com>
+References: <1586937773-5836-1-git-send-email-abel.vesa@nxp.com>
+ <1586937773-5836-6-git-send-email-abel.vesa@nxp.com>
+Subject: Re: [PATCH v3 05/13] clk: imx: gate2: Allow single bit gating clock
+From: Stephen Boyd <sboyd@kernel.org>
+To: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, Lee Jones <lee.jones@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Sascha Hauer <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Date: Wed, 22 Apr 2020 11:35:43 -0700
+Message-ID: <158758054316.163502.7559386766986350752@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_113429_779486_5DCCE973 
-X-CRM114-Status: GOOD (  20.72  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200422_113544_554326_918E3D1D 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,116 +81,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, Hugh Dickins <hughd@google.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/22/20 7:25 AM, Steven Price wrote:
-> Because shmem can swap pages back in without restoring
-> the userspace PTE it is also necessary to add a hook for shmem.
+Quoting Abel Vesa (2020-04-15 01:02:45)
+> Audiomix on i.MX8MP registers two gates that share the same enable count
+> but use the same bit to control the gate instead of two bits. By adding
+> the flag IMX_CLK_GATE2_SINGLE_BIT we allow the gate2 to use the generic
+> gate ops for enable, disable and is_enabled.
+> For the disable_unused, nothing happens if this flag is specified.
+> 
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> ---
 
-I think the swap readahead code does this as well.  It pulls the page
-into the swap cache, but doesn't map it in.
-
-...
-> +static DEFINE_XARRAY(mte_pages);
-> +
-> +void *mte_allocate_tag_storage(void)
-> +{
-> +	/* tags granule is 16 bytes, 2 tags stored per byte */
-> +	return kmalloc(PAGE_SIZE / 16 / 2, GFP_KERNEL);
-> +}
-
-Yikes, so this eats 2k of unmovable kernel memory per 64k of swap?  This
-is *probably* worth having its own slab just so the memory that's used
-for it is less opaque.  It could be pretty large.  But, I guess if
-you're worried about how much kernel memory this can eat, there's always
-the swap cgroup controller to enforce limits.
-
-This also *increases* the footprint of a page while it's in the swap
-cache.  That's at least temporarily a _bit_ counterproductive.
-
-I guess there aren't any nice alternatives, though.  I would imagine
-that it would be substantially more complicated to rig the swap code up
-to write the tag along with the data.  Or, to store the tag data
-somewhere *it* can be reclaimed, like in a kernel-internal shmem file or
-something.
-
-> +void mte_free_tag_storage(char *storage)
-> +{
-> +	kfree(storage);
-> +}
-> +
-> +int mte_save_tags(struct page *page)
-> +{
-> +	void *tag_storage, *ret;
-> +
-> +	if (!test_bit(PG_mte_tagged, &page->flags))
-> +		return 0;
-> +
-> +	tag_storage = mte_allocate_tag_storage();
-> +	if (!tag_storage)
-> +		return -ENOMEM;
-> +
-> +	mte_save_page_tags(page_address(page), tag_storage);
-> +
-> +	ret = xa_store(&mte_pages, page_private(page), tag_storage, GFP_KERNEL);
-
-This is indexing into the xarray with the swap entry.val established in
-do_swap_page()?  Might be nice to make a note where it came from.
-
-> +	if (WARN(xa_is_err(ret), "Failed to store MTE tags")) {
-> +		mte_free_tag_storage(tag_storage);
-> +		return xa_err(ret);
-> +	} else if (ret) {
-> +		mte_free_tag_storage(ret);
-
-Is there a missing "return ret;" here?  Otherwise, it seems like this
-might silently fail to save the page's tags.  I'm not sure what
-non-xa_is_err() codes get returned, but if there is one, it could end up
-here.
-
-> +	}
-> +
-> +	return 0;
-> +}
-...
-
-> +void mte_sync_tags(pte_t *ptep, pte_t pte)
-> +{
-> +	struct page *page = pte_page(pte);
-> +	pte_t old_pte = READ_ONCE(*ptep);
-> +	swp_entry_t entry;
-> +
-> +	set_bit(PG_mte_tagged, &page->flags);
-> +
-> +	if (!is_swap_pte(old_pte))
-> +		return;
-> +
-> +	entry = pte_to_swp_entry(old_pte);
-> +	if (non_swap_entry(entry))
-> +		return;
-> +
-> +	mte_restore_tags(entry, page);
-> +}
-
-Oh, here it is!  This gets called when replacing a swap PTE with a
-present PTE and restores the tags on swap-in.
-
-Does this work for swap PTEs which were copied at fork()?  I *think*
-those might end up in here twice, once for the parent and another for
-the child.  If both read the page, both will fault and both will do a
-set_pte() and end up in here.  I don't think it will do any harm since
-it will just set_bit(PG_mte_tagged) twice and restore the same tags
-twice.  But, it might be nice to call that out.
-
-This function is a bit light on comments.  It might make sense, for
-instance to note that 'pte' is always a tagged PTE at this point.
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
