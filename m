@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DBD31B43E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:04:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B2A1B44DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:22:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2UAtJ3YOXx1/E9WeuCQ3pRAcBuQnenq3udMOZpplErw=; b=ad1gJ69/0IULcz
-	WzKYgVRvLHT4o7C247PC6XwSMOdmLZDdT1HnreEHPkmxnhv6FR1LH9MLx9a9Ad3zGxkB0dyjbV3ct
-	IjYTkpnGTEV6SmNobydzWUlk29NV9uiRTwlcEdbTPo20Jx8ZWYvJy/EjfkibgNb12Xue6ZqAEqdZr
-	xiA+5aa22JpY4Rlv4dnrjMa1mw99s/EogeaLl1Vt6wCyQ5x7G3+UfPbCRz2KVBnVWsZGPkGIn3dsd
-	3tlK8fUzAIYswQwFWAuSusIN/Y+zoXbIAqTnYeQHt4eDYL7wortQ0ISVjKT+kLcSmOjuzrZpHR4sW
-	lA2v4BoosvXv35kYT7Xw==;
+	List-Owner; bh=w2EPomYDOq5dX3yLb+EFpSwr0h5pELR+mIB99QBA1Bg=; b=ZS2VZBlq2Xb2ip
+	jm8ujdOQ1L9Cf6mNDVVUxcbR1QaaT6rj1vR8kkp//dcMwwClZjD7tF+oXQ3K2zgbrPK0JZScu0X4l
+	ezLUqnHN47I/bmsLOcc5h9VIU6Jc6WGcTStXqrJwR2xzmBq/68MOUgdX2FwSmkb7DVuUXOOW3y4s4
+	Zgh7rnP98TXMghF8l7jjjEbRrvIbIxhz39DcsOfapBI2SmGIS2m/6BdaqYrJoL3TBCFbZSNLSwaC/
+	8en3+APGvsHaNupfEh8jBKOL/sTHpef/T2RxCM+e29TVmZwqnPXQKG0WJK/K5VvpcFYnM9X1yWE5+
+	mE7CuwiTdtVcgY/mM7qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRE6m-0006Hq-PN; Wed, 22 Apr 2020 12:04:05 +0000
+	id 1jREO3-0005J0-3g; Wed, 22 Apr 2020 12:21:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRE3t-0003j7-U4
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:01:09 +0000
+ id 1jRENG-0004zo-6c
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:07 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CE9F620781;
- Wed, 22 Apr 2020 12:01:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C30642098B;
+ Wed, 22 Apr 2020 12:21:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587556865;
- bh=nJMAZxWk7K0gChaQwdYIUbSnwDI9NOOmb4zitYXzoAQ=;
+ s=default; t=1587558065;
+ bh=NMLWRv9KCKp8Z61Wz4miIzCqXCelvOKl4u2IuIAKs1s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QoDNcaHxSYwZomVrgFdeBxLA+DXE/K1EwfnKcoSxaK1EW0Gy7v7ESgroGkGObEkrO
- kwx876sbUQwjScYFP/Ef/FXdEpAsZ0AKqJ3wNyyrBJuX56LJdQMr7lJD9dMoIDuYp3
- lfTIkAw7hRdm1MOyHvHHJS2kMqrquIZY3wqrmK+w=
+ b=JqIPGeoX4cgEmGwCR1fTpVDYO1yjZw7/7nZbnP8Im/9CZeuK1KTsjfOd3akO2VcMK
+ nbXALIZkFVLcjCDziMnq5M+sS+ANOIo+la3v1hEZy39g5WCG0t8x8pAeZy+vzrH3Nn
+ yfojClYIukd0IF152eSECVpRuMp0YKGp9B1bLq2Y=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jRE3r-005UI7-69; Wed, 22 Apr 2020 13:01:03 +0100
+ id 1jRE3s-005UI7-3n; Wed, 22 Apr 2020 13:01:04 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 09/26] KVM: arm64: vgic-v3: Take cpu_if pointer directly
- instead of vcpu
-Date: Wed, 22 Apr 2020 13:00:33 +0100
-Message-Id: <20200422120050.3693593-10-maz@kernel.org>
+Subject: [PATCH 10/26] KVM: arm64: Refactor vcpu_{read,write}_sys_reg
+Date: Wed, 22 Apr 2020 13:00:34 +0100
+Message-Id: <20200422120050.3693593-11-maz@kernel.org>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200422120050.3693593-1-maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
@@ -63,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_050106_045445_9592A8E6 
-X-CRM114-Status: GOOD (  20.36  )
+X-CRM114-CacheID: sfid-20200422_052106_279171_58018D66 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -108,392 +107,181 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christoffer Dall <christoffer.dall@arm.com>
+Extract the direct HW accessors for later reuse.
 
-If we move the used_lrs field to the version-specific cpu interface
-structure, the following functions only operate on the struct
-vgic_v3_cpu_if and not the full vcpu:
-
-  __vgic_v3_save_state
-  __vgic_v3_restore_state
-  __vgic_v3_activate_traps
-  __vgic_v3_deactivate_traps
-  __vgic_v3_save_aprs
-  __vgic_v3_restore_aprs
-
-This is going to be very useful for nested virt, so move the used_lrs
-field and change the prototypes and implementations of these functions to
-take the cpu_if parameter directly.
-
-No functional change.
-
-Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_hyp.h | 12 ++++++------
- arch/arm64/kvm/hyp/switch.c      |  8 ++++----
- include/kvm/arm_vgic.h           |  5 ++++-
- virt/kvm/arm/hyp/vgic-v3-sr.c    | 33 ++++++++++----------------------
- virt/kvm/arm/vgic/vgic-v2.c      | 10 +++++-----
- virt/kvm/arm/vgic/vgic-v3.c      | 14 ++++++++------
- virt/kvm/arm/vgic/vgic.c         | 25 ++++++++++++++++--------
- 7 files changed, 54 insertions(+), 53 deletions(-)
+ arch/arm64/kvm/sys_regs.c | 135 ++++++++++++++++++++++----------------
+ 1 file changed, 78 insertions(+), 57 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-index dcb63bf941057..f3c3d7645000f 100644
---- a/arch/arm64/include/asm/kvm_hyp.h
-+++ b/arch/arm64/include/asm/kvm_hyp.h
-@@ -55,12 +55,12 @@
- 
- int __vgic_v2_perform_cpuif_access(struct kvm_vcpu *vcpu);
- 
--void __vgic_v3_save_state(struct kvm_vcpu *vcpu);
--void __vgic_v3_restore_state(struct kvm_vcpu *vcpu);
--void __vgic_v3_activate_traps(struct kvm_vcpu *vcpu);
--void __vgic_v3_deactivate_traps(struct kvm_vcpu *vcpu);
--void __vgic_v3_save_aprs(struct kvm_vcpu *vcpu);
--void __vgic_v3_restore_aprs(struct kvm_vcpu *vcpu);
-+void __vgic_v3_save_state(struct vgic_v3_cpu_if *cpu_if);
-+void __vgic_v3_restore_state(struct vgic_v3_cpu_if *cpu_if);
-+void __vgic_v3_activate_traps(struct vgic_v3_cpu_if *cpu_if);
-+void __vgic_v3_deactivate_traps(struct vgic_v3_cpu_if *cpu_if);
-+void __vgic_v3_save_aprs(struct vgic_v3_cpu_if *cpu_if);
-+void __vgic_v3_restore_aprs(struct vgic_v3_cpu_if *cpu_if);
- int __vgic_v3_perform_cpuif_access(struct kvm_vcpu *vcpu);
- 
- void __timer_enable_traps(struct kvm_vcpu *vcpu);
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index d79319038b119..c48c96565f1a7 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -270,8 +270,8 @@ static void __hyp_text __deactivate_vm(struct kvm_vcpu *vcpu)
- static void __hyp_text __hyp_vgic_save_state(struct kvm_vcpu *vcpu)
- {
- 	if (static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif)) {
--		__vgic_v3_save_state(vcpu);
--		__vgic_v3_deactivate_traps(vcpu);
-+		__vgic_v3_save_state(&vcpu->arch.vgic_cpu.vgic_v3);
-+		__vgic_v3_deactivate_traps(&vcpu->arch.vgic_cpu.vgic_v3);
- 	}
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index 51db934702b64..46f218982df8c 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -64,11 +64,8 @@ static bool write_to_read_only(struct kvm_vcpu *vcpu,
+ 	return false;
  }
  
-@@ -279,8 +279,8 @@ static void __hyp_text __hyp_vgic_save_state(struct kvm_vcpu *vcpu)
- static void __hyp_text __hyp_vgic_restore_state(struct kvm_vcpu *vcpu)
+-u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
++static bool __vcpu_read_sys_reg_from_cpu(int reg, u64 *val)
  {
- 	if (static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif)) {
--		__vgic_v3_activate_traps(vcpu);
--		__vgic_v3_restore_state(vcpu);
-+		__vgic_v3_activate_traps(&vcpu->arch.vgic_cpu.vgic_v3);
-+		__vgic_v3_restore_state(&vcpu->arch.vgic_cpu.vgic_v3);
- 	}
- }
- 
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index 69f4164d64776..a8d8fdcd37230 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -274,6 +274,8 @@ struct vgic_v2_cpu_if {
- 	u32		vgic_vmcr;
- 	u32		vgic_apr;
- 	u32		vgic_lr[VGIC_V2_MAX_LRS];
-+
-+	unsigned int used_lrs;
- };
- 
- struct vgic_v3_cpu_if {
-@@ -291,6 +293,8 @@ struct vgic_v3_cpu_if {
- 	 * linking the Linux IRQ subsystem and the ITS together.
+-	if (!vcpu->arch.sysregs_loaded_on_cpu)
+-		goto immediate_read;
+-
+ 	/*
+ 	 * System registers listed in the switch are not saved on every
+ 	 * exit from the guest but are only saved on vcpu_put.
+@@ -79,40 +76,37 @@ u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
+ 	 * thread when emulating cross-VCPU communication.
  	 */
- 	struct its_vpe	its_vpe;
-+
-+	unsigned int used_lrs;
- };
- 
- struct vgic_cpu {
-@@ -300,7 +304,6 @@ struct vgic_cpu {
- 		struct vgic_v3_cpu_if	vgic_v3;
- 	};
- 
--	unsigned int used_lrs;
- 	struct vgic_irq private_irqs[VGIC_NR_PRIVATE_IRQS];
- 
- 	raw_spinlock_t ap_list_lock;	/* Protects the ap_list */
-diff --git a/virt/kvm/arm/hyp/vgic-v3-sr.c b/virt/kvm/arm/hyp/vgic-v3-sr.c
-index ccf1fde9836c1..2ea9a0b73fc44 100644
---- a/virt/kvm/arm/hyp/vgic-v3-sr.c
-+++ b/virt/kvm/arm/hyp/vgic-v3-sr.c
-@@ -194,10 +194,9 @@ static u32 __hyp_text __vgic_v3_read_ap1rn(int n)
- 	return val;
- }
- 
--void __hyp_text __vgic_v3_save_state(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_save_state(struct vgic_v3_cpu_if *cpu_if)
- {
--	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
--	u64 used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	u64 used_lrs = cpu_if->used_lrs;
- 
- 	/*
- 	 * Make sure stores to the GIC via the memory mapped interface
-@@ -230,10 +229,9 @@ void __hyp_text __vgic_v3_save_state(struct kvm_vcpu *vcpu)
+ 	switch (reg) {
+-	case CSSELR_EL1:	return read_sysreg_s(SYS_CSSELR_EL1);
+-	case SCTLR_EL1:		return read_sysreg_s(SYS_SCTLR_EL12);
+-	case ACTLR_EL1:		return read_sysreg_s(SYS_ACTLR_EL1);
+-	case CPACR_EL1:		return read_sysreg_s(SYS_CPACR_EL12);
+-	case TTBR0_EL1:		return read_sysreg_s(SYS_TTBR0_EL12);
+-	case TTBR1_EL1:		return read_sysreg_s(SYS_TTBR1_EL12);
+-	case TCR_EL1:		return read_sysreg_s(SYS_TCR_EL12);
+-	case ESR_EL1:		return read_sysreg_s(SYS_ESR_EL12);
+-	case AFSR0_EL1:		return read_sysreg_s(SYS_AFSR0_EL12);
+-	case AFSR1_EL1:		return read_sysreg_s(SYS_AFSR1_EL12);
+-	case FAR_EL1:		return read_sysreg_s(SYS_FAR_EL12);
+-	case MAIR_EL1:		return read_sysreg_s(SYS_MAIR_EL12);
+-	case VBAR_EL1:		return read_sysreg_s(SYS_VBAR_EL12);
+-	case CONTEXTIDR_EL1:	return read_sysreg_s(SYS_CONTEXTIDR_EL12);
+-	case TPIDR_EL0:		return read_sysreg_s(SYS_TPIDR_EL0);
+-	case TPIDRRO_EL0:	return read_sysreg_s(SYS_TPIDRRO_EL0);
+-	case TPIDR_EL1:		return read_sysreg_s(SYS_TPIDR_EL1);
+-	case AMAIR_EL1:		return read_sysreg_s(SYS_AMAIR_EL12);
+-	case CNTKCTL_EL1:	return read_sysreg_s(SYS_CNTKCTL_EL12);
+-	case PAR_EL1:		return read_sysreg_s(SYS_PAR_EL1);
+-	case DACR32_EL2:	return read_sysreg_s(SYS_DACR32_EL2);
+-	case IFSR32_EL2:	return read_sysreg_s(SYS_IFSR32_EL2);
+-	case DBGVCR32_EL2:	return read_sysreg_s(SYS_DBGVCR32_EL2);
++	case CSSELR_EL1:	*val = read_sysreg_s(SYS_CSSELR_EL1);	break;
++	case SCTLR_EL1:		*val = read_sysreg_s(SYS_SCTLR_EL12);	break;
++	case ACTLR_EL1:		*val = read_sysreg_s(SYS_ACTLR_EL1);	break;
++	case CPACR_EL1:		*val = read_sysreg_s(SYS_CPACR_EL12);	break;
++	case TTBR0_EL1:		*val = read_sysreg_s(SYS_TTBR0_EL12);	break;
++	case TTBR1_EL1:		*val = read_sysreg_s(SYS_TTBR1_EL12);	break;
++	case TCR_EL1:		*val = read_sysreg_s(SYS_TCR_EL12);	break;
++	case ESR_EL1:		*val = read_sysreg_s(SYS_ESR_EL12);	break;
++	case AFSR0_EL1:		*val = read_sysreg_s(SYS_AFSR0_EL12);	break;
++	case AFSR1_EL1:		*val = read_sysreg_s(SYS_AFSR1_EL12);	break;
++	case FAR_EL1:		*val = read_sysreg_s(SYS_FAR_EL12);	break;
++	case MAIR_EL1:		*val = read_sysreg_s(SYS_MAIR_EL12);	break;
++	case VBAR_EL1:		*val = read_sysreg_s(SYS_VBAR_EL12);	break;
++	case CONTEXTIDR_EL1:	*val = read_sysreg_s(SYS_CONTEXTIDR_EL12);break;
++	case TPIDR_EL0:		*val = read_sysreg_s(SYS_TPIDR_EL0);	break;
++	case TPIDRRO_EL0:	*val = read_sysreg_s(SYS_TPIDRRO_EL0);	break;
++	case TPIDR_EL1:		*val = read_sysreg_s(SYS_TPIDR_EL1);	break;
++	case AMAIR_EL1:		*val = read_sysreg_s(SYS_AMAIR_EL12);	break;
++	case CNTKCTL_EL1:	*val = read_sysreg_s(SYS_CNTKCTL_EL12);	break;
++	case PAR_EL1:		*val = read_sysreg_s(SYS_PAR_EL1);	break;
++	case DACR32_EL2:	*val = read_sysreg_s(SYS_DACR32_EL2);	break;
++	case IFSR32_EL2:	*val = read_sysreg_s(SYS_IFSR32_EL2);	break;
++	case DBGVCR32_EL2:	*val = read_sysreg_s(SYS_DBGVCR32_EL2);	break;
++	default:		return false;
  	}
+ 
+-immediate_read:
+-	return __vcpu_sys_reg(vcpu, reg);
++	return true;
  }
  
--void __hyp_text __vgic_v3_restore_state(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_restore_state(struct vgic_v3_cpu_if *cpu_if)
+-void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
++static bool __vcpu_write_sys_reg_to_cpu(u64 val, int reg)
  {
--	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
--	u64 used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	u64 used_lrs = cpu_if->used_lrs;
- 	int i;
- 
- 	if (used_lrs || cpu_if->its_vpe.its_vm) {
-@@ -257,10 +255,8 @@ void __hyp_text __vgic_v3_restore_state(struct kvm_vcpu *vcpu)
- 	}
- }
- 
--void __hyp_text __vgic_v3_activate_traps(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_activate_traps(struct vgic_v3_cpu_if *cpu_if)
- {
--	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
+-	if (!vcpu->arch.sysregs_loaded_on_cpu)
+-		goto immediate_write;
 -
  	/*
- 	 * VFIQEn is RES1 if ICC_SRE_EL1.SRE is 1. This causes a
- 	 * Group0 interrupt (as generated in GICv2 mode) to be
-@@ -306,9 +302,8 @@ void __hyp_text __vgic_v3_activate_traps(struct kvm_vcpu *vcpu)
- 		write_gicreg(cpu_if->vgic_hcr, ICH_HCR_EL2);
- }
- 
--void __hyp_text __vgic_v3_deactivate_traps(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_deactivate_traps(struct vgic_v3_cpu_if *cpu_if)
- {
--	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
- 	u64 val;
- 
- 	if (!cpu_if->vgic_sre) {
-@@ -333,15 +328,11 @@ void __hyp_text __vgic_v3_deactivate_traps(struct kvm_vcpu *vcpu)
- 		write_gicreg(0, ICH_HCR_EL2);
- }
- 
--void __hyp_text __vgic_v3_save_aprs(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_save_aprs(struct vgic_v3_cpu_if *cpu_if)
- {
--	struct vgic_v3_cpu_if *cpu_if;
- 	u64 val;
- 	u32 nr_pre_bits;
- 
--	vcpu = kern_hyp_va(vcpu);
--	cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
--
- 	val = read_gicreg(ICH_VTR_EL2);
- 	nr_pre_bits = vtr_to_nr_pre_bits(val);
- 
-@@ -370,15 +361,11 @@ void __hyp_text __vgic_v3_save_aprs(struct kvm_vcpu *vcpu)
- 	}
- }
- 
--void __hyp_text __vgic_v3_restore_aprs(struct kvm_vcpu *vcpu)
-+void __hyp_text __vgic_v3_restore_aprs(struct vgic_v3_cpu_if *cpu_if)
- {
--	struct vgic_v3_cpu_if *cpu_if;
- 	u64 val;
- 	u32 nr_pre_bits;
- 
--	vcpu = kern_hyp_va(vcpu);
--	cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
--
- 	val = read_gicreg(ICH_VTR_EL2);
- 	nr_pre_bits = vtr_to_nr_pre_bits(val);
- 
-@@ -453,7 +440,7 @@ static int __hyp_text __vgic_v3_highest_priority_lr(struct kvm_vcpu *vcpu,
- 						    u32 vmcr,
- 						    u64 *lr_val)
- {
--	unsigned int used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	unsigned int used_lrs = vcpu->arch.vgic_cpu.vgic_v3.used_lrs;
- 	u8 priority = GICv3_IDLE_PRIORITY;
- 	int i, lr = -1;
- 
-@@ -492,7 +479,7 @@ static int __hyp_text __vgic_v3_highest_priority_lr(struct kvm_vcpu *vcpu,
- static int __hyp_text __vgic_v3_find_active_lr(struct kvm_vcpu *vcpu,
- 					       int intid, u64 *lr_val)
- {
--	unsigned int used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	unsigned int used_lrs = vcpu->arch.vgic_cpu.vgic_v3.used_lrs;
- 	int i;
- 
- 	for (i = 0; i < used_lrs; i++) {
-diff --git a/virt/kvm/arm/vgic/vgic-v2.c b/virt/kvm/arm/vgic/vgic-v2.c
-index 621cc168fe3f7..ebf53a4e12963 100644
---- a/virt/kvm/arm/vgic/vgic-v2.c
-+++ b/virt/kvm/arm/vgic/vgic-v2.c
-@@ -56,7 +56,7 @@ void vgic_v2_fold_lr_state(struct kvm_vcpu *vcpu)
- 
- 	cpuif->vgic_hcr &= ~GICH_HCR_UIE;
- 
--	for (lr = 0; lr < vgic_cpu->used_lrs; lr++) {
-+	for (lr = 0; lr < vgic_cpu->vgic_v2.used_lrs; lr++) {
- 		u32 val = cpuif->vgic_lr[lr];
- 		u32 cpuid, intid = val & GICH_LR_VIRTUALID;
- 		struct vgic_irq *irq;
-@@ -120,7 +120,7 @@ void vgic_v2_fold_lr_state(struct kvm_vcpu *vcpu)
- 		vgic_put_irq(vcpu->kvm, irq);
- 	}
- 
--	vgic_cpu->used_lrs = 0;
-+	cpuif->used_lrs = 0;
- }
- 
- /*
-@@ -427,7 +427,7 @@ int vgic_v2_probe(const struct gic_kvm_info *info)
- static void save_lrs(struct kvm_vcpu *vcpu, void __iomem *base)
- {
- 	struct vgic_v2_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v2;
--	u64 used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	u64 used_lrs = cpu_if->used_lrs;
- 	u64 elrsr;
- 	int i;
- 
-@@ -448,7 +448,7 @@ static void save_lrs(struct kvm_vcpu *vcpu, void __iomem *base)
- void vgic_v2_save_state(struct kvm_vcpu *vcpu)
- {
- 	void __iomem *base = kvm_vgic_global_state.vctrl_base;
--	u64 used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	u64 used_lrs = vcpu->arch.vgic_cpu.vgic_v2.used_lrs;
- 
- 	if (!base)
- 		return;
-@@ -463,7 +463,7 @@ void vgic_v2_restore_state(struct kvm_vcpu *vcpu)
- {
- 	struct vgic_v2_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v2;
- 	void __iomem *base = kvm_vgic_global_state.vctrl_base;
--	u64 used_lrs = vcpu->arch.vgic_cpu.used_lrs;
-+	u64 used_lrs = cpu_if->used_lrs;
- 	int i;
- 
- 	if (!base)
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index 2c9fc13e2c590..118d044f48ddf 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -39,7 +39,7 @@ void vgic_v3_fold_lr_state(struct kvm_vcpu *vcpu)
- 
- 	cpuif->vgic_hcr &= ~ICH_HCR_UIE;
- 
--	for (lr = 0; lr < vgic_cpu->used_lrs; lr++) {
-+	for (lr = 0; lr < cpuif->used_lrs; lr++) {
- 		u64 val = cpuif->vgic_lr[lr];
- 		u32 intid, cpuid;
- 		struct vgic_irq *irq;
-@@ -111,7 +111,7 @@ void vgic_v3_fold_lr_state(struct kvm_vcpu *vcpu)
- 		vgic_put_irq(vcpu->kvm, irq);
- 	}
- 
--	vgic_cpu->used_lrs = 0;
-+	cpuif->used_lrs = 0;
- }
- 
- /* Requires the irq to be locked already */
-@@ -664,10 +664,10 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
- 	if (likely(cpu_if->vgic_sre))
- 		kvm_call_hyp(__vgic_v3_write_vmcr, cpu_if->vgic_vmcr);
- 
--	kvm_call_hyp(__vgic_v3_restore_aprs, vcpu);
-+	kvm_call_hyp(__vgic_v3_restore_aprs, kern_hyp_va(cpu_if));
- 
- 	if (has_vhe())
--		__vgic_v3_activate_traps(vcpu);
-+		__vgic_v3_activate_traps(cpu_if);
- 
- 	WARN_ON(vgic_v4_load(vcpu));
- }
-@@ -682,12 +682,14 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
- 
- void vgic_v3_put(struct kvm_vcpu *vcpu)
- {
-+	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
+ 	 * System registers listed in the switch are not restored on every
+ 	 * entry to the guest but are only restored on vcpu_load.
+@@ -122,32 +116,59 @@ void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
+ 	 * set once, before running the VCPU, and never changed later.
+ 	 */
+ 	switch (reg) {
+-	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	return;
+-	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	return;
+-	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	return;
+-	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	return;
+-	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	return;
+-	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	return;
+-	case TCR_EL1:		write_sysreg_s(val, SYS_TCR_EL12);	return;
+-	case ESR_EL1:		write_sysreg_s(val, SYS_ESR_EL12);	return;
+-	case AFSR0_EL1:		write_sysreg_s(val, SYS_AFSR0_EL12);	return;
+-	case AFSR1_EL1:		write_sysreg_s(val, SYS_AFSR1_EL12);	return;
+-	case FAR_EL1:		write_sysreg_s(val, SYS_FAR_EL12);	return;
+-	case MAIR_EL1:		write_sysreg_s(val, SYS_MAIR_EL12);	return;
+-	case VBAR_EL1:		write_sysreg_s(val, SYS_VBAR_EL12);	return;
+-	case CONTEXTIDR_EL1:	write_sysreg_s(val, SYS_CONTEXTIDR_EL12); return;
+-	case TPIDR_EL0:		write_sysreg_s(val, SYS_TPIDR_EL0);	return;
+-	case TPIDRRO_EL0:	write_sysreg_s(val, SYS_TPIDRRO_EL0);	return;
+-	case TPIDR_EL1:		write_sysreg_s(val, SYS_TPIDR_EL1);	return;
+-	case AMAIR_EL1:		write_sysreg_s(val, SYS_AMAIR_EL12);	return;
+-	case CNTKCTL_EL1:	write_sysreg_s(val, SYS_CNTKCTL_EL12);	return;
+-	case PAR_EL1:		write_sysreg_s(val, SYS_PAR_EL1);	return;
+-	case DACR32_EL2:	write_sysreg_s(val, SYS_DACR32_EL2);	return;
+-	case IFSR32_EL2:	write_sysreg_s(val, SYS_IFSR32_EL2);	return;
+-	case DBGVCR32_EL2:	write_sysreg_s(val, SYS_DBGVCR32_EL2);	return;
++	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	break;
++	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	break;
++	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	break;
++	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	break;
++	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	break;
++	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	break;
++	case TCR_EL1:		write_sysreg_s(val, SYS_TCR_EL12);	break;
++	case ESR_EL1:		write_sysreg_s(val, SYS_ESR_EL12);	break;
++	case AFSR0_EL1:		write_sysreg_s(val, SYS_AFSR0_EL12);	break;
++	case AFSR1_EL1:		write_sysreg_s(val, SYS_AFSR1_EL12);	break;
++	case FAR_EL1:		write_sysreg_s(val, SYS_FAR_EL12);	break;
++	case MAIR_EL1:		write_sysreg_s(val, SYS_MAIR_EL12);	break;
++	case VBAR_EL1:		write_sysreg_s(val, SYS_VBAR_EL12);	break;
++	case CONTEXTIDR_EL1:	write_sysreg_s(val, SYS_CONTEXTIDR_EL12);break;
++	case TPIDR_EL0:		write_sysreg_s(val, SYS_TPIDR_EL0);	break;
++	case TPIDRRO_EL0:	write_sysreg_s(val, SYS_TPIDRRO_EL0);	break;
++	case TPIDR_EL1:		write_sysreg_s(val, SYS_TPIDR_EL1);	break;
++	case AMAIR_EL1:		write_sysreg_s(val, SYS_AMAIR_EL12);	break;
++	case CNTKCTL_EL1:	write_sysreg_s(val, SYS_CNTKCTL_EL12);	break;
++	case PAR_EL1:		write_sysreg_s(val, SYS_PAR_EL1);	break;
++	case DACR32_EL2:	write_sysreg_s(val, SYS_DACR32_EL2);	break;
++	case IFSR32_EL2:	write_sysreg_s(val, SYS_IFSR32_EL2);	break;
++	case DBGVCR32_EL2:	write_sysreg_s(val, SYS_DBGVCR32_EL2);	break;
++	default:		return false;
++	}
 +
- 	WARN_ON(vgic_v4_put(vcpu, false));
- 
- 	vgic_v3_vmcr_sync(vcpu);
- 
--	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
-+	kvm_call_hyp(__vgic_v3_save_aprs, kern_hyp_va(cpu_if));
- 
- 	if (has_vhe())
--		__vgic_v3_deactivate_traps(vcpu);
-+		__vgic_v3_deactivate_traps(cpu_if);
- }
-diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-index 99b02ca730a87..c3643b7f101b7 100644
---- a/virt/kvm/arm/vgic/vgic.c
-+++ b/virt/kvm/arm/vgic/vgic.c
-@@ -786,6 +786,7 @@ static void vgic_flush_lr_state(struct kvm_vcpu *vcpu)
- 	int count;
- 	bool multi_sgi;
- 	u8 prio = 0xff;
-+	int i = 0;
- 
- 	lockdep_assert_held(&vgic_cpu->ap_list_lock);
- 
-@@ -827,11 +828,14 @@ static void vgic_flush_lr_state(struct kvm_vcpu *vcpu)
- 		}
++	return true;
++}
++
++u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
++{
++	u64 val = 0x8badf00d8badf00d;
++
++	if (!vcpu->arch.sysregs_loaded_on_cpu) {
++		goto memory_read;
  	}
  
--	vcpu->arch.vgic_cpu.used_lrs = count;
--
- 	/* Nuke remaining LRs */
--	for ( ; count < kvm_vgic_global_state.nr_lr; count++)
--		vgic_clear_lr(vcpu, count);
-+	for (i = count ; i < kvm_vgic_global_state.nr_lr; i++)
-+		vgic_clear_lr(vcpu, i);
+-immediate_write:
++	if (__vcpu_read_sys_reg_from_cpu(reg, &val))
++		return val;
 +
-+	if (!static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif))
-+		vcpu->arch.vgic_cpu.vgic_v2.used_lrs = count;
-+	else
-+		vcpu->arch.vgic_cpu.vgic_v3.used_lrs = count;
- }
- 
- static inline bool can_access_vgic_from_kernel(void)
-@@ -849,13 +853,13 @@ static inline void vgic_save_state(struct kvm_vcpu *vcpu)
- 	if (!static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif))
- 		vgic_v2_save_state(vcpu);
- 	else
--		__vgic_v3_save_state(vcpu);
-+		__vgic_v3_save_state(&vcpu->arch.vgic_cpu.vgic_v3);
- }
- 
- /* Sync back the hardware VGIC state into our emulation after a guest's run. */
- void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
- {
--	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
-+	int used_lrs;
- 
- 	/* An empty ap_list_head implies used_lrs == 0 */
- 	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
-@@ -864,7 +868,12 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
- 	if (can_access_vgic_from_kernel())
- 		vgic_save_state(vcpu);
- 
--	if (vgic_cpu->used_lrs)
-+	if (!static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif))
-+		used_lrs = vcpu->arch.vgic_cpu.vgic_v2.used_lrs;
-+	else
-+		used_lrs = vcpu->arch.vgic_cpu.vgic_v3.used_lrs;
++memory_read:
++	return __vcpu_sys_reg(vcpu, reg);
++}
 +
-+	if (used_lrs)
- 		vgic_fold_lr_state(vcpu);
- 	vgic_prune_ap_list(vcpu);
- }
-@@ -874,7 +883,7 @@ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
- 	if (!static_branch_unlikely(&kvm_vgic_global_state.gicv3_cpuif))
- 		vgic_v2_restore_state(vcpu);
- 	else
--		__vgic_v3_restore_state(vcpu);
-+		__vgic_v3_restore_state(&vcpu->arch.vgic_cpu.vgic_v3);
++void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
++{
++	if (!vcpu->arch.sysregs_loaded_on_cpu)
++		goto memory_write;
++
++	if (__vcpu_write_sys_reg_to_cpu(val, reg))
++		return;
++
++memory_write:
+ 	 __vcpu_sys_reg(vcpu, reg) = val;
  }
  
- /* Flush our emulation state into the GIC hardware before entering the guest. */
 -- 
 2.26.1
 
