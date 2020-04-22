@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39CA11B4C5D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:01:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0411B4C66
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:02:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FMTWQtmJUEu4MGZ86MDMveKPMuk64YXFeIZ3zUnmntA=; b=KJLxBrfLIKkXQU
-	uOEdOZzMfid3MiGLezttwbX2vNFrxJ4hqPD3t9wukoXRgskf2yG+AcajYbqy4ljI5/0NiBbK7yCeZ
-	Kv5HHbcbmvt2HPxvSPO479OInmzb3GDG7ql/E3S6s70XN5zpr09rFQnNQl+i2TEPH39m/h0XE4io3
-	+LlwGAYC3KpFrbF7SH8rSTB7bL9ZgfVsg33/yp6aOIs5mlh2iAn9ay76mvSloibZIr2qz4KIoQeIk
-	AbZYS9uqkmKKyGKXt8VWCnIIpEqQh2FvNFiWAdJO0r+5eAcMnyN8AmJ6bjB65jrBtDLaVyUHSkBRe
-	MpLGMG82qXB/1WcvKOkQ==;
+	List-Owner; bh=+Vop1/CigsQhxz7d0LQc4d32VNVYIFsqzWwymXZr0dU=; b=buTArwCF8raOKs
+	uZSwBkbi6UcsLcQBRsqTL/MvUm/IK38HmgFwS9d0oH2pnYw996YB5mHHxlbj4cXECcwfEplXzI44q
+	afiEUoyJZaxSYgGAJV1aEC6VCGzvxsp/NEZAWB7q2fzgP4gq6a5AaPhlOMx3QnEg4fj33Jx5xtK7i
+	rKPWl0SAFq/SLL+ITVe+pkjMui8IT1CZ32J1+63NbVOs72kI+7DdZbXEuIxVpEilaZ7q6z/PaEOHW
+	m9T0FxUcg82noa8JiscbOoZLqROh9v2Rtpf50fmwp6aSPiFhF+Pmg4bbNtDBbRrm2NePvAITdBG1c
+	S97okYU8GwmC+2B5mJkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRJgB-0007cd-Ti; Wed, 22 Apr 2020 18:00:59 +0000
+	id 1jRJhK-00084p-BI; Wed, 22 Apr 2020 18:02:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRJg0-0007aS-1h
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:00:49 +0000
+ id 1jRJhB-00083h-1q
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:02:02 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E90802076E;
- Wed, 22 Apr 2020 18:00:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 824A1214AF;
+ Wed, 22 Apr 2020 18:01:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587578447;
- bh=NABYNKvs9sdWR1s9Ukqb7xA7e+KXEGWr4qmakQtX2oQ=;
+ s=default; t=1587578520;
+ bh=FzQTGQ2Ix7C7yR7IfBH/DXbB5Ch65ICfo4tHoOW7nnI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bIWTCp0/uGUSMGuwWVLFng26QFFNEEyjpTIYnEYtTtH7rdtaX57uIzFs/BzvdR9ni
- ePP+N0LiLAOGVfPbD9BA0ZOSUWHgZJ8tEHTtYdx82R6CSL4NLvVuWj/VZ9123jk92Y
- AcNNFlBLukBMtR23rMiE1xDoXYGQUyefGhPfX8hc=
-Date: Wed, 22 Apr 2020 19:00:40 +0100
+ b=0A/YQX2JzsYbuIiD4/c6g+qjcG+aB9pdJitG9h83SJHB7+jTxNwY5IDmnL47zNJ6V
+ qkPfXvBBgDtNOmFzFEVREiwbBFjVhVldeCzCnsxfJ4wJIjmCpYs/DAm781XyRGitZZ
+ 7lfgUik1elBgd5oRg2rtr0BDR5SgI2rZBf6TZ7fc=
+Date: Wed, 22 Apr 2020 19:01:53 +0100
 From: Will Deacon <will@kernel.org>
 To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v12 01/12] add support for Clang's Shadow Call Stack (SCS)
-Message-ID: <20200422180040.GC3121@willie-the-truck>
+Subject: Re: [PATCH v11 01/12] add support for Clang's Shadow Call Stack (SCS)
+Message-ID: <20200422180153.GD3121@willie-the-truck>
 References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200421021453.198187-1-samitolvanen@google.com>
- <20200421021453.198187-2-samitolvanen@google.com>
- <202004221052.489CCFEBC@keescook>
+ <20200416161245.148813-1-samitolvanen@google.com>
+ <20200416161245.148813-2-samitolvanen@google.com>
+ <20200420171727.GB24386@willie-the-truck>
+ <20200420211830.GA5081@google.com>
+ <20200422173938.GA3069@willie-the-truck>
+ <202004221047.3AEAECC1@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202004221052.489CCFEBC@keescook>
+In-Reply-To: <202004221047.3AEAECC1@keescook>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_110048_112875_6F2A460E 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200422_110201_138400_FD53C583 
+X-CRM114-Status: GOOD (  21.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,26 +99,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 22, 2020 at 10:54:45AM -0700, Kees Cook wrote:
-> On Mon, Apr 20, 2020 at 07:14:42PM -0700, Sami Tolvanen wrote:
-> > +void scs_release(struct task_struct *tsk)
-> > +{
-> > +	void *s;
-> > +
-> > +	s = __scs_base(tsk);
-> > +	if (!s)
-> > +		return;
-> > +
-> > +	WARN_ON(scs_corrupted(tsk));
-> > +
+On Wed, Apr 22, 2020 at 10:51:02AM -0700, Kees Cook wrote:
+> On Wed, Apr 22, 2020 at 06:39:47PM +0100, Will Deacon wrote:
+> > On Mon, Apr 20, 2020 at 02:18:30PM -0700, Sami Tolvanen wrote:
+> > > On Mon, Apr 20, 2020 at 06:17:28PM +0100, Will Deacon wrote:
+> > > > > +	 * The shadow call stack is aligned to SCS_SIZE, and grows
+> > > > > +	 * upwards, so we can mask out the low bits to extract the base
+> > > > > +	 * when the task is not running.
+> > > > > +	 */
+> > > > > +	return (void *)((unsigned long)task_scs(tsk) & ~(SCS_SIZE - 1));
+> > > > 
+> > > > Could we avoid forcing this alignment it we stored the SCS pointer as a
+> > > > (base,offset) pair instead? That might be friendlier on the allocations
+> > > > later on.
+> > > 
+> > > The idea is to avoid storing the current task's shadow stack address in
+> > > memory, which is why I would rather not store the base address either.
+> > 
+> > What I mean is that, instead of storing the current shadow stack pointer,
+> > we instead store a base and an offset. We can still clear the base, as you
+> > do with the pointer today, and I don't see that the offset is useful to
+> > an attacker on its own.
+> > 
+> > But more generally, is it really worthwhile to do this clearing at all? Can
+> > you (or Kees?) provide some justification for it, please? We don't do it
+> > for anything else, e.g. the pointer authentication keys, so something
+> > feels amiss here.
 > 
-> I'd like to have task_set_scs(tsk, NULL) retained here, to avoid need to
-> depend on the released task memory getting scrubbed at a later time.
+> It's a hardening step to just reduce the lifetime of a valid address
+> exposed in memory. In fact, since there is a cache, I think it should be
+> wiped even in scs_release().
 
-Hmm, doesn't it get zeroed almost immediately by kmem_cache_free() if
-INIT_ON_FREE_DEFAULT_ON is set? That seems much better than special-casing
-SCS, as there's a tonne of other useful stuff kicking around in the
-task_struct and treating this specially feels odd to me.
+But we don't do this for /anything/ else and it forces alignment
+restrictions on the SCS allocation. Please either do it consistently, or
+not at all.
 
 Will
 
