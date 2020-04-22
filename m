@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DF3D1B40CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:48:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A739D1B40F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:49:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/je6CRF7o8qBEjTs0njGRcgZO97R4ZpeBGfrg3vxxB0=; b=AUHBdzh/3sV673
-	b+dswD2rV51IzRHyhvTEIvCawtfhaXAgpd7tQP9Xsf1qR5RdWNKYNOUIoo8ToEJNUyrjiRJ+wfVQe
-	pTur2+y+D78kX4aEvSovX+ED2MS/nDHIQn7BceOnKzdcZumJoF09taDx5w8AGXmVB8i0ML+Ov7kry
-	oxYovk5VIG/zu7w18tzBoeZU1OkxkwN4+m+2TqxCbQvSUk66zm276PdDdsKz0xJXPu1uoJqmq/l6U
-	sD6Fy4fV1t8WG+0iU08KvZJcys7VJSh4XrnDTMIW9dsHrwAAzA9GmFFDY42p1q57OxdH+y6BO6+QO
-	Nf5xpSVogarflgas02iQ==;
+	List-Owner; bh=2Ewk7gCmIzSaGgu/ZdUMQr41vN26vE9HOVZrypJa1eE=; b=UFrcJ8N0ObG7nB
+	cQaNu4Aq3Bt2QZy2jFL4Ou7ju9O3M6H57lGrAvkhtqKD7ov1ROxAtiRQFJXk8KTL9AYJvqoQ333Uj
+	ctCteOUEM09uR9+G8QznGYgUAKI80OQGfylacFvKqDo+iMhhlujBHclJ/u7+GMhrmyoqGJkzhQcfr
+	gj1T3rHssLPWMRpw5Y2a7O/9u3mrhGw6y1tUGQ5vmpUFzMEn2skbf7yAStiW7uLvlfZkR2cLc3H4C
+	S3oLx5D0kPBxniIadDdTO0HnoGpG1eXaPfMg5frY0rKF7snzwkx4N097QQPIrlEGNyopcQGRZUHmP
+	rRP2Jsh+6p/KTvw02urQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRCvL-0001sG-1j; Wed, 22 Apr 2020 10:48:11 +0000
+	id 1jRCwQ-000330-4K; Wed, 22 Apr 2020 10:49:18 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRCtp-0000nl-N4
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 10:46:39 +0000
+ id 1jRCts-0000rU-W0
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 10:46:42 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 496cYj1TWRz1qs3x;
- Wed, 22 Apr 2020 12:46:33 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 496cYk3zp7z1qs3y;
+ Wed, 22 Apr 2020 12:46:34 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 496cYj0cwRz1qql5;
- Wed, 22 Apr 2020 12:46:33 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 496cYk32Gkz1qr40;
+ Wed, 22 Apr 2020 12:46:34 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id jyIy1-tQIl0P; Wed, 22 Apr 2020 12:46:32 +0200 (CEST)
-X-Auth-Info: 9JdKiwZyiqaagkxr6FvdGQZIR4NUtwAtRwEMDKWLuKE=
+ with ESMTP id rgmKW6cXs3CT; Wed, 22 Apr 2020 12:46:33 +0200 (CEST)
+X-Auth-Info: ynYWQ/YBF2J9c9aNT93enoXp4Vc2KB7wBPRXFe6guNk=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed, 22 Apr 2020 12:46:31 +0200 (CEST)
+ Wed, 22 Apr 2020 12:46:33 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V5 05/20] ARM: dts: stm32: Add missing ethernet PHY reset on
+Subject: [PATCH V5 06/20] ARM: dts: stm32: Add missing ethernet PHY skews on
  AV96
-Date: Wed, 22 Apr 2020 12:45:58 +0200
-Message-Id: <20200422104613.96944-6-marex@denx.de>
+Date: Wed, 22 Apr 2020 12:45:59 +0200
+Message-Id: <20200422104613.96944-7-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200422104613.96944-1-marex@denx.de>
 References: <20200422104613.96944-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_034637_973448_50AF646F 
-X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-CacheID: sfid-20200422_034641_215193_90018693 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -88,7 +88,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PHY reset GPIO on AV96 ethernet PHY.
+The KS9031 PHY supports configurable PHY skews to compensate for
+the board routing. Fill in the correct values.
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Marek Vasut <marex@denx.de>
@@ -101,27 +102,38 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
 V2: No change
-V3: Drop phy-reset-duration
+V3: No change
 V4: Rebase on stm32-next
-V5: Add reset delay
+V5: No change
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 3c9161d0bc2c..4c31c8f4db7e 100644
+index 4c31c8f4db7e..8198e22d81e7 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -103,6 +103,9 @@ mdio0 {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 		compatible = "snps,dwmac-mdio";
-+		reset-gpios = <&gpioz 2 GPIO_ACTIVE_LOW>;
-+		reset-delay-us = <1000>;
-+
+@@ -108,6 +108,20 @@ mdio0 {
+ 
  		phy0: ethernet-phy@7 {
  			reg = <7>;
++
++			rxc-skew-ps = <1500>;
++			rxdv-skew-ps = <540>;
++			rxd0-skew-ps = <420>;
++			rxd1-skew-ps = <420>;
++			rxd2-skew-ps = <420>;
++			rxd3-skew-ps = <420>;
++
++			txc-skew-ps = <1440>;
++			txen-skew-ps = <540>;
++			txd0-skew-ps = <420>;
++			txd1-skew-ps = <420>;
++			txd2-skew-ps = <420>;
++			txd3-skew-ps = <420>;
  		};
+ 	};
+ };
 -- 
 2.25.1
 
