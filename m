@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 726251B44FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:23:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9516E1B450F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:26:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/xhvf0oZpvQBBgEPoePSvzfm/Ux26h18PZZN9xTe28=; b=RpHLg2U/BuERGm
-	tLsxcOncHdAg+ApYVofTHlUXV/DqvbdSl5NQqClANpBP5KRmYPjirGarLUDVQvPysDU9Mp2VvV0cf
-	s4BnivEUf+0XSoxIhsLuwp+IoxzA1Bn5ij9jWxhnhZuxEuXhN8fzhnYgWRoYeKSj7LhjpUQstg3Po
-	qJxi5qDWStCh7PP8Kwmn9Mg9aVFxDy3S049Y1eDPvFU2Lb9scNbn3q9FWjCjuA7KAgZeSneVbc27M
-	IZ1Jxx/03jkWAjikkXovq751IVrhjblzBSAFRoACmgVkxXj1Nphpr393OKgywJ/9jC6oj51QfLdCh
-	wtEh9PTny18m6MV22axA==;
+	List-Owner; bh=I8fZaKyx/ON2dV1riPejsEKgi8A7erCtfmVru93FLNw=; b=gbsHKpaPzcNlG3
+	BG3XX4NNWhy5N9+dCO97BCAWocNPR/gdWT3GJtzam140IOGcSA6d3QCZZmdOGZi/EpFut+QT7MCvv
+	BPPZeV1067rVUgdRvJ4mHBbihggRr0xoIXHQDUlWrDaOUTrQaAzLEDN5FmsAUxrtZcty4P6Z2FFxB
+	qB/esG1i7clgkOMXsmi37eNznRdl2WoR60gULj5QYxB3+gqN2u7hdwPOzuYykp4m8cVtVhRR+mBOa
+	Nbk9SwJH66UEPj7XWTzk32kIlQ7YeeZXve8v3ADc44jmXpnlKgbRM0993Nxh0xVisHDJ0i7XuzUwh
+	i5IKaT44Br5CmPnC6QqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jREPf-0006gN-Uu; Wed, 22 Apr 2020 12:23:35 +0000
+	id 1jRESP-00035U-0z; Wed, 22 Apr 2020 12:26:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRENQ-00059B-Im
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:18 +0000
+ id 1jRENk-0005OB-5R
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:39 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9BFA12098B;
- Wed, 22 Apr 2020 12:21:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 16A4421D7B;
+ Wed, 22 Apr 2020 12:21:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587558075;
- bh=Uhg6Lz8NRpX5GBeKvmPIrvA3kpxFs/g2JI7KzreZ668=;
+ s=default; t=1587558095;
+ bh=Idczft88aog6M8M4O6TVlb0GRSTqov9o2dWVVhNYIEs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yzuk7mVSs2Ik7bJISLgrjG4iohIP9KKxbmlzo/rtD9CtWgIsI782EBlDa7rhrxw8l
- xz2GjVbefvEBSRJWIu1NQU5w/Mq3uzvHZ8J4D5MuaKYj7ZojpdDfvVjwpHq9W2Msbw
- x+pwjwLn3SetUJEvMRlMX1X7658TnJ89w/EYbXW4=
+ b=xkzG1l0oYIkP8ND8XsQyB8vOZbeoqon1cG4bW6FXggxGAdfCW6abvqtENI1Z+0Tnz
+ cL4ehaBzWJUyTj0jRwjkmRGYAc05wQ4axRQsyD6/UivhYaHkt2Q7AOQiEhp8As504Y
+ bz39DrXN82H6HdSwbCwcWKLgTxzc6eU9ruuriMoc=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jRE3x-005UI7-VY; Wed, 22 Apr 2020 13:01:10 +0100
+ id 1jRE3z-005UI7-9h; Wed, 22 Apr 2020 13:01:11 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 16/26] KVM: arm64: pauth: Use ctxt_sys_reg() instead of raw
+Subject: [PATCH 17/26] KVM: arm64: debug: Use ctxt_sys_reg() instead of raw
  sys_regs access
-Date: Wed, 22 Apr 2020 13:00:40 +0100
-Message-Id: <20200422120050.3693593-17-maz@kernel.org>
+Date: Wed, 22 Apr 2020 13:00:41 +0100
+Message-Id: <20200422120050.3693593-18-maz@kernel.org>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200422120050.3693593-1-maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
@@ -63,8 +63,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_052116_829681_7681D2F8 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20200422_052136_276375_B44E8150 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,45 +113,55 @@ consistently.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/handle_exit.c | 17 +++++++++--------
- 1 file changed, 9 insertions(+), 8 deletions(-)
+ arch/arm64/kvm/hyp/debug-sr.c | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
-index aacfc55de44cb..1feb0eb3174a3 100644
---- a/arch/arm64/kvm/handle_exit.c
-+++ b/arch/arm64/kvm/handle_exit.c
-@@ -162,10 +162,11 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 	return 1;
+diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+index 998758f8b5774..421e547ed10f3 100644
+--- a/arch/arm64/kvm/hyp/debug-sr.c
++++ b/arch/arm64/kvm/hyp/debug-sr.c
+@@ -129,8 +129,7 @@ static void __hyp_text __debug_restore_spe_nvhe(u64 pmscr_el1)
+ 	write_sysreg_s(pmscr_el1, SYS_PMSCR_EL1);
  }
  
--#define __ptrauth_save_key(regs, key)						\
-+
-+#define __ptrauth_save_key(ctxt, key)						\
- ({										\
--	regs[key ## KEYLO_EL1] = read_sysreg_s(SYS_ ## key ## KEYLO_EL1);	\
--	regs[key ## KEYHI_EL1] = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
-+	ctxt_sys_reg(ctxt, key ## KEYLO_EL1) = read_sysreg_s(SYS_ ## key ## KEYLO_EL1); \
-+	ctxt_sys_reg(ctxt, key ## KEYHI_EL1) = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
- })
+-static void __hyp_text __debug_save_state(struct kvm_vcpu *vcpu,
+-					  struct kvm_guest_debug_arch *dbg,
++static void __hyp_text __debug_save_state(struct kvm_guest_debug_arch *dbg,
+ 					  struct kvm_cpu_context *ctxt)
+ {
+ 	u64 aa64dfr0;
+@@ -148,8 +147,7 @@ static void __hyp_text __debug_save_state(struct kvm_vcpu *vcpu,
+ 	ctxt_sys_reg(ctxt, MDCCINT_EL1) = read_sysreg(mdccint_el1);
+ }
  
- /*
-@@ -179,11 +180,11 @@ void kvm_arm_vcpu_ptrauth_trap(struct kvm_vcpu *vcpu)
- 	if (vcpu_has_ptrauth(vcpu)) {
- 		vcpu_ptrauth_enable(vcpu);
- 		ctxt = vcpu->arch.host_cpu_context;
--		__ptrauth_save_key(ctxt->sys_regs, APIA);
--		__ptrauth_save_key(ctxt->sys_regs, APIB);
--		__ptrauth_save_key(ctxt->sys_regs, APDA);
--		__ptrauth_save_key(ctxt->sys_regs, APDB);
--		__ptrauth_save_key(ctxt->sys_regs, APGA);
-+		__ptrauth_save_key(ctxt, APIA);
-+		__ptrauth_save_key(ctxt, APIB);
-+		__ptrauth_save_key(ctxt, APDA);
-+		__ptrauth_save_key(ctxt, APDB);
-+		__ptrauth_save_key(ctxt, APGA);
- 	} else {
- 		kvm_inject_undefined(vcpu);
- 	}
+-static void __hyp_text __debug_restore_state(struct kvm_vcpu *vcpu,
+-					     struct kvm_guest_debug_arch *dbg,
++static void __hyp_text __debug_restore_state(struct kvm_guest_debug_arch *dbg,
+ 					     struct kvm_cpu_context *ctxt)
+ {
+ 	u64 aa64dfr0;
+@@ -190,8 +188,8 @@ void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
+ 	host_dbg = &vcpu->arch.host_debug_state.regs;
+ 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+ 
+-	__debug_save_state(vcpu, host_dbg, host_ctxt);
+-	__debug_restore_state(vcpu, guest_dbg, guest_ctxt);
++	__debug_save_state(host_dbg, host_ctxt);
++	__debug_restore_state(guest_dbg, guest_ctxt);
+ }
+ 
+ void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
+@@ -212,8 +210,8 @@ void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
+ 	host_dbg = &vcpu->arch.host_debug_state.regs;
+ 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
+ 
+-	__debug_save_state(vcpu, guest_dbg, guest_ctxt);
+-	__debug_restore_state(vcpu, host_dbg, host_ctxt);
++	__debug_save_state(guest_dbg, guest_ctxt);
++	__debug_restore_state(host_dbg, host_ctxt);
+ 
+ 	vcpu->arch.flags &= ~KVM_ARM64_DEBUG_DIRTY;
+ }
 -- 
 2.26.1
 
