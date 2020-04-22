@@ -2,52 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706FE1B35E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 06:04:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDD971B35DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 06:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pSVvX/msVytf1dAa2uxSgFZqL0hhXtBjs1Ki01hairs=; b=eP3sBqGO9b3N1TfWiCJm2yxqy
-	8PowsxsQITpL8SVxlYFmjHuuB1HmR3k+m8ZDuH3bvzjBwHYre5tsK9dnXEcUXobitxmBTu3ARlP+d
-	XeRxcesjj4fypuf3YiNihOL0lz9YnTGjjh/sUCx+estfqBVcqR+c0ex9+fqeIhz+0EeEsA9Mv30wP
-	0jiem0ryF+8Wzdv0RudpyLDyk66o8SiJEIWU1923hxSo5LHfFrM6lFWTDb+oC49AV/t6EX0pV9BIN
-	7pMQbvaRIsJSp3tZFdI/mXEueE0E+qL/s3RuWUE8Z6DYOxycKZrPZqQh4pI6XFzMI/u7BbETALF55
-	JToeZNTRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IqWYOe2AHhnArZYrj6uyBEY01Ty+XUqd3YGOw6rFItw=; b=KZ+vEu2s7GkoW+
+	CiNGl18z0weeRVi/diNvn2nJgKswHkwd6AkQjZwuXLp4vMyelJaaaL7EIOBdPLWCi5HsQ0tlGVgzO
+	hZSCFdsk0y+iZX66jdt7OgicKAcm0ZRYWloyPFxRhrB8OyqBkBg0688KfaBcbBVI5U95nnf0lG3/6
+	Kpq/5m8SVA6iiDASY5rMYMhoqpS5JKUw1gHE9EC9w5cgn4uHyfCa6PGG7Ytwib6Q+0KAYtxzbs3Bm
+	huNiLJM0JbpumFbgjJVHotumboAXBRtZU8RP5MliKBga6+CVoNTjfiw85+vK6sshQRC4LUx7uMtIP
+	VAiEgPq+OeR+Zzfap5Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR6cB-000222-3z; Wed, 22 Apr 2020 04:03:59 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1jR6Yy-0000mn-Hl; Wed, 22 Apr 2020 04:00:40 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR6c0-0001zj-8V; Wed, 22 Apr 2020 04:03:50 +0000
-Received: from [10.28.39.241] (10.28.39.241) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Wed, 22 Apr 2020
- 12:02:48 +0800
-Subject: Re: [PATCH v2 2/2] watchdog: Add new arm_smc_wdt watchdog driver
-To: Evan Benn <evanbenn@chromium.org>, LKML <linux-kernel@vger.kernel.org>
-References: <20200421110520.197930-1-evanbenn@chromium.org>
- <20200421210403.v2.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-Message-ID: <64c40c96-5a5f-b111-3b3f-44f874cc3968@amlogic.com>
-Date: Wed, 22 Apr 2020 12:02:47 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jR6Ym-0000lc-7d
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 04:00:29 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 86FFA58046D;
+ Wed, 22 Apr 2020 00:00:27 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Wed, 22 Apr 2020 00:00:27 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version:content-type
+ :content-transfer-encoding; s=fm2; bh=NGhpjRaVKhvDj8NJZcE5WLuEq1
+ CNGnmve/laehgEwX4=; b=B8+Om/cERAJzqqSD/dkvjzXMAGZb1DhcwnfESTrNOP
+ CRV2gFEXTkK1cMoziqFgjIq0iGbyicb4lXnoBlzi04YmL0BrkzcyuXsdDiHADt7P
+ wo9hQBeahsMIxZGLPaJydswh11yaBxZE2nA0WwPBimU21JtGnud9Fxbzt+ydJSJt
+ Tt30wPAn/NEl0mnsnlnUyxSW4uc2/Bv3g5wTUZhhZPXqRrLEXkuzSLlhvIvLFHfR
+ QOAXSwipzqUV3cnwyC+MmKZw8gTuHG3XMojx3M2ZpngrVU573GD5pgpyGhufwNED
+ 77U8Axy6MtneVod4B2R5phRISgxLqcsdCwfoXLzbZl1Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:message-id:mime-version:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=NGhpjR
+ aVKhvDj8NJZcE5WLuEq1CNGnmve/laehgEwX4=; b=fSiy5rqDHNA3ycHI+1ZqJ/
+ pT9NNV85dzLzo9HV0cXKr6b8m7Xr6/SSBpheGQRl7fA2OfvKWJy+fqCAs9lyfcFS
+ AN4B8+Ru5xLe5VyK9s9pHCWyalllHKY4//H5LQxrTdzXe9kNC77Kfromd4Ckh/LS
+ 2saMLN1J+wTh984/BI3R4DMYJJf6WnnMxIx+B4+l2fWeIElBAozT0OzKi6ZSGcuM
+ 7mLCpfvmdztHTkuCc1wFVpB8WPgS6iAfxyls2qzplTOyYarKhgkHJcTpCzwPkWRK
+ nYTqvxMDVNth8UeXZT3bl0i9i+nE+q7RDLfB9RQnyGSqE3ufL42Z36KpXMkpICBg
+ ==
+X-ME-Sender: <xms:WsGfXqGX_M0RQvr7pOxgpIBrH6Z7SZcUBp2EVHQ8RFIQptrzL-aBzQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeeigdejjecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofggtgfgsehtkeertdertdejnecuhfhrohhmpefurghmuhgvlhcu
+ jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkphepje
+ dtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghm
+ pehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:WsGfXgXTWFEZF7yZxo43sFpt7mrJyKD8_xg5O-VmC-Ie3SwnNOsE5w>
+ <xmx:WsGfXlAecWoKoBHEEx6XCaVpS2onHarBEczGZjH3xLiZs0hQLi6wiQ>
+ <xmx:WsGfXp0L5BmC1OyMuOIzppbsFna3mIjMFej7wclpQCxQfE6p9hNgig>
+ <xmx:W8GfXhs2Qf3ZIDWqqsY2NEcAtNCudKR9pSDuuAN_bYjqIa_ITXkKRQ>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id BC8803065CBF;
+ Wed, 22 Apr 2020 00:00:25 -0400 (EDT)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH v2 1/2] media: cedrus: Program output format during each run
+Date: Tue, 21 Apr 2020 23:04:09 -0500
+Message-Id: <20200422040410.6251-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <20200421210403.v2.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
-Content-Language: en-GB
-X-Originating-IP: [10.28.39.241]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_210348_741948_A1A762A5 
-X-CRM114-Status: GOOD (  24.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200421_210028_412891_C94009A8 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,230 +107,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Yonghui Yu <yonghui.yu@amlogic.com>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Rob Herring <robh@kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Li Yang <leoyang.li@nxp.com>,
- Olof Johansson <olof@lixom.net>, jwerner@chromium.org,
- Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Samuel Holland <samuel@sholland.org>, linux-kernel@vger.kernel.org,
+ =?UTF-8?q?Jernej=20=C5=A0krabec?= <jernej.skrabec@gmail.com>,
+ linux-sunxi@googlegroups.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,Evan
-
-On 2020/4/21 19:05, Evan Benn wrote:
-> From: Julius Werner <jwerner@chromium.org>
-> 
-> This patch adds a watchdog driver that can be used on ARM systems
-> with the appropriate watchdog implemented in Secure Monitor firmware.
-> The driver communicates with firmware via a Secure Monitor Call.
-> This may be useful for platforms using TrustZone that want
-> the Secure Monitor firmware to have the final control over the watchdog.
-> 
-> This is implemented on mt8173 chromebook devices oak, elm and hana in
-> arm trusted firmware file plat/mediatek/mt8173/drivers/wdt/wdt.c.
-> 
-> Signed-off-by: Julius Werner <jwerner@chromium.org>
-> Signed-off-by: Evan Benn <evanbenn@chromium.org>
-> Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-> 
-> ---
-> 
-> Changes in v4:
-> - Get smc-id from of property
-> - Return a1 instead of a0 in timeleft
-> 
-> Changes in v3:
-> - Add optional get_timeleft op
-> - change name to arm_smc_wdt
-> 
-> Changes in v2:
-> - use watchdog_stop_on_reboot
-> - use watchdog_stop_on_unregister
-> - use devm_watchdog_register_device
-> - remove smcwd_shutdown, smcwd_remove
-> - change error codes
-> 
->   MAINTAINERS                    |   1 +
->   arch/arm64/configs/defconfig   |   1 +
->   drivers/watchdog/Kconfig       |  13 +++
->   drivers/watchdog/Makefile      |   1 +
->   drivers/watchdog/arm_smc_wdt.c | 194 +++++++++++++++++++++++++++++++++
->   5 files changed, 210 insertions(+)
->   create mode 100644 drivers/watchdog/arm_smc_wdt.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 0f2b39767bfa9..2b782bbff200a 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -1462,6 +1462,7 @@ M:	Julius Werner <jwerner@chromium.org>
->   R:	Evan Benn <evanbenn@chromium.org>
->   S:	Maintained
->   F:	devicetree/bindings/watchdog/arm-smc-wdt.yaml
-> +F:	drivers/watchdog/arm_smc_wdt.c
->   
->   ARM SMMU DRIVERS
->   M:	Will Deacon <will@kernel.org>
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 24e534d850454..0619df80f7575 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -513,6 +513,7 @@ CONFIG_UNIPHIER_THERMAL=y
->   CONFIG_WATCHDOG=y
->   CONFIG_ARM_SP805_WATCHDOG=y
->   CONFIG_ARM_SBSA_WATCHDOG=y
-> +CONFIG_ARM_SMC_WATCHDOG=y
->   CONFIG_S3C2410_WATCHDOG=y
->   CONFIG_DW_WATCHDOG=y
->   CONFIG_SUNXI_WATCHDOG=m
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 0663c604bd642..c440b576d23bf 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -867,6 +867,19 @@ config DIGICOLOR_WATCHDOG
->   	  To compile this driver as a module, choose M here: the
->   	  module will be called digicolor_wdt.
->   
-> +config ARM_SMC_WATCHDOG
-> +	tristate "ARM Secure Monitor Call based watchdog support"
-> +	depends on ARM || ARM64
-> +	depends on OF
-> +	depends on HAVE_ARM_SMCCC
-> +	select WATCHDOG_CORE
-> +	help
-> +	  Say Y here to include support for a watchdog timer
-> +	  implemented by the EL3 Secure Monitor on ARM platforms.
-> +	  Requires firmware support.
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called arm_smc_wdt.
-> +
->   config LPC18XX_WATCHDOG
->   	tristate "LPC18xx/43xx Watchdog"
->   	depends on ARCH_LPC18XX || COMPILE_TEST
-> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
-> index 6de2e4ceef190..97bed1d3d97cb 100644
-> --- a/drivers/watchdog/Makefile
-> +++ b/drivers/watchdog/Makefile
-> @@ -94,6 +94,7 @@ obj-$(CONFIG_UNIPHIER_WATCHDOG) += uniphier_wdt.o
->   obj-$(CONFIG_RTD119X_WATCHDOG) += rtd119x_wdt.o
->   obj-$(CONFIG_SPRD_WATCHDOG) += sprd_wdt.o
->   obj-$(CONFIG_PM8916_WATCHDOG) += pm8916_wdt.o
-> +obj-$(CONFIG_ARM_SMC_WATCHDOG) += arm_smc_wdt.o
->   
->   # X86 (i386 + ia64 + x86_64) Architecture
->   obj-$(CONFIG_ACQUIRE_WDT) += acquirewdt.o
-> diff --git a/drivers/watchdog/arm_smc_wdt.c b/drivers/watchdog/arm_smc_wdt.c
-> new file mode 100644
-> index 0000000000000..29d2573b2ca11
-> --- /dev/null
-> +++ b/drivers/watchdog/arm_smc_wdt.c
-> @@ -0,0 +1,194 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * ARM Secure Monitor Call watchdog driver
-> + *
-> + * Copyright 2020 Google LLC.
-> + * Julius Werner <jwerner@chromium.org>
-> + * Based on mtk_wdt.c
-> + */
-> +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/err.h>
-> +#include <linux/module.h>
-> +#include <linux/moduleparam.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/types.h>
-> +#include <linux/watchdog.h>
-> +#include <uapi/linux/psci.h>
-> +
-> +#define DRV_NAME		"arm_smc_wdt"
-> +#define DRV_VERSION		"1.0"
-> +
-> +#define get_smc_func_id(wdd) (*(u32 *)watchdog_get_drvdata(wdd))
-> +enum smcwd_call {
-> +	SMCWD_INIT		= 0,
-> +	SMCWD_SET_TIMEOUT	= 1,
-> +	SMCWD_ENABLE		= 2,
-> +	SMCWD_PET		= 3,
-> +	SMCWD_GET_TIMELEFT	= 4,
-> +};
-> +
-> +static bool nowayout = WATCHDOG_NOWAYOUT;
-> +static unsigned int timeout;
-> +
-> +static int smcwd_call(unsigned long smc_func_id, enum smcwd_call call,
-> +		      unsigned long arg, struct arm_smccc_res *res)
-> +{
-> +	struct arm_smccc_res local_res;
-> +
-> +	if (!res)
-> +		res = &local_res;
-> +
-> +	arm_smccc_smc(smc_func_id, call, arg, 0, 0, 0, 0, 0, res);
-> +
-> +	if (res->a0 == PSCI_RET_NOT_SUPPORTED)
-> +		return -ENODEV;
-> +	if (res->a0 == PSCI_RET_INVALID_PARAMS)
-> +		return -EINVAL;
-> +	if (res->a0 != PSCI_RET_SUCCESS)
-> +		return -EIO;
-> +	return 0;
-> +}
-> +
-> +static int smcwd_ping(struct watchdog_device *wdd)
-> +{
-> +	return smcwd_call(get_smc_func_id(wdd), SMCWD_PET, 0, NULL);
-> +}
-> +
-> +static unsigned int smcwd_get_timeleft(struct watchdog_device *wdd)
-> +{
-> +	struct arm_smccc_res res;
-> +
-> +	smcwd_call(get_smc_func_id(wdd), SMCWD_GET_TIMELEFT, 0, &res);
-> +	return res.a1;It should return 0 when the smcwd_call return error according to 
-Guenter's suggestion at [0]
-
-[0]: https://patchwork.kernel.org/patch/11197781/
-
-Thanks.
-> +
-> +static int smcwd_set_timeout(struct watchdog_device *wdd, unsigned int timeout)
-> +{
-> +	int res;
-> +
-> +	res = smcwd_call(get_smc_func_id(wdd), SMCWD_SET_TIMEOUT, timeout,
-> +			 NULL);
-> +	if (!res)
-> +		wdd->timeout = timeout;
-> +	return res;
-> +}
-> +
-> +static int smcwd_stop(struct watchdog_device *wdd)
-> +{
-> +	return smcwd_call(get_smc_func_id(wdd), SMCWD_ENABLE, 0, NULL);
-> +}
-> +
-[...]
-> +MODULE_LICENSE("GPL");
-> +MODULE_AUTHOR("Julius Werner <jwerner@chromium.org>");
-> +MODULE_DESCRIPTION("ARM Secure Monitor Call Watchdog Driver");
-> +MODULE_VERSION(DRV_VERSION);
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UHJldmlvdXNseSwgdGhlIG91dHB1dCBmb3JtYXQgd2FzIHByb2dyYW1tZWQgYXMgcGFydCBvZiB0
+aGUgaW9jdGwoKQpoYW5kbGVyLiBIb3dldmVyLCB0aGlzIGhhcyB0d28gcHJvYmxlbXM6CgogIDEp
+IElmIHRoZXJlIGFyZSBtdWx0aXBsZSBhY3RpdmUgc3RyZWFtcyB3aXRoIGRpZmZlcmVudCBvdXRw
+dXQKICAgICBmb3JtYXRzLCB0aGUgaGFyZHdhcmUgd2lsbCB1c2Ugd2hpY2hldmVyIGZvcm1hdCB3
+YXMgc2V0IGxhc3QKICAgICBmb3IgYm90aCBzdHJlYW1zLiBTaW1pbGFyeSwgYW4gaW9jdGwoKSBk
+b25lIGluIGFuIGluYWN0aXZlCiAgICAgY29udGV4dCB3aWxsIHdyb25nbHkgYWZmZWN0IG90aGVy
+IGFjdGl2ZSBjb250ZXh0cy4KICAyKSBUaGUgcmVnaXN0ZXJzIGFyZSB3cml0dGVuIHdoaWxlIHRo
+ZSBkZXZpY2UgaXMgbm90IGFjdGl2ZWx5CiAgICAgc3RyZWFtaW5nLiBUbyBlbmFibGUgcnVudGlt
+ZSBQTSB0aWVkIHRvIHRoZSBzdHJlYW1pbmcgc3RhdGUsCiAgICAgYWxsIGhhcmR3YXJlIGFjY2Vz
+cyBuZWVkcyB0byBiZSBtb3ZlZCBpbnNpZGUgY2VkcnVzX2RldmljZV9ydW4oKS4KClRoZSBjYWxs
+IHRvIGNlZHJ1c19kc3RfZm9ybWF0X3NldCgpIGlzIG5vdyBwbGFjZWQganVzdCBiZWZvcmUgdGhl
+CmNvZGVjLXNwZWNpZmljIGNhbGxiYWNrIHRoYXQgcHJvZ3JhbXMgdGhlIGhhcmR3YXJlLgoKRml4
+ZXM6IDUwZTc2MTUxNmYyYiAoIm1lZGlhOiBwbGF0Zm9ybTogQWRkIENlZHJ1cyBWUFUgZGVjb2Rl
+ciBkcml2ZXIiKQpTdWdnZXN0ZWQtYnk6IEplcm5laiDFoGtyYWJlYyA8amVybmVqLnNrcmFiZWNA
+Z21haWwuY29tPgpTdWdnZXN0ZWQtYnk6IFBhdWwgS29jaWFsa293c2tpIDxwYXVsLmtvY2lhbGtv
+d3NraUBib290bGluLmNvbT4KU2lnbmVkLW9mZi1ieTogU2FtdWVsIEhvbGxhbmQgPHNhbXVlbEBz
+aG9sbGFuZC5vcmc+Ci0tLQoKdjI6IGFkZGVkIHBhdGNoCgotLS0KIGRyaXZlcnMvc3RhZ2luZy9t
+ZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2RlYy5jICAgfCAyICsrCiBkcml2ZXJzL3N0YWdpbmcv
+bWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c192aWRlby5jIHwgMyAtLS0KIDIgZmlsZXMgY2hhbmdl
+ZCwgMiBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+c3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2RlYy5jIGIvZHJpdmVycy9zdGFnaW5n
+L21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfZGVjLmMKaW5kZXggNGEyZmMzM2ExZDc5Li41OGM0
+OGU0ZmRmZTkgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMv
+Y2VkcnVzX2RlYy5jCisrKyBiL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2Vk
+cnVzX2RlYy5jCkBAIC03NCw2ICs3NCw4IEBAIHZvaWQgY2VkcnVzX2RldmljZV9ydW4odm9pZCAq
+cHJpdikKIAogCXY0bDJfbTJtX2J1Zl9jb3B5X21ldGFkYXRhKHJ1bi5zcmMsIHJ1bi5kc3QsIHRy
+dWUpOwogCisJY2VkcnVzX2RzdF9mb3JtYXRfc2V0KGRldiwgJmN0eC0+ZHN0X2ZtdCk7CisKIAlk
+ZXYtPmRlY19vcHNbY3R4LT5jdXJyZW50X2NvZGVjXS0+c2V0dXAoY3R4LCAmcnVuKTsKIAogCS8q
+IENvbXBsZXRlIHJlcXVlc3QocykgY29udHJvbHMgaWYgbmVlZGVkLiAqLwpkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfdmlkZW8uYyBiL2RyaXZl
+cnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX3ZpZGVvLmMKaW5kZXggMTVjZjFm
+MTAyMjFiLi5lZDNmNTExZjA2NmYgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9z
+dW54aS9jZWRydXMvY2VkcnVzX3ZpZGVvLmMKKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1
+bnhpL2NlZHJ1cy9jZWRydXNfdmlkZW8uYwpAQCAtMjczLDcgKzI3Myw2IEBAIHN0YXRpYyBpbnQg
+Y2VkcnVzX3NfZm10X3ZpZF9jYXAoc3RydWN0IGZpbGUgKmZpbGUsIHZvaWQgKnByaXYsCiAJCQkJ
+c3RydWN0IHY0bDJfZm9ybWF0ICpmKQogewogCXN0cnVjdCBjZWRydXNfY3R4ICpjdHggPSBjZWRy
+dXNfZmlsZTJjdHgoZmlsZSk7Ci0Jc3RydWN0IGNlZHJ1c19kZXYgKmRldiA9IGN0eC0+ZGV2Owog
+CXN0cnVjdCB2YjJfcXVldWUgKnZxOwogCWludCByZXQ7CiAKQEAgLTI4Nyw4ICsyODYsNiBAQCBz
+dGF0aWMgaW50IGNlZHJ1c19zX2ZtdF92aWRfY2FwKHN0cnVjdCBmaWxlICpmaWxlLCB2b2lkICpw
+cml2LAogCiAJY3R4LT5kc3RfZm10ID0gZi0+Zm10LnBpeDsKIAotCWNlZHJ1c19kc3RfZm9ybWF0
+X3NldChkZXYsICZjdHgtPmRzdF9mbXQpOwotCiAJcmV0dXJuIDA7CiB9CiAKLS0gCjIuMjQuMQoK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
+bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
+ZXJuZWwK
