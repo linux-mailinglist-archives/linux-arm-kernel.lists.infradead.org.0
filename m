@@ -2,61 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96C591B48AA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEBDD1B48CD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:36:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ryunuyw5m1nDBU04JqVEQQZfS37m1M8fVlPtgN+BwQg=; b=Q64wb1BPaPrdVc
-	XOiWDvNLfv3gXXj+JglHGHwANVWns3MaR0JR+RqtTpUJLIpkzNZh/lc+DkD+ksHieZdY8M5Hfikxo
-	c0StL/mcNxoqMJR7XjbOVfFCVHWEqznsvA3VSc4At1VglhX5NT9pjU6uXjZJO5+hQrsYYHdXM33ZU
-	JCmWEaSVSuZikA46711pEX05j1uNsGd975h4QvEi/7z0zvwjSkLOu9+02kfN1jv3S4WviCU26d/a7
-	GM9ZKf7Am/8NPyKkFGDkA0+jdyLhYP3QJcBXj5wzjOZg8nMGwJ44DEemSVfac3Mk1LcnYL/BSj9Qm
-	pUA5Bg4nd7EMKD1UONjA==;
+	List-Owner; bh=Iw5r9uA/WSi5PHQei5ERRQklPYKevgrXAdG4WhO8MlE=; b=KcWTDAkPe5w/Et
+	XDGtyeb1Llwv3zC95zRHHyGhnDKTOZyH+nx9oekQzqdhi5oFo/RUaclhSkAvK4L3qV4pk6Omb/ksA
+	4eqrPohuoyrI2Y9LD/2o8jZxWSso0n6h5P4QgvGxMfhM/H92xOCmF57FnCFByHMDSYw1Fn6ZHBV3K
+	EkI2Whl2HTycUB8ln/poE1Dqpt+8wXeLYwV5lv+LhOe6rLf6H2M3N2YG2GvF7f3uL/8YdCSPG279m
+	dlHacXu844E8uiav3C7bncXJtOisB3G+uX1592s4uSo+E+44/bmjrinlCuyHwjIn6CxSRTVu/qfzK
+	la8f8E/UM9+S4cuF85Iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRHKZ-0001IM-Gt; Wed, 22 Apr 2020 15:30:31 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jRHQC-0005UZ-T5; Wed, 22 Apr 2020 15:36:20 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRHKI-0000MU-BN; Wed, 22 Apr 2020 15:30:17 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id CDF09528;
- Wed, 22 Apr 2020 17:30:10 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1587569411;
- bh=+1pnVNRiTLb7nmelXOXTLaTwyd/zc6UiDxReSqZ2c6A=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YZEibynY0pa+TDNM4jvZ8GuCdVrCMyNK9OTmDn3ORYiOGgwHIvDpUiVBibucdqa8v
- Rv5t/yLaog2tGVFX71DYXDuyfQclTayygVbp86ZPxCR3CzXwj2v3/ighnC4PD2GvQv
- uLWR61e8wY8NIT+5L0/RsqrUqVeSQP3GDGfWgeow=
-Date: Wed, 22 Apr 2020 18:29:56 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
-Subject: Re: [PATCH v7 5/8] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-Message-ID: <20200422152956.GE28105@pendragon.ideasonboard.com>
-References: <20200421161610.1501827-1-adrian.ratiu@collabora.com>
- <20200421161610.1501827-6-adrian.ratiu@collabora.com>
- <20200422005832.GK5983@pendragon.ideasonboard.com>
- <20200422010155.GL5983@pendragon.ideasonboard.com>
- <877dy7ker6.fsf@collabora.com>
+ id 1jRHQ1-0005Rz-C3
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 15:36:11 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id l84so1409421ybb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 Apr 2020 08:36:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=+AjFfEvExopko5vrpG5TAim2gTw/nPEygKLzyKFqNHY=;
+ b=AZwYjSI/UXuxNN7NJfejVcVD/JWxuHM2HmXpNcbCNlVy7r0ba+rutav8Pn70cdoLm0
+ ZimhlWIZFJLZoreLu1R0uij5j3if46a95rh73L6nnVX93jPCdyyS6RgQ8Y913UgQqmVA
+ ft7vBx0lpwpTK0DAKv1Wkk60mkzZB/TgGJ7m2AJmeaSEbTTAaWpzr3LNQEitU3/8EsS3
+ /5D6pyqQFfFInaEOc79FLV5OBYUtJcrcN8TIWGPpD0lixpvNavePd4Sa+EVsSgAol1By
+ knki3pld00nBrwMullmQNE8o+Rx5FL5SWT8Vp4QStnwTo/d3Sgath6WRHePUhBavNDyZ
+ DT2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=+AjFfEvExopko5vrpG5TAim2gTw/nPEygKLzyKFqNHY=;
+ b=S3laMq2aF9h4vWyx2jZhGOsSJ+PUGoWEj9lBAVI5M1R45VDeh/RUuE8737ONL7bSxY
+ Gaqg8dPPmGDwN5Jso/EIDVvH2Mx15bwR75R1oegAIKkXelTrCsT+jv8/BBNi2aDVkooo
+ cUB5nXp6bq9BYtG9qMegE12x3BzOWoy9d2gXL/R6zjVCWUEapwU0u9voU2gKJUseWsUD
+ X8jaQ7j6lVBD5i9YB2dQCGUNdRi1F+7ColJGC4qWEroLgYdbOUGqlpWKAB/NxMCf7NsH
+ mYSmxYbVyiAYOatsqjwdC0m59zHYvgPGiEwt/RmdsAIuimN+UA0OjljDabO+3f+0rzSn
+ VyLg==
+X-Gm-Message-State: AGi0PuZL1V6TX7FIr3FU6Ggw+J36mjb14/8WaAATVozVWgzTBif7bIfy
+ 4CBlXCl0kraEyZufaD6BUkSnDSzcTBYNueFs1LERDA==
+X-Google-Smtp-Source: APiQypI//eHnV/pEir7WM2H9X+55MxxgsM/Mje90OxuP3GH+OrpvQW5vERdQQ1tXEJCI8NvO99y+KCXOrOB2lzalJVM=
+X-Received: by 2002:a25:374d:: with SMTP id e74mr35541070yba.343.1587569766048; 
+ Wed, 22 Apr 2020 08:36:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <877dy7ker6.fsf@collabora.com>
+References: <20200422114429.0b1a6f1a3366bae5964f3e10@linaro.org>
+ <20200422115035.2f8d48843793d0d6f6724522@linaro.org>
+ <CAK7LNAQL1ZkHKwODW2VYnpRw+y5Eg4abg+xCDa=PfQktHLnW_w@mail.gmail.com>
+In-Reply-To: <CAK7LNAQL1ZkHKwODW2VYnpRw+y5Eg4abg+xCDa=PfQktHLnW_w@mail.gmail.com>
+From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
+Date: Thu, 23 Apr 2020 00:35:54 +0900
+Message-ID: <CAA93ih2rqCGEJT91iMQrEK-8BDNd_z_DP52OSF6Ps=HbUjTz4g@mail.gmail.com>
+Subject: Re: [PATCH v4 2/2] arm64: dts: uniphier: Add support for Akebi96
+To: Masahiro Yamada <masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_083014_698736_3A914100 
-X-CRM114-Status: GOOD (  24.86  )
+X-CRM114-CacheID: sfid-20200422_083609_442430_CD11F0B5 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,238 +93,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Martyn Welch <martyn.welch@collabora.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- linux-rockchip@lists.infradead.org, linux-imx@nxp.com,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rob Herring <robh@kernel.org>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ DTML <devicetree@vger.kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
-
-On Wed, Apr 22, 2020 at 01:15:41PM +0300, Adrian Ratiu wrote:
-> On Wed, 22 Apr 2020, Laurent Pinchart wrote:
-> > On Wed, Apr 22, 2020 at 03:58:33AM +0300, Laurent Pinchart wrote: 
-> >> On Tue, Apr 21, 2020 at 07:16:07PM +0300, Adrian Ratiu wrote: 
-> >>> This provides an example DT binding for the MIPI DSI host 
-> >>> controller present on the i.MX6 SoC based on Synopsis 
-> >>> DesignWare v1.01 IP.   Cc: Rob Herring <robh@kernel.org> Cc: 
-> >>> Neil Armstrong <narmstrong@baylibre.com> Cc: Fabio Estevam 
-> >>> <festevam@gmail.com> Cc: Laurent Pinchart 
-> >>> <laurent.pinchart@ideasonboard.com> Cc: 
-> >>> devicetree@vger.kernel.org Tested-by: Adrian Pop 
-> >>> <pop.adrian61@gmail.com> Tested-by: Arnaud Ferraris 
-> >>> <arnaud.ferraris@collabora.com> Signed-off-by: Sjoerd Simons 
-> >>> <sjoerd.simons@collabora.com> Signed-off-by: Martyn Welch 
-> >>> <martyn.welch@collabora.com> Signed-off-by: Adrian Ratiu 
-> >>> <adrian.ratiu@collabora.com> --- Changes since v6: 
-> >>>   - Added ref to the newly created snps,dw-mipi-dsi.yaml 
-> >>>   (Laurent) - Moved *-cells properties outside 
-> >>>   patternProperties (Laurent) - Removed the panel port 
-> >>>   documentation (Laurent) - Wrapped lines at 80 chars, typo 
-> >>>   fixes, sort includes (Laurent) 
-> >>>  Changes since v5: 
-> >>>   - Fixed missing reg warning (Fabio) - Updated dt-schema and 
-> >>>   fixed warnings (Rob) 
-> >>>  Changes since v4: 
-> >>>   - Fixed yaml binding to pass `make dt_binding_check 
-> >>>   dtbs_check` and addressed received binding feedback (Rob) 
-> >>>  Changes since v3: 
-> >>>   - Added commit message (Neil) - Converted to yaml format 
-> >>>   (Neil) - Minor dt node + driver fixes (Rob) - Added small 
-> >>>   panel example to the host controller binding 
-> >>>  Changes since v2: 
-> >>>   - Fixed commit tags (Emil) 
-> >>> --- 
-> >>>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 135 
-> >>>  ++++++++++++++++++ 1 file changed, 135 insertions(+) create 
-> >>>  mode 100644 
-> >>>  Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
-> >>>  diff --git 
-> >>> a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
-> >>> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
-> >>> new file mode 100644 index 0000000000000..b73e3ae33a852 --- 
-> >>> /dev/null +++ 
-> >>> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
-> >>> @@ -0,0 +1,135 @@ +# SPDX-License-Identifier: (GPL-2.0-only 
-> >>> OR BSD-2-Clause) +%YAML 1.2 +--- +$id: 
-> >>> http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml# 
-> >>> +$schema: http://devicetree.org/meta-schemas/core.yaml# + 
-> >>> +title: Freescale i.MX6 DW MIPI DSI Host Controller + 
-> >>> +maintainers: +  - Adrian Ratiu <adrian.ratiu@collabora.com> 
-> >>> + +description: | +  The i.MX6 DSI host controller is a 
-> >>> Synopsys DesignWare MIPI DSI v1.01 +  IP block with a 
-> >>> companion PHY IP. 
-> > 
-> > I forgot to mention, if there's a companion PHY, shouldn't it be 
-> > referenced from the DT bindings ? 
-> 
-> I don't think so, that description was copied verbatim from the 
-> imx6 ref manual IIRC, the physical layer is the same for MIPI DSI 
-> which does TX as for MIPI CSI which does RX, but looking at the 
-> ref manual and how drivers are written I don't think it's 
-> necessary.
-
-Does that mean that the PHY is controlled through the registers
-specified by the reg property ? If so then this is fine.
-
-> This might change if we wanted to unify the DSI and CSI drivers a 
-> bit, but considering the scope already associated with this patch 
-> series I'm a bit afraid to open a subject like that =)
-
-That's understandable :-)
-
-> >>> +
-> >>> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-> >>> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-> >>> +  the following device-specific properties.
-> >>> +
-> >>> +allOf:
-> >>> +  - $ref: ../bridge/snps,dw-mipi-dsi.yaml#
-> >>> +
-> >>> +properties:
-> >>> +  '#address-cells':
-> >>> +    const: 1
-> >>> +
-> >>> +  '#size-cells':
-> >>> +    const: 0
-> >>> +
-> >>> +  compatible:
-> >>> +    items:
-> >>> +      - const: fsl,imx6q-mipi-dsi
-> >>> +      - const: snps,dw-mipi-dsi
-> >>> +
-> >>> +  reg:
-> >>> +    maxItems: 1
-> >>> +
-> >>> +  interrupts:
-> >>> +    maxItems: 1
-> >>> +
-> >>> +  clocks:
-> >>> +    items:
-> >>> +      - description: Module Clock
-> >>> +      - description: DSI bus clock
-> >>> +
-> >>> +  clock-names:
-> >>> +    items:
-> >>> +      - const: ref
-> >>> +      - const: pclk
-> >>> +
-> >>> +  fsl,gpr:
-> >>> +    description:
-> >>> +      Phandle to the iomuxc-gpr region containing the multiplexer ctrl register.
-> >>> +    $ref: /schemas/types.yaml#/definitions/phandle
-> >>> +
-> >>> +  ports:
-> >>> +    type: object
-> >>> +    description: |
-> >>> +      A node containing DSI input & output port nodes with endpoint
-> >>> +      definitions as documented in
-> >>> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> >>> +      Documentation/devicetree/bindings/graph.txt
-> >>> +    properties:
-> >>> +      port@0:
-> >>> +        type: object
-> >>> +        description:
-> >>> +          DSI input port node, connected to the ltdc rgb output port.
-> >>> +
-> >>> +      port@1:
-> >>> +        type: object
-> >>> +        description:
-> >>> +          RGB output port node, connected to a panel or a bridge input port.
-> >> 
-> >> Isn't it the other way around, doesn't the bridge take RGB input and
-> >> output DSI ? And to be precise, it's not about RGB, but about the input
-> >> being parallel interface (DSI will also carry RGB).
-> >> 
-> >> I would add
-> >> 
-> >>     required:
-> >>       - port@0
-> >>       - port@1
-> >> 
-> >>> +
-> >>> +additionalProperties: false
-> >>> +
-> >>> +patternProperties:
-> >>> +  "^panel@[0-3]$":
-> >>> +    type: object
-> >>> +
-> >>> +required:
-> >>> +  - "#address-cells"
-> >>> +  - "#size-cells"
-> >>> +  - compatible
-> >>> +  - reg
-> >>> +  - interrupts
-> >>> +  - clocks
-> >>> +  - clock-names
-> >>> +  - ports
-> >>> +
-> >>> +examples:
-> >>> +  - |+
-> >>> +    #include <dt-bindings/clock/imx6qdl-clock.h>
-> >>> +    #include <dt-bindings/gpio/gpio.h>
-> >>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> >>> +
-> >>> +    dsi: dsi@21e0000 {
-> >>> +        #address-cells = <1>;
-> >>> +        #size-cells = <0>;
-> >>> +        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-> >>> +        reg = <0x021e0000 0x4000>;
-> >>> +        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-> >>> +        fsl,gpr = <&gpr>;
-> >>> +        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-> >>> +                 <&clks IMX6QDL_CLK_MIPI_IPG>;
-> >>> +        clock-names = "ref", "pclk";
-> >>> +
-> >>> +        ports {
-> >>> +            #address-cells = <1>;
-> >>> +            #size-cells = <0>;
-> >> 
-> >> port@0 is missing.
-> >> 
-> >>> +            port@1 {
-> >>> +                reg = <1>;
-> >>> +                dsi_out: endpoint {
-> >>> +                    remote-endpoint = <&panel_in>;
-> >>> +                };
-> >>> +            };
-> >>> +        };
-> >>> +
-> >>> +        panel@0 {
-> >>> +            compatible = "sharp,ls032b3sx01";
-> >>> +            reg = <0>;
-> >>> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
-> >>> +            ports {
-> >>> +                #address-cells = <1>;
-> >>> +                #size-cells = <0>;
-> >>> +                port@0 {
-> >>> +                    reg = <0>;
-> >>> +                    panel_in: endpoint {
-> >>> +                        remote-endpoint = <&dsi_out>;
-> >>> +                    };
-> >>> +                };
-> >>> +            };
-> >>> +        };
-> >>> +    };
-> >>> +
-> >>> +...
-
--- 
-Regards,
-
-Laurent Pinchart
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8gWWFtYWRhLXNhbiwKCjIwMjDlubQ05pyIMjPml6Uo5pyoKSAwOjEwIE1hc2FoaXJvIFlh
+bWFkYSA8bWFzYWhpcm95QGtlcm5lbC5vcmc+Ogo+Cj4gSGlyYW1hdHN1LXNhbgo+Cj4gT24gV2Vk
+LCBBcHIgMjIsIDIwMjAgYXQgMTE6NTAgQU0gTWFzYW1pIEhpcmFtYXRzdQo+IDxtYXNhbWkuaGly
+YW1hdHN1QGxpbmFyby5vcmc+IHdyb3RlOgo+Cj4gPiArCj4gPiArJmV0aCB7Cj4gPiArICAgICAg
+IHN0YXR1cyA9ICJva2F5IjsKPiA+ICsgICAgICAgcGh5LW1vZGUgPSAicmdtaWkiOwo+ID4gKyAg
+ICAgICBwaW5jdHJsLTAgPSA8JnBpbmN0cmxfZXRoZXJfcmdtaWk+Owo+Cj4gVGhlc2UgdHdvIGxp
+bmVzIGFyZSBhY3R1YWxseSByZWR1bmRhbnQgYmVjYXVzZSBSR01JSQo+IGlzIHRoZSBkZWZhdWx0
+IGluIHVuaXBoaWVyLWxkMjAuZHRzaQo+IChhbmQgdW5pcGhpZXItbGQyMC1yZWYuZHRzIHNraXBz
+IHRoZW0uKQo+Cj4gRGlkIHlvdSBpbnRlbnRpb25hbGx5IG1ha2UgaXQgdmVyYm9zZT8KCk9vcHMs
+IG5vLCB3ZSBkb24ndCBuZWVkIGl0LiBJdCdzIGEgbGVnYWN5IGNvZGUgKElJUkMsIHRoZXJlJ3Mg
+YQpoaXN0b3JpY2FsIHJlYXNvbikuCgoKPiA+ICsmc3BpMyB7Cj4gPiArICAgICAgIHN0YXR1cyA9
+ICJva2F5IjsKPiA+ICsgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gPiArICAgICAgICNz
+aXplLWNlbGxzID0gPDA+Owo+Cj4gQWRkaW5nICNhZGRyZXNzLWNlbGxzIGFuZCAjc2l6ZS1zaXpl
+cyB0byBhIGJvYXJkIERUUwo+IGlzIHN0cmFuZ2UuCgpJbmRlZWQuCgo+IEkgd2lsbCBhcHBseSB0
+aGlzOgo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wYXRjaC8xMjI5NDk3Lwo+
+IHRoZW4gZGVsZXRlIHRoZSBsaW5lcyBhYm92ZS4KCk9LLCBJJ2xsIHVwZGF0ZS4KClRoYW5rIHlv
+dSwKCgoKLS0gCk1hc2FtaSBIaXJhbWF0c3UKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
