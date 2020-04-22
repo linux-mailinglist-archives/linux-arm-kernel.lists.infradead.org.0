@@ -2,95 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B732F1B35F6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 06:11:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05B231B3683
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 06:46:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:From:Message-ID
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oOCQqgczppydP89TJ5dfUtuXsULZrJBF19r16VoFO2Y=; b=gM9gtHnK1LfIar
-	SR4gfmxX41K6alB6LwXVvRJWVa9LRpNXNRYCJ5SCmWD+sG9LvVmvUTt68cERAExY/E3PFp+/k6bOn
-	U2wCi8R61iGMn1WsLgMVCYOFGGSy4qeOKyiUWLZ7h71mtCPNE0DFBBaz6/piantW/lCyPTZpcC6O4
-	wv+l+OzzxuBjRLkkRqqSlCu0WYvUhpZoFbLH/0VFZGk+K4lndUVfXbUQawVmSK8msBRLecWULqOft
-	XyVXltLbFqjkLIlJt7BJ+Zt/aEZn5gbCHW+Sm9yQxRYwPHw+oTp7euSqwt7rZHe33krpKS7ZORpU/
-	K0L3iCK/aSozCbh3F6ew==;
+	List-Owner; bh=WRU3fcILAxaxu1CgRPLq46KqupTyk4qjjrzv/GYFJkA=; b=EHmpt+G/m2JEfa
+	DPVRJvTib9JV/BafPIKm97PHHyAUupLBCfcgNn45fUJpvinIUfMnbPZ59azguZwaCSAvTmW7q6CVo
+	nnDtO4ijZ4apRGWCu3dczMIhPH0WbJbfJhg2Gih/RC20yavdqhviatDf755JGWCYsamCdvdvKYlGH
+	OsDNflxEyLJ36mOLQV/x0skV+plz+7XtWHuUiFHcbY2qVexzdOseetEYrTn9uXYDNijw7RGi+/qMp
+	2+tLVeqUIJ3eOapX5rGZBvvG8t8BCD3ENhxjqYRYikOx1TdPPhlOUUqeE1F8NWz+gSpbHIFqfUAJa
+	9I+G4Rq9qKwdixp8WIiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR6jR-0000Wq-Ko; Wed, 22 Apr 2020 04:11:29 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR6jH-0000WC-4o
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 04:11:20 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 4CB7D5C011D;
- Wed, 22 Apr 2020 00:11:18 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Wed, 22 Apr 2020 00:11:18 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm2; bh=F1dj2Jw3YDEgFV7WpVHDIIKM8X
- ojVODpM5ZQVusEuJM=; b=MXYvLLEwShFV7Dm5T/etH8ddYFj7Rzkh6OZFhNMgCq
- LVC7aVazTJhWfaIWGrgE4yyMA+cZEH9GO5xiBQmVYcBGbJNONh37rwp7edlihMnV
- AGnZaycj22wMsimVKiNBN2GJQp/cVOy0FR/p2XFg9IIzMytq3wPvTW9HMu/6yLVd
- 0yI7b6DDnSjyoe/NyegEOpLaCE4PvFAHfqyD2yGtY4odM6dYmcl2bX2xXwc7v7IC
- 9p03Ypw+dKZ3Wiwg274J+je4nZ16f5Mh69iJE0aDjT3wSJ0YCBlk2KZO/XVT8ND3
- /NySffPG2VvjNa925/VSnokPHri0gkofc3pdAWb/IhzQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=F1dj2Jw3YDEgFV7Wp
- VHDIIKM8XojVODpM5ZQVusEuJM=; b=I6/lLaf6mN8ViDw9W6zmLNRPTP2Q7dBzW
- O6vE0TjGDKeXifaidQVvkcn/gNr7l72X7Cp2Q2UDGScoLbfeqAMdaJz0ys+5VIMM
- NA2jL0SKpSJZM4UDH9IMdsshomiOt3+MzsdNDOZnBxjmvaENaMZrE8+Sl7enDaJi
- Js+gYZ3N7x0A7jtfRL45077iLACz+ZKOpE4s8oH6SXwcIKntcR8xpNB0KSVbwgBy
- pdVW228l5Hn7hxjy8hW3yBqBYu84bYws9Rpjm6/+1IY7LJeo3+NcXQIK8lmcLtiQ
- yiP8sw8qdmprHy8I4mCM5T7vcNR0MTdSdWl5i/s4ZSOgBYtCDxgqw==
-X-ME-Sender: <xms:5cOfXjAJUL0XNAkUOsRMfHSSZYhZmCVEDnDBIMCoZJtvm6MzklxdDA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeeigdejlecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghlucfj
- ohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppeejtd
- drudefhedrudegkedrudehudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhep
- mhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:5cOfXl32P132cVkl3p8G-YSPyd-dNlCGnZEITP4g0bN8QSoRbpxCFg>
- <xmx:5cOfXhV9Tv7UVJ6_TU_WEwAEdP5It6mnWG5rTjxSu_cAKR6gjVenmg>
- <xmx:5cOfXnm_uym1zKcNPPvObexA2m2AMC2QiS3txZa94y2myED_qTCbgA>
- <xmx:5sOfXiYwIMKOhNpq-bw3eff8wf1T5dUZUrDfKhLjgow9PquBK5NoJw>
-Received: from titanium.stl.sholland.net
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4FE5A3065CBF;
- Wed, 22 Apr 2020 00:11:17 -0400 (EDT)
-From: Samuel Holland <samuel@sholland.org>
-To: Maxime Ripard <mripard@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH] arm64: dts: allwinner: a64: Disable SPDIF by default
-Date: Tue, 21 Apr 2020 23:15:02 -0500
-Message-Id: <20200422041502.7497-1-samuel@sholland.org>
-X-Mailer: git-send-email 2.24.1
-MIME-Version: 1.0
+	id 1jR7HW-000678-TS; Wed, 22 Apr 2020 04:46:42 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171]
+ helo=relmlie5.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jR7HO-00066E-Cs; Wed, 22 Apr 2020 04:46:36 +0000
+Date: 22 Apr 2020 13:46:30 +0900
+X-IronPort-AV: E=Sophos;i="5.72,412,1580742000"; d="scan'208";a="45382248"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+ by relmlie5.idc.renesas.com with ESMTP; 22 Apr 2020 13:46:30 +0900
+Received: from mercury.renesas.com (unknown [10.166.252.133])
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id 10BF341C17D7;
+ Wed, 22 Apr 2020 13:46:30 +0900 (JST)
+Message-ID: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
+From: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+Subject: [PATCH 0/4] ASoC:: don't use snd_soc_rtdcom_lookup()
+User-Agent: Wanderlust/2.15.9 Emacs/25.2 Mule/6.0
+To: Mark Brown <broonie@kernel.org>
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_211119_322141_7911AB84 
-X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-CacheID: sfid-20200421_214634_548867_BF2EC2C0 
+X-CRM114-Status: UNSURE (   8.21  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.160.252.171 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 AC_FROM_MANY_DOTS      Multiple periods in From user name
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,41 +61,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Samuel Holland <samuel@sholland.org>,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Cezary Rojewski <cezary.rojewski@intel.com>,
+ Jie Yang <yang.jie@linux.intel.com>, alsa-devel@alsa-project.org,
+ Jaroslav Kysela <perex@perex.cz>,
+ Liam Girdwood <liam.r.girdwood@linux.intel.com>,
+ Richard Fontana <rfontana@redhat.com>, Shunli Wang <shunli.wang@mediatek.com>,
+ YueHaibing <yuehaibing@huawei.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ Vijendar Mukunda <Vijendar.Mukunda@amd.com>,
+ Stephen Boyd <swboyd@chromium.org>, linux-mediatek@lists.infradead.org,
+ Eason Yen <eason.yen@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Takashi Iwai <tiwai@suse.com>,
+ Ravulapati Vishnu vardhan rao <Vishnuvardhanrao.Ravulapati@amd.com>,
+ Colin Ian King <colin.king@canonical.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As of v5.7-rc2, Linux now prints the following message at boot:
 
-  [   33.848525] platform sound_spdif: deferred probe pending
+Hi Mark
+Cc related engineer
 
-This is because &sound_spdif is waiting on its DAI link component
-&spdif to probe, but &spdif is disabled in the DTS. Disable the
-audio card as well to match.
+These patches are tring to not to use snd_soc_rtdcom_lookup() function
+on each drivers as much as possible,  because we might have same name
+component under multi component situation.
+It can't find correct component in such case.
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+I tried to add new feature on each drivers to not to use it,
+but I can't test.
+Thus, these patches should get Acked-by or Tested-by from each drivers
+user/maintenor. Please test these.
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 6f8c30d89b9b..6c233ff031c6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -169,6 +169,7 @@ link0_codec: codec {
- 	sound_spdif {
- 		compatible = "simple-audio-card";
- 		simple-audio-card,name = "On-board SPDIF";
-+		status = "disabled";
- 
- 		simple-audio-card,cpu {
- 			sound-dai = <&spdif>;
+After these patches, Intel / SOF drivers are still using
+snd_soc_rtdcom_lookup(). Because it is very complex, I couldn't try
+not to use it.
+If possible, each drivers should try to not use it,
+and it should be removed from ASoC.
+
+Kuninori Morimoto (4):
+  ASoC: mediatek: don't use snd_soc_rtdcom_lookup()
+  ASoC: intel: baytrail: don't use snd_soc_rtdcom_lookup()
+  ASoC: intel: haswell: don't use snd_soc_rtdcom_lookup()
+  ASoC: amd: don't use snd_soc_rtdcom_lookup()
+
+ sound/soc/amd/raven/acp3x-pcm-dma.c         |  6 ------
+ sound/soc/intel/baytrail/sst-baytrail-pcm.c | 13 +++++++------
+ sound/soc/intel/haswell/sst-haswell-pcm.c   |  4 +++-
+ sound/soc/mediatek/common/mtk-afe-fe-dai.c  | 12 +++++-------
+ sound/soc/mediatek/common/mtk-afe-fe-dai.h  |  3 ++-
+ sound/soc/mediatek/common/mtk-base-afe.h    |  6 ++++--
+ sound/soc/mediatek/mt2701/mt2701-afe-pcm.c  |  6 ++++--
+ sound/soc/mediatek/mt6797/mt6797-afe-pcm.c  | 11 ++++-------
+ sound/soc/mediatek/mt8173/mt8173-afe-pcm.c  |  7 ++++---
+ sound/soc/mediatek/mt8183/mt8183-afe-pcm.c  | 11 ++++-------
+ 10 files changed, 37 insertions(+), 42 deletions(-)
+
 -- 
-2.24.1
+2.17.1
 
 
 _______________________________________________
