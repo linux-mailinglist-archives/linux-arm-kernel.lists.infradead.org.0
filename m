@@ -2,79 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEBDD1B48CD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:36:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FD531B48E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 17:37:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iw5r9uA/WSi5PHQei5ERRQklPYKevgrXAdG4WhO8MlE=; b=KcWTDAkPe5w/Et
-	XDGtyeb1Llwv3zC95zRHHyGhnDKTOZyH+nx9oekQzqdhi5oFo/RUaclhSkAvK4L3qV4pk6Omb/ksA
-	4eqrPohuoyrI2Y9LD/2o8jZxWSso0n6h5P4QgvGxMfhM/H92xOCmF57FnCFByHMDSYw1Fn6ZHBV3K
-	EkI2Whl2HTycUB8ln/poE1Dqpt+8wXeLYwV5lv+LhOe6rLf6H2M3N2YG2GvF7f3uL/8YdCSPG279m
-	dlHacXu844E8uiav3C7bncXJtOisB3G+uX1592s4uSo+E+44/bmjrinlCuyHwjIn6CxSRTVu/qfzK
-	la8f8E/UM9+S4cuF85Iw==;
+	List-Owner; bh=G2vdSPFS8o8PTOGYJOBPB3OU8DU+Z2b6UkH/yFhLPbw=; b=QWuwvh+iOOMHAP
+	Ha62s6A71kSfcj6E9t60/2u8xZhr/AOpE5ZdGMI/3z0smUVXt2lQfGj9EzG/wZcgIaD/9AfLH3WAh
+	5TH8MXUCmhhAJa58BLXgAo9Euaip9O7MjqZ0zWuNXT6nNmChbwsA3no6EOwpV5tMTAXzYwJTWJzrO
+	1EaCucD9hjLAvjBGqAm6BfxbCaVuWsyg8MNkN6+yRLbWy607UCkuD8D1Hvobb2xabwWHKMmWBHJdZ
+	9UyZhhbZMIILuUqQ3o8Xp7FPMcm38pnkURM4xVNFI6QQF7m03hkCDRCfZXE2dMmTyheBTIdOfK5Vh
+	8QNDwJvUtjGzi6fX6bTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRHQC-0005UZ-T5; Wed, 22 Apr 2020 15:36:20 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
+	id 1jRHRY-00068w-Qg; Wed, 22 Apr 2020 15:37:44 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRHQ1-0005Rz-C3
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 15:36:11 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id l84so1409421ybb.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 08:36:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=+AjFfEvExopko5vrpG5TAim2gTw/nPEygKLzyKFqNHY=;
- b=AZwYjSI/UXuxNN7NJfejVcVD/JWxuHM2HmXpNcbCNlVy7r0ba+rutav8Pn70cdoLm0
- ZimhlWIZFJLZoreLu1R0uij5j3if46a95rh73L6nnVX93jPCdyyS6RgQ8Y913UgQqmVA
- ft7vBx0lpwpTK0DAKv1Wkk60mkzZB/TgGJ7m2AJmeaSEbTTAaWpzr3LNQEitU3/8EsS3
- /5D6pyqQFfFInaEOc79FLV5OBYUtJcrcN8TIWGPpD0lixpvNavePd4Sa+EVsSgAol1By
- knki3pld00nBrwMullmQNE8o+Rx5FL5SWT8Vp4QStnwTo/d3Sgath6WRHePUhBavNDyZ
- DT2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+AjFfEvExopko5vrpG5TAim2gTw/nPEygKLzyKFqNHY=;
- b=S3laMq2aF9h4vWyx2jZhGOsSJ+PUGoWEj9lBAVI5M1R45VDeh/RUuE8737ONL7bSxY
- Gaqg8dPPmGDwN5Jso/EIDVvH2Mx15bwR75R1oegAIKkXelTrCsT+jv8/BBNi2aDVkooo
- cUB5nXp6bq9BYtG9qMegE12x3BzOWoy9d2gXL/R6zjVCWUEapwU0u9voU2gKJUseWsUD
- X8jaQ7j6lVBD5i9YB2dQCGUNdRi1F+7ColJGC4qWEroLgYdbOUGqlpWKAB/NxMCf7NsH
- mYSmxYbVyiAYOatsqjwdC0m59zHYvgPGiEwt/RmdsAIuimN+UA0OjljDabO+3f+0rzSn
- VyLg==
-X-Gm-Message-State: AGi0PuZL1V6TX7FIr3FU6Ggw+J36mjb14/8WaAATVozVWgzTBif7bIfy
- 4CBlXCl0kraEyZufaD6BUkSnDSzcTBYNueFs1LERDA==
-X-Google-Smtp-Source: APiQypI//eHnV/pEir7WM2H9X+55MxxgsM/Mje90OxuP3GH+OrpvQW5vERdQQ1tXEJCI8NvO99y+KCXOrOB2lzalJVM=
-X-Received: by 2002:a25:374d:: with SMTP id e74mr35541070yba.343.1587569766048; 
- Wed, 22 Apr 2020 08:36:06 -0700 (PDT)
+ id 1jRHRP-00066o-Aq
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 15:37:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=bE8e5MOL8KYPuApPXnTyRh9KbE6QXDIZY+1QM+ElKfQ=; b=EKbyShed7Soh0+FQmm4kwP+mU
+ /wcqne1ikWwaaeDZpmms4asFiWmjK5oXTzKv6HnsOKTEhOSoBaSMVoABFT0UwcHB1Fj6jPORAtJkH
+ TV4RUQ6cxJkbNffM40eIpTT4JCRSwXX/bpu/u+R7wfDTwL/pmo3l//0GV4wz0AjVgelH4YktdO6Ph
+ HrKvWYpVf8dlvd7Of5rRbU6kxrrDQsk9Ot0gdmZaa4GnXKtCWxqW/DntYFcp1ZXKN7NU7sENia9yi
+ hepaljwpwq+1S3prLhNDOvIYseMjZfvu/mjfYueZCFNrTa50yES7XuPFU1O3rSUyQwZpvcIBNMOeX
+ BeRkN2KwQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42138)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jRHR6-0000cq-Db; Wed, 22 Apr 2020 16:37:16 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jRHR3-0008GP-1j; Wed, 22 Apr 2020 16:37:13 +0100
+Date: Wed, 22 Apr 2020 16:37:13 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH] arm: dts: uDPU: switch PHY operation mode to 2500base-x
+Message-ID: <20200422153712.GQ25745@shell.armlinux.org.uk>
+References: <20200422150915.3355073-1-jakov.petrina@sartura.hr>
+ <20200422152439.GG974925@lunn.ch>
 MIME-Version: 1.0
-References: <20200422114429.0b1a6f1a3366bae5964f3e10@linaro.org>
- <20200422115035.2f8d48843793d0d6f6724522@linaro.org>
- <CAK7LNAQL1ZkHKwODW2VYnpRw+y5Eg4abg+xCDa=PfQktHLnW_w@mail.gmail.com>
-In-Reply-To: <CAK7LNAQL1ZkHKwODW2VYnpRw+y5Eg4abg+xCDa=PfQktHLnW_w@mail.gmail.com>
-From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
-Date: Thu, 23 Apr 2020 00:35:54 +0900
-Message-ID: <CAA93ih2rqCGEJT91iMQrEK-8BDNd_z_DP52OSF6Ps=HbUjTz4g@mail.gmail.com>
-Subject: Re: [PATCH v4 2/2] arm64: dts: uniphier: Add support for Akebi96
-To: Masahiro Yamada <masahiroy@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200422152439.GG974925@lunn.ch>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_083609_442430_CD11F0B5 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20200422_083735_374498_888F9431 
+X-CRM114-Status: GOOD (  16.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,33 +87,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- DTML <devicetree@vger.kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, jason@lakedaemon.net,
+ Jakov Petrina <jakov.petrina@sartura.hr>, gregory.clement@bootlin.com,
+ linux-kernel@vger.kernel.org, vladimir.vid@sartura.hr, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, sebastian.hesselbarth@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gWWFtYWRhLXNhbiwKCjIwMjDlubQ05pyIMjPml6Uo5pyoKSAwOjEwIE1hc2FoaXJvIFlh
-bWFkYSA8bWFzYWhpcm95QGtlcm5lbC5vcmc+Ogo+Cj4gSGlyYW1hdHN1LXNhbgo+Cj4gT24gV2Vk
-LCBBcHIgMjIsIDIwMjAgYXQgMTE6NTAgQU0gTWFzYW1pIEhpcmFtYXRzdQo+IDxtYXNhbWkuaGly
-YW1hdHN1QGxpbmFyby5vcmc+IHdyb3RlOgo+Cj4gPiArCj4gPiArJmV0aCB7Cj4gPiArICAgICAg
-IHN0YXR1cyA9ICJva2F5IjsKPiA+ICsgICAgICAgcGh5LW1vZGUgPSAicmdtaWkiOwo+ID4gKyAg
-ICAgICBwaW5jdHJsLTAgPSA8JnBpbmN0cmxfZXRoZXJfcmdtaWk+Owo+Cj4gVGhlc2UgdHdvIGxp
-bmVzIGFyZSBhY3R1YWxseSByZWR1bmRhbnQgYmVjYXVzZSBSR01JSQo+IGlzIHRoZSBkZWZhdWx0
-IGluIHVuaXBoaWVyLWxkMjAuZHRzaQo+IChhbmQgdW5pcGhpZXItbGQyMC1yZWYuZHRzIHNraXBz
-IHRoZW0uKQo+Cj4gRGlkIHlvdSBpbnRlbnRpb25hbGx5IG1ha2UgaXQgdmVyYm9zZT8KCk9vcHMs
-IG5vLCB3ZSBkb24ndCBuZWVkIGl0LiBJdCdzIGEgbGVnYWN5IGNvZGUgKElJUkMsIHRoZXJlJ3Mg
-YQpoaXN0b3JpY2FsIHJlYXNvbikuCgoKPiA+ICsmc3BpMyB7Cj4gPiArICAgICAgIHN0YXR1cyA9
-ICJva2F5IjsKPiA+ICsgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gPiArICAgICAgICNz
-aXplLWNlbGxzID0gPDA+Owo+Cj4gQWRkaW5nICNhZGRyZXNzLWNlbGxzIGFuZCAjc2l6ZS1zaXpl
-cyB0byBhIGJvYXJkIERUUwo+IGlzIHN0cmFuZ2UuCgpJbmRlZWQuCgo+IEkgd2lsbCBhcHBseSB0
-aGlzOgo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wYXRjaC8xMjI5NDk3Lwo+
-IHRoZW4gZGVsZXRlIHRoZSBsaW5lcyBhYm92ZS4KCk9LLCBJJ2xsIHVwZGF0ZS4KClRoYW5rIHlv
-dSwKCgoKLS0gCk1hc2FtaSBIaXJhbWF0c3UKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Apr 22, 2020 at 05:24:39PM +0200, Andrew Lunn wrote:
+> On Wed, Apr 22, 2020 at 05:09:15PM +0200, Jakov Petrina wrote:
+> > This resolves issues with certain SPF modules.
+> 
+> Hi Jakov
+> 
+> Please could you explain this some more. PHYLINK should be setting the
+> mode appropriately, based on the capabilities of the SFP module. Is
+> the real problem that the SFP module is indicating the wrong baud
+> rate?
+
+The issue is way more complex than that, and this is just a sticky
+plaster over the problem, and I'm really unconvinced that the issue
+has really been solved.
+
+There are some GPON modules that support 2.5G and 1G, try to guess
+the speed of the host somehow.  How that happens is not really
+known, and I never got the impression that even Scott at Telus worked
+it out - he just played around until he got stuff to work, and this
+patch is the result.
+
+This patch just works around the problem because it _may_ cause the
+interface to be at 2.5G at boot, but it won't be at 2.5G after a
+1G module has previously been plugged in, and one of these GPON
+modules is subsequently inserted.
+
+So, this is just a bodge that works in one particular situation for a
+problem with modules playing their own games.
+
+So, it has to be a NAK.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
