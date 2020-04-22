@@ -2,80 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4874D1B3A93
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 10:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE3E41B3AD1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:09:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TiB4zZoktTEH00c3svNMSNLVG2kOCGYY6Vgn63/ovm8=; b=fbgCtDYFlyALlE
-	UKLfTnfuLO+qmXAkjJu4LsyXBvzsTBVAJuZPliRhulVr0c9VO25wBCggQjVnr9+ec73uswKAGa4jS
-	v/QvvzkQM2dIixZVF0h+fLprqoKZkPcAwl/TOhz41i50gwryzYwkwHJTM6p0q5QBUHutbYcl6U8qy
-	IsFBrYGUcvW/88OG4542VAaGnjlDfOl2vdIhHmaJ//U7j0CQE4luh7ur0igGnR4BeqPqCTbJStwFi
-	LIYjhb/I1bm/lF0NcBMsd2fKRaXWcyicUiLZCEB4NayOEXhnPnLmOrVcy6F1P+9Wv0orQOY+mvsew
-	pG5432oOjeBmBshBmqXw==;
+	List-Owner; bh=CtZrlOuOeG/ql6FYdBMNFabqyjsGwGcvtAiyyoeri8I=; b=JboZ3iBsk4PLBf
+	xmSl3A3FZz6bjuQHxNvXKvv9Kpns8sMXB4gS5LXNgNQD1wqEpeZdb6qa4KG8gP7v2fCaFOzDW4efv
+	az2M65R2awXJVka1IwNi0kEgIQGUH56mOt1KIx1CMZSgmCjuHVVpphKY7WJnuvPrET1lUJAx4nDuR
+	JVQilRdtgG25Q8ZH40zxwDdjUo2BuhNhlS3WiZ5JPDo3CScvH08XldLhXJCXss1691qqJz6ciknxC
+	kgTK6zN+hJBQooVVfJd9hdxat0qck2w5zySJaESCidS2sNC6dcXTJUKmcS6RWaHWqbhFmPsLCal2S
+	zhM7IHsRbYPtuVSY6T5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRB6K-0004yO-2Y; Wed, 22 Apr 2020 08:51:24 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jRBNP-00013r-Qt; Wed, 22 Apr 2020 09:09:03 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRB69-0004xP-Es
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 08:51:14 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x18so1406727wrq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 01:51:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sUdbSFyC59yuJaBvVyUBRgUcm0WR2UBXi7Lj/i0pHiA=;
- b=y9a/LVLmgG5VhJWtvQNLFDNy+OccjnZD7/1H1WEThlqytxXAsAgOZeXAeIqhfapG3R
- ZJPJPC75+zkLSbAIk2fPfSbqobP4jHJ/iQvZRXsjGP36Wzc08NwyI81LllsqdFJs7JOL
- +s7FJnZp3Ox7zm84lRimYg8woZDbJz+SvSQnFrwf7gT+FjB8t3dhQRr50C+ttOkViLKq
- zoVjof1qw7v4HEMI392LfzM01Rcfb+SIlWiOvInlqXFl2C5VMrv6XwHf/jb80JyeRkzQ
- ZskuxbA3oHQp1MupeNznZDrHufXbERLYhvOfasjyn3CiIWNlSlMK+O7lllDq4xO87Sfu
- GOQQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sUdbSFyC59yuJaBvVyUBRgUcm0WR2UBXi7Lj/i0pHiA=;
- b=o0AK/674LC1lSV7FFBPWYXj4J+OdTp1aZEcWla4aTh7m5Y1W1Let2sAD+JpDajMbVc
- sTxHZCmyp5aM4GKS/8j9+CEbEinR/vDjB3QfxMQlgs35S3mFnXv2XYt0XX8nu5Q0aNxn
- 4a3gxsbOoBzeu2i3yv50S2HsizqiVDUZIowWMz3pMxS4jKasZ8OrzKyk/Bg6v/fziFgi
- Ap8j6UtUCh3gYQX6p8D+Nsd8ZoGMVIVjr5+LYrE7LZpI4PsbkKFUgwRjYCY83whz/bHH
- n/GM9cUI50n/KMJIUFkpCv+5Qf09r8/uvmgONEEP9bEYwoO1loFXrJX4KHfZx1hMfGL7
- mDgw==
-X-Gm-Message-State: AGi0PuZTmrOsp602rni7APiMhzvfATAgFT7j9xTnX14rDY5DRWHhXK65
- dsb9g6h5RhsPTjN7o3XF8G+6Dw==
-X-Google-Smtp-Source: APiQypJwpTUPCMFRn0xK1RxymUrmBb9TxHCysef0GOkP+0bjMtrjRrq11yO0mUzkPw6mCoxZtETZcQ==
-X-Received: by 2002:adf:82a6:: with SMTP id 35mr27318496wrc.378.1587545472229; 
- Wed, 22 Apr 2020 01:51:12 -0700 (PDT)
-Received: from localhost.localdomain
- ([2001:171b:226b:54a0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id t16sm8388398wrb.8.2020.04.22.01.51.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Apr 2020 01:51:08 -0700 (PDT)
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: will@kernel.org,
-	mark.rutland@arm.com
-Subject: [PATCH] pmu/smmuv3: Clear IRQ affinity hint on device removal
-Date: Wed, 22 Apr 2020 10:48:06 +0200
-Message-Id: <20200422084805.237738-1-jean-philippe@linaro.org>
-X-Mailer: git-send-email 2.26.0
+ id 1jRBN5-00011b-1n
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:08:44 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03M8wB7n011347; Wed, 22 Apr 2020 11:08:38 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=Ps7TvwTK/0SEKTWJDXvtpJV0GLq5jnv18Nnlhcp4Kx8=;
+ b=TcD0zJerMIjUUHkkZn3jX9sw9yQukoX0mUJx29wBmDDP7x7W8vh2fL7gE1wfUI6eTmJZ
+ D9rkMmTbkYSocZCkGDmXWFv1Ogjk8qfHGBbp49WFeyJh0TNIVjuww3XMVmGuY9jfJQqZ
+ bSYz6Nw/7QID6U+pUtlbn8hsWnavvWx5ZnQGdA9brMrEiejTNZBYpXbrYed1+bJhuj+t
+ leCA1x4jro7K+BccK8+BdqqTIQSGCq4G31OcrDz5kjTl3QKZcNfEcNeyMmAIh2Ez84v5
+ 2WFps4uf7iSIv9T164oENzsixFepdm/Xb2xkwyzwjolYszuV3hP4lPpGZSb85kiarWFE OQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30fq11nbvg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 22 Apr 2020 11:08:38 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 625F410002A;
+ Wed, 22 Apr 2020 11:08:38 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 55FCC2A4D94;
+ Wed, 22 Apr 2020 11:08:38 +0200 (CEST)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 22 Apr 2020 11:08:37
+ +0200
+From: Amelie Delaunay <amelie.delaunay@st.com>
+To: Lee Jones <lee.jones@linaro.org>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>
+Subject: [PATCH 0/3] STMFX power related fixes
+Date: Wed, 22 Apr 2020 11:08:30 +0200
+Message-ID: <20200422090833.9743-1-amelie.delaunay@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-22_03:2020-04-21,
+ 2020-04-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_015113_530307_8C468A8B 
-X-CRM114-Status: GOOD (  10.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_020843_460910_BAC18C17 
+X-CRM114-Status: GOOD (  10.11  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,77 +92,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Amelie Delaunay <amelie.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently when trying to remove the SMMUv3 PMU module we get a
-WARN_ON_ONCE from free_irq(), because the affinity hint set during probe
-hasn't been properly cleared.
+With suspend/resume tests on STM32MP157C-EV1 board, on which STMFX is used by
+several devices, some errors could occurred: -6 when trying to restore STMFX
+registers, spurious interrupts after disabling supply...
+This patchset fixes all these issues and cleans IRQ init error path.
 
-[  238.878383] WARNING: CPU: 0 PID: 175 at kernel/irq/manage.c:1744 free_irq+0x324/0x358
-...
-[  238.897263] Call trace:
-[  238.897998]  free_irq+0x324/0x358
-[  238.898792]  devm_irq_release+0x18/0x28
-[  238.899189]  release_nodes+0x1b0/0x228
-[  238.899984]  devres_release_all+0x38/0x60
-[  238.900779]  device_release_driver_internal+0x10c/0x1d0
-[  238.901574]  driver_detach+0x50/0xe0
-[  238.902368]  bus_remove_driver+0x5c/0xd8
-[  238.903448]  driver_unregister+0x30/0x60
-[  238.903958]  platform_driver_unregister+0x14/0x20
-[  238.905075]  arm_smmu_pmu_exit+0x1c/0xecc [arm_smmuv3_pmu]
-[  238.905547]  __arm64_sys_delete_module+0x14c/0x260
-[  238.906342]  el0_svc_common.constprop.0+0x74/0x178
-[  238.907355]  do_el0_svc+0x24/0x90
-[  238.907932]  el0_sync_handler+0x11c/0x198
-[  238.908979]  el0_sync+0x158/0x180
+Amelie Delaunay (3):
+  mfd: stmfx: reset chip on resume as supply was disabled
+  mfd: stmfx: fix stmfx_irq_init error path
+  mfd: stmfx: disable irq in suspend to avoid spurious interrupt
 
-Just like the other perf drivers, clear the affinity hint before
-releasing the device.
+ drivers/mfd/stmfx.c       | 22 ++++++++++++++++++++--
+ include/linux/mfd/stmfx.h |  1 +
+ 2 files changed, 21 insertions(+), 2 deletions(-)
 
-Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
-Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
----
- drivers/perf/arm_smmuv3_pmu.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-index 1bc378b68af83..245c8a1b42995 100644
---- a/drivers/perf/arm_smmuv3_pmu.c
-+++ b/drivers/perf/arm_smmuv3_pmu.c
-@@ -847,7 +847,7 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 	if (err) {
- 		dev_err(dev, "Error %d registering hotplug, PMU @%pa\n",
- 			err, &res_0->start);
--		return err;
-+		goto out_clear_affinity;
- 	}
- 
- 	err = perf_pmu_register(&smmu_pmu->pmu, name, -1);
-@@ -866,6 +866,8 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- 
- out_unregister:
- 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
-+out_clear_affinity:
-+	irq_set_affinity_hint(smmu_pmu->irq, NULL);
- 	return err;
- }
- 
-@@ -875,6 +877,7 @@ static int smmu_pmu_remove(struct platform_device *pdev)
- 
- 	perf_pmu_unregister(&smmu_pmu->pmu);
- 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
-+	irq_set_affinity_hint(smmu_pmu->irq, NULL);
- 
- 	return 0;
- }
 -- 
-2.26.0
+2.17.1
 
 
 _______________________________________________
