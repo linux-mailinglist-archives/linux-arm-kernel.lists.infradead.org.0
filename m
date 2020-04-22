@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D7DF1B4402
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:08:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43DF1B4416
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:15:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i2VH0oOFXTYDjMqH0OYOofFIu01Rh+xPg7Qpvd8yUBk=; b=kidYvDINaYHU+s
-	1GqV+8LRYy9Wz8oINxV8aVTAyI06tPmFPquSdKjiTOVLY+f+l40GH4US7J8TwLgt03EaAwd4lsn9J
-	HSSud4N7jLKnBVmE7LfhBnK0zZu++ej8vZpCHIMnt2jQhPc580kS273AE1xzTx1hfLnkRiETJ3hyN
-	G1mwMqo9fSpTxbh5AELUvO6gIaCOVtOejX1/g3MYwCDL8nxq6dzPgc+AOgcQjreJ02qIP3C/p0hhg
-	25tZ8gerR/5k6sI7vEzLbIW1/4xf/nmwqs3AlDFDOgD1swLeZsZ/f4++TgYXc5miFxNZV2V9qZWvG
-	8yxEDz0EWj/Ryw3rlNMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SzbKC3uqAXrzYBKI5+yRkrICe6AU9W5+nYNzcnjiveA=; b=RUfzF7rYMyMNMD
+	QMFz6y+76kptS5ZEXNzPNbnAJj5vN/bIgzQopkQ7n7f0mdfEllXmtbJoSq+02sGdOrjbdyR5uqGxy
+	e5YKV6TrP4QCkAnvQ3YY8wr0vJG0N744FSXiPkBpr2ypWtfbdDcjFiK0Kt2Rhs1sxH5htLUvfpe71
+	lzos42CsAdZEwAPg9EypezxmwVjOZdRmkKSBXSa/lzY3GNa6UePBqkcVu6Y2cQ553SNhU+qxdxv3g
+	AjXNWw7lCvaJKQ1Gh3Z0CXizm8f00efqc7+GtklaQDdZk3x/FfE5cdnGfXnXx671kgmQ8vnNOsknd
+	ie1nFyAm2hbR+RYBJrTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jREB2-0002L5-6W; Wed, 22 Apr 2020 12:08:28 +0000
+	id 1jREHJ-0006Hh-8w; Wed, 22 Apr 2020 12:14:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jREAr-0002GX-Ri
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:08:19 +0000
+ id 1jREGm-00062t-Vl; Wed, 22 Apr 2020 12:14:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A2C131B;
- Wed, 22 Apr 2020 05:08:16 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 983793F6CF;
- Wed, 22 Apr 2020 05:08:14 -0700 (PDT)
-Date: Wed, 22 Apr 2020 13:08:12 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Alex Belits <abelits@marvell.com>
-Subject: Re: [PATCH v3 07/13] task_isolation: arch/arm64: enable task
- isolation functionality
-Message-ID: <20200422120811.GA3585@gaia>
-References: <07c25c246c55012981ec0296eee23e68c719333a.camel@marvell.com>
- <299c02b268a6438704693ddb77cdcb49f382c0ea.camel@marvell.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 208CB1042;
+ Wed, 22 Apr 2020 05:14:24 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E58AE3F6CF;
+ Wed, 22 Apr 2020 05:14:22 -0700 (PDT)
+Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
+ memory resource names
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-3-james.morse@arm.com>
+ <873694h4g3.fsf@x220.int.ebiederm.org>
+From: James Morse <james.morse@arm.com>
+Message-ID: <f1678470-33a6-58c9-d7d3-16ac87d01714@arm.com>
+Date: Wed, 22 Apr 2020 13:14:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <299c02b268a6438704693ddb77cdcb49f382c0ea.camel@marvell.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <873694h4g3.fsf@x220.int.ebiederm.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_050817_983267_5BFD279B 
-X-CRM114-Status: GOOD (  18.51  )
+X-CRM114-CacheID: sfid-20200422_051425_096256_E9E6B809 
+X-CRM114-Status: GOOD (  13.74  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,137 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Prasun Kapoor <pkapoor@marvell.com>,
- "frederic@kernel.org" <frederic@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "rostedt@goodmis.org" <rostedt@goodmis.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>, "will@kernel.org" <will@kernel.org>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 09, 2020 at 03:23:35PM +0000, Alex Belits wrote:
-> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-> index f0cec4160136..7563098eb5b2 100644
-> --- a/arch/arm64/include/asm/thread_info.h
-> +++ b/arch/arm64/include/asm/thread_info.h
-> @@ -63,6 +63,7 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #define TIF_FOREIGN_FPSTATE	3	/* CPU's FP state is not current's */
->  #define TIF_UPROBE		4	/* uprobe breakpoint or singlestep */
->  #define TIF_FSCHECK		5	/* Check FS is USER_DS on return */
-> +#define TIF_TASK_ISOLATION	6
->  #define TIF_NOHZ		7
->  #define TIF_SYSCALL_TRACE	8	/* syscall trace active */
->  #define TIF_SYSCALL_AUDIT	9	/* syscall auditing */
-> @@ -83,6 +84,7 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
->  #define _TIF_NOTIFY_RESUME	(1 << TIF_NOTIFY_RESUME)
->  #define _TIF_FOREIGN_FPSTATE	(1 << TIF_FOREIGN_FPSTATE)
-> +#define _TIF_TASK_ISOLATION	(1 << TIF_TASK_ISOLATION)
->  #define _TIF_NOHZ		(1 << TIF_NOHZ)
->  #define _TIF_SYSCALL_TRACE	(1 << TIF_SYSCALL_TRACE)
->  #define _TIF_SYSCALL_AUDIT	(1 << TIF_SYSCALL_AUDIT)
-> @@ -96,7 +98,8 @@ void arch_release_task_struct(struct task_struct *tsk);
->  
->  #define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
->  				 _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
-> -				 _TIF_UPROBE | _TIF_FSCHECK)
-> +				 _TIF_UPROBE | _TIF_FSCHECK | \
-> +				 _TIF_TASK_ISOLATION)
->  
->  #define _TIF_SYSCALL_WORK	(_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
->  				 _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
-> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-> index cd6e5fa48b9c..b35b9b0c594c 100644
-> --- a/arch/arm64/kernel/ptrace.c
-> +++ b/arch/arm64/kernel/ptrace.c
-> @@ -29,6 +29,7 @@
->  #include <linux/regset.h>
->  #include <linux/tracehook.h>
->  #include <linux/elf.h>
-> +#include <linux/isolation.h>
->  
->  #include <asm/compat.h>
->  #include <asm/cpufeature.h>
-> @@ -1836,6 +1837,15 @@ int syscall_trace_enter(struct pt_regs *regs)
->  			return -1;
->  	}
->  
-> +	/*
-> +	 * In task isolation mode, we may prevent the syscall from
-> +	 * running, and if so we also deliver a signal to the process.
-> +	 */
-> +	if (test_thread_flag(TIF_TASK_ISOLATION)) {
-> +		if (task_isolation_syscall(regs->syscallno) == -1)
-> +			return -1;
-> +	}
+Hi Eric,
 
-Is this supposed to be called only when syscall tracing is enabled?
-It only gets here if the task has any of the _TIF_SYSCALL_WORK flags.
+On 15/04/2020 21:36, Eric W. Biederman wrote:
+> James Morse <james.morse@arm.com> writes:
+> 
+>> Memory added to the system by hotplug has a 'System RAM' resource created
+>> for it. This is exposed to user-space via /proc/iomem.
+>>
+>> This poses problems for kexec on arm64. If kexec decides to place the
+>> kernel in one of these newly onlined regions, the new kernel will find
+>> itself booting from a region not described as memory in the firmware
+>> tables.
+>>
+>> Arm64 doesn't have a structure like the e820 memory map that can be
+>> re-written when memory is brought online. Instead arm64 uses the UEFI
+>> memory map, or the memory node from the DT, sometimes both. We never
+>> rewrite these.
+>>
+>> Allow an architecture to specify a different name for these hotplug
+>> regions.
+> 
+> Gah.  No.
+> 
+> Please find a way to pass the current memory map to the loaded kexec'd
+> kernel.
 
-> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> index 339882db5a91..d488c91a4877 100644
-> --- a/arch/arm64/kernel/signal.c
-> +++ b/arch/arm64/kernel/signal.c
-> @@ -20,6 +20,7 @@
->  #include <linux/tracehook.h>
->  #include <linux/ratelimit.h>
->  #include <linux/syscalls.h>
-> +#include <linux/isolation.h>
->  
->  #include <asm/daifflags.h>
->  #include <asm/debug-monitors.h>
-> @@ -898,6 +899,11 @@ static void do_signal(struct pt_regs *regs)
->  	restore_saved_sigmask();
->  }
->  
-> +#define NOTIFY_RESUME_LOOP_FLAGS \
-> +	(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
-> +	_TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
-> +	_TIF_UPROBE | _TIF_FSCHECK)
+> Starting a kernel with no way for it to know what the current memory map
+> is just plain scary.
 
-AFAICT, that's just _TIF_WORK_MASK without _TIF_TASK_ISOLATION. I'd
-rather not duplicate these, they are prone to get out of sync. You could
-do something like:
+We have one. Firmware tables are the source of all this information. We don't tamper with
+them.
 
-#define NOTIFY_RESUME_LOOP_FLAGS (_TIF_WORK_MASK & ~_TIF_TASK_ISOLATION)
+Firmware describes memory present at boot in the UEFI memory map or DT. On systems with
+ACPI, regions that were added after booting are discovered by running AML methods. (for
+which we need to allocate memory, so you can't describe boot memory like this)
 
-> +
->  asmlinkage void do_notify_resume(struct pt_regs *regs,
->  				 unsigned long thread_flags)
->  {
-> @@ -908,6 +914,8 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
->  	 */
->  	trace_hardirqs_off();
->  
-> +	task_isolation_check_run_cleanup();
-> +
->  	do {
->  		/* Check valid user FS if needed */
->  		addr_limit_user_check();
-> @@ -938,7 +946,10 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
->  
->  		local_daif_mask();
->  		thread_flags = READ_ONCE(current_thread_info()->flags);
-> -	} while (thread_flags & _TIF_WORK_MASK);
-> +	} while (thread_flags & NOTIFY_RESUME_LOOP_FLAGS);
-> +
-> +	if (thread_flags & _TIF_TASK_ISOLATION)
-> +		task_isolation_start();
->  }
->  
->  unsigned long __ro_after_init signal_minsigstksz;
+This doesn't work if you kexec from a hot-added region. You've booted from memory that
+wasn't present at boot.
 
--- 
-Catalin
+I don't think this is fixable with the set of constraints.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
