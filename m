@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07CB51B3BBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:51:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31D551B3BC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:52:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vhyegQF+jK0r1Lpn9kyEqDb4oHZK1ORhj9kC6/TDZPs=; b=JzjekKuhFAYemD
-	S+k1AKbmmAJgjEAWbkc2fu2XfiQOAM5HHU/Bb6p03poePoxUVLoYorYok1sq+u4vl80VtqyShsk4I
-	yJbNhXhYW9zUGY8FLMpW0X/f8l/mZ/Lq/vasFx25+yJ8QKgPinQNmOeDAkRkGSVfjObWkIACtojDw
-	0VrxbAZ1BxGQELzV1w9BrO5uzaRXJMyH4ZAAQV31g9P60AJOkI9+6cjPzbRUH/Fh7BqBI+/UF9/QE
-	km934wqZEFi/eIqX6zwDluHfDe3pzpj5dQ1Uk0Z6BD3CIz6wgpn0oS9WQIfVXhopevzzos2+2kNc0
-	6Az36QZmTzJTznvTQhiA==;
+	List-Owner; bh=GmiOoYCM59643fnuvpYDQYYH1/GpqvP/qRsVEgobV8k=; b=NOwukKhnzzOflr
+	hls5nubJYSlnOztvSJ1WVwPflprXZu14HC5GTE0Ayrwk9VZZ5iA5kIJ4rXF3rnJ/LQuZb1AwfjQjY
+	RtLtAQMx1J9DJL22e3HIPnXDw9ug6vm312ibDrtf/pyOlcPZUuZHS+EVcUdM0Ty/WjEUzSb+goTd5
+	mFZ/V9ZmtkRKZd++b7pZFar9s1oe+O3KMb1fGR92xbSzskfmQkrb3GkBPWK1CWXemmmbPxSNEDLuY
+	nzceKwLHtVCX6IEh1zcdJQqNrvSuVr/h0qiBBz7iMv1w7bvrS9v2Au1bWcvi1TGG9U8VwEsLfr8iQ
+	MgaGf8GXjCledm6AjGcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRC2I-000480-JB; Wed, 22 Apr 2020 09:51:18 +0000
+	id 1jRC3A-0004ZR-9T; Wed, 22 Apr 2020 09:52:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRC29-00046w-8V
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:51:10 +0000
+ id 1jRC2u-0004Y0-3c
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:51:59 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C17BB2073A;
- Wed, 22 Apr 2020 09:51:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AE2312073A;
+ Wed, 22 Apr 2020 09:51:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587549068;
- bh=bLJbp6+zinXZf+o+3jQEHKbAguMOzTp9z4BWNRFsioo=;
+ s=default; t=1587549115;
+ bh=o2n43kaLkZk8Yc3c5jw7xR0qABHEQs6JMUkUxQReAVM=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=0tApOW/IF82Eyo4QYx0jHf79aQWnMBt4tiFgAQiWawt/Hk5icbg9am6XY+7DqRmuN
- zt+gvXfeCjBOOG2tK1rcbSZ9xX2TmE6UiLZ+mShYcpTX/2wuAFACXBnYOQ5WALzdlK
- OyMw7LUKAWkkHP4PO/2baErwXnqGV5FU2ZnarNOU=
+ b=SEusCKdNvAthriMYUMGBLbl+Npwh4x+yKKFsGZ+ZiCntRRFZE19TKIoA9b6fvJ5WK
+ uxEuviBo94uJ7xv4ZyPWFnKDIyumUD0J9m15t2eufbrPkr3tIviPfgkhCD6l10hkw5
+ wnnNR3eLnoOhe0CRRpu0McpMoGUooLe0GPAOvZP0=
 MIME-Version: 1.0
-In-Reply-To: <20200419170810.5738-16-robh@kernel.org>
+In-Reply-To: <20200419170810.5738-8-robh@kernel.org>
 References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-16-robh@kernel.org>
-Subject: Re: [PATCH 15/17] vexpress: Move site master init to vexpress-config
- bus
+ <20200419170810.5738-8-robh@kernel.org>
+Subject: Re: [PATCH 07/17] clk: vexpress-osc: Use the devres clock API variants
 From: Stephen Boyd <sboyd@kernel.org>
 To: Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob Herring <robh@kernel.org>,
  Sudeep Holla <sudeep.holla@arm.com>
-Date: Wed, 22 Apr 2020 02:51:08 -0700
-Message-ID: <158754906803.132238.5380277174069330915@swboyd.mtv.corp.google.com>
+Date: Wed, 22 Apr 2020 02:51:54 -0700
+Message-ID: <158754911497.132238.14935003164917739527@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_025109_318499_F4C8EADF 
-X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-CacheID: sfid-20200422_025156_167609_ACB339E8 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -91,22 +90,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Is the subject supposed to say 'set master' vs. 'site master'?
-
-Quoting Rob Herring (2020-04-19 10:08:08)
-> There's only a single caller of vexpress_config_set_master() from
-> vexpress-sysreg.c. Let's just make the registers needed available to
-> vexpress-config and move all the code there. The registers needed aren't
-> used anywhere else either. With this, we can get rid of the private API
-> between these 2 drivers.
+Quoting Rob Herring (2020-04-19 10:08:00)
+> In preparation to enable the vexpress-osc clock driver as a module,
+> convert the driver to use the managed devres clock API variants. With
+> this, a driver .remove() hook is not needed.
 > 
 > Cc: Liviu Dudau <liviu.dudau@arm.com>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 > Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: Lee Jones <lee.jones@linaro.org>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
