@@ -2,90 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26F1D1B3B1F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:23:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37F021B3B38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:25:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ERckS49wzr3iNE4n3hn6b8QbJmJFDK/0+UzVCMlHyZM=; b=YpvCOZHjn3gI5D/sBCevmGSHU
-	0Jm5RSHkd1tGREQ3GpcOS4tL3pUychzDNdF0ze19wlsm2dX4ePUvxFYLWVW9UNUCLKFL9k6COZEOK
-	tRB0nr2v5PggWfjjbYgQTXj/a5XBBqt/3B7pQDpDCgvW3oBSQTF13QbLV6j/lHHemHsKN8rTTtalM
-	p20Ck32UKjITHwV4hFfdP/NaR641n852HmzozJfBGuxzmJikkMXF62Eo3gcO6/zAOsZttpkepvh5O
-	7IG6s9+AnolGKuUgM9M71m4lUVc97H7BScKO8mwzXubgdmiXosYPClIMzoICnaSH4syhqm4Tc7O4i
-	6iErX5UAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K4ood2QqdGt7FQcA0KS66cLS1pt6//tH5r7p2ZnLTbo=; b=Jeox3ZKs0y4NEh
+	VU0J6Qlfr/5WZyayN89pnE5NvEAz6XPa5x/2CMumd/C5R43iMsJzgrHQ8N+t44y50fbKDVmgWGgqY
+	mUTV4R2cTJLXgvdaWEC8tInKv8k2Y9MZb+3j4D1OS+UgDI4P9AbamWgh4QJFQvkGX0qhFhQ2IM0Ky
+	CJZS9hg1Ou73wuYBm04+R8UwTJmaAaxTZd/OEYuiCua83VeP9THnrbeTGRZxAOLYFzlCDR0h16dCh
+	TtJ83DHNcHkwA8g+JQ6BvD7qJHBbID2ExwOW/dL1nxDlbswamFq4+AEVQg5mSw6aV1mZ0QN9FV/iF
+	zvAZY76AE6++Reran5Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRBbI-0006dj-Io; Wed, 22 Apr 2020 09:23:24 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1jRBdF-00070c-A1; Wed, 22 Apr 2020 09:25:25 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRBb7-0006ca-Fj
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:23:15 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 620035C00C7;
- Wed, 22 Apr 2020 05:23:04 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 22 Apr 2020 05:23:04 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=1iiAxI87Jk6J/8UmvUUTFd23t4R
- KFlVM9d53BckbYUA=; b=tCJ10biHAYsxSq9tpQ5YUelEtK0uTKnYesz6jRvllMy
- DzJfyJIkbHiojXUKVZK2gcEWm64vB/XHmPf5C8chjW5yf0Sy25y5kXfOmpLlVgKX
- CDRjtQ87c8ZQkZPJ6rWDlHQqH3NXakI3C6Gi2erHVVcfm/k58vAa444b1Y3F911f
- fkponJTw290yzLGFsuWeflhGQnEpnOfyHr4wCPd4HyN5w2lO8L9DUWATVgtwPFZX
- XsXUhvZSVZdBmsCUObubSo8b7wsIutEGzYSnJwRdnajVI7HCktbseWHMROHMPIFC
- dNMmSdefPtpXEyzRCxD5HeTgn77P+QHIHiyBWocWJ+Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=1iiAxI
- 87Jk6J/8UmvUUTFd23t4RKFlVM9d53BckbYUA=; b=rTrpxUvlaG57zQcEhbyQFR
- scLw5q/EBcPPiUYQYfv+TtQuDl5tQMM6y4ayy0mBaVJxSYe+ab49aUtUF8djRdnD
- wz8MTg3iZrn2b0MUhAxmF/cR5MVSk00hJmglARw4gUWDgAI2OH0aN6/hilZ1bsa+
- WCehGCXHWg2xaDd0flxXiYGPbWgR/iqLN3filaQ9Vn8m1OWu60V0RJ0A3+lJ2VDE
- +WxB3pU+2IHT7HuEl7kcm7n54t2cpOVM4u6pnjWKTknpcRaOJppxDAHegoaUuZ0W
- i7TAu1O30MAmCelWj6vvr14FKKJjdz60K35OroglaBCx6TV/3KzZzT6QeVR3GLZg
- ==
-X-ME-Sender: <xms:9gygXuqLxcV5RXac6UmfFUoxTMx4ol2ao0DU9zLR_7UWLNliJ6KSsg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeejgddufecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:9gygXrHqeGRYE1TOf9xQZXIaO7WhEwB5wjF4oRJxGiO3-XayqZAFZQ>
- <xmx:9gygXgln_YBRSKIp1ZsxKemoxMtHFLS6jFUvGzTpUH3Ge4DHMLWmLQ>
- <xmx:9gygXhF6YxauogiZdvGUX96GqVef5Ou98xuARGrbdnZlZyb8otNf5A>
- <xmx:-AygXpf7ik1bc3QstrzMM91isWv_alFcPn0oKiQ0E9TZMWt2ScbOOw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6A19B3280059;
- Wed, 22 Apr 2020 05:23:02 -0400 (EDT)
-Date: Wed, 22 Apr 2020 11:23:00 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH] drm/sun4i: hdmi ddc clk: Fix size of m divider
-Message-ID: <20200422092300.444wcaurdwyrorow@gilmour.lan>
-References: <20200413095457.1176754-1-jernej.skrabec@siol.net>
- <1742537.tdWV9SEqCh@jernej-laptop>
- <20200415104214.ndkkxfnufkxgu53r@gilmour.lan>
- <1785843.taCxCBeP46@jernej-laptop>
+ id 1jRBcg-0006xA-QP
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:24:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587547489;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=g7ER3YJr1FWvg/+FgFUesyXNuledE9LlcU6mjyjVfsA=;
+ b=FLZ8X+rPpqvv2oyYWZKzF7oPVbJiCEhH1YH8t7c5D+1mo+L9p1kGBqZW8Bj9kWBmal481m
+ n6ar2e4QBqHn9FUr2eklOWWKdLyQdUves0va2V8onzF7d0oQh21zaDxrWkLO68Lt6q2+ZE
+ k/+EM6AUJ0TgZRiPpHfcmNjVzrLGSVQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-365-cePc8J72MHiLls8ayhdEgQ-1; Wed, 22 Apr 2020 05:24:45 -0400
+X-MC-Unique: cePc8J72MHiLls8ayhdEgQ-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5C2321007281;
+ Wed, 22 Apr 2020 09:24:43 +0000 (UTC)
+Received: from [10.36.114.57] (ovpn-114-57.ams2.redhat.com [10.36.114.57])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6C7CC5DA82;
+ Wed, 22 Apr 2020 09:24:40 +0000 (UTC)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: Baoquan He <bhe@redhat.com>
+References: <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
+ <20200414143912.GE4247@MiWiFi-R3L-srv>
+ <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
+ <20200415023524.GG4247@MiWiFi-R3L-srv>
+ <18cf6afd-c651-25c7-aca3-3ca3c0e07547@redhat.com>
+ <20200416140247.GA12723@MiWiFi-R3L-srv>
+ <4e1546eb-4416-dc6d-d549-62d1cecccbc8@redhat.com>
+ <20200416143634.GH4247@MiWiFi-R3L-srv>
+ <2525cc9c-3566-6275-105b-7f4af8f980bc@redhat.com>
+ <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
+ <20200422091718.GT4247@MiWiFi-R3L-srv>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: Red Hat GmbH
+Message-ID: <b9173744-6be4-5b41-d205-319542d821ba@redhat.com>
+Date: Wed, 22 Apr 2020 11:24:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1785843.taCxCBeP46@jernej-laptop>
+In-Reply-To: <20200422091718.GT4247@MiWiFi-R3L-srv>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_022313_660846_C2DBC9D9 
-X-CRM114-Status: GOOD (  26.56  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200422_022450_932477_163DFFDB 
+X-CRM114-Status: GOOD (  20.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,6 +135,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,141 +147,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1218797080346812370=="
+Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
+ kexec@lists.infradead.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 22.04.20 11:17, Baoquan He wrote:
+> On 04/21/20 at 03:29pm, David Hildenbrand wrote:
+>>>> ACPI SRAT is embeded into efi, need read out the rsdp pointer. If we don't
+>>>> pass the efi, it won't get the SRAT table correctly, if I remember
+>>>> correctly. Yeah, I remeber kvm guest can get memory hotplugged with
+>>>> ACPI only, this won't happen on bare metal though. Need check carefully. 
+>>>> I have been using kvm guest with uefi firmwire recently.
+>>>
+>>> Yeah, I can imagine that bare metal is different. kvm only uses ACPI.
+>>>
+>>> I'm also asking because of virtio-mem. Memory added via virtio-mem is
+>>> not part of any efi tables or whatsoever. So I assume the kexec kernel
+>>> will not detect it automatically (good!), instead load the virtio-mem
+>>> driver and let it add memory back to the system.
+>>>
+>>> I should probably play with kexec and virtio-mem once I have some spare
+>>> cycles ... to find out what's broken and needs to be addressed :)
+>>
+>> FWIW, I just gave virtio-mem and kexec/kdump a try.
+>>
+>> a) kdump seems to work. Memory added by virtio-mem is getting dumped.
+>> The kexec kernel only uses memory in the crash region. The virtio-mem
+>> driver properly bails out due to is_kdump_kernel().
+> 
+> Right, kdump is not impacted later added memory.
+> 
+>>
+>> b) "kexec -s -l" seems to work fine. For now, the kernel does not seem
+>> to get placed on virtio-mem memory (pure luck due to the left-to-right
+>> search). Memory added by virtio-mem is not getting added to the e820
+>> map. Once the virtio-mem driver comes back up in the kexec kernel, the
+>> right memory is readded.
+> 
+> kexec_file_load just behaves as you tested. It doesn't collect later
+> added memory to e820 because it uses e820_table_kexec directly to pass
+> e820 to kexec-ed kernel. However, this e820_table_kexec is only updated
+> during boot stage. I tried hot adding DIMM after boot, kexec-ed kernel
+> doesn't have it in e820 during bootup, but it's recoginized and added
+> when ACPI scanning. I think we should update e820_table_kexec when hot
+> add/remove memory, at least for DIMM. Not sure if DLPAR, virtio-mem,
+> balloon will need be added into e820_table_kexec too, and if this is
+> expected behaviour.
+> 
+> But whatever we do, it won't impact the kexec file_loading, because of
+> the searching strategy bottom up. Just adding them into e820_table_kexec
+> will make it consistent with cold reboot which get recognizes and get
+> them into e820 during bootup.
 
---===============1218797080346812370==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="7oskm5d3tnjhoykn"
-Content-Disposition: inline
+Yeah, I think whatever a cold-booted kernel will see is what kexec-ed
+kernel should see. Not more, not less.
 
+Regarding virtio-mem: Not in e820 on cold-boot.
+Regarding DIMMs: DIMMs under KVM will never show up in the e820 map
+IIRC. I think on real HW it can be different.
 
---7oskm5d3tnjhoykn
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+-- 
+Thanks,
 
-Hi,
+David / dhildenb
 
-On Wed, Apr 15, 2020 at 07:52:28PM +0200, Jernej =C5=A0krabec wrote:
-> Dne sreda, 15. april 2020 ob 12:42:14 CEST je Maxime Ripard napisal(a):
-> > On Mon, Apr 13, 2020 at 06:09:08PM +0200, Jernej =C5=A0krabec wrote:
-> > > Dne ponedeljek, 13. april 2020 ob 16:12:39 CEST je Chen-Yu Tsai=20
-> napisal(a):
-> > > > On Mon, Apr 13, 2020 at 6:11 PM Chen-Yu Tsai <wens@csie.org> wrote:
-> > > > > On Mon, Apr 13, 2020 at 5:55 PM Jernej Skrabec
-> > > > > <jernej.skrabec@siol.net>
-> > >=20
-> > > wrote:
-> > > > > > m divider in DDC clock register is 4 bits wide. Fix that.
-> > > > > >=20
-> > > > > > Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
-> > > > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > > >=20
-> > > > > Reviewed-by: Chen-Yu Tsai <wens@csie.org>
-> > > >=20
-> > > > Cc stable?
-> > >=20
-> > > I don't think it's necessary:
-> > > 1. It doesn't change much (anything?) for me when reading EDID. I don=
-'t
-> > > think it's super important to have precise DDC clock in order to prop=
-erly
-> > > read EDID. 2. No matter if it has "Cc stable" tag or not, it will be
-> > > eventually picked for stable due to fixes tag.
-> > >=20
-> > > This was only small observation when I was researching EDID readout i=
-ssue
-> > > on A20 board, but sadly, I wasn't able to figure out why reading it
-> > > sometimes fails. I noticed similar issue on SoCs with DE2 (most
-> > > prominently on OrangePi PC2 - H5), but there was easy workaround - I =
-just
-> > > disabled video driver in U- Boot. However, if A20 display driver gets
-> > > disabled in U-Boot, it totally breaks video output on my TV when Linux
-> > > boots (no output). I guess there is more fundamental problem with clo=
-cks
-> > > than just field size. I think we should add more constraints in clock
-> > > driver, like preset some clock parents and not allow to change parents
-> > > when setting rate, but carefully, so simplefb doesn't break. Such
-> > > constraints should also solve problems with dual head setups.
-> > I disagree here. Doing all sorts of special case just doesn't scale,
-> > and we'll never have the special cases sorted out on all the boards
-> > (and it's a nightmare to maintain).
-> >=20
-> > Especially since it's basically putting a blanket over the actual
-> > issue and looking the other way. If there's something wrong with how
-> > we deal with (re)parenting, we should fix that. It impacts more than
-> > just DRM, and all the SoCs.
->=20
-> I agree with you that automatic solution would be best, but I just don't =
-see
-> it how it would be done.
-
-> Dual head display pipeline is pretty complex for clock driver to get it r=
-ight
-> on it's own. There are different possible setups and some of them are hot
-> pluggable, like HDMI.
-
-Do you have an actual scenario that is broken right now?
-
-> And there are also SoC specific quirks, like A64, where for some reason, =
-MIPI
-> DPHY and HDMI PHY share same clock parent - PLL_VIDEO0. Technically, MIPI=
- DPHY
-> can be clocked from PLL_PERIPH0 (fixed to 600 MHz), but that's not really
-> helpful. I'm not even sure if there is any good solution to this - certai=
-nly
-> HDMI and MIPI can't claim exclusivity and somehow best common rate must be
-> found for PLL_VIDEO0, if that's even possible.
-
-IIRC the DSI DPHY needs a clock running at 297MHz, which is pretty much wha=
-t the
-HDMI PHY should need too (or 148.5, but that's pretty easy to generate from
-297). So which problem do we have there?
-
-> I was sure that HDMI PHY on A64 can be clocked from PLL_VIDEO1, which wou=
-ld
-> solve main issue, but to date, I didn't find any way to do that.
->=20
-> That's pretty off topic, so I hope original patch can be merged as-is.
-
-It does, sorry
-
-Acked-by: Maxime Ripard <maxime@cerno.tech>
-
-Maxime
-
---7oskm5d3tnjhoykn
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqAM9AAKCRDj7w1vZxhR
-xTmVAP9kvmX4WaSBtV/XQiF2vUsWwoTSx6VEdAN+fmPtFRk1AAEAmRVLotyUAtrH
-emjt+9TNkeEsYLIWoTgSrr6rcGDv8QQ=
-=JYMX
------END PGP SIGNATURE-----
-
---7oskm5d3tnjhoykn--
-
-
---===============1218797080346812370==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1218797080346812370==--
-
