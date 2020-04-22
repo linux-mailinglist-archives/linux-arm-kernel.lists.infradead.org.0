@@ -2,83 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A19B31B4EEB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 23:13:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 467501B4FF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 00:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nsxP6maxrX7Jo12ULE29ch7YD8ZFrIQGNPkNuugXiJc=; b=X2Izy3j16SZBmM
-	1/AVUFznjuj/NlgL4B+joOOjJYYcfmeolGUbjQWnbknDugPSYbM5OtcZafj8BnV8hidxAZNUk5Hhw
-	dn4B11BJOAOBrRwaNik15H5+nSYdZXdeHDVBrQ7Wq9ShrxQyKfNc5asywyMiUVBfDDt7KcX8hT5fp
-	6v5e5WJYHH5NrSmXkrNVwMPv9WyNhKZ6SYSrsAqhOltTuhKSjLatHy/w9rNC4tiyDBLbUILr6FEUt
-	Mzl+Y22S9aIKAiNBbrHoZMpv7KScIKIrrzk09nl5rwTQyILXD1KsQHVpvUzjYns+TZKu1qbnvj3W+
-	2Gnj4ws1Rdn+rxbwegxw==;
+	List-Owner; bh=bO544dXXQ0uz1k0y2kbUIcvxeUT70+eWLaBRr1OGYw4=; b=W6WCmETff3oOZR
+	VnumMzI5As6uOIo1fJ7gS17/v/uCRtYWQZuh5H6pW0sO32EzelN+MFETf5UfH/5fBAK2Kxh6iZM9L
+	Z3Az2YfsQ2Buti+n2x9azIpWuWR3FQSkCwxtjCrreCDXB+lM0UGB4FUQoTcW5EO8QlVpRtTViXRnO
+	WR9ceBN36ucgpI+CFFe9Yax8M26e0huurOsAxd6acvnAmBjxZhSV32grgsUv0fJVtd2blS7PehnQa
+	Eaep5gxewctqX8wsyzjHl7tDP2EAAcAC62o1/YTY7C88PhFxQHWhV7yXuyTqxOO1ZrlR2PwfGemBe
+	om8Vj+hrM3sq/oLi2lzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRMgF-0005G0-3y; Wed, 22 Apr 2020 21:13:15 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRMg3-0005CM-2E; Wed, 22 Apr 2020 21:13:04 +0000
-Received: by mail-ej1-x643.google.com with SMTP id nv1so3039452ejb.0;
- Wed, 22 Apr 2020 14:13:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=X1ihfPfQEm2aQwNzlV21Qu7y5TOw2uGbX6A635/ijcM=;
- b=a0cqNtVTTV+nhgMWLbfLbZJ1KDdwX/sQv0li7sAMa4YncTjRvmpf42R5qaJyoSk7xZ
- 4fjblaEI1rkZU5E11tn1LivEd4rKY+iP0xqgwcoj0sWC79s6mY+p/Wvg8DMbuKUojeTk
- MKvLPlLE6a4MGwQsxRn1mzMVhI0UyQVxYWDBcIZ3BdQSMJNEk4GkWdo7ixo7B+9pTKz8
- nIvQM2yHiwbKRGcLES7cQFiaBaxGH+dI2un2gH0az0StWT7pBtvNwrPqdLF9J7wspqE2
- /Yj6lBV3bIcU57XdmeaokjOO+H7H9cVnl7HnZ0rrrD6/ox6h0Oh+VCg+zp2ZPVeBLn8m
- od5A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=X1ihfPfQEm2aQwNzlV21Qu7y5TOw2uGbX6A635/ijcM=;
- b=Vp9jERUZJfDh4Gqg3ZQulptf5qOZ9WbXWF389AETGrjm8bB26WzGMFQri6Uiwusv4k
- K1r7pH50pJXz/PiGLmGbtBDoY7DHeJzs+0o5LnqpkJ1kIII9xJeqFxsLA+qEoijpeBuL
- efJqz9YnPmgKLn11bo65iCOcfnGX+OW796Hqn03YNUEyOTFVB+Q9PKM3d1XwHQmZLehB
- K/2MK36bGb8zVvtJ9QNIJWco8tWGoupeKXeXnssiibNps258gf7SFV6/N0oDZlUz8vML
- b0xB5pQCG9k1wcWoy/yOF1REnprKAjDdejeuIX5gs2iOWXq9MBkxHtXWTyaFjASA+2pW
- VfKQ==
-X-Gm-Message-State: AGi0PuaJ0I3wRs4REfRb8wEvKWv7S4pcytD9qSZWwtgZKHbo0IBH5NXw
- MYcMyfwHXb+OlYRWv21arlwXlt9Aai6AqKPBTOGJnqlkkyw=
-X-Google-Smtp-Source: APiQypJFSh3bXWuJ7x6+DbhV4xicuxImfcUvi6SvtUeplKK7p+MxUJ6HoV3iLTo8/qjdhHIAUdqX4A3BxnHAJhLGxbQ=
-X-Received: by 2002:a17:906:1199:: with SMTP id
- n25mr287851eja.30.1587589981187; 
- Wed, 22 Apr 2020 14:13:01 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200421134410.30603-1-narmstrong@baylibre.com>
-In-Reply-To: <20200421134410.30603-1-narmstrong@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Wed, 22 Apr 2020 23:12:50 +0200
-Message-ID: <CAFBinCAGP7ZE-OksaE=6E54r2e0VJk2wMTEwKU65qAoR4dQvxw@mail.gmail.com>
-Subject: Re: [PATCH] drm/meson: add mode selection limits against specific SoC
- revisions
-To: Neil Armstrong <narmstrong@baylibre.com>
+	id 1jRNbV-0004Bi-1d; Wed, 22 Apr 2020 22:12:25 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172]
+ helo=relmlie6.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRNbN-0004B1-7L; Wed, 22 Apr 2020 22:12:18 +0000
+Date: 23 Apr 2020 07:12:13 +0900
+X-IronPort-AV: E=Sophos;i="5.73,304,1583161200"; d="scan'208";a="45233445"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+ by relmlie6.idc.renesas.com with ESMTP; 23 Apr 2020 07:12:13 +0900
+Received: from mercury.renesas.com (unknown [10.166.252.133])
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id F085040DF9A0;
+ Thu, 23 Apr 2020 07:12:12 +0900 (JST)
+Message-ID: <874ktbuq4j.wl-kuninori.morimoto.gx@renesas.com>
+From: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+To: Ranjani Sridharan <ranjani.sridharan@linux.intel.com>
+Subject: Re: [PATCH 0/4] ASoC:: don't use snd_soc_rtdcom_lookup()
+In-Reply-To: <d20cc18d0fa10b52437e0ac29ea98792e0a3d45d.camel@linux.intel.com>
+References: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
+ <d20cc18d0fa10b52437e0ac29ea98792e0a3d45d.camel@linux.intel.com>
+User-Agent: Wanderlust/2.15.9 Emacs/25.2 Mule/6.0
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_141303_103473_B7E1D0DF 
-X-CRM114-Status: GOOD (  10.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_151217_384169_133B23BF 
+X-CRM114-Status: GOOD (  13.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.160.252.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,39 +62,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Cezary Rojewski <cezary.rojewski@intel.com>,
+ Jie Yang <yang.jie@linux.intel.com>, alsa-devel@alsa-project.org,
+ Liam Girdwood <liam.r.girdwood@linux.intel.com>,
+ Richard Fontana <rfontana@redhat.com>, Shunli Wang <shunli.wang@mediatek.com>,
+ YueHaibing <yuehaibing@huawei.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ Vijendar Mukunda <Vijendar.Mukunda@amd.com>,
+ Stephen Boyd <swboyd@chromium.org>, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, Eason Yen <eason.yen@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Takashi Iwai <tiwai@suse.com>,
+ Ravulapati Vishnu vardhan rao <Vishnuvardhanrao.Ravulapati@amd.com>,
+ Colin Ian King <colin.king@canonical.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
 
-On Tue, Apr 21, 2020 at 3:44 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
-[...]
-> diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
-> index e8c94915a4fc..dc3d5122475a 100644
-> --- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
-> +++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
-> @@ -695,6 +695,13 @@ dw_hdmi_mode_valid(struct drm_connector *connector,
->         dev_dbg(connector->dev->dev, "%s: vclk:%d phy=%d venc=%d hdmi=%d\n",
->                 __func__, phy_freq, vclk_freq, venc_freq, hdmi_freq);
->
-> +       /* Check against soc revision/package limits */
-> +       if (priv->limits) {
-> +               if (priv->limits->max_hdmi_phy_freq &&
-> +                   phy_freq > priv->limits->max_hdmi_phy_freq)
-> +                       return MODE_CLOCK_HIGH;
-> +       }
-I think that this will also be useful for the 32-bit SoCs as well.
-is there a chance you can move it to meson_vclk_vic_supported_freq
-(called right below), where all the existing frequency limit checks
-are already?
+Hi
 
+Hi Ranjani
 
-Thank you!
-Martin
+> > These patches are tring to not to use snd_soc_rtdcom_lookup()
+> > function
+> > on each drivers as much as possible,  because we might have same name
+> > component under multi component situation.
+> > It can't find correct component in such case.
+> > 
+> > I tried to add new feature on each drivers to not to use it,
+> > but I can't test.
+> > Thus, these patches should get Acked-by or Tested-by from each
+> > drivers
+> > user/maintenor. Please test these.
+> > 
+> > After these patches, Intel / SOF drivers are still using
+> > snd_soc_rtdcom_lookup(). Because it is very complex, I couldn't try
+> > not to use it.
+> > If possible, each drivers should try to not use it,
+> > and it should be removed from ASoC.
+> Morimoti-san,
+> 
+> For my education, I understand the concept of multi-cpu/codec
+> components, but when or who would need multiple platform components?
+> This would help me able to remove the snd_soc_rtdcom_lookup() call in
+> SOF.
+
+I don't know concrete system.
+But it is "possible" today.
+And, we don't know the future system,
+having flexibility is good idea, I think.
+
+I'm thinking removing lookup function is nice idea,
+but don't feel pressure to it.
+"Now you know it" is very enough for me.
+
+Thank you for your help !!
+
+Best regards
+---
+Kuninori Morimoto
 
 _______________________________________________
 linux-arm-kernel mailing list
