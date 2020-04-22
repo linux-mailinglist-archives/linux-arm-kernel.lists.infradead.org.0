@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 233AB1B34F1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 04:19:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22091B3519
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 04:44:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P+yAEEYINSv42ObTxyF7WIxYXrHnhvBAOBWomuV0Xw8=; b=cC/FAXZS1NNzMz
-	OVksoieURRNuWlsT2hFUHPwSS/+mJWu5hCFhUBhvSzDz1GcYuT72+0/p2BpYAgGdW3SoonkKQ+5AR
-	wt+nFd3J9mRk/bzGJM3LssZO0T/FrR/E0VI0a4iVfxIAVzj61/VH9SXglBRDFnRb2vP1yD9dkqZO5
-	ggelQQAAWQwnjIlV8Sarfk6L1uzKhQ27uzUe9Nqi6TQaI6WfUl4fzX8jcM0+6TTvnmpALUPZhz7vt
-	xDEM3yVSOd2tmbL1tQKUqoyni/8ed9nldXtQyeJgSuYayZ7rtpVQWPgnHCOW2UB/G0nJCdOh8PCSj
-	r9HSNc4ChfVpcFnRLXpw==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Message-Id:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5QOHvLMto2ARebI7BWMXh1tmGnECIpnRJQnTlL7vEp4=; b=FQvtz24s3hDgK1
+	3Cg1D7+IYJv7Jx9SM9UhdUBj53OkUV+LgeS4xTSYOwbAv4+tpN9X2/yOyStsHDpdFyRE2ziTLgUcW
+	uNDqkF+WgiSKAdItZEr0rBtT9tLPlArc2a+XOtOxUavAKU3R0aKNLKM+/QNHiAf9dLmNteg7JbHEN
+	UzkfOH7GNYeytbU0rfUC0GhysQVwErhfeOJ883XITx+q44ddEO5whCByDiA/qX9fYUeHS2J6H7iBJ
+	Aeejls5dnRqcYIrHE0NqSP5Wah9jNQ3ObfFSn8vUg8l1HVT2avtC7amO1CR/43CX8y5u/lUpK4y5s
+	yD3H4oeuMjTkRw5swRwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR4z0-00065L-55; Wed, 22 Apr 2020 02:19:26 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1jR5NT-0005pw-Ny; Wed, 22 Apr 2020 02:44:43 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR4yq-00064Q-Ei
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 02:19:18 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id l5so395845ybf.5
+ id 1jR5NL-0005oU-WF
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 02:44:37 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id my1so1909563pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 Apr 2020 19:19:15 -0700 (PDT)
+ Tue, 21 Apr 2020 19:44:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=eD12MM0qRGC0+kgKXm3ggeVgtjEg4vFSk5PZGwQnw+o=;
- b=c/Nn57tcIJ4/Fsow2CyCQv4vmDsCDHTrp5fk9kmX3Sx21drX1zOVRkJPzc7l3AWB4d
- DhWCLB0C7AXuTtrA+++zf76bhHCpcCzjspRFGpBRjLAA9J1FqmjlOT3y3Nd90DoVug8E
- xl6uJ8Ht+0b09DrEv6i+pwmrmPlexWXO2dYOHfuMlcJ1mp6NMnSk5IxtazRDaELptCXv
- GSo2P4qtJO8pQvs1KGFuEC23AEakWg4f7TyjsPH+By0NuaOS1zUhyO1WBrW/vr4F3yDc
- DNcqoWPAufqfJQci8yqdmM4GC0ugOD+/PVTf9wAgYyuNeslJ/a8bqxs5D69LavEQJZjM
- 7F4w==
+ h=date:from:to:cc:subject:message-id:mime-version
+ :content-transfer-encoding;
+ bh=17DeBbOuJOkYUumUllYYpaTlS+VBGmVOwtkd/Zl7kXg=;
+ b=eOrNJpdKigtIk7ORw4Z+7QkcUAQOT0AvDZ5BbujhISyKxFY2nVSlY020cLD5J4Q6F2
+ /a3tvHTOZta6T8U/eVi39qhOgHpWIJNwpJIgCpNX1UN+HCp3N6aiq7qMaU/TchA6cAOf
+ gyC6QjK6qch8uXLfcbDGXTi/D3eDsD/Qwoc6lO/6GXZtXo0A+MnR1Jy/1w7SqU3XMVVg
+ hIoZ525SQN/QqBB9aiS/d3WhAx8FHqTC1BdCLM55h0bW1FmCD9wUKUju67Vri1Xq0k/3
+ /h7ok5hBFLKeSNCFAK2s8D7GIu1dLIr528NeDkWkdjnv65Ixv0o7AfriKALJv8awGB9g
+ Xi6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=eD12MM0qRGC0+kgKXm3ggeVgtjEg4vFSk5PZGwQnw+o=;
- b=aGZjRnA1ykmocCXABa48zHgxqLDLIVkvBC/V78u0jF20JxWt/YCiIhnRbfCuOtKYlk
- nyzNOpEkECyQ51qv8GyPkmNKGtD7jIN7D2R4XmxrTG9Y+GrJUOteQYNnUaInmerpXbPn
- MfO/vWi8qhoPkJTWkXhrqjQHd2Lki+RgwYf3OrO4sKcUZgEh+n9rsN0EGs335Tp4R+ej
- bvzV+NMs+YkLV9FEmgcwF0mNQmh19msIjyExlddG2fTkOlbQ7ZPjw02gu5DmG0XYxc1I
- jpJvTErL9f74rzXFL/nMkILYfz5w/5o8X0hNqGHKspEytzqh4U/c1wsjoQm4o4bRZA8R
- 35ow==
-X-Gm-Message-State: AGi0PuYqKLmjUMNP97xOh0xIy7Y3Nrau7/4ANwEDK2DdFzKBbHGyze3W
- MVkM5QjwArXrfyeodQiRcGU+huWrR0f6560Ft/5E9g==
-X-Google-Smtp-Source: APiQypJuR76/LW08ImUx/6Stbr8KXo3jLagEMDDWMCJ+qlOKjssz3DtPf0dePxfy9mmoTCGk7EqJwjxIUvjkpKddAJw=
-X-Received: by 2002:a25:4f0a:: with SMTP id d10mr164888ybb.52.1587521954812;
- Tue, 21 Apr 2020 19:19:14 -0700 (PDT)
-MIME-Version: 1.0
-References: <158737719165.27947.6617937231903079086.stgit@localhost>
- <20200420190749.b508c7e6d60a8203360178ec@linaro.org>
- <CAK7LNAQtTPLdKN8cz842gvoS36GVQvk2ztahGp8XWoW3C8BzQg@mail.gmail.com>
- <CAA93ih0TNEfU_fiS_43+H6+UWrP2b8zh+PxMiiKBg3pZW8Jo8g@mail.gmail.com>
- <CAK7LNASjoM1vr6=nSfs76yauC+QChKC6VX_pZkq1rhXDnJE5+A@mail.gmail.com>
-In-Reply-To: <CAK7LNASjoM1vr6=nSfs76yauC+QChKC6VX_pZkq1rhXDnJE5+A@mail.gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-transfer-encoding;
+ bh=17DeBbOuJOkYUumUllYYpaTlS+VBGmVOwtkd/Zl7kXg=;
+ b=uFOeF3wC+mIu0kWe76uuaNpWHCZX9CVtgVtMzPV7psJb2oOUXM3AV6rCHeUvtXda+M
+ ZFE0eEc7s7KmlixeUul+cvdQa6G/utSn6fKXZupb7eLy+YZVkysgFENEGzWTP0VkxjJA
+ zs8OhDiV8jkjCvIIv9vZcURmF9sDtKDCm6BqpCg5x7OELM9i06Y4gYE5chhf1axzPYjC
+ d/Dz+6dvwAyLoAgYivVVwxrlyTizukYTrXvEoqMrjfi1hdmU5vii5/fPg8TZETax36eX
+ seOLRVxJP+YTfLdM5SJKH87iHz3Z6MRTA/CBSnPNk4tbK+AJL4u7Fbf5CPtpJM6ITtsO
+ 87TA==
+X-Gm-Message-State: AGi0PuYbWRpvpa5V2BrOSEJwx1jO7rvR5wnCYHVvWfrr6tCvbHPIaYXP
+ 2rWoC9lmJ/fSQira9n+odewUZg==
+X-Google-Smtp-Source: APiQypL9P1l9F+Oz0txNdc1RqtELqyQOKzxMmkkIK33mjwIy1oqRhCQzU1EuIbbx2Vw7sO91kK4eAg==
+X-Received: by 2002:a17:902:700c:: with SMTP id
+ y12mr15446497plk.162.1587523473517; 
+ Tue, 21 Apr 2020 19:44:33 -0700 (PDT)
+Received: from devnote (NE2965lan1.rev.em-net.ne.jp. [210.141.244.193])
+ by smtp.gmail.com with ESMTPSA id b11sm3569232pgj.92.2020.04.21.19.44.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 21 Apr 2020 19:44:32 -0700 (PDT)
+Date: Wed, 22 Apr 2020 11:44:29 +0900
 From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
-Date: Wed, 22 Apr 2020 11:19:03 +0900
-Message-ID: <CAA93ih0ksjwNzAW9+Y4ex+Ki8bCViwjcVZxftdQ8rk_YM_HmgA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] arm64: dts: uniphier: Add support for Akebi96
-To: Masahiro Yamada <masahiroy@kernel.org>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>, Rob Herring
+ <robh@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>
+Subject: [PATCH v4 0/2] dts: uniphier: Add Akebi96 Board support
+Message-Id: <20200422114429.0b1a6f1a3366bae5964f3e10@linaro.org>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_191917_013453_0FCD2BF2 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20200421_194436_049444_21C26E7E 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,42 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
+Cc: devicetree@vger.kernel.org,
  Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- DTML <devicetree@vger.kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgWWFtYWRhLXNhbiwKCjIwMjDlubQ05pyIMjHml6Uo54GrKSAyMTo1NyBNYXNhaGlybyBZYW1h
-ZGEgPG1hc2FoaXJveUBrZXJuZWwub3JnPjoKPgo+IE9uIE1vbiwgQXByIDIwLCAyMDIwIGF0IDEw
-OjIxIFBNIE1hc2FtaSBIaXJhbWF0c3UKPiA8bWFzYW1pLmhpcmFtYXRzdUBsaW5hcm8ub3JnPiB3
-cm90ZToKPiA+ID4gaW5kZXggZjkzNTE5NzkzYmZiLi5hZmE5MGI3NjJlYTkgMTAwNjQ0Cj4gPiA+
-IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvc29jaW9uZXh0L3VuaXBoaWVyLWxkMjAuZHRzaQo+
-ID4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3NvY2lvbmV4dC91bmlwaGllci1sZDIwLmR0
-c2kKPiA+ID4gQEAgLTMzNyw3ICszMzcsNyBAQCBncGlvOiBncGlvQDU1MDAwMDAwIHsKPiA+ID4g
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8MjEg
-MjE3IDM+Owo+ID4gPiAgICAgICAgICAgICAgICAgfTsKPiA+ID4KPiA+ID4gLSAgICAgICAgICAg
-ICAgIGF1ZGlvOiBhdWRpb0A1NjAwMDAwMCB7Cj4gPiA+ICsgICAgICAgICAgICAgICBhdWRpb0A1
-NjAwMDAwMCB7Cj4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAic29j
-aW9uZXh0LHVuaXBoaWVyLWxkMjAtYWlvIjsKPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAg
-cmVnID0gPDB4NTYwMDAwMDAgMHg4MDAwMD47Cj4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAg
-IGludGVycnVwdHMgPSA8MCAxNDQgND47Cj4gPiA+Cj4gPiA+Cj4gPiA+IExhc3RseSwgaXMgdGhl
-IHBpbi1zZXR0aW5nICJhb3V0MSIsICJhb3V0MWIiIGNvcnJlY3QgPwo+ID4KPiA+IFllcywgYWNj
-b3JkaW5nIHRvIHRoZSBzY2hlbWF0aWNzIG9mIEFrZWJpOTYoKiksIGl0IGlzIGNvbm5lY3RlZCB0
-bwo+ID4gYW91dDFiKFhJUlEqKSBpbnN0ZWFkIG9mIGFvdXQxKEFPMSopLgo+ID4KPiA+ICgqKSBo
-dHRwczovL3d3dy45NmJvYXJkcy5vcmcvZG9jdW1lbnRhdGlvbi9lbnRlcnByaXNlL2FrZWJpOTYv
-aGFyZHdhcmUtZG9jcy9ha2ViaTk2LXNjaGVtYXRpY3MucGRmCj4KPiBTbywgSSB3YXMgYXNraW5n
-IGFib3V0ICJhb3V0MSIsIG5vdCAiYW91dDFiIi4KCkFoLCBJIGdvdCBpdC4KCj4KPiBBY2NvcmRp
-bmcgdG8gdGhlIHNjaGVtYXRpYywgbm90aGluZyBpcyBjb25uZWN0ZWQgdG8gQU8xKi4KPiBTZWUg
-c2hlZXQgNi4KPgo+IFdoeSBkbyB5b3UgbmVlZCB0byBhc3NpZ24gdGhlIGFwcGFyZW50bHkgdW51
-c2VkIHBpbnM/CgpObywgd2UgZG9uJ3QgbmVlZCBpdC4gSSBjb25maXJtZWQgd2Ugb25seSBuZWVk
-IGdyb3VwcyA9ICJhb3V0MWIiLgpJJ2xsIHVwZGF0ZSB0aGUgc2VyaWVzIHdpdGggdGhhdCBmaXgu
-CgpUaGFuayB5b3UhCgo+Cj4KPgo+IC0tCj4gQmVzdCBSZWdhcmRzCj4gTWFzYWhpcm8gWWFtYWRh
-CgoKCi0tIApNYXNhbWkgSGlyYW1hdHN1CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hello,
+
+Here is the 4th version of the patches to add a devicetree for 
+Akebi96 board.
+
+This version fixes pinctrl_aout1 to remove unnecessary "aout1"
+since which is not connected on the board.
+
+The Akebi96 is a certified 96boards which is based on Socionext
+UniPhier LD20 SoC. Most of the part is similar to LD20 reference
+board, but there are some changes.
+
+  - MAX3421 USB-SPI chip on SPI port3 (for USB gadget port.)
+  - Simple frame buffer with 1080p fixed resolution.
+  - I2S port which is connected to aout1b instead of aout1.
+  - 3 serial ports, only serial3 has CTS/RTS.
+  - No NAND, only eMMC on the board.
+  - OP-TEE installed firmware.
+
+See https://www.96boards.org/product/akebi96/ for details.
+
+Thank you,
+
+---
+
+Masami Hiramatsu (2):
+      dt-bindings: arm: Add Akebi96 board support
+      arm64: dts: uniphier: Add support for Akebi96
+
+
+ .../bindings/arm/socionext/uniphier.yaml           |    1 
+ arch/arm64/boot/dts/socionext/Makefile             |    1 
+ .../boot/dts/socionext/uniphier-ld20-akebi96.dts   |  190 ++++++++++++++++++++
+ 3 files changed, 192 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
+
+--
+Masami Hiramatsu <masami.hiramatsu@linaro.org>
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
