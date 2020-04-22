@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFE851B450A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:25:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 726251B44FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 14:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=psV5zmYatDzNAyS4eYxtZ/zRiPNaFZG8HYcbfd5i71s=; b=tAKRb6U3jsMmoO
-	xDl2afqUulW3TE9FdQAHOFUpe8k7/g2g22OQ3PV3hwIUh0WPm+gAfofkOm4fi6nDz18VJSfsNRtOL
-	nupsxGYidFud6IrNb0uqpp8DZT2WhAo1unydDGG/Z3MIbOMNtyXNAkKXWyPjnA8oYlLR24HL01mOC
-	Nosml1pLbCGGjvIXxTnO/U0AM2KRtX26VYKSmIaPvrPJ66OPZnfHZvfhguqAuAsxzSIQXlKYlFPil
-	zIBMubVVdKoJ86MwrYqy6a5gX0bzSHyXtTofcyPkp0pTv6jeVKHrl0i9ArrxzqiRMXVxl0+BYc7d8
-	BbCAtYJ4u3332CtsmDdA==;
+	List-Owner; bh=n/xhvf0oZpvQBBgEPoePSvzfm/Ux26h18PZZN9xTe28=; b=RpHLg2U/BuERGm
+	tLsxcOncHdAg+ApYVofTHlUXV/DqvbdSl5NQqClANpBP5KRmYPjirGarLUDVQvPysDU9Mp2VvV0cf
+	s4BnivEUf+0XSoxIhsLuwp+IoxzA1Bn5ij9jWxhnhZuxEuXhN8fzhnYgWRoYeKSj7LhjpUQstg3Po
+	qJxi5qDWStCh7PP8Kwmn9Mg9aVFxDy3S049Y1eDPvFU2Lb9scNbn3q9FWjCjuA7KAgZeSneVbc27M
+	IZ1Jxx/03jkWAjikkXovq751IVrhjblzBSAFRoACmgVkxXj1Nphpr393OKgywJ/9jC6oj51QfLdCh
+	wtEh9PTny18m6MV22axA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRERp-0002aS-8N; Wed, 22 Apr 2020 12:25:49 +0000
+	id 1jREPf-0006gN-Uu; Wed, 22 Apr 2020 12:23:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRENe-0005Jf-LO
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:32 +0000
+ id 1jRENQ-00059B-Im
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 12:21:18 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C15D620784;
- Wed, 22 Apr 2020 12:21:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9BFA12098B;
+ Wed, 22 Apr 2020 12:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587558089;
- bh=uTnSHZgTorqkewav8qzuhobJnISC6r8/hTTbKzB5kLI=;
+ s=default; t=1587558075;
+ bh=Uhg6Lz8NRpX5GBeKvmPIrvA3kpxFs/g2JI7KzreZ668=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Cg9fJJjjqr5IkFULIXEWv9jyLG5oXSvfDi8uOTdVpTTUwBqq04L5R5ZvCo348fvj+
- XgMt2rjJu0oTlym48R+MBetcjoBR1t1DtrrsTVBs5XT1zdDNWRH8xpC1MDo3K83BMl
- WVk+CppWSOw6i/RBdHIC871UZ8Sg/1qjTSVjF1/w=
+ b=yzuk7mVSs2Ik7bJISLgrjG4iohIP9KKxbmlzo/rtD9CtWgIsI782EBlDa7rhrxw8l
+ xz2GjVbefvEBSRJWIu1NQU5w/Mq3uzvHZ8J4D5MuaKYj7ZojpdDfvVjwpHq9W2Msbw
+ x+pwjwLn3SetUJEvMRlMX1X7658TnJ89w/EYbXW4=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jRE3w-005UI7-Ur; Wed, 22 Apr 2020 13:01:09 +0100
+ id 1jRE3x-005UI7-VY; Wed, 22 Apr 2020 13:01:10 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 15/26] KVM: arm64: sve: Use __vcpu_sys_reg() instead of raw
+Subject: [PATCH 16/26] KVM: arm64: pauth: Use ctxt_sys_reg() instead of raw
  sys_regs access
-Date: Wed, 22 Apr 2020 13:00:39 +0100
-Message-Id: <20200422120050.3693593-16-maz@kernel.org>
+Date: Wed, 22 Apr 2020 13:00:40 +0100
+Message-Id: <20200422120050.3693593-17-maz@kernel.org>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200422120050.3693593-1-maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
@@ -63,8 +63,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_052130_760818_4891CCFA 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20200422_052116_829681_7681D2F8 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,27 +113,45 @@ consistently.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/fpsimd.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/arm64/kvm/handle_exit.c | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/kvm/fpsimd.c b/arch/arm64/kvm/fpsimd.c
-index e329a36b2bee5..e503caff14d1e 100644
---- a/arch/arm64/kvm/fpsimd.c
-+++ b/arch/arm64/kvm/fpsimd.c
-@@ -109,12 +109,10 @@ void kvm_arch_vcpu_put_fp(struct kvm_vcpu *vcpu)
- 	local_irq_save(flags);
+diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
+index aacfc55de44cb..1feb0eb3174a3 100644
+--- a/arch/arm64/kvm/handle_exit.c
++++ b/arch/arm64/kvm/handle_exit.c
+@@ -162,10 +162,11 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	return 1;
+ }
  
- 	if (vcpu->arch.flags & KVM_ARM64_FP_ENABLED) {
--		u64 *guest_zcr = &vcpu->arch.ctxt.sys_regs[ZCR_EL1];
--
- 		fpsimd_save_and_flush_cpu_state();
+-#define __ptrauth_save_key(regs, key)						\
++
++#define __ptrauth_save_key(ctxt, key)						\
+ ({										\
+-	regs[key ## KEYLO_EL1] = read_sysreg_s(SYS_ ## key ## KEYLO_EL1);	\
+-	regs[key ## KEYHI_EL1] = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
++	ctxt_sys_reg(ctxt, key ## KEYLO_EL1) = read_sysreg_s(SYS_ ## key ## KEYLO_EL1); \
++	ctxt_sys_reg(ctxt, key ## KEYHI_EL1) = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
+ })
  
- 		if (guest_has_sve)
--			*guest_zcr = read_sysreg_s(SYS_ZCR_EL12);
-+			__vcpu_sys_reg(vcpu, ZCR_EL1) = read_sysreg_s(SYS_ZCR_EL12);
- 	} else if (host_has_sve) {
- 		/*
- 		 * The FPSIMD/SVE state in the CPU has not been touched, and we
+ /*
+@@ -179,11 +180,11 @@ void kvm_arm_vcpu_ptrauth_trap(struct kvm_vcpu *vcpu)
+ 	if (vcpu_has_ptrauth(vcpu)) {
+ 		vcpu_ptrauth_enable(vcpu);
+ 		ctxt = vcpu->arch.host_cpu_context;
+-		__ptrauth_save_key(ctxt->sys_regs, APIA);
+-		__ptrauth_save_key(ctxt->sys_regs, APIB);
+-		__ptrauth_save_key(ctxt->sys_regs, APDA);
+-		__ptrauth_save_key(ctxt->sys_regs, APDB);
+-		__ptrauth_save_key(ctxt->sys_regs, APGA);
++		__ptrauth_save_key(ctxt, APIA);
++		__ptrauth_save_key(ctxt, APIB);
++		__ptrauth_save_key(ctxt, APDA);
++		__ptrauth_save_key(ctxt, APDB);
++		__ptrauth_save_key(ctxt, APGA);
+ 	} else {
+ 		kvm_inject_undefined(vcpu);
+ 	}
 -- 
 2.26.1
 
