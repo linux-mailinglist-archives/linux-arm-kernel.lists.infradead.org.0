@@ -2,62 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D14EA1B3B0C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:19:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26F1D1B3B1F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MnoV54AuLwrFEoPJEZHUiUAl+Em0EoTcxSqDW1rBl2I=; b=dEciOKZCg7psTJ
-	4MBOBne6iNNzDyFGpbxff4gdrzKozYVPOIxqmzb/J7KSrjiICznAjERg76IqEorPdrU+zyJlA2KxJ
-	PwGJAHCei7GQJ/J51e2Jq4Vqh4wCRZ4CVeolN1sQIjhiLfDbP8sDQxw7KmvMV7fknFUeYLSqAKq3U
-	o8SGPl34PcJZsSnZp+m5Dvdm6JPLRWu86+htT/ua+IPZN1RVyk81Emq73d/wYDv0a5f6GmVnZNpU0
-	ETvX9Kvt3moLQH3ntHmw1nCabV14vTQN13gvx0BEMwrYg+2pn9Debm7weLRTVrq8dViInyArAAU1E
-	7aANIxlA1/ijGiveLntQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ERckS49wzr3iNE4n3hn6b8QbJmJFDK/0+UzVCMlHyZM=; b=YpvCOZHjn3gI5D/sBCevmGSHU
+	0Jm5RSHkd1tGREQ3GpcOS4tL3pUychzDNdF0ze19wlsm2dX4ePUvxFYLWVW9UNUCLKFL9k6COZEOK
+	tRB0nr2v5PggWfjjbYgQTXj/a5XBBqt/3B7pQDpDCgvW3oBSQTF13QbLV6j/lHHemHsKN8rTTtalM
+	p20Ck32UKjITHwV4hFfdP/NaR641n852HmzozJfBGuxzmJikkMXF62Eo3gcO6/zAOsZttpkepvh5O
+	7IG6s9+AnolGKuUgM9M71m4lUVc97H7BScKO8mwzXubgdmiXosYPClIMzoICnaSH4syhqm4Tc7O4i
+	6iErX5UAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRBXB-0002p9-PF; Wed, 22 Apr 2020 09:19:09 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jRBbI-0006dj-Io; Wed, 22 Apr 2020 09:23:24 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRBX0-0002nV-Fj
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:19:00 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 60C65201036;
- Wed, 22 Apr 2020 11:18:54 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 53E5620101B;
- Wed, 22 Apr 2020 11:18:54 +0200 (CEST)
-Received: from localhost (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 3E942202AF;
- Wed, 22 Apr 2020 11:18:54 +0200 (CEST)
-Date: Wed, 22 Apr 2020 12:18:54 +0300
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 01/13] mfd: Add i.MX generic mix support
-Message-ID: <20200422091854.rhtkcfrdptwofngs@fsr-ub1664-175>
-References: <1586937773-5836-1-git-send-email-abel.vesa@nxp.com>
- <1586937773-5836-2-git-send-email-abel.vesa@nxp.com>
- <20200417080747.GE2167633@dell>
+ id 1jRBb7-0006ca-Fj
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:23:15 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 620035C00C7;
+ Wed, 22 Apr 2020 05:23:04 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 22 Apr 2020 05:23:04 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=1iiAxI87Jk6J/8UmvUUTFd23t4R
+ KFlVM9d53BckbYUA=; b=tCJ10biHAYsxSq9tpQ5YUelEtK0uTKnYesz6jRvllMy
+ DzJfyJIkbHiojXUKVZK2gcEWm64vB/XHmPf5C8chjW5yf0Sy25y5kXfOmpLlVgKX
+ CDRjtQ87c8ZQkZPJ6rWDlHQqH3NXakI3C6Gi2erHVVcfm/k58vAa444b1Y3F911f
+ fkponJTw290yzLGFsuWeflhGQnEpnOfyHr4wCPd4HyN5w2lO8L9DUWATVgtwPFZX
+ XsXUhvZSVZdBmsCUObubSo8b7wsIutEGzYSnJwRdnajVI7HCktbseWHMROHMPIFC
+ dNMmSdefPtpXEyzRCxD5HeTgn77P+QHIHiyBWocWJ+Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=1iiAxI
+ 87Jk6J/8UmvUUTFd23t4RKFlVM9d53BckbYUA=; b=rTrpxUvlaG57zQcEhbyQFR
+ scLw5q/EBcPPiUYQYfv+TtQuDl5tQMM6y4ayy0mBaVJxSYe+ab49aUtUF8djRdnD
+ wz8MTg3iZrn2b0MUhAxmF/cR5MVSk00hJmglARw4gUWDgAI2OH0aN6/hilZ1bsa+
+ WCehGCXHWg2xaDd0flxXiYGPbWgR/iqLN3filaQ9Vn8m1OWu60V0RJ0A3+lJ2VDE
+ +WxB3pU+2IHT7HuEl7kcm7n54t2cpOVM4u6pnjWKTknpcRaOJppxDAHegoaUuZ0W
+ i7TAu1O30MAmCelWj6vvr14FKKJjdz60K35OroglaBCx6TV/3KzZzT6QeVR3GLZg
+ ==
+X-ME-Sender: <xms:9gygXuqLxcV5RXac6UmfFUoxTMx4ol2ao0DU9zLR_7UWLNliJ6KSsg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeejgddufecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:9gygXrHqeGRYE1TOf9xQZXIaO7WhEwB5wjF4oRJxGiO3-XayqZAFZQ>
+ <xmx:9gygXgln_YBRSKIp1ZsxKemoxMtHFLS6jFUvGzTpUH3Ge4DHMLWmLQ>
+ <xmx:9gygXhF6YxauogiZdvGUX96GqVef5Ou98xuARGrbdnZlZyb8otNf5A>
+ <xmx:-AygXpf7ik1bc3QstrzMM91isWv_alFcPn0oKiQ0E9TZMWt2ScbOOw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6A19B3280059;
+ Wed, 22 Apr 2020 05:23:02 -0400 (EDT)
+Date: Wed, 22 Apr 2020 11:23:00 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
+Subject: Re: [PATCH] drm/sun4i: hdmi ddc clk: Fix size of m divider
+Message-ID: <20200422092300.444wcaurdwyrorow@gilmour.lan>
+References: <20200413095457.1176754-1-jernej.skrabec@siol.net>
+ <1742537.tdWV9SEqCh@jernej-laptop>
+ <20200415104214.ndkkxfnufkxgu53r@gilmour.lan>
+ <1785843.taCxCBeP46@jernej-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200417080747.GE2167633@dell>
-User-Agent: NeoMutt/20180622
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <1785843.taCxCBeP46@jernej-laptop>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_021858_796212_44EB3A95 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_022313_660846_C2DBC9D9 
+X-CRM114-Status: GOOD (  26.56  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,68 +105,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jacky Bai <ping.bai@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============1218797080346812370=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAtMDQtMTcgMDk6MDc6NDcsIExlZSBKb25lcyB3cm90ZToKPiBPbiBXZWQsIDE1IEFwciAy
-MDIwLCBBYmVsIFZlc2Egd3JvdGU6Cj4KPiA+IFNvbWUgb2YgdGhlIGkuTVggU29DcyBoYXZlIGEg
-SVAgZm9yIGludGVyZmFjaW5nIHRoZSBkZWRpY2F0ZWQgSVBzIHdpdGgKPiA+IGNsb2NrcywgcmVz
-ZXRzIGFuZCBpbnRlcnJ1cHRzLCBwbHVzIHNvbWUgb3RoZXIgc3BlY2lmaWMgY29udHJvbCByZWdp
-c3RlcnMuCj4gPiBUbyBhbGxvdyB0aGUgZnVuY3Rpb25hbGl0eSB0byBiZSBzcGxpdCBiZXR3ZWVu
-IGRyaXZlcnMsIHRoaXMgTUZEIGRyaXZlciBpcwo+ID4gYWRkZWQgdGhhdCBoYXMgb25seSB0d28g
-cHVycG9zZXM6IHJlZ2lzdGVyIHRoZSBkZXZpY2VzIGFuZCBtYXAgdGhlIGVudGlyZQo+ID4gcmVn
-aXN0ZXIgYWRkcmVzc2VzLiBFdmVyeXRoaW5nIGVsc2UgaXMgbGVmdCB0byB0aGUgZGVkaWNhdGVk
-IGRyaXZlcnMgdGhhdAo+ID4gd2lsbCBiaW5kIHRvIHRoZSByZWdpc3RlcmVkIGRldmljZXMuCj4g
-Pgo+ID4gU2lnbmVkLW9mZi1ieTogQWJlbCBWZXNhIDxhYmVsLnZlc2FAbnhwLmNvbT4KPiA+IC0t
-LQo+ID4gIGRyaXZlcnMvbWZkL0tjb25maWcgICB8IDExICsrKysrKysrKysrCj4gPiAgZHJpdmVy
-cy9tZmQvTWFrZWZpbGUgIHwgIDEgKwo+ID4gIGRyaXZlcnMvbWZkL2lteC1taXguYyB8IDQ4ICsr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwo+ID4gIDMgZmls
-ZXMgY2hhbmdlZCwgNjAgaW5zZXJ0aW9ucygrKQo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2
-ZXJzL21mZC9pbXgtbWl4LmMKPgo+IEZvciBjb21wbGV0ZW5lc3MgLSBBcm5kJ3MgcmVwbHkgdG8g
-dGhpcyBwYXRjaDoKPgo+ICBodHRwczovL3d3dy5zcGluaWNzLm5ldC9saXN0cy9saW51eC1jbGsv
-bXNnNDc3MDMuaHRtbAoKSSdtIHJlcGx5aW5nIGhlcmUgdG8gQXJuZCdzIHJlcGx5LgoKSSdtIHRy
-eWluZyB0byBnaXZlIGhlcmUgYSB3aG9sZSBwaWN0dXJlIG9mIHRoZSBlbnRpcmUgcHJvYmxlbSB3
-aGlsZSB0aGUKZG9jdW1lbnRhdGlvbiBmb3IgaS5NWDhNUCBpcyBfbm90IHlldF8gcHVibGljLgoK
-SGlzdG9yaWNhbGx5LCBlYWNoIElQIHdvdWxkIGhhdmUgaXRzIG93biBlbmNsb3N1cmUgZm9yIGFs
-bCB0aGUgcmVsYXRlZCBHUFJzLgpTdGFydGluZyB3aXRoIGkuTVg4TVAgc29tZSBHUFJzIChhbmQg
-c29tZSBzdWJwYXJ0cykgZnJvbSB0aGUgSVAgd2VyZSBwbGFjZWQKaW5zaWRlIHRoZXNlIG1peGVz
-LgoKQXVkaW9taXggZm9yIGV4YW1wbGUsIGhhcyBtdWx0aXBsZSBTQUlzLCBhIFBMTCwgYW5kIHNv
-bWUgcmVzZXQgYml0cyBmb3IgRUFSQyBhbmQKc29tZSBHUFJzIGZvciBBdWRpb0RTUC4gVGhpcyBt
-ZWFucyB0aGF0IGkuTVg4TVAgaGFzIDcgU0FJcywgMSBFQVJDIGFuZCAxIEF1ZGlvRFNQLgpGdXR1
-cmUgcGxhdGZvcm1zIG1pZ2h0IGhhdmUgZGlmZmVyZW50IG51bWJlcnMgb2YgU0FJcywgRUFSQ3Mg
-b3IgQXVkaW9EU1BzLiBUaGUgUExMCmNhbid0IGJlIHBsYWNlZCBpbiBvbmUgb2YgdGhvc2UgU0FJ
-cyBhbmQgaXQgd2FzIHBsYWNlZCBpbiBhdWRpb21peC4KVGhlIGkuTVg4TVAgaGFzIGF0IGxlYXN0
-IDQgb2YgdGhlc2UgbWl4ZXMuCgpOb3csIHRoZSBjb21tb25hbGl0aWVzIGJldHdlZW4gYWxsIG1p
-eGVzIGFyZToKIC0gaGF2ZSB0aGVpciBvd24gcG93ZXIgZG9tYWlucwogLSBkcml2ZW4gYnkgZGVk
-aWNhdGVkIGNsb2NrIHNsaWNlCiAtIGNvbnRhaW4gY2xvY2tzIGFuZCByZXNldHMKIC0gc29tZSB2
-ZXJ5IHN1YnN5c3RlbSBzcGVjaWZpYyBHUFJzCgpLbm93aW5nIHRoYXQgZWFjaCBtaXggaGFzIGl0
-cyBvd24gcG93ZXIgZG9tYWluLCBBRkFJQ1QsIGl0IG5lZWRzIHRvIGJlIHJlZ2lzdGVyZWQKYXMg
-YSBzaW5nbGUgZGV2aWNlLiBDb25zaWRlcmluZyB0aGF0IGl0IGNhbiBoYXZlIGNsb2NrcyAoYXVk
-aW9taXggaGFzIGdhdGVzLAptdXhlcyBhbmQgcGxscyksIEkgYmVsaWV2ZSB0aGF0IG5lZWRzIGEg
-Y2xvY2sgZHJpdmVyLCBldmVuIG1vcmUgc28gc2luY2UgdGhlCm11eGVzIG5lZWQgdGhlaXIgcGFy
-ZW50cyBmcm9tIHRoZSBwbGF0Zm9ybSBjbG9jayBkcml2ZXIuIFNhbWUgcHJpbmNpcGxlIGFwcGxp
-ZXMKdG8gcmVzZXQgYml0cy4gVGhlIHN1YnN5c3RlbSBzcGVjaWZpYyBHUFJzIGNhbiBiZSByZWdp
-c3RlcmVkIGFzIHN5c2NvbiBkZXZpY2VzCmFuZCB0YWtlbiBjYXJlIG9mIGJ5IGl0cyBjb3VudGVy
-cGFydCBJUCAoZS5nLiB0aGUgQXVkaW9EU1Agc3BlY2lmaWMgcmVncyB3b3VsZApiZSB0YWtlbiBj
-YXJlIG9mIGJ5IHRoZSBEU1AgZHJpdmVyLCBpZiB0aGVyZSBpcyBvbmUpLgoKTm93IGJhc2VkIG9u
-IGFsbCBvZiB0aGUgYWJvdmUsIGJ5IHVzaW5nIE1GRCB3ZSB0YWtlIGNhcmUgb2YgdGhlIHBvd2Vy
-IGRvbWFpbgpjb250cm9sIGZvciB0aGUgZW50aXJlIG1peCwgcGx1cywgdGhlIE1GRCBkb2Vzbid0
-IGhhdmUgYW55IGtpbmQgb2YKZnVuY3Rpb25hbGl0eSBieSBpdHMgb3duLCByZWx5aW5nIG9uIGl0
-cyBjaGlsZHJlbiBkZXZpY2VzIHRoYXQgYXJlIHBvcHVsYXRlZApiYXNlZCBvbiB3aGF0IGlzIGlu
-IHRoZSBtaXggTUZEIGRldmljZXRyZWUgbm9kZS4KCj4gLS0KPiBMZWUgSm9uZXMgW+adjueQvOaW
-r10KPiBMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKPiBMaW5hcm8ub3JnIOKUgiBPcGVu
-IHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKPiBGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8
-IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+--===============1218797080346812370==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="7oskm5d3tnjhoykn"
+Content-Disposition: inline
+
+
+--7oskm5d3tnjhoykn
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Wed, Apr 15, 2020 at 07:52:28PM +0200, Jernej =C5=A0krabec wrote:
+> Dne sreda, 15. april 2020 ob 12:42:14 CEST je Maxime Ripard napisal(a):
+> > On Mon, Apr 13, 2020 at 06:09:08PM +0200, Jernej =C5=A0krabec wrote:
+> > > Dne ponedeljek, 13. april 2020 ob 16:12:39 CEST je Chen-Yu Tsai=20
+> napisal(a):
+> > > > On Mon, Apr 13, 2020 at 6:11 PM Chen-Yu Tsai <wens@csie.org> wrote:
+> > > > > On Mon, Apr 13, 2020 at 5:55 PM Jernej Skrabec
+> > > > > <jernej.skrabec@siol.net>
+> > >=20
+> > > wrote:
+> > > > > > m divider in DDC clock register is 4 bits wide. Fix that.
+> > > > > >=20
+> > > > > > Fixes: 9c5681011a0c ("drm/sun4i: Add HDMI support")
+> > > > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > > > >=20
+> > > > > Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+> > > >=20
+> > > > Cc stable?
+> > >=20
+> > > I don't think it's necessary:
+> > > 1. It doesn't change much (anything?) for me when reading EDID. I don=
+'t
+> > > think it's super important to have precise DDC clock in order to prop=
+erly
+> > > read EDID. 2. No matter if it has "Cc stable" tag or not, it will be
+> > > eventually picked for stable due to fixes tag.
+> > >=20
+> > > This was only small observation when I was researching EDID readout i=
+ssue
+> > > on A20 board, but sadly, I wasn't able to figure out why reading it
+> > > sometimes fails. I noticed similar issue on SoCs with DE2 (most
+> > > prominently on OrangePi PC2 - H5), but there was easy workaround - I =
+just
+> > > disabled video driver in U- Boot. However, if A20 display driver gets
+> > > disabled in U-Boot, it totally breaks video output on my TV when Linux
+> > > boots (no output). I guess there is more fundamental problem with clo=
+cks
+> > > than just field size. I think we should add more constraints in clock
+> > > driver, like preset some clock parents and not allow to change parents
+> > > when setting rate, but carefully, so simplefb doesn't break. Such
+> > > constraints should also solve problems with dual head setups.
+> > I disagree here. Doing all sorts of special case just doesn't scale,
+> > and we'll never have the special cases sorted out on all the boards
+> > (and it's a nightmare to maintain).
+> >=20
+> > Especially since it's basically putting a blanket over the actual
+> > issue and looking the other way. If there's something wrong with how
+> > we deal with (re)parenting, we should fix that. It impacts more than
+> > just DRM, and all the SoCs.
+>=20
+> I agree with you that automatic solution would be best, but I just don't =
+see
+> it how it would be done.
+
+> Dual head display pipeline is pretty complex for clock driver to get it r=
+ight
+> on it's own. There are different possible setups and some of them are hot
+> pluggable, like HDMI.
+
+Do you have an actual scenario that is broken right now?
+
+> And there are also SoC specific quirks, like A64, where for some reason, =
+MIPI
+> DPHY and HDMI PHY share same clock parent - PLL_VIDEO0. Technically, MIPI=
+ DPHY
+> can be clocked from PLL_PERIPH0 (fixed to 600 MHz), but that's not really
+> helpful. I'm not even sure if there is any good solution to this - certai=
+nly
+> HDMI and MIPI can't claim exclusivity and somehow best common rate must be
+> found for PLL_VIDEO0, if that's even possible.
+
+IIRC the DSI DPHY needs a clock running at 297MHz, which is pretty much wha=
+t the
+HDMI PHY should need too (or 148.5, but that's pretty easy to generate from
+297). So which problem do we have there?
+
+> I was sure that HDMI PHY on A64 can be clocked from PLL_VIDEO1, which wou=
+ld
+> solve main issue, but to date, I didn't find any way to do that.
+>=20
+> That's pretty off topic, so I hope original patch can be merged as-is.
+
+It does, sorry
+
+Acked-by: Maxime Ripard <maxime@cerno.tech>
+
+Maxime
+
+--7oskm5d3tnjhoykn
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqAM9AAKCRDj7w1vZxhR
+xTmVAP9kvmX4WaSBtV/XQiF2vUsWwoTSx6VEdAN+fmPtFRk1AAEAmRVLotyUAtrH
+emjt+9TNkeEsYLIWoTgSrr6rcGDv8QQ=
+=JYMX
+-----END PGP SIGNATURE-----
+
+--7oskm5d3tnjhoykn--
+
+
+--===============1218797080346812370==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1218797080346812370==--
+
