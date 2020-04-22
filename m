@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 614C61B4774
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:37:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E189E1B4770
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:37:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=omlyeUIK7Evp6mDd9vuCOHozT/C+cN55UlOHhqovOSA=; b=RFetsDYZ7CCPyU
-	1xsP/2wtCisddv+SsaLk7Sxg9pjkCWcubb5idohkfOYA8Dg8og8e9zCEsB/VNaQg5rdC5YsSWPpoI
-	BCbX/yXvRxJ33HEwAm2+DgIzPuC90MdeDvi2j4+CjfmsCQ87DN8MNYCkIeTTOrO3FyFkUhdDZPJKa
-	Y79HuqeuZWkdlnVbN3T3aaS9Y6klRATaJ40tPkTYPXlFDIcPIoqQDa2eLRV/aA18md9e5K3GItfG8
-	ODZ8QzQR1C1oSLERF6v3+avyAob2j5WyTwdWDpMprn2ytHjQl+zed21RfmcDiCob0HgZ0Cjx4kQG4
-	txbLO2Wdk5gw+vsj5tGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7RYHyLesjykFsz7NvAwWdS7S41MKJ/bMspuu+mLOb3c=; b=Cf+8M1x7/6A2Ja
+	zERVRv774m9K3srvRovE/VfAvfxFNEp6bPX17F7+V7oc4Dsh9v6jNjWVSCe6F/qmhHwo3rGrLKP06
+	UfHvVC555VXPzItRcXFkddqMvkT861CReAmTAEmLDH5u+6hG4jlHuj8qF+keCs3IwT9EQOA7aueR6
+	ufk7GlbLCFh410StWZSN29mKMkRISxwbc5Ie3uo4kENA08efzIxokrqDlboPxK6RNM7hLUv5hToJM
+	YKX/mRHd9VlJqM43GkO5WxkLtScPmd7meheU5VPjHzRrOyvZ0xNSpFUtBuzuENCeOf97O3vaiSa3T
+	qUhXbqiGDcf7zFVsfFqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRGVL-0001Hl-RO; Wed, 22 Apr 2020 14:37:35 +0000
+	id 1jRGV6-00018Z-7x; Wed, 22 Apr 2020 14:37:20 +0000
 Received: from conuserg-09.nifty.com ([210.131.2.76])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRGUu-00017M-Aj
+ id 1jRGUu-00017N-8z
  for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 14:37:10 +0000
 Received: from oscar.flets-west.jp (softbank126090202047.bbtec.net
  [126.90.202.47]) (authenticated)
- by conuserg-09.nifty.com with ESMTP id 03MEaaEN012204;
- Wed, 22 Apr 2020 23:36:36 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-09.nifty.com 03MEaaEN012204
+ by conuserg-09.nifty.com with ESMTP id 03MEaaEO012204;
+ Wed, 22 Apr 2020 23:36:37 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-09.nifty.com 03MEaaEO012204
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1587566197;
- bh=qtkMM7xy3zIEAGobkYGRENcGZkyxHsxrtwH6kA03juo=;
- h=From:To:Cc:Subject:Date:From;
- b=Bbe8fkiZi25X8K0u0JC3pEpd+M3uyHKiWQ3Fh4HnAabPhqW4l2sjIJ8g5wCkeNGnW
- YNrhw/idkidv98yShZ11vbP2W0VlKyHelFmYmP6L2gheRnHRMmS2RBpYp98hIPpyrA
- SYusnuIHSSaRIo+JSYIQ0Q5+U0Qz5NYFx901ctAXi5ylhE/Z0Kl/o3HPLiaH1IZ7+p
- 69cyQwSd/CdB4f1FNHz2ZGqz0eAuh7fDdAbUFsFIwAogFgZgumHJGtVN3Xs+zV4vDG
- TDj1XXFVqYE0v/h0AM+oLFNxl8ZvlQw2wDB2N7gKV6oOQ6IQ8HMX0Mevz2V1mhGaM3
- HwxyadhtZ83FA==
+ s=dec2015msa; t=1587566198;
+ bh=Bznt0cL8BIH1py8BFs9AtQCl/NitEIeYc3BeOYY2PNY=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=SGBWRKZDHwt+YDrs9Qp7PDjDXkJtfJ45kaCh74pm7CQtbhguLhJsnI0tmJ3zfHwCR
+ PkkALjzHdrXiZ8ygG1z6BDkjKsCz7gBD6N18BMNhhcX12ft1L6ET0/plZBBmWP0hCW
+ Xd7uQF0FoXR09CyytL5Votq8JF8MBFv/oD6TQef6IAyEGm5tooQRptxAMYEXPT/SKS
+ pqSipA1aN98IGX8BlgM3x3MJ8IlNHxPGd2CNg9a+omLm5Olk/iugxgXKpi2A28N9tB
+ spzOaEEsZ4UmxqHhs0U50MnHxoVkYOnWdsjgBdqNegXEUcXP2RpQ970/TYQdM1id7e
+ yLBPDHGNCND2Q==
 X-Nifty-SrcIP: [126.90.202.47]
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] ARM: dts: uniphier: add #address-cells and #size-cells to
- SPI nodes
-Date: Wed, 22 Apr 2020 23:36:32 +0900
-Message-Id: <20200422143633.1972154-1-yamada.masahiro@socionext.com>
+Subject: [PATCH 2/2] arm64: dts: uniphier: add #address-cells and #size-cells
+ to SPI nodes
+Date: Wed, 22 Apr 2020 23:36:33 +0900
+Message-Id: <20200422143633.1972154-2-yamada.masahiro@socionext.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200422143633.1972154-1-yamada.masahiro@socionext.com>
+References: <20200422143633.1972154-1-yamada.masahiro@socionext.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_073708_578707_70761BC8 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20200422_073708_528363_2AC99DB1 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -85,23 +87,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Documentation/devicetree/bindings/spi/spi-uniphier.txt requires
 #address-cells and #size-cells, but they are missing in actual DT files.
 
-Due to this, 'make ARCH=arm dtbs_check' is super-noisy.
+Due to this, 'make ARCH=arm64 dtbs_check' is super-noisy.
 
 Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
 
- arch/arm/boot/dts/uniphier-ld4.dtsi  | 2 ++
- arch/arm/boot/dts/uniphier-pro4.dtsi | 2 ++
- arch/arm/boot/dts/uniphier-pro5.dtsi | 4 ++++
- arch/arm/boot/dts/uniphier-pxs2.dtsi | 4 ++++
- arch/arm/boot/dts/uniphier-sld8.dtsi | 2 ++
- 5 files changed, 14 insertions(+)
+ arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 4 ++++
+ arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 8 ++++++++
+ arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 4 ++++
+ 3 files changed, 16 insertions(+)
 
-diff --git a/arch/arm/boot/dts/uniphier-ld4.dtsi b/arch/arm/boot/dts/uniphier-ld4.dtsi
-index 06e7400d2940..b52957ccda0d 100644
---- a/arch/arm/boot/dts/uniphier-ld4.dtsi
-+++ b/arch/arm/boot/dts/uniphier-ld4.dtsi
-@@ -67,6 +67,8 @@ spi: spi@54006000 {
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
+index 60ff9b4f9126..15dcfc259854 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
+@@ -129,6 +129,8 @@ spi0: spi@54006000 {
  			compatible = "socionext,uniphier-scssi";
  			status = "disabled";
  			reg = <0x54006000 0x100>;
@@ -110,33 +110,7 @@ index 06e7400d2940..b52957ccda0d 100644
  			interrupts = <0 39 4>;
  			pinctrl-names = "default";
  			pinctrl-0 = <&pinctrl_spi0>;
-diff --git a/arch/arm/boot/dts/uniphier-pro4.dtsi b/arch/arm/boot/dts/uniphier-pro4.dtsi
-index 1c866f0306fc..012d9b181311 100644
---- a/arch/arm/boot/dts/uniphier-pro4.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pro4.dtsi
-@@ -75,6 +75,8 @@ spi0: spi@54006000 {
- 			compatible = "socionext,uniphier-scssi";
- 			status = "disabled";
- 			reg = <0x54006000 0x100>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
- 			interrupts = <0 39 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi0>;
-diff --git a/arch/arm/boot/dts/uniphier-pro5.dtsi b/arch/arm/boot/dts/uniphier-pro5.dtsi
-index 8f1ae0957f5f..03a9fd33243a 100644
---- a/arch/arm/boot/dts/uniphier-pro5.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pro5.dtsi
-@@ -160,6 +160,8 @@ spi0: spi@54006000 {
- 			compatible = "socionext,uniphier-scssi";
- 			status = "disabled";
- 			reg = <0x54006000 0x100>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
- 			interrupts = <0 39 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi0>;
-@@ -171,6 +173,8 @@ spi1: spi@54006100 {
+@@ -140,6 +142,8 @@ spi1: spi@54006100 {
  			compatible = "socionext,uniphier-scssi";
  			status = "disabled";
  			reg = <0x54006100 0x100>;
@@ -145,11 +119,11 @@ index 8f1ae0957f5f..03a9fd33243a 100644
  			interrupts = <0 216 4>;
  			pinctrl-names = "default";
  			pinctrl-0 = <&pinctrl_spi1>;
-diff --git a/arch/arm/boot/dts/uniphier-pxs2.dtsi b/arch/arm/boot/dts/uniphier-pxs2.dtsi
-index 2f2a24994c69..a04fba6d4064 100644
---- a/arch/arm/boot/dts/uniphier-pxs2.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pxs2.dtsi
-@@ -173,6 +173,8 @@ spi0: spi@54006000 {
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
+index afa90b762ea9..f4a56b208837 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
+@@ -234,6 +234,8 @@ spi0: spi@54006000 {
  			compatible = "socionext,uniphier-scssi";
  			status = "disabled";
  			reg = <0x54006000 0x100>;
@@ -158,7 +132,7 @@ index 2f2a24994c69..a04fba6d4064 100644
  			interrupts = <0 39 4>;
  			pinctrl-names = "default";
  			pinctrl-0 = <&pinctrl_spi0>;
-@@ -184,6 +186,8 @@ spi1: spi@54006100 {
+@@ -245,6 +247,8 @@ spi1: spi@54006100 {
  			compatible = "socionext,uniphier-scssi";
  			status = "disabled";
  			reg = <0x54006100 0x100>;
@@ -167,11 +141,29 @@ index 2f2a24994c69..a04fba6d4064 100644
  			interrupts = <0 216 4>;
  			pinctrl-names = "default";
  			pinctrl-0 = <&pinctrl_spi1>;
-diff --git a/arch/arm/boot/dts/uniphier-sld8.dtsi b/arch/arm/boot/dts/uniphier-sld8.dtsi
-index 09992163e1f4..96a766deb8d1 100644
---- a/arch/arm/boot/dts/uniphier-sld8.dtsi
-+++ b/arch/arm/boot/dts/uniphier-sld8.dtsi
-@@ -67,6 +67,8 @@ spi: spi@54006000 {
+@@ -256,6 +260,8 @@ spi2: spi@54006200 {
+ 			compatible = "socionext,uniphier-scssi";
+ 			status = "disabled";
+ 			reg = <0x54006200 0x100>;
++			#address-cells = <1>;
++			#size-cells = <0>;
+ 			interrupts = <0 229 4>;
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&pinctrl_spi2>;
+@@ -267,6 +273,8 @@ spi3: spi@54006300 {
+ 			compatible = "socionext,uniphier-scssi";
+ 			status = "disabled";
+ 			reg = <0x54006300 0x100>;
++			#address-cells = <1>;
++			#size-cells = <0>;
+ 			interrupts = <0 230 4>;
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&pinctrl_spi3>;
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
+index ba18a9661ca2..72f16881cf53 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
+@@ -193,6 +193,8 @@ spi0: spi@54006000 {
  			compatible = "socionext,uniphier-scssi";
  			status = "disabled";
  			reg = <0x54006000 0x100>;
@@ -180,6 +172,15 @@ index 09992163e1f4..96a766deb8d1 100644
  			interrupts = <0 39 4>;
  			pinctrl-names = "default";
  			pinctrl-0 = <&pinctrl_spi0>;
+@@ -204,6 +206,8 @@ spi1: spi@54006100 {
+ 			compatible = "socionext,uniphier-scssi";
+ 			status = "disabled";
+ 			reg = <0x54006100 0x100>;
++			#address-cells = <1>;
++			#size-cells = <0>;
+ 			interrupts = <0 216 4>;
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&pinctrl_spi1>;
 -- 
 2.25.1
 
