@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3C021B4C5B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:00:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39CA11B4C5D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 20:01:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D+TJwJiPUoQwuN52dFMoS/7yRsHioQqQ6z1+WiSl+pU=; b=Sos7kymImKWroh
-	t/1gd4UIHcxTZ3jfRIfh4u/EJ9tqY+pw3688jhxoi9GIm83WI4YicZsan3ZkZc1X9LVo/LcYknr9U
-	Y43YWMD48OP3LhC4nePkQbAqkgb0Uuhwl7vNimi9ZcHFiEP7e5hcGzCIWarFnDLZf9rmDXr6C/vS9
-	S0HeCYmXb3gK9Ci21jx2OyFIbPCvd+R52Ab9sce5+xRvq96xNwgzTTvWTiS85jrPzIYqVetU7whB3
-	1uo89t5EYHIi1eE9PJQUh3gXquUvzYAfDyZeIDpEdFeV7fRQpPws+pJwpByg5n/yVcCLAhlxtR0XC
-	zxw/eWQq5oD3Ev6LkLoQ==;
+	List-Owner; bh=FMTWQtmJUEu4MGZ86MDMveKPMuk64YXFeIZ3zUnmntA=; b=KJLxBrfLIKkXQU
+	uOEdOZzMfid3MiGLezttwbX2vNFrxJ4hqPD3t9wukoXRgskf2yG+AcajYbqy4ljI5/0NiBbK7yCeZ
+	Kv5HHbcbmvt2HPxvSPO479OInmzb3GDG7ql/E3S6s70XN5zpr09rFQnNQl+i2TEPH39m/h0XE4io3
+	+LlwGAYC3KpFrbF7SH8rSTB7bL9ZgfVsg33/yp6aOIs5mlh2iAn9ay76mvSloibZIr2qz4KIoQeIk
+	AbZYS9uqkmKKyGKXt8VWCnIIpEqQh2FvNFiWAdJO0r+5eAcMnyN8AmJ6bjB65jrBtDLaVyUHSkBRe
+	MpLGMG82qXB/1WcvKOkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRJfs-0007Oh-Gn; Wed, 22 Apr 2020 18:00:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRJfl-0007OF-2B
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:00:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF72A1FB;
- Wed, 22 Apr 2020 11:00:31 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7EB83F6CF;
- Wed, 22 Apr 2020 11:00:30 -0700 (PDT)
-Date: Wed, 22 Apr 2020 19:00:28 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 0/3] arm64: Open code .arch_extension
-Message-ID: <20200422180027.GH3585@gaia>
-References: <20200325114110.23491-1-broonie@kernel.org>
- <CAMj1kXH=g5N4ZtnZeX5N8hf9cnWVam4Htnov6qAmQwD58Wp73Q@mail.gmail.com>
- <20200325115038.GD4346@sirena.org.uk>
+	id 1jRJgB-0007cd-Ti; Wed, 22 Apr 2020 18:00:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRJg0-0007aS-1h
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 18:00:49 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E90802076E;
+ Wed, 22 Apr 2020 18:00:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587578447;
+ bh=NABYNKvs9sdWR1s9Ukqb7xA7e+KXEGWr4qmakQtX2oQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bIWTCp0/uGUSMGuwWVLFng26QFFNEEyjpTIYnEYtTtH7rdtaX57uIzFs/BzvdR9ni
+ ePP+N0LiLAOGVfPbD9BA0ZOSUWHgZJ8tEHTtYdx82R6CSL4NLvVuWj/VZ9123jk92Y
+ AcNNFlBLukBMtR23rMiE1xDoXYGQUyefGhPfX8hc=
+Date: Wed, 22 Apr 2020 19:00:40 +0100
+From: Will Deacon <will@kernel.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v12 01/12] add support for Clang's Shadow Call Stack (SCS)
+Message-ID: <20200422180040.GC3121@willie-the-truck>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200421021453.198187-1-samitolvanen@google.com>
+ <20200421021453.198187-2-samitolvanen@google.com>
+ <202004221052.489CCFEBC@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200325115038.GD4346@sirena.org.uk>
+In-Reply-To: <202004221052.489CCFEBC@keescook>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_110033_156285_F4D377DB 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_110048_112875_6F2A460E 
+X-CRM114-Status: GOOD (  11.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,46 +79,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Biggers <ebiggers@google.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
+ kernel-hardening@lists.openwall.com, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Sami Tolvanen <samitolvanen@google.com>,
+ Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
+ Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
+ linux-arm-kernel@lists.infradead.org, Michal Marek <michal.lkml@markovi.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 25, 2020 at 11:50:38AM +0000, Mark Brown wrote:
-> On Wed, Mar 25, 2020 at 12:45:11PM +0100, Ard Biesheuvel wrote:
-> > I don't think this is the right fix. What is wrong with keeping these
-> > .cpu and .arch directives in the .S files, and simply make
-> > SYM_FUNC_START() expand to something that includes .arch_extension pac
-> > or .arch_extension bti when needed? That way, we only use
-> > .arch_extension when we know the assembler supports it (given that
-> > .arch_extension support itself should predate BTI or PAC support in
-> > GAS or Clang)
+On Wed, Apr 22, 2020 at 10:54:45AM -0700, Kees Cook wrote:
+> On Mon, Apr 20, 2020 at 07:14:42PM -0700, Sami Tolvanen wrote:
+> > +void scs_release(struct task_struct *tsk)
+> > +{
+> > +	void *s;
+> > +
+> > +	s = __scs_base(tsk);
+> > +	if (!s)
+> > +		return;
+> > +
+> > +	WARN_ON(scs_corrupted(tsk));
+> > +
 > 
-> Since BTI is a mandatory feature of v8.5 there is no BTI arch_extension,
-> you can only enable it by moving the base architecture to v8.5.  You'd
-> need to use .arch and that feels likely to find us sharp edges to run
-> into.
+> I'd like to have task_set_scs(tsk, NULL) retained here, to avoid need to
+> depend on the released task memory getting scrubbed at a later time.
 
-For MTE, .arch armv8-a+memtag won't work since this is only available
-with armv8.5-a. My preference would be to have the highest arch version
-supported by the kernel in the assembler.h file, i.e. ".arch armv8.5-a"
-followed by .arch_extension in each .S file, as needed.
+Hmm, doesn't it get zeroed almost immediately by kmem_cache_free() if
+INIT_ON_FREE_DEFAULT_ON is set? That seems much better than special-casing
+SCS, as there's a tonne of other useful stuff kicking around in the
+task_struct and treating this specially feels odd to me.
 
-Forcing .S files to armv8.5 would not cause any problems with
-the base armv8.0 that the kernel image support since it shouldn't change
-the opcodes gas generates. The .S files would use alternatives anyway
-(or simply have code not called).
-
-The inline asm is slightly more problematic, especially with the clang
-builtin assembler which goes in a single pass. But we could do something
-similar to what we did with the LSE atomics and raising the base of the
-inline asm to armv8.5 (or 8.6 etc., whatever we need in the future).
-
--- 
-Catalin
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
