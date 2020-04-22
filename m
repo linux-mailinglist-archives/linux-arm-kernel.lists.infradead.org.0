@@ -2,84 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35011B4376
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 13:45:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 894151B4395
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 13:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HK9ztsr84jaVnOvZ0lhVcuy40xmd/5fTGIOB8TvgwhM=; b=DgbjGOI8/7YU91
-	WSsI3ADOQQoSXBRuOgMuDvrlOTpi7Vr8P0e2hYF/fbnWAECIM2/Nv08zwzMbOBLrRa5wTDgu2ZZyS
-	rBlDwu0jw4s24OnH/dvTA/0DvoVedOvU+PLO5n7jRL1OyAvFKt2L8maFw36xs5f4XkEaSvSR58X7O
-	0tFCk82acAcdQjrR0QJurcohQsoa8gGU6AmobOPB9W/ZQO/J14WoIdRL6Iax6KuuoLcNASTKNpfHD
-	3rHW3H+MHnnWXhVZizh/oqC7CrKEWZi0zJGex+gZSCOD1QYhqUz2KNYqMXIdplXT4sa0jYPMgEMoz
-	Z0UoE5zlyMSVzk8GWasQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BNsD51P6zdnFILw3zFYARZOqwXNBZk4p8qasTc7wKGs=; b=cW24hrB47DadJj85W+QriEEN1
+	0Rz9MfIlEGCT80H51upTIRElyu2EGpOhoVHbpo9z3KPWHQSupTa1Y2YwqmwWm2cfMZ1AzBqlBnNHE
+	71j+VzUbUTcL7JGCJztde6G/9i6zoh4gCJAcTuVojTiG8wma0GdNAnrToXNTXgUxfpA9qH8jQ/qof
+	Oz9/EYP4cPp+ljddqGAEA3AXXrP6KrLow0KJabqaCPCGJAt5l/MwEMSpm16/H++mxBlswvZ9LN52g
+	P/evUmrJhj3xmlfEcbFw1OM6Zms9oEc9+4xaBeLn8A2T3Lm+a3+U8k1DK0dEovkUlSbWbqfaT0A3U
+	fSiGAoK+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRDoI-0006oT-I0; Wed, 22 Apr 2020 11:44:58 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jRDym-00086O-IT; Wed, 22 Apr 2020 11:55:48 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRDo9-0006n0-56
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 11:44:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587555887;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=xYjsgPTBbEllvea9H8SobRIIj2A4KdZWTwT6pRyZnis=;
- b=guEBXDyAw8r58vc6D46YXpsEiBZYE6RrfxEBm2LGZRug1Y4xt+VG4WgE2EwJcQdnKFV50q
- 2NL4ldb5YYB9fa9qaqpHDR2HlPdIIoUhdzrMo7ZHnBCmXSV7KJkgsDJjhH9XhUeYwIr9/i
- o4n/MNyiftD4ii311lwLVS+oKdex3Lk=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-261-aTGTmnOjNNKKlr6hVs-fwg-1; Wed, 22 Apr 2020 07:44:45 -0400
-X-MC-Unique: aTGTmnOjNNKKlr6hVs-fwg-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9C8D910139AC;
- Wed, 22 Apr 2020 11:44:42 +0000 (UTC)
-Received: from krava (unknown [10.40.196.43])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 67234101E58A;
- Wed, 22 Apr 2020 11:44:39 +0000 (UTC)
-Date: Wed, 22 Apr 2020 13:44:32 +0200
-From: Jiri Olsa <jolsa@redhat.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [RFC PATCH v2 10/13] perf metricgroup: Split up
- metricgroup__add_metric()
-Message-ID: <20200422114432.GH962614@krava>
+ id 1jRDyb-00084b-SG
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 11:55:39 +0000
+Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 7DBD82D1E6F71322D1FA;
+ Wed, 22 Apr 2020 12:55:30 +0100 (IST)
+Received: from [127.0.0.1] (10.47.10.232) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Wed, 22 Apr
+ 2020 12:55:29 +0100
+Subject: Re: [RFC PATCH v2 07/13] perf pmu: Add pmu_id()
+To: Jiri Olsa <jolsa@redhat.com>
 References: <1587120084-18990-1-git-send-email-john.garry@huawei.com>
- <1587120084-18990-11-git-send-email-john.garry@huawei.com>
+ <1587120084-18990-8-git-send-email-john.garry@huawei.com>
+ <20200422114122.GG962614@krava>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <1b2c2b91-173b-2656-597c-551aac750784@huawei.com>
+Date: Wed, 22 Apr 2020 12:54:54 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1587120084-18990-11-git-send-email-john.garry@huawei.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+In-Reply-To: <20200422114122.GG962614@krava>
+Content-Language: en-US
+X-Originating-IP: [10.47.10.232]
+X-ClientProxiedBy: lhreml709-chm.china.huawei.com (10.201.108.58) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_044449_270550_307C0109 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_045538_063946_D71840D7 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,71 +76,88 @@ Cc: mark.rutland@arm.com, irogers@google.com, ak@linux.intel.com,
  zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
  mingo@redhat.com, namhyung@kernel.org, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 17, 2020 at 06:41:21PM +0800, John Garry wrote:
+  Wi
+On 22/04/2020 12:41, Jiri Olsa wrote:
+> On Fri, Apr 17, 2020 at 06:41:18PM +0800, John Garry wrote:
+>> Add a function to read the PMU id sysfs entry. We only do it for uncore
+>> PMUs where this would be relevant.
+>>
+>> Signed-off-by: John Garry <john.garry@huawei.com>
+>> ---
+>>   tools/perf/util/pmu.c | 36 ++++++++++++++++++++++++++++++++++++
+>>   tools/perf/util/pmu.h |  1 +
+>>   2 files changed, 37 insertions(+)
+>>
+>> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
+>> index ef6a63f3d386..6a67c6a28d08 100644
+>> --- a/tools/perf/util/pmu.c
+>> +++ b/tools/perf/util/pmu.c
+>> @@ -594,6 +594,7 @@ static struct perf_cpu_map *__pmu_cpumask(const char *path)
+>>    * Uncore PMUs have a "cpumask" file under sysfs. CPU PMUs (e.g. on arm/arm64)
+>>    * may have a "cpus" file.
+>>    */
+>> +#define CPUS_TEMPLATE_ID	"%s/bus/event_source/devices/%s/identifier"
+>>   #define CPUS_TEMPLATE_UNCORE	"%s/bus/event_source/devices/%s/cpumask"
+>>   #define CPUS_TEMPLATE_CPU	"%s/bus/event_source/devices/%s/cpus"
+>>   
+>> @@ -632,6 +633,39 @@ static bool pmu_is_uncore(const char *name)
+>>   	return file_available(path);
+>>   }
+>>   
+>> +static char *pmu_id(const char *name)
+>> +{
+>> +	char path[PATH_MAX], *id;
+>> +	const char *sysfs;
+>> +	FILE *file;
+>> +	int n;
+>> +
+>> +	sysfs = sysfs__mountpoint();
+>> +	snprintf(path, PATH_MAX, CPUS_TEMPLATE_ID, sysfs, name);
+>> +
+>> +	id = malloc(PATH_MAX);
+>> +	if (!id)
+>> +		return NULL;
+>> +
+>> +	file = fopen(path, "r");
+>> +	if (!file) {
+>> +		free(id);
+>> +		return NULL;
+>> +	}
+>> +
+>> +	n = fscanf(file, "%s", id);
+>> +
+>> +	fclose(file);
+>> +
+>> +	if (!n) {
+>> +		free(id);
+>> +		return NULL;
+>> +	}
+>> +
+>> +	return id;
+>> +}
+> 
+> I still need to go through this patchset in more detail,
 
-SNIP
+ok, great.
 
->  static int metricgroup__add_metric(const char *metric, struct strbuf *events,
->  				   struct list_head *group_list)
->  {
-> @@ -502,37 +542,12 @@ static int metricgroup__add_metric(const char *metric, struct strbuf *events,
->  			break;
->  		if (!pe->metric_expr)
->  			continue;
-> -		if (match_metric(pe->metric_group, metric) ||
-> -		    match_metric(pe->metric_name, metric)) {
-> -			const char **ids;
-> -			int idnum;
-> -			struct egroup *eg;
-> -
-> -			pr_debug("metric expr %s for %s\n", pe->metric_expr, pe->metric_name);
->  
-> -			if (expr__find_other(pe->metric_expr,
-> -					     NULL, &ids, &idnum) < 0)
-> -				continue;
-> -			if (events->len > 0)
-> -				strbuf_addf(events, ",");
-> -
-> -			if (metricgroup__has_constraint(pe))
-> -				metricgroup__add_metric_non_group(events, ids, idnum);
-> -			else
-> -				metricgroup__add_metric_weak_group(events, ids, idnum);
-> -
-> -			eg = malloc(sizeof(struct egroup));
-> -			if (!eg) {
-> -				ret = -ENOMEM;
-> -				break;
-> -			}
-> -			eg->ids = ids;
-> -			eg->idnum = idnum;
-> -			eg->metric_name = pe->metric_name;
-> -			eg->metric_expr = pe->metric_expr;
-> -			eg->metric_unit = pe->unit;
-> -			list_add_tail(&eg->nd, group_list);
-> -			ret = 0;
+But, could you check patch #1 also, as this *may* be fixing something 
+broken in mainline? Not sure. Without it, we get a spew of warnings for 
+metrics.
 
-also this place got changed just recently a lot,
-so you might want to rebase to the Arnaldo's latest perf/core
-
-jirka
-
-> +		if (match_pe_metric(pe, metric)) {
-> +			ret = metricgroup__add_metric_pmu_event(pe, events,
-> +								group_list);
-> +			if (ret)
-> +				return ret;
->  		}
->  	}
->  	return ret;
-> -- 
-> 2.16.4
+> but just quick note, that we have sysfs__read_str that you
+> could use in here
 > 
 
+ok, there may be more functions in current pmu.c then which can use 
+this. I can check.
+
+Cheers,
+John
 
 _______________________________________________
 linux-arm-kernel mailing list
