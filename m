@@ -2,79 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5597E1B3BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:43:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 594561B3BB4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:48:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDvt/Jzcwl/+8ZaWnX6dk5RCbq6nO2WH6LZFecJpo3U=; b=HY7i7XzyhVIlsR
-	96tKXfkdIEq5oS4hzifWTVv1kTNVq7mQGRez8ftXmCYDexLREooeUwsvw+W+9fsTOHj1iGT9cSiIg
-	qCjWGIkGmYHmJojnKkR9h1YFlaM1qnaO8RyOdltRDIVlmdmEjipDI1APapFVNDY+YdrnkTaRGDUOL
-	FsOnmTpeIunFHVQGjsr3qjywMwRjhyrGxZraqevLq2ndLLSpNtPmpuBzFrw66sOXt7Sw/ORC5ZolH
-	269/9imNOIGUcfuw2dHaWk6BkFtUJiBgPe0GAupMCVv3TR+c/M/gbvEB6ReehJGftniVbMtlDLdlG
-	elEWs++pZJa10ux7oYOA==;
+	List-Owner; bh=rUSbj2wWXSmcvh0ife3SFoCy8BspQZFWrGiZLt0wxaw=; b=PayeJ00YTxNkG7
+	jzLY0/7o6SbYbhIY641FVhvPvM2vLkky2larufu6MMJfRTNSNL+nNKx41tEdRdLsl3YXTuCOnfKP+
+	q32GoBNfVF+dIja6OTvleYsZdJ6ryy8l75AtxaHotFdsDP0d4PqEdSVO/6pD3S0LgN+gXJrdqOXez
+	eWHEnK/u7HgsPBNhLdq0T28ibWqOg8liyraNf3OpYoyknn4EtgSm+iKMJh1KOkCaV4GlfhpG2cWzb
+	p54573WNjotzcw6tSmOYcTMiubVC6cAW7tyy5PD8gYIzYI03iNGP4YNVwa/+PS1D57S1DikLutY9l
+	gbTIUO+4QpL7vNeHlh1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRBu7-0004X1-VE; Wed, 22 Apr 2020 09:42:51 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1jRBz7-0008RJ-E4; Wed, 22 Apr 2020 09:48:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRBty-0004W8-9q
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:42:43 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M1YpJ-1jUE2G2YEl-0032gj for <linux-arm-kernel@lists.infradead.org>; Wed,
- 22 Apr 2020 11:42:39 +0200
-Received: by mail-qk1-f180.google.com with SMTP id b62so1691336qkf.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 02:42:39 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaRBMOJrWJsU2oJgUZ5ZRVfArcUMuAyBg1oHQSRohP/TkxCWWHz
- 6+sbzBwANRG3xhF5UqU1cyLINndFECMhqjZKA6Q=
-X-Google-Smtp-Source: APiQypI/ymCJliens2rTL4tEYpO0RaBvdBKJfx9PjnWISDf1IJDrLKMK8cr9T1HxGv56n49gXQdFjqLshcI2cTE/yOY=
-X-Received: by 2002:a37:ba47:: with SMTP id k68mr25543488qkf.394.1587548558376; 
- Wed, 22 Apr 2020 02:42:38 -0700 (PDT)
+ id 1jRByv-0008QP-8x
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:47:50 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8FBED2071E;
+ Wed, 22 Apr 2020 09:47:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587548868;
+ bh=VDHv7iN7f71wDl0Vm0L8nrtTCwARrTeDoVAxeAGLVmo=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=VbAV/lWHS2qQ8ld0T0GumGUybrF3+jzfqIyvP++6F+z/oF6aGijuYj7rFrmyK4hXh
+ IVpszqtn7I+Khe4u6muPSMSuIY68b/BnG+9+iiTjimExGrZ2VNCAXOgZOT0lKpe+eX
+ duDW8qDbVJCQrR6kaxDa/V0LidGo8iCNTAM+NhEY=
 MIME-Version: 1.0
-References: <20200331183844.30488-1-ulf.hansson@linaro.org>
- <20200331183844.30488-3-ulf.hansson@linaro.org>
-In-Reply-To: <20200331183844.30488-3-ulf.hansson@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 22 Apr 2020 11:42:22 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2n7O0-jHLASdu9scgrG7iqETJV7Un843+fW3Yt4q=UhA@mail.gmail.com>
-Message-ID: <CAK8P3a2n7O0-jHLASdu9scgrG7iqETJV7Un843+fW3Yt4q=UhA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] amba: Initialize dma_parms for amba devices
-To: Ulf Hansson <ulf.hansson@linaro.org>
-X-Provags-ID: V03:K1:L454SzBHpeiHPoEXcNarAI4LcN7STqK8Yfx4gEZbTHht4Ofg6Kk
- g1OZEjiA2SUJIKkhA6am5ZeFfeTDxiOHFBh1EuGPm1ZSnYZsaBPyetlsiszQoqvNiWb9Dho
- wUUAuR43PtQ1Mk20lXfPyPhlYex7cWDoGSbJG9m2SUsYxQCntOhWJpGd4BA1cURhjb6O8+/
- M1gbUrKGi4KlWlnWQWIVw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:omv6mWS6PBk=:+EArHQJGxUXbHjk55NveJa
- /xMvbpsPkI7D8Tx2s9m6oJPhv2uakAKJCqRZguhIA7QfKnoDHhX4swlbzx8V4A2u0buPG+5OJ
- xgvl9mlgmVyPOwYFSAhlDrh7rQwJ0s2C50T5xoUcK2W5kC/wknHe4NfbgVMFOFcs3ORRR7cZk
- eyXcXPr8bXfgeFAPE4EQ23vbqWu4++ihSQU/5Tzc+gcVbEhwvcRY7ilEwaF6C+pesWRyGYJXG
- c3jT1H2SitqKPW8Udu1SZfN+8geiO3TvZNzgeJKObIdDNtbFlxq1Y0Itffh1S+vZRd19tr+iK
- bi67s0SRoxMRHzsN/prcRMq1Tz3jSNGnEMT7cxTMLWsjaLZpTn7RAnWFRLN7UzRIb/gQ55Qjb
- rYq/X7pE/MsuxRGwRm7EB8z3qZI3Cvs9alnk+qp+HYcUmr/ll5Hh6ioeU08JTzuHA8PUaEhsn
- HtYVZNlHepx6iNHUmc1q9SGbWZLxPsYMX/5y4hR9i+gnVrs+J3tlb6O8STekOuyrPljWmlso9
- TeIHGGHCxGYBJkgK5mRPsSY6rz/B0Ewk+7Q0FdTKShnrh1Tl13IlxMWpIrzW42Yf9Oo6DPYIx
- 1w8a5XgnybJ01m8BZQE22Uac5XdicYBIkgMx2N9WiQPFtPUti2ppQ/Q9qATjQnSF0FCO9EDYw
- Pe3CnN+gmiXdDg2AsDA/e+17NWPSdzMzLtmGEai1SOy4Rju8lG0N8i/NBA1j0vBGlSKlBv7P8
- h0AYOEDHa+oyMU4NfbJucUhKI6NPuXIPOeqvcYTAizs4tCH/lDr87jUDKJF+htLYtihPs5CGO
- Ht/WUc1THRd43SSAUwd0KSxDcgOmFHSyy683PNg8dJL7b2yiPw=
+In-Reply-To: <20200419170810.5738-6-robh@kernel.org>
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-6-robh@kernel.org>
+Subject: Re: [PATCH 05/17] clk: versatile: Kill CONFIG_COMMON_CLK_VERSATILE
+From: Stephen Boyd <sboyd@kernel.org>
+To: Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob Herring <robh@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>
+Date: Wed, 22 Apr 2020 02:47:47 -0700
+Message-ID: <158754886772.132238.8648193086417881263@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_024242_626934_5BC0F0C9 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200422_024749_336034_00C55C72 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,44 +78,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rafael@kernel.org>,
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>, Sebastian Reichel <sre@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Haibo Chen <haibo.chen@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, dmaengine@vger.kernel.org,
- "# 3.4.x" <stable@vger.kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>, Ludovic Barre <ludovic.barre@st.com>
+ Lee Jones <lee.jones@linaro.org>, Will Deacon <will@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 8:38 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> It's currently the amba driver's responsibility to initialize the pointer,
-> dma_parms, for its corresponding struct device. The benefit with this
-> approach allows us to avoid the initialization and to not waste memory for
-> the struct device_dma_parameters, as this can be decided on a case by case
-> basis.
->
-> However, it has turned out that this approach is not very practical. Not
-> only does it lead to open coding, but also to real errors. In principle
-> callers of dma_set_max_seg_size() doesn't check the error code, but just
-> assumes it succeeds.
->
-> For these reasons, let's do the initialization from the common amba bus at
-> the device registration point. This also follows the way the PCI devices
-> are being managed, see pci_device_add().
->
-> Suggested-by: Christoph Hellwig <hch@lst.de>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> ---
+Quoting Rob Herring (2020-04-19 10:07:58)
+> diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
+> index c2618f1477a2..3465fb291998 100644
+> --- a/drivers/clk/versatile/Kconfig
+> +++ b/drivers/clk/versatile/Kconfig
+> @@ -1,22 +1,14 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+>  config ICST
+> -       bool
+> -
+> -config COMMON_CLK_VERSATILE
+> -       bool "Clock driver for ARM Reference designs"
+> -       depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
+> -               ARCH_VERSATILE || ARCH_VEXPRESS || ARM64 || \
+> -               COMPILE_TEST
+> +       bool "Clock driver for ARM Reference designs ICST" if COMPILE_TEST
+>         select REGMAP_MMIO
+>         ---help---
+>           Supports clocking on ARM Reference designs:
+>           - Integrator/AP and Integrator/CP
+>           - RealView PB1176, EB, PB11MP and PBX
+> -         - Versatile Express
+>  
+>  config CLK_SP810
+>         bool "Clock driver for ARM SP810 System Controller"
+> -       depends on COMMON_CLK_VERSATILE
 
-Reviewed-by: Arnd Bergmann <arnd@arndb.de>
+Shouldn't this get the depends from COMMON_CLK_VERSATILE so that this
+option isn't exposed unless someone is compile testing or using that
+platform?
+
+>         default y if ARCH_VEXPRESS
+>         ---help---
+>           Supports clock muxing (REFCLK/TIMCLK to TIMERCLKEN0-3) capabilities
+> @@ -24,8 +16,7 @@ config CLK_SP810
+>  
+>  config CLK_VEXPRESS_OSC
+>         bool "Clock driver for Versatile Express OSC clock generators"
+> -       depends on COMMON_CLK_VERSATILE
+> -       depends on VEXPRESS_CONFIG
+> +       depends on VEXPRESS_CONFIG || COMPILE_TEST
+>         default y if ARCH_VEXPRESS
+>         ---help---
+>           Simple regmap-based driver driving clock generators on Versatile
 
 _______________________________________________
 linux-arm-kernel mailing list
