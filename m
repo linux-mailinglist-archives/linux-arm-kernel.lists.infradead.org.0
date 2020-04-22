@@ -2,72 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0FCD1B396B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 09:52:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BE971B3985
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 09:59:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VV79ZdMaDTj/iAn0gMmEsIrXbEezxFR556q/MVK5Lcw=; b=MDVbp2AFKcqIyk
-	o0ZhT/9Wt80oUtLylREHpq9/U59x5NlgfPn2ZSXDRqCEsXJb/aOjUzjRmqufqfCnxmh+BKXY4Jp2+
-	wTWKD99iaYmzcHutHm1YsIbrahKXRBWyivoWkSQOApCj1VDu84Lsw+x5jGNsczhHnExqB07X/8Qjm
-	L/D+pUsSukZ3d7Gd+R3dzKHjixZtHDJTyWvO5s0PFWf0xzi3E3N08by+JwHzpmmivnbgP5XW+86ag
-	fkSexYjQJm4BabTZVGL72PxCKkxEK0BMW0q/+o4CPmAul12WZUrkcWvmeppj8h+DmQMtDyND6Uxpi
-	WHvYk/qfmA89o4hiiSjg==;
+	List-Owner; bh=XKCCQZvbnhEw+j7TpiSDUF3/jxFCeRKVRuPEpDr7wFk=; b=hAF3fLzBwG3lej
+	eE46UbdxOmN3EBXepgho30aTKtGGHL6b6ThHXvL3gL9o936sMOr0dS5yFpBJ8NzbH4U6d6pHTLdru
+	JSH5521FcLWFvRtVTpvJiXkYs6bF9TijB11TwFoFxGtVj+L2XJbrCzVTDlMM4I9FPoDIqHZzp/Iha
+	KPXhYbQZkboANtZ3XjLr1vhDLnFHBu8JT3ZiOsv/wQQMF7OdpG6H4tY/USvg1oH0GIQCLqGUdM72F
+	UCPOoXbreq3jF1defHEWaGz7k1M270M8auyPw72CrT+8y0S5cj8Vz+gFovhRGFsQgjKK2a6aQ3wt0
+	pVlWmBdFOEgOToJNzdCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRAAx-0002ar-2Q; Wed, 22 Apr 2020 07:52:07 +0000
+	id 1jRAHt-0007Hm-P1; Wed, 22 Apr 2020 07:59:17 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRAAk-0002Xw-VY
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 07:51:59 +0000
+ id 1jRAHi-0007Fr-AE
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 07:59:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KWg+XuhGzP1BBFs/gHc4oZn4yxp0P4XqZNSIS4Th3Qc=; b=0a/pZ1EExYsog3tfKvmCp22h/
- RhiepO8ZTm5hZm7PLVWb7ZG0C4jU+jQkbGGy4aN3DOiS2ndWNKzPX7qBEMsmNi9KT7yLFpbDREuoi
- xSMifzC5Kud+OMTyxp1SrDitwWb/JlNouTzA3VTVfGgCppTPTQ2VB2TcPE9LZYiUVbsJSkhh4knWm
- RpVxrWcRgXW4VwtVhsVHrGW5m1C4quEDWIy671Z5KpqVqIsz5Bghoyx9GCkMfBqjJPCr7LgKblJb0
- uPBL599FAhFNAm+g/IkhDA+Z0qHIVadw4KYAMhX/kw+E5YV2XEW1E63/vxEdhQd4gx0JiYPagVan/
- j6BmTvElA==;
+ bh=y8zwg/4nYCbTWpF0JCDU3rnEy9NBEw0BuwpBupWprWA=; b=PuUhW6L30ovlK0ErliYvZNjvE
+ pmENsbjXK4bGEascDh/yz5T/4KfMUs3bzS5LVIOKqCkdNAJvN5JlffNTUX/PnZszHT4wyaByLW5MW
+ YeJkVlGAftAguunBzmeal1yit+Oifw7Pb+ntH3JZ2oU/zS1M1FrIn5RDMtQcz8GCmrFZOW/25OHnD
+ LuJ4CuTTIrD9K2zHAXL0Gs5na12PDkZa4fi+6qH7vVt56cT5GdgN3ErdGzIJ0rSIjzXqtKPGpbepw
+ x0lO+PCJVGxnqaAB4p7Gp+4Fe9BAJlMB0TrAE2iF4L7/OakxIiPKg7V63N4O/Flxrv1N2GFQeU/Jy
+ YtZb/+3hQ==;
 Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:49512)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42000)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1jRAAL-0006kT-Oi; Wed, 22 Apr 2020 08:51:29 +0100
+ id 1jRAHX-0006mq-VF; Wed, 22 Apr 2020 08:58:56 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jRAAG-0007yR-GD; Wed, 22 Apr 2020 08:51:24 +0100
-Date: Wed, 22 Apr 2020 08:51:24 +0100
+ id 1jRAHW-0007ya-6v; Wed, 22 Apr 2020 08:58:54 +0100
+Date: Wed, 22 Apr 2020 08:58:54 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Robert Hancock <hancock@sedsystems.ca>
-Subject: Re: Xilinx axienet 1000BaseX support (was: Re: [PATCH 07/14] net:
- axienet: Fix SGMII support)
-Message-ID: <20200422075124.GJ25745@shell.armlinux.org.uk>
-References: <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
- <20200110150409.GD25745@shell.armlinux.org.uk>
- <20200110152215.GF25745@shell.armlinux.org.uk>
- <20200110170457.GH25745@shell.armlinux.org.uk>
- <20200118112258.GT25745@shell.armlinux.org.uk>
- <3b28dcb4-6e52-9a48-bf9c-ddad4cf5e98a@arm.com>
- <20200120154554.GD25745@shell.armlinux.org.uk>
- <20200127170436.5d88ca4f@donnerap.cambridge.arm.com>
- <20200127185344.GA25745@shell.armlinux.org.uk>
- <bf2448d0-390c-5045-3503-885240829fbf@sedsystems.ca>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v4] ARM: decompressor: simplify libfdt builds
+Message-ID: <20200422075854.GK25745@shell.armlinux.org.uk>
+References: <20200419191958.208600-1-masahiroy@kernel.org>
+ <CAMuHMdXmJ3gfYzubQRbN6Bx0A=p8TodidmoeaZkJVtYjhDcQnw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <bf2448d0-390c-5045-3503-885240829fbf@sedsystems.ca>
+In-Reply-To: <CAMuHMdXmJ3gfYzubQRbN6Bx0A=p8TodidmoeaZkJVtYjhDcQnw@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_005157_446040_4D327DAA 
-X-CRM114-Status: GOOD (  22.11  )
+X-CRM114-CacheID: sfid-20200422_005906_363771_5AD77D05 
+X-CRM114-Status: GOOD (  24.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -76,15 +67,15 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,93 +87,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Andre Przywara <andre.przywara@arm.com>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 07:45:47PM -0600, Robert Hancock wrote:
-> Hi Andre/Russell,
+On Wed, Apr 22, 2020 at 09:44:38AM +0200, Geert Uytterhoeven wrote:
+> Hi Yamada-san, Kees, Russell,
 > 
-> Just wondering where things got to with the changes for SGMII on Xilinx
-> axienet that you were discussing (below)? I am looking into our Xilinx setup
-> using 1000BaseX SFP and trying to get it working "properly" with newer
-> kernels. My understanding is that the requirements for 1000BaseX and SGMII
-> are somewhat similar. I gathered that SGMII was working somewhat already,
-> but that not all link modes had been tested. However, it appears 1000BaseX
-> is not yet working in the stock kernel.
+> -CC RMK's patch system
+> +CC lakml
 > 
-> The way I had this working before with a 4.19-based kernel was basically a
-> hack to phylink to allow the Xilinx PCS/PMA PHY to be configured
-> sufficiently as a PHY for it to work, and mostly ignored the link status of
-> the SFP PHY itself, even though we were using in-band signalling mode with
-> an SFP module. That was using this patch:
+> On Sun, Apr 19, 2020 at 9:26 PM Masahiro Yamada <masahiroy@kernel.org> wrote:
+> > Copying source files during the build time may not end up with
+> > as clean code as expected.
+> >
+> > lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
+> > nicely. Let's follow this approach for the arm decompressor, too.
+> >
+> > Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove
+> > the Makefile messes. Another nice thing is we no longer need to
+> > maintain the own libfdt_env.h because the decompressor can include
+> > <linux/libfdt_env.h>.
+> >
+> > There is a subtle problem when generated files are turned into
+> > check-in files.
+> >
+> > When you are doing a rebuild of an existing object tree with O=
+> > option, there exists stale "shipped" copies that the old Makefile
+> > implementation created. The build system ends up with compiling the
+> > stale generated files because Make searches for prerequisites in the
+> > current directory, i.e. $(objtree) first, and then the directory
+> > listed in VPATH, i.e. $(srctree).
+> >
+> > To mend this issue, I added the following code:
+> >
+> >   ifdef building_out_of_srctree
+> >   $(shell rm -f $(addprefix $(obj)/, fdt_rw.c fdt_ro.c fdt_wip.c fdt.c))
+> >   endif
+> >
+> > This will need to stay for a while because "git bisect" crossing this
+> > commit, otherwise, would result in a build error.
+> >
+> > Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
 > 
-> https://patchwork.ozlabs.org/project/netdev/patch/1559330285-30246-5-git-send-email-hancock@sedsystems.ca/
+> This is now commit 365a6327cd643eed ("ARM: 8968/1: decompressor:
+> simplify libfdt builds") in arm/for-next.
 > 
-> Of course, that's basically just a hack which I suspect mostly worked by
-> luck. I see that there are some helpers that were added to phylink to allow
-> setting PHY advertisements and reading PHY status from clause 22 PHY
-> devices, so I'm guessing that is the way to go in this case? Something like:
+> In light of reworking "[PATCH v5] ARM: boot: Obtain start of physical
+> memory from DTB"[1] on top of this, which would conditionally add
+> another source file to libfdt_objs, I have a few questions.
 > 
-> axienet_mac_config: if using in-band mode, use
-> phylink_mii_c22_pcs_set_advertisement to configure the Xilinx PHY.
+> > --- a/arch/arm/boot/compressed/Makefile
+> > +++ b/arch/arm/boot/compressed/Makefile
+> > @@ -76,29 +76,31 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
+> >  compress-$(CONFIG_KERNEL_XZ)   = xzkern
+> >  compress-$(CONFIG_KERNEL_LZ4)  = lz4
+> >
+> > -# Borrowed libfdt files for the ATAG compatibility mode
+> > -
+> > -libfdt         := fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
+> > -libfdt_hdrs    := fdt.h libfdt.h libfdt_internal.h
+> > -
+> > -libfdt_objs    := $(addsuffix .o, $(basename $(libfdt)))
+> > +ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
+> > +libfdt_objs = fdt_rw.o fdt_ro.o fdt_wip.o fdt.o atags_to_fdt.o
+> >
 > 
-> axienet_mac_pcs_get_state: use phylink_mii_c22_pcs_get_state to get the MAC
-> PCS state from the Xilinx PHY
+> I guess the code below can be moved out of the ifeq block, as it doesn't
+> really do anything if CONFIG_ARM_ATAG_DTB_COMPAT=n, and $(libfdt_objs)
+> becomes empty?
+> If not, I think I'll have to add a new Kconfig symbol ARM_BOOT_LIBFDT,
+> to be selected by ARM_ATAG_DTB_COMPAT and USE_OF.
 > 
-> axienet_mac_an_restart: if using in-band mode, use
-> phylink_mii_c22_pcs_an_restart to restart autonegotiation on Xilinx PHY
+> > -$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
+> > -       $(call cmd,shipped)
+> > +OBJS   += $(libfdt_objs)
+> >
+> > -$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
+> > -       $(addprefix $(obj)/,$(libfdt_hdrs))
+> > +# -fstack-protector-strong triggers protection checks in this code,
+> > +# but it is being used too early to link to meaningful stack_chk logic.
+> > +nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
+> > +$(foreach o, $(libfdt_objs), \
+> > +       $(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt $(nossp-flags-y)))
 > 
-> To use those c22 functions, we need to find the mdio_device that's
-> referenced by the phy-handle in the device tree - I guess we can just use
-> some of the guts of of_phy_find_device to do that?
+> Is there a real reason this is only applied to a subset of the C object
+> files, and not to all of them? Or have we been lucky so far, by not
+> triggering the issue in decompressed.c, misc.c, and string.c (yet)?
 
-Please see the code for DPAA2 - it's changed slightly since I sent a
-copy to the netdev mailing list, and it still isn't clear whether this
-is the final approach (DPAA2 has some fun stuff such as several
-different PHYs at address 0.) NXP basically didn't like the approach
-I had in the patches I sent to netdev, we had a call, they presented
-an alternative appraoch, I implemented it, then they decided my
-original approach was the better solution for their situation.
-
-See http://git.armlinux.org.uk/cgit/linux-arm.git/log/?h=cex7
-
-specifically the patches from:
-
-  "dpaa2-mac: add 1000BASE-X/SGMII PCS support"
-
-through to:
-
-  "net: phylink: add interface to configure clause 22 PCS PHY"
-
-You may also need some of the patches further down in the net-queue
-branch:
-
-  "net: phylink: avoid mac_config calls"
-
-through to:
-
-  "net: phylink: rejig link state tracking"
-
-> One concern I have is that there may be things that the PHY subsystem would
-> configure on the device that may need to be replicated in order to get it to
-> actually work - things like setting auto-negotiate enable/disable, the
-> BMCR_ISOLATE bit, etc - is that something that belongs in our mac_config or
-> in the phylink core in phylink_mii_c22_pcs_set_advertisement etc?
-
-I think some of that is addressed in the above patches, except for
-the isolate bit - do your PHYs come up with the isolate bit set?
-Under what circumstances would you need to set it?
-
-Let me know how you get on.
-
-Thanks.
+I don't remember the details. See commit 7f66cd3f5420, which came from
+Kees which introduced this.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
