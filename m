@@ -2,98 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BA821B35AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 05:44:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC2671B35CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 05:54:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o0yU5cUO/L+NbP+GcTo884ZAs5ihk5I8YqG34NSs3D4=; b=mReohDA1GjTYZ+
-	LqjQMm/5+LTlfcXRvod79rRF2ail/xsi9IWTVqT1Zq0I3RVj7vIAqWqwEyhhoxUgiZGoedRbRs2fG
-	RSSyOiMjGUlZ+t0vNRuweX0PYy1L4vtBplJKKU5b2tMppPYiT5pZam2Pda9ltA0L+XEswdeaOdtZA
-	HzAfISGQXTs+MXA5ObrKgZ/j+xmsEYy8sPpcTnl2WFB2rdF7ojxoHcihBU66K00rkwbtGjtEQKwLu
-	JqR+xDbCcErZAre1pCcJEqGewW6AONz6hzFjvgGTl+VFoC10nXPgeNa8xeJnxgKpv0TGRrmMRu28F
-	aUPqp3rmvmK4XVKAaWtw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0yTxva9Z2GEg1F5DgjwEgoyiB44nOD+yQJDHC20s5TU=; b=hhwDY94mDSSfjG
+	W5gKzDZ/+AsJMcwcJA2GKES87ZKbLMZZeo17yAvQULJ1rtul95Ljzj+ru8oFvFi7Zkx5BKi/bhQqU
+	DxbyvwThI56ueXlBAn4c+4Nhu0+9PsTrgOSXk2dc/+c3N5bdMuFt1j4D50zbREkhTF3BctA6uMKGe
+	Lwhsjj+x44gYHcX49gkdRcU0HFQoSQg0EQl9JE8K2OEfsYdzgy+/mg+AJMpJDwwNJmi+/foFAZNHS
+	6IjVW0JczPsdywWq6BN1SGbyJUrBl8MxsELnb8kuWLAr4KCdiGgMROy0sOz2B61DffnXXhHY/nC1n
+	VLOfHx4BXC+zvFFnaGLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR6Il-0003qT-KP; Wed, 22 Apr 2020 03:43:55 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1jR6Sj-0002Og-0s; Wed, 22 Apr 2020 03:54:13 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR6Ib-0003oT-O8
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 03:43:47 +0000
+ id 1jR6SG-0002CH-NF
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 03:53:46 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 12B025C008C;
- Tue, 21 Apr 2020 23:43:40 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Tue, 21 Apr 2020 23:43:40 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=2
- pJX7Yg+sQ/AyYD6L8gjHh63yS93sxWkwLxkCvnI+ek=; b=SUr/qn7fhubwORw6r
- 1SR1sDofmVTFUbL2y0aluMDxkSGyAp1JV9NqfoBrmMZEAev+b7/MxxOFbt9w7orK
- lUq1CGofBI93ZRVKcgJ0X+4czDPtNhntXkWz8azKX7Mq34PtY5GwhgB5ukVTSO94
- y83SC6XxnrVsNt9vxoD0DxbwdLOlh0sCGhrxFY/6qndn1uecSkUStY1AxkcH4esY
- PlxOjFHQVsEytDwCu8IWG8jKNOrRARJ2zU5t+hjIj8OItQZMXbQFKn3959Lf3Knx
- 7NOxuYQJFsPR8K5mNS4FBrYiKQn/wGSggYfQNHatsjiCLcFFeLXGnjbHJl+XMnTO
- C6USw==
+ by mailnew.nyi.internal (Postfix) with ESMTP id 0053E5801C2;
+ Tue, 21 Apr 2020 23:53:40 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 21 Apr 2020 23:53:41 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm3; bh=+EfqkUSWnK5oB5LHgnO1Rxb0VK
+ C+TbEqPBLo0jnqFfY=; b=Vv5txikFjhlLvXI1tIKdx81CnUOtqX04ItqrZd++y+
+ ylJ31YHwF9JMljYOhGIr0CzgOzvU/p2AtiHnJCBQO2aNv4D0S7Uo11jpZT9bzM3b
+ k9Zvk2D00RhMXhgO0bdcOTcL0p+VteTb9+w+O6Sp/bh5YUTvtDUw94xN+Kbl9sFL
+ kvMjh8pPqD7n9bVAdcJxSzMkKIbg3R4s/L249Gi4aYRjqieTpehR7x8+CvR+sok2
+ hEbvykXcCj1lGXw8kV2i4sfjkJw6GFykcqpRq45d/fwJVKQIDOp582m9frc+CYjD
+ rUBPqYpRaNU9Gl8V8XsQDtYHtXMP/LSu/peBI2yQRCQg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=2pJX7Yg+sQ/AyYD6L8gjHh63yS93sxWkwLxkCvnI+
- ek=; b=pEDjSUE1KhTlyS+psV8vjg4C1Tyf6w6G+iTzSvAiQ1Pu/GPPmA/Wpxju4
- SkMwqtzAf4viQKZBKvxTYN4EuXT+Kz2lzCCMt74s04/G8tW0aLfqCryiy6/J1WUC
- yuCprfcsr9Hh7Bye9JhgzEv6qBx3QjMNBq6u31+5pPVLuqr5rKJZC1VzSFv8cI4q
- SgJ9wc8ZU5DkTJzQ39hfI9feYy2RTSQ4g8VIYx3kQe6lXOAjvSd/fwQECz8B+q2y
- mWVGYHwM6jkRumlYmRu3/1QFHITmhvBnueLN19+NXkSWmXEwprHM8zpsZ125KPy7
- Gv48rfuu8YIG63gWjkYU+IoTsWqGg==
-X-ME-Sender: <xms:a72fXl1iQLl-hxurLDCJOq4UcTOlYCAoULamXhs92wLvx1UZo5cZig>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeeigdejfecutefuodetggdotefrodftvf
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=+EfqkUSWnK5oB5LHg
+ nO1Rxb0VKC+TbEqPBLo0jnqFfY=; b=nZ+ub6QOBaRpvVC0ToDUQ/DS9jU1jSut6
+ 8xhF9m2WCT9D1g7LqyhyMWu+DMzvzYkRSfJVjb5hikK/Pg4rLuzPt+Rrp+DMnY/w
+ qqE2v6M3Shup8k2wJxpf5T38BgSprvn72s9eTAeZBgiBi70/05lEkh42UNOQTEUz
+ U3ZzTHD/xNt61V7THd04ZuTvHZgyWoV/kYz441BNOke/5wNGbtVtR0GL33p4ksRX
+ ljtf6iLNfKk1dSpy4V3hqBUg2X5vfYSQ4vq/8PYsJgJocah0GLKl1UEmnNoMWOeY
+ m6pe7yc3Ohrikuf93td82cEEmMDhnr3rL1+yGNIPymRV6neLJJ0xQ==
+X-ME-Sender: <xms:xL-fXtryYa-E56bp_MQzrv-ZweNWTYg05pQAnuoEmzx1HfOe41hu5Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeeigdejhecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
- epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
- rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:a72fXtYgV6rQfSAYqart0nvBnVlL9KjQo39zrgU259M2Cu6-FzEpog>
- <xmx:a72fXqhDEEPTT-D7lKYImMPPJhMgHl8famBhYC3lucKX_t8_AtQuSA>
- <xmx:a72fXlhmUeT3Q19ZdBKOazxMRNHTnYt6lWWuhtkSFKAdaMiibpkwMg>
- <xmx:bL2fXlphHTNRxzMA5Dni2eoELwMRrM5WNxGoeXAN_SWRsCeie_Atug>
-Received: from [192.168.50.169]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 5921B3065CB0;
- Tue, 21 Apr 2020 23:43:38 -0400 (EDT)
-Subject: Re: [linux-sunxi] [RFC PATCH 4/4] pwm: sun4i: Delay after writing the
- period
-To: dev@pascalroeleven.nl, Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-pwm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20200317155906.31288-1-dev@pascalroeleven.nl>
- <20200317155906.31288-5-dev@pascalroeleven.nl>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <f1d9a17e-df9e-dc12-603d-84e908a04b81@sholland.org>
-Date: Tue, 21 Apr 2020 22:43:37 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
+ dtnecuhfhrohhmpeetlhhishhtrghirhcuhfhrrghntghishcuoegrlhhishhtrghirhes
+ rghlihhsthgrihhrvdefrdhmvgeqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdroh
+ hrghenucfkphepjeefrdelfedrkeegrddvtdeknecuvehluhhsthgvrhfuihiivgeptden
+ ucfrrghrrghmpehmrghilhhfrhhomheprghlihhsthgrihhrsegrlhhishhtrghirhdvfe
+ drmhgv
+X-ME-Proxy: <xmx:xL-fXr8vh1tErFKMmMRrFOTVByOqqyMkfXEtEH26SDrz7EFWnS9uqA>
+ <xmx:xL-fXs_3hyJxHZuB3nFymkNYyhhsZBAf5w077Be9d4wkzft2tzpbUQ>
+ <xmx:xL-fXqsc8KlVQcN7vc5oQgLnA133RjHzuQpd1eKLFoSrVfeFhSkT9g>
+ <xmx:xL-fXhodnDceTjkOrAp2U-6b0io9GgFzDco_ANuCj-16ht-gxFtHhg>
+Received: from alistair-xps-14z.alistair23.me
+ (c-73-93-84-208.hsd1.ca.comcast.net [73.93.84.208])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 15DD33280063;
+ Tue, 21 Apr 2020 23:53:39 -0400 (EDT)
+From: Alistair Francis <alistair@alistair23.me>
+To: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, marcel@holtmann.org,
+ johan.hedberg@gmail.com, linux-bluetooth@vger.kernel.org,
+ mripard@kernel.org, wens@csie.org
+Subject: [PATCH v4 1/3] dt-bindings: net: bluetooth: Add rtl8723bs-bluetooth
+Date: Tue, 21 Apr 2020 20:53:31 -0700
+Message-Id: <20200422035333.1118351-1-alistair@alistair23.me>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-In-Reply-To: <20200317155906.31288-5-dev@pascalroeleven.nl>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_204345_922022_8CE3380B 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20200421_205344_922772_C80956D6 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,6 +95,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,57 +107,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com
+Cc: devicetree@vger.kernel.org, Alistair Francis <alistair@alistair23.me>,
+ linux-arm-kernel@lists.infradead.org, alistair23@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Pascal,
+From: Vasily Khoruzhick <anarsoul@gmail.com>
 
-On 3/17/20 10:59 AM, Pascal Roeleven wrote:
-> When disabling, ensure the period write is complete before continuing.
-> This fixes an issue on some devices when the write isn't complete before
-> the panel is turned off but the clock gate is still on.
-> 
-> Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
-> ---
->  drivers/pwm/pwm-sun4i.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-> index a11d00f96..75250fd4c 100644
-> --- a/drivers/pwm/pwm-sun4i.c
-> +++ b/drivers/pwm/pwm-sun4i.c
-> @@ -299,6 +299,10 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  	sun4i_pwm_writel(sun4i_pwm, val, PWM_CH_PRD(pwm->hwpwm));
->  	next_period = jiffies + usecs_to_jiffies(cstate.period / 1000 + 1);
->  
-> +	/* When disabling, make sure the period register is written first */
-> +	if (!state->enabled && cstate.enabled)
-> +		sun4i_pwm_wait(next_period);
-> +
+Add binding document for bluetooth part of RTL8723BS/RTL8723CS
 
-It is not visible from the context of this patch, but this call to
-sun4i_pwm_wait() ends up calling msleep() inside a spinlock, which isn't
-allowed. The spinlock should probably be converted to a mutex, considering that
-sun4i_pwm_apply() already sleeps and takes mutexes.
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Signed-off-by: Alistair Francis <alistair@alistair23.me>
+---
+ .../bindings/net/realtek-bluetooth.yaml       | 54 +++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/net/realtek-bluetooth.yaml
 
-Regards,
-Samuel
-
->  	if (state->polarity != PWM_POLARITY_NORMAL)
->  		ctrl &= ~BIT_CH(PWM_ACT_STATE, pwm->hwpwm);
->  	else
-> @@ -320,6 +324,7 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  		return 0;
->  
->  	/* We need a full period to elapse before disabling the channel. */
-> +	next_period = jiffies + usecs_to_jiffies(cstate.period / 1000 + 1);
->  	sun4i_pwm_wait(next_period);
->  
->  	spin_lock(&sun4i_pwm->ctrl_lock);
-> 
+diff --git a/Documentation/devicetree/bindings/net/realtek-bluetooth.yaml b/Documentation/devicetree/bindings/net/realtek-bluetooth.yaml
+new file mode 100644
+index 000000000000..4eb141b00fcb
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/realtek-bluetooth.yaml
+@@ -0,0 +1,54 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/realtek,rtl8723bs-bt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: RTL8723BS/RTL8723CS/RTL8822CS Bluetooth Device Tree Bindings
++
++maintainers:
++  - Vasily Khoruzhick <anarsoul@gmail.com>
++  - Alistair Francis <alistair@alistair23.me>
++
++description:
++  RTL8723CS/RTL8723CS/RTL8822CS is WiFi + BT chip. WiFi part is connected over
++  SDIO, while BT is connected over serial. It speaks H5 protocol with few
++  extra commands to upload firmware and change module speed.
++
++properties:
++  compatible:
++    oneOf:
++      - const: "realtek,rtl8723bs-bt"
++      - const: "realtek,rtl8723cs-bt"
++      - const: "realtek,rtl8822cs-bt"
++
++  device-wake-gpios:
++    maxItems: 1
++    description: GPIO specifier, used to wakeup the BT module
++
++  enable-gpios:
++    maxItems: 1
++    description: GPIO specifier, used to enable the BT module
++
++  host-wake-gpios:
++    maxItems: 1
++    description: GPIO specifier, used to wakeup the host processor
++
++required:
++  - compatible
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++
++    uart1 {
++        pinctrl-names = "default";
++        pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
++        uart-has-rtscts = <1>;
++
++        bluetooth {
++            compatible = "realtek,rtl8723bs-bt";
++            device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
++            host-wakeup-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++        };
++    };
+-- 
+2.26.0
 
 
 _______________________________________________
