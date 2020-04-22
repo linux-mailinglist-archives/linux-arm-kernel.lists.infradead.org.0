@@ -2,67 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B66E1B36BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 07:13:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FEA11B36E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 07:39:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J3/xQMd3HanL0SIGK77zZSxZNJpTLHQx7LYgbt69X5w=; b=B8uxou1aTgTuoYcEE8fa+mTUw
-	phNTeObI/0ZKvuNXNTkde2Vad54evzSCENKW5R+IdaWwJAcX6BKWtH0WUaq+vxUdb1p8whd3Vc0zk
-	Xl5/a60vOl6M4Ov/6K5HbldV1DdvuVklISvaICuBOeSwVT4EvEATbOFLVISaDYe1LZ6zdropN/eD/
-	JSUiEnDwssuA1MrrxHutt4ZAo4FBt+NQCBnL/1tyCN4d2ptZwlTr2jLC2JR88OlIxO7V3uFHlOc7x
-	PFaCD5Jb/xRsZ6G0j2kAPYspnfuPW1HiYE6Lc+QYEgmXJ47k6DriRwIxqj4kw1lzGjrGoLnPCTv83
-	f0q+u1MvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p/NxM9VYyMDqQfzBYO6JniMUy9omb2mMf5N+NeVqiZo=; b=qEnnSY9V7yeOMO
+	mGfH0+mPmEBcwvnTsbhVvGF8fJghSNXVJAsCht60nwB1dHq/VObJofKY03sJOjlvshXObdkoKkwg3
+	RhjghLOl7jnFYduZmFcEDMoeZhQpCnRs28Qbl0nCuSJpyTanH9Gcog8Rl2DM1H+fvC7YHz1MTCPCP
+	hjp4UnYEZlkEji91OLUldr4dS22iIUxU6Q067K/Puc+BX+B3bjuZQ9hDsglJXoho5f/Eikw0a7Gf7
+	LXQSR6BN8ZlLbDDV748wpOHtxVshCxEnbcc3JuYqiZPnWZws0tOSOvvaHk2TsWYqgHgu+e1kxT4lw
+	3C7R+1OZ8uAfMOy33dvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jR7hI-0000bA-7P; Wed, 22 Apr 2020 05:13:20 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jR7h9-0000Zo-Tm
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 05:13:13 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 22 Apr 2020 14:13:09 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 14A4760057;
- Wed, 22 Apr 2020 14:13:09 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 22 Apr 2020 14:13:09 +0900
-Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 923B11A12D0;
- Wed, 22 Apr 2020 14:13:08 +0900 (JST)
-Received: from [10.213.29.177] (unknown [10.213.29.177])
- by yuzu.css.socionext.com (Postfix) with ESMTP id 5C7BF120131;
- Wed, 22 Apr 2020 14:13:07 +0900 (JST)
-Subject: Re: [PATCH v3 0/2] PCI: Add new UniPhier PCIe endpoint driver
-To: Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-References: <1584956454-8829-1-git-send-email-hayashi.kunihiko@socionext.com>
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Message-ID: <18cf881e-1d80-76bc-8c91-2fa9fa633558@socionext.com>
-Date: Wed, 22 Apr 2020 14:13:06 +0900
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <1584956454-8829-1-git-send-email-hayashi.kunihiko@socionext.com>
-Content-Language: en-US
+	id 1jR86Y-000083-CJ; Wed, 22 Apr 2020 05:39:26 +0000
+Received: from mga17.intel.com ([192.55.52.151])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jR86P-00006t-Kr; Wed, 22 Apr 2020 05:39:18 +0000
+IronPort-SDR: IA/KZU1k/hs0f5+beMoQGx4UEv0rGgnKa0WLdxPloA+sWKy9OvM0PiL5EgwXpATuMSADg/n2hK
+ E8F9yvMOubqA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 21 Apr 2020 22:39:13 -0700
+IronPort-SDR: AboEqZaXGpccJr0IPJJXmM82rMMNExbbsE3I1ZPkQSgGlgX+c/9qqnQGFz1kAYZ34LJHYfJEeA
+ INzyAyN1iVBw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,412,1580803200"; d="scan'208";a="245882690"
+Received: from dtzimme-mobl.amr.corp.intel.com ([10.251.145.143])
+ by fmsmga007.fm.intel.com with ESMTP; 21 Apr 2020 22:39:13 -0700
+Message-ID: <d20cc18d0fa10b52437e0ac29ea98792e0a3d45d.camel@linux.intel.com>
+Subject: Re: [PATCH 0/4] ASoC:: don't use snd_soc_rtdcom_lookup()
+From: Ranjani Sridharan <ranjani.sridharan@linux.intel.com>
+To: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>, Mark Brown
+ <broonie@kernel.org>
+Date: Tue, 21 Apr 2020 22:39:13 -0700
+In-Reply-To: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
+References: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_221312_079439_A24FFE0E 
-X-CRM114-Status: GOOD (  19.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200421_223917_693858_F2BE0EE3 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,59 +68,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>, Takashi Iwai <tiwai@suse.com>,
+ Cezary Rojewski <cezary.rojewski@intel.com>,
+ Ravulapati Vishnu vardhan rao <Vishnuvardhanrao.Ravulapati@amd.com>,
+ YueHaibing <yuehaibing@huawei.com>, Eason Yen <eason.yen@mediatek.com>,
+ Jie Yang <yang.jie@linux.intel.com>, alsa-devel@alsa-project.org,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Liam Girdwood <liam.r.girdwood@linux.intel.com>,
+ Richard Fontana <rfontana@redhat.com>, linux-mediatek@lists.infradead.org,
+ Shunli Wang <shunli.wang@mediatek.com>, Allison Randal <allison@lohutok.net>,
+ Vijendar Mukunda <Vijendar.Mukunda@amd.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Stephen Boyd <swboyd@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/03/23 18:40, Kunihiko Hayashi wrote:
-> This series adds PCIe endpoint controller driver for Socionext UniPhier
-> SoCs. This controller is based on the DesignWare PCIe core.
+On Wed, 2020-04-22 at 13:46 +0900, Kuninori Morimoto wrote:
+> Hi Mark
+> Cc related engineer
 > 
-> This driver supports Pro5 SoC only, so Pro5 needs multiple clocks and
-> resets in devicetree node.
+> These patches are tring to not to use snd_soc_rtdcom_lookup()
+> function
+> on each drivers as much as possible,  because we might have same name
+> component under multi component situation.
+> It can't find correct component in such case.
 > 
-> Changes since v2:
-> - dt-bindings: Add clock-names, reset-names, and fix example for Pro5
-> - Remove 'is_legacy' indicating that the compatible is for legacy SoC
-> - Use pci_epc_features instead of defining uniphier_soc_data
-> - Remove redundant register read access
-> - Clean up return code on uniphier_add_pcie_ep()
-> - typo: intx -> INTx
+> I tried to add new feature on each drivers to not to use it,
+> but I can't test.
+> Thus, these patches should get Acked-by or Tested-by from each
+> drivers
+> user/maintenor. Please test these.
 > 
-> Changes since v1:
-> - dt-bindings: Add Reviewed-by line
-> - Fix register value to set EP mode
-> - Add error message when failed to get phy
-> - Replace INTx assertion time with macro
-> 
-> Kunihiko Hayashi (2):
->    dt-bindings: PCI: Add UniPhier PCIe endpoint controller description
->    PCI: uniphier: Add Socionext UniPhier Pro5 PCIe endpoint controller
->      driver
-> 
->   .../devicetree/bindings/pci/uniphier-pcie-ep.txt   |  53 +++
->   MAINTAINERS                                        |   4 +-
->   drivers/pci/controller/dwc/Kconfig                 |  13 +-
->   drivers/pci/controller/dwc/Makefile                |   1 +
->   drivers/pci/controller/dwc/pcie-uniphier-ep.c      | 380 +++++++++++++++++++++
->   5 files changed, 447 insertions(+), 4 deletions(-)
->   create mode 100644 Documentation/devicetree/bindings/pci/uniphier-pcie-ep.txt
->   create mode 100644 drivers/pci/controller/dwc/pcie-uniphier-ep.c
-> 
+> After these patches, Intel / SOF drivers are still using
+> snd_soc_rtdcom_lookup(). Because it is very complex, I couldn't try
+> not to use it.
+> If possible, each drivers should try to not use it,
+> and it should be removed from ASoC.
+Morimoti-san,
 
-Gentle ping.
-Are there any comments about changes since v2?
-v2: https://www.spinics.net/lists/linux-pci/msg92429.html
+For my education, I understand the concept of multi-cpu/codec
+components, but when or who would need multiple platform components?
+This would help me able to remove the snd_soc_rtdcom_lookup() call in
+SOF.
 
-Thank you,
+Thanks,
+Ranjani
 
----
-Best Regards
-Kunihiko Hayashi
 
 _______________________________________________
 linux-arm-kernel mailing list
