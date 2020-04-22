@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73B3A1B4736
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:26:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032811B473B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 16:26:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q1UWg13wZ9e6KCU/XXFDcms3cYde/0lIX+2TbbsKToQ=; b=g5YTwQKwob8Vo4
-	wQ0poRTdNDgMekbGR4F9jzgdrIsQrgKQob1eE8MC5TuDH/MuwYaRclCrr80OY7jWiA0VnWanu04IS
-	gFZVsUiYbT2XWD+tVTgqs9T+V2rLg6q1AB29DTkXmQTnHS5qacidCWQkX49L81Ad+37hKXqRWt4yx
-	noIbjBOx7y3cUyaki/2Phd5AoiJmZCDFTfMWsWLrhO08qD7f3vW1xFA9HSOLQg7n65lhY2POmor2l
-	YGUXVOx0xpw2xPJq5etTncfSuhAZ7MgM3xQuYQDyOVc9NiHxtX6wew2jk/byaMaJV2287dwHSO7yR
-	x7hjfmjsUbEMDf7x2TYA==;
+	List-Owner; bh=XgtcwvVSzawul2t7glDVPuoz/OEXzBrPSIue7fpkfXE=; b=O2L4qVQvgEJOF8
+	LFOPVprUUJAiz97Ys97117eAQNTYOLnOD3tFldMP1sxTqmJZDjrYTCubBj/jSeda/RT3eP/VvyAYt
+	zZnsuadZxDk8Q550NNLfQSq0gyqEb+Soii9Xn7HbhCyDBaL29PBlioTWM3tvwveF5vcRd4M6PO1WX
+	i6MJknjgsVjDkoBwD3f1mFUOMVQc/UbFW9oeT7oW6ZkeEZ5DO5cj18S2OXLBZc3szaFnFl8yk2Tlo
+	BTYif8qKpDaL0BmYz5YCfKetLZOvwVDbPh0oxJ5yfpRYgv4MU3rQFyHv0CbvCruvXOS7ROw7KIP3V
+	P5tDaYYHRspl+jLjsQwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRGKM-0000ni-Nx; Wed, 22 Apr 2020 14:26:14 +0000
+	id 1jRGKe-00016C-Qu; Wed, 22 Apr 2020 14:26:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRGJr-0000c6-Ia
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 14:25:45 +0000
+ id 1jRGJt-0000cg-4P
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 14:25:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 013421042;
- Wed, 22 Apr 2020 07:25:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A482F1045;
+ Wed, 22 Apr 2020 07:25:44 -0700 (PDT)
 Received: from e112269-lin.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8755C3F68F;
- Wed, 22 Apr 2020 07:25:41 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3944B3F68F;
+ Wed, 22 Apr 2020 07:25:43 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-mm@kvack.org
-Subject: [PATCH 1/4] mm: Add PG_ARCH_2 page flag
-Date: Wed, 22 Apr 2020 15:25:27 +0100
-Message-Id: <20200422142530.32619-2-steven.price@arm.com>
+Subject: [PATCH 2/4] mm: Add arch hooks for saving/restoring tags
+Date: Wed, 22 Apr 2020 15:25:28 +0100
+Message-Id: <20200422142530.32619-3-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200422142530.32619-1-steven.price@arm.com>
 References: <20200422142530.32619-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_072543_696731_6A95A772 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20200422_072545_261442_C2F23916 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,121 +71,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For arm64 MTE support it is necessary to be able to mark pages that
-contain user space visible tags that will need to be saved/restored e.g.
-when swapped out.
+Arm's Memory Tagging Extension (MTE) adds some metadata (taga) to
+every physical page, when swapping pages out to disk it is necessary to
+save these tags, and later restore them when reading the pages back.
 
-To support this add a new arch specific flag (PG_ARCH_2) that arch code
-can opt into using ARCH_USES_PG_ARCH_2.
+Add some hooks along with dummy implementations to enable the
+arch code to handle this.
+
+Three new hooks are added to the swap code:
+ * arch_prepare_to_swap() and
+ * arch_swap_invalidate_page() / arch_swap_invalidate_area().
+One new hook is added to shmem:
+ * arch_swap_restore_tags()
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- fs/proc/page.c                    | 3 +++
- include/linux/kernel-page-flags.h | 1 +
- include/linux/page-flags.h        | 3 +++
- include/trace/events/mmflags.h    | 9 ++++++++-
- mm/Kconfig                        | 3 +++
- tools/vm/page-types.c             | 2 ++
- 6 files changed, 20 insertions(+), 1 deletion(-)
+ include/asm-generic/pgtable.h | 23 +++++++++++++++++++++++
+ mm/page_io.c                  |  6 ++++++
+ mm/shmem.c                    |  6 ++++++
+ mm/swapfile.c                 |  2 ++
+ 4 files changed, 37 insertions(+)
 
-diff --git a/fs/proc/page.c b/fs/proc/page.c
-index f909243d4a66..1b6cbe0849a8 100644
---- a/fs/proc/page.c
-+++ b/fs/proc/page.c
-@@ -217,6 +217,9 @@ u64 stable_page_flags(struct page *page)
- 	u |= kpf_copy_bit(k, KPF_PRIVATE_2,	PG_private_2);
- 	u |= kpf_copy_bit(k, KPF_OWNER_PRIVATE,	PG_owner_priv_1);
- 	u |= kpf_copy_bit(k, KPF_ARCH,		PG_arch_1);
-+#ifdef CONFIG_ARCH_USES_PG_ARCH_2
-+	u |= kpf_copy_bit(k, KPF_ARCH_2,	PG_arch_2);
-+#endif
- 
- 	return u;
- };
-diff --git a/include/linux/kernel-page-flags.h b/include/linux/kernel-page-flags.h
-index abd20ef93c98..eee1877a354e 100644
---- a/include/linux/kernel-page-flags.h
-+++ b/include/linux/kernel-page-flags.h
-@@ -17,5 +17,6 @@
- #define KPF_ARCH		38
- #define KPF_UNCACHED		39
- #define KPF_SOFTDIRTY		40
-+#define KPF_ARCH_2		41
- 
- #endif /* LINUX_KERNEL_PAGE_FLAGS_H */
-diff --git a/include/linux/page-flags.h b/include/linux/page-flags.h
-index 222f6f7b2bb3..1d4971fe4fee 100644
---- a/include/linux/page-flags.h
-+++ b/include/linux/page-flags.h
-@@ -135,6 +135,9 @@ enum pageflags {
- #if defined(CONFIG_IDLE_PAGE_TRACKING) && defined(CONFIG_64BIT)
- 	PG_young,
- 	PG_idle,
-+#endif
-+#ifdef CONFIG_ARCH_USES_PG_ARCH_2
-+	PG_arch_2,
- #endif
- 	__NR_PAGEFLAGS,
- 
-diff --git a/include/trace/events/mmflags.h b/include/trace/events/mmflags.h
-index 5fb752034386..5d098029a2d8 100644
---- a/include/trace/events/mmflags.h
-+++ b/include/trace/events/mmflags.h
-@@ -79,6 +79,12 @@
- #define IF_HAVE_PG_IDLE(flag,string)
+diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
+index 329b8c8ca703..306cee75b9ec 100644
+--- a/include/asm-generic/pgtable.h
++++ b/include/asm-generic/pgtable.h
+@@ -475,6 +475,29 @@ static inline int arch_unmap_one(struct mm_struct *mm,
+ }
  #endif
  
-+#ifdef CONFIG_ARCH_USES_PG_ARCH_2
-+#define IF_HAVE_PG_ARCH_2(flag,string) ,{1UL << flag, string}
-+#else
-+#define IF_HAVE_PG_ARCH_2(flag,string)
++#ifndef __HAVE_ARCH_PREPARE_TO_SWAP
++static inline int arch_prepare_to_swap(struct page *page)
++{
++	return 0;
++}
 +#endif
 +
- #define __def_pageflag_names						\
- 	{1UL << PG_locked,		"locked"	},		\
- 	{1UL << PG_waiters,		"waiters"	},		\
-@@ -105,7 +111,8 @@ IF_HAVE_PG_MLOCK(PG_mlocked,		"mlocked"	)		\
- IF_HAVE_PG_UNCACHED(PG_uncached,	"uncached"	)		\
- IF_HAVE_PG_HWPOISON(PG_hwpoison,	"hwpoison"	)		\
- IF_HAVE_PG_IDLE(PG_young,		"young"		)		\
--IF_HAVE_PG_IDLE(PG_idle,		"idle"		)
-+IF_HAVE_PG_IDLE(PG_idle,		"idle"		)		\
-+IF_HAVE_PG_ARCH_2(PG_arch_2,		"arch_2"	)
- 
- #define show_page_flags(flags)						\
- 	(flags) ? __print_flags(flags, "|",				\
-diff --git a/mm/Kconfig b/mm/Kconfig
-index c1acc34c1c35..60427ccc3cb8 100644
---- a/mm/Kconfig
-+++ b/mm/Kconfig
-@@ -867,4 +867,7 @@ config ARCH_HAS_HUGEPD
- config MAPPING_DIRTY_HELPERS
-         bool
- 
-+config ARCH_USES_PG_ARCH_2
-+	bool
++#ifndef __HAVE_ARCH_SWAP_INVALIDATE
++static inline void arch_swap_invalidate_page(int type, pgoff_t offset)
++{
++}
 +
- endmenu
-diff --git a/tools/vm/page-types.c b/tools/vm/page-types.c
-index 58c0eab71bca..0517c744b04e 100644
---- a/tools/vm/page-types.c
-+++ b/tools/vm/page-types.c
-@@ -78,6 +78,7 @@
- #define KPF_ARCH		38
- #define KPF_UNCACHED		39
- #define KPF_SOFTDIRTY		40
-+#define KPF_ARCH_2		41
++static inline void arch_swap_invalidate_area(int type)
++{
++}
++#endif
++
++#ifndef __HAVE_ARCH_SWAP_RESTORE_TAGS
++static inline void arch_swap_restore_tags(swp_entry_t entry, struct page *page)
++{
++}
++#endif
++
+ #ifndef __HAVE_ARCH_PGD_OFFSET_GATE
+ #define pgd_offset_gate(mm, addr)	pgd_offset(mm, addr)
+ #endif
+diff --git a/mm/page_io.c b/mm/page_io.c
+index 76965be1d40e..7baee316ac99 100644
+--- a/mm/page_io.c
++++ b/mm/page_io.c
+@@ -253,6 +253,12 @@ int swap_writepage(struct page *page, struct writeback_control *wbc)
+ 		unlock_page(page);
+ 		goto out;
+ 	}
++	/* Arch code may have to preserve more data
++	 * than just the page contents, e.g. memory tags
++	 */
++	ret = arch_prepare_to_swap(page);
++	if (ret)
++		goto out;
+ 	if (frontswap_store(page) == 0) {
+ 		set_page_writeback(page);
+ 		unlock_page(page);
+diff --git a/mm/shmem.c b/mm/shmem.c
+index 73754ed7af69..1010b91f267e 100644
+--- a/mm/shmem.c
++++ b/mm/shmem.c
+@@ -1658,6 +1658,12 @@ static int shmem_swapin_page(struct inode *inode, pgoff_t index,
+ 	}
+ 	wait_on_page_writeback(page);
  
- /* [48-] take some arbitrary free slots for expanding overloaded flags
-  * not part of kernel API
-@@ -135,6 +136,7 @@ static const char * const page_flag_names[] = {
- 	[KPF_ARCH]		= "h:arch",
- 	[KPF_UNCACHED]		= "c:uncached",
- 	[KPF_SOFTDIRTY]		= "f:softdirty",
-+	[KPF_ARCH_2]		= "H:arch_2",
- 
- 	[KPF_READAHEAD]		= "I:readahead",
- 	[KPF_SLOB_FREE]		= "P:slob_free",
++	/*
++	 * Some architectures may have to restore extra metadata to the
++	 * physical page after reading from swap
++	 */
++	arch_swap_restore_tags(swap, page);
++
+ 	if (shmem_should_replace_page(page, gfp)) {
+ 		error = shmem_replace_page(&page, gfp, info, index);
+ 		if (error)
+diff --git a/mm/swapfile.c b/mm/swapfile.c
+index 5871a2aa86a5..b39c6520b0cf 100644
+--- a/mm/swapfile.c
++++ b/mm/swapfile.c
+@@ -722,6 +722,7 @@ static void swap_range_free(struct swap_info_struct *si, unsigned long offset,
+ 	else
+ 		swap_slot_free_notify = NULL;
+ 	while (offset <= end) {
++		arch_swap_invalidate_page(si->type, offset);
+ 		frontswap_invalidate_page(si->type, offset);
+ 		if (swap_slot_free_notify)
+ 			swap_slot_free_notify(si->bdev, offset);
+@@ -2645,6 +2646,7 @@ SYSCALL_DEFINE1(swapoff, const char __user *, specialfile)
+ 	frontswap_map = frontswap_map_get(p);
+ 	spin_unlock(&p->lock);
+ 	spin_unlock(&swap_lock);
++	arch_swap_invalidate_area(p->type);
+ 	frontswap_invalidate_area(p->type);
+ 	frontswap_map_set(p, NULL);
+ 	mutex_unlock(&swapon_mutex);
 -- 
 2.20.1
 
