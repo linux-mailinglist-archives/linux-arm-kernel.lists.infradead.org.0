@@ -2,62 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D5C81B5070
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 00:40:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB4341B5077
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 00:47:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q0GNv2L7Zbw4+NzMHENXkBlembnA+/doSfdyCfOUBRE=; b=amDC0jFn8AfAJG
-	XbhLrzDlCgP95SPy7Ieu/OKB0FHaKJRgFR3o0f4Z0ted/cvOf/aRo5GFor82Bo295zPyYY4A1pA7y
-	8OFyX9/zpDPv22bSd18P07H0ZSxnx5exEt5Q3IuAd/bbOJht/Pf/WDUaLtCeiFJAiNwIMrDRq2REg
-	OqHDnQO7KSvbcE5N87FuQY8cVA3rKKHr4jM6LH+7FxZL1N2s58muUF8VbKGbqrzum5WHtK/hLPjhh
-	ixTVJuWQ7YE3JCKaYomZjaXqjHeYNeNcdNO/qgrdjxl7qb4SIuZgqrZR5+Nn5L1va4JYj9ZNiok9m
-	R8IJKX35DZhiFyX+4zvQ==;
+	List-Owner; bh=TYORu0cc6hxoIAcbOtyfsgxWGcKDUTpmiKL/FLmbSFQ=; b=SdE3hT4N0XNIOF
+	x9wNYZ1rttj4TFtC7oIFNJcpLj6ViMo4dEQEuac87SAuCD1R9/z1U1hIVOoBnMqv6wrLGDo9WaYg6
+	3yAZbnXR8wDtei5OCo9RVZQBTsNWFrJIkS+LyXM1nvcZF/iqf/kv9eG3kKjpwa2HgBHNaZVT/UnbP
+	Im491nOmRAOJ4md4Xq3ufgRSm1Z0l0B+DhFk4ZhDjnnNKzQrLmWtCAPtd2KsUIL4uZz9HG2sOKXqL
+	HOgql/f9Ckv1AHa+2uGa3mg6k4rCbJD/GM33HiXwkRfvV3sxZDCuon877KlvZrFvkQu0w+D0b4GnH
+	kuteVrUkweTyGRbVNxhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRO2X-0007bW-Rn; Wed, 22 Apr 2020 22:40:21 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1jRO8t-0000Ws-W6; Wed, 22 Apr 2020 22:46:56 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRO2C-0007Ft-JD; Wed, 22 Apr 2020 22:40:02 +0000
-IronPort-SDR: sqt4DfN40zhB/M6/VPep/W9PpPGyh943ChbjR/bY+XAjudXSbOZLbcX7pl3i5+V9cGX2rDBFb5
- qDAGmtKe/xmQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 22 Apr 2020 15:39:59 -0700
-IronPort-SDR: 6KcZIDgHNFgXHvJepoRz7a8Ga3rtEvz1kejbSOwv81iDWhL8X5tYRaWuuUl3/EIag2LyP9KljY
- 0u7xm/wuIs/A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,304,1583222400"; d="scan'208";a="292088532"
-Received: from aacostaz-mobl.amr.corp.intel.com ([10.255.74.8])
- by orsmga008.jf.intel.com with ESMTP; 22 Apr 2020 15:39:59 -0700
-Message-ID: <ebe305743178c4548b779f25e6400863094ef5a9.camel@linux.intel.com>
-Subject: Re: [PATCH 0/4] ASoC:: don't use snd_soc_rtdcom_lookup()
-From: Ranjani Sridharan <ranjani.sridharan@linux.intel.com>
-To: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
-Date: Wed, 22 Apr 2020 15:39:58 -0700
-In-Reply-To: <874ktbuq4j.wl-kuninori.morimoto.gx@renesas.com>
-References: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
- <d20cc18d0fa10b52437e0ac29ea98792e0a3d45d.camel@linux.intel.com>
- <874ktbuq4j.wl-kuninori.morimoto.gx@renesas.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1jRO8l-0000V9-A9
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 22:46:48 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id e6so1622644pjt.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 Apr 2020 15:46:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=pLTuQArcwiFXcG9uc7P3/tOH2806IqFHASRaBcIcsEY=;
+ b=BSbkpzmsMrB61iVPWzBuW/+ZEnOUMyG61Cjfz/vz3GFTkoJosnfewYwwNytlJSg/r5
+ 7urIvRN84RRm0goUbfxHHzHPdDP8mVksMX8xC3NIi85jZ0dxMD54ig+wXJWmGJ+PTddQ
+ Y/1YKuKZgP6vEwWbBfuWIfhMmf8ZfOiwR0UJs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=pLTuQArcwiFXcG9uc7P3/tOH2806IqFHASRaBcIcsEY=;
+ b=Yi9UA2gQ8WxfrrzthBgBQdzkMMXS7DIhxQdY5HoYBw9vgNAbKi6SmZc0eQ40sy8vW8
+ j7NdIxax+LIJ9OovhSgEMCiml0gFWxL26MkkHE7qQan4OwUOVXkcBPmUqMYCSW/AZT3K
+ fiUqI8//OIzzihWEOqh6UX2og3FhjECitTGN3N1Ci2ppS7kEWorhPG/ZA7HKW8/tb6vf
+ Eua7NYQ71ZR3nW4DC+zyjXFD1AUCiKjl+yBPMBiQfnnKZoiYjCHi/7eU7Yv7cl6kY1z7
+ lZlRVyDU1jcyhQUEDSX8OBcZ8SWN+QSH3F2zT1pDgImKxIE3evmvn/OJVrvmwlMqZcO9
+ ExvA==
+X-Gm-Message-State: AGi0PuYZzf/GYsx6dq8XwdlTY75YQMQGaFCOBf7l+cLy+/crCa+gXXKu
+ g5XmnDsb5Y0VsmK5a3Kiz9BHwQ==
+X-Google-Smtp-Source: APiQypKhDC0baxY/PgdACBGve8Req9KLYTUEXXH0x/85yLzgvD2k0uCeWYCvvSYzzEadi+NZNpZcBw==
+X-Received: by 2002:a17:90a:5aa7:: with SMTP id
+ n36mr1056873pji.45.1587595606121; 
+ Wed, 22 Apr 2020 15:46:46 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
+ by smtp.gmail.com with ESMTPSA id h11sm539650pfo.120.2020.04.22.15.46.44
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 22 Apr 2020 15:46:45 -0700 (PDT)
+Date: Wed, 22 Apr 2020 15:46:43 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Yong Mao <yong.mao@mediatek.com>
+Subject: Re: [PATCH 3/3] mmc: core: fix mmc_sdio_reinit_card fail issue
+Message-ID: <20200422224643.GI199755@google.com>
+References: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
+ <1586835611-13857-4-git-send-email-yong.mao@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1586835611-13857-4-git-send-email-yong.mao@mediatek.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_154000_714890_D25FEA24 
-X-CRM114-Status: GOOD (  20.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_154647_374903_A70CA6EF 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,80 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Cezary Rojewski <cezary.rojewski@intel.com>,
- Jie Yang <yang.jie@linux.intel.com>, alsa-devel@alsa-project.org,
- Liam Girdwood <liam.r.girdwood@linux.intel.com>,
- Richard Fontana <rfontana@redhat.com>, Shunli Wang <shunli.wang@mediatek.com>,
- YueHaibing <yuehaibing@huawei.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Jiaxin Yu <jiaxin.yu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- Vijendar Mukunda <Vijendar.Mukunda@amd.com>,
- Stephen Boyd <swboyd@chromium.org>, Mark Brown <broonie@kernel.org>,
- linux-mediatek@lists.infradead.org, Eason Yen <eason.yen@mediatek.com>,
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, srv_heupstream@mediatek.com,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Chaotian Jing <chaotian.jing@mediatek.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- Takashi Iwai <tiwai@suse.com>,
- Ravulapati Vishnu vardhan rao <Vishnuvardhanrao.Ravulapati@amd.com>,
- Colin Ian King <colin.king@canonical.com>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-04-23 at 07:12 +0900, Kuninori Morimoto wrote:
-> Hi
-> 
-> Hi Ranjani
-> 
-> > > These patches are tring to not to use snd_soc_rtdcom_lookup()
-> > > function
-> > > on each drivers as much as possible,  because we might have same
-> > > name
-> > > component under multi component situation.
-> > > It can't find correct component in such case.
-> > > 
-> > > I tried to add new feature on each drivers to not to use it,
-> > > but I can't test.
-> > > Thus, these patches should get Acked-by or Tested-by from each
-> > > drivers
-> > > user/maintenor. Please test these.
-> > > 
-> > > After these patches, Intel / SOF drivers are still using
-> > > snd_soc_rtdcom_lookup(). Because it is very complex, I couldn't
-> > > try
-> > > not to use it.
-> > > If possible, each drivers should try to not use it,
-> > > and it should be removed from ASoC.
-> > 
-> > Morimoti-san,
-> > 
-> > For my education, I understand the concept of multi-cpu/codec
-> > components, but when or who would need multiple platform
-> > components?
-> > This would help me able to remove the snd_soc_rtdcom_lookup() call
-> > in
-> > SOF.
-> 
-> I don't know concrete system.
-> But it is "possible" today.
-> And, we don't know the future system,
-> having flexibility is good idea, I think.
-> 
-> I'm thinking removing lookup function is nice idea,
-> but don't feel pressure to it.
-> "Now you know it" is very enough for me.
-I am having a hard time visualizing a scenario where we would have more
-than one platform component. And even if we did, I'd think that the
-driver registering these components would make sure to not duplicate
-the driver names. Of course, we dont really check if thats really the
-case. 
-Do you think it makes sense to add that check when registering a
-component? If we do that, then keeping snd_soc_rtdcom_lookup() might
-not be such a bad idea. 
+Hi Yong,
 
-Thanks,
-Ranjani
+On Tue, Apr 14, 2020 at 11:40:11AM +0800, Yong Mao wrote:
+> From: yong mao <yong.mao@mediatek.com>
+> 
+> If SDIO device is initialized by UHS mode, it will run with 1.8v power.
+> In this mode, mmc_go_idle may not make SDIO device go idle successfully
+> in some special SDIO device. And then it can't be re-initialized
+> successfully.
+> According to the logic in sdio_reset_comm and mmc_sdio_sw_reset,
+> invoking mmc_set_clock(host, host->f_min) before mmc_send_io_op_cond
+> can make this SDIO device back to right state.
+>
+
+The commit message isn't very concise. Suggestion for a better
+structure:
+
+mmc: core: reset clock to minimum speed during card reinit
+
+Some buggy (?) SDIO devices don't (consistently?) enter idle mode
+through mmc_go_idle() when running in UHS mode. [add rationale why
+setting the clock to minimum speed fixes this]
+
+
+Also the function sdio_reset_comm() mentioned in the commit message
+doesn't exist in recent kernels. And mmc_sdio_sw_reset() does not invoke
+mmc_send_io_op_cond(), as the commit message appears to claim.
+
+> Signed-off-by: Yong Mao <yong.mao@mediatek.com>
+> ---
+>  drivers/mmc/core/sdio.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/mmc/core/sdio.c b/drivers/mmc/core/sdio.c
+> index f173cad..dc4dc63 100644
+> --- a/drivers/mmc/core/sdio.c
+> +++ b/drivers/mmc/core/sdio.c
+> @@ -850,6 +850,7 @@ static int mmc_sdio_reinit_card(struct mmc_host *host)
+>  
+>  	sdio_reset(host);
+>  	mmc_go_idle(host);
+> +	mmc_set_clock(host, host->f_min);
+
+mmc_sdio_sw_reset() - which is mentioned as reference in the commit
+message - sets the clock speed before sdio_reset(). Should this order
+be followed here too?
 
 
 _______________________________________________
