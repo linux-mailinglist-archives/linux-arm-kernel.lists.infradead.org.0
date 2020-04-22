@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00BCC1B4123
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F4791B4139
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p4GFGtQXProTXMdBJbqsnqqAKLhtxxquRh3EF2k3zpw=; b=uRCF0qMGHUdgTT
-	OzPaqiMq9VsKYwzjqSJKgATfAZzwWBm3XDkPgy83QWnqET6YNBdeo6FDmQu4qq5RHTI9S1jq08s+K
-	B402hsR87koMK6ZmL8qDyEkzYbCA6f2xUFSwZG1FYwapVhY/sIi5//EEsBtMGhvajjAAguOGWjpJ+
-	QsHm73JKqKz3UJpPFOMRWhYcbWsoXqHkaOB7Q9zFpx8Bb3VKoy4a0ViDJnG1Pm3tNetXxWxgzrX1B
-	WJErWF7XCazfxyfyxu3A6W3wozkbMGm/9jbaNjpUbHDejMNsweS6Kw7qbnE009DkK0XvvpfOKtsN/
-	UnVYmLMvXxavgjse+mXg==;
+	List-Owner; bh=EXQC5RZB1CYZC4bZKcP3gOSs1uADW79Icx7iggtYU0s=; b=FYTXStub1lzTF1
+	xwBp7eNCEVvh77TPpmotZj/jq5OzincyPaIlg7MJ4qKwk0VpBsBMnUsxMarDrirJ2tDBDRmJ+6DHK
+	hz0vxCRHqvSclCtoWzRq5yWx7cRmoPrI80t3BsFe6NVBLomFdBo8TPwbagUOGshHVDZs7ArLUlLIj
+	2m6DEFPMpgLLBvYYfOzk22xC58pdIDvGh371nkE4VI6ALHfvBYHcJ8N3eZWUxHQ6o9g5/+IOzKkGO
+	UQvLoxSyBa0c9b44fQDcPhc6wBhJIkqv0HxqlkPF8vHvPtFLWRnTmAQrBDtIuHyUaQk4eNs7nZaho
+	tODJxd7XVciqcCwnsa+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRCy0-0007I4-2m; Wed, 22 Apr 2020 10:50:56 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jRCyG-0007cR-0L; Wed, 22 Apr 2020 10:51:12 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRCty-0000wS-Gh
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 10:46:49 +0000
+ id 1jRCu0-0000yT-PH
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 10:46:50 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 496cYw3qRvz1rtZW;
- Wed, 22 Apr 2020 12:46:44 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 496cYx5NMwz1qs3s;
+ Wed, 22 Apr 2020 12:46:45 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 496cYw3YhZz1qr41;
- Wed, 22 Apr 2020 12:46:44 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 496cYx581Vz1qr40;
+ Wed, 22 Apr 2020 12:46:45 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id aQ1dMFiHdC8r; Wed, 22 Apr 2020 12:46:43 +0200 (CEST)
-X-Auth-Info: Dx0xVjJ/ZTDkzeVNj7gSvA3PCZoZwZ8O/eKTWU8ZyOM=
+ with ESMTP id SGQp0E88Z9Nj; Wed, 22 Apr 2020 12:46:44 +0200 (CEST)
+X-Auth-Info: FdB1KU8q2Xm0+qB+UkiqcpRi8oPBi26NjtllZxXU+3w=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed, 22 Apr 2020 12:46:43 +0200 (CEST)
+ Wed, 22 Apr 2020 12:46:44 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V5 13/20] ARM: dts: stm32: Add alternate pinmux for USART2 pins
-Date: Wed, 22 Apr 2020 12:46:06 +0200
-Message-Id: <20200422104613.96944-14-marex@denx.de>
+Subject: [PATCH V5 14/20] ARM: dts: stm32: Enable Bluetooth on AV96
+Date: Wed, 22 Apr 2020 12:46:07 +0200
+Message-Id: <20200422104613.96944-15-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200422104613.96944-1-marex@denx.de>
 References: <20200422104613.96944-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_034646_764809_12922295 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200422_034649_019258_BD2C8260 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
+ low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ [212.18.0.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -86,7 +86,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add mux option for USART2 pins, this is used on AV96 board.
+The WiFi/Bluetooth chip is attached to USART2 on AV96 as well, describe
+it in DT to make it available. Remove BT LED and turn it into a shutdown
+GPIO, because the GPIO line controls the BT_REG_ON signal. The LED is just
+an indicator connected to the same line, but not the primary function.
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Marek Vasut <marex@denx.de>
@@ -103,44 +106,54 @@ V3: No change
 V4: Rebase on stm32-next
 V5: No change
 ---
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 23 ++++++++++++++-------
+ 1 file changed, 16 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-index 0f9a6b1325f9..f4bf87bd9b7e 100644
---- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-@@ -1389,6 +1389,30 @@ pins {
- 		};
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index 310329a456ed..ebf34ae15185 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -21,6 +21,7 @@ aliases {
+ 		mmc0 = &sdmmc1;
+ 		serial0 = &uart4;
+ 		serial1 = &uart7;
++		serial2 = &usart2;
+ 		spi0 = &qspi;
  	};
  
-+	usart2_pins_a: usart2-0 {
-+		pins1 {
-+			pinmux = <STM32_PINMUX('F', 5, AF7)>, /* USART2_TX */
-+				 <STM32_PINMUX('D', 4, AF7)>; /* USART2_RTS */
-+			bias-disable;
-+			drive-push-pull;
-+			slew-rate = <0>;
-+		};
-+		pins2 {
-+			pinmux = <STM32_PINMUX('D', 6, AF7)>, /* USART2_RX */
-+				 <STM32_PINMUX('D', 3, AF7)>; /* USART2_CTS_NSS */
-+			bias-disable;
-+		};
-+	};
+@@ -63,13 +64,6 @@ led4 {
+ 			default-state = "off";
+ 			panic-indicator;
+ 		};
+-
+-		led5 {
+-			label = "blue:bt";
+-			gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "bluetooth-power";
+-			default-state = "off";
+-		};
+ 	};
+ 
+ 	sd_switch: regulator-sd_switch {
+@@ -419,3 +413,18 @@ &uart7 {
+ 	pinctrl-0 = <&uart7_pins_a>;
+ 	status = "okay";
+ };
 +
-+	usart2_sleep_pins_a: usart2-sleep-0 {
-+		pins {
-+			pinmux = <STM32_PINMUX('F', 5, ANALOG)>, /* USART2_TX */
-+				 <STM32_PINMUX('D', 4, ANALOG)>, /* USART2_RTS */
-+				 <STM32_PINMUX('D', 6, ANALOG)>, /* USART2_RX */
-+				 <STM32_PINMUX('D', 3, ANALOG)>; /* USART2_CTS_NSS */
-+		};
-+	};
++/* Bluetooth */
++&usart2 {
++	pinctrl-names = "default", "sleep";
++	pinctrl-0 = <&usart2_pins_a>;
++	pinctrl-1 = <&usart2_sleep_pins_a>;
++	st,hw-flow-ctrl;
++	status = "okay";
 +
- 	usart3_pins_a: usart3-0 {
- 		pins1 {
- 			pinmux = <STM32_PINMUX('B', 10, AF7)>; /* USART3_TX */
++	bluetooth {
++		compatible = "brcm,bcm43438-bt";
++		max-speed = <3000000>;
++		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
++	};
++};
 -- 
 2.25.1
 
