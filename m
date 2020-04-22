@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B1281B3B68
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:32:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F8851B3B90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 11:38:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nWJcZIJSj2lIgegGZDwmwOxee7IQnPlRJd/c07Z7JO4=; b=dzlR2n+9/ljPQLjud0lK9NNXa
-	XZTyz/8dxkJ8TG4SSUjFCl44jUu85EDnB08vi+KE7xwi0CNxgAIbbJD6R7vzDlTZVCFOPeumfM3F4
-	diq04CofRbA9giWRnz65JIVd5Afjr5HgBViG0xxqJb5WY+bGnlmLqfLleKVHRazrAcjEDE6brMIht
-	qj6XhYMRJJ7xKITv+hqgk4WHYVyla7QTWhzC74+LS3fw5j9+VtV4LyqNwvzPupqzHzgoICguMT8lW
-	CEZb5juxEt4UVAWNeQjLu2jHImRRilVieHjNO6BvfGZ3bGL+pHnXz2Ow90vRY++CBuYKDxHEE6kUi
-	rXXqUpr3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=khg6nbMGoNzIidX0fzkNgWhCYfAM4Z3kKIJCqNRmOpk=; b=QByLLTNZHTCu2+
+	Z5mJAldYUFhq+AAiPO++6xZV+nFLPVI01z3jW5wxg8W4rKYp9bOS9VcznJks+NVRk4Hi8SOtBqCzx
+	lEL3Ezu5HPwtGSkZxETUgPpBCVumpEY41M+AfYMe3SXVNEmWP8lqK2zK4IyW3+MRQW2a8cHXDiTIe
+	HE8b7kYdKKYACEkY8vk+STW6wnwjak8a2ZBFm6L++qXWW06ETDys/W1QuxXDDEOyFwFUAyEE9fhSR
+	SuY50nHzoPXX+BzLGfX/CKc4VxXhV82IMQNFkooTAVwtW6VLNgcpKJo+6/T2AHI+DK7t3p5hr+yzE
+	qNg6RbnyjhsKmFoK10sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRBju-0005nm-0G; Wed, 22 Apr 2020 09:32:18 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRBjj-0005ml-IV; Wed, 22 Apr 2020 09:32:10 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id 1C85D2A19E5
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Adrian Ratiu
- <adrian.ratiu@collabora.com>
-Subject: Re: [PATCH v7 4/8] drm: imx: Add i.MX 6 MIPI DSI host platform driver
-In-Reply-To: <20200422010727.GM5983@pendragon.ideasonboard.com>
-References: <20200421161610.1501827-1-adrian.ratiu@collabora.com>
- <20200421161610.1501827-5-adrian.ratiu@collabora.com>
- <20200422010727.GM5983@pendragon.ideasonboard.com>
-Date: Wed, 22 Apr 2020 12:33:10 +0300
-Message-ID: <87a733kgq1.fsf@collabora.com>
+	id 1jRBpk-0000oE-Bc; Wed, 22 Apr 2020 09:38:20 +0000
+Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRBpZ-0000nI-TB
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 09:38:12 +0000
+Received: from erd988 (erd988.prtnl [192.168.224.30])
+ by sparta.prtnl (Postfix) with ESMTP id 3DC5F44A003F;
+ Wed, 22 Apr 2020 11:38:03 +0200 (CEST)
+Date: Wed, 22 Apr 2020 11:38:02 +0200
+From: David Jander <david@protonic.nl>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v6 3/5] ARM: dts: add Protonic VT7 board
+Message-ID: <20200422113802.5961d776@erd988>
+In-Reply-To: <20200422070441.5hvozjvcssanqnjb@pengutronix.de>
+References: <20200421124057.19238-1-o.rempel@pengutronix.de>
+ <20200421124057.19238-4-o.rempel@pengutronix.de>
+ <20200422070441.5hvozjvcssanqnjb@pengutronix.de>
+Organization: Protonic Holland
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_023207_896621_28DDAF4A 
-X-CRM114-Status: GOOD (  22.62  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200422_023810_279195_74C67000 
+X-CRM114-Status: GOOD (  29.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ no trust [83.163.252.89 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,467 +61,643 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Heiko Stuebner <heiko@sntech.de>, Adrian Pop <pop.adrian61@gmail.com>,
- Jonas Karlman <jonas@kwiboo.se>, Enric Balletbo Serra <eballetbo@gmail.com>,
- Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- linux-rockchip@lists.infradead.org, linux-imx@nxp.com,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org,
- Emil Velikov <emil.velikov@collabora.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Rob Herring <robh@kernel.org>,
+ Robin van der Gracht <robin@protonic.nl>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Oleksij Rempel <o.rempel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 Apr 2020, Laurent Pinchart 
-<laurent.pinchart@ideasonboard.com> wrote:
-> Hi Adrian, 
 
-Hi Laurent,
+Hi Marco,
 
+Just chiming in with the answers I know most of...
+
+On Wed, 22 Apr 2020 09:04:41 +0200
+Marco Felsch <m.felsch@pengutronix.de> wrote:
+
+> Hi Oleksij,
 > 
-> On Tue, Apr 21, 2020 at 07:16:06PM +0300, Adrian Ratiu wrote: 
->> This adds support for the Synopsis DesignWare MIPI DSI v1.01 
->> host controller which is embedded in i.MX 6 SoCs.   Based on 
->> following patches, but updated/extended to work with existing 
->> support found in the kernel:  - drm: imx: Support Synopsys 
->> DesignWare MIPI DSI host controller 
->>   Signed-off-by: Liu Ying <Ying.Liu@freescale.com> 
->>  Cc: Fabio Estevam <festevam@gmail.com> Cc: Enric Balletbo 
->> Serra <eballetbo@gmail.com> Reviewed-by: Emil Velikov 
->> <emil.velikov@collabora.com> Tested-by: Adrian Pop 
->> <pop.adrian61@gmail.com> Tested-by: Arnaud Ferraris 
->> <arnaud.ferraris@collabora.com> Signed-off-by: Sjoerd Simons 
->> <sjoerd.simons@collabora.com> Signed-off-by: Martyn Welch 
->> <martyn.welch@collabora.com> Signed-off-by: Adrian Ratiu 
->> <adrian.ratiu@collabora.com> --- Changes since v6: 
->>   - Replaced custom noop encoder with the simple drm encoder 
->>   (Enric) - Added CONFIG_DRM_IMX6_MIPI_DSI depends on CONFIG_OF 
->>   (Enric) - Dropped imx_mipi_dsi_register() because now it only 
->>   creates the dummy encoder which can easily be done directly 
->>   in imx_dsi_bind() 
->>  Changes since v5: 
->>   - Reword to remove unrelated device tree patch mention 
->>   (Fabio) - Move pllref_clk enable/disable to bind/unbind 
->>   (Ezequiel) - Fix freescale.com -> nxp.com email addresses 
->>   (Fabio) - Also added myself as module author (Fabio) - Use 
->>   DRM_DEV_* macros for consistency, print more error msg 
->>  Changes since v4: 
->>   - Split off driver-specific configuration of phy timings due 
->>   to new upstream API.  - Move regmap infrastructure logic to 
->>   separate commit (Ezequiel) - Move dsi v1.01 layout addition 
->>   to a separate commit (Ezequiel) - Minor warnings and driver 
->>   name fixes 
->>  Changes since v3: 
->>   - Renamed platform driver to reflect it's i.MX6 only. (Fabio) 
->>  Changes since v2: 
->>   - Fixed commit tags. (Emil) 
->>  Changes since v1: 
->>   - Moved register definitions & regmap initialization into 
->>   bridge module. Platform drivers get the regmap via plat_data 
->>   after calling the bridge probe. (Emil) 
->> --- 
->>  drivers/gpu/drm/imx/Kconfig            |   8 + 
->>  drivers/gpu/drm/imx/Makefile           |   1 + 
->>  drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c | 391 
->>  +++++++++++++++++++++++++ 3 files changed, 400 insertions(+) 
->>  create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c 
->>  diff --git a/drivers/gpu/drm/imx/Kconfig 
->> b/drivers/gpu/drm/imx/Kconfig index 
->> 207bf7409dfba..0dffc72df7922 100644 --- 
->> a/drivers/gpu/drm/imx/Kconfig +++ b/drivers/gpu/drm/imx/Kconfig 
->> @@ -39,3 +39,11 @@ config DRM_IMX_HDMI 
->>  	depends on DRM_IMX help Choose this if you want to use 
->>  HDMI on i.MX6. 
->> + +config DRM_IMX6_MIPI_DSI +	tristate "Freescale i.MX6 
->> DRM MIPI DSI" +	select DRM_DW_MIPI_DSI +	depends on 
->> DRM_IMX +	depends on OF +	help +	  Choose this if you want 
->> to use MIPI DSI on i.MX6.  diff --git 
->> a/drivers/gpu/drm/imx/Makefile b/drivers/gpu/drm/imx/Makefile 
->> index 21cdcc2faabc8..9a7843c593478 100644 --- 
->> a/drivers/gpu/drm/imx/Makefile +++ 
->> b/drivers/gpu/drm/imx/Makefile @@ -9,3 +9,4 @@ 
->> obj-$(CONFIG_DRM_IMX_TVE) += imx-tve.o 
->>  obj-$(CONFIG_DRM_IMX_LDB) += imx-ldb.o 
->>  obj-$(CONFIG_DRM_IMX_HDMI) += dw_hdmi-imx.o 
->> +obj-$(CONFIG_DRM_IMX6_MIPI_DSI) += dw_mipi_dsi-imx6.o diff 
->> --git a/drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c 
->> b/drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c new file mode 100644 
->> index 0000000000000..f8a0a4fe16e21 --- /dev/null +++ 
->> b/drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c @@ -0,0 +1,391 @@ +// 
->> SPDX-License-Identifier: GPL-2.0+ +/* + * i.MX6 drm driver - 
->> MIPI DSI Host Controller + * + * Copyright (C) 2011-2015 
->> Freescale Semiconductor, Inc.  + * Copyright (C) 2019-2020 
->> Collabora, Ltd.  + */ + +#include <linux/clk.h> +#include 
->> <linux/component.h> +#include <linux/mfd/syscon.h> +#include 
->> <linux/mfd/syscon/imx6q-iomuxc-gpr.h> +#include 
->> <linux/module.h> +#include <linux/of_device.h> +#include 
->> <linux/regmap.h> +#include <linux/videodev2.h> +#include 
->> <drm/bridge/dw_mipi_dsi.h> +#include <drm/drm_crtc_helper.h> 
->> +#include <drm/drm_mipi_dsi.h> +#include <drm/drm_of.h> 
->> +#include <drm/drm_print.h> + +#include "imx-drm.h" + +#define 
->> DSI_PWR_UP			0x04 +#define RESET 
->> 0 +#define POWERUP				BIT(0) + +#define 
->> DSI_PHY_IF_CTRL			0x5c +#define 
->> PHY_IF_CTRL_RESET		0x0 + +#define DSI_PHY_TST_CTRL0 
->> 0x64 +#define PHY_TESTCLK			BIT(1) +#define 
->> PHY_UNTESTCLK			0 +#define PHY_TESTCLR 
->> BIT(0) +#define PHY_UNTESTCLR			0 + 
->> +#define DSI_PHY_TST_CTRL1		0x68 +#define PHY_TESTEN 
->> BIT(16) +#define PHY_UNTESTEN			0 +#define 
->> PHY_TESTDOUT(n)			(((n) & 0xff) << 8) 
->> +#define PHY_TESTDIN(n)			(((n) & 0xff) << 
->> 0) + +struct imx_mipi_dsi { +	struct drm_encoder 
->> encoder; +	struct device *dev; +	struct regmap *mux_sel; + 
->> struct dw_mipi_dsi *mipi_dsi; +	struct clk *pllref_clk; + 
->> +	void __iomem *base; +	unsigned int lane_mbps; +}; + 
->> +struct dphy_pll_testdin_map { +	unsigned int max_mbps; + 
->> u8 testdin; +}; + +/* The table is based on 27MHz DPHY pll 
->> reference clock. */ +static const struct dphy_pll_testdin_map 
->> dptdin_map[] = { +	{160, 0x04}, {180, 0x24}, {200, 0x44}, 
->> {210, 0x06}, +	{240, 0x26}, {250, 0x46}, {270, 0x08}, 
->> {300, 0x28}, +	{330, 0x48}, {360, 0x2a}, {400, 0x4a}, 
->> {450, 0x0c}, +	{500, 0x2c}, {550, 0x0e}, {600, 0x2e}, 
->> {650, 0x10}, +	{700, 0x30}, {750, 0x12}, {800, 0x32}, 
->> {850, 0x14}, +	{900, 0x34}, {950, 0x54}, {1000, 0x74} +}; 
->> + +static inline struct imx_mipi_dsi *enc_to_dsi(struct 
->> drm_encoder *enc) +{ +	return container_of(enc, struct 
->> imx_mipi_dsi, encoder); +} + +static void 
->> imx_mipi_dsi_set_ipu_di_mux(struct imx_mipi_dsi *dsi, int 
->> ipu_di) +{ +	regmap_update_bits(dsi->mux_sel, IOMUXC_GPR3, + 
->> IMX6Q_GPR3_MIPI_MUX_CTL_MASK, +			   ipu_di 
->> << IMX6Q_GPR3_MIPI_MUX_CTL_SHIFT); +} + +static bool 
->> imx_mipi_dsi_encoder_mode_fixup(struct drm_encoder *encoder, + 
->> const struct drm_display_mode *mode, + 
->> struct drm_display_mode *adj_mode) +{ +	return true; +} + 
->> +static int imx_mipi_dsi_encoder_atomic_check(struct 
->> drm_encoder *encoder, + 
->> struct drm_crtc_state *crtc_state, + 
->> struct drm_connector_state *conn) +{ +	struct 
->> imx_crtc_state *imx_crtc_state = to_imx_crtc_state(crtc_state); 
->> + +	/* The following values are taken from 
->> dw_hdmi_imx_atomic_check */ +	imx_crtc_state->bus_format 
->> = MEDIA_BUS_FMT_RGB888_1X24; + 
->> imx_crtc_state->di_hsync_pin = 2; + 
->> imx_crtc_state->di_vsync_pin = 3; + +	return 0; +} 
+> On 20-04-21 14:40, Oleksij Rempel wrote:
+> > The Protonic VT7 is a mid-class ISObus Virtual Terminal with a 7 inch
+> > touchscreen display.
+> > 
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> > Signed-off-by: Robin van der Gracht <robin@protonic.nl>
+> > Signed-off-by: David Jander <david@protonic.nl>
+> > Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> > ---
+> >  arch/arm/boot/dts/Makefile          |   1 +
+> >  arch/arm/boot/dts/imx6dl-prtvt7.dts | 472 ++++++++++++++++++++++++++++
+> >  2 files changed, 473 insertions(+)
+> >  create mode 100644 arch/arm/boot/dts/imx6dl-prtvt7.dts
+> > 
+> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> > index 8ce744f1cbfc9..66ee89e7929f9 100644
+> > --- a/arch/arm/boot/dts/Makefile
+> > +++ b/arch/arm/boot/dts/Makefile
+> > @@ -450,6 +450,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+> >  	imx6dl-pico-hobbit.dtb \
+> >  	imx6dl-pico-nymph.dtb \
+> >  	imx6dl-pico-pi.dtb \
+> > +	imx6dl-prtvt7.dtb \
+> >  	imx6dl-rex-basic.dtb \
+> >  	imx6dl-riotboard.dtb \
+> >  	imx6dl-sabreauto.dtb \
+> > diff --git a/arch/arm/boot/dts/imx6dl-prtvt7.dts b/arch/arm/boot/dts/imx6dl-prtvt7.dts
+> > new file mode 100644
+> > index 0000000000000..a948c7c6eb3ce
+> > --- /dev/null
+> > +++ b/arch/arm/boot/dts/imx6dl-prtvt7.dts
+> > @@ -0,0 +1,472 @@
+> > +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> > +/*
+> > + * Copyright (c) 2016 Protonic Holland
+> > + */
+> > +
+> > +/dts-v1/;
+> > +#include "imx6dl.dtsi"
+> > +#include "imx6qdl-prti6q.dtsi"  
 > 
-> No encoder functions please. This should be a bridge driver, the 
-> encoder should be created by the i.MX display controller driver 
-> itself. As that would require quite a bit of refactoring I'm OK 
-> having an encoder here for the meantime, but it should be a 
-> dummy one, without any operation. 
->
+> Should we name it "imx6qdl-prt-common.dtsi"? Still don't like that this
+> dtsi comes from the 1st commit rather then having a single commit adding
+> the .dtsi but that is only my opinion.
 
-I am very grateful for your willingness to decrease the scope of 
-work required for this series, thank you, much appreciated!
+Isn't the extension ".dtsi" implying "common" already?
+This file is strictly common to the "prti6q" family of products, not to all
+Protonic products, so the name you suggest would be potentially misleading I
+guess. Maybe we can just leave it like this?
 
-I'll make the "unify encoder creation" patch independent of this 
-series and use an empty encoder here. We can continue the bridge 
-refactoring discussion for the drivers in the other patch which 
-looks like it will become a series of its own :)
+> > +#include <dt-bindings/input/input.h>
+> > +#include <dt-bindings/leds/common.h>
+> > +#include <dt-bindings/sound/fsl-imx-audmux.h>
+> > +
+> > +/ {
+> > +	model = "Protonic VT7";
+> > +	compatible = "prt,prtvt7", "fsl,imx6dl";
+> > +
+> > +	memory@10000000 {
+> > +		device_type = "memory";
+> > +		reg = <0x10000000 0x20000000>;
+> > +	};
+> > +
+> > +	backlight_lcd: backlight-lcd {
+> > +		compatible = "pwm-backlight";
+> > +		pwms = <&pwm1 0 500000>;
+> > +		brightness-levels = <0 20 81 248 1000>;
+> > +		default-brightness-level = <20>;
+> > +		num-interpolated-steps = <21>;  
+> 
+> Do you need this fine granularity here? Just asking ;)
 
->> +
->> +static void imx_mipi_dsi_encoder_commit(struct drm_encoder *encoder)
->> +{
->> +	struct imx_mipi_dsi *dsi = enc_to_dsi(encoder);
->> +	int mux = drm_of_encoder_active_port_id(dsi->dev->of_node, encoder);
->> +
->> +	imx_mipi_dsi_set_ipu_di_mux(dsi, mux);
->> +}
->> +
->> +static void imx_mipi_dsi_encoder_disable(struct drm_encoder *encoder)
->> +{
->> +}
->> +
->> +static const struct drm_encoder_helper_funcs imx_mipi_dsi_encoder_helpers = {
->> +	.mode_fixup = imx_mipi_dsi_encoder_mode_fixup,
->> +	.commit = imx_mipi_dsi_encoder_commit,
->> +	.disable = imx_mipi_dsi_encoder_disable,
->> +	.atomic_check = imx_mipi_dsi_encoder_atomic_check,
->> +};
->> +
->> +static enum drm_mode_status imx_mipi_dsi_mode_valid(void *priv_data,
->> +					const struct drm_display_mode *mode)
->> +{
->> +	/*
->> +	 * The VID_PKT_SIZE field in the DSI_VID_PKT_CFG
->> +	 * register is 11-bit.
->> +	 */
->> +	if (mode->hdisplay > 0x7ff)
->> +		return MODE_BAD_HVALUE;
->> +
->> +	/*
->> +	 * The V_ACTIVE_LINES field in the DSI_VTIMING_CFG
->> +	 * register is 11-bit.
->> +	 */
->> +	if (mode->vdisplay > 0x7ff)
->> +		return MODE_BAD_VVALUE;
->> +
->> +	return MODE_OK;
->> +}
->> +
->> +
->> +static unsigned int max_mbps_to_testdin(unsigned int max_mbps)
->> +{
->> +	unsigned int i;
->> +
->> +	for (i = 0; i < ARRAY_SIZE(dptdin_map); i++)
->> +		if (dptdin_map[i].max_mbps == max_mbps)
->> +			return dptdin_map[i].testdin;
->> +
->> +	return -EINVAL;
->> +}
->> +
->> +static inline void dsi_write(struct imx_mipi_dsi *dsi, u32 reg, u32 val)
->> +{
->> +	writel(val, dsi->base + reg);
->> +}
->> +
->> +static int imx_mipi_dsi_phy_init(void *priv_data)
->> +{
->> +	struct imx_mipi_dsi *dsi = priv_data;
->> +	int testdin;
->> +
->> +	testdin = max_mbps_to_testdin(dsi->lane_mbps);
->> +	if (testdin < 0) {
->> +		DRM_DEV_ERROR(dsi->dev,
->> +			      "failed to get testdin for %dmbps lane clock\n",
->> +			      dsi->lane_mbps);
->> +		return testdin;
->> +	}
->> +
->> +	dsi_write(dsi, DSI_PHY_IF_CTRL, PHY_IF_CTRL_RESET);
->> +	dsi_write(dsi, DSI_PWR_UP, POWERUP);
->> +
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLK | PHY_UNTESTCLR);
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL1, PHY_TESTEN | PHY_TESTDOUT(0) |
->> +		  PHY_TESTDIN(0x44));
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_TESTCLK | PHY_UNTESTCLR);
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLK | PHY_UNTESTCLR);
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL1, PHY_UNTESTEN | PHY_TESTDOUT(0) |
->> +		  PHY_TESTDIN(testdin));
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_TESTCLK | PHY_UNTESTCLR);
->> +	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLK | PHY_UNTESTCLR);
->> +
->> +	return 0;
->> +}
->> +
->> +static int imx_mipi_dsi_get_lane_mbps(void *priv_data,
->> +				      const struct drm_display_mode *mode,
->> +				      unsigned long mode_flags, u32 lanes,
->> +				      u32 format, unsigned int *lane_mbps)
->> +{
->> +	struct imx_mipi_dsi *dsi = priv_data;
->> +	int bpp;
->> +	unsigned int i, target_mbps, mpclk;
->> +	unsigned long pllref;
->> +
->> +	bpp = mipi_dsi_pixel_format_to_bpp(format);
->> +	if (bpp < 0) {
->> +		DRM_DEV_ERROR(dsi->dev, "failed to get bpp for format %d: %d\n",
->> +			      format, bpp);
->> +		return bpp;
->> +	}
->> +
->> +	pllref = clk_get_rate(dsi->pllref_clk);
->> +	if (pllref != 27000000)
->> +		DRM_WARN("DSI pllref_clk not set to 27Mhz\n");
->> +
->> +	mpclk = DIV_ROUND_UP(mode->clock, MSEC_PER_SEC);
->> +	if (mpclk) {
->> +		/* take 1/0.7 blanking overhead into consideration */
->> +		target_mbps = (mpclk * (bpp / lanes) * 10) / 7;
->> +	} else {
->> +		DRM_DEV_ERROR(dsi->dev, "use default 1Gbps DPHY pll clock\n");
->> +		target_mbps = 1000;
->> +	}
->> +
->> +	DRM_DEV_DEBUG(dsi->dev, "target pllref_clk frequency is %uMbps\n",
->> +		      target_mbps);
->> +
->> +	for (i = 0; i < ARRAY_SIZE(dptdin_map); i++) {
->> +		if (target_mbps < dptdin_map[i].max_mbps) {
->> +			*lane_mbps = dptdin_map[i].max_mbps;
->> +			dsi->lane_mbps = *lane_mbps;
->> +			DRM_DEV_DEBUG(dsi->dev,
->> +				      "real pllref_clk frequency is %uMbps\n",
->> +				      *lane_mbps);
->> +			return 0;
->> +		}
->> +	}
->> +
->> +	DRM_DEV_ERROR(dsi->dev, "DPHY clock frequency %uMbps is out of range\n",
->> +		      target_mbps);
->> +
->> +	return -EINVAL;
->> +}
->> +
->> +static int
->> +dw_mipi_dsi_phy_get_timing(void *priv_data, unsigned int lane_mbps,
->> +			   struct dw_mipi_dsi_dphy_timing *timing)
->> +{
->> +	timing->clk_hs2lp = 0x40;
->> +	timing->clk_lp2hs = 0x40;
->> +	timing->data_hs2lp = 0x40;
->> +	timing->data_lp2hs = 0x40;
->> +
->> +	return 0;
->> +}
->> +
->> +static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_imx6_phy_ops = {
->> +	.init = imx_mipi_dsi_phy_init,
->> +	.get_lane_mbps = imx_mipi_dsi_get_lane_mbps,
->> +	.get_timing = dw_mipi_dsi_phy_get_timing,
->> +};
->> +
->> +static struct dw_mipi_dsi_plat_data imx6q_mipi_dsi_drv_data = {
->> +	.max_data_lanes = 2,
->> +	.mode_valid = imx_mipi_dsi_mode_valid,
->> +	.phy_ops = &dw_mipi_dsi_imx6_phy_ops,
->> +};
->> +
->> +static const struct of_device_id imx_dsi_dt_ids[] = {
->> +	{
->> +		.compatible = "fsl,imx6q-mipi-dsi",
->> +		.data = &imx6q_mipi_dsi_drv_data,
->> +	},
->> +	{ /* sentinel */ }
->> +};
->> +MODULE_DEVICE_TABLE(of, imx_dsi_dt_ids);
->> +
->> +static int imx_mipi_dsi_bind(struct device *dev, struct device *master,
->> +			     void *data)
->> +{
->> +	struct imx_mipi_dsi *dsi = dev_get_drvdata(dev);
->> +	struct drm_device *drm = data;
->> +	int ret;
->> +
->> +	ret = clk_prepare_enable(dsi->pllref_clk);
->> +	if (ret) {
->> +		DRM_DEV_ERROR(dev, "Failed to enable pllref_clk: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	ret = imx_drm_create_encoder(drm, &dsi->encoder, dsi->dev->of_node);
->> +	if (ret) {
->> +		DRM_DEV_ERROR(dsi->dev, "failed to create drm encoder\n");
->> +		return ret;
->> +	}
->> +
->> +	drm_encoder_helper_add(&dsi->encoder, &imx_mipi_dsi_encoder_helpers);
->> +
->> +	ret = dw_mipi_dsi_bind(dsi->mipi_dsi, &dsi->encoder);
->> +	if (ret) {
->> +		DRM_DEV_ERROR(dev, "Failed to bind: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	return 0;
->> +}
->> +
->> +static void imx_mipi_dsi_unbind(struct device *dev, struct device *master,
->> +				void *data)
->> +{
->> +	struct imx_mipi_dsi *dsi = dev_get_drvdata(dev);
->> +
->> +	dw_mipi_dsi_unbind(dsi->mipi_dsi);
->> +
->> +	clk_disable_unprepare(dsi->pllref_clk);
->> +}
->> +
->> +static const struct component_ops imx_mipi_dsi_ops = {
->> +	.bind	= imx_mipi_dsi_bind,
->> +	.unbind	= imx_mipi_dsi_unbind,
->> +};
->> +
->> +static int imx_mipi_dsi_probe(struct platform_device *pdev)
->> +{
->> +	struct device *dev = &pdev->dev;
->> +	const struct of_device_id *of_id = of_match_device(imx_dsi_dt_ids, dev);
->> +	struct dw_mipi_dsi_plat_data *pdata = (struct dw_mipi_dsi_plat_data *) of_id->data;
->> +	struct imx_mipi_dsi *dsi;
->> +	struct resource *res;
->> +	int ret;
->> +
->> +	dsi = devm_kzalloc(dev, sizeof(*dsi), GFP_KERNEL);
->> +	if (!dsi)
->> +		return -ENOMEM;
->> +
->> +	dsi->dev = dev;
->> +
->> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->> +	dsi->base = devm_ioremap_resource(dev, res);
->> +	if (IS_ERR(dsi->base)) {
->> +		ret = PTR_ERR(dsi->base);
->> +		DRM_DEV_ERROR(dev, "Unable to get dsi registers: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	dsi->pllref_clk = devm_clk_get(dev, "ref");
->> +	if (IS_ERR(dsi->pllref_clk)) {
->> +		ret = PTR_ERR(dsi->pllref_clk);
->> +		DRM_DEV_ERROR(dev, "Unable to get pllref_clk: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	dsi->mux_sel = syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr");
->> +	if (IS_ERR(dsi->mux_sel)) {
->> +		ret = PTR_ERR(dsi->mux_sel);
->> +		DRM_DEV_ERROR(dev, "Failed to get GPR regmap: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	dev_set_drvdata(dev, dsi);
->> +
->> +	imx6q_mipi_dsi_drv_data.base = dsi->base;
->> +	imx6q_mipi_dsi_drv_data.priv_data = dsi;
->> +
->> +	dsi->mipi_dsi = dw_mipi_dsi_probe(pdev, pdata);
->> +	if (IS_ERR(dsi->mipi_dsi)) {
->> +		ret = PTR_ERR(dsi->mipi_dsi);
->> +		DRM_DEV_ERROR(dev, "Failed to probe DW DSI host: %d\n", ret);
->> +		goto err_clkdisable;
->> +	}
->> +
->> +	return component_add(&pdev->dev, &imx_mipi_dsi_ops);
->> +
->> +err_clkdisable:
->> +	clk_disable_unprepare(dsi->pllref_clk);
->> +	return ret;
->> +}
->> +
->> +static int imx_mipi_dsi_remove(struct platform_device *pdev)
->> +{
->> +	component_del(&pdev->dev, &imx_mipi_dsi_ops);
->> +	return 0;
->> +}
->> +
->> +static struct platform_driver imx_mipi_dsi_driver = {
->> +	.probe		= imx_mipi_dsi_probe,
->> +	.remove		= imx_mipi_dsi_remove,
->> +	.driver		= {
->> +		.of_match_table = imx_dsi_dt_ids,
->> +		.name	= "dw-mipi-dsi-imx6",
->> +	},
->> +};
->> +module_platform_driver(imx_mipi_dsi_driver);
->> +
->> +MODULE_DESCRIPTION("i.MX6 MIPI DSI host controller driver");
->> +MODULE_AUTHOR("Liu Ying <victor.liu@nxp.com>");
->> +MODULE_AUTHOR("Adrian Ratiu <adrian.ratiu@collabora.com>");
->> +MODULE_LICENSE("GPL");
->> -- 
->> 2.26.0
->> 
->
-> -- 
+Yes. These amount of steps are needed.
+
+> > +		power-supply = <&reg_12v_bl>;
+> > +		enable-gpios = <&gpio4 28 GPIO_ACTIVE_HIGH>;  
+> 
+> Where gets this gpio muxed?
+
+In imx6qdl-prti6q.dtsi
+
+> > +	};
+> > +
+> > +	display {
+> > +		compatible = "fsl,imx-parallel-display";
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_ipu1_disp>;
+> > +		#address-cells = <1>;
+> > +		#size-cells = <0>;
+> > +		interface-pix-fmt = "rgb24";
+> > +		status = "okay";  
+> 
+> Status not needed here.
+
+Ack.
+
+> > +
+> > +		port@0 {
+> > +			reg = <0>;
+> > +
+> > +			display_in: endpoint {
+> > +				remote-endpoint = <&ipu1_di0_disp0>;
+> > +			};
+> > +		};
+> > +
+> > +		port@1 {
+> > +			reg = <1>;
+> > +
+> > +			display_out: endpoint {
+> > +				remote-endpoint = <&panel_in>;
+> > +			};
+> > +		};
+> > +	};
+> > +
+> > +	keys {
+> > +		compatible = "gpio-keys";
+> > +		autorepeat;
+> > +
+> > +		esc {
+> > +			label = "GPIO Key ESC";
+> > +			linux,code = <KEY_ESC>;
+> > +			gpios = <&gpio_pca 0 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		up {
+> > +			label = "GPIO Key UP";
+> > +			linux,code = <KEY_UP>;
+> > +			gpios = <&gpio_pca 1 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		down {
+> > +			label = "GPIO Key DOWN";
+> > +			linux,code = <KEY_DOWN>;
+> > +			gpios = <&gpio_pca 4 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		enter {
+> > +			label = "GPIO Key Enter";
+> > +			linux,code = <KEY_ENTER>;
+> > +			gpios = <&gpio_pca 3 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		cycle {
+> > +			label = "GPIO Key CYCLE";
+> > +			linux,code = <KEY_CYCLEWINDOWS>;
+> > +			gpios = <&gpio_pca 2 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f1 {
+> > +			label = "GPIO Key F1";
+> > +			linux,code = <KEY_F1>;
+> > +			gpios = <&gpio_pca 14 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f2 {
+> > +			label = "GPIO Key F2";
+> > +			linux,code = <KEY_F2>;
+> > +			gpios = <&gpio_pca 13 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f3 {
+> > +			label = "GPIO Key F3";
+> > +			linux,code = <KEY_F3>;
+> > +			gpios = <&gpio_pca 12 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f4 {
+> > +			label = "GPIO Key F4";
+> > +			linux,code = <KEY_F4>;
+> > +			gpios = <&gpio_pca 11 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f5 {
+> > +			label = "GPIO Key F5";
+> > +			linux,code = <KEY_F5>;
+> > +			gpios = <&gpio_pca 10 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f6 {
+> > +			label = "GPIO Key F6";
+> > +			linux,code = <KEY_F6>;
+> > +			gpios = <&gpio_pca 5 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f7 {
+> > +			label = "GPIO Key F7";
+> > +			linux,code = <KEY_F7>;
+> > +			gpios = <&gpio_pca 6 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f8 {
+> > +			label = "GPIO Key F8";
+> > +			linux,code = <KEY_F8>;
+> > +			gpios = <&gpio_pca 7 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f9 {
+> > +			label = "GPIO Key F9";
+> > +			linux,code = <KEY_F9>;
+> > +			gpios = <&gpio_pca 8 GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		f10 {
+> > +			label = "GPIO Key F10";
+> > +			linux,code = <KEY_F10>;
+> > +			gpios = <&gpio_pca 9 GPIO_ACTIVE_LOW>;
+> > +		};  
+> 
+> Don't know if there is a common rule if the gpio key should be sorted
+> alphabetical too.
+> 
+> > +	};
+> > +
+> > +	leds {
+> > +		compatible = "gpio-leds";
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_leds>;
+> > +
+> > +		led-debug0 {
+> > +			function = LED_FUNCTION_STATUS;
+> > +			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
+> > +			linux,default-trigger = "heartbeat";
+> > +		};
+> > +	};
+> > +
+> > +	panel {
+> > +		compatible = "innolux,g070y2t0ec";  
+> 
+> Did you send a patch for this panel?
+
+Good catch. Yes, there is a patch for this panel. Maybe that patch should come
+first, Oleksij?
+
+> > +		backlight = <&backlight_lcd>;
+> > +
+> > +		port {
+> > +			panel_in: endpoint {
+> > +				remote-endpoint = <&display_out>;
+> > +			};
+> > +		};
+> > +	};
+> > +
+> > +	reg_12v_bl: regulator-bl-12v {  
+> 
+> Nit, it's common to allign the pahndle and the name, so either:
+> 
+> reg_12v_bl -> regulator-12v-bl
+> 
+> or
+> 
+> reg_bl_12v -> regulator-bl-12v
+> 
+> also it would be cool to keep the first digit after the point like you
+> did it for the 1.8 regulator. So the result would be:
+> 
+> reg_12v0_bl -> regulator-12v0-bl
+> 
+> or
+> 
+> reg_bl_12v0 -> regulator-bl-12v0
+
+I'm not strictly against it, but isn't the implicit rule "All significant
+digits, with a minimum of 2" even better here? Just saying... 12000v0 would
+look a bit awkward ;-)
+
+> > +		compatible = "regulator-fixed";
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_reg_12v_bl>;
+> > +		regulator-name = "12v-bl";
+> > +		regulator-min-microvolt = <12000000>;
+> > +		regulator-max-microvolt = <12000000>;
+> > +		gpio = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+> > +		enable-active-high;
+> > +	};
+> > +
+> > +	reg_1v8: regulator-1v8 {
+> > +		compatible = "regulator-fixed";
+> > +		regulator-name = "1v8";
+> > +		regulator-min-microvolt = <1800000>;
+> > +		regulator-max-microvolt = <1800000>;
+> > +		regulator-always-on;
+> > +	};
+> > +
+> > +	sound {
+> > +		compatible = "simple-audio-card";
+> > +		simple-audio-card,name = "prti6q-sgtl5000";
+> > +		simple-audio-card,format = "i2s";
+> > +		simple-audio-card,widgets =
+> > +			"Microphone", "Microphone Jack",
+> > +			"Line", "Line In Jack",
+> > +			"Headphone", "Headphone Jack",
+> > +			"Speaker", "External Speaker";
+> > +		simple-audio-card,routing =
+> > +			"MIC_IN", "Microphone Jack",
+> > +			"LINE_IN", "Line In Jack",
+> > +			"Headphone Jack", "HP_OUT",
+> > +			"External Speaker", "LINE_OUT";
+> > +
+> > +		simple-audio-card,cpu {
+> > +			sound-dai = <&ssi1>;
+> > +			system-clock-frequency = <0>;
+> > +		};
+> > +
+> > +		simple-audio-card,codec {
+> > +			sound-dai = <&sgtl5000>;
+> > +			bitclock-master;
+> > +			frame-master;
+> > +		};
+> > +	};
+> > +};
+> > +
+> > +&clks {
+> > +	assigned-clocks = <&clks IMX6QDL_CLK_LDB_DI0_SEL>;
+> > +	assigned-clock-parents = <&clks IMX6QDL_CLK_PLL5_VIDEO_DIV>;
+> > +};
+> > +
+> > +&ecspi2 {
+> > +	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>;
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_ecspi2>;
+> > +	status = "okay";
+> > +
+> > +	tsc@0 {
+> > +		compatible = "ti,tsc2046";
+> > +		reg = <0>;
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_tsc>;
+> > +		spi-max-frequency = <100000>;
+> > +		interrupts-extended = <&gpio3 20 IRQ_TYPE_EDGE_FALLING>;  
+> 
+> The this should be listed within the binding doc.
+> 
+> > +		pendown-gpio = <&gpio3 20 GPIO_ACTIVE_HIGH>;  
+> 
+> IRQ and the GPIO are the same gpio line?
+
+Yes, this driver uses the same GPIO as interrupt and also as a GPIO. A bit
+strange, I agree. It is the same pin on the TS controller.
+
+> > +		vcc-supply = <&reg_3v3>;
+> > +
+> > +		ti,vref-delay-usecs = /bits/ 16 <100>;
+> > +
+> > +		ti,x-min = /bits/ 16 <0>;
+> > +		ti,x-max = /bits/ 16 <8000>;
+> > +		ti,y-min = /bits/ 16 <0>;
+> > +		ti,y-max = /bits/ 16 <4800>;
+> > +		ti,x-plate-ohms = /bits/ 16 <800>;
+> > +		ti,y-plate-ohms = /bits/ 16 <300>;
+> > +		ti,pressure-max = /bits/ 16 <4095>;
+> > +
+> > +		ti,skip-samples = <2>;
+> > +		ti,sample-period-msecs = <10>;
+> > +		ti,report-period-msecs = <30>;
+> > +
+> > +		ti,filter-tolerance = <80>;
+> > +		ti,touch-resistance-threshold = <3500>;
+
+Now that I see this, this DT node corresponds to a rewritten version of the
+ads7846 touchscreen driver, which probably also should precede this patch?
+The original driver is horribly buggy, and I have submitted patches twice
+already long ago to input mailing list, but unfortunately it got completely
+ignored both times.
+
+> > +	};
+> > +};
+> > +
+> > +&audmux {  
+> 
+> Pls, sort it alphabetical.
+> 
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_audmux>;
+> > +	status = "okay";
+> > +
+> > +	mux_ssi1 {
+> > +		fsl,audmux-port = <0>;
+> > +		fsl,port-config = <
+> > +			IMX_AUDMUX_V2_PTCR_SYN 		0
+> > +			IMX_AUDMUX_V2_PTCR_TFSEL(2) 	0
+> > +			IMX_AUDMUX_V2_PTCR_TCSEL(2) 	0
+> > +			IMX_AUDMUX_V2_PTCR_TFSDIR 	0
+> > +			IMX_AUDMUX_V2_PTCR_TCLKDIR IMX_AUDMUX_V2_PDCR_RXDSEL(2)
+> > +		>;
+> > +	};
+> > +
+> > +	mux_pins3 {
+> > +		fsl,audmux-port = <2>;
+> > +		fsl,port-config = <
+> > +			IMX_AUDMUX_V2_PTCR_SYN IMX_AUDMUX_V2_PDCR_RXDSEL(0)
+> > +			0		       IMX_AUDMUX_V2_PDCR_TXRXEN
+> > +		>;
+> > +	};
+> > +};
+> > +
+> > +&can1 {  
+> 
+> This here too.
+> 
+> > +	pinctrl-0 = <&pinctrl_can1 &pinctrl_can1phy>;
+> > +};
+> > +
+> > +&i2c1 {
+> > +	sgtl5000: codec@a {
+> > +		compatible = "fsl,sgtl5000";
+> > +		reg = <0xa>;
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_codec>;
+> > +		#sound-dai-cells = <0>;
+> > +		clocks = <&clks 201>;
+> > +		VDDA-supply = <&reg_3v3>;
+> > +		VDDIO-supply = <&reg_3v3>;
+> > +		VDDD-supply = <&reg_1v8>;
+> > +	};
+> > +};
+> > +
+> > +&i2c3 {
+> > +	rtc@51 {
+> > +		compatible = "nxp,pcf8563";
+> > +		reg = <0x51>;
+> > +	};
+> > +
+> > +	gpio_pca: gpio@74 {
+> > +		compatible = "nxp,pca9539";
+> > +		reg = <0x74>;
+> > +		interrupts-extended = <&gpio4 5 IRQ_TYPE_LEVEL_LOW>;
+> > +		#gpio-cells = <2>;
+> > +		gpio-controller;
+> > +	};
+> > +};
+> > +
+> > +&ipu1 {
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_ipu1_csi0>;
+> > +	status = "okay";
+> > +};
+> > +
+> > +&ipu1_di0_disp0 {
+> > +	remote-endpoint = <&display_in>;
+> > +};
+> > +
+> > +&pwm1 {
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_pwm1>;
+> > +	status = "okay";
+> > +};
+> > +
+> > +&snvs_poweroff {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&snvs_pwrkey {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&ssi1 {
+> > +	#sound-dai-cells = <0>;
+> > +	fsl,mode = "i2s-slave";
+> > +	status = "okay";
+> > +};
+> > +
+> > +&usbh1 {
+> > +	status = "disabled";
+> > +};
+> > +
+> > +&vpu {
+> > +	status = "disabled";
+> > +};  
+> 
+> Why do you disable this nodes? You should drop it from the common .dtsi
+> if you disable them more than once.
+
+We should have to count the enables and disables, and decide which solution
+ends up with less lines of code overall, I suppose.
+Our boards DT's are built in a kind of class hierarchy. There are a total of
+16+ different i.MX6 boards. Almost all of them inherit from PRTI6Q, and some
+have other, higher-order ancestors. Oleksij is busy with the first few of them
+right now.
+We can optimize all inheritances for the few boards that are being submitted
+now, but if the rest will follow, the end result might either be less than
+optimal, or this will need to change again.
+
+> > +&iomuxc {
+> > +	pinctrl_audmux: audmuxgrp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_CSI0_MCLK__CCM_CLKO1		0x030b0
+> > +			MX6QDL_PAD_CSI0_DAT7__AUD3_RXD		0x130b0
+> > +			MX6QDL_PAD_CSI0_DAT4__AUD3_TXC		0x130b0
+> > +			MX6QDL_PAD_CSI0_DAT5__AUD3_TXD		0x110b0
+> > +			MX6QDL_PAD_CSI0_DAT6__AUD3_TXFS		0x130b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_can1phy: can1phy {
+> > +		fsl,pins = <
+> > +			/* CAN1_SR */
+> > +			MX6QDL_PAD_KEY_COL3__GPIO4_IO12		0x13070
+> > +			/* CAN1_TERM */
+> > +			MX6QDL_PAD_GPIO_0__GPIO1_IO00		0x1b0b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_codec: codecgrp {
+> > +		fsl,pins = <
+> > +			/* AUDIO_nRESET */
+> > +			MX6QDL_PAD_CSI0_VSYNC__GPIO5_IO21	0x1f0b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_ecspi2: ecspi2grp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_EIM_OE__ECSPI2_MISO		0x100b1
+> > +			MX6QDL_PAD_EIM_CS0__ECSPI2_SCLK		0x100b1
+> > +			MX6QDL_PAD_EIM_CS1__ECSPI2_MOSI		0x100b1
+> > +			MX6QDL_PAD_EIM_RW__GPIO2_IO26		0x000b1
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_ipu1_csi0: ipu1csi0grp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_CSI0_DAT12__IPU1_CSI0_DATA12	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT13__IPU1_CSI0_DATA13	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT14__IPU1_CSI0_DATA14	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT15__IPU1_CSI0_DATA15	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT16__IPU1_CSI0_DATA16	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT17__IPU1_CSI0_DATA17	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT18__IPU1_CSI0_DATA18	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_DAT19__IPU1_CSI0_DATA19	0x1b0b0
+> > +			MX6QDL_PAD_CSI0_PIXCLK__IPU1_CSI0_PIXCLK 0x1b0b0
+> > +			/* ITU656_nRESET */
+> > +			MX6QDL_PAD_GPIO_2__GPIO1_IO02		0x1b0b0
+> > +			/* ITU656_nPDN */
+> > +			MX6QDL_PAD_CSI0_DATA_EN__GPIO5_IO20	0x1b0b0
+> > +		>;
+> > +	};  
+> 
+> Why do you mux the the camera interface and have no camera device within
+> this dt.
+
+Because the camera requires more patches that are on the way to mainline, but
+not there yet. Maybe for now these should be removed?
+
+> > +	pinctrl_ipu1_disp: ipudisp1grp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_DI0_DISP_CLK__IPU1_DI0_DISP_CLK 0xb0
+> > +			MX6QDL_PAD_DI0_PIN15__IPU1_DI0_PIN15	   0xb0
+> > +
+> > +			MX6QDL_PAD_DISP0_DAT0__IPU1_DISP0_DATA00 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT1__IPU1_DISP0_DATA01 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT2__IPU1_DISP0_DATA02 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT3__IPU1_DISP0_DATA03 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT4__IPU1_DISP0_DATA04 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT5__IPU1_DISP0_DATA05 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT6__IPU1_DISP0_DATA06 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT7__IPU1_DISP0_DATA07 0xb0
+> > +
+> > +			MX6QDL_PAD_DISP0_DAT8__IPU1_DISP0_DATA08 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT9__IPU1_DISP0_DATA09 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT10__IPU1_DISP0_DATA10 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT11__IPU1_DISP0_DATA11 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT12__IPU1_DISP0_DATA12 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT13__IPU1_DISP0_DATA13 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT14__IPU1_DISP0_DATA14 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT15__IPU1_DISP0_DATA15 0xb0
+> > +
+> > +			MX6QDL_PAD_DISP0_DAT16__IPU1_DISP0_DATA16 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT17__IPU1_DISP0_DATA17 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT18__IPU1_DISP0_DATA18 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT19__IPU1_DISP0_DATA19 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT20__IPU1_DISP0_DATA20 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT21__IPU1_DISP0_DATA21 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT22__IPU1_DISP0_DATA22 0xb0
+> > +			MX6QDL_PAD_DISP0_DAT23__IPU1_DISP0_DATA23 0xb0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_leds: ledsgrp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_GPIO_8__GPIO1_IO08		0x1b0b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_pwm1: pwm1grp {
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_GPIO_9__PWM1_OUT		0x1b0b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_reg_12v_bl: 12blgrp {  
+> 
+> Pls, keep the name scheme like the others.
+> 
 > Regards,
->
-> Laurent Pinchart
+>   Marco
+> 
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_GPIO_7__GPIO1_IO07		0x1b0b0
+> > +		>;
+> > +	};
+> > +
+> > +	pinctrl_tsc: tscgrp {
+> > +
+> > +		fsl,pins = <
+> > +			MX6QDL_PAD_EIM_D20__GPIO3_IO20		0x1b0b0
+> > +			MX6QDL_PAD_EIM_EB2__GPIO2_IO30		0x1b0b0
+> > +		>;
+> > +	};
+> > +};  
+
+Best regards,
+
+-- 
+David Jander
+Protonic Holland.
 
 _______________________________________________
 linux-arm-kernel mailing list
