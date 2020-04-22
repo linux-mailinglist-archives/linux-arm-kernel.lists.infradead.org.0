@@ -2,102 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 842731B4021
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:43:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96A681B40A2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 12:47:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=goskqrYTv6EF1jzNWcCifAVES4W6G3TGqSJklnBzg60=; b=KWgL+8IDSfHxAK
-	2UUGSlqcjQSwxJl1QF3JOWMKEm+URlhgtLeGKAQWzKtOV9OYBId8pDsokTXF+u2LvLGjuVjKSMVsT
-	BdCKZdXvGoWjb9XwKWvURCika2dUimg2YzJJqFMCO16JDZJjegKRvATcvVgmI+sS9rLkPmPdGkOFV
-	+jTgxT6lR89NpZhwBDLxAeNCwyZiF+n2XUKRa77b3F0w3h4l6JqLHQ0MxCxa5ftvxuh0yiXsGe4aZ
-	CbNI7VeSJ0LOUaOMcWuJUtLRnwTc26d7iTRQpLRJC4kCxiZeILItqJhAP4u63RP3+OrT0LjV8C1sM
-	rG8lFvkNZltSNYump6lA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=du++ogZokhjavhluvccm4ORw6N7+duXNvHIGqLQXMew=; b=qvzWgGOuJwy738
+	lRANNWalq009znQGS9rl9OIZ2FQh+OJMjdd7DIYbHzg22R+sduWn9KUP3iUnq7yDuxVtUNFg1aez4
+	l23DtUUH+Yvnung8/vBcKOcGUHdLKBB/65kv7pp2Ced5ybadwmA37urchA71ju4moEdOfsM2Vpain
+	eeXquN19qClzXQqNQKH3iQeOVYDA4XzE4xGE1nLW+6Az6ZVSSU7PvgYma1EbA/iSJMkCtoXoG8Fw5
+	+YfnKDT+O+7hZ/mc0XkOGR31vbbecBFeIulvdRQqZEYwl8GuLg7yAdGcVOxp5c9zfitzEDM9u6zM/
+	ykBGG68NRR7jug7xcwmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRCr3-0005Xe-Dp; Wed, 22 Apr 2020 10:43:45 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jRCu4-0000kx-J0; Wed, 22 Apr 2020 10:46:53 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRCqu-0005WI-R0; Wed, 22 Apr 2020 10:43:38 +0000
-Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03MAYWdd060141; Wed, 22 Apr 2020 06:43:02 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0b-001b2d01.pphosted.com with ESMTP id 30jh8xp4ea-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 22 Apr 2020 06:43:02 -0400
-Received: from m0098420.ppops.net (m0098420.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 03MAdcXn070893;
- Wed, 22 Apr 2020 06:43:01 -0400
-Received: from ppma01dal.us.ibm.com (83.d6.3fa9.ip4.static.sl-reverse.com
- [169.63.214.131])
- by mx0b-001b2d01.pphosted.com with ESMTP id 30jh8xp4dj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 22 Apr 2020 06:43:01 -0400
-Received: from pps.filterd (ppma01dal.us.ibm.com [127.0.0.1])
- by ppma01dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 03MAeZbo005876;
- Wed, 22 Apr 2020 10:42:59 GMT
-Received: from b03cxnp08025.gho.boulder.ibm.com
- (b03cxnp08025.gho.boulder.ibm.com [9.17.130.17])
- by ppma01dal.us.ibm.com with ESMTP id 30fs670rje-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 22 Apr 2020 10:42:59 +0000
-Received: from b03ledav001.gho.boulder.ibm.com
- (b03ledav001.gho.boulder.ibm.com [9.17.130.232])
- by b03cxnp08025.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 03MAgumL56820100
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 22 Apr 2020 10:42:56 GMT
-Received: from b03ledav001.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 99EC96E050;
- Wed, 22 Apr 2020 10:42:56 +0000 (GMT)
-Received: from b03ledav001.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id DCFE26E04C;
- Wed, 22 Apr 2020 10:42:31 +0000 (GMT)
-Received: from skywalker.linux.ibm.com (unknown [9.79.185.239])
- by b03ledav001.gho.boulder.ibm.com (Postfix) with ESMTP;
- Wed, 22 Apr 2020 10:42:30 +0000 (GMT)
-X-Mailer: emacs 27.0.91 (via feedmail 11-beta-1 I)
-From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
-To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-doc@vger.kernel.org
-Subject: Re: [PATCH v3 3/4] hugetlbfs: remove hugetlb_add_hstate() warning
- for existing hstate
-In-Reply-To: <20200417185049.275845-4-mike.kravetz@oracle.com>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <20200417185049.275845-4-mike.kravetz@oracle.com>
-Date: Wed, 22 Apr 2020 16:12:26 +0530
-Message-ID: <87blnj4x9p.fsf@linux.ibm.com>
+ id 1jRCtj-0000h0-Ic
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 10:46:33 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 496cYZ14CXz1rs2p;
+ Wed, 22 Apr 2020 12:46:26 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 496cYZ0DqVz1qr40;
+ Wed, 22 Apr 2020 12:46:26 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id xHrGED9s0VHs; Wed, 22 Apr 2020 12:46:24 +0200 (CEST)
+X-Auth-Info: cFfxoLoBMRF1bEt5ETGnA3TUOEsV3WUTXy1XFJvs6Rg=
+Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed, 22 Apr 2020 12:46:24 +0200 (CEST)
+From: Marek Vasut <marex@denx.de>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V5 00/20] ARM: dts: stm32: Repair AV96 board
+Date: Wed, 22 Apr 2020 12:45:53 +0200
+Message-Id: <20200422104613.96944-1-marex@denx.de>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-22_03:2020-04-22,
- 2020-04-22 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0
- lowpriorityscore=0 suspectscore=0 bulkscore=0 mlxlogscore=935 spamscore=0
- mlxscore=0 priorityscore=1501 impostorscore=0 malwarescore=0 clxscore=1011
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004220083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_034336_991281_470337C4 
-X-CRM114-Status: GOOD (  14.45  )
+X-CRM114-CacheID: sfid-20200422_034631_767779_3BADB7AC 
+X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ low trust [212.18.0.10 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.10 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,57 +74,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Mina Almasry <almasrymina@google.com>, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Longpeng <longpeng2@huawei.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- "David S . Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
+Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mike Kravetz <mike.kravetz@oracle.com> writes:
+The AV96 board device tree is completely broken and does not match the
+hardware. This series fixes it up.
 
-> The routine hugetlb_add_hstate prints a warning if the hstate already
-> exists.  This was originally done as part of kernel command line
-> parsing.  If 'hugepagesz=' was specified more than once, the warning
-> 	pr_warn("hugepagesz= specified twice, ignoring\n");
-> would be printed.
->
-> Some architectures want to enable all huge page sizes.  They would
-> call hugetlb_add_hstate for all supported sizes.  However, this was
-> done after command line processing and as a result hstates could have
-> already been created for some sizes.  To make sure no warning were
-> printed, there would often be code like:
-> 	if (!size_to_hstate(size)
-> 		hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT)
->
-> The only time we want to print the warning is as the result of command
-> line processing.
+Marek Vasut (20):
+  ARM: dts: stm32: Repair PMIC configuration on AV96
+  ARM: dts: stm32: Repair PMIC interrupt on AV96
+  ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
+  ARM: dts: stm32: Repair ethernet operation on AV96
+  ARM: dts: stm32: Add missing ethernet PHY reset on AV96
+  ARM: dts: stm32: Add missing ethernet PHY skews on AV96
+  ARM: dts: stm32: Add alternate pinmux for SDMMC pins
+  ARM: dts: stm32: Repair SDMMC1 operation on AV96
+  ARM: dts: stm32: Add eMMC attached to SDMMC2 on AV96
+  ARM: dts: stm32: Add QSPI NOR on AV96
+  ARM: dts: stm32: Add configuration EEPROM on AV96
+  ARM: dts: stm32: Enable WiFi on AV96
+  ARM: dts: stm32: Add alternate pinmux for USART2 pins
+  ARM: dts: stm32: Enable Bluetooth on AV96
+  ARM: dts: stm32: Add alternate pinmux for LTDC pins
+  ARM: dts: stm32: Add bindings for HDMI video on AV96
+  ARM: dts: stm32: Add alternate pinmux for SAI2 pins
+  ARM: dts: stm32: Add bindings for audio on AV96
+  ARM: dts: stm32: Add bindings for USB on AV96
+  ARM: dts: stm32: Rename LEDs to match silkscreen on AV96
 
-Does this patch break hugepages=x command line? I haven't tested this
-yet. But one of the details w.r.t. skipping that hugetlb_add_hstate is
-to make sure we can configure the max_huge_pages. 
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi    | 280 +++++++++++++++++
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 324 ++++++++++++++++++--
+ 2 files changed, 572 insertions(+), 32 deletions(-)
 
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Patrice Chotard <patrice.chotard@st.com>
+Cc: Patrick Delaunay <patrick.delaunay@st.com>
+Cc: linux-stm32@st-md-mailman.stormreply.com
+To: linux-arm-kernel@lists.infradead.org
 
->So, remove the warning from hugetlb_add_hstate and
-> add it to the single arch independent routine processing "hugepagesz=".
-> After this, calls to size_to_hstate() in arch specific code can be
-> removed and hugetlb_add_hstate can be called without worrying about
-> warning messages.
->
+-- 
+2.25.1
 
--aneesh
 
 _______________________________________________
 linux-arm-kernel mailing list
