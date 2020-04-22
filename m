@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15A341B4647
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 15:33:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C67861B4667
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 15:40:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9YPkP2WsIGFBzZ0rB6QEKTjlWv4PqUsDeJoFWWbe3xM=; b=hmhfVzJaNlG7Q/OqSPbaUFPIO
-	tUl35543bjRWgODihYYIRh8nryAwzTAPrf5QqsgQGCjZ2AKMKNY1nEd3sq0Jn2w28I0zOda3ZG6ll
-	qxjl5WRVBQh03uHSoQVtlQAq0/E0h8pNICO27zGQM2Ta/nk+jhPUdaIYAhjrrL1tpmwJMFGFTCUdb
-	79iIzskCitgSW8dFrraTttk7AHkG6QuknJX0u2SriaD5oyHVvDHYhHGDtCSxBEFxjp3p81oU23MPP
-	9cWPOnuMWg2GbsCswcx/5cSDW5dOhFbbYZZU381jOVe/08vEGA7IAQFME/2zuntiF9IOqTxHwbuoU
-	J4l/uspCA==;
+	 bh=l8bZilHpmPaPOEuqNImQS7WTviq4SxiwIh8dw+vvqM0=; b=t27eu5CRlz0gsll/QDcDtAzbf
+	nGHpo1wghKdzjowNlNpezzV4tCYHlJNpkjEBGw5FZ0nDyqS2dnnf8SacN1N0kfMjZptKfs3yd5D0S
+	n+FsOF8V6d+jMthlMWXnBKeyNHLzRHDbdWSQ48xbKzp1Qfi5s/d5mT3m0YBffDus1F75284KwcvFm
+	llNJ8tloLdEj8O9bTcc6gmquNwBBnzR5VovM0KKa3cQ3hG0DeA3KGx4la+rFW5wLBywVhFUe8nLRY
+	f2XZYs0bBpcKO/wdLlOAudU6sx56af3PRPWE9+dGETh0IDjRiws+GOOTXqbOgXp7hKhhU3cB921Oz
+	xXM3Yjzog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRFUw-0002wr-K8; Wed, 22 Apr 2020 13:33:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRFUp-0002up-3P
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 13:33:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACECA31B;
- Wed, 22 Apr 2020 06:32:55 -0700 (PDT)
-Received: from [192.168.1.84] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 670D73F6CF;
- Wed, 22 Apr 2020 06:32:49 -0700 (PDT)
-Subject: Re: [PATCH v2] arm64: add check_wx_pages debugfs for CHECK_WX
-To: Phong Tran <tranmanphong@gmail.com>, mark.rutland@arm.com,
- steve.capper@arm.com, will@kernel.org, keescook@chromium.org, greg@kroah.com
-References: <20200307093926.27145-1-tranmanphong@gmail.com>
- <20200421173557.10817-1-tranmanphong@gmail.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <b7db5ad8-385d-8ee6-8e4a-5d64826dae65@arm.com>
-Date: Wed, 22 Apr 2020 14:32:44 +0100
+	id 1jRFcL-0001QC-SS; Wed, 22 Apr 2020 13:40:45 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRFcC-0001OS-Gv
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 13:40:38 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03MDcOSJ007859; Wed, 22 Apr 2020 15:40:09 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=ZeG5MEBElFGxvDwVRDIezNZHBbeSXf35WjhoaaZsj6A=;
+ b=jO+y+5a32gAoEFM1QqBzK5iYTjSmrs7P8SuFYvtFR+W3OnGhd/4Gp2BDA+qrlTFbFTsJ
+ BMn/lRxiRcbFnqblJhnf66LRE9O5sRx/AVwyDw4vAR9QnnI8f45cuFdhMWDmbuTrSvve
+ r/QZ4eDjlMGNpiKxrPC7aMnHM/XUFDgUpURhbDLJNeg8kMRXvtNWCChZlPVwjRhCPwLr
+ KsSAgre6hLBCL0tCNVVJTIRtjNULSb8E/g+FBEyovrkI4Gbgb3I/NKjZJhC+/UFoC6pi
+ x+VoUY4+cq/cYppqFIlXllWqSMXhqt1SgXCeVltwpvaV7u0MUR8TDZYQ3JqT1dXmpTRW og== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30fregpq4d-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 22 Apr 2020 15:40:09 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 951D310002A;
+ Wed, 22 Apr 2020 15:40:07 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8015C2B1889;
+ Wed, 22 Apr 2020 15:40:07 +0200 (CEST)
+Received: from lmecxl0923.lme.st.com (10.75.127.44) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 22 Apr
+ 2020 15:40:06 +0200
+Subject: Re: [PATCH] mmc: mmci_sdmmc: fix power on issue due to pwr_reg
+ initialization
+To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <20200420161831.5043-1-ludovic.barre@st.com>
+ <CAPDyKFqC3fdnQ9CMYhS-=5MiCET=r5Az2S5oFoA2v1gdDeGO3w@mail.gmail.com>
+ <CAPDyKFrHcoVd=GKPB70gOFE8STOnTJrJbcZzE_DEgFWh1Vhszg@mail.gmail.com>
+From: Ludovic BARRE <ludovic.barre@st.com>
+Message-ID: <1d9cefd1-aaed-1eb5-92f2-b1f45b4da2ac@st.com>
+Date: Wed, 22 Apr 2020 15:40:05 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200421173557.10817-1-tranmanphong@gmail.com>
-Content-Language: en-GB
+In-Reply-To: <CAPDyKFrHcoVd=GKPB70gOFE8STOnTJrJbcZzE_DEgFWh1Vhszg@mail.gmail.com>
+Content-Language: fr
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-22_06:2020-04-22,
+ 2020-04-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_063259_229873_C8A2499E 
-X-CRM114-Status: GOOD (  25.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_064036_910741_282D0046 
+X-CRM114-Status: GOOD (  21.20  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,132 +100,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-hardening@lists.openwall.com, linux-kernel@vger.kernel.org,
- alexios.zavras@intel.com, broonie@kernel.org, akpm@linux-foundation.org,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: DTML <devicetree@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srini Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/04/2020 18:35, Phong Tran wrote:
-> follow the suggestion from
-> https://github.com/KSPP/linux/issues/35
-> 
-> Signed-off-by: Phong Tran <tranmanphong@gmail.com>
-
-I'm fine with this as is, so you can have my
-
-Reviewed-by: Steven Price <steven.price@arm.com>
-
-However, if you have time to look at it then it would be good to look at 
-moving the ptdump_check_wx()/debug_checkwx() calls into common code as 
-this should be supported on arm/arm64/powerpc/riscv/x86 as far as I can 
-see. And it's always best to get these things in common code early on 
-rather than letting the architectures diverge.
-
-Also in future it would be good if you include some text in the commit 
-message that explains the purpose/intention of the change rather than 
-just a link. Having a self-contained commit message helps a lot when 
-searching the git history to find out why the code was written the way 
-it is.
-
-Steve
-
-> ---
-> Change since v1:
-> - Update the Kconfig help text
-> - Don't check the return value of debugfs_create_file()
-> - Tested on QEMU aarch64
-> root@qemuarm64:~# zcat /proc/config.gz | grep PTDUMP
-> CONFIG_GENERIC_PTDUMP=y
-> CONFIG_PTDUMP_CORE=y
-> CONFIG_PTDUMP_DEBUGFS=y
-> root@qemuarm64:~# uname -a
-> Linux qemuarm64 5.7.0-rc2-00001-g20ddb383c313 #3 SMP PREEMPT Tue Apr 21 23:18:56 +07 2020 aarch64 GNU/Linux
-> root@qemuarm64:~# echo 1 > /sys/kernel/debug/check_wx_pages
-> [   63.261868] Checked W+X mappings: passed, no W+X pages found
-> ---
->   arch/arm64/Kconfig.debug        |  5 ++++-
->   arch/arm64/include/asm/ptdump.h |  2 ++
->   arch/arm64/mm/dump.c            |  1 +
->   arch/arm64/mm/ptdump_debugfs.c  | 18 ++++++++++++++++++
->   4 files changed, 25 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
-> index a1efa246c9ed..cd82c9d3664a 100644
-> --- a/arch/arm64/Kconfig.debug
-> +++ b/arch/arm64/Kconfig.debug
-> @@ -48,7 +48,10 @@ config DEBUG_WX
->   	  of other unfixed kernel bugs easier.
->   
->   	  There is no runtime or memory usage effect of this option
-> -	  once the kernel has booted up - it's a one time check.
-> +	  once the kernel has booted up - it's a one time check at
-> +	  boot, and can also be triggered at runtime by echo "1" to
-> +	  "check_wx_pages". The "check_wx_pages" is available only with
-> +	  CONFIG_PTDUMP_DEBUGFS is enabled.
->   
->   	  If in doubt, say "Y".
->   
-> diff --git a/arch/arm64/include/asm/ptdump.h b/arch/arm64/include/asm/ptdump.h
-> index 38187f74e089..c90a6ec6f59b 100644
-> --- a/arch/arm64/include/asm/ptdump.h
-> +++ b/arch/arm64/include/asm/ptdump.h
-> @@ -24,9 +24,11 @@ struct ptdump_info {
->   void ptdump_walk(struct seq_file *s, struct ptdump_info *info);
->   #ifdef CONFIG_PTDUMP_DEBUGFS
->   void ptdump_debugfs_register(struct ptdump_info *info, const char *name);
-> +void ptdump_check_wx_init(void);
->   #else
->   static inline void ptdump_debugfs_register(struct ptdump_info *info,
->   					   const char *name) { }
-> +static inline void ptdump_check_wx_init(void) { }
->   #endif
->   void ptdump_check_wx(void);
->   #endif /* CONFIG_PTDUMP_CORE */
-> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-> index 860c00ec8bd3..60c99a047763 100644
-> --- a/arch/arm64/mm/dump.c
-> +++ b/arch/arm64/mm/dump.c
-> @@ -378,6 +378,7 @@ static int ptdump_init(void)
->   #endif
->   	ptdump_initialize();
->   	ptdump_debugfs_register(&kernel_ptdump_info, "kernel_page_tables");
-> +	ptdump_check_wx_init();
->   	return 0;
->   }
->   device_initcall(ptdump_init);
-> diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
-> index d29d722ec3ec..6b0aa16cb17b 100644
-> --- a/arch/arm64/mm/ptdump_debugfs.c
-> +++ b/arch/arm64/mm/ptdump_debugfs.c
-> @@ -20,3 +20,21 @@ void ptdump_debugfs_register(struct ptdump_info *info, const char *name)
->   {
->   	debugfs_create_file(name, 0400, NULL, info, &ptdump_fops);
->   }
-> +
-> +static int check_wx_debugfs_set(void *data, u64 val)
-> +{
-> +	if (val != 1ULL)
-> +		return -EINVAL;
-> +
-> +	ptdump_check_wx();
-> +
-> +	return 0;
-> +}
-> +
-> +DEFINE_SIMPLE_ATTRIBUTE(check_wx_fops, NULL, check_wx_debugfs_set, "%llu\n");
-> +
-> +void ptdump_check_wx_init(void)
-> +{
-> +	debugfs_create_file("check_wx_pages", 0200, NULL,
-> +			NULL, &check_wx_fops) ? 0 : -ENOMEM;
-> +}
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aGkgVWxmCgpMZSA0LzIxLzIwIMOgIDExOjM4IEFNLCBVbGYgSGFuc3NvbiBhIMOpY3JpdMKgOgo+
+IE9uIFR1ZSwgMjEgQXByIDIwMjAgYXQgMTE6MjUsIFVsZiBIYW5zc29uIDx1bGYuaGFuc3NvbkBs
+aW5hcm8ub3JnPiB3cm90ZToKPj4KPj4gT24gTW9uLCAyMCBBcHIgMjAyMCBhdCAxODoxOCwgTHVk
+b3ZpYyBCYXJyZSA8bHVkb3ZpYy5iYXJyZUBzdC5jb20+IHdyb3RlOgo+Pj4KPj4+IFRoaXMgcGF0
+Y2ggZml4IGEgcG93ZXItb24gaXNzdWUsIGFuZCBhdm9pZCB0byByZXRyeSB0aGUgcG93ZXIgc2Vx
+dWVuY2UuCj4+Pgo+Pj4gSW4gcG93ZXIgb2ZmIHNlcXVlbmNlOiBzZG1tYyBtdXN0IHNldCBwd3Jf
+cmVnIGluICJwb3dlci1jeWNsZSIgc3RhdGUKPj4+ICh2YWx1ZSAweDIpLCB0byBwcmV2ZW50IHRo
+ZSBjYXJkIGZyb20gYmVpbmcgc3VwcGxpZWQgdGhyb3VnaCB0aGUgc2lnbmFsCj4+PiBsaW5lcyAo
+YWxsIHRoZSBsaW5lcyBhcmUgZHJpdmVuIGxvdykuCj4+Pgo+Pj4gSW4gcG93ZXIgb24gc2VxdWVu
+Y2U6IHdoZW4gdGhlIHBvd2VyIGlzIHN0YWJsZSwgc2RtbWMgbXVzdCBzZXQgcHdyX3JlZwo+Pj4g
+aW4gInBvd2VyLW9mZiIgc3RhdGUgKHZhbHVlIDB4MCkgdG8gZHJpdmUgYWxsIHNpZ25hbCB0byBo
+aWdoIGJlZm9yZSB0bwo+Pj4gc2V0ICJwb3dlci1vbiIuCj4+Cj4+IEp1c3QgYSBxdWVzdGlvbiB0
+byBnYWluIGZ1cnRoZXIgdW5kZXJzdGFuZGluZy4KPj4KPj4gTGV0J3MgYXNzdW1lIHRoYXQgdGhl
+IGNvbnRyb2xsZXIgaXMgYSBwb3dlci1vbiBzdGF0ZSwgYmVjYXVzZSBpdCdzCj4+IGJlZW4gaW5p
+dGlhbGl6ZWQgYnkgdGhlIGJvb3QgbG9hZGVyLiBXaGVuIHRoZSBtbWMgY29yZSB0aGVuIHN0YXJ0
+cyB0aGUKPj4gcG93ZXItb24gc2VxdWVuY2UgKG5vdCBkb2luZyBhIHBvd2VyLW9mZiBmaXJzdCks
+IHdvdWxkICRzdWJqZWN0IHBhdGNoCj4+IHRoZW4gY2F1c2UgdGhlCj4+IE1NQ0lQT1dFUiB0byBy
+ZW1haW4gYXMgaXMsIG9yIGlzIGl0IGdvaW5nIHRvIGJlIG92ZXJ3cml0dGVuPwoKT24gc2RtbWMg
+Y29udHJvbGxlciwgdGhlIFBXUkNUUkxbMTowXSBmaWVsZCBvZiBNTUNJUE9XRVIgcmVnaXN0ZXIg
+YWxsb3cKdG8gbWFuYWdlIHNkIGxpbmVzIGFuZCBoYXMgYSBzcGVjaWZpYyBiYWhhdmlvci4KClBX
+UkNUUkwgdmFsdWU6CiAgLSAweDA6IEFmdGVyIHJlc2V0LCBSZXNldDogdGhlIFNETU1DIGlzIGRp
+c2FibGVkIGFuZCB0aGUgY2xvY2sgdG8gdGhlCiAgICAgICAgIENhcmQgaXMgc3RvcHBlZCwgU0RN
+TUNfRFs3OjBdLCBhbmQgU0RNTUNfQ01EIGFyZSBIaVogYW5kCiAgICAgICAgIFNETU1DX0NLIGlz
+IGRyaXZlbiBsb3cuCiAgICAgICAgIFdoZW4gd3JpdHRlbiAwMCwgcG93ZXItb2ZmOiB0aGUgU0RN
+TUMgaXMgZGlzYWJsZWQgYW5kIHRoZSBjbG9jawogICAgICAgICB0byB0aGUgY2FyZCBpcyBzdG9w
+cGVkLCBTRE1NQ19EWzc6MF0sIFNETU1DX0NNRCBhbmQgU0RNTUNfQ0sKICAgICAgICAgYXJlIGRy
+aXZlbiBoaWdoLgoKICAtIDB4MjogUG93ZXItY3ljbGUsIHRoZSBTRE1NQyBpcyBkaXNhYmxlZCBh
+bmQgdGhlIGNsb2NrIHRvIHRoZSBjYXJkIGlzCiAgICAgICAgIHN0b3BwZWQsIFNETU1DX0RbNzow
+XSwgU0RNTUNfQ01EIGFuZCBTRE1NQ19DSyBhcmUgZHJpdmVuIGxvdy4KCiAgLSAweDM6IFBvd2Vy
+LW9uOiB0aGUgY2FyZCBpcyBjbG9ja2VkLCBUaGUgZmlyc3QgNzQgU0RNTUNfQ0sgY3ljbGVzIHRo
+ZQogICAgICAgICBTRE1NQyBpcyBzdGlsbCBkaXNhYmxlZC4gQWZ0ZXIgdGhlIDc0IGN5Y2xlcyB0
+aGUgU0RNTUMgaXMKICAgICAgICAgZW5hYmxlZCBhbmQgdGhlIFNETU1DX0RbNzowXSwgU0RNTUNf
+Q01EIGFuZCBTRE1NQ19DSyBhcmUKICAgICAgICAgY29udHJvbGxlZCBhY2NvcmRpbmcgdGhlIFNE
+TU1DIG9wZXJhdGlvbi4KICAgICAgICAgKipBbnkgZnVydGhlciB3cml0ZSB3aWxsIGJlIGlnbm9y
+ZWQsIFBXUkNUUkwgdmFsdWUKICAgICAgICAgd2lsbCBrZWVwIDB4MyoqLiB3aGVuIHRoZSBTRE1N
+QyBpcyBPTiAoMHgzKSBvbmx5IGEgcmVzZXQgY291bGQKICAgICAgICAgY2hhbmdlIHB3cmN0cmwg
+dmFsdWUgYW5kIHRoZSBzdGF0ZSBvZiBzZG1tYyBsaW5lcy4KClNvIGlmIHRoZSBsaW5lcyBhcmUg
+YWxyZWFkeSAiT04iLCB0aGUgcG93ZXItb24gc2VxdWVuY2UgKGRlY3JpYmVkIGluCmNvbW1pdCBt
+ZXNzYWdlKSBub3Qgb3ZlcndyaXRlIHRoZSBwd2N0cmwgZmllbGQgYW5kIG5vdCBkaXN0dXJiIHRo
+ZSBzZG1tYyAKbGluZXMuCgo+Pgo+PiBJIGFtIGEgbGl0dGxlIHdvcnJpZWQgdGhhdCB3ZSBtYXkg
+c3RhcnQgdG8gcmVseSBvbiBib290IGxvYWRlcgo+PiBjb25kaXRpb25zLCB3aGljaCBpc24ndCBy
+ZWFsbHkgd2hhdCB3ZSB3YW50IGVpdGhlci4uLgo+PgoKV2Ugbm90IGRlcGVuZCBvZiBib290IGxv
+YWRlciBjb25kaXRpb25zLgoKVGhpcyBwYXRjaCBzaW1wbHkgYWxsb3dzIHRvIGRyaXZlIGhpZ2gg
+dGhlIHNkIGxpbmVzIGJlZm9yZSB0byBzZXQKInBvd2VyLW9uIiB2YWx1ZSAobm8gZWZmZWN0IGlm
+IGFscmVhZHkgcG93ZXIgT04pLgoKPj4+Cj4+PiBUbyBhdm9pZCB3cml0aW5nIHRoZSBzYW1lIHZh
+bHVlIHRvIHRoZSBwb3dlciByZWdpc3RlciBzZXZlcmFsIHRpbWVzLCB0aGlzCj4+PiByZWdpc3Rl
+ciBpcyBjYWNoZWQgYnkgdGhlIHB3cl9yZWcgdmFyaWFibGUuIEF0IHByb2JlIHB3cl9yZWcgaXMg
+aW5pdGlhbGl6ZWQKPj4+IHRvIDAgYnkga3phbGxvYyBvZiBtbWNfYWxsb2NfaG9zdC4KPj4+Cj4+
+PiBMaWtlIHB3cl9yZWcgdmFsdWUgaXMgMCBhdCBwcm9iaW5nLCB0aGUgcG93ZXIgb24gc2VxdWVu
+Y2UgZmFpbCBiZWNhdXNlCj4+PiB0aGUgInBvd2VyLW9mZiIgc3RhdGUgaXMgbm90IHdyaXRlcyAo
+dmFsdWUgMHgwKSBhbmQgdGhlIGxpbmVzCj4+PiByZW1haW4gZHJpdmUgdG8gbG93Lgo+Pj4KPj4+
+IFRoaXMgcGF0Y2ggaW5pdGlhbGl6ZXMgInB3cl9yZWciIHZhcmlhYmxlIHdpdGggcG93ZXIgcmVn
+aXN0ZXIgdmFsdWUuCj4+PiBUaGlzIGl0IGRvbmUgaW4gc2RtbWMgdmFyaWFudCBpbml0IHRvIG5v
+dCBkaXN0dXJiIGRlZmF1bHQgbW1jaSBiZWhhdmlvci4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBM
+dWRvdmljIEJhcnJlIDxsdWRvdmljLmJhcnJlQHN0LmNvbT4KPj4KPj4gQmVzaWRlcyB0aGUgY29t
+bWVudCwgdGhlIGNvZGUgYW5kIHRoZSBhcHByb2FjaCBzZWVtcyByZWFzb25hYmxlIHRvIG1lLgo+
+IAo+IEFub3RoZXIgcmVsYXRlZCBxdWVzdGlvbi4gSSBqdXN0IHJlYWxpemVkIHdoeSB5b3UgcHJv
+YmFibHkgaGF2ZW4ndCBzZXQKPiAucHdycmVnX25vcG93ZXIgZm9yIHRoZSB2YXJpYW50X3N0bTMy
+X3NkbW1jIGFuZCB2YXJpYW50X3N0bTMyX3NkbW1jdjIuCj4gCj4gSSBndWVzcyBpdCdzIGJlY2F1
+c2UgeW91IG5lZWQgYSBzbGlnaHRseSBkaWZmZXJlbnQgd2F5IHRvIHJlc3RvcmUgdGhlCj4gY29u
+dGV4dCBvZiBNTUNJUE9XRVIgcmVnaXN0ZXIgYXQgLT5ydW50aW1lX3Jlc3VtZSgpLCByYXRoZXIg
+dGhhbiBqdXN0Cj4gcmUtd3JpdGluZyBpdCB3aXRoIHRoZSBzYXZlZCByZWdpc3RlciB2YWx1ZXMu
+IElzIHRoaXMgc29tZXRoaW5nIHRoYXQKPiB5b3UgYXJlIGxvb2tpbmcgaW50byBhcyB3ZWxsPwoK
+WWVzIGV4YWN0bHksIHRoZSBzZXF1ZW5jZSBpcyBzbGlnaHRseSBkaWZmZXJlbnQuIEkgY2FuJ3Qg
+d3JpdGUgMCBvbiAKbW1jaV9ydW50aW1lX3N1c3BlbmQsIGFuZCBjYW4ndCBqdXN0IHJlLXdyaXRp
+bmcgdGhlIHNhdmVkIHJlZ2lzdGVyLgoKUmVnYXJkcwpMdWRvCgo+IAo+IFsuLi5dCj4gCj4gS2lu
+ZCByZWdhcmRzCj4gVWZmZQo+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
