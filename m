@@ -2,80 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB4341B5077
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 00:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58B6A1B5083
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 00:49:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TYORu0cc6hxoIAcbOtyfsgxWGcKDUTpmiKL/FLmbSFQ=; b=SdE3hT4N0XNIOF
-	x9wNYZ1rttj4TFtC7oIFNJcpLj6ViMo4dEQEuac87SAuCD1R9/z1U1hIVOoBnMqv6wrLGDo9WaYg6
-	3yAZbnXR8wDtei5OCo9RVZQBTsNWFrJIkS+LyXM1nvcZF/iqf/kv9eG3kKjpwa2HgBHNaZVT/UnbP
-	Im491nOmRAOJ4md4Xq3ufgRSm1Z0l0B+DhFk4ZhDjnnNKzQrLmWtCAPtd2KsUIL4uZz9HG2sOKXqL
-	HOgql/f9Ckv1AHa+2uGa3mg6k4rCbJD/GM33HiXwkRfvV3sxZDCuon877KlvZrFvkQu0w+D0b4GnH
-	kuteVrUkweTyGRbVNxhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V0EzhxUZTPAyEewCd0BhAMeHDzOPYZ6aV76004VtLwY=; b=AF/Le5GB5eHcywPIDAyGoD+IY
+	8ECzkzFGWuJVIXqQL6Y85Xf48VAbbP5x5xF/4k33KAPFCj5kH8Z6kNMGq9Yc3YZKMarPlwsv11H36
+	G//Hi0skB2ddPMiLusP+VmZI8ZnKTss12oCLkLS31DRC+btRK9j286DIjlu89ve9L83HbeebDVw2f
+	ErXnyX2mpOQ1hBOjfWLiQ9/bL1GJwomYS+kNRWk/ovH8JF6ZszPidngWC8ZAtgsls9WsdUas6t5e0
+	UPSc7bhDATMLFVMzFYg0kE2I6PFknC9w1GMYDvy3e/uAQUC3dpPpkCXuiod3QT0KNu4+5cFSvHnso
+	YdGzPOAjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRO8t-0000Ws-W6; Wed, 22 Apr 2020 22:46:56 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jROBE-0001JK-3w; Wed, 22 Apr 2020 22:49:20 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRO8l-0000V9-A9
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 22:46:48 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id e6so1622644pjt.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 15:46:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=pLTuQArcwiFXcG9uc7P3/tOH2806IqFHASRaBcIcsEY=;
- b=BSbkpzmsMrB61iVPWzBuW/+ZEnOUMyG61Cjfz/vz3GFTkoJosnfewYwwNytlJSg/r5
- 7urIvRN84RRm0goUbfxHHzHPdDP8mVksMX8xC3NIi85jZ0dxMD54ig+wXJWmGJ+PTddQ
- Y/1YKuKZgP6vEwWbBfuWIfhMmf8ZfOiwR0UJs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=pLTuQArcwiFXcG9uc7P3/tOH2806IqFHASRaBcIcsEY=;
- b=Yi9UA2gQ8WxfrrzthBgBQdzkMMXS7DIhxQdY5HoYBw9vgNAbKi6SmZc0eQ40sy8vW8
- j7NdIxax+LIJ9OovhSgEMCiml0gFWxL26MkkHE7qQan4OwUOVXkcBPmUqMYCSW/AZT3K
- fiUqI8//OIzzihWEOqh6UX2og3FhjECitTGN3N1Ci2ppS7kEWorhPG/ZA7HKW8/tb6vf
- Eua7NYQ71ZR3nW4DC+zyjXFD1AUCiKjl+yBPMBiQfnnKZoiYjCHi/7eU7Yv7cl6kY1z7
- lZlRVyDU1jcyhQUEDSX8OBcZ8SWN+QSH3F2zT1pDgImKxIE3evmvn/OJVrvmwlMqZcO9
- ExvA==
-X-Gm-Message-State: AGi0PuYZzf/GYsx6dq8XwdlTY75YQMQGaFCOBf7l+cLy+/crCa+gXXKu
- g5XmnDsb5Y0VsmK5a3Kiz9BHwQ==
-X-Google-Smtp-Source: APiQypKhDC0baxY/PgdACBGve8Req9KLYTUEXXH0x/85yLzgvD2k0uCeWYCvvSYzzEadi+NZNpZcBw==
-X-Received: by 2002:a17:90a:5aa7:: with SMTP id
- n36mr1056873pji.45.1587595606121; 
- Wed, 22 Apr 2020 15:46:46 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id h11sm539650pfo.120.2020.04.22.15.46.44
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 22 Apr 2020 15:46:45 -0700 (PDT)
-Date: Wed, 22 Apr 2020 15:46:43 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Yong Mao <yong.mao@mediatek.com>
-Subject: Re: [PATCH 3/3] mmc: core: fix mmc_sdio_reinit_card fail issue
-Message-ID: <20200422224643.GI199755@google.com>
-References: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
- <1586835611-13857-4-git-send-email-yong.mao@mediatek.com>
+ id 1jROB1-0001HK-UG
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 22:49:09 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03MMmoTS102812;
+ Wed, 22 Apr 2020 17:48:50 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1587595730;
+ bh=jsrBvyKjoBsK7Qmp/aFfEnqPrRNBCyW5gwbg2tXfVtw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=W1EAICsvSyxyQObunoinLfIA3bqsed6uzNJ0heuA2Qy/rNtJUNbVN2fp/VOgz2Vag
+ tpaVjNepeJ8cvBBife5/tLswhLfzeRqqhBmEMNChsOzzPz6EnPgdVuK8NsdP+a20FC
+ LL7s26/UnBkUgdIkgI5cC4RGc5BjJ6BL+KNPkgX0=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03MMmoQx040209;
+ Wed, 22 Apr 2020 17:48:50 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
+ Apr 2020 17:48:50 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 22 Apr 2020 17:48:50 -0500
+Received: from [10.250.70.56] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03MMmn2S080922;
+ Wed, 22 Apr 2020 17:48:49 -0500
+Subject: Re: [PATCH v3] remoteproc: remove rproc_elf32_sanity_check
+To: Clement Leger <cleger@kalray.eu>, Ohad Ben-Cohen <ohad@wizery.com>, Bjorn
+ Andersson <bjorn.andersson@linaro.org>, Patrice Chotard
+ <patrice.chotard@st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+References: <20200422093017.10985-1-cleger@kalray.eu>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <be2f9a6f-1588-832b-9fae-21629e6241e6@ti.com>
+Date: Wed, 22 Apr 2020 17:48:49 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586835611-13857-4-git-send-email-yong.mao@mediatek.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20200422093017.10985-1-cleger@kalray.eu>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_154647_374903_A70CA6EF 
-X-CRM114-Status: GOOD (  18.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_154908_119486_93493449 
+X-CRM114-Status: GOOD (  19.97  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,62 +93,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, srv_heupstream@mediatek.com,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Chaotian Jing <chaotian.jing@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yong,
-
-On Tue, Apr 14, 2020 at 11:40:11AM +0800, Yong Mao wrote:
-> From: yong mao <yong.mao@mediatek.com>
+On 4/22/20 4:30 AM, Clement Leger wrote:
+> Since checks are present in the remoteproc elf loader before calling
+> da_to_va, loading a elf64 will work on 32bits flavors of kernel.
+> Indeed, if a segment size is larger than what size_t can hold, the
+> loader will return an error so the functionality is equivalent to
+> what exists today.
 > 
-> If SDIO device is initialized by UHS mode, it will run with 1.8v power.
-> In this mode, mmc_go_idle may not make SDIO device go idle successfully
-> in some special SDIO device. And then it can't be re-initialized
-> successfully.
-> According to the logic in sdio_reset_comm and mmc_sdio_sw_reset,
-> invoking mmc_set_clock(host, host->f_min) before mmc_send_io_op_cond
-> can make this SDIO device back to right state.
->
+> Signed-off-by: Clement Leger <cleger@kalray.eu>
 
-The commit message isn't very concise. Suggestion for a better
-structure:
+Acked-by: Suman Anna <s-anna@ti.com>
 
-mmc: core: reset clock to minimum speed during card reinit
+With this patch, I can drop the specific assignment in my 64-bit C71 DSP 
+remoteproc driver.
 
-Some buggy (?) SDIO devices don't (consistently?) enter idle mode
-through mmc_go_idle() when running in UHS mode. [add rationale why
-setting the clock to minimum speed fixes this]
+regards
+Suman
 
-
-Also the function sdio_reset_comm() mentioned in the commit message
-doesn't exist in recent kernels. And mmc_sdio_sw_reset() does not invoke
-mmc_send_io_op_cond(), as the commit message appears to claim.
-
-> Signed-off-by: Yong Mao <yong.mao@mediatek.com>
 > ---
->  drivers/mmc/core/sdio.c | 1 +
->  1 file changed, 1 insertion(+)
+> Changes from v2 -> v3:
+>   - Rebase on rproc-next branch
 > 
-> diff --git a/drivers/mmc/core/sdio.c b/drivers/mmc/core/sdio.c
-> index f173cad..dc4dc63 100644
-> --- a/drivers/mmc/core/sdio.c
-> +++ b/drivers/mmc/core/sdio.c
-> @@ -850,6 +850,7 @@ static int mmc_sdio_reinit_card(struct mmc_host *host)
->  
->  	sdio_reset(host);
->  	mmc_go_idle(host);
-> +	mmc_set_clock(host, host->f_min);
-
-mmc_sdio_sw_reset() - which is mentioned as reference in the commit
-message - sets the clock speed before sdio_reset(). Should this order
-be followed here too?
+> Changes from v1 -> v2:
+>   - Remove possibity to override sanity_check operation
+> 
+>   drivers/remoteproc/remoteproc_core.c       |  3 +--
+>   drivers/remoteproc/remoteproc_elf_loader.c | 21 ---------------------
+>   drivers/remoteproc/remoteproc_internal.h   |  1 -
+>   drivers/remoteproc/st_remoteproc.c         |  2 +-
+>   drivers/remoteproc/st_slim_rproc.c         |  2 +-
+>   drivers/remoteproc/stm32_rproc.c           |  2 +-
+>   6 files changed, 4 insertions(+), 27 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index 448262470fc7..206363723071 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -2069,8 +2069,7 @@ static int rproc_alloc_ops(struct rproc *rproc, const struct rproc_ops *ops)
+>   	rproc->ops->load = rproc_elf_load_segments;
+>   	rproc->ops->parse_fw = rproc_elf_load_rsc_table;
+>   	rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
+> -	if (!rproc->ops->sanity_check)
+> -		rproc->ops->sanity_check = rproc_elf32_sanity_check;
+> +	rproc->ops->sanity_check = rproc_elf_sanity_check;
+>   	rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
+>   
+>   	return 0;
+> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+> index 4869fb7d8fe4..df68d87752e4 100644
+> --- a/drivers/remoteproc/remoteproc_elf_loader.c
+> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
+> @@ -112,27 +112,6 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
+>   }
+>   EXPORT_SYMBOL(rproc_elf_sanity_check);
+>   
+> -/**
+> - * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
+> - * @rproc: the remote processor handle
+> - * @fw: the ELF32 firmware image
+> - *
+> - * Make sure this fw image is sane.
+> - */
+> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
+> -{
+> -	int ret = rproc_elf_sanity_check(rproc, fw);
+> -
+> -	if (ret)
+> -		return ret;
+> -
+> -	if (fw_elf_get_class(fw) == ELFCLASS32)
+> -		return 0;
+> -
+> -	return -EINVAL;
+> -}
+> -EXPORT_SYMBOL(rproc_elf32_sanity_check);
+> -
+>   /**
+>    * rproc_elf_get_boot_addr() - Get rproc's boot address.
+>    * @rproc: the remote processor handle
+> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+> index b389dc79da81..31994715fd43 100644
+> --- a/drivers/remoteproc/remoteproc_internal.h
+> +++ b/drivers/remoteproc/remoteproc_internal.h
+> @@ -54,7 +54,6 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
+>   phys_addr_t rproc_va_to_pa(void *cpu_addr);
+>   int rproc_trigger_recovery(struct rproc *rproc);
+>   
+> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>   int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>   u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
+>   int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
+> diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
+> index a6cbfa452764..a3268d95a50e 100644
+> --- a/drivers/remoteproc/st_remoteproc.c
+> +++ b/drivers/remoteproc/st_remoteproc.c
+> @@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
+>   	.parse_fw		= st_rproc_parse_fw,
+>   	.load			= rproc_elf_load_segments,
+>   	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
+> -	.sanity_check		= rproc_elf32_sanity_check,
+> +	.sanity_check		= rproc_elf_sanity_check,
+>   	.get_boot_addr		= rproc_elf_get_boot_addr,
+>   };
+>   
+> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+> index 3cca8b65a8db..09bcb4d8b9e0 100644
+> --- a/drivers/remoteproc/st_slim_rproc.c
+> +++ b/drivers/remoteproc/st_slim_rproc.c
+> @@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
+>   	.da_to_va       = slim_rproc_da_to_va,
+>   	.get_boot_addr	= rproc_elf_get_boot_addr,
+>   	.load		= rproc_elf_load_segments,
+> -	.sanity_check	= rproc_elf32_sanity_check,
+> +	.sanity_check	= rproc_elf_sanity_check,
+>   };
+>   
+>   /**
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 0f9d02ca4f5a..f45b8d597da0 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
+>   	.load		= rproc_elf_load_segments,
+>   	.parse_fw	= stm32_rproc_parse_fw,
+>   	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+> -	.sanity_check	= rproc_elf32_sanity_check,
+> +	.sanity_check	= rproc_elf_sanity_check,
+>   	.get_boot_addr	= rproc_elf_get_boot_addr,
+>   };
+>   
+> 
 
 
 _______________________________________________
