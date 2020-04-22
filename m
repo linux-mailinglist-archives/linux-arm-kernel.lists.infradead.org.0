@@ -2,85 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FB401B5105
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 01:52:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E47CB1B5109
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 01:54:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J0O7k4nzUKRvuatgnrToyqqRhLTmafw+TzbuBU2gu08=; b=YqZLz7HknxVq0l
-	AgD0WtVC9QEZ4m2pPungoyAbs9d+XcmXd3e3/fJj9NPTKeErhyGgG6SL4Fm5FjTJ1f8VdIEOzfrno
-	WfsIaxEYHiLmAOz4eWLFHAzLcHU10Qk4cSlo1EGTV1UMFJHnMzcFwPdsGsJz5dTZuGtiFzr8Kw6DR
-	mPtWnCL/NPh/T8Ihguqy1PD9jJwzUcQ48ahj6tvrDK/dCix4mBnqzB4SRfEJvSD2uhgUQc7TnkBVM
-	An8uYgICgy56tr4JfU2n8LCi22dtmCTJ8inZRgcDT/ZxaIeguE0tPSE5uGIgjnRA0HRspg747sdnf
-	QeT0jIrTFK0un5jQElrQ==;
+	List-Owner; bh=Rxn9dcZTNXt3afltVbtGKtW+NzgOBcrAsjUgsoHq+H4=; b=RqSohBXnLndU7P
+	RCLzqi6LQRk2tLORoHunoRkB1W7vGUAoiWOvgpceI2jsPcbGDvzF25r7r+huppHKCH5lakdSRavpS
+	p0rl0Oe4QCSpU98WBCNoHYV6rushCCCEb95NNpuYdbJPnEUNcDr59JmTGtlFpXhUSAPTd66SZAaTb
+	1CwpTNJYbVu0lEWUvsWRCt6AxuodD6U1cF4QcvZX1Tlpyczje/QWaSG+a2snpQxJRAdrrQiv+7Cjg
+	CRzzKYlf8FpZY0mKTbZh8xaiwN+Nd4TkzZ1ns/ksZzqIr/LSrsrAR7XTXe0faEh/WhXP6ncnKbTP5
+	NoyfkaA55TAFpB8Gmx2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRP9n-0002yM-TJ; Wed, 22 Apr 2020 23:51:56 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jRPC4-0003T6-DI; Wed, 22 Apr 2020 23:54:16 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRP9d-0002xU-BN
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 23:51:46 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t4so1581597plq.12
+ id 1jRPBs-0003Sb-RU
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 23:54:05 +0000
+Received: by mail-pf1-x444.google.com with SMTP id p25so1963624pfn.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 16:51:42 -0700 (PDT)
+ Wed, 22 Apr 2020 16:54:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=QgMVZz3XwLkExErntao4WLiI0VS/DsZOFmHjZC/Mbow=;
- b=b1xFmE2sV5VW4aIlU/whxS/awWX9vekQ0Ico8eQgciMKy7zuNVk5XtOpg39bOTWcKs
- gmE9IbR9W35bFsypZV4vL3HSs5YmoSf5fN8616fkMWbslDLfiUYdepcmXnGAGCT9UBow
- tcegupNB12V2vId+LwrLQi0D9fZMOT/3eaM73mrtZdPpGBHCbmDq0L+M54abVOxMotXA
- LxFAdJGBFIgJQJDG8i+fcobu58I88gq4sWg+B8YpHYN1E99k4GEnsYVLt9Kz7c/v8YvO
- 1Ag5ItZ7vliNh16MSWpcpImUWRG2bw/nM3eiMhbI7Z3GgjX0L1CaNHTEcHJUd8nG/PfW
- SEpw==
+ bh=9yta31YHLGTtMTc3kimrMC0tNHi4fPt9ZpXXfvJokHE=;
+ b=ul4AvjVQXbGe+67+07L6i6vBhv+ePFHnNv5wOIO5OLBqKwlga7zXiy6xS1d0X/n/tF
+ 6woOlNdImmOPZMJChQsUQyygz5ZseUPmnZAKczKpT7Y7lInJ6k/DDJqqloDP2VpGFDPw
+ OFtrm1ALOx3/hCMPr/YQ3m1N7xm3tLJ/pl95K3DRTQoOWwlka1VKxTJhNX6t7x3uramm
+ 2dyep6SUwSuJ79qzMc80b3OzgAHRlzEcC+sG84d0mATYPxu/tkZ16ivMuXJA1CHS9gCY
+ zZTcPJxWLKTN7QTPUPa2eVcTdjKumsRqOxjD1k+RVCHPaHKtuxR9qW1L8MlMmMCCFv+Y
+ LkDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=QgMVZz3XwLkExErntao4WLiI0VS/DsZOFmHjZC/Mbow=;
- b=jp7tHZEMtpR1yuh8Tp2FXppHPIRhTDaRoeN54k+18u1HKQM5wIFRh3uXJu14Li+GBz
- orYFYnNrf/J+CS1/eKQIBiNCiow1dKoGba+C2ihcWYJiSG4eP1Fc9OO2r9xHjhQCwcCC
- gdy3V7zhRdCUM8ya8H+WUNdphsnE112G7zkpZcVveHd8O7OeeaJLwlKFGArHLoyPIVRj
- oX5p+dMK0H5pbk5ZII4Pd9Giv0k0MXYZ4OsxCwAJTfScLagL35yeVzpJiipIZzgYd9xq
- EnzOPws2133NrQFQ3YGu//yfzqjevfEVTetRfylSYWG0k+t57UBWfv74zGLjZ4brkyhX
- /uGQ==
-X-Gm-Message-State: AGi0PubXLXAkr5cSOpJ1btOJfjuTXycYS/nsswuySHaEPhkfWFxe7dWO
- SgpTjlKukU2quCMgGJ4OH97Uqg==
-X-Google-Smtp-Source: APiQypKd8hMC33L8Wj5RKdsZ70cGbYI15nshdaNSvjex+B8eCij/WOOT64Lb2ePxq5TYoHX5bEGXjw==
-X-Received: by 2002:a17:902:b097:: with SMTP id
- p23mr1161570plr.195.1587599501845; 
- Wed, 22 Apr 2020 16:51:41 -0700 (PDT)
+ bh=9yta31YHLGTtMTc3kimrMC0tNHi4fPt9ZpXXfvJokHE=;
+ b=A2xjjR5kJ+HK2Isz2u6ANFFnyusq7+jR+jlQL42s/Xr0soXwVvOaH4KdGebTVJVKke
+ Se/VBx2MlW/5gGi0c5uSLKLaqHpYlqu2CStROT/SMj9BUdhVlwSebY4PnfDnPiZa6A08
+ pQMFF9ao8hFPEpIHjPAXpcJ6/T5ZdN73QlM6jZgjdXCIypKUj9893CXbJzTUkjM/Ujz6
+ R3678HVlfvYNQJSStsc7VA9Bc0oc9jEv3t3ajNjpLyTeLNljXT0G0/rN3IefKJiHune5
+ 1LKIgYAOgUZvLSX8r/aRpFQsTPxqSaPGLpKHzdBjLyi13s+oknqTpkIDB8+NmtJ/LsUf
+ +ETA==
+X-Gm-Message-State: AGi0PuatfBFcIS2OdUStqtOjPQfh40K7CJ+rmg6Gw2IvJXuw57BQQHsK
+ Rcnwr9kV+pLDNhEyw+OtHKBJcQ==
+X-Google-Smtp-Source: APiQypIxgD2CWLnytM507AIaoaby+Reth9qe8JpsU5Egogw5Wrog+ZS/v8kJIWI3ShghE5eGkNfP8g==
+X-Received: by 2002:aa7:8118:: with SMTP id b24mr1011016pfi.321.1587599643609; 
+ Wed, 22 Apr 2020 16:54:03 -0700 (PDT)
 Received: from google.com ([2620:15c:201:2:ce90:ab18:83b0:619])
- by smtp.gmail.com with ESMTPSA id h11sm621261pfo.120.2020.04.22.16.51.40
+ by smtp.gmail.com with ESMTPSA id d20sm360096pjs.12.2020.04.22.16.54.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Apr 2020 16:51:40 -0700 (PDT)
-Date: Wed, 22 Apr 2020 16:51:34 -0700
+ Wed, 22 Apr 2020 16:54:02 -0700 (PDT)
+Date: Wed, 22 Apr 2020 16:53:56 -0700
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v11 01/12] add support for Clang's Shadow Call Stack (SCS)
-Message-ID: <20200422235134.GA211149@google.com>
+Subject: Re: [PATCH v12 03/12] scs: add support for stack usage debugging
+Message-ID: <20200422235356.GA128062@google.com>
 References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200416161245.148813-1-samitolvanen@google.com>
- <20200416161245.148813-2-samitolvanen@google.com>
- <20200420171727.GB24386@willie-the-truck>
- <20200420211830.GA5081@google.com>
- <20200422173938.GA3069@willie-the-truck>
+ <20200421021453.198187-1-samitolvanen@google.com>
+ <20200421021453.198187-4-samitolvanen@google.com>
+ <20200422174602.GB3121@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422173938.GA3069@willie-the-truck>
+In-Reply-To: <20200422174602.GB3121@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_165145_413939_9050925C 
-X-CRM114-Status: GOOD (  20.89  )
+X-CRM114-CacheID: sfid-20200422_165404_912044_4EB47EBA 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
@@ -125,42 +122,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 22, 2020 at 06:39:47PM +0100, Will Deacon wrote:
-> On Mon, Apr 20, 2020 at 02:18:30PM -0700, Sami Tolvanen wrote:
-> > On Mon, Apr 20, 2020 at 06:17:28PM +0100, Will Deacon wrote:
-> > > > +	 * The shadow call stack is aligned to SCS_SIZE, and grows
-> > > > +	 * upwards, so we can mask out the low bits to extract the base
-> > > > +	 * when the task is not running.
-> > > > +	 */
-> > > > +	return (void *)((unsigned long)task_scs(tsk) & ~(SCS_SIZE - 1));
-> > > 
-> > > Could we avoid forcing this alignment it we stored the SCS pointer as a
-> > > (base,offset) pair instead? That might be friendlier on the allocations
-> > > later on.
-> > 
-> > The idea is to avoid storing the current task's shadow stack address in
-> > memory, which is why I would rather not store the base address either.
+On Wed, Apr 22, 2020 at 06:46:02PM +0100, Will Deacon wrote:
+> > +static void scs_check_usage(struct task_struct *tsk)
+> > +{
+> > +	static unsigned long highest;
+> > +	unsigned long used = __scs_used(tsk);
+> > +	unsigned long prev;
+> > +	unsigned long curr = highest;
+> > +
+> > +	while (used > curr) {
+> > +		prev = cmpxchg(&highest, curr, used);
 > 
-> What I mean is that, instead of storing the current shadow stack pointer,
-> we instead store a base and an offset. We can still clear the base, as you
-> do with the pointer today, and I don't see that the offset is useful to
-> an attacker on its own.
+> I think this can be cmpxchg_relaxed(), since we don't care about ordering
+> here afaict.
 
-I see what you mean. However, even if we store the base address +
-the offset, we still need aligned allocation if we want to clear
-the address. This would basically just move __scs_base() logic to
-cpu_switch_to() / scs_save().
-
-> But more generally, is it really worthwhile to do this clearing at all? Can
-> you (or Kees?) provide some justification for it, please? We don't do it
-> for anything else, e.g. the pointer authentication keys, so something
-> feels amiss here.
-
-Like Kees pointed out, this makes it slightly harder to locate the
-current task's shadow stack pointer. I realize there are other useful
-targets in thread_info, but we would rather not make this any easier
-than necessary. Is your primary concern here the cost of doing this,
-or just that it doesn't sufficiently improve security?
+Sure, I'll change this in v13. Thanks.
 
 Sami
 
