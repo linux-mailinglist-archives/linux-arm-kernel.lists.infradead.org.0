@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3687A1B4E9A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 22:52:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1467C1B4EAA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 22:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ISjtXrmJqk9nNKHj0+VGi++mscGTltXHHozpBIlB6/g=; b=S0qcGhexr1TEmI
-	P9moJjtGs474uob2YU1oxOaysh0LdQ/+jYY08f6il6L2A1ZkejUBHuwamBdY1PbAXRgY0haCIgYh7
-	0zL/XcmSzREjVy9es0s4BGtmD4cxbYmij4Go7WtVDtDmdEmfgQqRPbRz6AkWivEyywAnqPBqbTdyv
-	RATpgVCvXovCt0qNS9hrgIoQAOZYidJhZhVsP+c+ry4cNYi2YLNNFYLXd1NNrRrtrUBmYHwm5rdyP
-	prYZkyDjqXUgarnjv9/xTb56HONIiYNOhZLCKp7cvI2dcJRa1BFOXm7OlA1zz1o65E402KjQpQ9Hh
-	uM9uwT2n6XPnSe4zLJPQ==;
+	List-Owner; bh=s+nxkgYhJYxe0wZZCPEnp6l6cV76bYcAmQq3O5oHCrQ=; b=hC1WOf/aeG47YJ
+	NMKIbuQTMpJpNjOxj25+0HeSnSxQgxAlKPMOFSmVTVhXPpk4BZ0MtNU7GN9XirtWStNvW8bhYiPw1
+	u86p0TWn/zVxDWCRAB7dRhpHEhSj1ITvNy6EMmozFuo7wSDbIpr6W72zjd25hWVy5rqzwD2w+I/S8
+	8vq28/DDqUtwqo+8zH0vqClS7IWAZrPK2AM9mh+GfKTobWwqBJGwIlCpbBkJGwTKXLN6QOtDvwKVc
+	9vqgb6sFjwuHA8doXhkueb9pGHG1e79JDdb/8YrKTPveo/oRVFq7n+A8fuIX5TVZB3LhKCPnvTSp/
+	JNIOOWTdBVb/rFWHwp/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRMM1-0006Sz-5p; Wed, 22 Apr 2020 20:52:21 +0000
+	id 1jRMQU-0001a0-GB; Wed, 22 Apr 2020 20:56:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRMLs-0006Rj-5z
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 20:52:13 +0000
+ id 1jRMQL-0001ZM-Ev
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 20:56:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 90CA431B;
- Wed, 22 Apr 2020 13:52:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 370EB31B;
+ Wed, 22 Apr 2020 13:56:48 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.118])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B2C3C3F68F;
- Wed, 22 Apr 2020 13:52:05 -0700 (PDT)
-Date: Wed, 22 Apr 2020 21:52:02 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B1B093F68F;
+ Wed, 22 Apr 2020 13:56:44 -0700 (PDT)
+Date: Wed, 22 Apr 2020 21:56:41 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 06/17] clk: versatile: Only enable SP810 on 32-bit by
- default
-Message-ID: <20200422205202.GF25585@bogus>
+Subject: Re: [PATCH 07/17] clk: vexpress-osc: Use the devres clock API variants
+Message-ID: <20200422205641.GG25585@bogus>
 References: <20200419170810.5738-1-robh@kernel.org>
- <20200419170810.5738-7-robh@kernel.org>
+ <20200419170810.5738-8-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200419170810.5738-7-robh@kernel.org>
+In-Reply-To: <20200419170810.5738-8-robh@kernel.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_135212_267003_4FA28AB2 
-X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-CacheID: sfid-20200422_135649_543326_8D7B7FF2 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,14 +78,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 19, 2020 at 12:07:59PM -0500, Rob Herring wrote:
-> While 64-bit Arm reference platforms have SP810 for clocks for SP804
-> timers, they are not needed since the arch timers are used instead.
-> 
+On Sun, Apr 19, 2020 at 12:08:00PM -0500, Rob Herring wrote:
+> In preparation to enable the vexpress-osc clock driver as a module,
+> convert the driver to use the managed devres clock API variants. With
+> this, a driver .remove() hook is not needed.
+>
+> Cc: Liviu Dudau <liviu.dudau@arm.com>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
 
-Shouldn't we disable selection of SP804 for arm64 at the same time ?
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
--- 
+--
 Regards,
 Sudeep
 
