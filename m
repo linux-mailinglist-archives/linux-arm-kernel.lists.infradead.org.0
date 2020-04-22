@@ -2,81 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8620E1B50EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 01:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30F941B5101
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 01:51:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vVHvyuPBtaGFVLC3ZUCZKpV2xJCQl9SEQAoQ8/yberQ=; b=PY71SPxms0CkFH
-	dJj6m00884kdBKqy6mRxRuPNShzbFRb1zCFNO0jZ4vM+yFj/FA1cCLECoQHQ/u9XIQ/cV18hG8LJj
-	s9DxOqZgYYexUv2r2jRbOg9eMCuF8wViwRFmywjdlIZ6QYUd/1L7TeQH67pcsqrpgbvGmpPt4z+E1
-	vflDJijd80Nrwg9+FzU7ziPU7MrJXccvNLT5Zxh2duX82fklduN3nqepgr5IwgyY2W2M/l+wsIQr0
-	6IUiJ3UJiWP1z5OXs7zTAlEyHB+yzpwHlWhn2FcW3EgNXqDaB9pQAxcRbmKXhGd0FPODbStNMgKbQ
-	1VlQz+aJ/r/n/um15YWg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BPtgACtEINyid6azlJN0M/Mw/PVLP4l3j+CHWbVZgh8=; b=E+1RtY6ItsHGPq
+	F1CEm0KNSZRpsZygE0MQjTj9QapK0Ezkt8GS4cVnBygoAdNJJLLixqCOL24F4zmUcFnZrxxoJYwJH
+	uKmbtNIw48THOg/+tRZkuvSOpuTNBjvO2lVIbPBslQzn7E+qMuk+G/g+7TLVy7yji5kjUlajK0cW4
+	5rkkkUga2qI1cbEtK2fvJWBrYheBl01l/z98VaMxHEzZxoj3R6IRwxfXSf9l13RuFBwv4yXt9tq3e
+	OV94r+agB64LiYTGsJZvnauDNDUTNk3dHi9PTpa0urOlJ5BleM/z0d3yEquRUYilNsby9ZO0+xc4O
+	plWNNWt+2t7s+ZC1/Hbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jROy1-0001Nj-MZ; Wed, 22 Apr 2020 23:39:45 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jRP97-0002Zi-Pg; Wed, 22 Apr 2020 23:51:13 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jROxq-0001LX-Lp; Wed, 22 Apr 2020 23:39:36 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i68so3367883qtb.5;
- Wed, 22 Apr 2020 16:39:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=E1PBrkT1LoNCkirZimCNKHoVPu32mXxSCEKcm1zSQdY=;
- b=oDo/4WF/ApXIvPS+YZM/b4AuPq4KMtNUrAx4kPRyrKcfDY/7N/wACbuVSV9Bv/+yzf
- fsnHPe6JvdEzXhWLh9tQ6LLzYjBZVEjddVBn1gtQAALZMkA67fSSmIEs97PND8XNvZYp
- /CLble/z+CslEMET1pTe/sVN52S4rwol8nho+e70U31cQydk8ItNbaD2Aun5iR9YbF6y
- S2gA8LYXgnTxOjCa8ODOggGJVmTiCJMrAfqWMBASVIq+rkmiTUfucLWHgc1v7UxPm/SA
- KXTVxF1f1yGF6eVCicEPf0DvQnww0cq8E9wKeCSoC9OtuV2k7GYnhhDWSC8guN4M4SP1
- qKPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=E1PBrkT1LoNCkirZimCNKHoVPu32mXxSCEKcm1zSQdY=;
- b=iFyIJMxvrhQCB+WdTfLDSBA5dc/nunplx3JhUgwglcJXl8AVKL8yzzapw1WGabhThH
- tr6rjAyMx9PxxcdLhBqdLa6k6FWHLVi+Xg68UdvSZMrz49GB/1hSJCXEmejbY15SvQh7
- MD0HJPUgzPaQo7XlCmj2GZ3q5oYg+tTePt/0/kPfzfiUIjPE2rpjfl3LBsqTa++QFQ0w
- f12WSIciqxaOAk99LFCUgcSSeJVffFqH62J3w0NYbT1KaQ8oWW7C+1wtY5YA06NLsWWs
- 07kuNIYR1Nb8wQ9td0VI9RqAfwoMgYgryjdfqr+JFzSDEqHcl1S+NxOyoefogvcgS6rq
- H6GQ==
-X-Gm-Message-State: AGi0PuY5ydE+1mQVB6A4hpOytbb+e4kO5+kdO9XgfzojipXhT1E2pUH9
- +EWWgbfuqJTsDo1Vo+WEuXY=
-X-Google-Smtp-Source: APiQypIx5CG1YBGE7PM0vaWxnGyfc8b17Jq+bNco8g/8Tp6x3Az3BOQ4nLnVYoI1NU6hWc+y49zG8Q==
-X-Received: by 2002:ac8:1090:: with SMTP id a16mr1262025qtj.181.1587598771607; 
- Wed, 22 Apr 2020 16:39:31 -0700 (PDT)
-Received: from imac (dhcp-108-168-12-59.cable.user.start.ca. [108.168.12.59])
- by smtp.gmail.com with ESMTPSA id
- i6sm475709qkk.123.2020.04.22.16.39.30
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 22 Apr 2020 16:39:31 -0700 (PDT)
-Date: Wed, 22 Apr 2020 19:39:28 -0400
-From: Tim Lewis <elatllat@gmail.com>
-To: elatllat@gmail.com
-Subject: [PATCH v3] arm64: dts: meson: S922X: extend cpu opp-points
-Message-ID: <20200422233928.GA2816@imac>
+ id 1jRP8y-0002YF-Nx
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 23:51:06 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 672565C024C;
+ Wed, 22 Apr 2020 19:50:57 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Wed, 22 Apr 2020 19:50:57 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=v
+ ZGbnC8RdlpxgKLz2nXfyLccHHit/zhrLhFtuEcHKTc=; b=K/lTPU4iiQf6FH5rw
+ 0zf9PwVrEUeYd37vwn0BW7dSg81WiTB9rQG3DlWhbrai7UvMaIE2vv+glKdGHUgH
+ Kgw250BFWps6RmrMnkd/qf9ivkitUxm7Ef2FOmusU2QrRuvxZ660c776xDQgt2Ih
+ c0S2zPl8JM3tmbYTjWS49vf+C60UQ8jaAWd3oO1TG2KBMSsRdLx6v5dm65+18KxK
+ lKcuGrCQfitpYqvyZjhlFdEtMxo/9iOKMagPcPgb/e2CNB4DTFj/fh6HjwR+nkd3
+ /7XSrBXpJ69IzHBMbVE7tedAnXfJ3m9gyoMD6eQRJiD5gbB8qdQcq5wlwMjjjmez
+ E9eBQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=vZGbnC8RdlpxgKLz2nXfyLccHHit/zhrLhFtuEcHK
+ Tc=; b=FFBV6YEE06fvGorfmJ+6zAncPHAXA+6LE+QoMK1qUv8MYOPhoFJHgp6z8
+ ei/NzXteugeW7ZOyzjkw+lykJYRWeBz9NKiUm5BSPZpCO4dTqx4HYnQTdDU+Ie96
+ r7EIjvGc0Uj3bBnnJdw2R/ehtg6Q0p6vuDTcIAzjajW/cYkwOAKCi6NRrltjVxro
+ 1BquSDZcjyqJ8bNXCSq2sfXamazkNbIXC5T3hLmVp/b1OILwA9+AoUzN//+CrhWx
+ aXpcE8hHC0FA2cQP19WJZutpRmoCglBmGA3RY7MC+OvNv47NWV1VbRflZ6wSDjZN
+ K//MOl+yvwehsxTu4fkGhOjKvN7lg==
+X-ME-Sender: <xms:YNigXu2IquSGcQPJpUfESJf0wxsif3Xeghy6QJa3A3GEQ9LKJKkgMw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeekgddvgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
+ epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
+ rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:YNigXrXYWA6_dxSXpXeRQovQ0O2ptgPTobJoFV97fswf3McTyqSC1w>
+ <xmx:YNigXoqxZJj3dTZf3NK6-xPLPTlmXwmMZ0JRmfnxLXuziEjHiFG01w>
+ <xmx:YNigXkbZv5yWWb2Q4fAUt7WxoWYC0Yo3IPqlIG0jjMRTfHNfWRzomA>
+ <xmx:YdigXp0nXKljZYZIzOMW5y_t1v-x59e_T-speuINAiwbz_7FUjdUUQ>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id BC5863065CF7;
+ Wed, 22 Apr 2020 19:50:55 -0400 (EDT)
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Disable SPDIF by default
+To: Maxime Ripard <maxime@cerno.tech>
+References: <20200422041502.7497-1-samuel@sholland.org>
+ <20200422151616.httmhmo2tbd4m4eu@gilmour.lan>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <b554ea70-16da-1637-d349-db51dddcf95b@sholland.org>
+Date: Wed, 22 Apr 2020 18:50:54 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200422151616.httmhmo2tbd4m4eu@gilmour.lan>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_163934_741743_32D247D1 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_165104_921100_760FE61A 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [elatllat[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +96,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.25 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,63 +110,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, joy.cho@hardkernel.com,
- narmstrong@baylibre.com, khilman@baylibre.com, christianshewitt@gmail.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, tobetter@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-HardKernel supports overclock through the addition to extra opp points
-in their official kernel sources for odroid-n2 [1]. Christian tested
-on other S922X devices with "no obvious issues". Neil thinks dvfs and
-thermal managementis can keep other S922X devices safe.
+Maxime,
 
-[1] https://github.com/hardkernel/linux/commit/f86cd9487c7483b2a05f448b9ebacf6bd5a2ad2f
-Tested-by: Christian Hewitt <christianshewitt@gmail.com>
-Signed-off-by: Tim Lewis <elatllat@gmail.com>
+On 4/22/20 10:16 AM, Maxime Ripard wrote:
+> On Tue, Apr 21, 2020 at 11:15:02PM -0500, Samuel Holland wrote:
+>> As of v5.7-rc2, Linux now prints the following message at boot:
+>>
+>>   [   33.848525] platform sound_spdif: deferred probe pending
+>>
+>> This is because &sound_spdif is waiting on its DAI link component
+>> &spdif to probe, but &spdif is disabled in the DTS. Disable the
+>> audio card as well to match.
+>>
+>> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> 
+> The patch looks good, but don't we have some boards with SPDIF enabled that
+> should be modified accordingly?
 
----
- arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi | 15 +++++++++++++++
- 1 files changed, 15 insertions(+)
+I don't see any in-tree. The only A64 DTS that references &spdif at all is
+sun50i-a64-pine64.dts, which explicitly disables it:
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-index 046cc332d..1e5d0ee5d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-@@ -65,6 +65,11 @@
- 			opp-hz = /bits/ 64 <1896000000>;
- 			opp-microvolt = <981000>;
- 		};
-+
-+		opp-1992000000 {
-+			opp-hz = /bits/ 64 <1992000000>;
-+			opp-microvolt = <1001000>;
-+		};
- 	};
- 
- 	cpub_opp_table_1: opp-table-1 {
-@@ -120,5 +125,15 @@
- 			opp-hz = /bits/ 64 <1704000000>;
- 			opp-microvolt = <891000>;
- 		};
-+
-+		opp-1800000000 {
-+			opp-hz = /bits/ 64 <1800000000>;
-+			opp-microvolt = <981000>;
-+		};
-+
-+		opp-1908000000 {
-+			opp-hz = /bits/ 64 <1908000000>;
-+			opp-microvolt = <1022000>;
-+		};
- 	};
- };
--- 
-2.17.1
+	/* On Euler connector */
+	&spdif {
+  		status = "disabled";
+	};
 
+I'm leaning toward agreeing with Clement that the sound_spdif node (and also
+spdif_out) should be removed altogether from the A64 DTSI.
+
+Regards,
+Samuel
 
 _______________________________________________
 linux-arm-kernel mailing list
