@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E59561B4975
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 18:04:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF79E1B49C2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 Apr 2020 18:09:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SSvxMXvPSTeY6+YTIxPruC3za0fxMrP8kmJMog9yaFc=; b=HcSy5RgzsaKXnC
-	SNSs4uO1XLr4BVzMjYjv89fxN6zWv0MlVDP/Q0gjTNoRkA0LUnHDbHRJzA92Lfno8HfWMHrRJ69jK
-	vowbtEcdt9/f65zDZRoDMERVppUgGuYvmkdYOq2AM+7KjvFfQE+PWy9To8vdBMi+2z5TB/H7K6gmh
-	XifQ0VUynGpZpCTIfjUcLxWw/fKmrsITJF4epAz7hfznn40F5Ww4/WwdymJYGPhLbLIBf336DLE9u
-	u5cFMl+Zv9VvhzRq3snYp8F4M/axz42MiCWMQp52M5/+JGr0OxeHtCm//hEhS462OdexPT3M6BDZo
-	85NKUvfljem8ttfB0dUA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3SNxC+7+pygbDQ2ZaismJhUno8qQoRt1QF6WzVr401I=; b=XsYP1ZCy7w3+Ji
+	BAmQNddom14EvxxSbygQ0N/aczp7bz0VlsNPZBpui0sZo9NoVWlyBPBzaeCot7/qs4ar4+cwkyphU
+	9OI8RK5G1vBM7EuMTRJPbDjh4ID8mDvOsnMNWepCY38Xzoql2jTpvHI3oQpj0RJI+wAK+ey/Pq+fV
+	kdTwUsetQcBLSve5arh9gOs9S++yYdpGfs36Ya475pxrSlCQCRTyJNU6LzopgUHNHuksJ3/5z/w/Q
+	gRitaAKIOZ0s1iLyEtKUB1BFAVB+hPChvjH26DyG9GQ7EI0OBCU9IUYV8M9uEiScS5mK/22BElgfR
+	jRehnjP1V6laNBAs9zhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRHrZ-0001R7-41; Wed, 22 Apr 2020 16:04:37 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jRHw8-0005FM-KP; Wed, 22 Apr 2020 16:09:20 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRHrQ-0001PF-1f
- for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 16:04:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587571465;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=amvTuf5wEMJvqdESpaeyMURJivlfDh/jRY31BzCdBPU=;
- b=EtHWvqtxOTLXR8bJT99Zq8deSk6Z7h1+texHGF9Tb0JYbiRViqz4/PtUcrz4OtqR6cLqRB
- gD9v7wYqYQRoxmlh1r8O+jXW6wykkIh6fMLLwFOrwOTDbuhGdOTxEH++cLRr87DzltkNTt
- zzOSMH/WkiUMkDx9AAGkGbvQCsCIoOc=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-177-5-QqutxDOl-cVj9GG-2gZA-1; Wed, 22 Apr 2020 12:04:23 -0400
-X-MC-Unique: 5-QqutxDOl-cVj9GG-2gZA-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6898E107ACC9;
- Wed, 22 Apr 2020 16:04:19 +0000 (UTC)
-Received: from gondolin (ovpn-112-195.ams2.redhat.com [10.36.112.195])
- by smtp.corp.redhat.com (Postfix) with ESMTP id DE51B19C70;
- Wed, 22 Apr 2020 16:04:05 +0000 (UTC)
-Date: Wed, 22 Apr 2020 18:04:03 +0200
-From: Cornelia Huck <cohuck@redhat.com>
-To: Christian Borntraeger <borntraeger@de.ibm.com>
-Subject: Re: [PATCH v2 1/7] KVM: s390: clean up redundant 'kvm_run' parameters
-Message-ID: <20200422180403.03f60b0c.cohuck@redhat.com>
-In-Reply-To: <dc5e0fa3-558b-d606-bda9-ed281cf9e9ae@de.ibm.com>
-References: <20200422125810.34847-1-tianjia.zhang@linux.alibaba.com>
- <20200422125810.34847-2-tianjia.zhang@linux.alibaba.com>
- <20200422154543.2efba3dd.cohuck@redhat.com>
- <dc5e0fa3-558b-d606-bda9-ed281cf9e9ae@de.ibm.com>
-Organization: Red Hat GmbH
-MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+ id 1jRHvy-0005Co-Aq
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 Apr 2020 16:09:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587571746;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=ceaM0Q57EWu8SAKxL8w74OvIguml9sO5tkQvRprE6B8=;
+ b=DjQJGhIsgGChhvGfu9meyBGMUZTSQ7M7HPpDCrz4uj4dpwYQPz2avzOQ6DcBSxY8HK
+ HZR7LikZh6FlvTSTEDyPKshBBw0b+cLzi0/+W/58IJadrgrtI5MnZA1Mq9vzmfyRsULx
+ 3b3pXRAGaZJk2RyDyBuKVwqo85nHKBXvzDoCo/ajUwPB2ulcf4jGzRBYhv+lagqwhwj2
+ NzSQ4ZiCOo0mc0EpJ/QOR9kbTS/39IA4EsEIwAO0S8VeHtOD6XmaW/TMPqIfSTGrczju
+ BLg/l03WNB4TYygiypVd2hnRw6fhFtQk+cKxURj2SlssctezQnNBvK9gUGfvwTEdjWsj
+ k9wA==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj4Qpw9iZeHmMiw43tskc="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
+ with ESMTPSA id R0acebw3MG923NL
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Wed, 22 Apr 2020 18:09:02 +0200 (CEST)
+Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
+ PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <20200422151328.2oyqz7gqkbunmd6o@gilmour.lan>
+Date: Wed, 22 Apr 2020 18:09:01 +0200
+Message-Id: <07923B6C-4CCD-4B81-A98F-E19C43412A89@goldelico.com>
+References: <20200415130233.rgn7xrtwqicptke2@gilmour.lan>
+ <C589D06E-435E-4316-AD0A-8498325039E3@goldelico.com>
+ <10969e64-fe1f-d692-4984-4ba916bd2161@gmail.com>
+ <20200420073842.nx4xb3zqvu23arkc@gilmour.lan>
+ <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
+ <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
+ <20200421141543.GU37466@atomide.com>
+ <D9D4D057-A73D-485F-898D-5C05E89C16B7@goldelico.com>
+ <20200422065859.quy6ane5v7vsy5tf@gilmour.lan>
+ <1AA57A0C-48E6-49BB-BB9A-2AAFFB371BCD@goldelico.com>
+ <20200422151328.2oyqz7gqkbunmd6o@gilmour.lan>
+To: Maxime Ripard <maxime@cerno.tech>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_090428_165126_EAB5B809 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20200422_090910_969265_33428728 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a01:238:20a:202:5302:0:0:6 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -79,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,78 +93,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, kvm@vger.kernel.org, david@redhat.com,
- benh@kernel.crashing.org, heiko.carstens@de.ibm.com, peterx@redhat.com,
- linux-mips@vger.kernel.org, paulus@ozlabs.org, hpa@zytor.com,
- kvmarm@lists.cs.columbia.edu, linux-s390@vger.kernel.org,
- frankja@linux.ibm.com, maz@kernel.org, joro@8bytes.org, x86@kernel.org,
- mingo@redhat.com, julien.thierry.kdev@gmail.com, thuth@redhat.com,
- gor@linux.ibm.com, suzuki.poulose@arm.com, kvm-ppc@vger.kernel.org,
- bp@alien8.de, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- jmattson@google.com, tsbogend@alpha.franken.de,
- Tianjia Zhang <tianjia.zhang@linux.alibaba.com>, christoffer.dall@arm.com,
- sean.j.christopherson@intel.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, mpe@ellerman.id.au, pbonzini@redhat.com,
- vkuznets@redhat.com, linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Tony Lindgren <tony@atomide.com>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ linux-samsung-soc@vger.kernel.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, linux-omap <linux-omap@vger.kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>,
+ OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>,
+ =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 Apr 2020 17:58:04 +0200
-Christian Borntraeger <borntraeger@de.ibm.com> wrote:
+Hi Maxime,
 
-> On 22.04.20 15:45, Cornelia Huck wrote:
-> > On Wed, 22 Apr 2020 20:58:04 +0800
-> > Tianjia Zhang <tianjia.zhang@linux.alibaba.com> wrote:
-> >   
-> >> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
-> >> structure. Earlier than historical reasons, many kvm-related function  
-> > 
-> > s/Earlier than/For/ ?
-> >   
-> >> parameters retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time.
-> >> This patch does a unified cleanup of these remaining redundant parameters.
-> >>
-> >> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-> >> ---
-> >>  arch/s390/kvm/kvm-s390.c | 37 ++++++++++++++++++++++---------------
-> >>  1 file changed, 22 insertions(+), 15 deletions(-)
-> >>
-> >> diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
-> >> index e335a7e5ead7..d7bb2e7a07ff 100644
-> >> --- a/arch/s390/kvm/kvm-s390.c
-> >> +++ b/arch/s390/kvm/kvm-s390.c
-> >> @@ -4176,8 +4176,9 @@ static int __vcpu_run(struct kvm_vcpu *vcpu)
-> >>  	return rc;
-> >>  }
-> >>  
-> >> -static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
-> >> +static void sync_regs_fmt2(struct kvm_vcpu *vcpu)
-> >>  {
-> >> +	struct kvm_run *kvm_run = vcpu->run;
-> >>  	struct runtime_instr_cb *riccb;
-> >>  	struct gs_cb *gscb;
-> >>  
-> >> @@ -4235,7 +4236,7 @@ static void sync_regs_fmt2(struct kvm_vcpu *vcpu, struct kvm_run *kvm_run)
-> >>  		}
-> >>  		if (vcpu->arch.gs_enabled) {
-> >>  			current->thread.gs_cb = (struct gs_cb *)
-> >> -						&vcpu->run->s.regs.gscb;
-> >> +						&kvm_run->s.regs.gscb;  
-> > 
-> > Not sure if these changes (vcpu->run-> => kvm_run->) are really worth
-> > it. (It seems they amount to at least as much as the changes advertised
-> > in the patch description.)
-> > 
-> > Other opinions?  
+> Am 22.04.2020 um 17:13 schrieb Maxime Ripard <maxime@cerno.tech>:
 > 
-> Agreed. It feels kind of random. Maybe just do the first line (move kvm_run from the
-> function parameter list into the variable declaration)? Not sure if this is better.
+> On Wed, Apr 22, 2020 at 09:10:57AM +0200, H. Nikolaus Schaller wrote:
+>>> Am 22.04.2020 um 08:58 schrieb Maxime Ripard <maxime@cerno.tech>:
+>>>> 
+>>>> It also allows to handle different number of clocks (A31 seems to
+>>>> need 4, Samsung, A83 and JZ4780 one) without changing the sgx bindings
+>>>> or making big lists of conditionals. This variance would be handled
+>>>> outside the sgx core bindings and driver.
+>>> 
+>>> I disagree. Every other GPU binding and driver is handling that just fine, and
+>>> the SGX is not special in any case here.
+>> 
+>> Can you please better explain this? With example or a description
+>> or a proposal?
 > 
+> I can't, I don't have any knowledge about this GPU.
 
-There's more in this patch that I cut... but I think just moving
-kvm_run from the parameter list would be much less disruptive.
+Hm. Now I am fully puzzled.
+You have no knowledge about this GPU but disagree with our proposal?
+Is it just gut feeling?
+
+Anyways, we need to find a solution. Together.
+
+> 
+>> I simply do not have your experience with "every other GPU" as you have.
+>> And I admit that I can't read from your statement what we should do
+>> to bring this topic forward.
+>> 
+>> So please make a proposal how it should be in your view.
+> 
+> If you need some inspiration, I guess you could look at the mali and vivante
+> bindings once you have an idea of what the GPU needs across the SoCs it's
+> integrated in.
+
+Well, I do not need inspiration, we need to come to an agreement about
+img,pvrsgx.yaml and we need some maintainer to finally pick it up.
+
+I wonder how we can come to this stage.
+
+If I look at vivante,gc.yaml or arm,mali-utgard.yaml I don't
+see big differences to what we propose and those I see seem to come
+from technical differences between sgx, vivante, mali etc. So there
+is no single scheme that fits all different gpu types.
+
+One thing we can learn is that "core" seems to be a de facto standard 
+for the core clock-name. An alternative "gpu" is used by nvidia,gk20a.txt.
+
+BR and thanks,
+Nikolaus
 
 
 _______________________________________________
