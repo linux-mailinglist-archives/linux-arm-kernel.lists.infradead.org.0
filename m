@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EC0F1B6677
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:43:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3BC71B6678
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:43:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sOvpJa7gRGaBXIaJKux+270AkoE73qjA3Oi9/HOpCHg=; b=TQUyRgbey3D1ZaDPYg9jKeGS+8
-	727Qe6pDcUNwUrqU/b6260zNkc1sBbXmCygXJ2mo73P1fzH7/6tr/yEaMrR9OgsMF/1Di848m2Oy+
-	fgBw5uAp2NVgYGtKkMBiuBcPsKr5bRyTvVX7XD98skulsypKRmpvCtb5oRxgP4NF9Z7zfegMyj7cr
-	HgVrRL9VeqGi27O/pcEY2cHXPrm6d4z/01YMjQjGkBaweG9ZfAEd47avS6gRYWFj6RYVU/8BEdLue
-	QnJd18yk7GW7/XIh0KgQqDkN+epeePQrxKnYd2ohZSEroiwwu5PshzxbJxcYczH8gdnbvWeeNkfw/
-	L85Y3CUA==;
+	bh=bPQ0aisnnz40fRNsDEH8GdPH0EpnKWUmQMBpFtDikQI=; b=DMvEIlEL/Fxe+GWP2/Et1k9b7r
+	vR9yuydByZy1+QyCOFCRkgIl/U1LcuWWNM0QkKyVrYhrNdIy3X88JeRtuBtu13NFOtE2XbsDkSjzQ
+	kayCDmgF6OGa5cgS7OZUDvVM2TDSxfuTq+YcdKYFDjSDaAbeV4KfURn+YRXOhtokF11riMFKdVcgc
+	X/XCpZuq0Fhus73G0URhelSVlCFIDxCeFifvJbnUPeRLaFGSMmA8ijX8RlbElGJAjhutUupX27rQw
+	bPn4EeIBd1+nq3VLwvIhXMPCDdpTr8T3grY9/4FAtMt4kLdoZvv1nkPWlEYI9TOJzf7ajgWpcN4MN
+	EZR84CQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRjch-0000cg-Gl; Thu, 23 Apr 2020 21:43:07 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171]
- helo=relmlie5.idc.renesas.com)
+	id 1jRjd3-0000wN-BW; Thu, 23 Apr 2020 21:43:29 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172]
+ helo=relmlie6.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRjbA-0007uU-HX
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:35 +0000
-X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45553095"
+ id 1jRjbE-0007y4-G6
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:38 +0000
+X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45339795"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie5.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:31 +0900
+ by relmlie6.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:35 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id A74634004BB2;
- Fri, 24 Apr 2020 06:41:27 +0900 (JST)
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id A43AF4004BB2;
+ Fri, 24 Apr 2020 06:41:31 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Geert Uytterhoeven <geert+renesas@glider.be>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH 06/10] dt-bindings: clock: renesas: cpg-mssr: Document r8a7742
- binding
-Date: Thu, 23 Apr 2020 22:40:46 +0100
-Message-Id: <1587678050-23468-7-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH 07/10] clk: renesas: Add r8a7742 CPG Core Clock Definitions
+Date: Thu, 23 Apr 2020 22:40:47 +0100
+Message-Id: <1587678050-23468-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_144132_773776_4C624B2F 
-X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-CacheID: sfid-20200423_144136_692110_DFFEBA3B 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -54,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.171 listed in list.dnswl.org]
+ no trust [210.160.252.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,27 +79,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add binding documentation for the RZ/G1H (R8A7742) Clock Pulse Generator
-driver.
+Add all RZ/G1H Clock Pulse Generator Core Clock Outputs, as listed in
+Table 7.2a ("List of Clocks [RZ/G1H]") of the RZ/G1 Hardware User's
+Manual.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
 ---
- Documentation/devicetree/bindings/clock/renesas,cpg-mssr.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ include/dt-bindings/clock/r8a7742-cpg-mssr.h | 42 ++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+ create mode 100644 include/dt-bindings/clock/r8a7742-cpg-mssr.h
 
-diff --git a/Documentation/devicetree/bindings/clock/renesas,cpg-mssr.yaml b/Documentation/devicetree/bindings/clock/renesas,cpg-mssr.yaml
-index 9cd102e..c745bd6 100644
---- a/Documentation/devicetree/bindings/clock/renesas,cpg-mssr.yaml
-+++ b/Documentation/devicetree/bindings/clock/renesas,cpg-mssr.yaml
-@@ -25,6 +25,7 @@ properties:
-   compatible:
-     enum:
-       - renesas,r7s9210-cpg-mssr  # RZ/A2
-+      - renesas,r8a7742-cpg-mssr  # RZ/G1H
-       - renesas,r8a7743-cpg-mssr  # RZ/G1M
-       - renesas,r8a7744-cpg-mssr  # RZ/G1N
-       - renesas,r8a7745-cpg-mssr  # RZ/G1E
+diff --git a/include/dt-bindings/clock/r8a7742-cpg-mssr.h b/include/dt-bindings/clock/r8a7742-cpg-mssr.h
+new file mode 100644
+index 0000000..e68191c
+--- /dev/null
++++ b/include/dt-bindings/clock/r8a7742-cpg-mssr.h
+@@ -0,0 +1,42 @@
++/* SPDX-License-Identifier: GPL-2.0+
++ *
++ * Copyright (C) 2020 Renesas Electronics Corp.
++ */
++#ifndef __DT_BINDINGS_CLOCK_R8A7742_CPG_MSSR_H__
++#define __DT_BINDINGS_CLOCK_R8A7742_CPG_MSSR_H__
++
++#include <dt-bindings/clock/renesas-cpg-mssr.h>
++
++/* r8a7742 CPG Core Clocks */
++#define R8A7742_CLK_Z		0
++#define R8A7742_CLK_Z2		1
++#define R8A7742_CLK_ZG		2
++#define R8A7742_CLK_ZTR		3
++#define R8A7742_CLK_ZTRD2	4
++#define R8A7742_CLK_ZT		5
++#define R8A7742_CLK_ZX		6
++#define R8A7742_CLK_ZS		7
++#define R8A7742_CLK_HP		8
++#define R8A7742_CLK_B		9
++#define R8A7742_CLK_LB		10
++#define R8A7742_CLK_P		11
++#define R8A7742_CLK_CL		12
++#define R8A7742_CLK_M2		13
++#define R8A7742_CLK_ZB3		14
++#define R8A7742_CLK_ZB3D2	15
++#define R8A7742_CLK_DDR		16
++#define R8A7742_CLK_SDH		17
++#define R8A7742_CLK_SD0		18
++#define R8A7742_CLK_SD1		19
++#define R8A7742_CLK_SD2		20
++#define R8A7742_CLK_SD3		21
++#define R8A7742_CLK_MMC0	22
++#define R8A7742_CLK_MMC1	23
++#define R8A7742_CLK_MP		24
++#define R8A7742_CLK_QSPI	25
++#define R8A7742_CLK_CP		26
++#define R8A7742_CLK_RCAN	27
++#define R8A7742_CLK_R		28
++#define R8A7742_CLK_OSC		29
++
++#endif /* __DT_BINDINGS_CLOCK_R8A7742_CPG_MSSR_H__ */
 -- 
 2.7.4
 
