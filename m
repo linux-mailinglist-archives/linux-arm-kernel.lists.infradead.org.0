@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28DB51B653E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B4A51B6534
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:11:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lvdnJWdYiYiockFhG2bTPP6KjZ/DA1iJvg1M7BJNZ08=; b=djx2p4QtMX7rHT
-	V21xl2NKfaUUZnAv/5XmEQL3h8ahD4VF8j0h1x8LxtWVLW8mV2ZTxdtBeMNIJ0Rq77GeLlZrQHd8r
-	m6xUB+KzGHCuzl4HQYZfhOYa9McGoKytUnWxpRnglwVYSmDlWvOmdMb2mSh6W35UTlXo07ox841KF
-	fyTrgD+i0LoeJHdEtGgHQA+P0Ir5k8+nhihdTmUESqXqigxhNxnL/NKH7Nd4On2KYMfm+ht7L5XqH
-	8v5D+cJ2+ZlKhTN0p/53toBFXJ0tnjWO9EcCK3mtblTqIpoKhonBUJH9A+C0cJhlHwVz5tSjuGKgF
-	D6iYXrhL0/9W0FLOIeWA==;
+	List-Owner; bh=gHAuReXu1cNkEV/xiiOQvyWdNtObAayzYNcOU7unm5I=; b=LDTWmn9E/c/Zdq
+	6BmUE/kHUMFTDAp84JrUZiPLTrOPOV71xe+7g4dBKelZWiHj+lEmG6J3iirLx1cKquKKU36SYFKLm
+	S9yPtILaBXsRJ2mNphwz2G0zBqegv+HeAeiUzQyU1uL4DUj0y24mQFs+47G1GZ2T3Xf2FuLyUPMzU
+	V6mk0izAR15YVRK6CmHPO6RgwTE2PUlI7gPxz2d3RZrN1A4vV/zfPsfWhdEN5ev7uhO7rUPE5B2RT
+	uFY+RGMTRllSkQYPIW9SvQKePgNrU8dXG/RBYW45SGNNGgI/ieDojO1NebNA+E7QK2Ipv4UoTjuFD
+	AiKma+E1JvXblflLRJ8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRiC4-0004Xv-Dx; Thu, 23 Apr 2020 20:11:32 +0000
+	id 1jRiBY-00040L-Vx; Thu, 23 Apr 2020 20:11:01 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRiAZ-00010w-IP; Thu, 23 Apr 2020 20:10:01 +0000
+ id 1jRiAX-000119-UI; Thu, 23 Apr 2020 20:10:00 +0000
 X-Originating-IP: 93.29.109.196
 Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
  [93.29.109.196])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 4378DE0006;
- Thu, 23 Apr 2020 20:09:53 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id DB045E000A;
+ Thu, 23 Apr 2020 20:09:54 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/4] media: rockchip: rga: Add support for the PX30
- compatible
-Date: Thu, 23 Apr 2020 22:09:36 +0200
-Message-Id: <20200423200937.1039257-4-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 4/4] media: rockchip: rga: Only set output CSC mode for RGB
+ input
+Date: Thu, 23 Apr 2020 22:09:37 +0200
+Message-Id: <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
 References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_130959_750304_DF72CFDA 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20200423_130958_103925_79852A8D 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,28 +77,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PX30 SoC has a RGA block, so add the associated compatible to
-support it.
+Setting the output CSC mode is required for a YUV output, but must not
+be set when the input is also YUV. Doing this (as tested with a YUV420P
+to YUV420P conversion) results in wrong colors.
 
+Adapt the logic to only set the CSC mode when the output is YUV and the
+input is RGB.
+
+Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- drivers/media/platform/rockchip/rga/rga.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/media/platform/rockchip/rga/rga-hw.c | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
-index 9d122429706e..4fb4615662b7 100644
---- a/drivers/media/platform/rockchip/rga/rga.c
-+++ b/drivers/media/platform/rockchip/rga/rga.c
-@@ -955,6 +955,9 @@ static const struct dev_pm_ops rga_pm = {
- };
+diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
+index 4be6dcf292ff..cbffcf986ccf 100644
+--- a/drivers/media/platform/rockchip/rga/rga-hw.c
++++ b/drivers/media/platform/rockchip/rga/rga-hw.c
+@@ -216,13 +216,17 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
+ 	}
  
- static const struct of_device_id rockchip_rga_match[] = {
-+	{
-+		.compatible = "rockchip,px30-rga",
-+	},
- 	{
- 		.compatible = "rockchip,rk3288-rga",
- 	},
+ 	if (ctx->out.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
+-		switch (ctx->out.colorspace) {
+-		case V4L2_COLORSPACE_REC709:
+-			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
+-			break;
+-		default:
+-			dst_info.data.csc_mode = RGA_DST_CSC_MODE_BT601_R0;
+-			break;
++		if (ctx->in.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
++			switch (ctx->out.colorspace) {
++			case V4L2_COLORSPACE_REC709:
++				dst_info.data.csc_mode =
++					RGA_SRC_CSC_MODE_BT709_R0;
++				break;
++			default:
++				dst_info.data.csc_mode =
++					RGA_DST_CSC_MODE_BT601_R0;
++				break;
++			}
+ 		}
+ 	}
+ 
 -- 
 2.26.0
 
