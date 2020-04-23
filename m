@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 261D41B665E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:41:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A39D21B665F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oqNbROkth3G8sxTsAWyHwX15ubExU8IEbKVFyzztxUw=; b=Z+/eWQhdGgtBrPsy4TX/eayA2P
-	PotD11gz8TVHhZ1I1yEmR4kd8fZKGmebDOH2FvhxOZani6FwB+eA6hMH+KspXJ0UoDQwL2FQhkAb0
-	tiNxjFXAxign2ECH8rAdcUEpxfg70wmBWz+rqd/VKAYIRaz+i6DIN02a27JfNavHDhbJdGB0SxRUj
-	7R8HRnJtOIfSQefrWSq6tHKg4DWBk/7LD/5rnuK+wdmUcoN+ISmA/+nF/By4UzXCufPUHmRLzJ0Cu
-	cPS0JdauHoIvyaYeHEsPryL0aKY9oap0dH4HVPxhQMzMpjSqQrCoqI1VvJcCbKflfv4zgk+89Jhnz
-	Vw8du7kw==;
+	bh=AIEJvQojGo7EQ2/aASA9RXFQ5SlRT6f5qtDPNHZ9Mhg=; b=sP0Gzj2dZOD9HxnM2gj9MrFVcl
+	OCHdE2+hqlNdgTRcGOq4rs/7qxoxh/+j5A7BcH6Jby1LubwLGmWGjJTD3BwKL3Nig/h9Ub1uD1Ecs
+	eNt/SfVGa3wEAKEEk9dXrbF4PyrhP6apWmr7t3hVxVXXVgUBAsqwoJlZTojvOTtpDmfYWcmwS8vrW
+	zP3RfHFAgjJAYDppfFB2WaFesdnwnKxDnpv4Vvm9B3K/ECvJwHX2vEdZWxD6iYURGXGoUHTOpnEqY
+	KAipm0IjyainFW+Jo6BCdx4E1MDaLC72C/fGklmjCkp8lGrKVTjhM1aolXh9QjxDsSemiJfm5He9l
+	YXnJaXvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRjbJ-0007fb-4l; Thu, 23 Apr 2020 21:41:41 +0000
+	id 1jRjbf-00084r-4r; Thu, 23 Apr 2020 21:42:03 +0000
 Received: from relmlor1.renesas.com ([210.160.252.171]
  helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRjar-0007Y4-13
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:14 +0000
-X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45553072"
+ id 1jRjat-0007Y4-Oh
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:17 +0000
+X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45553076"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie5.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:11 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:15 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id AA16B4004BB2;
- Fri, 24 Apr 2020 06:41:07 +0900 (JST)
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id ACEBC400C420;
+ Fri, 24 Apr 2020 06:41:11 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Geert Uytterhoeven <geert+renesas@glider.be>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH 01/10] dt-bindings: power: rcar-sysc: Document r8a7742 SYSC
- binding
-Date: Thu, 23 Apr 2020 22:40:41 +0100
-Message-Id: <1587678050-23468-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH 02/10] dt-bindings: power: rcar-sysc: Add r8a7742 power domain
+ index macros
+Date: Thu, 23 Apr 2020 22:40:42 +0100
+Message-Id: <1587678050-23468-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_144113_218292_A6CBB3B7 
-X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-CacheID: sfid-20200423_144115_967427_8D314CCC 
+X-CRM114-Status: UNSURE (   9.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,26 +80,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add binding documentation for the RZ/G1H (R8A7742) SYSC block.
+Add power domain indices for RZ/G1H (R8A7742) SoC.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
 ---
- Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ include/dt-bindings/power/r8a7742-sysc.h | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 include/dt-bindings/power/r8a7742-sysc.h
 
-diff --git a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
-index e59331e1..55b6ab2 100644
---- a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
-+++ b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
-@@ -17,6 +17,7 @@ description:
- properties:
-   compatible:
-     enum:
-+      - renesas,r8a7742-sysc  # RZ/G1H
-       - renesas,r8a7743-sysc  # RZ/G1M
-       - renesas,r8a7744-sysc  # RZ/G1N
-       - renesas,r8a7745-sysc  # RZ/G1E
+diff --git a/include/dt-bindings/power/r8a7742-sysc.h b/include/dt-bindings/power/r8a7742-sysc.h
+new file mode 100644
+index 0000000..1b1bd3c
+--- /dev/null
++++ b/include/dt-bindings/power/r8a7742-sysc.h
+@@ -0,0 +1,29 @@
++/* SPDX-License-Identifier: GPL-2.0
++ *
++ * Copyright (C) 2020 Renesas Electronics Corp.
++ */
++#ifndef __DT_BINDINGS_POWER_R8A7742_SYSC_H__
++#define __DT_BINDINGS_POWER_R8A7742_SYSC_H__
++
++/*
++ * These power domain indices match the numbers of the interrupt bits
++ * representing the power areas in the various Interrupt Registers
++ * (e.g. SYSCISR, Interrupt Status Register)
++ */
++
++#define R8A7742_PD_CA15_CPU0		 0
++#define R8A7742_PD_CA15_CPU1		 1
++#define R8A7742_PD_CA15_CPU2		 2
++#define R8A7742_PD_CA15_CPU3		 3
++#define R8A7742_PD_CA7_CPU0		 5
++#define R8A7742_PD_CA7_CPU1		 6
++#define R8A7742_PD_CA7_CPU2		 7
++#define R8A7742_PD_CA7_CPU3		 8
++#define R8A7742_PD_CA15_SCU		12
++#define R8A7742_PD_RGX			20
++#define R8A7742_PD_CA7_SCU		21
++
++/* Always-on power area */
++#define R8A7742_PD_ALWAYS_ON		32
++
++#endif /* __DT_BINDINGS_POWER_R8A7742_SYSC_H__ */
 -- 
 2.7.4
 
