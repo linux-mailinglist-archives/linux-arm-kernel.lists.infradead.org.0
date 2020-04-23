@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45B331B5F0E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:24:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7C6D1B5F2C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:29:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2yXY36j+GrGlKb8RpQ1E9J7iFhl+WufX6qCsfv1Zcn4=; b=TAV0ZCF+RPDNZm
-	PcvpwRJvqLBlydSwNUhXQbLWLcvKpeaw2oBynqfVT+qPPBC6CSuTcm1iSeyeppBncLAO8mOQgXhZS
-	m4SThgP6lsmaNw7TeR0uQrYGVo2cFwX5LEvfwAKO3pq1mHgb7ls4WMRX5/6Qhq/iOaIJ2lk4svg45
-	skEKJk8P5hok7nFjNiXCgOlH5vV0up/+uWrmqwwSYYmcAX+MgQaLstCmiLJtmxFTAfvF5mnVfuFV3
-	NYYDoTkDxBGLVJizfLGO/7LptDcD3rGNB1dC6L7WIz4DE57bRirsLr4RN1BFps+pFhwbgdOhaKd8G
-	kTWRTdaBJKlGSU0GGMjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QjB2Ob703fXSnbRnCEH5kvDn6TU0x23UfQPRS2Grs28=; b=BJbL4riR6Kb+QjFloDiKKSAli
+	gq36dUssPFpRy0BD474x0u17PbK+bzpD5DzwVuWkV7fNYChPbhG9vvhTEotAe0sfVg+udc5cLqW+N
+	01WQCsptDmnWmEAsvogi6kV3EpHCUNnWp6NoIiHkeKGrrQufLHS2hQlNIGUfaX5b5ajnSrUDPvmI7
+	F5io7+rdeYddQs+Cg8bYh1l8FXsNAaBDrmcV2jVYtrDQnFvqWO5Oj+iu8eBE42R6AU3TsFtn/p3Uc
+	emBBSh79rjJv40LKJQPNZ+pMi3h2dd/H9dMP6cAKOr7NBhHUyacIXvmTUKHEUqA5plopRaa5c7xFE
+	+dGTTJhSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRdhy-0007mm-7l; Thu, 23 Apr 2020 15:24:10 +0000
+	id 1jRdmc-0002q9-OA; Thu, 23 Apr 2020 15:28:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRdhp-0007mD-Cn
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:24:02 +0000
+ id 1jRdmS-0002p2-P2; Thu, 23 Apr 2020 15:28:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9B7531B;
- Thu, 23 Apr 2020 08:23:59 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 80EE13F6CF;
- Thu, 23 Apr 2020 08:23:58 -0700 (PDT)
-Date: Thu, 23 Apr 2020 16:23:52 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 18/23] arm64: mte: Restore the GCR_EL1 register after
- a suspend
-Message-ID: <20200423152352.GA21616@e121166-lin.cambridge.arm.com>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-19-catalin.marinas@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B5E031B;
+ Thu, 23 Apr 2020 08:28:46 -0700 (PDT)
+Received: from [10.37.12.89] (unknown [10.37.12.89])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E87B3F6CF;
+ Thu, 23 Apr 2020 08:28:21 -0700 (PDT)
+Subject: Re: [PATCH v6 03/10] PM / EM: update callback structure and add
+ device pointer
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+References: <20200410084210.24932-1-lukasz.luba@arm.com>
+ <20200410084210.24932-4-lukasz.luba@arm.com>
+ <20200423132243.GA65632@linaro.org>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <245720a0-c812-ccc8-235e-6eed6f216e4b@arm.com>
+Date: Thu, 23 Apr 2020 16:28:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200421142603.3894-19-catalin.marinas@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200423132243.GA65632@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_082401_472893_22EF1583 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20200423_082848_898511_4D9420AC 
+X-CRM114-Status: GOOD (  17.97  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,100 +65,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, mka@chromium.org,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, agross@kernel.org, b.zolnierkie@samsung.com,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
+ linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
+ daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie,
+ tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
+ rdunlap@infradead.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 03:25:58PM +0100, Catalin Marinas wrote:
-> The CPU resume/suspend routines only take care of the common system
-> registers. Restore GCR_EL1 in addition via the __cpu_suspend_exit()
-> function.
-> 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>
-> ---
-> 
-> Notes:
->     New in v3.
-> 
->  arch/arm64/include/asm/mte.h | 4 ++++
->  arch/arm64/kernel/mte.c      | 8 ++++++++
->  arch/arm64/kernel/suspend.c  | 4 ++++
->  3 files changed, 16 insertions(+)
+Hi Daniel,
 
-Reviewed-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+On 4/23/20 2:22 PM, Daniel Lezcano wrote:
+> On Fri, Apr 10, 2020 at 09:42:03AM +0100, Lukasz Luba wrote:
+>> The Energy Model framework is going to support devices other that CPUs. In
+>> order to make this happen change the callback function and add pointer to
+>> a device as an argument.
+>>
+>> Update the related users to use new function and new callback from the
+>> Energy Model.
+>>
+>> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+>> ---
+> 
+> [ ... ]
+> 
+>> +static struct em_perf_domain *
+>> +em_create_pd(struct device *dev, int nr_states, struct em_data_callback *cb,
+>> +	     cpumask_t *span)
+>>   {
+>>   	unsigned long opp_eff, prev_opp_eff = ULONG_MAX;
+>>   	unsigned long power, freq, prev_freq = 0;
+>> @@ -106,7 +107,7 @@ static struct em_perf_domain *em_create_pd(cpumask_t *span, int nr_states,
+>>   		 * lowest performance state of 'cpu' above 'freq' and updates
+>>   		 * 'power' and 'freq' accordingly.
+>>   		 */
+>> -		ret = cb->active_power(&power, &freq, cpu);
+>> +		ret = cb->active_power(&power, &freq, dev);
+>>   		if (ret) {
+>>   			pr_err("pd%d: invalid perf. state: %d\n", cpu, ret);
+>>   			goto free_ps_table;
+> 
+> Why are the changes 'cpu' to 'dev' in the patch 4/10 instead of this one ?
 
-> diff --git a/arch/arm64/include/asm/mte.h b/arch/arm64/include/asm/mte.h
-> index 3dc0a7977124..22eb3e06f311 100644
-> --- a/arch/arm64/include/asm/mte.h
-> +++ b/arch/arm64/include/asm/mte.h
-> @@ -12,6 +12,7 @@ int mte_memcmp_pages(const void *page1_addr, const void *page2_addr);
->  #ifdef CONFIG_ARM64_MTE
->  void flush_mte_state(void);
->  void mte_thread_switch(struct task_struct *next);
-> +void mte_suspend_exit(void);
->  long set_mte_ctrl(unsigned long arg);
->  long get_mte_ctrl(void);
->  #else
-> @@ -21,6 +22,9 @@ static inline void flush_mte_state(void)
->  static inline void mte_thread_switch(struct task_struct *next)
->  {
->  }
-> +static inline void mte_suspend_exit(void)
-> +{
-> +}
->  static inline long set_mte_ctrl(unsigned long arg)
->  {
->  	return 0;
-> diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
-> index 212b9fac294d..fa4a4196b248 100644
-> --- a/arch/arm64/kernel/mte.c
-> +++ b/arch/arm64/kernel/mte.c
-> @@ -76,6 +76,14 @@ void mte_thread_switch(struct task_struct *next)
->  	update_gcr_el1_excl(next->thread.gcr_incl);
->  }
->  
-> +void mte_suspend_exit(void)
-> +{
-> +	if (!system_supports_mte())
-> +		return;
-> +
-> +	update_gcr_el1_excl(current->thread.gcr_incl);
-> +}
-> +
->  long set_mte_ctrl(unsigned long arg)
->  {
->  	u64 tcf0;
-> diff --git a/arch/arm64/kernel/suspend.c b/arch/arm64/kernel/suspend.c
-> index 9405d1b7f4b0..1d405b73d009 100644
-> --- a/arch/arm64/kernel/suspend.c
-> +++ b/arch/arm64/kernel/suspend.c
-> @@ -9,6 +9,7 @@
->  #include <asm/daifflags.h>
->  #include <asm/debug-monitors.h>
->  #include <asm/exec.h>
-> +#include <asm/mte.h>
->  #include <asm/pgtable.h>
->  #include <asm/memory.h>
->  #include <asm/mmu_context.h>
-> @@ -74,6 +75,9 @@ void notrace __cpu_suspend_exit(void)
->  	 */
->  	if (arm64_get_ssbd_state() == ARM64_SSBD_FORCE_DISABLE)
->  		arm64_set_ssbd_mitigation(false);
-> +
-> +	/* Restore additional MTE-specific configuration */
-> +	mte_suspend_exit();
->  }
->  
->  /*
+The patch 4/10 is quite big and I didn't want to put also this change in
+there. I thought for readability it would be better to have a separate
+patch with self-contained change (or I got your suggestion too strict).
+
+In this patch I just wanted to show more precisely that this function
+callback 'active_power' which is used by 2 users (currently):
+cpufreq/scmi-cpufreq.c and opp/of.c
+is going to change an argument and these files are affected.
+
+The 4/10 changes a lot lines, while first 3 patches can be treated as
+a preparation for the upcoming major change (4/10).
+
+Thank you for the review.
+
+Regards,
+Lukasz
+
+> 
+>> @@ -237,7 +238,7 @@ int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states,
+>>   	}
+>>   
+>>   	/* Create the performance domain and add it to the Energy Model. */
+>> -	pd = em_create_pd(span, nr_states, cb);
+>> +	pd = em_create_pd(dev, nr_states, cb, span);
+>>   	if (!pd) {
+>>   		ret = -EINVAL;
+>>   		goto unlock;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
