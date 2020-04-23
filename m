@@ -2,92 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07B891B6144
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 18:48:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A35A31B616A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 18:57:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nEsalu0Egxqd72HGJHGeVi0mICpuJsB5jyPJJEMnTMY=; b=qWLgfgEQ8UGskm
-	Kod4I396gzxV/l+pp/frUqezdCyY6b54yxvfmdp0KiqNASmGv8QYoUsdy64WTz7y+zgUBfaudlkyN
-	gar0/q0rG3cnZXIhAMdfmhUJjKdmKibGFhfnMrjpjCqJIoJelUnePRA7agtr5EPaFeRCKk3fNNlAL
-	jq4MmlWayfKx84Xyrbp5IUP0DUUg/ZvDAArqfYvuSgqj/nlvRBfkEFeIXw+ebMnn4TsL0nRZATvMe
-	KC6DWChZFoJLFlxQUOSO7BfU9TGVE5K52f8j7tWsuqDOSKyvGpn0kJprW6xb8TCcBlsKze6HscYMb
-	15LVC5ke326iWFhNMNhw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aZCGOq2Q9mU7CbNLaD1T2NQb7DbdJVMSKx6xmYEz5IM=; b=Dqeold0SrBGmGHxm646J4/Qub+
+	FaGngQn2EQqID7G8Ikb2XMAy3KYgTnD1lCQbMaGOabI0wWYJPOmfoAygC3YDQJMmBzSAVRkLhkB5z
+	Hqt9G5G8V+ZHoyEThOhz/3WCboX42zLzHp6NqFcooQ8qRUlQAgFtn6tXdeFeeOZMu2wwGBEFrR4qu
+	5DBESrPQa7pLbOHzWdDzv61r+GPvkweCYwilXuwJ39/hBUGl+usWL/6GzpVBBRjcXMcVFKSH/mVEs
+	rRpR3kZdXhYIRHslSmp56eLemIwVln/Zj4M0KnNe8o/k9+suHlTM3tF4CykHSRPAoZFzgBci2SLKa
+	TJZRQ22g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRf1Q-0007DD-FP; Thu, 23 Apr 2020 16:48:20 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jRfAF-0005Bx-Q7; Thu, 23 Apr 2020 16:57:27 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRf1D-0007Ay-2F
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 16:48:08 +0000
-Received: by mail-wm1-x341.google.com with SMTP id y24so7290787wma.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Apr 2020 09:48:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=oeW7DpwK6OFjCBKNQLrqnMbfGJLDE0OYjEBqgEog0ow=;
- b=BZAU2ZE5Ne/lQJ9uzrq8Y6uSMWk2RcQiCd+b+CVY3yzxGoOUoDmU1pFRzaKcLc3JOA
- hb9PbGSk3EG61c2VuKMh6n9nVdeCeKdREDewxGx/cfMu7d/fdgQ5NJjOQfO8cyEYmuWy
- Ck60HvH+uctNWqEGuN32PGsDQZnbPrP5HSsiWC+kJeuFNkdgdMmQ3iqrZGNADnBi2Mo8
- MfqCco6iumadOLg9jIS/GhZufVO/mUhu+P3cgkrAhO/w96tB6Yvmf7fIEbLSelHxAs4q
- RM24gcZ/PnV/LQr9mWTKhfYKOuDyTFtT3m0wjORsqAndwMtN7yTnUaW/M18X37gEhghl
- oEGQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=oeW7DpwK6OFjCBKNQLrqnMbfGJLDE0OYjEBqgEog0ow=;
- b=mL7tBM5x1Pbr2Kf+F+gQ/lk8CY+b35/QdCv9xj98UohtqXoegoRBCRxodGQBw4U9GL
- WxChz79vruDAqoVn5QpUx61a2RJEtw8i4KJ4xncG4KTDsERl8lH0Xi+H+FheQZXCDCSj
- s7N9OaVQg+NiCfspFit0FRkvXku5AZVjnyx4c5qTPinzzjRzNNpGzNOAySUT3PjsT6gL
- Vi0BmOBgYxHq3CL+zuv3T0ZolOs6SjoaS+shRVC0cHw5IgPwiH3hFtQDrukjmlrLekTP
- zrkW36mzBirfvCQHrSRpCRPvhrh4J0Ltr+cgdzqT3yzapGjm91qWCatoWh59xbqdfUyF
- +ykg==
-X-Gm-Message-State: AGi0PuYzm+cvlTc0ZF6x5d9qMy6O+FIF006ROi5JyfgnfcUm72+OUMqV
- cLqcPvz1hn7CnyPP7XBVSUrLvQ==
-X-Google-Smtp-Source: APiQypL1N3VJZzRRWP+PtS/fdnZb1T66+D/zjqtbVIUR8pO7XtbEvjwXmID9KnBgg0fgEaDYfwzw+Q==
-X-Received: by 2002:a1c:ac44:: with SMTP id v65mr5176929wme.33.1587660485234; 
- Thu, 23 Apr 2020 09:48:05 -0700 (PDT)
-Received: from linaro.org ([37.167.216.250])
- by smtp.gmail.com with ESMTPSA id a20sm4857880wra.26.2020.04.23.09.48.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Apr 2020 09:48:04 -0700 (PDT)
-Date: Thu, 23 Apr 2020 18:47:59 +0200
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: Lukasz Luba <lukasz.luba@arm.com>
-Subject: Re: [PATCH v6 08/10] OPP: refactor dev_pm_opp_of_register_em() and
- update related drivers
-Message-ID: <20200423164759.GF65632@linaro.org>
-References: <20200410084210.24932-1-lukasz.luba@arm.com>
- <20200410084210.24932-9-lukasz.luba@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200410084210.24932-9-lukasz.luba@arm.com>
+ id 1jRfA4-00059s-LM
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 16:57:18 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 303362A0661
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org
+Subject: [PATCH v3 0/2] Stop monitoring disabled devices
+Date: Thu, 23 Apr 2020 18:57:03 +0200
+Message-Id: <20200423165705.13585-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <a3998ad2-19bc-0893-a10d-2bb5adf7d99f@samsung.com>
+References: <a3998ad2-19bc-0893-a10d-2bb5adf7d99f@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_094807_138198_6B0156A1 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20200423_095716_848728_35586C86 
+X-CRM114-Status: UNSURE (   8.73  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,37 +58,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, mka@chromium.org,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, agross@kernel.org, b.zolnierkie@samsung.com,
- steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
- linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
- daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie,
- tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
- rdunlap@infradead.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- shawnguo@kernel.org
+Cc: Heiko Stuebner <heiko@sntech.de>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ platform-driver-x86@vger.kernel.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Zhang Rui <rui.zhang@intel.com>, Len Brown <lenb@kernel.org>,
+ Barlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
+ Jiri Pirko <jiri@mellanox.com>, Darren Hart <dvhart@infradead.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ Peter Kaestle <peter@piie.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Andy Shevchenko <andy@infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 10, 2020 at 09:42:08AM +0100, Lukasz Luba wrote:
-> The Energy Model framework supports not only CPU devices. Drop the CPU
-> specific interface with cpumask and add struct device. Add also a return
-> value, user might use it. This new interface provides easy way to create
-> a simple Energy Model, which then might be used by e.g. thermal subsystem.
->
-> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+This is the third iteration of this PATCH series (not counting RFCs).
+It addresses comments from Bartlomiej - thanks, Bartlomiej!
 
-Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+The first patch makes all the drivers store their mode in struct
+thermal_zone_device. Such a move has consequences: driver-specific
+variables for storing mode are not necessary. Consequently get_mode()
+methods become obsolete. Then sysfs "mode" attribute stops depending
+on get_mode() being provided, because it is always provided from now on.
+
+The first patch also introduces the initial mode to be optionally passed
+to thermal_zone_device_register().
+
+Given all the groundwork done in patch 1/2 patch 2/2 becomes very simple.
+
+I incorrectly named PATCH v2 a PATCH RESEND 1/2, so now I'm counting that
+as PATCH v2, hence this series is PATCH v3.
+
+PATCH v2..PATCH v3:
+- removed redundant regmap_write() in imx_thermal_suspend() and
+imx_thermal_resume() (Bartlomiej)
+- removed unnecessary call to soc_dts_enable() (now called indirectly
+from thermal_zone_device_register()->set_mode()) (Bartlomiej)
+- removed defensive-style checks for non-existent enum values in
+thermal_zone_device_set_mode() (Bartlomiej)
+- change mode only if driver's set_mode() succeeded in
+thermal_zone_device_set_mode() (Bartlomiej)
+- don't set tz->need_update in thermal_zone_device_register() - this
+was supposed to be part of PATCH v1, but was omitted (Bartlomiej)
+
+PATCH..PATCH v2:
+
+- fixed typo (missing semicolon in dummy thermal_zone_device_set_mode()
+implementation) (kbuild test robot)
+- fixed misspelled enum value in int3400_thermal_params.initial_mode
+
+RFCv3..this PATCH:
+
+- export thermal_zone_device_{enable|disable}() for drivers (Bartlomiej)
+- don't check provided enum values in acpi's thermal_zet_mode()
+and in int3400_thermal_set_mode() (Bartlomiej)
+- use thermal_zone_device_enable() in of_thermal instead of open coding it
+(Bartlomiej)
+- use thermal_zone_device_{enable|disable}() in hisi_thermal, rockchip_thermal
+and sprd_thermal (Bartlomiej)
+- assume THERMAL_DEVICE_ENABLED is thermal_zone_params not provided at
+tzd's register time (Bartlomiej)
+- eliminated tzp-s which contain only .initial_mode = THERMAL_DEVICE_ENABLED,
+(Bartlomiej)
+- don't set tz->need_update and don't call thermal_zone_device_update()
+at the end of thermal_zone_device_register() (Bartlomiej)
+- used .initial_mode in int340x_thermal_zone, x86_pkg_temp_thermal and
+int3400_thermal (Bartlomiej)
+
+Andrzej Pietrasiewicz (2):
+  thermal: core: Let thermal zone device's mode be stored in its struct
+  thermal: core: Stop polling DISABLED thermal devices
+
+ drivers/acpi/thermal.c                        | 35 ++--------
+ .../ethernet/mellanox/mlxsw/core_thermal.c    | 42 ------------
+ drivers/platform/x86/acerhdf.c                | 17 +----
+ drivers/thermal/da9062-thermal.c              | 11 ----
+ drivers/thermal/hisi_thermal.c                |  6 +-
+ drivers/thermal/imx_thermal.c                 | 36 ++--------
+ .../intel/int340x_thermal/int3400_thermal.c   | 31 ++-------
+ .../int340x_thermal/int340x_thermal_zone.c    |  1 +
+ .../thermal/intel/intel_quark_dts_thermal.c   | 30 ++-------
+ drivers/thermal/intel/x86_pkg_temp_thermal.c  |  1 +
+ drivers/thermal/of-thermal.c                  | 24 +------
+ drivers/thermal/rockchip_thermal.c            |  6 +-
+ drivers/thermal/sprd_thermal.c                |  6 +-
+ drivers/thermal/thermal_core.c                | 65 +++++++++++++++----
+ drivers/thermal/thermal_core.h                |  3 +
+ drivers/thermal/thermal_sysfs.c               | 29 +--------
+ include/linux/thermal.h                       | 22 ++++++-
+ 17 files changed, 119 insertions(+), 246 deletions(-)
+
+
+base-commit: 79799562bf087b30d9dd0fddf5bed2d3b038be08
+-- 
+2.17.1
 
 
 _______________________________________________
