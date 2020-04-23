@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 368681B5910
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:22:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 999631B593B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:32:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i2jZQ243d5pxlnek+ONTcTdZS49G95giqvps2+R5O6E=; b=QX0N9Rlgo8JvwC
-	IMC+glIrYFUrW0Bt9oOXkjs8xH9/bp7EjRwV6rZk+GW6U5jMJjgk57gibp95C8jWn6M/tAiF5t6p7
-	vni1zVvYZSS4JOJSQPoROJ1/7Aar8hq54AVhLGH2Eo+sCDaaZP85skbvfZvrbuW5lxCfPC9AGtvtv
-	pxpANvX/M2K21HFffFbebWi5PvCgwd0tCku6cFlXzg79XVqHruRFjxaBWS1DTEHSmT/Jikol7K3Wu
-	gtEihzptY2cw+AYYWqRK01Th+EczBi2icOtEliF4l89JdzMk96CiU4I8+jgpmaRqEXooSPhQSGjZ6
-	0un20HumCiWuHJ8ck+5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lgE+JZzoZkyavgYNi5KSEL2UO8Cbivap1BsvMGyf0Io=; b=iYc2FdqbxOPH86
+	IqHTwjKflQjnJfvBPO4YSTeo+ni+a1/ACmIGuX2FriHPr5MM1Y9HCEVpaU9Bx78+cDb1xBaAe8+km
+	6z6709V34Y0wPXEXWMkq3TVJDZcquXrej6O59B7cQT07qfAN9yfGFhEYt8nFBqlxaoo11RoY2yQWW
+	wOHnCcfVl9WgO+xjxcvjzl6jAwIcDp5QQbveoAXPSZ95rtmDa74xaRO0+7EGAZEtVXX+X/wYidfVy
+	D/bAL9HYOm1/C8cdO59s1Vh4Dn7Q0QlXLIFfS2ZCNnRS+gn/0GEDWgD6I1/ZLwcNsYY73KWis0XPg
+	VUQCidIhOXJN8WBkampA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRYzz-0007qR-Kd; Thu, 23 Apr 2020 10:22:27 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jRZ9i-0006fY-Ic; Thu, 23 Apr 2020 10:32:30 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRYzp-0007oK-6d
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:22:18 +0000
-Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jRYzn-0003dB-W1; Thu, 23 Apr 2020 12:22:15 +0200
-Received: from sha by dude.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jRYzn-0001Tc-0F; Thu, 23 Apr 2020 12:22:15 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
-Date: Thu, 23 Apr 2020 12:22:12 +0200
-Message-Id: <20200423102212.5412-1-s.hauer@pengutronix.de>
-X-Mailer: git-send-email 2.26.1
+ id 1jRZ9V-0006eL-B9
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:32:18 +0000
+IronPort-SDR: b0CaNB+p9IwjPU+VVs/fqzninoqVB0RHrEjq/WQICx9tCFYIQ2ITaX5eM+nwYUS9pVDMEt8ouD
+ yA4/VN2TneMg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 23 Apr 2020 03:32:15 -0700
+IronPort-SDR: Tbx4AP8Zju7uVt+bsFFBuorEKEDp+DufEyq0utUZQmn5wkfXhsC5SmipnzOBUDHfLSF+NGOyYH
+ O/V5r9IH1k5g==
+X-IronPort-AV: E=Sophos;i="5.73,307,1583222400"; d="scan'208";a="247718369"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 23 Apr 2020 03:32:10 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 158F7204C6; Thu, 23 Apr 2020 13:32:08 +0300 (EEST)
+Date: Thu, 23 Apr 2020 13:32:08 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 04/29] staging: media: ipu3: use vmap instead of
+ reimplementing it
+Message-ID: <20200423103207.GO5381@paasikivi.fi.intel.com>
+References: <20200414131348.444715-1-hch@lst.de>
+ <20200414131348.444715-5-hch@lst.de>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200414131348.444715-5-hch@lst.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_032217_245009_00A3EC33 
-X-CRM114-Status: GOOD (  12.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200423_033217_444743_F6DE489C 
+X-CRM114-Status: GOOD (  10.16  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,39 +76,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, Li Yang <leoyang.li@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>
+Cc: linux-hyperv@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ "K. Y. Srinivasan" <kys@microsoft.com>, Sumit Semwal <sumit.semwal@linaro.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
+ x86@kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ Laura Abbott <labbott@redhat.com>, Nitin Gupta <ngupta@vflare.org>,
+ Haiyang Zhang <haiyangz@microsoft.com>, linaro-mm-sig@lists.linaro.org,
+ bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Minchan Kim <minchan@kernel.org>, iommu@lists.linux-foundation.org,
+ Daniel Vetter <daniel@ffwll.ch>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The AQR107 family of phy devices do not support xgmii, but usxgmii
-instead. Since ce64c1f77a9d ("net: phy: aquantia: add USXGMII support
-and warn if XGMII mode is set") the kernel warns about xgmii being
-used. Change device tree to usxgmii.
+On Tue, Apr 14, 2020 at 03:13:23PM +0200, Christoph Hellwig wrote:
+> Just use vmap instead of messing with vmalloc internals.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 
-Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
----
- arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Thanks!
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-index d53ccc56bb63..02fbef92b96a 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-@@ -151,7 +151,7 @@ ethernet@ea000 {
- 
- 	ethernet@f0000 { /* 10GEC1 */
- 		phy-handle = <&aqr106_phy>;
--		phy-connection-type = "xgmii";
-+		phy-connection-type = "usxgmii";
- 	};
- 
- 	ethernet@f2000 { /* 10GEC2 */
+Acked-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+
 -- 
-2.26.1
-
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
