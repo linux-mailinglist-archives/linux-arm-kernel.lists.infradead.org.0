@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B7FE1B5FAE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:41:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C45C71B5FAF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:41:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=spSKCDxcrXs4X5P1mrAmA+OXlyGdTHs86E9K/IkuLfE=; b=bAMkC6lUuMwQUi
-	9RjLcZYfHv+ARp6ykqdZLZuMv0ctt/Uxva/LxLjWjW7hCyXHrmcSWJjCw31xQ0RyfdkS80527jRwV
-	2dLSAdM9EITPXJ8gWWzoFNCVepMBBXJe/6Fk5BhJV8lFOocqVWhTq2tKnR4ctfGF2Nodzb/2QN5+X
-	HbhVeH3GxZiZ+EI5QAcDdW1VaNKVLEXCkFx47r7HLzcwuUuFHtDBYTqDP+4RbSQO+s8WwSKUfXVxE
-	99fs+a7ebdY7eG9fkN5Pcr3aAm5hGLZte2D0rLKLg3SbG4SsgOwkOa0OWlUBp3c3o3j61TqeR5hm4
-	niQhiHgvp2by2NAklLJg==;
+	List-Owner; bh=id6SocP05St0lhZa8GHWERZYIDQl2Vz/RYKeb+rFFVQ=; b=Np00/Jn9OyNMLW
+	qvf+NVoCpv8lwToMp/ptk3aeme1tkNkRTakg/g6oFgVKvW+CNbrXiisEjZvuqV9UppN6TyZ3Yz2ho
+	b8fYIN+PdxDzLzkwWb6ejir8wLiN3vPj5NRnYy/8jCw3d52AFogXK6wuMc3+w4EtZ5DvkDTdGbPB4
+	U9VG9LL1NeMqxPIG768vXIMpPNqtVzzbc3d2waMczCKJ92zGOnMsVjQQ2cbU6OajAr4P4nBdAKLSb
+	7TQV0ItPpIc0Ytdixk2/FFEzySVi1/pAesVV7QdAlx2EqCAlJkMZE8iB8zAwugfXT1st3VbahMHB3
+	iVRC+O1QIp22gx7knABw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRdyQ-0006YF-DM; Thu, 23 Apr 2020 15:41:10 +0000
+	id 1jRdyn-0006sC-Cf; Thu, 23 Apr 2020 15:41:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRdxo-0006J0-Or
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:40:33 +0000
+ id 1jRdxp-0006JS-Do
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:40:34 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B07E2076C;
- Thu, 23 Apr 2020 15:40:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0B34920781;
+ Thu, 23 Apr 2020 15:40:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587656432;
- bh=4DuwlILzO9hzvyysFjgJ3379wFv4s1rSPnAK2bFpaTs=;
+ s=default; t=1587656433;
+ bh=E7hIDSjhnPmiIoxSDtBaSnp525oAZljrQLvYSUMnRqI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wgO3AfdBxQ5L9TwoxHZk2oTCEXGNO3QjqONrDkRWAfcWa8L76plT1O2ZPWegtrg7+
- i8C3AzprII/rdO3bjLm1LgCwHm+bLBiI1Dr9+Rq87/xMdk4og41x2UUipxc459DCl0
- o6gy5G51pXzJL8MvLgDqeB8GlA+FRcCjBpf8IxkE=
+ b=IOr1AEawHtAGqEWt5ye+aq959VTWkVDQD2fChx+WW/oywhsZNDQntOeSVWZB03BBq
+ PvZHChsnt5YsaUMzh01rx5pavN5sWmnoKAcSw7vyFMkJuwwoC8ffuKl4tQZsKOHV18
+ sKg9+DkPSmXh7SCoGNO9rYmO/cy96K8kBbtHjxTg=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jRdxm-005oPM-Mj; Thu, 23 Apr 2020 16:40:30 +0100
+ id 1jRdxn-005oPM-Dr; Thu, 23 Apr 2020 16:40:31 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 1/8] KVM: arm: vgic: Fix limit condition when writing to
- GICD_I[CS]ACTIVER
-Date: Thu, 23 Apr 2020 16:40:02 +0100
-Message-Id: <20200423154009.4113562-2-maz@kernel.org>
+Subject: [PATCH 2/8] KVM: arm64: PSCI: Narrow input registers when using 32bit
+ functions
+Date: Thu, 23 Apr 2020 16:40:03 +0100
+Message-Id: <20200423154009.4113562-3-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200423154009.4113562-1-maz@kernel.org>
 References: <20200423154009.4113562-1-maz@kernel.org>
@@ -56,14 +56,13 @@ X-SA-Exim-Rcpt-To: pbonzini@redhat.com, alexandru.elisei@arm.com,
  andre.przywara@arm.com, christoffer.dall@arm.com, julien@xen.org,
  yuzenghui@huawei.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
  suzuki.poulose@arm.com, kvm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- stable@vger.kernel.org
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu
 X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_084032_827061_9815016D 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20200423_084033_480964_F8A595C8 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,42 +94,72 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Julien Grall <julien@xen.org>, kvm@vger.kernel.org,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  =?UTF-8?q?Andr=C3=A9=20Przywara?= <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, stable@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Zenghui Yu <yuzenghui@huawei.com>, Alexandru Elisei <alexandru.elisei@arm.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Zenghui Yu <yuzenghui@huawei.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2hlbiBkZWNpZGluZyB3aGV0aGVyIGEgZ3Vlc3QgaGFzIHRvIGJlIHN0b3BwZWQgd2UgY2hlY2sg
-d2hldGhlciB0aGlzCmlzIGEgcHJpdmF0ZSBpbnRlcnJ1cHQgb3Igbm90LiBVbmZvcnR1bmF0ZWx5
-LCB0aGVyZSdzIGFuIG9mZi1ieS1vbmUgYnVnCmhlcmUsIGFuZCB3ZSBmYWlsIHRvIHJlY29nbml6
-ZSBhIHdob2xlIHJhbmdlIG9mIGludGVycnVwdHMgYXMgYmVpbmcKZ2xvYmFsIChHSUN2MiBTUElz
-IDMyLTYzKS4KCkZpeCB0aGUgY29uZGl0aW9uIGZyb20gPiB0byBiZSA+PS4KCkNjOiBzdGFibGVA
-dmdlci5rZXJuZWwub3JnCkZpeGVzOiBhYmQ3MjI5NjI2YjkzICgiS1ZNOiBhcm0vYXJtNjQ6IFNp
-bXBsaWZ5IGFjdGl2ZV9jaGFuZ2VfcHJlcGFyZSBhbmQgcGx1ZyByYWNlIikKUmVwb3J0ZWQtYnk6
-IEFuZHLDqSBQcnp5d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT4KU2lnbmVkLW9mZi1ieTog
-TWFyYyBaeW5naWVyIDxtYXpAa2VybmVsLm9yZz4KLS0tCiB2aXJ0L2t2bS9hcm0vdmdpYy92Z2lj
-LW1taW8uYyB8IDQgKystLQogMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMiBkZWxl
-dGlvbnMoLSkKCmRpZmYgLS1naXQgYS92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLW1taW8uYyBiL3Zp
-cnQva3ZtL2FybS92Z2ljL3ZnaWMtbW1pby5jCmluZGV4IDIxOTkzMDI1OTdmYWYuLmQwODVlMDQ3
-OTUzZmEgMTAwNjQ0Ci0tLSBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtbW1pby5jCisrKyBiL3Zp
-cnQva3ZtL2FybS92Z2ljL3ZnaWMtbW1pby5jCkBAIC00NDQsNyArNDQ0LDcgQEAgc3RhdGljIHZv
-aWQgdmdpY19tbWlvX2NoYW5nZV9hY3RpdmUoc3RydWN0IGt2bV92Y3B1ICp2Y3B1LCBzdHJ1Y3Qg
-dmdpY19pcnEgKmlycSwKIHN0YXRpYyB2b2lkIHZnaWNfY2hhbmdlX2FjdGl2ZV9wcmVwYXJlKHN0
-cnVjdCBrdm1fdmNwdSAqdmNwdSwgdTMyIGludGlkKQogewogCWlmICh2Y3B1LT5rdm0tPmFyY2gu
-dmdpYy52Z2ljX21vZGVsID09IEtWTV9ERVZfVFlQRV9BUk1fVkdJQ19WMyB8fAotCSAgICBpbnRp
-ZCA+IFZHSUNfTlJfUFJJVkFURV9JUlFTKQorCSAgICBpbnRpZCA+PSBWR0lDX05SX1BSSVZBVEVf
-SVJRUykKIAkJa3ZtX2FybV9oYWx0X2d1ZXN0KHZjcHUtPmt2bSk7CiB9CiAKQEAgLTQ1Miw3ICs0
-NTIsNyBAQCBzdGF0aWMgdm9pZCB2Z2ljX2NoYW5nZV9hY3RpdmVfcHJlcGFyZShzdHJ1Y3Qga3Zt
-X3ZjcHUgKnZjcHUsIHUzMiBpbnRpZCkKIHN0YXRpYyB2b2lkIHZnaWNfY2hhbmdlX2FjdGl2ZV9m
-aW5pc2goc3RydWN0IGt2bV92Y3B1ICp2Y3B1LCB1MzIgaW50aWQpCiB7CiAJaWYgKHZjcHUtPmt2
-bS0+YXJjaC52Z2ljLnZnaWNfbW9kZWwgPT0gS1ZNX0RFVl9UWVBFX0FSTV9WR0lDX1YzIHx8Ci0J
-ICAgIGludGlkID4gVkdJQ19OUl9QUklWQVRFX0lSUVMpCisJICAgIGludGlkID49IFZHSUNfTlJf
-UFJJVkFURV9JUlFTKQogCQlrdm1fYXJtX3Jlc3VtZV9ndWVzdCh2Y3B1LT5rdm0pOwogfQogCi0t
-IAoyLjI2LjIKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+When a guest delibarately uses an SMC32 function number (which is allowed),
+we should make sure we drop the top 32bits from the input arguments, as they
+could legitimately be junk.
+
+Reported-by: Christoffer Dall <christoffer.dall@arm.com>
+Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
+Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ virt/kvm/arm/psci.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
+index 14a162e295a94..3772717efe3e5 100644
+--- a/virt/kvm/arm/psci.c
++++ b/virt/kvm/arm/psci.c
+@@ -186,6 +186,18 @@ static void kvm_psci_system_reset(struct kvm_vcpu *vcpu)
+ 	kvm_prepare_system_event(vcpu, KVM_SYSTEM_EVENT_RESET);
+ }
+ 
++static void kvm_psci_narrow_to_32bit(struct kvm_vcpu *vcpu)
++{
++	int i;
++
++	/*
++	 * Zero the input registers' upper 32 bits. They will be fully
++	 * zeroed on exit, so we're fine changing them in place.
++	 */
++	for (i = 1; i < 4; i++)
++		vcpu_set_reg(vcpu, i, lower_32_bits(vcpu_get_reg(vcpu, i)));
++}
++
+ static int kvm_psci_0_2_call(struct kvm_vcpu *vcpu)
+ {
+ 	struct kvm *kvm = vcpu->kvm;
+@@ -210,12 +222,16 @@ static int kvm_psci_0_2_call(struct kvm_vcpu *vcpu)
+ 		val = PSCI_RET_SUCCESS;
+ 		break;
+ 	case PSCI_0_2_FN_CPU_ON:
++		kvm_psci_narrow_to_32bit(vcpu);
++		fallthrough;
+ 	case PSCI_0_2_FN64_CPU_ON:
+ 		mutex_lock(&kvm->lock);
+ 		val = kvm_psci_vcpu_on(vcpu);
+ 		mutex_unlock(&kvm->lock);
+ 		break;
+ 	case PSCI_0_2_FN_AFFINITY_INFO:
++		kvm_psci_narrow_to_32bit(vcpu);
++		fallthrough;
+ 	case PSCI_0_2_FN64_AFFINITY_INFO:
+ 		val = kvm_psci_vcpu_affinity_info(vcpu);
+ 		break;
+-- 
+2.26.2
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
