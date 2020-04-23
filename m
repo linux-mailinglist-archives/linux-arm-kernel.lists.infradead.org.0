@@ -2,108 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6889A1B5C0A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 14:59:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4F7C1B5C5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 15:20:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N7zUsL+HFf1/iPpZ7Nv94W7ITaoJxP7t3Dh26SR0WnU=; b=bZFZ4BhZsfBtjH
-	Uw8BWacvugCxO7dJHxXwCM2gppQLj/oayTxcT+dYNz7mIZleDtYm7jiLop2XJq4rSzQ9iX8PnUMl4
-	HpwrV9Ly+XpmbCBeUc0XDEVytxvbhwbsRM2SMmMnmtXJYtMS4Vth+VoWRIKMGf3wh/o6nhGkAQ6vp
-	TM1Q1bcp3fU0zlvl8kFe7xnZdE4+Ed8W2v7r7+YNCCiXcjvT6wpnQHCjkKY513lE1LsB/Qg7Yp3Tz
-	6eN+4+YXDPCuPilv4cxnWAHTPvUyNIEToG2Sw8YcUwu9PXa7j48Rw03qv2yierqr0lXO87axkNsQ+
-	i8OkrCYiVIwod+Eh6dvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZZB6665MPEJTBql/7j+1JkmIdyDmg3Pfk9uuIdLh0/4=; b=HsUqigL0r7YTwk
+	Jwjnw5RyG7ed3VYkrVGW7YR7KJjw6pa5Sniw2dMTiIkYz1N+PW7nycZJXouyYGKDBkYKkQLhHf2mT
+	PiO5LJDcnfLZsOuLgQQg8MIcyKqsV+QBM92R/sY0U48JMkBUWR/2u9keiTnLcuhAdMF4tP5Ojscl4
+	yCs4C8QlLdTP1MXC6yGg777tgN9ALuphVq4GVWhBZP9XYt4I6tLqsZjoV74JDgf75WO/DxVoHYj60
+	KKLZin2pgw2cjy0SV449/C1aP6rqlzrJQuxdy8/PkyNtxiGvD3yR9TzixYmLyt8uVyHGhC0sltGAo
+	Uk0QvFEAwMRFktn/TNYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRbS0-0000sq-4D; Thu, 23 Apr 2020 12:59:32 +0000
-Received: from mail-eopbgr130057.outbound.protection.outlook.com
- ([40.107.13.57] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1jRblv-0000yk-Lz; Thu, 23 Apr 2020 13:20:07 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRbRq-0000rd-I9
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 12:59:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Mu11mIAhatB9o3YzoINbmcw96QmKT4UHoHjRfKNx9/RwgxsWB6fxHYIZxocb0AkSqb3CDwZoMulwlJHsnD53phK7WUttbdYfPW+7pf4c42woZQfBDQQxBqQLzuz4MAQIG60gxwg8N3aRJ2Z0RbxWB3a7Vx6asAwa0Si1J7UXwnfdvVpiJE+BpVfOGtw6iCtL9WjOF7nRHyvH2cZRxKgIi3Lw6aSqaAV+5YqoMtc9IGew+WdwWHpM0Wd9ORb+QYtGEkjUEs0HU2tdZOfctltup9kW0kEj5i6QX0E1myaKg3zMrl83wcJzLdg3y1/ig0Kdz8qXbPvALvi/30ue/IOfXA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F8xT5CHK6qdil3tm6bP00dwGdhgGMELXmbSDYcTviq8=;
- b=Xh+oct/ORhOS0A4sWqcFS/q2QQeU9SWNGiXJh3F/ntCC2lNHBV2VBiCGXK/IMIXo0wbae+wh8YoAyBFy91ms/Tj/IDSjBvRspxEt5Yje5TXzWiLHh7Vzn1zFUoLOX30bnuZCuQIooHAgkpuMoJcxDlvlfVz257hsCeUN4ABoof8yqN6vlp02nwbcLqRM0BNwLwb7ZrmE7UYapmpMUGWT0LZyyhDhFTEUPMkO3Dq0mggBfnRcnPdUxYSBWsIolxz5V2HonjRQ6jBh7wM2vumsDRpNUNCI90uPO9Gw0NGNME4oX2pxRaa55jbHEH0lNHlOqgql8Uj+PdDfPfWW5KmNxQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F8xT5CHK6qdil3tm6bP00dwGdhgGMELXmbSDYcTviq8=;
- b=SY0H0+zHi8nEW1WbuInn8YiYGaHLu40QB/rfWLQWUP+7X/6HrVxo0iuuacxt4iCzhaKBq7sYxSbGzaO6DW0wKeyVrNZ8E38ptyBDRn64xFGKBI9tqAncIZpVG/MpnQbddDoJ1+a+AuXocm55vp4lRnRn1AXTnHqjjDyY30OEhik=
-Received: from DB8PR04MB6985.eurprd04.prod.outlook.com (2603:10a6:10:11e::21)
- by DB8PR04MB7084.eurprd04.prod.outlook.com (2603:10a6:10:12e::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Thu, 23 Apr
- 2020 12:59:16 +0000
-Received: from DB8PR04MB6985.eurprd04.prod.outlook.com
- ([fe80::844a:d2b2:8bae:9c9f]) by DB8PR04MB6985.eurprd04.prod.outlook.com
- ([fe80::844a:d2b2:8bae:9c9f%7]) with mapi id 15.20.2937.012; Thu, 23 Apr 2020
- 12:59:16 +0000
-From: Madalin Bucur <madalin.bucur@nxp.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
-Thread-Topic: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
-Thread-Index: AQHWGVkRBxpVgWt18kKwJeE2FAcTPKiGl6kw
-Date: Thu, 23 Apr 2020 12:59:16 +0000
-Message-ID: <DB8PR04MB6985EB9D28A17723C8C061CCECD30@DB8PR04MB6985.eurprd04.prod.outlook.com>
-References: <20200423102212.5412-1-s.hauer@pengutronix.de>
-In-Reply-To: <20200423102212.5412-1-s.hauer@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=madalin.bucur@nxp.com; 
-x-originating-ip: [84.232.188.116]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 104089a0-b4f7-4fc9-f07f-08d7e786214a
-x-ms-traffictypediagnostic: DB8PR04MB7084:|DB8PR04MB7084:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB8PR04MB7084153AEB8EDE94C4CAE70FECD30@DB8PR04MB7084.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4125;
-x-forefront-prvs: 03827AF76E
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB8PR04MB6985.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(136003)(366004)(396003)(376002)(39860400002)(346002)(66946007)(26005)(186003)(55016002)(2906002)(33656002)(6506007)(9686003)(53546011)(7696005)(52536014)(316002)(8936002)(478600001)(86362001)(44832011)(71200400001)(64756008)(66556008)(66446008)(81156014)(966005)(4326008)(54906003)(8676002)(76116006)(66476007)(110136005)(5660300002);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: dpPDlbhGkfIHjcPZwcwCBW4AIVs3woq0UzfCXGKyWjTLZNaPCPzFufk5r9xokxmtTdgfDFK4DPqnSrvi/Nv5qLakNiQfE7IN6l5AEoE6H/N6C8rVRDUIcHzQOKyTNS634FoprF5cibYTTqOgS3LJC7J4evGAvy34C84iNzfd5HIeaRs/kO7rvxRqXYCMGh/k/fyDby1qpYAoPqg8fHmr+i5BRSvAHrqIGxuVzwi2y7KVDvVMe/hYxTF7nXIsz8ucFSM9FuVo8TOXcjLf1vECMxxr5zwZa8x0p9/xsv0Jk7kos6mpQFK4EUvZLWv7E2mjJvT4LQlu8mLyTKahTbY2D7HQe5+uQ0Cz5j/FwaOjQD2WRRy+AGlSVsiOMPqfpYTIuQ2PKAvgnHRvACjpHHIV7hd+MN36V7212CMKOqXEe8yxvXL4nGjaYGiB/6GOnTnrC4DJhda1E7IlzGErju5+cJco5d3S2V0dGZK/Y0TVL1M1K9AMh0O3BKkLfEy7ElYqKHxDw2E/YO5C/lyYJhlF2g==
-x-ms-exchange-antispam-messagedata: uaV5KFVH93/VjRruLBLuQ16kwRDNYkx6Pz0MeIHKoFhyRu7HNWJ9yjgoVYZiPTb35eSSa6cf1XPK1yqlO0jsJgDyfo8EAwCp0DLBV5rzzK7JemiX5QTeVY2K4EW4mhJMlWA0ghWxsk9G1LGwmrDxng==
+ id 1jRblK-0000UA-MA
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 13:19:34 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03NDCX7d009209; Thu, 23 Apr 2020 15:19:17 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=bWGyr2OPFEYipJzOCA9+YhEVp9WsPMm5ikLMe52JeBI=;
+ b=OcnclZ5z23GMDRx2jxDE77tYL+3KyB7ULU6zbJVk+ODxzl2RIpuYZxLSTwfQW72mP+Zs
+ fGEnZ3gMmU6LNVLbfDdKbXaPnULH5gFLYzqFLoPACdGSkSmvEEkJ5bsisogv1B3lyO9B
+ V9XGiCbX5M67WC4RLphKcy0RIcf3fUqzBTugugm4h4U2wDF6afHcrUixz0sauP4HjVS2
+ Wast7SAT3yknAb338UrRaSck5keScWktkU7SfSsEi6xOocTDXuTNQisXuLplHIO+bgAD
+ fqcTNJqFm899pTwkhYfFmDstax/ojn5j0dBmYc/aduLwoY9eGxnAa7toD/PAVcigc4Zo ng== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30fregw0k5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 23 Apr 2020 15:19:17 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 968E010002A;
+ Thu, 23 Apr 2020 15:19:16 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 86B4020758D;
+ Thu, 23 Apr 2020 15:19:16 +0200 (CEST)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 23 Apr 2020 15:19:15
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <robh+dt@kernel.org>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <gregkh@linuxfoundation.org>,
+ <loic.pallardy@st.com>, <linus.walleij@linaro.org>
+Subject: [PATCH v2 0/5] STM32 ETZPC bus controller
+Date: Thu, 23 Apr 2020 15:19:08 +0200
+Message-ID: <20200423131913.30786-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 104089a0-b4f7-4fc9-f07f-08d7e786214a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 12:59:16.5322 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: OM2w6L4HyZryv/t+8f+itk21onb6dHPurd7z3mGknhhQuu2kGWmmj2MFHw6qdDW8lbr+/3a97z3xUcCYGqy6Dg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7084
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-23_10:2020-04-23,
+ 2020-04-23 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_055922_710886_594D5542 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200423_061931_032374_6B9AAF4B 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.57 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -122,93 +94,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, "u-boot@lists.denx.de" <u-boot@lists.denx.de>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Leo Li <leoyang.li@nxp.com>, "joe.hershberger@ni.com" <joe.hershberger@ni.com>,
- Shawn Guo <shawnguo@kernel.org>, "davem@davemloft.net" <davem@davemloft.net>
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Sascha Hauer <s.hauer@pengutronix.de>
-> Sent: Thursday, April 23, 2020 1:22 PM
-> To: linux-arm-kernel@lists.infradead.org
-> Cc: Madalin Bucur <madalin.bucur@nxp.com>; Shawn Guo
-> <shawnguo@kernel.org>; Leo Li <leoyang.li@nxp.com>; Sascha Hauer
-> <s.hauer@pengutronix.de>
-> Subject: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
-> 
-> The AQR107 family of phy devices do not support xgmii, but usxgmii
-> instead. Since ce64c1f77a9d ("net: phy: aquantia: add USXGMII support
-> and warn if XGMII mode is set") the kernel warns about xgmii being
-> used. Change device tree to usxgmii.
-> 
-> Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
-> ---
->  arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> index d53ccc56bb63..02fbef92b96a 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> @@ -151,7 +151,7 @@ ethernet@ea000 {
-> 
->  	ethernet@f0000 { /* 10GEC1 */
->  		phy-handle = <&aqr106_phy>;
-> -		phy-connection-type = "xgmii";
-> +		phy-connection-type = "usxgmii";
->  	};
-> 
->  	ethernet@f2000 { /* 10GEC2 */
-> --
-> 2.26.1
+STM32 Extended TrustZone Protection controller act like a firewall on the
+platform bus. Depending of its configuration devices could be accessible
+by the TrustZone, the co-processor or the non-secure world. ETZPC
+configuration could evolve at runtime for example to switch a device from
+non-secure world to co-processor.
 
-Hi Sascha,
+The series introduce 'firewall' helpers to handle the new devices-tree
+properties. These properties are not dedicated to ETZPC and will be reused
+for STM32 next generation of bus controller.
 
-thank you for trying to correct this problem. Unfortunately
-"usxgmii" here is incorrect too, as that mode is not supported
-by the LS1046A SoC. The connection mode used, as documented
-by the SoC and PHY datasheets, is XFI. Unfortunately there was
-resistance against including this connection type in the list
-supported by the kernel (please note the distinction between
-connection type and connection mode). At a certain moment the
-two were aliased and the kernel uses connection mode, not
-connection type. While we should describe here the hardware,
-the board connection type (XFI), in the kernel the connection
-mode was lately preferred (10G-BaseR). So, today we cannot use
-"xfi" here, as the hardware description property should read.
-The closest thing we can use is "10gbase-r". Unfortunately, in
-u-boot support for "xfi" is already in place [1] and the device
-tree should be different for the two for this reason - this goes
-against the spirit of the device tree that should not depend on
-the software using it...
+version 2:
+- fix unit name into st,stm32-etzpc.yaml example and DT
 
-I had on my agenda to fix this problem, had to stop when "xfi"
-was rejected, at the time not even "10gbase-r" was an option.
-Also worth noting here is that, while we change "xgmii" to a
-correct/better value, we should also tolerate the old variant,
-as there are users in the wild unable/unwilling to update the
-device tree and backwards compatibility should be ensured,
-further complicating the matter.
+Benjamin Gaignard (5):
+  dt-bindings: bus: Add firewall bindings
+  bus: stm32: Introduce firewall controller helpers
+  dt-bindings: bus: Add STM32 ETZPC firewall controller
+  bus: stm32: Add stm32 ETZPC firewall bus controller
+  ARM: dts: stm32: Use ETZPC firewall bus
 
-Regards,
-Madalin
+ .../bindings/bus/stm32/firewall-consumer.yaml      |  25 ++
+ .../bindings/bus/stm32/firewall-provider.yaml      |  18 ++
+ .../bindings/bus/stm32/st,stm32-etzpc.yaml         |  46 ++++
+ arch/arm/boot/dts/stm32mp151.dtsi                  |   7 +-
+ drivers/bus/Kconfig                                |   2 +
+ drivers/bus/Makefile                               |   2 +
+ drivers/bus/stm32/Kconfig                          |  11 +
+ drivers/bus/stm32/Makefile                         |   2 +
+ drivers/bus/stm32/firewall.c                       | 266 +++++++++++++++++++++
+ drivers/bus/stm32/firewall.h                       |  75 ++++++
+ drivers/bus/stm32/stm32-etzpc.c                    | 160 +++++++++++++
+ include/dt-bindings/bus/stm32/stm32-etzpc.h        |  90 +++++++
+ 12 files changed, 702 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/bus/stm32/firewall-consumer.yaml
+ create mode 100644 Documentation/devicetree/bindings/bus/stm32/firewall-provider.yaml
+ create mode 100644 Documentation/devicetree/bindings/bus/stm32/st,stm32-etzpc.yaml
+ create mode 100644 drivers/bus/stm32/Kconfig
+ create mode 100644 drivers/bus/stm32/Makefile
+ create mode 100644 drivers/bus/stm32/firewall.c
+ create mode 100644 drivers/bus/stm32/firewall.h
+ create mode 100644 drivers/bus/stm32/stm32-etzpc.c
+ create mode 100644 include/dt-bindings/bus/stm32/stm32-etzpc.h
 
+-- 
+2.15.0
 
-[1] I mention u-boot here because it's the default boot loader used by
-LS1046ARDB and there are some interdependences with it, making things
-even more complicated than they seem: u-boot currently performs a
-fix-up for this device tree field, based on RCW (reset configuration
-word), resulting in an override of the value provided to the booting
-kernel. Some relevant u-boot commits:
-
-https://github.com/u-boot/u-boot/commit/17285fc2833e0db04a2bd3d411cdf1a3e387de83
-https://github.com/u-boot/u-boot/commit/8a141d6e9cc1841082e4c996703eafb037ec63ad
 
 _______________________________________________
 linux-arm-kernel mailing list
