@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 046F91B5F4C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:33:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5311B1B5FC5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:44:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZ3J6hXZO82dBhcwbY70Stk9TD3Us4+Fq0cM4dFfDXY=; b=FBnYXZqR4+QuKI
-	3+fC4Gq+nYb3UnPh4F97D9wlNtQovyWncOIE+Ieu/C7ZfXfIAL8wZw0ljL1VpDwVIbAocjEZ8rUO6
-	YiIrTP8+BV1Qie+96jPofW4q5p7JTCgO1Jp8Taei7DV9iBQIe5RgPEhG7OWrKrfdedoZpBSgWTLy0
-	3/hO50rmh7odcpN1swsbMm8X3KIYKEZJRNd/uZCaehlDl32D89h7pXdZkayfSAg9/Trp/n08KQ0wA
-	rSlgCevMewTKuVZxJf1L3zwFwlcaEaSdIv5EOu6I/qWjZKxW+dw/vYRcV8QzXXMIRqxnC+mD1nb8M
-	fi63UPVyZMTgcWE+yF3w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mo+ZXXVCK5oMOAoNNSDysHBfc3qUhuxk2s12VM3K5M4=; b=h9d
+	mciRxbmML+bRRFrq3gXc+teO2nYRKf67NWisGAnv24Zhd55NnG61+cVp7tVwbBrYK8wN7RwMW1iu8
+	dqHEkv6ErAaeth55xmglQMYgF/pyrZb2GvXTw2BQG3j3lWmetaZdySkUTnQev9kriIB22il4MXBO5
+	V0yLequBzZdgUkRDWJnl2yL7Y/QkcW1XgvH+puHS2FGy+tQSJjk7P94vkVkvPPbZe07FJOoyhlNxl
+	8sRv/44e4SrnWuqbHTj1wbpYwosCQI31xVIwodP0Mkm3z2vkLeR0WPEkmlkKq/ozDByQbXi5bFqgC
+	/lGd6V9eWyvPB/2rkQeaAXIddIcaKoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRdqy-0007LI-2L; Thu, 23 Apr 2020 15:33:28 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1jRe1o-000113-Sn; Thu, 23 Apr 2020 15:44:41 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRdqn-00069d-2V; Thu, 23 Apr 2020 15:33:18 +0000
-IronPort-SDR: 5RkV2OuEkDh6Yp7RLq0HzwZu9J+sJHPtYR08AnNM+MyII9HfATqfUsI0RcrraM8cNHPh430+k5
- lHA0ZIwUzbgw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 23 Apr 2020 08:31:14 -0700
-IronPort-SDR: /GFKe82XVmh4+0BRn8SZTtvwp+0urUa1LNzYA81wW4ZorQZKkqcLM/YAsj+z0JsywQAuhavM1S
- QNjLFpn+IVdg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,307,1583222400"; d="scan'208";a="457539017"
-Received: from monjedli-mobl2.amr.corp.intel.com ([10.254.190.100])
- by fmsmga006.fm.intel.com with ESMTP; 23 Apr 2020 08:31:14 -0700
-Message-ID: <6d04d1bdff164a31d41757948cb3dd76144c0b66.camel@linux.intel.com>
-Subject: Re: [PATCH 0/4] ASoC:: don't use snd_soc_rtdcom_lookup()
-From: Ranjani Sridharan <ranjani.sridharan@linux.intel.com>
-To: Mark Brown <broonie@kernel.org>
-Date: Thu, 23 Apr 2020 08:31:14 -0700
-In-Reply-To: <20200423105317.GE4808@sirena.org.uk>
-References: <87d080unyx.wl-kuninori.morimoto.gx@renesas.com>
- <d20cc18d0fa10b52437e0ac29ea98792e0a3d45d.camel@linux.intel.com>
- <874ktbuq4j.wl-kuninori.morimoto.gx@renesas.com>
- <ebe305743178c4548b779f25e6400863094ef5a9.camel@linux.intel.com>
- <20200423105317.GE4808@sirena.org.uk>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1jRe1b-0000y0-4Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:44:29 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5208B201496;
+ Thu, 23 Apr 2020 17:44:24 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2623D200015;
+ Thu, 23 Apr 2020 17:44:18 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 80A58402D2;
+ Thu, 23 Apr 2020 23:44:10 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, rui.zhang@intel.com, daniel.lezcano@linaro.org,
+ amit.kucheria@verdurent.com, robh+dt@kernel.org, leonard.crestez@nxp.com,
+ linux@rempel-privat.de, peng.fan@nxp.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Subject: [PATCH V2] dt-bindings: firmware: imx: Move system control into
+ dt-binding headfile
+Date: Thu, 23 Apr 2020 23:35:48 +0800
+Message-Id: <1587656148-24581-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_083317_161109_3D977F4D 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200423_084427_498680_7DEEE345 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,56 +70,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Cezary Rojewski <cezary.rojewski@intel.com>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Jie Yang <yang.jie@linux.intel.com>, alsa-devel@alsa-project.org,
- Liam Girdwood <liam.r.girdwood@linux.intel.com>,
- Richard Fontana <rfontana@redhat.com>, Shunli Wang <shunli.wang@mediatek.com>,
- YueHaibing <yuehaibing@huawei.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Jiaxin Yu <jiaxin.yu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- Vijendar Mukunda <Vijendar.Mukunda@amd.com>,
- Stephen Boyd <swboyd@chromium.org>, linux-mediatek@lists.infradead.org,
- Eason Yen <eason.yen@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- Takashi Iwai <tiwai@suse.com>,
- Ravulapati Vishnu vardhan rao <Vishnuvardhanrao.Ravulapati@amd.com>,
- Colin Ian King <colin.king@canonical.com>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-04-23 at 11:53 +0100, Mark Brown wrote:
-> On Wed, Apr 22, 2020 at 03:39:58PM -0700, Ranjani Sridharan wrote:
-> > On Thu, 2020-04-23 at 07:12 +0900, Kuninori Morimoto wrote:
-> > > I'm thinking removing lookup function is nice idea,
-> > > but don't feel pressure to it.
-> > > "Now you know it" is very enough for me.
-> > I am having a hard time visualizing a scenario where we would have
-> > more
-> > than one platform component. And even if we did, I'd think that the
-> > driver registering these components would make sure to not
-> > duplicate
-> > the driver names. Of course, we dont really check if thats really
-> > the
-> > case. 
-> 
-> The only use case I can think of is a link where there's a CPU on
-> both
-> ends for some reason.
-> 
-> > Do you think it makes sense to add that check when registering a
-> > component? If we do that, then keeping snd_soc_rtdcom_lookup()
-> > might
-> > not be such a bad idea. 
-> 
-> Yeah.
-Thanks, Mark. Let me send a patch to handle this check in the core.
+i.MX8 SoCs DTS file needs system control macro definitions, so move them
+into dt-binding headfile, then include/linux/firmware/imx/types.h can be
+removed and those drivers using it should be changed accordingly.
 
-Thanks,
-Ranjani
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V1:
+	- squash all patches in previous series to one to avoid build break
+	  with bisect.
+---
+ drivers/firmware/imx/imx-scu.c          |  1 -
+ drivers/thermal/imx_sc_thermal.c        |  2 +-
+ include/dt-bindings/firmware/imx/rsrc.h | 84 +++++++++++++++++++++++++++++++++
+ include/linux/firmware/imx/sci.h        |  1 -
+ include/linux/firmware/imx/types.h      | 65 -------------------------
+ 5 files changed, 85 insertions(+), 68 deletions(-)
+ delete mode 100644 include/linux/firmware/imx/types.h
+
+diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
+index f71eaa5..f3340fa 100644
+--- a/drivers/firmware/imx/imx-scu.c
++++ b/drivers/firmware/imx/imx-scu.c
+@@ -8,7 +8,6 @@
+  */
+ 
+ #include <linux/err.h>
+-#include <linux/firmware/imx/types.h>
+ #include <linux/firmware/imx/ipc.h>
+ #include <linux/firmware/imx/sci.h>
+ #include <linux/interrupt.h>
+diff --git a/drivers/thermal/imx_sc_thermal.c b/drivers/thermal/imx_sc_thermal.c
+index b2b68c9..b01d28e 100644
+--- a/drivers/thermal/imx_sc_thermal.c
++++ b/drivers/thermal/imx_sc_thermal.c
+@@ -3,9 +3,9 @@
+  * Copyright 2018-2020 NXP.
+  */
+ 
++#include <dt-bindings/firmware/imx/rsrc.h>
+ #include <linux/err.h>
+ #include <linux/firmware/imx/sci.h>
+-#include <linux/firmware/imx/types.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
+diff --git a/include/dt-bindings/firmware/imx/rsrc.h b/include/dt-bindings/firmware/imx/rsrc.h
+index 4e61f64..51906b9 100644
+--- a/include/dt-bindings/firmware/imx/rsrc.h
++++ b/include/dt-bindings/firmware/imx/rsrc.h
+@@ -547,4 +547,88 @@
+ #define IMX_SC_R_ATTESTATION		545
+ #define IMX_SC_R_LAST			546
+ 
++/*
++ * Defines for SC PM CLK
++ */
++#define IMX_SC_PM_CLK_SLV_BUS		0	/* Slave bus clock */
++#define IMX_SC_PM_CLK_MST_BUS		1	/* Master bus clock */
++#define IMX_SC_PM_CLK_PER		2	/* Peripheral clock */
++#define IMX_SC_PM_CLK_PHY		3	/* Phy clock */
++#define IMX_SC_PM_CLK_MISC		4	/* Misc clock */
++#define IMX_SC_PM_CLK_MISC0		0	/* Misc 0 clock */
++#define IMX_SC_PM_CLK_MISC1		1	/* Misc 1 clock */
++#define IMX_SC_PM_CLK_MISC2		2	/* Misc 2 clock */
++#define IMX_SC_PM_CLK_MISC3		3	/* Misc 3 clock */
++#define IMX_SC_PM_CLK_MISC4		4	/* Misc 4 clock */
++#define IMX_SC_PM_CLK_CPU		2	/* CPU clock */
++#define IMX_SC_PM_CLK_PLL		4	/* PLL */
++#define IMX_SC_PM_CLK_BYPASS		4	/* Bypass clock */
++
++/*
++ * Defines for SC CONTROL
++ */
++#define IMX_SC_C_TEMP                       0U
++#define IMX_SC_C_TEMP_HI                    1U
++#define IMX_SC_C_TEMP_LOW                   2U
++#define IMX_SC_C_PXL_LINK_MST1_ADDR         3U
++#define IMX_SC_C_PXL_LINK_MST2_ADDR         4U
++#define IMX_SC_C_PXL_LINK_MST_ENB           5U
++#define IMX_SC_C_PXL_LINK_MST1_ENB          6U
++#define IMX_SC_C_PXL_LINK_MST2_ENB          7U
++#define IMX_SC_C_PXL_LINK_SLV1_ADDR         8U
++#define IMX_SC_C_PXL_LINK_SLV2_ADDR         9U
++#define IMX_SC_C_PXL_LINK_MST_VLD           10U
++#define IMX_SC_C_PXL_LINK_MST1_VLD          11U
++#define IMX_SC_C_PXL_LINK_MST2_VLD          12U
++#define IMX_SC_C_SINGLE_MODE                13U
++#define IMX_SC_C_ID                         14U
++#define IMX_SC_C_PXL_CLK_POLARITY           15U
++#define IMX_SC_C_LINESTATE                  16U
++#define IMX_SC_C_PCIE_G_RST                 17U
++#define IMX_SC_C_PCIE_BUTTON_RST            18U
++#define IMX_SC_C_PCIE_PERST                 19U
++#define IMX_SC_C_PHY_RESET                  20U
++#define IMX_SC_C_PXL_LINK_RATE_CORRECTION   21U
++#define IMX_SC_C_PANIC                      22U
++#define IMX_SC_C_PRIORITY_GROUP             23U
++#define IMX_SC_C_TXCLK                      24U
++#define IMX_SC_C_CLKDIV                     25U
++#define IMX_SC_C_DISABLE_50                 26U
++#define IMX_SC_C_DISABLE_125                27U
++#define IMX_SC_C_SEL_125                    28U
++#define IMX_SC_C_MODE                       29U
++#define IMX_SC_C_SYNC_CTRL0                 30U
++#define IMX_SC_C_KACHUNK_CNT                31U
++#define IMX_SC_C_KACHUNK_SEL                32U
++#define IMX_SC_C_SYNC_CTRL1                 33U
++#define IMX_SC_C_DPI_RESET                  34U
++#define IMX_SC_C_MIPI_RESET                 35U
++#define IMX_SC_C_DUAL_MODE                  36U
++#define IMX_SC_C_VOLTAGE                    37U
++#define IMX_SC_C_PXL_LINK_SEL               38U
++#define IMX_SC_C_OFS_SEL                    39U
++#define IMX_SC_C_OFS_AUDIO                  40U
++#define IMX_SC_C_OFS_PERIPH                 41U
++#define IMX_SC_C_OFS_IRQ                    42U
++#define IMX_SC_C_RST0                       43U
++#define IMX_SC_C_RST1                       44U
++#define IMX_SC_C_SEL0                       45U
++#define IMX_SC_C_CALIB0                     46U
++#define IMX_SC_C_CALIB1                     47U
++#define IMX_SC_C_CALIB2                     48U
++#define IMX_SC_C_IPG_DEBUG                  49U
++#define IMX_SC_C_IPG_DOZE                   50U
++#define IMX_SC_C_IPG_WAIT                   51U
++#define IMX_SC_C_IPG_STOP                   52U
++#define IMX_SC_C_IPG_STOP_MODE              53U
++#define IMX_SC_C_IPG_STOP_ACK               54U
++#define IMX_SC_C_SYNC_CTRL                  55U
++#define IMX_SC_C_OFS_AUDIO_ALT              56U
++#define IMX_SC_C_DSP_BYP                    57U
++#define IMX_SC_C_CLK_GEN_EN                 58U
++#define IMX_SC_C_INTF_SEL                   59U
++#define IMX_SC_C_RXC_DLY                    60U
++#define IMX_SC_C_TIMER_SEL                  61U
++#define IMX_SC_C_LAST                       62U
++
+ #endif /* __DT_BINDINGS_RSCRC_IMX_H */
+diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
+index 17ba4e4..3fa418a 100644
+--- a/include/linux/firmware/imx/sci.h
++++ b/include/linux/firmware/imx/sci.h
+@@ -11,7 +11,6 @@
+ #define _SC_SCI_H
+ 
+ #include <linux/firmware/imx/ipc.h>
+-#include <linux/firmware/imx/types.h>
+ 
+ #include <linux/firmware/imx/svc/misc.h>
+ #include <linux/firmware/imx/svc/pm.h>
+diff --git a/include/linux/firmware/imx/types.h b/include/linux/firmware/imx/types.h
+deleted file mode 100644
+index 8082110..0000000
+--- a/include/linux/firmware/imx/types.h
++++ /dev/null
+@@ -1,65 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0+ */
+-/*
+- * Copyright (C) 2016 Freescale Semiconductor, Inc.
+- * Copyright 2017~2018 NXP
+- *
+- * Header file containing types used across multiple service APIs.
+- */
+-
+-#ifndef _SC_TYPES_H
+-#define _SC_TYPES_H
+-
+-/*
+- * This type is used to indicate a control.
+- */
+-enum imx_sc_ctrl {
+-	IMX_SC_C_TEMP = 0,
+-	IMX_SC_C_TEMP_HI = 1,
+-	IMX_SC_C_TEMP_LOW = 2,
+-	IMX_SC_C_PXL_LINK_MST1_ADDR = 3,
+-	IMX_SC_C_PXL_LINK_MST2_ADDR = 4,
+-	IMX_SC_C_PXL_LINK_MST_ENB = 5,
+-	IMX_SC_C_PXL_LINK_MST1_ENB = 6,
+-	IMX_SC_C_PXL_LINK_MST2_ENB = 7,
+-	IMX_SC_C_PXL_LINK_SLV1_ADDR = 8,
+-	IMX_SC_C_PXL_LINK_SLV2_ADDR = 9,
+-	IMX_SC_C_PXL_LINK_MST_VLD = 10,
+-	IMX_SC_C_PXL_LINK_MST1_VLD = 11,
+-	IMX_SC_C_PXL_LINK_MST2_VLD = 12,
+-	IMX_SC_C_SINGLE_MODE = 13,
+-	IMX_SC_C_ID = 14,
+-	IMX_SC_C_PXL_CLK_POLARITY = 15,
+-	IMX_SC_C_LINESTATE = 16,
+-	IMX_SC_C_PCIE_G_RST = 17,
+-	IMX_SC_C_PCIE_BUTTON_RST = 18,
+-	IMX_SC_C_PCIE_PERST = 19,
+-	IMX_SC_C_PHY_RESET = 20,
+-	IMX_SC_C_PXL_LINK_RATE_CORRECTION = 21,
+-	IMX_SC_C_PANIC = 22,
+-	IMX_SC_C_PRIORITY_GROUP = 23,
+-	IMX_SC_C_TXCLK = 24,
+-	IMX_SC_C_CLKDIV = 25,
+-	IMX_SC_C_DISABLE_50 = 26,
+-	IMX_SC_C_DISABLE_125 = 27,
+-	IMX_SC_C_SEL_125 = 28,
+-	IMX_SC_C_MODE = 29,
+-	IMX_SC_C_SYNC_CTRL0 = 30,
+-	IMX_SC_C_KACHUNK_CNT = 31,
+-	IMX_SC_C_KACHUNK_SEL = 32,
+-	IMX_SC_C_SYNC_CTRL1 = 33,
+-	IMX_SC_C_DPI_RESET = 34,
+-	IMX_SC_C_MIPI_RESET = 35,
+-	IMX_SC_C_DUAL_MODE = 36,
+-	IMX_SC_C_VOLTAGE = 37,
+-	IMX_SC_C_PXL_LINK_SEL = 38,
+-	IMX_SC_C_OFS_SEL = 39,
+-	IMX_SC_C_OFS_AUDIO = 40,
+-	IMX_SC_C_OFS_PERIPH = 41,
+-	IMX_SC_C_OFS_IRQ = 42,
+-	IMX_SC_C_RST0 = 43,
+-	IMX_SC_C_RST1 = 44,
+-	IMX_SC_C_SEL0 = 45,
+-	IMX_SC_C_LAST
+-};
+-
+-#endif /* _SC_TYPES_H */
+-- 
+2.7.4
 
 
 _______________________________________________
