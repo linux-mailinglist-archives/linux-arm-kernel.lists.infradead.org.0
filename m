@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 762DF1B58C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:04:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 212C11B58C9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:07:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bLheCDgpF/TvpghcSlZZ7Q/3hVK5F/AshsuMjcxMMA4=; b=DJkUPSen4jZ9pg
-	mPiccjPjxAbtajMH3XPXugkbty9XDCGbhXyVZ8u2TilPzKfhZVAy2rNLbu3hm9pANYAp5adUiuNKS
-	JfudETJ2WUCI1oW1wLwpg7XSwPBAlKqvsB4aVPsJCtFxKRk6fSTWr5g01FTVWw02Z7WsLMD82bPmf
-	0c4os2DFFjXBMuf+nPZDZorGURnuYYp+CRsj72FF7G8vqtq7z0pWAQZpaq5VTrLD1KMGRnpsa97m/
-	DozkJW3oObACi890igl4UaN4+VA/aGQcAFlXT7ws9yEBTWQ/J0BqQWoQP+h95vRQeUXoYBLCmJUMm
-	OavpHCuznVzxkRJTp30w==;
+	List-Owner; bh=3G/duUFltPRQH6gzlWEixXtvr+87FEM6k91yGhG4cMo=; b=AcijgHdcy4DX4W
+	81oMNe8kyJ/Me59RfTdEEZOhj1DsMDIpD6ZcnTBFarDpgRldBdMqdVUCwdfbUMKovTqDMef8zy3mC
+	Wm5Ln2fD0HnnaIj3qG/l0OQ6ExzaUlAW8l03ufQ1MrjwIo6hfG11+SsW8Ds0weecmdg8qKJpTkla0
+	VaUo/9SoTEwb+zZ90uy6CkbE5k4YbwDzPUXH1vBRquGANOC35oQKL6UvAdKSd+P7WT0FYW+bPdkaz
+	9N3gj8QZeD9XsIDIQP/cslGqNHgOSUUgPhz9iM+OqesuW7CKEwOgNUHO9o+/gbgwJcg9di4Vvrj4R
+	Qbc+qvXoZ2W/jT1BESuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRYiu-0003uU-01; Thu, 23 Apr 2020 10:04:48 +0000
-Received: from mail-eopbgr150080.outbound.protection.outlook.com
- ([40.107.15.80] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jRYl8-00078x-9t; Thu, 23 Apr 2020 10:07:06 +0000
+Received: from mail-eopbgr50053.outbound.protection.outlook.com ([40.107.5.53]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRYii-0003sV-P6
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:04:38 +0000
+ id 1jRYkz-00078B-NZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:06:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=g5PTAGdaWHpDhAY/j/i0mhI+WqvcUrY4SeobfTwUQMw4QNQ2cgCzP8+Et4HURTNvef8DonJEYFtwen59h0f5FyeRhQ+Yym1cZ9OcpE1WMBj/B2Knae/DqRTfGjogy5HkB2zP5eXd3ux6I37/S/2rsElwZJS2xPO5nbfxtpBor9xrtlfTiJAbB6DCNWBI43AxrGEp9j/dpmQmJzeLyYMXTVwUXNGFpvfmos2uZzH/lcF3ZDUVnS/9vNWMpgJtIvQQTqsW5Zso6wzx/c883Ul211/hWt1Agw/j4azium46wffWoA/J9HAojw0LgnFfVwYMdm785dUHa1CjwJpMOzBAlA==
+ b=QLeslSegu44/YblVoKZtzw5ZGbQxvGGHe2pbOJNk9ld2CDgNc0oBCXU0lCPgwSkEzf74ck0xJcOTbDZC15i+G6+2dk0Nl7e5hlhBAOu6gDrcaooLmTcWXrHWf2xpWvEFuKKcs6N9I8YNAJ4oXtMvJR5bQz2B9KdFFdIU27WRrG8EIG6qfm6NFoOyikgYWCpLOKvBuFLkrPiQ5Ms1/Zz4cW0NEYmzUcMgeZyJny95ziLWjQtSAPCMnFlVRSo57xZYDnbz0qCHR822ATTRJ9trh0LAynfosltGOZkBecpgqafZb8Gfw62ST31Kg11VAUYCK4dbqg40S5efQ+uC3AG1eg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FSwV2Ap9HlsZ1NkPdvnNFWFdQ1+ohpxWu3UM03Gfg1s=;
- b=cuyimntaPO62xOn9xZeb+ROlfucr32Mr6cM9kglitw+TcuwZRgo6Y6LPdD2yWe86RcSqnsyHrPdwwilH6oUr2+OP6sDAq+KlRwJhVXtzZ2Sxvg9niLKtXonkD0jpP0FhV72KDsCX5SNFuco4upf4pYJ4RkPgv1xK/MQKkwu6iGDIvW/Ytk/nLJEqagu7N50g8enuncH2O5I2Xp+4Q/lEyQK57ef7pHlPLoB/OXr3ycLWuzZLG+yQ6LczxNRQp/usjk+IfoxeK4cI21cEZCfgyBbegDonST31l9ekIND8+6bBSbVeQyYWoj4HfrjxJgbyDa1Zga/UfYS44RG+bdEtUQ==
+ bh=YV91eEIUv3IMIWIWPv/favlOjnV7HE+UGLknJ1C/vN0=;
+ b=DumyeNSqAKDUINuKA1oGZudDW5BLHHxj86tPziNu2faZkwEz6cuzUneJBEzUIwbHEme19YKVOcWzXHcASGrxVo0s3irD9G+osQpX/JHAZuYBKB+w2JU4OvK9eKGONie7wJcskK200fo33ZnpDgv5iLjqpwyHnFEKjd9sA2fn3noRHVGf3hXJxRyzP5O2iIpvc1JwquDoepMYOp4KyNakwd8eUy97oVpARPaAPvhhmdJd9nRgF17xD78z1srDCIdd++J2O5CYBhhMCH6p2PJ3VGTilJWrJTZS8DHr17uDerGLSHNGd4C1cz6F2HAtrkmC8rniZenMqGmvvnTaGr24ng==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FSwV2Ap9HlsZ1NkPdvnNFWFdQ1+ohpxWu3UM03Gfg1s=;
- b=fU5u47uh+lSki/V8nCEqxjmduBGH2Y6y8s68kMAcK62H3ka6XICAtAvOvnrQpNa4OLLYZ0DVWb4Xz2CE7iDDGEGoUs0S5P+9AR3FCSrnM3n+f8UJf8QONDJyFHmCjtECdsbpB/tdtZIk2C21ZIat+xTr9PFbr7T36k39v2hA7Yw=
+ bh=YV91eEIUv3IMIWIWPv/favlOjnV7HE+UGLknJ1C/vN0=;
+ b=WhvjtDBzxm9ST/cDxg7BaVYiLT2ZYFJIjOmXJohDu0pT8izU57MNL/0kXkiVH4gZScRcVXe1NLsLLPTGwl8Hvp3d0zTd0+ZYaNmoCNVSDUtLIyT/WyISgEOtcBoQXR6cb1q6Rb3wKgUJVvMnC4DSg1Dw6T/y3WhFVePjQHuCzqg=
 Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB4853.eurprd04.prod.outlook.com (2603:10a6:20b:8::15) with
+ by AM6PR04MB4536.eurprd04.prod.outlook.com (2603:10a6:20b:16::29) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Thu, 23 Apr
- 2020 10:04:34 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.27; Thu, 23 Apr
+ 2020 10:06:54 +0000
 Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
  ([fe80::d9f7:5527:e89d:1ae3]) by AM6PR04MB4966.eurprd04.prod.outlook.com
  ([fe80::d9f7:5527:e89d:1ae3%7]) with mapi id 15.20.2921.032; Thu, 23 Apr 2020
- 10:04:33 +0000
+ 10:06:54 +0000
 From: Aisheng Dong <aisheng.dong@nxp.com>
 To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: RE: [PATCH 2/4] firmware: imx: add resource management api
-Thread-Topic: [PATCH 2/4] firmware: imx: add resource management api
-Thread-Index: AQHWGT38Z8g88FkqQ0uX8uLlRjqzhqiGeivA
-Date: Thu, 23 Apr 2020 10:04:33 +0000
-Message-ID: <AM6PR04MB49665455AE49EB1B500BEB4080D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH 3/4] firmware: imx: scu-pd: ignore power domain not owned
+Thread-Topic: [PATCH 3/4] firmware: imx: scu-pd: ignore power domain not owned
+Thread-Index: AQHWGT3/0FZZcpj/kkCj4hqyUbpRo6iGercQ
+Date: Thu, 23 Apr 2020 10:06:54 +0000
+Message-ID: <AM6PR04MB4966F8E07B105EDCAF3CB40680D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
 References: <1587625174-32668-1-git-send-email-peng.fan@nxp.com>
- <1587625174-32668-3-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1587625174-32668-3-git-send-email-peng.fan@nxp.com>
+ <1587625174-32668-4-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1587625174-32668-4-git-send-email-peng.fan@nxp.com>
 Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -67,46 +67,44 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7a80f697-9d4e-4252-c379-08d7e76db912
-x-ms-traffictypediagnostic: AM6PR04MB4853:|AM6PR04MB4853:
+x-ms-office365-filtering-correlation-id: 0e67d406-6f7b-40a0-7bd0-08d7e76e0cbb
+x-ms-traffictypediagnostic: AM6PR04MB4536:|AM6PR04MB4536:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB485364D16DD38F8386BE38A580D30@AM6PR04MB4853.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <AM6PR04MB45360DD11E0317426603B41E80D30@AM6PR04MB4536.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:949;
 x-forefront-prvs: 03827AF76E
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(376002)(136003)(39860400002)(396003)(366004)(346002)(55016002)(110136005)(33656002)(2906002)(8676002)(8936002)(81156014)(54906003)(9686003)(5660300002)(478600001)(4326008)(71200400001)(316002)(86362001)(26005)(6506007)(44832011)(66946007)(52536014)(7696005)(186003)(66446008)(64756008)(66556008)(66476007)(76116006);
+ SFS:(10009020)(4636009)(376002)(396003)(39860400002)(366004)(136003)(346002)(55016002)(5660300002)(316002)(66476007)(9686003)(54906003)(8676002)(6506007)(2906002)(81156014)(7696005)(110136005)(4744005)(66556008)(86362001)(66946007)(26005)(64756008)(478600001)(52536014)(66446008)(33656002)(44832011)(71200400001)(76116006)(186003)(4326008)(8936002);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Jr02sGcuR/LCSmG3Vz8eMALgQUjPyxLKP0qXhCOEr4POi3v7olUcujnVFpvUmJ9btLOS8XzmMPOy5Ia9jHF74hVc975w0ssR9de8yexOaTct+BP81a/Me/noQWyy78MXvjcw15uK9eyvnGa28Z3qckWQVLo3JK4KGcLBXf2VOXGzYJ62x46e1op4N9sV16vb1HhCF28iw1oq5ohosdIlfAVkTbKKDamj59NgBnPlqyemym7OFpKDs+ElHHuMvPwX7lciPD//ecVOS6xfxYL8R2aVuCycpns+v5zP9gR7VayOgTP5BmNuVDNI1YvPd5x5jiR9bMa2w3yEZqCH68rzpyt7oiuX4l6buOOTMFYOo4VbQ+dT1oqs4L3N4JPUBkRxcZqo/z8UhEBDua2+cxuzMqr9WcJgpj5J1n6uloAMzVbpt7unYXRPTh9XwFZLIOYG
-x-ms-exchange-antispam-messagedata: bghWANjP4F5DrDR2Pn91YFmx0OJ3Tbx0n9bWTGO91VK3aRiWV8u9qfrG+fEISeCteUuxkY9ZaoOfRtN67OCXL1NU3Ge3JD73e//RXflX0bIlo05SF30kx7zz+gCnvbKv6tMb/c0hKJvdzUcEnxwitw==
+x-microsoft-antispam-message-info: G4pHusYxNS1p5lOestia9VHhROuvekSpj86ebaCqStlJwNZSACoFMEvG52/cb5qeP/DPOam7Sx00pjUbCXvwj0mf+EFdGRjXn4nVLVxhm0LYYFL/R32OK1Rv5t+uodYbK2yfgqgpNDZcojeXITvWGthpFq/qkqI5tarTyh6H2Yzl92dkBPBcNeUTGVTacTSw+fHcDW9IFxxx6rsWT5SkOunrJk1jvLSLHKlYTtER1RHbuVwAv+QCW9ZsbB9xVHCxs7DaxVldbrr7zohRBRpUZZH/T/X7424k7WsC61ebr4PnY273d3zktyHWa8CWpDY2pN3XaqamIVK6pVTIFaUapn6eLRm0YgF5sek8oi6i6cAgGcpHMmeZUxNCl+//7xKL5u/IOnZkJXHaOo/xqMoQDG6Hl9jMdjNYvPPyx8o1CkG9rD47nzfTssT1A+bCfTBY
+x-ms-exchange-antispam-messagedata: XdeOp7IJSHXxDMVf/PVG0yW4dvSTJ6HPn3JvlOavueY5JlA0V0QNaeJBAOgurC/beYo2TR9q/x1VRKgLEjs8VSHKMhtA5o20Hh3S+YlRgfR1wgMm/FUfj+ESOrc0c9U/oSCzA/s6tSZ/ruE9xJB3OQ==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7a80f697-9d4e-4252-c379-08d7e76db912
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 10:04:33.7293 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0e67d406-6f7b-40a0-7bd0-08d7e76e0cbb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 10:06:54.1712 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rANNpRxQIv1GZvqwx8fuYl8HU9XhqMElw4LFU80jwmsNUMBzOtOELeZZMNMFe6k4OeApe+DvkpEele+QFZJIfA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4853
+X-MS-Exchange-CrossTenant-userprincipalname: TniJ5M7PjxUPA6TX+us8we4RiZjLu6WPQum/SbKnVsHLwS1M2iR7+8Ag8gG90tTSuHl++KbLX+dGCbBnysnITg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4536
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_030436_817738_D96788BB 
-X-CRM114-Status: GOOD (  22.29  )
+X-CRM114-CacheID: sfid-20200423_030657_770561_C2EE8365 
+X-CRM114-Status: GOOD (  12.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.80 listed in list.dnswl.org]
+ no trust [40.107.5.53 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.80 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -142,171 +140,43 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 > From: Peng Fan <peng.fan@nxp.com>
 > Sent: Thursday, April 23, 2020 3:00 PM
 > 
-> Add resource management API, when we have multiple partition running
-> together, resources not owned to current partition should not be used.
+> Should not register power domain that not owned by current partition.
 > 
 > Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  drivers/firmware/imx/scu-pd.c | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/drivers/firmware/imx/scu-pd.c b/drivers/firmware/imx/scu-pd.c
+> index d1b313fa7b96..7b43bd63cc1e 100644
+> --- a/drivers/firmware/imx/scu-pd.c
+> +++ b/drivers/firmware/imx/scu-pd.c
+> @@ -46,6 +46,7 @@
+> 
+>  #include <dt-bindings/firmware/imx/rsrc.h>  #include
+> <linux/firmware/imx/sci.h>
+> +#include <linux/firmware/imx/svc/rm.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> @@ -246,6 +247,9 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
+>  	struct imx_sc_pm_domain *sc_pd;
+>  	int ret;
+> 
+> +	if (!imx_sc_rm_is_resource_owned(pm_ipc_handle, pd_ranges->rsrc + idx))
+> +		return NULL;
+> +
 
-Right now I'm still not quite understand if we really need this.
-As current resource is bound to power domains, if it's not owned by one specific
-SW execution environment, power on will also fail.
-Can you clarify if any exceptions?
+Same question.
+See my comment on patch 2/4.
 
 Regards
 Aisheng
 
-> ---
->  drivers/firmware/imx/Makefile       |  2 +-
->  drivers/firmware/imx/rm.c           | 40 +++++++++++++++++++++
->  include/linux/firmware/imx/sci.h    |  1 +
->  include/linux/firmware/imx/svc/rm.h | 69
-> +++++++++++++++++++++++++++++++++++++
->  4 files changed, 111 insertions(+), 1 deletion(-)  create mode 100644
-> drivers/firmware/imx/rm.c  create mode 100644
-> include/linux/firmware/imx/svc/rm.h
-> 
-> diff --git a/drivers/firmware/imx/Makefile b/drivers/firmware/imx/Makefile
-> index 08bc9ddfbdfb..17ea3613e142 100644
-> --- a/drivers/firmware/imx/Makefile
-> +++ b/drivers/firmware/imx/Makefile
-> @@ -1,4 +1,4 @@
->  # SPDX-License-Identifier: GPL-2.0
->  obj-$(CONFIG_IMX_DSP)		+= imx-dsp.o
-> -obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o
-> +obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o rm.o
->  obj-$(CONFIG_IMX_SCU_PD)	+= scu-pd.o
-> diff --git a/drivers/firmware/imx/rm.c b/drivers/firmware/imx/rm.c new file
-> mode 100644 index 000000000000..7b0334de5486
-> --- /dev/null
-> +++ b/drivers/firmware/imx/rm.c
-> @@ -0,0 +1,40 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2020 NXP
-> + *
-> + * File containing client-side RPC functions for the RM service. These
-> + * function are ported to clients that communicate to the SC.
-> + */
-> +
-> +#include <linux/firmware/imx/svc/rm.h>
-> +
-> +struct imx_sc_msg_rm_rsrc_owned {
-> +	struct imx_sc_rpc_msg hdr;
-> +	u16 resource;
-> +} __packed __aligned(4);
-> +
-> +/*
-> + * This function check @resource is owned by current partition or not
-> + *
-> + * @param[in]     ipc         IPC handle
-> + * @param[in]     resource    resource the control is associated with
-> + *
-> + * @return Returns 0 for success and < 0 for errors.
-> + */
-> +bool imx_sc_rm_is_resource_owned(struct imx_sc_ipc *ipc, u16 resource)
-> +{
-> +	struct imx_sc_msg_rm_rsrc_owned msg;
-> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> +
-> +	hdr->ver = IMX_SC_RPC_VERSION;
-> +	hdr->svc = IMX_SC_RPC_SVC_RM;
-> +	hdr->func = IMX_SC_RM_FUNC_IS_RESOURCE_OWNED;
-> +	hdr->size = 2;
-> +
-> +	msg.resource = resource;
-> +
-> +	imx_scu_call_rpc(ipc, &msg, true);
-> +
-> +	return hdr->func;
-> +}
-> +EXPORT_SYMBOL(imx_sc_rm_is_resource_owned);
-> diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
-> index 17ba4e405129..b5c5a56f29be 100644
-> --- a/include/linux/firmware/imx/sci.h
-> +++ b/include/linux/firmware/imx/sci.h
-> @@ -15,6 +15,7 @@
-> 
->  #include <linux/firmware/imx/svc/misc.h>  #include
-> <linux/firmware/imx/svc/pm.h>
-> +#include <linux/firmware/imx/svc/rm.h>
-> 
->  int imx_scu_enable_general_irq_channel(struct device *dev);  int
-> imx_scu_irq_register_notifier(struct notifier_block *nb); diff --git
-> a/include/linux/firmware/imx/svc/rm.h b/include/linux/firmware/imx/svc/rm.h
-> new file mode 100644
-> index 000000000000..fc6ea62d9d0e
-> --- /dev/null
-> +++ b/include/linux/firmware/imx/svc/rm.h
-> @@ -0,0 +1,69 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ */
-> +/*
-> + * Copyright (C) 2016 Freescale Semiconductor, Inc.
-> + * Copyright 2017-2019 NXP
-> + *
-> + * Header file containing the public API for the System Controller (SC)
-> + * Power Management (PM) function. This includes functions for power
-> +state
-> + * control, clock control, reset control, and wake-up event control.
-> + *
-> + * RM_SVC (SVC) Resource Management Service
-> + *
-> + * Module for the Resource Management (RM) service.
-> + */
-> +
-> +#ifndef _SC_RM_API_H
-> +#define _SC_RM_API_H
-> +
-> +#include <linux/firmware/imx/sci.h>
-> +
-> +/*
-> + * This type is used to indicate RPC RM function calls.
-> + */
-> +enum imx_sc_rm_func {
-> +	IMX_SC_RM_FUNC_UNKNOWN = 0,
-> +	IMX_SC_RM_FUNC_PARTITION_ALLOC = 1,
-> +	IMX_SC_RM_FUNC_SET_CONFIDENTIAL = 31,
-> +	IMX_SC_RM_FUNC_PARTITION_FREE = 2,
-> +	IMX_SC_RM_FUNC_GET_DID = 26,
-> +	IMX_SC_RM_FUNC_PARTITION_STATIC = 3,
-> +	IMX_SC_RM_FUNC_PARTITION_LOCK = 4,
-> +	IMX_SC_RM_FUNC_GET_PARTITION = 5,
-> +	IMX_SC_RM_FUNC_SET_PARENT = 6,
-> +	IMX_SC_RM_FUNC_MOVE_ALL = 7,
-> +	IMX_SC_RM_FUNC_ASSIGN_RESOURCE = 8,
-> +	IMX_SC_RM_FUNC_SET_RESOURCE_MOVABLE = 9,
-> +	IMX_SC_RM_FUNC_SET_SUBSYS_RSRC_MOVABLE = 28,
-> +	IMX_SC_RM_FUNC_SET_MASTER_ATTRIBUTES = 10,
-> +	IMX_SC_RM_FUNC_SET_MASTER_SID = 11,
-> +	IMX_SC_RM_FUNC_SET_PERIPHERAL_PERMISSIONS = 12,
-> +	IMX_SC_RM_FUNC_IS_RESOURCE_OWNED = 13,
-> +	IMX_SC_RM_FUNC_GET_RESOURCE_OWNER = 33,
-> +	IMX_SC_RM_FUNC_IS_RESOURCE_MASTER = 14,
-> +	IMX_SC_RM_FUNC_IS_RESOURCE_PERIPHERAL = 15,
-> +	IMX_SC_RM_FUNC_GET_RESOURCE_INFO = 16,
-> +	IMX_SC_RM_FUNC_MEMREG_ALLOC = 17,
-> +	IMX_SC_RM_FUNC_MEMREG_SPLIT = 29,
-> +	IMX_SC_RM_FUNC_MEMREG_FRAG = 32,
-> +	IMX_SC_RM_FUNC_MEMREG_FREE = 18,
-> +	IMX_SC_RM_FUNC_FIND_MEMREG = 30,
-> +	IMX_SC_RM_FUNC_ASSIGN_MEMREG = 19,
-> +	IMX_SC_RM_FUNC_SET_MEMREG_PERMISSIONS = 20,
-> +	IMX_SC_RM_FUNC_IS_MEMREG_OWNED = 21,
-> +	IMX_SC_RM_FUNC_GET_MEMREG_INFO = 22,
-> +	IMX_SC_RM_FUNC_ASSIGN_PAD = 23,
-> +	IMX_SC_RM_FUNC_SET_PAD_MOVABLE = 24,
-> +	IMX_SC_RM_FUNC_IS_PAD_OWNED = 25,
-> +	IMX_SC_RM_FUNC_DUMP = 27,
-> +};
-> +
-> +#if IS_ENABLED(CONFIG_IMX_SCU)
-> +bool imx_sc_rm_is_resource_owned(struct imx_sc_ipc *ipc, u16 resource);
-> +#else static inline bool imx_sc_rm_is_resource_owned(struct imx_sc_ipc
-> +*ipc, u16 resource) {
-> +	return true;
-> +}
-> +#endif
-> +#endif
+>  	sc_pd = devm_kzalloc(dev, sizeof(*sc_pd), GFP_KERNEL);
+>  	if (!sc_pd)
+>  		return ERR_PTR(-ENOMEM);
 > --
 > 2.16.4
 
