@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91E261B5E4B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 16:50:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34B2E1B5E51
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 16:51:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OblZqNp1oUfO+T5Gk2KQ21irvwdqHQGm+hgOfnl3aSA=; b=lszaHk24iKxZrB
-	YBrMvp9fDmjfpqTvFhXXdHnievkFKaXwxEUs9j36qa3HAEw6apXUB/TziySYw6Jy4ROey2Ap/uwlt
-	kOJHs9lX7l3AeW9nR/Y7yUUqLKjivTwFJrK3q/Hj4CjZAXqO4nGO12JE7XiERy/NByvAnQqvZ4V/E
-	BVqbD3M3+I968ETSGZtT7Gj5YMgAflZBzPngyIHXJrxA7Q1i9lXUttyRCnsjiOQrh6OJKdBQ9Gqe3
-	1VUGN3gn6DSK1cdC3NIH8reLVXrSyT08tUWs8w7WEa7WL0JgJ3lXT/EbakK9KSH0sw9bfjZ7X2j0Q
-	OpWWHrhgC5WI3iRD6XVg==;
+	List-Owner; bh=3dMfeg4y4GwnvQB9BirxSUVcMPmt/sBkjSOIEEAofpA=; b=dZACyqRcy35BDX
+	PnUnjBbtFQFCvAeVh2JYW9ccGIzR3dY2b2k6t0pZ5CXm6QJUiYhylKbBsD3zISf9SIVKl3I0K3zqL
+	sW+OfgifXTGjSeESbbywgHc2A147vV6Sab96LQ7xYeYwbKXL/0i4j5xHUPJzex21pHH0AEgthODi5
+	70tUWPceZ9qGDaDwqil6X8eSgnfuCO94yAkh25ODbyD0gMO3fD/gboyi8Mhj/7UpGDlKIIKYfJVJm
+	5L22Pq+wxfAg4eZX2G+x4mSZ4873xE1V4gd00dToYb8txErndwSLt0IXCuA0lkNApgkbCL5vVqphi
+	htg8wDPIUt27XPKlWu6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRdAs-0005ol-9L; Thu, 23 Apr 2020 14:49:58 +0000
+	id 1jRdC5-0000AB-HE; Thu, 23 Apr 2020 14:51:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRdAh-0005o6-SW
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 14:49:49 +0000
+ id 1jRdBw-00009E-G4
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 14:51:05 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B2A202074F;
- Thu, 23 Apr 2020 14:49:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 602502074F;
+ Thu, 23 Apr 2020 14:51:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587653387;
- bh=Squ984zlMZptzhAKjHKpCQpxxgGfSb8mS/6BuC0Lfj8=;
+ s=default; t=1587653464;
+ bh=5S49h93wmsXbBI+Y0llES4okyh5R+bJPk/y1sqqW1QY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0s6jtrPZ8SpTqOIBa477jl1u+6TkbWr/QsSmToSI3XJ2lNs9zZG+S7lza8M15CPbG
- WNcvR3Cz8op83Ex4DPw0Y6yti7HStFX64AnBYwGS/7jmG8ukQ4KEVJuYyIXx27LS/q
- Ojf/ig9FiZjvdwoY9wvHzUrXhQh/+8l60BMO+H6c=
-Date: Thu, 23 Apr 2020 22:49:39 +0800
+ b=gEVE+0SHh/PiSIUhOEKJyoSjM1wFkcPS7wEWb5IeTvPp/U5RnP2mo+KLLH/XRTuib
+ usLre+kBywfYAEawA4ZZ+USGciyt9mrF+h7rwE8d9qTRBPbeW/cniS1DBRGvYc5WBP
+ 16DRO1oiaeQ+anqeHdpoO9WVV0ExxVeXqt67RkIw=
+Date: Thu, 23 Apr 2020 22:50:57 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx27-phytec-phycard-s-rdk: Fix the I2C1
- pinctrl entries
-Message-ID: <20200423144938.GF9391@dragon>
-References: <20200327133624.26160-1-festevam@gmail.com>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH] arm64: dts: imx8mn: Change SDMA1 ahb clock for imx8mn
+Message-ID: <20200423145056.GG9391@dragon>
+References: <20200328023353.156929-1-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200327133624.26160-1-festevam@gmail.com>
+In-Reply-To: <20200328023353.156929-1-aford173@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_074947_939903_85442043 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20200423_075104_555969_E317332F 
+X-CRM114-Status: UNSURE (   9.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,27 +77,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
- s.riedmueller@phytec.de, kernel@pengutronix.de, c.hemp@phytec.de
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Anson Huang <Anson.Huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ aford@beaconembedded.com, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 10:36:24AM -0300, Fabio Estevam wrote:
-> The I2C2 pins are already used and the following errors are seen:
+On Fri, Mar 27, 2020 at 09:33:53PM -0500, Adam Ford wrote:
+> Using SDMA1 with UART1 is causing a "Timeout waiting for CH0" error.
+> This patch changes to ahb clock from SDMA1_ROOT to AHB which fixes the
+> timeout error.
 > 
-> imx27-pinctrl 10015000.iomuxc: pin MX27_PAD_I2C2_SDA already requested by 10012000.i2c; cannot claim for 1001d000.i2c
-> imx27-pinctrl 10015000.iomuxc: pin-69 (1001d000.i2c) status -22
-> imx27-pinctrl 10015000.iomuxc: could not request pin 69 (MX27_PAD_I2C2_SDA) from group i2c2grp  on device 10015000.iomuxc
-> imx-i2c 1001d000.i2c: Error applying setting, reverse things back
-> imx-i2c: probe of 1001d000.i2c failed with error -22
+> Fixes: 6c3debcbae47 ("arm64: dts: freescale: Add i.MX8MN dtsi support")
 > 
-> Fix it by adding the correct I2C1 IOMUX entries for the pinctrl_i2c1 group.
-> 
-> Cc: <stable@vger.kernel.org> 
-> Fixes: 61664d0b432a ("ARM: dts: imx27 phyCARD-S pinctrl")
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Adam Ford <aford173@gmail.com>
 
 Applied, thanks.
 
