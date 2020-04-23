@@ -2,81 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A29551B5FD3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:46:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BEBE1B5FDA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:47:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XRuZno9gPblbYqiqQPbFu3H+KfdcHRycvHxQ2BtvK64=; b=KrxJreHNnd6caS
-	WAf9qhnefuY2yVZMxuWmAO8TRm7OO+g7YKa2iGbQZhziZUpOm+JtlEqtF22bFm/UdHBxmhAqdiFrC
-	+E7K0yqLs9suAv6ZGhrV0R98KFa6fS+7wNR7w43941r0eLaVHHNyGm0yiRQH1jBTJkKr+J7KPkyvd
-	efzeY3Au1Zm8gAIQw3QQ+8zg3zttrsNi0p5FLvazB8RFIxc9PMIJQuMxldfd5AOka0nyyGOuhjvuO
-	LhgTBFJrbKPmyE1V+NTW6/5Bm67Zb/C6fxSBu8z3pV6u+gPatLnEIzfKDzWvWsMUqvAtHn/4P3Gmy
-	5/EHScHfu2Rsz7dO2VHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1lHMeBVqrWxeju3xh6+q/lmDC9eclCG0XixSGjwU1WM=; b=OYPlDaH0gKl/I6xkUfawndzS8
+	3C6XMD80TZ6AhZ+JFhSvVc5vdbLne06UNtwXmiSTtXkYhuU50oz03tEpYbZ3YeaBsPoaryJcnmj6Z
+	VDqlJIl0+uOfTFwm0YwDJaisDPBoD3ikyHG4pK2UsEKU/fH6ZyGnBtlUhsbBjRumo0mlCVfTWGk0N
+	z2wi3rlJeHQeYaxxDeZxPi3uHBXn6FzpfTGRJtk8U3q78ExvxVvTLDkuBfNVsVVCkAMm6gPkkTe0C
+	Eab3ZlWnpg+l5MnV5stA9WOFJ19JbOHwSXQtmUBN63IcAlSYwrIwiTzMaCWsg5OPWxx5q0qdwP2Yj
+	Z3v8jMF8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRe3o-0004Sj-1Y; Thu, 23 Apr 2020 15:46:44 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::12])
+	id 1jRe4G-0004nz-05; Thu, 23 Apr 2020 15:47:12 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRe3W-0004O3-TF
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:46:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587656775;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=ybxxfVp12h/EJrmfUJdRJSGTmKH3W7lZYEApLFlERWY=;
- b=OuYyp3nQxnljd3w+hO5kVajE9K+f4fLEJyCh/FWLDvxPHZHbwhPhS2HJmhnt9Evsb5
- JB71HZNSHYW0lVqUyId3X4zcDucDdX/6JEsTB/XXdU94pa1gejJSAq8WiDmvgKkj1itF
- qS7gu2/xqgcop5COHG/eWwFLXmMi+T5hAadj8UVlH7g6MCYg3plIA3OJvtaZtMDGArij
- HQKVogBhhXGcUc4ciCivo0W01AnCAoeIGfgJnrtAZfbjx9IwtlNq6s/m2Atfg0UDDAU8
- oEP3Cttz5mRuScdlMorSxZEIwzA2nfBjcJolRJpqGMLwPyRqhe24t1XPiPS1NMGVnTsG
- aZig==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBp5hRw/qOxWRk4dCysOfl5tOw33QtdTbGcCRJGxnkq3ByzlXOnoXby"
-X-RZG-CLASS-ID: mo00
-Received: from [IPv6:2001:16b8:2692:1500:61a3:e550:2224:7950]
- by smtp.strato.de (RZmta 46.6.2 AUTH) with ESMTPSA id R0acebw3NFjv7lw
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Thu, 23 Apr 2020 17:45:57 +0200 (CEST)
-Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
- PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <43688597-4b99-8f4d-9ad5-548ddff07f52@baylibre.com>
-Date: Thu, 23 Apr 2020 17:45:55 +0200
-Message-Id: <71F2F964-32C7-41E6-8F1A-A73161EA1BB3@goldelico.com>
-References: <20200415130233.rgn7xrtwqicptke2@gilmour.lan>
- <C589D06E-435E-4316-AD0A-8498325039E3@goldelico.com>
- <10969e64-fe1f-d692-4984-4ba916bd2161@gmail.com>
- <20200420073842.nx4xb3zqvu23arkc@gilmour.lan>
- <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
- <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
- <20200421141543.GU37466@atomide.com>
- <D9D4D057-A73D-485F-898D-5C05E89C16B7@goldelico.com>
- <20200422065859.quy6ane5v7vsy5tf@gilmour.lan>
- <1AA57A0C-48E6-49BB-BB9A-2AAFFB371BCD@goldelico.com>
- <20200422151328.2oyqz7gqkbunmd6o@gilmour.lan>
- <07923B6C-4CCD-4B81-A98F-E19C43412A89@goldelico.com>
- <43688597-4b99-8f4d-9ad5-548ddff07f52@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-X-Mailer: Apple Mail (2.3124)
+ id 1jRe45-0004lm-JH
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:47:02 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id x4so6946821wmj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Apr 2020 08:47:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=gexsfzJrWQOn4i3Pq7SNyCJbao42w3cesdQKpJpl5r8=;
+ b=hrwao3YwPmfTB2ywD7Jch6LubuZqoTMsMePjZGu0bDegj53Uu4CilC25U98EjqH8Uq
+ f4+98L+bniHA0DwjGKutR6f3EqykCxgTLKmp1ve2FvOzJ9kr1JzFh4mXiabgJzCH46U4
+ 3tz+5skehkyqQO+ZJ6HeiT3axwKotBq2ezejAlsTj1mr+sqTobtdiVyfyBPxoQzJ4ly3
+ 2ZoVgQL/HUg4F6nPQDr8Ykv5IzZwZszZX9e2Rs4xLeaIn0+f7Itjk4kaPMR9VkpcBgWP
+ 9N4AUDqO1Qhrlao0siWFf5xP8hLgzDxiJR9vQ5NYMaFxctPukkacxm6YpvrWXHc7FdU0
+ zbKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=gexsfzJrWQOn4i3Pq7SNyCJbao42w3cesdQKpJpl5r8=;
+ b=C/lg6EMTdIIQLv9aqdreI8Lnec5f1tFWRIOlo1SdYtUaNdTMo6iTd51HP7qoa1wKv8
+ qXzy9zqK44hE+eGl9NFx+wdLQRncOK5ixh/Y3ZwQBxScXWE/ovptQJHTUaGnMLJxenLk
+ IYoJvo8d1f2NnJBaLg7Yo4Bnk98PMuSA/WoeJqpu4ZYP/rfBfd5TRa6UPobw6qG34iI8
+ JTjuVygtAJp/+FwYSTD3vvCn9ONxAng/pDE2oYJtu5XDMEJMyUDp01SjOXVYuAwKoM/H
+ zy0N9dY0Ultt4LYhfpYPDRSd3ecS/TkM4UVJ4WuyUZuqvil/e3d2o7WrIEyPluz8BrUT
+ FBwA==
+X-Gm-Message-State: AGi0PuaCewnzWRC5INAMSpYKZTc4hOfC/8axZ37DNpiT9idotG0TL7Pu
+ ArSVLWaplpt8LSQOlwHdH6w=
+X-Google-Smtp-Source: APiQypJAhweB5DTJ9gVc3XAzKWIz4J2EmUXYFAeqSON8LkVyBJRSY8a4TlgTT3EAPufV9JrRElWatw==
+X-Received: by 2002:a1c:2d02:: with SMTP id t2mr4819878wmt.98.1587656819721;
+ Thu, 23 Apr 2020 08:46:59 -0700 (PDT)
+Received: from [10.230.188.26] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id a24sm4072415wmb.24.2020.04.23.08.46.55
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 23 Apr 2020 08:46:57 -0700 (PDT)
+Subject: Re: [PATCH -next] tty: serial: bcm63xx: fix missing clk_put() in
+ bcm63xx_uart
+To: Zou Wei <zou_wei@huawei.com>, gregkh@linuxfoundation.org,
+ jslaby@suse.com, f.fainelli@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <4d5b3f7c-e516-2a4e-3594-1f8f705c16ab@gmail.com>
+Date: Thu, 23 Apr 2020 08:46:54 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_084627_543433_5A073082 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20200423_084701_654629_C50BD529 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:12 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32d listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,77 +105,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Tony Lindgren <tony@atomide.com>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Cercueil <paul@crapouillou.net>, linux-samsung-soc@vger.kernel.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-omap <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>,
- OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
 
-> Am 23.04.2020 um 17:00 schrieb Neil Armstrong <narmstrong@baylibre.com>:
->> One thing we can learn is that "core" seems to be a de facto standard 
->> for the core clock-name. An alternative "gpu" is used by nvidia,gk20a.txt.
+
+On 4/21/2020 5:31 AM, Zou Wei wrote:
+> This patch fixes below error reported by coccicheck
 > 
-> Usually IPs needs a few clocks:
-> - pclk or apb or reg: the clock clocking the "slave" bus to serve the registers
-> - axi or bus or ahb: the bus clocking the the "master" bus to get data from system memory
-> - core: the actual clock feeding the GPU logic
-
-And the sgx544 seems to have two such clocks.
-
-> Sometimes you have a single clock for slave and master bus.
+> drivers/tty/serial/bcm63xx_uart.c:848:2-8: ERROR: missing clk_put;
+> clk_get on line 842 and execution via conditional on line 846
 > 
-> But you can also have separate clocks for shader cores, .. this depends on the IP and it's architecture.
-> The IP can also have memories with separate clocks, etc...
+> Fixes: ab4382d27412 ("tty: move drivers/serial/ to drivers/tty/serial/")
 
-Indeed.
+The driver was doing that prior to being moved, and since this is an 
+error path, I am not sure the Fixes tag is really warranted.
 
-> But all these clocks can be source by an unique clock on a SoC, but different on another
-> SoC, this is why it's important to list them all, even optional.
-> 
-> You'll certainly have at least a reset signal, and a power domain, these should exist and be optional.
-
-Well, they exist only as hints in block diagrams of some SoC data sheets
-(so we do not know if they represent the imagination definitions) and the
-current driver code doesn't make use of it. Still the gpu core works.
-
-So I do not see any urgent need to add a complete list to the bindings now.
-
-Unless some special SoC integration makes use of them. Then it is IMHO easier
-to extend the bindings by a follow-up patch than now thinking about all
-potential options and bloating the bindings with things we (the open source
-community) doesn't and can't know.
-
-My goal is to keep the bindings as minimalistic as possible. And reset lines
-and power domains are (at least for those we have in the works) not needed
-to make working systems.
-
-Therefore, for clocks I also would start with a minimalistic approach for
-a single optional GPU core clock and leave out reset and power completely.
-
-BR and thanks,
-Nikolaus
-
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
