@@ -2,74 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C8061B6187
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 19:03:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0717B1B61B6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 19:15:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YwUwrZ8Ax+GcoNBxzHMbE0rwRDYx888a7MpSwzWMEP0=; b=d0qlgxoY46q0t8
-	Ii4fHfjm4R4PlJfjs9ahuPTBQRjod1TUVBPLSH9x67abNjd3iV1UZUr7PahTWVuwZKTIFLnOkUMfY
-	66UM3SISRbklqpWmxzNVgaxe1Woy5UGrPHL5iZsBkkpp/7dJSdkj2zAJ6PqCN85se+9taDHJYW8LE
-	MyYZQLgJwjzVxBxLx3Lgg8yMK8EJuedEqg6ucjpT1lSSQi9P5vuVCKaALg6S/05S5Bgm9NV5wmWdW
-	cZ0GsyRmdOZ98Bw6CJTKWdnmh1fnNBPtazTE+QSTps4Kjf503utjfk9C3ZTC8IckvgoE2mqhObdxH
-	0fY8vZTJSgKA+TgqnKzw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RmEFBNfZeEjJHEwbl0ZjA1Ev/40UbWtppcFFwY2A4dI=; b=qcVvbsZg2ztP7P
+	P+x8ZDWoSxmZ47aoSxMTv9+k3IZsSMcWaiYS2q8/STOpOCEtit0Rue9YGcWpSumQQ9KyZKBrY/FRT
+	SDNdn1vpEX61rk281s/wxNvRlxQ7MC7CrOjvxbxsEH0kVQuRAhsm2RjDd/+64ccYQqUzgE1H5WqHG
+	txxGYYpfzpBaWQ00C0Gy0JRfgvPcQ76tNHbAu9jaID3Bxe2mQyerREmgiZEetE5beQGFaSG5dPVdC
+	ZyV3vFGE+yecUHVMbyqc8LQtoO6UjAUIVKnRbN3ScJojUvMnRIQJMRI6hsbhDGTUKiEBHHzPPZpeX
+	oUqlmarucDsK5jo6w6Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRfFe-0001hg-Ex; Thu, 23 Apr 2020 17:03:02 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jRfRx-000340-3q; Thu, 23 Apr 2020 17:15:45 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRfFO-00013H-5a
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 17:02:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SLXXj8i9vi69xcCnNJQ1dfaFIQxrJ+YqvKu0gtVCAnQ=; b=eIMON1LeXDi2bpKRQUdKsX28Z
- sXPQjqYmJL/INAPNPDWJ4OIROoVRHub4XPPLyxOZuUC4I/Mnnd47yBIFp6nNG0mV5RU1mQMsN1zkD
- XnxVvCum5qsMvAaSVZRvkbW0axQPcB9pZwGUYqZvoXu2gJ79TG3nBD/z4OSn2VcnsI2GKeaUHNY5S
- XAphacigPIzIdUnQ9qogMpqRidDg0CVK0OXl/EADqiw7LoC1tnKzv6j+OGlYMwDH2i2bQLV+Zo9it
- 76DOJYBybNHwPa61WElYI+/4ru2Xda0r42mktZuW8/RmmnXfGIHweL5TzvVUbtCKVzccnK7hM3AvE
- MOWx03tQQ==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:54318)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jRfCr-0007au-Mo; Thu, 23 Apr 2020 18:00:09 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jRfCl-0000rV-JN; Thu, 23 Apr 2020 18:00:03 +0100
-Date: Thu, 23 Apr 2020 18:00:03 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Matteo Croce <mcroce@redhat.com>
-Subject: Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts to handle
- RSS tables
-Message-ID: <20200423170003.GT25745@shell.armlinux.org.uk>
-References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
- <20190524100554.8606-4-maxime.chevallier@bootlin.com>
- <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
+ id 1jRfRl-00032S-OS
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 17:15:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u127so7391753wmg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Apr 2020 10:15:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Fsz6yPmVodHIAGKUEkvYHzu/ExufdaJ3lV6EfBbjr/M=;
+ b=LS7t6pzEmK1UKWLE+ifdRC16uMDswKS7v+2IPC/TfosO7rAl+qZLKWbjscW8fVMt3v
+ 1ma+2i4218WDyTaV/Nz10zY4H9KwN0u+ZSJbgg+iuqYMRImmBIYJNaO+GRPQWuMQ7nEn
+ EIONqnAxXg1Zp2PZZeAdugJxMad9J6bW2gsLRpfAY8WjqySQzErIR3g+hDarox9ZuWqR
+ GnpnaUL95V7dBN0xZRAeWhHOTZeyLhRGhJzZ9oKaENvK3QAePz+ztUbyLI1n2HD+wHEF
+ e6D2NNwm3CcIPwegKXhdh8ViXwMsS8Mgh0dzwsOBoq4UFCZZn+OwOqe34GGtYiZxNz0D
+ Dn2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Fsz6yPmVodHIAGKUEkvYHzu/ExufdaJ3lV6EfBbjr/M=;
+ b=UBrgx7ctZk0ozhBdtlGD1GP8KjJi9uKHlMkbjhO+vj3T5KkAI7wQRJe7ra1y4jXXGy
+ RHy18chFkCqqoRUTuEQsyT2oqvmPa/2HaPfxNSb+t1JQyPMihXWheN+OW0HGs2f+6Lcn
+ CqNeoQL+WqkSuuiG1zJHJqMs4xI/rmuuxYz2G+JpOrZFPP7L8SoloRXoWG125jaCYxHC
+ JMGgcnsnWCBIM61wIaKq4cAeU7X599UdRtFc702yL+jruCh7H/q5y+T2aGLFyx4h190d
+ pTVkyI+cWroVi1ZJtbDy1RrjPuxb7fCoRWfW6znzigFNFP70VEJH3i4DeilWN3YQgmEX
+ pRNw==
+X-Gm-Message-State: AGi0Pub2dlni++baFUymrEEYYyPd4h8kiPkurT19MrJ078W+ZX74WEDD
+ VphYadVGbGK+jZCmf5y6BwAS1Q==
+X-Google-Smtp-Source: APiQypLpzfjeHcKORCtuutm1uyBf7sFOUFW7Mb8uOr8lGTYIICuH1CY1N6lSdxp/QVB17oX17RO+pA==
+X-Received: by 2002:a05:600c:2194:: with SMTP id
+ e20mr5154639wme.22.1587662130818; 
+ Thu, 23 Apr 2020 10:15:30 -0700 (PDT)
+Received: from [192.168.43.23] ([37.167.216.250])
+ by smtp.googlemail.com with ESMTPSA id a20sm4965935wra.26.2020.04.23.10.15.27
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 23 Apr 2020 10:15:30 -0700 (PDT)
+Subject: Re: [PATCH v6 04/10] PM / EM: add support for other devices than CPUs
+ in Energy Model
+To: Lukasz Luba <lukasz.luba@arm.com>
+References: <20200410084210.24932-1-lukasz.luba@arm.com>
+ <20200410084210.24932-5-lukasz.luba@arm.com>
+ <20200423151250.GB65632@linaro.org>
+ <ff1c8cc5-f64d-6156-7d30-97b8426c6f99@arm.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <ddf89887-4fa5-f2ca-d62a-9158f7d29db2@linaro.org>
+Date: Thu, 23 Apr 2020 19:15:26 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <ff1c8cc5-f64d-6156-7d30-97b8426c6f99@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_100246_227878_354FBB15 
-X-CRM114-Status: GOOD (  20.75  )
+X-CRM114-CacheID: sfid-20200423_101533_808709_27A00715 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -89,93 +104,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>, gregory.clement@bootlin.com,
- LKML <linux-kernel@vger.kernel.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, miquel.raynal@bootlin.com,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- "David S . Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, mka@chromium.org,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, agross@kernel.org, b.zolnierkie@samsung.com,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
+ linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
+ daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie,
+ tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
+ rdunlap@infradead.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 14, 2020 at 01:43:02AM +0200, Matteo Croce wrote:
-> On Tue, Apr 14, 2020 at 1:21 AM Maxime Chevallier
-> <maxime.chevallier@bootlin.com> wrote:
-> >
-> > The PPv2 controller has 8 RSS tables that are shared across all ports on
-> > a given PPv2 instance. The previous implementation allocated one table
-> > per port, leaving others unused.
-> >
-> > By using RSS contexts, we can make use of multiple RSS tables per
-> > port, one being the default table (always id 0), the other ones being
-> > used as destinations for flow steering, in the same way as rx rings.
-> >
-> > This commit introduces RSS contexts management in the PPv2 driver. We
-> > always reserve one table per port, allocated when the port is probed.
-> >
-> > The global table list is stored in the struct mvpp2, as it's a global
-> > resource. Each port then maintains a list of indices in that global
-> > table, that way each port can have it's own numbering scheme starting
-> > from 0.
-> >
-> > One limitation that seems unavoidable is that the hashing parameters are
-> > shared across all RSS contexts for a given port. Hashing parameters for
-> > ctx 0 will be applied to all contexts.
-> >
-> > Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
-> 
-> Hi all,
-> 
-> I noticed that enabling rxhash blocks the RX on my Macchiatobin. It
-> works fine with the 10G ports (the RX rate goes 4x up) but it
-> completely kills the gigabit interface.
-> 
-> # 10G port
-> root@macchiatobin:~# iperf3 -c 192.168.0.2
-> Connecting to host 192.168.0.2, port 5201
-> [  5] local 192.168.0.1 port 42394 connected to 192.168.0.2 port 5201
-> [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> [  5]   0.00-1.00   sec   941 MBytes  7.89 Gbits/sec  4030    250 KBytes
-> [  5]   1.00-2.00   sec   933 MBytes  7.82 Gbits/sec  4393    240 KBytes
-> root@macchiatobin:~# ethtool -K eth0 rxhash on
-> root@macchiatobin:~# iperf3 -c 192.168.0.2
-> Connecting to host 192.168.0.2, port 5201
-> [  5] local 192.168.0.1 port 42398 connected to 192.168.0.2 port 5201
-> [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> [  5]   0.00-1.00   sec   860 MBytes  7.21 Gbits/sec  428    410 KBytes
-> [  5]   1.00-2.00   sec   859 MBytes  7.20 Gbits/sec  185    563 KBytes
-> 
-> # gigabit port
-> root@macchiatobin:~# iperf3 -c turbo
-> Connecting to host turbo, port 5201
-> [  5] local 192.168.85.42 port 45144 connected to 192.168.85.6 port 5201
-> [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> [  5]   0.00-1.00   sec   113 MBytes   948 Mbits/sec    0    407 KBytes
-> [  5]   1.00-2.00   sec   112 MBytes   942 Mbits/sec    0    428 KBytes
-> root@macchiatobin:~# ethtool -K eth2 rxhash on
-> root@macchiatobin:~# iperf3 -c turbo
-> iperf3: error - unable to connect to server: Resource temporarily unavailable
-> 
-> I've bisected and it seems that this commit causes the issue. I tried
-> to revert it on nex-next as a second test, but the code has changed a
-> lot much since, generating too much conflicts.
-> Can you have a look into this?
-
-This behaviour on eth2 is confirmed here on v5.6.  Turning on rxhash
-appears to prevent eth2 working.
-
-Maxime, please look into this regression, thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjMvMDQvMjAyMCAxODo1NywgTHVrYXN6IEx1YmEgd3JvdGU6Cj4gCj4gCj4gT24gNC8yMy8y
+MCA0OjEyIFBNLCBEYW5pZWwgTGV6Y2FubyB3cm90ZToKPj4gT24gRnJpLCBBcHIgMTAsIDIwMjAg
+YXQgMDk6NDI6MDRBTSArMDEwMCwgTHVrYXN6IEx1YmEgd3JvdGU6Cj4+PiBBZGQgc3VwcG9ydCBm
+b3Igb3RoZXIgZGV2aWNlcyB0aGF0IENQVXMuIFRoZSByZWdpc3RyYXRpb24gZnVuY3Rpb24KPj4+
+IGRvZXMgbm90IHJlcXVpcmUgYSB2YWxpZCBjcHVtYXNrIHBvaW50ZXIgYW5kIGlzIHJlYWR5IHRv
+IGhhbmRsZSBuZXcKPj4+IGRldmljZXMuIFNvbWUgb2YgdGhlIGludGVybmFsIHN0cnVjdHVyZXMg
+aGFzIGJlZW4gcmVvcmdhbml6ZWQgaW4KPj4+IG9yZGVyIHRvCj4+PiBrZWVwIGNvbnNpc3RlbnQg
+dmlldyAobGlrZSByZW1vdmluZyBwZXJfY3B1IHBkIHBvaW50ZXJzKS4gVG8gdHJhY2sgdXNhZ2UK
+Pj4+IG9mIHRoZSBFbmVyZ3kgTW9kZWwgc3RydWN0dXJlcywgdGhleSBhcmUgcHJvdGVjdGVkIHdp
+dGgga3JlZi4KPj4KPj4gV2h5IG5vdCBhZGQgdGhlIGVuZXJneSBtb2RlbCBzdHJ1Y3R1cmUgaW4g
+dGhlIHN0cnVjdCBkZXZpY2UgZGlyZWN0bHk/Cj4gCj4gRG8geW91IG1lYW4gdGhpcyBzdHJ1Y3R1
+cmU/Cj4gaHR0cHM6Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvbGF0ZXN0L3NvdXJjZS9pbmNs
+dWRlL2xpbnV4L2RldmljZS5oI0w1MzcKPiAKPiBhbmQgdG8gcHV0IHNvbWV0aGluZyBsaWtlOgo+
+IHN0cnVjdCBkZXZpY2Ugewo+IC4uLgo+IMKgwqDCoMKgc3RydWN0IGRldl9wbV9kb21haW7CoMKg
+wqAgKnBtX2RvbWFpbjsKPiAjaWZkZWYgQ09ORklHX0VORVJHWV9NT0RFTAo+IMKgwqDCoMKgc3Ry
+dWN0IGVtX3BlcmZfZG9tYWluwqDCoMKgICplbV9wZDsKPiAjZW5kaWYKPiAuLi4KPiB9OwoKWWVz
+LCBleGFjdGx5LgoKCgotLSAKPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSC
+IE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRw
+Oi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0
+dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xp
+bmFyby1ibG9nLz4gQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
