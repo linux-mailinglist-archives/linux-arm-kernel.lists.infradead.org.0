@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CEB61B516A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 02:39:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AA881B5168
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 02:39:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HYu24uRMR79n/z38ib23m9eRdcKEw8acZ02mNtaJDyY=; b=eFs/nztO5WstQz
-	k/r+V6x3uMeZdNzYXp2ePxye65XaSYeUMfNMw2/u+b0tUNlJrXuMN25zK29E/mcPQNYm1jGJe9V7H
-	lADC5NLvQn9Sg7fmol6j/HTmYF6tqBjzL6fr1CziHjNvlnMBDP60Wz31ThjqiAbjjUVY2l9EATVgd
-	yzlzxaKpat9lZNiNo0K2nvcZIpaEBOLZmHM3PzFXFkIHpLmE9RLoSqBgtgpyThinmM1HKlMP9+rz4
-	36eKAOVlVejURFLVzCPctgqnRIWJPmfajtK/yXzGQvIbw9c+HG2HJpIZdxec0S3Hl0pHGOnL4NAho
-	bUzOffxX+u0gfAbJDHpA==;
+	List-Owner; bh=igYv2df19ldvHYone7GD4OxjYJD1MPBV3T6DmG2jQHc=; b=OQX9LT77tZ54VK
+	UOKua3oEM6IvwW7pl5jJO0yadCQCtTu/FPIDPOv5o+VEzWwLmnbVnBa7+xyacwyUHv8ro+/H3G0VY
+	G1by2qsxVbIL96I3X8//+97Ex+k6CL47QRXV0RhqbkcXoDLsP2Rd98f2HgMpQF2gmGCzcGmjAz+VO
+	QgbeXavCB3FjU78/eLhNE95FJ2mhwUwOimoIEYAj6u+ZGwo7sVoPxgBbn+szqfJhaqy/sAxngk/tq
+	Lr0uAqNHT0JtZ1x7YW/YgghjaAyRs6C4r5kUVTz0rArQ87p4ssBHy948vYSlSmr6fZPEwIsZFbc+o
+	/iHkZiwPrOKR0FLHjofQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRPtZ-0000eD-EC; Thu, 23 Apr 2020 00:39:13 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jRPtK-0000PL-6l; Thu, 23 Apr 2020 00:38:58 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRPsa-0008Kg-Dz
+ id 1jRPsb-0008Ld-Ac
  for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 00:38:15 +0000
-Received: by mail-pf1-x441.google.com with SMTP id v63so2021440pfb.10
+Received: by mail-pl1-x644.google.com with SMTP id n24so1626217plp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 17:38:11 -0700 (PDT)
+ Wed, 22 Apr 2020 17:38:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=MGHZwN0LAtzrhReD8egvVxlgtUx+R63R7VOmTzodM+8=;
- b=efBg576eZ3LUkjyh6JULzCvgRV6yCqC5mm4AgOB3N/VfTEEiHJimPGf8zeU1nm5wxM
- ZA1vW/k9iqnx1GqD8FhQtgyeAEi2QhPzNlYobt2OVT2wYNL9VVLoWtwUNe1GhUuB4mlA
- EJplX/hsPmC6c0fY009d2HbeAioIMxQPcTURTtSHZbrDjTVJ4Ta1TcG0xurKjpJvblsf
- bPg/4P1FV+cJEGCMWKzQ37qXDVdi/72wEoLihvqgKZYNgx9g2Ml6vIug8aO5pH8YYzEn
- ZYvSTCOXf+122Z+97YBazi0uVR4s/lMlcVW45nhgdgWZAG8sOVYZhXv9AxPp4WVqu+8t
- boVg==
+ bh=Mr8P1LPs1Vjaksgvzxuq3twAg9ab3cN0vSb3pRYBwK8=;
+ b=cg/TNIrILEIS1kusnDCvuL2dKp0dhvJxkUjtKRVYGfAXnktmVuItclINzic5egdxPi
+ qpUcOoItZ00rFBCxVvYNt6ZnlnDryY815JUeGVD+4fSvl2EBJF7E3eS7fa75yo2KGXJ+
+ bXvsPF/gDxbCUI9T5Q0/tc4FgNBhbXV+4EeRG/RhHjN9jMWzuSeuQSGv6mw3mWBZHtKF
+ ncqUpE+CoslVdFHP7cukhfZUS2RVbEjq8JpXzBFJI3mzQ8o4UX4OGLtTcO/WwIGnPqTV
+ tYwnQt4gceY7rIAuvBaOPqis8kgKCIMASqew6c3oKsaCcLyQTFp+eVlxSSIRpmQwxmZS
+ hPJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=MGHZwN0LAtzrhReD8egvVxlgtUx+R63R7VOmTzodM+8=;
- b=LX3d7SCRPqIboKqvtz/1XIFU2Q2BamPwyiL9nrfSHp2vrsAGUgfHRgOAT2DSSfPuJM
- vZz3e31o0dEV8T/fTVuuB6qLLUlJZDmleKGTb7RAYv81z/D7KiquTFnfpcWc2yrXWHeG
- fk2O9KX3Ku5MzMOz3Xs9mbKlWjw3MHyKFh5loFAbe35QNBz6B6vekhduNnMWnqbBrSxR
- 10duosMqpm7aA/fe2MeWsLWz5EOo0xp7TRNhF0pEU769edPZbdW8pqX4Njxhuz4F+uPz
- iEJevP8OMHvDtljJEOiKf/cUf0cF3NclBAwwxqEvwq5kdEKqriVjdWjVL3YFIdBi8aJU
- S1PQ==
-X-Gm-Message-State: AGi0PuYETACLUSsiJf1wlhzHfedkIYcTLFzjfEEftaFQtruWtDhGeRzo
- 6XV0venZffvYYeGyRDkkV7xbYA==
-X-Google-Smtp-Source: APiQypLw7baTFhOiMTOokbF+ufVlwrh986MOwTUTryb0kDUEMg0FFP2DHqyjonVdeqr6H3GxSDFX8w==
-X-Received: by 2002:a62:6585:: with SMTP id z127mr1191227pfb.217.1587602291258; 
- Wed, 22 Apr 2020 17:38:11 -0700 (PDT)
+ bh=Mr8P1LPs1Vjaksgvzxuq3twAg9ab3cN0vSb3pRYBwK8=;
+ b=UmPppSnFSXMLPe9P/acnWbKOTa7PAdq0a6+kCUl/2S9FNya0X67G/TeK1QzsCMEhE1
+ pj3HEX5GfDO9tRKaF7h8x8s3WVNZLCuLe1rhwLB+QmbeNmKqUDAZw/UWUj+CXi5oICcu
+ bx3QaZlZlUfqrhgsha/xOvAJckEqnV0CY9sW5MemP3zMkhAxpq6bQ0X0Ye487oisrnGc
+ N3z5DG7NnNAiaiD6DPGvCllIc/xwyy+MPRTqzsqjOnSmonBa8eRLnSar6iclfwsJOyZB
+ 2eNAYdA4nizlk/QNpT1/vkGiNDs5LrGFFFffcfd3YGTxYKbLWxRBraaytxHxtEQymAmh
+ bEJA==
+X-Gm-Message-State: AGi0PubrmpSNHBrbQYLLha/i7F/KBuWID4wXzbcFOLDzJ370uTsgCSu9
+ GUfxOh7QqvfaFfMQ79s2VEINZA==
+X-Google-Smtp-Source: APiQypJkHjUHw/lHehFz0pmGelhKZYWp3m+WQonWrCq6yl5HRJZCQmYMsvTVSLGsxacPZXkFvJGZDg==
+X-Received: by 2002:a17:90a:17ed:: with SMTP id
+ q100mr1524109pja.80.1587602292780; 
+ Wed, 22 Apr 2020 17:38:12 -0700 (PDT)
 Received: from localhost.localdomain
  (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 6sm432225pgz.0.2020.04.22.17.38.09
+ by smtp.gmail.com with ESMTPSA id 6sm432225pgz.0.2020.04.22.17.38.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Apr 2020 17:38:10 -0700 (PDT)
+ Wed, 22 Apr 2020 17:38:12 -0700 (PDT)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Ohad Ben-Cohen <ohad@wizery.com>
-Subject: [PATCH 3/4] rpmsg: glink: Integrate glink_ssr in qcom_glink
-Date: Wed, 22 Apr 2020 17:37:35 -0700
-Message-Id: <20200423003736.2027371-4-bjorn.andersson@linaro.org>
+Subject: [PATCH 4/4] arm64: defconfig: Remove QCOM_GLINK_SSR
+Date: Wed, 22 Apr 2020 17:37:36 -0700
+Message-Id: <20200423003736.2027371-5-bjorn.andersson@linaro.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
 References: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_173812_477292_B1654AB0 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200422_173813_360073_191FD3D1 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,137 +110,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In all but the very special case of a system with _only_ glink_rpm,
-GLINK is dependent on glink_ssr, so move it to rpmsg and combine it with
-qcom_glink_native in the new qcom_glink kernel module.
+Remove the QCOM_GLINK_SSR option from the arm64 defconfig, as the module
+is assimilated by QCOM_GLINK - which is selected by other means.
 
 Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- drivers/rpmsg/Kconfig                                    | 6 +++---
- drivers/rpmsg/Makefile                                   | 3 ++-
- drivers/{soc/qcom/glink_ssr.c => rpmsg/qcom_glink_ssr.c} | 4 ----
- drivers/soc/qcom/Kconfig                                 | 9 ---------
- drivers/soc/qcom/Makefile                                | 1 -
- include/linux/rpmsg/qcom_glink.h                         | 7 +------
- 6 files changed, 6 insertions(+), 24 deletions(-)
- rename drivers/{soc/qcom/glink_ssr.c => rpmsg/qcom_glink_ssr.c} (97%)
+ arch/arm64/configs/defconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/rpmsg/Kconfig b/drivers/rpmsg/Kconfig
-index a9108ff563dc..f96716893c2a 100644
---- a/drivers/rpmsg/Kconfig
-+++ b/drivers/rpmsg/Kconfig
-@@ -24,13 +24,13 @@ config RPMSG_MTK_SCP
- 	  remote processors in MediaTek platforms.
- 	  This use IPI and IPC to communicate with remote processors.
- 
--config RPMSG_QCOM_GLINK_NATIVE
-+config RPMSG_QCOM_GLINK
- 	tristate
- 	select RPMSG
- 
- config RPMSG_QCOM_GLINK_RPM
- 	tristate "Qualcomm RPM Glink driver"
--	select RPMSG_QCOM_GLINK_NATIVE
-+	select RPMSG_QCOM_GLINK
- 	depends on HAS_IOMEM
- 	depends on MAILBOX
- 	help
-@@ -40,7 +40,7 @@ config RPMSG_QCOM_GLINK_RPM
- 
- config RPMSG_QCOM_GLINK_SMEM
- 	tristate "Qualcomm SMEM Glink driver"
--	select RPMSG_QCOM_GLINK_NATIVE
-+	select RPMSG_QCOM_GLINK
- 	depends on MAILBOX
- 	depends on QCOM_SMEM
- 	help
-diff --git a/drivers/rpmsg/Makefile b/drivers/rpmsg/Makefile
-index ae92a7fb08f6..ffe932ef6050 100644
---- a/drivers/rpmsg/Makefile
-+++ b/drivers/rpmsg/Makefile
-@@ -2,8 +2,9 @@
- obj-$(CONFIG_RPMSG)		+= rpmsg_core.o
- obj-$(CONFIG_RPMSG_CHAR)	+= rpmsg_char.o
- obj-$(CONFIG_RPMSG_MTK_SCP)	+= mtk_rpmsg.o
-+qcom_glink-objs			:= qcom_glink_native.o qcom_glink_ssr.o
-+obj-$(CONFIG_RPMSG_QCOM_GLINK) += qcom_glink.o
- obj-$(CONFIG_RPMSG_QCOM_GLINK_RPM) += qcom_glink_rpm.o
--obj-$(CONFIG_RPMSG_QCOM_GLINK_NATIVE) += qcom_glink_native.o
- obj-$(CONFIG_RPMSG_QCOM_GLINK_SMEM) += qcom_glink_smem.o
- obj-$(CONFIG_RPMSG_QCOM_SMD)	+= qcom_smd.o
- obj-$(CONFIG_RPMSG_VIRTIO)	+= virtio_rpmsg_bus.o
-diff --git a/drivers/soc/qcom/glink_ssr.c b/drivers/rpmsg/qcom_glink_ssr.c
-similarity index 97%
-rename from drivers/soc/qcom/glink_ssr.c
-rename to drivers/rpmsg/qcom_glink_ssr.c
-index 847d79c935f1..dcd1ce616974 100644
---- a/drivers/soc/qcom/glink_ssr.c
-+++ b/drivers/rpmsg/qcom_glink_ssr.c
-@@ -164,7 +164,3 @@ static struct rpmsg_driver qcom_glink_ssr_driver = {
- 	},
- };
- module_rpmsg_driver(qcom_glink_ssr_driver);
--
--MODULE_ALIAS("rpmsg:glink_ssr");
--MODULE_DESCRIPTION("Qualcomm GLINK SSR notifier");
--MODULE_LICENSE("GPL v2");
-diff --git a/drivers/soc/qcom/Kconfig b/drivers/soc/qcom/Kconfig
-index 19332ea40234..5140bd82f1be 100644
---- a/drivers/soc/qcom/Kconfig
-+++ b/drivers/soc/qcom/Kconfig
-@@ -35,15 +35,6 @@ config QCOM_GENI_SE
- 	  driver is also used to manage the common aspects of multiple Serial
- 	  Engines present in the QUP.
- 
--config QCOM_GLINK_SSR
--	tristate "Qualcomm Glink SSR driver"
--	depends on RPMSG
--	depends on QCOM_RPROC_COMMON
--	help
--	  Say y here to enable GLINK SSR support. The GLINK SSR driver
--	  implements the SSR protocol for notifying the remote processor about
--	  neighboring subsystems going up or down.
--
- config QCOM_GSBI
- 	tristate "QCOM General Serial Bus Interface"
- 	depends on ARCH_QCOM || COMPILE_TEST
-diff --git a/drivers/soc/qcom/Makefile b/drivers/soc/qcom/Makefile
-index 5d6b83dc58e8..e9cacc9ad401 100644
---- a/drivers/soc/qcom/Makefile
-+++ b/drivers/soc/qcom/Makefile
-@@ -3,7 +3,6 @@ CFLAGS_rpmh-rsc.o := -I$(src)
- obj-$(CONFIG_QCOM_AOSS_QMP) +=	qcom_aoss.o
- obj-$(CONFIG_QCOM_GENI_SE) +=	qcom-geni-se.o
- obj-$(CONFIG_QCOM_COMMAND_DB) += cmd-db.o
--obj-$(CONFIG_QCOM_GLINK_SSR) +=	glink_ssr.o
- obj-$(CONFIG_QCOM_GSBI)	+=	qcom_gsbi.o
- obj-$(CONFIG_QCOM_MDT_LOADER)	+= mdt_loader.o
- obj-$(CONFIG_QCOM_OCMEM)	+= ocmem.o
-diff --git a/include/linux/rpmsg/qcom_glink.h b/include/linux/rpmsg/qcom_glink.h
-index 09daa0acde2c..daded9fddf36 100644
---- a/include/linux/rpmsg/qcom_glink.h
-+++ b/include/linux/rpmsg/qcom_glink.h
-@@ -12,6 +12,7 @@ struct qcom_glink;
- struct qcom_glink *qcom_glink_smem_register(struct device *parent,
- 					    struct device_node *node);
- void qcom_glink_smem_unregister(struct qcom_glink *glink);
-+void qcom_glink_ssr_notify(const char *ssr_name);
- 
- #else
- 
-@@ -23,12 +24,6 @@ qcom_glink_smem_register(struct device *parent,
- }
- 
- static inline void qcom_glink_smem_unregister(struct qcom_glink *glink) {}
--
--#endif
--
--#if IS_ENABLED(CONFIG_RPMSG_QCOM_GLINK_SSR)
--void qcom_glink_ssr_notify(const char *ssr_name);
--#else
- static inline void qcom_glink_ssr_notify(const char *ssr_name) {}
- #endif
- 
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index f9eefb5940ca..f26a0b6ea0e8 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -838,7 +838,6 @@ CONFIG_FSL_MC_DPIO=y
+ CONFIG_IMX_SCU_SOC=y
+ CONFIG_QCOM_AOSS_QMP=y
+ CONFIG_QCOM_GENI_SE=y
+-CONFIG_QCOM_GLINK_SSR=m
+ CONFIG_QCOM_RMTFS_MEM=m
+ CONFIG_QCOM_RPMH=y
+ CONFIG_QCOM_RPMHPD=y
 -- 
 2.24.0
 
