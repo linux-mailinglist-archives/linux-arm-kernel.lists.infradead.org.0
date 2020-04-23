@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AA881B5168
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 02:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D99F1B5189
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 02:53:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=igYv2df19ldvHYone7GD4OxjYJD1MPBV3T6DmG2jQHc=; b=OQX9LT77tZ54VK
-	UOKua3oEM6IvwW7pl5jJO0yadCQCtTu/FPIDPOv5o+VEzWwLmnbVnBa7+xyacwyUHv8ro+/H3G0VY
-	G1by2qsxVbIL96I3X8//+97Ex+k6CL47QRXV0RhqbkcXoDLsP2Rd98f2HgMpQF2gmGCzcGmjAz+VO
-	QgbeXavCB3FjU78/eLhNE95FJ2mhwUwOimoIEYAj6u+ZGwo7sVoPxgBbn+szqfJhaqy/sAxngk/tq
-	Lr0uAqNHT0JtZ1x7YW/YgghjaAyRs6C4r5kUVTz0rArQ87p4ssBHy948vYSlSmr6fZPEwIsZFbc+o
-	/iHkZiwPrOKR0FLHjofQ==;
+	List-Owner; bh=OzRundGxsK0wfT5TI7SsmXHAJgQEfjhqvbQ4Y6WxENM=; b=hXJ5egWTAs4CS3
+	i6cqXmFlI/Lhmas77HgoSIfEh65qlEnaa5j4fdoqkQPMpiu30ZfiJKNY2HGfQz8eHTDSIEDhApQmY
+	hUGsryEYIxqKBGfBhHIHzIJAJtFMCoiYpg2TUCP6zroAB+xnp894s+gBgtrMDGJR91G47aOP7fGJ3
+	YywZKH7Id4XAab+QbCjE8qPj0SM39xCc76UUhG/KkjbiJDc3aGoH6lvv4EuSXtDW92zJuAWKo/MyG
+	S6lai+Z5ByAT0snQfenujmThYPgtz4t/au+epme9HIdjpDzUwtS8M0GNOFLmWoV6oRoGFLDFRbXpw
+	TqmAapyg8wk8g9lq9LGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRPtK-0000PL-6l; Thu, 23 Apr 2020 00:38:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jRQ7X-0003cB-Jg; Thu, 23 Apr 2020 00:53:39 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRPsb-0008Ld-Ac
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 00:38:15 +0000
-Received: by mail-pl1-x644.google.com with SMTP id n24so1626217plp.13
+ id 1jRQ7P-0003bH-30
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 00:53:33 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x15so2065237pfa.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 17:38:13 -0700 (PDT)
+ Wed, 22 Apr 2020 17:53:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Mr8P1LPs1Vjaksgvzxuq3twAg9ab3cN0vSb3pRYBwK8=;
- b=cg/TNIrILEIS1kusnDCvuL2dKp0dhvJxkUjtKRVYGfAXnktmVuItclINzic5egdxPi
- qpUcOoItZ00rFBCxVvYNt6ZnlnDryY815JUeGVD+4fSvl2EBJF7E3eS7fa75yo2KGXJ+
- bXvsPF/gDxbCUI9T5Q0/tc4FgNBhbXV+4EeRG/RhHjN9jMWzuSeuQSGv6mw3mWBZHtKF
- ncqUpE+CoslVdFHP7cukhfZUS2RVbEjq8JpXzBFJI3mzQ8o4UX4OGLtTcO/WwIGnPqTV
- tYwnQt4gceY7rIAuvBaOPqis8kgKCIMASqew6c3oKsaCcLyQTFp+eVlxSSIRpmQwxmZS
- hPJA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=zaMslWpZYQE1cPZBGYasv3MNuzEHzc5rvrYAj1cFoUo=;
+ b=ySUaw2hGK318opjQ7onBQV22y1HgRSTjLRyOzUlAEquw0O+gd8L1YWex6Qgpe+AdcQ
+ 46stp24stM2UJ92PQ1FL+2dS5s6HuekSdS3LbXGvEsAu2B/hI5BfLUeIHQn31LMgfChK
+ AUGpnLVyyJUsDKwIe3p2HH2kw/bcJpJJ4lcCSTw32V5b/E5emMlu2UHA5w0d1O/M4Rkz
+ fSt9z71hSkp0izZGC0kHNGEjs78AeWMHD2YZQ/zjXIKDt8FBHnLAkCiTs4wFE5lYQ6Do
+ w5gxXcg6jH3F369W/tTqbYCcekwqbh5iK7F6O6BIoDiIJ068LnPJuieSQBQfSDmKNZhq
+ UJGw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Mr8P1LPs1Vjaksgvzxuq3twAg9ab3cN0vSb3pRYBwK8=;
- b=UmPppSnFSXMLPe9P/acnWbKOTa7PAdq0a6+kCUl/2S9FNya0X67G/TeK1QzsCMEhE1
- pj3HEX5GfDO9tRKaF7h8x8s3WVNZLCuLe1rhwLB+QmbeNmKqUDAZw/UWUj+CXi5oICcu
- bx3QaZlZlUfqrhgsha/xOvAJckEqnV0CY9sW5MemP3zMkhAxpq6bQ0X0Ye487oisrnGc
- N3z5DG7NnNAiaiD6DPGvCllIc/xwyy+MPRTqzsqjOnSmonBa8eRLnSar6iclfwsJOyZB
- 2eNAYdA4nizlk/QNpT1/vkGiNDs5LrGFFFffcfd3YGTxYKbLWxRBraaytxHxtEQymAmh
- bEJA==
-X-Gm-Message-State: AGi0PubrmpSNHBrbQYLLha/i7F/KBuWID4wXzbcFOLDzJ370uTsgCSu9
- GUfxOh7QqvfaFfMQ79s2VEINZA==
-X-Google-Smtp-Source: APiQypJkHjUHw/lHehFz0pmGelhKZYWp3m+WQonWrCq6yl5HRJZCQmYMsvTVSLGsxacPZXkFvJGZDg==
-X-Received: by 2002:a17:90a:17ed:: with SMTP id
- q100mr1524109pja.80.1587602292780; 
- Wed, 22 Apr 2020 17:38:12 -0700 (PDT)
-Received: from localhost.localdomain
- (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 6sm432225pgz.0.2020.04.22.17.38.11
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=zaMslWpZYQE1cPZBGYasv3MNuzEHzc5rvrYAj1cFoUo=;
+ b=bXGkBWY4ijtTSHdRZoB3PjhXsK352RHAnAqyqHXOPXNAeReIZjtYm2ZV/jtrPGBde0
+ YuwwlihWAfhVq7ARrMWswbGAAR7Qe678rdT39VxhYMKvIJEWl5/ZfUuUO8AawsFSmJPK
+ WMtd9g0FFbck4fKt8PCF6qzRRGLrkbwMTpRbEpaJjqhYJLm/SBBkrvKPb3tu7EyMWYPm
+ WfaMZQqbOHDaLQD0ZkqlR1xJxYI/WNfND/lkqanzzzUS8I/wKsqaC+Xkzir2Bm4TYGee
+ aWNjLDk+0RH9OILEGfyFKZ2a7mvuEr0dpKOCTbLF4XKsbEMbg7foTdE+axs1cyUBfBJY
+ di0Q==
+X-Gm-Message-State: AGi0PuazwZAt/HHjhuFdOIItK68r0G+D3nSUUYdfHZlCjSk8CalqmoF1
+ +T4L6N1SLB0TAL7l8R7irG5lSA==
+X-Google-Smtp-Source: APiQypJKqfkEySumffvFRj+2CM+bSCQ6VLwZF4WDXzR4yhTUrBP6wD8QX9LvzHwkW1lbKYzs+jBYEg==
+X-Received: by 2002:aa7:9904:: with SMTP id z4mr1271870pff.38.1587603209814;
+ Wed, 22 Apr 2020 17:53:29 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id e7sm727392pfh.161.2020.04.22.17.53.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Apr 2020 17:38:12 -0700 (PDT)
+ Wed, 22 Apr 2020 17:53:29 -0700 (PDT)
+Date: Wed, 22 Apr 2020 17:53:56 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ohad Ben-Cohen <ohad@wizery.com>
-Subject: [PATCH 4/4] arm64: defconfig: Remove QCOM_GLINK_SSR
-Date: Wed, 22 Apr 2020 17:37:36 -0700
-Message-Id: <20200423003736.2027371-5-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
-References: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
+To: Siddharth Gupta <sidgup@codeaurora.org>
+Subject: Re: [PATCH v2 5/6] remoteproc: qcom: Add per subsystem SSR
+ notification
+Message-ID: <20200423005356.GL1868936@builder.lan>
+References: <1586389003-26675-1-git-send-email-sidgup@codeaurora.org>
+ <1586389003-26675-6-git-send-email-sidgup@codeaurora.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1586389003-26675-6-git-send-email-sidgup@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_173813_360073_191FD3D1 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200422_175331_209888_F16DB05A 
+X-CRM114-Status: GOOD (  25.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,38 +99,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chris Lew <clew@codeaurora.org>,
- Sibi <sibis@codeaurora.org>, Siddharth Gupta <sidgup@codeaurora.org>,
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ agross@kernel.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove the QCOM_GLINK_SSR option from the arm64 defconfig, as the module
-is assimilated by QCOM_GLINK - which is selected by other means.
+On Wed 08 Apr 16:36 PDT 2020, Siddharth Gupta wrote:
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- arch/arm64/configs/defconfig | 1 -
- 1 file changed, 1 deletion(-)
+> Currently there is a global notification chain which is called whenever any
+> remoteproc shuts down. This leads to all the listeners being notified, and
+> is not an optimal design as kernel drivers might only be interested in
+> listening to notifications from a particular remoteproc. Create an
+> individual notifier chain for every SSR subdevice, and modify the
+> notification registration API to include the remoteproc struct as an
+> argument. Update the existing user of the registration API to get the
+> phandle of the remoteproc dt node to register for SSR notifications.
+> 
+> Signed-off-by: Rishabh Bhatnagar <rishabhb@codeaurora.org>
+> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+> ---
+>  drivers/remoteproc/qcom_common.c      | 49 +++++++++++++++++++++++++++--------
+>  drivers/remoteproc/qcom_common.h      |  1 +
+>  drivers/soc/qcom/glink_ssr.c          | 20 ++++++++++++--
+>  include/linux/remoteproc/qcom_rproc.h | 17 ++++++++----
+>  4 files changed, 69 insertions(+), 18 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/qcom_common.c b/drivers/remoteproc/qcom_common.c
+> index 1d2351b..56b0c3e 100644
+> --- a/drivers/remoteproc/qcom_common.c
+> +++ b/drivers/remoteproc/qcom_common.c
+> @@ -23,8 +23,6 @@
+>  #define to_smd_subdev(d) container_of(d, struct qcom_rproc_subdev, subdev)
+>  #define to_ssr_subdev(d) container_of(d, struct qcom_rproc_ssr, subdev)
+>  
+> -static BLOCKING_NOTIFIER_HEAD(ssr_notifiers);
+> -
+>  static int glink_subdev_start(struct rproc_subdev *subdev)
+>  {
+>  	struct qcom_rproc_glink *glink = to_glink_subdev(subdev);
+> @@ -180,27 +178,52 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
+>  
+>  /**
+>   * qcom_register_ssr_notifier() - register SSR notification handler
+> + * @rproc:	pointer to the remoteproc structure
+>   * @nb:		notifier_block to notify for restart notifications
+>   *
+> - * Returns 0 on success, negative errno on failure.
+> + * Returns pointer to srcu notifier head on success, ERR_PTR on failure.
+>   *
+> - * This register the @notify function as handler for restart notifications. As
+> - * remote processors are stopped this function will be called, with the SSR
+> - * name passed as a parameter.
+> + * This registers the @notify function as handler for restart notifications. As
+> + * remote processors are stopped this function will be called, with the rproc
+> + * pointer passed as a parameter.
+>   */
+> -int qcom_register_ssr_notifier(struct notifier_block *nb)
+> +void *qcom_register_ssr_notifier(struct rproc *rproc, struct notifier_block *nb)
+>  {
+> -	return blocking_notifier_chain_register(&ssr_notifiers, nb);
+> +	struct rproc_subdev *subdev;
+> +	struct qcom_rproc_ssr *ssr;
+> +	int ret;
+> +
+> +	if (!rproc)
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	mutex_lock(&rproc->lock);
+> +	list_for_each_entry(subdev, &rproc->subdevs, node) {
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index f9eefb5940ca..f26a0b6ea0e8 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -838,7 +838,6 @@ CONFIG_FSL_MC_DPIO=y
- CONFIG_IMX_SCU_SOC=y
- CONFIG_QCOM_AOSS_QMP=y
- CONFIG_QCOM_GENI_SE=y
--CONFIG_QCOM_GLINK_SSR=m
- CONFIG_QCOM_RMTFS_MEM=m
- CONFIG_QCOM_RPMH=y
- CONFIG_QCOM_RPMHPD=y
--- 
-2.24.0
+I would prefer that we don't touch the lock or subdevs list outside of
+the remoteproc core.
 
+> +		ret = strcmp(subdev->name, "ssr_notifs");
+> +		if (!ret)
+> +			break;
+> +	}
+> +	mutex_unlock(&rproc->lock);
+> +	if (ret)
+> +		return ERR_PTR(-ENOENT);
+> +
+> +	ssr = to_ssr_subdev(subdev);
+> +	srcu_notifier_chain_register(ssr->rproc_notif_list, nb);
+
+Adding the notifier to an existing ssr_subdev means that any client
+driver that is interested in notification about a remoteproc coming and
+going will need to be registered (typically probed) after the remoteproc
+driver.
+
+I presume this would be handled by probe deferring on
+rproc_get_by_phandle(), but I'm concerned that this will cause
+unnecessary probe deferral. But more importantly, it wouldn't allow for
+the remoteproc driver to be unloaded and loaded again (as that would be
+a new notifier list).
+
+So I think you should carry a global list of "watchers" and upon subdev
+events you can match entries in this list based on either struct
+of_node or perhaps by ssr_name?
+
+> +
+> +	return ssr->rproc_notif_list;
+>  }
+>  EXPORT_SYMBOL_GPL(qcom_register_ssr_notifier);
+>  
+>  /**
+>   * qcom_unregister_ssr_notifier() - unregister SSR notification handler
+> + * @notify:	pointer to srcu notifier head
+>   * @nb:		notifier_block to unregister
+>   */
+> -void qcom_unregister_ssr_notifier(struct notifier_block *nb)
+> +int qcom_unregister_ssr_notifier(void *notify, struct notifier_block *nb)
+>  {
+> -	blocking_notifier_chain_unregister(&ssr_notifiers, nb);
+> +	if (!notify)
+> +		return -EINVAL;
+> +
+> +	return srcu_notifier_chain_unregister(notify, nb);
+>  }
+>  EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
+>  
+> @@ -208,7 +231,7 @@ static void ssr_notify_unprepare(struct rproc_subdev *subdev)
+>  {
+>  	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
+>  
+> -	blocking_notifier_call_chain(&ssr_notifiers, 0, (void *)ssr->name);
+> +	srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void *)ssr->name);
+>  }
+>  
+>  /**
+> @@ -226,6 +249,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr,
+>  	ssr->name = ssr_name;
+>  	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
+>  	ssr->subdev.unprepare = ssr_notify_unprepare;
+> +	ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
+> +								GFP_KERNEL);
+> +	srcu_init_notifier_head(ssr->rproc_notif_list);
+>  
+>  	rproc_add_subdev(rproc, &ssr->subdev);
+>  }
+> @@ -239,6 +265,7 @@ EXPORT_SYMBOL_GPL(qcom_add_ssr_subdev);
+>  void qcom_remove_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr)
+>  {
+>  	kfree(ssr->subdev.name);
+> +	kfree(ssr->rproc_notif_list);
+>  	rproc_remove_subdev(rproc, &ssr->subdev);
+>  }
+>  EXPORT_SYMBOL_GPL(qcom_remove_ssr_subdev);
+> diff --git a/drivers/remoteproc/qcom_common.h b/drivers/remoteproc/qcom_common.h
+> index 58de71e..7792691 100644
+> --- a/drivers/remoteproc/qcom_common.h
+> +++ b/drivers/remoteproc/qcom_common.h
+> @@ -27,6 +27,7 @@ struct qcom_rproc_subdev {
+>  struct qcom_rproc_ssr {
+>  	struct rproc_subdev subdev;
+>  
+> +	struct srcu_notifier_head *rproc_notif_list;
+>  	const char *name;
+>  };
+>  
+> diff --git a/drivers/soc/qcom/glink_ssr.c b/drivers/soc/qcom/glink_ssr.c
+> index d7babe3..2b39683 100644
+> --- a/drivers/soc/qcom/glink_ssr.c
+> +++ b/drivers/soc/qcom/glink_ssr.c
+> @@ -7,6 +7,7 @@
+>  #include <linux/completion.h>
+>  #include <linux/module.h>
+>  #include <linux/notifier.h>
+> +#include <linux/remoteproc.h>
+>  #include <linux/rpmsg.h>
+>  #include <linux/remoteproc/qcom_rproc.h>
+>  
+> @@ -49,6 +50,7 @@ struct glink_ssr {
+>  	struct rpmsg_endpoint *ept;
+>  
+>  	struct notifier_block nb;
+> +	void *notifier_head;
+>  
+>  	u32 seq_num;
+>  	struct completion completion;
+> @@ -112,6 +114,7 @@ static int qcom_glink_ssr_notify(struct notifier_block *nb, unsigned long event,
+>  static int qcom_glink_ssr_probe(struct rpmsg_device *rpdev)
+>  {
+>  	struct glink_ssr *ssr;
+> +	struct rproc *rproc;
+>  
+>  	ssr = devm_kzalloc(&rpdev->dev, sizeof(*ssr), GFP_KERNEL);
+>  	if (!ssr)
+> @@ -125,14 +128,27 @@ static int qcom_glink_ssr_probe(struct rpmsg_device *rpdev)
+>  
+>  	dev_set_drvdata(&rpdev->dev, ssr);
+>  
+> -	return qcom_register_ssr_notifier(&ssr->nb);
+> +	rproc = rproc_get_by_child(&rpdev->dev);
+
+As we discussed in our meeting offline earlier today, not all glink_ssr
+instances has a remoteproc ancestor. After going back and forth on how
+to handle this I posted below series:
+
+https://lore.kernel.org/linux-arm-msm/20200423003736.2027371-1-bjorn.andersson@linaro.org/T/#t
+
+With this we are flexible to tie the ssr_subdev API to remoteproc
+instances...
+
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
