@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E4B1B6293
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 19:47:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BA401B6296
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 19:48:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8aP3A/tujv7TOTqfKmYgZ/qX03nN4RPHEV5Y/QNKAxs=; b=mD6AHLXBzCdwxt
-	vffQIsDh8mGG9zH6cVbSSB1ZAqaL6h0E6RH2xQuWqsLxjyklr2axfYhqjpWyXxkFNzr3NtI6F9GNH
-	blw15M+jIadfrXd13Wm9qOeIxs0914pDWSTaN7OB70aVj6T3ZjiG7RuoF/2w/y7QXWOy1/bCXo8LK
-	Iwsi0hEsgxuKcbV6cxuWVj6H5iFt9zs1MSovGnkGO3Lxf2iKdWhavnfYFYrf48ibhDodY+om5YiX/
-	bHWBzOkdtH0xSGsmKhu42zwv72LENstG9t0hSHhP/IhtALUUw+7I4+57Qq1D+BLdXw1LwyGlp5Ex+
-	daqVAAu5tRd1UXUBZLNg==;
+	List-Owner; bh=/ckadP6E3706xqAtryCm321LJXdTYzOCgHJpMJVg3xo=; b=lkM+scmP/Gn9xa
+	5asN8VdT6IDVhrZ0P4Js31bdvqLFNjflohf7ds8y06myCfzjcBW4itlR1UD4XYh6Yh+CnGdBld8Eb
+	yEfFyqcR0LtIwgvnvzeTduIX0Wpvj/NDkkq9+TEYTS4wlJMa1eD9IjTrnP5iVzQ2U+5eIxNgkvPDD
+	jmfMcZfpPw0tRvkdse/0j1YcWHo26jYmJKd/5Boha6ob7DYFx7uVIslxzlnrmbG36UOrM+cOYCF/W
+	Mo0CWDjjQ4Imeax5Ozx7hvWTtqfsVvHLttaL6V66mvrGq/VeYwU8ZNQjEZIfYBZoAzyFgPIdCoY0B
+	f1DFpPseIX/MQa84ki0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRfwq-0002gN-Sn; Thu, 23 Apr 2020 17:47:40 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jRfxY-0003H7-IB; Thu, 23 Apr 2020 17:48:24 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRfvl-0001vo-KZ
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 17:46:35 +0000
+ id 1jRfvm-0001wF-03
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 17:46:36 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id C4AA22305A;
- Thu, 23 Apr 2020 19:46:28 +0200 (CEST)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 7607E23060;
+ Thu, 23 Apr 2020 19:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1587663989;
+ s=mail2016061301; t=1587663990;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=XEc2Gou41BL3m+JkXNh0S7dWuskCnoHw4qZ/tnV0NvI=;
- b=Su+MiabBuDU2j7Z62BVZ3bAwqxj1h0oWVUDkNQx67hVzjrvYYBTwSIYm2Y0m2JAqdjbK+M
- WNK50XO9/gIZ7aC4cbdxXplDXy0G3v4TrYPTJcV9qCjuCB7HVtebYwkbMPp4/AMlu98tnH
- XUjRmwcFuzKXEqExHLQS6zwMvS9kG8g=
+ bh=KXy7nJgnAk11tydoI+EmDNRy8IKIQCr6Ymye2zVSgho=;
+ b=WluvSssqE7oCSjWbUvdaNSWWE7f5p7y+2mQlmogEWBHnTWL4b3xyDPyo9GgvmFCPbVWRk5
+ jGqNKwy73d2R7731a0oyuB85VaVRmbCrIEroqh7e1XtLaR/AKlFOBQPSQ40PPRgsqoEzje
+ wYkTqeoMrFgu6z+VhwmPjFlk+/WFaGc=
 From: Michael Walle <michael@walle.cc>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
  linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 03/16] mfd: mfd-core: match device tree node against reg
- property
-Date: Thu, 23 Apr 2020 19:45:30 +0200
-Message-Id: <20200423174543.17161-4-michael@walle.cc>
+Subject: [PATCH v3 04/16] dt-bindings: mfd: Add bindings for sl28cpld
+Date: Thu, 23 Apr 2020 19:45:31 +0200
+Message-Id: <20200423174543.17161-5-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200423174543.17161-1-michael@walle.cc>
 References: <20200423174543.17161-1-michael@walle.cc>
@@ -59,29 +58,32 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: C4AA22305A
+X-Rspamd-Queue-Id: 7607E23060
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  FREEMAIL_ENVRCPT(0.00)[gmail.com]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[1.007];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_TWELVE(0.00)[25];
- MID_CONTAINS_FROM(1.00)[]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.954];
+ DKIM_SIGNED(0.00)[];
+ DBL_PROHIBIT(0.00)[0.0.0.5:email,0.0.0.1:email,0.0.0.2:email,0.0.0.6:email,0.0.0.7:email,0.0.0.4:email,0.0.0.3:email,0.0.0.0:email];
+ RCPT_COUNT_TWELVE(0.00)[25]; MID_CONTAINS_FROM(1.00)[];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
  ASN(0.00)[asn:31334, ipnet:2a02:810c:8000::/33, country:DE];
  FREEMAIL_CC(0.00)[linaro.org,baylibre.com,kernel.org,suse.com,roeck-us.net,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org,walle.cc];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_104633_970028_6373CAFB 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20200423_104634_340670_79A12F94 
+X-CRM114-Status: GOOD (  15.01  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,8 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,132 +120,363 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There might be multiple children with the device tree compatible, for
-example if a MFD has multiple instances of the same function. In this
-case only the first is matched and the other children get a wrong
-of_node reference.
-Add a new option to match also against the unit address of the child
-node. Additonally, a new helper OF_MFD_CELL_REG is added.
+This adds device tree bindings for the board management controller found
+on the Kontron SMARC-sAL28 board.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- drivers/mfd/mfd-core.c   | 29 ++++++++++++++++++++---------
- include/linux/mfd/core.h | 26 ++++++++++++++++++++------
- 2 files changed, 40 insertions(+), 15 deletions(-)
+ .../bindings/gpio/kontron,sl28cpld-gpio.yaml  |  51 ++++++
+ .../hwmon/kontron,sl28cpld-hwmon.yaml         |  27 +++
+ .../bindings/mfd/kontron,sl28cpld.yaml        | 162 ++++++++++++++++++
+ .../bindings/pwm/kontron,sl28cpld-pwm.yaml    |  35 ++++
+ .../watchdog/kontron,sl28cpld-wdt.yaml        |  35 ++++
+ 5 files changed, 310 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/gpio/kontron,sl28cpld-gpio.yaml
+ create mode 100644 Documentation/devicetree/bindings/hwmon/kontron,sl28cpld-hwmon.yaml
+ create mode 100644 Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
+ create mode 100644 Documentation/devicetree/bindings/pwm/kontron,sl28cpld-pwm.yaml
+ create mode 100644 Documentation/devicetree/bindings/watchdog/kontron,sl28cpld-wdt.yaml
 
-diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
-index e735565969b3..4ecb376338f7 100644
---- a/drivers/mfd/mfd-core.c
-+++ b/drivers/mfd/mfd-core.c
-@@ -117,6 +117,7 @@ static int mfd_add_device(struct device *parent, int id,
- 	struct device_node *np = NULL;
- 	int ret = -ENOMEM;
- 	int platform_id;
-+	u32 of_reg;
- 	int r;
- 
- 	if (id == PLATFORM_DEVID_AUTO)
-@@ -151,16 +152,26 @@ static int mfd_add_device(struct device *parent, int id,
- 
- 	if (parent->of_node && cell->of_compatible) {
- 		for_each_child_of_node(parent->of_node, np) {
--			if (of_device_is_compatible(np, cell->of_compatible)) {
--				if (!of_device_is_available(np)) {
--					/* Ignore disabled devices error free */
--					ret = 0;
--					goto fail_alias;
--				}
--				pdev->dev.of_node = np;
--				pdev->dev.fwnode = &np->fwnode;
--				break;
-+			if (!of_device_is_compatible(np, cell->of_compatible))
-+				continue;
+diff --git a/Documentation/devicetree/bindings/gpio/kontron,sl28cpld-gpio.yaml b/Documentation/devicetree/bindings/gpio/kontron,sl28cpld-gpio.yaml
+new file mode 100644
+index 000000000000..291ca116743d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/gpio/kontron,sl28cpld-gpio.yaml
+@@ -0,0 +1,51 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/gpio/kontron,sl28cpld-gpio.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+			/* also match the unit address if set */
-+			if (cell->of_reg & MFD_OF_REG_VALID) {
-+				if (of_property_read_u32(np, "reg", &of_reg))
-+					continue;
-+				if ((cell->of_reg & MFD_OF_REG_MASK) != of_reg)
-+					continue;
- 			}
++title: GPIO driver for the sl28cpld board management controller
 +
-+			if (!of_device_is_available(np)) {
-+				/* Ignore disabled devices error free */
-+				ret = 0;
-+				goto fail_alias;
-+			}
++maintainers:
++  - Michael Walle <michael@walle.cc>
 +
-+			pdev->dev.of_node = np;
-+			pdev->dev.fwnode = &np->fwnode;
-+			break;
- 		}
- 	}
- 
-diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
-index d01d1299e49d..c2c0ad6b14f3 100644
---- a/include/linux/mfd/core.h
-+++ b/include/linux/mfd/core.h
-@@ -13,8 +13,11 @@
- #include <linux/platform_device.h>
- 
- #define MFD_RES_SIZE(arr) (sizeof(arr) / sizeof(struct resource))
-+#define MFD_OF_REG_VALID	BIT(31)
-+#define MFD_OF_REG_MASK		GENMASK(30, 0)
- 
--#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, _match)\
-+#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
-+		     _of_reg, _match)					\
- 	{								\
- 		.name = (_name),					\
- 		.resources = (_res),					\
-@@ -22,24 +25,32 @@
- 		.platform_data = (_pdata),				\
- 		.pdata_size = (_pdsize),				\
- 		.of_compatible = (_compat),				\
-+		.of_reg = (_of_reg),					\
- 		.acpi_match = (_match),					\
- 		.id = (_id),						\
- 	}
- 
-+#define OF_MFD_CELL_REG(_name, _res, _pdata, _pdsize, _id, _compat,	\
-+			_of_reg)					\
-+	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
-+		     ((_of_reg) | MFD_OF_REG_VALID), NULL)		\
++description: |
++  This module is part of the sl28cpld multi-function device. For more
++  details see Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml.
 +
- #define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat)		\
--	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)	\
-+	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
-+		     0, NULL)						\
- 
- #define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match)	\
--	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)	\
-+	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0,	\
-+		     _match)						\
- 
- #define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id)		\
--	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)	\
-+	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, NULL) \
- 
- #define MFD_CELL_RES(_name, _res)					\
--	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)		\
-+	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, 0, NULL)		\
- 
- #define MFD_CELL_NAME(_name)						\
--	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)		\
-+	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, 0, NULL)		\
- 
- struct irq_domain;
- struct property_entry;
-@@ -78,6 +89,9 @@ struct mfd_cell {
- 	 */
- 	const char		*of_compatible;
- 
-+	/* matching the reg property if set */
-+	unsigned int		of_reg;
++  There are three flavors of the GPIO controller, one full featured
++  input/output with interrupt support (kontron,sl28cpld-gpio), one
++  output-only (kontron,sl28-gpo) and one input-only (kontron,sl28-gpi).
 +
- 	/* Matches ACPI */
- 	const struct mfd_cell_acpi_match	*acpi_match;
- 
++  Each controller supports 8 GPIO lines.
++
++properties:
++  compatible:
++    enum:
++      - kontron,sl28cpld-gpio
++      - kontron,sl28cpld-gpi
++      - kontron,sl28cpld-gpo
++
++  reg:
++    maxItems: 1
++
++  "#interrupt-cells":
++    const: 2
++
++  interrupt-controller: true
++
++  "#gpio-cells":
++    const: 2
++
++  gpio-controller: true
++
++  gpio-line-names:
++      minItems: 1
++      maxItems: 8
++
++required:
++  - compatible
++  - "#gpio-cells"
++  - gpio-controller
++
++additionalProperties: false
+diff --git a/Documentation/devicetree/bindings/hwmon/kontron,sl28cpld-hwmon.yaml b/Documentation/devicetree/bindings/hwmon/kontron,sl28cpld-hwmon.yaml
+new file mode 100644
+index 000000000000..1cebd61c6c32
+--- /dev/null
++++ b/Documentation/devicetree/bindings/hwmon/kontron,sl28cpld-hwmon.yaml
+@@ -0,0 +1,27 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/hwmon/kontron,sl28cpld-hwmon.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Hardware monitoring driver for the sl28cpld board management controller
++
++maintainers:
++  - Michael Walle <michael@walle.cc>
++
++description: |
++  This module is part of the sl28cpld multi-function device. For more
++  details see Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml.
++
++properties:
++  compatible:
++    enum:
++      - kontron,sl28cpld-fan
++
++  reg:
++    maxItems: 1
++
++required:
++  - compatible
++
++additionalProperties: false
+diff --git a/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml b/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
+new file mode 100644
+index 000000000000..e155e3035513
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
+@@ -0,0 +1,162 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mfd/kontron,sl28cpld.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Kontron's sl28cpld board management controller
++
++maintainers:
++  - Michael Walle <michael@walle.cc>
++
++description: |
++  The board management controller may contain different IP blocks like
++  watchdog, fan monitoring, PWM controller, interrupt controller and a
++  GPIO controller.
++
++  Currently the MFD exports the following functions at the given
++  unit-addresses.
++
++  === =========== =======================
++   ua name        compatible
++  === =========== =======================
++   0  watchdog    kontron,sl28cpld-wdt
++   1  hwmon       kontron,sl28cpld-fan
++   2  pwm         kontron,sl28cpld-pwm
++   3  pwm         kontron,sl28cpld-pwm
++   4  gpio        kontron,sl28cpld-gpio
++   5  gpio        kontron,sl28cpld-gpio
++   6  gpio        kontron,sl28cpld-gpo
++   7  gpio        kontron,sl28cpld-gpi
++  === =========== =======================
++
++  The MFD driver will match the child nodes according to the unit-address
++  (eg. the reg property) and the compatible string.
++
++properties:
++  compatible:
++    const: kontron,sl28cpld
++
++  reg:
++    description:
++      I2C device address.
++    maxItems: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++  "#interrupt-cells":
++    const: 2
++
++  interrupts:
++    maxItems: 1
++
++  interrupt-controller: true
++
++patternProperties:
++  "^gpio(@[0-9]+)?$":
++    $ref: ../gpio/kontron,sl28cpld-gpio.yaml
++
++  "^hwmon(@[0-9]+)?$":
++    $ref: ../hwmon/kontron,sl28cpld-hwmon.yaml
++
++  "^pwm(@[0-9]+)?$":
++    $ref: ../pwm/kontron,sl28cpld-pwm.yaml
++
++  "^watchdog(@[0-9]+)?$":
++    $ref: ../watchdog/kontron,sl28cpld-wdt.yaml
++
++required:
++  - "#address-cells"
++  - "#size-cells"
++  - compatible
++  - reg
++  - interrupts
++  - "#interrupt-cells"
++  - interrupt-controller
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/irq.h>
++    i2c {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        sl28cpld@4a {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            compatible = "kontron,sl28cpld";
++            reg = <0x4a>;
++            interrupts-extended = <&gpio2 6 IRQ_TYPE_EDGE_FALLING>;
++
++            #interrupt-cells = <2>;
++            interrupt-controller;
++
++            watchdog@0 {
++                compatible = "kontron,sl28cpld-wdt";
++                reg = <0>;
++                kontron,assert-wdt-timeout-pin;
++            };
++
++            hwmon@1 {
++                compatible = "kontron,sl28cpld-fan";
++                reg = <1>;
++            };
++
++            pwm@2 {
++                compatible = "kontron,sl28cpld-pwm";
++                reg = <2>;
++                #pwm-cells = <2>;
++            };
++
++            pwm@3 {
++                compatible = "kontron,sl28cpld-pwm";
++                reg = <3>;
++                #pwm-cells = <2>;
++            };
++
++            gpio@4 {
++                compatible = "kontron,sl28cpld-gpio";
++                reg = <4>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++
++                interrupt-controller;
++                #interrupt-cells = <2>;
++            };
++
++            gpio@5 {
++                compatible = "kontron,sl28cpld-gpio";
++                reg = <5>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++
++                interrupt-controller;
++                #interrupt-cells = <2>;
++            };
++
++            gpio@6 {
++                compatible = "kontron,sl28cpld-gpo";
++                reg = <6>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++                gpio-line-names = "a", "b", "c";
++            };
++
++            gpio@7 {
++                compatible = "kontron,sl28cpld-gpi";
++                reg = <7>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++            };
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/pwm/kontron,sl28cpld-pwm.yaml b/Documentation/devicetree/bindings/pwm/kontron,sl28cpld-pwm.yaml
+new file mode 100644
+index 000000000000..02fe88c30233
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pwm/kontron,sl28cpld-pwm.yaml
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/pwm/kontron,sl28cpld-pwm.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: PWM driver for the sl28cpld board management controller
++
++maintainers:
++  - Michael Walle <michael@walle.cc>
++
++description: |
++  This module is part of the sl28cpld multi-function device. For more
++  details see Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml.
++
++  The controller supports one PWM channel and supports only four distinct
++  frequencies (250Hz, 500Hz, 1kHz, 2kHz).
++
++allOf:
++  - $ref: pwm.yaml#
++
++properties:
++  compatible:
++    const: kontron,sl28cpld-pwm
++
++  reg:
++    maxItems: 1
++
++  "#pwm-cells":
++    const: 2
++
++required:
++  - compatible
++
++additionalProperties: false
+diff --git a/Documentation/devicetree/bindings/watchdog/kontron,sl28cpld-wdt.yaml b/Documentation/devicetree/bindings/watchdog/kontron,sl28cpld-wdt.yaml
+new file mode 100644
+index 000000000000..dd6559f2973a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/kontron,sl28cpld-wdt.yaml
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/kontron,sl28cpld-wdt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Watchdog driver for the sl28cpld board management controller
++
++maintainers:
++  - Michael Walle <michael@walle.cc>
++
++description: |
++  This module is part of the sl28cpld multi-function device. For more
++  details see Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml.
++
++allOf:
++  - $ref: watchdog.yaml#
++
++properties:
++  compatible:
++    const: kontron,sl28cpld-wdt
++
++  reg:
++    maxItems: 1
++
++  kontron,assert-wdt-timeout-pin:
++    description: The SMARC standard defines a WDT_TIME_OUT# pin. If this
++      property is set, this output will be pulsed when the watchdog bites
++      and the system resets.
++    type: boolean
++
++required:
++  - compatible
++
++additionalProperties: false
 -- 
 2.20.1
 
