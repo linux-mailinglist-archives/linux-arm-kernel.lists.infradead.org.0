@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE7B01B6531
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28DB51B653E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:11:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n58JM5bN1Ba6PAPiM6K/w6hicOoHy9t/FZQTygm18YA=; b=OxWgo7bwGfspC+
-	AcP6n7gJSFH/59frgOGSlHYx7cmf1Fm7JJPABV7fku4tZ7bR+h/AqudRunlEQs2uu1YfB97XyjfT/
-	n1m6SEvsWLX/AEV8RuhkT6oO4Rhvq73WUwuocqqkrMGY1MmHMhP1CXzKFCzrx2/TnvjyfmUueuu5L
-	AcvekYylfQlChxodtrmAbXXSOlOqv0k2hfbgjrNnnAszUyZNS650yqgp7b18n4Si7hc13Y1Jj061d
-	kdYTbrd7n5fRV/UugAekMKZxGhdRfn1CSaJPNYKi+EIcEogb0ZuSuR5uOGlXHPNmy6bcvcm27VDkS
-	Fp1qQ2eXwTyaIYhT1tIA==;
+	List-Owner; bh=lvdnJWdYiYiockFhG2bTPP6KjZ/DA1iJvg1M7BJNZ08=; b=djx2p4QtMX7rHT
+	V21xl2NKfaUUZnAv/5XmEQL3h8ahD4VF8j0h1x8LxtWVLW8mV2ZTxdtBeMNIJ0Rq77GeLlZrQHd8r
+	m6xUB+KzGHCuzl4HQYZfhOYa9McGoKytUnWxpRnglwVYSmDlWvOmdMb2mSh6W35UTlXo07ox841KF
+	fyTrgD+i0LoeJHdEtGgHQA+P0Ir5k8+nhihdTmUESqXqigxhNxnL/NKH7Nd4On2KYMfm+ht7L5XqH
+	8v5D+cJ2+ZlKhTN0p/53toBFXJ0tnjWO9EcCK3mtblTqIpoKhonBUJH9A+C0cJhlHwVz5tSjuGKgF
+	D6iYXrhL0/9W0FLOIeWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRiAx-00013q-SX; Thu, 23 Apr 2020 20:10:23 +0000
+	id 1jRiC4-0004Xv-Dx; Thu, 23 Apr 2020 20:11:32 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRiAX-00010G-16; Thu, 23 Apr 2020 20:09:59 +0000
+ id 1jRiAZ-00010w-IP; Thu, 23 Apr 2020 20:10:01 +0000
 X-Originating-IP: 93.29.109.196
 Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
  [93.29.109.196])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id A275CE0007;
- Thu, 23 Apr 2020 20:09:51 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 4378DE0006;
+ Thu, 23 Apr 2020 20:09:53 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-Date: Thu, 23 Apr 2020 22:09:35 +0200
-Message-Id: <20200423200937.1039257-3-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 3/4] media: rockchip: rga: Add support for the PX30
+ compatible
+Date: Thu, 23 Apr 2020 22:09:36 +0200
+Message-Id: <20200423200937.1039257-4-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
 References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_130957_208438_250E68BF 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20200423_130959_750304_DF72CFDA 
+X-CRM114-Status: GOOD (  11.37  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [217.70.183.196 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -76,35 +77,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PX30 features a RGA block: add the necessary node to support it.
+The PX30 SoC has a RGA block, so add the associated compatible to
+support it.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/media/platform/rockchip/rga/rga.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index f809dd6d5dc3..613703e3d0df 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -1102,6 +1102,17 @@ vopl_mmu: iommu@ff470f00 {
- 		status = "disabled";
- 	};
+diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+index 9d122429706e..4fb4615662b7 100644
+--- a/drivers/media/platform/rockchip/rga/rga.c
++++ b/drivers/media/platform/rockchip/rga/rga.c
+@@ -955,6 +955,9 @@ static const struct dev_pm_ops rga_pm = {
+ };
  
-+	rga: rga@ff480000 {
-+		compatible = "rockchip,px30-rga";
-+		reg = <0x0 0xff480000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
-+		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
-+		clock-names = "aclk", "hclk", "sclk";
-+		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-+		reset-names = "core", "axi", "ahb";
-+		power-domains = <&power PX30_PD_VO>;
-+	};
-+
- 	qos_gmac: qos@ff518000 {
- 		compatible = "syscon";
- 		reg = <0x0 0xff518000 0x0 0x20>;
+ static const struct of_device_id rockchip_rga_match[] = {
++	{
++		.compatible = "rockchip,px30-rga",
++	},
+ 	{
+ 		.compatible = "rockchip,rk3288-rga",
+ 	},
 -- 
 2.26.0
 
