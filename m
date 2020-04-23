@@ -2,97 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B39D41B588F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 11:49:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45D181B5894
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 11:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qigtneluyBJLw6h2gj1uYmGD3TzbuXTmIyB4ctwsA88=; b=cCLnSviZK1NhGjPV1cFh9Xcxn
-	/jsRripNgkf9psxH4J6z6tpaM9scaaW79dOoRb/7+smFQAOshGrvRgUGAOuZFf/1o4ksIuP2CzWqY
-	Z47rw7IxuJLqgRWImSh3c8VGx7Iq9ry12aROs0z0Pt0iN6FZXluWiHHiHZR6sbsJMc/YHvQGeb2Vt
-	ctLJzf5ePWRMoJBKX3pqfKSYfw4+Ya3pPvAwB666iSLrlTtvOsk3UjxV18Vru7YbhDJvsXH4N87p7
-	bHu2rX1YcBFOtz8m3CNkU6GV0COr4Ml1HJsydBjcBf/ndG2rD9XikV+ZpNgCJMN63p6XUhq3RrDnZ
-	Dh29jDf7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U++AgRu951wyr+rEVgK+DEvb9kgL34fl32AnV5HTvyE=; b=iTJawsizdCESoM
+	RdumRp0yi2jQzD6i344LtpzapfZguxhhNuaOi4AEhupTFCduP6lvjPimSHXV7C9LRvYAc0Yz/ezwI
+	/+wKDs74N4UDw9ylGKNbo58BFy7b9hHRgtemxvtii+PGgQDKVJ4E/oemONnyGe8RoUv98ffHFyWSV
+	iFCc1Hc1KObWSaGpWSXEVNWdRkT2OvjcYeDfcl+lP1gJxlQlMxUhGB4zJtYhBofolDk2ttmnJ0azS
+	cVikF8qkCm9pJ3bYGIkTVxqsinwz2Agy7uO1NGYIMEFp3Qic1u4guIeN4PeIhddfzAbDlVQADIHjr
+	+wfddWyt0/kHmbsyRxQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRYUQ-0008AU-Rf; Thu, 23 Apr 2020 09:49:50 +0000
-Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRYUJ-00089x-4d
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 09:49:44 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 35EA7706;
- Thu, 23 Apr 2020 05:49:42 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 23 Apr 2020 05:49:42 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=G2jAMqcEuXOVO6A3EqfT0UwmQC6
- hpWGRqcPB7zT18FI=; b=XR0NLN0Tc/bjTcDKyiBF9Bi1VseQHjJpKT+6m1IgsVu
- MQZAgGlbV9FvUCcLjsHp5d35vLvrOnamQUu/3Eb36CdfTZQLc36FJJ4pPVEXtL6t
- 6Zv/vbt2Naz/+iEcj8kkzvMhWHJOfiTWgP2+IcC07xWjegEikYqIbgOpbaj1LIEI
- JmQgXU5GegRyAMZ548/Da56pZ2lWNV47Th9VxZ0Vkou83BSj6zwGkw3j7Ya3dTRY
- YOzA1dtVGsMUxbHnpiUnt4hwUQfwY1PsMUpImNnjcsqENhN+l0qp/AQ9/LY/J1VD
- zRCBTYQDqzm9A9tOYoaft+5c6fp72A6IBbY7XCpDJJg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=G2jAMq
- cEuXOVO6A3EqfT0UwmQC6hpWGRqcPB7zT18FI=; b=3e+wNdrI89BclXcsWi0yhS
- 4TIADRP45sSloOBv3wF5tHrunYVaYBHIMt3JeeITEOiA7KYoOXaI3SJ9WtJYqWWV
- St9BLQppu755QRVLqFpOOnVURycMLNVaxv4SOMBa2ZUECvdikGgivHLfRxfYEbTD
- /Emb4r1VR22MqWnWi3ygnXBXZAkDxVAxKQn9f4WkL5OgF2VcaYkr4yc480Tti+yd
- W723bB/diLFTD0z/xN0lFGZSX4c7yPeobHbQTNC5ho56m9g4zFAXu3XOxCUTTyzz
- 9IoijklLHunQeUj5MAsRi9syt28tyMtEVvusPChYWlmbc7YUyfAsjx8+maDzPuyA
- ==
-X-ME-Sender: <xms:tWShXt5yZfSr4sDijqtNTkelGzbyauEJucaos-_5CicLmz6mJmibeA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeelgddvudcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:tWShXnNJuF5ko7bAbCjsHgVJjljSW5m_uebp-IJIBzhRsfO8krEUeA>
- <xmx:tWShXnOhd2XX_xUwqmdKD6eLotpNM9O6dSxfbVptGgx5p78WpPv9PQ>
- <xmx:tWShXn-vlBfu8TwkRxKqOHllAvK7ufBlG0DQw9gJda16gd8ycoAhIA>
- <xmx:tWShXsbUEdZoZlKd9rJm9PTD_r1bp2igdvkr7naqHFlyvJ2Gw-Ywrw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 13F053280064;
- Thu, 23 Apr 2020 05:49:40 -0400 (EDT)
-Date: Thu, 23 Apr 2020 11:49:39 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Disable SPDIF by default
-Message-ID: <20200423094939.os74dohwkdoig4eq@gilmour.lan>
-References: <20200422041502.7497-1-samuel@sholland.org>
- <20200422151616.httmhmo2tbd4m4eu@gilmour.lan>
- <b554ea70-16da-1637-d349-db51dddcf95b@sholland.org>
+	id 1jRYXb-0003OM-Rt; Thu, 23 Apr 2020 09:53:07 +0000
+Received: from segapp02.wistron.com ([103.200.3.19] helo=segapp03.wistron.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRYXR-0003L6-Or
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 09:53:00 +0000
+Received: from EXCHAPP04.whq.wistron (unverified [10.37.38.27]) by 
+ TWNHUMSW4.wistron.com (Clearswift SMTPRS 5.6.0) with ESMTP id 
+ <Tdeb49446cbc0a816721910@TWNHUMSW4.wistron.com>; Thu, 23 Apr 2020 
+ 17:52:36 +0800
+Received: from EXCHAPP01.whq.wistron (10.37.38.24) by EXCHAPP04.whq.wistron 
+ (10.37.38.27) with Microsoft SMTP Server 
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 
+ 15.1.1913.5; Thu, 23 Apr 2020 17:52:33 +0800
+Received: from gitserver.wistron.com (10.37.38.233) by EXCHAPP01.whq.wistron 
+ (10.37.38.24) with Microsoft SMTP Server id 15.1.1913.5 via Frontend
+ Transport; Thu, 23 Apr 2020 17:52:33 +0800
+From: Ben Pai <Ben_Pai@wistron.com>
+To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <joel@jms.id.au>, 
+ <andrew@aj.id.au>, <devicetree@vger.kernel.org>, 
+ <linux-arm-kernel@lists.infradead.org>, 
+ <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v1] ARM: dts: aspeed: mihawk: add aliases for i2c
+Date: Thu, 23 Apr 2020 17:52:30 +0800
+Message-ID: <20200423095230.7622-1-Ben_Pai@wistron.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <b554ea70-16da-1637-d349-db51dddcf95b@sholland.org>
+X-TM-SNTS-SMTP: DF640E53D713C7A34CBE175353B2BE73D2DAA46F479D4A5F1E5646AC6EFC3D5A2000:8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_024943_215596_1D28683F 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200423_025258_251675_E8DA961A 
+X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [103.200.3.19 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,88 +69,413 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1058855313140818803=="
+Cc: Andy_YF_Wang@wistron.com, Ben Pai <Ben_Pai@wistron.com>,
+ Claire_Ku@wistron.com, wangat@tw.ibm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Set the bus id for each mux channel to avoid switching channels
+multiple times
 
---===============1058855313140818803==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qhzqxzvlhlzjufin"
-Content-Disposition: inline
+Signed-off-by: Ben Pai <Ben_Pai@wistron.com>
+---
+ arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 293 +++++++++++++++++++-
+ 1 file changed, 289 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+index f7e935ede919..0f8550f158f5 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+@@ -8,6 +8,52 @@
+ 	model = "Mihawk BMC";
+ 	compatible = "ibm,mihawk-bmc", "aspeed,ast2500";
+ 
++	aliases {
++		i2c215 = &bus6_mux215;
++		i2c216 = &bus6_mux216;
++		i2c217 = &bus6_mux217;
++		i2c218 = &bus6_mux218;
++		i2c219 = &bus6_mux219;
++		i2c220 = &bus6_mux220;
++		i2c221 = &bus6_mux221;
++		i2c222 = &bus6_mux222;
++		i2c223 = &bus7_mux223;
++		i2c224 = &bus7_mux224;
++		i2c225 = &bus7_mux225;
++		i2c226 = &bus7_mux226;
++		i2c227 = &bus7_mux227;
++		i2c228 = &bus7_mux228;
++		i2c229 = &bus7_mux229;
++		i2c230 = &bus7_mux230;
++		i2c231 = &bus9_mux231;
++		i2c232 = &bus9_mux232;
++		i2c233 = &bus9_mux233;
++		i2c234 = &bus9_mux234;
++		i2c235 = &bus9_mux235;
++		i2c236 = &bus9_mux236;
++		i2c237 = &bus9_mux237;
++		i2c238 = &bus9_mux238;
++		i2c239 = &bus10_mux239;
++		i2c240 = &bus10_mux240;
++		i2c241 = &bus10_mux241;
++		i2c242 = &bus10_mux242;
++		i2c243 = &bus10_mux243;
++		i2c244 = &bus10_mux244;
++		i2c245 = &bus10_mux245;
++		i2c246 = &bus10_mux246;
++		i2c247 = &bus12_mux247;
++		i2c248 = &bus12_mux248;
++		i2c249 = &bus12_mux249;
++		i2c250 = &bus12_mux250;
++		i2c251 = &bus13_mux251;
++		i2c252 = &bus13_mux252;
++		i2c253 = &bus13_mux253;
++		i2c254 = &bus13_mux254;
++		i2c255 = &bus13_mux255;
++		i2c256 = &bus13_mux256;
++		i2c257 = &bus13_mux257;
++		i2c258 = &bus13_mux258;
++	};
+ 
+ 	chosen {
+ 		stdout-path = &uart5;
+@@ -630,6 +676,54 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 		reg = <0x70>;
++
++		bus6_mux215: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus6_mux216: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus6_mux217: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus6_mux218: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
++
++		bus6_mux219: i2c@4 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <4>;
++		};
++
++		bus6_mux220: i2c@5 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <5>;
++		};
++
++		bus6_mux221: i2c@6 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <6>;
++		};
++
++		bus6_mux222: i2c@7 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <7>;
++		};
+ 	};
+ 
+ };
+@@ -644,6 +738,54 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 		reg = <0x70>;
++
++		bus7_mux223: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus7_mux224: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus7_mux225: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus7_mux226: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
++
++		bus7_mux227: i2c@4 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <4>;
++		};
++
++		bus7_mux228: i2c@5 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <5>;
++		};
++
++		bus7_mux229: i2c@6 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <6>;
++		};
++
++		bus7_mux230: i2c@7 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <7>;
++		};
+ 	};
+ 
+ };
+@@ -684,6 +826,30 @@
+ 		i2c-mux-idle-disconnect;
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
++
++		bus9_mux231: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus9_mux232: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus9_mux233: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus9_mux234: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
+ 	};
+ 
+ 	pca9545@71 {
+@@ -695,6 +861,30 @@
+ 		i2c-mux-idle-disconnect;
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
++
++		bus9_mux235: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus9_mux236: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus9_mux237: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus9_mux238: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
+ 	};
+ };
+ 
+@@ -725,6 +915,30 @@
+ 		i2c-mux-idle-disconnect;
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
++
++		bus10_mux239: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus10_mux240: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus10_mux241: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus10_mux242: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
+ 	};
+ 
+ 	pca9545@71 {
+@@ -736,6 +950,30 @@
+ 		i2c-mux-idle-disconnect;
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
++
++		bus10_mux243: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus10_mux244: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus10_mux245: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus10_mux246: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
+ 	};
+ };
+ 
+@@ -796,7 +1034,7 @@
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
+ 
+-		i2c@0 {
++		bus12_mux247: i2c@0 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <0>;
+@@ -807,7 +1045,7 @@
+ 			};
+ 		};
+ 
+-		i2c@1 {
++		bus12_mux248: i2c@1 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <1>;
+@@ -818,7 +1056,7 @@
+ 			};
+ 		};
+ 
+-		i2c@2 {
++		bus12_mux249: i2c@2 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <2>;
+@@ -829,7 +1067,7 @@
+ 			};
+ 		};
+ 
+-		i2c@3 {
++		bus12_mux250: i2c@3 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <3>;
+@@ -857,6 +1095,53 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 		reg = <0x70>;
++		bus13_mux251: i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++		};
++
++		bus13_mux252: i2c@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++		};
++
++		bus13_mux253: i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++		};
++
++		bus13_mux254: i2c@3 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <3>;
++		};
++
++		bus13_mux255: i2c@4 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <4>;
++		};
++
++		bus13_mux256: i2c@5 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <5>;
++		};
++
++		bus13_mux257: i2c@6 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <6>;
++		};
++
++		bus13_mux258: i2c@7 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <7>;
++		};
+ 	};
+ };
+ 
+-- 
+2.17.1
 
 
---qhzqxzvlhlzjufin
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Apr 22, 2020 at 06:50:54PM -0500, Samuel Holland wrote:
-> Maxime,
->=20
-> On 4/22/20 10:16 AM, Maxime Ripard wrote:
-> > On Tue, Apr 21, 2020 at 11:15:02PM -0500, Samuel Holland wrote:
-> >> As of v5.7-rc2, Linux now prints the following message at boot:
-> >>
-> >>   [   33.848525] platform sound_spdif: deferred probe pending
-> >>
-> >> This is because &sound_spdif is waiting on its DAI link component
-> >> &spdif to probe, but &spdif is disabled in the DTS. Disable the
-> >> audio card as well to match.
-> >>
-> >> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> >=20
-> > The patch looks good, but don't we have some boards with SPDIF enabled =
-that
-> > should be modified accordingly?
->=20
-> I don't see any in-tree. The only A64 DTS that references &spdif at all is
-> sun50i-a64-pine64.dts, which explicitly disables it:
->=20
-> 	/* On Euler connector */
-> 	&spdif {
->   		status =3D "disabled";
-> 	};
->=20
-> I'm leaning toward agreeing with Clement that the sound_spdif node (and a=
-lso
-> spdif_out) should be removed altogether from the A64 DTSI.
-
-Yeah, I agree, it's pretty much what we've been doing in other SoCs. Especi=
-ally
-if we don't have any DT in-tree using it, we don't really have any incentiv=
-e to
-make it common.
-
-Maxime
-
---qhzqxzvlhlzjufin
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqFkswAKCRDj7w1vZxhR
-xcXYAP0YCJVCZ13NxvfRPVD96Em/vCf6tbVNq2xSDRxJvc/HXgEArMdDscxqBjIi
-+IipThGZM45abULaOWDYaEdv6VvqOwQ=
-=5Z/9
------END PGP SIGNATURE-----
-
---qhzqxzvlhlzjufin--
-
-
---===============1058855313140818803==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+This email contains confidential or legally privileged information and is for the sole use of its intended recipient. 
+Any unauthorized review, use, copying or distribution of this email or the content of this email is strictly prohibited.
+If you are not the intended recipient, you may reply to the sender and should delete this e-mail immediately.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1058855313140818803==--
-
