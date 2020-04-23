@@ -2,47 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 281351B664A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:41:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 261D41B665E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 23:41:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4DnTeuXy/jX8jlaLzqw9e04JHSCAn4rBQZzq5I/LbEs=; b=hyS
-	/fYUL6MMNuamhGAIugx9U+Q6pdFBO20Q602YN31ZDf4naPoRhF1jC/BV+XGP1SCEmkgXW86JhY1LE
-	50TKeuQcT3oRU2zGNcKUzCMAB3qS4vWrhqHgCXgId3iFyg51/0VG001BlFFmFX3wwrZk4/Itn93JW
-	boZNk/qq/Bs3fyLTIjqtp7sJY0q/IVyoHkkPu2ETtejxXLhtcCvYIjRwtXP94NrfJSNPlRsmtvIiP
-	9CMRLx0XCqlaCdAnsCjSGQNj29mhwj3Tqw+7pTfG8JZpkTDiIGE9Pw1b60Y6kyEaVAqqeuXvbs/bQ
-	4KCgbE1OxW2EylmPPL4wlJNNSndU0vg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oqNbROkth3G8sxTsAWyHwX15ubExU8IEbKVFyzztxUw=; b=Z+/eWQhdGgtBrPsy4TX/eayA2P
+	PotD11gz8TVHhZ1I1yEmR4kd8fZKGmebDOH2FvhxOZani6FwB+eA6hMH+KspXJ0UoDQwL2FQhkAb0
+	tiNxjFXAxign2ECH8rAdcUEpxfg70wmBWz+rqd/VKAYIRaz+i6DIN02a27JfNavHDhbJdGB0SxRUj
+	7R8HRnJtOIfSQefrWSq6tHKg4DWBk/7LD/5rnuK+wdmUcoN+ISmA/+nF/By4UzXCufPUHmRLzJ0Cu
+	cPS0JdauHoIvyaYeHEsPryL0aKY9oap0dH4HVPxhQMzMpjSqQrCoqI1VvJcCbKflfv4zgk+89Jhnz
+	Vw8du7kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRjaw-0007YC-Qx; Thu, 23 Apr 2020 21:41:18 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172]
- helo=relmlie6.idc.renesas.com)
+	id 1jRjbJ-0007fb-4l; Thu, 23 Apr 2020 21:41:41 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171]
+ helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRjan-0007XV-Jl
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:11 +0000
-X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45339771"
+ id 1jRjar-0007Y4-13
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 21:41:14 +0000
+X-IronPort-AV: E=Sophos;i="5.73,309,1583161200"; d="scan'208";a="45553072"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie6.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:07 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 24 Apr 2020 06:41:11 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id ABF4F400C420;
- Fri, 24 Apr 2020 06:41:03 +0900 (JST)
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id AA16B4004BB2;
+ Fri, 24 Apr 2020 06:41:07 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Geert Uytterhoeven <geert+renesas@glider.be>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH 00/10] Add RZ/G1H support.
-Date: Thu, 23 Apr 2020 22:40:40 +0100
-Message-Id: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH 01/10] dt-bindings: power: rcar-sysc: Document r8a7742 SYSC
+ binding
+Date: Thu, 23 Apr 2020 22:40:41 +0100
+Message-Id: <1587678050-23468-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_144109_777706_3B2B8B8E 
-X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-CacheID: sfid-20200423_144113_218292_A6CBB3B7 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -50,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.172 listed in list.dnswl.org]
+ no trust [210.160.252.171 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,48 +80,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series aims to add support for Renesas RZ/G1H (r8a7742) SoC.
+Add binding documentation for the RZ/G1H (R8A7742) SYSC block.
 
-RZ/G1H SoC is similar to R-Car Gen2 H2 SoC.
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
+---
+ Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-This patch set is based on renesas-drivers/master-v5.7-rc1.
-
-Lad Prabhakar (10):
-  dt-bindings: power: rcar-sysc: Document r8a7742 SYSC binding
-  dt-bindings: power: rcar-sysc: Add r8a7742 power domain index macros
-  soc: renesas: rcar-sysc: add R8A7742 support
-  dt-bindings: reset: rcar-rst: Document r8a7742 reset module
-  soc: renesas: rcar-rst: Add support for RZ/G1H
-  dt-bindings: clock: renesas: cpg-mssr: Document r8a7742 binding
-  clk: renesas: Add r8a7742 CPG Core Clock Definitions
-  clk: renesas: cpg-mssr: Add R8A7742 support
-  ARM: shmobile: r8a7742: Basic SoC support
-  cpufreq: dt: Add support for r8a7742
-
- .../bindings/clock/renesas,cpg-mssr.yaml           |   1 +
- .../bindings/power/renesas,rcar-sysc.yaml          |   1 +
- .../devicetree/bindings/reset/renesas,rst.yaml     |   1 +
- arch/arm/mach-shmobile/setup-rcar-gen2.c           |   2 +
- drivers/clk/renesas/Kconfig                        |   5 +
- drivers/clk/renesas/Makefile                       |   1 +
- drivers/clk/renesas/r8a7742-cpg-mssr.c             | 289 +++++++++++++++++++++
- drivers/clk/renesas/renesas-cpg-mssr.c             |   6 +
- drivers/clk/renesas/renesas-cpg-mssr.h             |   1 +
- drivers/cpufreq/cpufreq-dt-platdev.c               |   1 +
- drivers/soc/renesas/Kconfig                        |   4 +
- drivers/soc/renesas/Makefile                       |   1 +
- drivers/soc/renesas/r8a7742-sysc.c                 |  42 +++
- drivers/soc/renesas/rcar-rst.c                     |   1 +
- drivers/soc/renesas/rcar-sysc.c                    |   3 +
- drivers/soc/renesas/rcar-sysc.h                    |   1 +
- include/dt-bindings/clock/r8a7742-cpg-mssr.h       |  42 +++
- include/dt-bindings/power/r8a7742-sysc.h           |  29 +++
- 18 files changed, 431 insertions(+)
- create mode 100644 drivers/clk/renesas/r8a7742-cpg-mssr.c
- create mode 100644 drivers/soc/renesas/r8a7742-sysc.c
- create mode 100644 include/dt-bindings/clock/r8a7742-cpg-mssr.h
- create mode 100644 include/dt-bindings/power/r8a7742-sysc.h
-
+diff --git a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
+index e59331e1..55b6ab2 100644
+--- a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
++++ b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.yaml
+@@ -17,6 +17,7 @@ description:
+ properties:
+   compatible:
+     enum:
++      - renesas,r8a7742-sysc  # RZ/G1H
+       - renesas,r8a7743-sysc  # RZ/G1M
+       - renesas,r8a7744-sysc  # RZ/G1N
+       - renesas,r8a7745-sysc  # RZ/G1E
 -- 
 2.7.4
 
