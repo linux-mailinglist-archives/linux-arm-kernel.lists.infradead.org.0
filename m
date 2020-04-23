@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37CD21B6585
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:37:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 961681B658C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 22:38:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uDJxBjHnlKmjh5WwQGcS6/yah8YfDi/O0LJjphMjPNY=; b=qQBhUg/Y2zisq8vdLNMxXjT3u
-	NvYUP6eIFnt/SLM3nweh1vJ4AYxAhbYDjNvNSAG2c9e4z8TLvcsPRBGKzKGnYmF1EuR0Uch11aAfb
-	lsw23yHy/UiZrFYxFL1mUGIRsuZJIEc1zyhgb9ZejuBa1iK83AA/xWi5cQpgW1Yd31ArEeiuA3U6G
-	O2XaJ4goVEiSiNFsLNpW9nn6ONcBnHJ0rlEcqmJQsdLdMPPL3Qq2oTlHYO9nmY8ApLce80aj+03TY
-	7/W2M8ZDcnQyGgAM5iaBapXx3Pb3qdgfDv081SaK/hI246ZUvb1d7HNJsOP/mwmWkPA43v/WYjMvE
-	DWLXmr+ww==;
+	 bh=w2M/nFgIcjXo2rBeOCPxTWqQSx0ST6HIWeyl1yd7pdQ=; b=ukWHLUQRfrx2BT3D0nmjry1Kw
+	EVcR+WCYaRFNcUUVV013g4x4R1cmj48U1DqDL+Sf/L0alAYyykWD+k3lJCoDMUjG+MR1GAdjXwcA3
+	qs0zW3vM+lO4NoAhrGVUwW7atsKNdsUQovD03PIP6yALGtk3tYKZO1qw3+sd8SB/i8uXGveDDYCI9
+	mubUBBITjuM3ZS7P7AMiNpNdlv2bs4SObclPuo/Zj/IGGYCmS7oCEEQ9fAxPuNLdc30oWao4WMJQH
+	6EhMpikIWCLh7Q2P2vOe/Hm9J30Jwg1ng5zlQCmzPE/eMmsYG6llKtcACFS+S3qtBOrOaDko+R/1e
+	fpOThET7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRias-0005I1-Nw; Thu, 23 Apr 2020 20:37:10 +0000
+	id 1jRibh-0005gk-1V; Thu, 23 Apr 2020 20:38:01 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRiak-0005HB-6U
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 20:37:03 +0000
+ id 1jRibS-0005fa-2A
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 20:37:47 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 4725158030B;
- Thu, 23 Apr 2020 16:36:49 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 23 Apr 2020 16:36:49 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 69404580311;
+ Thu, 23 Apr 2020 16:37:42 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Thu, 23 Apr 2020 16:37:42 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=Iubs+KISuHQ9VGeGg+cCp2xJSoU
- PuYVrphsLXiw5SFg=; b=Fn2d1x+/36iC3PGOTy5Cp2hHxpxTsbZXqEhCoWSU6fC
- Bh2uGjm8NzjGSIGOhUdI6jIFnaNlWlK/KNK0SO5YgDVKAzn9T8T4ClUJFkXWcI/L
- SrSHQwn+ywvkFIfMqeLT0tGOBnOJCf3GhECZDwsJXcOOkFJEZ5PO3Hg2TEHxt0Ji
- XXCiuCgBhfrNpF+Q4qgbmo0zisCBtKA1VkhzWKnI3UD+PuwtHOjrTI/5OtSrja0W
- 0xNGXCJ8ebZmLgh5iBcj0TUAG6xzsfP58vDHg4dtrP2Je050KddpO2V/+DEw4INi
- HTrBFJ8cS/EHw4cjf9yqCM3mqKMdTGT34HW7z+GoIEQ==
+ :content-type:in-reply-to; s=fm2; bh=1rgoWEglUTjk3ArPIIoAl+30lpL
+ 4idh7C80OCTHpmUw=; b=SAJTsuiPodXPJOLPlP7oomUce1KO9HgLp4LSXSG2q9V
+ k99XrTsnVoZPCz2XKjQKD/wUosuK8MuRP1DWKzbl17A0aD9dPIcfL5Yv29wTyk/s
+ MxPtd1I8auIbqrXO6sX44R4LiutPyRWiA1ti78y/EUTrpxEy1duwnEXz88RMu+Wa
+ 29LJ8E+3FKB4mPDCcNdNCTFAYCSjWqg98NxjT/PmRIX9XZYcDg8HGlb8Ek85mB+Y
+ afP7G0NWuBm2SWYwZUxi54SkwGeEkgnt8e2iIWKGi/rdjHY2FkoWTUfZma4E6I7p
+ 8zBHjptMWfRwKtt/h5nnvYAnwr/EisDPFqpP7SVY4ew==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Iubs+K
- ISuHQ9VGeGg+cCp2xJSoUPuYVrphsLXiw5SFg=; b=X5O3GV4KFSkNBZXwi0gXe/
- Az/rwjNsPXRiOZeR/DIobQrkLfux9vKSBPW2Q7Wch/uG7VG9fPmUEU8Kyi30iPJx
- 6rZFq866Z4AieJ/VQuUcLR0mV0pZLLxlv3ciLBDB/NhY/AvDjNVAvMjJxXjdCS6K
- u41z1fKpjs0erRbydhTf6J8lDzfZB7FSCFB8idsmUzAcZtLjWHuo6bbN3Dpzw+lv
- Xc1y1zz0vGYrNGmVPq0/4/8tCV+p/V1vxI12KqIjNELt9KhmHqpZLjuh1WSuMbeZ
- mWk/VcSn4C4MRsWk0RVAApy8MoL8ZK52EhiDYG9eBvoyLIChI6lqSRyqMDdlQG7g
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=1rgoWE
+ glUTjk3ArPIIoAl+30lpL4idh7C80OCTHpmUw=; b=FjH1HHY1SYTP/zk1w/wFGD
+ SQJkRMnQfaPNqbJSWS0avw2d6sCE0ifpDAK6vqra+AzCyPNpF/s1rZ1bEwox4Tgp
+ 5pRbjM7eb2MuhvBXHwujlGQ6qpYXKeyP1LJNg4R8oz82cnPqnDpTB2nCKi/DI/YA
+ Ks5K8dR7ic8gJjYBr7a9npZnjiKmlpoGay9ZCGbr3KF+su+cblWqDQPKYrSD3IR/
+ kCSbFXIEV+Qjgu2OS5YFstcNjXDXy6Fnc7738GUpuHwryUCudVJ5gHwjTV5IveLR
+ qiGMtBCk9VdHZ3Y9yphlb5ppjnApd7jwJ+f9+lE0RQcS4Xdz9gzelpUkfHYLOJ8g
  ==
-X-ME-Sender: <xms:XfyhXtOzOOFFqaB2EmGtuUz4AXihlYYhfPH3NPly7o2BbKivw_911Q>
+X-ME-Sender: <xms:kfyhXuV9_lOcQCaGhKDLNNqO3cyD3i3DpEf_1MWSOGICGvB7_Q4laA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrgeelgdduudejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepudenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:XfyhXkMYXTgP_dAi3mHrR2OLJMQgltfV-ZrcUbSZbYi-eyL9XqlWvQ>
- <xmx:XfyhXnRz3tzFqWtdmt2KW_Iy-oRzKWX5FUFdLIFvNbNly0q4eowTmw>
- <xmx:XfyhXuBpYPyCR1QitUY5OuM1TQtkKBdD8mz-YseHbvORsD3x-nC7Qg>
- <xmx:YfyhXklTjVJsrJRboZpeYnKPAGn0Xr4Sox5XlaeG8MS2WPQdNjQpdg>
+X-ME-Proxy: <xmx:kfyhXhJGup0irbSm7vO_9T0yPLxTEYhpuZ2E8oHhgz9vj5BJ3Cw0kg>
+ <xmx:kfyhXvKW36ehC4KYnTQbBDBeA-onlsefkaFfDRE0si9E8P2EW3ls3g>
+ <xmx:kfyhXt-bSwETRMJWIWQ8-fwwZs4BZXSea5_ChbcjuZeeIB-CsnZ1CA>
+ <xmx:lvyhXvcpdjm9Gmks9Zw2iUnYhWgzea6einYlDWRsnbwdwAEZC9o6sA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id CD893328005E;
- Thu, 23 Apr 2020 16:36:44 -0400 (EDT)
-Date: Thu, 23 Apr 2020 22:36:42 +0200
+ by mail.messagingengine.com (Postfix) with ESMTPA id 632923065D59;
+ Thu, 23 Apr 2020 16:37:37 -0400 (EDT)
+Date: Thu, 23 Apr 2020 22:37:35 +0200
 From: Maxime Ripard <maxime@cerno.tech>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
+To: Philipp Rossak <embed3d@gmail.com>
 Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
  PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
-Message-ID: <20200423203642.35ms4aarnv65tfp5@gilmour.lan>
-References: <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
+Message-ID: <20200423203735.imlafyw6oz6dspev@gilmour.lan>
+References: <cover.1586939718.git.hns@goldelico.com>
+ <20200415101008.zxzxca2vlfsefpdv@gilmour.lan>
+ <2E3401F1-A106-4396-8FE6-51CAB72926A4@goldelico.com>
+ <20200415130233.rgn7xrtwqicptke2@gilmour.lan>
+ <C589D06E-435E-4316-AD0A-8498325039E3@goldelico.com>
+ <10969e64-fe1f-d692-4984-4ba916bd2161@gmail.com>
+ <20200420073842.nx4xb3zqvu23arkc@gilmour.lan>
+ <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
  <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
- <20200421141543.GU37466@atomide.com>
- <D9D4D057-A73D-485F-898D-5C05E89C16B7@goldelico.com>
- <20200422065859.quy6ane5v7vsy5tf@gilmour.lan>
- <1AA57A0C-48E6-49BB-BB9A-2AAFFB371BCD@goldelico.com>
- <20200422151328.2oyqz7gqkbunmd6o@gilmour.lan>
- <07923B6C-4CCD-4B81-A98F-E19C43412A89@goldelico.com>
- <43688597-4b99-8f4d-9ad5-548ddff07f52@baylibre.com>
- <71F2F964-32C7-41E6-8F1A-A73161EA1BB3@goldelico.com>
+ <5749af21-e707-c998-c83b-50c48867c9e8@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <71F2F964-32C7-41E6-8F1A-A73161EA1BB3@goldelico.com>
+In-Reply-To: <5749af21-e707-c998-c83b-50c48867c9e8@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_133702_380101_F99153AD 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20200423_133746_237172_2C79FF99 
+X-CRM114-Status: GOOD (  26.99  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -112,121 +112,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Tony Lindgren <tony@atomide.com>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
  "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Cercueil <paul@crapouillou.net>, linux-samsung-soc@vger.kernel.org,
+ linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
+ linux-samsung-soc@vger.kernel.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
  Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, James Hogan <jhogan@kernel.org>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>,
  =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
  Rob Herring <robh+dt@kernel.org>, linux-omap <linux-omap@vger.kernel.org>,
  arm-soc <linux-arm-kernel@lists.infradead.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>,
  OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>
-Content-Type: multipart/mixed; boundary="===============1517417578913194562=="
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
+Content-Type: multipart/mixed; boundary="===============7776854970486427746=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1517417578913194562==
+--===============7776854970486427746==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="goo77pyirkr5psgn"
+	protocol="application/pgp-signature"; boundary="uldmalad7cdsj5zk"
 Content-Disposition: inline
 
 
---goo77pyirkr5psgn
+--uldmalad7cdsj5zk
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Apr 23, 2020 at 05:45:55PM +0200, H. Nikolaus Schaller wrote:
-> > Am 23.04.2020 um 17:00 schrieb Neil Armstrong <narmstrong@baylibre.com>:
-> >> One thing we can learn is that "core" seems to be a de facto standard=
-=20
-> >> for the core clock-name. An alternative "gpu" is used by nvidia,gk20a.=
-txt.
+On Tue, Apr 21, 2020 at 06:42:17PM +0200, Philipp Rossak wrote:
+> Hi,
+>=20
+> On 21.04.20 13:21, Maxime Ripard wrote:
+> > Hi,
 > >=20
-> > Usually IPs needs a few clocks:
-> > - pclk or apb or reg: the clock clocking the "slave" bus to serve the r=
-egisters
-> > - axi or bus or ahb: the bus clocking the the "master" bus to get data =
-=66rom system memory
-> > - core: the actual clock feeding the GPU logic
->=20
-> And the sgx544 seems to have two such clocks.
->=20
-> > Sometimes you have a single clock for slave and master bus.
+> > On Tue, Apr 21, 2020 at 11:57:33AM +0200, Philipp Rossak wrote:
+> > > On 20.04.20 09:38, Maxime Ripard wrote:
+> > > > Hi,
+> > > >=20
+> > > > On Fri, Apr 17, 2020 at 02:09:06PM +0200, Philipp Rossak wrote:
+> > > > > > > I'm a bit skeptical on that one since it doesn't even list the
+> > > > > > > interrupts connected to the GPU that the binding mandates.
+> > > > > >=20
+> > > > > > I think he left it out for a future update.
+> > > > > > But best he comments himself.
+> > > > >=20
+> > > > > I'm currently working on those bindings. They are now 90% done, b=
+ut they are
+> > > > > not finished till now. Currently there is some mainline support m=
+issing to
+> > > > > add the full binding. The A83T and also the A31/A31s have a GPU P=
+ower Off
+> > > > > Gating Register in the R_PRCM module, that is not supported right=
+ now in
+> > > > > Mainline. The Register need to be written when the GPU is powered=
+ on and
+> > > > > off.
+> > > > >=20
+> > > > > @Maxime: I totally agree on your point that a demo needs to be pr=
+ovided
+> > > > > before the related DTS patches should be provided. That's the rea=
+son why I
+> > > > > added the gpu placeholder patches.
+> > > > > Do you have an idea how a driver for the R_PRCM stuff can look li=
+ke? I'm not
+> > > > > that experienced with the clock driver framework.
+> > > >=20
+> > > > It looks like a power-domain to me, so you'd rather plug that into =
+the genpd
+> > > > framework.
+> > >=20
+> > > I had a look on genpd and I'm not really sure if that fits.
+> > >=20
+> > > It is basically some bit that verify that the clocks should be enable=
+d or
+> > > disabled.
 > >=20
-> > But you can also have separate clocks for shader cores, .. this depends=
- on the IP and it's architecture.
-> > The IP can also have memories with separate clocks, etc...
->=20
-> Indeed.
->=20
-> > But all these clocks can be source by an unique clock on a SoC, but dif=
-ferent on another
-> > SoC, this is why it's important to list them all, even optional.
+> > No, it can do much more than that. It's a framework to control the SoCs=
+ power
+> > domains, so clocks might be a part of it, but most of the time it's goi=
+ng to be
+> > about powering up a particular device.
 > >=20
-> > You'll certainly have at least a reset signal, and a power domain, thes=
-e should exist and be optional.
+> So I think I've found now the right piece of documentation and a driver t=
+hat
+> implements something similar [1].
 >=20
-> Well, they exist only as hints in block diagrams of some SoC data
-> sheets (so we do not know if they represent the imagination
-> definitions) and the current driver code doesn't make use of it. Still
-> the gpu core works.
->=20
-> So I do not see any urgent need to add a complete list to the bindings
-> now.
->=20
-> Unless some special SoC integration makes use of them. Then it is IMHO
-> easier to extend the bindings by a follow-up patch than now thinking
-> about all potential options and bloating the bindings with things we
-> (the open source community) doesn't and can't know.
->=20
-> My goal is to keep the bindings as minimalistic as possible. And reset
-> lines and power domains are (at least for those we have in the works)
-> not needed to make working systems.
->=20
-> Therefore, for clocks I also would start with a minimalistic approach
-> for a single optional GPU core clock and leave out reset and power
-> completely.
+> So I will write a similar driver like linked above that only sets the rig=
+ht
+> bits for A83T and A31/A31s.
+> Do you think this is the right approach?
 
-Like I said above, the DT is considered an ABI and you'll have to
-maintain backward compatibility (ie, newer kernel running with older
-DT). Therefore, you won't be able to require a new clock, reset or
-power-domain later on for example.
-
-I guess the question I'm really asking is: since you don't really know
-how the hardware is integrated at the moment, why should we have that
-discussion *now*. It's really not suprising that you don't know yet, so
-I'm not sure why we need to rush in the bindings.
+That sounds about right yes
 
 Maxime
 
---goo77pyirkr5psgn
+--uldmalad7cdsj5zk
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqH8WgAKCRDj7w1vZxhR
-xevnAQDosUT6nmUX0+zNQOj7IKsbVGpyycJhdLX1FoaJiEMTHgD/SWTr0aPp/w2C
-TCfnfiPupaeG8u9JV8QMCk/a58o6Xw8=
-=ygqv
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqH8jwAKCRDj7w1vZxhR
+xa6OAPsG0hWkJM/X3rADW428/4uNb7tDwdYNFydI9sbl6UhzkAEAxIit7pCZ/iLs
+0cgwkg9mtFDlpNF5/GCnOiGoztgoNAU=
+=F7xP
 -----END PGP SIGNATURE-----
 
---goo77pyirkr5psgn--
+--uldmalad7cdsj5zk--
 
 
---===============1517417578913194562==
+--===============7776854970486427746==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -237,5 +239,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1517417578913194562==--
+--===============7776854970486427746==--
 
