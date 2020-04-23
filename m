@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6961D1B58D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:12:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0281A1B58EA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:16:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lsWGndhGoYayXM2pADmsQXKSCgFXm2xpEsvp9XZ5RtA=; b=Npq
-	fBSkfiRiToNcLW+6DxF8f3ji5m6kbqXgGpBAKITQkuxX1l5BUOqCweV/ObPss+7P/LX9x2Ie29B1/
-	GOkuwzTjsWro1ZwKmRa9px2jyB87vQ5zfbtSbLkoJcA14X+Ev9jlgzi7A2rG+//m0sINlu0IfHcWG
-	LiGoqUG8ijG9216KXp4SLw1xmcFn/uFzfwf3geTiokgo7ZYIvhiHXRRhrSKckDSAVnei7A6hbWpCa
-	26FmYh7JIASQ82wu7V89hhZQoBK+osYJW9puq2g7r78yjAT2iOWqIEEfI4+2wgEqIlKcksWZ+ohMD
-	1to8+aeDGdHbtGvNPpilMu67JDHVrzA==;
+	References:List-Owner; bh=v7WqwR2UiwINbrSOSnyBG7d01qNkImU352x0Mu4S5/g=; b=eK+
+	Be53BYNs8U3phYdrc83s4Bhsy2Upzgth76SZJDsQT/Ig6Xb91xLndd6wbe5+LvJW9P2v5DVdB79gY
+	pMXP1lzuPOWbWq0Gb+CNpSsfSmOPEe6vYtIAEBVgs9ASZ2svGNtHA0Cp0Lhpn/NSfeKfFkCiEgj3d
+	ukt1dDI/l6Ncv+BCW+USU7cS/Vw6DHeFbMjh1AFAGctxP+1VrLJKyLrsz/a1ABvqj71ZRGd7+9y1m
+	JK73EbWwO5+EwJoG9GJdhIzMOu51ZdHXoTUtDdg3c9BJc4hcqe8apeTQKOxD2WjIp9S7+OzP/yVOh
+	DnlSAu24hct1YH17U2WIfRSTACX2igQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRYqH-00010n-Ol; Thu, 23 Apr 2020 10:12:25 +0000
+	id 1jRYuK-0000qX-RF; Thu, 23 Apr 2020 10:16:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRYq1-0000bd-78
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:12:10 +0000
+ id 1jRYu0-0000eh-G0
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:16:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75F4531B;
- Thu, 23 Apr 2020 03:12:04 -0700 (PDT)
-Received: from DESKTOP-C6DAH4D.cambridge.arm.com
- (DESKTOP-C6DAH4D.cambridge.arm.com [10.1.194.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 88B733F68F;
- Thu, 23 Apr 2020 03:12:03 -0700 (PDT)
-From: Anurag Koul <anurag.koul@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 947B431B;
+ Thu, 23 Apr 2020 03:16:15 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 913DE3F68F;
+ Thu, 23 Apr 2020 03:16:14 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] coresight: etm4x: Add support for Neoverse N1 ETM
-Date: Thu, 23 Apr 2020 11:11:41 +0100
-Message-Id: <20200423101141.25280-1-anurag.koul@arm.com>
-X-Mailer: git-send-email 2.17.1
+Subject: [PATCH 0/2] arm64: pointer authentication initialization cleanup
+Date: Thu, 23 Apr 2020 11:16:04 +0100
+Message-Id: <20200423101606.37601-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_031209_308590_8C076E47 
-X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-CacheID: sfid-20200423_031616_577126_739BDEA7 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -60,36 +60,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, suzuki.poulose@arm.com,
- Anurag Koul <anurag.koul@arm.com>, mathieu.poirier@linaro.org,
- mike.leach@linaro.org
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ james.morse@arm.com, amit.kachhap@arm.com, will@kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PID for Arm Neoverse N1 ETM to the list of supported/known ETMs.
+These patches refactor the pointer authentication initialization code to make
+it easier to reason about and to reduce duplication of code.
 
-Signed-off-by: Anurag Koul <anurag.koul@arm.com>
----
- drivers/hwtracing/coresight/coresight-etm4x.c | 1 +
- 1 file changed, 1 insertion(+)
+The big wins are:
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 0b2c7c7efacb..7443a2e4528d 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1541,6 +1541,7 @@ static const struct amba_id etm4_ids[] = {
- 	CS_AMBA_ID(0x000bb95a),			/* Cortex-A72 */
- 	CS_AMBA_ID(0x000bb959),			/* Cortex-A73 */
- 	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),/* Cortex-A35 */
-+	CS_AMBA_UCI_ID(0x000bbd0c, uci_id_etm4),/* Neoverse N1 */
- 	CS_AMBA_UCI_ID(0x000f0205, uci_id_etm4),/* Qualcomm Kryo */
- 	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
- 	CS_AMBA_UCI_ID(0x000bb802, uci_id_etm4),/* Qualcomm Kryo 385 Cortex-A55 */
+* Moving the initialization after the MMU has been enabled. This means we can
+  initialize the keys using the same helpers as context switch, and don't need
+  to temporarily duplicate them in secondary_data.
+
+* Moving primary/secondary conditional initialization into the respective
+  primary/secondary boot paths. This minimizes potentially-confusing control
+  flow and still allows for code sharing via helper macros.
+
+I've given this a spin on a foundation model, with userspace and kernel tests,
+playing with CPU hotplug, etc.
+
+Patches based on v5.7-rc2. These have no dependency on my fix queued in
+for-next/core.
+
+Thanks,
+Mark.
+
+Mark Rutland (2):
+  arm64: remove ptrauth_keys_install_kernel sync arg
+  arm64: simplify ptrauth initialization
+
+ arch/arm64/include/asm/asm_pointer_auth.h | 43 +++++++++++++++++++++++++----
+ arch/arm64/include/asm/smp.h              | 11 --------
+ arch/arm64/kernel/asm-offsets.c           |  3 --
+ arch/arm64/kernel/entry.S                 |  4 +--
+ arch/arm64/kernel/head.S                  | 12 ++++++--
+ arch/arm64/kernel/sleep.S                 |  1 -
+ arch/arm64/kernel/smp.c                   |  8 ------
+ arch/arm64/mm/proc.S                      | 46 +------------------------------
+ 8 files changed, 51 insertions(+), 77 deletions(-)
+
 -- 
-2.17.1
+2.11.0
 
 
 _______________________________________________
