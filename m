@@ -2,120 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCF891B5ED2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:13:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C91CD1B5ED9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 17:14:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kLkfDA0N06T/dl+pwW/rLAERVH6wDJUDT0EEFcNLsT8=; b=obEyypo0OvTWob
-	viLur4l59kR4nJe8VCsLw7Ytsy49Jps3aSN/HHTegnBzeVQBgvRhO3Nl0cD3LV6xcDvrsfEIPoctK
-	Z60ErQ5J9s+HCI6QhZjicD2AvJv4XpS5vqDQfoEmfo9FQsAH7rx84K7Wa1upvqTD3CEb0yXlHztXh
-	x1FfJpIFsdDrA5qVhE7THbtezgcrYW9MEPANzSs5HXWIlWtWUUFGxDUbdkyjWxTCt2jQoSuDuRlrH
-	sXXdC90yLN2w/J+bTDjd4zXo7SbRtCuhfBw0mUvy5rt3z+JJITEdzYQPCZMSFV5yApDr0hZCkKpgA
-	VRG25ro4jah/Qpnr1a1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=J52ylyXqQf3evCnKPZNB4VmC6ogwdlVU5CoHj8vigZU=; b=CTdPbf0EgtOyUd3sxHUuoXDNp
+	UEDqzwMlStwR3LiLzGuPZmPewSa/+ik/iBcp3d9JBaomyorYWPlcS/O3e5w8VN7ZZq17yk2FSN6FJ
+	885ld5aPqn/Kr823wgMtNsomc26DRSqnOGMlPBOTkCOa9WaawNEMtDu0cSwphsqHe/hvpxNn+SqNZ
+	MjMDqsknSlKVroiLbs/5fcp6mrPcry4X2q4mvjZC9tluhgAgSXZtTQu/VXHXbUeZQFGWpNwlVODYP
+	FmLruecXO4mHWz1tN3GYjFa0IFltD6XsZd40Qt0d3ptxwUvEoNl4N3z1kyA7X9T82briDoz8iYYB1
+	Sr8VvjLxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRdXi-0006yQ-Mv; Thu, 23 Apr 2020 15:13:34 +0000
-Received: from mail-eopbgr10083.outbound.protection.outlook.com ([40.107.1.83]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1jRdYD-0007Iw-TT; Thu, 23 Apr 2020 15:14:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRdXN-0006nl-Ma
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:13:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iPn6VZdzjnc3RPDbI3LxlG/rbU/tdwGswzNAK/eReUZQSPcaTd3Mbmt7huawSmcN7OMaCGjtmzA64zxG7S6JfFY/UN5ozCgs0xHEz9LYmFLumRVOj7RwSWk1qMC8e97818sVUXOvdMQWpaw/XMsjjCNu4eqjcLi+xNs2Lpb1BzO9nZVRaDR3C53XejhHmzk8dVYjHCVGMQHXKiCvBr/V/0RmuPGTC0xvSU1mqBolQBfqEESOF3u1rcjdJB1TF55qANfAbJtA6ldmaD5fBDn2lUWvQhgZdQQ2slA+w5iVGY6mSaPqL9giT//59n7xSI2gI+ybfFVCEkLp6fjxE3zGyg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H/uzQ5Vv+rXk12nQvo+haF2Xb6A6zBZUdibwb01Ay+4=;
- b=YW+pzOMRbBW/KEHwRY5AJrWBMvsfLE57hZ5rSs6PvIbzdTjaBCsgSNvXrY75aOqmNHMjuzbyslAd5NQMPTbnsUlpz7f3FatOZxwc323W3R2Gjoj1U0CfaZer+qazGRbjuTxdXwgp53pz6tjx7Tm7dOmrm9hz55GxD1RTfHfAtTjWj8A9PgJJ5fdymf+TuSkvmwpJvjpJRY5JY+3XJjMvqE+XwcQW8EbGBOdt0i1ahUZbAVfDEkPLawA/OZWZBTdH2kEwTn63BYkBSPWzHUgfskuKf5siTBYsMeYtcezG34Mx1HCbTiQqtmvvtUBo7VjEW3KKkfIImFXErQR2hpPsnQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H/uzQ5Vv+rXk12nQvo+haF2Xb6A6zBZUdibwb01Ay+4=;
- b=AO9HQ/MBX9v9ogbkUIRQS0/G6okCuTKAKZSx3hTrAf2iLhIDoM9AehzY3v6sTpw8WZcCv4bco//aVrfwJ4FiV8vUSvkFe2OKZOEbA5HP2Aj2n3Cy2fyQMK/rq7pHBeVDfhfOac7C65RgaL9ZQr0WdFKlu/ucLD/oRXkMrj2DB3g=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB6295.eurprd04.prod.outlook.com (2603:10a6:20b:72::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Thu, 23 Apr
- 2020 15:13:08 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::d9f7:5527:e89d:1ae3]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::d9f7:5527:e89d:1ae3%7]) with mapi id 15.20.2921.032; Thu, 23 Apr 2020
- 15:13:08 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Leonard Crestez
- <leonard.crestez@nxp.com>, "linux@rempel-privat.de" <linux@rempel-privat.de>, 
- Peng Fan <peng.fan@nxp.com>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>
-Subject: RE: [PATCH 1/3] dt-bindings: firmware: imx: Move system control into
- dt-binding headfile
-Thread-Topic: [PATCH 1/3] dt-bindings: firmware: imx: Move system control into
- dt-binding headfile
-Thread-Index: AQHWGXizqGP98XTaREm8fL2h4rbuMaiG0BTg
-Date: Thu, 23 Apr 2020 15:13:08 +0000
-Message-ID: <AM6PR04MB496632D4E04A75B74C7E831380D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1587650406-20050-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1587650406-20050-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [92.121.68.129]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7f299a73-7110-4f02-7b7e-08d7e798d495
-x-ms-traffictypediagnostic: AM6PR04MB6295:|AM6PR04MB6295:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB62952771526C59116DB2666380D30@AM6PR04MB6295.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 03827AF76E
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(346002)(39860400002)(396003)(136003)(376002)(4326008)(7696005)(478600001)(6506007)(7416002)(44832011)(110136005)(55016002)(316002)(26005)(9686003)(186003)(5660300002)(52536014)(66476007)(76116006)(33656002)(8676002)(66446008)(64756008)(66556008)(86362001)(81156014)(71200400001)(66946007)(2906002)(8936002)(921003);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: zSlZdLUETpPz9nOmgPTLIBsn4X1XPPD6z9va4LSJbXjM3mZuH+fwLiDethecObnr56KDlo7Xz1YEL9RGgxnuxxJDECP7c83qdQDqsxs6zrTaQvWWA/rxs11MhSJLyvUk9FBiwQkzdYcvr6o7R/05pMoNjr41CtO4/LIXenSUgWyBjXXiowaeIt65exXCRbMZe6mWzE73KD3rM7sYRTP2GvueiebS0ajYUDoc1if57ko7mZjohjwOQl1Megx4vGmMW5TUwmc7SiMErZCETCgfo15fvHRCQvOlzm3y+sXv3pIv/2vGCrOnazOBSiyhXK1fRgrImAGaGSyv8tuHBIHPmf586o4pVNdQJJ/K5lF/AOOTEyyIs2R24us0un7zrB9sVe0kUCph+wRbDz2+kYcBaZgGJjVJjPtml0W94UXNd9wGCAcTjC3B/I2tvDzownhvR+7++e+Sq/MJHIpcp7QqDlQ3NyFUh8PRo7lsSCXMCo0=
-x-ms-exchange-antispam-messagedata: HmltztSSGjHMz9/mTLHczCPSySZYMu+YB7E8GvANiWILDZqxuaA1O+U3nUaMnrrGMEwwl6sM6HmFh3bAJhgbA/aBplu/rIVvUgPFceNwNQG/+q9iExP/Ytq57PkxVTITWCUoO7q7x8HqbPLzZKGrZw==
+ id 1jRdXt-0007H6-9c
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 15:13:46 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C1BCF206EC;
+ Thu, 23 Apr 2020 15:13:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587654824;
+ bh=DX2ahC5YezPSncDsnW2JuqQxbYmHihTnGnwtYjNnElA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=xMxdJ4t6VRR0LUv9peSzA6nTn+JcxTOEsqUNBLIVGu1o9a2JbOvUHnOweeZ1guQvM
+ VG3koraHHJqtQjhbeUKqZS/dhJ0KItx8CvDagUi676kYQyC+o3ZOeTkz0UmY/81wva
+ L3SZPPaBrQt5njB/FVDGVAhgmv7qUGnyB045VvH8=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jRdXr-005nyB-14; Thu, 23 Apr 2020 16:13:43 +0100
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7f299a73-7110-4f02-7b7e-08d7e798d495
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 15:13:08.3012 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: lLwFZ+FAlzJxVJXbk6bdqawGCdwnEOsuudm38PK1ztVduBdOkpqAGZy/lVyTzAOqW7Sh6WuHbDmV21JunkNGpA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6295
+Date: Thu, 23 Apr 2020 16:13:42 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH v3 5/6] KVM: arm64: vgic-v3: Retire all pending LPIs on
+ vcpu destroy
+In-Reply-To: <b76bf753-caaa-a6ce-9cdc-0fcf05821a56@arm.com>
+References: <20200422161844.3848063-1-maz@kernel.org>
+ <20200422161844.3848063-6-maz@kernel.org>
+ <2a0d1542-1964-c818-aae8-76f9227676b8@arm.com>
+ <c4b89164d79b733bcc38801c9483417d@kernel.org>
+ <b76bf753-caaa-a6ce-9cdc-0fcf05821a56@arm.com>
+Message-ID: <339204221453ecbf3ef8946f8313ad2c@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: james.morse@arm.com, yuzenghui@huawei.com,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org, eric.auger@redhat.com, Andre.Przywara@arm.com,
+ julien@xen.org, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_081314_050177_552D1105 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200423_081345_380491_19FA6A89 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.83 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -123,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,217 +95,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Julien Grall <julien@xen.org>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <Anson.Huang@nxp.com>
-> Sent: Thursday, April 23, 2020 10:00 PM
-> 
-> i.MX8 SoCs DTS file needs system control macro definitions, so move them into
-> dt-binding headfile.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Please keep the original author when you sending patches if no fundamental changes.
-
-> ---
->  include/dt-bindings/firmware/imx/rsrc.h | 84
-> +++++++++++++++++++++++++++++++++
->  include/linux/firmware/imx/sci.h        |  1 -
->  include/linux/firmware/imx/types.h      | 65 -------------------------
->  3 files changed, 84 insertions(+), 66 deletions(-)  delete mode 100644
-> include/linux/firmware/imx/types.h
-> 
-> diff --git a/include/dt-bindings/firmware/imx/rsrc.h
-> b/include/dt-bindings/firmware/imx/rsrc.h
-> index 4e61f64..51906b9 100644
-> --- a/include/dt-bindings/firmware/imx/rsrc.h
-> +++ b/include/dt-bindings/firmware/imx/rsrc.h
-> @@ -547,4 +547,88 @@
->  #define IMX_SC_R_ATTESTATION		545
->  #define IMX_SC_R_LAST			546
-> 
-> +/*
-> + * Defines for SC PM CLK
-> + */
-> +#define IMX_SC_PM_CLK_SLV_BUS		0	/* Slave bus clock */
-> +#define IMX_SC_PM_CLK_MST_BUS		1	/* Master bus clock */
-> +#define IMX_SC_PM_CLK_PER		2	/* Peripheral clock */
-> +#define IMX_SC_PM_CLK_PHY		3	/* Phy clock */
-> +#define IMX_SC_PM_CLK_MISC		4	/* Misc clock */
-> +#define IMX_SC_PM_CLK_MISC0		0	/* Misc 0 clock */
-> +#define IMX_SC_PM_CLK_MISC1		1	/* Misc 1 clock */
-> +#define IMX_SC_PM_CLK_MISC2		2	/* Misc 2 clock */
-> +#define IMX_SC_PM_CLK_MISC3		3	/* Misc 3 clock */
-> +#define IMX_SC_PM_CLK_MISC4		4	/* Misc 4 clock */
-> +#define IMX_SC_PM_CLK_CPU		2	/* CPU clock */
-> +#define IMX_SC_PM_CLK_PLL		4	/* PLL */
-> +#define IMX_SC_PM_CLK_BYPASS		4	/* Bypass clock */
-
-This belongs to a separate one.
-
-Regards
-Aisheng
-
-> +
-> +/*
-> + * Defines for SC CONTROL
-> + */
-> +#define IMX_SC_C_TEMP                       0U
-> +#define IMX_SC_C_TEMP_HI                    1U
-> +#define IMX_SC_C_TEMP_LOW                   2U
-> +#define IMX_SC_C_PXL_LINK_MST1_ADDR         3U
-> +#define IMX_SC_C_PXL_LINK_MST2_ADDR         4U
-> +#define IMX_SC_C_PXL_LINK_MST_ENB           5U
-> +#define IMX_SC_C_PXL_LINK_MST1_ENB          6U
-> +#define IMX_SC_C_PXL_LINK_MST2_ENB          7U
-> +#define IMX_SC_C_PXL_LINK_SLV1_ADDR         8U
-> +#define IMX_SC_C_PXL_LINK_SLV2_ADDR         9U
-> +#define IMX_SC_C_PXL_LINK_MST_VLD           10U
-> +#define IMX_SC_C_PXL_LINK_MST1_VLD          11U
-> +#define IMX_SC_C_PXL_LINK_MST2_VLD          12U
-> +#define IMX_SC_C_SINGLE_MODE                13U
-> +#define IMX_SC_C_ID                         14U
-> +#define IMX_SC_C_PXL_CLK_POLARITY           15U
-> +#define IMX_SC_C_LINESTATE                  16U
-> +#define IMX_SC_C_PCIE_G_RST                 17U
-> +#define IMX_SC_C_PCIE_BUTTON_RST            18U
-> +#define IMX_SC_C_PCIE_PERST                 19U
-> +#define IMX_SC_C_PHY_RESET                  20U
-> +#define IMX_SC_C_PXL_LINK_RATE_CORRECTION   21U
-> +#define IMX_SC_C_PANIC                      22U
-> +#define IMX_SC_C_PRIORITY_GROUP             23U
-> +#define IMX_SC_C_TXCLK                      24U
-> +#define IMX_SC_C_CLKDIV                     25U
-> +#define IMX_SC_C_DISABLE_50                 26U
-> +#define IMX_SC_C_DISABLE_125                27U
-> +#define IMX_SC_C_SEL_125                    28U
-> +#define IMX_SC_C_MODE                       29U
-> +#define IMX_SC_C_SYNC_CTRL0                 30U
-> +#define IMX_SC_C_KACHUNK_CNT                31U
-> +#define IMX_SC_C_KACHUNK_SEL                32U
-> +#define IMX_SC_C_SYNC_CTRL1                 33U
-> +#define IMX_SC_C_DPI_RESET                  34U
-> +#define IMX_SC_C_MIPI_RESET                 35U
-> +#define IMX_SC_C_DUAL_MODE                  36U
-> +#define IMX_SC_C_VOLTAGE                    37U
-> +#define IMX_SC_C_PXL_LINK_SEL               38U
-> +#define IMX_SC_C_OFS_SEL                    39U
-> +#define IMX_SC_C_OFS_AUDIO                  40U
-> +#define IMX_SC_C_OFS_PERIPH                 41U
-> +#define IMX_SC_C_OFS_IRQ                    42U
-> +#define IMX_SC_C_RST0                       43U
-> +#define IMX_SC_C_RST1                       44U
-> +#define IMX_SC_C_SEL0                       45U
-> +#define IMX_SC_C_CALIB0                     46U
-> +#define IMX_SC_C_CALIB1                     47U
-> +#define IMX_SC_C_CALIB2                     48U
-> +#define IMX_SC_C_IPG_DEBUG                  49U
-> +#define IMX_SC_C_IPG_DOZE                   50U
-> +#define IMX_SC_C_IPG_WAIT                   51U
-> +#define IMX_SC_C_IPG_STOP                   52U
-> +#define IMX_SC_C_IPG_STOP_MODE              53U
-> +#define IMX_SC_C_IPG_STOP_ACK               54U
-> +#define IMX_SC_C_SYNC_CTRL                  55U
-> +#define IMX_SC_C_OFS_AUDIO_ALT              56U
-> +#define IMX_SC_C_DSP_BYP                    57U
-> +#define IMX_SC_C_CLK_GEN_EN                 58U
-> +#define IMX_SC_C_INTF_SEL                   59U
-> +#define IMX_SC_C_RXC_DLY                    60U
-> +#define IMX_SC_C_TIMER_SEL                  61U
-> +#define IMX_SC_C_LAST                       62U
-> +
->  #endif /* __DT_BINDINGS_RSCRC_IMX_H */
-> diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
-> index 17ba4e4..3fa418a 100644
-> --- a/include/linux/firmware/imx/sci.h
-> +++ b/include/linux/firmware/imx/sci.h
-> @@ -11,7 +11,6 @@
->  #define _SC_SCI_H
-> 
->  #include <linux/firmware/imx/ipc.h>
-> -#include <linux/firmware/imx/types.h>
-> 
->  #include <linux/firmware/imx/svc/misc.h>  #include
-> <linux/firmware/imx/svc/pm.h> diff --git a/include/linux/firmware/imx/types.h
-> b/include/linux/firmware/imx/types.h
-> deleted file mode 100644
-> index 8082110..0000000
-> --- a/include/linux/firmware/imx/types.h
-> +++ /dev/null
-> @@ -1,65 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0+ */
-> -/*
-> - * Copyright (C) 2016 Freescale Semiconductor, Inc.
-> - * Copyright 2017~2018 NXP
-> - *
-> - * Header file containing types used across multiple service APIs.
-> - */
-> -
-> -#ifndef _SC_TYPES_H
-> -#define _SC_TYPES_H
-> -
-> -/*
-> - * This type is used to indicate a control.
-> - */
-> -enum imx_sc_ctrl {
-> -	IMX_SC_C_TEMP = 0,
-> -	IMX_SC_C_TEMP_HI = 1,
-> -	IMX_SC_C_TEMP_LOW = 2,
-> -	IMX_SC_C_PXL_LINK_MST1_ADDR = 3,
-> -	IMX_SC_C_PXL_LINK_MST2_ADDR = 4,
-> -	IMX_SC_C_PXL_LINK_MST_ENB = 5,
-> -	IMX_SC_C_PXL_LINK_MST1_ENB = 6,
-> -	IMX_SC_C_PXL_LINK_MST2_ENB = 7,
-> -	IMX_SC_C_PXL_LINK_SLV1_ADDR = 8,
-> -	IMX_SC_C_PXL_LINK_SLV2_ADDR = 9,
-> -	IMX_SC_C_PXL_LINK_MST_VLD = 10,
-> -	IMX_SC_C_PXL_LINK_MST1_VLD = 11,
-> -	IMX_SC_C_PXL_LINK_MST2_VLD = 12,
-> -	IMX_SC_C_SINGLE_MODE = 13,
-> -	IMX_SC_C_ID = 14,
-> -	IMX_SC_C_PXL_CLK_POLARITY = 15,
-> -	IMX_SC_C_LINESTATE = 16,
-> -	IMX_SC_C_PCIE_G_RST = 17,
-> -	IMX_SC_C_PCIE_BUTTON_RST = 18,
-> -	IMX_SC_C_PCIE_PERST = 19,
-> -	IMX_SC_C_PHY_RESET = 20,
-> -	IMX_SC_C_PXL_LINK_RATE_CORRECTION = 21,
-> -	IMX_SC_C_PANIC = 22,
-> -	IMX_SC_C_PRIORITY_GROUP = 23,
-> -	IMX_SC_C_TXCLK = 24,
-> -	IMX_SC_C_CLKDIV = 25,
-> -	IMX_SC_C_DISABLE_50 = 26,
-> -	IMX_SC_C_DISABLE_125 = 27,
-> -	IMX_SC_C_SEL_125 = 28,
-> -	IMX_SC_C_MODE = 29,
-> -	IMX_SC_C_SYNC_CTRL0 = 30,
-> -	IMX_SC_C_KACHUNK_CNT = 31,
-> -	IMX_SC_C_KACHUNK_SEL = 32,
-> -	IMX_SC_C_SYNC_CTRL1 = 33,
-> -	IMX_SC_C_DPI_RESET = 34,
-> -	IMX_SC_C_MIPI_RESET = 35,
-> -	IMX_SC_C_DUAL_MODE = 36,
-> -	IMX_SC_C_VOLTAGE = 37,
-> -	IMX_SC_C_PXL_LINK_SEL = 38,
-> -	IMX_SC_C_OFS_SEL = 39,
-> -	IMX_SC_C_OFS_AUDIO = 40,
-> -	IMX_SC_C_OFS_PERIPH = 41,
-> -	IMX_SC_C_OFS_IRQ = 42,
-> -	IMX_SC_C_RST0 = 43,
-> -	IMX_SC_C_RST1 = 44,
-> -	IMX_SC_C_SEL0 = 45,
-> -	IMX_SC_C_LAST
-> -};
-> -
-> -#endif /* _SC_TYPES_H */
-> --
-> 2.7.4
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmFtZXMsCgpPbiAyMDIwLTA0LTIzIDE1OjM0LCBKYW1lcyBNb3JzZSB3cm90ZToKPiBIaSBn
+dXlzLAo+IAo+IE9uIDIzLzA0LzIwMjAgMTM6MDMsIE1hcmMgWnluZ2llciB3cm90ZToKPj4gT24g
+MjAyMC0wNC0yMyAxMjozNSwgSmFtZXMgTW9yc2Ugd3JvdGU6CgpbLi4uXQoKPj4+IFsgMTc0Mi4z
+NDgyMTVdIHBhZ2UgZHVtcGVkIGJlY2F1c2U6IGthc2FuOiBiYWQgYWNjZXNzIGRldGVjdGVkCj4g
+Cj4+IEkgdGhpbmsgdGhpcyBpcyBzbGlnaHRseSBtb3JlIGNvbmNlcm5pbmcuIFRoZSBpc3N1ZSBp
+cyB0aGF0IHdlIGhhdmUKPj4gc3RhcnRlZCBmcmVlaW5nIHBhcnRzIG9mIHRoZSBpbnRlcnJ1cHQg
+c3RhdGUgYWxyZWFkeSAod2UgZnJlZSB0aGUKPj4gU1BJcyBlYXJseSBpbiBrdm1fdmdpY19kaXN0
+X2Rlc3Ryb3koKSkuCj4gCj4gKEkgdG9vayB0aGlzIHRvIGJlIHNvbWUgd2lsZCBwb2ludGVyIGFj
+Y2Vzcy4gUHJldmlvdXNseSBmb3IKPiB1c2UtYWZ0ZXItZnJlZSBJJ3ZlIHNlZW4gaXQKPiBwcmlu
+dCB3aGVyZSBpdCB3YXMgYWxsb2NhdGVkIGFuZCB3aGVyZSBpdCB3YXMgZnJlZWQpLgoKVGhpcyBp
+cyBpbmRlZWQgd2hhdCBJIG1hbmFnZWQgdG8gdHJpZ2dlciBieSBmb3JjaW5nIGEgcGVuZGluZwpT
+UEkgKHRoZSBrdm10b29sIFVBUlQgaW50ZXJydXB0KSBpbiB0aGUgZ3Vlc3QgYW5kIGZvcmNlZnVs
+bHkKdGVybWluYXRpbmcgaXQ6CgpbIDM4MDcuMDg0MjM3XSAKPT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ClsgMzgwNy4wODY1
+MTZdIEJVRzogS0FTQU46IHVzZS1hZnRlci1mcmVlIGluIAp2Z2ljX2ZsdXNoX3BlbmRpbmdfbHBp
+cysweDU0LzB4MTk4ClsgMzgwNy4wODgwMjddIFJlYWQgb2Ygc2l6ZSA4IGF0IGFkZHIgZmZmZjAw
+MDg1NTE0YTMyOCBieSB0YXNrIAppb2V2ZW50ZmQtd29ya2UvMjMxClsgMzgwNy4wODk3NzFdClsg
+MzgwNy4wOTA5MTFdIENQVTogNCBQSUQ6IDIzMSBDb21tOiBpb2V2ZW50ZmQtd29ya2UgTm90IHRh
+aW50ZWQgCjUuNy4wLXJjMi0wMDA4Ni1nMjEwMGMwNjZlOWE3OCAjMjAwClsgMzgwNy4wOTI4NjRd
+IEhhcmR3YXJlIG5hbWU6IEZWUCBCYXNlIFJldkMgKERUKQpbIDM4MDcuMDk0MDAzXSBDYWxsIHRy
+YWNlOgpbIDM4MDcuMDk1MTgwXSAgZHVtcF9iYWNrdHJhY2UrMHgwLzB4MjY4ClsgMzgwNy4wOTY0
+NDVdICBzaG93X3N0YWNrKzB4MWMvMHgyOApbIDM4MDcuMDk3OTYxXSAgZHVtcF9zdGFjaysweGU4
+LzB4MTQ0ClsgMzgwNy4wOTkzNzRdICBwcmludF9hZGRyZXNzX2Rlc2NyaXB0aW9uLmlzcmEuMTEr
+MHg2Yy8weDM1NApbIDM4MDcuMTAxMDAyXSAgX19rYXNhbl9yZXBvcnQrMHgxMTAvMHgxYzgKWyAz
+ODA3LjEwMjMzMl0gIGthc2FuX3JlcG9ydCsweDQ4LzB4NjAKWyAzODA3LjEwMzc2OV0gIF9fYXNh
+bl9sb2FkOCsweDljLzB4YzAKWyAzODA3LjEwNTExM10gIHZnaWNfZmx1c2hfcGVuZGluZ19scGlz
+KzB4NTQvMHgxOTgKWyAzODA3LjEwNzE4N10gIF9fa3ZtX3ZnaWNfZGVzdHJveSsweDEyMC8weDI3
+OApbIDM4MDcuMTA4ODE0XSAga3ZtX3ZnaWNfZGVzdHJveSsweDMwLzB4NDgKWyAzODA3LjExMDQ0
+M10gIGt2bV9hcmNoX2Rlc3Ryb3lfdm0rMHgyMC8weGE4ClsgMzgwNy4xMTE4NjhdICBrdm1fcHV0
+X2t2bSsweDIzNC8weDQ2MApbIDM4MDcuMTEzNjk3XSAga3ZtX3ZtX3JlbGVhc2UrMHgzNC8weDQ4
+ClsgMzgwNy4xMTUxNjJdICBfX2ZwdXQrMHgxMDQvMHgyZjgKWyAzODA3LjExNjQ2NF0gIF9fX19m
+cHV0KzB4MTQvMHgyMApbIDM4MDcuMTE3OTI5XSAgdGFza193b3JrX3J1bisweGJjLzB4MTg4Clsg
+MzgwNy4xMTk0MTldICBkb19leGl0KzB4NTE0LzB4ZmY4ClsgMzgwNy4xMjA4NTldICBkb19ncm91
+cF9leGl0KzB4NzgvMHgxMDgKWyAzODA3LjEyMjMyM10gIGdldF9zaWduYWwrMHgxNjQvMHhjYzAK
+WyAzODA3LjEyMzk1MV0gIGRvX25vdGlmeV9yZXN1bWUrMHgyNDQvMHg1ZTAKWyAzODA3LjEyNTQx
+Nl0gIHdvcmtfcGVuZGluZysweDgvMHgxMApbIDM4MDcuMTI2MzkyXQpbIDM4MDcuMTI2OTY5XSBB
+bGxvY2F0ZWQgYnkgdGFzayAyMjk6ClsgMzgwNy4xMjg4MzRdICBzYXZlX3N0YWNrKzB4MjQvMHg1
+MApbIDM4MDcuMTMwNDYyXSAgX19rYXNhbl9rbWFsbG9jLmlzcmEuMTArMHhjNC8weGUwClsgMzgw
+Ny4xMzIxMzRdICBrYXNhbl9rbWFsbG9jKzB4Yy8weDE4ClsgMzgwNy4xMzM1NTRdICBfX2ttYWxs
+b2MrMHgxNzQvMHgyNzAKWyAzODA3LjEzNTE4Ml0gIHZnaWNfaW5pdC5wYXJ0LjIrMHhlMC8weDRm
+MApbIDM4MDcuMTM2ODA5XSAgdmdpY19pbml0KzB4NDgvMHg1OApbIDM4MDcuMTM4MDk1XSAgdmdp
+Y19zZXRfY29tbW9uX2F0dHIuaXNyYS40KzB4MmZjLzB4Mzg4ClsgMzgwNy4xNDAwODFdICB2Z2lj
+X3YzX3NldF9hdHRyKzB4OGMvMHgzNTAKWyAzODA3LjE0MTY5Ml0gIGt2bV9kZXZpY2VfaW9jdGxf
+YXR0cisweDEyNC8weDE5MApbIDM4MDcuMTQzMjYwXSAga3ZtX2RldmljZV9pb2N0bCsweGU4LzB4
+MTcwClsgMzgwNy4xNDQ5NDddICBrc3lzX2lvY3RsKzB4YjgvMHhmOApbIDM4MDcuMTQ2NTc1XSAg
+X19hcm02NF9zeXNfaW9jdGwrMHg0OC8weDYwClsgMzgwNy4xNDgzNjVdICBlbDBfc3ZjX2NvbW1v
+bi5jb25zdHByb3AuMSsweGM4LzB4MWM4ClsgMzgwNy4xNTAwMTVdICBkb19lbDBfc3ZjKzB4OTQv
+MHhhMApbIDM4MDcuMTUxNjA1XSAgZWwwX3N5bmNfaGFuZGxlcisweDEyMC8weDE5MApbIDM4MDcu
+MTUyOTIyXSAgZWwwX3N5bmMrMHgxNDAvMHgxODAKWyAzODA3LjE1Mzg5OV0KWyAzODA3LjE1NDc4
+NF0gRnJlZWQgYnkgdGFzayAyMzE6ClsgMzgwNy4xNTYxNzhdICBzYXZlX3N0YWNrKzB4MjQvMHg1
+MApbIDM4MDcuMTU3ODA1XSAgX19rYXNhbl9zbGFiX2ZyZWUrMHgxMGMvMHgxODgKWyAzODA3LjE1
+OTQzM10gIGthc2FuX3NsYWJfZnJlZSsweDEwLzB4MTgKWyAzODA3LjE2MDg5N10gIGtmcmVlKzB4
+ODgvMHgzNTAKWyAzODA3LjE2MjU3MF0gIF9fa3ZtX3ZnaWNfZGVzdHJveSsweDVjLzB4Mjc4Clsg
+MzgwNy4xNjQxNTNdICBrdm1fdmdpY19kZXN0cm95KzB4MzAvMHg0OApbIDM4MDcuMTY1NzgwXSAg
+a3ZtX2FyY2hfZGVzdHJveV92bSsweDIwLzB4YTgKWyAzODA3LjE2NzQwOF0gIGt2bV9wdXRfa3Zt
+KzB4MjM0LzB4NDYwClsgMzgwNy4xNjg2OTFdICBrdm1fdm1fcmVsZWFzZSsweDM0LzB4NDgKWyAz
+ODA3LjE3MDI4MV0gIF9fZnB1dCsweDEwNC8weDJmOApbIDM4MDcuMTcxODcwXSAgX19fX2ZwdXQr
+MHgxNC8weDIwClsgMzgwNy4xNzMyNjhdICB0YXNrX3dvcmtfcnVuKzB4YmMvMHgxODgKWyAzODA3
+LjE3NDczM10gIGRvX2V4aXQrMHg1MTQvMHhmZjgKWyAzODA3LjE3NjI0Ml0gIGRvX2dyb3VwX2V4
+aXQrMHg3OC8weDEwOApbIDM4MDcuMTc3NDM0XSAgZ2V0X3NpZ25hbCsweDE2NC8weGNjMApbIDM4
+MDcuMTc5Mjg5XSAgZG9fbm90aWZ5X3Jlc3VtZSsweDI0NC8weDVlMApbIDM4MDcuMTgwNzU1XSAg
+d29ya19wZW5kaW5nKzB4OC8weDEwClsgMzgwNy4xODE3MzFdClsgMzgwNy4xODI3MDddIFRoZSBi
+dWdneSBhZGRyZXNzIGJlbG9uZ3MgdG8gdGhlIG9iamVjdCBhdCAKZmZmZjAwMDg1NTE0YTAwMApb
+IDM4MDcuMTgyNzA3XSAgd2hpY2ggYmVsb25ncyB0byB0aGUgY2FjaGUga21hbGxvYy00ayBvZiBz
+aXplIDQwOTYKWyAzODA3LjE4NTM4MV0gVGhlIGJ1Z2d5IGFkZHJlc3MgaXMgbG9jYXRlZCA4MDgg
+Ynl0ZXMgaW5zaWRlIG9mClsgMzgwNy4xODUzODFdICA0MDk2LWJ5dGUgcmVnaW9uIFtmZmZmMDAw
+ODU1MTRhMDAwLCBmZmZmMDAwODU1MTRiMDAwKQpbIDM4MDcuMTg3NTkxXSBUaGUgYnVnZ3kgYWRk
+cmVzcyBiZWxvbmdzIHRvIHRoZSBwYWdlOgpbIDM4MDcuMTg5MzgxXSBwYWdlOmZmZmZmZTAwMjEz
+NDUyMDAgcmVmY291bnQ6MSBtYXBjb3VudDowIAptYXBwaW5nOjAwMDAwMDAwMDkwYjEwNjggaW5k
+ZXg6MHgwIGhlYWQ6ZmZmZmZlMDAyMTM0NTIwMCBvcmRlcjozIApjb21wb3VuZF9tYXBjb3VudDow
+IGNvbXBvdW5kX3BpbmNvdW50OjAKWyAzODA3LjE5MjE0OF0gZmxhZ3M6IDB4MmZmZmYwMDAwMDAx
+MDIwMChzbGFifGhlYWQpClsgMzgwNy4xOTQxMjNdIHJhdzogMmZmZmYwMDAwMDAxMDIwMCBkZWFk
+MDAwMDAwMDAwMTAwIGRlYWQwMDAwMDAwMDAxMjIgCmZmZmYwMDA4NWEwMGYyMDAKWyAzODA3LjE5
+NjM3OV0gcmF3OiAwMDAwMDAwMDAwMDAwMDAwIDAwMDAwMDAwODAwNDAwMDQgMDAwMDAwMDFmZmZm
+ZmZmZiAKMDAwMDAwMDAwMDAwMDAwMApbIDM4MDcuMTk4MDk3XSBwYWdlIGR1bXBlZCBiZWNhdXNl
+OiBrYXNhbjogYmFkIGFjY2VzcyBkZXRlY3RlZApbIDM4MDcuMTk5Mjg5XQpbIDM4MDcuMjAwMTIz
+XSBNZW1vcnkgc3RhdGUgYXJvdW5kIHRoZSBidWdneSBhZGRyZXNzOgpbIDM4MDcuMjAxNzUwXSAg
+ZmZmZjAwMDg1NTE0YTIwMDogZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIg
+CmZiIGZiIGZiClsgMzgwNy4yMDM3MDRdICBmZmZmMDAwODU1MTRhMjgwOiBmYiBmYiBmYiBmYiBm
+YiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiAKZmIgZmIgZmIKWyAzODA3LjIwNTY1N10gPmZmZmYw
+MDA4NTUxNGEzMDA6IGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIGZiIApmYiBm
+YiBmYgpbIDM4MDcuMjA3Mjg1XSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgpb
+IDM4MDcuMjA4ODI2XSAgZmZmZjAwMDg1NTE0YTM4MDogZmIgZmIgZmIgZmIgZmIgZmIgZmIgZmIg
+ZmIgZmIgZmIgZmIgZmIgCmZiIGZiIGZiClsgMzgwNy4yMTA4MTJdICBmZmZmMDAwODU1MTRhNDAw
+OiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiBmYiAKZmIgZmIgZmIKWyAzODA3
+LjIxMjQwMl0gCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PQoKPj4gSWYgYSBTUEkgd2FzIHBlbmRpbmcgb3IgYWN0aXZlIGF0
+IHRoaXMgc3RhZ2UgKGkuZS4gcHJlc2VudCBpbiB0aGUKPj4gYXBfbGlzdCksIHdlIGFyZSBnb2lu
+ZyB0byBpdGVyYXRlIG92ZXIgbWVtb3J5IHRoYXQgaGFzIGJlZW4gZnJlZWQKPj4gYWxyZWFkeS4g
+VGhpcyBpcyBiYWQsIGFuZCB0aGlzIGNhbiBoYXBwZW4gb24gR0lDdjMgYXMgd2VsbC4KPiAKPiAK
+Pj4gSSB0aGluayB0aGlzIHNob3VsZCBzb2x2ZSBpdCwgYnV0IEkgbmVlZCB0byB0ZXN0IGl0IG9u
+IGEgR0lDdjIgc3lzdGVtOgo+PiAKPj4gZGlmZiAtLWdpdCBhL3ZpcnQva3ZtL2FybS92Z2ljL3Zn
+aWMtaW5pdC5jIAo+PiBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaW5pdC5jCj4+IGluZGV4IDUz
+ZWM5YjlkOWJjNDMuLjMwZGJlYzlmZTBiNGEgMTAwNjQ0Cj4+IC0tLSBhL3ZpcnQva3ZtL2FybS92
+Z2ljL3ZnaWMtaW5pdC5jCj4+ICsrKyBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaW5pdC5jCj4+
+IEBAIC0zNjUsMTAgKzM2NSwxMCBAQCBzdGF0aWMgdm9pZCBfX2t2bV92Z2ljX2Rlc3Ryb3koc3Ry
+dWN0IGt2bSAqa3ZtKQo+PiAKPj4gwqDCoMKgwqAgdmdpY19kZWJ1Z19kZXN0cm95KGt2bSk7Cj4+
+IAo+PiAtwqDCoMKgIGt2bV92Z2ljX2Rpc3RfZGVzdHJveShrdm0pOwo+PiAtCj4+IMKgwqDCoMKg
+IGt2bV9mb3JfZWFjaF92Y3B1KGksIHZjcHUsIGt2bSkKPj4gwqDCoMKgwqDCoMKgwqDCoCBrdm1f
+dmdpY192Y3B1X2Rlc3Ryb3kodmNwdSk7Cj4+ICsKPj4gK8KgwqDCoCBrdm1fdmdpY19kaXN0X2Rl
+c3Ryb3koa3ZtKTsKPj4gwqB9Cj4+ID4gwqB2b2lkIGt2bV92Z2ljX2Rlc3Ryb3koc3RydWN0IGt2
+bSAqa3ZtKQo+IAo+IFRoaXMgd29ya3MgZm9yIG1lIG9uIEp1bm8uCgpJJ3ZlIHZlcmlmaWVkIHRo
+YXQgdGhlIGFib3ZlIHNwbGF0IGRpc2FwcGVhcnMgb24gdGhlIEZWUCB0b28uCkknbGwgc3F1YXNo
+IHRoZSBmaXggaW4sIGFkZCB5b3VyIFJCICh3aGljaCBJIGFzc3VtZSBzdGFuZHMpCmFuZCBzZW5k
+IHRoZSB3aG9sZSB0aGluZyBhcyBhIGxvY2tkb3duIHByZXNlbnQgdG8gUGFvbG8hCgpUaGFua3Ms
+CgogICAgICAgICAgTS4KLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55
+Li4uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
