@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 827F01B543A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 07:28:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DED991B5445
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 07:29:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vxT2eJ11CzewJqYQ7CAFw1ozQNO6aaeB09biOE6Q5mI=; b=fIb/xlmt/PIS6v
-	jqSGwfjW8ixRRs8DFcCX7a39TLGFspMqZNBPAjLQcHf7+pvBsMJhj+5UhA2PcvB7Kths/ZyWYCw3S
-	Jiemdu7iVDyrNWuDIdEcOOYoCcpvKqdOBr7WWj+HQqWp5LEepmtluLn4DOpPQy6C2up8mcwLJF1fs
-	Antbt72LDvVa+ff0wJjcdaAh1UqUIksCld9OI8mfS4KV1Rtg68GL+5lCVx//d9J/9GEIIIsc4QEby
-	aIcBA4v+55iB/zGVZJ9GLZ+Ib9zhF4kOfOOa48MQ+MhN2TklV1sDd/6ma8+LB7r4efmmPGzWHbKSz
-	u7R8urFzfggTA8+NzH0A==;
+	List-Owner; bh=LLrK36xQFlhDdIp5vLdbW0A7t5JvmcJ/tjw4Aiccsyg=; b=lFtraDKornejaP
+	ao7dSH15qNnqeqok5qw7Gn0KuS3hgT9YwP4cvbBiWPrqr/mSQLJvbNji/wqCNSOgtRJwINz6+Z6pQ
+	cs6F5PqL4KicozISeSNj5dbyTMjVU/vcNJ7dicA0DtiA5pttMbGopwvALJDjm5wKdS7mcdsCOZ2mh
+	9Noa7lRl1OTwJCp4mf0+5J307cFUFraUMHZZZDXBPScwb5F0/GQwxR6GMAdpcWeSjq63Y2YDnsWxE
+	9hjYjFmolCzC5ZJ8O8JJfdnmt+xZOVIO4cCDsWQbgw06Z0SFBJO6/bHGc2z0Q66R9DetrL/koJ8hA
+	yXK1kmpdBSOLW1hx/v6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRUPR-00073y-TA; Thu, 23 Apr 2020 05:28:25 +0000
+	id 1jRUQd-0007qz-LW; Thu, 23 Apr 2020 05:29:39 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRUPG-00072Y-4S
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 05:28:16 +0000
+ id 1jRUQP-0007p1-Oh
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 05:29:27 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mfe@pengutronix.de>)
- id 1jRUP5-00068Z-Fn; Thu, 23 Apr 2020 07:28:03 +0200
+ id 1jRUQG-0006GN-6K; Thu, 23 Apr 2020 07:29:16 +0200
 Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <mfe@pengutronix.de>)
- id 1jRUP4-0004xb-Pk; Thu, 23 Apr 2020 07:28:02 +0200
-Date: Thu, 23 Apr 2020 07:28:02 +0200
+ id 1jRUQF-0004xt-Pj; Thu, 23 Apr 2020 07:29:15 +0200
+Date: Thu, 23 Apr 2020 07:29:15 +0200
 From: Marco Felsch <m.felsch@pengutronix.de>
 To: Fengping yu <fengping.yu@mediatek.com>
-Subject: Re: [PATCH v5 2/3] arm64: configs: defconfig: enable mtk keypad config
-Message-ID: <20200423052802.4ab3xfpgsi3lvqfq@pengutronix.de>
+Subject: Re: [PATCH v5] add mtk matrix keypad driver for keypad on MTK SoC
+Message-ID: <20200423052915.355mc7qvrofmv743@pengutronix.de>
 References: <20200423011958.30521-1-fengping.yu@mediatek.com>
- <20200423011958.30521-3-fengping.yu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200423011958.30521-3-fengping.yu@mediatek.com>
+In-Reply-To: <20200423011958.30521-1-fengping.yu@mediatek.com>
 X-Sent-From: Pengutronix Hildesheim
 X-URL: http://www.pengutronix.de/
 X-IRC: #ptxdist @freenode
 X-Accept-Language: de,en
 X-Accept-Content-Type: text/plain
-X-Uptime: 07:26:40 up 159 days, 20:45, 157 users,  load average: 0.15, 0.08,
- 0.02
+X-Uptime: 07:28:26 up 159 days, 20:47, 157 users,  load average: 0.04, 0.06,
+ 0.01
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
 X-SA-Exim-Mail-From: mfe@pengutronix.de
@@ -55,8 +54,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_222814_169588_A9342B49 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20200422_222925_811952_1BD0E4D3 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,36 +84,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-04-23 09:20, Fengping yu wrote:
-> From: "fengping.yu" <fengping.yu@mediatek.com>
-> 
-> Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
+Hi Fengping,
 
-Nit, this should be the last patch in this series. Also you need to add
-a few comments wihtin the commit message. Empty commit messages are not
-allowed.
+On 20-04-23 09:19, Fengping yu wrote:
+> 
+> Change since v4:
+> - remove extra space and redundant lines
+> - remove disable_irq_nosync and enable_irq in irq handler
+> - put defconfig as a single patch
+> - unified device properties interface for ACPI and device trees
+
+This is a good changelog for reviewers.
+
+> - fixed other issue according reviewer comments
+
+This one is a bit useless..
 
 Regards,
   Marco
 
-> ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
+> fengping.yu (3):
+>   dt-bindings: add matrix keypad documentation
+>   arm64: configs: defconfig: enable mtk keypad config
+>   drivers: input: keyboard: add mtk keypad driver
 > 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 0f212889c931..7863352521e5 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -316,6 +316,7 @@ CONFIG_KEYBOARD_GPIO=y
->  CONFIG_KEYBOARD_SNVS_PWRKEY=m
->  CONFIG_KEYBOARD_IMX_SC_KEY=m
->  CONFIG_KEYBOARD_CROS_EC=y
-> +CONFIG_KEYBOARD_MTK_KPD=y
->  CONFIG_INPUT_TOUCHSCREEN=y
->  CONFIG_TOUCHSCREEN_ATMEL_MXT=m
->  CONFIG_INPUT_MISC=y
-> -- 
+>  .../devicetree/bindings/input/mtk-kpd.txt     |  61 +++++
+>  arch/arm64/configs/defconfig                  |   1 +
+>  drivers/input/keyboard/Kconfig                |   9 +
+>  drivers/input/keyboard/Makefile               |   1 +
+>  drivers/input/keyboard/mtk-kpd.c              | 242 ++++++++++++++++++
+>  5 files changed, 314 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.txt
+>  create mode 100644 drivers/input/keyboard/mtk-kpd.c
+> 
+> --
 > 2.18.0
+> 
 
 -- 
 Pengutronix e.K.                           |                             |
