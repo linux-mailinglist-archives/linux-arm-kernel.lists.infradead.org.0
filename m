@@ -2,66 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED991B5445
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 07:29:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B1DB1B54B3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 08:28:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LLrK36xQFlhDdIp5vLdbW0A7t5JvmcJ/tjw4Aiccsyg=; b=lFtraDKornejaP
-	ao7dSH15qNnqeqok5qw7Gn0KuS3hgT9YwP4cvbBiWPrqr/mSQLJvbNji/wqCNSOgtRJwINz6+Z6pQ
-	cs6F5PqL4KicozISeSNj5dbyTMjVU/vcNJ7dicA0DtiA5pttMbGopwvALJDjm5wKdS7mcdsCOZ2mh
-	9Noa7lRl1OTwJCp4mf0+5J307cFUFraUMHZZZDXBPScwb5F0/GQwxR6GMAdpcWeSjq63Y2YDnsWxE
-	9hjYjFmolCzC5ZJ8O8JJfdnmt+xZOVIO4cCDsWQbgw06Z0SFBJO6/bHGc2z0Q66R9DetrL/koJ8hA
-	yXK1kmpdBSOLW1hx/v6g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KUAw5laeuM59qNPMmCfdFLd94z1zLof6kArP1Z4Viqo=; b=tQQxbtuQ0o0UHP
+	Jzr2z7K1VK/5wQZ7GVX+d6F5zCj643WpYEaQ8VHtxNZXiRQNkXWZHWz9i0Mp2CIfrjNUxzWYFCmcm
+	i6v1PJ1gW9AE14YeFWhk3nNOKOoe+gbc+l6BojXhqsj5SREN7BbmitJTbH/hshKuBojem4Pzj4BkB
+	d7ea04aU4QKdLy6o71+YlEGR63oz1XHURiQLkiiPSW6utYt16OofACGBL74S2WCkrOF31lOtsyPgV
+	CC0Y9rkwWBdCupGem68zM1/+eqJTlDgYyrJ2m1s7RYexZ+0VddYlAyQ3ghEcDSMiCiwdDMo4T8ALJ
+	7Ua3nlN2omsWpigw5zWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRUQd-0007qz-LW; Thu, 23 Apr 2020 05:29:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jRVL7-0004NF-EV; Thu, 23 Apr 2020 06:28:01 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRUQP-0007p1-Oh
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 05:29:27 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jRUQG-0006GN-6K; Thu, 23 Apr 2020 07:29:16 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1jRUQF-0004xt-Pj; Thu, 23 Apr 2020 07:29:15 +0200
-Date: Thu, 23 Apr 2020 07:29:15 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Fengping yu <fengping.yu@mediatek.com>
-Subject: Re: [PATCH v5] add mtk matrix keypad driver for keypad on MTK SoC
-Message-ID: <20200423052915.355mc7qvrofmv743@pengutronix.de>
-References: <20200423011958.30521-1-fengping.yu@mediatek.com>
+ id 1jRVKj-0004EQ-Hr
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 06:27:39 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 5B036B99F9C1D7B64F38;
+ Thu, 23 Apr 2020 14:27:18 +0800 (CST)
+Received: from linux-lmwb.huawei.com (10.175.103.112) by
+ DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
+ 14.3.487.0; Thu, 23 Apr 2020 14:27:11 +0800
+From: Zou Wei <zou_wei@huawei.com>
+To: <catalin.marinas@arm.com>, <will@kernel.org>
+Subject: [PATCH -next] arm64: smp: Make cpus_stuck_in_kernel static
+Date: Thu, 23 Apr 2020 14:33:26 +0800
+Message-ID: <1587623606-96698-1-git-send-email-zou_wei@huawei.com>
+X-Mailer: git-send-email 2.6.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200423011958.30521-1-fengping.yu@mediatek.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 07:28:26 up 159 days, 20:47, 157 users,  load average: 0.04, 0.06,
- 0.01
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Originating-IP: [10.175.103.112]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_222925_811952_1BD0E4D3 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200422_232737_798233_48AB160C 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -74,58 +62,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-input@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+Cc: Zou Wei <zou_wei@huawei.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fengping,
+Fix the following sparse warning:
 
-On 20-04-23 09:19, Fengping yu wrote:
-> 
-> Change since v4:
-> - remove extra space and redundant lines
-> - remove disable_irq_nosync and enable_irq in irq handler
-> - put defconfig as a single patch
-> - unified device properties interface for ACPI and device trees
+arch/arm64/kernel/smp.c:68:5: warning: symbol 'cpus_stuck_in_kernel'
+was not declared. Should it be static?
 
-This is a good changelog for reviewers.
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Zou Wei <zou_wei@huawei.com>
+---
+ arch/arm64/kernel/smp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> - fixed other issue according reviewer comments
-
-This one is a bit useless..
-
-Regards,
-  Marco
-
-> fengping.yu (3):
->   dt-bindings: add matrix keypad documentation
->   arm64: configs: defconfig: enable mtk keypad config
->   drivers: input: keyboard: add mtk keypad driver
-> 
->  .../devicetree/bindings/input/mtk-kpd.txt     |  61 +++++
->  arch/arm64/configs/defconfig                  |   1 +
->  drivers/input/keyboard/Kconfig                |   9 +
->  drivers/input/keyboard/Makefile               |   1 +
->  drivers/input/keyboard/mtk-kpd.c              | 242 ++++++++++++++++++
->  5 files changed, 314 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.txt
->  create mode 100644 drivers/input/keyboard/mtk-kpd.c
-> 
-> --
-> 2.18.0
-> 
-
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index 061f60f..1d06af4 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -65,7 +65,7 @@ EXPORT_PER_CPU_SYMBOL(cpu_number);
+  */
+ struct secondary_data secondary_data;
+ /* Number of CPUs which aren't online, but looping in kernel text. */
+-int cpus_stuck_in_kernel;
++static int cpus_stuck_in_kernel;
+ 
+ enum ipi_msg_type {
+ 	IPI_RESCHEDULE,
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.6.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
