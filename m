@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0281A1B58EA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:16:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75DBE1B58EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 12:17:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=v7WqwR2UiwINbrSOSnyBG7d01qNkImU352x0Mu4S5/g=; b=eK+
-	Be53BYNs8U3phYdrc83s4Bhsy2Upzgth76SZJDsQT/Ig6Xb91xLndd6wbe5+LvJW9P2v5DVdB79gY
-	pMXP1lzuPOWbWq0Gb+CNpSsfSmOPEe6vYtIAEBVgs9ASZ2svGNtHA0Cp0Lhpn/NSfeKfFkCiEgj3d
-	ukt1dDI/l6Ncv+BCW+USU7cS/Vw6DHeFbMjh1AFAGctxP+1VrLJKyLrsz/a1ABvqj71ZRGd7+9y1m
-	JK73EbWwO5+EwJoG9GJdhIzMOu51ZdHXoTUtDdg3c9BJc4hcqe8apeTQKOxD2WjIp9S7+OzP/yVOh
-	DnlSAu24hct1YH17U2WIfRSTACX2igQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=f+82KSwm3iFN61ugbSCPf4IVvs3JSVhC0ZhyGSiO5do=; b=cg1YhWlC8xp6RbZX9gc7tVmobb
+	4hV36iL8HY7r5Sg2D4cFMy7PdiTH+oYuMeLHcN1TWIbkOKTyQhUfKRp5MCJkETuYkEgdtuSfHHHpo
+	v+gxT2ksULs6jJm5yCc0WSxYuba8gWvoadYF0w9HKPd1Zc6G0dMVkll4phk6iFWs11H0Gil5Ns0Zb
+	VFwVudQ6HPa8QT807IdV9U9HMIv9ZnH93VaB0oLCgtIL0bEqfrkBZl1YjiSgeUQaig2hq/jNmsnmS
+	GGMR6gNIGfnT26gHKwPN5CxvjcLZpG2kLwBdPBnBlXg1U52mlgs65JGyVFIwPX8d3gco3C8hi68Si
+	T0hxf2Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRYuK-0000qX-RF; Thu, 23 Apr 2020 10:16:36 +0000
+	id 1jRYuc-0001oQ-Fb; Thu, 23 Apr 2020 10:16:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRYu0-0000eh-G0
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:16:17 +0000
+ id 1jRYu3-0000r5-Mu
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 10:16:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 947B431B;
- Thu, 23 Apr 2020 03:16:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A65FE31B;
+ Thu, 23 Apr 2020 03:16:18 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 913DE3F68F;
- Thu, 23 Apr 2020 03:16:14 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A733C3F68F;
+ Thu, 23 Apr 2020 03:16:17 -0700 (PDT)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] arm64: pointer authentication initialization cleanup
-Date: Thu, 23 Apr 2020 11:16:04 +0100
-Message-Id: <20200423101606.37601-1-mark.rutland@arm.com>
+Subject: [PATCH 1/2] arm64: remove ptrauth_keys_install_kernel sync arg
+Date: Thu, 23 Apr 2020 11:16:05 +0100
+Message-Id: <20200423101606.37601-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200423101606.37601-1-mark.rutland@arm.com>
+References: <20200423101606.37601-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_031616_577126_739BDEA7 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200423_031619_843062_71D65F03 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,42 +70,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These patches refactor the pointer authentication initialization code to make
-it easier to reason about and to reduce duplication of code.
+The 'sync' argument to ptrauth_keys_install_kernel macro is somewhat
+opaque at callsites, so instead lets have regular and _nosync variants
+of the macro to make this a little more obvious.
 
-The big wins are:
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/asm_pointer_auth.h | 21 ++++++++++++++++-----
+ arch/arm64/kernel/entry.S                 |  4 ++--
+ arch/arm64/mm/proc.S                      |  2 +-
+ 3 files changed, 19 insertions(+), 8 deletions(-)
 
-* Moving the initialization after the MMU has been enabled. This means we can
-  initialize the keys using the same helpers as context switch, and don't need
-  to temporarily duplicate them in secondary_data.
-
-* Moving primary/secondary conditional initialization into the respective
-  primary/secondary boot paths. This minimizes potentially-confusing control
-  flow and still allows for code sharing via helper macros.
-
-I've given this a spin on a foundation model, with userspace and kernel tests,
-playing with CPU hotplug, etc.
-
-Patches based on v5.7-rc2. These have no dependency on my fix queued in
-for-next/core.
-
-Thanks,
-Mark.
-
-Mark Rutland (2):
-  arm64: remove ptrauth_keys_install_kernel sync arg
-  arm64: simplify ptrauth initialization
-
- arch/arm64/include/asm/asm_pointer_auth.h | 43 +++++++++++++++++++++++++----
- arch/arm64/include/asm/smp.h              | 11 --------
- arch/arm64/kernel/asm-offsets.c           |  3 --
- arch/arm64/kernel/entry.S                 |  4 +--
- arch/arm64/kernel/head.S                  | 12 ++++++--
- arch/arm64/kernel/sleep.S                 |  1 -
- arch/arm64/kernel/smp.c                   |  8 ------
- arch/arm64/mm/proc.S                      | 46 +------------------------------
- 8 files changed, 51 insertions(+), 77 deletions(-)
-
+diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
+index ce2a8486992b..c85540a911d3 100644
+--- a/arch/arm64/include/asm/asm_pointer_auth.h
++++ b/arch/arm64/include/asm/asm_pointer_auth.h
+@@ -39,16 +39,24 @@ alternative_if ARM64_HAS_GENERIC_AUTH
+ alternative_else_nop_endif
+ 	.endm
+ 
+-	.macro ptrauth_keys_install_kernel tsk, sync, tmp1, tmp2, tmp3
+-alternative_if ARM64_HAS_ADDRESS_AUTH
++	.macro __ptrauth_keys_install_kernel_nosync tsk, tmp1, tmp2, tmp3
+ 	mov	\tmp1, #THREAD_KEYS_KERNEL
+ 	add	\tmp1, \tsk, \tmp1
+ 	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KERNEL_KEY_APIA]
+ 	msr_s	SYS_APIAKEYLO_EL1, \tmp2
+ 	msr_s	SYS_APIAKEYHI_EL1, \tmp3
+-	.if     \sync == 1
++	.endm
++
++	.macro ptrauth_keys_install_kernel_nosync tsk, tmp1, tmp2, tmp3
++alternative_if ARM64_HAS_ADDRESS_AUTH
++	__ptrauth_keys_install_kernel_nosync \tsk, \tmp1, \tmp2, \tmp3
++alternative_else_nop_endif
++	.endm
++
++	.macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
++alternative_if ARM64_HAS_ADDRESS_AUTH
++	__ptrauth_keys_install_kernel_nosync \tsk, \tmp1, \tmp2, \tmp3
+ 	isb
+-	.endif
+ alternative_else_nop_endif
+ 	.endm
+ 
+@@ -57,7 +65,10 @@ alternative_else_nop_endif
+ 	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
+ 	.endm
+ 
+-	.macro ptrauth_keys_install_kernel tsk, sync, tmp1, tmp2, tmp3
++	.macro ptrauth_keys_install_kernel_nosync tsk, tmp1, tmp2, tmp3
++	.endm
++
++	.macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
+ 	.endm
+ 
+ #endif /* CONFIG_ARM64_PTR_AUTH */
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index ddcde093c433..a9265fef914f 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -178,7 +178,7 @@ alternative_cb_end
+ 
+ 	apply_ssbd 1, x22, x23
+ 
+-	ptrauth_keys_install_kernel tsk, 1, x20, x22, x23
++	ptrauth_keys_install_kernel tsk, x20, x22, x23
+ 	.else
+ 	add	x21, sp, #S_FRAME_SIZE
+ 	get_current_task tsk
+@@ -900,7 +900,7 @@ SYM_FUNC_START(cpu_switch_to)
+ 	ldr	lr, [x8]
+ 	mov	sp, x9
+ 	msr	sp_el0, x1
+-	ptrauth_keys_install_kernel x1, 1, x8, x9, x10
++	ptrauth_keys_install_kernel x1, x8, x9, x10
+ 	ret
+ SYM_FUNC_END(cpu_switch_to)
+ NOKPROBE(cpu_switch_to)
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index 197a9ba2d5ea..0401342741e6 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -139,7 +139,7 @@ alternative_if ARM64_HAS_RAS_EXTN
+ 	msr_s	SYS_DISR_EL1, xzr
+ alternative_else_nop_endif
+ 
+-	ptrauth_keys_install_kernel x14, 0, x1, x2, x3
++	ptrauth_keys_install_kernel_nosync x14, x1, x2, x3
+ 	isb
+ 	ret
+ SYM_FUNC_END(cpu_do_resume)
 -- 
 2.11.0
 
