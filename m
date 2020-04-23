@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9574F1B5CBC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 15:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87BE31B5CD5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 15:45:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=evftNPgzEuteI44hi2Wu2JInhHQehD4BdY0qITyB1/I=; b=WYLHex+NM+FePS
-	ky075TnOAMYBYF+1UR9HgnMK7EXN732quSZWpI8iJsBzoF5MImjB8GZYi+2STmAMgHEcBsiwfwI63
-	Oe5aZPH7o1IlBianKnOr1Cp/Nw5b9+7ewCKhdjXBYQ+SltUxWlJP6nl9uk7rPVpoQzqohtWUKAD3i
-	7YdrsyrPnupVv15C1hC7SKMsV3riJeK61WolKq2aaAHvtmGtSdL38f6QRxHQVFixxX5xq45Z/vuNC
-	C+XtUdm5ROjh3nQVhZVbdhWqoNXq4PGXbnE+LthgnM5prU0zCpfYR45uufG6Pq6oVtpXoljcPGQC8
-	EDWdXfLTf+1PpWe59yIA==;
+	List-Owner; bh=2YchznQRb72i/ndeN6vPJ/9/cDiACyufcbR1ArHXyog=; b=ExQzVWC4UyYpPv
+	OPhDSXZaWz+o4lLBpcqTk4nVYoZVX09/UP9/Yrp5J9uA3yK+rgsqMSrJPXqa+uNAtTFY+h2TCli+q
+	QpAWk3y98eR/RcrMB+RWUE+xiPO+f0en68jX/Do2n3jE85UH9gManQHufnl0u9pR9XvOGA77ikI0F
+	Z3reMDj79rVeLixV4oZZk9OM0ZMBjGALyLnfUkm7LNAYuhWYnEc5iIFfpD5HXj/pb+qXRTEmd7wVN
+	hi0DEHMfsuAmSqp88D+/nPpDh7gfNhfavQZ8KJE2VSJUZx+Zi2pta3fYB3YiQ6rgRUX6gnUrGki7N
+	VsLSVbkYbMvQeXgXlZlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRc5q-0001Xs-CX; Thu, 23 Apr 2020 13:40:42 +0000
+	id 1jRcAn-0004xy-Mk; Thu, 23 Apr 2020 13:45:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRc5f-0001XN-DX
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 13:40:33 +0000
+ id 1jRcAg-0004wJ-1F
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 13:45:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A2AC31B;
- Thu, 23 Apr 2020 06:40:30 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24BBC3F6CF;
- Thu, 23 Apr 2020 06:40:29 -0700 (PDT)
-Date: Thu, 23 Apr 2020 14:40:22 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 0/3] arm64: Open code .arch_extension
-Message-ID: <20200423134022.GF4963@gaia>
-References: <20200325114110.23491-1-broonie@kernel.org>
- <CAMj1kXH=g5N4ZtnZeX5N8hf9cnWVam4Htnov6qAmQwD58Wp73Q@mail.gmail.com>
- <20200325115038.GD4346@sirena.org.uk> <20200422180027.GH3585@gaia>
- <20200423111803.GG4808@sirena.org.uk> <20200423115905.GE4963@gaia>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C68431B;
+ Thu, 23 Apr 2020 06:45:39 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.118])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 72B2E3F6CF;
+ Thu, 23 Apr 2020 06:45:35 -0700 (PDT)
+Date: Thu, 23 Apr 2020 14:45:28 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 08/17] clk: vexpress-osc: Support building as a module
+Message-ID: <20200423133342.GA10628@bogus>
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-9-robh@kernel.org>
+ <20200422210802.GH25585@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200423115905.GE4963@gaia>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200422210802.GH25585@bogus>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_064031_542990_D93DC759 
-X-CRM114-Status: GOOD (  17.59  )
+X-CRM114-CacheID: sfid-20200423_064542_161748_4E26D29B 
+X-CRM114-Status: GOOD (  21.60  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,146 +64,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-crypto@vger.kernel.org, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Eric Biggers <ebiggers@google.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sebastian Reichel <sre@kernel.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>, Will Deacon <will@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 23, 2020 at 12:59:05PM +0100, Catalin Marinas wrote:
-> On Thu, Apr 23, 2020 at 12:18:03PM +0100, Mark Brown wrote:
-> > On Wed, Apr 22, 2020 at 07:00:28PM +0100, Catalin Marinas wrote:
-> > > Forcing .S files to armv8.5 would not cause any problems with
-> > > the base armv8.0 that the kernel image support since it shouldn't change
-> > > the opcodes gas generates. The .S files would use alternatives anyway
-> > > (or simply have code not called).
-> > 
-> > We do loose the checking that the assembler does that nobody used a
-> > newer feature by mistake but yeah, shouldn't affect the output.
-> 
-> We may need some push/pop_arch macros to contain the supported features.
-> 
-> The gas documentation says that .arch_extension may be used multiple
-> times to add or remove extensions. However, I couldn't find a way to
-> remove memtag after adding it (tried -memtag, !memtag, empty string). So
-> I may go with a '.arch armv8.0-a' as a base, followed by temporary
-> setting of '.arch armv8.5-a+memtag' (and hope we don't need combinations
-> of such extensions).
+On Wed, Apr 22, 2020 at 10:08:02PM +0100, Sudeep Holla wrote:
+> On Sun, Apr 19, 2020 at 12:08:01PM -0500, Rob Herring wrote:
+> > Enable building the vexpress-osc clock driver as a module.
+> >
+> > Cc: Linus Walleij <linus.walleij@linaro.org>
+> > Cc: Liviu Dudau <liviu.dudau@arm.com>
+> > Cc: Sudeep Holla <sudeep.holla@arm.com>
+> > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Cc: Michael Turquette <mturquette@baylibre.com>
+> > Cc: Stephen Boyd <sboyd@kernel.org>
+> > Cc: linux-clk@vger.kernel.org
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> >  drivers/clk/versatile/Kconfig            |  4 ++--
+> >  drivers/clk/versatile/clk-vexpress-osc.c | 10 ++++------
+> >  2 files changed, 6 insertions(+), 8 deletions(-)
+> >
+> > diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
+> > index 5bdd5c98990b..9de2396dcf9b 100644
+> > --- a/drivers/clk/versatile/Kconfig
+> > +++ b/drivers/clk/versatile/Kconfig
+> > @@ -15,8 +15,8 @@ config CLK_SP810
+> >  	  of the ARM SP810 System Controller cell.
+> >
+> >  config CLK_VEXPRESS_OSC
+> > -	bool "Clock driver for Versatile Express OSC clock generators"
+> > -	depends on VEXPRESS_CONFIG || COMPILE_TEST
+> > +	tristate "Clock driver for Versatile Express OSC clock generators"
+> > +	depends on VEXPRESS_CONFIG
+> >  	default y if ARCH_VEXPRESS
+> >  	---help---
+> >  	  Simple regmap-based driver driving clock generators on Versatile
+> > diff --git a/drivers/clk/versatile/clk-vexpress-osc.c b/drivers/clk/versatile/clk-vexpress-osc.c
+> > index 5bb1d5a714d0..b2b32fa2d7c3 100644
+> > --- a/drivers/clk/versatile/clk-vexpress-osc.c
+> > +++ b/drivers/clk/versatile/clk-vexpress-osc.c
+> > @@ -7,6 +7,7 @@
+> >  #include <linux/clkdev.h>
+> >  #include <linux/clk-provider.h>
+> >  #include <linux/err.h>
+> > +#include <linux/module.h>
+> >  #include <linux/of.h>
+> >  #include <linux/platform_device.h>
+> >  #include <linux/slab.h>
+> > @@ -108,6 +109,7 @@ static const struct of_device_id vexpress_osc_of_match[] = {
+> >  	{ .compatible = "arm,vexpress-osc", },
+> >  	{}
+> >  };
+> > +MODULE_DEVICE_TABLE(of, vexpress_osc_of_match);
+> >
+> >  static struct platform_driver vexpress_osc_driver = {
+> >  	.driver	= {
+> > @@ -116,9 +118,5 @@ static struct platform_driver vexpress_osc_driver = {
+> >  	},
+> >  	.probe = vexpress_osc_probe,
+> >  };
+> > -
+> > -static int __init vexpress_osc_init(void)
+> > -{
+> > -	return platform_driver_register(&vexpress_osc_driver);
+> > -}
+> > -core_initcall(vexpress_osc_init);
+> > +module_platform_driver(vexpress_osc_driver);
+>
+> I am not 100% sure of this. This might break the boot on CA9 and TC2
+> at-least. There are loads of MB peripherals that need this. This will
+> break the boot. We need to check if all the dependent modules are also
+> at module_initcall level and if they deal with deferred probe correctly.
+> Lot of them are legacy and may happen to be working by carefully initcall
+> level adjustments.
+>
 
-Quick attempt at this on top of the MTE patches:
+OK I managed to try this on my TC2 and it fails to boot. However when I
+enable earlyprintk as I see no log without it, it boots just fine.
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index e7338e129dfd..6180ac605406 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -24,10 +24,18 @@
- #include <asm/sysreg.h>
- #include <asm/thread_info.h>
- 
--#ifdef CONFIG_ARM64_MTE
--	.arch		armv8.5-a
--	.arch_extension memtag
--#endif
-+	/* Base architecture version for the .S files */
-+	.arch	armv8-a
-+
-+	.macro	arm64_set_arch, arch, enable = 1
-+	.if	\enable
-+	.arch	\arch
-+	.endif
-+	.endm
-+
-+	.macro	arm64_reset_arch
-+	.arch	armv8-a
-+	.endm
- 
- 	.macro save_and_disable_daif, flags
- 	mrs	\flags, daif
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index e4ab82e543cf..df2037fc431b 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -148,6 +148,7 @@ alternative_cb_end
- 	/* Check for MTE asynchronous tag check faults */
- 	.macro check_mte_async_tcf, flgs, tmp
- #ifdef CONFIG_ARM64_MTE
-+	arm64_set_arch armv8.5-a+memtag
- alternative_if_not ARM64_MTE
- 	b	1f
- alternative_else_nop_endif
-@@ -158,16 +159,19 @@ alternative_else_nop_endif
- 	str	\flgs, [tsk, #TSK_TI_FLAGS]
- 	msr_s	SYS_TFSRE0_EL1, xzr
- 1:
-+	arm64_reset_arch
- #endif
- 	.endm
- 
- 	/* Clear the MTE asynchronous tag check faults */
- 	.macro clear_mte_async_tcf
- #ifdef CONFIG_ARM64_MTE
-+	arm64_set_arch armv8.5-a+memtag
- alternative_if ARM64_MTE
- 	dsb	ish
- 	msr_s	SYS_TFSRE0_EL1, xzr
- alternative_else_nop_endif
-+	arm64_reset_arch
- #endif
- 	.endm
- 
-diff --git a/arch/arm64/lib/clear_page.S b/arch/arm64/lib/clear_page.S
-index 9f85a4cf9568..a8e26f232502 100644
---- a/arch/arm64/lib/clear_page.S
-+++ b/arch/arm64/lib/clear_page.S
-@@ -22,8 +22,10 @@ SYM_FUNC_START(clear_page)
- 	mov	x2, #4
- 	lsl	x1, x2, x1
- 1:
-+	arm64_set_arch armv8.5-a+memtag, IS_ENABLED(CONFIG_ARM64_MTE)
- alternative_insn "dc zva, x0", "stzgm xzr, [x0]", \
- 			 ARM64_MTE, IS_ENABLED(CONFIG_ARM64_MTE), 1
-+	arm64_reset_arch
- 	add	x0, x0, x1
- 	tst	x0, #(PAGE_SIZE - 1)
- 	b.ne	1b
-diff --git a/arch/arm64/lib/copy_page.S b/arch/arm64/lib/copy_page.S
-index c3234175efe0..8322043e75e6 100644
---- a/arch/arm64/lib/copy_page.S
-+++ b/arch/arm64/lib/copy_page.S
-@@ -26,6 +26,7 @@ alternative_if ARM64_HAS_NO_HW_PREFETCH
- alternative_else_nop_endif
- 
- #ifdef CONFIG_ARM64_MTE
-+	arm64_set_arch armv8.5-a+memtag
- alternative_if_not ARM64_MTE
- 	b	2f
- alternative_else_nop_endif
-@@ -46,6 +47,7 @@ alternative_else_nop_endif
- 	tst	x2, #(PAGE_SIZE - 1)
- 	b.ne	1b
- 2:
-+	arm64_reset_arch
- #endif
- 
- 	ldp	x2, x3, [x1]
-diff --git a/arch/arm64/lib/mte.S b/arch/arm64/lib/mte.S
-index 45be04a8c73c..8f824fc62ad4 100644
---- a/arch/arm64/lib/mte.S
-+++ b/arch/arm64/lib/mte.S
-@@ -7,6 +7,8 @@
- #include <asm/assembler.h>
- #include <asm/mte.h>
- 
-+	arm64_set_arch armv8.5-a+memtag
-+
- /*
-  * Compare tags of two pages
-  *   x0 - page1 address
+I also checked adding initcall_debug and I may be wrong on the dependency
+part. The modules dependent on vexpress-osc are probed later correctly.
 
--- 
-Catalin
+This make it more difficult to debug as I don't have any debugger attached
+at the moment to look at the logbuf when it hangs without earlyprintk.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
