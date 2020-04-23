@@ -2,93 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B0AE1B53E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 07:01:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD6F81B53E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 07:06:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wb1UjpFa7HpEvhAcpQm30k6bsvRHzM3tzdjpx8STB2g=; b=sZJE3q2jf1jl81
-	piaHkndhbhotRhsT/DY32fG3SJFhw4j+FZmDimZJ8ZFshe1wFraq0o3oMhy8LqHzQ9hQXJzVT5RnB
-	sT7pdKl+4OBWXYeZDkxHqL6mjtv3yRNXceZJynqKDyva973SNMu8zJVNG2TdA7eSTZEUuJxNF4lJc
-	Q9TbCrgk0Y99ouNAhaJ8oxqlFE6bm3SBfyPHJW4McDD2FPUXgh9GToMiNt/1jvmZmZgjKpPV24irY
-	txm9Hy7QfLq1f5q6Wbov4gjXuocFB0xyTkPFesDde2AgR1O8qzlLggz25i0TZsJmfWA84bA4WnoSn
-	eW5ZiOvnhDN2q7eP1CaA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RbGwtkgfCWTyP1O4wtAZKCtl5JbtUvGA3fc8Sv9ms8k=; b=r8k6/04j/Pg1aJ
+	b9Ydv512ARuPvQB8TQ0TB3KhdVVZW86InSwL+pJUQJ862zg2mRQf1NjefGGMRlNRijgmRm8SwVa90
+	uJeN/g62+/QxoYCGuEjApiJj/OW0j2FBT+SJdTv6j+kJl41DbxlkuEW7TmuJhT1tv+XNNRmloUETs
+	eT8ZYvCKJEp/KJSJS4TfxgfWBdHWRqep83E/NhLmids7ajf/Ew58vzG2hSReWDUrp7WBq5H1BIBK9
+	sJ+qzJ/iXXYSsbYYsHwKol7KnBygvFgnA6UA4B8W9TiN2E0rG19Eir3IDak1+/8I6V5iQhIREr9ps
+	1p46BpviJJ8PMCKox4Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRTyy-0005vG-QH; Thu, 23 Apr 2020 05:01:04 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jRU3x-000132-Hp; Thu, 23 Apr 2020 05:06:13 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRTyo-0005tp-BT
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 05:00:58 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 18so1119258pfv.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 Apr 2020 22:00:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=SP5kt0X+NFv01hGdhlSZGrj4pSvf4jkmcFFyTl5kuC4=;
- b=B2coqk+rNQDnE+4SDzcXxg66+w6r3X9mddej89j6Hdmu+VOZgcOeSNc0S2e+kOVsSM
- oUTa+AQZsm4dIpAeU3AabPPtsYK73pKD85dJ81ZjqSflISDPWIXk2wXFivihVsn2LJ1E
- 6w91UHeBEJZ2l4QF3GNIKlo2LKI3eqjmxvK7jmbrf1tSw7UXBZHWrW3Khwb4eIejWUyb
- 8d0lqoSPo4/XSppRZHzqtErAmpZr9W4HAO12PkOzhLrMc1kqqmn9CxM/975GtsqKvE2h
- L4sGrQcyfjv+ACgoG2AcpWVxVNP6xTrWiP1b1mjx+l2jbRinFXdo0NsAzOl3yUJVUMKa
- fKuA==
+ id 1jRU3m-00010s-Vd; Thu, 23 Apr 2020 05:06:04 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c21so1056500plz.4;
+ Wed, 22 Apr 2020 22:06:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=WeFOVyHgQszc4mrut2j8PZB7URhErPNSaopI2XK30DY=;
+ b=OaUVsruehjLEtOQDCInDr39KOLFbXza3Kr12nLSsUYkbjkHUQBsR2Btjoz6jyXqDQM
+ Wdu4s2MtkYt6EveNxcigpD5H8aV+H/kkh8XRnejQRkxT1L/QqO6aGicr/AefNJnK81QJ
+ 3y5HHZOxXcxVDGfEYdHIl5hM3IPuFvfivdN5eiCdMfPJpvU9IF2yrXMhep/XnJXDstW5
+ hSRV/zxZFWCbKVapyIfAQqVxDW0R4S3+RVJTHzP1B5zjikoTyfltd33sWdrqybyzisN6
+ sqTzeiuXr0YTOP3wSPK5HYAoKaATbyBwmybCFfK2pndmzHkrZsq/w9CQm18KEzUmoEUW
+ xNsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=SP5kt0X+NFv01hGdhlSZGrj4pSvf4jkmcFFyTl5kuC4=;
- b=iB2UG+Mqxx6YvoVHON1gSGHndyBbH14ueWXbv9crx56rUDw2KM+/f2WBdXlHSoHJN+
- wYcm+izJ+cFIgJmPRtFlqk/QHs9+/17J0OcEoqgSYc6WtLQVgfpiMWhIBUUUrImeSBXe
- i3NA8CfMXDRnBZey29KwRNcpdsCsObCqDX3QAEDhLuEGhWDbb4uN60VbEkZDuOmUu9p3
- 84dvJEygiA9VFEVmmDtRhpFUON5KGrUmpIDdCGNcLNFJhFCUQRSjIVPIqi0how+Tfh40
- BYe8j7xHXCQiWyUCFsXa7MkoNvEJxykosIbAyL/fbbh7/eIhVxrWRQfdoVJ7lp4a7nyj
- HgEA==
-X-Gm-Message-State: AGi0PubRpaA9mWWd8P0aFOAhE22+A9qF93ELmFOQKPSfISEJHU1JHzhw
- W2W55apwfLUjZXjCFTCkzu/7XQ==
-X-Google-Smtp-Source: APiQypL4ZJM26+qyXH9J1qO3Lqvrs7e0aJSt3FyRYAmsvCulkbisdSh1Q9TYUbrYmbCCvJGcIaei0A==
-X-Received: by 2002:a62:5fc4:: with SMTP id t187mr1970332pfb.269.1587618053284; 
- Wed, 22 Apr 2020 22:00:53 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id i15sm891925pgj.30.2020.04.22.22.00.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Apr 2020 22:00:52 -0700 (PDT)
-Date: Wed, 22 Apr 2020 22:01:20 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/2] remoteproc: Add prepare and unprepare ops
-Message-ID: <20200423050120.GO1868936@builder.lan>
-References: <20200417002036.24359-1-s-anna@ti.com>
- <20200417002036.24359-2-s-anna@ti.com>
- <20200421025254.GK1868936@builder.lan>
- <2feee391-9f8e-410e-2a20-5b5bdd949940@ti.com>
+ h=x-gm-message-state:sender:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=WeFOVyHgQszc4mrut2j8PZB7URhErPNSaopI2XK30DY=;
+ b=JmcspMVXaGwU2r9f+rxq2Z4hwPO+DgIF1ZcxZuqRrQZaAPFJOW3d5z3oT4jUyC1BiN
+ M6X3E+Q20b5gBwgtBnJLOdNwhOZ4UPJVBMrnfN8ubgUaBZrneoIKrcBPH3+a/sAJes3l
+ lW2akQi0TgMHRoQuNktnarLhAc232hSV2I+/ahTEo9uHL5+nBwLfM6IkqAJ0R4RhMBlo
+ AclDK67uFhUWK3EuxQ/dceRsX/B34AS27k0TwtrPRfxiaDTWK5TVN38iciDCk0iN7guf
+ HskkfakqsYFV4lhImSeBpOOpmUFN2RMDGpgWkdFkuOql3DJrqcQWnkS/qNv+7uUJIRcB
+ h/4Q==
+X-Gm-Message-State: AGi0PuZYGiVlcyWL5SAE1ZnqsgkLHyNRD6x2nO7gEctybjxj9ZQ352iz
+ W6+lpuE6JnOR22Bo03qMh9Y=
+X-Google-Smtp-Source: APiQypKuOKHWV9tNVOE+ASJm0iNs9mWcyvp+gF7Sjo1ycLQZ0uLtZDNe9jOcKA7ZSvAygkCzyklUJg==
+X-Received: by 2002:a17:902:ac87:: with SMTP id
+ h7mr2035623plr.119.1587618361431; 
+ Wed, 22 Apr 2020 22:06:01 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ 198sm1319909pfa.87.2020.04.22.22.05.58
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 22 Apr 2020 22:06:00 -0700 (PDT)
+Subject: Re: [PATCH v5 2/2] watchdog: Add new arm_smc_wdt watchdog driver
+To: Evan Benn <evanbenn@chromium.org>, LKML <linux-kernel@vger.kernel.org>
+References: <20200423044036.234578-1-evanbenn@chromium.org>
+ <20200423143945.v5.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
+From: Guenter Roeck <linux@roeck-us.net>
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ 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
+ mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
+Message-ID: <fe0a8db1-2fa2-3ef3-c994-7312c642d413@roeck-us.net>
+Date: Wed, 22 Apr 2020 22:05:58 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2feee391-9f8e-410e-2a20-5b5bdd949940@ti.com>
+In-Reply-To: <20200423143945.v5.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_220055_226990_590338EF 
-X-CRM114-Status: GOOD (  26.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200422_220603_046253_2F06667A 
+X-CRM114-Status: GOOD (  29.54  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,156 +150,334 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Loic Pallardy <loic.pallardy@st.com>, linux-remoteproc@vger.kernel.org,
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ xingyu.chen@amlogic.com, Rob Herring <robh@kernel.org>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
  linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, linux-kernel@vger.kernel.org
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Li Yang <leoyang.li@nxp.com>,
+ Olof Johansson <olof@lixom.net>, jwerner@chromium.org,
+ Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 21 Apr 07:12 PDT 2020, Suman Anna wrote:
-
-> On 4/20/20 9:52 PM, Bjorn Andersson wrote:
-> > On Thu 16 Apr 17:20 PDT 2020, Suman Anna wrote:
-> > 
-> > > From: Loic Pallardy <loic.pallardy@st.com>
-> > > 
-> > > On some SoC architecture, it is needed to enable HW like
-> > > clock, bus, regulator, memory region... before loading
-> > > co-processor firmware.
-> > > 
-> > > This patch introduces prepare and unprepare ops to execute
-> > > platform specific function before firmware loading and after
-> > > stop execution.
-> > > 
-> > > Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
-> > > Signed-off-by: Suman Anna <s-anna@ti.com>
-> > > Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > 
-> > Do we have an inbound user of these new oops?
+On 4/22/20 9:40 PM, Evan Benn wrote:
+> From: Julius Werner <jwerner@chromium.org>
 > 
-> Yes, both the TI K3 R5F and DSP remoteproc drivers use these ops, the
-> patches are already on the lists.
+> This patch adds a watchdog driver that can be used on ARM systems
+> with the appropriate watchdog implemented in Secure Monitor firmware.
+> The driver communicates with firmware via a Secure Monitor Call.
+> This may be useful for platforms using TrustZone that want
+> the Secure Monitor firmware to have the final control over the watchdog.
+> 
+> This is implemented on mt8173 chromebook devices oak, elm and hana in
+> arm trusted firmware file plat/mediatek/mt8173/drivers/wdt/wdt.c.
+> 
+> Signed-off-by: Julius Werner <jwerner@chromium.org>
+> Signed-off-by: Evan Benn <evanbenn@chromium.org>
+> 
+Your patch doesn't apply to the mainline kernel, not even with
+"patch -p 1". What is your kernel baseline ?
+
+Guenter
+
+> ---
+> 
+> Changes in v5:
+> - Make timeleft return 0 on error
+> - Use type punning on smc_func_id to save an alloc
+> - Change compatible to arm,smc-wdt
+> 
+> Changes in v4:
+> - Get smc-id from of property
+> - Return a1 instead of a0 in timeleft
+> 
+> Changes in v3:
+> - Add optional get_timeleft op
+> - change name to arm_smc_wdt
+> 
+> Changes in v2:
+> - use watchdog_stop_on_reboot
+> - use watchdog_stop_on_unregister
+> - use devm_watchdog_register_device
+> - remove smcwd_shutdown, smcwd_remove
+> - change error codes
+> 
+>  MAINTAINERS                    |   1 +
+>  arch/arm64/configs/defconfig   |   1 +
+>  drivers/watchdog/Kconfig       |  13 +++
+>  drivers/watchdog/Makefile      |   1 +
+>  drivers/watchdog/arm_smc_wdt.c | 189 +++++++++++++++++++++++++++++++++
+>  5 files changed, 205 insertions(+)
+>  create mode 100644 drivers/watchdog/arm_smc_wdt.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 0f2b39767bfa9..2b782bbff200a 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -1462,6 +1462,7 @@ M:	Julius Werner <jwerner@chromium.org>
+>  R:	Evan Benn <evanbenn@chromium.org>
+>  S:	Maintained
+>  F:	devicetree/bindings/watchdog/arm-smc-wdt.yaml
+> +F:	drivers/watchdog/arm_smc_wdt.c
+>  
+>  ARM SMMU DRIVERS
+>  M:	Will Deacon <will@kernel.org>
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 24e534d850454..0619df80f7575 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -513,6 +513,7 @@ CONFIG_UNIPHIER_THERMAL=y
+>  CONFIG_WATCHDOG=y
+>  CONFIG_ARM_SP805_WATCHDOG=y
+>  CONFIG_ARM_SBSA_WATCHDOG=y
+> +CONFIG_ARM_SMC_WATCHDOG=y
+>  CONFIG_S3C2410_WATCHDOG=y
+>  CONFIG_DW_WATCHDOG=y
+>  CONFIG_SUNXI_WATCHDOG=m
+> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+> index 0663c604bd642..c440b576d23bf 100644
+> --- a/drivers/watchdog/Kconfig
+> +++ b/drivers/watchdog/Kconfig
+> @@ -867,6 +867,19 @@ config DIGICOLOR_WATCHDOG
+>  	  To compile this driver as a module, choose M here: the
+>  	  module will be called digicolor_wdt.
+>  
+> +config ARM_SMC_WATCHDOG
+> +	tristate "ARM Secure Monitor Call based watchdog support"
+> +	depends on ARM || ARM64
+> +	depends on OF
+> +	depends on HAVE_ARM_SMCCC
+> +	select WATCHDOG_CORE
+> +	help
+> +	  Say Y here to include support for a watchdog timer
+> +	  implemented by the EL3 Secure Monitor on ARM platforms.
+> +	  Requires firmware support.
+> +	  To compile this driver as a module, choose M here: the
+> +	  module will be called arm_smc_wdt.
+> +
+>  config LPC18XX_WATCHDOG
+>  	tristate "LPC18xx/43xx Watchdog"
+>  	depends on ARCH_LPC18XX || COMPILE_TEST
+> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
+> index 6de2e4ceef190..97bed1d3d97cb 100644
+> --- a/drivers/watchdog/Makefile
+> +++ b/drivers/watchdog/Makefile
+> @@ -94,6 +94,7 @@ obj-$(CONFIG_UNIPHIER_WATCHDOG) += uniphier_wdt.o
+>  obj-$(CONFIG_RTD119X_WATCHDOG) += rtd119x_wdt.o
+>  obj-$(CONFIG_SPRD_WATCHDOG) += sprd_wdt.o
+>  obj-$(CONFIG_PM8916_WATCHDOG) += pm8916_wdt.o
+> +obj-$(CONFIG_ARM_SMC_WATCHDOG) += arm_smc_wdt.o
+>  
+>  # X86 (i386 + ia64 + x86_64) Architecture
+>  obj-$(CONFIG_ACQUIRE_WDT) += acquirewdt.o
+> diff --git a/drivers/watchdog/arm_smc_wdt.c b/drivers/watchdog/arm_smc_wdt.c
+> new file mode 100644
+> index 0000000000000..7e14909bddda2
+> --- /dev/null
+> +++ b/drivers/watchdog/arm_smc_wdt.c
+> @@ -0,0 +1,189 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * ARM Secure Monitor Call watchdog driver
+> + *
+> + * Copyright 2020 Google LLC.
+> + * Julius Werner <jwerner@chromium.org>
+> + * Based on mtk_wdt.c
+> + */
+> +
+> +#include <linux/arm-smccc.h>
+> +#include <linux/err.h>
+> +#include <linux/module.h>
+> +#include <linux/moduleparam.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/types.h>
+> +#include <linux/watchdog.h>
+> +#include <uapi/linux/psci.h>
+> +
+> +#define DRV_NAME		"arm_smc_wdt"
+> +#define DRV_VERSION		"1.0"
+> +
+> +enum smcwd_call {
+> +	SMCWD_INIT		= 0,
+> +	SMCWD_SET_TIMEOUT	= 1,
+> +	SMCWD_ENABLE		= 2,
+> +	SMCWD_PET		= 3,
+> +	SMCWD_GET_TIMELEFT	= 4,
+> +};
+> +
+> +static bool nowayout = WATCHDOG_NOWAYOUT;
+> +static unsigned int timeout;
+> +
+> +static int smcwd_call(struct watchdog_device *wdd, enum smcwd_call call,
+> +		      unsigned long arg, struct arm_smccc_res *res)
+> +{
+> +	struct arm_smccc_res local_res;
+> +
+> +	if (!res)
+> +		res = &local_res;
+> +
+> +	arm_smccc_smc((u32)(uintptr_t)watchdog_get_drvdata(wdd), call, arg, 0,
+> +		      0, 0, 0, 0, res);
+> +
+> +	if (res->a0 == PSCI_RET_NOT_SUPPORTED)
+> +		return -ENODEV;
+> +	if (res->a0 == PSCI_RET_INVALID_PARAMS)
+> +		return -EINVAL;
+> +	if (res->a0 != PSCI_RET_SUCCESS)
+> +		return -EIO;
+> +	return 0;
+> +}
+> +
+> +static int smcwd_ping(struct watchdog_device *wdd)
+> +{
+> +	return smcwd_call(wdd, SMCWD_PET, 0, NULL);
+> +}
+> +
+> +static unsigned int smcwd_get_timeleft(struct watchdog_device *wdd)
+> +{
+> +	struct arm_smccc_res res;
+> +
+> +	smcwd_call(wdd, SMCWD_GET_TIMELEFT, 0, &res);
+> +	if (res.a0)
+> +		return 0;
+> +	return res.a1;
+> +}
+> +
+> +static int smcwd_set_timeout(struct watchdog_device *wdd, unsigned int timeout)
+> +{
+> +	int res;
+> +
+> +	res = smcwd_call(wdd, SMCWD_SET_TIMEOUT, timeout, NULL);
+> +	if (!res)
+> +		wdd->timeout = timeout;
+> +	return res;
+> +}
+> +
+> +static int smcwd_stop(struct watchdog_device *wdd)
+> +{
+> +	return smcwd_call(wdd, SMCWD_ENABLE, 0, NULL);
+> +}
+> +
+> +static int smcwd_start(struct watchdog_device *wdd)
+> +{
+> +	return smcwd_call(wdd, SMCWD_ENABLE, 1, NULL);
+> +}
+> +
+> +static const struct watchdog_info smcwd_info = {
+> +	.identity	= DRV_NAME,
+> +	.options	= WDIOF_SETTIMEOUT |
+> +			  WDIOF_KEEPALIVEPING |
+> +			  WDIOF_MAGICCLOSE,
+> +};
+> +
+> +static const struct watchdog_ops smcwd_ops = {
+> +	.start		= smcwd_start,
+> +	.stop		= smcwd_stop,
+> +	.ping		= smcwd_ping,
+> +	.set_timeout	= smcwd_set_timeout,
+> +};
+> +
+> +static const struct watchdog_ops smcwd_timeleft_ops = {
+> +	.start		= smcwd_start,
+> +	.stop		= smcwd_stop,
+> +	.ping		= smcwd_ping,
+> +	.set_timeout	= smcwd_set_timeout,
+> +	.get_timeleft	= smcwd_get_timeleft,
+> +};
+> +
+> +static int smcwd_probe(struct platform_device *pdev)
+> +{
+> +	struct watchdog_device *wdd;
+> +	int err;
+> +	struct arm_smccc_res res;
+> +	u32 smc_func_id;
+> +
+> +	wdd = devm_kzalloc(&pdev->dev, sizeof(*wdd), GFP_KERNEL);
+> +	if (!wdd)
+> +		return -ENOMEM;
+> +	platform_set_drvdata(pdev, wdd);
+> +
+> +	err = of_property_read_u32(pdev->dev.of_node, "arm,smc-id",
+> +				   &smc_func_id);
+> +	if (err < 0)
+> +		return err;
+> +	watchdog_set_drvdata(wdd, (void *)(uintptr_t)smc_func_id);
+> +
+> +	err = smcwd_call(wdd, SMCWD_INIT, 0, &res);
+> +	if (err < 0)
+> +		return err;
+> +
+> +	wdd->info = &smcwd_info;
+> +	/* get_timeleft is optional */
+> +	if (smcwd_call(wdd, SMCWD_GET_TIMELEFT, 0, NULL))
+> +		wdd->ops = &smcwd_ops;
+> +	else
+> +		wdd->ops = &smcwd_timeleft_ops;
+> +	wdd->timeout = res.a2;
+> +	wdd->max_timeout = res.a2;
+> +	wdd->min_timeout = res.a1;
+> +	wdd->parent = &pdev->dev;
+> +
+> +	watchdog_stop_on_reboot(wdd);
+> +	watchdog_stop_on_unregister(wdd);
+> +	watchdog_set_nowayout(wdd, nowayout);
+> +	watchdog_init_timeout(wdd, timeout, &pdev->dev);
+> +	err = smcwd_set_timeout(wdd, wdd->timeout);
+> +	if (err)
+> +		return err;
+> +
+> +	err = devm_watchdog_register_device(&pdev->dev, wdd);
+> +	if (err)
+> +		return err;
+> +
+> +	dev_info(&pdev->dev,
+> +		 "Watchdog registered (timeout=%d sec, nowayout=%d)\n",
+> +		 wdd->timeout, nowayout);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id smcwd_dt_ids[] = {
+> +	{ .compatible = "arm,smc-wdt" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, smcwd_dt_ids);
+> +
+> +static struct platform_driver smcwd_driver = {
+> +	.probe		= smcwd_probe,
+> +	.driver		= {
+> +		.name		= DRV_NAME,
+> +		.of_match_table	= smcwd_dt_ids,
+> +	},
+> +};
+> +
+> +module_platform_driver(smcwd_driver);
+> +
+> +module_param(timeout, uint, 0);
+> +MODULE_PARM_DESC(timeout, "Watchdog heartbeat in seconds");
+> +
+> +module_param(nowayout, bool, 0);
+> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
+> +			__MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
+> +
+> +MODULE_LICENSE("GPL");
+> +MODULE_AUTHOR("Julius Werner <jwerner@chromium.org>");
+> +MODULE_DESCRIPTION("ARM Secure Monitor Call Watchdog Driver");
+> +MODULE_VERSION(DRV_VERSION);
 > 
 
-Thanks for confirming Suman, I'll apply this.
-
-Regards,
-Bjorn
-
-> regards
-> Suman
-> 
-> > 
-> > Regards,
-> > Bjorn
-> > 
-> > > ---
-> > > v1:
-> > >   - Make the direct ops into inline helper functions in line
-> > >     with the comments on the MCU sync series (v1 comments).
-> > >     No change in functionality.
-> > >   - Picked up the Reviewed-by tags
-> > > v0: https://patchwork.kernel.org/patch/11456383/
-> > > 
-> > >   drivers/remoteproc/remoteproc_core.c     | 15 ++++++++++++++-
-> > >   drivers/remoteproc/remoteproc_internal.h | 16 ++++++++++++++++
-> > >   include/linux/remoteproc.h               |  4 ++++
-> > >   3 files changed, 34 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> > > index d681eeb962b6..e38f627059ac 100644
-> > > --- a/drivers/remoteproc/remoteproc_core.c
-> > > +++ b/drivers/remoteproc/remoteproc_core.c
-> > > @@ -1394,12 +1394,19 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
-> > >   		return ret;
-> > >   	}
-> > > +	/* Prepare rproc for firmware loading if needed */
-> > > +	ret = rproc_prepare_device(rproc);
-> > > +	if (ret) {
-> > > +		dev_err(dev, "can't prepare rproc %s: %d\n", rproc->name, ret);
-> > > +		goto disable_iommu;
-> > > +	}
-> > > +
-> > >   	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
-> > >   	/* Load resource table, core dump segment list etc from the firmware */
-> > >   	ret = rproc_parse_fw(rproc, fw);
-> > >   	if (ret)
-> > > -		goto disable_iommu;
-> > > +		goto unprepare_rproc;
-> > >   	/* reset max_notifyid */
-> > >   	rproc->max_notifyid = -1;
-> > > @@ -1433,6 +1440,9 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
-> > >   	kfree(rproc->cached_table);
-> > >   	rproc->cached_table = NULL;
-> > >   	rproc->table_ptr = NULL;
-> > > +unprepare_rproc:
-> > > +	/* release HW resources if needed */
-> > > +	rproc_unprepare_device(rproc);
-> > >   disable_iommu:
-> > >   	rproc_disable_iommu(rproc);
-> > >   	return ret;
-> > > @@ -1838,6 +1848,9 @@ void rproc_shutdown(struct rproc *rproc)
-> > >   	/* clean up all acquired resources */
-> > >   	rproc_resource_cleanup(rproc);
-> > > +	/* release HW resources if needed */
-> > > +	rproc_unprepare_device(rproc);
-> > > +
-> > >   	rproc_disable_iommu(rproc);
-> > >   	/* Free the copy of the resource table */
-> > > diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-> > > index b389dc79da81..101e6be8d240 100644
-> > > --- a/drivers/remoteproc/remoteproc_internal.h
-> > > +++ b/drivers/remoteproc/remoteproc_internal.h
-> > > @@ -64,6 +64,22 @@ struct resource_table *rproc_elf_find_loaded_rsc_table(struct rproc *rproc,
-> > >   struct rproc_mem_entry *
-> > >   rproc_find_carveout_by_name(struct rproc *rproc, const char *name, ...);
-> > > +static inline int rproc_prepare_device(struct rproc *rproc)
-> > > +{
-> > > +	if (rproc->ops->prepare)
-> > > +		return rproc->ops->prepare(rproc);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static inline int rproc_unprepare_device(struct rproc *rproc)
-> > > +{
-> > > +	if (rproc->ops->unprepare)
-> > > +		return rproc->ops->unprepare(rproc);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > >   static inline
-> > >   int rproc_fw_sanity_check(struct rproc *rproc, const struct firmware *fw)
-> > >   {
-> > > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> > > index 38607107b7cb..b8481ac969f1 100644
-> > > --- a/include/linux/remoteproc.h
-> > > +++ b/include/linux/remoteproc.h
-> > > @@ -355,6 +355,8 @@ enum rsc_handling_status {
-> > >   /**
-> > >    * struct rproc_ops - platform-specific device handlers
-> > > + * @prepare:	prepare device for code loading
-> > > + * @unprepare:	unprepare device after stop
-> > >    * @start:	power on the device and boot it
-> > >    * @stop:	power off the device
-> > >    * @kick:	kick a virtqueue (virtqueue id given as a parameter)
-> > > @@ -373,6 +375,8 @@ enum rsc_handling_status {
-> > >    *		panic at least the returned number of milliseconds
-> > >    */
-> > >   struct rproc_ops {
-> > > +	int (*prepare)(struct rproc *rproc);
-> > > +	int (*unprepare)(struct rproc *rproc);
-> > >   	int (*start)(struct rproc *rproc);
-> > >   	int (*stop)(struct rproc *rproc);
-> > >   	void (*kick)(struct rproc *rproc, int vqid);
-> > > -- 
-> > > 2.26.0
-> > > 
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
