@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A548E1B62F5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 20:07:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF86B1B62F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 20:07:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t3YdDOS/xK5tPVtfKV4LtXhbiabDYG57DcCAiMIWRxU=; b=DX47egjO9Sjfuh
-	1hvHeQVHRhaZjiY2wlVRaCA3hw6inxDVeVHtD1JBV+3zSZBL4rjPLLt5ZqaXBu1lid5mHE+i3LXIX
-	Cj8ZZn9cSiFh3rY0ZNxWKMbyjD0QIYgxQ+NXpYYHt9LgVuCkIQIh8+YTxd7VueB0XyMx0Vzujivhs
-	deG7gN9JAbki0fHetCcbY/b874a3k3VsUqMBtMDQykO4v7cQ9V6VDd4FzUR0bXR2hB7/tOHLdd3BB
-	7mh4IrzDNGFz9pTpJaP2nJ3J7MDHN+AwVcuuhVB2aUDVzJkSGoewb9HBOUA3NPV0Bcn0wyjMvoa9B
-	COTeOYYUfwZiLxl4DWNQ==;
+	List-Owner; bh=GQ1ty8DiaJNYLXjQddSiMm4q27EJ3EpktkIchFIgCCQ=; b=n6rBf/vi/DBCbC
+	xPHYuMYBnC9zQBfGYLGiUerPByvS8dpmyBwKjXKBNGxDYJnGASQm/zmNHvVk3I6Vt1mrcmapjnNHF
+	jeQwbtJF9nn5iblGDZwkCzcxVgDEYQVs4NQsNjzEs03/B730OIxyFTv7GlvyXwOJ7uAQfmuXL7Q11
+	W7+4tb0tLivfZLHu4rA6QLsSE+WZtM2mqeH1paOsLnCMbjW6Rzvr+1xovdAYxFVj2JdT3uaLdnmJr
+	a8p66Pp3QhCvvXPx4zc/D2xM+vjggJTNrWJmLWzfEdNKb4tVQ8trj9iw/8+hYh90p+8mPs5HqdBHp
+	dejGcag309BEsGeo5xjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRgFc-00040a-Kp; Thu, 23 Apr 2020 18:07:04 +0000
+	id 1jRgFs-0004IG-7z; Thu, 23 Apr 2020 18:07:20 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRgEk-0003SN-2c
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 18:06:12 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03NI65in005826;
- Thu, 23 Apr 2020 13:06:05 -0500
+ id 1jRgEq-0003XR-Mx
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 18:06:18 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03NI6Cp2005851;
+ Thu, 23 Apr 2020 13:06:12 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587665165;
- bh=Kwy0dcW3MJxuHI8JGhD0GVu8dadJkA3R87aPNEJSfoM=;
+ s=ti-com-17Q1; t=1587665172;
+ bh=L07GKxi/PUcmfBvG/TXS6NsYpuUrmjHbFuyatx3tQ6Q=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=uN98XlX5Q2zEL2ss2EJJMiNZk+/kH+UAPDc+hYIEl+7/+NOWJMTDc50E/0kS/AAEk
- Erj52h36RnVv0LJyinmhfSRu9JEdjWJLSVn/iNaYEd+GWRPBeh3GaCYxByAQS7+hbG
- BzJs4WCM6wGeA+RfeJUtoOEq9lUJINgpfwXLuAG4=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03NI65f2091770;
- Thu, 23 Apr 2020 13:06:05 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ b=UXztTf4Mre9WVaLvAGADL1SraHNuWvgnZxvt0+0XHhFrJil9BORwGv0BvdRh+7O2D
+ 48dKufO5buV4AuRmzK4u5rXYZPj24UsnWlSPIUgITod8eQs0rpDvs/Ud3bQNRHEq1W
+ 4kX5H8BBuRteK2MoZtuxb3s7CIPGBb31ZIaPcsDk=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03NI6CYh098135
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 23 Apr 2020 13:06:12 -0500
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 23
- Apr 2020 13:06:04 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ Apr 2020 13:06:12 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Thu, 23 Apr 2020 13:06:04 -0500
+ Frontend Transport; Thu, 23 Apr 2020 13:06:12 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03NI63FN116909;
- Thu, 23 Apr 2020 13:06:04 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03NI6Ar6009986;
+ Thu, 23 Apr 2020 13:06:11 -0500
 From: Grygorii Strashko <grygorii.strashko@ti.com>
 To: Dave Gerlach <d-gerlach@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>, 
  Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>, Rob Herring
  <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will@kernel.org>, Lokesh Vutla <lokeshvutla@ti.com>
-Subject: [PATCH 3/5] arm64: arch_k3: enable chipid driver
-Date: Thu, 23 Apr 2020 21:05:43 +0300
-Message-ID: <20200423180545.13707-4-grygorii.strashko@ti.com>
+Subject: [PATCH 4/5] arm64: dts: ti: k3-am65-wakeup: add k3 platforms chipid
+ module node
+Date: Thu, 23 Apr 2020 21:05:44 +0300
+Message-ID: <20200423180545.13707-5-grygorii.strashko@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200423180545.13707-1-grygorii.strashko@ti.com>
 References: <20200423180545.13707-1-grygorii.strashko@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_110610_200850_42648463 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20200423_110616_814037_17FDA32D 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,28 +101,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Select TI chip id driver for TI's SoCs based on K3 architecture to provide
-this information to user space and Kernel as it is required by other
-drivers to determine SoC revision to function properly.
+Add DT node for the Texas Instruments K3 Multicore AM65x SoC platforms
+chipid module.
 
 Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
 Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
 ---
- arch/arm64/Kconfig.platforms | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index 55d70cfe0f9e..174dd4fc6cf2 100644
---- a/arch/arm64/Kconfig.platforms
-+++ b/arch/arm64/Kconfig.platforms
-@@ -98,6 +98,7 @@ config ARCH_K3
- 	select TI_SCI_PROTOCOL
- 	select TI_SCI_INTR_IRQCHIP
- 	select TI_SCI_INTA_IRQCHIP
-+	select TI_K3_SOCINFO
- 	help
- 	  This enables support for Texas Instruments' K3 multicore SoC
- 	  architecture.
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+index f4227e2743f2..b79492fa8b5f 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+@@ -34,6 +34,11 @@
+ 		};
+ 	};
+ 
++	chipid@43000014 {
++		compatible = "ti,am654-chipid";
++		reg = <0x43000014 0x4>;
++	};
++
+ 	wkup_pmx0: pinmux@4301c000 {
+ 		compatible = "pinctrl-single";
+ 		reg = <0x4301c000 0x118>;
 -- 
 2.17.1
 
