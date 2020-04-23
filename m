@@ -2,71 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C46341B5A1E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 13:11:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E2BA1B5A2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Apr 2020 13:14:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6cArxBXxBVhOX0xi0rGR2Qsol7NhGtgddxXnY48if38=; b=aOJsId2es/0sPXuRdzVZttf+D
-	s4zAbuwwB32bEm9xJXPX3faAlaqvwWnTkf3xWIk7pJVDLrB2WVKATLD6vQBl2h8ugk5XWAIfvs0QA
-	tSygC/YHG0u3FGAM8/1JcmM0zNu4SQwXkFyehOMZLw2HjkJcjO/1xuKb0Wfp3Vdk8xg0/8MOKLe3F
-	39uMtwEZthQZcu9yrJdsuEzL+sNeXXL5i79BF3B7jNIlkbRw1RPuE7G2CmBeSeJ0UKPWJjtIyCncg
-	X0iD/AAN6k/SaQbK9/SoqtwMR1ppMmlhzG4IAScQmQmW8VA4Cz/guPMj2x3P9osi6n6Z3bmJHpc+h
-	wBlK4W3vg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hV6Mw3zWt3Gv6tYuuwQT9+J78OrKle3Y317XKsLTLFA=; b=jn9jfNJzM6W1Bh
+	wGY6Y80v/kPvO7GhBMzxeZik5X5neL/esyjZwaVi0BubDQCtwZiqsBhgIlqGd3UvRdGfvhDbbxbps
+	qGyytzdd7kV9rSThHcZU8818oeh0f/k3wKF0ULD/FvZWjtlQo+1aoxke3V3HQAGCCLKLvPdBfB1+A
+	xq9v6yi+4gt9aWCb51cXg8X+KAotrXbAxvUdKumTC18IA+zLl48cBaGB8bkKHsIu1smConYBcN9Ul
+	YDMH6N1XLUKH6BXS+73/G5U70YXzqS5Wj4tXGoYvd4psPXXIYN8/L14WZEcrYWme6YHCR+Y6bVjOH
+	/ZkeSJ9HTdAYItSJYWeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRZld-0004YQ-S0; Thu, 23 Apr 2020 11:11:41 +0000
-Received: from out30-132.freemail.mail.aliyun.com ([115.124.30.132])
+	id 1jRZo1-0005Ge-Ad; Thu, 23 Apr 2020 11:14:09 +0000
+Received: from mail-vi1eur05on2067.outbound.protection.outlook.com
+ ([40.107.21.67] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRZlT-0004X5-6a
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 11:11:32 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R141e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04407;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=36; SR=0;
- TI=SMTPD_---0TwQiqf0_1587640283; 
-Received: from 30.27.118.66(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0TwQiqf0_1587640283) by smtp.aliyun-inc.com(127.0.0.1);
- Thu, 23 Apr 2020 19:11:25 +0800
-Subject: Re: [PATCH v2 1/7] KVM: s390: clean up redundant 'kvm_run' parameters
-To: Christian Borntraeger <borntraeger@de.ibm.com>,
- Cornelia Huck <cohuck@redhat.com>
-References: <20200422125810.34847-1-tianjia.zhang@linux.alibaba.com>
- <20200422125810.34847-2-tianjia.zhang@linux.alibaba.com>
- <20200422154543.2efba3dd.cohuck@redhat.com>
- <dc5e0fa3-558b-d606-bda9-ed281cf9e9ae@de.ibm.com>
- <20200422180403.03f60b0c.cohuck@redhat.com>
- <5e1e126d-f1b0-196c-594b-4289d0afb9a8@linux.alibaba.com>
- <20200423123901.72a4c6a4.cohuck@redhat.com>
- <71344f73-c34f-a373-49d1-5d839c6be5f6@linux.alibaba.com>
- <1d73b700-4a20-3d7a-66d1-29b5afa03f4d@de.ibm.com>
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Message-ID: <9a477117-7295-c4f4-097f-bfb146670435@linux.alibaba.com>
-Date: Thu, 23 Apr 2020 19:11:23 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jRZnq-0005Es-SF
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 11:14:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hhKCsGD3X0iEQZLiPbgUwgkVbh0rAm9BBMKFU4HBqCU6LUT87UGKZVuvofXQofJXzBnUYVOjzNp6lrRyCZQC/CmbGUO/F7O7NwwNwBWyQIMKF3GNvSCcUyuGz/VLAH7/OGzQDc8YC+mk3KLcbc4g0nAQ3jvwtXia6L2zliqxkb767S23XpzsKTlYzlb3sbaMa0sc6MprtrlfNB9PB4jfvNyr22k7Y+5WD8nMoo/2Yv1nd1J3vAAQLvUy+jQgW06qiIL0Nrg2sjORvBzVQYUg7/4Xs2XeKE6hcOYVT78Z4dffygNusq2mSrXcWJfuC18vAt+Ghx6sqgcvULjF+dCjwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/qHeGGzzH7Cgr4MKOLoyGvJdy79cM76JD3n0xuyT6/E=;
+ b=Sq5dpAl3kTbmfOi5ZbXx2vqQm+a9a+0FBlMqkvAD87WjVAJ0v55Z6waLnuBF1EtG1aJ+zhSsMLBrCX6teUzxXdttztk0ZthBJz3FIsadZw83KcD/tXtQ+GfLPJxjF3/qUgfYuJ4dW6nL7W6Ggi1FWdkz15syhpiS3Elmz1ML9iAIClyTan6CeoMxsvmLSZMV3tEZimoZDovv7dn2R2SQnSQEkT+gzXuseRsKQ+sVwWuXHbHZk4Z8UpSOB/5avhWf8PTbWYfVzhHutdvJTKp+mgJ/BSebFCwqBLSN5UmS9W136uDtzSSAJ9M8ueuVANcZdUl8W0BUwcYDvQGDR4pU6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/qHeGGzzH7Cgr4MKOLoyGvJdy79cM76JD3n0xuyT6/E=;
+ b=ReqqQ7/Wlw43w6425cbQuGmmTxXSAaL1dgzhgR23J/l51TSTYMdy7FvhbA+LRSALl780ymp9lMjT3WnczxHOdt8V8qyEAqm++KKOa4VE4uyUj6tMqZKe26XJslcsU5u1lh4OGOXHh9+vLQOskEWkS48m1Wp237CQ3rSnLdtaTY0=
+Received: from DB8PR04MB6985.eurprd04.prod.outlook.com (2603:10a6:10:11e::21)
+ by DB8PR04MB6633.eurprd04.prod.outlook.com (2603:10a6:10:109::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Thu, 23 Apr
+ 2020 11:13:53 +0000
+Received: from DB8PR04MB6985.eurprd04.prod.outlook.com
+ ([fe80::844a:d2b2:8bae:9c9f]) by DB8PR04MB6985.eurprd04.prod.outlook.com
+ ([fe80::844a:d2b2:8bae:9c9f%7]) with mapi id 15.20.2937.012; Thu, 23 Apr 2020
+ 11:13:53 +0000
+From: "Madalin Bucur (OSS)" <madalin.bucur@oss.nxp.com>
+To: Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] arm64: defconfig: Enable Freescale XGMAC MDIO
+Thread-Topic: [PATCH] arm64: defconfig: Enable Freescale XGMAC MDIO
+Thread-Index: AQHWGVjSHlZ4oWHzME+oan5GdRrO/qiGjYGg
+Date: Thu, 23 Apr 2020 11:13:52 +0000
+Message-ID: <DB8PR04MB69852B4BD321A4FBA9C71095ECD30@DB8PR04MB6985.eurprd04.prod.outlook.com>
+References: <20200423102028.28280-1-s.hauer@pengutronix.de>
+In-Reply-To: <20200423102028.28280-1-s.hauer@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=madalin.bucur@oss.nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [84.232.188.116]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 007e7a7e-d349-4041-1c31-08d7e7776823
+x-ms-traffictypediagnostic: DB8PR04MB6633:
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-microsoft-antispam-prvs: <DB8PR04MB6633F9D859125DB517613832ADD30@DB8PR04MB6633.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:345;
+x-forefront-prvs: 03827AF76E
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB8PR04MB6985.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(39860400002)(136003)(366004)(346002)(376002)(52536014)(26005)(71200400001)(4744005)(66556008)(66476007)(5660300002)(76116006)(55016002)(66946007)(64756008)(9686003)(478600001)(66446008)(2906002)(186003)(8936002)(316002)(8676002)(86362001)(81156014)(4326008)(6506007)(33656002)(53546011)(110136005)(7696005);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 2yYRUZywtqWWV1U9bAXkI7NIymwXXzTCCRlsr9sEkWQalpT5cjVvXY6AiW3azMoJKvBDBfHeN4TEe7G6Iu43675TZ6yEOpmOsBrK+sy4SO0BD8ZW2paC1/1oUNs2mqp+TyclrHIoh6tPp6ldAQQmOvUAu8uHIcO/LcLGccgl6RMa/64amSclCAZPwUTsJhxmWanvNUEYXs57XOv9Uz1EaQDTvEpvV0tDmOrYEZucLuRUnxzIlts65MaaCp+6XMdQEARu+qMDQ/dq7Fzfhxs7SJ48fj4byMwrFBTTFXrciO5IGsIUBHh4Pj8akRK3nca2SHRbp4veBU1wZuTMymqP2wr1Rv0whsPPr2SSWUbxcGi+grb4ec6OYbZ+kynmtV30Oob7pGtwOH67YiUuekwRrLFYyUsFQxaHX0IC2n96OffER19BlpKULczRiGr/DBu8
+x-ms-exchange-antispam-messagedata: vhA9LF60CMldVHrvpg8m2+OSpMA+D5Keu28vL7BTilcu+GuOnXXHMo7M9fu3QpnglDKSLvcvqADKdWE0KT92YFcKXnGUikeUhtlqJwvLi7RgextVY5X5VJ9OMvQuMOGQNWKAsL4zcqBItCLFZLZgxw==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-In-Reply-To: <1d73b700-4a20-3d7a-66d1-29b5afa03f4d@de.ibm.com>
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 007e7a7e-d349-4041-1c31-08d7e7776823
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 11:13:52.9942 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: J0cvwXuf2xHFgLttj+PV2Zm3WuA/zDgWq0iqYLS/0v4NO960cxy7Zj248XUs5MamuobxgaE/TFzGFtbl8FlMLQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6633
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_041131_415798_E877B587 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20200423_041358_976227_A235DCB7 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.132 listed in list.dnswl.org]
+ no trust [40.107.21.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,87 +121,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, kvm@vger.kernel.org, david@redhat.com,
- benh@kernel.crashing.org, heiko.carstens@de.ibm.com, peterx@redhat.com,
- linux-mips@vger.kernel.org, paulus@ozlabs.org, hpa@zytor.com,
- kvmarm@lists.cs.columbia.edu, linux-s390@vger.kernel.org,
- frankja@linux.ibm.com, maz@kernel.org, joro@8bytes.org, x86@kernel.org,
- mingo@redhat.com, julien.thierry.kdev@gmail.com, thuth@redhat.com,
- gor@linux.ibm.com, suzuki.poulose@arm.com, kvm-ppc@vger.kernel.org,
- bp@alien8.de, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- jmattson@google.com, tsbogend@alpha.franken.de, christoffer.dall@arm.com,
- sean.j.christopherson@intel.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, mpe@ellerman.id.au, pbonzini@redhat.com,
- vkuznets@redhat.com, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLzQvMjMgMTk6MDAsIENocmlzdGlhbiBCb3JudHJhZWdlciB3cm90ZToKPiAKPiAK
-PiBPbiAyMy4wNC4yMCAxMjo1OCwgVGlhbmppYSBaaGFuZyB3cm90ZToKPj4KPj4KPj4gT24gMjAy
-MC80LzIzIDE4OjM5LCBDb3JuZWxpYSBIdWNrIHdyb3RlOgo+Pj4gT24gVGh1LCAyMyBBcHIgMjAy
-MCAxMTowMTo0MyArMDgwMAo+Pj4gVGlhbmppYSBaaGFuZyA8dGlhbmppYS56aGFuZ0BsaW51eC5h
-bGliYWJhLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4+IE9uIDIwMjAvNC8yMyAwOjA0LCBDb3JuZWxpYSBI
-dWNrIHdyb3RlOgo+Pj4+PiBPbiBXZWQsIDIyIEFwciAyMDIwIDE3OjU4OjA0ICswMjAwCj4+Pj4+
-IENocmlzdGlhbiBCb3JudHJhZWdlciA8Ym9ybnRyYWVnZXJAZGUuaWJtLmNvbT4gd3JvdGU6Cj4+
-Pj4+ICAgIAo+Pj4+Pj4gT24gMjIuMDQuMjAgMTU6NDUsIENvcm5lbGlhIEh1Y2sgd3JvdGU6Cj4+
-Pj4+Pj4gT24gV2VkLCAyMiBBcHIgMjAyMCAyMDo1ODowNCArMDgwMAo+Pj4+Pj4+IFRpYW5qaWEg
-WmhhbmcgPHRpYW5qaWEuemhhbmdAbGludXguYWxpYmFiYS5jb20+IHdyb3RlOgo+Pj4+Pj4+ICAg
-ICAgIAo+Pj4+Pj4+PiBJbiB0aGUgY3VycmVudCBrdm0gdmVyc2lvbiwgJ2t2bV9ydW4nIGhhcyBi
-ZWVuIGluY2x1ZGVkIGluIHRoZSAna3ZtX3ZjcHUnCj4+Pj4+Pj4+IHN0cnVjdHVyZS4gRWFybGll
-ciB0aGFuIGhpc3RvcmljYWwgcmVhc29ucywgbWFueSBrdm0tcmVsYXRlZCBmdW5jdGlvbgo+Pj4+
-Pj4+Cj4+Pj4+Pj4gcy9FYXJsaWVyIHRoYW4vRm9yLyA/Cj4+Pj4+Pj4gICAgICAgCj4+Pj4+Pj4+
-IHBhcmFtZXRlcnMgcmV0YWluIHRoZSAna3ZtX3J1bicgYW5kICdrdm1fdmNwdScgcGFyYW1ldGVy
-cyBhdCB0aGUgc2FtZSB0aW1lLgo+Pj4+Pj4+PiBUaGlzIHBhdGNoIGRvZXMgYSB1bmlmaWVkIGNs
-ZWFudXAgb2YgdGhlc2UgcmVtYWluaW5nIHJlZHVuZGFudCBwYXJhbWV0ZXJzLgo+Pj4+Pj4+Pgo+
-Pj4+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBUaWFuamlhIFpoYW5nIDx0aWFuamlhLnpoYW5nQGxpbnV4
-LmFsaWJhYmEuY29tPgo+Pj4+Pj4+PiAtLS0KPj4+Pj4+Pj4gIMKgwqAgYXJjaC9zMzkwL2t2bS9r
-dm0tczM5MC5jIHwgMzcgKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0tLQo+Pj4+
-Pj4+PiAgwqDCoCAxIGZpbGUgY2hhbmdlZCwgMjIgaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25z
-KC0pCj4+Pj4+Pj4+Cj4+Pj4+Pj4+IGRpZmYgLS1naXQgYS9hcmNoL3MzOTAva3ZtL2t2bS1zMzkw
-LmMgYi9hcmNoL3MzOTAva3ZtL2t2bS1zMzkwLmMKPj4+Pj4+Pj4gaW5kZXggZTMzNWE3ZTVlYWQ3
-Li5kN2JiMmU3YTA3ZmYgMTAwNjQ0Cj4+Pj4+Pj4+IC0tLSBhL2FyY2gvczM5MC9rdm0va3ZtLXMz
-OTAuYwo+Pj4+Pj4+PiArKysgYi9hcmNoL3MzOTAva3ZtL2t2bS1zMzkwLmMKPj4+Pj4+Pj4gQEAg
-LTQxNzYsOCArNDE3Niw5IEBAIHN0YXRpYyBpbnQgX192Y3B1X3J1bihzdHJ1Y3Qga3ZtX3ZjcHUg
-KnZjcHUpCj4+Pj4+Pj4+ICDCoMKgwqDCoMKgwqAgcmV0dXJuIHJjOwo+Pj4+Pj4+PiAgwqDCoCB9
-Cj4+Pj4+Pj4+ICDCoMKgIC1zdGF0aWMgdm9pZCBzeW5jX3JlZ3NfZm10MihzdHJ1Y3Qga3ZtX3Zj
-cHUgKnZjcHUsIHN0cnVjdCBrdm1fcnVuICprdm1fcnVuKQo+Pj4+Pj4+PiArc3RhdGljIHZvaWQg
-c3luY19yZWdzX2ZtdDIoc3RydWN0IGt2bV92Y3B1ICp2Y3B1KQo+Pj4+Pj4+PiAgwqDCoCB7Cj4+
-Pj4+Pj4+ICvCoMKgwqAgc3RydWN0IGt2bV9ydW4gKmt2bV9ydW4gPSB2Y3B1LT5ydW47Cj4+Pj4+
-Pj4+ICDCoMKgwqDCoMKgwqAgc3RydWN0IHJ1bnRpbWVfaW5zdHJfY2IgKnJpY2NiOwo+Pj4+Pj4+
-PiAgwqDCoMKgwqDCoMKgIHN0cnVjdCBnc19jYiAqZ3NjYjsKPj4+Pj4+Pj4gIMKgwqAgQEAgLTQy
-MzUsNyArNDIzNiw3IEBAIHN0YXRpYyB2b2lkIHN5bmNfcmVnc19mbXQyKHN0cnVjdCBrdm1fdmNw
-dSAqdmNwdSwgc3RydWN0IGt2bV9ydW4gKmt2bV9ydW4pCj4+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCB9Cj4+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAodmNwdS0+YXJjaC5n
-c19lbmFibGVkKSB7Cj4+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGN1cnJl
-bnQtPnRocmVhZC5nc19jYiA9IChzdHJ1Y3QgZ3NfY2IgKikKPj4+Pj4+Pj4gLcKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgJnZjcHUtPnJ1bi0+cy5yZWdzLmdz
-Y2I7Cj4+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgICZrdm1fcnVuLT5zLnJlZ3MuZ3NjYjsKPj4+Pj4+Pgo+Pj4+Pj4+IE5vdCBzdXJlIGlmIHRo
-ZXNlIGNoYW5nZXMgKHZjcHUtPnJ1bi0+ID0+IGt2bV9ydW4tPikgYXJlIHJlYWxseSB3b3J0aAo+
-Pj4+Pj4+IGl0LiAoSXQgc2VlbXMgdGhleSBhbW91bnQgdG8gYXQgbGVhc3QgYXMgbXVjaCBhcyB0
-aGUgY2hhbmdlcyBhZHZlcnRpc2VkCj4+Pj4+Pj4gaW4gdGhlIHBhdGNoIGRlc2NyaXB0aW9uLikK
-Pj4+Pj4+Pgo+Pj4+Pj4+IE90aGVyIG9waW5pb25zPwo+Pj4+Pj4KPj4+Pj4+IEFncmVlZC4gSXQg
-ZmVlbHMga2luZCBvZiByYW5kb20uIE1heWJlIGp1c3QgZG8gdGhlIGZpcnN0IGxpbmUgKG1vdmUg
-a3ZtX3J1biBmcm9tIHRoZQo+Pj4+Pj4gZnVuY3Rpb24gcGFyYW1ldGVyIGxpc3QgaW50byB0aGUg
-dmFyaWFibGUgZGVjbGFyYXRpb24pPyBOb3Qgc3VyZSBpZiB0aGlzIGlzIGJldHRlci4KPj4+Pj4+
-ICAgIAo+Pj4+Pgo+Pj4+PiBUaGVyZSdzIG1vcmUgaW4gdGhpcyBwYXRjaCB0aGF0IEkgY3V0Li4u
-IGJ1dCBJIHRoaW5rIGp1c3QgbW92aW5nCj4+Pj4+IGt2bV9ydW4gZnJvbSB0aGUgcGFyYW1ldGVy
-IGxpc3Qgd291bGQgYmUgbXVjaCBsZXNzIGRpc3J1cHRpdmUuCj4+Pj4+ICAgICAKPj4+Pgo+Pj4+
-IEkgdGhpbmsgdGhlcmUgYXJlIHR3byBraW5kcyBvZiBjb2RlKGB2Y3B1LT5ydW4tPmAgYW5kIGBr
-dm1fcnVuLT5gKSwgYnV0Cj4+Pj4gdGhlcmUgd2lsbCBiZSBtb3JlIGRpc3J1cHRpdmUsIG5vdCBs
-ZXNzLgo+Pj4KPj4+IEkganVzdCBmYWlsIHRvIHNlZSB0aGUgYmVuZWZpdDsgc3VyZSwga3ZtX3J1
-bi0+IGlzIGNvbnZlbmllbnQsIGJ1dCB0aGUKPj4+IGN1cnJlbnQgY29kZSBpcyBqdXN0IGZpbmUs
-IGFuZCBhbnkgcmV3b3JrIHNob3VsZCBiZSBiYWxhbmNlZCBhZ2FpbnN0Cj4+PiB0aGUgY29zdCAo
-ZS5nLiBjbHV0dGVyaW5nIGdpdCBhbm5vdGF0ZSkuCj4+Pgo+Pgo+PiBjbHV0dGVyaW5nIGdpdCBh
-bm5vdGF0ZSA/IERvZXMgaXQgbWVhbiBGaXggeHh4eCAoImNvbW1lbnQiKS4gSXMgaXQgcG9zc2li
-bGUgdG8gc29sdmUgdGhpcyBwcm9ibGVtIGJ5IHNwbGl0dGluZyB0aGlzIHBhdGNoPwo+IAo+IE5v
-IGl0cyBhYm91dCBicmVha2luZyBnaXQgYmxhbWUgKGFuZCBidWdmaXggYmFja3BvcnRzKSBmb3Ig
-anVzdCBhIGNvc21ldGljIGltcHJvdmVtZW50Lgo+IEFuZCBJIGFncmVlIHdpdGggQ29ubnk6IHRo
-ZSBjb3N0IGlzIGhpZ2hlciB0aGFuIHRoZSBiZW5lZml0Lgo+IAoKSSB3aWxsIG1ha2UgYSBmaXgg
-aW4gdGhlIHYzIHZlcnNpb24uIEhlbHAgdG8gc2VlIGlmIHRoZXJlIGFyZSBwcm9ibGVtcyAKd2l0
-aCB0aGUgbmV4dCBmZXcgcGF0Y2hlcy4KClRoYW5rcywKVGlhbmppYQoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+> -----Original Message-----
+> From: Sascha Hauer <s.hauer@pengutronix.de>
+> Sent: Thursday, April 23, 2020 1:20 PM
+> To: linux-arm-kernel@lists.infradead.org
+> Cc: Catalin Marinas <catalin.marinas@arm.com>; Madalin Bucur
+> <madalin.bucur@nxp.com>; Sascha Hauer <s.hauer@pengutronix.de>
+> Subject: [PATCH] arm64: defconfig: Enable Freescale XGMAC MDIO
+> 
+> The XGMAC MDIO driver is necessary for accessing phy devices on
+> Layerscape boards (tested on LS1046a-rdb), enable support for it
+> in the defconfig.
+> 
+> Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
+> ---
+>  arch/arm64/configs/defconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 24e534d85045..e93bda9cb802 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -284,6 +284,7 @@ CONFIG_MACB=y
+>  CONFIG_THUNDER_NIC_PF=y
+>  CONFIG_FEC=y
+>  CONFIG_FSL_FMAN=y
+> +CONFIG_FSL_XGMAC_MDIO=y
+>  CONFIG_FSL_DPAA_ETH=y
+>  CONFIG_FSL_DPAA2_ETH=y
+>  CONFIG_FSL_ENETC=y
+> --
+> 2.26.1
+
+Reviewed-by: Madalin Bucur <madalin.bucur@oss.nxp.com>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
