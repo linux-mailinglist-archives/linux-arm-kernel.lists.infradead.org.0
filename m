@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADDFE1B80C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:35:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDD671B8100
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:37:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jlizgtNllSr8KMa9yGJxC+o0E/UbLaLKR5EFnehoxTI=; b=SoHCKf20mLwNRy
-	sjskWQfKazLpc0L+y5lgGbQ9yeAUSk4VDTD1Mj3Up5hfKCFhuTQmccmr/TVOVOaeZQzdbj3aLOlLS
-	KMbJr3b6p2Qb8hzqaovKq6cGaS4lE1Jdg87PbTLEMLMNVyPwdWZHXSq2bfzifWKMQeFZyMWrQdpet
-	+W/gnQxm89owPIHlyFw+48s7tVgmZZU20BcH72ZyLwfdVrmzIv2XE0XSjJWhTqdT0VAaEBMaV0CtB
-	+B7Tr+eDzHTIHKtYmWTSRk0Mjgz7YiVfkwoGdDxMqE3oiO+IRvllSLycXYl9hprUWHl2CqlB3++fa
-	/qTu+lTBhFoDxE86NTYg==;
+	List-Owner; bh=R6UTy2M/a4xfBy5xXv3/Euj6sJqpCJW5FqiihzqpEgc=; b=fslebya/KmIxhg
+	OG0DCYer+WOII1xlyuQsuW3ZOWJtWew1/gxunU5/lMM04fPoqFEfqx18//zaF9tbB+ooavQIvL3y8
+	SGCqTAUW/dPIuVq7+130K+aSneOnwSaLAultdmZH1iyiSU1zBw0kuh41pji8npRGAXhxNXdzGNt3k
+	gkTcf8SO9VCvJylGPrOx5Gfs9YTBlowIVpAm8JA+BXdED7yasiknU1s9s4akt41oI9uXf21I7I/zW
+	goTdT29XQzApzFJ4plu6Zd0giMqyCk4hwzQaqjlY8nOYALqnBCtQzlAcPN8jBaLjB3NS+BMicSn6Q
+	GNzYLg5YEQuxtnl2fBnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS52F-0003Tf-TB; Fri, 24 Apr 2020 20:34:55 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::2])
+	id 1jS54B-0007ON-J7; Fri, 24 Apr 2020 20:36:55 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS521-0003P8-UC
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:34:43 +0000
+ id 1jS522-0003P5-2g
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:34:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587760471;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=aeLQCupRaiUXbpss4HFlekm68gu+EZORgbPWCj4bUNQ=;
- b=bKkkTxuX2FvKqO7f3LGD38Y28Q0OYU3tw3QO6ykWHvRDhxmGMyaWdCzuoAqxO6otLR
- BNO7q9xSc87++qkeJV37A5120dwhN1vnK77JiowWocr2J7R3BJR5DNGFoYANvmvkXDTh
- 8yKeg4ZtxtJGYQdh6OOfmIRMFZnhq1lDSy8WAxQVLV7vK7Jf75j+Wonf9LL3SKCfurVJ
- lSqZKoLh9/fCfxIRM1l7L1iwx+W8PSsbcmRdJJShSbw//l1TECd36uZvQbiT4Z2jvuTm
- U6/iwxlliVtZT3BJnZdBv0nHC0zLl561T9kNAa6RWny+0nuWHSOKz9P/tOOTUEh18pov
- yy3A==
+ bh=urc2KwT6CTpps7J1q4E2AK0qOM+8Jk0H0NWeScBSbMI=;
+ b=PxJF+rNd+edI6wLEq/qf1XOl7R8o9GGauDJRS3RlsxbWyhiZ7g0by+dwnGitFqT95D
+ GDHUuWQNhZdwnQXMFNJYZYzjKPgwcUulp1n2ZcYMUwOwvc1h55t3iZiBYTk3Qix2g5b/
+ p838jKnQcjyhzxL8nSLNh/OQb7WljAgXUG5Bg1d4xQRLVDfMRCQN3b98ggOmuYuBc5gI
+ fSDRje+cPEXC3Kh98uk2HNgX5utqA4lkxJWATcCcUCR8zYvNlHWc0FZlj5eB+tCJDBn/
+ W3Y8Obi/F1CV9QcIGEKuPjsYecZUYlQo/TJLXXWXHnp02WqJ7gKScbNloKisyqsYCXgY
+ yIQQ==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXH6GK44R2FE"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw3OKYNEVF
+ with ESMTPSA id R0acebw3OKYOEVG
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Fri, 24 Apr 2020 22:34:23 +0200 (CEST)
+ Fri, 24 Apr 2020 22:34:24 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -51,16 +51,16 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v7 07/12] ARM: DTS: omap5: add sgx gpu child node
-Date: Fri, 24 Apr 2020 22:34:10 +0200
-Message-Id: <5840297da588ba37f65a2a4f4f1421922fe28a06.1587760454.git.hns@goldelico.com>
+Subject: [PATCH v7 08/12] arm: dts: s5pv210: Add node for SGX 540
+Date: Fri, 24 Apr 2020 22:34:11 +0200
+Message-Id: <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <cover.1587760454.git.hns@goldelico.com>
 References: <cover.1587760454.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_133442_207896_DEE1591C 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20200424_133442_269607_DE967CE3 
+X-CRM114-Status: UNSURE (   9.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -68,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:2 listed in]
+ no trust [2a01:238:20a:202:5304:0:0:11 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -91,7 +91,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
- Philipp Rossak <embed3d@gmail.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Philipp Rossak <embed3d@gmail.com>,
+ "H . Nikolaus Schaller" <hns@goldelico.com>,
  Jonathan Bakker <xc-racer2@live.ca>, openpvrsgx-devgroup@letux.org,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
@@ -102,42 +103,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add SGX GPU node with interrupt. Tested on Pyra-Handheld.
+From: Jonathan Bakker <xc-racer2@live.ca>
 
+All s5pv210 devices have a PowerVR SGX 540 (revision 120) attached.
+
+There is no external regulator for it so it can be enabled by default.
+
+Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- arch/arm/boot/dts/omap5.dtsi | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ arch/arm/boot/dts/s5pv210.dtsi | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/arch/arm/boot/dts/omap5.dtsi b/arch/arm/boot/dts/omap5.dtsi
-index 2ac7f021c284..1cf41664fd00 100644
---- a/arch/arm/boot/dts/omap5.dtsi
-+++ b/arch/arm/boot/dts/omap5.dtsi
-@@ -270,7 +270,7 @@ sata: sata@4a141100 {
- 			ports-implemented = <0x1>;
+diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
+index 2ad642f51fd9..abbdda205c1b 100644
+--- a/arch/arm/boot/dts/s5pv210.dtsi
++++ b/arch/arm/boot/dts/s5pv210.dtsi
+@@ -512,6 +512,19 @@ vic3: interrupt-controller@f2300000 {
+ 			#interrupt-cells = <1>;
  		};
  
--		target-module@56000000 {
-+		sgx_module: target-module@56000000 {
- 			compatible = "ti,sysc-omap4", "ti,sysc";
- 			reg = <0x5600fe00 0x4>,
- 			      <0x5600fe10 0x4>;
-@@ -287,10 +287,11 @@ target-module@56000000 {
- 			#size-cells = <1>;
- 			ranges = <0 0x56000000 0x2000000>;
- 
--			/*
--			 * Closed source PowerVR driver, no child device
--			 * binding or driver in mainline
--			 */
-+			gpu: gpu@0 {
-+				compatible = "ti,omap5-sgx544-116", "img,sgx544-116", "img,sgx544";
-+				reg = <0x0 0x10000>;
-+				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-+			};
- 		};
- 
- 		target-module@58000000 {
++		gpu: gpu@f3000000 {
++			compatible = "samsung,s5pv210-sgx540-120";
++			reg = <0xf3000000 0x10000>;
++			interrupt-parent = <&vic2>;
++			interrupts = <10>;
++			clock-names = "core";
++			clocks = <&clocks CLK_G3D>;
++
++			assigned-clocks = <&clocks MOUT_G3D>, <&clocks DOUT_G3D>;
++			assigned-clock-rates = <0>, <66700000>;
++			assigned-clock-parents = <&clocks MOUT_MPLL>;
++		};
++
+ 		fimd: fimd@f8000000 {
+ 			compatible = "samsung,s5pv210-fimd";
+ 			interrupt-parent = <&vic2>;
 -- 
 2.25.1
 
