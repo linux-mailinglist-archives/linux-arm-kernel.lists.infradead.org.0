@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C3BD1B758E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:39:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B23E21B75A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:44:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ATD8ASCxRmbbLt8wGDA1SnqiZ1cFodEFKvlUQ9Cyf40=; b=Hu6
-	aPS23UTIkTnLfwbCDLf2IrpRpnu1bOrw4zppKwr2e81bnDEvervLoRfBzSUSc0API0tds01wyVEkb
-	DurFG1alWsFhs5bqCY+bMKDorA1gT/DtxWnZzzL64jpgOOA2ynIRxhAdPU4QnzrUlLsQTf3q9oFmb
-	kK0rPBxNzIJoNyTmCj3SuzU/kYHGWtYUGKbCl8HZLoqf6lI+z/tTHgA8HVDWXeOHKCwSS8gXIGWqp
-	AUxZS/cvTqaytuyl//JisZ/TVP1w3fn5V15DnTy7fT09gpmnW9TrQCETxGxFsdj/KajGA0sD8u7q8
-	atFSRU/1w5Jw3cy0bIaD/fhbqUoGp3w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mVKxeuJcUNm832i2qqoEVxEk5Lr0ysLTOol+7PbKRYQ=; b=nBgsgzhgQGzrca
+	VYRB4s0KskV7mlW/v7xBiGpD/PnveDezYnVk92aKxZ0YkAJGZXlPrKydLhAkgHinLhdRs9+EdwWdb
+	wOea3R/mwKfZeNj6EFQyU57tLy7zn3x5EvZQyNJ7zMfeAw+uxB93MxLhMMw3AbB7SeKJlnfxnQx3o
+	b4nz/HTni+uX73oH3Ea3sWzcXs/zJVOjkS/0LNJjQJ5u9+n/b5xqaTIfvciHN2DnR/jQSyNwV0Cr1
+	JnShW/zk/qFSiTmRaGnB6N4We3EzD6Ag6NYKcGnhYdLchzuEI8m4xB+mgxTMfmmWJ1wppPBRp/i2u
+	lmcV3AjcHFb1yIv1WJ2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxcO-0001sc-E8; Fri, 24 Apr 2020 12:39:44 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jRxgw-0005Wh-1F; Fri, 24 Apr 2020 12:44:26 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxcF-0001ra-JS; Fri, 24 Apr 2020 12:39:36 +0000
-Received: by mail-wm1-x343.google.com with SMTP id k12so1701795wmj.3;
- Fri, 24 Apr 2020 05:39:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
- b=teIk66JmO3IgWg1GspSg6VCLItxXTdO1u7eb8fUFMU1hNrcoBYZXDVZoLV6cPR1RMF
- Kv31jgC7+Q1/s/yQIy2NIpwJ59DdnE6U7NT6Y4kyOGlze/NKDXRptsRrBeFKR8xRbz5g
- glrUypL0KSIC7WPE1M6ct55WNR0c5Xt31WsWb75eFEBgstEfRymNxjm0e92XKYLn72YP
- yYcmw+lf3k92IBqkoaICC04Hb40kMPASXUwBBIeZAqw+k6hGmE8dGn94vUO+9/uk/+Gn
- Z5mJsfiT2cciloi5lMLEwBDP3dlkGN305mOnuo/C6bthykIkjf5IWmEYSYCuGJXxjPut
- fmHw==
+ id 1jRxgj-0005UE-Cz
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:44:15 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g12so10528524wmh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Apr 2020 05:44:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vqrR8RcK3jQJ7N6BJUpZZzAOlag+e4M/HVsKVtYGanM=;
+ b=eK6sY+5096Up6Tuo/atZU75DoQn0eb/5SeL9gtwXHBOMdu1C77ORcvObcdRc5/s1cj
+ G3NWka3kjRFf6NbThNWmpC38Lu0XwjP8QX3yYdDcPnXdrCK4fnp0DmI9EINtqraDs0yK
+ neHsIpC4yO8+Jgzb3kGiu0u0KUcINz9NZCCozQlfSyg9qh6xwe1eU8Ogd9PbQhivuUyK
+ X1BeqLMNSEncfAv0krblxEA+pTXhZwJ9mX3cORgsF8OQf5k4FPl/sIfUUXK2DFX3Hsfp
+ IaCHrq+BYg5kEXj/XmLNbzHI5BQBMyT0RVYG1MGdpAFT4BHvCvzPXIQB+/G1l3FQyIeA
+ Juxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
- b=EPULjlnyn8kInBW3IzrHqxTFbD6SI0R5gPBaUqfgQxEnG9U8dAJRKYRZPB2e5q+A9Y
- 8TOBCZM154klaiEW8aN8qS0AbS+DZIBynYUqEE8RUkcYs9X2QZE/g0z1hDjw3d1eb6tg
- VS/vwSJfgp6Hwgh1liOXdah5T/WlglPto42xHzfTOt2MlPWLsIz7LbiW9gVUQyCJyaYK
- K/swOZEAPyg8AyjjSGrPL7HJycbUeP1j3cZ6mNbXKMPSjyZBd00JRXFAS3kD0Q+cVomU
- q5AFn7ZUndCyg4WuaFFpHmUr3/I7HzB/0ypjK1MbWSilmQvKZbcZClzg55Qwx2+qgk9a
- g2qg==
-X-Gm-Message-State: AGi0PubiB+AXsxIAGeOkFw3e1wObN38T7OoiiRP9+04+tkpKrK9fCwhz
- WhpMq8sb7vPPNzsSxwUGBc0=
-X-Google-Smtp-Source: APiQypKzAVcFFjXq84S98O4oSdfTNcU47XV/qwKDcg5zoIea/Yi23V/u7OuB9vSrNLmWi+JIwU/mEg==
-X-Received: by 2002:a05:600c:210c:: with SMTP id
- u12mr10328859wml.135.1587731973727; 
- Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id b12sm9136457wro.18.2020.04.24.05.39.32
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] ARM: dts: rockchip: fix pinctrl sub nodename for spi in
- rk322x.dtsi
-Date: Fri, 24 Apr 2020 14:39:23 +0200
-Message-Id: <20200424123923.8192-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vqrR8RcK3jQJ7N6BJUpZZzAOlag+e4M/HVsKVtYGanM=;
+ b=PhWQzAG4rJ+UJtj4HW0HDJ77Q+SwrgAdqImR43rTP4unSis4gfqDm49Gvjdj1L1wB+
+ p3QRdDiv/V2AE2t6kIPt6bbDiyxVo4hcAwUK1opato1RmXUDHyYeJH77mJv8aq60Wl9V
+ 2CWFbmHHL//EHKITgogdViWrQ7qfDeWKti4eNm3xNrwVykLTYv6BQp8LeDfTjars3/Ca
+ kP/nbRVU1EQZ08x5OrAUvafJzQ0GDNd/RFX5DfLZHQy1byc8SczfoTWotJNfPY/Z3aDr
+ Py75s2kfE04I5asLRBtFoEIioGVLvhA9q4JILitWLnCNEEAIbuuedV1Yf4k7r3qMI0VM
+ EIew==
+X-Gm-Message-State: AGi0PubATE5ey5V5Yct1nkfxeSM+0DVL740jzhyVlXVOZrdsRoqn90Ok
+ cOTT+odleZDGwW+wgpSlBFFr9Q==
+X-Google-Smtp-Source: APiQypKxnci1OIVtsyUwDnRvBaRtP0SdCtKIlKTF+ChQS3TlaLeRLU0KtKZ/IOUbIu+Q2WHUYH9qQQ==
+X-Received: by 2002:a1c:c345:: with SMTP id t66mr10514947wmf.189.1587732251350; 
+ Fri, 24 Apr 2020 05:44:11 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
+ by smtp.gmail.com with ESMTPSA id
+ q184sm2692689wma.25.2020.04.24.05.44.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 24 Apr 2020 05:44:10 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH 0/2] arm64: meson-sm1: add support for Hardkernel ODROID-C4
+Date: Fri, 24 Apr 2020 14:44:04 +0200
+Message-Id: <20200424124406.13870-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_053935_656370_6D9E6397 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200424_054413_436122_48AA9E99 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -95,63 +93,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives these errors:
+This serie adds support for the Hardkernel Odroid-C4 single board computer.
 
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
-'#address-cells' is a required property
+The Odroid-C4 is the Odroid-C2 successor with same form factor, but using
+a modern Amlogic S905X3 (SM1) SoC and 4x USB3 ports.
 
-The $nodename pattern for spi nodes is
-"^spi(@.*|-[0-9a-f])*$". To prevent warnings rename
-'spi-0' and 'spi-1' pinctrl sub nodenames to
-'spi0' and 'spi1' in 'rk322x.dtsi'.
+Fully functionnal:
+- USB2+USB3
+- USB2 OTG
+- eMMC
+- SDCard
+- HDMI
+- DVFS
+- Gigabit Ethernet with RTL8211F PHY
+- ADC
+- Debug UART
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-controller.yaml
+Missing:
+- HDMI audio
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm/boot/dts/rk322x.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Dongjin Kim (1):
+  arm64: dts: meson-sm1: add support for Hardkernel ODROID-C4
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 06172ebbf..e3b27da0a 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -1020,7 +1020,7 @@
- 			};
- 		};
- 
--		spi-0 {
-+		spi0 {
- 			spi0_clk: spi0-clk {
- 				rockchip,pins = <0 RK_PB1 2 &pcfg_pull_up>;
- 			};
-@@ -1038,7 +1038,7 @@
- 			};
- 		};
- 
--		spi-1 {
-+		spi1 {
- 			spi1_clk: spi1-clk {
- 				rockchip,pins = <0 RK_PC7 2 &pcfg_pull_up>;
- 			};
+Neil Armstrong (1):
+  dt-bindings: arm: amlogic: add odroid-c4 bindings
+
+ .../devicetree/bindings/arm/amlogic.yaml      |   1 +
+ arch/arm64/boot/dts/amlogic/Makefile          |   1 +
+ .../boot/dts/amlogic/meson-sm1-odroid-c4.dts  | 399 ++++++++++++++++++
+ 3 files changed, 401 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-sm1-odroid-c4.dts
+
 -- 
-2.11.0
+2.22.0
 
 
 _______________________________________________
