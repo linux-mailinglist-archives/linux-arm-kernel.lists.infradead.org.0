@@ -2,66 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 258381B7413
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:24:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 030C51B7432
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:25:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P+00BzmZ1qXIsjm0sGHm5twxuSZZKd3jsPOQOuhCygE=; b=IJXxJanjHt3eCD
-	rPbWEqsqVEXPw+AxnrETMOz63vplZjvQr0zL/en9IEA9bdXnmcMK1sm2ThT3LiL2Gv/hrxRCaYCAK
-	sd32ULEb4DNwF+AEc5VSktGWlfSOJfgLTEBS6K0jLeQtzUo6FdPath5Q7a6ij4P6q+0lY9ckBea93
-	aQLUkmicFAKFOeJfJKGLBjwjiWJB6+q+sS0VVjQBMe6kkR5un/A/6ufqwJOPttcbFZcQlAsUdSm8v
-	U8ntOk2aSGaw7U7fKZjIQFOxJeHKHnFy+a2kzIYyg7d2ebJzMfDvty+lNaVngD4QRuIFIH9xOplPQ
-	qWS9srbkDVFoM7S3PT9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TH/omAUikkJC439VEaqw/bruJMq2CpQlhBKFaBxEbGI=; b=Xdf0dxD/B0ccuV
+	nAFRsfYDb8AvPjuB9vif4GJ4V5ECo9VfoRQdaPv6nI9p6R0X9IMrBYuGd/NePWrPvyn3R3hchT7Xg
+	2F53Yr+7FxLVeSCnmnd3rYifhZuxXqABYUxynyv5myN6s0aXNimqnb1lMX8lqCZLBtZpsjO7IaCDN
+	JeMqWtD8vpWuL9T70btB91nW+VvIp3V+RT8O41/LYySD2tYitkhiDLRTltHMdN80EKOTN3P58ZiNE
+	L3TRI6EV5u2xZvWYiP7MbSlMYC9my67g1c50aaVWN40IeIAdiCg8CtP5toY6X9vXNOzuYdzybrpIa
+	LnCzq6Mx1UNn/w/ijFMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxNk-00063e-BV; Fri, 24 Apr 2020 12:24:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jRxOC-0006Jh-FO; Fri, 24 Apr 2020 12:25:04 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxNO-0005u6-3S
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:24:16 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2404C2168B;
- Fri, 24 Apr 2020 12:24:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587731053;
- bh=khfuUtphoGowJXyD29xSnB3vDa40rTfdz83YDfqA7vA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PSZaFWnxGouv3RBRQjVuw8NABOvqTf/3/9pBkkHAiinfrgZYCew/UK/DQFt9die68
- 3a/V7mcyhJx1QDh/aZ2gnHt7om3Df9bVSFotSs5B/+LlgV4hucivrECr/UmcUdOhlF
- 9iXTrpIKx8r/WLHGkNb27JPkbLhwMkcP7alHjv70=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 14/18] arm64: Delete the space separator in
- __emit_inst
-Date: Fri, 24 Apr 2020 08:23:51 -0400
-Message-Id: <20200424122355.10453-14-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200424122355.10453-1-sashal@kernel.org>
-References: <20200424122355.10453-1-sashal@kernel.org>
+ id 1jRxNU-0005zv-Tg
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:24:23 +0000
+Received: by mail-pf1-x444.google.com with SMTP id v63so4713686pfb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Apr 2020 05:24:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=EZWTGR2wDApXn1qZCOfO8QQ0qwLL2b6F+ahGlWVDubE=;
+ b=MEAAr4dysjyXTujdAdFnc96D2y8DQPhLqk17tYm4NicOHg94yLN+enU9TZcefycxMF
+ xfu00/TW/q9DwhPW9mM7rxfO+YnvVnoMQ7HeauwHNXNV/IkclWHKTOYTOPNP/tI/1X7U
+ pse4CKlZA7Evyu/NdxJajLTMTcJd0PpCTx9TpqC15jGa0THgjX0TAuVCPB78Dc3e9zX1
+ PVPTGAYshT5/u7XcppcHY397NnqPNtVGn0VKENS9ZDRZzdfG5VT5idkD7muoAaTEFp4G
+ b2MarLjwHM6XT7ZWwOhVX8ekN6g6HfnmJKu61VgAeH2s+qVXTs23ZVQhKgWRWIeoIZ9V
+ 1TQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=EZWTGR2wDApXn1qZCOfO8QQ0qwLL2b6F+ahGlWVDubE=;
+ b=qLnRxfDoL10rI93JpxOZyvxr+Sz7LtwJv/BXUHfIh2spE468eTOTW9V1MVnD9LqJxj
+ QGnYRjPjY2eveBZQDrD6D1LJpzoS2NwUwAX2t8KGfWuxjCPESdsskZfQyplsRp1LVj4Z
+ pGBykhbDbe2mIw1jSVrXE83RWK0u1zWPCRL24kJirl3IBbDxo84LURm0WzwCN/aH1Iuo
+ X9D+bJmuYC0QWm255yhfAa7B3oj7hTHQDGtHIfgMQfwojj5nzCTIsmszOgPzF1Iu4DSb
+ Z5hpz1Jeyr0Z0WJBZ4h7muHQVCH3yU1woESTdStQBHsEUmlZG7Nobkbul4vh6zCTD91C
+ BckA==
+X-Gm-Message-State: AGi0PuZ3f/mXIofxV0q0Ko3sWWQTYE3h+RLstRb6WZ07A9L0/ESrdAqd
+ R43TYP3nkBwWIgua1PTrb4Q=
+X-Google-Smtp-Source: APiQypJ/bDxFy3P4vG/L+xY5hQN6UgcBmpz0Oy4ArCtE5VFPb+XAJMmVLhzSVnO2QcZz5nZQ6W4blg==
+X-Received: by 2002:a62:b611:: with SMTP id j17mr9266856pff.214.1587731058449; 
+ Fri, 24 Apr 2020 05:24:18 -0700 (PDT)
+Received: from syed ([106.223.101.26])
+ by smtp.gmail.com with ESMTPSA id g9sm4845622pgj.89.2020.04.24.05.24.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 Apr 2020 05:24:17 -0700 (PDT)
+Date: Fri, 24 Apr 2020 17:54:07 +0530
+From: Syed Nayyar Waris <syednwaris@gmail.com>
+To: akpm@linux-foundation.org
+Subject: [PATCH 0/6] Introduce the for_each_set_clump macro
+Message-ID: <20200424122407.GA5523@syed>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_052414_174208_29B7538E 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200424_052421_102182_CE527AC6 
+X-CRM114-Status: GOOD (  12.56  )
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [106.223.101.26 listed in zen.spamhaus.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [syednwaris[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -69,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,78 +98,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
- Fangrui Song <maskray@google.com>, Ilie Halip <ilie.halip@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, clang-built-linux@googlegroups.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, amit.kucheria@verdurent.com, arnd@arndb.de,
+ yamada.masahiro@socionext.com, linux-kernel@vger.kernel.org,
+ linus.walleij@linaro.org, daniel.lezcano@linaro.org, vilhelm.gray@gmail.com,
+ michal.simek@xilinx.com, bgolaszewski@baylibre.com, rrichter@marvell.com,
+ linux-gpio@vger.kernel.org, linux-pm@vger.kernel.org, rui.zhang@intel.com,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fangrui Song <maskray@google.com>
+This patchset introduces a new generic version of for_each_set_clump. 
+The previous version of for_each_set_clump8 used a fixed size 8-bit
+clump, but the new generic version can work with clump of any size but
+less than or equal to BITS_PER_LONG. The patchset utilizes the new macro 
+in several GPIO drivers.
 
-[ Upstream commit c9a4ef66450145a356a626c833d3d7b1668b3ded ]
+The earlier 8-bit for_each_set_clump8 facilitated a
+for-loop syntax that iterates over a memory region entire groups of set
+bits at a time.
 
-In assembly, many instances of __emit_inst(x) expand to a directive. In
-a few places __emit_inst(x) is used as an assembler macro argument. For
-example, in arch/arm64/kvm/hyp/entry.S
+For example, suppose you would like to iterate over a 32-bit integer 8
+bits at a time, skipping over 8-bit groups with no set bit, where
+XXXXXXXX represents the current 8-bit group:
 
-  ALTERNATIVE(nop, SET_PSTATE_PAN(1), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
+    Example:        10111110 00000000 11111111 00110011
+    First loop:     10111110 00000000 11111111 XXXXXXXX
+    Second loop:    10111110 00000000 XXXXXXXX 00110011
+    Third loop:     XXXXXXXX 00000000 11111111 00110011
 
-expands to the following by the C preprocessor:
+Each iteration of the loop returns the next 8-bit group that has at
+least one set bit.
 
-  alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
+But with the new for_each_set_clump the clump size can be different from 8 bits.
+Moreover, the clump can be split at word boundary in situations where word 
+size is not multiple of clump size. Following are examples showing the working 
+of new macro for clump sizes of 24 bits and 6 bits.
 
-Both comma and space are separators, with an exception that content
-inside a pair of parentheses/quotes is not split, so the clang
-integrated assembler splits the arguments to:
+Example 1:
+clump size: 24 bits, Number of clumps (or ports): 10
+bitmap stores the bit information from where successive clumps are retrieved.
 
-   nop, .inst, (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
+     /* bitmap memory region */
+        0x00aa0000ff000000;  /* Most significant bits */
+        0xaaaaaa0000ff0000;
+        0x000000aa000000aa;
+        0xbbbbabcdeffedcba;  /* Least significant bits */
 
-GNU as preprocesses the input with do_scrub_chars(). Its arm64 backend
-(along with many other non-x86 backends) sees:
+Different iterations of for_each_set_clump:-
+'offset' is the bit position and 'clump' is the 24 bit clump from the
+above bitmap.
+Iteration first:        offset: 0 clump: 0xfedcba
+Iteration second:       offset: 24 clump: 0xabcdef
+Iteration third:        offset: 48 clump: 0xaabbbb
+Iteration fourth:       offset: 96 clump: 0xaa
+Iteration fifth:        offset: 144 clump: 0xff
+Iteration sixth:        offset: 168 clump: 0xaaaaaa
+Iteration seventh:      offset: 216 clump: 0xff
+Loop breaks because in the end the remaining bits (0x00aa) size was less
+than clump size of 24 bits.
 
-  alternative_insn nop,.inst(0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
-  # .inst(...) is parsed as one argument
+In above example it can be seen that in iteration third, the 24 bit clump
+that was retrieved was split between bitmap[0] and bitmap[1]. This example 
+also shows that 24 bit zeroes if present in between, were skipped (preserving
+the previous for_each_set_macro8 behaviour). 
 
-while its x86 backend sees:
+Example 2:
+clump size = 6 bits, Number of clumps (or ports) = 3.
 
-  alternative_insn nop,.inst (0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
-  # The extra space before '(' makes the whole .inst (...) parsed as two arguments
+     /* bitmap memory region */
+        0x00aa0000ff000000;  /* Most significant bits */
+        0xaaaaaa0000ff0000;
+        0x0f00000000000000;
+        0x0000000000000ac0;  /* Least significant bits */
 
-The non-x86 backend's behavior is considered unintentional
-(https://sourceware.org/bugzilla/show_bug.cgi?id=25750).
-So drop the space separator inside `.inst (...)` to make the clang
-integrated assembler work.
+Different iterations of for_each_set_clump:
+'offset' is the bit position and 'clump' is the 6 bit clump from the
+above bitmap.
+Iteration first:        offset: 6 clump: 0x2b
+Loop breaks because 6 * 3 = 18 bits traversed in bitmap.
+Here 6 * 3 is clump size * no. of clumps.
 
-Suggested-by: Ilie Halip <ilie.halip@gmail.com>
-Signed-off-by: Fangrui Song <maskray@google.com>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Link: https://github.com/ClangBuiltLinux/linux/issues/939
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm64/include/asm/sysreg.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Syed Nayyar Waris (6):
+  bitops: Introduce the the for_each_set_clump macro
+  lib/test_bitmap.c: Add for_each_set_clump test cases
+  gpio: thermal: Utilize for_each_set_clump macro
+  bitops: Remove code related to for_each_set_clump8
+  gpio: thunderx: Utilize for_each_set_clump macro
+  gpio: xilinx: Utilize for_each_set_clump macro
 
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 3091ae5975a3a..ed99d941c4623 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -60,7 +60,9 @@
- #ifndef CONFIG_BROKEN_GAS_INST
- 
- #ifdef __ASSEMBLY__
--#define __emit_inst(x)			.inst (x)
-+// The space separator is omitted so that __emit_inst(x) can be parsed as
-+// either an assembler directive or an assembler macro argument.
-+#define __emit_inst(x)			.inst(x)
- #else
- #define __emit_inst(x)			".inst " __stringify((x)) "\n\t"
- #endif
+ drivers/gpio/gpio-104-dio-48e.c            |   8 +-
+ drivers/gpio/gpio-104-idi-48.c             |   4 +-
+ drivers/gpio/gpio-74x164.c                 |   4 +-
+ drivers/gpio/gpio-gpio-mm.c                |   8 +-
+ drivers/gpio/gpio-max3191x.c               |   4 +-
+ drivers/gpio/gpio-pca953x.c                |   4 +-
+ drivers/gpio/gpio-pci-idio-16.c            |   8 +-
+ drivers/gpio/gpio-pcie-idio-24.c           |   8 +-
+ drivers/gpio/gpio-pisosr.c                 |   4 +-
+ drivers/gpio/gpio-thunderx.c               |  12 ++-
+ drivers/gpio/gpio-uniphier.c               |   4 +-
+ drivers/gpio/gpio-ws16c48.c                |   8 +-
+ drivers/gpio/gpio-xilinx.c                 |  64 +++++++-------
+ drivers/thermal/intel/intel_soc_dts_iosf.c |   6 +-
+ include/asm-generic/bitops/find.h          |  12 +--
+ include/linux/bitmap.h                     |  60 +++++++++----
+ include/linux/bitops.h                     |   9 +-
+ lib/find_bit.c                             |  12 +--
+ lib/test_bitmap.c                          | 136 ++++++++++++++++++++++++-----
+ 19 files changed, 253 insertions(+), 122 deletions(-)
+
 -- 
-2.20.1
+2.7.4
 
 
 _______________________________________________
