@@ -2,72 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8A891B81DF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 00:06:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF32F1B8235
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 00:49:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6JrMsBJC5I3NAlRwpVexkBA8eHmtmV5IsBxCa9ZzPVQ=; b=rOSp/FQIbskcoS
-	G8Q2OyKCow0YeOdFKfxHb/HMfeSgcW2MkcrXsQqV8QNS9iS0bGyH3YAQlIHWWZh73eSNhAYvUtIfi
-	3PkKTsEMNHHJxL8CqnSw/7tMvW7oTOt0JrC65lco5k9hPJiocehfV+yAUjgSvTQ2YcCIOX+if26s5
-	paGcVhsGp4tjDJOH+H+587O9AGcZcYjRlV72Ai+fittWGE+1IXg2lLmTdI0irJaApMHVSHQFnpPxu
-	fk6C3t/4PuFVTq1ngUmKWTypYPVfSpvMAq6fSYHXjoUOuC5BAmfhpci1S+mFzi6vtpCfrmWe7EHju
-	JWdyTlp2ZNbMZZ8b/EMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=I71cXb72QbysIepvRRBjhzy5IFaSDtDMdpegqjhhQJQ=; b=TmoORMCVUmWNyQ
+	lKf9ypWfOwphbhOrqKW85b5cg6cnoRQ3YBfwP7K0XgrbvYRZFJCWxtBYTZbePZnMVVYqTGIlkH2p5
+	oJdX3pPgoH9b4QKEcZkaWbzsySqS9aji9E+Vs2kSwxYuGWlxm4V5AMGQ3ZBtIFfhbS8/HsKGXTxu5
+	gcgMQ5DOlORWOLjVsJias3W7NAPvZFPp4zkCftuLmudgYRsjZTJg5Mdkzv9jt/x9qIkp7FkOqRzuL
+	AAujXL39tNHAH3U7PTZx++1hdqyTPIBNNvle9oL67ZesELSHwIobTtYNj8GVtevx0hgNIz44Y30JF
+	UumdDXHnkvKMsZGLDbhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS6Sa-0001Vt-O8; Fri, 24 Apr 2020 22:06:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jS78V-0004Zx-KT; Fri, 24 Apr 2020 22:49:31 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS6SQ-0001Uy-4X
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 22:06:05 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9CACB20857
+ id 1jS78M-0004Yx-AK
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 22:49:23 +0000
+Received: by mail-wr1-x443.google.com with SMTP id f13so13107745wrm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 22:06:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587765961;
- bh=JivJTIRgDiUIQy8eirUs45TtyuILvCgZqRvnH5Wfcmk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=2syVbBmoK8XrkPtUfJDqtPoO+QllnBQNWmGqXWVUUPjXUdNygPj3yDGu1IkZB/ltc
- RY4Eubr6n1HDACvMv60r+ICK/pBsG5rUEu4y9TmhfkD9POKfJZTfhhMsmgypj2StyW
- EDp7nlwKG4kh9mFheZAtzuxFuQZcuePnmfbko3QE=
-Received: by mail-qt1-f179.google.com with SMTP id 71so9259766qtc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 15:06:01 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZoNI+M3JgLFdcDkXQQkpKXVXHhGOjJ+r3+70aWyVO4D/rxo7lq
- oYe/YkZ5FdkcQ0mWlgoXmn2gMNRNQoENWk0INQ==
-X-Google-Smtp-Source: APiQypIVltF4TcBafK99loWjJjLLH+9EYxohE3EW1fPkl7KXSdN1YZmaVY0jfUimAylQ+g9ffp3oxucLw5yVf10M3Zo=
-X-Received: by 2002:ac8:47cb:: with SMTP id d11mr10875122qtr.136.1587765960749; 
- Fri, 24 Apr 2020 15:06:00 -0700 (PDT)
+ Fri, 24 Apr 2020 15:49:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mkhQBX3TvcJY011PDTVaLNKRPhA/xmcmb2+YOURnSJw=;
+ b=EF/meO6BFADUkfMCWiTZe/0MOJkM82sbTHt2d6d+ppI6bRxDdw2bTx9XSXVtATx6mQ
+ cfdfjzL7g3fqvPMQHyWqTEI2FyPtp2XUaU2XI0iOLmyEn7H3Pmc0nfyNgOKx+K2XowkQ
+ haHZyS17cGLW8WavwFOFZfIVkL/7v9PcMmMxQQIx7tJy0dJuujMhHgpYx2EPfLIh5+13
+ SLtIdSyr4oPzTs4pMJyZQQrOfRzCKRtEGbfOVRyBMOceUAzKFBUQzZ/4+nhw8Z7dul4a
+ Kb8hM0InW7DzQFTlblxexyg2TfyPc6JaspXL5SmxN4J4qTVlx+Bb0rbVTi/Mo9cn2wfU
+ Mu6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mkhQBX3TvcJY011PDTVaLNKRPhA/xmcmb2+YOURnSJw=;
+ b=ER+ZbMXA9H2N80MQaQw862d42Yi/qK4RzdphP/vgMhnpd7a9hDy+DNFGjT5Ied3fqE
+ tVVqtOmAh5z09Ny0JVqg9HQcQATYoK3LzysR4jCEzUIE0sZHgLK4xTU3TvVnPOGl3UTf
+ gRdcI4DsWGB6AqL6hitvj378kwvoMwD4vZR4UVVES5Z6iqx3VsKh5zKCkc6HMQCp7amb
+ Ca+B8izipNbKz719eXqxnuKbrg/WSZNUFl0icjrAaONgaRqfytbEvm5j9oQOGeFW5hW3
+ fGz1+8RA56IeluxcDzbaXyO5g7Em4w2MbLd/nilflTZB7ve2rtHubHyG+a4vGO9rF5Ef
+ B7gw==
+X-Gm-Message-State: AGi0PubiXc8Y28RmirIIG6i0Z1jYwksyKpCa0y/eLBcXEQ0uI2+JNwZS
+ 77+3e8E4qwJAclDt8GLK2UM=
+X-Google-Smtp-Source: APiQypLqArLmUZ3vetzCbbybgBc+4QBTW5US7b/bpm7ExOjrSN7tfOAH2WPLDXQmMj9EhPWD0+zHKg==
+X-Received: by 2002:adf:dd83:: with SMTP id x3mr13518966wrl.298.1587768560713; 
+ Fri, 24 Apr 2020 15:49:20 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id 5sm4615195wmg.34.2020.04.24.15.49.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 24 Apr 2020 15:49:20 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: soc@kernel.org
+Subject: [GIT PULL 1/1] Broadcom devicetree fixes for 5.7 (part 2)
+Date: Fri, 24 Apr 2020 15:49:15 -0700
+Message-Id: <20200424224915.3541-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20200423064808.10468-1-etienne.carriere@linaro.org>
- <20200423064808.10468-2-etienne.carriere@linaro.org>
-In-Reply-To: <20200423064808.10468-2-etienne.carriere@linaro.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 24 Apr 2020 17:05:49 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqKvQasaBCHC2s68WmtfwGN+t349tzmF=ySkuYz11HzksQ@mail.gmail.com>
-Message-ID: <CAL_JsqKvQasaBCHC2s68WmtfwGN+t349tzmF=ySkuYz11HzksQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/2] dt-bindings: arm: Add secure-clocks binding
- description
-To: Etienne Carriere <etienne.carriere@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_150602_215214_229A5EB1 
-X-CRM114-Status: GOOD (  19.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200424_154922_357635_513ADC43 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -75,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,64 +96,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
+ =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>,
+ bcm-kernel-feedback-list@broadcom.com, olof@lixom.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 23, 2020 at 1:49 AM Etienne Carriere
-<etienne.carriere@linaro.org> wrote:
->
-> Describe how clocks property can leverage secure- property prefix
-> for clocks handled exclusively or shared by secure and non-secure
-> worlds.
->
-> Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
-> ---
->  .../devicetree/bindings/arm/secure.txt        | 19 +++++++++++++++++++
->  1 file changed, 19 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/arm/secure.txt b/Documentation/devicetree/bindings/arm/secure.txt
-> index f27bbff2c780..9bc94921f2a6 100644
-> --- a/Documentation/devicetree/bindings/arm/secure.txt
-> +++ b/Documentation/devicetree/bindings/arm/secure.txt
-> @@ -53,6 +53,25 @@ Valid Secure world properties
->     status = "disabled";                             /* disabled in both */
->     status = "disabled"; secure-status = "disabled"; /* disabled in both */
->
-> +- secure-clocks : specifies the Phandle list secure world shall use
-> +  for the related clocks whereas property "clocks" specifies the
-> +  clock Phandle list non-secure shall use for the that clocks.
-> +  This configuration can apply for example when a hardware clock is
-> +  shared by the 2 worlds and the hardware implements a specific interface
-> +  for each world, i.e.:
-> +
-> +  clocks = <&clk DMA_NS>;      /* NS relies on clock handle DMA_NS */
-> +  secure-clocks = <&clk DMA_S>;        /* S relies on clock handle DMA_S */
-
-The device has to know what it's clocks are for and should know if
-some clocks are secure only.
-
-> +  Another example where use of "clocks" and "secure-clocks" can apply
-> +  is when hardware implements a clock that secure and non-secure must
-> +  share, as a shared GPIO bank clock, and secure world relies on clock
-> +  device driver whereas non-secure world relies on a software service
-> +  exposed by secure world as SCMI clock device. I.e.:
-> +
-> +  clocks = <&scmi_clk 2>;      /* NS relies on SCMI resources */
-> +  secure-clocks= <&clk 5>;     /* S accesses the SoC reset interfaces */
-
-If you have this case, I don't think this is the solution. I don't
-think it scales well and you probably need separate DTs. It's
-something to solve in the system DT project.
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGZvbGxvd2luZyBjaGFuZ2VzIHNpbmNlIGNvbW1pdCA5MDQ0NGI5NTg0NjFhNWY4ZmMyOTll
+Y2UwZmUxN2VhYjE1Y2JhMWUxOgoKICBBUk06IGR0czogYmNtMjgzeDogRGlzYWJsZSBkc2kwIG5v
+ZGUgKDIwMjAtMDQtMTYgMTM6NTg6MDIgLTA3MDApCgphcmUgYXZhaWxhYmxlIGluIHRoZSBHaXQg
+cmVwb3NpdG9yeSBhdDoKCiAgaHR0cHM6Ly9naXRodWIuY29tL0Jyb2FkY29tL3N0YmxpbnV4Lmdp
+dCB0YWdzL2FybS1zb2MvZm9yLTUuNy9kZXZpY2V0cmVlLWZpeGVzLXBhcnQyCgpmb3IgeW91IHRv
+IGZldGNoIGNoYW5nZXMgdXAgdG8gMmM5NzI3MzFhM2Q3NGEzMzY1MTlmYjE1OGZiZTg2M2NhYWQ1
+YzQyMToKCiAgQVJNOiBkdHM6IGJjbTI4MzUtcnBpLXplcm8tdzogRml4IGxlZCBwb2xhcml0eSAo
+MjAyMC0wNC0yNCAxMjo1MDozNyAtMDcwMCkKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KVGhpcyBwdWxsIHJlcXVlc3QgY29u
+dGFpbnMgQnJvYWRjb20gQVJNLWJhc2VkIFNvQ3MgRGV2aWNlIFRyZWUgZml4ZXMgZm9yCjUuNywg
+cGxlYXNlIHB1bGwgdGhlIGZvbGxvd2luZzoKCi0gVmluY2VudCBmaXhlcyB0aGUgcG9sYXJpdHkg
+b2YgdGhlIEFDVCBMRUQgb24gdGhlIFJhc3BiZXJyeSBQaSBaZXJvIFcKICBib2FyZAoKLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LQpWaW5jZW50IFN0ZWhsw6kgKDEpOgogICAgICBBUk06IGR0czogYmNtMjgzNS1ycGktemVyby13
+OiBGaXggbGVkIHBvbGFyaXR5CgogYXJjaC9hcm0vYm9vdC9kdHMvYmNtMjgzNS1ycGktemVyby13
+LmR0cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigt
+KQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
