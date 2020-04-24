@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 319861B7B09
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:03:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F253F1B7B0A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:03:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GGF4ILlycNZvsC83VL7EHPg+jxv80NhKeARyvkzdPF0=; b=SudykcRooT2gos
-	ksVZg6KltWbclrDE6L6dMFz0OPBUXBw6w51DZ6JGNLHdPRxZ1hR/+IUsDMwnESf+bZTcR8VgGNJxF
-	giab68ZU5IXPGVPhU+Uex3zca/vA+o1jdZEyS4cOYAsKwQZGy+AtJrZ0k204D0v4BqZ0AoTPp9B7t
-	UJ4eC/j1g6bH5mwiF7CsnYFzCGUt076ETNOSOHuUJ5JyJfbZTWUxzjzI4tj5yWOSmK50ak9lL20P1
-	8Sv2KHLxVRP13efxbr7gJayo92czDuecgxdGraVvm/n3LApKKU3+Ru7ecT8BPAfDOIdgFnX3gcPhG
-	8nMZjHA3CaNb2hgFZgmQ==;
+	List-Owner; bh=kKK50YlTfdZNw4LLSfvifmornc8bBoiQqV/InumM/a0=; b=OMtIIznOxbtdxH
+	AS4At6hznPe8dn8A0AMmik2E/U/7FWGU1jW+7YsMP3z7DCKbGFq+V1RaRQN9nILTiW0YWLWlvlnbz
+	QXK9w0eqDc6LyydFV/dvt/eNMqg1lVgnKt09lUFCwf2pldLXPRMgWs0FcJ+5d89dDETYN73EJav5q
+	nWh194/ee0lURfNdznhfylaDxjnlqDZMEDc5qFdizKWBc73j3KFi/qYHtkTqCVNCnBGPS3jS5ywiZ
+	mSHr4v2E4ytjFAvVf40PNc8Sf//ERvTno5nbei5ah5jMUY2oM1+kc/4+Tu1CFefcxxgZ6UjIcHvfJ
+	FnxfFSr4QJp9No3LUy+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0nU-0001fP-Ng; Fri, 24 Apr 2020 16:03:24 +0000
+	id 1jS0nl-0001v8-72; Fri, 24 Apr 2020 16:03:41 +0000
 Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0OD-0000Qw-Oj; Fri, 24 Apr 2020 15:37:22 +0000
+ id 1jS0OF-0000S8-4S; Fri, 24 Apr 2020 15:37:24 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id F38EB1455;
- Fri, 24 Apr 2020 11:37:15 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:37:16 -0400
+ by mailnew.west.internal (Postfix) with ESMTP id 5359B11F1;
+ Fri, 24 Apr 2020 11:37:17 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:37:18 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=BcKDLGebR5uRx
- 0RzJYXWe29sQcio0KLwjb/aib1L50Y=; b=SeUpHJ1ENfN1PiQgDE0FHuXhRh7jm
- 72psZbJlCYR/9l7zl5Y/ZarNjJdbG46uYP6NMUSyoS4mC983KOXx8VRN2H46Kin/
- bhSuZe8Wk2UmDifyZNF3B+4oZ1TllGkn0fHCuBt3f77cF3ByB3xIMgkGmTuTdnnS
- Ww3Jg6Nl5JiDpMTmyR0C0gnKJyS3vgfhebPIKGWxAm8+l0mmJVUWyOm2j8UlfBgs
- 99/JP2m1lsD+UWmXwfYtBk7aQdsBxEp3S+H85fFIqoXC4G9KkmtFXTmaTdHDrTj+
- 5FBGMQQDdZqbErE1ogtJBCnJKI7rCF5Be/klzK7qox6LH0n+0w2O+XaFg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=yBSySeAZPxbSW
+ /2B2VlVvClbPmm7sNacu8s8+ecmGOc=; b=nVgZ3BmHUJ/SAPkWYxAatjpK5sbaL
+ CiuReG5xJtySJYbOcmEmtNl81JFo2TMF+o3ryrpaZRPwt9uyRim7ylazyQ4OzP05
+ p6sbEQBza0RJhuJ4SYUR7K4a68rz9YqLTfLIZdoj2OEQ0d5FOaiYPsgYqINXlhci
+ yOZFq9OQUmXmhLR9jVetTddR5GYWgc246/IadaHIfp9EiDNr6EaNaadLq5wwn30U
+ JiNU7FYmAxF5hGvyNoo4x57UrQqQZXUK+t5Wtv67XhKgyIS7yg10s6Lgxe1GVLMi
+ 46wELmnOfEfPew7qbtvTtX9sVlkncBXQ8Cg9ZeLhZXeN9dj/XfakqS6eg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=BcKDLGebR5uRx0RzJYXWe29sQcio0KLwjb/aib1L50Y=; b=w0wKUfE1
- 6eN6eS8IGfrugZjgEpVLgXNYw6DzNMIYIInu6w0TQQawXoPs9/jp6hQ2k2Dj4LUR
- RxbzCqxAHm94iEGP9MQfpW71XAeLK1qbvpYVXa4f6vm9t2i6QGS2kxMcISlpCiTi
- CTEpqpRvXkI6TjP/LsbAsYuYf0nbM+bvuEumamIKSMDqcV4t/K+AprH13q952k1X
- SbmdLM1HX7eF9JdiUDaBBurovMHjKPqa1INxBuKxt3HTPKQ8BYu4vJ+dYGVloxjG
- GL/HY2glI4cAukKfHnmu2rxA9/C9CCXGlLCitkOfWCsPF1DH6xTxNXEORl8Az2rj
- Rgfovxp7PwmHXw==
-X-ME-Sender: <xms:qwejXqLcnq9mRyyyCUbSbUz555-ceszgLgckXqUWoi57rgsDf6qhzA>
+ fm2; bh=yBSySeAZPxbSW/2B2VlVvClbPmm7sNacu8s8+ecmGOc=; b=kkXLQ0tH
+ OPlHxST4wEtDiLAxHh15oEZ1DEuCOqKHmBRSddpiWY3o3bvHVf/g49beyyr9IL+0
+ ulaPSGp8Xcs5H8819TDtkzBo9z4tMOR8GutbZvjEDCOQAnLneFyiZOV88SwgFJ7J
+ AZmusZj7ExFp8am3TFya2FmxLe2xuo2mwfF6SYUF2DzL62Mk96+TD6HvHlG6sPvu
+ ZUCNeW8YEt02rNlQvv/z/ilSidKMRqy7eCTtBy24SMN+54ohDJhom3Ir0jFsoESi
+ WqxqwfbfX+aiQQ1kIgl6+Sa3Lm39Qe42wNIZStuAeSlAScepybgCTIltrblNhKx7
+ Or1dTdZqRgD9Qg==
+X-ME-Sender: <xms:rAejXmScVu0kHwNxDAm7F-tnzpZJDg-RwH-rhMklG6lAubEPjyXNIw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpeejtdenucfrrghrrghmpehmrghi
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpeejgeenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:qwejXmZyWgMtCBmemDJ0_sFRTbLhoWmn4u4_XW1Xe9ym6mt9yFqU-g>
- <xmx:qwejXltG_VvrGqsKRcxhtuQRKXhhEu0xgWLERVm-4o30Qx2rvl9mBw>
- <xmx:qwejXjvA74yMipWtODx1Esz5BkGmTLmuGu9hMKBzFuGXB6EXgNhJ9Q>
- <xmx:qwejXtX8Pnfb4vnJNh7FpqfzSoPCZoNuF5NDQxBmEoN9CpJD74hx8WeFkfM>
+X-ME-Proxy: <xmx:rAejXpVK1q1yPn3mdI37FqMKSobLI2UpAj2PrjRahTAngil72tQHDw>
+ <xmx:rAejXqQNSxE3iodkTiPKjWV2bPnlQ6d-S0SUKGwR-Nv4UqKeQddTDA>
+ <xmx:rAejXjn7Gt7ZgoD6kEkTelKYoD9f_r_DooGZssxMLWAJZXLpj-MxEQ>
+ <xmx:rAejXj9XdYOyo4D5NJQ82MnqCgVXlz34gA3ikyWdQUQ7m6YKRxDaGuiKSgI>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 3C27C3065D9A;
- Fri, 24 Apr 2020 11:37:15 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9064C328005E;
+ Fri, 24 Apr 2020 11:37:16 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v2 81/91] drm/vc4: hdmi: Add CEC support flag
-Date: Fri, 24 Apr 2020 17:35:02 +0200
-Message-Id: <985fee99e85cc6816f1500504d47f5cde8b6e32e.1587742492.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 82/91] drm/vc4: hdmi: Remove unused CEC_CLOCK_DIV define
+Date: Fri, 24 Apr 2020 17:35:03 +0200
+Message-Id: <0a61007b3a91a8f70257fb3a3d417eb424860491.1587742492.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_083717_975985_24E42745 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200424_083719_262627_393198F3 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,52 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similarly to the audio support, CEC support is not there yet for the
-BCM2711, so let's skip entirely the CEC initialization through a variant
-flag.
+The CEC_CLOCK_DIV define is not used anywhere in the driver, let's remove
+it.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c | 4 ++++
- drivers/gpu/drm/vc4/vc4_hdmi.h | 3 +++
- 2 files changed, 7 insertions(+)
+ drivers/gpu/drm/vc4/vc4_hdmi.c | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index 1c612db1d22c..20b6af98abad 100644
+index 20b6af98abad..360743187f95 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -1180,6 +1180,9 @@ static int vc4_hdmi_cec_init(struct vc4_hdmi *vc4_hdmi)
- 	u32 value;
- 	int ret;
+@@ -54,7 +54,6 @@
  
-+	if (!vc4_hdmi->variant->cec_available)
-+		return 0;
-+
- 	vc4_hdmi->cec_adap = cec_allocate_adapter(&vc4_hdmi_cec_adap_ops,
- 						  vc4_hdmi, "vc4",
- 						  CEC_CAP_DEFAULTS |
-@@ -1468,6 +1471,7 @@ static int vc4_hdmi_dev_remove(struct platform_device *pdev)
- static const struct vc4_hdmi_variant bcm2835_variant = {
- 	.encoder_type		= VC4_ENCODER_TYPE_HDMI0,
- 	.debugfs_name		= "hdmi_regs",
-+	.cec_available		= true,
- 	.registers		= vc4_hdmi_fields,
- 	.num_registers		= ARRAY_SIZE(vc4_hdmi_fields),
+ #define HSM_CLOCK_FREQ 163682864
+ #define CEC_CLOCK_FREQ 40000
+-#define CEC_CLOCK_DIV  (HSM_CLOCK_FREQ / CEC_CLOCK_FREQ)
  
-diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.h b/drivers/gpu/drm/vc4/vc4_hdmi.h
-index 22100820c81b..20e0f5498f1e 100644
---- a/drivers/gpu/drm/vc4/vc4_hdmi.h
-+++ b/drivers/gpu/drm/vc4/vc4_hdmi.h
-@@ -33,6 +33,9 @@ struct vc4_hdmi_variant {
- 	/* Filename to expose the registers in debugfs */
- 	const char *debugfs_name;
- 
-+	/* Set to true when the CEC support is available */
-+	bool cec_available;
-+
- 	/* List of the registers available on that variant */
- 	const struct vc4_hdmi_register *registers;
- 
+ static int vc4_hdmi_debugfs_regs(struct seq_file *m, void *unused)
+ {
 -- 
 git-series 0.9.1
 
