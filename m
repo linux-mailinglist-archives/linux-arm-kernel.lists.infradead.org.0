@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42C451B6A1F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 01:49:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBA171B6A94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 03:03:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=+kOqitzgKc9ovMSCbz5ov+UjJpM/Y55gpRpDyvdJoAs=; b=AkBvc3ZLPTy3s4
-	Jbs9XySd0m2UZm/NkoIJnXjqGarpn4axNrm4TDfI66GoMY1k3xkfhbrp/Gx9z/RJh07a5Rp8jXNV0
-	ehG4NXJlpQjHJu9AIHv+EwIC3p6KBoyjCC6gGz4WQ0OKFiI+WLq26NXZkgukmQeFC1gSjmRMdvEio
-	Uodxg6W1/hX5DUblEV/5LEUEQnsZ0RF+E17cqcRsJFo7pTGkdATeBkj1J5huVE+7rqn6TpSf4qWWg
-	73tlW5OnHxm1ZtoYM0LrE84wnYPFXs877Fp9os4+pwARAUzchUMX1AtGm31X/5MKMy7NdoMHaNKpm
-	4PET2qG0RS3wYDoAl5pg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=W4DAPWNsIEXpYX3u0UVDDHigOTAQY4pFVKdLUxYos7U=; b=ar7xgxLYf0Jtgu+aweUnRrQ1p
+	MgNJaWvy7xysTFyT6MX1/16lDYx8p36KxQ/FQeRPEVVMygcUUoF1Xyg9iyV0vi/KY5RYSKtIkDDDH
+	kB7CXvEcPSCJHe8KS9JHlQ61NcFQf94e1kCRaUXbUalnrlLY+ONbXtIAV48ESQrM80c2brFYg3rUp
+	ai/lk2+sQxrgCKWq0qHXox/UmlM36s92JjSHnwLq+UaofJQ/jF8eM3va728Cy3J0B/yy2Eujfqr7v
+	TfJOan+Zkdg9PgzDtiXmNbmDijyDLOWXRvJxTi35oeBGfHQ3na1OI0G1lOr2kzNHeFAUq+EePHevo
+	uSuDgwKUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRlb1-0004wK-RR; Thu, 23 Apr 2020 23:49:31 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1jRmkC-0004A5-Kk; Fri, 24 Apr 2020 01:03:04 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRlar-0004uc-Pu
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Apr 2020 23:49:23 +0000
-Received: by mail-pf1-x449.google.com with SMTP id r28so6991462pfl.23
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Apr 2020 16:49:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:subject:from:to:cc;
- bh=nxY7DzxbSarsBkUzCoMT9+dGA5Hco9t3mPu1VJ2rH2Y=;
- b=uOju//yn4UyyKcrbIqkrxiL8zIMZZEg2ktPPrjbkXIlQioWIBUvR/W6Bz98oaqmQkV
- v2AHqRC1usHxBaVdtpyBbVu1ZcOZrSUrn7adTZreZTuL23S1T/NbLx29nyYZRHCdiKqO
- SVkbEYnOmpOd/0JI0NKomy6qusXWGxPz/OuxNTYVJvLo2NIG4G69j22ERs2QFMQGpmJT
- ESw4tJVXhJSd4tc8QxIUeoR4aON8KeYKkALnrw5s47ohmZNBhPo+qwT5b8jUYQKYPvE8
- WTOtObU2xAn3XndG7GJQt9zP7wlg+LYUgG88+iPAfzU2ZtN13cCJIExA/TCFKLD/LDtq
- ya+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version:subject
- :from:to:cc;
- bh=nxY7DzxbSarsBkUzCoMT9+dGA5Hco9t3mPu1VJ2rH2Y=;
- b=l6WjVJgkiW8sO0zu3oesdYLHxLv2P0i2lys9asAKjWF92EHRnrzoSgSU7kkx3cLX8v
- MsdlwBpp42qvRwD2zvCgb4wNwlN5EYkMvvB9hpxkt7lABxvpc2rXKmrp+mDwxEfFexd+
- W7g2Fegmc22SNw8O6S+1ayx760owfHtyFjFNqveQZz8vX+5U4zjZ9k/svlUnejGUN8Bq
- lgjbYVvevam1fg5QWAwf/pRVruIA0LsQzLlYDlWPBVr8tG7MAnwR1zemwanELaW5RzES
- zyeo3jG/naeuYpUlSB4WLKkO09qZjSB8IEFN3X5+PiAW2OcGbhlBsHvawXXfMDkuG+LF
- sAlg==
-X-Gm-Message-State: AGi0PubhLPpPDcWL2KrEb2G3ouAjHTwwANEPaq0rYbej24NnsIe2qxb3
- sFYkpLq7n56dvo3moPH1MHNdJY8=
-X-Google-Smtp-Source: APiQypKgFDb8KCzmgYgxVDucLRyOXpZ9H/xmwoLlzRcIvPE9zKQdwc/6Sn3ijVAcRQw7W9+f3dCU3xs=
-X-Received: by 2002:a17:90a:24e7:: with SMTP id
- i94mr3380061pje.117.1587685760232; 
- Thu, 23 Apr 2020 16:49:20 -0700 (PDT)
-Date: Thu, 23 Apr 2020 16:49:03 -0700
-In-Reply-To: <CAMn1gO6Ki=3Znco6xr9h3MhxfTGCH-PYk3V+KxKi_tpNYDzVuA@mail.gmail.com>
-Message-Id: <20200423234903.226369-1-pcc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
-Subject: [PATCH] arm64: dts: fast models: Switch to dynamically allocated VRAM
-From: Peter Collingbourne <pcc@google.com>
-To: Linus Walleij <linus.walleij@linaro.org>
+ id 1jRmk1-00048t-7h
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 01:02:56 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587690175; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=C6EtPe9/ywNbFaYCqJKxnf3a/bceWnaf/TGRhPkvpLs=;
+ b=hbOWbCKyiknGHldm94zzgAmKR36EYlM22gfOn3LppviRZx7kZQyQ62fypzZ3ZPtqhl1piAdk
+ Ba5w9060CfP0THcCr1vp1Auhq2CNsl43RshTrADk3/yTHsXNMZ7hh64ZRhsb5w5SkE/xZeDe
+ KFZtqMmU3oOluN8MSBRwyA5ZWtA=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ea23aac.7fe28fa12308-smtp-out-n03;
+ Fri, 24 Apr 2020 01:02:36 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id B4E63C432C2; Fri, 24 Apr 2020 01:02:36 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [192.168.142.6] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: clew)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id CF86EC433D2;
+ Fri, 24 Apr 2020 01:02:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org CF86EC433D2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=clew@codeaurora.org
+Subject: Re: [PATCH 1/4] remoteproc: qcom: Pass ssr_name to glink subdevice
+To: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Andy Gross <agross@kernel.org>, Ohad Ben-Cohen <ohad@wizery.com>
+References: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
+ <20200423003736.2027371-2-bjorn.andersson@linaro.org>
+From: Chris Lew <clew@codeaurora.org>
+Message-ID: <a85fbaf4-443a-be2c-07d4-9bd826788ed1@codeaurora.org>
+Date: Thu, 23 Apr 2020 18:02:35 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <20200423003736.2027371-2-bjorn.andersson@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_164921_895025_15B751DC 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200423_180255_283390_58544CA3 
+X-CRM114-Status: GOOD (  11.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,54 +93,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Kevin Brodsky <kevin.brodsky@arm.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sibi <sibis@codeaurora.org>,
+ Siddharth Gupta <sidgup@codeaurora.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the Fast Models Reference Manual, FVP has 32MB of video
-RAM, However, even 32MB is not sufficient for some applications,
-such as Android, which requires around 100-200MB when textures are
-allocated in VRAM via DRM.
 
-FVP supports DMA between DRAM and the graphics device. Therefore,
-use a dynamically allocated region of reserved memory to provide
-a sufficient amount of video RAM. The allocation is of size 256MB,
-which ought to be enough for anyone.
 
-Although this means that the designated VRAM ends up being left unused,
-FVP allows the size of DRAM to be configurable, so this should not
-be a problem in practice.
+On 4/22/2020 5:37 PM, Bjorn Andersson wrote:
+> Pass ssr_name to glink subdevice in preparation for tying glink_ssr to
+> the glink subdevice, rather than having its own "ssr subdevice".
+> 
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-Signed-off-by: Peter Collingbourne <pcc@google.com>
----
- arch/arm64/boot/dts/arm/fvp-base-revc.dts | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+Acked-by: Chris Lew <clew@codeaurora.org>
 
-diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-index 66381d89c1ce..57641f16f22e 100644
---- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-+++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-@@ -103,11 +103,9 @@ reserved-memory {
- 		#size-cells = <2>;
- 		ranges;
- 
--		/* Chipselect 2,00000000 is physically at 0x18000000 */
--		vram: vram@18000000 {
--			/* 8 MB of designated video RAM */
-+		vram: vram {
- 			compatible = "shared-dma-pool";
--			reg = <0x00000000 0x18000000 0 0x00800000>;
-+			size = <0 0x10000000>;
- 			no-map;
- 		};
- 	};
 -- 
-2.26.2.303.gf8c07b1a785-goog
-
+Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, a 
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
