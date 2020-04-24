@@ -2,92 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A88E61B7285
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 12:53:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D123E1B72C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 13:11:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=shgSGEBdET7RMqFeVNzSHnK0hQVEEN+LS/dXCCIO9c4=; b=gyw+6aSoGIQ2KA8OrMhY21zpH
-	hxTkMWc3m8R2Vgh1XJTo2T2JI5x8sQ0r2hzAC2XXlQpe3pesv+gJSGu/Agvy5uc3N0j3zDxx/oyjb
-	N3qoMcOZL00A1hN2lrvHY6dSIs634OU4HhyyxLDqYnWQk8fNAiO/AdV69hpLzH8ghVH3IwW+pvE2+
-	Ysm6GEoVxCEG04h8VKMVQaEm7ggTVulEb8er6c4M1uHCTa87DkjkJQud2bWqaHUOGHHoY2ar9e4Jn
-	2GBoTMfIDSdHg3jBtZs81kjpTUM7ICFSkmzjMVSHPD+8Rcvw7xDJPqLwMIDW20hf8YmRLdtTFEIY2
-	zhQtqRDxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=n7EXfL2t83GXwwMaiBeqXtzZP53Pzi3h385F2lv0F8U=; b=G6P
+	/tm/u+2bAhO4rTM8P+/2JARTCu9rUm2V4t6Wjp7odSNC44Lj9diX8WMSeQq8IZO8qMDoIlPOOHsD5
+	8VtQk4cqUb8Ybw6VSuAntSivqlCEeTCX0gkD5tdMnQYduc2utYWGenbwLkgqibXIc5zY/5ujSALDd
+	hauwD5/U3DpNXOCi0t7takzdKOslb3R63JWX2YWfMcajGjyuiCjsMhCfLXaELLUWzDrA4gMRTts29
+	ODA63h57pWqr0+K2ZVk1ZkqKaKeh6HExpo5j2g6UtbKKCJqF0JDVapGJk64uxUVfR6nWNb3yCPKh1
+	sNhcYQZrv+ScPzCV+PXJwR4FmFG+O5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRvxZ-00084x-IS; Fri, 24 Apr 2020 10:53:29 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jRwF1-0004Vy-Nv; Fri, 24 Apr 2020 11:11:31 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRvxR-00083q-2M
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 10:53:22 +0000
-Received: by mail-pl1-x642.google.com with SMTP id v2so3595666plp.9
+ id 1jRwEt-0004Ui-2R
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 11:11:24 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d24so3612983pll.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 03:53:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=cc:subject:to:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=R8t+7888K7kzJGE2cpI0Gewrm7h/D6gEhogwIFx31Lk=;
- b=Qcq/8rBl9g732jhNkxk/yLJfMtvESceHcAhNq8mjG1GxTvJ8IX7OsX4ULyv5aXcf6A
- XZK65r0qm0zbgUZaDhunfmvAaUraaq1Y6pUQlG4QNpejre+aIew2/3nYeZhhxpLmaImq
- Qh00PpyAIBtDR0WZAoXZWMVSkicj+a+lzCswFroD6uPU8b9ctuKg4IKn/3d9UQcjA01j
- ENSqq8/hZkrORRlXWjzHqqqvZ9p2m5rZkD6K4IF7Uh3fCXN9H36cjfmcn1gmPrrCc4n8
- Juui253ahHG/SHnntUm/R4FJExyknpHv9GAo8z7R68twYuW74qB9ihE/KeE27+xXQtbc
- yRbw==
+ Fri, 24 Apr 2020 04:11:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=C9PN16nlCbR73t00paMo9AAcjhtW4HbAszJmaJCFe6s=;
+ b=lpliri/AOX1NKMV8T3cDtg94yI7PnQd3PoHBB7izJ05O3YNMrdp87cyKPoXoul1D2f
+ GCDlSJpkivh7ZAXeOL5+rieJcE2DNN9iSZPIxLwZZVb+Qm3cbkQKJARpNBDhSn441Q3k
+ EE/DwBZRapV8OrmjMMahX2q9Y0C4WMpX4hk69nu8xDguJ6RnB84CQH3MXOlLLg92wKDl
+ Fb9TyMBzSej64Cl/TybB54K5NSjpfto9P+n7ojlR/5puv/zZibU+fu7Xw5J6BL+3Rqro
+ Ug6iJYH3OeR6FNDoawewxo7/oN7WxIsHlFiqoKkwXBrWxLRU4Nn1LOjl8yBF9g1jLSa6
+ /m4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:cc:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=R8t+7888K7kzJGE2cpI0Gewrm7h/D6gEhogwIFx31Lk=;
- b=UkphU+bfU6flWFfb1N221Yo6S3RP5oMNH8NP+CTUGQ5xAp04ctUquvL7gpxh0HZNQy
- 3+bEMx43NfDRKcnJt2HzVWN837BUF5ic1Ii92b5wABiBCFT4euq1a4WBN7wFAqPdO6sh
- i/YL40/AwK3rd0PhmwO2rucFCR7sGEadiFW4J2T+8Mc5javE7mL+o4TTUrBaQq5jcryZ
- KlX8V4fti2/8aOMDsrmTowx+WaiPU47a2BDGfo5c9A6UVKrkBtpOIxdKy7Qy9Gsu2152
- nas1U6in6wvCYfrf0Ovb3E+KTm2SN0iI50OY/rU0cam/fptZuA+vkPI0vPGer++XK0UE
- r2rg==
-X-Gm-Message-State: AGi0PuYX3c59iA1tbCINfdVi3rWTykCNAA9mtajf3mHR+F78ymChkjYr
- rL10j5BL4D/apNy3XrveglA=
-X-Google-Smtp-Source: APiQypK5+esVN5CdbnzPWeW2IhtsX++39F6f0uikR/CRyclafcDhXyyY7JjiOPtD6LG9xwD0kd49Ew==
-X-Received: by 2002:a17:90a:328f:: with SMTP id
- l15mr5666046pjb.77.1587725599462; 
- Fri, 24 Apr 2020 03:53:19 -0700 (PDT)
-Received: from [192.168.1.149] ([42.119.157.180])
- by smtp.gmail.com with ESMTPSA id 198sm5628223pfa.87.2020.04.24.03.53.15
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 24 Apr 2020 03:53:18 -0700 (PDT)
-Subject: Re: Re: [PATCH v2] arm64: add check_wx_pages debugfs for CHECK_WX
-To: Will Deacon <will@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- ruscur@russell.cc
-References: <20200307093926.27145-1-tranmanphong@gmail.com>
- <20200421173557.10817-1-tranmanphong@gmail.com>
- <20200422143526.GD54796@lakrids.cambridge.arm.com>
- <20200422152656.GF676@willie-the-truck>
-From: Phong Tran <tranmanphong@gmail.com>
-Message-ID: <e06b1ad1-08ca-ec50-7ca1-7d08bbea81b3@gmail.com>
-Date: Fri, 24 Apr 2020 17:52:41 +0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200422152656.GF676@willie-the-truck>
-Content-Language: en-US
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=C9PN16nlCbR73t00paMo9AAcjhtW4HbAszJmaJCFe6s=;
+ b=ivx+0hpLDRiS+H/Gp/JONMBYDqFpv/nEoDUmWPH5NPxk1cF5nEzoUErBtXIxxiT4y7
+ HDOAIS24lr2JR3kT9YxKmseR0K4MV1mvNHQ+Lh4BtjHL6ODaO9FbPWWaKaVfSBpT26Ut
+ 723DUIIOS9I+AjZYBwLCpigLl+lK9ITCZ7Hsbbo8dbGCfu421Duwud2JtVM+Ad9aV+8o
+ hYa7EjXVZQy51hQ/X+zssLVotPsHTKQ5I/oVm/EsZiHOZILtmb0+XypL/qtJozFU1yNQ
+ cPw15ij19cmOsfwrTyXwp7x/c90OkfoWOTczh8UeGUFT5Zh7IKa6+GPXkxyt17BgF/ik
+ zHZg==
+X-Gm-Message-State: AGi0PuZaFsqPn+1GC+cZup7eAufnaBm/rnuvHkmaZQMz8VklaM75NkzK
+ 8BdWqaeep1yD49dB3b1gwxp+794B+ZFw5g==
+X-Google-Smtp-Source: APiQypJRiNBG/TsX5FoVn/NIsUMUkt59D0Cs90C2+w+JS9ApTI5yokyp2gpBXnHP+0nU4wDjA7zGYQ==
+X-Received: by 2002:a17:90a:f995:: with SMTP id
+ cq21mr5615679pjb.56.1587726681811; 
+ Fri, 24 Apr 2020 04:11:21 -0700 (PDT)
+Received: from localhost.localdomain ([117.252.71.186])
+ by smtp.gmail.com with ESMTPSA id o11sm4637628pgd.58.2020.04.24.04.11.14
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 Apr 2020 04:11:20 -0700 (PDT)
+From: Sumit Garg <sumit.garg@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [RFC Patch v1 0/4] arm64: Introduce new IPI as IPI_CALL_NMI_FUNC
+Date: Fri, 24 Apr 2020 16:39:10 +0530
+Message-Id: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_035321_110096_0CBE7E7A 
-X-CRM114-Status: GOOD (  18.09  )
+X-CRM114-CacheID: sfid-20200424_041123_128604_76B2E84C 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tranmanphong[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -106,112 +93,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, steve.capper@arm.com, tranmanphong@gmail.com,
- greg@kroah.com, kernel-hardening@lists.openwall.com,
- linux-kernel@vger.kernel.org, steven.price@arm.com, alexios.zavras@intel.com,
- broonie@kernel.org, akpm@linux-foundation.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: Sumit Garg <sumit.garg@linaro.org>, daniel.thompson@linaro.org,
+ jason@lakedaemon.net, catalin.marinas@arm.com, jason.wessel@windriver.com,
+ dianders@chromium.org, linux-kernel@vger.kernel.org, maz@kernel.org,
+ kgdb-bugreport@lists.sourceforge.net, tglx@linutronix.de, will@kernel.org,
+ julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/22/20 10:26 PM, Will Deacon wrote:
-> On Wed, Apr 22, 2020 at 03:35:27PM +0100, Mark Rutland wrote:
->> On Wed, Apr 22, 2020 at 12:35:58AM +0700, Phong Tran wrote:
->>> follow the suggestion from
->>> https://github.com/KSPP/linux/issues/35
->>>
->>> Signed-off-by: Phong Tran <tranmanphong@gmail.com>
->>> ---
->>> Change since v1:
->>> - Update the Kconfig help text
->>> - Don't check the return value of debugfs_create_file()
->>> - Tested on QEMU aarch64
->>
->> As on v1, I think that this should be generic across all architectures
->> with CONFIG_DEBUG_WX. Adding this only on arm64 under
->> CONFIG_PTDUMP_DEBUGFS (which does not generally imply a WX check)
->> doesn't seem right.
->>
->> Maybe we need a new ARCH_HAS_CHECK_WX config to make that simpler, but
->> that seems simple to me.
-> 
-> Agreed. When I asked about respinning, I assumed this would be done in
-> generic code as you requested on the first version. Phong -- do you think
-> you can take a look at that, please?
-> 
+With pseudo NMIs support available its possible to configure SGIs to be
+triggered as pseudo NMIs running in NMI context. And kernel features
+such as kgdb relies on NMI support to round up CPUs which are stuck in
+hard lockup state with interrupts disabled.
 
-sure, plan to make change in mm/ptdump.c with KConfig 
-"ARCH_HAS_CHECK_WX" as suggestion.
+This patch-set adds support for IPI_CALL_NMI_FUNC which can be triggered
+as a pseudo NMI which in turn is leveraged via kgdb to round up CPUs.
 
-Then need align with this patch in PowerPC arch also
+After this patch-set we should be able to get a backtrace for a CPU
+stuck in HARDLOCKUP. Have a look at an example below from a testcase run
+on Developerbox:
 
-https://lore.kernel.org/kernel-hardening/20200402084053.188537-3-ruscur@russell.cc/
+$ echo HARDLOCKUP > /sys/kernel/debug/provoke-crash/DIRECT
 
-diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
-index a1efa246c9ed..50f18e7ff2ae 100644
---- a/arch/arm64/Kconfig.debug
-+++ b/arch/arm64/Kconfig.debug
-@@ -25,6 +25,7 @@ config ARM64_RANDOMIZE_TEXT_OFFSET
+# Enter kdb via Magic SysRq
 
-  config DEBUG_WX
-         bool "Warn on W+X mappings at boot"
-+       select ARCH_HAS_CHECK_WX
-         select PTDUMP_CORE
-         ---help---
-           Generate a warning if any W+X mappings are found at boot.
-diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
-index 0271b22e063f..40c9ac5a4db2 100644
---- a/mm/Kconfig.debug
-+++ b/mm/Kconfig.debug
-@@ -138,3 +138,6 @@ config PTDUMP_DEBUGFS
-           kernel.
+[11]kdb> btc
+btc: cpu status: Currently on cpu 11
+Available cpus: 0-10(I), 11, 12(I), 13, 14-23(I)
+<snip>
+Stack traceback for pid 623
+0xffff00086a644600      623      622  1   13   R  0xffff00086a644fc0  bash
+CPU: 13 PID: 623 Comm: bash Not tainted 5.7.0-rc2 #27
+Hardware name: Socionext SynQuacer E-series DeveloperBox, BIOS build #73 Apr  6 2020
+Call trace:
+ dump_backtrace+0x0/0x198
+ show_stack+0x18/0x28
+ dump_stack+0xb8/0x100
+ kgdb_cpu_enter+0x5c0/0x5f8
+ kgdb_nmicallback+0xa0/0xa8
+ handle_IPI+0x190/0x200
+ gic_handle_irq+0x2b8/0x2d8
+ el1_irq+0xcc/0x180
+ lkdtm_HARDLOCKUP+0x8/0x18
+ direct_entry+0x124/0x1c0
+ full_proxy_write+0x60/0xb0
+ __vfs_write+0x1c/0x48
+ vfs_write+0xe4/0x1d0
+ ksys_write+0x6c/0xf8
+ __arm64_sys_write+0x1c/0x28
+ el0_svc_common.constprop.0+0x74/0x1f0
+ do_el0_svc+0x24/0x90
+ el0_sync_handler+0x178/0x2b8
+ el0_sync+0x158/0x180
+<snip>
 
-           If in doubt, say N.
-+
-+config ARCH_HAS_CHECK_WX
-+       bool
-diff --git a/mm/ptdump.c b/mm/ptdump.c
-index 26208d0d03b7..8f54db007aaa 100644
---- a/mm/ptdump.c
-+++ b/mm/ptdump.c
-@@ -137,3 +137,29 @@ void ptdump_walk_pgd(struct ptdump_state *st, 
-struct mm_struct *mm, pgd_t *pgd)
-         /* Flush out the last page */
-         st->note_page(st, 0, -1, 0);
-  }
-+
-+#ifdef CONFIG_ARCH_HAS_CHECK_WX
-+#include <linux/debugfs.h>
-+#include <asm/ptdump.h>
-+
-+static int check_wx_debugfs_set(void *data, u64 val)
-+{
-+       if (val != 1ULL)
-+               return -EINVAL;
-+
-+       ptdump_check_wx();
-+
-+       return 0;
-+}
-+
-+DEFINE_SIMPLE_ATTRIBUTE(check_wx_fops, NULL, check_wx_debugfs_set, 
-"%llu\n");
-+
-+static int ptdump_debugfs_check_wx_init(void)
-+{
-+       debugfs_create_file("check_wx_pages", 0200, NULL,
-+                       NULL, &check_wx_fops) ? 0 : -ENOMEM;
-+       return 0;
-+}
-+
-+device_initcall(ptdump_debugfs_check_wx_init);
-+#endif
+Looking forward to your comments/feedback.
 
+Sumit Garg (4):
+  arm64: smp: Introduce a new IPI as IPI_CALL_NMI_FUNC
+  irqchip/gic-v3: Add support to handle SGI as pseudo NMI
+  irqchip/gic-v3: Enable arch specific IPI as pseudo NMI
+  arm64: kgdb: Round up cpus using IPI_CALL_NMI_FUNC
 
-Regards,
-Phong.
+ arch/arm64/include/asm/hardirq.h |  2 +-
+ arch/arm64/include/asm/smp.h     |  1 +
+ arch/arm64/kernel/kgdb.c         | 15 +++++++++++++++
+ arch/arm64/kernel/smp.c          | 36 +++++++++++++++++++++++++++++++++++-
+ drivers/irqchip/irq-gic-v3.c     | 36 +++++++++++++++++++++++++++++++-----
+ 5 files changed, 83 insertions(+), 7 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
