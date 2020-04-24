@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63F4C1B80A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:26:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E401B80A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:26:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EyVHZ+rA+72IBysF6aR0gxAdsDA/nn2yb6b6/dvlRd0=; b=XMox5swu8giBtm
-	rK+alBTuVfEQcDQhP/YK3yZnct7pF5F6Kv06oGh2V3DIJbzsTRwHc6IOZpixBPgeMnliI0DsVUeNl
-	e5GrJWJMuYVGSzQc0ppGAgrkfENveHcQT8VhNmgh/3HKAH/WtdIi6BixXxGeUGc/qRQdw6tbF0Sur
-	R0/9a7TKbqpxPFsDPV46vRmPE19RB56YbE1VQKWNPXEwSBV2A6dF1tFgSmrprTWor3adKnCzTP0EA
-	d6wPAsc6GVdiFVJvQizj6WwS/4uAfh9fS5lYpmJQmNjnR1i94mbbaIYJo5IN7womeF+NMgOxvpdM/
-	qieHPR7smivgmQNqHsHg==;
+	List-Owner; bh=ULw3V9tH9ORb6T1ABThv1BMW6OPauNVvyxDkoI1mPwA=; b=udAEBWuQPFL8KO
+	q5A/0eI1kHE7+JY/k3UGB0XenrecLQ6aGmeEiQolh4B4+kWCX2tLR6c20MiijLgDVIGmg2rxvQNKm
+	xk6x1xJXlAG/wl9Wwhh0Ua8jBC2Vf/d4ILgXq8wL5A3JbYszBbo26pGFiHLXOKAKiPRzY/dAZMHmZ
+	86I0zmJDg1uUHICpplgp0C8IoqtQuUSBm+q2vdLkeDYgwaNnCrf2eENE922dJbijLvOmRHRBhgNR9
+	Fwl7WKshBunoLeluFMMlU/SJ5f/75jip5CQpSaf6rSXK7LEIQ1RVqOLEjcnDIyAq1nvxQmy9cOwRB
+	pNj3GNeWxutAaZ2kBtyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS4tr-0005FG-Nn; Fri, 24 Apr 2020 20:26:15 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jS4uP-0005j9-J3; Fri, 24 Apr 2020 20:26:49 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS4sq-0004el-BU
+ id 1jS4sr-0004gQ-WE
  for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:25:16 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id a5so4335281pjh.2
+Received: by mail-pj1-x1043.google.com with SMTP id y6so4336743pjc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 13:25:12 -0700 (PDT)
+ Fri, 24 Apr 2020 13:25:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=mrZHw3wDEqsWxtX6I3Qw+OHrqvqS6c3mqgfKBC8xSv8=;
- b=nEIHT4o5k+submU1rUBIRjPzreeeM7YSY4E7V1SEGu5YkKslbOpGjRxk2PVJ0e6xHd
- SXjmkQFR0s76Vs+SIhZbiqdwxsxXClpb114b/0W8uabUhIKFao3OKd1L4nuMX1znjiPe
- qQP7XgxiC4lZLDwECOiQbzUW0fEuqUgbDTn0rw28bGRcuJ7ngPnzqT2ZSGJLoxMn/PxZ
- fffRPF6DxDAFWbgEb6z50zzUw7NNjxuXSWuXCgJJacAYw3fPqEgIUoslVBSEZMjMwBxp
- BI43yLdV4LCUQzNbtcSRkmPWV1eRNty/VNcNXkODiU/gepJb91dnMBcF8aeufnmxkkCX
- lQGw==
+ bh=8pkHvjPLwA96bIGz2NSSF7mXbbhD0VV71pWPGube4rE=;
+ b=bBYjk7oGchLHLu2fhyb+5w8E3eMQmDXLajYwnSEoNKZRaYmkH0vi8FbFTDbUvVRsr8
+ 1kQ/9bmhSE9nEd0h8GciZnigyFT77H7YY3aEtLzrHHMfMG/paQO+0fWET24ArhZqHg3c
+ vqdwlGoPskGInUqnaGxRnd2S8rBW6Fmj3W7VsY8JPtJkKnY/T5nKIfI7iR74vB69yuvV
+ LmlaLQ8SiaFPpCkXS+0veavIxJ+YUQQsis25rSSvRTKWi/soBPN2Bdaf8IYVJ0TNJuqM
+ zs5BXVrG20QdavJxkRWBiRJ0w9dkN4jxu1vN6mAggY6wBIiWECeO1jFR6r+iMr8S6B1k
+ HarA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mrZHw3wDEqsWxtX6I3Qw+OHrqvqS6c3mqgfKBC8xSv8=;
- b=G/veuIyeQcnDH3ZQ9KP6Nxvz+Jk38YhZLpONOJtCF8VfpsoGp6TFyDVeqjkTQiXJrE
- Hdtef1SRkCdH9SSpwzs8IC8pqZFxS9vyw28wzPvle/JUehR93eNyJ93chB1Vymy3uS4R
- csOfMnp8TUwtdbbSliGQ6NDrfX0QHQQ2QDGfsxmgnlVupf51eGGfoaqt+nTZ7VWLb+8s
- 5siubv1xGD1klMlnids19WxB71MkUNqbtILV4N5hhWQwYkfQNehzH6DKj/oiLBdxywMg
- locECKbyfkZE8h0dvd14+Eva3qFqwK1tSGD1Dd2WQTDvhXsYOO2pEmeZ/Y/offmZM3T+
- dtsw==
-X-Gm-Message-State: AGi0PubTb06co/op/rx1REnjm+nyyWq+WeX0jyymCLUIFqSfamCv9sGU
- 4eGc15ogAQ73zcrspX4S0jxLug==
-X-Google-Smtp-Source: APiQypIckGk/05A/UD8d3TxSQDoWu1T4/CMGlEehpQVQAKrC1wqh0IN3n+KIr7o6Kj7ucki41lXmAQ==
-X-Received: by 2002:a17:90a:d703:: with SMTP id
- y3mr8770619pju.75.1587759911901; 
- Fri, 24 Apr 2020 13:25:11 -0700 (PDT)
+ bh=8pkHvjPLwA96bIGz2NSSF7mXbbhD0VV71pWPGube4rE=;
+ b=ebGypO6zNf81qpFoHzI29WkHVc5MPvUhg4xAO3CixZ7JeePpRfpdxBxFHDkcH2zkkJ
+ WBn4AzyIWehVf1UcpRD051KW4/8gY+qy6skxScSN5L4POTx/CIPPZyXQVuiA3iZBOND1
+ Ag6KbnekSdgpcXfqVQJCk1R1Mfmkl3EpwAbfVg7yrkjZmeNgzQPFQ7DnnQ5c9qyZVIhn
+ u2sA4UXYtwUSArBf4pgOJKJMo4RuUnlHis0ky0pxLklSEitFQJLsjN9z8mdK2LyXTCTs
+ 45q1G8g9GC0L5aapOsNNGN4oQbJp0AZwYOlG/EtFjZw1J2+GTnclv2pTuoZtTPzINSOW
+ efLg==
+X-Gm-Message-State: AGi0PuZY754NSWTYG+kc8IAGcbhzTvdQ/6oxZHhoEgMO6GHfSS4n0Aa8
+ Cdti6hDCYgrR7ZepjSEhCJT6NA==
+X-Google-Smtp-Source: APiQypI45S+tU5qGacvuJcZRdZ1Rko8UnR0Z/uIU3/5Gk8Rmx2uzncC3GiqshF8IMa1UpBS4OILd+Q==
+X-Received: by 2002:a17:90a:101:: with SMTP id
+ b1mr8385987pjb.154.1587759913129; 
+ Fri, 24 Apr 2020 13:25:13 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id c1sm6553245pfc.94.2020.04.24.13.25.10
+ by smtp.gmail.com with ESMTPSA id c1sm6553245pfc.94.2020.04.24.13.25.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 24 Apr 2020 13:25:11 -0700 (PDT)
+ Fri, 24 Apr 2020 13:25:12 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: bjorn.andersson@linaro.org, ohad@wizery.com, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com
-Subject: [PATCH v2 04/12] remoteproc: stm32: Remove memory translation from DT
- parsing
-Date: Fri, 24 Apr 2020 14:24:57 -0600
-Message-Id: <20200424202505.29562-5-mathieu.poirier@linaro.org>
+Subject: [PATCH v2 05/12] remoteproc: stm32: Parse syscon that will manage M4
+ synchronisation
+Date: Fri, 24 Apr 2020 14:24:58 -0600
+Message-Id: <20200424202505.29562-6-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200424202505.29562-1-mathieu.poirier@linaro.org>
 References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_132512_537318_40D01D1F 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200424_132514_049124_CC837750 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,42 +108,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Other than one has to be done after the other, there is no correlation
-between memory translation and DT parsing.  As move function
-stm32_rproc_of_memory_translations() to stm32_rproc_probe() so that
-stm32_rproc_parse_dt() can be extended to look for synchronisation
-related binding in a clean way.
+Get from the DT the syncon to probe the state of the remote processor
+and the location of the resource table.
+
+Mainly based on the work published by Arnaud Pouliquen [1].
+
+[1]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=239877
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Reviewed-by: Loic Pallardy <loic.pallardy@st.com>
 ---
- drivers/remoteproc/stm32_rproc.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/remoteproc/stm32_rproc.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
 diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-index 57a426ea620b..658439d4b00a 100644
+index 658439d4b00a..a285f338bed8 100644
 --- a/drivers/remoteproc/stm32_rproc.c
 +++ b/drivers/remoteproc/stm32_rproc.c
-@@ -606,7 +606,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev,
+@@ -70,6 +70,8 @@ struct stm32_rproc {
+ 	struct reset_control *rst;
+ 	struct stm32_syscon hold_boot;
+ 	struct stm32_syscon pdds;
++	struct stm32_syscon m4_state;
++	struct stm32_syscon rsctbl;
+ 	int wdg_irq;
+ 	u32 nb_rmems;
+ 	struct stm32_rproc_mem *rmems;
+@@ -606,6 +608,30 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev,
  
  	*auto_boot = of_property_read_bool(np, "st,auto-boot");
  
--	return stm32_rproc_of_memory_translations(pdev, ddata);
-+	return 0;
++	/*
++	 * See if we can check the M4 status, i.e if it was started
++	 * from the boot loader or not.
++	 */
++	err = stm32_rproc_get_syscon(np, "st,syscfg-m4-state",
++				     &ddata->m4_state);
++	if (err) {
++		/* remember this */
++		ddata->m4_state.map = NULL;
++		/* no coprocessor state syscon (optional) */
++		dev_warn(dev, "m4 state not supported\n");
++
++		/* no need to go further */
++		return 0;
++	}
++
++	/* See if we can get the resource table */
++	err = stm32_rproc_get_syscon(np, "st,syscfg-rsc-tbl",
++				     &ddata->rsctbl);
++	if (err) {
++		/* no rsc table syscon (optional) */
++		dev_warn(dev, "rsc tbl syscon not supported\n");
++	}
++
+ 	return 0;
  }
  
- static int stm32_rproc_probe(struct platform_device *pdev)
-@@ -634,6 +634,10 @@ static int stm32_rproc_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto free_rproc;
- 
-+	ret = stm32_rproc_of_memory_translations(pdev, ddata);
-+	if (ret)
-+		goto free_rproc;
-+
- 	rproc->auto_boot = auto_boot;
- 	rproc->has_iommu = false;
- 	ddata->workqueue = create_workqueue(dev_name(dev));
 -- 
 2.20.1
 
