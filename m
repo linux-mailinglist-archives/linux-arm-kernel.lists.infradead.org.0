@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 474511B7E4D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 20:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C2DF1B7E54
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 20:52:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNWYUlyaISDFE4ePP1IAR/qEAxCoh75xIHSc+fByVwQ=; b=pci6dsQaJ8p12z
-	1OC2wVym/zuLDT/Jzqzh6O3wpGSngc4ZZ5hAS0B2u1NQio/APG/5ki2AO9942ZCdf60cbNrWhetFD
-	k10Su4pDi8g9xuk/1YK5skk3D8pOxzC4Ja2u+KT8iBE4/ojX7iE0ozyi2rELxd4eNYNQ//M/Zlbdk
-	1e2cNOZWjEIHQqYm4w1TKCZS8S/6hBBuWxk1VGKr93GToG9t/KEog+1DkbWbHyGROGrC5YZDUmGQB
-	PJ0/dyrKRqtIZZZ/7eN3vFo8ZoHnYUWUT6eMba6sacqSh67sEd6DGMlTXmRCPveZh9v+UZ8VKYo1X
-	qtHBaP4qWarsiyyitOyA==;
+	List-Owner; bh=szaOQvM5d5cTkUEQobts51n1g4L/UYhk0LTs0y1uqI4=; b=X3st4wyDDRsI0P
+	qPxoACWFxsvg07MUJGy+q/XqI5F6HQ//gvvHVUIj72wQ63ACXnrse5xo/LMwUUTqKgdh5pQxz4DgO
+	2MV0eMhKR1ULeGgqFPZ1R2NjOt+0Da79zbbOxyv6wMwUnorDcrFHKik00BKjgCwaVU1uucUGAcxIV
+	5mKoehnbesWLiP1ut4p+AKPv4Hsvhm4JWstaZpQSxha9RCTl4iokTcoosYaV2BBhthZq5nmbuetRS
+	WdurQJicYVsogqOy8vQPm/k7TvE9KfLNM+T23kVU6qc0EbUfqASF1bmXFJZjO/fWjxRAj7OT93nmi
+	CtXqNmEcubdRDGj7WKiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS3Q7-0000XE-HB; Fri, 24 Apr 2020 18:51:27 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jS3R6-0001VP-S2; Fri, 24 Apr 2020 18:52:28 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS3Jx-0007jW-39; Fri, 24 Apr 2020 18:45:09 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03OIixX3095290;
- Fri, 24 Apr 2020 13:44:59 -0500
+ id 1jS3K0-0008HC-M3; Fri, 24 Apr 2020 18:45:13 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03OIj47K102872;
+ Fri, 24 Apr 2020 13:45:04 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587753899;
- bh=X+jVERp3Pi24wfeIXsz0Xu98WlkzbhbU/0kTRioq57Y=;
+ s=ti-com-17Q1; t=1587753904;
+ bh=ChEstIHCEfiW2Hp7Q6OB5Ms+2ON8V0fnE6j2cFQvJvk=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=RCHNLf0wGNUkqNKx7sOeh81T7hIdYqP2w8amTNEj1AeQoJB/g5i6vLB5v/kWj0MEr
- /NtgNOwmT3Kr13mBUFneghAQh2Wyc7NsMNalGGpPla97SoX2TEv7q8iYq2zkgBUV3I
- CfTBeGTAFd2rQDQWe/5keRQrv+4zC/vsdMBgNDGA=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03OIixbB021245
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 24 Apr 2020 13:44:59 -0500
-Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ b=sFB2fXocNnlu/Qjyf86i+5rUf1ktdgzXL961EOG2iagnnSNK0tYiVik0zZm/bUGkb
+ aS4XI2MAa8kwGz92fp+301nXE0Y7k1EKMBM7j7jk0qx9F2E6fT/l5TcrlBgqFhD4Kp
+ q1ghsxTfsa3b9lpAghFlGFIc5FfMJePgiSHisP9o=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03OIj4kD086213;
+ Fri, 24 Apr 2020 13:45:04 -0500
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 24
- Apr 2020 13:44:59 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ Apr 2020 13:45:03 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 24 Apr 2020 13:44:59 -0500
+ Frontend Transport; Fri, 24 Apr 2020 13:45:03 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03OIiAaH047967;
- Fri, 24 Apr 2020 13:44:55 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03OIiAaI047967;
+ Fri, 24 Apr 2020 13:45:00 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
@@ -57,24 +56,24 @@ To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <ludovic.desroches@microchip.com>,
  <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v4 11/16] mtd: spi-nor: enable octal DTR mode when possible
-Date: Sat, 25 Apr 2020 00:14:05 +0530
-Message-ID: <20200424184410.8578-12-p.yadav@ti.com>
+Subject: [PATCH v4 12/16] mtd: spi-nor: perform a Soft Reset on shutdown
+Date: Sat, 25 Apr 2020 00:14:06 +0530
+Message-ID: <20200424184410.8578-13-p.yadav@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200424184410.8578-1-p.yadav@ti.com>
 References: <20200424184410.8578-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_114505_420115_E5B95C56 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20200424_114509_053093_C8CD1AD4 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,88 +101,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow flashes to specify a hook to enable octal DTR mode. Use this hook
-whenever possible to get optimal transfer speeds.
+A Software Reset sequence will return the flash to Power-on-Reset (POR)
+state. It consists of two commands: Soft Reset Enable and Soft Reset.
+
+Perform a Soft Reset on shutdown on flashes that support it so that the
+flash can be reset to its initial state and any configurations made by
+spi-nor (given that they're only done in volatile registers) will be
+reset. This will hand back the flash in pristine state for any further
+operations on it.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/mtd/spi-nor/core.c | 35 +++++++++++++++++++++++++++++++++++
- drivers/mtd/spi-nor/core.h |  2 ++
- 2 files changed, 37 insertions(+)
+ drivers/mtd/spi-nor/core.c  | 45 +++++++++++++++++++++++++++++++++++++
+ drivers/mtd/spi-nor/core.h  |  2 ++
+ include/linux/mtd/spi-nor.h |  2 ++
+ 3 files changed, 49 insertions(+)
 
 diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
-index 6eb2b1781972..c75765f09d62 100644
+index c75765f09d62..b0f94d6d28bf 100644
 --- a/drivers/mtd/spi-nor/core.c
 +++ b/drivers/mtd/spi-nor/core.c
-@@ -3085,6 +3085,35 @@ static int spi_nor_init_params(struct spi_nor *nor)
+@@ -40,6 +40,9 @@
+ 
+ #define SPI_NOR_MAX_ADDR_WIDTH	4
+ 
++#define SPI_NOR_SRST_SLEEP_MIN 200
++#define SPI_NOR_SRST_SLEEP_MAX 400
++
+ /**
+  * spi_nor_get_cmd_ext() - Get the command opcode extension based on the
+  *			   extension type.
+@@ -3189,6 +3192,41 @@ static int spi_nor_init(struct spi_nor *nor)
  	return 0;
  }
  
-+/** spi_nor_octal_dtr_enable() - enable Octal DTR I/O if needed
-+ * @nor:                 pointer to a 'struct spi_nor'
-+ * @enable:              whether to enable or disable Octal DTR
-+ *
-+ * Return: 0 on success, -errno otherwise.
-+ */
-+static int spi_nor_octal_dtr_enable(struct spi_nor *nor, bool enable)
++static void spi_nor_soft_reset(struct spi_nor *nor)
 +{
++	struct spi_mem_op op;
 +	int ret;
 +
-+	if (!nor->params->octal_dtr_enable)
-+		return 0;
-+
-+	if (!(spi_nor_get_protocol_width(nor->read_proto) == 8 ||
-+	      spi_nor_get_protocol_width(nor->write_proto) == 8))
-+		return 0;
-+
-+	ret = nor->params->octal_dtr_enable(nor, enable);
-+	if (ret)
-+		return ret;
-+
-+	if (enable)
-+		nor->reg_proto = SNOR_PROTO_8_8_8_DTR;
-+	else
-+		nor->reg_proto = SNOR_PROTO_1_1_1;
-+
-+	return 0;
-+}
-+
- /**
-  * spi_nor_quad_enable() - enable Quad I/O if needed.
-  * @nor:                pointer to a 'struct spi_nor'
-@@ -3124,6 +3153,12 @@ static int spi_nor_init(struct spi_nor *nor)
- {
- 	int err;
- 
-+	err = spi_nor_octal_dtr_enable(nor, true);
-+	if (err) {
-+		dev_dbg(nor->dev, "octal mode not supported\n");
-+		return err;
++	op = (struct spi_mem_op)SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_SRSTEN, 8),
++			SPI_MEM_OP_NO_DUMMY,
++			SPI_MEM_OP_NO_ADDR,
++			SPI_MEM_OP_NO_DATA);
++	spi_nor_spimem_setup_op(nor, &op, SNOR_PROTO_8_8_8_DTR);
++	ret = spi_mem_exec_op(nor->spimem, &op);
++	if (ret) {
++		dev_warn(nor->dev, "Software reset failed: %d\n", ret);
++		return;
 +	}
 +
- 	err = spi_nor_quad_enable(nor);
- 	if (err) {
- 		dev_dbg(nor->dev, "quad mode not supported\n");
++	op = (struct spi_mem_op)SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_SRST, 8),
++			SPI_MEM_OP_NO_DUMMY,
++			SPI_MEM_OP_NO_ADDR,
++			SPI_MEM_OP_NO_DATA);
++	spi_nor_spimem_setup_op(nor, &op, SNOR_PROTO_8_8_8_DTR);
++	ret = spi_mem_exec_op(nor->spimem, &op);
++	if (ret) {
++		dev_warn(nor->dev, "Software reset failed: %d\n", ret);
++		return;
++	}
++
++	/*
++	 * Software Reset is not instant, and the delay varies from flash to
++	 * flash. Looking at a few flashes, most range somewhere below 100
++	 * microseconds. So, sleep for a range of 200-400 us.
++	 */
++	usleep_range(SPI_NOR_SRST_SLEEP_MIN, SPI_NOR_SRST_SLEEP_MAX);
++}
++
+ /* mtd resume handler */
+ static void spi_nor_resume(struct mtd_info *mtd)
+ {
+@@ -3208,6 +3246,10 @@ void spi_nor_restore(struct spi_nor *nor)
+ 	if (nor->addr_width == 4 && !(nor->flags & SNOR_F_4B_OPCODES) &&
+ 	    nor->flags & SNOR_F_BROKEN_RESET)
+ 		nor->params->set_4byte_addr_mode(nor, false);
++
++	if (nor->info->flags & SPI_NOR_OCTAL_DTR_READ &&
++	    nor->flags & SNOR_F_SOFT_RESET)
++		spi_nor_soft_reset(nor);
+ }
+ EXPORT_SYMBOL_GPL(spi_nor_restore);
+ 
+@@ -3394,6 +3436,9 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+ 			nor->flags |= SNOR_F_HAS_SR_TB_BIT6;
+ 	}
+ 
++	if (info->flags & SPI_NOR_SOFT_RESET)
++		nor->flags |= SNOR_F_SOFT_RESET;
++
+ 	if (info->flags & NO_CHIP_ERASE)
+ 		nor->flags |= SNOR_F_NO_OP_CHIP_ERASE;
+ 	if (info->flags & USE_CLSR)
 diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
-index 7e6df8322da0..6338d32a0d77 100644
+index 6338d32a0d77..86c31357b321 100644
 --- a/drivers/mtd/spi-nor/core.h
 +++ b/drivers/mtd/spi-nor/core.h
-@@ -203,6 +203,7 @@ struct spi_nor_locking_ops {
-  *                      higher index in the array, the higher priority.
-  * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
-  *                      Table.
-+ * @octal_dtr_enable:	enables SPI NOR octal DTR mode.
-  * @quad_enable:	enables SPI NOR quad mode.
-  * @set_4byte_addr_mode: puts the SPI NOR in 4 byte addressing mode.
-  * @convert_addr:	converts an absolute address into something the flash
-@@ -226,6 +227,7 @@ struct spi_nor_flash_parameter {
+@@ -26,6 +26,7 @@ enum spi_nor_option_flags {
+ 	SNOR_F_HAS_SR_TB_BIT6	= BIT(11),
+ 	SNOR_F_HAS_4BIT_BP      = BIT(12),
+ 	SNOR_F_HAS_SR_BP3_BIT6  = BIT(13),
++	SNOR_F_SOFT_RESET	= BIT(14),
+ };
  
- 	struct spi_nor_erase_map        erase_map;
+ struct spi_nor_read_command {
+@@ -321,6 +322,7 @@ struct flash_info {
+ 					 * Must be used with SPI_NOR_4BIT_BP.
+ 					 */
+ #define SPI_NOR_OCTAL_DTR_READ	BIT(19) /* Flash supports octal DTR Read. */
++#define SPI_NOR_SOFT_RESET	BIT(20) /* Flash supports soft reset command */
  
-+	int (*octal_dtr_enable)(struct spi_nor *nor, bool enable);
- 	int (*quad_enable)(struct spi_nor *nor);
- 	int (*set_4byte_addr_mode)(struct spi_nor *nor, bool enable);
- 	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
+ 	/* Part specific fixup hooks. */
+ 	const struct spi_nor_fixups *fixups;
+diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
+index 9bb41d9401c6..7b828ee1c036 100644
+--- a/include/linux/mtd/spi-nor.h
++++ b/include/linux/mtd/spi-nor.h
+@@ -51,6 +51,8 @@
+ #define SPINOR_OP_CLFSR		0x50	/* Clear flag status register */
+ #define SPINOR_OP_RDEAR		0xc8	/* Read Extended Address Register */
+ #define SPINOR_OP_WREAR		0xc5	/* Write Extended Address Register */
++#define SPINOR_OP_SRSTEN	0x66	/* Software Reset Enable */
++#define SPINOR_OP_SRST		0x99	/* Software Reset */
+ 
+ /* 4-byte address opcodes - used on Spansion and some Macronix flashes. */
+ #define SPINOR_OP_READ_4B	0x13	/* Read data bytes (low frequency) */
 -- 
 2.25.0
 
