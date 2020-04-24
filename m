@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECE7E1B80C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADDFE1B80C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:35:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CbO+IzTEf/DOoX4s+YNqZci7i5ZakBcJaBDYcoyUNkk=; b=sRFerTgIo6Zp20
-	UT7f2GqZBXfySYG26R6VvMEJfYKSKh/yD3iWRCpHC6UUIWwd6cuO8ICEv/Zm7MDtIDuxXxIFFiMEs
-	Cj8ya8BfvmHhsGYdUN1DA0qktTp/ZG9Ta91S5XAh8t4xO7B1G84XVPp+VeFuKVgZKFLl5uap/Fdug
-	vP4jrL+gn4kq2c6NxuqHafhYPIvry0vgKf2EdJ9N9ruNxiPeAlxQg0zn0cql1ITPUAOBkMKWyOHsI
-	jZ9x0bgc9higwktf9/OEP+pNWFHO16pAc/UwzoPNIz7G73wV1ehm+xiV/4dHCH945dEW+FLdS/kZu
-	ij/WUtLVx7J9AIhq684g==;
+	List-Owner; bh=jlizgtNllSr8KMa9yGJxC+o0E/UbLaLKR5EFnehoxTI=; b=SoHCKf20mLwNRy
+	sjskWQfKazLpc0L+y5lgGbQ9yeAUSk4VDTD1Mj3Up5hfKCFhuTQmccmr/TVOVOaeZQzdbj3aLOlLS
+	KMbJr3b6p2Qb8hzqaovKq6cGaS4lE1Jdg87PbTLEMLMNVyPwdWZHXSq2bfzifWKMQeFZyMWrQdpet
+	+W/gnQxm89owPIHlyFw+48s7tVgmZZU20BcH72ZyLwfdVrmzIv2XE0XSjJWhTqdT0VAaEBMaV0CtB
+	+B7Tr+eDzHTIHKtYmWTSRk0Mjgz7YiVfkwoGdDxMqE3oiO+IRvllSLycXYl9hprUWHl2CqlB3++fa
+	/qTu+lTBhFoDxE86NTYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS52j-0003eO-NK; Fri, 24 Apr 2020 20:35:25 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::9])
+	id 1jS52F-0003Tf-TB; Fri, 24 Apr 2020 20:34:55 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS521-0003Os-Vv
+ id 1jS521-0003P8-UC
  for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:34:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587760470;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587760471;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=4YRtTIwRhflUjSLDQRHLZDleH744PLmERxGBhjKfPW8=;
- b=f4UbKbsoLoOFLFwm2iysnPqv4wdJYB3G0N+OK6xH+jJmn0rpc8vJlwO8CcUNclA2/X
- F1idaocpXlvmSZw9UEPEVtbCheY1zp+wwDlQCYCfVEsx6c6ILSY0A+SPPWPw29O4Djc5
- OTUkaLCvfj/Jn1OTy1POc3+dLlyzL4xTznzTGMr+WP94mgWgU+Twn3iy+EUsMh+m400J
- KqYrwi2JuFla/P4dX9M5K+Ao7sEPSlsvi19UVJipp7G8L0Gr7RLh7Th8p0y/A1uS86in
- Zjmw07x+YeVY6LdCJU7/ajHTw/WvNhQ9WgITr8WJm5v6Ac1LaK7MAineCTvMBXCbowbW
- WQkQ==
+ bh=aeLQCupRaiUXbpss4HFlekm68gu+EZORgbPWCj4bUNQ=;
+ b=bKkkTxuX2FvKqO7f3LGD38Y28Q0OYU3tw3QO6ykWHvRDhxmGMyaWdCzuoAqxO6otLR
+ BNO7q9xSc87++qkeJV37A5120dwhN1vnK77JiowWocr2J7R3BJR5DNGFoYANvmvkXDTh
+ 8yKeg4ZtxtJGYQdh6OOfmIRMFZnhq1lDSy8WAxQVLV7vK7Jf75j+Wonf9LL3SKCfurVJ
+ lSqZKoLh9/fCfxIRM1l7L1iwx+W8PSsbcmRdJJShSbw//l1TECd36uZvQbiT4Z2jvuTm
+ U6/iwxlliVtZT3BJnZdBv0nHC0zLl561T9kNAa6RWny+0nuWHSOKz9P/tOOTUEh18pov
+ yy3A==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXH6GK44R2FE"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw3OKYMEVE
+ with ESMTPSA id R0acebw3OKYNEVF
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Fri, 24 Apr 2020 22:34:22 +0200 (CEST)
+ Fri, 24 Apr 2020 22:34:23 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -51,23 +51,24 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v7 06/12] ARM: DTS: omap4: add sgx gpu child node
-Date: Fri, 24 Apr 2020 22:34:09 +0200
-Message-Id: <5f493a50fedef45c3cacd91cbf999092d9c05164.1587760454.git.hns@goldelico.com>
+Subject: [PATCH v7 07/12] ARM: DTS: omap5: add sgx gpu child node
+Date: Fri, 24 Apr 2020 22:34:10 +0200
+Message-Id: <5840297da588ba37f65a2a4f4f1421922fe28a06.1587760454.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <cover.1587760454.git.hns@goldelico.com>
 References: <cover.1587760454.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_133442_186944_720307DF 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20200424_133442_207896_DEE1591C 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:9 listed in]
+ no trust [2a01:238:20a:202:5304:0:0:2 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -101,26 +102,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add SGX GPU node with interrupt. Tested on PandaBoard ES.
-
-Since omap4420/30/60 and omap4470 come with different SGX variants
-we need to introduce a new omap4470.dtsi. If an omap4470 board
-does not want to use SGX it is no problem to still include
-omap4460.dtsi.
+Add SGX GPU node with interrupt. Tested on Pyra-Handheld.
 
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- arch/arm/boot/dts/omap4.dtsi   | 11 ++++++-----
- arch/arm/boot/dts/omap4470.dts | 15 +++++++++++++++
- 2 files changed, 21 insertions(+), 5 deletions(-)
- create mode 100644 arch/arm/boot/dts/omap4470.dts
+ arch/arm/boot/dts/omap5.dtsi | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/omap4.dtsi b/arch/arm/boot/dts/omap4.dtsi
-index 763bdea8c829..15ff3d7146af 100644
---- a/arch/arm/boot/dts/omap4.dtsi
-+++ b/arch/arm/boot/dts/omap4.dtsi
-@@ -389,7 +389,7 @@ abb_iva: regulator-abb-iva {
- 			status = "disabled";
+diff --git a/arch/arm/boot/dts/omap5.dtsi b/arch/arm/boot/dts/omap5.dtsi
+index 2ac7f021c284..1cf41664fd00 100644
+--- a/arch/arm/boot/dts/omap5.dtsi
++++ b/arch/arm/boot/dts/omap5.dtsi
+@@ -270,7 +270,7 @@ sata: sata@4a141100 {
+ 			ports-implemented = <0x1>;
  		};
  
 -		target-module@56000000 {
@@ -128,7 +122,7 @@ index 763bdea8c829..15ff3d7146af 100644
  			compatible = "ti,sysc-omap4", "ti,sysc";
  			reg = <0x5600fe00 0x4>,
  			      <0x5600fe10 0x4>;
-@@ -408,10 +408,11 @@ target-module@56000000 {
+@@ -287,10 +287,11 @@ target-module@56000000 {
  			#size-cells = <1>;
  			ranges = <0 0x56000000 0x2000000>;
  
@@ -137,34 +131,13 @@ index 763bdea8c829..15ff3d7146af 100644
 -			 * binding or driver in mainline
 -			 */
 +			gpu: gpu@0 {
-+				compatible = "ti,omap4-sgx540-120", "img,sgx540-120", "img,sgx540";
-+				reg = <0x0 0x2000000>;	/* 32MB */
++				compatible = "ti,omap5-sgx544-116", "img,sgx544-116", "img,sgx544";
++				reg = <0x0 0x10000>;
 +				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
 +			};
  		};
  
- 		/*
-diff --git a/arch/arm/boot/dts/omap4470.dts b/arch/arm/boot/dts/omap4470.dts
-new file mode 100644
-index 000000000000..f29c581300bf
---- /dev/null
-+++ b/arch/arm/boot/dts/omap4470.dts
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Device Tree Source for OMAP4470 SoC
-+ *
-+ * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com/
-+ *
-+ * This file is licensed under the terms of the GNU General Public License
-+ * version 2.  This program is licensed "as is" without any warranty of any
-+ * kind, whether express or implied.
-+ */
-+#include "omap4460.dtsi"
-+
-+&sgx {
-+	compatible = "ti,omap4470-sgx544-112", "img,sgx544-112", "img,sgx544";
-+};
+ 		target-module@58000000 {
 -- 
 2.25.1
 
