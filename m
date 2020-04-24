@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEE0F1B7138
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 11:52:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEA331B7144
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 11:54:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=27Nm6ccO50TqrvkjsDs5ic/bY8tBeQfRcvrPSPB4o4Y=; b=fMIND6fSpvSLLD
-	7gd0/yFBa0hmlM0LXzirCN9l6koz82p4XEcoRr8QLJRz+8u4KTYm4NBqooNHcy6mQOlHvCSkrm2Av
-	OGfAI8a3b6zqDmiQX7qLMzsqiRGRR9cz3PqF/j2RNgYwQrvEmdJYnQtnOxPD3TGVZN4Rw/Xpz8BjB
-	w/F/w8s725mu8jRtN3we9+oiJspwSLwdFoGZuxJvqRNN4JAyzi85UH00xvKEglZzXtiAbaf32lkJE
-	JKm76GyomPO8G4A9g1vSX+1FJNOmdMXl+q92Jam+jJ8QwhdzHKAU9xgu0Ew7h+VYv4P/P+YNyfffe
-	ZacBA0cous9qXVrHhOfg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EozkJKxa/53lHwmhcI5/LnLdxTC7xRsDsVcRjfcBWws=; b=hKO9oocgtibppx
+	ZCKSehLvz9Ay1ZutkaGdiSEHIOFmljOXFTv26d0VP60wucOjlzMgkmlZsI9nIK8tEYikLLx/6pS2y
+	+VqFvB9TFlIKE4aAg6SLJWXozP8ZGHBZd+p0FDXXebCZO0vw+8WjMdfEjT7x44GShCEftcKE+WABD
+	kAif3TeJPyCB/wONOdXecPXD7pHJ7DBnL3z+hP5a0PD1WXXCGE/fth+pmGU9ephCDTWZ0pSTuDTqQ
+	qW2bkNDQH7rIpenkfAD3gqxDv0zTuzENyp/U6jBq5BjT8Szypw31rWXo5dVZ/6/DTJoZSVLBn/7z+
+	iTm1K84+aNDStRM1jNpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRv0G-0006DK-R2; Fri, 24 Apr 2020 09:52:12 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::5])
+	id 1jRv2h-0006W3-8N; Fri, 24 Apr 2020 09:54:43 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRv04-0006Cs-Uh
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 09:52:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587721918;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=EADzuRL+YsoGCLSE7b2pLcK0IVG9NS9sozBTxA+ffmU=;
- b=EeZyZ9ArpJ5P2k/vVA5YYfdyorM53EK6XxqyAiVeMur3hMVJSZbvuDU9hIXcVKoagi
- kDn8pkYdkV/ejlYYP/M43wGbHkcU0LXhcwWebUu5kAI7t5Dd53TSgTct6Cap/CKRvb6b
- eq+kCa9iOM8vSvrAdKpKzGwYLoDX8/B/h/XHCSokqKmAIXis+reEfP0AmBDc6ctZwCxS
- B3MabxZWD+tZs1CCdgwWq4Y2KcioaSNNxYDQc5Uwh0HnHj+TNwYGZsX3Vfkg+lX5z30K
- Q/5cqgTMIFNg1sULZQx7JYsLjdBnxafJG5cvg4m6/kfkBPjN4Altiwe0/s+jPw7v/VMB
- H5yg==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlabXA0JT7U="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw3O9pgAHY
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Fri, 24 Apr 2020 11:51:42 +0200 (CEST)
-Subject: Re: [PATCH v6 00/12] ARM/MIPS: DTS: add child nodes describing the
- PVRSGX GPU present in some OMAP SoC and JZ4780 (and many more)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <20200423203642.35ms4aarnv65tfp5@gilmour.lan>
-Date: Fri, 24 Apr 2020 11:51:42 +0200
-Message-Id: <A095F2EA-C6F8-47AD-A333-E19F7073581A@goldelico.com>
-References: <b5a06c19-7a3e-bcb8-5ae3-76901b9c6c35@gmail.com>
- <20200421112129.zjmkmzo3aftksgka@gilmour.lan>
- <20200421141543.GU37466@atomide.com>
- <D9D4D057-A73D-485F-898D-5C05E89C16B7@goldelico.com>
- <20200422065859.quy6ane5v7vsy5tf@gilmour.lan>
- <1AA57A0C-48E6-49BB-BB9A-2AAFFB371BCD@goldelico.com>
- <20200422151328.2oyqz7gqkbunmd6o@gilmour.lan>
- <07923B6C-4CCD-4B81-A98F-E19C43412A89@goldelico.com>
- <43688597-4b99-8f4d-9ad5-548ddff07f52@baylibre.com>
- <71F2F964-32C7-41E6-8F1A-A73161EA1BB3@goldelico.com>
- <20200423203642.35ms4aarnv65tfp5@gilmour.lan>
-To: Maxime Ripard <maxime@cerno.tech>
-X-Mailer: Apple Mail (2.3124)
+ id 1jRv2Y-0006VY-Tc
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 09:54:36 +0000
+Received: by mail-pg1-x541.google.com with SMTP id j7so4385899pgj.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Apr 2020 02:54:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iVvYIfEqTyiL0cJpR1ziiocvVVbqCRYQEWmIpkQdSo4=;
+ b=lNQg7yUM1uHwNZH9rRi6aMycHtL1Wrb5aNMA14RGDMtHDItmAykWFl25jb742vRfhF
+ EToY+8xjZ3SGMPWKCWL/d0VBa26J8XWpkzgQ2YkpiobCnlFhsf2wFQJfRWFTEdJIxt+L
+ tOALbRk1YJkPUconj59UScO5akAZO43/Rude99MbOaxAFladi7T3HCeVxwu3QVLyjXqW
+ wuD6ASN6ByFkw5EXnKYCxq9ZKthzLmzdzmc/1QrG44xetQ7KbXWUL2MiCOgM0eeXCdQ6
+ h4gYVDa3Ae5GfEJ5C1n9XwkuAvet6QEQfXGzAbAZ1naPIg45QtWPruZmvjAgTlJestom
+ OZwQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iVvYIfEqTyiL0cJpR1ziiocvVVbqCRYQEWmIpkQdSo4=;
+ b=N/nIc+u8YidruGhi041F5ninwlsqnDmvY150CU266lfbuv1pBDz3dIkX/psPMPWdIk
+ R7lESXN6JYzp7Zd9yeIz6n/mo9dm/vW80EKb43EK76QEQDqAKhxqpEJ8zVdOlwoUCdII
+ WbT3J7mr/5fDmGqXwZo36puiGiPOkhQ18A4uBXaRj4d2Fv9JYNlfL5CBG25oLlgWj5zN
+ +gb0dYo+Uq5bwY7jS4N9ifgtrPybwUESpVgj8Tu18nN1H9Su07OG9IHyaXyTfrGEHuEt
+ 7EObiv8qOFk3aK4H48uDcSbxZ1jn1dlZNeDiI2Xf/ZSlJc5rwfKNIv6l33PT2ciYSfC7
+ iS9A==
+X-Gm-Message-State: AGi0PuZrWXf/nLbhLLr16w13ZAcC3eJ0D0+h/l9aqIIFv+x+4E372NJG
+ by0rZI0L1tabb96BaoJrAyLg2wkp6l3XqFK8wCg=
+X-Google-Smtp-Source: APiQypLTdtY2h3+c0DJDMGPfzEIOPk2dta0lyKEsWgoM7Y++nWond/ddP3DuM+fDmLggdLnM2ad9czHqSI0wS3/NnOw=
+X-Received: by 2002:aa7:8f26:: with SMTP id y6mr8944170pfr.36.1587722073914;
+ Fri, 24 Apr 2020 02:54:33 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200424031617.24033-1-calvin.johnson@oss.nxp.com>
+ <20200424031617.24033-2-calvin.johnson@oss.nxp.com>
+ <b583f6fb-e6fe-3320-41c6-e019a4e10388@gmail.com>
+ <20200424092651.GA4501@lsv03152.swis.in-blr01.nxp.com>
+In-Reply-To: <20200424092651.GA4501@lsv03152.swis.in-blr01.nxp.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 24 Apr 2020 12:54:26 +0300
+Message-ID: <CAHp75VdxFjzs2uj7ZYNmwt9DC386gMNahi3A_MYV4wE3kbtq=g@mail.gmail.com>
+Subject: Re: [net-next PATCH v1 1/2] device property: Introduce
+ fwnode_phy_find_device()
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_025201_580040_AFCE31B0 
-X-CRM114-Status: GOOD (  18.08  )
+X-CRM114-CacheID: sfid-20200424_025434_978672_68D4873B 
+X-CRM114-Status: GOOD (  12.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:5 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -93,125 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Tony Lindgren <tony@atomide.com>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Marcin Wojtas <mw@semihalf.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, netdev <netdev@vger.kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Cercueil <paul@crapouillou.net>, linux-samsung-soc@vger.kernel.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, linux-omap <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>,
- OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, Apr 24, 2020 at 12:27 PM Calvin Johnson
+<calvin.johnson@oss.nxp.com> wrote:
+> On Thu, Apr 23, 2020 at 08:45:03PM -0700, Florian Fainelli wrote:
+> > On 4/23/2020 8:16 PM, Calvin Johnson wrote:
 
-> Am 23.04.2020 um 22:36 schrieb Maxime Ripard <maxime@cerno.tech>:
->> My goal is to keep the bindings as minimalistic as possible. And reset
->> lines and power domains are (at least for those we have in the works)
->> not needed to make working systems.
->> 
->> Therefore, for clocks I also would start with a minimalistic approach
->> for a single optional GPU core clock and leave out reset and power
->> completely.
-> 
-> Like I said above, the DT is considered an ABI and you'll have to
-> maintain backward compatibility (ie, newer kernel running with older
-> DT).
+> > If you forget to update the MAINTAINERS file, or do not place this code
+> > under drivers/net/phy/* or drivers/of/of_mdio.c then this is going to
+> > completely escape the sight of the PHYLIB/PHYLINK maintainers...
+>
+> Did you mean the following change?
 
-Generally I fully agree to this rule (although I have experienced
-that exceptions happen more often than I like).
+I don't think this is an appreciated option.
+Second one was to locate this code under drivers/net, which may be
+better. And perhaps other not basic (to the properties) stuff should
+be also moved to respective subsystems.
 
-But here, we don't have any older DT which define something about SGX.
-
-We introduce SGX for the first time with bindings and DT in parallel.
-So they are in sync.
-
-Therefore, newer kernels with SGX support and older DT simply will
-skip SGX and not load any drivers. So we can't break older DT and
-older DT can't break SGX.
-
-What we introduce is a DT code that is well hung and tested (originating
-in vendor kernels). It is cast in a bindings.yaml where not everyone
-is happy with for reasons outside the originally proposed DT.
-
-For new SoC not yet supported, I don't see a need to touch the
-existing ones.
-
-This is because I only propose to *add* properties to the bindings
-for devices that have not been supported with SGX before and are
-not sufficiently covered by what exists.
-
-So backward compatibility is a non-problem.
-
-> Therefore, you won't be able to require a new clock, reset or
-> power-domain later on for example.
-> 
-> I guess the question I'm really asking is: since you don't really know
-> how the hardware is integrated at the moment,
-
-Like I explained, we do not need to know and model all details about
-the hardware integration. The register set of an SoC does not always
-provide bits to control all signals we may see in a block diagram or
-think they must exist.
-
-We have a set of SoC where it is demonstrated to work without need
-for more detailed knowledge about specific hardware integration.
-
-So we know everything of importance for this initial set of SoC to
-make it work.
-
-> why should we have that
-> discussion *now*. It's really not suprising that you don't know yet, so
-> I'm not sure why we need to rush in the bindings.
-
-Because:
-* there are people who want to have upstream SGX support for an initial
-  set of SoC *now*
-* the discussion already lasts ca. 6 months since I posted v1,
-  that should be enough and is not a rush
-* it is not required to know more details to make a working system
-* we will not gain more information by waiting for another year or two
-* problems are not solved by postponing them
-* there are DTS for some initial SoC, tested to work
-* it is no longer possible to submit DT without bindings.yaml (or is it?)
-* we just need to define a bindings.yaml for them, not invent something
-  completely new
-* we can start with a minimal bindings.yaml for the analysed SoC and
-  *extend* it in the future if really needed
-* we can discuss changes & extensions for the bindings when they are
-  really proposed
-* having this patch series upstream is a prerequisite for introducing
-  the sgx kernel driver to staging
-
-In other words: your suggestion to postpone everything will keep finished
-work sitting in front of the door and rotting and blocking unfinished work...
-
-And to be honest, we have postponed SGX support already for too long
-time and could be much farther with more and broader community cooperation.
-So we should not block ourselves.
-
-So if you can contribute new information or proposals to specifically
-improve the proposed bindings.yaml, you are very welcome. But please do
-it *now*.
-
-BR and thanks,
-Nikolaus
-
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
