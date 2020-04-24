@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DB481B8102
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:37:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 035EF1B80FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:36:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dsY1D1YUYg0i6IClTaku32t3H+URf1IVKVw/0v2/qOc=; b=iN97VmL8jpv1jw
-	4jpGtjpWhFYAa795od+D6AVlDyUVPsH7ZQgfyT+qDoLFDXgTr/EzwxjERHI4EyBN7ihOhp1HU3sXM
-	TS+RgLvZg6rYYQUEdvhyxPljvV2y6kOMgtqjHqBbvUaz6TKxd8p0j2ZSzVoVwzt0uHtfIPDkAggAt
-	IUzk7e+wFrvArk5zLxLgo47kgaMWH/Z+zGD7GSWc4KLPSW1GlWg9DBPIw6yPdKdduuc9S6cn/Bc38
-	IrGt443q55Pzv5IDRojcZZ6oXLLL46Di6UKKid8PrEVEGPqJRtNcJ2ZA4IBKL8yAPFkw1rfpIGIYd
-	5Jo+IL7CKVuxzAsDDjwQ==;
+	List-Owner; bh=tvKhdYQ24a03gigxGTdBtTztSSHg3tPamroCi4ZcxbU=; b=e4c7x9VuOAbyVT
+	KDPz0zIZskwfUh/G9lXsdOiIE0kebrIdE1SDSjNdg9c70Q6nPeT0fsjJP4D+Tp09TF49fC9worFuu
+	pfHJDIZ3rl/MiaiA6RLkLLbXvtCvjuMw20yC1MviEvvhkDj8SsIqPn5UcsQ685i4V4DKdF1+I5FLA
+	mGtPJDqs3DB8XT62Lq6eQhjuIPnGdO1ddYax/KDD0fWhCyv9FCRG60j6XT9CTeGxVTnzYUtwo/Dul
+	xuxpryTLqxQAD1YO51lowvh4mURud2cKuInN6SsiOUQQjrgBN05LTElqmjCm//WKyZByhT9Xilm6x
+	iFG247KqLh0dTPxtV95g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS54h-0007rO-BL; Fri, 24 Apr 2020 20:37:27 +0000
-Received: from mo6-p03-ob.smtp.rzone.de ([2a01:238:20a:202:5303::4])
+	id 1jS53V-0006gr-2V; Fri, 24 Apr 2020 20:36:13 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS522-0003PZ-8c
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:34:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587760473;
+ id 1jS521-0003Ol-T8
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:34:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587760468;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=NJkNfMOfA5lIfCBn9zDVSiYTeEu3pGdb9m9YTv6wbww=;
- b=Yz1CNpPOrY225HhM76qPKTWXwPkjwu4X8+3X9bNCHc1ZZG20p0RtRNgA6C0vZO9e7B
- oGRWmFF/7H4UtmTLFWVb6yHz8FiXSy8QzCxaC92hLK+gn8Ph1u/Sts30Yc2zrzpmnXMw
- oAYnW4ISuEYUIBjMJP7xI3S3hey55BEqKREBWQH+cpIDrVb3ph5WOED9trzNActVAEiY
- ZZ9csab4ETaCygpbKIh/8T3fUZ92Pyh2a3hWl9as1IvTew9Gqdcjj2rX93f7kpGvraH1
- cLZx3IyJWtITjxq56goJn1jTtZcU1WO8LNTXumuJcdSha8LHogW7Z8uOAZF6CRJSvM6W
- Pm8Q==
+ bh=sahjZgOPIqBLFzuwy66Vt3RTYAPWxqhM/zU40CZ//kU=;
+ b=Nspm/7GWZp/lM8xRdMvVan5LAYUBZdVS8ZTEho1mun6OueJN7nspN5EXXLE/RfFNN4
+ 0S2AIw9vpb7kd/k2iHGNQP2a1WH+A3edq1pq9Ux9suBUQurT0Ihs8tIUk02A0RMlesD8
+ uCQ9n8JX4U+sy7Zt7vb9J5ipiQq79fa5J/pJ21LKZ62x2loPZXBGoM9xbT0sWNJElZY1
+ OlP+LmqAdGAYtW2Ch4vCwhe3U5Jxxa2TfBzx6l+mxmnVw3slNypu2DzS0GId60Yzsfoq
+ jTD92E9+y2Itrsp94dZJQ7gdABwdnhlvXiFcW58qKDf2X1urbGf2YNmSEnRPM0TQo6m+
+ q5Bg==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXH6GK44R2FE"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw3OKYLEVC
+ with ESMTPSA id R0acebw3OKYMEVD
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Fri, 24 Apr 2020 22:34:21 +0200 (CEST)
+ Fri, 24 Apr 2020 22:34:22 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -51,23 +51,24 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: [PATCH v7 04/12] ARM: DTS: omap34xx: add sgx gpu child node
-Date: Fri, 24 Apr 2020 22:34:07 +0200
-Message-Id: <133da7fe98731e8b31acb577e8c5c707b08337e9.1587760454.git.hns@goldelico.com>
+Subject: [PATCH v7 05/12] ARM: DTS: omap36xx: add sgx gpu child node
+Date: Fri, 24 Apr 2020 22:34:08 +0200
+Message-Id: <135b06798de9e0428ba274de4743c3becc453be9.1587760454.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <cover.1587760454.git.hns@goldelico.com>
 References: <cover.1587760454.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_133442_470277_6197AD81 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20200424_133442_208896_69B40001 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5303:0:0:4 listed in]
+ no trust [2a01:238:20a:202:5304:0:0:4 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -93,42 +94,35 @@ Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
  Philipp Rossak <embed3d@gmail.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
  Jonathan Bakker <xc-racer2@live.ca>, openpvrsgx-devgroup@letux.org,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
- linux-samsung-soc@vger.kernel.org, kernel@pyra-handheld.com,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ kernel@pyra-handheld.com, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add SGX GPU node with interrupt. Tested on OpenPandora 600 MHz.
+Add SGX GPU node with interrupt. Tested on GTA04, BeagleBoard XM.
 
-According to omap3530 TRM the SGX register block is 64kB.
-See: 13.4  SGX Register Mapping, Table 13-2
-
-Reported-by: Andrew F. Davis <afd@ti.com>	# register size
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- arch/arm/boot/dts/omap34xx.dtsi | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ arch/arm/boot/dts/omap36xx.dtsi | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/omap34xx.dtsi b/arch/arm/boot/dts/omap34xx.dtsi
-index c4dd9801840d..51c60ee2b68d 100644
---- a/arch/arm/boot/dts/omap34xx.dtsi
-+++ b/arch/arm/boot/dts/omap34xx.dtsi
-@@ -167,12 +167,13 @@ sgx_module: target-module@50000000 {
- 			clock-names = "fck", "ick";
- 			#address-cells = <1>;
+diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
+index 71f3c8f1f924..b308dbb3b1bb 100644
+--- a/arch/arm/boot/dts/omap36xx.dtsi
++++ b/arch/arm/boot/dts/omap36xx.dtsi
+@@ -211,10 +211,11 @@ sgx_module: target-module@50000000 {
  			#size-cells = <1>;
--			ranges = <0 0x50000000 0x4000>;
-+			ranges = <0 0x50000000 0x10000>;
+ 			ranges = <0 0x50000000 0x2000000>;
  
 -			/*
 -			 * Closed source PowerVR driver, no child device
 -			 * binding or driver in mainline
 -			 */
 +			gpu: gpu@0 {
-+				compatible = "ti,omap3-sgx530-121", "img,sgx530-121", "img,sgx530";
++				compatible = "ti,omap3-sgx530-125", "img,sgx530-125", "img,sgx530";
 +				reg = <0x0 0x10000>;	/* 64kB */
 +				interrupts = <21>;
 +			};
