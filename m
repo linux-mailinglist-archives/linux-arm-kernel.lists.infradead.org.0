@@ -2,81 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E54681B78F8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:11:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BF311B790E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:13:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wTToDAQ2Ac2zUyRfyssD6oSy4qQHrclyIZJ2R3Tv8A4=; b=D4U
-	F3n98S4qRoV7SKg+i4D18MeziYUSlHwF0UNbD+lG45aMNpQB2fgbrQxoaHsAjNSDFV/JIbnQuj1or
-	9y4K68N5fhVvB3N2shg75Xx2AhJNNx02lxUv/bEe2BmnoD+rUBhdOoRbWnNg4WK1uI4uYuXF329hU
-	6/Aq2j1Zf4GBIQ8r4UlBx21eLMfLpcPg7ak/45FKvQMgepNWeKdd76qKBnBAGFpVozegJZjetIDn9
-	v2/eN2FC6rLo3utmyXNP1kJ0NAzOXOjiudz2971nlyNtdhsd0HTXWMUtX8Kh5y7yMvscIWWU8B5F+
-	I1pr7UtDj/xQNpt557PWD2fVSkXWi1A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TFAhpEUDNcXv7KxrPmbl/i0Poo3vFCfM8gKZt6cko1U=; b=Sa/wZ2P/A2/Afq
+	rEjRZIwytb9Gdgh3fubeU7AUTGL5aIdMOVY7k6dKOg1d2F8lSbxC/dtQNd3h5KlkKJzir6+7+R/Km
+	cHquG1pDgha9AGEF/vx/x9Xghs+bNn374vRcKGdQ26UjIMzK15TE32Fj0dQGIPKF4I48RQ9WgGfsd
+	6Y8NrpVgh5NqN1zRi33bKoijbd8kMhG9n45Qw+1+jUAlDlhBq80EAUogDlP0oGrG+5F/yPkmAZN8t
+	+9neAYBmhctYmdx8ENZkKsZcxzL3h28LFA4oBqmtiVORYxjBStT/c3V5ygRX9ic3ambhRSsp1gsQM
+	TOck7UACzcENdsvz94pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRzzC-00033s-4i; Fri, 24 Apr 2020 15:11:26 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jS013-0003eA-BG; Fri, 24 Apr 2020 15:13:21 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRzz2-00032u-EI; Fri, 24 Apr 2020 15:11:17 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r26so11215152wmh.0;
- Fri, 24 Apr 2020 08:11:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=GSOYiwkqZKLb7y47h2QBV30Cg8CF5SiWC7cPuAELcE0=;
- b=XElZtWvWYfo+l3n7mMqN1xxPqug0hipNIvwZbiMvLDeqdtBuwB/R/6eVVvDvJxBgcO
- n+a23AuCg9C9WCRJyzvHwUZavxy47Fp07az0w1Kcn/xtsYYARq+oDFsMiZTSzhfnC5ig
- 2AChAZhyFp+edQTpegElq6dzHnqWvbqtu+i5ZuOf/NYmxkNDTIyCNhAMt7L06VkCxMdS
- hWtnusjfCzjMpyUtFQuZR96Az07KImi9q8sgJi/2krbFS0lQMcOMClOTqwNFm5xxZX/V
- 9IsR2fdCccxkXJprwt9cKc7QCxOd3g/sYqt0v+mn95AcIUCMeWFvl4KmBZFP9NCROubp
- Fzbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=GSOYiwkqZKLb7y47h2QBV30Cg8CF5SiWC7cPuAELcE0=;
- b=PEBd2ArDGNNI83YWe4N0GKK1pSbDXk2AMRLzl8SLBoR6G0W1VSCIdh5ACMBP/U5JK9
- B25Lninn05gcTu6bgYwhaB9ZyxFF3Bah104vAxeMyijO3ZuubNNfPefIroiAD/9B/Sbb
- mWeQA1VD85nt7OTal1CtQ8hT9qyJtoLVYk76wxZqLQYWKaC5kaJptVv9gAuujySuRGBe
- GJ/uTmlL2Akcgc1jcoxBdrhMkRGH4OybnM7LbXxlh0VJ7G4D7IZUgmap+rsCCjsw6Wju
- wR13kUeJ2PAEWDxe87euDjEXLbCXmIysy7n02k68YeLYj1D0X6dxO1uVyrGAwI0nMJvP
- nNHA==
-X-Gm-Message-State: AGi0PuZenh11L0Us51dS2hqa5/Ng8qMfix83RJbiLejRKIIsQYtYiwtu
- 9ziiIfQW1tvbCpEbNhGdqb8mwNvj
-X-Google-Smtp-Source: APiQypLO0aRIuz+zgTRv7w4cBk8IwnBuB8JeO+edeOvmFEHyU5aHRBfNcBgiCNZ4D87S2qOgXE4Gdg==
-X-Received: by 2002:a7b:c181:: with SMTP id y1mr11303273wmi.83.1587741074999; 
- Fri, 24 Apr 2020 08:11:14 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id a125sm3215289wme.3.2020.04.24.08.11.13
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 08:11:14 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] include: dt-bindings: rockchip: mark RK_GPIO defines as
- deprecated
-Date: Fri, 24 Apr 2020 17:11:05 +0200
-Message-Id: <20200424151105.18736-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jS00l-0003bn-En
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 15:13:05 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03OFCwdq044741;
+ Fri, 24 Apr 2020 10:12:58 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1587741178;
+ bh=3u5jcMxC3VA6Xbom27idPrTVtW3bDxHIo8/U0ctHM5M=;
+ h=From:To:CC:Subject:Date;
+ b=EhutGT++NxfVz0U0PDYovaPMXgdBlNgG9voz/S0eAUk6yQoPcb6j0Pu7wuj8N4168
+ lhsERLk+AhwW48QhMtp9nKOHFHnOITll6qQWOj/JmPic5rISXzlbZRrRKlCOCq+5pb
+ V9GvTmfyOkAQwgninfhBiiN79yMJSXDLcN2uijjs=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03OFCwIm091540
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 24 Apr 2020 10:12:58 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 24
+ Apr 2020 10:12:58 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Fri, 24 Apr 2020 10:12:58 -0500
+Received: from sokoban.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03OFCu78122378;
+ Fri, 24 Apr 2020 10:12:57 -0500
+From: Tero Kristo <t-kristo@ti.com>
+To: <linux-omap@vger.kernel.org>, <tony@atomide.com>
+Subject: [PATCH 00/17] ARM: dts: dra7/am57xx: remoteproc support
+Date: Fri, 24 Apr 2020 18:12:27 +0300
+Message-ID: <20200424151244.3225-1-t-kristo@ti.com>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_081116_478760_2B2EC784 
-X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-CacheID: sfid-20200424_081303_594484_E06EB860 
+X-CRM114-Status: UNSURE (   9.39  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -84,6 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,50 +88,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: s-anna@ti.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The defines RK_GPIO0, RK_GPIO1, RK_GPIO2, RK_GPIO3,
-RK_GPIO4 and RK_GPIO6 are no longer used. Mark them as
-"deprecated" to prevent that someone start using them again.
+Hi Tony,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- include/dt-bindings/pinctrl/rockchip.h | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+This series adds the DT nodes necessary for remoteproc support, now that
+the driver side changes are (mostly) in. Couple of things to note
+though.
 
-diff --git a/include/dt-bindings/pinctrl/rockchip.h b/include/dt-bindings/pinctrl/rockchip.h
-index 6d6bac1c2..e379ec110 100644
---- a/include/dt-bindings/pinctrl/rockchip.h
-+++ b/include/dt-bindings/pinctrl/rockchip.h
-@@ -9,12 +9,12 @@
- #ifndef __DT_BINDINGS_ROCKCHIP_PINCTRL_H__
- #define __DT_BINDINGS_ROCKCHIP_PINCTRL_H__
- 
--#define RK_GPIO0	0
--#define RK_GPIO1	1
--#define RK_GPIO2	2
--#define RK_GPIO3	3
--#define RK_GPIO4	4
--#define RK_GPIO6	6
-+#define RK_GPIO0	0 /* deprecated */
-+#define RK_GPIO1	1 /* deprecated */
-+#define RK_GPIO2	2 /* deprecated */
-+#define RK_GPIO3	3 /* deprecated */
-+#define RK_GPIO4	4 /* deprecated */
-+#define RK_GPIO6	6 /* deprecated */
- 
- #define RK_PA0		0
- #define RK_PA1		1
--- 
-2.11.0
+1) There is a new IOMMU issue, for which I posted a fix today [1]
+2) The remoteproc core still has an issue for which there is ongoing
+   discussion [2]
 
+With these two issue taken care of, the omap remoteproc support is
+functional. The question though is, whether we should just wait until
+the above two issues are resolved and merge the DT patches post that, or
+merge the DT patches with status = "disabled".
+
+There aren't any boot failures without the mentioned two issues though,
+as one needs to enable the RPMSG_VIRTIO support before the failures
+really kick in (issue [2]), and this config is not enabled for OMAPs
+yet. Also, multi-v7 config doesn't seem to enable omap remoteproc,
+so that is safe also.
+
+Another thing I was considering myself was to squash all the board
+specific reserved-memory region patches into the
+dra7-ipu-dsp-common.dtsi files. However Suman wants to have these
+separate and as he is the actual author for these, I posted them in this
+form. But anyway, just so you know it would be possible to merge them
+together.
+
+-Tero
+
+[1] https://lore.kernel.org/linux-iommu/20200424145828.3159-1-t-kristo@ti.com/T/#u
+[2] https://lkml.org/lkml/2020/4/20/1094
+
+
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
