@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F0E31B7B20
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:09:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E9741B7B21
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:09:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fe/UqrJ1DXoJTCorxWLRJXF4RFdUaqCJJ2K1LeGJtaI=; b=oEvT2ecj0vy0f35wGW0uU9KJo
-	f+Ol8zb0ARKDGlyjH8fzDWMoj5IiCYYMLwQn2PSZeqQu/nU6+WydgwXBNet3JOrxvTGVqeE1mdLN7
-	Ob7Wx+4eYj1kH6TseRszM7Wl2PzYr1q6rGGYjp2jdexalG0v2hhyzGwMlt9MxySpVaPtcHGL8vsix
-	WBmmBQAKTi6K3Q22UNzxZIv1xvj6eNLvuXcP5EGW/tZ2SL3Vkfcxu/F0xFdqlDDS3qZOpkiZrDSoC
-	isKTDz0Edm7GVwY4dYChsh5NLnw5rhVg7A7MvbXhuK7YzH2MpGeWayucLdx7ts0HVtNF5w/kX6oK5
-	GpwqqZaQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=p8hCfOXxHarGBlbScilu6BhmYxvXS2QQfeq3KzixL1w=; b=p+L
+	eE8n1vdYTw2jLfea+ih07/tvs1OMEGbFPpNLc18zKkdMUm/GtoY7gaR+im2n1ugbLCEtO9c1PXkUP
+	P2UqagvLXaoPoFZRQNVZC139uiRWa+n74i4r0vYgsvvG/XzdZVA+lTFEVUrqsm7hylu+5jE6IRpEw
+	Kswai8UgIUfaH5HBJFu15jbH91cdZ0KYSJZXPnjO5R2N8DpEw3G0hqHd6YBxpRUx7dZ3i/Y6NEppt
+	XFOvugMrcZ+MBS4KizdzvitzuQevEymyRgB6IUZdJdyVx//ImnxRFMVRJkWWlN7eUNTIHrdTTI6qO
+	lJYtHHWXGjspzGJqZ2uprmLuqXlMsPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0t8-0000RA-D7; Fri, 24 Apr 2020 16:09:14 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jS0tQ-0000ll-N3; Fri, 24 Apr 2020 16:09:32 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0ei-0005kZ-6p
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 15:54:22 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03OFsFk1113611;
- Fri, 24 Apr 2020 10:54:15 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587743655;
- bh=F3vv+/r3MYmKyP0QQdhLLRZ5pZyCQ8GYvR24m2BMlOA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=XM1DY4VD2Th0ZfhWMczUmt/ftTXPrHB0X3xwD/aLkUpE5S5z/XMm1JUAr8upTfTmi
- Zh4L5aqe+bG7IrunszBMGsupbf35SfX2cq8uGhS+FcWeU5xNi3bDFiQBapiCuq1WEJ
- QuMNv70tftuSNhyNvHiOtT68kQAiJ+R28ePLbxis=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03OFsFnX071649
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 24 Apr 2020 10:54:15 -0500
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 24
- Apr 2020 10:54:14 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 24 Apr 2020 10:54:14 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03OFsDlg038492;
- Fri, 24 Apr 2020 10:54:13 -0500
-Subject: Re: [PATCH 00/17] ARM: dts: dra7/am57xx: remoteproc support
-To: Tony Lindgren <tony@atomide.com>
-References: <20200424151244.3225-1-t-kristo@ti.com>
- <20200424155128.GK37466@atomide.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <5f8d4dbb-f4fc-ee97-8542-610e98d3f895@ti.com>
-Date: Fri, 24 Apr 2020 18:54:12 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200424155128.GK37466@atomide.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1jS0gU-0001PS-2j; Fri, 24 Apr 2020 15:56:15 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g12so11359815wmh.3;
+ Fri, 24 Apr 2020 08:56:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=2dfe96YGRwdkJIStyF40QT5+e8yw/JJFrPUrA9ri3jw=;
+ b=rpnKX0diuZmEefFJBlH4p0uiZ6nT/Uzyd6C8V+ar2sPq3giyBG+MSqmgtQqykf61K3
+ J8s8b6qq9CHsb7VZ+hAgBPpNw0N29/Dx0xZX8yrxDlEymZtAMd0jgz7kR9P09TORmBhC
+ TTLx7LLxBi0/qCjROKIvm7dtrRFClB6x/emlo+op9lkWO+yvfjxN1P3ho2PJ25atistF
+ 3OfY3NIrXmYYuxtFfPxwJV6jy/6mJcjHqBZCamamz/gUOG9Jcuu1cEy5zcTMYCgtpQY3
+ eUhzOQdnUt3slZLmWzgh6lJO+UFYWZL2T1F7x+/XI6xSt4/tJvebLm+Z9yAdJn0077jd
+ 58EA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=2dfe96YGRwdkJIStyF40QT5+e8yw/JJFrPUrA9ri3jw=;
+ b=U+/YAw3rvwTWl6bQ8zoFFffJev6BuNnntSjSp6suT0KYAOPA3wMnLjNt5P5upWSh7t
+ syRrUAedhFmiSuk/180EXV5vRXXuAyzO5Rmubyu2fxAQjPR5+b+ITLUIhtcOukM09w3O
+ xNur4b6J4qtVFWsqfD92tER8qqFj5dnDL8SQq08wg4F8dj4AD2c8CsYGsuWLw7VLtO+H
+ grqqvcgSykOSRmv6lsWpqvhf6DoywTP3zhnqKwfa4/N+Ue1nKHXKCmmb+2rBPSN+aN5a
+ NJmfnvgAUvRIzkdqLuxpUU+5N5RMX1YmnAzPl9ZSsuIeyDp6Ovto+bV75d7FSxpOLwdk
+ oYkA==
+X-Gm-Message-State: AGi0PuYYR7kGLdUK7l5hd1skRg0FpHV7wsICXfLYJZxN+5IWYzrBx4BQ
+ fJOaiJOp2Opx35H+e18RBksfH/Mz
+X-Google-Smtp-Source: APiQypI/huoG9jnHh4iIH+SQGJJR1gdn4nDg2DnrOfJ4docI19S96D0R3OPHztWOl24tnzb8TeUURw==
+X-Received: by 2002:a1c:ac44:: with SMTP id v65mr11008806wme.33.1587743768021; 
+ Fri, 24 Apr 2020 08:56:08 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id g69sm3554317wmg.17.2020.04.24.08.56.07
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 Apr 2020 08:56:07 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] arm64: dts: rockchip: remove #sound-dai-cells from &i2s1
+ node of rk3399-pinebook-pro.dts
+Date: Fri, 24 Apr 2020 17:55:59 +0200
+Message-Id: <20200424155600.24254-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_085420_557869_6334BE33 
-X-CRM114-Status: GOOD (  17.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200424_085610_335485_F210504C 
+X-CRM114-Status: GOOD (  10.69  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -80,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,66 +94,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s-anna@ti.com, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24/04/2020 18:51, Tony Lindgren wrote:
-> * Tero Kristo <t-kristo@ti.com> [200424 08:13]:
->> Hi Tony,
->>
->> This series adds the DT nodes necessary for remoteproc support, now that
->> the driver side changes are (mostly) in. Couple of things to note
->> though.
->>
->> 1) There is a new IOMMU issue, for which I posted a fix today [1]
->> 2) The remoteproc core still has an issue for which there is ongoing
->>     discussion [2]
->>
->> With these two issue taken care of, the omap remoteproc support is
->> functional. The question though is, whether we should just wait until
->> the above two issues are resolved and merge the DT patches post that, or
->> merge the DT patches with status = "disabled".
-> 
-> If there are no dependencies between the pending driver fixes and
-> the dts changes I see no reason to not merge the dts changes.
+The '#sound-dai-cells' property is already defined in rk3399.dtsi
+at the 'i2s1' node, so remove it from the '&i2s1' node in
+'rk3399-pinebook-pro.dts'.
 
-Yeah, no hard dependencies as such, just that things won't work properly 
-before they are in.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
--Tero
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+index 5ea281b55..b20062890 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+@@ -743,7 +743,6 @@
+ };
+ 
+ &i2s1 {
+-	#sound-dai-cells = <0>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2s_8ch_mclk_gpio>, <&i2s1_2ch_bus>;
+ 	rockchip,capture-channels = <8>;
+-- 
+2.11.0
 
-> 
->> There aren't any boot failures without the mentioned two issues though,
->> as one needs to enable the RPMSG_VIRTIO support before the failures
->> really kick in (issue [2]), and this config is not enabled for OMAPs
->> yet. Also, multi-v7 config doesn't seem to enable omap remoteproc,
->> so that is safe also.
-> 
-> OK thanks for checking that.
-> 
->> Another thing I was considering myself was to squash all the board
->> specific reserved-memory region patches into the
->> dra7-ipu-dsp-common.dtsi files. However Suman wants to have these
->> separate and as he is the actual author for these, I posted them in this
->> form. But anyway, just so you know it would be possible to merge them
->> together.
-> 
-> OK. The combining of common features can be done in later patches
-> too.
-> 
-> Regards,
-> 
-> Tony
-> 
->> [1] https://lore.kernel.org/linux-iommu/20200424145828.3159-1-t-kristo@ti.com/T/#u
->> [2] https://lkml.org/lkml/2020/4/20/1094
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
