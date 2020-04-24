@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FAF11B7BD1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:39:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C46001B7BD6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:40:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bHCyqNQV2KHfeVzMI//C2CxCPsG1H98o0EWSd0hMqwk=; b=YNaipcpZKnGkEv
-	Cvb8PJ2zhTzhHW5mrrn/CNX802+tYOiKSYue09YSwTn391pxynb9oAl2A6dTH4E7lvaT7uDYQieIn
-	ttvxb+J+F2Cxweu0xVxWkmkc8mQhiIhk25tfY4zGdZOguVm/WHhvRMu8blvhSmsD5R+6XvyfIuchz
-	ZeMrwH10CMJc/udByCVL9lvhgGg04T7eKLqqbmk0g2wUGdCHlPTbMfXo43q6E+3m2CBXEEiWDmzyQ
-	ZMjZOdrhDijSFZQF4ffIoEiWo2fIchVBcfHdFcqsvuDWXwrWLNw4wQ0UzX7LJp9KsGFK3mqv5HO+x
-	b5+r/uJvq9ixM2DFVMKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YGpqhpS9r1XXwM9fSV/GaZUwM5AcaU7G6rGj+joXC4I=; b=WyuwzKTE9bTfDC
+	OgMMKt5Jle9Xo/8hxDuor/deLyElLbFKjgoFcdYyMQFXT/H/Zex94ulw89BgLVY0hXdcYzsT6Es0y
+	5fXCEJUCvPKLNUzIuM2PqBqug+zH5ur1/1GGRIN6rckrTlpO/dujcVT7HUt8g1pMdEvnIxAnzu55r
+	Do2cjewGHlGRc4OxRoJPDefKzEPbsaCCIuZh4cqxUybj5+otxnrq1anZJWQCpUwjEJHi3QzvEn0KP
+	DSBmiTbqUWGEHlE5rXTj9hkMslllmWLPEMBbMB1+1OJYOoeZsHwso2kxIGrG4ok5Z8VRkvjDyqUqW
+	DvSMgYqC8N0iA/tyHSyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS1Mf-0000J2-5A; Fri, 24 Apr 2020 16:39:45 +0000
+	id 1jS1Mv-0000cQ-4p; Fri, 24 Apr 2020 16:40:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS1LV-0007xC-7F
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 16:38:34 +0000
+ id 1jS1Lr-0008Fb-Eu
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 16:38:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0E53C14;
- Fri, 24 Apr 2020 09:38:32 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75B7331B;
+ Fri, 24 Apr 2020 09:38:54 -0700 (PDT)
 Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
  [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 62F0F3F68F;
- Fri, 24 Apr 2020 09:38:32 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 07C933F68F;
+ Fri, 24 Apr 2020 09:38:53 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: stable@vger.kernel.org
-Subject: [stable:PATCH 4/4 v5.4] arm64: Silence clang warning on mismatched
- value/register sizes
-Date: Fri, 24 Apr 2020 17:38:05 +0100
-Message-Id: <20200424163805.4087-5-james.morse@arm.com>
+Subject: [stable:PATCH 0/5 v4.19] arm64: Workaround Neoverse-N1 #1542419
+Date: Fri, 24 Apr 2020 17:38:40 +0100
+Message-Id: <20200424163845.4141-1-james.morse@arm.com>
 X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20200424163805.4087-1-james.morse@arm.com>
-References: <20200424163805.4087-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_093833_310589_A7CDD9FE 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200424_093855_572609_94A6BA58 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,38 +67,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Catalin Marinas <catalin.marinas@arm.com>
+This series backports the Neoverse-N1 #1542419 erratum workaround
+to v4.19.116. The series was originally merged in v5.5.
 
-[ Upstream commit: 27a22fbdeedd6c5c451cf5f830d51782bf50c3a2 ]
+These patches handle user-space. The kernel change was:
+commit dd8a1f134884 ("arm64: ftrace: Ensure synchronisation in PLT setup
+for Neoverse-N1 #1542419"), which has already been picked up by stable.
+(magic!)
 
-Clang reports a warning on the __tlbi(aside1is, 0) macro expansion since
-the value size does not match the register size specified in the inline
-asm. Construct the ASID value using the __TLBI_VADDR() macro.
+Backporting this stuff past v4.19 isn't straight-forward as the kernel
+change depends on the work done in:
+https://lore.kernel.org/linux-arm-kernel/1529656278-878-1-git-send-email-will.deacon@arm.com/
+which was merged for v4.19.
 
-Fixes: 222fc0c8503d ("arm64: compat: Workaround Neoverse-N1 #1542419 for compat user-space")
-Reported-by: Nathan Chancellor <natechancellor@gmail.com>
-Cc: James Morse <james.morse@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm64/kernel/sys_compat.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Thanks,
 
-diff --git a/arch/arm64/kernel/sys_compat.c b/arch/arm64/kernel/sys_compat.c
-index c9fb02927d3e..3c18c2454089 100644
---- a/arch/arm64/kernel/sys_compat.c
-+++ b/arch/arm64/kernel/sys_compat.c
-@@ -37,7 +37,7 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
- 			 * The workaround requires an inner-shareable tlbi.
- 			 * We pick the reserved-ASID to minimise the impact.
- 			 */
--			__tlbi(aside1is, 0);
-+			__tlbi(aside1is, __TLBI_VADDR(0, 0));
- 			dsb(ish);
- 		}
- 
+James
+
+
+Catalin Marinas (1):
+  arm64: Silence clang warning on mismatched value/register sizes
+
+James Morse (3):
+  arm64: errata: Hide CTR_EL0.DIC on systems affected by Neoverse-N1
+    #1542419
+  arm64: Fake the IminLine size on systems affected by Neoverse-N1
+    #1542419
+  arm64: compat: Workaround Neoverse-N1 #1542419 for compat user-space
+
+Marc Zyngier (1):
+  arm64: Add part number for Neoverse N1
+
+ Documentation/arm64/silicon-errata.txt |  1 +
+ arch/arm64/Kconfig                     | 16 ++++++++++++++++
+ arch/arm64/include/asm/cache.h         |  3 ++-
+ arch/arm64/include/asm/cpucaps.h       |  3 ++-
+ arch/arm64/include/asm/cputype.h       |  2 ++
+ arch/arm64/kernel/cpu_errata.c         | 22 ++++++++++++++++++++++
+ arch/arm64/kernel/sys_compat.c         | 11 +++++++++++
+ arch/arm64/kernel/traps.c              |  9 +++++++++
+ 8 files changed, 65 insertions(+), 2 deletions(-)
+
 -- 
-2.19.1
+2.26.1
 
 
 _______________________________________________
