@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 740921B7BD0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:39:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FAF11B7BD1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:39:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kmanWN72DuXIZBScPIJu55j/HAdgjfh26Nchdg/wqWc=; b=Gzc3iMmoITmDOy
-	sm/BwUeGItGdbbfV6iIW5lVxauKUnhxiZNjGXmDA6oak43I34/TzaYjKJJ+V9fGzUjlzwZ1tiKCiU
-	+fLSaQEkVjTltGv9ppvKP40pNMckA/KB0Cb/FJ3x52UFH903c3Nx/l4+i3K+D0mWir+GqkFp4qbr4
-	wiAfLu4zdk8wa1Z/2LT7zZ3TTM8lDlErwGMEkhm/pifwJIs9g68E6j0VAW/SMJQ2pn5bg9opLqpR6
-	nKyNWYOqJtHbr+WWy+DLQk967Lvjy6QrniWHSZRXJvJgMFGfIMcPXcDda0iV4dOr96zoBqJoWcAC+
-	Zob1Awz32tRMKppo32Og==;
+	List-Owner; bh=bHCyqNQV2KHfeVzMI//C2CxCPsG1H98o0EWSd0hMqwk=; b=YNaipcpZKnGkEv
+	Cvb8PJ2zhTzhHW5mrrn/CNX802+tYOiKSYue09YSwTn391pxynb9oAl2A6dTH4E7lvaT7uDYQieIn
+	ttvxb+J+F2Cxweu0xVxWkmkc8mQhiIhk25tfY4zGdZOguVm/WHhvRMu8blvhSmsD5R+6XvyfIuchz
+	ZeMrwH10CMJc/udByCVL9lvhgGg04T7eKLqqbmk0g2wUGdCHlPTbMfXo43q6E+3m2CBXEEiWDmzyQ
+	ZMjZOdrhDijSFZQF4ffIoEiWo2fIchVBcfHdFcqsvuDWXwrWLNw4wQ0UzX7LJp9KsGFK3mqv5HO+x
+	b5+r/uJvq9ixM2DFVMKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS1ML-0008OW-FG; Fri, 24 Apr 2020 16:39:26 +0000
+	id 1jS1Mf-0000J2-5A; Fri, 24 Apr 2020 16:39:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS1LU-0007vm-1w
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 16:38:33 +0000
+ id 1jS1LV-0007xC-7F
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 16:38:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F86031B;
- Fri, 24 Apr 2020 09:38:31 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0E53C14;
+ Fri, 24 Apr 2020 09:38:32 -0700 (PDT)
 Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
  [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0179F3F68F;
- Fri, 24 Apr 2020 09:38:30 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 62F0F3F68F;
+ Fri, 24 Apr 2020 09:38:32 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: stable@vger.kernel.org
-Subject: [stable:PATCH 3/4 v5.4] arm64: compat: Workaround Neoverse-N1
- #1542419 for compat user-space
-Date: Fri, 24 Apr 2020 17:38:04 +0100
-Message-Id: <20200424163805.4087-4-james.morse@arm.com>
+Subject: [stable:PATCH 4/4 v5.4] arm64: Silence clang warning on mismatched
+ value/register sizes
+Date: Fri, 24 Apr 2020 17:38:05 +0100
+Message-Id: <20200424163805.4087-5-james.morse@arm.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20200424163805.4087-1-james.morse@arm.com>
 References: <20200424163805.4087-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_093832_138057_99999623 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20200424_093833_310589_A7CDD9FE 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,55 +69,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit 222fc0c8503d98cec3cb2bac2780cdd21a6e31c0 ]
+From: Catalin Marinas <catalin.marinas@arm.com>
 
-Compat user-space is unable to perform ICIMVAU instructions from
-user-space. Instead it uses a compat-syscall. Add the workaround for
-Neoverse-N1 #1542419 to this code path.
+[ Upstream commit: 27a22fbdeedd6c5c451cf5f830d51782bf50c3a2 ]
 
-Signed-off-by: James Morse <james.morse@arm.com>
+Clang reports a warning on the __tlbi(aside1is, 0) macro expansion since
+the value size does not match the register size specified in the inline
+asm. Construct the ASID value using the __TLBI_VADDR() macro.
+
+Fixes: 222fc0c8503d ("arm64: compat: Workaround Neoverse-N1 #1542419 for compat user-space")
+Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+Cc: James Morse <james.morse@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/kernel/sys_compat.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm64/kernel/sys_compat.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/kernel/sys_compat.c b/arch/arm64/kernel/sys_compat.c
-index f1cb64959427..c9fb02927d3e 100644
+index c9fb02927d3e..3c18c2454089 100644
 --- a/arch/arm64/kernel/sys_compat.c
 +++ b/arch/arm64/kernel/sys_compat.c
-@@ -8,6 +8,7 @@
-  */
+@@ -37,7 +37,7 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
+ 			 * The workaround requires an inner-shareable tlbi.
+ 			 * We pick the reserved-ASID to minimise the impact.
+ 			 */
+-			__tlbi(aside1is, 0);
++			__tlbi(aside1is, __TLBI_VADDR(0, 0));
+ 			dsb(ish);
+ 		}
  
- #include <linux/compat.h>
-+#include <linux/cpufeature.h>
- #include <linux/personality.h>
- #include <linux/sched.h>
- #include <linux/sched/signal.h>
-@@ -17,6 +18,7 @@
- 
- #include <asm/cacheflush.h>
- #include <asm/system_misc.h>
-+#include <asm/tlbflush.h>
- #include <asm/unistd.h>
- 
- static long
-@@ -30,6 +32,15 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
- 		if (fatal_signal_pending(current))
- 			return 0;
- 
-+		if (cpus_have_const_cap(ARM64_WORKAROUND_1542419)) {
-+			/*
-+			 * The workaround requires an inner-shareable tlbi.
-+			 * We pick the reserved-ASID to minimise the impact.
-+			 */
-+			__tlbi(aside1is, 0);
-+			dsb(ish);
-+		}
-+
- 		ret = __flush_cache_user_range(start, start + chunk);
- 		if (ret)
- 			return ret;
 -- 
 2.19.1
 
