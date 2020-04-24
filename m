@@ -2,47 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20FCE1B7BDC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 18:41:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CAE01B7C58
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 19:05:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2L6Z1VLLC85ppAk5oD6dnEQ4H8PwUuFRuod8xr18GSo=; b=NU4M4QiYA2c242
-	axfUgM/BdjnZ2+9n0Wd2V+6fNqfV+Sc0e4FzAgg4piYdloOPjZ2H2Gg0KXhfSqAm9B5+O0TFCFPq5
-	biSN5P+z9XCjSAWzaXd3bytAki1dzfqu10TNA2bdwuIdrEvEajvW3Gpve1NCXeb3FeRBwkDTXD6d1
-	DanhilBAUIQCtEOVSqb3jgfOizibpu4By/860tXU/P8u9sSOmBw/20ZAf1dPYcbhsz4i3ilr0Py7y
-	mtevxrYvy3j4QBysY8Sy57OZqzC+nICTXPRFsxQK+i+s2Mfep1L6t/ovM0JBzYW8xFnUzzSHY8a+W
-	9ffwqhsAqIrv1jHjEjXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i6Wk/hl3GoF4X4xwIFS9la/s8htLtIbumV0zLcwhVHY=; b=fMJjw6ePmUuVql
+	Jdr8DSc35od2dx8Jkla2eGNVeHfP4IobKp+iz3V0tqU2qBle+BkhjGL9+KVQkGoRvMaDzz0P3etcJ
+	VYKZZpRXkxo1J2jGTB+62CEDEB+wlawjHkvkMfKihUg8RYNN2nFUXd3g1a02PrQUmnpeALk305aOR
+	j14fnsIr7iDAht2A5lIMQSQ9q9EmDEv6TZF/7dShidsoaONiVOQ437t1k9l2zuqOVxqyoeUOyn3Oz
+	lWKM4fScKlo80cGVMmyvfiihGshMdGu6Q+IK2T9QvOpgmLyM0Aw6J1ax/O7uzaUvSgqu06//JB5+a
+	A2wEq9zT3hMoTR1KFtGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS1ON-0004Ja-HM; Fri, 24 Apr 2020 16:41:31 +0000
+	id 1jS1l8-0006Bj-5u; Fri, 24 Apr 2020 17:05:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS1MH-0000Df-KT
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 16:39:23 +0000
+ id 1jS1kz-0006AJ-Pg
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 17:04:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ADA21C14;
- Fri, 24 Apr 2020 09:39:20 -0700 (PDT)
-Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
- [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3FB533F68F;
- Fri, 24 Apr 2020 09:39:20 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: stable@vger.kernel.org
-Subject: [stable:PATCH 5/5 v4.19] arm64: Silence clang warning on mismatched
- value/register sizes
-Date: Fri, 24 Apr 2020 17:38:45 +0100
-Message-Id: <20200424163845.4141-6-james.morse@arm.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20200424163845.4141-1-james.morse@arm.com>
-References: <20200424163845.4141-1-james.morse@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BFF431B;
+ Fri, 24 Apr 2020 10:04:50 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C01033F6CF;
+ Fri, 24 Apr 2020 10:04:49 -0700 (PDT)
+Date: Fri, 24 Apr 2020 18:04:43 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Subject: [GIT PULL] arm64 fixes for 5.7-rc3
+Message-ID: <20200424170440.GA29363@gaia>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_093921_805721_C8F8CE29 
-X-CRM114-Status: GOOD (  11.13  )
+X-CRM114-CacheID: sfid-20200424_100453_876188_1FEFA25A 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,45 +60,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Catalin Marinas <catalin.marinas@arm.com>
+Hi Linus,
 
-[ Upstream commit: 27a22fbdeedd6c5c451cf5f830d51782bf50c3a2 ]
+Please pull the arm64 fixes below. Thanks.
 
-Clang reports a warning on the __tlbi(aside1is, 0) macro expansion since
-the value size does not match the register size specified in the inline
-asm. Construct the ASID value using the __TLBI_VADDR() macro.
+The following changes since commit ae83d0b416db002fe95601e7f97f64b59514d936:
 
-Fixes: 222fc0c8503d ("arm64: compat: Workaround Neoverse-N1 #1542419 for compat user-space")
-Reported-by: Nathan Chancellor <natechancellor@gmail.com>
-Cc: James Morse <james.morse@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm64/kernel/sys_compat.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  Linux 5.7-rc2 (2020-04-19 14:35:30 -0700)
 
-diff --git a/arch/arm64/kernel/sys_compat.c b/arch/arm64/kernel/sys_compat.c
-index 5a9b220aef6c..3ef9d0a3ac1d 100644
---- a/arch/arm64/kernel/sys_compat.c
-+++ b/arch/arm64/kernel/sys_compat.c
-@@ -48,7 +48,7 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
- 			 * The workaround requires an inner-shareable tlbi.
- 			 * We pick the reserved-ASID to minimise the impact.
- 			 */
--			__tlbi(aside1is, 0);
-+			__tlbi(aside1is, __TLBI_VADDR(0, 0));
- 			dsb(ish);
- 		}
- 
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
+
+for you to fetch changes up to 59bff30ad6cec6b5babc8132eb8dcb48f1c82be0:
+
+  Documentation: arm64: fix amu.rst doc warnings (2020-04-23 17:05:22 +0100)
+
+----------------------------------------------------------------
+- Ensure context synchronisation after a write to APIAKey.
+
+- Fix bullet list formatting in Documentation/arm64/amu.rst to eliminate
+  doc warnings.
+
+----------------------------------------------------------------
+Mark Rutland (1):
+      arm64: sync kernel APIAKey when installing
+
+Randy Dunlap (1):
+      Documentation: arm64: fix amu.rst doc warnings
+
+ Documentation/arm64/amu.rst           | 47 +++++++++++++++++++----------------
+ arch/arm64/include/asm/pointer_auth.h |  9 ++++---
+ 2 files changed, 32 insertions(+), 24 deletions(-)
+
 -- 
-2.26.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
