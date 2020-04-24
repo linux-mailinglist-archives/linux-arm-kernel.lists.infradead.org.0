@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD811B6F1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 09:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 222D21B6F2C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 09:41:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5N0JKRW0iBJLnSSx2OGwgn7eAZDW0IvJXmYiUatwtqg=; b=RboPsN2aGzylIO
-	3fla8O2cPG1a+XZZElpoGTq/L0PBgHaWJzeU62tKhcMZ5G7uXt/5F5K+GK7TYfq594xuySCyjY4wj
-	gw1BaZ23qKQbJTYxh6zUDdgESEqD3nqnbpF/Ks7RvV/zI34T4YTPUSkeKHy/fCJcOotKMM6Kj16hS
-	mH/jpo8GdJaypw9iednPxCM8nPWt5tySLK8PpR6fbIzXZLZimvkJexKPZbpQukfsyHRsBKT8QwyM6
-	gaQZW+oN4EbKsCB4IhO27+4E+IvZ6CLLhGLKQH2Kyair6KDe9jas9Ox9yhEOwRxrC/+ToYxzguRnX
-	JUZg8UJTs+YV0es/rnGA==;
+	List-Owner; bh=8a7jy4ODrYgnwETyS6vYpRE9B/VWD94ZXFI4Qu80gKA=; b=GNer97Etvl2mAx
+	TwM2e5BibephqrBmjJnMcDObK85EIjFtEhNw9ULdR5JAhwjcH8L3oY56ULwwOVu7ivyd5lmUYfGzE
+	/wZ1BgGb1/YSyyLr2t6PIL7zZTlrvwwe5jGhhoPDODEj0sfjbbpBg0U/Arw+riu9AOtgRIGh8orjQ
+	lljKq4WitAvS1EdU9QieB/seHv9mjBbU42pMzjm6jlw0tFMgA3oPTWLyFYqEUEquFqNeQ0QmiysTX
+	xCqRCjMw+LjNxGj2fyrZma/jwOGGs4xVjj3/dIqeSZg0mb2AEBBNa5ATmBvxSYFbPZiqypYYjizEj
+	9PjZX8HOhbz+6vvBL3Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRswA-0000Gf-2P; Fri, 24 Apr 2020 07:39:50 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jRsy0-0003jB-8D; Fri, 24 Apr 2020 07:41:44 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRsvt-0000Fx-7Z
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 07:39:34 +0000
+ id 1jRsxr-0003ib-Dx
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 07:41:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587713972;
+ s=mimecast20190719; t=1587714093;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=aNxlKYwgJG4hi61htBIsmsJO7dK9IBMS50zV2gyXdls=;
- b=i/Pu0FR/dlRxEQhwYq+orrU6ImZb5YGc2VyxCfhr/1ZTiw5rcBYWutHFeizPr5oGNBiCXh
- Qm832flTsB1eAgxP6WcMsL6YkwpGih0mBV6WDeRaLPO6N0+vkQWqAQLXCTQbWOXbaRVcqp
- rXjK5VTDjskfcLTPgyYASqNIsDMZPnA=
+ bh=ClgHN1tDo5l25xQaHTH60o1bvPFenii3S2vIz1JNFTg=;
+ b=Nz7xPuqTepBNpo+JyLnR4sbswT70UmB7Bi9zaNkdQzkR8YyGVH8NepQJCljA5laQPeFZy5
+ +L6j8j/KYEJc3TqxDkitZbI+wcZl4am1spNawQ5eyXjTSh7pU4/1wUXMxBfalyzANAXOhL
+ o+gSaRF4/uHLp+gCNNJjYiBuaakN6V0=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-470-RfVNamZaMp2cTOrg0kCeAA-1; Fri, 24 Apr 2020 03:39:30 -0400
-X-MC-Unique: RfVNamZaMp2cTOrg0kCeAA-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ us-mta-344-EpY5l2OFPGaJTx8qUkhfFQ-1; Fri, 24 Apr 2020 03:41:32 -0400
+X-MC-Unique: EpY5l2OFPGaJTx8qUkhfFQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E926D461;
- Fri, 24 Apr 2020 07:39:28 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0BFE6464;
+ Fri, 24 Apr 2020 07:41:31 +0000 (UTC)
 Received: from [10.36.113.138] (ovpn-113-138.ams2.redhat.com [10.36.113.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id A049D600E8;
- Fri, 24 Apr 2020 07:39:26 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id E5D565C1C8;
+ Fri, 24 Apr 2020 07:41:28 +0000 (UTC)
 Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
  kexec image
+From: David Hildenbrand <david@redhat.com>
 To: "Eric W. Biederman" <ebiederm@xmission.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
  <20200326180730.4754-2-james.morse@arm.com>
@@ -57,7 +58,7 @@ References: <20200326180730.4754-1-james.morse@arm.com>
  <87y2qn1r18.fsf@x220.int.ebiederm.org>
  <a29beedb-750b-b838-6c2a-6e47ade2186a@redhat.com>
  <87ftcuxj1a.fsf@x220.int.ebiederm.org>
-From: David Hildenbrand <david@redhat.com>
+ <4ca41c5f-4cbf-342c-528a-d274c4e2ca10@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
  dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
@@ -102,26 +103,26 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <4ca41c5f-4cbf-342c-528a-d274c4e2ca10@redhat.com>
-Date: Fri, 24 Apr 2020 09:39:25 +0200
+Message-ID: <d18cfd1e-bff2-47b6-cf4d-52d0de92002e@redhat.com>
+Date: Fri, 24 Apr 2020 09:41:28 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <87ftcuxj1a.fsf@x220.int.ebiederm.org>
+In-Reply-To: <4ca41c5f-4cbf-342c-528a-d274c4e2ca10@redhat.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_003933_350933_E257E06A 
-X-CRM114-Status: GOOD (  24.77  )
+X-CRM114-CacheID: sfid-20200424_004135_544630_74E68760 
+X-CRM114-Status: GOOD (  17.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -154,95 +155,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23.04.20 18:29, Eric W. Biederman wrote:
-> David Hildenbrand <david@redhat.com> writes:
-> 
->>> The confusing part was talking about memory being still in use,
->>> that is actually scheduled for use in the future.
+On 24.04.20 09:39, David Hildenbrand wrote:
+> On 23.04.20 18:29, Eric W. Biederman wrote:
+>> David Hildenbrand <david@redhat.com> writes:
 >>
->> +1
->>
+>>>> The confusing part was talking about memory being still in use,
+>>>> that is actually scheduled for use in the future.
 >>>
->>>>> Usually somewhere in the loaded image
->>>>> is a copy of the memory map at the time the kexec kernel was loaded.
->>>>> That will invalidate the memory map as well.
+>>> +1
+>>>
 >>>>
->>>> Ah, unconditionally. Sure, x86 needs this.
->>>> (arm64 re-discovers the memory map from firmware tables after kexec)
->>
->> Does this include hotplugged DIMMs e.g., under KVM?
->> [...]
-> 
-> As far as I know.  If the memory map changes we need to drop the loaded
-> image.
-> 
-> 
-> Having thought about it a little more I suspect it would be the
-> other way and just block all hotplug actions after a kexec_load.
-> As all we expect to happen is running shutdown scripts.
-> 
-> If blocking the hotplug action uses printk to print a nice message
-> saying something like: "Hotplug blocked because of a loaded kexec image",
-> then people will be able to figure out what is going on and
-> call kexec -u if they haven't started the shutdown scripts yet.
-> 
-> 
-> Either way it is something simple and unconditional that will make
-> things work.
-> 
-
-Personally, I consider memory hotplug more important than keeping loaded
-kexec data alive (just because somebody once decided to do a "kexec -l"
-and never did a "kexec -e" we should not block any memory hot(un)plug -
-especially in virtualized environments - for all eternity).
-
-So IMHO we would invalidate loaded kexec data (not the crashkernel, of
-course) on memory hot(un)plug and print a warning. In addition, we can
-let kexec-tools try to reload whatever they loaded after getting
-notified that something changed.
-
-The "something changed" is visible to user space e.g., via udev events
-for /sys/devices/memory/memoryX/
-
->>>>> All of this should be for a very brief window of a few seconds, as
->>>>> the loaded kexec image is quite short.
->>>>
->>>> It seems I'm the outlier anticipating anything could happen between
->>>> those syscalls.
+>>>>>> Usually somewhere in the loaded image
+>>>>>> is a copy of the memory map at the time the kexec kernel was loaded.
+>>>>>> That will invalidate the memory map as well.
+>>>>>
+>>>>> Ah, unconditionally. Sure, x86 needs this.
+>>>>> (arm64 re-discovers the memory map from firmware tables after kexec)
 >>>
->>> The design is:
->>> 	sys_kexec_load()
->>> 	shutdown scripts
->>>         sys_reboot(LINUX_REBOOT_CMD_KEXEC);
->>>
->>> There are two system call simply so that the shutdown scripts can run.
->>> Now maybe someone somewhere does something different but that is not
->>> expected.
->>>
->>> Only the kexec on panic kernel is expected to persist somewhat
->>> indefinitely.  But that should be in memory that is reserved from boot
->>> time, and so the memory hotplug should have enough visibility to not
->>> allow that memory to be given up.
+>>> Does this include hotplugged DIMMs e.g., under KVM?
+>>> [...]
 >>
->> Yes, and AFAIK, memory blocks which hold the reserved crashkernel area
->> can usually not get offlined and, therefore, the memory cannot get removed.
+>> As far as I know.  If the memory map changes we need to drop the loaded
+>> image.
 >>
->> Interestingly, s390x even has a hotplug notifier for that
 >>
->> arch/s390/kernel/setup.c:kdump_mem_notifier()
+>> Having thought about it a little more I suspect it would be the
+>> other way and just block all hotplug actions after a kexec_load.
+>> As all we expect to happen is running shutdown scripts.
 >>
->> (offlining of memory on s390x can result in memory getting depopulated
->> in the hypervisor, so after it would have been offlined, it would no
->> longer be accessible. I somewhat doubt that this notifier is really
->> needed - all pages in the crashkernel area should look like ordinary
->> allocated pages when the area is reserved early during boot via the
->> memblock allocator, and therefore offlining cannot succeed. But that's a
->> different story - and I suspect this is a leftover from pre-memblock times.)
+>> If blocking the hotplug action uses printk to print a nice message
+>> saying something like: "Hotplug blocked because of a loaded kexec image",
+>> then people will be able to figure out what is going on and
+>> call kexec -u if they haven't started the shutdown scripts yet.
+>>
+>>
+>> Either way it is something simple and unconditional that will make
+>> things work.
+>>
 > 
-> It might be worth seeing if that is true, or if we need to generalize the
-> s390x code.
+> Personally, I consider memory hotplug more important than keeping loaded
+> kexec data alive (just because somebody once decided to do a "kexec -l"
+> and never did a "kexec -e" we should not block any memory hot(un)plug -
+> especially in virtualized environments - for all eternity).
+> 
+> So IMHO we would invalidate loaded kexec data (not the crashkernel, of
+> course) on memory hot(un)plug and print a warning. In addition, we can
+> let kexec-tools try to reload whatever they loaded after getting
+> notified that something changed.
+> 
+> The "something changed" is visible to user space e.g., via udev events
+> for /sys/devices/memory/memoryX/
 
-I'll try to find some time to test if the s390x handler is still relevant.
+/sys/devices/system/memory/memoryX/ ...
 
 
 -- 
