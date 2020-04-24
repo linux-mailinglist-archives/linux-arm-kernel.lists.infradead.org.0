@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B02D1B6CC9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 06:49:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EAC31B6CCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 06:53:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yurK2tGgLqawvTCN9gSwatrx8QHdVizavfEQRPcDb3A=; b=qbMUj3v92WBXts
-	9BImy99TwK9EAmB1TdS+/zBwH50m+4MiYMbeaXRDOnqrEQlj3sWTS0JYLfs31Ptg9ONuM6yRR0Jwk
-	6h2/MlruCnqhoqUaI6RsgNPTm9GXI+hxcwiXSjMFjKgZataW9Jov2PVQVc8jHadQH0Gr6C3079uM4
-	2+6uk+Grx0ebumop2PO85lg0bSqRn3VxA3NN0yQIu8iGGaI4FFN3T94DTLa44k2B2AHjjcNVYXo7X
-	z4Xn1sVjx9WmeAF4KZ5U0yq/2bx5ZU0jkjzH/E4u9dtKCxwjlYsnloUGI7U3EL9c2bR5S54ip6jVC
-	/wTG/xaBE2mf1orsDgzg==;
+	List-Owner; bh=djEXlOHzQ7kduvLVo7fGeO6NuUDtydxi41h61DVxpeQ=; b=ZhxsTNmxoet69W
+	nXXDZApxiDPqYQWFQbV+gaqcxg8EWRuzcJQ14g3oixKuLE+Wddi4erda6xkwjdmKjOSgqgW3iUEV2
+	RV7b8DsSeihzO/+UiAyCzBYyCCk7TRFrpFjnGbvwJOtNgfVVrrDmIbppcaZ9cW8Kc53e3d7pk2wmb
+	sWpmynWOAJZL84T6ud3iBgn8NN7mE930dL6qTKnOIKRR0N+4HsaJK2RZ2X1eHKvZ105mDsg6jSU8c
+	ilslnOa54QqD/7Bz0pjI9jay8PsatWXlnJYmbyVWbVwqQx/3fZ/YItiEx5ZaMJ2fxsAs2WXwYa3IJ
+	W1XPRj2BXDr0Eu4wtzZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRqH8-0006vA-5w; Fri, 24 Apr 2020 04:49:18 +0000
+	id 1jRqLH-0001tZ-Vk; Fri, 24 Apr 2020 04:53:35 +0000
 Received: from us-smtp-2.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRqGz-0006tE-V4
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 04:49:11 +0000
+ id 1jRqL9-0001t2-DN
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 04:53:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587703747;
+ s=mimecast20190719; t=1587704006;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding;
- bh=64G9GahoE1R2oI2BMnZEz8XNw5xsvmzLezAX8Z3VN+g=;
- b=E3CtHLejdXSZmbkYuU+VR+K83ApDJlk1m4KysMJwcA6BV3ROOJmpuW+d4DgwIMvH41B3m8
- lSN31Jpj3/6sybuwVWGmnki+kEj4FoYgCVV4Xsci463NcqJmH/+fMS/fBt5KowSalSKdZG
- IS7m2XrwOO6syswHpMupSBWu0YMjWeA=
+ bh=SYlgfxgP8xA9b/qpZI8ocxmaMtZMiVXOlBpcw4zbmWY=;
+ b=XmtQyiBxREf/SPUL4FmX7j8fMilyzzblYpdlT4EMUsg1jhSiqGaCjiwtQkZZ9w3Rzib9nu
+ YdtHzWKc7R40PR9tBY+t7q9/33qpmsigNp+2slhhLV++878RgG6AX8RT9GuWjb9i5QvOQR
+ wA6e37KrLAU3+gP0lmooIp6cU1qP4OM=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-423-3TwUM8z4Pue688Km7TtidA-1; Fri, 24 Apr 2020 00:49:03 -0400
-X-MC-Unique: 3TwUM8z4Pue688Km7TtidA-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-259-gEHt2BK4PhOOsngnp6_TgQ-1; Fri, 24 Apr 2020 00:53:23 -0400
+X-MC-Unique: gEHt2BK4PhOOsngnp6_TgQ-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E7BA6835B4A;
- Fri, 24 Apr 2020 04:49:01 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3F9EB107BEF5;
+ Fri, 24 Apr 2020 04:53:22 +0000 (UTC)
 Received: from localhost.localdomain.com (vpn2-54-127.bne.redhat.com
  [10.64.54.127])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 97D3F5C1C8;
- Fri, 24 Apr 2020 04:48:59 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D31F0600E8;
+ Fri, 24 Apr 2020 04:53:19 +0000 (UTC)
 From: Gavin Shan <gshan@redhat.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/mm: Use phys_to_page() to access pgtable memory
-Date: Fri, 24 Apr 2020 14:48:54 +1000
-Message-Id: <20200424044854.15760-1-gshan@redhat.com>
+Subject: [PATCH] arm64/mm: Reject invalid NUMA option
+Date: Fri, 24 Apr 2020 14:53:14 +1000
+Message-Id: <20200424045314.16017-1-gshan@redhat.com>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_214910_082681_044F5B21 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20200423_215327_526925_61284B67 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,48 +94,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The macros {pgd, pud, pmd}_page() retrieves the page struct of the
-corresponding page frame, which is reserved as page table. There
-is already a macro (phys_to_page), defined in memory.h, to convert
-the physical address to the page struct. So it's reasonable to
-use that in pgtable.h.
+The NUMA option is parsed by str_has_prefix() and the invalid option
+like "numa=o" can be regarded as "numa=off" wrongly.
+
+This fixes the issue with sysfs_streq(), which have more sanity checks,
+to avoid accepting the invalid options.
 
 Signed-off-by: Gavin Shan <gshan@redhat.com>
 ---
- arch/arm64/include/asm/pgtable.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/mm/numa.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 538c85e62f86..8c20e2bd6287 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -508,7 +508,7 @@ static inline void pte_unmap(pte_t *pte) { }
- #define pte_set_fixmap_offset(pmd, addr)	pte_set_fixmap(pte_offset_phys(pmd, addr))
- #define pte_clear_fixmap()		clear_fixmap(FIX_PTE)
+diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
+index 4decf1659700..bd458b28616a 100644
+--- a/arch/arm64/mm/numa.c
++++ b/arch/arm64/mm/numa.c
+@@ -29,7 +29,8 @@ static __init int numa_parse_early_param(char *opt)
+ {
+ 	if (!opt)
+ 		return -EINVAL;
+-	if (str_has_prefix(opt, "off"))
++
++	if (sysfs_streq(opt, "off"))
+ 		numa_off = true;
  
--#define pmd_page(pmd)		pfn_to_page(__phys_to_pfn(__pmd_to_phys(pmd)))
-+#define pmd_page(pmd)			phys_to_page(__pmd_to_phys(pmd))
- 
- /* use ONLY for statically allocated translation tables */
- #define pte_offset_kimg(dir,addr)	((pte_t *)__phys_to_kimg(pte_offset_phys((dir), (addr))))
-@@ -566,7 +566,7 @@ static inline phys_addr_t pud_page_paddr(pud_t pud)
- #define pmd_set_fixmap_offset(pud, addr)	pmd_set_fixmap(pmd_offset_phys(pud, addr))
- #define pmd_clear_fixmap()		clear_fixmap(FIX_PMD)
- 
--#define pud_page(pud)		pfn_to_page(__phys_to_pfn(__pud_to_phys(pud)))
-+#define pud_page(pud)			phys_to_page(__pud_to_phys(pud))
- 
- /* use ONLY for statically allocated translation tables */
- #define pmd_offset_kimg(dir,addr)	((pmd_t *)__phys_to_kimg(pmd_offset_phys((dir), (addr))))
-@@ -624,7 +624,7 @@ static inline phys_addr_t pgd_page_paddr(pgd_t pgd)
- #define pud_set_fixmap_offset(pgd, addr)	pud_set_fixmap(pud_offset_phys(pgd, addr))
- #define pud_clear_fixmap()		clear_fixmap(FIX_PUD)
- 
--#define pgd_page(pgd)		pfn_to_page(__phys_to_pfn(__pgd_to_phys(pgd)))
-+#define pgd_page(pgd)			phys_to_page(__pgd_to_phys(pgd))
- 
- /* use ONLY for statically allocated translation tables */
- #define pud_offset_kimg(dir,addr)	((pud_t *)__phys_to_kimg(pud_offset_phys((dir), (addr))))
+ 	return 0;
 -- 
 2.23.0
 
