@@ -2,51 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59CC61B70BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 11:22:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C08F1B70BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 11:22:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ML4YvWhrPivA5yiUMEfnW7LpUOmz89IG0xfozq85xoM=; b=AZZCtxnANnd0tDxSDlvMf4Uwu
-	2jWk2r7AKEh2jYQGNtvaoY/RqZVH3+6rlVndnp+R26SnbN45Kc5jItAXWuc8uxtM+KJHqx58V13mS
-	hS0gs3Czs3SEl/vatn5BUhc43xViA9TTfcLh57P261gvHeUx2siQSRFgNLmYVs861L97Muea3qpe8
-	E15U1hzlY1zixDrVCx4fvaYw8oKX4VnlNAzOZ82p7RQVNhrU9xYPvilyP9NxoPLYkk3sLO1/6cnBO
-	kaU4GPiHCzuM8L5IDucyjgRir8X+/nNAItE82vjVhzuD9Nbc7cn47wMrbE1MBWRNa+995g6zMX7Lu
-	aSZ9Gsy7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QDPbydgiyUsrW4shAkmcNNXUYWwxcH6gwbtkkfrLXbA=; b=B6cPlFGPSfVG5s
+	cN3Gf1UpuprVx4Voc2LmaZ3iz2jqrsF+YjgC1kkP24jTUvyWmdsGrjKjW4d6nJWinGjzsNdHtzrRQ
+	46tPjpUIu5nT/LXobyIE7x2gi/YyT/VP4pHv5CpzlB3wkI0RfNjCuU31dcl4wjZnoQuzuQxHy4RhP
+	Fl8hfbFO5ygPZ8zRJsMQqCLp994NDjZemRJAND0ytancxfFSCY+q/1D5mwrCNGYjmiGpt4UdfBp9a
+	P7AGaVG7LH8WkyDOxB06t547FFurwT6yArHaUQGTlK3V5Vx2ssaLcXNFcT2L1VQux6KfOiJQZh4Ab
+	bAxnteAsCgr6r8FQ/w+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRuXN-0000PT-B0; Fri, 24 Apr 2020 09:22:21 +0000
+	id 1jRuXk-0000i3-1v; Fri, 24 Apr 2020 09:22:44 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRuXF-0000Ow-1x; Fri, 24 Apr 2020 09:22:14 +0000
+ id 1jRuXP-0000aN-QZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 09:22:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CEBB81FB;
- Fri, 24 Apr 2020 02:22:11 -0700 (PDT)
-Received: from [10.37.12.92] (unknown [10.37.12.92])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A5703F73D;
- Fri, 24 Apr 2020 02:22:06 -0700 (PDT)
-Subject: Re: [PATCH] thermal: power_allocate: add upper and lower limits
-To: Michael Kao <michael.kao@mediatek.com>, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, hsinyi@chromium.org,
- linux-pm@vger.kernel.org, srv_heupstream@mediatek.com
-References: <20200424071601.2636-1-michael.kao@mediatek.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <accb83e0-ffbe-b6e3-6bf9-e7cc8b9fe19c@arm.com>
-Date: Fri, 24 Apr 2020 10:22:03 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3843C1FB;
+ Fri, 24 Apr 2020 02:22:23 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CECC03F73D;
+ Fri, 24 Apr 2020 02:22:21 -0700 (PDT)
+Date: Fri, 24 Apr 2020 10:22:08 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH] arm64/mm: Use phys_to_page() to access pgtable memory
+Message-ID: <20200424092208.GA1167@C02TD0UTHF1T.local>
+References: <20200424044854.15760-1-gshan@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200424071601.2636-1-michael.kao@mediatek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200424044854.15760-1-gshan@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_022213_135256_A50C93EF 
-X-CRM114-Status: GOOD (  21.20  )
+X-CRM114-CacheID: sfid-20200424_022223_927142_B0423F9A 
+X-CRM114-Status: GOOD (  15.33  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,64 +61,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+Cc: catalin.marinas@arm.com, shan.gavin@gmail.com, will@kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michael,
-
-On 4/24/20 8:16 AM, Michael Kao wrote:
-> The upper and lower limits of thermal throttle state in the
-> device tree do not apply to the power_allocate governor.
-> Add the upper and lower limits to the power_allocate governor.
+On Fri, Apr 24, 2020 at 02:48:54PM +1000, Gavin Shan wrote:
+> The macros {pgd, pud, pmd}_page() retrieves the page struct of the
+> corresponding page frame, which is reserved as page table. There
+> is already a macro (phys_to_page), defined in memory.h, to convert
+> the physical address to the page struct. So it's reasonable to
+> use that in pgtable.h.
 > 
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> Signed-off-by: Gavin Shan <gshan@redhat.com>
+
+It might be worth pointing out that phys_to_page() is defined as:
+
+#define phys_to_page(phys)      (pfn_to_page(__phys_to_pfn(phys)))
+
+... so this is obviously equivalent.
+
+Given that, and given we already explicitly include <asm/memory.h>, this
+looks like a nice cleanup to me.
+
+With or without the commit message addition:
+
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
 > ---
->   drivers/thermal/thermal_core.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>  arch/arm64/include/asm/pgtable.h | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
-> index 9a321dc548c8..f6feed2265bd 100644
-> --- a/drivers/thermal/thermal_core.c
-> +++ b/drivers/thermal/thermal_core.c
-> @@ -598,7 +598,7 @@ int power_actor_set_power(struct thermal_cooling_device *cdev,
->   	if (ret)
->   		return ret;
->   
-> -	instance->target = state;
-> +	instance->target = clamp_val(state, instance->lower, instance->upper);
->   	mutex_lock(&cdev->lock);
->   	cdev->updated = false;
->   	mutex_unlock(&cdev->lock);
+> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> index 538c85e62f86..8c20e2bd6287 100644
+> --- a/arch/arm64/include/asm/pgtable.h
+> +++ b/arch/arm64/include/asm/pgtable.h
+> @@ -508,7 +508,7 @@ static inline void pte_unmap(pte_t *pte) { }
+>  #define pte_set_fixmap_offset(pmd, addr)	pte_set_fixmap(pte_offset_phys(pmd, addr))
+>  #define pte_clear_fixmap()		clear_fixmap(FIX_PTE)
+>  
+> -#define pmd_page(pmd)		pfn_to_page(__phys_to_pfn(__pmd_to_phys(pmd)))
+> +#define pmd_page(pmd)			phys_to_page(__pmd_to_phys(pmd))
+>  
+>  /* use ONLY for statically allocated translation tables */
+>  #define pte_offset_kimg(dir,addr)	((pte_t *)__phys_to_kimg(pte_offset_phys((dir), (addr))))
+> @@ -566,7 +566,7 @@ static inline phys_addr_t pud_page_paddr(pud_t pud)
+>  #define pmd_set_fixmap_offset(pud, addr)	pmd_set_fixmap(pmd_offset_phys(pud, addr))
+>  #define pmd_clear_fixmap()		clear_fixmap(FIX_PMD)
+>  
+> -#define pud_page(pud)		pfn_to_page(__phys_to_pfn(__pud_to_phys(pud)))
+> +#define pud_page(pud)			phys_to_page(__pud_to_phys(pud))
+>  
+>  /* use ONLY for statically allocated translation tables */
+>  #define pmd_offset_kimg(dir,addr)	((pmd_t *)__phys_to_kimg(pmd_offset_phys((dir), (addr))))
+> @@ -624,7 +624,7 @@ static inline phys_addr_t pgd_page_paddr(pgd_t pgd)
+>  #define pud_set_fixmap_offset(pgd, addr)	pud_set_fixmap(pud_offset_phys(pgd, addr))
+>  #define pud_clear_fixmap()		clear_fixmap(FIX_PUD)
+>  
+> -#define pgd_page(pgd)		pfn_to_page(__phys_to_pfn(__pgd_to_phys(pgd)))
+> +#define pgd_page(pgd)			phys_to_page(__pgd_to_phys(pgd))
+>  
+>  /* use ONLY for statically allocated translation tables */
+>  #define pud_offset_kimg(dir,addr)	((pud_t *)__phys_to_kimg(pud_offset_phys((dir), (addr))))
+> -- 
+> 2.23.0
 > 
-
-Thank you for the patch and having to look at it. I have some concerns
-with this approach. Let's analyze it further.
-
-In default the cooling devices in the thermal zone which is used by IPA
-do not have this 'lower' and 'upper' limits. They are set to
-THERMAL_NO_LIMIT in DT to give full control to IPA over the states.
-
-This the function 'power_actor_set_power' actually translates granted
-power to the state that device will run for the next period.
-The IPA algorithm has already split the power budget.
-Now what happen when the 'lower' value will change the state to a state
-which consumes more power than was calculated in the IPA alg... It will
-became unstable.
-
-I would rather see a change which uses these 'lower' and 'upper' limits
-before the IPA do the calculation of the power budget. But this wasn't
-a requirement and we assumed that IPA has full control over the cooling
-device (which I described above with this DT THERMAL_NO_LIMIT).
-
-Is there a problem with your platform that it has to provide some
-minimal performance, so you tried to introduce this clamping?
-
-Regards,
-Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
