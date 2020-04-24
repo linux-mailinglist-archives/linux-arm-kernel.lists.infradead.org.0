@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D57E91B72C9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 13:12:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADA281B72CA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 13:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EoQLGe3X50MfkObdjo3V0sbawi23PHozHgwZ/Qh6BcQ=; b=UGcO0AI33/n7Y3TAAcLd7yX1nq
-	Jt67btLByASK8HNT39Te9OhqgSaFumEl5IAIJDE/CcUCd9lNOXo10CPH7ORQoa0bQ6FKbfSX4DKLQ
-	rNenexbcfMuKvm23ZmTFNcbMzG8DHDjN8pN9BFX/LFITDU5csbvxcgBsYLa0RzYrCdOPQ7pVvYzwy
-	H7iL4PXqE3fbAgx2hBEvzqZyjbonCbR8d3gm/jbkOsRTYv8PjZQzBgII6fcvbqax65D+Q/elrDjjd
-	quYb4mRghLWboOorbBMLGVBUsoKMGdXYOc/KAXjwxLL8h+tzJBpUq27bd1rFCnafaKGNW/F0LawV8
-	05Wp8tAw==;
+	bh=Gc4WPwK3U5fgxQI5EOiq6i+TzUzfFRxRzUh6PrZZeR4=; b=GpFfijAwH0UyfT+dK/A+KlJBkQ
+	vjiDftQGFgK9WqvtNgkXfGDjaGXBnr8P85aZnuoCT7yAwXbRMPSyaQGRRh/w/cnbTohuiTT6/hUhV
+	DEfyqCfSRfFsWKk2Re2ga3VgsjoaSbhbO5Q/KjaZKVKtvtNaucVycwvPl1IhMBxm2m0jJx3qzgWHS
+	GLVmtxW70lN9h03Hmct2zpNPgGWCc7Kdh/QZc2W4M+PtzNCuBOzhL+7GdtgfBr4fijGn6kPoU6FJ+
+	j1IvWHzNOtScrDk5vi1ckM33WKWReTwmsQW+hyaI+RK1bXljyvMZ9ZLpbXCyJqoctS4AMexcWKkik
+	KsgPqwYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRwFa-0004vp-E8; Fri, 24 Apr 2020 11:12:06 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jRwFo-0005FV-Uf; Fri, 24 Apr 2020 11:12:20 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRwFB-0004nh-3a
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 11:11:43 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t4so3599705plq.12
+ id 1jRwFJ-0004xz-2I
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 11:11:51 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x26so4475415pgc.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 04:11:40 -0700 (PDT)
+ Fri, 24 Apr 2020 04:11:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iZlX3qI3DOrQp2dXg0tXmAB1b4Jn5t/S/MWmmmiRunE=;
- b=CVZnPFr9kE70O15FetLKinvjuz8SOPjO0QhwdMblhDxZ9Id5IeVNj7VVnd8hElz/sF
- AG1K68EzIIT1QBeciWSUX1tRXiBkRLrXW+yqqrS88Q6sUEI1yNOwrf9jdHlMJL8sehBB
- 6w9hYV3EcVhFehuZslXH5yMUZpmA/rSNol6qhUtkJSqbWu7QnuGBnVXFNX8oq3vjXiqq
- kd8MHcAy6KgjwqLgbODiJn8IQ2GpMsYoXiQZu4MRPvC4xvN+hyEKyzG3SEazdUlxP9T6
- PC1SmBNgKCeGjDh+kQg7pNH9UeOwkWlYzVnNfmIxCFhb0BlVf4mAIGSwg7RU9spXUljF
- wDEA==
+ bh=VxQ4o9PvJLeDXlCdKC6FnBvF+Rh/OB42QR1xOvGVmug=;
+ b=YacZq7PZlYzawRE/JiR4rFErkePmBp3ThfIGiML8t+nhfJ0kt+oFtkRos1HE7c/4zM
+ 9jNUz/wb7GU1eHxtS4Qg6wF38dlfF6j7kM7V4Zm7PXK8tJL6Am8vbaImoAlhnfqg4jmJ
+ GIXimV9vmSiTSuISRhnd4c1lvIPs4lOfv7oJO4IaCm5Xa/6PrUz6X97dC54BXanvgqOa
+ ZfaRNIK7Sht6YUCwwj9ezBpg5CS0Y51cepH8ZiCazq0sdoZ1uCyiL1fzgRGVwjnPwHKJ
+ g7MEvkNL1pv1CHsK2gOWkQx4if0WwWMILQaviXmVHfBjNenrJOgSgFm2aQjtmNc/SkHJ
+ Zdsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=iZlX3qI3DOrQp2dXg0tXmAB1b4Jn5t/S/MWmmmiRunE=;
- b=HPuj4BI/q7ligA6kQ7Lxk6TPyN2ZPLmjilvV96eAS7gKLP8bt1gWoHjlzzUb+Al51Z
- RVa38glZg0aIgLPw1wPs0lVOCQp1iCjfvcwxwKYEhxf63f/foSLZf/0EcG7w8DOzVQan
- wpbo+d83gaRgQfPueljfWi6FEOZUI/28wqdBQGP/anBfp9u1h3LS2PJdSdcGxXJl0PNm
- yfuwzkaS12Ndx+TnbqIESbA/ejk4q+ex6ALlUXiBUMIv+8lkufUDv9tNND/OJTFKnFwW
- fLvr2YnNE3srvdL7QMWxjPNM14jquB8TS5NkxHFWlNQJfMBCuBx5oRMMDWgl5tlOLHSC
- 2t5A==
-X-Gm-Message-State: AGi0PuacRLuwubGKPYTgCNhVW5Z+YHZ/zLHB0+D4JAHpHt5jAqgkPJak
- CTboD28OZ6EdtzN4qd8Lfz33rFsMgjcaKQ==
-X-Google-Smtp-Source: APiQypIPAwj21VAG16p5qy62FUaJZAsNJzTP5WGLYMy0GUrRu2nsXVPQnqKsEw1+588tI2FpCpc0Hg==
-X-Received: by 2002:a17:90a:d101:: with SMTP id l1mr5614004pju.1.1587726699499; 
- Fri, 24 Apr 2020 04:11:39 -0700 (PDT)
+ bh=VxQ4o9PvJLeDXlCdKC6FnBvF+Rh/OB42QR1xOvGVmug=;
+ b=na546CyHMjL6hbZFQuCH/TZYnGmzzSgnlPkKBSy9K0s9gi9sIjH40MtGI4aZLbAKOR
+ d5VIvSUChFaoy/NfA3qRZjb4rWEy7K5M9Ce2tYNQ+bgv6k6Tp7GvWk63GkuosF/nkolT
+ 0TjVo3nYCQ1ZcsmWRqzpTwDDT8zCbdwbIWEQgx5lAzqCd1wScNWidKGjVUWyNIoIEixj
+ XAoKE1Z4VEWafrF2STQzLZEAT1t+JHkd1vtuTIwQap//1B72htz7uNw5IO6nXtW3Kh4N
+ kmf6Bt3Wwpc/eSf4f6nA/0gOGbdoy1ObXP2RfMedgSDIkr61eW4uOpolM9OJ/evhN/rZ
+ v1aA==
+X-Gm-Message-State: AGi0Pua40ftnaZZmh0MUt+WZ8afYXOdRKJ+x4EKtVdKLcGnebvslyhiP
+ JGLbF0WuydxTrHIAhCIJhL02rYxH1Ju+XA==
+X-Google-Smtp-Source: APiQypKsve8n7Z+70T9CcZrjuYG102mPugIIPPAH3Qu3Es+6cyhZhldMNasw9Iy9/gJxspU7QTFreA==
+X-Received: by 2002:aa7:874f:: with SMTP id g15mr9462253pfo.45.1587726706941; 
+ Fri, 24 Apr 2020 04:11:46 -0700 (PDT)
 Received: from localhost.localdomain ([117.252.71.186])
- by smtp.gmail.com with ESMTPSA id o11sm4637628pgd.58.2020.04.24.04.11.30
+ by smtp.gmail.com with ESMTPSA id o11sm4637628pgd.58.2020.04.24.04.11.40
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 04:11:38 -0700 (PDT)
+ Fri, 24 Apr 2020 04:11:46 -0700 (PDT)
 From: Sumit Garg <sumit.garg@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
- pseudo NMI
-Date: Fri, 24 Apr 2020 16:39:12 +0530
-Message-Id: <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+Subject: [RFC Patch v1 3/4] irqchip/gic-v3: Enable arch specific IPI as pseudo
+ NMI
+Date: Fri, 24 Apr 2020 16:39:13 +0530
+Message-Id: <1587726554-32018-4-git-send-email-sumit.garg@linaro.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
 References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_041141_246513_23EF3352 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20200424_041149_302844_7E0E1B5A 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,53 +107,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With pseudo NMIs enabled, interrupt controller can be configured to
-deliver SGI as a pseudo NMI. So add corresponding handling for SGIs.
+Add support to mark arch specific IPI as pseudo NMI. Currently its used
+to allows arm64 specific IPI_CALL_NMI_FUNC to be marked as pseudo NMI.
 
 Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 ---
- drivers/irqchip/irq-gic-v3.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
+ arch/arm64/kernel/smp.c      |  5 +++++
+ drivers/irqchip/irq-gic-v3.c | 14 ++++++++++++++
+ 2 files changed, 19 insertions(+)
 
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index 42fe7bb..27c8ee1 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -802,6 +802,11 @@ static const char *ipi_types[NR_IPI] __tracepoint_string = {
+ 	S(IPI_CALL_NMI_FUNC, "NMI function call interrupts"),
+ };
+ 
++int arch_get_ipinr_nmi(void)
++{
++	return IPI_CALL_NMI_FUNC;
++}
++
+ static void smp_cross_call(const struct cpumask *target, unsigned int ipinr)
+ {
+ 	trace_ipi_raise(target, ipi_types[ipinr]);
 diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-index d7006ef..be361bf 100644
+index be361bf..a3d2cf3 100644
 --- a/drivers/irqchip/irq-gic-v3.c
 +++ b/drivers/irqchip/irq-gic-v3.c
-@@ -609,17 +609,29 @@ static inline void gic_handle_nmi(u32 irqnr, struct pt_regs *regs)
- 	if (irqs_enabled)
- 		nmi_enter();
+@@ -1048,6 +1048,11 @@ static int gic_dist_supports_lpis(void)
+ 		!gicv3_nolpi);
+ }
  
--	if (static_branch_likely(&supports_deactivate_key))
--		gic_write_eoir(irqnr);
- 	/*
- 	 * Leave the PSR.I bit set to prevent other NMIs to be
- 	 * received while handling this one.
- 	 * PSR.I will be restored when we ERET to the
- 	 * interrupted context.
- 	 */
--	err = handle_domain_nmi(gic_data.domain, irqnr, regs);
--	if (err)
--		gic_deactivate_unhandled(irqnr);
-+	if (likely(irqnr > 15)) {
-+		if (static_branch_likely(&supports_deactivate_key))
-+			gic_write_eoir(irqnr);
++int __weak arch_get_ipinr_nmi(void)
++{
++	return -1;
++}
 +
-+		err = handle_domain_nmi(gic_data.domain, irqnr, regs);
-+		if (err)
-+			gic_deactivate_unhandled(irqnr);
-+	} else {
-+		gic_write_eoir(irqnr);
-+		if (static_branch_likely(&supports_deactivate_key))
-+			gic_write_dir(irqnr);
-+#ifdef CONFIG_SMP
-+		handle_IPI(irqnr, regs);
-+#else
-+		WARN_ONCE(true, "Unexpected SGI received!\n");
-+#endif
-+	}
+ static void gic_cpu_init(void)
+ {
+ 	void __iomem *rbase;
+@@ -1072,6 +1077,15 @@ static void gic_cpu_init(void)
  
- 	if (irqs_enabled)
- 		nmi_exit();
+ 	gic_cpu_config(rbase, gic_data.ppi_nr + 16, gic_redist_wait_for_rwp);
+ 
++	if (gic_supports_nmi()) {
++		int ipinr;
++
++		ipinr = arch_get_ipinr_nmi();
++		if (ipinr >= 0 && ipinr < 16)
++			writeb_relaxed(GICD_INT_NMI_PRI,
++				       rbase + GICD_IPRIORITYR + ipinr);
++	}
++
+ 	/* initialise system registers */
+ 	gic_cpu_sys_reg_init();
+ }
 -- 
 2.7.4
 
