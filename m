@@ -2,121 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 568791B6AB2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 03:12:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 546321B6AFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 03:55:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uF5w542yCgqKURH2QHbZl3Vnd8nLAt7jSfQLfEKXGbA=; b=f8HxQS4CWVbaz0
-	wj2GIZJl/yXvwyiJeaev7CJrvPoenKEoVHknHYQWhEPQlunLd/wj/n1Lv+0cVhL7Ei6dHBNDBSF32
-	t5ge4fkqCL4pToOcrYwliaPQuS8B+MS3OIg2B1AWlgVrKoAliWyWqvLVAl5uwmeHqkCoviglc2GTa
-	zyj7+nLNEwfqaZgqDom6hLI7YMIjYKl0OLUtsHPuMg8a1yO6wji/KR+AWKYZwOpWq1Iq3kLvmP8kz
-	aM63HYBdaeAlbUvkVeHhU0NvcJtMw6sOripB02xGqyimR5koFzKQEVcLHQO5rgVK47YG8bYUO/YSM
-	TASuSOWbuEL1U5KeYfhQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=y+ws1ml9Nal6OHFXNsmCsHtfY0wI84UlJPrWsje88hY=; b=c3E
+	Nv6Dzqo59qHb+CJCJT9xHnJylbHAo0jg4y1zvKiXqEopN1PUvY2q12J28ESMUO8n5l0oSXWe4ChYX
+	3Il0LdeV8TkOiKhxzaW7Wp+hSBk6LbODJVed2H0PBoi3csphQr7wvHt9nH+UMp25nQkhHj7Kj0mnk
+	mgsLKAbsxPVEYvYOwEzzBapqEr3qGseOfF74bII4TSF0f0tUg+c1jdtIdVtJq8OHz+rQNMvhjZm5h
+	WS3t/LuNFVQKp0WAqKxeqtn9R+1oRpHNQ/Lht5HByjIugIvuZW/tgkd1wUI30Zy+ztT42oOXgFWO8
+	CpbZuw4dzVHemDHsoCiIBEBLTmludrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRmsw-000336-GC; Fri, 24 Apr 2020 01:12:06 +0000
-Received: from mail-vi1eur05on2055.outbound.protection.outlook.com
- ([40.107.21.55] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jRnYw-0006ky-BD; Fri, 24 Apr 2020 01:55:30 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRmsl-000323-OE
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 01:11:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=J1vZwJDlxAAMRj6rrEz02/+wyxRf9rQcKo3TQHYkHirzCXchna9bgeYmIWL5mBCzWWggcZZwE6aMiVMz6D3ZI5TMD6T4QFBnUbDoyTDfaHtgfPLiFw95sDrgjJe6l3PvdXZyO5aEH/UAKKCytfOGUDQ53CTG82TFXcEtYMAGeigkcWeXfARK68kgWVt0vys28d2gUAQ1AzVAVaBMAlfEP3Ikxtsu4ZIa1tx4bq708hZTrCk0rBtZ43dY26pTa7VIMIs2u3Eampn8XtF6cxK9xibUwSA66RzcHTq+VCI0RsZ8pDOndrVj0JEWzOA2urmk1Zf2Y90kMVzhM3gZxNhnbg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=61n0ODq1b1baZZ94TqWJQEw3qZ8PHUDOi80ksIOqK9s=;
- b=KjQ/7BHT4MVvMLAxaxMqdFwEctoDLyq3vUfTepIoH7gYDRmiHt6PNry+mCqAqUTjdvGTRMCMHTzb+9WKCUIChTL4UuhBT2RwDGG4Dsb94IsMF3BMA5LVDREjSmBY2ALRWuuviRU/kkAI4MZrIikaQaxml6B+qG3OZP6RVBsbcF7+KZ8lU+o29m0uJdBajPt+Rft7r6gQ9VRXc+k9vKng4VOMxEiWqMukLmBYtoFyzZ29kJuwEY/eCH8nU6lO5veEFFCoOpdcW+jIhaQts9FlYMQR5Tw3qnzZadaSUbW05Px/QSD4BoU/J6WBhmb4oIpt4YaRZwzbL6YUNNLZl000bQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=61n0ODq1b1baZZ94TqWJQEw3qZ8PHUDOi80ksIOqK9s=;
- b=mceXdnlb5qH1gLigpaFseFhG4f+QEnhZPQNDeNNZdcQRbbvnXRnnDEzjsNcJz2l9OttxpZ8yOqJxcBO4TZsEpx1iq3FlJPVnA/yDncAfbB9ccoPSQugg4yIoSGAvnw2V9ZnTSimBFcJNujRS4gHAOitMEnLpEangNs8bsCh7zrc=
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
- by DB6PR0402MB2709.eurprd04.prod.outlook.com (2603:10a6:4:97::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Fri, 24 Apr
- 2020 01:11:52 +0000
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2937.012; Fri, 24 Apr 2020
- 01:11:52 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: RE: [PATCH 2/4] firmware: imx: add resource management api
-Thread-Topic: [PATCH 2/4] firmware: imx: add resource management api
-Thread-Index: AQHWGT37doAjG8vSF0ywBJjXXTGn3qiGerCAgAAOdvCAADSbAIAAuXGA
-Date: Fri, 24 Apr 2020 01:11:52 +0000
-Message-ID: <DB6PR0402MB276083583D788E2685B78C3F88D00@DB6PR0402MB2760.eurprd04.prod.outlook.com>
-References: <1587625174-32668-1-git-send-email-peng.fan@nxp.com>
- <1587625174-32668-3-git-send-email-peng.fan@nxp.com>
- <AM6PR04MB49665455AE49EB1B500BEB4080D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <DB6PR0402MB276030B2D59423AF0FD3769388D30@DB6PR0402MB2760.eurprd04.prod.outlook.com>
- <AM6PR04MB4966169A7CB00C084FEA601980D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB4966169A7CB00C084FEA601980D30@AM6PR04MB4966.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 279e9ad2-800d-4f39-5ff3-08d7e7ec7922
-x-ms-traffictypediagnostic: DB6PR0402MB2709:|DB6PR0402MB2709:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB6PR0402MB2709CE1CA3B701279342D5CE88D00@DB6PR0402MB2709.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 03838E948C
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(396003)(346002)(39860400002)(366004)(136003)(4326008)(66556008)(76116006)(66946007)(66446008)(66476007)(64756008)(55016002)(52536014)(9686003)(33656002)(86362001)(5660300002)(71200400001)(26005)(8936002)(81156014)(8676002)(54906003)(2906002)(110136005)(186003)(316002)(6506007)(44832011)(7696005)(478600001);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 0+3HKDNXPTPbGVOoCV9WujxMp0mAmHDaOty7Hbci5LvNFpfkZos+rrWdPJ50Kz4idYPJ0EmvJIFcY8YSWYNivQ03MeKCwtwHwCqjh1TTzOsrPkABCWB23ss+8sdbrAXKFE9qroIeONUV9VYsIDp+ysTXlfgBmBGAr73gMrSQvUeVigIbKi2UHRyfysEfl/1o8CfQiiGacOA4ietOEUyxXCLkxZJFpZC2tCRrkoNLXn7WiSOKAi+ABP1K7y+hg30Onhajq18TVB6kkwgaN9Hd8IeOMtmWxRdMRTwTGuMEruL6xs2zaQwoBAHM8/ZTetXAyFTlAa3jkLzxP7ihutcunlzWnQDTD8OkXPFsrncB7LKCjnbqF6ojYiaWmtpfGb3vEnakvTdfhbWokadrj0dC13Qrcbqmly5ABRkmobFkCdkZDwCOegmOE6rXS+NwP+Qz
-x-ms-exchange-antispam-messagedata: KeaFio0zg2FL9i8DXiCcbW4UvsZzA29TE1uW+ZvNkN5Ikw1O1Vicgl15oOrmWMeD/q7CpByNDdmnxAmlenEOQ0VRWPgZDj9w/Fr/w87XRJNsMTlrgsmp4mURiJooH/Y9RdQCW85LnjWvj+/8HCFg0A==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 279e9ad2-800d-4f39-5ff3-08d7e7ec7922
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 01:11:52.5709 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9JVSxL/mYy8PyadwwuBNUp23YFuseTDP+S3PcfjlSdGoLJN+0zbOr3DF4aABwAYo18uDJtmgN+JmP2DMX6VlmQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2709
+ id 1jRnYm-0006jx-SX
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 01:55:22 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EB6071A0200;
+ Fri, 24 Apr 2020 03:55:18 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BCAD61A0210;
+ Fri, 24 Apr 2020 03:55:12 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2C6D3402ED;
+ Fri, 24 Apr 2020 09:55:05 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, rui.zhang@intel.com, daniel.lezcano@linaro.org,
+ amit.kucheria@verdurent.com, robh+dt@kernel.org, leonard.crestez@nxp.com,
+ linux@rempel-privat.de, peng.fan@nxp.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Subject: [PATCH V3] dt-bindings: firmware: imx: Move system control into
+ dt-binding headfile
+Date: Fri, 24 Apr 2020 09:46:41 +0800
+Message-Id: <1587692801-12149-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_181155_951931_EC6CED77 
-X-CRM114-Status: GOOD (  26.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200423_185521_198207_C77FBEE2 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.55 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.55 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,233 +70,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- Joakim Zhang <qiangqing.zhang@nxp.com>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: RE: [PATCH 2/4] firmware: imx: add resource management api
-> 
-> > From: Peng Fan <peng.fan@nxp.com>
-> > Sent: Thursday, April 23, 2020 6:57 PM
-> > > > From: Peng Fan <peng.fan@nxp.com>
-> > > > Sent: Thursday, April 23, 2020 3:00 PM
-> > > >
-> > > > Add resource management API, when we have multiple partition
-> > > > running together, resources not owned to current partition should not be
-> used.
-> > > >
-> > > > Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
-> > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > >
-> > > Right now I'm still not quite understand if we really need this.
-> > > As current resource is bound to power domains, if it's not owned by
-> > > one specific SW execution environment, power on will also fail.
-> > > Can you clarify if any exceptions?
-> >
-> > There will be lots of failures when boot Linux domu if no check.
-> >
-> 
-> What kind of features did you mean?
-> Could you clarify a bit more? I'd like to understand this issue better.
+From: Dong Aisheng <aisheng.dong@nxp.com>
 
-When supporting hypervisor with dual Linux running, 1st Linux and the
-2nd Linux will have their own dedicated resources.
+i.MX8 SoCs DTS file needs system control macro definitions, so move them
+into dt-binding headfile, then include/linux/firmware/imx/types.h can be
+removed and those drivers using it should be changed accordingly.
 
-If no resource check, that means 1st/2nd Linux will register all the
-resources, then both will see fail logs when register resources not
-owned to itself.
+Signed-off-by: Jacky Bai <ping.bai@nxp.com>
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V2:
+	- Change the author and add necessary signed-off.
+---
+ drivers/firmware/imx/imx-scu.c          |  1 -
+ drivers/thermal/imx_sc_thermal.c        |  2 +-
+ include/dt-bindings/firmware/imx/rsrc.h | 84 +++++++++++++++++++++++++++++++++
+ include/linux/firmware/imx/sci.h        |  1 -
+ include/linux/firmware/imx/types.h      | 65 -------------------------
+ 5 files changed, 85 insertions(+), 68 deletions(-)
+ delete mode 100644 include/linux/firmware/imx/types.h
 
-Same to partitioned m4 case.
+diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
+index f71eaa5..f3340fa 100644
+--- a/drivers/firmware/imx/imx-scu.c
++++ b/drivers/firmware/imx/imx-scu.c
+@@ -8,7 +8,6 @@
+  */
+ 
+ #include <linux/err.h>
+-#include <linux/firmware/imx/types.h>
+ #include <linux/firmware/imx/ipc.h>
+ #include <linux/firmware/imx/sci.h>
+ #include <linux/interrupt.h>
+diff --git a/drivers/thermal/imx_sc_thermal.c b/drivers/thermal/imx_sc_thermal.c
+index b2b68c9..b01d28e 100644
+--- a/drivers/thermal/imx_sc_thermal.c
++++ b/drivers/thermal/imx_sc_thermal.c
+@@ -3,9 +3,9 @@
+  * Copyright 2018-2020 NXP.
+  */
+ 
++#include <dt-bindings/firmware/imx/rsrc.h>
+ #include <linux/err.h>
+ #include <linux/firmware/imx/sci.h>
+-#include <linux/firmware/imx/types.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
+diff --git a/include/dt-bindings/firmware/imx/rsrc.h b/include/dt-bindings/firmware/imx/rsrc.h
+index 4e61f64..51906b9 100644
+--- a/include/dt-bindings/firmware/imx/rsrc.h
++++ b/include/dt-bindings/firmware/imx/rsrc.h
+@@ -547,4 +547,88 @@
+ #define IMX_SC_R_ATTESTATION		545
+ #define IMX_SC_R_LAST			546
+ 
++/*
++ * Defines for SC PM CLK
++ */
++#define IMX_SC_PM_CLK_SLV_BUS		0	/* Slave bus clock */
++#define IMX_SC_PM_CLK_MST_BUS		1	/* Master bus clock */
++#define IMX_SC_PM_CLK_PER		2	/* Peripheral clock */
++#define IMX_SC_PM_CLK_PHY		3	/* Phy clock */
++#define IMX_SC_PM_CLK_MISC		4	/* Misc clock */
++#define IMX_SC_PM_CLK_MISC0		0	/* Misc 0 clock */
++#define IMX_SC_PM_CLK_MISC1		1	/* Misc 1 clock */
++#define IMX_SC_PM_CLK_MISC2		2	/* Misc 2 clock */
++#define IMX_SC_PM_CLK_MISC3		3	/* Misc 3 clock */
++#define IMX_SC_PM_CLK_MISC4		4	/* Misc 4 clock */
++#define IMX_SC_PM_CLK_CPU		2	/* CPU clock */
++#define IMX_SC_PM_CLK_PLL		4	/* PLL */
++#define IMX_SC_PM_CLK_BYPASS		4	/* Bypass clock */
++
++/*
++ * Defines for SC CONTROL
++ */
++#define IMX_SC_C_TEMP                       0U
++#define IMX_SC_C_TEMP_HI                    1U
++#define IMX_SC_C_TEMP_LOW                   2U
++#define IMX_SC_C_PXL_LINK_MST1_ADDR         3U
++#define IMX_SC_C_PXL_LINK_MST2_ADDR         4U
++#define IMX_SC_C_PXL_LINK_MST_ENB           5U
++#define IMX_SC_C_PXL_LINK_MST1_ENB          6U
++#define IMX_SC_C_PXL_LINK_MST2_ENB          7U
++#define IMX_SC_C_PXL_LINK_SLV1_ADDR         8U
++#define IMX_SC_C_PXL_LINK_SLV2_ADDR         9U
++#define IMX_SC_C_PXL_LINK_MST_VLD           10U
++#define IMX_SC_C_PXL_LINK_MST1_VLD          11U
++#define IMX_SC_C_PXL_LINK_MST2_VLD          12U
++#define IMX_SC_C_SINGLE_MODE                13U
++#define IMX_SC_C_ID                         14U
++#define IMX_SC_C_PXL_CLK_POLARITY           15U
++#define IMX_SC_C_LINESTATE                  16U
++#define IMX_SC_C_PCIE_G_RST                 17U
++#define IMX_SC_C_PCIE_BUTTON_RST            18U
++#define IMX_SC_C_PCIE_PERST                 19U
++#define IMX_SC_C_PHY_RESET                  20U
++#define IMX_SC_C_PXL_LINK_RATE_CORRECTION   21U
++#define IMX_SC_C_PANIC                      22U
++#define IMX_SC_C_PRIORITY_GROUP             23U
++#define IMX_SC_C_TXCLK                      24U
++#define IMX_SC_C_CLKDIV                     25U
++#define IMX_SC_C_DISABLE_50                 26U
++#define IMX_SC_C_DISABLE_125                27U
++#define IMX_SC_C_SEL_125                    28U
++#define IMX_SC_C_MODE                       29U
++#define IMX_SC_C_SYNC_CTRL0                 30U
++#define IMX_SC_C_KACHUNK_CNT                31U
++#define IMX_SC_C_KACHUNK_SEL                32U
++#define IMX_SC_C_SYNC_CTRL1                 33U
++#define IMX_SC_C_DPI_RESET                  34U
++#define IMX_SC_C_MIPI_RESET                 35U
++#define IMX_SC_C_DUAL_MODE                  36U
++#define IMX_SC_C_VOLTAGE                    37U
++#define IMX_SC_C_PXL_LINK_SEL               38U
++#define IMX_SC_C_OFS_SEL                    39U
++#define IMX_SC_C_OFS_AUDIO                  40U
++#define IMX_SC_C_OFS_PERIPH                 41U
++#define IMX_SC_C_OFS_IRQ                    42U
++#define IMX_SC_C_RST0                       43U
++#define IMX_SC_C_RST1                       44U
++#define IMX_SC_C_SEL0                       45U
++#define IMX_SC_C_CALIB0                     46U
++#define IMX_SC_C_CALIB1                     47U
++#define IMX_SC_C_CALIB2                     48U
++#define IMX_SC_C_IPG_DEBUG                  49U
++#define IMX_SC_C_IPG_DOZE                   50U
++#define IMX_SC_C_IPG_WAIT                   51U
++#define IMX_SC_C_IPG_STOP                   52U
++#define IMX_SC_C_IPG_STOP_MODE              53U
++#define IMX_SC_C_IPG_STOP_ACK               54U
++#define IMX_SC_C_SYNC_CTRL                  55U
++#define IMX_SC_C_OFS_AUDIO_ALT              56U
++#define IMX_SC_C_DSP_BYP                    57U
++#define IMX_SC_C_CLK_GEN_EN                 58U
++#define IMX_SC_C_INTF_SEL                   59U
++#define IMX_SC_C_RXC_DLY                    60U
++#define IMX_SC_C_TIMER_SEL                  61U
++#define IMX_SC_C_LAST                       62U
++
+ #endif /* __DT_BINDINGS_RSCRC_IMX_H */
+diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
+index 17ba4e4..3fa418a 100644
+--- a/include/linux/firmware/imx/sci.h
++++ b/include/linux/firmware/imx/sci.h
+@@ -11,7 +11,6 @@
+ #define _SC_SCI_H
+ 
+ #include <linux/firmware/imx/ipc.h>
+-#include <linux/firmware/imx/types.h>
+ 
+ #include <linux/firmware/imx/svc/misc.h>
+ #include <linux/firmware/imx/svc/pm.h>
+diff --git a/include/linux/firmware/imx/types.h b/include/linux/firmware/imx/types.h
+deleted file mode 100644
+index 8082110..0000000
+--- a/include/linux/firmware/imx/types.h
++++ /dev/null
+@@ -1,65 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0+ */
+-/*
+- * Copyright (C) 2016 Freescale Semiconductor, Inc.
+- * Copyright 2017~2018 NXP
+- *
+- * Header file containing types used across multiple service APIs.
+- */
+-
+-#ifndef _SC_TYPES_H
+-#define _SC_TYPES_H
+-
+-/*
+- * This type is used to indicate a control.
+- */
+-enum imx_sc_ctrl {
+-	IMX_SC_C_TEMP = 0,
+-	IMX_SC_C_TEMP_HI = 1,
+-	IMX_SC_C_TEMP_LOW = 2,
+-	IMX_SC_C_PXL_LINK_MST1_ADDR = 3,
+-	IMX_SC_C_PXL_LINK_MST2_ADDR = 4,
+-	IMX_SC_C_PXL_LINK_MST_ENB = 5,
+-	IMX_SC_C_PXL_LINK_MST1_ENB = 6,
+-	IMX_SC_C_PXL_LINK_MST2_ENB = 7,
+-	IMX_SC_C_PXL_LINK_SLV1_ADDR = 8,
+-	IMX_SC_C_PXL_LINK_SLV2_ADDR = 9,
+-	IMX_SC_C_PXL_LINK_MST_VLD = 10,
+-	IMX_SC_C_PXL_LINK_MST1_VLD = 11,
+-	IMX_SC_C_PXL_LINK_MST2_VLD = 12,
+-	IMX_SC_C_SINGLE_MODE = 13,
+-	IMX_SC_C_ID = 14,
+-	IMX_SC_C_PXL_CLK_POLARITY = 15,
+-	IMX_SC_C_LINESTATE = 16,
+-	IMX_SC_C_PCIE_G_RST = 17,
+-	IMX_SC_C_PCIE_BUTTON_RST = 18,
+-	IMX_SC_C_PCIE_PERST = 19,
+-	IMX_SC_C_PHY_RESET = 20,
+-	IMX_SC_C_PXL_LINK_RATE_CORRECTION = 21,
+-	IMX_SC_C_PANIC = 22,
+-	IMX_SC_C_PRIORITY_GROUP = 23,
+-	IMX_SC_C_TXCLK = 24,
+-	IMX_SC_C_CLKDIV = 25,
+-	IMX_SC_C_DISABLE_50 = 26,
+-	IMX_SC_C_DISABLE_125 = 27,
+-	IMX_SC_C_SEL_125 = 28,
+-	IMX_SC_C_MODE = 29,
+-	IMX_SC_C_SYNC_CTRL0 = 30,
+-	IMX_SC_C_KACHUNK_CNT = 31,
+-	IMX_SC_C_KACHUNK_SEL = 32,
+-	IMX_SC_C_SYNC_CTRL1 = 33,
+-	IMX_SC_C_DPI_RESET = 34,
+-	IMX_SC_C_MIPI_RESET = 35,
+-	IMX_SC_C_DUAL_MODE = 36,
+-	IMX_SC_C_VOLTAGE = 37,
+-	IMX_SC_C_PXL_LINK_SEL = 38,
+-	IMX_SC_C_OFS_SEL = 39,
+-	IMX_SC_C_OFS_AUDIO = 40,
+-	IMX_SC_C_OFS_PERIPH = 41,
+-	IMX_SC_C_OFS_IRQ = 42,
+-	IMX_SC_C_RST0 = 43,
+-	IMX_SC_C_RST1 = 44,
+-	IMX_SC_C_SEL0 = 45,
+-	IMX_SC_C_LAST
+-};
+-
+-#endif /* _SC_TYPES_H */
+-- 
+2.7.4
 
-Would it be better without the failure log?
-
-Thanks,
-Peng.
-
-
-> 
-> Regards
-> Aisheng
-> 
-> > Thanks,
-> > Peng.
-> >
-> > >
-> > > Regards
-> > > Aisheng
-> > >
-> > > > ---
-> > > >  drivers/firmware/imx/Makefile       |  2 +-
-> > > >  drivers/firmware/imx/rm.c           | 40
-> +++++++++++++++++++++
-> > > >  include/linux/firmware/imx/sci.h    |  1 +
-> > > >  include/linux/firmware/imx/svc/rm.h | 69
-> > > > +++++++++++++++++++++++++++++++++++++
-> > > >  4 files changed, 111 insertions(+), 1 deletion(-)  create mode
-> > > > 100644 drivers/firmware/imx/rm.c  create mode 100644
-> > > > include/linux/firmware/imx/svc/rm.h
-> > > >
-> > > > diff --git a/drivers/firmware/imx/Makefile
-> > > > b/drivers/firmware/imx/Makefile index 08bc9ddfbdfb..17ea3613e142
-> > > > 100644
-> > > > --- a/drivers/firmware/imx/Makefile
-> > > > +++ b/drivers/firmware/imx/Makefile
-> > > > @@ -1,4 +1,4 @@
-> > > >  # SPDX-License-Identifier: GPL-2.0
-> > > >  obj-$(CONFIG_IMX_DSP)		+= imx-dsp.o
-> > > > -obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o
-> > > > +obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o rm.o
-> > > >  obj-$(CONFIG_IMX_SCU_PD)	+= scu-pd.o
-> > > > diff --git a/drivers/firmware/imx/rm.c b/drivers/firmware/imx/rm.c
-> > > > new file mode 100644 index 000000000000..7b0334de5486
-> > > > --- /dev/null
-> > > > +++ b/drivers/firmware/imx/rm.c
-> > > > @@ -0,0 +1,40 @@
-> > > > +// SPDX-License-Identifier: GPL-2.0+
-> > > > +/*
-> > > > + * Copyright 2020 NXP
-> > > > + *
-> > > > + * File containing client-side RPC functions for the RM service.
-> > > > +These
-> > > > + * function are ported to clients that communicate to the SC.
-> > > > + */
-> > > > +
-> > > > +#include <linux/firmware/imx/svc/rm.h>
-> > > > +
-> > > > +struct imx_sc_msg_rm_rsrc_owned {
-> > > > +	struct imx_sc_rpc_msg hdr;
-> > > > +	u16 resource;
-> > > > +} __packed __aligned(4);
-> > > > +
-> > > > +/*
-> > > > + * This function check @resource is owned by current partition or
-> > > > +not
-> > > > + *
-> > > > + * @param[in]     ipc         IPC handle
-> > > > + * @param[in]     resource    resource the control is associated
-> with
-> > > > + *
-> > > > + * @return Returns 0 for success and < 0 for errors.
-> > > > + */
-> > > > +bool imx_sc_rm_is_resource_owned(struct imx_sc_ipc *ipc, u16
-> > > > +resource) {
-> > > > +	struct imx_sc_msg_rm_rsrc_owned msg;
-> > > > +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> > > > +
-> > > > +	hdr->ver = IMX_SC_RPC_VERSION;
-> > > > +	hdr->svc = IMX_SC_RPC_SVC_RM;
-> > > > +	hdr->func = IMX_SC_RM_FUNC_IS_RESOURCE_OWNED;
-> > > > +	hdr->size = 2;
-> > > > +
-> > > > +	msg.resource = resource;
-> > > > +
-> > > > +	imx_scu_call_rpc(ipc, &msg, true);
-> > > > +
-> > > > +	return hdr->func;
-> > > > +}
-> > > > +EXPORT_SYMBOL(imx_sc_rm_is_resource_owned);
-> > > > diff --git a/include/linux/firmware/imx/sci.h
-> > > > b/include/linux/firmware/imx/sci.h
-> > > > index 17ba4e405129..b5c5a56f29be 100644
-> > > > --- a/include/linux/firmware/imx/sci.h
-> > > > +++ b/include/linux/firmware/imx/sci.h
-> > > > @@ -15,6 +15,7 @@
-> > > >
-> > > >  #include <linux/firmware/imx/svc/misc.h>  #include
-> > > > <linux/firmware/imx/svc/pm.h>
-> > > > +#include <linux/firmware/imx/svc/rm.h>
-> > > >
-> > > >  int imx_scu_enable_general_irq_channel(struct device *dev);  int
-> > > > imx_scu_irq_register_notifier(struct notifier_block *nb); diff
-> > > > --git a/include/linux/firmware/imx/svc/rm.h
-> > > > b/include/linux/firmware/imx/svc/rm.h
-> > > > new file mode 100644
-> > > > index 000000000000..fc6ea62d9d0e
-> > > > --- /dev/null
-> > > > +++ b/include/linux/firmware/imx/svc/rm.h
-> > > > @@ -0,0 +1,69 @@
-> > > > +/* SPDX-License-Identifier: GPL-2.0+ */
-> > > > +/*
-> > > > + * Copyright (C) 2016 Freescale Semiconductor, Inc.
-> > > > + * Copyright 2017-2019 NXP
-> > > > + *
-> > > > + * Header file containing the public API for the System
-> > > > +Controller
-> > > > +(SC)
-> > > > + * Power Management (PM) function. This includes functions for
-> > > > +power state
-> > > > + * control, clock control, reset control, and wake-up event control.
-> > > > + *
-> > > > + * RM_SVC (SVC) Resource Management Service
-> > > > + *
-> > > > + * Module for the Resource Management (RM) service.
-> > > > + */
-> > > > +
-> > > > +#ifndef _SC_RM_API_H
-> > > > +#define _SC_RM_API_H
-> > > > +
-> > > > +#include <linux/firmware/imx/sci.h>
-> > > > +
-> > > > +/*
-> > > > + * This type is used to indicate RPC RM function calls.
-> > > > + */
-> > > > +enum imx_sc_rm_func {
-> > > > +	IMX_SC_RM_FUNC_UNKNOWN = 0,
-> > > > +	IMX_SC_RM_FUNC_PARTITION_ALLOC = 1,
-> > > > +	IMX_SC_RM_FUNC_SET_CONFIDENTIAL = 31,
-> > > > +	IMX_SC_RM_FUNC_PARTITION_FREE = 2,
-> > > > +	IMX_SC_RM_FUNC_GET_DID = 26,
-> > > > +	IMX_SC_RM_FUNC_PARTITION_STATIC = 3,
-> > > > +	IMX_SC_RM_FUNC_PARTITION_LOCK = 4,
-> > > > +	IMX_SC_RM_FUNC_GET_PARTITION = 5,
-> > > > +	IMX_SC_RM_FUNC_SET_PARENT = 6,
-> > > > +	IMX_SC_RM_FUNC_MOVE_ALL = 7,
-> > > > +	IMX_SC_RM_FUNC_ASSIGN_RESOURCE = 8,
-> > > > +	IMX_SC_RM_FUNC_SET_RESOURCE_MOVABLE = 9,
-> > > > +	IMX_SC_RM_FUNC_SET_SUBSYS_RSRC_MOVABLE = 28,
-> > > > +	IMX_SC_RM_FUNC_SET_MASTER_ATTRIBUTES = 10,
-> > > > +	IMX_SC_RM_FUNC_SET_MASTER_SID = 11,
-> > > > +	IMX_SC_RM_FUNC_SET_PERIPHERAL_PERMISSIONS = 12,
-> > > > +	IMX_SC_RM_FUNC_IS_RESOURCE_OWNED = 13,
-> > > > +	IMX_SC_RM_FUNC_GET_RESOURCE_OWNER = 33,
-> > > > +	IMX_SC_RM_FUNC_IS_RESOURCE_MASTER = 14,
-> > > > +	IMX_SC_RM_FUNC_IS_RESOURCE_PERIPHERAL = 15,
-> > > > +	IMX_SC_RM_FUNC_GET_RESOURCE_INFO = 16,
-> > > > +	IMX_SC_RM_FUNC_MEMREG_ALLOC = 17,
-> > > > +	IMX_SC_RM_FUNC_MEMREG_SPLIT = 29,
-> > > > +	IMX_SC_RM_FUNC_MEMREG_FRAG = 32,
-> > > > +	IMX_SC_RM_FUNC_MEMREG_FREE = 18,
-> > > > +	IMX_SC_RM_FUNC_FIND_MEMREG = 30,
-> > > > +	IMX_SC_RM_FUNC_ASSIGN_MEMREG = 19,
-> > > > +	IMX_SC_RM_FUNC_SET_MEMREG_PERMISSIONS = 20,
-> > > > +	IMX_SC_RM_FUNC_IS_MEMREG_OWNED = 21,
-> > > > +	IMX_SC_RM_FUNC_GET_MEMREG_INFO = 22,
-> > > > +	IMX_SC_RM_FUNC_ASSIGN_PAD = 23,
-> > > > +	IMX_SC_RM_FUNC_SET_PAD_MOVABLE = 24,
-> > > > +	IMX_SC_RM_FUNC_IS_PAD_OWNED = 25,
-> > > > +	IMX_SC_RM_FUNC_DUMP = 27,
-> > > > +};
-> > > > +
-> > > > +#if IS_ENABLED(CONFIG_IMX_SCU)
-> > > > +bool imx_sc_rm_is_resource_owned(struct imx_sc_ipc *ipc, u16
-> > > > +resource); #else static inline bool
-> > > > +imx_sc_rm_is_resource_owned(struct imx_sc_ipc *ipc, u16 resource) {
-> > > > +	return true;
-> > > > +}
-> > > > +#endif
-> > > > +#endif
-> > > > --
-> > > > 2.16.4
 
 _______________________________________________
 linux-arm-kernel mailing list
