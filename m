@@ -2,172 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B94671B6B93
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 04:50:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6014F1B6B97
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 04:51:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=arokTQCVOETxMyWYUtc6lQc0D19C2uU6wrw4XVv1DAY=; b=uHTJmsgszUX8+S
-	G/5qilqiWiwj4KgyfO0vmXm2sV1Cc/DskqF/wmEcBIQW2px8GMDUgzDSmyJpkrj/wLJ1XuNLFcZtp
-	CxBJBuxJk0xw1ghJNxQXc9MUiqr3WM6PvGrqnHM1z5iukzfTswjHH4fiJ2DrFDxdTDq4TwFfdBzJ+
-	dK1gQ7Gqe9QGfWLiO7Uaz4s9KyZYmmaXND/bdLNn9xWfcf4v7ToMzJvd4C3hOywEq437Kp4Scy+iw
-	IOtft5Vnw5m6KScqe2ol2QvSOAHQ9j+i6wIo1k7+yznvHPg/ynWTDFh7kt4KWP6MGDGZZ9ysE35/K
-	3kofwbi9PP3USXxee1iQ==;
+	List-Owner; bh=EFx1bAVPT6ZzpmcEll27NcGd53oAg72UHBh4t+OCqtc=; b=q5CvEX4SlGXIp5
+	0bJ6a4gBOkJ4XWc6IrUIc/MRr6y7r9XpI838Mnz4LiKvv/Ckfxw58RnRoc8ZrO8lo3M0aFv62uoZz
+	X4QjCVEOkqqwhxjuU6BIMJwuuCrc7nJxdVU9Qxv1pwGyl0hyiPP0SH/iS0brldTR7HuJstqtmEvYT
+	vq56fv1Rp7p59pBDTHmJ75VW5kisO/ivSeOHdnpt39m0t7EyN4D8K07PJMClR8R6+1l6qubo6AUvF
+	SM9b9UJt1VOt3iUeoRYokOUYJgzPGTGl/QyS7mKmjk84A2dtaFdIcz6RjdAI44IC0TbDxN1rT63HN
+	s+uOqwDRAOjCOOxBw7Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRoQS-0006rX-0p; Fri, 24 Apr 2020 02:50:48 +0000
-Received: from mail-eopbgr60054.outbound.protection.outlook.com ([40.107.6.54]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1jRoR4-0007AT-Aw; Fri, 24 Apr 2020 02:51:26 +0000
+Received: from mail-am6eur05on2076.outbound.protection.outlook.com
+ ([40.107.22.76] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRoQI-0006pT-0r
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 02:50:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r5dzQ/8nY/xBFUSbOy893AIKqvaXupsA3rfTK9Yyz3c=;
- b=uonxVElCFsIdx+RFr1GmsXcLr464Yt6OsJaCr62e2S/H9G7fEWWL6u1LnFjH6uKMQXLQWxjnDpxqyZjbHLXwCQVHFvMK33q2huaX/OSrWzW65dIgUS9UDoA9oSBqtme6mvQzGFhYLV5UShUljoFCAQhg7Eej2dE1rAdAU3ri+40=
-Received: from AM6PR04CA0049.eurprd04.prod.outlook.com (2603:10a6:20b:f0::26)
- by VE1PR08MB4685.eurprd08.prod.outlook.com (2603:10a6:802:ae::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Fri, 24 Apr
- 2020 02:50:32 +0000
-Received: from AM5EUR03FT020.eop-EUR03.prod.protection.outlook.com
- (2603:10a6:20b:f0:cafe::1e) by AM6PR04CA0049.outlook.office365.com
- (2603:10a6:20b:f0::26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13 via Frontend
- Transport; Fri, 24 Apr 2020 02:50:32 +0000
-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- AM5EUR03FT020.mail.protection.outlook.com (10.152.16.116) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.19 via Frontend Transport; Fri, 24 Apr 2020 02:50:31 +0000
-Received: ("Tessian outbound 43fc5cd677c4:v53");
- Fri, 24 Apr 2020 02:50:31 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: abc97a36b9ad8eb2
-X-CR-MTA-TID: 64aa7808
-Received: from f839f8d49bc5.1
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 7D69440B-399A-4059-8480-E84E74C26EAC.1; 
- Fri, 24 Apr 2020 02:50:26 +0000
-Received: from EUR05-AM6-obe.outbound.protection.outlook.com
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id f839f8d49bc5.1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Fri, 24 Apr 2020 02:50:26 +0000
+ id 1jRoQq-00079Q-Vv
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 02:51:14 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UGiIi/kBlOCeKZonHSy/dZr/6sfDNmxSK/+ztULskJMIiHAV94PJuM9lmQFi2qDse1dK+T5mQtuUFqN5TUCB19aoAGPPn61Zj4fVx/OccrXp3hk7uzfc3swbpI7R3SU2KNYq88DShZSdU8kHK15xLe5zKfjB2BJGNzVdLAp3MvtKn1ebGq1dbjHTGIrjXp4besrU0Bf68oSVgRwx9GVhF2VD14AyuXGo4T6P0t8bOWQOH+2YAlL+V5uihFubITUX9zpLCYTWKD28wsMO3HbGXc7lfHJsJtd8oilngo4cvDnheW8te3vpJN9z34ONuNeRBx1nMSHLJpIbCBMTGgRl2Q==
+ b=E42gJBYKKvS1ISt3eUoDJ7gLeIUoAxGigUBbF6SkKZgyTndw7RrS+IpVuIHRMue1cFjtkt1c0KvWXgRXVnCooL2eyOJM8rn0084YWfh+3upWIUn5RZGsY1X6cMC8URjVP3GoQcH2FdGmlmHFZLM+3JXm0oQcGNzf6v09YceGiJir76r9Fvemoy7ksXMubTSfKWmW6K5R3lz0fkawbO7tDaET+g5h4H0HLP4fRhVXKuiFv8pIUk2bhRgZpFgewoleR+Kov41XKxJBjeK0Pn1+3/dj+Jgbcf1Gjggc0WahvBv3h8IoLzUJjkjdwpW2kx0RycYwOHmhxY7t7I2FpJnPiQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r5dzQ/8nY/xBFUSbOy893AIKqvaXupsA3rfTK9Yyz3c=;
- b=RxywWHmHCdzjvBZYMvJFGLUmlBmhHYEL3t3ljUtgbZBDe9S6kqwS5BfiC8gcaRdc5kxvkofGYpvzCQI+1jtyCawjXDXHag3WqEVVh/hf4So9IkEr66HWPyI9l9nezB6mnYQ65VoKmsNG5Ka7A6hOh4cTwnPRzKCh5jdYoqt2HLsJDkU+eyluc++OvJYqm7gkYlxLaILFuhRG1TtSHa68ZkfkXjSJ/CfOgFZbTb4XRBO44Q+2mGInG1hFl7WS0R1f6H0mn3axMWQ41nYeYmCaDnwL8xzAK1ensX8T6DU/n23iAznw8fx2MSOY663PtHbw6QJUTJ8yN89whLt5IBgkoQ==
+ bh=EdUOFsIvbIzg7dEsuC2xbbUIZdTDahSrD5+a1349ujQ=;
+ b=Nx9OHoeYJ1jU9x7dSMZXW1qxJrOnM/jkEWEVTZxb78LU9vXUUEe8x0PIlyql0nXnCjScgNMOfHyERljHgTKRny3mh9pIs+HND+l+0OcTsjoXaTFyyVXk5zF6aRuTpexZ7VKLEWrmqO5cDJ/5reFvTCwvOkeEB8S1wLOZwip6QNNL2AhLrslm4uAxMpTqWM/1taB0E54PAOT8Ch/h1LT6wjATmmVYBRswq6hYtH+AhfthZ3XVVzJMmVuDuKmlYLiYNfhxTx6m3/2zdt0g81Tl+M/1yw+L+oZa2cKqdBY+uFuykoSXRE0qbSLQuvAn2aqyk1n9B7Qvtnv0qjCN2u5hmA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r5dzQ/8nY/xBFUSbOy893AIKqvaXupsA3rfTK9Yyz3c=;
- b=uonxVElCFsIdx+RFr1GmsXcLr464Yt6OsJaCr62e2S/H9G7fEWWL6u1LnFjH6uKMQXLQWxjnDpxqyZjbHLXwCQVHFvMK33q2huaX/OSrWzW65dIgUS9UDoA9oSBqtme6mvQzGFhYLV5UShUljoFCAQhg7Eej2dE1rAdAU3ri+40=
-Received: from HE1PR0802MB2555.eurprd08.prod.outlook.com (2603:10a6:3:e0::7)
- by HE1PR0802MB2282.eurprd08.prod.outlook.com (2603:10a6:3:c9::21) with
+ bh=EdUOFsIvbIzg7dEsuC2xbbUIZdTDahSrD5+a1349ujQ=;
+ b=fDZpw7gCRzGTV8Vfk/ngOrfUe8cagCm4sySSJbPYfUbtLzN8HYI3LfwcUIcnn3j7LId2AuvcwPW59/eJYOuPcNwsMqDk/ADjEoHpkOjoWk8v924rd+cG+9nxufZ3M/SZ3gfT2pkPg3NxfkShJMzg7K4oK54NyOCELT+p72twyXs=
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
+ by AM6PR04MB4135.eurprd04.prod.outlook.com (2603:10a6:209:43::26) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Fri, 24 Apr
- 2020 02:50:22 +0000
-Received: from HE1PR0802MB2555.eurprd08.prod.outlook.com
- ([fe80::b1eb:9515:4851:8be]) by HE1PR0802MB2555.eurprd08.prod.outlook.com
- ([fe80::b1eb:9515:4851:8be%6]) with mapi id 15.20.2937.012; Fri, 24 Apr 2020
- 02:50:22 +0000
-From: Jianyong Wu <Jianyong.Wu@arm.com>
-To: Mark Rutland <Mark.Rutland@arm.com>
-Subject: Re: [RFC PATCH v11 5/9] psci: Add hypercall service for ptp_kvm.
-Thread-Topic: [RFC PATCH v11 5/9] psci: Add hypercall service for ptp_kvm.
-Thread-Index: AQHWF4xRpK0ubTCCx0eiqM1JOH1VE6iDV3gAgAQ/ngA=
-Date: Fri, 24 Apr 2020 02:50:22 +0000
-Message-ID: <ab629714-c08c-2155-dd13-ad25e7f60b39@arm.com>
-References: <20200421032304.26300-1-jianyong.wu@arm.com>
- <20200421032304.26300-6-jianyong.wu@arm.com>
- <20200421095736.GB16306@C02TD0UTHF1T.local>
-In-Reply-To: <20200421095736.GB16306@C02TD0UTHF1T.local>
-Accept-Language: en-US
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.28; Fri, 24 Apr
+ 2020 02:51:09 +0000
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::d9f7:5527:e89d:1ae3]) by AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::d9f7:5527:e89d:1ae3%7]) with mapi id 15.20.2921.032; Fri, 24 Apr 2020
+ 02:51:09 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "ben.dooks@codethink.co.uk"
+ <ben.dooks@codethink.co.uk>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 2/2] firmware: imx: MU IRQ group number should be 7
+Thread-Topic: [PATCH 2/2] firmware: imx: MU IRQ group number should be 7
+Thread-Index: AQHWGcUy/MHx513YSkqpWUZybaROrqiHjXLggAABSQCAAAEoAA==
+Date: Fri, 24 Apr 2020 02:51:09 +0000
+Message-ID: <AM6PR04MB49668CCFFB4439B051E99A3B80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1587683231-18468-1-git-send-email-Anson.Huang@nxp.com>
+ <1587683231-18468-2-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB496669637FE86E928B9E0EBE80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB391699FFA107CD570B943705F5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB391699FFA107CD570B943705F5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-x-originating-ip: [113.29.88.7]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [92.121.68.129]
 x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: a4355ef7-9c2e-44eb-9e23-08d7e7fa4142
-x-ms-traffictypediagnostic: HE1PR0802MB2282:|HE1PR0802MB2282:|VE1PR08MB4685:
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 902b6d3a-561f-43d7-45fd-08d7e7fa579d
+x-ms-traffictypediagnostic: AM6PR04MB4135:|AM6PR04MB4135:
 x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR08MB46857977396F6B68B7C76D98F4D00@VE1PR08MB4685.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-nodisclaimer: true
-x-ms-oob-tlc-oobclassifiers: OLM:8273;OLM:8273;
+x-microsoft-antispam-prvs: <AM6PR04MB4135321DF06741F50F98C15180D00@AM6PR04MB4135.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
 x-forefront-prvs: 03838E948C
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
- SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:HE1PR0802MB2555.eurprd08.prod.outlook.com;
- PTR:; CAT:NONE; SFTY:;
- SFS:(10009020)(4636009)(136003)(346002)(366004)(376002)(39860400002)(396003)(86362001)(6506007)(2616005)(6486002)(6512007)(31686004)(4326008)(26005)(37006003)(31696002)(316002)(6862004)(54906003)(186003)(53546011)(55236004)(71200400001)(76116006)(91956017)(5660300002)(478600001)(8676002)(66476007)(66446008)(64756008)(66556008)(36756003)(2906002)(8936002)(81156014)(66946007)(7416002)(6636002)(21314003);
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(396003)(39860400002)(366004)(376002)(346002)(136003)(186003)(76116006)(53546011)(316002)(66946007)(44832011)(110136005)(5660300002)(6506007)(4326008)(33656002)(64756008)(9686003)(8676002)(81156014)(26005)(8936002)(7696005)(71200400001)(2906002)(86362001)(66556008)(52536014)(66446008)(55016002)(478600001)(66476007);
  DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: arm.com does not designate
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: Ul2EbkEB9aLkZhbQGEpLmAAyP5Gt5iFFKB+GiVzihOj3i9Kokx97EHfXbvFy3YIgIYzGdlExk0LXV4irCh1Fv/OsQLRdETO9AlHoAMe8iHsJ7RVphMXyvmQ9Pchr4JM35bT6vzdetM46GQVRhhRqvnGWGkpDg5l7Q7RDVUqn4ELuiV4lFYnpyGrf+Z27dA4jD+OZ5HKVeDf9wSZQpUPunSognOt3d61swohQ3eEqCsAhaN6gyFIqhQ0nmkdcV4Ozeul8t/BvMeo9DWHuf+uYIJVJ9P2G0w+ftMHPA0+O0JiED9TwSS+12eIXgUc5fqQBsz8HtG8/XT6HrtXRRYnOm0prwW1Z+LHFcL2jVnJ8rC8mQf72bBO3yONiJ2Uw3CeZRm3sxnH4ws6I5Ymedt2UxuiQjjvMG5Q2QRKeJwf0EvPbWiwqotrQyMMVvhcCxNfoIaTSsKbHlHgLmh19lCQ692O2en/ndPEuTfALwRjoMRsuF8a+liuk2jZ5UhqMkTR/
-x-ms-exchange-antispam-messagedata: YgQJQw455x+FKo5Pt8/cC2pGRZyuTFibG1mV6kUHLPgybpA0HJZIWi/8ldW2QeqpJHcnp3/hFoj8wia7uVAviCrpjN2ykhFUnLY/xVrVJReKkkOhkjqubuPKVR6VvbzDSWXRFuFX7Kmm45ZQ7b8YWw==
-Content-ID: <DF1D40F484214641B6EB9942D3DB49D8@eurprd08.prod.outlook.com>
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 32FLy8MEtzLRvR3jrFMrTaj9lOPmzW7H5uZR5K1nwBxy6G98KmZNNxxktzYV9WMgJwAqk6yFc0FBTQGm6wCHXJf7w4bFoLmSW1BYzuKVZ8nFmKgDLu3g1SZ7fpsD1hxt0Sk8V/VKuSkX5wPDMIf5sOI318boswwzz6/u0bTRIYpb7SRUWSjirkZHq9wAcYI3c3bak84jEwBp03m0omn1JvsJm3iNAQD+qMdlvXdtbKABpbqTx+hw20HYts/AaLZYjqQMd2dDEsvdaVOp8V86U8ArcuflgO1LzucYRhP++8ZPMUBkYc39Tx46xvlZ4nM0Gj98BRyGFeVwA5mxKtspIsnv2VRAhRSeIK1fBr6rZf+W7ejJ0ldRQE5so7Y8oVUdH1RDfW8xRZh7SZzf6giTNuzii1aDXPUdM3TbnKqExdT+5S5oc5oYZaw3AtMhPFwL
+x-ms-exchange-antispam-messagedata: M8vXK5YCtCW0L5ZRMrdqJPGnu6KtNgP/SLU9edWvbmvAjgxxhyF9ns00RYDy/h4o0uAvDRA8Hw/HanrYme7ncatNgHIWynf5JD6LD9EWcc0vWLH41CEhUgrZchofGm2sGXfS3nyEPgYJk6hbbf7J6Q==
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0802MB2282
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT020.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
- SFS:(10009020)(4636009)(136003)(396003)(346002)(39860400002)(376002)(46966005)(31696002)(8936002)(47076004)(336012)(37006003)(81166007)(2616005)(356005)(31686004)(6506007)(316002)(81156014)(26005)(4326008)(2906002)(53546011)(6486002)(8676002)(36906005)(86362001)(54906003)(82740400003)(478600001)(6862004)(36756003)(6636002)(82310400002)(5660300002)(186003)(70586007)(70206006)(6512007)(21314003);
- DIR:OUT; SFP:1101; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 33ad35b1-1bb2-4b6e-524d-08d7e7fa3b9a
-X-Forefront-PRVS: 03838E948C
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 2qUkato4Gke3Fg+JfCu0Y1IoUD1bZDqkFVTplOCNfchgMqCdca5fN7T102pDHw7VzSFGbGi0YEmrslZe2MJbwVq92ImaMq4lunZnX5hJ/GwYuXENUQSYBeVKi+hivyYVKg7RkgJylxrSehC6OSjciDReRrqBPURtTbc5reiO+vGm4FvoZrN6lJZTkCnRPxKICL3yfU18jJ674qcH9uxhOLQ+Fr+jjQ00ZnDk2WoqekkQoJEam/DA0AikM1qASkEErnpNZimOjPnSI80EHeWEebvNLAelgYBUhaQT+Uxgdl2KK/WB0ggfMMluL8R7w3rLRFiygz0Xm2NRnH5pIDReuZfaZtn6o4MbPYoNwIsn8qtu568ORPgxA67ZGXDm0BrSAufmzpHcnmMXr8VXLRH3BI9a4p3jOtN736u7KENAdKd5mHsKj/AGFxxiP14wdrUe3Tag7KC+OuzkOabvEGL8rxR+ljEtR6VKCVQgqWWT0BHirYHbgyqro6/91P6PLEL7Nie5yAV+UQgUMo5HPGyIXC2SFynHCmoVZwQE4yQukNI=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Apr 2020 02:50:31.8379 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: a4355ef7-9c2e-44eb-9e23-08d7e7fa4142
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB4685
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 902b6d3a-561f-43d7-45fd-08d7e7fa579d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 02:51:09.2687 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +UHbeweHcNKoRl+b27ZXSO/KkDefjx2XMiz7MBmQ4CTr7q+WpO4vu7YM7ht4hh2JO+MP6XhwIA5j9O63J9fJew==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_195038_247766_5C5ECE17 
-X-CRM114-Status: GOOD (  16.30  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200423_195113_022536_605C1D64 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.54 listed in list.dnswl.org]
+ no trust [40.107.22.76 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -179,213 +130,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "maz@kernel.org" <maz@kernel.org>, Justin He <Justin.He@arm.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "richardcochran@gmail.com" <richardcochran@gmail.com>,
- Steve Capper <Steve.Capper@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- Steven Price <Steven.Price@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- "john.stultz@linaro.org" <john.stultz@linaro.org>,
- "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/4/21 5:57 PM, Mark Rutland wrote:
-
-Hi Mark,
-> On Tue, Apr 21, 2020 at 11:23:00AM +0800, Jianyong Wu wrote:
->> ptp_kvm modules will get this service through smccc call.
->> The service offers real time and counter cycle of host for guest.
->> Also let caller determine which cycle of virtual counter or physical counter
->> to return.
->>
->> Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
->> ---
->>   include/linux/arm-smccc.h | 21 +++++++++++++++++++
->>   virt/kvm/arm/hypercalls.c | 44 ++++++++++++++++++++++++++++++++++++++-
->>   2 files changed, 64 insertions(+), 1 deletion(-)
->>
->> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
->> index 59494df0f55b..747b7595d0c6 100644
->> --- a/include/linux/arm-smccc.h
->> +++ b/include/linux/arm-smccc.h
->> @@ -77,6 +77,27 @@
->>   			   ARM_SMCCC_SMC_32,				\
->>   			   0, 0x7fff)
->>   
->> +/* PTP KVM call requests clock time from guest OS to host */
->> +#define ARM_SMCCC_HYP_KVM_PTP_FUNC_ID				\
->> +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,			\
->> +			   ARM_SMCCC_SMC_32,			\
->> +			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
->> +			   0)
->> +
->> +/* request for virtual counter from ptp_kvm guest */
->> +#define ARM_SMCCC_HYP_KVM_PTP_VIRT				\
->> +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,			\
->> +			   ARM_SMCCC_SMC_32,			\
->> +			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
->> +			   1)
->> +
->> +/* request for physical counter from ptp_kvm guest */
->> +#define ARM_SMCCC_HYP_KVM_PTP_PHY				\
->> +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,			\
->> +			   ARM_SMCCC_SMC_32,			\
->> +			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
->> +			   2)
-> ARM_SMCCC_OWNER_STANDARD_HYP is for standard calls as defined in SMCCC
-> and companion documents, so we should refer to the specific
-> documentation here. Where are these calls defined?
-yeah, should add reference docs of "SMC CALLING CONVENTION" here.
-> If these calls are Linux-specific then ARM_SMCCC_OWNER_STANDARD_HYP
-> isn't appropriate to use, as they are vendor-specific hypervisor service
-> call.
-yeah, vendor-specific service is more suitable for ptp_kvm.
->
-> It looks like we don't currently have a ARM_SMCCC_OWNER_HYP for that
-> (which IIUC would be 6), but we can add one as necessary. I think that
-> Will might have added that as part of his SMCCC probing bits.
-
-ok, I will add a new "ARM_SMCCC_OWNER_VENDOR_HYP" whose IIUC is 6
-
-and create "ARM_SMCCC_HYP_KVM_PTP_ID" base on it.
-
->
->> +
->>   #ifndef __ASSEMBLY__
->>   
->>   #include <linux/linkage.h>
->> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
->> index 550dfa3e53cd..a5309c28d4dc 100644
->> --- a/virt/kvm/arm/hypercalls.c
->> +++ b/virt/kvm/arm/hypercalls.c
->> @@ -3,6 +3,7 @@
->>   
->>   #include <linux/arm-smccc.h>
->>   #include <linux/kvm_host.h>
->> +#include <linux/clocksource_ids.h>
->>   
->>   #include <asm/kvm_emulate.h>
->>   
->> @@ -11,8 +12,11 @@
->>   
->>   int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
->>   {
->> -	u32 func_id = smccc_get_function(vcpu);
->> +	struct system_time_snapshot systime_snapshot;
->> +	long arg[4];
->> +	u64 cycles;
->>   	long val = SMCCC_RET_NOT_SUPPORTED;
->> +	u32 func_id = smccc_get_function(vcpu);
->>   	u32 feature;
->>   	gpa_t gpa;
->>   
->> @@ -62,6 +66,44 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
->>   		if (gpa != GPA_INVALID)
->>   			val = gpa;
->>   		break;
->> +	/*
->> +	 * This serves virtual kvm_ptp.
->> +	 * Four values will be passed back.
->> +	 * reg0 stores high 32-bit host ktime;
->> +	 * reg1 stores low 32-bit host ktime;
->> +	 * reg2 stores high 32-bit difference of host cycles and cntvoff;
->> +	 * reg3 stores low 32-bit difference of host cycles and cntvoff.
->> +	 */
->> +	case ARM_SMCCC_HYP_KVM_PTP_FUNC_ID:
-> Shouldn't the host opt-in to providing this to the guest, as with other
-> features?
-
-er, do you mean that "ARM_SMCCC_HV_PV_TIME_XXX" as "opt-in"? if so, I 
-think this
-
-kvm_ptp doesn't need a buddy. the driver in guest will call this service 
-in a definite way.
-
->> +		/*
->> +		 * system time and counter value must captured in the same
->> +		 * time to keep consistency and precision.
->> +		 */
->> +		ktime_get_snapshot(&systime_snapshot);
->> +		if (systime_snapshot.cs_id != CSID_ARM_ARCH_COUNTER)
->> +			break;
->> +		arg[0] = upper_32_bits(systime_snapshot.real);
->> +		arg[1] = lower_32_bits(systime_snapshot.real);
-> Why exactly does the guest need the host's real time? Neither the cover
-> letter nor this commit message have explained that, and for those of us
-> unfamliar with PTP it would be very helpful to know that to understand
-> what's going on.
-
-oh, sorry, I should have added more background knowledge here.
-
-just give some hints here:
-
-the kvm_ptp targets to sync guest time with host. some services in user 
-space
-
-like chrony can do time sync by inputing time(in kvm_ptp also clock 
-counter sometimes) from
-
-remote clocksource(often network clocksource). This kvm_ptp driver can 
-offer a interface for
-
-those user space service in guest to get the host time to do time sync 
-in guest.
-
->> +		/*
->> +		 * which of virtual counter or physical counter being
->> +		 * asked for is decided by the first argument.
->> +		 */
->> +		feature = smccc_get_arg1(vcpu);
->> +		switch (feature) {
->> +		case ARM_SMCCC_HYP_KVM_PTP_PHY:
->> +			cycles = systime_snapshot.cycles;
->> +			break;
->> +		case ARM_SMCCC_HYP_KVM_PTP_VIRT:
->> +		default:
->> +			cycles = systime_snapshot.cycles -
->> +			vcpu_vtimer(vcpu)->cntvoff;
->> +		}
->> +		arg[2] = upper_32_bits(cycles);
->> +		arg[3] = lower_32_bits(cycles);
->> +
->> +		smccc_set_retval(vcpu, arg[0], arg[1], arg[2], arg[3]);
-> I think the 'arg' buffer is confusing here, and it'd be clearer to have:
->
-> 	u64 snaphot;
-> 	u64 cycles;
->
-> ... and here do:
->
-> 		smccc_set_retval(vcpu,
-> 				 upper_32_bits(snaphot),
-> 				 lower_32_bits(snapshot),
-> 				 upper_32_bits(cycles),
-> 				 lower_32_bits(cycles));
-
-it's better to use a meaningful variant name. I will fix it.
-
-
-thanks
-
-Jianyong
-
->
-> Thanks,
-> Mark.
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBGcm9tOiBBbnNvbiBIdWFuZyA8YW5zb24uaHVhbmdAbnhwLmNvbT4NCj4gU2VudDogRnJpZGF5
+LCBBcHJpbCAyNCwgMjAyMCAxMDozNiBBTQ0KPiANCj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2Ut
+LS0tLQ0KPiA+IEZyb206IEFpc2hlbmcgRG9uZyA8YWlzaGVuZy5kb25nQG54cC5jb20+DQo+ID4g
+U2VudDogMjAyMOW5tDTmnIgyNOaXpSAxMDozMw0KPiA+IFRvOiBBbnNvbiBIdWFuZyA8YW5zb24u
+aHVhbmdAbnhwLmNvbT47IHNoYXduZ3VvQGtlcm5lbC5vcmc7DQo+ID4gcy5oYXVlckBwZW5ndXRy
+b25peC5kZTsga2VybmVsQHBlbmd1dHJvbml4LmRlOyBmZXN0ZXZhbUBnbWFpbC5jb207DQo+ID4g
+YmVuLmRvb2tzQGNvZGV0aGluay5jby51azsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnOw0KPiA+IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmcNCj4gPiBDYzogZGwtbGlu
+dXgtaW14IDxsaW51eC1pbXhAbnhwLmNvbT4NCj4gPiBTdWJqZWN0OiBSRTogW1BBVENIIDIvMl0g
+ZmlybXdhcmU6IGlteDogTVUgSVJRIGdyb3VwIG51bWJlciBzaG91bGQgYmUNCj4gPiA3DQo+ID4N
+Cj4gPiA+IEZyb206IEFuc29uIEh1YW5nIDxBbnNvbi5IdWFuZ0BueHAuY29tPg0KPiA+ID4gU2Vu
+dDogRnJpZGF5LCBBcHJpbCAyNCwgMjAyMCA3OjA3IEFNDQo+ID4gPg0KPiA+ID4gVGhlIE1VIElS
+USBncm91cCBudW1iZXIgc2hvdWxkIGJlIDcgaW5zdGVhZCBvZiA0Lg0KPiA+ID4NCj4gPiA+IFNp
+Z25lZC1vZmYtYnk6IEFuc29uIEh1YW5nIDxBbnNvbi5IdWFuZ0BueHAuY29tPg0KPiA+DQo+ID4g
+QXJlIHdlIHVzaW5nIG90aGVycyBJUlEgZ3JvdXA/DQo+ID4gSWYgbm90LCB0aGlzIGNoYW5nZSBt
+YXkgc2xvdyBkb3duIHRoZSBpcnEgaGFuZGxpbmcgc3BlZWQuDQo+IA0KPiBUaGUgaXJxIGhhbmRs
+aW5nIGlzIHVzaW5nIHdvcmsgcXVldWUsIE5PVCBpbiBJU1IsIHNvIHRoZSBzcGVlZCBpcyBOT1Qg
+dGhhdA0KPiBzZW5zaXRpdmUuDQoNClNDVSBJUEMgaXMgc2hhcmVkIGJ5IHRoZSB3aG9sZSBzeXN0
+ZW0sIGVhY2ggU0NVIHRyYW5zZmVyIHRha2VzIGFib3V0IDEwfjIwIHVzLg0KSGVyZSB5b3UgbWF5
+IHdhc3RlIDMwfjYwdXMgaWYgbm90IHJlYWxseSB1c2VkLg0KDQo+IFRoZSBzY3UgZ3JvdXAgaXJx
+IGRyaXZlciBzaG91bGQgcHJvdmlkZSBmdWxsIGZ1bmN0aW9ucywgYXMgb3RoZXIgZHJpdmVycyB1
+c2luZyBpdA0KPiBtYXkgZW5hYmxlIHRoZSBncm91cCB0aGV5IHdhbnQuDQoNCkJlbG93IGFyZSBl
+eHRyYSBHUk9VUHMgeW91J3JlIGdvaW5nIHRvIGFkZDoNCiNkZWZpbmUgU0NfSVJRX0dST1VQX1NZ
+U0NUUiAgICAgNFUgICAvKiE8IFN5c3RlbSBjb3VudGVyIGludGVycnVwdHMgKi8NCiNkZWZpbmUg
+U0NfSVJRX0dST1VQX1JFQk9PVEVEICAgNVUgICAvKiE8IFBhcnRpdGlvbiByZWJvb3QgY29tcGxl
+dGUgKi8NCiNkZWZpbmUgU0NfSVJRX0dST1VQX1JFQk9PVCAgICAgNlUgICAvKiE8IFBhcnRpdGlv
+biByZWJvb3Qgc3RhcnRpbmcgKi8NCkFyZSB3ZSByZWFsbHkgZ29pbmcgdG8gdXNlIGl0PyBJdCBz
+ZWVtcyBJIGFsc28gZGlkbid0IHNlZSBhbnkgdXNlcnMgaW4gZG93bnN0cmVhbSB0cmVlLg0KDQpT
+b21lIGZ1bmN0aW9ucyBwcm92aWRlZCBieSBTQ0ZXIG1heSBub3QgcmVhbGx5IHVzZWQgYnkgTGlu
+dXguDQpJIHRoaW5rIEkncyBiZXR0ZXIgdG8gYWRkIHRoZW0gd2hlbiB3ZSByZWFsbHkgbmVlZCB0
+aGVtLCBvdGhlcndpc2Ugd2UgYmVuZWZpdCBub3RoaW5nDQpCdXQgd2FzdGluZyBDUFUgbWlwcy4N
+Cg0KUmVnYXJkcw0KQWlzaGVuZw0KDQo+IA0KPiBBbnNvbg0KX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
