@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 068C51B7A6F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:47:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1B271B7A6E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:47:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNd6/F2T7mfH5faAvZeGx+RaVKqHLi1qOOolGVaE5Mc=; b=JJXIVxmFo6IuTr
-	4dCRo+ggXDgseLFzJVjneD9cSz7EUcdCmK4TeTBSP7xTckAC342y3ZjJc9rk4MpPTfYqQtNGH2ntX
-	C7F3uQu2yh4yIcsMVnFnieVh4FUgJ9vGJtIkKYJSInXrmO2OiHHXrkmXfXRCPgHJscGi0rmOF08Vi
-	MmbkhGuvuGj7Nkr4r98wKCZC8RD2bDeTMSAvrrTAYVKlerlYUTLQls9vM430kaVDThcvA8Nai13EA
-	b0qJATo/zrNrRtx469R8a+uSuVrGZO7d0fX7Z3VzuzUTtnLqrPKCEwnq4/G0hYMana3C+2eID9Dyq
-	IVX9QHdPBXo1JBpjkpxQ==;
+	List-Owner; bh=SVBITWGrxOBLOeHTqjgbTnkH07As8NTZDSxdLV0Ke34=; b=ESrW1Uk8PHZZL4
+	LYI+oCAl7fmjpPjZwXGS0XmQRr2SoQijj+b+/V8lYS3nzFxVO/4GrQv19fpzn5L5wVcyCEsy259ZI
+	LhusTk7JB5AeCu8XRcYjuh/Ga7OwAjkxH4m0oHuUPiHyNVtEZfofpZszdUnR45BrVnZYyyCii38Dd
+	b0l6ZCrPRtyhy058/RSvTm77O4DoZL1pJgpRG5f0FHO3lbgRxhtflUODdDyZnxPe7uNkZGM9u//3d
+	xPAF3wuAW8g92lusUtyeXm0EDX+3BsGWyhtInpJBaiKaMrY1tndcxhFDtEzZV8QNBTbpODwS4c6pN
+	wpRGHBUvoSBfPTZVhVzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0Y4-0005BM-Cn; Fri, 24 Apr 2020 15:47:28 +0000
+	id 1jS0Xn-0004wO-D0; Fri, 24 Apr 2020 15:47:11 +0000
 Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0N5-0007uY-0s; Fri, 24 Apr 2020 15:36:13 +0000
+ id 1jS0N6-0007vi-0o; Fri, 24 Apr 2020 15:36:13 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 0A1828D8;
- Fri, 24 Apr 2020 11:36:04 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:36:05 -0400
+ by mailnew.west.internal (Postfix) with ESMTP id 6AA8F10AA;
+ Fri, 24 Apr 2020 11:36:06 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:36:07 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=l41voml82pNgG
- OR2Kp29KgbgqjpRY+t3Z1kDCxuBln8=; b=tYnFriWnlUexxsUuM7Br0mFchXr7R
- GnS7k2T6/xI8WqUgJcF/wzX8Z5ikyUg3Eutzd+4+yByQJYFnGQl1AaeIqyUQQ0ds
- KzgpVSyUUoiF44auzE809Fqh0OuYRieqOISEd51/9Oc6SPfWP0K/bSqP6vXgFC+N
- EgW5eaU1xXpuQjWgs3Y+2mX34l6n8TDEyES7wC+eA4s/SWtX8SToBdWfEyit159A
- wxZuOqUwru5q0bTEtxic2VWu9zMkCaH89VcdpgspPoJxrvC/cOwio9sVOwIYbOPJ
- dN+GEN4/CKIiQiTJ3TwdoTYPAHNqE3SylVVb+Q9QWNdFddm6pmSOjcoqg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=2I5zMakGdefyc
+ AHM9J30Y7T2xEqngHoH53dlRgc3XbQ=; b=BD1B4CN8zWU+fPz7IlbsH+rnyrL/K
+ GmWvt/35ykWfkbGxhUf3nvgpM/HFzhC6z5mbrPEessL1hEz9R1N36E3rQfYI+jOX
+ 4NeMvWRfrYLX3CWXu8lALSxcJFtXgnijMRi1t93HqXYAt+/6Su/sJERGgtJYUKLy
+ ss86uXwDxtAHwKXgtomXo8lToxz1CUKTyZkf+cKUBkRBtaz/7Gqe0XZlXOGN5Mxu
+ LhfAac9FMdLJwAjB6XLz5MpFWNUFjdOqIZAqHwXM99H5iHt1MW5PTN96gc6aRwwc
+ PdvRZrDN2H+GwHWfBheSDg2WnL2WJtgs0irTb+HE1jMwJlSAiKzOJ8Exw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=l41voml82pNgGOR2Kp29KgbgqjpRY+t3Z1kDCxuBln8=; b=q+i0wkga
- V0UYJNjDmhlD86+re4lfjlazcsG0chhJuiw7gJQ1YflWmy881vrk8TeH3O5gBVuZ
- 0qhRBHn4OL0k3rMqNcHUqwRWIAarVcXYiuUIAjfEZJcZKzbZIwn0+NDSeFEC1sRs
- 6MoJ2GLHu4EKguACvr+qc6I/kcDc7lBbiIi0Y2EfQse60yyyCFSfGvOSHYNW/VHr
- ERWem9rhUs77DRsR5CgAR//yBHJEkrSpILAmrdabGjipVouhHBnF8J4bsruRRfSl
- 7U7ArsW32CTLQ9r1SGTXhdX+U4VDBaDqvvpiYzbKoqY7f85fQjMed/i94+2POCTM
- U7u2LomJuuo8CQ==
-X-ME-Sender: <xms:ZAejXi-YVo1lOGd5ouDqCWOdxACj9VUbJCepxsY6gPnYz9gy_Kq3Yw>
+ fm2; bh=2I5zMakGdefycAHM9J30Y7T2xEqngHoH53dlRgc3XbQ=; b=Pis+VpXI
+ t0wmLmPGRLm+wsq/DgSmOoRh+9csdgurzenCAT4Ra6SxAyJYtkWgBcp6Mx9j0tRE
+ on987iRDzEBBXlS/JnMLPgvTGYLdpSJOBU8mdAjUjy4nS1+nMBJiyxLfNeKgmCot
+ UeeN0/zqrttVLPbV92LYnWIWbG0vFw5Wz0kIRejyZs5MnqKWJ+JL9VaUbbNt50/H
+ mZnyWAimGdR+ar+ed45xnMdcohtr02DWUnD6oixn+LJwadBsYthTXGp9kNRmKwzT
+ kYfVDSDgUHxYjR709uuYs2B4hUdW/JIt4fqM43JK1O7JHh93MAXZt1pFdzmjnRei
+ fVCEHGAaADQTiw==
+X-ME-Sender: <xms:ZQejXkufTVDwLok66FHM6BLrBJuB_BSbVYKOOazzTbfziom17RDw6w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -55,28 +55,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdote
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedvheenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:ZAejXj96wrPupWdwfyr6dTr96KuCnB56dnooalDGX_g2VHqsL3fX_Q>
- <xmx:ZAejXlEEyTImJYqU2f7609-VfanSntFYnOz0hjITtThXJEaNfGMSZw>
- <xmx:ZAejXteeR0XEY0hzYJU0IdWAGVPwROlGeO3bRSxGIH8XbTSXyRRC3w>
- <xmx:ZAejXiFuvSx4h-C5VvjRbdpfGYBTgZ-NE-uDhbNIBS_X8Ryo9p88h78vDss>
+X-ME-Proxy: <xmx:ZQejXo31Oh_FJDumAK97HP0x9cGyjm3g5i4OalhfqmvRBbCD4PkpUw>
+ <xmx:ZQejXqFiow9NgvsiJn5lD0t8g-U3c-sZGhwV2nQv7IbJAA9lhLELnA>
+ <xmx:ZQejXtPhBRvfTvRQfys8YUwSYQ3cfoYMHaeD8ma69SixaggyksKPvA>
+ <xmx:ZgejXppFBIk2U4L8O8z2BDU1N5BMLE3_ww19HQbuONEucwCJCxwu5ZU3b7Y>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 411603280067;
- Fri, 24 Apr 2020 11:36:04 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id A6A0E3065D9A;
+ Fri, 24 Apr 2020 11:36:05 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v2 30/91] dt-bindings: display: vc4: hdmi: Add missing
- clock-names property
-Date: Fri, 24 Apr 2020 17:34:11 +0200
-Message-Id: <18f458b573736cbf44b2d3d46fa705d3b2234f13.1587742492.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 31/91] dt-bindings: display: vc4: Document BCM2711 VC5
+Date: Fri, 24 Apr 2020 17:34:12 +0200
+Message-Id: <1fc211841ff633f59d64c3b074724a23f3606d72.1587742492.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_083607_215080_9FB3CFBD 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20200424_083610_521435_A2DB7A7C 
+X-CRM114-Status: UNSURE (   7.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -116,36 +115,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While the device tree and the driver expected a clock-names property, it
-wasn't explicitly documented in the previous binding. The documented order
-was wrong too, so make sure clock-names is there and in the proper order.
+The BCM2711 comes with a new VideoCore. Add a compatible for it.
 
 Cc: devicetree@vger.kernel.org
 Reviewed-by: Rob Herring <robh+dt@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
-index 834cc5f1c254..52b3cdac0bdf 100644
---- a/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
-+++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
-@@ -23,8 +23,13 @@ properties:
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+index 0dcf0c397375..49a5e041aa49 100644
+--- a/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+@@ -17,6 +17,7 @@ description: >
+ properties:
+   compatible:
+     enum:
++      - brcm,bcm2711-vc5
+       - brcm,bcm2835-vc4
+       - brcm,cygnus-vc4
  
-   clocks:
-     items:
--      - description: The HDMI state machine clock
-       - description: The pixel clock
-+      - description: The HDMI state machine clock
-+
-+  clock-names:
-+    items:
-+      - const: pixel
-+      - const: hdmi
- 
-   ddc:
-     allOf:
 -- 
 git-series 0.9.1
 
