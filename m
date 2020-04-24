@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CA8F1B79C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:41:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 776FC1B79C8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:41:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h/freMtxZ5EqiOrzfNZPiIeggVuwmOwM6CjxR10N3wQ=; b=b2PV97QXojT9OO
-	Fq6XofrRYFiy/axa1Aisl02dvF2p2nUZyTBdbA7wuft5Fpi2KPkO6/SK5X2PQB8MUSD6da41IIDyR
-	17hjMqrffmUZz17gwOEpgvuOM6KPmWfu6CZJMFNPcx8kGauOxMXGNWms2BuZFggTZYt5M+MmShnIt
-	A9GodxIWpkAi2hHfsIYtUBY0pqZRnE2o3VcWgSfBQU8DBS3OX8xUDQL5VAymk0H6aZAMKa48DRjWP
-	5IEM0rJNeyLcdNdKp4ZO50BZGztJdpNbjjorvhDo5+E07K1ji/O1UuWY60J0xTEnaW+1xjWFowu0n
-	ZX+YP2jqjYWg4qxy5rIw==;
+	List-Owner; bh=7pxuHGfkU3jbF9Hv3QnnyM7VnMa2FEqz2wTS554zTb8=; b=I2MNqVOmswRono
+	mLsWxzt/Qtsi61ggWxU+X5UEeblr0GOYRRb8wApoAuwqUFTYSsh8naBzdCpsfLgLj/HL5Pe9GSF9f
+	WxEfuLeFu7dvlWRq3lQifpfMAx1degtzobDHZROJVyLQRLebBnylUilkynJ0Q2s5yblc3CRWb2AG0
+	LWLMtT3GtltdQtyzWiU5K4K0VCIK8RgMKu5wc68K+QAAlZsmAxqmcInh/JKAxCwVrpob0aplE+sLv
+	54T2sHGWCHZqpS4gInFaWv9J+gppujEzaHPzAhruFF5x1JBiJdezsP4IYJ3MR1yG18NJ1auZO6GJB
+	75j8LRe8YjbYfhQbP6AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0Rg-0005Qt-PE; Fri, 24 Apr 2020 15:40:52 +0000
+	id 1jS0S6-0005oD-7h; Fri, 24 Apr 2020 15:41:18 +0000
 Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0Me-0007Ug-4X; Fri, 24 Apr 2020 15:35:41 +0000
+ id 1jS0Mf-0007W8-I7; Fri, 24 Apr 2020 15:35:42 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 91E6F136B;
- Fri, 24 Apr 2020 11:35:38 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:35:39 -0400
+ by mailnew.west.internal (Postfix) with ESMTP id DA864EB7;
+ Fri, 24 Apr 2020 11:35:39 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:35:40 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=CjNIxcvjbVsXB
- 3BBQ3hl6U/fLM7FzBRPy0/KIGvl8dU=; b=Vi+dzVeCDLokp5nihEH6JVtgewSVK
- b4nPdkvaxiPVZcyVJEJkUWHeijb56kQiBzY5JuiMUn3823XHQUl4NTh22qGk5vBI
- onZ8WIMD5JI7HB90F2tJRoPEyN8RKGm+TNNzmdB0agxRNitaOkdvXL/BTwpNngDr
- v7E7gisxjfaOOeKwh4OH9JRWgEIuK0FJS8LKsHfnrY5OldCQ0q6w8zsVTqfcgW8H
- bbKzbd3iqRY7VJKbJMUef2fijwJVuPYSk4KIV/5Bf08XaKUT34kFELF8FlQceMJK
- WM8f5gTNCTrp9lMuCWJPnrItrCYRGCofDKGYt1P0uC/tscZ+lzlkR6AsQ==
+ :mime-version:content-transfer-encoding; s=fm2; bh=lgLp0qWWRscbA
+ ZPBFEBy9wSxXxrWVVMD/Dw+AAXxxz4=; b=kjkFPUtv+BsrrC7LNyrzdOEpThfTA
+ ov5+EVfmj6tF24zR7hzUrEkvVPEsaKm3CCUn4VIwEidYbGeBqvMi6ht2tnc7Zgnf
+ dXAyY5WRAnS8uquielvWkT+BCfrBVeyKMqkOBWQT6YW8I4VFBCtH1GqH8KapziWV
+ 8/3VA4ia4jH0ZZNuj6Skx4O2YkhxnjrMwrzgfOY2s2fv4Y1LCtPEHCO3NmnlWIoM
+ ZVCWZDWcubCIUMNJ3pqvbZ85gMy1vmhIzUU2L3i+SwGVraJOaOUszsVsuV6LGGL6
+ FrIIAzTJKa0XIPIEOZfW3oOi7sqcSBlDfJA9Y4WE/ZTqzvVsJbrvkfNsQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=CjNIxcvjbVsXB3BBQ3hl6U/fLM7FzBRPy0/KIGvl8dU=; b=Zc0IpeHy
- ZgXCtDJC8FiRmBMQ369smf5Ai8/WKg4JGHqBmP2e8KB+k6T9KOCS9XuF2MOxPmgA
- ONejYEkR5BKofASLnBvmBT7tu0IoUJPEiHCG5OHYc8vmfX03YjOtGbSOgqzJlokA
- LkW+uKZ6f769aZt2VpqtbBKCp6zs7AvCvJwybw2Ktgf2fCuRiX8+B6TO/ON/Tr6S
- 7DjVUUioG3BuKkgIHnPQKhPGzVbGpFB0dTcKzsvVk6u2kApaR3PWbL6vzyYSED2l
- rK8DGwW8+ogTvfwQZA70eJdV9SVau7Bk7L2Hgle0/GHjyhjlWuhef2GJTL0MQrZT
- uw5664RzhpTQbg==
-X-ME-Sender: <xms:SgejXh9SCS2PWHIbMlOlxA5CC9c9Sb3wrVTKdYTlAOH94jOfrTZ9XQ>
+ fm2; bh=lgLp0qWWRscbAZPBFEBy9wSxXxrWVVMD/Dw+AAXxxz4=; b=06f2Ne+l
+ fsDrhicSiId4nb/KZ1YTsCUhB9S7OpbBA23AHXiUKuxvF4pwrUX+w+8dsAdSwK9L
+ XkvPEolO9QzbfC0Wj7mUgSbBrBfCtX3sYEjpcaqGOqoy1hg3DXtp14xIrRCyta2/
+ Gt0hORSH2A8iHMEhfpjuXZQJ/+dIXL4uRon3dM0Pms6VlDFmDJ/iX/HWsmnRq8a0
+ BDEWSVVLzYUuko1IbGUh22uF+cIytKpA4rrk678PWtKB2xY9HwVdvUkSkOAVAk+j
+ qKEhBqgSkLBc+csUrlzv0owBh6hQ2OiH2VIkmPbuVVMFkoFAW6dnKIu0wAU8JfBS
+ kHcyqf8RRL796A==
+X-ME-Sender: <xms:SwejXuSW-qd1WRNEkIt7ADT90j6iMa2MMHAZ7GrxOsW5scx8r1FYBQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -55,27 +55,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdote
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpeejnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:SgejXqrHlWsW2WenkxoLrbhudLx9X0yTrTWnBolInf_egZvSWaLBPw>
- <xmx:SgejXpwC2uE7lsm0QHIh9cvEtKFyvb9_0jBZ2l0tZ33KbxpDTR6hYw>
- <xmx:SgejXgIKQWIbA1OMh7FLLKWPhwocdchrBTvblNMIU3viLZ-_x81z8g>
- <xmx:SgejXrMqqh5h_n4NjlJ6ZFTPMIeLPffWGZEvQr3oOK3TX11JJlI6C-sXfZw>
+X-ME-Proxy: <xmx:SwejXvZNlHipdz5UMUC0ndUwu4xi8ETPpPOmFq54UKgZjpZNGX5VJw>
+ <xmx:SwejXmSs2mJAxZdnWlLvDvKmz5Pbh3oRWhGcLnDbaMaxkU4o8-5uXw>
+ <xmx:SwejXn5XnJWSmiHd3OxKK-F3hhDgvdbguO3BA8z8hK5S_EUU4AasRQ>
+ <xmx:SwejXonBV-lQITbqSloKXLyshcj0Mze12CD0mPxJFBzjPU1s5LJLxlMnLtU>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id CE2DC3065DA8;
- Fri, 24 Apr 2020 11:35:37 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 312F4328005D;
+ Fri, 24 Apr 2020 11:35:39 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v2 11/91] clk: bcm: rpi: Switch to clk_hw_register_clkdev
-Date: Fri, 24 Apr 2020 17:33:52 +0200
-Message-Id: <ed3ef94ed15ab5426d269615dac4e670b877ded2.1587742492.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 12/91] clk: bcm: rpi: Make sure the clkdev lookup is removed
+Date: Fri, 24 Apr 2020 17:33:53 +0200
+Message-Id: <12b4b665e18c34e5b81882ddd19bfce2ee50b78a.1587742492.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_083540_283737_883E9C96 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200424_083541_686938_C72CF9C9 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,9 +116,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we don't care about retrieving the clk_lookup structure pointer
-returned by clkdev_hw_create, we can just use the clk_hw_register_clkdev
-function.
+The clkdev lookup created for the cpufreq device is never removed if
+there's an issue later in probe or at module removal time.
+
+Let's convert to the managed variant of the clk_hw_register_clkdev function
+to make sure it happens.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
 Cc: linux-clk@vger.kernel.org
@@ -125,38 +128,25 @@ Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 5bed35483e71..013706816895 100644
+index 013706816895..eb5c4f5720e8 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -237,7 +237,6 @@ static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
- 
- static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
- {
--	struct clk_lookup *pllb_arm_lookup;
- 	int ret;
- 
- 	ret = devm_clk_hw_register(rpi->dev, &raspberrypi_clk_pllb_arm.hw);
-@@ -246,11 +245,11 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+@@ -245,8 +245,9 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
  		return ret;
  	}
  
--	pllb_arm_lookup = clkdev_hw_create(&raspberrypi_clk_pllb_arm.hw,
--					   NULL, "cpu0");
--	if (!pllb_arm_lookup) {
--		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
--		return -ENOMEM;
-+	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
-+				     NULL, "cpu0");
-+	if (ret) {
-+		dev_err(rpi->dev, "Failed to initialize clkdev\n");
-+		return ret;
- 	}
- 
- 	return 0;
+-	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
+-				     NULL, "cpu0");
++	ret = devm_clk_hw_register_clkdev(rpi->dev,
++					  &raspberrypi_clk_pllb_arm.hw,
++					  NULL, "cpu0");
+ 	if (ret) {
+ 		dev_err(rpi->dev, "Failed to initialize clkdev\n");
+ 		return ret;
 -- 
 git-series 0.9.1
 
