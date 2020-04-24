@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B844A1B77AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 15:58:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 076FA1B77AD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 15:58:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G+GIGL9qBQcn8zMc8n3VAYPkGqB7hWDB5MPEuzcx6js=; b=aZdXNWrG9j85Om
-	6J602PpAN2Ym6JEhRLXhbg60iZP/Md6n1y03oThkkzZ9tkKOnF+zNOvaOKxOdxTLqY1S3kPVjKTP8
-	3Ef3j1asDmVWq89Y2r/XEaJKOJtqaXFbEkYUafVlOz5rWIDDK6iskhpp9qnk6ZcTHDURqY8KdEQfh
-	gYLLkFfCFRnB2hicQ+cWWYpDu1JYZ17LM2e8A0Iq5qeP6dy2Vb1UsAoHROBT1jvz7mwJJIfJ3MHjH
-	kBwt58JMIj1YkrpsW9qyWKm3yPMEhcZ3Pae6IYKzffk3X6OG8QiL/q+QSNAqzU8AYEHRaqK1rHmzY
-	RBBvZamCT7i+CXy+Eadg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YbMpwTUQGHWDEJa4Sp2NKTUPlwcPAiQ8NqfkXe29S8Q=; b=kVU7nLseAAjbu8
+	Q92vAB0f/UNUJ9uxm4f7tkvMSg6sfGjSJBG8u+0s2q9p+lFmbCLalZ1/+vHzZxR6oyk/t12Fowssf
+	BaRBFtxH/etS53uOkJvwkiA0pku0sjCIrUKTUs1eaAdZocpLIcl10oP3idbA5bWyai0rBKqj7u1Nb
+	//tNk/SUrqwiRYJWa5mx42ZOMvNkZoXhlIojaG8dKM60i92ifXDQ4wEBznYsmXDPDf/D/NgDRBmwb
+	uexs11RpEOt3Ec2HjqoZHXTWuy9+gYVvA5DxYJHNfaugLa39mbsaj4YvlUZIuoqWSCf9qDlqIfsVR
+	7HCiOyV4tNG1c2BuE53Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRyqc-0006pB-Gp; Fri, 24 Apr 2020 13:58:30 +0000
+	id 1jRyqs-00070X-Uo; Fri, 24 Apr 2020 13:58:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRyqN-0006mV-Gg
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 13:58:16 +0000
+ id 1jRyqO-0006mb-Kw
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 13:58:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FD1D31B;
- Fri, 24 Apr 2020 06:58:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63408C14;
+ Fri, 24 Apr 2020 06:58:14 -0700 (PDT)
 Received: from e113632-lin.cambridge.arm.com (e113632-lin.cambridge.arm.com
  [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 27AAD3F68F;
- Fri, 24 Apr 2020 06:58:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6389A3F68F;
+ Fri, 24 Apr 2020 06:58:13 -0700 (PDT)
 From: Valentin Schneider <valentin.schneider@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] firmware/psci: PSCI checker cleanup
-Date: Fri, 24 Apr 2020 14:56:55 +0100
-Message-Id: <20200424135657.32519-1-valentin.schneider@arm.com>
+Subject: [PATCH 1/2] firmware/psci: Make PSCI checker not bother with parking
+Date: Fri, 24 Apr 2020 14:56:56 +0100
+Message-Id: <20200424135657.32519-2-valentin.schneider@arm.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20200424135657.32519-1-valentin.schneider@arm.com>
+References: <20200424135657.32519-1-valentin.schneider@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_065815_604221_46E38C68 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200424_065816_772693_E943E33D 
+X-CRM114-Status: GOOD (  12.71  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,28 +71,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi folks,
+kthread_stop() unconditionally calls kthread_unpark(). For kthreads
+with KTHREAD_IS_PER_CPU, this leads to waiting for
+wait_task_inactive(TASK_PARKED) before re-binding them. This is required
+mainly for smpboot threads, as they are parked before their respective CPU
+comes online which causes their affinity mask to be reset.
 
-This is a small cleanup of the PSCI checker following Peter's objections
-to its homegrown do_idle() implementation. It is based on his
-sched_setscheduler() unexport series at [1].
+For users of kthread_create_on_cpu(), this means they must park their
+threads before stopping them, which is a bit silly. While we could change
+kthread_unpark() to only do the rebind if it is required, using
+kthread_create_on_cpu() for anything else than smpboot threads is risky:
+they won't get parked/unparked during a hotplug cycle, so their affinity
+will just be reset as soon as their respective CPU goes out.
 
-I've never really used the thing before, but it still seems to behave
-correctly on my Juno r0 & HiKey960.
+The PSCI checker only lives during initcalls and explicitly points out
+that it cannot exist concurrently with hotplug operations, so let's just
+make it use kthread_create_on_node() + kthread_bind() (similar to what
+e.g. RCU torture does).
 
-Cheers,
-Valentin
+Signed-off-by: Valentin Schneider <valentin.schneider@arm.com>
+---
+ drivers/firmware/psci/psci_checker.c | 32 +++++++++++-----------------
+ 1 file changed, 12 insertions(+), 20 deletions(-)
 
-[1]: https://lore.kernel.org/lkml/20200422112719.826676174@infradead.org/T/#t
-
-Valentin Schneider (2):
-  firmware/psci: Make PSCI checker not bother with parking
-  firmware/psci: Make PSCI checker use play_idle()
-
- drivers/firmware/psci/psci_checker.c | 159 +++++++--------------------
- 1 file changed, 42 insertions(+), 117 deletions(-)
-
---
+diff --git a/drivers/firmware/psci/psci_checker.c b/drivers/firmware/psci/psci_checker.c
+index a5279a430274..fa7bb1e8a461 100644
+--- a/drivers/firmware/psci/psci_checker.c
++++ b/drivers/firmware/psci/psci_checker.c
+@@ -347,19 +347,12 @@ static int suspend_test_thread(void *arg)
+ 	if (atomic_dec_return_relaxed(&nb_active_threads) == 0)
+ 		complete(&suspend_threads_done);
+ 
+-	for (;;) {
+-		/* Needs to be set first to avoid missing a wakeup. */
+-		set_current_state(TASK_INTERRUPTIBLE);
+-		if (kthread_should_park())
+-			break;
+-		schedule();
+-	}
++	while (!kthread_should_stop())
++		schedule_timeout_interruptible(MAX_SCHEDULE_TIMEOUT);
+ 
+ 	pr_info("CPU %d suspend test results: success %d, shallow states %d, errors %d\n",
+ 		cpu, nb_suspend, nb_shallow_sleep, nb_err);
+ 
+-	kthread_parkme();
+-
+ 	return nb_err;
+ }
+ 
+@@ -395,13 +388,15 @@ static int suspend_tests(void)
+ 			continue;
+ 		}
+ 
+-		thread = kthread_create_on_cpu(suspend_test_thread,
+-					       (void *)(long)cpu, cpu,
+-					       "psci_suspend_test");
+-		if (IS_ERR(thread))
++		thread = kthread_create_on_node(suspend_test_thread,
++						(void *)(long)cpu, cpu_to_node(cpu),
++						"psci_suspend_test/%d", cpu);
++		if (IS_ERR(thread)) {
+ 			pr_err("Failed to create kthread on CPU %d\n", cpu);
+-		else
++		} else {
+ 			threads[nb_threads++] = thread;
++			kthread_bind(thread, cpu);
++		}
+ 	}
+ 
+ 	if (nb_threads < 1) {
+@@ -418,17 +413,14 @@ static int suspend_tests(void)
+ 	 */
+ 	for (i = 0; i < nb_threads; ++i)
+ 		wake_up_process(threads[i]);
+-	complete_all(&suspend_threads_started);
+ 
++	complete_all(&suspend_threads_started);
+ 	wait_for_completion(&suspend_threads_done);
+ 
+-
+ 	/* Stop and destroy all threads, get return status. */
+-	for (i = 0; i < nb_threads; ++i) {
+-		err += kthread_park(threads[i]);
++	for (i = 0; i < nb_threads; ++i)
+ 		err += kthread_stop(threads[i]);
+-	}
+- out:
++out:
+ 	cpuidle_resume_and_unlock();
+ 	kfree(threads);
+ 	return err;
+-- 
 2.24.0
 
 
