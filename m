@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87E2F1B7577
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C3BD1B758E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=06wigc8klWX2H/5L0hI5jNeMFD1T6yF/SOxbwMOklqo=; b=uB0r1SZz/YDYh0
-	bVU+s9NwMC04vlm9fXGrNq/JHfOaBPyZnSpn3XFTEMjRaAYZTpoosFuOk/r62lGr9Dk1s9E5ylo9s
-	dhty6LopdZrC+eogryPJ38l9fbxfNKd1te8eya8bhylSVlQY6wpuyEynM4XphUxjxG3N3oXjA3Xtw
-	wLLiWkJPhyPG5+ddkL4agQrAz5Y2jaj4PkUAizwnhCXKzR4Epj7qyjVYUBCHe5ncXbQymMuHuTpNm
-	9JrwZ3jAaoNVt5Jb/99vqADp+MVwLDdNbluNX/hnXyaBIStz07VLjbCL6dEoCcw1tOIKI/VRBqK9f
-	jniM0OxBIPx5WajV9Ceg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ATD8ASCxRmbbLt8wGDA1SnqiZ1cFodEFKvlUQ9Cyf40=; b=Hu6
+	aPS23UTIkTnLfwbCDLf2IrpRpnu1bOrw4zppKwr2e81bnDEvervLoRfBzSUSc0API0tds01wyVEkb
+	DurFG1alWsFhs5bqCY+bMKDorA1gT/DtxWnZzzL64jpgOOA2ynIRxhAdPU4QnzrUlLsQTf3q9oFmb
+	kK0rPBxNzIJoNyTmCj3SuzU/kYHGWtYUGKbCl8HZLoqf6lI+z/tTHgA8HVDWXeOHKCwSS8gXIGWqp
+	AUxZS/cvTqaytuyl//JisZ/TVP1w3fn5V15DnTy7fT09gpmnW9TrQCETxGxFsdj/KajGA0sD8u7q8
+	atFSRU/1w5Jw3cy0bIaD/fhbqUoGp3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxY6-0006Sr-PI; Fri, 24 Apr 2020 12:35:18 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jRxcO-0001sc-E8; Fri, 24 Apr 2020 12:39:44 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxXn-0006Qj-A7
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:35:00 +0000
-Received: by mail-pl1-x641.google.com with SMTP id ay1so3694469plb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 05:34:57 -0700 (PDT)
+ id 1jRxcF-0001ra-JS; Fri, 24 Apr 2020 12:39:36 +0000
+Received: by mail-wm1-x343.google.com with SMTP id k12so1701795wmj.3;
+ Fri, 24 Apr 2020 05:39:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=IYsx8ReGBE0SZMDMShZd8d3kGF4vInj33KNUOojIGFk=;
- b=Puhfz38A8No47Vs11emtioczpZqvcxI/PrK8TNvQu9KDF5oGG9NMDnZybFfYwgNoc8
- xH7R9QJ5nmcGuoEgeRHeLq20vNKEc57pJNravW0ShDtDejbt5a3qvClLubWtv4UghDnS
- wQqz9K72Y4ooTkMBTDvBM1L6Oo4aKjGI4cPGfkwsGRZvMvDkg94bR6v6hQJ0aJf8SQLx
- RFecgornk5SIVj966SLdvpvFnPA+jVINaUoxlPKrbR7K5JWtAe826dlHgwlE04Jmv1KC
- 2azO5BE7feh/B3ju5/cQZzSAPvEOoaaJTe8vLLXBfyFC4jnElUKG76+7XIBPC1PXvlRD
- oJDA==
+ h=from:to:cc:subject:date:message-id;
+ bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
+ b=teIk66JmO3IgWg1GspSg6VCLItxXTdO1u7eb8fUFMU1hNrcoBYZXDVZoLV6cPR1RMF
+ Kv31jgC7+Q1/s/yQIy2NIpwJ59DdnE6U7NT6Y4kyOGlze/NKDXRptsRrBeFKR8xRbz5g
+ glrUypL0KSIC7WPE1M6ct55WNR0c5Xt31WsWb75eFEBgstEfRymNxjm0e92XKYLn72YP
+ yYcmw+lf3k92IBqkoaICC04Hb40kMPASXUwBBIeZAqw+k6hGmE8dGn94vUO+9/uk/+Gn
+ Z5mJsfiT2cciloi5lMLEwBDP3dlkGN305mOnuo/C6bthykIkjf5IWmEYSYCuGJXxjPut
+ fmHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=IYsx8ReGBE0SZMDMShZd8d3kGF4vInj33KNUOojIGFk=;
- b=JvGYEtLxU8gAjdUoVOQf53ys1qIlgiIw9ZYM1hw9WEzz5Kov3z5d5UdDuQCPsYqOn7
- pOpdHcoHQoB2hLvkECUomJPFBgG8AwxGI+F/aqFpy14WY4143lCoGOciJVJ7Sc6ZToHc
- +vgYTcUyk+8e7fI9mUKOswYCIx7eeqIXEuvVNGoGRXuo3weYq4sWxCRsmE+RACOz8vE2
- 9bFF/xV6sgwR6Z7duughw+zxL5WirBBtpyksv4X13kh0IAIEseJGqV9yblNjx77EKGdK
- DovjpW5Li1DEwk54N7y73f8Y8Mz4yk4u4bP7zia9P9nLzX60dp2/islvySm6oo58Kajx
- dGGw==
-X-Gm-Message-State: AGi0Pubi0ugBnhliR3CkupjYOCfeOAcOZGK+HoELRitTc4/UI4/CMX7o
- xhsN7pFK1/W2AevhzKLviNfc7/bl
-X-Google-Smtp-Source: APiQypLMHyPCoD0045oHjHegbrwp6gRQSGxOQGJo2oOA+031VO+4YwsEMbDoeFQY6GWxH5CvKbja8Q==
-X-Received: by 2002:a17:90a:284e:: with SMTP id
- p14mr5931954pjf.10.1587731697484; 
- Fri, 24 Apr 2020 05:34:57 -0700 (PDT)
-Received: from syed ([106.223.101.26])
- by smtp.gmail.com with ESMTPSA id f99sm4787703pjg.22.2020.04.24.05.34.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 05:34:57 -0700 (PDT)
-Date: Fri, 24 Apr 2020 18:04:49 +0530
-From: Syed Nayyar Waris <syednwaris@gmail.com>
-To: akpm@linux-foundation.org
-Subject: [PATCH 6/6] gpio: xilinx: Utilize for_each_set_clump macro
-Message-ID: <20200424123449.GA5741@syed>
-MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
+ b=EPULjlnyn8kInBW3IzrHqxTFbD6SI0R5gPBaUqfgQxEnG9U8dAJRKYRZPB2e5q+A9Y
+ 8TOBCZM154klaiEW8aN8qS0AbS+DZIBynYUqEE8RUkcYs9X2QZE/g0z1hDjw3d1eb6tg
+ VS/vwSJfgp6Hwgh1liOXdah5T/WlglPto42xHzfTOt2MlPWLsIz7LbiW9gVUQyCJyaYK
+ K/swOZEAPyg8AyjjSGrPL7HJycbUeP1j3cZ6mNbXKMPSjyZBd00JRXFAS3kD0Q+cVomU
+ q5AFn7ZUndCyg4WuaFFpHmUr3/I7HzB/0ypjK1MbWSilmQvKZbcZClzg55Qwx2+qgk9a
+ g2qg==
+X-Gm-Message-State: AGi0PubiB+AXsxIAGeOkFw3e1wObN38T7OoiiRP9+04+tkpKrK9fCwhz
+ WhpMq8sb7vPPNzsSxwUGBc0=
+X-Google-Smtp-Source: APiQypKzAVcFFjXq84S98O4oSdfTNcU47XV/qwKDcg5zoIea/Yi23V/u7OuB9vSrNLmWi+JIwU/mEg==
+X-Received: by 2002:a05:600c:210c:: with SMTP id
+ u12mr10328859wml.135.1587731973727; 
+ Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id b12sm9136457wro.18.2020.04.24.05.39.32
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] ARM: dts: rockchip: fix pinctrl sub nodename for spi in
+ rk322x.dtsi
+Date: Fri, 24 Apr 2020 14:39:23 +0200
+Message-Id: <20200424123923.8192-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_053459_351741_C9501AAC 
-X-CRM114-Status: GOOD (  14.52  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200424_053935_656370_6D9E6397 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [106.223.101.26 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [syednwaris[at]gmail.com]
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,109 +95,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linus.walleij@linaro.org, vilhelm.gray@gmail.com, michal.simek@xilinx.com,
- bgolaszewski@baylibre.com, andriy.shevchenko@linux.intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch reimplements the xgpio_set_multiple function in
-drivers/gpio/gpio-xilinx.c to use the new for_each_set_clump macro.
-Instead of looping for each bit in xgpio_set_multiple
-function, now we can check each channel at a time and save cycles.
+A test with the command below gives these errors:
 
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Cc: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Syed Nayyar Waris <syednwaris@gmail.com>
-Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
+'#address-cells' is a required property
+
+The $nodename pattern for spi nodes is
+"^spi(@.*|-[0-9a-f])*$". To prevent warnings rename
+'spi-0' and 'spi-1' pinctrl sub nodenames to
+'spi0' and 'spi1' in 'rk322x.dtsi'.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-controller.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- drivers/gpio/gpio-xilinx.c | 64 ++++++++++++++++++++++++----------------------
- 1 file changed, 34 insertions(+), 30 deletions(-)
+ arch/arm/boot/dts/rk322x.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpio/gpio-xilinx.c b/drivers/gpio/gpio-xilinx.c
-index 67f9f82..428207f 100644
---- a/drivers/gpio/gpio-xilinx.c
-+++ b/drivers/gpio/gpio-xilinx.c
-@@ -136,39 +136,43 @@ static void xgpio_set(struct gpio_chip *gc, unsigned int gpio, int val)
- static void xgpio_set_multiple(struct gpio_chip *gc, unsigned long *mask,
- 			       unsigned long *bits)
- {
--	unsigned long flags;
-+	unsigned long flags[2];
- 	struct xgpio_instance *chip = gpiochip_get_data(gc);
--	int index = xgpio_index(chip, 0);
--	int offset, i;
--
--	spin_lock_irqsave(&chip->gpio_lock[index], flags);
--
--	/* Write to GPIO signals */
--	for (i = 0; i < gc->ngpio; i++) {
--		if (*mask == 0)
--			break;
--		/* Once finished with an index write it out to the register */
--		if (index !=  xgpio_index(chip, i)) {
--			xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
--				       index * XGPIO_CHANNEL_OFFSET,
--				       chip->gpio_state[index]);
--			spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
--			index =  xgpio_index(chip, i);
--			spin_lock_irqsave(&chip->gpio_lock[index], flags);
--		}
--		if (__test_and_clear_bit(i, mask)) {
--			offset =  xgpio_offset(chip, i);
--			if (test_bit(i, bits))
--				chip->gpio_state[index] |= BIT(offset);
--			else
--				chip->gpio_state[index] &= ~BIT(offset);
--		}
-+	u32 *const state = chip->gpio_state;
-+	unsigned int *const width = chip->gpio_width;
-+	const unsigned long state_size = BITS_PER_TYPE(*state);
-+	unsigned long offset, clump;
-+	size_t index;
-+
-+#define TOTAL_BITS BITS_PER_TYPE(chip->gpio_state)
-+	DECLARE_BITMAP(old, TOTAL_BITS);
-+	DECLARE_BITMAP(new, TOTAL_BITS);
-+	DECLARE_BITMAP(changed, TOTAL_BITS);
-+
-+	spin_lock_irqsave(&chip->gpio_lock[0], flags[0]);
-+	spin_lock_irqsave(&chip->gpio_lock[1], flags[1]);
-+
-+	bitmap_set_value(old, state[0], 0, width[0]);
-+	bitmap_set_value(old, state[1], width[0], width[1]);
-+	bitmap_replace(new, old, bits, mask, gc->ngpio);
-+
-+	bitmap_set_value(old, state[0], 0, state_size);
-+	bitmap_set_value(old, state[1], state_size, state_size);
-+	state[0] = bitmap_get_value(new, 0, width[0]);
-+	state[1] = bitmap_get_value(new, width[0], width[1]);
-+	bitmap_set_value(new, state[0], 0, state_size);
-+	bitmap_set_value(new, state[1], state_size, state_size);
-+	bitmap_xor(changed, old, new, TOTAL_BITS);
-+
-+	for_each_set_clump(offset, clump, changed, TOTAL_BITS, state_size) {
-+		index = offset / state_size;
-+		xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
-+				index * XGPIO_CHANNEL_OFFSET,
-+				state[index]);
- 	}
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 06172ebbf..e3b27da0a 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -1020,7 +1020,7 @@
+ 			};
+ 		};
  
--	xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
--		       index * XGPIO_CHANNEL_OFFSET, chip->gpio_state[index]);
--
--	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
-+	spin_unlock_irqrestore(&chip->gpio_lock[1], flags[1]);
-+	spin_unlock_irqrestore(&chip->gpio_lock[0], flags[0]);
- }
+-		spi-0 {
++		spi0 {
+ 			spi0_clk: spi0-clk {
+ 				rockchip,pins = <0 RK_PB1 2 &pcfg_pull_up>;
+ 			};
+@@ -1038,7 +1038,7 @@
+ 			};
+ 		};
  
- /**
+-		spi-1 {
++		spi1 {
+ 			spi1_clk: spi1-clk {
+ 				rockchip,pins = <0 RK_PC7 2 &pcfg_pull_up>;
+ 			};
 -- 
-2.7.4
+2.11.0
 
 
 _______________________________________________
