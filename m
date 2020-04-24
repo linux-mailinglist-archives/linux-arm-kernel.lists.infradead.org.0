@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC5831B79BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:37:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A54E1B799D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pJq3FB0dCDIuDIVKxx0vjS4RzW8UuekJJM4d+460NV4=; b=sajM5wr0ncQhrV
-	4N23W46kNo4ua3Td8Emn1ZTreHqp9keDR82x2Iq0iU/FZSmD/UYVCupmaP3MHY2JYYyojCPW6g0Q3
-	rw5uwhhC8Y+CLPNzEHKx6Gj7a0UEgeBk47wogPrwYJPvb4HbbQ0dum9r1fvzYpLTjL486uRzPJifn
-	gjTcCtM6WN995z+/PMul5tN+31mz6sBr88JFy4WU/90jQKvSsVYmAAoLO4Z5SSZfQ7o9N3IFL05yx
-	CL4jcQwaTPZscME9ebYsyPVrVuhG2GsAVsqxkpbrKESljA+06HAEYVMlY8I6VVFs/dTAYZ4fxVATQ
-	Zv/ph/zWrmOGrnq9in/A==;
+	List-Owner; bh=y9ZYHVQJCFbQpwXq2XLekcV/vOKDtkFiYQAJDBgWXco=; b=dtRo+mktNyFsXg
+	CPKKjbNsROOQcSxkgA9sjf8kYMuIqp3KVt3dqlZnKRWn4az/vtyPEU1rMJIkNTPkcyWw+I4RTnTjq
+	OZ4IKcPhh2cvSRpEMLciTQ8adQljgTCThKxL3nk1cRriFiFe8TlG5zRwrqI3QpQjmQgPD7rsJDdXL
+	DiUOEckLYBQWfXyTBWH+xNW8pggCW5zcdVWCeTrl36gI8/8XyEq3lj40c9vHPNLvkxXLI9jWjgPa/
+	MwdPg2kMFezzh8RV7ZjLtCeR0s8Tm/KMj1DsIKu14U0/WEbWpqX5Y2LwJmpI0N0xt61fWHjGQ3JTy
+	S1jD76zJ/eBC7//jyxNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0O2-0008Iw-QH; Fri, 24 Apr 2020 15:37:06 +0000
+	id 1jS0Mo-0007RY-6l; Fri, 24 Apr 2020 15:35:50 +0000
 Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0MX-0007Nx-OZ; Fri, 24 Apr 2020 15:35:36 +0000
+ id 1jS0MX-0007Nz-AE; Fri, 24 Apr 2020 15:35:35 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 99300D4C;
+ by mailnew.west.internal (Postfix) with ESMTP id DB4EDEB7;
  Fri, 24 Apr 2020 11:35:25 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
+Received: from mailfrontend1 ([10.202.2.162])
  by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:35:26 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=c0Cq8AgsYHTOO
- +aKa7NtdasFIoTnbBQjl8WHb1AcNco=; b=AIgM//qhbQnqcGZd6ypjsTr0h4cA4
- P9moePqISdJM4fa0mFETksJlM9nh7fkiATFVzQbZAcxYRIAdt8xwLGcMB5aYUELg
- cgjUEdQwNqOjvqX/DpMdeToSFY9SJ0xaspOjQJ1hBbBnwdyFapnv06O9EPMxsFZa
- 6wD2R3ukL2/WLZM3qWOiFgK0Ab7P5PWBcTY4GVa24cBwtHMKUKAXwnZVT0PPqU4c
- GVBECWcFVHnGM51dQrP0MA1by4Tt7uR4LUm8l/pJlUROogxVs6TxGolA8kOEEeic
- yRHM4Q7lhzP9X3cj7PqdqTfDRQXNXaYSiCVP9NP2WlEgLctbo1Zx7xQTg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=Br6jNHTz2Qqeu
+ hVMkqvSgmOdnA/EpKz1fVYzAs6ZIJ8=; b=lfBsM9lr8B58WUs5LOQy8+Dy5WUeu
+ hPJifN5RjOm8b1Lhl54X5WE6eB7CmT7Bn3LFs+ZTMnbsgBBF/jIBPBDuBil3/5w2
+ ylRvb7qbCry6XDvt+jorgFUPSDKvYEvuJA9oRZUyhBQJk8IadxrsEL+KGQtCZ9Ig
+ 5AHD2mlSDwqM+4/fXCueEeOFYap2+DBx4qzXCxEkgsF7Y27L2vMCsAH9oKgBYfOG
+ AAYN/ctIfkfXFEnSqQUufVCvQA+LDG5I1vqP3hQmCYphzAhanGPpV4UFENA98SUD
+ hdGE+t1pvJIcA47tFhjcO3HB8UASoJICmkJIgFu6NXH/CFI5oLYUQBUcw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=c0Cq8AgsYHTOO+aKa7NtdasFIoTnbBQjl8WHb1AcNco=; b=rTJv9lGS
- l/Pah3UDoWJ8NJaUp9LhURu1LSEDjraxbuzf/S5yoS3N1Jk1AfMmwRJxU2gl8cg2
- VJDyXTRl4DvpWIbgFdUE53cX9EdFVhSvdbf80vf+fm6EfhOYZUaJqarwUgDkSoFE
- 3nLJKtMtKdHOLGdewtLDi4W9SqkB46O8149I0gyVv0YjxB8kv59L3WJadKALEryh
- 61NMk8jCLT9lXLF9jQ5mYe5QOVF3bbpN7u0HaaytMljApzQmA1hzPlCISVBub2Jy
- ZATPbNzgz+hMUTA35t9xSuLVS61deV2dItdwVhlIJxXt219L2Ley6dcOAhR8H+/B
- SMeeylBUEDEd3A==
-X-ME-Sender: <xms:PAejXhFJcy9keLEvH-F1EkiBrfwLT6KUl0O1oQAXeDclq-nJQY_Pag>
+ fm2; bh=Br6jNHTz2QqeuhVMkqvSgmOdnA/EpKz1fVYzAs6ZIJ8=; b=QRxftHsr
+ u7VmOmy4iZfCs33XnJfmS4vejyPV7d7Uk+XJcBBhA6ruTYFyX4UQ7Ff7LwrexQtk
+ nP+MQ87zWmvUhJpP5XRotzx42Ph5L8G3KIboSu9hABsa3FWHmFu6z/jlvq+/ouob
+ m5PdfEAt/uwbyeJSfMmGHj636X+JPqpomZqBBWctFzUPnXil16arXYcfkNzj78mb
+ sfl3tZKX1c2lZMSnsfRnxkgBrDFmbcrGU7r7860LGnWj7nIPKIRL8szgWwIM1xp+
+ Zolz007hA0tVLQ3TGzSVvVRT4ffsNVofnBz9JwMWAp2mD5N3/SaKcBDBsD+6D/Bg
+ QGu0H7JoZT6Wkw==
+X-ME-Sender: <xms:PQejXlftwGQ177D55NSS-EaLTVKFxSSSkmHWlzMiTzI78gH6hq2kqw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:PAejXszuuchr5JKJspuQw8qBdu98B01y-tXS-AD5DUn1s3KQNQWPAg>
- <xmx:PAejXkfCgGKU-Nd6cx5nVg0QUFMw0MC3f1d-0lHDQedXv__RLftUyw>
- <xmx:PAejXi_5QXGSaDj0Bh8O-W_eXCUTWPbZI3m6h_N4qIsKc8fscRLSJg>
- <xmx:PQejXnVFBw61Tij7uieRQ3X9vLfkHNTA52yl6RpJnUvdq97bRxMqDrIGpeE>
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenog
+ evohgrshhtrghlqdfhgeduvddqtddvucdludehtddmnecujfgurhephffvufffkffojghf
+ ggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgi
+ himhgvsegtvghrnhhordhtvggthheqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdr
+ ohhrghenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtne
+ curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:PQejXnR7SdLUD0Q8550lOrbKiyCHuI6HvUG7FmAI9plVFSbvzpZz2Q>
+ <xmx:PQejXvqtbGvsP8ghq0Z5laapMVGOAElAuMEkf34_h5xgkKWRRsTZFw>
+ <xmx:PQejXoUN9bDc8qGNvvOGIQpyIn5vNT2Li3wzcj0jFWqSKBN8SZWMwQ>
+ <xmx:PQejXmL_tR172-p7xbbFtZwMuhfi-G1qkx3Nh2BqgGxISsMZZPBgCfQwINc>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id BC8043065D87;
- Fri, 24 Apr 2020 11:35:23 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 20975328006A;
+ Fri, 24 Apr 2020 11:35:25 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v2 01/91] i2c: brcmstb: Allow to compile it on BCM2835
-Date: Fri, 24 Apr 2020 17:33:42 +0200
-Message-Id: <c8c666eb5c82dcb73621930b3fedf5814792bf1a.1587742492.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 02/91] dt-bindings: arm: bcm: Convert BCM2835 firmware
+ binding to YAML
+Date: Fri, 24 Apr 2020 17:33:43 +0200
+Message-Id: <d99b37ae8684865656bbc941a12596d13f01dd88.1587742492.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_083533_853745_B01F68CA 
-X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-CacheID: sfid-20200424_083533_415751_855BB1A8 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -106,10 +108,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Florian Fainelli <f.fainelli@gmail.com>,
  Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Wolfram Sang <wsa@the-dreams.de>, Kamal Dasu <kdasu.kdev@gmail.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-i2c@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
  linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
@@ -117,34 +117,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BCM2711, supported by ARCH_BCM2835, also has a controller by the
-brcmstb driver so let's allow it to be compiled on that platform.
+From: Florian Fainelli <f.fainelli@gmail.com>
 
-Cc: Kamal Dasu <kdasu.kdev@gmail.com>
-Cc: Wolfram Sang <wsa@the-dreams.de>
-Cc: bcm-kernel-feedback-list@broadcom.com
-Cc: linux-i2c@vger.kernel.org
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
+Verified with dt_binding_check and dtbs_check.
+
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/i2c/busses/Kconfig | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------------
+ Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml | 35 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 35 insertions(+), 14 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
 
-diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-index 2ddca08f8a76..6644e0faa3df 100644
---- a/drivers/i2c/busses/Kconfig
-+++ b/drivers/i2c/busses/Kconfig
-@@ -475,8 +475,8 @@ config I2C_BCM_KONA
- 
- config I2C_BRCMSTB
- 	tristate "BRCM Settop/DSL I2C controller"
--	depends on ARCH_BRCMSTB || BMIPS_GENERIC || ARCH_BCM_63XX || \
--		   COMPILE_TEST
-+	depends on ARCH_BCM2835 || ARCH_BRCMSTB || BMIPS_GENERIC || \
-+		   ARCH_BCM_63XX || COMPILE_TEST
- 	default y
- 	help
- 	  If you say yes to this option, support will be included for the
+diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+deleted file mode 100644
+index 6824b3180ffb..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
++++ /dev/null
+@@ -1,14 +0,0 @@
+-Raspberry Pi VideoCore firmware driver
+-
+-Required properties:
+-
+-- compatible:		Should be "raspberrypi,bcm2835-firmware"
+-- mboxes:		Phandle to the firmware device's Mailbox.
+-			  (See: ../mailbox/mailbox.txt for more information)
+-
+-Example:
+-
+-firmware {
+-	compatible = "raspberrypi,bcm2835-firmware";
+-	mboxes = <&mailbox>;
+-};
+diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+new file mode 100644
+index 000000000000..cec540c052b6
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/bcm/raspberrypi,bcm2835-firmware.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Raspberry Pi VideoCore firmware driver
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++  - Stefan Wahren <wahrenst@gmx.net>
++
++properties:
++  compatible:
++    items:
++      - const: raspberrypi,bcm2835-firmware
++      - const: simple-bus
++
++  mboxes:
++    $ref: '/schemas/types.yaml#/definitions/phandle'
++    description: |
++      Phandle to the firmware device's Mailbox.
++      (See: ../mailbox/mailbox.txt for more information)
++
++required:
++  - compatible
++  - mboxes
++
++examples:
++  - |
++    firmware {
++        compatible = "raspberrypi,bcm2835-firmware", "simple-bus";
++        mboxes = <&mailbox>;
++    };
++...
 -- 
 git-series 0.9.1
 
