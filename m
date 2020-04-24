@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 396311B740A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:24:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 258381B7413
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:24:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d8WeaYPP/72sHiP6obCzdLV26T2GzCWAlWYrnXyASOk=; b=bi7Q3Hscboxp3W
-	C007mcV5vsFt1M0V9V3r+wezocPkMmlaFiW3qmY0lFHLp8Zwj03W65s6SB+pvm/3gj6Oi6PevABLL
-	pTd2W85OGUIiSnmJaOF+Dw5AEZCSgXYV+Z4WhWOQC8oAgIvWa1eEjuvNuaOMFuIXCqFBHXskmLFzm
-	DVEBPXne4pGBx8puTzLnS3CmvSDD0TvoBGeh8z2hYbhGbVF0ecJInFi5ID6sVE6wRCFW2UoSRZuhI
-	FK0AxcWsScSROZsazjJZAv2JCL3G9hr2s9J1iG/RVBffNSQEAhf26Ja9tWtCCKsb5zmcmchhQ9M0u
-	KDXxzYfzixpZ8clYJxUQ==;
+	List-Owner; bh=P+00BzmZ1qXIsjm0sGHm5twxuSZZKd3jsPOQOuhCygE=; b=IJXxJanjHt3eCD
+	rPbWEqsqVEXPw+AxnrETMOz63vplZjvQr0zL/en9IEA9bdXnmcMK1sm2ThT3LiL2Gv/hrxRCaYCAK
+	sd32ULEb4DNwF+AEc5VSktGWlfSOJfgLTEBS6K0jLeQtzUo6FdPath5Q7a6ij4P6q+0lY9ckBea93
+	aQLUkmicFAKFOeJfJKGLBjwjiWJB6+q+sS0VVjQBMe6kkR5un/A/6ufqwJOPttcbFZcQlAsUdSm8v
+	U8ntOk2aSGaw7U7fKZjIQFOxJeHKHnFy+a2kzIYyg7d2ebJzMfDvty+lNaVngD4QRuIFIH9xOplPQ
+	qWS9srbkDVFoM7S3PT9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxNV-0005js-4a; Fri, 24 Apr 2020 12:24:21 +0000
+	id 1jRxNk-00063e-BV; Fri, 24 Apr 2020 12:24:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxMy-0005U0-MM
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:23:50 +0000
+ id 1jRxNO-0005u6-3S
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:24:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5F6F220706;
- Fri, 24 Apr 2020 12:23:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2404C2168B;
+ Fri, 24 Apr 2020 12:24:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587731028;
- bh=Hs8s9eHC6FrR8kVw+W14GPnW2VfpOKl6QsOnOLWjeE4=;
+ s=default; t=1587731053;
+ bh=khfuUtphoGowJXyD29xSnB3vDa40rTfdz83YDfqA7vA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=m/YrB3Rl3V+wlQUT5tRJ8NpTtOgSLqL3bjFa+hrtwERiK7mniW8o5G8rWDGMNSC9A
- 4eLNaWqtVhobB4Mz4LUhkfwXi1LQu6kBZHWRpbglgCS6tJi1BPtdypRwI+MuN0LbBW
- TJ8tmqC9q55S4A1MPdv5dxKNLy09NVBmY7NtOwN8=
+ b=PSZaFWnxGouv3RBRQjVuw8NABOvqTf/3/9pBkkHAiinfrgZYCew/UK/DQFt9die68
+ 3a/V7mcyhJx1QDh/aZ2gnHt7om3Df9bVSFotSs5B/+LlgV4hucivrECr/UmcUdOhlF
+ 9iXTrpIKx8r/WLHGkNb27JPkbLhwMkcP7alHjv70=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 21/26] arm64: Delete the space separator in
+Subject: [PATCH AUTOSEL 4.19 14/18] arm64: Delete the space separator in
  __emit_inst
-Date: Fri, 24 Apr 2020 08:23:18 -0400
-Message-Id: <20200424122323.10194-21-sashal@kernel.org>
+Date: Fri, 24 Apr 2020 08:23:51 -0400
+Message-Id: <20200424122355.10453-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200424122323.10194-1-sashal@kernel.org>
-References: <20200424122323.10194-1-sashal@kernel.org>
+In-Reply-To: <20200424122355.10453-1-sashal@kernel.org>
+References: <20200424122355.10453-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_052348_988380_8BB974FA 
-X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-CacheID: sfid-20200424_052414_174208_29B7538E 
+X-CRM114-Status: UNSURE (   9.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -137,10 +137,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 6e919fafb43dd..9b68f1b3915ec 100644
+index 3091ae5975a3a..ed99d941c4623 100644
 --- a/arch/arm64/include/asm/sysreg.h
 +++ b/arch/arm64/include/asm/sysreg.h
-@@ -49,7 +49,9 @@
+@@ -60,7 +60,9 @@
  #ifndef CONFIG_BROKEN_GAS_INST
  
  #ifdef __ASSEMBLY__
