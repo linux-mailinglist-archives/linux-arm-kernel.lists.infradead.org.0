@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC83E1B6BB4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 05:05:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4447E1B6BBB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 05:09:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jTPA2mTX8+ZjTQLlRpW56csMbAUmQSICq3xCh7JZFmg=; b=uPduduqiKHafZm
-	hYFjfCsK4bp9nvnbP1nBtvo1i4t5LGjy4IaDgrM5a2d/Eywd+P0gYPQiyjer2uqIqmFupKdZM3N+W
-	91oBICnoKGyPeLaihAmCufmFiEPkgkZpViV1uVbJJAQt7GZCo+B8WgeynXHEOwtMghuc9VPilrMH4
-	4MuI+pMxu9QeKj355UOHcExbWjJswARqUVjybgNUv3/NKjLwr7Kpimt/CgGEH5/9QJlo3dfYY3efa
-	14RMd87KDLL90m//3e15P9//iMbm5j4iPAp7V93FerfPJaVhm7V3vnomMCyheThEGVQc4tF5FEcCJ
-	FEDab7ynz4SdiFMefZvQ==;
+	List-Owner; bh=tSP/9ZkuS2FCmciDI/ZGkylFmkVGffSosO31fNDMlaE=; b=E2AhIJpWUErcwC
+	sSN3Q06nj2BPGFX5zRnYBnqhj0d/sYRT/I0sgBaZfexXnfXvW7UTT6cjNF5FaUxXfdiWREEbk2jfY
+	WV5bYXG/KZoGrpcgv6C8gYU8XIhk7LNrJ9zZyWZPPTeWHhEVMdRnKRK0246bAuuSFCdEAq1p+fboF
+	az9+apxx9fIRfg8rJZ4kS8/EsUyGlJlMXdqDGauGSj+q5fvt2kRI9P6qlj+b9EjUE0AOd2US43sXf
+	J4II62YUE02qBS286TroPVzAikbUFagMNhkezgis40e87QIsl+lyTrgkBe0SpCsKuX060NF0AUJ2C
+	/fOtdA7n+BNDmtfPZyYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRoec-0008Pq-Gi; Fri, 24 Apr 2020 03:05:26 +0000
-Received: from mail-db8eur05on2080.outbound.protection.outlook.com
- ([40.107.20.80] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jRoii-0000XV-Lc; Fri, 24 Apr 2020 03:09:40 +0000
+Received: from mail-eopbgr30040.outbound.protection.outlook.com ([40.107.3.40]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRoeT-0008P2-N7
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 03:05:19 +0000
+ id 1jRoiY-0000Wg-8l
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 03:09:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GOXuXoGTV2quVY9mErTVpy8WqyJX7SXn+Tx1LOW0Vt2II/JQulHdJY9md+j/sSTcmVUt3DX4DyIAL4+idDRKiYE2gzgpe0EW5PxuTVSQUKPKVOXoJSpP5EM1WxSGVLfPX/frjqI41Rp25oVHab5UWL0AE0hSiozl7rplEE89LyPVVPy4w77MkosgMjmB5tOJuwWGP3Hmz1rd8PKWji3hX5/Wt+ELYQmZ4QGcp3lp9u4Roup/CFlEvbMCgZMTzv+12TaTzyGrzR6UmNtyO2hCa21p70NBwkDRPP/AX6IjNAwGTKjGZJE6nFRRmaYps8SwVApMTczB3qWHCrKBnVC/mw==
+ b=Ed37Mup+iKPyoQw25W0A5coTdgFyjGkpPYdGUgASmeSAt3eMSDxufKKEX9MDMjhSc3zKuAKe+Ak6oCo1gOwPsOOJZzTlKmLsTHmDVV+aExXBqBA5zPO9k+gXB6D5CmOKz89Xg76625Klc6G+4MDhhC/tVAgBBqZsLOVkWDHKDORJ00YwxDB4xt068VMxudNn/bW8AtBvCFLhAHqy7fTYrLhchpHzRleXD3VrbCNbCk8LZba8jV34B7iOGMz5kzpx6A8GDQhWAGO5rFXwJm+RWtVNV7AAp8Yr6wJ2iuy8Se5gKXDl5SgLcboNa4yhangOsL0O2vfvFJxVs/B0T/Cdyg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Eok9cKFXesz11dPUiXb7Pe7i9+jhpIQbEmW2Ui/94/I=;
- b=SzLjF3bibz5itzzcDrUFJms2sIpQDTGplyDkQhllPZtf6ZtLELZDnRiuNRcd1sQy0f0YTf4D5vHbw8xGtRCqnb1VhlIIPU/A6AZbZt5qZ9jyln4ergrMIyCoKIPtr6aj2iZbtegiUqVIQApYkmarFOlEbS5tnBYTOVHBOQw1jm/RDWvGrKx8E6dshXBnqrTIDzt5W5QsQdILDfNVq3O3N33OtE5Ey9H0TrTBO4jTEYkH10UAbX/wWp9j08GtvSDJK7tUoY40nl2vXmj4bw4ZEJVhP0wEuj231PflLm3wYTUSFDoBN4P9LZZg1G4AjgqwTJq/HNHcqh+yh3v0knQETQ==
+ bh=5U6BhGj52TRORxNjTNCcW/dF80j4n0y30WhI+y+pm48=;
+ b=PPp5a31EN8Q9gKv+GDfVBp9BUERa0kjP3AMac8migA6PY79RZ4EZ8o3GVifha10QkkI9YyyalKGnpn6SV0tji7wQc/3kScBnbNHjoxQ9bWpmRpY3ee0QI95upsaYZ+m6VhZW0EJReeysBJkajJ9VnzzHcGTfd1D7fuLXfJ9vDnL/8KDmMv44+QvxPw4rvXh43dhsbXkAPPVnW6ZYtJoPVARGGY/3kSiy9aeNLGfyEGgZZqo3Sv+b1XmedGDkF5CSdKkuuzkpZ0GqAW41ds8lF1AJKOVkIzWiUikeMasgfiiQAnCOicGEAgqjvHYx5xke+Y14ayZK37ylznsYbj2Vhw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Eok9cKFXesz11dPUiXb7Pe7i9+jhpIQbEmW2Ui/94/I=;
- b=iYfVaqgRAbNzEOPXMu6XkcjzZN69g+PrFtI2rJ6DkckxzUu+0hbgi4uLMGrUMoUdj27dmwjyp7GO8beTb3FGj8CY6jiyWHOPSs9DkQJoxRBsDQg366i5YWiyATo/V88o2M2gZtx9INmDf2XpEQI46aeFhANfs5hYCwrrXGAnTO0=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB6598.eurprd04.prod.outlook.com (2603:10a6:20b:fe::18) with
+ bh=5U6BhGj52TRORxNjTNCcW/dF80j4n0y30WhI+y+pm48=;
+ b=a2BNaPcKkJNCVkCZXCEDhtLp3jwnXovbqX6Qe3lmDYnaBa58sAJb4cm5PJRz98qTZ6INQN27XE50VLPZMQWUOMUGXHJ5Xm2omMemMrWi0QOlBw7vavwwtVaBcZE3jVWLHntqm4S3TgPQDMKYBQtu2W4EiGc+6ykP+RyQwerVQVg=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3802.eurprd04.prod.outlook.com (2603:10a6:8:f::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Fri, 24 Apr
- 2020 03:05:14 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::d9f7:5527:e89d:1ae3]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::d9f7:5527:e89d:1ae3%7]) with mapi id 15.20.2921.032; Fri, 24 Apr 2020
- 03:05:12 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "jassisinghbrar@gmail.com"
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.29; Fri, 24 Apr
+ 2020 03:09:25 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2921.035; Fri, 24 Apr 2020
+ 03:09:25 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "jassisinghbrar@gmail.com"
  <jassisinghbrar@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
  <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
@@ -56,60 +56,59 @@ To: Anson Huang <anson.huang@nxp.com>, "jassisinghbrar@gmail.com"
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Subject: RE: [PATCH] mailbox: imx: Add context save/restore for suspend/resume
 Thread-Topic: [PATCH] mailbox: imx: Add context save/restore for suspend/resume
-Thread-Index: AQHWGcRIgrxdUkc8WEWRmowVEyQEl6iHi5TQgAACNYCAAAU8oA==
-Date: Fri, 24 Apr 2020 03:05:12 +0000
-Message-ID: <AM6PR04MB496671BFF3496FD1C4C51E7E80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Thread-Index: AQHWGcRI3NaCUTtP70667RBGRFojq6iHjCeAgAAAeYCAAAouAIAAAIOw
+Date: Fri, 24 Apr 2020 03:09:25 +0000
+Message-ID: <DB3PR0402MB39164CB0791AB259CE62EC4EF5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 References: <1587682871-528-1-git-send-email-Anson.Huang@nxp.com>
  <AM6PR04MB49666D6A0B015FD1DF3A20B480D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
  <DB3PR0402MB3916D588A9432A9F1D1F99BAF5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB3916D588A9432A9F1D1F99BAF5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Accept-Language: zh-CN, en-US
+ <AM6PR04MB496671BFF3496FD1C4C51E7E80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB496671BFF3496FD1C4C51E7E80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [92.121.68.129]
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ea4456ae-c714-4428-fba6-08d7e7fc4e61
-x-ms-traffictypediagnostic: AM6PR04MB6598:|AM6PR04MB6598:
+x-ms-office365-filtering-correlation-id: 98e4914a-7049-499f-7741-08d7e7fce4f5
+x-ms-traffictypediagnostic: DB3PR0402MB3802:|DB3PR0402MB3802:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB65983A24D88FC588E93A324C80D00@AM6PR04MB6598.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:568;
+x-microsoft-antispam-prvs: <DB3PR0402MB38029DD99F2EA3E6C57A80CEF5D00@DB3PR0402MB3802.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:644;
 x-forefront-prvs: 03838E948C
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(136003)(39860400002)(366004)(346002)(376002)(396003)(6506007)(66946007)(8936002)(316002)(15650500001)(53546011)(44832011)(71200400001)(81156014)(7696005)(4326008)(26005)(8676002)(110136005)(186003)(66476007)(52536014)(33656002)(86362001)(66446008)(66556008)(76116006)(9686003)(2906002)(478600001)(64756008)(55016002)(5660300002);
+ SFS:(10009020)(4636009)(396003)(136003)(346002)(376002)(366004)(39860400002)(478600001)(66446008)(64756008)(66476007)(66556008)(66946007)(6506007)(7696005)(26005)(8676002)(33656002)(52536014)(53546011)(8936002)(81156014)(15650500001)(55016002)(71200400001)(86362001)(9686003)(5660300002)(4326008)(76116006)(2906002)(186003)(110136005)(44832011)(316002);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: m1uJlzoCXYuH9dNrGchUXLn9aT27lARYTuTi3wNeFZGmEKNR7+ZPYoSUePPHWL2EEdCXErUnzvowm0A/U6w+Fngr1gLBeHhCVnG/B+7/QDjKRLllRPa5ssz6IQ87eUK8xedeI0xLT6+ljPYkp0QJkAaBEjLLymRqXI8yWVtEADwYMbf6CjO46fy0Yffx5Y+D3T4nW3/h+L4RhE53IsKP4skSuNRcbK41SIwMzy/SAkKcOTTuMKMcgowyYyw5TvvJmfqMW9dTkFPYxCIlivfWEeupM9atfcRjqDY5ZT49UG/m8CF/ouz7Q1LWM/fDh5Znt02eqvaIq7VsH9ByU3H6lwAFF+9tW+Ni5UhlcchJ+IKwDY6rwf97Tnz2JbaHZsVN8OXi0xvWH535r3YuQp7YM6Uo7Z9RcAmwrrIvnuTL+yOVeMm9VTiOsn1DCBi6ejbn
-x-ms-exchange-antispam-messagedata: /oYvH0MBJKikAH5u+l98US5vmepuO6kzYk2ckT4UFLpUnpDv4zLrvcve7TLwGhc4Y+rrpLjkTZuu+I04K+Ajevz6x85qpiBxsWNWr7jZbz5mMa/WIlYEXCQNMzSms+nkwHCYgUxZs759m8mfKfCyEA==
+x-microsoft-antispam-message-info: KwdI7S5Ueme+Cowpb78uCGqeoDWZ8EUtJlEHL32cqDjdhNIlUmsb307HahJ/WCo1HQgmI7pgfuA5Ti5kXlTiPbhptrLzcJyxQdMv7TSBv3s1HTbxdwu8K0H1uSYGS0RGPFxEvwueYl1vB9QyeiaHHnfMQ4VydPO6SZ5pFZW4petXIxNDcwdQz8OEtP0cKOcV4gg+xDxtY0RYRhvQ+7ZLQBJNvtKVUvjd8IVHl0ahqu8CPwPL1EoL9Jybq9GneComVei9383WTDgPUcS1yX97h19vx0+zZR2IM1x7+Xh3ti425S+Yqkw6w68c7vmGlLjTJui1H+E9rqQY/iFa9CB2ACmjn5M7YGKyx0p8ttbar/GAQPugv9yMDv113iG5uwennc4Sawr78g7YAKhzLdNW7jt1JOvNOF5YUkLaiSWlQSucw0ndpx2sSqy7txkqMruY
+x-ms-exchange-antispam-messagedata: RPgKxgY2t2NpMxuK0KWiEu1+7OZpphLOEwj0BwoP3HSG3pUXPFWOK2lPDzhEI5r2PdZX+geaNk8Q2qNCBaBpMkk4Oen5CX5zqvFhM1/YkitserqLumwPB/qwmXer6qyRVtU13gpKU+c3jQvMd7nfeAVJN12TacWNBqAn7QgkJPrDqWLIloHz28qBhyB6vwWe3Ip8ua/YswZfYzXov1ouYW8QWSTYByCvOvJYaYy3j2ZCXseFvafaSlQr9hMZZxsYLXKbf+eJiN1nHGMM5CNdSmHgrflTqcmcNhF7bmPvXcqYX02zDuYQ+F+z7ZXgZkmQ/LGut6HxdHWWK2V0ZKxVgmtlzmb2W1EE3oOVtp8uL23p1QmW/0hD6pLvEfd1XRvfh6tECGtv0PfsDcuWnM9xxF8ReSX5t/rkcNhHAHImifGuipADu5C9cx5CCRD7X6ijuoOGD4eANuxrxG6uXjQ69gM8L/X1BzQxdRT0hUtz7JGNWPs6U4xsmnDjGYa9HVeDHYplBxouvfpHORGmc5uiIDc17EHLh0T2+OiZJElp/hXTHVlx9HcwNZ9dHCqEpjvTXbrPDnIFHAyDHhD+PV1cHEbn4vtvvjltdr/IPmgWb0UQizdsyEqnydUvEHtrtxiX2cb+wPyOsAvtQqNBEL11+ui+wwP614iphXQGFjTUXhHa92qtnpvGrezKfR2VbBVHtnL02VvgnYXEz7OSJtYAIDF9HBsOdbK34zIScFX5FbcaV1+U+qpKnOCl2X68H+VVi+tv8Wi3l5poWbK1+Zu3DuTwkRWIVFqU5rKbsaDHmXA=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ea4456ae-c714-4428-fba6-08d7e7fc4e61
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 03:05:12.7760 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 98e4914a-7049-499f-7741-08d7e7fce4f5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 03:09:25.4252 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 24Xb27SB8gOq/Vs5ufBGrRNVIWw9gS9X6WzoktNSFW0j/6koQFL3Z2xpnr8HKTdH1I+AqFnGqrmnaKAbFHjJ7Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6598
+X-MS-Exchange-CrossTenant-userprincipalname: erIWSvAJZr+kGV0ui4gz6Ii4OM3OaLQpUb9OW+65po5m12vIwe6h00LSDAeTt/0Xa8HvmSnbI+uuwUlpAqSxvA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3802
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_200517_753436_1C69671C 
-X-CRM114-Status: GOOD (  27.66  )
+X-CRM114-CacheID: sfid-20200423_200930_311198_C49FAB5D 
+X-CRM114-Status: GOOD (  30.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.20.80 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.80 listed in wl.mailspike.net]
+ no trust [40.107.3.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -136,102 +135,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <anson.huang@nxp.com>
-> Sent: Friday, April 24, 2020 10:33 AM
+
+
+> Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
+> suspend/resume
 > 
-> > Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
-> > suspend/resume
+> > From: Anson Huang <anson.huang@nxp.com>
+> > Sent: Friday, April 24, 2020 10:33 AM
 > >
-> > > From: Anson Huang <Anson.Huang@nxp.com>
-> > > Sent: Friday, April 24, 2020 7:01 AM
+> > > Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
+> > > suspend/resume
 > > >
-> > > For "mem" mode suspend on i.MX8 SoCs, MU settings could be lost
-> > > because its power is off, so save/restore is needed for MU settings
-> > > during
-> > suspend/resume.
-> > > However, the restore can ONLY be done when MU settings are actually
-> > > lost, for the scenario of settings NOT lost in "freeze" mode
-> > > suspend, since there could be still IPC going on multiple CPUs,
-> > > restoring the MU settings could overwrite the TIE by mistake and
-> > > cause system freeze, so need to make sure ONLY restore the MU
-> > > settings when it is
-> > powered off.
+> > > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > > Sent: Friday, April 24, 2020 7:01 AM
+> > > >
+> > > > For "mem" mode suspend on i.MX8 SoCs, MU settings could be lost
+> > > > because its power is off, so save/restore is needed for MU
+> > > > settings during
+> > > suspend/resume.
+> > > > However, the restore can ONLY be done when MU settings are
+> > > > actually lost, for the scenario of settings NOT lost in "freeze"
+> > > > mode suspend, since there could be still IPC going on multiple
+> > > > CPUs, restoring the MU settings could overwrite the TIE by mistake
+> > > > and cause system freeze, so need to make sure ONLY restore the MU
+> > > > settings when it is
+> > > powered off.
+> > > >
+> > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > As mentioned before, we'd better keep the original author.
+> > >
+> > > > ---
+> > > >  drivers/mailbox/imx-mailbox.c | 35
+> > > > +++++++++++++++++++++++++++++++++++
+> > > >  1 file changed, 35 insertions(+)
+> > > >
+> > > > diff --git a/drivers/mailbox/imx-mailbox.c
+> > > > b/drivers/mailbox/imx-mailbox.c index 97bf0ac..b53cf63 100644
+> > > > --- a/drivers/mailbox/imx-mailbox.c
+> > > > +++ b/drivers/mailbox/imx-mailbox.c
+> > > > @@ -67,6 +67,8 @@ struct imx_mu_priv {
+> > > >  	struct clk		*clk;
+> > > >  	int			irq;
+> > > >
+> > > > +	u32 xcr;
+> > > > +
+> > > >  	bool			side_b;
+> > > >  };
+> > > >
+> > > > @@ -583,12 +585,45 @@ static const struct of_device_id
+> > > > imx_mu_dt_ids[] = {  };  MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+> > > >
+> > > > +static int imx_mu_suspend_noirq(struct device *dev) {
+> > > > +	struct imx_mu_priv *priv = dev_get_drvdata(dev);
+> > > > +
+> > > > +	priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
+> > > > +
+> > > > +	return 0;
+> > > > +}
+> > > > +
+> > > > +static int imx_mu_resume_noirq(struct device *dev) {
+> > > > +	struct imx_mu_priv *priv = dev_get_drvdata(dev);
+> > > > +
+> > > > +	/*
+> > > > +	 * ONLY restore MU when context lost, the TIE could
+> > > > +	 * be set during noirq resume as there is MU data
+> > > > +	 * communication going on, and restore the saved
+> > > > +	 * value will overwrite the TIE and cause MU data
+> > > > +	 * send failed, may lead to system freeze. This issue
+> > > > +	 * is observed by testing freeze mode suspend.
+> > > > +	 */
+> > > > +	if (!imx_mu_read(priv, priv->dcfg->xCR))
+> > > > +		imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
+> > >
+> > > This could be separate patch if it aims to fix a specific corner case.
 > >
-> > As mentioned before, we'd better keep the original author.
+> > This is NOT corner case, it can be reproduced with our imx_5.4.y very
+> > easily, and this issue cause me many days to debug...Also cause
+> > Clark's effort to help test it a lot for many days...
 > >
-> > > ---
-> > >  drivers/mailbox/imx-mailbox.c | 35
-> > > +++++++++++++++++++++++++++++++++++
-> > >  1 file changed, 35 insertions(+)
-> > >
-> > > diff --git a/drivers/mailbox/imx-mailbox.c
-> > > b/drivers/mailbox/imx-mailbox.c index 97bf0ac..b53cf63 100644
-> > > --- a/drivers/mailbox/imx-mailbox.c
-> > > +++ b/drivers/mailbox/imx-mailbox.c
-> > > @@ -67,6 +67,8 @@ struct imx_mu_priv {
-> > >  	struct clk		*clk;
-> > >  	int			irq;
-> > >
-> > > +	u32 xcr;
-> > > +
-> > >  	bool			side_b;
-> > >  };
-> > >
-> > > @@ -583,12 +585,45 @@ static const struct of_device_id
-> > > imx_mu_dt_ids[] = {  };  MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
-> > >
-> > > +static int imx_mu_suspend_noirq(struct device *dev) {
-> > > +	struct imx_mu_priv *priv = dev_get_drvdata(dev);
-> > > +
-> > > +	priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int imx_mu_resume_noirq(struct device *dev) {
-> > > +	struct imx_mu_priv *priv = dev_get_drvdata(dev);
-> > > +
-> > > +	/*
-> > > +	 * ONLY restore MU when context lost, the TIE could
-> > > +	 * be set during noirq resume as there is MU data
-> > > +	 * communication going on, and restore the saved
-> > > +	 * value will overwrite the TIE and cause MU data
-> > > +	 * send failed, may lead to system freeze. This issue
-> > > +	 * is observed by testing freeze mode suspend.
-> > > +	 */
-> > > +	if (!imx_mu_read(priv, priv->dcfg->xCR))
-> > > +		imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
+> 
+> Is this issue only happen for non-state lost case (eg. Freeze mode)?
+> If yes, it's a specific case and worth a separate patch to highlight it IMHO.
+> 
+> BTW, it seems most drivers have this issue in current kernel because they don't
+> know whether the state are really lost, it seems like kernel still doesn't support
+> this well.
+> 
+> > I do NOT think it makes sense to first send out your patch with bug
+> > for review, And then add another patch to fix it. 1 patch is enough for this
+> feature.
 > >
-> > This could be separate patch if it aims to fix a specific corner case.
 > 
-> This is NOT corner case, it can be reproduced with our imx_5.4.y very easily, and
-> this issue cause me many days to debug...Also cause Clark's effort to help test it
-> a lot for many days...
+> Anyway, if you really want to go with one patch, for this case, we usually could
+> keep original author and add a small fix note in commit message.
+> (You could see many community guys do like this if you search kernel commit
+> log)
 > 
+> Basically we try our best to keep origin author in order to respect others' work
+> for community work.
 
-Is this issue only happen for non-state lost case (eg. Freeze mode)?
-If yes, it's a specific case and worth a separate patch to highlight it IMHO.
+I am fine with whoever is the author, my focus is the issue fix and easy rebase.
+If maintainer agrees that introduce a patch with bug and add another patch to fix is OK, then I can
+rework the patch into 2 patches.
 
-BTW, it seems most drivers have this issue in current kernel because they don't know
-whether the state are really lost, it seems like kernel still doesn't support this well.
-
-> I do NOT think it makes sense to first send out your patch with bug for review,
-> And then add another patch to fix it. 1 patch is enough for this feature.
-> 
-
-Anyway, if you really want to go with one patch, for this case, we usually could
-keep original author and add a small fix note in commit message.
-(You could see many community guys do like this if you search kernel commit log)
-
-Basically we try our best to keep origin author in order to respect others' work
-for community work.
-
-Regards
-Aisheng
-
-> 
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
