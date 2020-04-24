@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6936E1B7ADC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47A0E1B7ADE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 17:57:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bDCrCcYTH5k9045OnT3/nTYECp2d5IhdL+0V/fF8MJ4=; b=OqLHrr2Xrb56eJ
-	hs8qBWsjT43j+VGxUIv1nSzu/Jn081X1qE/E6ozhH+PW05emBgke+2beuysjd3wAtTdr+lMOEfkHw
-	oiGa7z5xv3xm9a5pgyCQCgVMaASt0gEGuIlzoJPxn48a1wU5MtPWUoxWIosnWf/vriPBPt14y0Fif
-	uNrQvKNgxGiped8Olmk7PUo7AuwAEF6t8E5un3ez9DjVgpCZPcrusfASO3I7DVrPkiqDFcpN/jqWX
-	R4UR3QtoA79+jRBERdgAEkxmMq+XadGE7C5zRG8y67sobks4TGighaXAAmNmCu69nyTVMXV1Mk7zD
-	fcj1BRqxGMhE1hiEAq2Q==;
+	List-Owner; bh=g1zM2vdyndjjFrWlMwiUTHusgAW687VcYkKZwYH98l0=; b=Ief7qCb0T6MOhg
+	qkfgskuCpbb7hKoptff+DKsWUiP0gnJbcEVoPBj0TUVczhz+2eZnQD+sDSu6s8O2GpxLfy4c1ioUM
+	0llHXg/1l6dxS2vokWdWcoPHA3WCurBWbrxLhCCD56KllizatBjX8sQtsjs8b8tzu23FYUngsC0WK
+	Vkv+8UfJkTDY1xgYsRHuJMEDSW8CODoR7AnfUG+Jhe1sPtil0ZW/uG3L4YorL3gDktHv6RuuP7aXP
+	oHToEFtd65Jq5RmAOkWctq2gUzvKgEnF9SH7xkmW2Cc3QudG9wrIFrHzGCGkL7LkxcWSeRwwzDMio
+	hOWfIzwLDv/bEceNQCoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0gx-0001XL-RN; Fri, 24 Apr 2020 15:56:39 +0000
+	id 1jS0hE-0001mN-NF; Fri, 24 Apr 2020 15:56:56 +0000
 Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0Ng-0008QE-B7; Fri, 24 Apr 2020 15:36:46 +0000
+ id 1jS0Nh-0008Qh-MN; Fri, 24 Apr 2020 15:36:47 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 7160B8D8;
- Fri, 24 Apr 2020 11:36:42 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:36:43 -0400
+ by mailnew.west.internal (Postfix) with ESMTP id CEE001454;
+ Fri, 24 Apr 2020 11:36:43 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Fri, 24 Apr 2020 11:36:44 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=NfU04ZbWTlRaU
- OfAgYIn+seJnzzhfTfT5EWXdLphHik=; b=CPPbPzjQY+xKqYh8Hb/CNnJ8gY3v1
- 1x6mmJTUiTpEZTRj6ZP+amERYWIYR1fBxTtx9QAz3fKVXKgbMoB9kZWonigSPHFo
- Y7a6cyEFpPDT49urQLb+Od0HUaNdfp/xpTxlOIDK3Z469uV6LKZkE4XgveGKljoP
- qtTH4ZZ17qOWREfou7KE5j1BbX9i1dmlyeSUCUDvGDAzpJy0gCQQEseiVrOXSOV+
- hYxD8dmrCzyacia+/pTd/YcC2uhVKyotL1NC3VlhZL5RCDDBDp/Zj+Yl7JUvK8yZ
- 6E1SmCKdti1aicqT/4iW7gJY88NIsYbQQO90KAHZ0CuXNMJHXXw+wQATA==
+ :mime-version:content-transfer-encoding; s=fm2; bh=dnMWBW1B1w/jZ
+ C3MSxSeAbdqYJK/VD0jClZG37R996E=; b=D2p7eMLCILb3meL9Z0gvK6KXkj5jJ
+ GTFAFQKkeCK1xQBkxekoxHl1bBRsWnltamsL8zj3Ubs5K4aeuc4U3LDQY3uNUPHc
+ 3ZXAtFSo95AAZA7OQ3+TJIKTWlOgvItfJrPy6K8pRbSMlixAYQK6w/1eu/E2ZgJJ
+ lJ/uSBUZWXZH7pHlAZOEnjCASHev4lnADjTqGe71Nm4WkakgfnzYb4drlmK6vQhj
+ kBF6H/GszuKgl8XCT3zva/JVlc76bgQrSjxFHplw2dp7zWNZminp23uL63qBbrkP
+ +c/gLeqsritR8yf0P6UoG7u1xzY3Z09F6FHYXYtTLudsyMZ7OnUTEOB7g==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=NfU04ZbWTlRaUOfAgYIn+seJnzzhfTfT5EWXdLphHik=; b=kpEUqXiT
- llb5bmmpmqOa5S3fIQFCCwfD7JApwWNfCJkQx+SlMvn9YZww+3nbTrWDg8NxgmKR
- SZ+LuQXPO5+1mUQa95+Q1uCu36XsuUdb2cbXugTkBZCx3CJ5L3/QG5GhNzrtEvgE
- 9R2azls6/2NEZVwrlgy9d3V6vqADHgwUh3nDnjtLhuLr0rxYsmiTNPDGnE1a6YXX
- EP7HEmcDmajTSOykEUTLeF2FqX3q4gd510ibVCuxbI/Wqa/TvexRlFJaLJKvoFFd
- cIoVdgyAVcxPbdTvQdikSFb04/eAKmOm/d1t4ah6T1nUVSEfpZhEqQ5hh/R1SKEF
- 1FoXFS2kfS5Y9Q==
-X-ME-Sender: <xms:iQejXuzeu8-6-WltR7qp8MxJ7h-BJPWdc0_duCLOq_oEVpu2dmKG4A>
+ fm2; bh=dnMWBW1B1w/jZC3MSxSeAbdqYJK/VD0jClZG37R996E=; b=VFcYJE7f
+ dq0T/BvtRgHae1MIWCQhbHgp7EoBsP/zCqAIx4IYe8kTzbOVL8pnKmrSi5BduTqz
+ NYBzDi8kom8mcQ+z9v1/RbvCsNmNOvowNswVwrw7GQWaGtWiXFaIPoOYC8aPLsnr
+ rJHxoyMDJmzrSb7Np/b73/88h0dq4j07NyCe0/3zgWnYD6BezRAFGTXjUdz5gPU/
+ CEklbcq+r4hwuYhe1UNao9gOsuA1zQveJA2OU+cOH2E2SIjrrFLrxFvQLTkU74tu
+ 5bX5drbqLxq7X/lO9s74ZZiQny4KHEAdvy5Sx9k3ieph0kktHvm6z57Qj7TvJU3h
+ qQ3fCGcmORPvnA==
+X-ME-Sender: <xms:iwejXj5JKhiDUrVWm0Z78E54W1sq0BiJpnBOM433ioLyR1-Vv_8DMQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -55,28 +55,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrhedugdekiecutefuodetggdote
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpeehudenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:iQejXh51oAjDtI_PPuj2SuOnj6YB3qABKacueTNpjA9jgSBbFviSZQ>
- <xmx:iQejXrgdzw2vwUdFRqBF3kejkpOBVlkuS0n_KLgig9drpioan-J5tA>
- <xmx:iQejXu1co4-2L6Gro16ZHbFSfF8p_eE2vBp0t3OYyDngwZJSAzgQpA>
- <xmx:igejXvD68BhhqhLpDsHEwanQ5PzgRXqpfKb2AkUwK9QcXBxm9-yOXbAp52A>
+X-ME-Proxy: <xmx:iwejXpeXp6M55-_4Ab3bLZPw-CCs_IdgpNbPgBzxr7FIttiebP6H_Q>
+ <xmx:iwejXl1I01zcETrXgTDrQamYwttS6xxbpAEnlacgVEQKunTAak-zCA>
+ <xmx:iwejXmxqT_VS26bqoTD0Mcg-YwMMz4OWuKGn0e3aJH1wUbmoB_LKyg>
+ <xmx:iwejXgDJ8FwvaXMdeW2lfgKh1qbBWgnhODewSc4zosp0cZqH57Ggf5mKq1o>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id B16E03065D93;
- Fri, 24 Apr 2020 11:36:41 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 26BA93280068;
+ Fri, 24 Apr 2020 11:36:43 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v2 57/91] drm/vc4: crtc: Remove redundant call to
- drm_crtc_enable_color_mgmt
-Date: Fri, 24 Apr 2020 17:34:38 +0200
-Message-Id: <66c5257c74f8b625ce2716df135a7778326efab1.1587742492.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 58/91] drm/vc4: crtc: Disable color management for HVS5
+Date: Fri, 24 Apr 2020 17:34:39 +0200
+Message-Id: <05b9330e2fcb99c3a8df5029f5f8d169ab4b9cb2.1587742492.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_083644_807300_B1C1AA18 
-X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-CacheID: sfid-20200424_083645_895603_72BE1655 
+X-CRM114-Status: UNSURE (   9.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -115,26 +114,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver calls the helper to add the color management properties twice,
-which is redundant. Remove the first one.
+The HVS5 uses different color matrices. Disable color management support
+for now.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/gpu/drm/vc4/vc4_crtc.c | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 22c0cd0dfc46..5bd01c16ea45 100644
+index 5bd01c16ea45..47e411cbf5dc 100644
 --- a/drivers/gpu/drm/vc4/vc4_crtc.c
 +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -1201,7 +1201,6 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+@@ -443,7 +443,7 @@ static void vc4_crtc_mode_set_nofb(struct drm_crtc *crtc)
+ 
+ 	HVS_WRITE(SCALER_DISPBKGNDX(vc4_state->assigned_channel),
+ 		  SCALER_DISPBKGND_AUTOHS |
+-		  SCALER_DISPBKGND_GAMMA |
++		  ((!vc4->hvs->hvs5) ? SCALER_DISPBKGND_GAMMA : 0) |
+ 		  (interlace ? SCALER_DISPBKGND_INTERLACE : 0));
+ 
+ 	/* Reload the LUT, since the SRAMs would have been disabled if
+@@ -1159,6 +1159,7 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+ {
+ 	struct platform_device *pdev = to_platform_device(dev);
+ 	struct drm_device *drm = dev_get_drvdata(master);
++	struct vc4_dev *vc4 = to_vc4_dev(drm);
+ 	struct vc4_crtc *vc4_crtc;
+ 	struct drm_crtc *crtc;
+ 	struct drm_plane *primary_plane, *destroy_plane, *temp;
+@@ -1200,12 +1201,16 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+ 	drm_crtc_init_with_planes(drm, crtc, primary_plane, NULL,
  				  &vc4_crtc_funcs, NULL);
  	drm_crtc_helper_add(crtc, &vc4_crtc_helper_funcs);
- 	drm_mode_crtc_set_gamma_size(crtc, ARRAY_SIZE(vc4_crtc->lut_r));
--	drm_crtc_enable_color_mgmt(crtc, 0, false, crtc->gamma_size);
+-	drm_mode_crtc_set_gamma_size(crtc, ARRAY_SIZE(vc4_crtc->lut_r));
  
- 	/* We support CTM, but only for one CRTC at a time. It's therefore
- 	 * implemented as private driver state in vc4_kms, not here.
+-	/* We support CTM, but only for one CRTC at a time. It's therefore
+-	 * implemented as private driver state in vc4_kms, not here.
+-	 */
+-	drm_crtc_enable_color_mgmt(crtc, 0, true, crtc->gamma_size);
++	if (!vc4->hvs->hvs5) {
++		drm_mode_crtc_set_gamma_size(crtc, ARRAY_SIZE(vc4_crtc->lut_r));
++
++		/* We support CTM, but only for one CRTC at a
++		 * time. It's therefore implemented as private driver
++		 * state in vc4_kms, not here.
++		 */
++		drm_crtc_enable_color_mgmt(crtc, 0, true, crtc->gamma_size);
++	}
+ 
+ 	CRTC_WRITE(PV_INTEN, 0);
+ 	CRTC_WRITE(PV_INTSTAT, PV_INT_VFP_START);
 -- 
 git-series 0.9.1
 
