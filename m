@@ -2,87 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706311B714F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 11:57:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6D3A1B7163
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 12:02:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d4NmY95CFLZ1jaUXlM6rhHX47QxYvIPoFa6O5Xqwbyc=; b=gS30jYE+SpV0b3
-	ngUzv1eTPHwa8NDFvzKr5mjIbUe9/9zJ2afo+A3y5X4dKeARMNNUMY7Ed3flmF+V0nmnQHznaldjS
-	Sk+MKkXVEyJLEZyXwa91bPTj6AatWUljAwwZlqantngRqQG7cBSpU9vvH+6q/YAc1gPfKYhjuplpz
-	6NcMbrP7fO8r5b3NLvZEWeCU5z0Z7J9ro/XuCNuOBr6Ksq49yH1FpyPXxO6uJ4CjuFyzf/MsNwZQ6
-	fdndAx2jKF+J68ElJ9aBnuSS60s5cvTfCH6lrP7wFgIl6AVpbk9SYwQzaHtoBE4zYPhLJ8Y9kbf8V
-	HKLgztHcJVYXe+vdTNFA==;
+	List-Owner; bh=Cye9D/Uq72SxECqnuF9ZGq3fqYpsqChjUbbg82EUSNw=; b=Iut3C2EFotVJlI
+	EN/QjBFOepzKtC0amn8GkMV21wJpen3NzBBTCbtcNk2aCSptG4AAsn2iCuqx9lI7WC0nWHZHgN0ex
+	cSk0t/wtETWieKP+e8saKiAejB6OT/g6dm2G2JhvlCDJejx22JhZt12Khb0EPBJNcWBZWmHpNgGA2
+	aVPcjkkhepR97mF5DXlMZkaqi4BcHnTFN7cBy8EEaNOKGwIBnBrwD+wOENJrWpFoKvdUrruzbz/lh
+	fCPZ6QG8+XEcryuzWU9xbkfYOeCnswZDyorWJyzDsX5n/BzZ9Xji8jaaXcNhQmKs/7e1P974/goZG
+	WLRYwQPHgQmw6iPxU3yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRv4p-000105-3o; Fri, 24 Apr 2020 09:56:55 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRv4e-0000zk-T1
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 09:56:46 +0000
-Received: by mail-pf1-x442.google.com with SMTP id d184so4570282pfd.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 02:56:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8g1Qeu2PJu2OXoQ3lMahtFGRconFZq/a+DVsXd6HwAs=;
- b=EDPb40iEk4xe3gjopzZRdm0PXV3UNcBpXaXQwvVkK6Gks2ubrPWTqneru4oMuXdOQ+
- m7wy7cLJ3DarRKECjTxse5/OCNU8WhkX9FzcjaAsbkcSJjgUqg9VujC2sVwjqPSN3tyA
- /ANiw4DBFT5aOy0Bku0574L44kTcWhA4BioScPGRYTP/Z9SKqeC8o8RzXN5EK6K83lym
- Xh7XjAfAxREZFaFXIbMziFSjKK1KTPY3/8ZZrPvK3zwGMd59OGKyaH/uAmT1ctyVznxb
- l1TOx83AIqjULTw+Oxi1uQKjo5n/eRoROEUseVnCN2ta84Kd6xXTNnPJLShRiFASMzbl
- azdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8g1Qeu2PJu2OXoQ3lMahtFGRconFZq/a+DVsXd6HwAs=;
- b=XwmchfI8bDKnfWmZbf039Yy8pbICJD2ACGoXJVZZLVXzvbK87NPIgjXqpFUusUjSDA
- VSL573n8gP9jSNiIH4kh/5t6cwqecAoZL/dTVUUVsIKeqhOIJSIsPq94CW/UFjJqQYlp
- 53VQHHUWuZcjFIUYQNDxrEl9I4j7gjoaatBwBhmIudt2nyYb0kAq93h3BvM1iRclQd67
- P4a/8Bnaao9DF4j64cNdhwUGRJaSMPT5rJ3+gIs1dTepEPU7E8EJ+7Qm89vUdob/e8Na
- nNeGPzAwDPOR2qR6YTpCR9i42FvMuIabvmI4IS+rqwsSExhmdUeqjDuxZOsNAi/2CufM
- yEYg==
-X-Gm-Message-State: AGi0PuYiEriZrx3A71arDlhnBU76xIi3xunIjqmUSoh7L7grpCShflnY
- B91jVVXyVuwadsDMSkcu4ezxjWl4L72l9MF1mmw=
-X-Google-Smtp-Source: APiQypJoSVO02AhLEULSq00w+T9tSO+dGfUkCB9MaeL3fJM2YBvorpMGA+TqH8RN4vRqzgEpcjgVuiAnEW+pfufBUxc=
-X-Received: by 2002:a63:1d4:: with SMTP id 203mr8109776pgb.74.1587722204197;
- Fri, 24 Apr 2020 02:56:44 -0700 (PDT)
+	id 1jRv9g-0004S4-MU; Fri, 24 Apr 2020 10:01:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRv9Y-0004RJ-Eo
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 10:01:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F26AF1FB;
+ Fri, 24 Apr 2020 03:01:44 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D755C3F73D;
+ Fri, 24 Apr 2020 03:01:42 -0700 (PDT)
+Date: Fri, 24 Apr 2020 11:01:31 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH] arm64/kernel: Fix range on invalidating dcache for boot
+ page tables
+Message-ID: <20200424100131.GB1167@C02TD0UTHF1T.local>
+References: <20200424050230.16720-1-gshan@redhat.com>
 MIME-Version: 1.0
-References: <20200424031617.24033-1-calvin.johnson@oss.nxp.com>
- <20200424031617.24033-3-calvin.johnson@oss.nxp.com>
-In-Reply-To: <20200424031617.24033-3-calvin.johnson@oss.nxp.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 24 Apr 2020 12:56:37 +0300
-Message-ID: <CAHp75Vftq3OEEC5DfW8CgV4yQKZ3doD-r6khXxgn0oOmrLnLkA@mail.gmail.com>
-Subject: Re: [net-next PATCH v1 2/2] phylink: introduce
- phylink_fwnode_phy_connect()
-To: Calvin Johnson <calvin.johnson@oss.nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20200424050230.16720-1-gshan@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_025644_940022_A944FF49 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200424_030148_583423_1927E48E 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,56 +62,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Diana Madalina Craciun <diana.craciun@nxp.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, netdev <netdev@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: steve.capper@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ broonie@kernel.org, shan.gavin@gmail.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 24, 2020 at 6:17 AM Calvin Johnson
-<calvin.johnson@oss.nxp.com> wrote:
->
-> Define phylink_fwnode_phy_connect() to connect phy specified by
-> a fwnode to a phylink instance. This function will handle both
-> DT and ACPI nodes.
+Hi Gavin,
 
->  #include <linux/spinlock.h>
->  #include <linux/timer.h>
->  #include <linux/workqueue.h>
-> +#include <linux/acpi.h>
+On Fri, Apr 24, 2020 at 03:02:30PM +1000, Gavin Shan wrote:
+> The MMU is disabled when __create_page_tables() is called. The data
+> cache corresponding to these two page tables, which are tracked by
+> @idmap_pg_dir and @init_pg_dir, is invalidated after the page tables
+> are populated. However, the wrong or inappropriate size have been used
+> and more data cache are invalidated than it need.
+> 
+> This fixes the issue by invalidating the data cache for these two
+> page tables separately as they aren't necessarily physically adjacent.
 
-Looks like broken order.
+Thanks for this!
 
-> +       if (is_of_node(fwnode)) {
-> +       } else if (is_acpi_node(fwnode)) {
-> +       }
+I think the commit message needs to explain the issue more explicitly,
+e.g.
 
-I'm wondering if there is an API that allows you to drop all this
-stuff. In property provider agnostic code we really don't want to see
-this.
+| Prior to commit:
+| 
+|   8eb7e28d4c642c31i ("arm64/mm: move runtime pgds to rodata")
+|
+| ... idmap_pgd_dir, tramp_pg_dir, reserved_ttbr0, swapper_pg_dir, and
+| init_pg_dir were contiguous at the end of the kernel image. The
+| maintenance at the end of __create_page_tables assumed these were
+| contiguous, and affected everything from the start of idmap_pg_dir to
+| the end of init_pg_dir.
+|
+| That commit moved all but init_pg_dir into the .rodata section, with
+| other data placed between idmap_pg_dir and init_pg_dir, but did not
+| update the maintenance. Hence the maintenance is performed on much
+| more data than necessary (but as the bootloader previously made this
+| clean to the PoC there is no functional problem).
+|
+| As we only alter idmap_pg_dir, and init_pg_dir, we only need to
+| perform maintenance for these. As the other dirs are in .rodata, the
+| bootloader will have initialised them as expected and cleaned them to
+| the PoC. The kernel will initialize them as necessary after enabling
+| the MMU.
+|
+| This patch reworks the maintenance to only cover the idmap_pg_dir and
+| init_pg_dir to avoid this unnecessary work.
 
-> +       if (!phy_dev)
-> +               return -ENODEV;
+> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> ---
+>  arch/arm64/kernel/head.S | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+> index 57a91032b4c2..66947873c9e7 100644
+> --- a/arch/arm64/kernel/head.S
+> +++ b/arch/arm64/kernel/head.S
+> @@ -398,6 +398,10 @@ SYM_FUNC_START_LOCAL(__create_page_tables)
+>  	 * tables again to remove any speculatively loaded cache lines.
+>  	 */
 
--- 
-With Best Regards,
-Andy Shevchenko
+The comment above has been stale for a while, since it says:
+
+| 	/*
+| 	 * Since the page tables have been populated with non-cacheable
+| 	 * accesses (MMU disabled), invalidate the idmap and swapper page
+| 	 * tables again to remove any speculatively loaded cache lines.
+| 	 */
+
+... can we please update that at the same time? We can avoid mention of
+the specific tables and say:
+
+| 	/*
+| 	 * Since the page tables have been populated with non-cacheable
+| 	 * accesses (MMU disabled), invalidate those tables again to
+| 	 * remove any speculatively loaded cache lines.
+| 	 */
+
+>  	adrp	x0, idmap_pg_dir
+> +	mov	x1, #IDMAP_DIR_SIZE
+> +	dmb	sy
+> +	bl	__inval_dcache_area
+> +	adrp	x0, init_pg_dir
+>  	adrp	x1, init_pg_end
+>  	sub	x1, x1, x0
+>  	dmb	sy
+
+The existing DMB is to order prior non-cacheable accesses against cache
+maintenance, so we only need one of those at the start of the sequence.
+For consistency, we should use the same idiom to generate the size of
+both dirs. Given we use ADRP+ADRP+SUB here and elsewhere in head.S, I
+think that's preferable for now.
+
+So I reckon this should be:
+
+|	dmb	sy
+|
+|	adrp	x0, idmap_pg_dir
+|	adrp	x1, idmap_pg_end
+|	sub	x1, x1, x0
+|	bl	__inval_dcache_area
+|
+|	adrp	x0, init_pg_dir
+|	adrp	x1, init_pg_end
+|	sub	x1, x1, x0
+|	bl	__inval_dcache_area
+
+... with those line gaps to make the distinct blocks clearer.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
