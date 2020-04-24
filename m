@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E01DF1B7EDE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 21:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D35F1B7EE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 21:30:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=kqqb/ZkkuRm7RPnLkohl4VEvuYjKmf/PMIpz8fOWKc4=; b=IJTvIgI+SS6wWT
-	CQifBT3BphT3AGaPuSsjxpErShzp92ESGetKiAxg2juuyboy1vJdnwWlHe8U+x9iZXLheQJFyuPKa
-	AYkFknhh7CM4C7mOPGeL5hjrJC3Eo3PveYKTHlLMA555VmOlcfQy+nWMpZ+QR4gwnNuClGtiXNn+/
-	tNUBJkowTM8M5vV4AU/stC6JN7Z/s7Z65xFM+DvrQW2n6iJ8wZInPfXEYGS8IL2HTFMczJ+nNKd+9
-	S/JS9srsSGdPzXWzjkHhyyB9xw+3dUkhJ5CXe9/iN+RhvrwvVYktPBBE4Xy991AdVxRX9dCkFa+Re
-	na1KSd+fXDvlYEOf8piw==;
+	List-Owner; bh=5yWE5HW+Pd159IDggC+2YWcrWx9fKs256jjy4Jfdl1U=; b=Kgo989VvMM46/9
+	9KHUwZrVFMOEu38gSbjgg+DNmhk/Wn59JqqJSy8yB+rnP3WsXqTQUeSePOPoEc2LcsPAUgcTNveiS
+	OrNY+ErPCot5zMOgM6eroPfQXwu2rCz0VPqBTVdlobrvxdwEkZitgG1Km2cKX8gWNTvU+bwInPCJQ
+	h4WvBNHWH5Husvs9lZ7RFMxNBvKxjMAoxAWp0+pWrSL0WiPEH5/qciOl91vg+0HlaLx9Eqh4NXO2W
+	fY+vxToFuo8/3ne1e5+ri1QykIqmaGloO9tGXEnslBMVDw+3CywASdwKrTEW4kdoIGquQJmKJf24H
+	pbuxQ01u/rkbyrk+sypg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS40k-0004AY-N9; Fri, 24 Apr 2020 19:29:18 +0000
-Received: from mail-eopbgr10061.outbound.protection.outlook.com ([40.107.1.61]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1jS41t-0006w0-Vm; Fri, 24 Apr 2020 19:30:29 +0000
+Received: from mail-db8eur05on2074.outbound.protection.outlook.com
+ ([40.107.20.74] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS40b-00049Y-PN
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 19:29:11 +0000
+ id 1jS41k-0006vA-90
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 19:30:21 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BYv7pXFyfypZi6WpE10jAzzET2JhO0Sshlmz6m0J883fxAb0ZzlIcQZCJFQ6ql4mpT9kIuYcgZUzGATI+AbP0q8aHtvlNhbHpFmzJscbm/Bp6WDh8fdhjiHzUI2KWOjHMFnpbJTThA0/z54XtsuVvgJezmaLW55hi88OuLjDiZ+fDW7ohxwdMj5br1Gb+vpDnkukPVTvgmCSqMFLE+KyIVleydISTI0XlbUKmAMcRVpGvUqLZ4Yf69CFvG3Ft4mFhwWAZxhojRo4VmimRQlupNdUHyDCERytWXcQ+Zxb+PDlElRNbZ2X8te7jjFfDAVVolRU9JNo6Y0D7v81J90c8Q==
+ b=dBBO1xGjxQxdgI4ygAZohKBC36M7BDo6FLBl/hKZBGay4Yx+BymAdvAFCDv0Igb3HYOlrpUHBTVnDDh/K2A1LNmWro4r53T6bDtJXY3nN1QWn9W2+mUBWRf8sFJ6XYEQrbp6thV+znzFOJ8N5n0C55gtMfnYimN+zPc7TtpxT6vCDYiA35okMRuIx+03G6lSlguo+Z/nOs8Mtbt8RMe8PXKPOPQD/OE78s/0ZXbwGUUa28LT7vIxE0XQtmWJR9Vwb4Y8mB1iWyghKWzoxjWOpj12aVF1no2njHRx1uZxEApSKzZTsPEZTfHFWSDJmcXBvCZsw6O94RDkOrpVFSnajA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RMUS30HN5O4f433+owxb1LAdwLy3OuwBOdIoKgVBvMw=;
- b=GSodwmuUAj+fPebr5Wj35kyWnm0CJMKiyRm2aGdNRM8KlMkqUD9bLBw8cRn94Z3Z9zv5Xzh8ahHXliBWUH9DtZzrTa83okEzc2Xl9UM1yGE0qmr7m1VzL4K/mjEvuSOT2E6YPkwyJyQ4TRRzIXSta2i4Id6AQ+VV/uZsNOOodaJ398iIs+RecWjQy0rHulJQdnvvPQou9VERrFFvH5gdIOBxMToaRzjrXieRaBvBCYL4FKBhl/dDNOEYwhYwedpvxNdBkJVD8i2HttAYTe5d6nH0dRrmlhBGnf4j1R3u710OwWR5opTpVN9F9E2E7TN75YABzBJ2n9w0ltNSJ5G5CA==
+ bh=0qKlRQqAB1bUXMrfvUiqzHpw4g9p8Nvk0sfgkgiaeGs=;
+ b=S8kIKYoPsyY3ggHTuNTAQcFMzF/6twc4FdqXx/n4Of/gg8WLECUcXNNTiG2dBJTIJ0wQUhcEi2/McVGskSM167MBvrFc0HUHXce/VOp6de5S+TyGClNEr/MFqiHD3V74nYN/jqhVHDGGA4xY/nBZUZuLPnUBO+Wh1Szby9dS+RTqzL3RwLOaWqpLBECCAt1VQbI/Wuo+tMbKVsuZmq0e0g30HRdeq9XFZxd9QGiUnEU5riCi/G3U9sGN8z6l1iK/p2YHHlbWO0rLmtPxzPQamqIEPBnhRa+qJP2JSOfTiVxjiDBc+WEfL+t6q4uo/D8exlC2Zv5XsVqUBcM9tAHd/A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RMUS30HN5O4f433+owxb1LAdwLy3OuwBOdIoKgVBvMw=;
- b=FephGL4pprfXY6a1oTaSu7z3J3xO+YCnPgNjUShRGTM0Ufas1nTE/cTQrw3OO0XMhyZOUEGjCUrqXDNHndL8sI7MyAeci8+JxIKtKhceoA3pDBefKwl6GXh94UkCWtUpJmE/UyFFDJpVRO28EWujBdqoBTcYF/P24rpXhSBoZOI=
+ bh=0qKlRQqAB1bUXMrfvUiqzHpw4g9p8Nvk0sfgkgiaeGs=;
+ b=eNybmrkEIe2ZKhuJuF7YkRynVH85oSIZCVCTf/2QcRxtFv6b8HuXFfBQ6HY7eXyDvCP0dtCvAjLTZXmuZSN+Q72qEYfIywwANT/q2cy5xprSOo6g0t0RsoYFpX+k6Gpxpn/LBcyV867v3VLZ2ylzRSxNdztDgFYgCLnhu4djZjg=
 Received: from VI1PR04MB6941.eurprd04.prod.outlook.com (2603:10a6:803:12e::23)
- by VI1PR04MB6334.eurprd04.prod.outlook.com (2603:10a6:803:102::21)
+ by VI1PR04MB5056.eurprd04.prod.outlook.com (2603:10a6:803:5a::13)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Fri, 24 Apr
- 2020 19:29:02 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Fri, 24 Apr
+ 2020 19:30:16 +0000
 Received: from VI1PR04MB6941.eurprd04.prod.outlook.com
  ([fe80::8de5:8c61:6e4d:9fe9]) by VI1PR04MB6941.eurprd04.prod.outlook.com
  ([fe80::8de5:8c61:6e4d:9fe9%9]) with mapi id 15.20.2937.020; Fri, 24 Apr 2020
- 19:29:02 +0000
+ 19:30:16 +0000
 From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Topic: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Index: AQHV+FjQMBLZK1sUBkmPtGWbyCJKZA==
-Date: Fri, 24 Apr 2020 19:29:01 +0000
-Message-ID: <VI1PR04MB69418E9348D5765B4AE01D18EED00@VI1PR04MB6941.eurprd04.prod.outlook.com>
+To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+ "sboyd@kernel.org" <sboyd@kernel.org>
+Subject: Re: [PATCH V2 00/10] clk: imx: fixes and improve for i.MX8M
+Thread-Topic: [PATCH V2 00/10] clk: imx: fixes and improve for i.MX8M
+Thread-Index: AQHV+Fizr+1km/QCtUyii39f5J5PvQ==
+Date: Fri, 24 Apr 2020 19:30:16 +0000
+Message-ID: <VI1PR04MB6941A5E995F36689CB2A098DEED00@VI1PR04MB6941.eurprd04.prod.outlook.com>
 References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
- <1584008384-11578-8-git-send-email-peng.fan@nxp.com>
+ <DB6PR0402MB27608E9A3D273DCFF6D90AE888D60@DB6PR0402MB2760.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -65,46 +66,48 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [95.76.3.222]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ccba8604-20a6-4e88-9f2d-08d7e885be81
-x-ms-traffictypediagnostic: VI1PR04MB6334:|VI1PR04MB6334:
+x-ms-office365-filtering-correlation-id: aa211548-22d8-4d0d-d073-08d7e885eacf
+x-ms-traffictypediagnostic: VI1PR04MB5056:|VI1PR04MB5056:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB6334DDF5FECB9AFEC1CDC3A2EED00@VI1PR04MB6334.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-microsoft-antispam-prvs: <VI1PR04MB50566DAEDCF88747671951EBEED00@VI1PR04MB5056.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 03838E948C
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:VI1PR04MB6941.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(366004)(376002)(136003)(396003)(39860400002)(86362001)(44832011)(2906002)(4326008)(8676002)(66446008)(66946007)(64756008)(52536014)(76116006)(66556008)(71200400001)(66476007)(91956017)(5660300002)(6506007)(81156014)(8936002)(110136005)(186003)(6636002)(9686003)(55016002)(33656002)(316002)(7696005)(26005)(54906003)(478600001)(53546011)(7416002);
+ SFS:(4636009)(136003)(366004)(376002)(396003)(346002)(39860400002)(81156014)(316002)(5660300002)(4326008)(52536014)(8936002)(8676002)(66946007)(33656002)(66556008)(91956017)(66446008)(66476007)(86362001)(26005)(2906002)(71200400001)(64756008)(76116006)(44832011)(9686003)(6506007)(53546011)(7696005)(186003)(7416002)(54906003)(478600001)(110136005)(55016002)(966005);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wUmUbE2N4DKA/Sg2XE/RMXehxA99I5wDGuxRRNvxtOE/3+CBQYuAo/o6M1pzJPyXoLt9ea0Q6T7AqI4REmvsSE0beBY6+9ueoCWb/bdFe+sorQPJzaFGgS67drRNMZPiB8mo/RNXH9G+7kWWXG7+aBCjnESaeghVY0bjFzFwFX7a/tn3PN6VqF4qX4fkdJKRYv+c14HQRXly8NTRtuDXrdalUhCP+ZxURmdSZGT1UTd0C57jjUg/DM5dbH2VF0N5mKedubRRG6yD7dAwra/oFiHM9o1sd8LSkWKyjMHIssGhXrq0ujxZ7K3u9aCuCIOxp1R8Mi/pHznQd0g6/2p73RuaolIoM+p567S5r+0N8PRzv9AJvD56IFA8s8B61r6X36/4eFsKACzKU/SffZGqWC6Zm1EooJttNyaRoZuqyCJqLrA/W1bwTEFl+JeuyxK+
-x-ms-exchange-antispam-messagedata: DeATf/V+9WmqHoxwcXmKGE5UVx8oy6T2PKqvyvXpMZvllfhaV2nPiBUdAJTP41c4d0oWHqnaFTdr8SQAlif5MDxCLeYvVSED9EbTtqHWOHBF8vjySMwi8Gp9si/n/3JcdSzogtPiSV/mfhVJKA9nTw==
+x-microsoft-antispam-message-info: 74Ks0nZs/rs8BjDB+MFDHxoSBk5b2fmzSgCkw4LFDJEqYCTqV+3yB2mS8t/ENTU9spRJqdJENX/B0vRJ4JBWfcSHhEAvvuKmbW2kLN2spfURN8qyOaeta7mfUFqCRoYKqRXA/7rt81gEttCgcEJdCwdZ/ZWqKvsLAyIyN11giOSaPd3T3jTphNMk/wa0FmGlfqNw8jdudeuwDiz/enGvL1YqmMOBQGNaTIioq4r/BNwSVGYoY7PCaMZb+2fi6Z9xAbCRkqdpykW8f2h+pTD56PiCSLlbYmyu2GWhhPhDRir6I9v+eB44JEqE4LNRJ9rUtfU6jsHezA6f0bDBHeJnx97MX70ao+ZAO8BjwCPPG8aWwfYvL1VSTQwGncXkCbArGOfstiOhAS0/EEPLdwnpF5wP1KAbTwu/emjsSZbJfga1LiaxH2k23RSXSdjuj7+v0leY5K8baHMZQrdQCN3Tu8H7aNIpzKogdl5q9qNtVS8zG4nAYEZNA4uMCviTd1viHOEXcZM/4XwmzEimPTpJ4A==
+x-ms-exchange-antispam-messagedata: ohEOcDTqPq3VGspBDBpf8Bi6gKHpBkvunXaQVXyIVBJAwm30Z8tXPQ6LftFALO8VZIK7dBhRsmshteA4z0j4SnCZxh/bh2I2I+A9dEZUk5RRwN4m++eJhRAzrYqO+asENiUNXOPqJk0R3tGM5W+wJA==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ccba8604-20a6-4e88-9f2d-08d7e885be81
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 19:29:01.8713 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: aa211548-22d8-4d0d-d073-08d7e885eacf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Apr 2020 19:30:16.2503 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: G9ZNJomv7ZIBFm+xKs8ox0wjrAsfxtQMpghzOx06bp2nQm1nLTOAutDwZZvwQ7ihII1/w3ZgR3WofMiZUEDKVw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6334
+X-MS-Exchange-CrossTenant-userprincipalname: 8F5wskCsyKqR9tJO4WmC4LRTsx7A1roSVcrPPO7wf58oSLb/CeSWNYwNQm6Ao9maXSvDDjqYiHJoJaD1DK227w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_122909_947250_A99A2282 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20200424_123020_322256_1474844E 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.61 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [95.76.3.222 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.20.74 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.74 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -123,14 +126,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
+Cc: Andy Duan <fugang.duan@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "angus@akkea.ca" <angus@akkea.ca>, "heiko@sntech.de" <heiko@sntech.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
  "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
@@ -143,188 +146,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-12 12:27 PM, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On 2020-04-18 4:45 PM, Peng Fan wrote:
+>> Subject: [PATCH V2 00/10] clk: imx: fixes and improve for i.MX8M
 > 
-> The CORE/BUS root slice has following design, simplied graph:
-> The difference is core not have pre_div block.
-> A composite core/bus clk has 8 inputs for mux to select, saying clk[0-7].
+> Ping...
 > 
->              SEL_A  GA
->              +--+  +-+
->              |  +->+ +------+
-> CLK[0-7]--->+  |  +-+      |
->         |    |  |      +----v---+    +----+
->         |    +--+      |pre_diva+---->    |  +---------+
->         |              +--------+    |mux +--+post_div |
->         |    +--+      |pre_divb+--->+    |  +---------+
->         |    |  |      +----^---+    +----+
->         +--->+  |  +-+      |
->              |  +->+ +------+
->              +--+  +-+
->              SEL_B  GB
+> Thanks,
+> Peng.
 > 
-> There will be system hang, when doing the following steps:
-> 1. switch mux from clk0 to clk1
-> 2. gate off clk0
-> 3. swtich from clk1 to clk2, or gate off clk1
-> 
-> Step 3 triggers system hang.
-> 
-> If we skip step2, keep clk0 on, step 3 will not trigger system hang.
-> However we have CLK_OPS_PARENT_ENABLE flag, which will unprepare disable
-> the clk0 which will not be used.
+>>
+>> From: Peng Fan <peng.fan@nxp.com>
+>>
+>> Patches based on for-next
+>>
+>> V2:
+>>   Patch 7, drop wait after write, add one line comment for write twice
+>>
+>> V1:
+>> Patch 1,2 is to fix the lockdep warning reported by Leonard Patch 3 is to fix pll
+>> mux bit Patch 4 is align with other i.MX8M using gate Patch 5 is to simplify
+>> i.MX8MP clk root using composite
+>>
+>> Patch 3~5 is actually https://patchwork.kernel.org/patch/11402761/
+>> with a minimal change to patch 5 here.
+>>
+>> Patch 6 is to use composite core clk for A53 clk root Patch 7,8,9 is actually to
+>> fix CORE/BUS clk slice issue.
+>>   This issue is triggerred after we update U-Boot to include  the A53 clk fixes
+>> to sources from PLL, not from A53 root clk,  because of the signoff timing is
+>> 1GHz. U-Boot set the A53 root  mux to 2, sys pll2 500MHz. Kernel will set
+>> the A53 root mux to  4, sys pll1 800MHz, then gate off sys pll2 500MHz. Then
+>> kernel  will gate off A53 root because clk_ignore_unsed, A53 directly sources
+>> PLL, so it is ok to gate off A53 root. However when gate off A53  root clk,
+>> system hang, because the original mux sys pll2 500MHz  gated off with
+>> CLK_OPS_PARENT_ENABLE flag.
+>>
+>>   It is lucky that we not met issue for other core/bus clk slice  except A53
+>> ROOT core slice. But it is always triggerred after  U-Boot and Linux both
+>> switch to use ARM PLL for A53 core, but  have different mux settings for A53
+>> root clk slice.
+>>
+>>   So the three patches is to address this issue.
+>>
+>> Patch 10 is make memrepair as critical.
+>>
+>> Peng Fan (10):
+>>    arm64: dts: imx8m: assign clocks for A53
+>>    clk: imx8m: drop clk_hw_set_parent for A53
+>>    clk: imx: imx8mp: fix pll mux bit
+>>    clk: imx8mp: Define gates for pll1/2 fixed dividers
+>>    clk: imx8mp: use imx8m_clk_hw_composite_core to simplify code
+>>    clk: imx8m: migrate A53 clk root to use composite core
+>>    clk: imx: add mux ops for i.MX8M composite clk
+>>    clk: imx: add imx8m_clk_hw_composite_bus
+>>    clk: imx: use imx8m_clk_hw_composite_bus for i.MX8M bus clk slice
+>>    clk: imx8mp: mark memrepair clock as critical
+>>
+>>   arch/arm64/boot/dts/freescale/imx8mm.dtsi |  10 +-
+>> arch/arm64/boot/dts/freescale/imx8mn.dtsi |  10 +-
+>> arch/arm64/boot/dts/freescale/imx8mp.dtsi |  11 ++-
+>>   arch/arm64/boot/dts/freescale/imx8mq.dtsi |   9 +-
+>>   drivers/clk/imx/clk-composite-8m.c        |  67 ++++++++++++-
+>>   drivers/clk/imx/clk-imx8mm.c              |  27 +++---
+>>   drivers/clk/imx/clk-imx8mn.c              |  25 +++--
+>>   drivers/clk/imx/clk-imx8mp.c              | 150
+>> +++++++++++++++---------------
+>>   drivers/clk/imx/clk-imx8mq.c              |  29 +++---
+>>   drivers/clk/imx/clk.h                     |   7 ++
+>>   include/dt-bindings/clock/imx8mp-clock.h  |  28 +++++-
+>>   11 files changed, 240 insertions(+), 133 deletions(-)
 
-As far as I understand when switching from clk1 to clk2 this is done by 
-temporarily switching the rightmost SELECT mux to whatever was in the 
-spare SEL, which is essentially arbitrary from linux POV.
+For 1-6 and 10:
 
-This is quite unexpected but in theory it might be desirable to use a 
-third parent as a fallback.
-
-> 
-> To address this issue, we could use following simplied software flow:
-> After the first target register set
-> wait the target register set finished
-> set the target register set again
-> wait the target register set finished
-> 
-> The upper flow will make sure SEL_A and SEL_B both set the new mux,
-> but with only one path gate on.
-> And there will be no system hang anymore with step3.
-
-Your fix tries to work around this scenario by always setting the mux 
-value in SEL_A and SEL_B to the same value after each set_parent operation.
-
-But what if SEL_A and SEL_B are different at linux boot time and the 
-first reparenting is done *after* disabling unused clocks? This doesn't 
-happen for A53 because it's reparented during clock provider probe but 
-maybe this scenario could be contrived if bootloader touches one of the 
-other bus slices.
-
-It might be extra safe to assign the parent of the spare mux at the 
-start of each set_parent call. This could even be done on probe and this 
-way wouldn't have to duplicate mux_ops just to do a double write.
-
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
-> 
-> V2:
->   Drop wait after write, add one line comment for write twice.
-> 
->   drivers/clk/imx/clk-composite-8m.c | 62 +++++++++++++++++++++++++++++++++++++-
->   1 file changed, 61 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
-> index 99773519b5a5..eae02c151ced 100644
-> --- a/drivers/clk/imx/clk-composite-8m.c
-> +++ b/drivers/clk/imx/clk-composite-8m.c
-> @@ -24,6 +24,12 @@
->   
->   #define PCG_CGC_SHIFT		28
->   
-> +#define PRE_REG_OFF		0x30
-> +#define PRE_MUXA_SHIFT		24
-> +#define PRE_MUXA_MASK		0x7
-> +#define PRE_MUXB_SHIFT		8
-> +#define PRE_MUXB_MASK		0x7
-
-These are unused.
-
-> +
->   static unsigned long imx8m_clk_composite_divider_recalc_rate(struct clk_hw *hw,
->   						unsigned long parent_rate)
->   {
-> @@ -124,6 +130,57 @@ static const struct clk_ops imx8m_clk_composite_divider_ops = {
->   	.set_rate = imx8m_clk_composite_divider_set_rate,
->   };
->   
-> +static u8 imx8m_clk_composite_mux_get_parent(struct clk_hw *hw)
-> +{
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +	u32 val;
-> +
-> +	val = readl(mux->reg) >> mux->shift;
-> +	val &= mux->mask;
-> +
-> +	return clk_mux_val_to_index(hw, mux->table, mux->flags, val);
-> +}
-> +
-> +static int imx8m_clk_composite_mux_set_parent(struct clk_hw *hw, u8 index)
-> +{
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +	u32 val = clk_mux_index_to_val(mux->table, mux->flags, index);
-> +	unsigned long flags = 0;
-> +	u32 reg;
-> +
-> +	if (mux->lock)
-> +		spin_lock_irqsave(mux->lock, flags);
-> +
-> +	reg = readl(mux->reg);
-> +	reg &= ~(mux->mask << mux->shift);
-> +	val = val << mux->shift;
-> +	reg |= val;
-> +	/* write twice to make sure SEL_A/B point the same mux */
-> +	writel(reg, mux->reg);
-> +	writel(reg, mux->reg);
-> +
-> +	if (mux->lock)
-> +		spin_unlock_irqrestore(mux->lock, flags);
-> +
-> +	return 0;
-> +}
-> +
-> +static int
-> +imx8m_clk_composite_mux_determine_rate(struct clk_hw *hw,
-> +				       struct clk_rate_request *req)
-> +{
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +
-> +	return clk_mux_determine_rate_flags(hw, req, mux->flags);
-> +}
-> +
-> +
-> +const struct clk_ops imx8m_clk_composite_mux_ops = {
-> +	.get_parent = imx8m_clk_composite_mux_get_parent,
-> +	.set_parent = imx8m_clk_composite_mux_set_parent,
-> +	.determine_rate = imx8m_clk_composite_mux_determine_rate,
-> +};
-> +
->   struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->   					const char * const *parent_names,
->   					int num_parents, void __iomem *reg,
-> @@ -136,6 +193,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->   	struct clk_gate *gate = NULL;
->   	struct clk_mux *mux = NULL;
->   	const struct clk_ops *divider_ops;
-> +	const struct clk_ops *mux_ops;
->   
->   	mux = kzalloc(sizeof(*mux), GFP_KERNEL);
->   	if (!mux)
-> @@ -157,10 +215,12 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->   		div->shift = PCG_DIV_SHIFT;
->   		div->width = PCG_CORE_DIV_WIDTH;
->   		divider_ops = &clk_divider_ops;
-> +		mux_ops = &imx8m_clk_composite_mux_ops;
->   	} else {
->   		div->shift = PCG_PREDIV_SHIFT;
->   		div->width = PCG_PREDIV_WIDTH;
->   		divider_ops = &imx8m_clk_composite_divider_ops;
-> +		mux_ops = &clk_mux_ops;
->   	}
->   
->   	div->lock = &imx_ccm_lock;
-> @@ -176,7 +236,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->   	gate->lock = &imx_ccm_lock;
->   
->   	hw = clk_hw_register_composite(NULL, name, parent_names, num_parents,
-> -			mux_hw, &clk_mux_ops, div_hw,
-> +			mux_hw, mux_ops, div_hw,
->   			divider_ops, gate_hw, &clk_gate_ops, flags);
->   	if (IS_ERR(hw))
->   		goto fail;
-> 
-
+Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
