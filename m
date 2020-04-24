@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA5681B7407
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:24:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 396311B740A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 14:24:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yR9Qsmz5cUDa1dS49PHqT9H1VZ5Xi3hJLMbCCZCI1sk=; b=MpWlfGfo1fZAoy
-	5dcjYh5GQ+wEa9/TlN3nwjhqSGNz7ijgataPFIu83Ym3CUXftshq75wNhy6RjJKX/Uhtv7cnYWCU+
-	KTF2uohh+RDWYd5IROBXcO/kK4ib4I7sMizMhYbu4QtZy8MHGoO3BOAnlnZ1g9H4GWhtAof9CF/ds
-	rT348/ql42I7c3LklCkqN1TGdzSLFOiD3iAUyuS33LZy10BlMCfemAAHKh4IjyqGPuFeVpTiC2uZ4
-	dWMQSAD2dyUYppLDaazcjYLiQm3+ooDK4Hxso7pxJbH3IZh2AFqIRMkcEX642dwPXEL8X7VkWuTmP
-	uUMkzCkxa+DLEKdxPEfA==;
+	List-Owner; bh=d8WeaYPP/72sHiP6obCzdLV26T2GzCWAlWYrnXyASOk=; b=bi7Q3Hscboxp3W
+	C007mcV5vsFt1M0V9V3r+wezocPkMmlaFiW3qmY0lFHLp8Zwj03W65s6SB+pvm/3gj6Oi6PevABLL
+	pTd2W85OGUIiSnmJaOF+Dw5AEZCSgXYV+Z4WhWOQC8oAgIvWa1eEjuvNuaOMFuIXCqFBHXskmLFzm
+	DVEBPXne4pGBx8puTzLnS3CmvSDD0TvoBGeh8z2hYbhGbVF0ecJInFi5ID6sVE6wRCFW2UoSRZuhI
+	FK0AxcWsScSROZsazjJZAv2JCL3G9hr2s9J1iG/RVBffNSQEAhf26Ja9tWtCCKsb5zmcmchhQ9M0u
+	KDXxzYfzixpZ8clYJxUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxNE-0005TT-Nd; Fri, 24 Apr 2020 12:24:04 +0000
+	id 1jRxNV-0005js-4a; Fri, 24 Apr 2020 12:24:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxMv-0005Oo-3p
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:23:46 +0000
+ id 1jRxMy-0005U0-MM
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 12:23:50 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E8CCD2168B;
- Fri, 24 Apr 2020 12:23:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F6F220706;
+ Fri, 24 Apr 2020 12:23:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587731024;
- bh=gQAWuW39xI8mn+xgNei4VJx/ZoOFJOfZegmSKlqk98g=;
+ s=default; t=1587731028;
+ bh=Hs8s9eHC6FrR8kVw+W14GPnW2VfpOKl6QsOnOLWjeE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EWcsE9bpBBMu7ZCYyxSxBgRR4pPz9cMqUROZnobD9xyFDvj9F4S58NMrn/QOrHE54
- DTFAg4+Q3G9APLRr43h609sQXtSb3JyCbgKp/SNXxFS4hCNevrCD6X9CHWOr3ffmrE
- eP4aBN4fUNlT+6nnLpi4omQyEngyuzVwgWwFOsdU=
+ b=m/YrB3Rl3V+wlQUT5tRJ8NpTtOgSLqL3bjFa+hrtwERiK7mniW8o5G8rWDGMNSC9A
+ 4eLNaWqtVhobB4Mz4LUhkfwXi1LQu6kBZHWRpbglgCS6tJi1BPtdypRwI+MuN0LbBW
+ TJ8tmqC9q55S4A1MPdv5dxKNLy09NVBmY7NtOwN8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 18/26] net: stmmac: socfpga: Allow all RGMII modes
-Date: Fri, 24 Apr 2020 08:23:15 -0400
-Message-Id: <20200424122323.10194-18-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 21/26] arm64: Delete the space separator in
+ __emit_inst
+Date: Fri, 24 Apr 2020 08:23:18 -0400
+Message-Id: <20200424122323.10194-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200424122323.10194-1-sashal@kernel.org>
 References: <20200424122323.10194-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_052345_231786_BBDBA577 
-X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-CacheID: sfid-20200424_052348_988380_8BB974FA 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,42 +81,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Atsushi Nemoto <atsushi.nemoto@sord.co.jp>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
+ Fangrui Song <maskray@google.com>, Ilie Halip <ilie.halip@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, clang-built-linux@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Atsushi Nemoto <atsushi.nemoto@sord.co.jp>
+From: Fangrui Song <maskray@google.com>
 
-[ Upstream commit a7a0d6269652846671312b29992143f56e2866b8 ]
+[ Upstream commit c9a4ef66450145a356a626c833d3d7b1668b3ded ]
 
-Allow all the RGMII modes to be used.  (Not only "rgmii", "rgmii-id"
-but "rgmii-txid", "rgmii-rxid")
+In assembly, many instances of __emit_inst(x) expand to a directive. In
+a few places __emit_inst(x) is used as an assembler macro argument. For
+example, in arch/arm64/kvm/hyp/entry.S
 
-Signed-off-by: Atsushi Nemoto <atsushi.nemoto@sord.co.jp>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+  ALTERNATIVE(nop, SET_PSTATE_PAN(1), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
+
+expands to the following by the C preprocessor:
+
+  alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
+
+Both comma and space are separators, with an exception that content
+inside a pair of parentheses/quotes is not split, so the clang
+integrated assembler splits the arguments to:
+
+   nop, .inst, (0xd500401f | ((0) << 16 | (4) << 5) | ((!!1) << 8)), 4, 1
+
+GNU as preprocesses the input with do_scrub_chars(). Its arm64 backend
+(along with many other non-x86 backends) sees:
+
+  alternative_insn nop,.inst(0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
+  # .inst(...) is parsed as one argument
+
+while its x86 backend sees:
+
+  alternative_insn nop,.inst (0xd500401f|((0)<<16|(4)<<5)|((!!1)<<8)),4,1
+  # The extra space before '(' makes the whole .inst (...) parsed as two arguments
+
+The non-x86 backend's behavior is considered unintentional
+(https://sourceware.org/bugzilla/show_bug.cgi?id=25750).
+So drop the space separator inside `.inst (...)` to make the clang
+integrated assembler work.
+
+Suggested-by: Ilie Halip <ilie.halip@gmail.com>
+Signed-off-by: Fangrui Song <maskray@google.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Link: https://github.com/ClangBuiltLinux/linux/issues/939
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/include/asm/sysreg.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-index e0212d2fc2a12..fa32cd5b418ef 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-@@ -241,6 +241,8 @@ static int socfpga_set_phy_mode_common(int phymode, u32 *val)
- 	switch (phymode) {
- 	case PHY_INTERFACE_MODE_RGMII:
- 	case PHY_INTERFACE_MODE_RGMII_ID:
-+	case PHY_INTERFACE_MODE_RGMII_RXID:
-+	case PHY_INTERFACE_MODE_RGMII_TXID:
- 		*val = SYSMGR_EMACGRP_CTRL_PHYSEL_ENUM_RGMII;
- 		break;
- 	case PHY_INTERFACE_MODE_MII:
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 6e919fafb43dd..9b68f1b3915ec 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -49,7 +49,9 @@
+ #ifndef CONFIG_BROKEN_GAS_INST
+ 
+ #ifdef __ASSEMBLY__
+-#define __emit_inst(x)			.inst (x)
++// The space separator is omitted so that __emit_inst(x) can be parsed as
++// either an assembler directive or an assembler macro argument.
++#define __emit_inst(x)			.inst(x)
+ #else
+ #define __emit_inst(x)			".inst " __stringify((x)) "\n\t"
+ #endif
 -- 
 2.20.1
 
