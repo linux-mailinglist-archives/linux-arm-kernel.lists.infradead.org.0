@@ -2,84 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C14871B7782
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 15:51:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4350F1B778F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 15:53:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pYa/ftHFjmTLENC1BRnJfsxGS5zNezOypIgANupjqhQ=; b=dgUfXXcMcvwRY8wFzqj+i0pkF
-	hqIN6af8HReTf0q1yD+5m2D252DYVJelZeKVrfrePY93dZz8GEsNRLKRQOEliIyT90ax7RvYjm/NP
-	zvVVxXQv3/W6PlL+ZwYpFA/4u+nhnP1VQn1dSHOhfYYTZURhU3K9aN099cSJiIdY4mWAraxgMwhPU
-	iXY5FXhZLngpXPIgVErql+cUlhzwRffxKiJV8X1kSaB6R93PqL4mIeC//p8fWjlIxESBuvukqtT+t
-	5q4n92Ux0ts2y6BdQA/bKdf20dACLEQPxMrrvFNqByL+N1cKF8FO9Rhqy6yyY+TXEojKf7vdwBRqg
-	G5ZvTw7Xw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YCJxEpKVsnLrvZ4sd0g/lqHkqBgCc0dxRLrCXvWWaic=; b=pHQjFnAd5zRCnl
+	Us66DstRUfWZcM8lQLdgHP93GKPVyGt7gQStBlIzEL/fGnglX+ykowQ8NhH8N4msyodA4Uov5t4a8
+	I6d3gNinoVwKv6EHq0a+bCUK7Y3GvesJfoOCHymjSsDhint4IO+FIhPKPAZkEvrv1hvWXnqQ+Z9bv
+	VLjJg8OnZgGN9opf9zbKknKic6eeaGUcRZDovCYP9kR9GUPN2ApFbEu+JGSftKypgeq7/CIgPtXjV
+	GqdDqtqy/0cB8j8vlsCW7QTHq3iUXZlGRI7oAhewW7KWBR+xV92qCp1rRucOYq7fgUh9NFoMj7IFi
+	UZHyLL5N/iw4K3MiBCrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRyjb-0002A3-7p; Fri, 24 Apr 2020 13:51:15 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1jRyly-0002sZ-CP; Fri, 24 Apr 2020 13:53:42 +0000
+Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRyjR-00028Y-1t
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 13:51:07 +0000
-Received: by mail-qk1-x743.google.com with SMTP id m67so10100977qke.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 06:51:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=fgJguWGGGlAwhNoBLU8EzUqvt2IciwBdbaU2eBO5bRQ=;
- b=ZpSrIlJFDAQM2PzcbDXbif7ws5tgVsC+SiR4zGfEblxvm086ureP8r1nAITfl8TIOy
- GOkHU0Cscq5l+LM684La5i3gk7cPZbCa2RJz7An5lly6zB7wUEIpwukKeQrxg/oG4JB6
- 1epMl0zCFhVwi6KydpE32wQFW2goQwOzMyRv8uK6V9qzlwSYr1FEZFyRd223cPiKKFae
- kPQvywYLasJWWSG7jzSITghE7vV8tfJ7Csz9eEV7xaPJMDehUKU3jBZapUnzf0Q/e1Y7
- zoJcJI1puU/0SYKl7j0YbtGFVfNcoIJ9G+HGChIzjOX48DIis3JCkKaqHiNpBNOyC70x
- szRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=fgJguWGGGlAwhNoBLU8EzUqvt2IciwBdbaU2eBO5bRQ=;
- b=mocreSyzdSsNyzHRPx9BvvnwIIJvoBId1RTHIo2x27Nhqm4fY5SdrQrq4UpnSmtViL
- 69Uor1ayVu+dq1QvecSOhvFy07fjSQCU308EQTPHflr8jXpJNHrFKGqVyFeUEDeIFZ3z
- PPnon83gHLKbAKN0hqHJiaFMbCvqJvjxWzaTmF2A0Lee5wdan4OhFFNsvrFBdUy+iHyU
- 5f6Wvj6Qpm8aIKc9tuEGfD1eUqlUe8MX/pqgiloQOyH4gM+PU59EWJ5pS+yzDS0bVPiK
- 9oDmIP4hBI/DxpP81YXWP03l/0CweCevAsS/IaOp3w784Y0VFr/ht5tXoz4yG9zR0pSS
- 8QbQ==
-X-Gm-Message-State: AGi0PuamO2zO/ZU0kBaQOHYro9cksdigeOfcqJQ3KJQvqj7LfXpZLN+M
- 3JvC81PAbkJUYrgBIMhyoNk=
-X-Google-Smtp-Source: APiQypItRiDO2aQPCX87jaYTk5YAO3bdQyOshfgS2sb8Hqf6eQRZZNBqqaJDaEAmj1prQvI5CMGfng==
-X-Received: by 2002:a37:48a:: with SMTP id 132mr9342479qke.390.1587736263497; 
- Fri, 24 Apr 2020 06:51:03 -0700 (PDT)
-Received: from icarus (072-189-064-225.res.spectrum.com. [72.189.64.225])
- by smtp.gmail.com with ESMTPSA id z6sm3741966qke.56.2020.04.24.06.51.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 24 Apr 2020 06:51:02 -0700 (PDT)
-Date: Fri, 24 Apr 2020 09:50:33 -0400
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: akpm@linux-foundation.org
-Subject: Re: [PATCH 0/6] Introduce the for_each_set_clump macro
-Message-ID: <20200424135011.GA3255@icarus>
-References: <20200424122407.GA5523@syed>
+ id 1jRyln-0002r8-Kh
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 13:53:33 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id 4B9944C289;
+ Fri, 24 Apr 2020 13:53:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-type:content-type:content-transfer-encoding:mime-version
+ :x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mta-01; t=1587736403; x=
+ 1589550804; bh=C7o5anrVtbdDEEIN4TTdu9AWTV0saWiBIKW6bETgoVc=; b=j
+ qgdp2kcy6yJp2pYHwC27v6mTQuse2/WcnVpix5RJmxtBZATokVuDGli4dmig9d+T
+ ycZAim+0KvB7kGpA8/g67fJDc47dd1z0aTPVOuMJH69y4i+81STybA7C2oSvG9wC
+ jGKLkcdUl2ULkcUFYogisF9UaoBWRSAFqJzev/9w7E=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id t1Npg9491K2s; Fri, 24 Apr 2020 16:53:23 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id EB73A4C288;
+ Fri, 24 Apr 2020 16:53:22 +0300 (MSK)
+Received: from bbwork.com (172.17.14.122) by T-EXCH-02.corp.yadro.com
+ (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Fri, 24
+ Apr 2020 16:53:23 +0300
+From: Alexander Filippov <a.filippov@yadro.com>
+To: <linux-aspeed@lists.ozlabs.org>
+Subject: [PATCH v5] ARM: DTS: Aspeed: Add YADRO Nicole BMC
+Date: Fri, 24 Apr 2020 16:53:03 +0300
+Message-ID: <20200424135303.20952-1-a.filippov@yadro.com>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-In-Reply-To: <20200424122407.GA5523@syed>
+X-Originating-IP: [172.17.14.122]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_065105_922983_20FAFEFD 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200424_065332_042716_5DBB7083 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
+ no trust [89.207.88.252 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [vilhelm.gray[at]gmail.com]
+ 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,83 +89,364 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, amit.kucheria@verdurent.com, arnd@arndb.de,
- yamada.masahiro@socionext.com, linus.walleij@linaro.org,
- daniel.lezcano@linaro.org, michal.simek@xilinx.com,
- linux-kernel@vger.kernel.org, bgolaszewski@baylibre.com, rrichter@marvell.com,
- linux-gpio@vger.kernel.org, linux-pm@vger.kernel.org, rui.zhang@intel.com,
- andriy.shevchenko@linux.intel.com, Syed Nayyar Waris <syednwaris@gmail.com>,
+Cc: devicetree@vger.kernel.org, Andrew Jeffery <andrew@aj.id.au>,
+ linux-kernel@vger.kernel.org, Alexander Filippov <a.filippov@yadro.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0174259466931857332=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Nicole is an OpenPower machine with an Aspeed 2500 BMC SoC manufactured
+by YADRO.
 
---===============0174259466931857332==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="WYTEVAkct0FjGQmd"
-Content-Disposition: inline
+Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+---
+ arch/arm/boot/dts/Makefile                  |   1 +
+ arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts | 316 ++++++++++++++++++++
+ 2 files changed, 317 insertions(+)
+ create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
 
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e8dd99201397..6f9fe0f959f2 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -1347,6 +1347,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+ 	aspeed-bmc-microsoft-olympus.dtb \
+ 	aspeed-bmc-opp-lanyang.dtb \
+ 	aspeed-bmc-opp-mihawk.dtb \
++	aspeed-bmc-opp-nicole.dtb \
+ 	aspeed-bmc-opp-palmetto.dtb \
+ 	aspeed-bmc-opp-romulus.dtb \
+ 	aspeed-bmc-opp-swift.dtb \
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+new file mode 100644
+index 000000000000..31b7e83adc46
+--- /dev/null
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+@@ -0,0 +1,316 @@
++// SPDX-License-Identifier: GPL-2.0+
++// Copyright 2019 YADRO
++/dts-v1/;
++#include "aspeed-g5.dtsi"
++#include <dt-bindings/gpio/aspeed-gpio.h>
++
++/ {
++	model = "Nicole BMC";
++	compatible = "yadro,nicole-bmc", "aspeed,ast2500";
++
++	chosen {
++		stdout-path = &uart5;
++		bootargs = "console=ttyS4,115200 earlyprintk";
++	};
++
++	memory@80000000 {
++		reg = <0x80000000 0x20000000>;
++	};
++
++	reserved-memory {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges;
++
++		vga_memory: framebuffer@9f000000 {
++			no-map;
++			reg = <0x9f000000 0x01000000>; /* 16M */
++		};
++
++		flash_memory: region@98000000 {
++			no-map;
++			reg = <0x98000000 0x04000000>; /* 64M */
++		};
++
++		coldfire_memory: codefire_memory@9ef00000 {
++			reg = <0x9ef00000 0x00100000>;
++			no-map;
++		};
++
++		gfx_memory: framebuffer {
++			size = <0x01000000>;
++			alignment = <0x01000000>;
++			compatible = "shared-dma-pool";
++			reusable;
++		};
++
++		video_engine_memory: jpegbuffer {
++			size = <0x02000000>;	/* 32M */
++			alignment = <0x01000000>;
++			compatible = "shared-dma-pool";
++			reusable;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			gpios = <&gpio ASPEED_GPIO(AA, 4) GPIO_ACTIVE_HIGH>;
++		};
++
++		identify {
++			gpios = <&gpio ASPEED_GPIO(AA, 7) GPIO_ACTIVE_HIGH>;
++		};
++
++		alarm_red {
++			gpios = <&gpio ASPEED_GPIO(AA, 3) GPIO_ACTIVE_HIGH>;
++		};
++
++		alarm_yellow {
++			gpios = <&gpio ASPEED_GPIO(AA, 1) GPIO_ACTIVE_HIGH>;
++		};
++	};
++
++	fsi: gpio-fsi {
++		compatible = "aspeed,ast2500-cf-fsi-master", "fsi-master";
++		#address-cells = <2>;
++		#size-cells = <0>;
++		no-gpio-delays;
++
++		memory-region = <&coldfire_memory>;
++		aspeed,sram = <&sram>;
++		aspeed,cvic = <&cvic>;
++
++		clock-gpios = <&gpio ASPEED_GPIO(AA, 0) GPIO_ACTIVE_HIGH>;
++		data-gpios = <&gpio ASPEED_GPIO(AA, 2) GPIO_ACTIVE_HIGH>;
++		mux-gpios = <&gpio ASPEED_GPIO(A, 6) GPIO_ACTIVE_HIGH>;
++		enable-gpios = <&gpio ASPEED_GPIO(D, 0) GPIO_ACTIVE_HIGH>;
++		trans-gpios = <&gpio ASPEED_GPIO(P, 1) GPIO_ACTIVE_HIGH>;
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++
++		checkstop {
++			label = "checkstop";
++			gpios = <&gpio ASPEED_GPIO(J, 2) GPIO_ACTIVE_LOW>;
++			linux,code = <ASPEED_GPIO(J, 2)>;
++		};
++	};
++
++	iio-hwmon-battery {
++		compatible = "iio-hwmon";
++		io-channels = <&adc 12>;
++	};
++};
++
++&fmc {
++	status = "okay";
++	flash@0 {
++		status = "okay";
++		m25p,fast-read;
++		label = "bmc";
++		spi-max-frequency = <50000000>;
++#include "openbmc-flash-layout.dtsi"
++	};
++};
++
++&spi1 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_spi1_default>;
++
++	flash@0 {
++		status = "okay";
++		m25p,fast-read;
++		label = "pnor";
++		spi-max-frequency = <100000000>;
++	};
++};
++
++&lpc_ctrl {
++	status = "okay";
++	memory-region = <&flash_memory>;
++	flash = <&spi1>;
++};
++
++&uart1 {
++	/* Rear RS-232 connector */
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_txd1_default
++			&pinctrl_rxd1_default
++			&pinctrl_nrts1_default
++			&pinctrl_ndtr1_default
++			&pinctrl_ndsr1_default
++			&pinctrl_ncts1_default
++			&pinctrl_ndcd1_default
++			&pinctrl_nri1_default>;
++};
++
++&uart5 {
++	status = "okay";
++};
++
++&mac0 {
++	status = "okay";
++
++	use-ncsi;
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_rmii1_default>;
++	clocks = <&syscon ASPEED_CLK_GATE_MAC1CLK>,
++		 <&syscon ASPEED_CLK_MAC1RCLK>;
++	clock-names = "MACCLK", "RCLK";
++};
++
++&i2c0 {
++	status = "okay";
++
++	eeprom@50 {
++		compatible = "atmel,24c256";
++		reg = <0x50>;
++		pagesize = <64>;
++	};
++};
++
++&i2c2 {
++	status = "okay";
++	/* CPU0 characterization connector */
++};
++
++&i2c3 {
++	status = "okay";
++	/* CLK GEN SI5338 */
++};
++
++&i2c4 {
++	status = "okay";
++	/* Voltage regulators for CPU0 */
++};
++
++&i2c5 {
++	status = "okay";
++	/* Voltage regulators for CPU1 */
++};
++
++&i2c6 {
++	status = "okay";
++
++	rtc@32 {
++		compatible = "epson,rx8900";
++		reg = <0x32>;
++	};
++};
++
++&i2c7 {
++	status = "okay";
++	/* CPLD */
++};
++
++&gpio {
++	gpio-line-names =
++	/*A0-A7*/	"","cfam-reset","","","","","fsi-mux","",
++	/*B0-B7*/	"","","","","","","","",
++	/*C0-C7*/	"","","","","","","","",
++	/*D0-D7*/	"fsi-enable","","","nic_func_mode0","nic_func_mode1","","","",
++	/*E0-E7*/	"","ncsi_cfg","","","","","","",
++	/*F0-F7*/	"","","","","","","","",
++	/*G0-G7*/	"","","","","","","","",
++	/*H0-H7*/	"","","","","","","","",
++	/*I0-I7*/	"","","","","","","","",
++	/*J0-J7*/	"","","checkstop","","","","","",
++	/*K0-K7*/	"","","","","","","","",
++	/*L0-L7*/	"","","","","","","","",
++	/*M0-M7*/	"","","","","","","","",
++	/*N0-N7*/	"","","","","","","","",
++	/*O0-O7*/	"","","id-button","","","","","",
++	/*P0-P7*/	"","fsi-trans","","","","","","",
++	/*Q0-Q7*/	"","","","","","","","",
++	/*R0-R7*/	"","","","","","","","",
++	/*S0-S7*/	"","","","","","","","seq_cont",
++	/*T0-T7*/	"","","","","","","","",
++	/*U0-U7*/	"","","","","","","","",
++	/*V0-V7*/	"","","","","","","","",
++	/*W0-W7*/	"","","","","","","","",
++	/*X0-X7*/	"","","","","","","","",
++	/*Y0-Y7*/	"","","","","","","","",
++	/*Z0-Z7*/	"","","","","","","","",
++	/*AA0-AA7*/	"fsi-clock","led_alarm_yellow","fsi-data","led_alarm_red",
++			"led_power","","","led_identify",
++	/*AB0-AB7*/	"","","","","","","","",
++	/*AC0-AC7*/	"","","","","","","","";
++
++	nic_func_mode0 {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(D, 3) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	nic_func_mode1 {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(D, 4) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	seq_cont {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(S, 7) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	ncsi_cfg {
++		gpio-hog;
++		input;
++		gpios = <ASPEED_GPIO(E, 1) GPIO_ACTIVE_HIGH>;
++	};
++};
++
++&vuart {
++	status = "okay";
++};
++
++&gfx {
++	status = "okay";
++	memory-region = <&gfx_memory>;
++};
++
++&pinctrl {
++	aspeed,external-nodes = <&gfx &lhc>;
++};
++
++&ibt {
++	status = "okay";
++};
++
++&vhub {
++	status = "okay";
++};
++
++&adc {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_adc0_default
++			&pinctrl_adc1_default
++			&pinctrl_adc2_default
++			&pinctrl_adc3_default
++			&pinctrl_adc4_default
++			&pinctrl_adc5_default
++			&pinctrl_adc6_default
++			&pinctrl_adc7_default
++			&pinctrl_adc8_default
++			&pinctrl_adc9_default
++			&pinctrl_adc10_default
++			&pinctrl_adc11_default
++			&pinctrl_adc12_default
++			&pinctrl_adc13_default
++			&pinctrl_adc14_default
++			&pinctrl_adc15_default>;
++};
++
++&video {
++	status = "okay";
++	memory-region = <&video_engine_memory>;
++};
++
++#include "ibm-power9-dual.dtsi"
+-- 
+2.21.1
 
---WYTEVAkct0FjGQmd
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Apr 24, 2020 at 05:54:07PM +0530, Syed Nayyar Waris wrote:
-> This patchset introduces a new generic version of for_each_set_clump.=20
-> The previous version of for_each_set_clump8 used a fixed size 8-bit
-> clump, but the new generic version can work with clump of any size but
-> less than or equal to BITS_PER_LONG. The patchset utilizes the new macro=
-=20
-> in several GPIO drivers.
-
-Regarding the nomenclature, I created the term "clump" to represent an
-8-bit value that was not necessarily a byte yet was a contiguous
-grouping of bits. With this patchset, we now have a more generic
-for_each_set_clump macro that can handle values larger and smaller than
-8-bits.
-
-Would it make sense to retire the term "clump" and instead use "nbits"
-where applicable, in order to match the existing convention used by the
-bitmap functions; for instance, would it be better to name this macro
-for_each_set_nbits?
-
-William Breathitt Gray
-
---WYTEVAkct0FjGQmd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEk5I4PDJ2w1cDf/bghvpINdm7VJIFAl6i7qkACgkQhvpINdm7
-VJIciBAA4lGCd+eUHQXeYgvLK14UXVfbjASoiUjFVFetkDeXj+GGFQG7W/fVMxrM
-LoJV4wXwNl9qyedfdNI8aZmjUwF2Tyy+XEaxo/wa6XyfIXvKrqDYNpESIhvFgMv9
-BcxDVlWrMixZ440pQqqFRfGx7bLM2pryn05hh5yr46Y3kZZRISeAlygC+cZfDmzT
-O7KXcRIB4ZTeZ0irSlLKsEFpp42YIKUX+gt3zwkxSoRIhfBRToE2KU42oLhez48t
-WuUHpZ2TexCV35B+QAjjAXqMdnL3Rg43pRCJG614VuvSleY2hAkED5lqMlt0SIh4
-4kEbvK/fea2QInYY/WA5EKxtFka9huXJ1dhqqUUSFFQfUPhqA/GSxpZ+5o7EeWjr
-v4d4uzg897E5BwZhrWOJUHBIfA4LXkQMV+ZGL1ijWmNnYy3uigREGZYrNylShQ1O
-INlHzTcoqy++g+kETBV/MEZJWGbtqRGqr4/u1UaECO/Ccy0cHDhp9mQ0JmSoXdQe
-pIIhBDfm3raffCMVjSqfVToHENxHuwqcTIgxJ+CAR7j2BOAF/oeNULgsKnRZrfMu
-UE32VfmG2xXdHiqw4R/fBzK1g/DLF7c04RYBPjY7S1/Tvrox9dTnfJbPA1r4KB35
-vIQf2L/hGGV/F/IRYgVdtVVVNaB3qEsrimj0CJjnpQYNkE3fUoM=
-=A+Kx
------END PGP SIGNATURE-----
-
---WYTEVAkct0FjGQmd--
-
-
---===============0174259466931857332==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0174259466931857332==--
-
