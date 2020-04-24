@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DB571B72D0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 13:12:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 251F41B72ED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 13:17:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=f8cYvvDWhHXe/m246VODGPWd4kDLZl6BX75p8UFC9OI=; b=rX/740WE/QHgwVtTZ7iBo627MD
-	f4CZvE37y1Axt1ZkZoTl1ZEMFBKzhmhwlNelwrhIRo2yPmitbQfKVAV8kEY+3PwdB0i2EJjA5P0/t
-	YT9zXOyPnUEdYXc2napfr1Y9BH9n95cZ6Gbew8cmbz3wYL8IBMMLa5C7+of5PpPnRJFKQdMoCUl+s
-	aFKuaPLdtFECp4vT4EwZU/hOxRQJR5WDwjMsY84WgFfeyi6ohdgqksTt9+S9u1s5JzTYGxUbGrNL5
-	JZiAk0Ylu0OaqCvYBmXbMAVHBqSYVFfBuOoSE4gSSuI0RR6WNxhQTbTCerQ79gT5rDwAMyk4cpR0I
-	5xzjcHhw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xZ34TZ/CqGFH9ETWoKhkgYBqx6vcN5FvqLTgce5qfsA=; b=JhgWz3lY6Sef7U
+	+CYVBANU6Co5EA0xHD0kuCC0lOYRBOLRt4nDnDVZEqmCghZ72PmRMXzDyRPhVnyFx/RrPSKSDubH4
+	ryfDPlsThysgg8veutbbRNQh++9Q/Z8VnydC56UWi5uJUtKboBhapZ69q2QVdS6wf3Pb2cZ74XZPr
+	DNAiEouh+UL3DyqzHdIEidc46eQ6J7DWVTut/TQNvGpiN20ZU2SlGcMESUD+jGEIHzF+DUi+9HXgd
+	N1Kq4o8QfFijWrwljiE2NKS1XHNIu5yBDSlpJjrR9dI8XpPWGge+3QvarhpfXVU3719LRloJmKwDE
+	sKC6m15GCEUJ0MLeWJJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRwG8-0005YH-AK; Fri, 24 Apr 2020 11:12:40 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jRwKV-0000cY-03; Fri, 24 Apr 2020 11:17:11 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRwFQ-00055q-GJ
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 11:11:58 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id a31so1895913pje.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Apr 2020 04:11:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mGgPpUWWcJSKxFWk1j0ZpUZcDZ7qWSk+2Ep1V3opjsY=;
- b=RhV+Dgur2THbXVsj1cTu37mw8UPw80MKORypqDq7r/YfZFzDSHI0k79rvvs3kRsL+N
- 5X10akzNH/fucZMO2P+Hqo+FCdis++edlXsKCaoPKGeOFZHpR8rNipVNdkPBE7nc1FtL
- JAnQMkVN/9e0A5DGLVeib1jx8kE46Ta4BFi4iS2XnJgWwfNMkyjGivbJIDXz4IO5uVih
- iP/Ss+WpI9mJhxFgwThDtMgqbXhV0bZwV4YtOYbHxLvaiwTwi0YHM57IX3IXb2K6ZmMa
- ZnfIe/U12bZDfeCOntbNTqUd4qRY76VDrfjXvdCam3jgPIhzv9/AA8CqliMBJ94JV9O2
- R7JQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=mGgPpUWWcJSKxFWk1j0ZpUZcDZ7qWSk+2Ep1V3opjsY=;
- b=YmzKYT0ccm2ypn71kexvL58e+fHV3TYCbGpF9DpkgLMKrvbt39AHQQrUHLLxcPk1Id
- 9jAy1/2brJp00iMZQtafK8ygxCGknXGf96pNQ4l/0O/UrrpBWXDhlx95uTPRmvAkV+0b
- klBBfigFxBPTvMJ1OaFYXfjSSYQ4YojPLDbxR3QSzko/JBgTgo5p5vQsf+65kLaQDDLX
- tWCL4wnrZiLNkwu41gVHWjGJ6mELzpDnQxGrT6DJQTaIixl2I6as+rxSDA66lQPBDQhR
- 7d+oIw4p7wgRfJzcLgs/WbmkGW85/g6Ou1W6KL0M+LznqWTKErLi7eS/hzm27xo9Nmqf
- 8fqQ==
-X-Gm-Message-State: AGi0PuaRWyBW0LNDdWTD1Dcv1ZEMz7OJwAkrUYhxXFDLbeNQjVD2EuvS
- eOW3mS5Cw+7EuTCjOsjCrlW27E1VRlo0dw==
-X-Google-Smtp-Source: APiQypL+FHEDBtk6zd1EZND+1rWOLvFjGjy05fIVV+X1HKwQAax28zUwpf9w2/xAFM9nylW0/w1XRg==
-X-Received: by 2002:a17:902:8647:: with SMTP id
- y7mr8684677plt.87.1587726714544; 
- Fri, 24 Apr 2020 04:11:54 -0700 (PDT)
-Received: from localhost.localdomain ([117.252.71.186])
- by smtp.gmail.com with ESMTPSA id o11sm4637628pgd.58.2020.04.24.04.11.47
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 04:11:53 -0700 (PDT)
-From: Sumit Garg <sumit.garg@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC Patch v1 4/4] arm64: kgdb: Round up cpus using IPI_CALL_NMI_FUNC
-Date: Fri, 24 Apr 2020 16:39:14 +0530
-Message-Id: <1587726554-32018-5-git-send-email-sumit.garg@linaro.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ id 1jRwKL-0000c2-U1
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 11:17:03 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1587727020; h=Content-Transfer-Encoding: MIME-Version:
+ Message-Id: Date: Subject: Cc: To: From: Sender;
+ bh=+S6TTE3qIQR3bjpweChMEUVjD/kVHW4m2uU9Je20LDk=;
+ b=XZHZkue7TOEI1F2t59A4vzfGncxuq8yqiHxWZG+HzdY0k9+zPs6BXBRri1Rnx58WcN7uH1Cv
+ aN7kGrNUC2Da+a1dcIXNefCMwgqy5m8wW3syi4Nz/T3ptFlt8w4LHzt+J4c+UcpwgLLaT917
+ TGWq6dhppvaqGx/n3p0f5wgv4Q4=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ea2caab.7ff455bab730-smtp-out-n03;
+ Fri, 24 Apr 2020 11:16:59 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 7A055C43636; Fri, 24 Apr 2020 11:16:58 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from blr-ubuntu-311.qualcomm.com
+ (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DB17AC433F2;
+ Fri, 24 Apr 2020 11:16:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DB17AC433F2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Andy Gross <agross@kernel.org>, devicetree@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>
+Subject: [PATCH] arm64: dts: qcom: sc7180: Support ETMv4 power management
+Date: Fri, 24 Apr 2020 16:46:44 +0530
+Message-Id: <20200424111644.27970-1-saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_041156_553951_20407EDF 
-X-CRM114-Status: GOOD (  14.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200424_041702_034348_737FF6AE 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,107 +93,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>, daniel.thompson@linaro.org,
- jason@lakedaemon.net, catalin.marinas@arm.com, jason.wessel@windriver.com,
- dianders@chromium.org, linux-kernel@vger.kernel.org, maz@kernel.org,
- kgdb-bugreport@lists.sourceforge.net, tglx@linutronix.de, will@kernel.org,
- julien.thierry.kdev@gmail.com
-MIME-Version: 1.0
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Kaehlcke <mka@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64 platforms with GICv3 or later supports pseudo NMIs which can be
-leveraged to round up CPUs which are stuck in hard lockup state with
-interrupts disabled that wouldn't be possible with a normal IPI.
+Now that deep idle states are properly supported on SC7180,
+we need to add "coresight-loses-context-with-cpu" property
+to avoid failure of trace session because of losing context
+on entering deep idle states.
 
-So instead switch to round up CPUs using IPI_CALL_NMI_FUNC. And in
-case a particular arm64 platform doesn't supports pseudo NMIs,
-IPI_CALL_NMI_FUNC will act as a normal IPI which maintains existing
-kgdb functionality.
-
-Also, one thing to note here is that with CPUs running in NMI context,
-kernel has special handling for printk() which involves CPU specific
-buffers and defering printk() until exit from NMI context. But with kgdb
-we don't want to defer printk() especially backtrace on corresponding
-CPUs. So switch to normal printk() context instead prior to entering
-kgdb context.
-
-Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 ---
- arch/arm64/kernel/kgdb.c | 15 +++++++++++++++
- arch/arm64/kernel/smp.c  | 17 ++++++++++++++---
- 2 files changed, 29 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/qcom/sc7180.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
-index 4311992..0851ead 100644
---- a/arch/arm64/kernel/kgdb.c
-+++ b/arch/arm64/kernel/kgdb.c
-@@ -14,6 +14,7 @@
- #include <linux/kgdb.h>
- #include <linux/kprobes.h>
- #include <linux/sched/task_stack.h>
-+#include <linux/smp.h>
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 4216b574c080..cab86194a870 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -1621,6 +1621,7 @@
  
- #include <asm/debug-monitors.h>
- #include <asm/insn.h>
-@@ -353,3 +354,17 @@ int kgdb_arch_remove_breakpoint(struct kgdb_bkpt *bpt)
- 	return aarch64_insn_write((void *)bpt->bpt_addr,
- 			*(u32 *)bpt->saved_instr);
- }
-+
-+#ifdef CONFIG_SMP
-+void kgdb_roundup_cpus(void)
-+{
-+	struct cpumask mask;
-+
-+	cpumask_copy(&mask, cpu_online_mask);
-+	cpumask_clear_cpu(raw_smp_processor_id(), &mask);
-+	if (cpumask_empty(&mask))
-+		return;
-+
-+	arch_send_call_nmi_func_ipi_mask(&mask);
-+}
-+#endif
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index 27c8ee1..c7158f6e8 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -31,6 +31,7 @@
- #include <linux/of.h>
- #include <linux/irq_work.h>
- #include <linux/kexec.h>
-+#include <linux/kgdb.h>
- #include <linux/kvm_host.h>
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
  
- #include <asm/alternative.h>
-@@ -976,9 +977,19 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
- 		/* Handle it as a normal interrupt if not in NMI context */
- 		if (!in_nmi())
- 			irq_enter();
--
--		/* nop, IPI handlers for special features can be added here. */
--
-+#ifdef CONFIG_KGDB
-+		if (atomic_read(&kgdb_active) != -1) {
-+			/*
-+			 * For kgdb to work properly, we need printk to operate
-+			 * in normal context.
-+			 */
-+			if (in_nmi())
-+				printk_nmi_exit();
-+			kgdb_nmicallback(raw_smp_processor_id(), regs);
-+			if (in_nmi())
-+				printk_nmi_enter();
-+		}
-+#endif
- 		if (!in_nmi())
- 			irq_exit();
- 		break;
+ 			out-ports {
+ 				port {
+@@ -1639,6 +1640,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1657,6 +1659,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1675,6 +1678,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1693,6 +1697,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1711,6 +1716,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1729,6 +1735,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
+@@ -1747,6 +1754,7 @@
+ 
+ 			clocks = <&aoss_qmp>;
+ 			clock-names = "apb_pclk";
++			arm,coresight-loses-context-with-cpu;
+ 
+ 			out-ports {
+ 				port {
 -- 
-2.7.4
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
