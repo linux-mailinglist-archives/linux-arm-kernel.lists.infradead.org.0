@@ -2,70 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC1D11B8111
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:44:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5D9A1B8115
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 22:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hNzyipB/x4uyvWu74N/EiXCO2leqzYWDlLR0Ff1fhbY=; b=COen48e/1XfnX2
-	usEAuKBHn6X1Ft/GKDAqPZPXV2SAghCi/dygykbllsQHDMDbvO2/W12x+bDe2GY2irXHHdHQKwoMB
-	sZLFHWiMwo5csn6vek5hDVVxtQfpg3RaisupK7GGel7w7j2cvB1JtFmqhTpS37c+V2QfQY2iwsnCi
-	2sG9ehas1FyEnLiC2NwZJeS01kES3oUy8eXf/lBGQgCSMolY/kFhaIfu8piDfX5N8HWT3sfbyXrfa
-	wqj2DDplTaxsDm/uU58LG7Bsndpi6Tcop7bjqyTMEyJ6Lv5OkpzJ5ICLzZ4thOIs2tANAnMYSQ3Bl
-	D11Rakfe3RJRwPWoN+oQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2VrSAESGNdd6+0N8AL7R9tKZCk5GBO9o95L/+DOpiOk=; b=l1jOVF72AhKpbC
+	ihuyGoLXKp8tNiLDv0/5l54QHkXEB86F3hYrBxosxL6JqsPt/PcVxyuQR996ZeAj/4ch12Ees8y1u
+	wGLtgeXkrsAPDoGhITMIoyMSK7vvcejhhTXO1kQlqpWA/ujlO2oOX5V3spDe+6YkEYmqSuNqmrA96
+	LfxtDadcqr1F2nBsGyB086IafXdwtj7Fjg1sOG9wtnIuH4C/k4YluEgXXHf5976Qh02OP7ctfE/J6
+	PG0kUM+471QOaW3JDt0z+LZIuR1MSVAbctIYCKqFtP/FjsYVb9jCbxSdJyyAJp7PrQ9GgdQSDiMcL
+	LZhpK8yDXUeUDJDqaKIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS5BB-00046f-Bs; Fri, 24 Apr 2020 20:44:09 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::5])
+	id 1jS5EP-0007fs-8R; Fri, 24 Apr 2020 20:47:29 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS5Ay-00045o-L6
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:43:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587761034;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=vhudvGlAsCcgRL2OjoDTyBEhyn7ZxJt8dndzIv56d3M=;
- b=Q2FgHn0kALhGPGGYI5tKEZZuVI7m2SdC6Oltg8lvSK7tcuft+eSRhpdkidbN/8PMlJ
- hE7VtRBC2bZy/vSDgePKhsNnsl7AakxO9GJT3o+XidOjoMYd5xuRadVESTmw6ykAMq7k
- AQkdwxkrDluBheq2FF9MNVcbCDmn0mz7y9mJRckwFT7nDP/ilT4HYMSrL7S6Fw57ck5L
- t4aQO4BG8OexCapolgDvOlB0Qv89LQuBLsDdACDFNJ5Ig7Snu+lDR1eqmNql033Bx5Ln
- SimMN6efSE7wBnLS/36yl/xOmOSTC0mbyNm0Rrk1CXgR2WI+zEp+sF9H2if5vumNAUTs
- LJEA==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlabXA0JT7U="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw3OKhXEVq
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Fri, 24 Apr 2020 22:43:33 +0200 (CEST)
-Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
- pvrsgx.yaml for Imagination GPUs
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
-Date: Fri, 24 Apr 2020 22:43:30 +0200
-Message-Id: <47E9ACFA-A5DE-4918-9C79-0C50FAA6E988@goldelico.com>
-References: <cover.1587760454.git.hns@goldelico.com>
- <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
-To: Nikolaus Schaller <hns@goldelico.com>
-X-Mailer: Apple Mail (2.3124)
+ id 1jS5ED-0007f0-Bm
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Apr 2020 20:47:18 +0000
+Received: by mail-ua1-x942.google.com with SMTP id v24so10878980uak.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Apr 2020 13:47:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qeSr0lei+fRC9/QJxXSmPKueqlEcByGy/C+Sm2/krvg=;
+ b=Gy4e1DrYdXOs9V95msoY1FVrKuSQ1ZhCKigCD3DdHYa4vQSZF0/wZGOzsXWdhDRQMJ
+ ntjWHIAzoYQW/EbWleAXGSfEnaY3ZJ7a7cSARn7y8iNmYUhWJlNIe/hR5f+f+ETIthcj
+ +7H9KyKHdOyYM6Yq87MOT6M0ttEfo85nWdehE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qeSr0lei+fRC9/QJxXSmPKueqlEcByGy/C+Sm2/krvg=;
+ b=LBREj80w036zlYi4ACzA0E08ANnxozRUcFy5gCcCSJJOhta7qUYlDjtYkhp4940qKM
+ glAu5C3Bl7OhU6ezH/DphjjDLWTwSapRg+ffYlRoFdWg50NbF0U46nJn17Kub0lT4ALj
+ W5tkbaP3ywf9LgoTJ/+kbfFFElCaqHvxh6SLPd/7hyXKouP1Y2xU9z54PHVir2iP9x27
+ fR5PX+V3quD90ehGtO/FAU6xEOsaVAeCZ6yHi8dA177fPMb7CwV9/mkzUqKXiVh7AXU9
+ /FwNkBNiQtgkDLOWMAQt7rycNhSoKIqImwE845FWLBcz3p+5cG/XLZ9DvSF9wbIfUKZA
+ QhGw==
+X-Gm-Message-State: AGi0PuZHv3FN+StX5ecJPg3KKCb1BOgl2zxmPaCE/Jw3BCxGXaSWiwL7
+ y0yLjAvo9QrsdPri7QVl/vN66Dy8oLg=
+X-Google-Smtp-Source: APiQypLGG9d+DYvpOiswpLWSLZSAiaOJ4hhEn2UY5BgoFdrhon6w5h2d0SUYDCbiGq/WvlIcVoRAxQ==
+X-Received: by 2002:a05:6102:5f4:: with SMTP id
+ w20mr9800685vsf.61.1587761234732; 
+ Fri, 24 Apr 2020 13:47:14 -0700 (PDT)
+Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com.
+ [209.85.222.41])
+ by smtp.gmail.com with ESMTPSA id 62sm1881599vku.10.2020.04.24.13.47.11
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 24 Apr 2020 13:47:13 -0700 (PDT)
+Received: by mail-ua1-f41.google.com with SMTP id i22so10877702uak.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Apr 2020 13:47:11 -0700 (PDT)
+X-Received: by 2002:ab0:b13:: with SMTP id b19mr8989653uak.91.1587761231452;
+ Fri, 24 Apr 2020 13:47:11 -0700 (PDT)
+MIME-Version: 1.0
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-5-git-send-email-sumit.garg@linaro.org>
+In-Reply-To: <1587726554-32018-5-git-send-email-sumit.garg@linaro.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Fri, 24 Apr 2020 13:46:59 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=VSrVnx_R=Y38tQ=bw_o22zxWmm=+M+AaqmEMAtK66b-Q@mail.gmail.com>
+Message-ID: <CAD=FV=VSrVnx_R=Y38tQ=bw_o22zxWmm=+M+AaqmEMAtK66b-Q@mail.gmail.com>
+Subject: Re: [RFC Patch v1 4/4] arm64: kgdb: Round up cpus using
+ IPI_CALL_NMI_FUNC
+To: Sumit Garg <sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_134357_282662_E116589D 
-X-CRM114-Status: GOOD (  17.01  )
+X-CRM114-CacheID: sfid-20200424_134717_428108_3C116331 
+X-CRM114-Status: GOOD (  22.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5304:0:0:5 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -73,6 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,226 +103,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-mips@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- linux-samsung-soc@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, linux-omap <linux-omap@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>,
- OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- kernel@pyra-handheld.com
+Cc: Daniel Thompson <daniel.thompson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Jason Wessel <jason.wessel@windriver.com>, LKML <linux-kernel@vger.kernel.org>,
+ julien.thierry.kdev@gmail.com, Marc Zyngier <maz@kernel.org>,
+ kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
-> Am 24.04.2020 um 22:34 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
-> 
-> The Imagination PVR/SGX GPU is part of several SoC from
-> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
-> Allwinner A83 and others.
-> 
-> With this binding, we describe how the SGX processor is
-> interfaced to the SoC (registers and interrupt).
-> 
-> The interface also consists of clocks, reset, power but
-> information from data sheets is vague and some SoC integrators
-> (TI) deciced to use a PRCM wrapper (ti,sysc) which does
-
-s/deciced/decided/
-
-> all clock, reset and power-management through registers
-> outside of the sgx register block.
-> 
-> Therefore all these properties are optional.
-> 
-> Tested by make dt_binding_check
-> 
-> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+On Fri, Apr 24, 2020 at 4:11 AM Sumit Garg <sumit.garg@linaro.org> wrote:
+>
+> arm64 platforms with GICv3 or later supports pseudo NMIs which can be
+> leveraged to round up CPUs which are stuck in hard lockup state with
+> interrupts disabled that wouldn't be possible with a normal IPI.
+>
+> So instead switch to round up CPUs using IPI_CALL_NMI_FUNC. And in
+> case a particular arm64 platform doesn't supports pseudo NMIs,
+> IPI_CALL_NMI_FUNC will act as a normal IPI which maintains existing
+> kgdb functionality.
+>
+> Also, one thing to note here is that with CPUs running in NMI context,
+> kernel has special handling for printk() which involves CPU specific
+> buffers and defering printk() until exit from NMI context. But with kgdb
+> we don't want to defer printk() especially backtrace on corresponding
+> CPUs. So switch to normal printk() context instead prior to entering
+> kgdb context.
+>
+> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 > ---
-> .../devicetree/bindings/gpu/img,pvrsgx.yaml   | 150 ++++++++++++++++++
-> 1 file changed, 150 insertions(+)
-> create mode 100644 Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml b/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
-> new file mode 100644
-> index 000000000000..33a9c4c6e784
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
-> @@ -0,0 +1,150 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/gpu/img,pvrsgx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>  arch/arm64/kernel/kgdb.c | 15 +++++++++++++++
+>  arch/arm64/kernel/smp.c  | 17 ++++++++++++++---
+>  2 files changed, 29 insertions(+), 3 deletions(-)
+>
+> diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
+> index 4311992..0851ead 100644
+> --- a/arch/arm64/kernel/kgdb.c
+> +++ b/arch/arm64/kernel/kgdb.c
+> @@ -14,6 +14,7 @@
+>  #include <linux/kgdb.h>
+>  #include <linux/kprobes.h>
+>  #include <linux/sched/task_stack.h>
+> +#include <linux/smp.h>
+>
+>  #include <asm/debug-monitors.h>
+>  #include <asm/insn.h>
+> @@ -353,3 +354,17 @@ int kgdb_arch_remove_breakpoint(struct kgdb_bkpt *bpt)
+>         return aarch64_insn_write((void *)bpt->bpt_addr,
+>                         *(u32 *)bpt->saved_instr);
+>  }
 > +
-> +title: Imagination PVR/SGX GPU
+> +#ifdef CONFIG_SMP
+> +void kgdb_roundup_cpus(void)
+> +{
+> +       struct cpumask mask;
 > +
-> +maintainers:
-> +  - H. Nikolaus Schaller <hns@goldelico.com>
+> +       cpumask_copy(&mask, cpu_online_mask);
+> +       cpumask_clear_cpu(raw_smp_processor_id(), &mask);
+> +       if (cpumask_empty(&mask))
+> +               return;
 > +
-> +description: |+
-> +  This binding describes the Imagination SGX5 series of 3D accelerators which
-> +  are found in several different SoC like TI OMAP, Sitara, Ingenic JZ4780,
-> +  Allwinner A83, and Intel Poulsbo and CedarView and more.
-> +
-> +  For an extensive list see: https://en.wikipedia.org/wiki/PowerVR#Implementations
-> +
-> +  The SGX node is usually a child node of some DT node belonging to the SoC
-> +  which handles clocks, reset and general address space mapping of the SGX
-> +  register area. If not, an optional clock can be specified here.
+> +       arch_send_call_nmi_func_ipi_mask(&mask);
+> +}
+> +#endif
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 27c8ee1..c7158f6e8 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -31,6 +31,7 @@
+>  #include <linux/of.h>
+>  #include <linux/irq_work.h>
+>  #include <linux/kexec.h>
+> +#include <linux/kgdb.h>
+>  #include <linux/kvm_host.h>
+>
+>  #include <asm/alternative.h>
+> @@ -976,9 +977,19 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+>                 /* Handle it as a normal interrupt if not in NMI context */
+>                 if (!in_nmi())
+>                         irq_enter();
+> -
+> -               /* nop, IPI handlers for special features can be added here. */
+> -
+> +#ifdef CONFIG_KGDB
 
-     ^^^ this is no longer that way. now clocks, reset etc. are part of this
-         node but can be omitted if done by the parent node.
+My vote would be to keep "ifdef"s out of the middle of functions.  Can
+you put your code in "arch/arm64/kernel/kgdb.c" and then have a dummpy
+no-op function if "CONFIG_KGDB" isn't defined?
 
-     => either remove this sentence or rewrite.
 
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: '^gpu@[a-f0-9]+$'
-> +  compatible:
-> +    oneOf:
-> +      - description: SGX530-121 based SoC
-> +        items:
-> +          - enum:
-> +            - ti,omap3-sgx530-121 # BeagleBoard A/B/C, OpenPandora 600MHz and similar
-> +          - const: img,sgx530-121
-> +          - const: img,sgx530
-> +
-> +      - description: SGX530-125 based SoC
-> +        items:
-> +          - enum:
-> +            - ti,am3352-sgx530-125 # BeagleBone Black
-> +            - ti,am3517-sgx530-125
-> +            - ti,am4-sgx530-125
-> +            - ti,omap3-sgx530-125 # BeagleBoard XM, GTA04, OpenPandora 1GHz and similar
-> +            - ti,ti81xx-sgx530-125
-> +          - const: ti,omap3-sgx530-125
-> +          - const: img,sgx530-125
-> +          - const: img,sgx530
-> +
-> +      - description: SGX535-116 based SoC
-> +        items:
-> +          - const: intel,poulsbo-gma500-sgx535 # Atom Z5xx
-> +          - const: img,sgx535-116
-> +          - const: img,sgx535
-> +
-> +      - description: SGX540-116 based SoC
-> +        items:
-> +          - const: intel,medfield-gma-sgx540 # Atom Z24xx
-> +          - const: img,sgx540-116
-> +          - const: img,sgx540
-> +
-> +      - description: SGX540-120 based SoC
-> +        items:
-> +          - enum:
-> +            - samsung,s5pv210-sgx540-120
-> +            - ti,omap4-sgx540-120 # Pandaboard, Pandaboard ES and similar
-> +          - const: img,sgx540-120
-> +          - const: img,sgx540
-> +
-> +      - description: SGX540-130 based SoC
-> +        items:
-> +          - enum:
-> +            - ingenic,jz4780-sgx540-130 # CI20
-> +          - const: img,sgx540-130
-> +          - const: img,sgx540
-> +
-> +      - description: SGX544-112 based SoC
-> +        items:
-> +          - const: ti,omap4470-sgx544-112
-> +          - const: img,sgx544-112
-> +          - const: img,sgx544
-> +
-> +      - description: SGX544-115 based SoC
-> +        items:
-> +          - enum:
-> +            - allwinner,sun8i-a31-sgx544-115
-> +            - allwinner,sun8i-a31s-sgx544-115
-> +            - allwinner,sun8i-a83t-sgx544-115 # Banana-Pi-M3 (Allwinner A83T) and similar
-> +          - const: img,sgx544-115
-> +          - const: img,sgx544
-> +
-> +      - description: SGX544-116 based SoC
-> +        items:
-> +          - enum:
-> +            - ti,dra7-sgx544-116 # DRA7
-> +            - ti,omap5-sgx544-116 # OMAP5 UEVM, Pyra Handheld and similar
-> +          - const: img,sgx544-116
-> +          - const: img,sgx544
-> +
-> +      - description: SGX545 based SoC
-> +        items:
-> +          - const: intel,cedarview-gma3600-sgx545 # Atom N2600, D2500
-> +          - const: img,sgx545-116
-> +          - const: img,sgx545
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  interrupt-names:
-> +    maxItems: 1
-> +    items:
-> +      - const: sgx
-> +
-> +  clocks:
-> +    maxItems: 4
-> +
-> +  clock-names:
-> +    maxItems: 4
-> +    items:
-> +      - const: core
-> +      - const: sys
-> +      - const: mem
-> +      - const: hyd
-> +
-> +  sgx-supply: true
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |+
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    gpu: gpu@fe00 {
-> +      compatible = "ti,omap5-sgx544-116", "img,sgx544-116", "img,sgx544";
-> +      reg = <0xfe00 0x200>;
-> +      interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-> +    };
-> +
-> +...
-> -- 
-> 2.25.1
-> 
+> +               if (atomic_read(&kgdb_active) != -1) {
+> +                       /*
+> +                        * For kgdb to work properly, we need printk to operate
+> +                        * in normal context.
+> +                        */
+> +                       if (in_nmi())
+> +                               printk_nmi_exit();
 
+It feels like all the printk management belongs in kgdb_nmicallback().
+...or is there some reason that this isn't a problem for other
+platforms using NMI?  Maybe it's just that nobody has noticed it yet?
+
+
+> +                       kgdb_nmicallback(raw_smp_processor_id(), regs);
+
+Why do you need to call raw_smp_processor_id()?  Are you expecting a
+different value than the local variable "cpu"?
+
+
+> +                       if (in_nmi())
+> +                               printk_nmi_enter();
+> +               }
+> +#endif
+>                 if (!in_nmi())
+>                         irq_exit();
+>                 break;
+
+Not that I really know what I'm talking about since I really don't
+know arm64 at this level very well, but I'll ask anyway and probably
+look like a fool...  I had a note that said:
+
+* Will Deacon says:
+*
+* the whole roundup code is sketchy and it's the only place in the kernel
+* which tries to perform I-cache maintenance with irqs disabled, leading
+* to this nasty hack in the arch code:
+*
+* https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/include/asm/cacheflush.h#n74
+
+I presume that, if nothing else, the comment needs to be updated.
+...but is the situation any better (or worse?) with your new solution?
+
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
