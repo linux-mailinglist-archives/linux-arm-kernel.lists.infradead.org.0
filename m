@@ -2,82 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 349C41B6DE6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 08:14:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8290A1B6E39
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Apr 2020 08:36:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8dwSDYWUi2/7z2N2UWa6kH+zmEArvuYYZJ9WYB6yt7Y=; b=ty9MdTnvPlWNQz
-	KeJgqUx4F5JRqE++Q9AcRBU+toaP4djVqdUFCo08glLMoF6n/PAeECm0eZEcrNeMUvx66aXBNq+nf
-	ubX05F3d0JmMo4mNEXW3CJjaN4sRvQqsyLzfdpmFKAkdQvaOcDRSnQ78McwtlhcjPOQqWwDIkQ1Tz
-	m8KOQqhhQvnIjXrAsiSuuImGGKtBYuTOZMY01B6RVjfq5nol0CbnSdFvJMn6h+4e2qJ5ia4SZ8dtw
-	TO1pzYqoJrBMeqfm83YSDXc37RlCT56NtIYr4xWA95u2+6mf3j7FcM5L6NnnCkgMjMj+yYm8Ao8HX
-	xqMJs+/ugJpqofSO4/Kg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:To:From:Subject:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gs1tyNlOZ/mnyzITeWQKEaI4DdrswVP+W6rINjy2PT0=; b=DNPmn5XB8KYVTu
+	YyAx0uLuiyNcyoqj+gqqD3AhcSWid9DWeyUA/kzzFoum6+cjEQ475tGmHJJwLNmPYJIdG0HsJgO8X
+	A5irx5c5mARP14kH/ZZ1+ZQX+zTRc6cRboAvjZlrPZoEVgNF3g5z7YewOu/3CURxXR9qzWUcIiXQH
+	nFkijHN9GdnUBYF9QGnS4NT2sgww4TiNWwZl8h0n3XnJszXbnZyhUDdtUYfZtKuF2YT4FsmaO2ZED
+	NrMnpgkQaO8+jsE/n+ybnKeqcqKEfudeomZe/SX5PAlS8v7kOdbvwcIK+hXzCV1gHqAwN4XlIzTzp
+	fUV2e+vpaph8pFn76mlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRrbH-0005B5-Qd; Fri, 24 Apr 2020 06:14:11 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jRrwJ-0005C3-F5; Fri, 24 Apr 2020 06:35:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRrb6-00058f-5p; Fri, 24 Apr 2020 06:14:02 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03O6Dfre037510;
- Fri, 24 Apr 2020 01:13:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587708821;
- bh=j8PQmpQJKpFXOvIlwGEAgESygofkuW/6gQ8hJMj0h1g=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=fIqaDoXOX8D2El5s4iYwlKieIGhwfVe1aZMLe/6cKEHeqs0e4rTB3oOEo3bX50rPu
- qvAcXcaombqQqxlKq/jDUTk5cS+/8G1VMm0yNFQQZIvhwvV+EajjWj71LUBK16LQBK
- WmI3r4s1A44HbavHJELTouDZt6LUXou8tVwu7MHQ=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03O6Dfo9056942;
- Fri, 24 Apr 2020 01:13:41 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 24
- Apr 2020 01:13:40 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 24 Apr 2020 01:13:40 -0500
-Received: from [10.250.233.85] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03O6DZ6T053821;
- Fri, 24 Apr 2020 01:13:35 -0500
-Subject: Re: [PATCH v9 5/8] PCI: endpoint: Add support to handle multiple base
- for mapping outbound memory
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, Yoshihiro Shimoda
- <yoshihiro.shimoda.uh@renesas.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>, Tom
- Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>, Gustavo
- Pimentel <gustavo.pimentel@synopsys.com>, Marek Vasut
- <marek.vasut+renesas@gmail.com>, Shawn Lin <shawn.lin@rock-chips.com>,
- Heiko Stuebner <heiko@sntech.de>
-References: <1587666159-6035-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587666159-6035-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <99ff8fb8-101c-a548-7d6e-07c3a31ced2c@ti.com>
-Date: Fri, 24 Apr 2020 11:43:34 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jRrw9-0005AF-9m; Fri, 24 Apr 2020 06:35:47 +0000
+X-UUID: f1dab4cffa6d4e969ed54308efff02cc-20200423
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:Date:CC:To:From:Subject:Message-ID;
+ bh=gUH3k9xdy2IwCn6QUAzl7AD8mJmLALhoEKFKTESkF1s=; 
+ b=jki6o9F6WW1XujiN/G4WEpbPvfu8BrkV3rEMEY47hvBAMRH8nnu+6A2rqsWwhCJOgXMoXBd6IkEEhhop3QWFegVmC8Krqg8mLEBg4SQGZucJQALgku9Mw7El+oVuyiztqz0VBUuigyEXC3Z9ueB030obO5DTYClS6mg2/iK3Gn8=;
+X-UUID: f1dab4cffa6d4e969ed54308efff02cc-20200423
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunlei.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 976859729; Thu, 23 Apr 2020 22:35:34 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 23 Apr 2020 23:25:36 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 24 Apr 2020 14:25:29 +0800
+Received: from [10.15.20.246] (10.15.20.246) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 24 Apr 2020 14:25:27 +0800
+Message-ID: <1587709294.9792.5.camel@mbjsdccf07>
+Subject: [PATCH] printk: Add printk log prefix information.
+From: chunlei.wang <Chunlei.wang@mediatek.com>
+To: Petr Mladek <pmladek@suse.com>, Sergey Senozhatsky
+ <sergey.senozhatsky@gmail.com>, Steven Rostedt <rostedt@goodmis.org>
+Date: Fri, 24 Apr 2020 14:21:34 +0800
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <1587666159-6035-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-TM-SNTS-SMTP: 4701CD02712B8E95F383685B50F21C734F359AC30BDF287C31E6FEEDDABB905B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_231400_304990_E7D0E59F 
-X-CRM114-Status: GOOD (  27.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200423_233545_347898_4631FFF7 
+X-CRM114-Status: GOOD (  16.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,7 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,363 +84,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
 
-On 4/23/2020 11:52 PM, Lad Prabhakar wrote:
-> R-Car PCIe controller has support to map multiple memory regions for
-> mapping the outbound memory in local system also the controller limits
-> single allocation for each region (that is, once a chunk is used from the
-> region it cannot be used to allocate a new one). This features inspires to
-> add support for handling multiple memory bases in endpoint framework.
-> 
-> With this patch pci_epc_mem_init() initializes address space for endpoint
-> controller which support single window and pci_epc_multi_mem_init()
-> initializes multiple windows supported by endpoint controller.
+Add prefix status/cpu_id/pid/process_name to each kernel log.
+example:
+[ 8408.806432] (4)[19963:kworker/4:1]wifi_fw: ring_emi_seg.sz=4164,
+ring_cache_pt=000000004f5ca8fa, ring_cache_seg.sz=4164
+[ 8408.806729]-(4)[19963:kworker/4:1]connlog_log_data_handler: 1
+callbacks suppressed
+Status now only include irq status. If in ISR print too much log, will
+cause performance issue, we can check the log to find which module. We
+also can expand the status in future.
+cpu_id mean which cpu print this log, we can check specific cpu's
+action.
+pocess_name show the log process id and name.
+These information is very useful in embedded system, it can provide more
+information to analyze issue.
 
-Have a couple of clean-up comments. See below.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  .../pci/controller/dwc/pcie-designware-ep.c   |  16 +-
->  drivers/pci/endpoint/pci-epc-mem.c            | 199 ++++++++++++------
->  include/linux/pci-epc.h                       |  33 ++-
->  3 files changed, 170 insertions(+), 78 deletions(-)
-> 
-.
-.
-<snip>
-.
-.
-> diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
-> index cdd1d3821249..a3466da2a16f 100644
-> --- a/drivers/pci/endpoint/pci-epc-mem.c
-> +++ b/drivers/pci/endpoint/pci-epc-mem.c
-> @@ -23,7 +23,7 @@
->  static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
->  {
->  	int order;
-> -	unsigned int page_shift = ilog2(mem->page_size);
-> +	unsigned int page_shift = ilog2(mem->window.page_size);
->  
->  	size--;
->  	size >>= page_shift;
-> @@ -36,67 +36,95 @@ static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
->  }
->  
->  /**
-> - * __pci_epc_mem_init() - initialize the pci_epc_mem structure
-> + * pci_epc_multi_mem_init() - initialize the pci_epc_mem structure
->   * @epc: the EPC device that invoked pci_epc_mem_init
-> - * @phys_base: the physical address of the base
-> - * @size: the size of the address space
-> - * @page_size: size of each page
-> + * @windows: pointer to windows supported by the device
-> + * @num_windows: number of windows device supports
->   *
->   * Invoke to initialize the pci_epc_mem structure used by the
->   * endpoint functions to allocate mapped PCI address.
->   */
-> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
-> -		       size_t page_size)
-> +int pci_epc_multi_mem_init(struct pci_epc *epc,
-> +			   struct pci_epc_mem_window *windows,
-> +			   unsigned int num_windows)
->  {
-> -	int ret;
-> -	struct pci_epc_mem *mem;
-> -	unsigned long *bitmap;
-> +	struct pci_epc_mem *mem = NULL;
-> +	unsigned long *bitmap = NULL;
->  	unsigned int page_shift;
-> -	int pages;
-> +	size_t page_size;
->  	int bitmap_size;
-> +	int pages;
-> +	int ret;
-> +	int i;
->  
-> -	if (page_size < PAGE_SIZE)
-> -		page_size = PAGE_SIZE;
-> +	epc->num_windows = 0;
->  
-> -	page_shift = ilog2(page_size);
-> -	pages = size >> page_shift;
-> -	bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> +	if (!windows || !num_windows)
-> +		return -EINVAL;
->  
-> -	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> -	if (!mem) {
-> -		ret = -ENOMEM;
-> -		goto err;
-> -	}
-> +	epc->windows = kcalloc(num_windows, sizeof(*mem), GFP_KERNEL);
-> +	if (!epc->windows)
-> +		return -ENOMEM;
->  
-> -	bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> -	if (!bitmap) {
-> -		ret = -ENOMEM;
-> -		goto err_mem;
-> -	}
-> +	for (i = 0; i < num_windows; i++) {
-> +		page_size = windows[i].page_size;
-> +		if (page_size < PAGE_SIZE)
-> +			page_size = PAGE_SIZE;
-> +		page_shift = ilog2(page_size);
-> +		pages = windows[i].size >> page_shift;
-> +		bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
->  
-> -	mem->bitmap = bitmap;
-> -	mem->phys_base = phys_base;
-> -	mem->page_size = page_size;
-> -	mem->pages = pages;
-> -	mem->size = size;
-> -	mutex_init(&mem->lock);
-> +		mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> +		if (!mem) {
-> +			ret = -ENOMEM;
-> +			i--;
-> +			goto err_mem;
-> +		}
->  
-> -	epc->mem = mem;
-> +		bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> +		if (!bitmap) {
-> +			ret = -ENOMEM;
-> +			kfree(mem);
-> +			i--;
-> +			goto err_mem;
-> +		}
-> +
-> +		mem->window.phys_base = windows[i].phys_base;
-> +		mem->window.size = windows[i].size;
-> +		mem->window.page_size = page_size;
-> +		mem->bitmap = bitmap;
-> +		mem->pages = pages;
-> +		mutex_init(&mem->lock);
-> +		epc->windows[i] = mem;
-> +	}
-> +
-> +	epc->mem = epc->windows[0];
+Feature: printk
+Signed-off-by: Chunlei Wang <chunlei.wang@mediatek.com>
+---
+ kernel/printk/printk.c | 52 ++++++++++++++++++++++++++++++++++++++++--
+ lib/Kconfig.debug      |  9 ++++++++
+ 2 files changed, 59 insertions(+), 2 deletions(-)
 
-"mem" member of EPC looks unnecessary since that value is available at
-epc->windows[0].
-> +	epc->num_windows = num_windows;
->  
->  	return 0;
->  
->  err_mem:
-> -	kfree(mem);
-> +	for (; i >= 0; i--) {
-> +		mem = epc->windows[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->windows);
->  
-> -err:
-> -return ret;
-> +	return ret;
->  }
-> -EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
-> +EXPORT_SYMBOL_GPL(pci_epc_multi_mem_init);
->  
->  int pci_epc_mem_init(struct pci_epc *epc, phys_addr_t base,
->  		     size_t size, size_t page_size)
->  {
-> -	return __pci_epc_mem_init(epc, base, size, page_size);
-> +	struct pci_epc_mem_window mem_window;
-> +
-> +	mem_window.phys_base = base;
-> +	mem_window.size = size;
-> +	mem_window.page_size = page_size;
-> +
-> +	return pci_epc_multi_mem_init(epc, &mem_window, 1);
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_init);
->  
-> @@ -109,11 +137,22 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_init);
->   */
->  void pci_epc_mem_exit(struct pci_epc *epc)
->  {
-> -	struct pci_epc_mem *mem = epc->mem;
-> +	struct pci_epc_mem *mem;
-> +	int i;
->  
-> +	if (!epc->num_windows)
-> +		return;
-> +
-> +	for (i = 0; i < epc->num_windows; i++) {
-> +		mem = epc->windows[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->windows);
-> +
-> +	epc->windows = NULL;
->  	epc->mem = NULL;
-> -	kfree(mem->bitmap);
-> -	kfree(mem);
-> +	epc->num_windows = 0;
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  
-> @@ -129,31 +168,60 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  				     phys_addr_t *phys_addr, size_t size)
->  {
-> -	int pageno;
->  	void __iomem *virt_addr = NULL;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
-> +	size_t align_size;
-> +	int pageno;
->  	int order;
-> +	int i;
->  
-> -	size = ALIGN(size, mem->page_size);
-> -	order = pci_epc_mem_get_order(mem, size);
-> -
-> -	mutex_lock(&mem->lock);
-> -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
-> -	if (pageno < 0)
-> -		goto ret;
-> +	for (i = 0; i < epc->num_windows; i++) {
-> +		mem = epc->windows[i];
-> +		mutex_lock(&mem->lock);
-> +		align_size = ALIGN(size, mem->window.page_size);
-> +		order = pci_epc_mem_get_order(mem, align_size);
->  
-> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> -	virt_addr = ioremap(*phys_addr, size);
-> -	if (!virt_addr)
-> -		bitmap_release_region(mem->bitmap, pageno, order);
-> +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> +						 order);
-> +		if (pageno >= 0) {
-> +			page_shift = ilog2(mem->window.page_size);
-> +			*phys_addr = mem->window.phys_base +
-> +				((phys_addr_t)pageno << page_shift);
-> +			virt_addr = ioremap(*phys_addr, align_size);
-> +			if (!virt_addr) {
-> +				bitmap_release_region(mem->bitmap,
-> +						      pageno, order);
-> +				mutex_unlock(&mem->lock);
-> +				continue;
-> +			}
-> +			mutex_unlock(&mem->lock);
-> +			return virt_addr;
-> +		}
-> +		mutex_unlock(&mem->lock);
-> +	}
->  
-> -ret:
-> -	mutex_unlock(&mem->lock);
->  	return virt_addr;
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->  
-> +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
-> +						phys_addr_t phys_addr)
-> +{
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	for (i = 0; i < epc->num_windows; i++) {
-> +		mem = epc->windows[i];
-> +
-> +		if (phys_addr >= mem->window.phys_base &&
-> +		    phys_addr < (mem->window.phys_base + mem->window.size))
-> +			return mem;
-> +	}
-> +
-> +	return NULL;
-> +}
-> +
->  /**
->   * pci_epc_mem_free_addr() - free the allocated memory address
->   * @epc: the EPC device on which memory was allocated
-> @@ -166,14 +234,23 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
->  			   void __iomem *virt_addr, size_t size)
->  {
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
-> +	size_t page_size;
->  	int pageno;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
->  	int order;
->  
-> +	mem = pci_epc_get_matching_window(epc, phys_addr);
-> +	if (!mem) {
-> +		pr_err("failed to get matching window\n");
-> +		return;
-> +	}
-> +
-> +	page_size = mem->window.page_size;
-> +	page_shift = ilog2(page_size);
->  	iounmap(virt_addr);
-> -	pageno = (phys_addr - mem->phys_base) >> page_shift;
-> -	size = ALIGN(size, mem->page_size);
-> +	pageno = (phys_addr - mem->window.phys_base) >> page_shift;
-> +	size = ALIGN(size, page_size);
->  	order = pci_epc_mem_get_order(mem, size);
->  	mutex_lock(&mem->lock);
->  	bitmap_release_region(mem->bitmap, pageno, order);
-> diff --git a/include/linux/pci-epc.h b/include/linux/pci-epc.h
-> index 5bc1de65849e..cc66bec8be90 100644
-> --- a/include/linux/pci-epc.h
-> +++ b/include/linux/pci-epc.h
-> @@ -65,20 +65,28 @@ struct pci_epc_ops {
->  	struct module *owner;
->  };
->  
-> +/**
-> + * struct pci_epc_mem_window - address window of the endpoint controller
-> + * @phys_base: physical base address of the PCI address window
-> + * @size: the size of the PCI address window
-> + * @page_size: size of each page
-> + */
-> +struct pci_epc_mem_window {
-> +	phys_addr_t	phys_base;
-> +	size_t		size;
-> +	size_t		page_size;
-> +};
-> +
->  /**
->   * struct pci_epc_mem - address space of the endpoint controller
-> - * @phys_base: physical base address of the PCI address space
-> - * @size: the size of the PCI address space
-> + * @window: address window of the endpoint controller
->   * @bitmap: bitmap to manage the PCI address space
->   * @pages: number of bits representing the address region
-> - * @page_size: size of each page
->   * @lock: mutex to protect bitmap
->   */
->  struct pci_epc_mem {
-> -	phys_addr_t	phys_base;
-> -	size_t		size;
-> +	struct pci_epc_mem_window window;
-
-Don't see any additional value in moving phys_base, size, page_size to a new
-structure and again including it here.
-
-Thanks
-Kishon
+diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
+index 1ef6f75d92f1..9cb2a4c2157b 100644
+--- a/kernel/printk/printk.c
++++ b/kernel/printk/printk.c
+@@ -60,6 +60,11 @@
+ #include "braille.h"
+ #include "internal.h"
+ 
++
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++static DEFINE_PER_CPU(char, printk_state);
++#endif
++
+ int console_printk[4] = {
+        CONSOLE_LOGLEVEL_DEFAULT,       /* console_loglevel */
+        MESSAGE_LOGLEVEL_DEFAULT,       /* default_message_loglevel */
+@@ -610,8 +615,35 @@ static int log_store(u32 caller_id, int facility,
+int level,
+        u32 size, pad_len;
+        u16 trunc_msg_len = 0;
+ 
+-       /* number of '\0' padding bytes to next message */
+-       size = msg_used_size(text_len, dict_len, &pad_len);
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++       int this_cpu = smp_processor_id();
++       char state = this_cpu_read(printk_state);
++       char tbuf[50];
++       unsigned int tlen = 0;
++#endif
++
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++               if (state == 0) {
++                       this_cpu_write(printk_state, ' ');
++                       state = ' ';
++               }
++               if (!(flags & LOG_CONT)) {
++                       if (console_suspended == 0)
++                               tlen = snprintf(tbuf, sizeof(tbuf),
++                                       "%c(%x)[%d:%s]", state,
+this_cpu,
++                                       current->pid, current->comm);
++                       else
++                               tlen = snprintf(tbuf, sizeof(tbuf), "%
+c(%x)",
++                                       state, this_cpu);
++               }
++#endif
++
++               /* number of '\0' padding bytes to next message */
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++               size = msg_used_size(text_len + tlen, dict_len,
+&pad_len);
++#else
++               size = msg_used_size(text_len, dict_len, &pad_len);
++#endif
+ 
+        if (log_make_free_space(size)) {
+                /* truncate the message if it is too long for empty
+buffer */
+@@ -634,7 +666,16 @@ static int log_store(u32 caller_id, int facility,
+int level,
+ 
+        /* fill message */
+        msg = (struct printk_log *)(log_buf + log_next_idx);
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++       memcpy(log_text(msg), tbuf, tlen);
++       if (tlen + text_len > LOG_LINE_MAX)
++               text_len = LOG_LINE_MAX - tlen;
++
++       memcpy(log_text(msg) + tlen, text, text_len);
++       text_len += tlen;
++#else
+        memcpy(log_text(msg), text, text_len);
++#endif
+        msg->text_len = text_len;
+        if (trunc_msg_len) {
+                memcpy(log_text(msg) + text_len, trunc_msg,
+trunc_msg_len);
+@@ -1964,6 +2005,13 @@ asmlinkage int vprintk_emit(int facility, int
+level,
+        if (unlikely(suppress_printk))
+                return 0;
+ 
++#ifdef CONFIG_PRINTK_PREFIX_ENHANCE
++       if (irqs_disabled())
++               this_cpu_write(printk_state, '-');
++       else
++               this_cpu_write(printk_state, ' ');
++#endif
++
+        if (level == LOGLEVEL_SCHED) {
+                level = LOGLEVEL_DEFAULT;
+                in_sched = true;
+diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+index d1842fe756d5..6e6c783cd570 100644
+--- a/lib/Kconfig.debug
++++ b/lib/Kconfig.debug
+@@ -35,6 +35,15 @@ config PRINTK_CALLER
+          no option to enable/disable at the kernel command line
+parameter or
+          sysfs interface.
+ 
++config PRINTK_PREFIX_ENHANCE
++       bool "Prefix cpu_id/status/pid/process_name to each kernel log"
++       depends on PRINTK
++       help
++         PRINTK_PREFIX_ENHANCE which is used to control whether to show
++         other information about this log. The information include
++         which cpu about this process in, whether in isr, pid and
+thread
++         name. These information can help to analyze issue.
++
+ config CONSOLE_LOGLEVEL_DEFAULT
+        int "Default console loglevel (1-15)"
+        range 1 15
+-- 
+2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
