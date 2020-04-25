@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136521B8718
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27BC71B8730
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=bv071xEBtifueOI4DaKKH66w8b7Iin4o5A+ef/86u+8=; b=uAR
-	fsIplxjtBf3GWoQgrLjB8kVsKFfbSI3OodM41ZnA7FGd6tHdNDYO8jDTPKyZMRdEo5JEWnzsvU8RA
-	wbbRuxxglTpd5ax0yz5rXRKp4LzpSzdXDbsXvdFo5QR6ox4H1UJROrJzUxqCvtaAZf4hHXt+WShBt
-	MnlKNHHydULE0SL2xPYoMzW+dHGMfqVYFBhgSSiO45sxVDV44GHfKFVBcQeuNIZv+P/MGOXcGDH3C
-	lmATNmTij5woS+C3i2Ss7dozWq+MLeGa8gAuH4dyzY9q7lBbnVA69OThNkch3yfjzkDyqy5hSFVsw
-	Z/qB8LB9DW63Y4+pPTqawKCFajOvhBg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zVDnkqpHBlTrd9d43A1bPNwQZ0tooT6f9wM8Pl2oIhE=; b=mqlNjyLTqZvjBS
+	krgNPRjutXl+7wjOCxX8wIAoshgiGxGgW2m45kqWHaXJfwbmdOW+YDbisaHB3Aoe0P4R4wAiwbkwD
+	xuyVVxd3n8zSDr98MDPa0OVDWYAJsNWgBZKro4H8q7Le8X+Bdo4VrkbgQy3mrO+bnnDo70xECzEH+
+	P7zhD4ZOATsFtWoOLQgc3tMQxBPJaRhv2FqG4+MwcHcBnaBl+fM7uVDau3wqpf3BW1SKhCbhUH6kd
+	xqTye7GuZUO9unMt9kyDQQ+FL/rS6AXIJCns0qHJGJ0/bz0+GlS0DzPsDAc1PtWV7xwlcRNYTpn7u
+	mpLXCeEupdsb6BhQB1jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSLxL-00060a-01; Sat, 25 Apr 2020 14:38:59 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jSMAw-0006hi-4J; Sat, 25 Apr 2020 14:53:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSLx9-0005zr-Ru; Sat, 25 Apr 2020 14:38:49 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x17so14258614wrt.5;
- Sat, 25 Apr 2020 07:38:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
- b=FGQiUsJz1DJdOU4aO8/4AqLbPHoWHwIxq5qoq/tqkZLC6rVDhcb38vvj/iAoP5hZYu
- duQ2y6wDLf+L0EbvJ0E1JkYMuR7jzSUXNEawNDfMTfk6RN1Ty4vVZ5u7XbWiFTlXu/0N
- K5RT4Xe2hJcpvYyXkOKKWw7GSR5SOW93OIMUeVJmz4/ISn+DtDday9k8UNI6ZgK4rBPg
- FjUv7npiIKVQLDMcXcdOlSJtBkZP8AMcKBlo2gWKwSu1HwfCpIn+rx45skgd+IIrEkZI
- orGTUY6R4GQqZUICb6YixeLhATsRgjkbf1q0LFLyl+BTG/X3l2hRG9h57or4AqT7xEGU
- 6rMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
- b=Inn3t1U8XvN0dS3A7iM80+OLLd9p6IZP61qTatGIgy60iZZoVYtbVZI0ekqpfM7XmD
- VwD3liqoTWAL8ONI11r7XOP/iyX9wIYmKCYdpq8cXjVdvLsbVRq7T5Airt62i0l8sFCS
- 5+K0A1/kwPV9M/97Xp18xsTZEBr5BvvwEnGRSavlPbOM1mrhlaoqd2qt9ht/NaRd5+1w
- uqqAvCQk80COf/RUccp14zyRVnavF5DE1ZAHem3iESBn6Dh7wl46YBmPGThvMVVOhnTq
- qp0VUNI+m5jHicXlpKCaIY92Zn1H/Yf8/1X+5k3nTzrTJvoAQn043W9E5JOEKbbcb/on
- V/ag==
-X-Gm-Message-State: AGi0Pub0DxSOiSDJHf2ho3rF09KV8XAv2rDqRdoWwBRKdnvNIxoKqbEE
- HwZynK5HTrgxuYrNiFxGOJg=
-X-Google-Smtp-Source: APiQypI1PZr71kxZ6u3RtjCr6IZCMHu+P3s3ugg7H6oMtBvZjl6Y1B94I3JpK//BSH+Rw9hHJxni/w==
-X-Received: by 2002:a5d:4248:: with SMTP id s8mr16903547wrr.216.1587825524488; 
- Sat, 25 Apr 2020 07:38:44 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id t67sm8029319wmg.40.2020.04.25.07.38.43
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 Apr 2020 07:38:43 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: swap interrupts interrupt-names rk3399
- gpu node
-Date: Sat, 25 Apr 2020 16:38:37 +0200
-Message-Id: <20200425143837.18706-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jSMAo-0006hA-9Z
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 14:52:55 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F3D720714;
+ Sat, 25 Apr 2020 14:52:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587826373;
+ bh=+13CHPNmfmCKf+0SVFYF37GqQiMCAaZRQBxv+QtM87o=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=OulI3xUdPjn50jbNzvZ8tMsNtjmM9jrKFZ+7nIv5avHBRDKjJg553M1LtNyHlYByI
+ ITdynEsnKVHySeySGiFrmI0Wf0B105B8OhH1eQjh9LABM8joxhNK6yaYpiti3Sd2Pe
+ TQ7Km1tat6aYfVrW2QxsyXgqmD2kTu/3+FgVeXkc=
+Date: Sat, 25 Apr 2020 15:52:49 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: <Eugen.Hristev@microchip.com>
+Subject: Re: [PATCH v3 2/3] iio: adc: at91-sama5d2_adc: handle unfinished
+ conversions
+Message-ID: <20200425155249.15fb855f@archlinux>
+In-Reply-To: <1580216189-27418-3-git-send-email-eugen.hristev@microchip.com>
+References: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
+ <1580216189-27418-3-git-send-email-eugen.hristev@microchip.com>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_073847_926957_BD7980B4 
-X-CRM114-Status: GOOD (  10.49  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200425_075254_375638_CB4DAF2C 
+X-CRM114-Status: GOOD (  28.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,51 +78,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+Cc: linux-iio@vger.kernel.org, Ludovic.Desroches@microchip.com,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+ alexandru.ardelean@analog.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
-In order to automate this process arm,mali-midgard.txt
-has been converted to yaml. In the new setup dtbs_check with
-arm,mali-midgard.yaml expects interrupts and interrupt-names values
-in the same order. Fix this for rk3399.
+On Tue, 28 Jan 2020 12:57:40 +0000
+<Eugen.Hristev@microchip.com> wrote:
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
-arm,mali-midgard.yaml
+> From: Eugen Hristev <eugen.hristev@microchip.com>
+> 
+> It can happen that on IRQ trigger, not all conversions are done if
+> we are enabling multiple channels.
+> The IRQ is triggered on first EOC (end of channel), but it can happen
+> that not all channels are done. This leads into erroneous reports to
+> userspace (zero values or previous values).
+> To solve this, in trigger handler, check if the mask of done channels
+> is the same as the mask of active scan channels.
+> If it's the same, proceed and push to buffers. Otherwise, use usleep
+> to sleep until the conversion is done or we timeout.
+> Normally, it should happen that in a short time fashion, all channels are
+> ready, since the first IRQ triggered.
+> If a hardware fault happens (for example the clock suddently dissappears),
+> the handler will not be completed, in which case we do not report anything to
+> userspace anymore.
+> Also, change from using the EOC interrupts to DRDY interrupt.
+> This helps with the fact that not 'n' interrupt statuses are enabled,
+> each being able to trigger an interrupt, and instead only data ready
+> interrupt can wake up the CPU. Like this, when data is ready, check in
+> handler which and how many channels are done. While the DRDY is raised,
+> other IRQs cannot occur. Once the channel data is being read, we ack the
+> IRQ and finish the conversion.
+> 
+> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+Applied this and patch 3 to the togreg branch of iio.git and pushed out as testing.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 74f2c3d49..a08340fc8 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1883,10 +1883,10 @@
- 	gpu: gpu@ff9a0000 {
- 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
- 		reg = <0x0 0xff9a0000 0x0 0x10000>;
--		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
--		interrupt-names = "gpu", "job", "mmu";
-+		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "job", "mmu", "gpu";
- 		clocks = <&cru ACLK_GPU>;
- 		#cooling-cells = <2>;
- 		power-domains = <&power RK3399_PD_GPU>;
--- 
-2.11.0
+Thanks for reminding me about these.  Were still in the queue but I might
+have forgotten to check this far back!
+
+Jonathan
+
+> ---
+> Changes in v3:
+> - rewrite some code as suggested by Jonathan (w.r.t. state and dma enabled in
+> configure_trigger
+> - move back enable_irq in reenable_trigger : looks like it was a leftover,
+> thanks Jonathan
+> 
+> Changes in v2:
+> - move start of conversion to threaded irq, removed specific at91 pollfunc
+> - add timeout to channel mask readiness check in trigger handler
+> - use DRDY irq instead of EOC irqs.
+> - move enable irq after DRDY has been acked in reenable_trigger
+> 
+>  drivers/iio/adc/at91-sama5d2_adc.c | 62 +++++++++++++++++++++++++++++---------
+>  1 file changed, 48 insertions(+), 14 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+> index 2a6950a..49c2b9d 100644
+> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+> @@ -8,6 +8,7 @@
+>  
+>  #include <linux/bitops.h>
+>  #include <linux/clk.h>
+> +#include <linux/delay.h>
+>  #include <linux/dma-mapping.h>
+>  #include <linux/dmaengine.h>
+>  #include <linux/interrupt.h>
+> @@ -100,6 +101,8 @@
+>  #define AT91_SAMA5D2_IER_YRDY   BIT(21)
+>  /* Interrupt Enable Register - TS pressure measurement ready */
+>  #define AT91_SAMA5D2_IER_PRDY   BIT(22)
+> +/* Interrupt Enable Register - Data ready */
+> +#define AT91_SAMA5D2_IER_DRDY   BIT(24)
+>  /* Interrupt Enable Register - general overrun error */
+>  #define AT91_SAMA5D2_IER_GOVRE BIT(25)
+>  /* Interrupt Enable Register - Pen detect */
+> @@ -486,6 +489,21 @@ static inline int at91_adc_of_xlate(struct iio_dev *indio_dev,
+>  	return at91_adc_chan_xlate(indio_dev, iiospec->args[0]);
+>  }
+>  
+> +static unsigned int at91_adc_active_scan_mask_to_reg(struct iio_dev *indio_dev)
+> +{
+> +	u32 mask = 0;
+> +	u8 bit;
+> +
+> +	for_each_set_bit(bit, indio_dev->active_scan_mask,
+> +			 indio_dev->num_channels) {
+> +		struct iio_chan_spec const *chan =
+> +			 at91_adc_chan_get(indio_dev, bit);
+> +		mask |= BIT(chan->channel);
+> +	}
+> +
+> +	return mask & GENMASK(11, 0);
+> +}
+> +
+>  static void at91_adc_config_emr(struct at91_adc_state *st)
+>  {
+>  	/* configure the extended mode register */
+> @@ -746,25 +764,23 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+>  			at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
+>  		}
+>  
+> -		if (state) {
+> +		if (state)
+>  			at91_adc_writel(st, AT91_SAMA5D2_CHER,
+>  					BIT(chan->channel));
+> -			/* enable irq only if not using DMA */
+> -			if (!st->dma_st.dma_chan) {
+> -				at91_adc_writel(st, AT91_SAMA5D2_IER,
+> -						BIT(chan->channel));
+> -			}
+> -		} else {
+> -			/* disable irq only if not using DMA */
+> -			if (!st->dma_st.dma_chan) {
+> -				at91_adc_writel(st, AT91_SAMA5D2_IDR,
+> -						BIT(chan->channel));
+> -			}
+> +		else
+>  			at91_adc_writel(st, AT91_SAMA5D2_CHDR,
+>  					BIT(chan->channel));
+> -		}
+>  	}
+>  
+> +	/* Nothing to do if using DMA */
+> +	if (st->dma_st.dma_chan)
+> +		return 0;
+> +
+> +	if (state)
+> +		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
+> +	else
+> +		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
+> +
+>  	return 0;
+>  }
+>  
+> @@ -781,6 +797,7 @@ static int at91_adc_reenable_trigger(struct iio_trigger *trig)
+>  
+>  	/* Needed to ACK the DRDY interruption */
+>  	at91_adc_readl(st, AT91_SAMA5D2_LCDR);
+> +
+>  	return 0;
+>  }
+>  
+> @@ -1015,6 +1032,22 @@ static void at91_adc_trigger_handler_nodma(struct iio_dev *indio_dev,
+>  	int i = 0;
+>  	int val;
+>  	u8 bit;
+> +	u32 mask = at91_adc_active_scan_mask_to_reg(indio_dev);
+> +	unsigned int timeout = 50;
+> +
+> +	/*
+> +	 * Check if the conversion is ready. If not, wait a little bit, and
+> +	 * in case of timeout exit with an error.
+> +	 */
+> +	while ((at91_adc_readl(st, AT91_SAMA5D2_ISR) & mask) != mask &&
+> +	       timeout) {
+> +		usleep_range(50, 100);
+> +		timeout--;
+> +	}
+> +
+> +	/* Cannot read data, not ready. Continue without reporting data */
+> +	if (!timeout)
+> +		return;
+>  
+>  	for_each_set_bit(bit, indio_dev->active_scan_mask,
+>  			 indio_dev->num_channels) {
+> @@ -1281,7 +1314,8 @@ static irqreturn_t at91_adc_interrupt(int irq, void *private)
+>  		status = at91_adc_readl(st, AT91_SAMA5D2_XPOSR);
+>  		status = at91_adc_readl(st, AT91_SAMA5D2_YPOSR);
+>  		status = at91_adc_readl(st, AT91_SAMA5D2_PRESSR);
+> -	} else if (iio_buffer_enabled(indio) && !st->dma_st.dma_chan) {
+> +	} else if (iio_buffer_enabled(indio) &&
+> +		   (status & AT91_SAMA5D2_IER_DRDY)) {
+>  		/* triggered buffer without DMA */
+>  		disable_irq_nosync(irq);
+>  		iio_trigger_poll(indio->trig);
 
 
 _______________________________________________
