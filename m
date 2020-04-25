@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07A281B870E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:32:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 136521B8718
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:39:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=k2xAZmiZHc3DDzK0ablHKixgWxk3alF3vTUAMufPI1c=; b=EqRWEVB1SMmdTyZOKxOP9P/Wh
-	cbQh/BMGD6DCSkcg6NFEwBLC4SURVLjk/jjC11XWr1VDsLvRRxxISqKgZn03ftc7jWbOGGbn7MB8N
-	ZduqgIdUyoobMaxOVAelgbBS1Ej3arUkUd9lHdBoFOO533HoRxKaMU+nZlEMXpIpcU5GcQoGtq3nP
-	RaAeeImI5w82TGk1WzPKSMfIb1cvXNATFQa47VkmKy4p9u7nLFUlh8OPR8xB1XLGHf/9UjdrgNBA1
-	CULM656S4jD1U/puv/X8Hi3984/b5lf5lVCka6uEPVLX9JtBKvQAxkNQxxhDPpYbBiY+tCpO7RV1j
-	we1cKnzdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bv071xEBtifueOI4DaKKH66w8b7Iin4o5A+ef/86u+8=; b=uAR
+	fsIplxjtBf3GWoQgrLjB8kVsKFfbSI3OodM41ZnA7FGd6tHdNDYO8jDTPKyZMRdEo5JEWnzsvU8RA
+	wbbRuxxglTpd5ax0yz5rXRKp4LzpSzdXDbsXvdFo5QR6ox4H1UJROrJzUxqCvtaAZf4hHXt+WShBt
+	MnlKNHHydULE0SL2xPYoMzW+dHGMfqVYFBhgSSiO45sxVDV44GHfKFVBcQeuNIZv+P/MGOXcGDH3C
+	lmATNmTij5woS+C3i2Ss7dozWq+MLeGa8gAuH4dyzY9q7lBbnVA69OThNkch3yfjzkDyqy5hSFVsw
+	Z/qB8LB9DW63Y4+pPTqawKCFajOvhBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSLqp-0002cI-NU; Sat, 25 Apr 2020 14:32:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jSLxL-00060a-01; Sat, 25 Apr 2020 14:38:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSLqd-0002b1-T1
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 14:32:05 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50E2220714;
- Sat, 25 Apr 2020 14:32:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587825123;
- bh=2Q/upiP+dr67u4tRq9PLOWQ4B95IDVSlUcu4hEkJpe4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=pqJIWQw9M3rWg7TDjn7p8ySmB13X4El1kyX3qnH3LVPt7EWQldjodI8gIKPjOmFXc
- +F9pgnaMf8nMDBetjN8qhRuLlN42MkDOPh172YQrIGRlcVnQOH3DA3B9aa92uxas2e
- ny1OA5kT+BAn2KUT6jpCDd21GVXoGP3H1o56KKUs=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jSLqb-006JQH-4x; Sat, 25 Apr 2020 15:32:01 +0100
-MIME-Version: 1.0
-Date: Sat, 25 Apr 2020 15:32:01 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Sumit Garg <sumit.garg@linaro.org>
-Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
- pseudo NMI
-In-Reply-To: <20200425112950.3a4815b6@why>
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
- <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
- <20200425112950.3a4815b6@why>
-Message-ID: <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: sumit.garg@linaro.org, daniel.thompson@linaro.org,
- jason@lakedaemon.net, catalin.marinas@arm.com, dianders@chromium.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- jason.wessel@windriver.com, kgdb-bugreport@lists.sourceforge.net,
- tglx@linutronix.de, will@kernel.org, julien.thierry.kdev@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1jSLx9-0005zr-Ru; Sat, 25 Apr 2020 14:38:49 +0000
+Received: by mail-wr1-x444.google.com with SMTP id x17so14258614wrt.5;
+ Sat, 25 Apr 2020 07:38:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
+ b=FGQiUsJz1DJdOU4aO8/4AqLbPHoWHwIxq5qoq/tqkZLC6rVDhcb38vvj/iAoP5hZYu
+ duQ2y6wDLf+L0EbvJ0E1JkYMuR7jzSUXNEawNDfMTfk6RN1Ty4vVZ5u7XbWiFTlXu/0N
+ K5RT4Xe2hJcpvYyXkOKKWw7GSR5SOW93OIMUeVJmz4/ISn+DtDday9k8UNI6ZgK4rBPg
+ FjUv7npiIKVQLDMcXcdOlSJtBkZP8AMcKBlo2gWKwSu1HwfCpIn+rx45skgd+IIrEkZI
+ orGTUY6R4GQqZUICb6YixeLhATsRgjkbf1q0LFLyl+BTG/X3l2hRG9h57or4AqT7xEGU
+ 6rMg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
+ b=Inn3t1U8XvN0dS3A7iM80+OLLd9p6IZP61qTatGIgy60iZZoVYtbVZI0ekqpfM7XmD
+ VwD3liqoTWAL8ONI11r7XOP/iyX9wIYmKCYdpq8cXjVdvLsbVRq7T5Airt62i0l8sFCS
+ 5+K0A1/kwPV9M/97Xp18xsTZEBr5BvvwEnGRSavlPbOM1mrhlaoqd2qt9ht/NaRd5+1w
+ uqqAvCQk80COf/RUccp14zyRVnavF5DE1ZAHem3iESBn6Dh7wl46YBmPGThvMVVOhnTq
+ qp0VUNI+m5jHicXlpKCaIY92Zn1H/Yf8/1X+5k3nTzrTJvoAQn043W9E5JOEKbbcb/on
+ V/ag==
+X-Gm-Message-State: AGi0Pub0DxSOiSDJHf2ho3rF09KV8XAv2rDqRdoWwBRKdnvNIxoKqbEE
+ HwZynK5HTrgxuYrNiFxGOJg=
+X-Google-Smtp-Source: APiQypI1PZr71kxZ6u3RtjCr6IZCMHu+P3s3ugg7H6oMtBvZjl6Y1B94I3JpK//BSH+Rw9hHJxni/w==
+X-Received: by 2002:a5d:4248:: with SMTP id s8mr16903547wrr.216.1587825524488; 
+ Sat, 25 Apr 2020 07:38:44 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id t67sm8029319wmg.40.2020.04.25.07.38.43
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 25 Apr 2020 07:38:43 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: swap interrupts interrupt-names rk3399
+ gpu node
+Date: Sat, 25 Apr 2020 16:38:37 +0200
+Message-Id: <20200425143837.18706-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_073203_983177_BDDF8083 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200425_073847_926957_BD7980B4 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,104 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: daniel.thompson@linaro.org, jason@lakedaemon.net, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, dianders@chromium.org,
- julien.thierry.kdev@gmail.com, jason.wessel@windriver.com,
- kgdb-bugreport@lists.sourceforge.net, tglx@linutronix.de, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-25 11:29, Marc Zyngier wrote:
-> On Fri, 24 Apr 2020 16:39:12 +0530
-> Sumit Garg <sumit.garg@linaro.org> wrote:
-> 
-> Hi Sumit,
-> 
->> With pseudo NMIs enabled, interrupt controller can be configured to
->> deliver SGI as a pseudo NMI. So add corresponding handling for SGIs.
->> 
->> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
->> ---
->>  drivers/irqchip/irq-gic-v3.c | 22 +++++++++++++++++-----
->>  1 file changed, 17 insertions(+), 5 deletions(-)
->> 
->> diff --git a/drivers/irqchip/irq-gic-v3.c 
->> b/drivers/irqchip/irq-gic-v3.c
->> index d7006ef..be361bf 100644
->> --- a/drivers/irqchip/irq-gic-v3.c
->> +++ b/drivers/irqchip/irq-gic-v3.c
->> @@ -609,17 +609,29 @@ static inline void gic_handle_nmi(u32 irqnr, 
->> struct pt_regs *regs)
->>  	if (irqs_enabled)
->>  		nmi_enter();
->> 
->> -	if (static_branch_likely(&supports_deactivate_key))
->> -		gic_write_eoir(irqnr);
->>  	/*
->>  	 * Leave the PSR.I bit set to prevent other NMIs to be
->>  	 * received while handling this one.
->>  	 * PSR.I will be restored when we ERET to the
->>  	 * interrupted context.
->>  	 */
->> -	err = handle_domain_nmi(gic_data.domain, irqnr, regs);
->> -	if (err)
->> -		gic_deactivate_unhandled(irqnr);
->> +	if (likely(irqnr > 15)) {
->> +		if (static_branch_likely(&supports_deactivate_key))
->> +			gic_write_eoir(irqnr);
->> +
->> +		err = handle_domain_nmi(gic_data.domain, irqnr, regs);
->> +		if (err)
->> +			gic_deactivate_unhandled(irqnr);
->> +	} else {
->> +		gic_write_eoir(irqnr);
->> +		if (static_branch_likely(&supports_deactivate_key))
->> +			gic_write_dir(irqnr);
->> +#ifdef CONFIG_SMP
->> +		handle_IPI(irqnr, regs);
->> +#else
->> +		WARN_ONCE(true, "Unexpected SGI received!\n");
->> +#endif
->> +	}
->> 
->>  	if (irqs_enabled)
->>  		nmi_exit();
-> 
-> If there is one thing I would like to avoid, it is to add more ugly
-> hacks to the way we handle SGIs. There is very little reason why SGIs
-> should be handled differently from all other interrupts. They have the
-> same properties, and it is only because of the 32bit legacy that we 
-> deal
-> with them in such a cumbersome way. Nothing that we cannot fix though.
-> 
-> What I would really like to see is first a conversion of the SGIs to
-> normal, full fat interrupts. These interrupts can then be configured as
-> NMI using the normal API.
-> 
-> I think Julien had something along these lines (or was that limited to
-> the PMU?). Otherwise, I'll happily help you with that.
+Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
+In order to automate this process arm,mali-midgard.txt
+has been converted to yaml. In the new setup dtbs_check with
+arm,mali-midgard.yaml expects interrupts and interrupt-names values
+in the same order. Fix this for rk3399.
 
-OK, to give you an idea of what I am after, here's a small series[1] 
-that
-can be used as a base (it has been booted exactly *once* on a model, and
-is thus absolutely perfect ;-).
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
+arm,mali-midgard.yaml
 
-There is still a bit of work to be able to actually request a SGI (they
-are hard-wired as chained interrupts so far, as this otherwise changes
-the output of /proc/interrupts, among other things), but you will
-hopefully see what I'm aiming for.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-Thanks,
-
-         M.
-
-[1] 
-https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git/log/?h=irq/gic-sgi
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 74f2c3d49..a08340fc8 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1883,10 +1883,10 @@
+ 	gpu: gpu@ff9a0000 {
+ 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
+ 		reg = <0x0 0xff9a0000 0x0 0x10000>;
+-		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
+-		interrupt-names = "gpu", "job", "mmu";
++		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
++		interrupt-names = "job", "mmu", "gpu";
+ 		clocks = <&cru ACLK_GPU>;
+ 		#cooling-cells = <2>;
+ 		power-domains = <&power RK3399_PD_GPU>;
 -- 
-Jazz is not dead. It just smells funny...
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
