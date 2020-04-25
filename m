@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E8FA1B86DF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 15:47:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8DD51B8704
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:28:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fy1xPONeETNsbMDsyCH3xrj+wDt9s1fxH5n3/7JuPck=; b=sgnPq9XhdtnMey
-	En6ifIfXiAIVe+lG2gXm0j7n/nhs6UF5m6MPe6fnc0u53YuqmUFOLVGOFe05QT4CyEnO0avYbLp/h
-	4Pa5avlgElhd5hqDJ5YgcTyGwGyOoY4FX7IBXuovZ5Z/AIK9zP2aQ+fbfUWfpXorp/kIgohbOT6Lg
-	gVawa/B2ajiAsiOW1M6a0C8+FjaplM5GGQyw+RJP5KfQVgikPiMw2PcjLbBke8ovgx/XQKGReGeWu
-	8GBIz5i+6DyDE9JbUFXO2JKvxwn0wwFPZV9Xy9g7qsNDE41tzdljaceSmEEG4ChIOXqqk12OkxuuD
-	M9DLZaZm1urJ4yYK4Tjw==;
+	List-Owner; bh=CHQO5ZiYTxKtORHjidKfvwTGMT032EMISzD8Ta74aZw=; b=gtSc/A1r9M8ECB
+	7bELsr41lfXNHBmxsCaTRv+6meop/ibOIsx08j1IFcBc3GMMXMrZkn9UXejVlLsI4/bQvsG/KtgNq
+	I0MqfYBsyMQnahukdvi2owaWXqLOD5IsxQ9+DxLG5AIZwcyNHgsH/Mt3/lwhf7uNVNLyxbh64t11z
+	q2mw68yPL4GWYyBi7yF3SC5+kiH0LAQXOJzIDRsFC7llR1DO232FLImu6bSaL/NIABkV7Sdh2WRHs
+	VqCQDNjILmJ1UTW4K7R/sNeYLjOblmFGzknVKDvoITb1TxmXphQk63fqs46umvPVAnM9XUo9vrXXI
+	qYrPsvl1YqcB3VptkSTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSL9D-0008FE-OI; Sat, 25 Apr 2020 13:47:11 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jSLmc-0007ge-Le; Sat, 25 Apr 2020 14:27:54 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSL97-0008Dx-H7; Sat, 25 Apr 2020 13:47:07 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 6EA352A227C
-Message-ID: <c49a060e7f5da9564e375fdd47117d3f901e5d00.camel@collabora.com>
-Subject: Re: [PATCH v2 4/4] media: rockchip: rga: Only set output CSC mode
- for RGB input
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>, 
- linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-Date: Sat, 25 Apr 2020 10:46:47 -0300
-In-Reply-To: <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
-References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
- <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ id 1jSLmQ-0007fo-6W
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 14:27:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=xTv5JGxl6ff2VSj7pnCq3lqI+Obybeaogy17/UmpEkE=; b=DM3e/3qRUe39byKsIilMqY4ClY
+ aDF+XZ4AQZg9r1Rg4Pzl1ax/+Vouz8j5yTtjryTmusjJ3P5Cuv/IxZqc1zwnEcIyNGvzFjAxKuqc5
+ gky3Rh6sbSSPsXxLuzxd73tEE5oTlPz/vWGFcCFJ54VeBGZRLwLTf5VDp89BBrgOSbyo=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jSLmK-004ksc-Sb; Sat, 25 Apr 2020 16:27:36 +0200
+Date: Sat, 25 Apr 2020 16:27:36 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: "Brian J. Tarricone" <brian@tarricone.org>
+Subject: Re: [PATCH] arm/dts: Add DT block for Netgear ReadyNAS NV+ v2 LCD
+ panel
+Message-ID: <20200425142736.GC1095011@lunn.ch>
+References: <20200425022409.2093354-1-brian@tarricone.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200425022409.2093354-1-brian@tarricone.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_064705_701596_9B734C42 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200425_072742_237837_34F42C98 
+X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,92 +76,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.swartz@risingedge.co.za, Heiko Stuebner <heiko@sntech.de>,
- Hans Verkuil <hansverk@cisco.com>, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Johan Jonker <jbx6244@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>
+Cc: gregory.clement@bootlin.com, jason@lakedaemon.net,
+ linux-arm-kernel@lists.infradead.org, sebastian.hesselbarth@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Paul,
-
-Thanks a lot for the patch.
-
-I haven't had the chance to test this,
-but I'd say you are fixing a long time issue here.
-
-I really appreciate that.
-
-On Thu, 2020-04-23 at 22:09 +0200, Paul Kocialkowski wrote:
-> Setting the output CSC mode is required for a YUV output, but must not
-> be set when the input is also YUV. Doing this (as tested with a YUV420P
-> to YUV420P conversion) results in wrong colors.
+On Fri, Apr 24, 2020 at 07:24:09PM -0700, Brian J. Tarricone wrote:
+> The NV+ v2 has a WH1602 LCD panel (which is just a rebranded HD44780),
+> similar to the Netgear RN104, just with different GPIO assignments.
 > 
-> Adapt the logic to only set the CSC mode when the output is YUV and the
-> input is RGB.
-> 
-> Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> ---
->  drivers/media/platform/rockchip/rga/rga-hw.c | 18 +++++++++++-------
->  1 file changed, 11 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
-> index 4be6dcf292ff..cbffcf986ccf 100644
-> --- a/drivers/media/platform/rockchip/rga/rga-hw.c
-> +++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-> @@ -216,13 +216,17 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
->  	}
->  
->  	if (ctx->out.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
+> Signed-off-by: Brian J. Tarricone <brian@tarricone.org>
 
-Since we are already here touching this code, would you mind
-adding another patch, to do some cleaning first?
+Hi Brian
 
-First, replace the nested ifs with a boolean operator.
-Then, introduce some IS_YUV (or IS_RGB) macro, making the above test
-more like IS_YUV(out_hw_format).
+The change itself looks O.K.
 
-Finally, perhaps a comment along the lines of your commit message:
+However, please could you change the subject to follow what other
+kirkwood DT patches use:
 
-"""
-Setting the output CSC mode is required for a YUV output,
-but must not be set when the input is also YUV.
-"""
+arch/arm/boot/dts$ git log --oneline kirkwood-*
+15382b7ea298 ARM: dts: kirkwood: synology: Fix rs5c372 RTC entry
+644763224169 ARM: dts: kirkwood: ts219: disable the SoC's RTC
+6a3b25173cd4 arch: arm: dts: kirkwood-rd88f6281: Remove disabled marvell,dsa reference
+cb92e40411ef arch: arm: dts: Remove disabled marvell,dsa properties
+b5f034845e70 ARM: dts: kirkwood: Fix polarity of GPIO fan lines
+eb59e0920331 arm: dts: kirkwood*.dts: use SPDX-License-Identifier for board using GPL-2.0+
+b3820aa10c1b arm: dts: kirkwood*.dts: use SPDX-License-Identifier for boards using GPL-2.0+/MIT
+e7822263a7a5 arm: dts: kirkwood*.dts: use SPDX-License-Identifier for boards using GPL-2.0
+5beaf4d7ce9e ARM: dts: kirkwood: Fix "debounce-interval" property misspelling
 
-Details up to you :-)
+Yes, there is a bit of variance, but something like
 
-After the clean-up patch, which would be just cosmetics,
-your fix should be cleaner and more clear.
+ARM: dts: kirkwood: Readynas nv2: Add LCD panel
 
-Thanks,
-Ezequiel
- 
-> -		switch (ctx->out.colorspace) {
-> -		case V4L2_COLORSPACE_REC709:
-> -			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
-> -			break;
-> -		default:
-> -			dst_info.data.csc_mode = RGA_DST_CSC_MODE_BT601_R0;
-> -			break;
-> +		if (ctx->in.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
-> +			switch (ctx->out.colorspace) {
-> +			case V4L2_COLORSPACE_REC709:
-> +				dst_info.data.csc_mode =
-> +					RGA_SRC_CSC_MODE_BT709_R0;
-> +				break;
-> +			default:
-> +				dst_info.data.csc_mode =
-> +					RGA_DST_CSC_MODE_BT601_R0;
-> +				break;
-> +			}
->  		}
->  	}
->  
-
-
+Thanks
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
