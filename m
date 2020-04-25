@@ -2,84 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0ED21B88C2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 21:07:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D47AA1B88E4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 21:25:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1guKCo1yR70A+vOPYmPPogVari1pffNGzo/5g1NLbE=; b=kB4wwTxNvNSRrN
-	/dWNKHNcrjdD7x7gE5qbIfKh9y8JtHajWDh9s2RAsRer/rP3dDQkRqNWaJYJOyguD8HhqnRBg71oL
-	orcWZREwjy7pW2ODFXWniSS6MRkrYCu7OTmSNBqOob+0NIX8D23lzKdCgwk/C6J7khds+BApstuJD
-	Y7ltUIAaqppiHORoBfrwy3YSPn36fXHQFJR9u+bSgk0bTCZ1J3WdeNmB1f4IcxEvg2bXO6aeXm85e
-	/eES3lDFMCaPJQ9ojdb2177AcugV3oimwhrxnZw0kVqNz9SYLpe+BcGDymjpI+SktR8cE/qkufz1I
-	lz/yAWfIbv4D9ktF3khw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bQZDKtGfSMGKJxX6/D8F8BWdvOFhB000RhtTnLxNGR4=; b=Gux
+	GDDcoKfZ5jwR9xE+mNa8i6xwMQumcAE7x1+hCHDfqDDmgXuJh/LQFi4ZWoxlCU7GBSn3A8inqDZiu
+	eedEKBwONNp2W2b0hU0d4cPbiUNA7FDuFL8olNHeL5smebbbo4BjaZpLrnGFNyt3ly6tv61dVpw4w
+	n9mQKPwr0FiH/Ebk869E9hrfZ8u7fMWDyo7n5GOwS+0wrDkMa9TMTQIap65KBZz4Dv5pXpM/xjVHs
+	iPuFXSYDHusuyRVheWzfmKmolvlmn8Aj+OV3iWRZfZ599hpeUezsgO5BQtEFF9nILnBMMXw9vVKZ1
+	60oItdkmG6kf8uBT+N5sV92yyQRC4WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSQ8x-0003If-VK; Sat, 25 Apr 2020 19:07:15 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jSQQT-0007dS-2M; Sat, 25 Apr 2020 19:25:21 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSQ8p-0003Hg-4S
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 19:07:08 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id hi11so5361837pjb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 25 Apr 2020 12:07:06 -0700 (PDT)
+ id 1jSQQH-0006zk-Nk; Sat, 25 Apr 2020 19:25:11 +0000
+Received: by mail-wm1-x343.google.com with SMTP id y24so15716005wma.4;
+ Sat, 25 Apr 2020 12:25:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Y/NNmr9bRfvPdNCbd+uL+8dkgb0D73+tD/kL7PyleYU=;
- b=PQK8eKVZ8EJ4dDmmnATuwDz2A8Eai7EHC03u2DFEq0rNUdIYSn+P/lH7e1OMDEUsob
- eOW25mTNthZbCB9AWDVbCf+4w1yyHJu3NGejhhqO1BgFMsIqZjZmBQKNvRmVmDoqbENm
- jX/GVzHEGstGqNH2rEXLNNU5kmpklBeDvcbsNVkgviUG3iuQWnCA9Vv4AV2G5S/5zRUV
- BmK4GBnrxT33O5kkm/YS8tq5dO2iwJkdOxS6JuLuiHPUzhaqd6wq1BmrNvZxulsfkj/8
- YjT+qyL0HW4YUdRgaMHjkkXSlfEDogImNfd+Dfn6VVMbdfjiqHkbWy65b3Atpi0RL+lX
- QXcg==
+ h=from:to:cc:subject:date:message-id;
+ bh=Svwyrkr3vZwd5gW0zxpIHtZBdUFG58pTxykJU1ReoEI=;
+ b=o6HCt7MVG5qE3rdhC06F7oJEaQrBhlAt31o0hGF4VVyT9lWSQLDwzU/Gsoy/EjaVYs
+ X6rkhDQuCb4UC2Z+UGjSC+kfnFz0G7EYKwSroVNbhdWEOElrmrvS80+dWydgY97kAIGl
+ 2dNWdNt5bes//bjT1ymMcT5guGSuXkluWx/j8VfXnivU2FqnKJ0f+aceAc2ir9yGfKAz
+ ONbZvJGH8CNojAUwDaVa/495vx5enCxVVgWM5FbvzaFYrDSdUllZCBAjOGESvKNEQ3dM
+ GXwhbVKcY08bt7U9RiXEdLUZusRTg99jJh3BEsOW4+HtHVq6IQdnbe1ZI9vDgSMXjNP4
+ 6frw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Y/NNmr9bRfvPdNCbd+uL+8dkgb0D73+tD/kL7PyleYU=;
- b=ueQX+9X81tWYbT7hd1ukTe5gu/8EtIwZyu0Xe257wUAUDETcpPkcR177jR8yI+1OZt
- JwJ1T/8jQRSMeUOW8NCZR5xG/25wOWZY5MGn2akq6vsBc0R/Cfxet0yhNAVReKFku2zJ
- mcHPHJjuBbUi11oixMDmCVq19MPRiQJkeJmMAi8ZtHwx1QkSJSGsuoiyqO5wVdd3clhu
- QkTD6IVsamueLW6ZjBrHrjQwaI07z/YYSQX5TzL24vz9vu5ePRZZigU8/lft5yRsG9bq
- Tu8VFhN9G5FTUmINZaPI+13HqRy0ZTlHvhFMtZCj71t6VCLzhXVRkUw1mGo/b0orJIxM
- TWKQ==
-X-Gm-Message-State: AGi0Pub4q3BkHPlqDwiYeLYPwC+z12Gu7vALA3iNZTR4tICoyvXJA9gp
- DkdD8GTjpxpEkQZddQDUG2k=
-X-Google-Smtp-Source: APiQypIWyIaIIrEI3kjYuXUwp7teET7laXO2B1al+v5QXj5cr9mxoFyweoEuOleJaRu6bnIGqW5ZAw==
-X-Received: by 2002:a17:902:8d91:: with SMTP id
- v17mr14786128plo.53.1587841626457; 
- Sat, 25 Apr 2020 12:07:06 -0700 (PDT)
-Received: from syed ([106.223.101.50])
- by smtp.gmail.com with ESMTPSA id q63sm8501398pfb.178.2020.04.25.12.07.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 Apr 2020 12:07:06 -0700 (PDT)
-Date: Sun, 26 Apr 2020 00:36:59 +0530
-From: Syed Nayyar Waris <syednwaris@gmail.com>
-To: akpm@linux-foundation.org
-Subject: [PATCH v2 6/6] gpio: xilinx: Utilize for_each_set_clump macro
-Message-ID: <afda24dacfdd33c03acd3371ea02692d8581396c.1587840670.git.syednwaris@gmail.com>
-References: <cover.1587840667.git.syednwaris@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1587840667.git.syednwaris@gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Svwyrkr3vZwd5gW0zxpIHtZBdUFG58pTxykJU1ReoEI=;
+ b=ZyJGSpNKuUQH8IVU7xxjPFnZQ+aKm0KvTNjzFtrWBgeUhUvYM9242xMMQtPqImDrF3
+ yWavmisFTxXmc4tzkwgT4LLUuCzw6lLWUXHlZnh8EV9/z9sUqcAOKdtXzQzeHoEK2w/e
+ jZSMpoXmtohzqCV/GaKNeoL7uR1EZS6RHP9lFlUR/PpWy8erZ7U26BC/T3bw9YJbgo7s
+ Y7IoePwK/CVY9dhYJgBdNwur6kDeOYNNaV5QN/nKOJLfuuDG4hNvFwJXRS+bHNvM7lcZ
+ 3PqaSIwQA9eh80dGoiKdhDUF74aHlLBUM0SMPdFqkRqYh+BC4CJ8KxQNhz7tF4qe+Iis
+ cUVQ==
+X-Gm-Message-State: AGi0PuaKUrnhn81ZujzWe1AUHoK8dIjoIryXOOS9JYlldsXdVIl6IFfO
+ qAReEoKo7hNuwqVH+BV5FDI=
+X-Google-Smtp-Source: APiQypJvr2ETu86soNz5g+ftzOH15ko7oHbimV7sQWH3laHOhQ46ztWN9wQQV1fyA6HogX+wRGv4dQ==
+X-Received: by 2002:a1c:7905:: with SMTP id l5mr18237912wme.5.1587842707860;
+ Sat, 25 Apr 2020 12:25:07 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id j13sm14277666wrq.24.2020.04.25.12.25.06
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 25 Apr 2020 12:25:07 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] ARM: dts: rockchip: swap clock-names of gpu nodes
+Date: Sat, 25 Apr 2020 21:25:00 +0200
+Message-Id: <20200425192500.1808-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_120707_178349_2451BDE9 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200425_122509_803188_D8C331E6 
+X-CRM114-Status: GOOD (  12.13  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [syednwaris[at]gmail.com]
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,112 +93,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linus.walleij@linaro.org, vilhelm.gray@gmail.com, michal.simek@xilinx.com,
- bgolaszewski@baylibre.com, andriy.shevchenko@linux.intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch reimplements the xgpio_set_multiple function in
-drivers/gpio/gpio-xilinx.c to use the new for_each_set_clump macro.
-Instead of looping for each bit in xgpio_set_multiple
-function, now we can check each channel at a time and save cycles.
+Dts files with Rockchip 'gpu' nodes were manually verified.
+In order to automate this process arm,mali-utgard.txt
+has been converted to yaml. In the new setup dtbs_check with
+arm,mali-utgard.yaml expects clock-names values
+in the same order, so fix that.
 
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Cc: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Syed Nayyar Waris <syednwaris@gmail.com>
-Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
-Changes in v2:
- - No change.
+ arch/arm/boot/dts/rk3036.dtsi | 2 +-
+ arch/arm/boot/dts/rk322x.dtsi | 2 +-
+ arch/arm/boot/dts/rk3xxx.dtsi | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
- drivers/gpio/gpio-xilinx.c | 64 ++++++++++++++++++++++++----------------------
- 1 file changed, 34 insertions(+), 30 deletions(-)
-
-diff --git a/drivers/gpio/gpio-xilinx.c b/drivers/gpio/gpio-xilinx.c
-index 67f9f82..428207f 100644
---- a/drivers/gpio/gpio-xilinx.c
-+++ b/drivers/gpio/gpio-xilinx.c
-@@ -136,39 +136,43 @@ static void xgpio_set(struct gpio_chip *gc, unsigned int gpio, int val)
- static void xgpio_set_multiple(struct gpio_chip *gc, unsigned long *mask,
- 			       unsigned long *bits)
- {
--	unsigned long flags;
-+	unsigned long flags[2];
- 	struct xgpio_instance *chip = gpiochip_get_data(gc);
--	int index = xgpio_index(chip, 0);
--	int offset, i;
--
--	spin_lock_irqsave(&chip->gpio_lock[index], flags);
--
--	/* Write to GPIO signals */
--	for (i = 0; i < gc->ngpio; i++) {
--		if (*mask == 0)
--			break;
--		/* Once finished with an index write it out to the register */
--		if (index !=  xgpio_index(chip, i)) {
--			xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
--				       index * XGPIO_CHANNEL_OFFSET,
--				       chip->gpio_state[index]);
--			spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
--			index =  xgpio_index(chip, i);
--			spin_lock_irqsave(&chip->gpio_lock[index], flags);
--		}
--		if (__test_and_clear_bit(i, mask)) {
--			offset =  xgpio_offset(chip, i);
--			if (test_bit(i, bits))
--				chip->gpio_state[index] |= BIT(offset);
--			else
--				chip->gpio_state[index] &= ~BIT(offset);
--		}
-+	u32 *const state = chip->gpio_state;
-+	unsigned int *const width = chip->gpio_width;
-+	const unsigned long state_size = BITS_PER_TYPE(*state);
-+	unsigned long offset, clump;
-+	size_t index;
-+
-+#define TOTAL_BITS BITS_PER_TYPE(chip->gpio_state)
-+	DECLARE_BITMAP(old, TOTAL_BITS);
-+	DECLARE_BITMAP(new, TOTAL_BITS);
-+	DECLARE_BITMAP(changed, TOTAL_BITS);
-+
-+	spin_lock_irqsave(&chip->gpio_lock[0], flags[0]);
-+	spin_lock_irqsave(&chip->gpio_lock[1], flags[1]);
-+
-+	bitmap_set_value(old, state[0], 0, width[0]);
-+	bitmap_set_value(old, state[1], width[0], width[1]);
-+	bitmap_replace(new, old, bits, mask, gc->ngpio);
-+
-+	bitmap_set_value(old, state[0], 0, state_size);
-+	bitmap_set_value(old, state[1], state_size, state_size);
-+	state[0] = bitmap_get_value(new, 0, width[0]);
-+	state[1] = bitmap_get_value(new, width[0], width[1]);
-+	bitmap_set_value(new, state[0], 0, state_size);
-+	bitmap_set_value(new, state[1], state_size, state_size);
-+	bitmap_xor(changed, old, new, TOTAL_BITS);
-+
-+	for_each_set_clump(offset, clump, changed, TOTAL_BITS, state_size) {
-+		index = offset / state_size;
-+		xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
-+				index * XGPIO_CHANNEL_OFFSET,
-+				state[index]);
- 	}
- 
--	xgpio_writereg(chip->regs + XGPIO_DATA_OFFSET +
--		       index * XGPIO_CHANNEL_OFFSET, chip->gpio_state[index]);
--
--	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
-+	spin_unlock_irqrestore(&chip->gpio_lock[1], flags[1]);
-+	spin_unlock_irqrestore(&chip->gpio_lock[0], flags[0]);
- }
- 
- /**
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index 781ac7583..d9a0c9a29 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -128,7 +128,7 @@
+ 		assigned-clocks = <&cru SCLK_GPU>;
+ 		assigned-clock-rates = <100000000>;
+ 		clocks = <&cru SCLK_GPU>, <&cru SCLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		resets = <&cru SRST_GPU>;
+ 		status = "disabled";
+ 	};
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index f7c80538c..7a1a69183 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -557,7 +557,7 @@
+ 				  "pp1",
+ 				  "ppmmu1";
+ 		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		resets = <&cru SRST_GPU_A>;
+ 		status = "disabled";
+ 	};
+diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
+index f9fcb7e96..d929b6051 100644
+--- a/arch/arm/boot/dts/rk3xxx.dtsi
++++ b/arch/arm/boot/dts/rk3xxx.dtsi
+@@ -84,7 +84,7 @@
+ 		compatible = "arm,mali-400";
+ 		reg = <0x10090000 0x10000>;
+ 		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		assigned-clocks = <&cru ACLK_GPU>;
+ 		assigned-clock-rates = <100000000>;
+ 		resets = <&cru SRST_GPU>;
 -- 
-2.7.4
+2.11.0
 
 
 _______________________________________________
