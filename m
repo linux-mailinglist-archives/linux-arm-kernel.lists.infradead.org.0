@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8DD51B8704
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:28:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A281B870E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 16:32:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CHQO5ZiYTxKtORHjidKfvwTGMT032EMISzD8Ta74aZw=; b=gtSc/A1r9M8ECB
-	7bELsr41lfXNHBmxsCaTRv+6meop/ibOIsx08j1IFcBc3GMMXMrZkn9UXejVlLsI4/bQvsG/KtgNq
-	I0MqfYBsyMQnahukdvi2owaWXqLOD5IsxQ9+DxLG5AIZwcyNHgsH/Mt3/lwhf7uNVNLyxbh64t11z
-	q2mw68yPL4GWYyBi7yF3SC5+kiH0LAQXOJzIDRsFC7llR1DO232FLImu6bSaL/NIABkV7Sdh2WRHs
-	VqCQDNjILmJ1UTW4K7R/sNeYLjOblmFGzknVKDvoITb1TxmXphQk63fqs46umvPVAnM9XUo9vrXXI
-	qYrPsvl1YqcB3VptkSTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=k2xAZmiZHc3DDzK0ablHKixgWxk3alF3vTUAMufPI1c=; b=EqRWEVB1SMmdTyZOKxOP9P/Wh
+	cbQh/BMGD6DCSkcg6NFEwBLC4SURVLjk/jjC11XWr1VDsLvRRxxISqKgZn03ftc7jWbOGGbn7MB8N
+	ZduqgIdUyoobMaxOVAelgbBS1Ej3arUkUd9lHdBoFOO533HoRxKaMU+nZlEMXpIpcU5GcQoGtq3nP
+	RaAeeImI5w82TGk1WzPKSMfIb1cvXNATFQa47VkmKy4p9u7nLFUlh8OPR8xB1XLGHf/9UjdrgNBA1
+	CULM656S4jD1U/puv/X8Hi3984/b5lf5lVCka6uEPVLX9JtBKvQAxkNQxxhDPpYbBiY+tCpO7RV1j
+	we1cKnzdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSLmc-0007ge-Le; Sat, 25 Apr 2020 14:27:54 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jSLqp-0002cI-NU; Sat, 25 Apr 2020 14:32:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSLmQ-0007fo-6W
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 14:27:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=xTv5JGxl6ff2VSj7pnCq3lqI+Obybeaogy17/UmpEkE=; b=DM3e/3qRUe39byKsIilMqY4ClY
- aDF+XZ4AQZg9r1Rg4Pzl1ax/+Vouz8j5yTtjryTmusjJ3P5Cuv/IxZqc1zwnEcIyNGvzFjAxKuqc5
- gky3Rh6sbSSPsXxLuzxd73tEE5oTlPz/vWGFcCFJ54VeBGZRLwLTf5VDp89BBrgOSbyo=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jSLmK-004ksc-Sb; Sat, 25 Apr 2020 16:27:36 +0200
-Date: Sat, 25 Apr 2020 16:27:36 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: "Brian J. Tarricone" <brian@tarricone.org>
-Subject: Re: [PATCH] arm/dts: Add DT block for Netgear ReadyNAS NV+ v2 LCD
- panel
-Message-ID: <20200425142736.GC1095011@lunn.ch>
-References: <20200425022409.2093354-1-brian@tarricone.org>
+ id 1jSLqd-0002b1-T1
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 14:32:05 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 50E2220714;
+ Sat, 25 Apr 2020 14:32:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587825123;
+ bh=2Q/upiP+dr67u4tRq9PLOWQ4B95IDVSlUcu4hEkJpe4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=pqJIWQw9M3rWg7TDjn7p8ySmB13X4El1kyX3qnH3LVPt7EWQldjodI8gIKPjOmFXc
+ +F9pgnaMf8nMDBetjN8qhRuLlN42MkDOPh172YQrIGRlcVnQOH3DA3B9aa92uxas2e
+ ny1OA5kT+BAn2KUT6jpCDd21GVXoGP3H1o56KKUs=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jSLqb-006JQH-4x; Sat, 25 Apr 2020 15:32:01 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200425022409.2093354-1-brian@tarricone.org>
+Date: Sat, 25 Apr 2020 15:32:01 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Sumit Garg <sumit.garg@linaro.org>
+Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
+ pseudo NMI
+In-Reply-To: <20200425112950.3a4815b6@why>
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+ <20200425112950.3a4815b6@why>
+Message-ID: <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: sumit.garg@linaro.org, daniel.thompson@linaro.org,
+ jason@lakedaemon.net, catalin.marinas@arm.com, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ jason.wessel@windriver.com, kgdb-bugreport@lists.sourceforge.net,
+ tglx@linutronix.de, will@kernel.org, julien.thierry.kdev@gmail.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_072742_237837_34F42C98 
-X-CRM114-Status: UNSURE (   7.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200425_073203_983177_BDDF8083 
+X-CRM114-Status: GOOD (  18.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,43 +94,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gregory.clement@bootlin.com, jason@lakedaemon.net,
- linux-arm-kernel@lists.infradead.org, sebastian.hesselbarth@gmail.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: daniel.thompson@linaro.org, jason@lakedaemon.net, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, dianders@chromium.org,
+ julien.thierry.kdev@gmail.com, jason.wessel@windriver.com,
+ kgdb-bugreport@lists.sourceforge.net, tglx@linutronix.de, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 24, 2020 at 07:24:09PM -0700, Brian J. Tarricone wrote:
-> The NV+ v2 has a WH1602 LCD panel (which is just a rebranded HD44780),
-> similar to the Netgear RN104, just with different GPIO assignments.
+On 2020-04-25 11:29, Marc Zyngier wrote:
+> On Fri, 24 Apr 2020 16:39:12 +0530
+> Sumit Garg <sumit.garg@linaro.org> wrote:
 > 
-> Signed-off-by: Brian J. Tarricone <brian@tarricone.org>
+> Hi Sumit,
+> 
+>> With pseudo NMIs enabled, interrupt controller can be configured to
+>> deliver SGI as a pseudo NMI. So add corresponding handling for SGIs.
+>> 
+>> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+>> ---
+>>  drivers/irqchip/irq-gic-v3.c | 22 +++++++++++++++++-----
+>>  1 file changed, 17 insertions(+), 5 deletions(-)
+>> 
+>> diff --git a/drivers/irqchip/irq-gic-v3.c 
+>> b/drivers/irqchip/irq-gic-v3.c
+>> index d7006ef..be361bf 100644
+>> --- a/drivers/irqchip/irq-gic-v3.c
+>> +++ b/drivers/irqchip/irq-gic-v3.c
+>> @@ -609,17 +609,29 @@ static inline void gic_handle_nmi(u32 irqnr, 
+>> struct pt_regs *regs)
+>>  	if (irqs_enabled)
+>>  		nmi_enter();
+>> 
+>> -	if (static_branch_likely(&supports_deactivate_key))
+>> -		gic_write_eoir(irqnr);
+>>  	/*
+>>  	 * Leave the PSR.I bit set to prevent other NMIs to be
+>>  	 * received while handling this one.
+>>  	 * PSR.I will be restored when we ERET to the
+>>  	 * interrupted context.
+>>  	 */
+>> -	err = handle_domain_nmi(gic_data.domain, irqnr, regs);
+>> -	if (err)
+>> -		gic_deactivate_unhandled(irqnr);
+>> +	if (likely(irqnr > 15)) {
+>> +		if (static_branch_likely(&supports_deactivate_key))
+>> +			gic_write_eoir(irqnr);
+>> +
+>> +		err = handle_domain_nmi(gic_data.domain, irqnr, regs);
+>> +		if (err)
+>> +			gic_deactivate_unhandled(irqnr);
+>> +	} else {
+>> +		gic_write_eoir(irqnr);
+>> +		if (static_branch_likely(&supports_deactivate_key))
+>> +			gic_write_dir(irqnr);
+>> +#ifdef CONFIG_SMP
+>> +		handle_IPI(irqnr, regs);
+>> +#else
+>> +		WARN_ONCE(true, "Unexpected SGI received!\n");
+>> +#endif
+>> +	}
+>> 
+>>  	if (irqs_enabled)
+>>  		nmi_exit();
+> 
+> If there is one thing I would like to avoid, it is to add more ugly
+> hacks to the way we handle SGIs. There is very little reason why SGIs
+> should be handled differently from all other interrupts. They have the
+> same properties, and it is only because of the 32bit legacy that we 
+> deal
+> with them in such a cumbersome way. Nothing that we cannot fix though.
+> 
+> What I would really like to see is first a conversion of the SGIs to
+> normal, full fat interrupts. These interrupts can then be configured as
+> NMI using the normal API.
+> 
+> I think Julien had something along these lines (or was that limited to
+> the PMU?). Otherwise, I'll happily help you with that.
 
-Hi Brian
+OK, to give you an idea of what I am after, here's a small series[1] 
+that
+can be used as a base (it has been booted exactly *once* on a model, and
+is thus absolutely perfect ;-).
 
-The change itself looks O.K.
+There is still a bit of work to be able to actually request a SGI (they
+are hard-wired as chained interrupts so far, as this otherwise changes
+the output of /proc/interrupts, among other things), but you will
+hopefully see what I'm aiming for.
 
-However, please could you change the subject to follow what other
-kirkwood DT patches use:
+Thanks,
 
-arch/arm/boot/dts$ git log --oneline kirkwood-*
-15382b7ea298 ARM: dts: kirkwood: synology: Fix rs5c372 RTC entry
-644763224169 ARM: dts: kirkwood: ts219: disable the SoC's RTC
-6a3b25173cd4 arch: arm: dts: kirkwood-rd88f6281: Remove disabled marvell,dsa reference
-cb92e40411ef arch: arm: dts: Remove disabled marvell,dsa properties
-b5f034845e70 ARM: dts: kirkwood: Fix polarity of GPIO fan lines
-eb59e0920331 arm: dts: kirkwood*.dts: use SPDX-License-Identifier for board using GPL-2.0+
-b3820aa10c1b arm: dts: kirkwood*.dts: use SPDX-License-Identifier for boards using GPL-2.0+/MIT
-e7822263a7a5 arm: dts: kirkwood*.dts: use SPDX-License-Identifier for boards using GPL-2.0
-5beaf4d7ce9e ARM: dts: kirkwood: Fix "debounce-interval" property misspelling
+         M.
 
-Yes, there is a bit of variance, but something like
-
-ARM: dts: kirkwood: Readynas nv2: Add LCD panel
-
-Thanks
-	Andrew
+[1] 
+https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git/log/?h=irq/gic-sgi
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
