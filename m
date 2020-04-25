@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1FA1B8676
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 14:24:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 761701B867B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 14:24:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=CIa3/6RmoVCLDbkl+LHheyYvFDwT9TLo/vwwP+HVrvo=; b=R8e
-	1aMwZ7xuTOBkK52CYu1BZSM0uYWDJaX3KTIuOxcSnjcS4JbVm+VuZdg4gDawUNsVFz8AKRa9VIqUO
-	Ir3qLpxAUlTLLp2vLry98RPMigHU9Udf+9di2s7lQVeQ3WVXcP/XJjekEM471SgzaoA6/CWw894Um
-	QjPJdYiRAq570pTWd5bSzcfLubMqSC+hsLq3NfN9EmMldH6eaJ9o4X3DKXtq8t+RpDYpEvcer+pr1
-	3iNdDJeaTxN934gu/UsreYzmQZRWmnfzL88BPlWPFt/zVLzze7Zb/795yhi4kWzIFVYcV4ohdMgII
-	6YBmVl5lMwOVnzpvVCyJPHS9SQpyWpg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=y/pN06lRGmA5lIPhXhNEHe9diYWQqQHOYgpGNzYGgBE=; b=XryLJNvZek/yIDkqg3jydH7rhj
+	gpu0R7ozmjCtfHlBuWWaLxCRDGdf7GiRO1XLxIOSwF2N9eF1myHXh1ltMJqLWG+487pvQuaIr4XCM
+	SUl5qjYKZ7EGEMsk48TTB+8q0nmD6Igij+I5+rIMjp5v825LipermyyeCakYSSsdtIEUbhdZyH5Fm
+	V3igxjSfAK7S8I+rXp+BrPdYJ4KZ1uE1Wd46IoAP4JIDwFlHswCGr2ITlpS3s6HrzB9EF5DVlZ7TD
+	j8XWyROQJbJnv+MKTEIvoN7HvLsgoZCoaYv5vPaZ5LPZYaVlxEquHWLuBd2njMdA1w/dsgsP4z0Ub
+	/SXllvXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSJqm-0006CK-MI; Sat, 25 Apr 2020 12:24:04 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jSJr1-0006KA-Sa; Sat, 25 Apr 2020 12:24:19 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSJqd-0006Bl-U9; Sat, 25 Apr 2020 12:23:57 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x17so13969720wrt.5;
- Sat, 25 Apr 2020 05:23:53 -0700 (PDT)
+ id 1jSJqh-0006Bm-QA; Sat, 25 Apr 2020 12:24:01 +0000
+Received: by mail-wr1-x441.google.com with SMTP id j2so14713699wrs.9;
+ Sat, 25 Apr 2020 05:23:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
- b=Uh/YxgYrTgZm8cH7x+rLL64FIq82XOzzZDijkhS9sHgRdyfLMD/FImyOANWUtI0X3Z
- MGtQg53S8vd8vXVy0dZQDwHprtF0QDAjizqUCMyFFlRqAaAZiYkEchZr7uDlaryCrDrt
- 7Otk2t/c6Nr85RCeC2V163G1cXTCBflRW7hOomfmDjQdH1VLPppXS3gHbZdKarWReiKs
- srkiAdwQ7LFjNUO21rK/JS0vR35lr2NV5jEFjWfAH/4igFTtSD0jwnvScl9nJ9LSxA7U
- yxhFKMjLoD5qWB3POqMKhwqWvDJe36uIdpFEnfOA7z+P7Klhz90Q3fEn0oRq8J9TuP7O
- 1U9w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=dAhthcMUJWS2ryatnNvAlRrirnhiWLRrICwYDcnU0fU=;
+ b=OgS4LoLMviUc9jZmo5CSUiyC5d06/R2NSa9J963Y+HkIKq5+pRtOFC/HoVz26io9Gm
+ XXEVsl7fFl/F7kmcMCLu3KXY9ShPMruVjZjopmR0FyVRKHbr1lqueJQh3uRuVbp83ZlH
+ nkKTRBggeC/ln0K4h8BKr9S1OqKBlA6gAZpT3YmB1krU5g86L3BAEBaXOs7W0jhMB6SP
+ QnqEOsp0MEvIJwliL4bprN0KQInkKwK9VTBETZkEQzMhHo34BTbHvzsmEfo2I3SheNDc
+ GG2jBRVjLRdtxGx0z4ehEiMMgXHSZjwDRwMTQxzzTy2EwYA9nfihxRbvEpXHZFa/IhdN
+ xurQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
- b=R03RnxQMkBjCegTYVZZiQlenzqM/kOpLL42lMHLb9B43fBcViS+EfuT4V7SrDl64M3
- 6YOgDpZ3wi/2Yl2sS+xZ/q+SBt5SP0GgiyM91ItJ66JWwBO6NcXnuTQM0wG6Rye0qOui
- SjpAKfpCvSQREU0HM8Tt1oGnNoZaSaqMeGzecLLVcuRdSuGSFKfVweEz2dRaPRh4tv+j
- 3EdiYOCgrP5rfx7wfzSCAi+nrEZW6oBZ1vOQ/hVv3pVYsKxSo28qFILugkgmHQd+Xqm9
- X24wpAuIuID/IpuvdwcYBUSMilojJL7+LR0yAZHddX5rKCY7gliulogiaPm3HKCJlPo7
- ztug==
-X-Gm-Message-State: AGi0Pua0SndCUVQ2IG+j8w3USgR/XnGKzsCWnn7I9ybJwtDCNO+MOgRi
- J+Rnu89Sqja+cNPw9G2HUw0=
-X-Google-Smtp-Source: APiQypKqV1QTBOAvxcY1sOfn6lI7/CzLvVHNS8erVBArRldAOpnsmJD7HkBmATIOd07gEBWAxue0aw==
-X-Received: by 2002:adf:e3c2:: with SMTP id k2mr16436150wrm.287.1587817432474; 
- Sat, 25 Apr 2020 05:23:52 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=dAhthcMUJWS2ryatnNvAlRrirnhiWLRrICwYDcnU0fU=;
+ b=tcO1g9OJHFty+id2Ds2PkKNq1LoDT2PRigSRE1pQVAGjT5bCdqc3hFjijVANx6iKcA
+ HobvEBkKbAbZd0Yn+3BBwAjE5RGp5mOaDr2mIFVd7tmTi84BcvUwd+R6vH0xkEhbYMlw
+ YJcovPByJYy3+fSnCgIKfpVAl9V0SNgcUmS8D9gdSzrC/n6TmpVkKx4hCFUEp4zkGQGR
+ px1TeiSMLmHW1SaIuO9WYIdsmiCEw5pKr8omTFES5Pv5F4gLbyoTyOXQueDasPq7u0qd
+ 0ynFcA/agi3lcdAJvXxAc3fsvUUTTBh7UcAjw1pld/3U/b9CAt0zvoqSM8zqGwnf7AW6
+ Ed7A==
+X-Gm-Message-State: AGi0PuacEIxa0fbbWYtFj99pv0YJBDbFsoYWZDMBVhcc8l2Swl4npODm
+ M2OPp73sCZPRlT4LRSzo4zM=
+X-Google-Smtp-Source: APiQypKQLmemHLqJ6Pk25SKVqUP6thUl0EKreCGpgy8kTT3VtJXfWo6ASj6ee9VF9buJyhEACMw7AA==
+X-Received: by 2002:a5d:408d:: with SMTP id o13mr18100044wrp.249.1587817433437; 
+ Sat, 25 Apr 2020 05:23:53 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o6sm3248461wrw.63.2020.04.25.05.23.51
+ by smtp.gmail.com with ESMTPSA id o6sm3248461wrw.63.2020.04.25.05.23.52
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 Apr 2020 05:23:51 -0700 (PDT)
+ Sat, 25 Apr 2020 05:23:52 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/2] arm64: dts: rockchip: remove extra assigned-clocks
- property from &gmac2phy node in rk3328-evb.dts
-Date: Sat, 25 Apr 2020 14:23:44 +0200
-Message-Id: <20200425122345.12902-1-jbx6244@gmail.com>
+Subject: [PATCH 2/2] arm64: dts: rockchip: fix status for &gmac2phy in
+ rk3328-evb.dts
+Date: Sat, 25 Apr 2020 14:23:45 +0200
+Message-Id: <20200425122345.12902-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200425122345.12902-1-jbx6244@gmail.com>
+References: <20200425122345.12902-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_052355_993596_268F6458 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200425_052359_849350_B7E8DF7E 
+X-CRM114-Status: GOOD (  12.63  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jbx6244[at]gmail.com]
@@ -104,32 +107,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are 2 'assigned-clocks' properties in the '&gmac2phy'
-node in 'rk3328-evb.dts', so remove one of them.
-
-Info from clk-rk3328.c:
-
-MUXGRF(SCLK_MAC2PHY, "clk_mac2phy", mux_mac2phy_src_p,
-CLK_SET_RATE_NO_REPARENT,
-RK3328_GRF_MAC_CON2, 10, 1, MFLAGS),
+The status was removed of the '&gmac2phy' node with the apply
+of a patch long time ago, so fix status for '&gmac2phy'
+in 'rk3328-evb.dts'.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3328-evb.dts | 1 -
- 1 file changed, 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
-index 49c4b96da..ab69b493d 100644
+index ab69b493d..ceba9f8d1 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
-@@ -82,7 +82,6 @@
- &gmac2phy {
- 	phy-supply = <&vcc_phy>;
- 	clock_in_out = "output";
--	assigned-clocks = <&cru SCLK_MAC2PHY_SRC>;
+@@ -85,7 +85,7 @@
  	assigned-clock-rate = <50000000>;
  	assigned-clocks = <&cru SCLK_MAC2PHY>;
  	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>;
+-
++	status = "okay";
+ };
+ 
+ &i2c1 {
 -- 
 2.11.0
 
