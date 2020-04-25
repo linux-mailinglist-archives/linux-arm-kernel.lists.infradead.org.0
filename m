@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA6851B878E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 17:56:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55FBB1B878D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 17:56:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kCRxUoMTyeSbxoRBdKqvgREhAV4Cm6mWaLKZB+QNWAk=; b=NnZjuJ5EaoDHtX
-	C41oqeY00DMLO4+ieEgNPVHlydkWOj5LRIaHo2dogwSBjB+Km+WRmvtoYfU+1lO9TbFCu5IJc+JhA
-	o0fy7c0JTIc1j8jo3G2sfsOLAjgTlG1CYYWQp43JNcO3vnRAt1rW7JdmL37WXV7w/s/icaJrkspsj
-	Wl8qS3+AJfS0y466UO/PKPd+Pkgx3fiW1hIWkH8AtzGFZRcboZEdXe2FpCtfaLisvHh2V1tOAFaZi
-	TjU4VM/TZ5+rYHnGdwt3/JxGZoA72U6vJm9r3LNTdJ2QPuAizm9XuXXeKHLf/QHna37HcJvtZ5PB+
-	jTH6brjikMMnfCgB95iw==;
+	List-Owner; bh=gRE5za1Ekf2hR9KI6YUYeFQBgKQx9f6oqBMfgYozqnQ=; b=i5Jqy8DvbtZnN1
+	qYMUMs7s+Mrk93d6cMIx49yOuU0pxi4VrJcHEr/KZ2tU883dphQljSefRaeen+ojPpluEd0frMcZJ
+	kgFTeHSXDA+HQuKTq7Ac+Rwoilomffu037LF4oWJr2hDnxHwf6SRpfwA5X4rOnjSDxrpPM8s+5aSj
+	3ZtkVd3MMXS1na/KwYerzfKEe8x4y9I+rn/CqvYZg1WjuoIYH/ZuycWifOX8CSxtw5zj2pQDicjJR
+	1/5j5kRHWC1zYg4Oj726A4fi6Zb7f6cD8aYPk0x2yH62Y5dvVe9VNzKOIH4SrnuuHHwVBu25I0Kbm
+	t4eZV7KGKDTMjCTElKnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSNAB-0006qN-75; Sat, 25 Apr 2020 15:56:19 +0000
+	id 1jSN9o-0006h1-HR; Sat, 25 Apr 2020 15:55:58 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSN9f-0006el-JY
+ id 1jSN9f-0006em-JY
  for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 15:55:49 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 39C485803BB;
+ by mailnew.nyi.internal (Postfix) with ESMTP id 3AC8E5803BD;
  Sat, 25 Apr 2020 11:55:41 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
  by compute3.internal (MEProxy); Sat, 25 Apr 2020 11:55:41 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=4NDaOwg5jepTh
- MDWgHjK7GYLbHX6IFibl+r4ExTotBU=; b=qjrasrrRtXMYrs6S+OE4vXcKll5qV
- 6GNU2SNqK9tkbOwLgbrIzS+BCJpVXCvl7yYG8TqGBa6HE6z4P/tqPbAU0veD9fMN
- r3e3VistO+tUtmhY9iyG5UfiASAcUkWiQT/L46PpWVVVDKcsuiWok/IhwnRQrk8K
- OzJqUq9a895xA2bVvA2cc0Xqz84dGnvbxKRmtMMgLwF+UbPOG0MODJej/ip9Nf1x
- FgBKXgqthiiWYUQdj9NvF1Ym705mVFl4yNVCHmvARvle82eg4FzwQnllmhBQB9Nl
- /fAyOMOVNU3cM5TzbcxlHoaLy/BsUs6IeRTIyfEWvr3FIbpHteEitBoXw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=ILg74KFQ4/u/i
+ LEbpVIGKPDUn0lqkuyVDFTjVVQFF4M=; b=MyWUkHZZ+Mcwdt7tPDh4nOqgZAEVt
+ n8SU2n8ZR81Fv2JQ69Dyg1uEdGkMtEKpm/soc219ggCkilM6/1D9+OtmqfPOenjB
+ ldoLtqTsxpA3l58j2j2ws+Qsm4ncs+ahXHyZGwqLceD/yhD67JU+9FsvbJJ0KH0H
+ xKUJHUyoJjfvhIlvyuaPQBgQcyettaIm/ENgjGOFgP+fgXERqdExYTLQQvVQ3oZV
+ qCIkbphLwFFe8aJ50Ie2LVfwUjbiiN6EUeCKBKsMIpfGk9Xp/ZhqrJHuekKCLYaY
+ dduUrgJQ+SKwcqcQ2dEDydxkN8MCTy8Vkjd+XDRq0iFdlnkPfiOoL5EYw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=4NDaOwg5jepThMDWgHjK7GYLbHX6IFibl+r4ExTotBU=; b=bCfVWHG8
- LBSQMrCS0v3/C5HT46ThY53/r/E9V4cLosMlpERSPU8by3bZ798hbOvf+h+mpQah
- 9ydx84tj7uwAhDyjnorAVJbQS9R4nRkRGnRJjCR44GgxOyJ7+FvXqHpSZA10Qo3p
- 4/2MLlAXJ0McOkaSk5vWEBELiWiOE4ZPbMILD8ihKWFcKqYNWzoeduMPPWiyX6WK
- r67pQu2LAILHwDztoQ1Xo43q3IowrDxxjFolVkO1vbeThf+W85HsKVFk6t09Mgt4
- IYxps+dfaSAs2auNdclPDzdaI6PJwdm3EGHHxWRoByWkBcId5zrO3zYDaALw0PbU
- guJE4eAXVSqn2Q==
-X-ME-Sender: <xms:eF2kXq86cUymBj8QOYZyEdgMiU2szVqg81_gTjSKw1DYzG2jFRTSuA>
+ fm2; bh=ILg74KFQ4/u/iLEbpVIGKPDUn0lqkuyVDFTjVVQFF4M=; b=UCDRN4Jd
+ LJ1aMZu0e0azt1QAd15mpQLEvkm7c3u+0gP103CIaOw4Q/XGpCcOEGGWyMJifCLg
+ 9ohqiYsQi429Ig1oFNTzBFbW7VW/5MSqi2GRDxWR6smw/FieTf3ZS8BFdRFihbi+
+ 50WCmvYm5421efcI5PBTNEhlHYua0qS7FC5QP1biymBNhbukf3tm84In2sOVExAh
+ GHl83AiZau8VJG05cv33yS4Of5eeOLPnRa0VbVUNsSBGGwqZRoTAq5tPACtbRGKN
+ JyzCbsnjkiymVnm4+scLO6k6toz5ie3GpFcSOEJ2WAC2mCqstpej7t2ACneO7mug
+ luZ/F72ZAiQlhg==
+X-ME-Sender: <xms:eV2kXi1pBLxDckTlLq0uQuE8lEyDr8jXdaOXJDDd04dyCcx-e5eu_Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrheeggdejvdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
  ertddtnecuhfhrohhmpeetlhhishhtrghirhcuhfhrrghntghishcuoegrlhhishhtrghi
  rhesrghlihhsthgrihhrvdefrdhmvgeqnecukfhppeejfedrleefrdekgedrvddtkeenuc
- evlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrlhhishht
+ evlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpegrlhhishht
  rghirhesrghlihhsthgrihhrvdefrdhmvg
-X-ME-Proxy: <xmx:eF2kXqS-pC4-YEAay7uvJmtKdXJOqYaO14SVp18YrP8rC8CO7PB3kw>
- <xmx:eF2kXjz-5O5_2NoF2IAZMy_-QAx9M3gehxQ8c8vMlEC1WLoAZvHkwg>
- <xmx:eF2kXm5eW9jo3LrHUmzPfheAdlwwNzSyVVc0Ol3KlTqS_pjV7G_G6g>
- <xmx:fV2kXmWpZWwkjQV75R64eYAOMQujRkt-z7a_usZqW-Jo7C528rQ3jg>
+X-ME-Proxy: <xmx:eV2kXqZrTsq_qRbUyCTF_6XuyPLGUjZ7BuDwiXHBjViahgBFV0hl6w>
+ <xmx:eV2kXm_x8CUI9jrkObOTtn3Yguxfh63r73e5LW3bdkcDWa5Q8iVRJg>
+ <xmx:eV2kXgZpYVI4tGkPcpJv3AmtMpyCUSWeZFa-C0lng4L1-U64Se0jcw>
+ <xmx:fV2kXi4qQrktnCVTQ7Iav98OQI_z_ThFrs3_xuZPYpAYfcQBnE1LSw>
 Received: from alistair-xps-14z.alistair23.me
  (c-73-93-84-208.hsd1.ca.comcast.net [73.93.84.208])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4A9EB3280064;
- Sat, 25 Apr 2020 11:55:35 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 921A03280067;
+ Sat, 25 Apr 2020 11:55:36 -0400 (EDT)
 From: Alistair Francis <alistair@alistair23.me>
 To: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, marcel@holtmann.org,
  johan.hedberg@gmail.com, linux-bluetooth@vger.kernel.org,
  mripard@kernel.org, wens@csie.org
-Subject: [PATCH v4 2/3] Bluetooth: hci_h5: Add support for binding RTL8723BS
- with device tree
-Date: Sat, 25 Apr 2020 08:55:30 -0700
-Message-Id: <20200425155531.2816584-2-alistair@alistair23.me>
+Subject: [DO-NOT-MERGE][PATCH v4 3/3] arm64: allwinner: Enable Bluetooth and
+ WiFi on sopine baseboard
+Date: Sat, 25 Apr 2020 08:55:31 -0700
+Message-Id: <20200425155531.2816584-3-alistair@alistair23.me>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200425155531.2816584-1-alistair@alistair23.me>
 References: <20200425155531.2816584-1-alistair@alistair23.me>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_085547_850203_A750C912 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20200425_085547_850208_C26E4F37 
+X-CRM114-Status: UNSURE (   9.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -116,30 +116,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vasily Khoruzhick <anarsoul@gmail.com>
+The sopine board has an optional RTL8723BS WiFi + BT module that can be
+connected to UART1. Add this to the device tree so that it will work
+for users if connected.
 
-RTL8723BS is often used in ARM boards, so add ability to bind it
-using device tree.
-
-Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 Signed-off-by: Alistair Francis <alistair@alistair23.me>
 ---
- drivers/bluetooth/hci_h5.c | 2 ++
- 1 file changed, 2 insertions(+)
+ .../allwinner/sun50i-a64-sopine-baseboard.dts | 29 +++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-diff --git a/drivers/bluetooth/hci_h5.c b/drivers/bluetooth/hci_h5.c
-index 106c110efe56..e60b2e0773db 100644
---- a/drivers/bluetooth/hci_h5.c
-+++ b/drivers/bluetooth/hci_h5.c
-@@ -1018,6 +1018,8 @@ static const struct of_device_id rtl_bluetooth_of_match[] = {
- #ifdef CONFIG_BT_HCIUART_RTL
- 	{ .compatible = "realtek,rtl8822cs-bt",
- 	  .data = (const void *)&rtl_vnd },
-+	{ .compatible = "realtek,rtl8723bs-bt",
-+	  .data = (const void *)&rtl_vnd },
- #endif
- 	{ },
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+index 2f6ea9f3f6a2..34357ba143cb 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+@@ -42,6 +42,11 @@ reg_vcc1v8: vcc1v8 {
+ 		regulator-min-microvolt = <1800000>;
+ 		regulator-max-microvolt = <1800000>;
+ 	};
++
++	wifi_pwrseq: wifi_pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		reset-gpios = <&r_pio 0 2 GPIO_ACTIVE_LOW>; /* PL2 */
++	};
  };
+ 
+ &ac_power_supply {
+@@ -103,6 +108,17 @@ ext_rgmii_phy: ethernet-phy@1 {
+ 	};
+ };
+ 
++&mmc1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc1_pins>;
++	vmmc-supply = <&reg_dldo4>;
++	vqmmc-supply = <&reg_eldo1>;
++	mmc-pwrseq = <&wifi_pwrseq>;
++	non-removable;
++	bus-width = <4>;
++	status = "okay";
++};
++
+ &mmc2 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&mmc2_pins>;
+@@ -174,6 +190,19 @@ &uart0 {
+ 	status = "okay";
+ };
+ 
++&uart1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
++	uart-has-rtscts = <1>;
++	status = "okay";
++
++	bluetooth {
++		compatible = "realtek,rtl8723bs-bt";
++		device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
++		host-wake-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++	};
++};
++
+ /* On Pi-2 connector */
+ &uart2 {
+ 	pinctrl-names = "default";
 -- 
 2.26.0
 
