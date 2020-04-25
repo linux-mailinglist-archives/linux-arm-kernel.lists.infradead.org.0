@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6756F1B85B2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 12:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C1FA1B8676
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 14:24:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UG6wxpc+c4TR7sPDlokkpRCFl5dNN+VWcb6P/I9FJzE=; b=dzZ8A+ozWwNU+x
-	yXFPd6A7V/2nuMlEy+op4pGjezuD5U9nXnPzpHR/g9DqF1eEIyNarV0VfJrGIs88UXanNB1CxSC9V
-	H71bauK2412DmEz2O4di16aR08hlOdVL0F75gUpDaslKJZdt11nLRXZtqZRImBn3T7WxkcBDS6Hcz
-	w5EtKQg9mfgGuxiTAGrD0yaroycARPXH8ejNF0doqFN/GMfnoQoj/okrhZEH4CwwOYSHISWCs8CLq
-	1H68Y0jdTDp1J+qRGDRKfJ2lJ6G1gqqUk+FwxUd2mKA2fmZvxO+4m7H4gjjyY941OIFON2i9J3HHW
-	8x1QPUhO/CXJPaxtdKRQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CIa3/6RmoVCLDbkl+LHheyYvFDwT9TLo/vwwP+HVrvo=; b=R8e
+	1aMwZ7xuTOBkK52CYu1BZSM0uYWDJaX3KTIuOxcSnjcS4JbVm+VuZdg4gDawUNsVFz8AKRa9VIqUO
+	Ir3qLpxAUlTLLp2vLry98RPMigHU9Udf+9di2s7lQVeQ3WVXcP/XJjekEM471SgzaoA6/CWw894Um
+	QjPJdYiRAq570pTWd5bSzcfLubMqSC+hsLq3NfN9EmMldH6eaJ9o4X3DKXtq8t+RpDYpEvcer+pr1
+	3iNdDJeaTxN934gu/UsreYzmQZRWmnfzL88BPlWPFt/zVLzze7Zb/795yhi4kWzIFVYcV4ohdMgII
+	6YBmVl5lMwOVnzpvVCyJPHS9SQpyWpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSI4d-0000Tg-GG; Sat, 25 Apr 2020 10:30:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jSJqm-0006CK-MI; Sat, 25 Apr 2020 12:24:04 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSI4I-0000Sj-03
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 10:29:58 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6E0D4206ED;
- Sat, 25 Apr 2020 10:29:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587810593;
- bh=OnIlYiQte8vLjVIxAMAdY+TpiPpcVzuY5O1fmTyq7+Y=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=bv0ALoEnQatFldA7tqW0d52kgR5KLG0rtNDWuoE/MoLoUmFYrh7hOVz0gO+WAxuvI
- 256JDSv6GV/cKQUauCGL5kLz252R3HMn063bNpPBw0CE0vDVASgTpDGJXbnpULI9jS
- MyTz8uzhhm6IeMdtJcKZ25Y0nhhCasKapE3X8KP8=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jSI4F-006HcM-RZ; Sat, 25 Apr 2020 11:29:51 +0100
-Date: Sat, 25 Apr 2020 11:29:50 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Sumit Garg <sumit.garg@linaro.org>
-Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
- pseudo NMI
-Message-ID: <20200425112950.3a4815b6@why>
-In-Reply-To: <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
- <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: sumit.garg@linaro.org, linux-arm-kernel@lists.infradead.org,
- catalin.marinas@arm.com, will@kernel.org, tglx@linutronix.de,
- jason@lakedaemon.net, julien.thierry.kdev@gmail.com, dianders@chromium.org,
- daniel.thompson@linaro.org, jason.wessel@windriver.com,
- kgdb-bugreport@lists.sourceforge.net, linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1jSJqd-0006Bl-U9; Sat, 25 Apr 2020 12:23:57 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x17so13969720wrt.5;
+ Sat, 25 Apr 2020 05:23:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
+ b=Uh/YxgYrTgZm8cH7x+rLL64FIq82XOzzZDijkhS9sHgRdyfLMD/FImyOANWUtI0X3Z
+ MGtQg53S8vd8vXVy0dZQDwHprtF0QDAjizqUCMyFFlRqAaAZiYkEchZr7uDlaryCrDrt
+ 7Otk2t/c6Nr85RCeC2V163G1cXTCBflRW7hOomfmDjQdH1VLPppXS3gHbZdKarWReiKs
+ srkiAdwQ7LFjNUO21rK/JS0vR35lr2NV5jEFjWfAH/4igFTtSD0jwnvScl9nJ9LSxA7U
+ yxhFKMjLoD5qWB3POqMKhwqWvDJe36uIdpFEnfOA7z+P7Klhz90Q3fEn0oRq8J9TuP7O
+ 1U9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
+ b=R03RnxQMkBjCegTYVZZiQlenzqM/kOpLL42lMHLb9B43fBcViS+EfuT4V7SrDl64M3
+ 6YOgDpZ3wi/2Yl2sS+xZ/q+SBt5SP0GgiyM91ItJ66JWwBO6NcXnuTQM0wG6Rye0qOui
+ SjpAKfpCvSQREU0HM8Tt1oGnNoZaSaqMeGzecLLVcuRdSuGSFKfVweEz2dRaPRh4tv+j
+ 3EdiYOCgrP5rfx7wfzSCAi+nrEZW6oBZ1vOQ/hVv3pVYsKxSo28qFILugkgmHQd+Xqm9
+ X24wpAuIuID/IpuvdwcYBUSMilojJL7+LR0yAZHddX5rKCY7gliulogiaPm3HKCJlPo7
+ ztug==
+X-Gm-Message-State: AGi0Pua0SndCUVQ2IG+j8w3USgR/XnGKzsCWnn7I9ybJwtDCNO+MOgRi
+ J+Rnu89Sqja+cNPw9G2HUw0=
+X-Google-Smtp-Source: APiQypKqV1QTBOAvxcY1sOfn6lI7/CzLvVHNS8erVBArRldAOpnsmJD7HkBmATIOd07gEBWAxue0aw==
+X-Received: by 2002:adf:e3c2:: with SMTP id k2mr16436150wrm.287.1587817432474; 
+ Sat, 25 Apr 2020 05:23:52 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id o6sm3248461wrw.63.2020.04.25.05.23.51
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 25 Apr 2020 05:23:51 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] arm64: dts: rockchip: remove extra assigned-clocks
+ property from &gmac2phy node in rk3328-evb.dts
+Date: Sat, 25 Apr 2020 14:23:44 +0200
+Message-Id: <20200425122345.12902-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_032957_522474_2DDA20F3 
-X-CRM114-Status: GOOD (  19.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200425_052355_993596_268F6458 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,87 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: daniel.thompson@linaro.org, jason@lakedaemon.net, catalin.marinas@arm.com,
- dianders@chromium.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, jason.wessel@windriver.com,
- kgdb-bugreport@lists.sourceforge.net, tglx@linutronix.de, will@kernel.org,
- julien.thierry.kdev@gmail.com
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 24 Apr 2020 16:39:12 +0530
-Sumit Garg <sumit.garg@linaro.org> wrote:
+There are 2 'assigned-clocks' properties in the '&gmac2phy'
+node in 'rk3328-evb.dts', so remove one of them.
 
-Hi Sumit,
+Info from clk-rk3328.c:
 
-> With pseudo NMIs enabled, interrupt controller can be configured to
-> deliver SGI as a pseudo NMI. So add corresponding handling for SGIs.
-> 
-> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
-> ---
->  drivers/irqchip/irq-gic-v3.c | 22 +++++++++++++++++-----
->  1 file changed, 17 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-> index d7006ef..be361bf 100644
-> --- a/drivers/irqchip/irq-gic-v3.c
-> +++ b/drivers/irqchip/irq-gic-v3.c
-> @@ -609,17 +609,29 @@ static inline void gic_handle_nmi(u32 irqnr, struct pt_regs *regs)
->  	if (irqs_enabled)
->  		nmi_enter();
->  
-> -	if (static_branch_likely(&supports_deactivate_key))
-> -		gic_write_eoir(irqnr);
->  	/*
->  	 * Leave the PSR.I bit set to prevent other NMIs to be
->  	 * received while handling this one.
->  	 * PSR.I will be restored when we ERET to the
->  	 * interrupted context.
->  	 */
-> -	err = handle_domain_nmi(gic_data.domain, irqnr, regs);
-> -	if (err)
-> -		gic_deactivate_unhandled(irqnr);
-> +	if (likely(irqnr > 15)) {
-> +		if (static_branch_likely(&supports_deactivate_key))
-> +			gic_write_eoir(irqnr);
-> +
-> +		err = handle_domain_nmi(gic_data.domain, irqnr, regs);
-> +		if (err)
-> +			gic_deactivate_unhandled(irqnr);
-> +	} else {
-> +		gic_write_eoir(irqnr);
-> +		if (static_branch_likely(&supports_deactivate_key))
-> +			gic_write_dir(irqnr);
-> +#ifdef CONFIG_SMP
-> +		handle_IPI(irqnr, regs);
-> +#else
-> +		WARN_ONCE(true, "Unexpected SGI received!\n");
-> +#endif
-> +	}
->  
->  	if (irqs_enabled)
->  		nmi_exit();
+MUXGRF(SCLK_MAC2PHY, "clk_mac2phy", mux_mac2phy_src_p,
+CLK_SET_RATE_NO_REPARENT,
+RK3328_GRF_MAC_CON2, 10, 1, MFLAGS),
 
-If there is one thing I would like to avoid, it is to add more ugly
-hacks to the way we handle SGIs. There is very little reason why SGIs
-should be handled differently from all other interrupts. They have the
-same properties, and it is only because of the 32bit legacy that we deal
-with them in such a cumbersome way. Nothing that we cannot fix though.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-What I would really like to see is first a conversion of the SGIs to
-normal, full fat interrupts. These interrupts can then be configured as
-NMI using the normal API.
-
-I think Julien had something along these lines (or was that limited to
-the PMU?). Otherwise, I'll happily help you with that.
-
-Thanks,
-
-	M.
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+index 49c4b96da..ab69b493d 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+@@ -82,7 +82,6 @@
+ &gmac2phy {
+ 	phy-supply = <&vcc_phy>;
+ 	clock_in_out = "output";
+-	assigned-clocks = <&cru SCLK_MAC2PHY_SRC>;
+ 	assigned-clock-rate = <50000000>;
+ 	assigned-clocks = <&cru SCLK_MAC2PHY>;
+ 	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>;
 -- 
-Jazz is not dead. It just smells funny...
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
