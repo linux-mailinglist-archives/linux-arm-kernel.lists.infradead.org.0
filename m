@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 324401B8916
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 21:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 120CF1B892D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Apr 2020 21:54:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fWNpgrYwII8St4X1F+lPu1Oaxbb6MjN/VmiEGpRZsLI=; b=MQy35B2mPOrEhX
-	cFZMGmfZndQ0FC+0C3cXjBSZZQxy52dSZ8r+AsALTR3betw3Us5mKIhpPq07TWY60sfHkA8Rt5aJ0
-	IANEK/cXCs9vN8sLF2flZ1imiiMwROsyTJhBydgiMRDm2qdNTBDPijkD8gwwqFR2ul+4iXZVAycKN
-	72jpZB02lIuxCZcNhcvo1Lr6GgL4DAdY06T/H75wVXgGSD6eYZy0hUj3kDB2+i2p7VyPJPc0k0Bnm
-	8t6+Ijx1q6F07xPdKRnQ/V1enhXyj4WKOK6fffRYBm9ww1Kqb7qQ3vUSufW7CuoN21QCMkCL6Fy4k
-	IzpVmoRRxpnc51jrQt2Q==;
+	List-Owner; bh=ZMqQXrj5YEl9x8Bb+W7IEJKYRDYWKxne71OOUuoVzSs=; b=Al3+HjNtDOhOYN
+	eMvyRs5N+vV5zOnDb7SW1ntSEElJdDDeW8JBR28e89yQvds3fjSykjiV9maKYGVeys5vOtORjFZrA
+	kzoa31vNweiFTy4TwRdcdun4u6auOSp+x+w3izBb2bJgG7TtbqkeQbA3BDYaT6KYltDh56LZxNcuV
+	vuaVEtFI8pkBdT5xH3AmSalkmGPDAHbBteBZ1nGc22NsTCzIPmpMb89L5UjDTkE60LWZcS0DzHpsd
+	q/Al9q2PJnktTlDfHTx4HNz6nb27ZDO+9Fyl4g/qWtDNItPF3mf4nroJea6C0hQnAuJqezDUFh7cS
+	VS2xkvo7ZKTd8TTAHL2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSQeP-0000Om-H0; Sat, 25 Apr 2020 19:39:45 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jSQsr-000269-98; Sat, 25 Apr 2020 19:54:41 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSQeB-0000Lx-Fm
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 19:39:36 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id a32so5402197pje.5
+ id 1jSQsh-00025O-QC
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 19:54:33 +0000
+Received: by mail-io1-xd42.google.com with SMTP id p10so14407356ioh.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 25 Apr 2020 12:39:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:content-transfer-encoding:in-reply-to:references
- :subject:from:cc:to:date:message-id:user-agent;
- bh=FFJ+RlIhSOPxhMwKLc97vVcR1rOxDF8GYeyH64M0ydo=;
- b=i3Lalq5cuGCVKoML246R4E8KH9Vsvt1oOUaMLmiW0f02n1iwTSO2C7ec3YfI6FkZY5
- dyC8mB7Y4nHzjjPkMlSt5hkzbzMJMeRAj9M3k2cZtyFEmLRfmaNs5b5z/Q3XkJgJNsIK
- WAVu/yAWl3WZ2xxyUxnFkKt7QWECEHLjbbvzo=
+ Sat, 25 Apr 2020 12:54:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mfnbKcCpJbWCQA0NeNDV+FBZxx+MPYQOlwXCT1OUxm4=;
+ b=oEnWezvbQ0wLmJ3qpYZUMG6fbo/KEIDRrkdrDctwvp4YFJ9YXWnIq/LA+w0I00Cw0B
+ aad4R8G5mNnojDY8/cxBsmY/RSiVeIVuJ5o8q4hp614Bs8LNlsLso3VMks3z+KGINn0v
+ ctGRZSO0HmO6lzjhR8Gi9m3nEUICojaY0OfFGtG4LyA3aJrh/CBsBzqrMcymk3lN8ukc
+ 5sHaRvEBwI7t0MF0KipcbccT2AIcBCkyRGzfrLXsVsT2bdol5TR8M0tZLUW/LarkmKR0
+ 1CCsknhX4Ymmh9i50cZ7XyfS9zGOS6cnRslBa7hfeMcmb94Pmer7ul2fRfIok0/859Uk
+ cosw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:content-transfer-encoding
- :in-reply-to:references:subject:from:cc:to:date:message-id
- :user-agent;
- bh=FFJ+RlIhSOPxhMwKLc97vVcR1rOxDF8GYeyH64M0ydo=;
- b=rPHeApL0wdg5mehnnBTXCQdBjgviL4Hxt3voB3zZzx3ctV2Aj+EnRbQ4A5cHXPQN8G
- m/9WHUls27y/5nQ85RjdgSw4GEbdF0CFq+HWb5e+bhMJWLC90CHJYuvWgo8m+I6BZlo3
- aKvm7cPWascGzjL1n8XCjEVWXAVzgsX4oGYYgFEKWOorqguqLJMPEViHea+c+MVwI+2e
- FAjd3ZRY3vUgiT8VtF/DYYu16hXOzcjvi028hLI/1rzoqe2FHp3TI8qH/xoFen4rhwpJ
- RtX92WVbI7YJbhUdFX+ay/1J4PNcdWrP55J/dAavHHI+1FN686yvqhrws7tRHOMhlqL9
- u8Lw==
-X-Gm-Message-State: AGi0PuYCDWgl1NG0bi8Cgj5TmwdlRihbco91AMF/pI7n79OLUgt+CxGt
- k2vHKqH94QoXMLIAWFC5ml4dqw==
-X-Google-Smtp-Source: APiQypJjb7QoZatoPvZ0C5SA3OcumKCIMFSbn7THfXcy0NM0yccE/7t+zWNjac26pi33jCqWjxp58A==
-X-Received: by 2002:a17:90a:d709:: with SMTP id
- y9mr14198065pju.50.1587843570681; 
- Sat, 25 Apr 2020 12:39:30 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id n16sm8679956pfq.61.2020.04.25.12.39.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 25 Apr 2020 12:39:30 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mfnbKcCpJbWCQA0NeNDV+FBZxx+MPYQOlwXCT1OUxm4=;
+ b=bknWflt+TM3jvmMp6STPBV4rmV0CCMfoAB7HSIxJKSq6sXtz/uu9vs5gaJPPqVkb3t
+ DkTdWAJqEvrrlZINojx3xb3kvmgwC6KFAtQWD/+sDNypHDUJ80StbovesNpTt4e91JQL
+ JeMduMBXGOIfbLau7fWg33USXLIXBpnttMV5D5BOHZXjFHbWaXdZjFcBYvh0921wLX/w
+ sHxSaH9vNj3pf3tr1VEpiC3By9JzSVEh2tHKOKpnyA1sC2EDN+eFW/lX/lJh8gkAuUqV
+ QGEdFmuqBB2wELPRYdpnUvrk9lSRfO+4SKX2ssvKeQdKGmRDiXnJUKchXg0iC7Keohfw
+ +qxA==
+X-Gm-Message-State: AGi0PuaYmkZqjEQ0DjPb7DTMELsuBtXuzU1kuAQLDrv2I7NEJ293FPBq
+ x7X2LJvj1gFcjzFonjHytr4Z7tekTN/E9Llxnvo=
+X-Google-Smtp-Source: APiQypJ9fBT7OSqx8QDi4cFo8f9HY1o/iD3UGfefjuzCIkvL6m2Qz8zpz+Fc5LCLfaghvnfs1hSk6OGANzTFANVcYK0=
+X-Received: by 2002:a02:cbac:: with SMTP id v12mr13485718jap.103.1587844469555; 
+ Sat, 25 Apr 2020 12:54:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200424111644.27970-1-saiprakash.ranjan@codeaurora.org>
-References: <20200424111644.27970-1-saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCH] arm64: dts: qcom: sc7180: Support ETMv4 power management
-From: Stephen Boyd <swboyd@chromium.org>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, devicetree@vger.kernel.org
-Date: Sat, 25 Apr 2020 12:39:29 -0700
-Message-ID: <158784356931.117437.2821018841391441959@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+References: <cover.1587840667.git.syednwaris@gmail.com>
+ <66296904e2ffce670c14576dfc7ea56417c670ab.1587840668.git.syednwaris@gmail.com>
+ <20200425192607.qa2jr7ef2g726txr@wunner.de>
+In-Reply-To: <20200425192607.qa2jr7ef2g726txr@wunner.de>
+From: Syed Nayyar Waris <syednwaris@gmail.com>
+Date: Sun, 26 Apr 2020 01:24:18 +0530
+Message-ID: <CACG_h5pVEQ8+LGogWo4Ea+8OcRz1edudJPWL8SytGdaAc8xabw@mail.gmail.com>
+Subject: Re: [PATCH v2 3/6] gpio: thermal: Utilize for_each_set_clump macro
+To: Lukas Wunner <lukas@wunner.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_123931_519908_BD8B84B4 
-X-CRM114-Status: UNSURE (   6.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200425_125431_849574_A297E972 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [syednwaris[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,25 +94,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Kaehlcke <mka@chromium.org>,
+Cc: amit.kucheria@verdurent.com, yamada.masahiro@socionext.com,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ bgolaszewski@baylibre.com, linux-gpio@vger.kernel.org,
+ linux-pm@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>, rui.zhang@intel.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Sai Prakash Ranjan (2020-04-24 04:16:44)
-> Now that deep idle states are properly supported on SC7180,
-> we need to add "coresight-loses-context-with-cpu" property
-> to avoid failure of trace session because of losing context
-> on entering deep idle states.
-> 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> ---
+On Sun, Apr 26, 2020 at 12:56 AM Lukas Wunner <lukas@wunner.de> wrote:
+>
+> On Sun, Apr 26, 2020 at 12:35:02AM +0530, Syed Nayyar Waris wrote:
+> > This patch replaces all the existing for_each_set_clump8 and related
+> > function calls in the drivers (gpio and thermal) with the equivalent
+> > new generic for_each_set_clump macro.
+>
+> Why are patches [3/6] and [4/6] included in v2 even though William
+> said they should be ignored?
+>
+> Again, replacing for_each_set_clump8() with for_each_set_clump()
+> does not provide any benefit but may impact performance and makes
+> the code more difficult to follow.  So once more, please do not
+> change drivers which are known to work fine with 8 bit clumps,
+> specifically gpio-max3191x.c and gpio-74x164.c.
+>
+> Please in the future include a list of the changes you've made
+> in the cover letter, not just in each individual patch.
+>
+> Thanks,
+>
+> Lukas
 
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+Hi Lukas,
+Your concerns are noted. [3/6] and [4/6] won't be included in the next
+version v3 of the patchset.
+
+Regards
+Syed Nayyar Waris
 
 _______________________________________________
 linux-arm-kernel mailing list
