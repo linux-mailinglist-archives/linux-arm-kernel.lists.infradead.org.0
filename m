@@ -2,87 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C89431B90E5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 16:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5C511B90FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 16:57:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bFsKdN8tOZnHRpdOxy9kexEQ/rztCDltbNNggBkIqa0=; b=fT0pGBz/oY50Tb
-	8gPs7nJOmWoDOxnl1Cwi74NYwmkoA3vWSjffT+ygwLc4BZHYFGPza/07YiSHJIvkuxJRK9wUuTmbO
-	m9We6TR6nmgV0QgSuGLtWKZV0oNYTNdvS4E/TZdDGdSeQwPjk5mJPEEjGyBihrYQkG7B2UKU7T5rw
-	hWGkL4fGZLybrhnRYqPd9WEchu9h9/4n3n0yYWiATdAivFgkJZFCbYAyuklhzpj5IlwMqFTzPc8th
-	2mZYijD4c5S2KT6Z8LJEJlKH3sQq+wgrHzkoCSxII6WgxHEdfj+W00DE5spkGzZVpwD4qOqZpoO0L
-	ZxPQXjDQgmZZvcA6kSrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i1NWHo+lCEshBqZOHiTrHiPf4ivrD25cx+VEc5ZVkMw=; b=o8iFff6mHrrsGz
+	MjO8Aw+kanP/9LizVKaZlKnSg4faBcktIqyhvxo3XU9NqgoUh3tL2UQSgse2e4ZgM/s98KFPIuCQ8
+	X5KIJKOU7LO/UD6udql6Hvm+xQLJ5EsBZ7LR0MR8EbyMzl4KzOeQ1HqvssdA5YkXGAo1XBCzgHI9S
+	Mou+N5+fxPXqN7GiaTx9DkRNTrok11PG2CNecDfO8kaQ2TlYsJcY23y/Ez6hdVvsHekFqL+ig7EfF
+	Wmg6TpdrY1Xv8EiN9etQn0bNcus6NUKTbuBHoqOSzcCC9pkCMRQRk1UsPjJ7mp6e0Lwj/vSxc9KKJ
+	pfg7DgLjQ96B5aIQS5xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSiPq-0000lV-6K; Sun, 26 Apr 2020 14:37:54 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jSiio-00058V-8j; Sun, 26 Apr 2020 14:57:30 +0000
+Received: from mail-bn8nam11olkn2094.outbound.protection.outlook.com
+ ([40.92.20.94] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSiPf-0000kD-Em
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 14:37:45 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1587911861; h=Content-Transfer-Encoding: MIME-Version:
- Message-Id: Date: Subject: Cc: To: From: Sender;
- bh=ui6MOHK4ycwTBeNfWOrKG5eJnPzmTryDDwOQywkBnZM=;
- b=CjKwvHLrYHL2F5UYsWvyp9kgw+MDi0dv+1wkWH8Tzch9qzP/bRjse3+4p0zwCVyCUcPFaWLP
- 9Rg9FsV9iwLJDmB3WkZEQYODAyvz1Z+DfcmgP4lxB+BtYvtbxz7BkmEJG4GZ7x/g/RMRz+MW
- xB6WurdcuhTn7v58HkORRy5TGO8=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ea59cb3.7ffa51c928b8-smtp-out-n02;
- Sun, 26 Apr 2020 14:37:39 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 564CAC433F2; Sun, 26 Apr 2020 14:37:38 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from blr-ubuntu-311.qualcomm.com
- (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id BDF9AC433D2;
- Sun, 26 Apr 2020 14:37:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org BDF9AC433D2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mike Leach <mike.leach@linaro.org>
-Subject: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-Date: Sun, 26 Apr 2020 20:07:25 +0530
-Message-Id: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
-X-Mailer: git-send-email 2.22.0
+ id 1jSiih-00057P-94
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 14:57:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ay5aXiPmGAU6gIRc5Fw8oYXPk6MUvy9D8u6NdUxVEVZYoEQoGdfTaySDVZZ3ItQchb8oMYnChTW9wG1ZjKCQOigUwSVNZz70mpFeBjxsxFv9grdwgMPC/cc41emNEDSa0LTsBcZgpnhZKWKTS7k6AXEftHkTF1Ex5DnMbfrZSqZ5LYsyfHXurW1MJLk6kKm/fAL/2ku7AZtcW/Ga/ANPudN6eo0zRl/otG4o/V11glnJDyd9xZbQYrk1aeeoBXPd47CBMTIYYg1XA6i/YybDGQFOI4bRZiox09WCLmKYqZT2DqrylPEmsmEaNUTIffm+poV5/BMhQr2BhwYtiN6U8A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rCl3rY0wkUejQntKOCRLgSoEtSbDA20DEt0Lp6EAeQw=;
+ b=XcydcxaB3GWWwBg0qhKGybdwe+RfKugK7++6EZoTXxit5PUP2Tka24Vf1SyXeIZTcly1u6ywzx9j47jCjranR1d6s/UdgvsHW6GR6Yfjik8Xq1GW5dodHLJicGnN9vU+1/zziYx307tz/zzHOkTQz6gr6xsL17mUiR4RUgM0Zx0EsG15vEBhGQKXKVjsTd4tsMPG245r1gI9J94S/ADWrm5DFl/aaTA4wSJpeZfAJNbkts/msCXwF2XJH69Jl7vfVDKbzI485GpRQoZDp7ZRXCF3EqHl6CCIaCAe3u0Ejs8swsvxDKfa4TtCY3uWDF56z32l2G0tl7KSHIB6gRSyOQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
+ header.d=live.ca; arc=none
+Received: from CO1NAM11FT032.eop-nam11.prod.protection.outlook.com
+ (2a01:111:e400:3861::47) by
+ CO1NAM11HT148.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::275)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15; Sun, 26 Apr
+ 2020 14:57:17 +0000
+Received: from BN6PR04MB0660.namprd04.prod.outlook.com
+ (2a01:111:e400:3861::4d) by CO1NAM11FT032.mail.protection.outlook.com
+ (2a01:111:e400:3861::218) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15 via Frontend
+ Transport; Sun, 26 Apr 2020 14:57:17 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:E81CF6BFCFE073454522CA0EAAF72EEBFDD4626B33AA54E33244858FAA4E44A9;
+ UpperCasedChecksum:B59FE0D74AE6107E11CB223A88241A401D292CCDCAC3F731F6A2F9AC6F7CB0FE;
+ SizeAsReceived:9919; Count:50
+Received: from BN6PR04MB0660.namprd04.prod.outlook.com
+ ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
+ ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2937.020; Sun, 26 Apr 2020
+ 14:57:17 +0000
+Subject: Re: [PATCH v7 08/12] arm: dts: s5pv210: Add node for SGX 540
+To: Paul Cercueil <paul@crapouillou.net>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>
+References: <cover.1587760454.git.hns@goldelico.com>
+ <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
+ <NYBE9Q.YH08US7A7DC3@crapouillou.net>
+From: Jonathan Bakker <xc-racer2@live.ca>
+Message-ID: <BN6PR04MB0660A180D2069848E5C03D7EA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
+Date: Sun, 26 Apr 2020 07:57:12 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+In-Reply-To: <NYBE9Q.YH08US7A7DC3@crapouillou.net>
+Content-Language: en-US
+X-ClientProxiedBy: CO2PR05CA0059.namprd05.prod.outlook.com
+ (2603:10b6:102:2::27) To BN6PR04MB0660.namprd04.prod.outlook.com
+ (2603:10b6:404:d9::21)
+X-Microsoft-Original-Message-ID: <c7fba899-d520-559f-d14c-1d92f629329e@live.ca>
 MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [IPv6:2001:569:fb67:7300:9f89:4b96:de0b:cd14]
+ (2001:569:fb67:7300:9f89:4b96:de0b:cd14) by
+ CO2PR05CA0059.namprd05.prod.outlook.com (2603:10b6:102:2::27) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2958.12 via Frontend Transport; Sun, 26 Apr 2020 14:57:14 +0000
+X-Microsoft-Original-Message-ID: <c7fba899-d520-559f-d14c-1d92f629329e@live.ca>
+X-TMN: [OmgafuzCUqVRB2i/C6FSFbGQe5x8huTGu/6RGTYJ87Y/NFFW81q0f1xbGex4LyHn]
+X-MS-PublicTrafficType: Email
+X-IncomingHeaderCount: 50
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-Correlation-Id: cbade908-3c53-44a5-a6de-08d7e9f21cd1
+X-MS-TrafficTypeDiagnostic: CO1NAM11HT148:
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: QwTfGRGC0v5LCTZiqw648BnLUPKmgF4piL5vYUxxnRbFF3jRYYLJaiiCpWhoMoXyun1bOoXNLWVAufhHYJdce/SE0dKQZD9b+gEu1+6CRnw86wcRbtWcpD2FEWg37aNVZWOPo4o/0GXz8vBkYzW0CD47dOBdvOuxcO8Tnayi23egP0iSstBHimHh8antuNuFgNGybBGfDQzllIG4jKC04Q==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:; SFS:; DIR:OUT; SFP:1901; 
+X-MS-Exchange-AntiSpam-MessageData: 8808OTabogw8sV0VMpFUQqObuTnPvfdGv11P400fYeD1iMYdPEq4G/dgFkf3NmGGEEbDa05lFeFmKjbQM3b5L96FQ5G2pK/UROup5LS7M9B2DgKscxJaRp7dNO3Vs1bYl1PB7cvDahfb/2GF9jEYWhElQxuXGrx3RBRkjC+ffFTTcYivf2OhXZrGotJ99khwYRshb5dW/r/Vh1L0XgUPvQ==
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbade908-3c53-44a5-a6de-08d7e9f21cd1
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Apr 2020 14:57:17.5591 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_073743_555633_46647A58 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200426_075723_321399_D5CB9CB4 
+X-CRM114-Status: GOOD (  15.79  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.26 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.92.20.94 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [xc-racer2[at]live.ca]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xc-racer2[at]live.ca]
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 1.6 FORGED_MUA_MOZILLA     Forged mail pretending to be from Mozilla
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,121 +126,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Stephen Boyd <swboyd@chromium.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ letux-kernel@openphoenux.org, Paul Burton <paulburton@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ devicetree@vger.kernel.org,
+ =?UTF-8?Q?Beno=c3=aet_Cousson?= <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since commit 30af4fb619e5 ("coresight: dynamic-replicator:
-Handle multiple connections"), we do not make sure that
-the other port is disabled when the dynamic replicator is
-enabled. This is seen to cause the CPU hardlockup atleast
-on SC7180 SoC with the following topology when enabling ETM
-with ETR as the sink via sysfs. Since there is no trace id
-logic in coresight yet to make use of multiple sinks in
-parallel for different trace sessions, disable the other
-port when one port is turned on.
-
-       etm0_out
-	  |
-   apss_funnel_in0
-          |
-  apss_merge_funnel_in
-          |
-      funnel1_in4
-	  |
-   merge_funnel_in1
-	  |
-    swao_funnel_in
-          |
-        etf_in
-	  |
-  swao_replicator_in
-          |
-   replicator_in
-	  |
-        etr_in
-
-  Kernel panic - not syncing: Watchdog detected hard LOCKUP on cpu 0
-  CPU: 7 PID: 0 Comm: swapper/7 Tainted: G S  B             5.4.25 #100
-  Hardware name: Qualcomm Technologies, Inc. SC7180 IDP (DT)
-  Call trace:
-   dump_backtrace+0x0/0x188
-   show_stack+0x20/0x2c
-   dump_stack+0xdc/0x144
-   panic+0x168/0x370
-   arch_seccomp_spec_mitigate+0x0/0x14
-   watchdog_timer_fn+0x68/0x290
-   __hrtimer_run_queues+0x264/0x498
-   hrtimer_interrupt+0xf0/0x22c
-   arch_timer_handler_phys+0x40/0x50
-   handle_percpu_devid_irq+0x8c/0x158
-   __handle_domain_irq+0x84/0xc4
-   gic_handle_irq+0x100/0x1c4
-   el1_irq+0xbc/0x180
-   arch_cpu_idle+0x3c/0x5c
-   default_idle_call+0x1c/0x38
-   do_idle+0x100/0x280
-   cpu_startup_entry+0x24/0x28
-   secondary_start_kernel+0x15c/0x170
-  SMP: stopping secondary CPUs
-
-Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Tested-by: Stephen Boyd <swboyd@chromium.org>
----
-Changes since RFC:
- * Reworded commit text and included the topology on SC7180.
----
- .../hwtracing/coresight/coresight-replicator.c    | 15 ++++++++++-----
- 1 file changed, 10 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index e7dc1c31d20d..f4eaa38f8f43 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -66,14 +66,16 @@ static int dynamic_replicator_enable(struct replicator_drvdata *drvdata,
- 				     int inport, int outport)
- {
- 	int rc = 0;
--	u32 reg;
-+	u32 reg0, reg1;
- 
- 	switch (outport) {
- 	case 0:
--		reg = REPLICATOR_IDFILTER0;
-+		reg0 = REPLICATOR_IDFILTER0;
-+		reg1 = REPLICATOR_IDFILTER1;
- 		break;
- 	case 1:
--		reg = REPLICATOR_IDFILTER1;
-+		reg0 = REPLICATOR_IDFILTER1;
-+		reg1 = REPLICATOR_IDFILTER0;
- 		break;
- 	default:
- 		WARN_ON(1);
-@@ -87,8 +89,11 @@ static int dynamic_replicator_enable(struct replicator_drvdata *drvdata,
- 		rc = coresight_claim_device_unlocked(drvdata->base);
- 
- 	/* Ensure that the outport is enabled. */
--	if (!rc)
--		writel_relaxed(0x00, drvdata->base + reg);
-+	if (!rc) {
-+		writel_relaxed(0x00, drvdata->base + reg0);
-+		writel_relaxed(0xff, drvdata->base + reg1);
-+	}
-+
- 	CS_LOCK(drvdata->base);
- 
- 	return rc;
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUGF1bCwKCk9uIDIwMjAtMDQtMjYgNTo1NiBhLm0uLCBQYXVsIENlcmN1ZWlsIHdyb3RlOgo+
+IAo+IAo+IExlIHZlbi4gMjQgYXZyaWwgMjAyMCDDoCAyMjozNCwgSC4gTmlrb2xhdXMgU2NoYWxs
+ZXIgPGhuc0Bnb2xkZWxpY28uY29tPiBhIMOpY3JpdCA6Cj4+IEZyb206IEpvbmF0aGFuIEJha2tl
+ciA8eGMtcmFjZXIyQGxpdmUuY2E+Cj4+Cj4+IEFsbCBzNXB2MjEwIGRldmljZXMgaGF2ZSBhIFBv
+d2VyVlIgU0dYIDU0MCAocmV2aXNpb24gMTIwKSBhdHRhY2hlZC4KPj4KPj4gVGhlcmUgaXMgbm8g
+ZXh0ZXJuYWwgcmVndWxhdG9yIGZvciBpdCBzbyBpdCBjYW4gYmUgZW5hYmxlZCBieSBkZWZhdWx0
+Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBKb25hdGhhbiBCYWtrZXIgPHhjLXJhY2VyMkBsaXZlLmNh
+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBILiBOaWtvbGF1cyBTY2hhbGxlciA8aG5zQGdvbGRlbGljby5j
+b20+Cj4+IC0tLQo+PiDCoGFyY2gvYXJtL2Jvb3QvZHRzL3M1cHYyMTAuZHRzaSB8IDEzICsrKysr
+KysrKysrKysKPj4gwqAxIGZpbGUgY2hhbmdlZCwgMTMgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZm
+IC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvczVwdjIxMC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9k
+dHMvczVwdjIxMC5kdHNpCj4+IGluZGV4IDJhZDY0MmY1MWZkOS4uYWJiZGRhMjA1YzFiIDEwMDY0
+NAo+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zNXB2MjEwLmR0c2kKPj4gKysrIGIvYXJjaC9h
+cm0vYm9vdC9kdHMvczVwdjIxMC5kdHNpCj4+IEBAIC01MTIsNiArNTEyLDE5IEBAIHZpYzM6IGlu
+dGVycnVwdC1jb250cm9sbGVyQGYyMzAwMDAwIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+ICNpbnRlcnJ1cHQtY2VsbHMgPSA8MT47Cj4+IMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4KPj4gK8Kg
+wqDCoMKgwqDCoMKgIGdwdTogZ3B1QGYzMDAwMDAwIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgY29tcGF0aWJsZSA9ICJzYW1zdW5nLHM1cHYyMTAtc2d4NTQwLTEyMCI7Cj4+ICvCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwweGYzMDAwMDAwIDB4MTAwMDA+Owo+PiArwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHQtcGFyZW50ID0gPCZ2aWMyPjsKPj4gK8KgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgaW50ZXJydXB0cyA9IDwxMD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IGNsb2NrLW5hbWVzID0gImNvcmUiOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjbG9ja3Mg
+PSA8JmNsb2NrcyBDTEtfRzNEPjsKPj4gKwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBhc3Np
+Z25lZC1jbG9ja3MgPSA8JmNsb2NrcyBNT1VUX0czRD4sIDwmY2xvY2tzIERPVVRfRzNEPjsKPj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYXNzaWduZWQtY2xvY2stcmF0ZXMgPSA8MD4sIDw2Njcw
+MDAwMD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFzc2lnbmVkLWNsb2NrLXBhcmVudHMg
+PSA8JmNsb2NrcyBNT1VUX01QTEw+Owo+IAo+IFdoYXQgYXJlIHRoZXNlIGNsb2NrcyBmb3IsIGFu
+ZCB3aHkgYXJlIHRoZXkgcmVwYXJlbnRlZCAvIHJlY2xvY2tlZD8KPiAKPiBTaG91bGRuJ3QgdGhl
+eSBiZSBwYXNzZWQgdG8gJ2Nsb2NrcycgYXMgd2VsbD8KPiAKPiAtUGF1bAo+IAoKVGhlIEczRCBj
+bG9jayBzeXN0ZW0gY2FuIGhhdmUgbXVsdGlwbGUgcGFyZW50cywgYW5kIGZvciBzdGFibGUgb3Bl
+cmF0aW9uCml0J3MgcmVjb21tZW5kZWQgdG8gdXNlIHRoZSBNUExMIGNsb2NrIGFzIHRoZSBwYXJl
+bnQgKHdoaWNoIGluIHR1cm4KaXMgYWN0dWFsbHkgYSBtdXggYXMgd2VsbCkuICBNT1VUX0czRCBp
+cyBzaW1wbHkgdGhlIG11eCBmb3IgQ0xLX0czRAooU0dYIGNvcmUgY2xvY2spLCBET1VUX0czRCBp
+cyB0aGUgZGl2aWRlci4gIERPVVRfRzNEIGNvdWxkIGVxdWFsbHkgYmUgQ0xLX0czRAooYW5kIHBy
+b2JhYmx5IHNob3VsZCBiZSwgZm9yIHJlYWRhYmlsaXR5KSBhcyBDTEtfRzNEIGlzIHNpbXBseSB0
+aGUgZ2F0ZSBhbmQKRE9VVF9HM0QgaXMgdGhlIGRpdmlkZXIgZm9yIGl0LgoKVGhlIFNHWCBjbG9j
+ayBsYXlvdXQgb24gUzVQVjIxMCBsb29rcyBzb21ldGhpbmcgbGlrZSB0aGlzOgoKICAgICAgICBN
+T1VUX01QTEwgLS0tLS0tLS0tLS0+IE1PVVRfRzNEIC0tLT4gRE9VVF9HM0QgIC0tLT4gQ0xLX0cz
+RAooc2VsZWN0YWJsZSBwYXJlbnQgY2xvY2spICAgICAgKG11eCkgICAgLS0tPiAoZGl2aWRlcikg
+LS0tPiAoZ2F0ZSkKClRoaXMgaXMgZmFpcmx5IGNvbW1vbiBmb3Igb2xkZXIgU2Ftc3VuZyBTb0Nz
+LCBlZyBoYXZpbmcgYSBsb29rIGF0CmFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQyMTAtdW5pdmVy
+c2FsX2MyMTAuZHRzIHlvdSBjYW4gc2VlIHRoYXQKdGhlIEZJTUMgY2xvY2tzIGFyZSBwYXJlbnRl
+ZCB0byBNUExMIGFuZCBoYXZlIGEgcmF0ZSBzZXQuCgo+PiArwqDCoMKgwqDCoMKgwqAgfTsKPj4g
+Kwo+PiDCoMKgwqDCoMKgwqDCoMKgIGZpbWQ6IGZpbWRAZjgwMDAwMDAgewo+PiDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJzYW1zdW5nLHM1cHYyMTAtZmltZCI7Cj4+IMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHQtcGFyZW50ID0gPCZ2aWMyPjsKPj4gLS0g
+Cj4+IDIuMjUuMQo+Pgo+IAo+IAoKVGhhbmtzLApKb25hdGhhbgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
