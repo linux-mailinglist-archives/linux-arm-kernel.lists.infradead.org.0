@@ -2,119 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5C511B90FD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 16:57:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 580621B9133
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 17:35:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i1NWHo+lCEshBqZOHiTrHiPf4ivrD25cx+VEc5ZVkMw=; b=o8iFff6mHrrsGz
-	MjO8Aw+kanP/9LizVKaZlKnSg4faBcktIqyhvxo3XU9NqgoUh3tL2UQSgse2e4ZgM/s98KFPIuCQ8
-	X5KIJKOU7LO/UD6udql6Hvm+xQLJ5EsBZ7LR0MR8EbyMzl4KzOeQ1HqvssdA5YkXGAo1XBCzgHI9S
-	Mou+N5+fxPXqN7GiaTx9DkRNTrok11PG2CNecDfO8kaQ2TlYsJcY23y/Ez6hdVvsHekFqL+ig7EfF
-	Wmg6TpdrY1Xv8EiN9etQn0bNcus6NUKTbuBHoqOSzcCC9pkCMRQRk1UsPjJ7mp6e0Lwj/vSxc9KKJ
-	pfg7DgLjQ96B5aIQS5xQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=StGDKKcE/eXnCABXgfrO0LX7y15msBM269VBxYGnUlY=; b=uxy2hfqOyNlCEe
+	DldGbtjNor1XVCXeOP2KmLnU4cCgyhIRw78Zrj+HdWJwHKMIGxConqTpTM0DerMU5vHrmjE3q7Sfj
+	k+JT8ERB0nwVVM/PUhS9Tsi+rE/Af5XUpsJMH06TSzMf6C/9GLb2AiSJ3x2MGYIPGeQPfrfkq+vOu
+	nDlTU9G7T+3DdnxYS7nJD6ohWTOR5uqyOoDliZXHOwFOhT1U8DvA4Fi8A3QDUvOPmNJBiyZl/sQ17
+	UUBGHa4+kqbX5mplyXM2pJyOYh37H0GdjSH2C8LrcYUDPuISeLV0+yEVz4wIAOqNtH9FmXFGDtLhK
+	BOewVsmA3sl6iuRlcFDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSiio-00058V-8j; Sun, 26 Apr 2020 14:57:30 +0000
-Received: from mail-bn8nam11olkn2094.outbound.protection.outlook.com
- ([40.92.20.94] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1jSjJv-0002Jj-6A; Sun, 26 Apr 2020 15:35:51 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSiih-00057P-94
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 14:57:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ay5aXiPmGAU6gIRc5Fw8oYXPk6MUvy9D8u6NdUxVEVZYoEQoGdfTaySDVZZ3ItQchb8oMYnChTW9wG1ZjKCQOigUwSVNZz70mpFeBjxsxFv9grdwgMPC/cc41emNEDSa0LTsBcZgpnhZKWKTS7k6AXEftHkTF1Ex5DnMbfrZSqZ5LYsyfHXurW1MJLk6kKm/fAL/2ku7AZtcW/Ga/ANPudN6eo0zRl/otG4o/V11glnJDyd9xZbQYrk1aeeoBXPd47CBMTIYYg1XA6i/YybDGQFOI4bRZiox09WCLmKYqZT2DqrylPEmsmEaNUTIffm+poV5/BMhQr2BhwYtiN6U8A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rCl3rY0wkUejQntKOCRLgSoEtSbDA20DEt0Lp6EAeQw=;
- b=XcydcxaB3GWWwBg0qhKGybdwe+RfKugK7++6EZoTXxit5PUP2Tka24Vf1SyXeIZTcly1u6ywzx9j47jCjranR1d6s/UdgvsHW6GR6Yfjik8Xq1GW5dodHLJicGnN9vU+1/zziYx307tz/zzHOkTQz6gr6xsL17mUiR4RUgM0Zx0EsG15vEBhGQKXKVjsTd4tsMPG245r1gI9J94S/ADWrm5DFl/aaTA4wSJpeZfAJNbkts/msCXwF2XJH69Jl7vfVDKbzI485GpRQoZDp7ZRXCF3EqHl6CCIaCAe3u0Ejs8swsvxDKfa4TtCY3uWDF56z32l2G0tl7KSHIB6gRSyOQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
- header.d=live.ca; arc=none
-Received: from CO1NAM11FT032.eop-nam11.prod.protection.outlook.com
- (2a01:111:e400:3861::47) by
- CO1NAM11HT148.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::275)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15; Sun, 26 Apr
- 2020 14:57:17 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:3861::4d) by CO1NAM11FT032.mail.protection.outlook.com
- (2a01:111:e400:3861::218) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15 via Frontend
- Transport; Sun, 26 Apr 2020 14:57:17 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:E81CF6BFCFE073454522CA0EAAF72EEBFDD4626B33AA54E33244858FAA4E44A9;
- UpperCasedChecksum:B59FE0D74AE6107E11CB223A88241A401D292CCDCAC3F731F6A2F9AC6F7CB0FE;
- SizeAsReceived:9919; Count:50
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2937.020; Sun, 26 Apr 2020
- 14:57:17 +0000
-Subject: Re: [PATCH v7 08/12] arm: dts: s5pv210: Add node for SGX 540
-To: Paul Cercueil <paul@crapouillou.net>,
- "H. Nikolaus Schaller" <hns@goldelico.com>
-References: <cover.1587760454.git.hns@goldelico.com>
- <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
- <NYBE9Q.YH08US7A7DC3@crapouillou.net>
-From: Jonathan Bakker <xc-racer2@live.ca>
-Message-ID: <BN6PR04MB0660A180D2069848E5C03D7EA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
-Date: Sun, 26 Apr 2020 07:57:12 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-In-Reply-To: <NYBE9Q.YH08US7A7DC3@crapouillou.net>
-Content-Language: en-US
-X-ClientProxiedBy: CO2PR05CA0059.namprd05.prod.outlook.com
- (2603:10b6:102:2::27) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <c7fba899-d520-559f-d14c-1d92f629329e@live.ca>
+ id 1jSjJa-0001nc-O3
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 15:35:32 +0000
+Received: by mail-lf1-x143.google.com with SMTP id x23so11701708lfq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 26 Apr 2020 08:35:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=we74QiB75BtYwlX2vu1/hk6PEpVENj5opPHAohrnsck=;
+ b=Odv9VoxY6497vkDTk3+CRrgpuyR/3DNV0ZX8s0CZ9GN4rNPbF0ZAWfH+KZM9MA8Mqj
+ lR9kQ0/xxj0SUdi0P3ul3qdJo5Fg0sktrQoC3ayiMfbpbvhfoAV7AELpoFo0TK9CslcN
+ S25kQAFoyh7iVFVHblXWMAjwsg3tdzBbYKUYPdygjdmaj5cWt6ohXnQDPgiZddm9MlZB
+ g4YLk8AGHQOuQ3xDsRBB7BH7Pvb1RjSpXjTbHsWLOr20iA6s1a8jhb7+PwyTaNqSZdxg
+ mypAVWAjp1ICtt7tdNQMoskBTF3XR7JWv3LDOUCyPIpJqqS1L6X6oLRnmIra8zqWztpW
+ 8GaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=we74QiB75BtYwlX2vu1/hk6PEpVENj5opPHAohrnsck=;
+ b=frEd0I0gkFBEtpMyjG35jlibl5+mAG4Ey3ZecVml+bXYgOfW8U23OL8nsillreygey
+ l6W56rKareFfH8H0FS/Q8NGVHH72VH+XFG+/KI/xQR2wGPtV/wDigO7gk/OmpKXbSoFL
+ V+ofmXtQLzL9KfDP6jFex5NGtrT3T+yfcC/8qehvgCatKUPWXxmCnDUv/AKeNqk9DAAh
+ k2naO7KPXw8/Q2luJm6c6/VvYqDwVK7H59212d5v57CyxUMZ53ol2ssICkRSx3GrS78T
+ fCn8i4IWWrZCIGNKu1wn7jQeWp7WUow/fPnt6AX8whbBCB8rJP99dhZJ6JaVa9QTFJnh
+ VY/Q==
+X-Gm-Message-State: AGi0PubUztlCNIDQleyZOXtBae+0r7tFrzyek/IY1B2CAS45KB2UQ0gr
+ SF1bBwK18Jzpb/TKAJcmJgQ0zoQPDsg2Mp2aJOMkaTIZUD6+WA==
+X-Google-Smtp-Source: APiQypIQlC5Oq9kecdo1sFNy4lS8r1NT6AHD5X6gYOaNU2NmhTi6HZq5fedzF0ehDBll7oigZUvKxEholtvfWonYUMg=
+X-Received: by 2002:ac2:43c6:: with SMTP id u6mr12976089lfl.170.1587915327642; 
+ Sun, 26 Apr 2020 08:35:27 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [IPv6:2001:569:fb67:7300:9f89:4b96:de0b:cd14]
- (2001:569:fb67:7300:9f89:4b96:de0b:cd14) by
- CO2PR05CA0059.namprd05.prod.outlook.com (2603:10b6:102:2::27) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2958.12 via Frontend Transport; Sun, 26 Apr 2020 14:57:14 +0000
-X-Microsoft-Original-Message-ID: <c7fba899-d520-559f-d14c-1d92f629329e@live.ca>
-X-TMN: [OmgafuzCUqVRB2i/C6FSFbGQe5x8huTGu/6RGTYJ87Y/NFFW81q0f1xbGex4LyHn]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 50
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: cbade908-3c53-44a5-a6de-08d7e9f21cd1
-X-MS-TrafficTypeDiagnostic: CO1NAM11HT148:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QwTfGRGC0v5LCTZiqw648BnLUPKmgF4piL5vYUxxnRbFF3jRYYLJaiiCpWhoMoXyun1bOoXNLWVAufhHYJdce/SE0dKQZD9b+gEu1+6CRnw86wcRbtWcpD2FEWg37aNVZWOPo4o/0GXz8vBkYzW0CD47dOBdvOuxcO8Tnayi23egP0iSstBHimHh8antuNuFgNGybBGfDQzllIG4jKC04Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: 8808OTabogw8sV0VMpFUQqObuTnPvfdGv11P400fYeD1iMYdPEq4G/dgFkf3NmGGEEbDa05lFeFmKjbQM3b5L96FQ5G2pK/UROup5LS7M9B2DgKscxJaRp7dNO3Vs1bYl1PB7cvDahfb/2GF9jEYWhElQxuXGrx3RBRkjC+ffFTTcYivf2OhXZrGotJ99khwYRshb5dW/r/Vh1L0XgUPvQ==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cbade908-3c53-44a5-a6de-08d7e9f21cd1
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Apr 2020 14:57:17.5591 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT148
+References: <20200423064808.10468-1-etienne.carriere@linaro.org>
+ <CAL_Jsq+zNyqcQ2xWceGLz4by=3rV=46wPyj=HcFPZ9pQPF17eg@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+zNyqcQ2xWceGLz4by=3rV=46wPyj=HcFPZ9pQPF17eg@mail.gmail.com>
+From: Etienne Carriere <etienne.carriere@linaro.org>
+Date: Sun, 26 Apr 2020 17:35:16 +0200
+Message-ID: <CAN5uoS9qENztJcd1b4uUMW83+o57gkWE9gEpq3Qd2YV0STA1gA@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/2] Add examples of secure- prefixed property in
+ documentation
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_075723_321399_D5CB9CB4 
-X-CRM114-Status: GOOD (  15.79  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20200426_083530_996185_5E53E996 
+X-CRM114-Status: GOOD (  15.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.20.94 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- 1.6 FORGED_MUA_MOZILLA     Forged mail pretending to be from Mozilla
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,72 +92,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- letux-kernel@openphoenux.org, Paul Burton <paulburton@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- devicetree@vger.kernel.org,
- =?UTF-8?Q?Beno=c3=aet_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGF1bCwKCk9uIDIwMjAtMDQtMjYgNTo1NiBhLm0uLCBQYXVsIENlcmN1ZWlsIHdyb3RlOgo+
-IAo+IAo+IExlIHZlbi4gMjQgYXZyaWwgMjAyMCDDoCAyMjozNCwgSC4gTmlrb2xhdXMgU2NoYWxs
-ZXIgPGhuc0Bnb2xkZWxpY28uY29tPiBhIMOpY3JpdCA6Cj4+IEZyb206IEpvbmF0aGFuIEJha2tl
-ciA8eGMtcmFjZXIyQGxpdmUuY2E+Cj4+Cj4+IEFsbCBzNXB2MjEwIGRldmljZXMgaGF2ZSBhIFBv
-d2VyVlIgU0dYIDU0MCAocmV2aXNpb24gMTIwKSBhdHRhY2hlZC4KPj4KPj4gVGhlcmUgaXMgbm8g
-ZXh0ZXJuYWwgcmVndWxhdG9yIGZvciBpdCBzbyBpdCBjYW4gYmUgZW5hYmxlZCBieSBkZWZhdWx0
-Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBKb25hdGhhbiBCYWtrZXIgPHhjLXJhY2VyMkBsaXZlLmNh
-Pgo+PiBTaWduZWQtb2ZmLWJ5OiBILiBOaWtvbGF1cyBTY2hhbGxlciA8aG5zQGdvbGRlbGljby5j
-b20+Cj4+IC0tLQo+PiDCoGFyY2gvYXJtL2Jvb3QvZHRzL3M1cHYyMTAuZHRzaSB8IDEzICsrKysr
-KysrKysrKysKPj4gwqAxIGZpbGUgY2hhbmdlZCwgMTMgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZm
-IC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvczVwdjIxMC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9k
-dHMvczVwdjIxMC5kdHNpCj4+IGluZGV4IDJhZDY0MmY1MWZkOS4uYWJiZGRhMjA1YzFiIDEwMDY0
-NAo+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zNXB2MjEwLmR0c2kKPj4gKysrIGIvYXJjaC9h
-cm0vYm9vdC9kdHMvczVwdjIxMC5kdHNpCj4+IEBAIC01MTIsNiArNTEyLDE5IEBAIHZpYzM6IGlu
-dGVycnVwdC1jb250cm9sbGVyQGYyMzAwMDAwIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICNpbnRlcnJ1cHQtY2VsbHMgPSA8MT47Cj4+IMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4KPj4gK8Kg
-wqDCoMKgwqDCoMKgIGdwdTogZ3B1QGYzMDAwMDAwIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgY29tcGF0aWJsZSA9ICJzYW1zdW5nLHM1cHYyMTAtc2d4NTQwLTEyMCI7Cj4+ICvCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwweGYzMDAwMDAwIDB4MTAwMDA+Owo+PiArwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHQtcGFyZW50ID0gPCZ2aWMyPjsKPj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgaW50ZXJydXB0cyA9IDwxMD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IGNsb2NrLW5hbWVzID0gImNvcmUiOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjbG9ja3Mg
-PSA8JmNsb2NrcyBDTEtfRzNEPjsKPj4gKwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBhc3Np
-Z25lZC1jbG9ja3MgPSA8JmNsb2NrcyBNT1VUX0czRD4sIDwmY2xvY2tzIERPVVRfRzNEPjsKPj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYXNzaWduZWQtY2xvY2stcmF0ZXMgPSA8MD4sIDw2Njcw
-MDAwMD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFzc2lnbmVkLWNsb2NrLXBhcmVudHMg
-PSA8JmNsb2NrcyBNT1VUX01QTEw+Owo+IAo+IFdoYXQgYXJlIHRoZXNlIGNsb2NrcyBmb3IsIGFu
-ZCB3aHkgYXJlIHRoZXkgcmVwYXJlbnRlZCAvIHJlY2xvY2tlZD8KPiAKPiBTaG91bGRuJ3QgdGhl
-eSBiZSBwYXNzZWQgdG8gJ2Nsb2NrcycgYXMgd2VsbD8KPiAKPiAtUGF1bAo+IAoKVGhlIEczRCBj
-bG9jayBzeXN0ZW0gY2FuIGhhdmUgbXVsdGlwbGUgcGFyZW50cywgYW5kIGZvciBzdGFibGUgb3Bl
-cmF0aW9uCml0J3MgcmVjb21tZW5kZWQgdG8gdXNlIHRoZSBNUExMIGNsb2NrIGFzIHRoZSBwYXJl
-bnQgKHdoaWNoIGluIHR1cm4KaXMgYWN0dWFsbHkgYSBtdXggYXMgd2VsbCkuICBNT1VUX0czRCBp
-cyBzaW1wbHkgdGhlIG11eCBmb3IgQ0xLX0czRAooU0dYIGNvcmUgY2xvY2spLCBET1VUX0czRCBp
-cyB0aGUgZGl2aWRlci4gIERPVVRfRzNEIGNvdWxkIGVxdWFsbHkgYmUgQ0xLX0czRAooYW5kIHBy
-b2JhYmx5IHNob3VsZCBiZSwgZm9yIHJlYWRhYmlsaXR5KSBhcyBDTEtfRzNEIGlzIHNpbXBseSB0
-aGUgZ2F0ZSBhbmQKRE9VVF9HM0QgaXMgdGhlIGRpdmlkZXIgZm9yIGl0LgoKVGhlIFNHWCBjbG9j
-ayBsYXlvdXQgb24gUzVQVjIxMCBsb29rcyBzb21ldGhpbmcgbGlrZSB0aGlzOgoKICAgICAgICBN
-T1VUX01QTEwgLS0tLS0tLS0tLS0+IE1PVVRfRzNEIC0tLT4gRE9VVF9HM0QgIC0tLT4gQ0xLX0cz
-RAooc2VsZWN0YWJsZSBwYXJlbnQgY2xvY2spICAgICAgKG11eCkgICAgLS0tPiAoZGl2aWRlcikg
-LS0tPiAoZ2F0ZSkKClRoaXMgaXMgZmFpcmx5IGNvbW1vbiBmb3Igb2xkZXIgU2Ftc3VuZyBTb0Nz
-LCBlZyBoYXZpbmcgYSBsb29rIGF0CmFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQyMTAtdW5pdmVy
-c2FsX2MyMTAuZHRzIHlvdSBjYW4gc2VlIHRoYXQKdGhlIEZJTUMgY2xvY2tzIGFyZSBwYXJlbnRl
-ZCB0byBNUExMIGFuZCBoYXZlIGEgcmF0ZSBzZXQuCgo+PiArwqDCoMKgwqDCoMKgwqAgfTsKPj4g
-Kwo+PiDCoMKgwqDCoMKgwqDCoMKgIGZpbWQ6IGZpbWRAZjgwMDAwMDAgewo+PiDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJzYW1zdW5nLHM1cHYyMTAtZmltZCI7Cj4+IMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHQtcGFyZW50ID0gPCZ2aWMyPjsKPj4gLS0g
-Cj4+IDIuMjUuMQo+Pgo+IAo+IAoKVGhhbmtzLApKb25hdGhhbgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, 24 Apr 2020 at 23:59, Rob Herring <robh+dt@kernel.org> wrote:
+>
+> On Thu, Apr 23, 2020 at 1:49 AM Etienne Carriere
+> <etienne.carriere@linaro.org> wrote:
+> >
+> > Hello,
+> >
+> > This is a proposal for adding a bit of description in the DT bindings
+> > documentation of how secure- property prefix can be used for. The
+> > changes in this patch series describe that for clocks and resets properties.
+> >
+> > Documentation file arm/secure.txt already states that secure- prefix can be
+> > used for any property hence the description proposed here are not mandated.
+> > However it may be useful as explicit examples of such usage.
+>
+> It may say that, but any new property has to be documented and
+> reviewed still. I'm not sure that anything in secure.txt has actually
+> gotten used.
+
+Looking at Linux kernel, U-Boot, Qemu, EDK II, that's right :)
+I guess that applies to the so-called non-secure world.
+
+>
+> You should participate in the System DT discussions in Linaro where
+> how to represent different CPUs and CPU execution environments (like
+> secure world) is being worked on.
+
+Fair, I'll get information there.
+Thank you for your prompt feedback.
+
+In the same scope, I am to post a change in the Linux DTS files.
+A change to define a new attribute mostly of interest for the secure
+world description.
+I will still post it to the LKML to get feedback about it.
+Such new bindings should still be discussed in the Linux DT ML, right?
+
+Regards,
+Etienne
+
+>
+> Rob
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
