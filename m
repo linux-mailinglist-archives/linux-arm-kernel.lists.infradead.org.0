@@ -2,64 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB57B1B8C74
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 07:08:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 007D61B8C83
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 07:18:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ARDRHpTBBNeBMfCp6hAWYiPn1uqvFEDrbcN45S1h9lY=; b=UaoQz6R+8Mr4x4
-	TQzZTqJqaaQALbtTFaNqnzP0dRuqZGVyJO9VWoQzJsj7NFoK43Lfch8aahXMgz+AVbw12WNXsgBFl
-	TdpLwji8kRJQRTr8ZLsPTUGsf1dg5zrnny6PVRZrhC570ALSbQie81T2UTxt4AntRGC/rkNcFYfv4
-	iC/9RMV+hseMMdqqbOlK25erYALqUFYBlw6XB129lEDrkD2YocOVVWfLuUYGT6Gp7p2xwAqeCprVi
-	vIcc6+4jl6JIQ8jsMsGKgExuJNvxu0PPur6qJvXHiCbZ0hJQ/XMOQgAnLv5z5FQXy369PT8Y8AFfi
-	JvxC6LwygVdpRJN/XpCw==;
+	List-Owner; bh=2tDQEmAyO2O2R0MHIBafjHDsvMvXTfh6W08Hje7GSa8=; b=bWIeQshpSpvK12
+	2VHk2mVFGMniBDFHPobZ7ib4VXrGOteXRLF7ZcZNohM97ZaezQi/pcZVrq0C+Tle/pPzq/IhiCZKG
+	3TG9r2G4lUziHrJWu5kL1moMZECJaeQ8LAihK/KxWsSNhyrQdi7B0VW4XxbH6v9Rk6LMwaoxuoajw
+	LUbphIv2fLGV0JQuukuXYBYQdGaul3yR8AEHsRtaoNjmb/ODKl3fWrzaM6cMMFkIQyUOKUEWKm7jt
+	+uVUk04mC2upRIk5+OMBfsVJbpVzTvEBQ4d1w2llORpddJcqF4k7vIpwLTZbucwKc0BdFNlPUG4Ny
+	1VGVGTAXgIwZQThbVlSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSZWv-0007JV-JK; Sun, 26 Apr 2020 05:08:37 +0000
-Received: from mail-vi1eur05on2067.outbound.protection.outlook.com
- ([40.107.21.67] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jSZgQ-00060C-EP; Sun, 26 Apr 2020 05:18:28 +0000
+Received: from mail-db8eur05on2076.outbound.protection.outlook.com
+ ([40.107.20.76] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSZWl-0007Hh-Nc
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 05:08:29 +0000
+ id 1jSZgG-0005z6-Qv
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 05:18:18 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JLHjv1Kk2YbMOMLqv+jG8TmcNnaSnX2v+4+kMjHX4qEoBv6KSobKRlXZiBfPCQeU0YX8BnwYNqAIijA/CNlZhDzw7qaCQQKAgN2aqPzHN62ONdlkBeVAUipUuA/a2h0ht92/rBCv77P9h6Lc8GaIbsEhhHJwIlhvF5uncPmlDCWlAn4elgWjgswvNejou60DHaYKy9Q6SISNNnAERfnLPMQU0AY6zWCEd01bhfqNApwIJ9oZqzcRbOHdIi1Aq8M0wn6+UcuIrGv0ohet2qU/RlEF0YAwKh9H6nz+QTVoVHOVxp4AlSfx5Ud7yK1LunRPYkGWAWPKWv15F7ywkqSyhg==
+ b=gxr/E8mGf19FU0VVEC5nW5FX6pvkiNuJzgEeXy38JEIZlgJE7X3G5kLT20cJ8dPK9S3UepsPENgMxNfXe+kq1vGJzr9Hhx+QrRA0MxmsixvXCXmGcIActSKdjU34vEnKgzpAGN/q11T/eTWsdeSR9qMTaknnWgK9FaectEhJXWJloeJF4J+kQBzykJ1atXQ6Tgp2E9jBPXPeXAK08S5yHH1v++3hiXjCRUn+v2sOJW6oHeaCvIJE5Kz62ThBmoQdr+ZsjsNY3BTk2qsIe0ToNebNZ2lnAkKVmQ42TESuqoBRZbSbQZi/65Em7QhkfKWB9croR1V5zsQa3a9OcS852A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CdE0tORgtp4TnrKJl4UHB0JJtUJekB4Nyb1JqDsQX0A=;
- b=msbzdXa37iAKtRf8/EZfiv+ewxnlIS7PjpsZ1OFbETUr+DbsIsmoDZHWqMj4VL1VIQRcn45LHXryq7zQmrbcaB2//IN59oNN2xaujkyQhu3hStM2RNsGFUa8CTURRmzVoS9P9vk3r7TVJEH5RFU158DEhdRuLsL5rG6jH4TjCRah3WB4zYzsr/kHl7ahNqHtv7J128Z+nmkqfpGLc4Rec3b0gUbb/PJINc/kRZJUeHQHqUKW7OTUGRCNYGDPQuY/LvjVylehlCzwbmgu/4ozoU0mz3b8KtbPSoT6p0jSg6Vc/spL+9Hc+p9zRiRGIvrt9AEgyTD+7DNJvUc62j0kRw==
+ bh=ZDSGsPCluwiXZBSBRpiSfT1fC07XL/jHsyPKlDaeFVE=;
+ b=TmWKRUgD/fJ4NUmK9DdGB7Jkx+KzlCr/SDAxuLwmhAewcF+oBK6NbRbA4+1T+0LpHRzWbAhGGXWS4Xt8xKBe0xe1uEp8uLVKAADivsOYuOfGL08h1LyvjZuAH5BiIo8TNTPBPVPe3JeEbf+P7jIFACdF4YKBe8JPjK9kBXL2+y1+ary+Pmy/Zwhb7VZAzq/xWtZVcACimhcEjHUUXSL4ujYmPgukYbuUPkDPn8Eccwg1JOgZLtfD1Xry1uSB7lamgriwheJbclN14ruhM1EMGdnQEhMbLYbiSB0Wxc/F5/FQiHUg5AIilSJXRPUDSyHworzlKNb7frpcCUraIgl00Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CdE0tORgtp4TnrKJl4UHB0JJtUJekB4Nyb1JqDsQX0A=;
- b=Lg1HlFnT8j+H3yGfHpN8AdT7sI/gP/IEREyUaLgnbX0U4a/iAhUPMKzSL+2uWukoi5aq6N0GIQ0ZWXNBEDMJ1FmC4r3egp0lfO04FiIjGABOJl8Txmfgewz1qrMN9xNNJkvU35ghdyYCelO2uYGoMPMhqa4AqzpFV2YvmeFDWRM=
+ bh=ZDSGsPCluwiXZBSBRpiSfT1fC07XL/jHsyPKlDaeFVE=;
+ b=L/FuaN4aiSH3U1vQNYH4pqTPvnz+dqAX8RIBaO8Xc6K+DOtPrL4kQOEppfUoPgDjxWV25zShEe+JxfmsMuXlTr/zTNV2Ae2vKy04nTmMAoJB4g46CCtnHKfFPAhoVYqcc1ECuvU/qSg9s0QIgZksvM22PXc0Bqt7M8WbWCOord4=
 Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB4789.eurprd04.prod.outlook.com (2603:10a6:20b:7::24) with
+ by AM6PR04MB5048.eurprd04.prod.outlook.com (2603:10a6:20b:e::32) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Sun, 26 Apr
- 2020 05:08:24 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Sun, 26 Apr
+ 2020 05:18:13 +0000
 Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
  ([fe80::d9f7:5527:e89d:1ae3]) by AM6PR04MB4966.eurprd04.prod.outlook.com
  ([fe80::d9f7:5527:e89d:1ae3%7]) with mapi id 15.20.2937.020; Sun, 26 Apr 2020
- 05:08:23 +0000
+ 05:18:13 +0000
 From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Leonard Crestez
- <leonard.crestez@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>, Abel Vesa
- <abel.vesa@nxp.com>
-Subject: RE: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Topic: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Index: AQHV+FjQX+/rv+yfS06A3Zgldk2vUaiLHGJw
-Date: Sun, 26 Apr 2020 05:08:23 +0000
-Message-ID: <AM6PR04MB4966D0EF272CAB282BF72EB580AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
- <1584008384-11578-8-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1584008384-11578-8-git-send-email-peng.fan@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Leonard Crestez
+ <leonard.crestez@nxp.com>, "linux@rempel-privat.de" <linux@rempel-privat.de>, 
+ Peng Fan <peng.fan@nxp.com>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Subject: RE: [PATCH V4] dt-bindings: firmware: imx: Move system control into
+ dt-binding headfile
+Thread-Topic: [PATCH V4] dt-bindings: firmware: imx: Move system control into
+ dt-binding headfile
+Thread-Index: AQHWGeF/dDOm6RvnPEOsUzQGw8l0KqiK3l/w
+Date: Sun, 26 Apr 2020 05:18:13 +0000
+Message-ID: <AM6PR04MB49664F6FC7B692DDFAAEAB0980AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1587695415-4441-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1587695415-4441-1-git-send-email-Anson.Huang@nxp.com>
 Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -69,42 +78,42 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [218.82.155.143]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 46e3401a-c185-464f-fe16-08d7e99fd894
-x-ms-traffictypediagnostic: AM6PR04MB4789:|AM6PR04MB4789:
+x-ms-office365-filtering-correlation-id: ea163b83-79c4-479c-234d-08d7e9a13831
+x-ms-traffictypediagnostic: AM6PR04MB5048:|AM6PR04MB5048:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB4789603BC2A76F896367F4CB80AE0@AM6PR04MB4789.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <AM6PR04MB5048574BE35FDBEFE3F0A25280AE0@AM6PR04MB5048.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:972;
 x-forefront-prvs: 03853D523D
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(376002)(136003)(396003)(346002)(366004)(39860400002)(8936002)(110136005)(54906003)(66946007)(66446008)(64756008)(66556008)(66476007)(76116006)(6506007)(7696005)(86362001)(6636002)(81156014)(71200400001)(26005)(33656002)(9686003)(55016002)(8676002)(316002)(7416002)(4326008)(186003)(2906002)(52536014)(44832011)(478600001)(5660300002);
+ SFS:(4636009)(366004)(136003)(396003)(346002)(376002)(39860400002)(5660300002)(478600001)(316002)(110136005)(33656002)(7696005)(4326008)(26005)(186003)(6506007)(7416002)(9686003)(55016002)(2906002)(8936002)(8676002)(81156014)(66556008)(76116006)(64756008)(66476007)(66946007)(66446008)(52536014)(86362001)(44832011)(71200400001)(921003);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: axFZ78kJow5VdMFYpU0zhHxDcAZM78qtvkpI3frwtxroOMiZMsb8Q2Qf/DIh688CNQwIh0sp9xbrEOoe7UFh5oIQVRf+za4u1UbbD4YftDeYX1Z/zoIBbW0Ki9UWFNKnUmoROHg/6G+kdlAVBqddJXBUklc+6csOqtWiKWyZsdAnGh5aTSMm9ZROfrJLxyL3ikbhgeIfiwEwz1NCjrOGcMY8KZGqaqH7xLbn9fAfEUcM0xz9D647BsRYcYf/VPOcbvPJ7iucw865Z3VieA22tbeqoX77ioiIeTST+cjB6j2qUiIRK1PjEktx3CXn81AxyD7MzlRz7xHJzQJkoNgIq0RDmNEfZ4XzWsz0Mz3Bw3QnChz23Yf8zRDN6J7/6j6j7yDp56VdsnHmhQg6Q3QNCXSmWQUWUV9Mln1CL6HR2AdnELl3/1PggARz1UUZZL+o
-x-ms-exchange-antispam-messagedata: pICzRlt4bd8ScSYCmoqKJRqr19v5xXtQxrqTDtAOy5CzGAg2xza2ddi2UX/qjH4Adq9yDvMtpA2kQI21YD11u0nkRb3SZbFeWVN1NDykpwIygSexktovlzdcsE+kXhKaRIx0cJmNNj7bYWSyzWwQ4lLkgFIntDdVuYg3kVYxdEo2fqnptuEEDWfcWeVRr0hLRNorunRGghD8BUcKU79goFbZoFj7pzmKyRqAWypbwTebrnYj+m32ly1ztE0Pps9OKK3Ej4fri6DKPtnFu8W97RxkHrgyeXq4Td3RBYzQXnuZaA7vFRY90SDJwTqzhj9TmfnArYnhiIlsncVcjdwB9RJuEt+Vpd3LbS+8NBbTS/PfgQc8VsAePQv1CPkYGuAhMApJw/Q4t0ldGdWg/jp21GvEmfoEuGPEb0T0YVEYuvcoiX0NTOIOV66ky0j2eETgGcHrrzd1LoqCfFLpFlCg2OvtOy6ljoxMb3G35X0ajLajHqTrATLmIXl9GaH8kQhQq/dZybqSNDf91B3rcpH6oFQIT47rtG5RHd3nSnN/BUH4vMGmz1hXyZbAcdI/V0KmL9KQ3mBjzakao/Qbaw5A0o6ytE7fKuUm3/T+7XYhu/P73uqpe8WnueEH67dbjDIPEIYUpvxe4b3xpL2aCKSQggzSOsLA5Bgp9vlxm1EARNHmYqHH1rkFyBeG5yctE7nmd1j/uRNotZxf3iPmAV6K8kgbLUElM1XVc+LjWtW/AH1BHZZMvzPdccP99RldROfq1Lx4ZaPecqrbc6LHRQ6wtUMAnyy9Aqg74RldGXAbdqY=
+x-microsoft-antispam-message-info: IA6t1zailcLXqahhjxfbPdzEDBKkJwiLdI6sd/spR7yAHEZyoejATbviGM9ZJeJxjuQ8qKoZO923LKyzqHth9R4sRBRduXSwS94Zk9o+X6jjv2MlCeJz2nbWLFb2Eq3v21arGD0LXYueb1bQmWKLVnHppjYxqHQp3AZC2PXJk2D+MIVkRqEuGstEMtzPVnllYF8rJyfHlGr7d/Or2XiubILEMushzUdFpk+l2vPGdQkDQ/s02URZ52voJRn27biKsWV1GdBnFijuXwdP9+yK9R3hmG7I6ll9SXq2SG8BI3M4VVos8vsw/8k87z3g9nCr43kZHTX6il57fa6g9EP4lw1V5eruBuwG8OUBjX5pSAvBVy9/hLfNDhgUsdtjma3e422oFCF0q0s9CA9pjAub98QqsZU20SXxsMIrBPFE6JAfQZXgy9cFOoChYvx4T2knxNUS/XH/8I7CLZW61yBt78HcmbuJY02CYgWCvkQmo/I=
+x-ms-exchange-antispam-messagedata: kLnMD3Pk2YbZhmZMzGxeyzivFwxHOvqik3wmVYZ3Do5gk0yH6MxyoqMB0/j2mUa/uMPlsIWN4ZPcGSVtzVqFLgBwE9wpYzPnVaW5eZ0CCJVmzVIR6Ct1uYbvi21GCv8dKNj30UlCH0rfPr930yd6UkNpmsoEeXxS56eseXEY/kwwkE+2XU/vde37wZqOf43+ree8LwDUQRPJ5aJwDCwCmqEhO//4jk/irehzln+rGwdPMffRYuHFSaUYwhfmDtfhJz/EpElUlhlZhs8LAih4cnqmtLpmsEQhcacPyRad548oe85pJ0NSKWEa1XBeWkECJF6zI46hzbC8ac0+D1ptS3ULhNW9PuSQMESCpfbzXYS8L2M5lqMT30s+k2WmtwF+wksc9/0vQNY2OCW/BGnA3dDdFEI4Emav7I1QMFtFC4kM2XDrbuqZ8+9odVU9XEhbqCgZuDu4/bm4u9Am3m74i2355+tGas+cN+b9t0ne5wOO3Qc8bqxMQkIdWfXZft3v1331PUKQGqkoHjdzXnxwzHhQU8Ig7nFPsS7PfKpVoAJagjtc5ekWJpcbbOZTnm9+BcOppAFb8lWeKFjQHG1cl0ZYHOGff/4GkMbZGJIxJ9vAkT9EPKKi4xU8Rk7VuxnGZoqsjacIeXAQA8u7/kI7IqHc9msn9SmqVVKs3z+32iz6JBaTVYOeHZ9wsPUoWHWBvmah2xPyF+oQIsbWThYBTrz2hlaaewBKIANEYvKOE/UwnkjQcGbXwMn235rXLOD6KwOiufG1gA/rQ1Qb4K6Oahdhr6E8MBB2EtF5rIxtuAg=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 46e3401a-c185-464f-fe16-08d7e99fd894
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Apr 2020 05:08:23.7860 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ea163b83-79c4-479c-234d-08d7e9a13831
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Apr 2020 05:18:13.6916 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tTTd7vuZI79xZePbzMM8QfJSKGyfICzll1j76AS4CUDmEsdWTO+jfuhs4fxdA4fs3XpkScMNEfkAel4/S4xAtw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4789
+X-MS-Exchange-CrossTenant-userprincipalname: JMnG8xj8J1WROgXWMZeLM5lg9bGVp/OBSmHxxvnUlJHjFI5G4EDTxMAgGU+lf/0PulT82wgP2h1Q+1SrpFavdg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_220827_858990_6F340082 
-X-CRM114-Status: GOOD (  23.45  )
+X-CRM114-CacheID: sfid-20200425_221817_007064_0A45A49C 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.67 listed in list.dnswl.org]
+ no trust [40.107.20.76 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -125,212 +134,252 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Duan <fugang.duan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "angus@akkea.ca" <angus@akkea.ca>, "heiko@sntech.de" <heiko@sntech.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "aford173@gmail.com" <aford173@gmail.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jun Li <jun.li@nxp.com>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Peng Fan <peng.fan@nxp.com>
-> Sent: Thursday, March 12, 2020 6:20 PM
+> From: Anson Huang <Anson.Huang@nxp.com>
+> Sent: Friday, April 24, 2020 10:30 AM
 > 
-> The CORE/BUS root slice has following design, simplied graph:
-> The difference is core not have pre_div block.
-> A composite core/bus clk has 8 inputs for mux to select, saying clk[0-7].
+> i.MX8 SoCs DTS file needs system control macro definitions, so move them into
+> dt-binding headfile, then include/linux/firmware/imx/types.h can be removed
+> and those drivers using it should be changed accordingly.
 > 
->             SEL_A  GA
->             +--+  +-+
->             |  +->+ +------+
-> CLK[0-7]--->+  |  +-+      |
->        |    |  |      +----v---+    +----+
->        |    +--+      |pre_diva+---->    |  +---------+
->        |              +--------+    |mux +--+post_div |
->        |    +--+      |pre_divb+--->+    |  +---------+
->        |    |  |      +----^---+    +----+
->        +--->+  |  +-+      |
->             |  +->+ +------+
->             +--+  +-+
->             SEL_B  GB
-> 
-> There will be system hang, when doing the following steps:
-> 1. switch mux from clk0 to clk1
-> 2. gate off clk0
-> 3. swtich from clk1 to clk2, or gate off clk1
-> 
-> Step 3 triggers system hang.
-
-Why Step 3 triggers system hang? Is this a HW limitation?
-
-> 
-> If we skip step2, keep clk0 on, step 3 will not trigger system hang.
-> However we have CLK_OPS_PARENT_ENABLE flag, which will unprepare disable
-> the clk0 which will not be used.
-> 
-> To address this issue, we could use following simplied software flow:
-> After the first target register set
-> wait the target register set finished
-> set the target register set again
-> wait the target register set finished
-> 
-> The upper flow will make sure SEL_A and SEL_B both set the new mux, but with
-> only one path gate on.
-> 
-> And there will be no system hang anymore with step3.
-
-Is this IC proposed solution?
-
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+> Signed-off-by: Jacky Bai <ping.bai@nxp.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
+> Changes since V3:
+> 	- no code change, ONLY add the missing author's signed-off.
+> ---
+>  drivers/firmware/imx/imx-scu.c          |  1 -
+>  drivers/thermal/imx_sc_thermal.c        |  2 +-
+>  include/dt-bindings/firmware/imx/rsrc.h | 84
+> +++++++++++++++++++++++++++++++++
+>  include/linux/firmware/imx/sci.h        |  1 -
+>  include/linux/firmware/imx/types.h      | 65 -------------------------
+>  5 files changed, 85 insertions(+), 68 deletions(-)  delete mode 100644
+> include/linux/firmware/imx/types.h
 > 
-> V2:
->  Drop wait after write, add one line comment for write twice.
+> diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
+> index f71eaa5..f3340fa 100644
+> --- a/drivers/firmware/imx/imx-scu.c
+> +++ b/drivers/firmware/imx/imx-scu.c
+> @@ -8,7 +8,6 @@
+>   */
 > 
->  drivers/clk/imx/clk-composite-8m.c | 62
-> +++++++++++++++++++++++++++++++++++++-
->  1 file changed, 61 insertions(+), 1 deletion(-)
+>  #include <linux/err.h>
+> -#include <linux/firmware/imx/types.h>
+>  #include <linux/firmware/imx/ipc.h>
+>  #include <linux/firmware/imx/sci.h>
+>  #include <linux/interrupt.h>
+> diff --git a/drivers/thermal/imx_sc_thermal.c
+> b/drivers/thermal/imx_sc_thermal.c
+> index b2b68c9..b01d28e 100644
+> --- a/drivers/thermal/imx_sc_thermal.c
+> +++ b/drivers/thermal/imx_sc_thermal.c
+> @@ -3,9 +3,9 @@
+>   * Copyright 2018-2020 NXP.
+>   */
 > 
-> diff --git a/drivers/clk/imx/clk-composite-8m.c
-> b/drivers/clk/imx/clk-composite-8m.c
-> index 99773519b5a5..eae02c151ced 100644
-> --- a/drivers/clk/imx/clk-composite-8m.c
-> +++ b/drivers/clk/imx/clk-composite-8m.c
-> @@ -24,6 +24,12 @@
+> +#include <dt-bindings/firmware/imx/rsrc.h>
+>  #include <linux/err.h>
+>  #include <linux/firmware/imx/sci.h>
+> -#include <linux/firmware/imx/types.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+>  #include <linux/of_device.h>
+> diff --git a/include/dt-bindings/firmware/imx/rsrc.h
+> b/include/dt-bindings/firmware/imx/rsrc.h
+> index 4e61f64..51906b9 100644
+> --- a/include/dt-bindings/firmware/imx/rsrc.h
+> +++ b/include/dt-bindings/firmware/imx/rsrc.h
+> @@ -547,4 +547,88 @@
+>  #define IMX_SC_R_ATTESTATION		545
+>  #define IMX_SC_R_LAST			546
 > 
->  #define PCG_CGC_SHIFT		28
-> 
-> +#define PRE_REG_OFF		0x30
-> +#define PRE_MUXA_SHIFT		24
-> +#define PRE_MUXA_MASK		0x7
-> +#define PRE_MUXB_SHIFT		8
-> +#define PRE_MUXB_MASK		0x7
+> +/*
+> + * Defines for SC PM CLK
+> + */
+> +#define IMX_SC_PM_CLK_SLV_BUS		0	/* Slave bus clock */
+> +#define IMX_SC_PM_CLK_MST_BUS		1	/* Master bus clock */
+> +#define IMX_SC_PM_CLK_PER		2	/* Peripheral clock */
+> +#define IMX_SC_PM_CLK_PHY		3	/* Phy clock */
+> +#define IMX_SC_PM_CLK_MISC		4	/* Misc clock */
+> +#define IMX_SC_PM_CLK_MISC0		0	/* Misc 0 clock */
+> +#define IMX_SC_PM_CLK_MISC1		1	/* Misc 1 clock */
+> +#define IMX_SC_PM_CLK_MISC2		2	/* Misc 2 clock */
+> +#define IMX_SC_PM_CLK_MISC3		3	/* Misc 3 clock */
+> +#define IMX_SC_PM_CLK_MISC4		4	/* Misc 4 clock */
+> +#define IMX_SC_PM_CLK_CPU		2	/* CPU clock */
+> +#define IMX_SC_PM_CLK_PLL		4	/* PLL */
+> +#define IMX_SC_PM_CLK_BYPASS		4	/* Bypass clock */
 
-Are those macros used somewhere?
+Unfortunately this is the third time I repeat the same comments for one patch:
+" This is newly added stuff and should be a separate patch."
 
-> +
->  static unsigned long imx8m_clk_composite_divider_recalc_rate(struct clk_hw
-> *hw,
->  						unsigned long parent_rate)
->  {
-> @@ -124,6 +130,57 @@ static const struct clk_ops
-> imx8m_clk_composite_divider_ops = {
->  	.set_rate = imx8m_clk_composite_divider_set_rate,
->  };
-> 
-> +static u8 imx8m_clk_composite_mux_get_parent(struct clk_hw *hw) {
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +	u32 val;
-> +
-> +	val = readl(mux->reg) >> mux->shift;
-> +	val &= mux->mask;
-> +
-> +	return clk_mux_val_to_index(hw, mux->table, mux->flags, val); }
-
-You don't have to redefinition them if they're the same as clk_mux_ops.
-You have the access to clk_mux_ops.
-
-> +
-> +static int imx8m_clk_composite_mux_set_parent(struct clk_hw *hw, u8
-> +index) {
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +	u32 val = clk_mux_index_to_val(mux->table, mux->flags, index);
-> +	unsigned long flags = 0;
-> +	u32 reg;
-> +
-> +	if (mux->lock)
-> +		spin_lock_irqsave(mux->lock, flags);
-> +
-> +	reg = readl(mux->reg);
-> +	reg &= ~(mux->mask << mux->shift);
-> +	val = val << mux->shift;
-> +	reg |= val;
-> +	/* write twice to make sure SEL_A/B point the same mux */
-> +	writel(reg, mux->reg);
-> +	writel(reg, mux->reg);
-
-Why this affects both SEL_A/B?
-Very tricky and may worth more comments.
-
-Besides that, I'd like to see Abel's comments on this patch.
+Please do not arbitrarily ignore reviewer's comments and wastes
+reviewer's effort.
 
 Regards
 Aisheng
 
 > +
-> +	if (mux->lock)
-> +		spin_unlock_irqrestore(mux->lock, flags);
+> +/*
+> + * Defines for SC CONTROL
+> + */
+> +#define IMX_SC_C_TEMP                       0U
+> +#define IMX_SC_C_TEMP_HI                    1U
+> +#define IMX_SC_C_TEMP_LOW                   2U
+> +#define IMX_SC_C_PXL_LINK_MST1_ADDR         3U
+> +#define IMX_SC_C_PXL_LINK_MST2_ADDR         4U
+> +#define IMX_SC_C_PXL_LINK_MST_ENB           5U
+> +#define IMX_SC_C_PXL_LINK_MST1_ENB          6U
+> +#define IMX_SC_C_PXL_LINK_MST2_ENB          7U
+> +#define IMX_SC_C_PXL_LINK_SLV1_ADDR         8U
+> +#define IMX_SC_C_PXL_LINK_SLV2_ADDR         9U
+> +#define IMX_SC_C_PXL_LINK_MST_VLD           10U
+> +#define IMX_SC_C_PXL_LINK_MST1_VLD          11U
+> +#define IMX_SC_C_PXL_LINK_MST2_VLD          12U
+> +#define IMX_SC_C_SINGLE_MODE                13U
+> +#define IMX_SC_C_ID                         14U
+> +#define IMX_SC_C_PXL_CLK_POLARITY           15U
+> +#define IMX_SC_C_LINESTATE                  16U
+> +#define IMX_SC_C_PCIE_G_RST                 17U
+> +#define IMX_SC_C_PCIE_BUTTON_RST            18U
+> +#define IMX_SC_C_PCIE_PERST                 19U
+> +#define IMX_SC_C_PHY_RESET                  20U
+> +#define IMX_SC_C_PXL_LINK_RATE_CORRECTION   21U
+> +#define IMX_SC_C_PANIC                      22U
+> +#define IMX_SC_C_PRIORITY_GROUP             23U
+> +#define IMX_SC_C_TXCLK                      24U
+> +#define IMX_SC_C_CLKDIV                     25U
+> +#define IMX_SC_C_DISABLE_50                 26U
+> +#define IMX_SC_C_DISABLE_125                27U
+> +#define IMX_SC_C_SEL_125                    28U
+> +#define IMX_SC_C_MODE                       29U
+> +#define IMX_SC_C_SYNC_CTRL0                 30U
+> +#define IMX_SC_C_KACHUNK_CNT                31U
+> +#define IMX_SC_C_KACHUNK_SEL                32U
+> +#define IMX_SC_C_SYNC_CTRL1                 33U
+> +#define IMX_SC_C_DPI_RESET                  34U
+> +#define IMX_SC_C_MIPI_RESET                 35U
+> +#define IMX_SC_C_DUAL_MODE                  36U
+> +#define IMX_SC_C_VOLTAGE                    37U
+> +#define IMX_SC_C_PXL_LINK_SEL               38U
+> +#define IMX_SC_C_OFS_SEL                    39U
+> +#define IMX_SC_C_OFS_AUDIO                  40U
+> +#define IMX_SC_C_OFS_PERIPH                 41U
+> +#define IMX_SC_C_OFS_IRQ                    42U
+> +#define IMX_SC_C_RST0                       43U
+> +#define IMX_SC_C_RST1                       44U
+> +#define IMX_SC_C_SEL0                       45U
+> +#define IMX_SC_C_CALIB0                     46U
+> +#define IMX_SC_C_CALIB1                     47U
+> +#define IMX_SC_C_CALIB2                     48U
+> +#define IMX_SC_C_IPG_DEBUG                  49U
+> +#define IMX_SC_C_IPG_DOZE                   50U
+> +#define IMX_SC_C_IPG_WAIT                   51U
+> +#define IMX_SC_C_IPG_STOP                   52U
+> +#define IMX_SC_C_IPG_STOP_MODE              53U
+> +#define IMX_SC_C_IPG_STOP_ACK               54U
+> +#define IMX_SC_C_SYNC_CTRL                  55U
+> +#define IMX_SC_C_OFS_AUDIO_ALT              56U
+> +#define IMX_SC_C_DSP_BYP                    57U
+> +#define IMX_SC_C_CLK_GEN_EN                 58U
+> +#define IMX_SC_C_INTF_SEL                   59U
+> +#define IMX_SC_C_RXC_DLY                    60U
+> +#define IMX_SC_C_TIMER_SEL                  61U
+> +#define IMX_SC_C_LAST                       62U
 > +
-> +	return 0;
-> +}
-> +
-> +static int
-> +imx8m_clk_composite_mux_determine_rate(struct clk_hw *hw,
-> +				       struct clk_rate_request *req) {
-> +	struct clk_mux *mux = to_clk_mux(hw);
-> +
-> +	return clk_mux_determine_rate_flags(hw, req, mux->flags); }
-
-Same as bove.
-
-> +
-> +
-> +const struct clk_ops imx8m_clk_composite_mux_ops = {
-> +	.get_parent = imx8m_clk_composite_mux_get_parent,
-> +	.set_parent = imx8m_clk_composite_mux_set_parent,
-> +	.determine_rate = imx8m_clk_composite_mux_determine_rate,
-> +};
-> +
->  struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->  					const char * const *parent_names,
->  					int num_parents, void __iomem *reg, @@ -136,6
-> +193,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->  	struct clk_gate *gate = NULL;
->  	struct clk_mux *mux = NULL;
->  	const struct clk_ops *divider_ops;
-> +	const struct clk_ops *mux_ops;
+>  #endif /* __DT_BINDINGS_RSCRC_IMX_H */
+> diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
+> index 17ba4e4..3fa418a 100644
+> --- a/include/linux/firmware/imx/sci.h
+> +++ b/include/linux/firmware/imx/sci.h
+> @@ -11,7 +11,6 @@
+>  #define _SC_SCI_H
 > 
->  	mux = kzalloc(sizeof(*mux), GFP_KERNEL);
->  	if (!mux)
-> @@ -157,10 +215,12 @@ struct clk_hw
-> *imx8m_clk_hw_composite_flags(const char *name,
->  		div->shift = PCG_DIV_SHIFT;
->  		div->width = PCG_CORE_DIV_WIDTH;
->  		divider_ops = &clk_divider_ops;
-> +		mux_ops = &imx8m_clk_composite_mux_ops;
->  	} else {
->  		div->shift = PCG_PREDIV_SHIFT;
->  		div->width = PCG_PREDIV_WIDTH;
->  		divider_ops = &imx8m_clk_composite_divider_ops;
-> +		mux_ops = &clk_mux_ops;
->  	}
+>  #include <linux/firmware/imx/ipc.h>
+> -#include <linux/firmware/imx/types.h>
 > 
->  	div->lock = &imx_ccm_lock;
-> @@ -176,7 +236,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const
-> char *name,
->  	gate->lock = &imx_ccm_lock;
-> 
->  	hw = clk_hw_register_composite(NULL, name, parent_names,
-> num_parents,
-> -			mux_hw, &clk_mux_ops, div_hw,
-> +			mux_hw, mux_ops, div_hw,
->  			divider_ops, gate_hw, &clk_gate_ops, flags);
->  	if (IS_ERR(hw))
->  		goto fail;
+>  #include <linux/firmware/imx/svc/misc.h>  #include
+> <linux/firmware/imx/svc/pm.h> diff --git a/include/linux/firmware/imx/types.h
+> b/include/linux/firmware/imx/types.h
+> deleted file mode 100644
+> index 8082110..0000000
+> --- a/include/linux/firmware/imx/types.h
+> +++ /dev/null
+> @@ -1,65 +0,0 @@
+> -/* SPDX-License-Identifier: GPL-2.0+ */
+> -/*
+> - * Copyright (C) 2016 Freescale Semiconductor, Inc.
+> - * Copyright 2017~2018 NXP
+> - *
+> - * Header file containing types used across multiple service APIs.
+> - */
+> -
+> -#ifndef _SC_TYPES_H
+> -#define _SC_TYPES_H
+> -
+> -/*
+> - * This type is used to indicate a control.
+> - */
+> -enum imx_sc_ctrl {
+> -	IMX_SC_C_TEMP = 0,
+> -	IMX_SC_C_TEMP_HI = 1,
+> -	IMX_SC_C_TEMP_LOW = 2,
+> -	IMX_SC_C_PXL_LINK_MST1_ADDR = 3,
+> -	IMX_SC_C_PXL_LINK_MST2_ADDR = 4,
+> -	IMX_SC_C_PXL_LINK_MST_ENB = 5,
+> -	IMX_SC_C_PXL_LINK_MST1_ENB = 6,
+> -	IMX_SC_C_PXL_LINK_MST2_ENB = 7,
+> -	IMX_SC_C_PXL_LINK_SLV1_ADDR = 8,
+> -	IMX_SC_C_PXL_LINK_SLV2_ADDR = 9,
+> -	IMX_SC_C_PXL_LINK_MST_VLD = 10,
+> -	IMX_SC_C_PXL_LINK_MST1_VLD = 11,
+> -	IMX_SC_C_PXL_LINK_MST2_VLD = 12,
+> -	IMX_SC_C_SINGLE_MODE = 13,
+> -	IMX_SC_C_ID = 14,
+> -	IMX_SC_C_PXL_CLK_POLARITY = 15,
+> -	IMX_SC_C_LINESTATE = 16,
+> -	IMX_SC_C_PCIE_G_RST = 17,
+> -	IMX_SC_C_PCIE_BUTTON_RST = 18,
+> -	IMX_SC_C_PCIE_PERST = 19,
+> -	IMX_SC_C_PHY_RESET = 20,
+> -	IMX_SC_C_PXL_LINK_RATE_CORRECTION = 21,
+> -	IMX_SC_C_PANIC = 22,
+> -	IMX_SC_C_PRIORITY_GROUP = 23,
+> -	IMX_SC_C_TXCLK = 24,
+> -	IMX_SC_C_CLKDIV = 25,
+> -	IMX_SC_C_DISABLE_50 = 26,
+> -	IMX_SC_C_DISABLE_125 = 27,
+> -	IMX_SC_C_SEL_125 = 28,
+> -	IMX_SC_C_MODE = 29,
+> -	IMX_SC_C_SYNC_CTRL0 = 30,
+> -	IMX_SC_C_KACHUNK_CNT = 31,
+> -	IMX_SC_C_KACHUNK_SEL = 32,
+> -	IMX_SC_C_SYNC_CTRL1 = 33,
+> -	IMX_SC_C_DPI_RESET = 34,
+> -	IMX_SC_C_MIPI_RESET = 35,
+> -	IMX_SC_C_DUAL_MODE = 36,
+> -	IMX_SC_C_VOLTAGE = 37,
+> -	IMX_SC_C_PXL_LINK_SEL = 38,
+> -	IMX_SC_C_OFS_SEL = 39,
+> -	IMX_SC_C_OFS_AUDIO = 40,
+> -	IMX_SC_C_OFS_PERIPH = 41,
+> -	IMX_SC_C_OFS_IRQ = 42,
+> -	IMX_SC_C_RST0 = 43,
+> -	IMX_SC_C_RST1 = 44,
+> -	IMX_SC_C_SEL0 = 45,
+> -	IMX_SC_C_LAST
+> -};
+> -
+> -#endif /* _SC_TYPES_H */
 > --
-> 2.16.4
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
