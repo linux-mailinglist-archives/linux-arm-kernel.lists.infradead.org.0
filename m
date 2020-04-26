@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC6F41B8EBC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 12:12:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B8CC1B8EF4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 12:41:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gq7oExT+4ElCAdIKNIzuLr64MTh6/DhY87HUTTJVQvo=; b=A52eVISM2DUBOz
-	FdIW1k2nGxZJlMoSImdYNRo1H/cg4zhoxFolIVeiKWoQpKtsq62fb/1sDauLKlM5jH9hEUK6jWuB7
-	2aYR1/D2dEN13c/VgSy59YTdG+NoosbydEPnVGLvsC2j++wFq7Hr2XJRztP4H69GeOztdR17ycz+j
-	FmX34A6eJq4zazmBaHRbH7x+EAwB53eKZpopUAZ9bF20r6ZKZgS22+JhrLMxlL1wmI6WBXY75ONUp
-	vbxpDTPmBnbMgn9SIY/9PtfieYc3Zi8WROAO9a2+xtunTPt1as21IEEM/Uk0JMmBqDoAKvp9kDgSw
-	AkTL+1CsEcj8kE9BNWog==;
+	List-Owner; bh=cWICsZwW3WNtRIoDd07Dp2SqfmcjWMZ7aB+nZ5a5pZM=; b=fPqPfT0WqOqmd6
+	1fVTuxYEQ9ujXYXWP/Sh+KS6LZCOD/TYkgmF5pCnSUvIGyS7pa2wd5lccwmfN7WeKcLJMFa8soqet
+	A4JkBj9wjX4RRbjTPDy5tVtJb5uD7R6ocyd0yYWZ34aGdevrDtC9pNVToVEbb0f2PDGYdSBUEHwFP
+	2A4uz6ZTOiu363uEbM99fjLMsjAGfcw5jUZyMegdB3xWNv6WVy8GZmzvVRck4i3sFEOqCs+aSFKub
+	31LUJlsD/dZe0dNZiQTnaMs4bFwqufEV1Om0lS4mUiCW0Ppfiw72lY+QXV3Z3oEW8dOWf7DxstIbx
+	4cT1crzPFsfJ12KsM+jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSeGT-0007AY-Ji; Sun, 26 Apr 2020 10:11:57 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jSej8-0002xR-1N; Sun, 26 Apr 2020 10:41:34 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSeGL-00079D-Uf
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 10:11:51 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 188so16187767wmc.2
+ id 1jSeiv-0002v5-AF
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 10:41:22 +0000
+Received: by mail-wr1-x441.google.com with SMTP id d15so15345952wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 03:11:48 -0700 (PDT)
+ Sun, 26 Apr 2020 03:41:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
+ h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=38Zt7pEGuLVXiT/st0D2AyWKW3xWiPY2bYtiMLWQK3Y=;
- b=PVTghr0FgcuBmCZ0PUMXezA+nNTKcI1Fygf3ezJu65NPeZgIBxfCaFa6awH9Zd0ue6
- Xwb3tBMIgTokisslyMLXG/zu4eydefaM4LGTSbM5jOv6AVNtZLxcvrGycj9v3ZFi3uNf
- Of8+v2yEYU1N0ybqdkXEVcMHw7rXJYQpg/3tr7pB6EdLjDaQft4aR79GwBR63MlZ0COW
- Wf3rWAGvJ4afQpjtOfM35KfcgdrdeYS9luG5nN4jNIpW9LankXkbti7qClolWiKZs8Rj
- 6YWLNp62hGJ65qpnooLLU8vEe81YIPJJG4xfc/RtyjsCqK79yRyQ8bxI3dnsTzZ7pB3J
- n1GQ==
+ bh=t36awUAxBdURHa0pPaeUAx2wGUximeZMbTRyNuoxFJQ=;
+ b=DJTyWottTMVyc6z8QE28iZUq89K4lfUqv7E0bZ5i00aryQAtf8IQhI6iOj+qjELeIL
+ Mai5Ks/HBGmUe3f7su0WhujgOQzyX4MjfVB3gYYAVGu3i46Yl2RLQFhZtHu/Vrt+vQpa
+ AYOYXLSc9siKKV81KymabDWHdPxvIN30C3zeirXkQ2lIIfkuf1KRIlrwmLJzK8mTevax
+ yWqeX7zL5XPo8nnlZE0SJR/6piBu4vwO/zoSeRNcPPe64a7zzSfbj2tPy05R9xal7yRH
+ w/tso/JEplt8R4PEiwW2rxUX/GnjzdVNJbsk5lQMSOy1xeEReNkWKcIW1m5HTC4I93Yg
+ xG1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=38Zt7pEGuLVXiT/st0D2AyWKW3xWiPY2bYtiMLWQK3Y=;
- b=uN7VyV2Lm8joPEuNhk4w2va+msIOoJc0070rp1jaE7PvSc4CG9LVzT3HgSMBUnM5CS
- LAKoVlABbhwUshkIZdmIPOmUERwiEYb3hqClk0FMO65eYGUmdNKlTkOp1gh6MqYBH/4K
- w7ssjzpmF2TL/+B7OABPrMwkpUYq6LnjcNFHnhzA5d5iDU7OcJLbCNBs88mmRsT9rALe
- GXBx3i4ROPhKohgY932SMAS5svJcNO4dyYSZQapr9+QLmwciYWpXNl0PexHaxkYSrZML
- V/qKy90Gmlii8BK/SMKMg4HpYxswSH3zlMsVMRLBg5zTbxVFl/+RJ4gcu/14QdoNQAdP
- dMiw==
-X-Gm-Message-State: AGi0PubJsZZrF1V/Hk8jSpG+l0duoIltTkCgLp3LNuHduaRZH95vXqrR
- 1raAcRv1nZkONSvD8R0uER8=
-X-Google-Smtp-Source: APiQypKXFtdOYFrN+l5LO7+WgBAma4dWRhOE2oE7+TzVEBs1qJ7Dar8zrTy8d1BBmyaXKX6/yknvJg==
-X-Received: by 2002:a1c:c2d4:: with SMTP id
- s203mr21788195wmf.128.1587895907126; 
- Sun, 26 Apr 2020 03:11:47 -0700 (PDT)
-Received: from localhost (89-104-3-59.customer.bnet.at. [89.104.3.59])
- by smtp.gmail.com with ESMTPSA id 1sm11366982wmi.0.2020.04.26.03.11.46
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=t36awUAxBdURHa0pPaeUAx2wGUximeZMbTRyNuoxFJQ=;
+ b=YCV/oMmiF59KZAWe+bskVOXiE8ApM1IjXs7hr6YlqHB3/NO9hQUnLnVTbUNi/H4cyY
+ 1CdBpwqAfs1qm7k9gc+iyQa3mJ+RQZ4IS65aQtNQPsHQRTLhe1ffLd8QK+q2tCiDtjke
+ v9vpnaYvbQfeKcZVuP/zB3bsfhgjFEY51t/q2pOiYadK7UGLEzIkGsD5u3ZG+4JzwcDM
+ YeCMdegrBPoCplcMieA3ZUe7XKGqanDKIiz3cR3DHIoDdnri9CYoP5ne8GN65K5MQAUK
+ VkeaAsqTJM3vA62K/3B7zgyGHIt+yi9q9iRjcF2KvNVeeRBJaMQIjI2emStS9xDfrdWS
+ JdqA==
+X-Gm-Message-State: AGi0PubCoV3VBMnImYK5T/mC5TTF6NrDlW9vhDBuk5hS/oW9MLMvJtOV
+ h4FbV2P+QlIr9x/afxVl5Qo=
+X-Google-Smtp-Source: APiQypKFE6ZvIpfTdcTCsjnX6lRWOkKiGHpgutcqgs8f5RsTU7gCLlhGaKzJPimh6XbZNz2/ILqSwA==
+X-Received: by 2002:a5d:4e12:: with SMTP id p18mr22033146wrt.148.1587897678658; 
+ Sun, 26 Apr 2020 03:41:18 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0:59f6:22c5:d1f3:662d])
+ by smtp.gmail.com with ESMTPSA id
+ y10sm10491793wma.5.2020.04.26.03.41.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 26 Apr 2020 03:11:46 -0700 (PDT)
-From: Peter Vasil <peter.vasil@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org
-Subject: [PATCH] pwm: sun4i: direct clock output support for Allwinner A64
-Date: Sun, 26 Apr 2020 12:11:22 +0200
-Message-Id: <20200426101122.98318-1-peter.vasil@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ Sun, 26 Apr 2020 03:41:18 -0700 (PDT)
+From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
+To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>
+Subject: [PATCH v3 0/7] Add H6 I2S support
+Date: Sun, 26 Apr 2020 12:41:08 +0200
+Message-Id: <20200426104115.22630-1-peron.clem@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_031150_011418_81CCA74C 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200426_034121_379479_32DB9533 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [peter.vasil[at]gmail.com]
+ provider [peron.clem[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,75 +100,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Vasil <peter.vasil@gmail.com>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allwinner A64 is capable of a direct clock output on PWM (see A64
-User Manual chapter 3.10). Add support for this in the sun4i PWM
-driver and adjust compatibility in sun50i-a64 base device tree.
+Hi,
 
-Signed-off-by: Peter Vasil <peter.vasil@gmail.com>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 6 ++----
- drivers/pwm/pwm-sun4i.c                       | 9 +++++++++
- 2 files changed, 11 insertions(+), 4 deletions(-)
+This is a sequel of Marcus Cooper serie[0], where remarks made by Maxime
+have been fixed.
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 31143fe64d91..c334fd106854 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -1069,8 +1069,7 @@ gic: interrupt-controller@1c81000 {
- 		};
- 
- 		pwm: pwm@1c21400 {
--			compatible = "allwinner,sun50i-a64-pwm",
--				     "allwinner,sun5i-a13-pwm";
-+			compatible = "allwinner,sun50i-a64-pwm";
- 			reg = <0x01c21400 0x400>;
- 			clocks = <&osc24M>;
- 			pinctrl-names = "default";
-@@ -1252,8 +1251,7 @@ r_ir: ir@1f02000 {
- 		};
- 
- 		r_pwm: pwm@1f03800 {
--			compatible = "allwinner,sun50i-a64-pwm",
--				     "allwinner,sun5i-a13-pwm";
-+			compatible = "allwinner,sun50i-a64-pwm";
- 			reg = <0x01f03800 0x400>;
- 			clocks = <&osc24M>;
- 			pinctrl-names = "default";
-diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-index 5c677c563349..18fbbe3277d0 100644
---- a/drivers/pwm/pwm-sun4i.c
-+++ b/drivers/pwm/pwm-sun4i.c
-@@ -352,6 +352,12 @@ static const struct sun4i_pwm_data sun4i_pwm_single_bypass = {
- 	.npwm = 1,
- };
- 
-+static const struct sun4i_pwm_data sun50i_a64_pwm_data = {
-+	.has_prescaler_bypass = true,
-+	.has_direct_mod_clk_output = true,
-+	.npwm = 1,
-+};
-+
- static const struct sun4i_pwm_data sun50i_h6_pwm_data = {
- 	.has_prescaler_bypass = true,
- 	.has_direct_mod_clk_output = true,
-@@ -374,6 +380,9 @@ static const struct of_device_id sun4i_pwm_dt_ids[] = {
- 	}, {
- 		.compatible = "allwinner,sun8i-h3-pwm",
- 		.data = &sun4i_pwm_single_bypass,
-+	}, {
-+		.compatible = "allwinner,sun50i-a64-pwm",
-+		.data = &sun50i_a64_pwm_data,
- 	}, {
- 		.compatible = "allwinner,sun50i-h6-pwm",
- 		.data = &sun50i_h6_pwm_data,
+I have tested it on my Beelink GS1 board.
+
+Thanks,
+Clement
+
+0: https://lore.kernel.org/patchwork/cover/1139949/
+
+Changes since v2 (thanks Maxime):
+ - Add details in commit log about sign extend sample
+ - Only set FIFO regs as volatile in regmap
+ - Missing a space (detected by checkpatch)
+
+Changes since v1:
+ - Fix missing header in set sign extend sample
+
+Jernej Skrabec (3):
+  dt-bindings: ASoC: sun4i-i2s: Add H6 compatible
+  ASoC: sun4i-i2s: Add support for H6 I2S
+  arm64: dts: sun50i-h6: Add HDMI audio to H6 DTSI
+
+Marcus Cooper (4):
+  ASoC: sun4i-i2s: Adjust LRCLK width
+  ASoC: sun4i-i2s: Set sign extend sample
+  ASoc: sun4i-i2s: Add 20 and 24 bit support
+  ASoC: sun4i-i2s: Adjust regmap settings
+
+ .../sound/allwinner,sun4i-a10-i2s.yaml        |   2 +
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  31 ++
+ sound/soc/sunxi/sun4i-i2s.c                   | 265 +++++++++++++++++-
+ 3 files changed, 296 insertions(+), 2 deletions(-)
+
 -- 
-2.25.1
+2.20.1
 
 
 _______________________________________________
