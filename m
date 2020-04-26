@@ -2,101 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94AF91B930E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:41:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196771B930D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:40:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LFsgDEY1HWACTZwnIKPheI0Wd8PblqdFqNLnK6AeXDM=; b=q2VmDsYMNYA0t/
-	UPVhf33EoNmEEeJUDaxtob4hZ6vBHmRmjZCHwBRx9EkEKhOrmDHzxuHDY3v64EGdfZp71l66xg5+s
-	F5Tx/O0QRjgSvrHxMiWN0or6E/xs+EMGqskInxDGKhGAJ4FMHJ7oHmMbgpIURqvn49POIP5cqn15g
-	7PYhWdMROrRpuaz/S9ZLAYFH7Ubm45fT+10fipMDcjySOWAakDb7uesqqfD0SQxpFeBWxPiTDfq9o
-	NEfsEEPoo21Lygg27Sn9GaEL94BPLwgMUcgCGkoaMsv+iJrUy+mGqK+fq76nEY2RqQnapBSNHqKuy
-	f+J9XhIG92zpJx0wWBSQ==;
+	List-Owner; bh=L0/rccT7zvy1IxuNo5PyN6I+E7/pE5jaGOMyT8hInHQ=; b=oBJa5PPwlkRfLn
+	eOjjRXZm5KsFG4/wpu9f89RH8bhDtkEy0/8u46/z+M/O771CDeCyt6ri30ytjD8SzNU56R52rRMl1
+	VHiNEHRezZ1hsZ0wlyTKnSSl6tZWDtQT/o5E6DAOqk7o5YusoYqwJkHXfeNed/m9JlCOo/Q9K1+AD
+	qVBWZ/hQ3myu6yRl/LpjLJq9tE15JEhRYF652OP5q2qGllU6d/eR6cKiK1j14F3f6mKxrA310EIIw
+	/DZl520vCQnulyJuONG1ZaKp1GFL3bzc5P2+QWe8qJv1FCam6GJbh5XQGBvmKEyQuHJ3GJZFYQoPT
+	c4BwF6uEUdRsZz24XyIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSmCz-0003Fd-Oe; Sun, 26 Apr 2020 18:40:53 +0000
-Received: from mail-co1nam11olkn2092.outbound.protection.outlook.com
- ([40.92.18.92] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1jSmCk-00031f-C0; Sun, 26 Apr 2020 18:40:38 +0000
+Received: from mail-bn8nam11olkn2103.outbound.protection.outlook.com
+ ([40.92.20.103] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSm91-00068i-EN
+ id 1jSm93-0006As-Ep
  for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 18:36:50 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=joYUXd6aoWRF9X2sY+WVSqSFIjVz7DtwOYkhXdMVzJvzSnUjXCFyWktbI8TMqsi1gqmWafLscFYPv2RnfmYmM9Rv2XzQ9/JYGxstitqSWNld33m8AVwJbbJiROeHL9I3xakuJOyRQ/97EugyWtyTiiagfjIBMQ4NVedMGBqzSRRAxiCM5SwWHA01l7uNQN6k8al0d6A/H8aYUNaW4tYCfXxxXAuC26w30v4ngLdqSNZmOl/Kj/VPI6wXjtXbJLDjOz33l5K9ThcrIVrhmts3KS94MG7t9fDNys7Ga/fx+SA4SpM+csP+6WmNfKj1EBcFJOd+kQU6s1CjoGWCUG/8cg==
+ b=FgdAKw9UK9Fet4vgcPx079mVOLeiE1gH2Ne7A9hJBaMLXtmlPs/psRjm7S1nQavm1fWLLM2ovFbxQf5dEIi0+4fsbHn/T4Ucxv461Dd+GoRpqw4HbnkcVvOiKhB0IV9Gsv0tI9Mhqjq//yfQd8X6OOsqI/tfF7u3KkVN2GC0X0xqnBpei3sjfv6C/9iUxnWD679zxEzGfHjrTKjfxYEce4PA/Im3RIkEqaFaPRQNKk0/RgL2wFyYnKCL/8S6Pl8NlN4VwRWmPRW6qcxKjyi5InwNufIgE1kP8CxfCxva535mlm14ECEAfcCFLMQbtTZphegXa3TrTiJQq9b7UTEx6w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=viZyGxXbl8jlBbHWJF/ycbjLcFnah0lFxRD1Cje0RvM=;
- b=RN21tglBOtX8X5oxfI/Rd2r2mUWV04BEyg2ikYaslrgm1d1Kv3GF30k2xXHT6dMVPiM/jJIM6v5B5PqITfP0Oufjyi3GgII5qq9AGXPtY6o0eMiHEJlVcpN7BvuS4+MaMwZSWmLjxYkgNZomrUN4/JpXnDTrl8VGdo3CS1g2rRbs73AmPyoufTSd/3Bntj5EyCklkg3U87FBW261YQ8V30n9VPrc8St7PG4HHS3WTCRMIFL9nuMBQ9bohzEPXopSHddahZ/PVGzLmYuBwpjL301mVbvo/ncbClx/vCgNOB+Ds+/vwcN9DIDpTJ2V4JNidlttGup3TreiTff5FWDvZA==
+ bh=/GoKGzDksUV+1pa4zLs/FMuMSMNxUNRuVNG96wFu6fs=;
+ b=k6cUN7vprcSNLHCQmctm27HRwwk0skd9DQjO1syyoZ05vgN+ttnC+4nm3x90a/nYe/nRN+Vn4PHWFXGz1sZ/25KyR1Xr0yqTDsVKjZ0wFNtXSr3Uja92wIN1G5lrieFMURiCPguU8GPPzdfm6rry2z+s04zIEsF4xHTMgZDPQ6TCT6C07geqnf41DReQPUfJAfgAeLXfJcYLaIaZa+t8E1fcscby8wd2m1HjDtyUQoJYUoKCUKywVT4VPXIBJZxUsiVY0flTG1im8j6ZWAKVPrRiUln/JPQPkLg+/8gD5L6qqHon+vtypiijtoYMJbbKlzK3nzctTHqDs6XtVHDHLQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
  header.d=live.ca; arc=none
 Received: from CO1NAM11FT036.eop-nam11.prod.protection.outlook.com
- (2a01:111:e400:3861::53) by
- CO1NAM11HT028.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::249)
+ (2a01:111:e400:3861::41) by
+ CO1NAM11HT017.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::418)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15; Sun, 26 Apr
- 2020 18:36:45 +0000
+ 2020 18:36:47 +0000
 Received: from BN6PR04MB0660.namprd04.prod.outlook.com
  (2a01:111:e400:3861::41) by CO1NAM11FT036.mail.protection.outlook.com
  (2a01:111:e400:3861::124) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15 via Frontend
- Transport; Sun, 26 Apr 2020 18:36:45 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:EAD9E85ECF52A01CA1168448B3DC5CBA9C9CEF07F8F91BAC7D4DB2D52625D3E3;
- UpperCasedChecksum:5F1B2796082AC0FDD721EF5CD12086A1D684C9E7DF9D1F038F556F80F961A203;
- SizeAsReceived:7820; Count:50
+ Transport; Sun, 26 Apr 2020 18:36:47 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:6F411540C49EC7C8EF69A1D3083A3F16EC9E7F5EAE7B576A8A33AB78CAA3BB70;
+ UpperCasedChecksum:12B53BB0BA3ED815D8CAC83D7148B4CF19C1C929596979B7C75944CFC863DA93;
+ SizeAsReceived:7802; Count:50
 Received: from BN6PR04MB0660.namprd04.prod.outlook.com
  ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
  ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2937.020; Sun, 26 Apr 2020
- 18:36:45 +0000
+ 18:36:47 +0000
 From: Jonathan Bakker <xc-racer2@live.ca>
 To: kgene@kernel.org, krzk@kernel.org, robh+dt@kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 11/13] arm: dts: s5pv210: Assign clocks to MMC devices
-Date: Sun, 26 Apr 2020 11:36:02 -0700
-Message-ID: <BN6PR04MB06608CA5113D4034849C94A4A3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
+Subject: [PATCH 12/13] arm: dts: s5pv210: Correct FIMC definitions
+Date: Sun, 26 Apr 2020 11:36:03 -0700
+Message-ID: <BN6PR04MB0660823C87DE000BCDF36C3AA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200426183604.28494-1-xc-racer2@live.ca>
 References: <20200426183604.28494-1-xc-racer2@live.ca>
 X-ClientProxiedBy: CO2PR05CA0096.namprd05.prod.outlook.com
  (2603:10b6:104:1::22) To BN6PR04MB0660.namprd04.prod.outlook.com
  (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200426183604.28494-12-xc-racer2@live.ca>
+X-Microsoft-Original-Message-ID: <20200426183604.28494-13-xc-racer2@live.ca>
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from jon-hp-6570b.telus (2001:569:fb67:7300:9f89:4b96:de0b:cd14) by
  CO2PR05CA0096.namprd05.prod.outlook.com (2603:10b6:104:1::22) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2958.7 via Frontend Transport; Sun, 26 Apr 2020 18:36:44 +0000
+ 15.20.2958.7 via Frontend Transport; Sun, 26 Apr 2020 18:36:45 +0000
 X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200426183604.28494-12-xc-racer2@live.ca>
-X-TMN: [lBC470yQhS2GdzrQToJXbH+QTT+ZyS8kYmBMAJ5GcdsMrQeP5pl/zuXK9uqHaw/B]
+X-Microsoft-Original-Message-ID: <20200426183604.28494-13-xc-racer2@live.ca>
+X-TMN: [T1QFinePHD3IlFiX76UppSP0EfdViUWBuaTwjBdUAaJVt+FyA6TsWKLxp/lYTxu4]
 X-MS-PublicTrafficType: Email
 X-IncomingHeaderCount: 50
 X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: e6fc1cd4-b153-4313-0eec-08d7ea10c5ac
-X-MS-TrafficTypeDiagnostic: CO1NAM11HT028:
+X-MS-Office365-Filtering-Correlation-Id: dda40351-596f-4e81-b90f-08d7ea10c683
+X-MS-TrafficTypeDiagnostic: CO1NAM11HT017:
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: KIsqcpWDpXzOQJ+Fzeh0fyRJCYxdKw6BSNlzLVR0zAO/BorwXYTsmS9O7w/FYHAKy8dnd6o2KDK2uUCqwpIBE5DzMmOy89PdDw64gICuHVzXn1k3P5Lwec0Yvxj5aF1+Dxq7aHVANzULQwiyeV5Kbsh42ZPZ7AKMbAhnxHT9CLg9ISrqYDMV+Dhou1/KUMO6atfBK6kCsQN4yKQ1ap7L8w==
+X-Microsoft-Antispam-Message-Info: jwTPbk3vJnxM4R1w0zCBIC50uxU74ryWOsDsfYbFvw0po5EjUAt3py40bRejDXKc+nUoy90TaXY0RwhuTXVZ3Dk05DrwGRSX4OQdCKkll25rf8/TXdufgTAzzoaOmF+oOsnBqU/1xA/gWnF5ludzXgsbKECFr+7kKHCRIwg9OXl8J66cnEDOWiP6PKkxv74tuhuu2Ma8/PrigHsasZDAng==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
  IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: us2Mo2r/EGC8/Q2MCYHeGTVAKD3OX9NsLOTa4e5vwCaWFvELexa503Yq+eVEui3vu33uObDn0VMUAmJhvcvl9WmMefWXsdGtOge1NFV80PqMe3Y2McgyBNOFH9Mwo22VA1CN93TNkWzQVu4NockVWAeiUz32B+zDxOLsiT82aKI8Y45mF7cmsTlDyz+bywjEH5k6T4Zq6qat/LF3lj8Eaw==
+X-MS-Exchange-AntiSpam-MessageData: dyXSMkztdwt/tBAH3iSlxYnlRUbnOGtQ0Anp6IiQuRNgMOcI7Mumez60n43N346TNZwBoHmxrzsav55QJUf75Q0cDRAHjqzw8sSqb7rl/Glk2P/8RiBWxM05OJ7PZdJPBqCEDewAagAKm6gQUDrZ+333t/kRuK8UXbRfUASO7I294PcK1+iidYelTHC189w+BcriV+gU8dhNR3KgAU/shg==
 X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e6fc1cd4-b153-4313-0eec-08d7ea10c5ac
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Apr 2020 18:36:45.6916 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dda40351-596f-4e81-b90f-08d7ea10c683
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Apr 2020 18:36:47.0690 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
 X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT028
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_113647_491536_51600D04 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20200426_113649_502145_BDB7D5C6 
+X-CRM114-Status: UNSURE (   8.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -104,7 +104,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.18.92 listed in list.dnswl.org]
+ no trust [40.92.20.103 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [xc-racer2[at]live.ca]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -129,77 +129,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SHDCI controller on aries devices is a little bit peculiar about
-the clocks and with a slightly off clock can run into errors such as
-
-[ 141.533993] mmc2: ADMA error: 0x02000000
-[ 141.535137] mmc2: sdhci: ============ SDHCI REGISTER DUMP ===========
-[ 141.540246] mmc2: sdhci: Sys addr: 0x347e4cc4 | Version: 0x00002401
-[ 141.545358] mmc2: sdhci: Blk size: 0x00007004 | Blk cnt: 0x0000fffc
-[ 141.550470] mmc2: sdhci: Argument: 0x00000000 | Trn mode: 0x00000013
-[ 141.555583] mmc2: sdhci: Present: 0x01fa0000 | Host ctl: 0x00000012
-[ 141.560696] mmc2: sdhci: Power: 0x00000000 | Blk gap: 0x00000000
-[ 141.565809] mmc2: sdhci: Wake-up: 0x00000000 | Clock: 0x0000010f
-[ 141.570921] mmc2: sdhci: Timeout: 0x0000000a | Int stat: 0x00000003
-[ 141.576034] mmc2: sdhci: Int enab: 0x03ff004b | Sig enab: 0x03ff004b
-[ 141.581147] mmc2: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00000001
-[ 141.586259] mmc2: sdhci: Caps: 0x05e80080 | Caps_1: 0x00000000
-[ 141.591372] mmc2: sdhci: Cmd: 0x0000163a | Max curr: 0x00000000
-[ 141.596485] mmc2: sdhci: Resp[0]: 0x00000920 | Resp[1]: 0x00000000
-[ 141.601597] mmc2: sdhci: Resp[2]: 0x00000000 | Resp[3]: 0x00000000
-[ 141.606710] mmc2: sdhci: Host ctl2: 0x00000000
-[ 141.609831] mmc2: sdhci: ADMA Err: 0x00000000 | ADMA Ptr: 0x349a3208
-[ 141.614942] mmc2: sdhci: ============================================
-[ 141.620057] mmc2: sdhci: 349a3200: DMA 0x347e4cc0, LEN 0x0004, Attr=0x23
-
-Specifically assign the mmc sclks to be parented from MPLL with specific
-rates that match the vendor kernel.
+The extended mainscaler is only available on FIMC1 and there
+are minimum pixel alignments that differ from the default.
+Additionally, the cam-if interface is available on all three
+while FIMC2 has no rotators.  The lcd-wb interface is supported
+on FIMC1.
 
 Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
 ---
- arch/arm/boot/dts/s5pv210-aries.dtsi  | 8 ++++++++
- arch/arm/boot/dts/s5pv210-galaxys.dts | 4 ++++
- 2 files changed, 12 insertions(+)
+ arch/arm/boot/dts/s5pv210.dtsi | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/s5pv210-aries.dtsi b/arch/arm/boot/dts/s5pv210-aries.dtsi
-index a103ddb0d720..7e113d750b97 100644
---- a/arch/arm/boot/dts/s5pv210-aries.dtsi
-+++ b/arch/arm/boot/dts/s5pv210-aries.dtsi
-@@ -734,6 +734,10 @@
- 	non-removable;
- 	status = "okay";
+diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
+index b3b6ad2889f9..3cbf6c05f42a 100644
+--- a/arch/arm/boot/dts/s5pv210.dtsi
++++ b/arch/arm/boot/dts/s5pv210.dtsi
+@@ -626,7 +626,7 @@
+ 				clock-names = "fimc",
+ 						"sclk_fimc";
+ 				samsung,pix-limits = <4224 8192 1920 4224>;
+-				samsung,mainscaler-ext;
++				samsung,min-pix-alignment = <16 8>;
+ 				samsung,cam-if;
+ 			};
  
-+	assigned-clocks = <&clocks MOUT_MMC1>, <&clocks SCLK_MMC1>;
-+	assigned-clock-rates = <0>, <50000000>;
-+	assigned-clock-parents = <&clocks MOUT_MPLL>;
-+
- 	wlan@1 {
- 		reg = <1>;
- 		compatible = "brcm,bcm4329-fmac";
-@@ -750,6 +754,10 @@
- 	pinctrl-0 = <&sd2_clk &sd2_cmd &sd2_bus4 &tf_detect>;
- 	pinctrl-names = "default";
- 	status = "okay";
-+
-+	assigned-clocks = <&clocks MOUT_MMC2>, <&clocks SCLK_MMC2>;
-+	assigned-clock-rates = <0>, <50000000>;
-+	assigned-clock-parents = <&clocks MOUT_MPLL>;
- };
+@@ -639,9 +639,11 @@
+ 						<&clocks SCLK_FIMC1>;
+ 				clock-names = "fimc",
+ 						"sclk_fimc";
+-				samsung,pix-limits = <4224 8192 1920 4224>;
+ 				samsung,mainscaler-ext;
++				samsung,min-pix-alignment = <1 1>;
++				samsung,pix-limits = <4224 8192 1920 4224>;
+ 				samsung,cam-if;
++				samsung,lcd-wb;
+ 			};
  
- &uart0 {
-diff --git a/arch/arm/boot/dts/s5pv210-galaxys.dts b/arch/arm/boot/dts/s5pv210-galaxys.dts
-index f5c13eb8ae71..6958fe040106 100644
---- a/arch/arm/boot/dts/s5pv210-galaxys.dts
-+++ b/arch/arm/boot/dts/s5pv210-galaxys.dts
-@@ -354,4 +354,8 @@
- 	pinctrl-0 = <&sd0_clk &sd0_cmd &sd0_bus4>;
- 	pinctrl-names = "default";
- 	status = "okay";
-+
-+	assigned-clocks = <&clocks MOUT_MMC0>, <&clocks SCLK_MMC0>;
-+	assigned-clock-rates = <0>, <52000000>;
-+	assigned-clock-parents = <&clocks MOUT_MPLL>;
- };
+ 			fimc2: fimc@fb400000 {
+@@ -653,9 +655,10 @@
+ 						<&clocks SCLK_FIMC2>;
+ 				clock-names = "fimc",
+ 						"sclk_fimc";
+-				samsung,pix-limits = <4224 8192 1920 4224>;
+-				samsung,mainscaler-ext;
+-				samsung,lcd-wb;
++				samsung,pix-limits = <1920 8192 1280 1920>;
++				samsung,min-pix-alignment = <16 8>;
++				samsung,rotators = <0>;
++				samsung,cam-if;
+ 			};
+ 		};
+ 
 -- 
 2.20.1
 
