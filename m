@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54AF41B8DAF
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 09:54:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BFBC1B8DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 10:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MGXgrmKUift46Sui1lZZRONpwWK6kWHSYxVbRkqSJDk=; b=ks+LYWSIzd+Rm31i/dgGfQ7de
-	n5jPokl31a+M+I7qMg1RgFa/LQU3sb9RDTstPbIXYqG3d7aIbfSGlxbmH7oP5NVycrFMpL23Bo+2i
-	0ZADi76i5rvBNKJQGjZ3j0ygV6tFfrY3OqEPJDhTolByhAEec77dwKk7i0qUJ/4kpMy5PiXaSJzXY
-	cCcPWLrZwOTIQmBN3cfNY9XpuULOJgzroIACn7bEpSFVts49MCwFj3YK04QST0DNNDge4AWH8m6B0
-	eyrlw0djI6xdxRYgJkVGS6/SipoLR3YQxtTKp93Swb8CNb5Ara+zegPapMtMWh7aD7fJtSSAPreEd
-	MBuaoR3Bw==;
+	 bh=avhInuJeeFyvDppWfqCPX6HZfTcOKfcTp1fTVVE+AEI=; b=slcPDxtJml6py4VbSZAcCINS2
+	epACAwfwkZNSjP3Hk3UClV3yNkILZQ1Iggaj6wzydg5msltKG17UkgP8d49lfEQnVxmSTOe/+0gie
+	XFV/vQjYScMqNKE8Z0hJWMTeVS37dG1mDVpjqBUfSRjXEV4oRnccwYkPnZkPFFQ3rqeCAdc03SSJH
+	4Whn0MhqIOBtYA+NZNPiuT0ZzK1OWKK1z8+K8WKJriGfI3OPN/Ja6GsX4iN2oMEP5w1vFbb0ARsj1
+	OQJHKonpA1abmtay6pqN71NbTTdZakgwB1dffBSa9M2xw7RohgsI+5XXF7H/0V3BEMZL1kIWOjH75
+	im5KfIWBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSc7Y-0004Mp-Of; Sun, 26 Apr 2020 07:54:36 +0000
+	id 1jScEG-00029H-OB; Sun, 26 Apr 2020 08:01:32 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSc7O-0004Le-Ji
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 07:54:27 +0000
+ id 1jScE6-00028m-3Y
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 08:01:23 +0000
 Received: from localhost (p54B33954.dip0.t-ipconnect.de [84.179.57.84])
- by pokefinder.org (Postfix) with ESMTPSA id DADC22C01E8;
- Sun, 26 Apr 2020 09:54:25 +0200 (CEST)
-Date: Sun, 26 Apr 2020 09:54:25 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 5199A2C01E8;
+ Sun, 26 Apr 2020 10:01:21 +0200 (CEST)
+Date: Sun, 26 Apr 2020 10:01:21 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
-To: Alain Volmat <alain.volmat@st.com>
-Subject: Re: [PATCH v3 2/2] i2c: i2c-stm32f7: allows for any bus frequency
-Message-ID: <20200426075425.GE1262@kunai>
-References: <1587394677-6872-1-git-send-email-alain.volmat@st.com>
- <1587394677-6872-3-git-send-email-alain.volmat@st.com>
+To: Stefan Wahren <stefan.wahren@i2se.com>
+Subject: Re: [PATCH] i2c: brcmstb: Fix handling of optional interrupt
+Message-ID: <20200426080121.GG1262@kunai>
+References: <1587850687-23675-1-git-send-email-stefan.wahren@i2se.com>
 MIME-Version: 1.0
-In-Reply-To: <1587394677-6872-3-git-send-email-alain.volmat@st.com>
+In-Reply-To: <1587850687-23675-1-git-send-email-stefan.wahren@i2se.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_005426_796145_B2FA02BF 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20200426_010122_297802_60EB3412 
+X-CRM114-Status: UNSURE (   8.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -60,80 +59,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, robh+dt@kernel.org,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7602666419996769588=="
+Cc: Florian Fainelli <f.fainelli@gmail.com>, Kamal Dasu <kdasu.kdev@gmail.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7841057142926510375=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7602666419996769588==
+--===============7841057142926510375==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="G6nVm6DDWH/FONJq"
+	protocol="application/pgp-signature"; boundary="JbKQpFqZXJ2T76Sg"
 Content-Disposition: inline
 
 
---G6nVm6DDWH/FONJq
+--JbKQpFqZXJ2T76Sg
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Apr 20, 2020 at 04:57:57PM +0200, Alain Volmat wrote:
-> Do not limitate to the 3 (100KHz, 400KHz, 1MHz) bus frequency but
-> instead allows any frequency (if it matches timing requirements).
-> Depending on the requested frequency, use the spec data from either
-> Standard, Fast or Fast Plus mode.
+On Sat, Apr 25, 2020 at 11:38:07PM +0200, Stefan Wahren wrote:
+> From: Dave Stevenson <dave.stevenson@raspberrypi.com>
 >=20
-> Hardcoding of min/max bus frequencies is removed and is instead computed.
+> If there is no interrupt defined then an error is logged due
+> to the use of platform_get_irq. The driver handles not having
+> the interrupt by falling back to polling, therefore make
+> the appropriate call when claiming it.
 >=20
-> The driver do not use anymore speed identifier but instead handle
-> directly the frequency and figure out the spec data (necessary
-> for the computation of the timing register) based on the frequency.
->=20
-> Signed-off-by: Alain Volmat <alain.volmat@st.com>
-> Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+> Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.com>
+> Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 
-Fixed this checkpatch CHECK:
-
-CHECK: Macro argument 'rate' may be better as '(rate)' to avoid precedence =
-issues
-#133: FILE: drivers/i2c/busses/i2c-stm32f7.c:413:
-+#define	RATE_MIN(rate)	(rate * 8 / 10)
-
-and applied to for-next.
-
-If you could drop the 'i2c-' prefix in $subject, that would save me one
-step.
-
-Thanks!
+Applied to for-next, thanks!
 
 
---G6nVm6DDWH/FONJq
+--JbKQpFqZXJ2T76Sg
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6lPjEACgkQFA3kzBSg
-KbZ32A//bNuNc1m8uNO3qX4GtIk7gvqICXMOsqW1gDL2FW0PlxR1D4J0jiLwYQQw
-PJ+FnD0Enp0TP7IgQ43/gZiZVhqJ0+vnzOYejWHcWM6PXggKVEp2R6+3GxQqcmHt
-55tl6t+qDHp4gcRNq0TAT025GnKF8DtiCx35bIVrb5i4mTE18ckk4B5VsrTrhuEk
-t6E8aLRADTKpcM3F2FD7jc9S2KXHScNQGYAiYSAQb8eBi1f2kloG5q36lua/MenA
-AF/BApIxIYcaKYicSxWsOG3ngQV5EUNUKCjlPAnIYJzjhgTjzjXsBLE/G6C0q/Gb
-QzUhobIeFEuVbFNduir0BSF+1Aj9SeIxx5Q83Kh8QgG4bDrpBOLhvkO/ZvXvF+II
-9DNyPZSQdrWjB6PWsR0fiJVPtlHWCxnv0Oq0yl182gtNudyqAXMLKl3r0w6Dyyin
-20Rl5Idx5NdcBY0iSuuk29XwNVb/7tO4fiTGsUvt6c/aXyCMsm+v7nTXGxoTpP63
-/x3ViqpewKGWamsIrMNTYJtFPhLa0AWyl4DLalF6/3TaC3PCJupYXR30e6+CNahk
-EFE6tJabxRiQ+4KRosTnWNjgYvyylfO3zt/XnHV/pPDvDR8JBu9hr58UlLzGM3/b
-WnzyHk67GbcvggNGpi5qzZQd37P3qSppxpG6u9Jz6Uj4Tv0RWQg=
-=TPJd
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6lP9AACgkQFA3kzBSg
+KbZ7iBAAjYBS14DsJeRROcVmhMYxiz/wh3pq/aNyN2EI+5xwzBolb/pXu30Y+8dZ
+tQwRgKlsBHyWN5qoxYXGh76KFA4joX3p7biO5BiltTMVmumC1OvSsk9V0+7dcUeT
+mnzEHmPRTa3cqNQvOy+EraIQbH+NnMLmOLSZ1Ot542bcn/pNB3GOrkfP7vsoIGzd
+GwGnPsJMHTx7sUXjGy1j4Zn0YFstyImNG/ie1EetWZaQgTaxnjCTKBVQqeaYKYvU
+Nr+y0j7JKaxSw2KEI1V6JGAEm8f4ZcjeJd7VvKxfj6dii/8egghskY1l6AAsIXib
+vNgmqyhXPTXluNjQL50HAI1FRr6DUx8+uEOgmR5VVmcS2L2NAlfy8wjcFhmyDqN4
+SOpPPLbHTSHlCcPXYKV6YWDwBLMR5SxHXTalbkkO1kBA8zYyeFN9dxRh3NFkClBP
+9DCtXcN2v9qKcmDd88ZH8ZW3bT0AvqyEFrPOGCYcz+53m7izoTWG9sasX8GoqtaX
+1Zh8yV1gHPFyyXI+ImAFhPVkd7kKHxcn8cOKPibO6+MuqwJKOJL/OZfS00/f+o8a
+qr8esQzZPu2cMMuNiJRksBpK8E8OkpVk71HNXJIbocTYFOCng4VIhcrRsBmqqd3t
+PbskfWvLXn6vWcKAevg2QmFdP6/bzLa/wey3yJ60h6nzE99IdhA=
+=HQQR
 -----END PGP SIGNATURE-----
 
---G6nVm6DDWH/FONJq--
+--JbKQpFqZXJ2T76Sg--
 
 
---===============7602666419996769588==
+--===============7841057142926510375==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -144,5 +128,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7602666419996769588==--
+--===============7841057142926510375==--
 
