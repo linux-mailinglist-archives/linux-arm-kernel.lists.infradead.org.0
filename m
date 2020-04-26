@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 580621B9133
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 17:35:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E65C41B9136
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 17:37:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=StGDKKcE/eXnCABXgfrO0LX7y15msBM269VBxYGnUlY=; b=uxy2hfqOyNlCEe
-	DldGbtjNor1XVCXeOP2KmLnU4cCgyhIRw78Zrj+HdWJwHKMIGxConqTpTM0DerMU5vHrmjE3q7Sfj
-	k+JT8ERB0nwVVM/PUhS9Tsi+rE/Af5XUpsJMH06TSzMf6C/9GLb2AiSJ3x2MGYIPGeQPfrfkq+vOu
-	nDlTU9G7T+3DdnxYS7nJD6ohWTOR5uqyOoDliZXHOwFOhT1U8DvA4Fi8A3QDUvOPmNJBiyZl/sQ17
-	UUBGHa4+kqbX5mplyXM2pJyOYh37H0GdjSH2C8LrcYUDPuISeLV0+yEVz4wIAOqNtH9FmXFGDtLhK
-	BOewVsmA3sl6iuRlcFDA==;
+	List-Owner; bh=MrviAtFaa5/CACwRjmtLsQms2RB3BIhGs5kJ34OB7t4=; b=shpnjQnPjNRHgs
+	4suCgT0HjJR9/WLkWY8EGvBhFjgoZrwpNYGMJQHDQBsWjFN5/imhp8GPpd23qesH1S7Vffm54/Xmi
+	fEF6McCbKVnB6+jYbdqaOsH6TZGn12YMzPmt+EkYXUWon4ZttaVX6nt8g6RzF/luFpnzbTsO2Gz4s
+	TufqVlPag0dx1YNpYIYqk5VuItghcHr0v3doJwhzg6LmVRSLihwm3blZr3HQFIYjlJowLVorxZL2n
+	97a0yp0vspbXc63xeuEOVeZ+048nO2GFoOxvmLe5C2xu43ZoIKbA8cZvPNkP2aHQhL6WLFFR0SFT6
+	0/pkfQxYjb1Tl21q/Mzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSjJv-0002Jj-6A; Sun, 26 Apr 2020 15:35:51 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jSjKv-0007TD-5Z; Sun, 26 Apr 2020 15:36:53 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSjJa-0001nc-O3
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 15:35:32 +0000
-Received: by mail-lf1-x143.google.com with SMTP id x23so11701708lfq.1
+ id 1jSjKb-0006vj-Np
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 15:36:35 +0000
+Received: by mail-lj1-x241.google.com with SMTP id f11so10305552ljp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 08:35:29 -0700 (PDT)
+ Sun, 26 Apr 2020 08:36:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=we74QiB75BtYwlX2vu1/hk6PEpVENj5opPHAohrnsck=;
- b=Odv9VoxY6497vkDTk3+CRrgpuyR/3DNV0ZX8s0CZ9GN4rNPbF0ZAWfH+KZM9MA8Mqj
- lR9kQ0/xxj0SUdi0P3ul3qdJo5Fg0sktrQoC3ayiMfbpbvhfoAV7AELpoFo0TK9CslcN
- S25kQAFoyh7iVFVHblXWMAjwsg3tdzBbYKUYPdygjdmaj5cWt6ohXnQDPgiZddm9MlZB
- g4YLk8AGHQOuQ3xDsRBB7BH7Pvb1RjSpXjTbHsWLOr20iA6s1a8jhb7+PwyTaNqSZdxg
- mypAVWAjp1ICtt7tdNQMoskBTF3XR7JWv3LDOUCyPIpJqqS1L6X6oLRnmIra8zqWztpW
- 8GaQ==
+ :cc; bh=X77CRMCQDDgdc4Bur39RULXQxF3a/MrJ/qM13TQRcl0=;
+ b=NYVYUIdXiXEUEPYYT3I/R1qAnkPPt3cT7aB7wcoSmtGOcWinkwL3B4FAZKsqUsBC+7
+ EbE20jkfrnneUQiwAC3g3XB+K72YRxyC7g9/b3z8XqRwKEs7Phsfd9nQiLH0aY5a4sPy
+ YpSzGv+bVifsrIV7RfYcYTkf/rKBasnwAMVUHprWphf0HsikZIOwrJ16GBbbvY1+ObKA
+ VGvJ+y7WwtkxvVTJTuf8cZI1zMMyyY+sqfhGajVIPN+M2rDln91qxhZ+ewxRuOrRrKJV
+ mdxDKAYaguUjc/Dg6MV3ccxQP/KAwqmIJPUqWulw+eEM1J2C6XmPJZ5zx39OHRyBhDOK
+ qXyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=we74QiB75BtYwlX2vu1/hk6PEpVENj5opPHAohrnsck=;
- b=frEd0I0gkFBEtpMyjG35jlibl5+mAG4Ey3ZecVml+bXYgOfW8U23OL8nsillreygey
- l6W56rKareFfH8H0FS/Q8NGVHH72VH+XFG+/KI/xQR2wGPtV/wDigO7gk/OmpKXbSoFL
- V+ofmXtQLzL9KfDP6jFex5NGtrT3T+yfcC/8qehvgCatKUPWXxmCnDUv/AKeNqk9DAAh
- k2naO7KPXw8/Q2luJm6c6/VvYqDwVK7H59212d5v57CyxUMZ53ol2ssICkRSx3GrS78T
- fCn8i4IWWrZCIGNKu1wn7jQeWp7WUow/fPnt6AX8whbBCB8rJP99dhZJ6JaVa9QTFJnh
- VY/Q==
-X-Gm-Message-State: AGi0PubUztlCNIDQleyZOXtBae+0r7tFrzyek/IY1B2CAS45KB2UQ0gr
- SF1bBwK18Jzpb/TKAJcmJgQ0zoQPDsg2Mp2aJOMkaTIZUD6+WA==
-X-Google-Smtp-Source: APiQypIQlC5Oq9kecdo1sFNy4lS8r1NT6AHD5X6gYOaNU2NmhTi6HZq5fedzF0ehDBll7oigZUvKxEholtvfWonYUMg=
-X-Received: by 2002:ac2:43c6:: with SMTP id u6mr12976089lfl.170.1587915327642; 
- Sun, 26 Apr 2020 08:35:27 -0700 (PDT)
+ bh=X77CRMCQDDgdc4Bur39RULXQxF3a/MrJ/qM13TQRcl0=;
+ b=T/x9KPBbFucezIfyVgfPfHkVbRHOwwEZR5ikwiMdiBwcsSaMrUK0+G9BjDXrn6S03U
+ hXQzeGr3RwTmU7HtR78kOuTz27No9mbunzmO6iiMh9Oo010RXEeZ+GMl5AJJZLobnxAh
+ +zCsig25r4nJuVkB9KkKBumdZpBKBza2WpWa7qRqqqROv7BjDEyxWZZFqd1PoaM8NGIo
+ ilwK34U5xG1B1n0WYu96O3qu3ILvpTsN/LajGjbZCqBf0TbLPUwpx1mfOy/gIpnquAv+
+ LuLEx/nDJ2IH7QWPdZl//q24xVuai0GhHw6ae9z1RxADT4O8dvB6YQSkk0jnv0hk6CAm
+ B6EQ==
+X-Gm-Message-State: AGi0PubrLLTcouwuf6JVOuJpmy8EF/KaufNLnveGsb8ApUzLlxWJj5Tp
+ 8OfaHev0qvaSy/ffKtLBdavPkR1VcD4l7WjeWs7QxQ==
+X-Google-Smtp-Source: APiQypKj/Im70RltLS80+jbqf0SqRD8efu2GTat9yvLZn+7xqD3hNXs33YaVw72fniLFc/ebyiVe0IHjroY93q9fxEE=
+X-Received: by 2002:a2e:553:: with SMTP id 80mr11651325ljf.147.1587915391895; 
+ Sun, 26 Apr 2020 08:36:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200423064808.10468-1-etienne.carriere@linaro.org>
- <CAL_Jsq+zNyqcQ2xWceGLz4by=3rV=46wPyj=HcFPZ9pQPF17eg@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+zNyqcQ2xWceGLz4by=3rV=46wPyj=HcFPZ9pQPF17eg@mail.gmail.com>
+ <20200423064808.10468-2-etienne.carriere@linaro.org>
+ <CAL_JsqKvQasaBCHC2s68WmtfwGN+t349tzmF=ySkuYz11HzksQ@mail.gmail.com>
+In-Reply-To: <CAL_JsqKvQasaBCHC2s68WmtfwGN+t349tzmF=ySkuYz11HzksQ@mail.gmail.com>
 From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Sun, 26 Apr 2020 17:35:16 +0200
-Message-ID: <CAN5uoS9qENztJcd1b4uUMW83+o57gkWE9gEpq3Qd2YV0STA1gA@mail.gmail.com>
-Subject: Re: [RFC PATCH 0/2] Add examples of secure- prefixed property in
- documentation
+Date: Sun, 26 Apr 2020 17:36:20 +0200
+Message-ID: <CAN5uoS-zizF_by6WDtF7j9MrGsRt1fir5w+r1cN1QNzDUf8zgQ@mail.gmail.com>
+Subject: Re: [RFC PATCH 1/2] dt-bindings: arm: Add secure-clocks binding
+ description
 To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_083530_996185_5E53E996 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20200426_083634_300666_FCAB7264 
+X-CRM114-Status: GOOD (  20.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,43 +102,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 24 Apr 2020 at 23:59, Rob Herring <robh+dt@kernel.org> wrote:
+On Sat, 25 Apr 2020 at 00:06, Rob Herring <robh+dt@kernel.org> wrote:
 >
 > On Thu, Apr 23, 2020 at 1:49 AM Etienne Carriere
 > <etienne.carriere@linaro.org> wrote:
 > >
-> > Hello,
+> > Describe how clocks property can leverage secure- property prefix
+> > for clocks handled exclusively or shared by secure and non-secure
+> > worlds.
 > >
-> > This is a proposal for adding a bit of description in the DT bindings
-> > documentation of how secure- property prefix can be used for. The
-> > changes in this patch series describe that for clocks and resets properties.
+> > Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
+> > ---
+> >  .../devicetree/bindings/arm/secure.txt        | 19 +++++++++++++++++++
+> >  1 file changed, 19 insertions(+)
 > >
-> > Documentation file arm/secure.txt already states that secure- prefix can be
-> > used for any property hence the description proposed here are not mandated.
-> > However it may be useful as explicit examples of such usage.
+> > diff --git a/Documentation/devicetree/bindings/arm/secure.txt b/Documentation/devicetree/bindings/arm/secure.txt
+> > index f27bbff2c780..9bc94921f2a6 100644
+> > --- a/Documentation/devicetree/bindings/arm/secure.txt
+> > +++ b/Documentation/devicetree/bindings/arm/secure.txt
+> > @@ -53,6 +53,25 @@ Valid Secure world properties
+> >     status = "disabled";                             /* disabled in both */
+> >     status = "disabled"; secure-status = "disabled"; /* disabled in both */
+> >
+> > +- secure-clocks : specifies the Phandle list secure world shall use
+> > +  for the related clocks whereas property "clocks" specifies the
+> > +  clock Phandle list non-secure shall use for the that clocks.
+> > +  This configuration can apply for example when a hardware clock is
+> > +  shared by the 2 worlds and the hardware implements a specific interface
+> > +  for each world, i.e.:
+> > +
+> > +  clocks = <&clk DMA_NS>;      /* NS relies on clock handle DMA_NS */
+> > +  secure-clocks = <&clk DMA_S>;        /* S relies on clock handle DMA_S */
 >
-> It may say that, but any new property has to be documented and
-> reviewed still. I'm not sure that anything in secure.txt has actually
-> gotten used.
-
-Looking at Linux kernel, U-Boot, Qemu, EDK II, that's right :)
-I guess that applies to the so-called non-secure world.
-
+> The device has to know what it's clocks are for and should know if
+> some clocks are secure only.
 >
-> You should participate in the System DT discussions in Linaro where
-> how to represent different CPUs and CPU execution environments (like
-> secure world) is being worked on.
+> > +  Another example where use of "clocks" and "secure-clocks" can apply
+> > +  is when hardware implements a clock that secure and non-secure must
+> > +  share, as a shared GPIO bank clock, and secure world relies on clock
+> > +  device driver whereas non-secure world relies on a software service
+> > +  exposed by secure world as SCMI clock device. I.e.:
+> > +
+> > +  clocks = <&scmi_clk 2>;      /* NS relies on SCMI resources */
+> > +  secure-clocks= <&clk 5>;     /* S accesses the SoC reset interfaces */
+>
+> If you have this case, I don't think this is the solution. I don't
+> think it scales well and you probably need separate DTs. It's
+> something to solve in the system DT project.
 
-Fair, I'll get information there.
-Thank you for your prompt feedback.
+Acked,
 
-In the same scope, I am to post a change in the Linux DTS files.
-A change to define a new attribute mostly of interest for the secure
-world description.
-I will still post it to the LKML to get feedback about it.
-Such new bindings should still be discussed in the Linux DT ML, right?
-
-Regards,
+Thanks,
 Etienne
 
 >
