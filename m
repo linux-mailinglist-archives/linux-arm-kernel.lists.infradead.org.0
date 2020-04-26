@@ -2,136 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A68C1B9158
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 17:58:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F64B1B9164
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 18:01:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yaFtFLvwZqtisg6sCR7izh9CKaoFr8/M9rjNB0n1CS0=; b=eLb8zEdzte/asP
-	jnkddBSnO+FSFYvFT0YvW3+4idtPhA/MCgJJ5XOvGaMGnbkJcYAwAYoCV0MPVMNvB4CtqF0FLtgJL
-	QWNYOabb2Pi8saymE3gVNcG+JtsPlPm4xeKIBIGa21AltYRiXbl+XNHAAjq5YWeYpFoXTRV13pUaK
-	Lzqb/7rx+4zlqSjCZEvLb/R9sO9bogeIm7nZwQp/g7aAV8HlE3CRiJwHY9+Jn3krTE/pB/WLqrZan
-	bvRJICjtrGa1pof4WZcPr23eHt/kweSBqjlykvWsFWOrCK4MvvuFB2vSFSeIXgA9Xk7ImOt532x6q
-	wzMDld+B9DsdbJw51EUQ==;
+	List-Owner; bh=7h2+etUwoBWFdx2dr5etk3Xiz2eZW7D+cKlxSjr+6BU=; b=EhahnXUWle9QuI
+	H3Cjnm6/i8/Rh88pv2NVSRz27/+FTSL5tO6sNDvzoegYHf66q67ihR7gODrEqKt0YNmYrl9MmKsZF
+	r8sPv5Ht/j+uAlaMyNVo4keHnUWSA+nDILydm5AAqVHv2AgEB+NJWqQV6vRrKD5Vhd34HbFa0RaDg
+	cDY7ukumtQ0GMnUm21cHKEv0A4b6K8UHfD06c8mMD8O7Uc2lRfWOLSnMdbvgGfJqw+S3KcxLq5DRC
+	PdTQsZontlVd6GOI+OXz74ewk+lsseFYGvbBSjxwIPzklN/G4Y3Hu5XBaA3Z0M4omXmLlp+/G16B9
+	zRCFctYEqxsysqxJ64wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSjfT-00077z-EU; Sun, 26 Apr 2020 15:58:07 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1jSjit-0002G9-W6; Sun, 26 Apr 2020 16:01:40 +0000
+Received: from mail-mw2nam12on2085.outbound.protection.outlook.com
+ ([40.107.244.85] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSjfL-000771-2q
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 15:58:00 +0000
-Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20200426155749epoutp01c08d23e78918f177f9e2ccea87244e69~JacwiaDdd2483124831epoutp011
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 15:57:49 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20200426155749epoutp01c08d23e78918f177f9e2ccea87244e69~JacwiaDdd2483124831epoutp011
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1587916669;
- bh=trTFp5Ur6qfiEfREXZJnth3cZOnKt8jOp2bjI2S9iaI=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=JeKrG4pE378YAMsTdAwCRiIWiRwDEvFTuBsXS4NkgI+TTcTsOPtmnniB12C9XltMw
- 1KmeYTjAHB6WAOb3S/ATocDXCX2Cre9XB9BAtYSrcZEC8/cumDFhWYtie6b7AnmpZR
- G5dIwtBDV7LrQOhjGJAgFzcwdTEcGgjnwJT0d9Xo=
-Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTP id
- 20200426155748epcas5p2eee73d1dccf8933d1acaea7659b9b67b~Jacv1f9Fl3173031730epcas5p2B;
- Sun, 26 Apr 2020 15:57:48 +0000 (GMT)
-Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
- epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- BE.4B.04736.C7FA5AE5; Mon, 27 Apr 2020 00:57:48 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200426155747epcas5p18a5839ee37d56c6aa1dfa319c8df8a31~JacvX3nwp2537425374epcas5p1X;
- Sun, 26 Apr 2020 15:57:47 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200426155747epsmtrp27897ebe2db6314da5c7bdf10014b86c0~JacvXLxL-1929019290epsmtrp2c;
- Sun, 26 Apr 2020 15:57:47 +0000 (GMT)
-X-AuditID: b6c32a4b-ae3ff70000001280-c6-5ea5af7c4764
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- 17.EB.25866.B7FA5AE5; Mon, 27 Apr 2020 00:57:47 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200426155744epsmtip2783424f39ac89a66da02d6034f69d994~JacsOstWm0566905669epsmtip2s;
- Sun, 26 Apr 2020 15:57:44 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Christoph Hellwig'" <hch@infradead.org>
-In-Reply-To: <20200422065541.GL20318@infradead.org>
-Subject: RE: [PATCH v6 05/10] scsi: ufs: add quirk to fix abnormal ocs fatal
- error
-Date: Sun, 26 Apr 2020 21:27:42 +0530
-Message-ID: <000201d61be3$6e262c90$4a7285b0$@samsung.com>
+ id 1jSjik-0002El-Cw
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 16:01:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EZmFWxuLG+IDx60utWTxDUv5HRC4L1MirQ33yN5F0tGBKfYXUu32nT0qfNp/6SbvUqEgXogYFJrC2JiwcyC2XBLR/4j+OW/uQPP31GjStvmhFOoZFQaqO0FbW3158a5GwiJIs76EF10c480lrGeBor/wV28nOXMjEyDu8Zs9yNM5pJEoCqXLi3Go1UlqzE6QQTieCBFhhZ+Ynn4jeXK684o410FkCaxwQnPpwNDL+SkN7TlYEejVTgYUK5ec2slzX/XUOlI8Bfz83QSBQbDI84W2RmmdPliZEkib5HOOr/vlZFWR5kL+5sptTzJynjZ0aw3gnss5hO9Enwu1gyZd5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jrCnNmadv5mOJ26I51Yq7r6fHXL71+9mnnOzlkYKa/M=;
+ b=XfXvVwkUtO4mSIH5agaNBr8xqOUOChOyYBm2Pp6KUogkGTtMJVKR2inEHN/yOqfWOFAsWQoormULcu1EUyOnzkZp7friig0QeJEPqCczShwhGs6XpZG16CtiQEtZd+gk4wHcF/xBUiqPbq/qYoyw9PbWrOZBoKBIWr7fXmHThPhs7EwSBLXe6FWrAFvBd1eQCXPtCYZlVwDKyAE9TlWSxY+p69EgLRo6mClO/jRekvTHZ5XBKbn0tVfteOC+eislR8E9GdKe0EJBhBHpkPjGrk+t8JSPtDNv7k6Hha/HKTfnYC/vBlwErRoag4OFcQ1NRC7AfClgg8Z7Mkg62He/mg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jrCnNmadv5mOJ26I51Yq7r6fHXL71+9mnnOzlkYKa/M=;
+ b=n1KhqnOEPvmk/2gIxtcqCDQQV143ksn++UGv7KcZs2o7/gGLVC1s13yYeD1Q+eCQNhrZ7TGvryQLDWm7BudC+70aIq6t+OlyW+vx4APKZ7hzOdBAaQsJGi2DiWQLFkLmaPXJKX3XwEJkPrSAPCyEzukhp0fOv5qodDw2xN8+/K4=
+Received: from DM6PR02MB4140.namprd02.prod.outlook.com (2603:10b6:5:97::21) by
+ DM6PR02MB4347.namprd02.prod.outlook.com (2603:10b6:5:2a::32) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2937.22; Sun, 26 Apr 2020 16:01:22 +0000
+Received: from DM6PR02MB4140.namprd02.prod.outlook.com
+ ([fe80::352d:3b22:4eec:d6a5]) by DM6PR02MB4140.namprd02.prod.outlook.com
+ ([fe80::352d:3b22:4eec:d6a5%5]) with mapi id 15.20.2937.020; Sun, 26 Apr 2020
+ 16:01:22 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Zou Wei <zou_wei@huawei.com>, Derek Kiernan <dkiernan@xilinx.com>,
+ "arnd@arndb.de" <arnd@arndb.de>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>, Michal Simek <michals@xilinx.com>
+Subject: RE: [PATCH -next] misc: xilinx_sdfec: Use memdup_user() as a cleanup
+Thread-Topic: [PATCH -next] misc: xilinx_sdfec: Use memdup_user() as a cleanup
+Thread-Index: AQHWGFEaoCOIEPhBB0yaxHj1VopCrqiLjvgg
+Date: Sun, 26 Apr 2020 16:01:22 +0000
+Message-ID: <DM6PR02MB4140944FA4196DB021A7E276CBAE0@DM6PR02MB4140.namprd02.prod.outlook.com>
+References: <1587524330-119776-1-git-send-email-zou_wei@huawei.com>
+In-Reply-To: <1587524330-119776-1-git-send-email-zou_wei@huawei.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=draganc@xilinx.com; 
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: bcfe80d5-d60f-4769-4d52-08d7e9fb111b
+x-ms-traffictypediagnostic: DM6PR02MB4347:|DM6PR02MB4347:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR02MB4347D075B15834A2FFDA4EB3CBAE0@DM6PR02MB4347.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 03853D523D
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR02MB4140.namprd02.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(136003)(39850400004)(396003)(376002)(366004)(26005)(8676002)(8936002)(6506007)(2906002)(81156014)(7696005)(53546011)(316002)(186003)(66446008)(66556008)(110136005)(66946007)(54906003)(33656002)(4326008)(5660300002)(71200400001)(76116006)(86362001)(52536014)(9686003)(478600001)(66476007)(55016002)(64756008)(6636002);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: JpM9UOdItSZu72jD3k+MC1ZeEJQOJ1JQV5dOlEhHky5qeHtZ2i+lg8ZePaf+cDk2OeRwihTdRb3zGNNQ45R5rtK43nJowOSrbk6TE8tPX1jwRdRRD8Yu/TnLG2cBuj8xJ5cX0KWFxBkxtqHJ8wRTGhwXvVqA8HjB2/hu6B4Au9bY1V10g0LS588LiaTRZE6fSq45Y+hquJZI+JncqQ9OxVSCHtWG2Wf3zZpxsIzA7+T5eHy6wI9xMQDj+3hAqhaVfTKo9i4hyqMUOG7MRJzzpMidKvc/3iyN+e8isS7ardpbXTR0nQBnaqiHmO9ljYHwFTW2vrFkBD2pK1y56h1xiADDU6S/ZKwK6x6nZwPNgqFtPQjjviYKdQPwsgvOTRbOPdqUsZBNZOu3g2hsxRP8TjLEhmQRxRF0ga0WnAO4Wb8B1A58QeIuPFoQxaU2VIEb
+x-ms-exchange-antispam-messagedata: Qu6WRY+zcD9H7hwhxkLWR2p3Mzw+2GWqIbtymphIYp1GBgG0zEjJ4jWsbZ39fBmXvE/nbB0Q1bEsid8qBrhosENiB1qE/c8e/0rGjbYqtxeWc832Xy+2NI1LxyIccvQ5u0RRoDLdBBEy1/HuktYeqr/BV4I/SJPAz08NgqmcpjsXp7Wxrmb5izxLvGuSRW7rzhLBMYPIcszRf7NfZOfQZX3R9lZrpdQAOY4tq+1qiRyA3vK7cm0HG6SC36FVjf46cXf2C9XLOeXLv6sney7WfSZMPZHZv28YjCkyzqBEkI1Ejv7UtxGOnAl3wnLthZQJUMqu3wwC3qncjjACbujmGlfJHcdvZKlngT6RoQ3RKH4UGss4cFat5c5tN/ZZnATswKzujOCnjQdd2YMvvfTxroPINPudmpoaAZQ7ifToReTLCSZXArjoSUK3QnK5Q3Z52vMazgHrvrE971PiPtKnJSoSXrQFCRoVvGDgRPitBbiSpL2FrcnC6mJux7wrKNXCyn1/UqQozB2D1Eg9iSb1CzavO//nIcQ0VgnVGWoATs59/Ik+X90H8r2/6OWKo/NP/XjefGiWyqexXJWjs1uk6dRUYON5nYUHP90QBLxO3wvz1AwKwjF6M0noqGA16G75cvvUuRjKNcjLsn6Vq+/9hlNtZXi9T8fdqoyeKj9nXdnE7T50bWUQ3YDNvn1LQI5VUPJHdh4GZnidfOsz16u27U/AYSCiHnJhQH7WVm+cypYS8zUYqM+iYwqOJ/+oJn4Nm/yEfgFynxVkT/6yOWtfobw0GPZjSDW4E688FpX5R6M=
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQJQDPill8kAmUENoj8JBCZ49rLenQIFk/WPAcfxkaoBJkvH+qdwDfUw
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0gUURjFufPaUXZjWgU/lTI3JBWsxKJrRA8oGzKoP7QixNxqUPPJjm+k
- BLO0VVOh0EWs1FURxFrX2jZLM1cRS4M0s6LXtqGm9tCWRNAax8j/znfv+X2Hc7ksqX5De7Hx
- yWmCLlmbqGFcqbtPAgKCcluN0VtbCtbiifkRBv9sbaDxjZ5BGg+U1RJ4aOi2Ao+ZbRQ22V/S
- +IW1msGVQ48IrB+1MLixb5HASx0WBTa2j6G9Kv5FaQnBtzUF8qbmIoZvq7/AX+zvpPgfjtcU
- X2puRvysaT1/uUtPHHU56brrrJAYnyHotuyOcY2bnL7KpLawWaY77Yo8dFFxBbmwwG0DS8EU
- cQW5smruAYLFTgcjDz8R1PyupeVhFoHVbvqLsMtIVcVp+dyKoOCDYQWfQtBjttHSXoYLAkvd
- JUbS7n/1s1vjSDKR3FsCrjm/kdImFy4EnIXxkseNi4BRp4OSNMX5wdi4nZS0iguF9tJ+QtZr
- ob/q87KH5Hzg3nQ1KXfYAPOOBlrOCoP7S8+R7PEA23wxKeUC94GFkfE6Sgb2Q+PCAiFrN5js
- M688hhfMzjxk5JYJUGwNkY9zwVjTu4Luga7hakqykFwAtFq3yFFroGThMyGTKii8pJbdfpA/
- M7JCekO5Xk/LmocbNoOiDPkaVhUzrCpmWFXA8D/sJqKakaeQKibFCuL21JBkIXOzqE0S05Nj
- N59JSTKh5S8XGG5BpsHD3YhjkUapKhTqo9W0NkPMTupGwJIad1VUWm20WnVWm50j6FJO6dIT
- BbEbebOUxkNVQY9EqblYbZqQIAipgu7fLcG6eOUh35idFZ1xYecYqjzy1cyOT8P+6MeEs+kT
- uW5XkVr3kLa1DOSeHz7imZ91gjzSbUzJCbbMt06LynLzsWrfyJfTSp+IfSUOuz+xxO5NNH0M
- vf5U+/0LLle+O1gRPoffPT60aT8mf3m/9+l9XXagIPh45lyHfVBvrBS/xYc58deNGkqM0wYH
- kjpR+wfa13U/bgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrAIsWRmVeSWpSXmKPExsWy7bCSvG71+qVxBnPv6Fq8/HmVzeLT+mWs
- FvOPnGO1OD1hEZPF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
- YunWm4wOvB6X+3qZPDav0PLYtKqTzWPzknqPlpP7WTw+Pr3F4tG3ZRWjx+dNch7tB7qZAjij
- uGxSUnMyy1KL9O0SuDJeve1nK1jLUbFp41b2BsYW9i5GDg4JAROJmZOSuhi5OIQEdjBKXHu6
- n6mLkRMoLi1xfeMEdghbWGLlv+fsEEWvGCVOPl7LApJgE9CV2LG4jQ3EFgGyzy58wQhSxCzw
- gkli4pu/TBAdzxglFuxbxASyjlPAWOJbRyaIKSwQJDHtdDhIL4uAqsTNF4+ZQWxeAUuJrX0n
- mSBsQYmTM5+wgJQzC+hJtG1kBAkzC8hLbH87hxniNgWJn0+XsUKc4Cax8/8FqBpxiaM/e5gn
- MArPQjJpFsKkWUgmzULSsYCRZRWjZGpBcW56brFhgVFearlecWJucWleul5yfu4mRnCkamnt
- YNyz6oPeIUYmDsZDjBIczEoivDEli+KEeFMSK6tSi/Lji0pzUosPMUpzsCiJ836dtTBOSCA9
- sSQ1OzW1ILUIJsvEwSnVwNRqstjgxMa2tZ+KlJzOrezklr1/5ePtHz/np6hJZ5gnPbm2J3X1
- N4N6AZOrVlYnMg7ezU41F/J70pn8sjT5XuwRzXthIXlZ/nWfe6OK6xUDt0QuuHjk0fY5Rvu9
- Wr0+mqufPDehVmTjbxGZzBUnlYNdC80d3X7cOr48eZbTf0OWg4t2H+6YVubXsyejV7fBavcT
- na6ObtZdP3JWV7uVtMT9mqefyPFM/MZ/+973fI84u1+dvvvdT/bGt6JJR79xW77iWrCWT+Zh
- fFxawE29ngi5/bWeDJ5H/4YFro1+V2UXVTfv2d5U9/URTo48Z4tPVi42/985ZZLcnilXls2t
- +p+ZYSO7sPY1497IjMK4G0osxRmJhlrMRcWJABNp82pDAwAA
-X-CMS-MailID: 20200426155747epcas5p18a5839ee37d56c6aa1dfa319c8df8a31
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200417181016epcas5p2ee7ac86d743ceee9076690dc5b1e2f08
-References: <20200417175944.47189-1-alim.akhtar@samsung.com>
- <CGME20200417181016epcas5p2ee7ac86d743ceee9076690dc5b1e2f08@epcas5p2.samsung.com>
- <20200417175944.47189-6-alim.akhtar@samsung.com>
- <20200422065541.GL20318@infradead.org>
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bcfe80d5-d60f-4769-4d52-08d7e9fb111b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Apr 2020 16:01:22.8619 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ohqsbWZc3ENUu7iW4E07uhoFiCyGmoIX6+EiN6wDYntIG6FK88uPMLeuQ4Mm2qWWkOrZaEP/kEGoLMRDTDICFw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4347
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_085759_471790_EC0C1DE5 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200426_090130_437729_1D792301 
+X-CRM114-Status: GOOD (  15.43  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.244.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.24 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,42 +121,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, krzk@kernel.org,
- kwmad.kim@samsung.com, avri.altman@wdc.com, cang@codeaurora.org,
- stanley.chu@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Zou,
 
+Thanks for fixing the warning.
 
 > -----Original Message-----
-> From: Christoph Hellwig <hch@infradead.org>
-> Sent: 22 April 2020 12:26
-> To: Alim Akhtar <alim.akhtar@samsung.com>
-> Cc: robh@kernel.org; devicetree@vger.kernel.org;
-linux-scsi@vger.kernel.org;
-> krzk@kernel.org; avri.altman@wdc.com; martin.petersen@oracle.com;
-> kwmad.kim@samsung.com; stanley.chu@mediatek.com;
-> cang@codeaurora.org; linux-samsung-soc@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: Re: [PATCH v6 05/10] scsi: ufs: add quirk to fix abnormal ocs
-fatal error
+> From: Zou Wei <zou_wei@huawei.com>
+> Sent: Wednesday 22 April 2020 03:59
+> To: Derek Kiernan <dkiernan@xilinx.com>; Dragan Cvetic <draganc@xilinx.com>; arnd@arndb.de; gregkh@linuxfoundation.org;
+> Michal Simek <michals@xilinx.com>
+> Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Zou Wei <zou_wei@huawei.com>
+> Subject: [PATCH -next] misc: xilinx_sdfec: Use memdup_user() as a cleanup
 > 
-> On Fri, Apr 17, 2020 at 11:29:39PM +0530, Alim Akhtar wrote:
-> > From: Kiwoong Kim <kwmad.kim@samsung.com>
-> >
-> > Some architectures determines if fatal error for OCS occurrs to check
-> > status in response upiu. This patch is to prevent from reporting
-> > command results with that.
+> Fix coccicheck warning which recommends to use memdup_user().
 > 
-> What does "Some architectures" mean?  All this seems to be about error
-> propagation to the SCSI midlyaer, so this sounds rather strange.
-Ok will update the commit message with more details.
+> This patch fixes the following coccicheck warnings:
+> 
+> drivers/misc/xilinx_sdfec.c:652:8-15: WARNING opportunity for memdup_user
+> 
+> Fixes: 20ec628e8007 ("misc: xilinx_sdfec: Add ability to configure LDPC")
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: Zou Wei <zou_wei@huawei.com>
+> ---
+>  drivers/misc/xilinx_sdfec.c | 11 +++--------
+>  1 file changed, 3 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+> index 71bbaa5..7a75894 100644
+> --- a/drivers/misc/xilinx_sdfec.c
+> +++ b/drivers/misc/xilinx_sdfec.c
+> @@ -649,14 +649,9 @@ static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
+>  	struct xsdfec_ldpc_params *ldpc;
+>  	int ret, n;
+> 
+> -	ldpc = kzalloc(sizeof(*ldpc), GFP_KERNEL);
+> -	if (!ldpc)
+> -		return -ENOMEM;
+> -
+> -	if (copy_from_user(ldpc, arg, sizeof(*ldpc))) {
+> -		ret = -EFAULT;
+> -		goto err_out;
+> -	}
+> +	ldpc = memdup_user(arg, sizeof(*ldpc));
+> +	if (IS_ERR(ldpc))
+> +		return PTR_ERR(ldpc);
+> 
+>  	if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
+>  		ret = -EIO;
+> --
+> 2.6.2
 
+Acked-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+
+
+Regards
+Dragan
 
 _______________________________________________
 linux-arm-kernel mailing list
