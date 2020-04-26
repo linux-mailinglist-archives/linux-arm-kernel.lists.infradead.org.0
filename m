@@ -2,119 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A58411B89E1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 01:11:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FD711B8A79
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 02:55:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=znS1w9eNJTQcy+dagmzkS2htjga5M+EOHuOFtlq4MOQ=; b=H5uvN2CPwbmFzW
-	2fOHJvwFAS3rB3s6DEDZIjvxBRm2dgMMmDEXdyNIJa3XcY2pZ4nJBpJdHxtGYkL99egxACri3E/F/
-	GuKs6wgAZsOrZ5FM159FIsubLNg9YZVv429DgLL/kPe0W9bdsippkuGQkZ1QwLKJG3K46IvbXV/ry
-	743/hcJbNziyTs7yA9oG74VrlLI2pvhWCla3GqhAXh+BO30X1GW9nmLWR336KzASVVaYC3r0PZdfz
-	rFjClA8HhjKjpBYMyjP8BHT4dufLV0W4cWZIZncM7L+5o+r4OA+49MF6gupPt9uawIVcv2we0ifBO
-	c4oHeIAqSpJkEd2heSlw==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I1wT4SMODymuh7HJT+/z8Vrx0wXR1ewgp3HkwxM64qc=; b=b1i3t/G3R3wVi8
+	AAMAiT/0aMt7ipbCpsZSEyLYfClFjqIGPAZycO2/2SGJBeky3tjKxO0BdrosZGBKmiqu5zAywNBos
+	uNNMRQTTsvjs9AwmEpUNUAUIYEDqEbLu7fbk0nv0QZoHTZSqR0nnYzSd03joOQ/t+Ro1dj3pDnEGt
+	vpXqUxVN7b3M1GAdaLvJVMKJY6gkliHZ/iOMrD/6ZmMT8oh6ChBn1xvu+JClNqu/Qud6bdri9+fJE
+	b98UizGglZFq8l9A8cccXph3MFS1PvkuJeqci5mGjx/bzSb+pqf8BZfYaJtFyz3KMEmMg36Y2j6cF
+	fbHX026dJt7qOhizaX3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSTxS-00060Z-8L; Sat, 25 Apr 2020 23:11:38 +0000
-Received: from mail-dm6nam11olkn2092.outbound.protection.outlook.com
- ([40.92.19.92] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+	id 1jSVZw-00010e-4e; Sun, 26 Apr 2020 00:55:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSTxL-0005zD-Ta
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Apr 2020 23:11:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MNDg9M58m4KPKIOcMbbuqV3CoTzVJfbVaYqMBzFOgpU2GeMbLO0gOLde1wTvg5+BMj3rzEzW7cRT6Wm2omWSIp57XWsyzGQY8B5aO+qOgLAScIFd/LbSoBReB61qw/5fNmXnx8bDJ2tR5tbac5d77oPq6Qj5Wqo6SpCYprNJAm9KnM6mA7gyIadh/peZbLU+b/sYtJO3fdExh2mvvwMkQzumudmpkB7wao9PtXp8ZMgvjUOK968i0LxXwbsBukThTqV34AyIgqnOu6+Y/GA6sOgCGuZGfAcsfnP0Z83ZcfBi2TbtLEzgdkBaV9xirLIhnQ/H7BZvc1UDvxfNznBsZw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=S0vXJVE32lpkWDnoBufx3otVqVnCBilyUb9wirqRsIQ=;
- b=StunFb0/QsGW2I7DTb0pvV3IFRq5m9IlauD4J7x1U3GcN+ldh9gdtPL+uauI2Jn+vFVLX2nfXVCYJ1dRsvSvQ2PwZxK5UzUzJx3uP8gjW+fgzdALWSzzSf9Y25N/wX0VMDaKb8Snj4Wtr4wCVdFvitKC0xLnkfN89/iTqOTOQVQylAm9oZQO+x6WwqQv61UiCAHZmHxzo66TmvbwGrSXfT/JgA+yklju+wWkCmsPOMdtbPXH3n+x+h/jvFS2oH2I64P51o51wFYPcjjvlh+OC0eyjpHyV8EVhdJq/wmLGfIYTyyWKXH+iB+ND8EWndfebio4vXz9ssgmpQoMg18j6g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
- header.d=live.ca; arc=none
-Received: from CO1NAM11FT007.eop-nam11.prod.protection.outlook.com
- (2a01:111:e400:3861::44) by
- CO1NAM11HT021.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::265)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15; Sat, 25 Apr
- 2020 23:11:28 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:3861::50) by CO1NAM11FT007.mail.protection.outlook.com
- (2a01:111:e400:3861::131) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15 via Frontend
- Transport; Sat, 25 Apr 2020 23:11:28 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:AEF0FFCBC70ED89B5CEE39BBFD344B835AC0B34541CC669B770D3986EA2BFB6B;
- UpperCasedChecksum:1409D41779AA5219069FB68F99550B7C6EC4C1F5BBD0179917BCDCED26E06C41;
- SizeAsReceived:7782; Count:48
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2937.020; Sat, 25 Apr 2020
- 23:11:28 +0000
-From: Jonathan Bakker <xc-racer2@live.ca>
-To: tomasz.figa@gmail.com, krzk@kernel.org, s.nawrocki@samsung.com,
- linus.walleij@linaro.org, kgene@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] pinctrl: samsung: Save/restore eint_mask over suspend for
- EINT_TYPE GPIOs
-Date: Sat, 25 Apr 2020 16:10:46 -0700
-Message-ID: <BN6PR04MB06600C848C2C1531F73DAD7BA3D10@BN6PR04MB0660.namprd04.prod.outlook.com>
-X-Mailer: git-send-email 2.20.1
-X-ClientProxiedBy: MWHPR2001CA0002.namprd20.prod.outlook.com
- (2603:10b6:301:15::12) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200425231046.7381-1-xc-racer2@live.ca>
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from jon-hp-6570b.telus (2001:569:fb67:7300:9f89:4b96:de0b:cd14) by
- MWHPR2001CA0002.namprd20.prod.outlook.com (2603:10b6:301:15::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13 via Frontend
- Transport; Sat, 25 Apr 2020 23:11:27 +0000
-X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200425231046.7381-1-xc-racer2@live.ca>
-X-TMN: [v4KQYPAa7LHoXyTQ3BJOLgpRKgDXt8UQgT+4jQWyjVcnrreUqbupHOgxGtTdkfv7]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 48
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 18b11ac3-b476-4960-521a-08d7e96dfbda
-X-MS-TrafficTypeDiagnostic: CO1NAM11HT021:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: pavvT/rzneMqC9LlLgL9EVoAQZmJyDGsk83kporlgA2acwLSZ/C0kuZRcoHJO8gdEcD19/KerBHSKJpGx7tkNH5+2fZp+B+gisXMu/GlDvU3KdgQTuaAtwkrtFtb5mrHduVOXRytJF6In+s5N5cL2AyOxYYyBHCQTuo6TWX/m+tDlvZysk/3Ozg+GMUNZaQONxuBXeLLMsKICBaOIXEQGQ==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: ss3lKa0wDOcFcr300byaVJm6hEj2f2NIpe3eDO495av7AU0Gqq+w157NNa16mk233k69qchCnjDC8qbU1ylmiHC0HUSpeBHvg1Pmg7ErGVc/yVpauGNvDQi68I2N8HJZsZJp5h6+A02OnkJtcda7db6YgekJtf9XmujQaD5fgkdAX5gL8U1TMkhGwVBnC582OqUdtaXMjWVPjEoY3pY75g==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 18b11ac3-b476-4960-521a-08d7e96dfbda
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Apr 2020 23:11:28.6898 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT021
+ id 1jSVZk-0000y2-4R; Sun, 26 Apr 2020 00:55:20 +0000
+Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
+ [73.231.172.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C703C2071E;
+ Sun, 26 Apr 2020 00:55:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587862513;
+ bh=ZTYhefWcWVPvzKpJ4YNus3Eb/Cw6yBZoMC0HC9f2uJo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=voeClhtCC2L3aoOg4PLujYogg49GIS1fgtfMUKWlqAW9bpZ8ridgihF1PL3jGpRdR
+ Xi9LT36ek6mAp6Z7afYDRNR9CU1fvJtyqQXg8uhWkXxPbyQDCDYWBUE03myUQQA0+B
+ pXuuMUykxqMmru798W+FA08pw+vvgALEiW+OZCd4=
+Date: Sat, 25 Apr 2020 17:55:11 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH 3/3] mm/hugetlb: Introduce HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
+Message-Id: <20200425175511.7a68efb5e2f4436fe0328c1d@linux-foundation.org>
+In-Reply-To: <1586864670-21799-4-git-send-email-anshuman.khandual@arm.com>
+References: <1586864670-21799-1-git-send-email-anshuman.khandual@arm.com>
+ <1586864670-21799-4-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_161131_965175_0AC8147E 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200425_175516_223591_B41ED5EB 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.19.92 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.19.92 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,74 +72,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Bakker <xc-racer2@live.ca>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Fenghua Yu <fenghua.yu@intel.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, linux-parisc@vger.kernel.org,
+ linux-mips@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, for EINT_TYPE GPIOs, the CON and FLTCON registers
-are saved and restored over a suspend/resume cycle.  However, the
-EINT_MASK registers are not.
+On Tue, 14 Apr 2020 17:14:30 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-On S5PV210 at the very least, these registers are not retained over
-suspend, leading to the interrupts remaining masked upon resume and
-therefore no interrupts being triggered for the device.  There should
-be no effect on any SoCs that do retain these registers as theoretically
-we would just be re-writing what was already there.
+> There are multiple similar definitions for arch_clear_hugepage_flags() on
+> various platforms. This introduces HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS for those
+> platforms that need to define their own arch_clear_hugepage_flags() while
+> also providing a generic fallback definition for others to use. This help
+> reduce code duplication.
+> 
+> ...
+>
+> --- a/include/linux/hugetlb.h
+> +++ b/include/linux/hugetlb.h
+> @@ -544,6 +544,10 @@ static inline int is_hugepage_only_range(struct mm_struct *mm,
+>  }
+>  #endif
+>  
+> +#ifndef HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
+> +static inline void arch_clear_hugepage_flags(struct page *page) { }
+> +#endif
+> +
+>  #ifndef arch_make_huge_pte
+>  static inline pte_t arch_make_huge_pte(pte_t entry, struct vm_area_struct *vma,
+>  				       struct page *page, int writable)
 
-Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
----
- drivers/pinctrl/samsung/pinctrl-exynos.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+This is the rather old-school way of doing it.  The Linus-suggested way is
 
-diff --git a/drivers/pinctrl/samsung/pinctrl-exynos.c b/drivers/pinctrl/samsung/pinctrl-exynos.c
-index 0599f5127b01..e6ddb54afaf2 100644
---- a/drivers/pinctrl/samsung/pinctrl-exynos.c
-+++ b/drivers/pinctrl/samsung/pinctrl-exynos.c
-@@ -265,6 +265,7 @@ struct exynos_eint_gpio_save {
- 	u32 eint_con;
- 	u32 eint_fltcon0;
- 	u32 eint_fltcon1;
-+	u32 eint_mask;
- };
- 
- /*
-@@ -608,10 +609,13 @@ static void exynos_pinctrl_suspend_bank(
- 						+ 2 * bank->eint_offset);
- 	save->eint_fltcon1 = readl(regs + EXYNOS_GPIO_EFLTCON_OFFSET
- 						+ 2 * bank->eint_offset + 4);
-+	save->eint_mask = readl(regs + bank->irq_chip->eint_mask
-+						+ bank->eint_offset);
- 
- 	pr_debug("%s: save     con %#010x\n", bank->name, save->eint_con);
- 	pr_debug("%s: save fltcon0 %#010x\n", bank->name, save->eint_fltcon0);
- 	pr_debug("%s: save fltcon1 %#010x\n", bank->name, save->eint_fltcon1);
-+	pr_debug("%s: save    mask %#010x\n", bank->name, save->eint_mask);
- }
- 
- void exynos_pinctrl_suspend(struct samsung_pinctrl_drv_data *drvdata)
-@@ -653,6 +657,9 @@ static void exynos_pinctrl_resume_bank(
- 	pr_debug("%s: fltcon1 %#010x => %#010x\n", bank->name,
- 			readl(regs + EXYNOS_GPIO_EFLTCON_OFFSET
- 			+ 2 * bank->eint_offset + 4), save->eint_fltcon1);
-+	pr_debug("%s:    mask %#010x => %#010x\n", bank->name,
-+			readl(regs + bank->irq_chip->eint_mask
-+			+ bank->eint_offset), save->eint_mask);
- 
- 	writel(save->eint_con, regs + EXYNOS_GPIO_ECON_OFFSET
- 						+ bank->eint_offset);
-@@ -660,6 +667,8 @@ static void exynos_pinctrl_resume_bank(
- 						+ 2 * bank->eint_offset);
- 	writel(save->eint_fltcon1, regs + EXYNOS_GPIO_EFLTCON_OFFSET
- 						+ 2 * bank->eint_offset + 4);
-+	writel(save->eint_mask, regs + bank->irq_chip->eint_mask
-+						+ bank->eint_offset);
- }
- 
- void exynos_pinctrl_resume(struct samsung_pinctrl_drv_data *drvdata)
--- 
-2.20.1
+#ifndef arch_clear_hugepage_flags
+static inline void arch_clear_hugepage_flags(struct page *page)
+{
+}
+#define arch_clear_hugepage_flags arch_clear_hugepage_flags
+#endif
+
+And the various arch headers do
+
+static inline void arch_clear_hugepage_flags(struct page *page)
+{
+	<some implementation>
+}
+#define arch_clear_hugepage_flags arch_clear_hugepage_flags
+
+It's a small difference - mainly to avoid adding two variables to the
+overall namespace where one would do.
 
 
 _______________________________________________
