@@ -2,64 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E72E61B8B88
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 05:01:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E62CF1B8B9A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 05:11:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KzC621niSlABteV3xR2pqCqMWUpcT7xBh2u6TRmmK0w=; b=cJfhsf0ml3Q4Hv
-	h9FrDg4OWgCZHuExfBh3d549dDI37PencMk2YQPLLxwSCiBm/1lBQL6FktlaJdMt5LoamsP1PYXz3
-	uBogPkVXppS7AcMQjUqst6MZ4HUqUMl+XmXLEDhOtZDrIs03HGHEtDG2kr0bDezLL3F5rNpGnMYev
-	Nr3/pXrg/f09dsOeth2pnOiJ6AdcO9eFm7yH6cwLXo0L/dMlkMcioIxe9+oFlgnPv4ZYGqo4Q/LGE
-	ujNk00r/Wvl+107gzxDXAFcHJ+S7zhMGhoe9W6wJL8Lx6jV/0F1MudEeWuI0/wu6FFzd5xR2ydgIF
-	wmoS0UDXgoM/7d2g0P0A==;
+	List-Owner; bh=3MaOo8EaisvxwfmeMSyam06GtW4hJJIPLGzs4g5sNhQ=; b=FfZ6BrwHVFXBfY
+	7OsVZiWhpBuqmlPi0OGuoJZqiJ460nXq5iB3YgtIUzlXO+FuJV5ojH6JmQPi4MALSzWpvaDlDD3kV
+	3CjKy3M4JGBpRRCwJtEfJvrtK+gqSCt4W6dBDlTzgKi/znuwXeMQ3nkBb5uI105w5fWSJVi1kKtMc
+	38jjuMunUXQrxJaz62sPrr6mkVlasGdp0nRWNAH1TrJCyJLkOXp/4U6iHQQmtBEnTCfTvSyI2F9uK
+	mvjOmNgWvUObU2DRAn1/2Fg3dlgkVg1t+iniC0N5lCCodOsyTtLPSvQp1AGZ0z86pFKNLYqaZQuZy
+	BhxU/enfcTaKVuncvYnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSXY2-0004vn-UN; Sun, 26 Apr 2020 03:01:38 +0000
+	id 1jSXhJ-0003SC-1o; Sun, 26 Apr 2020 03:11:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSXXs-0004uM-UO; Sun, 26 Apr 2020 03:01:30 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jSXh8-0003R3-25; Sun, 26 Apr 2020 03:11:04 +0000
+Received: from mail-ed1-f51.google.com (mail-ed1-f51.google.com
+ [209.85.208.51])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6969B206D4;
- Sun, 26 Apr 2020 03:01:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C2C202070A;
+ Sun, 26 Apr 2020 03:11:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587870086;
- bh=tCSwWc8iRTvfzhr9Bpi0vaaHrDRBHLwWGG3vKGlFHqg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=UVpTWp7EJhgRsQXBhfo6AT4VrUdy1nNy8nOq/LfihYfu1NC4LJc05Iz8GAX1ZT5f3
- axlF830cN9T/YdFik2zo+N3qO2F4mins96Mu5bgI3K/fB5ghL5mkLmCLUuWklYIKG9
- HZl62/U2hyOlgj8km6aRA/b/nX2GmC3gaq8w7s7A=
-Date: Sat, 25 Apr 2020 20:01:24 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 3/3] mm/hugetlb: Introduce HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
-Message-Id: <20200425200124.20d0c75fcaef05d062d3667c@linux-foundation.org>
-In-Reply-To: <87d37591-caa2-b82b-392a-3a29b2c7e9a6@arm.com>
-References: <1586864670-21799-1-git-send-email-anshuman.khandual@arm.com>
- <1586864670-21799-4-git-send-email-anshuman.khandual@arm.com>
- <20200425175511.7a68efb5e2f4436fe0328c1d@linux-foundation.org>
- <87d37591-caa2-b82b-392a-3a29b2c7e9a6@arm.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ s=default; t=1587870661;
+ bh=5ufY2WNf1d+9zTXd2f3aMGdsxjO3ggnK7WB1Ct27mWo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=AoOgEJ/PCHpNCNceEnPC+l4jFraujO8GwZ54QALOYlUi1eslUYlJQgZFhAtDYYnI0
+ bCvLruNMB2ngmXYg3t5f5++qHEQG0q1JS7kqvHCkKNSF2AF2Vnr8A183mi/bzybxgf
+ /DcO8p2mpk5dVMyUGCfO9UZ3/lOPIOwXq7BD7iNk=
+Received: by mail-ed1-f51.google.com with SMTP id k22so10782777eds.6;
+ Sat, 25 Apr 2020 20:11:00 -0700 (PDT)
+X-Gm-Message-State: AGi0PubojdMo713oo4dQp8zaHNV6BJcU4dYid2RwLLsBgGzTMk9YoPME
+ bm7yDC2EOSKI3Ecnf+5EyskhGhGnIdtZKuKgSQ==
+X-Google-Smtp-Source: APiQypKzGcK+rktzR+tfPW/JO9EwaomlqVHqX5FQ7TR3YoCZvSXlsx8Rq/Mgm42CxzCH2NCu/qfo70XhLlXeJ46XxG8=
+X-Received: by 2002:aa7:c649:: with SMTP id z9mr14002618edr.288.1587870659255; 
+ Sat, 25 Apr 2020 20:10:59 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200226112723.649954-1-enric.balletbo@collabora.com>
+In-Reply-To: <20200226112723.649954-1-enric.balletbo@collabora.com>
+From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Sun, 26 Apr 2020 11:10:48 +0800
+X-Gmail-Original-Message-ID: <CAAOTY_9tfwd-cqxkwUWXM-B7vuLZoKjF6DhFgZZM3QZp1pmCAg@mail.gmail.com>
+Message-ID: <CAAOTY_9tfwd-cqxkwUWXM-B7vuLZoKjF6DhFgZZM3QZp1pmCAg@mail.gmail.com>
+Subject: Re: [PATCH] drm/mediatek: Remove debug messages for function calls
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_200129_023662_C30B0C05 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200425_201102_142478_5B9C834A 
+X-CRM114-Status: GOOD (  16.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -74,103 +82,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Fenghua Yu <fenghua.yu@intel.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>, CK Hu <ck.hu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 26 Apr 2020 08:13:17 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
-
-> 
-> 
-> On 04/26/2020 06:25 AM, Andrew Morton wrote:
-> > On Tue, 14 Apr 2020 17:14:30 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
-> > 
-> >> There are multiple similar definitions for arch_clear_hugepage_flags() on
-> >> various platforms. This introduces HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS for those
-> >> platforms that need to define their own arch_clear_hugepage_flags() while
-> >> also providing a generic fallback definition for others to use. This help
-> >> reduce code duplication.
-> >>
-> >> ...
-> >>
-> >> --- a/include/linux/hugetlb.h
-> >> +++ b/include/linux/hugetlb.h
-> >> @@ -544,6 +544,10 @@ static inline int is_hugepage_only_range(struct mm_struct *mm,
-> >>  }
-> >>  #endif
-> >>  
-> >> +#ifndef HAVE_ARCH_CLEAR_HUGEPAGE_FLAGS
-> >> +static inline void arch_clear_hugepage_flags(struct page *page) { }
-> >> +#endif
-> >> +
-> >>  #ifndef arch_make_huge_pte
-> >>  static inline pte_t arch_make_huge_pte(pte_t entry, struct vm_area_struct *vma,
-> >>  				       struct page *page, int writable)
-> > 
-> > This is the rather old-school way of doing it.  The Linus-suggested way is
-> > 
-> > #ifndef arch_clear_hugepage_flags
-> > static inline void arch_clear_hugepage_flags(struct page *page)
-> > {
-> > }
-> > #define arch_clear_hugepage_flags arch_clear_hugepage_flags
-> 
-> Do we need that above line here ? Is not that implicit.
-
-It depends if other header files want to test whether
-arch_clear_hugepage_flags is already defined.  If the header heorarchy
-is well-defined and working properly, they shouldn't need to, because
-we're reliably indluding the relevant arch header before (or early
-within) include/linux/hugetlb.h.
-
-It would be nice if
-
-#define arch_clear_hugepage_flags arch_clear_hugepage_flags
-#define arch_clear_hugepage_flags arch_clear_hugepage_flags
-
-were to generate an compiler error but it doesn't.  If it did we could
-detect these incorrect inclusion orders.
-
-> > #endif
-> > 
-> > And the various arch headers do
-> > 
-> > static inline void arch_clear_hugepage_flags(struct page *page)
-> > {
-> > 	<some implementation>
-> > }
-> > #define arch_clear_hugepage_flags arch_clear_hugepage_flags
-> > 
-> > It's a small difference - mainly to avoid adding two variables to the
-> > overall namespace where one would do.
-> 
-> Understood, will change and resend.
-
-That's OK - I've queued up that fix.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIEVucmljOgoKRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFi
+b3JhLmNvbT4g5pa8IDIwMjDlubQy5pyIMjbml6Ug6YCx5LiJIOS4i+WNiDc6Mjflr6vpgZPvvJoK
+Pgo+IEVxdWl2YWxlbnQgaW5mb3JtYXRpb24gY2FuIGJlIG5vd2FkYXlzIG9idGFpbmVkIHVzaW5n
+IGZ1bmN0aW9uIHRyYWNlci4KCkFwcGxpZWQgdG8gbWVkaWF0ZWstZHJtLW5leHQgWzFdLCB0aGFu
+a3MuCgpbMV0gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQv
+Y2h1bmt1YW5nLmh1L2xpbnV4LmdpdC9sb2cvP2g9bWVkaWF0ZWstZHJtLW5leHQKClJlZ2FyZHMs
+CkNodW4tS3VhbmcuCgo+Cj4gU2lnbmVkLW9mZi1ieTogRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8
+ZW5yaWMuYmFsbGV0Ym9AY29sbGFib3JhLmNvbT4KPiAtLS0KPgo+ICBkcml2ZXJzL2dwdS9kcm0v
+bWVkaWF0ZWsvbXRrX2RybV9jcnRjLmMgfCA1IC0tLS0tCj4gIGRyaXZlcnMvZ3B1L2RybS9tZWRp
+YXRlay9tdGtfZHJtX2Rydi5jICB8IDIgLS0KPiAgMiBmaWxlcyBjaGFuZ2VkLCA3IGRlbGV0aW9u
+cygtKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2Ny
+dGMuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2NydGMuYwo+IGluZGV4IGEy
+MzY0OTkxMjNhYS4uODgyYzY5MGQzZjEzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9t
+ZWRpYXRlay9tdGtfZHJtX2NydGMuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9t
+dGtfZHJtX2NydGMuYwo+IEBAIC0xOTIsNyArMTkyLDYgQEAgc3RhdGljIGludCBtdGtfY3J0Y19k
+ZHBfY2xrX2VuYWJsZShzdHJ1Y3QgbXRrX2RybV9jcnRjICptdGtfY3J0YykKPiAgICAgICAgIGlu
+dCByZXQ7Cj4gICAgICAgICBpbnQgaTsKPgo+IC0gICAgICAgRFJNX0RFQlVHX0RSSVZFUigiJXNc
+biIsIF9fZnVuY19fKTsKPiAgICAgICAgIGZvciAoaSA9IDA7IGkgPCBtdGtfY3J0Yy0+ZGRwX2Nv
+bXBfbnI7IGkrKykgewo+ICAgICAgICAgICAgICAgICByZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUo
+bXRrX2NydGMtPmRkcF9jb21wW2ldLT5jbGspOwo+ICAgICAgICAgICAgICAgICBpZiAocmV0KSB7
+Cj4gQEAgLTIxMiw3ICsyMTEsNiBAQCBzdGF0aWMgdm9pZCBtdGtfY3J0Y19kZHBfY2xrX2Rpc2Fi
+bGUoc3RydWN0IG10a19kcm1fY3J0YyAqbXRrX2NydGMpCj4gIHsKPiAgICAgICAgIGludCBpOwo+
+Cj4gLSAgICAgICBEUk1fREVCVUdfRFJJVkVSKCIlc1xuIiwgX19mdW5jX18pOwo+ICAgICAgICAg
+Zm9yIChpID0gMDsgaSA8IG10a19jcnRjLT5kZHBfY29tcF9ucjsgaSsrKQo+ICAgICAgICAgICAg
+ICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUobXRrX2NydGMtPmRkcF9jb21wW2ldLT5jbGspOwo+
+ICB9Cj4gQEAgLTI1Nyw3ICsyNTUsNiBAQCBzdGF0aWMgaW50IG10a19jcnRjX2RkcF9od19pbml0
+KHN0cnVjdCBtdGtfZHJtX2NydGMgKm10a19jcnRjKQo+ICAgICAgICAgaW50IHJldDsKPiAgICAg
+ICAgIGludCBpOwo+Cj4gLSAgICAgICBEUk1fREVCVUdfRFJJVkVSKCIlc1xuIiwgX19mdW5jX18p
+Owo+ICAgICAgICAgaWYgKFdBUk5fT04oIWNydGMtPnN0YXRlKSkKPiAgICAgICAgICAgICAgICAg
+cmV0dXJuIC1FSU5WQUw7Cj4KPiBAQCAtMjk4LDcgKzI5NSw2IEBAIHN0YXRpYyBpbnQgbXRrX2Ny
+dGNfZGRwX2h3X2luaXQoc3RydWN0IG10a19kcm1fY3J0YyAqbXRrX2NydGMpCj4gICAgICAgICAg
+ICAgICAgIGdvdG8gZXJyX211dGV4X3VucHJlcGFyZTsKPiAgICAgICAgIH0KPgo+IC0gICAgICAg
+RFJNX0RFQlVHX0RSSVZFUigibWVkaWF0ZWtfZGRwX2RkcF9wYXRoX3NldHVwXG4iKTsKPiAgICAg
+ICAgIGZvciAoaSA9IDA7IGkgPCBtdGtfY3J0Yy0+ZGRwX2NvbXBfbnIgLSAxOyBpKyspIHsKPiAg
+ICAgICAgICAgICAgICAgbXRrX2RkcF9hZGRfY29tcF90b19wYXRoKG10a19jcnRjLT5jb25maWdf
+cmVncywKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG10a19jcnRj
+LT5kZHBfY29tcFtpXS0+aWQsCj4gQEAgLTM0OCw3ICszNDQsNiBAQCBzdGF0aWMgdm9pZCBtdGtf
+Y3J0Y19kZHBfaHdfZmluaShzdHJ1Y3QgbXRrX2RybV9jcnRjICptdGtfY3J0YykKPiAgICAgICAg
+IHN0cnVjdCBkcm1fY3J0YyAqY3J0YyA9ICZtdGtfY3J0Yy0+YmFzZTsKPiAgICAgICAgIGludCBp
+Owo+Cj4gLSAgICAgICBEUk1fREVCVUdfRFJJVkVSKCIlc1xuIiwgX19mdW5jX18pOwo+ICAgICAg
+ICAgZm9yIChpID0gMDsgaSA8IG10a19jcnRjLT5kZHBfY29tcF9ucjsgaSsrKSB7Cj4gICAgICAg
+ICAgICAgICAgIG10a19kZHBfY29tcF9zdG9wKG10a19jcnRjLT5kZHBfY29tcFtpXSk7Cj4gICAg
+ICAgICAgICAgICAgIGlmIChpID09IDEpCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9t
+ZWRpYXRlay9tdGtfZHJtX2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL21lZGlhdGVrL210a19kcm1f
+ZHJ2LmMKPiBpbmRleCAxN2YxMThlZTBlNTcuLjQ5MzQ4MzQ5NzdiMyAxMDA2NDQKPiAtLS0gYS9k
+cml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RybV9kcnYuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1
+L2RybS9tZWRpYXRlay9tdGtfZHJtX2Rydi5jCj4gQEAgLTU3MCw3ICs1NzAsNiBAQCBzdGF0aWMg
+aW50IG10a19kcm1fc3lzX3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2KQo+ICAgICAgICAgaW50
+IHJldDsKPgo+ICAgICAgICAgcmV0ID0gZHJtX21vZGVfY29uZmlnX2hlbHBlcl9zdXNwZW5kKGRy
+bSk7Cj4gLSAgICAgICBEUk1fREVCVUdfRFJJVkVSKCJtdGtfZHJtX3N5c19zdXNwZW5kXG4iKTsK
+Pgo+ICAgICAgICAgcmV0dXJuIHJldDsKPiAgfQo+IEBAIC01ODIsNyArNTgxLDYgQEAgc3RhdGlj
+IGludCBtdGtfZHJtX3N5c19yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2KQo+ICAgICAgICAgaW50
+IHJldDsKPgo+ICAgICAgICAgcmV0ID0gZHJtX21vZGVfY29uZmlnX2hlbHBlcl9yZXN1bWUoZHJt
+KTsKPiAtICAgICAgIERSTV9ERUJVR19EUklWRVIoIm10a19kcm1fc3lzX3Jlc3VtZVxuIik7Cj4K
+PiAgICAgICAgIHJldHVybiByZXQ7Cj4gIH0KPiAtLQo+IDIuMjUuMAo+Cj4KPiBfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IExpbnV4LW1lZGlhdGVrIG1h
+aWxpbmcgbGlzdAo+IExpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LW1lZGlhdGVrCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
