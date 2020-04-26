@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8188C1B9341
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:59:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C82511B9349
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:59:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a/dhmffpyNALexWu6Vz0ZsigSA36Dmm+AXybjn1Xb0o=; b=Ex8ZD9vXcjMa99
-	DOdCxvBC4yLrzI4XT7pq7DHuzhWJzg1Tz9jYKCLw1yV9prdkun8vPLIVnLuMCLI0mxbX6h0AZS435
-	eaYaQ0USLmOjOYzkrsOmTlKoffCg/I6fjuP1z+Mhv3po4KW0wQ9AORhIJy/eoIhcFk5h5/NQUws/k
-	dsSKwAE+5Lpzb8mkcOgyvMvGY0CEG2k376TUkcvVi313kR6aEKjDikySl2Ik3NT4Pm2FpnZdvjII7
-	ovrBwYKcYbObALvURC3uyhzArzJk136FvYlty8YCviBnIBJ3gNsD9tBGJMIKN549Y+axWDCCP66Mv
-	KHLryt7+KYFz97/PciVQ==;
+	List-Owner; bh=YvYhXtV8wnljUSJZPt+14zv3uA/aKEjWo+BofWjjkog=; b=tycUTmZt0Yxoom
+	mQxJBn3JFf5NpRPAapjRLnGcTdLHUvJ0MQ3/PQZMjM61Nfu9r5HJm6SvN9Q69NOEFFClFFTLUslAv
+	+UK7Zx6u8h7sxXJrXSnbSLgIW1KAsAiLJc4SQirPxHpJwqkFNQwUj2y6hBXYUGkWEOgNBQ1lelCbc
+	7hNpJhThp7c/5Kl82ovA0wlf/IZU1y9lFu9/IrJCCVJDo8XMiZ07z0bp83iuAUTyEaYcfZMOJI6W8
+	q11wU6vhylkHX2MFdtUj6KcWG9ziyKUVz4TISOwhA8FRRZ6jfbCnzS91Amzgk/Dx6qMfUWeT+gQAy
+	NIyvhASKgCWkX2sse4zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSmUW-0006T3-S8; Sun, 26 Apr 2020 18:59:00 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jSmUl-0006jm-Si; Sun, 26 Apr 2020 18:59:15 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSmTh-0005zk-Bz
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 18:58:10 +0000
-Received: by mail-pg1-x541.google.com with SMTP id x26so7528756pgc.10
+ id 1jSmTi-00060B-Ga
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 18:58:12 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t7so112503plr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 11:58:08 -0700 (PDT)
+ Sun, 26 Apr 2020 11:58:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=noMrbgL1v2kzIBYfD0+OneUE3HearHlx1xTI8N0UkeU=;
- b=gcArO+IbQ1Yfcn/7FcXBVLKjbmyJ5VuBH/upO/eC6zjYuLDLsPIwqrgw/uQm4n9D8J
- hM7YhOGJBsrM5Q6Dkh2na9vKhr6sTp96HDvdrz9okTXc5FbVRReGVGJ0lAlCsAg/qjod
- Rz+HszoxhcEhePkfbqNlsrUvvYk5OiNwpVa6Y=
+ bh=l3i2flU80gai+judhhFKuvAvWyLfx9zeA9RGlgxWN5Q=;
+ b=CKExp35RH6rrVYZf5vXfCon5651RmZbjoQsxKk1snxxhRAjxDEi5orr4cksepYMVpD
+ 1DQHiFpDBFUnh35DM04PSq8snNIsDjS4BOXIpMEzU0W4IVSQ/g8InAvfISr19ju4oGLV
+ CIOT9LzT7Wsbd0uphG4020IVfSNaBCsWylkbY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=noMrbgL1v2kzIBYfD0+OneUE3HearHlx1xTI8N0UkeU=;
- b=onDZRyMnZ1ZnMWLyNri+XwwtrhqDrsO7evHv5U1SaIQ601Vg6CytUV1I8BItgSLcSr
- AwLAd9i4pQ97ms+dY5ueHkcev6V1ozf/oh0t0VrGyAo+9RKfBocad2ZOnW3WbFzlmJgl
- Gy9Y4U/l4zQNDBIeNj8lhc5ZdaBHwWOf7sUqzYUrDG0DqMoX0lMB+Ht34p4iMBbH7Qrx
- CPhScRWPzjQifX141NAjOrW2x7ULbEuteY1Of8hbeEqnHMlwwytUE9xZZQEgm6wbkp4R
- mx+OwyX86MeiF/yX4fw4ZVJWirE4EL1CafOGUGH2S0RAUFNW3sdaWsKj1S+QO0vkDUMb
- GdMQ==
-X-Gm-Message-State: AGi0PuZ0xRvqzGox1PepEtVr2pvE8NzMW+H+k1sgW+ICpyans3vW2F2y
- QMIvCiGuKnxRE7d314LKPc3+/g==
-X-Google-Smtp-Source: APiQypItWeQCh4VuQPKDIWC8ZjlXOMK1Td48DeJ/E5GZYS7IzEcCDPmQ3cfILg8YZ2ZI69Pu9KJRNw==
-X-Received: by 2002:a63:c241:: with SMTP id l1mr3014492pgg.42.1587927488448;
- Sun, 26 Apr 2020 11:58:08 -0700 (PDT)
+ bh=l3i2flU80gai+judhhFKuvAvWyLfx9zeA9RGlgxWN5Q=;
+ b=VwiNu3R8mZZt/qtl9+c8QAt1G9R26aBbqwuYdFhHM+U9hQTVjS/6FvBPIoel5oDiF0
+ cx3BSnVRNuQOsyTE0MUgHF+VAIBUmESoThTJXsskEm/mx1/SkZp5S7sx9K6f5NSHlHpY
+ RVvcIgcdba1wy437mGaEshjn0XHKn7lrGxGpEREXVYY6BxnC6X3HCf8oOfbY2D06Rt2Q
+ /xP+24sJTEHQf5GyC+vQzhiwRtVPK0dPMZLpR2j6ZtnMreEZrbnQ0bFksi/pcMEy4Mj+
+ CXNEbbmO7Rrf4NaCnS4ezhmfX17KADtYE3puaXjc5/v5WsfQOllurOFgeS9K6gAo31p7
+ iNag==
+X-Gm-Message-State: AGi0Pub9wfXPTcJfI8MEkuYgouRYDHV8LmdKYqydkBSJwK1QKVOxaDMp
+ tsFS1qM9DkClsyk/NJTxE/BP3Q==
+X-Google-Smtp-Source: APiQypL2aZCoe1BGEmB9HPKQE18g7LHRDsJ4fzgjvL2I+3C29fpVwxnrx/b12/hGVqc9MH0v0Mu/Uw==
+X-Received: by 2002:a17:90a:b884:: with SMTP id
+ o4mr18991300pjr.8.1587927489319; 
+ Sun, 26 Apr 2020 11:58:09 -0700 (PDT)
 Received: from smtp.gmail.com ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id h27sm9425153pgb.90.2020.04.26.11.58.07
+ by smtp.gmail.com with ESMTPSA id h27sm9425153pgb.90.2020.04.26.11.58.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Sun, 26 Apr 2020 11:58:08 -0700 (PDT)
 From: Stephen Boyd <swboyd@chromium.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH 2/5] coresight: Mark some functions static
-Date: Sun, 26 Apr 2020 11:58:02 -0700
-Message-Id: <20200426185805.14923-3-swboyd@chromium.org>
+Subject: [PATCH 3/5] coresight: Don't initialize variables unnecessarily
+Date: Sun, 26 Apr 2020 11:58:03 -0700
+Message-Id: <20200426185805.14923-4-swboyd@chromium.org>
 X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
 In-Reply-To: <20200426185805.14923-1-swboyd@chromium.org>
 References: <20200426185805.14923-1-swboyd@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_115809_404434_74A6BD7C 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20200426_115810_583498_49906BD7 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,124 +103,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These functions aren't used outside the file they're in. Mark them
-static to indicate as such and silence tools like sparse.
+These variables are assigned again before they're used. Leave them
+unassigned at first so that the compiler can detect problems in the
+future with use before initialization.
 
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Stephen Boyd <swboyd@chromium.org>
 ---
- drivers/hwtracing/coresight/coresight-cti-platform.c | 3 +--
- drivers/hwtracing/coresight/coresight-cti-sysfs.c    | 2 +-
- drivers/hwtracing/coresight/coresight-cti.c          | 6 +++---
- drivers/hwtracing/coresight/coresight-etb10.c        | 2 +-
- drivers/hwtracing/coresight/coresight-platform.c     | 4 ++--
- drivers/hwtracing/coresight/coresight-tmc.c          | 2 +-
- 6 files changed, 9 insertions(+), 10 deletions(-)
+ drivers/hwtracing/coresight/coresight-cti-sysfs.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
-index 245f16c61af8..ab3bd4ed0910 100644
---- a/drivers/hwtracing/coresight/coresight-cti-platform.c
-+++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
-@@ -435,8 +435,7 @@ static int cti_plat_create_impdef_connections(struct device *dev,
- }
- 
- /* get the hardware configuration & connection data. */
--int cti_plat_get_hw_data(struct device *dev,
--			 struct cti_drvdata *drvdata)
-+static int cti_plat_get_hw_data(struct device *dev, struct cti_drvdata *drvdata)
- {
- 	int rc = 0;
- 	struct cti_device *cti_dev = &drvdata->ctidev;
 diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-index bed460541f15..7da846a3a829 100644
+index 7da846a3a829..77e14e770806 100644
 --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
 +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-@@ -1146,7 +1146,7 @@ static int cti_create_con_attr_set(struct device *dev, int con_idx,
- }
- 
- /* create the array of group pointers for the CTI sysfs groups */
--int cti_create_cons_groups(struct device *dev, struct cti_device *ctidev)
-+static int cti_create_cons_groups(struct device *dev, struct cti_device *ctidev)
+@@ -1043,8 +1043,8 @@ static int cti_create_con_sysfs_attr(struct device *dev,
+ 				     enum cti_conn_attr_type attr_type,
+ 				     int attr_idx)
  {
- 	int nr_groups;
+-	struct dev_ext_attribute *eattr = 0;
+-	char *name = 0;
++	struct dev_ext_attribute *eattr;
++	char *name;
  
-diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-index aa6e0249bd70..aac9a0d91e19 100644
---- a/drivers/hwtracing/coresight/coresight-cti.c
-+++ b/drivers/hwtracing/coresight/coresight-cti.c
-@@ -19,7 +19,7 @@
-  */
- 
- /* net of CTI devices connected via CTM */
--LIST_HEAD(ect_net);
-+static LIST_HEAD(ect_net);
- 
- /* protect the list */
- static DEFINE_MUTEX(ect_mutex);
-@@ -578,12 +578,12 @@ int cti_disable(struct coresight_device *csdev)
- 	return cti_disable_hw(drvdata);
- }
- 
--const struct coresight_ops_ect cti_ops_ect = {
-+static const struct coresight_ops_ect cti_ops_ect = {
- 	.enable = cti_enable,
- 	.disable = cti_disable,
- };
- 
--const struct coresight_ops cti_ops = {
-+static const struct coresight_ops cti_ops = {
- 	.ect_ops = &cti_ops_ect,
- };
- 
-diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-index 3810290e6d07..03e3f2590191 100644
---- a/drivers/hwtracing/coresight/coresight-etb10.c
-+++ b/drivers/hwtracing/coresight/coresight-etb10.c
-@@ -717,7 +717,7 @@ static const struct attribute_group coresight_etb_mgmt_group = {
- 	.name = "mgmt",
- };
- 
--const struct attribute_group *coresight_etb_groups[] = {
-+static const struct attribute_group *coresight_etb_groups[] = {
- 	&coresight_etb_group,
- 	&coresight_etb_mgmt_group,
- 	NULL,
-diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-index 43418a2126ff..8639f6981794 100644
---- a/drivers/hwtracing/coresight/coresight-platform.c
-+++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -501,7 +501,7 @@ static inline bool acpi_validate_dsd_graph(const union acpi_object *graph)
- }
- 
- /* acpi_get_dsd_graph	- Find the _DSD Graph property for the given device. */
--const union acpi_object *
-+static const union acpi_object *
- acpi_get_dsd_graph(struct acpi_device *adev)
+ 	eattr = devm_kzalloc(dev, sizeof(struct dev_ext_attribute),
+ 				    GFP_KERNEL);
+@@ -1163,8 +1163,8 @@ static int cti_create_cons_groups(struct device *dev, struct cti_device *ctidev)
+ int cti_create_cons_sysfs(struct device *dev, struct cti_drvdata *drvdata)
  {
- 	int i;
-@@ -564,7 +564,7 @@ acpi_validate_coresight_graph(const union acpi_object *cs_graph)
-  * Returns the pointer to the CoreSight Graph Package when found. Otherwise
-  * returns NULL.
-  */
--const union acpi_object *
-+static const union acpi_object *
- acpi_get_coresight_graph(struct acpi_device *adev)
- {
- 	const union acpi_object *graph_list, *graph;
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-index 1cf82fa58289..39fba1d16e6e 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc.c
-@@ -361,7 +361,7 @@ static const struct attribute_group coresight_tmc_mgmt_group = {
- 	.name = "mgmt",
- };
+ 	struct cti_device *ctidev = &drvdata->ctidev;
+-	int err = 0, con_idx = 0, i;
+-	struct cti_trig_con *tc = NULL;
++	int err, con_idx = 0, i;
++	struct cti_trig_con *tc;
  
--const struct attribute_group *coresight_tmc_groups[] = {
-+static const struct attribute_group *coresight_tmc_groups[] = {
- 	&coresight_tmc_group,
- 	&coresight_tmc_mgmt_group,
- 	NULL,
+ 	err = cti_create_cons_groups(dev, ctidev);
+ 	if (err)
 -- 
 Sent by a computer, using git, on the internet
 
