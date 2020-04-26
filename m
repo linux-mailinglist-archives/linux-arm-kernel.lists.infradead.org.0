@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E1A31B91A6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 18:21:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E95561B91A2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 18:20:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7rZxk/U5G/yBUFsStE/VnNuG+5Ze/lyFaueypo2n/SU=; b=awFH+TBU11gsCG
-	AbgEOR7Xs+Wf/PyPqcf36UJpZOPhDJs/AJdnMGnAh6TqoCyFEy9liHZOLySVdOT4LwJc2sTPtrZJ9
-	rE//cBxuNiJxGrRFV7GsjOMrKIsyBJno3m4Z7KHOazUnUNIp545u4FlA0+1OPckPpyyNe8Ny2ts4u
-	lIeMEMxOpfr1Ux9qFgcprCsRPRpH2FAVT1897eGjdu67U/qJRMyBt3Ad54oVyfrjJMqukOVekNPTx
-	4FWThHyqiM7PzxRIVN1S36n+3SxaRtPRq+MD4NCxwMETm2MDJ9m1sUHA6xgwoDfUElCgxXM4mDz7B
-	k/3wpFJmVlfHfXjKxxNQ==;
+	List-Owner; bh=/SuLr6ZvjHpv0+NWLVyEkAUTPTOB9lDsPruuw10iuOw=; b=GSzCuAmVtjdwBt
+	muFsM2/aGF4CSOYItpjy6cJ/VjOVFpdh90t5OnpGO8u2uqTttaF2mPOZrWDLXsUFnObnaD6/rt7Bh
+	cXxSdsWhg0BckDeitzBRRarJ6444rO+Zmu/a0qbF7lG9jMj468J4neVwAmW8CAnS60qWwqyHQu71S
+	Nj054lncoZ7g52TuhK+GUBfXnQH/CZ9zMX9giLNG3xEeXdXbJ2y8/JEjCSHl2Hdtt/0CFNHb+aBa9
+	FKDHNdfbvpcycoKW+GhKqQdUWRhtTPsNf4ga7zgl7eUm5/tyafsCIJLUOFgpeHFr/T1Z2obApb7ML
+	2CEZ3xRs1wzXzgUZ18Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSk29-0007vn-W6; Sun, 26 Apr 2020 16:21:34 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jSk0b-000502-9e; Sun, 26 Apr 2020 16:19:57 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSk1z-0007tp-Cy; Sun, 26 Apr 2020 16:21:24 +0000
-Received: by mail-qt1-x841.google.com with SMTP id e17so8872659qtp.7;
- Sun, 26 Apr 2020 09:21:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=XZJ5XFJS/vsNAYaNowFEvXY/ZczE3nivx6mZjGNsaaU=;
- b=HM/d4nA6P4W/GTAy4y/pD3qJ0N8A8PSV/jvQSLm6y1qWH5cXsuSoIGv9bzLKssIdoQ
- ormeLE2uNOCvwRF/fQIHHhh8HDSCpcAF8695nXugKI37Z+zCu/Rjhd8IxpmY92b2LJMv
- zu7M7I9XhSVnTVTt3BJ3i/ISzfLv13TdtvTdYNBz22Ff4kNEd6EdXOZGbDW6ljANZdaT
- Erycz54Xrf0HZkJ1tvZyGgXT5/02m8mMjC1CkLvGdCbN+l+UvFjjN8Vo4cOazRCobp5K
- BO5amkDIZ51xAW/gHeKTSGPinsOJa0DeYlQtmTFHLQFz7BXqsQRWepPRO0vl3BDL1BXx
- um9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=XZJ5XFJS/vsNAYaNowFEvXY/ZczE3nivx6mZjGNsaaU=;
- b=uI2XrrYADU2VRuGqmFEl7gd5n88ciL5sKAQe5N7RA+5ebw4Do8d/+qXtwO8SKryjmH
- hsKn3Jf9SzIcLUrPhN1DNr3ERW4D2E2ypC9ZfNPJF1adtzXwZTpWTkFk1HyQhWBSjaaz
- mAA7KkyZ+y3eS75WeEROxCX9LDhTAJGtzaFexPU4IoxIoABO/8i49vFDwCVcCRYiDtGn
- QAkyePYUu1KzUxP+ArJbVZUy/3oxxYJ5cin1vK2bG3xLjROcqaHFL5wPsj+NlOns+L8o
- GwdNFhTRw3LUGk79d2GQMzgRANWqc8Ti4f12PLmW+aqoweFg/rwWOYvnkeS06p2Zb1oN
- S2Ng==
-X-Gm-Message-State: AGi0PuZrQudJZOmx7kUz/ppxLVLBrIQtD6gx8TFs1kbSLJMI24AsVoRD
- 2bV8S5YhMJLZom1LuAYjcjU=
-X-Google-Smtp-Source: APiQypLJGSjAIL6gY5u9MQHOt1jpAYtXqbnJciek4pGiJF7wy6uTwL+CxOxvOZqvu/ws+fVRLdD2PQ==
-X-Received: by 2002:ac8:3459:: with SMTP id v25mr18842584qtb.229.1587918082412; 
- Sun, 26 Apr 2020 09:21:22 -0700 (PDT)
-Received: from imac (dhcp-108-168-12-59.cable.user.start.ca. [108.168.12.59])
- by smtp.gmail.com with ESMTPSA id
- z18sm7991005qti.47.2020.04.26.09.21.21
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 26 Apr 2020 09:21:21 -0700 (PDT)
-Date: Sun, 26 Apr 2020 12:21:19 -0400
-From: Tim Lewis <elatllat@gmail.com>
-To: elatllat@gmail.com
-Subject: [PATCH v4] arm64: dts: meson: S922X: extend cpu opp-points
-Message-ID: <20200426162119.GA23268@imac>
+ id 1jSk0S-0004z6-4h
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 16:19:49 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id D631D5C0108;
+ Sun, 26 Apr 2020 12:19:45 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Sun, 26 Apr 2020 12:19:45 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=08cZaxzjUx3KWTJnjYaSKDI0WL
+ CA0zQwamq6nPQn4BA=; b=G5828/aF5IPOjVpUeSAGbVkj4QRJ+CtHAvLIfPzpjg
+ lAcySDrltHxO0N5lb8l5+KfRbuR6yNSgkzk08vEWO837mfX3VTdAz9VNvQq6B1Aw
+ 93ny0TcXtt6uCF5qNiOcHtWjlgtbKg8o7sTAWTGVUoAzChIMbnEBBuIagd/d2xXa
+ VCtRgMl+VYtFpLTj827TQMKA3N87R4wkZMTIXeBgdcwN4wxC4quPDyyb+J6BglSG
+ zLG/vUBBK1vI+yXKcsI2SoDi6Heo+TJDSVhstvlqkRhwI5QUGl9QYYx7U/0k1kFR
+ aDNoQyDibvY2/uedftS8MD7sRMM+B3jzWkQpjGPdsdJg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=08cZaxzjUx3KWTJnj
+ YaSKDI0WLCA0zQwamq6nPQn4BA=; b=tNRnK53VNLGw1CRlP9uKY7OXsv4PXryXp
+ YieyKzdUsb6lNWglKdmtV/ZDOAeFq5TfQEJ6oyNFj9ulW/kXLxUKeMS6fcFrgxX1
+ LhRc3GV/Waam5R6CF2H5DFSzvezsKeqgxOMhmxgn4NN6sW6/+hmt0UWCKg3xSZfw
+ S0w1GAkNfFNlMNRT7nRQfvqg0dwRTs6j0NyMqnEEWDo/70rAiXxbwHk3Me4sduvB
+ iB+V94FaPfRK12ruN1twyFH80PjKTSslwON0HoiihB5pIGQEwzblRLx8MV9duWeD
+ /grhp2vcyQEBrn0KyHKOmzteCaDG46DyTpGyQZB45zVDVfUdX8ecg==
+X-ME-Sender: <xms:obSlXvjnBYbqsqY9ls8Hy7CgGy4hUMo9R1flmMw4C6PY6OzNkn7NSQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrheejgddutdduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
+ jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkphepje
+ dtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghm
+ pehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:obSlXtSw5sIBQEpiw6MCyCVcEwm9RUMU6ThAQuPdT9AaBGIToDPp2w>
+ <xmx:obSlXnjGT50zvjz0lQLb5mWwYAIYZu_Y7qhkRF4UN_VXdDblDe7Kcg>
+ <xmx:obSlXidiWACOzH8ALbl9iQj3LWrOm5VIXja5xhqtM2GcJZttF9zCkg>
+ <xmx:obSlXmu3bo8bFGj6rfG5qVHSTMis9A5myyopj7ljTKrREGOfwkemYg>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 0EF183280060;
+ Sun, 26 Apr 2020 12:19:45 -0400 (EDT)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH] arm64: dts: allwinner: a64: pinetab: Fix cpvdd supply name
+Date: Sun, 26 Apr 2020 11:23:53 -0500
+Message-Id: <20200426162353.52465-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_092123_466504_AFF54948 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200426_091948_312109_5B4EAB72 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [elatllat[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,63 +101,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, joy.cho@hardkernel.com,
- narmstrong@baylibre.com, khilman@baylibre.com, christianshewitt@gmail.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, tobetter@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Samuel Holland <samuel@sholland.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add extra cpu pop points to allow mild overclock on S922X. The opp
-points are found in Hardkernel N2 sources [1] and testing shows no
-obvious issues on other S922X devices. Thermal throttling should
-keep things in-check if needed.
+An older version of the analog codec binding referenced the headphone
+amplifier binding as "hpvcc". However, by the time it was merged in
+commit 21dd30200e3d ("ASoC: dt-bindings: sun50i-codec-analog: Add
+headphone amp regulator supply"), the regulator reference was renamed to
+"cpvdd". This board's device tree still uses the old name, which fails
+to work at runtime, and which causes a warning from `make dtbs_check`.
+Resolve both by fixing the name.
 
-[1] https://github.com/hardkernel/linux/commit/f86cd9487c7483b2a05f448b9ebacf6bd5a2ad2f
-Tested-by: Christian Hewitt <christianshewitt@gmail.com>
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Tim Lewis <elatllat@gmail.com>
-
+Fixes: 674ef1d0a7b2 ("arm64: dts: allwinner: a64: add support for PineTab")
+Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi | 15 +++++++++++++++
- 1 files changed, 15 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-index 046cc332d..1e5d0ee5d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-@@ -65,6 +65,11 @@
- 			opp-hz = /bits/ 64 <1896000000>;
- 			opp-microvolt = <981000>;
- 		};
-+
-+		opp-1992000000 {
-+			opp-hz = /bits/ 64 <1992000000>;
-+			opp-microvolt = <1001000>;
-+		};
- 	};
- 
- 	cpub_opp_table_1: opp-table-1 {
-@@ -120,5 +125,15 @@
- 			opp-hz = /bits/ 64 <1704000000>;
- 			opp-microvolt = <891000>;
- 		};
-+
-+		opp-1800000000 {
-+			opp-hz = /bits/ 64 <1800000000>;
-+			opp-microvolt = <981000>;
-+		};
-+
-+		opp-1908000000 {
-+			opp-hz = /bits/ 64 <1908000000>;
-+			opp-microvolt = <1022000>;
-+		};
- 	};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+index 316e8a443913..dc4ab6b434f9 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+@@ -98,7 +98,7 @@ &codec {
  };
+ 
+ &codec_analog {
+-	hpvcc-supply = <&reg_eldo1>;
++	cpvdd-supply = <&reg_eldo1>;
+ 	status = "okay";
+ };
+ 
 -- 
-2.17.1
+2.24.1
 
 
 _______________________________________________
