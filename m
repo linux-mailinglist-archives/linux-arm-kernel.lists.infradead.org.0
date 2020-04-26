@@ -2,86 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE6701B93A4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 21:32:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 195B11B93AC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 21:37:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XJx/vjSLE922kR8XNR9CkRvTIC3qP5v0qFkHyXEuU3w=; b=Lf64TEP+f1HyJadNOoLUI+ZZ2
-	ZSI/uMGxBuDVFeNjxAZFlBWWlTmG3Xm8B0ctpUsrIgeikdpIDLfAq9eU9sVaM0uKtTcSPHNMh26Uu
-	4O1VJYWxybASrAdI57Ua6eeaJo47PophQVE5nyu5+dZx7ifvFVh2GUQrF8TAGOz/0OM79qq+YbZOs
-	x5EqhI7I9vMxQqIZrjUzFN5OeN+jqkHJRxfzz38hTB4MinpzrhVTdS5KtEPH4sI4gDG+OqlGn2vK6
-	8iOIYnVbP8ff982AlDMUCLupHhuFwyy8L8QDRfJIbo2k5k+v6BsBLKsKzSzytTDCbMdABT/hda8mr
-	yXvv1AaIQ==;
+	 bh=aUK1PEG9xQKs9qyvCYBozxC8ipikeiUymsId891ZcNI=; b=KBUlyFNrSv8aLgL12aiNnGRB7
+	87LHXfRxpLHk6WZ5IdHYRM7od+rEkBjezlWhBTRVi7fLSNv3GI2If5iLPBolVhbrKpkro9eIou7uF
+	ykNVvWIrT00gTOywL/qa3WaO3Eyc8s+WpkZjJ8KQvM4bq/BNZNXlUAUlrVGwtpDtwVfUGqXTVycyn
+	Gl4D2lFF3fhReyxNglbE0g21IVAM2WH26ySXEZ1duWOg7mEgHpeDBS+ZPFGvQuCs1VYc6oUUFYq51
+	B9bg0AfHQ0onGruUduxevSKWQ1ajaNZfB5AzIPVjbkLv95UHpfh1Ha7/K1CNWHS2vBkchcfKNo5YE
+	0KLweWojg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSn0c-0006Sl-0o; Sun, 26 Apr 2020 19:32:10 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jSn5o-0001O0-7g; Sun, 26 Apr 2020 19:37:32 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSn0T-0006RQ-3n
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 19:32:02 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d17so18025893wrg.11
+ id 1jSn5e-0001N8-6N
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 19:37:23 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g12so17925616wmh.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 12:31:57 -0700 (PDT)
+ Sun, 26 Apr 2020 12:37:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Ddfze3qGmVwKRJLH5Pd6gdehcdFm5JRcS337ydQjW/U=;
- b=jQcl+bpXmxhFBTQ1M9eHnLMzFVPHRyZ/cLzBouQvUYniMNhGBH+5AXm1DlBj9u1f4c
- Lipke/EQrl3ISBSW/H+ZzrEoH/o+rXVFzj3bMcTy/OhN46NydVkgIuaeUwxBeLscmw6a
- HKwpJ1HHGToP9mkZt0I9t1sW71QECAzPn6juMlTudg8KpqbEYVHCVXaXrYrJzUNQ5I+v
- mGnWB2NcnNCw02lB8lyhanUPJyy+ayrshbwzHW7sRZyt+JTvJFVqH6SbKx+Y97TL6jZ8
- MjSaKyS5VFxmn9GyhaDx/6k4pgUo+rmyfuOEXKqq6yH+g5H0UPmdewApYWVYML7KSN9U
- nk8A==
+ bh=gynnlawwP2L58lK7U6nOs2p5nD3J7jQ46S/46O9Sglk=;
+ b=N9KWcFUX8Mo/Kasy1wW9DyZlzZceVD/CE6XLQh316tO+ezDNx6lxerDWRM/EUjewsb
+ 4J6UUjQVwoQZoMogoMySyTkErWUdm6SGsSbkDApKXQgCp2pamxe0toej7Q9ucGa5Gnm+
+ eyeiVusmZD1eHS0aHgb+8Vd//q3bCIKayqqkJfAniMmlEtfl8hi8vOsomkq+Z51LPgD6
+ 42K5gO6TEH+vJnmiIm9m1+lLbqOQOEigtxE9AsFksajKLQtUPtFpwqYx2WEqqcMq2ps5
+ ugdFvLiH4WejoukGnW7oEvK94R4t7p3Mv082cGW82m+xC2av6Qby6gQLO/lQbETB7Iy4
+ VC6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Ddfze3qGmVwKRJLH5Pd6gdehcdFm5JRcS337ydQjW/U=;
- b=CzF10pIggalAoRwIeJS5+Bsg32fIRVhG14cTn9As4UkT2zPeWkOtOuF8yTheyivr/y
- uMwkTqYvT8YNtP0A+MrI9lDxca3aD4RWRY5H2y1BZXAdIWSe+TCie+T4W2jCSyS85neJ
- 2ohkWEHS2auSERK8ESTa/7XAtT1PJEBoXR4e+7se28yfftiQYI06IKXg6FKVNiy6wBq4
- d4mJ1skBrrH6h4gmRXNDrxXBz0pyPUAWyq6yHbyuJsK85o5qLkZ5AZh16WQmTTMi+zzD
- edUP7xftbJCtLarAB1wL/eIqlD6iI0F96rkQ5qs6OmYJl63sdBQ0W/VhDjyGOyLB+RKr
- V3Bg==
-X-Gm-Message-State: AGi0PuZvkWd7hz8M1N0iS2XeT8B0eSC1e96KUt0hV6n6rg32NC+sDNKR
- iscwCqDrmWWfMQaG4UHNUP4=
-X-Google-Smtp-Source: APiQypL2Adb7hVF3vbjtHZE8Vu9e/+IvQOWRq3atLNaVZ0J2vDG1dCBedbrwuM1ZZYXc7bdUl12enw==
-X-Received: by 2002:adf:9bd4:: with SMTP id e20mr23138649wrc.199.1587929515985; 
- Sun, 26 Apr 2020 12:31:55 -0700 (PDT)
+ bh=gynnlawwP2L58lK7U6nOs2p5nD3J7jQ46S/46O9Sglk=;
+ b=BJadL5L0+ABRcAhWXJEBQxrmM2Cs+qA+rzG/3C5rKZMvgRgbVXPNaRMcDt9JfjCrDm
+ g8gGskMXM4uhgeVFUfbGVQBXolfrKV5DdftyzBjKKZ+RMgFwH4m3P/TFNn0V17hmDpO7
+ t7JaJERhOUsyEz0wWg1sHiaor1+jBXnOSJRXEnSYryllRexOvGNJ3QJDbYuCY57P/Y8I
+ N8VtQTdJqYr+OMUm5kaWJZflNAzH/hjPpXR8JYL8vN4GTvQlWGxISDg3OsoL2sKT8F+T
+ r+GxwjwT9nQWjzoVxRZzM2cLRxWuqEaIAXVxYUU7928OQHJV4pkKjl9z1oLj69nV3OFa
+ +0rA==
+X-Gm-Message-State: AGi0PuZMv1YdLC1bYnup5KHTpQoS1UswSn1xygY868fkWExtbX/zKXdK
+ yhk1pmJ1LYsKbEvkIsRPlCo=
+X-Google-Smtp-Source: APiQypJ4XTrddxqN2RyHulQ7/hn1xjaKln3zjHBlhZG5Q7i33l263UZT1BbEIAIIf8Ni9zos7CKCXg==
+X-Received: by 2002:a1c:6241:: with SMTP id w62mr21919075wmb.27.1587929840265; 
+ Sun, 26 Apr 2020 12:37:20 -0700 (PDT)
 Received: from ?IPv6:2a02:810d:340:2e50:10d8:ba05:5002:2dff?
  ([2a02:810d:340:2e50:10d8:ba05:5002:2dff])
- by smtp.gmail.com with ESMTPSA id a187sm12613135wmh.40.2020.04.26.12.31.53
+ by smtp.gmail.com with ESMTPSA id y10sm12138259wma.5.2020.04.26.12.37.18
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 26 Apr 2020 12:31:55 -0700 (PDT)
-Subject: Re: [PATCH v7 09/12] ARM: dts: sun6i: a31: add sgx gpu child node
-To: Paul Cercueil <paul@crapouillou.net>,
- "H. Nikolaus Schaller" <hns@goldelico.com>
+ Sun, 26 Apr 2020 12:37:19 -0700 (PDT)
+Subject: Re: [PATCH v7 01/12] dt-bindings: add img, pvrsgx.yaml for Imagination
+ GPUs
+To: "H. Nikolaus Schaller" <hns@goldelico.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Beno=c3=aet_Cousson?= <bcousson@baylibre.com>,
+ Tony Lindgren <tony@atomide.com>, Paul Cercueil <paul@crapouillou.net>,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paulburton@kernel.org>,
+ James Hogan <jhogan@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thomas Bogendoerfer <tsbogend@alpha.franken.de>
 References: <cover.1587760454.git.hns@goldelico.com>
- <47740d708e00632735a8c1957109ca349029c716.1587760454.git.hns@goldelico.com>
- <VTBE9Q.B8A32JWI2Q9V3@crapouillou.net>
+ <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
 From: Philipp Rossak <embed3d@gmail.com>
-Message-ID: <276c20d6-13f1-6fc8-c245-049b4a852181@gmail.com>
-Date: Sun, 26 Apr 2020 21:31:52 +0200
+Message-ID: <9d9998cc-33bf-7d8f-658b-8d6218338135@gmail.com>
+Date: Sun, 26 Apr 2020 21:36:58 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <VTBE9Q.B8A32JWI2Q9V3@crapouillou.net>
+In-Reply-To: <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_123201_178872_0BEDA908 
-X-CRM114-Status: GOOD (  22.90  )
+X-CRM114-CacheID: sfid-20200426_123722_260121_18BE0B89 
+X-CRM114-Status: GOOD (  23.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,65 +112,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, letux-kernel@openphoenux.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- =?UTF-8?Q?Beno=c3=aet_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
+ Jonathan Bakker <xc-racer2@live.ca>, openpvrsgx-devgroup@letux.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ kernel@pyra-handheld.com, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGF1bCwKCk9uIDI2LjA0LjIwIDE0OjUzLCBQYXVsIENlcmN1ZWlsIHdyb3RlOgo+IAo+IAo+
-IExlIHZlbi4gMjQgYXZyaWwgMjAyMCDDoCAyMjozNCwgSC4gTmlrb2xhdXMgU2NoYWxsZXIgPGhu
-c0Bnb2xkZWxpY28uY29tPiAKPiBhIMOpY3JpdCA6Cj4+IEZyb206IFBoaWxpcHAgUm9zc2FrIDxl
-bWJlZDNkQGdtYWlsLmNvbT4KPj4KPj4gV2UgYXJlIGFkZGluZyB0aGUgZGV2aWNldHJlZSBiaW5k
-aW5nIGZvciB0aGUgUFZSLVNHWC01NDQtMTE1IGdwdS4KPj4KPj4gVGhpcyBkcml2ZXIgaXMgY3Vy
-cmVudGx5IHVuZGVyIGRldmVsb3BtZW50IGluIHRoZSBvcGVucHZyc2d4LWRldmdyb3VwLgo+PiBS
-aWdodCBub3cgdGhlIGZ1bGwgYmluZGluZyBpcyBub3QgZmlndXJlZCBvdXQsIHNvIHdlIHByb3Zp
-ZGUgaGVyZSBhCj4+IHBsYWNlaG9sZGVyLiBJdCB3aWxsIGJlIGNvbXBsZXRlZCBhcyBzb29uIGFz
-IHRoZXJlIGlzIGEgZGVtbyBhdmFpbGFibGUuCj4+Cj4+IFRoZSBjdXJyZW50bHkgdXNlZCBiaW5k
-aW5nIHRoYXQgaXMgdXNlZCBkdXJpbmcgZGV2ZWxvcG1lbnQgaXMgbW9yZQo+PiBjb21wbGV0ZSBh
-bmQgd2FzIGFscmVhZHkgdmVyaWZ5ZWQgYnkgbG9hZGluZyB0aGUga2VybmVsbW9kdWxlIHN1Y2Nl
-c3NmdWwuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFBoaWxpcHAgUm9zc2FrIDxlbWJlZDNkQGdtYWls
-LmNvbT4KPj4gU2lnbmVkLW9mZi1ieTogSC4gTmlrb2xhdXMgU2NoYWxsZXIgPGhuc0Bnb2xkZWxp
-Y28uY29tPgo+PiAtLS0KPj4gwqBhcmNoL2FybS9ib290L2R0cy9zdW42aS1hMzEuZHRzaSB8IDEx
-ICsrKysrKysrKysrCj4+IMKgMSBmaWxlIGNoYW5nZWQsIDExIGluc2VydGlvbnMoKykKPj4KPj4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjZpLWEzMS5kdHNpIAo+PiBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL3N1bjZpLWEzMS5kdHNpCj4+IGluZGV4IGYzNDI1YTY2ZmMwYS4uOTMzYTgy
-NWJmNDYwIDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zdW42aS1hMzEuZHRzaQo+
-PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW42aS1hMzEuZHRzaQo+PiBAQCAtMTQxNyw1ICsx
-NDE3LDE2IEBAIHAyd2k6IGkyY0AxZjAzNDAwIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI3NpemUt
-Y2VsbHMgPSA8MD47Cj4+IMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4gKwo+PiArwqDCoMKgwqDCoMKg
-wqAgZ3B1OiBncHVAMWM0MDAwMDAgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb21wYXRp
-YmxlID0gImFsbHdpbm5lcixzdW44aS1hMzEtc2d4NTQ0LTExNSIsCgpsb29rcyBsaWtlIGEgY29w
-eSBwYXN0ZSBlcnJvciBmcm9tIG15IHNpZGUgdGhpcyBzaG91bGQgYmUgCmFsbHdpbm5lcixzdW42
-aS1hMzEtc2d4NTQ0LTExNQoKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgImltZyxzZ3g1NDQtMTE1IiwgImltZyxzZ3g1NDQiOwo+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCByZWcgPSA8MHgwMWM0MDAwMCAweDEwMDAwPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgLyoKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIFRoaXMgbm9kZSBpcyBjdXJy
-ZW50bHkgYSBwbGFjZWhvbGRlciBmb3IgdGhlIGdwdS4KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCAqIFRoaXMgd2lsbCBiZSBjb21wbGV0ZWQgd2hlbiBhIGZ1bGwgZGVtb25zdHJhdGlvbgo+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogb2YgdGhlIG9wZW5wdnJzZ3ggZHJpdmVyIGlz
-IGF2YWlsYWJsZSBmb3IgdGhpcyBib2FyZC4KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAq
-Lwo+IAo+IFRoaXMgbm9kZSBkb2Vzbid0IGhhdmUgY2xvY2tzLCBzbyBJIGRvbid0IHNlZSBob3cg
-aXQnZCB3b3JrLgo+IAo+IEJldHRlciBkZWxheSB0aGUgaW50cm9kdWN0aW9uIG9mIHRoZSBHUFUg
-bm9kZSBmb3IgdGhpcyBib2FyZCB1bnRpbCB5b3UgCj4ga25vdyBpdCB3b3Jrcy4KPiAKPiAtUGF1
-bApUaGlzIHdhcyBhbHJlYWR5IGRpc2N1c3MgaW4gYW4gZWFybGllciB2ZXJzaW9uIHRoYXQgc2Vy
-aWVzIHRoYXQgdGhpcyAKc2hvdWxkIGJlIGRlbGF5ZWQuCgpJIHdpbGwgc2VuZCBhIGZvbGxvdyB1
-cCBwYXRjaCBzZXJpZXMsIGFzIHNvb24gYXMgSSBtYWlubGluZWQgYW4gb3RoZXIgCmRyaXZlciB0
-aGF0IEknbSB3b3JraW5nIG9uLCB3aGljaCBpcyByZXF1aXJlZCB0byBwcm9wZXJseSBkZXNjcmli
-ZSB0aGUgZ3B1LgoKQ2hlZXJzClBoaWxpcHAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Nikolaus,
+
+On 24.04.20 22:34, H. Nikolaus Schaller wrote:
+> The Imagination PVR/SGX GPU is part of several SoC from
+> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
+> Allwinner A83 and others.
+> 
+> With this binding, we describe how the SGX processor is
+> interfaced to the SoC (registers and interrupt).
+> 
+> The interface also consists of clocks, reset, power but
+> information from data sheets is vague and some SoC integrators
+> (TI) deciced to use a PRCM wrapper (ti,sysc) which does
+> all clock, reset and power-management through registers
+> outside of the sgx register block.
+> 
+> Therefore all these properties are optional.
+> 
+> Tested by make dt_binding_check
+> 
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> ---
+>   .../devicetree/bindings/gpu/img,pvrsgx.yaml   | 150 ++++++++++++++++++
+>   1 file changed, 150 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml b/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
+> new file mode 100644
+> index 000000000000..33a9c4c6e784
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
+> @@ -0,0 +1,150 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/gpu/img,pvrsgx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Imagination PVR/SGX GPU
+> +
+> +maintainers:
+> +  - H. Nikolaus Schaller <hns@goldelico.com>
+> +
+> +description: |+
+> +  This binding describes the Imagination SGX5 series of 3D accelerators which
+> +  are found in several different SoC like TI OMAP, Sitara, Ingenic JZ4780,
+> +  Allwinner A83, and Intel Poulsbo and CedarView and more.
+> +
+> +  For an extensive list see: https://en.wikipedia.org/wiki/PowerVR#Implementations
+> +
+> +  The SGX node is usually a child node of some DT node belonging to the SoC
+> +  which handles clocks, reset and general address space mapping of the SGX
+> +  register area. If not, an optional clock can be specified here.
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: '^gpu@[a-f0-9]+$'
+> +  compatible:
+> +    oneOf:
+> +      - description: SGX530-121 based SoC
+> +        items:
+> +          - enum:
+> +            - ti,omap3-sgx530-121 # BeagleBoard A/B/C, OpenPandora 600MHz and similar
+> +          - const: img,sgx530-121
+> +          - const: img,sgx530
+> +
+> +      - description: SGX530-125 based SoC
+> +        items:
+> +          - enum:
+> +            - ti,am3352-sgx530-125 # BeagleBone Black
+> +            - ti,am3517-sgx530-125
+> +            - ti,am4-sgx530-125
+> +            - ti,omap3-sgx530-125 # BeagleBoard XM, GTA04, OpenPandora 1GHz and similar
+> +            - ti,ti81xx-sgx530-125
+> +          - const: ti,omap3-sgx530-125
+> +          - const: img,sgx530-125
+> +          - const: img,sgx530
+> +
+> +      - description: SGX535-116 based SoC
+> +        items:
+> +          - const: intel,poulsbo-gma500-sgx535 # Atom Z5xx
+> +          - const: img,sgx535-116
+> +          - const: img,sgx535
+> +
+> +      - description: SGX540-116 based SoC
+> +        items:
+> +          - const: intel,medfield-gma-sgx540 # Atom Z24xx
+> +          - const: img,sgx540-116
+> +          - const: img,sgx540
+> +
+> +      - description: SGX540-120 based SoC
+> +        items:
+> +          - enum:
+> +            - samsung,s5pv210-sgx540-120
+> +            - ti,omap4-sgx540-120 # Pandaboard, Pandaboard ES and similar
+> +          - const: img,sgx540-120
+> +          - const: img,sgx540
+> +
+> +      - description: SGX540-130 based SoC
+> +        items:
+> +          - enum:
+> +            - ingenic,jz4780-sgx540-130 # CI20
+> +          - const: img,sgx540-130
+> +          - const: img,sgx540
+> +
+> +      - description: SGX544-112 based SoC
+> +        items:
+> +          - const: ti,omap4470-sgx544-112
+> +          - const: img,sgx544-112
+> +          - const: img,sgx544
+> +
+> +      - description: SGX544-115 based SoC
+> +        items:
+> +          - enum:
+> +            - allwinner,sun8i-a31-sgx544-115
+> +            - allwinner,sun8i-a31s-sgx544-115
+those two bindings are wrong.
+It should be allwinner,sun6i-a31-sgx544-115 and 
+allwinner,sun6i-a31s-sgx544-115. I did a copy paste error in the patches 
+that I provided for this series.
+
+
+Cheers,
+Philipp
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
