@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CDE01B9036
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:54:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC7491B9041
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:57:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
 	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=a/C+WaZEOc/jKzTGiPZ3w5yyfdOzSl3Cq7dK4Mi2hx0=; b=rZsQdeIjaucG9oF4f9SBUffuC
-	sLGiE7LJ57TzFvB4ua4L6piBTclAxWNcFxJ6nG2Dx3FVGyFbktv0hGN6sW6RezlYOpGIBq5wPeKib
-	aKWOLEH8/g7NagakAPZe7F8K8ql6j7r9ZgdoFn2XQCRLGcVom1etTjmwWfxfLfpELjmKS4eeU0TJB
-	ysx8ArZQb80CyAREeaP1QwIcl7UZwu4r699fiS2GCjlk9jtLb3Pjjry6+4SmJ1cIi4WMHxyduTyYn
-	9w4tMWFAwhiBtrwfZkXttEdD3ckA50yjm0wjg9lOygKAC0+MrkBrTBX4YZzzQ96tojsC81NdwDeMF
-	A2L51xYvQ==;
+	 bh=AGNdaiHUvN1ijmwh4xLURHqFkZvdHyi/z+o0+D0ib88=; b=rgobfelQBtEgVuKNmEpIz8Xws
+	A9g0HQYE9SIBuVeGUKZ7w5ft8CGti2y0SPW1FF80E4VVP9oJmWc2lcBhTbEB1bzrMI2isz9dUh9Nm
+	BDOM2145roFY/R79Hblpd5QkyAZ3beMYR2buvtKPCUWLdMNu6WwqQBOx2XhEYH5FV/dIpMtZZYqWM
+	+e7fqKypcuGkaLzUYqhsLooR2kdhcmYGhEg2/Wxcbft0TJ1MVwbORUtSsmQFXE61e1DEBmGVnld/3
+	vVZ8azDosx39sEHm6hEnDr42WoyFw77HvvCg/Ji6ZRxOz/sDQ1ibSo4/01NxwQ8to4bxgf3gmp7fb
+	NWSqG/jDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSgne-0006Bx-Im; Sun, 26 Apr 2020 12:54:22 +0000
+	id 1jSgqP-0000v4-UI; Sun, 26 Apr 2020 12:57:13 +0000
 Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSgnV-0006B7-11
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:54:14 +0000
+ id 1jSgqF-0000u0-Ew
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:57:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
- s=mail; t=1587905650; h=from:from:sender:reply-to:subject:subject:date:date:
+ s=mail; t=1587905821; h=from:from:sender:reply-to:subject:subject:date:date:
  message-id:message-id:to:to:cc:cc:mime-version:mime-version:
  content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=QGs1VbCXpq3w2bD385Ag0nyW5WilZcot3VZIcHvBKBA=;
- b=WgSWzgZ1oOoj+AbGcqvEGtTfzTVBQzFedGQ2dDOe/N42jNpWaMGtbZ3E/vaikqD/2rDXMX
- hI+YRAoyaapaSEK8YkTDlcs5PrVwEmccrvT5wN9dnpAtejFz81BMJMROx42MAEjI5115H4
- Ljp1howOILhfEB60hF1DGes1umRV6U4=
-Date: Sun, 26 Apr 2020 14:53:55 +0200
+ bh=VP/mAC4xwNDT9V91K8RLHYB6nE7AooWd1wTlk6uRfp4=;
+ b=AbMvu2fRXjCFm6r4XAiK02os0W+/STwoQ44/jocLsIYNNVAtsKI7bA90aQ74cVvhs5lLan
+ y4d+F5TbWTAuE/jofT7aZmiSn7uZjLRQedgWMMNrNJZDpCXraPxAcOa+Dvq1A+6VE+7OU/
+ EEEX6kOGv5zhpzoTKdy5z9BpNqSjfRo=
+Date: Sun, 26 Apr 2020 14:56:47 +0200
 From: Paul Cercueil <paul@crapouillou.net>
-Subject: Re: [PATCH v7 09/12] ARM: dts: sun6i: a31: add sgx gpu child node
+Subject: Re: [PATCH v7 08/12] arm: dts: s5pv210: Add node for SGX 540
 To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Message-Id: <VTBE9Q.B8A32JWI2Q9V3@crapouillou.net>
-In-Reply-To: <47740d708e00632735a8c1957109ca349029c716.1587760454.git.hns@goldelico.com>
+Message-Id: <NYBE9Q.YH08US7A7DC3@crapouillou.net>
+In-Reply-To: <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
 References: <cover.1587760454.git.hns@goldelico.com>
- <47740d708e00632735a8c1957109ca349029c716.1587760454.git.hns@goldelico.com>
+ <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_055413_274742_B761CE11 
-X-CRM114-Status: GOOD (  16.71  )
+X-CRM114-CacheID: sfid-20200426_055703_865006_B9F34C40 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,64 +94,56 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Le ven. 24 avril 2020 =E0 22:34, H. Nikolaus Schaller =
 
 <hns@goldelico.com> a =E9crit :
-> From: Philipp Rossak <embed3d@gmail.com>
+> From: Jonathan Bakker <xc-racer2@live.ca>
 > =
 
-> We are adding the devicetree binding for the PVR-SGX-544-115 gpu.
+> All s5pv210 devices have a PowerVR SGX 540 (revision 120) attached.
 > =
 
-> This driver is currently under development in the openpvrsgx-devgroup.
-> Right now the full binding is not figured out, so we provide here a
-> placeholder. It will be completed as soon as there is a demo =
-
-> available.
+> There is no external regulator for it so it can be enabled by default.
 > =
 
-> The currently used binding that is used during development is more
-> complete and was already verifyed by loading the kernelmodule =
-
-> successful.
-> =
-
-> Signed-off-by: Philipp Rossak <embed3d@gmail.com>
+> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
 > Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 > ---
->  arch/arm/boot/dts/sun6i-a31.dtsi | 11 +++++++++++
->  1 file changed, 11 insertions(+)
+>  arch/arm/boot/dts/s5pv210.dtsi | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 > =
 
-> diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi =
+> diff --git a/arch/arm/boot/dts/s5pv210.dtsi =
 
-> b/arch/arm/boot/dts/sun6i-a31.dtsi
-> index f3425a66fc0a..933a825bf460 100644
-> --- a/arch/arm/boot/dts/sun6i-a31.dtsi
-> +++ b/arch/arm/boot/dts/sun6i-a31.dtsi
-> @@ -1417,5 +1417,16 @@ p2wi: i2c@1f03400 {
->  			#address-cells =3D <1>;
->  			#size-cells =3D <0>;
+> b/arch/arm/boot/dts/s5pv210.dtsi
+> index 2ad642f51fd9..abbdda205c1b 100644
+> --- a/arch/arm/boot/dts/s5pv210.dtsi
+> +++ b/arch/arm/boot/dts/s5pv210.dtsi
+> @@ -512,6 +512,19 @@ vic3: interrupt-controller@f2300000 {
+>  			#interrupt-cells =3D <1>;
 >  		};
+> =
+
+> +		gpu: gpu@f3000000 {
+> +			compatible =3D "samsung,s5pv210-sgx540-120";
+> +			reg =3D <0xf3000000 0x10000>;
+> +			interrupt-parent =3D <&vic2>;
+> +			interrupts =3D <10>;
+> +			clock-names =3D "core";
+> +			clocks =3D <&clocks CLK_G3D>;
 > +
-> +		gpu: gpu@1c400000 {
-> +			compatible =3D "allwinner,sun8i-a31-sgx544-115",
-> +				     "img,sgx544-115", "img,sgx544";
-> +			reg =3D <0x01c40000 0x10000>;
-> +			/*
-> +			 * This node is currently a placeholder for the gpu.
-> +			 * This will be completed when a full demonstration
-> +			 * of the openpvrsgx driver is available for this board.
-> +			 */
+> +			assigned-clocks =3D <&clocks MOUT_G3D>, <&clocks DOUT_G3D>;
+> +			assigned-clock-rates =3D <0>, <66700000>;
+> +			assigned-clock-parents =3D <&clocks MOUT_MPLL>;
 
-This node doesn't have clocks, so I don't see how it'd work.
+What are these clocks for, and why are they reparented / reclocked?
 
-Better delay the introduction of the GPU node for this board until you =
-
-know it works.
+Shouldn't they be passed to 'clocks' as well?
 
 -Paul
 
 > +		};
->  	};
->  };
+> +
+>  		fimd: fimd@f8000000 {
+>  			compatible =3D "samsung,s5pv210-fimd";
+>  			interrupt-parent =3D <&vic2>;
 > --
 > 2.25.1
 > =
