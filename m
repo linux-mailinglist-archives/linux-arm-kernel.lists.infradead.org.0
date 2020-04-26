@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E16711B934A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:59:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 824EF1B934B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 20:59:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d7EXup/HATnalcXRmRne56QfVv7VMtbqeScFtyXZXek=; b=A8qYLda/gx94rT
-	3g3zYScqsfjB+atZeiTXAD1z1SCJsmner3+xLDtu9sQf5AuxHEAXpEwZaUbRCuXRd0DlC1GwVMUWH
-	SRymzWA14c/7vFnkNZwzpTIciZarRJGVXn0vByKKjnuTjYsXsGdPneW2zFlnMFCHXMeJqvjhRVchF
-	jtVtxAtrTV2HusCK97YKYu7wmt+Q6hZV06Dh/zRxco/v0Srdy+Bgpzr988WWHG0XHZpSzQNL0SZsB
-	ZgDD5JrWvPJcLYq6jm22FmvVR264u6iDHO84E3XYacw970WLLvgaSRgT2LjrKKTllQUHJooEoKJKA
-	cGkEb6P410AktOt4d/dQ==;
+	List-Owner; bh=AGn62zkafy95Wl9z7yz48WxMq2VZUrO01ZELJCBy1m0=; b=LVZnSEs3Wxz956
+	W59V/xWynIUHqeYSzpV+cQQVsaEf5IcB7yPS7ditCO9lajDZgghdgY3pchtnrnsJ/E4BtrUM1RrLW
+	hJsXJV5HveuNybKmfQYbAW2B9HROxV3iG9hStTluCvWfuWwRUphoMWug7GpPFX3QhUuYbS3k9S4f5
+	bg1mJLPFaJebpkXGdD4M887/Wb06/QRZUVDi08Nrx3WjGA5cZHqoN8GWyHlpZmlimtDSGvAQA/zLC
+	dYEAGaF0thpoG+IXVLhEaxlZ66Io/0wEiYZWb7vXT4WXi2C+ssnCdx2tcUsP5peawfwfC/cpXLA1P
+	7zdawUH/KkKVIgS8huNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSmV0-0006z0-8D; Sun, 26 Apr 2020 18:59:30 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jSmVH-0007EY-DS; Sun, 26 Apr 2020 18:59:47 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSmTj-00060p-9Q
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 18:58:13 +0000
-Received: by mail-pl1-x641.google.com with SMTP id c21so5218785plz.4
+ id 1jSmTj-000626-Vj
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 18:58:14 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x77so7717362pfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 11:58:10 -0700 (PDT)
+ Sun, 26 Apr 2020 11:58:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=gpZt5E1cSry4QDL3jmZLHdrOTZu3mS+7CXPfuznfxa0=;
- b=bz50d4RFZxXlsiYmc7eURFKnPKA8T97a4cJLMR9MKiedXJK661qh2I+r0rKGBepfSu
- dI0iNH4GSNHq7CJKJKinUa1pL3VmdVdxyoDAoum4WFs9CkQ5nsUaWc90rCKNPhIBv2C7
- pxn8MIthIPm3ObUUy5SyaegcU/VqLPeW3FRc8=
+ bh=78YVO845GHtM9k/EV5ps+BQFILd3wygw5mUyH2gxrzc=;
+ b=J6yKsPTdcbwo6aeshqFM2fAYsDMjgIQoQY8MwtukCyc4TyT2VnzLqAzlU/0CsbKoW0
+ jtWf8aRzBoPBaJZJBm1Lg+ZwGPOLaTZucHMHdK9h0RYCvOGpspXp0ASBXuEkVePJptFa
+ iDwfjCbDMnNVvSzMf9JR3S9E1iv5lWAGje84A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=gpZt5E1cSry4QDL3jmZLHdrOTZu3mS+7CXPfuznfxa0=;
- b=mU4sd3xYChNx2DvG6Vhpo/A4ntVYz4XZykf2WdAAsel62s83W50znmxPDPXdKTM3PG
- ZCuMzW5Nd98NfM+WGiNv0POjLGk9zJkxxro7iEMChDSLTmA9AIKi3VZcYZJtarCHnxQ+
- XLfttuoWrRCy5QNmTkx6ibOIq3eK7Bj8SR4+lkay+WqDFUYAvtxPzraLb0ri/6haMHAf
- qBlppgVbiuAVsDDm90my893VcPZcN/jNxKT8l07+mBU9telNp9rnSD4kY8V9QM3aMG8o
- dDnUDxJkdbmcFyRihphPbQ4eIvNOIvnzZjpmVlojPFOaIIOfzQ5I8MLGdfQkDyhaNDqu
- /IRw==
-X-Gm-Message-State: AGi0Pubs96aMCUscVyGEFOTPRT1pfWcevoTYfnckyBJDODzlj7e4PqyV
- C+M75Z+QQu9K1jWZarK6hViD4jcMS0M=
-X-Google-Smtp-Source: APiQypLSk4G4qJYhxhL3iDl2db9jRsm+BPlCR5fOXBSFr23B/iAKgpxCxjBmCxA4xcH9swcCmtX5tw==
-X-Received: by 2002:a17:90a:9295:: with SMTP id
- n21mr19939827pjo.195.1587927490198; 
- Sun, 26 Apr 2020 11:58:10 -0700 (PDT)
+ bh=78YVO845GHtM9k/EV5ps+BQFILd3wygw5mUyH2gxrzc=;
+ b=fdQ8eEVIMhkjs5l+fL6Cax7S7t4hB0UzEraugGIkWz6GGjUoHecFeQhz1fqpHg89ke
+ DHMobk6hSgoDelzB7kw5CmlCVTJ7nGT8ZG4OmOyRE4KJNu/qloqDBFW5iW6UuVTqLrzQ
+ p8LM5ZP6YCaPk8gutq6MM98Lp9OFX/0i48mPY0ruST/NIhsAoa2aREHAnsAl8pWkCN/1
+ 4B3PpWZjt21c0XSqZKtbs6bo/KMKtKrYh5DVaSafAR58hIPgCztAlrhzU/MZm0yAq3lP
+ ncYxdAdzXkKhyRduzUzaC/wo2QyaoIztAMvCr0CW0l/iXLKZd9SjvbGqCj/H7F/qGtfI
+ o/VA==
+X-Gm-Message-State: AGi0Pub9cgWJJHDurboLlzH7nwF4tNZTq48G+JDmGIg+PIzMCXM4x73w
+ C1KIuuOyV6a/Wov2lSAqK/c/ew==
+X-Google-Smtp-Source: APiQypLIflSfGaQ/fc5lB1P41nB7JmBS+mGiXUpgYwets4rk7M766rmw/tGYvSbMSRiW/JEWTQ+P2w==
+X-Received: by 2002:a63:cf10:: with SMTP id j16mr19176908pgg.201.1587927491023; 
+ Sun, 26 Apr 2020 11:58:11 -0700 (PDT)
 Received: from smtp.gmail.com ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id h27sm9425153pgb.90.2020.04.26.11.58.09
+ by smtp.gmail.com with ESMTPSA id h27sm9425153pgb.90.2020.04.26.11.58.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 26 Apr 2020 11:58:09 -0700 (PDT)
+ Sun, 26 Apr 2020 11:58:10 -0700 (PDT)
 From: Stephen Boyd <swboyd@chromium.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH 4/5] coresight: Initialize arg in sparse friendly way
-Date: Sun, 26 Apr 2020 11:58:04 -0700
-Message-Id: <20200426185805.14923-5-swboyd@chromium.org>
+Subject: [PATCH 5/5] coresight: Avoid casting void pointers
+Date: Sun, 26 Apr 2020 11:58:05 -0700
+Message-Id: <20200426185805.14923-6-swboyd@chromium.org>
 X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
 In-Reply-To: <20200426185805.14923-1-swboyd@chromium.org>
 References: <20200426185805.14923-1-swboyd@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_115811_340059_F6912FCD 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20200426_115812_067720_58724295 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,44 +102,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sparse gets annoyed when this initializer is 0 but the first struct
-member is a pointer. Just use { } to initialize instead so that sparse
-is quiet.
+We don't need to cast void pointers, such as the amba_id data. Assign to
+a local variable to make the code prettier and also return NULL instead
+of 0 to make sparse happy.
 
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Stephen Boyd <swboyd@chromium.org>
 ---
- drivers/hwtracing/coresight/coresight-etm3x.c | 2 +-
- drivers/hwtracing/coresight/coresight-etm4x.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ drivers/hwtracing/coresight/coresight-priv.h | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index e2cb6873c3f2..bf22dcfd3327 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -504,7 +504,7 @@ static int etm_enable_perf(struct coresight_device *csdev,
- static int etm_enable_sysfs(struct coresight_device *csdev)
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index 890f9a5c97c6..09ca9d824cee 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -206,9 +206,12 @@ cti_remove_assoc_from_csdev(struct coresight_device *csdev) {}
+ /* extract the data value from a UCI structure given amba_id pointer. */
+ static inline void *coresight_get_uci_data(const struct amba_id *id)
  {
- 	struct etm_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
--	struct etm_enable_arg arg = { 0 };
-+	struct etm_enable_arg arg = { };
- 	int ret;
+-	if (id->data)
+-		return ((struct amba_cs_uci_id *)(id->data))->data;
+-	return 0;
++	struct amba_cs_uci_id *uci_id = id->data;
++
++	if (uci_id)
++		return id->data;
++
++	return NULL;
+ }
  
- 	spin_lock(&drvdata->spinlock);
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index a90d757f7043..0f850efc1c82 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -412,7 +412,7 @@ static int etm4_enable_perf(struct coresight_device *csdev,
- static int etm4_enable_sysfs(struct coresight_device *csdev)
- {
- 	struct etmv4_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
--	struct etm4_enable_arg arg = { 0 };
-+	struct etm4_enable_arg arg = { };
- 	int ret;
- 
- 	spin_lock(&drvdata->spinlock);
+ void coresight_release_platform_data(struct coresight_platform_data *pdata);
 -- 
 Sent by a computer, using git, on the internet
 
