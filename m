@@ -2,71 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 277021B9017
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:41:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2BB01B902E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OSl75ppLuuWbj0n+W0uvXnxIickdLv1sdRCnqQwHkfs=; b=JxugFnZXKM58pPdPTIkrdBx8JS
-	chOzTmWvyRdmaSlDluQ32isSuzFayLhygptYHMBv23AM0VxCfxg/RW2gHRM4wsxbWJfCtYhZ/9ssL
-	eHqMN+chjMAarmLAg951WIlgpWOk6hdsI1JfsniZpqu1+bD/g3CfwK6yFqDAnIUreVRZNtHKplCF4
-	QBgqWOCxyPDjrsXbqyahS1Van7nYqYoFsDVHWS4mwmChCvcCumpWJJe9bLLRbRDJ080Xd8N+ByVvv
-	Lsq+ywibRCd5NW79/IEWyt0D/6gcJtBlQVA7eI3TOkebZ6yfv4qhIoqvRD1Lld/JoKfnEGHh/QHEX
-	ruotGFhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cAX06iARhodq/H5qkv+vX3w8U3UpnDc9TFDckVmD/U4=; b=SEeleYHIZbYC0HF8zHq2Q+B94
+	qx+ZoTqToEx0mo9QtlWub1cZCm3XKl4DKFnbgDLYat99WAUuyrIfZWMXrCEr/MK8h2018hT6SqpD0
+	MsrRSaC0SW2n09WXNtH79ygk/JmjRq3o7UohM7fNiNUJ20EeZz3S2L74nq8DButJnYrZXsVUZeep1
+	mdFRgjCCw6GjPfbN3aCVY4ySdyjBtRYc59At3P8v7r4Qjap5O+hwX6BkfCtNPuf3YKuQ1kYKQJ2Mk
+	9Txk7cy44hOCAxbHLid5tx+DC8XKZgFQrLIn0y96f4To1yX/xewFohvisBT+skThRUhApmC7mWmM8
+	DmRQxUSXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSgay-0005gO-Pf; Sun, 26 Apr 2020 12:41:16 +0000
-Received: from out30-132.freemail.mail.aliyun.com ([115.124.30.132])
+	id 1jSgkW-0005W6-Fh; Sun, 26 Apr 2020 12:51:08 +0000
+Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSgZ8-00022W-Kk
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:39:25 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R121e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e01422;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=37; SR=0;
- TI=SMTPD_---0TwgoYW7_1587904752; 
-Received: from localhost(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0TwgoYW7_1587904752) by smtp.aliyun-inc.com(127.0.0.1);
- Sun, 26 Apr 2020 20:39:12 +0800
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-To: pbonzini@redhat.com, tsbogend@alpha.franken.de, paulus@ozlabs.org,
- mpe@ellerman.id.au, benh@kernel.crashing.org, borntraeger@de.ibm.com,
- frankja@linux.ibm.com, david@redhat.com, cohuck@redhat.com,
- heiko.carstens@de.ibm.com, gor@linux.ibm.com,
- sean.j.christopherson@intel.com, vkuznets@redhat.com,
- wanpengli@tencent.com, jmattson@google.com, joro@8bytes.org,
- tglx@linutronix.de, mingo@redhat.com, bp@alien8.de, x86@kernel.org,
- hpa@zytor.com, maz@kernel.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com
-Subject: [PATCH v3 7/7] KVM: MIPS: clean up redundant kvm_run parameters in
- assembly
-Date: Sun, 26 Apr 2020 20:39:05 +0800
-Message-Id: <20200426123905.8336-8-tianjia.zhang@linux.alibaba.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200426123905.8336-1-tianjia.zhang@linux.alibaba.com>
-References: <20200426123905.8336-1-tianjia.zhang@linux.alibaba.com>
+ id 1jSgkM-0005UG-QC
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:51:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
+ s=mail; t=1587905451; h=from:from:sender:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=RSLBf9Fagf4q+HhwxFOFootc8dZMFZo1PVNBvnmStFM=;
+ b=EE3tEVxRcTYljO+UifVqubFUQrC6iAs/RgFg4h5hzwmgAYOrQ//6ynWjCqU3jLthKM680I
+ w4zrgopXWxMruQHZLwU9wrdD4t2QmfxnpJ9QHuBFsFR9VT00zMgd+L6pZkn0GZNklEZs4M
+ RG+3Oi3W8AcC1Pwg4rvYx8qpse7EG9k=
+Date: Sun, 26 Apr 2020 14:50:37 +0200
+From: Paul Cercueil <paul@crapouillou.net>
+Subject: Re: [PATCH v7 06/12] ARM: DTS: omap4: add sgx gpu child node
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Message-Id: <DOBE9Q.00IRKFIW0JMG@crapouillou.net>
+In-Reply-To: <5f493a50fedef45c3cacd91cbf999092d9c05164.1587760454.git.hns@goldelico.com>
+References: <cover.1587760454.git.hns@goldelico.com>
+ <5f493a50fedef45c3cacd91cbf999092d9c05164.1587760454.git.hns@goldelico.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_053922_875454_1B031669 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20200426_055059_044171_B58C5129 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.132 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,151 +70,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, tianjia.zhang@linux.alibaba.com,
- kvm@vger.kernel.org, linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, letux-kernel@openphoenux.org,
+ Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
+ =?iso-8859-1?q?Beno=EEt?= Cousson <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
-structure. Earlier than historical reasons, many kvm-related function
-parameters retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time.
-This patch does a unified cleanup of these remaining redundant parameters.
+Hi Nikolaus,
 
-Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
----
- arch/mips/include/asm/kvm_host.h |  4 ++--
- arch/mips/kvm/entry.c            | 15 +++++----------
- arch/mips/kvm/mips.c             |  3 ++-
- arch/mips/kvm/trap_emul.c        |  2 +-
- arch/mips/kvm/vz.c               |  2 +-
- 5 files changed, 11 insertions(+), 15 deletions(-)
+Le ven. 24 avril 2020 =E0 22:34, H. Nikolaus Schaller =
 
-diff --git a/arch/mips/include/asm/kvm_host.h b/arch/mips/include/asm/kvm_host.h
-index 971439297cea..db915c55166d 100644
---- a/arch/mips/include/asm/kvm_host.h
-+++ b/arch/mips/include/asm/kvm_host.h
-@@ -310,7 +310,7 @@ struct kvm_mmu_memory_cache {
- #define KVM_MIPS_GUEST_TLB_SIZE	64
- struct kvm_vcpu_arch {
- 	void *guest_ebase;
--	int (*vcpu_run)(struct kvm_run *run, struct kvm_vcpu *vcpu);
-+	int (*vcpu_run)(struct kvm_vcpu *vcpu);
- 
- 	/* Host registers preserved across guest mode execution */
- 	unsigned long host_stack;
-@@ -821,7 +821,7 @@ int kvm_mips_emulation_init(struct kvm_mips_callbacks **install_callbacks);
- /* Debug: dump vcpu state */
- int kvm_arch_vcpu_dump_regs(struct kvm_vcpu *vcpu);
- 
--extern int kvm_mips_handle_exit(struct kvm_run *run, struct kvm_vcpu *vcpu);
-+extern int kvm_mips_handle_exit(struct kvm_vcpu *vcpu);
- 
- /* Building of entry/exception code */
- int kvm_mips_entry_setup(void);
-diff --git a/arch/mips/kvm/entry.c b/arch/mips/kvm/entry.c
-index 16e1c93b484f..e3f29af3b6cd 100644
---- a/arch/mips/kvm/entry.c
-+++ b/arch/mips/kvm/entry.c
-@@ -204,7 +204,7 @@ static inline void build_set_exc_base(u32 **p, unsigned int reg)
-  * Assemble the start of the vcpu_run function to run a guest VCPU. The function
-  * conforms to the following prototype:
-  *
-- * int vcpu_run(struct kvm_run *run, struct kvm_vcpu *vcpu);
-+ * int vcpu_run(struct kvm_vcpu *vcpu);
-  *
-  * The exit from the guest and return to the caller is handled by the code
-  * generated by kvm_mips_build_ret_to_host().
-@@ -217,8 +217,7 @@ void *kvm_mips_build_vcpu_run(void *addr)
- 	unsigned int i;
- 
- 	/*
--	 * A0: run
--	 * A1: vcpu
-+	 * A0: vcpu
- 	 */
- 
- 	/* k0/k1 not being used in host kernel context */
-@@ -237,10 +236,10 @@ void *kvm_mips_build_vcpu_run(void *addr)
- 	kvm_mips_build_save_scratch(&p, V1, K1);
- 
- 	/* VCPU scratch register has pointer to vcpu */
--	UASM_i_MTC0(&p, A1, scratch_vcpu[0], scratch_vcpu[1]);
-+	UASM_i_MTC0(&p, A0, scratch_vcpu[0], scratch_vcpu[1]);
- 
- 	/* Offset into vcpu->arch */
--	UASM_i_ADDIU(&p, K1, A1, offsetof(struct kvm_vcpu, arch));
-+	UASM_i_ADDIU(&p, K1, A0, offsetof(struct kvm_vcpu, arch));
- 
- 	/*
- 	 * Save the host stack to VCPU, used for exception processing
-@@ -628,10 +627,7 @@ void *kvm_mips_build_exit(void *addr)
- 	/* Now that context has been saved, we can use other registers */
- 
- 	/* Restore vcpu */
--	UASM_i_MFC0(&p, S1, scratch_vcpu[0], scratch_vcpu[1]);
--
--	/* Restore run (vcpu->run) */
--	UASM_i_LW(&p, S0, offsetof(struct kvm_vcpu, run), S1);
-+	UASM_i_MFC0(&p, S0, scratch_vcpu[0], scratch_vcpu[1]);
- 
- 	/*
- 	 * Save Host level EPC, BadVaddr and Cause to VCPU, useful to process
-@@ -793,7 +789,6 @@ void *kvm_mips_build_exit(void *addr)
- 	 * with this in the kernel
- 	 */
- 	uasm_i_move(&p, A0, S0);
--	uasm_i_move(&p, A1, S1);
- 	UASM_i_LA(&p, T9, (unsigned long)kvm_mips_handle_exit);
- 	uasm_i_jalr(&p, RA, T9);
- 	 UASM_i_ADDIU(&p, SP, SP, -CALLFRAME_SIZ);
-diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
-index 9710477a9827..32850470c037 100644
---- a/arch/mips/kvm/mips.c
-+++ b/arch/mips/kvm/mips.c
-@@ -1186,8 +1186,9 @@ static void kvm_mips_set_c0_status(void)
- /*
-  * Return value is in the form (errcode<<2 | RESUME_FLAG_HOST | RESUME_FLAG_NV)
-  */
--int kvm_mips_handle_exit(struct kvm_run *run, struct kvm_vcpu *vcpu)
-+int kvm_mips_handle_exit(struct kvm_vcpu *vcpu)
- {
-+	struct kvm_run *run = vcpu->run;
- 	u32 cause = vcpu->arch.host_cp0_cause;
- 	u32 exccode = (cause >> CAUSEB_EXCCODE) & 0x1f;
- 	u32 __user *opc = (u32 __user *) vcpu->arch.pc;
-diff --git a/arch/mips/kvm/trap_emul.c b/arch/mips/kvm/trap_emul.c
-index d822f3aee3dc..04c864cc356a 100644
---- a/arch/mips/kvm/trap_emul.c
-+++ b/arch/mips/kvm/trap_emul.c
-@@ -1238,7 +1238,7 @@ static int kvm_trap_emul_vcpu_run(struct kvm_vcpu *vcpu)
- 	 */
- 	kvm_mips_suspend_mm(cpu);
- 
--	r = vcpu->arch.vcpu_run(vcpu->run, vcpu);
-+	r = vcpu->arch.vcpu_run(vcpu);
- 
- 	/* We may have migrated while handling guest exits */
- 	cpu = smp_processor_id();
-diff --git a/arch/mips/kvm/vz.c b/arch/mips/kvm/vz.c
-index 94f1d23828e3..c5878fa0636d 100644
---- a/arch/mips/kvm/vz.c
-+++ b/arch/mips/kvm/vz.c
-@@ -3152,7 +3152,7 @@ static int kvm_vz_vcpu_run(struct kvm_vcpu *vcpu)
- 	kvm_vz_vcpu_load_tlb(vcpu, cpu);
- 	kvm_vz_vcpu_load_wired(vcpu);
- 
--	r = vcpu->arch.vcpu_run(vcpu->run, vcpu);
-+	r = vcpu->arch.vcpu_run(vcpu);
- 
- 	kvm_vz_vcpu_save_wired(vcpu);
- 
--- 
-2.17.1
+<hns@goldelico.com> a =E9crit :
+> Add SGX GPU node with interrupt. Tested on PandaBoard ES.
+> =
+
+> Since omap4420/30/60 and omap4470 come with different SGX variants
+> we need to introduce a new omap4470.dtsi. If an omap4470 board
+> does not want to use SGX it is no problem to still include
+> omap4460.dtsi.
+> =
+
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> ---
+>  arch/arm/boot/dts/omap4.dtsi   | 11 ++++++-----
+>  arch/arm/boot/dts/omap4470.dts | 15 +++++++++++++++
+>  2 files changed, 21 insertions(+), 5 deletions(-)
+>  create mode 100644 arch/arm/boot/dts/omap4470.dts
+> =
+
+> diff --git a/arch/arm/boot/dts/omap4.dtsi =
+
+> b/arch/arm/boot/dts/omap4.dtsi
+> index 763bdea8c829..15ff3d7146af 100644
+> --- a/arch/arm/boot/dts/omap4.dtsi
+> +++ b/arch/arm/boot/dts/omap4.dtsi
+> @@ -389,7 +389,7 @@ abb_iva: regulator-abb-iva {
+>  			status =3D "disabled";
+>  		};
+> =
+
+> -		target-module@56000000 {
+> +		sgx_module: target-module@56000000 {
+>  			compatible =3D "ti,sysc-omap4", "ti,sysc";
+>  			reg =3D <0x5600fe00 0x4>,
+>  			      <0x5600fe10 0x4>;
+> @@ -408,10 +408,11 @@ target-module@56000000 {
+>  			#size-cells =3D <1>;
+>  			ranges =3D <0 0x56000000 0x2000000>;
+> =
+
+> -			/*
+> -			 * Closed source PowerVR driver, no child device
+> -			 * binding or driver in mainline
+> -			 */
+> +			gpu: gpu@0 {
+> +				compatible =3D "ti,omap4-sgx540-120", "img,sgx540-120", =
+
+> "img,sgx540";
+> +				reg =3D <0x0 0x2000000>;	/* 32MB */
+> +				interrupts =3D <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
+> +			};
+>  		};
+> =
+
+>  		/*
+> diff --git a/arch/arm/boot/dts/omap4470.dts =
+
+> b/arch/arm/boot/dts/omap4470.dts
+> new file mode 100644
+> index 000000000000..f29c581300bf
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/omap4470.dts
+> @@ -0,0 +1,15 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Device Tree Source for OMAP4470 SoC
+> + *
+> + * Copyright (C) 2012 Texas Instruments Incorporated - =
+
+> http://www.ti.com/
+> + *
+> + * This file is licensed under the terms of the GNU General Public =
+
+> License
+> + * version 2.  This program is licensed "as is" without any warranty =
+
+> of any
+> + * kind, whether express or implied.
+> + */
+> +#include "omap4460.dtsi"
+> +
+> +&sgx {
+
+Does this even compile?
+
+The node's handle is named sgx_module, not sgx.
+
+-Paul
+
+> +	compatible =3D "ti,omap4470-sgx544-112", "img,sgx544-112", =
+
+> "img,sgx544";
+> +};
+> --
+> 2.25.1
+> =
+
+
 
 
 _______________________________________________
