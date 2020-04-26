@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2BB01B902E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:51:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDE01B9036
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Apr 2020 14:54:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
 	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cAX06iARhodq/H5qkv+vX3w8U3UpnDc9TFDckVmD/U4=; b=SEeleYHIZbYC0HF8zHq2Q+B94
-	qx+ZoTqToEx0mo9QtlWub1cZCm3XKl4DKFnbgDLYat99WAUuyrIfZWMXrCEr/MK8h2018hT6SqpD0
-	MsrRSaC0SW2n09WXNtH79ygk/JmjRq3o7UohM7fNiNUJ20EeZz3S2L74nq8DButJnYrZXsVUZeep1
-	mdFRgjCCw6GjPfbN3aCVY4ySdyjBtRYc59At3P8v7r4Qjap5O+hwX6BkfCtNPuf3YKuQ1kYKQJ2Mk
-	9Txk7cy44hOCAxbHLid5tx+DC8XKZgFQrLIn0y96f4To1yX/xewFohvisBT+skThRUhApmC7mWmM8
-	DmRQxUSXA==;
+	 bh=a/C+WaZEOc/jKzTGiPZ3w5yyfdOzSl3Cq7dK4Mi2hx0=; b=rZsQdeIjaucG9oF4f9SBUffuC
+	sLGiE7LJ57TzFvB4ua4L6piBTclAxWNcFxJ6nG2Dx3FVGyFbktv0hGN6sW6RezlYOpGIBq5wPeKib
+	aKWOLEH8/g7NagakAPZe7F8K8ql6j7r9ZgdoFn2XQCRLGcVom1etTjmwWfxfLfpELjmKS4eeU0TJB
+	ysx8ArZQb80CyAREeaP1QwIcl7UZwu4r699fiS2GCjlk9jtLb3Pjjry6+4SmJ1cIi4WMHxyduTyYn
+	9w4tMWFAwhiBtrwfZkXttEdD3ckA50yjm0wjg9lOygKAC0+MrkBrTBX4YZzzQ96tojsC81NdwDeMF
+	A2L51xYvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSgkW-0005W6-Fh; Sun, 26 Apr 2020 12:51:08 +0000
+	id 1jSgne-0006Bx-Im; Sun, 26 Apr 2020 12:54:22 +0000
 Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSgkM-0005UG-QC
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:51:00 +0000
+ id 1jSgnV-0006B7-11
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Apr 2020 12:54:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
- s=mail; t=1587905451; h=from:from:sender:reply-to:subject:subject:date:date:
+ s=mail; t=1587905650; h=from:from:sender:reply-to:subject:subject:date:date:
  message-id:message-id:to:to:cc:cc:mime-version:mime-version:
  content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=RSLBf9Fagf4q+HhwxFOFootc8dZMFZo1PVNBvnmStFM=;
- b=EE3tEVxRcTYljO+UifVqubFUQrC6iAs/RgFg4h5hzwmgAYOrQ//6ynWjCqU3jLthKM680I
- w4zrgopXWxMruQHZLwU9wrdD4t2QmfxnpJ9QHuBFsFR9VT00zMgd+L6pZkn0GZNklEZs4M
- RG+3Oi3W8AcC1Pwg4rvYx8qpse7EG9k=
-Date: Sun, 26 Apr 2020 14:50:37 +0200
+ bh=QGs1VbCXpq3w2bD385Ag0nyW5WilZcot3VZIcHvBKBA=;
+ b=WgSWzgZ1oOoj+AbGcqvEGtTfzTVBQzFedGQ2dDOe/N42jNpWaMGtbZ3E/vaikqD/2rDXMX
+ hI+YRAoyaapaSEK8YkTDlcs5PrVwEmccrvT5wN9dnpAtejFz81BMJMROx42MAEjI5115H4
+ Ljp1howOILhfEB60hF1DGes1umRV6U4=
+Date: Sun, 26 Apr 2020 14:53:55 +0200
 From: Paul Cercueil <paul@crapouillou.net>
-Subject: Re: [PATCH v7 06/12] ARM: DTS: omap4: add sgx gpu child node
+Subject: Re: [PATCH v7 09/12] ARM: dts: sun6i: a31: add sgx gpu child node
 To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Message-Id: <DOBE9Q.00IRKFIW0JMG@crapouillou.net>
-In-Reply-To: <5f493a50fedef45c3cacd91cbf999092d9c05164.1587760454.git.hns@goldelico.com>
+Message-Id: <VTBE9Q.B8A32JWI2Q9V3@crapouillou.net>
+In-Reply-To: <47740d708e00632735a8c1957109ca349029c716.1587760454.git.hns@goldelico.com>
 References: <cover.1587760454.git.hns@goldelico.com>
- <5f493a50fedef45c3cacd91cbf999092d9c05164.1587760454.git.hns@goldelico.com>
+ <47740d708e00632735a8c1957109ca349029c716.1587760454.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_055059_044171_B58C5129 
-X-CRM114-Status: GOOD (  16.78  )
+X-CRM114-CacheID: sfid-20200426_055413_274742_B761CE11 
+X-CRM114-Status: GOOD (  16.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,102 +89,69 @@ Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nikolaus,
+
 
 Le ven. 24 avril 2020 =E0 22:34, H. Nikolaus Schaller =
 
 <hns@goldelico.com> a =E9crit :
-> Add SGX GPU node with interrupt. Tested on PandaBoard ES.
+> From: Philipp Rossak <embed3d@gmail.com>
 > =
 
-> Since omap4420/30/60 and omap4470 come with different SGX variants
-> we need to introduce a new omap4470.dtsi. If an omap4470 board
-> does not want to use SGX it is no problem to still include
-> omap4460.dtsi.
+> We are adding the devicetree binding for the PVR-SGX-544-115 gpu.
 > =
 
+> This driver is currently under development in the openpvrsgx-devgroup.
+> Right now the full binding is not figured out, so we provide here a
+> placeholder. It will be completed as soon as there is a demo =
+
+> available.
+> =
+
+> The currently used binding that is used during development is more
+> complete and was already verifyed by loading the kernelmodule =
+
+> successful.
+> =
+
+> Signed-off-by: Philipp Rossak <embed3d@gmail.com>
 > Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 > ---
->  arch/arm/boot/dts/omap4.dtsi   | 11 ++++++-----
->  arch/arm/boot/dts/omap4470.dts | 15 +++++++++++++++
->  2 files changed, 21 insertions(+), 5 deletions(-)
->  create mode 100644 arch/arm/boot/dts/omap4470.dts
+>  arch/arm/boot/dts/sun6i-a31.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 > =
 
-> diff --git a/arch/arm/boot/dts/omap4.dtsi =
+> diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi =
 
-> b/arch/arm/boot/dts/omap4.dtsi
-> index 763bdea8c829..15ff3d7146af 100644
-> --- a/arch/arm/boot/dts/omap4.dtsi
-> +++ b/arch/arm/boot/dts/omap4.dtsi
-> @@ -389,7 +389,7 @@ abb_iva: regulator-abb-iva {
->  			status =3D "disabled";
+> b/arch/arm/boot/dts/sun6i-a31.dtsi
+> index f3425a66fc0a..933a825bf460 100644
+> --- a/arch/arm/boot/dts/sun6i-a31.dtsi
+> +++ b/arch/arm/boot/dts/sun6i-a31.dtsi
+> @@ -1417,5 +1417,16 @@ p2wi: i2c@1f03400 {
+>  			#address-cells =3D <1>;
+>  			#size-cells =3D <0>;
 >  		};
-> =
-
-> -		target-module@56000000 {
-> +		sgx_module: target-module@56000000 {
->  			compatible =3D "ti,sysc-omap4", "ti,sysc";
->  			reg =3D <0x5600fe00 0x4>,
->  			      <0x5600fe10 0x4>;
-> @@ -408,10 +408,11 @@ target-module@56000000 {
->  			#size-cells =3D <1>;
->  			ranges =3D <0 0x56000000 0x2000000>;
-> =
-
-> -			/*
-> -			 * Closed source PowerVR driver, no child device
-> -			 * binding or driver in mainline
-> -			 */
-> +			gpu: gpu@0 {
-> +				compatible =3D "ti,omap4-sgx540-120", "img,sgx540-120", =
-
-> "img,sgx540";
-> +				reg =3D <0x0 0x2000000>;	/* 32MB */
-> +				interrupts =3D <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-> +			};
->  		};
-> =
-
->  		/*
-> diff --git a/arch/arm/boot/dts/omap4470.dts =
-
-> b/arch/arm/boot/dts/omap4470.dts
-> new file mode 100644
-> index 000000000000..f29c581300bf
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/omap4470.dts
-> @@ -0,0 +1,15 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Device Tree Source for OMAP4470 SoC
-> + *
-> + * Copyright (C) 2012 Texas Instruments Incorporated - =
-
-> http://www.ti.com/
-> + *
-> + * This file is licensed under the terms of the GNU General Public =
-
-> License
-> + * version 2.  This program is licensed "as is" without any warranty =
-
-> of any
-> + * kind, whether express or implied.
-> + */
-> +#include "omap4460.dtsi"
 > +
-> +&sgx {
+> +		gpu: gpu@1c400000 {
+> +			compatible =3D "allwinner,sun8i-a31-sgx544-115",
+> +				     "img,sgx544-115", "img,sgx544";
+> +			reg =3D <0x01c40000 0x10000>;
+> +			/*
+> +			 * This node is currently a placeholder for the gpu.
+> +			 * This will be completed when a full demonstration
+> +			 * of the openpvrsgx driver is available for this board.
+> +			 */
 
-Does this even compile?
+This node doesn't have clocks, so I don't see how it'd work.
 
-The node's handle is named sgx_module, not sgx.
+Better delay the introduction of the GPU node for this board until you =
+
+know it works.
 
 -Paul
 
-> +	compatible =3D "ti,omap4470-sgx544-112", "img,sgx544-112", =
-
-> "img,sgx544";
-> +};
+> +		};
+>  	};
+>  };
 > --
 > 2.25.1
 > =
