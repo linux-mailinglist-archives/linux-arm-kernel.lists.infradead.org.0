@@ -2,78 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 097AB1B98EE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D36131B98FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HPspL+MJn01DeuAAKY3dzM7qo8dUuKMpIwTyy11ax14=; b=FCWKZKHvi7s3PP
-	+JyIc8coMrtBSMyFgKG7ZAz58k80tn/JsLtGIFytCqpOShVNiWQtM8I1x9SJ0TQcqoye/7hdxV4fS
-	yazT3VTYp7zvIJ6W8Y1mTmBK7PhUPdvJi4XZQb1VnhlKrlWZ2ALrTMOprGyzhzIgu8tbkhl0Lo3f0
-	VZWAaOXQTka7LWK78A35fU+zw2WuPKYYucWbFMbnS/IiSDo4V4sEZAF40VBx8zypHTfGqhmNh6e2f
-	ODMC2r6QFgmQtuhKsMbvifj2Jg3/iSAZvD435yXhC77zMWj+tXsJH/7jSFon8tiS8QaK1Ql91nPNc
-	JiXJ9xd7+/aQDVdjxO/Q==;
+	List-Owner; bh=frHkJN4RHlZ0Hay1rO/+9xvtxQA3n3YbuIdd+n0+lCA=; b=VriHjqlPi9N+T4
+	/sBBeiITxUX5r79lN8AUJL+9VOb6kQeI0lVycZo/1VbPjZu9fDMFRRavyi8xhYozgW+48jw9C/ETM
+	gdFZtnESyZr4V5uQw06Lex0Lnvpvh4g8uqvx6GZ59wevHtMWXJwzae2F9eJN4bhaoXmC90qtyONtl
+	PuA++NOKLRt/A2Khmggso4grH2QVmlRGx+mvk62rFYCwBZfi5Yyai4eucUVrG35fqjOWspiycXlHl
+	fEWm5SuwRmVP2Jm592S67dtbls9jMlym4ysaUJ8vY+OoaknoVWJySt6u9gqHtczdriOKyiLKogglI
+	FBEWJ4X35pj4ulLU9h3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSyRB-0000Ob-6h; Mon, 27 Apr 2020 07:44:21 +0000
-Received: from mail-oo1-f66.google.com ([209.85.161.66])
+	id 1jSyWP-0004CH-Hw; Mon, 27 Apr 2020 07:49:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyR3-0000Nr-Qi
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 07:44:14 +0000
-Received: by mail-oo1-f66.google.com with SMTP id c83so3656212oob.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 00:44:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aUJDPtd94Plupi9zkES8lfiieamV2XcJxXuQDIx8qu4=;
- b=PdrCjkMrQNKTUQmJx0ak7Bu15HBTOLEQwjNBBBEa5KjdMriOdCTMEN+6IRpHRYI7KV
- 4G+lWS5kB6eEqGtUzJdgzQTtbAWJmzMr8SULq6pf7sSBoE41kLtqzi7ExA05yqW+qCUp
- 5eN3gd1MTfeBsLszFwMK6LrU9S5ENVa1B/vuegGIlLEY8Mt788gc78vVTblWdp+2U2Zq
- cUInMO+gDaL2u/0CxfJKmct46Du/cglBoi+ZDB6n324MMqDzIF+rBJX9YBJotJi3Ijj1
- ClyB1hPvmJnRdiNLhGyKRc3JiqPTLo452I1qG+duL2n3QiC3Tu10nVj5piXG1BmUvX9W
- 5JDw==
-X-Gm-Message-State: AGi0Pua+0oVj3UulLKf0yubAz2+4yKQCGfEJPfcBrNWdqa1wyw6FOW4w
- 7NvUNv1bM0dW1pkRpbiQ8wMQdQHF2+Qa5NEdwOI=
-X-Google-Smtp-Source: APiQypIl/TpnOn5p7OBbPvXk/Rw8DS6/P2ZXewhbJXbTzpHODYNJFR3YLZ3Ic8lUBEcmpgBPbPkwhix00waahtWul7Q=
-X-Received: by 2002:a4a:d44a:: with SMTP id p10mr11597099oos.11.1587973452397; 
- Mon, 27 Apr 2020 00:44:12 -0700 (PDT)
+ id 1jSyW2-0003zq-Eh; Mon, 27 Apr 2020 07:49:36 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8EC0B20728;
+ Mon, 27 Apr 2020 07:49:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587973761;
+ bh=gUEF4e+I+5LtkJ+KR7VccemOQ0DrTjrOVZmMSY/BJKo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=tM0MCyqEbiKAHZFfSbvrulUKGmf63KAanMfop+yxY/F6lhWkM0zaQHm6rQTTcpbFO
+ HOLa2VqGqzrsyLsi9beTUDK/YUbfTbFXhIaq0lXicUQ2nltnRNrmYVf2nEyZ5hYtxm
+ L4qNVWY1RZq3IAt1JnQvY/wDdHSjRRAJ1cpgYvGY=
+Date: Mon, 27 Apr 2020 08:49:16 +0100
+From: Will Deacon <will@kernel.org>
+To: Zong Li <zong.li@sifive.com>
+Subject: Re: [PATCH 1/4] mm: add DEBUG_WX support
+Message-ID: <20200427074915.GA11787@willie-the-truck>
+References: <cover.1587455584.git.zong.li@sifive.com>
+ <23980cd0f0e5d79e24a92169116407c75bcc650d.1587455584.git.zong.li@sifive.com>
 MIME-Version: 1.0
-References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587678050-23468-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1587678050-23468-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 27 Apr 2020 09:44:00 +0200
-Message-ID: <CAMuHMdVkFBjgwL9M4GutgOaf0Avo1Vq1ZUUv9fWsia=Tb6qnmA@mail.gmail.com>
-Subject: Re: [PATCH 02/10] dt-bindings: power: rcar-sysc: Add r8a7742 power
- domain index macros
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Content-Disposition: inline
+In-Reply-To: <23980cd0f0e5d79e24a92169116407c75bcc650d.1587455584.git.zong.li@sifive.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_004413_865252_CFFAB9B0 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200427_004930_770812_2100EB41 
+X-CRM114-Status: GOOD (  17.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.66 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,43 +76,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>,
- Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Lad Prabhakar <prabhakar.csengg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: tglx@linutronix.de, catalin.marinas@arm.com, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, mingo@redhat.com,
+ palmer@dabbelt.com, paul.walmsley@sifive.com, bp@alien8.de,
+ akpm@linux-foundation.org, hpa@zytor.com, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
-<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
->
-> Add power domain indices for RZ/G1H (R8A7742) SoC.
->
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
+On Tue, Apr 21, 2020 at 04:17:12PM +0800, Zong Li wrote:
+> Some architectures support DEBUG_WX function, it's verbatim from each
+> others. Extract to mm/Kconfig.debug for shared use.
+> 
+> Signed-off-by: Zong Li <zong.li@sifive.com>
+> Suggested-by: Palmer Dabbelt <palmer@dabbelt.com>
+> ---
+>  mm/Kconfig.debug | 33 +++++++++++++++++++++++++++++++++
+>  1 file changed, 33 insertions(+)
+> 
+> diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
+> index 0271b22e063f..077458ad968d 100644
+> --- a/mm/Kconfig.debug
+> +++ b/mm/Kconfig.debug
+> @@ -118,6 +118,39 @@ config DEBUG_RODATA_TEST
+>      ---help---
+>        This option enables a testcase for the setting rodata read-only.
+>  
+> +config ARCH_HAS_DEBUG_WX
+> +	bool
+> +
+> +config DEBUG_WX
+> +	bool "Warn on W+X mappings at boot"
+> +	depends on ARCH_HAS_DEBUG_WX
+> +	select PTDUMP_CORE
+> +	help
+> +	  Generate a warning if any W+X mappings are found at boot.
+> +
+> +	  This is useful for discovering cases where the kernel is leaving
+> +	  W+X mappings after applying NX, as such mappings are a security risk.
+> +	  This check also includes UXN, which should be set on all kernel
+> +	  mappings.
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-i.e. will queue in renesas-devel for v5.8.
+"UXN" is the name of a bit in the arm64 page-table descriptors, so this
+should be reworded now that it's in generic help text.
 
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
