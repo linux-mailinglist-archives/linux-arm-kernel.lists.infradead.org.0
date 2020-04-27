@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADC541BA0B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:01:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70B951BA0B4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:01:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JmIBxalb53rDD8gHGRzKjUICtYFPQ+wh/BufibpVnhI=; b=UPZNRsD8oJsDy9
-	IGQ+kfsiYJix69/Atb16PxpRRFxky48BIoNGzzE4iWOVnKHIwkNa9fwqyUpKVwE/78MBa37vV12CH
-	xn2r9hrrXZDnCKCKKo9cO9Hp/YCA00KTnyvdiOKo6fksvLFcyV5LeH5Gq9mgT3+dU7SVvYlKjca5o
-	nYxV0f3rYdlZq63JxCmNuGwgmUxRTtfLVcdPYsS4b/qd5KZ8MzLTNS3BoUVoNIzURknikk5ZzW4S5
-	ZErg5ay+z2mpPhUMaTPbJmoiVzbp1HPMsR0HalH9JJpYiwCg4WzwCwUJr8qKedZ8hOP1qbxnjtYoy
-	sGRMgzOzFhSrwR5IWueQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V2Aal8Mj2rl0O5rc4Y0x19kMQchCyhimt4W2I/yPW78=; b=EvFinCFYN4XnfL
+	dN9seiWOIgKbpG6FaAdBKlxxnXe/AXba8fObu6Ck25xe5QKnV0rf+T+GzFsh/LAwfuQmfUA9IpiKx
+	Yb8Uti8msOwZGzcsXSpfj3vrm6cD9UsCS8pjWnPYRZMUtJC+9umIrZCAXvLpVFhN5eQotrpjz4CZ5
+	dUyT4T3K8/saE5hkhoKTw2el3QenTmljIohmNuWmS/3pFDWvuC+H3yeSUxbOurDuvKp+pWXr5dfps
+	EcVbGl/Z8fZogqc8pxQ66mdHpedB04Rw8/tP5gU/g0XTmrJfVFSrfxizUMCNC05gm7sRslxAonpYe
+	xTHXKcyriOjb1h6SJ4TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT0Za-0006hH-Ce; Mon, 27 Apr 2020 10:01:10 +0000
+	id 1jT0Zl-0006sb-CR; Mon, 27 Apr 2020 10:01:21 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT0ZP-0006WM-9i
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:01:01 +0000
+ id 1jT0ZR-0006WL-P0
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:01:03 +0000
 Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03R9w61t018343; Mon, 27 Apr 2020 12:00:46 +0200
+ 03R9w63X018349; Mon, 27 Apr 2020 12:00:46 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=vRrhq9Wy/QYvVJWvXZIasd5JyX/yiLS74yAccMkmaf0=;
- b=UQg6by3AJhirVkC+Z222kbrTa95g0DgcJkkMATJNElRc+Hmh+cRaqq8AMKrpnOxkBC++
- sS1eEmku4dxKXc3AnSXR6iViTqOX23WNtTKfWmJ4NM1BA7n4FIrFE1RD/tmtWdgTeNgz
- m7izw5ADzdpvxyX0R+F2xuS7XWACBF8F6gXhKOkVs+uzhh+jYb87DGG83IkY3CTkjIFX
- DdZQwr0yV31Z9UcQyjafufqRWpK2g6IX0oh8D11KWAyich5XoDJKTNSE5cTV0M7nSfFx
- E538B1GN5v98+BmBMo4wrZo9Q0o6ZYMunxh28hm+Fzcnm3L+EsIWGp6CMZTWdVdTiiA4 9Q== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=xiNFv3vCloDJQgtpDQnZVA1ODOKSxtXbybkyp3RxrNc=;
+ b=CZwsBzMogIcRHcwZmAW3sLm6Yp+IgGVm0sbqn6MJaTnTPLdzTpdo/btyNHa/85PL9YTa
+ LHerlKJdV2GvaQfJ//UnuxlAWkgL0FLCyjlkBVEdq+ow+lMy4pzORtMo+vgnTtFWCF8U
+ 04XtYMtjhyLvlms2PBkdB9GDDk3NVXizLZbix6yAraN0q+sDHoD/Yy+ZwjrZ5+poYCkA
+ GAoVMv6S/OBivyT/fYKdKDi5TLAx53hLZ9DGnNGB+9QJELVskyklF+amo9jPqSDir+e9
+ gVwoqITyRpbxrnz1XB9p3Yk01foiFwLhl9TtYhm832OrcnnssZ2B/SgNzmKjNVzrjoGC IQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhjwh4u5-1
+ by mx07-00178001.pphosted.com with ESMTP id 30mhjwh4u6-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Mon, 27 Apr 2020 12:00:46 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 55CC9100038;
- Mon, 27 Apr 2020 12:00:44 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 08F9E100039;
+ Mon, 27 Apr 2020 12:00:45 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 354902B8A30;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E85F92B8A33;
  Mon, 27 Apr 2020 12:00:44 +0200 (CEST)
-Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
+Received: from localhost (10.75.127.46) by SFHDAG5NODE3.st.com (10.75.127.15)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 27 Apr 2020 12:00:43 +0200
+ Mon, 27 Apr 2020 12:00:44 +0200
 From: Christophe Roullier <christophe.roullier@st.com>
 To: <robh@kernel.org>, <davem@davemloft.net>, <joabreu@synopsys.com>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <peppe.cavallaro@st.com>
-Subject: [PATCH v3 0/1] net: ethernet: stmmac: simplify phy modes management
+Subject: [PATCH v3 1/1] net: ethernet: stmmac: simplify phy modes management
  for stm32
-Date: Mon, 27 Apr 2020 12:00:37 +0200
-Message-ID: <20200427100038.19252-1-christophe.roullier@st.com>
+Date: Mon, 27 Apr 2020 12:00:38 +0200
+Message-ID: <20200427100038.19252-2-christophe.roullier@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200427100038.19252-1-christophe.roullier@st.com>
+References: <20200427100038.19252-1-christophe.roullier@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG5NODE3.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG5NODE3.st.com
  (10.75.127.15)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-27_05:2020-04-24,
  2020-04-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_030059_689761_407843E5 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200427_030102_100303_44C7EB28 
+X-CRM114-Status: GOOD (  19.24  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -108,17 +110,194 @@ No new feature, just to simplify stm32 part to be easier to use.
 Add by default all Ethernet clocks in DT, and activate or not in function
 of phy mode, clock frequency, if property "st,ext-phyclk" is set or not.
 Keep backward compatibility
+-----------------------------------------------------------------------
+|PHY_MODE | Normal | PHY wo crystal|   PHY wo crystal   |  No 125Mhz  |
+|         |        |      25MHz    |        50MHz       |  from PHY   |
+-----------------------------------------------------------------------
+|  MII    |	 -    |     eth-ck    |       n/a          |	    n/a  |
+|         |        | st,ext-phyclk |                    |             |
+-----------------------------------------------------------------------
+|  GMII   |	 -    |     eth-ck    |       n/a          |	    n/a  |
+|         |        | st,ext-phyclk |                    |             |
+-----------------------------------------------------------------------
+| RGMII   |	 -    |     eth-ck    |       n/a          |      eth-ck  |
+|         |        | st,ext-phyclk |                    |st,eth-clk-sel|
+|         |        |               |                    |       or     |
+|         |        |               |                    | st,ext-phyclk|
+------------------------------------------------------------------------
+| RMII    |	 -    |     eth-ck    |      eth-ck        |	     n/a  |
+|         |        | st,ext-phyclk | st,eth-ref-clk-sel |              |
+|         |        |               | or st,ext-phyclk   |              |
+------------------------------------------------------------------------
 
-version 3:
-Add acked from Alexandre Torgue
-Rebased on top of v5.7-rc2
+Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+Acked-by: Alexandre TORGUE <alexandre.torgue@st.com>
 
-Christophe Roullier (1):
-  net: ethernet: stmmac: simplify phy modes management for stm32
-
+Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+---
  .../net/ethernet/stmicro/stmmac/dwmac-stm32.c | 74 +++++++++++--------
  1 file changed, 44 insertions(+), 30 deletions(-)
 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-stm32.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-stm32.c
+index b2dc99289687..5d4df4c5254e 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-stm32.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-stm32.c
+@@ -29,6 +29,11 @@
+ #define SYSCFG_PMCR_ETH_CLK_SEL		BIT(16)
+ #define SYSCFG_PMCR_ETH_REF_CLK_SEL	BIT(17)
+ 
++/* CLOCK feed to PHY*/
++#define ETH_CK_F_25M	25000000
++#define ETH_CK_F_50M	50000000
++#define ETH_CK_F_125M	125000000
++
+ /*  Ethernet PHY interface selection in register SYSCFG Configuration
+  *------------------------------------------
+  * src	 |BIT(23)| BIT(22)| BIT(21)|BIT(20)|
+@@ -58,33 +63,20 @@
+  *|         |        |      25MHz    |        50MHz       |                  |
+  * ---------------------------------------------------------------------------
+  *|  MII    |	 -   |     eth-ck    |	      n/a	  |	  n/a        |
+- *|         |        |		     |                    |		     |
++ *|         |        | st,ext-phyclk |                    |		     |
+  * ---------------------------------------------------------------------------
+  *|  GMII   |	 -   |     eth-ck    |	      n/a	  |	  n/a        |
+- *|         |        |               |                    |		     |
++ *|         |        | st,ext-phyclk |                    |		     |
+  * ---------------------------------------------------------------------------
+- *| RGMII   |	 -   |     eth-ck    |	      n/a	  |  eth-ck (no pin) |
+- *|         |        |               |                    |  st,eth-clk-sel  |
++ *| RGMII   |	 -   |     eth-ck    |	      n/a	  |      eth-ck      |
++ *|         |        | st,ext-phyclk |                    | st,eth-clk-sel or|
++ *|         |        |               |                    | st,ext-phyclk    |
+  * ---------------------------------------------------------------------------
+  *| RMII    |	 -   |     eth-ck    |	    eth-ck        |	  n/a        |
+- *|         |        |		     | st,eth-ref-clk-sel |		     |
++ *|         |        | st,ext-phyclk | st,eth-ref-clk-sel |		     |
++ *|         |        |               | or st,ext-phyclk   |		     |
+  * ---------------------------------------------------------------------------
+  *
+- * BIT(17) : set this bit in RMII mode when you have PHY without crystal 50MHz
+- * BIT(16) : set this bit in GMII/RGMII PHY when you do not want use 125Mhz
+- * from PHY
+- *-----------------------------------------------------
+- * src	 |         BIT(17)       |       BIT(16)      |
+- *-----------------------------------------------------
+- * MII   |           n/a	 |         n/a        |
+- *-----------------------------------------------------
+- * GMII  |           n/a         |   st,eth-clk-sel   |
+- *-----------------------------------------------------
+- * RGMII |           n/a         |   st,eth-clk-sel   |
+- *-----------------------------------------------------
+- * RMII  |   st,eth-ref-clk-sel	 |         n/a        |
+- *-----------------------------------------------------
+- *
+  */
+ 
+ struct stm32_dwmac {
+@@ -93,6 +85,8 @@ struct stm32_dwmac {
+ 	struct clk *clk_eth_ck;
+ 	struct clk *clk_ethstp;
+ 	struct clk *syscfg_clk;
++	int ext_phyclk;
++	int enable_eth_ck;
+ 	int eth_clk_sel_reg;
+ 	int eth_ref_clk_sel_reg;
+ 	int irq_pwr_wakeup;
+@@ -155,14 +149,17 @@ static int stm32mp1_clk_prepare(struct stm32_dwmac *dwmac, bool prepare)
+ 		ret = clk_prepare_enable(dwmac->syscfg_clk);
+ 		if (ret)
+ 			return ret;
+-		ret = clk_prepare_enable(dwmac->clk_eth_ck);
+-		if (ret) {
+-			clk_disable_unprepare(dwmac->syscfg_clk);
+-			return ret;
++		if (dwmac->enable_eth_ck) {
++			ret = clk_prepare_enable(dwmac->clk_eth_ck);
++			if (ret) {
++				clk_disable_unprepare(dwmac->syscfg_clk);
++				return ret;
++			}
+ 		}
+ 	} else {
+ 		clk_disable_unprepare(dwmac->syscfg_clk);
+-		clk_disable_unprepare(dwmac->clk_eth_ck);
++		if (dwmac->enable_eth_ck)
++			clk_disable_unprepare(dwmac->clk_eth_ck);
+ 	}
+ 	return ret;
+ }
+@@ -170,24 +167,34 @@ static int stm32mp1_clk_prepare(struct stm32_dwmac *dwmac, bool prepare)
+ static int stm32mp1_set_mode(struct plat_stmmacenet_data *plat_dat)
+ {
+ 	struct stm32_dwmac *dwmac = plat_dat->bsp_priv;
+-	u32 reg = dwmac->mode_reg;
++	u32 reg = dwmac->mode_reg, clk_rate;
+ 	int val;
+ 
++	clk_rate = clk_get_rate(dwmac->clk_eth_ck);
++	dwmac->enable_eth_ck = false;
+ 	switch (plat_dat->interface) {
+ 	case PHY_INTERFACE_MODE_MII:
++		if (clk_rate == ETH_CK_F_25M && dwmac->ext_phyclk)
++			dwmac->enable_eth_ck = true;
+ 		val = SYSCFG_PMCR_ETH_SEL_MII;
+ 		pr_debug("SYSCFG init : PHY_INTERFACE_MODE_MII\n");
+ 		break;
+ 	case PHY_INTERFACE_MODE_GMII:
+ 		val = SYSCFG_PMCR_ETH_SEL_GMII;
+-		if (dwmac->eth_clk_sel_reg)
++		if (clk_rate == ETH_CK_F_25M &&
++		    (dwmac->eth_clk_sel_reg || dwmac->ext_phyclk)) {
++			dwmac->enable_eth_ck = true;
+ 			val |= SYSCFG_PMCR_ETH_CLK_SEL;
++		}
+ 		pr_debug("SYSCFG init : PHY_INTERFACE_MODE_GMII\n");
+ 		break;
+ 	case PHY_INTERFACE_MODE_RMII:
+ 		val = SYSCFG_PMCR_ETH_SEL_RMII;
+-		if (dwmac->eth_ref_clk_sel_reg)
++		if ((clk_rate == ETH_CK_F_25M || clk_rate == ETH_CK_F_50M) &&
++		    (dwmac->eth_ref_clk_sel_reg || dwmac->ext_phyclk)) {
++			dwmac->enable_eth_ck = true;
+ 			val |= SYSCFG_PMCR_ETH_REF_CLK_SEL;
++		}
+ 		pr_debug("SYSCFG init : PHY_INTERFACE_MODE_RMII\n");
+ 		break;
+ 	case PHY_INTERFACE_MODE_RGMII:
+@@ -195,8 +202,11 @@ static int stm32mp1_set_mode(struct plat_stmmacenet_data *plat_dat)
+ 	case PHY_INTERFACE_MODE_RGMII_RXID:
+ 	case PHY_INTERFACE_MODE_RGMII_TXID:
+ 		val = SYSCFG_PMCR_ETH_SEL_RGMII;
+-		if (dwmac->eth_clk_sel_reg)
++		if ((clk_rate == ETH_CK_F_25M || clk_rate == ETH_CK_F_125M) &&
++		    (dwmac->eth_clk_sel_reg || dwmac->ext_phyclk)) {
++			dwmac->enable_eth_ck = true;
+ 			val |= SYSCFG_PMCR_ETH_CLK_SEL;
++		}
+ 		pr_debug("SYSCFG init : PHY_INTERFACE_MODE_RGMII\n");
+ 		break;
+ 	default:
+@@ -294,6 +304,9 @@ static int stm32mp1_parse_data(struct stm32_dwmac *dwmac,
+ 	struct device_node *np = dev->of_node;
+ 	int err = 0;
+ 
++	/* Ethernet PHY have no crystal */
++	dwmac->ext_phyclk = of_property_read_bool(np, "st,ext-phyclk");
++
+ 	/* Gigabit Ethernet 125MHz clock selection. */
+ 	dwmac->eth_clk_sel_reg = of_property_read_bool(np, "st,eth-clk-sel");
+ 
+@@ -431,7 +444,8 @@ static int stm32mp1_suspend(struct stm32_dwmac *dwmac)
+ 
+ 	clk_disable_unprepare(dwmac->clk_tx);
+ 	clk_disable_unprepare(dwmac->syscfg_clk);
+-	clk_disable_unprepare(dwmac->clk_eth_ck);
++	if (dwmac->enable_eth_ck)
++		clk_disable_unprepare(dwmac->clk_eth_ck);
+ 
+ 	return ret;
+ }
 -- 
 2.17.1
 
