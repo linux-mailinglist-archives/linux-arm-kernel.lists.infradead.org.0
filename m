@@ -2,92 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DAEC1BA220
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:15:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 666901BA232
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:19:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hrFSc9ETkSCQTAcRDclvR52T44HDnoWoLm65gnKUAno=; b=pTPEyfRkQ6a2pxztxRYly22rR
-	nkZvFwN0EUI9BS5onoIJ+Ed+2xUghU2+/yA/o791AhRDXWZVzikIXi+SN2Xa7xyw/ay6mEHs+uSVb
-	pa1P3S+TNcQIblh0DGCPZ1EVKiCKwB5t3LoWE50QR1pjtEx7jkwZo6gb0ce5Mnud28Lrw0rvIpCaF
-	j7XK84JzLIiGqpLcSh3FBnmKgrmvt20FVsQmtT4O6yL6q4WS7cROOB7cXDtYDmAxOwFgqP6032+JF
-	Ho+Jz8GUc70ukIheicKduscrh3M0/TQ0RCFp5zGceGaEVqnZOxPR7V5eKhrwDGUWZ3V3qM8wzXE8J
-	rhGQo2XAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zplcVFFYEPIbDam1L4+nJZkH/RTw4cs8r375sQXzd2g=; b=XCFPOyybnAOw/D
+	3LWjXZ5Zu64KsJ158vLpPfree/Dv+7CL2xLfhS4Pe8bnwhbO7f34KLEUjv216zZi3ups0GvxsQqdh
+	tVeNOsfG1MGFul8yyj4qGDPOkjaZCHt3flfAuwDdwFkX5nqx7VFFkq6stVzQmQ0czeJdMv5hl6eld
+	QhOesl9zqP7PpIrMRXfBsfUbeeszGije64fIr6TGWOmcuRJVn9wHMxm6pSPKefepq0qks4YnhEbu+
+	noK8mCvGx2ELL8/Y+lvjk48tvOBxO0KTmWcDjkEl9uUy0kFNacML2VmRoX6CmZfJI/21b6ZUmMJPb
+	zxRoegdRA1NjFcp+hJ2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT1ji-0003Z1-Of; Mon, 27 Apr 2020 11:15:42 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jT1my-0004Vg-Tl; Mon, 27 Apr 2020 11:19:04 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT1jV-0003XW-Ds
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:15:31 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RBFSN3063594;
- Mon, 27 Apr 2020 06:15:28 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587986128;
- bh=gWEr5tUocVL65YN3YdxkcoYlxJ4xnh76tpLqZoEi+T4=;
- h=Subject:To:References:From:Date:In-Reply-To;
- b=BXLQ8oWgszzhS0GV9UfDuuVUIYnrSddUEq0vE+9Rs9AACJ3poew6mm6tlOp/V0bfI
- 4/WQE22r6YIZwkiu1I0urYnMsabV716UlqXvWUcP/5/UvvyjtcNvFwMdcc84Tciw+b
- yCHmotWXuGxhCX8NBjOsiZ1UVnUes0ZtGV3qKBQg=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RBFS42121540
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 27 Apr 2020 06:15:28 -0500
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 27
- Apr 2020 06:15:27 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 27 Apr 2020 06:15:27 -0500
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RBFPaI063776;
- Mon, 27 Apr 2020 06:15:26 -0500
-Subject: Re: [PATCH 2/3] arm64: dts: ti: k3-j721e-main.dtsi: Add DSS node
-To: Jyri Sarha <jsarha@ti.com>, Tero Kristo <t-kristo@ti.com>, Nishanth Menon
- <nm@ti.com>, Rob Herring <robh+dt@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200422091512.950-1-tomi.valkeinen@ti.com>
- <20200422091512.950-2-tomi.valkeinen@ti.com>
- <ade3a177-f060-bc40-bcc1-494093e3071d@ti.com>
- <47b7f858-a8d9-1c3b-4dca-2cc493f6730f@ti.com>
- <fa497e8d-7911-5f3d-cf91-347370f8edaa@ti.com>
- <217c0c14-f4fb-7321-9f57-205df0cd01fe@ti.com>
-From: Tomi Valkeinen <tomi.valkeinen@ti.com>
-Message-ID: <9a4b1d0a-c871-2280-8d22-196730e9385b@ti.com>
-Date: Mon, 27 Apr 2020 14:15:25 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jT1mq-0004VA-47
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:18:57 +0000
+Received: by mail-ot1-f66.google.com with SMTP id b13so25487784oti.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 04:18:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CXoIxJ0w84+gaX7lsp/3b8bY8viRFcnPlJWfzHbiZf8=;
+ b=p5UhFXsjNQjmMC49CxUuP+2z9+SN6/tM1zLML07lswrXZZ9gCrCdKjpwYAsNCDBpCb
+ qt+/RXxOlgTocTSiw5RivzY8MHKK3XO6qTxbZmoof8SP9l4wLGc9BYqfw291QN9+W48R
+ /KqUOQmq/f8KWBBJcKZe+ssEyALuQI1O9pZcOcfxByfc9klD/f2PTG/X2nGteHu34uez
+ eGqz6EJbS9Qqm3V50XnQgWdFJsJSRl6QnPDdECO+TBqgCpsob4Qhrqn1Vu7ohuXg00xi
+ kt+SBgLHxca4ib2qWo2reSkc92Wb/l0mlVDuq/kQCV+8Y6V+xh2oPvFXlauItC/DUhN2
+ fquw==
+X-Gm-Message-State: AGi0Pua8N7iWCGd+ml/dCUahOhXjB0XWgUYZ0tEvrsw/XcODx/kH+48A
+ /RIVXx7dFGhgseJ7IWCxT+dvrkvwp+jsz7Si1kw=
+X-Google-Smtp-Source: APiQypL5O90eZiVP91Spazxw9kNLM/oUk/UxGHPayskHGw0X4cu3MGkQ9jx0LWUyAkboJxHXtR2bszWrIXRFKtjKifw=
+X-Received: by 2002:a9d:564:: with SMTP id 91mr17871599otw.250.1587986335286; 
+ Mon, 27 Apr 2020 04:18:55 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <217c0c14-f4fb-7321-9f57-205df0cd01fe@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdXwsUAaeY+b6t-nqPE8kL-p+F4HqXE2mujP0eXPjrbooQ@mail.gmail.com>
+ <CA+V-a8sH4sLN1XuRM+SgbbN5O38wrtMyk5QEXEPhV5tOkbchJw@mail.gmail.com>
+In-Reply-To: <CA+V-a8sH4sLN1XuRM+SgbbN5O38wrtMyk5QEXEPhV5tOkbchJw@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 27 Apr 2020 13:18:44 +0200
+Message-ID: <CAMuHMdXW1YQMUzzTGcyz2d=NxkcLtLasTqgZH0CRufQx=vfT0g@mail.gmail.com>
+Subject: Re: [PATCH 00/10] Add RZ/G1H support.
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_041529_832199_07BBAFAE 
-X-CRM114-Status: GOOD (  14.94  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200427_041856_164165_CA398518 
+X-CRM114-Status: GOOD (  22.63  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +84,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>,
+ Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjcvMDQvMjAyMCAxNDoxMCwgSnlyaSBTYXJoYSB3cm90ZToKPiBPbiAyNy8wNC8yMDIwIDEz
-OjUxLCBUb21pIFZhbGtlaW5lbiB3cm90ZToKPj4gT24gMjcvMDQvMjAyMCAxMzozNywgSnlyaSBT
-YXJoYSB3cm90ZToKPj4+IE9uIDI3LzA0LzIwMjAgMTM6MDksIFRlcm8gS3Jpc3RvIHdyb3RlOgo+
-Pj4+PiArwqDCoMKgwqDCoMKgwqAgc3RhdHVzID0gImRpc2FibGVkIjsKPj4+Pgo+Pj4+IEFnYWlu
-LCB3aHkgZGlzYWJsZWQgYnkgZGVmYXVsdD8KPj4+Pgo+Pj4KPj4+IHRpZHNzIGRldmljZSBpcyBu
-b3QgZnVuY3Rpb25hbCB3aXRob3V0IGEgZGVmaW5lZCB2aWRlby1wb3J0LiBUaGUgZHJpdmVyCj4+
-PiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gYSB3YXkgdGhhdCBpdCB3b3VsZCBoYW5kbGUgYSBicm9r
-ZW4gY29uZmlndXJhdGlvbgo+Pj4gZ3JhY2VmdWxseS4KPj4KPj4gVGhlbiB3ZSBuZWVkIHRvIGZp
-eCBpdC4gVGhlIGRyaXZlciBzaG91bGQgaGFuZGxlIHRoZSBjYXNlIHdoZXJlIHRoZXJlCj4+IGFy
-ZSBubyBwb3J0cyBkZWZpbmVkIGp1c3QgZmluZS4KPj4KPiAKPiBKdXN0IGJ5IHJlYWRpbmcgdGhl
-IGNvZGUsIEkgd291bGQgc2F5IHRoYXQgY3VycmVudGx5IHRoZSBwcm9iZSB3b3VsZAo+IGZhaWwg
-d2l0aCByZXR1cm5lZCAtRU5PTUVNIGFmdGVyIGNhbGxpbmcgZHJtX3ZibGFua19pbml0KCkgd2l0
-aCB6ZXJvIENSVENzLgo+IAo+IFNvIHNob3VsZCB0aGUgcHJvYmUgZmFpbCBncmFjZWZ1bGx5IGFu
-ZCBzaWxlbnRseSwgb3Igc2hvdWxkIHdlIHRyeSB0bwo+IHJlZ2lzdGVyIGEgRFJNIGRldmljZSB3
-aXRoIG5vIENSVENzPyBJcyB0aGF0IGV2ZW4gcG9zc2libGU/CgpNeSBmaXJzdCB0aG91Z2h0IGlz
-IHRoYXQgdGhlIGRyaXZlciBzaG91bGQgZXhpdCBwcm9iZSBzaWxlbnRseSB3aXRoIEVOT0RFViBp
-ZiB0aGVyZSBhcmUgbm8gb3V0cHV0cyAKZGVmaW5lZCAoYnV0LCBvZiBjb3Vyc2UsIHdpdGggRVBS
-T0JFX0RFRkVSIGlmIHRoZXJlIGFyZSBvdXRwdXRzIHdoaWNoIGhhdmVuJ3QgYmVlbiBwcm9iZWQg
-eWV0KS4KCkl0IGdldHMgYSBiaXQgbW9yZSBjb21wbGV4IGlmIHdlIGV2ZXIgc3VwcG9ydCB3cml0
-ZWJhY2ssIGFzIHRoYXQgY2FuIGJlIHVzZWQgYXMgbWVtLXRvLW1lbSB3aXRob3V0IAphbnkgZGlz
-cGxheXMsIGJ1dCBJIHRoaW5rIHdlIGNhbiBpZ25vcmUgdGhhdCBmb3Igbm93LgoKICBUb21pCgot
-LSAKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwgMDAxODAg
-SGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlra2EvRG9t
-aWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Prabhakar,
+
+On Mon, Apr 27, 2020 at 12:31 PM Lad, Prabhakar
+<prabhakar.csengg@gmail.com> wrote:
+> On Mon, Apr 27, 2020 at 10:28 AM Geert Uytterhoeven
+> <geert@linux-m68k.org> wrote:
+> > On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
+> > <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+> > > This patch series aims to add support for Renesas RZ/G1H (r8a7742) SoC.
+> > >
+> > > RZ/G1H SoC is similar to R-Car Gen2 H2 SoC.
+> > >
+> > > This patch set is based on renesas-drivers/master-v5.7-rc1.
+> >
+> > Thanks for your series!
+> >
+> > Looks mostly OK to me.
+> Thank you for the review. After fixing patch 8/10 shall I just post a
+> v2 with a single patch or the entire series ?
+
+A single v2 patch is fine.  The clock driver goes in through a different
+tree anyway/
+
+> > The missing code part seems to be the introduction of the main
+> > CONFIG_ARCH_R8A7742 symbol?
+> >
+> I was planning to post them once these patches were reviewed, just
+> didn't wanted to flood with too many patches.
+>
+> for enabling r8a7742 SoC in multi_v7_defconfig should this be only
+> sent out wen its accepted in shmobile_defconfig or can it be part of
+> same series as below ?
+>
+> 05ba50a4cf99 ARM: multi_v7_defconfig: Enable r8a7742 SoC
+> 99b69d08729a ARM: shmobile: defconfig: Enable r8a7742 SoC
+> 6b7bcd6635c7 ARM: debug-ll: Add support for r8a7742
+> 1cf4e52e3a0e soc: renesas: Add Renesas R8A7742 config option
+
+It can be part of the same series.
+
+> > I assume you plan to submit the DTS for v5.8, too, so I'll have to be
+> > careful and apply the binding definitions to a separate shared branch?
+> >
+> Yes I do plan to submit the DTS changes for v5.8.
+
+Thanks. Looking forward to it!
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
