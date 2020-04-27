@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37C8A1BA9A3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:02:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2342D1BA9A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:02:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w+hItOUISeb+DovYDP2GjypUJ/zT+L2mCUgubmaeqV0=; b=JONBTIJJcGiDKm
-	Xdu60YoGDRr1JIUHY6WzmgaYIf1HkMq347FWyIQIceyFDlKqE/HcIZfoEMoD985jeMveyHuh1ugc6
-	vO5GDOyGGx7tvIdvm3K3+FRc40ODlOm8lMnPgaRGtkMkMuK7h3FdRoatAOrKRAlyB6WxO1CrgL6mg
-	t0GuWG3/VK03RlRQP3xiyEIvIcbmysFq1DEaxP7VWW9O4BFZpF6RRHgbpkFW5DqxLlEsaw59rnypB
-	QjQrknx+I9lr3g4pqxf9EHNRKOq5DbBrq2xxZr0eYiChxT74wXBfwPR0ZF7AwHrUzEf/djVqDvkWO
-	s1GMoiBkZILcrXQx5Jrg==;
+	List-Owner; bh=E4fSn5zUNC2x2vBk4nFWFjiSRS2d9daRdG27I44Pvu0=; b=MvP/lP4KlVb6VG
+	PqzbFLqD9SmSqAXG598dUq0Fm5uJXCw2stR60v+5jEWVttKTNo9av4FWhScbyxnQeS3/rkd41oc22
+	A1b42T7PQmcpNVdrAQS9jTsFxz/aVOd1PjKaCud/KQ8J+uiEvKEu67aK3f/AV1lduIqrUD2xkvlTJ
+	QM6oWHH7O3hj4iigo8cRUdzzS8FYf0gU24RGl4hPUoxINh9vMY8sSRuQVB8hhi+JNKmWX0wTbAi4K
+	8j4yb65nMYEXkIzOT6R+zV+ZzVE/yg3/5Ajpc6xwYr0aZ3DffXHwBF6dprvjkQ0dbgdqLlM//K3Wl
+	pcc22MYA5zWIGfAJKF2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT6Cr-0003Gm-PQ; Mon, 27 Apr 2020 16:02:05 +0000
-Received: from mail-qv1-xf49.google.com ([2607:f8b0:4864:20::f49])
+	id 1jT6D9-0003S6-Qo; Mon, 27 Apr 2020 16:02:23 +0000
+Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT6BT-0002Dh-OV
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:00:41 +0000
-Received: by mail-qv1-xf49.google.com with SMTP id m20so19205947qvy.13
+ id 1jT6BY-0002IT-JK
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:00:45 +0000
+Received: by mail-qk1-x74a.google.com with SMTP id d15so19991414qkg.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 09:00:38 -0700 (PDT)
+ Mon, 27 Apr 2020 09:00:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=jTb4YPIUPKL1E1OLE2ifNkQg2x2HSYmo0hj4Ci3DZ3A=;
- b=fqLi0SkyPjbXxPX/hPsXZeMNhq35aYqBNJAvT/Xx+BzPh7YlBx6i8WTACzT4FBHIRv
- yB3PamKTCHUBg04d9KVAhujS595QnxeeGH1EBSaBLJkOM7C2p6uhVroooOZkVWSFANBo
- EQq7r79O7lYvn3jVBEw+TI04/17VIVUaDIXO9ddhSuge+F4kykHowiB4XA1PixFt7f06
- knShlLB1Y6N5OLuGmCs4M7eKqc6BblFu2RW9cdCpUqsLmxzOIrCdokmS7rXLST3WR3EJ
- 4YBYToSahIZ4xPJWmk/lOEd0e03hxC16yaJ1xBfFhei9FtsLMetBOg+CemUkcnsn0gik
- hibA==
+ :cc; bh=vWKjMu4YpZkMxmoaABUBOKf1igZnxFZ9c3Ig1J3O4Og=;
+ b=kiSv8CiUDdv0MhnhG7OLvK4HRjHRHD2p5Xk8z4MNjfWWTLx6u3zwpYo+VXYo00s9lQ
+ 2SiB14ebJv+tpR/lJ6lBiS6NtwBJkpElgf6+/UxLuf4ODhwnkipaZqAOpGAlWYJpWfCS
+ z/5ymvrE+OkDEIiguUTShhBQhJ6y715cKJGNQcwyaJsde7L0h/IXtozn5mtgfyeHg/Ym
+ H43sTz24QuaAjK8JJGNtzpBldyBrDbq8uPivT4CI9K7/qC+hhiObIxt3J7MJfK5BmrKL
+ +bLkpaJXkzjZcdx/s4M6wTt3HBXcwxs7ZUVUd46Y+nf5P0oIYdPegXdb9NdLI9tk1xzd
+ GS1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=jTb4YPIUPKL1E1OLE2ifNkQg2x2HSYmo0hj4Ci3DZ3A=;
- b=lu8jAD4hw4tyoA0/1VVEEVRzPF60pF5u4anzFTGY/rUFeD3KEDL1cgoPkcmrVCJPyW
- J63rSn3/zVnMVXsZ2BB6VI2tj1aJ53rPy2UE9oA2oRzgKPNTP7ERQCikfDntt4R1HdWy
- lm4Y6ZnvDaIOQqnmbwo2Hso16PBmBykp3nFeodv1BLBrbfAaq9KEy0SacgHQKHh57mQz
- rdzsSFmH/K7lvidxxsWxtl34+k7ynq/HYhbGJN2RwHScQEry7Y9nnrTAn54q4AFuCavi
- hHELqUx+td9A0EWIEQmaWGMufcUZTvIxRdEkZTDzREenxlLEv4d+DbAQSLVNnsbO5KA+
- q+VQ==
-X-Gm-Message-State: AGi0PuY4ljuBO1Asu/yiva2p5/ZZKNzs2WdTqEJMk9d3Ua1HkS2AL+sR
- JfjvJI05b5gs4vAww1ruzV+tPwMHKESD8UtdkKw=
-X-Google-Smtp-Source: APiQypLDtauRhcKiTQyzgC2LQ3XamOTxT1OCw5Clsp9y71dsXWMyuVGmw4gnWIV3Yp64XvmFFiqiRAvcGkJl+hJ0vkc=
-X-Received: by 2002:a05:6214:1513:: with SMTP id
- e19mr22507959qvy.75.1588003237430; 
- Mon, 27 Apr 2020 09:00:37 -0700 (PDT)
-Date: Mon, 27 Apr 2020 09:00:10 -0700
+ bh=vWKjMu4YpZkMxmoaABUBOKf1igZnxFZ9c3Ig1J3O4Og=;
+ b=ZYGSokUpGGiagjl2YrUCDMNLKdzUi45iKYBfC+81crYukEJ90cLw1CBn51ehLZAgxy
+ rJaWXZkgJvPDby0sCVQn/4WeCOWxK9d6esa+6w5wKqFRMnfn+NVgv9PLtjnK8Ye+vGDO
+ lKmfh87LI6Ppi98dLAUrMn77OJ0HM4kP6+4VqBd4MCDmQI2UDQcyUck+N2smxW7Ocv+e
+ 1y8T9mo1duZ6TAQhevIRSj9f7cGux/TqC5CIkyOYfol8gBO84Iw6sXEpVKdypYRcfhn3
+ EUtkghEBkOqxCycrbN7/OQzWK6QCeK0QO/ZRajUAs866UqT3eJ9Emia+HStpdLvJ/Gv+
+ kBhQ==
+X-Gm-Message-State: AGi0PuYlsDWQjUyJ/uZUrpYXp56GiPvGfBTSAsgtzwav4VkRrPnuj4uW
+ XzBB8OtWDOfTeF00U7k3y8nHWDRGI0750+jOSMU=
+X-Google-Smtp-Source: APiQypJpHxnUVa+HJ+OCdJz02DOHfWXmMr67lw1U6ExG9PpcAMVbKyAwbyBII6uQ9n51wuhyBZXu9qOSoWBoJcrJ8Lg=
+X-Received: by 2002:a05:6214:150e:: with SMTP id
+ e14mr23211009qvy.65.1588003241754; 
+ Mon, 27 Apr 2020 09:00:41 -0700 (PDT)
+Date: Mon, 27 Apr 2020 09:00:11 -0700
 In-Reply-To: <20200427160018.243569-1-samitolvanen@google.com>
-Message-Id: <20200427160018.243569-5-samitolvanen@google.com>
+Message-Id: <20200427160018.243569-6-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200427160018.243569-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
-Subject: [PATCH v13 04/12] scs: disable when function graph tracing is enabled
+Subject: [PATCH v13 05/12] arm64: reserve x18 from general allocation with SCS
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
@@ -70,15 +70,16 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Juri Lelli <juri.lelli@redhat.com>,
  Vincent Guittot <vincent.guittot@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_090039_798505_C837FC51 
-X-CRM114-Status: GOOD (  11.99  )
+X-CRM114-CacheID: sfid-20200427_090044_655372_591AEC3C 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -116,49 +117,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The graph tracer hooks returns by modifying frame records on the
-(regular) stack, but with SCS the return address is taken from the
-shadow stack, and the value in the frame record has no effect. As we
-don't currently have a mechanism to determine the corresponding slot
-on the shadow stack (and to pass this through the ftrace
-infrastructure), for now let's disable SCS when the graph tracer is
-enabled.
-
-With SCS the return address is taken from the shadow stack and the
-value in the frame record has no effect. The mcount based graph tracer
-hooks returns by modifying frame records on the (regular) stack, and
-thus is not compatible. The patchable-function-entry graph tracer
-used for DYNAMIC_FTRACE_WITH_REGS modifies the LR before it is saved
-to the shadow stack, and is compatible.
-
-Modifying the mcount based graph tracer to work with SCS would require
-a mechanism to determine the corresponding slot on the shadow stack
-(and to pass this through the ftrace infrastructure), and we expect
-that everyone will eventually move to the patchable-function-entry
-based graph tracer anyway, so for now let's disable SCS when the
-mcount-based graph tracer is enabled.
-
-SCS and patchable-function-entry are both supported from LLVM 10.x.
+Reserve the x18 register from general allocation when SCS is enabled,
+because the compiler uses the register to store the current task's
+shadow stack pointer. Note that all external kernel modules must also be
+compiled with -ffixed-x18 if the kernel has SCS enabled.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Will Deacon <will@kernel.org>
 ---
- arch/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/Makefile | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/Kconfig b/arch/Kconfig
-index 334a3d9b19df..45dfca9a98d3 100644
---- a/arch/Kconfig
-+++ b/arch/Kconfig
-@@ -543,6 +543,7 @@ config ARCH_SUPPORTS_SHADOW_CALL_STACK
- config SHADOW_CALL_STACK
- 	bool "Clang Shadow Call Stack"
- 	depends on CC_IS_CLANG && ARCH_SUPPORTS_SHADOW_CALL_STACK
-+	depends on DYNAMIC_FTRACE_WITH_REGS || !FUNCTION_GRAPH_TRACER
- 	help
- 	  This option enables Clang's Shadow Call Stack, which uses a
- 	  shadow stack to protect function return addresses from being
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 85e4149cc5d5..409a6c1be8cc 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -81,6 +81,10 @@ endif
+ 
+ KBUILD_CFLAGS += $(branch-prot-flags-y)
+ 
++ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
++KBUILD_CFLAGS	+= -ffixed-x18
++endif
++
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
 -- 
 2.26.2.303.gf8c07b1a785-goog
 
