@@ -2,87 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30E221BB090
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 23:33:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1CA91BB162
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 00:10:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3JZsiD7eQkxAkSEnyMc80QY1YejWHmrAJB/1xPE4pzA=; b=uGdGF62LWmW1Eu
-	3Q6fn7sEq7khp0aM796Mv+eKqaH9e9kQkdeXmsmpHmI64As78pn9ZV2Rt4jff3F36QyN2B6wI2+g9
-	QuM7E6c4WJleJVIN4xSTH303bO0Ny/DlYwXOkPZ1V4UPvT+B7YFElmz3eWuW4JdoQYmtilsdj2JwN
-	zPSgiXniC9ybahHV55cSvvQIlpkl8AYLI8Sz1wSwNnTbZEBtXVtZP9BKf+CtrPLB6GOk5uDOFBEsx
-	xVfpKvTNPh961y6HdWevzCb25bO6ywby+SRtru5sjRybmH5UuVIHW3GKgwIh1GWb4ePwNt3GH0mo9
-	6g23mdOQvncLgXBmz4sw==;
+	List-Owner; bh=XfyO3yXq5DA6WulSW5Lfum6A9e/C0x7inuQGsL6CTx0=; b=Ly31RIpWc38wae
+	S4zvk0W77WSX851dmGKmH7FjxipJragvSFZ7eNF2vLnfDq+e39sgKcwKhKCXUPfyaGbA2NUIosQ6V
+	CtUDMfyjHZoN5fQFvDSnuE1Hc0xcMVdF2r8+2a72b5oP+LRiCoqG/u+fMlyrHd31M64x6jpg3CnU6
+	Kdis04VWTpKs7QNoIvyMAUF5ncB7KaWmTrZqa8r6Y9N1kUKzxhRSz3Kj6i6i883JcX88rvMiCJjqm
+	2BgMJJ3GMhPfqMghDTp5X5hN2uEA8aiX5r3P3E4sSSjlDvIHMWlT1fBFgDyTh4vcELkVe3InA32B2
+	i9RvMv+NXnhe5YhGWQyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTBN7-0008Of-19; Mon, 27 Apr 2020 21:33:01 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jTBwt-0005Px-Nv; Mon, 27 Apr 2020 22:09:59 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTBMs-0008Ko-HJ; Mon, 27 Apr 2020 21:32:47 +0000
-Received: by mail-ot1-f67.google.com with SMTP id j4so29013298otr.11;
- Mon, 27 Apr 2020 14:32:45 -0700 (PDT)
+ id 1jTBwm-0005PC-9Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 22:09:53 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x2so5959284pfx.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 15:09:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Xe8RUkEJu/E4jWUvQIevudFni0eW89aFKGU5bjDlftc=;
+ b=axOblyzYYZwm23zJs/yIhW4AiXhyGbo1u4AhSQWZk6aCS3SbgYhrO3uxU/GIgXJe+R
+ lZFY51Gu9ZAm1+Wx8ojNeFt262o3xlrjkkPW0UDsqW7aQHJ1kxx3GUTkZZ+SHEwEx4sj
+ qIXCdTHxBwmKDJGtD8EE1vu3RoM8rdzvr7zJDbahVKaFbLW3BvoGBtbrg30QQDm9ZjL4
+ NPsfDMvwSpCub92zGM4zYe+Jb2mMQ9YPQ+DnbHm8ALegArlm8BVMTVmhVxMj9B3OIDe9
+ C66WGlEQ/5l6bbT1mq3LFfU7EdwlU0npz53O3fl3EQgOzkoYeSp2jk4DOPWs1j31cN1R
+ XZyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VhX0m7XiVUavIDrF8Px+dNHE5Y+gy8GzoSAbvu2Xn34=;
- b=iBnP0ebLIeKHLx8q06MM0FJOLR1bsWI8GlZa+zfcfFouLDeJHC5vx1srZMazcOSYHf
- jfSPnUJ8fboF7L5bKPJpdo7toS2tUIDfI/V7rVeGlYiWDJRIheqi+kmYuBLuf1w4wCJx
- ArI5HapWQE0axt6DfGqQ0f629NK2L4dXxSVSsBnqMjUhf4FvwxPqwSCixcTqmGliShse
- S5zQDBPb1JaHFf+UYW3OpaB2/OMW678pmhhNrDi4NqevqyfEcVGqUTrOxPzNArR3Lr66
- xf+mUOfHPH1+wyJHTGAtGUVcne4NgZHZ/gGbCZFyNBk0/nSFrdoIEoALMFVNYix0Ou6F
- 8nNg==
-X-Gm-Message-State: AGi0PuZVVrlDEWKHbzyoPzJ2N9fRxYMXGzXqCKPdCqesNhFmQ/ZoG+3s
- zM/ghZDC7lag1zMcC/EQ+eZHo44=
-X-Google-Smtp-Source: APiQypKaNxXTFDM9s/8lHp/0DfHRTlPNydLnDnh9/hUQgcEGUw3vp0iDQdHVuaMxyOuo5fm7o/BuuA==
-X-Received: by 2002:aca:4f09:: with SMTP id d9mr631326oib.172.1588023164944;
- Mon, 27 Apr 2020 14:32:44 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id j70sm90813oib.53.2020.04.27.14.32.43
+ :mime-version:content-disposition:in-reply-to;
+ bh=Xe8RUkEJu/E4jWUvQIevudFni0eW89aFKGU5bjDlftc=;
+ b=NNPfb8acqzgZIM1OV8gL5i4kpsmbOeC7Jppdq7lU6mgZ0FzoKnGh7XhW+ZOJyj/ZxU
+ 2PVOmwmt0F7Ixr6KhJYKIg4DQjiGt7bKIinMBrGYzz1yzIjrktHc1C/mt7/Vls2REQg2
+ r9bTKvm81Ub5Ah9+oQLqUVjhn2Kot8MdBMRLjLNPPWOoMbBrczaif5hqbf7UCrDT7WPR
+ jNw7vB+3WGkmwcfAGBxGha0zvfW0F7AhdCMGg1TethFT8lco1MfYSWvHpveHia9KuhP5
+ hlV9GAAeNQRWKRZdbD6ujtpYd/F5x5l7kD5Og4TJfpsesfCV7vXWUtCMc1550ELnykuX
+ 55KA==
+X-Gm-Message-State: AGi0PuZz2CTNjK3pwm+meKsQK6pPEhBW/vUQBtdiaX2A7g30eg/HsOcw
+ tfPTPCwC04UHsWVF+yI8RDxxog==
+X-Google-Smtp-Source: APiQypJpQnaMid4q4FwB9UWWT+cZC0Q4L77KS//F8Pl43k21RxaiBYMIK3X+fVPtnLNFejOX3p7P2Q==
+X-Received: by 2002:aa7:951a:: with SMTP id b26mr25384503pfp.44.1588025389927; 
+ Mon, 27 Apr 2020 15:09:49 -0700 (PDT)
+Received: from google.com ([2620:15c:201:2:ce90:ab18:83b0:619])
+ by smtp.gmail.com with ESMTPSA id l8sm3554016pga.60.2020.04.27.15.09.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Apr 2020 14:32:44 -0700 (PDT)
-Received: (nullmailer pid 32460 invoked by uid 1000);
- Mon, 27 Apr 2020 21:32:42 -0000
-Date: Mon, 27 Apr 2020 16:32:42 -0500
-From: Rob Herring <robh@kernel.org>
-To: EastL <EastL.Lee@mediatek.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: dmaengine: Add MediaTek
- Command-Queue DMA controller bindings
-Message-ID: <20200427213242.GA32009@bogus>
-References: <1587955977-17207-1-git-send-email-EastL.Lee@mediatek.com>
- <1587955977-17207-2-git-send-email-EastL.Lee@mediatek.com>
+ Mon, 27 Apr 2020 15:09:49 -0700 (PDT)
+Date: Mon, 27 Apr 2020 15:09:42 -0700
+From: Sami Tolvanen <samitolvanen@google.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
+Message-ID: <20200427220942.GB80713@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200427160018.243569-1-samitolvanen@google.com>
+ <CAMj1kXGASSCjTjvXJh=_iPwEPG50_pVRe2QO1hoRW+KHtugFVQ@mail.gmail.com>
+ <CAMj1kXFYv6YQJ0KGnFh=d6_K-39PYW+2bUj9TDnutA04czhOjQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1587955977-17207-2-git-send-email-EastL.Lee@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAMj1kXFYv6YQJ0KGnFh=d6_K-39PYW+2bUj9TDnutA04czhOjQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_143246_576028_0E2D6C77 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200427_150952_352907_950FEC00 
+X-CRM114-Status: GOOD (  18.92  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,40 +105,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- EastL <EastL.Lee@mediatek.com>, dmaengine@vger.kernel.org, vkoul@kernel.org,
- robh+dt@kernel.org, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
+ kernel-hardening@lists.openwall.com, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Ingo Molnar <mingo@redhat.com>, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Marek <michal.lkml@markovi.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 27 Apr 2020 10:52:56 +0800, EastL wrote:
-> Document the devicetree bindings for MediaTek Command-Queue DMA controller
-> which could be found on MT6779 SoC or other similar Mediatek SoCs.
+On Mon, Apr 27, 2020 at 10:50:34PM +0200, Ard Biesheuvel wrote:
+> > OK, so one thing that came up in an offline discussion about SCS is
+> > the way it interacts with the vmap'ed stack.
+> >
+> > The vmap'ed stack is great for robustness, but it only works if things
+> > don't explode for other reasons in the mean time. This means the
+> > ordinary-to-shadow-call-stack size ratio should be chosen such that it
+> > is *really* unlikely you could ever overflow the shadow call stack and
+> > corrupt another task's call stack before hitting the vmap stack's
+> > guard region.
+> >
+> > Alternatively, I wonder if there is a way we could let the SCS and
+> > ordinary stack share the [bottom of] the vmap'ed region. That would
+> > give rather nasty results if the ordinary stack overflows into the
+> > SCS, but for cases where we really recurse out of control, we could
+> > catch this occurrence on either stack, whichever one occurs first. And
+> > the nastiness -when it does occur- will not corrupt any state beyond
+> > the stack of the current task.
 > 
-> Signed-off-by: EastL <EastL.Lee@mediatek.com>
-> ---
->  .../devicetree/bindings/dma/mtk-cqdma.yaml         | 98 ++++++++++++++++++++++
->  1 file changed, 98 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/dma/mtk-cqdma.yaml
-> 
+> Hmm, I guess that would make it quite hard to keep the SCS address
+> secret though :-(
 
-My bot found errors running 'make dt_binding_check' on your patch:
+Yes, and the stack potentially overflowing into the SCS sort of defeats
+the purpose. I'm fine with increasing the SCS size to something safer,
+but using a vmapped shadow stack seems like the correct solution to this
+problem, at least on devices where allocating a full page isn't an issue.
 
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/mtk-cqdma.example.dt.yaml: dma-controller@10212000: interrupts: [[0, 139, 8], [0, 140, 8], [0, 141, 8]] is too short
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/mtk-cqdma.example.dt.yaml: dma-controller@10212000: reg: [[0, 270606336, 0, 128], [0, 270606464, 0, 128], [0, 270606592, 0, 128]] is too short
-
-See https://patchwork.ozlabs.org/patch/1277292
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
-
-Please check and re-submit.
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
