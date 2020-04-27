@@ -2,64 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F4FC1BA183
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:39:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C56B1BA188
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:41:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cTjHWX45Q4WC+KJOunJStka+Sn8MeSPYpHjdKCKVcYc=; b=AXU9oRTMO2q51c
-	y8CTq4MU/NNZR/+DpcCttpbgSc/FFE3qYV52D7FxFfoy+KksJLFtw+9liXO0NPpbDpXq5SBKxenqZ
-	6dlU52EUiPDosKQ7lIDM7L3BNWWpTCf2ajNXYkhPAeKNNAIuVYLYvsNP5zM4mglD9Dui2MPw36T9L
-	pzpyvQHYzge6tF2UL0rv7JxHFey8/HNnc/itwIu9msRwVn3Yff7Jq2vYpCHaihmfKqbjzAtp5yGJK
-	Em4R3iTbW4BQQ6A3G7pUISr5TrGKcKzHzxdcNPU9tE+6rNuYcSF7oLeBS7YHwJhE5taF66+sFiojk
-	yUgEjt5/YOPQ3LfvyejA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JyNTxSIrDLHIBSTBje+vx0RhVulIDXDKHCMP+xQ8d3w=; b=Jx/zYIJTLRstY0w0bcUHs/Ckn
+	WTzFBYD7Q//5ho6hR6umn5mY9iVRn/ZiOBCTRZ31s583WtcPfme1U3gOfiQHRxVN3NSrXtN7w3Uob
+	rYsG/eDIO+9KmGiW90Je3tUdJRNoTkiBslLvKBQXOqSCBjjLVzSCgkanJhY6zmHfUJwffi5oaMaFr
+	FRDwxG4zlkJdJBHcAxlg4dyBLfgdfeqi7v8eqr9JxO1XSJ55a2e4NgGZcKHoC2wP2xUIEGq3TEok5
+	hjiQmYKdcNljmdy9hG3XqGjGCRhZ37FRvROHynDmqPT6OMpRuVRAesqufocqXb6WBtVsP5yAiSie1
+	w3RihRKRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT1Ai-0008Ov-Lx; Mon, 27 Apr 2020 10:39:32 +0000
+	id 1jT1CR-0002mq-G6; Mon, 27 Apr 2020 10:41:19 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT1AZ-0008ON-75
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:39:24 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RAdMXU097699
- for <linux-arm-kernel@lists.infradead.org>; Mon, 27 Apr 2020 05:39:22 -0500
+ id 1jT1CF-0002mO-Ld
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:41:08 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RAf6ME098168;
+ Mon, 27 Apr 2020 05:41:06 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587983962;
- bh=G5KLsGTm+GR/Mvm9RonWpPmbEa3aL64jvWN89qJhHrI=;
- h=From:To:CC:Subject:Date;
- b=PUS3ym5Ub/W2QmIxoy7SgO8+UisdISNsjY9xU5f0FDAorGVQDqpt9Cwzb0twFZ1OM
- 5oYBVGJ34fdSrYUOLVE61me4UAP0UpDXJc5h2/NPxNoqkmxCOqJb/U9vbsLgAaWqRx
- kGSI6Yc9pJKKgKRI3tpVpaRrvPGfZNgR40bUe500=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RAdLVJ069700
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 27 Apr 2020 05:39:21 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1587984066;
+ bh=+e9snjuVn8/9SAIvEDXDG4BktGSSOERgBnlvNMxv+ZU=;
+ h=Subject:To:References:From:Date:In-Reply-To;
+ b=ZFzjLXB4pT1g/ASFlNO+oxvU14by/GfQqc+5rQb1XLLTe/zWsxnu75t2+Ihzi6Y5E
+ SCsy52iQSNX1G6QgaGoTXEri2PqJQ6pjYnXWnh3hJ1AEPDMCEJh/seAsIAqjYqXues
+ AIO2Hdk8qmfX75Dt1AKvj9GLN7CLxWzxZ0zqBNFE=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RAf6Hk074046
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 27 Apr 2020 05:41:06 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 27
- Apr 2020 05:39:21 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ Apr 2020 05:41:05 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 27 Apr 2020 05:39:21 -0500
-Received: from sokoban.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RAdKLO062682;
- Mon, 27 Apr 2020 05:39:21 -0500
+ Frontend Transport; Mon, 27 Apr 2020 05:41:06 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RAf337009038;
+ Mon, 27 Apr 2020 05:41:04 -0500
+Subject: Re: [PATCH 2/3] arm64: dts: ti: k3-j721e-main.dtsi: Add DSS node
+To: Jyri Sarha <jsarha@ti.com>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Nishanth Menon <nm@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200422091512.950-1-tomi.valkeinen@ti.com>
+ <20200422091512.950-2-tomi.valkeinen@ti.com>
+ <ade3a177-f060-bc40-bcc1-494093e3071d@ti.com>
+ <47b7f858-a8d9-1c3b-4dca-2cc493f6730f@ti.com>
 From: Tero Kristo <t-kristo@ti.com>
-To: <linux-arm-kernel@lists.infradead.org>
-Subject: [RESEND PATCHv4] arm64: dts: ti: k3-j721e-main: Add main domain
- watchdog entries
-Date: Mon, 27 Apr 2020 13:39:19 +0300
-Message-ID: <20200427103919.431-1-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
+Message-ID: <df93da78-132a-d02e-6561-5bb5fdfe7e53@ti.com>
+Date: Mon, 27 Apr 2020 13:41:02 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <47b7f858-a8d9-1c3b-4dca-2cc493f6730f@ti.com>
+Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_033923_297073_B125080A 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20200427_034107_747790_0C21D6EE 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -88,57 +97,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add DT entries for main domain watchdog0 and 1 instances.
-
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
----
-Resending this to ARM mailing list, was earlier delivered only with the
-main watchdog series itself. The driver side + binding are in linux-next
-already so planning to pick this up myself towards 5.8.
-
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 0b9d14b838a1..aa525bc321f1 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -963,4 +963,22 @@
- 
- 		status = "disabled";
- 	};
-+
-+	watchdog0: watchdog@2200000 {
-+		compatible = "ti,j7-rti-wdt";
-+		reg = <0x0 0x2200000 0x0 0x100>;
-+		clocks = <&k3_clks 252 1>;
-+		power-domains = <&k3_pds 252 TI_SCI_PD_EXCLUSIVE>;
-+		assigned-clocks = <&k3_clks 252 1>;
-+		assigned-clock-parents = <&k3_clks 252 5>;
-+	};
-+
-+	watchdog1: watchdog@2210000 {
-+		compatible = "ti,j7-rti-wdt";
-+		reg = <0x0 0x2210000 0x0 0x100>;
-+		clocks = <&k3_clks 253 1>;
-+		power-domains = <&k3_pds 253 TI_SCI_PD_EXCLUSIVE>;
-+		assigned-clocks = <&k3_clks 253 1>;
-+		assigned-clock-parents = <&k3_clks 253 5>;
-+	};
- };
--- 
-2.17.1
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjcvMDQvMjAyMCAxMzozNywgSnlyaSBTYXJoYSB3cm90ZToKPiBPbiAyNy8wNC8yMDIwIDEz
+OjA5LCBUZXJvIEtyaXN0byB3cm90ZToKPj4+ICvCoMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAiZGlz
+YWJsZWQiOwo+Pgo+PiBBZ2Fpbiwgd2h5IGRpc2FibGVkIGJ5IGRlZmF1bHQ/Cj4+Cj4gCj4gdGlk
+c3MgZGV2aWNlIGlzIG5vdCBmdW5jdGlvbmFsIHdpdGhvdXQgYSBkZWZpbmVkIHZpZGVvLXBvcnQu
+IFRoZSBkcml2ZXIKPiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gYSB3YXkgdGhhdCBpdCB3b3VsZCBo
+YW5kbGUgYSBicm9rZW4gY29uZmlndXJhdGlvbgo+IGdyYWNlZnVsbHkuCgpXaGF0L3doZXJlL3do
+ZW4gaXMgdGhlIHZpZGVvLXBvcnQgZ29pbmcgdG8gYmUgZGVmaW5lZCB0aGVuPyBJcyB0aGlzIApn
+b2luZyB0byBiZSBkb25lIGluIGFuIG92ZXJsYXk/CgotVGVybwotLQpUZXhhcyBJbnN0cnVtZW50
+cyBGaW5sYW5kIE95LCBQb3Jra2FsYW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5raS4gWS10dW5udXMv
+QnVzaW5lc3MgSUQ6IDA2MTU1MjEtNC4gS290aXBhaWtrYS9Eb21pY2lsZTogSGVsc2lua2kKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
