@@ -2,117 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 030C81BAE14
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:35:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D9231BAE1E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=vLSt01I8goDH6qi+7Y4g8eWxh7Eco4OtnvDmTgvEto4=; b=IIjv0gRcyFTL4o
-	vvzfrocbub7cJbrXC4GAyA/6CQfxNZe8ncNU3exoRNi32GUuWPh9d9CedfGI6gLVotVKcY5QZVMgJ
-	XDaMrX6iCd2RLzKVhHFZIKgY9IwEhUz6G3OA1oIhIEoG1SHT5BmY7KTbLzSX48mBrAbKkUZlEpbAY
-	JxAa1akwQxlM0NRyW+lwA1SpvVoBOryTE2urZaa6WD00SHlDnYceK8eQsatcZDm5mQEzY0AeLiIiQ
-	aRNGtrrO6L+l6EufvOVqusmQ3g/q3fzvD8b77OdcoVT49z9mW6SEvGsnelR/8cQvC+WeaKW+LHkrG
-	RT+ZZypfyFbj9M/e5zxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mBtxQonYAGQSHdIQSqRaikMhh4PG5xOLwHlujl5gP9s=; b=M4ie8e+r0Wrk8v
+	GlsYyVQOB7+QVCDvRIhcFekWAzlmpb/G/Qpz5ZoG85Jg/52TZx4NTG6S71xstzQBMlKZD1m+B+Rzm
+	IXuku6J3fiifpZfP6PvcvqLGVMmYMIEbboxXhm0tCMzcuBDMCrtKe06adJlikduEj8IYpihZmmJ9I
+	3KaQ3UbvAEUAVJ6LBM8ltKsOIhXNiHSV7vxHQaAtmK72vWoDX8lUSmseKxN8xQuWE2KFCrMxCHByg
+	JZeceaImDQhOJtRJDhKWOc0uwK6xbDcrYqJeExgSSzn5ffv+FYlkNSF17W987L9ioD4pNuNAyilyy
+	2qk6PITqL9yzmHepKe1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT9Wt-0004X5-4g; Mon, 27 Apr 2020 19:34:59 +0000
-Received: from mail-vi1eur05on2060.outbound.protection.outlook.com
- ([40.107.21.60] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jT9c1-0007zh-NU; Mon, 27 Apr 2020 19:40:17 +0000
+Received: from mail-eopbgr1410137.outbound.protection.outlook.com
+ ([40.107.141.137] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT9Wi-0004Vd-DK
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 19:34:50 +0000
+ id 1jT9bf-0007z3-AY
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 19:39:56 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BU1nEK67KZ5tZQdXxRMotayBYZnq8vknaAi/uuc7IYt0UFYxL3jQnPtWGvRZAb7yVD7DZDjvKq2W834YsBM2IIZfOAdm3SUz4zIGIqkdFr6IJocWgNVBSYQu7Kw/dlKtn6mmvpsj/l3mLt5cw+1sp/CmiTkt4PM3qywuXDsZK8m7L2I2O6LHQPrX1bjZRzGMqiykZFxeEDZXCymYCGi1OltRDfKBnq7O+TSYIH+c1GslniZ6w6iwf7nmoq8AaIIjiE9wCjn9EtNL7QLrWzxZXpHk8NluS+9uSDppg1ZHSNHqzgDx/ibiK75anxFs6RoOhtw9NgnQ9lEklNvy034PPA==
+ b=OsgcstNs9+EqU2Q5a2KTZ+TKxrIMmRKxVA5vgOEjkerzwBamCIEm55G/oZLF50nhql3x3xokpeITiBpNrJo1mQRZgEHThfqM/un7lh+OTijrUdSI0aaWrGPAouCU7uPWX2MGmQ7Zb7kTo7nBYt9sbu2XJNZwpOnw9dfwBXaS308rPJg9MIUQ08uBz0xZlc63XfnU9/ssTNRb54nIQ3h00RBnGovGpM83bftNStuzYOL3jNDrBWPWZ55qKW/97gyovD2aUU+ENr9UnEkn9HqG6ko+2X25U7feup/+ggrVGpNTrZzRr86nDY+yw6bqj5sUebfR4+rj2k9RL8LDXibGgg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CsN9jWbg9loNUXAl0n7rm1Zbyfjlc/gT6Qt+xSzi2c4=;
- b=VXIY/49uBNLo1EqA4OmW+7ikcONuIHt/VjF8LcNK8+MEq5UB3dchXlC/ejCmorJKt9+cdEjNjDTVT7VTQwCTUYunffiPIu85CnHmdpiyG4+xupoXh5NBM3+GjKk+VYmN6b4l8sZZyG2mneyFmKrsEaxAASeT2uhCQlwk09laP7h7xjOBF1BJy3AXg9Uj+kx1O1Aex6UVI8ewr9hi4APiesC+BoSDqN8LXlmfs5IuJC+uXIfIYKaUmAbjsyyIyLh9PKvK0O0BWCDC/rmc94AJ1pFjsJjkzbMtqtoypULxxseSNqBytYskKlvB38xNCYrpLklyGXQtkJ+dH96uaccLIg==
+ bh=lkAAfum7nxhqKxzkQYYZZSU8x8hjAVXIPkN0NEzfE7k=;
+ b=J4l//PugsoB7WsgRRSyHWTpPTM8NqtJ2FtxdcCzxDXguBIfdSoTY73ce3JwO6x8/E8ADffvKx+Z58GvlocK6/ZcqjJD95LESFc6OAQroJVJZSl83+YLOwQULq9p6QHtljHtqNowzmhKhUIyGxUcnFKHyOKHFLydoCBMrF7uoyNc34O1Z4iyzJGQ6UP46LmJdCAOort7Jv6sAOXQjPTC+Etb2bAVRI2/JjMz05Jev8b8jEOhBnTy79jHemiuUfEEXEVE0nK5g9l1lqd7gKDtG5EJX4j7wYBbYyS205i/iJiR6b6seiOE0c6emCM7aodTPa0SWr17H0HhQagkJRNYOHA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CsN9jWbg9loNUXAl0n7rm1Zbyfjlc/gT6Qt+xSzi2c4=;
- b=LFHogvnJJcy3oc+HDGlRtB21iEyxuGwdC08h/3wp/J5Lqo4vaGD55uRKd8Yrz3oCohVcKPf2QgP6XqlTzkgiWo4OVEDrTgBphoC9bex1p2GCl3heCAEP/xQuLn7wCqVQkkn/2FIAFk8DfsMG2BjSLyVysRdzrdje3EJXvQqf0lI=
-Received: from VI1PR04MB6941.eurprd04.prod.outlook.com (2603:10a6:803:12e::23)
- by VI1PR04MB4238.eurprd04.prod.outlook.com (2603:10a6:803:4e::31)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 19:34:41 +0000
-Received: from VI1PR04MB6941.eurprd04.prod.outlook.com
- ([fe80::8de5:8c61:6e4d:9fe9]) by VI1PR04MB6941.eurprd04.prod.outlook.com
- ([fe80::8de5:8c61:6e4d:9fe9%9]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 19:34:41 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Topic: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
-Thread-Index: AQHV+FjQMBLZK1sUBkmPtGWbyCJKZA==
-Date: Mon, 27 Apr 2020 19:34:41 +0000
-Message-ID: <VI1PR04MB694162B89953B58266395091EEAF0@VI1PR04MB6941.eurprd04.prod.outlook.com>
-References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
- <1584008384-11578-8-git-send-email-peng.fan@nxp.com>
- <VI1PR04MB69418E9348D5765B4AE01D18EED00@VI1PR04MB6941.eurprd04.prod.outlook.com>
- <DB6PR0402MB2760726D128E4BA868F03D9488AF0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+ bh=lkAAfum7nxhqKxzkQYYZZSU8x8hjAVXIPkN0NEzfE7k=;
+ b=TVtxIr1I9Q+UcuJfadR8tBAwDTa/FDpDwivkNdoucmsxtIO9ZOkXZqs6DPNJEs4qWugkirDorD/hxHJrpQ+cfdl6zvzKKSMP6QG76i2UZhF6PftnPsPsd4moNcLK7k1wl8MLAUNWqIYsDqlM8QHHgk5luLN49MAnagY0S7I35l0=
+Received: from TY1PR01MB1562.jpnprd01.prod.outlook.com (52.133.163.12) by
+ TY1PR01MB1770.jpnprd01.prod.outlook.com (52.133.163.13) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2937.22; Mon, 27 Apr 2020 19:39:50 +0000
+Received: from TY1PR01MB1562.jpnprd01.prod.outlook.com
+ ([fe80::9582:9902:5907:49e7]) by TY1PR01MB1562.jpnprd01.prod.outlook.com
+ ([fe80::9582:9902:5907:49e7%5]) with mapi id 15.20.2937.023; Mon, 27 Apr 2020
+ 19:39:50 +0000
+From: Chris Brandt <Chris.Brandt@renesas.com>
+To: Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm
+ <magnus.damm@gmail.com>
+Subject: RE: [PATCH] ARM: dts: r7s9210: Remove bogus clock-names from OSTM
+ nodes
+Thread-Topic: [PATCH] ARM: dts: r7s9210: Remove bogus clock-names from OSTM
+ nodes
+Thread-Index: AQHWHMozll9O00sfrUC6FttMgK1D46iNW/mQ
+Date: Mon, 27 Apr 2020 19:39:50 +0000
+Message-ID: <TY1PR01MB156288DE1BC4C56E88FF06418AAF0@TY1PR01MB1562.jpnprd01.prod.outlook.com>
+References: <20200427192932.28967-1-geert+renesas@glider.be>
+In-Reply-To: <20200427192932.28967-1-geert+renesas@glider.be>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcY2JyYW5kdDAxXGFwcGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEyOWUzNWJcbXNnc1xtc2ctZGE1MzYwMTMtODhiZS0xMWVhLWFhNjMtOTRlNmY3Njc5M2FlXGFtZS10ZXN0XGRhNTM2MDE0LTg4YmUtMTFlYS1hYTYzLTk0ZTZmNzY3OTNhZWJvZHkudHh0IiBzej0iNjMwIiB0PSIxMzIzMjQ4OTk4ODcwNjAzMTUiIGg9Iml4ckpZOE1ORklpWkdwSjlnZ3h3US9qdzE0az0iIGlkPSIiIGJsPSIwIiBibz0iMSIvPjwvbWV0YT4=
+x-dg-rorf: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [95.76.3.222]
+ smtp.mailfrom=Chris.Brandt@renesas.com; 
+x-originating-ip: [75.60.247.61]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1ad6f389-9b18-4beb-3a3f-08d7eae2082b
-x-ms-traffictypediagnostic: VI1PR04MB4238:|VI1PR04MB4238:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB4238EC55FF1DB6A9C18E7D1EEEAF0@VI1PR04MB4238.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-ms-office365-filtering-correlation-id: a86e917f-76c9-4ea7-55f0-08d7eae2c083
+x-ms-traffictypediagnostic: TY1PR01MB1770:
+x-microsoft-antispam-prvs: <TY1PR01MB1770AAA3B47DDDA2521D55D08AAF0@TY1PR01MB1770.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 0386B406AA
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR04MB6941.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:TY1PR01MB1562.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(136003)(366004)(376002)(39860400002)(396003)(66446008)(478600001)(91956017)(66556008)(9686003)(7696005)(7416002)(66476007)(5660300002)(55016002)(44832011)(71200400001)(54906003)(66946007)(76116006)(110136005)(64756008)(86362001)(6636002)(4326008)(8936002)(2906002)(81156014)(33656002)(6506007)(8676002)(186003)(26005)(52536014)(53546011)(316002);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
+ SFS:(4636009)(136003)(39860400002)(376002)(396003)(366004)(346002)(4744005)(478600001)(76116006)(52536014)(8936002)(55016002)(4326008)(186003)(86362001)(9686003)(8676002)(81156014)(26005)(6506007)(7696005)(2906002)(316002)(66476007)(110136005)(54906003)(66556008)(66446008)(5660300002)(64756008)(33656002)(66946007)(71200400001);
+ DIR:OUT; SFP:1102; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: MRYl+TyJCFLYEz6gHzgIhZCWTZbAbv1ngsrwzpntyq9QgZkl7vQK+2lBksr/0xn+qOkJOC9Wj5pi5kjn+3MrrGZj3rtOvPun4brCSS/UmlZEf4u3Ba+eV4WiL/gt5o/iaOqZoBigTlhJcI6/E4AYGokzkhefb2MQ9jBpACBxYlgZURMgHY6j2KSliJEhvdfOqW+N4vB6enpSbIBnmNq+9TJMIiFlnrrwCUc0DIa8jzLd68NWqZrMIw8ywd3JWgc5H+JTMIluJnW4XzHBMUM3zg1eLqBJUkTgms8r/jVpQNxviLskzX7irHiwoxC39vV9Xvz7ggyp/IxB92KGDRE7hyVGt4D077TsSd7rMJUNYSsziMXZev9rO2O/Bp81St4DW+GGE2JQ+Ybc2VfNbC/mo5RV4pGbkWroMu1P35MGIOAO0oOFLK23YQ0PIcO4J9S7
-x-ms-exchange-antispam-messagedata: cEjHh3TRX4Bc/dCqXvNOgTsocunGZld5e3RkNe4BmdE3BT3YFqORRBFr/lBjyNP1OaJbKk6fACMmwqbyR3wOfnWVk5WkUKvtqucmRswZKGct7YGcSeVkp2VmgPWIKH+BpmFxi1OuO9q7wmWHsoLLMWC3qNRuBm7OdTHbw7WCcixRzZlJNgd0rJDnnwzohh2FCOjOINAt1wKYPj8pl8n+Wy85SPdQVRpiwGuKZRD+h9F5ZbOZgwQ+X2qOK7iaMr0cazrkcurT3e81BevtDrkDlIuNdbfM0EVfdbzThdYVDdxfFXdu7mS3ipe17HJaHspAWB89TzkSxOsS7hbcC5U33hc1WKj9Nm2nroDJB8lXQWXBJRrIDrmljRgq4KlBDKNDhUg2KJKxXhyxOZiUlssPq8RNlHyq9nKoFKOeQYMxuVpACB9eJg5y0oGgo2/hwyC2Ji3+ki8+k9YpkpbduJbkrrxBabHQ1SScEaB1GlQDx5yGg5xzD2whWyHDooZUH5dLyum5j2Jcr1Wb5Vz25kV3U1z0UqMFEvdl79rffrTv5IKMpsme1ueNpblnJi9zttu+4ewTFbk4DmvRJpwqr2TZ87lZszOyakw0SsVtfzr2ZOGUdmwlwhF0wnb7SWsZyU1jILYrE4EC7oQ++u5DuMR5k1tQ9BgaVryE+rz5f/MfpIgR09CTjY2IbXeR8QOnz/W9rU/zoT32BnK25NmWkI2LKdFxwD4RAG8VEPBCsPXYTuuRmelNzzqGGxVuIxo1JQGaoEkWc+rNKYOKgEHnwrZ6/9NiDfULvyNv2SQGix9BvjE=
+x-microsoft-antispam-message-info: fSgEgv09Nl8jx2r22K5PL1LE989v1Svedv3vvh1IYXmXmRvmCfUrlOUeUOgB9I4HW0WhVfOjpm8x5/VXozLOdKsRt1ekQHwKX7hAYAvELwqq0FFxSRSsgmuNKwkSvYZJf9vvVSiSRIPLQWbnlk45wZbngXfyVQXHgH9G54+kIJDj5Ni2MJ2tYEryN2Vp/9mpgAjylXOsrgvdIplJIwr64/8xHT0dYIKuxe10BpmBxYun/Prtggo1KOxFwCY1c54ML/+C4wDPfTgUtOIqIUEqoOFhW7+PW36zOI1atAajxB/mt/ZEdLvxleZpZpsh4PHKKDV3swzjE5XEipbY58WTdyz0alYzOQUhLW8Slp6N5g9L8rWDbD2ngMFYGnie5WfWYctohYQwzOT7Dntko4fLYFJDndRK3yxpUXqRigeGHOcy7BESywLJd9h/jvHh+iFY
+x-ms-exchange-antispam-messagedata: nu8fqVTDsleos4njlTFXxBB1Yppkh1ArAEixjCsjKdXXSfZ0LQSNI0pL1ramtbhvnfo7Hw7HJiSwPJEmrKCgZyORgw/fOUIjYp5kA6Ozdo0oMQr5yufM0RpRleMUZTEYr8+Ehrxs3HLo+Qd1nnhTbP8EGFM4Jvlb5sC/cFUan+r7/b+GuT+MjSz7x1pa6C+db+N4ae875o+4roKR9FhrKnmhkOVmRck6+ggu1N87CWbRRrAz/NPg8XX1mQoLavEUcuvFaajwmblCUsJLx1UNHVxRu+1xb+r578DzIPhIzj7emypdA9cBv4H3Pl/YIn2XYFcw03gtSAMRGkVCMR4iPGsCbvMuH1dHfOpi1hp4gzJ9+VguRbf7Y7JH4adz1wFleuJb9MiEO3nhha+LPV21U0MezNe2+EAk6AMJI9i0ZIOcMcy1R1t/3Y0c4wxcYunKLXTTr+J7N0xqOX324DngrZeETsIe57dT7AaoQB9xRBrISemc3JhjmerTtn0/iDm+ru6tUBlqknwQ+vJYEmifKbcZk3iBW5+s9wo2u1PRL0sUaPQbvCPne1oRzjeTLcoqxXr+H7jsHTo1vICP1kMsO4DMXNNL6Jpqxt7lgk47PON5RiRg8CT4Ei9RQ9nj9VclqgiOVbCurFAsJw4ReCSTrsfZIC6Hm/pr06XyF6e2NNKuXGtWwcfBGDA6IQtxwh0r8tKvRAXHVfdY9sCeT/n9zyXnupaX5VkZTfmIuaoxSAsRbjS1M667T0hvw6at2m/SFB2f1AHtVZ9E94qWSyoYQfDDhpQRDiBUwvEZriJ+CcQ=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1ad6f389-9b18-4beb-3a3f-08d7eae2082b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Apr 2020 19:34:41.4862 (UTC)
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a86e917f-76c9-4ea7-55f0-08d7eae2c083
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Apr 2020 19:39:50.8716 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: l9TX6lmYzP/+JWZwwslIA0IsPjEtnK3LWUVLyrbSHdEbmIWEO4wHMHrgYdy+nOGD6nabxRpenvc8lxJkNMPBGQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4238
+X-MS-Exchange-CrossTenant-userprincipalname: BJL2VmStLTqgsBMfglayvKHDf/WkY+nKKuy5t+Rj3xNWONK6kXjhuObcEcmKV/awQj9rfE5MNKvTpfX1vY7FuJuawHCOIZ9qWa+/8Qift4U=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY1PR01MB1770
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_123448_582606_D085B6C5 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200427_123955_414543_760B1519 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.60 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [95.76.3.222 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.60 listed in wl.mailspike.net]
+ low trust [40.107.141.137 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -127,81 +123,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>, "heiko@sntech.de" <heiko@sntech.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "aford173@gmail.com" <aford173@gmail.com>, Jun Li <jun.li@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-27 12:15 PM, Peng Fan wrote:
->> Subject: Re: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite
->> clk
->>
->> On 2020-03-12 12:27 PM, Peng Fan wrote:
->>> From: Peng Fan <peng.fan@nxp.com>
->>>
->>> The CORE/BUS root slice has following design, simplied graph:
->>> The difference is core not have pre_div block.
->>> A composite core/bus clk has 8 inputs for mux to select, saying clk[0-7].
->>>
->>>               SEL_A  GA
->>>               +--+  +-+
->>>               |  +->+ +------+
->>> CLK[0-7]--->+  |  +-+      |
->>>          |    |  |      +----v---+    +----+
->>>          |    +--+      |pre_diva+---->    |  +---------+
->>>          |              +--------+    |mux +--+post_div |
->>>          |    +--+      |pre_divb+--->+    |  +---------+
->>>          |    |  |      +----^---+    +----+
->>>          +--->+  |  +-+      |
->>>               |  +->+ +------+
->>>               +--+  +-+
->>>               SEL_B  GB
->>>
->>> There will be system hang, when doing the following steps:
->>> 1. switch mux from clk0 to clk1
->>> 2. gate off clk0
->>> 3. swtich from clk1 to clk2, or gate off clk1
->>>
->>> Step 3 triggers system hang.
->>>
->>> If we skip step2, keep clk0 on, step 3 will not trigger system hang.
->>> However we have CLK_OPS_PARENT_ENABLE flag, which will unprepare
->>> disable the clk0 which will not be used.
->>
->> As far as I understand when switching from clk1 to clk2 this is done by
->> temporarily switching the rightmost SELECT mux to whatever was in the
->> spare SEL, which is essentially arbitrary from linux POV.
-> 
-> No. The fixes in this patches has been confirmed by IC design owner
-> 
->>
->> This is quite unexpected but in theory it might be desirable to use a third
->> parent as a fallback.
-> 
-> No. this will make things complicated. To CCM SEL_A and SEL_B,
-> it is controlled by a hardware counter. Saying you write n times to
-> the target interface.
-> 
-> The mux will use n % 2 to choose SEL_A or SEL_B. write twice
-> to make sure SEL_A and SEL_B has the same value.
+Hi Geert,
 
-What if SEL_A and SEL_B have different values on boot? The first time 
-linux does set_parent it will switch to the other SEL_X which might be off.
+On Mon, Apr 27, 2020, Geert Uytterhoeven wrote:
+> However, the actual clock names for the OS Timer nodes are not fixed,
+> but contain the indices of the consumer instances.  Hence they cannot
+> easily be used by a driver, without scanning for all possible indices.
+> 
+> Remove them, as the OSTM DT bindings do not specify clock-names anyway.
+
+> ---
+> To be queued in renesas-fixes for v5.7, to avoid the json-schema OSTM DT
+> bindings conversion introducing a regression.
+> ---
+
+OK. Thank you.
+
+Chris
 
 _______________________________________________
 linux-arm-kernel mailing list
