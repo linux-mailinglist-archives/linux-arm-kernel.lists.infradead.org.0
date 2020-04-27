@@ -2,59 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D82C51BA9D8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2D3D1BA9E3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:15:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bZmagrN6dUA/LBJGqFJKNsR730uQ0v82FxFgwytdCnE=; b=dx2jaE+7H2lz+5
-	jy8zP92HnuklP/lFcKMfvco4LvKPl+rNc9gYZho0LNdrj9gXnR+Qn841DshoUg6UBCy4L+WSKKvaM
-	rm6bTTdb4AVdlPbLn3etTA2Kyy8CSBUTBUdWxkopRPytNq+6qfLM6e+3G1aIygLcLCWC1+vIDsnq2
-	H+NuUgSe7mI5y2kK0wAYl+u1pOuw/Tspx3j0NMkbIvXogct4UXCaKlvxOiyiiJPl06B8uhQ8o9Q/O
-	8GJkGOWauRJF3J54VSTtqAg3G9FbbYuqKN8kbJQiz5TNKazKXn5JIKAnFYAWQyQhMXGGqoQ0xQ6r3
-	sPMRQ3zNgmDD399+/ICw==;
+	List-Owner; bh=VaMo9byXuRSFbZEOmSG5jtLUW6CnsbvOC5/WnsR9vls=; b=M64sVPQgncm0gW
+	srNoflmIfBowwXo/Tybj0xwyVtHU4c5ntwW9Nauai1PjJ0P6Tlb95C55WpqeI7B0DDO9DW3HmFHpb
+	FII4kfINoBIqJEVrnbJsL8sHdFbzpaLH0LKkcESuNhHprMd+h/slMzGxiE6UtiLloz1hT3A0/MADq
+	BDCCvqxlMxHtBlulGCnDWgjNhCegHaAVdAaEbG/a6fO01XzHDVFbDJSb98kLfEj0eyhaU1SsrcfRf
+	YmcLOb5BNw4QRiAkHxIhBcp3ZkP191mJ+ZRDClpJpV26F7c2clgQKGRZGcgFWd7r0km0FfxQgDECR
+	g+7MEWTSodIOmivZDMnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT6LL-0003iN-CB; Mon, 27 Apr 2020 16:10:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jT6PF-0004r3-JT; Mon, 27 Apr 2020 16:14:53 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT6LC-0003i0-UD
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:10:44 +0000
-Received: from localhost (unknown [171.76.79.70])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D2FC8205C9;
- Mon, 27 Apr 2020 16:10:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588003842;
- bh=6y+UP73Vxjpn15HNvNYlaPBEXH1uzwIZb3nl5q1GqOQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aR1yAoAqwS+RgrXbE1AAsuiTXEZV7W92AcrPzeyict0PPlEUiEHKWRkvmzMO4oKO1
- 8t1vZ23bc52pz9LNTyHP2+DXUHAnnbaSQ9r7UrlG/lPkXnZN2nk3zjzIC/SsQo75Oa
- DMs/H54jSMbM7I0mxVYOer0nm3Bobcrh/qb1G+S0=
-Date: Mon, 27 Apr 2020 21:40:38 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>
-Subject: Re: [PATCH 0/2] STM32 DMA Direct mode
-Message-ID: <20200427161038.GJ56386@vkoul-mobl.Dlink>
-References: <20200422102904.1448-1-amelie.delaunay@st.com>
+ id 1jT6P2-0004pc-3T
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:14:41 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x15so9239034pfa.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 09:14:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=NlOHhv3ZvuxKBfmOADzhYZY6MuY/8/b8nTb8cQXvDTg=;
+ b=u2TqxdfGH5QOiJu5VXIyBkHKCt8WTxDGffJ8usI2d2Qxl4Edg8yRj7sOGIIMngir+q
+ EsnkGAIHgNuMsLgRpAmBFCOjohBBIyuMftTPjyS+IhRv4RIVvmBUOyuLczwYvBHHnXzJ
+ HHJ6pWPRTJr+YlbuoZWow9eo+lKy+esvQjzB42295E9ZqlSokzO0LkWcFXYi4+lnCKN/
+ YCAgCbnhprzovJF21q8fxJemDPl1xjDSpAxvyV94Jl/x/0XM+YIr23OxxEkV6oxse4g8
+ XqN3yt5PeNcrGKZR1fqQjEjoJc7bvsfI5223hLES4X1yQG1QY44G0ztHh0SsidenU9Vs
+ xEkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NlOHhv3ZvuxKBfmOADzhYZY6MuY/8/b8nTb8cQXvDTg=;
+ b=A+6d9THhyg9sCNtcqXQHsXQ8i+sWTWv2NEsPAJs9BUvMeuQXFKBuvlSVpm7X7Ez7YT
+ xdbOrt933hap5Ckrx3gVgabLLIb+br2iMtL3R+ZGXP8FtLJxPhfIjwV8ImH1jh2H8Ixv
+ r/tgOxRiys/7V0hBI1TCw915EUI3Ok5PtKOB6L3jFy7nE/+1hDxaMJOGZ6X8+pRigPwr
+ ZO9bYysDvIdXY4vywsm+on61Buk7QxgTDQiWGgr1ddt0fYVCaSwkQukMvcq6DzU2ruAS
+ aYKLwG0SwT3ydjc+tCTFox41lR90esqs92lAI+44ERLYVhEzru65nrdgyAKZagNulpe9
+ eRYg==
+X-Gm-Message-State: AGi0PuZ3JNLuxvubf49Ga9jLqWWAj/riFYnhsCi8SvbahoixEid6PkBl
+ 1RJVgBdBdpepGrEqr9QH3Yoa9Ex5+BQ=
+X-Google-Smtp-Source: APiQypIeUQY6ZaJfuHprcY9pUc2GUDKRaqkJIiBBuTT1r2iX8l4EyB2XUPeFbTmuErN6+F0niVlgog==
+X-Received: by 2002:aa7:979d:: with SMTP id o29mr25856991pfp.90.1588004078641; 
+ Mon, 27 Apr 2020 09:14:38 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id u13sm11788124pjb.45.2020.04.27.09.14.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Apr 2020 09:14:37 -0700 (PDT)
+Date: Mon, 27 Apr 2020 10:14:36 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Anurag Koul <anurag.koul@arm.com>
+Subject: Re: [PATCH] coresight: etm4x: Add support for Neoverse N1 ETM
+Message-ID: <20200427161436.GA10601@xps15>
+References: <20200423101141.25280-1-anurag.koul@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422102904.1448-1-amelie.delaunay@st.com>
+In-Reply-To: <20200423101141.25280-1-anurag.koul@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_091042_990987_FACF1916 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200427_091440_672682_20C34BBD 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -64,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,29 +97,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-kernel@vger.kernel.org, Pierre-Yves Mordret <pierre-yves.mordret@st.com>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: coresight@lists.linaro.org, suzuki.poulose@arm.com,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22-04-20, 12:29, Amelie Delaunay wrote:
-> By default, the driver compute if the FIFO must operate in direct mode or with
-> FIFO threshold. Direct mode is allowed only if computed source burst and
-> destination burst are disabled. But with memory source or destination, burst
-> is always > 0.
-> Direct mode is useful when the peripheral requires an immediate and single
-> transfer to or from the memory after each DMA request.
-> This patchset adds a way to force Direct mode through device tree.
+On Thu, Apr 23, 2020 at 11:11:41AM +0100, Anurag Koul wrote:
+> Add PID for Arm Neoverse N1 ETM to the list of supported/known ETMs.
+> 
+> Signed-off-by: Anurag Koul <anurag.koul@arm.com>
+> ---
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 0b2c7c7efacb..7443a2e4528d 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -1541,6 +1541,7 @@ static const struct amba_id etm4_ids[] = {
+>  	CS_AMBA_ID(0x000bb95a),			/* Cortex-A72 */
+>  	CS_AMBA_ID(0x000bb959),			/* Cortex-A73 */
+>  	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),/* Cortex-A35 */
+> +	CS_AMBA_UCI_ID(0x000bbd0c, uci_id_etm4),/* Neoverse N1 */
+>  	CS_AMBA_UCI_ID(0x000f0205, uci_id_etm4),/* Qualcomm Kryo */
+>  	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
+>  	CS_AMBA_UCI_ID(0x000bb802, uci_id_etm4),/* Qualcomm Kryo 385 Cortex-A55 */
 
-Applied, thanks
+Applied - thanks,
+Mathieu
 
--- 
-~Vinod
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
