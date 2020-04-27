@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21E001B95B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 06:13:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 995AF1B962D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 06:36:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4SA8pNfbYzFSamUreoGFGwLCDDzMJnnIUHgX/VqST4Y=; b=ns02NyF+gpIaZRX9kI0rk7rXk
-	Xy25zG+gLCJFSDQSk1/ypJ44qgQcpjzKyLGQzyVnlP2VUh1F6z/0LUvWyq4zBvWskdw1I1bOyP9Sh
-	rYwl8tH8b0Sb4CFgxWDP35zuUP7tSEvVQzppn9XZ740A8CCELszAf6Oac7j6hVsHbRSWbMrZHEf79
-	3n16FSh/Tgd+nA+27wuxqoeJ5TKFF4m3j1RUDoAdYFDxFPX90DmLFHvC0zLKXIOlPdGTnlJerjtJ6
-	AGFIc49uw//Iz/u3d/C4JVV/2WOw1tcKHF7t9ws9HUSGXcnKu6oK3zvRUh6ZrZXd7IDg5yXhZSJXi
-	HU5Fd08/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=RoJ4qqcsc2i9DQZoxlz5N4GoREa7BjX3cyRMaofVAxU=; b=M/k
+	81N3aAVY4HlsAuS6F4BtdOyRWtm/nDI6RhXR1t+ghjQqlavTYmh7YRaaeUKN0n7xY4XTkiKWDwjQQ
+	mc8Bea3nN8RK7W9hardyU9UtDqOJmc+YRD/Ssrkb5Zmf5f+nWMGV9tZ9UBMst1yIBa6X5cNum2gei
+	qdT2iNm1Om4JRdFa87LddSuQ4f0mNTOXEkELUG5VeOhC64F7RbqtmMFWqtDUjgY2L7WDmHheArIP1
+	eoCWgwYbnfgunwe+ETR0hfP3kTbT4YggLiyWVC9ei1wTp+jDy8mr2GzMZAJksFkRqOwvuNo9UMGDe
+	AmFypUKRGiwXrPFEnMz8vkovYvX6dBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSv94-00040r-8k; Mon, 27 Apr 2020 04:13:26 +0000
-Received: from out30-43.freemail.mail.aliyun.com ([115.124.30.43])
+	id 1jSvUt-0003E0-6K; Mon, 27 Apr 2020 04:35:59 +0000
+Received: from out30-54.freemail.mail.aliyun.com ([115.124.30.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSv8v-0003zo-5S
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 04:13:18 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R201e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04407;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=37; SR=0;
- TI=SMTPD_---0TwjKU-I_1587960786; 
-Received: from 30.27.118.60(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0TwjKU-I_1587960786) by smtp.aliyun-inc.com(127.0.0.1);
- Mon, 27 Apr 2020 12:13:08 +0800
-Subject: Re: [PATCH v3 7/7] KVM: MIPS: clean up redundant kvm_run parameters
- in assembly
-To: Huacai Chen <chenhuacai@gmail.com>
-References: <20200426123905.8336-1-tianjia.zhang@linux.alibaba.com>
- <20200426123905.8336-8-tianjia.zhang@linux.alibaba.com>
- <CAAhV-H7tSPFSU143ZfmgitEY1BY7MrBzwvJHve49i+ABQ9quCg@mail.gmail.com>
+ id 1jSvUH-0002zp-RX
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 04:35:23 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R611e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07488;
+ MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=38; SR=0;
+ TI=SMTPD_---0TwkAhWy_1587962114; 
+Received: from localhost(mailfrom:tianjia.zhang@linux.alibaba.com
+ fp:SMTPD_---0TwkAhWy_1587962114) by smtp.aliyun-inc.com(127.0.0.1);
+ Mon, 27 Apr 2020 12:35:14 +0800
 From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Message-ID: <e0826025-6925-fd94-1192-529c9aca1181@linux.alibaba.com>
-Date: Mon, 27 Apr 2020 12:13:06 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <CAAhV-H7tSPFSU143ZfmgitEY1BY7MrBzwvJHve49i+ABQ9quCg@mail.gmail.com>
+To: pbonzini@redhat.com, tsbogend@alpha.franken.de, paulus@ozlabs.org,
+ mpe@ellerman.id.au, benh@kernel.crashing.org, borntraeger@de.ibm.com,
+ frankja@linux.ibm.com, david@redhat.com, cohuck@redhat.com,
+ heiko.carstens@de.ibm.com, gor@linux.ibm.com,
+ sean.j.christopherson@intel.com, vkuznets@redhat.com,
+ wanpengli@tencent.com, jmattson@google.com, joro@8bytes.org,
+ tglx@linutronix.de, mingo@redhat.com, bp@alien8.de, x86@kernel.org,
+ hpa@zytor.com, maz@kernel.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ christoffer.dall@arm.com, peterx@redhat.com, thuth@redhat.com,
+ chenhuacai@gmail.com
+Subject: [PATCH v4 0/7] clean up redundant 'kvm_run' parameters
+Date: Mon, 27 Apr 2020 12:35:07 +0800
+Message-Id: <20200427043514.16144-1-tianjia.zhang@linux.alibaba.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_211317_528308_5CEF5E03 
-X-CRM114-Status: GOOD (  19.11  )
+X-CRM114-CacheID: sfid-20200426_213522_054869_96B5FF67 
+X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.43 listed in list.dnswl.org]
+ no trust [115.124.30.54 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
@@ -72,186 +76,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, kvm@vger.kernel.org, david@redhat.com,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, heiko.carstens@de.ibm.com,
- Peter Xu <peterx@redhat.com>, "open list:MIPS" <linux-mips@vger.kernel.org>,
- paulus@ozlabs.org, hpa@zytor.com, kvmarm@lists.cs.columbia.edu,
- linux-s390@vger.kernel.org, frankja@linux.ibm.com,
- Marc Zyngier <maz@kernel.org>, joro@8bytes.org, x86@kernel.org,
- borntraeger@de.ibm.com, mingo@redhat.com, julien.thierry.kdev@gmail.com,
- thuth@redhat.com, gor@linux.ibm.com, suzuki.poulose@arm.com,
- kvm-ppc@vger.kernel.org, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, jmattson@google.com,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, cohuck@redhat.com,
- christoffer.dall@arm.com, sean.j.christopherson@intel.com,
- LKML <linux-kernel@vger.kernel.org>, james.morse@arm.com, mpe@ellerman.id.au,
- Paolo Bonzini <pbonzini@redhat.com>, vkuznets@redhat.com,
- linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org, tianjia.zhang@linux.alibaba.com,
+ kvm@vger.kernel.org, linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
+structure. For historical reasons, many kvm-related function parameters
+retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time. This
+patch does a unified cleanup of these remaining redundant parameters.
 
+This series of patches has completely cleaned the architecture of
+arm64, mips, ppc, and s390 (no such redundant code on x86). Due to
+the large number of modified codes, a separate patch is made for each
+platform. On the ppc platform, there is also a redundant structure
+pointer of 'kvm_run' in 'vcpu_arch', which has also been cleaned
+separately.
 
-On 2020/4/27 11:51, Huacai Chen wrote:
-> Hi, Tianjia,
-> 
-> On Sun, Apr 26, 2020 at 8:40 PM Tianjia Zhang
-> <tianjia.zhang@linux.alibaba.com> wrote:
->>
->> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
->> structure. Earlier than historical reasons, many kvm-related function
->> parameters retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time.
->> This patch does a unified cleanup of these remaining redundant parameters.
->>
->> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
->> ---
->>   arch/mips/include/asm/kvm_host.h |  4 ++--
->>   arch/mips/kvm/entry.c            | 15 +++++----------
->>   arch/mips/kvm/mips.c             |  3 ++-
->>   arch/mips/kvm/trap_emul.c        |  2 +-
->>   arch/mips/kvm/vz.c               |  2 +-
->>   5 files changed, 11 insertions(+), 15 deletions(-)
->>
->> diff --git a/arch/mips/include/asm/kvm_host.h b/arch/mips/include/asm/kvm_host.h
->> index 971439297cea..db915c55166d 100644
->> --- a/arch/mips/include/asm/kvm_host.h
->> +++ b/arch/mips/include/asm/kvm_host.h
->> @@ -310,7 +310,7 @@ struct kvm_mmu_memory_cache {
->>   #define KVM_MIPS_GUEST_TLB_SIZE        64
->>   struct kvm_vcpu_arch {
->>          void *guest_ebase;
->> -       int (*vcpu_run)(struct kvm_run *run, struct kvm_vcpu *vcpu);
->> +       int (*vcpu_run)(struct kvm_vcpu *vcpu);
->>
->>          /* Host registers preserved across guest mode execution */
->>          unsigned long host_stack;
->> @@ -821,7 +821,7 @@ int kvm_mips_emulation_init(struct kvm_mips_callbacks **install_callbacks);
->>   /* Debug: dump vcpu state */
->>   int kvm_arch_vcpu_dump_regs(struct kvm_vcpu *vcpu);
->>
->> -extern int kvm_mips_handle_exit(struct kvm_run *run, struct kvm_vcpu *vcpu);
->> +extern int kvm_mips_handle_exit(struct kvm_vcpu *vcpu);
->>
->>   /* Building of entry/exception code */
->>   int kvm_mips_entry_setup(void);
->> diff --git a/arch/mips/kvm/entry.c b/arch/mips/kvm/entry.c
->> index 16e1c93b484f..e3f29af3b6cd 100644
->> --- a/arch/mips/kvm/entry.c
->> +++ b/arch/mips/kvm/entry.c
->> @@ -204,7 +204,7 @@ static inline void build_set_exc_base(u32 **p, unsigned int reg)
->>    * Assemble the start of the vcpu_run function to run a guest VCPU. The function
->>    * conforms to the following prototype:
->>    *
->> - * int vcpu_run(struct kvm_run *run, struct kvm_vcpu *vcpu);
->> + * int vcpu_run(struct kvm_vcpu *vcpu);
->>    *
->>    * The exit from the guest and return to the caller is handled by the code
->>    * generated by kvm_mips_build_ret_to_host().
->> @@ -217,8 +217,7 @@ void *kvm_mips_build_vcpu_run(void *addr)
->>          unsigned int i;
->>
->>          /*
->> -        * A0: run
->> -        * A1: vcpu
->> +        * A0: vcpu
->>           */
->>
->>          /* k0/k1 not being used in host kernel context */
->> @@ -237,10 +236,10 @@ void *kvm_mips_build_vcpu_run(void *addr)
->>          kvm_mips_build_save_scratch(&p, V1, K1);
->>
->>          /* VCPU scratch register has pointer to vcpu */
->> -       UASM_i_MTC0(&p, A1, scratch_vcpu[0], scratch_vcpu[1]);
->> +       UASM_i_MTC0(&p, A0, scratch_vcpu[0], scratch_vcpu[1]);
->>
->>          /* Offset into vcpu->arch */
->> -       UASM_i_ADDIU(&p, K1, A1, offsetof(struct kvm_vcpu, arch));
->> +       UASM_i_ADDIU(&p, K1, A0, offsetof(struct kvm_vcpu, arch));
->>
->>          /*
->>           * Save the host stack to VCPU, used for exception processing
->> @@ -628,10 +627,7 @@ void *kvm_mips_build_exit(void *addr)
->>          /* Now that context has been saved, we can use other registers */
->>
->>          /* Restore vcpu */
->> -       UASM_i_MFC0(&p, S1, scratch_vcpu[0], scratch_vcpu[1]);
->> -
->> -       /* Restore run (vcpu->run) */
->> -       UASM_i_LW(&p, S0, offsetof(struct kvm_vcpu, run), S1);
->> +       UASM_i_MFC0(&p, S0, scratch_vcpu[0], scratch_vcpu[1]);
->>
->>          /*
->>           * Save Host level EPC, BadVaddr and Cause to VCPU, useful to process
->> @@ -793,7 +789,6 @@ void *kvm_mips_build_exit(void *addr)
->>           * with this in the kernel
->>           */
->>          uasm_i_move(&p, A0, S0);
->> -       uasm_i_move(&p, A1, S1);
->>          UASM_i_LA(&p, T9, (unsigned long)kvm_mips_handle_exit);
->>          uasm_i_jalr(&p, RA, T9);
->>           UASM_i_ADDIU(&p, SP, SP, -CALLFRAME_SIZ);
-> I think uasm_i_move(&p, K1, S1) in kvm_mips_build_ret_from_exit() and
-> UASM_i_MTC0(&p, S1, scratch_vcpu[0], scratch_vcpu[1]) in
-> kvm_mips_build_ret_to_guest() should also be changed.
-> 
+---
+v4 change:
+  mips: fixes two errors in entry.c.
 
-Your statement is correct, this is my omission, I will fix it in the 
-next version of the patch, thanks for your review.
+v3 change:
+  Keep the existing `vcpu->run` in the function body unchanged.
 
-Thanks and best,
-Tianjia
+v2 change:
+  s390 retains the original variable name and minimizes modification.
 
->> diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
->> index 9710477a9827..32850470c037 100644
->> --- a/arch/mips/kvm/mips.c
->> +++ b/arch/mips/kvm/mips.c
->> @@ -1186,8 +1186,9 @@ static void kvm_mips_set_c0_status(void)
->>   /*
->>    * Return value is in the form (errcode<<2 | RESUME_FLAG_HOST | RESUME_FLAG_NV)
->>    */
->> -int kvm_mips_handle_exit(struct kvm_run *run, struct kvm_vcpu *vcpu)
->> +int kvm_mips_handle_exit(struct kvm_vcpu *vcpu)
->>   {
->> +       struct kvm_run *run = vcpu->run;
->>          u32 cause = vcpu->arch.host_cp0_cause;
->>          u32 exccode = (cause >> CAUSEB_EXCCODE) & 0x1f;
->>          u32 __user *opc = (u32 __user *) vcpu->arch.pc;
->> diff --git a/arch/mips/kvm/trap_emul.c b/arch/mips/kvm/trap_emul.c
->> index d822f3aee3dc..04c864cc356a 100644
->> --- a/arch/mips/kvm/trap_emul.c
->> +++ b/arch/mips/kvm/trap_emul.c
->> @@ -1238,7 +1238,7 @@ static int kvm_trap_emul_vcpu_run(struct kvm_vcpu *vcpu)
->>           */
->>          kvm_mips_suspend_mm(cpu);
->>
->> -       r = vcpu->arch.vcpu_run(vcpu->run, vcpu);
->> +       r = vcpu->arch.vcpu_run(vcpu);
->>
->>          /* We may have migrated while handling guest exits */
->>          cpu = smp_processor_id();
->> diff --git a/arch/mips/kvm/vz.c b/arch/mips/kvm/vz.c
->> index 94f1d23828e3..c5878fa0636d 100644
->> --- a/arch/mips/kvm/vz.c
->> +++ b/arch/mips/kvm/vz.c
->> @@ -3152,7 +3152,7 @@ static int kvm_vz_vcpu_run(struct kvm_vcpu *vcpu)
->>          kvm_vz_vcpu_load_tlb(vcpu, cpu);
->>          kvm_vz_vcpu_load_wired(vcpu);
->>
->> -       r = vcpu->arch.vcpu_run(vcpu->run, vcpu);
->> +       r = vcpu->arch.vcpu_run(vcpu);
->>
->>          kvm_vz_vcpu_save_wired(vcpu);
->>
->> --
->> 2.17.1
->>
-> 
-> Regards,
-> Huacai
-> 
+Tianjia Zhang (7):
+  KVM: s390: clean up redundant 'kvm_run' parameters
+  KVM: arm64: clean up redundant 'kvm_run' parameters
+  KVM: PPC: Remove redundant kvm_run from vcpu_arch
+  KVM: PPC: clean up redundant 'kvm_run' parameters
+  KVM: PPC: clean up redundant kvm_run parameters in assembly
+  KVM: MIPS: clean up redundant 'kvm_run' parameters
+  KVM: MIPS: clean up redundant kvm_run parameters in assembly
+
+ arch/arm64/include/asm/kvm_coproc.h      |  12 +--
+ arch/arm64/include/asm/kvm_host.h        |  11 +--
+ arch/arm64/include/asm/kvm_mmu.h         |   2 +-
+ arch/arm64/kvm/handle_exit.c             |  36 +++----
+ arch/arm64/kvm/sys_regs.c                |  13 ++-
+ arch/mips/include/asm/kvm_host.h         |  32 +------
+ arch/mips/kvm/emulate.c                  |  59 ++++--------
+ arch/mips/kvm/entry.c                    |  21 ++---
+ arch/mips/kvm/mips.c                     |  14 +--
+ arch/mips/kvm/trap_emul.c                | 114 ++++++++++-------------
+ arch/mips/kvm/vz.c                       |  26 ++----
+ arch/powerpc/include/asm/kvm_book3s.h    |  16 ++--
+ arch/powerpc/include/asm/kvm_host.h      |   1 -
+ arch/powerpc/include/asm/kvm_ppc.h       |  27 +++---
+ arch/powerpc/kvm/book3s.c                |   4 +-
+ arch/powerpc/kvm/book3s.h                |   2 +-
+ arch/powerpc/kvm/book3s_64_mmu_hv.c      |  12 +--
+ arch/powerpc/kvm/book3s_64_mmu_radix.c   |   4 +-
+ arch/powerpc/kvm/book3s_emulate.c        |  10 +-
+ arch/powerpc/kvm/book3s_hv.c             |  64 ++++++-------
+ arch/powerpc/kvm/book3s_hv_nested.c      |  12 +--
+ arch/powerpc/kvm/book3s_interrupts.S     |  17 ++--
+ arch/powerpc/kvm/book3s_paired_singles.c |  72 +++++++-------
+ arch/powerpc/kvm/book3s_pr.c             |  33 ++++---
+ arch/powerpc/kvm/booke.c                 |  39 ++++----
+ arch/powerpc/kvm/booke.h                 |   8 +-
+ arch/powerpc/kvm/booke_emulate.c         |   2 +-
+ arch/powerpc/kvm/booke_interrupts.S      |   9 +-
+ arch/powerpc/kvm/bookehv_interrupts.S    |  10 +-
+ arch/powerpc/kvm/e500_emulate.c          |  15 ++-
+ arch/powerpc/kvm/emulate.c               |  10 +-
+ arch/powerpc/kvm/emulate_loadstore.c     |  32 +++----
+ arch/powerpc/kvm/powerpc.c               |  72 +++++++-------
+ arch/powerpc/kvm/trace_hv.h              |   6 +-
+ arch/s390/kvm/kvm-s390.c                 |  23 +++--
+ virt/kvm/arm/arm.c                       |   6 +-
+ virt/kvm/arm/mmio.c                      |  11 ++-
+ virt/kvm/arm/mmu.c                       |   5 +-
+ 38 files changed, 392 insertions(+), 470 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
