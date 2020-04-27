@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D36131B98FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:49:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46E521B9901
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:50:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=frHkJN4RHlZ0Hay1rO/+9xvtxQA3n3YbuIdd+n0+lCA=; b=VriHjqlPi9N+T4
-	/sBBeiITxUX5r79lN8AUJL+9VOb6kQeI0lVycZo/1VbPjZu9fDMFRRavyi8xhYozgW+48jw9C/ETM
-	gdFZtnESyZr4V5uQw06Lex0Lnvpvh4g8uqvx6GZ59wevHtMWXJwzae2F9eJN4bhaoXmC90qtyONtl
-	PuA++NOKLRt/A2Khmggso4grH2QVmlRGx+mvk62rFYCwBZfi5Yyai4eucUVrG35fqjOWspiycXlHl
-	fEWm5SuwRmVP2Jm592S67dtbls9jMlym4ysaUJ8vY+OoaknoVWJySt6u9gqHtczdriOKyiLKogglI
-	FBEWJ4X35pj4ulLU9h3Q==;
+	List-Owner; bh=5J+j3mZv9QChrwY/OUQwET3RYy+Kvw+u7NV2Mj7kd60=; b=cPi+7kf5ehxmuu
+	KEVRKXPAoEd/tbJLMuNapfw/jSKovV8ms9IkrhjzPoNQNXffdDbDIoLcaCr8y3Ch2IDv4lHLm3DGj
+	CjXufKzx04OMaBgcLZXveAp5fmJWeehI3LwjFdNTSnAt+Rf+COSSNazF40Xa6YaLZoZtOKYue72yP
+	rCkRoZaXxJI1falhfu/FkYlu49rVbmqz8aBkXfeeAkFpASu8FeLehkQEpNAe1U7bTBvFEL2OlASGs
+	vABcDXA2hHvjjRqDoZDtrSJKubi6Vcg0w+Yqs/zFKd4p332tnv7nAkScciCgm1DV30B71LE/71cSH
+	wVQN0T+ms8/530zy2+8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSyWP-0004CH-Hw; Mon, 27 Apr 2020 07:49:45 +0000
+	id 1jSyWv-0004R2-Ba; Mon, 27 Apr 2020 07:50:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyW2-0003zq-Eh; Mon, 27 Apr 2020 07:49:36 +0000
+ id 1jSyWK-0004F0-E4; Mon, 27 Apr 2020 07:49:41 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8EC0B20728;
- Mon, 27 Apr 2020 07:49:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id ABACA206B6;
+ Mon, 27 Apr 2020 07:49:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587973761;
- bh=gUEF4e+I+5LtkJ+KR7VccemOQ0DrTjrOVZmMSY/BJKo=;
+ s=default; t=1587973780;
+ bh=/8brvwQoEX2EnJSv6s+0ZBz9o81uCnXLIWCUSBACy34=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=tM0MCyqEbiKAHZFfSbvrulUKGmf63KAanMfop+yxY/F6lhWkM0zaQHm6rQTTcpbFO
- HOLa2VqGqzrsyLsi9beTUDK/YUbfTbFXhIaq0lXicUQ2nltnRNrmYVf2nEyZ5hYtxm
- L4qNVWY1RZq3IAt1JnQvY/wDdHSjRRAJ1cpgYvGY=
-Date: Mon, 27 Apr 2020 08:49:16 +0100
+ b=XXWldtU0yIsdIb51ZeaGkI+YsJ1FlbG49AyQHS3oEZgGmj7s3bCk0di1gzcww/GQn
+ eBjh7vgXsm2OgAvkbxmRGsFdBN2DqTIXOlEtLRiSFkAGKaLiSSjLnnsTAGN3EkEr0h
+ wWXP6s+LUDwPK7gCoxbl50U3M3XheUkHvdEnWYqM=
+Date: Mon, 27 Apr 2020 08:49:34 +0100
 From: Will Deacon <will@kernel.org>
 To: Zong Li <zong.li@sifive.com>
-Subject: Re: [PATCH 1/4] mm: add DEBUG_WX support
-Message-ID: <20200427074915.GA11787@willie-the-truck>
+Subject: Re: [PATCH 4/4] arm64: mm: use ARCH_HAS_DEBUG_WX instead of arch
+ defined
+Message-ID: <20200427074933.GB11787@willie-the-truck>
 References: <cover.1587455584.git.zong.li@sifive.com>
- <23980cd0f0e5d79e24a92169116407c75bcc650d.1587455584.git.zong.li@sifive.com>
+ <e19709e7576f65e303245fe520cad5f7bae72763.1587455584.git.zong.li@sifive.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <23980cd0f0e5d79e24a92169116407c75bcc650d.1587455584.git.zong.li@sifive.com>
+In-Reply-To: <e19709e7576f65e303245fe520cad5f7bae72763.1587455584.git.zong.li@sifive.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_004930_770812_2100EB41 
-X-CRM114-Status: GOOD (  17.08  )
+X-CRM114-CacheID: sfid-20200427_004940_513990_292BACB2 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,41 +88,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 04:17:12PM +0800, Zong Li wrote:
-> Some architectures support DEBUG_WX function, it's verbatim from each
-> others. Extract to mm/Kconfig.debug for shared use.
+On Tue, Apr 21, 2020 at 04:17:15PM +0800, Zong Li wrote:
+> Extract DEBUG_WX to mm/Kconfig.debug for shared use. Change to use
+> ARCH_HAS_DEBUG_WX instead of DEBUG_WX defined by arch port.
 > 
 > Signed-off-by: Zong Li <zong.li@sifive.com>
-> Suggested-by: Palmer Dabbelt <palmer@dabbelt.com>
 > ---
->  mm/Kconfig.debug | 33 +++++++++++++++++++++++++++++++++
->  1 file changed, 33 insertions(+)
-> 
-> diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
-> index 0271b22e063f..077458ad968d 100644
-> --- a/mm/Kconfig.debug
-> +++ b/mm/Kconfig.debug
-> @@ -118,6 +118,39 @@ config DEBUG_RODATA_TEST
->      ---help---
->        This option enables a testcase for the setting rodata read-only.
->  
-> +config ARCH_HAS_DEBUG_WX
-> +	bool
-> +
-> +config DEBUG_WX
-> +	bool "Warn on W+X mappings at boot"
-> +	depends on ARCH_HAS_DEBUG_WX
-> +	select PTDUMP_CORE
-> +	help
-> +	  Generate a warning if any W+X mappings are found at boot.
-> +
-> +	  This is useful for discovering cases where the kernel is leaving
-> +	  W+X mappings after applying NX, as such mappings are a security risk.
-> +	  This check also includes UXN, which should be set on all kernel
-> +	  mappings.
+>  arch/arm64/Kconfig       |  1 +
+>  arch/arm64/Kconfig.debug | 29 -----------------------------
+>  2 files changed, 1 insertion(+), 29 deletions(-)
 
-"UXN" is the name of a bit in the arm64 page-table descriptors, so this
-should be reworded now that it's in generic help text.
+Acked-by: Will Deacon <will@kernel.org>
 
 Will
 
