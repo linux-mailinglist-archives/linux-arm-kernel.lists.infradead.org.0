@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F4181BB08E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 23:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30E221BB090
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 23:33:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6dMZzzh5sDGADIZPC4ewNMv5XUgUc4qgYcIJ7XfU0n8=; b=QVOCPh8h/XFi69
-	KV2lRuHXTewLAq3kyOpfhUN3h5KPxhueEJ//rGtzMt6aOiv15m8t5xPXMJsxu2MgfDy+BXA+GtD9x
-	Uf4CRVc1PUZHKUvcLob/DzS/md9e+acPQcvChTmm5po4s+MduB3CglxygUUwoJ1faQBuSa5vX1lsO
-	AeV6GqRNNbLpNqoG6vdup5gK2O0XDaKDJUWmEf4wNITJKujmtgkauAMLxqBNVaimku4GF16EE1fqJ
-	a38AocQedG6hZ8317RirpVc2z+2w5CxUvSpdCoy/4deen5OdTkyQhaui1OnSOzy7FRfgqVNhHwksN
-	UzBTQp1hBgAIOEhAbeYA==;
+	List-Owner; bh=3JZsiD7eQkxAkSEnyMc80QY1YejWHmrAJB/1xPE4pzA=; b=uGdGF62LWmW1Eu
+	3Q6fn7sEq7khp0aM796Mv+eKqaH9e9kQkdeXmsmpHmI64As78pn9ZV2Rt4jff3F36QyN2B6wI2+g9
+	QuM7E6c4WJleJVIN4xSTH303bO0Ny/DlYwXOkPZ1V4UPvT+B7YFElmz3eWuW4JdoQYmtilsdj2JwN
+	zPSgiXniC9ybahHV55cSvvQIlpkl8AYLI8Sz1wSwNnTbZEBtXVtZP9BKf+CtrPLB6GOk5uDOFBEsx
+	xVfpKvTNPh961y6HdWevzCb25bO6ywby+SRtru5sjRybmH5UuVIHW3GKgwIh1GWb4ePwNt3GH0mo9
+	6g23mdOQvncLgXBmz4sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTBMq-00087n-Pw; Mon, 27 Apr 2020 21:32:44 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jTBN7-0008Of-19; Mon, 27 Apr 2020 21:33:01 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTBMW-00084u-33; Mon, 27 Apr 2020 21:32:25 +0000
-Received: by mail-ot1-f66.google.com with SMTP id i27so28961465ota.7;
- Mon, 27 Apr 2020 14:32:23 -0700 (PDT)
+ id 1jTBMs-0008Ko-HJ; Mon, 27 Apr 2020 21:32:47 +0000
+Received: by mail-ot1-f67.google.com with SMTP id j4so29013298otr.11;
+ Mon, 27 Apr 2020 14:32:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9Lh+W+OrenE6K2KqGrfInjEdQRXHsGOZ4lqRiJD6MSc=;
- b=avUx1PS4nb8n71MFYFGZoc7K//L3GeKERFL3BnwMDqwm/WekojBaCIkP/+G5FFo2tR
- xmpewBPmRgKjg9JXHMaL+SCeM6jLPfXFo9C09Fs71zATDK+JAsnWQgEoZqL2WazlgaSh
- 2UECDswGBbTNAr+aPZGT2xmlIRy0M0otrlJc17U9VQKsGxEo3Vc/nq5PU3MmRGlDkDsZ
- KI48aO9DGN9ugEOcgYEZQ9pjKM5fBRIRREmw1QiN0QYH5Ik+T54n77qzZ/lsLxnxOKGE
- qvry1pv2mM5bbzQeIMANjuS41N0pfVGa0c1cLZdeSRL+JAb4FEtVzietx9lrwLHx30FO
- G/bw==
-X-Gm-Message-State: AGi0Puay9rMv7Gh2L66QkX4lP2wH0+AaznwhF/iO1vMU3umCaNMaQ8b0
- 7UanHKviWiBkC2plSm5/tw==
-X-Google-Smtp-Source: APiQypIC4V0z/17lmRjDdI8o+qgwAzOCFqathXFshoqhtN6/h6jNp7YOpy+L5UvfgaRJ8EfmPt4ziQ==
-X-Received: by 2002:a9d:7304:: with SMTP id e4mr10136654otk.243.1588023143159; 
- Mon, 27 Apr 2020 14:32:23 -0700 (PDT)
+ bh=VhX0m7XiVUavIDrF8Px+dNHE5Y+gy8GzoSAbvu2Xn34=;
+ b=iBnP0ebLIeKHLx8q06MM0FJOLR1bsWI8GlZa+zfcfFouLDeJHC5vx1srZMazcOSYHf
+ jfSPnUJ8fboF7L5bKPJpdo7toS2tUIDfI/V7rVeGlYiWDJRIheqi+kmYuBLuf1w4wCJx
+ ArI5HapWQE0axt6DfGqQ0f629NK2L4dXxSVSsBnqMjUhf4FvwxPqwSCixcTqmGliShse
+ S5zQDBPb1JaHFf+UYW3OpaB2/OMW678pmhhNrDi4NqevqyfEcVGqUTrOxPzNArR3Lr66
+ xf+mUOfHPH1+wyJHTGAtGUVcne4NgZHZ/gGbCZFyNBk0/nSFrdoIEoALMFVNYix0Ou6F
+ 8nNg==
+X-Gm-Message-State: AGi0PuZVVrlDEWKHbzyoPzJ2N9fRxYMXGzXqCKPdCqesNhFmQ/ZoG+3s
+ zM/ghZDC7lag1zMcC/EQ+eZHo44=
+X-Google-Smtp-Source: APiQypKaNxXTFDM9s/8lHp/0DfHRTlPNydLnDnh9/hUQgcEGUw3vp0iDQdHVuaMxyOuo5fm7o/BuuA==
+X-Received: by 2002:aca:4f09:: with SMTP id d9mr631326oib.172.1588023164944;
+ Mon, 27 Apr 2020 14:32:44 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s73sm4337780oih.14.2020.04.27.14.32.21
+ by smtp.gmail.com with ESMTPSA id j70sm90813oib.53.2020.04.27.14.32.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Apr 2020 14:32:22 -0700 (PDT)
-Received: (nullmailer pid 31871 invoked by uid 1000);
- Mon, 27 Apr 2020 21:32:21 -0000
-Date: Mon, 27 Apr 2020 16:32:21 -0500
+ Mon, 27 Apr 2020 14:32:44 -0700 (PDT)
+Received: (nullmailer pid 32460 invoked by uid 1000);
+ Mon, 27 Apr 2020 21:32:42 -0000
+Date: Mon, 27 Apr 2020 16:32:42 -0500
 From: Rob Herring <robh@kernel.org>
-To: Matheus Castello <matheus@castello.eng.br>
-Subject: Re: [PATCH v4 2/3] dt-bindings: arm: actions: Document Caninos
- Loucos Labrador
-Message-ID: <20200427213221.GA31480@bogus>
-References: <f9e48fba-0da8-7ba9-d44a-7909067a1df1@castello.eng.br>
- <20200426165835.105970-1-matheus@castello.eng.br>
- <20200426165835.105970-3-matheus@castello.eng.br>
+To: EastL <EastL.Lee@mediatek.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: dmaengine: Add MediaTek
+ Command-Queue DMA controller bindings
+Message-ID: <20200427213242.GA32009@bogus>
+References: <1587955977-17207-1-git-send-email-EastL.Lee@mediatek.com>
+ <1587955977-17207-2-git-send-email-EastL.Lee@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200426165835.105970-3-matheus@castello.eng.br>
+In-Reply-To: <1587955977-17207-2-git-send-email-EastL.Lee@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_143224_131228_A4F46D36 
-X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-CacheID: sfid-20200427_143246_576028_0E2D6C77 
+X-CRM114-Status: UNSURE (   8.44  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,9 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -81,6 +78,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -95,44 +94,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Matheus Castello <matheus@castello.eng.br>, linux-actions@lists.infradead.org,
- linux-kernel@vger.kernel.org, afaerber@suse.de, robh+dt@kernel.org,
- manivannan.sadhasivam@linaro.org, igor.lima@lsitec.org.br,
- edgar.righi@lsitec.org.br, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ EastL <EastL.Lee@mediatek.com>, dmaengine@vger.kernel.org, vkoul@kernel.org,
+ robh+dt@kernel.org, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 26 Apr 2020 13:58:34 -0300, Matheus Castello wrote:
-> Update the documentation to add the Caninos Loucos Labrador. Labrador
-> project consists of a computer on module based on the Actions Semi S500
-> processor and the Labrador base board.
+On Mon, 27 Apr 2020 10:52:56 +0800, EastL wrote:
+> Document the devicetree bindings for MediaTek Command-Queue DMA controller
+> which could be found on MT6779 SoC or other similar Mediatek SoCs.
 > 
-> Signed-off-by: Matheus Castello <matheus@castello.eng.br>
-> Acked-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: EastL <EastL.Lee@mediatek.com>
 > ---
->  Documentation/devicetree/bindings/arm/actions.yaml | 11 ++++++++---
->  1 file changed, 8 insertions(+), 3 deletions(-)
+>  .../devicetree/bindings/dma/mtk-cqdma.yaml         | 98 ++++++++++++++++++++++
+>  1 file changed, 98 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/dma/mtk-cqdma.yaml
 > 
 
 My bot found errors running 'make dt_binding_check' on your patch:
 
-Documentation/devicetree/bindings/arm/actions.yaml:  while scanning for the next token
-found character that cannot start any token
-  in "<unicode string>", line 24, column 1
-Documentation/devicetree/bindings/Makefile:11: recipe for target 'Documentation/devicetree/bindings/arm/actions.example.dts' failed
-make[1]: *** [Documentation/devicetree/bindings/arm/actions.example.dts] Error 1
-make[1]: *** Waiting for unfinished jobs....
-warning: no schema found in file: Documentation/devicetree/bindings/arm/actions.yaml
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/actions.yaml: ignoring, error parsing file
-warning: no schema found in file: Documentation/devicetree/bindings/arm/actions.yaml
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/actions.yaml: ignoring, error parsing file
-Makefile:1300: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/mtk-cqdma.example.dt.yaml: dma-controller@10212000: interrupts: [[0, 139, 8], [0, 140, 8], [0, 141, 8]] is too short
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/mtk-cqdma.example.dt.yaml: dma-controller@10212000: reg: [[0, 270606336, 0, 128], [0, 270606464, 0, 128], [0, 270606592, 0, 128]] is too short
 
-See https://patchwork.ozlabs.org/patch/1277145
+See https://patchwork.ozlabs.org/patch/1277292
 
 If you already ran 'make dt_binding_check' and didn't see the above
 error(s), then make sure dt-schema is up to date:
