@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 189731BB20C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 01:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 788A81BB223
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 01:46:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VjOfXnUEl4nSbAnc2XEm3eTntLUz+LW/uR935uHiQG8=; b=PB5wN2I3iEXLjK
-	ex39frhssFNXtHFqjGaO7Dos4njZ2NB9smDC8MlYtfhnA6BrnyWvXxV65wBXlcbRFtt0t+nFrBOYV
-	5rs6nBnd9SDeegAi0i1pN3h5/Vq56WopEzIJcaTHvDNDLshtGI5Ut4/aAMLFpVnQfbcbJbRXC1j02
-	Hf+GQKrKLnyeGsHZcFeSd9peQnNbnx36oweiDXsE1Qe5cwsjPRlVK37BfYgfEf1adQoS0LkHhJKOu
-	/238xeqXGxAoNEX5XkbqRlBHXGUDjBFC4S9DaoYrPnSxCA15mDQVoH0CRlxpoxHDuDq6y5/wa8UR7
-	FluQdhH4X1mgGjZf8z7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J+QDSwZ2qqA06MBgoNZsK7qYr5+3BJAaAOVCCE8feLs=; b=UbBvIy3TowBbX9
+	5aINx88oQ5cYePdpngSHx1F0tfnG/pNPcOQYlE6KLtIna5fBA82F5kxKowwBHuz1QTPlIpRp39or4
+	TAswcvychRmccAJakqlswSksvn1rqi9PQZRECocn4dEsaH3hZ+AU5+xRzDAAovqY0B42zqWTHdy1g
+	A5nyQ18pBTJ4Toa7NlqmQyWYiNY8uscueTStWXE7utu8GrxLrT+9Ppy7Zfm9jJiTCx2datS9xgpJe
+	iRMKR/VWC0RTBK4bDHua1lQ+eWgYSDddjD+K1CTuCIEoDM3AioqPMLluB4DxCkExFRs5y7j5HgSYs
+	i9W/o6T8xlzpSlGqr2wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTDFR-0000D3-A1; Mon, 27 Apr 2020 23:33:13 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jTDRh-000135-3R; Mon, 27 Apr 2020 23:45:53 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTDFJ-0000By-WF
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 23:33:07 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w3so7597628plz.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 16:33:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=psE/TVWQ8r0hHEn8TaByg+EQGlqN2iYLLSNjuoRCa9k=;
- b=b8SHhWvZTnoeLLp7IhgorcpvGtX2VBtc6vtxpVWuQoeDabjj0nAmuP6/TiuQUuiRNh
- etINFZ53Wf2AxOzz/nSnynJ4yALdIG4FmtD9L7neNUYUJq9Z2xbTJRF74DW8l6RrICQy
- 4m3riY6RULFDgxpguilcjn9XbHCWm0rHcTDJs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=psE/TVWQ8r0hHEn8TaByg+EQGlqN2iYLLSNjuoRCa9k=;
- b=G3MEQ5SAEZ3sK/mH8W5aQwjrK8TPhAAn/aD4ihxCKc8NP4VWGGIPpitUjOJJwCuihu
- lthswh4rW+WLv/HRfvJy429+KakjVV8uk3PvzMZjZIMerghNPgjnTkE5PKhDluRG5Ryt
- FN7DLQLqbfovNt0jM2meJvEiM+dO602nf3auf+hCUo9IpZFnVKIOzdzbtUTm8+w9V+OJ
- nzcanrq5Pjqq8NzewutOnk6Et/CqFdtPO+j0yulXrBLE1TdvEEglqH/Qce/av0iMPz2Y
- oUU16HLYAsCAQaCNrYeAsAYfCdmpGP0X3dXi2WxSlqN1TP96BY9D/asrXb2eQ/GO/B++
- To+Q==
-X-Gm-Message-State: AGi0PuanFiFyhI/xa4kxCAyO4jdCuDpW1JDIFkdV6L90obicoZImNvWG
- HLUECn8hH8ihKu6lQScAX7wmLA==
-X-Google-Smtp-Source: APiQypIltu09rqzr9JI0Ay36qw8wC98n1LszdiP6AYWaeNG61gnrxNMq7cNJFmvmNXJIZr8u6f1mqQ==
-X-Received: by 2002:a17:902:a98a:: with SMTP id
- bh10mr24753613plb.340.1588030381558; 
- Mon, 27 Apr 2020 16:33:01 -0700 (PDT)
-Received: from evgreen-glaptop.cheshire.ch
- ([2601:646:c780:1404:1c5a:73fa:6d5a:5a3c])
- by smtp.gmail.com with ESMTPSA id u15sm308980pjm.47.2020.04.27.16.33.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 27 Apr 2020 16:33:00 -0700 (PDT)
-From: Evan Green <evgreen@chromium.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: [PATCH] spi: pxa2xx: Apply CS clk quirk to BXT
-Date: Mon, 27 Apr 2020 16:32:48 -0700
-Message-Id: <20200427163238.1.Ib1faaabe236e37ea73be9b8dcc6aa034cb3c8804@changeid>
-X-Mailer: git-send-email 2.24.1
+ id 1jTDRY-00011V-EB
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 23:45:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588031140;
+ h=from:from:reply-to:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=nwIFvSz2kGvMTFuz5rDRpT4BSTUSO/yU5bVRJ5mbMLk=;
+ b=FHqdYR/QRhkf6RwyCJhwbE/RUK17oC7ohROBzL+Rd2qMeyueVluDdONhX6XkqoELKLj0nu
+ Q4EG1Zh923WuenyMo9kt3T/Te9RNY4jfPFYLBnkRfdH2SvBDw0Qwa+wNMx0U0ninmWtd3k
+ yaBY/2rffanWF4a8/ipczjbR4BEsWEg=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-239-3LIp2cJjPdOmC7vAIE7Rag-1; Mon, 27 Apr 2020 19:45:38 -0400
+X-MC-Unique: 3LIp2cJjPdOmC7vAIE7Rag-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E28DE107ACF4;
+ Mon, 27 Apr 2020 23:45:36 +0000 (UTC)
+Received: from localhost.localdomain (vpn2-54-127.bne.redhat.com
+ [10.64.54.127])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 164A160638;
+ Mon, 27 Apr 2020 23:45:34 +0000 (UTC)
+Subject: Re: [PATCH] arm64/mm: Use phys_to_page() to access pgtable memory
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20200424044854.15760-1-gshan@redhat.com>
+ <20200424092208.GA1167@C02TD0UTHF1T.local>
+From: Gavin Shan <gshan@redhat.com>
+Message-ID: <a4ad069b-736b-d283-9768-86695eae1d72@redhat.com>
+Date: Tue, 28 Apr 2020 09:45:32 +1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
+In-Reply-To: <20200424092208.GA1167@C02TD0UTHF1T.local>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_163306_059456_0EDA72E9 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20200427_164544_698621_36A1F453 
+X-CRM114-Status: GOOD (  18.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,54 +93,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Shobhit Srivastava <shobhit.srivastava@intel.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
- linux-spi@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Gavin Shan <gshan@redhat.com>
+Cc: catalin.marinas@arm.com, shan.gavin@gmail.com, will@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With a couple allies at Intel, and much badgering, I got confirmation
-from Intel that at least BXT suffers from the same SPI chip-select
-issue as Cannonlake (and beyond). The issue being that after going
-through runtime suspend/resume, toggling the chip-select line without
-also sending data does nothing.
+Hi Mark,
 
-Add the quirk to BXT to briefly toggle dynamic clock gating off and
-on, forcing the fabric to wake up enough to notice the CS register
-change.
+On 4/24/20 7:22 PM, Mark Rutland wrote:
+> On Fri, Apr 24, 2020 at 02:48:54PM +1000, Gavin Shan wrote:
+>> The macros {pgd, pud, pmd}_page() retrieves the page struct of the
+>> corresponding page frame, which is reserved as page table. There
+>> is already a macro (phys_to_page), defined in memory.h, to convert
+>> the physical address to the page struct. So it's reasonable to
+>> use that in pgtable.h.
+>>
+>> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> 
+> It might be worth pointing out that phys_to_page() is defined as:
+> 
+> #define phys_to_page(phys)      (pfn_to_page(__phys_to_pfn(phys)))
+> 
+> ... so this is obviously equivalent.
+> 
+> Given that, and given we already explicitly include <asm/memory.h>, this
+> looks like a nice cleanup to me.
+> 
+> With or without the commit message addition:
+> 
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+> 
+> Mark.
+> 
 
-Signed-off-by: Evan Green <evgreen@chromium.org>
-Cc: Shobhit Srivastava <shobhit.srivastava@intel.com>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
----
+Thanks for the comments. I will post v2 shortly, which has the improved
+commit log and your reviewed-by.
 
-I don't actually have a BXT (Broxton/Apollolake?) system to test this.
-To be honest I suspect the issue is there in older generations as well,
-but I couldn't get Intel to confirm that, so this seemed like the
-only safe change.
----
- drivers/spi/spi-pxa2xx.c | 1 +
- 1 file changed, 1 insertion(+)
+Thanks,
+Gavin
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 73d2a65d0b6ef..20dcbd35611a7 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -150,6 +150,7 @@ static const struct lpss_config lpss_platforms[] = {
- 		.tx_threshold_hi = 48,
- 		.cs_sel_shift = 8,
- 		.cs_sel_mask = 3 << 8,
-+		.cs_clk_stays_gated = true,
- 	},
- 	{	/* LPSS_CNL_SSP */
- 		.offset = 0x200,
--- 
-2.24.1
+>> ---
+>>   arch/arm64/include/asm/pgtable.h | 6 +++---
+>>   1 file changed, 3 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+>> index 538c85e62f86..8c20e2bd6287 100644
+>> --- a/arch/arm64/include/asm/pgtable.h
+>> +++ b/arch/arm64/include/asm/pgtable.h
+>> @@ -508,7 +508,7 @@ static inline void pte_unmap(pte_t *pte) { }
+>>   #define pte_set_fixmap_offset(pmd, addr)	pte_set_fixmap(pte_offset_phys(pmd, addr))
+>>   #define pte_clear_fixmap()		clear_fixmap(FIX_PTE)
+>>   
+>> -#define pmd_page(pmd)		pfn_to_page(__phys_to_pfn(__pmd_to_phys(pmd)))
+>> +#define pmd_page(pmd)			phys_to_page(__pmd_to_phys(pmd))
+>>   
+>>   /* use ONLY for statically allocated translation tables */
+>>   #define pte_offset_kimg(dir,addr)	((pte_t *)__phys_to_kimg(pte_offset_phys((dir), (addr))))
+>> @@ -566,7 +566,7 @@ static inline phys_addr_t pud_page_paddr(pud_t pud)
+>>   #define pmd_set_fixmap_offset(pud, addr)	pmd_set_fixmap(pmd_offset_phys(pud, addr))
+>>   #define pmd_clear_fixmap()		clear_fixmap(FIX_PMD)
+>>   
+>> -#define pud_page(pud)		pfn_to_page(__phys_to_pfn(__pud_to_phys(pud)))
+>> +#define pud_page(pud)			phys_to_page(__pud_to_phys(pud))
+>>   
+>>   /* use ONLY for statically allocated translation tables */
+>>   #define pmd_offset_kimg(dir,addr)	((pmd_t *)__phys_to_kimg(pmd_offset_phys((dir), (addr))))
+>> @@ -624,7 +624,7 @@ static inline phys_addr_t pgd_page_paddr(pgd_t pgd)
+>>   #define pud_set_fixmap_offset(pgd, addr)	pud_set_fixmap(pud_offset_phys(pgd, addr))
+>>   #define pud_clear_fixmap()		clear_fixmap(FIX_PUD)
+>>   
+>> -#define pgd_page(pgd)		pfn_to_page(__phys_to_pfn(__pgd_to_phys(pgd)))
+>> +#define pgd_page(pgd)			phys_to_page(__pgd_to_phys(pgd))
+>>   
+>>   /* use ONLY for statically allocated translation tables */
+>>   #define pud_offset_kimg(dir,addr)	((pud_t *)__phys_to_kimg(pud_offset_phys((dir), (addr))))
+>> -- 
+>> 2.23.0
+>>
+> 
 
 
 _______________________________________________
