@@ -2,59 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E2EB1BA559
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:48:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 844271BA578
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:55:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7hzb0BILwUdru418ce2r7ZS5EFh2LttsZ8EjbgO4ank=; b=YGMRFYU3Ddw/EW2yrXc/eg+Vs
-	S6HfyVKH6AnJyTsFHMZVuAiEs4n9qSKzfbWG9dVZfuciTCOWpoH8+fhbEuO3qnfSY5zGELa3S4K8C
-	o0H5/NHpOIflq+Rsd+WMTBxZ17RfUk1MMNSXtGEMiifHEuJ+FyXe37rWY/+6/5yCtVA6zsXzVb+Jm
-	UMg/9gKNyQQxi0Zdfmo8PZ0DcHyOeviEoYMJGU8SZJ0DRhRbyhawOoH3sd2D6t9/Fft3UfXGG4x63
-	iJ8b6pl9wyXfFFCZvKx0JQRStPrUlLFKbF139N8pDwoaCOmYy3yVeGiglK6whZI0lTAeTb78ycFCM
-	tnvoSEY0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M6fOqK/6wPlBM/j+XD0K/n1eX1agWA4vUS0u/3uAAVg=; b=q54bB+5llJY0M7
+	3hszV/sTviIqG5nTDKJM58mty0L7wr0f2RMUR5u4QpbbiCX836vWXUFJwt+l/Y0XeietfCRtOsW0F
+	o+rf+7Eu424IkQRbiDMDM0jPazcq1wFh9nG841pFwsrsjZjWLvRPmRqhhQAbEmSDQQb1rPwpcBQ8O
+	B6S99twLcgBBhe9qloLBWdTxVT+oywV2QGes7I7j8BU4GEgWUKToOXYldxVGfxhyHHpRGybckhmDu
+	tQyDtTnciX+5EjIzU7E7/oLWC6OXtnBiDJquCMEmhCSlJxCsGp3h6kyvpBReImFUTc9exflWVrgJS
+	VZmcXvD0jKcT1SPM5nJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT47c-0000kx-Tc; Mon, 27 Apr 2020 13:48:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT47T-0000kK-65
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:48:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2EB9D31B;
- Mon, 27 Apr 2020 06:48:21 -0700 (PDT)
-Received: from [10.37.12.144] (unknown [10.37.12.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28FE63F305;
- Mon, 27 Apr 2020 06:48:19 -0700 (PDT)
-Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-To: mike.leach@linaro.org
-References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
- <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
- <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
-Date: Mon, 27 Apr 2020 14:53:13 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1jT4Dq-00056D-SU; Mon, 27 Apr 2020 13:54:58 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jT4Dc-000547-Qf
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:54:47 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g2so7028517plo.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 06:54:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=WkPQMFO/KuaBqYk9Nypu1pA8BIWkzLoSV8j4Q+IbtAM=;
+ b=mWLUMqts+QedHyQoQhdb0FCA64OqMJNyoKu8gmgUTGZ4nNlbJ2oAbBXRzypOSnHPUO
+ 6PKAre5WNsx64Hxwl/NNJh/GKsf1uP4nv7WoRHccxcmFoVeR0EI8mIKkzNA85F7o2dtM
+ 2DgOShqXtoy60ZJgg3YSTxiBQ/qwWaCbn9oJC1jP+j/Dyg8iaJv/Z5jZayfzZu/FBEK8
+ 1fjUO0JUXYEDDrLwcNL3IdgmRy+LDR4mjbiimHO5eKayhKMHn9/gpuA01BxVUkVh0Qgt
+ EtJ7igozKgS3uSCgga+i+4Z3SkqbtOoyea2UhM1ZykOMHA/0nkXLlSp84vod5WZgXtWt
+ a+WA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=WkPQMFO/KuaBqYk9Nypu1pA8BIWkzLoSV8j4Q+IbtAM=;
+ b=dj5GVdPVViW1OG7YwEAxtMJ5O0G9f+RJMPpwqnT9aruF6BhBQES8CAY/25S8+e3v93
+ aGpCvlPeKGDKr6KrvHBZSnV3YmlGx66VSZ8tXhy4sshRtG/T1M1X04oL3fT/5kGDYEzI
+ 7g380Hk4/Cqm846sgjTEFsSHAmvAZCK8DKl53geNSVcT8xbe4QrjY0URsY23L+phMv/8
+ R3NozWN+SaZ3fLpRQD6YYQpHDIzMBwJ12Ed7xEJwCZ3ff3MXyqyP+xKVaGPgZ8Gt/KfT
+ GOvsQOvCKjdgYmZ3/MZrolaRU8On9t28McyYFKMhXCKsvRa2m/AmF+aqfYQ3Uyn1/kyz
+ EM/w==
+X-Gm-Message-State: AGi0PuYb3KnwuGMp/EE+DVnl5oIJClni3fGToRkgEMfrfFenPNnYnnZi
+ 1IJLBKZOHcm+gY78+2KcccQ=
+X-Google-Smtp-Source: APiQypLW04Sx0ZwKYGFg2oMQHSnmLgpVId01PLU5pGKEhnjwHQnIJsaC9bUkvI5F4ZAx2Fcba3vb1A==
+X-Received: by 2002:a17:902:7d85:: with SMTP id
+ a5mr132628plm.106.1587995683444; 
+ Mon, 27 Apr 2020 06:54:43 -0700 (PDT)
+Received: from localhost (c-73-241-114-122.hsd1.ca.comcast.net.
+ [73.241.114.122])
+ by smtp.gmail.com with ESMTPSA id q2sm12689701pfl.174.2020.04.27.06.54.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Apr 2020 06:54:42 -0700 (PDT)
+Date: Mon, 27 Apr 2020 06:54:41 -0700
+From: Richard Cochran <richardcochran@gmail.com>
+To: Yangbo Lu <yangbo.lu@nxp.com>
+Subject: Re: [PATCH] arm64: dts: fsl: add fsl, extts-fifo property for fman ptp
+Message-ID: <20200427135441.GB26508@localhost>
+References: <20200427035131.21109-1-yangbo.lu@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200427035131.21109-1-yangbo.lu@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_064823_311527_E5C10677 
-X-CRM114-Status: GOOD (  21.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200427_065444_871015_3AB94285 
+X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [richardcochran[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,107 +102,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: saiprakash.ranjan@codeaurora.org, mathieu.poirier@linaro.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- swboyd@chromium.org, linux-arm-kernel@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Li Yang <leoyang.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/27/2020 10:45 AM, Mike Leach wrote:
-> HI,
+On Mon, Apr 27, 2020 at 11:51:31AM +0800, Yangbo Lu wrote:
+> The 1588 timer supports external trigger timestamp FIFO on
+> FMan on QorIQ ARM platforms.
 > 
-> On Mon, 27 Apr 2020 at 10:15, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->>
->> On 04/26/2020 03:37 PM, Sai Prakash Ranjan wrote:
->>> Since commit 30af4fb619e5 ("coresight: dynamic-replicator:
->>> Handle multiple connections"), we do not make sure that
->>> the other port is disabled when the dynamic replicator is
->>> enabled. This is seen to cause the CPU hardlockup atleast
->>> on SC7180 SoC with the following topology when enabling ETM
->>> with ETR as the sink via sysfs. Since there is no trace id
->>> logic in coresight yet to make use of multiple sinks in
->>> parallel for different trace sessions, disable the other
->>> port when one port is turned on.
->>>
->>>          etm0_out
->>>          |
->>>      apss_funnel_in0
->>>             |
->>>     apss_merge_funnel_in
->>>             |
->>>         funnel1_in4
->>>          |
->>>      merge_funnel_in1
->>>          |
->>>       swao_funnel_in
->>>             |
->>>           etf_in
->>>          |
->>>     swao_replicator_in
->>>             |
->>>      replicator_in
->>>          |
->>>           etr_in
->>>
->>>     Kernel panic - not syncing: Watchdog detected hard LOCKUP on cpu 0
->>>     CPU: 7 PID: 0 Comm: swapper/7 Tainted: G S  B             5.4.25 #100
->>>     Hardware name: Qualcomm Technologies, Inc. SC7180 IDP (DT)
->>>     Call trace:
->>>      dump_backtrace+0x0/0x188
->>>      show_stack+0x20/0x2c
->>>      dump_stack+0xdc/0x144
->>>      panic+0x168/0x370
->>>      arch_seccomp_spec_mitigate+0x0/0x14
->>>      watchdog_timer_fn+0x68/0x290
->>>      __hrtimer_run_queues+0x264/0x498
->>>      hrtimer_interrupt+0xf0/0x22c
->>>      arch_timer_handler_phys+0x40/0x50
->>>      handle_percpu_devid_irq+0x8c/0x158
->>>      __handle_domain_irq+0x84/0xc4
->>>      gic_handle_irq+0x100/0x1c4
->>>      el1_irq+0xbc/0x180
->>>      arch_cpu_idle+0x3c/0x5c
->>>      default_idle_call+0x1c/0x38
->>>      do_idle+0x100/0x280
->>>      cpu_startup_entry+0x24/0x28
->>>      secondary_start_kernel+0x15c/0x170
->>>     SMP: stopping secondary CPUs
->>>
->>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->>> Tested-by: Stephen Boyd <swboyd@chromium.org>
+> Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
 
-
->>
->> This is not sufficient. You must prevent another session trying to
->> enable the other port of the replicator as this could silently fail
->> the "on-going" session. Not ideal. Fail the attempt to enable a port
->> if the other port is active. You could track this in software and
->> fail early.
->>
->> Suzuki
-> 
-> While I have no issue in principle with not enabling a path to a sink
-> that is not in use - indeed in some cases attaching to unused sinks
-> can cause back-pressure that slows throughput (cf TPIU) - I am
-> concerned that this modification is masking an underlying issue with
-> the platform in question.
-> 
-> Should we decide to enable the diversion of different IDs to different
-> sinks or allow different sessions go to different sinks, then this has
-> potential to fail on the SC7180 SoC - and it will be difficult in
-> future to associate a problem with this discussion.
-
-Mike,
-
-I think thats a good point.
-Sai, please could we narrow down this to the real problem and may be
-work around it for the "device" ? Do we know which sink is causing the
-back pressure ? We could then push the "work around" to the replicator
-it is connected to.
-
-Suzuki
+Acked-by: Richard Cochran <richardcochran@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
