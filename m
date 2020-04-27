@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D57B71B9A7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 10:42:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92D591B9A7E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 10:42:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8tksXKpVP0TBxeCvEoh997OzzIoR6oZRGi57t47dV9U=; b=H8hsdLvdVVRLEK
-	A+G3z1EVOU1kTG5pj86qZqk87NWcPEidT6SSgYUJRYzVwUNE2GbS25vuV7rOk7qDtX3zygQeSx9fx
-	GNrVu5fzDYB13+ioP8KwlJILNFLW0aFUBF/MgETL5Qwd87/TU5j29PUy87rFz2NPf92dYmKx6Yavu
-	OLSNPb1mHm2BrZ3cfBQNm55PdYbSCPkyIHdLxJjSOTWJr6Xk39cEQlZltaRtS/S1Q2plLl0u+gO+E
-	XL3Ty+CLsppvC5CRukeEe3au1IlS/QhH3CBAkn6H/JnBfoKYGyJRHZfwwCs4xfhmWoE/UcghhrH3R
-	b126voTt/F3Ll6XXklYg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=XlQeTLXMUp+H9davOFmIbRRuAQaKDKf2jz8yrRDQY48=; b=ixI1kuWAnsohWkMHCeb5RuVUe3
+	ow0cQ18JDjU6zOepab0rKYvcUt7yc0ZvlwWvZo/Z8m6zN9OQ9B+JeXHDGt+cxtQ5krqh7k6zstbvg
+	mT4jI3tmMs1dRw+4PS9PxG0Krdit6sxkh+F55h+AtFTfrSaTBc9PIBdIFgaVMsgHbRbpEtdPNNgQR
+	OZVJAbvvWv/cQ/K0IjpVTHr+C2P1gFLXEUj0G5hxO/zN0s3BPfPynlevtny12yGyRWe4QO6AaawPk
+	qo91HIcxUSjH1PJ7fwlzI0h+wigqDE0B+TELey04Ocsf9TyRN3xWf+0MjnCdC9S7LmJR8SZwJl1+M
+	GYl7VLrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSzKt-0001kz-4p; Mon, 27 Apr 2020 08:41:55 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jSzLE-0002GT-PK; Mon, 27 Apr 2020 08:42:16 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSzKf-0001kM-QQ
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 08:41:44 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x4so18577953wmj.1
+ id 1jSzKr-0001vd-O7
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 08:41:55 +0000
+Received: by mail-wr1-x442.google.com with SMTP id b11so19478672wrs.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 01:41:41 -0700 (PDT)
+ Mon, 27 Apr 2020 01:41:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=q+3qTB8vdiJNMhvx8hzi3DT09GwmaSicjznmLxZnHMU=;
- b=PlPO+K+ZVXG4h6AYzRYZiT/Mg/TnxPhQG6jDdy/UiadjLnghB/q94aH8yv2YCBDdBk
- lbg7jJr4i1O8R4ho24P+x32vxCmpPVw+14R3/OyMz/DSzinisGZvE8jXzoTk+GBreY15
- gs7ZaOshBd/J5ccfgajHzJn4rCVmbwoQ1fbjDrZONx+4BmMu2IWxQ2rXS63GWqiFfSnF
- bdbdQEi5ehZJt6rn36/FtFrxaeBxupSZgU2yLImuLSAz4QveJeH1ur4wCpvMC6CLbTDe
- hJfvMP23nAaiRsI0OcTfoucE7wBUPPSebhqSlbmuGd/uO26lNZrxGjEwHTrn3eekrxP1
- mB4A==
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=8DTpZ7QTAlg896NKaUsrKf14877jsurbWtqJgSM1X8Q=;
+ b=PZD3quaPIQ9tiPvCvWJ2uQoeuPgAd1sOCq9CwAQOnqSvpQjqtxjrO52MrMwoR+SrWU
+ I9fGX6jmA8CUm7OYAWf5yIczA6MeAQssu3Bq5UqyaUmidJ2TDz8ux2GWsBiR6A7LxZJI
+ Unh9imc3LyCceAdy+3ZWRXpQ+9UT2r4rHR36rKUKe4MrDQ5vNH7qTAQi7+NcJaiHHWBN
+ 21/ppNC3BEAUIIRM9GNHfZjRZIhoM03Gk3KNPOMZfKBICHqwUEzHs+qJ2AY/i2684EM9
+ X/5VVGs/GXWqVuMOyw3NJ/y9hIu5YwdIkv6Pb44NOZ+yNEP9s5DKOQc62A9KEnbwG8bU
+ LFuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=q+3qTB8vdiJNMhvx8hzi3DT09GwmaSicjznmLxZnHMU=;
- b=qqF4qA5jMWBkmoBphvYXc/3mG4kuxsTXqwBiB4nBjTtmzIUggs1Y/CHXhYJOD+HgLd
- j/Y2REHP1skRgPeyVHW8QEdEgBTMmUvEXr55D2LoXPaIfX8Cjgv9IHp7UCcNeVpCuZeE
- BJfKQrqrGcMNSNTvSJiBDGoMyzlGubNmhRLx0KALdelCAo1/NAhwqxwdwYO34IFTsob3
- b47biY/N8OwV+5VpxRr6OgKmWRMb7/dPSj+fv+RKhJeB1ZaStK/TVPSMRr8GyjpubQAc
- ZBe4UKMgkEew9/aeKVklhr31+JlQBAyC8TjlSPUp1Qkm2hjvCtOCMeSPf0JEqE7uIF9w
- rYJw==
-X-Gm-Message-State: AGi0PuZGWi60k8/Ub04RvhuBsE44IEvCIVdcBwgzbB5UcM3BDD9x/AVa
- vc6xuLDWc2AGjf1oTxsPgt8zYw==
-X-Google-Smtp-Source: APiQypLpItyIVbux5OF/jMvqVyfPZTICd0Ix59+V34Y6r9Tgqj/BJ18a+Ffs9ATI5haTGuHkMp18Gg==
-X-Received: by 2002:a1c:b445:: with SMTP id d66mr26002854wmf.187.1587976899888; 
- Mon, 27 Apr 2020 01:41:39 -0700 (PDT)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id t17sm19515670wro.2.2020.04.27.01.41.38
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=8DTpZ7QTAlg896NKaUsrKf14877jsurbWtqJgSM1X8Q=;
+ b=Mf5i7X1rDREQFyZmCbpoONC2g9oWkwXpONeSkJqUdtqFloa0pPdVCxLfLDUxhCOSN3
+ oZMfHZbOFtwWdgruXDtEyZQPWz1JPaX9SjzqubA8q0wn5/1lM/mXQeZ5aBm/FMCKD0km
+ cvHaROz9ErZwm8x7dHdxPOmbsDF9qe5/v7UdQY3SQzlFBrU0ZR8EOyRNg4y8Z0QAGR84
+ bRATP/MQmqR12iIqE6A7aXGh421onK0icSscEOQbh3lMcJo36TOpesVqjJ4nS1HN6+NE
+ 3P4wR57Q0oRiKKqt2IB3K7NSis/EYLcPMvxcp7X6VeLdExwKYPG8wWO4rg1bspE16mQj
+ oFVA==
+X-Gm-Message-State: AGi0PuaI7OGA2pveJaqu0nMjX8e5KmgMmoCEIOG18ool8+4pvs1bDePP
+ TJwoWkYvfep/fTeOaW3F0fie7Q==
+X-Google-Smtp-Source: APiQypLRQPsncevt7ufFgtwISI8nUtLk4di5UjL7O718ObKF5S82cJcx6T0AVuQXT17USzPlqcg/Vg==
+X-Received: by 2002:adf:a15d:: with SMTP id r29mr24633058wrr.134.1587976911054; 
+ Mon, 27 Apr 2020 01:41:51 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id x18sm19836833wrv.12.2020.04.27.01.41.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Apr 2020 01:41:39 -0700 (PDT)
-Date: Mon, 27 Apr 2020 10:41:37 +0200
-From: LABBE Corentin <clabbe@baylibre.com>
-To: Stephan Mueller <stephan.mueller@atsec.com>
-Subject: Re: [PATCH v2 13/14] crypto: sun8i-ce: Add support for the PRNG
-Message-ID: <20200427084137.GA8787@Red>
-References: <1587736934-22801-1-git-send-email-clabbe@baylibre.com>
- <1587736934-22801-14-git-send-email-clabbe@baylibre.com>
- <2397344.pSczEbEFGg@tauon.chronox.de>
+ Mon, 27 Apr 2020 01:41:50 -0700 (PDT)
+References: <20200328003249.1248978-1-martin.blumenstingl@googlemail.com>
+ <20200328003249.1248978-3-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-mmc@vger.kernel.org, ulf.hansson@linaro.org, robh+dt@kernel.org
+Subject: Re: [PATCH v5 2/3] clk: meson: add a driver for the Meson8/8b/8m2
+ SDHC clock controller
+In-reply-to: <20200328003249.1248978-3-martin.blumenstingl@googlemail.com>
+Date: Mon, 27 Apr 2020 10:41:49 +0200
+Message-ID: <1jd07t2ucy.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2397344.pSczEbEFGg@tauon.chronox.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_014141_924794_93CBAF88 
-X-CRM114-Status: GOOD (  29.68  )
+X-CRM114-CacheID: sfid-20200427_014153_802500_68AA8961 
+X-CRM114-Status: GOOD (  27.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,437 +99,312 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
- linux-crypto@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jianxin.pan@amlogic.com, linux-kernel@vger.kernel.org,
+ yinxin_1989@aliyun.com, linux-arm-kernel@lists.infradead.org, lnykww@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 24, 2020 at 04:38:31PM +0200, Stephan Mueller wrote:
-> Am Freitag, 24. April 2020, 16:02:13 CEST schrieb Corentin Labbe:
-> 
-> Hi Corentin,
-> 
-> > This patch had support for the PRNG present in the CE.
-> > The output was tested with rngtest without any failure.
-> > 
-> > Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
-> > ---
-> >  drivers/crypto/allwinner/Kconfig              |   8 +
-> >  drivers/crypto/allwinner/sun8i-ce/Makefile    |   1 +
-> >  .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |  58 +++++-
-> >  .../crypto/allwinner/sun8i-ce/sun8i-ce-prng.c | 189 ++++++++++++++++++
-> >  drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  |  31 +++
-> >  5 files changed, 286 insertions(+), 1 deletion(-)
-> >  create mode 100644 drivers/crypto/allwinner/sun8i-ce/sun8i-ce-prng.c
-> > 
-> > diff --git a/drivers/crypto/allwinner/Kconfig
-> > b/drivers/crypto/allwinner/Kconfig index 93cc67adb1ed..223a5823867c 100644
-> > --- a/drivers/crypto/allwinner/Kconfig
-> > +++ b/drivers/crypto/allwinner/Kconfig
-> > @@ -79,6 +79,14 @@ config CRYPTO_DEV_SUN8I_CE_HASH
-> >  	help
-> >  	  Say y to enable support for hash algorithms.
-> > 
-> > +config CRYPTO_DEV_SUN8I_CE_PRNG
-> > +	bool "Support for Allwinner Crypto Engine PRNG"
-> > +	depends on CRYPTO_DEV_SUN8I_CE
-> > +	select CRYPTO_RNG
-> > +	help
-> > +	  Select this option if you want to provide kernel-side support for
-> > +	  the Pseudo-Random Number Generator found in the Crypto Engine.
-> > +
-> >  config CRYPTO_DEV_SUN8I_SS
-> >  	tristate "Support for Allwinner Security System cryptographic 
-> offloader"
-> >  	select CRYPTO_SKCIPHER
-> > diff --git a/drivers/crypto/allwinner/sun8i-ce/Makefile
-> > b/drivers/crypto/allwinner/sun8i-ce/Makefile index
-> > d1b1f0e86c79..c0ea81da2c7d 100644
-> > --- a/drivers/crypto/allwinner/sun8i-ce/Makefile
-> > +++ b/drivers/crypto/allwinner/sun8i-ce/Makefile
-> > @@ -1,3 +1,4 @@
-> >  obj-$(CONFIG_CRYPTO_DEV_SUN8I_CE) += sun8i-ce.o
-> >  sun8i-ce-y += sun8i-ce-core.o sun8i-ce-cipher.o
-> >  sun8i-ce-$(CONFIG_CRYPTO_DEV_SUN8I_CE_HASH) += sun8i-ce-hash.o
-> > +sun8i-ce-$(CONFIG_CRYPTO_DEV_SUN8I_CE_PRNG) += sun8i-ce-prng.o
-> > diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-> > b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c index
-> > 8c94ffe1efd0..23b9fc67d7ea 100644
-> > --- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-> > +++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-> > @@ -22,6 +22,7 @@
-> >  #include <linux/platform_device.h>
-> >  #include <linux/pm_runtime.h>
-> >  #include <linux/reset.h>
-> > +#include <crypto/internal/rng.h>
-> >  #include <crypto/internal/skcipher.h>
-> > 
-> >  #include "sun8i-ce.h"
-> > @@ -45,6 +46,7 @@ static const struct ce_variant ce_h3_variant = {
-> >  		{ "mod", 50000000, 0 },
-> >  		},
-> >  	.esr = ESR_H3,
-> > +	.prng = CE_ALG_PRNG,
-> >  };
-> > 
-> >  static const struct ce_variant ce_h5_variant = {
-> > @@ -60,6 +62,7 @@ static const struct ce_variant ce_h5_variant = {
-> >  		{ "mod", 300000000, 0 },
-> >  		},
-> >  	.esr = ESR_H5,
-> > +	.prng = CE_ALG_PRNG,
-> >  };
-> > 
-> >  static const struct ce_variant ce_h6_variant = {
-> > @@ -72,12 +75,14 @@ static const struct ce_variant ce_h6_variant = {
-> >  	},
-> >  	.cipher_t_dlen_in_bytes = true,
-> >  	.hash_t_dlen_in_bits = true,
-> > +	.prng_t_dlen_in_bytes = true,
-> >  	.ce_clks = {
-> >  		{ "bus", 0, 200000000 },
-> >  		{ "mod", 300000000, 0 },
-> >  		{ "ram", 0, 400000000 },
-> >  		},
-> >  	.esr = ESR_H6,
-> > +	.prng = CE_ALG_PRNG_V2,
-> >  };
-> > 
-> >  static const struct ce_variant ce_a64_variant = {
-> > @@ -93,6 +98,7 @@ static const struct ce_variant ce_a64_variant = {
-> >  		{ "mod", 300000000, 0 },
-> >  		},
-> >  	.esr = ESR_A64,
-> > +	.prng = CE_ALG_PRNG,
-> >  };
-> > 
-> >  static const struct ce_variant ce_r40_variant = {
-> > @@ -108,15 +114,17 @@ static const struct ce_variant ce_r40_variant = {
-> >  		{ "mod", 300000000, 0 },
-> >  		},
-> >  	.esr = ESR_R40,
-> > +	.prng = CE_ALG_PRNG,
-> >  };
-> > 
-> >  /*
-> >   * sun8i_ce_get_engine_number() get the next channel slot
-> >   * This is a simple round-robin way of getting the next channel
-> > + * The flow 3 is reserve for xRNG operations
-> >   */
-> >  int sun8i_ce_get_engine_number(struct sun8i_ce_dev *ce)
-> >  {
-> > -	return atomic_inc_return(&ce->flow) % MAXFLOW;
-> > +	return atomic_inc_return(&ce->flow) % (MAXFLOW - 1);
-> >  }
-> > 
-> >  int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow, const char *name)
-> > @@ -130,6 +138,7 @@ int sun8i_ce_run_task(struct sun8i_ce_dev *ce, int flow,
-> > const char *name) #endif
-> > 
-> >  	mutex_lock(&ce->mlock);
-> > +	mutex_init(&ce->rnglock);
-> > 
-> >  	v = readl(ce->base + CE_ICR);
-> >  	v |= 1 << flow;
-> > @@ -516,6 +525,25 @@ static struct sun8i_ce_alg_template ce_algs[] = {
-> >  	}
-> >  },
-> >  #endif
-> > +#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_PRNG
-> > +{
-> > +	.type = CRYPTO_ALG_TYPE_RNG,
-> > +	.alg.rng = {
-> > +		.base = {
-> > +			.cra_name		= "stdrng",
-> > +			.cra_driver_name	= "sun8i-ce-prng",
-> > +			.cra_priority		= 300,
-> > +			.cra_ctxsize		= sizeof(struct 
-> sun8i_ce_rng_tfm_ctx),
-> > +			.cra_module		= THIS_MODULE,
-> > +			.cra_init		= sun8i_ce_prng_init,
-> > +			.cra_exit		= sun8i_ce_prng_exit,
-> > +		},
-> > +		.generate               = sun8i_ce_prng_generate,
-> > +		.seed                   = sun8i_ce_prng_seed,
-> > +		.seedsize               = PRNG_SEED_SIZE,
-> > +	}
-> > +},
-> > +#endif
-> >  };
-> > 
-> >  #ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
-> > @@ -543,6 +571,12 @@ static int sun8i_ce_dbgfs_read(struct seq_file *seq,
-> > void *v) ce_algs[i].alg.hash.halg.base.cra_name,
-> >  				   ce_algs[i].stat_req, ce_algs[i].stat_fb);
-> >  			break;
-> > +		case CRYPTO_ALG_TYPE_RNG:
-> > +			seq_printf(seq, "%s %s %lu %lu\n",
-> > +				   ce_algs[i].alg.rng.base.cra_driver_name,
-> > +				   ce_algs[i].alg.rng.base.cra_name,
-> > +				   ce_algs[i].stat_req, 
-> ce_algs[i].stat_bytes);
-> > +			break;
-> >  		}
-> >  	}
-> >  	return 0;
-> > @@ -777,6 +811,23 @@ static int sun8i_ce_register_algs(struct sun8i_ce_dev
-> > *ce) return err;
-> >  			}
-> >  			break;
-> > +		case CRYPTO_ALG_TYPE_RNG:
-> > +			if (ce->variant->prng == CE_ID_NOTSUPP) {
-> > +				dev_info(ce->dev,
-> > +					 "DEBUG: Algo of %s not supported\n",
-> > +					 ce_algs[i].alg.rng.base.cra_name);
-> > +				ce_algs[i].ce = NULL;
-> > +				break;
-> > +			}
-> > +			dev_info(ce->dev, "Register %s\n",
-> > +				 ce_algs[i].alg.rng.base.cra_name);
-> > +			err = crypto_register_rng(&ce_algs[i].alg.rng);
-> > +			if (err) {
-> > +				dev_err(ce->dev, "Fail to register %s\n",
-> > +					ce_algs[i].alg.rng.base.cra_name);
-> > +				ce_algs[i].ce = NULL;
-> > +			}
-> > +			break;
-> >  		default:
-> >  			ce_algs[i].ce = NULL;
-> >  			dev_err(ce->dev, "ERROR: tried to register an unknown 
-> algo\n");
-> > @@ -803,6 +854,11 @@ static void sun8i_ce_unregister_algs(struct
-> > sun8i_ce_dev *ce) ce_algs[i].alg.hash.halg.base.cra_name);
-> >  			crypto_unregister_ahash(&ce_algs[i].alg.hash);
-> >  			break;
-> > +		case CRYPTO_ALG_TYPE_RNG:
-> > +			dev_info(ce->dev, "Unregister %d %s\n", i,
-> > +				 ce_algs[i].alg.rng.base.cra_name);
-> > +			crypto_unregister_rng(&ce_algs[i].alg.rng);
-> > +			break;
-> >  		}
-> >  	}
-> >  }
-> > diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-prng.c
-> > b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-prng.c new file mode 100644
-> > index 000000000000..8f82bfc2c54c
-> > --- /dev/null
-> > +++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-prng.c
-> > @@ -0,0 +1,189 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * sun8i-ce-prng.c - hardware cryptographic offloader for
-> > + * Allwinner H3/A64/H5/H2+/H6/R40 SoC
-> > + *
-> > + * Copyright (C) 2015-2020 Corentin Labbe <clabbe@baylibre.com>
-> > + *
-> > + * This file handle the PRNG
-> > + *
-> > + * You could find a link for the datasheet in
-> > Documentation/arm/sunxi/README + */
-> > +#include "sun8i-ce.h"
-> > +#include <linux/pm_runtime.h>
-> > +#include <crypto/internal/rng.h>
-> > +
-> > +int sun8i_ce_prng_init(struct crypto_tfm *tfm)
-> > +{
-> > +	struct sun8i_ce_rng_tfm_ctx *ctx = crypto_tfm_ctx(tfm);
-> > +
-> > +	memset(ctx, 0, sizeof(struct sun8i_ce_rng_tfm_ctx));
-> > +	return 0;
-> > +}
-> > +
-> > +void sun8i_ce_prng_exit(struct crypto_tfm *tfm)
-> > +{
-> > +	struct sun8i_ce_rng_tfm_ctx *ctx = crypto_tfm_ctx(tfm);
-> > +
-> > +	kfree(ctx->seed);
-> > +	ctx->seed = NULL;
-> > +	ctx->slen = 0;
-> > +}
-> > +
-> > +int sun8i_ce_prng_seed(struct crypto_rng *tfm, const u8 *seed,
-> > +		       unsigned int slen)
-> > +{
-> > +	struct sun8i_ce_rng_tfm_ctx *ctx = crypto_rng_ctx(tfm);
-> > +
-> > +	if (ctx->seed && ctx->slen != slen) {
-> > +		ctx->slen = 0;
-> > +		kfree(ctx->seed);
-> 
-> kzfree?
-> 
 
-Yes
+On Sat 28 Mar 2020 at 01:32, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-> > +		ctx->seed = NULL;
-> > +	}
-> > +	if (!ctx->seed)
-> > +		ctx->seed = kmalloc(slen, GFP_KERNEL | GFP_DMA);
-> > +	if (!ctx->seed)
-> > +		return -ENOMEM;
-> > +
-> > +	memcpy(ctx->seed, seed, slen);
-> > +	ctx->slen = slen;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +int sun8i_ce_prng_generate(struct crypto_rng *tfm, const u8 *src,
-> > +			   unsigned int slen, u8 *dst, unsigned int dlen)
-> > +{
-> > +	struct sun8i_ce_rng_tfm_ctx *ctx = crypto_rng_ctx(tfm);
-> > +	struct rng_alg *alg = crypto_rng_alg(tfm);
-> > +	struct sun8i_ce_alg_template *algt;
-> > +	struct sun8i_ce_dev *ce;
-> > +	dma_addr_t dma_iv, dma_dst;
-> > +	int err = 0;
-> > +	int flow = 3;
-> > +	unsigned int todo;
-> > +	struct sun8i_ce_flow *chan;
-> > +	struct ce_task *cet;
-> > +	u32 common, sym;
-> > +	dma_addr_t dma_next, dma_key;
-> > +	void *next, *key;
-> > +	void *d;
-> > +
-> > +	algt = container_of(alg, struct sun8i_ce_alg_template, alg.rng);
-> > +	ce = algt->ce;
-> > +
-> > +	if (ctx->slen == 0) {
-> > +		dev_err(ce->dev, "not seeded\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	next = kzalloc(256, GFP_KERNEL | GFP_DMA);
-> > +	if (!next)
-> > +		return -ENOMEM;
-> > +
-> > +	key = kzalloc(256, GFP_KERNEL | GFP_DMA);
-> > +	if (!key)
-> > +		return -ENOMEM;
-> 
-> You leak memory here.
-> 
+> The SDHC (MMC) controller embeds a clock controller inside one of the
+> SDHC registers. The outputs of thisclock controller are dedicated to the
+> SDHC controller.
+>
+> Implement a dedicated clock controller driver so we can keep all the
+> clock specific logic outside of the MMC controller driver. There is no
+> dedicated clock controller OF node because the hardware is a big SDHC IP
+> block with an embedded clock controller (so the .dts doesn't need a
+> separate clock controller node). Instead this driver re-uses the regmap
+> as registered by the (platform_device) parent.
+>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  drivers/clk/meson/Kconfig         |   9 ++
+>  drivers/clk/meson/Makefile        |   1 +
+>  drivers/clk/meson/meson-mx-sdhc.c | 212 ++++++++++++++++++++++++++++++
+>  3 files changed, 222 insertions(+)
+>  create mode 100644 drivers/clk/meson/meson-mx-sdhc.c
+>
+> diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
+> index dabeb435d067..8769335d2d46 100644
+> --- a/drivers/clk/meson/Kconfig
+> +++ b/drivers/clk/meson/Kconfig
+> @@ -53,6 +53,15 @@ config COMMON_CLK_MESON8B
+>  	  S805 (Meson8b) and S812 (Meson8m2) devices. Say Y if you
+>  	  want peripherals and CPU frequency scaling to work.
+>  
+> +config COMMON_CLK_MESON_MX_SDHC
+> +	tristate "Meson MX SDHC MMC Clock Controller Driver"
+> +	depends on ARCH_MESON
+> +	select COMMON_CLK_MESON_REGMAP
+> +	help
+> +	  Support for the SDHC clock controller on Amlogic Meson8/8b/8m2 SoCs
+> +	  devices. Say Y or M if you want to use the SDHC MMC controller.
+> +	  Otherwise say N.
+> +
+>  config COMMON_CLK_GXBB
+>  	bool
+>  	depends on ARCH_MESON
+> diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
+> index 6eca2a406ee3..b71c7ae78dbd 100644
+> --- a/drivers/clk/meson/Makefile
+> +++ b/drivers/clk/meson/Makefile
+> @@ -19,3 +19,4 @@ obj-$(CONFIG_COMMON_CLK_AXG_AUDIO) += axg-audio.o
+>  obj-$(CONFIG_COMMON_CLK_GXBB) += gxbb.o gxbb-aoclk.o
+>  obj-$(CONFIG_COMMON_CLK_G12A) += g12a.o g12a-aoclk.o
+>  obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o meson8-ddr.o
+> +obj-$(CONFIG_COMMON_CLK_MESON_MX_SDHC) += meson-mx-sdhc.o
+> diff --git a/drivers/clk/meson/meson-mx-sdhc.c b/drivers/clk/meson/meson-mx-sdhc.c
+> new file mode 100644
+> index 000000000000..b98a35d99f65
+> --- /dev/null
+> +++ b/drivers/clk/meson/meson-mx-sdhc.c
+> @@ -0,0 +1,212 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Amlogic Meson SDHC clock controller
+> + *
+> + * Copyright (C) 2019 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> + */
+> +
+> +#include <dt-bindings/clock/meson-mx-sdhc-clkc.h>
+> +
+> +#include <linux/clk-provider.h>
+> +#include <linux/device.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +
+> +#include "clk-regmap.h"
+> +#include "clk-pll.h"
 
-Thanks will fix.
-Furthermore, I just saw that key is unused, I forgot to clean it.
-And thoses hardcoded 256 are bad.
+If you need the pll clocks, it should probably appear in the Kconfig
+deps as well
 
-> > +
-> > +	/* we want dlen + seedsize rounded up to a multiple of PRNG_DATA_SIZE 
-> */
-> > +	todo = dlen + ctx->slen + PRNG_DATA_SIZE * 2;
-> > +	todo -= todo % PRNG_DATA_SIZE;
-> > +
-> > +	d = kzalloc(todo + 20, GFP_KERNEL | GFP_DMA);
-> > +	if (!d)
-> > +		return -ENOMEM;
-> > +
-> > +	dev_dbg(ce->dev, "%s PRNG slen=%u dlen=%u todo=%u multi=%u\n", 
-> __func__,
-> > +		slen, dlen, todo, todo / PRNG_DATA_SIZE);
-> > +
-> > +	if (ctx->slen == 0) {
-> > +		dev_err(ce->dev, "not seeded\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
-> > +	algt->stat_req++;
-> > +	algt->stat_bytes += todo;
-> > +#endif
-> > +
-> > +	dma_iv = dma_map_single(ce->dev, ctx->seed, ctx->slen, DMA_TO_DEVICE);
-> > +	if (dma_mapping_error(ce->dev, dma_iv)) {
-> > +		dev_err(ce->dev, "Cannot DMA MAP IV\n");
-> > +		return -EFAULT;
-> > +	}
-> > +
-> > +	dma_dst = dma_map_single(ce->dev, d, todo, DMA_FROM_DEVICE);
-> > +	if (dma_mapping_error(ce->dev, dma_dst)) {
-> > +		dev_err(ce->dev, "Cannot DMA MAP DST\n");
-> > +		err = -EFAULT;
-> > +		goto err_iv;
-> > +	}
-> > +
-> > +	dma_next = dma_map_single(ce->dev, next, 256, DMA_FROM_DEVICE);
-> > +	if (dma_mapping_error(ce->dev, dma_next)) {
-> > +		dev_err(ce->dev, "Cannot DMA MAP NEXT\n");
-> > +		err = -EFAULT;
-> > +		goto err_iv;
-> > +	}
-> > +
-> > +	dma_key = dma_map_single(ce->dev, key, 256, DMA_FROM_DEVICE);
-> > +	if (dma_mapping_error(ce->dev, dma_key)) {
-> > +		dev_err(ce->dev, "Cannot DMA MAP NEXT\n");
-> > +		err = -EFAULT;
-> > +		goto err_iv;
-> > +	}
-> > +
-> > +	err = pm_runtime_get_sync(ce->dev);
-> > +	if (err < 0)
-> > +		goto err_pm;
-> > +
-> > +	mutex_lock(&ce->rnglock);
-> > +	chan = &ce->chanlist[flow];
-> > +
-> > +	cet = &chan->tl[0];
-> > +	memset(cet, 0, sizeof(struct ce_task));
-> > +
-> > +	cet->t_id = cpu_to_le32(flow);
-> > +	common = ce->variant->prng | CE_COMM_INT;
-> > +	cet->t_common_ctl = cpu_to_le32(common);
-> > +
-> > +	/* recent CE (H6) need length in bytes, in word otherwise */
-> > +	if (ce->variant->prng_t_dlen_in_bytes)
-> > +		cet->t_dlen = cpu_to_le32(todo);
-> > +	else
-> > +		cet->t_dlen = cpu_to_le32(todo / 4);
-> > +
-> > +	sym = PRNG_LD;
-> > +	cet->t_sym_ctl = cpu_to_le32(sym);
-> > +	cet->t_asym_ctl = 0;
-> > +
-> > +	cet->t_key = cpu_to_le32(dma_key);
-> > +	cet->t_key = cpu_to_le32(dma_iv);
-> > +	cet->t_iv = cpu_to_le32(dma_iv);
-> > +	cet->t_ctr = cpu_to_le32(dma_next);
-> > +
-> > +	cet->t_dst[0].addr = cpu_to_le32(dma_dst);
-> > +	cet->t_dst[0].len = cpu_to_le32(todo / 4);
-> > +	ce->chanlist[flow].timeout = 2000;
-> > +
-> > +	err = sun8i_ce_run_task(ce, 3, "PRNG");
-> > +	mutex_unlock(&ce->rnglock);
-> > +
-> > +	pm_runtime_put(ce->dev);
-> > +
-> > +	dma_unmap_single(ce->dev, dma_key, 256, DMA_FROM_DEVICE);
-> > +	dma_unmap_single(ce->dev, dma_next, 256, DMA_FROM_DEVICE);
-> > +err_pm:
-> > +	dma_unmap_single(ce->dev, dma_dst, todo, DMA_FROM_DEVICE);
-> > +err_iv:
-> > +	dma_unmap_single(ce->dev, dma_iv, ctx->slen, DMA_TO_DEVICE);
-> > +
-> > +	if (!err) {
-> > +		memcpy(dst, d, dlen);
-> > +		memcpy(ctx->seed, d + dlen, ctx->slen);
-> > +	}
-> > +	kfree(next);
-> > +	kfree(key);
-> > +	kfree(d);
-> 
-> Shouldn't they all be kzfree?
-> 
+> +
+> +#define MESON_SDHC_CLKC			0x10
+> +
+> +static const struct clk_regmap meson_mx_sdhc_src_sel = {
+> +	.data = &(struct clk_regmap_mux_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.mask = 0x3,
+> +		.shift = 16,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_src_sel",
+> +		.ops = &clk_regmap_mux_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .fw_name = "clkin0", .index = -1, },
+> +			{ .fw_name = "clkin1", .index = -1, },
+> +			{ .fw_name = "clkin2", .index = -1, },
+> +			{ .fw_name = "clkin3", .index = -1, },
 
-Yes
-Probably it miss also a memzero_explicit, I think that seeds/data are sensitive
+When fw_name is specified, setting the index is not necessary
 
-Thanks
+> +		},
+> +		.num_parents = 4,
+> +	},
+> +};
+> +
+> +static const struct clk_div_table meson_mx_sdhc_div_table[] = {
+> +	{ .div = 6, .val = 5, },
+> +	{ .div = 8, .val = 7, },
+> +	{ .div = 9, .val = 8, },
+> +	{ .div = 10, .val = 9, },
+> +	{ .div = 12, .val = 11, },
+> +	{ .div = 16, .val = 15, },
+> +	{ .div = 18, .val = 17, },
+> +	{ .div = 34, .val = 33, },
+> +	{ .div = 142, .val = 141, },
+> +	{ .div = 850, .val = 849, },
+> +	{ .div = 2126, .val = 2125, },
+> +	{ .div = 4096, .val = 4095, },
+> +	{ /* sentinel */ }
+> +};
+> +
+> +static const struct clk_regmap meson_mx_sdhc_div = {
+> +	.data = &(struct clk_regmap_div_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.shift = 0,
+> +		.width = 12,
+> +		.table = meson_mx_sdhc_div_table,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_div",
+> +		.ops = &clk_regmap_divider_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .name = "sdhc_src_sel", .index = -1, },
+
+Any reason for using the lagacy names and not the clk_hw pointers ?
+Same comment for the rest of the clocks
+
+> +		},
+> +		.num_parents = 1,
+> +		.flags = CLK_SET_RATE_PARENT,
+> +	},
+> +};
+> +
+> +static const struct clk_regmap meson_mx_sdhc_mod_clk_en = {
+> +	.data = &(struct clk_regmap_gate_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.bit_idx = 15,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_mod_clk_on",
+> +		.ops = &clk_regmap_gate_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .name = "sdhc_div", .index = -1, },
+> +		},
+> +		.num_parents = 1,
+> +		.flags = CLK_SET_RATE_GATE,
+
+Why can't the clock change rate unless gated ? Maybe you prefer to
+change the rate in the mmc while clock is gated, but this is the
+handling of the clock by the mmc driver, not a constraint of the actual
+clock HW, isn't it ?
+
+Also, this is a gate so I suppose the rate propagates through it ?
+Can you explain why CLK_SET_RATE_PARENT is not set  ?
+
+> +	},
+> +};
+> +
+> +static const struct clk_regmap meson_mx_sdhc_tx_clk_en = {
+> +	.data = &(struct clk_regmap_gate_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.bit_idx = 14,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_tx_clk_on",
+> +		.ops = &clk_regmap_gate_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .name = "sdhc_div", .index = -1, },
+> +		},
+> +		.num_parents = 1,
+> +		.flags = CLK_SET_RATE_GATE,
+> +	},
+> +};
+> +
+> +static const struct clk_regmap meson_mx_sdhc_rx_clk_en = {
+> +	.data = &(struct clk_regmap_gate_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.bit_idx = 13,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_rx_clk_on",
+> +		.ops = &clk_regmap_gate_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .name = "sdhc_div", .index = -1, },
+> +		},
+> +		.num_parents = 1,
+> +		.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_GATE,
+
+Ok so apparently you only want to set the rate through the RX clock.
+You are free to call set_rate() only on this clock in the mmc driver.
+However, I don't think this should reflect as clock constraints.
+
+> +	},
+> +};
+> +
+> +static const struct clk_regmap meson_mx_sdhc_sd_clk_en = {
+> +	.data = &(struct clk_regmap_gate_data){
+> +		.offset = MESON_SDHC_CLKC,
+> +		.bit_idx = 12,
+> +	},
+> +	.hw.init = &(struct clk_init_data){
+> +		.name = "sdhc_sd_clk_on",
+> +		.ops = &clk_regmap_gate_ops,
+> +		.parent_data = (const struct clk_parent_data[]) {
+> +			{ .name = "sdhc_div", .index = -1, },
+> +		},
+> +		.num_parents = 1,
+> +		.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_GATE,
+
+... now I lost with these flags. I'm sure there is an idea related to
+the mmc driver. Clockwise, I don't get it.
+
+> +	},
+> +};
+> +
+> +static const struct clk_regmap *meson_mx_sdhc_clk_regmaps[] = {
+> +	[SDHC_CLKID_SRC_SEL]	= &meson_mx_sdhc_src_sel,
+> +	[SDHC_CLKID_DIV]	= &meson_mx_sdhc_div,
+> +	[SDHC_CLKID_MOD_CLK]	= &meson_mx_sdhc_mod_clk_en,
+> +	[SDHC_CLKID_SD_CLK]	= &meson_mx_sdhc_sd_clk_en,
+> +	[SDHC_CLKID_TX_CLK]	= &meson_mx_sdhc_tx_clk_en,
+> +	[SDHC_CLKID_RX_CLK]	= &meson_mx_sdhc_rx_clk_en,
+> +};
+> +
+> +#define MESON_MX_SDHC_NUM_CLKS ARRAY_SIZE(meson_mx_sdhc_clk_regmaps)
+> +
+> +static int meson_mx_sdhc_clkc_probe(struct platform_device *pdev)
+> +{
+> +	struct device *parent = pdev->dev.parent;
+> +	struct clk_hw_onecell_data *onecell_data;
+> +	struct clk_regmap *clk_regmap;
+> +	struct regmap *regmap;
+> +	int i, ret;
+> +
+> +	regmap = dev_get_regmap(parent, NULL);
+> +	if (IS_ERR(regmap))
+> +		return PTR_ERR(regmap);
+> +
+> +	clk_regmap = devm_kcalloc(parent, sizeof(*clk_regmap),
+> +				  MESON_MX_SDHC_NUM_CLKS, GFP_KERNEL);
+> +	if (!clk_regmap)
+> +		return -ENOMEM;
+> +
+> +	onecell_data = devm_kzalloc(parent,
+> +				    struct_size(onecell_data, hws,
+> +						MESON_MX_SDHC_NUM_CLKS),
+> +				    GFP_KERNEL);
+> +	if (!onecell_data)
+> +		return -ENOMEM;
+> +
+> +	for (i = 0; i < MESON_MX_SDHC_NUM_CLKS; i++) {
+> +		memcpy(&clk_regmap[i], meson_mx_sdhc_clk_regmaps[i],
+> +		       sizeof(*clk_regmap));
+> +
+> +		clk_regmap[i].map = regmap;
+> +		onecell_data->hws[i] = &clk_regmap[i].hw;
+> +
+> +		ret = devm_clk_hw_register(parent, onecell_data->hws[i]);
+> +		if (ret) {
+> +			dev_err(parent,
+> +				"Registration of SDHC clock %d failed\n", i);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	onecell_data->num = MESON_MX_SDHC_NUM_CLKS;
+> +
+> +	return devm_of_clk_add_hw_provider(parent, of_clk_hw_onecell_get,
+> +					   onecell_data);
+> +}
+> +
+> +static const struct platform_device_id meson_mx_sdhc_clkc_ids[] = {
+> +	{ "meson8-sdhc-clkc" },
+> +	{ "meson8b-sdhc-clkc" },
+> +	{ "meson8m2-sdhc-clkc" },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(platform, meson_mx_sdhc_clkc_ids);
+> +
+> +static struct platform_driver meson_mx_sdhc_clkc_driver = {
+> +	.id_table	= meson_mx_sdhc_clkc_ids,
+> +	.probe		= meson_mx_sdhc_clkc_probe,
+> +	.driver		= {
+> +		.name	= "meson-mx-sdhc-clkc",
+> +	},
+> +};
+> +module_platform_driver(meson_mx_sdhc_clkc_driver);
+> +
+> +MODULE_DESCRIPTION("Amlogic Meson8/8b/8m2 SDHC clock controller driver");
+> +MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
+> +MODULE_LICENSE("GPL v2");
+
 
 _______________________________________________
 linux-arm-kernel mailing list
