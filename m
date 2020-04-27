@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77AB31B97A6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:44:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A4201B97A2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:43:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ABe0+Imjv+kl0XqJcAGQOTw+BKP/RlMl2MAhp6nNstk=; b=iUWNr9AwmKD6kR
-	FkPLUFfJ+V5ddHFCNtA9/PjB62dDQ8Y/ePIzh6bjss7txmUGfe31NbK431vsf4mRVSzwQpU1Vb7Nn
-	AIX7Lzn950+/L/MvQW0bN2lnL4gPQI6mUDaDPA0jbsu9zXwA1DmVIto5+2JNkmYIqa3+1woKX+7bL
-	r9SqHk4DXdALVmhJACobQgJt3ehteWeXaoF0aTFOonkwCvBfjNcd/ZHIN+ArGzb8XnCUMT0CGHCHG
-	R0VPMYYe4JwCmeekSqZqHQdLYP2ht9tpRvrW/y0hmRBW4BM2O17J54h/03xd0rCy67eWcVbbLDQlg
-	lCWnAZB5lNi1pbaU9aJw==;
+	List-Owner; bh=XIS1gNAnk1KdVFajDT0kiVwu4781PRmRLLGS24c+wjA=; b=Pj2W9o0dtv4k51
+	0+GMAZjhgDN9ofs9StvF8J9U7ocRp0CsE+Qv8j1C9DJzaPp9lam8hRcMC8N/x8bXIZaChBeXlQaFs
+	taz2k2CINE7HQ6wLdr1IGUCnJEcbtyvLIu9xvsZJpA/6l1ScFJHgpz+0nzSPxOzVYul1Dmub7l38b
+	lj9uZ+8Tn6tB7gDalG55zinQY32deJvUKKFPGadgYSakSWHco0X5k5M4K2Q5O7nyzmssRyTBTjUl4
+	7eiYfx15njMgGMDv6y6yKsMaeBhStR4ux/iEuKoTCL2MY+31k9iTCYqAyHYFlHQsWnBioZkLfFAr3
+	fBzc5m4xgUNJPoDoPjIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSxV4-0006M0-Ak; Mon, 27 Apr 2020 06:44:18 +0000
+	id 1jSxUb-0005qr-2V; Mon, 27 Apr 2020 06:43:49 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSxU2-0005c2-Hh
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:43:18 +0000
+ id 1jSxU2-0005c0-JF
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:43:17 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03R6cO6E024040; Mon, 27 Apr 2020 08:42:58 +0200
+ 03R6cO6G024040; Mon, 27 Apr 2020 08:42:59 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=qTrXLMk8kkMPS+GB6wCw5fDokR6i+JUeBx7KNCnu20M=;
- b=JVZbmY8YF3kq5dC1pmWwppQKYL0W48nwqEgXn5vsvIbeHhEc+A0W+68/Iw7C9bKgryM+
- VRPjL2cVSvkuQso/VoTVX/jGsDMbWMTzC5d7oCRlzHwmHYnkEnZvXwoTDJJcj+ryLAcj
- mor5PXc40TgpjAr5K6XIB9Uux4PMFo6yE1eGG6nzCq9zsAB5Uy6NSGDug4E2BgYiFH4K
- Ns7gy5M2cR/h0SsBslll6Z9Dg0Kt1ZMzpxgwOVnEmnio0O4Rk3Iqo052ZfWAETTAW5gj
- rDb4ov6ldGUJ04MUSwfEBc9tlkk17X7eR5MZvRI/PRmbRG6VkYAgFYE8bdI6ifykuE5M 3Q== 
+ bh=lh1kBYgL+JLuoCQaaOo5FYMEjoKA0Zs0ybVKkeHad0s=;
+ b=eci8SxyS83Z1lVviB+tuVkqLFpMh+zwi0AEZGatqH2sQ9FAqxu2M7g+2A6oSgZ3Gm4GN
+ mTJUhpBAUVh/xf1WX0VSTowK/ONKfTj2aWFjwVf/1Q1DuLoMM3/rU1sJ9Q7yRmW6hun7
+ Bqmx2Luc07UgcJ1sbHHs5AmXmB193dQiBR8bIHm1lMpNd7x3yPStqKKdm/g/Q+TpcrRG
+ 2XzHOLf979Fqk77FjP560ci6aMT5pyfcZx7wVj8/IZodcD1j/mVs6XcdPfPzs9pmtq98
+ E1DPmXG6+kZqHtI7hxL3GrB70hHWvvQU+acbS3IjpA0p1bY3y3a7vXHn5//klolzavCi LQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhq5r2h6-1
+ by mx07-00178001.pphosted.com with ESMTP id 30mhq5r2h8-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 27 Apr 2020 08:42:58 +0200
+ Mon, 27 Apr 2020 08:42:59 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6E980100039;
- Mon, 27 Apr 2020 08:42:57 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CB560100038;
+ Mon, 27 Apr 2020 08:42:58 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag7node2.st.com [10.75.127.20])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5F18521F67B;
- Mon, 27 Apr 2020 08:42:57 +0200 (CEST)
-Received: from localhost (10.75.127.45) by SFHDAG7NODE2.st.com (10.75.127.20)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B92AB21F679;
+ Mon, 27 Apr 2020 08:42:58 +0200 (CEST)
+Received: from localhost (10.75.127.46) by SFHDAG7NODE2.st.com (10.75.127.20)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 27 Apr 2020 08:42:56 +0200
+ Mon, 27 Apr 2020 08:42:58 +0200
 From: Lionel Debieve <lionel.debieve@st.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
  <davem@davemloft.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Alexandre Torgue <alexandre.torgue@st.com>, <linux-crypto@vger.kernel.org>
-Subject: [PATCH 2/3] crypto: stm32/hash - defer probe for dma device
-Date: Mon, 27 Apr 2020 08:42:25 +0200
-Message-ID: <20200427064226.6991-3-lionel.debieve@st.com>
+Subject: [PATCH 3/3] crypto: stm32/hash - don't print error on probe deferral
+Date: Mon, 27 Apr 2020 08:42:26 +0200
+Message-ID: <20200427064226.6991-4-lionel.debieve@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200427064226.6991-1-lionel.debieve@st.com>
 References: <20200427064226.6991-1-lionel.debieve@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG7NODE2.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG7NODE2.st.com
  (10.75.127.20)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-04-27_03:2020-04-24,
  2020-04-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_234314_974854_7BF677E5 
-X-CRM114-Status: GOOD (  15.22  )
+X-CRM114-CacheID: sfid-20200426_234314_976599_86E45ECD 
+X-CRM114-Status: GOOD (  15.81  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,72 +104,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Etienne Carriere <etienne.carriere@st.com>
+Change driver to not print an error message when the device
+probe is deferred for a clock resource.
 
-Change stm32 HASH driver to defer its probe operation when
-DMA channel device is registered but has not been probed yet.
-
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-Reviewed-by: Lionel DEBIEVE <lionel.debieve@st.com>
+Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
 ---
- drivers/crypto/stm32/stm32-hash.c | 22 +++++++++++++++-------
- 1 file changed, 15 insertions(+), 7 deletions(-)
+ drivers/crypto/stm32/stm32-hash.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
-index fad6190be088..0d592f55a271 100644
+index 0d592f55a271..03c5e6683805 100644
 --- a/drivers/crypto/stm32/stm32-hash.c
 +++ b/drivers/crypto/stm32/stm32-hash.c
-@@ -507,6 +507,7 @@ static int stm32_hash_hmac_dma_send(struct stm32_hash_dev *hdev)
- static int stm32_hash_dma_init(struct stm32_hash_dev *hdev)
- {
- 	struct dma_slave_config dma_conf;
-+	struct dma_chan *chan;
- 	int err;
+@@ -1464,8 +1464,11 @@ static int stm32_hash_probe(struct platform_device *pdev)
  
- 	memset(&dma_conf, 0, sizeof(dma_conf));
-@@ -518,11 +519,11 @@ static int stm32_hash_dma_init(struct stm32_hash_dev *hdev)
- 	dma_conf.dst_maxburst = hdev->dma_maxburst;
- 	dma_conf.device_fc = false;
- 
--	hdev->dma_lch = dma_request_chan(hdev->dev, "in");
--	if (IS_ERR(hdev->dma_lch)) {
--		dev_err(hdev->dev, "Couldn't acquire a slave DMA channel.\n");
--		return PTR_ERR(hdev->dma_lch);
--	}
-+	chan = dma_request_chan(hdev->dev, "in");
-+	if (IS_ERR(chan))
-+		return PTR_ERR(chan);
+ 	hdev->clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(hdev->clk)) {
+-		dev_err(dev, "failed to get clock for hash (%lu)\n",
+-			PTR_ERR(hdev->clk));
++		if (PTR_ERR(hdev->clk) != -EPROBE_DEFER) {
++			dev_err(dev, "failed to get clock for hash (%lu)\n",
++				PTR_ERR(hdev->clk));
++		}
 +
-+	hdev->dma_lch = chan;
+ 		return PTR_ERR(hdev->clk);
+ 	}
  
- 	err = dmaengine_slave_config(hdev->dma_lch, &dma_conf);
- 	if (err) {
-@@ -1498,8 +1499,15 @@ static int stm32_hash_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, hdev);
- 
- 	ret = stm32_hash_dma_init(hdev);
--	if (ret)
-+	switch (ret) {
-+	case 0:
-+		break;
-+	case -ENOENT:
- 		dev_dbg(dev, "DMA mode not available\n");
-+		break;
-+	default:
-+		goto err_dma;
-+	}
- 
- 	spin_lock(&stm32_hash.lock);
- 	list_add_tail(&hdev->list, &stm32_hash.dev_list);
-@@ -1537,7 +1545,7 @@ static int stm32_hash_probe(struct platform_device *pdev)
- 	spin_lock(&stm32_hash.lock);
- 	list_del(&hdev->list);
- 	spin_unlock(&stm32_hash.lock);
--
-+err_dma:
- 	if (hdev->dma_lch)
- 		dma_release_channel(hdev->dma_lch);
- err_reset:
 -- 
 2.17.1
 
