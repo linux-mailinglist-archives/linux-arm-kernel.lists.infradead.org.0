@@ -2,54 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C3761BA42B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:01:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF6311BA431
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:03:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:To:From:References:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mENEeWwxXt2NpBiNbpZONYR4nNPe+8+7SALKEDP4s1w=; b=Hy0QkJpSPd8STg
-	z6IpyHKl1OiakbHlbs7y0Q14/qoKkd+g6eBXklAGN8qGhvTeBaYFQ4gVPghRqZeoF7yp/AShV7Pt9
-	sxbx7mL8Zlme1NQ+nf1hqOzif/+G4d+bXzekPm9UIdKSas5RIgujXr8R808DXvRW4qbnq0vm+tdF8
-	XYsVY4yIzASTF1Uq8atvYDX0kIPTWpPj/MFV8Gxeei2LJ4vfbl6Tin7AAO5Rq85vG24l2ZjvQYZBb
-	shl1tBFNLaGiLWcYpou4kqMsc+tHfjckWdx6h1ZpTumTyZKpwE/WYBuKvPj/NdEcsLJXcoHSS0b/2
-	2ZaWsuCTchPXHezgWK1g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A/svnQ/667WIBYVqlbjs2WZ62g57/oUu+YQZvsZvjCc=; b=Id/N9vqI3LiuO+
+	IEWijuDXjKmL0GihJHlINvBasqfNwD0GNOMyU9ExxvHWShLiU+1SgHtUuUQz70NWg2wJ/ldV1HpOw
+	w1lMbiwhiw2nHAjGFKQlW+OqCyQxMTCBjX841f/edYrvnNOqsIO2fuT/qo107TeLST89EU669M3MW
+	nX0gX0wxKaiNv9N/vAgWaIfp6mx7XxYUHIeVD+cnK7No1G7OKas9uD1N9vL4h0B/+l9e+XVrkdFCQ
+	/xRc/UmaEQQd9LMdbRv8rAbg81+iatmtQ5Ow5r9AbqnMBehDYFSFcWORTD11+dwPUV8GejnlvNf6w
+	YSTw6eU+qnKi6KcK1l5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT3NY-0001B5-01; Mon, 27 Apr 2020 13:00:56 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jT3QI-0001kq-2S; Mon, 27 Apr 2020 13:03:46 +0000
+Received: from mail-am5eur03on0604.outbound.protection.outlook.com
+ ([2a01:111:f400:fe08::604]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT3NP-00019b-T9
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:00:50 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: gtucker) with ESMTPSA id 574452A09F8
-Subject: Re: next/master bisection: baseline.dmesg.alert on imx8mn-ddr4-evk
-References: <5ea44ff8.1c69fb81.f246c.d02d@mx.google.com>
-From: Guillaume Tucker <guillaume.tucker@collabora.com>
-To: Peng Fan <peng.fan@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>
-Message-ID: <8af4842d-d576-fd6f-ac6b-2ef3482742b7@collabora.com>
-Date: Mon, 27 Apr 2020 14:00:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jT3Q9-0001jX-71
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:03:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DtKUeJJ42hlIHE/8E78YGfQitw7ekP0IjzvfdwNKsU2C/wtCm10JzQHZfDv2jJkGhCwbF+hH69Zz/g5RF+UmuKNr2xBdmmf3BzrE4yUD6QYCSVGR6gR/uBp+idblPACfSecqlt1F6w5f7Xt0wO0sca0ZkWqm0EuubskyrI7WF579EbSnFaEm9uzqvSgpPiY1+2MkWxlQxzfQluVtMIY3frkNDyDBKCMdej+9ADjRHCu3ixdnUWX2QGGdhatm9ZGrw0Wjdmek9ekA+Byg1YU9QwEtPJFzjywkVTT3UmLkjoVd2h89+VKyMof7SlI2NvxNDWK0YoBm/40WC0N5hmoXuQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dQwiETJDR1WgjLUiWTvjdkmTEOt70g2sz7cDW9wCDeo=;
+ b=ByBpldPe5MIYVTqeHlSwqfWH6CY8yXtfnpB/4YPGpklNMsTnsmUUPDQtEj+062+d7lFBV7iXCWPW8XJBV25jIg8jYuNsgxQz9JyTn163UAqdYzV8I7G6TfusLw5u2hraPl8TMOcskwEQMS/4L92uPvXqDT10HunndZ4eD1C4vJGibm16z+klxW7X0k2RWdYIwk8Pw0+PJZHzTuLc2sFSdyMzrmHm+ursU7QqtJbKBVGAUH4LbxtG7xpiYJKrp6fVKcABTHeM0NXSly5nHxcaWVZrYpTTWJxjtfojH9NGLXu94MxUGoPUPErkU8F0ptZUAUDOV7USf3GWQJJJ7VB0rQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kococonnector.com; dmarc=pass action=none
+ header.from=kococonnector.com; dkim=pass header.d=kococonnector.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=KoCoConnector.onmicrosoft.com; s=selector2-KoCoConnector-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dQwiETJDR1WgjLUiWTvjdkmTEOt70g2sz7cDW9wCDeo=;
+ b=dFXFFuor43cmaeRjQTbIhAvarVwu65SjqdKKSLBOzKxeWZJnKjdcDMYr9J0ToO2XnEyqe2iZuV9jRDKJ5ssnI9ZkHHKa6FLGC3UYtx5xEhhoAm676cn8rrAVrlD4X4obIUgTpsRfneWV4wh4I0/o3omdVvocSstaaHBdeRRR974=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=oliver.graute@kococonnector.com; 
+Received: from AM0PR09MB4067.eurprd09.prod.outlook.com (2603:10a6:208:194::14)
+ by AM0SPR01MB0072.eurprd09.prod.outlook.com (2603:10a6:20b:145::9)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
+ 2020 13:03:32 +0000
+Received: from AM0PR09MB4067.eurprd09.prod.outlook.com
+ ([fe80::ddb8:cdac:bec3:1247]) by AM0PR09MB4067.eurprd09.prod.outlook.com
+ ([fe80::ddb8:cdac:bec3:1247%9]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
+ 13:03:31 +0000
+Date: Mon, 27 Apr 2020 15:03:28 +0200
+From: Oliver Graute <oliver.graute@kococonnector.com>
+To: jason.hui.liu@nxp.com
+Subject: Re: arm64: imx8qm: tlb SW workaround for IMX8QM
+Message-ID: <20200427130328.GA101181@archlinux.localdomain>
+References: <20200427082348.GA98329@archlinux.localdomain>
+Content-Disposition: inline
+In-Reply-To: <20200427082348.GA98329@archlinux.localdomain>
+X-ClientProxiedBy: AM0PR04CA0022.eurprd04.prod.outlook.com
+ (2603:10a6:208:122::35) To AM0PR09MB4067.eurprd09.prod.outlook.com
+ (2603:10a6:208:194::14)
 MIME-Version: 1.0
-In-Reply-To: <5ea44ff8.1c69fb81.f246c.d02d@mx.google.com>
-Content-Language: en-US
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost (31.17.95.22) by
+ AM0PR04CA0022.eurprd04.prod.outlook.com (2603:10a6:208:122::35) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13 via Frontend
+ Transport; Mon, 27 Apr 2020 13:03:30 +0000
+X-Originating-IP: [31.17.95.22]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: b766a1e2-a1ed-4ad4-e31e-08d7eaab6289
+X-MS-TrafficTypeDiagnostic: AM0SPR01MB0072:
+X-Microsoft-Antispam-PRVS: <AM0SPR01MB0072F1FDBDF94E3FD3909C38EBAF0@AM0SPR01MB0072.eurprd09.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:660;
+X-Forefront-PRVS: 0386B406AA
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR09MB4067.eurprd09.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(346002)(376002)(366004)(396003)(136003)(39830400003)(966005)(26005)(6916009)(16526019)(508600001)(316002)(1076003)(44832011)(956004)(8676002)(186003)(4744005)(5660300002)(4326008)(9686003)(33656002)(6496006)(6486002)(86362001)(81156014)(52116002)(66946007)(66556008)(66476007)(2906002)(8936002)(32563001);
+ DIR:OUT; SFP:1101; 
+Received-SPF: None (protection.outlook.com: kococonnector.com does not
+ designate permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: XwoUZRrZ5D5x4jijP0mnmxWSyuW0V1sOq/BPpXTToDAJY5NRMqP7vBb7mv0qj8vATF5yotGw7bDjPxb3e0+FfapePGx8jBJkYiQQtqW91pJbXqeZddYlpnnTN34KO8KRd/AfrYiMBc0ElVuQKFq9HKr7lMCz6emW8o34PjinwY9o6S/7dZQ+lIqRBXYohxDCNcgDb0y5KuVEnAMvWioYwlKuAwqMwY3bWmzwgtBUYK2aL8OCvg32+5R02SsevJuFh5XxMJ81Q1r0xMg6aC5XclEtXzFvZQVr5tRpa/+sfdpRWl/tj/i/v4PGPg/lO/WdtoUjANN6pY4avQW2Ju2YCgPaZydfha4xgaJDTZvKHtHbE/lcZrO8Dsu1akkaxZedMIZJAI5TqkEmemtYCDQ49zYQccticg97e7eqR2ALJ8KcbIBFFtrjhujTs6jBWaxlxTIVD9IKEoG2u8aIwlAWuMVyzwb9EhvsxlZTSsw01yEZvaKCCcKMZyOmPTKUDYLy6/f8rGbX5K9iBqgP3uB9HKZNAOahTQUsH+FFgxUvhmW3RBv8S8WEN7iieKfNgCXi
+X-MS-Exchange-AntiSpam-MessageData: 3rJ32k3Rv/QwktQ+SQtmdsLBv+mSA4BfhFw/kwCWwXC3vfkdA5shHdByqggpBwbGtTUcYaQDJPRv/aA84osKfLFyZm8JQQcPUPv4ql+5Du/60x/1bUrIeKRJG+GZtURw3PHqijYEtVTj1JiIazjIsUXI9K99iLObKvY82Nl3k4m71adI+Ugfe7vCCMTUboI4AfvKUfNp9ycDA88G/hKd9kp1jZGB/8cvBdvTqEttNrDLPPIHkScE8E6XYH8vuGpxyeLqb/G6RhgYRzdZohbGFFb0SqWanEI7jtlqAHSkelaZ6QvfKt5iiN413oHswamxd8HE7IE5gR+YRguEaX4/shqUbmZ2mGBV/odIj9h3KHnm70Tfqi9z9ugagiRKSDmMivJXQk11MhV2i3ipN+bk+7FJLgBgTsiveywCruh3KgMD3Bd4vm4aUQ5wPYMsmnwDKyzIi9M9xL6y8LMjFD5g07vq6whb1rNYqjIhm43EvVbNWhQ32GIg2MITcjbo0hfYa16BUZ+khSL2tDlacI1zRCdBZosdgWzADTIEAnu3hF+V/DKBBHHH00UVsy1/uaMO15GkEFzFQwQ6hQ3xGPf0KFrKGTGW1ZTj3a6/Vv+DA+gnAO/bOnht12Ln2vMxbhhZqQGCn1rp4VjBgWQ0Zku3U7Y49PAouRZRS+HonWoXMASr/WfBj5sgqlsmzCBABnq8JhW0+2XAC+jER/AyBhCVxgMSWxr12mR2OCKFKc+/IZ2wX6Hsv4iHT+kSXDl8Ylk2SqyANrbbMeGK9Ud5iQFl4+04d45/wh2iSYxLfh4fkp0=
+X-OriginatorOrg: kococonnector.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b766a1e2-a1ed-4ad4-e31e-08d7eaab6289
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 13:03:31.1009 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 59845429-0644-4099-bd7e-17fba65a2f2b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: eO8ZPxbMBwYLPSM2dIY7UEFIJsc9vGzonoGlanLKts2nqhXLVd5o2XqW7myi8vvF+pToDjxJQmNRN3Ymt34sepJ/t1HSWVey8yepx7ELvmE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0SPR01MB0072
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_060048_205423_B1E9BA4D 
-X-CRM114-Status: GOOD (  20.66  )
+X-CRM114-CacheID: sfid-20200427_060337_279949_1EBB1CC3 
+X-CRM114-Status: UNSURE (   4.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a01:111:f400:fe08:0:0:0:604 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,266 +124,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, kernelci@groups.io,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: aisheng.dong@nxp.com, anson.huang@nxp.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, oliver.graute@gmail.com, linux-imx@nxp.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please see the bisection report below about a boot failure.
+On 27/04/20, Oliver Graute wrote:
+> Hello,
+> 
+> is this nxp software workaround already proposed to linux community? can
+> someone point me to the discussion if available.
+> 
+> https://source.codeaurora.org/external/imx/linux-imx/commit/?h=3Dimx_5.4.3_=
+> 2.0.0&id=3D593bea4e36d8c8a4fd65ef4f07fb8144dab2de1c
 
-Reports aren't automatically sent to the public while we're
-trialing new bisection features on kernelci.org but this one
-looks valid.
+sry for the broken link. Here the right one:
 
-The log shows a kernel NULL pointer derefence:
+https://source.codeaurora.org/external/imx/linux-imx/commit/?h=imx_5.4.3_2.0.0&id=593bea4e36d8c8a4fd65ef4f07fb8144dab2de1c
 
-    https://storage.kernelci.org/next/master/next-20200424/arm64/defconfig/gcc-8/lab-baylibre/baseline-imx8mn-ddr4-evk.html#L750
+Best regards,
 
-Guillaume
-
-On 25/04/2020 15:58, kernelci.org bot wrote:
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-> * This automated bisection report was sent to you on the basis  *
-> * that you may be involved with the breaking commit it has      *
-> * found.  No manual investigation has been done to verify it,   *
-> * and the root cause of the problem may be somewhere else.      *
-> *                                                               *
-> * If you do send a fix, please include this trailer:            *
-> *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
-> *                                                               *
-> * Hope this helps!                                              *
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-> 
-> next/master bisection: baseline.dmesg.alert on imx8mn-ddr4-evk
-> 
-> Summary:
->   Start:      8bdabd09ec86a Add linux-next specific files for 20200424
->   Plain log:  https://storage.kernelci.org/next/master/next-20200424/arm64/defconfig/gcc-8/lab-baylibre/baseline-imx8mn-ddr4-evk.txt
->   HTML log:   https://storage.kernelci.org/next/master/next-20200424/arm64/defconfig/gcc-8/lab-baylibre/baseline-imx8mn-ddr4-evk.html
->   Result:     2fbd0de2a20fb cpufreq: imx-cpufreq-dt: support i.MX7ULP
-> 
-> Checks:
->   revert:     PASS
->   verify:     PASS
-> 
-> Parameters:
->   Tree:       next
->   URL:        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
->   Branch:     master
->   Target:     imx8mn-ddr4-evk
->   CPU arch:   arm64
->   Lab:        lab-baylibre
->   Compiler:   gcc-8
->   Config:     defconfig
->   Test case:  baseline.dmesg.alert
-> 
-> Breaking commit found:
-> 
-> -------------------------------------------------------------------------------
-> commit 2fbd0de2a20fbea8b1f5250935e9f1f0e4441b0f
-> Author: Peng Fan <peng.fan@nxp.com>
-> Date:   Mon Apr 20 15:55:14 2020 +0800
-> 
->     cpufreq: imx-cpufreq-dt: support i.MX7ULP
->     
->     i.MX7ULP's ARM core clock design is totally different compared
->     with i.MX7D/8M SoCs which supported by imx-cpufreq-dt. It needs
->     get_intermediate and target_intermedate to configure clk MUX ready,
->     before let OPP configure ARM core clk.
->                                               |---FIRC
->          |------RUN---...---SCS(MUX2) --------|
->     ARM --(MUX1)                              |---SPLL_PFD0(CLK_SET_RATE_GATE)
->          |------HSRUN--...--HSRUN_SCS(MUX3)---|
->                                               |---SRIC
->     
->     FIRC is step clk, SPLL_PFD0 is the normal clk driving ARM core.
->     MUX2 and MUX3 share same inputs. So if MUX2/MUX3 both sources from
->     SPLL_PFD0, both MUXes will lose input when configure SPLL_PFD0.
->     So the target_intermediate will configure MUX2/MUX3 to FIRC, to avoid
->     ARM core lose clk when configure SPLL_PFD0.
->     
->     Signed-off-by: Peng Fan <peng.fan@nxp.com>
->     Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> 
-> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-> index de206d2745feb..b019b05940e83 100644
-> --- a/drivers/cpufreq/imx-cpufreq-dt.c
-> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
-> @@ -3,7 +3,9 @@
->   * Copyright 2019 NXP
->   */
->  
-> +#include <linux/clk.h>
->  #include <linux/cpu.h>
-> +#include <linux/cpufreq.h>
->  #include <linux/err.h>
->  #include <linux/init.h>
->  #include <linux/kernel.h>
-> @@ -12,8 +14,11 @@
->  #include <linux/of.h>
->  #include <linux/platform_device.h>
->  #include <linux/pm_opp.h>
-> +#include <linux/regulator/consumer.h>
->  #include <linux/slab.h>
->  
-> +#include "cpufreq-dt.h"
-> +
->  #define OCOTP_CFG3_SPEED_GRADE_SHIFT	8
->  #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
->  #define IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK	(0xf << 8)
-> @@ -22,13 +27,62 @@
->  #define IMX8MP_OCOTP_CFG3_MKT_SEGMENT_SHIFT    5
->  #define IMX8MP_OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 5)
->  
-> +#define IMX7ULP_MAX_RUN_FREQ	528000
-> +
->  /* cpufreq-dt device registered by imx-cpufreq-dt */
->  static struct platform_device *cpufreq_dt_pdev;
->  static struct opp_table *cpufreq_opp_table;
-> +static struct device *cpu_dev;
-> +
-> +enum IMX7ULP_CPUFREQ_CLKS {
-> +	ARM,
-> +	CORE,
-> +	SCS_SEL,
-> +	HSRUN_CORE,
-> +	HSRUN_SCS_SEL,
-> +	FIRC,
-> +};
-> +
-> +static struct clk_bulk_data imx7ulp_clks[] = {
-> +	{ .id = "arm" },
-> +	{ .id = "core" },
-> +	{ .id = "scs_sel" },
-> +	{ .id = "hsrun_core" },
-> +	{ .id = "hsrun_scs_sel" },
-> +	{ .id = "firc" },
-> +};
-> +
-> +static unsigned int imx7ulp_get_intermediate(struct cpufreq_policy *policy,
-> +					     unsigned int index)
-> +{
-> +	return clk_get_rate(imx7ulp_clks[FIRC].clk);
-> +}
-> +
-> +static int imx7ulp_target_intermediate(struct cpufreq_policy *policy,
-> +					unsigned int index)
-> +{
-> +	unsigned int newfreq = policy->freq_table[index].frequency;
-> +
-> +	clk_set_parent(imx7ulp_clks[SCS_SEL].clk, imx7ulp_clks[FIRC].clk);
-> +	clk_set_parent(imx7ulp_clks[HSRUN_SCS_SEL].clk, imx7ulp_clks[FIRC].clk);
-> +
-> +	if (newfreq > IMX7ULP_MAX_RUN_FREQ)
-> +		clk_set_parent(imx7ulp_clks[ARM].clk,
-> +			       imx7ulp_clks[HSRUN_CORE].clk);
-> +	else
-> +		clk_set_parent(imx7ulp_clks[ARM].clk, imx7ulp_clks[CORE].clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static struct cpufreq_dt_platform_data imx7ulp_data = {
-> +	.target_intermediate = imx7ulp_target_intermediate,
-> +	.get_intermediate = imx7ulp_get_intermediate,
-> +};
->  
->  static int imx_cpufreq_dt_probe(struct platform_device *pdev)
->  {
-> -	struct device *cpu_dev = get_cpu_device(0);
-> +	struct platform_device *dt_pdev;
->  	u32 cell_value, supported_hw[2];
->  	int speed_grade, mkt_segment;
->  	int ret;
-> @@ -36,6 +90,29 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
->  	if (!of_find_property(cpu_dev->of_node, "cpu-supply", NULL))
->  		return -ENODEV;
->  
-> +	cpu_dev = get_cpu_device(0);
-> +
-> +	if (of_machine_is_compatible("fsl,imx7ulp")) {
-> +		ret = clk_bulk_get(cpu_dev, ARRAY_SIZE(imx7ulp_clks),
-> +				   imx7ulp_clks);
-> +		if (ret)
-> +			return ret;
-> +
-> +		dt_pdev = platform_device_register_data(NULL, "cpufreq-dt",
-> +							-1, &imx7ulp_data,
-> +							sizeof(imx7ulp_data));
-> +		if (IS_ERR(dt_pdev)) {
-> +			clk_bulk_put(ARRAY_SIZE(imx7ulp_clks), imx7ulp_clks);
-> +			ret = PTR_ERR(dt_pdev);
-> +			dev_err(&pdev->dev, "Failed to register cpufreq-dt: %d\n", ret);
-> +			return ret;
-> +		}
-> +
-> +		cpufreq_dt_pdev = dt_pdev;
-> +
-> +		return 0;
-> +	}
-> +
->  	ret = nvmem_cell_read_u32(cpu_dev, "speed_grade", &cell_value);
->  	if (ret)
->  		return ret;
-> @@ -98,7 +175,10 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
->  static int imx_cpufreq_dt_remove(struct platform_device *pdev)
->  {
->  	platform_device_unregister(cpufreq_dt_pdev);
-> -	dev_pm_opp_put_supported_hw(cpufreq_opp_table);
-> +	if (!of_machine_is_compatible("fsl,imx7ulp"))
-> +		dev_pm_opp_put_supported_hw(cpufreq_opp_table);
-> +	else
-> +		clk_bulk_put(ARRAY_SIZE(imx7ulp_clks), imx7ulp_clks);
->  
->  	return 0;
->  }
-> -------------------------------------------------------------------------------
-> 
-> 
-> Git bisection log:
-> 
-> -------------------------------------------------------------------------------
-> git bisect start
-> # good: [a6d0b83f25073bdf08b8547aeff961a62c6ab229] net: bcmgenet: correct per TX/RX ring statistics
-> git bisect good a6d0b83f25073bdf08b8547aeff961a62c6ab229
-> # bad: [8bdabd09ec86a993419c8c98a4f34c12bc902c6c] Add linux-next specific files for 20200424
-> git bisect bad 8bdabd09ec86a993419c8c98a4f34c12bc902c6c
-> # bad: [556a775f0602376f6d4bf6ec24f817314d7e5cac] Merge remote-tracking branch 'crypto/master'
-> git bisect bad 556a775f0602376f6d4bf6ec24f817314d7e5cac
-> # good: [fa5fcf1b786dcda5965372f84baf252cf50fc849] Merge remote-tracking branch 'btrfs/for-next'
-> git bisect good fa5fcf1b786dcda5965372f84baf252cf50fc849
-> # good: [16aedbb33c21617b2dcdcc50d57f3a17557cc825] Merge remote-tracking branch 'jc_docs/docs-next'
-> git bisect good 16aedbb33c21617b2dcdcc50d57f3a17557cc825
-> # bad: [920b40f1dfe3adc7d9640e95bb7c08464d0ae7ba] Merge remote-tracking branch 'rdma/for-next'
-> git bisect bad 920b40f1dfe3adc7d9640e95bb7c08464d0ae7ba
-> # good: [a735e6b80d911fc1f452cea328c61779445e1054] media: cec/usb: depends on USB_SUPPORT and TTY
-> git bisect good a735e6b80d911fc1f452cea328c61779445e1054
-> # good: [17ce5e6d72d5acc838e8e6218c3fadc2a7abe7da] media: admin-guide: improve cardlist.rst documentation
-> git bisect good 17ce5e6d72d5acc838e8e6218c3fadc2a7abe7da
-> # bad: [a82dbfaeede6ea5c12013c8034f9501dd112a482] Merge remote-tracking branch 'cpufreq-arm/cpufreq/arm/linux-next'
-> git bisect bad a82dbfaeede6ea5c12013c8034f9501dd112a482
-> # good: [4bdbff4da40584ec2225bb429b7c66ad54d19cda] media: tuners: Kconfig: add some missing VIDEO_V4L2 dependencies
-> git bisect good 4bdbff4da40584ec2225bb429b7c66ad54d19cda
-> # good: [01186efb19343e798e90318671e534c272a03723] Documentation: PM: sleep: Update driver flags documentation
-> git bisect good 01186efb19343e798e90318671e534c272a03723
-> # good: [366562a463dd2a93dea0e2743b1b0070f14339a9] Merge branches 'acpi-pci', 'acpi-button' and 'pm-tools' into linux-next
-> git bisect good 366562a463dd2a93dea0e2743b1b0070f14339a9
-> # good: [574f732cdc1c3e7bb1389eb8515b3d87a476d591] Merge remote-tracking branch 'pm/linux-next'
-> git bisect good 574f732cdc1c3e7bb1389eb8515b3d87a476d591
-> # good: [11d89b0a820f8d1edb7780b971597c357864dec7] cpufreq: Add i.MX7ULP to cpufreq-dt-platdev blacklist
-> git bisect good 11d89b0a820f8d1edb7780b971597c357864dec7
-> # bad: [2fbd0de2a20fbea8b1f5250935e9f1f0e4441b0f] cpufreq: imx-cpufreq-dt: support i.MX7ULP
-> git bisect bad 2fbd0de2a20fbea8b1f5250935e9f1f0e4441b0f
-> # first bad commit: [2fbd0de2a20fbea8b1f5250935e9f1f0e4441b0f] cpufreq: imx-cpufreq-dt: support i.MX7ULP
-> -------------------------------------------------------------------------------
-> 
-
+Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
