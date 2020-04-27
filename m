@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 445691BA590
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:58:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81DEB1BA5FD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:13:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6mzal9zaZ0ZvwtkWRk+ITTk6+R/5NCm+pbeOH98Z474=; b=q/AD14W/FVutVD
-	+TGuM9fy84JYQSjNssWmwqB6b6PdSbtQKS4z61XHPTNzK4BQr8KkqZBg5KNUY7V48IXrMdnougUhF
-	gDrfR1OsyulE3NTG2AcIQ89cgat6ROyI1goG83a2yOt4pON0dVpj/xA7t/7Q33lqCll+7ovy4Lvdk
-	DXPsFTtvtv/EEiPQPplSEYR7M3cWCcFV4HMNbIhPF1be8vBZ81ujmn3pkKb7Nm9odLazjhHwXLYmi
-	x5D6ejKf7uc2o3CWHpfRIPk8w0Ko9giZCFSl+HGqTbkDOD+MRTMslG0zu9OpqNysQToVFtP29EsZ/
-	40H2tfjYBhAi6hwLGLxw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UBP89hbhZx44wHEhHYV7UK35P+PHnp+VetbJ+CUDLUQ=; b=BdHNzxWIETU11G
+	T2cb46qwqxwoM/J+k9pAyZV4odW5UIIJ0qWjygOq3NsXN9NVfKJouyCfSDReMhrR4d1mOyyb2Wgsu
+	l9JiWZqAo7tOySOyASXWrGg2P/4830LEwwC3PP/jFu66+e2MhZQogSsVUG3DLSG3D/EatyIwWMSNB
+	Jc5mnXxZvPG3++MDCA5r+TlBlBPB/moCT1phuul/69CWmnmMNrrRuR2yR5FcTDlveZNvMKurVK01j
+	jQ/bDcioa1p163MZGZkw8CwnnvNUMrQwkskJ/JRX1lIaLg4QJ4Ptpv+ou7V9DevBlQPmeo9TK/Zm2
+	i7EXYZb8PxzJyBfdJt2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT4HZ-0000fY-DB; Mon, 27 Apr 2020 13:58:49 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jT4VO-0003iJ-HH; Mon, 27 Apr 2020 14:13:06 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT4HM-0000eI-10
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:58:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HI+hXdef3teFcq3aFHJ+lNQ36+H/xnayzEP1cLz139A=; b=m8KykkkylWdoseBY1n/gsoqEh
- KVFTqlhC0kFSp30GS16jUkbUZq7hRIIFETkZzuGl9kBqK2RTa4RTpC3CXJ9+Rj7Y2/iLhSK6XgT3N
- ScefK7wtt9WxTxKjVKBC1wqYSRrECSrlLe9tbgSH1oytOZq2pylhi5zsVzFC+5p4NpsqR+RUNxT9D
- XtUWUAj78s5iuppoliNlc9owGzJlBFNQSFZrqSOPfgOik+W8NN+vB08RqRaYtuQPZwCNiRbA7SqBY
- h1PR2wiMjIpCXZqlGIY/VXWn7lBiRbKH5zdlKb0HDEBtgr2ibt+ebxHGba7DtaX29ZXB3ypvrWRYi
- E6rLzrZ9Q==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:44642)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jT4H7-0003EQ-Ql; Mon, 27 Apr 2020 14:58:22 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jT4H6-0006iG-Q0; Mon, 27 Apr 2020 14:58:20 +0100
-Date: Mon, 27 Apr 2020 14:58:20 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Calvin Johnson <calvin.johnson@oss.nxp.com>
-Subject: Re: [net-next PATCH v2 0/3] Introduce new APIs to support phylink
- and phy layers
-Message-ID: <20200427135820.GH25745@shell.armlinux.org.uk>
-References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
+ id 1jT4VE-0003gu-3V; Mon, 27 Apr 2020 14:12:57 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u127so20641680wmg.1;
+ Mon, 27 Apr 2020 07:12:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hXzFCii8TK+6j4aoUMO+iQEJf8FgxRpxLE2R58+xhnU=;
+ b=oAbzNbnGmUqYwp1txITipiEvjxihbS2UCHOaOjmg8ovkCNQAlfLRuGTyWQwyIjgWD3
+ E073JSClILB1nA3qt8tGjq+VRPpC7UfwW299JgADbvNkeXyEC+1y0OUTeXhWEP4CZx/Y
+ Hwy6cHauz07E0P2uR6KIlRaU181SkT8g0ollwYYgCEAWxHEafxWNphYdzrnGdZwTD2v3
+ AWzP4/tjFBVKACwEHa/nmOj3X4idoIRmtZs25KcEtEOa31ZTkwHOhmt7gquE/kY/ImN2
+ K0RlE8d0zVjzM4IOgHIGC3xlzS1/ooV/olNIbhDzTPufkQRMgcnxjiOjfnhZBf17eU/A
+ Z5cw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hXzFCii8TK+6j4aoUMO+iQEJf8FgxRpxLE2R58+xhnU=;
+ b=W4ZOSew/HEk0YWZ1lyFE65efIrCOymx83FFHVarbAwAox8K3uKoNtmAkIUMOda2C0O
+ 6xpLXiEbngHw3B7yqtcA13rPHDsnS8S7Fd4QunY9eIP+wsiVvN64t+eBGB97IRbSctip
+ JH5Uuhb6NeiqGod8rBiZBQU8T4HFtOiY01Qs+5qJRMa1C0a+bXkojSyJispjJ7Htz9B9
+ FEPDPQ9BZyozrORZljTHvXcra6sGAfSNvQFeQBhv5bJuN8gl6kUJ1w9U2sVryduQGFnL
+ lIugekS5qIbYHQFTcgZPrP40hGOaB9dJegkPVuEYzZdduE+beF7WlOqA6XMCnlsa2SU/
+ Qo6A==
+X-Gm-Message-State: AGi0PuZOu4FutsBdWb7FrhieHXhvSRzGr4zYjnN+7CFKQpb2CJzh90uj
+ UQlDrT0G1b4nPYjHxxCT9pY=
+X-Google-Smtp-Source: APiQypJiOnJfu2lTVpb0BgX484TchdDbu6LXcPdFTw2LgdaUXl1ACqMYRiadebISaSMGvTJodU5KsQ==
+X-Received: by 2002:a1c:99d3:: with SMTP id
+ b202mr27301491wme.126.1587996774461; 
+ Mon, 27 Apr 2020 07:12:54 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id e13sm11841282wrp.15.2020.04.27.07.12.53
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Apr 2020 07:12:53 -0700 (PDT)
+Subject: Re: [PATCH v2 2/3] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
+ numbering for LED triggers
+From: Johan Jonker <jbx6244@gmail.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+References: <20200427073132.29997-3-wens@kernel.org>
+ <684132b8-4a84-8295-474b-38ccb992bba7@gmail.com>
+ <CAGb2v66Piu5_2bdqvWV3eEn2Se_y1MNKWvvYBv_J7DA-8jBhbQ@mail.gmail.com>
+ <65d15254-08da-895c-1a0c-ef6ce231b620@gmail.com>
+ <CAGb2v65fGYguNoksq5Dyx3HTKeYg+U82TiQSL+NO8AUcQJQj5w@mail.gmail.com>
+ <74a984fc-ce57-211b-936c-2d77e2e642bb@gmail.com>
+Message-ID: <a81840d3-813b-51b5-767c-e0d9d270200e@gmail.com>
+Date: Mon, 27 Apr 2020 16:12:51 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <74a984fc-ce57-211b-936c-2d77e2e642bb@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_065836_141898_5E40BC1B 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200427_071256_163795_ED8EBCE6 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,70 +108,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>, Pavel Machek <pavel@ucw.cz>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, jacek.anaszewski@gmail.com,
+ linux-leds@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, dmurphy@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 06:54:06PM +0530, Calvin Johnson wrote:
-> Following functions are defined:
->   phylink_fwnode_phy_connect()
->   phylink_device_phy_connect()
->   fwnode_phy_find_device()
->   device_phy_find_device()
->   fwnode_get_phy_node()
-> 
-> First two help in connecting phy to phylink instance.
-> Next two help in finding a phy on a mdiobus.
-> Last one helps in getting phy_node from a fwnode.
-> 
-> Changes in v2:
->   move phy code from base/property.c to net/phy/phy_device.c
->   replace acpi & of code to get phy-handle with fwnode_find_reference
->   replace of_ and acpi_ code with generic fwnode to get phy-handle.
-> 
-> Calvin Johnson (3):
->   device property: Introduce phy related fwnode functions
->   net: phy: alphabetically sort header includes
->   phylink: Introduce phylink_fwnode_phy_connect()
+Hi,
 
-Thanks for this, but there's more work that needs to be done here.  I
-also think that we must have an ack from ACPI people before this can be
-accepted - you are in effect proposing a new way for representing PHYs
-in ACPI.
+>> So for fixing up the LED node names, we'd probably want the following:
+>>
+>>     diy_led: led-0
+>>     yellow_led: led-1
+>>     work_led: led-2
+
+Change proposal for led nodes to comply with preexisting dts.
+Does this work?
+
+diy_led: led_0: led-0
+yellow_led: led_1: led-1
+work_led: led_2: led-2
+
+
+blue: led_0: led-0
+
+A check does not give any warnings.
+
+make -k ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
 
 > 
->  drivers/net/phy/phy_device.c | 83 ++++++++++++++++++++++++++++++------
->  drivers/net/phy/phylink.c    | 68 +++++++++++++++++++++++++++++
->  include/linux/phy.h          |  3 ++
->  include/linux/phylink.h      |  6 +++
->  4 files changed, 146 insertions(+), 14 deletions(-)
+> That doesn't look pretty either.
+> Would like to hear the maintainers view on how to handle other cases
+> without 'led' like for example 'blue' for mk808.
 > 
-> -- 
-> 2.17.1
-> 
-> 
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
