@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46E521B9901
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:50:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89AE31B990E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5J+j3mZv9QChrwY/OUQwET3RYy+Kvw+u7NV2Mj7kd60=; b=cPi+7kf5ehxmuu
-	KEVRKXPAoEd/tbJLMuNapfw/jSKovV8ms9IkrhjzPoNQNXffdDbDIoLcaCr8y3Ch2IDv4lHLm3DGj
-	CjXufKzx04OMaBgcLZXveAp5fmJWeehI3LwjFdNTSnAt+Rf+COSSNazF40Xa6YaLZoZtOKYue72yP
-	rCkRoZaXxJI1falhfu/FkYlu49rVbmqz8aBkXfeeAkFpASu8FeLehkQEpNAe1U7bTBvFEL2OlASGs
-	vABcDXA2hHvjjRqDoZDtrSJKubi6Vcg0w+Yqs/zFKd4p332tnv7nAkScciCgm1DV30B71LE/71cSH
-	wVQN0T+ms8/530zy2+8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3cMZgDuAqS4XOWTJewvYu3ROjYhTfMxUcsTZ4dUyrRw=; b=aaF0EBI/Ltimwf
+	kNaS1xtR2vaoXLF/1LAjFtIlchcbqBypTmqHAe1qMpcbSayEhkxzEOhzJ5YZ1HG6XTvRffMBuK1uq
+	iDEMXTxlmKQdr4uF/bty5zosGfqWNAuWmpxlaP8FVEHq0QYCcwbM7bkaLpDUecime6e3zcO5foMjL
+	0MO5vkLmP/emipKOmnjxS98JiJFv+QoFRAVW4ScBWsMee+hLBF0xfqEiXHVzj28Ec/vh5vglvpYF9
+	+Kil63l5EPRSD0a7IQZTO5JqeTQ+0M8k/0uaC/Ywxbp9G1gANf1lingEoUJQ8JFm+fQcmOaMwIZ6S
+	pavDoRkC6tNOLjkm+h2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSyWv-0004R2-Ba; Mon, 27 Apr 2020 07:50:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jSyZf-0007aO-B3; Mon, 27 Apr 2020 07:53:07 +0000
+Received: from mail-m17613.qiye.163.com ([59.111.176.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyWK-0004F0-E4; Mon, 27 Apr 2020 07:49:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABACA206B6;
- Mon, 27 Apr 2020 07:49:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587973780;
- bh=/8brvwQoEX2EnJSv6s+0ZBz9o81uCnXLIWCUSBACy34=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XXWldtU0yIsdIb51ZeaGkI+YsJ1FlbG49AyQHS3oEZgGmj7s3bCk0di1gzcww/GQn
- eBjh7vgXsm2OgAvkbxmRGsFdBN2DqTIXOlEtLRiSFkAGKaLiSSjLnnsTAGN3EkEr0h
- wWXP6s+LUDwPK7gCoxbl50U3M3XheUkHvdEnWYqM=
-Date: Mon, 27 Apr 2020 08:49:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Zong Li <zong.li@sifive.com>
-Subject: Re: [PATCH 4/4] arm64: mm: use ARCH_HAS_DEBUG_WX instead of arch
- defined
-Message-ID: <20200427074933.GB11787@willie-the-truck>
-References: <cover.1587455584.git.zong.li@sifive.com>
- <e19709e7576f65e303245fe520cad5f7bae72763.1587455584.git.zong.li@sifive.com>
+ id 1jSyZV-0007Ys-Jn
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 07:52:59 +0000
+Received: from ubuntu.localdomain (unknown [157.0.31.122])
+ by mail-m17613.qiye.163.com (Hmail) with ESMTPA id 58894482675;
+ Mon, 27 Apr 2020 15:52:45 +0800 (CST)
+From: Bernard Zhao <bernard@vivo.com>
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] drm/mediatek: cleanup coding style in mediatek a bit
+Date: Mon, 27 Apr 2020 00:52:38 -0700
+Message-Id: <20200427075238.2828-1-bernard@vivo.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e19709e7576f65e303245fe520cad5f7bae72763.1587455584.git.zong.li@sifive.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VPTkhCQkJCQk1KQ05IWVdZKFlBSE
+ 83V1ktWUFJV1kJDhceCFlBWTU0KTY6NyQpLjc#WQY+
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MzI6Lyo4LzgzPEg8MwIrUUw5
+ MBRPCg5VSlVKTkNMQkxIQk1OTU9NVTMWGhIXVRkeCRUaCR87DRINFFUYFBZFWVdZEgtZQVlKTkxV
+ S1VISlVKSUlZV1kIAVlBSE9NSDcG
+X-HM-Tid: 0a71ba9fc6f493bakuws58894482675
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_004940_513990_292BACB2 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20200427_005257_803279_7AE4CDA7 
+X-CRM114-Status: UNSURE (   8.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [59.111.176.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,29 +67,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tglx@linutronix.de, catalin.marinas@arm.com, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, mingo@redhat.com,
- palmer@dabbelt.com, paul.walmsley@sifive.com, bp@alien8.de,
- akpm@linux-foundation.org, hpa@zytor.com, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: opensource.kernel@vivo.com, Bernard Zhao <bernard@vivo.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 04:17:15PM +0800, Zong Li wrote:
-> Extract DEBUG_WX to mm/Kconfig.debug for shared use. Change to use
-> ARCH_HAS_DEBUG_WX instead of DEBUG_WX defined by arch port.
-> 
-> Signed-off-by: Zong Li <zong.li@sifive.com>
-> ---
->  arch/arm64/Kconfig       |  1 +
->  arch/arm64/Kconfig.debug | 29 -----------------------------
->  2 files changed, 1 insertion(+), 29 deletions(-)
+This code change is to make code bit more readable.
+Optimise array size align to HDMI macro define.
+Add check if len is overange.
 
-Acked-by: Will Deacon <will@kernel.org>
+Signed-off-by: Bernard Zhao <bernard@vivo.com>
+---
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-Will
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index ff43a3d80410..40fb5154ed5d 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -311,15 +311,15 @@ static void mtk_hdmi_hw_send_info_frame(struct mtk_hdmi *hdmi, u8 *buffer,
+ 	u8 checksum;
+ 	int ctrl_frame_en = 0;
+ 
+-	frame_type = *buffer;
+-	buffer += 1;
+-	frame_ver = *buffer;
+-	buffer += 1;
+-	frame_len = *buffer;
+-	buffer += 1;
+-	checksum = *buffer;
+-	buffer += 1;
++	frame_type = *buffer++;
++	frame_ver = *buffer++;
++	frame_len = *buffer++;
++	checksum = *buffer++;
+ 	frame_data = buffer;
++	if ((frame_len + HDMI_INFOFRAME_HEADER_SIZE) > len) {
++		dev_err(hdmi->dev, "Wrong frame len: %d\n", frame_len;
++		return;
++	}
+ 
+ 	dev_dbg(hdmi->dev,
+ 		"frame_type:0x%x,frame_ver:0x%x,frame_len:0x%x,checksum:0x%x\n",
+@@ -982,7 +982,7 @@ static int mtk_hdmi_setup_avi_infoframe(struct mtk_hdmi *hdmi,
+ 					struct drm_display_mode *mode)
+ {
+ 	struct hdmi_avi_infoframe frame;
+-	u8 buffer[17];
++	u8 buffer[HDMI_INFOFRAME_HEADER_SIZE + HDMI_AVI_INFOFRAME_SIZE];
+ 	ssize_t err;
+ 
+ 	err = drm_hdmi_avi_infoframe_from_display_mode(&frame,
+@@ -1008,7 +1008,7 @@ static int mtk_hdmi_setup_spd_infoframe(struct mtk_hdmi *hdmi,
+ 					const char *product)
+ {
+ 	struct hdmi_spd_infoframe frame;
+-	u8 buffer[29];
++	u8 buffer[HDMI_INFOFRAME_HEADER_SIZE + HDMI_SPD_INFOFRAME_SIZE];
+ 	ssize_t err;
+ 
+ 	err = hdmi_spd_infoframe_init(&frame, vendor, product);
+@@ -1031,7 +1031,7 @@ static int mtk_hdmi_setup_spd_infoframe(struct mtk_hdmi *hdmi,
+ static int mtk_hdmi_setup_audio_infoframe(struct mtk_hdmi *hdmi)
+ {
+ 	struct hdmi_audio_infoframe frame;
+-	u8 buffer[14];
++	u8 buffer[HDMI_INFOFRAME_HEADER_SIZE + HDMI_AUDIO_INFOFRAME_SIZE];
+ 	ssize_t err;
+ 
+ 	err = hdmi_audio_infoframe_init(&frame);
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
