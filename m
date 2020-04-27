@@ -2,93 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 782D31B9FD3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:24:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 872E41B9FDE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:28:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=padt/qQ7wkLmNH/wfooUlv3cK/xO6AwhI8D5f8K5BRo=; b=OC33xmFW644vY4
-	lJHL3J6MhNK46RWvTssB9AXl+eTl1mzdOE6nlw42FxRuhbtvzxpNQCzRGCqfbY9WUw6zoD9bQ8jQy
-	r9mvBqDSyi4gMq9wwtW6Q3s64uMAtTw1ye0HWaW98rVeImrl0MlOynMd4q7FUvZ0o0S8g+thgZn29
-	ODTLF/CnXUEa6+SVgTS/Hy8xPydoAeJwJO0JZjjynCntmVH63g1PozJV2KLuux0MHEh9FrgjHLUbE
-	T6UBo2fLwMeIfj/JMUAMAEqcsA+hIi2MKdS6yCyqEOjaDhQ1MnFsrh/9y0okDAaLeZURxmVtV1d0l
-	bjdHRSfybAsMiodobKow==;
+	List-Owner; bh=qXYN7/C/Dk3TYOd33FK0fC9zPki6H6GQPMj0666LiW0=; b=aTV0MjNRfcWKAr
+	5UZ7lPB+B8YZbKQ3LjnUo9S5P/Ii7h6FP4MfUyBMrwt1axNa9eTjyw7+a6McNmi+hiE2VjqrJkIHe
+	mbO5X9y8YQ4BXR0g/9AiP9kNIX0lYzmjT/pn+rlA7k/R8GBq8t7sSYVXc/UOkFKnuzACfrdgdGIWo
+	+SrvrINT3UnVlCtIVZ5LyExENcSti2GAEAX0iW4Blta09APIsP4rvJ3+5dnU/NPuzW7GMTuVNKb7T
+	Diu7JhG61Qom+O7QOxRR8olke5WAabxg9wfIDA9SIhjCX8SWUVTSwJjSRPMvKytjxhTWgCP2MKv3a
+	ByJrEOnnawzmkV+Kj8jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSzzy-0001bc-Nv; Mon, 27 Apr 2020 09:24:22 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jT03l-0004ge-Dr; Mon, 27 Apr 2020 09:28:17 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSzzn-0001ax-Js
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 09:24:12 +0000
-Received: by mail-pl1-x643.google.com with SMTP id d24so6785757pll.8
+ id 1jT03c-0004fx-0u
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 09:28:09 +0000
+Received: by mail-ot1-f66.google.com with SMTP id i27so25018186ota.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 02:24:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=62sxPbsrxCm2fvIpJ8tpB4+O/E6FAUO1ubRiSS5aMQs=;
- b=PqkwdOV9sWGTFWFEwpK93utJLjznxrq9WB2g7q3+71ll4BiIeRtuPb+ynL2zXTe+Nr
- m1FfLsqEjWI8q0Ir9zWeZBQ1TzbPYwbUz1alfss91jOdDLIcQnVwOHgqhJnjSXatqq8n
- TCA/aUeHD5zilUdC3r50QHTAo7ow6caq+LkPzrGFb5FjU3YbfpUYUU0TvEQcBYSsfx08
- OsL3fcXvxI1Gcvat0hjax14vIxLSD/CeFJ0AMJ5SD3/IqM6mPuQxuU+KfC1JDHRmktRv
- bNwzP6r4PlUzL7vbiwLeUR6qcr+VJ26wQ5jfmfm7C/ODd3PFJ80O+/A9HzGO+7gkYSrL
- ISFw==
+ Mon, 27 Apr 2020 02:28:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=62sxPbsrxCm2fvIpJ8tpB4+O/E6FAUO1ubRiSS5aMQs=;
- b=l2n1di6cN+FDP0EE4bIgR0rJFUOPASuMMzkFJiEMAt7/e2xmMghF7vHDLv7vFclCda
- SmnKoPCVUJCQCNlNPfhpwCNaukaFSq2clYOCE4hUtsut5qzJ9kIz0XbWHDb1p9N2RN6D
- mSVhP0RXyIVX0BVkolroEYK5AaeEt6NCkM/pkaFI1/mxBBoYhNUZxWTQv3i6yIgW+XdP
- HvHD0qrtT9aSZwlCpvIyVzlCIsgaSbNIXqck4drOX7GOHjawL0EhZZXmCOLOMh0aOIio
- mq0fIsN2cGKx7p/BBGbAVbV6krJA5xH51kUEBYVcUDFMxTWkNQ55/hzOV0K7XWZIHVCl
- W47Q==
-X-Gm-Message-State: AGi0PubiecY0WLURvqDzPnuV0OfvUtob/C6b2arsB+rwfwgXQ4dFWS1p
- n4te3i5Cw4m0Bsy1I46+YNBwQA==
-X-Google-Smtp-Source: APiQypLoeg39tmPVj837ge/fvjEjwcaLKfMYIysT4UHtoPUQOPFkSmOF2zWgF54zZIpO9qIWwNDClQ==
-X-Received: by 2002:a17:90a:1501:: with SMTP id
- l1mr21988435pja.82.1587979450837; 
- Mon, 27 Apr 2020 02:24:10 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id l37sm10807183pje.12.2020.04.27.02.24.09
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 Apr 2020 02:24:10 -0700 (PDT)
-Date: Mon, 27 Apr 2020 14:54:08 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 10/10] cpufreq: dt: Add support for r8a7742
-Message-ID: <20200427092408.g2vpc6j2c6it4x2i@vireshk-i7>
-References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587678050-23468-11-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAMuHMdV6J-_gBkzhUXtA8OrxhJVzyrAqjA8oeGJGBp86X-C3Nw@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=satcs0L6pCESi5s1zRT0opUmLRyAMa2F37DYw2oCF+o=;
+ b=clf+QfHJVjVz4HApVdFBBDOBaXappeWF51JR5q5fMbDdOIjyf4jKuzZd6YoucJIJb6
+ X6URJpP2y2b7R+ThWr4hciMy1pEO0rGf+wlUNyUBYh9OG2QCqomH8Dk1dhnxSnaZR8Du
+ 3Rou+7hKG39OzOjUFnRjhpKabWljNoeS4gOtjy5QFF7LyoXL26WyzUojUJbxubrU1V7f
+ jLhYe7JEJyUcSLcI/eHmdW41wP7kTKY8+upl6pGazfsRV0mBWKuGhVblLpN7aKpGsVfB
+ XUaTFUePawku69gJd3jkNRTw/Rna89cHLPSCnTjpZAWp0sJrPYBpiZqrI7BdUumiLVTH
+ kHyQ==
+X-Gm-Message-State: AGi0PuaA441TKsGyZlwSY27AvNjP2cJUpmwoTGev55+aZsda8Cep2KP7
+ kxIPJa/o65euqeagPkMuPiU0MYW1HviOCnol1pA=
+X-Google-Smtp-Source: APiQypJzALJgRY1d91rA8c98t1wolcYkZSylcGRu1D6EuuJWyXLxqd15Cj20htAHNIdKONFRaH1i3C9mh1n0ja0zK0E=
+X-Received: by 2002:a9d:564:: with SMTP id 91mr17595764otw.250.1587979686512; 
+ Mon, 27 Apr 2020 02:28:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdV6J-_gBkzhUXtA8OrxhJVzyrAqjA8oeGJGBp86X-C3Nw@mail.gmail.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 27 Apr 2020 11:27:55 +0200
+Message-ID: <CAMuHMdXwsUAaeY+b6t-nqPE8kL-p+F4HqXE2mujP0eXPjrbooQ@mail.gmail.com>
+Subject: Re: [PATCH 00/10] Add RZ/G1H support.
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_022411_814199_C9A70FE6 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_022808_070857_7284DC3B 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,11 +86,9 @@ Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>,
  Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>,
  Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Michael Turquette <mturquette@baylibre.com>,
- Magnus Damm <magnus.damm@gmail.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Russell King <linux@armlinux.org.uk>,
+ Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Lad Prabhakar <prabhakar.csengg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, linux-clk <linux-clk@vger.kernel.org>,
@@ -118,27 +98,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27-04-20, 11:22, Geert Uytterhoeven wrote:
-> Hi Prabhakar,
-> 
-> This patch should be merged through Viresh's cpufreq tree (CCed).
-> 
-> On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
-> <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> > Add the compatible strings for supporting the generic cpufreq driver on
-> > the Renesas RZ/G1H (R8A7742) SoC.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
-> 
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Hi Prabhakar,
 
-Prabhakar,
+On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
+<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+> This patch series aims to add support for Renesas RZ/G1H (r8a7742) SoC.
+>
+> RZ/G1H SoC is similar to R-Car Gen2 H2 SoC.
+>
+> This patch set is based on renesas-drivers/master-v5.7-rc1.
 
-Please resend the patch with all dependencies to me so I can apply it.
+Thanks for your series!
+
+Looks mostly OK to me.
+The missing code part seems to be the introduction of the main
+CONFIG_ARCH_R8A7742 symbol?
+
+I assume you plan to submit the DTS for v5.8, too, so I'll have to be
+careful and apply the binding definitions to a separate shared branch?
+
+Thanks again!
+
+> Lad Prabhakar (10):
+>   dt-bindings: power: rcar-sysc: Document r8a7742 SYSC binding
+>   dt-bindings: power: rcar-sysc: Add r8a7742 power domain index macros
+>   soc: renesas: rcar-sysc: add R8A7742 support
+>   dt-bindings: reset: rcar-rst: Document r8a7742 reset module
+>   soc: renesas: rcar-rst: Add support for RZ/G1H
+>   dt-bindings: clock: renesas: cpg-mssr: Document r8a7742 binding
+>   clk: renesas: Add r8a7742 CPG Core Clock Definitions
+>   clk: renesas: cpg-mssr: Add R8A7742 support
+>   ARM: shmobile: r8a7742: Basic SoC support
+>   cpufreq: dt: Add support for r8a7742
+
+Gr{oetje,eeting}s,
+
+                        Geert
 
 -- 
-viresh
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
