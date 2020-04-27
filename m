@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A75E1BAE48
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 568A51BAE49
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:44:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ci0bOHAGskxkSkL9lOdYodauNcJpcHFjN9AHe4K+djM=; b=ewcJ900So/xz6K
-	/TG6+QszUi/WLiTIdf47teF2LlMHfmK5R1Wq3APb7S65us9MI093fq3lPm0STzOjHnpUPjznIFGqe
-	3mlU3BnD6XzmnWQX51BJhAS25BcrDi1gq+ZIyrkWTk75tV/KrhdvXZh0HGSq7EwcOI2fK/pF0Dvl2
-	gw2RtXhXN+731DhRISshxDdd5k04YVWY4GzF9DHKvuD32JGpqT/TPrKy+kidBpOmA4WLKy1ObQE+j
-	/oEKNSnpo3PnN/2VvpjU0wFY9BClGK6RKKwQYHexWf6JtXLm9q9Y3JqnBkDD6pKofCvGIilknilqo
-	c6f4x6/sWQuCQ6V+gLWA==;
+	List-Owner; bh=waP2iGWrdn0QTNBRL39ZNJdLqzpWooqyuYIqGGbrrgs=; b=YGSE/zHG7+CaIJ
+	0AY58UfsVljMpPil8NLC5GyWTFkDOFb2tOo8gj/uezeGB2ecbm1xEjlXJVFga3Beg2UY5Wxu6kYNl
+	gtJGum3LqLwoIfyHqaqDZK6brR6YU/6oJLz1G5Pe4e+9IZIXKmjS2G2o0H/QgtVvo6lq8djjhjCvk
+	uMePfJ3YZlDY5F4JLLWYD6g6gz0rY4eV3IiF2xa8iJdO00P33uidMIWEaJr5HksARfxRbOuywZDaY
+	Vq8vTr5iySzbaWFO6pyU/lAjIaSnOBpASoos27USolrZJYid+rVMs1jD9oUn3IYMfv8o5LFSl2vfW
+	dzHeWe7yS/KuVsxEdxFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT9fW-0003h3-Hd; Mon, 27 Apr 2020 19:43:54 +0000
+	id 1jT9fm-0003v0-OA; Mon, 27 Apr 2020 19:44:10 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT9eD-0002jO-58; Mon, 27 Apr 2020 19:42:34 +0000
+ id 1jT9eD-0002k0-ST; Mon, 27 Apr 2020 19:42:35 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.lan)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jT9eB-00007W-KU; Mon, 27 Apr 2020 21:42:31 +0200
+ id 1jT9eB-00007W-Sc; Mon, 27 Apr 2020 21:42:31 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: swap clock-names of gpu nodes
-Date: Mon, 27 Apr 2020 21:42:27 +0200
-Message-Id: <158801649141.50507.12679129425303471594.b4-ty@sntech.de>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix Pinebook Pro FUSB302 interrupt
+Date: Mon, 27 Apr 2020 21:42:28 +0200
+Message-Id: <158801649141.50507.10990580306626948371.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200425192500.1808-1-jbx6244@gmail.com>
-References: <20200425192500.1808-1-jbx6244@gmail.com>
+In-Reply-To: <f731122c5ccde4e3d6d149a9d7bf01708b4279f7.1587736459.git.robin.murphy@arm.com>
+References: <f731122c5ccde4e3d6d149a9d7bf01708b4279f7.1587736459.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_124233_191988_C20EE01D 
-X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-CacheID: sfid-20200427_124233_931253_D4FB1B78 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -58,29 +58,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linus.walleij@linaro.org, Heiko Stuebner <heiko@sntech.de>,
+ t.schramm@manjaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 25 Apr 2020 21:25:00 +0200, Johan Jonker wrote:
-> Dts files with Rockchip 'gpu' nodes were manually verified.
-> In order to automate this process arm,mali-utgard.txt
-> has been converted to yaml. In the new setup dtbs_check with
-> arm,mali-utgard.yaml expects clock-names values
-> in the same order, so fix that.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+On Fri, 24 Apr 2020 14:56:19 +0100, Robin Murphy wrote:
+> Although the FUSB302 driver has apparently supported the "fcs,int_n"
+> property since the beginning, the DT binding has never documented it,
+> and in fact defines a standard "interrupts" property as required. It's
+> also questionable whether the GPIO specifier with GPIO_ACTIVE_HIGH is
+> even correct, since the FUSB302 datasheet says INT_N is an "Active-LOW
+> open-drain interrupt output", and the Pinebook Pro schematic shows it
+> wired directly to the GPIO pin.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] ARM: dts: rockchip: swap clock-names of gpu nodes
-      commit: b14f3898d2c25a9b47a61fb879d0b1f3af92c59b
+[1/1] arm64: dts: rockchip: Fix Pinebook Pro FUSB302 interrupt
+      commit: 89ee3ace7292d94539aae156fb6fee65460b8bc0
 
 Best regards,
 -- 
