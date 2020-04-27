@@ -2,55 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46CAE1B99FD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 10:22:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A5D91BA3CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 14:50:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i1F2CjZA9SP/Aq0bqqhjSNfArcF5qTiJEx/mZs7aJZ8=; b=mvQU9FeBSpjXr/
-	Ely5bW6ywtPzAhfeGOkPrlfpiMNCB+T+jYe0jBIT60IZYJcL38bDzCGIcs8lfDNGNP5onupQFnqnW
-	+OaVmWRWT16bJuoddLELJOp7X/0/IKGON+CuHzDGjiG9Wz7BLQJ4zWU6AYFYXiWNMMrxMbWpDQdKg
-	MOMA4qyiyKqydkRUzKUGMOFWtZtEQnwxloROkuW36IJAX2TaD8osINjbIdX363wJQDwJ57gWFQIzd
-	VqUMKZCF5e4NpWvDH5sQL1/RlRFaYW/0dcdx0orIoBbslDdfSosKLU+5/fxpN6HnSQxp1PnuiCVKe
-	4vVjeym96OjNUQiF4dvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6DxQD0AKRx+P0lkIahknDcTdE74TiQ/Z+aWkaPo2yZU=; b=eTmTPA0RQnHqME
+	BX8NIR1f6uJ/K4jMwUtTMgdsHNXZ2z3IBegiNEW2hTgrrrq6HhLT7a12iMfEpLH4MnZ91sZtkHvoE
+	wmfT87ZDrWEGa3sQhJfs2tfFHF5h+swMiNbaVadMCOyImzYZge/mb7skv95iztL3tT4kCZiOgV90B
+	j6hIQkLXTbXgg/Vjat/L8xts83hs5terwaLZABKWRrIzEU0P8yA1ibftP6gCLzLSGbiKHBtcWRet9
+	h50tTQmtPMld8ZCWd5AcC29kISf9VXUv9enfNugmcQXa+JsufOzX3w5GHrc7n7TjTVWtkKKTlNYlF
+	a/Huvxb9IoFK+Oipf08A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSz2O-0007vo-IB; Mon, 27 Apr 2020 08:22:48 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jT3Cl-0008Mx-UN; Mon, 27 Apr 2020 12:49:47 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyyp-0002eg-Io; Mon, 27 Apr 2020 08:19:10 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id A74082A098C
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v8 10/10] drm: bridge: dw-mipi-dsi: fix bad register field
- offsets
-Date: Mon, 27 Apr 2020 11:19:52 +0300
-Message-Id: <20200427081952.3536741-11-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ id 1jT3Cb-0008Ko-0e
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 12:49:38 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g12so20283164wmh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 05:49:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=/9BeKGDV5jCVKkpLL/J/G90uyL40eKzSl52eSn32nKI=;
+ b=FDCKgM5d+I3LXOYYHNZvJYOFYfaxiQn750YyOS/Mm5OmI+UtgkQVmrJLcJVO0GC0Zt
+ ceXiZxzYCxuFo2pj874FSKlgYESw3zCrGcrtWoh67uMbNS/y2EWqn12K4HTEzdQ7L9TV
+ 8Ydt0EQ9XPan1CP0DnYWP2akHU0EB/DthO3nLMNuV8+uRBcrGkHHzmYx3Sv205fTRm4E
+ 5b4C0qe5JPTt53JhevF3pCQjMwj3oG45MbshoLTtRCQYpv6qE8JUMZhaJADgkSUMSajp
+ 0iY14KjeEy4G+bGCIym8GenUWx0dqk816Qz/srCvboPJihp9eY1jWRPhnfObljaFxrcT
+ lMgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=/9BeKGDV5jCVKkpLL/J/G90uyL40eKzSl52eSn32nKI=;
+ b=rV061iCApdFg+/Zst+W/Mm3Yw2aK9xYm3LIvmVOYXzYoZwTqJuark/UG50AIToIJi3
+ T8rA3iZlzbJVnYGZkTRfTdzaXht1oubR8MEMZmpmsRbpF/vXsgXDq6iQZjIdAzNqNoZ7
+ 2JkQ5EWneUNXqRMeep++8zpXLIzOXmR9EAVnerWOsxggTxFsUsCcPGOiK78W75DXS3Iq
+ XSwzJEfPv1Z0qlNbu1lVo9034H2mv5ZP8qLK3S6bts4WnxvDLmd9WU+GfAyKM9Brq1+2
+ cYpcRbnkoVDeZ+UP9aK1yGcPS9pINvTINE0x9Uyjp0Mea7whoPBBRiL31GGq/TEZnmJC
+ Xy/A==
+X-Gm-Message-State: AGi0Pua3MHQxJhTJhkymWsDsLZ+J2zL35ldk8D8WFIqdUP4zu0UmofaB
+ cOg7pqt+KwRDLNP80kuhdpg=
+X-Google-Smtp-Source: APiQypKNTyVT4ZVU1rmEWgLaRydqb1YmP+qBmZ8pwJNkhtvwPDp9mdOc3aC0FBQ2FtzLzfCwkPZKcA==
+X-Received: by 2002:a1c:bd8b:: with SMTP id
+ n133mr27648742wmf.175.1587991769172; 
+ Mon, 27 Apr 2020 05:49:29 -0700 (PDT)
+Received: from localhost (ip1f115f16.dynamic.kabel-deutschland.de.
+ [31.17.95.22])
+ by smtp.gmail.com with ESMTPSA id x6sm23218969wrg.58.2020.04.27.05.49.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Apr 2020 05:49:28 -0700 (PDT)
+Date: Mon, 27 Apr 2020 10:23:48 +0200
+From: Oliver Graute <oliver.graute@gmail.com>
+To: jason.hui.liu@nxp.com
+Subject: arm64: imx8qm: tlb SW workaround for IMX8QM
+Message-ID: <20200427082348.GA98329@archlinux.localdomain>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_011907_927108_7F330BE4 
-X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-CacheID: sfid-20200427_054937_064395_ECCF7A0A 
+X-CRM114-Status: UNSURE (   5.11  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [oliver.graute[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,119 +99,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Cc: aisheng.dong@nxp.com, anson.huang@nxp.com, catalin.marinas@arm.com,
+ oliver.graute@kococonnector.com, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the DSI Host Registers sections available in the IMX,
-STM and RK ref manuals for 1.01, 1.30 and 1.31, the register fields
-are smaller or bigger than what's coded in the driver, leading to
-r/w in reserved spaces which might cause undefined behaviours.
+Hello,
 
-Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
----
-New in v6.
----
- drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 46 +++++++++----------
- 1 file changed, 23 insertions(+), 23 deletions(-)
+is this nxp software workaround already proposed to linux community? can
+someone point me to the discussion if available.
 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-index 0903ec37289dd..bf22b04761fdf 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-@@ -316,7 +316,7 @@ struct dw_mipi_dsi_variant {
- static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_dpi_color_coding =		REG_FIELD(DSI_DPI_COLOR_CODING, 0, 3),
- 	.cfg_dpi_18loosely_en =		REG_FIELD(DSI_DPI_COLOR_CODING, 8, 8),
--	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 2),
-+	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 1),
- 	.cfg_dpi_vsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 1, 1),
- 	.cfg_dpi_hsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 2, 2),
- 	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG, 1, 1),
-@@ -325,29 +325,29 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_cmd_mode_dcs_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 16, 18),
- 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 19, 19),
- 	.cfg_cmd_mode_max_rd_pkt_size =	REG_FIELD(DSI_CMD_MODE_CFG, 24, 24),
--	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
--	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 31),
--	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
-+	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
-+	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 6),
-+	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
- 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG, 0, 1),
- 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG, 8, 13),
- 	.cfg_vid_mode_vpg_en =		REG_FIELD(DSI_VID_MODE_CFG, 16, 16),
- 	.cfg_vid_mode_vpg_horiz =	REG_FIELD(DSI_VID_MODE_CFG, 24, 24),
--	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 10),
--	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 31),
--	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 31),
--	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 31),
--	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 31),
--	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 31),
--	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 31),
--	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 31),
-+	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 13),
-+	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 11),
-+	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 11),
-+	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 14),
-+	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 9),
-+	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 9),
-+	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 9),
-+	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 13),
- 	.cfg_phy_txrequestclkhs =	REG_FIELD(DSI_LPCLK_CTRL, 0, 0),
--	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 31),
--	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
-+	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 15),
-+	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 14),
- 	.cfg_phy_lp2hs_time =		REG_FIELD(DSI_PHY_TMR_CFG, 16, 23),
- 	.cfg_phy_hs2lp_time =		REG_FIELD(DSI_PHY_TMR_CFG, 24, 31),
--	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 15),
--	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
--	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 31),
-+	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 14),
-+	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 9),
-+	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 25),
- 	.cfg_phy_clklp2hs_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 0, 15),
- 	.cfg_phy_clkhs2lp_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 16, 31),
- 	.cfg_phy_testclr =		REG_FIELD(DSI_PHY_TST_CTRL0, 0, 0),
-@@ -361,11 +361,11 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_pckhdl_cfg =		REG_FIELD(DSI_PCKHDL_CFG, 0, 4),
- 	.cfg_hstx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 16, 31),
- 	.cfg_lprx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 0, 15),
--	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 31),
--	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 31),
--	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 31),
--	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 31),
--	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 31),
-+	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 20),
-+	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 12),
-+	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 20),
-+	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 12),
-+	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 23),
- 	.cfg_gen_payload =		REG_FIELD(DSI_GEN_PLD_DATA, 0, 31),
- };
- 
-@@ -382,7 +382,7 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v101_layout = {
- 	.cfg_cmd_mode_gen_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 11, 11),
- 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 12, 12),
- 	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG_V101, 13, 13),
--	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 14),
-+	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 6),
- 	.cfg_vid_mode_en =		REG_FIELD(DSI_VID_MODE_CFG_V101, 0, 0),
- 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG_V101, 1, 2),
- 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG_V101, 3, 8),
--- 
-2.26.0
+https://source.codeaurora.org/external/imx/linux-imx/commit/?h=3Dimx_5.4.3_=
+2.0.0&id=3D593bea4e36d8c8a4fd65ef4f07fb8144dab2de1c
 
+Best Regards,
+
+Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
