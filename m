@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C35811BA2D7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:42:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60CA81BA2EA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:45:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+/sU2iJdsJOosCkLcMseEx8Yd2lV3Lqz+4IGQ8pRodY=; b=MyqUQI2PG4Rojz
-	CXBj3a8nYcbn+sVgqLSO2cZc9Zk8Rg/EBM895bGFjaENjoC6sPCCT8hs6gvuQRe7H4tz448/PYqa/
-	1qxeLzi0H9NW7ktWOHATSGbfFNs+V4N53cNWj/96wV/K0l03WIbJxitC0im0EEtzqqEgYoPmGw+dr
-	8o/svnfUSR8f+zAOf6O6ut3TqJnSXq2O7+m2yR99/qm3Pi1KnYzUkKE31BGZPASiFI6s0p9NT177O
-	gozL8V0jetQNCLGi2iR6/fzyYkJhpTRdUGpUk/Vj/6u8zLhc/fW730j5gLK6Y0BrhNGo0wuEmFF2m
-	jrrE/8wy5gCscVhaKnPA==;
+	List-Owner; bh=8evafKWvVlnCXWrCd+vxEc/cOeXGZWHyylH082GmODg=; b=pT90mHvP+zr78G
+	BERxkJ7RmDKYKHIjomrDiIrl2eEjpUBEHNnNacVpB40qoPwA3eQgfvPS3qaq6HGtDR3QZ10/dVJlz
+	C2I7zeB7eXSJncDg5YoEWhL71QIohqR7PNYtO2i5aGIFp7KYquwfYjcSSXxxPIb05nar5maA3cMiS
+	5ff/VxQeySIIYMfshQlNqjjgffSbu6UoKX0AJgQFx312FP3H6jqMB849The+A2sGvUBZVoGjGbRLf
+	0qcGr5qa/1TSJzuAal7hiL3IHh5v5J3oJ/hr7Rtf3r9GMOSFIL3xm7og1Nw+ZYgf2iLEkjDtSgaZx
+	XEE0Owc+f8412ne8WA5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT29h-0005RK-UD; Mon, 27 Apr 2020 11:42:33 +0000
+	id 1jT2CS-0007yx-9l; Mon, 27 Apr 2020 11:45:24 +0000
 Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT29O-0005Oq-DQ
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:42:15 +0000
+ id 1jT2CA-00078j-Kn
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:45:08 +0000
 Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
  helo=nanos.tec.linutronix.de)
  by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
  (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1jT29J-0001JG-W7; Mon, 27 Apr 2020 13:42:10 +0200
+ id 1jT2C4-0001Mi-Mv; Mon, 27 Apr 2020 13:45:00 +0200
 Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
- id 66B12100606; Mon, 27 Apr 2020 13:42:09 +0200 (CEST)
+ id 1C40E100606; Mon, 27 Apr 2020 13:45:00 +0200 (CEST)
 From: Thomas Gleixner <tglx@linutronix.de>
 To: Michael Walle <michael@walle.cc>,
  Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
@@ -37,20 +37,21 @@ To: Michael Walle <michael@walle.cc>,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v3 09/16] gpiolib: Introduce gpiochip_irqchip_add_domain()
-In-Reply-To: <20200423174543.17161-10-michael@walle.cc>
+Subject: Re: [PATCH v3 11/16] gpio: add support for the sl28cpld GPIO
+ controller
+In-Reply-To: <20200423174543.17161-12-michael@walle.cc>
 References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-10-michael@walle.cc>
-Date: Mon, 27 Apr 2020 13:42:09 +0200
-Message-ID: <87mu6xqhny.fsf@nanos.tec.linutronix.de>
+ <20200423174543.17161-12-michael@walle.cc>
+Date: Mon, 27 Apr 2020 13:45:00 +0200
+Message-ID: <87k121qhj7.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
 X-Linutronix-Spam-Score: -1.0
 X-Linutronix-Spam-Level: -
 X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
  SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_044214_601615_88FDFCF9 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20200427_044506_842657_B384E8AB 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -87,47 +88,47 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Michael Walle <michael@walle.cc> writes:
-> This connects an IRQ domain to a gpiochip and reuses
-> gpiochip_to_irq().
+> +struct sl28cpld_gpio {
+> +	struct regmap_irq_chip irq_chip;
+> +	struct regmap_irq_chip_data *irq_data;
+> +};
+> +
+> +static const struct regmap_irq sl28cpld_gpio_irqs[] = {
+> +	REGMAP_IRQ_REG_LINE(0, 8),
+> +	REGMAP_IRQ_REG_LINE(1, 8),
+> +	REGMAP_IRQ_REG_LINE(2, 8),
+> +	REGMAP_IRQ_REG_LINE(3, 8),
+> +	REGMAP_IRQ_REG_LINE(4, 8),
+> +	REGMAP_IRQ_REG_LINE(5, 8),
+> +	REGMAP_IRQ_REG_LINE(6, 8),
+> +	REGMAP_IRQ_REG_LINE(7, 8),
+> +};
 
-A little bit more context and explanation why this function is useful
-would be appreciated.
+This is exactly the same as the one in the irq chip patch.
 
-> Signed-off-by: Michael Walle <michael@walle.cc>
-> ---
->  drivers/gpio/gpiolib.c      | 20 ++++++++++++++++++++
->  include/linux/gpio/driver.h |  3 +++
->  2 files changed, 23 insertions(+)
->
-> diff --git a/drivers/gpio/gpiolib.c b/drivers/gpio/gpiolib.c
-> index 40f2d7f69be2..7b3d7f496b9a 100644
-> --- a/drivers/gpio/gpiolib.c
-> +++ b/drivers/gpio/gpiolib.c
-> @@ -2722,6 +2722,26 @@ int gpiochip_irqchip_add_key(struct gpio_chip *gc,
->  }
->  EXPORT_SYMBOL_GPL(gpiochip_irqchip_add_key);
->  
-> +/**
-> + * gpiochip_irqchip_add_key() - adds an irqdomain to a gpiochip
-
-Copy & paste is wonderful
-
-> + * @gc: the gpiochip to add the irqchip to
-> + * @domain: the irqdomain to add to the gpiochip
-> + *
-> + * This function adds an IRQ domain to the gpiochip.
-> + */
-> +int gpiochip_irqchip_add_domain(struct gpio_chip *gc,
-> +				struct irq_domain *domain)
+> +static int sl28cpld_gpio_irq_init(struct device *dev,
+> +				  struct sl28cpld_gpio *gpio,
+> +				  struct regmap *regmap, unsigned int base,
+> +				  int irq)
 > +{
-> +	if (!domain)
-> +		return -EINVAL;
+> +	struct regmap_irq_chip *irq_chip = &gpio->irq_chip;
 > +
-> +	gc->to_irq = gpiochip_to_irq;
-> +	gc->irq.domain = domain;
+> +	irq_chip->name = "sl28cpld-gpio-irq",
+> +	irq_chip->irqs = sl28cpld_gpio_irqs;
+> +	irq_chip->num_irqs = ARRAY_SIZE(sl28cpld_gpio_irqs);
+> +	irq_chip->num_regs = 1;
+> +	irq_chip->status_base = base + GPIO_REG_IP;
+> +	irq_chip->mask_base = base + GPIO_REG_IE;
+> +	irq_chip->mask_invert = true,
+> +	irq_chip->ack_base = base + GPIO_REG_IP;
 > +
-> +	return 0;
+> +	return devm_regmap_add_irq_chip_np(dev, dev_of_node(dev), regmap,
+> +					   irq, IRQF_SHARED | IRQF_ONESHOT, 0,
+> +					   irq_chip, &gpio->irq_data);
 > +}
+
+And this looks pretty familiar as well. What's the point of duplicating
+that code?
 
 Thanks,
 
