@@ -2,68 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B48831BB076
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 23:25:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1450C1BB08B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 23:32:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yyOC171ab3zSw3PbjcFzdYFYkQ0X/869F9eOZu1i0n8=; b=o0WXDfzNos6FJO
-	1O5sen6VUqdLDgAPSgScb1Cfv+ss+6SwaRpAXrbDLsH98EnJkZ/6Nqb8z6LFaMA0Rx+pbgXKGK8ff
-	x40XyGM962r3vlgHbV+LZK+6RvsvGBDgR6oJx1E9VPFhV9GkFR89ZmnBUF+vNxQ9wkMna+4ns3GkW
-	n9/eoIPw7SAfOWzVPSbOQ3888EUqv7eDaV6pmmugBzcyG6L28qdcV94FLnhZn77qSvUXgkBTXZRZS
-	xAGbNFzpe+Uaz33eOO+Lis9608ZY8kinKQQYNnP3ciXjOIG35vUUhLTOuTNYLtM9XngL9YT5DICsU
-	YrZ7gn5pKqGfpNSxH3pQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q1ATb+N3TAvh0i+mUc88VUVIz3iARLy7umHgUbeT9r0=; b=B1O/mOLpMhvpXb
+	YCUyzOlPb4kRjPoogTZPVMfrBOajiC5bBcUZbHfr0EbayvpkFqz2YCeeLKD+M6YqkRrZ+Y0w5r+sv
+	CFO/qH7vl1LBp6KjPnAIVCkRVVP7xmE/2g6BTPWtdGafBqfr3xk+whLueGOyuPJUAvinsXDnkkFTS
+	t0fY/+vJFdlUWtYgOactGtL2JPvkRAwpYjhHGJnvRDMB42wCG31CTjq14sj5BEJhZTECWpg7PZbJ2
+	moMF0hyO0pD93Pc4dCE7cPolIVONAOt4CoD2KWCvMB0hDm3dZ1WhxMRY0XTRfpIMqzFgILVIwLbMk
+	mfnxj7QV3Vb0HfBXYNBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTBFs-0004IT-0k; Mon, 27 Apr 2020 21:25:32 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jTBMN-0007sm-RL; Mon, 27 Apr 2020 21:32:15 +0000
+Received: from mail-oo1-f68.google.com ([209.85.161.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTBFh-0004HI-6v
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 21:25:23 +0000
-Received: by mail-ot1-f66.google.com with SMTP id z17so29002925oto.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 14:25:16 -0700 (PDT)
+ id 1jTBMB-0007rW-KS; Mon, 27 Apr 2020 21:32:05 +0000
+Received: by mail-oo1-f68.google.com with SMTP id t3so4217927oou.8;
+ Mon, 27 Apr 2020 14:32:02 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bHSI6o8zO6CmvmiakQTHUYeLvS53tgwRyLuJHvSfvHg=;
- b=ZSpwyAVlwAUsLzj8bz5jdFwO7o05HdI609wKTqpBOh9M/xJzpbVTnvz00VDESbbu1T
- TNS1M+WLAdp1E/cE8vXOKrCB1DMYsAkbE6ZkFPFCzSLZaU7OsXtFP+jP5DUdPYfxAFjB
- 7cUONcWGpjvGjxZZrNGIWs1U8tFt5YvOzocGUSE7p+pgQNsz4tKkHAqLJzKOQHXBUEfU
- fohxUVcs3vwRMamxXb8AT3sZf+HM4vg/wJfIQ2qa1/oFgCL2Y7jRRVpiFiGSSpyyAjKn
- vzTHQehQqbIYa2jkW/yA3PloyXJtgk5GzV+lXwr+Xf5BxVGfaXSvpGAXyMWqH883AQKJ
- 95Jw==
-X-Gm-Message-State: AGi0Pua44JdXt8h5H2hvkRmZhJAnkjCufJTligdeG2omn/e6b5euRVPg
- d7L1v7+Sik0Eke2fSdjTkdKTMs4=
-X-Google-Smtp-Source: APiQypJxlRgPHOg+9EFlBRPXMk+0b1d1+3y3FOgDIVik9YbGpXsXq+NTbKbhkf5Ac/02vLaANmOGQA==
-X-Received: by 2002:aca:2b0a:: with SMTP id i10mr610234oik.22.1588022716012;
- Mon, 27 Apr 2020 14:25:16 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=w1uDZO2LdODIUIXzVhRK1SKj6P79fg3brB4R+H6ilss=;
+ b=WjodmmXrVKxrknsFu5OBANm6xTu+xmX5RaefUIVzQsjOshCKNw6F0+VE4olOkjfiTg
+ fsWegz2OjgT34zsftqQmeLKkUP3DXhlkuPOZJcyR+5dGTbvBIs2C5fzCQ7NMqRCwivpc
+ FhklvngB0l4Xg/uv4MQcHi+4RBB+6tUIhcevuKZ9RmclQy5bXBXKGBBpf2AcM89mvuhx
+ h2S8axrUkwiU/awWRAIX2CQsEJMbzgdmBVxJUstbhd9dNG6J2IH/QNyt8AZeqBuOtieb
+ vxmrLCRZcaaajB9TPqD6lHcozr9ZFrdwBplcZuveRgWqc/4tYWKNLFJ3S7K+U4kgLtUF
+ i2AQ==
+X-Gm-Message-State: AGi0Pub60yLV9SXNBNXOVXFCr3fhyMxIhIS01F6QUiNI1rUEzLmwzgRp
+ 5Ch2mOTUEzvVITAPQ4AiuA==
+X-Google-Smtp-Source: APiQypJf8rbZu6QH32eGiwrCo4i51dejGBYEAQsVJu6W92eQMIOBXv+t0wckN+3tyVZcrQoflUHTxw==
+X-Received: by 2002:a4a:3e8b:: with SMTP id t133mr20894000oot.52.1588023122070; 
+ Mon, 27 Apr 2020 14:32:02 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id g13sm4306195otk.62.2020.04.27.14.25.14
+ by smtp.gmail.com with ESMTPSA id u1sm2015687oif.54.2020.04.27.14.32.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Apr 2020 14:25:15 -0700 (PDT)
+ Mon, 27 Apr 2020 14:32:01 -0700 (PDT)
+Received: (nullmailer pid 31301 invoked by uid 1000);
+ Mon, 27 Apr 2020 21:32:00 -0000
+Date: Mon, 27 Apr 2020 16:32:00 -0500
 From: Rob Herring <robh@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] amba: Retry adding deferred devices at late_initcall
-Date: Mon, 27 Apr 2020 16:25:14 -0500
-Message-Id: <20200427212514.11219-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v2 27/91] dt-bindings: display: Convert VC4 bindings to
+ schemas
+Message-ID: <20200427213200.GA30618@bogus>
+References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
+ <abfe72e59b796c86820d933bd81ba5ae0699e5b6.1587742492.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <abfe72e59b796c86820d933bd81ba5ae0699e5b6.1587742492.git-series.maxime@cerno.tech>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_142521_257552_44941BBC 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200427_143203_674102_C5A8345D 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.161.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -73,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [209.85.161.68 listed in wl.mailspike.net]
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -88,82 +93,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Saravana Kannan <saravanak@google.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- John Stultz <john.stultz@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Maxime Ripard <maxime@cerno.tech>, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If amba bus devices defer when adding, the amba bus code simply retries
-adding the devices every 5 seconds. This doesn't work well as it
-completely unsynchronized with starting the init process which can
-happen in less than 5 secs. Add a retry during late_initcall. If the
-amba devices are added, then deferred probe takes over. If the
-dependencies have not probed at this point, then there's no improvement
-over previous behavior. To completely solve this, we'd need to retry
-after every successful probe as deferred probe does.
+On Fri, 24 Apr 2020 17:34:08 +0200, Maxime Ripard wrote:
+> The BCM283x SoCs have a display pipeline composed of several controllers
+> with device tree bindings that are supported by Linux.
+> 
+> Now that we have the DT validation in place, let's split into separate
+> files and convert the device tree bindings for those controllers to
+> schemas.
+> 
+> This is just a 1:1 conversion though, and some bindings were incomplete so
+> it results in example validation warnings that are going to be addressed in
+> the following patches.
+> 
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt              | 174 +------------------------------------------------------------------------
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml         |  66 +++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml        |  73 ++++++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml        |  75 +++++++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml         |  37 +++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml |  40 +++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml         |  37 +++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml         |  42 +++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml         |  34 ++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml         |  44 ++++++++++++++++++-
+>  MAINTAINERS                                                             |   2 +-
+>  11 files changed, 449 insertions(+), 175 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
+> 
 
-The list_empty() check now happens outside the mutex, but the mutex
-wasn't necessary in the first place.
+My bot found errors running 'make dt_binding_check' on your patch:
 
-This needed to use deferred probe instead of fragile initcall ordering
-on 32-bit VExpress systems where the apb_pclk has a number of probe
-dependencies (vexpress-sysregs, vexpress-config).
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml: properties: '#clock-cells' is a dependency of 'clock-output-names'
+Documentation/devicetree/bindings/Makefile:11: recipe for target 'Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.example.dts' failed
+make[1]: *** [Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.example.dts] Error 1
+make[1]: *** Waiting for unfinished jobs....
+Makefile:1300: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
 
-Cc: John Stultz <john.stultz@linaro.org>
-Cc: Saravana Kannan <saravanak@google.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Russell King <linux@armlinux.org.uk>
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- drivers/amba/bus.c | 14 +++++++++++---
- 1 file changed, 11 insertions(+), 3 deletions(-)
+See https://patchwork.ozlabs.org/patch/1276439
 
-diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
-index fe1523664816..e797995fc65b 100644
---- a/drivers/amba/bus.c
-+++ b/drivers/amba/bus.c
-@@ -505,7 +505,7 @@ static DECLARE_DELAYED_WORK(deferred_retry_work, amba_deferred_retry_func);
- 
- #define DEFERRED_DEVICE_TIMEOUT (msecs_to_jiffies(5 * 1000))
- 
--static void amba_deferred_retry_func(struct work_struct *dummy)
-+static int amba_deferred_retry(void)
- {
- 	struct deferred_device *ddev, *tmp;
- 
-@@ -521,11 +521,19 @@ static void amba_deferred_retry_func(struct work_struct *dummy)
- 		kfree(ddev);
- 	}
- 
-+	mutex_unlock(&deferred_devices_lock);
-+
-+	return 0;
-+}
-+late_initcall(amba_deferred_retry);
-+
-+static void amba_deferred_retry_func(struct work_struct *dummy)
-+{
-+	amba_deferred_retry();
-+
- 	if (!list_empty(&deferred_devices))
- 		schedule_delayed_work(&deferred_retry_work,
- 				      DEFERRED_DEVICE_TIMEOUT);
--
--	mutex_unlock(&deferred_devices_lock);
- }
- 
- /**
--- 
-2.20.1
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
 
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
