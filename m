@@ -2,121 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 232FD1BA67E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:33:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D24C11BA6A8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6m/nQDgiJFG1SRdMkdTs1EjqTEgVNqh4RVV8JXUQ+G8=; b=Gu1H6e8yE+U1IP
-	cclaVFi4SjztRw1MFRm3fsF+AxA28/QwLDVMlaZaJV50bLH3k6FuGybmE/zpfOqK8J7wp5SXibOgS
-	uLIhj6hhQ56v9GRLP6QtqR+finrYmVTFIsjPsuEGYTtrnxsKwBbCwQ2Vc1TDsTMDi3k2/bcb+H+L3
-	lJr15ApoMhoL73Ibj8xgOZR5TuEZk9ANWPP9a9mVEQ8B3edV9d6wQY0H2Pi16K2tm5BvD9h4Mubn0
-	anP68Ebhok8GoxsstXqRqi2rLX3XTYLZ13u4ugLI+jK8iQan6CO8B71+7/RXc01PccbdOCnUaXXsh
-	1ry99jF0p0LbFz8L0A9w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dPZJlwNkqQ0/h8y3eqdfcuAlf0UttqGcp+ab/p//aq0=; b=kRrfhmrGqg64nn
+	B0C3WGHRjEDpxjxfDOem9MeIIVP/IMQv1vIsL3YSqHQCLGpEI0V2laIwpegVDmxiB9DhwY/7yc1Fv
+	241om6MNYG6KwD1bkOeMHbxI3hQGa0adrwl02oDOydvYfhxjv4wyPKxfGDXaFEB1VMiy2GvxN36Iv
+	bk3SG5bsvYSdnGwhhjnGZM/GNj5WKaNGgXmbAbhuI46SUs2cmvN1qw9gB8Rp8UvYQ2B7tmm+HAxLH
+	W2I9jv7LdkR2lSlt+hWlynHr24x/0S9WlvkqddD+7r7bS0tDBQYv2a1PWBb4iqXfsRkF/jRlnTIra
+	ifa1eFmDj2vB57+8U3dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT4oq-0001SS-B3; Mon, 27 Apr 2020 14:33:12 +0000
-Received: from mail-eopbgr150042.outbound.protection.outlook.com
- ([40.107.15.42] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jT4wm-0008HC-Vo; Mon, 27 Apr 2020 14:41:24 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT4oa-0001PK-0z
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 14:32:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=I3fCZ8ePTuHZoZyMuR8LU3ZDNflocFQwAoQ7DaysKKa94k563rK722+wLvJ8RRbwyU8V06zZ5NLVWseEcGiT0XctnwJJy6HDHnRlFN+5KX9v2tLjF0CyWYREVFTxlfnvF/pxwygVCL46r3UyCyS+xAThnMzvbOmoieURwUNjHKbcVvmD0l33lFWagVetPp5lhGuwSdRihT2wrcHng7omLU2LBIBLSUuAWprRjHj6x9uex3hnD2sL2y8jhIGsgPRtXvnsTv8bNI6BdRx9ltNsC9hlA84j7isdg3RFAn8kfjMc/XlOkAgNTcquexknWnrcRjOUi2iNFmGRGkZK7xWXUw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e2FV4+wRxSrltxQB9r1ACsnyt33dj2TOjl/xGlPJMfs=;
- b=Td4B/9GVcwQloQq6zKn6qVRU9Xy3bhZPSv7h7kKvCN6UB4hGhpN5Sx8X6yvkOwO9ocqomD2Q6ejNRpEV7ZFv7EkNFu7W8A5veI40tbSDhEuwbE63fLz/BujW4UONaOwRpAc3+Gqa7SKhx1nj0TR9N+zIglagsTudyf4hgfEb6ih/ie05W0bZcvbrrhAlt9+eNRocOarBq4vkX1o6K+c+scREIySNIQJvB4YUfksgfLrw2V1OyGL8wdu1IxNjITuALeZr80dcaUlZ7N5hXtB4+zvkN//tHEqg3Yfvc+6SyyjfUHLdXC/OPEThvRm1oP8KYMD5YOnYU8EwPtBU2pol2Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e2FV4+wRxSrltxQB9r1ACsnyt33dj2TOjl/xGlPJMfs=;
- b=Bohy9IbGkFfGLgSGb+QeUeeqKjAjY2393O2V5gRyIcLJ9YKdhqrykcLO9knY5sptkgv1G0hDIFNeyjq5lmmp2rG6Ku0bo3ibZbCCksRjXaQFqeue2kPRr8K9o8NeHeb9ko5JSt4M/Hok4LOM61gcGMm2ZQCDje5wD4yEiobD02M=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=calvin.johnson@oss.nxp.com; 
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
- by AM0PR04MB5841.eurprd04.prod.outlook.com (2603:10a6:208:132::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 14:32:51 +0000
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 14:32:51 +0000
-Date: Mon, 27 Apr 2020 20:02:38 +0530
-From: Calvin Johnson <calvin.johnson@oss.nxp.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [net-next PATCH v2 0/3] Introduce new APIs to support phylink
- and phy layers
-Message-ID: <20200427143238.GA26436@lsv03152.swis.in-blr01.nxp.com>
-References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
- <20200427135820.GH25745@shell.armlinux.org.uk>
-Content-Disposition: inline
-In-Reply-To: <20200427135820.GH25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-ClientProxiedBy: SG2PR02CA0022.apcprd02.prod.outlook.com
- (2603:1096:3:17::34) To AM0PR04MB5636.eurprd04.prod.outlook.com
- (2603:10a6:208:130::22)
+ id 1jT4wa-0008G1-NR; Mon, 27 Apr 2020 14:41:15 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 1C97F2A0C06
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH v8 01/10] drm: bridge: dw_mipi_dsi: add initial regmap
+ infrastructure
+To: Adrian Ratiu <adrian.ratiu@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-2-adrian.ratiu@collabora.com>
+Message-ID: <919f7573-dac8-d75f-eb2a-e164a177141d@collabora.com>
+Date: Mon, 27 Apr 2020 16:41:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
- SG2PR02CA0022.apcprd02.prod.outlook.com (2603:1096:3:17::34) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.13 via Frontend Transport; Mon, 27 Apr 2020 14:32:45 +0000
-X-Originating-IP: [14.142.151.118]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 6470ab6e-657f-4acc-e5e1-08d7eab7dd14
-X-MS-TrafficTypeDiagnostic: AM0PR04MB5841:|AM0PR04MB5841:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB584199300FE2C55886CA1FA4D2AF0@AM0PR04MB5841.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-Forefront-PRVS: 0386B406AA
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(39860400002)(366004)(376002)(346002)(396003)(136003)(9686003)(5660300002)(54906003)(66476007)(8936002)(316002)(66556008)(6506007)(956004)(44832011)(1006002)(966005)(7696005)(52116002)(6666004)(8676002)(4326008)(81156014)(55236004)(6916009)(186003)(26005)(86362001)(2906002)(16526019)(7416002)(1076003)(55016002)(478600001)(66946007)(33656002)(110426005);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 1F1woza9U8tpFo2QkT//BVRZVDnDmcyhlczDxI9qdNYT7FBseptDyN6JdFzPWrxL/xj2ZfaHZd5Z86u691Hk33qZcQoFKM84jHx9DL+3NlspllEKqo0eRHnO7jptxSu03L6UwyiE2/HuxfAwSHNDLwIZAB4Ey+gl07qm1veHPNPDh/o+MVc+O9NjqztGI1yEGpwGLURUtC6zPxRVkAQloIXEmONPYOy+A/AhtSPx4btETLHqf2Da5c+kgJAFdJrfdUb7zJQJI0xocCVW7dCGK6PLjWpSlnfpzTOQTw02Uya7h5byFb8AA9WzGAQz7qnKTw57EeHutYb+fQ/GG28l+K6gXBB9sWKEOns8brluDyaxR4z9ZSZ/9qMptWAfKPApiYYiFM2ee3IPCMn/AUPy3UwlLZhpcC2J/Vl6M5ed+2kBIX2pRmvz9fWfNo5+OGnOCpfY7cGzCU3kXdj4WGmeza08j77QQJzWuADJEDNt8JzJzB6f6PURM6ULIse0+0rA3iEQ7jsRFRdgQX9oQAZ+A+0xZM66ErPMz11ozlNqLHTpD9lGj4gIkSxNfz6+cPQH8Z6ZAongUfLMJyUJ+UH1Wg==
-X-MS-Exchange-AntiSpam-MessageData: Sdk2rgRpLsfnKlpENmUzUn+tvlwotz01mQhOADGUYIINT8FLPcLufb0DVr72M/VhTjwFTG3a4ZCzAIGt01jdX83/USJLzNmH1l0YQpyW7EWyI+tiDXPZZN7bXaOloBpnF26vJQXnm94kKVC+CU9nb5mkXs26UZ1rEvInqB7+gV+oXoYe2wnUORMUtq/D1HxVfzrsXcdgcZKbzd5VfeYA31DFQujomhrU77dDnFSaTLWN/nUjnJfQ6TJ4aSyzYYJmMR49Eo1jmwx2KTzD7TdNej3juut1zxVZJzOmZJMgHbETGTOmnBTjQkNV22h4CHVNkrfo7IK2PJqTRNnaWEv58Iw39TnSozDuTIPAb683Ejodv4FVmmKKc45M2d3QK46eXYduMHSyskIpOrQOAEdZVWu38Mm2AB+N1gyTql5yc38zHKQqZg5SsSrUkoB5MSBm3ZSi3QM1Kp7nO1R9Pnp39mT3gzmIGrrOBaSeudRf41i6lmHr2ANwOODHTQM9FMvIfcr5WZ2y3EODQqStk+5wqPKRZ+Rbd2NzFd/YnqezLVVxICF7Y7YjwSwNvv+3V5yDPXeO6AmHO1o5UUN3ymb0WJNemfU9a4TmVk/wg6suFwBQYo+PjaLSRYjXazqNlBNxXMmLZiojBmpt/ubyH5y8xrczUq/e+oGYtKqqYUZATpk73q8AYvGGJR7B8g4hwFeUEryqmpJpKZ4TtiDHw+eoDbql4DBOkxkTdxC0zzfJs+EA5TulUXAAAV8StowlXcxcELNhCq+CJztfAZiUfWJFBH5Ow2yhC0bI8mLKLAiScZ4=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6470ab6e-657f-4acc-e5e1-08d7eab7dd14
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 14:32:51.3438 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: hiJ46lkwaNRBbDXxjU4L37WCs3HBZK2/jLXU8MraUSOqYPafsDmxK4mVGQwEUKA+sAPWO+AMW5MrquSrbTfOwg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5841
+In-Reply-To: <20200427081952.3536741-2-adrian.ratiu@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_073257_974651_B54C8568 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200427_074113_037866_36DF81C7 
+X-CRM114-Status: GOOD (  26.79  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.15.42 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.42 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,69 +65,526 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Enric Balletbo Serra <eballetbo@gmail.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 02:58:20PM +0100, Russell King - ARM Linux admin wrote:
-> On Mon, Apr 27, 2020 at 06:54:06PM +0530, Calvin Johnson wrote:
-> > Following functions are defined:
-> >   phylink_fwnode_phy_connect()
-> >   phylink_device_phy_connect()
-> >   fwnode_phy_find_device()
-> >   device_phy_find_device()
-> >   fwnode_get_phy_node()
-> > 
-> > First two help in connecting phy to phylink instance.
-> > Next two help in finding a phy on a mdiobus.
-> > Last one helps in getting phy_node from a fwnode.
-> > 
-> > Changes in v2:
-> >   move phy code from base/property.c to net/phy/phy_device.c
-> >   replace acpi & of code to get phy-handle with fwnode_find_reference
-> >   replace of_ and acpi_ code with generic fwnode to get phy-handle.
-> > 
-> > Calvin Johnson (3):
-> >   device property: Introduce phy related fwnode functions
-> >   net: phy: alphabetically sort header includes
-> >   phylink: Introduce phylink_fwnode_phy_connect()
+Hi Adrian,
+
+Thank you for your patch and to apply the changes I requested
+
+On 27/4/20 10:19, Adrian Ratiu wrote:
+> In order to support multiple versions of the Synopsis MIPI DSI host
+> controller, which have different register layouts but almost identical
+> HW protocols, we add a regmap infrastructure which can abstract away
+> register accesses for platform drivers using the bridge.
 > 
-> Thanks for this, but there's more work that needs to be done here.  I
-> also think that we must have an ack from ACPI people before this can be
-> accepted - you are in effect proposing a new way for representing PHYs
-> in ACPI.
+> The controller HW revision is detected during bridge probe which will
+> be used in future commits to load the relevant register layout which
+> the bridge will use transparently to the platform drivers.
+> 
+> Cc: Enric Balletbo Serra <eballetbo@gmail.com>
+> Suggested-by: Ezequiel Garcia <ezequiel@collabora.com>
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
 
-Thanks for your review.
+Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 
-Agree that we need an ack from ACPI people.
-However, I don't think it is a completely new way as similar acpi approach to
-get phy-handle is already in place.
-Please see this:
-https://elixir.bootlin.com/linux/v5.7-rc3/source/drivers/net/ethernet/apm/xgene/xgene_enet_hw.c#L832
-
-Please let me know, if you see more work than the ones you pointed out in your
-review comments on previous patches.
-
-Thanks
-Calvin
+> ---
+> Chnages since v7:
+>   - Minor checkpatch line fix
+> 
+> Changes since v6:
+>   - Select REGMAP_MMIO in Kconfig (Enric)
+>   - Drop unnecessary stack variable inits (Enric)
+>   - Make bridge error ASAP after a bad revision read (Enric)
+>   - Drop redundant read of hw_version in dphy_timing_config (Enric)
+> 
+> New in v5.
+> ---
+>  drivers/gpu/drm/bridge/synopsys/Kconfig       |   1 +
+>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 210 ++++++++++--------
+>  2 files changed, 121 insertions(+), 90 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/bridge/synopsys/Kconfig b/drivers/gpu/drm/bridge/synopsys/Kconfig
+> index 21a1be3ced0f3..080146093b68e 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/Kconfig
+> +++ b/drivers/gpu/drm/bridge/synopsys/Kconfig
+> @@ -39,3 +39,4 @@ config DRM_DW_MIPI_DSI
+>  	select DRM_KMS_HELPER
+>  	select DRM_MIPI_DSI
+>  	select DRM_PANEL_BRIDGE
+> +	select REGMAP_MMIO
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> index 5ef0f154aa7bd..34b8668ae24ea 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> @@ -15,6 +15,7 @@
+>  #include <linux/module.h>
+>  #include <linux/of_device.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/regmap.h>
+>  #include <linux/reset.h>
+>  
+>  #include <video/mipi_display.h>
+> @@ -227,6 +228,7 @@ struct dw_mipi_dsi {
+>  	struct drm_bridge *panel_bridge;
+>  	struct device *dev;
+>  	void __iomem *base;
+> +	struct regmap *regs;
+>  
+>  	struct clk *pclk;
+>  
+> @@ -235,6 +237,7 @@ struct dw_mipi_dsi {
+>  	u32 lanes;
+>  	u32 format;
+>  	unsigned long mode_flags;
+> +	u32 hw_version;
+>  
+>  #ifdef CONFIG_DEBUG_FS
+>  	struct dentry *debugfs;
+> @@ -249,6 +252,13 @@ struct dw_mipi_dsi {
+>  	const struct dw_mipi_dsi_plat_data *plat_data;
+>  };
+>  
+> +static const struct regmap_config dw_mipi_dsi_regmap_cfg = {
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +	.name = "dw-mipi-dsi",
+> +};
+> +
+>  /*
+>   * Check if either a link to a master or slave is present
+>   */
+> @@ -280,16 +290,6 @@ static inline struct dw_mipi_dsi *bridge_to_dsi(struct drm_bridge *bridge)
+>  	return container_of(bridge, struct dw_mipi_dsi, bridge);
+>  }
+>  
+> -static inline void dsi_write(struct dw_mipi_dsi *dsi, u32 reg, u32 val)
+> -{
+> -	writel(val, dsi->base + reg);
+> -}
+> -
+> -static inline u32 dsi_read(struct dw_mipi_dsi *dsi, u32 reg)
+> -{
+> -	return readl(dsi->base + reg);
+> -}
+> -
+>  static int dw_mipi_dsi_host_attach(struct mipi_dsi_host *host,
+>  				   struct mipi_dsi_device *device)
+>  {
+> @@ -366,8 +366,8 @@ static void dw_mipi_message_config(struct dw_mipi_dsi *dsi,
+>  	if (lpm)
+>  		val |= CMD_MODE_ALL_LP;
+>  
+> -	dsi_write(dsi, DSI_LPCLK_CTRL, lpm ? 0 : PHY_TXREQUESTCLKHS);
+> -	dsi_write(dsi, DSI_CMD_MODE_CFG, val);
+> +	regmap_write(dsi->regs, DSI_LPCLK_CTRL, lpm ? 0 : PHY_TXREQUESTCLKHS);
+> +	regmap_write(dsi->regs, DSI_CMD_MODE_CFG, val);
+>  }
+>  
+>  static int dw_mipi_dsi_gen_pkt_hdr_write(struct dw_mipi_dsi *dsi, u32 hdr_val)
+> @@ -375,20 +375,20 @@ static int dw_mipi_dsi_gen_pkt_hdr_write(struct dw_mipi_dsi *dsi, u32 hdr_val)
+>  	int ret;
+>  	u32 val, mask;
+>  
+> -	ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -				 val, !(val & GEN_CMD_FULL), 1000,
+> -				 CMD_PKT_STATUS_TIMEOUT_US);
+> +	ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +				       val, !(val & GEN_CMD_FULL), 1000,
+> +				       CMD_PKT_STATUS_TIMEOUT_US);
+>  	if (ret) {
+>  		dev_err(dsi->dev, "failed to get available command FIFO\n");
+>  		return ret;
+>  	}
+>  
+> -	dsi_write(dsi, DSI_GEN_HDR, hdr_val);
+> +	regmap_write(dsi->regs, DSI_GEN_HDR, hdr_val);
+>  
+>  	mask = GEN_CMD_EMPTY | GEN_PLD_W_EMPTY;
+> -	ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -				 val, (val & mask) == mask,
+> -				 1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +	ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +				       val, (val & mask) == mask,
+> +				       1000, CMD_PKT_STATUS_TIMEOUT_US);
+>  	if (ret) {
+>  		dev_err(dsi->dev, "failed to write command FIFO\n");
+>  		return ret;
+> @@ -409,18 +409,20 @@ static int dw_mipi_dsi_write(struct dw_mipi_dsi *dsi,
+>  		if (len < pld_data_bytes) {
+>  			word = 0;
+>  			memcpy(&word, tx_buf, len);
+> -			dsi_write(dsi, DSI_GEN_PLD_DATA, le32_to_cpu(word));
+> +			regmap_write(dsi->regs, DSI_GEN_PLD_DATA,
+> +				     le32_to_cpu(word));
+>  			len = 0;
+>  		} else {
+>  			memcpy(&word, tx_buf, pld_data_bytes);
+> -			dsi_write(dsi, DSI_GEN_PLD_DATA, le32_to_cpu(word));
+> +			regmap_write(dsi->regs, DSI_GEN_PLD_DATA,
+> +				     le32_to_cpu(word));
+>  			tx_buf += pld_data_bytes;
+>  			len -= pld_data_bytes;
+>  		}
+>  
+> -		ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -					 val, !(val & GEN_PLD_W_FULL), 1000,
+> -					 CMD_PKT_STATUS_TIMEOUT_US);
+> +		ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +					       val, !(val & GEN_PLD_W_FULL),
+> +					       1000, CMD_PKT_STATUS_TIMEOUT_US);
+>  		if (ret) {
+>  			dev_err(dsi->dev,
+>  				"failed to get available write payload FIFO\n");
+> @@ -441,9 +443,9 @@ static int dw_mipi_dsi_read(struct dw_mipi_dsi *dsi,
+>  	u32 val;
+>  
+>  	/* Wait end of the read operation */
+> -	ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -				 val, !(val & GEN_RD_CMD_BUSY),
+> -				 1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +	ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +				       val, !(val & GEN_RD_CMD_BUSY),
+> +				       1000, CMD_PKT_STATUS_TIMEOUT_US);
+>  	if (ret) {
+>  		dev_err(dsi->dev, "Timeout during read operation\n");
+>  		return ret;
+> @@ -451,15 +453,15 @@ static int dw_mipi_dsi_read(struct dw_mipi_dsi *dsi,
+>  
+>  	for (i = 0; i < len; i += 4) {
+>  		/* Read fifo must not be empty before all bytes are read */
+> -		ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -					 val, !(val & GEN_PLD_R_EMPTY),
+> -					 1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +		ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +					       val, !(val & GEN_PLD_R_EMPTY),
+> +					       1000, CMD_PKT_STATUS_TIMEOUT_US);
+>  		if (ret) {
+>  			dev_err(dsi->dev, "Read payload FIFO is empty\n");
+>  			return ret;
+>  		}
+>  
+> -		val = dsi_read(dsi, DSI_GEN_PLD_DATA);
+> +		regmap_read(dsi->regs, DSI_GEN_PLD_DATA, &val);
+>  		for (j = 0; j < 4 && j + i < len; j++)
+>  			buf[i + j] = val >> (8 * j);
+>  	}
+> @@ -536,29 +538,29 @@ static void dw_mipi_dsi_video_mode_config(struct dw_mipi_dsi *dsi)
+>  	}
+>  #endif /* CONFIG_DEBUG_FS */
+>  
+> -	dsi_write(dsi, DSI_VID_MODE_CFG, val);
+> +	regmap_write(dsi->regs, DSI_VID_MODE_CFG, val);
+>  }
+>  
+>  static void dw_mipi_dsi_set_mode(struct dw_mipi_dsi *dsi,
+>  				 unsigned long mode_flags)
+>  {
+> -	dsi_write(dsi, DSI_PWR_UP, RESET);
+> +	regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+>  
+>  	if (mode_flags & MIPI_DSI_MODE_VIDEO) {
+> -		dsi_write(dsi, DSI_MODE_CFG, ENABLE_VIDEO_MODE);
+> +		regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_VIDEO_MODE);
+>  		dw_mipi_dsi_video_mode_config(dsi);
+> -		dsi_write(dsi, DSI_LPCLK_CTRL, PHY_TXREQUESTCLKHS);
+> +		regmap_write(dsi->regs, DSI_LPCLK_CTRL, PHY_TXREQUESTCLKHS);
+>  	} else {
+> -		dsi_write(dsi, DSI_MODE_CFG, ENABLE_CMD_MODE);
+> +		regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_CMD_MODE);
+>  	}
+>  
+> -	dsi_write(dsi, DSI_PWR_UP, POWERUP);
+> +	regmap_write(dsi->regs, DSI_PWR_UP, POWERUP);
+>  }
+>  
+>  static void dw_mipi_dsi_disable(struct dw_mipi_dsi *dsi)
+>  {
+> -	dsi_write(dsi, DSI_PWR_UP, RESET);
+> -	dsi_write(dsi, DSI_PHY_RSTZ, PHY_RSTZ);
+> +	regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+> +	regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_RSTZ);
+>  }
+>  
+>  static void dw_mipi_dsi_init(struct dw_mipi_dsi *dsi)
+> @@ -573,14 +575,14 @@ static void dw_mipi_dsi_init(struct dw_mipi_dsi *dsi)
+>  	 */
+>  	u32 esc_clk_division = (dsi->lane_mbps >> 3) / 20 + 1;
+>  
+> -	dsi_write(dsi, DSI_PWR_UP, RESET);
+> +	regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+>  
+>  	/*
+>  	 * TODO dw drv improvements
+>  	 * timeout clock division should be computed with the
+>  	 * high speed transmission counter timeout and byte lane...
+>  	 */
+> -	dsi_write(dsi, DSI_CLKMGR_CFG, TO_CLK_DIVISION(10) |
+> +	regmap_write(dsi->regs, DSI_CLKMGR_CFG, TO_CLK_DIVISION(10) |
+>  		  TX_ESC_CLK_DIVISION(esc_clk_division));
+>  }
+>  
+> @@ -609,22 +611,22 @@ static void dw_mipi_dsi_dpi_config(struct dw_mipi_dsi *dsi,
+>  	if (mode->flags & DRM_MODE_FLAG_NHSYNC)
+>  		val |= HSYNC_ACTIVE_LOW;
+>  
+> -	dsi_write(dsi, DSI_DPI_VCID, DPI_VCID(dsi->channel));
+> -	dsi_write(dsi, DSI_DPI_COLOR_CODING, color);
+> -	dsi_write(dsi, DSI_DPI_CFG_POL, val);
+> +	regmap_write(dsi->regs, DSI_DPI_VCID, DPI_VCID(dsi->channel));
+> +	regmap_write(dsi->regs, DSI_DPI_COLOR_CODING, color);
+> +	regmap_write(dsi->regs, DSI_DPI_CFG_POL, val);
+>  	/*
+>  	 * TODO dw drv improvements
+>  	 * largest packet sizes during hfp or during vsa/vpb/vfp
+>  	 * should be computed according to byte lane, lane number and only
+>  	 * if sending lp cmds in high speed is enable (PHY_TXREQUESTCLKHS)
+>  	 */
+> -	dsi_write(dsi, DSI_DPI_LP_CMD_TIM, OUTVACT_LPCMD_TIME(4)
+> +	regmap_write(dsi->regs, DSI_DPI_LP_CMD_TIM, OUTVACT_LPCMD_TIME(4)
+>  		  | INVACT_LPCMD_TIME(4));
+>  }
+>  
+>  static void dw_mipi_dsi_packet_handler_config(struct dw_mipi_dsi *dsi)
+>  {
+> -	dsi_write(dsi, DSI_PCKHDL_CFG, CRC_RX_EN | ECC_RX_EN | BTA_EN);
+> +	regmap_write(dsi->regs, DSI_PCKHDL_CFG, CRC_RX_EN | ECC_RX_EN | BTA_EN);
+>  }
+>  
+>  static void dw_mipi_dsi_video_packet_config(struct dw_mipi_dsi *dsi,
+> @@ -638,7 +640,7 @@ static void dw_mipi_dsi_video_packet_config(struct dw_mipi_dsi *dsi,
+>  	 * non-burst video modes, see dw_mipi_dsi_video_mode_config()...
+>  	 */
+>  
+> -	dsi_write(dsi, DSI_VID_PKT_SIZE,
+> +	regmap_write(dsi->regs, DSI_VID_PKT_SIZE,
+>  		       dw_mipi_is_dual_mode(dsi) ?
+>  				VID_PKT_SIZE(mode->hdisplay / 2) :
+>  				VID_PKT_SIZE(mode->hdisplay));
+> @@ -651,14 +653,15 @@ static void dw_mipi_dsi_command_mode_config(struct dw_mipi_dsi *dsi)
+>  	 * compute high speed transmission counter timeout according
+>  	 * to the timeout clock division (TO_CLK_DIVISION) and byte lane...
+>  	 */
+> -	dsi_write(dsi, DSI_TO_CNT_CFG, HSTX_TO_CNT(1000) | LPRX_TO_CNT(1000));
+> +	regmap_write(dsi->regs, DSI_TO_CNT_CFG,
+> +		     HSTX_TO_CNT(1000) | LPRX_TO_CNT(1000));
+>  	/*
+>  	 * TODO dw drv improvements
+>  	 * the Bus-Turn-Around Timeout Counter should be computed
+>  	 * according to byte lane...
+>  	 */
+> -	dsi_write(dsi, DSI_BTA_TO_CNT, 0xd00);
+> -	dsi_write(dsi, DSI_MODE_CFG, ENABLE_CMD_MODE);
+> +	regmap_write(dsi->regs, DSI_BTA_TO_CNT, 0xd00);
+> +	regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_CMD_MODE);
+>  }
+>  
+>  /* Get lane byte clock cycles. */
+> @@ -692,13 +695,13 @@ static void dw_mipi_dsi_line_timer_config(struct dw_mipi_dsi *dsi,
+>  	 * computations below may be improved...
+>  	 */
+>  	lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, htotal);
+> -	dsi_write(dsi, DSI_VID_HLINE_TIME, lbcc);
+> +	regmap_write(dsi->regs, DSI_VID_HLINE_TIME, lbcc);
+>  
+>  	lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, hsa);
+> -	dsi_write(dsi, DSI_VID_HSA_TIME, lbcc);
+> +	regmap_write(dsi->regs, DSI_VID_HSA_TIME, lbcc);
+>  
+>  	lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, hbp);
+> -	dsi_write(dsi, DSI_VID_HBP_TIME, lbcc);
+> +	regmap_write(dsi->regs, DSI_VID_HBP_TIME, lbcc);
+>  }
+>  
+>  static void dw_mipi_dsi_vertical_timing_config(struct dw_mipi_dsi *dsi,
+> @@ -711,17 +714,16 @@ static void dw_mipi_dsi_vertical_timing_config(struct dw_mipi_dsi *dsi,
+>  	vfp = mode->vsync_start - mode->vdisplay;
+>  	vbp = mode->vtotal - mode->vsync_end;
+>  
+> -	dsi_write(dsi, DSI_VID_VACTIVE_LINES, vactive);
+> -	dsi_write(dsi, DSI_VID_VSA_LINES, vsa);
+> -	dsi_write(dsi, DSI_VID_VFP_LINES, vfp);
+> -	dsi_write(dsi, DSI_VID_VBP_LINES, vbp);
+> +	regmap_write(dsi->regs, DSI_VID_VACTIVE_LINES, vactive);
+> +	regmap_write(dsi->regs, DSI_VID_VSA_LINES, vsa);
+> +	regmap_write(dsi->regs, DSI_VID_VFP_LINES, vfp);
+> +	regmap_write(dsi->regs, DSI_VID_VBP_LINES, vbp);
+>  }
+>  
+>  static void dw_mipi_dsi_dphy_timing_config(struct dw_mipi_dsi *dsi)
+>  {
+>  	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
+>  	struct dw_mipi_dsi_dphy_timing timing;
+> -	u32 hw_version;
+>  	int ret;
+>  
+>  	ret = phy_ops->get_timing(dsi->plat_data->priv_data,
+> @@ -737,23 +739,22 @@ static void dw_mipi_dsi_dphy_timing_config(struct dw_mipi_dsi *dsi)
+>  	 * DSI_CMD_MODE_CFG.MAX_RD_PKT_SIZE_LP (see CMD_MODE_ALL_LP)
+>  	 */
+>  
+> -	hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> -
+> -	if (hw_version >= HWVER_131) {
+> -		dsi_write(dsi, DSI_PHY_TMR_CFG,
+> -			  PHY_HS2LP_TIME_V131(timing.data_hs2lp) |
+> -			  PHY_LP2HS_TIME_V131(timing.data_lp2hs));
+> -		dsi_write(dsi, DSI_PHY_TMR_RD_CFG, MAX_RD_TIME_V131(10000));
+> +	if (dsi->hw_version >= HWVER_131) {
+> +		regmap_write(dsi->regs, DSI_PHY_TMR_CFG,
+> +			     PHY_HS2LP_TIME_V131(timing.data_hs2lp) |
+> +			     PHY_LP2HS_TIME_V131(timing.data_lp2hs));
+> +		regmap_write(dsi->regs, DSI_PHY_TMR_RD_CFG,
+> +			     MAX_RD_TIME_V131(10000));
+>  	} else {
+> -		dsi_write(dsi, DSI_PHY_TMR_CFG,
+> -			  PHY_HS2LP_TIME(timing.data_hs2lp) |
+> -			  PHY_LP2HS_TIME(timing.data_lp2hs) |
+> -			  MAX_RD_TIME(10000));
+> +		regmap_write(dsi->regs, DSI_PHY_TMR_CFG,
+> +			     PHY_HS2LP_TIME(timing.data_hs2lp) |
+> +			     PHY_LP2HS_TIME(timing.data_lp2hs) |
+> +			     MAX_RD_TIME(10000));
+>  	}
+>  
+> -	dsi_write(dsi, DSI_PHY_TMR_LPCLK_CFG,
+> -		  PHY_CLKHS2LP_TIME(timing.clk_hs2lp) |
+> -		  PHY_CLKLP2HS_TIME(timing.clk_lp2hs));
+> +	regmap_write(dsi->regs, DSI_PHY_TMR_LPCLK_CFG,
+> +		     PHY_CLKHS2LP_TIME(timing.clk_hs2lp) |
+> +		     PHY_CLKLP2HS_TIME(timing.clk_lp2hs));
+>  }
+>  
+>  static void dw_mipi_dsi_dphy_interface_config(struct dw_mipi_dsi *dsi)
+> @@ -763,18 +764,18 @@ static void dw_mipi_dsi_dphy_interface_config(struct dw_mipi_dsi *dsi)
+>  	 * stop wait time should be the maximum between host dsi
+>  	 * and panel stop wait times
+>  	 */
+> -	dsi_write(dsi, DSI_PHY_IF_CFG, PHY_STOP_WAIT_TIME(0x20) |
+> -		  N_LANES(dsi->lanes));
+> +	regmap_write(dsi->regs, DSI_PHY_IF_CFG,
+> +		     PHY_STOP_WAIT_TIME(0x20) | N_LANES(dsi->lanes));
+>  }
+>  
+>  static void dw_mipi_dsi_dphy_init(struct dw_mipi_dsi *dsi)
+>  {
+>  	/* Clear PHY state */
+> -	dsi_write(dsi, DSI_PHY_RSTZ, PHY_DISFORCEPLL | PHY_DISABLECLK
+> -		  | PHY_RSTZ | PHY_SHUTDOWNZ);
+> -	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> -	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_TESTCLR);
+> -	dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> +	regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_DISFORCEPLL | PHY_DISABLECLK
+> +		     | PHY_RSTZ | PHY_SHUTDOWNZ);
+> +	regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> +	regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_TESTCLR);
+> +	regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+>  }
+>  
+>  static void dw_mipi_dsi_dphy_enable(struct dw_mipi_dsi *dsi)
+> @@ -782,27 +783,30 @@ static void dw_mipi_dsi_dphy_enable(struct dw_mipi_dsi *dsi)
+>  	u32 val;
+>  	int ret;
+>  
+> -	dsi_write(dsi, DSI_PHY_RSTZ, PHY_ENFORCEPLL | PHY_ENABLECLK |
+> -		  PHY_UNRSTZ | PHY_UNSHUTDOWNZ);
+> +	regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_ENFORCEPLL | PHY_ENABLECLK |
+> +		     PHY_UNRSTZ | PHY_UNSHUTDOWNZ);
+>  
+> -	ret = readl_poll_timeout(dsi->base + DSI_PHY_STATUS, val,
+> -				 val & PHY_LOCK, 1000, PHY_STATUS_TIMEOUT_US);
+> +	ret = regmap_read_poll_timeout(dsi->regs, DSI_PHY_STATUS,
+> +				       val, val & PHY_LOCK,
+> +				       1000, PHY_STATUS_TIMEOUT_US);
+>  	if (ret)
+>  		DRM_DEBUG_DRIVER("failed to wait phy lock state\n");
+>  
+> -	ret = readl_poll_timeout(dsi->base + DSI_PHY_STATUS,
+> -				 val, val & PHY_STOP_STATE_CLK_LANE, 1000,
+> -				 PHY_STATUS_TIMEOUT_US);
+> +	ret = regmap_read_poll_timeout(dsi->regs, DSI_PHY_STATUS,
+> +				       val, val & PHY_STOP_STATE_CLK_LANE, 1000,
+> +				       PHY_STATUS_TIMEOUT_US);
+>  	if (ret)
+>  		DRM_DEBUG_DRIVER("failed to wait phy clk lane stop state\n");
+>  }
+>  
+>  static void dw_mipi_dsi_clear_err(struct dw_mipi_dsi *dsi)
+>  {
+> -	dsi_read(dsi, DSI_INT_ST0);
+> -	dsi_read(dsi, DSI_INT_ST1);
+> -	dsi_write(dsi, DSI_INT_MSK0, 0);
+> -	dsi_write(dsi, DSI_INT_MSK1, 0);
+> +	u32 val;
+> +
+> +	regmap_read(dsi->regs, DSI_INT_ST0, &val);
+> +	regmap_read(dsi->regs, DSI_INT_ST1, &val);
+> +	regmap_write(dsi->regs, DSI_INT_MSK0, 0);
+> +	regmap_write(dsi->regs, DSI_INT_MSK1, 0);
+>  }
+>  
+>  static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
+> @@ -989,6 +993,18 @@ static void dw_mipi_dsi_debugfs_remove(struct dw_mipi_dsi *dsi) { }
+>  
+>  #endif /* CONFIG_DEBUG_FS */
+>  
+> +static int dw_mipi_dsi_get_hw_version(struct dw_mipi_dsi *dsi)
+> +{
+> +	regmap_read(dsi->regs, DSI_VERSION, &dsi->hw_version);
+> +	dsi->hw_version &= VERSION;
+> +	if (!dsi->hw_version) {
+> +		dev_err(dsi->dev,
+> +			"Failed to read DSI version. Is pclk enabled?\n");
+> +		return -ENODEV;
+> +	}
+> +	return 0;
+> +}
+> +
+>  static struct dw_mipi_dsi *
+>  __dw_mipi_dsi_probe(struct platform_device *pdev,
+>  		    const struct dw_mipi_dsi_plat_data *plat_data)
+> @@ -1020,6 +1036,14 @@ __dw_mipi_dsi_probe(struct platform_device *pdev,
+>  		dsi->base = plat_data->base;
+>  	}
+>  
+> +	dsi->regs = devm_regmap_init_mmio(dev, dsi->base,
+> +					  &dw_mipi_dsi_regmap_cfg);
+> +	if (IS_ERR(dsi->regs)) {
+> +		ret = PTR_ERR(dsi->regs);
+> +		DRM_ERROR("Failed to create DW MIPI DSI regmap: %d\n", ret);
+> +		return ERR_PTR(ret);
+> +	}
+> +
+>  	dsi->pclk = devm_clk_get(dev, "pclk");
+>  	if (IS_ERR(dsi->pclk)) {
+>  		ret = PTR_ERR(dsi->pclk);
+> @@ -1055,6 +1079,12 @@ __dw_mipi_dsi_probe(struct platform_device *pdev,
+>  		clk_disable_unprepare(dsi->pclk);
+>  	}
+>  
+> +	ret = dw_mipi_dsi_get_hw_version(dsi);
+> +	if (ret) {
+> +		dev_err(dev, "Could not read HW version\n");
+> +		return ERR_PTR(ret);
+> +	}
+> +
+>  	dw_mipi_dsi_debugfs_init(dsi);
+>  	pm_runtime_enable(dev);
+>  
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
