@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB8591BADF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AA461BAE05
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:33:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ANIlj102mqbZIdHqCWaQO+SJbUo3md6qsKLvS3w9qcE=; b=rRC4fkzkbtqRCx
-	UwlfF0dxMTzBYALnU0HOCaAS9HXk2dbLogIVmDokNNSE9SceGnf/c+i2PFqKN6NTk0Z2exu5ha2/z
-	x9Ze4EI7s4q4pNvmmOLAkBkkEbXOBEuFGQG0hj7j2FNagwkCPYOsBdDEmUcIDBINNrWs0PmYvmSCu
-	hCyMhOA8OMI5Pd983tDxrqL5LTwnvqIcz1tR1ZjUHIqtYLicyd2TmA/wzwqzOspbZMDuLctXC7Kuc
-	MVPPT+0lTwDJ7Nti+JnT479iRs/wE5Grv6JjTMBoDUXcd239Bmasi6iXsDqaTM2+9o14BmKShmPG9
-	RxeFqmWMR0Vht5FMeGrA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S8nElVrJebicwgSUARQMsjLxNqR9vdYaU8a3ZAp+/EU=; b=CrmEDSLDbacMFt
+	HeQNzwLblcMQ4Cv8e2NTSJD1EQ0ORRGByJxbvFmeGZ43IpElywPy/lC9NCbrF+JZMhK6UyL0vM+bC
+	qYXPDCpSS01WgiIt7IKkKF4M0sqtm4GhNzI3jJqwN8ZvXeX/zm2mWRniNpcOXtsICZHEP4ABED6NZ
+	g426pq9XWrYT6WBxZx95Pom6U5UhEvMiQanc0/UbHURIXMVrtYuRMAHiz5wX4V2PaCHGFJ0EUL/rx
+	PwPBNOkmkwrDhQFUk8/R6eKnZTsNQ8TlVKtzo0Npkm8X+PQpySulNfp6CvSVcP42UVZJJwX/YW9g4
+	KRzMG0swIUb+mzPs+/uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT9To-0002fR-6g; Mon, 27 Apr 2020 19:31:48 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1jT9Uq-0003Bi-My; Mon, 27 Apr 2020 19:32:52 +0000
+Received: from mout.web.de ([212.227.15.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT9TL-0002RB-0t; Mon, 27 Apr 2020 19:31:20 +0000
-Received: by mail-ed1-x542.google.com with SMTP id t12so14453945edw.3;
- Mon, 27 Apr 2020 12:31:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aCBHygv2Dz+zd+RKARK5K2miMNYjk565u4hnFpBMvlI=;
- b=VAfe08BfrA1Ts8YeU6qdFauAw/FLbzlElIcsPCrEesK+v/47PeU9ndhqzfCOU4c8zb
- SOMm+seRIfUVRMnBGCmDHKbdUhEcs2KIsIoKsTg//vmAWez0476KZQFd3qulfSbq1/a2
- hYkWJxzov7yXvJYiu/B3x0MdHd5peO36/Qf1O246U5YG2AUtymDGxGNcGCLSdn1az12B
- urZzNVEDGuTXRUDhHqgGvkAxOfR1ZmNVc5YWUSQQ48UZNFUbUlmiyiD1LjE6S9RoYtye
- 5jON7spJZUBz5mxVGGUEQfh0hfXLY6gWQnFi18XZkz4Pqsj9cd+sino6Zd3YAqJOkT9t
- Kk9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aCBHygv2Dz+zd+RKARK5K2miMNYjk565u4hnFpBMvlI=;
- b=o66zxHauRDqJ6qlpfGnoQpyPPjKT9BO9Mg1FVXRRSJ2e6syBGX1QjPPqUCh8cVppQT
- wXjXteDUwZN94xFbw8dhl5orRUEB58GGHzqhdjiJQLB97z+J6OJNygTd9dJTrTzFu4s4
- rWRBK4TdSfS7j98WAhXW4dQ/zCgyDv9MsBlUMFtDXrO6e3t/PkCaWmw5RNLszAW1ROQo
- A9IPPTTjBwhhX6Tp2g9CN9kx+sitzffGEbCu5HLOZEKbuHE/8Vp/1tqh6wt1saRFKydD
- ZpOmHHt/3yLvqcu6B/9p+ZhRJLnP24te/HiKuX1avhGCNyXjbiCd8ZU8ZgpMddO54qoW
- q3Zw==
-X-Gm-Message-State: AGi0PubGWydLmy4aQNDwSOCfhZv3NBVX/hhCKHRcPeBHGWfS4qMmCY1m
- YX4sdf1CPnqmFQzuZnQArAMOCQVo81fECh/19RI=
-X-Google-Smtp-Source: APiQypIJfTQsCgvehtZ278338B1P8XoCCOZdJgf9HibFmV04ATXeExxGGygEU3y4vpwfiwUWn6qtGWILmY7bDmXM+XU=
-X-Received: by 2002:a05:6402:1d15:: with SMTP id
- dg21mr20520944edb.13.1588015877271; 
- Mon, 27 Apr 2020 12:31:17 -0700 (PDT)
+ id 1jT9Uf-0003At-BT; Mon, 27 Apr 2020 19:32:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1588015951;
+ bh=yriEMMSw+mJO9UE3z78SkastypBUctvQc/BJwAY/K4I=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Pg6N2DaRHMhT1lufSSwrpSjQulFWPHLusHx2KYsgA1AstCjKQCU37JxSq57fBen5O
+ mkcNuvp2Y9hug36QYI2/BkDdI+r4UkAN/FZjBUv9PhBHA2r+Vf3DRrTsJoX92AS86m
+ JSbVr9O1gLzWmbMNFqyHzL5I+35tU0Vobvs6VfRc=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.31] ([89.12.68.2]) by smtp.web.de (mrweb003
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0Lmu5s-1izaV90Loi-00h2Py; Mon, 27
+ Apr 2020 21:32:31 +0200
+Subject: Re: [BUG] PCI: rockchip: rk3399: pcie switch support
+To: Robin Murphy <robin.murphy@arm.com>, Shawn Lin <shawn.lin@rock-chips.com>
+References: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
+ <3e9d2c53-4f0d-0c97-fbfa-6d799e223747@arm.com>
+ <b088ad0e-bab1-0cff-dc43-eb5709555902@web.de>
+ <1f180d4b-9e5d-c829-555b-c9750940361e@web.de>
+ <d02e0b72-5fb3-dd47-468c-08b86db07a9a@arm.com>
+From: Soeren Moch <smoch@web.de>
+Message-ID: <213ff8e4-0921-6e06-a98e-e7d955ca279d@web.de>
+Date: Mon, 27 Apr 2020 21:32:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200328003249.1248978-1-martin.blumenstingl@googlemail.com>
- <1jblnd2tp3.fsf@starbuckisacylon.baylibre.com>
- <CAFBinCDzNw6nV3oBJs6C0sssW61GERBXq39DCM22BT9zS8M31A@mail.gmail.com>
- <1j8sig3mi3.fsf@starbuckisacylon.baylibre.com>
- <CAPDyKFrYNmCtX3KHaE1vw4rT45WdsUWKqOaJ43rJCKwsnY4PCQ@mail.gmail.com>
-In-Reply-To: <CAPDyKFrYNmCtX3KHaE1vw4rT45WdsUWKqOaJ43rJCKwsnY4PCQ@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 27 Apr 2020 21:31:06 +0200
-Message-ID: <CAFBinCDPkdRF4RJ+AL0TvjKzxJ4YP_D4XmGg1dp4LmtRyL-o8A@mail.gmail.com>
-Subject: Re: [PATCH v5 0/3] Amlogic 32-bit Meson SoC SDHC MMC controller driver
-To: Ulf Hansson <ulf.hansson@linaro.org>
+In-Reply-To: <d02e0b72-5fb3-dd47-468c-08b86db07a9a@arm.com>
+Content-Language: en-GB
+X-Provags-ID: V03:K1:egsP99ZUL8Q+NhjQ+Y0Iq7o0uFlAWiM0eMjSXXzuHmfsXEl14dK
+ U+SWHY1f5u+fSuvX1bzSu9vM8qM9x4WbC7UKxeiyUDxrX0H3bR+c3qytIupN6N4fiUGsfyP
+ xob3RNlqojne4h78YczVbCiQxUE33jECVf0HPYdAowDfEMU7a+9vSMQLH+/Tx+LOh0+6Fio
+ ET093r0Woc7k+juuvDXPg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Y5F9Zlf49Qc=:1ioKBA093oWxuGDt9c4A2E
+ p/qMSJASroWOWPbQc/Z59EoXV03oc4p9t/klcXOEbGaeh55bxbSCCZ9y4Wl3BvnI916xQv5NF
+ o3ULvV7wCbFURDG1VwnSKPYMsPlEIPmHUXCojGwopZ37EflqIg5DJeS1vsCh1ZX1//Uczbkqb
+ U0MKh0b1gcQOln/XrSrHmnC9UWsbmv5W84OeKr9BqyFqbXoE0BnbqocnN9K7EOMY++aMQrt/S
+ NkUIudEWyHz4SmFjEdHapCKkyVqlTifSjaOlx97Z+iaX+DOBYXKpcmIUH+rshr24iJoBDsCGR
+ /IVw1vPp2qqb9hpd6vtVX9k2wlXu06WBHPcZpOm9SmcJ2aJQIXTDjJfspNycBCQVmeOBEeAkT
+ nB8Ku7wdcAK/dkUs5LzkZ88GJ+Cmx9quOtEK8FBSzpo00XpP1339fbqVuqF5Poa6CkeOVaNFT
+ gvNVBqQjq2HH+PYA8ZZX+yR8OTv+BlAalrGpQPysBGUUdMI1LF+0FCs33T+/rvDZZ/0VVXc0I
+ qj6hL56m3b4w1OW3sWoE5j0VdM3ZkS2XxdFoPcnmjFUJAW73yrvyA4kroeOJWlYNPZjVWwwJg
+ ebFvYfAFD0L67b5pI7+idEWKJiBnkzBow+nXPo6NJiN4PPxNfCgAn9sRHb8X0d/3/iBQxy/Kz
+ MEKHJMHhs6KoDAPMO0mKcQxmbE9W74i/UnKI1FWWF8nuH4XcXLN74wcR/Y3jO8xcIsi/lnnEg
+ +GEEwkH0+meGkRtyRG+LU8kFAwQJvAErPaDLetVzTdv3fwi1pbTAiEmngtLsaL3Ysd4tODFp4
+ xGrVsiaY7ebrZ/+JELnb+IsIHq2Ez0qKudErn01vwaftQKoRCxtB1pQErDKKgO0AXLypLJisA
+ rEDkU8fO0d+JTACZeXrUNzuloNHFo61IbBBVLVlqu+Xu5UU1o9s/F0iYN0ePsTEzBW1sWM+Fe
+ UE9Q6iVtSL5GZ3p3X2+VUVGnpgGCSTxKJrBcdLdbZce957fg0jU1pIf11pIbhu085pLNqVz95
+ cpe9pmUlgaL7hd/g1gLu3mXyyEnJnq1Wg/RIXS/qDV8fASdLCnaDHq309ajeSSgYX3H7Sh2ML
+ IgV7O5+lt4q70BzLUDhQjZohr1oCooliHekSIjJ5W/KtpEu4Q29dm7bvFr1xXZxNI/WidsSji
+ 6LTVl6wI7oJTnqdBh9WU++h0CRw5Tjx+lW23wFhh1gx4T77raKEeRnx+sCC5RNPHCIdMp4OpF
+ 5RVZo2UFFJWwx9B3Y
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_123119_064729_9EA23161 
-X-CRM114-Status: GOOD (  28.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_123241_687553_6ED20210 
+X-CRM114-Status: GOOD (  21.72  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.14 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ provider [smoch[at]web.de]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,92 +104,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- yinxin_1989@aliyun.com, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- lnykww@gmail.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ulf, Jerome,
-
-On Mon, Apr 27, 2020 at 8:36 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> Jerome, Martin,
->
-> On Mon, 27 Apr 2020 at 18:46, Jerome Brunet <jbrunet@baylibre.com> wrote:
-> >
-> >
-> > On Mon 27 Apr 2020 at 18:23, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > > Hi Jerome,
-> > >
-> > > On Mon, Apr 27, 2020 at 10:56 AM Jerome Brunet <jbrunet@baylibre.com> wrote:
-> > > [...]
-> > >> > Changes since v3 at [3]:
-> > >> > - split the clock bits into a separate clock controller driver because
-> > >> >   of two reasons: 1) it keeps the MMC controller driver mostly clean of
-> > >> >   the clock bits
-> > >>
-> > >> If the register is in the MMC controller register space and the MMC
-> > >> driver is the driver using these clocks, it is where the clocks belong.
-> > >> I don't get why it could be an issue ?
-> > >>
-> > >> Is the clock block is shared with another device, like on the Gx family ?
-> > > no, it is not shared with another device (to my knowledge).
-> > >
-> > >> > 2) the pure clock controller can use
-> > >> >   devm_clk_hw_register() (instead of devm_clk_register(), which is
-> > >> >   deprecated) and the MMC controller can act as a pure clock consumer.
-> > >>
-> > >> Why can't you use devm_clk_hw_register in an MMC driver ?
-> > >> Unless I missed something, it is provided by clk-provider.h, which can be
-> > >> included by any driver.
-> > > indeed, I could use devm_clk_hw_register in the MMC driver.
-> > > Ulfs concern was that a lot of code was needed for managing the clocks
-> > > and I agree with him. so this is my way of keeping those details away
-> > > from the MMC driver and have two separate drivers which are better to
-> > > understand overall.
-> >
-> > Martin, Ulf,
-> >
-> > I understand that CCF code might seems verbose and I'm happy to help
-> > review it if necessary but I don't think every driver out there should
-> > register some kind of fake clock controller driver everytime they wish
-> > to use CCF API.
-> >
-> > Yes the it might make the driver code cleaner but the overall
-> > architecture is harder to follow.
-> >
-> > CCF was made so driver from any subsystem *may* use it. Creating a
-> > controller for a single register is overkill. The HW architecture of
-> > this particular device does not justify it.
->
-> I fully understand your point and I agree with it.
->
-> If I recall correctly, my point in the earlier review phase was that I
-> wanted the driver to be nicely split into a clock provider part and
-> into a mmc host driver part. I also raised the point of using
-> devm_clk_hw_register() rather than the deprecated devm_clk_register().
-> I still think this makes sense.
->
-> That said, perhaps a reasonable split could be to have two separate
-> c-files (one for clock provider and one for mmc host), but both in the
-> mmc subsystem.
-I'm fine with that - I'll do that in the next patch version
-I believe the amount of changes will be small because the clock driver
-already uses devm_clk_hw_register()
-
-
-Martin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTQuMDQuMjAgMTQ6MjgsIFJvYmluIE11cnBoeSB3cm90ZToKPiBPbiAyMDIwLTA0LTE0IDEy
+OjM1IHBtLCBTb2VyZW4gTW9jaCB3cm90ZToKPj4gT24gMDYuMDQuMjAgMTk6MTIsIFNvZXJlbiBN
+b2NoIHdyb3RlOgo+Pj4gT24gMDYuMDQuMjAgMTQ6NTIsIFJvYmluIE11cnBoeSB3cm90ZToKPj4+
+PiBPbiAyMDIwLTA0LTA0IDc6NDEgcG0sIFNvZXJlbiBNb2NoIHdyb3RlOgo+Pj4+PiBJIHdhbnQg
+dG8gdXNlIGEgUENJZSBzd2l0Y2ggb24gYSBSSzMzOTkgYmFzZWQgUm9ja1BybzY0IFYyLjEgYm9h
+cmQuCj4+Pj4+ICJOb3JtYWwiIFBDSWUgY2FyZHMgd29yayAobW9zdGx5KSBqdXN0IGZpbmUgb24g
+dGhpcyBib2FyZC4gVGhlIFBDSWUKPj4+Pj4gc3dpdGNoZXMgKEkgdHJpZWQgUGVyaWNvbSBhbmQg
+QVNNZWRpYSBiYXNlZCBzd2l0Y2hlcykgYWxzbyB3b3JrCj4+Pj4+IGZpbmUgb24KPj4+Pj4gb3Ro
+ZXIgYm9hcmRzLiBUaGUgUkszMzk5IFBDSWUgY29udHJvbGxlciB3aXRoIHBjaWVfcm9ja2NoaXBf
+aG9zdAo+Pj4+PiBkcml2ZXIKPj4+Pj4gYWxzbyByZWNvZ25pc2VzIHRoZSBzd2l0Y2gsIGJ1dCBm
+YWlscyB0byBpbml0aWFsaXplIHRoZSBidXNlcwo+Pj4+PiBiZWhpbmQgdGhlCj4+Pj4+IGJyaWRn
+ZSBwcm9wZXJseSwgc2VlIHN5c2xvZyBmcm9tIGxpbnV4LTUuNi4wLgo+Pj4+Pgo+Pj4+PiBBbnkg
+aWRlYXMgd2hhdCBJIGRvIHdyb25nLCBvciBhbnkgc3VnZ2VzdGlvbnMgd2hhdCBJIGNhbiB0ZXN0
+IGhlcmU/Cj4+Pj4gU2VlIHRoZSB0aHJlYWQgaGVyZToKPj4+Pgo+Pj4+IGh0dHBzOi8vbG9yZS5r
+ZXJuZWwub3JnL2xpbnV4LXBjaS9DQU1kWXpZb1R3akt6NEVOOFB0RDVwWmZ1MytTWCs2OEpMK2Rm
+dm1DclNuTEw9SzZGZXdAbWFpbC5nbWFpbC5jb20vCj4+Pj4KPj4+Pgo+Pj4gVGhhbmtzIFJvYmlu
+IQo+Pj4KPj4+IEkgYWxzbyBmb3VuZCBvdXQgaW4gdGhlIG1lYW50aW1lIHRoYXQgZGV2aWNlIGVu
+dW1lcmF0aW9uIGZhaWxzIGluIHRoaXMKPj4+IGZhdGFsIHdheSB3aGVuIHByb2Jpbmcgbm9uLWV4
+aXN0ZW50IGRldmljZXMuIFNvIGlmIEkgaGFjayBteSBjb21wbGV0ZQo+Pj4gYnVzIHRvcG9sb2d5
+IGludG8gcm9ja2NoaXBfcGNpZV92YWxpZF9kZXZpY2UsIHRoZW4gYWxsIGV4aXN0aW5nIGRldmlj
+ZXMKPj4+IGNvbWUgdXAgcHJvcGVybHkuIE9mIGNvdXJzZSB0aGlzIGlzIG5vdCBob3cgUENJZSBz
+aG91bGQgd29yay4KPj4+PiBUaGUgY29uY2x1c2lvbiB0aGVyZSBzZWVtcyB0byBiZSB0aGF0IHRo
+ZSBSSzMzOTkgcm9vdCBjb21wbGV4IGp1c3QKPj4+PiBkb2Vzbid0IGhhbmRsZSBjZXJ0YWluIHR5
+cGVzIG9mIHJlc3BvbnNlIGluIGEgc2Vuc2libGUgbWFubmVyLCBhbmQKPj4+PiB0aGVyZSdzIG5v
+dCBtdWNoIHRoYXQgY2FuIHJlYXNvbmFibHkgYmUgZG9uZSB0byBjaGFuZ2UgdGhhdC4KPj4+IEht
+LCBhdCBsZWFzdCB0aGVyZSBpcyB0aGUgcHJvbWlzaW5nIHN1Z2dlc3Rpb24gdG8gdGFrZSBvdmVy
+IHRoZSBTRXJyb3IKPj4+IGhhbmRsZXIsIG1heWJlIGluIEFURiwgYXMgd29ya2Fyb3VuZC4KPj4g
+VW5mb3J0dW5hdGVseSBpdCBzZWVtcyB0byBiZSBub3QgdGhhdCBlYXN5LiBPbmx5IHdoZW4gUENJ
+ZSBkZXZpY2UKPj4gcHJvYmluZyBydW5zIG9uIG9uZSBvZiB0aGUgQ29ydGV4LUE3MiBjb3JlcyBv
+ZiByazMzOTkgd2Ugc2VlIHRoZSBTRXJyb3IuCj4+IFdoZW4gcHJvYmluZyBydW5zIG9uIG9uZSBv
+ZiB0aGUgQTUzIGNvcmVzLCB3ZSBnZXQgYSBzeW5jaHJvbm91cyBleHRlcm5hbAo+PiBhYm9ydCBp
+bnN0ZWFkLgo+Pgo+PiBJcyB0aGlzIGV4cGVjdGVkIHRvIHNlZSBkaWZmZXJlbnQgZXJyb3IgdHlw
+ZXMgb24gYmlnLkxJVFRMRSBzeXN0ZW1zPyBPcgo+PiBpcyB0aGlzIGFub3RoZXIgc3BlY2lhbCBw
+cm9wZXJ0eSBvZiB0aGUgcmszMzk5IHBjaWUgY29udHJvbGxlcj8KPgo+IEFzIGZhciBhcyBJJ20g
+YXdhcmUsIHRoZSBDUFUgbWljcm9hcmNoaXRlY3R1cmUgaXMgaW5kZWVkIG9uZSBvZiB0aGUKPiBm
+YWN0b3JzIGluIHdoZXRoZXIgaXQgdGFrZXMgYSBnaXZlbiBleHRlcm5hbCBhYm9ydCBzeW5jaHJv
+bm91c2x5IG9yCj4gYXN5bmNocm9ub3VzbHksIHNvIHllcywgSSdkIHNheSB0aGF0IHByb2JhYmx5
+IGlzIGV4cGVjdGVkLiBJIHdvdWxkbid0Cj4gbmVjZXNzYXJpbHkgZXZlbiByZWx5IG9uIGEgc2lu
+Z2xlIG1pY3JvYXJjaGl0ZWN0dXJlIG9ubHkgYmVoYXZpbmcgb25lCj4gd2F5LCBzaW5jZSBpbiBw
+cmluY2lwbGUgaXQncyBwb3NzaWJsZSB0aGF0IHN1cnJvdW5kaW5nIGluc3RydWN0aW9ucwo+IG1p
+Z2h0IGFmZmVjdCB3aGV0aGVyIHRoZSBjb3JlIHN0aWxsIGhhcyBlbm91Z2ggY29udGV4dCBsZWZ0
+IHRvIHRha2UKPiB0aGUgZXhjZXB0aW9uIHN5bmNocm9ub3VzbHkgb3Igbm90IGF0IHRoZSBwb2lu
+dCB0aGUgYWJvcnQgZG9lcyBjb21lIGJhY2suCj4KPiBJbiBnZW5lcmFsIGV4dGVybmFsIGFib3J0
+cyBhcmUgYSAic2hvdWxkIG5ldmVyIGhhcHBlbiIga2luZCBvZiB0aGluZywKPiBzbyB0aGV5J3Jl
+IG5vdCBuZWNlc3NhcmlseSBleHBlY3RlZCB0byBiZSByZWNvdmVyYWJsZSAoSSB0aGluayB0aGUg
+UkFTCj4gZXh0ZW5zaW9ucyBtaWdodCBhZGQgYSBtb3JlIHJvYnVzdG5lc3MgaW4gdGVybXMgb2Yg
+cmVwb3J0aW5nLCBidXQKPiBhcmVuJ3QgcmVsZXZhbnQgaGVyZSBlaXRoZXIgd2F5KS4KPgpPa2F5
+LiBJbiBhbiBpZGVhbCB3b3JsZCB3ZSB3b3VsZCBub3QgbmVlZCBzb2Z0d2FyZSB3b3JrYXJvdW5k
+cyBmb3IKaGFyZHdhcmUgYnVncy4KCkBTaGF3bjogQ2FuIHlvdSBwb2ludCBtZSB0byB0aGUgcmsz
+Mzk5IGVycmF0YSB5b3UgbWVudGlvbmVkIGluIGNvbW1pdAo3MTJmYTE3NzcyMDdjMmYyNzAzYTZl
+YjYxOGE5Njk5MDk5Y2JlMzdiID8KClRoYW5rcy4KCgo+IEF0IHRoaXMgcG9pbnQgSSdtIHN0YXJ0
+aW5nIHRvIHdvbmRlciB3aGV0aGVyIGl0IG1pZ2h0IGJlIHBvc3NpYmxlIHRvCj4gZG8gc29tZXRo
+aW5nIHNpbWlsYXIgdG8gdGhlIEFybSBOMVNEUCB3b3JrYXJvdW5kIHVzaW5nIHRoZSBDb3J0ZXgt
+TTAsCj4gYWxiZWl0IHdpdGggdGhlIGNvbXBsaWNhdGlvbiB0aGF0IHByb2Jpbmcgd291bGQgcmVh
+bGlzdGljYWxseSBoYXZlIHRvCj4gYmUgZXhwbGljaXRseSBpbnZva2VkIGZyb20gdGhlIExpbnV4
+IGRyaXZlciBkdWUgdG8gY2xvY2tzIGFuZCBleHRlcm5hbAo+IHJlZ3VsYXRvcnMuLi4gOi8KPgpT
+b3VuZHMgY29tcGxpY2F0ZWQuCkZvciBtZSBJIHVzZSB0aGUgcGF0Y2ggYmVsb3cuIE9mIGNvdXJz
+ZSB0aGlzIGhhY2sgaXMgbm90IGludGVuZGVkIGZvcgptZXJnaW5nLCBqdXN0IGFzIHJlZmVyZW5j
+ZSB0byBjb25jbHVkZSB0aGlzIGRpc2N1c3Npb24uCgpJZiBzb21lb25lIGNvbWVzIHVwIHdpdGgg
+YSBiZXR0ZXIgc29sdXRpb24sIEknbSBoYXBweSB0byB0ZXN0IHRoaXMuCgpUaGFua3MsClNvZXJl
+bgoKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTg8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tCkZyb20gOWYyZTI2MTg2YmJmODY3ZjFiYWFkYTA1N2JjYmQ4NDNjNDY1YzM4MSBN
+b24gU2VwIDE3IDAwOjAwOjAwIDIwMDEKRnJvbTogU29lcmVuIE1vY2ggPHNtb2NoQHdlYi5kZT4K
+RGF0ZTogRnJpLCAxNyBBcHIgMjAyMCAxMjoxNDowNCArMDIwMApTdWJqZWN0OiBbUEFUQ0hdIFBD
+STogcm9ja2NoaXA6IHJrMzM5OTogcGNpZSBzd2l0Y2ggc3VwcG9ydAoKRHVlIHRvIGEgaGFyZHdh
+cmUgYnVnIHRoZSByazMzOTkgUENJZSBjb250cm9sbGVyIHNpZ25hbHMgZXJyb3IgY29uZGl0aW9u
+cwp0byB0aGUgY3B1IHdoZW4gc2Nhbm5pbmcgZm9yIFBDSWUgZGV2aWNlcywgd2hpY2ggYXJlIG5v
+dCBhdmFpbGFibGUuIFNvClBDSWUgYnJpZGdlcyBhcmUgbm90IHN1cHBvcnRlZC4KClRoZSByazMz
+OTkgQ29ydGV4LUE3MiBjb3JlcyBnZW5lcmF0ZSBTRXJyb3IgaW50ZXJydXB0cyBmb3IgdGhlc2Ug
+ZmFsc2UKUENJZSBlcnJvcnMsIENvcnRleC1BNTMgY29yZXMgZ2VuZXJhdGUgU3luY2hyb251b3Mg
+RXh0ZXJuYWwgQWJvcnRzLgoKVGhpcyBoYWNrIGVuYWJsZXMgUENJZSBkZXZpY2UgcHJvYmluZyBv
+biBidXNlcyBiZWhpbmQgYnJpZGdlcyBieQppZ25vcmluZyB0aGUgZ2VuZXJhdGVkIFNFcnJvci4g
+RGV2aWNlIHByb2JpbmcgbmVlZHMgdG8gYmUgZG9uZSBvbgpDb3J0ZXgtQTcyIGNvcmVzLCBlLmcu
+IHVzZQp0YXNrc2V0IC1jIDQgbW9kcHJvYmUgcGNpZV9yb2NrY2hpcF9ob3N0CgpTaWduZWQtb2Zm
+LWJ5OiBTb2VyZW4gTW9jaCA8c21vY2hAd2ViLmRlPgotLS0KwqBhcmNoL2FybTY0L2tlcm5lbC90
+cmFwcy5jIHwgMTAgKysrKysrKysrLQrCoDEgZmlsZSBjaGFuZ2VkLCA5IGluc2VydGlvbnMoKyks
+IDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC90cmFwcy5jIGIv
+YXJjaC9hcm02NC9rZXJuZWwvdHJhcHMuYwppbmRleCBjZjQwMmJlNWM1NzMuLmRhMmI2NGQyNjEz
+ZiAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwvdHJhcHMuYworKysgYi9hcmNoL2FybTY0
+L2tlcm5lbC90cmFwcy5jCkBAIC05MDYsOCArOTA2LDE2IEBAIGJvb2wgYXJtNjRfaXNfZmF0YWxf
+cmFzX3NlcnJvcihzdHJ1Y3QgcHRfcmVncwoqcmVncywgdW5zaWduZWQgaW50IGVzcikKwqAKwqBh
+c21saW5rYWdlIHZvaWQgZG9fc2Vycm9yKHN0cnVjdCBwdF9yZWdzICpyZWdzLCB1bnNpZ25lZCBp
+bnQgZXNyKQrCoHsKLcKgwqDCoCBjb25zdCBib29sIHdhc19pbl9ubWkgPSBpbl9ubWkoKTsKK8Kg
+wqDCoCBib29sIHdhc19pbl9ubWk7CsKgCivCoMKgwqAgLyogaWdub3JlIFNFcnJvciB0byBlbmFi
+bGUgcmszMzk5IFBDSWUgYnVzIGVudW1lcmF0aW9uICovCivCoMKgwqAgaWYgKGVzciA+PiBFU1Jf
+RUx4X0VDX1NISUZUID09IEVTUl9FTHhfRUNfU0VSUk9SKSB7CivCoMKgwqAgwqDCoMKgIHByX2Rl
+YnVnKCJpZ25vcmluZyBTRXJyb3IgSW50ZXJydXB0IG9uIENQVSVkXG4iLAorwqDCoMKgIMKgwqDC
+oCDCoMKgwqAgwqDCoMKgIHNtcF9wcm9jZXNzb3JfaWQoKSk7CivCoMKgwqAgwqDCoMKgIHJldHVy
+bjsKK8KgwqDCoCB9CisKK8KgwqDCoCB3YXNfaW5fbm1pID0gaW5fbm1pKCk7CsKgwqDCoMKgIGlm
+ICghd2FzX2luX25taSkKwqDCoMKgwqAgwqDCoMKgIG5taV9lbnRlcigpOwrCoAotLQoyLjE3LjEK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
