@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EF441B98B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:32:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08FF21B98AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 09:32:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=83cMAt0foEB4VQvqEwy+5oBMUWpBcvHL+hFq9CbsHfY=; b=KZ+p3VHKBDOob7
-	mqW0FvMMZvHapvW/CUcjX+PkI7Ea90yKVCwxX1f35Y6SWguuLScswZ9+PJAa/fF4t4am2pFl21Jd+
-	NKD5WzBeg5WJ7+FdhQP3ySngHJMTZhYT8xMK/ug9fEOJdQlq/V7UgCvG0Bw5Svg+oQPUmVUft6VIR
-	upebofP+4W5e+RXyYwvxcS3Uz+xZwCPa4MgxLMG25G0pFHF10ra9r06fmZfgZFgNYQeEyxYIZmMGs
-	B0gnTSQjwsW0CyZSCfYDqhT3YwC8Nsb25LIbvJitW9TKEEMCyUQHyBYTWYqk0xLGfeoULxrcUS9fx
-	qlGk2BcD4NX4fzMusNWg==;
+	List-Owner; bh=9P34F8C0GdLTosd5u6vHbsC9JDy8MpNe0ZnkBsenJyY=; b=p5Pjqas5RlPRxc
+	Bu5kYwAyXbMtzx2lazeDXuMeRfYZQeTG4f03jE0JLjcmo7kWByyAutmnAbCmM9TZSfsxSC3Ci/HJU
+	4hLQQ0YmLnRYNStrDOAkc4ln48kCYsRmIi5pGUBEQpqWFIcrFwMQF3JAqvYM/6jKVfBRX4P2LlY/H
+	SyEprks8K5586x5aHQLmGBYQQVAxNpaiDKgWVradjBmlsB16jVFPlpqc6L9Gji1iMIfw22+/0LwVS
+	mBzQUD/4UjU5+P70kIk4F8jL6bhD13UyDZoVg1h0yZxQk8xjd/yeoP2yJbPJUM+JOFYGnfFGly9P3
+	h9P4xZPBQR79AxAEEMVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSyFp-0008Uj-Nj; Mon, 27 Apr 2020 07:32:37 +0000
+	id 1jSyFC-0007zs-Mw; Mon, 27 Apr 2020 07:31:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyEz-0007yY-Kq; Mon, 27 Apr 2020 07:31:48 +0000
+ id 1jSyEz-0007yX-Iu; Mon, 27 Apr 2020 07:31:46 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9AE3220728;
+ by mail.kernel.org (Postfix) with ESMTPSA id 9563C2051A;
  Mon, 27 Apr 2020 07:31:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1587972704;
- bh=W3coOJ/9IbQlK6OGsMXbje2kmeFvSqao3U4W5PN7U+0=;
+ bh=EB/8lQ6+/XniFQ49WgaV6x0TkKREKExmreY0EeEVl70=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=2nvhZUVCE5MBhKyCf/PDJo9ooUIzM6DS9en+pF9MuQi3vO4D2cqssJiJzPGZw5al1
- 3SuUIyTgfFyOYEHBHIbjliqJKPcCV1drJWkvtSbw/EM+aXoIU/zXKiVoRwqboKPC8m
- +uQ90S8bQyV6GACWIOQEwlt05WMT9rQ2dZULr4i8=
+ b=GsD/E2b5m33qFTMLKp7RyIht3sckCqUa+LfmwqRzzX99BAadGU5LlmnlU1UR4im0r
+ 0Xvf2kwD7pIYc8aAEyYLWrtF/eFimXP4UA0aSupz+Tq+CPzT1zj9bHqd2OE7mL+qmu
+ QGaMD5TMG/ahGFA2FbW7L4y5HjGV481B+XPjnM44=
 Received: by wens.tw (Postfix, from userid 1000)
- id 682645F81B; Mon, 27 Apr 2020 15:31:42 +0800 (CST)
+ id 6F9F15FCE9; Mon, 27 Apr 2020 15:31:42 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
  Dan Murphy <dmurphy@ti.com>
-Subject: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for linux,
- default-triggers
-Date: Mon, 27 Apr 2020 15:31:30 +0800
-Message-Id: <20200427073132.29997-2-wens@kernel.org>
+Subject: [PATCH v2 2/3] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC numbering
+ for LED triggers
+Date: Mon, 27 Apr 2020 15:31:31 +0800
+Message-Id: <20200427073132.29997-3-wens@kernel.org>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200427073132.29997-1-wens@kernel.org>
 References: <20200427073132.29997-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_003145_695470_19CF547A 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20200427_003145_643386_E91DF854 
+X-CRM114-Status: GOOD (  13.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,49 +89,62 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-The bindings currently list a very small subset of valid triggers for
-LEDs. Since many drivers or subsystems in Linux register custom
-triggers, the list would become very hard to maintain.
+With SDIO now enabled, the numbering of the existing MMC host controllers
+gets incremented by 1, as the SDIO host is the first one.
 
-Instead, just drop the list and allow free form strings.
+Increment the numbering of the MMC LED triggers to match.
 
+Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- .../devicetree/bindings/leds/common.yaml      | 21 +------------------
- 1 file changed, 1 insertion(+), 20 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
-index 4c270fde4567..3b3cdab3fc15 100644
---- a/Documentation/devicetree/bindings/leds/common.yaml
-+++ b/Documentation/devicetree/bindings/leds/common.yaml
-@@ -79,26 +79,7 @@ properties:
-     description:
-       This parameter, if present, is a string defining the trigger assigned to
-       the LED.
--    allOf:
--      - $ref: /schemas/types.yaml#definitions/string
--    enum:
--        # LED will act as a back-light, controlled by the framebuffer system
--      - backlight
--        # LED will turn on (but for leds-gpio see "default-state" property in
--        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
--      - default-on
--        # LED "double" flashes at a load average based rate
--      - heartbeat
--        # LED indicates disk activity
--      - disk-activity
--        # LED indicates IDE disk activity (deprecated), in new implementations
--        # use "disk-activity"
--      - ide-disk
--        # LED flashes at a fixed, configurable rate
--      - timer
--        # LED alters the brightness for the specified duration with one software
--        # timer (requires "led-pattern" property)
--      - pattern
-+    $ref: /schemas/types.yaml#definitions/string
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+index 2acb3d500fb9..f0686fc276be 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+@@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
+ 	};
+ };
  
-   led-pattern:
-     description: |
++&diy_led {
++	linux,default-trigger = "mmc2";
++};
++
+ &pcie_phy {
+ 	status = "okay";
+ };
+@@ -91,3 +95,7 @@ &uart0 {
+ 	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+ 	status = "okay";
+ };
++
++&yellow_led {
++	linux,default-trigger = "mmc1";
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index 9f225e9c3d54..bc060ac7972d 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -70,14 +70,14 @@ work-led {
+ 			linux,default-trigger = "heartbeat";
+ 		};
+ 
+-		diy-led {
++		diy_led: diy-led {
+ 			label = "red:diy";
+ 			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
+ 			default-state = "off";
+ 			linux,default-trigger = "mmc1";
+ 		};
+ 
+-		yellow-led {
++		yellow_led: yellow-led {
+ 			label = "yellow:yellow-led";
+ 			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+ 			default-state = "off";
 -- 
 2.26.0
 
