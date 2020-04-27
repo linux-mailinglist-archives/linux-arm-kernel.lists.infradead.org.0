@@ -2,91 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56BD01B9FAD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:19:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86A91B9F8B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:16:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Z0JgK2qBfu9QH0NNJiBS/MACHzAD6y7RPy5Zlf3NAM=; b=Am3nz0E7RiWQzm
-	n47UC35FBaUXJilA8OiN8VWy5bWt09NML4N2YVCsjH95EQatBGRuVVka9CtTB4uAULoIcZwNuq14q
-	SbO7zdB/nOr6gAV1e3haosy8/kdxF+v3+XCLefl7Jlpqc5WcxB33csUdLHgaUKWxO22AKfv8eCYXS
-	Cy2zlGyrNTs9EFaN+8BKgzbINH0bGTps7y2HLa5afILrhqOq090GRsrnSKuULv1EymnWeIQGPocXy
-	+AIQwwzjgggy7u5patMAASWisLfNEuq7wQ4/j+7ofhHwFqB9if+NgP9006YEQVLwlpGT82MK4XXCQ
-	v+slcMFMZ626QzOfS3Lg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1g0qJFup26lTIl9Rm+CqH1gnOo02jYEZ0reu5yRRxSg=; b=RB1Z6z6pW/L5G5VLy/2nLC+al
+	KMwXJ8bC9/RiiTuXaQiRbL3Bt7RsIQLDBXcrCOvqR2KY5k/Ne1pzb/FSgVTlXmRomMrN/KwPB3jDy
+	v7ydY5TJUtElPxmNIDjjxptfJIDdAGoKxr3cNOVWTlLxdh7wTv0cTbxJ1mXPoUN1mgrb5z4NyKa90
+	CSVvMKiO5CPW8+teB4OqBisMXPmQx/exgkjkeRGoXlUeDtDpD1Ir8aNFDDT0EK4p+XqnVSLsnmnSK
+	8JANLh2X5x7dNc2WCcWgwe2tBT8r++SMz29Bt798HCWb1mJ9nTdrpF6mRiIW6ZiKMOvA4N7yFTK4n
+	YRPJkmQBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSzvM-0005aI-Dj; Mon, 27 Apr 2020 09:19:36 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSzv6-0005Xu-My; Mon, 27 Apr 2020 09:19:21 +0000
-Received: by mail-lj1-x242.google.com with SMTP id f11so12179348ljp.1;
- Mon, 27 Apr 2020 02:19:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=zyuVBjsIdXGQVFMeD0f1H4bcoGzMBUz/1lgvMwBIesE=;
- b=ZcfjzbQ287TzP0v7Ah3Qa2k4sl+wT8u1fI5J3pzj09Y5kBp8mQXmVu6yoKuefxeu7/
- 8s4ICvjxj8inmFVeK4MwVqI7MNHmuHI3P7pk6ePpBK2QUm5wfVHMfRRjhPa9nZpXJ9tI
- MNjSmDq6clfxrjem4wqjUFt2zFk+Mn+aXPue5w+gR2HKXeP1+RxVVlJ9x+pxEwDwwXuF
- USljfBXancQjWeV0p/Nxaau22YUbVkmGSQqNZnB413FP2mrTnmbYwMu3RtOSzHbMs4bL
- LqD3MNSIoOYlNIXKbrgG1Fay/fmXrh3j5OEHRjyXzejsGfz8IIW40n98KxOhRa6ejltq
- dFJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=zyuVBjsIdXGQVFMeD0f1H4bcoGzMBUz/1lgvMwBIesE=;
- b=fIkQ7IKQutn3KCdNZepA3JNBjrk7YE0SPVOMYr9JNJnbBpR6Fv/Yhr3wmsJtxcVX1A
- aoagq8wSlYOWtqzWxP2p/Pr58LBp3VNunxm+ytoIYVgenUDtCCBmBAK12CtXXNqN6lTP
- yDjCBwaUZ4oCFmAT/bUL7geSPptcRl3loEIRHQVBkqbRhXu2D9ZlHWADbGKh9oVjlS1J
- H4HOOHZBRgdgt8n8CwVlxaNlEJLtd9Kt9JHZ8f0gZP3Yt2UQ0nE5sfLs7QdGkypxmvZX
- 1WNM/pF5elr6ttVywxY2f9yq2p6K+oI2t+QH7y1z+4moq/3Trwb5gVPzExrgXL/RW4M1
- CwrQ==
-X-Gm-Message-State: AGi0PuYldlpG5x8qCfSuDA1DiGgwGnnVkFqewuj9zWM5IF0CZxhNkknj
- iClvd6TCpb2zy4iJ8OINGDo=
-X-Google-Smtp-Source: APiQypK7KCI35pS++4J0SIqHJD7dr5g2l7+08iQ5RiCR71+iMFlR/jYNxzQBPDEHu+qT/Sz5AOLSQg==
-X-Received: by 2002:a2e:96c2:: with SMTP id d2mr14198354ljj.214.1587979154856; 
- Mon, 27 Apr 2020 02:19:14 -0700 (PDT)
-Received: from [172.16.20.20] ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id g6sm9538704ljj.78.2020.04.27.02.19.11
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 Apr 2020 02:19:14 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.14\))
-Subject: Re: [PATCH v4] arm64: dts: meson: S922X: extend cpu opp-points
-From: Christian Hewitt <christianshewitt@gmail.com>
-In-Reply-To: <1ja72x2t7w.fsf@starbuckisacylon.baylibre.com>
-Date: Mon, 27 Apr 2020 13:19:09 +0400
-Message-Id: <2A9D3FBA-917A-42C7-9757-4316D6B3D284@gmail.com>
-References: <20200426162119.GA23268@imac>
- <1ja72x2t7w.fsf@starbuckisacylon.baylibre.com>
-To: Jerome Brunet <jbrunet@baylibre.com>
-X-Mailer: Apple Mail (2.3445.104.14)
+	id 1jSzs8-0003vO-72; Mon, 27 Apr 2020 09:16:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jSzrc-0003i6-R5
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 09:15:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0302F1FB;
+ Mon, 27 Apr 2020 02:15:41 -0700 (PDT)
+Received: from [192.168.0.21] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7A7443F68F;
+ Mon, 27 Apr 2020 02:15:39 -0700 (PDT)
+Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
+ connections
+To: saiprakash.ranjan@codeaurora.org, mathieu.poirier@linaro.org,
+ mike.leach@linaro.org
+References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
+Date: Mon, 27 Apr 2020 10:20:32 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_021920_755915_1A81E519 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_021544_986000_50EBD8FC 
+X-CRM114-Status: GOOD (  24.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [christianshewitt[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,32 +65,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, joy.cho@hardkernel.com,
- narmstrong@baylibre.com, khilman@baylibre.com, linux-kernel@vger.kernel.org,
- Tim Lewis <elatllat@gmail.com>, robh+dt@kernel.org, tobetter@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, swboyd@chromium.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cj4gT24gMjcgQXByIDIwMjAsIGF0IDE6MDYgcG0sIEplcm9tZSBCcnVuZXQgPGpicnVuZXRAYmF5
-bGlicmUuY29tPiB3cm90ZToKPiAKPiBPbiBTdW4gMjYgQXByIDIwMjAgYXQgMTg6MjEsIFRpbSBM
-ZXdpcyA8ZWxhdGxsYXRAZ21haWwuY29tPiB3cm90ZToKPiAKPj4gQWRkIGV4dHJhIGNwdSBwb3Ag
-cG9pbnRzIHRvIGFsbG93IG1pbGQgb3ZlcmNsb2NrIG9uIFM5MjJYLiBUaGUgb3BwCj4+IHBvaW50
-cyBhcmUgZm91bmQgaW4gSGFyZGtlcm5lbCBOMiBzb3VyY2VzIFsxXSBhbmQgdGVzdGluZyBzaG93
-cyBubwo+PiBvYnZpb3VzIGlzc3VlcyBvbiBvdGhlciBTOTIyWCBkZXZpY2VzLiBUaGVybWFsIHRo
-cm90dGxpbmcgc2hvdWxkCj4+IGtlZXAgdGhpbmdzIGluLWNoZWNrIGlmIG5lZWRlZC4KPiAKPiBU
-aGUgT2Ryb2lkLU4yIGhhcyBhIG1hc3NpdmUgaGVhdHNpbmsgbW91bnRlZC4KPiBEbyB3ZSBoYXZl
-IGFueSBpZGVhIGlmIHRoaXMgYXBwbGllcyAoaXMgc2FmZSkgb24gYW55IG90aGVyIFM5MjJ4Cj4g
-ZGV2aWNlID8KCknigJl2ZSB0ZXN0ZWQgaXQgb24gc2V2ZXJhbCBTOTIyWCBib3ggZGV2aWNlcyB0
-aGF0IEkgaGF2ZSwgYW5kIGFsc28gdGhlCm9yaWdpbmFsIFM5MjJYIHZlcnNpb24gb2YgdGhlIFZJ
-TTMgLSBhbGwgaGF2ZSBzaW1pbGFyIHNpemVkIHBhc3NpdmUKaGVhdHNpbmtzIGFib3V0IDIwJSB0
-aGUgc2l6ZSBvZiB0aGUgTjIgb25lLiBObyBvYnZpb3VzIGlzc3VlcyB3aXRoCktvZGkgc29mdHdh
-cmUgZGVjb2RpbmcgdG8gaW5jcmVhc2UgQ1BVIHVzYWdlLiBOQjogVGhlIG9yaWdpbmFsIHBhdGNo
-CnN1Ym1pc3Npb24gd2FzIE4yIHNwZWNpZmljIGFuZCB0aGVuIHJld29ya2VkIHRvIGFwcGx5IHRv
-IGFsbCBTOTIyWApkZXZpY2VzIGF0IE5laWzigJlzIHN1Z2dlc3Rpb24gKGFmdGVyIG15IFRCIGFu
-ZCBlYXJsaWVyIGNvbW1lbnRzKS4KCkNILgoKW3NuaXBdCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 04/26/2020 03:37 PM, Sai Prakash Ranjan wrote:
+> Since commit 30af4fb619e5 ("coresight: dynamic-replicator:
+> Handle multiple connections"), we do not make sure that
+> the other port is disabled when the dynamic replicator is
+> enabled. This is seen to cause the CPU hardlockup atleast
+> on SC7180 SoC with the following topology when enabling ETM
+> with ETR as the sink via sysfs. Since there is no trace id
+> logic in coresight yet to make use of multiple sinks in
+> parallel for different trace sessions, disable the other
+> port when one port is turned on.
+> 
+>         etm0_out
+> 	  |
+>     apss_funnel_in0
+>            |
+>    apss_merge_funnel_in
+>            |
+>        funnel1_in4
+> 	  |
+>     merge_funnel_in1
+> 	  |
+>      swao_funnel_in
+>            |
+>          etf_in
+> 	  |
+>    swao_replicator_in
+>            |
+>     replicator_in
+> 	  |
+>          etr_in
+> 
+>    Kernel panic - not syncing: Watchdog detected hard LOCKUP on cpu 0
+>    CPU: 7 PID: 0 Comm: swapper/7 Tainted: G S  B             5.4.25 #100
+>    Hardware name: Qualcomm Technologies, Inc. SC7180 IDP (DT)
+>    Call trace:
+>     dump_backtrace+0x0/0x188
+>     show_stack+0x20/0x2c
+>     dump_stack+0xdc/0x144
+>     panic+0x168/0x370
+>     arch_seccomp_spec_mitigate+0x0/0x14
+>     watchdog_timer_fn+0x68/0x290
+>     __hrtimer_run_queues+0x264/0x498
+>     hrtimer_interrupt+0xf0/0x22c
+>     arch_timer_handler_phys+0x40/0x50
+>     handle_percpu_devid_irq+0x8c/0x158
+>     __handle_domain_irq+0x84/0xc4
+>     gic_handle_irq+0x100/0x1c4
+>     el1_irq+0xbc/0x180
+>     arch_cpu_idle+0x3c/0x5c
+>     default_idle_call+0x1c/0x38
+>     do_idle+0x100/0x280
+>     cpu_startup_entry+0x24/0x28
+>     secondary_start_kernel+0x15c/0x170
+>    SMP: stopping secondary CPUs
+> 
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Tested-by: Stephen Boyd <swboyd@chromium.org>
+> ---
+> Changes since RFC:
+>   * Reworded commit text and included the topology on SC7180.
+
+
+> ---
+>   .../hwtracing/coresight/coresight-replicator.c    | 15 ++++++++++-----
+>   1 file changed, 10 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+> index e7dc1c31d20d..f4eaa38f8f43 100644
+> --- a/drivers/hwtracing/coresight/coresight-replicator.c
+> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
+> @@ -66,14 +66,16 @@ static int dynamic_replicator_enable(struct replicator_drvdata *drvdata,
+>   				     int inport, int outport)
+>   {
+>   	int rc = 0;
+> -	u32 reg;
+> +	u32 reg0, reg1;
+>   
+>   	switch (outport) {
+>   	case 0:
+> -		reg = REPLICATOR_IDFILTER0;
+> +		reg0 = REPLICATOR_IDFILTER0;
+> +		reg1 = REPLICATOR_IDFILTER1;
+>   		break;
+>   	case 1:
+> -		reg = REPLICATOR_IDFILTER1;
+> +		reg0 = REPLICATOR_IDFILTER1;
+> +		reg1 = REPLICATOR_IDFILTER0;
+>   		break;
+>   	default:
+>   		WARN_ON(1);
+> @@ -87,8 +89,11 @@ static int dynamic_replicator_enable(struct replicator_drvdata *drvdata,
+>   		rc = coresight_claim_device_unlocked(drvdata->base);
+>   
+>   	/* Ensure that the outport is enabled. */
+> -	if (!rc)
+> -		writel_relaxed(0x00, drvdata->base + reg);
+> +	if (!rc) {
+> +		writel_relaxed(0x00, drvdata->base + reg0);
+> +		writel_relaxed(0xff, drvdata->base + reg1);
+> +	}
+> +
+
+This is not sufficient. You must prevent another session trying to
+enable the other port of the replicator as this could silently fail
+the "on-going" session. Not ideal. Fail the attempt to enable a port
+if the other port is active. You could track this in software and
+fail early.
+
+Suzuki
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
