@@ -2,37 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CB5F1B975C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8AA91B9764
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:26:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IHHfCEs87PRdDJ4IzLOMWqV88yFa6I1Ub7qG0/4JsZ4=; b=KboSfqXwOTjGRs
-	O4XNMHwKUQsIqdlBmP9g+6qJozvGo2u4rsSwJp4O8w+PvFMu7JNHywdxANR0Hsy4IOfkPLyDzSeZy
-	elRvjSZ1Jyjf7en3PUhj4HIqtXOF8xFznxdHoBExcugoPrcFODE3CxkvhuT+goWM5yUuCRWPsVfh2
-	ARZNE41wLcBop1OsNtaNGOEMJkw8ItTq1Dd0JhbMZLGNVvP2BEf5ZRj7I4wQfwiRlISEwigIdlpbH
-	UzRCEoRHzBofdH68ZeNodWEN0YMfJXBz19k64LRal96m6WOyCYbSCY16QG+/tz+AtKo4+yxFcJWFq
-	Q/OoF5NPF+GkufaoSHpw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XjNfkSWWoScprGG90YdrAeGpy1lmSP8/xysVfffoHAg=; b=W4M
+	smCv+vlF9px9hcs219UsvDjvg901FI1EOymES/Jv5kcsUtk56dD88eELyiSkjjbzMYf/OWxXnAUFJ
+	Edj5uSx3sKhfSyyDFAhFo6PhnqYwpcsxrOdgCe2fxBzp5mfaa7/M5kqOWnmJzotc0Q1euLWiflzaQ
+	A4rLNCYEyj+Iig0BK4n8A7AGE0dLo2fbKyVAU3GGS3OVCTVtwFbjRPjMVamq7X0os/MKjIAw6dXX5
+	ZlPrfWrn5Neh1hlkWsnbHranjKKHZWeae3HZ8LXGvciE3gew0wEOGEKqfqEdKoSQgJ7Il1rx99oFa
+	gCcnWQVxrVmWOnQCZ3S8Crz9UQrzUEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSxCg-0001DU-Hf; Mon, 27 Apr 2020 06:25:18 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jSxCO-0000ML-4s; Mon, 27 Apr 2020 06:25:00 +0000
-Date: Sun, 26 Apr 2020 23:25:00 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH 4/5] arch/kmap_atomic: Consolidate duplicate code
-Message-ID: <20200427062500.GA32152@infradead.org>
-References: <20200426055406.134198-1-ira.weiny@intel.com>
- <20200426055406.134198-5-ira.weiny@intel.com>
- <20200426072642.GB22024@infradead.org>
- <20200427011630.GC135929@iweiny-DESK2.sc.intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427011630.GC135929@iweiny-DESK2.sc.intel.com>
+	id 1jSxDR-0003Mm-F7; Mon, 27 Apr 2020 06:26:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jSxCi-0002t3-5O; Mon, 27 Apr 2020 06:25:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6999931B;
+ Sun, 26 Apr 2020 23:25:15 -0700 (PDT)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A1AF13F73D;
+ Sun, 26 Apr 2020 23:25:12 -0700 (PDT)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in vmcoreinfo
+Date: Mon, 27 Apr 2020 11:55:01 +0530
+Message-Id: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200426_232521_743639_494B663B 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,38 +57,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org,
- Christoph Hellwig <hch@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 26, 2020 at 06:16:30PM -0700, Ira Weiny wrote:
-> > That might require to support
-> > kmap_atomic_prot everywhere first, which sounds like a really good
-> > idea anyway, and would avoid the need for strange workaround in drm.
-> 
-> Having a kmap_atomic_prot() seems like a good idea.  But I'm not exactly sure
-> why CONFIG_x86 is being called out specifically in the DRM code?
+Recently arm64 linux kernel added support for Armv8.3-A Pointer
+Authentication feature. If this feature is enabled in the kernel and the
+hardware supports address authentication then the return addresses are
+signed and stored in the stack to prevent ROP kind of attack. Kdump tool
+will now dump the kernel with signed lr values in the stack.
 
-Probably because it only existed on x86 back then.  And drm has a
-tendency of working around core problems with hacks instead of doing
-the fairly easy fixups.
+Any user analysis tool for this kernel dump may need the kernel pac mask
+information in vmcoreinfo to generate the correct return address for
+stacktrace purpose as well as to resolve the symbol name.
+
+This patch is similar to commit ec6e822d1a22d0eef ("arm64: expose user PAC
+bit positions via ptrace") which exposes pac mask information via ptrace
+interfaces.
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+Changes since v1:
+* Rebased to kernel 5.7-rc3.
+* commit log change.
+
+An implementation of this new KERNELPACMASK vmcoreinfo field used by crash
+tool can be found here[1]. This change is accepted by crash utility
+maintainer [2].
+
+[1]: https://www.redhat.com/archives/crash-utility/2020-April/msg00095.html
+[2]: https://www.redhat.com/archives/crash-utility/2020-April/msg00099.html
+
+ arch/arm64/include/asm/compiler.h | 3 +++
+ arch/arm64/kernel/crash_core.c    | 4 ++++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+index eece20d..32d5900 100644
+--- a/arch/arm64/include/asm/compiler.h
++++ b/arch/arm64/include/asm/compiler.h
+@@ -19,6 +19,9 @@
+ #define __builtin_return_address(val)					\
+ 	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+ 
++#else  /* !CONFIG_ARM64_PTR_AUTH */
++#define	ptrauth_user_pac_mask()		0ULL
++#define	ptrauth_kernel_pac_mask()	0ULL
+ #endif /* CONFIG_ARM64_PTR_AUTH */
+ 
+ #endif /* __ASM_COMPILER_H */
+diff --git a/arch/arm64/kernel/crash_core.c b/arch/arm64/kernel/crash_core.c
+index ca4c3e1..25cf2ce 100644
+--- a/arch/arm64/kernel/crash_core.c
++++ b/arch/arm64/kernel/crash_core.c
+@@ -6,6 +6,7 @@
+ 
+ #include <linux/crash_core.h>
+ #include <asm/memory.h>
++#include <asm/pointer_auth.h>
+ 
+ void arch_crash_save_vmcoreinfo(void)
+ {
+@@ -16,4 +17,7 @@ void arch_crash_save_vmcoreinfo(void)
+ 	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+ 						PHYS_OFFSET);
+ 	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
++	vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
++						system_supports_address_auth() ?
++						ptrauth_kernel_pac_mask() : 0);
+ }
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
