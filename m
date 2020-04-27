@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CFFE1BA9CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:09:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82C51BA9D8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:10:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/9j3xl/lR4Id+6W+m1IHVL1Rkc5fKgkE7L+d81ZsRwQ=; b=lpb0QJwZSaZcMp
-	t9MrpMKiOmoFzzBNSfqObjtC9ZojfG8S/ISNOkEl07t1PSbBTkJARGwI5jP0ZlfQRlwnWXR93Ajg4
-	jhAr3U7kDkA60p05gMhx3g7nKX9VK6gSr0VCD6u6My94XM3cSAIrkcnV4M7m1ofAe+S5IpFkRmnAn
-	lJdFGvNf9TGoKeWTBywsqBbs1nXbEBhXOr2BrHUXO5SkoXXC08pXi/RYA+D9GbWvU6AeySWIgbh1y
-	Pu6iGty8vIcFCl6VTWdOcnMjLsEUlT6NvXpgb9SsGmRo69JBnHKLRGVH+nQOzlXdANMS/ym2alThz
-	xhY0q+G5FP175m9alShQ==;
+	List-Owner; bh=bZmagrN6dUA/LBJGqFJKNsR730uQ0v82FxFgwytdCnE=; b=dx2jaE+7H2lz+5
+	jy8zP92HnuklP/lFcKMfvco4LvKPl+rNc9gYZho0LNdrj9gXnR+Qn841DshoUg6UBCy4L+WSKKvaM
+	rm6bTTdb4AVdlPbLn3etTA2Kyy8CSBUTBUdWxkopRPytNq+6qfLM6e+3G1aIygLcLCWC1+vIDsnq2
+	H+NuUgSe7mI5y2kK0wAYl+u1pOuw/Tspx3j0NMkbIvXogct4UXCaKlvxOiyiiJPl06B8uhQ8o9Q/O
+	8GJkGOWauRJF3J54VSTtqAg3G9FbbYuqKN8kbJQiz5TNKazKXn5JIKAnFYAWQyQhMXGGqoQ0xQ6r3
+	sPMRQ3zNgmDD399+/ICw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT6JV-0000iZ-Ue; Mon, 27 Apr 2020 16:08:57 +0000
+	id 1jT6LL-0003iN-CB; Mon, 27 Apr 2020 16:10:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT6JI-0000bg-5I
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:08:50 +0000
+ id 1jT6LC-0003i0-UD
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:10:44 +0000
 Received: from localhost (unknown [171.76.79.70])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBAAE205C9;
- Mon, 27 Apr 2020 16:08:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D2FC8205C9;
+ Mon, 27 Apr 2020 16:10:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588003720;
- bh=Fht19I4+eezxy5GovEcjy5M55vqSuUXkK9sZ7M4yS2M=;
+ s=default; t=1588003842;
+ bh=6y+UP73Vxjpn15HNvNYlaPBEXH1uzwIZb3nl5q1GqOQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Wsy7jmWO9YhGIFy8m+h/Pj5RwoL2HpGQYSA2W2RNN6F4+zdNlshGddo6y/wM+ZGsm
- jRPfuiim4i5JJbZcWsyBAv+Fdh6HgVvjAkXUxWNtklBjxLKjV/RyEOfHxePjR3Z+Vt
- Bq28GQ86+r0qPVFxAS41PTQ0cdJ4K7m45IosxJm4=
-Date: Mon, 27 Apr 2020 21:38:36 +0530
+ b=aR1yAoAqwS+RgrXbE1AAsuiTXEZV7W92AcrPzeyict0PPlEUiEHKWRkvmzMO4oKO1
+ 8t1vZ23bc52pz9LNTyHP2+DXUHAnnbaSQ9r7UrlG/lPkXnZN2nk3zjzIC/SsQo75Oa
+ DMs/H54jSMbM7I0mxVYOer0nm3Bobcrh/qb1G+S0=
+Date: Mon, 27 Apr 2020 21:40:38 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Subject: Re: [PATCH] dmaengine: qcom_hidma: Simplify error handling path in
- hidma_probe
-Message-ID: <20200427160836.GI56386@vkoul-mobl.Dlink>
-References: <20200427111043.70218-1-christophe.jaillet@wanadoo.fr>
+To: Amelie Delaunay <amelie.delaunay@st.com>
+Subject: Re: [PATCH 0/2] STM32 DMA Direct mode
+Message-ID: <20200427161038.GJ56386@vkoul-mobl.Dlink>
+References: <20200422102904.1448-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200427111043.70218-1-christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20200422102904.1448-1-amelie.delaunay@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_090849_010474_D0048073 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20200427_091042_990987_FACF1916 
+X-CRM114-Status: UNSURE (   8.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,18 +76,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- okaya@kernel.org, linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
- agross@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-kernel@vger.kernel.org, Pierre-Yves Mordret <pierre-yves.mordret@st.com>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27-04-20, 13:10, Christophe JAILLET wrote:
-> There is no need to call 'hidma_debug_uninit()' in the error handling
-> path. 'hidma_debug_init()' has not been called yet.
+On 22-04-20, 12:29, Amelie Delaunay wrote:
+> By default, the driver compute if the FIFO must operate in direct mode or with
+> FIFO threshold. Direct mode is allowed only if computed source burst and
+> destination burst are disabled. But with memory source or destination, burst
+> is always > 0.
+> Direct mode is useful when the peripheral requires an immediate and single
+> transfer to or from the memory after each DMA request.
+> This patchset adds a way to force Direct mode through device tree.
 
 Applied, thanks
 
