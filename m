@@ -2,69 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BDD21BAB74
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:39:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C851BAB7B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:40:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1sdjUpc8/jABCRF25B5vxAY4uNKVitQIjExCmhfKrbk=; b=U4d6f1u3wGgnxW
-	IHylY7+mmFrM0V3NZs7qkHNr9ncytJUDNFO8uxMuoWewu8xGsvGvl/4OwGkC/EelkyUzvHM8z8WGE
-	ANaM1QpeuFHckqLNM9eU7b60hLUxyfHYySGbYBfVTiE0/KLA0e1D+5Zi2n4DysHrMVp/NTLiXDKtY
-	sAGTiI2YLoYxThQIP8SY8sSh7yB37aHXtR75JBUWK0O71aBdSg0JiAZ+ORPnPQTY1bMReGW35zXoY
-	FxTu/vuqw59VvK4gSzYIY4q9Xms1OjVuEOKcFLj/1rUYnvKWmChgydPWXb/WRwR3v5BWkZftK76v4
-	BZhCD6HGcCiX5HY6GXEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DUM5qdypHPPrAH3C+UGGWvNpKbOqDzcAiW/YbZpYIcM=; b=Rwg9HYahbX2IAbsQcxSEiouro
+	L4zOYrApoCGMXzDB1pfF2eiwWcQcgXJnmuUVTq+CDHqndvGYtvz552BrewTkBp+eq9S81eDx1tnyh
+	z65X9s5tg77llNXPj8PGLMKF+f/WTEVm7CHV/pPM35REOH7pG8CUuh5iqKbigtudXAc0Bs4DZDZKH
+	FL8bVdUZfvGk8g+GVM7Wa10NKyEzdXcWH7qkMl7K73tFEQQWvlFh3LQDXn79Hta6o8rKeRrxIF7dW
+	49EZ6FjpRJ+syz/6qO5gafSKhsuuE6wkZO4UA3l5ZlOJoEDyVrbqGzKNJwHJ8UauZNNgWXY92ShCU
+	blhlpjygg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT7jT-0006Nu-Un; Mon, 27 Apr 2020 17:39:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jT7kA-0000ot-B6; Mon, 27 Apr 2020 17:40:34 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT7jJ-0006Md-Ke
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 17:39:43 +0000
-Received: from mail-io1-f48.google.com (mail-io1-f48.google.com
- [209.85.166.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jT7jy-0000mJ-6K
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 17:40:24 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E74002078C
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 17:39:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588009180;
- bh=hrpwDQjnNosOZuDVeZVm9aVGNZZMloN7/cGIPwaOS2E=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OEG6mbnAPk9Yk6G26yTR/TVVBKEZvPHXDTXfYgvruVQNacNQiflszdd+0GVvZRYy2
- rHV46TRK4sOsK5sEMulbd30Ou3kNNmzHcQfrDJhyprXiLmr6/v0Azt6qbGniF3D4Qm
- mpIkDvC4ZJOa4fBih6gCRXDIAHa8Yz36RoEypDhA=
-Received: by mail-io1-f48.google.com with SMTP id w4so19735122ioc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 10:39:39 -0700 (PDT)
-X-Gm-Message-State: AGi0PubmUrgS6heZMXzcTMP3TtTBpNvl5rENg9Zi0imoXwyqVSaYsB5A
- Nh5TQw6KK382U3SAC1rirAJHPSszDqru0uVEblM=
-X-Google-Smtp-Source: APiQypKwgbBJU8vwKjnBG/W2/hGRkTtjHMSQFFtwdBypUd4jq0xAuehjbqPR+7Prha81wkO7jJ+QOnSaEJO928BJk1c=
-X-Received: by 2002:a6b:5904:: with SMTP id n4mr22515735iob.142.1588009179242; 
- Mon, 27 Apr 2020 10:39:39 -0700 (PDT)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id A316B2305C;
+ Mon, 27 Apr 2020 19:40:12 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1588009213;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=Mb7wOIhi91zTa7OdCwnok2RD4/Y3FAeCxF/iMp7nN6o=;
+ b=jZOn6q/jxrjwYNn4nj3d83zoUJgdzvpe11GNFG7mRNPqsDk605zmppuXrjG6DwI9lToeYu
+ hv+XTWKczoGnq1p/Vnvk/7ctIF/9ikivCHAneUAnz7kw7CjEkx+6UB5FgdL5xAtJTg6voE
+ R4T413P+f5UjxDP86b2VwSVDn779YB4=
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200427160018.243569-1-samitolvanen@google.com>
-In-Reply-To: <20200427160018.243569-1-samitolvanen@google.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 27 Apr 2020 19:39:28 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGASSCjTjvXJh=_iPwEPG50_pVRe2QO1hoRW+KHtugFVQ@mail.gmail.com>
-Message-ID: <CAMj1kXGASSCjTjvXJh=_iPwEPG50_pVRe2QO1hoRW+KHtugFVQ@mail.gmail.com>
-Subject: Re: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
-To: Sami Tolvanen <samitolvanen@google.com>
+Date: Mon, 27 Apr 2020 19:40:11 +0200
+From: Michael Walle <michael@walle.cc>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: Re: [PATCH v3 06/16] irqchip: add sl28cpld interrupt controller
+ support
+In-Reply-To: <87pnbtqhr1.fsf@nanos.tec.linutronix.de>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-7-michael@walle.cc>
+ <87pnbtqhr1.fsf@nanos.tec.linutronix.de>
+Message-ID: <87f141bce0a4fda04b550647306be296@walle.cc>
+X-Sender: michael@walle.cc
+User-Agent: Roundcube Webmail/1.3.10
+X-Spamd-Bar: +
+X-Spam-Level: *
+X-Rspamd-Server: web
+X-Spam-Status: No, score=1.40
+X-Spam-Score: 1.40
+X-Rspamd-Queue-Id: A316B2305C
+X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_TWELVE(0.00)[24]; NEURAL_HAM(-0.00)[-0.766];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ FREEMAIL_CC(0.00)[linux.intel.com,vger.kernel.org,lists.infradead.org,linaro.org,baylibre.com,kernel.org,suse.com,roeck-us.net,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,lakedaemon.net,linuxfoundation.org];
+ MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_103941_716302_F97383B4 
-X-CRM114-Status: GOOD (  24.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200427_104022_382859_01CF9D8D 
+X-CRM114-Status: GOOD (  12.05  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -74,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,90 +96,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
- kernel-hardening@lists.openwall.com, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Ingo Molnar <mingo@redhat.com>, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Marek <michal.lkml@markovi.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 27 Apr 2020 at 18:00, Sami Tolvanen <samitolvanen@google.com> wrote:
->
-> This patch series adds support for Clang's Shadow Call Stack
-> (SCS) mitigation, which uses a separately allocated shadow stack
-> to protect against return address overwrites. More information
-> can be found here:
->
->   https://clang.llvm.org/docs/ShadowCallStack.html
->
-> SCS provides better protection against traditional buffer
-> overflows than CONFIG_STACKPROTECTOR_*, but it should be noted
-> that SCS security guarantees in the kernel differ from the ones
-> documented for user space. The kernel must store addresses of
-> shadow stacks in memory, which means an attacker capable of
-> reading and writing arbitrary memory may be able to locate them
-> and hijack control flow by modifying the shadow stacks.
->
-> SCS is currently supported only on arm64, where the compiler
-> requires the x18 register to be reserved for holding the current
-> task's shadow stack pointer.
->
-> With -fsanitize=shadow-call-stack, the compiler injects
-> instructions to all non-leaf C functions to store the return
-> address to the shadow stack, and unconditionally load it again
-> before returning. As a result, SCS is incompatible with features
-> that rely on modifying function return addresses in the kernel
-> stack to alter control flow. A copy of the return address is
-> still kept in the kernel stack for compatibility with stack
-> unwinding, for example.
->
-> SCS has a minimal performance overhead, but allocating
-> shadow stacks increases kernel memory usage. The feature is
-> therefore mostly useful on hardware that lacks support for PAC
-> instructions.
->
-> Changes in v13:
->  - Changed thread_info::shadow_call_stack to a base address and
->    an offset instead, and removed the now unneeded __scs_base()
->    and scs_save().
->  - Removed alignment from the kmem_cache and static allocations.
->  - Removed the task_set_scs() helper function.
->  - Moved the assembly code for loading and storing the offset in
->    thread_info to scs_load/save macros.
->  - Added offset checking to scs_corrupted().
->  - Switched to cmpxchg_relaxed() in scs_check_usage().
->
+Hi Thomas,
 
-OK, so one thing that came up in an offline discussion about SCS is
-the way it interacts with the vmap'ed stack.
+thanks for the review.
 
-The vmap'ed stack is great for robustness, but it only works if things
-don't explode for other reasons in the mean time. This means the
-ordinary-to-shadow-call-stack size ratio should be chosen such that it
-is *really* unlikely you could ever overflow the shadow call stack and
-corrupt another task's call stack before hitting the vmap stack's
-guard region.
+Am 2020-04-27 13:40, schrieb Thomas Gleixner:
+> Michael Walle <michael@walle.cc> writes:
+> 
+>> This patch adds support for the interrupt controller inside the sl28
+> 
+> git grep 'This patch' Documentation/process/
 
-Alternatively, I wonder if there is a way we could let the SCS and
-ordinary stack share the [bottom of] the vmap'ed region. That would
-give rather nasty results if the ordinary stack overflows into the
-SCS, but for cases where we really recurse out of control, we could
-catch this occurrence on either stack, whichever one occurs first. And
-the nastiness -when it does occur- will not corrupt any state beyond
-the stack of the current task.
+ok.
+
+> 
+>> CPLD management controller.
+>> 
+>> +static int sl28cpld_intc_probe(struct platform_device *pdev)
+>> +{
+>> +	struct sl28cpld_intc *irqchip;
+>> +	struct resource *res;
+>> +	unsigned int irq;
+>> +	int ret;
+>> +
+>> +	if (!pdev->dev.parent)
+>> +		return -ENODEV;
+>> +
+>> +	irqchip = devm_kzalloc(&pdev->dev, sizeof(*irqchip), GFP_KERNEL);
+>> +	if (!irqchip)
+>> +		return -ENOMEM;
+>> +
+>> +	irqchip->regmap = dev_get_regmap(pdev->dev.parent, NULL);
+>> +	if (!irqchip->regmap)
+>> +		return -ENODEV;
+>> +
+>> +	irq = platform_get_irq(pdev, 0);
+>> +	if (irq < 0)
+>> +		return irq;
+>> +
+>> +	res = platform_get_resource(pdev, IORESOURCE_REG, 0);
+>> +	if (!res)
+>> +		return -EINVAL;
+>> +
+>> +	irqchip->chip.name = "sl28cpld-intc";
+>> +	irqchip->chip.irqs = sl28cpld_irqs;
+>> +	irqchip->chip.num_irqs = ARRAY_SIZE(sl28cpld_irqs);
+>> +	irqchip->chip.num_regs = 1;
+>> +	irqchip->chip.status_base = res->start + INTC_IP;
+>> +	irqchip->chip.mask_base = res->start + INTC_IE;
+>> +	irqchip->chip.mask_invert = true,
+>> +	irqchip->chip.ack_base = res->start + INTC_IP;
+>> +
+>> +	ret = devm_regmap_add_irq_chip(&pdev->dev, irqchip->regmap, irq,
+>> +				       IRQF_SHARED | IRQF_ONESHOT, 0,
+> 
+> What's the point of IRQF_SHARED | IRQF_ONESHOT here?
+
+IRQF_SHARED because this interrupt is shared with all the blocks
+which can generate interrupts, i.e. the GPIO contollers.
+
+IRQF_ONESHOT, because its is a threaded interrupt with no primary
+handler. But I just noticed, that regmap-irq will also set the
+IRQF_ONESHOT. But that the commit 09cadf6e088b ("regmap-irq:
+set IRQF_ONESHOT flag to ensure IRQ request") reads like it is
+just there to be sure. So I don't know if it should also be set
+here.
+
+-michael
+
+> 
+>> +				       &irqchip->chip, &irqchip->irq_data);
+> 
+> Thanks,
+> 
+>         tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
