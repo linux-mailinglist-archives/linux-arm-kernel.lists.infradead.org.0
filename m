@@ -2,106 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DEFB1BAD9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:11:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC9D01BADBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 21:19:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y5iLWZCibrRRmDUjKc04Bg5o5hJ8FChCaeGrxuSQnq0=; b=op1wf9ECnwA8V9
-	ITr6tRiAxOY31vLK8XilpUW+tniC5iUJXYoEXz0m35RcQXxs/iAunR4Hce8+CeYC5oRXmXDuFS0ki
-	1Ec+zb1beB3cUxnSYPZKoH1A0TG96SNREK6oZEhYQKNXNw6dwM2PNMHG10XzoE6ddxPq3NAttaa/8
-	NmDkNMip2cFWotsXcoFOPlrRqVNYVBaDf9PLBko2Rdg5xmiwbbELXu4WOBrAAagRJ0xXkNDohZpUn
-	D32bWK31wPDsQa/0ZiHn2rv3Nn7gEFO9sdC6TdAY9GdpRawwypFVD1+oo1zj6IzPcIJ0RaL+bYg4S
-	CP2BYaLe9KkSRy3krV8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8Vo9TmiZRplSYpPx/YQhSSfpiFBsYN2y7n457bAb40k=; b=Mgo98ALks24XSN
+	K5UZebMQdqDvtQ7/HvMBnLsmfK+Spxk4eXqFeuOlLbTe4hbREpK/TtHOgmy4BSNGD695tydKGn1ha
+	P0/IMhjkADTO3sZdUgSbsvfpT5aZ31hpbHMeys732Ryb+4GgnaiRCjK7TOzGozhjnR8budMpt1WBn
+	eITNQ+pxTLpL2udBmDEWw3Kttx0SH7ogf8Jhgs6cS1qnDfb0TmjxMbHMzWE3VhGuh9OJ8jZ1aolhR
+	F6xXQA9cpVnqgW7UxfS4cVPIV2lP6eis3/29E26PlUI+XTwtOlJRL8e7LvWml7f+58ZW9+tqRovmK
+	o40yK/HU21mjH6jyDkdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT9AQ-0003j2-1f; Mon, 27 Apr 2020 19:11:46 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jT9He-0008CC-Fl; Mon, 27 Apr 2020 19:19:14 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT9A9-0003fk-0l; Mon, 27 Apr 2020 19:11:30 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RJ9QJn028975;
- Mon, 27 Apr 2020 19:10:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : from : to :
- cc : references : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=hEDia4zMBZ8uXaQ9p7jtiwi1+JFZYurTsb0V3zlgmAU=;
- b=lVp5EA5Li9X7YNs4kLFUL1LfUFYDpCR2wtVaUroDVUM0FHlQiOHrt5HEtZF6hplhGwCH
- ck76IiH+mttB+uE0fo3QwHY8wUZgbvrweYNU069YcHGQsC+mYIw7EE0LFPlTgq8M0ZGK
- f8Uvq2Oz+7vIrdPyFNByjDDIEnWd+Gy2E2ISBo8cw347SwEigzmcQXrYtAMKWIQX9pRu
- ApCDOKA1QDKxu3lNvX+KaVT9zod7cyXLF6M0DCe2AFvIj2iLfDt+gDH0WngjweUDGoYl
- QCyjNxOiX7EosxGJQMVEmkSyjYB8t+7jtbV2lH8J8w3h9oLd7+ce/f7+9Z89zr4O2G4x iw== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 30p2p00y0t-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 27 Apr 2020 19:10:01 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RJ88fW054624;
- Mon, 27 Apr 2020 19:10:01 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 30mxrqvqxc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 27 Apr 2020 19:10:00 +0000
-Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03RJ9owN023990;
- Mon, 27 Apr 2020 19:09:50 GMT
-Received: from [192.168.2.157] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 27 Apr 2020 12:09:50 -0700
-Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
- independent code
-From: Mike Kravetz <mike.kravetz@oracle.com>
-To: Sandipan Das <sandipan.osd@gmail.com>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <20200417185049.275845-3-mike.kravetz@oracle.com>
- <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
- <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
-Message-ID: <b1f04f9f-fa46-c2a0-7693-4a0679d2a1ee@oracle.com>
-Date: Mon, 27 Apr 2020 12:09:47 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jT9HE-00080z-Fv; Mon, 27 Apr 2020 19:18:49 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=phil.lan)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1jT9H6-0008PW-LV; Mon, 27 Apr 2020 21:18:40 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-kernel@vger.kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH] drm/rockchip: cdn-dp-core: Make
+ cdn_dp_core_suspend/resume static
+Date: Mon, 27 Apr 2020 21:18:37 +0200
+Message-Id: <158801509401.47920.2598441742545466292.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200426161653.7710-1-enric.balletbo@collabora.com>
+References: <20200426161653.7710-1-enric.balletbo@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
- phishscore=0 suspectscore=0
- mlxlogscore=999 malwarescore=0 bulkscore=0 spamscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004270154
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- phishscore=0 clxscore=1015
- bulkscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0 malwarescore=0
- mlxscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004270154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_121129_209985_55B45D31 
-X-CRM114-Status: GOOD (  28.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200427_121848_524333_679302A8 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,140 +60,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S.Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/27/20 10:25 AM, Mike Kravetz wrote:
-> On 4/26/20 10:04 PM, Sandipan Das wrote:
->> On 18/04/20 12:20 am, Mike Kravetz wrote:
->>> Now that architectures provide arch_hugetlb_valid_size(), parsing
->>> of "hugepagesz=" can be done in architecture independent code.
->>
->> This isn't working as expected on powerpc64.
->>
->>   [    0.000000] Kernel command line: root=UUID=dc7b49cf-95a2-4996-8e7d-7c64ddc7a6ff hugepagesz=16G hugepages=2 
->>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepagesz = 16G
->>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepages = 2
->>   [    0.284177] HugeTLB registered 16.0 MiB page size, pre-allocated 0 pages
->>   [    0.284182] HugeTLB registered 16.0 GiB page size, pre-allocated 0 pages
->>   [    2.585062]     hugepagesz=16G
->>   [    2.585063]     hugepages=2
->>
-> 
-> In the new arch independent version of hugepages_setup, I added the following
-> code in patch 4 off this series:
-> 
->> +	if (!hugepages_supported()) {
->> +		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
->> +		return 0;
->> +	}
->> +
-> 
-> The easy solution is to remove all the hugepages_supported() checks from
-> command line parsing routines and rely on the later check in hugetlb_init().
-
-Here is a patch to address the issue.  Sorry, as my series breaks all hugetlb
-command line processing on powerpc.
-
-Sandipan, can you test the following patch?
-
-From 480fe2847361e2a85aeec1fb39fe643bb7100a07 Mon Sep 17 00:00:00 2001
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Date: Mon, 27 Apr 2020 11:37:30 -0700
-Subject: [PATCH] hugetlbfs: fix changes to command line processing
-
-Previously, a check for hugepages_supported was added before processing
-hugetlb command line parameters.  On some architectures such as powerpc,
-hugepages_supported() is not set to true until after command line
-processing.  Therefore, no hugetlb command line parameters would be
-accepted.
-
-Remove the additional checks for hugepages_supported.  In hugetlb_init,
-print a warning if !hugepages_supported and command line parameters were
-specified.
-
-Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
----
- mm/hugetlb.c | 20 ++++----------------
- 1 file changed, 4 insertions(+), 16 deletions(-)
-
-diff --git a/mm/hugetlb.c b/mm/hugetlb.c
-index 1075abdb5717..5548e8851b93 100644
---- a/mm/hugetlb.c
-+++ b/mm/hugetlb.c
-@@ -3212,8 +3212,11 @@ static int __init hugetlb_init(void)
- {
- 	int i;
- 
--	if (!hugepages_supported())
-+	if (!hugepages_supported()) {
-+		if (hugetlb_max_hstate || default_hstate_max_huge_pages)
-+			pr_warn("HugeTLB: huge pages not supported, ignoring associated command-line parameters\n");
- 		return 0;
-+	}
- 
- 	/*
- 	 * Make sure HPAGE_SIZE (HUGETLB_PAGE_ORDER) hstate exists.  Some
-@@ -3315,11 +3318,6 @@ static int __init hugepages_setup(char *s)
- 	unsigned long *mhp;
- 	static unsigned long *last_mhp;
- 
--	if (!hugepages_supported()) {
--		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
--		return 0;
--	}
--
- 	if (!parsed_valid_hugepagesz) {
- 		pr_warn("HugeTLB: hugepages=%s does not follow a valid hugepagesz, ignoring\n", s);
- 		parsed_valid_hugepagesz = true;
-@@ -3372,11 +3370,6 @@ static int __init hugepagesz_setup(char *s)
- 	struct hstate *h;
- 
- 	parsed_valid_hugepagesz = false;
--	if (!hugepages_supported()) {
--		pr_warn("HugeTLB: huge pages not supported, ignoring hugepagesz = %s\n", s);
--		return 0;
--	}
--
- 	size = (unsigned long)memparse(s, NULL);
- 
- 	if (!arch_hugetlb_valid_size(size)) {
-@@ -3424,11 +3417,6 @@ static int __init default_hugepagesz_setup(char *s)
- 	unsigned long size;
- 
- 	parsed_valid_hugepagesz = false;
--	if (!hugepages_supported()) {
--		pr_warn("HugeTLB: huge pages not supported, ignoring default_hugepagesz = %s\n", s);
--		return 0;
--	}
--
- 	if (parsed_default_hugepagesz) {
- 		pr_err("HugeTLB: default_hugepagesz previously specified, ignoring %s\n", s);
- 		return 0;
--- 
-2.25.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCAyNiBBcHIgMjAyMCAxODoxNjo1MyArMDIwMCwgRW5yaWMgQmFsbGV0Ym8gaSBTZXJy
+YSB3cm90ZToKPiBUaGlzIGZpeGVzIHRoZSBmb2xsb3dpbmcgd2FybmluZyBkZXRlY3RlZCB3aGVu
+IHJ1bm5pbmcgbWFrZSB3aXRoIFc9MQo+IAo+ICAgICBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAv
+L2Nkbi1kcC1jb3JlLmM6MTExMjo1OiB3YXJuaW5nOiBubyBwcmV2aW91cwo+ICAgICBwcm90b3R5
+cGUgZm9yIOKAmGNkbl9kcF9zdXNwZW5k4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10KPiAKPiAg
+ICAgZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwLy9jZG4tZHAtY29yZS5jOjExMjY6NTogd2Fybmlu
+Zzogbm8gcHJldmlvdXMKPiAgICAgcHJvdG90eXBlIGZvciDigJhjZG5fZHBfcmVzdW1l4oCZIFst
+V21pc3NpbmctcHJvdG90eXBlc10KPiAKPiBbLi4uXQoKQXBwbGllZCwgdGhhbmtzIQoKWzEvMV0g
+ZHJtL3JvY2tjaGlwOiBjZG4tZHAtY29yZTogTWFrZSBjZG5fZHBfY29yZV9zdXNwZW5kL3Jlc3Vt
+ZSBzdGF0aWMKICAgICAgY29tbWl0OiA3YzQ5YWJiNGMyZjg4NTM1MjBhYmMwNWI3ZjdlOGI3NTFm
+YmIzMDg2CgpCZXN0IHJlZ2FyZHMsCi0tIApIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRl
+PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
