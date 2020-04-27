@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BE4C1B9F2D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 10:58:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6748D1B9F33
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 10:59:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T1YsBGGYODSvuyjNHXsTiPB3mLSStvWXfsOC3aveU9c=; b=AavLniVuzjHwr8
-	yGryr+CyE2bApKlQzuMGwyLKtIySQBQaHkWVtvi0w6ufzFVVWS7hDt6p69/Azni1RXdGcBxWDPWLV
-	A5YGaI+mXYT1IZ/cL/uSH7gehlxa/B4Dzlg6oRtjhDsRn8Yr98paDl4ncN04wq917IapZR/cR7Qj4
-	hkF0Efq4llFWIGq4WvTmCt5oCdZyzVon3JzwtgDfWi6dUbsGP6AvRrnUQEvTCqCFJAUkkoKksYQoX
-	VsHWzDrW2Xtu9D3U3cJj8ZkLrTlD17/0uVKW+vDFmbtHglKNTc5mihdQQ5heGA5lZtlxeoGiwlqtf
-	NlVyCBIvfY61OiZ8bxiQ==;
+	List-Owner; bh=kSJo3H0KrtWQw90muudMhwIX23igT2G+B2y5a42eb7k=; b=WpZi4DGdzCjS4L
+	UPvCohcc6Dyym8iclzXTt34lPTLZeGVw2uDPnoOWZdhKwRqNxo1oaPMKXgHx3gl+5fLHYuudJAo4s
+	mTNZdYbCjfqqEEu0YdXOvGITQHgHNIzpQXDXqDSmiWOKjDNAqrAkmoVrqfEUPdCq5XvrsxiVOhHaz
+	q5MKtWeALi8jfNV86MKyTBQXpptxtSFNtgtCFpi8i7RlSQjtG8I+PnRY4C6YWBejXLUbyyn9dcwAc
+	56No17SWcu9QYbQzWiyNaXQxDCmpid4gLwMJ1YSvmg9pnqFIEfuTw3IDHI0v0MvVRQefkpJkMktjo
+	QpgIM/zy/wIhkJAlmftQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSzaY-0005eh-F6; Mon, 27 Apr 2020 08:58:06 +0000
-Received: from mail-eopbgr80072.outbound.protection.outlook.com ([40.107.8.72]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jSzbW-00069A-21; Mon, 27 Apr 2020 08:59:06 +0000
+Received: from mail-vi1eur05on2086.outbound.protection.outlook.com
+ ([40.107.21.86] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSzaK-0005d6-Qj
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 08:57:54 +0000
+ id 1jSzbI-000689-RR
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 08:58:54 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=PsU67DqSp4/iI+l79I6eUlFkWX/RQv80EAH32TRt8eQm2Q0xLxNL++apkYST/U+O35ZCEG0vKBxUl7IaAj03T98ikTD6QSvNLTq9RPAjksqXdj1Gd4d8v8SeA/yGc6t8KjHvvwFjJ1HvXXTyzAxxkrNyCfy7uHy0u1lAnP84SXpO7WfUvkAXUsu/gr5fBqgt0pWlyrnwAkdQDwBKNBs8aY6Ay0tPgMXaF9JN3U3CHyfRtgqvJNkBmY6PWN/jNyZsIPMTNmcPqNm+r35zbnpjLU7SYpdb8emDbIioa1PqJPoA/5Vg6ZRZyOmhOebf8pAYiy22K5Bmrg/iltzGQEEpTQ==
+ b=i9f/fq3blev9rbCEpL2w1bNP3PjbUFV0NeHkTHd2YGB9CDQ2rLuqjhFpcT1nkRnol8dV3HqLpGPLKVAK1X3dOqo1BwyzBAVf34SqXI8O0zP8bYM+jpcaIIe6H5NlJFqNiAVGLtKddcQDFypFQTmg8aqbdSjj8wLLtBLKCwLZvBYxpx3ma3Bx631QgH/gJgBuba5ObG42Y8rHIdswfg1dLthU6SqakhzuzCQhO58zqrgvDNgvPwUNoEit9WUr5BkrnTlQp6pbSQ3oGJF9P5BWaLJWTG2P0PzD4Ox2wTkB6IrR23aPqBcql+RhtRJzHpwyq87CvFeMRFyS4SQuSNxj5g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=U8/rptKhBi2NQGd03qo3bkm7YTNrOgltG0GCLGr4/PY=;
- b=hXgkQUhcJtQtzWCe8ZAOVKSU5ItNPEs9kfCJ2uPjhHeY7u2PrHSiuXHvFM+fDtaQueszCvvRXDCaRe+FNPdnAYTx6PDbvwS1eXXS+EsiaxrkvPsY9hUPvdNJWTfqC6YRasoqkypBOjGG1CsR1mn4hTB86JFcpMkFZ/usGO70PK+U/Go+DA7IYNYqYAeFhaJy6K9yR5e8G0ChELNT5dKodLKGfpZPFMifwyHEahmqgoNgzRqiIZ6Jd5VfiaiBDOOO/sO1/oNP7xLDfTNCca3PVJAahOH5tDXZhGffVVmVGf3DxZ1LzrrMyiqTdvxhDAc3117MIhk+yNQzATSlEULHGA==
+ bh=7L+t0uo8/Q6dvV762NrAvxk+bHM+qr1Hptvt6C8Sglw=;
+ b=kULDH4e7q2196XegGoo8p4WAW1rQCXzg4YxqmdtaHQrdn/H+Chitp1CZ7/9usCIusJ1qHjDLgmwd/iGAjnCHp4erLDcj975NguzrYtFj+q5g7curf4bhTY3mRNKetlCS2/aW7edMAaQbyC51tB/j2CGIrmf2gChEfCxKB0bLZKTyk2hhPA6Os1C+rQTx0Ofima3+zpTTkGjKWNddCCrpCqUPSe4sw9jAuY0ToBJ2XtjUMcz5thleftCwPNObR75uxGSkPG/KWGW1PxnyET9xEGX0RkcN2Tm7xhYTjeAbZW0qWDDc7i7hm9nmFBq/63y/MrQeZEnih2LrLEGmckoWqQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=U8/rptKhBi2NQGd03qo3bkm7YTNrOgltG0GCLGr4/PY=;
- b=BJlmpUDwSzC5omc2BWDMHIj4ELMn8y3YIVkyMCGy0dSxXlZsE5UseUuF9lyHGvCudV5uSJ4yNvywPN7Eeh0QsCY7Yp6S7iQ+K5Xi5RkrwobPa98EHThXAWGPcS4eH09JmoIVdKvXIY5QI35xDRAM99kzPpHFTl+dQdeYgLQbtfE=
+ bh=7L+t0uo8/Q6dvV762NrAvxk+bHM+qr1Hptvt6C8Sglw=;
+ b=ThZEAUXk/VqPDZ7A2SqqjvGzmcnSwTKQaC5I3SUVOaQBm2BpDnYzIOL21Xy5sn+jlZBAIiSTG/ihCKZGtuFO3Lz7XxpXKPrSBhksPN8vjCKFtpWWwK6r5nKszFn9DjOXGpEXRzNnl04laI4YURHI1ycsbynvbo0aRK8Pr1zM5os=
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
  by DB6PR0402MB2711.eurprd04.prod.outlook.com (2603:10a6:4:96::18)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 08:57:49 +0000
+ 2020 08:58:50 +0000
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 08:57:49 +0000
+ 08:58:49 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: Aisheng Dong <aisheng.dong@nxp.com>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  Leonard Crestez <leonard.crestez@nxp.com>, "sboyd@kernel.org"
  <sboyd@kernel.org>, Abel Vesa <abel.vesa@nxp.com>
-Subject: RE: [PATCH V2 05/10] clk: imx8mp: use imx8m_clk_hw_composite_core to
- simplify code
-Thread-Topic: [PATCH V2 05/10] clk: imx8mp: use imx8m_clk_hw_composite_core to
- simplify code
-Thread-Index: AQHV+FjGU1lNq/r0A0G9ZYg3Llm9kaiLGHKAgAHagFA=
-Date: Mon, 27 Apr 2020 08:57:49 +0000
-Message-ID: <DB6PR0402MB276036F3AB9AB74A5235144A88AF0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH V2 06/10] clk: imx8m: migrate A53 clk root to use
+ composite core
+Thread-Topic: [PATCH V2 06/10] clk: imx8m: migrate A53 clk root to use
+ composite core
+Thread-Index: AQHV+FjKzuc7KbaUCkiuyqa70SF6FKiLGbaAgAHZnPA=
+Date: Mon, 27 Apr 2020 08:58:49 +0000
+Message-ID: <DB6PR0402MB276031ADC7FB0209973655F588AF0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
 References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
- <1584008384-11578-6-git-send-email-peng.fan@nxp.com>
- <AM6PR04MB49662BE2A6456DD9B62F28D980AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB49662BE2A6456DD9B62F28D980AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <1584008384-11578-7-git-send-email-peng.fan@nxp.com>
+ <AM6PR04MB49664159E56A48EC6C4CBCC880AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB49664159E56A48EC6C4CBCC880AE0@AM6PR04MB4966.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -72,46 +72,46 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 576696e2-de48-45ee-f228-08d7ea890fe7
+x-ms-office365-filtering-correlation-id: 4f433613-9d8d-4aed-15e9-08d7ea8933f4
 x-ms-traffictypediagnostic: DB6PR0402MB2711:|DB6PR0402MB2711:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB6PR0402MB2711C57D5B52872A6EA55E5E88AF0@DB6PR0402MB2711.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-microsoft-antispam-prvs: <DB6PR0402MB2711842FC7F027349FDC5DB588AF0@DB6PR0402MB2711.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
 x-forefront-prvs: 0386B406AA
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(136003)(366004)(39860400002)(81156014)(8676002)(44832011)(33656002)(186003)(52536014)(110136005)(9686003)(7416002)(316002)(478600001)(54906003)(5660300002)(2906002)(8936002)(4326008)(55016002)(7696005)(6506007)(86362001)(26005)(6636002)(66556008)(64756008)(66446008)(76116006)(71200400001)(66476007)(66946007)(30864003)(32563001);
+ SFS:(4636009)(346002)(376002)(396003)(136003)(366004)(39860400002)(81156014)(8676002)(44832011)(33656002)(186003)(52536014)(110136005)(9686003)(7416002)(316002)(478600001)(54906003)(5660300002)(2906002)(8936002)(4326008)(55016002)(7696005)(6506007)(86362001)(26005)(6636002)(66556008)(64756008)(66446008)(76116006)(71200400001)(66476007)(66946007)(32563001);
  DIR:OUT; SFP:1101; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JdUPkv83SPbTfdfRrOSkHIfvuMg1+5/5POM6R0FaPU8H+IMVzER1lOHWLk5yF99ImtGeONKuGPa3UIlbtprA+RzIDHdbt5mc7/aXbV2ldP9Nub2NbZTYLiDDhPE2NzdOAKLE3lCKUkx4QEcKXXbTBd7AIh/S2PESJinZERu94ih2ymEIv0agL3F166GfQk8eA6GZ9Bf5Rzqec4zs8VN4NI6XOrQd16K3wm8HqcFVw/pTtedB+tiUheR5QJQ0vCn8OW2wGTYK+EQ3ZebPTdbBYLEWQZ1IZNELNifS+rqe+rTZq98kdKmLcMyi0ho4mWr0vyPXSdnsodCBwIGHG/ZTIBS+qYf9wUT7jlbR+wve6cVys3A+npk0jz9VltlctRDXqlBV0+lrHkQGx7cntZ2BU7+nFWfInN70ky8IMM19K8UB45ZwYqY8hyWBzk7F6Wr/ZsTTQ5PSjr4VDlmH6i8Bc5Z16VP36jKHVAL+NdQlsjS+B4ijN9UeO2aiaBFGsha4
-x-ms-exchange-antispam-messagedata: Lubm/eGZPZf3YgFYTgTyrJMdlM3mhb/rb89sATEXWyssTLaVPLtYucbq5PhT6i8TP1a8Bp1ODl4PuhutwiCnKUw3D4OzORWGKzJXsn/5UpWULhbxQaSn4I+P4/STMZmu8orrJgbMELoqwHz1bBJxS3ahBxTdMzdspWA8UMdCdGwpGFoJArZTdnwMi10o4nBKfTpaG+qock3ZiVJVbHKSuMFoeYixYDCEAZvihicK0Jx7sWH5X9VFV5m1CF94fCiX40W0Z9e4wsNWoOKelqUPLONWsrci1mAy8EUP8oJbdsXQAqY8dHOEIbduwshGyRmsXT9de2AEZU8n4EV7PlJEW5DxZYk9418mpbhcRBgDFYI8mjzQcbDS7XzBmJiARTo+UM0PIOFvoIashIzHCe7kDjGWjFHZ6qSEMVL/dlegCNVvvBVwF4VugMlTcTQ+rF1I8DbvMeBFz+u+8ddxSiuvk6PVXoQe09rZlIGCzZEA+EJLJPOhQZkuuOAmR1jRFksQIvQt5VdyJut2CrGv2C6Fvbo1d6jE7wzKg70tMs1qRxYFwrGNX6reWfI7dE0ddHiNYDAERn0ugmCGgalWrjDHEvrbilc1SJ8pk9eWCWk/Sm5s5r2ZaqIBn6t71jocjMK0ZfM/O8w9ASlEn2iOP1/bm39doJrK0g3p6ZUdg+CtXvnd9syHFwY1KuEi5y7PGmzsFj1xsdUMO+nTfF9RLWEyGN+ft7Xc+FLhg5Zh+9qYKrBuPj+PYmqoJ56xbXgYtdY1VxM/nQ0pDzw7U9oXDyQhgcyARTSX74WSIzqwa48o400=
+x-microsoft-antispam-message-info: TeyeVhKxajZgndDBHCjV/ZPYebI3+pfEMB3t0ic6LzdgyBMSCmtt9DDpidA4IZXvvo2kilD6hUJ5CUcozPA2dc9ohVwXArJxQ5R97mZG0jcM4beLenObCvEWXeZRLDwR7JUwm2d3s+FDxIovJR9KLrreiQi324nW5m2eknBzdudO1b1HmzGRxKuKfjrJj6A+Kfme2sa+h/5+pzxHGBQeVWPsYMAbifXAgdSCXGoLyWAHwyxcZPV2kAXVBOiooEZUj1HFXZA0POE4Sm0F7YpYUW4F7iztxUi+39nwlYQAy8W7RdqpS8AMw2sNrC2Sv9zKQBUzUZhydObCScVBdEjk3E7nQpelijtFhxm3wyp2Aba0cr+xok7DnfLuM8s79Fy9OGQ++c63oYgfTeNlbIzs6AIAGfpQ9SqbNWB1QVRHAEPTUnyjXEpgM0eieCM0vgRbhk4B3lNlqhvt7WIYUh4uxeek0MuXYFw7V84Yo5pEkYMzsYqNixv+un2Vvi6A76xy
+x-ms-exchange-antispam-messagedata: AxW7748LINQh++khNOZLxSMZP01/fZ2qCKNVZ9lsLcWmuC5srU6U8yuKZAfXA4k/AuTjcsXQktl+AKAKFEUyqyftHddSID2aJ20KWBjAi7CnpHB/by22ahleWB/5jhOw2ygp1+crLeQpereKh+EfYUKFGmt0nWpYgeYBWZCEQF1baS8LjnAkRENOguxlhXZSkQBo/ZE8MNRon2n0MmHT6j4ZAOk/SVgbazYZqpij3gXjpp21dP8j6N+d29c/NSocONp5tauusNw11iwuSUbWv0kHcBvK0Nc1oRkSv5fWJ2B5s8Qxq+BVFB8T1MV2dFJODKcmMJTelRsTM3snwcuYSXqs2iMoehGCRLbFwNbHkqxSTiz6ah5haQmIGG3hmgvtiAtg1aRG7929aOBieB9YF8PiI4hqTa04bdBYlY8/ffMdov3nkkxMC6v3/nCdPIJcOGOm7AvFVglWk6eqynPK1fLFxXNkhuIp0HSNlK4B1iQAIe5kzYDukB10prGFaEmNRUOqMJQ64Pc3kHVtrRki6ecPhmLK93PwApoPZIFJqHmwVkKaxL65wb11t0NGxpRZUkYvGEFgIbmqyHbddNzxU1bfFRf8zb38/CZn7uNiEx8NnytQ9qncmAbSNlTfYH+jkK4qXZLZX8VEYofbIkdgZ3tsRZFKlIbgkonJZQadpPS4hXOfBTiHeiea/P66ydUwpXoq3P8VHwEfeQ5CV4YNkxHAknmpM0O0H+r56sAxqhN61/HVk31TKUZDmHeyv/OF9tKVAfE14csZV4N31/Q1w9jbZrlitCCWUdOgMlPvNeY=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 576696e2-de48-45ee-f228-08d7ea890fe7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Apr 2020 08:57:49.3063 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f433613-9d8d-4aed-15e9-08d7ea8933f4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Apr 2020 08:58:49.8158 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: W7jGh0owjnKwP7MVLCiV56LEYMJcLreBj7cTE1Zu4QqSD4eMq17BdWEcUoHxzavokATlGf50RD8hijc0uNZVgQ==
+X-MS-Exchange-CrossTenant-userprincipalname: 6U+NEGZGfR09G6NWal/2gnXHB+siy1yonW9MgNb7ssRhda/heJiryjo300LYNVZUDv531ownRFY7cj79LjzH3g==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2711
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_015753_022074_6A01DDB2 
-X-CRM114-Status: GOOD (  13.44  )
+X-CRM114-CacheID: sfid-20200427_015852_887979_9F7AD10A 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.72 listed in list.dnswl.org]
+ low trust [40.107.21.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.72 listed in wl.mailspike.net]
+ [40.107.21.86 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -149,262 +149,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: RE: [PATCH V2 05/10] clk: imx8mp: use
-> imx8m_clk_hw_composite_core to simplify code
+> Subject: RE: [PATCH V2 06/10] clk: imx8m: migrate A53 clk root to use
+> composite core
 > 
 > > From: Peng Fan <peng.fan@nxp.com>
 > > Sent: Thursday, March 12, 2020 6:20 PM
 > >
-> > Use imx8m_clk_hw_composite_core to simpliy clks that belong to core clk
-> slice.
+> > Migrate A53 clk root to use composite core clk type. It will simplify
+> > code and make it easy to use composite specific mux operation.
 > >
 > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >  drivers/clk/imx/clk-imx8mm.c | 6 +++---  drivers/clk/imx/clk-imx8mn.c
+> > | 6
+> > +++---  drivers/clk/imx/clk-imx8mq.c | 6 +++---
+> >  3 files changed, 9 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/drivers/clk/imx/clk-imx8mm.c
+> > b/drivers/clk/imx/clk-imx8mm.c index
+> > 5435042a06e3..12443e06f329 100644
+> > --- a/drivers/clk/imx/clk-imx8mm.c
+> > +++ b/drivers/clk/imx/clk-imx8mm.c
+> > @@ -416,9 +416,9 @@ static int imx8mm_clocks_probe(struct
+> > platform_device *pdev)
+> >  		return PTR_ERR(base);
+> >
+> >  	/* Core Slice */
+> > -	hws[IMX8MM_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src",
+> base +
+> > 0x8000, 24, 3, imx8mm_a53_sels, ARRAY_SIZE(imx8mm_a53_sels));
+> > -	hws[IMX8MM_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg",
+> > "arm_a53_src", base + 0x8000, 28);
+> > -	hws[IMX8MM_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div",
+> > "arm_a53_cg", base + 0x8000, 0, 3);
+> > +	hws[IMX8MM_CLK_A53_DIV] =
+> > imx8m_clk_hw_composite_core("arm_a53_div", imx8mm_a53_sels, base +
+> > 0x8000);
+> > +	hws[IMX8MM_CLK_A53_CG] = hws[IMX8MM_CLK_A53_DIV];
+> > +	hws[IMX8MM_CLK_A53_SRC] = hws[IMX8MM_CLK_A53_DIV];
 > 
-> Should we also deprecated the old clock ids which will not be supported by
-> driver anymore?
+> The former patch already breaks the compatibility.
+> Not sure if we really need keep it for only A53 clock here as we are still at
+> very early enablement Phase for MX8MP.  So we may just remove them
+> IMHO.
 
-To keep dt backward compatible, those ids are kept as what we did for other
-i.MX8M platform.
+i.MX8MM, not i.MX8MP.
 
 Thanks,
 Peng.
 
-> Otherwise:
-> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> Shawn, what's your suggestion?
 > 
 > Regards
 > Aisheng
 > 
-> > ---
-> >  drivers/clk/imx/clk-imx8mp.c             | 47
-> > +++++++++++---------------------
-> >  include/dt-bindings/clock/imx8mp-clock.h | 11 +++++++-
-> >  2 files changed, 26 insertions(+), 32 deletions(-)
 > >
-> > diff --git a/drivers/clk/imx/clk-imx8mp.c
-> > b/drivers/clk/imx/clk-imx8mp.c index
-> > a7613c7355c8..998e9e63f831 100644
-> > --- a/drivers/clk/imx/clk-imx8mp.c
-> > +++ b/drivers/clk/imx/clk-imx8mp.c
-> > @@ -546,33 +546,18 @@ static int imx8mp_clocks_probe(struct
-> > platform_device *pdev)
-> >  	hws[IMX8MP_SYS_PLL2_500M] =
-> > imx_clk_hw_fixed_factor("sys_pll2_500m", "sys_pll2_500m_cg", 1, 2);
-> >  	hws[IMX8MP_SYS_PLL2_1000M] =
-> > imx_clk_hw_fixed_factor("sys_pll2_1000m", "sys_pll2_out", 1, 1);
-> >
-> > -	hws[IMX8MP_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src",
-> > ccm_base + 0x8000, 24, 3, imx8mp_a53_sels,
-> ARRAY_SIZE(imx8mp_a53_sels));
-> > -	hws[IMX8MP_CLK_M7_SRC] = imx_clk_hw_mux2("arm_m7_src",
-> > ccm_base + 0x8080, 24, 3, imx8mp_m7_sels,
-> ARRAY_SIZE(imx8mp_m7_sels));
-> > -	hws[IMX8MP_CLK_ML_SRC] = imx_clk_hw_mux2("ml_src", ccm_base +
-> > 0x8100, 24, 3, imx8mp_ml_sels, ARRAY_SIZE(imx8mp_ml_sels));
-> > -	hws[IMX8MP_CLK_GPU3D_CORE_SRC] =
-> > imx_clk_hw_mux2("gpu3d_core_src", ccm_base + 0x8180, 24, 3,
-> > imx8mp_gpu3d_core_sels, ARRAY_SIZE(imx8mp_gpu3d_core_sels));
-> > -	hws[IMX8MP_CLK_GPU3D_SHADER_SRC] =
-> > imx_clk_hw_mux2("gpu3d_shader_src", ccm_base + 0x8200, 24, 3,
-> > imx8mp_gpu3d_shader_sels, ARRAY_SIZE(imx8mp_gpu3d_shader_sels));
-> > -	hws[IMX8MP_CLK_GPU2D_SRC] = imx_clk_hw_mux2("gpu2d_src",
-> > ccm_base + 0x8280, 24, 3, imx8mp_gpu2d_sels,
-> > ARRAY_SIZE(imx8mp_gpu2d_sels));
-> > -	hws[IMX8MP_CLK_AUDIO_AXI_SRC] =
-> imx_clk_hw_mux2("audio_axi_src",
-> > ccm_base + 0x8300, 24, 3, imx8mp_audio_axi_sels,
-> > ARRAY_SIZE(imx8mp_audio_axi_sels));
-> > -	hws[IMX8MP_CLK_HSIO_AXI_SRC] = imx_clk_hw_mux2("hsio_axi_src",
-> > ccm_base + 0x8380, 24, 3, imx8mp_hsio_axi_sels,
-> > ARRAY_SIZE(imx8mp_hsio_axi_sels));
-> > -	hws[IMX8MP_CLK_MEDIA_ISP_SRC] =
-> imx_clk_hw_mux2("media_isp_src",
-> > ccm_base + 0x8400, 24, 3, imx8mp_media_isp_sels,
-> > ARRAY_SIZE(imx8mp_media_isp_sels));
-> > -	hws[IMX8MP_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg",
-> > "arm_a53_src", ccm_base + 0x8000, 28);
-> > -	hws[IMX8MP_CLK_M4_CG] = imx_clk_hw_gate3("arm_m7_cg",
-> > "arm_m7_src", ccm_base + 0x8080, 28);
-> > -	hws[IMX8MP_CLK_ML_CG] = imx_clk_hw_gate3("ml_cg", "ml_src",
-> > ccm_base + 0x8100, 28);
-> > -	hws[IMX8MP_CLK_GPU3D_CORE_CG] =
-> > imx_clk_hw_gate3("gpu3d_core_cg", "gpu3d_core_src", ccm_base +
-> 0x8180,
-> > 28);
-> > -	hws[IMX8MP_CLK_GPU3D_SHADER_CG] =
-> > imx_clk_hw_gate3("gpu3d_shader_cg", "gpu3d_shader_src", ccm_base +
-> > 0x8200, 28);
-> > -	hws[IMX8MP_CLK_GPU2D_CG] = imx_clk_hw_gate3("gpu2d_cg",
-> > "gpu2d_src", ccm_base + 0x8280, 28);
-> > -	hws[IMX8MP_CLK_AUDIO_AXI_CG] =
-> imx_clk_hw_gate3("audio_axi_cg",
-> > "audio_axi_src", ccm_base + 0x8300, 28);
-> > -	hws[IMX8MP_CLK_HSIO_AXI_CG] = imx_clk_hw_gate3("hsio_axi_cg",
-> > "hsio_axi_src", ccm_base + 0x8380, 28);
-> > -	hws[IMX8MP_CLK_MEDIA_ISP_CG] =
-> imx_clk_hw_gate3("media_isp_cg",
-> > "media_isp_src", ccm_base + 0x8400, 28);
-> > -	hws[IMX8MP_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div",
-> > "arm_a53_cg", ccm_base + 0x8000, 0, 3);
-> > -	hws[IMX8MP_CLK_M7_DIV] = imx_clk_hw_divider2("arm_m7_div",
-> > "arm_m7_cg", ccm_base + 0x8080, 0, 3);
-> > -	hws[IMX8MP_CLK_ML_DIV] = imx_clk_hw_divider2("ml_div", "ml_cg",
-> > ccm_base + 0x8100, 0, 3);
-> > -	hws[IMX8MP_CLK_GPU3D_CORE_DIV] =
-> > imx_clk_hw_divider2("gpu3d_core_div", "gpu3d_core_cg", ccm_base +
-> > 0x8180, 0, 3);
-> > -	hws[IMX8MP_CLK_GPU3D_SHADER_DIV] =
-> > imx_clk_hw_divider2("gpu3d_shader_div", "gpu3d_shader_cg", ccm_base +
-> > 0x8200, 0, 3);
-> > -	hws[IMX8MP_CLK_GPU2D_DIV] = imx_clk_hw_divider2("gpu2d_div",
-> > "gpu2d_cg", ccm_base + 0x8280, 0, 3);
-> > -	hws[IMX8MP_CLK_AUDIO_AXI_DIV] =
-> > imx_clk_hw_divider2("audio_axi_div", "audio_axi_cg", ccm_base +
-> > 0x8300, 0, 3);
-> > -	hws[IMX8MP_CLK_HSIO_AXI_DIV] =
-> imx_clk_hw_divider2("hsio_axi_div",
-> > "hsio_axi_cg", ccm_base + 0x8380, 0, 3);
-> > -	hws[IMX8MP_CLK_MEDIA_ISP_DIV] =
-> > imx_clk_hw_divider2("media_isp_div", "media_isp_cg", ccm_base +
-> > 0x8400, 0, 3);
-> > +	hws[IMX8MP_CLK_A53_DIV] =
-> > imx8m_clk_hw_composite_core("arm_a53_div", imx8mp_a53_sels,
-> ccm_base
-> > + 0x8000);
-> > +	hws[IMX8MP_CLK_A53_SRC] = hws[IMX8MP_CLK_A53_DIV];
-> > +	hws[IMX8MP_CLK_A53_CG] = hws[IMX8MP_CLK_A53_DIV];
-> > +	hws[IMX8MP_CLK_M7_CORE] =
-> > imx8m_clk_hw_composite_core("m7_core", imx8mp_m7_sels, ccm_base +
+> >  	hws[IMX8MM_CLK_M4_CORE] =
+> > imx8m_clk_hw_composite_core("arm_m4_core", imx8mm_m4_sels, base +
 > > 0x8080);
-> > +	hws[IMX8MP_CLK_ML_CORE] =
-> > imx8m_clk_hw_composite_core("ml_core", imx8mp_ml_sels, ccm_base +
-> > 0x8100);
-> > +	hws[IMX8MP_CLK_GPU3D_CORE] =
-> > imx8m_clk_hw_composite_core("gpu3d_core", imx8mp_gpu3d_core_sels,
-> > ccm_base + 0x8180);
-> > +	hws[IMX8MP_CLK_GPU3D_SHADER_CORE] =
-> > imx8m_clk_hw_composite("gpu3d_shader_core",
-> imx8mp_gpu3d_shader_sels,
-> > ccm_base + 0x8200);
-> > +	hws[IMX8MP_CLK_GPU2D_CORE] =
-> > imx8m_clk_hw_composite("gpu2d_core", imx8mp_gpu2d_sels, ccm_base +
-> > 0x8280);
-> > +	hws[IMX8MP_CLK_AUDIO_AXI] =
-> imx8m_clk_hw_composite("audio_axi",
-> > imx8mp_audio_axi_sels, ccm_base + 0x8300);
-> > +	hws[IMX8MP_CLK_AUDIO_AXI_SRC] = hws[IMX8MP_CLK_AUDIO_AXI];
-> > +	hws[IMX8MP_CLK_HSIO_AXI] = imx8m_clk_hw_composite("hsio_axi",
-> > imx8mp_hsio_axi_sels, ccm_base + 0x8380);
-> > +	hws[IMX8MP_CLK_MEDIA_ISP] =
-> imx8m_clk_hw_composite("media_isp",
-> > +imx8mp_media_isp_sels, ccm_base + 0x8400);
-> >
-> >  	/* CORE SEL */
-> >  	hws[IMX8MP_CLK_A53_CORE] = imx_clk_hw_mux2("arm_a53_core",
-> ccm_base
-> > + 0x9880, 24, 1, imx8mp_a53_core_sels,
-> > ARRAY_SIZE(imx8mp_a53_core_sels));
-> > @@ -713,8 +698,8 @@ static int imx8mp_clocks_probe(struct
+> >  	hws[IMX8MM_CLK_VPU_CORE] =
+> > imx8m_clk_hw_composite_core("vpu_core", imx8mm_vpu_sels, base +
+> > 0x8100); diff --git a/drivers/clk/imx/clk-imx8mn.c
+> > b/drivers/clk/imx/clk-imx8mn.c index 6cac6ca03e12..bd3759b4afd0
+> 100644
+> > --- a/drivers/clk/imx/clk-imx8mn.c
+> > +++ b/drivers/clk/imx/clk-imx8mn.c
+> > @@ -413,9 +413,9 @@ static int imx8mn_clocks_probe(struct
 > > platform_device
 > > *pdev)
-> >  	hws[IMX8MP_CLK_SDMA1_ROOT] =
-> imx_clk_hw_gate4("sdma1_root_clk",
-> > "ipg_root", ccm_base + 0x43a0, 0);
-> >  	hws[IMX8MP_CLK_ENET_QOS_ROOT] =
-> > imx_clk_hw_gate4("enet_qos_root_clk", "sim_enet_root_clk", ccm_base +
-> > 0x43b0, 0);
-> >  	hws[IMX8MP_CLK_SIM_ENET_ROOT] =
-> > imx_clk_hw_gate4("sim_enet_root_clk", "enet_axi", ccm_base + 0x4400,
-> 0);
-> > -	hws[IMX8MP_CLK_GPU2D_ROOT] =
-> imx_clk_hw_gate4("gpu2d_root_clk",
-> > "gpu2d_div", ccm_base + 0x4450, 0);
-> > -	hws[IMX8MP_CLK_GPU3D_ROOT] =
-> imx_clk_hw_gate4("gpu3d_root_clk",
-> > "gpu3d_core_div", ccm_base + 0x4460, 0);
-> > +	hws[IMX8MP_CLK_GPU2D_ROOT] =
-> imx_clk_hw_gate4("gpu2d_root_clk",
-> > "gpu2d_core", ccm_base + 0x4450, 0);
-> > +	hws[IMX8MP_CLK_GPU3D_ROOT] =
-> imx_clk_hw_gate4("gpu3d_root_clk",
-> > +"gpu3d_core", ccm_base + 0x4460, 0);
-> >  	hws[IMX8MP_CLK_SNVS_ROOT] = imx_clk_hw_gate4("snvs_root_clk",
-> > "ipg_root", ccm_base + 0x4470, 0);
-> >  	hws[IMX8MP_CLK_UART1_ROOT] =
-> imx_clk_hw_gate4("uart1_root_clk",
-> > "uart1", ccm_base + 0x4490, 0);
-> >  	hws[IMX8MP_CLK_UART2_ROOT] =
-> imx_clk_hw_gate4("uart2_root_clk",
-> > "uart2", ccm_base + 0x44a0, 0); @@ -731,7 +716,7 @@ static int
-> > imx8mp_clocks_probe(struct platform_device *pdev)
-> >  	hws[IMX8MP_CLK_GPU_ROOT] = imx_clk_hw_gate4("gpu_root_clk",
-> > "gpu_axi", ccm_base + 0x4570, 0);
-> >  	hws[IMX8MP_CLK_VPU_VC8KE_ROOT] =
-> > imx_clk_hw_gate4("vpu_vc8ke_root_clk", "vpu_vc8000e", ccm_base +
-> > 0x4590, 0);
-> >  	hws[IMX8MP_CLK_VPU_G2_ROOT] =
-> > imx_clk_hw_gate4("vpu_g2_root_clk", "vpu_g2", ccm_base + 0x45a0, 0);
-> > -	hws[IMX8MP_CLK_NPU_ROOT] = imx_clk_hw_gate4("npu_root_clk",
-> > "ml_div", ccm_base + 0x45b0, 0);
-> > +	hws[IMX8MP_CLK_NPU_ROOT] = imx_clk_hw_gate4("npu_root_clk",
-> > "ml_core",
-> > +ccm_base + 0x45b0, 0);
-> >  	hws[IMX8MP_CLK_HSIO_ROOT] = imx_clk_hw_gate4("hsio_root_clk",
-> > "ipg_root", ccm_base + 0x45c0, 0);
-> >  	hws[IMX8MP_CLK_MEDIA_APB_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_apb_root_clk", "media_apb",
-> ccm_base +
-> > 0x45d0, 0, &share_count_media);
-> >  	hws[IMX8MP_CLK_MEDIA_AXI_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_axi_root_clk", "media_axi", ccm_base
+> >  	}
+> >
+> >  	/* CORE */
+> > -	hws[IMX8MN_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", base
 > +
-> > 0x45d0, 0, &share_count_media); @@ -739,7 +724,7 @@ static int
-> > imx8mp_clocks_probe(struct platform_device *pdev)
-> >  	hws[IMX8MP_CLK_MEDIA_CAM2_PIX_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_cam2_pix_root_clk",
-> "media_cam2_pix",
-> > ccm_base + 0x45d0, 0, &share_count_media);
-> >  	hws[IMX8MP_CLK_MEDIA_DISP1_PIX_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_disp1_pix_root_clk",
-> > "media_disp1_pix", ccm_base + 0x45d0, 0, &share_count_media);
-> >  	hws[IMX8MP_CLK_MEDIA_DISP2_PIX_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_disp2_pix_root_clk",
-> > "media_disp2_pix", ccm_base + 0x45d0, 0, &share_count_media);
-> > -	hws[IMX8MP_CLK_MEDIA_ISP_ROOT] =
-> > imx_clk_hw_gate2_shared2("media_isp_root_clk", "media_isp_div",
-> > ccm_base
-> > + 0x45d0, 0, &share_count_media);
-> > +	hws[IMX8MP_CLK_MEDIA_ISP_ROOT] =
-> > +imx_clk_hw_gate2_shared2("media_isp_root_clk", "media_isp",
-> ccm_base
-> > ++ 0x45d0, 0, &share_count_media);
+> > 0x8000, 24, 3, imx8mn_a53_sels, ARRAY_SIZE(imx8mn_a53_sels));
+> > -	hws[IMX8MN_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg",
+> > "arm_a53_src", base + 0x8000, 28);
+> > -	hws[IMX8MN_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div",
+> > "arm_a53_cg", base + 0x8000, 0, 3);
+> > +	hws[IMX8MN_CLK_A53_DIV] =
+> > imx8m_clk_hw_composite_core("arm_a53_div", imx8mn_a53_sels, base +
+> > 0x8000);
+> > +	hws[IMX8MN_CLK_A53_SRC] = hws[IMX8MN_CLK_A53_DIV];
+> > +	hws[IMX8MN_CLK_A53_CG] = hws[IMX8MN_CLK_A53_DIV];
 > >
-> >  	hws[IMX8MP_CLK_USDHC3_ROOT] =
-> > imx_clk_hw_gate4("usdhc3_root_clk", "usdhc3", ccm_base + 0x45e0, 0);
-> >  	hws[IMX8MP_CLK_HDMI_ROOT] = imx_clk_hw_gate4("hdmi_root_clk",
-> > "hdmi_axi", ccm_base + 0x45f0, 0); diff --git
-> > a/include/dt-bindings/clock/imx8mp-clock.h
-> > b/include/dt-bindings/clock/imx8mp-clock.h
-> > index 46c69cd66c62..8430bc4fd182 100644
-> > --- a/include/dt-bindings/clock/imx8mp-clock.h
-> > +++ b/include/dt-bindings/clock/imx8mp-clock.h
-> > @@ -313,6 +313,15 @@
-> >  #define IMX8MP_SYS_PLL2_333M_CG			303
-> >  #define IMX8MP_SYS_PLL2_500M_CG			304
+> >  	hws[IMX8MN_CLK_GPU_CORE] =
+> > imx8m_clk_hw_composite_core("gpu_core", imx8mn_gpu_core_sels, base
+> +
+> > 0x8180);
+> >  	hws[IMX8MN_CLK_GPU_SHADER] =
+> > imx8m_clk_hw_composite_core("gpu_shader", imx8mn_gpu_shader_sels,
+> base
+> > + 0x8200); diff --git a/drivers/clk/imx/clk-imx8mq.c
+> > b/drivers/clk/imx/clk-imx8mq.c index 201c7bbb201f..91309ff65441 100644
+> > --- a/drivers/clk/imx/clk-imx8mq.c
+> > +++ b/drivers/clk/imx/clk-imx8mq.c
+> > @@ -405,9 +405,9 @@ static int imx8mq_clocks_probe(struct
+> > platform_device
+> > *pdev)
+> >  		return PTR_ERR(base);
 > >
-> > -#define IMX8MP_CLK_END				305
-> > +#define IMX8MP_CLK_M7_CORE			305
-> > +#define IMX8MP_CLK_ML_CORE			306
-> > +#define IMX8MP_CLK_GPU3D_CORE			307
-> > +#define IMX8MP_CLK_GPU3D_SHADER_CORE		308
-> > +#define IMX8MP_CLK_GPU2D_CORE			309
-> > +#define IMX8MP_CLK_AUDIO_AXI			310
-> > +#define IMX8MP_CLK_HSIO_AXI			311
-> > +#define IMX8MP_CLK_MEDIA_ISP			312
-> > +
-> > +#define IMX8MP_CLK_END				313
+> >  	/* CORE */
+> > -	hws[IMX8MQ_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", base
+> +
+> > 0x8000, 24, 3, imx8mq_a53_sels, ARRAY_SIZE(imx8mq_a53_sels));
+> > -	hws[IMX8MQ_CLK_A53_CG] = imx_clk_hw_gate3_flags("arm_a53_cg",
+> > "arm_a53_src", base + 0x8000, 28, CLK_IS_CRITICAL);
+> > -	hws[IMX8MQ_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div",
+> > "arm_a53_cg", base + 0x8000, 0, 3);
+> > +	hws[IMX8MQ_CLK_A53_DIV] =
+> > imx8m_clk_hw_composite_core("arm_a53_div", imx8mq_a53_sels, base +
+> > 0x8000);
+> > +	hws[IMX8MQ_CLK_A53_CG] = hws[IMX8MQ_CLK_A53_DIV];
+> > +	hws[IMX8MQ_CLK_A53_SRC] = hws[IMX8MQ_CLK_A53_DIV];
 > >
-> >  #endif
+> >  	hws[IMX8MQ_CLK_M4_CORE] =
+> > imx8m_clk_hw_composite_core("arm_m4_core", imx8mq_arm_m4_sels,
+> base
+> > + 0x8080);
+> >  	hws[IMX8MQ_CLK_VPU_CORE] =
+> > imx8m_clk_hw_composite_core("vpu_core", imx8mq_vpu_sels, base +
+> > 0x8100);
 > > --
 > > 2.16.4
 
