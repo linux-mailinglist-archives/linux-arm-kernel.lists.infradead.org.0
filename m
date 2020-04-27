@@ -2,65 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67D9E1BAF2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 22:18:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E79431BAF8A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 22:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V61a3UU6wxq8BH3AtryFvCrBp0JUELuskLH2rTMpctI=; b=hPs2U9mzx33zQZ
-	YNe9Hend+J4PDLS4W/v6t5adUhbBDdNrn+Et/Th4XbmdI5Sd1WqTOUlzLDaxvuKdqat/Mu5HjmT0V
-	fCdn4VlgxHpWM+Sef9vqOC0c+HjF4HpmUySAlpm0CiZaXzR0AOl4VUSn3p+ScdvKgdBSZ0r5KHJo5
-	C8SiXAUUUTv6xVM7m6ss2hcjHsX6F3eYUy8apJYUY2MJZBMeKNBDzDIHK0hKucILSkec/X8vgPDdd
-	YT/R6bf2Q1iPK4HUPfmZUIIxpUEE4xyhWFtLdQARfL42UBVeAvsOkWzOz1RxuvI+7/b66IqyHCipT
-	BgsBEjishnrE4cMiW1YA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YvzzrBEBg5vt+lr0ijN1UD7+rtKFBbGQPs4Bi/+NjBI=; b=l9Hf1jX3lbcq3Z
+	ENspCzUkRR2dy06tbgaz1QMAUeJQ4G8BK35OvqyagnIGFMGu6SkAX+vJXs+9RhPNXM1Egx8T5Ol80
+	ivihvkoiHDKiTo7ogPntmo0kT348zXsFbaSt9k9jIRGL7JLTC3ZLPuOIch7aoi+idnnNnUFlVa61D
+	aZ7ZkXFatlUs/U/59/nJiUHkswLqY0mk+fMQi2GKn1Aek5DlGhhR3l9BmmPlNy0t8up2Z+dIwINeE
+	Y9tRgj9UH5r2yiUGNaCWRFZODZf6S6fsKxESZSth3wVk2AGsr8/uQefFvgZT37RyshWDyHYhdaQgg
+	z4GJrwg7vHIl170WqynA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTACl-0000gg-KG; Mon, 27 Apr 2020 20:18:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jTAQi-0001oM-Ij; Mon, 27 Apr 2020 20:32:40 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTACb-0000fV-3n; Mon, 27 Apr 2020 20:18:06 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB8ED2072D;
- Mon, 27 Apr 2020 20:18:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588018684;
- bh=FZznVs7DKImH4bMp84GuK30NCRT+ks2QZb0zw61Aw2o=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=0dPVwJ/H9B7uUoDHVQh+JzhGMmouLB2JEnhplDQk7I3xuAgcbSFK60H1piEfCx5Sx
- t+jKABLjlMrQXuoJB1Wv7UdopSfsHYSYtmSlzWb93RhaIDNLpcyXt7Avmd+0pazZfN
- HbeEsAjiXXS9v7hdBuMksmtrvhaQ+taOUTUIOuQQ=
-Date: Mon, 27 Apr 2020 13:18:02 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Mike Kravetz <mike.kravetz@oracle.com>
+ id 1jTAQN-0001lC-DB; Mon, 27 Apr 2020 20:32:24 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RKSxCl029276;
+ Mon, 27 Apr 2020 20:31:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=pOSG25qvqUqJ+z4S02r79fZiwo4gUeQybxg3JDBq6Zg=;
+ b=HKzbYVZxairCzE7vdE2FUh+lRMalt1IgLwG62EZZLOrMDDiweMek4V/UQKTaD29jB+C3
+ HhaguVAewckdZLwW+JeHsLxuqK7OFCyqGT+eNZPRqE8MoeyZG6xifNaVeevVI8zPyTph
+ ecCkoVkAHGETiAylhjR5pXlAj6mQud8KB6cpUlp/3MArilZtrPgR8MPcKO0Qb8Lz7CC8
+ qvVF13zrUX6sIfBnQhl9touKGipc7jilcG/GzjtjNfH6zyFs5dGhUwjoqsGGawh/jxvj
+ rMXwCVFCCNaS5tC7N5Om8J27L1gCUE+1yL1IG9QLgGAFv8Yp3z4fnrNipQSt7lbsVwlC Xw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2120.oracle.com with ESMTP id 30nucfuxfs-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 27 Apr 2020 20:31:14 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RKRqKn111291;
+ Mon, 27 Apr 2020 20:31:14 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3020.oracle.com with ESMTP id 30mxwwwt96-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 27 Apr 2020 20:31:13 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03RKV9QE002577;
+ Mon, 27 Apr 2020 20:31:09 GMT
+Received: from [192.168.2.157] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 27 Apr 2020 13:31:09 -0700
 Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
  independent code
-Message-Id: <20200427131802.3d132055a59535a0e6780e9f@linux-foundation.org>
-In-Reply-To: <b1f04f9f-fa46-c2a0-7693-4a0679d2a1ee@oracle.com>
+To: Andrew Morton <akpm@linux-foundation.org>
 References: <20200417185049.275845-1-mike.kravetz@oracle.com>
  <20200417185049.275845-3-mike.kravetz@oracle.com>
  <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
  <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
  <b1f04f9f-fa46-c2a0-7693-4a0679d2a1ee@oracle.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ <20200427131802.3d132055a59535a0e6780e9f@linux-foundation.org>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <b34270b7-fa9b-ce2c-20bc-84279ce6ea59@oracle.com>
+Date: Mon, 27 Apr 2020 13:31:06 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200427131802.3d132055a59535a0e6780e9f@linux-foundation.org>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ spamscore=0 bulkscore=0
+ suspectscore=0 mlxlogscore=999 phishscore=0 malwarescore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2004270166
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
+ priorityscore=1501
+ mlxlogscore=999 impostorscore=0 suspectscore=0 malwarescore=0
+ lowpriorityscore=0 mlxscore=0 spamscore=0 adultscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004270166
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_131805_174092_614EC5FC 
-X-CRM114-Status: GOOD (  10.21  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200427_133219_531251_25320FF2 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,25 +137,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 27 Apr 2020 12:09:47 -0700 Mike Kravetz <mike.kravetz@oracle.com> wrote:
-
-> Previously, a check for hugepages_supported was added before processing
-> hugetlb command line parameters.  On some architectures such as powerpc,
-> hugepages_supported() is not set to true until after command line
-> processing.  Therefore, no hugetlb command line parameters would be
-> accepted.
+On 4/27/20 1:18 PM, Andrew Morton wrote:
+> On Mon, 27 Apr 2020 12:09:47 -0700 Mike Kravetz <mike.kravetz@oracle.com> wrote:
 > 
-> Remove the additional checks for hugepages_supported.  In hugetlb_init,
-> print a warning if !hugepages_supported and command line parameters were
-> specified.
+>> Previously, a check for hugepages_supported was added before processing
+>> hugetlb command line parameters.  On some architectures such as powerpc,
+>> hugepages_supported() is not set to true until after command line
+>> processing.  Therefore, no hugetlb command line parameters would be
+>> accepted.
+>>
+>> Remove the additional checks for hugepages_supported.  In hugetlb_init,
+>> print a warning if !hugepages_supported and command line parameters were
+>> specified.
+> 
+> This applies to [4/4] instead of fixing [2/4].  I guess you'll
+> straighten that out in v4?
 
-This applies to [4/4] instead of fixing [2/4].  I guess you'll
-straighten that out in v4?
+Yes.
 
-btw, was
-http://lkml.kernel.org/r/CADYN=9Koefrq9H1Y82Q8nMNbeyN4tzhEfvDu5u=sVFjFZCYorA@mail.gmail.com
-addressed?
+> btw, was
+> http://lkml.kernel.org/r/CADYN=9Koefrq9H1Y82Q8nMNbeyN4tzhEfvDu5u=sVFjFZCYorA@mail.gmail.com
+> addressed?
 
+Yes, you pulled a patch into your tree to address this.
+hugetlbfs-remove-hugetlb_add_hstate-warning-for-existing-hstate-fix.patch
+
+I'll send out a v4 with both these issues addressed.  Would like to wait
+until receiving confirmation from someone who can test on powerpc.
+-- 
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
