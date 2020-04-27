@@ -2,86 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5EEE1BA108
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:23:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D55391BA117
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:28:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I+AL1uXxbZTmbBKsvcjBGLDvM+YFnnuWZ0F4/ZXKpsc=; b=OuGN+zwhah9gyP
-	xec59k5e8rRVixxJDVn8CO7tvjWXZA5149or5YBkHcahHH9GzGsz9i5n8pXFkYY3uu8t72KZT+dRZ
-	GZkhZlTooQY+UNAly6mvz+7EQ0QUcAQhgZHuDJk8IxAf/nu+yxrq1271Qk0ER/3Dr/CqYZA9SR16s
-	AHuuLsZxDTC/7jbj5X9kOGKEksKJgYUtJJx/3oSjShsuXwZaN7H0Qglz6t0JhNtDsKwVCwKacUlkq
-	k7TVHInygNFbwgM1h9QqvxomkyqtmLBNLjCiPhB25v0wtqlgkgA+p3z0BzWKyIgFqms4HlGYnCPxn
-	kskDISdXEG5hWO/rcZXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2fWMhYKTtcEjw6wQYxrITKGVJTt9aEHxnKTUz3RF6xc=; b=slNmekxF6SRhLCDlkZjBkJEoO
+	D6bDyu/Snt3gxaUL4ct+S8p/XONxKx28c4KnlBj+h8aAjisewfyWlggByTZP2r9Y4McDK2Wll01/d
+	iONPf1GNewFtIRnA2Rpb8uUPlZr7Uw3vHOrksRb0otl42YNDUAjhUlNDO7yWNhvYQ6EvaayVzi11D
+	Yv1+ku9L4RIHfq4a0ibRCBK9/GZ7uGzhocCgoZGsibQi/HRXK0MXjD5D71m4u4NqhycL8LQbCR91c
+	a8XFEM12p/hNl3ubplwBzqamOLiMks0YkZrnZ4lKhhf3Vgs7AqWieJNl14oHVmQxxvMSkGY8FceUb
+	8vOaeToLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT0uf-0005Sh-5t; Mon, 27 Apr 2020 10:22:57 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jT0zv-0000XO-AQ; Mon, 27 Apr 2020 10:28:23 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT0uR-0005RS-VW
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:22:46 +0000
-Received: by mail-pg1-x541.google.com with SMTP id s18so5822018pgl.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 03:22:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1CyxLaZcj63tQcR7tpc4uGoE1KDGBKikBpluCv751iQ=;
- b=Hgm0O5D0lCarAkzn4DV0qMdx7tM3kC1QJVrjbaAa/X38bcsMUwXZDOePZRakepLaEi
- ya2IRGM2AuFx6/UTyzBLHVx9q79FtdJq/l/m3VSUHXUvl5AGOsXg02/t+JpagqTKBY+l
- obX+tcG3SyQnpGzNDAdirBSQEglqgR6wCxsUrwAQQzjt2Bu+XzZsIEHvDpjMra1GLSlQ
- MSEf4ffKitmCDwnSIVAkqJSZNUB/aQfo6Ui2zLT0F5Ryz8LEqvNYgvQGnyKwe77+XYoS
- Vxb+SytqcBGuoccm99VXH3I6Ke6RBkkw2FA3eFkxWF4W/BvMnNrec62dGeUBH+npxyEk
- XcPA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1CyxLaZcj63tQcR7tpc4uGoE1KDGBKikBpluCv751iQ=;
- b=f7Y+nCLtzcEy/L5NtZEx53LZa2gq5aP2kbNuG9s/GZ2rq6Ya119LPnXkVWTZSy/Lco
- P/CkXadHRfd8ff2jMCLPvOFg+QpimVSPDpM/IFWYnty/7F82H7MCx2vqUSq1UWqpMId8
- DP6z32pjvw7HxzFVivVh3aHPcuAbATEjgy9hiypyR7RJrnGZBVqYSN2hJAOEFREtoO8x
- Ct7V2K6apxqlf86MUz/FnccC9UfIx7VeY/mTh+QN722cPMTJ51LCue1x0evQK7SNDD0r
- IRNZgC8WehmZv5tPcumUGE7qfb+7tHxae8fT7LPYwtJMk8QDbShBQw/rHCKvQ9EVecLy
- DOFA==
-X-Gm-Message-State: AGi0Pub7TaGR8hXiwODdLFs84Oq6Mjo+xmWH4/6HWlI0Sap58LxG9iGr
- Syhu2D8Xf4pqLOv3NarrmO0iIQ==
-X-Google-Smtp-Source: APiQypK3z4yQqpVlHsZhnbToQmUFhKubYEh51/9LQwynKZdCC2YUpDM70yeaRzHItaf4MzlKveltLA==
-X-Received: by 2002:a62:fc82:: with SMTP id
- e124mr23801311pfh.126.1587982963367; 
- Mon, 27 Apr 2020 03:22:43 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id h31sm11276301pjb.33.2020.04.27.03.22.42
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 Apr 2020 03:22:42 -0700 (PDT)
-Date: Mon, 27 Apr 2020 15:52:40 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH 10/10] cpufreq: dt: Add support for r8a7742
-Message-ID: <20200427102240.jsskbskczvctvcwv@vireshk-i7>
-References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587678050-23468-11-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAMuHMdV6J-_gBkzhUXtA8OrxhJVzyrAqjA8oeGJGBp86X-C3Nw@mail.gmail.com>
- <20200427092408.g2vpc6j2c6it4x2i@vireshk-i7>
- <CA+V-a8vwF=u53dZ_U4vX3oAUHrBh5uVUBeOTiDqTZJfV8UUeCA@mail.gmail.com>
+ id 1jT0zl-0000WK-Tv
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:28:15 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RASC6I053238;
+ Mon, 27 Apr 2020 05:28:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1587983292;
+ bh=OIoRkEDtSdqjO07eoDGoCXzJPcwcaFncwmq6XymLSwQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=I6JmHCAwl0UmdN6MVgBG7ihi8V0D6OjmzdLnTWGgj6DEW/JyGj09c7o7gPOXG63LQ
+ naaPd8fQRButejVsBYVlpq3/tXzzgdkTzhyFc4mJ6Z4tZofTAoBHmht/0+yhHcjnQb
+ iTAIDeLMxwe7MBTmSvRRDvqkKTSn5tY2T86GfoNc=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RASC93101456
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 27 Apr 2020 05:28:12 -0500
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 27
+ Apr 2020 05:28:12 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Mon, 27 Apr 2020 05:28:12 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RAS9l5043373;
+ Mon, 27 Apr 2020 05:28:10 -0500
+Subject: Re: [PATCH] arm64: dts: ti: k3-am65-main: Add ehrpwm nodes
+To: Vignesh Raghavendra <vigneshr@ti.com>, Nishanth Menon <nm@ti.com>, Rob
+ Herring <robh+dt@kernel.org>
+References: <20200322112630.25541-1-vigneshr@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <0ebef6a3-7b0e-fc3a-3101-7e1a135093b0@ti.com>
+Date: Mon, 27 Apr 2020 13:28:09 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+V-a8vwF=u53dZ_U4vX3oAUHrBh5uVUBeOTiDqTZJfV8UUeCA@mail.gmail.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20200322112630.25541-1-vigneshr@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_032244_536241_2EFA5915 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_032814_045359_A919FF48 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,57 +92,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>,
- Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Magnus Damm <magnus.damm@gmail.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27-04-20, 11:20, Lad, Prabhakar wrote:
-> Hi Viresh,
+On 22/03/2020 13:26, Vignesh Raghavendra wrote:
+> Add DT nodes for all ehrpwm instances present on AM654 EVM.
 > 
-> On Mon, Apr 27, 2020 at 10:24 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
-> >
-> > On 27-04-20, 11:22, Geert Uytterhoeven wrote:
-> > > Hi Prabhakar,
-> > >
-> > > This patch should be merged through Viresh's cpufreq tree (CCed).
-> > >
-> > > On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
-> > > <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> > > > Add the compatible strings for supporting the generic cpufreq driver on
-> > > > the Renesas RZ/G1H (R8A7742) SoC.
-> > > >
-> > > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
-> > >
-> > > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> >
-> > Prabhakar,
-> >
-> > Please resend the patch with all dependencies to me so I can apply it.
-> >
-> This is the only patch which is needed for R8A7742 SoC which needs to
-> be applied for drivers/cpufreq. Shall I still repost it or you are
-> happy to pick this one up ?
+> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+> ---
+> 
+> clk driver and bindings has been merged to clk-next tree.
 
-would be easier for me if you repost it. I don't have it in my
-mailbox.
+Queued up for 5.8, thanks.
 
--- 
-viresh
+-Tero
+
+> 
+>   arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 60 ++++++++++++++++++++++++
+>   1 file changed, 60 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> index e5df20a2d2f9..da6427bed801 100644
+> --- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> +++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+> @@ -285,6 +285,12 @@ serdes_mux: mux-controller {
+>   			mux-reg-masks = <0x4080 0x3>, /* SERDES0 lane select */
+>   					<0x4090 0x3>; /* SERDES1 lane select */
+>   		};
+> +
+> +		ehrpwm_tbclk: syscon@4140 {
+> +			compatible = "ti,am654-ehrpwm-tbclk", "syscon";
+> +			reg = <0x4140 0x18>;
+> +			#clock-cells = <1>;
+> +		};
+>   	};
+>   
+>   	dwc3_0: dwc3@4000000 {
+> @@ -742,4 +748,58 @@ csi2_0: port@0 {
+>   			};
+>   		};
+>   	};
+> +
+> +	ehrpwm0: pwm@3000000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3000000 0x0 0x100>;
+> +		power-domains = <&k3_pds 40 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 0>, <&k3_clks 40 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+> +
+> +	ehrpwm1: pwm@3010000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3010000 0x0 0x100>;
+> +		power-domains = <&k3_pds 41 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 1>, <&k3_clks 41 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+> +
+> +	ehrpwm2: pwm@3020000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3020000 0x0 0x100>;
+> +		power-domains = <&k3_pds 42 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 2>, <&k3_clks 42 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+> +
+> +	ehrpwm3: pwm@3030000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3030000 0x0 0x100>;
+> +		power-domains = <&k3_pds 43 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 3>, <&k3_clks 43 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+> +
+> +	ehrpwm4: pwm@3040000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3040000 0x0 0x100>;
+> +		power-domains = <&k3_pds 44 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 4>, <&k3_clks 44 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+> +
+> +	ehrpwm5: pwm@3050000 {
+> +		compatible = "ti,am654-ehrpwm", "ti,am3352-ehrpwm";
+> +		#pwm-cells = <3>;
+> +		reg = <0x0 0x3050000 0x0 0x100>;
+> +		power-domains = <&k3_pds 45 TI_SCI_PD_EXCLUSIVE>;
+> +		clocks = <&ehrpwm_tbclk 5>, <&k3_clks 45 0>;
+> +		clock-names = "tbclk", "fck";
+> +	};
+>   };
+> 
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
