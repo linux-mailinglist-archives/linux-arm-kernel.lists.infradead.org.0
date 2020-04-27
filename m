@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62F5A1BA982
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:00:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B812B1BA9A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 18:01:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=doUk2zlyHU7mBOvzDAiKo2gWK0Vnzp1VGTKH1G/bYcw=; b=KQ5KPFxv4YFgWl
-	MIkH1eMVuuREhYuwyBUuKRr6pDwTpQICyZ7xyPl67Zq56vfyACFSmuBDmdqgz70Yp49hxQ8PcCnz3
-	Z2ZLDE260RuzBILWEhTZbCimhff8xdpjqkPVQUIjBNfEz3lsGwdBK3Notr0dMXxGcQRTUnY7tVjyD
-	X7Ov+8u7gAAQxcBtTHpTus9XzL9HWoIk5KQ5JtUWFx+kwmXBsEGth7TSC9ru9pUBD5nxdFbIBHQWl
-	8MX9ondN8f8ngHJl4J1IvNwscSONPgfYSw/RGDvatLyl+AvSbwpJbMaRZ5fzFSIcMao7SbFKRnjjq
-	tJqiR/e/90SNz43MV4WQ==;
+	List-Owner; bh=7WoQ4x1WHIxyXxjtRuT3I/tGg41p3IW1qCOoU3dJCP4=; b=tC//kytlayxCLi
+	fFapbxjWmjI0IvayFacrQ3dU6Zr/PDTPKV/FrGNu6dPpcqzhajHmu7X60lN4uUztAQbFja21iJ6lz
+	+YVsjA8voDFf4tKGlXEV8VS6Bp43CIlT7HXn08OIIYBRfv+cYqaiEcERtdtGrch1zidPB6vUUMBuf
+	a3Itf/6Tt8IKtpfYPqMdeLnRS6f4sPy5V7bT7iU9UW+nFS5ba1ahRnpVPpAZ0jHFq28Nlh0TCtHqO
+	Tj0rJuTzG1ZjkI6yi3BfDAN0yQmJ6VJIvIG6ZYp60pE/wF/v2u1C1nsn7fh7NEqa8az+Kk63ScR34
+	KEhrBS6uKYj5ag3hH90A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT6BQ-00023o-Ss; Mon, 27 Apr 2020 16:00:36 +0000
-Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
+	id 1jT6CW-0002sv-2o; Mon, 27 Apr 2020 16:01:44 +0000
+Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT6BF-0001ht-CH
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:00:27 +0000
-Received: by mail-yb1-xb49.google.com with SMTP id h1so11907568ybk.2
+ id 1jT6BK-0001zZ-TL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 16:00:34 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id h129so11744627ybc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 09:00:23 -0700 (PDT)
+ Mon, 27 Apr 2020 09:00:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=/4Lv0RwdLpBbP8q3ppNzsCXSA3vQogZDo2gd5muLx+Y=;
- b=n9KrHF2mldk7Mz7gH6enPSHcDsT3axVnmACTGqW8hqjoSyGJf+Ov/N1gypzGaPzF5b
- tjH1UqrbHPM3ppck2oAqDpadYWQK3plpcdFVFDR2U7VBiBiYil/ykWh6Ak6uRtLrKKYp
- Mab8sDBlBmubI8WnEoRN6wGVrDVwHOhApQhkyBVirqIeIqMJBIY9RPdpocfTt36V5r4C
- C6Rt+Zh4w+sHpKAq2ucxcfW9XAsYE/j9N86A16uogA56kw9mR5Sk/Q1ayZ++6YnoWz/u
- oD5d2Pu3c9gIg+DD9Dv0P9k5Gm4SdC4VEOYZZFDCeFL2xLNDvg+Rv8NfKypnyO9S54CT
- K+Og==
+ :cc; bh=QBR6Lbc359enZ9GCab/6TfVF8noXTmNT1IXJtHim5eo=;
+ b=s7wahkpCHDvKVqyAdAzdYD9E2iIkX0QxZ2uWff9IdYz7cIH8w3dZYbRll1nlGNY8Ol
+ /Iz+TGe6pY5G1fxDi/RDNT9D3k1VGAhDZnthmSTpwmoo6UmGy7Ntd6qxgQLnuwafxpfV
+ /rWs1NzleEaUVzNyaxRA23BWkgXxxaVzS1TkiC6SzK3erPidXLqYnZteyZ+mP+yPjen2
+ se5wE5LfLkDibsKs+zL7MF6u2aYQ9SKASNsrE11tYtfliRRMHKF1a2mIegifWsb/iQof
+ Wx58HkUfpJ+vmcluKuznlOVb7rSbtIA3Dq3tLXHjWJs1ZwRhPRUxTkshNKedBNYlcffu
+ V7Aw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=/4Lv0RwdLpBbP8q3ppNzsCXSA3vQogZDo2gd5muLx+Y=;
- b=MsD7S2TPgH0AVTuRvb+oBNZLMulYbgxhaMhu2op/DYyl3HVyZWF2GC7PNkS+vtZS3e
- NgS1WEMa9f2ctclLbkfpD8rqwpitO3y1zf6oFSXDlsV2pFcIGzbIx26PrnISLHiFjlSf
- VbhulXtDTSZ1sChjQEZu698KPzU8klkg/5B9DGs1APm5X7l8IW4XK5Qr6VlwdhilVO4+
- 0AoArylrzv/Iu2hKRWAZ2ipw3mv4K712NMdOR6WVd+dXBeerOIEucyxQEsUJEeb/MA8k
- RR/pl5/AtRwjA96gOs1QzxQZowl211GPJaEPas6Z/CsfUNHy9pvOoOHa/jVnO8C/pz9B
- 6vJw==
-X-Gm-Message-State: AGi0PuYgOax8xY2c4gBj4TUgLCOxmyktjjWgTsemR5SzvgOMkdiSFVQx
- EeZiMUeL8ycBmWg8yNfoqwF/FNm2fPtPrD33E1c=
-X-Google-Smtp-Source: APiQypJnnD9EI6KF+/UDyiS/9DnXsuJlM33wVB2skvTGfCVt0jnZVDF2xIHtf5pKsXizHZdOKBi+N7X6MZrXt/R9nRU=
-X-Received: by 2002:a5b:345:: with SMTP id q5mr35788916ybp.494.1588003222670; 
- Mon, 27 Apr 2020 09:00:22 -0700 (PDT)
-Date: Mon, 27 Apr 2020 09:00:06 -0700
-In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
-Message-Id: <20200427160018.243569-1-samitolvanen@google.com>
+ bh=QBR6Lbc359enZ9GCab/6TfVF8noXTmNT1IXJtHim5eo=;
+ b=pSVxXY0FkjzuIIBea6F1mWRNOEJd2jK0W9Mk7II9MmUbmLVEmzM69g1iw8Wjq/sc5O
+ AXp58tsfGF50O35wWi1yqxQYUFZEFygA1ZcwdG6Gj3JeYlrsKz0C+qf00TBh/6vnS9jy
+ +KP4hNieLklfhqw2Fz1WylZp2p8eziKVRqkf65yDVnhr3J3A+z3/oBBD7U7OLlu9mkpV
+ inL8e5k00GHXP7Qn3980jkE/yxWx1NPYhM725i7WDcSK51I22NIFH5n0FIveFNGd/OSG
+ XcnH1T4OHHn4OM1187XS7P7pICPjuinkpqudShwy8Ta5lfKj7HEL+EtzHi++U0Wk9wa5
+ 2wzQ==
+X-Gm-Message-State: AGi0PuZnEFU9MojB7kz6pjuuifKZeYfn9tEYSqdkCJgn7S/VDTzr8YMi
+ l9XUC6XlxtTEScPMXEkUrvRxcf+qPG95pBj1QsM=
+X-Google-Smtp-Source: APiQypIg1Fxqu2AHiC+o+ltA4wFCSgwiteBygrQAq5XLPj1AxM9UmaZg0zP0NYErifBqdO4h510rY8jJhoQl/C1Hg+g=
+X-Received: by 2002:a25:a3a1:: with SMTP id e30mr35450525ybi.10.1588003225936; 
+ Mon, 27 Apr 2020 09:00:25 -0700 (PDT)
+Date: Mon, 27 Apr 2020 09:00:07 -0700
+In-Reply-To: <20200427160018.243569-1-samitolvanen@google.com>
+Message-Id: <20200427160018.243569-2-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200427160018.243569-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
-Subject: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
+Subject: [PATCH v13 01/12] add support for Clang's Shadow Call Stack (SCS)
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
@@ -68,15 +69,15 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Juri Lelli <juri.lelli@redhat.com>,
  Vincent Guittot <vincent.guittot@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_090025_451407_892E46D7 
-X-CRM114-Status: GOOD (  24.19  )
+X-CRM114-CacheID: sfid-20200427_090030_968976_ABB868F4 
+X-CRM114-Status: GOOD (  24.56  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,209 +115,368 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds support for Clang's Shadow Call Stack
-(SCS) mitigation, which uses a separately allocated shadow stack
-to protect against return address overwrites. More information
-can be found here:
+This change adds generic support for Clang's Shadow Call Stack,
+which uses a shadow stack to protect return addresses from being
+overwritten by an attacker. Details are available here:
 
   https://clang.llvm.org/docs/ShadowCallStack.html
 
-SCS provides better protection against traditional buffer
-overflows than CONFIG_STACKPROTECTOR_*, but it should be noted
-that SCS security guarantees in the kernel differ from the ones
+Note that security guarantees in the kernel differ from the ones
 documented for user space. The kernel must store addresses of
-shadow stacks in memory, which means an attacker capable of
-reading and writing arbitrary memory may be able to locate them
-and hijack control flow by modifying the shadow stacks.
+shadow stacks in memory, which means an attacker capable reading
+and writing arbitrary memory may be able to locate them and hijack
+control flow by modifying the stacks.
 
-SCS is currently supported only on arm64, where the compiler
-requires the x18 register to be reserved for holding the current
-task's shadow stack pointer.
-
-With -fsanitize=shadow-call-stack, the compiler injects
-instructions to all non-leaf C functions to store the return
-address to the shadow stack, and unconditionally load it again
-before returning. As a result, SCS is incompatible with features
-that rely on modifying function return addresses in the kernel
-stack to alter control flow. A copy of the return address is
-still kept in the kernel stack for compatibility with stack
-unwinding, for example.
-
-SCS has a minimal performance overhead, but allocating
-shadow stacks increases kernel memory usage. The feature is
-therefore mostly useful on hardware that lacks support for PAC
-instructions.
-
-Changes in v13:
- - Changed thread_info::shadow_call_stack to a base address and
-   an offset instead, and removed the now unneeded __scs_base()
-   and scs_save().
- - Removed alignment from the kmem_cache and static allocations.
- - Removed the task_set_scs() helper function.
- - Moved the assembly code for loading and storing the offset in
-   thread_info to scs_load/save macros.
- - Added offset checking to scs_corrupted().
- - Switched to cmpxchg_relaxed() in scs_check_usage().
-
-Changes in v12:
- - Removed CONFIG_SHADOW_CALL_STACK_VMAP.
- - Added CC_IS_CLANG as a dependency to CONFIG_SHADOW_CALL_STACK.
- - Changed SCS_END_MAGIC to use POISON_POINTER_DELTA.
- - Removed the unnecessary scs_set_magic() helper function.
- - Moved scs_task_reset() and scs_corrupted() to scs.h, along with
-   __scs_magic() and __scs_base().
- - Removed a redundant warning from memory allocation.
- - Removed an unnecessary task_set_scs() call from scs_release().
- - Changed the accounting code to calculate KiB instead of bytes.
- - Replaced the lock in scs_check_usage() with a cmpxchg() loop.
-
-Changes in v11:
- - Rebased, added maintainers for kernel/ changes.
-
-Changes in v10:
- - Removed an unnecessary <asm/scs.h> include from head.S.
-
-Changes in v9:
- - Fixed grammar in the Kconfig help text.
- - Changed Kconfig to allow SCS to be selected with the patchable-
-   function-entry graph tracer.
- - Changed the EFI stub patch to not filter out -ffixed-x18, only
-   SCS flags.
-
-Changes in v8:
- - Added __noscs to __hyp_text instead of filtering SCS flags from
-   the entire arch/arm64/kvm/hyp directory.
- - Added a patch to filter out -ffixed-x18 and SCS flags from the
-   EFI stub.
-
-Changes in v7:
- - Changed irq_stack_entry/exit to store the shadow stack pointer
-   in x24 instead of x20 as kernel_entry uses x20-x23 to store
-   data that can be used later. Updated the comment as well.
- - Changed the Makefile in arch/arm64/kvm/hyp to also filter out
-   -ffixed-x18.
- - Changed SHADOW_CALL_STACK to depend on !FUNCTION_GRAPH_TRACER
-   instead of not selecting HAVE_FUNCTION_GRAPH_TRACER with SCS.
- - Removed ifdefs from the EFI wrapper and updated the comment to
-   explain why we are restoring x18.
- - Rebased as Ard's x18 patches that were part of this series have
-   already been merged.
-
-Changes in v6:
- - Updated comment in the EFI RT wrapper to include the
-   explanation from the commit message.
- - Fixed the SHADOW_CALL_STACK_VMAP config option and the
-   compilation errors in scs_init_irq()
- - Updated the comment in entry.S to Mark's suggestion
- - Fixed the WARN_ON in scs_init() to trip only when the return
-   value for cpuhp_setup_state() is < 0.
- - Removed ifdefs from the code in arch/arm64/kernel/scs.c and
-   added separate shadow stacks for the SDEI handler
-
-Changes in v5:
- - Updated the comment in __scs_base() to Mark's suggestion
- - Changed all instances of uintptr_t to unsigned long
- - Added allocation poisoning for KASAN to catch unintentional
-   shadow stack accesses; moved set_set_magic before poisoning
-   and switched scs_used() and scs_corrupted() to access the
-   buffer using READ_ONCE_NOCHECK() instead
- - Changed scs_free() to check for NULL instead of zero
- - Renamed SCS_CACHE_SIZE to NR_CACHED_SCS
- - Added a warning if cpuhp_setup_state fails in scs_init()
- - Dropped patches disabling kretprobes after confirming there's
-   no functional conflict with SCS instrumentation
- - Added an explanation to the commit message why function graph
-   tracing and SCS are incompatible
- - Removed the ifdefs from arch/arm64/mm/proc.S and added
-   comments explaining why we are saving and restoring x18
- - Updated scs_check_usage format to include process information
-
-Changes in v4:
- - Fixed authorship for Ard's patches
- - Added missing commit messages
- - Commented code that clears SCS from thread_info
- - Added a comment about SCS_END_MAGIC being non-canonical
-
-Changes in v3:
- - Switched to filter-out for removing SCS flags in Makefiles
- - Changed the __noscs attribute to use __no_sanitize__("...")
-   instead of no_sanitize("...")
- - Cleaned up inline function definitions and moved task_scs()
-   into a macro
- - Cleaned up scs_free() and scs_magic()
- - Moved SCS initialization into dup_task_struct() and removed
-   the now unused scs_task_init()
- - Added comments to __scs_base() and scs_task_reset() to better
-   document design choices
- - Changed copy_page to make the offset and bias explicit
-
-Changes in v2:
- - Changed Ard's KVM patch to use x29 instead of x18 for the
-   guest context, which makes restore_callee_saved_regs cleaner
- - Updated help text (and commit messages) to point out
-   differences in security properties compared to user space SCS
- - Cleaned up config options: removed the ROP protection choice,
-   replaced the CC_IS_CLANG dependency with an arch-specific
-   cc-option test, and moved disabling of incompatible config
-   options to an arch-specific Kconfig
- - Added CC_FLAGS_SCS, which are filtered out where needed
-   instead of using DISABLE_SCS
- - Added a __has_feature guard around __noscs for older clang
-   versions
-
-Sami Tolvanen (12):
-  add support for Clang's Shadow Call Stack (SCS)
-  scs: add accounting
-  scs: add support for stack usage debugging
-  scs: disable when function graph tracing is enabled
-  arm64: reserve x18 from general allocation with SCS
-  arm64: preserve x18 when CPU is suspended
-  arm64: efi: restore x18 if it was corrupted
-  arm64: vdso: disable Shadow Call Stack
-  arm64: disable SCS for hypervisor code
-  arm64: implement Shadow Call Stack
-  arm64: scs: add shadow stacks for SDEI
-  efi/libstub: disable SCS
-
- Makefile                              |   6 ++
- arch/Kconfig                          |  25 ++++++
- arch/arm64/Kconfig                    |   5 ++
- arch/arm64/Makefile                   |   4 +
- arch/arm64/include/asm/kvm_hyp.h      |   2 +-
- arch/arm64/include/asm/scs.h          |  46 ++++++++++
- arch/arm64/include/asm/suspend.h      |   2 +-
- arch/arm64/include/asm/thread_info.h  |  13 +++
- arch/arm64/kernel/Makefile            |   1 +
- arch/arm64/kernel/asm-offsets.c       |   4 +
- arch/arm64/kernel/efi-rt-wrapper.S    |  11 ++-
- arch/arm64/kernel/entry.S             |  38 +++++++-
- arch/arm64/kernel/head.S              |   6 ++
- arch/arm64/kernel/process.c           |   2 +
- arch/arm64/kernel/scs.c               |  20 +++++
- arch/arm64/kernel/vdso/Makefile       |   2 +-
- arch/arm64/mm/proc.S                  |  14 +++
- drivers/base/node.c                   |   6 ++
- drivers/firmware/efi/libstub/Makefile |   3 +
- fs/proc/meminfo.c                     |   4 +
- include/linux/compiler-clang.h        |   6 ++
- include/linux/compiler_types.h        |   4 +
- include/linux/mmzone.h                |   3 +
- include/linux/scs.h                   |  72 +++++++++++++++
- init/init_task.c                      |   8 ++
- kernel/Makefile                       |   1 +
- kernel/fork.c                         |   9 ++
- kernel/sched/core.c                   |   2 +
- kernel/scs.c                          | 121 ++++++++++++++++++++++++++
- mm/page_alloc.c                       |   6 ++
- mm/vmstat.c                           |   3 +
- 31 files changed, 442 insertions(+), 7 deletions(-)
- create mode 100644 arch/arm64/include/asm/scs.h
- create mode 100644 arch/arm64/kernel/scs.c
+Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+---
+ Makefile                       |  6 +++
+ arch/Kconfig                   | 24 ++++++++++++
+ include/linux/compiler-clang.h |  6 +++
+ include/linux/compiler_types.h |  4 ++
+ include/linux/scs.h            | 72 ++++++++++++++++++++++++++++++++++
+ init/init_task.c               |  8 ++++
+ kernel/Makefile                |  1 +
+ kernel/fork.c                  |  9 +++++
+ kernel/sched/core.c            |  2 +
+ kernel/scs.c                   | 68 ++++++++++++++++++++++++++++++++
+ 10 files changed, 200 insertions(+)
  create mode 100644 include/linux/scs.h
  create mode 100644 kernel/scs.c
 
-
-base-commit: 6a8b55ed4056ea5559ebe4f6a4b247f627870d4c
+diff --git a/Makefile b/Makefile
+index 679f302a8b8b..33dc0d0cdd08 100644
+--- a/Makefile
++++ b/Makefile
+@@ -866,6 +866,12 @@ ifdef CONFIG_LIVEPATCH
+ KBUILD_CFLAGS += $(call cc-option, -flive-patching=inline-clone)
+ endif
+ 
++ifdef CONFIG_SHADOW_CALL_STACK
++CC_FLAGS_SCS	:= -fsanitize=shadow-call-stack
++KBUILD_CFLAGS	+= $(CC_FLAGS_SCS)
++export CC_FLAGS_SCS
++endif
++
+ # arch Makefile may override CC so keep this after arch Makefile is included
+ NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
+ 
+diff --git a/arch/Kconfig b/arch/Kconfig
+index 786a85d4ad40..334a3d9b19df 100644
+--- a/arch/Kconfig
++++ b/arch/Kconfig
+@@ -533,6 +533,30 @@ config STACKPROTECTOR_STRONG
+ 	  about 20% of all kernel functions, which increases the kernel code
+ 	  size by about 2%.
+ 
++config ARCH_SUPPORTS_SHADOW_CALL_STACK
++	bool
++	help
++	  An architecture should select this if it supports Clang's Shadow
++	  Call Stack, has asm/scs.h, and implements runtime support for shadow
++	  stack switching.
++
++config SHADOW_CALL_STACK
++	bool "Clang Shadow Call Stack"
++	depends on CC_IS_CLANG && ARCH_SUPPORTS_SHADOW_CALL_STACK
++	help
++	  This option enables Clang's Shadow Call Stack, which uses a
++	  shadow stack to protect function return addresses from being
++	  overwritten by an attacker. More information can be found in
++	  Clang's documentation:
++
++	    https://clang.llvm.org/docs/ShadowCallStack.html
++
++	  Note that security guarantees in the kernel differ from the
++	  ones documented for user space. The kernel must store addresses
++	  of shadow stacks in memory, which means an attacker capable of
++	  reading and writing arbitrary memory may be able to locate them
++	  and hijack control flow by modifying the stacks.
++
+ config HAVE_ARCH_WITHIN_STACK_FRAMES
+ 	bool
+ 	help
+diff --git a/include/linux/compiler-clang.h b/include/linux/compiler-clang.h
+index 333a6695a918..18fc4d29ef27 100644
+--- a/include/linux/compiler-clang.h
++++ b/include/linux/compiler-clang.h
+@@ -42,3 +42,9 @@
+  * compilers, like ICC.
+  */
+ #define barrier() __asm__ __volatile__("" : : : "memory")
++
++#if __has_feature(shadow_call_stack)
++# define __noscs	__attribute__((__no_sanitize__("shadow-call-stack")))
++#else
++# define __noscs
++#endif
+diff --git a/include/linux/compiler_types.h b/include/linux/compiler_types.h
+index e970f97a7fcb..97b62f47a80d 100644
+--- a/include/linux/compiler_types.h
++++ b/include/linux/compiler_types.h
+@@ -193,6 +193,10 @@ struct ftrace_likely_data {
+ # define randomized_struct_fields_end
+ #endif
+ 
++#ifndef __noscs
++# define __noscs
++#endif
++
+ #ifndef asm_volatile_goto
+ #define asm_volatile_goto(x...) asm goto(x)
+ #endif
+diff --git a/include/linux/scs.h b/include/linux/scs.h
+new file mode 100644
+index 000000000000..060eeb3d1390
+--- /dev/null
++++ b/include/linux/scs.h
+@@ -0,0 +1,72 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Shadow Call Stack support.
++ *
++ * Copyright (C) 2019 Google LLC
++ */
++
++#ifndef _LINUX_SCS_H
++#define _LINUX_SCS_H
++
++#include <linux/gfp.h>
++#include <linux/poison.h>
++#include <linux/sched.h>
++#include <asm/page.h>
++
++#ifdef CONFIG_SHADOW_CALL_STACK
++
++/*
++ * In testing, 1 KiB shadow stack size (i.e. 128 stack frames on a 64-bit
++ * architecture) provided ~40% safety margin on stack usage while keeping
++ * memory allocation overhead reasonable.
++ */
++#define SCS_SIZE		1024UL
++#define GFP_SCS			(GFP_KERNEL | __GFP_ZERO)
++
++/* An illegal pointer value to mark the end of the shadow stack. */
++#define SCS_END_MAGIC		(0x5f6UL + POISON_POINTER_DELTA)
++
++#define task_scs(tsk)		(task_thread_info(tsk)->scs_base)
++#define task_scs_offset(tsk)	(task_thread_info(tsk)->scs_offset)
++
++extern void scs_init(void);
++
++static inline void scs_task_reset(struct task_struct *tsk)
++{
++	/*
++	 * Reset the shadow stack to the base address in case the task
++	 * is reused.
++	 */
++	task_scs_offset(tsk) = 0;
++}
++
++extern int scs_prepare(struct task_struct *tsk, int node);
++
++static inline unsigned long *__scs_magic(void *s)
++{
++	return (unsigned long *)(s + SCS_SIZE) - 1;
++}
++
++static inline bool scs_corrupted(struct task_struct *tsk)
++{
++	unsigned long *magic = __scs_magic(task_scs(tsk));
++
++	return (task_scs_offset(tsk) >= SCS_SIZE - 1 ||
++		READ_ONCE_NOCHECK(*magic) != SCS_END_MAGIC);
++}
++
++extern void scs_release(struct task_struct *tsk);
++
++#else /* CONFIG_SHADOW_CALL_STACK */
++
++#define task_scs(tsk)	NULL
++
++static inline void scs_init(void) {}
++static inline void scs_task_reset(struct task_struct *tsk) {}
++static inline int scs_prepare(struct task_struct *tsk, int node) { return 0; }
++static inline bool scs_corrupted(struct task_struct *tsk) { return false; }
++static inline void scs_release(struct task_struct *tsk) {}
++
++#endif /* CONFIG_SHADOW_CALL_STACK */
++
++#endif /* _LINUX_SCS_H */
+diff --git a/init/init_task.c b/init/init_task.c
+index bd403ed3e418..169e34066d35 100644
+--- a/init/init_task.c
++++ b/init/init_task.c
+@@ -11,6 +11,7 @@
+ #include <linux/mm.h>
+ #include <linux/audit.h>
+ #include <linux/numa.h>
++#include <linux/scs.h>
+ 
+ #include <asm/pgtable.h>
+ #include <linux/uaccess.h>
+@@ -50,6 +51,13 @@ static struct sighand_struct init_sighand = {
+ 	.signalfd_wqh	= __WAIT_QUEUE_HEAD_INITIALIZER(init_sighand.signalfd_wqh),
+ };
+ 
++#ifdef CONFIG_SHADOW_CALL_STACK
++unsigned long init_shadow_call_stack[SCS_SIZE / sizeof(long)]
++		__init_task_data = {
++	[(SCS_SIZE / sizeof(long)) - 1] = SCS_END_MAGIC
++};
++#endif
++
+ /*
+  * Set up the first task table, touch at your own risk!. Base=0,
+  * limit=0x1fffff (=2MB)
+diff --git a/kernel/Makefile b/kernel/Makefile
+index 4cb4130ced32..c332eb9d4841 100644
+--- a/kernel/Makefile
++++ b/kernel/Makefile
+@@ -103,6 +103,7 @@ obj-$(CONFIG_TRACEPOINTS) += trace/
+ obj-$(CONFIG_IRQ_WORK) += irq_work.o
+ obj-$(CONFIG_CPU_PM) += cpu_pm.o
+ obj-$(CONFIG_BPF) += bpf/
++obj-$(CONFIG_SHADOW_CALL_STACK) += scs.o
+ 
+ obj-$(CONFIG_PERF_EVENTS) += events/
+ 
+diff --git a/kernel/fork.c b/kernel/fork.c
+index 8c700f881d92..f6339f9d232d 100644
+--- a/kernel/fork.c
++++ b/kernel/fork.c
+@@ -94,6 +94,7 @@
+ #include <linux/thread_info.h>
+ #include <linux/stackleak.h>
+ #include <linux/kasan.h>
++#include <linux/scs.h>
+ 
+ #include <asm/pgtable.h>
+ #include <asm/pgalloc.h>
+@@ -456,6 +457,8 @@ void put_task_stack(struct task_struct *tsk)
+ 
+ void free_task(struct task_struct *tsk)
+ {
++	scs_release(tsk);
++
+ #ifndef CONFIG_THREAD_INFO_IN_TASK
+ 	/*
+ 	 * The task is finally done with both the stack and thread_info,
+@@ -840,6 +843,8 @@ void __init fork_init(void)
+ 			  NULL, free_vm_stack_cache);
+ #endif
+ 
++	scs_init();
++
+ 	lockdep_init_task(&init_task);
+ 	uprobes_init();
+ }
+@@ -899,6 +904,10 @@ static struct task_struct *dup_task_struct(struct task_struct *orig, int node)
+ 	if (err)
+ 		goto free_stack;
+ 
++	err = scs_prepare(tsk, node);
++	if (err)
++		goto free_stack;
++
+ #ifdef CONFIG_SECCOMP
+ 	/*
+ 	 * We must handle setting up seccomp filters once we're under
+diff --git a/kernel/sched/core.c b/kernel/sched/core.c
+index 9a2fbf98fd6f..934e03cfaec7 100644
+--- a/kernel/sched/core.c
++++ b/kernel/sched/core.c
+@@ -11,6 +11,7 @@
+ #include <linux/nospec.h>
+ 
+ #include <linux/kcov.h>
++#include <linux/scs.h>
+ 
+ #include <asm/switch_to.h>
+ #include <asm/tlb.h>
+@@ -6040,6 +6041,7 @@ void init_idle(struct task_struct *idle, int cpu)
+ 	idle->se.exec_start = sched_clock();
+ 	idle->flags |= PF_IDLE;
+ 
++	scs_task_reset(idle);
+ 	kasan_unpoison_task_stack(idle);
+ 
+ #ifdef CONFIG_SMP
+diff --git a/kernel/scs.c b/kernel/scs.c
+new file mode 100644
+index 000000000000..43624be9ad90
+--- /dev/null
++++ b/kernel/scs.c
+@@ -0,0 +1,68 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Shadow Call Stack support.
++ *
++ * Copyright (C) 2019 Google LLC
++ */
++
++#include <linux/kasan.h>
++#include <linux/scs.h>
++#include <linux/slab.h>
++#include <asm/scs.h>
++
++static struct kmem_cache *scs_cache;
++
++static void *scs_alloc(int node)
++{
++	void *s;
++
++	s = kmem_cache_alloc_node(scs_cache, GFP_SCS, node);
++	if (s) {
++		*__scs_magic(s) = SCS_END_MAGIC;
++		/*
++		 * Poison the allocation to catch unintentional accesses to
++		 * the shadow stack when KASAN is enabled.
++		 */
++		kasan_poison_object_data(scs_cache, s);
++	}
++
++	return s;
++}
++
++static void scs_free(void *s)
++{
++	kasan_unpoison_object_data(scs_cache, s);
++	kmem_cache_free(scs_cache, s);
++}
++
++void __init scs_init(void)
++{
++	scs_cache = kmem_cache_create("scs_cache", SCS_SIZE, 0, 0, NULL);
++}
++
++int scs_prepare(struct task_struct *tsk, int node)
++{
++	void *s;
++
++	s = scs_alloc(node);
++	if (!s)
++		return -ENOMEM;
++
++	task_scs(tsk) = s;
++	task_scs_offset(tsk) = 0;
++
++	return 0;
++}
++
++void scs_release(struct task_struct *tsk)
++{
++	void *s;
++
++	s = task_scs(tsk);
++	if (!s)
++		return;
++
++	WARN_ON(scs_corrupted(tsk));
++
++	scs_free(s);
++}
 -- 
 2.26.2.303.gf8c07b1a785-goog
 
