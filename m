@@ -2,72 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0D0D1BA045
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:46:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 642E11BA07B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 11:55:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YylBMAPiv7WdNuPAt+u2Ja5go3EAYOcPkyVDWbJKiD4=; b=ryVVJ+TT+vjZif
-	CQS9yKstHCG7u0mUqwgXlmoKSxn+n10HeIA5vYo+804qQdlplkCbcuD38jNoy0/VPpPYVEFJY/Bl3
-	jkX90ZMdprZ3roUt912f3ZuiCobEN3LyJAk7iJNQXDfNSZ5Qw8k9zfn26UZ1Q1lLSp++ItmqbVsBL
-	5S4AQ0OnikGGxWoUtC+Am3oFJezcMIHIKrRIkM0+cvbysHkbwJd6vku3aOgop7/y9hvBI2bT6KC+l
-	rH+POjaxx89RsTyYj5+nceJnJLKzP/qwIiM5Lb6BSnJFvRbvHNpoPLc+M9ANexbaX8m9zD6sJwaRl
-	YEf+S0K+N/HZOvi7vyXw==;
+	List-Owner; bh=N+xH1KtKnpZqzCvHe9KC1S5rbswwfQQhyHWjVQoO3oA=; b=lspoVTjV39hT+L
+	pxOv1Pt8TwlEfKykChW/5O6T8omaSzsmrQSoFIHQdqD3wckc4w/oHzXFGGOFDhnHRVLL2zseBoXxQ
+	zAI/JR0kcsJ2zrMvpvnNfZyC73djoK/fP4hTn9amWG1zlHQs1ojuB6r9rZozrPi6wg2D58RWKPiHm
+	wMnvNg6n7Qrb2b5y6dbpaJ7lVvE/cT8vHpIP17gA18jv97bGNU5EuWOPUkB6gZ0hMmwbXJn4lqMvO
+	74hmDQyhXA5+YpCPfszG4kSXH0AINaaKYPKfbwDpYZ/dCLtsJP31uB0KcSJkJt91bNvRGd7j2LsMs
+	MLoNfkpIoCf1X9NivQKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT0Ld-00045o-Pp; Mon, 27 Apr 2020 09:46:45 +0000
-Received: from first.geanix.com ([116.203.34.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT0L9-0003ti-Ke
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 09:46:17 +0000
-Received: from localhost (87-49-45-242-mobile.dk.customer.tdc.net
- [87.49.45.242])
- by first.geanix.com (Postfix) with ESMTPSA id 750221F60926;
- Mon, 27 Apr 2020 09:46:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
- t=1587980771; bh=AwtusWpYt0LjMAEEufQD2qMu5uEH4zwOOrUFXhxnuNo=;
- h=From:To:Cc:Subject:References:Date:In-Reply-To;
- b=A1BmdL+VtH0e0/3aFPtJlxa6fTvYjW4SNEsJQrx3/q3i87z27fb3KcWUDicBz1b/b
- AUUvhQH4zT5Kgt/u/HpT/cN6kImVutqs9cyBWkLVezLWstRpuXVrrEZbPPnEOMr2k/
- eCTOTYngvFURE9wY2gcdvQkiDCTURK4uUNHCQOsiC5V2Hux9r6Acxs+yim/MrDQU1O
- XS8XThsWPcqd+DAqY/Z3BZZPHQMV6NUReVKIBMF36FPAGfz8lZll02r2ic4LU2fPvH
- WBnRj1ViXSsnisSuaLvOR1LnCrHHrp42jvd9iVu38wmGelUGiPFCBCZRMW451xz1vi
- aEtUjg3Y13/8Q==
-From: Esben Haabendal <esben@geanix.com>
-To: Wei Yongjun <weiyongjun1@huawei.com>
-Subject: Re: [PATCH net-next] net: ll_temac: Fix return value check in
- temac_probe()
-References: <20200427094052.181554-1-weiyongjun1@huawei.com>
-Date: Mon, 27 Apr 2020 11:46:10 +0200
-In-Reply-To: <20200427094052.181554-1-weiyongjun1@huawei.com> (Wei Yongjun's
- message of "Mon, 27 Apr 2020 09:40:52 +0000")
-Message-ID: <87sggpp8gt.fsf@geanix.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
+	id 1jT0Tz-0001Xx-TI; Mon, 27 Apr 2020 09:55:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jT0Tf-0000MG-SC
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 09:55:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B8101FB;
+ Mon, 27 Apr 2020 02:55:01 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 63DB63F68F;
+ Mon, 27 Apr 2020 02:54:58 -0700 (PDT)
+Date: Mon, 27 Apr 2020 10:54:52 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Jianyong Wu <Jianyong.Wu@arm.com>
+Subject: Re: [RFC PATCH v11 5/9] psci: Add hypercall service for ptp_kvm.
+Message-ID: <20200427095452.GA1300@C02TD0UTHF1T.local>
+References: <20200421032304.26300-1-jianyong.wu@arm.com>
+ <20200421032304.26300-6-jianyong.wu@arm.com>
+ <20200421095736.GB16306@C02TD0UTHF1T.local>
+ <ab629714-c08c-2155-dd13-ad25e7f60b39@arm.com>
+ <20200424103953.GD1167@C02TD0UTHF1T.local>
+ <b005e2c8-ed9f-3dc6-dbfa-5e6db5183f3c@arm.com>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-3.1 required=4.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,URIBL_BLOCKED
- autolearn=disabled version=3.4.4
-X-Spam-Checker-Version: SpamAssassin 3.4.4 (2020-01-24) on 581450de519a
+Content-Disposition: inline
+In-Reply-To: <b005e2c8-ed9f-3dc6-dbfa-5e6db5183f3c@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_024616_273156_9894CCF2 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_025503_973324_51CCBB2D 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,55 +67,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, netdev@vger.kernel.org, kernel-janitors@vger.kernel.org,
- michal.simek@xilinx.com, ynezz@true.cz, linux-arm-kernel@lists.infradead.org
+Cc: "maz@kernel.org" <maz@kernel.org>, Justin He <Justin.He@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ Steve Capper <Steve.Capper@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ Steven Price <Steven.Price@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "pbonzini@redhat.com" <pbonzini@redhat.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Acked-by: Esben Haabendal <esben@geanix.com>
+Hi,
 
-Wei Yongjun <weiyongjun1@huawei.com> writes:
+On Sun, Apr 26, 2020 at 06:02:23AM +0100, Jianyong Wu wrote:
+> <html>
+> <head>
+> <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+> </head>
+> <body>
 
-> In case of error, the function devm_ioremap() returns NULL pointer
-> not ERR_PTR(). The IS_ERR() test in the return value check should
-> be replaced with NULL test.
->
-> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
-> ---
->  drivers/net/ethernet/xilinx/ll_temac_main.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
-> index 3e313e71ae36..929244064abd 100644
-> --- a/drivers/net/ethernet/xilinx/ll_temac_main.c
-> +++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
-> @@ -1410,9 +1410,9 @@ static int temac_probe(struct platform_device *pdev)
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	lp->regs = devm_ioremap(&pdev->dev, res->start,
->  					resource_size(res));
-> -	if (IS_ERR(lp->regs)) {
-> +	if (!lp->regs) {
->  		dev_err(&pdev->dev, "could not map TEMAC registers\n");
-> -		return PTR_ERR(lp->regs);
-> +		return -ENOMEM;
->  	}
->  
->  	/* Select register access functions with the specified
-> @@ -1505,10 +1505,10 @@ static int temac_probe(struct platform_device *pdev)
->  		res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
->  		lp->sdma_regs = devm_ioremap(&pdev->dev, res->start,
->  						     resource_size(res));
-> -		if (IS_ERR(lp->sdma_regs)) {
-> +		if (!lp->sdma_regs) {
->  			dev_err(&pdev->dev,
->  				"could not map DMA registers\n");
-> -			return PTR_ERR(lp->sdma_regs);
-> +			return -ENOMEM;
->  		}
->  		if (pdata->dma_little_endian) {
->  			lp->dma_in = temac_dma_in32_le;
+Please fix your mail client to reply in plain text rather than HTML;
+it's much more painful than necessary to review and have a conversation
+when mails revert to HTML.
+
+It would be very helpful if you could resend this mail as plaintext as
+above.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
