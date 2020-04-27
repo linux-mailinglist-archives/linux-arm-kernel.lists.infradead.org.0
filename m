@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F0491BB233
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 01:54:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E17901BB265
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 01:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cxEK2nZ2ZWTS3cRp1XCWQsrCeQ3Vav9iX94z8EB4bJ0=; b=u9ntGhBtpI1VyV
-	4bRiOwb7FWk4jnIoH5e9uucsxx7iBrrHVfCX1rnlGwz+FR814FFDltySljml2utjc17jcualCbsND
-	CaJGxUKBKxreVun2KGY2LyNkAKak/lMjDpSnoDUwPuxbeVz8DtsiCZIYRFFOp1T15hLm6tvrTcB5r
-	gBL9xum6MUdc97h9o4XfMKB6FG75ZTkqjZjJqsuE1NZ5rk5mnnswxpu2u/b1xl2FXmCcwYVprVHnP
-	/3ToW8eQa1hoEG4NZ5QC9HMpraL3YPs5PeDCyUz0k5lyD9Eg1HRdCrIVCtZscMvOkqlCP/m3siQ+Q
-	z32zNych2BoRdC2jMnbw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7N2ZsLrWt0VrtEiuVNymzu1c5yREM0eDTDWFVi1t994=; b=qBurBcLhc479bx
+	ZHJexmfHw/oAVtN9Zft/o4g0qCL4Dmjk1DR5a6AgRUrsRXgOHFkS7k6Unb0LVmiKWb4nptbbF29fu
+	EdT7jG0NNBOF6dIlz5AYS0/G4f1ymBaeq80XWIhXhVV4nK2nMqDjeDrGMk1+nbJEOoEye8UexmOOx
+	/7UfvxZrsI0O+TPOVb5nkfb2/338yf8RUk3hTpOOEIDdQUKq2npwEP43c+2Qf1RNI/lbSQ247iqG8
+	ESzCRnYU27fG74+MTumpzGc1VsxZppMrdV+YFXZtMROFHKzPCkVKc/Oo7bGarKPJFNBBLq3KwQdzH
+	lW390iQAj8c/YsEva4Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTDZT-0005GV-P8; Mon, 27 Apr 2020 23:53:55 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jTDeA-0001Fc-9f; Mon, 27 Apr 2020 23:58:46 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTDZK-0005Fc-IX
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 23:53:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588031625;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=vCpLh05vrSFnAMWAQ3GvOGITpQiy3hkoT81RPE/4NEg=;
- b=LdOLkfEWU/7/sXlaJDfj3UepJqIxh1GKLegLqgTc+09lodqxhy8VFynhzuXDzdVuj2V1B7
- 4Q/dbVz2CG3ZK95mfm0DU5draZwR7X/jopA72zCtssF1/rU8Z/nSA2cLtmLuJXHtspxnQr
- bBzXNkuB2is8BYRL9kAhzDny3Ps0TC4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-224-xs_S9lOGM3a0v-IsKUqYAA-1; Mon, 27 Apr 2020 19:53:41 -0400
-X-MC-Unique: xs_S9lOGM3a0v-IsKUqYAA-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8FE2F1005510;
- Mon, 27 Apr 2020 23:53:39 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-127.bne.redhat.com
- [10.64.54.127])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B965910013D9;
- Mon, 27 Apr 2020 23:53:36 +0000 (UTC)
-Subject: Re: [PATCH] arm64/kernel: Fix range on invalidating dcache for boot
- page tables
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200424050230.16720-1-gshan@redhat.com>
- <20200424100131.GB1167@C02TD0UTHF1T.local>
-From: Gavin Shan <gshan@redhat.com>
-Message-ID: <f62c7189-27e5-d820-fdd2-72ec5936aa68@redhat.com>
-Date: Tue, 28 Apr 2020 09:53:34 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1jTDcn-0000Cn-Ap; Mon, 27 Apr 2020 23:57:23 +0000
+X-UUID: fe401303cf564a6db9aa622036f99095-20200427
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=aI88OR5SoOs9oP8eEG6yM2tCCWEGm3PDTnuHvBFnmpg=; 
+ b=MNpXtV4Hi3HmuHHkkvUwJF5agIVCYq3l53uNtTP5aW9rPdmThk2iLIBT4JT+PW2n+51ZqEc/ToeBaPmrmuBF0LB3yOqdFVCnJM5K8i6fXDvs2x36VE2oTq4fM2VzfLc67knoJi67hUbgeRObcPF7kFGxNv2sjCUBohZW5b3htuY=;
+X-UUID: fe401303cf564a6db9aa622036f99095-20200427
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <chun-hung.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1288457455; Mon, 27 Apr 2020 15:57:16 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 27 Apr 2020 16:57:14 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 28 Apr 2020 07:57:08 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Tue, 28 Apr 2020 07:56:09 +0800
+From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+To: <mirq-linux@rere.qmqm.pl>, Jonathan Hunter <jonathanh@nvidia.com>, "Al
+ Cooper" <alcooperx@gmail.com>, Adrian Hunter <adrian.hunter@intel.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ <bcm-kernel-feedback-list@broadcom.com>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Michal Simek
+ <michal.simek@xilinx.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Chaotian Jing <chaotian.jing@mediatek.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Matthias Brugger <matthias.bgg@gmail.com>, "Linus
+ Walleij" <linus.walleij@linaro.org>, Pavel Machek <pavel@ucw.cz>, Kate
+ Stewart <kstewart@linuxfoundation.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Martin Blumenstingl
+ <martin.blumenstingl@googlemail.com>, Pan Bian <bianpan2016@163.com>, "Thomas
+ Gleixner" <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ "Mathieu Malaterre" <malat@debian.org>, Stanley Chu
+ <stanley.chu@mediatek.com>, "Kuohong Wang" <kuohong.wang@mediatek.com>, Yong
+ Mao <yong.mao@mediatek.com>
+Subject: [PATCH v5 0/5] mmc: mediatek: add mmc cqhci support
+Date: Tue, 28 Apr 2020 07:56:03 +0800
+Message-ID: <1588031768-23677-1-git-send-email-chun-hung.wu@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <20200424100131.GB1167@C02TD0UTHF1T.local>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_165346_685936_2C2547DF 
-X-CRM114-Status: GOOD (  30.37  )
+X-CRM114-CacheID: sfid-20200427_165721_405423_5B8560B9 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,7 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,141 +98,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: steve.capper@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- broonie@kernel.org, shan.gavin@gmail.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-arm-msm@vger.kernel.org, Chun-Hung Wu <chun-hung.wu@mediatek.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+This series provides MediaTek cqhci implementations as below:
+  - Extend mmc_of_parse() to parse CQE bindings
+  - Remove redundant host CQE bindings
+  - Refine msdc timeout api to reduce redundant code
+  - MediaTek command queue support
+  - dt-bindings for mt6779
 
-On 4/24/20 8:01 PM, Mark Rutland wrote:
-> Hi Gavin,
-> 
-> On Fri, Apr 24, 2020 at 03:02:30PM +1000, Gavin Shan wrote:
->> The MMU is disabled when __create_page_tables() is called. The data
->> cache corresponding to these two page tables, which are tracked by
->> @idmap_pg_dir and @init_pg_dir, is invalidated after the page tables
->> are populated. However, the wrong or inappropriate size have been used
->> and more data cache are invalidated than it need.
->>
->> This fixes the issue by invalidating the data cache for these two
->> page tables separately as they aren't necessarily physically adjacent.
-> 
-> Thanks for this!
-> 
-> I think the commit message needs to explain the issue more explicitly,
-> e.g.
-> 
-> | Prior to commit:
-> |
-> |   8eb7e28d4c642c31i ("arm64/mm: move runtime pgds to rodata")
-> |
-> | ... idmap_pgd_dir, tramp_pg_dir, reserved_ttbr0, swapper_pg_dir, and
-> | init_pg_dir were contiguous at the end of the kernel image. The
-> | maintenance at the end of __create_page_tables assumed these were
-> | contiguous, and affected everything from the start of idmap_pg_dir to
-> | the end of init_pg_dir.
-> |
-> | That commit moved all but init_pg_dir into the .rodata section, with
-> | other data placed between idmap_pg_dir and init_pg_dir, but did not
-> | update the maintenance. Hence the maintenance is performed on much
-> | more data than necessary (but as the bootloader previously made this
-> | clean to the PoC there is no functional problem).
-> |
-> | As we only alter idmap_pg_dir, and init_pg_dir, we only need to
-> | perform maintenance for these. As the other dirs are in .rodata, the
-> | bootloader will have initialised them as expected and cleaned them to
-> | the PoC. The kernel will initialize them as necessary after enabling
-> | the MMU.
-> |
-> | This patch reworks the maintenance to only cover the idmap_pg_dir and
-> | init_pg_dir to avoid this unnecessary work.
-> 
+v1 -> v2:
+  - Add more patch details in commit message
+  - Separate msdc timeout api refine to individual patch
 
-Thanks for detailed changelog. I will use yours in v2, which will be posted
-shortly. A nit is the correct commit ID would be 8eb7e28d4c642c31 instead
-of 8eb7e28d4c642c31i :)
+v2 -> v3:
+  - Remove CR-Id, Change-Id and Feature in patches
+  - Add Signed-off-by in patches
 
->> Signed-off-by: Gavin Shan <gshan@redhat.com>
->> ---
->>   arch/arm64/kernel/head.S | 4 ++++
->>   1 file changed, 4 insertions(+)
->>
->> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
->> index 57a91032b4c2..66947873c9e7 100644
->> --- a/arch/arm64/kernel/head.S
->> +++ b/arch/arm64/kernel/head.S
->> @@ -398,6 +398,10 @@ SYM_FUNC_START_LOCAL(__create_page_tables)
->>   	 * tables again to remove any speculatively loaded cache lines.
->>   	 */
-> 
-> The comment above has been stale for a while, since it says:
-> 
-> | 	/*
-> | 	 * Since the page tables have been populated with non-cacheable
-> | 	 * accesses (MMU disabled), invalidate the idmap and swapper page
-> | 	 * tables again to remove any speculatively loaded cache lines.
-> | 	 */
-> 
-> ... can we please update that at the same time? We can avoid mention of
-> the specific tables and say:
-> 
-> | 	/*
-> | 	 * Since the page tables have been populated with non-cacheable
-> | 	 * accesses (MMU disabled), invalidate those tables again to
-> | 	 * remove any speculatively loaded cache lines.
-> | 	 */
-> 
+v3 -> v4:
+  - Refine CQE bindings in mmc_of_parse (Ulf Hansson)
+  - Remove redundant host CQE bindings (Linux Walleij)
 
-Sure, It will be included in v2.
+v4 -> v5:
+  - Add Acked-by and more maintainers
 
->>   	adrp	x0, idmap_pg_dir
->> +	mov	x1, #IDMAP_DIR_SIZE
->> +	dmb	sy
->> +	bl	__inval_dcache_area
->> +	adrp	x0, init_pg_dir
->>   	adrp	x1, init_pg_end
->>   	sub	x1, x1, x0
->>   	dmb	sy
-> 
-> The existing DMB is to order prior non-cacheable accesses against cache
-> maintenance, so we only need one of those at the start of the sequence.
-> For consistency, we should use the same idiom to generate the size of
-> both dirs. Given we use ADRP+ADRP+SUB here and elsewhere in head.S, I
-> think that's preferable for now.
-> 
-> So I reckon this should be:
-> 
-> |	dmb	sy
-> |
-> |	adrp	x0, idmap_pg_dir
-> |	adrp	x1, idmap_pg_end
-> |	sub	x1, x1, x0
-> |	bl	__inval_dcache_area
-> |
-> |	adrp	x0, init_pg_dir
-> |	adrp	x1, init_pg_end
-> |	sub	x1, x1, x0
-> |	bl	__inval_dcache_area
-> 
-> ... with those line gaps to make the distinct blocks clearer.
-> 
+Chun-Hung Wu (5):
+  [1/5] mmc: core: Extend mmc_of_parse() to parse CQE bindings
+  [2/5] mmc: host: Remove redundant CQE bindings
+  [3/5] mmc: mediatek: refine msdc timeout api
+  [4/5] mmc: mediatek: command queue support
+  [5/5] dt-bindings: mmc: mediatek: Add document for mt6779
 
-Yep, I'll change the code accordingly in v2. Also, symbol @idmap_pg_end
-will be added to vmlinux.lds.S as it's not existing.
+ Documentation/devicetree/bindings/mmc/mtk-sd.txt |   1 +
+ drivers/mmc/core/host.c                          |   5 +
+ drivers/mmc/host/mtk-sd.c                        | 151 +++++++++++++++++++++--
+ drivers/mmc/host/sdhci-brcmstb.c                 |  11 +-
+ drivers/mmc/host/sdhci-msm.c                     |   3 +-
+ drivers/mmc/host/sdhci-of-arasan.c               |   3 -
+ drivers/mmc/host/sdhci-tegra.c                   |   2 +-
+ 7 files changed, 155 insertions(+), 21 deletions(-)
 
-> Thanks,
-> Mark.
-> 
-
-Thanks,
-Gavin
-
-
+-- 
+2.6.4
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
