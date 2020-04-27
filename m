@@ -2,124 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3ACBD1BA711
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:57:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6391BA71F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:59:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZS0fT5tTa5sIfvvMdA9jwJDGv7wPnIkrWtKbH2pNnT8=; b=pOcg8YhaT1TKIb
-	uOX+/RcvgaqFzU2E0pjgI0wDgOk938KfAqnXmEpck2HIssZwPfWg3vNDJduTr9S7Kfe2MZwHDMbJ8
-	pZ6EchBmsg+t01vAEA04dNX1DjAAr71P45ckIRiQY1SPgaVaukTUm4Khqg8MqcHs2p8FpF/pom7AK
-	JlcUF0SULPJHP9IA3uPoQ/TYXtMQDVfG2qgnMGI+Gvb6e7UbSeA4oRvROlALfbuBslBzI1qKJzByV
-	Sdb8L625he4hqCTRbTsEgpNvGTIkmzi81skT6MP15jrxF184SnQhfTqt+4tvUYZ5Chfn7/yPCLOZu
-	LkVejmO+CrhiBex5q8Iw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1EAY3uvm09Thow26kTZZ0ofJFZ3g07fOoWFk2uQW7zk=; b=FhO
+	QadamAyfDY5B6wmvB1s1EliSfozXYmm2hSUQA7c+ED1pe72p+ahmYxXgKnCVogyjpsQrXNV+GiabL
+	vled2CE0gWZODvlScxDgxHh73ZUJPVAWYPwLYQsTb1IpVp2oL/IJN+Gq9V2nt4O6FKtarUu7/lgrg
+	TxzKeeGYbfJgZr4raVZMEfJOPzla50yPH5RWYMKdObvWoXIn4UuDaQhdkLXyPnkKm35MDmZ37KrZh
+	/V54/QQwhFfLVE9Q7KHdcDRYPlDartD72naR4kwMpE5U9v2/86UVgcXT/aGkLrlueUlAaPtsC5So3
+	phLEifYEs01UKotd5FKlYN+WuqkrVbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT5Bt-0003XP-7J; Mon, 27 Apr 2020 14:57:01 +0000
-Received: from mail-eopbgr130057.outbound.protection.outlook.com
- ([40.107.13.57] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1jT5E6-0003ww-U3; Mon, 27 Apr 2020 14:59:18 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT5Bh-0003WL-K1
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 14:56:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=M1qhAExW/B2qAj591iWKiO3seLgmgJwj7OKzTpeZNZFijnYRbxD7lKMsPH89EsOR0J6mTvgCRaiAVrQw5W8xWLrziJhKhddnVE+650RgJ3hKwf+0dS9xUgO0/QCLzpz3N2Fj8loXQdE3xJxtw1Se+l2aRAXoQIv9shFQmtJDLNZTdz1mWxyrOLfA4sLuWK/MGvwkwWHaCPVumPCqAstREc6u7jjqpfHsmzWOOP0YH/132xo9HH+6ZR6lmXisXWk6NmyAvz79h1Q7Y8o+1AqySGgfTVRsPETg8a3Dj7OLzlrCGS525gcqBOgG8CHeLuV3XdO+2Gx+iEOSQq0/wMG5nA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3RqTidZ/al2c0fdcVeXocP9OcDBd6e+WEYScpD5GaXs=;
- b=ZEysBDVBeTr1Yl4ZLOEj6LcwzTQwRafsokhiO3EODfXaQNqYAltzdJnzeaaEQhMcxlzxAtFd1utR4OWawAL5XdnIRFfoio5fB9nvGQN9V2BpFM+SfG2h4hUNMC7Yr/cPte3XgmIzM2JpWU+TaDkzEWTy0f6B6bc4CCpt+FirpnutF2fCcTi/2JmjM2pEq0xT8C0/Eiwae4I5Y0FpAvy/07lQ8FytNtIJMmCJA2Onn1a4yA155VOzkCov8A413xfph1PyTEvglVihgfP5AkzdEb/G/fBITrAEvGFmrsWcPQbqauevIRuo1vBTdVRm+3lbkj7Qs79iE3SU4rHPqFMJXQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3RqTidZ/al2c0fdcVeXocP9OcDBd6e+WEYScpD5GaXs=;
- b=J2Q5b6qDdaQdIt+ogi7c237H2GuZKc7+0J4XCu+0mijAuBFfpJkJv3eRpaOHYiqQ/pK2Dkv/1P9bHvnfe49PBje/sJCHaoUlhYacCCCA2+bpPtT8UmzIRZLuxjCExgx0I3CdsTj0VSGejswOoUII8wwJiHwh5r8lvFlrbxATVYQ=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=calvin.johnson@oss.nxp.com; 
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
- by AM0PR04MB5844.eurprd04.prod.outlook.com (2603:10a6:208:12a::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 14:56:46 +0000
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 14:56:46 +0000
-Date: Mon, 27 Apr 2020 20:26:33 +0530
-From: Calvin Johnson <calvin.johnson@oss.nxp.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [net-next PATCH v2 0/3] Introduce new APIs to support phylink
- and phy layers
-Message-ID: <20200427145633.GA28011@lsv03152.swis.in-blr01.nxp.com>
-References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
- <20200427135820.GH25745@shell.armlinux.org.uk>
- <20200427143238.GA26436@lsv03152.swis.in-blr01.nxp.com>
- <20200427144806.GI25745@shell.armlinux.org.uk>
-Content-Disposition: inline
-In-Reply-To: <20200427144806.GI25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-ClientProxiedBy: SG2PR01CA0165.apcprd01.prod.exchangelabs.com
- (2603:1096:4:28::21) To AM0PR04MB5636.eurprd04.prod.outlook.com
- (2603:10a6:208:130::22)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
- SG2PR01CA0165.apcprd01.prod.exchangelabs.com (2603:1096:4:28::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13 via Frontend
- Transport; Mon, 27 Apr 2020 14:56:40 +0000
-X-Originating-IP: [14.142.151.118]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: ad4eadc1-f557-475d-92c8-08d7eabb3498
-X-MS-TrafficTypeDiagnostic: AM0PR04MB5844:|AM0PR04MB5844:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB58443087DFBCB1E82A4CDFD2D2AF0@AM0PR04MB5844.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-Forefront-PRVS: 0386B406AA
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(39860400002)(346002)(136003)(376002)(366004)(8676002)(33656002)(55016002)(9686003)(86362001)(66476007)(5660300002)(16526019)(6506007)(55236004)(478600001)(26005)(8936002)(186003)(66556008)(66946007)(1006002)(6666004)(6916009)(7416002)(956004)(54906003)(52116002)(966005)(2906002)(316002)(81156014)(44832011)(1076003)(7696005)(4326008)(110426005);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: ahq1pFWeBQwyHcXjJwjtfDQ//ysn2jg1KX/PplN0TAhYWThu68FxO+zBViHk1zvMABFaYlPxcTO9Ki3xksbAB+JZ8ENX8Hcz/zyiv8hgsIVU+xRkxrOSCdqMiBT3gTe0fF19sJMzxLHwH8/D/RIsEQ4mTToyVB9pqLm2fF1G8xlVVWuYCZCXneGItlk5mRf9lYPHS3PQxjDqHR5braBsogZmwI71y3Vq+q5Mv4QE5dK15rZhEKFIfPVWc7IXT+DSWcoTJa3reRQ1ltxXRujiwb3WvGalCsXMyOWgOg4mmz5RO6GY1hTIJlgvlTZzuH/bQTD0OnjrGLiQn2qB24GP9uWIW8/9svS9mdFfEfX2EWUD7dxggHoFxidUrfCbqH8aC/FYrChaesw9r3nyD19ui5Df4/T+FOixDK2cFN7RnRdVhnQumwDyQ1iZ/JGBGtVcCY6EWJYPeAKn2YFz4ANL442vMnqMSFjTXZ2QxVoOvSq9k1OfdTZSdbgdZ2S9RRDDg/D3292aLx/4hheyYTxJjaG4lmwWDAaiWTZ76WjS+V5UYKYQsNeDFj0Uu5zvskM2eLUKMEGo2B+BryMql+VBmA==
-X-MS-Exchange-AntiSpam-MessageData: PYyRQNrI8XqwAQN7f0GfmJqBm5TCvFJJ7A8Sgrvyif19+de78CZ66qMJwcrC+mhFJ9O2W1piAvKqWyMKiZcHeysCCzWVwXIbSvTnZSxwhHew8VMX4uX63/YgKtSLDkluaHolJZYsnNxo7k+pvAbWfgRbtWSQecIWzXhsloksHe1pxBHHL4H8GKw+zdtgaAAMqy0ZfGGcD+RHgXUxBWWPuK0qHW00KvF4PRn0i+Pve+BPzBeC0OeOKo5dJn8AbCfAw0VxLyRuUdBxu4rCGwvUHB72zNcdJCHjdss/SNjyuEAjqj7HJVlt6/4IgvnrmN6VCAZPyeSU3mRc4pg7Bhvm/JEFhsoNXDm0WAqHZHmkdMrnuGyAhosDea4R+8rgfvi8Q+CIuPW9xGLd4IWite2zYy10z9fP1EVH4nL4twgA7x5baNN62xS9hdeGczGAZnEbwxJQV+Vu7MlJn8Rpmq/G9Nw7PacBK3Ue9ewrGlwuYNL9fiVeWTBkYMJgy13A10ChzIQ9Pks0NJ0Dc8uZQ3B9dvo8bfxobqEDdkC6ZIxcLBlRqDLbGHYNZKRe/CkclemD7fX518uMXbnQpEjRhU0F7YkfVTTKd3ioTKEG09av8s5w0kFG1W4AygBHpn+dAdX48zdJxYCvGXrQ3tge4rHmsqRwGVbTHQfWwcA45P7t6jfAycvXcxe1XiozHPsTk/zZdHZcaQ294rRdkMWXKccdcKH+vZCkiSusKvnbuU3lX6leR+VZKA5MU0VWRRb8Hjuyy5zvyc1DjOpKbAE2PIeYFdpNZYL3kZPaDXY8SH8R4lU=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ad4eadc1-f557-475d-92c8-08d7eabb3498
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 14:56:46.3030 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WNhuCWXclNBvSWjTKQSmNYqa1vjnOe/BnDQdARGU9NPMnz2iUxCZxdxZ/txGMvlN7ZXG7THXHV9SxRWj2gNNoA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5844
+ id 1jT5Dx-0003vs-DV
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 14:59:11 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8845A1A11BA;
+ Mon, 27 Apr 2020 16:59:05 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7AAD11A11B3;
+ Mon, 27 Apr 2020 16:59:05 +0200 (CEST)
+Received: from fsr-ub1664-175.ea.freescale.net
+ (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 14F002030E;
+ Mon, 27 Apr 2020 16:59:05 +0200 (CEST)
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Jacky Bai <ping.bai@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <kernel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>
+Subject: [PATCH] soc: imx: Add power domain driver support for i.mx8m family
+Date: Mon, 27 Apr 2020 17:58:52 +0300
+Message-Id: <1587999532-30006-1-git-send-email-abel.vesa@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_075653_111825_22EFB283 
-X-CRM114-Status: GOOD (  20.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200427_075909_730713_BD472E22 
+X-CRM114-Status: GOOD (  21.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.13.57 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.13.57 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,117 +66,324 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 03:48:07PM +0100, Russell King - ARM Linux admin wrote:
-> On Mon, Apr 27, 2020 at 08:02:38PM +0530, Calvin Johnson wrote:
-> > On Mon, Apr 27, 2020 at 02:58:20PM +0100, Russell King - ARM Linux admin wrote:
-> > > On Mon, Apr 27, 2020 at 06:54:06PM +0530, Calvin Johnson wrote:
-> > > > Following functions are defined:
-> > > >   phylink_fwnode_phy_connect()
-> > > >   phylink_device_phy_connect()
-> > > >   fwnode_phy_find_device()
-> > > >   device_phy_find_device()
-> > > >   fwnode_get_phy_node()
-> > > > 
-> > > > First two help in connecting phy to phylink instance.
-> > > > Next two help in finding a phy on a mdiobus.
-> > > > Last one helps in getting phy_node from a fwnode.
-> > > > 
-> > > > Changes in v2:
-> > > >   move phy code from base/property.c to net/phy/phy_device.c
-> > > >   replace acpi & of code to get phy-handle with fwnode_find_reference
-> > > >   replace of_ and acpi_ code with generic fwnode to get phy-handle.
-> > > > 
-> > > > Calvin Johnson (3):
-> > > >   device property: Introduce phy related fwnode functions
-> > > >   net: phy: alphabetically sort header includes
-> > > >   phylink: Introduce phylink_fwnode_phy_connect()
-> > > 
-> > > Thanks for this, but there's more work that needs to be done here.  I
-> > > also think that we must have an ack from ACPI people before this can be
-> > > accepted - you are in effect proposing a new way for representing PHYs
-> > > in ACPI.
-> > 
-> > Thanks for your review.
-> > 
-> > Agree that we need an ack from ACPI people.
-> > However, I don't think it is a completely new way as similar acpi approach to
-> > get phy-handle is already in place.
-> > Please see this:
-> > https://elixir.bootlin.com/linux/v5.7-rc3/source/drivers/net/ethernet/apm/xgene/xgene_enet_hw.c#L832
-> 
-> That was added by:
-> 
-> commit 8089a96f601bdfe3e1b41d14bb703aafaf1b8f34
-> Author: Iyappan Subramanian <isubramanian@apm.com>
-> Date:   Mon Jul 25 17:12:41 2016 -0700
-> 
->     drivers: net: xgene: Add backward compatibility
-> 
->     This patch adds xgene_enet_check_phy_hanlde() function that checks whether
->     MDIO driver is probed successfully and sets pdata->mdio_driver to true.
->     If MDIO driver is not probed, ethernet driver falls back to backward
->     compatibility mode.
-> 
->     Since enum xgene_enet_cmd is used by MDIO driver, removing this from
->     ethernet driver.
-> 
->     Signed-off-by: Iyappan Subramanian <isubramanian@apm.com>
->     Tested-by: Fushen Chen <fchen@apm.com>
->     Tested-by: Toan Le <toanle@apm.com>
->     Signed-off-by: David S. Miller <davem@davemloft.net>
-> 
-> The commit message says nothing about adding ACPI stuff, and searching
-> the 'net for the posting of this patch seems to suggest that it wasn't
-> obviously copied to any ACPI people:
-> 
->     https://lists.openwall.net/netdev/2016/07/26/11
-> 
-> Annoyingly, searching for:
-> 
->     "drivers: net: xgene: Add backward compatibility" site:lore.kernel.org
-> 
-> doesn't find it on lore, so can't get the full headers and therefore
-> addresses.
-> 
-> So, yes, there's another driver using it, but the ACPI folk probably
-> never got a look-in on that instance.  Even if they had been copied,
-> the patch description is probably sufficiently poor that they wouldn't
-> have read the patch.
-> 
-> I'd say there's questions over whether ACPI people will find this an
-> acceptable approach.
-> 
-> Given that your patch moves this from one driver to a subsystem thing,
-> it needs to be ratified by ACPI people, because it's effectively
-> becoming a standardised way to represent a PHY in ACPI.
-> 
-Thanks for digging deep. Makes sense to me.
-Will wait for ACPI response.
+From: Jacky Bai <ping.bai@nxp.com>
 
-Regards
-Calvin
+The i.MX8M family is a set of NXP product focus on delivering
+the latest and greatest video and audio experience combining
+state-of-the-art media-specific features with high-performance
+processing while optimized for lowest power consumption.
+
+i.MX8MQ, i.MX8MM, i.MX8MN, even the furture i.MX8MP are all
+belong to this family. A GPC module is used to manage all the
+PU power domain on/off. But the situation is that the number of
+power domains & the power up sequence has significate difference
+on those SoCs. Even on the same SoC. The power up sequence still
+has big difference. It makes us hard to reuse the GPCv2 driver to
+cover the whole i.MX8M family. Each time a new SoC is supported in
+the mainline kernel, we need to modify the GPCv2 driver to support
+it. We need to add or modify hundred lines of code in worst case.
+It is a bad practice for the driver maintainability.
+
+This driver add a more generic power domain driver that the actual
+power on/off is done by TF-A code. the abstraction give us the
+possibility that using one driver to cover the whole i.MX8M family
+in kernel side.
+
+Signed-off-by: Jacky Bai <ping.bai@nxp.com>
+Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+---
+ drivers/soc/imx/Kconfig            |   6 +
+ drivers/soc/imx/Makefile           |   1 +
+ drivers/soc/imx/imx8m_pm_domains.c | 224 +++++++++++++++++++++++++++++++++++++
+ include/soc/imx/imx_sip.h          |  12 ++
+ 4 files changed, 243 insertions(+)
+ create mode 100644 drivers/soc/imx/imx8m_pm_domains.c
+ create mode 100644 include/soc/imx/imx_sip.h
+
+diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
+index d515d2c..7837199 100644
+--- a/drivers/soc/imx/Kconfig
++++ b/drivers/soc/imx/Kconfig
+@@ -27,4 +27,10 @@ config SOC_IMX8M
+ 	  support, it will provide the SoC info like SoC family,
+ 	  ID and revision etc.
+ 
++config IMX8M_PM_DOMAINS
++	bool "i.MX8M PM domains"
++	depends on ARCH_MXC || (COMPILE_TEST && OF)
++	depends on PM
++	select PM_GENERIC_DOMAINS
++
+ endmenu
+diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
+index 103e2c9..a22e24b 100644
+--- a/drivers/soc/imx/Makefile
++++ b/drivers/soc/imx/Makefile
+@@ -3,3 +3,4 @@ obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
+ obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
+ obj-$(CONFIG_SOC_IMX8M) += soc-imx8m.o
+ obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
++obj-$(CONFIG_IMX8M_PM_DOMAINS) += imx8m_pm_domains.o
+diff --git a/drivers/soc/imx/imx8m_pm_domains.c b/drivers/soc/imx/imx8m_pm_domains.c
+new file mode 100644
+index 00000000..ce06a05
+--- /dev/null
++++ b/drivers/soc/imx/imx8m_pm_domains.c
+@@ -0,0 +1,224 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 NXP.
++ */
++
++#include <linux/arm-smccc.h>
++#include <linux/clk.h>
++#include <linux/delay.h>
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_address.h>
++#include <linux/platform_device.h>
++#include <linux/pm_domain.h>
++#include <linux/regulator/consumer.h>
++
++#include <soc/imx/imx_sip.h>
++
++#define MAX_CLK_NUM	6
++#define to_imx8m_pm_domain(_genpd) container_of(_genpd, struct imx8m_pm_domain, pd)
++
++
++struct imx8m_pm_domain {
++	struct device *dev;
++	struct generic_pm_domain pd;
++	u32 domain_index;
++	struct clk *clk[MAX_CLK_NUM];
++	unsigned int num_clks;
++	struct regulator *reg;
++};
++
++enum imx8m_pm_domain_state {
++	PD_STATE_OFF,
++	PD_STATE_ON,
++};
++
++static DEFINE_MUTEX(gpc_pd_mutex);
++
++static int imx8m_pd_power_on(struct generic_pm_domain *genpd)
++{
++	struct imx8m_pm_domain *domain = to_imx8m_pm_domain(genpd);
++	struct arm_smccc_res res;
++	int index, ret = 0;
++
++	/* power on the external supply */
++	if (!IS_ERR(domain->reg)) {
++		ret = regulator_enable(domain->reg);
++		if (ret) {
++			dev_warn(domain->dev, "failed to power up the reg%d\n", ret);
++			return ret;
++		}
++	}
++
++	/* enable the necessary clks needed by the power domain */
++	if (domain->num_clks) {
++		for (index = 0; index < domain->num_clks; index++)
++			clk_prepare_enable(domain->clk[index]);
++	}
++
++	mutex_lock(&gpc_pd_mutex);
++	arm_smccc_smc(IMX_SIP_GPC, IMX_SIP_CONFIG_GPC_PM_DOMAIN, domain->domain_index,
++		      PD_STATE_ON, 0, 0, 0, 0, &res);
++	mutex_unlock(&gpc_pd_mutex);
++
++	return 0;
++}
++
++static int imx8m_pd_power_off(struct generic_pm_domain *genpd)
++{
++	struct imx8m_pm_domain *domain = to_imx8m_pm_domain(genpd);
++	struct arm_smccc_res res;
++	int index, ret = 0;
++
++	mutex_lock(&gpc_pd_mutex);
++	arm_smccc_smc(IMX_SIP_GPC, IMX_SIP_CONFIG_GPC_PM_DOMAIN, domain->domain_index,
++		      PD_STATE_OFF, 0, 0, 0, 0, &res);
++	mutex_unlock(&gpc_pd_mutex);
++
++	/* power off the external supply */
++	if (!IS_ERR(domain->reg)) {
++		ret = regulator_disable(domain->reg);
++		if (ret) {
++			dev_warn(domain->dev, "failed to power off the reg%d\n", ret);
++			return ret;
++		}
++	}
++
++	/* disable clks when power domain is off */
++	if (domain->num_clks) {
++		for (index = 0; index < domain->num_clks; index++)
++			clk_disable_unprepare(domain->clk[index]);
++	}
++
++	return ret;
++};
++
++static int imx8m_pd_get_clocks(struct imx8m_pm_domain *domain)
++{
++	int i, ret;
++
++	for (i = 0; ; i++) {
++		struct clk *clk = of_clk_get(domain->dev->of_node, i);
++		if (IS_ERR(clk))
++			break;
++		if (i >= MAX_CLK_NUM) {
++			dev_err(domain->dev, "more than %d clocks\n",
++				MAX_CLK_NUM);
++			ret = -EINVAL;
++			goto clk_err;
++		}
++		domain->clk[i] = clk;
++	}
++	domain->num_clks = i;
++
++	return 0;
++
++clk_err:
++	while (i--)
++		clk_put(domain->clk[i]);
++
++	return ret;
++}
++
++static void imx8m_pd_put_clocks(struct imx8m_pm_domain *domain)
++{
++	int i;
++
++	for (i = domain->num_clks - 1; i >= 0; i--)
++		clk_put(domain->clk[i]);
++}
++
++static const struct of_device_id imx8m_pm_domain_ids[] = {
++	{.compatible = "fsl,imx8m-pm-domain"},
++	{},
++};
++
++static int imx8m_pm_domain_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct device_node *np = dev->of_node;
++	struct imx8m_pm_domain *domain;
++	struct of_phandle_args parent, child;
++	int ret;
++
++	domain = devm_kzalloc(dev, sizeof(*domain), GFP_KERNEL);
++	if (!domain)
++		return -ENOMEM;
++
++	child.np = np;
++	domain->dev = dev;
++
++	ret = of_property_read_string(np, "domain-name", &domain->pd.name);
++	if (ret) {
++		dev_err(dev, "failed to get the domain name\n");
++		return -EINVAL;
++	}
++
++	ret = of_property_read_u32(np, "domain-index", &domain->domain_index);
++	if (ret) {
++		dev_err(dev, "failed to get the domain index\n");
++		return -EINVAL;
++	}
++
++	domain->reg = devm_regulator_get_optional(dev, "power");
++	if (IS_ERR(domain->reg)) {
++		if (PTR_ERR(domain->reg) != -ENODEV) {
++			if (PTR_ERR(domain->reg) != -EPROBE_DEFER)
++				dev_err(dev, "failed to get domain's regulator\n");
++			return PTR_ERR(domain->reg);
++		}
++	}
++
++	ret = imx8m_pd_get_clocks(domain);
++	if (ret) {
++		if (ret != -EPROBE_DEFER)
++			dev_err(dev, "failed to get domain's clocks\n");
++		return ret;
++	}
++
++	domain->pd.power_off = imx8m_pd_power_off;
++	domain->pd.power_on = imx8m_pd_power_on;
++
++	pm_genpd_init(&domain->pd, NULL, true);
++
++	ret = of_genpd_add_provider_simple(np, &domain->pd);
++	if (ret) {
++		dev_err(dev, "failed to add the domain provider\n");
++		pm_genpd_remove(&domain->pd);
++		imx8m_pd_put_clocks(domain);
++		return ret;
++	}
++
++	/* add it as subdomain if necessary */
++	if (!of_parse_phandle_with_args(np, "parent-domains",
++			"#power-domain-cells", 0, &parent)) {
++		ret = of_genpd_add_subdomain(&parent, &child);
++		of_node_put(parent.np);
++
++		if (ret < 0) {
++			dev_dbg(dev, "failed to add the subdomain: %s: %d",
++				domain->pd.name, ret);
++			of_genpd_del_provider(np);
++			pm_genpd_remove(&domain->pd);
++			imx8m_pd_put_clocks(domain);
++			return driver_deferred_probe_check_state(dev);
++		}
++	}
++
++	return 0;
++}
++
++static struct platform_driver imx8m_pm_domain_driver = {
++	.driver = {
++		.name	= "imx8m_pm_domain",
++		.owner	= THIS_MODULE,
++		.of_match_table = imx8m_pm_domain_ids,
++	},
++	.probe = imx8m_pm_domain_probe,
++};
++module_platform_driver(imx8m_pm_domain_driver);
++
++MODULE_AUTHOR("NXP");
++MODULE_DESCRIPTION("NXP i.MX8M power domain driver");
++MODULE_LICENSE("GPL v2");
+diff --git a/include/soc/imx/imx_sip.h b/include/soc/imx/imx_sip.h
+new file mode 100644
+index 00000000..6b96b33
+--- /dev/null
++++ b/include/soc/imx/imx_sip.h
+@@ -0,0 +1,12 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright 2019 NXP
++ */
++
++#ifndef __IMX_SIP_H__
++#define __IMX_SIP_H__
++
++#define IMX_SIP_GPC			0xC2000000
++#define IMX_SIP_CONFIG_GPC_PM_DOMAIN	0x03
++
++#endif /* __IMX_SIP_H__ */
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
