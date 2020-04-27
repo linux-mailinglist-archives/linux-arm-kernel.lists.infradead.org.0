@@ -2,59 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D34F21BA1F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:10:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DAEC1BA220
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 13:15:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pscla5gMMXTyJOluGtXxKHU9xgLdAK1IPoC8GaYughA=; b=O47nBZL2Q1zOY7CcWYHB4l6Va
-	iGw/STPUYHnSunEL6wnGMb9hpGIKRBv+UrjPapCcOCy2zNtq0UiRk9r9j7YkNva6M/H7Mfgqhc3jg
-	9yxdl1Rc7Vcej2PD0UPiHO599hPjGG8ozxWJ4qYdVK4UKog6DIE/A6/wvyJUrVlJ5bXuT0POqrybB
-	deEo4/Sg3GbnWDRC2zv1xdaxHqcCeyhJDQmu9KrZUxs7GblvMCfoMgwoeZR/osRl2mNggha3bjwAO
-	cxS5FL1oWAvSavPGf8qAlERwT3Vfr4QVTDCopg6++ZjY09beUm/P415LGEd7rpAkAO/NorDtrosmx
-	H7bQ5qZVA==;
+	 bh=hrFSc9ETkSCQTAcRDclvR52T44HDnoWoLm65gnKUAno=; b=pTPEyfRkQ6a2pxztxRYly22rR
+	nkZvFwN0EUI9BS5onoIJ+Ed+2xUghU2+/yA/o791AhRDXWZVzikIXi+SN2Xa7xyw/ay6mEHs+uSVb
+	pa1P3S+TNcQIblh0DGCPZ1EVKiCKwB5t3LoWE50QR1pjtEx7jkwZo6gb0ce5Mnud28Lrw0rvIpCaF
+	j7XK84JzLIiGqpLcSh3FBnmKgrmvt20FVsQmtT4O6yL6q4WS7cROOB7cXDtYDmAxOwFgqP6032+JF
+	Ho+Jz8GUc70ukIheicKduscrh3M0/TQ0RCFp5zGceGaEVqnZOxPR7V5eKhrwDGUWZ3V3qM8wzXE8J
+	rhGQo2XAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT1eR-0004oC-TG; Mon, 27 Apr 2020 11:10:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT1e5-0004mo-KM
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:09:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4330A1FB;
- Mon, 27 Apr 2020 04:09:50 -0700 (PDT)
-Received: from [10.37.12.144] (unknown [10.37.12.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B0ECA3F73D;
- Mon, 27 Apr 2020 04:09:47 -0700 (PDT)
-Subject: Re: [PATCH v3 21/23] arm64: mte: Check the DT memory nodes for MTE
- support
-To: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-22-catalin.marinas@arm.com> <20200424135735.GB5551@gaia>
- <20200424161742.GE5551@gaia>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <43762365-60f6-e271-1338-795e8d7fbb72@arm.com>
-Date: Mon, 27 Apr 2020 12:14:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1jT1ji-0003Z1-Of; Mon, 27 Apr 2020 11:15:42 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jT1jV-0003XW-Ds
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 11:15:31 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RBFSN3063594;
+ Mon, 27 Apr 2020 06:15:28 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1587986128;
+ bh=gWEr5tUocVL65YN3YdxkcoYlxJ4xnh76tpLqZoEi+T4=;
+ h=Subject:To:References:From:Date:In-Reply-To;
+ b=BXLQ8oWgszzhS0GV9UfDuuVUIYnrSddUEq0vE+9Rs9AACJ3poew6mm6tlOp/V0bfI
+ 4/WQE22r6YIZwkiu1I0urYnMsabV716UlqXvWUcP/5/UvvyjtcNvFwMdcc84Tciw+b
+ yCHmotWXuGxhCX8NBjOsiZ1UVnUes0ZtGV3qKBQg=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RBFS42121540
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 27 Apr 2020 06:15:28 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 27
+ Apr 2020 06:15:27 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Mon, 27 Apr 2020 06:15:27 -0500
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RBFPaI063776;
+ Mon, 27 Apr 2020 06:15:26 -0500
+Subject: Re: [PATCH 2/3] arm64: dts: ti: k3-j721e-main.dtsi: Add DSS node
+To: Jyri Sarha <jsarha@ti.com>, Tero Kristo <t-kristo@ti.com>, Nishanth Menon
+ <nm@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200422091512.950-1-tomi.valkeinen@ti.com>
+ <20200422091512.950-2-tomi.valkeinen@ti.com>
+ <ade3a177-f060-bc40-bcc1-494093e3071d@ti.com>
+ <47b7f858-a8d9-1c3b-4dca-2cc493f6730f@ti.com>
+ <fa497e8d-7911-5f3d-cf91-347370f8edaa@ti.com>
+ <217c0c14-f4fb-7321-9f57-205df0cd01fe@ti.com>
+From: Tomi Valkeinen <tomi.valkeinen@ti.com>
+Message-ID: <9a4b1d0a-c871-2280-8d22-196730e9385b@ti.com>
+Date: Mon, 27 Apr 2020 14:15:25 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200424161742.GE5551@gaia>
+In-Reply-To: <217c0c14-f4fb-7321-9f57-205df0cd01fe@ti.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_040953_761935_D4F98D1E 
-X-CRM114-Status: GOOD (  30.06  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200427_041529_832199_07BBAFAE 
+X-CRM114-Status: GOOD (  14.94  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,147 +99,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard.Earnshaw@arm.com, Szabolcs.Nagy@arm.com,
- andreyknvl@google.com, kevin.brodsky@arm.com, Rob.Herring@arm.com,
- pcc@google.com, linux-mm@kvack.org, mark.rutland@arm.com,
- Vincenzo.Frascino@arm.com, will@kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
-
-On 04/24/2020 05:17 PM, Catalin Marinas wrote:
-> On Fri, Apr 24, 2020 at 02:57:36PM +0100, Catalin Marinas wrote:
->> On Tue, Apr 21, 2020 at 03:26:01PM +0100, Catalin Marinas wrote:
->>> Even if the ID_AA64PFR1_EL1 register advertises the presence of MTE, it
->>> is not guaranteed that the memory system on the SoC supports the
->>> feature. In the absence of system-wide MTE support, the behaviour is
->>> undefined and the kernel should not enable the MTE memory type in
->>> MAIR_EL1.
->>>
->>> For FDT, add an 'arm,armv8.5-memtag' property to the /memory nodes and
->>> check for its presence during MTE probing. For example:
->>>
->>> 	memory@80000000 {
->>> 		device_type = "memory";
->>> 		arm,armv8.5-memtag;
->>> 		reg = <0x00000000 0x80000000 0 0x80000000>,
->>> 		      <0x00000008 0x80000000 0 0x80000000>;
->>> 	};
->>>
->>> If the /memory nodes are not present in DT or if at least one node does
->>> not support MTE, the feature will be disabled. On EFI systems, it is
->>> assumed that the memory description matches the EFI memory map (if not,
->>> it is considered a firmware bug).
->>>
->>> MTE is not currently supported on ACPI systems.
->>>
->>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
->>> Cc: Rob Herring <Rob.Herring@arm.com>
->>> Cc: Mark Rutland <mark.rutland@arm.com>
->>> Cc: Will Deacon <will@kernel.org>
->>> Cc: Suzuki K Poulose <Suzuki.Poulose@arm.com>
->>
->> This patch turns out to be incomplete. While it does not expose the
->> HWCAP2_MTE to user when the above DT property is not present, it still
->> allows user access to the ID_AA64PFR1_EL1.MTE field (via MRS emulations)
->> since it is marked as visible.
-> 
-> Attempt below at moving the check to the CPUID fields setup. This way we
-> can avoid the original patch entirely since the sanitised id regs will
-> have a zero MTE field if DT doesn't support it.
-> 
-> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-> index afc315814563..0a24d36bf231 100644
-> --- a/arch/arm64/include/asm/cpufeature.h
-> +++ b/arch/arm64/include/asm/cpufeature.h
-> @@ -61,6 +61,7 @@ struct arm64_ftr_bits {
->   	u8		shift;
->   	u8		width;
->   	s64		safe_val; /* safe value for FTR_EXACT features */
-> +	s64		(*filter)(const struct arm64_ftr_bits *, s64);
->   };
->   
->   /*
-> @@ -542,7 +543,10 @@ cpuid_feature_extract_field(u64 features, int field, bool sign)
->   
->   static inline s64 arm64_ftr_value(const struct arm64_ftr_bits *ftrp, u64 val)
->   {
-> -	return (s64)cpuid_feature_extract_field_width(val, ftrp->shift, ftrp->width, ftrp->sign);
-> +	s64 fval = (s64)cpuid_feature_extract_field_width(val, ftrp->shift, ftrp->width, ftrp->sign);
-> +	if (ftrp->filter)
-> +		fval = ftrp->filter(ftrp, fval);
-> +	return fval;
->   }
->   
-
-This change makes sure that the sanitised infrastructure is initialised
-with masked value and all consumers see a "sanitised" value, including
-KVM (unless they emulate it directly on the local CPU)
-
-
-
-
->   
-> +#ifdef CONFIG_ARM64_MTE
-> +s64 mte_ftr_filter(const struct arm64_ftr_bits *ftrp, s64 val)
-> +{
-> +	struct device_node *np;
-> +	static bool memory_checked = false;
-> +	static bool mte_capable = true;
-> +
-> +	/* EL0-only MTE is not supported by Linux, don't expose it */
-> +	if (val < ID_AA64PFR1_MTE)
-> +		return ID_AA64PFR1_MTE_NI;
-> +
-> +	if (memory_checked)
-> +		return mte_capable ? val : ID_AA64PFR1_MTE_NI;
-> +
-> +	if (!acpi_disabled) {
-> +		pr_warn("MTE not supported on ACPI systems\n");
-> +		return ID_AA64PFR1_MTE_NI;
-> +	}
-> +
-> +	/* check the DT "memory" nodes for MTE support */
-> +	for_each_node_by_type(np, "memory") {
-> +		memory_checked = true;
-> +		mte_capable &= of_property_read_bool(np, "arm,armv8.5-memtag");
-> +	}
-> +
-> +	if (!memory_checked || !mte_capable) {
-> +		pr_warn("System memory is not MTE-capable\n");
-> +		memory_checked = true;
-> +		mte_capable = false;
-> +		return ID_AA64PFR1_MTE_NI;
-> +	}
-> +
-> +	return val;
-> +}
-> +#endif
-> +
->   /*
->    * NOTE: Any changes to the visibility of features should be kept in
->    * sync with the documentation of the CPU feature register ABI.
-> @@ -184,8 +225,10 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
->   
->   static const struct arm64_ftr_bits ftr_id_aa64pfr1[] = {
->   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_SSBS_SHIFT, 4, ID_AA64PFR1_SSBS_PSTATE_NI),
-> -	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_MTE),
-> -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR1_MTE_SHIFT, 4, ID_AA64PFR1_MTE_NI),
-> +#ifdef CONFIG_ARM64_MTE
-> +	FILTERED_ARM64_FTR_BITS(FTR_UNSIGNED, FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE,
-> +				ID_AA64PFR1_MTE_SHIFT, 4, ID_AA64PFR1_MTE_NI, mte_ftr_filter),
-> +#endif
->   	ARM64_FTR_END,
->   };
->   
-
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjcvMDQvMjAyMCAxNDoxMCwgSnlyaSBTYXJoYSB3cm90ZToKPiBPbiAyNy8wNC8yMDIwIDEz
+OjUxLCBUb21pIFZhbGtlaW5lbiB3cm90ZToKPj4gT24gMjcvMDQvMjAyMCAxMzozNywgSnlyaSBT
+YXJoYSB3cm90ZToKPj4+IE9uIDI3LzA0LzIwMjAgMTM6MDksIFRlcm8gS3Jpc3RvIHdyb3RlOgo+
+Pj4+PiArwqDCoMKgwqDCoMKgwqAgc3RhdHVzID0gImRpc2FibGVkIjsKPj4+Pgo+Pj4+IEFnYWlu
+LCB3aHkgZGlzYWJsZWQgYnkgZGVmYXVsdD8KPj4+Pgo+Pj4KPj4+IHRpZHNzIGRldmljZSBpcyBu
+b3QgZnVuY3Rpb25hbCB3aXRob3V0IGEgZGVmaW5lZCB2aWRlby1wb3J0LiBUaGUgZHJpdmVyCj4+
+PiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gYSB3YXkgdGhhdCBpdCB3b3VsZCBoYW5kbGUgYSBicm9r
+ZW4gY29uZmlndXJhdGlvbgo+Pj4gZ3JhY2VmdWxseS4KPj4KPj4gVGhlbiB3ZSBuZWVkIHRvIGZp
+eCBpdC4gVGhlIGRyaXZlciBzaG91bGQgaGFuZGxlIHRoZSBjYXNlIHdoZXJlIHRoZXJlCj4+IGFy
+ZSBubyBwb3J0cyBkZWZpbmVkIGp1c3QgZmluZS4KPj4KPiAKPiBKdXN0IGJ5IHJlYWRpbmcgdGhl
+IGNvZGUsIEkgd291bGQgc2F5IHRoYXQgY3VycmVudGx5IHRoZSBwcm9iZSB3b3VsZAo+IGZhaWwg
+d2l0aCByZXR1cm5lZCAtRU5PTUVNIGFmdGVyIGNhbGxpbmcgZHJtX3ZibGFua19pbml0KCkgd2l0
+aCB6ZXJvIENSVENzLgo+IAo+IFNvIHNob3VsZCB0aGUgcHJvYmUgZmFpbCBncmFjZWZ1bGx5IGFu
+ZCBzaWxlbnRseSwgb3Igc2hvdWxkIHdlIHRyeSB0bwo+IHJlZ2lzdGVyIGEgRFJNIGRldmljZSB3
+aXRoIG5vIENSVENzPyBJcyB0aGF0IGV2ZW4gcG9zc2libGU/CgpNeSBmaXJzdCB0aG91Z2h0IGlz
+IHRoYXQgdGhlIGRyaXZlciBzaG91bGQgZXhpdCBwcm9iZSBzaWxlbnRseSB3aXRoIEVOT0RFViBp
+ZiB0aGVyZSBhcmUgbm8gb3V0cHV0cyAKZGVmaW5lZCAoYnV0LCBvZiBjb3Vyc2UsIHdpdGggRVBS
+T0JFX0RFRkVSIGlmIHRoZXJlIGFyZSBvdXRwdXRzIHdoaWNoIGhhdmVuJ3QgYmVlbiBwcm9iZWQg
+eWV0KS4KCkl0IGdldHMgYSBiaXQgbW9yZSBjb21wbGV4IGlmIHdlIGV2ZXIgc3VwcG9ydCB3cml0
+ZWJhY2ssIGFzIHRoYXQgY2FuIGJlIHVzZWQgYXMgbWVtLXRvLW1lbSB3aXRob3V0IAphbnkgZGlz
+cGxheXMsIGJ1dCBJIHRoaW5rIHdlIGNhbiBpZ25vcmUgdGhhdCBmb3Igbm93LgoKICBUb21pCgot
+LSAKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwgMDAxODAg
+SGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlra2EvRG9t
+aWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
