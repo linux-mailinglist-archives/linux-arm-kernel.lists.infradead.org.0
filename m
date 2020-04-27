@@ -2,67 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DDA01B9745
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:19:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA6D81B974E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:20:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YotMvV8DI60aV/+kmRmE67GgM51ul48ZmKYahWFyvl8=; b=VqDtzPZr3Zr6AZ
-	48nt+UikSojdH3sKbIQ9K4e1WblNvhEszoe9gN4QVSbNC69lLN0EB0tBo9MvqUqErdysfynC3qqUv
-	lAN5Va3UVeTrDnAUqaku0Cq/RI0qpCt6dAp/rJxxHX7RtCXR1dOdIPobI3hzMIItwc9lme66if4Vj
-	gqp73nOjQ5XSH+wyw0VeXkevYobD9DMcj/ABnvOT62a3FxMdRDJdwWOrLwNBaetiD+dt1EqEWfr44
-	yABcJD5hdqTCD6KvjrLqfuoXY3MZ1EqH/LbhLbprKETVTS8qG6ctde8uVB/WkupWxahr82yD4HK6I
-	jTNbyS7qALqc1Tjj6Lew==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KVI/9aZxhvakKqjGB4NVkAaztDQEQnwXc+ARY0LZCjY=; b=dnSL8sUfUSXsz39PTc8CZFztG7
+	eZnhlH01nkdZhS9TnXc0K+5rcvPgwvGoNkK6S1e0Pvm1+UINk6bY3KW1ptPRJf6swFotcbLKigt1W
+	TR1f3TJ8GRDpjofVkK+FTOGQvk6r+ChVO3j6nm4OiEVouZgowF1FAljoL2Rk6sPJ273yzVaJZOnHm
+	2p2psJHqfFrKF3e5DKnmbyGjUMUclVj+TWx+u6mhSojm0JSO+8zq9DZFyTEtwT/1sM3AZpUoYg9NG
+	fZd70a0IuJgC9NKktwwI9gmneinEubeNyFnwHbLeL8hm1juypO3a2WrU9BgNptVCtx5yV1vj0qlFE
+	p7C0GlPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSx6j-00053c-OL; Mon, 27 Apr 2020 06:19:09 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jSx7T-0005RS-KJ; Mon, 27 Apr 2020 06:19:55 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSx6V-00052M-TB
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:18:57 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jSx6L-00063K-Sk; Mon, 27 Apr 2020 08:18:45 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1jSx6L-0003ns-0y; Mon, 27 Apr 2020 08:18:45 +0200
-Date: Mon, 27 Apr 2020 08:18:44 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Parthiban Nallathambi <parthiban@linumiz.com>
-Subject: Re: [PATCH] ARM: dts: imx6ull: add MYiR MYS-6ULX SBC
-Message-ID: <20200427061844.i5hb2xatq2ntdqbe@pengutronix.de>
-References: <20200408184351.135716-1-parthiban@linumiz.com>
+ id 1jSx7D-0005Pm-Tt
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:19:41 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 355C2ACC3;
+ Mon, 27 Apr 2020 06:19:34 +0000 (UTC)
+Subject: Re: [PATCH -next] tty: serial: bcm63xx: fix missing clk_put() in
+ bcm63xx_uart
+To: Zou Wei <zou_wei@huawei.com>, gregkh@linuxfoundation.org,
+ f.fainelli@gmail.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+From: Jiri Slaby <jslaby@suse.cz>
+Autocrypt: addr=jslaby@suse.cz; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <4cd8f963-9292-faef-1e24-df90821274d6@suse.cz>
+Date: Mon, 27 Apr 2020 08:19:34 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408184351.135716-1-parthiban@linumiz.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:13:42 up 163 days, 21:32, 173 users,  load average: 0.00, 0.09,
- 0.09
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_231856_102973_679865F1 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200426_231940_263217_46A45CAB 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,288 +111,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Parthiban,
-
-a few more minor comments..
-
-On 20-04-08 20:43, Parthiban Nallathambi wrote:
-
-...
-
-> diff --git a/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi b/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi
-> new file mode 100644
-> index 000000000000..f0a514187c21
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi
-> @@ -0,0 +1,247 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2020 Linumiz
-> + * Author: Parthiban Nallathambi <parthiban@linumiz.com>
-> + */
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/interrupt-controller/irq.h>
-> +#include <dt-bindings/pwm/pwm.h>
-> +
-> +/ {
-> +	model = "MYiR MYS-6ULX Single Board Computer";
-> +	compatible = "myir,imx6ull-mys-6ulx", "fsl,imx6ull";
-> +
-> +	chosen {
-> +		stdout-path = &uart1;
-> +	};
-> +
-> +	regulators: regulators {
-> +		compatible = "simple-bus";
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		vdd_5v: regulator@0 {
-> +			compatible = "regulator-fixed";
-> +			regulator-name = "VDD_5V";
-> +			regulator-min-microvolt = <5000000>;
-> +			regulator-max-microvolt = <5000000>;
-> +			regulator-always-on;
-> +			regulator-boot-on;
-> +		};
-> +
-> +		vdd_3v3: regulator@1 {
-> +			compatible = "regulator-fixed";
-> +			regulator-name = "VDD_3V3";
-> +			regulator-min-microvolt = <3300000>;
-> +			regulator-max-microvolt = <3300000>;
-> +			regulator-always-on;
-> +			vin-supply = <&vdd_5v>;
-> +		};
-> +	};
-> +};
-> +
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_enet1>;
-> +	phy-mode = "rmii";
-> +	phy-handle = <&ethphy0>;
-> +	phy-supply = <&vdd_3v3>;
-> +	status = "okay";
-> +
-> +	mdio: mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@0 {
-> +			reg = <0>;
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-> +			interrupt-parent = <&gpio5>;
-> +			interrupts = <5 IRQ_TYPE_LEVEL_LOW>;
-> +			clocks = <&clks IMX6UL_CLK_ENET_REF>;
-> +			clock-names = "rmii-ref";
-> +			status = "okay";
-
-Status not needed here.
-
-> +		};
-> +	};
-> +};
-> +
-> +&gpmi {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_gpmi_nand>;
-> +	nand-on-flash-bbt;
-> +	status = "disabled";
-> +};
-> +
-> +&uart1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart1>;
-> +	status = "okay";
-> +};
-> +
-> +&usbotg1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usb_otg1_id>;
-> +	dr_mode = "otg";
-> +	status = "okay";
-> +};
-> +
-> +&usbotg2 {
-> +	dr_mode = "host";
-> +	disable-over-current;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc1 {
-> +	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-> +	pinctrl-0 = <&pinctrl_usdhc1>;
-> +	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
-> +	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
-> +	cd-gpios = <&gpio1 19 GPIO_ACTIVE_LOW>;
-> +	no-1-8-v;
-> +	keep-power-in-suspend;
-> +	wakeup-source;
-> +	vmmc-supply = <&vdd_3v3>;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc2>;
-> +	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
-> +	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
-> +	bus-width = <8>;
-> +	non-removable;
-> +	keep-power-in-suspend;
-> +	vmmc-supply = <&vdd_3v3>;
-> +	status = "disabled";
-
-Status not needed here.
-
-Regards,
-  Marco
-
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_enet1: enet1grp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_GPIO1_IO06__ENET1_MDIO	0x1b0b0
-> +			MX6UL_PAD_GPIO1_IO07__ENET1_MDC		0x1b0b0
-> +			MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN	0x1b0b0
-> +			MX6UL_PAD_ENET1_RX_ER__ENET1_RX_ER	0x1b0b0
-> +			MX6UL_PAD_ENET1_RX_DATA0__ENET1_RDATA00	0x1b0b0
-> +			MX6UL_PAD_ENET1_RX_DATA1__ENET1_RDATA01	0x1b0b0
-> +			MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN	0x1b0b0
-> +			MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00	0x1b0b0
-> +			MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01	0x1b0b0
-> +			MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b031
-> +			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0
-> +		>;
-> +	};
-> +
-> +	pinctrl_gpmi_nand: gpminandgrp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_NAND_CLE__RAWNAND_CLE		0x0b0b1
-> +			MX6UL_PAD_NAND_ALE__RAWNAND_ALE		0x0b0b1
-> +			MX6UL_PAD_NAND_WP_B__RAWNAND_WP_B	0x0b0b1
-> +			MX6UL_PAD_NAND_READY_B__RAWNAND_READY_B	0x0b000
-> +			MX6UL_PAD_NAND_CE0_B__RAWNAND_CE0_B	0x0b0b1
-> +			MX6UL_PAD_NAND_RE_B__RAWNAND_RE_B	0x0b0b1
-> +			MX6UL_PAD_NAND_WE_B__RAWNAND_WE_B	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA00__RAWNAND_DATA00	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA01__RAWNAND_DATA01	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA02__RAWNAND_DATA02	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA03__RAWNAND_DATA03	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA04__RAWNAND_DATA04	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA05__RAWNAND_DATA05	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA06__RAWNAND_DATA06	0x0b0b1
-> +			MX6UL_PAD_NAND_DATA07__RAWNAND_DATA07	0x0b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart1: uart1grp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
-> +			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usb_otg1_id: usbotg1idgrp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_GPIO1_IO00__ANATOP_OTG1_ID	0x17059
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1: usdhc1grp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x17059
-> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x10059
-> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
-> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
-> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
-> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
-> +			MX6UL_PAD_UART1_RTS_B__GPIO1_IO19	0x17059
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
-> +		fsl,pins = <
-> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x170b9
-> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x100b9
-> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x170b9
-> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x170b9
-> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x170b9
-> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x170b9
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
-> +		fsl,pins = <
-> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x170f9
-> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x100f9
-> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x170f9
-> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x170f9
-> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x170f9
-> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x170f9
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2: usdhc2grp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x10069
-> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x17059
-> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x17059
-> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x17059
-> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x17059
-> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x17059
-> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x17059
-> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x17059
-> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x17059
-> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x17059
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
-> +		fsl,pins = <
-> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100b9
-> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170b9
-> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170b9
-> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170b9
-> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170b9
-> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170b9
-> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x170b9
-> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x170b9
-> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x170b9
-> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x170b9
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
-> +		fsl,pins = <
-> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100f9
-> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170f9
-> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170f9
-> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170f9
-> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170f9
-> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170f9
-> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x170f9
-> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x170f9
-> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x170f9
-> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x170f9
-> +		>;
-> +	};
-> +};
-> -- 
-> 2.11.0
+On 21. 04. 20, 14:31, Zou Wei wrote:
+> This patch fixes below error reported by coccicheck
 > 
+> drivers/tty/serial/bcm63xx_uart.c:848:2-8: ERROR: missing clk_put;
+> clk_get on line 842 and execution via conditional on line 846
+> 
+> Fixes: ab4382d27412 ("tty: move drivers/serial/ to drivers/tty/serial/")
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: Zou Wei <zou_wei@huawei.com>
+> ---
+>  drivers/tty/serial/bcm63xx_uart.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/tty/serial/bcm63xx_uart.c b/drivers/tty/serial/bcm63xx_uart.c
+> index 5674da2..ed0aa5c 100644
+> --- a/drivers/tty/serial/bcm63xx_uart.c
+> +++ b/drivers/tty/serial/bcm63xx_uart.c
+> @@ -843,8 +843,10 @@ static int bcm_uart_probe(struct platform_device *pdev)
+>  	if (IS_ERR(clk) && pdev->dev.of_node)
+>  		clk = of_clk_get(pdev->dev.of_node, 0);
+>  
+> -	if (IS_ERR(clk))
+> +	if (IS_ERR(clk)) {
+> +		clk_put(clk);
+
+Why would you want to put an erroneous clk?
+
+>  		return -ENODEV;
+> +	}
+>  
+>  	port->iotype = UPIO_MEM;
+>  	port->irq = res_irq->start;
+> 
+
+
+-- 
+js
+suse labs
 
 _______________________________________________
 linux-arm-kernel mailing list
