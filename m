@@ -2,129 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B59141BA4AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:26:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 765CD1BA48C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:25:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TA2Cm78qJu0p+2N7+7Kq0lh0DmRXZ/Ay+sW4HcBea4s=; b=BXQWlKBhaiHQE5
-	k/187oW9Ha84/o2CIxZUpT/B6UsUG8/v5Vw0h7kuUmTOxYYfeZfEGSx1OeFmqpg+tCUNdVbl/tI0z
-	vfFKmxZF0acQRD1gq0ljhJLRNZzDt77ohrgyX40XdKUp5rLN+MzJ+tWEBmpXtoopwrWV/zNCvJOwJ
-	qFCAqwPqXOyzp/LZnfrhmRS97tYIuhOY5nqJHcqA4LH3bMmNJLmS39CduYFT8bSJGQ8EZXymly/p8
-	aUC3Hf2+ZWWCA+6F+EuxXmWGlZDZ31y5oKRmNgdEWUfIzfPLHYTpPJwSwRbusxtTS9yPR9rFdXmIT
-	Bl0W/DWG66KwFxVdHLjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n/EVYnTwTu9iBqGbjk8Cld1Lu1mPiCCqXYMneQERop0=; b=PO4zuBjld98mPV
+	Yw54uarPewiCkzhvSe/K/ZO+OfEiogP3Z3ohKwLZA2Lfu/ZZ8zPgGwKhVGg3l5lG6L4v/GGPM25/z
+	SeqKcS+oUiJg27401IsJPRDQ6b4doKIq49xeGFplug5bZgYFh5+YfwI4YIydzVS3ChvTQrW+dB1Jz
+	tQH31joXfDmPNk6AzWnbSG3mBTP6Vq9q+M17ENPUdXwLmkWnR4Hpg+uhwnqBQKOfKtAPkCzeRnCFR
+	Yqv9XsS48GPuAD3WZEB/gE9tOLgqtkrejuS07874nMl9CxUBql2bg2fCcBMfulT7iH8zrwVfpYd88
+	9IhpoDw2H9fwtTDIWtIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT3m8-0001k7-7o; Mon, 27 Apr 2020 13:26:20 +0000
-Received: from mail-db8eur05on2088.outbound.protection.outlook.com
- ([40.107.20.88] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jT3kk-0006dE-Ug; Mon, 27 Apr 2020 13:24:54 +0000
+Received: from mleia.com ([178.79.152.223] helo=mail.mleia.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT3lB-00012m-Dc
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:25:22 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=H6AW5Rbur9wMTA5/vl+494E/WOH5z8iu1cJdiURpGWRlhPMolJ/8MVAnddW6FvOd51qLzRIieLSxUgmOZSl2tq+UrSHdOgwfo1d1rtayb7XHYPNsRT8Xz77ZgwdcU4qEFqbqWVw+fGBMm0KZmYKa0ZNbLwADSGwMAISsNInUXpH/TQ15RANgs8Qw93TQP0WhJSCbmtnj2baRpA5rctTI34a4g2KORj4+XxZ9GKiDoyrZzbO3u3w5bmj6gj4j+ISDhMJSCK5U7sCqzbylQV2Zi2gCL7MU06HQtVkiHWzZ1cXfuamM8lEgiUKuK28eQu41DVyyYTD+OYX72ywVVpKNOQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Smyu2QabomlLWNqAG8Ri/BK1/sj7FPm9Ho7QY16gSTo=;
- b=R8A7YDVI/4UGBSZ7Nh8fiZkgH0/t1u5XwJqNHBdsjtJRxhh3IN5Mm0iL7nqZ2qOxJMCLP00DVRLUnuwt/2CJj5fna28B7S1RQ4CceM2EWQXMzoYvE7/tQ8r9do08KaCoWZpWmMzhkZ52t6ZufjUhFAmjPJxMMapM4Z8f7pAESAVUWsETdQRrJlqzUnGXVZHZwB9vZcVDL3sk0FNScA0iJ+2uGCSaGPCv6QTxSgxXbx3CLBxtwf7Aptad9kJKO9bmatUIGp7rHRK6E4tydW53yRwVWocGTC6jtnnd3uCJHCffwoXgEaGIcTkV99Q2oSLpZhbUoT49avMAwgFGk6eZ3g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Smyu2QabomlLWNqAG8Ri/BK1/sj7FPm9Ho7QY16gSTo=;
- b=T/sxI6U8iTJFq5kePfcu/1JoHXT6YohG0Lz6dg98DLR6tK95y0l6BHZGXd8C3iuZulnG2wvmWD4FIRqWUHjMhlitV1YTILbVYdZvErjX4qgOx7WyiKyTC01r4K7qxfsagG5uU/A3qx1Gvfs4XFYCPWGD1tB2YHtFaqQA6w6qe2o=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=calvin.johnson@oss.nxp.com; 
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
- by AM0PR04MB6867.eurprd04.prod.outlook.com (2603:10a6:208:182::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 13:25:18 +0000
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 13:25:18 +0000
-From: Calvin Johnson <calvin.johnson@oss.nxp.com>
-To: linux.cj@gmail.com, Jeremy Linton <jeremy.linton@arm.com>,
- Andrew Lunn <andrew@lunn.ch>, Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: [net-next PATCH v2 3/3] phylink: Introduce
- phylink_fwnode_phy_connect()
-Date: Mon, 27 Apr 2020 18:54:09 +0530
-Message-Id: <20200427132409.23664-4-calvin.johnson@oss.nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
-References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
-X-ClientProxiedBy: SG2PR04CA0191.apcprd04.prod.outlook.com
- (2603:1096:4:14::29) To AM0PR04MB5636.eurprd04.prod.outlook.com
- (2603:10a6:208:130::22)
+ id 1jT3kb-0006cF-P6
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:24:46 +0000
+Received: from mail.mleia.com (localhost [127.0.0.1])
+ by mail.mleia.com (Postfix) with ESMTP id E6E983DC9E9;
+ Mon, 27 Apr 2020 13:24:41 +0000 (UTC)
+Subject: Re: [PATCH net-next] net: lpc-enet: fix error return code in
+ lpc_mii_init()
+To: Wei Yongjun <weiyongjun1@huawei.com>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Sumit Semwal <sumit.semwal@linaro.org>,
+ "stigge @ antcom . de" <stigge@antcom.de>
+References: <20200427121507.23249-1-weiyongjun1@huawei.com>
+From: Vladimir Zapolskiy <vz@mleia.com>
+Message-ID: <936fc5fb-25a1-8974-71e2-80c2c4bdd0f4@mleia.com>
+Date: Mon, 27 Apr 2020 16:24:40 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
- SG2PR04CA0191.apcprd04.prod.outlook.com (2603:1096:4:14::29) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.13 via Frontend Transport; Mon, 27 Apr 2020 13:25:13 +0000
-X-Mailer: git-send-email 2.17.1
-X-Originating-IP: [14.142.151.118]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: d757c344-9949-46bb-b21b-08d7eaae6df9
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6867:|AM0PR04MB6867:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB6867201919B62115D69764E0D2AF0@AM0PR04MB6867.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2399;
-X-Forefront-PRVS: 0386B406AA
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(366004)(136003)(39860400002)(86362001)(8936002)(44832011)(2906002)(478600001)(66476007)(81156014)(66556008)(5660300002)(1076003)(66946007)(8676002)(26005)(7416002)(6506007)(2616005)(956004)(6512007)(4326008)(16526019)(110136005)(52116002)(6486002)(186003)(6666004)(316002)(1006002)(54906003)(55236004)(110426005)(921003);
- DIR:OUT; SFP:1101; 
-Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: tcZ5J0LKf3JjBcGqfhuVFgy+roLgkwJwRtL2YfCwbAhrRAMk8UxheMzFbHEE6fcc9SGvDm/AFGUuybPsMkx/JsOqcmZSi25l87BPADx/I1RVMurb3U/sHvJBMwnbnzOKDb+ZQ9/AdXCDG05ih4QFxKdohH1lr8uCLtUCnv8oUyGsYXKiY19FOJ+eWisgVEg4aVj+I9xeoNEKEofuDMBhrJjgRmhtCukH+AUcvaP/Y5AFdIFvt/yUfhVvN8TznS6XK1CAcJTx2TQQcJMv5+1SAJAs+XcfxPsGxWPCrb2NYD7MM3Sd78xXgXpZdp+fcrEHoFJeRqegVE4NGFvd/Qv/8uolLOlIx1c/dTyYu+y/W46jPrRaPSb+zOyaz+v0n3wbENuTCaoC2jqoWI5qUdsM8iC9H9AG/jXwxsU1vZ0aCeMkts88xW7QKVgSc7GNuLyN2pPvF8UCMJQ0F8bKP8BjbREpgu2UoG9/TImVuzZwMuwE/3A7op8z/Ntf42pQly7TNLRAhc6Ju+zcUFsJBipSaA==
-X-MS-Exchange-AntiSpam-MessageData: cryWS9kb44KTNLxKSaIkQ4fL0o9e06RE2XdtzBxv/ItTiA4TE36oDZ0smCV8hFI3ZIs85oFUd0BBo46UV5tAk7NCz65ZrpCUZpTsnpSDa35p1wgkM7g9IApI0iM6aM4Cu9WfTC2taSyPhUVvFP2sJbgWxXHsdTifxnWXVS6HXeM9Ntij6xVYfS8KGjZH4G1C87z6PF5CYaEXSBcEQ6QqqjaY/UYjMqI2d3H6khBUJtKEen5JjTtm7HV3pfcXRcQEKbt3K4KkEJ/awqNLzxILbkjFxk/hnUOjkDxjY1ILlN9xTUwA+teYf3HCMlnD1JfETAwFs/nvRhJd+HTCl98+MJaaJa4Cs76oTgb2hCTTnFMuFPJk+h33DFRD2bJetFfmZ0BU8m2nnrXhNEa3YyJ3HSWaaNfX4JsLFsL0WMbzmfhEp706uGYIvBWuw7OVuUxgsYl13lhn1glQkIhkJLBa3ta6dyekiHU0WA5GNcgNZj4fXQuW4YqQgVpbV9nrvI8KHWZj0aXhdaUGZZGeT7hwIdl4D2BOA0Z1z4n/j63T+UMOQMlhb/WuvDAr3IxuQcrJXB6EnWhGLwbTwcjQdAzH1z4Y4yw6PH8fmwmsUIM2fgYCzBxdAzAtlaJq/eYdMhjNAAvNudigELCctKfsGSZ+nYQ5CpsD41/2hVxykAKCP4uhawapWdiGhhF51LS2Y6Y9ruuI+07qQnaDCITjaX+migPahbkAMsX6UXTHipAA2XpCYxjxVQ1NorUPK0qesxRGz7H1rHi+kod+LvDb6r7nYAbGJ6EOtwkehfE+3t5quB0=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d757c344-9949-46bb-b21b-08d7eaae6df9
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 13:25:18.8043 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: wIP2sQqOmPMRcyGdMTNUVhL9i+FMG7/RCEJoHfMB8U9U0USRcpuwURhECdRsNPvCB0ERmgoNXB2P/k2ccsY+3A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6867
+In-Reply-To: <20200427121507.23249-1-weiyongjun1@huawei.com>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-49551924 
+X-CRM114-CacheID: sfid-20200427_132441_970355_2770457E 
+X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-Notice: Please train this message. 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_062521_483553_D326DA46 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200427_132441_970355_2770457E 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.88 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.88 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,134 +67,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>, netdev@vger.kernel.org,
- Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
- Calvin Johnson <calvin.johnson@oss.nxp.com>,
- Heiner Kallweit <hkallweit1@gmail.com>,
- Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: netdev@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Define phylink_fwnode_phy_connect() to connect phy specified by
-a fwnode to a phylink instance. Additionally,
-phylink_device_phy_connect() is defined to connect phy specified
-by a device to a phylink instance.
+On 4/27/20 3:15 PM, Wei Yongjun wrote:
+> Fix to return a negative error code from the error handling
+> case instead of 0, as done elsewhere in this function.
+> 
+> Fixes: b7370112f519 ("lpc32xx: Added ethernet driver")
+> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
 
-Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
----
+Acked-by: Vladimir Zapolskiy <vz@mleia.com>
 
-Changes in v2:
-  replace of_ and acpi_ code with generic fwnode to get phy-handle.
-
- drivers/net/phy/phylink.c | 68 +++++++++++++++++++++++++++++++++++++++
- include/linux/phylink.h   |  6 ++++
- 2 files changed, 74 insertions(+)
-
-diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
-index 0f23bec431c1..5eab1eadded7 100644
---- a/drivers/net/phy/phylink.c
-+++ b/drivers/net/phy/phylink.c
-@@ -961,6 +961,74 @@ int phylink_connect_phy(struct phylink *pl, struct phy_device *phy)
- }
- EXPORT_SYMBOL_GPL(phylink_connect_phy);
- 
-+/**
-+ * phylink_fwnode_phy_connect() - connect the PHY specified in the fwnode.
-+ * @pl: a pointer to a &struct phylink returned from phylink_create()
-+ * @fwnode: a pointer to a &struct fwnode_handle.
-+ * @flags: PHY-specific flags to communicate to the PHY device driver
-+ *
-+ * Connect the phy specified @fwnode to the phylink instance specified
-+ * by @pl. Actions specified in phylink_connect_phy() will be
-+ * performed.
-+ *
-+ * Returns 0 on success or a negative errno.
-+ */
-+int phylink_fwnode_phy_connect(struct phylink *pl,
-+			       struct fwnode_handle *fwnode,
-+			       u32 flags)
-+{
-+	struct fwnode_handle *phy_fwnode;
-+	struct phy_device *phy_dev;
-+	int ret = 0;
-+
-+	/* Fixed links and 802.3z are handled without needing a PHY */
-+	if (pl->cfg_link_an_mode == MLO_AN_FIXED ||
-+	    (pl->cfg_link_an_mode == MLO_AN_INBAND &&
-+	     phy_interface_mode_is_8023z(pl->link_interface)))
-+		return 0;
-+
-+	phy_fwnode = fwnode_get_phy_node(fwnode);
-+	if ((IS_ERR_OR_NULL(phy_fwnode)) && (pl->cfg_link_an_mode == MLO_AN_PHY))
-+		return -ENODEV;
-+
-+	phy_dev = fwnode_phy_find_device(phy_fwnode);
-+	fwnode_handle_put(phy_fwnode);
-+	if (!phy_dev)
-+		return -ENODEV;
-+
-+	ret = phy_attach_direct(pl->netdev, phy_dev, flags,
-+				pl->link_interface);
-+	if (ret)
-+		return ret;
-+
-+	ret = phylink_bringup_phy(pl, phy_dev, pl->link_config.interface);
-+	if (ret)
-+		phy_detach(phy_dev);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phylink_fwnode_phy_connect);
-+
-+/**
-+ * phylink_device_phy_connect() - connect the PHY specified by the device.
-+ * @pl: a pointer to a &struct phylink returned from phylink_create()
-+ * @dev: a pointer to a &struct device.
-+ * @flags: PHY-specific flags to communicate to the PHY device driver
-+ *
-+ * Connect the phy specified by the device to the phylink instance specified
-+ * by @pl. Actions specified in phylink_connect_phy() will be
-+ * performed.
-+ *
-+ * Returns 0 on success or a negative errno.
-+ */
-+int phylink_device_phy_connect(struct phylink *pl,
-+			       struct device *dev,
-+			       u32 flags)
-+{
-+	return phylink_fwnode_phy_connect(pl, dev_fwnode(dev), flags);
-+}
-+EXPORT_SYMBOL_GPL(phylink_device_phy_connect);
-+
- /**
-  * phylink_of_phy_connect() - connect the PHY specified in the DT mode.
-  * @pl: a pointer to a &struct phylink returned from phylink_create()
-diff --git a/include/linux/phylink.h b/include/linux/phylink.h
-index cc5b452a184e..c2bd0ee9dd9c 100644
---- a/include/linux/phylink.h
-+++ b/include/linux/phylink.h
-@@ -367,6 +367,12 @@ void phylink_add_pcs(struct phylink *, const struct phylink_pcs_ops *ops);
- void phylink_destroy(struct phylink *);
- 
- int phylink_connect_phy(struct phylink *, struct phy_device *);
-+int phylink_fwnode_phy_connect(struct phylink *pl,
-+			       struct fwnode_handle *fwnode,
-+			       u32 flags);
-+int phylink_device_phy_connect(struct phylink *pl,
-+			       struct device *dev,
-+			       u32 flags);
- int phylink_of_phy_connect(struct phylink *, struct device_node *, u32 flags);
- void phylink_disconnect_phy(struct phylink *);
- 
--- 
-2.17.1
-
+--
+Best wishes,
+Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
