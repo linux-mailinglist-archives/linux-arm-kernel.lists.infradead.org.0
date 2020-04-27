@@ -2,97 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFEA91BAB2E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:26:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C9AF1BAB4C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:30:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/H0tyk9rOakuwaDh2ddiBvoU+q7wizkyABw61bADrC4=; b=Fed4AIrhEgJm4o
-	Yv2qBQVna4QGXCnF9HnVotRU+qnHYVDWqWmJ6qKMfNADo3/VMFBz0i/6HglM69umQlZo7WqMR4ZQj
-	R6Na5RFCjeJV2TFpevAhfSnd0yCSij5tWw5hzUyAMAja2OGuIaMmb2DBFdsnWLkGcOMe4rxqubo0C
-	5UGUXCjMy3qIb+UVzP5Zj1p92kssv1wuGhFpna10vFCTy9rB1CeldAYJHDOMPW6BIAIqclLxmMzUV
-	wkoPnjz0Wp816KPrtM5GR4QCqU1LFD9gPthmYrsL3o/rQBIOyW+POwVoSR62mv8tQ72aA8UQe0cbH
-	5bPGra3Vt8GZOIPCa/cw==;
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=d2RYIqDGC/wsf0oX5v/RxAeng1Lmuosxi+o8Mg1i64o=; b=C0HxH098vscG2Hbq5sd8sF1FjF
+	Xl+GX0CLF1jp+2lOSWOtTZufxunZP3vXF/iO8nGmvRgVVy3L+B5m88GqcrZdCHualjuzkRx826t61
+	a70hzdzZlNHXjLiX8EnwjrDvpFM10yfAVVr6PGEKHgT5+NybzHIF4480ZLnrQwehqIerMpeC/vG94
+	wwElXmwbYzC2B2YwVgc67C8cL7roCxuD8XUKhy9yR6vyeTDk9negl5ur9qVgA6gHxGX1BRuZs1Xrs
+	2w3dbXRyHnUTPMSi/BLpez2o+zajBIzrRNnHCMXjGHvm4nh8HYCabsWRKfptkhZwrR8+UBHStZy5u
+	RUJV5euQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT7Wf-0005tC-C4; Mon, 27 Apr 2020 17:26:37 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jT7aH-0008H3-B7; Mon, 27 Apr 2020 17:30:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT7WQ-0005pK-0g; Mon, 27 Apr 2020 17:26:23 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RHNNun032176;
- Mon, 27 Apr 2020 17:25:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=2uE+mNBlryTX8hj4mQm6UWx/K31ONdvabCMIKOLtOyU=;
- b=xTCYIbf7r5dai610kYmRfslwcsdHMEa6nYuPYmpMy+7WUkM9840zuWRmT2v1MiaH6Cad
- +fYWXCh8PyDfm6g+dIyG7BXcw3P9PeZXXougO6mlOLOylsBzYtMAlZzBzlRJJatu4I9N
- /AveFv2IyJQslCKqyCxuN+21YY9yrbN47PRg98fdwJ2kPrlLeXvj0DTMFDZB9ZWRvRM7
- Ed+D9rxwrxjP3D1PFlRuVFcuOx+bDZYZm4iIaDJw0NmlAZ9XtPZO6joC0Rr+di/qtUTo
- oTv+6hlYH5+uyVoe6FV6yxjUAbpvIRv9bN/idQ6mOzjti7KgZTFrdQJIrHma1+l6CzbV yA== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2120.oracle.com with ESMTP id 30p2p00ddv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 27 Apr 2020 17:25:18 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RHMbqg085782;
- Mon, 27 Apr 2020 17:25:18 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3030.oracle.com with ESMTP id 30mxpdrdfm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 27 Apr 2020 17:25:18 +0000
-Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03RHP5vx008462;
- Mon, 27 Apr 2020 17:25:05 GMT
-Received: from [192.168.2.157] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 27 Apr 2020 10:25:05 -0700
-Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
- independent code
-To: Sandipan Das <sandipan.osd@gmail.com>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <20200417185049.275845-3-mike.kravetz@oracle.com>
- <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
-Date: Mon, 27 Apr 2020 10:25:02 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jT7Zy-0007lG-B6
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 17:30:03 +0000
+Received: by mail-pf1-x443.google.com with SMTP id d184so9328273pfd.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 10:30:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=SCLyDRiJjkisSI5+I7kNMlITwcAUmvW5WBS3LcGSTZs=;
+ b=f7u4o2sKuPfQQUUeIiWva27PcW47sExOw2ojdV1iJqO2YiekLlLQPdnrUK+CgZhhfG
+ cJ+ZgM4cPD7Y5oXHfP1JI9yj1gmTLQnN42FMZiF4iS0jQG9ocWgmH7gSirxMIvMmnn37
+ /lKlbgE9xfA929pEOUYZiTjseraB5PJQgyhO23j194oD+QjFpU1H46lSOKsyuh93rsEk
+ 35afT3WPxbKMLvr22/qWiT1enHGec0iP/pL33VaHplNezHvl02oBGpKQ3YTOr3YjRB2P
+ 3Ij9FTxtADBjH4qD0IK8bbqe7j3tXMbRQLrit3H3nqsBJwOQfm/2ExV+mpjsXDupHPec
+ hr1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=SCLyDRiJjkisSI5+I7kNMlITwcAUmvW5WBS3LcGSTZs=;
+ b=JSM7fitEi9FyFpgokbaMG70kNT4m3vd7YwNqsW2dQarMq2KNtn/i9a8SzJXaEP+Vel
+ iZalbZw7vZMRmw1Ey4KNc2tEmEwzTrRV3bjb7TL9W3QSePWdbcXiZGADJsY3VLwoNYBD
+ VAhGl1Wmutj5dcdTOmGCnigWAKCILj5wYBfsZMwH511PqLdFcv2GMTZ1+UDYBWXhDfKu
+ 86t8NY4A+D9HztDFQDBv4KUQwnL7mSjhPnDaaUD9HCV2soOfhKK7QJyJNL00xjOJuk5q
+ WEaknqpBtAVe74Gk8qhaSBl2YGFZzMQ8pH67NzxXj3/klrPBH/+tmYT6ddyOK9mlWuLy
+ uu8A==
+X-Gm-Message-State: AGi0PuZ6qa3vJ1ospQQkF6TlTLG/wEezqgc7LDaOHx8aqUS6FFrJMSps
+ 6BQp4+nJkFji8CoGNbEd0Xg=
+X-Google-Smtp-Source: APiQypLAkvMyKxt4+GqBWPPQov4z6yuIinvDdHdu3rfRqyLGtyrl9GGPdWcRQ69bAKSDmiis+wgM8A==
+X-Received: by 2002:a63:f843:: with SMTP id v3mr24542277pgj.421.1588008601102; 
+ Mon, 27 Apr 2020 10:30:01 -0700 (PDT)
+Received: from [10.69.79.32] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id ml24sm11558508pjb.48.2020.04.27.10.29.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Apr 2020 10:30:00 -0700 (PDT)
+Subject: Re: [PATCH -next] tty: serial: bcm63xx: fix missing clk_put() in
+ bcm63xx_uart
+To: Jiri Slaby <jslaby@suse.cz>, Zou Wei <zou_wei@huawei.com>,
+ gregkh@linuxfoundation.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+ <4cd8f963-9292-faef-1e24-df90821274d6@suse.cz>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <73c4cebb-467b-e5d5-89bf-8a6fe29cf858@gmail.com>
+Date: Mon, 27 Apr 2020 10:29:58 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
+In-Reply-To: <4cd8f963-9292-faef-1e24-df90821274d6@suse.cz>
 Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- malwarescore=0
- mlxscore=0 bulkscore=0 adultscore=0 phishscore=0 suspectscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004270142
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- phishscore=0 clxscore=1011
- bulkscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0 malwarescore=0
- mlxscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004270142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_102622_185661_B75F011C 
-X-CRM114-Status: GOOD (  28.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200427_103002_423172_7460760D 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,7 +96,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,126 +107,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/26/20 10:04 PM, Sandipan Das wrote:
-> Hi Mike,
-> 
-> On 18/04/20 12:20 am, Mike Kravetz wrote:
->> Now that architectures provide arch_hugetlb_valid_size(), parsing
->> of "hugepagesz=" can be done in architecture independent code.
->> Create a single routine to handle hugepagesz= parsing and remove
->> all arch specific routines.  We can also remove the interface
->> hugetlb_bad_size() as this is no longer used outside arch independent
->> code.
+
+
+On 4/26/2020 11:19 PM, Jiri Slaby wrote:
+> On 21. 04. 20, 14:31, Zou Wei wrote:
+>> This patch fixes below error reported by coccicheck
 >>
->> This also provides consistent behavior of hugetlbfs command line
->> options.  The hugepagesz= option should only be specified once for
->> a specific size, but some architectures allow multiple instances.
->> This appears to be more of an oversight when code was added by some
->> architectures to set up ALL huge pages sizes.
+>> drivers/tty/serial/bcm63xx_uart.c:848:2-8: ERROR: missing clk_put;
+>> clk_get on line 842 and execution via conditional on line 846
 >>
->> [...]
+>> Fixes: ab4382d27412 ("tty: move drivers/serial/ to drivers/tty/serial/")
+>> Reported-by: Hulk Robot <hulkci@huawei.com>
+>> Signed-off-by: Zou Wei <zou_wei@huawei.com>
+>> ---
+>>  drivers/tty/serial/bcm63xx_uart.c | 4 +++-
+>>  1 file changed, 3 insertions(+), 1 deletion(-)
 >>
->> diff --git a/arch/powerpc/mm/hugetlbpage.c b/arch/powerpc/mm/hugetlbpage.c
->> index de54d2a37830..2c3fa0a7787b 100644
->> --- a/arch/powerpc/mm/hugetlbpage.c
->> +++ b/arch/powerpc/mm/hugetlbpage.c
->> @@ -589,21 +589,6 @@ static int __init add_huge_page_size(unsigned long long size)
->>  	return 0;
->>  }
+>> diff --git a/drivers/tty/serial/bcm63xx_uart.c b/drivers/tty/serial/bcm63xx_uart.c
+>> index 5674da2..ed0aa5c 100644
+>> --- a/drivers/tty/serial/bcm63xx_uart.c
+>> +++ b/drivers/tty/serial/bcm63xx_uart.c
+>> @@ -843,8 +843,10 @@ static int bcm_uart_probe(struct platform_device *pdev)
+>>  	if (IS_ERR(clk) && pdev->dev.of_node)
+>>  		clk = of_clk_get(pdev->dev.of_node, 0);
 >>  
->> -static int __init hugepage_setup_sz(char *str)
->> -{
->> -	unsigned long long size;
->> -
->> -	size = memparse(str, &str);
->> -
->> -	if (add_huge_page_size(size) != 0) {
->> -		hugetlb_bad_size();
->> -		pr_err("Invalid huge page size specified(%llu)\n", size);
->> -	}
->> -
->> -	return 1;
->> -}
->> -__setup("hugepagesz=", hugepage_setup_sz);
->> -
->> [...]
+>> -	if (IS_ERR(clk))
+>> +	if (IS_ERR(clk)) {
+>> +		clk_put(clk);
 > 
-> This isn't working as expected on powerpc64.
-> 
->   [    0.000000] Kernel command line: root=UUID=dc7b49cf-95a2-4996-8e7d-7c64ddc7a6ff hugepagesz=16G hugepages=2 
->   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepagesz = 16G
->   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepages = 2
->   [    0.284177] HugeTLB registered 16.0 MiB page size, pre-allocated 0 pages
->   [    0.284182] HugeTLB registered 16.0 GiB page size, pre-allocated 0 pages
->   [    2.585062]     hugepagesz=16G
->   [    2.585063]     hugepages=2
-> 
-> The "huge pages not supported" messages are under a !hugepages_supported()
-> condition which checks if HPAGE_SHIFT is non-zero. On powerpc64, HPAGE_SHIFT
-> comes from the hpage_shift variable. At this point, it is still zero and yet
-> to be set. Hence the check fails. The reason being hugetlbpage_init_default(),
-> which sets hpage_shift, it now called after hugepage_setup_sz().
+> Why would you want to put an erroneous clk?
 
-Thanks for catching this Sandipan.
-
-In the new arch independent version of hugepages_setup, I added the following
-code in patch 4 off this series:
-
-> +static int __init hugepages_setup(char *s)
->  {
->  	unsigned long *mhp;
->  	static unsigned long *last_mhp;
->  
-> +	if (!hugepages_supported()) {
-> +		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
-> +		return 0;
-> +	}
-> +
->  	if (!parsed_valid_hugepagesz) {
-
-In fact, I added it to the beginning of all the hugetlb command line parsing
-routines.  My 'thought' was to warn early if hugetlb pages were not supported.
-Previously, the first check for hugepages_supported() was in hugetlb_init()
-which ran after hugetlbpage_init_default().
-
-The easy solution is to remove all the hugepages_supported() checks from
-command line parsing routines and rely on the later check in hugetlb_init().
-
-Another reason for adding those early checks was to possibly prevent the
-preallocation of gigantic pages at command line parsing time.   Gigantic
-pages are allocated at command line parsing time as they need to be allocated
-with the bootmem allocator.  My concern is that there could be some strange
-configuration where !hugepages_supported(), yet we allocate gigantic pages
-from bootmem that can not be used or freeed later.
-
-powerpc is the only architecture which has it's own alloc_bootmem_huge_page
-routine.  So, it handles this potential issue.
-
-I'll send out a fix shortly.
+Doh, somehow I completely missed, you are right this does not look legit.
 -- 
-Mike Kravetz
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
