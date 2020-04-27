@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A4201B97A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB1471B97BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XIS1gNAnk1KdVFajDT0kiVwu4781PRmRLLGS24c+wjA=; b=Pj2W9o0dtv4k51
-	0+GMAZjhgDN9ofs9StvF8J9U7ocRp0CsE+Qv8j1C9DJzaPp9lam8hRcMC8N/x8bXIZaChBeXlQaFs
-	taz2k2CINE7HQ6wLdr1IGUCnJEcbtyvLIu9xvsZJpA/6l1ScFJHgpz+0nzSPxOzVYul1Dmub7l38b
-	lj9uZ+8Tn6tB7gDalG55zinQY32deJvUKKFPGadgYSakSWHco0X5k5M4K2Q5O7nyzmssRyTBTjUl4
-	7eiYfx15njMgGMDv6y6yKsMaeBhStR4ux/iEuKoTCL2MY+31k9iTCYqAyHYFlHQsWnBioZkLfFAr3
-	fBzc5m4xgUNJPoDoPjIg==;
+	List-Owner; bh=9Bs++pDCnvTMSx5Aj96WNviDrjxeoT36JSbLOnqhCC0=; b=LWHhEW4FboU57T
+	jk+Avp8E+l5fbnrzmPqTtgkSzEhF04x8S2pJN3epTqV5bDLZiKwArQLOkRdBuTqyC0aOgGr+tjueA
+	H3EN5CFvxDy68PT0d4okS4N2pjSXANQgQxsEbabQIa1oADdOcWGLabCZsVTP40LxqsUQd7JGRveX/
+	wSs6z3JLc+P9CM3IW/aTByKLIrDWSSEmtkWZ/xoVOKhCh9gWlc+xXL8GRoh8l9mHE2Zcj+sr/2wke
+	KxZYVcCTNhdlJRxU26BlGxboDXbKYfqB6yA3YlCNGo0Fi7LJXRa8zL/4wsNkux9HS5oy1EdxwEZBq
+	1m8oRIuS4SG5wiJwShrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSxUb-0005qr-2V; Mon, 27 Apr 2020 06:43:49 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jSxa0-0001pT-CE; Mon, 27 Apr 2020 06:49:24 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSxU2-0005c0-JF
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:43:17 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03R6cO6G024040; Mon, 27 Apr 2020 08:42:59 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=lh1kBYgL+JLuoCQaaOo5FYMEjoKA0Zs0ybVKkeHad0s=;
- b=eci8SxyS83Z1lVviB+tuVkqLFpMh+zwi0AEZGatqH2sQ9FAqxu2M7g+2A6oSgZ3Gm4GN
- mTJUhpBAUVh/xf1WX0VSTowK/ONKfTj2aWFjwVf/1Q1DuLoMM3/rU1sJ9Q7yRmW6hun7
- Bqmx2Luc07UgcJ1sbHHs5AmXmB193dQiBR8bIHm1lMpNd7x3yPStqKKdm/g/Q+TpcrRG
- 2XzHOLf979Fqk77FjP560ci6aMT5pyfcZx7wVj8/IZodcD1j/mVs6XcdPfPzs9pmtq98
- E1DPmXG6+kZqHtI7hxL3GrB70hHWvvQU+acbS3IjpA0p1bY3y3a7vXHn5//klolzavCi LQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhq5r2h8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 27 Apr 2020 08:42:59 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CB560100038;
- Mon, 27 Apr 2020 08:42:58 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag7node2.st.com [10.75.127.20])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B92AB21F679;
- Mon, 27 Apr 2020 08:42:58 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG7NODE2.st.com (10.75.127.20)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 27 Apr 2020 08:42:58 +0200
-From: Lionel Debieve <lionel.debieve@st.com>
-To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
- <davem@davemloft.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, <linux-crypto@vger.kernel.org>
-Subject: [PATCH 3/3] crypto: stm32/hash - don't print error on probe deferral
-Date: Mon, 27 Apr 2020 08:42:26 +0200
-Message-ID: <20200427064226.6991-4-lionel.debieve@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200427064226.6991-1-lionel.debieve@st.com>
-References: <20200427064226.6991-1-lionel.debieve@st.com>
+ id 1jSxZr-0001oU-WF
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:49:17 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j2so19110816wrs.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 26 Apr 2020 23:49:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=OIRTtsyYCkg1t+ohXCk6lMBH379NOlwqIHq+QRjBm7Y=;
+ b=SvUvd1yxOiPnMe9YAUHgv8lQk0A2/6HHwopTOUCWs8NALsr8IaE+hEzfoKEo1yuqs2
+ TjmUIlPobyTTQwgv36TEaJLcVdpJsaOogMMa4AuCDJpBCcsgiZU/DME2f/khPL6iHlIg
+ EK+qQPX4JJRFUEvhskXLGcPGW04SF1toxWWM+RmxQ3XLi2BNb7WkSIEi+Hr6YfkXUGV9
+ 7r/ITt+NXy5qzPvRpN8Ht1AKkwLhwe14aeKCNyTT33vTINcvj7L/SRGzEV1yKIvqLi/8
+ 9pMTJn7ubL6lG8FAp4pE5t90T8NoZdw8q65UAq+7ypuxycxcTarTTWVpeWiyRhymWdH5
+ vfoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=OIRTtsyYCkg1t+ohXCk6lMBH379NOlwqIHq+QRjBm7Y=;
+ b=rdadlk8t23Ne13GRnYlHSWcRGGQveEh6N4774LcbHTzq2ut9xNaBIFxOxNexFaSXew
+ eWs+3ZYQL3hPCP0LwS67LQxvMvtIm4Bw7HAZgu3uLEPfbBxcpzINmRa7Kg4rRwybWCJ/
+ 3pL2Wgw0oeiqx36Y6GC7Gv2Qu7l0CrEmMDjoi+SspUjgbp/4Zp+3AgkHjVwv3f/IEwsK
+ N6SoRpAzKz8+6uwxdXDbk25bLRjUQDdMl46R9IzvP1g0DxFv4jW6p1kEIlXmhJO+Zeky
+ aSJjqZd+/g0vRTNLnM8XMwRvBxZ7VuF4fKqR5xbjVBNHSSQUmUeVUZxA2HvKZhTtpgql
+ UphA==
+X-Gm-Message-State: AGi0PubWXlB8JSVycxIe3qaeIYdmn1y/RRZVom1SlwlOMNOReIKV+elT
+ Roaov08dYtKB68KW1guDm9LTTg==
+X-Google-Smtp-Source: APiQypI8chzF5P4rL2qpeRVXfTfA1qmduiJM0OWyA6AOLxbJHzUHnF5rqPqCGyojl0yXIHmSI+roCA==
+X-Received: by 2002:adf:f884:: with SMTP id u4mr25202217wrp.171.1587970153463; 
+ Sun, 26 Apr 2020 23:49:13 -0700 (PDT)
+Received: from dell ([2.31.163.63])
+ by smtp.gmail.com with ESMTPSA id z10sm20140795wrg.69.2020.04.26.23.49.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 26 Apr 2020 23:49:12 -0700 (PDT)
+Date: Mon, 27 Apr 2020 07:49:10 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Adrian Pop <pop.adrian61@gmail.com>
+Subject: Re: [PATCH 1/2] arm: dt-bindings: mfd: stm32f-rcc: Add missing DSI
+ clock
+Message-ID: <20200427064910.GC3559@dell>
+References: <20200424181642.32084-1-pop.adrian61@gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG7NODE2.st.com
- (10.75.127.20)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-27_03:2020-04-24,
- 2020-04-27 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200424181642.32084-1-pop.adrian61@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_234314_976599_86E45ECD 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200426_234916_041150_C0648EEC 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,44 +98,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change driver to not print an error message when the device
-probe is deferred for a clock resource.
-
-Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
----
- drivers/crypto/stm32/stm32-hash.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
-index 0d592f55a271..03c5e6683805 100644
---- a/drivers/crypto/stm32/stm32-hash.c
-+++ b/drivers/crypto/stm32/stm32-hash.c
-@@ -1464,8 +1464,11 @@ static int stm32_hash_probe(struct platform_device *pdev)
- 
- 	hdev->clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(hdev->clk)) {
--		dev_err(dev, "failed to get clock for hash (%lu)\n",
--			PTR_ERR(hdev->clk));
-+		if (PTR_ERR(hdev->clk) != -EPROBE_DEFER) {
-+			dev_err(dev, "failed to get clock for hash (%lu)\n",
-+				PTR_ERR(hdev->clk));
-+		}
-+
- 		return PTR_ERR(hdev->clk);
- 	}
- 
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAyNCBBcHIgMjAyMCwgQWRyaWFuIFBvcCB3cm90ZToKCj4gQWRkIG1pc3NpbmcgY2xv
+Y2suCj4gCj4gU2lnbmVkLW9mZi1ieTogQWRyaWFuIFBvcCA8cG9wLmFkcmlhbjYxQGdtYWlsLmNv
+bT4KPiAtLS0KPiAgaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2MuaCB8IDEgKwo+
+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCkkgYXNzdW1lIHBhdGNoIDIgZGVwZW5k
+cyBvbiB0aGlzPwoKSWYgc28sIHdoZXJlIGlzIGl0PyAgV2h5IGlzbid0IGl0IGluIG15IGluYm94
+PwoKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2MuaCBi
+L2luY2x1ZGUvZHQtYmluZGluZ3MvbWZkL3N0bTMyZjctcmNjLmgKPiBpbmRleCBhOTBmMzYxM2M1
+ODQuLmJhNWNiNzQ1NmVlNCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL2R0LWJpbmRpbmdzL21mZC9z
+dG0zMmY3LXJjYy5oCj4gKysrIGIvaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2Mu
+aAo+IEBAIC0xMDcsNiArMTA3LDcgQEAKPiAgI2RlZmluZSBTVE0zMkY3X1JDQ19BUEIyX1NBSTEJ
+CTIyCj4gICNkZWZpbmUgU1RNMzJGN19SQ0NfQVBCMl9TQUkyCQkyMwo+ICAjZGVmaW5lIFNUTTMy
+RjdfUkNDX0FQQjJfTFREQwkJMjYKPiArI2RlZmluZSBTVE0zMkY3X1JDQ19BUEIyX0RTSQkJMjcK
+PiAgCj4gICNkZWZpbmUgU1RNMzJGN19BUEIyX1JFU0VUKGJpdCkJKFNUTTMyRjdfUkNDX0FQQjJf
+IyNiaXQgKyAoMHgyNCAqIDgpKQo+ICAjZGVmaW5lIFNUTTMyRjdfQVBCMl9DTE9DSyhiaXQpCShT
+VE0zMkY3X1JDQ19BUEIyXyMjYml0ICsgMHhBMCkKCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10K
+TGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNl
+IHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIg
+fCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
