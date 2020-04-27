@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31C491BA4AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:26:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B59141BA4AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 15:26:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tsun7+9RkNSf3qrUdcvIV1AhE1JbxKMttKK8FiUTN94=; b=Fva/aSJRdF2vXd
-	uDXzn6qoOlD7XqbKdHpzPhC97FY9LnQ4R4CEQ0Dz4zq4yXn0uNkq/jv85tUsGalfDLcjMdqtPVqmQ
-	gJ6hc0I1sSgwcSkmSd8arOpPANlMwTQbGFP2dCyfBODgMlCPjyfQOLK3whZzcjx9E1hJY6EL3fSXu
-	YK+zS5iul2y2ian/h1Knnu7II00gjPtT/5kKdXYJeg3b9HaAdkYMiPI+Y0VE1KcjOFmr5++l4ugkt
-	yI30b+5bJXZZF7zbqmeDq51vhdhova4UafbrU6N7nzTtAPRUE9gq52WFsBCUB4svf4DCpFiE4sF0o
-	L+FLH3zfwRtKmbvVVZfA==;
+	List-Owner; bh=TA2Cm78qJu0p+2N7+7Kq0lh0DmRXZ/Ay+sW4HcBea4s=; b=BXQWlKBhaiHQE5
+	k/187oW9Ha84/o2CIxZUpT/B6UsUG8/v5Vw0h7kuUmTOxYYfeZfEGSx1OeFmqpg+tCUNdVbl/tI0z
+	vfFKmxZF0acQRD1gq0ljhJLRNZzDt77ohrgyX40XdKUp5rLN+MzJ+tWEBmpXtoopwrWV/zNCvJOwJ
+	qFCAqwPqXOyzp/LZnfrhmRS97tYIuhOY5nqJHcqA4LH3bMmNJLmS39CduYFT8bSJGQ8EZXymly/p8
+	aUC3Hf2+ZWWCA+6F+EuxXmWGlZDZ31y5oKRmNgdEWUfIzfPLHYTpPJwSwRbusxtTS9yPR9rFdXmIT
+	Bl0W/DWG66KwFxVdHLjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT3lq-0001Qz-IZ; Mon, 27 Apr 2020 13:26:02 +0000
-Received: from mail-db8eur05on2042.outbound.protection.outlook.com
- ([40.107.20.42] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jT3m8-0001k7-7o; Mon, 27 Apr 2020 13:26:20 +0000
+Received: from mail-db8eur05on2088.outbound.protection.outlook.com
+ ([40.107.20.88] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT3l5-0000KP-Jv
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:25:17 +0000
+ id 1jT3lB-00012m-Dc
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 13:25:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=M76lILtfYtk6O6SQkRQAdWGocm7zyWUzqfUuLqYCqQ9OwVp5SKrWhfPf1Pk9pDFn6qJfZSaLeU8MamPRTtdSqwYGvkbc/YvU+0bzMGsP5pB3cw6kyPWZ5PlQgdvbU8oXvPzHRLXhWt2BMXQuzjhZubhHfv0GXsw/Yd2Gwl5tjLzN/V+KiEFt2E7Dyus+qppNbqYHeGayA6K1Sk61kF1a+hUvSmZMt6hMAWADeTJ2rSzP6UcJOO6U7Een/vK+xE5YV/RAz/jPA7IonlqF2iZpf72NdyS9Oah1hSrfwMLVqNI5r4D8qzglVbQs1sKqdXx0uhqXZ6PHVOsEeznccdUxPA==
+ b=H6AW5Rbur9wMTA5/vl+494E/WOH5z8iu1cJdiURpGWRlhPMolJ/8MVAnddW6FvOd51qLzRIieLSxUgmOZSl2tq+UrSHdOgwfo1d1rtayb7XHYPNsRT8Xz77ZgwdcU4qEFqbqWVw+fGBMm0KZmYKa0ZNbLwADSGwMAISsNInUXpH/TQ15RANgs8Qw93TQP0WhJSCbmtnj2baRpA5rctTI34a4g2KORj4+XxZ9GKiDoyrZzbO3u3w5bmj6gj4j+ISDhMJSCK5U7sCqzbylQV2Zi2gCL7MU06HQtVkiHWzZ1cXfuamM8lEgiUKuK28eQu41DVyyYTD+OYX72ywVVpKNOQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bwPSdZd0MfMChaSmn/JHPM8/4ao/rPU5B7SkAWZayvk=;
- b=U39dRTTRNy34VZw0FeWRSSWL09JjtgZ3hWsLeLVpAmORVGUehrsj6Qk8F7M9SnKLWww6jahpWVcBdpJx8ZLc05+l0Hr57Lj1wwtgRbv8Xzq5/flLB08QkCHnreNsNwfwQZj8LC964LsqdwS3dmhgOuvU/BC6Ts4hmz91c5sFfaIvLjvw3GxKMV4TdJQ/RsGFRPDBJ94EWCElo8tk/vYAq5i2oXgFYHEz9SIUk1veJ2/2qzOAVyPVVDFkCmagpXLzyk342LyZdC24vJhg9WbU77Mbej0HUCbSWxCsuD+ww1sEhEHKZnaSeorLg4rVQqxlZ5oqQQ0pDQP2iS4b0GvPsw==
+ bh=Smyu2QabomlLWNqAG8Ri/BK1/sj7FPm9Ho7QY16gSTo=;
+ b=R8A7YDVI/4UGBSZ7Nh8fiZkgH0/t1u5XwJqNHBdsjtJRxhh3IN5Mm0iL7nqZ2qOxJMCLP00DVRLUnuwt/2CJj5fna28B7S1RQ4CceM2EWQXMzoYvE7/tQ8r9do08KaCoWZpWmMzhkZ52t6ZufjUhFAmjPJxMMapM4Z8f7pAESAVUWsETdQRrJlqzUnGXVZHZwB9vZcVDL3sk0FNScA0iJ+2uGCSaGPCv6QTxSgxXbx3CLBxtwf7Aptad9kJKO9bmatUIGp7rHRK6E4tydW53yRwVWocGTC6jtnnd3uCJHCffwoXgEaGIcTkV99Q2oSLpZhbUoT49avMAwgFGk6eZ3g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
  s=selector2-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bwPSdZd0MfMChaSmn/JHPM8/4ao/rPU5B7SkAWZayvk=;
- b=XWvq5ans2WukDAIhO9hlqfTWp/Ygd0Md4ea/BoUEnJwWJYGD8CAUdZrJOJXepBSoYBV/ZK/d1O5pd2MtZvh49s1hNHtN5T/LtquSwyt51klnjWJcZEDgIhX7hgJSjspQJcpIY9fC/M/qgEsSaZBRJJ8hTvWk3V2msl/WEeprYtQ=
+ bh=Smyu2QabomlLWNqAG8Ri/BK1/sj7FPm9Ho7QY16gSTo=;
+ b=T/sxI6U8iTJFq5kePfcu/1JoHXT6YohG0Lz6dg98DLR6tK95y0l6BHZGXd8C3iuZulnG2wvmWD4FIRqWUHjMhlitV1YTILbVYdZvErjX4qgOx7WyiKyTC01r4K7qxfsagG5uU/A3qx1Gvfs4XFYCPWGD1tB2YHtFaqQA6w6qe2o=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=calvin.johnson@oss.nxp.com; 
 Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
  by AM0PR04MB6867.eurprd04.prod.outlook.com (2603:10a6:208:182::11)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Mon, 27 Apr
- 2020 13:25:12 +0000
+ 2020 13:25:18 +0000
 Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
  ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
  ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2937.020; Mon, 27 Apr 2020
- 13:25:12 +0000
+ 13:25:18 +0000
 From: Calvin Johnson <calvin.johnson@oss.nxp.com>
 To: linux.cj@gmail.com, Jeremy Linton <jeremy.linton@arm.com>,
  Andrew Lunn <andrew@lunn.ch>, Andy Shevchenko <andy.shevchenko@gmail.com>,
@@ -61,9 +61,10 @@ To: linux.cj@gmail.com, Jeremy Linton <jeremy.linton@arm.com>,
  Madalin Bucur <madalin.bucur@oss.nxp.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: [net-next PATCH v2 2/3] net: phy: alphabetically sort header includes
-Date: Mon, 27 Apr 2020 18:54:08 +0530
-Message-Id: <20200427132409.23664-3-calvin.johnson@oss.nxp.com>
+Subject: [net-next PATCH v2 3/3] phylink: Introduce
+ phylink_fwnode_phy_connect()
+Date: Mon, 27 Apr 2020 18:54:09 +0530
+Message-Id: <20200427132409.23664-4-calvin.johnson@oss.nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
 References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
@@ -75,52 +76,51 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
  SG2PR04CA0191.apcprd04.prod.outlook.com (2603:1096:4:14::29) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.13 via Frontend Transport; Mon, 27 Apr 2020 13:25:06 +0000
+ 15.20.2937.13 via Frontend Transport; Mon, 27 Apr 2020 13:25:13 +0000
 X-Mailer: git-send-email 2.17.1
 X-Originating-IP: [14.142.151.118]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 0d7ae5fd-62ab-45a1-3d8b-08d7eaae6a52
+X-MS-Office365-Filtering-Correlation-Id: d757c344-9949-46bb-b21b-08d7eaae6df9
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6867:|AM0PR04MB6867:
 X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB6867C4FF97A5D8457823C9ABD2AF0@AM0PR04MB6867.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1051;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB6867201919B62115D69764E0D2AF0@AM0PR04MB6867.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2399;
 X-Forefront-PRVS: 0386B406AA
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(366004)(136003)(39860400002)(86362001)(8936002)(44832011)(2906002)(478600001)(66476007)(81156014)(66556008)(5660300002)(1076003)(66946007)(8676002)(26005)(7416002)(6506007)(2616005)(956004)(6512007)(4326008)(16526019)(110136005)(52116002)(6486002)(186003)(316002)(1006002)(54906003)(55236004)(110426005)(921003);
+ SFS:(4636009)(346002)(376002)(396003)(366004)(136003)(39860400002)(86362001)(8936002)(44832011)(2906002)(478600001)(66476007)(81156014)(66556008)(5660300002)(1076003)(66946007)(8676002)(26005)(7416002)(6506007)(2616005)(956004)(6512007)(4326008)(16526019)(110136005)(52116002)(6486002)(186003)(6666004)(316002)(1006002)(54906003)(55236004)(110426005)(921003);
  DIR:OUT; SFP:1101; 
 Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: DURloPMU0Qd5rakIPpGcb0PW5OWYaAYgicXXM8GWbZ5FCG74GyhVD+iXHPvgxIZMYHEURDMIMnUy73OXSLoDDoj2FVEsvDNz7KkGNzYatqhyumLLuJZo4AGCU9FP8hhu8wVxhc1Dy7Kc+uGi7lOCPYLnVacEgjgbF4NV62kMXP848bDyxomBPn87YK3lnFGRjcWrHwvEjJGIiZW4I8eYcx5Aqp6RpgCLedditcj7f6Up++fBjoYnvbG4nb3dJezmdMKsSi53/JFi4K/zriFQJeqj+XMEAYSaThAx1poC+LJI5sbslNZ8N0sYZbYdQTh7XKL06Ee/ovtzpZQxavwciTn84VfIzLLihj90Xy2WZIhLzwAhLbj7p4B7wMkkVzsJeJ0dckQxHJCXC5gVrb54G1hEE66x9Sj0OSA6hOOqyXQeeNnYs03u6bC4MJbDbTmIT+qs0ZsG7J77Tn7XA2ZpyopHfyRrCpNIH8Y2lBcLCzQQL2ljyc9FlsqtVBOXbr3dW7dh1solYDNKwbws/E/BEA==
-X-MS-Exchange-AntiSpam-MessageData: ORm5IyRD9IQ1F08ln/8I08YPuWouUF8fAIZNMs0acul5Js+DEp/s/aOWAOSRRIxSXyERa//M/BNuOUK70dNzYibG4NgetyYSDP466OwyQ6BFx347R6iLwmAHwflF4q+0tcso6wLg/MDTSILk+AY6mF34vVHOhiQ6gx/nKFTNJysnLIY9IdKphx4jt+TuwL+q0ZfUaOkNy0THE82+oXHdjR/85AZQT+AwhYmMvBXcBXIyiRrLVxdrNe/euBIejOwUOh6lcn5ZaB+jkQac/Q4kY3x0adu4Zfr+HU60RfUuuuGbOsI8WFIkk6P+4XAxwUf32xMrPewWGCOUL8qgT+dVEL54gmAyMI0Pst8d/vF35tZxc4Z0eHDaQqejm2qMbh57h+EomaXelpzALKgw47VG/iK6IkOTzlxVrsUSf+Q20vmJOn5+6FclufBYX/NXRRWRO30vklt5ArpvSItchXsAoA7U8EPhr3L6YKCTCHbq8DwgVQIZn/t12EgrANuLPl+9o/fQPC7OJ602qGTPAqWXNV9QDqHVrWpSaE0bg3O1aXmM3lDTSMhC/bQt+8R43uBYet9t0ycCFAs1GQtX5FuUvCFJPI9cNYUl9ovbzgCukEeT+MX0dm0fYVWSO5GInbZSTtLLnYDzSxhnrOMHik1hwcAC1AiNbzmLofDgltLSPq7HqRh3Wl85f3ICfP57BBkKVm+AYHgH8W7r3TfyE0odilaCVTlZ1GOkvmVx9M2w6CgNFGjKiejrsvW8oi3PV4xb3XIrJbTDRen7r9AlqmwIz63CogAUwHDlKtX7Bvpfe5g=
+X-Microsoft-Antispam-Message-Info: tcZ5J0LKf3JjBcGqfhuVFgy+roLgkwJwRtL2YfCwbAhrRAMk8UxheMzFbHEE6fcc9SGvDm/AFGUuybPsMkx/JsOqcmZSi25l87BPADx/I1RVMurb3U/sHvJBMwnbnzOKDb+ZQ9/AdXCDG05ih4QFxKdohH1lr8uCLtUCnv8oUyGsYXKiY19FOJ+eWisgVEg4aVj+I9xeoNEKEofuDMBhrJjgRmhtCukH+AUcvaP/Y5AFdIFvt/yUfhVvN8TznS6XK1CAcJTx2TQQcJMv5+1SAJAs+XcfxPsGxWPCrb2NYD7MM3Sd78xXgXpZdp+fcrEHoFJeRqegVE4NGFvd/Qv/8uolLOlIx1c/dTyYu+y/W46jPrRaPSb+zOyaz+v0n3wbENuTCaoC2jqoWI5qUdsM8iC9H9AG/jXwxsU1vZ0aCeMkts88xW7QKVgSc7GNuLyN2pPvF8UCMJQ0F8bKP8BjbREpgu2UoG9/TImVuzZwMuwE/3A7op8z/Ntf42pQly7TNLRAhc6Ju+zcUFsJBipSaA==
+X-MS-Exchange-AntiSpam-MessageData: cryWS9kb44KTNLxKSaIkQ4fL0o9e06RE2XdtzBxv/ItTiA4TE36oDZ0smCV8hFI3ZIs85oFUd0BBo46UV5tAk7NCz65ZrpCUZpTsnpSDa35p1wgkM7g9IApI0iM6aM4Cu9WfTC2taSyPhUVvFP2sJbgWxXHsdTifxnWXVS6HXeM9Ntij6xVYfS8KGjZH4G1C87z6PF5CYaEXSBcEQ6QqqjaY/UYjMqI2d3H6khBUJtKEen5JjTtm7HV3pfcXRcQEKbt3K4KkEJ/awqNLzxILbkjFxk/hnUOjkDxjY1ILlN9xTUwA+teYf3HCMlnD1JfETAwFs/nvRhJd+HTCl98+MJaaJa4Cs76oTgb2hCTTnFMuFPJk+h33DFRD2bJetFfmZ0BU8m2nnrXhNEa3YyJ3HSWaaNfX4JsLFsL0WMbzmfhEp706uGYIvBWuw7OVuUxgsYl13lhn1glQkIhkJLBa3ta6dyekiHU0WA5GNcgNZj4fXQuW4YqQgVpbV9nrvI8KHWZj0aXhdaUGZZGeT7hwIdl4D2BOA0Z1z4n/j63T+UMOQMlhb/WuvDAr3IxuQcrJXB6EnWhGLwbTwcjQdAzH1z4Y4yw6PH8fmwmsUIM2fgYCzBxdAzAtlaJq/eYdMhjNAAvNudigELCctKfsGSZ+nYQ5CpsD41/2hVxykAKCP4uhawapWdiGhhF51LS2Y6Y9ruuI+07qQnaDCITjaX+migPahbkAMsX6UXTHipAA2XpCYxjxVQ1NorUPK0qesxRGz7H1rHi+kod+LvDb6r7nYAbGJ6EOtwkehfE+3t5quB0=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0d7ae5fd-62ab-45a1-3d8b-08d7eaae6a52
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 13:25:12.6987 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d757c344-9949-46bb-b21b-08d7eaae6df9
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2020 13:25:18.8043 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: EoDpEEElx7rKWSWu0/S9ljq9JZOsLL55pk7Sos2FsGsSKCdtFrZKIo5S6YGCx113wMjb5o97dlGyaREh8LQ1VA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: wIP2sQqOmPMRcyGdMTNUVhL9i+FMG7/RCEJoHfMB8U9U0USRcpuwURhECdRsNPvCB0ERmgoNXB2P/k2ccsY+3A==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6867
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_062515_760743_2F825C50 
-X-CRM114-Status: UNSURE (   8.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200427_062521_483553_D326DA46 
+X-CRM114-Status: GOOD (  11.78  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.42 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.42 listed in wl.mailspike.net]
+ low trust [40.107.20.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.88 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -150,65 +150,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Header includes are not sorted. Alphabetically sort them.
+Define phylink_fwnode_phy_connect() to connect phy specified by
+a fwnode to a phylink instance. Additionally,
+phylink_device_phy_connect() is defined to connect phy specified
+by a device to a phylink instance.
 
 Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
 ---
 
-Changes in v2: None
+Changes in v2:
+  replace of_ and acpi_ code with generic fwnode to get phy-handle.
 
- drivers/net/phy/phy_device.c | 30 +++++++++++++++---------------
- 1 file changed, 15 insertions(+), 15 deletions(-)
+ drivers/net/phy/phylink.c | 68 +++++++++++++++++++++++++++++++++++++++
+ include/linux/phylink.h   |  6 ++++
+ 2 files changed, 74 insertions(+)
 
-diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
-index a2f3dbba8a3c..b8326bfc7c2a 100644
---- a/drivers/net/phy/phy_device.c
-+++ b/drivers/net/phy/phy_device.c
-@@ -9,29 +9,29 @@
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index 0f23bec431c1..5eab1eadded7 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -961,6 +961,74 @@ int phylink_connect_phy(struct phylink *pl, struct phy_device *phy)
+ }
+ EXPORT_SYMBOL_GPL(phylink_connect_phy);
  
- #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
++/**
++ * phylink_fwnode_phy_connect() - connect the PHY specified in the fwnode.
++ * @pl: a pointer to a &struct phylink returned from phylink_create()
++ * @fwnode: a pointer to a &struct fwnode_handle.
++ * @flags: PHY-specific flags to communicate to the PHY device driver
++ *
++ * Connect the phy specified @fwnode to the phylink instance specified
++ * by @pl. Actions specified in phylink_connect_phy() will be
++ * performed.
++ *
++ * Returns 0 on success or a negative errno.
++ */
++int phylink_fwnode_phy_connect(struct phylink *pl,
++			       struct fwnode_handle *fwnode,
++			       u32 flags)
++{
++	struct fwnode_handle *phy_fwnode;
++	struct phy_device *phy_dev;
++	int ret = 0;
++
++	/* Fixed links and 802.3z are handled without needing a PHY */
++	if (pl->cfg_link_an_mode == MLO_AN_FIXED ||
++	    (pl->cfg_link_an_mode == MLO_AN_INBAND &&
++	     phy_interface_mode_is_8023z(pl->link_interface)))
++		return 0;
++
++	phy_fwnode = fwnode_get_phy_node(fwnode);
++	if ((IS_ERR_OR_NULL(phy_fwnode)) && (pl->cfg_link_an_mode == MLO_AN_PHY))
++		return -ENODEV;
++
++	phy_dev = fwnode_phy_find_device(phy_fwnode);
++	fwnode_handle_put(phy_fwnode);
++	if (!phy_dev)
++		return -ENODEV;
++
++	ret = phy_attach_direct(pl->netdev, phy_dev, flags,
++				pl->link_interface);
++	if (ret)
++		return ret;
++
++	ret = phylink_bringup_phy(pl, phy_dev, pl->link_config.interface);
++	if (ret)
++		phy_detach(phy_dev);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phylink_fwnode_phy_connect);
++
++/**
++ * phylink_device_phy_connect() - connect the PHY specified by the device.
++ * @pl: a pointer to a &struct phylink returned from phylink_create()
++ * @dev: a pointer to a &struct device.
++ * @flags: PHY-specific flags to communicate to the PHY device driver
++ *
++ * Connect the phy specified by the device to the phylink instance specified
++ * by @pl. Actions specified in phylink_connect_phy() will be
++ * performed.
++ *
++ * Returns 0 on success or a negative errno.
++ */
++int phylink_device_phy_connect(struct phylink *pl,
++			       struct device *dev,
++			       u32 flags)
++{
++	return phylink_fwnode_phy_connect(pl, dev_fwnode(dev), flags);
++}
++EXPORT_SYMBOL_GPL(phylink_device_phy_connect);
++
+ /**
+  * phylink_of_phy_connect() - connect the PHY specified in the DT mode.
+  * @pl: a pointer to a &struct phylink returned from phylink_create()
+diff --git a/include/linux/phylink.h b/include/linux/phylink.h
+index cc5b452a184e..c2bd0ee9dd9c 100644
+--- a/include/linux/phylink.h
++++ b/include/linux/phylink.h
+@@ -367,6 +367,12 @@ void phylink_add_pcs(struct phylink *, const struct phylink_pcs_ops *ops);
+ void phylink_destroy(struct phylink *);
  
--#include <linux/kernel.h>
--#include <linux/string.h>
--#include <linux/errno.h>
--#include <linux/unistd.h>
--#include <linux/slab.h>
--#include <linux/interrupt.h>
--#include <linux/init.h>
-+#include <linux/bitmap.h>
- #include <linux/delay.h>
--#include <linux/netdevice.h>
-+#include <linux/errno.h>
- #include <linux/etherdevice.h>
--#include <linux/skbuff.h>
-+#include <linux/ethtool.h>
-+#include <linux/init.h>
-+#include <linux/interrupt.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/mdio.h>
-+#include <linux/mii.h>
- #include <linux/mm.h>
- #include <linux/module.h>
--#include <linux/mii.h>
--#include <linux/ethtool.h>
--#include <linux/bitmap.h>
-+#include <linux/netdevice.h>
- #include <linux/phy.h>
- #include <linux/phy_led_triggers.h>
-+#include <linux/property.h>
- #include <linux/sfp.h>
--#include <linux/mdio.h>
--#include <linux/io.h>
-+#include <linux/skbuff.h>
-+#include <linux/slab.h>
-+#include <linux/string.h>
- #include <linux/uaccess.h>
--#include <linux/property.h>
-+#include <linux/unistd.h>
+ int phylink_connect_phy(struct phylink *, struct phy_device *);
++int phylink_fwnode_phy_connect(struct phylink *pl,
++			       struct fwnode_handle *fwnode,
++			       u32 flags);
++int phylink_device_phy_connect(struct phylink *pl,
++			       struct device *dev,
++			       u32 flags);
+ int phylink_of_phy_connect(struct phylink *, struct device_node *, u32 flags);
+ void phylink_disconnect_phy(struct phylink *);
  
- MODULE_DESCRIPTION("PHY library");
- MODULE_AUTHOR("Andy Fleming");
 -- 
 2.17.1
 
