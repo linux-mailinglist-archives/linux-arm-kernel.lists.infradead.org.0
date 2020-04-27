@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A35C1BA6D3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:46:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6B11BA6DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 16:48:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a8JKzf/iehwwBQs+6NPghb0ZkEPtteW5pR7JL4DRhs4=; b=mGgpBEkN27ipsH
-	LPYSuMGJIOrUJWgd2RrYZtmkaFvYjnz/1LnOjyfrYdFnF9z1RIUnLIEQx2uuC8OxpSsShZPA+YMW7
-	OhlxmTZlByhVgBMbcUyXFvy0tm1WHcoR1qTuNm4fwHdXv/kV7vLMOIJMxFf5nRMZR9/0X/dHjjYf1
-	pTG53nJo/W1tbfz7pUuPeCh+MreP7agg332tf4A7s/zkF/Dht0ZFLpZq7UeJVRjw0gbBXJ9bqQ9hH
-	QsK4aeyu8x73EG8Dt+yDC7sOqUSDHh9fXkUrE1kF0nw3W4PzeOBPD0QB58XWZJFThXIVi4QN/VKRc
-	DBpYGeve0ZQcnFQwtM4A==;
+	List-Owner; bh=slTuNnv15M0hKu4REAwkkL3P6jcyf3ArZqslVZhZOWw=; b=ksTRz3KEJMRks6
+	vW8yJ+Xa7gnsIYxmrmSJywKdl08FGyXS+yaSK7gdtT2Z2PAzW86d7LaxkP5KvVpEIqGtGztkmhJLD
+	otHYWieZvF3MC6alzFv7WO29kx/Jie/9spaHGnl+0mV0P/w2C3lj+6Rr2vDA4WFCAY0t0Yh9KmbOI
+	gUklGCzfRiP4qySapvZnnj0IzqiG0XnACnIJy2CtUvFKYiSY9c10vLDIXnHj1P/et25Rzes1dedNO
+	GK1B+PZh26Px07zOMpyWLeHHfQeT7A5NOZ2CZMc3xl6lIrrwuDmunqny9xBdQ5P0cG/PWK+qpHXVs
+	e9pB38NHZ0dnkGsdeiCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT51E-00046F-I1; Mon, 27 Apr 2020 14:46:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jT53q-0004hB-3e; Mon, 27 Apr 2020 14:48:42 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT513-00044j-5V; Mon, 27 Apr 2020 14:45:50 +0000
-Received: from mail-lj1-f173.google.com (mail-lj1-f173.google.com
- [209.85.208.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6B47220728;
- Mon, 27 Apr 2020 14:45:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587998748;
- bh=hzyH6N5EnDxhPKQQ5UvUR/8HV/kEX+gyqgaSd5fYiJM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=a4HIWd9Qbyw7ELAfzbc7ggl1+0Nc3Xu00nmH0hlJk/DLP4Cs5Z6yM+hcMt0Nqk10z
- HStRqb76tx7vxWgQ88hK9ixXDfH9VNt4fIMsLVQ9HT60o5QNA8yP0b6QlFWDOJo+94
- HodFiwyK0j8+v/OLPGEvGRcFcpOvAVTJz/mtj868=
-Received: by mail-lj1-f173.google.com with SMTP id b2so17830728ljp.4;
- Mon, 27 Apr 2020 07:45:48 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaU+lmMjznwJqcNSBUAwFdBNwurfC6vQX7uizRgXRq5k10Gq4cv
- 3T5WaXkbac0wGmB36GedYf/+NBsnXYA4FgnMRSo=
-X-Google-Smtp-Source: APiQypIYAxuucnWJ+KLeLiZ/eZeN9zwsLRkWbBppV3NYP8NhxpBQLXs9ImaV6BNcc6lA42ZvRxZZcB46DK7wq1k5/iI=
-X-Received: by 2002:a2e:2a82:: with SMTP id
- q124mr15173172ljq.155.1587998746563; 
- Mon, 27 Apr 2020 07:45:46 -0700 (PDT)
+ id 1jT53d-0004fx-Bj
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 14:48:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=YMCdyK8i4NHqmV0CuBigav+at+kNv4arzXM266XsjFA=; b=QhEo1yZ4eckdHv6Ca6QfmGgjk
+ j7W2lb6MAghgTs6Kpp00+HFRYb9nEI9mpZhp8dUlBLZWo+JDClktcag0JllPl7cx1PVkISqGH7dlP
+ SGWZ6fsZMz/StwDqxR/V2PerM4v1PeDOT9X6h/ECvuY5XFNRlJgtXmPKcPSSWnLRdWY4C1bBcYkLv
+ QuOrw9yRpJdfMO3/zKPKI2YVxj4VGQZXxmEqELmNO1//wQf+TWM1URlt+HYddcSQrOknG0XzCnA3R
+ VOtD8qSQ5cLzvsvcthEaECVeCk/uEvp0jdRpb9yshQZ0DaSiG6milrTcX/qY3D86v+6mLd1OFGv9V
+ axBseXLQw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:44654)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jT53K-0003RG-N2; Mon, 27 Apr 2020 15:48:10 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jT53H-0006kG-32; Mon, 27 Apr 2020 15:48:07 +0100
+Date: Mon, 27 Apr 2020 15:48:07 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
+Subject: Re: [net-next PATCH v2 0/3] Introduce new APIs to support phylink
+ and phy layers
+Message-ID: <20200427144806.GI25745@shell.armlinux.org.uk>
+References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
+ <20200427135820.GH25745@shell.armlinux.org.uk>
+ <20200427143238.GA26436@lsv03152.swis.in-blr01.nxp.com>
 MIME-Version: 1.0
-References: <20200427073132.29997-3-wens@kernel.org>
- <684132b8-4a84-8295-474b-38ccb992bba7@gmail.com>
- <CAGb2v66Piu5_2bdqvWV3eEn2Se_y1MNKWvvYBv_J7DA-8jBhbQ@mail.gmail.com>
- <65d15254-08da-895c-1a0c-ef6ce231b620@gmail.com>
- <CAGb2v65fGYguNoksq5Dyx3HTKeYg+U82TiQSL+NO8AUcQJQj5w@mail.gmail.com>
- <74a984fc-ce57-211b-936c-2d77e2e642bb@gmail.com>
- <a81840d3-813b-51b5-767c-e0d9d270200e@gmail.com>
-In-Reply-To: <a81840d3-813b-51b5-767c-e0d9d270200e@gmail.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 27 Apr 2020 22:45:34 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65Gtm88MJTTw_MxB0sc8m5=EVzom7zw2Ro_UJgqjOQKkA@mail.gmail.com>
-Message-ID: <CAGb2v65Gtm88MJTTw_MxB0sc8m5=EVzom7zw2Ro_UJgqjOQKkA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
- numbering for LED triggers
-To: Johan Jonker <jbx6244@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200427143238.GA26436@lsv03152.swis.in-blr01.nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_074549_233871_01C1CF8D 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200427_074829_399061_A471DA1F 
+X-CRM114-Status: GOOD (  17.00  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,65 +89,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, Pavel Machek <pavel@ucw.cz>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, jacek.anaszewski@gmail.com,
- linux-leds@vger.kernel.org, Chen-Yu Tsai <wens@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, dmurphy@ti.com
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 10:12 PM Johan Jonker <jbx6244@gmail.com> wrote:
->
-> Hi,
->
-> >> So for fixing up the LED node names, we'd probably want the following:
-> >>
-> >>     diy_led: led-0
-> >>     yellow_led: led-1
-> >>     work_led: led-2
->
-> Change proposal for led nodes to comply with preexisting dts.
-> Does this work?
->
-> diy_led: led_0: led-0
-> yellow_led: led_1: led-1
-> work_led: led_2: led-2
->
->
-> blue: led_0: led-0
->
-> A check does not give any warnings.
->
-> make -k ARCH=arm dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
+On Mon, Apr 27, 2020 at 08:02:38PM +0530, Calvin Johnson wrote:
+> On Mon, Apr 27, 2020 at 02:58:20PM +0100, Russell King - ARM Linux admin wrote:
+> > On Mon, Apr 27, 2020 at 06:54:06PM +0530, Calvin Johnson wrote:
+> > > Following functions are defined:
+> > >   phylink_fwnode_phy_connect()
+> > >   phylink_device_phy_connect()
+> > >   fwnode_phy_find_device()
+> > >   device_phy_find_device()
+> > >   fwnode_get_phy_node()
+> > > 
+> > > First two help in connecting phy to phylink instance.
+> > > Next two help in finding a phy on a mdiobus.
+> > > Last one helps in getting phy_node from a fwnode.
+> > > 
+> > > Changes in v2:
+> > >   move phy code from base/property.c to net/phy/phy_device.c
+> > >   replace acpi & of code to get phy-handle with fwnode_find_reference
+> > >   replace of_ and acpi_ code with generic fwnode to get phy-handle.
+> > > 
+> > > Calvin Johnson (3):
+> > >   device property: Introduce phy related fwnode functions
+> > >   net: phy: alphabetically sort header includes
+> > >   phylink: Introduce phylink_fwnode_phy_connect()
+> > 
+> > Thanks for this, but there's more work that needs to be done here.  I
+> > also think that we must have an ack from ACPI people before this can be
+> > accepted - you are in effect proposing a new way for representing PHYs
+> > in ACPI.
+> 
+> Thanks for your review.
+> 
+> Agree that we need an ack from ACPI people.
+> However, I don't think it is a completely new way as similar acpi approach to
+> get phy-handle is already in place.
+> Please see this:
+> https://elixir.bootlin.com/linux/v5.7-rc3/source/drivers/net/ethernet/apm/xgene/xgene_enet_hw.c#L832
 
-IMO the led_N labels are kind of useless... they don't convey the
-information needed to identify the device.
+That was added by:
 
-A reader seeing
+commit 8089a96f601bdfe3e1b41d14bb703aafaf1b8f34
+Author: Iyappan Subramanian <isubramanian@apm.com>
+Date:   Mon Jul 25 17:12:41 2016 -0700
 
-    &led_0 {
-        linux,default_triggger = "activity";
-    };
+    drivers: net: xgene: Add backward compatibility
 
-in some device tree (overlay) has no idea what this snippet is supposed
-to do. The person has to go back to the base dts / dtsi file to figure
-that out.
+    This patch adds xgene_enet_check_phy_hanlde() function that checks whether
+    MDIO driver is probed successfully and sets pdata->mdio_driver to true.
+    If MDIO driver is not probed, ethernet driver falls back to backward
+    compatibility mode.
 
-But seriously, you should start a separate thread to discuss this issue.
+    Since enum xgene_enet_cmd is used by MDIO driver, removing this from
+    ethernet driver.
 
-ChenYu
+    Signed-off-by: Iyappan Subramanian <isubramanian@apm.com>
+    Tested-by: Fushen Chen <fchen@apm.com>
+    Tested-by: Toan Le <toanle@apm.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
 
-> >
-> > That doesn't look pretty either.
-> > Would like to hear the maintainers view on how to handle other cases
-> > without 'led' like for example 'blue' for mk808.
-> >
+The commit message says nothing about adding ACPI stuff, and searching
+the 'net for the posting of this patch seems to suggest that it wasn't
+obviously copied to any ACPI people:
+
+    https://lists.openwall.net/netdev/2016/07/26/11
+
+Annoyingly, searching for:
+
+    "drivers: net: xgene: Add backward compatibility" site:lore.kernel.org
+
+doesn't find it on lore, so can't get the full headers and therefore
+addresses.
+
+So, yes, there's another driver using it, but the ACPI folk probably
+never got a look-in on that instance.  Even if they had been copied,
+the patch description is probably sufficiently poor that they wouldn't
+have read the patch.
+
+I'd say there's questions over whether ACPI people will find this an
+acceptable approach.
+
+Given that your patch moves this from one driver to a subsystem thing,
+it needs to be ratified by ACPI people, because it's effectively
+becoming a standardised way to represent a PHY in ACPI.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
