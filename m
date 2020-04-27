@@ -2,77 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91F651B964C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 06:54:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F201B9667
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 07:05:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AT0eZnwA7TBb/WAhjdzsL0WeyrLpsITYqyu0e26TtiU=; b=TmEmS94LmRwhHz
-	F7RLWzIuzza0Igafo8K8SSwg9+o1TU5I9wLn4o9gfPWFN+lFJcnWqgt6LVpftM5RZBKs7axtlxDHp
-	oCYSysnLrprvYY0Xk8x0LUYlWar3VLnvsFnUP0VDoLZU++M5rSApQWXUHMJy8tDuxHXUkUdDizQld
-	1Nrair3+YQ2eM4Ow06EVZixWET253CWZPknO6D2KxBKYIE2RnZIfCSD7jCQgwtIMiOvJqIymccKOf
-	t633wjsXlwAOD0FwLcrUGe5GqWaENzCsPWJxdvcBEwJzOucnR2sdio+5g8NkmNOUZXdEzj3aynlHu
-	3sJl19nejjUcI/QeeBUg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DG1KmDPF846Bct0dKlIIsFz3vrYqyjGbbQdKpAL/PpA=; b=CvI++/ZD04g5np
+	sVDkeTBjTEb0DBPCxu9X6rAFONsQVyJQVDlWUIdfSiJQuBDPOvbwYUSG5y1vur3qktBuZrmBoDadx
+	1kUXhig7fpIMhZG5QYfd7qhANITA1jdCMYU35Sb2dg/EXpVYwuqzCKzMjWN0cRAvYLBsaptUFDuwg
+	kTUPn5+w/n3c3YQoC8rYi7l4sT2DFrPxQbqTBh5P9gdUtCGLkaqZy6Z1GubYK7GnY1fQz9q7L07Tt
+	zH0oa0ij4TDBuZHwwSls647DSLM7sxjj5/DukSN+Vjq/MHaqL9DpfXJUu+3pYaUHxeHv3nc4/VMv1
+	FO1DDaZpBtzkIKHj519w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSvn7-0006dZ-Q6; Mon, 27 Apr 2020 04:54:49 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1jSvx1-0004ma-Fd; Mon, 27 Apr 2020 05:05:03 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSvmx-0006cv-CR
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 04:54:41 +0000
-Received: by mail-lf1-x142.google.com with SMTP id j14so12670777lfg.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 21:54:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uLhiyNXw2c6Bh3+KsgO2YOgoBrKeaIdCbQ6AiJEyQKg=;
- b=dH4og7eAlOMMU9zjR7c8eKMWiq0zQDIlb2GK5JUi+qJAjaTf4YedK6qxVckF97ctx5
- bGBaeyT7ehGjDXEaCX92gHWiYMqnAUubFrHu0hoz3WspncTOpvQ4F7/X3w5wOVsoI7go
- OXVjRax5ecUCoM0aBlzesbwzg4KmPUA0ipv5jUruDQmbXTeukXf5y7WBtTNsWuktbExN
- /XjN09lzj1e0TaiFh00i48xhlkOurl0X8i6puThAwyi/YGCIm4Y0H4kAQYEoaAOxFWGL
- YCwosYJ1JgRriI9ryOukPusUIT40A/IGr0vxzU+K66172GMXmNKHyBsgNbhzUNW8XhYh
- kObA==
+ id 1jSvwo-0004k7-Tj; Mon, 27 Apr 2020 05:04:52 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id mq3so7014106pjb.1;
+ Sun, 26 Apr 2020 22:04:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=RpEFDruZhhlXBhX9QpFVEyfUVGVZWtywwb585yNz+7Y=;
+ b=bT29SBfOK96SESehhTW4BCxtsJFVttVeoi/t0urpRpj0AFJ020vN2h1/7jbZohDiWY
+ G+7rYY/cyjMWRX2nWM1nQUHRK5DYY0Z3Re/LQsmmL5pheEmdu3Z1rJ7IPvBhUWW1vcYA
+ rRAUC3qAszhg7SieSVaXNxX3irqWsJ185lS+6xxGA+5B6PInlCzT3e4IzLqCdgG84LZT
+ 0O5T2gDAaSxEEY9ruwlPztv5j6dMcOK3Fxvpnkz0f3/jF7y8KJINeGHpr20aF1GemJoJ
+ vZnP/QcZkHuVdvvx0xYhq+BbBscy9ve367kNA6XTMOpJq4QXGHxO/ZNnzNN5zxO0WihD
+ fgVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uLhiyNXw2c6Bh3+KsgO2YOgoBrKeaIdCbQ6AiJEyQKg=;
- b=clE31lm37QJkj9NdaxHAFk/LxqlOoHp4FAp6TAwWYoKfI5aHXTDg2c1Rv0tBJxNAp0
- gwu7LZki659wUDAznS1OmFXrnQLLlZKc1yLTovGV2cvwDsJNZkfndNAy9YBOyp2yJMIU
- DnjjZzAJEYhs3Lhc32ptGTo9+FqgxLFC5ZZcI0itjjzZjIhypWpponywmoxkug1cEeFZ
- kPFrfFqV8dhoApLHcDP2e/wVTrCjLFwJAGlxZKvSwbLEgtnA0e5KIqZou2/CBvywoSyi
- BTVrmZQ+acUlvfXl7CPkO/jCMYGG52E31EYZiEQtKHH62ZPWn9HEzSROe4JUYjMC18VS
- wykQ==
-X-Gm-Message-State: AGi0PuaXkDQCjhIizcz81vELQusmUbnUqPXt7TGGUy2EqURjvv6aJCKi
- Nlg+54u05OS4JRJ0x8UMHnc390CzGRGcVkEX8nnrtg==
-X-Google-Smtp-Source: APiQypLz3rHzGtlDr1/6paHraXe63+Mx5MbGFXQ94F/6yIUtpJZ84R5fG+aGZyp75Dsp1Qm7jipKQPY0eZUsNTZQuc0=
-X-Received: by 2002:ac2:5f63:: with SMTP id c3mr14190318lfc.15.1587963277244; 
- Sun, 26 Apr 2020 21:54:37 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=RpEFDruZhhlXBhX9QpFVEyfUVGVZWtywwb585yNz+7Y=;
+ b=DzRjgRJj1kh4iDymIPee3w2IwOUD2NkMrFpm7SNMQUWzxYzJA88im6Tlbi+YvwmM5D
+ LML5y5iabzeRNAmLhTCJtsUgSsEOeZ3+XzkZCsTrDx7oY86lzsV76OkXpl0Rwkm0YGUH
+ tRkXBObepob+4+BXdgF7GEybi7DUl116JczOCPF7BVPDefOrb3g7CBMoFWyvkjH9YVrb
+ 9+UfTzF8QL6m9uv8KK5oixA9STUPPgCj/y4HZGhrYVJ3L+D3dXpPwKi+ia7Jz+kqZDYa
+ T4JlW2cuoL3/Lc/ljN6BZnzadPJwBh+yBJ+oxXAhSU98cx1M4igU6ibwAnMAtwMLCPiR
+ P9mw==
+X-Gm-Message-State: AGi0PuZC3i59JWzzlX+7m4MDmh6GNEU/31viWgQylNKwK4qqPQd5NGT+
+ WAv+vprzIzyk0yX3boPcxIo=
+X-Google-Smtp-Source: APiQypIf/qo/TUxxXd3N0x5q5i+APW/p3XTbnR6PLJskh1YyRzL4PAyXKe0dL0wTZKlCFIs0r3ai3g==
+X-Received: by 2002:a17:90a:3f8e:: with SMTP id
+ m14mr20357937pjc.92.1587963888745; 
+ Sun, 26 Apr 2020 22:04:48 -0700 (PDT)
+Received: from [192.168.0.102] ([49.205.220.192])
+ by smtp.gmail.com with ESMTPSA id o21sm9822670pgk.16.2020.04.26.22.04.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 26 Apr 2020 22:04:48 -0700 (PDT)
+Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
+ independent code
+To: Mike Kravetz <mike.kravetz@oracle.com>
+References: <20200417185049.275845-1-mike.kravetz@oracle.com>
+ <20200417185049.275845-3-mike.kravetz@oracle.com>
+From: Sandipan Das <sandipan.osd@gmail.com>
+Message-ID: <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
+Date: Mon, 27 Apr 2020 10:34:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
- <CAD=FV=W5FujyJMoH-TdQXxAYBvBO=rhjNo1EAv7xJ=R8eeaXZQ@mail.gmail.com>
-In-Reply-To: <CAD=FV=W5FujyJMoH-TdQXxAYBvBO=rhjNo1EAv7xJ=R8eeaXZQ@mail.gmail.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Mon, 27 Apr 2020 10:24:25 +0530
-Message-ID: <CAFA6WYNgmnX7BJ2nTpSNUpmFm2wcpp3v_Psy2EoPccJBhk4WYg@mail.gmail.com>
-Subject: Re: [RFC Patch v1 0/4] arm64: Introduce new IPI as IPI_CALL_NMI_FUNC
-To: Doug Anderson <dianders@chromium.org>
+In-Reply-To: <20200417185049.275845-3-mike.kravetz@oracle.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_215439_941194_AAB6E923 
-X-CRM114-Status: GOOD (  24.44  )
+X-CRM114-CacheID: sfid-20200426_220450_984206_17E8AF96 
+X-CRM114-Status: GOOD (  18.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sandipan.osd[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,108 +102,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Thompson <daniel.thompson@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Jason Wessel <jason.wessel@windriver.com>, LKML <linux-kernel@vger.kernel.org>,
- julien.thierry.kdev@gmail.com, Marc Zyngier <maz@kernel.org>,
- kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 25 Apr 2020 at 02:20, Doug Anderson <dianders@chromium.org> wrote:
->
-> Hi,
->
-> On Fri, Apr 24, 2020 at 4:11 AM Sumit Garg <sumit.garg@linaro.org> wrote:
-> >
-> > With pseudo NMIs support available its possible to configure SGIs to be
-> > triggered as pseudo NMIs running in NMI context. And kernel features
-> > such as kgdb relies on NMI support to round up CPUs which are stuck in
-> > hard lockup state with interrupts disabled.
-> >
-> > This patch-set adds support for IPI_CALL_NMI_FUNC which can be triggered
-> > as a pseudo NMI which in turn is leveraged via kgdb to round up CPUs.
-> >
-> > After this patch-set we should be able to get a backtrace for a CPU
-> > stuck in HARDLOCKUP. Have a look at an example below from a testcase run
-> > on Developerbox:
-> >
-> > $ echo HARDLOCKUP > /sys/kernel/debug/provoke-crash/DIRECT
-> >
-> > # Enter kdb via Magic SysRq
-> >
-> > [11]kdb> btc
-> > btc: cpu status: Currently on cpu 11
-> > Available cpus: 0-10(I), 11, 12(I), 13, 14-23(I)
-> > <snip>
-> > Stack traceback for pid 623
-> > 0xffff00086a644600      623      622  1   13   R  0xffff00086a644fc0  bash
-> > CPU: 13 PID: 623 Comm: bash Not tainted 5.7.0-rc2 #27
-> > Hardware name: Socionext SynQuacer E-series DeveloperBox, BIOS build #73 Apr  6 2020
-> > Call trace:
-> >  dump_backtrace+0x0/0x198
-> >  show_stack+0x18/0x28
-> >  dump_stack+0xb8/0x100
-> >  kgdb_cpu_enter+0x5c0/0x5f8
-> >  kgdb_nmicallback+0xa0/0xa8
-> >  handle_IPI+0x190/0x200
-> >  gic_handle_irq+0x2b8/0x2d8
-> >  el1_irq+0xcc/0x180
-> >  lkdtm_HARDLOCKUP+0x8/0x18
-> >  direct_entry+0x124/0x1c0
-> >  full_proxy_write+0x60/0xb0
-> >  __vfs_write+0x1c/0x48
-> >  vfs_write+0xe4/0x1d0
-> >  ksys_write+0x6c/0xf8
-> >  __arm64_sys_write+0x1c/0x28
-> >  el0_svc_common.constprop.0+0x74/0x1f0
-> >  do_el0_svc+0x24/0x90
-> >  el0_sync_handler+0x178/0x2b8
-> >  el0_sync+0x158/0x180
-> > <snip>
-> >
-> > Looking forward to your comments/feedback.
-> >
-> > Sumit Garg (4):
-> >   arm64: smp: Introduce a new IPI as IPI_CALL_NMI_FUNC
-> >   irqchip/gic-v3: Add support to handle SGI as pseudo NMI
-> >   irqchip/gic-v3: Enable arch specific IPI as pseudo NMI
-> >   arm64: kgdb: Round up cpus using IPI_CALL_NMI_FUNC
-> >
-> >  arch/arm64/include/asm/hardirq.h |  2 +-
-> >  arch/arm64/include/asm/smp.h     |  1 +
-> >  arch/arm64/kernel/kgdb.c         | 15 +++++++++++++++
-> >  arch/arm64/kernel/smp.c          | 36 +++++++++++++++++++++++++++++++++++-
-> >  drivers/irqchip/irq-gic-v3.c     | 36 +++++++++++++++++++++++++++++++-----
-> >  5 files changed, 83 insertions(+), 7 deletions(-)
->
-> This is amazing!
->
-> * picked your patches back to my current 5.4 tree
-> * turned on "CONFIG_ARM64_PSEUDO_NMI"
-> * set the "irqchip.gicv3_pseudo_nmi=1" command line
->
-> ...and bam I can trace on the locked up CPU instead of being left in the dark.
->
-> I'm not sure I'm going to be too much use in actually doing the review
-> of the code since I'm not really an expert at how SGIs work (it took
-> me a while to realize that it must stand for software generated
-> interrupts) nor the bowels of the GIC.  I tried to do what little
-> review I could.
->
-> In any case, I'll keep this in my local patch stack for now and keep
-> testing it to make sure I don't notice any weird problems.
+Hi Mike,
 
-Thanks for your review and testing.
+On 18/04/20 12:20 am, Mike Kravetz wrote:
+> Now that architectures provide arch_hugetlb_valid_size(), parsing
+> of "hugepagesz=" can be done in architecture independent code.
+> Create a single routine to handle hugepagesz= parsing and remove
+> all arch specific routines.  We can also remove the interface
+> hugetlb_bad_size() as this is no longer used outside arch independent
+> code.
+> 
+> This also provides consistent behavior of hugetlbfs command line
+> options.  The hugepagesz= option should only be specified once for
+> a specific size, but some architectures allow multiple instances.
+> This appears to be more of an oversight when code was added by some
+> architectures to set up ALL huge pages sizes.
+> 
+> [...]
+> 
+> diff --git a/arch/powerpc/mm/hugetlbpage.c b/arch/powerpc/mm/hugetlbpage.c
+> index de54d2a37830..2c3fa0a7787b 100644
+> --- a/arch/powerpc/mm/hugetlbpage.c
+> +++ b/arch/powerpc/mm/hugetlbpage.c
+> @@ -589,21 +589,6 @@ static int __init add_huge_page_size(unsigned long long size)
+>  	return 0;
+>  }
+>  
+> -static int __init hugepage_setup_sz(char *str)
+> -{
+> -	unsigned long long size;
+> -
+> -	size = memparse(str, &str);
+> -
+> -	if (add_huge_page_size(size) != 0) {
+> -		hugetlb_bad_size();
+> -		pr_err("Invalid huge page size specified(%llu)\n", size);
+> -	}
+> -
+> -	return 1;
+> -}
+> -__setup("hugepagesz=", hugepage_setup_sz);
+> -
+> [...]
 
--Sumit
+This isn't working as expected on powerpc64.
 
->
-> -Doug
+  [    0.000000] Kernel command line: root=UUID=dc7b49cf-95a2-4996-8e7d-7c64ddc7a6ff hugepagesz=16G hugepages=2 
+  [    0.000000] HugeTLB: huge pages not supported, ignoring hugepagesz = 16G
+  [    0.000000] HugeTLB: huge pages not supported, ignoring hugepages = 2
+  [    0.284177] HugeTLB registered 16.0 MiB page size, pre-allocated 0 pages
+  [    0.284182] HugeTLB registered 16.0 GiB page size, pre-allocated 0 pages
+  [    2.585062]     hugepagesz=16G
+  [    2.585063]     hugepages=2
+
+The "huge pages not supported" messages are under a !hugepages_supported()
+condition which checks if HPAGE_SHIFT is non-zero. On powerpc64, HPAGE_SHIFT
+comes from the hpage_shift variable. At this point, it is still zero and yet
+to be set. Hence the check fails. The reason being hugetlbpage_init_default(),
+which sets hpage_shift, it now called after hugepage_setup_sz().
+
+
+- Sandipan
 
 _______________________________________________
 linux-arm-kernel mailing list
