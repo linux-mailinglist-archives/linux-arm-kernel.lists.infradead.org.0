@@ -2,88 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD6031BA0D3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:10:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AD9F1BA0ED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 12:19:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Hn+VcEzIR1OC3HRyeHrtnhFxHhlqcQbTLEq+xH7vBIE=; b=Fuh2F1+McfYGaZFLd0n5fMIxQ
-	L7Pf8n/8jefD5l2wj6/OaRstklp8817seygAzNO1NTT0tc62OmFH8BAtfIPFm43ti0/nixRW1+YwG
-	qcyXYBHJbIpO3yCAld5YiS+BZ57QPz/ajb668VQn64VDANLAZEcRx/Eh8Xj7oK07ebOASeiKBvlXn
-	DY/pHO0rWCYjqhjYruJ9Ky2V+kiV8o/MVD2CBfCWBUDujXD7XVmmn3eHnQLybEUQb+r5EhSrYv2ss
-	sCIe+cTogO1orJi46amqO6we83DD0g6IQ42WGDODmyMmxxMDMAUB6oZrVoApjDvO3pBM2KrKjeFdq
-	WB09G78VQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bHtYJ2/UdsmcHp0O+UVIgjsjoRc9p966SGwvfLHsrOY=; b=Xty3M9TJJNqoA/
+	6WomWXoLOwnXmlJvCs99/bkTOZWYumkJpLqNiWUXtuh/Nd5amXjoXMH9whsbpwQfsLvehqMUJmR9N
+	EuOanv5B9JGWPMKDMpAh3/7AchYEYPb6jg4LarHL5D9bho+1dLGDV3RseBhnJlx8Mua52y3InrSuB
+	ueGEuSi0+NQoXtId0XXaPBQZ454abkDZPCAipnNG3Lt9aUEvoGIsvDGVS0GUrv3jhvy0eR75QH3n4
+	WX4FNxWC++gufDsZqqmtnpNXSKUDwwST8WtM8CZXpN1j/v33K6xeUX7LU/+xR7t/f2YtQyBPSUR2s
+	vp4uaVUg1l1KSZiUXWRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT0i9-0003XI-0l; Mon, 27 Apr 2020 10:10:01 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jT0r2-0001my-E1; Mon, 27 Apr 2020 10:19:12 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT0hx-0003Wt-Vt
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:09:51 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03RA9jdG122958;
- Mon, 27 Apr 2020 05:09:45 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1587982185;
- bh=2gZqUqCzi7AFRq8mRGo3ZoQLutalkhB+Fu89IDdfbgI=;
- h=Subject:To:References:From:Date:In-Reply-To;
- b=diOEyOh/+/DnNA0ea8aWSqxZDUaPgxYrX2YLN7XbQnf0VKLcovy6kyW7Elgj0P+tn
- 6tDmy09OcWkVxrNMwIJ7Nx2rDg3zXtCvs8H+0koNCsmeZoZf+/lp78r8Z+MrlANcaD
- FwCSy5BSdy+/TpdzN8RxPEB+ilPH0oIodLKiNIc4=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03RA9ji4031080
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 27 Apr 2020 05:09:45 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 27
- Apr 2020 05:09:45 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 27 Apr 2020 05:09:45 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03RA9gBX030680;
- Mon, 27 Apr 2020 05:09:43 -0500
-Subject: Re: [PATCH 2/3] arm64: dts: ti: k3-j721e-main.dtsi: Add DSS node
-To: Tomi Valkeinen <tomi.valkeinen@ti.com>, Nishanth Menon <nm@ti.com>, Rob
- Herring <robh+dt@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, Jyri Sarha <jsarha@ti.com>
-References: <20200422091512.950-1-tomi.valkeinen@ti.com>
- <20200422091512.950-2-tomi.valkeinen@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <ade3a177-f060-bc40-bcc1-494093e3071d@ti.com>
-Date: Mon, 27 Apr 2020 13:09:41 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jT0qs-0001m0-56
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 10:19:03 +0000
+Received: by mail-ot1-f67.google.com with SMTP id g19so25203860otk.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 03:19:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=q/ranIBWOXV+r1vGh7d3Ut57KQGbxJBp56NZiYevesc=;
+ b=Is+vq7ue9yoMR5DD06WoKwwanT4KZBm5WmPGwCP/r8Nr4+pgw30dVJDVKzjm2BttQw
+ 4xdjgrE3oPYMtytzsqAD+wCtBCQ7w3Uq3JYwOzXU0lXcNmAlwZg4xD/iLgLp94onUeTE
+ 0OGDd3YVNO4ddfIG1g1qpJuFSXzxmejGhBcXNrBBzKh7kS+wQ8hDLmW1Equ7ujSfToge
+ w+sRZs/jPz8x+wfaumsespRM31+jlcdxwJ+6S20XvUprNvSdfDB71Xw7jKCv5idHAfPa
+ wJ94iB1+/UQ31jS8nDtJsdpqSw728s0XkwUebvmwxlXazpGGUNAtIeuqvNGNseJVUPTm
+ zKkg==
+X-Gm-Message-State: AGi0PuaznvSs4ptv9qzNplf29Q8XA15sjib1hukrePw3FjM/XxaNDcbf
+ P+MWz+ztH01LpKunDB+DTvdBsRhmrl8jbsEcWgU=
+X-Google-Smtp-Source: APiQypLL/90KXHP4+lnbdlxks4rEa4T5zKfZNHUlLZcWix+pIRFzwlLNsl3kVuOJ8sLeCNhHBWF42/Nz02oQnLqOfXY=
+X-Received: by 2002:aca:d50f:: with SMTP id m15mr15376635oig.54.1587982741263; 
+ Mon, 27 Apr 2020 03:19:01 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200422091512.950-2-tomi.valkeinen@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <1587678050-23468-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1587678050-23468-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdUmj+m8WLaSfwELD0VGYFpDaACTLgerbznBeqfVVy2nzw@mail.gmail.com>
+ <CA+V-a8s6RacEpZ+Z5M8ftKq9NGsVgizdBY137YiYuK_yg-Ozxg@mail.gmail.com>
+In-Reply-To: <CA+V-a8s6RacEpZ+Z5M8ftKq9NGsVgizdBY137YiYuK_yg-Ozxg@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 27 Apr 2020 12:18:50 +0200
+Message-ID: <CAMuHMdVrft9Ln=DSKv2hrVcZBuOo9fvbvD_s0JDo0xUQAoG=tQ@mail.gmail.com>
+Subject: Re: [PATCH 08/10] clk: renesas: cpg-mssr: Add R8A7742 support
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_030950_099967_5725541A 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200427_031902_192765_601C7EFA 
+X-CRM114-Status: GOOD (  20.07  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,100 +85,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>,
+ Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/04/2020 12:15, Tomi Valkeinen wrote:
-> Add DSS node for J721E SoC.
+Hi Prabhakar,
 
-Subject should drop .dtsi, I can fix that locally though. Got a question 
-below.
+On Mon, Apr 27, 2020 at 12:07 PM Lad, Prabhakar
+<prabhakar.csengg@gmail.com> wrote:
+> On Mon, Apr 27, 2020 at 10:10 AM Geert Uytterhoeven
+> <geert@linux-m68k.org> wrote:
+> > On Thu, Apr 23, 2020 at 11:41 PM Lad Prabhakar
+> > <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+> > > Add RZ/G1H (R8A7742) Clock Pulse Generator / Module Standby and Software
+> > > Reset support, using the CPG/MSSR driver core and the common R-Car Gen2
+> > > (and RZ/G) code.
+> > >
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
+> >
+> > Thanks for your patch!
+> >
+> > > --- /dev/null
+> > > +++ b/drivers/clk/renesas/r8a7742-cpg-mssr.c
+> >
+> > > +static struct cpg_core_clk r8a7742_core_clks[] __initdata = {
 
-> 
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
-> ---
->   arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 57 +++++++++++++++++++++++
->   1 file changed, 57 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> index 0b9d14b838a1..21c362042ecf 100644
-> --- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> +++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> @@ -736,6 +736,63 @@
->   		};
->   	};
->   
-> +	dss: dss@04a00000 {
-> +		compatible = "ti,j721e-dss";
-> +		reg =
-> +			<0x00 0x04a00000 0x00 0x10000>, /* common_m */
-> +			<0x00 0x04a10000 0x00 0x10000>, /* common_s0*/
-> +			<0x00 0x04b00000 0x00 0x10000>, /* common_s1*/
-> +			<0x00 0x04b10000 0x00 0x10000>, /* common_s2*/
-> +
-> +			<0x00 0x04a20000 0x00 0x10000>, /* vidl1 */
-> +			<0x00 0x04a30000 0x00 0x10000>, /* vidl2 */
-> +			<0x00 0x04a50000 0x00 0x10000>, /* vid1 */
-> +			<0x00 0x04a60000 0x00 0x10000>, /* vid2 */
-> +
-> +			<0x00 0x04a70000 0x00 0x10000>, /* ovr1 */
-> +			<0x00 0x04a90000 0x00 0x10000>, /* ovr2 */
-> +			<0x00 0x04ab0000 0x00 0x10000>, /* ovr3 */
-> +			<0x00 0x04ad0000 0x00 0x10000>, /* ovr4 */
-> +
-> +			<0x00 0x04a80000 0x00 0x10000>, /* vp1 */
-> +			<0x00 0x04aa0000 0x00 0x10000>, /* vp2 */
-> +			<0x00 0x04ac0000 0x00 0x10000>, /* vp3 */
-> +			<0x00 0x04ae0000 0x00 0x10000>, /* vp4 */
-> +			<0x00 0x04af0000 0x00 0x10000>; /* wb */
-> +
-> +		reg-names = "common_m", "common_s0",
-> +			"common_s1", "common_s2",
-> +			"vidl1", "vidl2","vid1","vid2",
-> +			"ovr1", "ovr2", "ovr3", "ovr4",
-> +			"vp1", "vp2", "vp3", "vp4",
-> +			"wb";
-> +
-> +		clocks =	<&k3_clks 152 0>,
-> +				<&k3_clks 152 1>,
-> +				<&k3_clks 152 4>,
-> +				<&k3_clks 152 9>,
-> +				<&k3_clks 152 13>;
-> +		clock-names = "fck", "vp1", "vp2", "vp3", "vp4";
-> +
-> +		power-domains = <&k3_pds 152 TI_SCI_PD_EXCLUSIVE>;
-> +
-> +		interrupts = <GIC_SPI 602 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 603 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 604 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 605 IRQ_TYPE_LEVEL_HIGH>;
-> +		interrupt-names = "common_m",
-> +				  "common_s0",
-> +				  "common_s1",
-> +				  "common_s2";
-> +
-> +		status = "disabled";
+> > > +       DEF_FIXED("zg",    R8A7742_CLK_ZG,      CLK_PLL1,           3, 1),
 
-Again, why disabled by default?
+> > > +static int __init r8a7742_cpg_mssr_init(struct device *dev)
+> > > +{
+> > > +       const struct rcar_gen2_cpg_pll_config *cpg_pll_config;
+> > > +       struct device_node *np = dev->of_node;
+> > > +       unsigned int i;
+> > > +       u32 cpg_mode;
+> > > +       int error;
+> > > +
+> > > +       error = rcar_rst_read_mode_pins(&cpg_mode);
+> > > +       if (error)
+> > > +               return error;
+> > > +
+> > > +       cpg_pll_config = &cpg_pll_configs[CPG_PLL_CONFIG_INDEX(cpg_mode)];
+> > > +
+> > > +       if (of_device_is_compatible(np, "renesas,r8a7742-cpg-mssr")) {
+> > > +               /* RZ/G1H uses a 1/3 divider for ZG */
+> > > +               for (i = 0; i < ARRAY_SIZE(r8a7742_core_clks); i++)
+> > > +                       if (r8a7742_core_clks[i].id == R8A7742_CLK_ZG) {
+> > > +                               r8a7742_core_clks[i].div = 3;
+> > > +                               break;
+> > > +                       }
+> > > +       }
+> >
+> > Do you really need this part? (copied from r8a7743-cpg-mssr.c ;-)
+> > If you remove it, r8a7742_core_clks[] can be const, and <linux/of.h> is
+> > no longer needed,
+> >
+> I haven't come far enough to test the GPU yet, so Ill drop this for
+> now and add this later if needed.
 
--Tero
+The divider is already set to 3 in the table above.
 
-> +
-> +		dss_ports: ports {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +		};
-> +	};
-> +
->   	mcasp0: mcasp@2b00000 {
->   		compatible = "ti,am33xx-mcasp-audio";
->   		reg = <0x0 0x02b00000 0x0 0x2000>,
-> 
+Gr{oetje,eeting}s,
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
