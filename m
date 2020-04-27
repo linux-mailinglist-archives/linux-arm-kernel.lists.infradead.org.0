@@ -2,54 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A02971BAB30
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:27:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFEA91BAB2E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 19:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kQRK6sNgOzYwrFZ8uvTwxD5wxUElDkAkhrlKEjYqFBM=; b=bFZIeVh64eZFaF
-	IJUrocsE4s38jDkHPqHKFJT0ymEBKJz9B5m2z6QlTSkYCW7SAmboWet9kOTaV3OwDBmiNyC7aF2Sb
-	PBBDIFhOP66HLRAUxU5YM/xgxYOWeRw/WSa3RyEd5K8sN75mTQ1uhtmmG8/NOZCe27ebN0t2Enrpi
-	PnK4RJ4urk3ps/Ta59cYG1d077Os3PX483ieMgsdO659qFMWdtN0jaVwJ5sUyCdmPwsxwjTqOP6FN
-	YcfEyz8nsSjibT5RiEzzsi3bzCKAGOWB4CPlnhNnX1oSQ2QOFQIytYeuHoUW5/N4+V3gZki5saop/
-	0c50x/7hfSSXdAh8ujjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/H0tyk9rOakuwaDh2ddiBvoU+q7wizkyABw61bADrC4=; b=Fed4AIrhEgJm4o
+	Yv2qBQVna4QGXCnF9HnVotRU+qnHYVDWqWmJ6qKMfNADo3/VMFBz0i/6HglM69umQlZo7WqMR4ZQj
+	R6Na5RFCjeJV2TFpevAhfSnd0yCSij5tWw5hzUyAMAja2OGuIaMmb2DBFdsnWLkGcOMe4rxqubo0C
+	5UGUXCjMy3qIb+UVzP5Zj1p92kssv1wuGhFpna10vFCTy9rB1CeldAYJHDOMPW6BIAIqclLxmMzUV
+	wkoPnjz0Wp816KPrtM5GR4QCqU1LFD9gPthmYrsL3o/rQBIOyW+POwVoSR62mv8tQ72aA8UQe0cbH
+	5bPGra3Vt8GZOIPCa/cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT7XH-0006Nw-5P; Mon, 27 Apr 2020 17:27:15 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1jT7Wf-0005tC-C4; Mon, 27 Apr 2020 17:26:37 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT7WY-0005sg-6z; Mon, 27 Apr 2020 17:26:32 +0000
-Received: from localhost (unknown [42.111.30.142])
- (Authenticated sender: me@yadavpratyush.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 984AF240006;
- Mon, 27 Apr 2020 17:26:18 +0000 (UTC)
-Date: Mon, 27 Apr 2020 22:53:36 +0530
-From: Pratyush Yadav <me@yadavpratyush.com>
-To: Yicong Yang <yangyicong@hisilicon.com>
-Subject: Re: [PATCH v4 05/16] mtd: spi-nor: default to address width of 3 for
- configurable widths
-Message-ID: <20200427172336.ihezwq3wn75m7k3l@yadavpratyush.com>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <20200424184410.8578-6-p.yadav@ti.com>
- <6b6384ad-d37a-eea6-af29-322e83924912@hisilicon.com>
+ id 1jT7WQ-0005pK-0g; Mon, 27 Apr 2020 17:26:23 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RHNNun032176;
+ Mon, 27 Apr 2020 17:25:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=2uE+mNBlryTX8hj4mQm6UWx/K31ONdvabCMIKOLtOyU=;
+ b=xTCYIbf7r5dai610kYmRfslwcsdHMEa6nYuPYmpMy+7WUkM9840zuWRmT2v1MiaH6Cad
+ +fYWXCh8PyDfm6g+dIyG7BXcw3P9PeZXXougO6mlOLOylsBzYtMAlZzBzlRJJatu4I9N
+ /AveFv2IyJQslCKqyCxuN+21YY9yrbN47PRg98fdwJ2kPrlLeXvj0DTMFDZB9ZWRvRM7
+ Ed+D9rxwrxjP3D1PFlRuVFcuOx+bDZYZm4iIaDJw0NmlAZ9XtPZO6joC0Rr+di/qtUTo
+ oTv+6hlYH5+uyVoe6FV6yxjUAbpvIRv9bN/idQ6mOzjti7KgZTFrdQJIrHma1+l6CzbV yA== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 30p2p00ddv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 27 Apr 2020 17:25:18 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03RHMbqg085782;
+ Mon, 27 Apr 2020 17:25:18 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 30mxpdrdfm-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 27 Apr 2020 17:25:18 +0000
+Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03RHP5vx008462;
+ Mon, 27 Apr 2020 17:25:05 GMT
+Received: from [192.168.2.157] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 27 Apr 2020 10:25:05 -0700
+Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
+ independent code
+To: Sandipan Das <sandipan.osd@gmail.com>
+References: <20200417185049.275845-1-mike.kravetz@oracle.com>
+ <20200417185049.275845-3-mike.kravetz@oracle.com>
+ <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
+Date: Mon, 27 Apr 2020 10:25:02 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6b6384ad-d37a-eea6-af29-322e83924912@hisilicon.com>
+In-Reply-To: <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ malwarescore=0
+ mlxscore=0 bulkscore=0 adultscore=0 phishscore=0 suspectscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004270142
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9604
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ phishscore=0 clxscore=1011
+ bulkscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0 malwarescore=0
+ mlxscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2004270142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_102630_405963_D3AB5752 
-X-CRM114-Status: GOOD (  21.40  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200427_102622_185661_B75F011C 
+X-CRM114-Status: GOOD (  28.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,71 +112,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>, linux-spi@vger.kernel.org,
- Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yicong,
-
-On 26/04/20 11:53AM, Yicong Yang wrote:
-> On 2020/4/25 2:43, Pratyush Yadav wrote:
-> > JESD216D.01 says that when the address width can be 3 or 4, it defaults
-> > to 3 and enters 4-byte mode when given the appropriate command. So, when
-> > we see a configurable width, default to 3 and let flash that default to
-> > 4 change it in a post-bfpt fixup.
-> >
-> > This fixes SMPT parsing for flashes with configurable address width. If
-> > the SMPT descriptor advertises variable address width, we use
-> > nor->addr_width as the address width. But since it was not set to any
-> > value from the SFDP table, the read command uses an address width of 0,
-> > resulting in an incorrect read being issued.
-> >
-> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > ---
-> >  drivers/mtd/spi-nor/sfdp.c | 1 +
-> >  1 file changed, 1 insertion(+)
-> >
-> > diff --git a/drivers/mtd/spi-nor/sfdp.c b/drivers/mtd/spi-nor/sfdp.c
-> > index f917631c8110..5cecc4ba2141 100644
-> > --- a/drivers/mtd/spi-nor/sfdp.c
-> > +++ b/drivers/mtd/spi-nor/sfdp.c
-> > @@ -460,6 +460,7 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
-> >  	/* Number of address bytes. */
-> >  	switch (bfpt.dwords[BFPT_DWORD(1)] & BFPT_DWORD1_ADDRESS_BYTES_MASK) {
-> >  	case BFPT_DWORD1_ADDRESS_BYTES_3_ONLY:
-> > +	case BFPT_DWORD1_ADDRESS_BYTES_3_OR_4:
-> >  		nor->addr_width = 3;
-> >  		break;
+On 4/26/20 10:04 PM, Sandipan Das wrote:
+> Hi Mike,
 > 
-> Should we also assign address width to 3 in default condition. At least we should not
-> leave it uninitialized here.
+> On 18/04/20 12:20 am, Mike Kravetz wrote:
+>> Now that architectures provide arch_hugetlb_valid_size(), parsing
+>> of "hugepagesz=" can be done in architecture independent code.
+>> Create a single routine to handle hugepagesz= parsing and remove
+>> all arch specific routines.  We can also remove the interface
+>> hugetlb_bad_size() as this is no longer used outside arch independent
+>> code.
+>>
+>> This also provides consistent behavior of hugetlbfs command line
+>> options.  The hugepagesz= option should only be specified once for
+>> a specific size, but some architectures allow multiple instances.
+>> This appears to be more of an oversight when code was added by some
+>> architectures to set up ALL huge pages sizes.
+>>
+>> [...]
+>>
+>> diff --git a/arch/powerpc/mm/hugetlbpage.c b/arch/powerpc/mm/hugetlbpage.c
+>> index de54d2a37830..2c3fa0a7787b 100644
+>> --- a/arch/powerpc/mm/hugetlbpage.c
+>> +++ b/arch/powerpc/mm/hugetlbpage.c
+>> @@ -589,21 +589,6 @@ static int __init add_huge_page_size(unsigned long long size)
+>>  	return 0;
+>>  }
+>>  
+>> -static int __init hugepage_setup_sz(char *str)
+>> -{
+>> -	unsigned long long size;
+>> -
+>> -	size = memparse(str, &str);
+>> -
+>> -	if (add_huge_page_size(size) != 0) {
+>> -		hugetlb_bad_size();
+>> -		pr_err("Invalid huge page size specified(%llu)\n", size);
+>> -	}
+>> -
+>> -	return 1;
+>> -}
+>> -__setup("hugepagesz=", hugepage_setup_sz);
+>> -
+>> [...]
+> 
+> This isn't working as expected on powerpc64.
+> 
+>   [    0.000000] Kernel command line: root=UUID=dc7b49cf-95a2-4996-8e7d-7c64ddc7a6ff hugepagesz=16G hugepages=2 
+>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepagesz = 16G
+>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepages = 2
+>   [    0.284177] HugeTLB registered 16.0 MiB page size, pre-allocated 0 pages
+>   [    0.284182] HugeTLB registered 16.0 GiB page size, pre-allocated 0 pages
+>   [    2.585062]     hugepagesz=16G
+>   [    2.585063]     hugepages=2
+> 
+> The "huge pages not supported" messages are under a !hugepages_supported()
+> condition which checks if HPAGE_SHIFT is non-zero. On powerpc64, HPAGE_SHIFT
+> comes from the hpage_shift variable. At this point, it is still zero and yet
+> to be set. Hence the check fails. The reason being hugetlbpage_init_default(),
+> which sets hpage_shift, it now called after hugepage_setup_sz().
 
-The default condition would be taken when this field is 3. The value 3 
-is reserved, and so no current device should use this value. That said, 
-I don't see any downsides of doing so. If the value 3 means something 
-else in later revisions of the standard, this code would need to change 
-anyway. If not, we would use a relatively sane default for devices with 
-a faulty BFPT.
+Thanks for catching this Sandipan.
 
-I haven't received any comments on my series so far. If end up having to
-re-roll it, I will add this change. Otherwise, I'm not sure if it is a 
-good idea to re-roll a 16-patch series for a one liner that isn't fixing 
-some major bug. In that case, maybe you can send an independent patch 
-that does this after mine is merged?
+In the new arch independent version of hugepages_setup, I added the following
+code in patch 4 off this series:
 
+> +static int __init hugepages_setup(char *s)
+>  {
+>  	unsigned long *mhp;
+>  	static unsigned long *last_mhp;
+>  
+> +	if (!hugepages_supported()) {
+> +		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
+> +		return 0;
+> +	}
+> +
+>  	if (!parsed_valid_hugepagesz) {
+
+In fact, I added it to the beginning of all the hugetlb command line parsing
+routines.  My 'thought' was to warn early if hugetlb pages were not supported.
+Previously, the first check for hugepages_supported() was in hugetlb_init()
+which ran after hugetlbpage_init_default().
+
+The easy solution is to remove all the hugepages_supported() checks from
+command line parsing routines and rely on the later check in hugetlb_init().
+
+Another reason for adding those early checks was to possibly prevent the
+preallocation of gigantic pages at command line parsing time.   Gigantic
+pages are allocated at command line parsing time as they need to be allocated
+with the bootmem allocator.  My concern is that there could be some strange
+configuration where !hugepages_supported(), yet we allocate gigantic pages
+from bootmem that can not be used or freeed later.
+
+powerpc is the only architecture which has it's own alloc_bootmem_huge_page
+routine.  So, it handles this potential issue.
+
+I'll send out a fix shortly.
 -- 
-Regards,
-Pratyush Yadav
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
