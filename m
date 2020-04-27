@@ -2,81 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB1471B97BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:49:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0598C1B97DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Apr 2020 08:59:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Bs++pDCnvTMSx5Aj96WNviDrjxeoT36JSbLOnqhCC0=; b=LWHhEW4FboU57T
-	jk+Avp8E+l5fbnrzmPqTtgkSzEhF04x8S2pJN3epTqV5bDLZiKwArQLOkRdBuTqyC0aOgGr+tjueA
-	H3EN5CFvxDy68PT0d4okS4N2pjSXANQgQxsEbabQIa1oADdOcWGLabCZsVTP40LxqsUQd7JGRveX/
-	wSs6z3JLc+P9CM3IW/aTByKLIrDWSSEmtkWZ/xoVOKhCh9gWlc+xXL8GRoh8l9mHE2Zcj+sr/2wke
-	KxZYVcCTNhdlJRxU26BlGxboDXbKYfqB6yA3YlCNGo0Fi7LJXRa8zL/4wsNkux9HS5oy1EdxwEZBq
-	1m8oRIuS4SG5wiJwShrA==;
+	List-Owner; bh=xOzkgyXDo7nXX++IxrwmT3gD1l2CWIrcR5tjBMPT6Tc=; b=j3KZlc8cO+/w9X
+	rFn8ncc7Wl7nmtzR369hd9+xQ1sSaX1NE/e+qKulaiPcFK4fV2ZtGGqks2T/Ip7Sl6usRX2h0qaqM
+	naBemIpZspAeppsJc85Kl1DD9/oIjor7tFUWjbUuvrY88znl/6Ld/LVW2nUb2P+WSyEem0Y4BtVgj
+	qx+1djAhmCaKsg/3ElxkelvjUKEBb10tPzN0YntQJdjlmYz7dYm7oKR9ihRA7+iJouLEWR/aVPOR4
+	mKxh0/jnpvxSFXnF9QmCQU7XXcGM+nDHIjW6QD1P6uSs1NlUiM4DPSRMdHRkaxA3UNUzXSViDtu9z
+	g8X0ESNbpnAJvLqtt3pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSxa0-0001pT-CE; Mon, 27 Apr 2020 06:49:24 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jSxjf-0008SO-GY; Mon, 27 Apr 2020 06:59:23 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSxZr-0001oU-WF
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:49:17 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j2so19110816wrs.9
+ id 1jSxjX-0008RQ-AW
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Apr 2020 06:59:16 +0000
+Received: by mail-ua1-x943.google.com with SMTP id f5so6299263ual.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Apr 2020 23:49:14 -0700 (PDT)
+ Sun, 26 Apr 2020 23:59:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=OIRTtsyYCkg1t+ohXCk6lMBH379NOlwqIHq+QRjBm7Y=;
- b=SvUvd1yxOiPnMe9YAUHgv8lQk0A2/6HHwopTOUCWs8NALsr8IaE+hEzfoKEo1yuqs2
- TjmUIlPobyTTQwgv36TEaJLcVdpJsaOogMMa4AuCDJpBCcsgiZU/DME2f/khPL6iHlIg
- EK+qQPX4JJRFUEvhskXLGcPGW04SF1toxWWM+RmxQ3XLi2BNb7WkSIEi+Hr6YfkXUGV9
- 7r/ITt+NXy5qzPvRpN8Ht1AKkwLhwe14aeKCNyTT33vTINcvj7L/SRGzEV1yKIvqLi/8
- 9pMTJn7ubL6lG8FAp4pE5t90T8NoZdw8q65UAq+7ypuxycxcTarTTWVpeWiyRhymWdH5
- vfoQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=p75ZI/P1vAKdvQGL/dkDYNcJX48p538uaKviA/7sw78=;
+ b=R/yZNbJ/FXJTeWHoBM/VGrSujsjvdbo2k6YfYwGCyStA4w4Vu+3r6pSliy3CmjHCY9
+ SfTABC9U26Iuir75W2uhDMbjYrKuCe5gUJz+hjZT/9SPfNH7Wq+s6evzjQF/O4AlxycF
+ 7sWy9vdMYVW9+yX3/Mj1hq8Cq3GpFlBCf+O/f2/OrfpFFZM2dIPGtKvQdDFpzz+h3cRb
+ YxUtXuByeXDj0ep4IIuVfFOTzrd8fJuc5IhLadjFSz8WuRsGOpPAvfFz5aPQ12iGPdpR
+ +6r3h9+BxdYKM75iYz3wwyH0hWBh//y4y7f8slVNxEbN4lNLXnntUxChGWyVjmNjp1tw
+ oeLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=OIRTtsyYCkg1t+ohXCk6lMBH379NOlwqIHq+QRjBm7Y=;
- b=rdadlk8t23Ne13GRnYlHSWcRGGQveEh6N4774LcbHTzq2ut9xNaBIFxOxNexFaSXew
- eWs+3ZYQL3hPCP0LwS67LQxvMvtIm4Bw7HAZgu3uLEPfbBxcpzINmRa7Kg4rRwybWCJ/
- 3pL2Wgw0oeiqx36Y6GC7Gv2Qu7l0CrEmMDjoi+SspUjgbp/4Zp+3AgkHjVwv3f/IEwsK
- N6SoRpAzKz8+6uwxdXDbk25bLRjUQDdMl46R9IzvP1g0DxFv4jW6p1kEIlXmhJO+Zeky
- aSJjqZd+/g0vRTNLnM8XMwRvBxZ7VuF4fKqR5xbjVBNHSSQUmUeVUZxA2HvKZhTtpgql
- UphA==
-X-Gm-Message-State: AGi0PubWXlB8JSVycxIe3qaeIYdmn1y/RRZVom1SlwlOMNOReIKV+elT
- Roaov08dYtKB68KW1guDm9LTTg==
-X-Google-Smtp-Source: APiQypI8chzF5P4rL2qpeRVXfTfA1qmduiJM0OWyA6AOLxbJHzUHnF5rqPqCGyojl0yXIHmSI+roCA==
-X-Received: by 2002:adf:f884:: with SMTP id u4mr25202217wrp.171.1587970153463; 
- Sun, 26 Apr 2020 23:49:13 -0700 (PDT)
-Received: from dell ([2.31.163.63])
- by smtp.gmail.com with ESMTPSA id z10sm20140795wrg.69.2020.04.26.23.49.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 26 Apr 2020 23:49:12 -0700 (PDT)
-Date: Mon, 27 Apr 2020 07:49:10 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Adrian Pop <pop.adrian61@gmail.com>
-Subject: Re: [PATCH 1/2] arm: dt-bindings: mfd: stm32f-rcc: Add missing DSI
- clock
-Message-ID: <20200427064910.GC3559@dell>
-References: <20200424181642.32084-1-pop.adrian61@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=p75ZI/P1vAKdvQGL/dkDYNcJX48p538uaKviA/7sw78=;
+ b=MmmCTPiaQdGnIYHMR3uoZcn6NnILvLGLE/dlv7E+gzL3dOBjECnB2DZymuwDcm36+R
+ LSOmhEOXTO+FfIdyZ+5kkr7GSmT2eYmnTcFFkZkEEK3NRgo1OfH4mbXwyANaxK4eSPFm
+ qHbA4tqqL1eFEQpzNsIagpVwJcQ0QzPtXZ8RCkw41U+hNvqc9IgmwQHidoyQxgAOXLj9
+ 0vZSbrOyhPfk+yqHVMZvqtbwbtIAtjUOUitWCz/87SVYVmM6xue8++olW0XfG986wGcp
+ QwM2y9BogoL64Zv5jvM9gdY9Rbjp4jmZSlJxAyelzlL2EZaDJoEYhVhl6p0Ket/z6vYw
+ eH1A==
+X-Gm-Message-State: AGi0PuawBbigLZB7FR4Wf+4jmyCkQhGWl9IdSEKplGYddM1c4RGtcPzA
+ M5QgAZVYuONsEylhTde9RLhDT+hnbwEKv5P1v0tNwg==
+X-Google-Smtp-Source: APiQypLgdu94xf46n59WAXNWbtQ/etKr47I9IXWtRxhdXwH7gOWdeXqlB5oxfaZVEhk0xe+ABAYpaedqjH2ouRHKL5s=
+X-Received: by 2002:a67:11c4:: with SMTP id 187mr15068680vsr.34.1587970753925; 
+ Sun, 26 Apr 2020 23:59:13 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200424181642.32084-1-pop.adrian61@gmail.com>
+References: <20200328003249.1248978-1-martin.blumenstingl@googlemail.com>
+ <CAFBinCDCv-zNf1FX+8FHMxcNdJ_69yog+O_=QPz3Fzryg3ynAw@mail.gmail.com>
+In-Reply-To: <CAFBinCDCv-zNf1FX+8FHMxcNdJ_69yog+O_=QPz3Fzryg3ynAw@mail.gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 27 Apr 2020 08:58:37 +0200
+Message-ID: <CAPDyKFqNgS4JGRqMDeMgguAHd11W_OpzxyKDjaWoTUXUdc6fwg@mail.gmail.com>
+Subject: Re: [PATCH v5 0/3] Amlogic 32-bit Meson SoC SDHC MMC controller driver
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_234916_041150_C0648EEC 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200426_235915_377102_AD174EED 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,33 +91,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ yinxin_1989@aliyun.com, Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, lnykww@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyNCBBcHIgMjAyMCwgQWRyaWFuIFBvcCB3cm90ZToKCj4gQWRkIG1pc3NpbmcgY2xv
-Y2suCj4gCj4gU2lnbmVkLW9mZi1ieTogQWRyaWFuIFBvcCA8cG9wLmFkcmlhbjYxQGdtYWlsLmNv
-bT4KPiAtLS0KPiAgaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2MuaCB8IDEgKwo+
-ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCkkgYXNzdW1lIHBhdGNoIDIgZGVwZW5k
-cyBvbiB0aGlzPwoKSWYgc28sIHdoZXJlIGlzIGl0PyAgV2h5IGlzbid0IGl0IGluIG15IGluYm94
-PwoKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2MuaCBi
-L2luY2x1ZGUvZHQtYmluZGluZ3MvbWZkL3N0bTMyZjctcmNjLmgKPiBpbmRleCBhOTBmMzYxM2M1
-ODQuLmJhNWNiNzQ1NmVlNCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL2R0LWJpbmRpbmdzL21mZC9z
-dG0zMmY3LXJjYy5oCj4gKysrIGIvaW5jbHVkZS9kdC1iaW5kaW5ncy9tZmQvc3RtMzJmNy1yY2Mu
-aAo+IEBAIC0xMDcsNiArMTA3LDcgQEAKPiAgI2RlZmluZSBTVE0zMkY3X1JDQ19BUEIyX1NBSTEJ
-CTIyCj4gICNkZWZpbmUgU1RNMzJGN19SQ0NfQVBCMl9TQUkyCQkyMwo+ICAjZGVmaW5lIFNUTTMy
-RjdfUkNDX0FQQjJfTFREQwkJMjYKPiArI2RlZmluZSBTVE0zMkY3X1JDQ19BUEIyX0RTSQkJMjcK
-PiAgCj4gICNkZWZpbmUgU1RNMzJGN19BUEIyX1JFU0VUKGJpdCkJKFNUTTMyRjdfUkNDX0FQQjJf
-IyNiaXQgKyAoMHgyNCAqIDgpKQo+ICAjZGVmaW5lIFNUTTMyRjdfQVBCMl9DTE9DSyhiaXQpCShT
-VE0zMkY3X1JDQ19BUEIyXyMjYml0ICsgMHhBMCkKCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10K
-TGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNl
-IHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIg
-fCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+On Sat, 25 Apr 2020 at 22:27, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> Hi Ulf,
+>
+> On Sat, Mar 28, 2020 at 1:33 AM Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+> [...]
+> > Martin Blumenstingl (3):
+> >   dt-bindings: mmc: Document the Amlogic Meson SDHC MMC host controller
+> >   clk: meson: add a driver for the Meson8/8b/8m2 SDHC clock controller
+> >   mmc: host: meson-mx-sdhc: new driver for the Amlogic Meson SDHC host
+> I have Rob's reviewed-by for the dt-bindings patch and three
+> tested-by's for the MMC driver in patch #3 (which means that patch #2
+> was implicitly tested as well)
+> I tried to answer all your previous questions where possible, but for
+> some of your questions I simply don't have an answer.
+>
+> is there anything from your side which is holding this driver back
+> from being merged?
+
+Apologize for the delay. I will have a look asap.
+
+>
+> +Cc Jerome, because he is the maintainer of the Amlogic clock
+> controller drivers - where this series adds another one, so we need to
+> coordinate where patches go.
+
+It seems like you may need to resend the series so the clock
+maintainers (Stephen and Jerome) can get a look as well.
+
+Perhaps it's better if the series is queued together - and can help to
+do that, but then I need acks from Stephen/Jerome for the clock patch.
+
+Kind regards
+Uffe
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
