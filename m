@@ -2,66 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F16041BB37A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:35:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2D8B1BB377
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:34:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wzZ7j24e9ZrfIoYB1ultDlECy9vI79N75mCLY++W9xo=; b=VnoMBbYa5zhCE8
-	yEnOqm/LOyHTj3rN4EhNV35WqndIft0WFqVQkxhFRTN/vGcP/hVMKO3mK3lU+7n0F97UsbRrmgr70
-	FBZiyIWLISxZ9LeoMf05QfromxATvrN3I9ijm8pj6IWXto/SQwLjVA/luVfCp5jQRUaYrBYwaFvKR
-	UKvoHddA5AUNiwdxSvf3tUUGfzhpwxeZT+x8XWVa9c2ustsj7hBE4sb579jBmBJjsHP/+PAaY+T+Q
-	+/k1/0syDz7Q0i0uR0y5CaChs5H1AHaSF3LlnLK4wRwoDcPHkpoQEtCP0EJbdE2rqLxMW32/ZB6fq
-	7IC4Wmvh5uh243g1x6Ag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KXnazHmC+WCyJ6PNxArszni8IvSLGJL2r2FSSHZH1vc=; b=WaoYAkqaPSyXK6
+	ujJKkfG96S1heAxcc3lueYvbbtGOEhpi8IkaDkbcbtzZrZBZYHS5bm+wu7+pVugjFUKjzCCuvjPh3
+	+teybIXgPkkX6SKEqTT3mdt+6NmN1iYbi/8F/9/Wx7E8GtDH+Id7sHsbOkv3CVFfkgX+xEJZmSplI
+	LOpXTlaJ5Pzde5EBRgFeQUi+TJsvH6PFTHMM92DJR+obkI12Dr1dfKyXDrD6KyldBoevB2PzUBWhW
+	fvfVUftdhi7gWixz+cSWdvHotQqIpS6oy3LabhuQ9dPKRu6fh+VvWY3fDsaN8FDyAulHP0wuiEGk+
+	rge1tDRiGrIrCIEX4d5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTF9F-0000AG-23; Tue, 28 Apr 2020 01:34:57 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1jTF8i-0008Ad-Sw; Tue, 28 Apr 2020 01:34:24 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTF8y-0008SF-GM
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 01:34:44 +0000
-Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.53])
- by Forcepoint Email with ESMTP id 050A225275FAC370E7B4;
- Tue, 28 Apr 2020 09:34:34 +0800 (CST)
-Received: from DGGEMM526-MBX.china.huawei.com ([169.254.8.234]) by
- DGGEMM402-HUB.china.huawei.com ([10.3.20.210]) with mapi id 14.03.0487.000;
- Tue, 28 Apr 2020 09:34:24 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: Marc Zyngier <maz@kernel.org>, yuzenghui <yuzenghui@huawei.com>
-Subject: RE: [PATCH 18/26] KVM: arm64: Don't use empty structures as CPU
- reset state
-Thread-Topic: [PATCH 18/26] KVM: arm64: Don't use empty structures as CPU
- reset state
-Thread-Index: AQHWGKCGXKlP0CoY30iMrQFdxO97gqiHJHkAgAA8s4CABmeP4A==
-Date: Tue, 28 Apr 2020 01:34:24 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED3A5634AE@dggemm526-mbx.china.huawei.com>
-References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-19-maz@kernel.org>
- <77963c60-bcc4-0c9e-fd35-d696827ea55c@huawei.com>
- <20200424084505.6b0afc94@why>
-In-Reply-To: <20200424084505.6b0afc94@why>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.74.221.187]
+ id 1jTF8a-00089h-Gm; Tue, 28 Apr 2020 01:34:18 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id D0A9999B00C42AE7E8BD;
+ Tue, 28 Apr 2020 09:34:09 +0800 (CST)
+Received: from [10.65.58.147] (10.65.58.147) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
+ Tue, 28 Apr 2020 09:34:07 +0800
+Subject: Re: [PATCH v4 05/16] mtd: spi-nor: default to address width of 3 for
+ configurable widths
+To: Pratyush Yadav <me@yadavpratyush.com>
+References: <20200424184410.8578-1-p.yadav@ti.com>
+ <20200424184410.8578-6-p.yadav@ti.com>
+ <6b6384ad-d37a-eea6-af29-322e83924912@hisilicon.com>
+ <20200427172336.ihezwq3wn75m7k3l@yadavpratyush.com>
+From: Yicong Yang <yangyicong@hisilicon.com>
+Message-ID: <f6a593ab-8685-18e0-04c8-25edd1cab11a@hisilicon.com>
+Date: Tue, 28 Apr 2020 09:34:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
+In-Reply-To: <20200427172336.ihezwq3wn75m7k3l@yadavpratyush.com>
+X-Originating-IP: [10.65.58.147]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_183440_730377_B07D3E44 
-X-CRM114-Status: GOOD (  27.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200427_183416_722693_0F7ADA5B 
+X-CRM114-Status: GOOD (  19.34  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,147 +69,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Andre Przywara <andre.przywara@arm.com>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- George Cherian <gcherian@marvell.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>, linux-spi@vger.kernel.org,
+ Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: kvm-owner@vger.kernel.org [mailto:kvm-owner@vger.kernel.org]
-> On Behalf Of Marc Zyngier
-> Sent: Friday, April 24, 2020 3:45 PM
-> To: yuzenghui
-> Cc: linux-arm-kernel@lists.infradead.org; kvmarm@lists.cs.columbia.edu;
-> kvm@vger.kernel.org; Will Deacon; Andre Przywara; Dave Martin;
-> George Cherian; Zengtao (B); Catalin Marinas
-> Subject: Re: [PATCH 18/26] KVM: arm64: Don't use empty structures as
-> CPU reset state
-> 
-> Hi Zenghui,
-> 
-> On Fri, 24 Apr 2020 12:07:50 +0800
-> Zenghui Yu <yuzenghui@huawei.com> wrote:
-> 
-> > Hi Marc,
-> >
-> > On 2020/4/22 20:00, Marc Zyngier wrote:
-> > > Keeping empty structure as the vcpu state initializer is slightly
-> > > wasteful: we only want to set pstate, and zero everything else.
-> > > Just do that.
-> > >
-> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > > ---
-> > >   arch/arm64/kvm/reset.c | 20 +++++++++-----------
-> > >   1 file changed, 9 insertions(+), 11 deletions(-)
-> > >
-> > > diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-> > > index 241db35a7ef4f..895d7d9ad1866 100644
-> > > --- a/arch/arm64/kvm/reset.c
-> > > +++ b/arch/arm64/kvm/reset.c
-> > > @@ -37,15 +37,11 @@ static u32 kvm_ipa_limit;
-> > >   /*
-> > >    * ARMv8 Reset Values
-> > >    */
-> > > -static const struct kvm_regs default_regs_reset = {
-> > > -	.regs.pstate = (PSR_MODE_EL1h | PSR_A_BIT | PSR_I_BIT |
-> > > -			PSR_F_BIT | PSR_D_BIT),
-> > > -};
-> > > +#define VCPU_RESET_PSTATE_EL1	(PSR_MODE_EL1h |
-> PSR_A_BIT | PSR_I_BIT | \
-> > > +				 PSR_F_BIT | PSR_D_BIT)
-> > >   > -static const struct kvm_regs default_regs_reset32 = {
-> > > -	.regs.pstate = (PSR_AA32_MODE_SVC | PSR_AA32_A_BIT |
-> > > -			PSR_AA32_I_BIT | PSR_AA32_F_BIT),
-> > > -};
-> > > +#define VCPU_RESET_PSTATE_SVC	(PSR_AA32_MODE_SVC |
-> PSR_AA32_A_BIT | \
-> > > +				 PSR_AA32_I_BIT | PSR_AA32_F_BIT)
-> > >   >   static bool cpu_has_32bit_el1(void)
-> > >   {
-> > > @@ -261,6 +257,7 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
-> > >   	const struct kvm_regs *cpu_reset;
-> > >   	int ret = -EINVAL;
-> > >   	bool loaded;
-> > > +	u32 pstate;
-> > >   >   	/* Reset PMU outside of the non-preemptible section */
-> > >   	kvm_pmu_vcpu_reset(vcpu);
-> > > @@ -291,16 +288,17 @@ int kvm_reset_vcpu(struct kvm_vcpu
-> *vcpu)
-> > >   		if (test_bit(KVM_ARM_VCPU_EL1_32BIT,
-> vcpu->arch.features)) {
-> > >   			if (!cpu_has_32bit_el1())
-> > >   				goto out;
-> > > -			cpu_reset = &default_regs_reset32;
-> > > +			pstate = VCPU_RESET_PSTATE_SVC;
-> > >   		} else {
-> > > -			cpu_reset = &default_regs_reset;
-> > > +			pstate = VCPU_RESET_PSTATE_EL1;
-> > >   		}
-> > >   >   		break;
-> > >   	}
-> > >   >   	/* Reset core registers */
-> > > -	memcpy(vcpu_gp_regs(vcpu), cpu_reset, sizeof(*cpu_reset));
-> > > +	memset(vcpu_gp_regs(vcpu), 0, sizeof(*cpu_reset));
-> >
-> > Be careful that we can *not* use 'sizeof(*cpu_reset)' here anymore.
-> As
-> > you're going to refactor the layout of the core registers whilst keeping
-> > the kvm_regs API unchanged.  Resetting the whole kvm_regs will go
-> > corrupting some affected registers and make them temporarily invalid.
-> > The bad thing will show up after you start moving ELR_EL1 around,
-> > specifically in patch #20...
-> 
-> Ah, awesome find! Yes, it is pretty obvious now that you point it out.
-> If I had removed this now useless cpu_reset variable, I'd have spotted
-> it!
-> 
-> > And the first victim is ... MPIDR_EL1 (the first one in sys_regs array).
-> > Now you know how this was spotted ;-)  I think this should be the
-> root
-> > cause of what Zengtao had previously reported [*].
-> 
-> It'd be good if Zengtao could confirm that changing this line to
-> 
-> 	memset(vcpu_gp_regs(vcpu), 0, sizeof(*vcpu_gp_regs(vcpu)));
-> 
-> fixes his problem.
+Hi Pratyush,
 
-I tried this change, and it did fix my problem, thanks :). 
 
-> 
-> > If these registers are all expected to be reset to architecturally
-> > UNKNOWN values, I think we can just drop this memset(), though
-> haven't
-> > check with the ARM ARM carefully.
-> 
-> D1.9.1 ("PE state on reset to AArch64 state"):
-> 
-> "All general-purpose, and SIMD and floating-point registers are
-> UNKNOWN."
-> 
-> There is a vaguely similar wording for AArch32 (G1.17.1), although it
-> is only described by omission:
-> 
-> "Immediately after a reset, much of the PE state is UNKNOWN. However,
-> some of the PE state is defined."
-> 
-> and the GPRs are not part of the list of defined states.
-> 
-> Still, I'm worried to change KVM's behaviour after so long... I'll have
-> a try with a handful of non-Linux guests and see if anything breaks.
-> 
-> Thanks again,
-> 
->          M.
-> --
-> Jazz is not dead. It just smells funny...
+On 2020/4/28 1:23, Pratyush Yadav wrote:
+> Hi Yicong,
+>
+> On 26/04/20 11:53AM, Yicong Yang wrote:
+>> On 2020/4/25 2:43, Pratyush Yadav wrote:
+>>> JESD216D.01 says that when the address width can be 3 or 4, it defaults
+>>> to 3 and enters 4-byte mode when given the appropriate command. So, when
+>>> we see a configurable width, default to 3 and let flash that default to
+>>> 4 change it in a post-bfpt fixup.
+>>>
+>>> This fixes SMPT parsing for flashes with configurable address width. If
+>>> the SMPT descriptor advertises variable address width, we use
+>>> nor->addr_width as the address width. But since it was not set to any
+>>> value from the SFDP table, the read command uses an address width of 0,
+>>> resulting in an incorrect read being issued.
+>>>
+>>> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+>>> ---
+>>>  drivers/mtd/spi-nor/sfdp.c | 1 +
+>>>  1 file changed, 1 insertion(+)
+>>>
+>>> diff --git a/drivers/mtd/spi-nor/sfdp.c b/drivers/mtd/spi-nor/sfdp.c
+>>> index f917631c8110..5cecc4ba2141 100644
+>>> --- a/drivers/mtd/spi-nor/sfdp.c
+>>> +++ b/drivers/mtd/spi-nor/sfdp.c
+>>> @@ -460,6 +460,7 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
+>>>  	/* Number of address bytes. */
+>>>  	switch (bfpt.dwords[BFPT_DWORD(1)] & BFPT_DWORD1_ADDRESS_BYTES_MASK) {
+>>>  	case BFPT_DWORD1_ADDRESS_BYTES_3_ONLY:
+>>> +	case BFPT_DWORD1_ADDRESS_BYTES_3_OR_4:
+>>>  		nor->addr_width = 3;
+>>>  		break;
+>> Should we also assign address width to 3 in default condition. At least we should not
+>> leave it uninitialized here.
+> The default condition would be taken when this field is 3. The value 3 
+> is reserved, and so no current device should use this value. That said, 
+> I don't see any downsides of doing so. If the value 3 means something 
+> else in later revisions of the standard, this code would need to change 
+> anyway. If not, we would use a relatively sane default for devices with 
+> a faulty BFPT.
+
+The purpose is to set one possible value which may be used later in parsing smpt.
+In current driver, if we do nothing with the post-bfpt fixup, then the width will
+be unset. Otherwise, maybe the width can also be set in spi_nor_smpt_addr_width()
+
+    default:
+   +    if (!nor->addr_width)
+   +        nor->addr_width = 3;
+        return nor->addr_width;
+
+But set when parsing bfpt seems more reasonable.
+
+> I haven't received any comments on my series so far. If end up having to
+> re-roll it, I will add this change. Otherwise, I'm not sure if it is a 
+> good idea to re-roll a 16-patch series for a one liner that isn't fixing 
+> some major bug. In that case, maybe you can send an independent patch 
+> that does this after mine is merged?
+
+Fine. :)
+
+Regards,
+Yicong
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
