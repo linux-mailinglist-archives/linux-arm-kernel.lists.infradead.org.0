@@ -2,31 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCAEC1BCCA4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 21:46:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 267E61BCCAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 21:47:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=svS8j9j1UZykOUwVzFmG2BZNcoxKM2pu4+vbVxg1Kdo=; b=akgKmdt/YAT2rQ
-	ClLkMz5akkfu8m27OkEkOrEy2/ndlGMx4amNzqP4hVeFRwEbBUVcrbef7zpmKOt6XxBm15k8Qv8P5
-	dl+chh2DhpP8OpAYgd43aWHN+gzBqWGwylIrB+Np8xi8Cxk01cejOlWmVQdRw//dg6UrsKCavVvaW
-	8aBKIRRLvcN+chXiVEAtXZ5Wa5Met9fN9HJXL2Rc8pvH0ZWFOsTe2bvnicMpq8y6PhE/oCNVz+d9V
-	pE7FA7tt5EwQN/81k3loEiRnMSyJGcxlj7JmQ5YCpjeNABUpjxb7iV3hO3H5uv2VblYES749GoVs7
-	990fzox1OY6Lzm+lW+zg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I6lGPwZnbWU4QpyWdTNl8ayLtdwktN9d+792WGwSn8k=; b=Zq2BTN+LqHTj+2
+	vzUY7XAmo44U1yq/URL5hOFD64hKxChok6YP92Z4seQEKdcsAjXd2GcErg8HRnrjv27jVA1eNsV/d
+	/F4jtsyC4tqyQZ9Emr17x59oG8vtuooswL0IAhOCalaPEuc6cOSkkcblre21vLjFcxBGdGyEQrUBp
+	y7v/O3t7eqqoTIaxQp1H95z1ZTt8W5P8ShYLRtvXa58PZIQqYLGNFPtQNOWXiDMgJ4o1LlA01l5GN
+	AWe7Z3KZHnVO042DZUfWWoR/nvY3MceLzhrh3desIPHDaX+5osM7m88DXyF0TqtGAP1iq/o9Q2b5v
+	EqSs1tnGBlAzzOUu+eqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTWBq-0001Ma-Pv; Tue, 28 Apr 2020 19:46:46 +0000
+	id 1jTWCK-0001r7-Py; Tue, 28 Apr 2020 19:47:16 +0000
 Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jTW9y-0005uN-SM; Tue, 28 Apr 2020 19:44:50 +0000
+ Hat Linux)) id 1jTW9y-0005uQ-TN; Tue, 28 Apr 2020 19:44:50 +0000
 From: Matthew Wilcox <willy@infradead.org>
 To: linux-mm@kvack.org
-Subject: [PATCH 0/7] Record the mm_struct in the page table pages
-Date: Tue, 28 Apr 2020 12:44:42 -0700
-Message-Id: <20200428194449.22615-1-willy@infradead.org>
+Subject: [PATCH 1/7] mm: Document x86 uses a linked list of pgds
+Date: Tue, 28 Apr 2020 12:44:43 -0700
+Message-Id: <20200428194449.22615-2-willy@infradead.org>
 X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200428194449.22615-1-willy@infradead.org>
+References: <20200428194449.22615-1-willy@infradead.org>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -51,47 +53,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 
-Pages which are in use as page tables have some space unused in struct
-page.  It would be handy to have a pointer to the struct mm_struct that
-they belong to so that we can handle uncorrectable errors in page tables
-more gracefully.  There are a few other things we could use it for too,
-such as checking that the page table entry actually belongs to the task
-we think it ought to.  This patch series does none of that, but does
-lay the groundwork for it.
+x86 uses page->lru of the pages used for pgds, but that's not immediately
+obvious to anyone looking to make changes.  Add a struct list_head to
+the union so it's clearly in use for pgds.
 
-Matthew Wilcox (Oracle) (7):
-  mm: Document x86 uses a linked list of pgds
-  mm: Move pt_mm within struct page
-  arm: Thread mm_struct throughout page table allocation
-  arm64: Thread mm_struct throughout page table allocation
-  m68k: Thread mm_struct throughout page table allocation
-  mm: Set pt_mm in PTE constructor
-  mm: Set pt_mm in PMD constructor
+Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+---
+ include/linux/mm_types.h | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
- arch/arc/include/asm/pgalloc.h           |  2 +-
- arch/arm/mm/mmu.c                        | 66 ++++++++---------
- arch/arm64/include/asm/pgalloc.h         |  2 +-
- arch/arm64/mm/mmu.c                      | 93 ++++++++++++------------
- arch/m68k/include/asm/mcf_pgalloc.h      |  2 +-
- arch/m68k/include/asm/motorola_pgalloc.h | 10 +--
- arch/m68k/mm/motorola.c                  |  4 +-
- arch/openrisc/include/asm/pgalloc.h      |  2 +-
- arch/powerpc/mm/book3s64/pgtable.c       |  2 +-
- arch/powerpc/mm/pgtable-frag.c           |  2 +-
- arch/s390/include/asm/pgalloc.h          |  2 +-
- arch/s390/mm/pgalloc.c                   |  2 +-
- arch/sparc/mm/init_64.c                  |  2 +-
- arch/sparc/mm/srmmu.c                    |  2 +-
- arch/x86/include/asm/pgalloc.h           |  2 +-
- arch/x86/mm/pgtable.c                    |  3 +-
- arch/xtensa/include/asm/pgalloc.h        |  2 +-
- include/asm-generic/pgalloc.h            |  2 +-
- include/linux/mm.h                       | 18 ++++-
- include/linux/mm_types.h                 | 12 +--
- 20 files changed, 122 insertions(+), 110 deletions(-)
-
-
-base-commit: 6a8b55ed4056ea5559ebe4f6a4b247f627870d4c
+diff --git a/include/linux/mm_types.h b/include/linux/mm_types.h
+index 4aba6c0c2ba8..9bb34e2cd5a5 100644
+--- a/include/linux/mm_types.h
++++ b/include/linux/mm_types.h
+@@ -142,8 +142,13 @@ struct page {
+ 			struct list_head deferred_list;
+ 		};
+ 		struct {	/* Page table pages */
+-			unsigned long _pt_pad_1;	/* compound_head */
+-			pgtable_t pmd_huge_pte; /* protected by page->ptl */
++			union {
++				struct list_head pgd_list;	/* x86 */
++				struct {
++					unsigned long _pt_pad_1;
++					pgtable_t pmd_huge_pte;
++				};
++			};
+ 			unsigned long _pt_pad_2;	/* mapping */
+ 			union {
+ 				struct mm_struct *pt_mm; /* x86 pgds only */
 -- 
 2.26.2
 
