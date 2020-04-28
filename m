@@ -2,62 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7FA91BBF74
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B08C1BBF81
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:28:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RKTfWN/84k/pW96rWgK6+89eFphj4lUVVysmbMAeYGQ=; b=YjwzE6jvOSAJPA
-	q4znl99l7AdIkRTIGSpSp3oPh3927qaXg9P84HkwB98wTPUJNELj4f3g82tZvqDj6V3ybyiLIgnPB
-	7wGJs3Qiu5Y+3MNK9x8lYvNIBtIzxtlc1Urj7DhKzB2agogmLourdH/lKm0/BgjDPWoAEFEP4HRZx
-	hgNgFiX1D5dHLMdv+3YiGlmSwwIBSolqhEXD2iO6uEBCLaMaGKXNE6bAMFV+FBTAuojrrkItNc9YU
-	lj/rbx9gReJXQV1rpt46Ah2ivXF6V//W6/DRNgrhnJwGC1byFFU2ccqiFyqaCzNJfNB6HhWSmCWQy
-	qwrGzbZjFDwEFDT1k3KQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NQs8KowItnN+gdc9ojy2YF3y/pHDr8PvxLTI8GCM3QI=; b=k7XiCKs0LP8NOr
+	9dAhHH8eZ9QfmKTK2djxepWG8lqgUyr2XNyKx6GJAkMVkDT5MgigkQtCVOTHK2fWtpNCBP5s6WrA6
+	wxdCCfwgsiAD+8k3kYhJm6MrJonEh2bMrd+bhFPaSIXCLog43Nvbz+h4/u4jwDyXj4WAvHy3nc/hl
+	9/Q49LNdwP445vDOzqhP7veHMYsJmtSsBS93zq8zhcRM85fdHPDuPMdfSa8jrnFilSMZEJG+J85PH
+	I2XEofD73mcf9fVpbTITmGgUKgTOUVqL3D82HdzdIpP/rI1AAURFLulyE8RY2WLeV117dTo6pD+c6
+	OKpBM9ptYG+sJSzXW7lA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTQGN-0003Pw-1c; Tue, 28 Apr 2020 13:27:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTQAC-0004le-71
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:20:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 679AB31B;
- Tue, 28 Apr 2020 06:20:39 -0700 (PDT)
-Received: from [10.37.8.217] (unknown [10.37.8.217])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2AF0E3F68F;
- Tue, 28 Apr 2020 06:20:37 -0700 (PDT)
-Subject: Re: [PATCH] arm64/vdso: Remove unused makefile variable
-To: Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
-References: <d8baa0e5-0e20-9f58-5e79-34a272f86d1d@infradead.org>
- <20200427203520.GA23186@willie-the-truck>
- <c3c48a79-6a0c-2bae-16a8-507f05ee5473@arm.com>
- <CAMj1kXHoEbG_Ff21Qs1eQJ=3zuqE_RuMzVWbmopv5FP52pqJgQ@mail.gmail.com>
- <20200428124353.GB6791@willie-the-truck>
- <CAMj1kXH=fZHb5DcWZ+J735zU+LqwdUU2fUYk4XQoh3ZFE+WYTw@mail.gmail.com>
- <20200428131652.GE6791@willie-the-truck>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <6867209d-9254-645b-a1f9-4699a30ad12a@arm.com>
-Date: Tue, 28 Apr 2020 14:21:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jTQHf-0004Dn-Od; Tue, 28 Apr 2020 13:28:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTQHU-0004DE-JA
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:28:13 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 439F5206F0;
+ Tue, 28 Apr 2020 13:28:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588080492;
+ bh=e2h+YGX8UNd7RGu9S/wztUu2W9Zxes42cCR7ChuzclQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IaFvCu6krhFeoqDRhlxn4Rt0HIxMcHkb8PJJjF/01l9E9bBbYc0uSUxxo5MRegT8S
+ rcMlMNwdwADZCmdFUqk1E3PWHt/iQ+TBzEOqu6W95E2Gppu3nhQV4pELCaIVMxuAMr
+ VdBgg/Q/DMYyELaZHTFaB9/B+wUhZEkt8jkDc01A=
+Date: Tue, 28 Apr 2020 14:28:05 +0100
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200428132804.GF6791@willie-the-truck>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200422154436.GJ4898@sirena.org.uk> <20200422162954.GF3585@gaia>
 MIME-Version: 1.0
-In-Reply-To: <20200428131652.GE6791@willie-the-truck>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200422162954.GF3585@gaia>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_062040_356843_68EF0ED7 
-X-CRM114-Status: GOOD (  23.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_062812_664393_C9D580B8 
+X-CRM114-Status: GOOD (  16.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,106 +77,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geoff Levand <geoff@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-On 4/28/20 2:16 PM, Will Deacon wrote:
-> On Tue, Apr 28, 2020 at 03:02:43PM +0200, Ard Biesheuvel wrote:
->> On Tue, 28 Apr 2020 at 14:43, Will Deacon <will@kernel.org> wrote:
->>>
->>> On Tue, Apr 28, 2020 at 01:52:55PM +0200, Ard Biesheuvel wrote:
->>>> On Tue, 28 Apr 2020 at 12:45, Vincenzo Frascino
->>>> <vincenzo.frascino@arm.com> wrote:
->>>>> On 4/27/20 9:35 PM, Will Deacon wrote:
->>>>>> [+Vincenzo]
->>>>>>
->>>>>> On Fri, Apr 24, 2020 at 08:58:49AM -0700, Geoff Levand wrote:
->>>>>>> The vdso makefile variable VDSO_LDFLAGS is defined, but never used,
->>>>>>> so remove it.
->>>>>>>
->>>>>>> Signed-off-by: Geoff Levand <geoff@infradead.org>
->>>>>>> ---
->>>>>>>
->>>>>>> Hi,
->>>>>>>
->>>>>>> This seems to be left over from a code cleanup that missed it.
->>>>>>
->>>>>> While I agree that this isn't used, I'm wondering why '-Bsymbolic' is used
->>>>>> to link the compat vDSO but not the native one. It seems weird to differ
->>>>>> in this regard.
->>>>>>
->>>>>> Vincenzo? Looks like you added this unused variable in 28b1a824a4f44
->>>>>> ("arm64: vdso: Substitute gettimeofday() with C implementation").
->>>>>>
->>>>>
->>>>> My understanding is that "-Bsymbolic" is required by both compat and normal vdso
->>>>> because when the shared library is built it adds a flag in the dynamic section
->>>>> of the binary called DT_SYMBOLIC which alters the dynamic linker's symbol
->>>>> resolution algorithm to search for references for a symbol inside the library
->>>>> first and then into the executable.
->>>>>
->>>>
->>>> DT_SYMBOLIC doesn't (or shouldn't) change the dynamic linking
->>>> behavior. It informs the linker that ELF symbol preemption may not
->>>> work, since the .so has bound internal references to its exported
->>>> symbols to the internal versions directly, rather than allowing the
->>>> application to supersede (i.e., 'preempt') them. This is an obscure
->>>> feature that isn't really relevant for the VDSO, since we carefully
->>>> control what we export from the .so anyway (via the linker script's
->>>> VERSIONS section)
->>>>
->>>>> This becomes useful for example when an executable built with -fPIC is trying to
->>>>> call a public vDSO function from assembly (bl symbol).
->>>>>
->>>>> The issue here seems to be that I used VDSO_LDFLAGS instead of ldflags-y. I can
->>>>> post a patch and Cc stable. Adding Geoff as Reported-by.
->>>>>
->>>>
->>>> I think it can be removed.
->>>
->>> Hmm, so I did a little bit more digging because -Bsymbolic is used to link
->>> the vDSO on arm, mips, sparc and x86. Commit 6f121e548f83 ("x86, vdso:
->>> Reimplement vdso.so preparation in build-time C") suggests that it's a good
->>> idea to prevent any unexpected dynamic relocations appearing in the vDSO
->>> object.
->>>
->>
->> In the x86 case, there are internal calls to the exported routines,
->> and without Bsymbolic, those are routed via a GOT/PLT so that the
->> application can override those symbols. For instance, under the normal
->> ELF symbol preemption rules, the x86 VDSO should use the application's
->> version of __kernel_vsyscall() if it exists as a global symbol, and so
->> the interposable dynamic relocation is made to point to the
->> application's version of the symbol. That is why x86 needs -Bsymbolic.
->>
->> That issue does not exist on arm64, as far as I can tell. It doesn't
->> really hurt either to have the option, but it would be good to perhaps
->> annotate why we are keeping it.
+On Wed, Apr 22, 2020 at 05:29:54PM +0100, Catalin Marinas wrote:
+> On Wed, Apr 22, 2020 at 04:44:36PM +0100, Mark Brown wrote:
+> > On Mon, Mar 16, 2020 at 04:50:42PM +0000, Mark Brown wrote:
+> > > This patch series implements support for ARMv8.5-A Branch Target
+> > > Identification (BTI), which is a control flow integrity protection
+> > > feature introduced as part of the ARMv8.5-A extensions.
+> > 
+> > I've not resent this since the branch is still sitting in the arm64 tree
+> > but it's also not in -next at the minute - is there anything you're
+> > waiting for from my end here?
 > 
-> Yes, so I think we either remove it for arm, arm64 compat and arm64 native
-> or we add it to arm64 native for consistency/over-zealous future-proofing.
-> In either case, we need to document it somewhere so we don't run into this
-> again in future.
-> 
-> Vincenzo -- are you able to send a patch, please?
->
+> It's up to Will whether he wants a new series posted. The for-next/bti
+> branch is complete AFAICT, only that normally we start queueing stuff
+> (and push to -next) around -rc3.
 
-Already working on it. My preference is to keep it, I am adding documentation to
-the patch notes and in the Makefile.
+I'm happy either way, but it would be nice to base other BTI patches on
+top of this branch. Mark -- is it easier for you to refresh the series
+against v5.7-rc3, or leave it like it is? Please just let me know either
+way.
 
-> Will
-> 
+Thanks,
 
--- 
-Regards,
-Vincenzo
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
