@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B5A1BBCDD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:53:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25BF01BBCE3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:56:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xfQbwErBiZrlAQPNupyyrJ5E1IwvqFFP++If/qZFP2w=; b=YYIRdkSbQ/qVej
-	49Udd47XC9rcjXPdclPM/yP0FJGrNRcUp74i87+efzyfRFx28L+gohNr2eMJLJFXdbXW9O+9qfBQs
-	HR1NrcAf+VYi4UUwTdyJOoNAHGbLfoGGN5YQMEcsrCKhWEPD7R2K+y3mr7GnhQst1UKfucCGS2JW8
-	v/rSV/y2UMgv9bgHZP+mYH4D14Dj2OgodqU2C2PCbBfU2hj+3/Nkovn+A0uF79rw7B23WSaQRID1p
-	bqroy2JpkcKPO/udws6XtxAt2/5xDg3SI+DCkyiqtsLkdnaIzSD+Mndk70HqQX0B9VlGf2bT3FHo/
-	0fLMckVNirwAkonyPsWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NymJr8dySAD+13JZ0ChF2Li2dFnG/g54B17SsEGzWow=; b=nWXbxGhkNCpivI
+	IZFKmTkLb84qwyd/R+jyNiGRSi41HGhFwdDOueZ611kqDEuCZG3m2Yo7dBtp3gclco9xGI4GiTkDG
+	KsSE9xOjiTED1o+uxx6wu1YQK6SC1Weddb4LgKX72VBX94wYTTsjuHiv7vue1kUDwVkXLgvGBUhZ3
+	S0bXgaQFjJ0OYh6aOMkWbZJWGFwtEww/wfw0aTnpD0i3HYsNq/orNTpfDfbQg4h8MViant3FvPoVH
+	wvdXG8LWYpCi1Dy0DFaxYWK/b2IMzq+ewU1xpBTffHX5m0LWcUU4/ncZJCb887gCmMUVGUMhtJ/qV
+	wwIN6dY9dZ1jYzGb3Gzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTOne-0003sy-1m; Tue, 28 Apr 2020 11:53:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jTOr3-00076p-2W; Tue, 28 Apr 2020 11:56:49 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTOnT-0003sG-LE
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:53:08 +0000
-Received: from mail-il1-f173.google.com (mail-il1-f173.google.com
- [209.85.166.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4A9C8206D9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 11:53:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588074787;
- bh=qxJ2vBHg5G5HuPPPSQ6TVDsxRbTTsyROVYOl+pq1JAo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=XDYB9C9dJJEaPPq4qz6YvXMdQTmKK2h9tIKQVAJy5vow38kHZcK13rHVXVUd8v2bF
- PML33zU2Ln7UqkJ3hLeqb0xWyITEb838BKKkXlXkmtoMJnW4DRXjLWTPY1G6+clNwg
- 6Tvuhoo7NGKgiP7JD2oVplUXkmbNjfPJb1iib96Y=
-Received: by mail-il1-f173.google.com with SMTP id x2so19959834ilp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 04:53:07 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYCiBuW4Uui5UFPQMZ2FIURoVWT/wtTzCMqkcBaPahwkfFeZgGm
- cpVDFaSK7JVkznAhSe6zJvznx/Qv826WXniBXVA=
-X-Google-Smtp-Source: APiQypJdjDIs9T7Kgmhj28S4xpbFlk6a6ZS4dEmaB5UvBpO1IMB0FFw475i5b9jadsWKRU32c6ITW3DII6RFViHQ6PY=
-X-Received: by 2002:a92:607:: with SMTP id x7mr23617727ilg.218.1588074786653; 
- Tue, 28 Apr 2020 04:53:06 -0700 (PDT)
+ id 1jTOqt-00075k-Mk
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:56:41 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id E6470767EDA26952B564;
+ Tue, 28 Apr 2020 19:56:29 +0800 (CST)
+Received: from huawei.com (10.175.124.28) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Tue, 28 Apr 2020
+ 19:56:19 +0800
+From: Jason Yan <yanaijie@huawei.com>
+To: <manivannan.sadhasivam@linaro.org>, <linus.walleij@linaro.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-gpio@vger.kernel.org>
+Subject: [PATCH] pinctrl: add pwm37 to bm1880_pctrl_groups
+Date: Tue, 28 Apr 2020 19:55:43 +0800
+Message-ID: <20200428115543.33379-1-yanaijie@huawei.com>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-References: <d8baa0e5-0e20-9f58-5e79-34a272f86d1d@infradead.org>
- <20200427203520.GA23186@willie-the-truck>
- <c3c48a79-6a0c-2bae-16a8-507f05ee5473@arm.com>
-In-Reply-To: <c3c48a79-6a0c-2bae-16a8-507f05ee5473@arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 28 Apr 2020 13:52:55 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXHoEbG_Ff21Qs1eQJ=3zuqE_RuMzVWbmopv5FP52pqJgQ@mail.gmail.com>
-Message-ID: <CAMj1kXHoEbG_Ff21Qs1eQJ=3zuqE_RuMzVWbmopv5FP52pqJgQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64/vdso: Remove unused makefile variable
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+X-Originating-IP: [10.175.124.28]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_045307_733284_92DFA57A 
-X-CRM114-Status: GOOD (  22.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_045639_915930_5022543C 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,69 +63,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geoff Levand <geoff@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jason Yan <yanaijie@huawei.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 Apr 2020 at 12:45, Vincenzo Frascino
-<vincenzo.frascino@arm.com> wrote:
->
-> Hi Will,
->
-> thank you for pointing this out.
->
-> On 4/27/20 9:35 PM, Will Deacon wrote:
-> > [+Vincenzo]
-> >
-> > On Fri, Apr 24, 2020 at 08:58:49AM -0700, Geoff Levand wrote:
-> >> The vdso makefile variable VDSO_LDFLAGS is defined, but never used,
-> >> so remove it.
-> >>
-> >> Signed-off-by: Geoff Levand <geoff@infradead.org>
-> >> ---
-> >>
-> >> Hi,
-> >>
-> >> This seems to be left over from a code cleanup that missed it.
-> >
-> > While I agree that this isn't used, I'm wondering why '-Bsymbolic' is used
-> > to link the compat vDSO but not the native one. It seems weird to differ
-> > in this regard.
-> >
-> > Vincenzo? Looks like you added this unused variable in 28b1a824a4f44
-> > ("arm64: vdso: Substitute gettimeofday() with C implementation").
-> >
->
-> My understanding is that "-Bsymbolic" is required by both compat and normal vdso
-> because when the shared library is built it adds a flag in the dynamic section
-> of the binary called DT_SYMBOLIC which alters the dynamic linker's symbol
-> resolution algorithm to search for references for a symbol inside the library
-> first and then into the executable.
->
-
-DT_SYMBOLIC doesn't (or shouldn't) change the dynamic linking
-behavior. It informs the linker that ELF symbol preemption may not
-work, since the .so has bound internal references to its exported
-symbols to the internal versions directly, rather than allowing the
-application to supersede (i.e., 'preempt') them. This is an obscure
-feature that isn't really relevant for the VDSO, since we carefully
-control what we export from the .so anyway (via the linker script's
-VERSIONS section)
-
-> This becomes useful for example when an executable built with -fPIC is trying to
-> call a public vDSO function from assembly (bl symbol).
->
-> The issue here seems to be that I used VDSO_LDFLAGS instead of ldflags-y. I can
-> post a patch and Cc stable. Adding Geoff as Reported-by.
->
-
-I think it can be removed.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlICdwd20zNycgaXMgbm90IGFkZGVkIHRvIGJtMTg4MF9wY3RybF9ncm91cHMsIHdoaWNoIHRy
+aWdnZXJzIGEgZ2NjCmJ1aWxkIHdhcm5pbmc6Cgpkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4
+ODAuYzoyNjM6Mjc6IHdhcm5pbmc6IOKAmHB3bTM3X3BpbnPigJkgZGVmaW5lZApidXQgbm90IHVz
+ZWQgWy1XdW51c2VkLWNvbnN0LXZhcmlhYmxlPV0KIHN0YXRpYyBjb25zdCB1bnNpZ25lZCBpbnQg
+cHdtMzdfcGluc1tdID0geyAxMTAgfTsKClNpZ25lZC1vZmYtYnk6IEphc29uIFlhbiA8eWFuYWlq
+aWVAaHVhd2VpLmNvbT4KLS0tCiBkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAuYyB8IDEg
+KwogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
+aW5jdHJsL3BpbmN0cmwtYm0xODgwLmMgYi9kcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAu
+YwppbmRleCBmN2RmZjRmMTQxMDEuLmQxYTdkOTgzNjc4NyAxMDA2NDQKLS0tIGEvZHJpdmVycy9w
+aW5jdHJsL3BpbmN0cmwtYm0xODgwLmMKKysrIGIvZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtYm0x
+ODgwLmMKQEAgLTQwOCw2ICs0MDgsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGJtMTg4MF9wY3Ry
+bF9ncm91cCBibTE4ODBfcGN0cmxfZ3JvdXBzW10gPSB7CiAJQk0xODgwX1BJTkNUUkxfR1JQKHB3
+bTM0KSwKIAlCTTE4ODBfUElOQ1RSTF9HUlAocHdtMzUpLAogCUJNMTg4MF9QSU5DVFJMX0dSUChw
+d20zNiksCisJQk0xODgwX1BJTkNUUkxfR1JQKHB3bTM3KSwKIAlCTTE4ODBfUElOQ1RSTF9HUlAo
+aTJjMCksCiAJQk0xODgwX1BJTkNUUkxfR1JQKGkyYzEpLAogCUJNMTg4MF9QSU5DVFJMX0dSUChp
+MmMyKSwKLS0gCjIuMjEuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
