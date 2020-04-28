@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC7E1BC5E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:58:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62CC11BC5F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:02:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R1zYonjhsIsk3Yh/qTta4TifZS/w9LOVN3PEQuRC120=; b=Rr2yx8EP4b0v88/M347+KA2xY
-	t3Bz7BBGNX5iyPCRV02Qyo3yIgD7R9fRiWB7FwkNce3Ay0Tyy1qCmUZxA3qMng0SOst4nJs1hRSfn
-	Gbu0IsbK21nmPrTqlRmWFOsW4okMPntR+cWnxZr6UVPjTQmMBsE6TmZqV2+c5j0967A11Fpo/TOZx
-	5uouHj4xtUHcStcgFezacnscO6OBnCbPMK0XIMtq7GS8EpZaJdigikju0b/3lRGiRvj65ej+Kp9mY
-	39ta/m4ioeUN5FmVsQQhAqtnmU9V9QLdZPqh6L+7v0kzIvrHl5TxqvCWVT7nKV19ncyVzpVisdJas
-	3SEA9C+Tg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2Scm/o5KDa1V3YYdkdT8+Q4bTPGXtR1FeBKFFP68JwU=; b=qExKSOtyQ8yszo
+	i6iGdtk7nmo5+eGNl8U5EyMKQiMvH8EElZc8TKi+KqK3xVa+sQLqgLBUSSDhmiEaDPMwz12h3UoSr
+	B8kWpV2JR9WM5rxYbT3dmZao/ZnGiVCJSoifsnOftStVKwXPxslVgmXP//9wrU4l4UnWMG2atYpPK
+	5HTxLnADKzs6iz6tHmcvpHdUcP5PgFDY2NeIwhxWYObY0YTT6vynyLm8C6ZOD7oewyF7GuwrxwIoN
+	mQBDWZZ6HF2Z04T9iceSH8gf1xBeV1nwb7aPU7Xj1m7RCXBPIVo7ojFh0L2lWt7sQGXsKVcyipadk
+	V4HCeFBX8jw/IaAbQiFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTTYU-00040H-VM; Tue, 28 Apr 2020 16:57:58 +0000
+	id 1jTTcI-0008Fu-0V; Tue, 28 Apr 2020 17:01:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTTYK-0003zr-Tv
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:57:50 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE42320757;
- Tue, 28 Apr 2020 16:57:47 +0000 (UTC)
+ id 1jTTc9-0008FE-AP
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:01:46 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 051E620730;
+ Tue, 28 Apr 2020 17:01:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588093068;
- bh=QaFdvwQtNCzuxJiiAPZ3ZOFvDXcpwjoLKDRZlvc+JTU=;
+ s=default; t=1588093305;
+ bh=xcQPhPELoJFmrkYBG9DGhjiWZOwVw5TLM1bfB0MNv0o=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vraqZ0wEcRphTU3lPtLyXChwnLcRHayEWGgLHdrwesblGo/42zUJF4jLqaKz47xEb
- ORmefUppK8xFN675aFR0gcO4VVqr2YyuuyxKCpPYfzSeapY4vntKXugE6AbXyEFfgo
- yJ+sGuNxbqA2Hi26mqqt5ODXt97n7b9DRXqC2cRI=
-Date: Tue, 28 Apr 2020 17:57:45 +0100
-From: Mark Brown <broonie@kernel.org>
-To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
-Subject: Re: Audio sound card name [was [PATCH 4/7] arm64: dts: allwinner:
- a64: Add HDMI audio]
-Message-ID: <20200428165745.GM5677@sirena.org.uk>
-References: <20200426120442.11560-1-peron.clem@gmail.com>
- <20200426120442.11560-5-peron.clem@gmail.com>
- <20200428080020.35qcuylwq2ylmubu@gilmour.lan>
- <CAJiuCcc2LQ4L36KSfO8iLVFBUO6k+zsZFX+_Ovm_10PoWO4AsA@mail.gmail.com>
- <20200428160417.6q5oab2guaumhhwi@gilmour.lan>
- <CAJiuCccFFUJJzXwygLQbDK4fGJ61p72Hv7vj3WVP-=z=J1Yj0Q@mail.gmail.com>
+ b=CeyQtE+MJq+TQHXeEpQybkBUhgB1VpjAq4ANhMU0tPZMvw6Pzf+I+SVmcZCm5CJ9k
+ cZ7BjROAZ+eHsAghzfoHDkWNDzBN7tLVfjRUtlPotAGFypSeC/kBqQfxe/w9dh5NS5
+ FjO9iq000CUQqKuybnjyZPwchnyjs93uwhP+AJ6g=
+Date: Tue, 28 Apr 2020 18:01:39 +0100
+From: Will Deacon <will@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64: iort: take _DMA methods into account for named
+ components
+Message-ID: <20200428170138.GF12697@willie-the-truck>
+References: <20200404073047.17898-1-ardb@kernel.org>
+ <20200420084051.GA12852@red-moon.cambridge.arm.com>
+ <CAMj1kXHjeSFK7yH+pZCcdaK8Sdf+fhJFm+yn6JA3gH8jgbZwCA@mail.gmail.com>
+ <20200420091342.GA6867@e121166-lin.cambridge.arm.com>
+ <CAMj1kXHFJMyw6jYPd9puaN=xc1BYpF7+VnCMkBhMxBgDm9skgg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCccFFUJJzXwygLQbDK4fGJ61p72Hv7vj3WVP-=z=J1Yj0Q@mail.gmail.com>
-X-Cookie: Eschew obfuscation.
+Content-Disposition: inline
+In-Reply-To: <CAMj1kXHFJMyw6jYPd9puaN=xc1BYpF7+VnCMkBhMxBgDm9skgg@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_095748_986009_C30F1D8F 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200428_100145_383450_308C7FEB 
+X-CRM114-Status: GOOD (  20.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,70 +81,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Takashi Iwai <tiwai@suse.com>,
- Jaroslav Kysela <perex@perex.cz>, Marcus Cooper <codekipper@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8893631165815819972=="
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, robin.murphy@arm.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Apr 20, 2020 at 11:14:50AM +0200, Ard Biesheuvel wrote:
+> On Mon, 20 Apr 2020 at 11:13, Lorenzo Pieralisi
+> <lorenzo.pieralisi@arm.com> wrote:
+> >
+> > On Mon, Apr 20, 2020 at 10:58:02AM +0200, Ard Biesheuvel wrote:
+> > > On Mon, 20 Apr 2020 at 10:41, Lorenzo Pieralisi
+> > > <lorenzo.pieralisi@arm.com> wrote:
+> > > >
+> > > > On Sat, Apr 04, 2020 at 09:30:47AM +0200, Ard Biesheuvel wrote:
+> > > > > Where IORT nodes for named components can describe simple DMA limits
+> > > > > expressed as the number of address bits a device can driver, _DMA methods
+> > > > > in AML can express more complex topologies, involving DMA translation in
+> > > > > particular.
+> > > > >
+> > > > > Currently, we only take this _DMA method into account if it appears on a
+> > > > > ACPI device node describing a PCIe root complex, but it is perfectly
+> > > > > acceptable to attach them to named components as well, so let's ensure
+> > > > > we take them into account in those cases too.
+> > > > >
+> > > > > Reported-by: Andrei Warkentin <awarkentin@vmware.com>
+> > > > > Fixes: 7ad4263980826e8b ("ACPI: Make acpi_dma_configure() DMA regions aware")
+> > > > > Cc: <stable@vger.kernel.org> # v4.14+
+> > > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > > > > ---
+> > > > >  drivers/acpi/arm64/iort.c | 11 ++++-------
+> > > > >  1 file changed, 4 insertions(+), 7 deletions(-)
+> > > >
+> > > > Only question is whether there is FW in the field with _DMA methods that
+> > > > now we would start parsing (and hopefully everything will still work)
+> > > > but for that the only choice is applying this patch and see, so:
+> > > >
+> > >
+> > > Perhaps it would be better to call acpi_dma_get_range() on dev->parent then?
+> >
+> > I think it is fine as it is -  maybe we can hold off sending it all
+> > the way to stable kernels until we are confident it does not cause
+> > unintended breakage ?
+> >
+> > Anyway, thanks for putting it together.
+> >
+> > Minor nit: I'd make "arm64: iort:" in the subject "ACPI/IORT:"
+> > just to keep logs uniform.
+> >
+> 
+> OK, I'll respin and resend, with the ACPI folks on cc this time.
 
---===============8893631165815819972==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="x38akuY2VS0PywU3"
-Content-Disposition: inline
+Thanks. I'm happy to queue this in the arm64 tree with the CC: stable
+dropped for now, so please keep me on cc for v2.
 
-
---x38akuY2VS0PywU3
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Apr 28, 2020 at 06:49:10PM +0200, Cl=E9ment P=E9ron wrote:
-
-> I have a question regarding the simple-audio-card,name.
-> In this patch, I would like to introduce a simple-audio-card for the
-> Allwinner A64 HDMI.
-
-> What should be the preferred name for this sound card?
-> "sun50i-a64-hdmi" ? "allwinner, sun50i-a64-hdmi" ?
-
-The former is more idiomatic for ALSA.
-
---x38akuY2VS0PywU3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6oYIkACgkQJNaLcl1U
-h9CxAgf7BWIci8LznrR1sMDBntaJK2/0G/U8xmAKYRllkCNU+ygWiMh4kJP0s8Xt
-kwdFyZZIgLgcsjFiKBtUmSOtJtQklUyVMyYfN4Fuxspk0tuoZ55f7XfLkZelcMin
-pDhjmgvcSRMfLrcLovinmN0tAR6rWlNzUbDEs2J1bkxyoBsp1+9JbIadgU0+HVwC
-7/EYkpQG5niUXnDqe5puy9aeR9ml20pg8+DYnjTjgTUqGQTBbvdrd9PIwjsh7R0t
-RK9k8vuWd94brTyA0W4z8PbDHCIVpz/noDHFOBeUUjR2tP0sPAfYZkh5TlpDM/pG
-9CbD0IlbKTXi0BXgBg1H8zN+XLKCyA==
-=5lUy
------END PGP SIGNATURE-----
-
---x38akuY2VS0PywU3--
-
-
---===============8893631165815819972==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8893631165815819972==--
-
